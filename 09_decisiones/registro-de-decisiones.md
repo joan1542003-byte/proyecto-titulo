@@ -47,7 +47,7 @@
 
 - **Fecha:** 2026-08-23
 - **Estado:** vigente
-- **Decisión:** registrar ocho entrevistas semiestructuradas presenciales realizadas en Santiago durante junio de 2026 con personas de 18 a 30 años, reclutadas mediante referencias de la red personal y con consentimiento informado oral. P6 tiene 27 años.
+- **Decisión:** registrar ocho entrevistas semiestructuradas presenciales realizadas en Santiago los días 11 y 12 de junio de 2026 con personas de 19 a 27 años, convocadas bajo un criterio de 18 a 30 años y reclutadas mediante referencias de la red personal y con consentimiento informado oral. P6 tiene 27 años.
 - **Fundamento:** declaración explícita del autor y guía local de entrevistas.
 - **Consecuencia:** la metodología puede redactarse con esos datos, declarando que las duraciones y el guion exacto del consentimiento no se conservaron.
 
@@ -77,9 +77,37 @@
 - **Consecuencia:** F-004-D es el corpus operativo y la pérdida de las notas se declara como limitación documental.
 - **Issue asociada:** [#3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
 
+
+## D-010 — Regla de consolidación del corpus
+
+- **Fecha:** 2026-08-23
+- **Estado:** vigente
+- **Decisión:** utilizar el archivo base para Q1–Q11 y el anexo para Q12–Q13; conservar la versión completa del archivo base en P2-Q10 y registrar P6 con 27 años.
+- **Fundamento:** la auditoría estructural confirmó cobertura desigual, una omisión en P2-Q10 y la discrepancia de edad ya resuelta por el autor.
+- **Consecuencia:** el corpus anonimizado puede rastrearse sin elegir silenciosamente una versión.
+- **Documento asociado:** [Auditoría de integridad](../01_contexto_y_fuentes/auditoria-integridad-corpus-entrevistas.md).
+
+## D-011 — Usuario principal más usuario límite
+
+- **Fecha:** 2026-08-23
+- **Estado:** provisional, respaldado por P1–P8
+- **Decisión:** definir dos tipos situacionales: continuidad digital con intención desplazada como usuario principal y ocio digital elegido y coherente como usuario límite de no intervención.
+- **Fundamento:** P2 muestra conflicto con recuerdo claro; P8 muestra recuerdo débil sin conflicto; P6 y P7 muestran ocio digital legítimo; P4 muestra ambos patrones según la actividad.
+- **Alternativa descartada:** crear dos variantes demográficas o dos subgrupos del público objetivo antes de contar con evidencia suficiente.
+- **Consecuencia:** personas, recorridos y requisitos deberán representar estados y transiciones, no asignar rígidamente cada participante a un grupo.
+- **Condición de revisión:** nuevas entrevistas, validaciones del concepto o evidencia de un tercer patrón con implicancias de diseño distintas.
+- **Documento asociado:** [Comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — D-010 y D-011
+
+- **Cambio:** se registraron la regla de consolidación de Q1–Q13 y la elección de usuario principal más usuario límite; también se precisaron fechas y rango observado.
+- **Versión anterior:** el archivo dejaba la estructura de tipos abierta y no indicaba qué versión prevalecía en cada bloque.
+- **Motivo:** incorporar la auditoría de integridad y la matriz P1–P8.
+- **Resultado:** la fase puede avanzar a personas y recorridos con una frontera de intervención explícita.
 
 ### 2026-08-23 — Consolidación metodológica y D-009
 
