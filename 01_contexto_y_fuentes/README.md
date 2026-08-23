@@ -8,13 +8,14 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Inventario del archivo local](inventario-archivo-local.md): registra materiales encontrados en las carpetas del proyecto.
 - [Declaración de procedencia de entrevistas](declaracion-procedencia-entrevistas.md): fija las condiciones confirmadas del levantamiento.
 - [Auditoría metodológica](auditoria-metodologica.md): determina qué puede afirmarse y con qué cautelas.
+- [Auditoría de integridad del corpus](auditoria-integridad-corpus-entrevistas.md): comprueba cobertura, discrepancias y regla de consolidación.
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
 
 ## Estado del corpus de entrevistas
 
-El corpus corresponde a ocho entrevistas semiestructuradas, habladas y presenciales, realizadas en Santiago durante junio de 2026 con personas del rango de 18 a 30 años. El reclutamiento se realizó mediante referencias de la red personal y se obtuvo consentimiento informado oral.
+El corpus corresponde a ocho entrevistas semiestructuradas, habladas y presenciales, realizadas en Santiago durante junio de 2026 con personas de 19 a 27 años, convocadas bajo un criterio de 18 a 30 años. El reclutamiento se realizó mediante referencias de la red personal y se obtuvo consentimiento informado oral.
 
-Todas las preguntas y repreguntas fueron realizadas por el investigador. Las conversaciones fueron transcritas después del levantamiento con asistencia automatizada; dicha asistencia no produjo preguntas ni respuestas. La transcripción digital anonimizada es el registro operativo. Las notas manuscritas ya no están disponibles.
+Todas las preguntas y repreguntas fueron realizadas por el investigador. Las conversaciones fueron transcritas después del levantamiento con asistencia automatizada; dicha asistencia no produjo preguntas ni respuestas. El registro operativo combina Q1–Q11 del archivo base con Q12–Q13 del anexo y se conserva en una versión anonimizada. Las notas manuscritas ya no están disponibles.
 
 La duración individual de las entrevistas y el texto exacto utilizado para informar el consentimiento no quedaron registrados. Estos vacíos deben declararse como limitaciones de documentación, no reconstruirse.
 
@@ -30,6 +31,13 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Auditoría de integridad enlazada
+
+- **Cambio:** se añadió la auditoría cruzada, el rango observado y la composición exacta del corpus.
+- **Versión anterior:** se describía una transcripción consolidada única y solo el rango de convocatoria.
+- **Motivo:** documentar qué versión aporta cada bloque y evitar pérdida silenciosa de P2-Q10.
+- **Decisión derivada:** Q1–Q11 se toman del archivo base y Q12–Q13 del anexo.
 
 ### 2026-08-23 — Actualización de procedencia
 
