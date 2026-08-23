@@ -1,62 +1,65 @@
 # Declaración de procedencia de las entrevistas
 
-## Identificación del registro
+**Fecha de consolidación:** 23 de agosto de 2026  
+**Responsable del levantamiento:** Johan Yantén  
+**Uso:** investigación académica del proyecto de titulación en Diseño, Universidad Diego Portales.
 
-- **Fecha de la aclaración:** 23 de agosto de 2026.
-- **Fuente:** declaración directa del autor e investigador responsable del proyecto.
-- **Función:** resolver contradicciones entre las notas originales y los documentos procesados posteriormente.
-- **Alcance:** metadatos del levantamiento; no contiene identidades ni respuestas individuales.
+## Hechos confirmados
 
-## Hechos aclarados
+- Se realizaron **ocho entrevistas reales**.
+- Las entrevistas fueron **semiestructuradas, habladas y presenciales**.
+- El levantamiento ocurrió en **Santiago durante junio de 2026**.
+- El rango definido para convocar participantes fue de **18 a 30 años**.
+- El reclutamiento fue **no probabilístico mediante referencias de la red personal**: personas cercanas facilitaron contactos que cumplían el rango etario.
+- Se obtuvo **consentimiento informado oral**.
+- Todas las preguntas y repreguntas fueron formuladas por el investigador durante las conversaciones.
+- La asistencia automatizada se utilizó únicamente después del levantamiento para apoyar la transcripción.
+- La herramienta de transcripción no entrevistó, no añadió preguntas y no produjo respuestas.
+- El documento digital consolidado constituye el corpus operativo disponible.
+- Las notas manuscritas ya no están disponibles.
+- P6 tiene 27 años.
+- La duración individual de cada entrevista no quedó registrada.
 
-1. Las entrevistas a usuarios son reales y corresponden a participantes reales.
-2. El levantamiento se realizó presencialmente en Santiago.
-3. Existió consentimiento informado.
-4. Las respuestas se registraron originalmente mediante notas manuscritas.
-5. La inteligencia artificial no realizó las entrevistas ni generó las respuestas.
-6. La inteligencia artificial se utilizó después del levantamiento para apoyar la transcripción, organización y escritura académica.
-7. Las dos preguntas adicionales sobre estrategias para dejar el teléfono y reacción ante In(Visible) también se realizaron presencialmente.
-8. El registro original de esas preguntas se encuentra en las notas manuscritas.
-9. P6 tiene 27 años.
+## Alcance del consentimiento documentado
 
-## Interpretación metodológica
+El autor confirma que el consentimiento fue informado y oral. No se conserva el texto exacto de la explicación entregada a cada participante. Por lo tanto, la memoria puede afirmar la existencia y modalidad del consentimiento, pero no debe atribuirle cláusulas específicas que no estén documentadas.
 
-Las notas manuscritas constituyen la fuente empírica primaria. Los documentos digitales que reorganizan o corrigen las respuestas son fuentes derivadas, aunque sean cercanos temporalmente al levantamiento.
+## Tratamiento del corpus
 
-La edición académica asistida por IA puede modificar sintaxis, vocabulario o nivel de formalidad. Por esta razón:
+- Los casos se identifican como P1–P8.
+- El análisis puede utilizar todas las preguntas y repreguntas contenidas en la transcripción, porque fueron realizadas por el investigador.
+- Las citas textuales deben contrastarse con el documento de transcripción consolidado y presentarse de manera anonimizada.
+- Una corrección ortográfica menor puede señalarse con corchetes cuando sea indispensable; no se deben reescribir citas para volverlas más académicas.
+- Los resultados se presentan como hallazgos cualitativos exploratorios, no como frecuencias representativas de una población.
 
-- el contenido puede analizarse mediante paráfrasis trazables a P1–P8;
-- una frase solo podrá presentarse entre comillas después de cotejarla con las notas originales;
-- debe diferenciarse la voz de la persona participante de la normalización lingüística posterior;
-- no debe atribuirse a la IA participación en la producción de las respuestas.
+## Limitaciones metodológicas
 
-Santiago es un dato relevante para describir el contexto del levantamiento, pero no convierte a una muestra de ocho participantes en representativa de la ciudad.
+1. El muestreo por referencias puede concentrar perfiles próximos a la red del investigador.
+2. El tamaño del corpus permite profundidad comparativa, pero no generalización estadística.
+3. No se registraron las duraciones individuales.
+4. No se conserva el guion verbal exacto del consentimiento.
+5. Las notas manuscritas no pueden utilizarse para una comprobación adicional.
+6. La transcripción puede contener errores propios de la conversión de voz a texto; las expresiones ambiguas deben tratarse con cautela.
 
-## Evidencia que debe preservarse
-
-Para fortalecer el apartado metodológico se recomienda mantener en archivo privado:
-
-- digitalización legible de las notas;
-- correspondencia entre cada registro y P1–P8;
-- fecha y duración de cada entrevista, si están disponibles;
-- criterio de reclutamiento;
-- texto o explicación utilizada para el consentimiento;
-- registro del procedimiento de transcripción y del alcance de la asistencia de IA;
-- tabla de discrepancias entre notas y versiones editadas.
-
-Esta documentación no debe publicarse en GitHub si contiene datos identificables.
+Estas limitaciones no invalidan el corpus. Delimitan el tipo de inferencia que puede sostenerse.
 
 ## Estado
 
-La aclaración resuelve la procedencia necesaria para iniciar la fase de análisis de usuarios. La digitalización y el cotejo continúan como tarea de preservación en la Issue #3.
+No quedan bloqueos de procedencia para iniciar la codificación y la comparación P1–P8.
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
 
-### 2026-08-23 — Creación
+### 2026-08-23 — Declaración metodológica consolidada
 
-- **Cambio:** registro de la declaración del autor sobre la procedencia y el procedimiento de las entrevistas.
-- **Versión anterior:** modalidad, consentimiento, preguntas adicionales y edad de P6 aparecían como dudas abiertas en la auditoría.
-- **Motivo:** conservar la aclaración de forma trazable y evitar que los documentos procesados se confundan con el registro original.
-- **Pendiente:** digitalizar y cotejar las notas manuscritas en un archivo privado.
+- **Cambio:** se reemplazó la declaración provisional por los hechos confirmados sobre fecha, modalidad, muestra, reclutamiento, consentimiento, autoría de preguntas, transcripción y disponibilidad documental.
+- **Versión anterior:** las notas se trataban como registro primario pendiente y se atribuían tareas de organización y redacción a la asistencia automatizada dentro del registro de entrevistas.
+- **Motivo:** el autor confirmó que todo el levantamiento fue hablado y dirigido por él, que la asistencia automatizada solo transcribió y que las notas ya no existen.
+- **Decisión derivada:** analizar la transcripción digital como corpus operativo y declarar únicamente las limitaciones que realmente permanecen.
+
+### 2026-08-23 — Primera declaración
+
+- **Cambio:** se creó un registro inicial de procedencia.
+- **Versión anterior:** la procedencia estaba dispersa entre documentos.
+- **Motivo:** distinguir la producción empírica de sus versiones derivadas.
