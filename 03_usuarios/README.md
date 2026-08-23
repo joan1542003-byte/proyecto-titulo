@@ -8,6 +8,12 @@ Comprender comportamientos, necesidades, dolores, deseos, experiencias y límite
 
 ¿Qué dos patrones de relación entre ocio digital, intención y autonomía permiten delimitar con mayor rigor a quién puede aportar Relevo y a quién no debería intentar modificar?
 
+## Documentos
+
+- `metodo-de-analisis.md`: comparación de métodos y decisión de utilizar análisis Framework seguido de análisis de tipos ideales.
+- `preguntas-metodologicas-pendientes.md`: información que debe confirmar el autor y consecuencias de cada vacío.
+- Próximos documentos: matriz P1–P8, libro de códigos, reconstrucciones de caso, comparación de tipos, personas y recorridos.
+
 ## Secuencia obligatoria
 
 1. Investigar métodos reconocidos para análisis cualitativo, segmentación conductual, personas basadas en evidencia y mapas de recorrido.
@@ -38,18 +44,28 @@ Comprender comportamientos, necesidades, dolores, deseos, experiencias y límite
 - Los tres perfiles ficticios existentes no se reutilizarán como resultados.
 - No se publicarán nombres ni citas identificables.
 - Mientras las notas no estén digitalizadas y cotejadas, se utilizarán paráfrasis P1–P8 y no citas literales.
+- Los fragmentos rotulados `Repregunta IA` no se codificarán hasta aclarar su procedencia exacta.
 - Ocho entrevistas no permiten hablar de segmentos representativos del mercado.
-- La elección de los dos tipos no se resolverá por preferencia formal: se decidirá después de investigar métodos y analizar evidencia.
+- La elección de los dos tipos no se resolverá por preferencia formal: se decidirá después de analizar evidencia.
 - El usuario puede ampliarse, delimitarse o reformularse si los hallazgos lo justifican.
 - Un caso en el que el ocio digital sea elegido, valioso y sin conflicto debe considerarse evidencia relevante, no un error que deba corregir el producto.
 
 ## Estado
 
-**Fase activa.** Seguimiento operativo en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2). La digitalización privada de notas se registra en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
+**Fase activa.** La investigación metodológica está documentada. El próximo paso es construir la matriz P1–P8 con el corpus de procedencia confirmada.
+
+Seguimiento operativo en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2). La digitalización privada de notas se registra en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-23 — Método documentado
+
+- **Cambio:** se añadieron los documentos metodológicos, la decisión Framework + tipos ideales y la cuarentena específica de `Repregunta IA`.
+- **Versión anterior:** existía una secuencia general, pero no un método comparado ni preguntas vinculadas a sus consecuencias.
+- **Motivo:** investigar cómo se construyen tipos, personas y recorridos antes de aplicarlos.
+- **Próximo paso:** matriz anónima y libro de códigos.
 
 ### 2026-08-23 — Activación de la fase 1
 
