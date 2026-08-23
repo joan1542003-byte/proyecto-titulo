@@ -8,7 +8,7 @@ El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuand
 
 ## Base metodológica consolidada
 
-Durante junio de 2026 se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago con personas del rango de 18 a 30 años. El reclutamiento fue no probabilístico, mediante referencias de la red personal. Se obtuvo consentimiento informado oral.
+Durante junio de 2026 se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago con personas de 19 a 27 años, bajo un criterio de convocatoria de 18 a 30 años. El reclutamiento fue no probabilístico, mediante referencias de la red personal. Se obtuvo consentimiento informado oral.
 
 Todas las preguntas y repreguntas fueron formuladas por el investigador. Las conversaciones se transcribieron posteriormente con asistencia automatizada, sin generación de preguntas ni respuestas. La transcripción digital es el corpus operativo. Las notas manuscritas ya no están disponibles. La duración individual no fue registrada. P6 tiene 27 años.
 
@@ -31,20 +31,20 @@ Resultados:
 
 ### Fase 1 — Usuarios
 
-**Estado:** activa.
+**Estado:** activa; corpus, códigos, casos, matriz y tipología completados.
 
 Orden obligatorio:
 
-1. preparar el corpus anonimizado P1–P8;
-2. construir un libro de códigos inicial;
-3. analizar cada caso antes de comparar;
-4. construir una matriz de evidencia entre casos;
-5. reconocer patrones, contradicciones y casos negativos;
-6. proponer dos tipos de usuario como construcciones analíticas, no como estereotipos;
-7. validar que ambos tipos sean distinguibles y útiles para decidir;
-8. desarrollar perfiles, necesidades, tensiones y recorridos;
-9. traducir los hallazgos a requisitos y límites del proyecto;
-10. redactar el apartado de usuario para la memoria.
+1. [Completado] preparar el corpus anonimizado P1–P8;
+2. [Completado] construir un libro de códigos inicial;
+3. [Completado] analizar cada caso antes de comparar;
+4. [Completado] construir una matriz de evidencia entre casos;
+5. [Completado] reconocer patrones, contradicciones y casos negativos;
+6. [Completado] proponer dos tipos situacionales;
+7. [Completado] elegir usuario principal más usuario límite;
+8. [Activo] desarrollar perfiles, necesidades, tensiones y recorridos;
+9. [Pendiente] traducir los hallazgos a requisitos y límites del proyecto;
+10. [Pendiente] redactar el apartado de usuario para la memoria.
 
 No se elaborarán personas ni recorridos definitivos antes de completar la matriz.
 
@@ -104,6 +104,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Avance de la fase 1
+
+- **Cambio:** se marcó como completada la secuencia desde corpus hasta tipología y se precisó el rango observado.
+- **Versión anterior:** todos los pasos de análisis figuraban como próximos y el rango de convocatoria podía confundirse con el rango efectivo.
+- **Motivo:** mantener la hoja de ruta sincronizada con los entregables registrados.
+- **Decisión derivada:** abrir únicamente el desarrollo de personas y recorridos.
 
 ### 2026-08-23 — Cierre de procedencia e inicio operativo de la matriz
 
