@@ -199,7 +199,7 @@ Ningún fragmento se excluye por los rótulos heredados de versiones previas: el
 
 - **Fecha:** junio de 2026.
 - **Lugar:** Santiago.
-- **Participantes:** ocho personas del rango de 18 a 30 años.
+- **Participantes:** ocho personas de 19 a 27 años; criterio de convocatoria de 18 a 30 años.
 - **Reclutamiento:** referencias de la red personal.
 - **Consentimiento:** informado y oral.
 - **Conducción:** todas las preguntas y repreguntas fueron realizadas por el investigador.
@@ -235,6 +235,13 @@ Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qual
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Precisión del rango observado
+
+- **Cambio:** se separó el rango efectivo de P1–P8 del criterio de convocatoria.
+- **Versión anterior:** ambos aparecían resumidos como participantes de 18 a 30 años.
+- **Motivo:** la auditoría de integridad confirmó edades de 19 a 27 años.
+- **Decisión derivada:** mantener 18–30 solo como criterio de reclutamiento.
 
 ### 2026-08-23 — Corpus consolidado
 
