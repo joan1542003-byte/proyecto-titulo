@@ -10,21 +10,22 @@ La pregunta central de la fase es:
 
 ## Condiciones del corpus
 
-El método debe responder a cinco condiciones:
+El método responde a seis condiciones:
 
 1. existen ocho entrevistas, por lo que el objetivo es exploratorio y no representativo;
-2. las notas manuscritas son la fuente primaria, pero aún no están digitalizadas;
-3. los documentos digitales fueron transcritos, reorganizados o ajustados académicamente con apoyo de IA;
-4. se necesita comparar a cada participante como caso completo y también observar patrones entre casos;
-5. el resultado solicitado es una tipología de dos usuarios que luego debe traducirse a herramientas de diseño.
+2. el levantamiento fue semiestructurado, hablado y presencial;
+3. la transcripción digital consolidada es el corpus operativo disponible;
+4. todas las preguntas y repreguntas fueron realizadas por el investigador;
+5. se necesita comparar a cada participante como caso completo y también observar patrones entre casos;
+6. el resultado solicitado es una tipología de dos usuarios que luego debe traducirse a herramientas de diseño.
 
-Estas condiciones excluyen una segmentación estadística y desaconsejan cualquier análisis dependiente del vocabulario literal, la entonación o la estructura discursiva.
+La transcripción fue apoyada por una herramienta automatizada después de las conversaciones. Esta condición exige cautela frente a pasajes ambiguos, pero no excluye ninguna respuesta por procedencia. El análisis no utilizará entonación ni rasgos conversacionales que la transcripción no conserve.
 
 ## Métodos considerados
 
 | Método | Qué permite | Adecuación al proyecto | Decisión |
 |---|---|---|---|
-| Análisis temático reflexivo | Construir temas de significado compartido mediante una interpretación reflexiva del investigador. | Es valioso para preguntas interpretativas amplias, pero las versiones disponibles no son transcripciones literales y el objetivo inmediato es comparar casos y construir tipos. Braun y Clarke (2021, 2024) advierten que no debe usarse para producir simples resúmenes temáticos o categorías prefijadas. | No se usará como método principal. Se conservarán sus exigencias de reflexividad y coherencia. |
+| Análisis temático reflexivo | Construir temas de significado compartido mediante una interpretación reflexiva del investigador. | Es valioso para preguntas interpretativas amplias, pero el objetivo inmediato es comparar casos y construir tipos. Braun y Clarke (2021, 2024) advierten que no debe usarse para producir simples resúmenes temáticos o categorías prefijadas. | No se usará como método principal. Se conservarán sus exigencias de reflexividad y coherencia. |
 | Análisis de contenido | Clasificar contenido y, según su variante, describir frecuencias o categorías. | Puede ordenar respuestas, pero corre el riesgo de fragmentar a cada persona y convertir frecuencia en importancia. | No se adopta como método rector. |
 | Análisis Framework | Organizar categorías inductivas y deductivas en una matriz para comparar temas dentro y entre casos. | Se ajusta a entrevistas guiadas, una pregunta aplicada y la necesidad de mantener juntos caso, evidencia y decisión. | **Seleccionado para la primera etapa analítica.** |
 | Análisis de tipos ideales | Construir una tipología cualitativa a partir de reconstrucciones completas de casos, semejanzas, diferencias y casos óptimos. | Responde directamente a la necesidad de desarrollar dos tipos sin fingir una segmentación poblacional. | **Seleccionado para la segunda etapa analítica.** |
@@ -162,12 +163,11 @@ La construcción de tipos se realizará sobre casos y episodios, no sobre frases
 
 | Nivel | Condición | Uso permitido |
 |---|---|---|
-| Alto | Dato confirmado por el autor y verificable en la fuente primaria o en versiones concordantes | Análisis y redacción metodológica |
-| Medio | Contenido consistente en un registro derivado, pero todavía no cotejado con notas | Paráfrasis analítica con P1–P8 |
-| Bajo | Redacción transformada, dato contradictorio o procedencia incompleta | Hipótesis o pregunta, no conclusión |
-| En cuarentena | Contenido cuya producción por participante no está confirmada | No se codifica hasta resolver su procedencia |
+| Alto | Dato confirmado por el autor o contenido explícito y contextualizado en la transcripción consolidada | Análisis y redacción |
+| Medio | Interpretación respaldada por más de un fragmento o por versiones concordantes, pero que requiere síntesis | Hallazgo analítico con evidencia P1–P8 |
+| Bajo | Pasaje ambiguo, contradicción no resuelta o inferencia sin respuesta directa | Hipótesis, memo o pregunta; no conclusión |
 
-Las etiquetas `Repregunta IA` permanecerán en cuarentena hasta aclarar si representan preguntas realmente formuladas durante las entrevistas o agregados posteriores.
+Ningún fragmento se excluye por los rótulos heredados de versiones previas: el autor confirmó que todas las preguntas y repreguntas fueron formuladas durante las conversaciones. Los rótulos que atribuían esas intervenciones a una herramienta se consideran errores de edición y no categorías del corpus.
 
 ## Protocolo de calidad
 
@@ -178,8 +178,8 @@ Las etiquetas `Repregunta IA` permanecerán en cuarentena hasta aclarar si repre
 - No interpretar cantidad de menciones como prevalencia poblacional.
 - No calcular porcentajes para presentar hallazgos cualitativos como representativos.
 - Diferenciar ausencia de mención de ausencia del fenómeno.
-- Verificar cualquier cita textual contra las notas manuscritas.
-- Informar cómo se utilizó IA y qué transformaciones realizó.
+- Verificar cualquier cita textual contra la transcripción digital consolidada y conservar el identificador P1–P8.
+- Informar que la asistencia automatizada se limitó a la transcripción posterior y considerar posibles errores de conversión.
 - Revisar los tipos contra todas las reconstrucciones, no solo contra el caso que mejor los ilustra.
 - Someter las descripciones finales a una revisión del autor y, si es posible, a reflexión posterior con participantes o nuevas personas del público de interés.
 
@@ -193,17 +193,22 @@ Las etiquetas `Repregunta IA` permanecerán en cuarentena hasta aclarar si repre
 - Presentar el ocio digital como problema por definición.
 - Tratar la intervención phygital como deseable para todos.
 - Usar citas editadas como si fueran literales.
-- Delegar a IA la decisión interpretativa final.
+- Delegar la decisión interpretativa final a una herramienta.
 
-## Preguntas pendientes antes de codificar todo el corpus
+## Datos metodológicos consolidados
 
-1. Fechas y duración aproximada de las entrevistas.
-2. Procedimiento y criterio de reclutamiento.
-3. Forma y contenido del consentimiento informado.
-4. Procedencia exacta de las secciones rotuladas `Repregunta IA`.
-5. Acceso actual a las notas manuscritas.
+- **Fecha:** junio de 2026.
+- **Lugar:** Santiago.
+- **Participantes:** ocho personas del rango de 18 a 30 años.
+- **Reclutamiento:** referencias de la red personal.
+- **Consentimiento:** informado y oral.
+- **Conducción:** todas las preguntas y repreguntas fueron realizadas por el investigador.
+- **Transcripción:** apoyo automatizado posterior, sin generación de contenido.
+- **Duración:** no registrada.
+- **Notas manuscritas:** no disponibles.
+- **Corrección:** P6 tiene 27 años.
 
-La cuarta pregunta condiciona qué fragmentos ingresan al corpus. Las demás pueden completarse durante el análisis, pero deben resolverse antes de cerrar la metodología de la memoria.
+Los vacíos de duración, guion exacto de consentimiento y notas no se reconstruirán. No bloquean la codificación; delimitan la descripción metodológica.
 
 ## Referencias
 
@@ -229,7 +234,14 @@ Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qual
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Corpus consolidado
+
+- **Cambio:** se actualizaron las condiciones del corpus, niveles de confianza, protocolo de calidad y preguntas pendientes.
+- **Versión anterior:** el análisis dependía de digitalizar notas y excluía fragmentos por rótulos erróneos de procesamiento.
+- **Motivo:** el autor confirmó que todas las preguntas fueron realizadas por él, que la herramienta solo transcribió y que las notas ya no están disponibles.
+- **Decisión derivada:** codificar el corpus completo y comprobar citas contra la transcripción consolidada.
 
 ### 2026-08-23 — Creación
 
@@ -237,4 +249,4 @@ Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qual
 - **Versión anterior:** la carpeta indicaba una secuencia general, pero no justificaba un método ni comparaba alternativas.
 - **Motivo:** evitar que los dos tipos se decidan intuitivamente o que las herramientas de diseño precedan a la evidencia.
 - **Decisión:** utilizar análisis Framework seguido de análisis de tipos ideales; emplear personas y recorridos solo como traducciones posteriores.
-- **Pendiente:** resolver las cinco preguntas metodológicas y construir la matriz P1–P8.
+- **Pendiente de esa versión:** resolver las preguntas metodológicas y construir la matriz P1–P8. Las preguntas quedaron resueltas en la actualización posterior.
