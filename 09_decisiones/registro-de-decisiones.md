@@ -4,20 +4,20 @@
 
 - **Fecha:** 2026-08-23
 - **Estado:** vigente
-- **Decisión:** usar un repositorio privado y no subir fuentes primarias identificables.
-- **Fundamento:** las respuestas contienen nombres y otros datos personales; la documentación de proceso no requiere publicarlos.
+- **Decisión:** usar un repositorio privado y no subir fuentes identificables de participantes.
+- **Fundamento:** la documentación de proceso no requiere publicar datos personales.
 - **Consecuencia:** GitHub almacenará inventarios, análisis anonimizados y decisiones.
-- **Condición de revisión:** ninguna fuente identificable se incorporará sin consentimiento y una necesidad académica explícita.
+- **Condición de revisión:** ninguna fuente identificable se incorporará sin necesidad académica explícita y autorización adecuada.
 
-## D-002 — Jerarquía corregida de fuentes de entrevistas
+## D-002 — Corpus operativo de entrevistas
 
 - **Fecha:** 2026-08-23
 - **Estado:** vigente; reemplaza la formulación anterior de D-002
-- **Decisión:** considerar las notas manuscritas F-004 como la fuente empírica primaria. Las versiones digitales F-004-D, F-005, F-006 y F-007 se consideran transcripciones, organizaciones o redacciones derivadas.
-- **Fundamento:** el autor confirmó que las ocho entrevistas fueron reales y presenciales; la IA se utilizó únicamente después para apoyar la transcripción, organización y escritura académica.
-- **Formulación reemplazada:** F-004 se había identificado como una exportación primaria de cuestionario digital con repreguntas generadas por IA.
-- **Consecuencia:** las versiones procesadas pueden sustentar paráfrasis trazables, pero las citas literales deberán verificarse contra las notas.
-- **Condición de revisión:** digitalización, cotejo y archivo controlado de F-004.
+- **Decisión:** distinguir el levantamiento empírico F-004 de su transcripción digital F-004-D y utilizar F-004-D como corpus operativo.
+- **Fundamento:** las ocho entrevistas fueron reales, habladas y presenciales; todas las preguntas fueron realizadas por el investigador y la asistencia automatizada solo se utilizó para transcribir posteriormente.
+- **Formulación reemplazada:** se consideraban las notas manuscritas como soporte pendiente y las versiones digitales como materiales que requerían cotejo antes de citar.
+- **Consecuencia:** todo el contenido transcrito puede codificarse; las citas se comprueban contra F-004-D y los pasajes ambiguos reciben menor confianza.
+- **Condición de revisión:** una contradicción interna relevante dentro del corpus o nueva evidencia aportada por el autor.
 
 ## D-003 — Perfiles sintéticos no equivalen a tipos de usuario
 
@@ -25,7 +25,7 @@
 - **Estado:** vigente
 - **Decisión:** conservar los perfiles existentes únicamente como exploraciones históricas.
 - **Fundamento:** fueron construidos para representar situaciones y no derivan de una segmentación documentada.
-- **Consecuencia:** los nuevos tipos de usuario se desarrollarán después de una matriz de evidencia y análisis de casos contrastantes.
+- **Consecuencia:** los tipos de usuario se desarrollarán después de reconstruir casos y comparar evidencia.
 
 ## D-004 — Una fase principal a la vez
 
@@ -33,7 +33,7 @@
 - **Estado:** vigente
 - **Decisión:** no desarrollar simultáneamente usuarios, mercado, propuesta y memoria.
 - **Fundamento:** las decisiones posteriores dependen de resultados previos y deben poder rastrearse.
-- **Consecuencia actual:** la fase sustantiva activa es usuarios. Los inventarios documentales y la preservación de fuentes son tareas auxiliares.
+- **Consecuencia actual:** la fase sustantiva activa es usuarios. El orden interno es corpus, códigos, casos, matriz, tipos, personas y recorridos.
 
 ## D-005 — Formulación vigente, no definitiva
 
@@ -41,45 +41,61 @@
 - **Estado:** provisional
 - **Decisión:** usar como punto de partida el sistema Android más testigo situado sin pantalla.
 - **Fundamento:** es la formulación más reciente y responde a la necesidad de hacer visible el objeto y el contexto.
-- **Condición de revisión:** pruebas de ubicación, modalidad y comparación con notificación convencional.
+- **Condición de revisión:** evidencia de usuarios, pruebas de ubicación y comparación con una notificación convencional.
 
-## D-006 — Procedencia y dato corregido
+## D-006 — Descripción consolidada del levantamiento
 
 - **Fecha:** 2026-08-23
 - **Estado:** vigente
-- **Decisión:** registrar que las entrevistas se realizaron presencialmente en Santiago, con consentimiento informado; las dos preguntas adicionales se hicieron presencialmente y P6 tiene 27 años.
-- **Fundamento:** declaración explícita del autor registrada en F-010.
-- **Consecuencia:** las preguntas adicionales dejan de estar en cuarentena por procedencia. Su redacción literal continúa sujeta a cotejo.
+- **Decisión:** registrar ocho entrevistas semiestructuradas presenciales realizadas en Santiago durante junio de 2026 con personas de 18 a 30 años, reclutadas mediante referencias de la red personal y con consentimiento informado oral. P6 tiene 27 años.
+- **Fundamento:** declaración explícita del autor y guía local de entrevistas.
+- **Consecuencia:** la metodología puede redactarse con esos datos, declarando que las duraciones y el guion exacto del consentimiento no se conservaron.
 
 ## D-007 — Los dos tipos de usuario se deciden después del análisis
 
 - **Fecha:** 2026-08-23
 - **Estado:** vigente
 - **Decisión:** no fijar de antemano si se usarán dos variantes del público objetivo o usuario principal más usuario límite.
-- **Fundamento:** la estructura debe responder a patrones, diferencias y casos contradictorios presentes en la evidencia, además del propósito ético de Relevo.
-- **Alternativas que se compararán:** dos patrones internos del público objetivo; o un patrón principal y un patrón límite que indique cuándo no intervenir.
-- **Condición de cierre:** método justificado, matriz P1–P8, libro de códigos y comparación explícita de alternativas.
+- **Fundamento:** la estructura debe responder a patrones, diferencias y casos contradictorios, además del propósito ético de Relevo.
+- **Alternativas:** dos patrones internos del público objetivo; o un patrón principal y un patrón límite que indique cuándo no intervenir.
+- **Condición de cierre:** libro de códigos, reconstrucciones P1–P8, matriz y comparación explícita.
 
 ## D-008 — Santiago es contexto, no representatividad
 
 - **Fecha:** 2026-08-23
 - **Estado:** vigente
-- **Decisión:** conservar Santiago como dato metodológico del levantamiento, sin usarlo para generalizar a la población de la ciudad.
-- **Fundamento:** la ubicación ayuda a describir contexto y alcance, pero una muestra de conveniencia de ocho personas no permite inferencias poblacionales.
+- **Decisión:** conservar Santiago como contexto del levantamiento, sin generalizar a la población de la ciudad.
+- **Fundamento:** ocho personas reclutadas por referencias no constituyen una muestra representativa.
+
+## D-009 — Cierre de la preservación de notas
+
+- **Fecha:** 2026-08-23
+- **Estado:** vigente
+- **Decisión:** cerrar la recuperación o digitalización de notas manuscritas, porque ya no están disponibles, y no reconstruirlas retrospectivamente.
+- **Fundamento:** declaración explícita del autor.
+- **Alternativa descartada:** mantener la fase de usuarios bloqueada hasta localizar un soporte inexistente.
+- **Consecuencia:** F-004-D es el corpus operativo y la pérdida de las notas se declara como limitación documental.
+- **Issue asociada:** [#3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Consolidación metodológica y D-009
+
+- **Cambio:** se reescribieron D-002 y D-006, se precisó D-004 y se añadió D-009.
+- **Versión anterior:** la jerarquía dependía de notas no disponibles y atribuía a la asistencia automatizada transformaciones más amplias del registro.
+- **Motivo:** el autor confirmó que la herramienta solo transcribió, que todas las preguntas fueron humanas y que las notas ya no existen.
+- **Resultado:** el corpus queda habilitado y la preservación deja de figurar como tarea pendiente.
 
 ### 2026-08-23 — Corrección metodológica y transición de fase
 
-- **Cambio:** se reescribió D-002, se actualizó la consecuencia de D-004 y se añadieron D-006, D-007 y D-008.
-- **Versión anterior:** el archivo consideraba primaria una exportación digital, mantenía activa la auditoría y no registraba la corrección de P6 ni el alcance de Santiago.
-- **Motivo:** incorporar las aclaraciones del autor sin borrar la formulación reemplazada ni sus consecuencias.
-- **Resultado:** la fase de usuarios puede comenzar con reglas explícitas de trazabilidad y uso de citas.
+- **Cambio:** se incorporaron D-006, D-007 y D-008.
+- **Versión anterior:** no se registraban la corrección de P6 ni el alcance de Santiago.
+- **Motivo:** trasladar aclaraciones del autor al sistema de decisiones.
 
 ### 2026-08-23 — Creación
 
-- **Cambio:** registro de cinco decisiones iniciales.
-- **Versión anterior:** las decisiones estaban implícitas o distribuidas entre borradores.
+- **Cambio:** se registraron las decisiones iniciales.
+- **Versión anterior:** estaban implícitas o distribuidas entre borradores.
 - **Motivo:** conservar fundamentos, alternativas y condiciones de revisión.
