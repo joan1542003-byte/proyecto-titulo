@@ -40,6 +40,7 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 - Ocho entrevistas semiestructuradas, habladas y presenciales.
 - Levantamiento realizado en Santiago durante junio de 2026.
 - Rango observado de 19 a 27 años, bajo un criterio de convocatoria de 18 a 30 años y reclutamiento por referencias de la red personal.
+- La edad es el único criterio común confirmado; no se asumirá que todas las personas son estudiantes.
 - Consentimiento informado oral.
 - Todas las preguntas y repreguntas formuladas por el investigador.
 - Transcripción digital posterior como corpus operativo.
@@ -68,13 +69,20 @@ La decisión deriva de P1–P8 y permanece abierta a revisión con nueva evidenc
 
 ## Estado
 
-**Fase activa.** Corpus, códigos, casos, matriz y tipología están completados. El siguiente entregable es desarrollar las dos personas y sus recorridos sin inventar atributos.
+**Fase pausada por prioridad documental.** Corpus, códigos, casos, matriz y tipología están completados. Cuando se retome, los tipos se traducirán primero a fichas textuales basadas en evidencia. La entrega todavía no exige visualidad, por lo que no se añadirán nombres, retratos ni biografías sintéticas.
 
-Seguimiento operativo en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2).
+Seguimiento del avance conservado en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2). La migración activa se gestiona en la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Criterio etario y pausa
+
+- **Cambio:** se registró que la edad es el único criterio común, se descartó asumir condición estudiantil y se pausó la creación de personas.
+- **Versión anterior:** el documento situaba personas y recorridos como siguiente entregable inmediato.
+- **Motivo:** aclaración del autor y prioridad de organización documental.
+- **Decisión derivada:** usar fichas textuales basadas en evidencia cuando se retome; no producir visualidad no exigida.
 
 ### 2026-08-23 — Tipología completada
 
