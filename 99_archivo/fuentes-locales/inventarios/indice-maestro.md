@@ -18,7 +18,7 @@
 | C-05 | E12 | Borradores, versión final y autoevaluación | Parcial | Convertir autoevaluación y verificar exportaciones |
 | C-06 | Cierre del semestre 1 | Entregas finales y mapa triple | Parcial | Comprobar equivalencia entre PDF y Markdown |
 | C-07 | Instrumentos de usuarios | Guiones y corpus anonimizado | Parcial | Convertir versiones de guion |
-| C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Auditoría completada | Crear manifiesto y comparar tres memorias DOCX |
+| C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Parcialmente migrado | Ordenar y deduplicar los 21 Markdown de proceso |
 | C-09 | Bibliografía | Fuentes académicas y guías | Pendiente | Crear fichas APA 7 |
 | C-10 | Administración | Pautas, rúbricas, planes y feedback | Pendiente | Resumir solo lo pertinente |
 | C-11 | Recursos visuales | Diagramas, mapas y renders | Pendiente | Crear índice selectivo |
@@ -39,6 +39,8 @@
 
 ### Lote 2 — DOCX propios
 
+**Estado:** las tres memorias editables de Semestre 2 fueron convertidas y comparadas; los demás DOCX propios siguen pendientes.
+
 **Criterio de cierre:**
 
 - documentos sin equivalente Markdown convertidos;
@@ -47,6 +49,8 @@
 - fuente editable y exportación relacionadas.
 
 ### Lote 3 — Segundo semestre
+
+**Estado:** auditoría general y familia de memorias completadas; documentación de perfiles, mapas, flujos y proceso pendiente.
 
 **Criterio de cierre:**
 
@@ -89,3 +93,10 @@
 - **Versión anterior:** todas las colecciones del semestre 1 figuraban como pendientes y Semestre 2 como en auditoría.
 - **Motivo:** reflejar la migración de trece documentos y el cierre de la auditoría de 416 archivos de Semestre 2.
 - **Decisión derivada:** mantener Lote 1 abierto hasta ordenar los 21 Markdown de Semestre 2.
+
+### 2026-08-23 — Sublote 1B
+
+- **Cambio:** C-08 pasó de auditado a parcialmente migrado y Lote 2 registró la conversión de tres DOCX.
+- **Versión anterior:** las memorias estaban identificadas, pero no podían compararse como Markdown.
+- **Motivo:** registrar la diferencia entre avance archivístico y selección de una memoria vigente.
+- **Decisión derivada:** la siguiente unidad son los 21 Markdown existentes en Semestre 2.

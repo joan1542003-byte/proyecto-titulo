@@ -33,7 +33,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 | `semestre-1/e11` | Guía, plan, presentación y memoria revisada | Migrado en Markdown |
 | `semestre-1/e12` | Cadena de borradores y cierre de memoria | Migrado en Markdown |
 | `semestre-1/cierre` | Entregables y reflexiones de cierre | Parcial |
-| `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Auditoría completada; migración pendiente |
+| `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Tres memorias migradas; resto pendiente |
 | `instrumentos` | Guiones, cuestionarios y protocolos propios | Parcialmente migrado |
 | `fuentes-terceros` | Fichas bibliográficas y registros de existencia | Pendiente |
 | `inventarios` | Mapas, manifiestos, omisiones y equivalencias | Activo |
@@ -63,6 +63,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 ## Navegación
 
 - [Archivo del semestre 1](semestre-1/README.md)
+- [Archivo del semestre 2](semestre-2/README.md)
 - [Protocolo de migración](protocolo-de-migracion.md)
 - [Mapa del archivo local](inventarios/mapa-del-archivo-local.md)
 - [Índice maestro](inventarios/indice-maestro.md)
@@ -87,3 +88,10 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 - **Versión anterior:** la arquitectura estaba definida, pero aún no contenía fuentes locales migradas.
 - **Motivo:** comenzar la consolidación con materiales textuales propios y verificables antes de abordar formatos complejos.
 - **Decisión derivada:** continuar con los DOCX propios y los 21 Markdown de Semestre 2; los visuales se registrarán mediante manifiestos.
+
+### 2026-08-23 — Memorias del semestre 2
+
+- **Cambio:** se añadieron tres memorias convertidas, su comparación, un manifiesto de medios y un informe de integridad.
+- **Versión anterior:** Semestre 2 estaba auditado, pero no contenía fuentes DOCX migradas.
+- **Motivo:** resolver primero la familia documental que concentra la formulación más amplia del proyecto.
+- **Decisión derivada:** mantener la vigencia de la memoria abierta y continuar con los 21 Markdown de proceso.

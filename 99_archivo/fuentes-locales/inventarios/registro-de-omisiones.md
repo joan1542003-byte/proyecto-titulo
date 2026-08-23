@@ -79,3 +79,13 @@ La omisión puede revertirse si aparece una necesidad académica concreta, se re
 - **Material visual:** 217 PNG, 60 SVG y 77 PDF dentro de `output` permanecen pendientes de un manifiesto selectivo; no se subieron indiscriminadamente.
 - **Material institucional:** los 21 archivos de coordinación se mantienen como conjunto inventariado y separado de la autoría propia.
 - **Paquetes y código:** trece ZIP y tres archivos Python de Semestre 2 se conservarán en su formato; Markdown describirá su función cuando corresponda.
+
+### 2026-08-23 — Aplicación al sublote 1B
+
+- **Cambio:** se aplicaron las reglas de omisión y tratamiento restringido a tres memorias DOCX.
+- **Versión anterior:** los DOCX y sus medios internos estaban inventariados, pero no tenían una decisión de publicación.
+- **Motivo:** convertir el contenido textual sin abrir todavía una línea de visualidad.
+- **Originales DOCX:** no se subieron, editaron, movieron ni eliminaron; se registraron ruta relativa y SHA-256.
+- **Medios internos:** 23 imágenes distintas por SHA-256 quedaron inventariadas, sin publicación binaria.
+- **Renders de control:** 113 páginas renderizadas permanecen como temporales locales y no forman parte del repositorio.
+- **Correcciones:** se aplicaron solo a las copias Markdown y quedaron detalladas en el disclaimer; las fuentes históricas permanecen intactas.
