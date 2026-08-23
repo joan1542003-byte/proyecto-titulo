@@ -9,13 +9,13 @@
 - Se realizaron **ocho entrevistas reales**.
 - Las entrevistas fueron **semiestructuradas, habladas y presenciales**.
 - El levantamiento ocurrió en **Santiago durante junio de 2026**.
-- El rango definido para convocar participantes fue de **18 a 30 años**.
+- El rango definido para convocar participantes fue de **18 a 30 años**; el rango observado fue de **19 a 27 años**.
 - El reclutamiento fue **no probabilístico mediante referencias de la red personal**: personas cercanas facilitaron contactos que cumplían el rango etario.
 - Se obtuvo **consentimiento informado oral**.
 - Todas las preguntas y repreguntas fueron formuladas por el investigador durante las conversaciones.
 - La asistencia automatizada se utilizó únicamente después del levantamiento para apoyar la transcripción.
 - La herramienta de transcripción no entrevistó, no añadió preguntas y no produjo respuestas.
-- El documento digital consolidado constituye el corpus operativo disponible.
+- El corpus operativo digital combina las once preguntas base del archivo de respuestas con las dos preguntas adicionales del anexo.
 - Las notas manuscritas ya no están disponibles.
 - P6 tiene 27 años.
 - La duración individual de cada entrevista no quedó registrada.
@@ -50,6 +50,13 @@ No quedan bloqueos de procedencia para iniciar la codificación y la comparació
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Cobertura exacta del corpus
+
+- **Cambio:** se añadió el rango observado y la composición de Q1–Q13.
+- **Versión anterior:** solo constaba el rango de convocatoria y se hablaba de un documento consolidado único.
+- **Motivo:** incorporar la auditoría estructural de las dos versiones digitales.
+- **Decisión derivada:** conservar la regla de consolidación sin reconstruir respuestas ausentes.
 
 ### 2026-08-23 — Declaración metodológica consolidada
 
