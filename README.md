@@ -4,7 +4,7 @@ Repositorio privado de investigación, desarrollo y documentación del proyecto 
 
 ## Propósito del repositorio
 
-Este repositorio será la fuente central de trazabilidad del proyecto. Su función es conservar de manera ordenada:
+Este repositorio es la fuente central de trazabilidad del proyecto. Conserva de manera ordenada:
 
 - el contexto y la evolución de Relevo;
 - las fuentes y su nivel de confiabilidad;
@@ -24,20 +24,22 @@ Relevo es un proyecto phygital que busca devolver una intención personal a la c
 
 El proyecto no pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento. Su valor propuesto depende de apoyar una decisión autónoma mediante una señal breve, configurable y no punitiva.
 
-Esta síntesis es provisional hasta concluir la auditoría de fuentes, feedback y entrevistas.
+Esta formulación continúa abierta a revisión. El producto final deberá responder a la investigación, no antecederla.
 
 ## Estado actual
 
-**Fase 0: auditoría, normalización y arquitectura de información.**
+**Fase 1 activa: investigación y análisis de usuarios.**
 
-Antes de redactar conclusiones o desarrollar entregables definitivos se debe:
+La fase 0 quedó cerrada después de aclarar que:
 
-1. identificar qué documentos son fuentes primarias, derivados o borradores;
-2. corregir contradicciones metodológicas;
-3. documentar el feedback académico;
-4. anonimizar la información de participantes;
-5. establecer preguntas pendientes;
-6. definir el orden de investigación y desarrollo.
+- las ocho entrevistas son reales y se realizaron presencialmente en Santiago;
+- existió consentimiento informado;
+- las notas manuscritas son el registro original;
+- la IA se utilizó únicamente después del levantamiento para apoyar la transcripción, organización y redacción académica;
+- las dos preguntas adicionales también se realizaron presencialmente y quedaron registradas en notas;
+- P6 tiene 27 años.
+
+La tarea sustantiva vigente está en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2). La preservación de las notas originales se controla por separado en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
 
 ## Principios de trabajo
 
@@ -54,7 +56,9 @@ Antes de redactar conclusiones o desarrollar entregables definitivos se debe:
 - Mantener los datos identificables fuera del repositorio.
 - Cerrar cada documento Markdown con un registro de cambios.
 
-## Arquitectura prevista
+Las reglas completas están en [Directrices de trabajo](https://github.com/joan1542003-byte/proyecto-titulo/blob/main/00_gobernanza/directrices-de-trabajo.md).
+
+## Arquitectura
 
 | Directorio | Función |
 |---|---|
@@ -70,19 +74,23 @@ Antes de redactar conclusiones o desarrollar entregables definitivos se debe:
 | `09_decisiones` | Registro cronológico de decisiones y cambios de dirección. |
 | `99_archivo` | Material superado que debe conservarse sin tratarse como vigente. |
 
-Los directorios se incorporarán con documentos explicativos; no se crearán carpetas vacías.
-
 ## Gestión de tareas
 
-Las acciones pendientes se registrarán como GitHub Issues. Los documentos Markdown conservarán el razonamiento, la evidencia y los resultados; las Issues conservarán el estado operativo, responsables y criterios de cierre.
+Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo, responsables y criterios de cierre.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-23 — Inicio de la fase 1
+
+- **Cambio:** actualización del estado del proyecto, incorporación de las aclaraciones metodológicas y enlaces a las Issues #2 y #3.
+- **Versión anterior:** el repositorio permanecía en fase 0 y describía la procedencia de las entrevistas como una duda abierta.
+- **Motivo:** el autor confirmó la modalidad presencial, el consentimiento, la fuente manuscrita, el uso posterior de IA, la procedencia de las preguntas adicionales y la edad de P6.
+- **Decisión derivada:** comenzar el análisis de usuarios sin presentar como literales las redacciones procesadas por IA.
 
 ### 2026-08-23 — Inicialización documental
 
 - **Cambio:** reemplazo del README mínimo por el contexto, propósito, principios y arquitectura prevista del repositorio.
 - **Versión anterior:** el archivo contenía únicamente `# proyecto-titulo`.
 - **Motivo:** establecer una fuente central, legible y trazable antes de incorporar investigación o desarrollo.
-- **Estado:** la síntesis y la estructura deberán revisarse después de auditar el feedback E15 y las entrevistas.
