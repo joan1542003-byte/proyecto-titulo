@@ -28,12 +28,12 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 
 | Ruta | Contenido | Estado |
 |---|---|---|
-| `semestre-1/e09` | Auditoría, formulación y memoria del hito E09 | Primera migración |
-| `semestre-1/e10` | Revisión cruzada, guiones y transcripciones | Primera migración |
-| `semestre-1/e11` | Guías, plan, presentación y memoria revisada | Primera migración |
-| `semestre-1/e12` | Cadena de borradores y cierre de memoria | Primera migración |
-| `semestre-1/cierre` | Entregables y reflexiones de cierre | Primera migración |
-| `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Auditoría en curso |
+| `semestre-1/e09` | Auditoría y memoria del hito E09 | Migrado |
+| `semestre-1/e10` | Revisión cruzada y transcripción | Parcial |
+| `semestre-1/e11` | Guía, plan, presentación y memoria revisada | Migrado en Markdown |
+| `semestre-1/e12` | Cadena de borradores y cierre de memoria | Migrado en Markdown |
+| `semestre-1/cierre` | Entregables y reflexiones de cierre | Parcial |
+| `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Auditoría completada; migración pendiente |
 | `instrumentos` | Guiones, cuestionarios y protocolos propios | Parcialmente migrado |
 | `fuentes-terceros` | Fichas bibliográficas y registros de existencia | Pendiente |
 | `inventarios` | Mapas, manifiestos, omisiones y equivalencias | Activo |
@@ -62,10 +62,13 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 
 ## Navegación
 
+- [Archivo del semestre 1](semestre-1/README.md)
 - [Protocolo de migración](protocolo-de-migracion.md)
 - [Mapa del archivo local](inventarios/mapa-del-archivo-local.md)
 - [Índice maestro](inventarios/indice-maestro.md)
 - [Registro de omisiones](inventarios/registro-de-omisiones.md)
+- [Registro de conversiones](inventarios/registro-de-conversiones.md)
+- [Auditoría documental de Semestre 2](inventarios/auditoria-semestre-2.md)
 
 ---
 
@@ -77,3 +80,10 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 - **Versión anterior:** `99_archivo` definía reglas generales, pero no tenía una arquitectura de conversión ni navegación propia.
 - **Motivo:** ampliar la cobertura documental sin mezclar versiones históricas con contenido vigente.
 - **Decisión derivada:** migrar por lotes, comenzando por documentos propios que ya existen como Markdown o texto estructurado.
+
+### 2026-08-23 — Primer lote documental
+
+- **Cambio:** se añadieron trece documentos propios, ocho índices internos, una bitácora de conversiones y la auditoría de Semestre 2.
+- **Versión anterior:** la arquitectura estaba definida, pero aún no contenía fuentes locales migradas.
+- **Motivo:** comenzar la consolidación con materiales textuales propios y verificables antes de abordar formatos complejos.
+- **Decisión derivada:** continuar con los DOCX propios y los 21 Markdown de Semestre 2; los visuales se registrarán mediante manifiestos.
