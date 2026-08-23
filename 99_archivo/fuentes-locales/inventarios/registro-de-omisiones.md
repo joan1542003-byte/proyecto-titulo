@@ -89,3 +89,11 @@ La omisión puede revertirse si aparece una necesidad académica concreta, se re
 - **Medios internos:** 23 imágenes distintas por SHA-256 quedaron inventariadas, sin publicación binaria.
 - **Renders de control:** 113 páginas renderizadas permanecen como temporales locales y no forman parte del repositorio.
 - **Correcciones:** se aplicaron solo a las copias Markdown y quedaron detalladas en el disclaimer; las fuentes históricas permanecen intactas.
+
+### 2026-08-23 — Aplicación al sublote 1C
+
+- **Cambio:** cinco copias Markdown exactas se registraron como ubicaciones redundantes y no se publicaron como documentos separados.
+- **Versión anterior:** los 21 archivos podían interpretarse como 21 piezas distintas.
+- **Motivo:** una copia idéntica no aporta una nueva decisión, pero su ruta sí aporta procedencia.
+- **Resultado:** se conservaron 16 copias canónicas; cada una lista todas sus fuentes locales equivalentes.
+- **Visualidad:** no se subieron PNG, PDF, SVG, ZIP ni archivos Python durante este sublote.

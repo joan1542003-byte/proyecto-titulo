@@ -18,7 +18,7 @@
 | C-05 | E12 | Borradores, versión final y autoevaluación | Parcial | Convertir autoevaluación y verificar exportaciones |
 | C-06 | Cierre del semestre 1 | Entregas finales y mapa triple | Parcial | Comprobar equivalencia entre PDF y Markdown |
 | C-07 | Instrumentos de usuarios | Guiones y corpus anonimizado | Parcial | Convertir versiones de guion |
-| C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Parcialmente migrado | Ordenar y deduplicar los 21 Markdown de proceso |
+| C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Textos principales migrados | Crear manifiestos selectivos de binarios y equivalencias |
 | C-09 | Bibliografía | Fuentes académicas y guías | Pendiente | Crear fichas APA 7 |
 | C-10 | Administración | Pautas, rúbricas, planes y feedback | Pendiente | Resumir solo lo pertinente |
 | C-11 | Recursos visuales | Diagramas, mapas y renders | Pendiente | Crear índice selectivo |
@@ -28,7 +28,7 @@
 
 ### Lote 1 — Markdown y TXT propios
 
-**Estado:** sublote 1A completado; permanecen pendientes los Markdown del semestre 2 y equivalencias con formatos editables.
+**Estado:** los sublotes de Markdown del semestre 1 y de `SEMESTRE 2/output` están completados; permanecen otras fuentes textuales de la raíz y equivalencias con formatos editables.
 
 **Criterio de cierre:**
 
@@ -50,7 +50,7 @@
 
 ### Lote 3 — Segundo semestre
 
-**Estado:** auditoría general y familia de memorias completadas; documentación de perfiles, mapas, flujos y proceso pendiente.
+**Estado:** auditoría, memorias y 21 Markdown de perfiles, mapas, flujos y proceso completados; binarios y equivalencias pendientes.
 
 **Criterio de cierre:**
 
@@ -100,3 +100,10 @@
 - **Versión anterior:** las memorias estaban identificadas, pero no podían compararse como Markdown.
 - **Motivo:** registrar la diferencia entre avance archivístico y selección de una memoria vigente.
 - **Decisión derivada:** la siguiente unidad son los 21 Markdown existentes en Semestre 2.
+
+### 2026-08-23 — Sublote 1C
+
+- **Cambio:** C-08 pasó a textos principales migrados y se cerró la deduplicación de los 21 Markdown de `output`.
+- **Versión anterior:** la documentación de proceso estaba identificada, pero seguía distribuida entre carpetas de entrega.
+- **Motivo:** registrar que 21 ubicaciones corresponden a 16 contenidos únicos.
+- **Decisión derivada:** no abrir visualidad; el siguiente lote vuelve a documentos propios textuales y equivalencias.

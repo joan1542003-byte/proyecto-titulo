@@ -104,3 +104,32 @@ fecha_creacion: 2026-08-23
 - **Versión anterior:** una frase todavía usaba P8 como número de pregunta, en conflicto con la regla que reserva P1–P8 para participantes.
 - **Motivo:** eliminar la última ambigüedad entre códigos de personas y numeración del instrumento.
 - **Alcance:** no cambia el hallazgo; cambia únicamente su trazabilidad lingüística.
+
+## Sublote 1C — Markdown de proceso de Semestre 2
+
+- **Fecha:** 23 de agosto de 2026.
+- **Entrada:** 21 archivos Markdown en `SEMESTRE 2/output`.
+- **Deduplicación:** 16 contenidos únicos, cuatro grupos de duplicados exactos y cinco copias adicionales.
+- **Salida:** 16 documentos migrados y seis índices o controles.
+- **Correcciones declaradas:** 23 sustituciones; 12 de método, ocho de nombre de autor y tres referencias metodológicas.
+
+### Familias migradas
+
+| Familia | Contenidos únicos | Estado |
+|---|---:|---|
+| Arquitectura de experiencia | 4 | Histórico |
+| Visualización y entrega | 5 | Histórico; visualidad no activa |
+| Perfiles históricos | 7 | Histórico; no sustituye P1–P8 |
+
+### Controles
+
+- [Índice de proceso](../semestre-2/proceso/README.md).
+- [Versiones y duplicados](../semestre-2/proceso/versiones-y-duplicados.md).
+- [Comparación de ramas de perfiles](../semestre-2/proceso/perfiles-historicos/comparacion-de-ramas.md).
+
+### 2026-08-23 — Registro del sublote 1C
+
+- **Cambio:** se documentaron procedencia, duplicados, estado y relación de los 21 Markdown.
+- **Versión anterior:** los archivos dependían de nombres de paquetes como final, revisado o 4K.
+- **Motivo:** organizar por función y evitar que perfiles sintéticos se confundan con participantes reales.
+- **Alcance:** no se publicaron imágenes, PDF, SVG, ZIP ni código.

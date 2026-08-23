@@ -19,15 +19,15 @@ Esta carpeta organiza el desarrollo de Relevo durante el segundo semestre. La mi
 | Familia | Estado | Entrada |
 |---|---|---|
 | Memorias propias | Tres DOCX convertidos; vigencia sin resolver | [Memorias](memorias/README.md) |
-| Documentación Markdown de proceso | Pendiente de deduplicación | [Auditoría general](../inventarios/auditoria-semestre-2.md) |
-| Perfiles y recorridos históricos | Inventariados; migración pendiente | [Auditoría general](../inventarios/auditoria-semestre-2.md) |
-| Flujos funcionales y técnicos | Inventariados; migración pendiente | [Auditoría general](../inventarios/auditoria-semestre-2.md) |
-| Recursos visuales y código | Inventariados; binarios pendientes de decisión | [Auditoría general](../inventarios/auditoria-semestre-2.md) |
+| Documentación Markdown de proceso | 21 ubicaciones consolidadas en 16 contenidos únicos | [Proceso](proceso/README.md) |
+| Perfiles y recorridos históricos | Cuatro ramas archivadas y comparadas | [Perfiles históricos](proceso/perfiles-historicos/README.md) |
+| Flujos funcionales y técnicos | Documentación textual histórica migrada | [Arquitectura de experiencia](proceso/arquitectura-experiencia/README.md) |
+| Recursos visuales y código | Documentación textual migrada; binarios pendientes | [Visualización y entrega](proceso/visualizacion-y-entrega/README.md) |
 | Material institucional | Solo inventario externo | [Registro de omisiones](../inventarios/registro-de-omisiones.md) |
 
 ## Regla de trabajo
 
-La familia de memorias se resolvió primero porque concentra la formulación más amplia del proyecto. La siguiente familia será la documentación Markdown ya existente. No se reanuda todavía el desarrollo de usuarios ni se declara una dirección formal.
+La familia de memorias y los 21 Markdown de proceso ya fueron organizados. La siguiente unidad debe revisar documentos propios de otros hitos y equivalencias PDF/DOCX; no se reanuda todavía el desarrollo de usuarios ni se declara una dirección formal.
 
 ---
 
@@ -40,3 +40,10 @@ La familia de memorias se resolvió primero porque concentra la formulación má
 - **Motivo:** impedir que memorias, perfiles, flujos, imágenes, código y documentos institucionales se mezclen por proximidad de carpeta.
 - **Alcance:** este índice registra estado y secuencia; no selecciona una memoria vigente.
 
+
+### 2026-08-23 — Documentación de proceso
+
+- **Cambio:** se añadieron 16 contenidos Markdown únicos y seis documentos de navegación, comparación y control.
+- **Versión anterior:** los 21 archivos estaban organizados por paquetes de entrega y contenían cinco copias redundantes.
+- **Motivo:** separar arquitectura, visualización y perfiles históricos antes de seguir con otros formatos.
+- **Decisión derivada:** conservar perfiles históricos como antecedentes y mantener pausada la línea activa de usuarios.

@@ -123,8 +123,9 @@ La primera prioridad recomendada ya fue ejecutada:
 - [x] Comparar estructura y similitud sin declarar una versión vigente.
 - [x] Registrar tablas, figuras, comentarios y control de cambios.
 - [x] Corregir en las copias la reconstrucción metodológica errónea del estudio de junio.
-- [ ] Ordenar y deduplicar los 21 Markdown de proceso.
-- [ ] Crear fichas para perfiles, recorridos, flujos y mapas.
+- [x] Ordenar y deduplicar los 21 Markdown de proceso.
+- [x] Migrar la documentación textual de perfiles, recorridos, flujos y mapas.
+- [ ] Crear fichas selectivas para los binarios de perfiles, recorridos, flujos y mapas.
 - [ ] Resolver qué memoria alimentará el documento activo.
 
 ### 2026-08-23 — Actualización de ejecución
@@ -133,3 +134,10 @@ La primera prioridad recomendada ya fue ejecutada:
 - **Versión anterior:** la auditoría solo proponía lotes.
 - **Motivo:** diferenciar recomendaciones de acciones ya realizadas.
 - **Alcance:** los demás 408 archivos de la carpeta siguen bajo las decisiones registradas en esta auditoría.
+
+### 2026-08-23 — Ejecución de Markdown de proceso
+
+- **Cambio:** se consolidaron 21 ubicaciones en 16 contenidos únicos y se separaron tres familias funcionales.
+- **Versión anterior:** la auditoría reconocía los Markdown, pero no había resuelto copias o ramas de perfiles.
+- **Motivo:** cerrar la capa textual antes de decidir sobre 356 recursos visuales y paquetes asociados.
+- **Alcance:** las fuentes locales permanecen intactas.

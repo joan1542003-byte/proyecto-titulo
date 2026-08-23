@@ -33,7 +33,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 | `semestre-1/e11` | Guía, plan, presentación y memoria revisada | Migrado en Markdown |
 | `semestre-1/e12` | Cadena de borradores y cierre de memoria | Migrado en Markdown |
 | `semestre-1/cierre` | Entregables y reflexiones de cierre | Parcial |
-| `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Tres memorias migradas; resto pendiente |
+| `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Tres memorias y 21 Markdown migrados; binarios pendientes |
 | `instrumentos` | Guiones, cuestionarios y protocolos propios | Parcialmente migrado |
 | `fuentes-terceros` | Fichas bibliográficas y registros de existencia | Pendiente |
 | `inventarios` | Mapas, manifiestos, omisiones y equivalencias | Activo |
@@ -95,3 +95,10 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 - **Versión anterior:** Semestre 2 estaba auditado, pero no contenía fuentes DOCX migradas.
 - **Motivo:** resolver primero la familia documental que concentra la formulación más amplia del proyecto.
 - **Decisión derivada:** mantener la vigencia de la memoria abierta y continuar con los 21 Markdown de proceso.
+
+### 2026-08-23 — Proceso Markdown de Semestre 2
+
+- **Cambio:** se incorporaron los 21 Markdown locales como 16 copias canónicas y seis documentos de control.
+- **Versión anterior:** solo la familia de memorias estaba disponible dentro del archivo del semestre 2.
+- **Motivo:** preservar la capa de proceso sin duplicar archivos idénticos ni promover visualidad histórica a contenido activo.
+- **Decisión derivada:** continuar con documentos propios de otros hitos y equivalencias de formatos.
