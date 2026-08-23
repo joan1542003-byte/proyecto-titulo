@@ -98,9 +98,43 @@
 - **Condición de revisión:** nuevas entrevistas, validaciones del concepto o evidencia de un tercer patrón con implicancias de diseño distintas.
 - **Documento asociado:** [Comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md).
 
+
+## D-012 — La edad es el único criterio común confirmado
+
+- **Fecha:** 2026-08-23
+- **Estado:** vigente
+- **Decisión:** describir el levantamiento mediante el criterio de convocatoria de 18 a 30 años y el rango observado de 19 a 27 años, sin afirmar que todas las personas son estudiantes.
+- **Fundamento:** aclaración directa del autor.
+- **Formulación descartada:** usar estudiante universitario como rasgo común del usuario.
+- **Consecuencia:** las futuras fichas no incluirán ocupación o situación educativa salvo evidencia individual verificable.
+
+## D-013 — Perfiles textuales antes que personas visuales
+
+- **Fecha:** 2026-08-23
+- **Estado:** vigente mientras la entrega no exija visualidad
+- **Decisión:** desarrollar fichas de tipo basadas en evidencia, sin nombres, retratos, frases decorativas ni biografías inventadas.
+- **Fundamento:** la entrega todavía no solicita representación visual y el corpus no respalda esos atributos.
+- **Condición de revisión:** una pauta futura que exija una persona visual; en ese caso, todo elemento sintético se marcará como recurso de comunicación y no como dato.
+
+## D-014 — Migración documental como única línea activa
+
+- **Fecha:** 2026-08-23
+- **Estado:** vigente
+- **Decisión:** pausar personas y recorridos después de la tipología y priorizar la conversión ordenada del archivo local a Markdown.
+- **Fundamento:** instrucción explícita del autor y necesidad de asegurar trazabilidad antes de continuar.
+- **Consecuencia:** la Issue #4 pasa a ser la tarea principal; la Issue #2 conserva su estado sin abrir trabajo paralelo.
+- **Arquitectura asociada:** [Fuentes locales migradas](../99_archivo/fuentes-locales/README.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — D-012 a D-014
+
+- **Cambio:** se registraron el criterio exclusivamente etario, la ausencia de requisito visual y la prioridad de migración.
+- **Versión anterior:** podía inferirse condición estudiantil y personas era el siguiente paso activo.
+- **Motivo:** aclaraciones y nueva prioridad entregadas por el autor.
+- **Resultado:** perfiles pausados, sin visualidad inventada, y archivo local como única línea activa.
 
 ### 2026-08-23 — D-010 y D-011
 
