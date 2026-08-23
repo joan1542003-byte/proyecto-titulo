@@ -4,6 +4,10 @@
 
 Construir la base teórica y empírica que permita explicar por qué Relevo debe existir, qué mecanismo pretende activar y qué límites debe reconocer.
 
+## Documentos activos
+
+- `metodologia-usuarios.md`: protocolo de búsqueda, síntesis y fichas de fuentes utilizadas para escoger el método de análisis de usuarios.
+
 ## Orden interno previsto
 
 1. Formular preguntas de investigación.
@@ -29,6 +33,12 @@ Las líneas son provisionales. No deben convertirse en capítulos hasta verifica
 ---
 
 ## Registro de cambios
+
+### 2026-08-23 — Dossier metodológico de usuarios
+
+- **Cambio:** incorporación de `metodologia-usuarios.md`.
+- **Versión anterior:** la carpeta definía el orden de investigación, pero todavía no contenía fichas de fuentes.
+- **Motivo:** documentar la primera búsqueda metodológica antes de analizar entrevistas.
 
 ### 2026-08-23 — Creación
 
