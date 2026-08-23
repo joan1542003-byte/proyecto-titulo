@@ -68,3 +68,14 @@ La omisión puede revertirse si aparece una necesidad académica concreta, se re
 - **Versión anterior:** las restricciones aparecían dispersas entre inventarios y decisiones.
 - **Motivo:** impedir que la autorización para organizar el repositorio se convierta en publicación indiscriminada de material ajeno, sensible o redundante.
 - **Alcance:** las cantidades son iniciales y se actualizarán al cerrar cada lote.
+
+### 2026-08-23 — Aplicación al lote 1A y a Semestre 2
+
+- **Cambio:** se aplicaron las reglas de omisión al primer lote textual y a la auditoría de Semestre 2.
+- **Versión anterior:** las categorías estaban definidas, pero todavía no existía un resultado de migración sobre el cual comprobarlas.
+- **Motivo:** registrar qué se excluyó efectivamente, sin borrar ni ocultar su existencia.
+- **Resultado del lote 1A:** se migraron trece fuentes textuales propias; no se copiaron originales identificables de entrevistas ni documentos completos de terceros.
+- **Resultado de Semestre 2:** 126 grupos de duplicados exactos, que abarcan 281 archivos y 150,78 MiB redundantes, quedaron solo inventariados. No se eliminó ningún archivo.
+- **Material visual:** 217 PNG, 60 SVG y 77 PDF dentro de `output` permanecen pendientes de un manifiesto selectivo; no se subieron indiscriminadamente.
+- **Material institucional:** los 21 archivos de coordinación se mantienen como conjunto inventariado y separado de la autoría propia.
+- **Paquetes y código:** trece ZIP y tres archivos Python de Semestre 2 se conservarán en su formato; Markdown describirá su función cuando corresponda.
