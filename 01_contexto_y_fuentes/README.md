@@ -6,6 +6,7 @@ Este directorio conserva la procedencia del proyecto y evita que una versión po
 
 - `contexto-del-proyecto.md`: evolución conceptual y formulación vigente.
 - `inventario-de-fuentes.md`: clasificación, función, privacidad y confiabilidad de los documentos.
+- `inventario-archivo-local.md`: mapa del archivo del computador, versiones, duplicados, riesgos y vacíos documentales.
 - `declaracion-procedencia-entrevistas.md`: aclaración del autor sobre modalidad, consentimiento, notas originales, uso posterior de IA, preguntas adicionales y edad de P6.
 - `feedback-e15.md`: retroalimentación relevante para Relevo, separada por nivel de fuente.
 - `auditoria-metodologica.md`: resultado de la revisión metodológica, afirmaciones permitidas y vacíos documentales restantes.
@@ -18,6 +19,12 @@ Los archivos originales con datos personales permanecen en el archivo local. Git
 ---
 
 ## Registro de cambios
+
+### 2026-08-23 — Inventario del archivo local
+
+- **Cambio:** incorporación de `inventario-archivo-local.md`.
+- **Versión anterior:** se conocían fuentes puntuales, pero no existía una vista consolidada del nivel raíz, `Fin semestre 1` y `SEMESTRE 2`.
+- **Motivo:** registrar versiones, duplicados, riesgos y vacíos sin mover ni eliminar materiales.
 
 ### 2026-08-23 — Procedencia de entrevistas
 
