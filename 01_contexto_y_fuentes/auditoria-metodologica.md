@@ -6,13 +6,13 @@ El corpus es utilizable para un análisis cualitativo exploratorio. La procedenc
 
 ## Descripción metodológica utilizable en la memoria
 
-Durante junio de 2026 se realizaron ocho entrevistas semiestructuradas y presenciales en Santiago con personas de 18 a 30 años. Las personas participantes fueron reclutadas mediante referencias de la red personal del investigador y otorgaron consentimiento informado oral. El investigador condujo las conversaciones y formuló todas las preguntas y repreguntas. Las respuestas fueron transcritas posteriormente con asistencia automatizada, sin generación de contenido por parte de la herramienta.
+Durante junio de 2026 se realizaron ocho entrevistas semiestructuradas y presenciales en Santiago con personas de 19 a 27 años, convocadas mediante un criterio de 18 a 30 años. Las personas participantes fueron reclutadas mediante referencias de la red personal del investigador y otorgaron consentimiento informado oral. El investigador condujo las conversaciones y formuló todas las preguntas y repreguntas. Las respuestas fueron transcritas posteriormente con asistencia automatizada, sin generación de contenido por parte de la herramienta.
 
 Una entrevista semiestructurada combina un conjunto común de temas con la posibilidad de profundizar mediante repreguntas. Esta modalidad permite comparar casos sin impedir que aparezcan experiencias no previstas en el guion.
 
 ## Corpus operativo
 
-El corpus operativo es la transcripción digital consolidada de los ocho casos, identificados como P1–P8. Las notas manuscritas ya no están disponibles y no se intentará reconstruirlas. La duración individual de las conversaciones tampoco fue registrada.
+El corpus operativo combina Q1–Q11 del archivo base y Q12–Q13 del anexo para ocho casos identificados como P1–P8. Las notas manuscritas ya no están disponibles y no se intentará reconstruirlas. La duración individual de las conversaciones tampoco fue registrada.
 
 El análisis debe realizarse sobre episodios y respuestas efectivamente transcritos. Cuando un pasaje sea ambiguo por su formulación oral o por posibles errores de transcripción, se clasificará con menor confianza o se excluirá de una afirmación fuerte.
 
@@ -57,6 +57,13 @@ La fase de usuarios puede avanzar a libro de códigos, reconstrucción de casos 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Precisión muestral y cobertura
+
+- **Cambio:** se añadió el rango observado y la composición del corpus.
+- **Versión anterior:** el criterio de convocatoria podía leerse como rango efectivo y el corpus se presentaba como una sola versión.
+- **Motivo:** incorporar la auditoría de integridad.
+- **Decisión derivada:** analizar Q1–Q13 con una regla de prevalencia explícita.
 
 ### 2026-08-23 — Cierre de auditoría
 
