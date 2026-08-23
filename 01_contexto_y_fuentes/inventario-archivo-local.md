@@ -47,9 +47,9 @@ El último archivo se identifica internamente con el segundo semestre, aunque es
 | Guion de entrevista inicial | Instrumento de trabajo, fecha observable 2 de junio de 2026 |
 | Guion de entrevista v2 | Revisión del instrumento, fecha observable 8 de junio de 2026 |
 | Guía metodológica E11 en Markdown | Documento de proceso |
-| Notas manuscritas | Fuente primaria declarada; no localizada como archivo digital |
-| Exportación de respuestas del 12 de junio | Registro digital parcial y derivado |
-| Documento de respuestas del 13 de junio | Registro digital procesado de ocho participantes |
+| Notas manuscritas | Ya no están disponibles; no forman parte del archivo operativo |
+| Exportación de respuestas del 12 de junio | Versión digital parcial e histórica |
+| Documento de respuestas del 13 de junio | Transcripción consolidada y corpus operativo de ocho participantes |
 | PDF de entrevistas semiestructuradas | Reconstrucción o presentación derivada |
 | Perfiles, journey maps y flujos U01–U03/P01–P03 | Representaciones de diseño; no evidencia primaria |
 
@@ -131,7 +131,6 @@ No se eliminará ninguna copia hasta establecer versión maestra, respaldo y rel
 
 No deben subirse sin revisión y anonimización:
 
-- notas manuscritas, escaneos o fotografías de entrevistas;
 - consentimientos;
 - documentos completos con respuestas identificables;
 - perfiles, flujos o journey maps nominales;
@@ -148,9 +147,9 @@ No deben subirse sin revisión y anonimización:
 
 No existe una declaración inequívoca de la memoria vigente ni un mapa de relación entre todas sus versiones.
 
-### Fuentes primarias
+### Corpus de entrevistas
 
-Las notas manuscritas y el soporte del consentimiento no están digitalizados en el archivo revisado.
+La transcripción digital consolidada está disponible. Las notas manuscritas ya no existen y el consentimiento fue informado y oral; no se conserva su guion exacto. Esta situación se registra como límite documental y no como tarea pendiente.
 
 ### Mercado
 
@@ -171,7 +170,7 @@ Existen planes, láminas y documentos de control de calidad, pero no un expedien
 - No reutilizar los tres perfiles históricos como hallazgos de usuario.
 - Priorizar en la fase 1 los guiones, entrevistas anonimizadas y memoria histórica pertinente.
 - Registrar la normalización futura en la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4).
-- Mantener la digitalización de notas en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
+- Conservar el cierre de la antigua tarea de notas en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3) y no reconstruir material ausente.
 
 ## Límites
 
@@ -183,7 +182,14 @@ Existen planes, láminas y documentos de control de calidad, pero no un expedien
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Estado real del corpus
+
+- **Cambio:** se actualizó el inventario para indicar que la transcripción consolidada es el corpus operativo y que las notas ya no están disponibles.
+- **Versión anterior:** las notas figuraban como fuente primaria no localizada y su digitalización permanecía pendiente.
+- **Motivo:** incorporar la aclaración del autor y evitar que una tarea imposible bloquee la fase de usuarios.
+- **Decisión derivada:** cerrar la Issue #3 y mantener solo el límite documental.
 
 ### 2026-08-23 — Creación
 
