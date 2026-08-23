@@ -1,28 +1,44 @@
-# Preguntas metodológicas pendientes
+# Resolución de preguntas metodológicas
 
 ## Función
 
-Registrar información que debe ser confirmada por el autor antes de cerrar la metodología o incorporar ciertas respuestas al análisis.
+Registrar las respuestas entregadas por el autor, los vacíos que permanecen y su consecuencia para el análisis. El nombre del archivo se conserva para no romper enlaces históricos.
 
-| ID | Pregunta | Por qué importa | Qué puede avanzar mientras tanto | Qué queda bloqueado |
+| ID | Tema | Respuesta consolidada | Consecuencia | Estado |
 |---|---|---|---|---|
-| Q-U01 | ¿En qué fechas aproximadas se realizaron las entrevistas y cuánto duró cada una? | Permite describir el levantamiento y valorar la profundidad desigual entre casos. | Diseño del método y análisis preliminar. | Redacción metodológica definitiva. |
-| Q-U02 | ¿Cómo se reclutó a las ocho personas y qué criterio las hizo pertinentes? | Define alcance, sesgo de selección y relación con el público de interés. | Análisis exploratorio de patrones. | Justificación de muestra y decisiones sobre nuevas entrevistas. |
-| Q-U03 | ¿El consentimiento fue oral o escrito y qué información incluyó? | Permite describir el resguardo ético y el uso autorizado de respuestas. | Análisis interno anonimizado. | Formulación ética definitiva y eventual publicación de citas. |
-| Q-U04 | ¿Las secciones rotuladas `Repregunta IA` corresponden a preguntas realmente realizadas por el investigador o fueron añadidas durante el procesamiento? | Determina si esas respuestas forman parte del corpus empírico. | Codificación de fragmentos cuya procedencia es inequívoca. | Uso de todo fragmento afectado por esa etiqueta. |
-| Q-U05 | ¿Las notas manuscritas están disponibles para digitalización privada? | Permite cotejar contenido, corregir discrepancias y verificar citas. | Paráfrasis trazables. | Citas literales y cierre del archivo primario. |
+| Q-U01 | Fecha y duración | Las entrevistas se realizaron en junio de 2026. La duración individual no fue registrada. | Informar la fecha y declarar la duración como dato no disponible; no comparar profundidad por minutos. | Resuelta con un vacío documental no recuperable. |
+| Q-U02 | Reclutamiento y pertinencia | Personas cercanas facilitaron contactos de personas dentro del rango definido de 18 a 30 años. | Describir un reclutamiento no probabilístico por referencias de la red personal y limitar las generalizaciones. | Resuelta. |
+| Q-U03 | Consentimiento | Se obtuvo consentimiento informado oral. No se conserva el texto exacto utilizado. | Declarar existencia y modalidad sin inventar cláusulas específicas. | Resuelta con precisión limitada. |
+| Q-U04 | Autoría de preguntas | Todas las preguntas y repreguntas fueron realizadas oralmente por el investigador. La asistencia automatizada se utilizó solo para transcribir después. | Incluir todas las respuestas transcritas en el corpus. | Resuelta. |
+| Q-U05 | Notas manuscritas | Las notas ya no están disponibles. | Usar la transcripción digital consolidada como corpus operativo; no mantener una tarea de recuperación. | Cerrada sin acción adicional. |
+| Q-U06 | Dato de P6 | P6 tiene 27 años. | Corregir cualquier versión discrepante y utilizar 27 como dato vigente. | Resuelta. |
+| Q-U07 | Lugar | Las entrevistas se realizaron en Santiago. | Informar el contexto territorial sin presentarlo como representatividad de la ciudad. | Resuelta. |
 
-## Regla
+## Vacíos que no deben rellenarse
 
-Una respuesta se registrará junto con su fecha y consecuencia metodológica. No se corregirá silenciosamente ningún documento previo.
+- Duración de cada entrevista.
+- Texto exacto del consentimiento oral.
+- Contenido o forma de las notas manuscritas ausentes.
+
+Si estos datos fueran necesarios en una futura versión metodológica más robusta, correspondería realizar un nuevo levantamiento con protocolo documentado; no reconstruir retroactivamente el anterior.
+
+## Conclusión
+
+No quedan preguntas de procedencia que bloqueen la codificación. El corpus puede analizarse completo mediante P1–P8, con cautelas de transcripción, anonimización y alcance.
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Resolución
+
+- **Cambio:** se respondieron las cinco preguntas originales y se añadieron lugar y corrección de P6.
+- **Versión anterior:** todas aparecían como pendientes y varias bloqueaban citas o fragmentos.
+- **Motivo:** incorporar las respuestas directas del autor y cerrar tareas imposibles de completar.
+- **Decisión derivada:** iniciar la matriz P1–P8 usando la transcripción digital como corpus operativo.
 
 ### 2026-08-23 — Creación
 
-- **Cambio:** registro de cinco preguntas críticas surgidas antes del análisis profundo.
-- **Versión anterior:** algunas preguntas estaban distribuidas entre la auditoría y la conversación de trabajo.
-- **Motivo:** vincular cada vacío con el entregable que condiciona y evitar que se pierda durante la fase 1.
-- **Pendiente:** incorporar las respuestas del autor y actualizar el método, la Issue #2 y el registro de decisiones.
+- **Cambio:** se registraron las preguntas metodológicas iniciales.
+- **Versión anterior:** estaban distribuidas entre auditoría y conversación.
+- **Motivo:** vincular cada vacío con su consecuencia.
