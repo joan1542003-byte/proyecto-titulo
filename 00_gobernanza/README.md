@@ -13,6 +13,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 
 ## Documentos
 
+- `directrices-de-trabajo.md`: mandato integral de investigación, desarrollo, escritura, trazabilidad y colaboración.
 - `hoja-de-ruta.md`: secuencia de trabajo y condiciones para avanzar.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - GitHub Issues: tareas operativas, bloqueos y criterios de cierre.
@@ -34,6 +35,12 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios
+
+### 2026-08-23 — Incorporación de directrices
+
+- **Cambio:** incorporación de `directrices-de-trabajo.md` al índice de gobernanza.
+- **Versión anterior:** los principios generales estaban distribuidos entre el README principal, la hoja de ruta y mensajes de trabajo.
+- **Motivo:** reunir en un documento normativo único las exigencias de investigación, escritura, proceso y trazabilidad.
 
 ### 2026-08-23 — Creación
 
