@@ -72,7 +72,7 @@ Las imágenes son elementos en línea. Sus textos internos son rasterizados y no
 - Las 37 tablas de las tres fuentes se transformaron sin inconsistencias en el número de columnas.
 - Los 25 marcadores de figura coinciden con las formas en línea detectadas.
 - No se encontraron nombres conocidos de participantes en las copias.
-- La memoria perfeccionada y Sistema editorial v3 recibieron 27 sustituciones controladas cada una: nueve párrafos metodológicos, catorce celdas, tres usos terminológicos y la edad de P6.
+- La memoria perfeccionada y Sistema editorial v3 recibieron 28 sustituciones controladas cada una: diez párrafos metodológicos, catorce celdas, tres usos terminológicos y la edad de P6.
 - Los DOCX originales no fueron modificados, movidos ni eliminados.
 
 ---

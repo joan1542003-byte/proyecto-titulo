@@ -201,7 +201,7 @@ El muestreo fue exploratorio y de conveniencia. No estima prevalencia, no compar
 
 ### 4.2 Hallazgos sustentados
 
-En P8, seis participantes respondieron que sí les había costado describir una sesión, uno indicó que ocurría pocas veces y uno respondió que no. El corpus también distingue ocio digital focalizado —videollamada, Sudoku, pódcast, manga o videojuegos— de sesiones rutinarias o insatisfactorias. Tres relatos recientes expresan conflicto con sueño, otra actividad o valoración posterior; no corresponde generalizarlo.
+En la pregunta 8, seis participantes respondieron que sí les había costado describir una sesión, uno indicó que ocurría pocas veces y uno respondió que no. El corpus también distingue ocio digital focalizado —videollamada, sudoku, pódcast, manga o videojuegos— de sesiones rutinarias o insatisfactorias. Tres relatos recientes expresan conflicto con sueño, otra actividad o valoración posterior; no corresponde generalizarlo.
 
 Las personas nombran actividades concretas como leer, dibujar, cocinar, caminar, hacer deporte, armar maquetas o estar con alguien. Traducirlas a primeros pasos es una inferencia proyectual. La mención de tener materiales «a la mano» orienta la ubicación, pero no demuestra eficacia de un objeto situado.
 
@@ -921,5 +921,5 @@ En esta versión se utilizó inteligencia artificial generativa como apoyo para 
 | Dos preguntas posteriores excluidas | Preguntas realizadas presencialmente e incorporadas al registro | Aclaración directa del investigador |
 | Respuestas automatizadas como parte del instrumento | Asistencia automatizada limitada a transcripción y formalización académica posterior | Corrección del origen del registro |
 
-Se aplicaron 27 sustituciones controladas: cell_replacement=14, p6_age=1, paragraph_replacement=9, terminology_replacement=3.
+Se aplicaron 28 sustituciones controladas: cell_replacement=14, p6_age=1, paragraph_replacement=10, terminology_replacement=3.
 - **Criterio de vigencia:** la conversión no declara esta versión como memoria vigente; la decisión queda pendiente en el documento comparativo.

@@ -74,8 +74,8 @@ fecha_creacion: 2026-08-23
 | ID | Fuente local relativa | Destino | Tratamiento |
 |---|---|---|---|
 | FL-S2-MEM-001 | `SEMESTRE 2/output/Johan Yanten - Memoria actualizada Encargo 16.docx` | [memoria-actualizada-encargo-16.md](../semestre-2/memorias/memoria-actualizada-encargo-16.md) | Extracción OOXML; sin corrección metodológica extensa |
-| FL-S2-MEM-002 | `SEMESTRE 2/output/Johan Yanten - Memoria perfeccionada Relevo - Encargo 16.docx` | [memoria-perfeccionada-relevo-encargo-16.md](../semestre-2/memorias/memoria-perfeccionada-relevo-encargo-16.md) | Extracción OOXML y 27 sustituciones declaradas |
-| FL-S2-MEM-003 | `SEMESTRE 2/output/Johan Yanten - Memoria Relevo - Sistema editorial v3.docx` | [memoria-relevo-sistema-editorial-v3.md](../semestre-2/memorias/memoria-relevo-sistema-editorial-v3.md) | Extracción OOXML y 27 sustituciones declaradas |
+| FL-S2-MEM-002 | `SEMESTRE 2/output/Johan Yanten - Memoria perfeccionada Relevo - Encargo 16.docx` | [memoria-perfeccionada-relevo-encargo-16.md](../semestre-2/memorias/memoria-perfeccionada-relevo-encargo-16.md) | Extracción OOXML y 28 sustituciones declaradas |
+| FL-S2-MEM-003 | `SEMESTRE 2/output/Johan Yanten - Memoria Relevo - Sistema editorial v3.docx` | [memoria-relevo-sistema-editorial-v3.md](../semestre-2/memorias/memoria-relevo-sistema-editorial-v3.md) | Extracción OOXML y 28 sustituciones declaradas |
 
 ### Controles asociados
 
@@ -97,3 +97,10 @@ fecha_creacion: 2026-08-23
 - **Versión anterior:** el registro solo contenía el sublote 1A de Markdown y TXT.
 - **Motivo:** documentar correcciones, alcance visual y vigencia antes de continuar con otra familia.
 - **Alcance:** los DOCX y sus 23 imágenes internas permanecen intactos en el archivo local.
+
+### 2026-08-23 — Corrección de códigos de preguntas
+
+- **Cambio:** se añadió la sustitución de En P8 por En la pregunta 8 y el conteo pasó de 27 a 28 sustituciones en cada rama afectada.
+- **Versión anterior:** una frase todavía usaba P8 como número de pregunta, en conflicto con la regla que reserva P1–P8 para participantes.
+- **Motivo:** eliminar la última ambigüedad entre códigos de personas y numeración del instrumento.
+- **Alcance:** no cambia el hallazgo; cambia únicamente su trazabilidad lingüística.

@@ -19,8 +19,8 @@ Las tres memorias fueron convertidas y comparadas, pero ninguna se declara vigen
 | ID | Archivo | Modificación local | Palabras convertidas | Párrafos fuente | Tablas | Formas en línea | Medios internos |
 |---|---|---|---:|---:|---:|---:|---:|
 | FL-S2-MEM-001 | [Memoria actualizada — Encargo 16](memoria-actualizada-encargo-16.md) | 2026-08-15T18:16:57-04:00 | 9866 | 312 | 9 | 3 | 3 |
-| FL-S2-MEM-002 | [Memoria perfeccionada de Relevo — Encargo 16](memoria-perfeccionada-relevo-encargo-16.md) | 2026-08-15T19:47:06-04:00 | 11103 | 361 | 14 | 11 | 9 |
-| FL-S2-MEM-003 | [Memoria de Relevo — Sistema editorial v3](memoria-relevo-sistema-editorial-v3.md) | 2026-08-15T20:46:32-04:00 | 11134 | 370 | 14 | 11 | 11 |
+| FL-S2-MEM-002 | [Memoria perfeccionada de Relevo — Encargo 16](memoria-perfeccionada-relevo-encargo-16.md) | 2026-08-15T19:47:06-04:00 | 11105 | 361 | 14 | 11 | 9 |
+| FL-S2-MEM-003 | [Memoria de Relevo — Sistema editorial v3](memoria-relevo-sistema-editorial-v3.md) | 2026-08-15T20:46:32-04:00 | 11136 | 370 | 14 | 11 | 11 |
 
 Los metadatos internos de los tres DOCX indican una fecha de 2013 y revisión 1, por lo que no son útiles para ordenar esta serie. Las fechas locales del 15 de agosto de 2026 sí establecen una secuencia de modificación, pero no prueban vigencia conceptual.
 
