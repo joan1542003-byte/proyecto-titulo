@@ -28,12 +28,12 @@ Esta formulación continúa abierta a revisión. El producto final deberá respo
 
 ## Estado actual
 
-**Fase 1 activa: análisis de usuarios.**
+**Fase 1 activa: análisis de usuarios; tipología definida y desarrollo de personas en preparación.**
 
 La base metodológica del corpus quedó consolidada:
 
 - se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago durante junio de 2026;
-- las personas fueron reclutadas mediante referencias de la red personal, dentro del rango de 18 a 30 años definido para el levantamiento;
+- las personas fueron reclutadas mediante referencias de la red personal; el criterio de convocatoria fue de 18 a 30 años y el rango observado fue de 19 a 27 años;
 - se obtuvo consentimiento informado oral;
 - todas las preguntas y repreguntas fueron realizadas por el investigador;
 - la asistencia automatizada se utilizó únicamente para transcribir las conversaciones después del levantamiento;
@@ -85,6 +85,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Integridad del corpus y tipología
+
+- **Cambio:** se precisó el rango observado y se actualizó el estado después de construir corpus anonimizado, libro de códigos, casos, matriz y dos tipos situacionales.
+- **Versión anterior:** el README solo indicaba el criterio amplio de 18 a 30 años y situaba la fase antes de la matriz.
+- **Motivo:** reflejar los datos efectivos P1–P8 y el avance verificable del análisis.
+- **Decisión derivada:** continuar con personas y recorridos sin volver a segmentar por demografía.
 
 ### 2026-08-23 — Consolidación metodológica de las entrevistas
 
