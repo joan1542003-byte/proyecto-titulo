@@ -1,45 +1,45 @@
 # Contexto y fuentes
 
-Este directorio conserva la procedencia del proyecto y evita que una versión posterior borre silenciosamente las decisiones, errores o límites de una etapa anterior.
+Este directorio conserva la procedencia, el estado y las limitaciones de los materiales que sostienen el proyecto. Su función es impedir que una versión antigua, una transcripción o una interpretación posterior se trate como evidencia equivalente al levantamiento original.
 
-## Contenido
+## Documentos
 
-- `contexto-del-proyecto.md`: evolución conceptual y formulación vigente.
-- `inventario-de-fuentes.md`: clasificación, función, privacidad y confiabilidad de los documentos.
-- `inventario-archivo-local.md`: mapa del archivo del computador, versiones, duplicados, riesgos y vacíos documentales.
-- `declaracion-procedencia-entrevistas.md`: aclaración del autor sobre modalidad, consentimiento, notas originales, uso posterior de IA, preguntas adicionales y edad de P6.
-- `feedback-e15.md`: retroalimentación relevante para Relevo, separada por nivel de fuente.
-- `auditoria-metodologica.md`: resultado de la revisión metodológica, afirmaciones permitidas y vacíos documentales restantes.
-- `auditoria-visual-docx.md`: estructura, legibilidad, comentarios y cambios controlados de los DOCX recibidos.
+- [Inventario de fuentes](inventario-de-fuentes.md): identifica cada fuente, su función, nivel y relación con otras versiones.
+- [Inventario del archivo local](inventario-archivo-local.md): registra materiales encontrados en las carpetas del proyecto.
+- [Declaración de procedencia de entrevistas](declaracion-procedencia-entrevistas.md): fija las condiciones confirmadas del levantamiento.
+- [Auditoría metodológica](auditoria-metodologica.md): determina qué puede afirmarse y con qué cautelas.
+- [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
+
+## Estado del corpus de entrevistas
+
+El corpus corresponde a ocho entrevistas semiestructuradas, habladas y presenciales, realizadas en Santiago durante junio de 2026 con personas del rango de 18 a 30 años. El reclutamiento se realizó mediante referencias de la red personal y se obtuvo consentimiento informado oral.
+
+Todas las preguntas y repreguntas fueron realizadas por el investigador. Las conversaciones fueron transcritas después del levantamiento con asistencia automatizada; dicha asistencia no produjo preguntas ni respuestas. La transcripción digital anonimizada es el registro operativo. Las notas manuscritas ya no están disponibles.
+
+La duración individual de las entrevistas y el texto exacto utilizado para informar el consentimiento no quedaron registrados. Estos vacíos deben declararse como limitaciones de documentación, no reconstruirse.
 
 ## Regla de uso
 
-Los archivos originales con datos personales permanecen en el archivo local. GitHub contiene únicamente descripciones, extractos anonimizados y decisiones metodológicas.
+1. Las afirmaciones sobre participantes deben poder rastrearse a P1–P8.
+2. Las citas textuales se comprueban contra la transcripción consolidada.
+3. Los datos identificables no se incorporan al repositorio.
+4. El análisis no generaliza estadísticamente desde ocho casos reclutados por referencias.
+5. Santiago se registra como contexto del levantamiento, no como prueba de representatividad territorial.
+6. Toda discrepancia entre versiones se documenta antes de elegir una.
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
 
-### 2026-08-23 — Inventario del archivo local
+### 2026-08-23 — Actualización de procedencia
 
-- **Cambio:** incorporación de `inventario-archivo-local.md`.
-- **Versión anterior:** se conocían fuentes puntuales, pero no existía una vista consolidada del nivel raíz, `Fin semestre 1` y `SEMESTRE 2`.
-- **Motivo:** registrar versiones, duplicados, riesgos y vacíos sin mover ni eliminar materiales.
+- **Cambio:** se precisaron fecha, rango, reclutamiento, consentimiento, autoría de preguntas, función de la transcripción y disponibilidad del corpus.
+- **Versión anterior:** se describían notas manuscritas pendientes de preservar y un procesamiento posterior más amplio.
+- **Motivo:** incorporar las aclaraciones directas del autor sin mantener dudas ya resueltas.
+- **Decisión derivada:** la transcripción digital anonimizada pasa a ser el corpus operativo.
 
-### 2026-08-23 — Procedencia de entrevistas
+### 2026-08-23 — Creación del índice
 
-- **Cambio:** incorporación de `declaracion-procedencia-entrevistas.md` y actualización de la función de la auditoría metodológica.
-- **Versión anterior:** el índice no contenía una fuente explícita para resolver las dudas sobre el levantamiento.
-- **Motivo:** conservar la aclaración del autor como evidencia de procedencia y distinguirla de los archivos procesados.
-
-### 2026-08-23 — Incorporación de auditoría visual
-
-- **Cambio:** incorporación de `auditoria-visual-docx.md` al índice.
-- **Versión anterior:** el índice solo incluía contexto, inventario, feedback y auditoría metodológica.
-- **Motivo:** registrar que la revisión también comprobó estructura, comentarios, cambios controlados y legibilidad.
-
-### 2026-08-23 — Creación
-
-- **Cambio:** creación del acceso documental al contexto y a la auditoría de fuentes.
-- **Versión anterior:** no existía una separación estable entre fuentes, síntesis y decisiones.
-- **Motivo:** asegurar trazabilidad y proteger datos personales.
+- **Cambio:** se creó un punto de entrada para el sistema de fuentes.
+- **Versión anterior:** los materiales no contaban con una lectura jerarquizada.
+- **Motivo:** facilitar la trazabilidad y evitar equivalencias indebidas entre fuentes.
