@@ -12,7 +12,12 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 
 - [Método de análisis](metodo-de-analisis.md): comparación de métodos y decisión de utilizar análisis Framework seguido de análisis de tipos ideales.
 - [Resolución metodológica](preguntas-metodologicas-pendientes.md): respuestas consolidadas y vacíos documentales que no deben reconstruirse.
-- Próximos documentos: libro de códigos, reconstrucciones de caso, matriz P1–P8, comparación de tipos, personas y recorridos.
+- [Corpus anonimizado](corpus-anonimizado.md): índice P1–P8 y Q1–Q13 sin nombres personales.
+- [Libro de códigos](libro-de-codigos.md): definiciones, reglas y memo reflexivo.
+- [Reconstrucciones de caso](reconstrucciones-de-caso.md): análisis dentro de cada caso.
+- [Matriz de evidencia](matriz-evidencia-p1-p8.md): comparación transversal, contradicciones y casos óptimos.
+- [Comparación y tipos de usuario](comparacion-y-tipos-de-usuario.md): elección de usuario principal más usuario límite.
+- Próximos documentos: personas basadas en evidencia y recorridos actuales/futuros.
 
 ## Secuencia obligatoria
 
@@ -34,7 +39,7 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 
 - Ocho entrevistas semiestructuradas, habladas y presenciales.
 - Levantamiento realizado en Santiago durante junio de 2026.
-- Personas de 18 a 30 años reclutadas mediante referencias de la red personal.
+- Rango observado de 19 a 27 años, bajo un criterio de convocatoria de 18 a 30 años y reclutamiento por referencias de la red personal.
 - Consentimiento informado oral.
 - Todas las preguntas y repreguntas formuladas por el investigador.
 - Transcripción digital posterior como corpus operativo.
@@ -52,19 +57,31 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 - El usuario puede ampliarse, delimitarse o reformularse si los hallazgos lo justifican.
 - Un episodio de ocio digital elegido, valioso y sin conflicto se considera un límite legítimo de intervención.
 
-## Hipótesis analítica que debe ponerse a prueba
+## Resultado analítico vigente
 
-La diferencia decisiva podría no estar entre clases fijas de personas, sino entre episodios: continuidad digital que desplaza una intención y ocio digital elegido que permanece coherente con ella. Esta hipótesis no se tratará como resultado hasta contrastarla con P1–P8.
+La diferencia más útil no está entre clases fijas de personas, sino entre episodios:
+
+1. continuidad digital con una intención desplazada, como usuario principal;
+2. ocio digital elegido y coherente, como usuario límite de no intervención.
+
+La decisión deriva de P1–P8 y permanece abierta a revisión con nueva evidencia.
 
 ## Estado
 
-**Fase activa.** La metodología está consolidada. El siguiente entregable es el libro de códigos y la matriz P1–P8.
+**Fase activa.** Corpus, códigos, casos, matriz y tipología están completados. El siguiente entregable es desarrollar las dos personas y sus recorridos sin inventar atributos.
 
 Seguimiento operativo en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Tipología completada
+
+- **Cambio:** se enlazaron los cinco entregables analíticos, se precisó el rango observado y se registró la elección de usuario principal más usuario límite.
+- **Versión anterior:** corpus, códigos, matriz y comparación figuraban como próximos documentos y la diferencia entre tipos era una hipótesis.
+- **Motivo:** sincronizar el índice con la evidencia ya analizada.
+- **Decisión derivada:** avanzar a personas y recorridos como traducciones de diseño.
 
 ### 2026-08-23 — Corpus habilitado para análisis completo
 
