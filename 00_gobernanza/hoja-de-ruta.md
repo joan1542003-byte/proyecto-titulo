@@ -2,7 +2,7 @@
 
 ## Estado general
 
-Relevo se encuentra en la **fase 1: investigación y análisis de usuarios**. La fase 0 quedó cerrada al consolidarse la procedencia, el alcance y las limitaciones del corpus de entrevistas.
+Relevo mantiene abierta la **fase 1: investigación y análisis de usuarios**, pero su desarrollo está pausado después de la tipología. La única línea activa es la organización y migración documental del archivo local. Esta pausa no revierte resultados: protege la trazabilidad antes de abrir personas, recorridos u otra fase sustantiva.
 
 El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuando sus preguntas, evidencia, límites y decisiones están registrados. El producto phygital no se desarrolla como una respuesta autónoma; debe poder reconstruirse desde la investigación.
 
@@ -29,9 +29,28 @@ Resultados:
 - separación entre material vigente, histórico y derivado;
 - registro de decisiones e Issues.
 
+### Línea auxiliar A — Organización y migración documental
+
+**Estado:** activa.
+
+Orden obligatorio:
+
+1. inventariar archivos y familias;
+2. distinguir autoría, sensibilidad, fuente, exportación y duplicado;
+3. definir arquitectura y protocolo Markdown;
+4. migrar texto propio ya estructurado;
+5. convertir DOCX, PDF, PPTX y XLSX propios pertinentes;
+6. crear fichas para fuentes externas;
+7. indexar recursos visuales relevantes;
+8. declarar versiones canónicas y omisiones;
+9. comprobar navegación, privacidad y registros de cambios;
+10. cerrar la Issue #4 antes de reanudar personas.
+
+Documentación: [Fuentes locales migradas](../99_archivo/fuentes-locales/README.md).
+
 ### Fase 1 — Usuarios
 
-**Estado:** activa; corpus, códigos, casos, matriz y tipología completados.
+**Estado:** pausada después de completar corpus, códigos, casos, matriz y tipología.
 
 Orden obligatorio:
 
@@ -42,7 +61,7 @@ Orden obligatorio:
 5. [Completado] reconocer patrones, contradicciones y casos negativos;
 6. [Completado] proponer dos tipos situacionales;
 7. [Completado] elegir usuario principal más usuario límite;
-8. [Activo] desarrollar perfiles, necesidades, tensiones y recorridos;
+8. [Pausado] desarrollar perfiles, necesidades, tensiones y recorridos;
 9. [Pendiente] traducir los hallazgos a requisitos y límites del proyecto;
 10. [Pendiente] redactar el apartado de usuario para la memoria.
 
@@ -104,6 +123,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Prioridad documental
+
+- **Cambio:** se añadió una línea auxiliar activa y se pausó el paso de personas.
+- **Versión anterior:** la hoja abría inmediatamente perfiles y recorridos.
+- **Motivo:** el autor priorizó migrar el archivo local completo y explicarlo en Markdown.
+- **Decisión derivada:** no desarrollar dos áreas en paralelo; la fase de usuarios se retoma después de una base documental suficiente.
 
 ### 2026-08-23 — Avance de la fase 1
 
