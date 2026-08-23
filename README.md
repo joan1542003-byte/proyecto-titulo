@@ -4,19 +4,19 @@ Repositorio privado de investigación, desarrollo y documentación del proyecto 
 
 ## Propósito del repositorio
 
-Este repositorio es la fuente central de trazabilidad del proyecto. Conserva de manera ordenada:
+Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y relaciona:
 
-- el contexto y la evolución de Relevo;
-- las fuentes y su nivel de confiabilidad;
-- las decisiones de investigación y diseño;
-- el análisis de usuarios;
-- el estado del arte y el mercado;
-- los flujos de usuario, diseño y funcionamiento técnico;
-- el desarrollo del producto phygital;
-- la factibilidad, producción y costos;
-- la validación;
-- las versiones de la memoria y sus cambios;
-- las tareas pendientes mediante GitHub Issues.
+- contexto, antecedentes y evolución de Relevo;
+- fuentes y niveles de evidencia;
+- decisiones de investigación y diseño;
+- análisis de usuarios;
+- estado del arte y mercado;
+- flujos de usuario, diseño y funcionamiento técnico;
+- desarrollo del producto phygital;
+- factibilidad, producción y costos;
+- validaciones;
+- versiones de la memoria;
+- tareas pendientes mediante GitHub Issues.
 
 ## Síntesis provisional
 
@@ -24,22 +24,25 @@ Relevo es un proyecto phygital que busca devolver una intención personal a la c
 
 El proyecto no pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento. Su valor propuesto depende de apoyar una decisión autónoma mediante una señal breve, configurable y no punitiva.
 
-Esta formulación continúa abierta a revisión. El producto final deberá responder a la investigación, no antecederla.
+Esta formulación continúa abierta a revisión. El producto final deberá responder a la investigación y a la evidencia, no antecederlas.
 
 ## Estado actual
 
-**Fase 1 activa: investigación y análisis de usuarios.**
+**Fase 1 activa: análisis de usuarios.**
 
-La fase 0 quedó cerrada después de aclarar que:
+La base metodológica del corpus quedó consolidada:
 
-- las ocho entrevistas son reales y se realizaron presencialmente en Santiago;
-- existió consentimiento informado;
-- las notas manuscritas son el registro original;
-- la IA se utilizó únicamente después del levantamiento para apoyar la transcripción, organización y redacción académica;
-- las dos preguntas adicionales también se realizaron presencialmente y quedaron registradas en notas;
-- P6 tiene 27 años.
+- se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago durante junio de 2026;
+- las personas fueron reclutadas mediante referencias de la red personal, dentro del rango de 18 a 30 años definido para el levantamiento;
+- se obtuvo consentimiento informado oral;
+- todas las preguntas y repreguntas fueron realizadas por el investigador;
+- la asistencia automatizada se utilizó únicamente para transcribir las conversaciones después del levantamiento;
+- el documento digital de transcripción constituye el corpus operativo;
+- las notas manuscritas ya no están disponibles y su ausencia no bloquea el análisis;
+- P6 tiene 27 años;
+- la duración individual de las entrevistas no quedó registrada.
 
-La tarea sustantiva vigente está en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2). La preservación de las notas originales se controla por separado en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
+El análisis se desarrolla en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2). La antigua tarea de preservación de notas se conserva como decisión cerrada en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
 
 ## Principios de trabajo
 
@@ -47,14 +50,15 @@ La tarea sustantiva vigente está en la [Issue #2](https://github.com/joan154200
 - Desarrollar una sola área principal a la vez.
 - Vincular cada decisión del producto con evidencia, una hipótesis o una restricción explícita.
 - Distinguir hechos, interpretaciones, hipótesis y decisiones.
-- Preferir bibliografía académica desde 2019; usar fuentes anteriores cuando sean fundamentales o no exista evidencia reciente equivalente.
+- Preferir bibliografía académica publicada desde 2019; usar fuentes anteriores cuando sean fundamentales o no exista evidencia reciente equivalente.
 - Redactar en español claro y académico, con citas y referencias según APA 7.
 - Explicar los conceptos especializados en su primera aparición.
-- Evitar contenido de relleno, reiteraciones y formulaciones no respaldadas.
+- Evitar contenido de relleno, reiteraciones y afirmaciones no respaldadas.
 - Usar consistentemente el término **phygital**.
 - No mencionar encargos, talleres o procesos docentes internos dentro del cuerpo definitivo de la memoria.
 - Mantener los datos identificables fuera del repositorio.
 - Cerrar cada documento Markdown con un registro de cambios.
+- Registrar tanto lo que se decide como la evidencia y la razón de la decisión.
 
 Las reglas completas están en [Directrices de trabajo](https://github.com/joan1542003-byte/proyecto-titulo/blob/main/00_gobernanza/directrices-de-trabajo.md).
 
@@ -65,7 +69,7 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 | `00_gobernanza` | Reglas, metodología de trabajo, hoja de ruta y criterios de calidad. |
 | `01_contexto_y_fuentes` | Contexto, inventario, procedencia y evaluación de las fuentes. |
 | `02_investigacion` | Preguntas, marco conceptual, fichas bibliográficas y síntesis de evidencia. |
-| `03_usuarios` | Datos anonimizados, análisis, patrones, personas y recorridos. |
+| `03_usuarios` | Datos anonimizados, análisis, patrones, tipos de usuario y recorridos. |
 | `04_mercado_y_referentes` | Estado del arte, mercado, comparaciones y oportunidades. |
 | `05_propuesta_phygital` | Propósito, arquitectura, interacción, forma y propuesta de valor. |
 | `06_desarrollo_y_factibilidad` | Tecnología, producción, costos, riesgos, ventajas y límites. |
@@ -76,21 +80,27 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 
 ## Gestión de tareas
 
-Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo, responsables y criterios de cierre.
+Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Consolidación metodológica de las entrevistas
+
+- **Cambio:** se incorporaron fecha, rango etario, modalidad, reclutamiento, consentimiento, autoría de preguntas, procedimiento de transcripción, edad de P6 y estado del corpus.
+- **Versión anterior:** se presentaban las notas manuscritas como fuente primaria pendiente de preservar y se atribuían a la asistencia automatizada tareas posteriores más amplias.
+- **Motivo:** el autor aclaró que todo el levantamiento fue hablado y dirigido por él, que la asistencia automatizada solo transcribió y que las notas ya no están disponibles.
+- **Decisión derivada:** usar la transcripción digital anonimizada como corpus operativo y cerrar la preservación de notas como tarea no realizable, sin tratarla como bloqueo.
 
 ### 2026-08-23 — Inicio de la fase 1
 
-- **Cambio:** actualización del estado del proyecto, incorporación de las aclaraciones metodológicas y enlaces a las Issues #2 y #3.
+- **Cambio:** se actualizó el estado del proyecto y se enlazaron las Issues de trabajo.
 - **Versión anterior:** el repositorio permanecía en fase 0 y describía la procedencia de las entrevistas como una duda abierta.
-- **Motivo:** el autor confirmó la modalidad presencial, el consentimiento, la fuente manuscrita, el uso posterior de IA, la procedencia de las preguntas adicionales y la edad de P6.
-- **Decisión derivada:** comenzar el análisis de usuarios sin presentar como literales las redacciones procesadas por IA.
+- **Motivo:** existían antecedentes suficientes para iniciar el análisis de usuarios.
 
 ### 2026-08-23 — Inicialización documental
 
-- **Cambio:** reemplazo del README mínimo por el contexto, propósito, principios y arquitectura prevista del repositorio.
+- **Cambio:** se reemplazó el README mínimo por el contexto, propósito, principios y arquitectura del repositorio.
 - **Versión anterior:** el archivo contenía únicamente `# proyecto-titulo`.
 - **Motivo:** establecer una fuente central, legible y trazable antes de incorporar investigación o desarrollo.
