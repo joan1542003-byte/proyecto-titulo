@@ -1,0 +1,79 @@
+# Fuentes locales migradas
+
+## Propósito
+
+Esta colección convierte el archivo local del proyecto en documentación Markdown navegable y trazable. Conserva el proceso intelectual sin tratar cada archivo antiguo como formulación vigente.
+
+La colección no replica carpetas de forma ciega. Distingue:
+
+- documentos propios con contenido intelectual;
+- fuentes editables y exportaciones del mismo entregable;
+- versiones históricas;
+- materiales vigentes;
+- fuentes de terceros;
+- información sensible;
+- renders, temporales y duplicados;
+- archivos que solo necesitan una ficha de existencia.
+
+## Principio de organización
+
+El repositorio cumple dos funciones diferentes:
+
+1. **Directorios 00–09:** investigación, decisiones y desarrollo actualmente utilizables.
+2. **Directorio 99:** procedencia, versiones anteriores y materiales necesarios para reconstruir el proceso.
+
+Un documento archivado puede contener ideas todavía útiles. Su ubicación indica estado documental, no falta de valor.
+
+## Estructura prevista
+
+| Ruta | Contenido | Estado |
+|---|---|---|
+| `semestre-1/e09` | Auditoría, formulación y memoria del hito E09 | Primera migración |
+| `semestre-1/e10` | Revisión cruzada, guiones y transcripciones | Primera migración |
+| `semestre-1/e11` | Guías, plan, presentación y memoria revisada | Primera migración |
+| `semestre-1/e12` | Cadena de borradores y cierre de memoria | Primera migración |
+| `semestre-1/cierre` | Entregables y reflexiones de cierre | Primera migración |
+| `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Auditoría en curso |
+| `instrumentos` | Guiones, cuestionarios y protocolos propios | Parcialmente migrado |
+| `fuentes-terceros` | Fichas bibliográficas y registros de existencia | Pendiente |
+| `inventarios` | Mapas, manifiestos, omisiones y equivalencias | Activo |
+
+## Estados documentales
+
+- **Vigente:** puede alimentar el trabajo actual.
+- **Histórico:** documenta una etapa anterior.
+- **Reemplazado:** existe una versión posterior identificada.
+- **Exploratorio:** contiene una formulación que no fue validada.
+- **Fuente editable:** archivo desde el que se generó una exportación.
+- **Exportación:** PDF, imagen o presentación derivada de una fuente.
+- **Ficha de fuente:** registro de un material que no se copia íntegramente.
+- **Omitido:** archivo reconocido, pero excluido por privacidad, propiedad, redundancia o falta de contenido intelectual.
+
+## Reglas de acceso y uso
+
+1. Leer primero la nota archivística de cada documento.
+2. No citar una versión histórica como postura actual sin comprobar su vigencia.
+3. No copiar afirmaciones a la memoria sin rastrear su evidencia.
+4. No confundir una exportación visual con una fuente editable.
+5. No publicar información identificable de participantes.
+6. No reproducir documentos completos de terceros; registrar referencia, función y ubicación local.
+7. No subir temporales, cachés ni duplicados solo para aumentar cobertura.
+8. Mantener un registro de cambios al final de cada Markdown migrado.
+
+## Navegación
+
+- [Protocolo de migración](protocolo-de-migracion.md)
+- [Mapa del archivo local](inventarios/mapa-del-archivo-local.md)
+- [Índice maestro](inventarios/indice-maestro.md)
+- [Registro de omisiones](inventarios/registro-de-omisiones.md)
+
+---
+
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Creación
+
+- **Cambio:** se creó una colección específica para migrar documentación local a Markdown.
+- **Versión anterior:** `99_archivo` definía reglas generales, pero no tenía una arquitectura de conversión ni navegación propia.
+- **Motivo:** ampliar la cobertura documental sin mezclar versiones históricas con contenido vigente.
+- **Decisión derivada:** migrar por lotes, comenzando por documentos propios que ya existen como Markdown o texto estructurado.
