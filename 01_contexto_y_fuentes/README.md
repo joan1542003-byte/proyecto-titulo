@@ -8,6 +8,7 @@ Este directorio conserva la procedencia del proyecto y evita que una versión po
 - `inventario-de-fuentes.md`: clasificación, función, privacidad y confiabilidad de los documentos.
 - `feedback-e15.md`: retroalimentación relevante para Relevo, separada por nivel de fuente.
 - `auditoria-metodologica.md`: contradicciones y preguntas que deben resolverse antes de analizar usuarios.
+- `auditoria-visual-docx.md`: estructura, legibilidad, comentarios y cambios controlados de los DOCX recibidos.
 
 ## Regla de uso
 
@@ -16,6 +17,12 @@ Los archivos originales con datos personales permanecen en el archivo local. Git
 ---
 
 ## Registro de cambios
+
+### 2026-08-23 — Incorporación de auditoría visual
+
+- **Cambio:** incorporación de `auditoria-visual-docx.md` al índice.
+- **Versión anterior:** el índice solo incluía contexto, inventario, feedback y auditoría metodológica.
+- **Motivo:** registrar que la revisión también comprobó estructura, comentarios, cambios controlados y legibilidad.
 
 ### 2026-08-23 — Creación
 
