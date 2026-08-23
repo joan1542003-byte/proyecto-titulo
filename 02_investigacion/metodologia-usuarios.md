@@ -52,7 +52,7 @@ Bradley et al. (2021) advierten que una experiencia agregada puede ocultar perju
 
 Point y Baruch (2023) muestran que las estrategias de transcripción suelen omitirse y que cada estrategia introduce decisiones y sesgos.
 
-**Implicación:** la memoria debe declarar que la fuente primaria es manuscrita, que hubo procesamiento posterior con IA y que las citas literales requieren cotejo.
+**Implicación:** la memoria debe declarar que las entrevistas fueron habladas y presenciales, que todas las intervenciones fueron realizadas por el investigador y que la asistencia automatizada se limitó a la transcripción posterior. La transcripción digital consolidada es el corpus operativo y las citas se comprueban en ella.
 
 ## Fichas de fuentes
 
@@ -124,8 +124,8 @@ Point y Baruch (2023) muestran que las estrategias de transcripción suelen omit
 
 - **Tipo:** revisión de 434 artículos e entrevistas con autores sobre estrategias de transcripción.
 - **Aporte:** muestra que la transcripción es una decisión metodológica que debe informarse.
-- **Límite:** estudia estrategias de transcripción en general, no específicamente redacción con modelos generativos.
-- **Uso en Relevo:** protocolo de transparencia, conservación de notas y restricción de citas literales.
+- **Límite:** estudia estrategias de transcripción en general y no evalúa específicamente la herramienta utilizada en este proyecto.
+- **Uso en Relevo:** protocolo de transparencia del procedimiento, revisión de consistencia y declaración de límites de la transcripción.
 
 ## Decisión
 
@@ -162,7 +162,14 @@ Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qual
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Actualización del procedimiento de transcripción
+
+- **Cambio:** se corrigió la implicación metodológica y el uso de la fuente M-U09.
+- **Versión anterior:** se consideraban las notas manuscritas como fuente primaria pendiente y se restringían las citas hasta cotejarlas.
+- **Motivo:** el autor confirmó que las notas ya no están disponibles y que la asistencia automatizada se usó exclusivamente para transcribir conversaciones dirigidas por él.
+- **Decisión derivada:** usar la transcripción consolidada como corpus operativo, con transparencia y cautela ante pasajes ambiguos.
 
 ### 2026-08-23 — Creación
 
