@@ -1,97 +1,72 @@
 # Auditoría metodológica de las entrevistas
 
-## Resultado principal
+## Resultado
 
-La procedencia del levantamiento quedó aclarada. Las ocho respuestas corresponden a entrevistas reales realizadas presencialmente en Santiago, con consentimiento informado y registro original en notas manuscritas. La IA no participó en la aplicación de las entrevistas ni generó respuestas; se utilizó después para apoyar la transcripción, organización y escritura académica.
+El corpus es utilizable para un análisis cualitativo exploratorio. La procedencia está suficientemente resuelta y no existe un bloqueo metodológico pendiente.
 
-Esta aclaración permite iniciar el análisis cualitativo. No convierte automáticamente las versiones editadas en transcripciones literales.
+## Descripción metodológica utilizable en la memoria
 
-## Fuentes que sostienen la descripción
+Durante junio de 2026 se realizaron ocho entrevistas semiestructuradas y presenciales en Santiago con personas de 18 a 30 años. Las personas participantes fueron reclutadas mediante referencias de la red personal del investigador y otorgaron consentimiento informado oral. El investigador condujo las conversaciones y formuló todas las preguntas y repreguntas. Las respuestas fueron transcritas posteriormente con asistencia automatizada, sin generación de contenido por parte de la herramienta.
 
-### Registro primario
+Una entrevista semiestructurada combina un conjunto común de temas con la posibilidad de profundizar mediante repreguntas. Esta modalidad permite comparar casos sin impedir que aparezcan experiencias no previstas en el guion.
 
-F-004 corresponde a las notas manuscritas tomadas durante las entrevistas. Todavía no se encuentran digitalizadas dentro del archivo controlado del proyecto.
+## Corpus operativo
 
-### Registros derivados
+El corpus operativo es la transcripción digital consolidada de los ocho casos, identificados como P1–P8. Las notas manuscritas ya no están disponibles y no se intentará reconstruirlas. La duración individual de las conversaciones tampoco fue registrada.
 
-F-004-D, F-005, F-006 y F-007 contienen transcripciones, reorganizaciones o redacciones posteriores. Son útiles para reconstruir contenido y realizar análisis mediante paráfrasis, siempre que se conserve el identificador P1–P8.
+El análisis debe realizarse sobre episodios y respuestas efectivamente transcritos. Cuando un pasaje sea ambiguo por su formulación oral o por posibles errores de transcripción, se clasificará con menor confianza o se excluirá de una afirmación fuerte.
 
-### Declaración de procedencia
+## Evaluación de calidad
 
-F-010 registra la aclaración del autor realizada el 23 de agosto de 2026. Esta declaración resuelve cómo se produjo el material, pero no sustituye la preservación de las notas.
+| Dimensión | Evaluación | Consecuencia |
+|---|---|---|
+| Autenticidad del levantamiento | Confirmada por el investigador | Los ocho casos se tratan como entrevistas reales. |
+| Modalidad | Presencial y hablada | El corpus se interpreta como conversación semiestructurada. |
+| Autoría de preguntas | Investigador | Todas las preguntas y repreguntas transcritas pueden incluirse en el análisis. |
+| Transcripción | Asistencia automatizada posterior | Deben considerarse posibles errores de conversión, sin atribuir agencia investigativa a la herramienta. |
+| Reclutamiento | Referencias de la red personal | No se presume diversidad ni representatividad estadística. |
+| Consentimiento | Informado y oral | Puede declararse su existencia y modalidad; no se inventa un guion no conservado. |
+| Anonimización | P1–P8 | Se evita incorporar información identificable. |
+| Duración | No registrada | No se comparan casos por extensión temporal. |
+| Contexto territorial | Santiago | Se informa como contexto, no como alcance poblacional. |
 
-## Descripción metodológica admisible
+## Reglas analíticas
 
-Mientras se completan los metadatos faltantes, puede utilizarse la siguiente formulación de trabajo:
+1. Analizar primero cada caso y luego comparar entre casos.
+2. Diferenciar respuesta directa, interpretación analítica e implicación de diseño.
+3. Registrar evidencia contraria y casos que no presenten conflicto con el ocio digital.
+4. No convertir ocho entrevistas en porcentajes poblacionales.
+5. No suponer que toda permanencia frente a una pantalla es problemática.
+6. Tratar los tipos de usuario como patrones situacionales; una misma persona puede expresar más de uno según el episodio.
+7. Comprobar las citas contra la transcripción consolidada y conservar su sentido oral.
+8. No completar edades, ocupaciones, motivaciones o contextos ausentes.
+9. Vincular cada requisito de Relevo con uno o más hallazgos trazables.
 
-> Se realizaron ocho entrevistas presenciales de carácter semiestructurado en Santiago de Chile, con consentimiento informado. Las respuestas se registraron originalmente mediante notas manuscritas. Posteriormente se utilizó inteligencia artificial como apoyo para la transcripción, organización y adecuación de la escritura académica; esta herramienta no intervino en la realización de las entrevistas ni en la generación de las respuestas.
+## Vacíos documentales que deben declararse
 
-El término **semiestructurado** describe una entrevista guiada por preguntas previamente definidas que permite repreguntar o modificar el orden según la respuesta. Antes de incorporar esta formulación a la memoria deben añadirse las fechas, criterio de reclutamiento, características pertinentes de la muestra y procedimiento de consentimiento.
+- No se registró la duración individual.
+- No se conserva el texto exacto del consentimiento oral.
+- Las notas manuscritas ya no están disponibles.
 
-## Resolución de discrepancias
+Estos vacíos limitan la documentación del procedimiento, pero no impiden la codificación temática ni la comparación de casos.
 
-### 1. Modalidad
+## Conclusión
 
-**Resuelta.** El levantamiento fue presencial y no un cuestionario realizado por IA. La apariencia de formulario o las etiquetas asociadas a IA pertenecen al procesamiento posterior.
-
-### 2. Lugar
-
-**Resuelta con alcance limitado.** Las entrevistas se realizaron en Santiago. Este dato describe el contexto del levantamiento; no permite afirmar que la muestra represente a la ciudad.
-
-### 3. Consentimiento
-
-**Resuelta por declaración del autor.** Existió consentimiento informado. Para fortalecer la trazabilidad académica conviene conservar de forma privada el texto, guion o explicación utilizado, si todavía existe.
-
-### 4. Preguntas adicionales
-
-**Resuelta en cuanto a procedencia.** Las preguntas sobre estrategias para dejar el teléfono y reacción ante In(Visible) se realizaron presencialmente y quedaron registradas en notas. Pueden analizarse mediante paráfrasis. Su formulación y las respuestas deberán cotejarse con F-004 antes de citarse entre comillas.
-
-### 5. Edad de P6
-
-**Resuelta.** P6 tiene 27 años. El valor de 24 años se registra como error de una versión procesada.
-
-### 6. Alcance de la muestra
-
-**Restricción vigente.** Ocho participantes permiten explorar patrones, tensiones y casos contrastantes. No permiten estimar prevalencias ni presentar los resultados como segmentos representativos de mercado.
-
-## Protocolo de uso durante la fase 1
-
-- Anonimizar a las personas como P1–P8.
-- Trabajar con paráfrasis trazables mientras no se cotejen las notas.
-- Reservar las comillas para expresiones verificadas contra F-004.
-- Diferenciar la respuesta de la persona, la normalización lingüística posterior y la interpretación del investigador.
-- Registrar casos que contradigan la hipótesis del proyecto.
-- No completar datos faltantes mediante biografías ficticias.
-- Tratar los tipos de usuario como patrones provisionales y revisables.
-
-## Vacíos documentales que permanecen
-
-1. Digitalización y respaldo privado de las notas manuscritas.
-2. Fechas y duración real de cada entrevista.
-3. Criterio de reclutamiento y relación entre participantes y público de interés.
-4. Texto o procedimiento exacto de consentimiento.
-5. Registro del alcance concreto del procesamiento con IA.
-6. Cotejo de cualquier cita literal y de la secuencia exacta de preguntas.
-
-Estos vacíos no bloquean la codificación inicial por paráfrasis. Deben resolverse antes de cerrar el apartado metodológico de la memoria y antes de usar citas directas.
-
-## Decisión
-
-La fase 0 se considera cerrada. La fase 1 puede comenzar con F-004 como fuente primaria no digitalizada, F-004-D y los demás documentos como apoyos derivados, y F-010 como declaración de procedencia.
+La fase de usuarios puede avanzar a libro de códigos, reconstrucción de casos y matriz P1–P8. La principal precaución no es recuperar un soporte ausente, sino evitar generalizaciones, reconocer los posibles errores de transcripción y mantener separadas la evidencia y la interpretación.
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
 
-### 2026-08-23 — Resolución de contradicciones
+### 2026-08-23 — Cierre de auditoría
 
-- **Cambio:** reemplazo de la hipótesis de cuestionario digital por la descripción de ocho entrevistas presenciales; se documentaron consentimiento, notas manuscritas, uso posterior de IA, preguntas adicionales y edad de P6.
-- **Versión anterior:** se sostenía provisionalmente que F-004 era una exportación primaria de un cuestionario digital y se mantenían en cuarentena las preguntas adicionales.
-- **Motivo:** el autor aclaró de forma explícita la procedencia y el procedimiento real del levantamiento.
-- **Límite:** las versiones académicamente editadas siguen siendo derivadas; las citas literales requieren cotejo con el registro manuscrito.
+- **Cambio:** se sustituyó la auditoría provisional por una evaluación cerrada del corpus disponible y sus limitaciones reales.
+- **Versión anterior:** se condicionaban citas y preguntas adicionales a la recuperación de notas manuscritas, y se mantenía una intervención posterior más amplia de asistencia automatizada.
+- **Motivo:** el autor confirmó la conducción íntegra de las entrevistas, el uso exclusivo de transcripción y la indisponibilidad definitiva de las notas.
+- **Decisión derivada:** autorizar el análisis completo del corpus digital con cautelas de transcripción, anonimización y alcance.
 
-### 2026-08-23 — Creación
+### 2026-08-23 — Auditoría inicial
 
-- **Cambio:** contraste inicial de la exportación digital con la memoria histórica y los anexos reconstruidos.
-- **Versión anterior:** los documentos presentaban descripciones metodológicas contradictorias.
-- **Motivo:** proteger la validez académica y evitar atribuir a participantes respuestas sin procedencia comprobable.
+- **Cambio:** se creó una evaluación preliminar de consistencia.
+- **Versión anterior:** no existía una revisión metodológica centralizada.
+- **Motivo:** identificar discrepancias antes de analizar usuarios.
