@@ -1,0 +1,17 @@
+# Datos primarios o identificables
+00_fuentes_privadas/
+fuentes_primarias_identificables/
+datos_sensibles/
+audio_entrevistas/
+transcripciones_identificables/
+
+# Archivos temporales y de sistema
+tmp/
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Exportaciones de trabajo
+*.tmp
+*.bak
