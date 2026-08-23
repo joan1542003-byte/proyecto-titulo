@@ -28,7 +28,7 @@ Esta formulación continúa abierta a revisión. El producto final deberá respo
 
 ## Estado actual
 
-**Fase 1 activa: análisis de usuarios; tipología definida y desarrollo de personas en preparación.**
+**Línea activa: organización y migración documental. La fase de usuarios queda pausada después de definir la tipología.**
 
 La base metodológica del corpus quedó consolidada:
 
@@ -42,7 +42,9 @@ La base metodológica del corpus quedó consolidada:
 - P6 tiene 27 años;
 - la duración individual de las entrevistas no quedó registrada.
 
-El análisis se desarrolla en la [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2). La antigua tarea de preservación de notas se conserva como decisión cerrada en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
+El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como la entrega aún no exige visualidad, los futuros perfiles se mantendrán como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
+
+La migración se gestiona en la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) y se documenta en [Fuentes locales migradas](https://github.com/joan1542003-byte/proyecto-titulo/tree/main/99_archivo/fuentes-locales). La [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2) conserva el avance de usuarios hasta retomar esa fase.
 
 ## Principios de trabajo
 
@@ -76,7 +78,7 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 | `07_validacion` | Hipótesis, protocolos, resultados y criterios de decisión. |
 | `08_memoria` | Arquitectura narrativa, capítulos, versiones y control APA 7. |
 | `09_decisiones` | Registro cronológico de decisiones y cambios de dirección. |
-| `99_archivo` | Material superado que debe conservarse sin tratarse como vigente. |
+| `99_archivo` | Material histórico y fuentes locales migradas, con estado y procedencia explícitos. |
 
 ## Gestión de tareas
 
@@ -85,6 +87,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Activación de la migración documental
+
+- **Cambio:** se pausó el desarrollo de personas, se registró que la edad es el único criterio común y se enlazó la nueva arquitectura de fuentes locales.
+- **Versión anterior:** el siguiente paso activo era construir personas y recorridos.
+- **Motivo:** el autor priorizó convertir y ordenar la documentación local antes de continuar el desarrollo analítico.
+- **Decisión derivada:** trabajar una sola línea principal mediante la Issue #4; no añadir visualidad de personas mientras no sea exigida.
 
 ### 2026-08-23 — Integridad del corpus y tipología
 
