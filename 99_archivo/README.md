@@ -4,6 +4,14 @@
 
 Conservar materiales superados o exploratorios sin tratarlos como formulación vigente ni eliminarlos del proceso.
 
+## Navegación
+
+- [Fuentes locales migradas](fuentes-locales/README.md)
+- [Protocolo de migración](fuentes-locales/protocolo-de-migracion.md)
+- [Índice maestro](fuentes-locales/inventarios/indice-maestro.md)
+- [Mapa del archivo local](fuentes-locales/inventarios/mapa-del-archivo-local.md)
+- [Registro de omisiones](fuentes-locales/inventarios/registro-de-omisiones.md)
+
 ## Puede contener
 
 - síntesis de versiones anteriores;
@@ -27,7 +35,14 @@ El archivo no es una papelera. Su función es preservar la evolución del proyec
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Apertura de la migración local
+
+- **Cambio:** se añadió navegación hacia la arquitectura de fuentes locales migradas.
+- **Versión anterior:** el archivo histórico no tenía colecciones ni protocolo de conversión.
+- **Motivo:** organizar el traslado de documentación propia a Markdown sin confundirla con contenido vigente.
+- **Decisión derivada:** usar `99_archivo/fuentes-locales` como espejo curado del proceso.
 
 ### 2026-08-23 — Creación
 
