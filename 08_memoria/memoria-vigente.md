@@ -299,10 +299,10 @@ Esta evidencia no demuestra que bloquear sea siempre incorrecto ni que una seña
 
 | Familia | Referentes | Operación declarada | Aprendizaje y límite |
 | --- | --- | --- | --- |
-| Fricción en el teléfono | one sec; Pause Point | Introducen una pausa antes de acceder o continuar en aplicaciones. | Favorecen reconsideración sin objeto, pero mantienen la intervención en el mismo dispositivo. |
-| Bloqueo físico-digital | Brick; Unpluq Tag; Screenless Breaker | Usan una pieza física o NFC para activar, mantener o revertir restricciones. | El gesto físico modifica el acceso; su lógica principal sigue siendo restricción o fricción. |
-| Ritual o foco con objetos | Focusaur; Aro, como antecedente de disponibilidad incierta | Vinculan objetos o lugares con sesiones de foco o separación del teléfono. | Hacen visible un compromiso, pero pueden exigir depósito, volumen o una definición productiva del tiempo. |
-| Recordatorio tangible | Tangible Reminder | Asocia información o tareas digitales con piezas físicas. | Sustenta la posibilidad de una clave material en otro contexto técnico. |
+| Fricción en el teléfono | one sec; Pause Point (one sec, s. f.; Sanders, 2026) | Introducen una pausa antes de acceder o continuar en aplicaciones. | Favorecen reconsideración sin objeto, pero mantienen la intervención en el mismo dispositivo. |
+| Bloqueo físico-digital | Brick; Unpluq Tag; Screenless Breaker (Brick LLC, s. f.; Screenless, s. f.; Unpluq, s. f.) | Usan una pieza física o NFC para activar, mantener o revertir restricciones. | El gesto físico modifica el acceso; su lógica principal sigue siendo restricción o fricción. |
+| Ritual o foco con objetos | Focusaur; Aro, como antecedente de disponibilidad incierta (Aro, s. f.; Focusaur, s. f.) | Vinculan objetos o lugares con sesiones de foco o separación del teléfono. | Hacen visible un compromiso, pero pueden exigir depósito, volumen o una definición productiva del tiempo. |
+| Recordatorio tangible | Tangible Reminder (Hermann et al., 2007) | Asocia información o tareas digitales con piezas físicas. | Sustenta la posibilidad de una clave material en otro contexto técnico. |
 
 *Nota.* Las funciones comerciales fueron verificadas en sitios oficiales el 24 de agosto de 2026. Las promesas de ahorro de tiempo o cambio de hábitos se tratan como comunicación comercial, no como evidencia independiente.
 
@@ -534,9 +534,9 @@ Apple Inc. (s. f.). *AirTag (2.ª generación): Especificaciones técnicas*. Sop
 
 Aro. (s. f.). *Aro: Screen time solution* [Referente histórico; disponibilidad comercial por verificar]. Recuperado el 15 de agosto de 2026, de https://goaro.com/
 
-Biedermann, D., Schneider, J., y Drachsler, H. (2021). Digital self-control interventions for distracting media multitasking: A systematic review. *Journal of Computer Assisted Learning, 37*(5), 1217–1231. https://doi.org/10.1111/jcal.12581
-
 Banco Central de Chile. (2026). *Dólar observado*. Base de Datos Estadísticos. Recuperado el 15 de agosto de 2026, de https://si3.bcentral.cl/Bdemovil/BDE/Series/MOV_BD_TC1
+
+Biedermann, D., Schneider, J., y Drachsler, H. (2021). Digital self-control interventions for distracting media multitasking: A systematic review. *Journal of Computer Assisted Learning, 37*(5), 1217–1231. https://doi.org/10.1111/jcal.12581
 
 Brick LLC. (s. f.). *Brick: Take back control of your screen time*. Recuperado el 15 de agosto de 2026, de https://getbrick.com/
 
@@ -544,17 +544,19 @@ de Segovia Vicente, D., Van Gaeveren, K., Murphy, S. L., y Vanden Abeele, M. M. 
 
 Energizer Holdings, Inc. (2020). *Energizer CR2032: Product datasheet* [Hoja de datos]. https://www.data.energizer.com/pdfs/ultimatecr2032EU0920.pdf
 
+Focusaur. (s. f.). *Focusaur: The phone-free focus device for deep work & habits*. Recuperado el 24 de agosto de 2026, de https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-habits
+
 Gilbert, S. J., Boldt, A., Sachdeva, C., Scarampi, C., y Tsai, P.-C. (2023). Outsourcing memory to external tools: A review of “intention offloading”. *Psychonomic Bulletin & Review, 30*(1), 60–76. https://doi.org/10.3758/s13423-022-02139-4
 
 Gollwitzer, P. M., y Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. *Advances in Experimental Social Psychology, 38*, 69–119. https://doi.org/10.1016/S0065-2601(06)38002-1
+
+Google Play. (s. f.). *Foreground service requirements for apps targeting Android 14 or higher*. Google Play Console Help. Recuperado el 15 de agosto de 2026, de https://support.google.com/googleplay/android-developer/answer/17105854
 
 Google. (s. f.-a). *Communicate in the background*. Android Developers. Recuperado el 15 de agosto de 2026, de https://developer.android.com/develop/connectivity/bluetooth/ble/background
 
 Google. (s. f.-b). *Companion device pairing*. Android Developers. Recuperado el 15 de agosto de 2026, de https://developer.android.com/develop/connectivity/bluetooth/companion-device-pairing
 
 Google. (s. f.-c). *UsageStatsManager*. Android Developers. Recuperado el 15 de agosto de 2026, de https://developer.android.com/reference/android/app/usage/UsageStatsManager
-
-Google Play. (s. f.). *Foreground service requirements for apps targeting Android 14 or higher*. Google Play Console Help. Recuperado el 15 de agosto de 2026, de https://support.google.com/googleplay/android-developer/answer/17105854
 
 Hallnäs, L., y Redström, J. (2001). Slow technology—Designing for reflection. *Personal and Ubiquitous Computing, 5*(3), 201–212. https://doi.org/10.1007/PL00000019
 
@@ -574,9 +576,9 @@ McDaniel, M. A., y Einstein, G. O. (2000). Strategic and automatic processes in 
 
 McGee-Lennon, M. R. (2012). Reminders that make sense: Designing multisensory notifications for the home. *Journal of Assistive Technologies, 6*(2), 93–104. https://doi.org/10.1108/17549451211234957
 
-Meier, A., y Reinecke, L. (2021). Computer-mediated communication, social media, and mental health: A conceptual and empirical meta-review. *Communication Research, 48*(8), 1182–1209. https://doi.org/10.1177/0093650220958224
-
 MechatronicStore. (s. f.). *Motores y actuadores*. Recuperado el 15 de agosto de 2026, de https://www.mechatronicstore.cl/motores-y-actuadores/
+
+Meier, A., y Reinecke, L. (2021). Computer-mediated communication, social media, and mental health: A conceptual and empirical meta-review. *Communication Research, 48*(8), 1182–1209. https://doi.org/10.1177/0093650220958224
 
 Monge Roffarello, A., y De Russis, L. (2023). Achieving digital wellbeing through digital self-control tools: A systematic review and meta-analysis. *ACM Transactions on Computer-Human Interaction, 30*(4), Article 53, 1–66. https://doi.org/10.1145/3571810
 
@@ -592,10 +594,6 @@ O'Rear, A. E., y Radvansky, G. A. (2019). Location-based prospective memory. *Qu
 
 one sec. (s. f.). *FAQ*. Recuperado el 24 de agosto de 2026, de https://one-sec.app/faq/
 
-Screenless. (s. f.). *Screenless Breaker*. Recuperado el 24 de agosto de 2026, de https://screenlessapp.com/en
-
-Unpluq. (s. f.). *Unpluq frequently asked questions*. Recuperado el 24 de agosto de 2026, de https://www.unpluq.com/pages/faq
-
 Precision Microdrives Ltd. (2023). *C08-00A: 8 mm linear resonant actuator* [Hoja de datos]. https://precisionmicrodrives.com/cdn/datasheets/C08-00A%20-%20datasheet%20-%20002/c08-00a-datasheet-002.pdf
 
 Radtke, T., Apel, T., Schenkel, K., Keller, J., y von Lindern, E. (2022). Digital detox: An effective solution in the smartphone era? A systematic literature review. *Mobile Media & Communication, 10*(2), 190–215. https://doi.org/10.1177/20501579211028647
@@ -605,6 +603,8 @@ Reinecke, L., y Meier, A. (2020). Guilt and media use. En J. Van den Bulck, D. R
 Risko, E. F., y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676–688. https://doi.org/10.1016/j.tics.2016.07.002
 
 Sanders, S. (2026, 12 de mayo). *Reclaim your time with Pause Point*. Google. https://blog.google/products-and-platforms/platforms/android/pause-point/
+
+Screenless. (s. f.). *Screenless Breaker*. Recuperado el 24 de agosto de 2026, de https://screenlessapp.com/en
 
 Sohn, T., Li, K. A., Lee, G., Smith, I., Scott, J., y Griswold, W. G. (2005). Place-Its: A study of location-based reminders on mobile phones. En M. Beigl, S. Intille, J. Rekimoto y H. Tokuda (Eds.), *UbiComp 2005: Ubiquitous computing* (Lecture Notes in Computer Science, Vol. 3660, pp. 232–250). Springer. https://doi.org/10.1007/11551201_14
 
@@ -616,12 +616,13 @@ Texas Instruments. (2018). *DRV2605L: 2- to 5.2-V haptic driver for LRA and ERM 
 
 Tulving, E. (2002). Episodic memory: From mind to brain. *Annual Review of Psychology, 53*, 1–25. https://doi.org/10.1146/annurev.psych.53.100901.135114
 
+Unpluq. (s. f.). *Unpluq frequently asked questions*. Recuperado el 24 de agosto de 2026, de https://www.unpluq.com/pages/faq
+
 Vortac, O. U., Edwards, M. B., y Manning, C. A. (1995). Functions of external cues in prospective memory. *Memory, 3*(2), 201–219. https://doi.org/10.1080/09658219508258966
 
 VShop. (s. f.). *Módulos Arduino ESP32*. Recuperado el 15 de agosto de 2026, de https://vshop.cl/161-modulos-arduino-esp32
 
 World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Three flashes or below threshold*. Recuperado el 15 de agosto de 2026, de https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold
-
 ANEXOS / DOCUMENTAR
 
 ## Anexo A. Trazabilidad del estudio de junio
@@ -932,6 +933,13 @@ En esta versión se utilizó inteligencia artificial generativa como apoyo para 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Auditoría APA del mercado
+
+- **Cambio:** se añadieron citas parentéticas a la tabla de mercado, se incorporó la referencia oficial de Focusaur y se reordenó alfabéticamente la lista de referencias.
+- **Versión anterior:** Focusaur aparecía sin entrada bibliográfica y las referencias comerciales nuevas estaban fuera de orden.
+- **Motivo:** mejorar la correspondencia entre afirmaciones dinámicas y fuentes según APA 7.
+- **Alcance:** las fuentes comerciales describen oferta y mecanismos; no validan eficacia.
 
 ### 2026-08-24 — Declaración como memoria vigente y corrección integral
 
