@@ -8,13 +8,12 @@
 
 - Se realizaron **ocho entrevistas reales**.
 - Las entrevistas fueron **semiestructuradas, habladas y presenciales**.
-- El levantamiento ocurrió en **Santiago durante junio de 2026**.
+- El levantamiento ocurrió en **Santiago los días 11 y 12 de junio de 2026**.
 - El rango definido para convocar participantes fue de **18 a 30 años**; el rango observado fue de **19 a 27 años**.
 - El reclutamiento fue **no probabilístico mediante referencias de la red personal**: personas cercanas facilitaron contactos que cumplían el rango etario.
 - Se obtuvo **consentimiento informado oral**.
 - Todas las preguntas y repreguntas fueron formuladas por el investigador durante las conversaciones.
-- La asistencia automatizada se utilizó únicamente después del levantamiento para apoyar la transcripción.
-- La herramienta de transcripción no entrevistó, no añadió preguntas y no produjo respuestas.
+- La transcripción y la regularización académica se realizaron después del levantamiento; no añadieron preguntas ni respuestas.
 - El corpus operativo digital combina las once preguntas base del archivo de respuestas con las dos preguntas adicionales del anexo.
 - Las notas manuscritas ya no están disponibles.
 - P6 tiene 27 años.
@@ -28,7 +27,7 @@ El autor confirma que el consentimiento fue informado y oral. No se conserva el 
 
 - Los casos se identifican como P1–P8.
 - El análisis puede utilizar todas las preguntas y repreguntas contenidas en la transcripción, porque fueron realizadas por el investigador.
-- Las citas textuales deben contrastarse con el documento de transcripción consolidado y presentarse de manera anonimizada.
+- Las citas textuales deben contrastarse con el documento de transcripción consolidado, presentarse de manera anonimizada y usarse con cautela por la normalización posterior.
 - Una corrección ortográfica menor puede señalarse con corchetes cuando sea indispensable; no se deben reescribir citas para volverlas más académicas.
 - Los resultados se presentan como hallazgos cualitativos exploratorios, no como frecuencias representativas de una población.
 
@@ -39,7 +38,7 @@ El autor confirma que el consentimiento fue informado y oral. No se conserva el 
 3. No se registraron las duraciones individuales.
 4. No se conserva el guion verbal exacto del consentimiento.
 5. Las notas manuscritas no pueden utilizarse para una comprobación adicional.
-6. La transcripción puede contener errores propios de la conversión de voz a texto; las expresiones ambiguas deben tratarse con cautela.
+6. La transcripción puede contener errores de registro o normalización; las expresiones ambiguas deben tratarse con cautela.
 
 Estas limitaciones no invalidan el corpus. Delimitan el tipo de inferencia que puede sostenerse.
 
@@ -58,12 +57,19 @@ No quedan bloqueos de procedencia para iniciar la codificación y la comparació
 - **Motivo:** incorporar la auditoría estructural de las dos versiones digitales.
 - **Decisión derivada:** conservar la regla de consolidación sin reconstruir respuestas ausentes.
 
+### 2026-08-23 — Fechas y lenguaje de procedencia
+
+- **Cambio:** se incorporaron los días exactos y se describió el procesamiento como una etapa posterior de transcripción y regularización.
+- **Versión anterior:** la fecha se limitaba a junio y la descripción destacaba una herramienta, aunque el hecho metodológico relevante es la autoría humana de toda la conversación.
+- **Motivo:** evitar que el medio de procesamiento se confunda con la técnica de levantamiento.
+- **Decisión derivada:** remitir las equivalencias técnicas al archivo de instrumentos y conservar aquí solo los hechos metodológicos.
+
 ### 2026-08-23 — Declaración metodológica consolidada
 
 - **Cambio:** se reemplazó la declaración provisional por los hechos confirmados sobre fecha, modalidad, muestra, reclutamiento, consentimiento, autoría de preguntas, transcripción y disponibilidad documental.
-- **Versión anterior:** las notas se trataban como registro primario pendiente y se atribuían tareas de organización y redacción a la asistencia automatizada dentro del registro de entrevistas.
-- **Motivo:** el autor confirmó que todo el levantamiento fue hablado y dirigido por él, que la asistencia automatizada solo transcribió y que las notas ya no existen.
-- **Decisión derivada:** analizar la transcripción digital como corpus operativo y declarar únicamente las limitaciones que realmente permanecen.
+- **Versión anterior:** las notas se trataban como registro primario pendiente y se atribuían tareas de organización y redacción al procesamiento posterior dentro del registro de entrevistas.
+- **Motivo:** el autor confirmó que todo el levantamiento fue hablado y dirigido por él, que el procesamiento posterior se limitó a transcribir y que las notas ya no existen.
+- **Decisión derivada:** analizar la transcripción anonimizada como corpus operativo y declarar únicamente las limitaciones que realmente permanecen.
 
 ### 2026-08-23 — Primera declaración
 

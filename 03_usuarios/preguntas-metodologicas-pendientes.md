@@ -6,11 +6,11 @@ Registrar las respuestas entregadas por el autor, los vacíos que permanecen y s
 
 | ID | Tema | Respuesta consolidada | Consecuencia | Estado |
 |---|---|---|---|---|
-| Q-U01 | Fecha y duración | Las entrevistas se realizaron en junio de 2026. La duración individual no fue registrada. | Informar la fecha y declarar la duración como dato no disponible; no comparar profundidad por minutos. | Resuelta con un vacío documental no recuperable. |
+| Q-U01 | Fecha y duración | Las entrevistas se realizaron los días 11 y 12 de junio de 2026. La duración individual no fue registrada. | Informar las fechas y declarar la duración como dato no disponible; no comparar profundidad por minutos. | Resuelta con un vacío documental no recuperable. |
 | Q-U02 | Reclutamiento y pertinencia | Personas cercanas facilitaron contactos bajo un criterio de 18 a 30 años; el rango observado fue de 19 a 27 años. | Describir un reclutamiento no probabilístico por referencias de la red personal y limitar las generalizaciones. | Resuelta. |
 | Q-U03 | Consentimiento | Se obtuvo consentimiento informado oral. No se conserva el texto exacto utilizado. | Declarar existencia y modalidad sin inventar cláusulas específicas. | Resuelta con precisión limitada. |
-| Q-U04 | Autoría de preguntas | Todas las preguntas y repreguntas fueron realizadas oralmente por el investigador. La asistencia automatizada se utilizó solo para transcribir después. | Incluir todas las respuestas transcritas en el corpus. | Resuelta. |
-| Q-U05 | Notas manuscritas | Las notas ya no están disponibles. | Usar la transcripción digital consolidada como corpus operativo; no mantener una tarea de recuperación. | Cerrada sin acción adicional. |
+| Q-U04 | Autoría de preguntas | Todas las preguntas y repreguntas fueron realizadas oralmente por el investigador. La transcripción se elaboró después de las conversaciones. | Incluir todas las respuestas transcritas en el corpus. | Resuelta. |
+| Q-U05 | Notas manuscritas | Las notas ya no están disponibles. | Usar la transcripción consolidada como corpus operativo; no mantener una tarea de recuperación. | Cerrada sin acción adicional. |
 | Q-U06 | Dato de P6 | P6 tiene 27 años. | Corregir cualquier versión discrepante y utilizar 27 como dato vigente. | Resuelta. |
 | Q-U07 | Lugar | Las entrevistas se realizaron en Santiago. | Informar el contexto territorial sin presentarlo como representatividad de la ciudad. | Resuelta. |
 
@@ -37,12 +37,19 @@ No quedan preguntas de procedencia que bloqueen la codificación. El corpus pued
 - **Motivo:** la revisión caso por caso confirmó edades de 19 a 27 años.
 - **Decisión derivada:** usar ambos datos con funciones metodológicas distintas.
 
+### 2026-08-23 — Fechas exactas y procesamiento
+
+- **Cambio:** Q-U01 incorpora los días exactos y Q-U04 describe la transcripción como una etapa posterior.
+- **Versión anterior:** la fecha se limitaba al mes y la respuesta destacaba una herramienta no participante del levantamiento.
+- **Motivo:** registrar únicamente hechos metodológicos pertinentes para analizar el corpus.
+- **Decisión derivada:** consultar el archivo de instrumentos para equivalencias técnicas y mantener cerradas estas preguntas.
+
 ### 2026-08-23 — Resolución
 
 - **Cambio:** se respondieron las cinco preguntas originales y se añadieron lugar y corrección de P6.
 - **Versión anterior:** todas aparecían como pendientes y varias bloqueaban citas o fragmentos.
 - **Motivo:** incorporar las respuestas directas del autor y cerrar tareas imposibles de completar.
-- **Decisión derivada:** iniciar la matriz P1–P8 usando la transcripción digital como corpus operativo.
+- **Decisión derivada:** iniciar la matriz P1–P8 usando la transcripción consolidada como corpus operativo.
 
 ### 2026-08-23 — Creación
 

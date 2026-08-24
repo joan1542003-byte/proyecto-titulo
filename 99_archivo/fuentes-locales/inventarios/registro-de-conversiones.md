@@ -43,7 +43,7 @@ fecha_creacion: 2026-08-23
 - No se detectaron rutas absolutas del computador en las copias.
 - No se detectaron los nombres conocidos de las ocho personas entrevistadas.
 - No permanece la edad desactualizada P6 (24).
-- No aparece la etiqueta errónea `Repregunta IA`.
+- No aparece ningún rótulo de autoría incorrecta en las repreguntas.
 - Las fuentes locales permanecen intactas; la migración no las sobrescribió.
 
 ## Decisiones pendientes
@@ -133,3 +133,34 @@ fecha_creacion: 2026-08-23
 - **Versión anterior:** los archivos dependían de nombres de paquetes como final, revisado o 4K.
 - **Motivo:** organizar por función y evitar que perfiles sintéticos se confundan con participantes reales.
 - **Alcance:** no se publicaron imágenes, PDF, SVG, ZIP ni código.
+
+## Sublote 1D — Instrumentos y entrevistas
+
+- **Fecha:** 23 de agosto de 2026.
+- **Entrada:** cuatro DOCX propios: dos guiones, una transcripción temprana y una memoria histórica con anexo.
+- **Salida:** dos conversiones completas, tres documentos de control y un índice de colección.
+- **Destino de respuestas:** corpus anonimizado P1–P8 ya existente, actualizado en su procedencia.
+- **Revisión visual:** 83 páginas inspeccionadas; una página en blanco intencional y ningún recorte detectado.
+
+| ID | Fuente local | Destino | Tratamiento |
+|---|---|---|---|
+| INST-GUI-001 | `Yanten Johan - Guion entrevista.docx` | [guion-entrevista-v1.md](../instrumentos/guion-entrevista-v1.md) | Conversión estructural y clasificación histórica |
+| INST-GUI-002 | `Yanten Johan - Guion entrevista v2.docx` | [guion-entrevista-v2.md](../instrumentos/guion-entrevista-v2.md) | Conversión estructural, normalización terminológica y clasificación histórica |
+| INST-APL-001 | Dos registros y aclaraciones del investigador | [instrumento-aplicado.md](../instrumentos/instrumento-aplicado.md) | Consolidación metodológica sin nombres |
+| INST-EQV-001 | Cuatro DOCX | [equivalencias-y-procedencia.md](../instrumentos/equivalencias-y-procedencia.md) | Hashes, cobertura, similitud y discrepancias |
+| INST-QA-001 | Cuatro DOCX y 83 renders temporales | [informe-integridad-docx.md](../instrumentos/informe-integridad-docx.md) | Revisión OOXML y visual |
+
+### Correcciones declaradas
+
+- Rótulos automáticos de repregunta → repreguntas formuladas por el investigador.
+- Apariencia de exportación digital → transcripción posterior de entrevistas habladas y presenciales.
+- P6 de 24 años → P6 de 27 años.
+- Q12–Q13 sin procedencia → preguntas presenciales posteriores a la secuencia principal, registradas primero en notas.
+- Duración estimada de los guiones → dato de planificación, no duración observada.
+
+### 2026-08-23 — Registro del sublote 1D
+
+- **Cambio:** se cerró la familia C-07 con navegación, conversiones, aplicación, equivalencias e integridad.
+- **Versión anterior:** los guiones permanecían locales y los dos registros de respuestas solo estaban relacionados desde el corpus activo.
+- **Motivo:** documentar todo el material propio útil sin duplicar las respuestas ni publicar identidades.
+- **Alcance:** no se reanudó el desarrollo de tipos de usuario ni se incorporó visualidad de entrega.

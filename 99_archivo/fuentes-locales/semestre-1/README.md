@@ -27,17 +27,18 @@ Los documentos se conservan como antecedentes históricos. Solo deben trasladars
 | 5 | [Cierre](cierre/README.md) | Mapa triple y transición al semestre siguiente | Parcial |
 | — | [Transversal](transversal/README.md) | Teoría de cambio | Migrada |
 | — | [Borradores](borradores/README.md) | Exploraciones no canónicas | Migrada |
+| — | [Instrumentos](../instrumentos/README.md) | Guiones y procedencia de entrevistas | Migrada y documentada |
 
 ## Criterio de vigencia
 
 - La memoria final de E12 representa el cierre académico del semestre 1, no la memoria vigente del semestre 2.
 - Los borradores no se ordenan automáticamente solo por su nombre; su relación se explicita sin inventar una cronología no verificada.
-- La documentación de entrevistas vigente se consulta en la carpeta activa de usuarios, donde el corpus está anonimizado.
+- Las respuestas se consultan en la carpeta activa de usuarios; los guiones y su procedencia se consultan en la colección de instrumentos.
 - Los PDF y DOCX pendientes se incorporarán únicamente cuando aporten contenido que no esté ya preservado en estas versiones Markdown.
 
 ## Control aplicado
 
-El primer lote contiene trece documentos. Cuatro archivos con material de entrevistas fueron revisados para sustituir nombres por P1–P8 y corregir la edad de P6 a 27 años. La etiqueta errónea relacionada con repreguntas automatizadas no aparece en este lote.
+El primer lote contiene trece documentos. Cuatro archivos con material de entrevistas fueron revisados para sustituir nombres por P1–P8 y corregir la edad de P6 a 27 años. Después se cerró una unidad específica de cuatro DOCX: dos guiones se convirtieron íntegramente y los dos registros identificables se vincularon con el corpus anonimizado.
 
 ---
 
@@ -49,3 +50,10 @@ El primer lote contiene trece documentos. Cuatro archivos con material de entrev
 - **Versión anterior:** los archivos estaban dispersos en la raíz y en la carpeta de cierre, sin una cadena de lectura común.
 - **Motivo:** distinguir proceso histórico, documentos reemplazados y antecedentes todavía consultables.
 - **Alcance:** documento de organización; no modifica por sí mismo el contenido sustantivo ni la vigencia de las fuentes enlazadas.
+
+### 2026-08-23 — Instrumentos vinculados
+
+- **Cambio:** se añadió una ruta transversal hacia los guiones, la aplicación y la procedencia de entrevistas.
+- **Versión anterior:** el índice remitía solo al corpus activo y dejaba los DOCX fuera de la cadena de lectura.
+- **Motivo:** integrar los instrumentos al semestre 1 sin mezclar identidades con documentación analítica.
+- **Alcance:** las fuentes locales permanecen intactas y los registros con nombres no se publican.

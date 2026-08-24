@@ -14,12 +14,12 @@ El método responde a seis condiciones:
 
 1. existen ocho entrevistas, por lo que el objetivo es exploratorio y no representativo;
 2. el levantamiento fue semiestructurado, hablado y presencial;
-3. la transcripción digital consolidada es el corpus operativo disponible;
+3. la transcripción consolidada es el corpus operativo disponible;
 4. todas las preguntas y repreguntas fueron realizadas por el investigador;
 5. se necesita comparar a cada participante como caso completo y también observar patrones entre casos;
 6. el resultado solicitado es una tipología de dos usuarios que luego debe traducirse a herramientas de diseño.
 
-La transcripción fue apoyada por una herramienta automatizada después de las conversaciones. Esta condición exige cautela frente a pasajes ambiguos, pero no excluye ninguna respuesta por procedencia. El análisis no utilizará entonación ni rasgos conversacionales que la transcripción no conserve.
+La transcripción y la regularización académica se realizaron después de las conversaciones. Esta condición exige cautela frente a pasajes ambiguos, pero no excluye ninguna respuesta por procedencia. El análisis no utilizará entonación ni rasgos conversacionales que la transcripción no conserve.
 
 ## Métodos considerados
 
@@ -178,8 +178,8 @@ Ningún fragmento se excluye por los rótulos heredados de versiones previas: el
 - No interpretar cantidad de menciones como prevalencia poblacional.
 - No calcular porcentajes para presentar hallazgos cualitativos como representativos.
 - Diferenciar ausencia de mención de ausencia del fenómeno.
-- Verificar cualquier cita textual contra la transcripción digital consolidada y conservar el identificador P1–P8.
-- Informar que la asistencia automatizada se limitó a la transcripción posterior y considerar posibles errores de conversión.
+- Verificar cualquier cita textual contra la transcripción consolidada, conservar el identificador P1–P8 y considerar la normalización posterior.
+- Informar posibles errores de transcripción o regularización sin atribuir a ese procesamiento preguntas o respuestas.
 - Revisar los tipos contra todas las reconstrucciones, no solo contra el caso que mejor los ilustra.
 - Someter las descripciones finales a una revisión del autor y, si es posible, a reflexión posterior con participantes o nuevas personas del público de interés.
 
@@ -197,13 +197,13 @@ Ningún fragmento se excluye por los rótulos heredados de versiones previas: el
 
 ## Datos metodológicos consolidados
 
-- **Fecha:** junio de 2026.
+- **Fecha:** 11 y 12 de junio de 2026.
 - **Lugar:** Santiago.
 - **Participantes:** ocho personas de 19 a 27 años; criterio de convocatoria de 18 a 30 años.
 - **Reclutamiento:** referencias de la red personal.
 - **Consentimiento:** informado y oral.
 - **Conducción:** todas las preguntas y repreguntas fueron realizadas por el investigador.
-- **Transcripción:** apoyo automatizado posterior, sin generación de contenido.
+- **Transcripción:** posterior y normalizada, sin adición de contenido.
 - **Duración:** no registrada.
 - **Notas manuscritas:** no disponibles.
 - **Corrección:** P6 tiene 27 años.
@@ -242,6 +242,13 @@ Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qual
 - **Versión anterior:** ambos aparecían resumidos como participantes de 18 a 30 años.
 - **Motivo:** la auditoría de integridad confirmó edades de 19 a 27 años.
 - **Decisión derivada:** mantener 18–30 solo como criterio de reclutamiento.
+
+### 2026-08-23 — Fechas y condición de transcripción
+
+- **Cambio:** se incorporaron los días exactos y se describió la transcripción por su función metodológica, no por la herramienta utilizada.
+- **Versión anterior:** el método reiteraba el soporte de procesamiento aunque todas las intervenciones humanas ya estaban confirmadas.
+- **Motivo:** evitar meta-información repetitiva y concentrar el control de calidad en errores posibles y límites de literalidad.
+- **Decisión derivada:** mantener el corpus completo y usar citas directas con cautela.
 
 ### 2026-08-23 — Corpus consolidado
 

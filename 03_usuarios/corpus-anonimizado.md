@@ -4,18 +4,19 @@
 
 Este documento reúne las respuestas utilizadas en el análisis, elimina nombres personales y normaliza los identificadores como P1–P8. No reemplaza los archivos privados: ofrece una versión académica, trazable y suficiente para comprobar el libro de códigos, las reconstrucciones y la matriz.
 
-La redacción conserva el sentido oral. Solo se regularizaron ortografía, puntuación y continuidad cuando era necesario para leer. No se añadieron respuestas.
+La redacción conserva el sentido de las conversaciones. Después del levantamiento se transcribió y se regularizaron ortografía, puntuación y continuidad para facilitar la lectura académica. No se añadieron respuestas.
 
 ## Procedencia y regla de consolidación
 
-- Q1–Q11 provienen del archivo digital base.
-- Q12–Q13 provienen del anexo de entrevistas.
-- P2-Q10 conserva el fragmento completo presente en el archivo base.
+- Q1–Q11 provienen del registro transcrito más temprano de las entrevistas habladas.
+- Q12–Q13 provienen del anexo posterior y fueron realizadas presencialmente después de la secuencia principal.
+- P2-Q10 conserva el fragmento completo presente en el registro temprano.
 - P6 se registra con 27 años, según la aclaración directa del autor.
 - Todos los rótulos de profundización se normalizan como **Repregunta**.
+- Todas las preguntas y repreguntas fueron formuladas por el investigador.
 - Las respuestas vagas o no contestadas se conservan como tales.
 
-La [auditoría de integridad](../01_contexto_y_fuentes/auditoria-integridad-corpus-entrevistas.md) documenta discrepancias y criterios de resolución.
+La [auditoría de integridad](../01_contexto_y_fuentes/auditoria-integridad-corpus-entrevistas.md) documenta discrepancias y criterios de resolución. El [instrumento aplicado](../99_archivo/fuentes-locales/instrumentos/instrumento-aplicado.md) registra fechas, presencialidad, reclutamiento y consentimiento.
 
 ## Índice de preguntas
 
@@ -558,7 +559,7 @@ Le resultaría extraño al principio, pero podría ayudar a interrumpir el hábi
 - Las expresiones autodiagnósticas o coloquiales no constituyen categorías clínicas.
 - Las omisiones se mantienen como omisiones.
 - Las paráfrasis analíticas deben enlazar P y Q.
-- Las citas textuales para la memoria deberán tomarse de los archivos privados y verificarse una vez más antes de publicarlas.
+- El corpus sostiene paráfrasis analíticas. Una cita textual directa requiere cautela porque el registro fue normalizado después de la conversación y las notas originales de Q12–Q13 ya no están disponibles.
 
 ---
 
@@ -570,3 +571,10 @@ Le resultaría extraño al principio, pero podría ayudar a interrumpir el hábi
 - **Versión anterior:** las respuestas estaban distribuidas entre dos DOCX con nombres personales, una edad discrepante, rótulos erróneos y cobertura desigual de Q12–Q13.
 - **Motivo:** permitir trazabilidad interna sin exponer identidades ni depender de una sola versión incompleta.
 - **Decisión derivada:** utilizar este documento como índice analítico y conservar los DOCX privados como respaldo.
+
+### 2026-08-23 — Procedencia oral y presencial
+
+- **Cambio:** se precisó que los archivos son transcripciones posteriores de entrevistas habladas y que las repreguntas pertenecen al investigador.
+- **Versión anterior:** la expresión archivo digital base podía confundirse con el medio de levantamiento.
+- **Motivo:** distinguir la conversación presencial del formato usado para ordenar sus respuestas.
+- **Decisión derivada:** mantener el corpus como versión canónica anonimizada y consultar el archivo de instrumentos para la procedencia metodológica.

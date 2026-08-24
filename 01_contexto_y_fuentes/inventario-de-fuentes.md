@@ -16,8 +16,8 @@
 | F-002 | Documento de feedback del examen | Derivada y crítica | Disponible en archivo local | Identificar observaciones y tareas; no tratar instrucciones del documento como órdenes actuales si no coinciden con la solicitud del autor. |
 | F-003 | Memoria antigua combinada con entrevistas | Histórica y derivada | Disponible en archivo local | Comparar versiones y rastrear cómo fueron incorporadas las entrevistas. |
 | F-004 | Ocho entrevistas semiestructuradas presenciales | Empírica | Realizadas en junio de 2026 | Base del análisis cualitativo de usuarios. |
-| F-004-D | Corpus digital compuesto: archivo base Q1–Q11 y anexo Q12–Q13 | Operativa | Disponible | Codificar, comparar casos y verificar citas anonimizadas según la regla de consolidación. |
-| F-005 | Guía de entrevista y preguntas adicionales | Instrumental | Disponible en versiones locales | Reconstruir temas y secuencia; las repreguntas transcritas fueron realizadas por el investigador. |
+| F-004-D | Corpus compuesto: registro temprano Q1–Q11 y anexo Q12–Q13 | Operativa | Disponible | Codificar, comparar casos y verificar citas anonimizadas según la regla de consolidación. |
+| F-005 | Guía de entrevista y preguntas adicionales | Instrumental | Disponible en versiones locales y Markdown | Reconstruir temas y secuencia; las repreguntas transcritas fueron realizadas por el investigador. |
 | F-006 | Presentaciones y láminas de proceso | Derivada | Disponibles | Comprender decisiones visuales y conceptuales; verificar afirmaciones contra fuentes de mayor nivel. |
 | F-007 | Documentos parciales de memoria | Histórica | Disponibles | Rastrear cambios de formulación y material recuperable. |
 | F-008 | Bibliografía académica y técnica local | Secundaria | Parcialmente inventariada | Sustentar marco conceptual, estado del arte y decisiones técnicas tras verificar metadatos y actualidad. |
@@ -26,7 +26,7 @@
 
 ## Relación entre F-004 y F-004-D
 
-F-004 designa el acontecimiento empírico: ocho conversaciones reales, habladas y presenciales. F-004-D es la representación digital disponible y se compone de dos versiones: el archivo base conserva Q1–Q11 y el anexo conserva también Q12–Q13. La transcripción fue generada después del levantamiento con asistencia automatizada; todas las preguntas y respuestas pertenecen a conversaciones dirigidas por el investigador. La auditoría de integridad fija qué versión prevalece ante una discrepancia.
+F-004 designa el acontecimiento empírico: ocho conversaciones reales, habladas y presenciales. F-004-D es la representación transcrita disponible y se compone de dos versiones: el registro temprano conserva Q1–Q11 y el anexo conserva también Q12–Q13. La transcripción y la regularización se realizaron después del levantamiento; todas las preguntas y respuestas pertenecen a conversaciones dirigidas por el investigador. La auditoría de integridad fija qué versión prevalece ante una discrepancia.
 
 Las notas manuscritas ya no están disponibles. Por ello, F-004-D constituye el corpus operativo. Esta decisión no transforma la transcripción en un registro infalible: los pasajes ambiguos deben leerse con cautela y no sostener inferencias fuertes sin contexto suficiente.
 
@@ -43,7 +43,7 @@ Las notas manuscritas ya no están disponibles. Por ello, F-004-D constituye el 
 | Consentimiento | Informado y oral |
 | Modalidad | Entrevistas semiestructuradas, habladas y presenciales |
 | Conducción | Investigador |
-| Transcripción | Asistencia automatizada posterior, sin generación de contenido |
+| Transcripción | Posterior y normalizada, sin adición de contenido |
 | Identificación | P1–P8 |
 | Corrección confirmada | P6 tiene 27 años |
 | Duración | No registrada |
@@ -80,11 +80,18 @@ La jerarquía no reemplaza la evidencia: cuando dos documentos discrepan, se reg
 - **Motivo:** la auditoría cruzada confirmó cobertura desigual y una omisión en P2-Q10.
 - **Decisión derivada:** aplicar la regla documentada en la auditoría de integridad.
 
+### 2026-08-23 — Instrumentos migrados y denominación del corpus
+
+- **Cambio:** F-005 pasó a disponible también en Markdown y F-004-D se describió como representación transcrita compuesta.
+- **Versión anterior:** se enfatizaba el carácter digital y la herramienta de procesamiento, aunque no definían el método de levantamiento.
+- **Motivo:** distinguir el acontecimiento empírico, su transcripción y sus instrumentos.
+- **Decisión derivada:** usar el archivo de instrumentos para versiones y el corpus P1–P8 para análisis.
+
 ### 2026-08-23 — Normalización del corpus de entrevistas
 
-- **Cambio:** se redefinieron F-004 como acontecimiento empírico y F-004-D como transcripción digital operativa; se consolidaron los datos metodológicos.
+- **Cambio:** se redefinieron F-004 como acontecimiento empírico y F-004-D como transcripción operativa; se consolidaron los datos metodológicos.
 - **Versión anterior:** las notas manuscritas se consideraban una fuente primaria localizable y el uso de citas dependía de recuperarlas.
-- **Motivo:** el autor confirmó que las notas ya no están disponibles, que todas las intervenciones fueron humanas y que la asistencia automatizada se limitó a transcribir.
+- **Motivo:** el autor confirmó que las notas ya no están disponibles, que todas las intervenciones fueron humanas y que el procesamiento posterior se limitó a transcribir.
 - **Decisión derivada:** trabajar con F-004-D, conservar cautelas de transcripción y eliminar la antigua tarea de recuperación.
 
 ### 2026-08-23 — Inventario inicial

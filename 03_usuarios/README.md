@@ -17,6 +17,7 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 - [Reconstrucciones de caso](reconstrucciones-de-caso.md): análisis dentro de cada caso.
 - [Matriz de evidencia](matriz-evidencia-p1-p8.md): comparación transversal, contradicciones y casos óptimos.
 - [Comparación y tipos de usuario](comparacion-y-tipos-de-usuario.md): elección de usuario principal más usuario límite.
+- [Instrumentos y procedencia](../99_archivo/fuentes-locales/instrumentos/README.md): guiones, condiciones aplicadas, equivalencias y control de integridad de los DOCX.
 - Próximos documentos: personas basadas en evidencia y recorridos actuales/futuros.
 
 ## Secuencia obligatoria
@@ -38,12 +39,12 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 ## Evidencia disponible
 
 - Ocho entrevistas semiestructuradas, habladas y presenciales.
-- Levantamiento realizado en Santiago durante junio de 2026.
+- Levantamiento realizado en Santiago los días 11 y 12 de junio de 2026.
 - Rango observado de 19 a 27 años, bajo un criterio de convocatoria de 18 a 30 años y reclutamiento por referencias de la red personal.
 - La edad es el único criterio común confirmado; no se asumirá que todas las personas son estudiantes.
 - Consentimiento informado oral.
 - Todas las preguntas y repreguntas formuladas por el investigador.
-- Transcripción digital posterior como corpus operativo.
+- Transcripción y regularización académica posteriores como corpus operativo.
 - P6 corregida a 27 años.
 
 ## Limitaciones vigentes
@@ -84,6 +85,13 @@ Seguimiento del avance conservado en la [Issue #2](https://github.com/joan154200
 - **Motivo:** aclaración del autor y prioridad de organización documental.
 - **Decisión derivada:** usar fichas textuales basadas en evidencia cuando se retome; no producir visualidad no exigida.
 
+### 2026-08-23 — Archivo de instrumentos enlazado
+
+- **Cambio:** se añadió la colección que documenta dos guiones, las condiciones aplicadas, cuatro equivalencias DOCX y su revisión visual.
+- **Versión anterior:** el índice de usuarios describía el método, pero no enlazaba sus fuentes editables ni distinguía planificación y aplicación.
+- **Motivo:** completar la trazabilidad sin volver a publicar las respuestas ni las identidades.
+- **Decisión derivada:** consultar el corpus para analizar respuestas y el archivo de instrumentos para reconstruir el método.
+
 ### 2026-08-23 — Tipología completada
 
 - **Cambio:** se enlazaron los cinco entregables analíticos, se precisó el rango observado y se registró la elección de usuario principal más usuario límite.
@@ -95,7 +103,7 @@ Seguimiento del avance conservado en la [Issue #2](https://github.com/joan154200
 
 - **Cambio:** se reemplazaron las restricciones asociadas a notas y a rótulos erróneos por las condiciones metodológicas realmente confirmadas.
 - **Versión anterior:** parte del corpus permanecía excluida y las citas dependían de digitalizar notas manuscritas.
-- **Motivo:** el autor confirmó que todas las preguntas fueron realizadas por él, que la asistencia automatizada solo transcribió y que las notas ya no están disponibles.
+- **Motivo:** el autor confirmó que todas las preguntas fueron realizadas por él, que el procesamiento posterior solo transcribió y que las notas ya no están disponibles.
 - **Decisión derivada:** analizar el corpus completo, comprobar citas en la transcripción consolidada y tratar los vacíos como limitaciones, no como bloqueos.
 
 ### 2026-08-23 — Método documentado

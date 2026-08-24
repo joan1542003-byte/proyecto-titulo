@@ -34,7 +34,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 | `semestre-1/e12` | Cadena de borradores y cierre de memoria | Migrado en Markdown |
 | `semestre-1/cierre` | Entregables y reflexiones de cierre | Parcial |
 | `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Tres memorias y 21 Markdown migrados; binarios pendientes |
-| `instrumentos` | Guiones, cuestionarios y protocolos propios | Parcialmente migrado |
+| `instrumentos` | Guiones, aplicación y procedencia de entrevistas | Migrado y documentado |
 | `fuentes-terceros` | Fichas bibliográficas y registros de existencia | Pendiente |
 | `inventarios` | Mapas, manifiestos, omisiones y equivalencias | Activo |
 
@@ -64,6 +64,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 
 - [Archivo del semestre 1](semestre-1/README.md)
 - [Archivo del semestre 2](semestre-2/README.md)
+- [Instrumentos y entrevistas](instrumentos/README.md)
 - [Protocolo de migración](protocolo-de-migracion.md)
 - [Mapa del archivo local](inventarios/mapa-del-archivo-local.md)
 - [Índice maestro](inventarios/indice-maestro.md)
@@ -102,3 +103,10 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 - **Versión anterior:** solo la familia de memorias estaba disponible dentro del archivo del semestre 2.
 - **Motivo:** preservar la capa de proceso sin duplicar archivos idénticos ni promover visualidad histórica a contenido activo.
 - **Decisión derivada:** continuar con documentos propios de otros hitos y equivalencias de formatos.
+
+### 2026-08-23 — Instrumentos y entrevistas
+
+- **Cambio:** se incorporaron dos guiones convertidos, un registro del instrumento aplicado, equivalencias de cuatro DOCX y un informe de integridad.
+- **Versión anterior:** la colección de instrumentos figuraba como parcialmente migrada y no distinguía planificación, aplicación y corpus.
+- **Motivo:** documentar el levantamiento completo sin publicar nombres ni duplicar las respuestas.
+- **Decisión derivada:** considerar cerrada esta familia documental y continuar con otro conjunto propio.

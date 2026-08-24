@@ -4,7 +4,7 @@
 
 **Migración activa.** La organización documental es la única línea principal de trabajo. El desarrollo de personas y recorridos permanece pausado hasta completar una base archivística suficiente.
 
-**Avance verificado:** el sublote 1A incorporó trece documentos propios del semestre 1, su navegación y su registro de conversión.
+**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, y la familia de cuatro DOCX de instrumentos y entrevistas.
 
 ## Colecciones
 
@@ -17,7 +17,7 @@
 | C-04 | E11 | Guía, plan, guion y memoria revisada | Migrado en Markdown | Revisar equivalentes DOCX |
 | C-05 | E12 | Borradores, versión final y autoevaluación | Parcial | Convertir autoevaluación y verificar exportaciones |
 | C-06 | Cierre del semestre 1 | Entregas finales y mapa triple | Parcial | Comprobar equivalencia entre PDF y Markdown |
-| C-07 | Instrumentos de usuarios | Guiones y corpus anonimizado | Parcial | Convertir versiones de guion |
+| C-07 | Instrumentos de usuarios | Dos guiones, aplicación, equivalencias y corpus anonimizado | Cerrado | Mantener al día si aparece una nueva fuente |
 | C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Textos principales migrados | Crear manifiestos selectivos de binarios y equivalencias |
 | C-09 | Bibliografía | Fuentes académicas y guías | Pendiente | Crear fichas APA 7 |
 | C-10 | Administración | Pautas, rúbricas, planes y feedback | Pendiente | Resumir solo lo pertinente |
@@ -39,7 +39,7 @@
 
 ### Lote 2 — DOCX propios
 
-**Estado:** las tres memorias editables de Semestre 2 fueron convertidas y comparadas; los demás DOCX propios siguen pendientes.
+**Estado:** las tres memorias editables de Semestre 2 y cuatro DOCX de instrumentos o entrevistas fueron resueltos; otros DOCX propios siguen pendientes.
 
 **Criterio de cierre:**
 
@@ -107,3 +107,10 @@
 - **Versión anterior:** la documentación de proceso estaba identificada, pero seguía distribuida entre carpetas de entrega.
 - **Motivo:** registrar que 21 ubicaciones corresponden a 16 contenidos únicos.
 - **Decisión derivada:** no abrir visualidad; el siguiente lote vuelve a documentos propios textuales y equivalencias.
+
+### 2026-08-23 — Sublote 1D: instrumentos y entrevistas
+
+- **Cambio:** C-07 pasó de parcial a cerrado y Lote 2 incorporó cuatro DOCX resueltos.
+- **Versión anterior:** los guiones seguían pendientes y la relación entre dos registros de respuestas no estaba archivada junto con sus fuentes.
+- **Motivo:** separar el instrumento planificado, el aplicado y el corpus canónico antes de continuar con otros documentos.
+- **Decisión derivada:** mantener pausado el desarrollo de usuarios y abrir como siguiente unidad otro documento propio no visual.

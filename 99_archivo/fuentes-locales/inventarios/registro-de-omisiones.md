@@ -29,6 +29,7 @@ No se subirán archivos con nombres ni exportaciones originales. El contenido pe
 - `03_usuarios/reconstrucciones-de-caso.md`;
 - `03_usuarios/matriz-evidencia-p1-p8.md`;
 - `01_contexto_y_fuentes/auditoria-integridad-corpus-entrevistas.md`.
+- `99_archivo/fuentes-locales/instrumentos/equivalencias-y-procedencia.md`.
 
 ## Documentos de terceros
 
@@ -97,3 +98,12 @@ La omisión puede revertirse si aparece una necesidad académica concreta, se re
 - **Motivo:** una copia idéntica no aporta una nueva decisión, pero su ruta sí aporta procedencia.
 - **Resultado:** se conservaron 16 copias canónicas; cada una lista todas sus fuentes locales equivalentes.
 - **Visualidad:** no se subieron PNG, PDF, SVG, ZIP ni archivos Python durante este sublote.
+
+### 2026-08-23 — Aplicación al sublote 1D
+
+- **Cambio:** se mantuvieron fuera de GitHub dos DOCX identificables y 83 páginas de control visual.
+- **Versión anterior:** la categoría entrevistas identificables no enumeraba la relación entre los dos registros ni los dos guiones.
+- **Motivo:** preservar privacidad, evitar duplicar el corpus y separar fuentes editables de documentación académica.
+- **Resultado:** dos guiones se convirtieron a Markdown; los registros con nombres se identificaron mediante SHA-256 y se vincularon con P1–P8.
+- **Datos omitidos:** nombres, horas exactas, rutas absolutas, comentarios editoriales completos y cuatro medios internos de la memoria compuesta.
+- **Originales:** ningún DOCX fue editado, movido ni eliminado.
