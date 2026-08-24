@@ -161,3 +161,53 @@
 - **Cambio:** se registraron las decisiones iniciales.
 - **Versión anterior:** estaban implícitas o distribuidas entre borradores.
 - **Motivo:** conservar fundamentos, alternativas y condiciones de revisión.
+
+## D-015 — Memoria vigente basada en v3 corregida
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** declarar `08_memoria/memoria-vigente.md` como base escrita activa.
+- **Fundamento:** v3 contiene la formulación más desarrollada, pero requería separar historia y vigencia y corregir método, usuarios, mercado y lenguaje docente.
+- **Alternativa descartada:** reiniciar una memoria abreviada y perder desarrollo acumulado.
+- **Consecuencia:** `99_archivo` no gobierna decisiones actuales.
+
+## D-016 — El objeto físico no tiene pantalla
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** excluir pantalla, texto, menú, historial, encoder y respuestas múltiples.
+- **Fundamento:** el núcleo investigable es la asociación entre intención, señal y lugar.
+- **Condición de revisión:** evidencia que invalide la señal no textual y sostenga otra arquitectura phygital.
+
+## D-017 — Escritura antes de visualidad
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** actualizar memoria, flujos y contenido antes de abrir Figma.
+- **Fundamento:** instrucción del autor y dependencia del producto respecto de la investigación.
+
+## D-018 — Tres interacciones Android provisionales
+
+- **Fecha:** 2026-08-24
+- **Estado:** provisional
+- **Decisión:** preparar configuración, ubicación/prueba/armado y estado/recuperación técnica.
+- **Riesgo:** la tercera interacción principal es física; debe verificarse si una pantalla técnica satisface la pauta.
+- **Condición de revisión:** aclaración docente o prueba del flujo.
+
+## D-019 — Pausa de la migración general
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** pausar la Issue #4 y activar memoria más Encargo 17 en la Issue #6.
+- **Fundamento:** nueva prioridad explícita del autor.
+
+---
+
+## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Decisiones de memoria y Encargo 17
+
+- **Cambio:** se añadieron D-015–D-019.
+- **Versión anterior:** la migración era la única línea activa.
+- **Motivo:** documentar cambio de prioridad, memoria vigente y límites del wireframing.
+- **Alcance:** D-018 permanece provisional.

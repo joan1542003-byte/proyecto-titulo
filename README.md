@@ -28,7 +28,7 @@ Esta formulación continúa abierta a revisión. El producto final deberá respo
 
 ## Estado actual
 
-**Línea activa: organización y migración documental. La fase de usuarios queda pausada después de definir la tipología.**
+**Línea activa: actualización de la memoria y preparación escrita del Encargo 17.**
 
 La base metodológica del corpus quedó consolidada:
 
@@ -44,7 +44,7 @@ La base metodológica del corpus quedó consolidada:
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como la entrega aún no exige visualidad, los futuros perfiles se mantendrán como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La migración se gestiona en la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) y se documenta en [Fuentes locales migradas](https://github.com/joan1542003-byte/proyecto-titulo/tree/main/99_archivo/fuentes-locales). La [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2) conserva el avance de usuarios hasta retomar esa fase.
+La actualización se gestiona en la [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) queda pausada. La base actual es la [memoria vigente](08_memoria/memoria-vigente.md) y la estructura se prepara en [Encargo 17](05_propuesta_phygital/preparacion-escrita-encargo-17.md).
 
 ## Inicio para nuevas conversaciones
 
@@ -91,6 +91,14 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Memoria vigente y Encargo 17
+
+- **Cambio:** se actualizó la línea activa y se enlazaron memoria y preparación escrita.
+- **Versión anterior:** la migración documental era la única línea activa.
+- **Motivo:** priorizar escritura antes de visualidad.
+- **Alcance:** la migración queda pausada; el objeto sigue sin pantalla.
+
 
 ### 2026-08-23 — Instrucciones para nuevas conversaciones
 
