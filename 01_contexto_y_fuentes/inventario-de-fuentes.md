@@ -23,6 +23,7 @@
 | F-008 | Bibliografía académica y técnica local | Secundaria | Parcialmente inventariada | Sustentar marco conceptual, estado del arte y decisiones técnicas tras verificar metadatos y actualidad. |
 | F-009 | Referentes de producto y mercado | Secundaria | Parcialmente inventariados | Analizar mecanismos, posicionamiento y brechas; actualizar datos antes de citarlos. |
 | F-010 | Declaración metodológica del autor | Normativa y aclaratoria | Consolidada el 23 de agosto de 2026 | Resolver procedencia, modalidad, reclutamiento, consentimiento, autoría de preguntas, transcripción y edad de P6. |
+| F-011 | Autoevaluación E12 para el Pase | Histórica y derivada | Convertida y contrastada con la planificación | Reconstruir qué se declaraba cumplido en E12; no certificar un resultado oficial ni sustituir evidencia. |
 
 ## Relación entre F-004 y F-004-D
 
@@ -64,6 +65,12 @@ Cuando una observación solicita investigar usuarios, mercado, accesibilidad o t
 F-007 reúne formulaciones históricas parciales, incluida la [memoria E12 de In(Visible)](../99_archivo/fuentes-locales/semestre-1/e12/memoria-final-semestre-1.md). F-001 corresponde a la [memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md), fechada el 8 de julio de 2026 y localizada en dos PDF idénticos. Las memorias de agosto pertenecen al semestre 2 y se comparan por separado.
 
 Esta secuencia fija procedencia, no vigencia conceptual: una fecha posterior no vuelve verdadera una afirmación ni selecciona automáticamente una definición de producto. Las [equivalencias PDF](../99_archivo/fuentes-locales/semestre-1/cierre/equivalencias-pdf.md) documentan los hashes, fuentes editables y límites de cada rama.
+
+## Relación entre F-011, F-007 y F-001
+
+F-011 evalúa el borrador de In(Visible) desde la perspectiva del propio autor. Se vincula con F-007, que conserva las memorias parciales y la entrega E12, pero no prueba por sí sola que cada criterio estuviera resuelto. F-001 corresponde a la memoria final posterior de Relevo y no debe leerse como la misma propuesta.
+
+La [conversión de F-011](../99_archivo/fuentes-locales/semestre-1/e12/autoevaluacion-pase.md) separa el texto fuente de una matriz de contraste. El [informe de integridad](../99_archivo/fuentes-locales/semestre-1/e12/informe-integridad-autoevaluacion.md) demuestra que el documento fue generado por un script local y no contiene resultado ni observaciones docentes.
 
 ## Jerarquía para resolver contradicciones
 
@@ -130,3 +137,10 @@ La jerarquía no reemplaza la evidencia: cuando dos documentos discrepan, se reg
 - **Versión anterior:** F-001 nombraba una memoria final genérica y E12 podía interpretarse como su copia principal.
 - **Motivo:** la auditoría de `Fin semestre 1` localizó la fuente de cierre real y comprobó sus equivalencias.
 - **Decisión derivada:** usar F-001 para reconstruir el examen y F-007 para estudiar la evolución previa.
+
+### 2026-08-23 — F-011 incorporada
+
+- **Cambio:** se añadió la autoevaluación E12 como fuente derivada y se relacionó con las memorias histórica y final.
+- **Versión anterior:** el inventario no distinguía la autoevaluación del resultado oficial del Pase.
+- **Motivo:** conservar los estados declarados sin usarlos como evidencia de cumplimiento.
+- **Decisión derivada:** cualquier criterio reutilizado debe comprobarse en F-004, bibliografía, memoria o documentación técnica según corresponda.

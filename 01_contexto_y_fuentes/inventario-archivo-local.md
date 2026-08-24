@@ -67,7 +67,7 @@ Se encontraron contenidos de presentación, corrección cruzada, transcripciones
 
 ### E12 y cierre del primer semestre
 
-Existe una cadena extensa de borradores y entregas de In(Visible), seguida por la memoria final de Relevo del 8 de julio. La comparación de contenido y hashes permite afirmar cuál es el cierre más tardío localizado, aunque no convierte automáticamente sus decisiones en la postura vigente del segundo semestre. La autoevaluación y otros editables de E12 todavía deben convertirse por separado.
+Existe una cadena extensa de borradores y entregas de In(Visible), seguida por la memoria final de Relevo del 8 de julio. La comparación de contenido y hashes permite afirmar cuál es el cierre más tardío localizado, aunque no convierte automáticamente sus decisiones en la postura vigente del segundo semestre. La autoevaluación E12 ya fue convertida y se clasificó como una autodeclaración generada por script, sin resultado docente; otros editables de E12 todavía deben compararse.
 
 ### Relevo y producción de agosto
 
@@ -148,6 +148,10 @@ No deben subirse sin revisión y anonimización:
 
 No existe todavía una declaración inequívoca de la memoria vigente del segundo semestre. El cierre del primero sí quedó identificado y se relacionó con In(Visible), el feedback E15 y las tres ramas de agosto.
 
+### Resultado del Pase
+
+La autoevaluación local marca siete criterios como `Cumple`, pero no contiene APTO, CONDICIONAL o NO APTO, observaciones ni identificación docente. La planificación indica que el resultado oficial se registra por separado. Por ello, este archivo no permite reconstruir el veredicto y no debe usarse como certificación.
+
 ### Corpus de entrevistas
 
 La transcripción digital consolidada está disponible. Las notas manuscritas ya no existen y el consentimiento fue informado y oral; no se conserva su guion exacto. Esta situación se registra como límite documental y no como tarea pendiente.
@@ -170,6 +174,7 @@ Existen planes, láminas y documentos de control de calidad, pero no un expedien
 - Tratar `SEMESTRE 2/output` como conjunto de entregables derivados, no como base empírica.
 - No reutilizar los tres perfiles históricos como hallazgos de usuario.
 - Priorizar en la fase 1 los guiones, entrevistas anonimizadas y memoria histórica pertinente.
+- Consultar la [autoevaluación E12 documentada](../99_archivo/fuentes-locales/semestre-1/e12/autoevaluacion-pase.md) solo como autodeclaración histórica.
 - Registrar la normalización futura en la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4).
 - Conservar el cierre de la antigua tarea de notas en la [Issue #3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3) y no reconstruir material ausente.
 
@@ -205,3 +210,10 @@ Existen planes, láminas y documentos de control de calidad, pero no un expedien
 - **Versión anterior:** los dos PDF se describían por apariencia y nombre; su equivalencia y jerarquía seguían pendientes.
 - **Motivo:** la auditoría binaria, textual y visual permitió asignar una decisión verificable a cada archivo.
 - **Decisión derivada:** mantener intactos los originales y continuar la migración con la autoevaluación u otro documento textual propio.
+
+### 2026-08-23 — Autoevaluación E12 clasificada
+
+- **Cambio:** se registraron la generación mediante script, la ausencia de resultado docente y la conversión de la autoevaluación.
+- **Versión anterior:** la autoevaluación figuraba como pendiente y podía parecer parte de una cadena oficial de evaluación.
+- **Motivo:** distinguir el requisito de autoevaluarse del veredicto institucional y de la evidencia que sustenta cada criterio.
+- **Decisión derivada:** continuar con equivalencias de E12 sin intentar reconstruir un resultado ausente.

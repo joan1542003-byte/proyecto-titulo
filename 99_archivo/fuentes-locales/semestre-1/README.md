@@ -23,7 +23,7 @@ Los documentos se conservan como antecedentes históricos. Solo deben trasladars
 | 1 | [E09](e09/README.md) | Auditoría bibliográfica y memoria temprana | Migrada |
 | 2 | [E10](e10/README.md) | Registro de revisión cruzada | Parcial |
 | 3 | [E11](e11/README.md) | Instrumento, planificación, presentación y memoria revisada | Migrada en Markdown |
-| 4 | [E12](e12/README.md) | Borradores y entrega histórica de In(Visible) | Migrada en Markdown |
+| 4 | [E12](e12/README.md) | Borradores, entrega histórica y autoevaluación de In(Visible) | Autoevaluación documentada; equivalencias pendientes |
 | 5 | [E15](e15/README.md) | Feedback del examen, integridad y seguimiento | Migrada y documentada |
 | 6 | [Cierre](cierre/README.md) | Mapa triple, memoria final de Relevo y equivalencias PDF | Cerrada |
 | — | [Transversal](transversal/README.md) | Teoría de cambio | Migrada |
@@ -39,7 +39,7 @@ Los documentos se conservan como antecedentes históricos. Solo deben trasladars
 
 ## Control aplicado
 
-El primer lote contiene trece documentos. Cuatro archivos con material de entrevistas fueron revisados para sustituir nombres por P1–P8 y corregir la edad de P6 a 27 años. Después se cerró una unidad específica de cuatro DOCX: dos guiones se convirtieron íntegramente y los dos registros identificables se vincularon con el corpus anonimizado. Además, el bloque propio de E15 se aisló de un documento colectivo, se convirtió a Markdown y se vinculó con una matriz de seguimiento. Finalmente, se auditaron los dos PDF de cierre: una memoria única de Relevo se convirtió con cinco tablas y tres figuras, mientras la otra exportación se vinculó como duplicado exacto de Relevo v3.
+El primer lote contiene trece documentos. Cuatro archivos con material de entrevistas fueron revisados para sustituir nombres por P1–P8 y corregir la edad de P6 a 27 años. Después se cerró una unidad específica de cuatro DOCX: dos guiones se convirtieron íntegramente y los dos registros identificables se vincularon con el corpus anonimizado. Además, el bloque propio de E15 se aisló de un documento colectivo, se convirtió a Markdown y se vinculó con una matriz de seguimiento. Finalmente, se auditaron los dos PDF de cierre: una memoria única de Relevo se convirtió con cinco tablas y tres figuras, mientras la otra exportación se vinculó como duplicado exacto de Relevo v3. La autoevaluación E12 también se convirtió y se reclasificó como autodeclaración histórica sin veredicto docente.
 
 ---
 
@@ -73,3 +73,10 @@ El primer lote contiene trece documentos. Cuatro archivos con material de entrev
 - **Versión anterior:** E12 se trataba como cierre definitivo y los dos PDF seguían pendientes.
 - **Motivo:** reconstruir la secuencia real a partir de contenido, fecha declarada, fuente editable y huellas SHA-256.
 - **Alcance:** la clasificación no declara vigente ninguna memoria del semestre 2.
+
+### 2026-08-23 — Autoevaluación E12 documentada
+
+- **Cambio:** la ruta de E12 incorporó la autoevaluación y su control de procedencia.
+- **Versión anterior:** la tabla local no estaba disponible en Markdown y podía interpretarse como certificación de cumplimiento.
+- **Motivo:** conservar el hito sin confundir los estados declarados por el autor con evidencia o resultado institucional.
+- **Alcance:** E12 permanece parcial hasta resolver sus otros DOCX y PDF equivalentes.

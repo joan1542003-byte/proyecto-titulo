@@ -15,6 +15,8 @@ fecha_creacion: 2026-08-23
 - [Memoria, borrador](memoria-borrador.md): versión de trabajo reemplazada.
 - [Memoria, borrador v2](memoria-borrador-v2.md): variante de trabajo reemplazada.
 - [Memoria E12 de In(Visible)](memoria-final-semestre-1.md): entrega histórica del hito E12 y antecedente conceptual anterior al cierre de Relevo.
+- [Autoevaluación para el Pase](autoevaluacion-pase.md): siete autodeclaraciones de cumplimiento; no equivale a un veredicto docente.
+- [Integridad de la autoevaluación](informe-integridad-autoevaluacion.md): procedencia, contraste institucional, revisión visual y límites probatorios.
 
 ## Advertencia de versión
 
@@ -45,3 +47,10 @@ En las tres copias se sustituyeron identificadores personales detectados por có
 - **Versión anterior:** el índice la describía como memoria final del semestre 1 porque así aparecía en el nombre local.
 - **Motivo:** el PDF del 8 de julio contiene una memoria posterior de Relevo y corresponde al cierre más tardío localizado.
 - **Alcance:** no se renombró ni eliminó la fuente local; se corrigió su jerarquía archivística, se añadió el vínculo a su sucesora y se restauraron dos figuras propias previamente ausentes.
+
+### 2026-08-23 — Autoevaluación del Pase incorporada
+
+- **Cambio:** se añadieron la conversión completa de la autoevaluación y su informe de integridad.
+- **Versión anterior:** el índice nombraba la autoevaluación de forma general, pero el DOCX seguía aislado y sus estados `Cumple` carecían de contexto.
+- **Motivo:** distinguir autoevaluación, evidencia y resultado oficial antes de cerrar las equivalencias restantes de E12.
+- **Alcance:** no se infirió un veredicto del Pase ni se modificó la memoria histórica.

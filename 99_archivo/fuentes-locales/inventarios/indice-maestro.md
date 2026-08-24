@@ -4,7 +4,7 @@
 
 **Migración activa.** La organización documental es la única línea principal de trabajo. El desarrollo de personas y recorridos permanece pausado hasta completar una base archivística suficiente.
 
-**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, la familia de cuatro DOCX de instrumentos y entrevistas, el bloque propio del feedback E15 y la resolución de los tres archivos de `Fin semestre 1`.
+**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, la familia de cuatro DOCX de instrumentos y entrevistas, el bloque propio del feedback E15, la resolución de los tres archivos de `Fin semestre 1` y la autoevaluación E12.
 
 ## Colecciones
 
@@ -15,7 +15,7 @@
 | C-02 | E09 | Auditoría y memoria actualizada | Migrado | Comparar fuentes editables solo si aportan contenido único |
 | C-03 | E10 | Corrección cruzada, guiones y transcripción | Parcial | Comparar DOCX y materiales editables |
 | C-04 | E11 | Guía, plan, guion y memoria revisada | Migrado en Markdown | Revisar equivalentes DOCX |
-| C-05 | E12 | Borradores, entrega histórica de In(Visible) y autoevaluación | Parcial | Convertir la autoevaluación y verificar otros editables |
+| C-05 | E12 | Borradores, entrega histórica, autoevaluación y medios de In(Visible) | Parcial | Verificar equivalencias de los DOCX y PDF restantes |
 | C-06 | Cierre del semestre 1 | Mapa triple, memoria final de Relevo y equivalencias PDF | Cerrado | Mantener trazabilidad si aparece una nueva copia |
 | C-07 | Instrumentos de usuarios | Dos guiones, aplicación, equivalencias y corpus anonimizado | Cerrado | Mantener al día si aparece una nueva fuente |
 | C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Textos principales migrados | Crear manifiestos selectivos de binarios y equivalencias |
@@ -39,7 +39,7 @@
 
 ### Lote 2 — DOCX propios
 
-**Estado:** las tres memorias editables de Semestre 2 y cuatro DOCX de instrumentos o entrevistas fueron resueltos; otros DOCX propios siguen pendientes.
+**Estado:** las tres memorias editables de Semestre 2, cuatro DOCX de instrumentos o entrevistas y la autoevaluación E12 fueron resueltos; otros DOCX propios siguen pendientes.
 
 **Criterio de cierre:**
 
@@ -131,3 +131,10 @@
 - **Versión anterior:** los dos PDF estaban pendientes de comparación y E12 se trataba como cierre definitivo.
 - **Motivo:** cada archivo de `Fin semestre 1` cuenta ahora con conversión, equivalencia u omisión justificada.
 - **Decisión derivada:** la siguiente unidad seguirá siendo textual; el desarrollo de usuarios y la visualidad permanecen pausados.
+
+### 2026-08-23 — Sublote 1G: autoevaluación E12
+
+- **Cambio:** la autoevaluación pasó de pendiente a convertida y C-05 cambió su próxima acción a equivalencias de formatos.
+- **Versión anterior:** siete estados `Cumple` permanecían en un DOCX sin procedencia ni contraste con la planificación.
+- **Motivo:** impedir que una autoevaluación derivada se confunda con veredicto docente o evidencia suficiente.
+- **Decisión derivada:** revisar ahora los otros DOCX y PDF de E12, manteniendo pausadas las líneas de contenido.

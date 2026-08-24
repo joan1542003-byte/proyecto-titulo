@@ -31,7 +31,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 | `semestre-1/e09` | Auditoría y memoria del hito E09 | Migrado |
 | `semestre-1/e10` | Revisión cruzada y transcripción | Parcial |
 | `semestre-1/e11` | Guía, plan, presentación y memoria revisada | Migrado en Markdown |
-| `semestre-1/e12` | Cadena de borradores y entrega histórica de In(Visible) | Migrado en Markdown |
+| `semestre-1/e12` | Borradores, entrega histórica y autoevaluación de In(Visible) | Autoevaluación documentada; equivalencias pendientes |
 | `semestre-1/cierre` | Mapa triple, memoria final de Relevo, equivalencias y medios | Cerrado |
 | `semestre-1/e15` | Feedback del examen, trazabilidad e integridad | Migrado y documentado |
 | `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Tres memorias y 21 Markdown migrados; binarios pendientes |
@@ -127,3 +127,10 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 - **Versión anterior:** los PDF permanecían pendientes y el nombre de la memoria E12 definía su jerarquía.
 - **Motivo:** una revisión binaria, textual y visual identificó la memoria final de Relevo y una exportación v3 duplicada.
 - **Decisión derivada:** continuar con otro documento textual propio; no iniciar visualidad activa.
+
+### 2026-08-23 — Autoevaluación E12
+
+- **Cambio:** se añadió la autoevaluación del Pase como fuente derivada y su informe de integridad.
+- **Versión anterior:** E12 contenía memorias y medios, pero la tabla de autoevaluación seguía fuera del sistema Markdown.
+- **Motivo:** separar cumplimiento autodeclarado, requisitos institucionales y evidencia verificable.
+- **Decisión derivada:** continuar con las equivalencias de formatos restantes de E12 antes de cerrar C-05.

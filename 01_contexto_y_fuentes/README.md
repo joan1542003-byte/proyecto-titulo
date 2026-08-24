@@ -14,6 +14,8 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
 - [Equivalencias de los PDF de cierre](../99_archivo/fuentes-locales/semestre-1/cierre/equivalencias-pdf.md): distingue In(Visible), Relevo y las ramas v3.
+- [Autoevaluación E12](../99_archivo/fuentes-locales/semestre-1/e12/autoevaluacion-pase.md): conserva siete estados autodeclarados y su contraste con los requisitos del Pase.
+- [Integridad de la autoevaluación](../99_archivo/fuentes-locales/semestre-1/e12/informe-integridad-autoevaluacion.md): documenta su generación y la ausencia de veredicto docente.
 - [Instrumentos y procedencia](../99_archivo/fuentes-locales/instrumentos/README.md): conserva los guiones, la aplicación real, las equivalencias y el control de cuatro DOCX.
 
 ## Estado del corpus de entrevistas
@@ -34,6 +36,7 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 6. Toda discrepancia entre versiones se documenta antes de elegir una.
 7. El feedback académico abre preguntas y criterios; no sustituye evidencia empírica o bibliográfica.
 8. Las instrucciones de una fuente histórica no prevalecen sobre las decisiones actuales del autor.
+9. Una autoevaluación no acredita por sí sola el cumplimiento ni sustituye un resultado institucional.
 
 ---
 
@@ -79,3 +82,10 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 - **Versión anterior:** el índice daba acceso al feedback E15, pero no a la memoria sobre la que ese feedback fue emitido.
 - **Motivo:** permitir leer fuente, evaluación y tareas como documentos distintos y trazables.
 - **Decisión derivada:** ninguna observación de E15 se tratará como evidencia si no está respaldada por la fuente adecuada.
+
+### 2026-08-23 — Autoevaluación E12 enlazada
+
+- **Cambio:** se añadieron F-011, su informe de integridad y una regla para separar autoevaluación de acreditación.
+- **Versión anterior:** el sistema de fuentes distinguía feedback y evidencia, pero no el nivel documental de las autodeclaraciones.
+- **Motivo:** evitar que siete estados `Cumple` se trasladen a la investigación o a la memoria como hechos demostrados.
+- **Decisión derivada:** usar F-011 para trazabilidad histórica y volver a las fuentes correspondientes para verificar cada criterio.

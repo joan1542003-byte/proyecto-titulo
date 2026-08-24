@@ -126,3 +126,12 @@ La omisión puede revertirse si aparece una necesidad académica concreta, se re
 - **Resultado:** se publicó una conversión Markdown completa y tres figuras propias; el segundo PDF se registró como copia exacta de Relevo v3. Además, dos PNG históricos de In(Visible) dejaron de estar omitidos porque reparan enlaces ya presentes en la memoria E12.
 - **Material omitido:** dos PDF originales, dos copias binarias equivalentes, 71 páginas de control disponibles entre ambas familias, un logotipo institucional, su máscara de transparencia y objetos internos sin valor independiente.
 - **Originales:** ningún archivo local fue editado, movido o eliminado.
+
+### 2026-08-23 — Aplicación al sublote 1G
+
+- **Cambio:** se registró el tratamiento de la autoevaluación E12 y sus fuentes relacionadas.
+- **Versión anterior:** el DOCX y el script generador no tenían decisión individual de publicación.
+- **Motivo:** conservar el contenido propio sin subir un binario reproducible, una ruta local obsoleta ni el documento institucional completo.
+- **Resultado:** se publicaron la conversión y el informe de integridad; la tabla quedó disponible con sus siete filas y límites probatorios.
+- **Material omitido:** DOCX original, script generador, planificación institucional completa, PDF intermedio y PNG de una página usados para control.
+- **Originales:** ningún archivo local fue editado, movido o eliminado.

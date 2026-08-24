@@ -228,3 +228,32 @@ fecha_creacion: 2026-08-23
 - **Versión anterior:** los nombres locales hacían parecer que In(Visible) era el cierre y que el PDF v3 mal ubicado era otro borrador.
 - **Motivo:** ordenar la historia por evidencia documental y no por nombres de archivo.
 - **Alcance:** los PDF originales permanecen privados e intactos; no se abrió una etapa de desarrollo visual.
+
+## Sublote 1G — Autoevaluación E12
+
+- **Fecha:** 23 de agosto de 2026.
+- **Entrada:** un DOCX propio, su script generador y la sección institucional del Pase.
+- **Salida:** conversión completa, matriz de contraste e informe de integridad.
+- **Revisión visual:** una página carta inspeccionada a resolución completa; tabla íntegra y sin recortes.
+- **Clasificación:** autoevaluación histórica y derivada; no es resultado oficial ni evidencia autónoma de cumplimiento.
+
+| ID | Fuente local | Destino | Tratamiento |
+|---|---|---|---|
+| FL-S1-E12-004 | `Yanten Johan E12 - Autoevaluación Pase.docx` | [autoevaluacion-pase.md](../semestre-1/e12/autoevaluacion-pase.md) | Conversión íntegra y separación entre contenido, contraste y reglas de uso |
+| FL-S1-E12-QA-001 | DOCX, script y planificación | [informe-integridad-autoevaluacion.md](../semestre-1/e12/informe-integridad-autoevaluacion.md) | Hashes, procedencia, estructura, revisión visual y límites probatorios |
+
+### Controles
+
+- El DOCX contiene 140 palabras, 27 párrafos OOXML, una tabla, ocho filas y 24 celdas.
+- No contiene comentarios, cambios controlados, imágenes, resultado oficial ni observaciones docentes.
+- El script local reproduce todo el contenido sustantivo y fue creado 26 segundos antes que el DOCX.
+- Los siete criterios coinciden nominalmente con la planificación, pero sus estados son autodeclarados.
+- La afirmación de validación con prototipo y usuarios se marcó como ambigua porque la memoria contemporánea sitúa ese pilotaje en una etapa futura.
+- La conversión no adopta instrucciones institucionales como decisiones actuales del proyecto.
+
+### 2026-08-23 — Registro del sublote 1G
+
+- **Cambio:** se incorporó la autoevaluación E12 con procedencia y contraste.
+- **Versión anterior:** el archivo aislado podía interpretarse como prueba de que todo el hito estaba cumplido.
+- **Motivo:** convertir sin resumir y, a la vez, conservar la diferencia entre declaración, evidencia y evaluación.
+- **Alcance:** no se publicó el DOCX, el script, la planificación ni los renders temporales.
