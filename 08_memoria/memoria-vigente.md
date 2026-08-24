@@ -128,13 +128,13 @@ La conectividad explica que parte del ocio ocurra en pantalla, pero no describe 
 
 ### 2.2 Continuidad automática y conflicto
 
-Desplazamiento continuo, reproducción automática y contenido encadenado reducen cierres que podrían solicitar una decisión renovada (Montag et al., 2019). Sin embargo, ninguna función prueba por sí sola pérdida de control. Aquí, «continuidad digital automática» designa operacionalmente una sesión que se prolonga sin elección renovada reconocida por la persona y en la que otra intención deja de estar disponible.
+El desplazamiento continuo, la reproducción automática y el contenido encadenado han sido descritos como mecanismos que pueden prolongar el uso, pero la evidencia no permite atribuir un efecto causal uniforme a una función aislada (Montag et al., 2019). Ninguna función prueba por sí sola pérdida de control. Aquí, «continuidad digital automática» designa operacionalmente una sesión que se prolonga sin elección renovada reconocida por la persona y en la que otra intención deja de estar disponible.
 
-En 1.315 adultos, de Segovia Vicente et al. (2024) reunieron 67.762 mediciones momentáneas; 26.708 contaron con registros pareados de 691 usuarios Android. Un mayor desplazamiento sin propósito se asoció con culpa y el conflicto de metas medió parcialmente esa relación. El diseño observacional no permite causalidad, pero desplaza la atención desde los minutos hacia la relación entre actividad e intención. Un producto que califica jornadas podría amplificar culpa (Reinecke y Meier, 2020).
+En 1.315 adultos, de Segovia Vicente et al. (2024) reunieron 67.762 mediciones momentáneas; 26.708 contaron con registros pareados de 691 usuarios Android. Un mayor desplazamiento sin propósito se asoció con culpa y el conflicto de metas medió parcialmente esa relación. El diseño observacional no permite causalidad, pero desplaza la atención desde los minutos hacia la relación entre actividad e intención. La relación entre conflicto de metas, evaluación del uso y culpa permite tratar las puntuaciones de cumplimiento como un riesgo de diseño, pero no demuestra que todo sistema evaluativo produzca culpa (Reinecke y Meier, 2020).
 
 ### 2.3 Qué ofrecen las herramientas actuales
 
-En la muestra de 367 herramientas de Lyngs et al. (2019), el 74 % incorporaba bloqueo o eliminación de distracciones; al mapear funciones a autorregulación, predominaban características preventivas frente al apoyo de hábitos deseados. MyTime permitía seleccionar aplicaciones, fijar un límite y formular una aspiración que reaparecía al alcanzarlo; en dos semanas con 23 participantes disminuyó el uso de aplicaciones evaluadas como poco satisfactorias, sin cambiar el de las satisfactorias (Hiniker et al., 2016). Pause Point introduce una espera no bloqueante y alternativas, pero su comunicación pública no informa evaluación de eficacia (Sanders, 2026).
+En la revisión de 367 herramientas de Lyngs et al. (2019), el 74 % incorporaba alguna variante de bloqueo o eliminación de distracciones y el 44 % utilizaba obstáculos directos. La distinción evita equiparar toda eliminación de estímulos con un bloqueo estricto; en conjunto predominaban mecanismos preventivos frente al apoyo de hábitos deseados. MyTime permitía seleccionar aplicaciones, fijar un límite y formular una aspiración que reaparecía al alcanzarlo; en dos semanas con 23 participantes disminuyó el uso de aplicaciones evaluadas como poco satisfactorias, sin cambiar el de las satisfactorias (Hiniker et al., 2016). Pause Point incorpora una pausa de diez segundos, propone alternativas y exige reiniciar el teléfono para desactivar la función; corresponde clasificarlo como fricción o barrera ligera. Su comunicación pública no constituye una evaluación independiente de eficacia (Sanders, 2026).
 
 ### 2.4 Brecha de diseño
 
@@ -933,6 +933,13 @@ En esta versión se utilizó inteligencia artificial generativa como apoyo para 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Corrección de alcance de fuentes
+
+- **Cambio:** se moderaron las afirmaciones sobre funciones de plataforma, culpa, Lyngs et al. (2019) y Pause Point.
+- **Versión anterior:** algunas frases podían atribuir causalidad o clasificar mecanismos con mayor seguridad que sus fuentes.
+- **Motivo:** mantener correspondencia estricta entre afirmación y evidencia.
+- **Alcance:** las correcciones no cambian el problema de diseño; precisan sus fundamentos.
 
 ### 2026-08-24 — Auditoría APA del mercado
 
