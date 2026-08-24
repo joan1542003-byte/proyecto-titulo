@@ -35,10 +35,10 @@ Las fechas de modificación pueden corresponder a copia o sincronización, no a 
 | Archivo | Clasificación | Observación |
 |---|---|---|
 | `Encargo 16_ Mapa triple y avance memoria.md` | Proceso | Solicita viaje de usuario, flujo funcional y flujo técnico; no es evidencia de usuarios. |
-| `Johan Yantén Dis. Gráfico.pdf` | Entrega histórica | Memoria o presentación de 36 páginas que documenta Relevo inicial. |
-| `memoria ocn correciones, borrador.pdf` | Borrador avanzado | Documento de 35 páginas, fechado internamente el 15 de agosto de 2026. |
+| `Johan Yantén Dis. Gráfico.pdf` | Memoria final de Relevo | Fuente de 36 páginas, fechada el 8 de julio de 2026; copia binaria exacta de `SEMESTRE 2/Memoria Final Semestre 1.pdf`. |
+| `memoria ocn correciones, borrador.pdf` | Exportación duplicada mal ubicada | Copia binaria exacta del PDF de Relevo v3 del segundo semestre, cuya fuente DOCX y conversión Markdown ya están documentadas. |
 
-El último archivo se identifica internamente con el segundo semestre, aunque está guardado en `Fin semestre 1`. La ubicación debe corregirse después de declarar una versión maestra, sin moverlo todavía.
+Los tres archivos de la carpeta están resueltos sin moverlos: el mapa triple ya se migró; la memoria de julio se convirtió íntegramente porque no se localizó un editable; y la exportación v3 se registró como redundante. Los hashes, destinos y límites están en las [equivalencias PDF](../99_archivo/fuentes-locales/semestre-1/cierre/equivalencias-pdf.md).
 
 ## Fuentes relacionadas con usuarios
 
@@ -67,7 +67,7 @@ Se encontraron contenidos de presentación, corrección cruzada, transcripciones
 
 ### E12 y cierre del primer semestre
 
-Existe una cadena extensa de borradores, versiones ajustadas, una versión maestra declarada en el nombre del archivo, entregas finales en DOCX/Markdown/PDF, respaldo y autoevaluación. Los nombres sugieren jerarquía, pero todavía debe comprobarse cuál fue entregado y cuál contiene la última corrección válida.
+Existe una cadena extensa de borradores y entregas de In(Visible), seguida por la memoria final de Relevo del 8 de julio. La comparación de contenido y hashes permite afirmar cuál es el cierre más tardío localizado, aunque no convierte automáticamente sus decisiones en la postura vigente del segundo semestre. La autoevaluación y otros editables de E12 todavía deben convertirse por separado.
 
 ### Relevo y producción de agosto
 
@@ -82,7 +82,8 @@ Existe una cadena extensa de borradores, versiones ajustadas, una versión maest
 | 2–10 de junio | Guiones, teoría de cambio, planificación y E11 | Preparación del levantamiento |
 | 11–13 de junio | Exportaciones y reconstrucciones digitales de entrevistas | Registros derivados |
 | 13–15 de junio | Cadena de versiones E12 | Escritura y revisión |
-| 23–29 de junio | Memoria final, respaldo, autoevaluación y cierre | Entrega de primer semestre |
+| 23–29 de junio | Entregas de In(Visible), respaldo y autoevaluación | Hito E12 y preparación del cierre |
+| 8 de julio | Memoria final de Relevo | Cierre más tardío localizado del Seminario de Título |
 | 13–19 de agosto | Memorias, perfiles, mapas y flujos de Relevo | Nueva etapa de desarrollo |
 | 23 de agosto | Sincronización observable de varias carpetas | Fecha técnica, no necesariamente autoría |
 
@@ -145,7 +146,7 @@ No deben subirse sin revisión y anonimización:
 
 ### Versión maestra
 
-No existe una declaración inequívoca de la memoria vigente ni un mapa de relación entre todas sus versiones.
+No existe todavía una declaración inequívoca de la memoria vigente del segundo semestre. El cierre del primero sí quedó identificado y se relacionó con In(Visible), el feedback E15 y las tres ramas de agosto.
 
 ### Corpus de entrevistas
 
@@ -197,3 +198,10 @@ Existen planes, láminas y documentos de control de calidad, pero no un expedien
 - **Versión anterior:** el contenido estaba distribuido entre cientos de archivos sin un mapa archivístico común.
 - **Motivo:** comprender el proceso completo, evitar confundir entregables con fuentes y registrar riesgos antes de reorganizar.
 - **Pendiente:** declarar versiones maestras, inventariar bibliografía en profundidad y normalizar duplicados mediante la Issue #4.
+
+### 2026-08-23 — Resolución de `Fin semestre 1`
+
+- **Cambio:** se identificó la memoria final de Relevo, se reclasificó el PDF v3 mal ubicado y se corrigió la cronología E12 → cierre → semestre 2.
+- **Versión anterior:** los dos PDF se describían por apariencia y nombre; su equivalencia y jerarquía seguían pendientes.
+- **Motivo:** la auditoría binaria, textual y visual permitió asignar una decisión verificable a cada archivo.
+- **Decisión derivada:** mantener intactos los originales y continuar la migración con la autoevaluación u otro documento textual propio.

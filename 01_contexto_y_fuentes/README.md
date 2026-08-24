@@ -12,6 +12,8 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
 - [Feedback E15](feedback-e15.md): sintetiza observaciones pertinentes sin convertirlas en decisiones automáticas.
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
+- [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
+- [Equivalencias de los PDF de cierre](../99_archivo/fuentes-locales/semestre-1/cierre/equivalencias-pdf.md): distingue In(Visible), Relevo y las ramas v3.
 - [Instrumentos y procedencia](../99_archivo/fuentes-locales/instrumentos/README.md): conserva los guiones, la aplicación real, las equivalencias y el control de cuatro DOCX.
 
 ## Estado del corpus de entrevistas
@@ -71,3 +73,9 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 - **Motivo:** integrar la crítica académica sin tratarla como investigación ni como orden vigente.
 - **Decisión derivada:** gestionar sus pendientes mediante una matriz independiente.
 
+### 2026-08-23 — F-001 y equivalencias de cierre enlazadas
+
+- **Cambio:** se añadieron accesos directos a la memoria final de Relevo y al control de sus PDF.
+- **Versión anterior:** el índice daba acceso al feedback E15, pero no a la memoria sobre la que ese feedback fue emitido.
+- **Motivo:** permitir leer fuente, evaluación y tareas como documentos distintos y trazables.
+- **Decisión derivada:** ninguna observación de E15 se tratará como evidencia si no está respaldada por la fuente adecuada.

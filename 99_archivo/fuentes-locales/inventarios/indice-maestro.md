@@ -4,7 +4,7 @@
 
 **Migración activa.** La organización documental es la única línea principal de trabajo. El desarrollo de personas y recorridos permanece pausado hasta completar una base archivística suficiente.
 
-**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, la familia de cuatro DOCX de instrumentos y entrevistas, y el bloque propio del feedback E15.
+**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, la familia de cuatro DOCX de instrumentos y entrevistas, el bloque propio del feedback E15 y la resolución de los tres archivos de `Fin semestre 1`.
 
 ## Colecciones
 
@@ -15,8 +15,8 @@
 | C-02 | E09 | Auditoría y memoria actualizada | Migrado | Comparar fuentes editables solo si aportan contenido único |
 | C-03 | E10 | Corrección cruzada, guiones y transcripción | Parcial | Comparar DOCX y materiales editables |
 | C-04 | E11 | Guía, plan, guion y memoria revisada | Migrado en Markdown | Revisar equivalentes DOCX |
-| C-05 | E12 | Borradores, versión final y autoevaluación | Parcial | Convertir autoevaluación y verificar exportaciones |
-| C-06 | Cierre del semestre 1 | Entregas finales y mapa triple | Parcial | Comprobar equivalencia entre PDF y Markdown |
+| C-05 | E12 | Borradores, entrega histórica de In(Visible) y autoevaluación | Parcial | Convertir la autoevaluación y verificar otros editables |
+| C-06 | Cierre del semestre 1 | Mapa triple, memoria final de Relevo y equivalencias PDF | Cerrado | Mantener trazabilidad si aparece una nueva copia |
 | C-07 | Instrumentos de usuarios | Dos guiones, aplicación, equivalencias y corpus anonimizado | Cerrado | Mantener al día si aparece una nueva fuente |
 | C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Textos principales migrados | Crear manifiestos selectivos de binarios y equivalencias |
 | C-09 | Bibliografía | Fuentes académicas y guías | Pendiente | Crear fichas APA 7 |
@@ -28,7 +28,7 @@
 
 ### Lote 1 — Markdown y TXT propios
 
-**Estado:** los sublotes de Markdown del semestre 1 y de `SEMESTRE 2/output` están completados; permanecen otras fuentes textuales de la raíz y equivalencias con formatos editables.
+**Estado:** los sublotes de Markdown del semestre 1 y de `SEMESTRE 2/output` están completados; `Fin semestre 1` también quedó resuelta. Permanecen otras fuentes textuales de la raíz y equivalencias con formatos editables.
 
 **Criterio de cierre:**
 
@@ -61,7 +61,7 @@
 
 ### Lote 4 — Fuentes y visuales
 
-**Estado:** el feedback E15 está convertido y documentado; bibliografía, otras pautas y recursos visuales permanecen pendientes.
+**Estado:** el feedback E15 y la memoria PDF de cierre están convertidos y documentados; bibliografía, otras pautas y el índice selectivo de recursos visuales permanecen pendientes.
 
 **Criterio de cierre:**
 
@@ -124,3 +124,10 @@
 - **Versión anterior:** existía una síntesis activa, pero no una colección archivística con registro completo, integridad y TODO trazable.
 - **Motivo:** distinguir el contenido del examen de las decisiones actuales y excluir material de otros estudiantes.
 - **Decisión derivada:** continuar con otra fuente textual propia antes de abrir bibliografía o visualidad.
+
+### 2026-08-23 — Sublote 1F: cierre PDF del semestre 1
+
+- **Cambio:** C-06 pasó de parcial a cerrado y el avance general incorporó la memoria final de Relevo, sus figuras y una equivalencia exacta con Relevo v3.
+- **Versión anterior:** los dos PDF estaban pendientes de comparación y E12 se trataba como cierre definitivo.
+- **Motivo:** cada archivo de `Fin semestre 1` cuenta ahora con conversión, equivalencia u omisión justificada.
+- **Decisión derivada:** la siguiente unidad seguirá siendo textual; el desarrollo de usuarios y la visualidad permanecen pausados.

@@ -14,6 +14,10 @@ fecha_creacion: 2026-08-23
 
 Las tres memorias fueron convertidas y comparadas, pero ninguna se declara vigente. Los rótulos Actualizada, Perfeccionada y Sistema editorial v3 describen ramas locales; no sustituyen una decisión académica explícita.
 
+## Antecedente directo
+
+La [memoria final de Relevo del 8 de julio](../../semestre-1/cierre/memoria-final-relevo.md) antecede a las tres ramas de agosto y corresponde al cierre sobre el que se emitió el feedback E15. No se incluye en los cálculos de similitud de esta tabla porque proviene de otra etapa y de una fuente PDF sin editable localizado. Su relación binaria y cronológica está documentada en las [equivalencias de cierre](../../semestre-1/cierre/equivalencias-pdf.md).
+
 ## Inventario estructural
 
 | ID | Archivo | Modificación local | Palabras convertidas | Párrafos fuente | Tablas | Formas en línea | Medios internos |
@@ -64,3 +68,10 @@ Antes de declarar una memoria vigente se debe resolver, en este orden:
 - **Versión anterior:** las versiones coexistían en SEMESTRE 2/output sin una relación explícita ni criterio de vigencia.
 - **Motivo:** impedir que el nombre de archivo o la última fecha de modificación decidan automáticamente cuál memoria representa el proyecto.
 - **Alcance:** la comparación es documental; no valida todavía la calidad académica ni selecciona la dirección de producto.
+
+### 2026-08-23 — Predecesora de julio vinculada
+
+- **Cambio:** se añadió la memoria final de Relevo del semestre 1 como antecedente directo de las tres ramas comparadas.
+- **Versión anterior:** la comparación empezaba en agosto y no mostraba qué documento había sido presentado al examen.
+- **Motivo:** evitar que la primera versión disponible en esta carpeta parezca el origen de Relevo.
+- **Alcance:** los porcentajes y la decisión abierta siguen referidos únicamente a las tres memorias DOCX del semestre 2.

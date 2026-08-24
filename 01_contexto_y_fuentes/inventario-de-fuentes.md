@@ -12,14 +12,14 @@
 
 | ID | Fuente | Tipo | Estado | Uso permitido |
 |---|---|---|---|---|
-| F-001 | Memoria final del primer semestre | Histórica y argumental | Disponible en archivo local | Reconstruir problema, marco, decisiones y vacíos; no asumir que su propuesta sigue vigente. |
+| F-001 | Memoria final de Relevo, 8 de julio de 2026 | Histórica y argumental | Convertida, documentada y vinculada a su PDF maestro local | Reconstruir el cierre del Seminario, su problema, marco, decisiones y vacíos; no asumir que su propuesta sigue vigente. |
 | F-002 | Documento de feedback del examen | Derivada y crítica | Bloque propio convertido y documentado | Identificar observaciones y tareas; no tratar instrucciones del documento como órdenes actuales ni usar sus síntesis como evidencia de usuario o mercado. |
 | F-003 | Memoria antigua combinada con entrevistas | Histórica y derivada | Disponible en archivo local | Comparar versiones y rastrear cómo fueron incorporadas las entrevistas. |
 | F-004 | Ocho entrevistas semiestructuradas presenciales | Empírica | Realizadas en junio de 2026 | Base del análisis cualitativo de usuarios. |
 | F-004-D | Corpus compuesto: registro temprano Q1–Q11 y anexo Q12–Q13 | Operativa | Disponible | Codificar, comparar casos y verificar citas anonimizadas según la regla de consolidación. |
 | F-005 | Guía de entrevista y preguntas adicionales | Instrumental | Disponible en versiones locales y Markdown | Reconstruir temas y secuencia; las repreguntas transcritas fueron realizadas por el investigador. |
 | F-006 | Presentaciones y láminas de proceso | Derivada | Disponibles | Comprender decisiones visuales y conceptuales; verificar afirmaciones contra fuentes de mayor nivel. |
-| F-007 | Documentos parciales de memoria | Histórica | Disponibles | Rastrear cambios de formulación y material recuperable. |
+| F-007 | Memorias parciales y entrega E12 de In(Visible) | Histórica | Disponibles y reclasificadas | Rastrear cambios de formulación y la transición hacia Relevo sin confundir E12 con el cierre definitivo. |
 | F-008 | Bibliografía académica y técnica local | Secundaria | Parcialmente inventariada | Sustentar marco conceptual, estado del arte y decisiones técnicas tras verificar metadatos y actualidad. |
 | F-009 | Referentes de producto y mercado | Secundaria | Parcialmente inventariados | Analizar mecanismos, posicionamiento y brechas; actualizar datos antes de citarlos. |
 | F-010 | Declaración metodológica del autor | Normativa y aclaratoria | Consolidada el 23 de agosto de 2026 | Resolver procedencia, modalidad, reclutamiento, consentimiento, autoría de preguntas, transcripción y edad de P6. |
@@ -58,6 +58,12 @@ F-002 es feedback académico escrito, no una fuente empírica sobre usuarios. Su
 3. [síntesis activa](feedback-e15.md).
 
 Cuando una observación solicita investigar usuarios, mercado, accesibilidad o tecnología, el feedback solo justifica abrir la pregunta. La respuesta debe sostenerse con F-004, bibliografía o fuentes técnicas verificadas.
+
+## Relación entre F-001, F-007 y las ramas posteriores
+
+F-007 reúne formulaciones históricas parciales, incluida la [memoria E12 de In(Visible)](../99_archivo/fuentes-locales/semestre-1/e12/memoria-final-semestre-1.md). F-001 corresponde a la [memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md), fechada el 8 de julio de 2026 y localizada en dos PDF idénticos. Las memorias de agosto pertenecen al semestre 2 y se comparan por separado.
+
+Esta secuencia fija procedencia, no vigencia conceptual: una fecha posterior no vuelve verdadera una afirmación ni selecciona automáticamente una definición de producto. Las [equivalencias PDF](../99_archivo/fuentes-locales/semestre-1/cierre/equivalencias-pdf.md) documentan los hashes, fuentes editables y límites de cada rama.
 
 ## Jerarquía para resolver contradicciones
 
@@ -118,3 +124,9 @@ La jerarquía no reemplaza la evidencia: cuando dos documentos discrepan, se reg
 - **Motivo:** incorporar el E15 sin confundir feedback académico con evidencia empírica.
 - **Decisión derivada:** toda pregunta abierta por F-002 deberá resolverse con la fuente adecuada antes de entrar a la memoria.
 
+### 2026-08-23 — Identidad de F-001 corregida
+
+- **Cambio:** F-001 se vinculó con la memoria final de Relevo del 8 de julio y la entrega E12 de In(Visible) pasó a F-007.
+- **Versión anterior:** F-001 nombraba una memoria final genérica y E12 podía interpretarse como su copia principal.
+- **Motivo:** la auditoría de `Fin semestre 1` localizó la fuente de cierre real y comprobó sus equivalencias.
+- **Decisión derivada:** usar F-001 para reconstruir el examen y F-007 para estudiar la evolución previa.

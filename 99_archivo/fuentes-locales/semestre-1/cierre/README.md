@@ -13,11 +13,15 @@ fecha_creacion: 2026-08-23
 ## Contenido
 
 - [Mapa triple y avance de memoria](mapa-triple-y-avance-memoria.md): documento de transición entre la investigación del primer semestre y el desarrollo posterior.
+- [Memoria final de Relevo](memoria-final-relevo.md): conversión íntegra de la memoria presentada el 8 de julio de 2026 y nueva referencia F-001.
 - [Feedback del examen E15](../e15/README.md): registro crítico que explica los vacíos detectados al cierre y su tratamiento posterior.
+- [Equivalencias de los PDF](equivalencias-pdf.md): identifica duplicados, fuentes editables y la secuencia In(Visible) → Relevo → Relevo v3.
+- [Informe de integridad](informe-integridad-pdf.md): registra estructura, revisión visual, cobertura textual y omisiones.
+- [Medios conservados](medios/README.md): inventario de las tres figuras sustantivas extraídas del PDF.
 
-## Cobertura pendiente
+## Cobertura resuelta
 
-Los PDF de cierre se revisarán por equivalencia. Si su texto ya está preservado, se registrarán como exportaciones; si contienen información única, se realizará una conversión controlada.
+Los tres archivos de `Fin semestre 1` tienen una decisión explícita. El Markdown del mapa triple ya estaba migrado; el PDF de Relevo, sin fuente editable localizada, fue convertido íntegramente; y el PDF llamado borrador se confirmó como copia exacta de la exportación v3 del segundo semestre ya documentada. Ningún original local fue movido, editado ni eliminado.
 
 ---
 
@@ -37,3 +41,10 @@ Los PDF de cierre se revisarán por equivalencia. Si su texto ya está preservad
 - **Versión anterior:** el índice de cierre contenía únicamente el mapa triple.
 - **Motivo:** relacionar el entregable de transición con las observaciones que condicionan el semestre siguiente.
 - **Alcance:** el feedback se mantiene en una colección separada para distinguir entregable, evaluación y respuesta.
+
+### 2026-08-23 — Cierre de equivalencias PDF
+
+- **Cambio:** se añadieron la memoria final de Relevo, las equivalencias, el informe de integridad y el inventario de medios; la cobertura pasó de pendiente a resuelta.
+- **Versión anterior:** solo estaban enlazados el mapa triple y el feedback E15.
+- **Motivo:** la revisión comprobó que uno de los PDF contenía información única y que el otro era una exportación duplicada del semestre 2.
+- **Alcance:** se preservaron tres figuras necesarias para leer la memoria; esto no abre una etapa de visualidad vigente.

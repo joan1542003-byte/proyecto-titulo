@@ -196,3 +196,35 @@ fecha_creacion: 2026-08-23
 - **Versión anterior:** el repositorio conservaba solo una síntesis de 4.492 bytes y la fuente seguía mezclada con contenido ajeno.
 - **Motivo:** ampliar la cobertura sin perder procedencia ni confundir feedback con evidencia.
 - **Alcance:** no se produjo visualidad, no se alteró el DOCX y no se ejecutaron en paralelo las tareas de producto.
+
+## Sublote 1F — Cierre PDF del semestre 1
+
+- **Fecha:** 23 de agosto de 2026.
+- **Entrada:** dos PDF de `Fin semestre 1` y su relación con copias de `SEMESTRE 2`.
+- **Resultado:** una memoria de 36 páginas convertida íntegramente; una exportación de 35 páginas registrada como duplicado exacto; tres figuras sustantivas preservadas.
+- **Revisión:** 36 páginas renderizadas para la fuente única, cinco tablas reconstruidas, 140 celdas sustantivas comprobadas y tres figuras verificadas.
+- **Identidad:** F-001 pasa a designar la memoria final de Relevo del 8 de julio de 2026.
+
+| ID | Fuente local | Destino | Tratamiento |
+|---|---|---|---|
+| FL-S1-CL-MEM-001 | `Fin semestre 1/Johan Yantén Dis. Gráfico.pdf` | [memoria-final-relevo.md](../semestre-1/cierre/memoria-final-relevo.md) | Conversión íntegra desde PDF sin fuente editable localizada |
+| FL-S1-CL-EQV-001 | Dos PDF y sus equivalentes | [equivalencias-pdf.md](../semestre-1/cierre/equivalencias-pdf.md) | SHA-256, fuente editable, cronología y decisión archivística |
+| FL-S1-CL-QA-001 | Dos familias PDF | [informe-integridad-pdf.md](../semestre-1/cierre/informe-integridad-pdf.md) | Revisión estructural, visual y de cobertura textual |
+| FL-S1-CL-MED-001 | Tres figuras incrustadas | [medios](../semestre-1/cierre/medios/README.md) | Extracción sin recompresión e inventario por hash |
+| FL-S1-E12-MED-001 | Dos PNG propios enlazados por E12 | [medios históricos de In(Visible)](../semestre-1/e12/assets/README.md) | Restauración de enlaces e inventario por hash |
+
+### Controles
+
+- La memoria final de Relevo tiene una copia binaria exacta en `SEMESTRE 2/Memoria Final Semestre 1.pdf`.
+- El archivo `memoria ocn correciones, borrador.pdf` es idéntico a la exportación de Relevo v3 y no constituye una cuarta memoria.
+- Fuera de portada, índice y tablas, el 99,3 % de las secuencias muestreadas de ocho palabras se conserva en Markdown.
+- El 100 % de las 140 celdas sustantivas comprobadas aparece en la conversión.
+- No se localizaron equivalentes DOCX, Markdown o TXT para la memoria de julio después de revisar los 74 DOCX y textos locales.
+- Se restauraron dos enlaces rotos preexistentes de la memoria E12 mediante los PNG propios localizados en `assets`; ambos se clasificaron como históricos.
+
+### 2026-08-23 — Registro del sublote 1F
+
+- **Cambio:** se documentaron conversión, equivalencias, integridad, medios, reclasificación de la memoria E12 y restauración de sus dos figuras enlazadas.
+- **Versión anterior:** los nombres locales hacían parecer que In(Visible) era el cierre y que el PDF v3 mal ubicado era otro borrador.
+- **Motivo:** ordenar la historia por evidencia documental y no por nombres de archivo.
+- **Alcance:** los PDF originales permanecen privados e intactos; no se abrió una etapa de desarrollo visual.

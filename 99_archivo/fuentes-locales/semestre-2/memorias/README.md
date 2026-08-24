@@ -10,6 +10,10 @@ fecha_creacion: 2026-08-23
 
 # Memorias del semestre 2
 
+## Antecedente de cierre
+
+La [memoria final de Relevo del semestre 1](../../semestre-1/cierre/memoria-final-relevo.md), fechada el 8 de julio de 2026, es el antecedente directo de estas tres ramas. Su existencia permite separar el documento presentado al examen de las reformulaciones del 15 de agosto. El [informe de equivalencias](../../semestre-1/cierre/equivalencias-pdf.md) confirma además que un PDF mal ubicado en `Fin semestre 1` es una copia exacta de la exportación v3.
+
 ## Documentos convertidos
 
 | Orden por modificación local | Documento | Estado archivístico | Función |
@@ -43,3 +47,9 @@ Las dos ramas posteriores contenían una descripción incorrecta del estudio de 
 - **Motivo:** hacer visible la relación entre ramas antes de reutilizar su contenido.
 - **Alcance:** el orden corresponde a modificación local y no equivale a jerarquía académica.
 
+### 2026-08-23 — Antecedente del semestre 1 incorporado
+
+- **Cambio:** se enlazó la memoria final de Relevo de julio y se registró la equivalencia exacta del PDF v3 mal ubicado.
+- **Versión anterior:** la familia comenzaba con tres DOCX de agosto sin identificar documentalmente su predecesora directa.
+- **Motivo:** reconstruir la continuidad entre examen, feedback y reformulaciones posteriores.
+- **Alcance:** el nuevo vínculo no selecciona una de las tres memorias de agosto como vigente.

@@ -43,7 +43,7 @@ No se localizaron PPTX ni TXT dentro de esta carpeta.
 | Familia | Componentes observados | Decisión archivística inicial |
 |---|---|---|
 | Memorias del proyecto | Tres DOCX propios con PDF asociado | Conservar las tres versiones y comparar antes de declarar una vigente |
-| Memoria del semestre 1 | Un PDF sin DOCX equivalente dentro de esta carpeta | Relacionar con la versión Markdown ya migrada y verificar equivalencia |
+| Memoria del semestre 1 | Un PDF sin DOCX equivalente dentro de esta carpeta | Resuelto: copia exacta de la memoria final de Relevo de julio, convertida desde su duplicado en `Fin semestre 1` |
 | Tríada de mapas | Estados sin sufijo, final, Relevo sin pantalla, sistema editorial v3 y Miro | Agrupar por versión, no por formato |
 | Perfiles P01–P03 y U01–U03 | Variantes completas, de usuario, Miro y Material 3 | Tratar como iteraciones históricas; no confundir con el análisis actual P1–P8 |
 | Material Design 3 | PNG, PDF, SVG, imágenes, guías y código | Separar fuente editable, exportación y documentación |
@@ -125,6 +125,7 @@ La primera prioridad recomendada ya fue ejecutada:
 - [x] Corregir en las copias la reconstrucción metodológica errónea del estudio de junio.
 - [x] Ordenar y deduplicar los 21 Markdown de proceso.
 - [x] Migrar la documentación textual de perfiles, recorridos, flujos y mapas.
+- [x] Resolver el PDF de memoria del semestre 1 mediante hash y conversión canónica.
 - [ ] Crear fichas selectivas para los binarios de perfiles, recorridos, flujos y mapas.
 - [ ] Resolver qué memoria alimentará el documento activo.
 
@@ -141,3 +142,10 @@ La primera prioridad recomendada ya fue ejecutada:
 - **Versión anterior:** la auditoría reconocía los Markdown, pero no había resuelto copias o ramas de perfiles.
 - **Motivo:** cerrar la capa textual antes de decidir sobre 356 recursos visuales y paquetes asociados.
 - **Alcance:** las fuentes locales permanecen intactas.
+
+### 2026-08-23 — PDF del semestre 1 resuelto
+
+- **Cambio:** la familia Memoria del semestre 1 pasó de pendiente a resuelta y se marcó su equivalencia exacta.
+- **Versión anterior:** el PDF de la raíz de `SEMESTRE 2` debía compararse con una supuesta versión Markdown ya migrada.
+- **Motivo:** el hash demostró que es idéntico al PDF de Relevo localizado en `Fin semestre 1`, cuya conversión canónica se creó desde la fuente binaria.
+- **Alcance:** la auditoría del resto de los binarios del semestre 2 continúa pendiente.

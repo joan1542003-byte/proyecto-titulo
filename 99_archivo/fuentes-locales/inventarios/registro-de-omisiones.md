@@ -117,3 +117,12 @@ La omisión puede revertirse si aparece una necesidad académica concreta, se re
 - **Resultado:** se publicó únicamente el bloque de Relevo como conversión normalizada y matriz; el DOCX completo quedó fuera de GitHub.
 - **Material omitido:** contenido de otros estudiantes, dos comentarios internos no relacionados, sesenta renders, PDF de control, rutas absolutas y metadatos locales innecesarios.
 - **Original:** no fue editado, movido ni eliminado.
+
+### 2026-08-23 — Aplicación al sublote 1F
+
+- **Cambio:** se registró el tratamiento de los dos PDF de `Fin semestre 1` y sus recursos internos.
+- **Versión anterior:** ambos PDF estaban identificados, pero no se sabía si contenían texto único ni qué debía publicarse.
+- **Motivo:** preservar información propia sin duplicar exportaciones ni subir binarios innecesarios.
+- **Resultado:** se publicó una conversión Markdown completa y tres figuras propias; el segundo PDF se registró como copia exacta de Relevo v3. Además, dos PNG históricos de In(Visible) dejaron de estar omitidos porque reparan enlaces ya presentes en la memoria E12.
+- **Material omitido:** dos PDF originales, dos copias binarias equivalentes, 71 páginas de control disponibles entre ambas familias, un logotipo institucional, su máscara de transparencia y objetos internos sin valor independiente.
+- **Originales:** ningún archivo local fue editado, movido o eliminado.

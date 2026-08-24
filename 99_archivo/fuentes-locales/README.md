@@ -31,8 +31,8 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 | `semestre-1/e09` | Auditoría y memoria del hito E09 | Migrado |
 | `semestre-1/e10` | Revisión cruzada y transcripción | Parcial |
 | `semestre-1/e11` | Guía, plan, presentación y memoria revisada | Migrado en Markdown |
-| `semestre-1/e12` | Cadena de borradores y cierre de memoria | Migrado en Markdown |
-| `semestre-1/cierre` | Entregables y reflexiones de cierre | Parcial |
+| `semestre-1/e12` | Cadena de borradores y entrega histórica de In(Visible) | Migrado en Markdown |
+| `semestre-1/cierre` | Mapa triple, memoria final de Relevo, equivalencias y medios | Cerrado |
 | `semestre-1/e15` | Feedback del examen, trazabilidad e integridad | Migrado y documentado |
 | `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Tres memorias y 21 Markdown migrados; binarios pendientes |
 | `instrumentos` | Guiones, aplicación y procedencia de entrevistas | Migrado y documentado |
@@ -120,3 +120,10 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 - **Versión anterior:** E15 solo tenía una síntesis activa y el documento colectivo permanecía sin conversión archivística propia.
 - **Motivo:** conservar el bloque pertinente completo y separar observaciones, interpretaciones y decisiones.
 - **Decisión derivada:** mantener fuera del repositorio el DOCX colectivo, sus renders y el contenido de otros estudiantes.
+
+### 2026-08-23 — PDF de cierre del semestre 1
+
+- **Cambio:** la colección `semestre-1/cierre` pasó de parcial a cerrada y E12 se precisó como entrega histórica de In(Visible).
+- **Versión anterior:** los PDF permanecían pendientes y el nombre de la memoria E12 definía su jerarquía.
+- **Motivo:** una revisión binaria, textual y visual identificó la memoria final de Relevo y una exportación v3 duplicada.
+- **Decisión derivada:** continuar con otro documento textual propio; no iniciar visualidad activa.

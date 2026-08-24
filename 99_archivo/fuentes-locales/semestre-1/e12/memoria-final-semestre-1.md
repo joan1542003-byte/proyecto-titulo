@@ -1,20 +1,20 @@
 ---
 id: FL-S1-E12-003
-titulo: "Memoria final del semestre 1 — versión Markdown"
+titulo: "Memoria E12 de In(Visible) — versión Markdown"
 autoria: propia
 estado_documental: histórico
-relacion_con_proyecto: "cierre académico del semestre 1"
+relacion_con_proyecto: "entrega E12 histórica; antecedente de la transición hacia Relevo"
 sensibilidad: anonimizada
 fuente_local_relativa: "Yanten Johan E12 - Memoria final.md"
 metodo_conversion: "copia estructural desde Markdown con anonimización puntual"
 fecha_migracion: 2026-08-23
 ---
 
-# Memoria final del semestre 1 — versión Markdown
+# Memoria E12 de In(Visible) — versión Markdown
 
 ## Nota archivística
 
-Cierre del semestre 1. Es una referencia histórica principal, pero no reemplaza la memoria en desarrollo del semestre 2.
+Entrega histórica del hito E12 y referencia principal de la etapa In(Visible). La comparación de fuentes posterior confirmó que la [memoria final de Relevo del 8 de julio de 2026](../cierre/memoria-final-relevo.md) es el cierre semestral más tardío localizado. Este documento explica el antecedente conceptual, pero no sustituye esa memoria ni las ramas posteriores del semestre 2.
 
 Este archivo conserva el contenido de una fuente local propia dentro del archivo histórico. Su ubicación en `99_archivo` indica que no constituye, por sí sola, una definición vigente del proyecto.
 
@@ -514,3 +514,11 @@ Zamorano Negretti, C. S. (2024). *Comunidad a través del juego: codiseño de un
 - **Anonimización:** los nombres identificables de participantes detectados fueron sustituidos por códigos P1–P8; además, la edad de P6 se corrigió de 24 a 27 años según la aclaración posterior del investigador.
 - **Control aplicado:** 8 patrones de identificación o edad fueron sustituidos durante esta conversión.
 - **Criterio de uso:** antes de reutilizar afirmaciones, cifras o decisiones de este documento, deben contrastarse con las fuentes vigentes enlazadas desde el índice maestro.
+
+### 2026-08-23 — Reclasificación archivística
+
+- **Cambio realizado:** se reemplazó la identificación genérica de memoria final del semestre 1 por memoria E12 de In(Visible) y se enlazó su sucesora de Relevo.
+- **Estado anterior:** el nombre local se interpretaba como prueba suficiente de que este documento representaba el cierre definitivo.
+- **Motivo:** la auditoría de los PDF de `Fin semestre 1` localizó una memoria posterior de Relevo, fechada el 8 de julio de 2026.
+- **Medios:** se incorporaron sin edición `assets/mapa_actores.png` y `assets/flujo_invisible.png`, ya enlazados por el cuerpo histórico pero ausentes en la primera migración.
+- **Alcance:** no se modificó el cuerpo histórico de In(Visible); solo cambiaron metadatos, título envolvente, nota archivística, jerarquía de uso y disponibilidad de sus dos figuras propias.
