@@ -46,6 +46,10 @@ El criterio común de selección confirmado para P1–P8 es la edad; no se utili
 
 La migración se gestiona en la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) y se documenta en [Fuentes locales migradas](https://github.com/joan1542003-byte/proyecto-titulo/tree/main/99_archivo/fuentes-locales). La [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2) conserva el avance de usuarios hasta retomar esa fase.
 
+## Inicio para nuevas conversaciones
+
+Antes de trabajar con ChatGPT o Codex, conecta GitHub y usa [Instrucciones maestras para conversaciones](INSTRUCCIONES_CHATGPT.md). Ese documento define el protocolo de lectura del repositorio, el contexto estable, las reglas de investigación y escritura, y el registro de resultados.
+
 ## Principios de trabajo
 
 - Investigar antes de concluir o diseñar.
@@ -87,6 +91,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-23 — Instrucciones para nuevas conversaciones
+
+- **Cambio:** se añadió un acceso directo a las instrucciones maestras para ChatGPT y Codex.
+- **Versión anterior:** una conversación nueva debía reconstruir el protocolo desde varios documentos y mensajes previos.
+- **Motivo:** asegurar continuidad, lectura correcta de GitHub y recuperación del estado vigente desde las Issues.
+- **Decisión derivada:** toda conversación nueva debe comenzar por el repositorio y no por recuerdos aislados.
 
 ### 2026-08-23 — Activación de la migración documental
 
