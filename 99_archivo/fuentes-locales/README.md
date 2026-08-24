@@ -33,6 +33,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 | `semestre-1/e11` | Guía, plan, presentación y memoria revisada | Migrado en Markdown |
 | `semestre-1/e12` | Cadena de borradores y cierre de memoria | Migrado en Markdown |
 | `semestre-1/cierre` | Entregables y reflexiones de cierre | Parcial |
+| `semestre-1/e15` | Feedback del examen, trazabilidad e integridad | Migrado y documentado |
 | `semestre-2` | Desarrollo de Relevo, mapas, flujos y nuevas memorias | Tres memorias y 21 Markdown migrados; binarios pendientes |
 | `instrumentos` | Guiones, aplicación y procedencia de entrevistas | Migrado y documentado |
 | `fuentes-terceros` | Fichas bibliográficas y registros de existencia | Pendiente |
@@ -63,6 +64,7 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 ## Navegación
 
 - [Archivo del semestre 1](semestre-1/README.md)
+- [Feedback E15](semestre-1/e15/README.md)
 - [Archivo del semestre 2](semestre-2/README.md)
 - [Instrumentos y entrevistas](instrumentos/README.md)
 - [Protocolo de migración](protocolo-de-migracion.md)
@@ -110,3 +112,11 @@ Un documento archivado puede contener ideas todavía útiles. Su ubicación indi
 - **Versión anterior:** la colección de instrumentos figuraba como parcialmente migrada y no distinguía planificación, aplicación y corpus.
 - **Motivo:** documentar el levantamiento completo sin publicar nombres ni duplicar las respuestas.
 - **Decisión derivada:** considerar cerrada esta familia documental y continuar con otro conjunto propio.
+
+
+### 2026-08-23 — Feedback E15
+
+- **Cambio:** se añadió la colección `semestre-1/e15` con registro normalizado, matriz de trazabilidad e informe de integridad.
+- **Versión anterior:** E15 solo tenía una síntesis activa y el documento colectivo permanecía sin conversión archivística propia.
+- **Motivo:** conservar el bloque pertinente completo y separar observaciones, interpretaciones y decisiones.
+- **Decisión derivada:** mantener fuera del repositorio el DOCX colectivo, sus renders y el contenido de otros estudiantes.

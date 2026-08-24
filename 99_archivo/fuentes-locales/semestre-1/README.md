@@ -24,7 +24,8 @@ Los documentos se conservan como antecedentes históricos. Solo deben trasladars
 | 2 | [E10](e10/README.md) | Registro de revisión cruzada | Parcial |
 | 3 | [E11](e11/README.md) | Instrumento, planificación, presentación y memoria revisada | Migrada en Markdown |
 | 4 | [E12](e12/README.md) | Borradores y cierre de memoria | Migrada en Markdown |
-| 5 | [Cierre](cierre/README.md) | Mapa triple y transición al semestre siguiente | Parcial |
+| 5 | [E15](e15/README.md) | Feedback del examen, integridad y seguimiento | Migrada y documentada |
+| 6 | [Cierre](cierre/README.md) | Mapa triple y transición al semestre siguiente | Parcial |
 | — | [Transversal](transversal/README.md) | Teoría de cambio | Migrada |
 | — | [Borradores](borradores/README.md) | Exploraciones no canónicas | Migrada |
 | — | [Instrumentos](../instrumentos/README.md) | Guiones y procedencia de entrevistas | Migrada y documentada |
@@ -38,7 +39,7 @@ Los documentos se conservan como antecedentes históricos. Solo deben trasladars
 
 ## Control aplicado
 
-El primer lote contiene trece documentos. Cuatro archivos con material de entrevistas fueron revisados para sustituir nombres por P1–P8 y corregir la edad de P6 a 27 años. Después se cerró una unidad específica de cuatro DOCX: dos guiones se convirtieron íntegramente y los dos registros identificables se vincularon con el corpus anonimizado.
+El primer lote contiene trece documentos. Cuatro archivos con material de entrevistas fueron revisados para sustituir nombres por P1–P8 y corregir la edad de P6 a 27 años. Después se cerró una unidad específica de cuatro DOCX: dos guiones se convirtieron íntegramente y los dos registros identificables se vincularon con el corpus anonimizado. Además, el bloque propio de E15 se aisló de un documento colectivo, se convirtió a Markdown y se vinculó con una matriz de seguimiento.
 
 ---
 
@@ -57,3 +58,11 @@ El primer lote contiene trece documentos. Cuatro archivos con material de entrev
 - **Versión anterior:** el índice remitía solo al corpus activo y dejaba los DOCX fuera de la cadena de lectura.
 - **Motivo:** integrar los instrumentos al semestre 1 sin mezclar identidades con documentación analítica.
 - **Alcance:** las fuentes locales permanecen intactas y los registros con nombres no se publican.
+
+
+### 2026-08-23 — E15 incorporado
+
+- **Cambio:** se añadió E15 a la ruta de lectura y al control aplicado.
+- **Versión anterior:** el cierre del semestre remitía a E12 y al mapa triple, pero el feedback del examen no tenía una colección propia.
+- **Motivo:** reconstruir la transición desde la evaluación hacia las tareas del proyecto sin publicar material ajeno.
+- **Alcance:** la incorporación registra feedback; no adopta sus sugerencias como decisiones automáticas.

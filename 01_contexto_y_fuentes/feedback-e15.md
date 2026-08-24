@@ -2,12 +2,15 @@
 
 ## Procedencia y alcance
 
-La fuente F-003 es un documento colectivo. En el bloque de Johan Yantén aparecen dos capas diferentes:
+La fuente F-002 es un documento colectivo. El bloque de Johan Yantén ocupa las páginas renderizadas 44–49 y contiene tres capas:
 
 1. notas directas atribuidas a Aarón Montoya y Sofía Suazo;
-2. apartados titulados “Feedback estructurado” y una síntesis posterior de la deliberación.
+2. apartados titulados `Feedback estructurado`;
+3. una síntesis de deliberación y veredicto.
 
-Las notas directas se utilizan como evidencia principal del feedback. Las síntesis posteriores sirven para ordenar temas, pero no sustituyen una transcripción literal ni deben presentarse como citas de la comisión.
+Las notas directas son la evidencia principal del feedback. Las síntesis permiten ordenar temas, pero no sustituyen una transcripción literal ni deben presentarse como citas de la comisión. La deliberación se conserva como antecedente histórico y no como evidencia de usuario, mercado o funcionamiento.
+
+El [registro normalizado](../99_archivo/fuentes-locales/semestre-1/e15/registro-normalizado.md) conserva el bloque pertinente; la [matriz de trazabilidad](../99_archivo/fuentes-locales/semestre-1/e15/matriz-de-trazabilidad.md) asigna estado y evidencia requerida a cada observación.
 
 ## Feedback directo de Aarón Montoya
 
@@ -22,17 +25,17 @@ Las notas directas se utilizan como evidencia principal del feedback. Las sínte
 ### Funcionamiento y modalidad
 
 - Explicar físicamente qué es el objeto y dónde se ubica.
-- Evitar usar “mediación” sin una definición comprensible.
-- Justificar la modalidad de feedback: luz, visual o sonido.
+- Evitar usar mediación sin una definición comprensible.
+- Justificar la modalidad de retroalimentación: luz, señal visual, sonido, vibración o combinación.
 - Mostrar la experiencia y no dedicar la presentación a lenguajes de programación.
-- Definir el fracaso técnico: si la aplicación funciona pero el objeto solo molesta, la propuesta no cumple su propósito.
+- Definir el fracaso técnico y experiencial: una aplicación funcional no basta si el objeto solo molesta o no produce el efecto esperado.
 
 ### Comunicación
 
 - Mejorar redacción, ortografía, factura visual y detalle editorial.
-- Separar la memoria académica de la presentación oral.
+- Separar la función de la memoria académica de la presentación oral.
 - Comenzar mostrando con claridad qué es Relevo y volver al objeto después de explicar su fundamento.
-- Corregir el cronograma para que represente el trabajo realizado durante todo el semestre.
+- Corregir el cronograma para representar el trabajo realizado durante todo el semestre.
 
 ## Feedback directo de Sofía Suazo
 
@@ -47,56 +50,73 @@ Las notas directas se utilizan como evidencia principal del feedback. Las sínte
 ### Arquitectura y experiencia
 
 - Explicar qué, cómo, cuándo y por qué.
-- Mostrar un mockup, video o escena de uso.
 - Aclarar cómo funciona la aplicación.
 - Diferenciar la aplicación que detecta otra aplicación del teléfono como soporte.
 - Crear por separado:
   - flujo técnico del sistema;
-  - flujo o recorrido del usuario.
-- Dibujar entradas, salidas y escenarios antes de programar.
+  - flujo o recorrido del usuario;
+  - flujo de diseño y decisiones.
+- Dibujar entradas, salidas y escenarios antes de implementar.
 
 ### Justificación y accesibilidad
 
 - Profundizar por qué se descartó la gamificación; no asumir que toda mecánica lúdica es punitiva.
-- Justificar cada modalidad sensorial y evitar usar “simple” como argumento.
+- Justificar cada modalidad sensorial y evitar usar simple como argumento.
 - Considerar accesibilidad y comparar luz, sonido y vibración.
 
 ## Prioridades derivadas
 
 ### Prioridad crítica
 
-1. Definir con precisión el usuario y el contexto doméstico.
-2. Explicar el producto desde el comienzo.
-3. Separar y registrar flujo de usuario, flujo técnico y flujo de diseño.
-4. Acotar qué problema resuelve la primera versión.
+1. Definir con precisión el usuario y justificar el contexto de uso.
+2. Explicar el producto phygital desde el comienzo y distinguir objeto, aplicación y sistema.
+3. Acotar el problema que aborda la primera versión y declarar sus exclusiones.
+4. Registrar por separado flujo de usuario, flujo técnico y flujo de diseño.
 
 ### Prioridad alta
 
-5. Comprender mercado, productos y oportunidades actuales.
-6. Justificar la condición phygital y el aporte del objeto frente a una notificación.
-7. Verificar modalidad, accesibilidad y carácter no punitivo.
-8. Documentar costos, producción y rol del diseñador.
+5. Comprender el mercado, los mecanismos que funcionan, sus límites y los desarrollos actuales.
+6. Justificar el valor del proyecto y el aporte del objeto frente a una intervención solo digital.
+7. Investigar modalidad, accesibilidad y carácter no punitivo.
+8. Definir criterios de éxito y fracaso.
+9. Documentar producción, costos y rol del diseñador cuando el alcance esté estabilizado.
 
 ### Prioridad editorial
 
-9. Reescribir la arquitectura narrativa.
-10. Corregir ortografía, precisión terminológica, jerarquía visual y cronología.
+10. Reescribir la arquitectura narrativa de la memoria.
+11. Corregir ortografía, precisión terminológica y cronología.
+12. Preparar visualidad de presentación solo cuando la etapa o entrega la requiera.
 
-## Lo que no debe trasladarse automáticamente a la memoria
+## Límite entre feedback y decisión
 
-- Comentarios sobre la instancia de evaluación.
+- El hogar es una hipótesis que debe justificarse, no una decisión cerrada por la evaluación.
+- El ejemplo de sedentarismo, zapatillas y puerta de salida demuestra especificidad; no define el caso de uso final.
+- Android frente a iOS, gamificación y modalidad sensorial permanecen como decisiones abiertas.
+- La recomendación de detener la programación se interpreta como una advertencia contra saltarse etapas, no como una prohibición permanente.
+- La entrega actual no exige visualidad. Los diagramas siguen siendo herramientas de razonamiento y trazabilidad, pero su acabado gráfico está pospuesto.
+
+## Lo que no debe trasladarse a la memoria
+
+- Referencias a la instancia de evaluación.
 - Comparaciones con estilos de presentación de terceros.
-- Diagnósticos personales sobre el estudiante.
+- Diagnósticos o apreciaciones personales sobre el estudiante.
 - La calificación.
-- El ejemplo de caminar o sedentarismo como solución obligatoria: es un caso sugerido para mostrar especificidad, no evidencia de que ese deba ser el caso final.
+- Lenguaje que presente una sugerencia del feedback como evidencia del problema.
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
 
 ### 2026-08-23 — Creación
 
 - **Cambio:** extracción y priorización del feedback correspondiente a Relevo.
 - **Versión anterior:** el feedback estaba inserto en un documento colectivo junto con síntesis posteriores y material de otros proyectos.
 - **Motivo:** distinguir observaciones directas, interpretaciones derivadas y acciones pertinentes.
-- **Pendiente:** confirmar si existe audio o transcripción literal de la evaluación.
+
+### 2026-08-23 — Conversión completa y límite decisional
+
+- **Cambio:** F-003 se corrigió a F-002; se añadieron enlaces al registro completo, la matriz y el control de capas; se distinguieron hipótesis, decisiones abiertas, tareas pospuestas y contenido no incorporable.
+- **Versión anterior:** existía una síntesis temática, pero no estaba enlazada con una conversión archivística completa y mantenía una pregunta pendiente sobre un registro literal no exigido para usar el feedback escrito.
+- **Motivo:** integrar el E15 al sistema documental sin sobredimensionar su procedencia ni convertir comentarios históricos en órdenes actuales.
+- **Decisión derivada:** el TODO se gestiona desde la matriz; la línea activa continúa siendo la organización del archivo.
+

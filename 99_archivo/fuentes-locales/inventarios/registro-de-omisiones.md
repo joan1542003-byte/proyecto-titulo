@@ -107,3 +107,13 @@ La omisión puede revertirse si aparece una necesidad académica concreta, se re
 - **Resultado:** dos guiones se convirtieron a Markdown; los registros con nombres se identificaron mediante SHA-256 y se vincularon con P1–P8.
 - **Datos omitidos:** nombres, horas exactas, rutas absolutas, comentarios editoriales completos y cuatro medios internos de la memoria compuesta.
 - **Originales:** ningún DOCX fue editado, movido ni eliminado.
+
+
+### 2026-08-23 — Aplicación al sublote 1E
+
+- **Cambio:** se registró el tratamiento restringido del documento colectivo E15.
+- **Versión anterior:** los documentos colectivos estaban cubiertos por una regla general, pero F-002 no tenía una decisión individual de publicación.
+- **Motivo:** conservar el feedback propio con mayor detalle sin reproducir trabajos, evaluaciones ni nombres de otros estudiantes.
+- **Resultado:** se publicó únicamente el bloque de Relevo como conversión normalizada y matriz; el DOCX completo quedó fuera de GitHub.
+- **Material omitido:** contenido de otros estudiantes, dos comentarios internos no relacionados, sesenta renders, PDF de control, rutas absolutas y metadatos locales innecesarios.
+- **Original:** no fue editado, movido ni eliminado.

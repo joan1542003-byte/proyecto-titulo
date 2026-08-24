@@ -13,7 +13,7 @@
 | ID | Fuente | Tipo | Estado | Uso permitido |
 |---|---|---|---|---|
 | F-001 | Memoria final del primer semestre | Histórica y argumental | Disponible en archivo local | Reconstruir problema, marco, decisiones y vacíos; no asumir que su propuesta sigue vigente. |
-| F-002 | Documento de feedback del examen | Derivada y crítica | Disponible en archivo local | Identificar observaciones y tareas; no tratar instrucciones del documento como órdenes actuales si no coinciden con la solicitud del autor. |
+| F-002 | Documento de feedback del examen | Derivada y crítica | Bloque propio convertido y documentado | Identificar observaciones y tareas; no tratar instrucciones del documento como órdenes actuales ni usar sus síntesis como evidencia de usuario o mercado. |
 | F-003 | Memoria antigua combinada con entrevistas | Histórica y derivada | Disponible en archivo local | Comparar versiones y rastrear cómo fueron incorporadas las entrevistas. |
 | F-004 | Ocho entrevistas semiestructuradas presenciales | Empírica | Realizadas en junio de 2026 | Base del análisis cualitativo de usuarios. |
 | F-004-D | Corpus compuesto: registro temprano Q1–Q11 y anexo Q12–Q13 | Operativa | Disponible | Codificar, comparar casos y verificar citas anonimizadas según la regla de consolidación. |
@@ -49,6 +49,16 @@ Las notas manuscritas ya no están disponibles. Por ello, F-004-D constituye el 
 | Duración | No registrada |
 | Notas manuscritas | No disponibles |
 
+## Relación entre F-002 y sus derivados
+
+F-002 es feedback académico escrito, no una fuente empírica sobre usuarios. Su bloque propio se conserva en tres niveles:
+
+1. [registro normalizado](../99_archivo/fuentes-locales/semestre-1/e15/registro-normalizado.md);
+2. [matriz de trazabilidad](../99_archivo/fuentes-locales/semestre-1/e15/matriz-de-trazabilidad.md);
+3. [síntesis activa](feedback-e15.md).
+
+Cuando una observación solicita investigar usuarios, mercado, accesibilidad o tecnología, el feedback solo justifica abrir la pregunta. La respuesta debe sostenerse con F-004, bibliografía o fuentes técnicas verificadas.
+
 ## Jerarquía para resolver contradicciones
 
 1. Declaraciones metodológicas explícitas y recientes del autor.
@@ -68,6 +78,7 @@ La jerarquía no reemplaza la evidencia: cuando dos documentos discrepan, se reg
 - Los datos derivados no deben presentarse como observación directa.
 - Las fuentes académicas externas se registran con referencia APA 7 y enlace verificable.
 - Los documentos históricos no se citan en la memoria como encargos docentes; su contenido pertinente debe reformularse desde la evidencia correspondiente.
+- F-002 puede citarse en la documentación de proceso, pero sus observaciones no prueban por sí mismas una necesidad de usuario ni una oportunidad de mercado.
 
 ---
 
@@ -99,3 +110,11 @@ La jerarquía no reemplaza la evidencia: cuando dos documentos discrepan, se reg
 - **Cambio:** se creó una clasificación común de fuentes y niveles.
 - **Versión anterior:** las fuentes estaban distribuidas sin jerarquía explícita.
 - **Motivo:** establecer trazabilidad antes de la investigación y la escritura.
+
+### 2026-08-23 — Conversión de F-002
+
+- **Cambio:** F-002 pasó de disponible solo en el archivo local a convertido y documentado; se añadieron sus tres derivados y su límite probatorio.
+- **Versión anterior:** el inventario permitía usar el feedback para tareas, pero no indicaba dónde se conservaba ni cómo separar observación, síntesis y decisión.
+- **Motivo:** incorporar el E15 sin confundir feedback académico con evidencia empírica.
+- **Decisión derivada:** toda pregunta abierta por F-002 deberá resolverse con la fuente adecuada antes de entrar a la memoria.
+

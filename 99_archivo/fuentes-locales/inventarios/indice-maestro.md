@@ -4,7 +4,7 @@
 
 **Migración activa.** La organización documental es la única línea principal de trabajo. El desarrollo de personas y recorridos permanece pausado hasta completar una base archivística suficiente.
 
-**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, y la familia de cuatro DOCX de instrumentos y entrevistas.
+**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, la familia de cuatro DOCX de instrumentos y entrevistas, y el bloque propio del feedback E15.
 
 ## Colecciones
 
@@ -20,7 +20,7 @@
 | C-07 | Instrumentos de usuarios | Dos guiones, aplicación, equivalencias y corpus anonimizado | Cerrado | Mantener al día si aparece una nueva fuente |
 | C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Textos principales migrados | Crear manifiestos selectivos de binarios y equivalencias |
 | C-09 | Bibliografía | Fuentes académicas y guías | Pendiente | Crear fichas APA 7 |
-| C-10 | Administración | Pautas, rúbricas, planes y feedback | Pendiente | Resumir solo lo pertinente |
+| C-10 | Administración | Pautas, rúbricas, planes y feedback | Parcial | E15 convertido; revisar las demás pautas y planificaciones |
 | C-11 | Recursos visuales | Diagramas, mapas y renders | Pendiente | Crear índice selectivo |
 | C-12 | Archivo técnico | Scripts, temporales y extracciones | Registrado como conjunto | Recuperar solo procedimientos únicos |
 
@@ -60,6 +60,8 @@
 - flujos técnico, de usuario y diseño identificados.
 
 ### Lote 4 — Fuentes y visuales
+
+**Estado:** el feedback E15 está convertido y documentado; bibliografía, otras pautas y recursos visuales permanecen pendientes.
 
 **Criterio de cierre:**
 
@@ -114,3 +116,11 @@
 - **Versión anterior:** los guiones seguían pendientes y la relación entre dos registros de respuestas no estaba archivada junto con sus fuentes.
 - **Motivo:** separar el instrumento planificado, el aplicado y el corpus canónico antes de continuar con otros documentos.
 - **Decisión derivada:** mantener pausado el desarrollo de usuarios y abrir como siguiente unidad otro documento propio no visual.
+
+
+### 2026-08-23 — Sublote 1E: feedback E15
+
+- **Cambio:** C-10 pasó de pendiente a parcial y se incorporó el feedback E15 como primera pieza administrativa convertida.
+- **Versión anterior:** existía una síntesis activa, pero no una colección archivística con registro completo, integridad y TODO trazable.
+- **Motivo:** distinguir el contenido del examen de las decisiones actuales y excluir material de otros estudiantes.
+- **Decisión derivada:** continuar con otra fuente textual propia antes de abrir bibliografía o visualidad.

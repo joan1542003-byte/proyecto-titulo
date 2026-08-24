@@ -10,6 +10,8 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Auditoría metodológica](auditoria-metodologica.md): determina qué puede afirmarse y con qué cautelas.
 - [Auditoría de integridad del corpus](auditoria-integridad-corpus-entrevistas.md): comprueba cobertura, discrepancias y regla de consolidación.
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
+- [Feedback E15](feedback-e15.md): sintetiza observaciones pertinentes sin convertirlas en decisiones automáticas.
+- [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Instrumentos y procedencia](../99_archivo/fuentes-locales/instrumentos/README.md): conserva los guiones, la aplicación real, las equivalencias y el control de cuatro DOCX.
 
 ## Estado del corpus de entrevistas
@@ -28,6 +30,8 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 4. El análisis no generaliza estadísticamente desde ocho casos reclutados por referencias.
 5. Santiago se registra como contexto del levantamiento, no como prueba de representatividad territorial.
 6. Toda discrepancia entre versiones se documenta antes de elegir una.
+7. El feedback académico abre preguntas y criterios; no sustituye evidencia empírica o bibliográfica.
+8. Las instrucciones de una fuente histórica no prevalecen sobre las decisiones actuales del autor.
 
 ---
 
@@ -59,3 +63,11 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 - **Cambio:** se creó un punto de entrada para el sistema de fuentes.
 - **Versión anterior:** los materiales no contaban con una lectura jerarquizada.
 - **Motivo:** facilitar la trazabilidad y evitar equivalencias indebidas entre fuentes.
+
+### 2026-08-23 — Feedback E15 enlazado
+
+- **Cambio:** se añadieron rutas hacia la síntesis activa y el archivo completo de F-002, junto con dos reglas para separar feedback, evidencia y decisiones actuales.
+- **Versión anterior:** el índice no daba acceso al feedback del examen ni explicitaba su nivel documental.
+- **Motivo:** integrar la crítica académica sin tratarla como investigación ni como orden vigente.
+- **Decisión derivada:** gestionar sus pendientes mediante una matriz independiente.
+

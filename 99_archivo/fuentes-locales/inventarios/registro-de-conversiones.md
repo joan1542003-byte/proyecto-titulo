@@ -164,3 +164,35 @@ fecha_creacion: 2026-08-23
 - **Versión anterior:** los guiones permanecían locales y los dos registros de respuestas solo estaban relacionados desde el corpus activo.
 - **Motivo:** documentar todo el material propio útil sin duplicar las respuestas ni publicar identidades.
 - **Alcance:** no se reanudó el desarrollo de tipos de usuario ni se incorporó visualidad de entrega.
+
+
+## Sublote 1E — Feedback E15
+
+- **Fecha:** 23 de agosto de 2026.
+- **Entrada:** un DOCX colectivo de feedback académico.
+- **Cobertura revisada:** 60 páginas; bloque propio en páginas renderizadas 44–49.
+- **Salida:** tres documentos archivísticos, un índice y cuatro documentos activos o de navegación actualizados.
+- **Contenido ajeno:** omitido por completo.
+- **Original:** conservado de forma privada y sin modificaciones.
+
+| ID | Fuente | Destino | Tratamiento |
+|---|---|---|---|
+| FL-S1-E15-001 | Bloque propio de `Encargo 15_Examen.docx` | [registro-normalizado.md](../semestre-1/e15/registro-normalizado.md) | Conversión editorial con separación de tres capas |
+| FL-S1-E15-TRAZ-001 | Observaciones de F-002 y criterios actuales | [matriz-de-trazabilidad.md](../semestre-1/e15/matriz-de-trazabilidad.md) | 22 pendientes y 5 exclusiones con estado |
+| FL-S1-E15-QA-001 | DOCX completo y renders temporales | [informe-de-integridad-docx.md](../semestre-1/e15/informe-de-integridad-docx.md) | Hash, estructura, delimitación, revisión visual y omisiones |
+
+### Normalizaciones declaradas
+
+- `Yohan` → `Johan`.
+- `IoS` y `android` → `iOS` y `Android`.
+- Abreviaturas y frases telegráficas → redacción completa sin añadir decisiones.
+- Notas, síntesis y deliberación mezcladas → capas A, B y C.
+- Caso de sedentarismo presentado como dirección → ejemplo no adoptado.
+- Comentarios históricos formulados como acciones → criterios, preguntas, decisiones abiertas, tareas pospuestas o exclusiones.
+
+### 2026-08-23 — Registro del sublote 1E
+
+- **Cambio:** se convirtió y documentó el bloque E15 correspondiente a Relevo.
+- **Versión anterior:** el repositorio conservaba solo una síntesis de 4.492 bytes y la fuente seguía mezclada con contenido ajeno.
+- **Motivo:** ampliar la cobertura sin perder procedencia ni confundir feedback con evidencia.
+- **Alcance:** no se produjo visualidad, no se alteró el DOCX y no se ejecutaron en paralelo las tareas de producto.
