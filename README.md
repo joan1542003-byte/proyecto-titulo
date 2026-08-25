@@ -30,7 +30,7 @@ La versión breve y mantenida después de cada actualización está en el [resum
 
 ## Estado actual
 
-**Línea activa: memoria integral de Proyecto de Título y preparación del protocolo P0.**
+**Línea activa: preparación del protocolo P0–P4 después del cierre del Encargo 17.**
 
 La base metodológica del corpus quedó consolidada:
 
@@ -46,7 +46,7 @@ La base metodológica del corpus quedó consolidada:
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La reconstrucción y auditoría se gestiona en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) y el desarrollo de la [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) permanecen en pausa. La base académica activa es la [memoria integral v2](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El dictamen independiente está en la [auditoría rectora](08_memoria/auditoria-sol-memoria-v2.md) y la evolución estructural en la [matriz histórica de encargos](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md).
+La reconstrucción y auditoría de la memoria se gestiona en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) quedó completada con los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria integral v2](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El dictamen independiente está en la [auditoría rectora](08_memoria/auditoria-sol-memoria-v2.md) y la evolución estructural en la [matriz histórica de encargos](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md).
 
 ## Inicio para nuevas conversaciones
 
@@ -94,6 +94,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — Cierre del Encargo 17
+
+- **Cambio:** se registró la entrega de nueve wireframes estructurales en Figma y se cerró la Issue #6.
+- **Versión anterior:** el Encargo 17 permanecía en pausa mientras la memoria integral tenía prioridad.
+- **Motivo:** la memoria v2 permitió cerrar el ciclo mínimo, desarrollar tres interacciones conectadas y auditarlas contra la pauta.
+- **Alcance:** la entrega resuelve estructura; condición, señal, forma y factibilidad pasan a P0–P4.
 
 ### 2026-08-24 — Definición positiva del testigo
 
