@@ -65,7 +65,7 @@ Se generaron dos superficies móviles alineadas para:
 Se generaron tres superficies móviles alineadas para:
 
 1. **20 · Armado en espera** — intención, primer paso, condición provisional, vigencia, testigo situado y acción `Desarmar`.
-2. **21 · Condición cumplida** — condición reconocida y orden vigente; estado `Enviando el patrón al testigo`; no se declara que la intención fue realizada ni que la entrega física ya fue confirmada.
+2. **21 · Condición cumplida** — condición reconocida y orden vigente; estado `Enviando la orden al testigo`; no se declara que la intención fue realizada ni que la entrega física ya fue confirmada.
 3. **22 · Orden expirada** — la vigencia terminó antes de una entrega válida; se explicita `No se emitirá un pulso tardío`; acciones `Cerrar ciclo` y `Preparar de nuevo`.
 
 La primera salida D1 omitió el nombre `RELEVO` en la navegación superior. Se revisó visualmente y se realizó una edición focalizada que añadió `RELEVO` a las tres superficies sin alterar la arquitectura, los estados ni el contenido. La versión corregida es la utilizada como archivo final.
@@ -127,6 +127,8 @@ Esta operación no recortó pantallas, no estiró el contenido y no modificó la
 **Archivos nuevos:** se añadieron `C1-armado-ios-4k.png`, `C2-armado-ios-4k.png`, `D1-espera-ios-4k.png` y `D2-senal-ios-4k.png`. No reemplazan las láminas A1, A2 ni las referencias A/B existentes.
 
 **Corrección aplicada:** D1 tuvo una edición focalizada para añadir `RELEVO` en la navegación superior y hacer consistente la serie. No se modificó el significado de los estados 20–22.
+
+**Corrección posterior:** en el estado 21 de D1 se reemplazó únicamente `Enviando el patrón al testigo` por `Enviando la orden al testigo`. Se conservaron la composición, los estados 20–22, la navegación, los iconos, los botones, la paleta y el resto del texto. La imagen fue inspeccionada y conservada en 3840 × 2160 px. No se hizo commit ni push.
 
 **Decisión:** D2 utiliza una escena física y un diagrama porque los estados 23–24 no deben representarse como una pantalla del testigo ni como un registro móvil obligatorio.
 

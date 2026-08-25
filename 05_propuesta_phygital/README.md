@@ -25,7 +25,8 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
-- [Láminas detalladas de wireframes para calcar](wireframes-referencia/README.md)
+- [Láminas 4K de wireframes para calcar — serie vigente](wireframes-referencia-ios-4k/README.md)
+- [Láminas sintéticas anteriores — registro de proceso](wireframes-referencia/README.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
 - [Memoria integral v2 vigente](../08_memoria/memoria-vigente-v2.md)
@@ -37,6 +38,13 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 ---
 
 ## Registro de cambios
+
+### 2026-08-25 — Referencias 4K vigentes
+
+- **Cambio:** se incorporó como referencia vigente una serie de catorce láminas 4K para los estados 01–35 y se conservó la serie sintética anterior como historial.
+- **Versión anterior:** el índice solo enlazaba siete láminas de menor detalle.
+- **Motivo:** facilitar el calco en Figma con mayor legibilidad y trazabilidad por estado.
+- **Alcance:** actualización documental y visual; no valida la experiencia ni modifica el alcance de Relevo.
 
 ### 2026-08-25 — Láminas detalladas para reconstrucción
 

@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Este contrato fija el sistema visual utilizado en las láminas `A1-configuracion-ios-4k.png` y `A2-configuracion-ios-4k.png`. Su función es permitir que otra persona pueda reconstruir los wireframes en Figma manteniendo continuidad entre estados, sin convertir estas referencias en una interfaz final ni en una copia literal de iOS.
+Este contrato fija el sistema visual de las catorce láminas 4K que cubren los estados 01–35. Su función es permitir que otra persona pueda reconstruir los wireframes en Figma manteniendo continuidad entre estados, sin convertir estas referencias en una interfaz final ni en una copia literal de iOS.
 
 La estética toma referencias contemporáneas de composición iOS —tarjetas agrupadas, hojas inferiores, navegación sobria y jerarquía espacial—, pero el sistema representado sigue siendo Relevo y su arquitectura inicial continúa siendo Android. La referencia visual no modifica esa decisión técnica.
 
@@ -136,3 +136,10 @@ El built-in `image_gen` produjo ambas imágenes en `1672 × 941 px`. Cada salida
 - **Alcance:** solo se modificaron las filas 03 y 04 del mapa de copia; no se alteran las decisiones de plataforma, la arquitectura phygital ni el alcance conceptual de Relevo.
 - **Prompt registrado:** edición localizada con el built-in `image_gen`; A1 fue el objetivo y A2 la referencia visual obligatoria. Se indicó conservar composición, retícula, estilo, estados 01–02 y todas las acciones, cambiando únicamente el cuerpo textual del estado 03 por `Relevo necesita consultar el estado de uso de la aplicación elegida para observar la condición provisional durante el ciclo`.
 - **Auditoría:** la salida se revisó visualmente por legibilidad, ausencia de la errata de la frase del estado 03, coherencia con la memoria v2, ausencia de interfaz Android literal y conservación del testigo físico sin pantalla. La salida nativa de `1672 × 941 px` se normalizó proporcionalmente a `3840 × 2160 px` mediante ajuste por altura y relleno lateral mínimo, sin estirar el contenido.
+
+### 2026-08-25 — Extensión del contrato a la serie completa
+
+- **Cambio:** se amplió el alcance declarado desde las dos láminas de configuración a las catorce láminas que cubren los estados 01–35.
+- **Versión anterior:** el contrato se describía como aplicable únicamente a A1 y A2, aunque las familias posteriores ya reutilizaban sus reglas.
+- **Motivo:** registrar formalmente la continuidad visual de toda la serie y evitar que las láminas B–E se interpreten como referencias aisladas.
+- **Alcance:** no se modifican los tokens ni las reglas visuales; solo se corrige el alcance documental del contrato.

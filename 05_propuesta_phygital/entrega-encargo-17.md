@@ -14,7 +14,7 @@ La entrega contiene exactamente tres interacciones y nueve marcos. Ocho marcos c
 
 Como complemento, el [anexo de cobertura de interacciones](anexo-cobertura-interacciones-encargo-17.md) registra y representa las 35 ramificaciones del ciclo mínimo en una [página separada del mismo archivo Figma](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4?node-id=13-2). El anexo permite revisar validaciones, salidas voluntarias, fallos técnicos y estados límite sin alterar el tablero exigido por la pauta ni presentarlos como funciones adicionales.
 
-Además, se produjeron [siete láminas detalladas de referencia](wireframes-referencia/README.md) para reconstruir manualmente los 35 estados en Figma. Estas imágenes amplían componentes y jerarquías, pero no forman parte de la cuenta evaluable de nueve marcos ni fijan el diseño final.
+Además, se produjeron [catorce láminas de referencia en 4K](wireframes-referencia-ios-4k/README.md) para reconstruir manualmente los 35 estados en Figma. Estas imágenes amplían componentes y jerarquías, pero no forman parte de la cuenta evaluable de nueve marcos ni fijan el diseño final. La serie sintética anterior de siete láminas se conserva como registro de proceso.
 
 ## Resumen del recorrido
 
@@ -85,6 +85,13 @@ El anexo mantiene cinco familias de estados: configuración; vinculación y prue
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — Serie completa de referencias 4K
+
+- **Cambio:** se reemplazó el enlace principal a siete láminas sintéticas por una serie auditada de catorce láminas 4K que cubre los estados 01–35.
+- **Versión anterior:** la documentación remitía a siete imágenes de menor detalle.
+- **Motivo:** facilitar una reconstrucción legible y consistente en Figma, con acciones y recuperaciones diferenciadas por estado.
+- **Alcance:** la serie anterior no se elimina; las nuevas referencias tampoco alteran los nueve marcos evaluables ni acreditan validación.
 
 ### 2026-08-25 — Láminas de referencia para Figma
 

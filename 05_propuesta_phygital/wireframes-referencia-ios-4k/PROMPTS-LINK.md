@@ -69,7 +69,7 @@ La primera generación de esta lámina fue descartada durante la auditoría porq
 **Archivo final:** `B2b-prueba-ios-4k.png`  
 **Estados:** 13 Señal intrusiva; 14 Listo para armar.
 
-Se solicitó `La señal interfiere`, `Ajusta el pulso o cambia el lugar.`, `Resultado declarado por ti`, `Ajustar señal`, `Cambiar lugar`, `Probar de nuevo` y `No armar`. La pantalla de armado debía conservar `Leer un capítulo`, `Abrir el libro`, `Condición provisional · por validar`, `Vigencia · hoy, 20:00–22:00`, `Testigo situado`, `El armado es manual`, `Armar ciclo`, `Volver a probar` y `Desarmar`.
+Se solicitó `La señal interfiere`, `Ajusta el pulso o cambia el lugar.`, `Resultado declarado por ti`, `Ajustar señal`, `Cambiar lugar`, `Probar de nuevo` y `No armar`. La pantalla de armado conserva `Leer un capítulo`, `Abrir el libro`, `Condición provisional · por validar`, `Vigencia · hoy, 20:00–22:00` y `Testigo situado`. Tras la auditoría conceptual del estado 14, sus acciones finales quedaron como `Continuar al armado`, `Volver a probar` y `Salir sin armar`.
 
 La primera generación mostraba una silueta cilíndrica en ambas pantallas. Se descartó por inconsistencia con B1a, B1b y la versión final de B2a. La versión final repite el testigo compacto redondeado y mantiene las líneas dentro de los marcos.
 
@@ -126,3 +126,11 @@ No se modificaron `STYLE-CONTRACT.md`, `A2-configuracion-ios-4k.png`, la memoria
 **Motivo:** dejar trazabilidad de cómo se generaron y revisaron las imágenes, sin modificar el contrato visual ni presentar las referencias como una interfaz final o como validación del producto.
 
 **Alcance:** este archivo documenta las imágenes B1a, B1b, B2a y B2b; no reemplaza la matriz del Encargo 17 ni cierra las decisiones técnicas pendientes de la memoria.
+
+### 2026-08-25 — Corrección conceptual del estado 14
+
+- **Archivo afectado:** `B2b-prueba-ios-4k.png`.
+- **Antes:** el estado `14 · LISTO PARA ARMAR` mostraba los botones `Armar ciclo` y `Desarmar`.
+- **Después:** el botón principal ahora dice `Continuar al armado` y el botón de salida dice `Salir sin armar`.
+- **Motivo:** el estado 14 todavía es previo al armado; `Desarmar` corresponde a un ciclo ya activo y confundía la transición del flujo. Las nuevas etiquetas explicitan el paso siguiente y conservan una salida voluntaria antes de armar.
+- **Conservado:** se mantuvieron la composición, ilustraciones, tarjetas, jerarquía, escala de grises, formato 3840 × 2160 y todos los demás textos y elementos de la lámina. Se aplicó una corrección focalizada de texto para no regenerar la imagen completa.

@@ -75,12 +75,12 @@ Se revisaron antes de generar:
 
 **Prompt específico:**
 
-> Crear tres estados de energía, reinicio y vencimiento. En 31, mostrar que la energía disponible no asegura el siguiente pulso y ofrecer cargar, desarmar o cerrar. En 32, mostrar que se debe verificar el vínculo y armar el ciclo de nuevo mediante una acción explícita. En 33, mostrar que terminó la vigencia sin activación y permitir cerrar o preparar otro ciclo, sin atribuir ignorancia, desinterés o incumplimiento. No afirmar entrega futura, persistencia técnica ni rearme automático.
+> Crear tres estados de energía, reinicio y vencimiento. En 31, mostrar que la energía disponible no asegura el siguiente pulso y ofrecer cargar, desarmar o cerrar. En 32, mostrar que se verifica el vínculo y se repite la prueba antes de armar de nuevo; no incluir un botón directo de armado. En 33, mostrar que terminó la vigencia sin activación y permitir cerrar o preparar otro ciclo, sin atribuir ignorancia, desinterés o incumplimiento. No afirmar entrega futura, persistencia técnica ni rearme automático.
 
 **Texto indicado:**
 
 - 31: `Batería crítica` · `La energía disponible no asegura el siguiente pulso.` · `Cargar testigo` · `Desarmar ciclo` · `Cerrar ciclo`.
-- 32: `Testigo reiniciado` · `Verifica el vínculo y arma el ciclo de nuevo.` · `Verificar vínculo` · `Armar de nuevo` · `Cerrar ciclo`.
+- 32: `Testigo reiniciado` · `Verifica el vínculo y repite la prueba antes de armar de nuevo` · `Verificar vínculo` · `Repetir prueba` · `Cerrar ciclo`.
 - 33: `Vigencia terminada` · `No se activó ningún pulso dentro de esta ventana.` · `Cerrar ciclo` · `Preparar otro ciclo`.
 
 ## Lámina E4
@@ -91,16 +91,24 @@ Se revisaron antes de generar:
 
 **Prompt específico:**
 
-> Crear dos estados finales. En 34, mostrar una revisión antes de armar nuevamente, con intención, primer paso, condición provisional y vigencia visibles; la acción debe ser explícita. En 35, mostrar una confirmación de eliminación con la posibilidad clara de cancelar y conservar la configuración para revisarla después. Mantener la decisión en manos de la persona y no sugerir continuidad automática.
+> Crear dos estados finales. En 34, mostrar una revisión antes de armar nuevamente, con intención, primer paso, condición provisional y vigencia visibles; la acción principal debe decir “Continuar al armado” y conducir a un armado posterior explícito. En 35, mostrar una confirmación de eliminación con la posibilidad clara de cancelar y conservar la configuración para revisarla después. Mantener la decisión en manos de la persona y no sugerir continuidad automática.
 
 **Texto indicado:**
 
-- 34: `Rearmar ciclo` · `Revisa la intención antes de armar nuevamente.` · `Intención · Leer un capítulo` · `Primer paso · Abrir el libro` · `Condición provisional · por validar` · `Vigencia · hoy, 20:00–22:00` · `Revisar y armar` · `Volver al inicio`.
+- 34: `Rearmar ciclo` · `Revisa la intención antes de armar nuevamente.` · `Intención · Leer un capítulo` · `Primer paso · Abrir el libro` · `Condición provisional · por validar` · `Vigencia · hoy, 20:00–22:00` · `Continuar al armado` · `Volver al inicio`.
 - 35: `Eliminar configuración` · `¿Quieres eliminar este ciclo?` · `Puedes cancelar y conservarlo para revisarlo después.` · `Cancelar` · `Eliminar`.
+
+## Corrección conceptual aplicada — 25 de agosto de 2026
+
+- **Estado 32:** se reemplazó `Verifica el vínculo y arma el ciclo de nuevo.` por `Verifica el vínculo y repite la prueba antes de armar de nuevo`. El botón `Armar de nuevo` se reemplazó por `Repetir prueba`; se conservaron `Verificar vínculo` y `Cerrar ciclo`.
+- **Estado 34:** se reemplazó el botón `Revisar y armar` por `Continuar al armado`.
+- **Estilo:** no se modificaron retícula, composición, iconografía, paleta, tipografía, proporciones ni los demás estados.
 
 ## Normalización técnica
 
 El built-in `image_gen` entregó cada salida nativa en `1672 × 941 px`. Para cumplir la especificación de la carpeta, cada imagen se convirtió a `3840 × 2160 px` mediante una ampliación proporcional con `Image.Resampling.LANCZOS`. La proporción original se conservó: el contenido quedó en `3838 × 2160 px` y se añadieron dos píxeles de fondo cálido repartidos lateralmente. No se estiró ni se recortó ninguna pantalla.
+
+Para esta corrección, E3 y E4 se editaron mediante localización de texto sobre sus láminas existentes y se volvieron a normalizar con el mismo procedimiento. E1 y E2 no fueron modificadas.
 
 ## Auditoría final
 
@@ -123,6 +131,8 @@ El built-in `image_gen` entregó cada salida nativa en `1672 × 941 px`. Para cu
 - El movimiento del testigo no se detecta automáticamente: el estado se activa cuando la persona informa que cambió de lugar o que debe repetir la relación.
 - El vencimiento se presenta como cierre temporal, no como ignorancia o incumplimiento.
 - El rearme requiere revisión y acción explícita.
+- En el estado 32, repetir la prueba queda antes del armado; no existe un botón directo `Armar de nuevo`.
+- En el estado 34, la acción de continuidad ahora se denomina `Continuar al armado`.
 - La aplicación puede comunicar un estado técnico, pero el testigo sigue siendo un objeto sin pantalla.
 - Las láminas no representan la interfaz final ni cierran las decisiones todavía pendientes de condición, canal, energía, accesibilidad, convivencia o producción.
 
@@ -140,6 +150,9 @@ El built-in `image_gen` entregó cada salida nativa en `1672 × 941 px`. Para cu
 
 - **Versión anterior:** la carpeta contenía las referencias A1–A2 y el contrato visual, pero no las cuatro láminas E1–E4 ni una bitácora específica de esta generación.
 - **Cambio realizado:** se añadieron cuatro imágenes de referencia para los estados 25–35 y este documento con prompts, copy, normalización y auditoría.
+- **Corrección posterior:** se actualizaron únicamente E3/32 y E4/34 para reflejar el orden conceptual correcto entre verificación, repetición de prueba y armado, y para nombrar `Continuar al armado`.
+- **Versión anterior de esos estados:** E3/32 incluía `Armar de nuevo` como acción directa y E4/34 decía `Revisar y armar`.
+- **Motivo de la corrección:** hacer visible que el testigo reiniciado debe verificarse y probarse antes de volver a armar, y separar la continuación de la revisión del armado posterior.
 - **Motivo:** entregar referencias visuales consistentes y calcables para continuar el desarrollo del Encargo 17 en Figma sin alterar la arquitectura de la memoria.
 - **Archivos no modificados:** `STYLE-CONTRACT.md`, los documentos de la memoria, la matriz del Encargo 17 y el tablero Figma. No se incorporaron decisiones técnicas nuevas.
 - **Alcance:** las imágenes son material de referencia de baja/media fidelidad; no validan eficacia, accesibilidad, estabilidad de Android/BLE, valor situado, adopción ni forma final del producto.
