@@ -4,8 +4,11 @@
 
 - **Disciplina:** Diseño
 - **Institución:** Universidad Diego Portales
+- **Estudiante:** Johan Yantén
+- **Año académico:** 2026
+- **Etapa:** Proyecto de Título, segundo semestre
 - **Tipo de proyecto:** Sistema phygital de interacción y producto
-**Estado del desarrollo:** investigación, formulación y arquitectura documentadas; prototipado y evaluación de Relevo pendientes
+- **Estado del desarrollo:** investigación, formulación y arquitectura documentadas; prototipado y evaluación de Relevo pendientes
 
 ## Resumen
 
@@ -46,6 +49,33 @@ This report develops the problem, conceptual framework, user evidence, market, s
 | Evidencia realizada | Revisión documental, búsqueda exploratoria de mercado y ocho entrevistas semiestructuradas presenciales. |
 | Pendientes críticos | Asociación física, comparación con lugar neutro y notificación, canal, condición de activación, integración Android/BLE, accesibilidad, convivencia, costos reales y uso sostenido. |
 
+## Índice
+
+1. Introducción.
+2. Planteamiento del problema: antecedentes y construcción.
+3. Formulación del proyecto: pregunta, objetivos, alcance, tesis e hipótesis.
+4. Metodología.
+5. Marco teórico.
+6. Usuarios y contexto.
+7. Estado del arte, mercado y referentes.
+8. Síntesis de investigación y oportunidad de diseño.
+9. Propuesta proyectual y decisiones de diseño.
+10. Sistema Relevo.
+11. Arquitectura de experiencia y flujos.
+12. Producción, factibilidad y modelo de gestión.
+13. Plan de prototipado y evaluación.
+14. Conclusiones, contribución, límites y próximos pasos.
+
+## Motivación personal
+
+Mi interés nació de una situación cotidiana: abrir una aplicación por unos minutos, quedarme más de lo previsto y terminar sin recordar qué había visto, mientras actividades que sí quería realizar —dibujar, leer o salir a caminar— dejaban de estar presentes. No había decidido abandonarlas; simplemente ya no estaban participando de la decisión.
+
+Durante un tiempo interpreté esa experiencia como falta de disciplina. Esa explicación era insuficiente porque no consideraba el diseño de las plataformas, la formación de hábitos ni la diferencia entre querer una actividad y recordarla en el momento oportuno. Tampoco distinguía una sesión digital elegida y satisfactoria de otra que se prolonga con poca deliberación.
+
+El proyecto comenzó preguntando por el tiempo de pantalla y la memoria de lo vivido. La investigación y su revisión crítica obligaron a precisar el foco: el problema abordable desde Diseño no es demostrar que el teléfono daña la memoria, sino intervenir el momento en que una intención propia deja de participar en una decisión. Este desplazamiento evita diagnosticar a la persona y permite trabajar con variables concretas: qué activa la señal, dónde aparece, qué comunica, qué control conserva el usuario y cómo se comprueba el aporte del objeto físico.
+
+No busco eliminar el teléfono ni establecer una forma correcta de descansar. Quiero diseñar una oportunidad comprensible para elegir de nuevo.
+
 # 1. Introducción
 
 ## 1.1 Una escena hipotética para delimitar el fenómeno
@@ -82,7 +112,7 @@ El capítulo 2 construye el problema a partir del contexto digital, la continuid
 
 Los capítulos 8 y 9 muestran cómo la evidencia se transforma en criterios de diseño y en una dirección objetual provisional. El capítulo 10 define el sistema Relevo; el 11 describe su experiencia y flujos; el 12 desarrolla producción, factibilidad y gestión. El capítulo 13 contiene únicamente el plan de prototipado y evaluación, porque no existen resultados ejecutados. El capítulo 14 cierra con las conclusiones que la evidencia actual permite sostener, separa contribuciones actuales y esperadas y ordena las decisiones siguientes.
 
-# 2. Antecedentes y construcción del problema
+# 2. Planteamiento del problema: antecedentes y construcción
 
 ## 2.1 El ocio digital es heterogéneo
 
@@ -142,7 +172,7 @@ El problema se formula así:
 
 La formulación deja fuera el diagnóstico clínico, la vigilancia del comportamiento, el control parental, la optimización de productividad y la reducción general de minutos. También deja fuera la detección automática de intenciones, culpa, automatismo o pertinencia subjetiva. Android solo puede operar sobre una condición técnica observable. La persona conserva la interpretación y la decisión.
 
-# 3. Pregunta, objetivos, alcance, exclusiones, tesis e hipótesis
+# 3. Formulación del proyecto: pregunta, objetivos, alcance, tesis e hipótesis
 
 ## 3.1 Pregunta de investigación
 
@@ -200,6 +230,24 @@ Quedan pendientes, y por tanto fuera de toda afirmación cerrada, la forma final
 La dirección física se mantiene si la asociación entre intención y primer paso resulta comprensible, el lugar aporta una diferencia reconocible, la señal es perceptible y tolerable, la salida es autónoma y la ejecución técnica es proporcional. Se modifica si existe valor físico, pero fallan canal, lugar, control, condición, convivencia, accesibilidad o producción. Se abandona la dirección física actual si el objeto no añade valor frente a la notificación, exige consulta constante, se vuelve vigilancia o acumula una carga que su aporte no compensa.
 
 Si falla el testigo transportable, puede reformularse o reemplazarse la dirección física por otra configuración phygital con objeto sin pantalla. No se convierte Relevo en una aplicación para conservar una forma inicial. Si ninguna configuración física sostiene una diferencia defendible, se registra la refutación de la formulación actual y se vuelve a investigación de diseño.
+
+## 3.9 Teoría de cambio
+
+La teoría de cambio hace explícita la transformación buscada sin confundirla con una promesa de eficacia. Su función es conectar problema, evidencia, intervención, comportamiento posible y evaluación.
+
+**1. Enunciado de cambio.** Relevo busca que una persona que ya formuló una actividad alternativa, en un episodio doméstico de continuidad digital poco deliberada, transite desde una situación en que esa intención pierde disponibilidad hacia otra en que puede volver a considerarla, mediante una señal física sin pantalla vinculada por la propia persona con el primer paso de la actividad. El cambio buscado es recuperar una posibilidad de elección, no imponer la ejecución de la alternativa.
+
+**2. Cadena causal provisional.** La persona formula una intención y un primer paso → sitúa el objeto junto a ese paso → una condición observable activa una señal → la persona percibe y atribuye la señal → la intención puede volver a estar disponible → la persona decide si continúa, silencia o cambia de actividad. Las tres primeras relaciones son decisiones de diseño; la recuperación de la intención y el aporte del lugar permanecen como hipótesis de evaluación.
+
+**3. Mecanismo de cambio.** El mecanismo combina memoria prospectiva, descarga de intenciones y una clave situada (Kirsh, 1995; McDaniel & Einstein, 2000; Risko & Gilbert, 2016). La aplicación conserva significado y condición; el objeto desplaza la señal fuera del flujo visual del teléfono; el lugar elegido busca relacionarla con una acción concreta. La señal no produce por sí sola el cambio ni reemplaza la decisión.
+
+**4. Contrato con el usuario.** El sistema ofrece una clave externa, control de salida, ausencia de bloqueo y ausencia de evaluación de cumplimiento. A cambio solicita formular una intención, reconocer su primer paso, configurar una condición, elegir un lugar, mantener el objeto disponible e interpretar una señal no textual. Si esa carga supera el valor percibido, el contrato resulta desproporcionado.
+
+**5. Supuestos críticos.** El corpus respalda parcialmente que existen episodios donde una alternativa valorada pierde disponibilidad, sin estimar su frecuencia. Permanece por validar que la asociación intención–objeto–lugar pueda comprenderse sin volver a la pantalla; que el lugar congruente aporte más que un lugar neutro o una notificación; y que la configuración, el mantenimiento y la presencia doméstica sean tolerables. Si estos supuestos fallan, debe modificarse o abandonarse la dirección física actual.
+
+**6. Frontera de decisiones.** Se mantienen como decisiones firmes el carácter phygital, el objeto físico sin pantalla, la autonomía posterior a la señal, la ausencia de bloqueo y la lectura situacional del usuario. Permanecen abiertas la condición de activación, el canal, la forma, la materialidad, el lugar doméstico específico, la arquitectura electrónica final, el precio y la modalidad de acceso. Cada decisión abierta se cierra solo mediante la prueba que le corresponde.
+
+**7. Indicadores de éxito.** Los indicadores formativos son observables: asociación espontánea entre señal e intención sin consultar la aplicación; diferencia atribuible al lugar congruente frente al lugar neutro y la notificación; percepción y salida autónoma sin lectura punitiva; y ejecución técnica legible ante vencimiento, desconexión o señal tardía. No se fijan porcentajes, tiempos ni frecuencias antes de establecer una línea base en P0 y P1.
 
 # 4. Metodología
 
@@ -268,6 +316,8 @@ La secuencia de trabajo es:
 La investigación no debe abrir simultáneamente forma final, automatización, costos industriales y escalamiento. Cada etapa debe cerrar una incertidumbre antes de agregar otra.
 
 # 5. Marco teórico
+
+El marco se organiza en tres ámbitos que se imbrican y no funcionan como capítulos independientes. El primero, **experiencia subjetiva del ocio digital**, reúne continuidad, conflicto de metas y memoria prospectiva. El segundo, **arquitecturas de atención e intervención**, examina cómo las interfaces mantienen la actividad, cómo operan las respuestas actuales y por qué la autonomía limita la intervención. El tercero, **mediación phygital situada**, articula descarga de intenciones, condición, espacio, primer paso e interacción tangible. La investigación mediante diseño funciona como enfoque metodológico transversal para convertir estas relaciones en preguntas evaluables. La intersección de los tres ámbitos produce la oportunidad de Relevo: apoyar la recuperación de una intención mediante una señal física situada, sin bloquear ni juzgar el ocio digital.
 
 ## 5.1 Continuidad digital y conflicto de metas
 
@@ -567,7 +617,7 @@ Relevo explora una ayuda que distribuya una intención entre una interfaz digita
 
 La oportunidad no es un resultado de usuarios. Las personas entrevistadas no compararon productos, no probaron Relevo y no expresaron preferencia por su forma. La propuesta surge de la relación entre evidencia, marco teórico, mercado y criterios del autor. Sus decisiones deben permanecer trazables y revisables.
 
-# 9. Desarrollo del proyecto y decisiones de diseño
+# 9. Propuesta proyectual y decisiones de diseño
 
 ## 9.1 Del problema a una dirección objetual
 
@@ -862,7 +912,7 @@ Android es una plataforma inicial de prototipo. No se presenta compatibilidad un
 
 Un producto con radio deberá revisar el régimen aplicable a equipos de alcance reducido, documentación, ensayo, etiquetado y declaración de conformidad de SUBTEL (Subsecretaría de Telecomunicaciones, 2026). El prototipo académico no equivale a certificación.
 
-## 12.7 Actores y modelo de gestión
+## 12.7 Mapa de actores y modelo de gestión
 
 El diseñador coordina el sistema, pero no puede garantizar por sí solo radio, batería, certificación, compatibilidad o producción. Cada promesa requiere una colaboración o una prueba.
 
@@ -1160,5 +1210,7 @@ En todas las puertas el número de participantes, la duración y el reclutamient
 **Correcciones de la auditoría final.** Se definieron siglas y conceptos técnicos en su primera aparición; se aclaró que la ausencia de pantalla es una restricción firme y que su valor asociativo es la hipótesis; se incorporó investigación de 2026 sobre reconfiguración de intervenciones; se numeró la tabla de contribuciones; y el anexo metodológico dejó de repetir la matriz individual ya presente en el capítulo 6.
 
 **Referencias, anexos y estado de evidencia.** Se consolidó una lista única de referencias APA 7 en español y se conservaron anexos selectivos sobre metodología, jerarquía de afirmaciones y protocolo. No se añadieron respuestas, preferencias, cotizaciones, especificaciones ni resultados de prototipo inexistentes. La activación, la comparación física, Android/BLE, accesibilidad, convivencia, producción y aporte del artefacto permanecen pendientes de evaluación.
+
+**Alineación con el historial de encargos.** Tras revisar la secuencia acumulativa de encargos, se restituyeron la identificación académica, el índice visible y la motivación personal; se hicieron localizables los títulos de planteamiento del problema, formulación, propuesta proyectual y mapa de actores; y se explicitaron los tres ámbitos del marco teórico y los siete componentes de la teoría de cambio. Antes, estos contenidos estaban ausentes o distribuidos entre capítulos sin los títulos exigidos. Se incorporaron para hacer reconocible la arquitectura académica sin eliminar la ampliación propia del Proyecto de Título.
 
 **Archivos afectados.** Esta intervención académica modifica únicamente `08_memoria/memoria-vigente-v2.md`; la documentación de auditoría, mercado y gobernanza se actualiza por separado en el repositorio.

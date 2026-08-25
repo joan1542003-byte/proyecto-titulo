@@ -270,9 +270,25 @@
 - **Fundamento:** la auditoría intermedia calculó erróneamente un máximo de CLP 112.000; la suma trazable correcta produce CLP 58.811–106.536 antes de redondeo.
 - **Límite:** no es una cotización, un costo de producción ni un precio.
 
+## D-029 — Encargos como trazabilidad estructural y resumen sincronizado
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** conservar la profundidad de la memoria v2, pero hacer visibles los requisitos acumulativos de los encargos mediante títulos, puentes y una matriz histórica; actualizar además un resumen breve cada vez que cambie la memoria.
+- **Fundamento:** la reconstrucción integral cubría la mayor parte del contenido, pero había perdido índice, motivación personal, tres ámbitos explícitos y teoría de cambio como bloque reconocible.
+- **Límite:** los encargos orientan organización y proceso; no son evidencia académica del problema y no deben aparecer como metarrelato en el cuerpo de la memoria.
+- **Documentos asociados:** [Matriz histórica](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) y [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — D-029
+
+- **Cambio:** se registró la recuperación de requisitos estructurales acumulativos y la obligación de sincronizar un resumen breve con la memoria.
+- **Versión anterior:** la v2 estaba activa, pero no existía una decisión que gobernara su relación con el historial de encargos.
+- **Motivo:** evitar futuras reestructuraciones que pierdan títulos exigidos o confundan formatos de proceso con contenido académico.
+- **Resultado:** la memoria conserva 14 capítulos ampliados, ahora con equivalencias visibles y resumen mantenido.
 
 ### 2026-08-24 — D-020 a D-028
 

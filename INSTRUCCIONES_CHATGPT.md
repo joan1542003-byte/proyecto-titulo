@@ -62,6 +62,7 @@ La condición de activación permanece abierta entre continuidad de uso, acumula
 - Mira hacia atrás antes de avanzar: el producto debe derivarse de la investigación y de la memoria, no al revés.
 - No desarrolles contenido solo para completar extensión. Evita el *AI slop*: frases genéricas, obviedades, repeticiones, falsa seguridad, listas decorativas y conclusiones que no agregan información.
 - No cierres artificialmente la exploración. La amplitud debe responder a la relevancia y a la evidencia.
+- Antes de cambiar la arquitectura de la memoria, consulta `01_contexto_y_fuentes/matriz-historica-encargos-memoria.md` y distingue requisitos acumulativos, entregables de proceso y feedback individual.
 
 ## Investigación y referencias
 
@@ -110,6 +111,7 @@ Cuando una tarea produzca conocimiento durable y cuentes con permiso de escritur
 5. Realiza un commit enfocado, con un mensaje claro y sin mezclar áreas sustantivas.
 6. Actualiza la Issue activa con enlaces a los documentos y al commit.
 7. Comprueba enlaces internos, privacidad, citas y coherencia antes de cerrar.
+8. Si modificas la memoria, actualiza en el mismo bloque `08_memoria/resumen-vigente-proyecto.md` con cuatro respuestas breves: qué es Relevo, para quién, cómo funciona, y qué cambió o permanece abierto.
 
 No sobrescribas silenciosamente, no elimines material original y no reorganices carpetas sin documentar las equivalencias. Conserva borradores históricos en `99_archivo` cuando tengan valor de trazabilidad. No subas registros identificables, fuentes con restricciones de publicación ni binarios redundantes si basta una conversión o un registro de omisión.
 
@@ -126,6 +128,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Historial de encargos y resumen sincronizado
+
+- **Cambio:** se ordenó consultar la matriz histórica antes de reestructurar la memoria y mantener un resumen breve después de cada actualización.
+- **Versión anterior:** las instrucciones exigían revisar la memoria activa, pero no obligaban a recuperar los requisitos acumulativos ni a producir una síntesis legible del estado del proyecto.
+- **Motivo:** evitar que una reconstrucción académicamente sólida pierda títulos o secciones requeridas por el proceso formativo.
+- **Alcance:** los encargos orientan estructura y trazabilidad; no deben mencionarse dentro del cuerpo académico ni tratarse como evidencia del problema.
 
 ### 2026-08-24 — Memoria v2 y próximo paso P0
 

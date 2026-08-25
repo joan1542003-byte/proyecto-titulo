@@ -18,13 +18,15 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 - versiones de la memoria;
 - tareas pendientes mediante GitHub Issues.
 
-## Síntesis provisional
+## Síntesis vigente
 
 Relevo es un proyecto phygital que busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La formulación vigente combina una aplicación Android con un testigo físico doméstico, sin pantalla, situado cerca del lugar u objeto donde una actividad puede comenzar.
 
 El proyecto no pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento. Su valor propuesto depende de apoyar una decisión autónoma mediante una señal breve, configurable y no punitiva.
 
 Esta formulación continúa abierta a revisión. El producto final deberá responder a la investigación y a la evidencia, no antecederlas.
+
+La versión breve y mantenida después de cada actualización está en el [resumen vigente de Relevo](08_memoria/resumen-vigente-proyecto.md).
 
 ## Estado actual
 
@@ -44,7 +46,7 @@ La base metodológica del corpus quedó consolidada:
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La reconstrucción y auditoría se gestiona en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) y el desarrollo de la [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) permanecen en pausa. La base académica activa es la [memoria integral v2](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El dictamen independiente está en la [auditoría rectora](08_memoria/auditoria-sol-memoria-v2.md).
+La reconstrucción y auditoría se gestiona en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) y el desarrollo de la [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) permanecen en pausa. La base académica activa es la [memoria integral v2](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El dictamen independiente está en la [auditoría rectora](08_memoria/auditoria-sol-memoria-v2.md) y la evolución estructural en la [matriz histórica de encargos](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md).
 
 ## Inicio para nuevas conversaciones
 
@@ -65,6 +67,7 @@ Antes de trabajar con ChatGPT o Codex, conecta GitHub y usa [Instrucciones maest
 - Mantener los datos identificables fuera del repositorio.
 - Cerrar cada documento Markdown con un registro de cambios.
 - Registrar tanto lo que se decide como la evidencia y la razón de la decisión.
+- Sincronizar el [resumen vigente](08_memoria/resumen-vigente-proyecto.md) cada vez que se modifique la memoria.
 
 Las reglas completas están en [Directrices de trabajo](https://github.com/joan1542003-byte/proyecto-titulo/blob/main/00_gobernanza/directrices-de-trabajo.md).
 
@@ -91,6 +94,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Recuperación del historial estructural
+
+- **Cambio:** se enlazaron el resumen vigente y la matriz histórica de encargos, y se estableció su actualización junto con la memoria.
+- **Versión anterior:** el README enlazaba la memoria y su auditoría, pero no ofrecía una síntesis breve ni la trazabilidad de requisitos acumulativos.
+- **Motivo:** permitir que el autor y nuevas conversaciones comprendan rápidamente qué es Relevo y por qué la memoria adopta su estructura.
+- **Alcance:** el resumen no sustituye la memoria; la matriz histórica orienta organización y no se cita como evidencia académica del problema.
 
 ### 2026-08-24 — Activación de la memoria integral v2
 

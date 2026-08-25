@@ -7,7 +7,9 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 ## Documentos vigentes
 
 - [Memoria integral v2 de Relevo](memoria-vigente-v2.md): documento académico activo.
+- [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 - [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
+- [Matriz histórica de encargos](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md): requisitos acumulados, vigencia y trazabilidad de estructura.
 - [Memoria v1](memoria-vigente.md): antecedente preservado; no gobierna la formulación actual.
 - [Matriz de incorporación del feedback E15](matriz-incorporacion-feedback-e15.md)
 - [Dictamen rector de reconstrucción](dictamen-rector-reconstruccion-memoria.md)
@@ -15,15 +17,16 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Arquitectura narrativa vigente
 
+0. Identificación académica, resumen, ficha, índice y motivación personal.
 1. Introducción.
-2. Antecedentes y construcción del problema.
-3. Pregunta, objetivos, alcance, exclusiones, tesis e hipótesis.
+2. Planteamiento del problema: antecedentes y construcción.
+3. Formulación del proyecto: pregunta, objetivos, alcance, exclusiones, tesis, hipótesis y teoría de cambio.
 4. Metodología.
-5. Marco teórico.
+5. Marco teórico articulado en tres ámbitos.
 6. Usuarios y contexto.
 7. Estado del arte, mercado y referentes.
 8. Síntesis de investigación y oportunidad de diseño.
-9. Desarrollo del proyecto y decisiones de diseño.
+9. Propuesta proyectual y decisiones de diseño.
 10. Sistema Relevo.
 11. Arquitectura de experiencia y flujos.
 12. Producción, factibilidad y modelo de gestión.
@@ -42,10 +45,18 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 - Eliminación de repeticiones entre introducción, problemática y marco teórico.
 - Diagramas legibles y tablas con encabezados repetidos cuando continúen.
 - Registro de cambios al final de cada versión Markdown.
+- Actualización simultánea de `resumen-vigente-proyecto.md` cada vez que cambie la memoria.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-24 — Alineación con encargos y resumen vigente
+
+- **Cambio:** se añadieron el resumen breve, la matriz histórica y los componentes formales recuperados de los encargos.
+- **Versión anterior:** el índice de memoria comenzaba en la introducción y no hacía visibles la motivación personal, los tres ámbitos ni la teoría de cambio.
+- **Motivo:** distinguir la ampliación propia de Proyecto de Título de los requisitos acumulativos que siguen gobernando la memoria.
+- **Alcance:** la arquitectura de 14 capítulos se mantiene, pero ahora declara su correspondencia con los requisitos históricos.
 
 ### 2026-08-24 — Activación de memoria integral v2
 
