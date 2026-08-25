@@ -523,6 +523,8 @@ Chiu y Gilbert (2024) observaron que el esfuerzo físico de establecer un record
 
 ## 7.3 Familias de mecanismos
 
+El corpus revisado reúne respuestas que miden el uso, bloquean o dificultan el acceso, interrumpen la continuidad para abrir una reconsideración y separan físicamente el teléfono. Estas estrategias intervienen principalmente sobre la cantidad, la disponibilidad o la continuidad del uso (Biedermann et al., 2021; Monge Roffarello & De Russis, 2023; Grüning et al., 2023; Haliburton et al., 2024). Otros antecedentes externalizan citas mediante recordatorios tangibles o relacionan objetos, espacio, foco y recompensa (Hermann et al., 2007; Focusaur, s. f.). Frente a este conjunto, Relevo articula provisionalmente una relación distinta entre intención propia, primer paso y lugar; esta distinción no demuestra eficacia ni novedad universal.
+
 La comunicación de campo cercano (NFC, por su sigla en inglés) permite intercambiar datos a muy corta distancia y se utiliza en algunas llaves o etiquetas físicas del mercado. En este análisis describe el mecanismo declarado por ciertos referentes; no forma parte de la arquitectura vigente de Relevo.
 
 **Tabla 3**
@@ -534,6 +536,7 @@ La comunicación de campo cercano (NFC, por su sigla en inglés) permite interca
 | Medición | Mostrar tiempo, aperturas o categorías. | Screen Time, Digital Wellbeing. | Hace visible información de uso. | No recupera un primer paso situado ni distingue valor subjetivo. |
 | Pausa o reconsideración | Introducir una detención breve antes de continuar. | one sec, Pause Point. | Puede abrir una ocasión para reconsiderar dentro del teléfono. | Mantiene significado y señal en la misma pantalla. |
 | Fricción o bloqueo | Dificultar acceso, exigir espera o llave. | Brick, Unpluq, Screenless Breaker. | Puede alterar aperturas cuando la barrera es difícil de eludir. | Sustituye una transición libre por una restricción de acceso. |
+| Separación física | Retirar o alejar el teléfono para reducir su disponibilidad. | kSafe y estrategias de alejamiento (Kitchen Safe, s. f.). | Puede introducir distancia o precompromiso. | No recupera por sí misma una intención propia ni la vincula con el lugar donde puede comenzar una actividad. |
 | Objeto de foco | Asociar dispositivo, espacio, hábitos o recompensas. | Focusaur, Brick Zone. | Hace visible un compromiso o relaciona lugar y estado. | Puede introducir gamificación, bloqueo, costos y mantenimiento. |
 | Recordatorio tangible | Vincular objetos y contexto con información o tareas. | *The Tangible Reminder*. | Muestra la posibilidad de externalizar una clave en el entorno. | Usa display o tareas distintas; no prueba un testigo ambiental situado para ocio. |
 
@@ -573,7 +576,7 @@ Los modelos de mercado observados incluyen funciones integradas al sistema opera
 
 El corpus revisado combina herramientas digitales, llaves físicas, Bluetooth, NFC, espacios declarados, recordatorios tangibles y productos de foco. No se encontró en el corpus una evaluación independiente que reúna explícitamente una intención autoformulada, un primer paso, una condición digital, un testigo físico situado por la persona, ausencia de bloqueo y comparación con una notificación. Esta formulación no afirma inexistencia universal; delimita una oportunidad investigable.
 
-La oportunidad de Relevo no es hacer un bloqueador con una forma nueva. Es examinar si la señal física puede devolver una intención a la escena donde ocurre su primer paso. La notificación es el control porque el proyecto debe demostrar que el objeto agrega algo más que un mensaje. La contribución física podría consistir en presencia, ubicación, manipulación o posibilidad de salida, pero ninguna de esas cualidades está demostrada.
+La oportunidad de Relevo se acota a una especialización provisional: recuperar una intención propia en el lugar donde puede comenzar su primer paso. El proyecto no convierte la medición, el bloqueo, la interrupción o la separación física en su mecanismo principal, sino que investiga si una señal situada puede devolver esa intención a la escena donde puede iniciarse, manteniendo abierta la decisión. La notificación es el control porque el testigo debe demostrar que aporta algo más que un mensaje. Esta formulación no acredita eficacia, adopción ni novedad universal.
 
 # 8. Síntesis de investigación y oportunidad de diseño
 
@@ -599,7 +602,9 @@ La síntesis se organiza mediante la cadena evidencia → interpretación → re
 
 ## 8.2 Principios de diseño
 
-**Pertinencia situacional.** Relevo solo debe activarse cuando existe una intención alternativa autoelegida y un primer paso. No se diseña para corregir cualquier uso prolongado.
+**Recuperación situada de una intención propia.** Relevo se especializa provisionalmente en volver presente una intención formulada por la persona en el lugar donde puede comenzar su primer paso. Este principio expresa una propuesta de valor provisional, no un efecto demostrado.
+
+**Pertinencia situacional.** La ayuda solo resulta pertinente cuando una intención propia pierde capacidad para orientar el paso siguiente durante un episodio de continuidad digital poco deliberada. La condición técnica será un evento observable y configurable, todavía abierto; podrá iniciar el ciclo, pero no inferir por sí sola que una actividad es indeseada ni que la persona deba interrumpirla.
 
 **No intervención como resultado.** La inactividad del sistema es correcta ante ocio elegido, actividad relacional, concentración, descanso o ausencia de alternativa.
 
@@ -613,7 +618,7 @@ La síntesis se organiza mediante la cadena evidencia → interpretación → re
 
 ## 8.3 Oportunidad formulada
 
-Relevo explora una ayuda que distribuya una intención entre una interfaz digital, una señal física no textual y un lugar elegido. La oportunidad existe solo si la persona puede reconstruir la intención y el primer paso sin consultar nuevamente el teléfono, si el lugar aporta un significado reconocible, si la señal no se vuelve intrusiva y si el conjunto compensa la carga que agrega.
+Relevo formula una ayuda phygital cuyo posible valor consiste en recuperar una intención propia allí donde puede comenzar su primer paso. A diferencia de respuestas orientadas a medir, bloquear, interrumpir la continuidad o separar físicamente el teléfono, la propuesta sitúa el énfasis en la relación entre intención, lugar y señal. La oportunidad existe solo si la persona puede reconstruir la intención y el primer paso sin consultar nuevamente el teléfono, si el lugar aporta un significado reconocible, si la señal no se vuelve intrusiva y si el conjunto compensa la carga que agrega.
 
 La oportunidad no es un resultado de usuarios. Las personas entrevistadas no compararon productos, no probaron Relevo y no expresaron preferencia por su forma. La propuesta surge de la relación entre evidencia, marco teórico, mercado y criterios del autor. Sus decisiones deben permanecer trazables y revisables.
 
@@ -624,6 +629,8 @@ La oportunidad no es un resultado de usuarios. Las personas entrevistadas no com
 El desarrollo compara familias de objetos según asociación con el primer paso, percepción del pulso ambiental, autonomía, movilidad, carga de configuración, privacidad, convivencia, factibilidad técnica y producción. La matriz es una herramienta cualitativa del autor; no recoge preferencias de las personas entrevistadas.
 
 El análisis se realiza en dos escalas. La primera pregunta qué familia conserva la relación entre aplicación, testigo, lugar y persona. La segunda pregunta si el objeto puede situarse, percibirse y silenciarse sin instrucciones excesivas. Una alternativa técnicamente sencilla que elimina la asociación manual puede resolver un artefacto, pero no necesariamente el problema de Relevo.
+
+El criterio rector no es añadir una barrera al uso digital, sino conservar la relación intención–primer paso–lugar identificada en el estado del arte. Una decisión que desplace el centro hacia medir, bloquear, interrumpir por sí misma o separar el teléfono deberá considerarse una desviación de la oportunidad formulada, no una profundización de Relevo.
 
 ## 9.2 Familias exploradas
 
@@ -652,7 +659,7 @@ Luz, sonido y vibración son variables de prueba. La luz puede depender de líne
 | Elemento | Estado | Razón |
 | --- | --- | --- |
 | Sistema phygital | Mantener | La pregunta exige relación entre aplicación, objeto, lugar y persona. |
-| Testigo físico situado | Mantener | Representa una intención y emite un pulso ambiental fuera del flujo del teléfono. |
+| Testigo físico situado | Mantener | Permite investigar la relación entre intención, primer paso, lugar y pulso ambiental. |
 | Aplicación Android | Mantener provisionalmente | Permite estudiar una plataforma concreta sin prometer cobertura universal. |
 | Lugar manual | Mantener provisionalmente | La asociación pertenece a la persona, no a una detección automática. |
 | Una intención y un primer paso | Mantener provisionalmente | Reduce ambigüedad y carga inicial. |
@@ -1087,6 +1094,8 @@ Hiniker, A., Hong, S., Kohno, T. y Kientz, J. A. (2016). MyTime: Designing and e
 
 Kidel Peña-Albert, A., Ingram, S., Khazaal, Y., Litrico, L., Farah, J. C. y Gillet, D. (2026). Restoring engagement in digital self-control tools using nudge reconfiguration prompts: Quasi-experimental study. *JMIR Formative Research, 10*, e85349. https://doi.org/10.2196/85349
 
+Kitchen Safe. (s. f.). *kSafe*. Recuperado el 24 de agosto de 2026, de https://intl.thekitchensafe.com/
+
 Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1–2), 31–68. https://doi.org/10.1016/0004-3702(94)00017-U
 
 Lukoff, K., Yu, C., Kientz, J. A. y Hiniker, A. (2018). What makes smartphone use meaningful or meaningless? *Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2*(1), Artículo 22. https://doi.org/10.1145/3191754
@@ -1215,4 +1224,6 @@ En todas las puertas el número de participantes, la duración y el reclutamient
 
 **Corrección de formulación funcional.** Se reemplazaron dos expresiones residuales que definían la interfaz objetual mediante una exclusión. Antes, el apartado de pertinencia y la tesis provisional destacaban una característica ausente; ahora describen la relación entre configuración digital, testigo situado y pulso ambiental. La arquitectura electrónica específica sigue abierta y este cambio no agrega resultados de validación.
 
-**Archivos afectados.** Esta intervención académica modifica únicamente `08_memoria/memoria-vigente-v2.md`; la documentación de auditoría, mercado y gobernanza se actualiza por separado en el repositorio.
+**25 de agosto de 2026 — Especialización derivada del estado del arte.** Se articuló explícitamente la cadena entre familias de respuesta existentes, límites observados, oportunidad y propuesta proyectual. Antes, medición, bloqueo, interrupción, separación y recuperación situada aparecían distribuidos entre los capítulos 7, 8 y 9; ahora fundamentan una especialización provisional única: recuperar una intención propia en el lugar donde puede comenzar. Se añadió la fuente primaria de kSafe para respaldar la familia de separación física y se distinguió pertinencia situacional de condición técnica. El cambio no atribuye eficacia a Relevo ni afirma novedad universal.
+
+**Archivos afectados.** Esta intervención académica modifica `08_memoria/memoria-vigente-v2.md` y sincroniza `08_memoria/resumen-vigente-proyecto.md`; la documentación de auditoría, mercado y gobernanza se actualiza por separado en el repositorio.
