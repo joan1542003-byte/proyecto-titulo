@@ -24,17 +24,25 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 ## Documentos activos
 
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
+- [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
 - [Memoria integral v2 vigente](../08_memoria/memoria-vigente-v2.md)
 
 ## Estado
 
-La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 quedó cerrado y listo para wireframes: formular y preparar; situar, probar y armar; recibir el pulso y cerrar. La condición, la señal y la forma física continúan sujetas a prototipado.
+La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 quedó representado en nueve marcos evaluables y complementado por un anexo de 35 estados: formular y preparar; vincular, situar, probar y armar; esperar, recibir el pulso, cerrar o recuperar. La condición, la señal y la forma física continúan sujetas a prototipado.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-25 — Cobertura exhaustiva de interacciones
+
+- **Cambio:** se enlazó el anexo de 35 estados y se precisó la vinculación del testigo dentro del ciclo.
+- **Versión anterior:** el índice solo registraba la ruta evaluable de nueve marcos.
+- **Motivo:** hacer visibles las ramificaciones sin alterar la pauta ni ampliar el producto.
+- **Alcance:** cobertura estructural; no constituye validación ni especificación técnica final.
 
 ### 2026-08-25 — Encargo 17 listo para wireframes
 

@@ -12,6 +12,8 @@ El Encargo 17 quedó desarrollado como un tablero editable de baja fidelidad:
 
 La entrega contiene exactamente tres interacciones y nueve marcos. Ocho marcos corresponden a estados o tareas coordinadas desde Android; el marco 3.2 representa el momento físico situado y no una interfaz instalada en el testigo.
 
+Como complemento, el [anexo de cobertura de interacciones](anexo-cobertura-interacciones-encargo-17.md) registra y representa las 35 ramificaciones del ciclo mínimo en una [página separada del mismo archivo Figma](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4?node-id=13-2). El anexo permite revisar validaciones, salidas voluntarias, fallos técnicos y estados límite sin alterar el tablero exigido por la pauta ni presentarlos como funciones adicionales.
+
 ## Resumen del recorrido
 
 | Interacción | Marcos | Resultado |
@@ -57,6 +59,8 @@ La revisión programática del tablero produjo:
 
 La inspección visual se realizó por sección y sobre el tablero completo. Se corrigieron solapamientos de título y contenido en la interacción 1. Una auditoría independiente posterior separó las salidas voluntarias de los errores técnicos y aclaró que el fallo de 3.3 es una variante alternativa del mismo marco, no una cuarta pantalla.
 
+La auditoría complementaria verificó 35 wireframes en cinco secciones, 475 nodos de texto en Roboto, escala de grises y ausencia de desbordes. También confirmó que el marco evaluable `2:2` conserva sus dimensiones, nueve pantallas y contenido previo.
+
 ## Límites
 
 Los wireframes no son una interfaz validada ni una especificación técnica final. No acreditan comprensión del armado físico, percepción del pulso, accesibilidad, convivencia, ejecución Android/BLE, eficacia, adopción ni valor superior frente a una notificación. Forma, materialidad, señal, condición y gesto final permanecen abiertos a prototipado.
@@ -72,9 +76,20 @@ Los wireframes no son una interfaz validada ni una especificación técnica fina
 
 Estos puntos pertenecen al desarrollo P0–P4. Convertirlos ahora en especificaciones cerradas produciría una precisión no respaldada.
 
+## Cobertura complementaria
+
+El anexo mantiene cinco familias de estados: configuración; vinculación y prueba física; armado; espera y señal; cierre y recuperación. Cada estado posee un wireframe separado para inspección, aunque no todos exigen atención de la persona durante el uso. En particular, la vinculación del testigo queda explícita como precondición del emplazamiento y el vencimiento sin pulso queda registrado como un cierre válido.
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — Anexo exhaustivo de interacciones
+
+- **Cambio:** se enlazó una matriz de 35 estados, su página complementaria en Figma y la auditoría correspondiente.
+- **Versión anterior:** la documentación se limitaba a las tres interacciones y nueve marcos evaluables.
+- **Motivo:** comprobar las ramificaciones del ciclo mínimo sin modificar la estructura exigida por el Encargo 17.
+- **Alcance:** los nuevos marcos funcionan como anexo de cobertura; no agregan funciones ni sustituyen investigación y validación.
 
 ### 2026-08-25 — Creación de la entrega
 
