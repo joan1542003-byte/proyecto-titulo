@@ -31,13 +31,24 @@ Un referente no se incorporará solo porque se parece formalmente a Relevo. Debe
 
 ## Documentación vigente
 
+- [Estudio de mercado y antecedentes de Relevo](estudio-mercado-relevo-2026-08-24.md): respuesta auditada a si la idea existe, qué se ha intentado y cuál es la oportunidad defendible.
 - [Registro de búsqueda al 24 de agosto de 2026](registro-busqueda-2026-08-24.md): estrategia, consultas, fecha de corte, inclusiones, exclusiones y límites.
 - [Fichas de mercado y referentes](fichas-mercado-2026-08-24.md): fuentes, funciones declaradas, precios observados, fuerza de evidencia y decisiones para Relevo.
+- [Investigación académica — Agente Samus](investigacion-agente-samus-academia.md): literatura y prototipos con evidencia primaria.
+- [Investigación comercial — Agente Zelda](investigacion-agente-zelda-mercado.md): productos, modelos, precios y señales de disponibilidad.
+- [Investigación de frontera — Agente Solid Snake](investigacion-agente-solid-snake-frontera.md): proyectos emergentes, tesis y patentes como antecedentes, no como opinión jurídica.
 - [Capítulo 7 de la memoria v2](../08_memoria/memoria-vigente-v2.md#7-estado-del-arte-mercado-y-referentes): síntesis académica integrada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-24 — Estudio ampliado y auditado
+
+- **Cambio:** se incorporaron una síntesis ejecutiva y tres investigaciones especializadas identificadas como Samus, Zelda y Solid Snake.
+- **Versión anterior:** el directorio contenía fichas y una búsqueda inicial, pero no respondía en un solo documento si la combinación de Relevo ya existía o había sido intentada.
+- **Motivo:** distinguir antecedentes parciales, evidencia independiente, afirmaciones comerciales y oportunidad investigable.
+- **Alcance:** la revisión es exploratoria; no acredita novedad universal, eficacia, demanda ni libertad de operación jurídica.
 
 ### 2026-08-24 — Investigación de mercado documentada
 

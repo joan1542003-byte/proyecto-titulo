@@ -90,6 +90,8 @@ La condición de activación permanece abierta entre continuidad de uso, acumula
 ### Lectura
 
 - Usa GitHub para recuperar el contexto vigente; no pidas al usuario que vuelva a copiar información ya registrada.
+- Antes de iniciar una tarea, revisa el `README.md` de la raíz y el de cada carpeta pertinente. Estos índices explican qué contiene cada área, qué documentos están vigentes, cuáles son históricos y qué archivos pueden servir para la tarea. Sigue sus enlaces de forma selectiva para recuperar contexto sin leer el repositorio indiscriminadamente.
+- Si una tarea cruza varias áreas, identifica primero qué carpetas intervienen y consulta sus índices en orden de dependencia: contexto y fuentes → investigación o usuarios → mercado → propuesta → desarrollo → validación → memoria y decisiones.
 - Comienza por los índices y sigue enlaces internos. No leas indiscriminadamente todo el archivo si la tarea es acotada.
 - Consulta las Issues abiertas para conocer prioridades, bloqueos y criterios de cierre.
 - Revisa `09_decisiones` cuando una propuesta contradiga o modifique una decisión previa.
@@ -129,6 +131,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 
 ## Registro de cambios (disclaimer)
 
+### 2026-08-24 — Lectura contextual por carpetas
+
+- **Cambio:** se hizo obligatoria la revisión de los `README.md` pertinentes antes de cada tarea y se añadió un orden de lectura entre áreas.
+- **Versión anterior:** las instrucciones indicaban comenzar por índices, pero no exigían recorrer los índices de cada carpeta involucrada.
+- **Motivo:** evitar pérdida de contexto, uso de versiones históricas como vigentes y búsquedas repetidas de información ya documentada.
+- **Alcance:** la lectura sigue siendo selectiva; no autoriza revisar archivos irrelevantes ni reemplaza la consulta de Issues y decisiones.
+
 ### 2026-08-24 — Lenguaje positivo del producto
 
 - **Cambio:** se estableció “testigo físico situado” como denominación funcional del objeto.
@@ -145,7 +154,7 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 
 ### 2026-08-24 — Memoria v2 y próximo paso P0
 
-- **Cambio:** se añadió la memoria v2 como lectura activa, se precisaron fechas y contexto, y se registraron las restricciones phygital y sin pantalla, la activación abierta, la notificación de control y la pausa de Encargo 17.
+- **Cambio:** se añadió la memoria v2 como lectura activa, se precisaron fechas y contexto, y se registraron el carácter phygital, la definición funcional del testigo, la activación abierta, la notificación de control y la pausa de Encargo 17.
 - **Versión anterior:** las instrucciones remitían solo a índices e Issues y describían la formulación sin indicar el documento académico activo ni el siguiente protocolo.
 - **Motivo:** permitir que nuevas conversaciones recuperen el estado posterior a la reconstrucción integral sin volver a la v1 o al wireframing.
 - **Alcance:** las prioridades pueden cambiar mediante Issues y decisiones posteriores; estas instrucciones no sustituyen la lectura del repositorio.

@@ -26,7 +26,7 @@ Están documentados el problema, marco teórico, ocho entrevistas, usuarios situ
 
 ## Qué cambió en esta actualización
 
-La memoria recuperó la arquitectura acumulada de los encargos: identificación académica, índice, motivación personal, tres ámbitos explícitos de marco teórico y teoría de cambio con siete componentes. Además, dejó de definir el objeto por lo que no contiene: ahora se formula positivamente como un testigo físico situado que representa una intención activa y emite un pulso ambiental.
+La memoria recuperó la arquitectura acumulada de los encargos: identificación académica, índice, motivación personal, tres ámbitos explícitos de marco teórico y teoría de cambio con siete componentes. Además, el testigo se formula por su función y no por componentes ausentes: representa una intención activa y emite un pulso ambiental. El estudio ampliado de mercado encontró antecedentes para las piezas del sistema, pero no una coincidencia integral en el corpus; por ello, el aporte se deberá demostrar en la combinación situada frente a una notificación equivalente.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
@@ -35,3 +35,5 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 **2026-08-24 — Creación.** Se creó este resumen para ofrecer una lectura breve y sincronizada con `memoria-vigente-v2.md`. No reemplaza la memoria ni agrega resultados. La descripción se basa en la formulación vigente; las decisiones técnicas y de interacción señaladas como abiertas no deben tratarse como especificaciones cerradas.
 
 **2026-08-24 — Definición positiva del objeto.** Se reemplazó “objeto físico sin pantalla” por “testigo físico situado”. Antes, el objeto se describía mediante una ausencia; ahora se define por su función: representar una intención activa y emitir un pulso ambiental desde un lugar significativo. La arquitectura visual y electrónica específica permanece abierta.
+
+**2026-08-24 — Síntesis de mercado.** Se añadió al resumen el resultado del estudio ampliado. Antes solo se informaba que el mercado estaba documentado; ahora se precisa que existen antecedentes parciales y que la diferencia de Relevo debe probarse comparativamente, sin afirmar novedad universal. La formulación y el funcionamiento del sistema no cambiaron.

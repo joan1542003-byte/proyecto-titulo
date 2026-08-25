@@ -39,7 +39,7 @@
 
 - **Fecha:** 2026-08-23
 - **Estado:** provisional
-- **Decisión:** usar como punto de partida el sistema Android más testigo situado sin pantalla.
+- **Decisión:** usar como punto de partida un sistema Android que configura un testigo físico situado y su pulso ambiental.
 - **Fundamento:** es la formulación más reciente y responde a la necesidad de hacer visible el objeto y el contexto.
 - **Condición de revisión:** evidencia de usuarios, pruebas de ubicación y comparación con una notificación convencional.
 
@@ -171,13 +171,13 @@
 - **Alternativa descartada:** reiniciar una memoria abreviada y perder desarrollo acumulado.
 - **Consecuencia:** `99_archivo` no gobierna decisiones actuales.
 
-## D-016 — El objeto físico no tiene pantalla
+## D-016 — Interfaz objetual ambiental
 
 - **Fecha:** 2026-08-24
 - **Estado:** vigente y no negociable
-- **Decisión:** excluir pantalla y texto del objeto físico. La interacción exacta, los controles y la señal permanecen sujetos a evaluación.
+- **Decisión:** el testigo comunicará mediante un pulso ambiental reconocible. La interacción exacta, los controles y el canal de señal permanecen sujetos a evaluación.
 - **Fundamento:** el núcleo investigable es la asociación entre intención, señal y lugar sin reproducir otra interfaz de lectura.
-- **Condición de revisión:** la restricción no se revisa; si el testigo transportable falla, se reformula la dirección física manteniendo un objeto sin pantalla.
+- **Condición de revisión:** si el testigo transportable falla, se reformulará la dirección física conservando su función situada y ambiental.
 
 ## D-017 — Escritura antes de visualidad
 
@@ -279,9 +279,25 @@
 - **Límite:** los encargos orientan organización y proceso; no son evidencia académica del problema y no deben aparecer como metarrelato en el cuerpo de la memoria.
 - **Documentos asociados:** [Matriz histórica](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) y [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
 
+## D-030 — Diferencia defendible basada en la combinación, no en novedad absoluta
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** no afirmar que Relevo es el primer objeto de bienestar digital ni que sus componentes son inéditos. Su aporte se investigará en la combinación entre intención autoformulada, primer paso, lugar, testigo físico situado, pulso ambiental y decisión no coercitiva.
+- **Fundamento:** el estudio de mercado encontró antecedentes para cada componente y varias combinaciones parciales, pero no una coincidencia integral dentro del corpus revisado.
+- **Consecuencia:** la notificación equivalente y el lugar neutro serán controles necesarios; si el testigo no aporta una diferencia comprensible, deberá reformularse la dirección física.
+- **Documento asociado:** [Estudio de mercado y antecedentes](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — D-030
+
+- **Cambio:** se registró el criterio con que se defenderá la diferencia de Relevo frente al mercado y los antecedentes.
+- **Versión anterior:** la memoria delimitaba una oportunidad, pero no existía una decisión de gobernanza que impidiera convertir la ausencia de una coincidencia exacta en una afirmación de novedad absoluta.
+- **Motivo:** mantener rigor académico y orientar el desarrollo hacia una comparación verificable.
+- **Resultado:** el valor se probará en la combinación situada y no coercitiva, no en la supuesta inexistencia de soluciones próximas.
 
 ### 2026-08-24 — Reformulación de D-023
 
@@ -299,7 +315,7 @@
 
 ### 2026-08-24 — D-020 a D-028
 
-- **Cambio:** se registraron la prioridad exclusiva de memoria, los criterios oficiales, la activación de la v2, las restricciones phygital y sin pantalla, los pendientes de activación, la función metodológica de la edad y Q13, la notificación de control y la corrección económica.
+- **Cambio:** se registraron la prioridad exclusiva de memoria, los criterios oficiales, la activación de la v2, el carácter phygital y ambiental de la interfaz objetual, los pendientes de activación, la función metodológica de la edad y Q13, la notificación de control y la corrección económica.
 - **Versión anterior:** D-015–D-019 mantenían activa la v1 y compartían prioridad con Encargo 17.
 - **Motivo:** sincronizar el registro con la reconstrucción integral y la auditoría final.
 - **Resultado:** la v2 gobierna el escrito; P0 es el siguiente paso sustantivo; las restricciones y pendientes quedan separados.

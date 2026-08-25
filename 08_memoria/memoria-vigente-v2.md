@@ -94,13 +94,13 @@ El problema de Relevo se sitúa en una relación temporal y situacional. Una per
 
 Esta formulación evita tres reducciones. Primero, no transforma el tiempo de pantalla en una medida universal de perjuicio. Segundo, no diagnostica adicción, automatismo, culpa ni pérdida de voluntad. Tercero, no trata toda alternativa como una obligación productiva. Dormir, conversar, caminar, aprender, dibujar o no hacer nada pueden ser decisiones propias; el sistema no debe imponer una jerarquía entre ellas.
 
-La pertinencia para Diseño está en organizar una experiencia distribuida entre interfaz, objeto, espacio y decisión. El trabajo no consiste solo en fabricar un dispositivo conectado. Debe establecer qué relación entre intención, señal y contexto merece existir, cuándo no debe activarse, qué carga introduce y cómo se produciría, mantendría y retiraría. La propuesta es phygital porque la capa digital conserva el significado y prepara la regla, mientras la capa física sitúa la señal fuera del flujo visual del teléfono. La pantalla del objeto se excluye como restricción del proyecto; lo que debe ponerse a prueba es si una señal sin texto puede sostener una asociación comprensible.
+La pertinencia para Diseño está en organizar una experiencia distribuida entre interfaz, objeto, espacio y decisión. El trabajo no consiste solo en fabricar un dispositivo conectado. Debe establecer qué relación entre intención, señal y contexto merece existir, cuándo no debe activarse, qué carga introduce y cómo se produciría, mantendría y retiraría. La propuesta es phygital porque la capa digital conserva el significado y prepara la regla, mientras el testigo físico sitúa un pulso ambiental en el lugar donde puede comenzar la actividad elegida. Debe ponerse a prueba si esa señal sostiene una asociación comprensible y aporta algo que una notificación equivalente no entrega de la misma forma.
 
 ## 1.3 Tesis provisional y aporte
 
 La tesis provisional de Relevo es:
 
-> Relevo explora la hipótesis de que una señal física sin texto, configurada digitalmente y situada junto al primer paso de una actividad elegida, puede devolver esa intención a la consideración de una persona durante una sesión digital de continuidad poco deliberada, sin bloquear su ocio ni evaluar su respuesta.
+> Relevo explora la hipótesis de que un pulso ambiental, configurado digitalmente y emitido por un testigo situado junto al primer paso de una actividad elegida, puede devolver esa intención a la consideración de una persona durante una sesión digital de continuidad poco deliberada, sin bloquear su ocio ni evaluar su respuesta.
 
 La tesis tiene condiciones de pérdida de fundamento. Si la persona necesita volver al teléfono para comprender la señal, si el lugar no aporta una asociación reconocible, si una notificación entrega el mismo valor con menor carga, si el objeto se percibe como vigilancia o alarma genérica, o si la condición técnica no puede ejecutarse con fiabilidad proporcional al alcance, la dirección física deberá modificarse o abandonarse. En ese caso, Relevo no se convertirá en una aplicación sustitutiva: se reformulará el testigo físico y su pulso ambiental conservando el carácter phygital, o se reconocerá que la formulación actual requiere volver a investigación de diseño.
 
@@ -1171,7 +1171,7 @@ La matriz individual P1–P8 se presenta en la Tabla 1 del capítulo 6. Este ane
 | Evidencia | Registro de entrevista, cita académica, documentación oficial o dato técnico de una fuente. | P2 relata continuidad después de reconocer el sueño. |
 | Inferencia | Lectura analítica derivada de una o más evidencias, con alcance limitado. | Conviene mantener una alternativa disponible sin imponerla. |
 | Hipótesis | Proposición que debe ponerse a prueba. | El lugar congruente puede aportar una clave situada. |
-| Decisión de alcance | Restricción adoptada para orientar el proyecto. | Relevo es phygital y el objeto no tendrá pantalla. |
+| Decisión de alcance | Restricción adoptada para orientar el proyecto. | Relevo es phygital y el testigo comunica mediante un pulso ambiental. |
 | Pendiente | Decisión o resultado que todavía no existe. | Activación, número de participantes, duración y reclutamiento de P0–P4. |
 | Descartado | Dirección que contradice el mecanismo o el alcance vigente. | Bloqueo, puntaje y registro de cumplimiento como solución. |
 
@@ -1212,5 +1212,7 @@ En todas las puertas el número de participantes, la duración y el reclutamient
 **Referencias, anexos y estado de evidencia.** Se consolidó una lista única de referencias APA 7 en español y se conservaron anexos selectivos sobre metodología, jerarquía de afirmaciones y protocolo. No se añadieron respuestas, preferencias, cotizaciones, especificaciones ni resultados de prototipo inexistentes. La activación, la comparación física, Android/BLE, accesibilidad, convivencia, producción y aporte del artefacto permanecen pendientes de evaluación.
 
 **Alineación con el historial de encargos.** Tras revisar la secuencia acumulativa de encargos, se restituyeron la identificación académica, el índice visible y la motivación personal; se hicieron localizables los títulos de planteamiento del problema, formulación, propuesta proyectual y mapa de actores; y se explicitaron los tres ámbitos del marco teórico y los siete componentes de la teoría de cambio. Antes, estos contenidos estaban ausentes o distribuidos entre capítulos sin los títulos exigidos. Se incorporaron para hacer reconocible la arquitectura académica sin eliminar la ampliación propia del Proyecto de Título. En una revisión posterior se sustituyó la definición negativa del objeto por la formulación positiva **testigo físico situado que representa una intención activa y emite un pulso ambiental**; la exclusión de una interfaz de consulta permanece solo como requisito técnico y no como propuesta de valor.
+
+**Corrección de formulación funcional.** Se reemplazaron dos expresiones residuales que definían la interfaz objetual mediante una exclusión. Antes, el apartado de pertinencia y la tesis provisional destacaban una característica ausente; ahora describen la relación entre configuración digital, testigo situado y pulso ambiental. La arquitectura electrónica específica sigue abierta y este cambio no agrega resultados de validación.
 
 **Archivos afectados.** Esta intervención académica modifica únicamente `08_memoria/memoria-vigente-v2.md`; la documentación de auditoría, mercado y gobernanza se actualiza por separado en el repositorio.
