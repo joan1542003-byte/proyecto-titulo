@@ -84,8 +84,8 @@ La aplicación conserva el significado y explica los estados técnicos. El testi
 | --- | --- | --- |
 | 01 · Sin configurar | Estado vacío con dos campos conceptuales y una acción de inicio | `Sin configurar` · `Crea una intención` · `Define una actividad y su primer paso.` · `Crear intención` |
 | 02 · Datos incompletos | Filas agrupadas, un dato ausente y validación contenida | `Completa tu ciclo` · `Intención` · `Primer paso` · `Aplicación` · `Condición provisional` · `Vigencia` · `Falta este dato para continuar` · `Revisar` |
-| 03 · Permiso requerido | Explicación del alcance del permiso y acciones de recuperación | `Permiso requerido` · `Relevo necesita consultar el estado de uso de la aplicación elegida para probar esta condición` · `Aún no concedido` · `Abrir ajustes` · `Cambiar condición` · `Volver` |
-| 04 · Permiso denegado | Estado técnico no punitivo con rutas alternativas | `Permiso no concedido` · `No se puede observar la condición elegida con este permiso` · `Sin acceso` · `Abrir ajustes` · `Cambiar condición` · `Salir` |
+| 03 · Permiso requerido | Explicación del alcance del permiso y acciones de recuperación | `Permiso requerido` · `Relevo necesita consultar el estado de uso de la aplicación elegida para observar la condición provisional durante el ciclo` · `Aún no concedido` · `Abrir ajustes` · `Cambiar condición` · `Volver` |
+| 04 · Permiso denegado | Estado técnico no punitivo con rutas alternativas | `Permiso no concedido` · `Sin este permiso no se puede observar la condición elegida` · `Sin acceso` · `Abrir ajustes` · `Cambiar condición` · `Salir` |
 | 05 · Revisión | Resumen editable antes de situar el testigo | `Revisa antes de situar el testigo` · `Leer un capítulo` · `Abrir el libro` · `Condición provisional · por validar` · `Vigencia · hoy, 20:00–22:00` · `El ciclo aún no está armado` · `Editar` · `Continuar para situar` |
 | 06 · Salida voluntaria | Hoja inferior sobre la revisión, sin culpa ni presión | `¿Salir de la configuración?` · `Puedes volver después. La decisión queda en tus manos.` · `Guardar borrador` · `Descartar borrador` · `Seguir editando` |
 
@@ -127,3 +127,10 @@ El built-in `image_gen` produjo ambas imágenes en `1672 × 941 px`. Cada salida
 **Decisión:** se adoptó una referencia visual contemporánea inspirada en patrones de composición iOS, sin fijar una identidad final ni contradecir la decisión de Android como plataforma técnica inicial.
 
 **Alcance:** las láminas son referencias visuales de baja/media fidelidad para calcar y discutir en Figma. No sustituyen el tablero evaluable de Encargo 17, no validan el producto y no cierran forma, materialidad, canal, condición ni accesibilidad.
+
+### 2026-08-25 — Corrección de copia de permisos
+
+- **Cambio:** el estado 03 reemplazó la expresión residual `probarar` por la frase aprobada sobre observar la condición provisional durante el ciclo; el estado 04 se alineó con la formulación final visible en la lámina A2.
+- **Versión anterior:** el estado 03 decía `...para probarar la condición provisional`; el estado 04 decía `No se puede observar la condición elegida con este permiso`.
+- **Motivo:** corregir el error textual, describir con precisión el alcance técnico del permiso y mantener continuidad entre el mapa de copia y las referencias visuales.
+- **Alcance:** solo se modificaron las filas 03 y 04 del mapa de copia; no se alteran las decisiones de plataforma, la arquitectura phygital ni el alcance conceptual de Relevo.
