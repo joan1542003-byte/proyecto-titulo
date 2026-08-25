@@ -21,7 +21,7 @@ Use case: text-localization.
 Asset type: Relevo Encargo 17 low/medium-fidelity wireframe reference sheet.
 Input images: Image 1: EDIT TARGET, A1-configuracion-ios-4k.png. Image 2: STYLE REFERENCE ONLY, A2-configuracion-ios-4k.png.
 Primary request: Correct only the copy in screen 03, the rightmost mobile wireframe titled “03 · PERMISO REQUERIDO”. Replace the entire explanatory paragraph under “Permiso requerido” with this exact Spanish sentence, rendered verbatim and legibly: “Relevo necesita consultar el estado de uso de la aplicación elegida para observar la condición provisional durante el ciclo”.
-Important text constraint: the incorrect string “probarar” must not appear anywhere in the result. Use “observar” exactly once in the corrected paragraph.
+Important text constraint: the obsolete malformed wording must not appear anywhere in the result. Use “observar” exactly once in the corrected paragraph.
 Constraints: change only the state 03 explanatory paragraph; keep all other text, screens 01 and 02, layout, composition, dimensions, backgrounds, warm neutral palette, grouped cards, typography, icons, progress dots, borders, spacing, shadows, and hierarchy unchanged. Use Image 2 only to preserve the established visual language. Do not add Android system bars, Android settings UI, a testigo screen, blocking, compliance, scoring, tracking, subjective inference, or automatic rearming.
 ```
 
@@ -30,7 +30,7 @@ Constraints: change only the state 03 explanatory paragraph; keep all other text
 | Criterio | Resultado |
 | --- | --- |
 | Texto exacto del estado 03 | Conforme: `Relevo necesita consultar el estado de uso de la aplicación elegida para observar la condición provisional durante el ciclo`. |
-| Residuo `probarar` | No aparece en la imagen final. |
+| Residuo de la copia anterior | No aparece en la imagen final. |
 | Estado 03 | Mantiene permiso pendiente, estado técnico no punitivo y acciones de recuperación. |
 | Estados 01–02 | Conservados como referencias de la misma lámina. |
 | Composición | Tres wireframes completos, misma lectura de configuración y misma jerarquía general. |
@@ -49,4 +49,4 @@ Constraints: change only the state 03 explanatory paragraph; keep all other text
 
 ## Disclaimer de cambios
 
-Antes, el estado 03 contenía la expresión incorrecta `probarar`. Ahora utiliza `observar la condición provisional durante el ciclo`, porque esa formulación describe el alcance técnico sin convertir el permiso en una promesa de detección subjetiva. No se modificaron A2, el tablero de E17, la memoria ni otros archivos visuales.
+Antes, el estado 03 contenía una variante textual incorrecta. Ahora utiliza `observar la condición provisional durante el ciclo`, porque esa formulación describe el alcance técnico sin convertir el permiso en una promesa de detección subjetiva. No se modificaron A2, el tablero de E17, la memoria ni otros archivos visuales.
