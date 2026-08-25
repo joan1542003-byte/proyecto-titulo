@@ -2,7 +2,7 @@
 
 ## Estado general
 
-Relevo cuenta con una memoria integral v2 auditada que articula investigación, usuarios, mercado, propuesta, flujos, producción, gestión y evaluación. La línea sustantiva siguiente es preparar y ejecutar P0, la prueba de asociación con activación simulada. La migración documental general y el desarrollo escrito del Encargo 17 permanecen en pausa.
+Relevo cuenta con una memoria integral auditada y cerrada editorialmente para el estado real del proyecto. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión, e incorpora el desarrollo estructural de tres interacciones, nueve marcos de síntesis y 35 estados. La línea sustantiva siguiente es preparar y ejecutar P0, la prueba de asociación con activación simulada. La migración documental general permanece en pausa; el Encargo 17 quedó completado.
 
 El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuando sus preguntas, evidencia, límites y decisiones están registrados. El producto phygital no se desarrolla como una respuesta autónoma; debe poder reconstruirse desde la investigación.
 
@@ -105,7 +105,7 @@ Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contr
 
 ### Fase 7 — Escritura y cierre de memoria
 
-**Estado:** memoria integral v2 completada y auditada; reabrir después de cada resultado ejecutado.
+**Estado:** cierre editorial completado; reabrir después de cada resultado ejecutado.
 
 La memoria integrará solo argumentos respaldados por el proceso. Se revisarán coherencia narrativa, trazabilidad, lenguaje académico, APA 7, definiciones, redundancias y correspondencia entre problema, usuarios, propuesta y validación.
 
@@ -123,6 +123,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — Cierre editorial posterior al desarrollo estructural
+
+- **Cambio:** se registró la incorporación de tres interacciones, nueve marcos y 35 estados a la memoria, y se marcó el Encargo 17 como completado.
+- **Versión anterior:** la hoja declaraba la memoria v2 auditada, pero mantenía el desarrollo del Encargo 17 en pausa.
+- **Motivo:** sincronizar la secuencia de trabajo con los resultados documentales efectivamente producidos.
+- **Decisión derivada:** P0 continúa como única línea sustantiva siguiente; los wireframes no sustituyen su ejecución.
 
 ### 2026-08-24 — Memoria v2 y transición a P0
 

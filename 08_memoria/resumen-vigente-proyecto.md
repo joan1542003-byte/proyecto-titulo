@@ -22,11 +22,11 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 ## Estado actual
 
-Están documentados el problema, marco teórico, ocho entrevistas, usuarios situacionales, mercado, propuesta, flujos, factibilidad, costos preliminares y protocolo P0–P4. No existen resultados de pruebas del prototipo. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, el lugar doméstico específico, la electrónica final y el precio.
+Están documentados el problema, marco teórico, ocho entrevistas, usuarios situacionales, mercado, propuesta, flujos, factibilidad, costos preliminares y protocolo P0–P4. El ciclo de experiencia también quedó desarrollado mediante tres interacciones, nueve marcos de síntesis y 35 estados estructurales. Estos wireframes permiten examinar recorridos, salidas y fallos, pero no constituyen pruebas de uso. No existen resultados de prototipos funcionales. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, el lugar doméstico específico, la electrónica final y el precio.
 
 ## Qué cambió en esta actualización
 
-La memoria articula una especialización derivada del estado del arte: Relevo investiga cómo recuperar una intención propia en el lugar donde puede comenzar su primer paso. El mercado contiene antecedentes parciales, pero no se encontró una coincidencia integral dentro del corpus revisado; esto no demuestra novedad universal. Android quedó definido como la única plataforma del prototipo técnico integrado; la web se descartó como capa operativa e iPhone quedó fuera del alcance inicial. Esta selección concentra capacidades y recursos, pero no decide la condición de activación ni promete compatibilidad o desempeño universal. El valor físico continúa pendiente de comparación con una notificación equivalente.
+La memoria alcanza un cierre editorial del estado real del proyecto. A la especialización derivada del estado del arte —recuperar una intención propia en el lugar donde puede comenzar su primer paso— se añade una arquitectura de interacción exhaustiva que diferencia configuración, vinculación, prueba, armado, espera, señal, cierre y recuperación. Android continúa como única plataforma del prototipo técnico integrado; web e iPhone permanecen fuera del alcance inicial. El valor físico, la condición de activación y el desempeño continúan pendientes de P0–P4.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
@@ -41,3 +41,5 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 **2026-08-25 — Especialización de Relevo.** Se reemplazó el recuento acumulativo de cambios por una síntesis del nuevo eje argumental. Antes, el contraste con el mercado y la propuesta de valor aparecían como hallazgos relacionados pero separados; ahora se formula que Relevo se especializa provisionalmente en recuperar una intención propia en el lugar donde puede comenzar. No se modificaron el funcionamiento ni los pendientes de validación.
 
 **2026-08-25 — Plataforma inicial.** Se añadió al resumen la selección de Android y el descarte acotado de web e iPhone. Antes, Android figuraba como plataforma provisional sin una comparación explícita; ahora se define como único entorno del prototipo técnico integrado. Esta decisión no fija la activación ni excluye expansiones futuras.
+
+**2026-08-25 — Cierre editorial y arquitectura de interacción.** Se incorporaron tres interacciones, nueve marcos de síntesis y 35 estados como resultados de desarrollo estructural. Antes, el resumen informaba flujos y protocolos, pero no registraba la cobertura producida. El cambio permite comprender qué se diseñó sin confundir wireframes con validación; P0–P4, forma, canal, técnica y costos reales permanecen abiertos.

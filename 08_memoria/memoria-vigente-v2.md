@@ -6,9 +6,10 @@
 - **Institución:** Universidad Diego Portales
 - **Estudiante:** Johan Yantén
 - **Año académico:** 2026
+- **Versión:** cierre editorial del 25 de agosto de 2026
 - **Etapa:** Proyecto de Título, segundo semestre
 - **Tipo de proyecto:** Sistema phygital de interacción y producto
-- **Estado del desarrollo:** investigación, formulación y arquitectura documentadas; prototipado y evaluación de Relevo pendientes
+- **Estado del desarrollo:** investigación, formulación, arquitectura y esquemas estructurales documentados; prototipado funcional y evaluación de Relevo pendientes
 
 ## Resumen
 
@@ -18,7 +19,7 @@ La investigación reúne revisión de literatura, análisis de referentes y merc
 
 La oportunidad de diseño se formula como una hipótesis phygital: una aplicación Android conserva el significado de una intención y configura una condición todavía abierta; un testigo físico situado representa una intención activa y emite un pulso ambiental; la persona lo ubica junto al primer paso de la actividad. La notificación del teléfono será un control comparativo, no la salida final del sistema. La investigación debe determinar si la presencia situada del testigo aporta un valor que una notificación equivalente no ofrece y si ese valor compensa configuración, mantenimiento, costo, privacidad y riesgo de intrusión.
 
-La memoria desarrolla el problema, el marco conceptual, la evidencia de usuarios, el mercado, la síntesis de criterios, el sistema, los flujos, la producción y la gestión. El capítulo de evaluación presenta un plan progresivo P0–P4: asociación con activación simulada; contraste de lugar congruente, lugar neutro y notificación; canales y salida física; condición Android/Bluetooth Low Energy (BLE) y fallos; e integración con piloto acotado. No existen resultados ejecutados de estas pruebas. La contribución actual corresponde a investigación, formulación, arquitectura y método; la contribución del artefacto permanece esperada y condicionada a la evidencia.
+La memoria desarrolla el problema, el marco conceptual, la evidencia de usuarios, el mercado, la síntesis de criterios, el sistema, los flujos, la producción y la gestión. El desarrollo estructural tradujo el ciclo mínimo en tres interacciones, nueve marcos de síntesis y una cobertura complementaria de 35 estados de configuración, vinculación, prueba, armado, espera, señal, cierre y recuperación. Estos *wireframes*, es decir, esquemas que ordenan contenido, acciones y jerarquías antes del diseño visual definitivo, son resultados de diseño y no pruebas de uso. El capítulo de evaluación presenta un plan progresivo P0–P4: asociación con activación simulada; contraste de lugar congruente, lugar neutro y notificación; canales y salida física; condición Android/Bluetooth Low Energy (BLE) y fallos; e integración con piloto acotado. No se han ejecutado estas pruebas. La contribución actual corresponde a investigación, formulación, arquitectura, desarrollo estructural y método; la contribución del artefacto permanece esperada y condicionada a la evidencia.
 
 **Palabras clave:** continuidad digital, memoria prospectiva, descarga de intenciones, diseño phygital, interacción tangible, autonomía, señal situada.
 
@@ -30,7 +31,7 @@ The research combines a literature review, an analysis of current products and r
 
 The design opportunity is formulated as a phygital hypothesis: an Android application retains the meaning of an intention and configures a still-open activation condition; a situated physical token represents one active intention and emits an ambient pulse; and the person places it next to the activity’s first step. A phone notification will operate as a comparative control, not as the final output. The project must determine whether the token’s situated presence offers value that an equivalent notification does not, and whether that value compensates for configuration, maintenance, cost, privacy, and intrusion risks.
 
-This report develops the problem, conceptual framework, user evidence, market, synthesis criteria, system, flows, production, and management. The evaluation chapter presents a progressive P0–P4 plan. No Relevo prototype tests have been executed. The current contribution lies in research, formulation, architecture, and method; the artifact contribution remains expected and conditional on evidence.
+This report develops the problem, conceptual framework, user evidence, market, synthesis criteria, system, flows, production, and management. The structural design translates the minimum cycle into three interactions, nine synthesis frames, and a complementary coverage of 35 states spanning configuration, pairing, testing, arming, waiting, signalling, closure, and recovery. These wireframes are design outputs rather than usability evidence. The evaluation chapter presents a progressive P0–P4 plan. No Relevo prototype tests have been executed. The current contribution lies in research, formulation, architecture, structural design, and method; the artifact contribution remains expected and conditional on evidence.
 
 **Keywords:** digital continuity, prospective memory, intention offloading, phygital design, tangible interaction, autonomy, situated signal.
 
@@ -45,8 +46,9 @@ This report develops the problem, conceptual framework, user evidence, market, s
 | Usuario límite | Persona o episodio en que la actividad digital coincide con la intención actual, es significativo, relacional, concentrado o reparador, o no existe una intención alternativa que requiera apoyo. |
 | Sistema | Aplicación Android, regla observable, testigo físico situado, lugar elegido manualmente y persona que interpreta y decide. |
 | Pregunta | ¿En qué condiciones una clave externa, configurada por la persona, puede apoyar la recuperación espontánea de una intención y su primer paso durante una sesión de continuidad digital poco deliberada, sin bloquear, puntuar ni evaluar la decisión posterior? |
-| Tesis provisional | Una señal física sin texto, configurada digitalmente y situada junto al primer paso de una actividad elegida, podría devolver esa intención a la consideración de la persona sin bloquear su ocio ni evaluar su respuesta. |
+| Tesis provisional | Un pulso ambiental, configurado digitalmente y emitido por un testigo situado junto al primer paso de una actividad elegida, podría devolver esa intención a la consideración de la persona sin bloquear su ocio ni evaluar su respuesta. |
 | Evidencia realizada | Revisión documental, búsqueda exploratoria de mercado y ocho entrevistas semiestructuradas presenciales. |
+| Desarrollo documentado | Tres interacciones, nueve marcos de síntesis y 35 estados estructurales del ciclo, representados mediante wireframes de baja o media fidelidad. |
 | Pendientes críticos | Asociación física, comparación con lugar neutro y notificación, canal, condición de activación, integración Android/BLE, accesibilidad, convivencia, costos reales y uso sostenido. |
 
 ## Índice
@@ -90,7 +92,7 @@ La escena es hipotética. No reproduce una entrevista ni describe un comportamie
 
 El teléfono concentra comunicación, entretenimiento, descanso, información, relaciones y tareas. Por esa multiplicidad, no basta con considerar la pantalla como una fuente homogénea de daño. La conectividad doméstica en Chile participa de prácticas cotidianas diversas (Subsecretaría de Telecomunicaciones, 2024), y la literatura sobre uso significativo de medios ha mostrado que la duración de una sesión no determina por sí sola su propósito, valoración ni percepción de autonomía (Lukoff et al., 2018; Meier & Reinecke, 2021).
 
-El problema de Relevo se sitúa en una relación temporal y situacional. Una persona puede iniciar una actividad digital por decisión propia y, después, no renovar claramente esa decisión mientras la interfaz, la inercia o la ausencia de un punto de cierre mantiene disponible el siguiente contenido. En algunos episodios, una alternativa que la persona también valoraba pierde capacidad para orientar el próximo paso. En otros, no hay problema: la actividad actual coincide con la intención, posee valor relacional o funciona como descanso. El diseño debe distinguir ambas situaciones.
+El problema de Relevo se sitúa en una relación temporal y situacional. Una persona puede iniciar una actividad digital por decisión propia y, después, no renovar claramente esa decisión mientras la interfaz, la inercia o la ausencia de un punto de cierre mantienen disponible el siguiente contenido. En algunos episodios, una alternativa que la persona también valoraba pierde capacidad para orientar el próximo paso. En otros, no hay problema: la actividad actual coincide con la intención, posee valor relacional o funciona como descanso. El diseño debe distinguir ambas situaciones.
 
 Esta formulación evita tres reducciones. Primero, no transforma el tiempo de pantalla en una medida universal de perjuicio. Segundo, no diagnostica adicción, automatismo, culpa ni pérdida de voluntad. Tercero, no trata toda alternativa como una obligación productiva. Dormir, conversar, caminar, aprender, dibujar o no hacer nada pueden ser decisiones propias; el sistema no debe imponer una jerarquía entre ellas.
 
@@ -104,7 +106,7 @@ La tesis provisional de Relevo es:
 
 La tesis tiene condiciones de pérdida de fundamento. Si la persona necesita volver al teléfono para comprender la señal, si el lugar no aporta una asociación reconocible, si una notificación entrega el mismo valor con menor carga, si el objeto se percibe como vigilancia o alarma genérica, o si la condición técnica no puede ejecutarse con fiabilidad proporcional al alcance, la dirección física deberá modificarse o abandonarse. En ese caso, Relevo no se convertirá en una aplicación sustitutiva: se reformulará el testigo físico y su pulso ambiental conservando el carácter phygital, o se reconocerá que la formulación actual requiere volver a investigación de diseño.
 
-El aporte actual es de investigación y formulación. La memoria delimita un fenómeno, reconoce contraejemplos, define tipos de usuario situacionales, traduce conceptos a requisitos y construye una arquitectura evaluable. El aporte esperado del artefacto consiste en producir conocimiento sobre una ayuda phygital no coercitiva: una experiencia que distribuya una intención entre aplicación, señal física y lugar, manteniendo la decisión posterior fuera del sistema. No se afirma reducción del tiempo de pantalla, aumento de productividad, bienestar, actividad física ni cambio conductual universal.
+El aporte actual es de investigación, formulación y desarrollo estructural. La memoria delimita un fenómeno, reconoce contraejemplos, define tipos de usuario situacionales, traduce conceptos a requisitos y construye una arquitectura evaluable que incluye recorridos, estados normales, salidas voluntarias y fallos recuperables. El aporte esperado del artefacto consiste en producir conocimiento sobre una ayuda phygital no coercitiva: una experiencia que distribuya una intención entre aplicación, señal física y lugar, manteniendo la decisión posterior fuera del sistema. No se afirma reducción del tiempo de pantalla, aumento de productividad, bienestar, actividad física ni cambio conductual universal.
 
 ## 1.4 Recorrido de la memoria
 
@@ -148,7 +150,7 @@ Lyngs et al. (2019) revisaron 367 herramientas de autocontrol digital y encontra
 
 MyTime hizo visible la relación cotidiana con el teléfono mediante una intervención diseñada para apoyar el no uso (Hiniker et al., 2016). one sec, estudiado por Grüning et al. (2023) y Haliburton et al. (2024), introduce una fricción al abrir aplicaciones objetivo y aporta evidencia específica sobre aperturas, pausas y rebotes durante periodos determinados. Estas herramientas son referentes de reconsideración dentro de la pantalla, no pruebas de un objeto situado.
 
-Las funciones nativas de Apple y Google ofrecen medición, temporizadores, periodos de desconexión y controles de aplicaciones (Apple, s. f.; Google, s. f.-d). Pause Point, descrito por Google como una pausa breve antes de abrir una aplicación seleccionada, es un antecedente reciente de intervención intermedia (Sanders, 2026). Su documentación oficial describe funcionamiento y disponibilidad, no una mejora demostrada en recuperación de intenciones.
+Las funciones nativas de Apple y Google ofrecen medición, temporizadores, periodos de desconexión y controles de aplicaciones (Apple, s. f.; Google, s. f.-c). Pause Point, descrito por Google como una pausa breve antes de abrir una aplicación seleccionada, es un antecedente reciente de intervención intermedia (Sanders, 2026). Su documentación oficial describe funcionamiento y disponibilidad, no una mejora demostrada en recuperación de intenciones.
 
 Los productos físicos revisados, como Brick, Unpluq y Screenless Breaker, utilizan objetos o etiquetas para bloquear, desbloquear o dificultar el acceso (Brick LLC, s. f.-a; Screenless, s. f.; Unpluq, s. f.). Brick Zone relaciona un dispositivo Bluetooth con espacios declarados y bloqueo de aplicaciones (Brick LLC, s. f.-b). Focusaur combina un objeto con una aplicación, señales, etiquetas y funciones de foco o hábitos (Focusaur, s. f.). Estas páginas oficiales describen características, precios y modelos de uso; no demuestran eficacia independiente, adopción sostenida ni pertinencia para Relevo.
 
@@ -542,9 +544,9 @@ La comunicación de campo cercano (NFC, por su sigla en inglés) permite interca
 
 ## 7.4 Herramientas nativas
 
-Apple Screen Time y Google Digital Wellbeing ofrecen medición, temporizadores, límites y periodos de desconexión (Apple, s. f.; Google, s. f.-d). Su ventaja es la disponibilidad y el bajo costo adicional: no requieren un objeto, carga ni emparejamiento. Su límite para Relevo es que el significado de la intervención permanece dentro del teléfono y suele expresarse como tiempo, apertura, categoría o pausa.
+Apple Screen Time y Google Digital Wellbeing ofrecen medición, temporizadores, límites y periodos de desconexión (Apple, s. f.; Google, s. f.-c). Su ventaja es la disponibilidad y el bajo costo adicional: no requieren un objeto, carga ni emparejamiento. Su límite para Relevo es que el significado de la intervención permanece dentro del teléfono y suele expresarse como tiempo, apertura, categoría o pausa.
 
-Pause Point, comunicado por Google en 2026, acerca la plataforma a una intervención de reconsideración. Su disponibilidad está vinculada a versiones y dispositivos específicos, por lo que no se trata como una capacidad universal de Android (Google, s. f.-d; Sanders, 2026). El proyecto no necesita negar el valor de una pausa nativa. Necesita saber qué tendría que aportar un objeto externo para justificar su complejidad.
+Pause Point, comunicado por Google en 2026, acerca la plataforma a una intervención de reconsideración. Su disponibilidad está vinculada a versiones y dispositivos específicos, por lo que no se trata como una capacidad universal de Android (Google, s. f.-c; Sanders, 2026). El proyecto no necesita negar el valor de una pausa nativa. Necesita saber qué tendría que aportar un objeto externo para justificar su complejidad.
 
 ## 7.5 Aplicaciones de fricción
 
@@ -678,6 +680,18 @@ La selección del testigo transportable cierra una dirección de investigación,
 
 La evidencia negativa debe identificar qué fue refutado. Una señal puede fallar por su modalidad; un lugar, por su relación con el primer paso; el testigo, por su transportabilidad; la regla, por su momento; o el sistema, por su carga total. No corresponde convertir un fallo local en una conclusión sobre toda materialidad.
 
+## 9.6 Resultado del desarrollo estructural
+
+La dirección seleccionada se tradujo a una arquitectura de interacción antes de cerrar su forma. Este paso evita que la propuesta dependa de una imagen única del objeto y permite examinar qué debe comprender, decidir y recuperar la persona en cada momento. El ciclo quedó organizado en tres interacciones principales:
+
+1. **Formular y preparar una intención:** registrar una intención, concretar su primer paso, seleccionar una condición provisional y revisar la configuración.
+2. **Vincular, situar, probar y armar:** asociar el testigo correcto, ubicarlo junto al primer paso, comprobar el pulso en ese contexto y armar el ciclo explícitamente.
+3. **Esperar, recibir y cerrar:** mantener la regla durante su vigencia, emitir un único pulso cuando exista una orden válida y permitir que la persona cierre, ignore, silencie o recupere un fallo técnico.
+
+Nueve marcos sintetizan la ruta principal, tres por interacción. Una segunda capa amplía esa síntesis a 35 estados para comprobar permisos, salidas voluntarias, enlace, batería, vencimiento, cambio de lugar, recuperación y rearme. La expansión no agrega funciones: vuelve visibles las condiciones necesarias para que el ciclo sea comprensible y no confunda una decisión personal con un error técnico.
+
+Los wireframes se desarrollaron en baja o media fidelidad. Su jerarquía y contenido son resultados proyectuales; su estilo, dimensiones de interfaz y componentes gráficos no constituyen una identidad final. Tampoco demuestran comprensión, accesibilidad o factibilidad. La cobertura completa se resume en el Anexo D y funciona como base para prototipos posteriores.
+
 # 10. Sistema Relevo
 
 ## 10.1 Definición canónica
@@ -742,7 +756,7 @@ La privacidad también incluye quién puede leer la intención en el teléfono y
 
 ## 10.7 Alcance de plataforma
 
-Android se selecciona como única plataforma del prototipo técnico integrado por razones de capacidad y alcance, no por una superioridad universal. `UsageStatsManager` permite consultar historial y estadísticas de uso cuando la persona concede una autorización especial, mientras las interfaces de Android para dispositivos asociados y BLE ofrecen rutas documentadas para comunicarse con un periférico cuando la aplicación no permanece visible. Estas capacidades permiten reunir en un entorno acotado la observación de una condición autorizada y el enlace con el testigo. No garantizan fiabilidad: permisos, proceso, restricciones de segundo plano, batería, desconexiones y diferencias entre dispositivos deberán probarse en P3 (Google, s. f.-a, s. f.-b, s. f.-c).
+Android se selecciona como única plataforma del prototipo técnico integrado por razones de capacidad y alcance, no por una superioridad universal. `UsageStatsManager` permite consultar historial y estadísticas de uso cuando la persona concede una autorización especial, mientras las interfaces de Android para dispositivos asociados y BLE ofrecen rutas documentadas para comunicarse con un periférico cuando la aplicación no permanece visible. Estas capacidades permiten reunir en un entorno acotado la observación de una condición autorizada y el enlace con el testigo. No garantizan fiabilidad: permisos, proceso, restricciones de segundo plano, batería, desconexiones y diferencias entre dispositivos deberán probarse en P3 (Google, s. f.-a, s. f.-b, s. f.-d).
 
 La web se descarta como capa operativa de este prototipo. Puede resolver configuración y comunicarse con BLE en ciertos navegadores, pero Web Bluetooth exige autorización e interacción iniciada por la persona, no posee compatibilidad uniforme y WebKit declara que no implementa esta API. Una dirección web ampliaría el acceso a la interfaz; sin embargo, las fuentes consultadas no permiten sostener una operación uniforme del sistema completo ni identifican una capacidad web equivalente a `UsageStatsManager` (Chrome for Developers, s. f.; WebKit, s. f.).
 
@@ -754,7 +768,7 @@ iPhone también queda fuera del alcance inicial. Su integración es plausible, p
 
 La arquitectura mínima de Relevo debe permitir estudiar una relación, no resolver todos los contextos. Incluye una aplicación Android, una aplicación seleccionada, una intención, un primer paso, una condición observable pendiente, una ventana armada, un testigo físico situado, un patrón de señal y una salida. La activación inicial puede ser simulada por el investigador. En esta etapa no son requisitos la automatización, el enlace BLE, la batería ni la producción.
 
-La arquitectura aspiracional podría consultar estadísticas de uso mediante UsageStatsManager, funcionar con la aplicación en segundo plano, mantener un enlace BLE, informar batería, recuperar estados y operar en distintos fabricantes. UsageStatsManager expone información de uso de aplicaciones bajo un permiso especial; no detecta automatismo ni garantiza una activación inmediata (Google, s. f.-c). La ejecución BLE en segundo plano depende de versión, fabricante, energía y configuración (Google, s. f.-a; Google, s. f.-b). La arquitectura aspiracional es una hipótesis técnica.
+La arquitectura aspiracional podría consultar estadísticas de uso mediante UsageStatsManager, funcionar con la aplicación en segundo plano, mantener un enlace BLE, informar batería, recuperar estados y operar en distintos fabricantes. UsageStatsManager expone información de uso de aplicaciones bajo un permiso especial; no detecta automatismo ni garantiza una activación inmediata (Google, s. f.-d). La ejecución BLE en segundo plano depende de versión, fabricante, energía y configuración (Google, s. f.-a; Google, s. f.-b). La arquitectura aspiracional es una hipótesis técnica.
 
 **Tabla 7**
 
@@ -872,6 +886,14 @@ El criterio preventivo de destellos de las Pautas de Accesibilidad para el Conte
 
 El procesamiento local limita la circulación, pero no equivale a privacidad absoluta. La investigación puede registrar eventos con consentimiento; el producto cotidiano no debe inferir ni guardar si la persona obedeció.
 
+## 11.9 Cobertura de interacciones y recuperación
+
+La arquitectura detallada contiene 35 estados agrupados en cinco familias: configuración; vinculación y prueba física; armado; espera y señal; cierre y recuperación. La ruta principal utiliza los estados 01, 05, 08, 11, 14, 16, 20, 23 y 25. Los restantes explican validaciones previas, decisiones de salida, fallos técnicos o estados límite. Esta distinción impide que cada contingencia se convierta en una nueva función o que el recorrido normal exija atención permanente al teléfono.
+
+Los estados 23 y 24 cambian deliberadamente de soporte. El primero representa el pulso en la situación física donde se encuentra el primer paso; el segundo registra que continuar, ignorar, silenciar o iniciar la actividad son respuestas posibles. No son pantallas del testigo ni evidencias de que el sistema observe la conducta. La aplicación reaparece cuando la persona necesita configurar, comprender un estado técnico o recuperar el control.
+
+La cobertura establece cuatro reglas de cierre. Primero, una orden expirada no produce una señal tardía. Segundo, un cambio de lugar obliga a repetir la prueba antes de armar. Tercero, una pérdida de vínculo o un reinicio no activa un rearme automático. Cuarto, eliminar, desarmar o cambiar de intención son salidas legítimas. El Anexo D presenta la matriz completa y permite relacionar cada estado con su decisión principal.
+
 # 12. Producción, factibilidad y modelo de gestión
 
 ## 12.1 Factibilidad como cadena de preguntas
@@ -923,7 +945,7 @@ No se fija precio. La cifra de una unidad no puede multiplicarse para inferir pr
 
 ## 12.6 Android, BLE y cumplimiento
 
-UsageStatsManager puede exponer eventos de paquetes bajo un permiso especial, pero no detecta estados subjetivos ni garantiza tiempo real (Google, s. f.-c). Companion Device Pairing puede apoyar el vínculo cercano, aunque no crea por sí solo una conexión persistente (Google, s. f.-b). Las restricciones de ejecución BLE en segundo plano dependen de versión y fabricante (Google, s. f.-a). Las aplicaciones que requieran servicios en primer plano deben revisar los requisitos de distribución de Android (Google Play, s. f.).
+UsageStatsManager puede exponer eventos de paquetes bajo un permiso especial, pero no detecta estados subjetivos ni garantiza tiempo real (Google, s. f.-d). Companion Device Pairing puede apoyar el vínculo cercano, aunque no crea por sí solo una conexión persistente (Google, s. f.-b). Las restricciones de ejecución BLE en segundo plano dependen de versión y fabricante (Google, s. f.-a). Las aplicaciones que requieran servicios en primer plano deben revisar los requisitos de distribución de Android (Google Play, s. f.).
 
 Android es una plataforma inicial de prototipo. No se presenta compatibilidad universal, cobertura de fabricantes ni confiabilidad alcanzada. La integración deberá probar permisos, pantalla bloqueada, aplicación en segundo plano, cambio de aplicación, reinicio, batería, reconexión y vencimiento.
 
@@ -1028,7 +1050,7 @@ Las decisiones serán formativas y comparativas, no una suma de puntuaciones. Un
 
 La investigación delimita una situación, no un diagnóstico general: una actividad digital puede continuar cuando una intención alternativa ya fue reconocida o valorada, pero esa misma actividad puede ser elegida, significativa, relacional o reparadora. Por eso la duración, la aplicación y la presencia del teléfono no bastan para decidir una intervención. El usuario principal y el usuario límite son patrones situacionales, no identidades demográficas.
 
-La contribución alcanzada hasta aquí es una formulación investigable de esa tensión y una arquitectura que distribuye significado entre aplicación, testigo físico situado, lugar y persona. La evidencia no permite afirmar que Relevo mejore recuerdo, ejecución, autonomía, bienestar, adopción o continuidad de una intención. Tampoco permite sostener todavía la condición Android/BLE, el costo, la producción ni la superioridad del objeto frente a una notificación.
+La contribución alcanzada hasta aquí es una formulación investigable de esa tensión y una arquitectura que distribuye significado entre aplicación, testigo físico situado, lugar y persona. El desarrollo estructural permite describir la propuesta como un ciclo coherente de configuración, asociación, señal y recuperación, con tres interacciones principales, nueve marcos de síntesis y 35 estados diferenciados. Este resultado organiza lo que debe probarse; no demuestra que la experiencia sea comprensible o valiosa. La evidencia no permite afirmar que Relevo mejore recuerdo, ejecución, autonomía, bienestar, adopción o continuidad de una intención. Tampoco permite sostener todavía la condición Android/BLE, el costo, la producción ni la superioridad del objeto frente a una notificación.
 
 ## 14.2 Contribuciones actuales y aporte esperado
 
@@ -1041,6 +1063,7 @@ La contribución alcanzada hasta aquí es una formulación investigable de esa t
 | Investigación | Revisión de literatura y mercado, más ocho entrevistas reales codificadas P1–P8. | Delimita episodios, variaciones y condiciones de no intervención; no estima prevalencia. |
 | Formulación | Problema, pregunta, usuario principal, usuario límite e hipótesis H1–H4. | Hace evaluable la relación entre intención, señal, lugar y autonomía; no la valida. |
 | Arquitectura | Sistema phygital de aplicación, testigo físico situado, lugar manual y persona. | Organiza dependencias y puertas; no demuestra factibilidad integrada. |
+| Desarrollo estructural | Tres interacciones, nueve marcos de síntesis y una cobertura de 35 estados. | Hace visibles recorrido, salidas y fallos; no constituye una prueba de uso. |
 | Método | Ruta P0–P4 y comparación con notificación. | Define qué evidencia falta y cuándo detener una dirección. |
 | Artefacto esperado | Testigo situado, señal no textual y salida autónoma, si las pruebas lo sostienen. | Aporte eventual; si falla, debe reformularse o reemplazarse la dirección física, nunca reducir Relevo a una aplicación. |
 
@@ -1050,7 +1073,7 @@ La contribución alcanzada hasta aquí es una formulación investigable de esa t
 
 La muestra fue reclutada por referencias y la edad fue el único criterio común confirmado; el rango observado fue de 19 a 27 años y P6 tiene 27 años. No se dispone de duración individual, audio ni notas manuscritas originales. El consentimiento informado fue oral, pero no se conserva el texto exacto de la explicación entregada. La transcripción posterior fue regularizada y anonimizada, por lo que se privilegian paráfrasis. Q13 trató In(Visible), no Relevo.
 
-No se observó sistemáticamente el hogar, sus superficies, convivientes, ruido, distancias, privacidad o desplazamiento del objeto. No se han ejecutado P0–P4 ni pruebas de accesibilidad, convivencia, privacidad doméstica, autonomía, adopción o disposición de pago. Android, BLE, activación, enlace, batería, vencimiento, costos, producción, reparación y cumplimiento siguen siendo hipótesis, metas o pendientes según la sección correspondiente. La planificación económica de prototipo permanece en CLP 59.000–107.000 no cotizados; no constituye costo de producción ni precio. La interpretación no tuvo un segundo codificador independiente. Las referencias de mercado describen funciones y afirmaciones públicas, no eficacia de Relevo.
+No se observó sistemáticamente el hogar, sus superficies, convivientes, ruido, distancias, privacidad o desplazamiento del objeto. No se han ejecutado P0–P4 ni pruebas de accesibilidad, convivencia, privacidad doméstica, autonomía, adopción o disposición de pago. Los wireframes estructuran recorridos posibles, pero no demuestran comprensión, preferencia, desempeño o valor. Android, BLE, activación, enlace, batería, vencimiento, costos, producción, reparación y cumplimiento siguen siendo hipótesis, metas o pendientes según la sección correspondiente. La planificación económica de prototipo permanece en CLP 59.000–107.000 no cotizados; no constituye costo de producción ni precio. La interpretación no tuvo un segundo codificador independiente. Las referencias de mercado describen funciones y afirmaciones públicas, no eficacia de Relevo.
 
 ## 14.4 Próximos pasos por dependencia
 
@@ -1060,7 +1083,7 @@ No se observó sistemáticamente el hogar, sus superficies, convivientes, ruido,
 4. Resolver en P2 canal, intensidad, salida, convivencia y accesibilidad situada; no declarar universalidad.
 5. Probar en P3 la condición de activación, Android/BLE y fallos previsibles; solo entonces definir los parámetros técnicos necesarios.
 6. Establecer el número de participantes, la duración, el reclutamiento y el contexto de P4; después estimar producción, mantenimiento y costos con cotizaciones reales.
-7. Integrar resultados, contraejemplos y decisiones en la memoria final. Si ninguna capa física aporta un valor específico, volver a investigación de diseño y sustituir la dirección física sin convertir Relevo en una aplicación aislada.
+7. Actualizar este cierre con resultados, contraejemplos y decisiones. Si ninguna capa física aporta un valor específico, volver a investigación de diseño y sustituir la dirección física sin convertir Relevo en una aplicación aislada.
 
 # Referencias
 
@@ -1096,9 +1119,9 @@ Google. (s. f.-a). *Communicate in the background*. Android Developers. Recupera
 
 Google. (s. f.-b). *Companion device pairing*. Android Developers. Recuperado el 24 de agosto de 2026, de https://developer.android.com/develop/connectivity/bluetooth/companion-device-pairing
 
-Google. (s. f.-c). *UsageStatsManager*. Android Developers. Recuperado el 24 de agosto de 2026, de https://developer.android.com/reference/android/app/usage/UsageStatsManager
+Google. (s. f.-c). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Recuperado el 24 de agosto de 2026, de https://support.google.com/pixelphone/answer/9137850?hl=en
 
-Google. (s. f.-d). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Recuperado el 24 de agosto de 2026, de https://support.google.com/pixelphone/answer/9137850?hl=en
+Google. (s. f.-d). *UsageStatsManager*. Android Developers. Recuperado el 24 de agosto de 2026, de https://developer.android.com/reference/android/app/usage/UsageStatsManager
 
 Google Play. (s. f.). *Foreground service requirements for apps targeting Android 14 or higher*. Google Play Console Help. Recuperado el 24 de agosto de 2026, de https://support.google.com/googleplay/android-developer/answer/17105854
 
@@ -1222,6 +1245,52 @@ Esta jerarquía impide convertir una fuente, una interpretación o una intenció
 
 En todas las puertas el número de participantes, la duración y el reclutamiento del prototipo permanecen pendientes. El consentimiento y el registro se fijarán antes de la aplicación. Ninguna puerta mide eficacia poblacional ni autoriza una aplicación sola como sustituto de Relevo.
 
+## Anexo D. Cobertura estructural del ciclo
+
+**Tabla D1**
+
+*Estados de interacción y decisión principal*
+
+| N.º | Familia | Estado | Decisión o respuesta principal |
+| ---: | --- | --- | --- |
+| 01 | Configuración | Sin configurar | Crear una intención. |
+| 02 | Configuración | Datos incompletos | Completar o corregir los datos mínimos. |
+| 03 | Configuración | Permiso requerido | Revisar el alcance del permiso o cambiar la condición. |
+| 04 | Configuración | Permiso no concedido | Abrir ajustes, cambiar la condición o salir. |
+| 05 | Configuración | Revisión | Editar o continuar para situar el testigo. |
+| 06 | Configuración | Salida voluntaria | Guardar, descartar o seguir editando. |
+| 07 | Vinculación y prueba | Buscando testigo | Esperar, reintentar o cancelar. |
+| 08 | Vinculación y prueba | Elegir y confirmar testigo | Vincular el dispositivo correcto. |
+| 09 | Vinculación y prueba | Testigo incorrecto o no reconocido | Volver a buscar. |
+| 10 | Vinculación y prueba | Batería baja | Cargar o posponer. |
+| 11 | Vinculación y prueba | Probar lugar | Emitir un pulso de prueba. |
+| 12 | Vinculación y prueba | Señal no percibida | Ajustar o reubicar y volver a probar. |
+| 13 | Vinculación y prueba | Señal intrusiva | Reducir, cambiar el lugar o no armar. |
+| 14 | Vinculación y prueba | Listo para armar | Continuar al armado, volver a probar o salir. |
+| 15 | Armado | Armado en curso | Esperar confirmación o cancelar. |
+| 16 | Armado | Armado confirmado | Dejar el sistema en espera o desarmar. |
+| 17 | Armado | Confirmación ambigua o fallo | Reintentar, revisar vínculo o cancelar. |
+| 18 | Armado | Desarmado voluntario | Cerrar o volver a preparar. |
+| 19 | Armado | Edición durante ciclo activo | Conservar el ciclo o desarmar antes de editar. |
+| 20 | Espera y señal | Armado en espera | Consultar estado o desarmar. |
+| 21 | Espera y señal | Condición cumplida y orden válida | Enviar la orden vigente al testigo. |
+| 22 | Espera y señal | Orden expirada | Cerrar sin pulso o preparar otro ciclo. |
+| 23 | Espera y señal | Pulso físico activo | Percibir y decidir libremente. |
+| 24 | Espera y señal | Respuesta al pulso | Continuar, ignorar, silenciar o iniciar la actividad. |
+| 25 | Cierre y recuperación | Cierre decidido | Terminar el ciclo sin registrar cumplimiento. |
+| 26 | Cierre y recuperación | Intención cambiada | Cerrar o reformular. |
+| 27 | Cierre y recuperación | Permiso revocado | Recuperar permiso, desarmar o cerrar. |
+| 28 | Cierre y recuperación | Restricción en segundo plano | Ajustar la restricción o cerrar. |
+| 29 | Cierre y recuperación | Pérdida de vínculo BLE | Reconectar, reintentar o cerrar. |
+| 30 | Cierre y recuperación | Testigo movido | Repetir la prueba de lugar. |
+| 31 | Cierre y recuperación | Batería crítica | Cargar, desarmar o cerrar. |
+| 32 | Cierre y recuperación | Reinicio del testigo | Verificar vínculo y repetir la prueba antes de armar. |
+| 33 | Cierre y recuperación | Vencimiento sin activación | Cerrar o preparar un nuevo ciclo. |
+| 34 | Cierre y recuperación | Rearme explícito | Revisar nuevamente antes de continuar al armado. |
+| 35 | Cierre y recuperación | Eliminar configuración | Confirmar eliminación o cancelar. |
+
+*Nota.* La tabla documenta cobertura de diseño. Los estados no equivalen a pantallas obligatorias ni a comportamientos observados. La ruta principal y las recuperaciones deberán simplificarse o modificarse según los resultados de P0–P4.
+
 # Registro de cambios (disclaimer)
 
 **Fecha:** 24 de agosto de 2026.
@@ -1249,3 +1318,7 @@ En todas las puertas el número de participantes, la duración y el reclutamient
 **25 de agosto de 2026 — Alcance Android.** Se añadió una comparación explícita entre Android, web e iPhone y se cerró Android como única plataforma del prototipo técnico integrado. Antes, Android figuraba como una ruta provisional sin justificación comparativa; ahora se fundamenta por capacidades nativas y concentración de recursos. Web se descarta como capa operativa e iPhone queda fuera del alcance inicial, sin declararlos inviables para expansiones futuras. Se añadieron las fuentes oficiales correspondientes; la condición de activación y el desempeño permanecen pendientes.
 
 **Archivos afectados.** Las intervenciones del 25 de agosto modifican `08_memoria/memoria-vigente-v2.md`, sincronizan `08_memoria/resumen-vigente-proyecto.md` y actualizan la documentación asociada en `06_desarrollo_y_factibilidad` y `09_decisiones`.
+
+**25 de agosto de 2026 — Cierre editorial e incorporación del desarrollo estructural.** Se actualizó el estado del proyecto y se incorporaron como resultados de diseño las tres interacciones principales, los nueve marcos de síntesis y la cobertura de 35 estados. Antes, la memoria describía flujos y estados mínimos, pero no registraba el desarrollo exhaustivo realizado posteriormente ni distinguía sus soportes. Se añadieron los apartados 9.6 y 11.9, la Tabla D1, una fila de contribución estructural y límites explícitos sobre el valor probatorio de los wireframes. También se reemplazó en la ficha la formulación negativa de la tesis por su definición funcional mediante pulso ambiental y testigo situado. El documento queda cerrado editorialmente para el estado real del proyecto; no se agregaron resultados de prototipo, preferencias, factibilidad o eficacia inexistentes.
+
+**25 de agosto de 2026 — Corrección APA de obras sin fecha de Google.** Se reordenaron alfabéticamente `Manage how you spend time...` y `UsageStatsManager`, y se actualizaron sus sufijos de `s. f.-c/d` en el cuerpo. Antes, los sufijos seguían el orden de incorporación de las fuentes y no el orden alfabético de títulos requerido para obras del mismo autor sin fecha. El cambio es exclusivamente bibliográfico y no modifica la argumentación técnica ni proyectual.

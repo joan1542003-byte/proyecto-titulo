@@ -6,9 +6,10 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos vigentes
 
-- [Memoria integral v2 de Relevo](memoria-vigente-v2.md): documento académico activo.
+- [Memoria de Relevo — cierre editorial vigente](memoria-vigente-v2.md): documento académico activo y completo para el estado real del proyecto.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 - [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
+- [Auditoría final editorial del 25 de agosto](auditoria-final-editorial-2026-08-25.md): control posterior a la incorporación de los 35 estados.
 - [Matriz histórica de encargos](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md): requisitos acumulados, vigencia y trazabilidad de estructura.
 - [Memoria v1](memoria-vigente.md): antecedente preservado; no gobierna la formulación actual.
 - [Matriz de incorporación del feedback E15](matriz-incorporacion-feedback-e15.md)
@@ -50,6 +51,20 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-25 — Cierre editorial de la memoria activa
+
+- **Cambio:** se declaró la memoria v2 como cierre editorial del estado documentado y se incorporó la arquitectura estructural de 35 estados.
+- **Versión anterior:** la v2 estaba activa y auditada, pero no contenía el desarrollo de interacción producido posteriormente.
+- **Motivo:** cerrar la narrativa de investigación y diseño sin presentar los wireframes como validación.
+- **Alcance:** el archivo continúa usando el nombre histórico `memoria-vigente-v2.md`; debe reabrirse cuando existan resultados de P0–P4.
+
+### 2026-08-25 — Auditoría final posterior a wireframes
+
+- **Cambio:** se enlazó una auditoría editorial independiente de la ampliación estructural.
+- **Versión anterior:** el índice remitía únicamente a la auditoría rectora previa al desarrollo de 35 estados.
+- **Motivo:** separar el dictamen original de la verificación final del documento ampliado.
+- **Alcance:** el nuevo control no agrega evidencia ni reemplaza las pruebas P0–P4.
 
 ### 2026-08-24 — Alineación con encargos y resumen vigente
 
