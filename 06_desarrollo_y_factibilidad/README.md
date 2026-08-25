@@ -24,9 +24,20 @@ Documentar la capa de desarrollo que puede no aparecer completa en la memoria, p
 
 Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente técnica y condiciones de cálculo. Los costos de prototipo, producción y precio de venta deben permanecer separados.
 
+## Documentación vigente
+
+- [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
+
 ---
 
 ## Registro de cambios
+
+### 2026-08-25 — Plataforma inicial documentada
+
+- **Cambio:** se enlazó la justificación comparativa de Android como única plataforma del primer prototipo técnico integrado.
+- **Versión anterior:** el directorio mencionaba arquitectura Android, pero no documentaba por qué se descartaban web e iPhone en esta etapa.
+- **Motivo:** separar una decisión de alcance de una afirmación de superioridad o compatibilidad universal.
+- **Alcance:** la condición de activación y el desempeño técnico permanecen pendientes de P3.
 
 ### 2026-08-23 — Creación
 

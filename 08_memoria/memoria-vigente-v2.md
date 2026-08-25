@@ -660,7 +660,9 @@ Luz, sonido y vibración son variables de prueba. La luz puede depender de líne
 | --- | --- | --- |
 | Sistema phygital | Mantener | La pregunta exige relación entre aplicación, objeto, lugar y persona. |
 | Testigo físico situado | Mantener | Permite investigar la relación entre intención, primer paso, lugar y pulso ambiental. |
-| Aplicación Android | Mantener provisionalmente | Permite estudiar una plataforma concreta sin prometer cobertura universal. |
+| Aplicación Android | Mantener para el prototipo inicial | Reúne capacidades nativas de consulta autorizada de uso y comunicación BLE en un único entorno de prueba. |
+| Aplicación web | Descartar como capa operativa inicial | La distribución mediante URL no asegura compatibilidad BLE uniforme; las fuentes consultadas no identifican una capacidad equivalente a `UsageStatsManager`. |
+| Aplicación iOS | Fuera del alcance inicial | Su integración es plausible, pero requiere una segunda arquitectura nativa y autorizaciones propias antes de validar el aporte del sistema. |
 | Lugar manual | Mantener provisionalmente | La asociación pertenece a la persona, no a una detección automática. |
 | Una intención y un primer paso | Mantener provisionalmente | Reduce ambigüedad y carga inicial. |
 | Cuna o base | Descartar provisionalmente | No es necesaria para la primera pregunta y agrega piezas. |
@@ -737,6 +739,14 @@ La propuesta excluye cuentas, servicios en nube, geolocalización, micrófono, h
 Los datos posibles son intención, aplicación seleccionada, condición, ventana, identificador del testigo, batería, permisos y errores. Cada dato requiere propósito, almacenamiento, retención, eliminación y exposición definidos. El testigo no recibe el texto de la intención ni funciona como localizador.
 
 La privacidad también incluye quién puede leer la intención en el teléfono y qué revela una señal en un espacio compartido. La autonomía exige que la persona entienda el estado y pueda recuperar el control. Un botón de apagado no basta si el sistema no explica cuándo la señal está armada o si la persona siente que cambiar de intención equivale a fallar.
+
+## 10.7 Alcance de plataforma
+
+Android se selecciona como única plataforma del prototipo técnico integrado por razones de capacidad y alcance, no por una superioridad universal. `UsageStatsManager` permite consultar historial y estadísticas de uso cuando la persona concede una autorización especial, mientras las interfaces de Android para dispositivos asociados y BLE ofrecen rutas documentadas para comunicarse con un periférico cuando la aplicación no permanece visible. Estas capacidades permiten reunir en un entorno acotado la observación de una condición autorizada y el enlace con el testigo. No garantizan fiabilidad: permisos, proceso, restricciones de segundo plano, batería, desconexiones y diferencias entre dispositivos deberán probarse en P3 (Google, s. f.-a, s. f.-b, s. f.-c).
+
+La web se descarta como capa operativa de este prototipo. Puede resolver configuración y comunicarse con BLE en ciertos navegadores, pero Web Bluetooth exige autorización e interacción iniciada por la persona, no posee compatibilidad uniforme y WebKit declara que no implementa esta API. Una dirección web ampliaría el acceso a la interfaz; sin embargo, las fuentes consultadas no permiten sostener una operación uniforme del sistema completo ni identifican una capacidad web equivalente a `UsageStatsManager` (Chrome for Developers, s. f.; WebKit, s. f.).
+
+iPhone también queda fuera del alcance inicial. Su integración es plausible, pero no está demostrada para Relevo. Apple ofrece marcos nativos para actividad de aplicaciones y sitios, así como Core Bluetooth para accesorios; incorporarlos exigiría una segunda implementación, autorizaciones y restricciones propias. El proyecto prioriza demostrar primero la relación intención–lugar–testigo en una arquitectura Android. Web e iOS solo se reconsiderarán después de validar el aporte físico y evaluar recursos, privacidad y factibilidad de expansión (Apple Developer, s. f.-a, s. f.-b, s. f.-c).
 
 # 11. Arquitectura de experiencia y flujos
 
@@ -1056,6 +1066,12 @@ No se observó sistemáticamente el hogar, sus superficies, convivientes, ruido,
 
 Apple. (s. f.). *Get started with Screen Time on iPhone*. Recuperado el 24 de agosto de 2026, de https://support.apple.com/en-ie/guide/iphone/iphb0c7313c9/ios
 
+Apple Developer. (s. f.-a). *Core Bluetooth*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/CoreBluetooth
+
+Apple Developer. (s. f.-b). *Device Activity*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/DeviceActivity
+
+Apple Developer. (s. f.-c). *Family Controls App and Website Usage*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls.app-and-website-usage
+
 Biedermann, D., Schneider, J. y Drachsler, H. (2021). Digital self-control interventions for distracting media multitasking: A systematic review. *Journal of Computer Assisted Learning, 37*(5), 1217–1231. https://doi.org/10.1111/jcal.12581
 
 Brick LLC. (s. f.-a). *Brick: Take back your time*. Recuperado el 24 de agosto de 2026, de https://getbrick.com/
@@ -1063,6 +1079,8 @@ Brick LLC. (s. f.-a). *Brick: Take back your time*. Recuperado el 24 de agosto d
 Brick LLC. (s. f.-b). *Brick Zone*. Recuperado el 24 de agosto de 2026, de https://getbrick.com/pages/brick-zone
 
 Chiu, G. y Gilbert, S. J. (2024). Influence of the physical effort of reminder-setting on strategic offloading of delayed intentions. *Quarterly Journal of Experimental Psychology, 77*(6), 1295–1311. https://doi.org/10.1177/17470218231199977
+
+Chrome for Developers. (s. f.). *Communicating with Bluetooth devices over JavaScript*. Recuperado el 25 de agosto de 2026, de https://developer.chrome.com/docs/capabilities/bluetooth
 
 de Segovia Vicente, D., Van Gaeveren, K., Murphy, S. L. y Vanden Abeele, M. M. P. (2024). Does mindless scrolling hamper well-being? Combining ESM and log-data to examine the link between mindless scrolling, goal conflict, guilt, and daily well-being. *Journal of Computer-Mediated Communication, 29*(1), zmad056. https://doi.org/10.1093/jcmc/zmad056
 
@@ -1143,6 +1161,8 @@ Texas Instruments. (2018). *DRV2605L: 2- to 5.2-V haptic driver for LRA and ERM 
 Unpluq. (s. f.). *Unpluq: Stop scrolling. Reduce distractions. Reduce screentime*. Recuperado el 24 de agosto de 2026, de https://www.unpluq.com/
 
 Waggoner, J., Lucky, S., Redick, S., Rizki, A. y Yu, J. C. (2026). Going beyond digital libraries: A literature review of phygital user experience research methods. *International Journal on Digital Libraries, 27*(1), Artículo 1. https://doi.org/10.1007/s00799-025-00436-6
+
+WebKit. (s. f.). *Tracking prevention in WebKit*. Recuperado el 25 de agosto de 2026, de https://webkit.org/tracking-prevention/
 
 World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Three flashes or below threshold*. Recuperado el 24 de agosto de 2026, de https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold
 
@@ -1226,4 +1246,6 @@ En todas las puertas el número de participantes, la duración y el reclutamient
 
 **25 de agosto de 2026 — Especialización derivada del estado del arte.** Se articuló explícitamente la cadena entre familias de respuesta existentes, límites observados, oportunidad y propuesta proyectual. Antes, medición, bloqueo, interrupción, separación y recuperación situada aparecían distribuidos entre los capítulos 7, 8 y 9; ahora fundamentan una especialización provisional única: recuperar una intención propia en el lugar donde puede comenzar. Se añadió la fuente primaria de kSafe para respaldar la familia de separación física y se distinguió pertinencia situacional de condición técnica. El cambio no atribuye eficacia a Relevo ni afirma novedad universal.
 
-**Archivos afectados.** Esta intervención académica modifica `08_memoria/memoria-vigente-v2.md` y sincroniza `08_memoria/resumen-vigente-proyecto.md`; la documentación de auditoría, mercado y gobernanza se actualiza por separado en el repositorio.
+**25 de agosto de 2026 — Alcance Android.** Se añadió una comparación explícita entre Android, web e iPhone y se cerró Android como única plataforma del prototipo técnico integrado. Antes, Android figuraba como una ruta provisional sin justificación comparativa; ahora se fundamenta por capacidades nativas y concentración de recursos. Web se descarta como capa operativa e iPhone queda fuera del alcance inicial, sin declararlos inviables para expansiones futuras. Se añadieron las fuentes oficiales correspondientes; la condición de activación y el desempeño permanecen pendientes.
+
+**Archivos afectados.** Las intervenciones del 25 de agosto modifican `08_memoria/memoria-vigente-v2.md`, sincronizan `08_memoria/resumen-vigente-proyecto.md` y actualizan la documentación asociada en `06_desarrollo_y_factibilidad` y `09_decisiones`.

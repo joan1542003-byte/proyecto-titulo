@@ -26,7 +26,7 @@ Están documentados el problema, marco teórico, ocho entrevistas, usuarios situ
 
 ## Qué cambió en esta actualización
 
-La memoria articula ahora una especialización derivada del estado del arte: mientras otras respuestas se concentran en medir, bloquear, interrumpir o separar, Relevo investiga cómo recuperar una intención propia en el lugar donde puede comenzar su primer paso. El testigo representa esa intención y emite un pulso ambiental. El mercado contiene antecedentes parciales, pero no se encontró una coincidencia integral dentro del corpus revisado; esto no demuestra novedad universal. El valor continúa siendo provisional y deberá demostrarse frente a una notificación equivalente.
+La memoria articula una especialización derivada del estado del arte: Relevo investiga cómo recuperar una intención propia en el lugar donde puede comenzar su primer paso. El mercado contiene antecedentes parciales, pero no se encontró una coincidencia integral dentro del corpus revisado; esto no demuestra novedad universal. Android quedó definido como la única plataforma del prototipo técnico integrado; la web se descartó como capa operativa e iPhone quedó fuera del alcance inicial. Esta selección concentra capacidades y recursos, pero no decide la condición de activación ni promete compatibilidad o desempeño universal. El valor físico continúa pendiente de comparación con una notificación equivalente.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
@@ -39,3 +39,5 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 **2026-08-24 — Síntesis de mercado.** Se añadió al resumen el resultado del estudio ampliado. Antes solo se informaba que el mercado estaba documentado; ahora se precisa que existen antecedentes parciales y que la diferencia de Relevo debe probarse comparativamente, sin afirmar novedad universal. La formulación y el funcionamiento del sistema no cambiaron.
 
 **2026-08-25 — Especialización de Relevo.** Se reemplazó el recuento acumulativo de cambios por una síntesis del nuevo eje argumental. Antes, el contraste con el mercado y la propuesta de valor aparecían como hallazgos relacionados pero separados; ahora se formula que Relevo se especializa provisionalmente en recuperar una intención propia en el lugar donde puede comenzar. No se modificaron el funcionamiento ni los pendientes de validación.
+
+**2026-08-25 — Plataforma inicial.** Se añadió al resumen la selección de Android y el descarte acotado de web e iPhone. Antes, Android figuraba como plataforma provisional sin una comparación explícita; ahora se define como único entorno del prototipo técnico integrado. Esta decisión no fija la activación ni excluye expansiones futuras.

@@ -288,9 +288,28 @@
 - **Consecuencia:** la notificación equivalente y el lugar neutro serán controles necesarios; si el testigo no aporta una diferencia comprensible, deberá reformularse la dirección física.
 - **Documento asociado:** [Estudio de mercado y antecedentes](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md).
 
+## D-031 — Android como única plataforma del prototipo inicial
+
+- **Fecha:** 2026-08-25
+- **Estado:** vigente; cierra el componente de plataforma de D-005
+- **Pregunta:** ¿la capa digital inicial debe desarrollarse en Android, web o iPhone?
+- **Decisión:** desarrollar el primer prototipo técnico integrado únicamente en Android; descartar la web como capa operativa y dejar iPhone fuera del alcance inicial.
+- **Fundamento:** Android reúne capacidades nativas para consultar actividad autorizada y comunicarse mediante BLE en un entorno único. La web no ofrece compatibilidad BLE uniforme para el sistema completo. La integración con iPhone es plausible, pero exige una segunda arquitectura nativa, autorizaciones y recursos propios antes de validar el aporte físico.
+- **Alternativas descartadas:** aplicación web como sistema operativo principal; desarrollo simultáneo para Android e iOS.
+- **Consecuencia:** P3 se documentará en un teléfono y versión Android concretos. La decisión no fija la condición de activación, no garantiza ejecución en segundo plano y no elimina futuras expansiones.
+- **Condición de revisión:** evidencia de valor físico y recursos suficientes para estudiar portabilidad después del prototipo inicial.
+- **Documento asociado:** [Decisión de plataforma inicial](../06_desarrollo_y_factibilidad/decision-plataforma-android.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — D-031
+
+- **Cambio:** se cerró Android como única plataforma del prototipo inicial y se registraron web e iPhone como alternativas descartadas para esta etapa.
+- **Versión anterior:** D-005 mencionaba Android como punto de partida provisional sin comparación técnica documentada.
+- **Motivo:** concentrar recursos en una arquitectura comprobable antes de validar portabilidad.
+- **Resultado:** la exclusión es de alcance, no una afirmación de imposibilidad técnica o una promesa de desempeño Android.
 
 ### 2026-08-24 — D-030
 
