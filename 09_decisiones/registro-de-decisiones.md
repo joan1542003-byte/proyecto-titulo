@@ -300,9 +300,27 @@
 - **Condición de revisión:** evidencia de valor físico y recursos suficientes para estudiar portabilidad después del prototipo inicial.
 - **Documento asociado:** [Decisión de plataforma inicial](../06_desarrollo_y_factibilidad/decision-plataforma-android.md).
 
+## D-032 — Ciclo mínimo y representación del Encargo 17
+
+- **Fecha:** 2026-08-25
+- **Estado:** vigente para estructura; sustituye D-018 y activa el trabajo pausado por D-020
+- **Decisión:** representar un ciclo compuesto por una intención, un primer paso, una condición observable provisional, un testigo situado y un único pulso. El armado se confirma provisionalmente mediante pulsación prolongada en el control físico; después del pulso, silencio, vencimiento o desarmado, el ciclo termina y solo puede rearmarse de forma explícita.
+- **Tres interacciones:** formular y preparar; situar, probar y armar; recibir el pulso y cerrar.
+- **Representación phygital:** la tercera interacción incluye un marco contextual del pulso físico. Android solo aporta espera, cierre y recuperación técnica; no sustituye el momento situado ni requiere consulta para interpretar la señal.
+- **Fundamento:** el recorrido debe ser conectable, no coercitivo y compatible con la memoria v2 y la pauta E17. Un cierre por ciclo evita repetición insistente y registro implícito de conducta.
+- **Límite:** gesto, condición, canal y forma permanecen como hipótesis sujetas a P0–P4; esta decisión no demuestra comprensión, accesibilidad, eficacia ni viabilidad técnica.
+- **Documento asociado:** [Preparación escrita de Encargo 17](../05_propuesta_phygital/preparacion-escrita-encargo-17.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — D-032
+
+- **Cambio:** se reactivó el Encargo 17 con un ciclo mínimo, tres interacciones conectadas y una representación explícita del pulso físico.
+- **Versión anterior:** D-018 proponía una tercera interacción técnica y D-020 mantenía los wireframes en pausa.
+- **Motivo:** la memoria v2 cerró la base conceptual necesaria; faltaba resolver armado, final de ciclo y centralidad del momento phygital.
+- **Resultado:** la estructura puede desarrollarse en Figma sin presentar decisiones provisionales como resultados validados.
 
 ### 2026-08-25 — D-031
 

@@ -23,17 +23,32 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 ## Documentos activos
 
+- [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
-- [Memoria vigente](../08_memoria/memoria-vigente.md)
+- [Memoria integral v2 vigente](../08_memoria/memoria-vigente-v2.md)
 
 ## Estado
 
-La formulación vigente es una hipótesis. El objeto no tiene pantalla. Los wireframes quedan pendientes hasta cerrar las preguntas de estructura.
+La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 quedó cerrado y listo para wireframes: formular y preparar; situar, probar y armar; recibir el pulso y cerrar. La condición, la señal y la forma física continúan sujetas a prototipado.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-25 — Encargo 17 listo para wireframes
+
+- **Cambio:** se enlazó la memoria integral v2 y se declaró cerrado el recorrido estructural de tres interacciones.
+- **Versión anterior:** el índice enlazaba la memoria v1 y mantenía los wireframes pendientes por preguntas de estructura.
+- **Motivo:** eliminar una fuente académica obsoleta y habilitar una entrega coherente con el ciclo vigente.
+- **Alcance:** el cierre permite estructurar la experiencia; no valida condición, señal, forma ni eficacia.
+
+### 2026-08-25 — Wireframes de Encargo 17
+
+- **Cambio:** se añadió la entrega documentada y el enlace al tablero editable de Figma.
+- **Versión anterior:** el directorio solo contenía la arquitectura previa a Figma.
+- **Motivo:** registrar el resultado, su correspondencia con la pauta y sus límites.
+- **Alcance:** nueve marcos de baja fidelidad; no constituye identidad visual ni validación.
 
 ### 2026-08-24 — Preparación escrita de Encargo 17
 

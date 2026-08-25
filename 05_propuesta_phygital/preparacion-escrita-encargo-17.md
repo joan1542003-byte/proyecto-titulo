@@ -1,153 +1,176 @@
 # Preparación escrita de Encargo 17
 
-## Decisión de alcance
+## Estado de preparación
 
-Los tres wireframes futuros corresponderán a momentos de la aplicación Android que coordinan una experiencia phygital. El testigo físico continúa sin pantalla. La tercera pantalla será un apoyo técnico provisional y no una superficie incorporada al objeto.
+Relevo cuenta con una base suficiente para desarrollar los wireframes del Encargo 17. La fuente académica activa es la [memoria integral v2](../08_memoria/memoria-vigente-v2.md). La entrega no fija eficacia, forma, materialidad, canal sensorial ni condición definitiva: traduce la arquitectura vigente a un recorrido estructural de baja fidelidad.
 
-## Interacción 1 — Configurar una intención
+## Ciclo mínimo representado
 
-**Estado:** respaldada por la memoria vigente.
+El recorrido se acota a una persona, una intención, un primer paso, una aplicación seleccionada, una condición observable provisional, un testigo situado y un pulso ambiental. La persona configura el ciclo en Android, sitúa y prueba el testigo, y confirma el armado mediante una pulsación prolongada en el control físico. Cuando la condición se cumple, el testigo emite un único pulso. El ciclo termina después de la señal, al silenciarse, al vencer o al desarmarse; nunca se rearma automáticamente ni registra cumplimiento.
+
+El armado físico es una decisión provisional de interacción para esta entrega. Permite que la última confirmación ocurra donde se situó el testigo y no demuestra que ese gesto sea comprensible, accesible o definitivo.
+
+## Recorrido conectado
+
+1. **Formular y preparar:** intención → primer paso → condición provisional → revisión.
+2. **Situar, probar y armar:** lugar elegido → prueba perceptiva → confirmación física del armado.
+3. **Recibir y cerrar:** espera → pulso situado → reposo o recuperación técnica.
+
+La salida de cada interacción habilita la siguiente. El teléfono organiza el significado y los estados técnicos; el testigo representa la intención en el lugar elegido y emite la señal; la persona interpreta y decide.
+
+## Interacción 1 — Formular y preparar una intención
 
 ### Objetivo
 
-Definir qué intención se desea mantener disponible, su primer paso y la condición aproximada de señal.
+Convertir una intención autoformulada en un ciclo comprensible antes de vincularla con el testigo y el lugar.
+
+### Marcos
+
+1. **Intención y primer paso:** campos para registrar la actividad y la acción concreta que puede iniciarla.
+2. **Condición del ciclo:** selección de aplicación, alternativa de condición observable y ventana; la condición mostrada es un ejemplo estructural, no una decisión validada.
+3. **Revisión:** síntesis editable y acción principal `Continuar para situar`.
 
 ### Información crítica
 
-Intención, primer paso, aplicación seleccionada, condición o ventana, modalidad, permiso de uso y vínculo con el testigo.
+Intención, primer paso, aplicación seleccionada, condición observable, ventana, alcance del permiso y estado de edición.
 
 ### Acción esperada
 
-Preparar y confirmar una regla local. Todavía no queda armada.
+Revisar que la intención y el primer paso sean reconocibles y continuar hacia la asociación física. El ciclo todavía no queda armado.
 
 ### Jerarquía
 
-1. Requisitos técnicos.
-2. Intención.
-3. Primer paso.
-4. Aplicación y condición.
-5. Modalidad.
-6. Confirmación y continuidad hacia la ubicación.
+1. Intención y primer paso.
+2. Condición y ventana.
+3. Alcance técnico del permiso.
+4. Revisión y continuidad.
 
-### Errores
+### Validaciones, errores y salida
 
-- Falta de permiso: pausar y dirigir a la configuración del sistema.
-- Falta de vínculo: permitir asociación o reintento.
-- Regla incompleta: identificar el campo faltante.
-- Condición no medible: explicar la limitación sin prometer detección subjetiva.
+- Campo incompleto: señalar qué falta sin interpretar la motivación.
+- Permiso ausente: explicar el alcance y abrir la configuración del sistema.
+- Condición no observable: impedir el armado técnico, no calificar la intención.
+- Salida voluntaria: permitir abandonar sin penalización y guardar borrador solo si la persona lo elige.
 
-### Leyenda
+### Leyenda para la entrega
 
-Esta interacción convierte una intención personal en una regla local.  
-La aplicación concentra el contenido porque el objeto no tiene pantalla ni muestra texto.  
-La jerarquía avanza desde la intención hacia la condición y la modalidad.  
-Al finalizar, la regla queda preparada para asociarse con un objeto y un lugar.
+Esta interacción transforma una intención propia en un ciclo configurable.
+La secuencia prioriza intención y primer paso antes de la condición técnica.
+Android conserva el significado y explica el permiso sin inferir el estado subjetivo.
+La revisión evita trasladar errores de contenido al momento de situar el testigo.
 
 ## Interacción 2 — Situar, probar y armar el testigo
 
-**Estado:** respaldada como interacción phygital; los controles exactos son provisionales.
-
 ### Objetivo
 
-Vincular la regla con un lugar y comprobar que la señal puede percibirse antes del armado.
+Crear una relación explícita entre intención, primer paso, lugar y señal antes de dejar el ciclo en espera.
+
+### Marcos
+
+1. **Situar:** instrucción para colocar el testigo junto al primer paso y declarar el lugar mediante texto; Android no detecta esa ubicación.
+2. **Probar el pulso:** estado de vínculo y batería, acción `Probar pulso` y respuesta `Lo percibí` o `Ajustar`.
+3. **Armar en el lugar:** Android informa que el ciclo está listo; la persona mantiene presionado el control físico y recibe confirmación técnica de estado armado.
 
 ### Información crítica
 
-Lugar elegido, vínculo, modalidad, resultado de prueba, batería, conexión y estado armado.
+Lugar elegido, intención asociada, estado del vínculo, batería, resultado de prueba, ventana y estado listo/armado.
 
 ### Acción esperada
 
-Situar el testigo, iniciar una prueba desde la aplicación, comprobar la señal y armar la regla.
+Situar el testigo, comprobar que la señal es perceptible y tolerable, y armar el ciclo de forma explícita desde el lugar elegido.
 
 ### Jerarquía
 
-1. Ubicación.
-2. Conexión y batería.
-3. Prueba.
-4. Confirmación perceptiva.
-5. Armado.
-6. Estado en espera.
+1. Relación con el lugar.
+2. Percepción y tolerancia de la prueba.
+3. Estado técnico indispensable.
+4. Confirmación física del armado.
 
-### Errores
+### Errores y salida
 
-- Desconexión: reintento acotado.
-- Señal no percibida: repetir y cambiar modalidad o lugar.
-- Batería insuficiente: no prometer una activación confiable.
-- Estado físico ambiguo: Android comunica armado o desarmado; el objeto no muestra instrucciones.
+- Testigo incorrecto o desconectado: detener el avance y permitir revincular.
+- Batería insuficiente: no permitir un armado que aparente fiabilidad.
+- Señal no percibida o intrusiva: ajustar canal, intensidad o lugar antes de continuar.
+- Armado ambiguo: mantener estado `Listo para armar` y ofrecer repetición guiada.
 
-### Leyenda
+### Leyenda para la entrega
 
-Esta interacción vincula la regla digital con el lugar donde la actividad puede comenzar.  
-La aplicación inicia la prueba, pero la percepción ocurre en el entorno físico.  
-El armado se realiza con el testigo sin pantalla y se confirma técnicamente en Android.  
-La estructura comprueba la asociación antes de dejar la regla en espera.
+Esta interacción vincula el ciclo digital con el lugar donde puede comenzar el primer paso.
+La prueba separa disponibilidad técnica de percepción y tolerancia.
+El armado físico confirma que la persona se encuentra junto al testigo situado.
+La asociación permanece manual: Android no detecta ni valida el lugar.
 
-## Interacción 3 — Estado y recuperación técnica
-
-**Estado:** hipótesis provisional para traducir el momento físico a una pantalla Android.
+## Interacción 3 — Recibir el pulso y cerrar el ciclo
 
 ### Objetivo
 
-Comprender si la regla está armada, en espera, terminada o detenida por un fallo técnico.
+Representar el momento principal de Relevo y cerrar el ciclo sin convertir la decisión posterior en cumplimiento.
+
+### Marcos
+
+1. **Espera:** estado Android resumido; permite desarmar, pero no exige mantener la aplicación abierta.
+2. **Momento phygital:** marco contextual del testigo emitiendo el pulso junto al primer paso. Las salidas válidas son iniciar, continuar, ignorar o silenciar; ninguna se registra.
+3. **Cierre o fallo:** estado Android disponible después, con ciclo terminado y rearme explícito; una variante alternativa del mismo marco muestra fallo técnico y descarta comandos vencidos. Los estados normal y de error no aparecen simultáneamente durante el uso.
 
 ### Información crítica
 
-Estado de la regla, conexión, batería, entrega o expiración del comando, retorno a reposo y ausencia de registro de cumplimiento.
+Estado armado, vigencia de la ventana, estado técnico de entrega, cierre del ciclo y acciones de desarmar, editar, eliminar o rearmar.
 
 ### Acción esperada
 
-En uso normal no se necesita una acción digital. Ante un fallo se puede reparar permiso, reintentar vínculo o armar nuevamente.
+Percibir e interpretar el pulso sin consultar el teléfono. La respuesta queda abierta. Android solo interviene después para comunicar cierre o recuperar un fallo técnico.
 
 ### Jerarquía
 
-1. Estado principal.
-2. Estado técnico.
-3. Explicación breve.
-4. Acción de recuperación, solo ante fallo.
-5. Nota de privacidad y autonomía.
+1. Pulso situado y relación con el primer paso.
+2. Decisión autónoma de la persona.
+3. Cierre del ciclo.
+4. Recuperación técnica excepcional.
 
-### Errores
+### Errores técnicos y salidas válidas
 
-- La señal no se reproduce si el comando perdió vigencia.
-- La reconexión solo se intenta dentro de la ventana válida.
-- Batería baja se informa como fallo técnico.
-- Silenciar o ignorar no se trata como error de usuario.
+- Comando vencido: descartar, informar y volver a reposo; no reproducir tarde.
+- Pérdida de enlace o batería: registrar fallo técnico sin atribuirlo a la persona.
+- Señal ignorada o silenciada: salida válida; no pertenece a los errores.
+- Rearmado: siempre explícito; nunca automático.
 
-### Leyenda
+### Leyenda para la entrega
 
-Esta pantalla comunica únicamente el estado técnico de una señal ejecutada físicamente.  
-El testigo sigue siendo el lugar principal de la señal y no incorpora pantalla.  
-La aplicación muestra conexión, batería y recuperación, pero no la conducta de la persona.  
-Si mirar el teléfono debilita el sistema, se reemplazará por una confirmación previa al armado.
+El pulso situado constituye el centro de esta interacción y ocurre fuera del teléfono.
+El lugar busca devolver la intención al contexto donde su primer paso puede comenzar.
+La persona puede iniciar, continuar, ignorar o silenciar sin ser evaluada.
+Android solo comunica el cierre del ciclo o un fallo técnico posterior.
 
-## Componentes textuales provisionales
+## Componentes que se etiquetarán
 
-Estado de Relevo; intención; primer paso; aplicación asociada; condición; modalidad; testigo vinculado; probar señal; armar Relevo; reintentar conexión; revisar permiso; regla terminada.
+Encabezado; progreso; campo de texto; selector; tarjeta de estado; aviso técnico; acción principal; acción secundaria; estado del testigo; control físico; pulso ambiental; conexión entre marcos; variante de error.
 
-## Decisiones cerradas para el futuro wireframing
+## Reglas de representación
 
-- No agregar pantalla al testigo.
-- No mostrar puntos, rachas, ranking ni cumplimiento.
-- No bloquear aplicaciones.
-- No preguntar qué ocurrió después de la señal.
-- No diseñar identidad visual en fidelidad estructural.
-- No presentar hipótesis técnicas como funciones validadas.
+- Máximo tres marcos por interacción.
+- Baja fidelidad, escala de grises y tipografía utilitaria Roboto; no constituye identidad visual.
+- La condición presentada se rotula como provisional.
+- El marco físico no contiene una interfaz de consulta instalada en el testigo.
+- No se incorporan bloqueo, puntos, rachas, historial de cumplimiento ni juicio sobre la respuesta.
+- Los fallos técnicos se distinguen de las decisiones de la persona.
+- El recorrido normal no exige consultar Android después del pulso.
 
-## Preguntas antes de Figma
+## Decisiones que permanecen abiertas después de la entrega
 
-1. ¿La tercera pantalla de estado cuenta como interacción principal o debe ser una prueba previa al armado?
-2. ¿El armado se confirma desde la aplicación, el botón físico o ambas superficies?
-3. ¿La regla termina tras una señal o vuelve a espera?
-4. ¿Qué condición operacional mínima se usará?
-5. ¿Qué información técnica es imprescindible sin inducir a revisar el teléfono?
+Condición de activación definitiva; canal, duración e intensidad del pulso; forma, materialidad y control final del testigo; gesto de salida; accesibilidad; convivencia; electrónica; costos reales y valor frente a una notificación equivalente. Estas decisiones requieren P0–P4 y no bloquean un wireframe estructural.
 
 ---
 
 ## Registro de cambios (disclaimer)
 
-### 2026-08-24 — Creación
+### 2026-08-25 — Cierre estructural para wireframes
 
-- **Cambio:** el flujo vigente se tradujo a tres fichas listas para estructurarse.
-- **Versión anterior:** las interacciones estaban dispersas entre mapas y memorias históricas.
-- **Motivo:** fundamentar la estructura desde la investigación.
-- **Alcance:** no se crearon pantallas; la tercera interacción y los controles siguen provisionales.
+- **Cambio:** se reemplazó la tercera interacción centrada en estado técnico por `Recibir el pulso y cerrar el ciclo`, cuyo centro es el momento físico situado.
+- **Versión anterior:** la tercera interacción era una pantalla Android provisional de estado y recuperación.
+- **Motivo:** representar el valor phygital de Relevo sin convertir Android en el producto completo.
+- **Cambio:** se cerró provisionalmente el armado mediante pulsación prolongada en el control físico y un único pulso por ciclo.
+- **Versión anterior:** el armado podía ocurrir en Android, en el testigo o en ambas superficies; el rearme no estaba resuelto.
+- **Motivo:** construir un recorrido coherente y comprobable para E17, manteniendo el gesto sujeto a evaluación.
+- **Cambio:** se sustituyeron las preguntas abiertas por decisiones de entrega y por una lista separada de variables que requieren prototipado.
+- **Versión anterior:** cinco preguntas impedían avanzar a Figma.
+- **Motivo:** distinguir bloqueos de estructura de decisiones que pueden permanecer como hipótesis.

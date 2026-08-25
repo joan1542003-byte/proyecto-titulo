@@ -23,13 +23,13 @@ La evaluación considera claridad, jerarquía, coherencia con el flujo, fundamen
 
 ### Petición vigente del autor
 
-La prioridad es actualizar y ordenar la memoria escrita antes de diseñar. Este ciclo produce arquitectura y contenido de las tres interacciones, pero no abre Figma ni crea wireframes visuales. La decisión respeta el orden investigación → memoria → flujo → estructura → visualidad.
+La memoria integral v2 y la arquitectura escrita ya fueron revisadas. La prioridad vigente es desarrollar el Encargo 17 en Figma y documentar la entrega, cerrando previamente solo las decisiones que bloqueen la estructura.
 
-El objeto físico de Relevo no incorpora pantalla. Ningún wireframe podrá insinuar una interfaz, menú, texto, historial o respuesta visual instalada en el testigo.
+El testigo físico representa una intención activa y emite un pulso ambiental situado. Ningún wireframe podrá insinuar una interfaz de consulta, menú, texto, historial o respuesta visual instalada en el testigo.
 
 ## Riesgo de interpretación
 
-La tercera interacción principal ocurre físicamente cuando el testigo emite una señal. Como la pauta solicita wireframes digitales, se preparará provisionalmente una pantalla Android de estado y recuperación técnica. No reemplaza la señal ni exige mirar el teléfono durante el uso normal. Antes de diseñarla debe verificarse que esta interpretación sea compatible con la expectativa docente; de lo contrario, la tercera pantalla será una confirmación previa al armado.
+La tercera interacción principal ocurre físicamente cuando el testigo emite una señal. Para mantener el carácter phygital, la entrega la representará mediante un marco contextual del pulso situado y pantallas Android auxiliares de espera, cierre o recuperación. La pauta exige construir digitalmente en Figma, pero no obliga a convertir cada interacción en una interfaz telefónica.
 
 ---
 
@@ -41,3 +41,10 @@ La tercera interacción principal ocurre físicamente cuando el testigo emite un
 - **Versión anterior:** solo estaba disponible como archivo local.
 - **Motivo:** separar obligaciones de la entrega y decisiones vigentes.
 - **Alcance:** no contiene wireframes ni visualidad.
+
+### 2026-08-25 — Activación de la entrega
+
+- **Cambio:** se reemplazó la pausa de Figma por el desarrollo activo del encargo y se resolvió el riesgo de la tercera interacción mediante un marco contextual phygital.
+- **Versión anterior:** se proponía una pantalla Android técnica y se exigía verificar su compatibilidad antes de diseñar.
+- **Motivo:** la memoria v2 ya ofrece base suficiente y el momento físico debe permanecer visible en la estructura.
+- **Alcance:** el documento conserva requisitos; no acredita validación del producto.
