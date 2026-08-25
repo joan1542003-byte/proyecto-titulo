@@ -30,7 +30,7 @@ La versión breve y mantenida después de cada actualización está en el [resum
 
 ## Estado actual
 
-**Línea activa: preparación del protocolo P0–P4 después del cierre del Encargo 17.**
+**Línea activa: [P0 — asociación intención–primer paso–lugar–señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
 
 La base metodológica del corpus quedó consolidada:
 
@@ -46,7 +46,7 @@ La base metodológica del corpus quedó consolidada:
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La reconstrucción y auditoría de la memoria se gestiona en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) quedó completada con los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria con cierre editorial vigente](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El cierre está respaldado por la [auditoría final editorial](08_memoria/auditoria-final-editorial-2026-08-25.md); la [auditoría rectora anterior](08_memoria/auditoria-sol-memoria-v2.md) conserva la trazabilidad de la reconstrucción y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md), su evolución estructural.
+La reconstrucción y auditoría de la memoria quedó completada en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria con cierre editorial vigente](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El cierre está respaldado por la [auditoría final editorial](08_memoria/auditoria-final-editorial-2026-08-25.md); la [auditoría rectora anterior](08_memoria/auditoria-sol-memoria-v2.md) conserva la trazabilidad de la reconstrucción y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md), su evolución estructural.
 
 ## Inicio para nuevas conversaciones
 
@@ -101,7 +101,7 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 - **Cambio:** se declaró la memoria activa como cierre editorial del estado real y se registró la cobertura estructural de 35 estados.
 - **Versión anterior:** la memoria v2 estaba auditada, pero el desarrollo posterior de wireframes permanecía documentado solo en la propuesta phygital.
 - **Motivo:** mantener sincronizados investigación, diseño y estado operativo del repositorio.
-- **Alcance:** el siguiente trabajo sustantivo continúa siendo P0; no se agregaron resultados de validación inexistentes.
+- **Alcance:** el siguiente trabajo sustantivo continúa en la Issue #8 dedicada a P0; no se agregaron resultados de validación inexistentes.
 
 ### 2026-08-25 — Cierre del Encargo 17
 

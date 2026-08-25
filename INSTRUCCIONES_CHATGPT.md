@@ -31,7 +31,7 @@ Su formulación provisional busca devolver una intención personal a la consider
 
 El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente la conducta ni reducir el tiempo de pantalla como un fin aislado. Su valor depende de apoyar una decisión autónoma mediante una señal configurable y no punitiva. Relevo seguirá siendo phygital y su interfaz objetual se basará en señales ambientales, no en una nueva superficie de consulta. Si el testigo transportable no aporta valor, se reformula o reemplaza la dirección física; no se convierte el proyecto en una aplicación aislada.
 
-La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El desarrollo estructural contiene tres interacciones, nueve marcos de síntesis y 35 estados; constituye diseño documentado, no validación. El siguiente paso sustantivo es preparar y ejecutar P0, la prueba de asociación con activación simulada. El Encargo 17 quedó completado.
+La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El desarrollo estructural contiene tres interacciones, nueve marcos de síntesis y 35 estados; constituye diseño documentado, no validación. La línea sustantiva activa es preparar y ejecutar P0 mediante la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). El Encargo 17 quedó completado.
 
 **In(Visible)** es una etapa histórica anterior. No debe confundirse con la definición vigente de Relevo ni presentarse como su nombre actual. Las memorias y entregas antiguas sirven para reconstruir la evolución, no para fijar automáticamente decisiones actuales.
 
@@ -136,7 +136,7 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 - **Cambio:** se registraron la cobertura de 35 estados, el cierre editorial de la memoria y la finalización del Encargo 17.
 - **Versión anterior:** las instrucciones describían la memoria v2 como activa y mantenían el Encargo 17 en pausa.
 - **Motivo:** permitir que nuevas conversaciones recuperen el estado posterior al desarrollo de wireframes sin confundirlo con validación.
-- **Alcance:** P0 continúa como siguiente línea sustantiva; condición, forma, señal y factibilidad empírica permanecen abiertas.
+- **Alcance:** P0 continúa como línea sustantiva activa en la Issue #8; condición, forma, señal y factibilidad empírica permanecen abiertas.
 
 ### 2026-08-24 — Lectura contextual por carpetas
 

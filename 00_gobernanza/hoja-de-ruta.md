@@ -2,7 +2,7 @@
 
 ## Estado general
 
-Relevo cuenta con una memoria integral auditada y cerrada editorialmente para el estado real del proyecto. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión, e incorpora el desarrollo estructural de tres interacciones, nueve marcos de síntesis y 35 estados. La línea sustantiva siguiente es preparar y ejecutar P0, la prueba de asociación con activación simulada. La migración documental general permanece en pausa; el Encargo 17 quedó completado.
+Relevo cuenta con una memoria integral auditada y cerrada editorialmente para el estado real del proyecto. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión, e incorpora el desarrollo estructural de tres interacciones, nueve marcos de síntesis y 35 estados. La línea sustantiva activa es [P0, la prueba de asociación con activación simulada](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
 
 El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuando sus preguntas, evidencia, límites y decisiones están registrados. El producto phygital no se desarrolla como una respuesta autónoma; debe poder reconstruirse desde la investigación.
 
@@ -99,7 +99,7 @@ Incluye arquitectura técnica, producción, materiales, componentes, costos, man
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** siguiente línea sustantiva; comenzar por el protocolo P0.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8); comenzar por el protocolo P0.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
@@ -129,7 +129,7 @@ Una fase se considera suficientemente desarrollada cuando:
 - **Cambio:** se registró la incorporación de tres interacciones, nueve marcos y 35 estados a la memoria, y se marcó el Encargo 17 como completado.
 - **Versión anterior:** la hoja declaraba la memoria v2 auditada, pero mantenía el desarrollo del Encargo 17 en pausa.
 - **Motivo:** sincronizar la secuencia de trabajo con los resultados documentales efectivamente producidos.
-- **Decisión derivada:** P0 continúa como única línea sustantiva siguiente; los wireframes no sustituyen su ejecución.
+- **Decisión derivada:** P0 continúa como única línea sustantiva activa y se gestiona en la Issue #8; los wireframes no sustituyen su ejecución.
 
 ### 2026-08-24 — Memoria v2 y transición a P0
 
