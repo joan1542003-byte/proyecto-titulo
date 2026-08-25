@@ -14,6 +14,8 @@ La entrega contiene exactamente tres interacciones y nueve marcos. Ocho marcos c
 
 Como complemento, el [anexo de cobertura de interacciones](anexo-cobertura-interacciones-encargo-17.md) registra y representa las 35 ramificaciones del ciclo mínimo en una [página separada del mismo archivo Figma](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4?node-id=13-2). El anexo permite revisar validaciones, salidas voluntarias, fallos técnicos y estados límite sin alterar el tablero exigido por la pauta ni presentarlos como funciones adicionales.
 
+Además, se produjeron [siete láminas detalladas de referencia](wireframes-referencia/README.md) para reconstruir manualmente los 35 estados en Figma. Estas imágenes amplían componentes y jerarquías, pero no forman parte de la cuenta evaluable de nueve marcos ni fijan el diseño final.
+
 ## Resumen del recorrido
 
 | Interacción | Marcos | Resultado |
@@ -83,6 +85,13 @@ El anexo mantiene cinco familias de estados: configuración; vinculación y prue
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — Láminas de referencia para Figma
+
+- **Cambio:** se enlazaron siete láminas detalladas que cubren los estados 01–35.
+- **Versión anterior:** el documento remitía únicamente al tablero estructural y su anexo editable.
+- **Motivo:** facilitar el redibujo manual de wireframes más completos sin alterar la pauta.
+- **Alcance:** referencias sintéticas de baja fidelidad; no reemplazan el archivo editable ni la validación.
 
 ### 2026-08-25 — Anexo exhaustivo de interacciones
 

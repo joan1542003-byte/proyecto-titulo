@@ -25,6 +25,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
+- [Láminas detalladas de wireframes para calcar](wireframes-referencia/README.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
 - [Memoria integral v2 vigente](../08_memoria/memoria-vigente-v2.md)
@@ -36,6 +37,13 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 ---
 
 ## Registro de cambios
+
+### 2026-08-25 — Láminas detalladas para reconstrucción
+
+- **Cambio:** se incorporaron siete referencias rasterizadas para calcar los 35 estados en Figma.
+- **Versión anterior:** solo existían el tablero editable y la matriz estructural.
+- **Motivo:** profundizar jerarquía y componentes sin confundir exploración visual con diseño final.
+- **Alcance:** material de referencia; no modifica la memoria ni acredita validación.
 
 ### 2026-08-25 — Cobertura exhaustiva de interacciones
 

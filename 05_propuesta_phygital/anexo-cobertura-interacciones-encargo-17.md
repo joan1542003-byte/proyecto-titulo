@@ -7,6 +7,7 @@ Este anexo amplía el tablero evaluable de nueve marcos sin reemplazarlo. Su fun
 - **Figma:** [Anexo · Cobertura de estados](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4?node-id=13-2)
 - **Página:** `13:2`.
 - **Tablero:** `13:3`.
+- **Referencias detalladas para calcar:** [siete láminas con los 35 estados](wireframes-referencia/README.md).
 
 La cobertura es exhaustiva respecto del ciclo mínimo definido en la [memoria integral v2](../08_memoria/memoria-vigente-v2.md), no respecto de funciones futuras. Cada estado tiene un wireframe independiente para poder revisarlo; esto no significa que la persona deba mirar el teléfono durante todo el recorrido. En uso, el pulso situado del testigo conserva el papel central y Android se limita a configurar, informar estado y facilitar recuperación.
 
@@ -106,6 +107,13 @@ Los wireframes describen estructura y comportamiento esperado. No validan la con
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-25 — Referencias visuales detalladas
+
+- **Cambio:** se enlazaron siete láminas generadas y auditadas para reconstruir los 35 estados en Figma.
+- **Versión anterior:** el anexo contenía wireframes editables deliberadamente esquemáticos.
+- **Motivo:** aportar una referencia visual más detallada sin sustituir la estructura editable ni fijar un diseño final.
+- **Alcance:** las láminas sirven para calcar y discutir; no constituyen validación ni interfaz definitiva.
 
 ### 2026-08-25 — Incorporación y auditoría del tablero Figma
 
