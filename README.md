@@ -85,6 +85,7 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 | `07_validacion` | Hipótesis, protocolos, resultados y criterios de decisión. |
 | `08_memoria` | Arquitectura narrativa, capítulos, versiones y control APA 7. |
 | `09_decisiones` | Registro cronológico de decisiones y cambios de dirección. |
+| `10_recursos_visuales` | Escenas, texturas y módulos gráficos sintéticos para explorar la comunicación visual de Relevo. |
 | `99_archivo` | Material histórico y fuentes locales migradas, con estado y procedencia explícitos. |
 
 ## Gestión de tareas
@@ -101,6 +102,12 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 - **Versión anterior:** el Encargo 17 permanecía en pausa mientras la memoria integral tenía prioridad.
 - **Motivo:** la memoria v2 permitió cerrar el ciclo mínimo, desarrollar tres interacciones conectadas y auditarlas contra la pauta.
 - **Alcance:** la entrega resuelve estructura; condición, señal, forma y factibilidad pasan a P0–P4.
+
+### 2026-08-25 — Primera colección visual exploratoria
+
+- **Cambio:** se añadió `10_recursos_visuales` con escenas, texturas, recursos transparentes, variantes cromáticas y una hoja de contacto para explorar una línea visual de Relevo.
+- **Motivo:** disponer de material gráfico coherente con la relación entre intención, primer paso, lugar y pulso ambiental.
+- **Límite:** los recursos son sintéticos y exploratorios; no representan evidencia de usuarios ni cierran la forma, materialidad o señal final del testigo.
 
 ### 2026-08-24 — Definición positiva del testigo
 
