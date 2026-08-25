@@ -119,7 +119,7 @@
 ## D-014 — Migración documental como única línea activa
 
 - **Fecha:** 2026-08-23
-- **Estado:** vigente
+- **Estado:** sustituida por D-019 y D-020
 - **Decisión:** pausar personas y recorridos después de la tipología y priorizar la conversión ordenada del archivo local a Markdown.
 - **Fundamento:** instrucción explícita del autor y necesidad de asegurar trazabilidad antes de continuar.
 - **Consecuencia:** la Issue #4 pasa a ser la tarea principal; la Issue #2 conserva su estado sin abrir trabajo paralelo.
@@ -165,7 +165,7 @@
 ## D-015 — Memoria vigente basada en v3 corregida
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente
+- **Estado:** sustituida por D-022
 - **Decisión:** declarar `08_memoria/memoria-vigente.md` como base escrita activa.
 - **Fundamento:** v3 contiene la formulación más desarrollada, pero requería separar historia y vigencia y corregir método, usuarios, mercado y lenguaje docente.
 - **Alternativa descartada:** reiniciar una memoria abreviada y perder desarrollo acumulado.
@@ -174,10 +174,10 @@
 ## D-016 — El objeto físico no tiene pantalla
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente
-- **Decisión:** excluir pantalla, texto, menú, historial, encoder y respuestas múltiples.
-- **Fundamento:** el núcleo investigable es la asociación entre intención, señal y lugar.
-- **Condición de revisión:** evidencia que invalide la señal no textual y sostenga otra arquitectura phygital.
+- **Estado:** vigente y no negociable
+- **Decisión:** excluir pantalla y texto del objeto físico. La interacción exacta, los controles y la señal permanecen sujetos a evaluación.
+- **Fundamento:** el núcleo investigable es la asociación entre intención, señal y lugar sin reproducir otra interfaz de lectura.
+- **Condición de revisión:** la restricción no se revisa; si el testigo transportable falla, se reformula la dirección física manteniendo un objeto sin pantalla.
 
 ## D-017 — Escritura antes de visualidad
 
@@ -189,7 +189,7 @@
 ## D-018 — Tres interacciones Android provisionales
 
 - **Fecha:** 2026-08-24
-- **Estado:** provisional
+- **Estado:** suspendida por D-020
 - **Decisión:** preparar configuración, ubicación/prueba/armado y estado/recuperación técnica.
 - **Riesgo:** la tercera interacción principal es física; debe verificarse si una pantalla técnica satisface la pauta.
 - **Condición de revisión:** aclaración docente o prueba del flujo.
@@ -197,13 +197,89 @@
 ## D-019 — Pausa de la migración general
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente
+- **Estado:** sustituida por D-020
 - **Decisión:** pausar la Issue #4 y activar memoria más Encargo 17 en la Issue #6.
 - **Fundamento:** nueva prioridad explícita del autor.
+
+## D-020 — Memoria como única línea activa y Encargo 17 en pausa
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** priorizar la reconstrucción y auditoría de la memoria; mantener la Issue #6 y el desarrollo de wireframes en pausa.
+- **Fundamento:** el escrito debe fijar problema, usuarios, propuesta, flujos, factibilidad y evaluación antes de desarrollar estructura visual.
+- **Consecuencia:** la Issue #7 gobierna el trabajo académico actual.
+
+## D-021 — Criterios oficiales como control de estructura
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** auditar la memoria como Proyecto de Título mediante formulación, investigación, diseño, producción y gestión.
+- **Fundamento:** reglamento y pautas institucionales exigen una memoria integral y no solo una propuesta conceptual.
+- **Documento asociado:** [Criterios oficiales](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md).
+
+## D-022 — Memoria v2 como documento académico activo
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** declarar `08_memoria/memoria-vigente-v2.md` como memoria integral activa y preservar `memoria-vigente.md` como antecedente.
+- **Fundamento:** la v2 integra los siete módulos reconstruidos y superó auditoría metodológica, editorial, bibliográfica y de coherencia.
+- **Consecuencia:** las versiones históricas y los módulos documentan proceso, pero no gobiernan la formulación académica vigente.
+
+## D-023 — Phygitalidad y ausencia de pantalla como restricciones firmes
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente y no negociable
+- **Decisión:** Relevo seguirá siendo phygital y utilizará un objeto físico sin pantalla aun si cambia el testigo transportable.
+- **Fundamento:** instrucción explícita del autor y definición del campo disciplinar del proyecto.
+- **Hipótesis separada:** debe probarse si la señal sin texto y la presencia situada aportan valor frente a una notificación.
+
+## D-024 — Condición de activación abierta
+
+- **Fecha:** 2026-08-24
+- **Estado:** pendiente crítico
+- **Decisión:** no elegir todavía entre continuidad de uso, acumulación dentro de una ventana y horario.
+- **Fundamento:** cada alternativa cambia pertinencia, privacidad, fallos y significado; la facilidad técnica no basta para decidir.
+- **Condición de cierre:** evidencia conceptual y técnica obtenida mediante P0–P3.
+
+## D-025 — La edad describe la muestra, no define al usuario
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** mantener el rango 19–27 como dato metodológico y definir usuarios por configuración situacional.
+- **Fundamento:** el único criterio común confirmado del reclutamiento fue la edad, pero las entrevistas no sostienen un segmento causal o comercial basado en ella.
+
+## D-026 — Q13 pertenece a In(Visible)
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** usar Q13 únicamente como orientación condicional sobre tono, discreción y carácter no punitivo del concepto histórico In(Visible).
+- **Consecuencia:** Q13 no valida Relevo, su forma, su valor físico, su aceptación ni una preferencia de usuarios.
+
+## D-027 — La notificación es control comparativo
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente
+- **Decisión:** comparar el testigo situado con una notificación equivalente para aislar el aporte físico.
+- **Consecuencia:** la notificación no es la salida final ni autoriza convertir Relevo en una aplicación aislada.
+
+## D-028 — Corrección de la lista de materiales
+
+- **Fecha:** 2026-08-24
+- **Estado:** vigente como planificación
+- **Decisión:** usar una base de CLP 51.140–92.640 y un total redondeado de CLP 59.000–107.000 después de 15 % de contingencia.
+- **Fundamento:** la auditoría intermedia calculó erróneamente un máximo de CLP 112.000; la suma trazable correcta produce CLP 58.811–106.536 antes de redondeo.
+- **Límite:** no es una cotización, un costo de producción ni un precio.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — D-020 a D-028
+
+- **Cambio:** se registraron la prioridad exclusiva de memoria, los criterios oficiales, la activación de la v2, las restricciones phygital y sin pantalla, los pendientes de activación, la función metodológica de la edad y Q13, la notificación de control y la corrección económica.
+- **Versión anterior:** D-015–D-019 mantenían activa la v1 y compartían prioridad con Encargo 17.
+- **Motivo:** sincronizar el registro con la reconstrucción integral y la auditoría final.
+- **Resultado:** la v2 gobierna el escrito; P0 es el siguiente paso sustantivo; las restricciones y pendientes quedan separados.
 
 ### 2026-08-24 — Decisiones de memoria y Encargo 17
 

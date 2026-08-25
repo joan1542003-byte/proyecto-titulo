@@ -11,6 +11,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Auditoría de integridad del corpus](auditoria-integridad-corpus-entrevistas.md): comprueba cobertura, discrepancias y regla de consolidación.
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
 - [Feedback E15](feedback-e15.md): sintetiza observaciones pertinentes sin convertirlas en decisiones automáticas.
+- [Criterios oficiales para la memoria de Proyecto de Título](criterios-oficiales-memoria-proyecto-titulo.md): consolida estructura, áreas de evaluación y límites documentales verificados en reglamento y pautas institucionales.
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
 - [Equivalencias de los PDF de cierre](../99_archivo/fuentes-locales/semestre-1/cierre/equivalencias-pdf.md): distingue In(Visible), Relevo y las ramas v3.
@@ -41,6 +42,13 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Criterios oficiales enlazados
+
+- **Cambio:** se añadió el documento que consolida los criterios institucionales usados para auditar la memoria v2.
+- **Versión anterior:** el índice reunía fuentes del proyecto, entrevistas y evaluación histórica, pero no la lectura sistemática de reglamento y pautas.
+- **Motivo:** hacer trazable por qué la memoria debe integrar investigación, diseño, producción y gestión.
+- **Decisión derivada:** las pautas oficiales funcionan como criterio de estructura y evaluación; no sustituyen evidencia del proyecto.
 
 ### 2026-08-23 — Auditoría de integridad enlazada
 

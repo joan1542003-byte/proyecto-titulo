@@ -6,24 +6,30 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos vigentes
 
-- [Memoria vigente de Relevo](memoria-vigente.md)
+- [Memoria integral v2 de Relevo](memoria-vigente-v2.md): documento académico activo.
+- [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
+- [Memoria v1](memoria-vigente.md): antecedente preservado; no gobierna la formulación actual.
 - [Matriz de incorporación del feedback E15](matriz-incorporacion-feedback-e15.md)
+- [Dictamen rector de reconstrucción](dictamen-rector-reconstruccion-memoria.md)
+- [`borradores-v2`](borradores-v2/): siete módulos fuente para trazabilidad; no deben leerse como siete memorias separadas.
 
 ## Arquitectura narrativa vigente
 
-1. Introducción y evolución del problema.
-2. Del tiempo de pantalla al problema de diseño.
-3. Marco teórico.
-4. Usuarios, evidencia y contexto doméstico.
-5. Formulación de la investigación.
-6. Estado del arte y mercado.
-7. Traducción de criterios.
-8. Propuesta phygital.
-9. Factibilidad.
-10. Prototipado y validación.
-11. Arquitectura de experiencia.
-12. Conclusiones.
-13. Referencias y anexos.
+1. Introducción.
+2. Antecedentes y construcción del problema.
+3. Pregunta, objetivos, alcance, exclusiones, tesis e hipótesis.
+4. Metodología.
+5. Marco teórico.
+6. Usuarios y contexto.
+7. Estado del arte, mercado y referentes.
+8. Síntesis de investigación y oportunidad de diseño.
+9. Desarrollo del proyecto y decisiones de diseño.
+10. Sistema Relevo.
+11. Arquitectura de experiencia y flujos.
+12. Producción, factibilidad y modelo de gestión.
+13. Plan de prototipado y evaluación.
+14. Conclusiones, contribución, límites y próximos pasos.
+15. Referencias y anexos selectivos.
 
 La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a las memorias históricas.
 
@@ -40,6 +46,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-24 — Activación de memoria integral v2
+
+- **Cambio:** se declaró `memoria-vigente-v2.md` como documento académico activo y se añadieron la auditoría rectora, el dictamen y los módulos fuente.
+- **Versión anterior:** `memoria-vigente.md` era el único documento vigente y la arquitectura tenía 13 apartados generales.
+- **Motivo:** la reconstrucción incorpora las cuatro dimensiones del Proyecto de Título y separa con precisión resultados, planes y pendientes.
+- **Alcance:** la v1 permanece disponible como antecedente y no fue eliminada.
 
 ### 2026-08-24 — Activación de memoria vigente
 

@@ -2,7 +2,7 @@
 
 ## Estado general
 
-Relevo mantiene abierta la **fase 1: investigación y análisis de usuarios**, pero su desarrollo está pausado después de la tipología. La única línea activa es la organización y migración documental del archivo local. Esta pausa no revierte resultados: protege la trazabilidad antes de abrir personas, recorridos u otra fase sustantiva.
+Relevo cuenta con una memoria integral v2 auditada que articula investigación, usuarios, mercado, propuesta, flujos, producción, gestión y evaluación. La línea sustantiva siguiente es preparar y ejecutar P0, la prueba de asociación con activación simulada. La migración documental general y el desarrollo escrito del Encargo 17 permanecen en pausa.
 
 El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuando sus preguntas, evidencia, límites y decisiones están registrados. El producto phygital no se desarrolla como una respuesta autónoma; debe poder reconstruirse desde la investigación.
 
@@ -31,7 +31,7 @@ Resultados:
 
 ### Línea auxiliar A — Organización y migración documental
 
-**Estado:** activa.
+**Estado:** pausada con arquitectura operativa.
 
 Orden obligatorio:
 
@@ -44,13 +44,13 @@ Orden obligatorio:
 7. indexar recursos visuales relevantes;
 8. declarar versiones canónicas y omisiones;
 9. comprobar navegación, privacidad y registros de cambios;
-10. cerrar la Issue #4 antes de reanudar personas.
+10. reanudar y cerrar la Issue #4 cuando no compita con una fase sustantiva del proyecto.
 
 Documentación: [Fuentes locales migradas](../99_archivo/fuentes-locales/README.md).
 
 ### Fase 1 — Usuarios
 
-**Estado:** pausada después de completar corpus, códigos, casos, matriz y tipología.
+**Estado:** completada para la formulación v2; abierta a contraste mediante prototipos y nuevas entrevistas si fueran necesarias.
 
 Orden obligatorio:
 
@@ -61,15 +61,15 @@ Orden obligatorio:
 5. [Completado] reconocer patrones, contradicciones y casos negativos;
 6. [Completado] proponer dos tipos situacionales;
 7. [Completado] elegir usuario principal más usuario límite;
-8. [Pausado] desarrollar perfiles, necesidades, tensiones y recorridos;
-9. [Pendiente] traducir los hallazgos a requisitos y límites del proyecto;
-10. [Pendiente] redactar el apartado de usuario para la memoria.
+8. [Completado] desarrollar perfiles situacionales, necesidades, tensiones y recorridos;
+9. [Completado] traducir los hallazgos a requisitos y límites del proyecto;
+10. [Completado] redactar el apartado de usuario para la memoria v2.
 
-No se elaborarán personas ni recorridos definitivos antes de completar la matriz.
+No se elaborarán biografías o visualidades ficticias. Los perfiles se revisarán si P0–P4 producen evidencia nueva.
 
 ### Fase 2 — Problema y valor
 
-**Estado:** pendiente de los resultados de usuarios.
+**Estado:** completada provisionalmente en la memoria v2; debe revisarse ante contraejemplos de P0–P4.
 
 Preguntas centrales:
 
@@ -81,31 +81,31 @@ Preguntas centrales:
 
 ### Fase 3 — Estado del arte y mercado
 
-**Estado:** pendiente.
+**Estado:** completada con fecha de corte 24 de agosto de 2026; requiere vigilancia periódica.
 
 Incluye bibliografía académica reciente, productos disponibles, aproximaciones en desarrollo, mecanismos de acción, resultados, fallas, condiciones de adopción y espacios no cubiertos. Encontrar productos no será suficiente: se analizará cómo se organiza el mercado y qué enfoques muestran valor o límites.
 
 ### Fase 4 — Definición de la propuesta phygital
 
-**Estado:** pendiente.
+**Estado:** arquitectura provisional documentada; valor físico y forma final pendientes de P0–P2.
 
 La propuesta se formulará desde requisitos derivados de investigación. Se registrarán propuesta de valor, principios de interacción, relación físico-digital, flujo de usuario, flujo técnico, alcance, ventajas, límites y decisiones descartadas.
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado:** pendiente.
+**Estado:** documentada como factibilidad planificada; integración, mediciones, cotizaciones y cumplimiento pendientes.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
-### Fase 6 — Prototipado y validación
+### Fase 6 — Prototipado y evaluación
 
-**Estado:** pendiente.
+**Estado:** siguiente línea sustantiva; comenzar por el protocolo P0.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
 ### Fase 7 — Escritura y cierre de memoria
 
-**Estado:** pendiente.
+**Estado:** memoria integral v2 completada y auditada; reabrir después de cada resultado ejecutado.
 
 La memoria integrará solo argumentos respaldados por el proceso. Se revisarán coherencia narrativa, trazabilidad, lenguaje académico, APA 7, definiciones, redundancias y correspondencia entre problema, usuarios, propuesta y validación.
 
@@ -123,6 +123,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Memoria v2 y transición a P0
+
+- **Cambio:** se actualizaron los estados de usuarios, problema, mercado, propuesta, factibilidad, evaluación y escritura.
+- **Versión anterior:** la migración documental era la única línea activa y las fases 2–7 figuraban como pendientes.
+- **Motivo:** la memoria v2 y sus auditorías documentan avances verificables en todas esas áreas, sin convertir el plan de prototipado en resultados.
+- **Decisión derivada:** la próxima línea sustantiva es cerrar y ejecutar P0; Encargo 17 y la migración general permanecen en pausa.
 
 ### 2026-08-23 — Prioridad documental
 

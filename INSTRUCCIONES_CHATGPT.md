@@ -13,7 +13,7 @@ El repositorio es la fuente central de contexto, decisiones, documentación y ta
 1. Accede al repositorio mediante la app o el conector de GitHub.
 2. Lee primero `README.md`.
 3. Revisa `00_gobernanza/directrices-de-trabajo.md`, `00_gobernanza/hoja-de-ruta.md` y las Issues abiertas.
-4. Identifica la única fase sustantiva activa y consulta solo los archivos pertinentes para la solicitud.
+4. Identifica la única fase sustantiva activa y consulta solo los archivos pertinentes para la solicitud. Para trabajo de memoria, abre `08_memoria/memoria-vigente-v2.md` y `08_memoria/auditoria-sol-memoria-v2.md`; `memoria-vigente.md` es un antecedente.
 5. Distingue con claridad:
    - la petición actual del usuario;
    - las instrucciones vigentes del repositorio;
@@ -27,15 +27,17 @@ El estado del proyecto cambia. No confíes en una tarea, formulación o priorida
 
 Relevo es un proyecto de titulación de Diseño y debe ser **phygital**: integra de manera inseparable una dimensión física y otra digital.
 
-Su formulación provisional busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La propuesta vigente combina una aplicación Android con un testigo físico doméstico sin pantalla, situado cerca del lugar u objeto donde una actividad puede comenzar.
+Su formulación provisional busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La propuesta vigente combina una aplicación Android con un testigo físico sin pantalla, situado cerca del lugar u objeto donde una actividad puede comenzar. El hogar es el primer contexto de diseño, no un contexto observado ni una definición universal del sistema.
 
-El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente la conducta ni reducir el tiempo de pantalla como un fin aislado. Su valor depende de apoyar una decisión autónoma mediante una señal breve, configurable y no punitiva. Esta formulación debe evolucionar si la investigación lo exige.
+El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente la conducta ni reducir el tiempo de pantalla como un fin aislado. Su valor depende de apoyar una decisión autónoma mediante una señal configurable y no punitiva. Relevo seguirá siendo phygital y el objeto físico seguirá sin pantalla. Si el testigo transportable no aporta valor, se reformula o reemplaza la dirección física; no se convierte el proyecto en una aplicación aislada.
+
+La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El siguiente paso sustantivo es preparar y ejecutar P0, la prueba de asociación con activación simulada. Encargo 17 permanece en pausa.
 
 **In(Visible)** es una etapa histórica anterior. No debe confundirse con la definición vigente de Relevo ni presentarse como su nombre actual. Las memorias y entregas antiguas sirven para reconstruir la evolución, no para fijar automáticamente decisiones actuales.
 
 ## Corpus de usuarios confirmado
 
-- Existen ocho entrevistas reales, semiestructuradas, habladas y presenciales, realizadas en Santiago en junio de 2026.
+- Existen ocho entrevistas reales, semiestructuradas, habladas y presenciales, realizadas en Santiago los días 11 y 12 de junio de 2026.
 - El reclutamiento se realizó mediante contactos obtenidos a través de personas cercanas.
 - El criterio común de selección fue la edad: convocatoria de 18 a 30 años; rango observado de 19 a 27 años.
 - P6 tiene 27 años.
@@ -124,6 +126,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Memoria v2 y próximo paso P0
+
+- **Cambio:** se añadió la memoria v2 como lectura activa, se precisaron fechas y contexto, y se registraron las restricciones phygital y sin pantalla, la activación abierta, la notificación de control y la pausa de Encargo 17.
+- **Versión anterior:** las instrucciones remitían solo a índices e Issues y describían la formulación sin indicar el documento académico activo ni el siguiente protocolo.
+- **Motivo:** permitir que nuevas conversaciones recuperen el estado posterior a la reconstrucción integral sin volver a la v1 o al wireframing.
+- **Alcance:** las prioridades pueden cambiar mediante Issues y decisiones posteriores; estas instrucciones no sustituyen la lectura del repositorio.
 
 ### 2026-08-23 — Creación
 

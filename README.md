@@ -28,11 +28,11 @@ Esta formulación continúa abierta a revisión. El producto final deberá respo
 
 ## Estado actual
 
-**Línea activa: actualización de la memoria y preparación escrita del Encargo 17.**
+**Línea activa: memoria integral de Proyecto de Título y preparación del protocolo P0.**
 
 La base metodológica del corpus quedó consolidada:
 
-- se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago durante junio de 2026;
+- se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago los días 11 y 12 de junio de 2026;
 - las personas fueron reclutadas mediante referencias de la red personal; el criterio de convocatoria fue de 18 a 30 años y el rango observado fue de 19 a 27 años;
 - se obtuvo consentimiento informado oral;
 - todas las preguntas y repreguntas fueron realizadas por el investigador;
@@ -42,9 +42,9 @@ La base metodológica del corpus quedó consolidada:
 - P6 tiene 27 años;
 - la duración individual de las entrevistas no quedó registrada.
 
-El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como la entrega aún no exige visualidad, los futuros perfiles se mantendrán como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
+El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La actualización se gestiona en la [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) queda pausada. La base actual es la [memoria vigente](08_memoria/memoria-vigente.md) y la estructura se prepara en [Encargo 17](05_propuesta_phygital/preparacion-escrita-encargo-17.md).
+La reconstrucción y auditoría se gestiona en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) y el desarrollo de la [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) permanecen en pausa. La base académica activa es la [memoria integral v2](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El dictamen independiente está en la [auditoría rectora](08_memoria/auditoria-sol-memoria-v2.md).
 
 ## Inicio para nuevas conversaciones
 
@@ -91,6 +91,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Activación de la memoria integral v2
+
+- **Cambio:** se declaró `memoria-vigente-v2.md` como base académica activa y se enlazó su auditoría rectora.
+- **Versión anterior:** `memoria-vigente.md` era la base activa y la preparación escrita de la Issue #6 compartía prioridad.
+- **Motivo:** la v2 integra investigación, usuarios, mercado, propuesta, flujos, producción, gestión y evaluación con estados de evidencia explícitos.
+- **Alcance:** la v1 se preserva; las Issues #4 y #6 permanecen pausadas; la Issue #7 conserva el seguimiento de los pendientes críticos de la memoria.
 
 ### 2026-08-24 — Memoria vigente y Encargo 17
 
