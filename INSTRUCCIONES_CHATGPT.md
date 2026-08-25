@@ -27,9 +27,9 @@ El estado del proyecto cambia. No confíes en una tarea, formulación o priorida
 
 Relevo es un proyecto de titulación de Diseño y debe ser **phygital**: integra de manera inseparable una dimensión física y otra digital.
 
-Su formulación provisional busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La propuesta vigente combina una aplicación Android con un testigo físico sin pantalla, situado cerca del lugar u objeto donde una actividad puede comenzar. El hogar es el primer contexto de diseño, no un contexto observado ni una definición universal del sistema.
+Su formulación provisional busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La propuesta vigente combina una aplicación Android con un testigo físico situado que representa una intención activa y emite un pulso ambiental desde el lugar donde una actividad puede comenzar. El hogar es el primer contexto de diseño, no un contexto observado ni una definición universal del sistema.
 
-El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente la conducta ni reducir el tiempo de pantalla como un fin aislado. Su valor depende de apoyar una decisión autónoma mediante una señal configurable y no punitiva. Relevo seguirá siendo phygital y el objeto físico seguirá sin pantalla. Si el testigo transportable no aporta valor, se reformula o reemplaza la dirección física; no se convierte el proyecto en una aplicación aislada.
+El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente la conducta ni reducir el tiempo de pantalla como un fin aislado. Su valor depende de apoyar una decisión autónoma mediante una señal configurable y no punitiva. Relevo seguirá siendo phygital y su interfaz objetual se basará en señales ambientales, no en una nueva superficie de consulta. Si el testigo transportable no aporta valor, se reformula o reemplaza la dirección física; no se convierte el proyecto en una aplicación aislada.
 
 La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El siguiente paso sustantivo es preparar y ejecutar P0, la prueba de asociación con activación simulada. Encargo 17 permanece en pausa.
 
@@ -128,6 +128,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Lenguaje positivo del producto
+
+- **Cambio:** se estableció “testigo físico situado” como denominación funcional del objeto.
+- **Versión anterior:** el contexto estable lo definía mediante la ausencia de pantalla.
+- **Motivo:** nuevas conversaciones deben explicar qué hace Relevo antes de enumerar restricciones técnicas.
+- **Alcance:** el testigo representa una intención y emite un pulso ambiental; canal, forma y electrónica continúan sujetos a desarrollo.
 
 ### 2026-08-24 — Historial de encargos y resumen sincronizado
 

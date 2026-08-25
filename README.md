@@ -20,7 +20,7 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 
 ## Síntesis vigente
 
-Relevo es un proyecto phygital que busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La formulación vigente combina una aplicación Android con un testigo físico doméstico, sin pantalla, situado cerca del lugar u objeto donde una actividad puede comenzar.
+Relevo es un proyecto phygital que busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La formulación vigente combina una aplicación Android con un testigo físico situado que representa una intención activa y emite un pulso ambiental desde el lugar donde una actividad puede comenzar.
 
 El proyecto no pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento. Su valor propuesto depende de apoyar una decisión autónoma mediante una señal breve, configurable y no punitiva.
 
@@ -94,6 +94,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Definición positiva del testigo
+
+- **Cambio:** se reemplazó la descripción negativa del objeto por su función concreta como testigo físico situado de una intención activa.
+- **Versión anterior:** la síntesis lo definía principalmente por la ausencia de pantalla.
+- **Motivo:** una propuesta de valor debe explicar qué hace y qué relación construye, no enumerar componentes ausentes.
+- **Alcance:** la interfaz objetual seguirá basada en señales ambientales; canal, forma y electrónica se cerrarán mediante desarrollo y prueba.
 
 ### 2026-08-24 — Recuperación del historial estructural
 

@@ -225,11 +225,11 @@
 - **Fundamento:** la v2 integra los siete módulos reconstruidos y superó auditoría metodológica, editorial, bibliográfica y de coherencia.
 - **Consecuencia:** las versiones históricas y los módulos documentan proceso, pero no gobiernan la formulación académica vigente.
 
-## D-023 — Phygitalidad y ausencia de pantalla como restricciones firmes
+## D-023 — Phygitalidad e interfaz objetual ambiental
 
 - **Fecha:** 2026-08-24
 - **Estado:** vigente y no negociable
-- **Decisión:** Relevo seguirá siendo phygital y utilizará un objeto físico sin pantalla aun si cambia el testigo transportable.
+- **Decisión:** Relevo seguirá siendo phygital y utilizará un testigo físico situado cuya función es representar una intención activa y emitir un pulso ambiental. El objeto no se define por componentes ausentes.
 - **Fundamento:** instrucción explícita del autor y definición del campo disciplinar del proyecto.
 - **Hipótesis separada:** debe probarse si la señal sin texto y la presencia situada aportan valor frente a una notificación.
 
@@ -282,6 +282,13 @@
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-24 — Reformulación de D-023
+
+- **Cambio:** se reemplazó una definición negativa del objeto por su función positiva como testigo físico situado.
+- **Versión anterior:** D-023 destacaba principalmente la ausencia de pantalla.
+- **Motivo:** orientar el desarrollo real del producto mediante función, relación y comportamiento.
+- **Resultado:** la interfaz objetual se entiende como señal ambiental; su canal y forma específica permanecen abiertos a desarrollo.
 
 ### 2026-08-24 — D-029
 

@@ -16,7 +16,7 @@ Relevo aborda una situación específica del ocio digital: en algunos episodios,
 
 La investigación reúne revisión de literatura, análisis de referentes y mercado, y un estudio cualitativo exploratorio mediante ocho entrevistas semiestructuradas, habladas y presenciales, realizadas en Santiago los días 11 y 12 de junio de 2026. Las personas fueron reclutadas por referencias, con la edad como único criterio común confirmado; el rango observado fue de 19 a 27 años, incluido P6 con 27 años. El corpus anonimizado se analiza por episodios y permite distinguir un usuario principal situacional —continuidad digital junto con una intención alternativa— y un usuario límite —ocio digital elegido, significativo o coherente con la intención actual—. El corpus no estima prevalencia, no observa hogares y no evalúa Relevo.
 
-La oportunidad de diseño se formula como una hipótesis phygital: una aplicación Android conserva el significado de una intención y configura una condición todavía abierta; un objeto físico sin pantalla emite una señal no textual; la persona elige manualmente el lugar junto al primer paso de la actividad. La notificación del teléfono será un control comparativo, no la salida final del sistema. La investigación debe determinar si la presencia situada del objeto aporta un valor que una notificación equivalente no ofrece y si ese valor compensa configuración, mantenimiento, costo, privacidad y riesgo de intrusión.
+La oportunidad de diseño se formula como una hipótesis phygital: una aplicación Android conserva el significado de una intención y configura una condición todavía abierta; un testigo físico situado representa una intención activa y emite un pulso ambiental; la persona lo ubica junto al primer paso de la actividad. La notificación del teléfono será un control comparativo, no la salida final del sistema. La investigación debe determinar si la presencia situada del testigo aporta un valor que una notificación equivalente no ofrece y si ese valor compensa configuración, mantenimiento, costo, privacidad y riesgo de intrusión.
 
 La memoria desarrolla el problema, el marco conceptual, la evidencia de usuarios, el mercado, la síntesis de criterios, el sistema, los flujos, la producción y la gestión. El capítulo de evaluación presenta un plan progresivo P0–P4: asociación con activación simulada; contraste de lugar congruente, lugar neutro y notificación; canales y salida física; condición Android/Bluetooth Low Energy (BLE) y fallos; e integración con piloto acotado. No existen resultados ejecutados de estas pruebas. La contribución actual corresponde a investigación, formulación, arquitectura y método; la contribución del artefacto permanece esperada y condicionada a la evidencia.
 
@@ -28,7 +28,7 @@ Relevo addresses a specific situation of digital leisure: in some episodes, a pe
 
 The research combines a literature review, an analysis of current products and references, and an exploratory qualitative study based on eight spoken, in-person semi-structured interviews conducted in Santiago on June 11 and 12, 2026. Participants were recruited through referrals, with age as the only confirmed common criterion; the observed range was 19 to 27, including P6 at age 27. The anonymized corpus is analyzed through episodes and supports a distinction between a situational primary user—digital continuity together with an alternative intention—and a boundary user—digital leisure that is chosen, meaningful, or coherent with the current intention. The corpus does not estimate prevalence, observe homes, or evaluate Relevo.
 
-The design opportunity is formulated as a phygital hypothesis: an Android application retains the meaning of an intention and configures a still-open activation condition; a screenless physical object emits a non-textual signal; and the person manually selects the place next to the activity’s first step. A phone notification will operate as a comparative control, not as the final output. The project must determine whether the object’s situated presence offers value that an equivalent notification does not, and whether that value compensates for configuration, maintenance, cost, privacy, and intrusion risks.
+The design opportunity is formulated as a phygital hypothesis: an Android application retains the meaning of an intention and configures a still-open activation condition; a situated physical token represents one active intention and emits an ambient pulse; and the person places it next to the activity’s first step. A phone notification will operate as a comparative control, not as the final output. The project must determine whether the token’s situated presence offers value that an equivalent notification does not, and whether that value compensates for configuration, maintenance, cost, privacy, and intrusion risks.
 
 This report develops the problem, conceptual framework, user evidence, market, synthesis criteria, system, flows, production, and management. The evaluation chapter presents a progressive P0–P4 plan. No Relevo prototype tests have been executed. The current contribution lies in research, formulation, architecture, and method; the artifact contribution remains expected and conditional on evidence.
 
@@ -43,7 +43,7 @@ This report develops the problem, conceptual framework, user evidence, market, s
 | Problema | En algunos episodios de ocio digital, una intención alternativa previamente formulada pierde disponibilidad para orientar el siguiente paso mientras la actividad actual continúa con poca deliberación. |
 | Usuario principal | Persona que ha formulado una actividad alternativa propia, reconoce su primer paso y desea mantenerla disponible durante una continuidad digital que puede prolongarse sin una elección renovada claramente reconocida. |
 | Usuario límite | Persona o episodio en que la actividad digital coincide con la intención actual, es significativo, relacional, concentrado o reparador, o no existe una intención alternativa que requiera apoyo. |
-| Sistema | Aplicación Android, regla observable, objeto físico sin pantalla, lugar elegido manualmente y persona que interpreta y decide. |
+| Sistema | Aplicación Android, regla observable, testigo físico situado, lugar elegido manualmente y persona que interpreta y decide. |
 | Pregunta | ¿En qué condiciones una clave externa, configurada por la persona, puede apoyar la recuperación espontánea de una intención y su primer paso durante una sesión de continuidad digital poco deliberada, sin bloquear, puntuar ni evaluar la decisión posterior? |
 | Tesis provisional | Una señal física sin texto, configurada digitalmente y situada junto al primer paso de una actividad elegida, podría devolver esa intención a la consideración de la persona sin bloquear su ocio ni evaluar su respuesta. |
 | Evidencia realizada | Revisión documental, búsqueda exploratoria de mercado y ocho entrevistas semiestructuradas presenciales. |
@@ -82,7 +82,7 @@ No busco eliminar el teléfono ni establecer una forma correcta de descansar. Qu
 
 Una persona llega a su casa y decide descansar unos minutos con una aplicación de desplazamiento continuo. La elección inicial puede ser legítima: quizá busca entretenerse, conversar o recuperar energía. Antes de abrir el teléfono también había pensado comenzar otra actividad, como caminar, dibujar o preparar materiales para leer. Ha identificado un primer paso concreto —ponerse las zapatillas, sacar los materiales o despejar una superficie—, pero ese paso deja de participar en la decisión inmediata cuando la interfaz mantiene disponible un contenido tras otro. La persona podría recordar más tarde lo que había querido hacer; en el momento presente, sin embargo, la actividad digital conserva toda la disponibilidad.
 
-Relevo imagina una posible ayuda para esa situación. Antes de continuar, la persona configura en una aplicación su intención y su primer paso, elige una condición de activación que todavía debe definirse y sitúa un objeto físico sin pantalla junto al primer paso. Si la condición se cumple, el objeto emite una señal no textual. La persona puede reconocer la asociación, continuar con el teléfono, silenciar el objeto o iniciar la alternativa. Ninguna de esas respuestas se registra como cumplimiento o incumplimiento.
+Relevo imagina una posible ayuda para esa situación. Antes de continuar, la persona configura en una aplicación su intención y su primer paso, elige una condición de activación que todavía debe definirse y sitúa un testigo físico junto al primer paso. Si la condición se cumple, el testigo emite un pulso ambiental. La persona puede reconocer la asociación, continuar con el teléfono, silenciar el testigo o iniciar la alternativa. Ninguna de esas respuestas se registra como cumplimiento o incumplimiento.
 
 La escena es hipotética. No reproduce una entrevista ni describe un comportamiento observado. Su función es hacer visible la pregunta de diseño: si la actividad digital puede ser elegida y, al mismo tiempo, dejar de acompañar una intención alternativa, ¿es posible volver a poner esa alternativa a disposición sin bloquear la primera actividad ni juzgar la decisión? El proyecto no intenta resolver la tensión por medio de una prohibición, un puntaje o una norma universal sobre el ocio.
 
@@ -102,7 +102,7 @@ La tesis provisional de Relevo es:
 
 > Relevo explora la hipótesis de que una señal física sin texto, configurada digitalmente y situada junto al primer paso de una actividad elegida, puede devolver esa intención a la consideración de una persona durante una sesión digital de continuidad poco deliberada, sin bloquear su ocio ni evaluar su respuesta.
 
-La tesis tiene condiciones de pérdida de fundamento. Si la persona necesita volver al teléfono para comprender la señal, si el lugar no aporta una asociación reconocible, si una notificación entrega el mismo valor con menor carga, si el objeto se percibe como vigilancia o alarma genérica, o si la condición técnica no puede ejecutarse con fiabilidad proporcional al alcance, la dirección física deberá modificarse o abandonarse. En ese caso, Relevo no se convertirá en una aplicación sustitutiva: se reformulará la dirección física conservando el carácter phygital y el objeto sin pantalla, o se reconocerá que la formulación actual requiere volver a investigación de diseño.
+La tesis tiene condiciones de pérdida de fundamento. Si la persona necesita volver al teléfono para comprender la señal, si el lugar no aporta una asociación reconocible, si una notificación entrega el mismo valor con menor carga, si el objeto se percibe como vigilancia o alarma genérica, o si la condición técnica no puede ejecutarse con fiabilidad proporcional al alcance, la dirección física deberá modificarse o abandonarse. En ese caso, Relevo no se convertirá en una aplicación sustitutiva: se reformulará el testigo físico y su pulso ambiental conservando el carácter phygital, o se reconocerá que la formulación actual requiere volver a investigación de diseño.
 
 El aporte actual es de investigación y formulación. La memoria delimita un fenómeno, reconoce contraejemplos, define tipos de usuario situacionales, traduce conceptos a requisitos y construye una arquitectura evaluable. El aporte esperado del artefacto consiste en producir conocimiento sobre una ayuda phygital no coercitiva: una experiencia que distribuya una intención entre aplicación, señal física y lugar, manteniendo la decisión posterior fuera del sistema. No se afirma reducción del tiempo de pantalla, aumento de productividad, bienestar, actividad física ni cambio conductual universal.
 
@@ -182,17 +182,17 @@ La recuperación se define operacionalmente como la identificación espontánea 
 
 ## 3.2 Pregunta proyectual
 
-¿Cómo puede diseñarse un sistema phygital compuesto por una aplicación Android, un objeto físico sin pantalla y un lugar elegido manualmente para explorar si la asociación entre intención, señal y primer paso aporta un valor que una notificación digital equivalente no aporta, preservando autonomía, privacidad y convivencia?
+¿Cómo puede diseñarse un sistema phygital compuesto por una aplicación Android, un testigo físico situado y un lugar elegido manualmente para explorar si la asociación entre intención, señal y primer paso aporta un valor que una notificación digital equivalente no aporta, preservando autonomía, privacidad y convivencia?
 
 ## 3.3 Objetivo general
 
-Diseñar y evaluar formativamente un sistema phygital que articule una aplicación Android, un objeto físico sin pantalla y una asociación manual con el primer paso de una actividad elegida, con el fin de explorar si una señal externa puede apoyar la recuperación de una intención durante una sesión de continuidad digital poco deliberada sin bloquear, calificar ni registrar la conducta posterior.
+Diseñar y evaluar formativamente un sistema phygital que articule una aplicación Android, un testigo físico situado y una asociación manual con el primer paso de una actividad elegida, con el fin de explorar si un pulso ambiental puede apoyar la recuperación de una intención durante una sesión de continuidad digital poco deliberada sin bloquear, calificar ni registrar la conducta posterior.
 
 ## 3.4 Objetivos específicos
 
 1. Caracterizar el problema mediante revisión de literatura y análisis cualitativo de entrevistas, distinguiendo episodios de pertinencia, contraejemplos y límites de transferencia.
 2. Traducir evidencia, conceptos y referentes en criterios de diseño, requisitos, no requisitos, riesgos, decisiones y pruebas.
-3. Desarrollar y documentar un sistema inicial compuesto por aplicación Android, condición observable, objeto físico sin pantalla, señal, lugar manual, controles de salida, datos acotados y criterios de mantenimiento.
+3. Desarrollar y documentar un sistema inicial compuesto por aplicación Android, condición observable, testigo físico situado, pulso ambiental, lugar manual, controles de salida, datos acotados y criterios de mantenimiento.
 4. Explorar la asociación entre intención, primer paso, lugar y señal mediante activación simulada antes de automatizar.
 5. Comparar la ubicación congruente, la ubicación neutra y una notificación digital equivalente para examinar el valor específico de la materialidad.
 6. Examinar percepción, atribución, intrusión, autonomía, convivencia y accesibilidad como requisitos situacionales.
@@ -215,7 +215,7 @@ La activación permanece abierta entre uso continuo, uso acumulado en una ventan
 
 ## 3.6 Alcance
 
-El alcance inicial comprende una persona, una intención activa, un primer paso, una aplicación seleccionada, una condición observable, un objeto sin pantalla y un lugar elegido manualmente. Android es la plataforma inicial de prototipado, no una promesa de compatibilidad universal. El hogar es el primer contexto de diseño, no un contexto ya observado ni una generalización sobre todas las viviendas.
+El alcance inicial comprende una persona, una intención activa, un primer paso, una aplicación seleccionada, una condición observable, un testigo físico situado y un lugar elegido manualmente. Android es la plataforma inicial de prototipado, no una promesa de compatibilidad universal. El hogar es el primer contexto de diseño, no un contexto ya observado ni una generalización sobre todas las viviendas.
 
 La propuesta está pensada para una transición autoelegida dentro del ocio digital, no para interrumpir conversaciones, videollamadas, trabajo concentrado, estudio, descanso deliberado o actividades que la persona considera coherentes. El sistema debe aceptar la ausencia de pertinencia como resultado correcto.
 
@@ -229,13 +229,13 @@ Quedan pendientes, y por tanto fuera de toda afirmación cerrada, la forma final
 
 La dirección física se mantiene si la asociación entre intención y primer paso resulta comprensible, el lugar aporta una diferencia reconocible, la señal es perceptible y tolerable, la salida es autónoma y la ejecución técnica es proporcional. Se modifica si existe valor físico, pero fallan canal, lugar, control, condición, convivencia, accesibilidad o producción. Se abandona la dirección física actual si el objeto no añade valor frente a la notificación, exige consulta constante, se vuelve vigilancia o acumula una carga que su aporte no compensa.
 
-Si falla el testigo transportable, puede reformularse o reemplazarse la dirección física por otra configuración phygital con objeto sin pantalla. No se convierte Relevo en una aplicación para conservar una forma inicial. Si ninguna configuración física sostiene una diferencia defendible, se registra la refutación de la formulación actual y se vuelve a investigación de diseño.
+Si falla el testigo transportable, puede reformularse o reemplazarse por otra interfaz objetual ambiental dentro del sistema phygital. No se convierte Relevo en una aplicación para conservar una forma inicial. Si ninguna configuración física sostiene una diferencia defendible, se registra la refutación de la formulación actual y se vuelve a investigación de diseño.
 
 ## 3.9 Teoría de cambio
 
 La teoría de cambio hace explícita la transformación buscada sin confundirla con una promesa de eficacia. Su función es conectar problema, evidencia, intervención, comportamiento posible y evaluación.
 
-**1. Enunciado de cambio.** Relevo busca que una persona que ya formuló una actividad alternativa, en un episodio doméstico de continuidad digital poco deliberada, transite desde una situación en que esa intención pierde disponibilidad hacia otra en que puede volver a considerarla, mediante una señal física sin pantalla vinculada por la propia persona con el primer paso de la actividad. El cambio buscado es recuperar una posibilidad de elección, no imponer la ejecución de la alternativa.
+**1. Enunciado de cambio.** Relevo busca que una persona que ya formuló una actividad alternativa, en un episodio doméstico de continuidad digital poco deliberada, transite desde una situación en que esa intención pierde disponibilidad hacia otra en que puede volver a considerarla, mediante un testigo físico situado que la propia persona vincula con el primer paso de la actividad. El cambio buscado es recuperar una posibilidad de elección, no imponer la ejecución de la alternativa.
 
 **2. Cadena causal provisional.** La persona formula una intención y un primer paso → sitúa el objeto junto a ese paso → una condición observable activa una señal → la persona percibe y atribuye la señal → la intención puede volver a estar disponible → la persona decide si continúa, silencia o cambia de actividad. Las tres primeras relaciones son decisiones de diseño; la recuperación de la intención y el aporte del lugar permanecen como hipótesis de evaluación.
 
@@ -245,7 +245,7 @@ La teoría de cambio hace explícita la transformación buscada sin confundirla 
 
 **5. Supuestos críticos.** El corpus respalda parcialmente que existen episodios donde una alternativa valorada pierde disponibilidad, sin estimar su frecuencia. Permanece por validar que la asociación intención–objeto–lugar pueda comprenderse sin volver a la pantalla; que el lugar congruente aporte más que un lugar neutro o una notificación; y que la configuración, el mantenimiento y la presencia doméstica sean tolerables. Si estos supuestos fallan, debe modificarse o abandonarse la dirección física actual.
 
-**6. Frontera de decisiones.** Se mantienen como decisiones firmes el carácter phygital, el objeto físico sin pantalla, la autonomía posterior a la señal, la ausencia de bloqueo y la lectura situacional del usuario. Permanecen abiertas la condición de activación, el canal, la forma, la materialidad, el lugar doméstico específico, la arquitectura electrónica final, el precio y la modalidad de acceso. Cada decisión abierta se cierra solo mediante la prueba que le corresponde.
+**6. Frontera de decisiones.** Se mantienen como decisiones firmes el carácter phygital, el testigo físico situado, el pulso ambiental, la autonomía posterior a la señal, la ausencia de bloqueo y la lectura situacional del usuario. Permanecen abiertas la condición de activación, el canal, la forma, la materialidad, el lugar doméstico específico, la arquitectura electrónica final, el precio y la modalidad de acceso. Cada decisión abierta se cierra solo mediante la prueba que le corresponde.
 
 **7. Indicadores de éxito.** Los indicadores formativos son observables: asociación espontánea entre señal e intención sin consultar la aplicación; diferencia atribuible al lugar congruente frente al lugar neutro y la notificación; percepción y salida autónoma sin lectura punitiva; y ejecución técnica legible ante vencimiento, desconexión o señal tardía. No se fijan porcentajes, tiempos ni frecuencias antes de establecer una línea base en P0 y P1.
 
@@ -261,7 +261,7 @@ La metodología distingue estados epistémicos:
 | --- | --- |
 | Realizado | Revisión documental, entrevistas, análisis inicial y búsqueda exploratoria de mercado. |
 | Interpretado | Patrones, tensiones, tipos situacionales y criterios de diseño derivados de la evidencia. |
-| Decidido | Restricciones o elecciones del proyecto, como phygitalidad, objeto sin pantalla y ausencia de evaluación conductual. |
+| Decidido | Restricciones o elecciones del proyecto, como phygitalidad, interfaz objetual ambiental y ausencia de evaluación conductual. |
 | Planificado | Protocolos P0–P4, comparaciones, pruebas técnicas y piloto. |
 | Pendiente | Condiciones que no pueden cerrarse sin nueva evidencia, como activación, canal, autonomía y producción. |
 
@@ -371,7 +371,7 @@ Q13 solo orienta este criterio de forma condicional porque se refirió a In(Visi
 
 La interacción tangible ocurre cuando la presencia, ubicación o manipulación de un objeto participa en la acción y en el significado. *The Tangible Reminder* funciona como antecedente histórico de recordatorio material, pero su uso de display y tareas temporales no prueba la propuesta actual (Hermann et al., 2007). Waggoner et al. (2026) subrayan que la investigación de experiencias phygital debe considerar transiciones entre capas, accesibilidad e inclusión, no solo la interfaz digital.
 
-La ausencia de pantalla es una restricción firme; su capacidad para sostener una asociación comprensible constituye una hipótesis. El objeto puede evitar repetir texto, permitir una señal situada y mantener el contenido semántico en la aplicación. También puede producir ambigüedad, baja saliencia, alarma genérica o una dependencia excesiva del recuerdo. El objeto se justifica solo si la comparación demuestra un aporte específico.
+La interfaz objetual se concentra en representar una intención mediante un pulso ambiental situado; su capacidad para sostener una asociación comprensible constituye una hipótesis. La distribución mantiene el contenido semántico en la aplicación y reserva al testigo la función de presencia y señal. También puede producir ambigüedad, baja saliencia, alarma genérica o una dependencia excesiva del recuerdo. El objeto se justifica solo si la comparación demuestra un aporte específico.
 
 ## 5.8 Investigación mediante diseño y conocimiento proyectual
 
@@ -535,7 +535,7 @@ La comunicación de campo cercano (NFC, por su sigla en inglés) permite interca
 | Pausa o reconsideración | Introducir una detención breve antes de continuar. | one sec, Pause Point. | Puede abrir una ocasión para reconsiderar dentro del teléfono. | Mantiene significado y señal en la misma pantalla. |
 | Fricción o bloqueo | Dificultar acceso, exigir espera o llave. | Brick, Unpluq, Screenless Breaker. | Puede alterar aperturas cuando la barrera es difícil de eludir. | Sustituye una transición libre por una restricción de acceso. |
 | Objeto de foco | Asociar dispositivo, espacio, hábitos o recompensas. | Focusaur, Brick Zone. | Hace visible un compromiso o relaciona lugar y estado. | Puede introducir gamificación, bloqueo, costos y mantenimiento. |
-| Recordatorio tangible | Vincular objetos y contexto con información o tareas. | *The Tangible Reminder*. | Muestra la posibilidad de externalizar una clave en el entorno. | Usa display o tareas distintas; no prueba un objeto sin pantalla para ocio. |
+| Recordatorio tangible | Vincular objetos y contexto con información o tareas. | *The Tangible Reminder*. | Muestra la posibilidad de externalizar una clave en el entorno. | Usa display o tareas distintas; no prueba un testigo ambiental situado para ocio. |
 
 ## 7.4 Herramientas nativas
 
@@ -559,7 +559,7 @@ Brick Zone describe un dispositivo Bluetooth orientado a bloquear aplicaciones e
 
 Focusaur declara un dispositivo de foco con aplicación, movimiento del teléfono, etiquetas NFC, sonidos y funciones de hábito; su página mostraba USD 129 en oferta y un precio de referencia de USD 169 a la fecha de corte (Focusaur, s. f.). La oferta sirve para estudiar lenguaje de valor, componentes y modelo de negocio. La cifra de patrocinadores comunicada por la marca no se interpreta como adopción independiente. Su lógica de foco y recompensa no se incorpora a Relevo.
 
-*The Tangible Reminder* vincula objetos con información de citas y un display ambiental (Hermann et al., 2007). El antecedente es útil para pensar la relación entre objeto, lugar y señal, pero presenta contenido visible, urgencia cromática y tareas temporales. Relevo conserva la ausencia de pantalla como una restricción y desplaza el significado a la aplicación y a la memoria de la persona.
+*The Tangible Reminder* vincula objetos con información de citas y un display ambiental (Hermann et al., 2007). El antecedente es útil para pensar la relación entre objeto, lugar y señal, pero presenta contenido visible, urgencia cromática y tareas temporales. Relevo distribuye el significado entre la aplicación, la memoria de la persona y la presencia del testigo situado.
 
 ## 7.8 Adopción, abandono y modelos de valor
 
@@ -571,7 +571,7 @@ Los modelos de mercado observados incluyen funciones integradas al sistema opera
 
 ## 7.9 Frontera phygital y oportunidad acotada
 
-El corpus revisado combina herramientas digitales, llaves físicas, Bluetooth, NFC, espacios declarados, recordatorios tangibles y productos de foco. No se encontró en el corpus una evaluación independiente que reúna explícitamente una intención autoformulada, un primer paso, una condición digital, un objeto sin pantalla ubicado por la persona, ausencia de bloqueo y comparación con una notificación. Esta formulación no afirma inexistencia universal; delimita una oportunidad investigable.
+El corpus revisado combina herramientas digitales, llaves físicas, Bluetooth, NFC, espacios declarados, recordatorios tangibles y productos de foco. No se encontró en el corpus una evaluación independiente que reúna explícitamente una intención autoformulada, un primer paso, una condición digital, un testigo físico situado por la persona, ausencia de bloqueo y comparación con una notificación. Esta formulación no afirma inexistencia universal; delimita una oportunidad investigable.
 
 La oportunidad de Relevo no es hacer un bloqueador con una forma nueva. Es examinar si la señal física puede devolver una intención a la escena donde ocurre su primer paso. La notificación es el control porque el proyecto debe demostrar que el objeto agrega algo más que un mensaje. La contribución física podría consistir en presencia, ubicación, manipulación o posibilidad de salida, pero ninguna de esas cualidades está demostrada.
 
@@ -594,7 +594,7 @@ La síntesis se organiza mediante la cadena evidencia → interpretación → re
 | Teoría de memoria prospectiva y espacio. | Una clave requiere una relación comprensible. | Intención, primer paso y lugar. | Testigo junto al primer paso. | P0 y P1. | Hipótesis. |
 | Costo de configuración y mercado físico. | Emparejar y rearmar agregan carga. | Configuración mínima y salida. | Una intención por ciclo. | Registro de pasos, errores y abandono. | Provisional. |
 | Herramientas nativas y fricciones. | El teléfono ya puede medir, pausar y notificar. | El objeto debe demostrar valor específico. | Notificación como control. | P1 y comparación posterior. | Pendiente crítico. |
-| Objeto sin pantalla. | Saca la señal del flujo textual, pero aumenta ambigüedad. | No pantalla ni texto. | Restricción vigente. | Percepción y atribución. | Restricción e hipótesis. |
+| Testigo físico situado. | Representa una intención fuera del flujo del teléfono, pero puede resultar ambiguo. | Pulso ambiental; significado conservado en la aplicación. | Dirección vigente. | Percepción y atribución. | Decisión e hipótesis. |
 | Android y BLE. | Existe una ruta técnica, con permisos y fallos. | Condición observable y vencimiento. | Android inicial. | P3. | Pendiente. |
 
 ## 8.2 Principios de diseño
@@ -621,7 +621,7 @@ La oportunidad no es un resultado de usuarios. Las personas entrevistadas no com
 
 ## 9.1 Del problema a una dirección objetual
 
-El desarrollo compara familias de objetos según asociación con el primer paso, percepción sin pantalla, autonomía, movilidad, carga de configuración, privacidad, convivencia, factibilidad técnica y producción. La matriz es una herramienta cualitativa del autor; no recoge preferencias de las personas entrevistadas.
+El desarrollo compara familias de objetos según asociación con el primer paso, percepción del pulso ambiental, autonomía, movilidad, carga de configuración, privacidad, convivencia, factibilidad técnica y producción. La matriz es una herramienta cualitativa del autor; no recoge preferencias de las personas entrevistadas.
 
 El análisis se realiza en dos escalas. La primera pregunta qué familia conserva la relación entre aplicación, testigo, lugar y persona. La segunda pregunta si el objeto puede situarse, percibirse y silenciarse sin instrucciones excesivas. Una alternativa técnicamente sencilla que elimina la asociación manual puede resolver un artefacto, pero no necesariamente el problema de Relevo.
 
@@ -629,7 +629,7 @@ El análisis se realiza en dos escalas. La primera pregunta qué familia conserv
 
 **Cuna o base de guardado.** Concentra carga y almacenamiento, pero fija el objeto a un punto y desplaza el sentido desde el primer paso hacia el guardado. Agrega volumen, contactos y piezas. Se descarta provisionalmente porque no es necesaria para estudiar asociación.
 
-**Objeto con pantalla o display.** Mostraría intención, estado o instrucciones, pero repetiría el contenido de la aplicación, aumentaría consumo y convertiría el testigo en otra superficie de lectura. Se descarta por la restricción central de objeto sin pantalla.
+**Objeto de consulta con display.** Mostraría intención, estado o instrucciones, pero repetiría el contenido de la aplicación, aumentaría consumo y convertiría el testigo en otra superficie de lectura. Se descarta porque desplaza su función desde la presencia ambiental hacia la consulta de información.
 
 **Faro fijo.** Puede ser perceptible y estable, pero limita la relación con primeros pasos diversos. Se conserva como alternativa conceptual, no como dirección inicial.
 
@@ -652,12 +652,12 @@ Luz, sonido y vibración son variables de prueba. La luz puede depender de líne
 | Elemento | Estado | Razón |
 | --- | --- | --- |
 | Sistema phygital | Mantener | La pregunta exige relación entre aplicación, objeto, lugar y persona. |
-| Objeto sin pantalla | Mantener | Es la hipótesis de una clave no textual fuera del flujo visual. |
+| Testigo físico situado | Mantener | Representa una intención y emite un pulso ambiental fuera del flujo del teléfono. |
 | Aplicación Android | Mantener provisionalmente | Permite estudiar una plataforma concreta sin prometer cobertura universal. |
 | Lugar manual | Mantener provisionalmente | La asociación pertenece a la persona, no a una detección automática. |
 | Una intención y un primer paso | Mantener provisionalmente | Reduce ambigüedad y carga inicial. |
 | Cuna o base | Descartar provisionalmente | No es necesaria para la primera pregunta y agrega piezas. |
-| Display | Descartar por alcance | Contradice la ausencia de pantalla y repite contenido. |
+| Display de consulta | Descartar por alcance | Duplica contenido y desplaza al testigo desde la presencia ambiental hacia otra superficie informativa. |
 | Faro fijo | No seleccionar inicialmente | Reduce movilidad y variedad de contextos. |
 | Testigo transportable | Seleccionar provisionalmente | Permite comparación situada/neutra y reubicación manual. |
 | Forma, peso, color, autonomía | Pendiente | Requieren pruebas de percepción, manipulación, energía y producción. |
@@ -665,7 +665,7 @@ Luz, sonido y vibración son variables de prueba. La luz puede depender de líne
 
 ## 9.5 Dirección física y criterio de refutación
 
-La selección del testigo transportable cierra una dirección de investigación, no una forma final. Si la asociación no aparece, primero se revisarán señal, lugar, control, gesto y contexto. Si el conjunto físico no aporta diferencia frente a la notificación, la dirección se reformulará o abandonará. Cualquier dirección posterior de Relevo deberá conservar el carácter phygital y un objeto físico sin pantalla; si ninguna configuración de ese tipo sostiene un valor defendible, la formulación actual quedará refutada y volverá a investigación de diseño.
+La selección del testigo transportable cierra una dirección de investigación, no una forma final. Si la asociación no aparece, primero se revisarán señal, lugar, control, gesto y contexto. Si el conjunto físico no aporta diferencia frente a la notificación, la dirección se reformulará o abandonará. Cualquier dirección posterior de Relevo deberá conservar el carácter phygital y una interfaz objetual ambiental; si ninguna configuración de ese tipo sostiene un valor defendible, la formulación actual quedará refutada y volverá a investigación de diseño.
 
 La evidencia negativa debe identificar qué fue refutado. Una señal puede fallar por su modalidad; un lugar, por su relación con el primer paso; el testigo, por su transportabilidad; la regla, por su momento; o el sistema, por su carga total. No corresponde convertir un fallo local en una conclusión sobre toda materialidad.
 
@@ -678,11 +678,11 @@ Relevo es un sistema phygital compuesto por:
 1. una aplicación Android que conserva el significado de la intención y configura el ciclo;
 2. una condición observable cuya forma sigue pendiente;
 3. un enlace local, propuesto mediante Bluetooth Low Energy (BLE), que transporta patrones y estados técnicos;
-4. un testigo físico sin pantalla que emite una señal no textual;
+4. un testigo físico situado, transportable y asociado a una intención activa, que emite un pulso ambiental;
 5. un lugar que la persona elige y asocia manualmente con el primer paso;
 6. una persona que interpreta, decide, ignora, silencia o modifica.
 
-La aplicación contiene la intención porque el testigo no muestra texto. El objeto recibe solo el patrón y los parámetros indispensables para producir la señal. El lugar no es un sensor. La persona puede cambiar de decisión. Relevo no bloquea, clasifica, puntúa ni registra cumplimiento.
+La aplicación conserva el contenido semántico de la intención; el testigo recibe solo el patrón y los parámetros indispensables para producir el pulso. Esta distribución evita convertir el objeto en otra interfaz de consulta. El lugar no es un sensor. La persona puede cambiar de decisión. Relevo no bloquea, clasifica, puntúa ni registra cumplimiento.
 
 ## 10.2 Elementos y límites
 
@@ -735,7 +735,7 @@ La privacidad también incluye quién puede leer la intención en el teléfono y
 
 ## 11.1 Arquitectura mínima y aspiracional
 
-La arquitectura mínima de Relevo debe permitir estudiar una relación, no resolver todos los contextos. Incluye una aplicación Android, una aplicación seleccionada, una intención, un primer paso, una condición observable pendiente, una ventana armada, un testigo sin pantalla, un patrón de señal y una salida. La activación inicial puede ser simulada por el investigador. En esta etapa no son requisitos la automatización, el enlace BLE, la batería ni la producción.
+La arquitectura mínima de Relevo debe permitir estudiar una relación, no resolver todos los contextos. Incluye una aplicación Android, una aplicación seleccionada, una intención, un primer paso, una condición observable pendiente, una ventana armada, un testigo físico situado, un patrón de señal y una salida. La activación inicial puede ser simulada por el investigador. En esta etapa no son requisitos la automatización, el enlace BLE, la batería ni la producción.
 
 La arquitectura aspiracional podría consultar estadísticas de uso mediante UsageStatsManager, funcionar con la aplicación en segundo plano, mantener un enlace BLE, informar batería, recuperar estados y operar en distintos fabricantes. UsageStatsManager expone información de uso de aplicaciones bajo un permiso especial; no detecta automatismo ni garantiza una activación inmediata (Google, s. f.-c). La ejecución BLE en segundo plano depende de versión, fabricante, energía y configuración (Google, s. f.-a; Google, s. f.-b). La arquitectura aspiracional es una hipótesis técnica.
 
@@ -833,7 +833,7 @@ Una especificación que aparece antes de la pregunta debe tratarse como candidat
 
 ## 11.7 Accesibilidad, autonomía y convivencia
 
-La accesibilidad es un conjunto de requisitos por investigar, no una propiedad universal anticipada. Deben distinguirse dimensiones visual, auditiva, táctil, cognitiva, motora y doméstica. La ausencia de pantalla no resuelve por sí sola las barreras: desplaza la carga hacia la señal, el control, la explicación en la aplicación y el contexto.
+La accesibilidad es un conjunto de requisitos por investigar, no una propiedad universal anticipada. Deben distinguirse dimensiones visual, auditiva, táctil, cognitiva, motora y doméstica. Un pulso ambiental no resuelve por sí solo las barreras: distribuye la carga entre señal, control, explicación en la aplicación y contexto.
 
 El criterio preventivo de destellos de las Pautas de Accesibilidad para el Contenido Web (WCAG, por su sigla en inglés) orienta el riesgo visual, pero cumplir una referencia no prueba percepción ni accesibilidad (World Wide Web Consortium, s. f.). La señal auditiva no es solución automática a la baja visibilidad. La vibración debe evaluarse sobre superficies reales. La aplicación debe explicar estados técnicos sin exigir consulta posterior para comprender la señal.
 
@@ -859,7 +859,7 @@ El procesamiento local limita la circulación, pero no equivale a privacidad abs
 
 ## 12.1 Factibilidad como cadena de preguntas
 
-La factibilidad de Relevo no consiste en demostrar que una carcasa puede fabricarse. Consiste en establecer qué necesita cada pregunta, quién puede resolverla, qué recursos requiere, qué riesgos permanecen y qué condiciones permitirían sostener una dirección física sin pantalla. La producción comprende prototipado, fabricación, ensamblaje, prueba, reparación, mantenimiento y fin de vida. La escala comercial no se presume.
+La factibilidad de Relevo no consiste en demostrar que una carcasa puede fabricarse. Consiste en establecer qué necesita cada pregunta, quién puede resolverla, qué recursos requiere, qué riesgos permanecen y qué condiciones permitirían sostener un testigo físico situado de señal ambiental. La producción comprende prototipado, fabricación, ensamblaje, prueba, reparación, mantenimiento y fin de vida. La escala comercial no se presume.
 
 ## 12.2 Etapas de prototipo por pregunta
 
@@ -939,7 +939,7 @@ Los riesgos se organizan por concepto, percepción, técnica, convivencia, acces
 
 El mantenimiento empieza en la configuración. La persona crea una intención, concede permisos, vincula, sitúa, prueba y arma. Si reubica el objeto, debe repetir la prueba y armar. Si baja la batería, la aplicación debe explicar la limitación y orientar la carga o el desarmado. La reparación debe considerar batería, placa, actuadores, botón, difusor y carcasa. El fin de vida debe separar batería y electrónica y evitar una pieza sellada sin justificación.
 
-La escala se considera solo cuando la dirección conserva función, señal, privacidad, reparación, mantenimiento y gestión en pruebas más amplias. Si existe aporte físico pero falla el testigo transportable, se modifica esa capa y se mantiene una solución phygital sin pantalla. Si ninguna configuración aporta una diferencia, se abandona la dirección física actual y se vuelve a investigación de diseño.
+La escala se considera solo cuando la dirección conserva función, señal, privacidad, reparación, mantenimiento y gestión en pruebas más amplias. Si existe aporte físico pero falla el testigo transportable, se modifica esa capa y se mantiene una interfaz objetual ambiental dentro del sistema phygital. Si ninguna configuración aporta una diferencia, se abandona la dirección física actual y se vuelve a investigación de diseño.
 
 # 13. Plan de prototipado y evaluación
 
@@ -947,7 +947,7 @@ La escala se considera solo cuando la dirección conserva función, señal, priv
 
 Las ocho entrevistas fueron realizadas presencialmente en Santiago los días 11 y 12 de junio de 2026. Constituyen evidencia exploratoria sobre episodios relatados, no una evaluación de Relevo. Q13 se refirió al concepto histórico In(Visible), por lo que solo orienta de manera condicional el tono discreto y no punitivo; no permite afirmar aceptación, eficacia, preferencia ni valor físico de Relevo. A la fecha de cierre de esta memoria no existen resultados de prototipos, comparación entre ubicaciones, comparación con una notificación ni integración Android–BLE.
 
-Relevo se mantiene como sistema phygital: una aplicación configura el significado, un objeto físico sin pantalla emite una señal y la persona asocia manualmente ese objeto con un lugar y un primer paso. La notificación del teléfono será un control comparativo, no la solución final. Si el testigo transportable no aporta una diferencia reconocible, deberá reformularse o reemplazarse la dirección física; el proyecto no se convertirá en una aplicación sola.
+Relevo se mantiene como sistema phygital: una aplicación configura el significado, un testigo físico situado emite un pulso ambiental y la persona lo asocia manualmente con un lugar y un primer paso. La notificación del teléfono será un control comparativo, no la solución final. Si el testigo transportable no aporta una diferencia reconocible, deberá reformularse o reemplazarse la dirección física; el proyecto no se convertirá en una aplicación sola.
 
 Las hipótesis operativas son:
 
@@ -975,11 +975,11 @@ La secuencia aumenta la fidelidad solo después de resolver la pregunta anterior
 
 ### P0. Asociación con activación simulada
 
-Se pregunta si la persona relaciona intención, primer paso, lugar y señal sin pantalla cuando el investigador activa el evento manualmente. El material puede ser un testigo de baja fidelidad, una ficha de configuración y un escenario acotado. Se registran explicación espontánea, recuerdo de intención y primer paso, consulta al teléfono, intrusión, autonomía y posibilidad de ignorar o silenciar. P0 no prueba Android, BLE, cambio de conducta ni uso doméstico. Si la asociación depende de una explicación posterior o se interpreta como alarma, se vuelve a formular la señal antes de avanzar.
+Se pregunta si la persona relaciona intención, primer paso, lugar y pulso ambiental cuando el investigador activa el evento manualmente. El material puede ser un testigo de baja fidelidad, una ficha de configuración y un escenario acotado. Se registran explicación espontánea, recuerdo de intención y primer paso, consulta al teléfono, intrusión, autonomía y posibilidad de ignorar o silenciar. P0 no prueba Android, BLE, cambio de conducta ni uso doméstico. Si la asociación depende de una explicación posterior o se interpreta como alarma, se vuelve a formular la señal antes de avanzar.
 
 ### P1. Lugar congruente, lugar neutro y notificación de control
 
-Solo si P0 es interpretable, se compara el mismo objeto sin pantalla en un lugar congruente y uno neutro con una notificación equivalente. La notificación controla el aporte de la modalidad; no es un reemplazo de Relevo. Deben mantenerse comparables intención, primer paso y claridad del mensaje, y registrarse orden, razón de elección, comprensión, consulta, intrusión y salida. Si el lugar no agrega una relación distinguible o la notificación entrega el mismo valor con menor carga, se reformula la dirección física.
+Solo si P0 es interpretable, se compara el mismo testigo físico en un lugar congruente y uno neutro con una notificación equivalente. La notificación controla el aporte de la modalidad; no es un reemplazo de Relevo. Deben mantenerse comparables intención, primer paso y claridad del mensaje, y registrarse orden, razón de elección, comprensión, consulta, intrusión y salida. Si el lugar no agrega una relación distinguible o la notificación entrega el mismo valor con menor carga, se reformula la dirección física.
 
 ### P2. Canales de señal y salida
 
@@ -995,7 +995,7 @@ Solo después de las puertas anteriores se integran aplicación, objeto, lugar, 
 
 ## 13.3 Registro y regla de decisión
 
-Cada prueba conservará versión, fecha, contexto, consentimiento, códigos de participantes, materiales, procedimiento, evidencia primaria, interpretación, limitaciones y decisión. Hecho, evidencia, inferencia, hipótesis, decisión de alcance y pendiente deben permanecer diferenciados. La activación simulada no se describirá como automatización; un registro técnico correcto no se describirá como experiencia comprensible. La dirección se mantiene solo si converge una asociación situada, una salida autónoma y una ejecución proporcional. Si el objeto no aporta frente a la notificación, la formulación física vigente queda refutada y vuelve a investigación de diseño, manteniendo el carácter phygital y el objeto sin pantalla en cualquier dirección posterior.
+Cada prueba conservará versión, fecha, contexto, consentimiento, códigos de participantes, materiales, procedimiento, evidencia primaria, interpretación, limitaciones y decisión. Hecho, evidencia, inferencia, hipótesis, decisión de alcance y pendiente deben permanecer diferenciados. La activación simulada no se describirá como automatización; un registro técnico correcto no se describirá como experiencia comprensible. La dirección se mantiene solo si converge una asociación situada, una salida autónoma y una ejecución proporcional. Si el objeto no aporta frente a la notificación, la formulación física vigente queda refutada y vuelve a investigación de diseño, manteniendo el carácter phygital y una interfaz objetual ambiental en cualquier dirección posterior.
 
 ## 13.4 Instrumentos y trazabilidad de evaluación
 
@@ -1011,7 +1011,7 @@ Las decisiones serán formativas y comparativas, no una suma de puntuaciones. Un
 
 La investigación delimita una situación, no un diagnóstico general: una actividad digital puede continuar cuando una intención alternativa ya fue reconocida o valorada, pero esa misma actividad puede ser elegida, significativa, relacional o reparadora. Por eso la duración, la aplicación y la presencia del teléfono no bastan para decidir una intervención. El usuario principal y el usuario límite son patrones situacionales, no identidades demográficas.
 
-La contribución alcanzada hasta aquí es una formulación investigable de esa tensión y una arquitectura que distribuye significado entre aplicación, testigo sin pantalla, lugar y persona. La evidencia no permite afirmar que Relevo mejore recuerdo, ejecución, autonomía, bienestar, adopción o continuidad de una intención. Tampoco permite sostener todavía la condición Android/BLE, el costo, la producción ni la superioridad del objeto frente a una notificación.
+La contribución alcanzada hasta aquí es una formulación investigable de esa tensión y una arquitectura que distribuye significado entre aplicación, testigo físico situado, lugar y persona. La evidencia no permite afirmar que Relevo mejore recuerdo, ejecución, autonomía, bienestar, adopción o continuidad de una intención. Tampoco permite sostener todavía la condición Android/BLE, el costo, la producción ni la superioridad del objeto frente a una notificación.
 
 ## 14.2 Contribuciones actuales y aporte esperado
 
@@ -1023,7 +1023,7 @@ La contribución alcanzada hasta aquí es una formulación investigable de esa t
 | --- | --- | --- |
 | Investigación | Revisión de literatura y mercado, más ocho entrevistas reales codificadas P1–P8. | Delimita episodios, variaciones y condiciones de no intervención; no estima prevalencia. |
 | Formulación | Problema, pregunta, usuario principal, usuario límite e hipótesis H1–H4. | Hace evaluable la relación entre intención, señal, lugar y autonomía; no la valida. |
-| Arquitectura | Sistema phygital de aplicación, objeto físico sin pantalla, lugar manual y persona. | Organiza dependencias y puertas; no demuestra factibilidad integrada. |
+| Arquitectura | Sistema phygital de aplicación, testigo físico situado, lugar manual y persona. | Organiza dependencias y puertas; no demuestra factibilidad integrada. |
 | Método | Ruta P0–P4 y comparación con notificación. | Define qué evidencia falta y cuándo detener una dirección. |
 | Artefacto esperado | Testigo situado, señal no textual y salida autónoma, si las pruebas lo sostienen. | Aporte eventual; si falla, debe reformularse o reemplazarse la dirección física, nunca reducir Relevo a una aplicación. |
 
@@ -1185,7 +1185,7 @@ Esta jerarquía impide convertir una fuente, una interpretación o una intenció
 
 | Puerta | Pregunta principal | Activación y material | Evidencia para avanzar |
 | --- | --- | --- | --- |
-| P0 | ¿Se entiende la relación intención–primer paso–lugar–señal? | Activación simulada; objeto sin pantalla o sustituto de baja fidelidad. | Asociación espontánea, recuerdo, consulta, intrusión y salida. |
+| P0 | ¿Se entiende la relación intención–primer paso–lugar–señal? | Activación simulada; testigo físico o sustituto de baja fidelidad. | Asociación espontánea, recuerdo, consulta, intrusión y salida. |
 | P1 | ¿El lugar aporta frente a lugar neutro y notificación? | Mismo objeto, dos lugares y notificación equivalente. | Diferencia situada interpretable y carga comparable. |
 | P2 | ¿La señal se percibe, atribuye y detiene sin reproche? | Canales visual, auditivo y táctil como alternativas de prueba. | Percepción, atribución, convivencia y autonomía de salida. |
 | P3 | ¿La condición y el enlace sobreviven a fallos? | Android/BLE seleccionado para banco; estados y fallos registrados. | Vencimiento, recuperación, batería, permisos y señal tardía legibles. |
@@ -1199,7 +1199,7 @@ En todas las puertas el número de participantes, la duración y el reclutamient
 
 **Archivo y versión anterior.** Se creó `08_memoria/memoria-vigente-v2.md` como candidata integral y se preservó `08_memoria/memoria-vigente.md` como versión anterior. La nueva memoria sintetiza los siete módulos de reconstrucción registrados en `08_memoria/borradores-v2/`; no corresponde a una suma literal de esos documentos.
 
-**Contenido mantenido.** Se conservaron el problema de continuidad digital poco deliberada, el valor del ocio elegido, la intención alternativa, la condición de no intervención, el carácter phygital, el objeto físico sin pantalla, Android como plataforma inicial de prueba y el corpus anonimizado P1–P8.
+**Contenido mantenido.** Se conservaron el problema de continuidad digital poco deliberada, el valor del ocio elegido, la intención alternativa, la condición de no intervención, el carácter phygital, la interfaz objetual ambiental, Android como plataforma inicial de prueba y el corpus anonimizado P1–P8.
 
 **Contenido reemplazado o corregido.** La descripción general del público fue sustituida por un usuario principal y un usuario límite situacionales. El levantamiento se formuló como estudio cualitativo exploratorio mediante entrevistas semiestructuradas; se precisaron reclutamiento, consentimiento, tratamiento posterior y límites del registro. Q13 quedó restringida al concepto histórico In(Visible). El mercado se reorganizó por mecanismos y por fuerza de fuente. Los flujos, datos, producción, costos, gestión y evaluación se separaron según evidencia, inferencia, hipótesis, decisión y pendiente.
 
@@ -1207,10 +1207,10 @@ En todas las puertas el número de participantes, la duración y el reclutamient
 
 **Correcciones cuantitativas y metodológicas.** Se mantuvieron las fechas de entrevistas del 11 y 12 de junio de 2026, el rango observado de 19 a 27 años, P6 con 27 años y la edad como único criterio común confirmado. La lista de materiales se recalculó sobre una base de CLP 51.140–92.640; con 15 % de contingencia resulta CLP 58.811–106.536 y se comunica redondeada como CLP 59.000–107.000, sin cotizaciones. El plan P0–P4 no fija número de participantes, duración ni reclutamiento sin protocolo previo.
 
-**Correcciones de la auditoría final.** Se definieron siglas y conceptos técnicos en su primera aparición; se aclaró que la ausencia de pantalla es una restricción firme y que su valor asociativo es la hipótesis; se incorporó investigación de 2026 sobre reconfiguración de intervenciones; se numeró la tabla de contribuciones; y el anexo metodológico dejó de repetir la matriz individual ya presente en el capítulo 6.
+**Correcciones de la auditoría final.** Se definieron siglas y conceptos técnicos en su primera aparición; se separó la función del testigo físico de su valor asociativo todavía hipotético; se incorporó investigación de 2026 sobre reconfiguración de intervenciones; se numeró la tabla de contribuciones; y el anexo metodológico dejó de repetir la matriz individual ya presente en el capítulo 6.
 
 **Referencias, anexos y estado de evidencia.** Se consolidó una lista única de referencias APA 7 en español y se conservaron anexos selectivos sobre metodología, jerarquía de afirmaciones y protocolo. No se añadieron respuestas, preferencias, cotizaciones, especificaciones ni resultados de prototipo inexistentes. La activación, la comparación física, Android/BLE, accesibilidad, convivencia, producción y aporte del artefacto permanecen pendientes de evaluación.
 
-**Alineación con el historial de encargos.** Tras revisar la secuencia acumulativa de encargos, se restituyeron la identificación académica, el índice visible y la motivación personal; se hicieron localizables los títulos de planteamiento del problema, formulación, propuesta proyectual y mapa de actores; y se explicitaron los tres ámbitos del marco teórico y los siete componentes de la teoría de cambio. Antes, estos contenidos estaban ausentes o distribuidos entre capítulos sin los títulos exigidos. Se incorporaron para hacer reconocible la arquitectura académica sin eliminar la ampliación propia del Proyecto de Título.
+**Alineación con el historial de encargos.** Tras revisar la secuencia acumulativa de encargos, se restituyeron la identificación académica, el índice visible y la motivación personal; se hicieron localizables los títulos de planteamiento del problema, formulación, propuesta proyectual y mapa de actores; y se explicitaron los tres ámbitos del marco teórico y los siete componentes de la teoría de cambio. Antes, estos contenidos estaban ausentes o distribuidos entre capítulos sin los títulos exigidos. Se incorporaron para hacer reconocible la arquitectura académica sin eliminar la ampliación propia del Proyecto de Título. En una revisión posterior se sustituyó la definición negativa del objeto por la formulación positiva **testigo físico situado que representa una intención activa y emite un pulso ambiental**; la exclusión de una interfaz de consulta permanece solo como requisito técnico y no como propuesta de valor.
 
 **Archivos afectados.** Esta intervención académica modifica únicamente `08_memoria/memoria-vigente-v2.md`; la documentación de auditoría, mercado y gobernanza se actualiza por separado en el repositorio.

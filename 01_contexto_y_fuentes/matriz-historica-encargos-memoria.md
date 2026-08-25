@@ -5,7 +5,7 @@
 
 ## Resumen vigente de Relevo
 
-Relevo es un proyecto de titulación de Diseño que explora un sistema **phygital** compuesto por una aplicación Android, un objeto físico sin pantalla y un lugar elegido manualmente. El sistema busca apoyar la recuperación de una intención alternativa y su primer paso durante ciertos episodios de continuidad digital poco deliberada, sin bloquear, puntuar, vigilar ni evaluar la decisión posterior. La formulación, los flujos y el plan de evaluación están documentados; todavía no existen resultados de pruebas de Relevo. La activación, el canal y la forma final siguen abiertos a evidencia.
+Relevo es un proyecto de titulación de Diseño que explora un sistema **phygital** compuesto por una aplicación Android, un testigo físico situado y un lugar elegido manualmente. El testigo representa una intención activa y emite un pulso ambiental junto al primer paso de la actividad. El sistema busca apoyar la recuperación de esa intención durante ciertos episodios de continuidad digital poco deliberada, sin bloquear, puntuar, vigilar ni evaluar la decisión posterior. La formulación, los flujos y el plan de evaluación están documentados; todavía no existen resultados de pruebas de Relevo. La activación, el canal y la forma final siguen abiertos a evidencia.
 
 ## Dictamen de revisión
 
@@ -104,3 +104,10 @@ Esto no exige reescribir los 14 capítulos de v2. La equivalencia visible ya fue
 - **Versión anterior:** la matriz describía índice, motivación, tres ámbitos, títulos históricos y teoría de cambio como vacíos pendientes.
 - **Motivo:** impedir que la matriz quede desincronizada respecto de las correcciones ya aplicadas.
 - **Alcance:** permanecen abiertos los resultados de prototipado, la activación, la señal, la forma y los umbrales; no se avanzó Encargo 17.
+
+### 2026-08-24 — Definición positiva del objeto
+
+- **Cambio:** el resumen de Relevo pasó de describir una ausencia a definir un testigo físico situado que representa una intención y emite un pulso ambiental.
+- **Versión anterior:** se usaba “objeto físico sin pantalla” como parte principal de la definición.
+- **Motivo:** separar identidad funcional de restricciones técnicas.
+- **Alcance:** la matriz histórica conserva referencias antiguas cuando son necesarias para explicar decisiones previas.

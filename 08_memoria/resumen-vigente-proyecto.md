@@ -4,7 +4,7 @@
 
 ## Qué es
 
-Relevo es un sistema phygital compuesto por una aplicación Android y un objeto físico sin pantalla. Busca volver disponible una intención que la propia persona había formulado —por ejemplo, caminar, leer o dibujar— cuando una sesión de ocio digital continúa con poca deliberación. No bloquea aplicaciones, no asigna premios o castigos y no decide qué actividad es correcta.
+Relevo es un sistema phygital compuesto por una aplicación Android y un testigo físico situado. El testigo representa una intención activa y emite un pulso ambiental desde el lugar donde comienza la actividad elegida. Busca volver disponible esa intención cuando una sesión de ocio digital continúa con poca deliberación. No bloquea aplicaciones, no asigna premios o castigos y no decide qué actividad es correcta.
 
 ## Para quién y en qué situación
 
@@ -16,8 +16,8 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 1. La persona registra una intención y su primer paso en la aplicación.
 2. Elige una condición de activación, todavía por definir mediante pruebas.
-3. Sitúa manualmente el objeto junto al primer paso de la actividad.
-4. Cuando se cumple la condición, el objeto emite una señal no textual.
+3. Sitúa manualmente el testigo junto al primer paso de la actividad.
+4. Cuando se cumple la condición, el testigo emite un pulso ambiental.
 5. La persona puede continuar, silenciar la señal o iniciar la alternativa. Relevo no registra esa decisión como éxito o fracaso.
 
 ## Estado actual
@@ -26,10 +26,12 @@ Están documentados el problema, marco teórico, ocho entrevistas, usuarios situ
 
 ## Qué cambió en esta actualización
 
-La memoria recuperó la arquitectura acumulada de los encargos: identificación académica, índice, motivación personal, tres ámbitos explícitos de marco teórico y teoría de cambio con siete componentes. Relevo no cambió de propósito ni de restricciones; quedó mejor organizado y más fácil de evaluar como Proyecto de Título.
+La memoria recuperó la arquitectura acumulada de los encargos: identificación académica, índice, motivación personal, tres ámbitos explícitos de marco teórico y teoría de cambio con siete componentes. Además, dejó de definir el objeto por lo que no contiene: ahora se formula positivamente como un testigo físico situado que representa una intención activa y emite un pulso ambiental.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
 
 **2026-08-24 — Creación.** Se creó este resumen para ofrecer una lectura breve y sincronizada con `memoria-vigente-v2.md`. No reemplaza la memoria ni agrega resultados. La descripción se basa en la formulación vigente; las decisiones técnicas y de interacción señaladas como abiertas no deben tratarse como especificaciones cerradas.
+
+**2026-08-24 — Definición positiva del objeto.** Se reemplazó “objeto físico sin pantalla” por “testigo físico situado”. Antes, el objeto se describía mediante una ausencia; ahora se define por su función: representar una intención activa y emitir un pulso ambiental desde un lugar significativo. La arquitectura visual y electrónica específica permanece abierta.
