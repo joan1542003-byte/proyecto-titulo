@@ -82,11 +82,20 @@ Estos puntos pertenecen al desarrollo P0–P4. Convertirlos ahora en especificac
 
 ## Cobertura complementaria
 
+La [versión HTML vigente](wireframes-board-html/README.md) presenta cada marco dentro de un archivo editorial: el teléfono contiene solo la interfaz digital; la selección, la explicación, la correspondencia con la pauta y la descarga permanecen fuera. El marco `3.2` sustituye el teléfono por una escena situada porque el pulso ocurre en el espacio físico y el testigo no funciona como pantalla.
+
 El anexo mantiene cinco familias de estados: configuración; vinculación y prueba física; armado; espera y señal; cierre y recuperación. Cada estado posee un wireframe separado para inspección, aunque no todos exigen atención de la persona durante el uso. En particular, la vinculación del testigo queda explícita como precondición del emplazamiento y el vencimiento sin pulso queda registrado como un cierre válido.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Separación entre interfaz, contexto y documentación
+
+- **Cambio:** se enlazó un tablero editorial que mantiene fuera del teléfono los controles de navegación, la explicación académica y la descarga; el momento `3.2` se representa como escena física situada.
+- **Versión anterior:** el prototipo HTML concentraba la presentación alrededor del dispositivo móvil y no diferenciaba con suficiente claridad la interfaz del material de entrega.
+- **Motivo:** responder con precisión al carácter phygital del proyecto y facilitar la lectura del Encargo 17.
+- **Alcance:** ajuste de representación; no modifica el ciclo ni presenta decisiones de forma o señal como validadas.
 
 ### 2026-08-26 — Versión HTML descargable
 

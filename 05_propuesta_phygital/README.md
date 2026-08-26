@@ -23,8 +23,9 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 ## Documentos activos
 
+- [Archivo editorial de wireframes — versión vigente](wireframes-board-html/README.md)
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
-- [Wireframes HTML de media fidelidad y descargas individuales](wireframes-media-html/README.md)
+- [Prototipo HTML móvil anterior — registro de proceso](wireframes-media-html/README.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
 - [Láminas 4K de wireframes para calcar — serie vigente](wireframes-referencia-ios-4k/README.md)
 - [Láminas sintéticas anteriores — registro de proceso](wireframes-referencia/README.md)
@@ -39,6 +40,13 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 ---
 
 ## Registro de cambios
+
+### 2026-08-26 — Archivo editorial vigente
+
+- **Cambio:** se incorporó un tablero de tres áreas que separa catálogo, wireframe y ficha documental.
+- **Versión anterior:** la navegación, la explicación y la descarga se organizaban alrededor de una vista móvil.
+- **Motivo:** evitar que información propia de la entrega parezca formar parte de la interfaz de Relevo y representar el momento físico `3.2` fuera del teléfono.
+- **Alcance:** mejora de presentación y trazabilidad; no agrega funciones ni acredita validación.
 
 ### 2026-08-26 — Prototipo HTML de media fidelidad
 
