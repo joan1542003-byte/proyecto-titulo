@@ -38,15 +38,13 @@ La base metodológica del corpus quedó consolidada:
 - las personas fueron reclutadas mediante referencias de la red personal; el criterio de convocatoria fue de 18 a 30 años y el rango observado fue de 19 a 27 años;
 - se obtuvo consentimiento informado oral;
 - todas las preguntas y repreguntas fueron realizadas por el investigador;
-- la asistencia automatizada se utilizó únicamente para transcribir las conversaciones después del levantamiento;
-- el documento digital de transcripción constituye el corpus operativo;
-- las notas manuscritas ya no están disponibles y su ausencia no bloquea el análisis;
+- el documento digital anonimizado constituye el corpus operativo del análisis;
 - P6 tiene 27 años;
 - la duración individual de las entrevistas no quedó registrada.
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La reconstrucción y auditoría de la memoria quedó completada en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria con cierre editorial vigente](08_memoria/memoria-vigente-v2.md); la [v1](08_memoria/memoria-vigente.md) se conserva como antecedente. El cierre está respaldado por la [auditoría final editorial](08_memoria/auditoria-final-editorial-2026-08-25.md); la [auditoría rectora anterior](08_memoria/auditoria-sol-memoria-v2.md) conserva la trazabilidad de la reconstrucción y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md), su evolución estructural.
+La reconstrucción y auditoría de la memoria quedó completada en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v3](08_memoria/memoria-vigente-v3.md), respaldada por la [auditoría de estructura narrativa](08_memoria/auditoria-estructura-narrativa-2026-08-26.md). La [v2](08_memoria/memoria-vigente-v2.md), su [auditoría final editorial](08_memoria/auditoria-final-editorial-2026-08-25.md), la [auditoría rectora](08_memoria/auditoria-sol-memoria-v2.md) y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
 
 ## Inicio para nuevas conversaciones
 
@@ -96,6 +94,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 
 ## Registro de cambios (disclaimer)
 
+### 2026-08-26 — Activación de la memoria v3
+
+- **Cambio:** se declaró `08_memoria/memoria-vigente-v3.md` como base académica activa y se enlazó su auditoría narrativa.
+- **Versión anterior:** la v2 era el cierre editorial vigente y presentaba la formulación antes de completar el fundamento investigativo.
+- **Motivo:** recuperar el orden del cierre del primer semestre y cumplir la rúbrica mediante aristas, justificación, tres ámbitos teóricos, usuarios, estado del arte y criterios antes de la formulación.
+- **Alcance:** la definición funcional de Relevo se mantiene; no se añadieron resultados de prototipo.
+
 ### 2026-08-25 — Cierre editorial de la memoria
 
 - **Cambio:** se declaró la memoria activa como cierre editorial del estado real y se registró la cobertura estructural de 35 estados.
@@ -119,7 +124,7 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ### 2026-08-24 — Definición positiva del testigo
 
 - **Cambio:** se reemplazó la descripción negativa del objeto por su función concreta como testigo físico situado de una intención activa.
-- **Versión anterior:** la síntesis lo definía principalmente por la ausencia de pantalla.
+- **Versión anterior:** la síntesis lo definía principalmente mediante una exclusión técnica.
 - **Motivo:** una propuesta de valor debe explicar qué hace y qué relación construye, no enumerar componentes ausentes.
 - **Alcance:** la interfaz objetual seguirá basada en señales ambientales; canal, forma y electrónica se cerrarán mediante desarrollo y prueba.
 
@@ -142,7 +147,7 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 - **Cambio:** se actualizó la línea activa y se enlazaron memoria y preparación escrita.
 - **Versión anterior:** la migración documental era la única línea activa.
 - **Motivo:** priorizar escritura antes de visualidad.
-- **Alcance:** la migración queda pausada; el objeto sigue sin pantalla.
+- **Alcance:** la migración queda pausada; el canal y la forma del testigo siguen abiertos a desarrollo y prueba.
 
 
 ### 2026-08-23 — Instrucciones para nuevas conversaciones
@@ -168,10 +173,10 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 
 ### 2026-08-23 — Consolidación metodológica de las entrevistas
 
-- **Cambio:** se incorporaron fecha, rango etario, modalidad, reclutamiento, consentimiento, autoría de preguntas, procedimiento de transcripción, edad de P6 y estado del corpus.
-- **Versión anterior:** se presentaban las notas manuscritas como fuente primaria pendiente de preservar y se atribuían a la asistencia automatizada tareas posteriores más amplias.
-- **Motivo:** el autor aclaró que todo el levantamiento fue hablado y dirigido por él, que la asistencia automatizada solo transcribió y que las notas ya no están disponibles.
-- **Decisión derivada:** usar la transcripción digital anonimizada como corpus operativo y cerrar la preservación de notas como tarea no realizable, sin tratarla como bloqueo.
+- **Cambio:** se incorporaron fecha, rango etario, modalidad, reclutamiento, consentimiento, autoría de preguntas, edad de P6 y estado del corpus.
+- **Versión anterior:** la procedencia y el alcance del registro no estaban diferenciados con claridad.
+- **Motivo:** el autor confirmó que todo el levantamiento fue hablado, presencial y dirigido por él.
+- **Decisión derivada:** usar la transcripción digital anonimizada como corpus operativo y privilegiar paráfrasis en el análisis.
 
 ### 2026-08-23 — Inicio de la fase 1
 

@@ -6,13 +6,15 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos vigentes
 
-- [Memoria de Relevo — cierre editorial vigente](memoria-vigente-v2.md): documento académico activo y completo para el estado real del proyecto.
-- [Memoria de Relevo — DOCX para Google Docs](entregables/memoria-relevo-cierre-editorial-2026-08-25.docx): versión editable y revisada visualmente del cierre editorial.
+- [Memoria de Relevo v3 — cierre escrito vigente](memoria-vigente-v3.md): documento académico activo, reordenado según el cierre del primer semestre y los requisitos de Proyecto de Título.
+- [Memoria de Relevo — DOCX para Google Docs](entregables/memoria-relevo-cierre-escrito-2026-08-26.docx): versión editable y revisada visualmente del cierre escrito.
 - [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
+- [Auditoría de estructura narrativa del 26 de agosto](auditoria-estructura-narrativa-2026-08-26.md): contraste entre la v2, el cierre del primer semestre, la rúbrica y los encargos acumulativos.
 - [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
 - [Auditoría final editorial del 25 de agosto](auditoria-final-editorial-2026-08-25.md): control posterior a la incorporación de los 35 estados.
 - [Matriz histórica de encargos](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md): requisitos acumulados, vigencia y trazabilidad de estructura.
+- [Memoria v2](memoria-vigente-v2.md): cierre editorial anterior, preservado para trazabilidad.
 - [Memoria v1](memoria-vigente.md): antecedente preservado; no gobierna la formulación actual.
 - [Matriz de incorporación del feedback E15](matriz-incorporacion-feedback-e15.md)
 - [Dictamen rector de reconstrucción](dictamen-rector-reconstruccion-memoria.md)
@@ -20,22 +22,23 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Arquitectura narrativa vigente
 
-0. Identificación académica, resumen, ficha, índice y motivación personal.
-1. Introducción.
-2. Planteamiento del problema: antecedentes y construcción.
-3. Formulación del proyecto: pregunta, objetivos, alcance, exclusiones, tesis, hipótesis y teoría de cambio.
-4. Metodología.
-5. Marco teórico articulado en tres ámbitos.
-6. Usuarios y contexto.
-7. Estado del arte, mercado y referentes.
-8. Síntesis de investigación y oportunidad de diseño.
-9. Propuesta proyectual y decisiones de diseño.
-10. Sistema Relevo.
-11. Arquitectura de experiencia y flujos.
-12. Producción, factibilidad y modelo de gestión.
-13. Plan de prototipado y evaluación.
-14. Conclusiones, contribución, límites y próximos pasos.
-15. Referencias y anexos selectivos.
+0. Identificación académica, resumen, abstract e índice.
+1. Motivación personal.
+2. Introducción.
+3. Planteamiento del problema mediante tres aristas.
+4. Justificación y pertinencia disciplinar.
+5. Antecedentes y estado de la cuestión.
+6. Marco teórico articulado en tres ámbitos.
+7. Investigación de usuarios: método, contexto y hallazgos.
+8. Estado del arte, mercado y referentes.
+9. Síntesis de investigación y criterios de diseño.
+10. Formulación del proyecto: problema de diseño, perspectiva del usuario, preguntas, hipótesis, objetivos, alcance, teoría de cambio, actores y plan.
+11. Propuesta y desarrollo proyectual.
+12. Arquitectura de experiencia y flujos.
+13. Producción, factibilidad y modelo de gestión.
+14. Plan de prototipado y evaluación.
+15. Conclusiones, contribución, límites y próximos pasos.
+16. Referencias y anexos selectivos.
 
 La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a las memorias históricas.
 
@@ -53,6 +56,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-26 — Activación de la memoria v3
+
+- **Cambio:** `memoria-vigente-v3.md` sustituyó a la v2 como documento académico activo y se añadió su auditoría estructural.
+- **Versión anterior:** la formulación completa aparecía antes del marco teórico, los usuarios y el estado del arte.
+- **Motivo:** recuperar una progresión en que el proyecto se deriva del problema, sus aristas y la investigación, de acuerdo con el cierre del primer semestre y los documentos rectores de Coordinación.
+- **Alcance:** la v2 y sus auditorías se preservan como proceso; el nuevo orden no incorpora resultados de prototipo inexistentes.
 
 ### 2026-08-25 — Entregable DOCX y revisión de fluidez
 

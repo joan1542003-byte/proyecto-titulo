@@ -13,7 +13,7 @@ El repositorio es la fuente central de contexto, decisiones, documentación y ta
 1. Accede al repositorio mediante la app o el conector de GitHub.
 2. Lee primero `README.md`.
 3. Revisa `00_gobernanza/directrices-de-trabajo.md`, `00_gobernanza/hoja-de-ruta.md` y las Issues abiertas.
-4. Identifica la única fase sustantiva activa y consulta solo los archivos pertinentes para la solicitud. Para trabajo de memoria, abre `08_memoria/memoria-vigente-v2.md` y `08_memoria/auditoria-sol-memoria-v2.md`; `memoria-vigente.md` es un antecedente.
+4. Identifica la única fase sustantiva activa y consulta solo los archivos pertinentes para la solicitud. Para trabajo de memoria, abre `08_memoria/memoria-vigente-v3.md`, `08_memoria/resumen-vigente-proyecto.md` y `08_memoria/auditoria-estructura-narrativa-2026-08-26.md`; las versiones v2 y v1 son antecedentes.
 5. Distingue con claridad:
    - la petición actual del usuario;
    - las instrucciones vigentes del repositorio;
@@ -43,8 +43,8 @@ La condición de activación permanece abierta entre continuidad de uso, acumula
 - P6 tiene 27 años.
 - El consentimiento informado fue oral.
 - Todas las preguntas y repreguntas fueron realizadas por el investigador.
-- La asistencia automatizada se usó únicamente después del levantamiento para transcribir y ajustar la escritura. No atribuyas preguntas, respuestas ni análisis de campo a una IA.
-- Las notas manuscritas ya no están disponibles y la duración individual no quedó registrada. Consígnalo como límite, no como tarea pendiente ni motivo para invalidar el corpus.
+- El corpus operativo es una transcripción anonimizada y regularizada después de las conversaciones; se utiliza para análisis temático y no como transcripción literal certificada.
+- La duración individual no quedó registrada. Consígnalo como un límite metodológico acotado, no como tarea pendiente ni motivo para invalidar el corpus.
 - Conserva el anonimato mediante P1–P8. No publiques nombres ni otros datos identificables.
 - No inventes testimonios, biografías, fotografías, hábitos ni rasgos de personas.
 - Los dos tipos de usuario deben derivarse de patrones situacionales presentes en las entrevistas. Consulta `03_usuarios` antes de describirlos y trátalos como revisables.
@@ -131,6 +131,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 
 ## Registro de cambios (disclaimer)
 
+### 2026-08-26 — Memoria v3 y orden narrativo rector
+
+- **Cambio:** se declaró la v3 como memoria activa y se añadió su auditoría narrativa a la lectura inicial obligatoria.
+- **Versión anterior:** las instrucciones remitían a la v2 y a su auditoría rectora, cuya formulación aparecía antes del desarrollo completo de la investigación.
+- **Motivo:** asegurar que nuevas conversaciones construyan el proyecto paso a paso: problema y aristas, justificación, antecedentes, teoría, usuarios, estado del arte, criterios y, solo después, formulación.
+- **Alcance:** la v2 y sus auditorías continúan disponibles para trazabilidad; la definición funcional de Relevo y los pendientes P0–P4 se mantienen.
+
 ### 2026-08-25 — Cierre editorial y estado del desarrollo estructural
 
 - **Cambio:** se registraron la cobertura de 35 estados, el cierre editorial de la memoria y la finalización del Encargo 17.
@@ -148,7 +155,7 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ### 2026-08-24 — Lenguaje positivo del producto
 
 - **Cambio:** se estableció “testigo físico situado” como denominación funcional del objeto.
-- **Versión anterior:** el contexto estable lo definía mediante la ausencia de pantalla.
+- **Versión anterior:** el contexto estable lo definía mediante una exclusión técnica.
 - **Motivo:** nuevas conversaciones deben explicar qué hace Relevo antes de enumerar restricciones técnicas.
 - **Alcance:** el testigo representa una intención y emite un pulso ambiental; canal, forma y electrónica continúan sujetos a desarrollo.
 
