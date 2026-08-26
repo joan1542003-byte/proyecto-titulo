@@ -24,12 +24,13 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 ## Documentos activos
 
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
+- [Wireframes HTML de media fidelidad y descargas individuales](wireframes-media-html/README.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
 - [Láminas 4K de wireframes para calcar — serie vigente](wireframes-referencia-ios-4k/README.md)
 - [Láminas sintéticas anteriores — registro de proceso](wireframes-referencia/README.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
-- [Memoria integral v2 vigente](../08_memoria/memoria-vigente-v2.md)
+- [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md)
 
 ## Estado
 
@@ -38,6 +39,13 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 ---
 
 ## Registro de cambios
+
+### 2026-08-26 — Prototipo HTML de media fidelidad
+
+- **Cambio:** se incorporó una versión navegable con los nueve marcos evaluables, los 35 estados complementarios y 44 descargas PNG individuales.
+- **Versión anterior:** la documentación remitía al tablero Figma y a láminas rasterizadas para reconstrucción manual.
+- **Motivo:** facilitar revisión, comparación y calco de cada wireframe sin alterar la arquitectura del Encargo 17.
+- **Alcance:** herramienta de presentación y prototipado; no constituye validación ni identidad visual final.
 
 ### 2026-08-25 — Referencias 4K vigentes
 

@@ -6,7 +6,7 @@ El Encargo 17 quedó desarrollado como un tablero editable de baja fidelidad:
 
 - **Figma:** [Relevo — Encargo 17 · Wireframes estructurales](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4)
 - **Fecha de cierre estructural:** 25 de agosto de 2026.
-- **Fuente académica:** [memoria integral v2](../08_memoria/memoria-vigente-v2.md).
+- **Fuente académica:** [memoria vigente v4](../08_memoria/memoria-vigente-v4.md).
 - **Fundamento detallado:** [preparación escrita](preparacion-escrita-encargo-17.md).
 - **Decisión asociada:** D-032 en el [registro de decisiones](../09_decisiones/registro-de-decisiones.md).
 
@@ -15,6 +15,8 @@ La entrega contiene exactamente tres interacciones y nueve marcos. Ocho marcos c
 Como complemento, el [anexo de cobertura de interacciones](anexo-cobertura-interacciones-encargo-17.md) registra y representa las 35 ramificaciones del ciclo mínimo en una [página separada del mismo archivo Figma](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4?node-id=13-2). El anexo permite revisar validaciones, salidas voluntarias, fallos técnicos y estados límite sin alterar el tablero exigido por la pauta ni presentarlos como funciones adicionales.
 
 Además, se produjeron [catorce láminas de referencia en 4K](wireframes-referencia-ios-4k/README.md) para reconstruir manualmente los 35 estados en Figma. Estas imágenes amplían componentes y jerarquías, pero no forman parte de la cuenta evaluable de nueve marcos ni fijan el diseño final. La serie sintética anterior de siete láminas se conserva como registro de proceso.
+
+La entrega cuenta también con una [versión HTML de media fidelidad](wireframes-media-html/README.md). Permite recorrer los nueve marcos evaluables, consultar el anexo de 35 estados y descargar los 44 wireframes por separado. Esta capa facilita la revisión y el calco; no agrega funciones a Relevo ni sustituye el archivo Figma.
 
 ## Resumen del recorrido
 
@@ -85,6 +87,13 @@ El anexo mantiene cinco familias de estados: configuración; vinculación y prue
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Versión HTML descargable
+
+- **Cambio:** se enlazó un prototipo HTML navegable con 44 exportaciones PNG individuales y auditoría de diseño.
+- **Versión anterior:** la entrega se consultaba mediante Figma y láminas agrupadas.
+- **Motivo:** permitir inspección y descarga independiente de cada marco manteniendo separados los nueve evaluables y los 35 complementarios.
+- **Alcance:** media fidelidad; no modifica el recorrido, no fija identidad final y no acredita validación.
 
 ### 2026-08-25 — Serie completa de referencias 4K
 
