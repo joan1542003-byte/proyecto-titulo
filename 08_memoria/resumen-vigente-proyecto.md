@@ -26,7 +26,7 @@ Están documentados el problema, marco teórico, ocho entrevistas, usuarios situ
 
 ## Qué cambió en esta actualización
 
-La memoria alcanza un cierre editorial del estado real del proyecto. A la especialización derivada del estado del arte —recuperar una intención propia en el lugar donde puede comenzar su primer paso— se añade una arquitectura de interacción exhaustiva que diferencia configuración, vinculación, prueba, armado, espera, señal, cierre y recuperación. Android continúa como única plataforma del prototipo técnico integrado; web e iPhone permanecen fuera del alcance inicial. El valor físico, la condición de activación y el desempeño continúan pendientes de P0–P4.
+La memoria mantiene su formulación, alcance y estado de evidencia, pero recibió una revisión de fluidez antes de exportarse a DOCX para Google Docs. Los pasajes que funcionaban como inventarios comprimidos se reescribieron como relaciones entre ideas; también se corrigieron encabezados instrumentales y repeticiones de sujeto. La estructura, contrastada con una memoria académica de referencia, se conserva porque ya articula con claridad problema, investigación, propuesta, factibilidad y evaluación. El valor físico, la condición de activación y el desempeño continúan pendientes de P0–P4.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
@@ -43,3 +43,5 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 **2026-08-25 — Plataforma inicial.** Se añadió al resumen la selección de Android y el descarte acotado de web e iPhone. Antes, Android figuraba como plataforma provisional sin una comparación explícita; ahora se define como único entorno del prototipo técnico integrado. Esta decisión no fija la activación ni excluye expansiones futuras.
 
 **2026-08-25 — Cierre editorial y arquitectura de interacción.** Se incorporaron tres interacciones, nueve marcos de síntesis y 35 estados como resultados de desarrollo estructural. Antes, el resumen informaba flujos y protocolos, pero no registraba la cobertura producida. El cambio permite comprender qué se diseñó sin confundir wireframes con validación; P0–P4, forma, canal, técnica y costos reales permanecen abiertos.
+
+**2026-08-25 — Revisión de fluidez y versión DOCX.** Se revisaron los apartados más densos y se generó un entregable editable para Google Docs. Antes, algunas secuencias repetían el sujeto o comprimían P0–P4 en frases aisladas; ahora explicitan la relación entre etapas y decisiones. La propuesta de Relevo, sus fuentes y sus pendientes no cambiaron.

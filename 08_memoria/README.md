@@ -7,6 +7,8 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 ## Documentos vigentes
 
 - [Memoria de Relevo — cierre editorial vigente](memoria-vigente-v2.md): documento académico activo y completo para el estado real del proyecto.
+- [Memoria de Relevo — DOCX para Google Docs](entregables/memoria-relevo-cierre-editorial-2026-08-25.docx): versión editable y revisada visualmente del cierre editorial.
+- [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 - [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
 - [Auditoría final editorial del 25 de agosto](auditoria-final-editorial-2026-08-25.md): control posterior a la incorporación de los 35 estados.
@@ -51,6 +53,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-25 — Entregable DOCX y revisión de fluidez
+
+- **Cambio:** se añadió una versión DOCX compatible con Google Docs y se revisaron los pasajes más rígidos de la memoria vigente.
+- **Versión anterior:** solo existía el Markdown canónico y varios apartados presentaban secuencias demasiado entrecortadas o encabezados instrumentales.
+- **Motivo:** facilitar la edición académica en Google Docs y mejorar la lectura sin rebajar la precisión metodológica.
+- **Alcance:** el DOCX deriva del Markdown vigente, conserva referencias, tablas, anexos y registro de cambios, y no introduce resultados nuevos.
 
 ### 2026-08-25 — Cierre editorial de la memoria activa
 
