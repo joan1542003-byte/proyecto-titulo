@@ -6,14 +6,15 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos vigentes
 
-- [Memoria de Relevo v3 — cierre escrito vigente](memoria-vigente-v3.md): documento académico activo, reordenado según el cierre del primer semestre y los requisitos de Proyecto de Título.
-- [Memoria de Relevo — DOCX para Google Docs](entregables/memoria-relevo-cierre-escrito-2026-08-26.docx): versión editable y revisada visualmente del cierre escrito.
+- [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
+- [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 - [Auditoría de estructura narrativa del 26 de agosto](auditoria-estructura-narrativa-2026-08-26.md): contraste entre la v2, el cierre del primer semestre, la rúbrica y los encargos acumulativos.
 - [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
 - [Auditoría final editorial del 25 de agosto](auditoria-final-editorial-2026-08-25.md): control posterior a la incorporación de los 35 estados.
 - [Matriz histórica de encargos](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md): requisitos acumulados, vigencia y trazabilidad de estructura.
+- [Memoria v3](memoria-vigente-v3.md): versión anterior, preservada para trazabilidad.
 - [Memoria v2](memoria-vigente-v2.md): cierre editorial anterior, preservado para trazabilidad.
 - [Memoria v1](memoria-vigente.md): antecedente preservado; no gobierna la formulación actual.
 - [Matriz de incorporación del feedback E15](matriz-incorporacion-feedback-e15.md)
@@ -25,20 +26,18 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 0. Identificación académica, resumen, abstract e índice.
 1. Motivación personal.
 2. Introducción.
-3. Planteamiento del problema mediante tres aristas.
-4. Justificación y pertinencia disciplinar.
+3. Planteamiento del problema.
+4. Justificación.
 5. Antecedentes y estado de la cuestión.
-6. Marco teórico articulado en tres ámbitos.
-7. Investigación de usuarios: método, contexto y hallazgos.
-8. Estado del arte, mercado y referentes.
-9. Síntesis de investigación y criterios de diseño.
-10. Formulación del proyecto: problema de diseño, perspectiva del usuario, preguntas, hipótesis, objetivos, alcance, teoría de cambio, actores y plan.
-11. Propuesta y desarrollo proyectual.
-12. Arquitectura de experiencia y flujos.
-13. Producción, factibilidad y modelo de gestión.
-14. Plan de prototipado y evaluación.
-15. Conclusiones, contribución, límites y próximos pasos.
-16. Referencias y anexos selectivos.
+6. Marco teórico por ámbitos.
+7. Usuario, contexto y hallazgos de entrevistas.
+8. Estado del arte y referentes.
+9. Criterios de diseño.
+10. Formulación.
+11. Bajada proyectual.
+12. Factibilidad y límites.
+13. Plan de desarrollo y validación.
+14. Referencias.
 
 La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a las memorias históricas.
 
@@ -56,6 +55,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-26 — Activación de la memoria v4
+
+- **Cambio:** `memoria-vigente-v4.md` sustituyó a la v3 como documento académico activo y se añadió una auditoría específica de redacción y extensión.
+- **Versión anterior:** la v3 adelantaba Relevo y el proceso de reformulación dentro de la motivación y la introducción, utilizaba denominaciones innecesariamente complejas y ampliaba la estructura a dieciséis capítulos.
+- **Motivo:** recuperar con mayor fidelidad la secuencia, los títulos y los límites del cierre del primer semestre, reservando la formulación para el capítulo 10.
+- **Alcance:** el documento canónico vuelve a ser únicamente Markdown. Los DOCX anteriores permanecen como exportaciones históricas y no representan la memoria vigente.
 
 ### 2026-08-26 — Activación de la memoria v3
 

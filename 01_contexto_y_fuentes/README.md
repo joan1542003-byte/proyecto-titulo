@@ -12,7 +12,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
 - [Feedback E15](feedback-e15.md): sintetiza observaciones pertinentes sin convertirlas en decisiones automáticas.
 - [Criterios oficiales para la memoria de Proyecto de Título](criterios-oficiales-memoria-proyecto-titulo.md): consolida estructura, áreas de evaluación y límites documentales verificados en reglamento y pautas institucionales.
-- [Matriz histórica de encargos y memoria](matriz-historica-encargos-memoria.md): reconstruye requisitos acumulativos, distingue formatos de proceso y audita su ubicación en la memoria v2.
+- [Matriz histórica de encargos y memoria](matriz-historica-encargos-memoria.md): reconstruye requisitos acumulativos, distingue formatos de proceso y audita su ubicación en la memoria v4.
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
 - [Equivalencias de los PDF de cierre](../99_archivo/fuentes-locales/semestre-1/cierre/equivalencias-pdf.md): distingue In(Visible), Relevo y las ramas v3.
@@ -43,6 +43,13 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Sincronización con la memoria v4
+
+- **Cambio:** el índice señala que la matriz histórica audita la memoria v4.
+- **Versión anterior:** la descripción remitía todavía a la v2.
+- **Motivo:** mantener el índice alineado con el documento académico activo.
+- **Alcance:** no cambia el inventario de fuentes ni la interpretación de los encargos.
 
 ### 2026-08-24 — Matriz histórica de encargos enlazada
 

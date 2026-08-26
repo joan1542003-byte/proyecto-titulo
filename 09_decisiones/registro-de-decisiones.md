@@ -239,7 +239,7 @@
 - **Estado:** pendiente crítico
 - **Decisión:** no elegir todavía entre continuidad de uso, acumulación dentro de una ventana y horario.
 - **Fundamento:** cada alternativa cambia pertinencia, privacidad, fallos y significado; la facilidad técnica no basta para decidir.
-- **Condición de cierre:** evidencia conceptual y técnica obtenida mediante P0–P3.
+- **Condición de cierre:** evidencia obtenida mediante pruebas de asociación, comparación, señal e integración técnica.
 
 ## D-025 — La edad describe la muestra, no define al usuario
 
@@ -296,7 +296,7 @@
 - **Decisión:** desarrollar el primer prototipo técnico integrado únicamente en Android; descartar la web como capa operativa y dejar iPhone fuera del alcance inicial.
 - **Fundamento:** Android reúne capacidades nativas para consultar actividad autorizada y comunicarse mediante BLE en un entorno único. La web no ofrece compatibilidad BLE uniforme para el sistema completo. La integración con iPhone es plausible, pero exige una segunda arquitectura nativa, autorizaciones y recursos propios antes de validar el aporte físico.
 - **Alternativas descartadas:** aplicación web como sistema operativo principal; desarrollo simultáneo para Android e iOS.
-- **Consecuencia:** P3 se documentará en un teléfono y versión Android concretos. La decisión no fija la condición de activación, no garantiza ejecución en segundo plano y no elimina futuras expansiones.
+- **Consecuencia:** la integración técnica se documentará en un teléfono y una versión Android concretos. La decisión no fija la condición de activación, no garantiza ejecución en segundo plano y no elimina futuras expansiones.
 - **Condición de revisión:** evidencia de valor físico y recursos suficientes para estudiar portabilidad después del prototipo inicial.
 - **Documento asociado:** [Decisión de plataforma inicial](../06_desarrollo_y_factibilidad/decision-plataforma-android.md).
 
@@ -308,12 +308,29 @@
 - **Tres interacciones:** formular y preparar; situar, probar y armar; recibir el pulso y cerrar.
 - **Representación phygital:** la tercera interacción incluye un marco contextual del pulso físico. Android solo aporta espera, cierre y recuperación técnica; no sustituye el momento situado ni requiere consulta para interpretar la señal.
 - **Fundamento:** el recorrido debe ser conectable, no coercitivo y compatible con la memoria v2 y la pauta E17. Un cierre por ciclo evita repetición insistente y registro implícito de conducta.
-- **Límite:** gesto, condición, canal y forma permanecen como hipótesis sujetas a P0–P4; esta decisión no demuestra comprensión, accesibilidad, eficacia ni viabilidad técnica.
+- **Límite:** gesto, condición, canal y forma permanecen como hipótesis sujetas a pruebas progresivas; esta decisión no demuestra comprensión, accesibilidad, eficacia ni viabilidad técnica.
 - **Documento asociado:** [Preparación escrita de Encargo 17](../05_propuesta_phygital/preparacion-escrita-encargo-17.md).
+
+## D-033 — Memoria v4 como base académica
+
+- **Fecha:** 2026-08-26
+- **Estado:** vigente; sustituye a la v3 como base de escritura
+- **Decisión:** utilizar `08_memoria/memoria-vigente-v4.md` como memoria activa, con los catorce títulos del cierre del primer semestre, una extensión general de 15.000 a 20.000 palabras y la formulación de Relevo a partir del capítulo 10.
+- **Criterios de redacción:** la motivación se limita a la experiencia personal presente; la introducción explica el fenómeno antes de presentar una solución; los conceptos se definen al aparecer; se evita crear términos innecesarios; y las etapas de prueba se nombran por su propósito.
+- **Fundamento:** feedback directo del autor, estructura histórica de `Johan Yantén Dis. Gráfico`, pauta del examen y contraste con otras memorias del repositorio.
+- **Consecuencia:** la v3 y sus DOCX quedan como antecedentes. No se genera un nuevo DOCX en esta etapa y el resumen vigente debe enlazar la v4.
+- **Documentos asociados:** [Memoria v4](../08_memoria/memoria-vigente-v4.md) y [auditoría de redacción](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — D-033
+
+- **Cambio:** se registró la memoria v4 como base académica y se reemplazaron códigos de prueba en decisiones vigentes por nombres descriptivos.
+- **Versión anterior:** la v3 gobernaba la escritura y la formulación se anticipaba en la motivación y la introducción.
+- **Motivo:** recuperar la secuencia del primer semestre, respetar los límites del examen y mejorar la claridad para el lector.
+- **Resultado:** Relevo aparece como consecuencia de la investigación; los DOCX anteriores quedan como exportaciones históricas.
 
 ### 2026-08-25 — D-032
 

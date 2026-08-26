@@ -20,7 +20,7 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 
 ## Síntesis vigente
 
-Relevo es un proyecto phygital que busca devolver una intención personal a la consideración de una persona durante una sesión de ocio digital poco deliberada. La formulación vigente combina una aplicación Android con un testigo físico situado que representa una intención activa y emite un pulso ambiental desde el lugar donde una actividad puede comenzar.
+Relevo es un proyecto phygital que busca recuperar una intención personal cuando una sesión de ocio digital continúa y esa alternativa deja de orientar el siguiente paso. La propuesta combina una aplicación Android con un objeto situado junto al comienzo de una actividad elegida.
 
 El proyecto no pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento. Su valor propuesto depende de apoyar una decisión autónoma mediante una señal breve, configurable y no punitiva.
 
@@ -30,7 +30,7 @@ La versión breve y mantenida después de cada actualización está en el [resum
 
 ## Estado actual
 
-**Línea activa: [P0 — asociación intención–primer paso–lugar–señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
+**Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
 
 La base metodológica del corpus quedó consolidada:
 
@@ -44,7 +44,7 @@ La base metodológica del corpus quedó consolidada:
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La reconstrucción y auditoría de la memoria quedó completada en la [Issue #7](https://github.com/joan1542003-byte/proyecto-titulo/issues/7). La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v3](08_memoria/memoria-vigente-v3.md), respaldada por la [auditoría de estructura narrativa](08_memoria/auditoria-estructura-narrativa-2026-08-26.md). La [v2](08_memoria/memoria-vigente-v2.md), su [auditoría final editorial](08_memoria/auditoria-final-editorial-2026-08-25.md), la [auditoría rectora](08_memoria/auditoria-sol-memoria-v2.md) y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
+La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md). La [v3](08_memoria/memoria-vigente-v3.md), las auditorías anteriores y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
 
 ## Inicio para nuevas conversaciones
 
@@ -93,6 +93,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Activación de la memoria v4
+
+- **Cambio:** se declaró `08_memoria/memoria-vigente-v4.md` como base académica activa y se actualizó la descripción breve del proyecto.
+- **Versión anterior:** la raíz remitía a la v3, empleaba una denominación compleja para el fenómeno y nombraba la siguiente prueba mediante un código interno.
+- **Motivo:** mantener el repositorio sincronizado con una memoria más fiel al orden del primer semestre y más clara para lectores externos.
+- **Alcance:** la definición funcional de Relevo se mantiene; cambia la forma de narrarla y documentarla.
 
 ### 2026-08-26 — Activación de la memoria v3
 

@@ -4,11 +4,11 @@
 
 ## Qué es
 
-Relevo es un sistema phygital que ayuda a recuperar una intención propia cuando una actividad de ocio digital continúa y esa alternativa deja de orientar el paso siguiente. Una aplicación Android conserva la intención y configura el ciclo; un testigo físico representa esa intención y emite una señal breve desde el lugar donde puede comenzar su primer paso. La persona decide si continúa, silencia la señal o inicia la actividad. El sistema no bloquea, puntúa ni califica la respuesta.
+Relevo es un sistema phygital que ayuda a recuperar una intención personal cuando una sesión de ocio digital continúa y esa alternativa deja de orientar el siguiente paso. Una aplicación Android conserva la intención y configura el ciclo; un objeto situado cerca del comienzo de la actividad emite una señal breve. La persona decide si continúa, silencia la señal o inicia la alternativa.
 
 ## Para quién y en qué situación
 
-El usuario principal no es una categoría fija: aparece en un episodio donde existe una alternativa autoelegida, se conoce cómo empezarla y, aun así, la actividad digital conserva continuidad. El usuario límite corresponde a episodios en que el ocio digital es elegido, significativo, reparador o coherente con la intención del momento; allí Relevo no debería intervenir.
+El usuario principal aparece en un episodio donde existe una alternativa elegida, se conoce cómo empezarla y, aun así, la actividad digital continúa. El usuario límite aparece cuando el ocio digital es significativo, reparador o coherente con la intención del momento; allí Relevo no debería intervenir. Una misma persona puede ocupar ambas situaciones.
 
 El hogar es el primer contexto de prueba, todavía como hipótesis y no como conclusión de las entrevistas.
 
@@ -16,23 +16,25 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 1. La persona registra una intención y su primer paso en la aplicación.
 2. Elige una condición observable de activación, todavía por definir mediante pruebas.
-3. Sitúa manualmente el testigo junto al primer paso de la actividad.
-4. Cuando se cumple la condición, el testigo emite un pulso ambiental.
+3. Sitúa manualmente el objeto junto al primer paso de la actividad.
+4. Cuando se cumple la condición, el objeto emite un pulso ambiental.
 5. La persona puede continuar, silenciar la señal o iniciar la alternativa. Relevo no registra esa decisión como éxito o fracaso.
 
 ## Estado actual
 
-La memoria vigente es `memoria-vigente-v3.md`. Construye el problema mediante tres aristas, desarrolla tres ámbitos teóricos, analiza ocho entrevistas reales, distingue dos usuarios situacionales y estudia el mercado por mecanismos. Después formula Relevo y documenta propuesta, flujos, factibilidad, costos preliminares y cinco etapas de evaluación, P0–P4.
+La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El ciclo de experiencia quedó desarrollado mediante tres interacciones, nueve marcos de síntesis y 35 estados estructurales. Los wireframes —esquemas de contenido, jerarquía y navegación previos a la apariencia final— permiten revisar recorridos, salidas y fallos, pero no constituyen pruebas de uso. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, el lugar doméstico específico, la electrónica final, los costos reales y el precio.
+El documento completo tiene aproximadamente 16.470 palabras y cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales y el aporte del objeto frente a una notificación.
 
 ## Qué cambió en esta actualización
 
-La versión v3 recupera la progresión del cierre del primer semestre y la ajusta a la rúbrica de Proyecto de Título. La formulación completa dejó de aparecer al comienzo: ahora llega después del problema, sus aristas, la justificación, los antecedentes, el marco teórico, los usuarios, el estado del arte y los criterios de diseño. También se retiró la ficha inicial que adelantaba decisiones, se adoptó únicamente el término `desplazamiento infinito`, se explicaron los conceptos especializados al aparecer y se mantuvo una sola hipótesis central con cuatro dimensiones de evaluación. El valor físico y el desempeño de Relevo continúan pendientes de P0–P4.
+La v4 reescribe la memoria con un lenguaje más directo y una secuencia más fiel al documento del primer semestre. La motivación se concentra en la experiencia personal presente, se elimina el relato sobre cómo cambió el proyecto y se reemplazan conceptos innecesariamente complejos por descripciones simples. Las etapas de prueba se nombran por su propósito y no mediante códigos internos. El valor físico y el desempeño de Relevo continúan pendientes de evaluación.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-26 — Sincronización con la memoria v4.** Antes, el resumen remitía a la v3, utilizaba una denominación compleja para el fenómeno y describía la validación mediante códigos internos. Ahora registra el orden de catorce capítulos, la aparición de Relevo en la formulación, el cumplimiento de extensión y los pendientes mediante lenguaje directo. El funcionamiento básico del sistema no cambió.
 
 **2026-08-24 — Creación.** Se creó este resumen para ofrecer una lectura breve y sincronizada con `memoria-vigente-v2.md`. No reemplaza la memoria ni agrega resultados. La descripción se basa en la formulación vigente; las decisiones técnicas y de interacción señaladas como abiertas no deben tratarse como especificaciones cerradas.
 

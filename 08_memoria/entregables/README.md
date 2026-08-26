@@ -2,11 +2,11 @@
 
 ## Propósito
 
-Esta carpeta reúne versiones de uso y entrega derivadas de la memoria canónica en Markdown. Los archivos exportados facilitan la revisión, los comentarios y la edición en otras plataformas, pero no sustituyen el historial documentado en `08_memoria/memoria-vigente-v3.md`.
+Esta carpeta reúne exportaciones históricas derivadas de versiones anteriores de la memoria. La versión canónica es `08_memoria/memoria-vigente-v4.md` y se mantiene únicamente en Markdown por solicitud del autor.
 
-## Versión disponible
+## Versiones históricas disponibles
 
-- `memoria-relevo-cierre-escrito-2026-08-26.docx`: versión vigente y editable para Google Docs, con página carta, márgenes de 2,54 cm, tipografía Arial, jerarquía académica sobria, tablas de ancho fijo y enlaces activos.
+- `memoria-relevo-cierre-escrito-2026-08-26.docx`: exportación histórica de la memoria v3; no representa la redacción vigente.
 - `memoria-relevo-cierre-editorial-2026-08-25.docx`: versión anterior, preservada únicamente para trazabilidad.
 
 ## Controles aplicados
@@ -24,6 +24,8 @@ Esta carpeta reúne versiones de uso y entrega derivadas de la memoria canónica
 ---
 
 ## Registro de cambios (disclaimer)
+
+**26 de agosto de 2026 — DOCX reclasificados como históricos.** Se retiró la condición vigente del DOCX del 26 de agosto. Antes, ese archivo era la exportación activa de la v3 para Google Docs; ahora la memoria canónica es `memoria-vigente-v4.md` y no se generará otro DOCX en esta etapa. Los archivos existentes se conservan para trazabilidad y no fueron eliminados.
 
 **26 de agosto de 2026 — Sustitución de la versión vigente.** Se generó `memoria-relevo-cierre-escrito-2026-08-26.docx` desde `08_memoria/memoria-vigente-v3.md` y pasó a ser el entregable vigente. Antes, la carpeta remitía a la v2 del 25 de agosto, cuya formulación aparecía antes del desarrollo completo del problema, el marco teórico, los usuarios y el estado del arte. La nueva exportación adopta la secuencia académica revisada, conserva las tres aristas, unifica el vocabulario, incorpora las definiciones necesarias y mejora el flujo de lectura. También se ajustó el índice para que no dejara un ítem aislado en una página. El cambio afecta contenido y presentación conforme a la v3, pero no agrega entrevistas, preferencias ni resultados de prototipo. La versión anterior se conserva como antecedente.
 

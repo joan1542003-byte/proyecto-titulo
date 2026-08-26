@@ -2,7 +2,7 @@
 
 ## Estado general
 
-Relevo cuenta con una memoria integral auditada y cerrada editorialmente para el estado real del proyecto. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión, e incorpora el desarrollo estructural de tres interacciones, nueve marcos de síntesis y 35 estados. La línea sustantiva activa es [P0, la prueba de asociación con activación simulada](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
+Relevo cuenta con una memoria integral en Markdown, auditada según los títulos, la secuencia y los límites del examen. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión. La línea sustantiva activa es la [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
 
 El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuando sus preguntas, evidencia, límites y decisiones están registrados. El producto phygital no se desarrolla como una respuesta autónoma; debe poder reconstruirse desde la investigación.
 
@@ -10,7 +10,7 @@ El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuand
 
 Durante junio de 2026 se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago con personas de 19 a 27 años, bajo un criterio de convocatoria de 18 a 30 años. El reclutamiento fue no probabilístico, mediante referencias de la red personal. Se obtuvo consentimiento informado oral.
 
-Todas las preguntas y repreguntas fueron formuladas por el investigador. Las conversaciones se transcribieron posteriormente con asistencia automatizada, sin generación de preguntas ni respuestas. La transcripción digital es el corpus operativo. Las notas manuscritas ya no están disponibles. La duración individual no fue registrada. P6 tiene 27 años.
+Todas las preguntas y repreguntas fueron formuladas por el investigador durante las conversaciones. El corpus operativo corresponde a una transcripción anonimizada y regularizada después del levantamiento, sin preguntas ni respuestas añadidas. La duración individual no fue registrada. P6 tiene 27 años.
 
 Estas limitaciones deben declararse, pero no impiden realizar un análisis cualitativo exploratorio.
 
@@ -50,7 +50,7 @@ Documentación: [Fuentes locales migradas](../99_archivo/fuentes-locales/README.
 
 ### Fase 1 — Usuarios
 
-**Estado:** completada para la formulación v2; abierta a contraste mediante prototipos y nuevas entrevistas si fueran necesarias.
+**Estado:** completada para la formulación v4; abierta a contraste mediante prototipos y nuevas entrevistas si fueran necesarias.
 
 Orden obligatorio:
 
@@ -63,13 +63,13 @@ Orden obligatorio:
 7. [Completado] elegir usuario principal más usuario límite;
 8. [Completado] desarrollar perfiles situacionales, necesidades, tensiones y recorridos;
 9. [Completado] traducir los hallazgos a requisitos y límites del proyecto;
-10. [Completado] redactar el apartado de usuario para la memoria v2.
+10. [Completado] redactar el apartado de usuario para la memoria v4.
 
-No se elaborarán biografías o visualidades ficticias. Los perfiles se revisarán si P0–P4 producen evidencia nueva.
+No se elaborarán biografías o visualidades ficticias. Los perfiles se revisarán cuando las pruebas produzcan evidencia nueva.
 
 ### Fase 2 — Problema y valor
 
-**Estado:** completada provisionalmente en la memoria v2; debe revisarse ante contraejemplos de P0–P4.
+**Estado:** completada provisionalmente en la memoria v4; debe revisarse ante nuevos contraejemplos.
 
 Preguntas centrales:
 
@@ -87,7 +87,7 @@ Incluye bibliografía académica reciente, productos disponibles, aproximaciones
 
 ### Fase 4 — Definición de la propuesta phygital
 
-**Estado:** arquitectura provisional documentada; valor físico y forma final pendientes de P0–P2.
+**Estado:** arquitectura provisional documentada; valor físico y forma final pendientes de las pruebas de asociación, comparación y señal.
 
 La propuesta se formulará desde requisitos derivados de investigación. Se registrarán propuesta de valor, principios de interacción, relación físico-digital, flujo de usuario, flujo técnico, alcance, ventajas, límites y decisiones descartadas.
 
@@ -99,13 +99,13 @@ Incluye arquitectura técnica, producción, materiales, componentes, costos, man
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8); comenzar por el protocolo P0.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8); comenzar por la asociación entre intención, primer paso, lugar y señal.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
 ### Fase 7 — Escritura y cierre de memoria
 
-**Estado:** cierre editorial completado; reabrir después de cada resultado ejecutado.
+**Estado:** memoria v4 activa y auditada; reabrir después de cada resultado ejecutado.
 
 La memoria integrará solo argumentos respaldados por el proceso. Se revisarán coherencia narrativa, trazabilidad, lenguaje académico, APA 7, definiciones, redundancias y correspondencia entre problema, usuarios, propuesta y validación.
 
@@ -123,6 +123,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Memoria v4 y etapas descriptivas
+
+- **Cambio:** se sincronizó la hoja de ruta con `memoria-vigente-v4.md`, se reemplazaron códigos internos por nombres descriptivos y se corrigió la descripción del corpus de entrevistas.
+- **Versión anterior:** la hoja remitía a la v2 y describía la transcripción mediante información técnica ajena al método de entrevista.
+- **Motivo:** mantener un registro claro del levantamiento real y evitar que la nomenclatura operativa pase a la narración académica.
+- **Decisión derivada:** la siguiente actividad continúa siendo la prueba de asociación; no se modifican la muestra ni los pendientes técnicos.
 
 ### 2026-08-25 — Cierre editorial posterior al desarrollo estructural
 
@@ -156,7 +163,7 @@ Una fase se considera suficientemente desarrollada cuando:
 
 - **Cambio:** se consolidó la metodología real del levantamiento y se reemplazó la preservación de notas por el uso de la transcripción digital como corpus operativo.
 - **Versión anterior:** la hoja de ruta mantenía abierta la recuperación de notas y condicionaba el uso del corpus a esa tarea.
-- **Motivo:** el autor confirmó que las notas ya no están disponibles, que todas las preguntas fueron realizadas por él y que la asistencia automatizada solo se usó para transcribir.
+- **Motivo:** el autor confirmó que todas las preguntas fueron realizadas por él y que la transcripción digital anonimizada conserva el contenido del levantamiento presencial.
 - **Decisión derivada:** avanzar a libro de códigos y matriz P1–P8 sin mantener un bloqueo artificial.
 
 ### 2026-08-23 — Creación de la hoja de ruta
