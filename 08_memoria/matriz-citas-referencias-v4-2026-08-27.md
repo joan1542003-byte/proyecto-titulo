@@ -1,7 +1,7 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
-**Fecha de control:** 27 de agosto de 2026  
-**Documento revisado:** `memoria-vigente-v4.md`  
+**Fecha de control:** 27 de agosto de 2026
+**Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
