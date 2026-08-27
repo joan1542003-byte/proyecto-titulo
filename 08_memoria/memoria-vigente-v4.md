@@ -699,7 +699,7 @@ Una especificación formal o técnica que aparezca antes de resolver la pregunta
 
 ## 11.9 Privacidad, autonomía y convivencia
 
-La aplicación necesita conservar la intención, el primer paso, la condición y el estado del objeto. Esa información debería permanecer en el teléfono durante el prototipo y poder eliminarse de manera clara. El objeto recibe solo lo necesario para ejecutar la señal. No almacena cumplimiento ni una interpretación de lo que la persona hizo después.
+La aplicación necesita conservar la intención, el primer paso, la condición y el estado del objeto para ejecutar un ciclo. Esa información debería permanecer en el teléfono durante el prototipo y poder eliminarse de manera clara. Consultar una condición autorizada no exige conservar un historial de aplicaciones ni calificar la conducta posterior. El objeto recibe solo lo necesario para ejecutar la señal. Ninguno de los componentes registra si la persona inició la actividad, continuó con el teléfono o ignoró el pulso.
 
 El control debe estar disponible en ambos componentes. Desde la aplicación se puede pausar, editar o desarmar. Desde el objeto se puede silenciar el pulso. La ausencia de respuesta no produce recordatorios repetidos, culpa o pérdida de funciones.
 
@@ -815,6 +815,8 @@ El piloto no permitirá afirmar eficacia poblacional ni adopción comercial. Su 
 Cada prueba utilizará una ficha con fecha, versión, pregunta, participantes codificados, contexto, materiales, procedimiento, evidencia, interpretación, límites y decisión. Las observaciones se separarán de las inferencias. Una persona que mire el objeto no necesariamente comprendió la intención; una conexión correcta no demuestra que la señal sea útil.
 
 Los instrumentos combinarán observación, preguntas abiertas, reconstrucción del significado, registro de errores y comparación entre condiciones. Las escalas breves —cuestionarios de pocos ítems para recoger una valoración acotada— podrán apoyar la lectura de carga o intrusión, pero no reemplazarán el relato del episodio. También se conservarán contraejemplos y razones de abandono.
+
+Estos registros pertenecen a la investigación y no a las funciones de Relevo. Se obtendrán con consentimiento, se asociarán a códigos de participante y se conservarán durante el periodo que defina cada protocolo. Su propósito será revisar los prototipos, no construir historiales personales ni comprobar obediencia. Fuera de una prueba, el sistema no necesitará saber qué decisión tomó la persona después del pulso.
 
 ## 13.7 Criterios de decisión
 
@@ -939,6 +941,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Separación entre datos del sistema y registros de investigación.** Se aclaró que Relevo conserva únicamente la información necesaria para ejecutar el ciclo y no registra la conducta posterior al pulso. Las fichas, observaciones y errores recogidos durante las pruebas pertenecen a protocolos temporales con consentimiento y participantes codificados. Antes, ambas capas aparecían en capítulos distintos sin una frontera explícita y podían parecer contradictorias. La corrección no define todavía plazos de conservación ni instrumentos finales.
 
 **27 de agosto de 2026 — Clasificación del cierre académico.** Las conclusiones distinguen ahora condiciones respaldadas por la investigación, decisión proyectual, aporte alcanzado, hipótesis pendiente y criterio de continuidad. Antes, la propuesta de valor y el aporte del objeto aparecían en un mismo párrafo y podían leerse como resultados demostrados. Se mantiene el carácter phygital como medio del proyecto; lo que debe probarse es el valor específico de la relación entre sus componentes.
 

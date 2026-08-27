@@ -26,10 +26,11 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 27 de agosto de 2026:** las conclusiones separan hallazgos, decisión proyectual, aporte alcanzado, hipótesis pendiente y criterio de continuidad. Lo phygital se mantiene como medio; el valor específico de la relación física y digital continúa abierto a prueba.
 
+**Resuelto el 27 de agosto de 2026:** se separaron los datos operativos del ciclo y los registros metodológicos de las pruebas. Relevo no construye un historial de cumplimiento; las observaciones se recogen de forma temporal, codificada y consentida para evaluar prototipos.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
 | Anexos metodológicos sin selección final | El repositorio contiene corpus, matrices y registros de mercado, pero la memoria no define cuáles acompañarán una entrega formal y cuáles permanecerán solo como respaldo digital. | Seleccionar el conjunto mínimo de anexos, asignarles función y enlazarlos desde el apartado pertinente sin duplicar el repositorio. |
-| Registros del producto y de la investigación | El producto excluye registros de cumplimiento, mientras los protocolos necesitan observaciones con consentimiento. | Aclarar que la investigación registra pruebas y errores, pero Relevo no registra si la persona ejecutó la intención. |
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
 
@@ -61,18 +62,24 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 ## Correcciones documentales que sí pueden hacerse ahora
 
 1. Mantener `memoria-vigente-v4.md` como único documento académico activo y rotular las versiones anteriores inequívocamente como archivo.
-2. Resolver primero la pregunta de investigación y las conclusiones, porque ambas gobiernan la coherencia del escrito completo.
-3. Reabrir la matriz cita–referencia cada vez que se agregue, sustituya o elimine una fuente.
-4. Revisar que la forma circular, Android, Bluetooth, costos y señales se nombren siempre según su categoría real: decisión de alcance, alternativa, meta o hipótesis.
-5. Incorporar en una futura versión una sección de resultados únicamente cuando exista evidencia primaria de pruebas. No crear un apartado vacío ni redactar resultados esperados como si hubieran ocurrido.
+2. Reabrir la matriz cita–referencia cada vez que se agregue, sustituya o elimine una fuente.
+3. Revisar que la forma circular, Android, Bluetooth, costos y señales se nombren siempre según su categoría real: decisión de alcance, alternativa, meta o hipótesis.
+4. Incorporar en una futura versión una sección de resultados únicamente cuando exista evidencia primaria de pruebas. No crear un apartado vacío ni redactar resultados esperados como si hubieran ocurrido.
 
 ## Orden de trabajo recomendado
 
-El siguiente paso debe ser la prueba de asociación entre intención, señal y lugar. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación. Si no lo hace, corresponde revisar la propuesta antes de invertir en integración o fabricación detallada.
+El siguiente paso documental es seleccionar los anexos indispensables y definir qué función cumple cada uno en la entrega. El primer paso empírico será probar la asociación entre intención, señal y lugar. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación. Si no lo hace, corresponde revisar la propuesta antes de invertir en integración o fabricación detallada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Frontera de registros resuelta
+
+- **Cambio:** se distinguieron los datos operativos de Relevo de los registros metodológicos usados durante las pruebas.
+- **Versión anterior:** la ausencia de historial de cumplimiento y la necesidad de observar prototipos aparecían sin una relación explícita; el orden de trabajo también conservaba una instrucción ya resuelta sobre pregunta y conclusiones.
+- **Motivo:** proteger la autonomía del producto sin perder trazabilidad académica durante el desarrollo.
+- **Alcance:** cada protocolo deberá definir participantes, instrumentos, acceso y plazo de conservación antes de ejecutarse. La selección de anexos queda como siguiente tarea documental.
 
 ### 2026-08-27 — Clasificación del cierre resuelta
 

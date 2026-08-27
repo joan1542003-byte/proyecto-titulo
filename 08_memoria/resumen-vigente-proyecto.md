@@ -24,15 +24,17 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El documento completo tiene 18.649 palabras; los capítulos 1–13 contienen 15.698. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales, el aporte del objeto frente a una notificación y las reglas con que se interpretarán las pruebas.
+El documento completo tiene 18.818 palabras; los capítulos 1–13 contienen 15.787. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales, el aporte del objeto frente a una notificación y las reglas con que se interpretarán las pruebas.
 
 ## Qué cambió en esta actualización
 
-Las conclusiones separan ahora los hallazgos de la investigación, la decisión proyectual, el aporte alcanzado y la hipótesis que deberá comprobarse. Lo phygital se mantiene como el medio elegido para desarrollar Relevo; el posible aporte del objeto frente a una notificación continúa abierto. Los siguientes cabos documentales son la separación entre registros de investigación y del producto y la selección de anexos.
+La memoria distingue ahora los datos que Relevo necesita para ejecutar un ciclo de aquellos que la investigación recogerá temporalmente durante las pruebas. El producto no registra cumplimiento ni interpreta qué hizo la persona; los protocolos sí podrán conservar observaciones codificadas y consentidas para revisar los prototipos. El siguiente cabo documental es seleccionar los anexos indispensables para la entrega.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-27 — Frontera entre datos y registros.** Antes, el producto rechazaba el historial de cumplimiento mientras el plan exigía registros de prueba, sin explicar la diferencia. Ahora se separan funciones operativas y documentación metodológica. No se añadieron mecanismos de vigilancia a Relevo.
 
 **2026-08-27 — Clasificación del cierre académico.** Antes, la propuesta de valor y el aporte del objeto podían leerse como resultados. Ahora las conclusiones distinguen evidencia, decisión e hipótesis. La dirección phygital no cambió y su aporte específico continúa sujeto a pruebas.
 
