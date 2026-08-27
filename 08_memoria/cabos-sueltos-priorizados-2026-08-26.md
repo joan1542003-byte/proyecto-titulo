@@ -30,6 +30,8 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 27 de agosto de 2026:** el índice de anexos define cinco unidades para la entrega formal y excluye auditorías internas, código, versiones antiguas, archivos repetidos y protocolos todavía no ejecutados.
 
+**Resuelto el 27 de agosto de 2026:** el primer protocolo define asociación completa, umbrales de avance, modificación y detención, reglas comparativas y fallos críticos. Estos criterios se fijaron antes de obtener resultados.
+
 No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avances dependen de decisiones metodológicas o evidencia obtenida mediante prototipos.
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
@@ -39,7 +41,7 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 | Condición de activación | Se mantiene abierta entre distintas reglas observables. Sin esta definición no puede comprobarse la secuencia técnica completa. | Comparar alternativas y seleccionar una condición provisional para el primer prototipo, declarando sus límites. | 11.2, 12.2 y 13.4. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
-| Criterio operativo de éxito | La hipótesis enumera asociación, lugar, autonomía y funcionamiento, pero no fija reglas previas para interpretar los resultados. | Definir criterios de avance, modificación y detención para cada comparación antes de ejecutar las pruebas. | 10.5, 13.1, 13.2 y 13.7. |
+| Cierre operativo del protocolo 01 | Existen variables, umbrales y reglas de decisión, pero faltan parámetros de ejecución. | Cerrar muestra, tiempos, actividad de espera, canal provisional, lugar neutro, notificación, gestión de registros y contrabalanceo antes de reclutar. | `07_validacion/protocolo-01-asociacion-y-comparacion.md`. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
 
@@ -68,11 +70,18 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es definir las reglas operativas de éxito, modificación y detención antes de ejecutar la prueba de asociación entre intención, señal y lugar. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación. Si no lo hace, corresponde revisar la propuesta antes de invertir en integración o fabricación detallada.
+El siguiente paso es cerrar los ocho parámetros de ejecución del protocolo 01 antes de reclutar. Después podrá realizarse la prueba de asociación entre intención, señal y lugar. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación. Si no lo hace, corresponde revisar la propuesta antes de invertir en integración o fabricación detallada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Reglas operativas definidas
+
+- **Cambio:** el criterio operativo de éxito pasó a resuelto y fue reemplazado por el cierre de los parámetros concretos del protocolo 01.
+- **Versión anterior:** las variables estaban identificadas, pero los resultados podían interpretarse sin puertas previas.
+- **Motivo:** proteger la evaluación formativa frente a umbrales definidos después de observar los datos.
+- **Alcance:** el protocolo no ha sido ejecutado y no contiene resultados.
 
 ### 2026-08-27 — Selección de anexos resuelta
 

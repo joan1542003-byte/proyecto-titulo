@@ -826,6 +826,10 @@ Estos registros pertenecen a la investigación y no a las funciones de Relevo. S
 
 La propuesta se mantiene cuando la señal puede relacionarse con la intención, el lugar aporta una diferencia, la salida es clara y la ejecución técnica resulta proporcional. Se modifica cuando falla una capa específica, como intensidad, vínculo, forma o explicación. Se detiene cuando el componente físico no ofrece una ventaja frente a la notificación o cuando ninguna alternativa evita intrusión, vigilancia o una carga excesiva.
 
+El [primer protocolo](../07_validacion/protocolo-01-asociacion-y-comparacion.md) considera completa la asociación cuando la persona percibe la señal, la atribuye al ciclo, recupera la intención y el primer paso, y comprende sus salidas sin consultar el teléfono. En una muestra formativa de seis a ocho personas, se avanzará si al menos el 75 % completa la cadena; entre el 50 % y el 74 % se modificará la capa donde aparece el fallo; y por debajo del 50 %, después de una iteración correctiva, se detendrá la configuración probada.
+
+La comparación posterior mantendrá el objeto situado solo si iguala o supera a la notificación en asociación, aporta más que el mismo objeto en un lugar neutro y no introduce una carga o intrusión recurrente. Un fallo crítico de autonomía, privacidad, seguridad o accesibilidad impedirá avanzar aunque se alcance el porcentaje previsto. Estos umbrales organizan una decisión formativa y no estiman eficacia poblacional.
+
 Los resultados se comunicarán según su alcance. Una prueba conceptual puede sostener comprensión en una situación; no demuestra uso prolongado. Una integración técnica documenta funcionamiento bajo ciertas condiciones; no valida la experiencia. Un piloto aporta indicios situados; no permite generalizar a toda la población.
 
 ## 13.8 Conclusiones
@@ -945,6 +949,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Reglas operativas previas a la primera prueba.** Se definieron la asociación completa, los umbrales formativos de avance, modificación y detención, la comparación entre soportes y los fallos críticos que impiden continuar. Antes, el capítulo 13 identificaba variables, pero dejaba la interpretación abierta hasta después de obtener resultados. El protocolo permanece planificado y todavía debe cerrar participantes, tiempos, canal y gestión de registros.
 
 **27 de agosto de 2026 — Selección y enlace de anexos.** Se incorporaron dos referencias al índice de anexos y se definió un paquete formal para método, corpus, análisis de usuarios, mercado y arquitectura de interacción. Antes, esos documentos existían en distintas carpetas sin una selección editorial común. No se duplicaron archivos ni se añadieron informes de agentes, código, versiones antiguas o resultados inexistentes.
 

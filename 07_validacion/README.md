@@ -14,6 +14,10 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 6. **Integración:** aplicación, detección, comunicación y comportamiento ante fallos.
 7. **Uso doméstico:** piloto longitudinal breve y efecto de habituación.
 
+## Protocolos planificados
+
+- [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
+
 ## Regla de medición
 
 No se mezclará en una sola métrica:
@@ -33,6 +37,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Primer protocolo operacional
+
+- **Cambio:** se enlazó el protocolo planificado para asociación básica y comparación de soporte y lugar.
+- **Versión anterior:** el directorio definía el orden y los criterios obligatorios, pero no existían puertas de decisión previas a la prueba.
+- **Motivo:** evitar interpretar resultados con umbrales definidos después de observarlos.
+- **Alcance:** faltan cerrar muestra, tiempos, canal, condición neutra, notificación y gestión de registros antes de ejecutar.
 
 ### 2026-08-23 — Creación
 

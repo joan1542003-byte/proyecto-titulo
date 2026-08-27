@@ -24,15 +24,17 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El documento completo tiene 18.941 palabras; los capítulos 1–13 contienen 15.846. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales, el aporte del objeto frente a una notificación y las reglas con que se interpretarán las pruebas.
+El documento completo tiene 19.156 palabras; los capítulos 1–13 contienen 15.993. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales y el aporte del objeto frente a una notificación.
 
 ## Qué cambió en esta actualización
 
-La memoria cuenta ahora con un paquete de cinco anexos: instrumento y método, corpus anonimizado, análisis de usuarios, mercado y arquitectura de interacción. Las auditorías internas, el código, las versiones antiguas y los protocolos no ejecutados permanecen en el repositorio, pero no forman parte automática de la entrega. El siguiente paso es definir reglas operativas antes de probar la asociación entre intención, señal y lugar.
+El primer protocolo fija qué significa recuperar la intención, cuándo avanzar, cuándo modificar y cuándo detener la configuración probada. También separa asociación de obediencia y establece fallos críticos de autonomía, privacidad, seguridad y accesibilidad. Antes de ejecutarlo deben cerrarse muestra, tiempos, actividad de espera, canal provisional, lugar neutro, notificación, gestión de registros y contrabalanceo.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-27 — Reglas operativas de la primera prueba.** Antes, el plan declaraba variables sin umbrales previos. Ahora existe un protocolo formativo enlazado desde la memoria. No se añadieron resultados y la acción posterior al pulso no se utiliza como medida de éxito.
 
 **2026-08-27 — Selección de anexos.** Antes, la evidencia estaba ordenada por carpetas sin un paquete formal. Ahora cinco anexos cumplen funciones distintas y la documentación interna queda separada. La memoria conserva sus catorce capítulos y solo incorpora enlaces desde los apartados pertinentes.
 
