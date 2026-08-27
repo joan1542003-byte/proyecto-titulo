@@ -8,9 +8,10 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 26 de agosto de 2026:** la memoria incorpora una pregunta de investigación explícita en el apartado 10.3. La formulación se concentra en el problema; el carácter phygital permanece como medio del proyecto y no como hipótesis. También define qué significa volver a considerar una actividad.
 
+**Resuelto el 26 de agosto de 2026:** el apartado 13.8 contiene conclusiones explícitas que responden la pregunta, delimitan el aporte del Diseño y separan contribuciones documentadas de resultados pendientes.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
-| Cierre académico insuficiente | La síntesis del capítulo 13 conduce directamente a las referencias. | Incorporar conclusiones que respondan la pregunta, delimiten la contribución del Diseño y separen aportes documentados de resultados pendientes. |
 | Documentos rectores desactualizados | El dictamen rector conserva una arquitectura de 16 capítulos mientras la v4 aplica 14; otra auditoría declara revisar una versión anterior. | Establecer la v4 y su arquitectura de 14 capítulos como única referencia activa; rotular los dictámenes anteriores como históricos. |
 | Trazabilidad insuficiente de entrevistas | El capítulo 7 identifica participantes, pero no siempre remite a preguntas o segmentos verificables de la matriz P1–P8. | Incorporar referencias internas breves a los segmentos que sostienen cada hallazgo, sin convertir el capítulo en una transcripción. |
 | Registro de búsqueda de mercado incompleto | El capítulo 8 explica alcance y criterios, pero no deja una estrategia reproducible con términos, fuentes consultadas, inclusión y exclusión. | Consolidar el registro de búsqueda y enlazarlo metodológicamente con las conclusiones del estado del arte. |
@@ -87,3 +88,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** la pregunta trataba el carácter phygital como parte de la relación que debía comprobarse.
 - **Motivo:** separar el fenómeno investigado de la respuesta disciplinar y evitar que la pregunta anticipe su solución.
 - **Alcance:** Relevo continúa siendo obligatoriamente phygital; la corrección no cambia el proyecto ni su hipótesis operativa.
+
+### 2026-08-26 — Resolución del cierre académico
+
+- **Cambio:** el vacío de conclusiones explícitas pasó de pendiente crítico a resuelto mediante la ampliación del apartado 13.8.
+- **Versión anterior:** el capítulo terminaba con una síntesis breve del funcionamiento y sus pruebas pendientes.
+- **Motivo:** responder la pregunta de investigación y hacer visibles aporte disciplinar, límites y criterio de continuidad.
+- **Alcance:** el cierre no presenta wireframes, planes o decisiones como resultados de uso.

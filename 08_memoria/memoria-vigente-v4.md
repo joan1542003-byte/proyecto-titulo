@@ -814,11 +814,19 @@ La propuesta se mantiene cuando la señal puede relacionarse con la intención, 
 
 Los resultados se comunicarán según su alcance. Una prueba conceptual puede sostener comprensión en una situación; no demuestra uso prolongado. Una integración técnica documenta funcionamiento bajo ciertas condiciones; no valida la experiencia. Un piloto aporta indicios situados; no permite generalizar a toda la población.
 
-## 13.8 Síntesis del proyecto
+## 13.8 Conclusiones
 
-Relevo propone recuperar una intención personal sin convertirla en obligación. La aplicación conserva el significado y configura una condición; el objeto sitúa una señal junto al primer paso; la persona decide. Su diferencia frente a otras respuestas se encuentra en apoyar la actividad alternativa en vez de concentrarse en impedir la actividad presente.
+Esta investigación preguntó qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata. La evidencia reunida no permite establecer una respuesta definitiva, pero sí delimita condiciones que una propuesta de Diseño debe respetar. La intención tiene que provenir de la persona; su comienzo debe expresarse mediante un primer paso reconocible; la intervención debe permitir continuar, cambiar de idea o ignorarla; y no corresponde intervenir cuando la actividad digital conserva sentido para quien la realiza.
 
-El valor de esa diferencia permanece sujeto a prueba. El desarrollo deberá demostrar que el lugar y el objeto aportan algo que una notificación no ofrece, que la señal respeta la convivencia y que la carga técnica y material resulta razonable. Esta condición mantiene unido el proyecto con la investigación que lo fundamenta.
+Las entrevistas muestran que esta tensión aparece en algunos relatos, pero no en todos ni de la misma manera. También registran experiencias digitales recordadas como significativas y estrategias personales para separarse del teléfono. Por ello, el usuario principal y el usuario límite describen situaciones, no grupos demográficos estables. La edad permite caracterizar a quienes participaron, pero no explica el problema ni autoriza a generalizarlo a todos los adultos jóvenes.
+
+La revisión de antecedentes permite comprender por qué medir o bloquear no responde completamente a la situación estudiada. Esas herramientas actúan sobre la actividad presente; Relevo dirige su atención hacia una alternativa que la persona había elegido. Su propuesta de valor se encuentra en relacionar intención, primer paso, señal y lugar dentro de una experiencia phygital. En ella, la aplicación conserva y configura la información, mientras el objeto lleva una señal al espacio donde la actividad puede comenzar. El carácter phygital constituye el medio de la propuesta, no un efecto que deba demostrarse.
+
+El aporte alcanzado hasta ahora pertenece a la investigación y a la estructuración del proyecto. La memoria delimita un problema abordable desde Diseño, establece criterios de autonomía y no intervención, identifica dos situaciones de usuario, analiza respuestas existentes y organiza una arquitectura de uso, sistema y desarrollo. Los wireframes permiten examinar el recorrido y sus estados, pero no demuestran comprensión, eficacia o preferencia.
+
+Continúa sin comprobarse si la señal permite reconocer la intención sin consultar el teléfono, si un lugar relacionado con el primer paso aporta más que una ubicación neutra y si el objeto ofrece una diferencia suficiente frente a una notificación. Tampoco están resueltos la condición de activación, el canal sensorial, la convivencia doméstica, la accesibilidad, la integración técnica, la producción ni los costos definitivos. En conjunto, estas preguntas definen aquello que el desarrollo debe estudiar antes de cerrar la forma y fabricar una solución completa.
+
+El siguiente paso consiste en probar primero la asociación entre intención, señal, primer paso y lugar mediante una activación controlada. Si esa relación resulta comprensible, corresponderá compararla con una notificación y con una ubicación neutra. Si el objeto no aporta una diferencia reconocible o introduce una carga desproporcionada, deberá modificarse la dirección física sin abandonar el carácter phygital del proyecto. De este modo, la continuidad de Relevo dependerá de lo que los prototipos permitan aprender y no de sostener anticipadamente una solución.
 
 # 14. Referencias
 
@@ -923,6 +931,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**26 de agosto de 2026 — Conclusiones.** El apartado 13.8, antes titulado “Síntesis del proyecto”, fue reemplazado por un cierre académico que responde la pregunta de investigación según el nivel de evidencia disponible. La versión anterior resumía el funcionamiento y declaraba que su valor debía probarse, pero no reunía hallazgos, aporte disciplinar, límites y criterio de continuidad. La nueva redacción distingue lo que sostienen la literatura, las entrevistas y la estructuración proyectual de aquello que requiere prototipado. Se mantuvieron los catorce capítulos de la arquitectura histórica y no se incorporaron resultados inexistentes.
 
 **26 de agosto de 2026 — Pregunta de investigación.** Se incorporó una pregunta explícita entre el punto de vista y la oportunidad de diseño. Antes, el capítulo pasaba directamente desde la caracterización de la necesidad hacia la oportunidad, por lo que la relación investigada solo podía inferirse desde la hipótesis y los objetivos. La primera redacción incluía una intervención phygital dentro de la pregunta y confundía el medio del proyecto con aquello que debía comprenderse. La versión vigente pregunta por las condiciones que permitirían volver a considerar una actividad elegida; el diseño phygital se mantiene como el medio disciplinar definido para responder. También se aclara que considerar la actividad no equivale a ejecutarla ni a reducir el uso del teléfono. La numeración posterior del capítulo 10 se actualizó sin cambiar su contenido.
 

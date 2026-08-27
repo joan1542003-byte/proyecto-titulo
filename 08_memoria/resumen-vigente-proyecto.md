@@ -28,11 +28,13 @@ El documento completo tiene aproximadamente 16.470 palabras y cumple los límite
 
 ## Qué cambió en esta actualización
 
-La v4 incorpora una pregunta de investigación explícita sobre las condiciones que pueden ayudar a una persona a volver a considerar una actividad elegida cuando esa intención deja de orientar su decisión inmediata. El carácter phygital no se presenta como una hipótesis: es el medio de diseño definido para abordar el problema. Lo que permanece pendiente de evaluación es si la relación entre intención, señal, primer paso y lugar resulta comprensible y aporta algo frente a una notificación.
+La v4 incorpora conclusiones explícitas que responden la pregunta de investigación con el nivel de evidencia disponible. El cierre sostiene que la intención debe ser propia, su comienzo debe expresarse de forma reconocible y la persona debe conservar la posibilidad de continuar o cambiar de idea. El carácter phygital es el medio definido para abordar el problema. Permanece pendiente comprobar si la relación entre intención, señal, primer paso y lugar resulta comprensible y aporta algo frente a una notificación.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-26 — Conclusiones.** Antes, el capítulo 13 terminaba con una síntesis breve del funcionamiento. Ahora responde la pregunta de investigación, diferencia contribuciones documentadas de resultados pendientes y establece cuándo mantener o modificar la dirección física. Se conservaron los catorce capítulos y no se añadieron resultados de pruebas inexistentes.
 
 **2026-08-26 — Pregunta de investigación.** Antes, la relación investigada solo podía reconstruirse desde el problema, la hipótesis y los objetivos. Una primera corrección incluyó el medio phygital dentro de la pregunta; ahora la pregunta se concentra en el problema y reserva lo phygital para la respuesta proyectual. También se aclara que considerar una intención no equivale a realizarla, abandonar el teléfono ni reducir minutos de uso. El funcionamiento propuesto no cambió.
 

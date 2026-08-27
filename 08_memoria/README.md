@@ -57,6 +57,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-08-26 — Conclusiones explícitas
+
+- **Cambio:** el apartado 13.8 pasó de una síntesis breve a conclusiones que responden la pregunta, precisan el aporte de Diseño y distinguen resultados de pendientes.
+- **Versión anterior:** el cierre resumía la propuesta y declaraba que su valor debía probarse.
+- **Motivo:** completar la función académica del cierre sin alterar la arquitectura histórica de catorce capítulos.
+- **Alcance:** no se incorporaron resultados de prototipado inexistentes.
+
 ### 2026-08-26 — Pregunta de investigación explícita
 
 - **Cambio:** se añadió la pregunta de investigación al apartado 10.3 y se corrigió para que estudie el problema sin tratar el carácter phygital como hipótesis.
