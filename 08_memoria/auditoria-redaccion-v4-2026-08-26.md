@@ -1,6 +1,7 @@
 # Auditoría de redacción y estructura — memoria v4
 
-**Fecha:** 26 de agosto de 2026
+**Fecha de creación:** 26 de agosto de 2026
+**Último control:** 27 de agosto de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 
 ## Resultado
@@ -26,12 +27,12 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo automatizado arroja aproximadamente 16.470 palabras para el documento completo, incluida la bibliografía y el registro de cambios. Se encuentra dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 18.260 palabras: 16.121 antes de las referencias, 1.204 en la bibliografía y 935 en el registro de cambios. Los capítulos 1–13 contienen 15.458 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
-| Resumen | 289 | 200–300 | Cumple. |
-| Abstract | 269 | 200–300 | Cumple. |
+| Resumen | 295 | 200–300 | Cumple. |
+| Abstract | 271 | 200–300 | Cumple. |
 | Motivación personal | 178 | 100–300 | Cumple. |
 | Introducción | 686 | 600–1.200 | Cumple. |
 | Planteamiento del problema | 798 | 400–800 | Cumple. |
@@ -54,7 +55,7 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 
 ## Control de APA 7
 
-Se verificó la correspondencia básica entre las citas del cuerpo y la lista de referencias, el uso de autor y año, la inclusión de DOI o URL cuando corresponde y la diferenciación entre fuentes académicas, documentación oficial y páginas comerciales. Las afirmaciones de mercado se atribuyen a sus fabricantes y no se presentan como evidencia independiente de eficacia.
+La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) verifica las 49 entradas de la bibliografía. Todas poseen al menos una cita en el cuerpo y no existen citas autor–fecha sin referencia. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de dos documentos de la Subsecretaría de Telecomunicaciones. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
 
 ## Decisión editorial
 
@@ -63,5 +64,7 @@ Se verificó la correspondencia básica entre las citas del cuerpo y la lista de
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Actualización de extensión y control APA.** Se reemplazó el conteo aproximado del 26 de agosto por una medición reproducible del archivo completo, el cuerpo, las referencias y el registro de cambios. También se enlazó la matriz completa de 49 referencias. Antes, la auditoría informaba 16.470 palabras y solo declaraba una correspondencia bibliográfica básica. Los límites de las secciones siguen cumpliéndose y no se añadieron fuentes nuevas.
 
 **26 de agosto de 2026 — Creación.** Se creó esta auditoría para comprobar el orden narrativo, los títulos, los límites de extensión, la introducción de conceptos y la ubicación de la formulación en `memoria-vigente-v4.md`. Antes, la auditoría disponible correspondía a la v3 y no incorporaba la corrección específica sobre anticipación del proyecto. El documento no añade contenido académico ni resultados; registra los controles aplicados a la nueva versión.

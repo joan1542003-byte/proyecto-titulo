@@ -8,6 +8,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
+- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 49 entradas bibliográficas y correcciones APA aplicadas.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): separación entre correcciones documentales inmediatas y evidencia que requiere prototipado.
 - [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
@@ -61,6 +62,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Matriz bibliográfica y extensión actualizada
+
+- **Cambio:** se enlazó la matriz completa de citas y referencias y se actualizó la auditoría con el conteo vigente.
+- **Versión anterior:** el índice solo remitía a una comprobación APA básica y a cifras anteriores a las últimas revisiones.
+- **Motivo:** permitir un cierre editorial reproducible antes de la próxima exportación.
+- **Alcance:** la comprobación formal no reemplaza la evaluación crítica de las fuentes ni la selección de anexos metodológicos.
 
 ### 2026-08-26 — Jerarquía documental de la memoria
 

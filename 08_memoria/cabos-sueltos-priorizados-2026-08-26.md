@@ -20,9 +20,14 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 26 de agosto de 2026:** los conceptos metodológicos y técnicos necesarios para leer los capítulos 5, 7, 8, 11, 12 y 13 se explican ahora en su primera aparición, mediante su función dentro del proyecto.
 
+**Resuelto el 27 de agosto de 2026:** el conteo distingue archivo completo, cuerpo, referencias y registro de cambios. La matriz bibliográfica comprueba las 49 referencias y corrige las inconsistencias APA detectadas.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
-| Extensión, APA y anexos sin cierre total | La auditoría existente realiza una revisión básica, pero no separa cuerpo, referencias y registro de cambios ni incorpora anexos metodológicos. | Ejecutar conteo por cuerpo académico, matriz cita–referencia completa y selección de anexos indispensables antes de exportar. |
+| Anexos metodológicos sin selección final | El repositorio contiene corpus, matrices y registros de mercado, pero la memoria no define cuáles acompañarán una entrega formal y cuáles permanecerán solo como respaldo digital. | Seleccionar el conjunto mínimo de anexos, asignarles función y enlazarlos desde el apartado pertinente sin duplicar el repositorio. |
+| Trazabilidad individual de criterios | El capítulo 9 afirma que cada criterio deriva de evidencia, pero no identifica de forma visible qué lo sostiene. | Vincular cada criterio con literatura, entrevistas, mercado, decisión ética o hipótesis, sin convertir el capítulo en una tabla de metadatos. |
+| Clasificación del cierre académico | El apartado 13.8 distingue límites, pero algunos pasajes presentan la propuesta de valor y la distribución phygital con tono de resultado. | Separar explícitamente hallazgos alcanzados, decisión proyectual e hipótesis aún no comprobada. |
+| Registros del producto y de la investigación | El producto excluye registros de cumplimiento, mientras los protocolos necesitan observaciones con consentimiento. | Aclarar que la investigación registra pruebas y errores, pero Relevo no registra si la persona ejecutó la intención. |
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
 
@@ -31,6 +36,7 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 | Condición de activación | Se mantiene abierta entre distintas reglas observables. Sin esta definición no puede comprobarse la secuencia técnica completa. | Comparar alternativas y seleccionar una condición provisional para el primer prototipo, declarando sus límites. | 11.2, 12.2 y 13.4. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
+| Criterio operativo de éxito | La hipótesis enumera asociación, lugar, autonomía y funcionamiento, pero no fija reglas previas para interpretar los resultados. | Definir criterios de avance, modificación y detención para cada comparación antes de ejecutar las pruebas. | 10.5, 13.1, 13.2 y 13.7. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
 
@@ -54,7 +60,7 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 1. Mantener `memoria-vigente-v4.md` como único documento académico activo y rotular las versiones anteriores inequívocamente como archivo.
 2. Resolver primero la pregunta de investigación y las conclusiones, porque ambas gobiernan la coherencia del escrito completo.
-3. Ejecutar una comprobación completa cita–referencia antes de la próxima exportación; la auditoría vigente declara una correspondencia básica, no una validación bibliográfica exhaustiva.
+3. Reabrir la matriz cita–referencia cada vez que se agregue, sustituya o elimine una fuente.
 4. Revisar que la forma circular, Android, Bluetooth, costos y señales se nombren siempre según su categoría real: decisión de alcance, alternativa, meta o hipótesis.
 5. Incorporar en una futura versión una sección de resultados únicamente cuando exista evidencia primaria de pruebas. No crear un apartado vacío ni redactar resultados esperados como si hubieran ocurrido.
 
@@ -65,6 +71,13 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Auditoría transversal y cierre bibliográfico
+
+- **Cambio:** extensión y correspondencia APA pasaron a resueltas; el pendiente de anexos se separó y se registraron nuevos cabos sobre criterios, conclusiones, registros y reglas operativas.
+- **Versión anterior:** extensión, APA y anexos formaban un único pendiente, mientras la coherencia interna se consideraba suficiente a nivel general.
+- **Motivo:** distinguir correcciones documentales ejecutables de resultados que exigen prototipos y evitar que un control bibliográfico oculte vacíos argumentales.
+- **Alcance:** los nuevos cabos provienen de una auditoría documental; no modifican todavía la hipótesis ni sustituyen pruebas.
 
 ### 2026-08-26 — Creación
 

@@ -62,7 +62,7 @@ El ocio digital se entiende aquí como el conjunto de actividades mediadas por d
 
 Dentro de ese marco aparece una situación específica. Al comenzar una actividad digital, la persona puede tener presente otra intención: salir a caminar, leer, dibujar, ordenar un espacio, dormir o conversar con alguien. Aun así, la sesión continúa y esa alternativa deja de orientar el siguiente paso. Cuando vuelve a recordarla, la ocasión puede haber cambiado o el tiempo disponible puede ser menor. No se trata necesariamente de olvidar por completo ni de perder el control. Se trata de que una intención propia no estuvo disponible en el momento en que podía influir en la decisión.
 
-Algunas interfaces favorecen la continuidad. El **desplazamiento infinito** es un patrón que carga contenido nuevo a medida que la persona avanza, sin presentar un final de página claramente marcado. La reproducción automática y las recomendaciones encadenadas cumplen una función semejante: el siguiente contenido aparece sin exigir una elección nueva. Estas características no determinan por sí solas la conducta, pero reducen los puntos de cierre y mantienen disponible la acción actual (Montag et al., 2019; de Segovia Vicente et al., 2024).
+Algunas interfaces favorecen la continuidad. El **desplazamiento infinito** es un patrón que carga contenido nuevo a medida que la persona avanza, sin presentar un final de página claramente marcado. La reproducción automática y las recomendaciones encadenadas cumplen una función semejante: el siguiente contenido aparece sin exigir una elección nueva. Estas características no determinan por sí solas la conducta, pero reducen los puntos de cierre y mantienen disponible la acción actual (de Segovia Vicente et al., 2024; Montag et al., 2019).
 
 La respuesta habitual frente a esta situación ha sido medir el tiempo, fijar límites, bloquear aplicaciones o introducir pausas antes de abrirlas. Tales recursos pueden ser útiles cuando alguien quiere reducir una conducta concreta. Sin embargo, detener la actividad presente no basta para recuperar aquello que se quería hacer. Un bloqueo puede cerrar una aplicación y, al mismo tiempo, dejar ausente la intención alternativa. También puede interrumpir una conversación o un descanso que la persona sí desea mantener. Por eso resulta necesario distinguir entre impedir una acción y volver perceptible otra posibilidad.
 
@@ -74,7 +74,7 @@ La secuencia de la memoria sigue ese recorrido. Primero se delimita el problema 
 
 # 3. Planteamiento del problema
 
-En 2025, el 96,6 % de los hogares chilenos declaró contar con acceso propio y pagado a internet. Entre los hogares conectados, el teléfono inteligente fue el dispositivo más extendido, con una presencia declarada de 99,1 % (Subsecretaría de Telecomunicaciones, 2026a). Estas cifras describen un entorno ampliamente conectado, pero no permiten determinar el valor de una experiencia digital. Para comprender la situación estudiada importa observar la relación entre la actividad presente, otras intenciones y el momento de elegir.
+En 2025, el 96,6 % de los hogares chilenos declaró contar con acceso propio y pagado a internet. Entre los hogares conectados, el teléfono inteligente fue el dispositivo más extendido, con una presencia declarada de 99,1 % (Subsecretaría de Telecomunicaciones, 2026b). Estas cifras describen un entorno ampliamente conectado, pero no permiten determinar el valor de una experiencia digital. Para comprender la situación estudiada importa observar la relación entre la actividad presente, otras intenciones y el momento de elegir.
 
 El problema se organiza en tres aristas. Cada una examina una parte de la situación y evita atribuirla a una causa única.
 
@@ -756,7 +756,7 @@ La producción en cantidad exigirá cotizaciones de placa, carcasa, batería, en
 
 ## 12.5 Cumplimiento y seguridad
 
-Un objeto con comunicación por radio deberá revisar la normativa chilena aplicable a equipos de alcance reducido, junto con ensayos, documentación y etiquetado (Subsecretaría de Telecomunicaciones, 2026b). El uso de batería incorpora exigencias adicionales de transporte, carga y protección. El prototipo académico no equivale a certificación de producto.
+Un objeto con comunicación por radio deberá revisar la normativa chilena aplicable a equipos de alcance reducido, junto con ensayos, documentación y etiquetado (Subsecretaría de Telecomunicaciones, 2026a). El uso de batería incorpora exigencias adicionales de transporte, carga y protección. El prototipo académico no equivale a certificación de producto.
 
 La distribución de la aplicación también depende de los requisitos de Android y Google Play, especialmente cuando se emplean servicios en primer plano, tareas persistentes que deben informar su actividad mediante una notificación visible, o permisos sensibles (Google Play, s. f.). Estas condiciones pueden cambiar y deberán verificarse antes de publicar.
 
@@ -884,9 +884,9 @@ Hermann, M., Mahler, T., de Melo, G., & Weber, M. (2007). The tangible reminder.
 
 Kidel Peña-Albert, A., Ingram, S., Khazaal, Y., Litrico, L., Farah, J. C., & Gillet, D. (2026). Restoring engagement in digital self-control tools using nudge reconfiguration prompts: Quasi-experimental study. *JMIR Formative Research, 10*, e85349. https://doi.org/10.2196/85349
 
-Kitchen Safe. (s. f.). *kSafe*. Recuperado el 24 de agosto de 2026, de https://intl.thekitchensafe.com/
-
 Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1–2), 31–68. https://doi.org/10.1016/0004-3702(94)00017-U
+
+Kitchen Safe. (s. f.). *kSafe*. Recuperado el 24 de agosto de 2026, de https://intl.thekitchensafe.com/
 
 Lukoff, K., Yu, C., Kientz, J. A., & Hiniker, A. (2018). What makes smartphone use meaningful or meaningless? *Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2*(1), Artículo 22. https://doi.org/10.1145/3191754
 
@@ -904,9 +904,9 @@ Nordic Semiconductor ASA. (s. f.-a). *nPM1100 product specification*. Recuperado
 
 Nordic Semiconductor ASA. (s. f.-b). *nRF52810 product specification*. Recuperado el 24 de agosto de 2026, de https://docs-be.nordicsemi.com/bundle/nRF52810-PS/raw/resource/enus/nRF52810_PS_v1.1.pdf
 
-O’Rear, A. E., & Radvansky, G. A. (2019). Location-based prospective memory. *Quarterly Journal of Experimental Psychology, 72*(3), 491–507. https://doi.org/10.1177/1747021818758608
-
 one sec. (s. f.). *Cut your screen time in half*. Recuperado el 24 de agosto de 2026, de https://one-sec.app/
+
+O’Rear, A. E., & Radvansky, G. A. (2019). Location-based prospective memory. *Quarterly Journal of Experimental Psychology, 72*(3), 491–507. https://doi.org/10.1177/1747021818758608
 
 Precision Microdrives Ltd. (2023). *C08-00A: 8 mm linear resonant actuator* [Hoja de datos]. https://precisionmicrodrives.com/cdn/datasheets/C08-00A%20-%20datasheet%20-%20002/c08-00a-datasheet-002.pdf
 
@@ -922,9 +922,9 @@ Sohn, T., Li, K. A., Lee, G., Smith, I., Scott, J., & Griswold, W. G. (2005). Pl
 
 Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, 1–9. https://doi.org/10.1177/16094069221100633
 
-Subsecretaría de Telecomunicaciones. (2026a). *Informe final: Estudio Duodécima Encuesta sobre acceso, usos y usuarios de Internet en Chile*. Ministerio de Transportes y Telecomunicaciones, Gobierno de Chile. https://www.subtel.gob.cl/wp-content/uploads/2026/02/Informe-Final-Acceso-y-Uso-Internet-2025_03.pdf
+Subsecretaría de Telecomunicaciones. (2026a, 15 de enero). *Equipos de alcance reducido*. https://www.subtel.gob.cl/equipos-de-alcance-reducido/
 
-Subsecretaría de Telecomunicaciones. (2026b, 15 de enero). *Equipos de alcance reducido*. https://www.subtel.gob.cl/equipos-de-alcance-reducido/
+Subsecretaría de Telecomunicaciones. (2026b). *Informe final: Estudio Duodécima Encuesta sobre acceso, usos y usuarios de Internet en Chile*. Ministerio de Transportes y Telecomunicaciones, Gobierno de Chile. https://www.subtel.gob.cl/wp-content/uploads/2026/02/Informe-Final-Acceso-y-Uso-Internet-2025_03.pdf
 
 Texas Instruments. (2018). *DRV2605L: 2- to 5.2-V haptic driver for LRA and ERM with effect library and Smart-Loop architecture* [Hoja de datos]. https://www.ti.com/lit/ds/symlink/drv2605l.pdf
 
@@ -939,6 +939,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Correspondencia APA 7 y orden bibliográfico.** Se completó la comprobación entre las citas del cuerpo y las 49 entradas de la lista de referencias. No se encontraron citas sin referencia ni referencias huérfanas. Se corrigieron el orden de una cita parentética, la posición alfabética de Kirsh, Kitchen Safe, one sec y O’Rear, y los sufijos 2026a/2026b de la Subsecretaría de Telecomunicaciones según el orden alfabético de los títulos. Antes, esas cuatro inconsistencias impedían declarar cerrado el control bibliográfico.
 
 **26 de agosto de 2026 — Accesibilidad conceptual.** Se explicaron en su primera aparición los conceptos metodológicos y técnicos indispensables para comprender el análisis y la factibilidad: estudio cualitativo exploratorio, método Framework, tipos ideales, precompromiso, Bluetooth de baja energía, ejecución en segundo plano, fidelidad de prototipo, UsageStatsManager, Web Bluetooth, marcos de Apple, microcontrolador, actuador, contingencia, merma, servicio en primer plano, habituación y escalas breves. Antes, varios nombres aparecían sin indicar su función para el proyecto. Las explicaciones se integraron en las frases existentes y no modifican decisiones técnicas ni resultados.
 

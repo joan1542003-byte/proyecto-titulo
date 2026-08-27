@@ -1,6 +1,6 @@
 # Resumen vigente de Relevo
 
-**Actualizado:** 26 de agosto de 2026.
+**Actualizado:** 27 de agosto de 2026.
 
 ## Qué es
 
@@ -24,15 +24,17 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El documento completo tiene aproximadamente 16.470 palabras y cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales y el aporte del objeto frente a una notificación.
+El documento completo tiene 18.260 palabras; los capítulos 1–13 contienen 15.458. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales, el aporte del objeto frente a una notificación y las reglas con que se interpretarán las pruebas.
 
 ## Qué cambió en esta actualización
 
-La memoria explica ahora los métodos, componentes y capacidades técnicas cuando aparecen por primera vez. El lector puede comprender qué hacen el método Framework, UsageStatsManager, Bluetooth de baja energía, un microcontrolador o un actuador sin consultar documentación externa. Las explicaciones aclaran funciones y límites; no convierten alternativas técnicas en decisiones definitivas.
+La memoria completó el control entre citas y referencias: las 49 entradas bibliográficas están citadas y no existen citas sin referencia. El archivo contiene 18.260 palabras en total y 15.458 en los capítulos 1–13. Permanecen abiertos la selección de anexos, la trazabilidad individual de los criterios y las reglas operativas que deberán definirse antes de ejecutar las pruebas.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-27 — Cierre de extensión y APA.** Antes, la auditoría conservaba un conteo desactualizado y una revisión bibliográfica básica. Ahora registra segmentos reproducibles, una matriz de 49 referencias y cuatro correcciones APA. La definición de Relevo no cambió; se hicieron visibles los siguientes pendientes documentales y empíricos.
 
 **2026-08-26 — Accesibilidad conceptual.** Antes, varios métodos y componentes aparecían solo por su nombre técnico. Ahora la memoria explica su función en el mismo párrafo donde se introducen. La definición de Relevo y sus decisiones abiertas no cambiaron.
 
