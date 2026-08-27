@@ -28,11 +28,13 @@ El documento completo tiene aproximadamente 16.470 palabras y cumple los límite
 
 ## Qué cambió en esta actualización
 
-La v4 incorpora trazabilidad P/Q en los hallazgos, contraejemplos y estrategias del capítulo de usuarios. Esto permite comprobar las paráfrasis contra el corpus anonimizado y distingue con mayor claridad evidencia, síntesis e interpretación. Las respuestas sobre In(Visible) se mantienen como orientación general y no como validación de Relevo. Permanece pendiente comprobar si la relación entre intención, señal, primer paso y lugar resulta comprensible y aporta algo frente a una notificación.
+La v4 enlaza el registro metodológico del estado del arte y distingue una búsqueda exploratoria replicable de una revisión sistemática. El registro identifica nueve referentes nucleares, familias de términos, fuentes, criterios y límites, además de declarar que no conserva consultas, buscadores ni conteos completos. La oportunidad de Relevo continúa limitada al corpus consultado y no se presenta como novedad universal.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-26 — Trazabilidad de mercado.** Antes, el capítulo 8 resumía el método sin enlazar el registro completo. Ahora permite consultar pregunta, términos, fuentes, criterios, corpus nuclear y límites, y declara los datos de búsqueda no preservados. No se añadieron referentes ni se transformó la exploración en revisión sistemática.
 
 **2026-08-26 — Trazabilidad P/Q.** Antes, el capítulo de usuarios identificaba participantes sin localizar siempre las preguntas que sostenían cada hallazgo. Ahora los apartados 7.3–7.5 remiten a segmentos P/Q del corpus y Q13 queda acotada al concepto histórico consultado. No se añadieron testimonios ni se presentaron paráfrasis como citas literales.
 

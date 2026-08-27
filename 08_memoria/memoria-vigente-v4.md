@@ -385,7 +385,11 @@ Las entrevistas no definen la forma final de una solución. Su aporte consiste e
 
 El estado del arte examina cómo otras investigaciones, servicios y productos han respondido a problemas cercanos. La revisión no se limita a enumerar referentes visuales. Compara el mecanismo con que cada propuesta interviene, el valor que ofrece, la evidencia disponible y aquello que no resuelve.
 
-La búsqueda se cerró el 24 de agosto de 2026. Se consultaron artículos académicos, documentación oficial, sitios de productos y fichas técnicas. Las fuentes comerciales permiten conocer funciones, compatibilidad declarada y modelo de valor, pero no demuestran eficacia independiente. La revisión no corresponde a un estudio de patentes ni a un cálculo de participación de mercado. Sus conclusiones se restringen al corpus consultado.
+La búsqueda se cerró el 24 de agosto de 2026. Se consultaron artículos académicos, documentación oficial, sitios de productos y fichas técnicas. El [registro metodológico](../04_mercado_y_referentes/registro-busqueda-2026-08-24.md) conserva la pregunta, las familias de términos, los tipos de fuente, los criterios de inclusión y exclusión, nueve referentes nucleares y los límites del levantamiento. No se preservó un historial literal de consultas, buscadores ni conteos completos de resultados; por ello, permite repetir una exploración equivalente, pero no se presenta como revisión sistemática.
+
+Las fuentes comerciales permiten conocer funciones, compatibilidad declarada y modelo de valor, pero no demuestran eficacia independiente. La revisión tampoco corresponde a un estudio jurídico de patentes, un cálculo de participación de mercado ni una auditoría de disponibilidad en Chile. Sus conclusiones se restringen al corpus consultado.
+
+Las seis familias utilizadas en el capítulo son una clasificación construida para comparar mecanismos dentro de esta investigación. No corresponden a una taxonomía universal ni a categorías empleadas necesariamente por las marcas.
 
 Para ordenar la comparación se utilizaron seis preguntas:
 
@@ -422,7 +426,7 @@ Lo que parece funcionar en esta familia es la proximidad entre intervención y a
 
 Brick vincula una aplicación con un dispositivo físico utilizado para activar o revertir modos de bloqueo. Al momento de la consulta, la marca declaraba compatibilidad con Android 12 o posterior e iOS 17 o posterior, y mostraba un precio de USD 59 (Brick LLC, s. f.-a). Su propuesta de valor combina precompromiso y distancia: para recuperar el acceso es necesario volver al objeto.
 
-Unpluq utiliza una etiqueta con comunicación de campo cercano —NFC, tecnología que intercambia datos a muy corta distancia— junto con horarios, barreras y estadísticas. Su modelo incluye una suscripción (Unpluq, s. f.). Screenless Breaker ofrece una llave NFC que permite reabrir aplicaciones bloqueadas y mostraba un precio de EUR 45 (Screenless, s. f.). Brick Zone amplía la lógica hacia un espacio declarado mediante Bluetooth y presentaba un precio de USD 99 (Brick LLC, s. f.-b).
+Unpluq utiliza una etiqueta con comunicación de campo cercano —NFC, tecnología que intercambia datos a muy corta distancia— junto con horarios, barreras y estadísticas. Su modelo incluye una suscripción (Unpluq, s. f.). Screenless Breaker ofrece una llave NFC que permite reabrir aplicaciones bloqueadas y mostraba un precio de EUR 45 (Screenless, s. f.). Su sitio entrega información contradictoria: una tabla menciona iOS y Android, mientras la sección de preguntas frecuentes limita la compatibilidad actual a iOS y iPadOS y presenta Android como una versión planificada. Brick Zone amplía la lógica hacia un espacio declarado mediante Bluetooth y presentaba un precio de USD 99 (Brick LLC, s. f.-b).
 
 Estos productos muestran que existe un mercado dispuesto a incorporar objetos en el control del teléfono. El componente físico hace visible el compromiso y aumenta el esfuerzo necesario para revertirlo. Esa fricción puede ser valiosa para quien desea una barrera difícil de eludir.
 
@@ -430,7 +434,7 @@ La misma fortaleza define su límite. El objeto funciona principalmente como lla
 
 ## 8.5 Separación física y precompromiso
 
-kSafe es un contenedor con cierre temporizado que puede utilizarse para guardar el teléfono u otros objetos (Kitchen Safe, s. f.). Su mecanismo no depende del sistema operativo ni de permisos de uso. La persona establece un periodo durante el cual el contenido no estará disponible. La simplicidad técnica se acompaña de una restricción fuerte: revertir la decisión antes del tiempo fijado resulta difícil o imposible sin dañar el contenedor.
+kSafe es un contenedor con cierre temporizado que puede utilizarse para guardar el teléfono u otros objetos (Kitchen Safe, s. f.). Se incorpora como antecedente de mecanismo; la revisión no confirmó de manera suficiente su stock ni su distribución actual en Chile. Su funcionamiento no depende del sistema operativo ni de permisos de uso. La persona establece un periodo durante el cual el contenido no estará disponible. La simplicidad técnica se acompaña de una restricción fuerte: revertir la decisión antes del tiempo fijado resulta difícil o imposible sin dañar el contenedor.
 
 El producto representa la lógica de precompromiso. Una decisión tomada antes del episodio limita las opciones futuras. Puede resultar efectiva cuando el objetivo está claro, pero no se adapta con facilidad a cambios de contexto. Una llamada importante, una emergencia o un uso legítimo del teléfono quedan sometidos a la misma barrera.
 
@@ -439,6 +443,8 @@ Las estrategias mencionadas en las entrevistas —dejar el teléfono lejos, carg
 ## 8.6 Objetos de foco y formación de hábitos
 
 Focusaur declara un dispositivo físico acompañado de una aplicación, etiquetas NFC, sonidos y funciones de hábito. Su comunicación comercial combina foco, constancia y recompensa, y mostraba un precio promocional de USD 129 frente a un valor de referencia de USD 169 en la fecha de consulta (Focusaur, s. f.). La oferta permite observar una dirección de mercado en que el objeto deja de ser una simple llave y participa de un ritual de inicio.
+
+La política de despacho consultada limita la tienda principal a Estados Unidos y remite a una tienda separada para Europa. No se comprobó disponibilidad en Chile. Esta condición importa porque una oferta visible en línea no equivale a acceso local ni permite comparar su costo final con el de una propuesta desarrollada en el país.
 
 Los objetos de foco suelen vincular un espacio con una conducta: trabajar, estudiar o mantenerse lejos del teléfono. Esa relación puede hacer visible un compromiso y reducir la ambigüedad del comienzo. A la vez, la gamificación, las estadísticas o las recompensas pueden desplazar la atención desde el propósito personal hacia el cumplimiento frente al sistema.
 
@@ -933,6 +939,10 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**26 de agosto de 2026 — Vigencia y alcance del mercado.** Se aclaró que las seis familias del estado del arte son una clasificación analítica del proyecto y no una taxonomía universal. La comparación de Screenless registra ahora la contradicción de su sitio sobre Android; Focusaur distingue el despacho estadounidense de su tienda europea, y kSafe se mantiene como antecedente de mecanismo sin afirmar stock ni distribución en Chile. Antes, estas condiciones podían leerse como disponibilidades más amplias de lo que permiten las fuentes. La revisión no modifica la oportunidad de diseño ni presenta información comercial como evidencia de eficacia.
+
+**26 de agosto de 2026 — Trazabilidad del estado del arte.** El apartado 8.1 enlaza ahora el registro metodológico y declara con precisión qué información conserva: pregunta, familias de términos, fuentes, criterios, corpus nuclear y límites. Antes, la memoria resumía el método, pero no permitía acceder directamente al documento que lo sustenta ni advertía que no existen consultas literales, buscadores y conteos completos. La corrección no añade referentes ni convierte la revisión exploratoria en una revisión sistemática.
 
 **26 de agosto de 2026 — Trazabilidad de entrevistas.** Se añadieron identificadores P/Q a los hallazgos de los apartados 7.3, 7.4 y 7.5, y se explicó su función metodológica. Antes, el capítulo identificaba participantes, pero obligaba a reconstruir manualmente qué preguntas sostenían cada paráfrasis. La revisión corrigió dos sobreextensiones: P3 describió una pausa ambivalente, no una experiencia agradable, y P6 no declaró en Q12 una estrategia de separación. También se acotó Q13 al concepto histórico In(Visible): sus respuestas solo orientan criterios generales de calma, discreción y representación visual; no sostienen preferencias formales ni validan Relevo. No se incorporaron citas literales nuevas ni se modificaron las respuestas del corpus.
 

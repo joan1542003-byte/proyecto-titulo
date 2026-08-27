@@ -57,6 +57,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-08-26 — Trazabilidad del estudio de mercado
+
+- **Cambio:** el capítulo 8 enlaza el registro metodológico y explicita el alcance exploratorio, el corpus nuclear y los datos de búsqueda no preservados.
+- **Versión anterior:** el método estaba documentado fuera de la memoria, pero no era directamente localizable desde el estado del arte.
+- **Motivo:** hacer auditable la propuesta de valor sin afirmar exhaustividad ni novedad universal.
+- **Alcance:** no se añadieron productos ni resultados de eficacia.
+
 ### 2026-08-26 — Trazabilidad P/Q del capítulo de usuarios
 
 - **Cambio:** los apartados de episodios, contraejemplos y estrategias remiten ahora a preguntas concretas del corpus anonimizado.

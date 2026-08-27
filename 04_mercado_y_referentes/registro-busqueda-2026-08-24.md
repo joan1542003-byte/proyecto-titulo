@@ -3,7 +3,7 @@ id: MER-BUS-2026-08-24
 titulo: "Registro de búsqueda exploratoria: mercado, estado del arte y referentes"
 fecha_corte: 2026-08-24
 tipo: "búsqueda exploratoria, no sistemática"
-estado: "registro metodológico para el capítulo 7"
+estado: "registro metodológico para el capítulo 8"
 alcance: "bienestar digital, autocontrol digital, recordatorios situados y productos phygital relacionados con Relevo"
 ---
 
@@ -22,11 +22,13 @@ La búsqueda se delimitó a una comparación por mecanismos, no a una colección
 - **Propósito:** construir un mapa de mecanismos y formular una oportunidad de diseño acotada para Relevo.
 - **No es:** una revisión sistemática, un metaanálisis, un estudio de tamaño de mercado, una búsqueda exhaustiva de patentes ni una auditoría de disponibilidad internacional.
 
+El 26 de agosto de 2026 se realizó una verificación puntual de vigencia en las páginas oficiales de los referentes nucleares. Esta comprobación actualizó compatibilidades y condiciones de despacho visibles, pero no amplió el corpus ni modificó la fecha de corte de la búsqueda.
+
 Se empleó navegación exploratoria en la web, consultas en español e inglés, revisión de páginas oficiales y seguimiento de DOI, repositorios académicos, páginas de editoriales y registros de publicaciones. La búsqueda se detuvo cuando los mecanismos principales quedaron cubiertos y la información suficiente para comparar cada referente fue verificable. No se declara saturación bibliográfica ni se presenta el corpus como inventario completo del mercado.
 
 ## 3. Términos y combinaciones exploradas
 
-Se combinaron términos de problema, mecanismo, soporte y producto. Entre las consultas utilizadas o equivalentes estuvieron:
+Se combinaron términos de problema, mecanismo, soporte y producto. No se conservó un historial literal de cada consulta ni del buscador utilizado. Por ello, la tabla siguiente reconstruye las familias de términos que delimitaron la exploración y permite repetir una búsqueda equivalente, pero no reproducir exactamente el orden de navegación original.
 
 | Campo | Términos en español | Términos en inglés |
 |---|---|---|
@@ -48,6 +50,24 @@ La inclusión de términos de adopción y configuración fue necesaria porque un
 | Publicaciones académicas con DOI | Wiley; ACM; PNAS; CHI/ACM; Springer; Sage; JMIR; IET | Contrastar mecanismos con evidencia revisada por pares y registrar límites metodológicos. |
 | Repositorios y registros académicos | PubMed, repositorios institucionales, páginas de autores y registros editoriales | Verificar DOI, autoría, año, páginas y acceso a resúmenes o versiones aceptadas. |
 | Tiendas y reseñas | Se revisaron solo como señales secundarias cuando la página oficial las incorporaba | No se usaron para afirmar eficacia, adopción sostenida ni causalidad. |
+
+### 4.1 Corpus nuclear documentado
+
+Las fichas comparativas conservan nueve referentes principales. Esta tabla identifica la fuente primaria y el peso que puede tener en el análisis.
+
+| Referente | Familia | Fuente principal | Tipo de evidencia | Uso legítimo |
+| --- | --- | --- | --- | --- |
+| Digital Wellbeing y Pause Point | Medición y pausa nativa | Google Pixel Help y blog oficial de Google | Documentación de plataforma | Funciones y disponibilidad declaradas; no eficacia independiente. |
+| Apple Screen Time | Medición, límites y horarios | Apple Support | Documentación de plataforma | Funciones y compatibilidad declaradas; no recuperación de intenciones. |
+| one sec | Pausa y fricción | Sitio oficial; Grüning et al. (2023); Haliburton et al. (2024) | Comercial y académica específica | Resultados bajo protocolos concretos, considerando vínculos con el producto y selección de usuarios. |
+| Brick | Llave física y bloqueo | Sitio y soporte oficial de Brick | Documentación comercial | Mecanismo, compatibilidad, permisos y precio observado; no eficacia sostenida. |
+| Brick Zone | Bloqueo físico asociado al espacio | Sitio oficial de Brick | Documentación comercial | Automatización y precio declarados; no precisión espacial ni adopción. |
+| Unpluq Tag | Llave NFC y bloqueo | Sitio oficial de Unpluq | Documentación comercial | Mecanismo y modelo de suscripción declarados; no resultados independientes. |
+| Screenless Breaker | Llave NFC y bloqueo | Sitio oficial de Screenless | Documentación comercial | Función y precio observado; no eficacia ni disponibilidad chilena. |
+| Focusaur | Objeto de foco y hábitos | Sitio oficial de Focusaur | Documentación comercial | Oferta, ritual y funciones declaradas; no eficacia independiente. |
+| *The Tangible Reminder* | Recordatorio tangible y ambiental | Hermann et al. (2007) | Publicación académica histórica | Antecedente de asociación entre objetos y estados digitales; no evidencia sobre ocio digital actual. |
+
+Las fichas especializadas incorporan antecedentes adicionales para ampliar mecanismos, investigación reciente y frontera técnica. Estos materiales no se confunden con el corpus comercial nuclear ni aumentan por sí solos la fuerza de la conclusión.
 
 Las páginas comerciales se trataron como evidencia primaria de lo que el producto declara hacer, no de que ese mecanismo produzca el efecto prometido. Las publicaciones académicas se usaron para examinar eficacia, fricción, configuración, abandono y límites, pero no se transfirieron automáticamente a productos con hardware distinto.
 
@@ -90,6 +110,7 @@ Este registro tiene los siguientes límites:
 - La fecha de corte fija una fotografía temporal de páginas, precios y compatibilidades que pueden cambiar.
 - Los precios son los visibles en las páginas consultadas, expresados en la moneda original; no incluyen necesariamente envío, impuestos, importación ni disponibilidad en Chile.
 - No se obtuvieron cifras comparables de ventas, retención, devoluciones, soporte, fallas o mercado total.
+- No se conserva el número total de resultados recuperados, descartados o duplicados, ni un historial literal de consultas y motores de búsqueda.
 - La disponibilidad comercial no equivale a adopción ni a uso sostenido.
 - La mayor parte de la evidencia independiente estudia intervenciones digitales, no objetos físicos situados fuera de la pantalla.
 - one sec cuenta con estudios específicos, pero estos trabajan con usuarios del propio producto o con vínculos de autoría que deben considerarse al interpretar independencia y generalización.
@@ -115,3 +136,17 @@ Por estas razones, la conclusión de oportunidad se formulará como una delimita
 - **Antes:** el registro describía la búsqueda y su alcance, pero no documentaba esta ronda de normalización editorial.
 - **Después:** se conserva la búsqueda exploratoria sin modificaciones de contenido; se deja constancia de que el capítulo y las fichas presentan los materiales de consulta como anexos digitales y aplican `s. f.` con recuperación a las páginas oficiales no fechadas.
 - **Motivo:** mantener la trazabilidad de la corrección sin introducir nuevas fuentes, productos ni afirmaciones de mercado.
+
+### 2026-08-26 — Precisión de reproducibilidad y corpus nuclear
+
+- **Cambio:** se aclaró que las consultas registradas reconstruyen familias de términos y no un historial literal; además, se añadió una tabla de nueve referentes nucleares con tipo de fuente y uso legítimo.
+- **Versión anterior:** el registro permitía repetir una exploración equivalente, pero podía interpretarse como una reproducción exacta sin conservar consultas, buscadores ni conteos completos.
+- **Motivo:** hacer transparente qué puede verificarse, qué puede replicarse y qué información metodológica no fue preservada.
+- **Alcance:** no se añadieron productos ni se modificaron las conclusiones de mercado.
+
+### 2026-08-26 — Verificación puntual de vigencia
+
+- **Cambio:** se distinguió la fecha de cierre de la búsqueda de una comprobación posterior de compatibilidad y despacho en fuentes oficiales; además, el encabezado se sincronizó con el capítulo 8 de la memoria vigente.
+- **Versión anterior:** el registro solo informaba la fotografía del 24 de agosto y no separaba una revisión posterior de datos comerciales variables.
+- **Motivo:** evitar que una corrección de vigencia parezca una ampliación retrospectiva del corpus.
+- **Resultado:** Screenless Breaker conserva una contradicción interna sobre Android y Focusaur declara despacho en Estados Unidos y una tienda separada para Europa; ninguna fuente permite inferir disponibilidad en Chile.

@@ -12,10 +12,11 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 26 de agosto de 2026:** los hallazgos centrales, los contraejemplos y las estrategias del capítulo 7 remiten ahora a segmentos P/Q verificables del corpus anonimizado.
 
+**Resuelto el 26 de agosto de 2026:** el capítulo 8 enlaza un registro metodológico que identifica pregunta, términos, fuentes, criterios, corpus nuclear y límites. También explicita qué datos de búsqueda no fueron preservados.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
 | Documentos rectores desactualizados | El dictamen rector conserva una arquitectura de 16 capítulos mientras la v4 aplica 14; otra auditoría declara revisar una versión anterior. | Establecer la v4 y su arquitectura de 14 capítulos como única referencia activa; rotular los dictámenes anteriores como históricos. |
-| Registro de búsqueda de mercado incompleto | El capítulo 8 explica alcance y criterios, pero no deja una estrategia reproducible con términos, fuentes consultadas, inclusión y exclusión. | Consolidar el registro de búsqueda y enlazarlo metodológicamente con las conclusiones del estado del arte. |
 | Derivación proyectual adelantada | Algunos cierres de los capítulos 5 y 6 introducen primer paso, lugar, señal o capa física antes de la formulación. | Mantener esos capítulos en el nivel de implicaciones y preguntas; reservar la combinación concreta para criterios de diseño y formulación. |
 | Conceptos técnicos poco accesibles | Aparecen nombres de métodos, APIs y componentes sin explicación suficiente para un lector de Diseño. | Explicar función y condición provisional en la primera aparición; trasladar especificaciones extensas a factibilidad o anexos. |
 | Extensión, APA y anexos sin cierre total | La auditoría existente realiza una revisión básica, pero no separa cuerpo, referencias y registro de cambios ni incorpora anexos metodológicos. | Ejecutar conteo por cuerpo académico, matriz cita–referencia completa y selección de anexos indispensables antes de exportar. |
@@ -103,3 +104,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** el lector podía identificar al participante, pero no la pregunta concreta que sustentaba cada paráfrasis.
 - **Motivo:** permitir verificación contra el corpus anonimizado sin recargar la memoria con transcripciones.
 - **Alcance:** las referencias son internas; no convierten respuestas normalizadas en citas textuales ni amplían la muestra.
+
+### 2026-08-26 — Resolución de trazabilidad de mercado
+
+- **Cambio:** el capítulo 8 enlaza el registro metodológico y el registro distingue replicación exploratoria de reproducción exacta.
+- **Versión anterior:** el método existía fuera de la memoria, pero su relación con el capítulo era poco visible y no declaraba la ausencia de consultas y conteos literales.
+- **Motivo:** permitir auditar la propuesta de valor sin sobredimensionar el alcance del estudio.
+- **Alcance:** la oportunidad continúa limitada al corpus y no se presenta como novedad universal.

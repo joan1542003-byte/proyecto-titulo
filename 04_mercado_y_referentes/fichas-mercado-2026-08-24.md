@@ -2,7 +2,7 @@
 id: MER-FIC-2026-08-24
 titulo: "Fichas comparativas de mercado, estado del arte y antecedentes"
 fecha_corte: 2026-08-24
-estado: "fichas internas para el capítulo 7"
+estado: "fichas internas para el capítulo 8"
 criterio: "comparación por mecanismo, evidencia, fricción, límite y aprendizaje para Relevo"
 ---
 
@@ -145,7 +145,7 @@ Estas fichas registran lo que cada referente declara hacer y el peso que esa inf
 | **Mecanismo** | Inicio físico mediante dial y botón; modo de barrera que detecta movimiento del teléfono; etiquetas NFC para hábitos y lugares; sonidos integrados; recompensas con dinosaurios; aplicación y función comercial denominada AI Focus Coach. |
 | **Condición** | Inicio de una sesión de foco, colocación del dispositivo sobre el teléfono y/o toque de una etiqueta NFC. La página no permite separar con precisión qué funciones son obligatorias en cada modo. |
 | **Salida** | Sesión de foco, sonido, progreso visual en la aplicación, recompensa gamificada y posible fallo de recompensa si se levanta el teléfono, según la presentación comercial. |
-| **Compatibilidad** | La página oficial presenta aplicación para iOS y Android, pero la disponibilidad de compra revisada indica envío dirigido a Estados Unidos. No se infiere disponibilidad internacional. |
+| **Compatibilidad** | La página oficial presenta aplicación para iOS y Android. Su política de despacho limita esta tienda a Estados Unidos y remite a otra tienda para Europa; no permite inferir disponibilidad en Chile. |
 | **Modelo económico** | Hardware visible a USD 129 en oferta frente a USD 169; kits superiores y plan gratuito/Pro de aplicación. La página declara 1.300+ patrocinadores de Kickstarter 2026, señal comercial de lanzamiento, no prueba de uso sostenido. |
 | **Datos o permisos** | El sitio menciona calendarios de Google y Apple, mensajes y correos para organización, además de aplicación y coach. No se asume qué permisos son necesarios ni qué datos se almacenan sin una política técnica específica. |
 | **Evidencia independiente** | No se localizó evaluación académica independiente de Focusaur. Las afirmaciones de detección, hábitos, batería, patrocinadores y recompensas son del fabricante. |
@@ -204,3 +204,10 @@ Estas fuentes no son fichas comerciales, pero permiten interpretar las fichas:
 - **Antes:** Apple Support, Google Help y las páginas de Brick aparecían fechadas como 2026 aunque no mostraban fecha de publicación; la ficha de Unpluq consignaba USD 30; la referencia histórica usaba `&` entre autores.
 - **Después:** esas páginas pasan a `s. f.` con fecha de recuperación y sufijos `s. f.-a/b/c` cuando corresponde; Unpluq conserva solo la existencia del selector y del monto dinámico, sin tratarlo como precio total comparable; la referencia de *The Tangible Reminder* usa `y` según la convención APA 7 en español del proyecto.
 - **Motivo:** distinguir fecha de consulta de fecha de publicación, evitar una cifra económica ambigua y uniformar la lista de autores sin convertir información comercial en evidencia de eficacia.
+
+### 2026-08-26 — Verificación de compatibilidad y despacho
+
+- **Antes:** la ficha de Screenless podía leerse como una oferta compatible con Android y la de Focusaur resumía el despacho como dirigido a Estados Unidos.
+- **Después:** Screenless registra la contradicción entre su tabla de especificaciones y su FAQ, que anuncia Android como una versión planificada; Focusaur diferencia la tienda estadounidense de la remisión oficial a una tienda europea.
+- **Motivo:** conservar exactamente lo que declaran las fuentes y no transformar una disponibilidad regional en disponibilidad para Chile.
+- **Alcance:** la comprobación actualiza datos comerciales variables; no aporta evidencia independiente de eficacia ni modifica la comparación de mecanismos.

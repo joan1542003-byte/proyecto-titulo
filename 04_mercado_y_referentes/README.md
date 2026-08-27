@@ -37,11 +37,18 @@ Un referente no se incorporará solo porque se parece formalmente a Relevo. Debe
 - [Investigación académica — Agente Samus](investigacion-agente-samus-academia.md): literatura y prototipos con evidencia primaria.
 - [Investigación comercial — Agente Zelda](investigacion-agente-zelda-mercado.md): productos, modelos, precios y señales de disponibilidad.
 - [Investigación de frontera — Agente Solid Snake](investigacion-agente-solid-snake-frontera.md): proyectos emergentes, tesis y patentes como antecedentes, no como opinión jurídica.
-- [Capítulo 7 de la memoria v2](../08_memoria/memoria-vigente-v2.md#7-estado-del-arte-mercado-y-referentes): síntesis académica integrada.
+- [Capítulo 8 de la memoria vigente](../08_memoria/memoria-vigente-v4.md#8-estado-del-arte-y-referentes): síntesis académica integrada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-26 — Sincronización metodológica con la memoria v4
+
+- **Cambio:** se precisó el alcance reproducible del registro, se identificó el corpus nuclear y se actualizó el enlace hacia el capítulo 8 vigente.
+- **Versión anterior:** el índice remitía al capítulo 7 de la memoria v2 y el registro podía confundirse con un historial exacto de búsquedas.
+- **Motivo:** mantener trazabilidad entre fuentes, fichas, método exploratorio y síntesis académica activa.
+- **Alcance:** no se incorporaron nuevos referentes ni se afirmó exhaustividad del mercado.
 
 ### 2026-08-24 — Estudio ampliado y auditado
 
