@@ -10,6 +10,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 49 entradas bibliográficas y correcciones APA aplicadas.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
+- [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): separación entre correcciones documentales inmediatas y evidencia que requiere prototipado.
 - [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
@@ -63,6 +64,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Selección de anexos
+
+- **Cambio:** se incorporó el índice que define cinco anexos y separa el paquete formal de la documentación interna.
+- **Versión anterior:** los materiales estaban ordenados por áreas, pero no existía una selección editorial para acompañar la memoria.
+- **Motivo:** facilitar la evaluación de la evidencia sin duplicar el repositorio completo.
+- **Alcance:** la selección deberá ampliarse solo cuando existan protocolos y resultados ejecutados.
 
 ### 2026-08-27 — Trazabilidad de criterios
 

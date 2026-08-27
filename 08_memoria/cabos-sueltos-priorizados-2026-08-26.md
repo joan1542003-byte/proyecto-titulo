@@ -28,9 +28,9 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 27 de agosto de 2026:** se separaron los datos operativos del ciclo y los registros metodológicos de las pruebas. Relevo no construye un historial de cumplimiento; las observaciones se recogen de forma temporal, codificada y consentida para evaluar prototipos.
 
-| Cabo suelto | Evidencia | Corrección necesaria |
-| --- | --- | --- |
-| Anexos metodológicos sin selección final | El repositorio contiene corpus, matrices y registros de mercado, pero la memoria no define cuáles acompañarán una entrega formal y cuáles permanecerán solo como respaldo digital. | Seleccionar el conjunto mínimo de anexos, asignarles función y enlazarlos desde el apartado pertinente sin duplicar el repositorio. |
+**Resuelto el 27 de agosto de 2026:** el índice de anexos define cinco unidades para la entrega formal y excluye auditorías internas, código, versiones antiguas, archivos repetidos y protocolos todavía no ejecutados.
+
+No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avances dependen de decisiones metodológicas o evidencia obtenida mediante prototipos.
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
 
@@ -68,11 +68,18 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 ## Orden de trabajo recomendado
 
-El siguiente paso documental es seleccionar los anexos indispensables y definir qué función cumple cada uno en la entrega. El primer paso empírico será probar la asociación entre intención, señal y lugar. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación. Si no lo hace, corresponde revisar la propuesta antes de invertir en integración o fabricación detallada.
+El siguiente paso es definir las reglas operativas de éxito, modificación y detención antes de ejecutar la prueba de asociación entre intención, señal y lugar. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación. Si no lo hace, corresponde revisar la propuesta antes de invertir en integración o fabricación detallada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Selección de anexos resuelta
+
+- **Cambio:** el último pendiente documental de prioridad 0 pasó a resuelto mediante un índice de cinco anexos.
+- **Versión anterior:** el repositorio contenía la evidencia, pero no diferenciaba qué debía acompañar la memoria y qué permanecía como proceso interno.
+- **Motivo:** mantener una entrega verificable, acotada y sin duplicaciones.
+- **Alcance:** el próximo trabajo corresponde a reglas operativas y pruebas; nuevos anexos dependerán de evidencia futura.
 
 ### 2026-08-27 — Frontera de registros resuelta
 

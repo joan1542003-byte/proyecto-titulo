@@ -27,7 +27,7 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 18.818 palabras: 16.450 antes de las referencias, 1.204 en la bibliografía y 1.164 en el registro de cambios. Los capítulos 1–13 contienen 15.787 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 18.941 palabras: 16.509 antes de las referencias, 1.204 en la bibliografía y 1.228 en el registro de cambios. Los capítulos 1–13 contienen 15.846 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
@@ -68,6 +68,8 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Selección de anexos.** Se actualizó la extensión después de enlazar el índice de anexos desde usuarios y arquitectura de interacción. Antes, la evidencia complementaria estaba distribuida por el repositorio sin una selección formal. El nuevo índice no duplica documentos ni incorpora materiales internos como evidencia.
 
 **27 de agosto de 2026 — Registros operativos y metodológicos.** Se actualizó la extensión después de aclarar la frontera entre los datos necesarios para ejecutar un ciclo y los registros temporales de las pruebas. Antes, la exclusión de registros de cumplimiento y la existencia de fichas de observación podían parecer incompatibles. La corrección no añade funciones al producto ni fija todavía los protocolos finales.
 

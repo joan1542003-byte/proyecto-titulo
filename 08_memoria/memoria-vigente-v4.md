@@ -296,6 +296,8 @@ Las conversaciones fueron transcritas y regularizadas para facilitar su lectura.
 
 Las referencias internas que combinan participante y pregunta —por ejemplo, P2, Q3–Q7— permiten localizar el segmento del corpus que sustenta una paráfrasis. No corresponden a citas textuales ni sustituyen la interpretación transversal; su función es mantener trazabilidad entre las respuestas anonimizadas y los hallazgos presentados.
 
+El [índice de anexos](anexos/README.md) reúne el instrumento aplicado, el corpus anonimizado y los documentos de análisis que respaldan este capítulo. También declara los límites de conservación y uso de cada material.
+
 La interpretación fue realizada por el investigador y no contó con un segundo codificador. Tampoco se observaron directamente las conductas ni los espacios domésticos. Los hallazgos permiten reconocer patrones y contraejemplos dentro del corpus, pero no estimar frecuencia, causalidad, eficacia o disposición de pago.
 
 ## 7.2 Caracterización del corpus
@@ -680,6 +682,8 @@ Ante un fallo, el sistema debe priorizar la claridad. Si se revoca un permiso, s
 
 La arquitectura detallada contempla validaciones, errores y retornos. Algunos estados se representan en la aplicación; otros ocurren en el objeto o en la relación de la persona con el lugar. Distinguirlos evita que cada contingencia se transforme en una función visible.
 
+La cobertura completa del recorrido y sus estados alternativos se conserva en el [índice de anexos](anexos/README.md). Estos documentos permiten revisar la estructura, pero no constituyen resultados de uso.
+
 ## 11.8 Flujo de diseño
 
 El desarrollo avanza desde la pregunta hacia la especificación. Primero debe comprobarse que una señal puede recuperar la intención. Después se compara el lugar elegido con un lugar neutro y con una notificación. Solo si existe una diferencia se define el canal físico, se integra la electrónica y se estudia una forma de mayor fidelidad, es decir, más próxima a las condiciones de uso y funcionamiento que se quieren evaluar.
@@ -941,6 +945,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Selección y enlace de anexos.** Se incorporaron dos referencias al índice de anexos y se definió un paquete formal para método, corpus, análisis de usuarios, mercado y arquitectura de interacción. Antes, esos documentos existían en distintas carpetas sin una selección editorial común. No se duplicaron archivos ni se añadieron informes de agentes, código, versiones antiguas o resultados inexistentes.
 
 **27 de agosto de 2026 — Separación entre datos del sistema y registros de investigación.** Se aclaró que Relevo conserva únicamente la información necesaria para ejecutar el ciclo y no registra la conducta posterior al pulso. Las fichas, observaciones y errores recogidos durante las pruebas pertenecen a protocolos temporales con consentimiento y participantes codificados. Antes, ambas capas aparecían en capítulos distintos sin una frontera explícita y podían parecer contradictorias. La corrección no define todavía plazos de conservación ni instrumentos finales.
 
