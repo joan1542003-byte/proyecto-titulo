@@ -28,11 +28,13 @@ El documento completo tiene aproximadamente 16.470 palabras y cumple los límite
 
 ## Qué cambió en esta actualización
 
-Los capítulos 5 y 6 ya no anticipan la solución. Los antecedentes distinguen la interrupción de una conducta de la recuperación de una intención; el marco teórico concluye con preguntas que todavía deben contrastarse con usuarios y referentes. El primer paso, la condición, la señal y la distribución phygital aparecen más adelante, cuando la memoria cuenta con evidencia suficiente para convertirlos en criterios y decisiones.
+La memoria explica ahora los métodos, componentes y capacidades técnicas cuando aparecen por primera vez. El lector puede comprender qué hacen el método Framework, UsageStatsManager, Bluetooth de baja energía, un microcontrolador o un actuador sin consultar documentación externa. Las explicaciones aclaran funciones y límites; no convierten alternativas técnicas en decisiones definitivas.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-26 — Accesibilidad conceptual.** Antes, varios métodos y componentes aparecían solo por su nombre técnico. Ahora la memoria explica su función en el mismo párrafo donde se introducen. La definición de Relevo y sus decisiones abiertas no cambiaron.
 
 **2026-08-26 — Orden narrativo de antecedentes y marco teórico.** Antes, algunos cierres teóricos adelantaban componentes de la propuesta. Ahora los capítulos 5 y 6 explican relaciones y abren preguntas antes de formular Relevo. Se conservaron los conceptos centrales y la definición vigente del proyecto no cambió.
 

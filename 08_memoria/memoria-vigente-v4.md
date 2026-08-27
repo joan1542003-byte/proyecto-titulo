@@ -13,7 +13,7 @@
 
 El ocio digital ocupa un lugar habitual en la vida cotidiana. Conversar, jugar, mirar videos o recorrer redes sociales pueden ser formas legítimas de descanso y entretención. Sin embargo, algunas sesiones se prolongan sin que la persona vuelva a decidir si quiere continuar. En esos momentos, una actividad que también deseaba realizar puede dejar de estar presente justo cuando todavía era posible comenzarla. El problema no radica en el teléfono ni en una cantidad universal de minutos, sino en la dificultad de recuperar una intención propia dentro de una interacción que ofrece contenido de manera continua.
 
-La investigación reúne bibliografía sobre experiencia de ocio, conflicto entre metas, memoria prospectiva, bienestar digital e interacción tangible. También considera ocho entrevistas semiestructuradas realizadas a personas de 19 a 27 años y un análisis de herramientas que miden, interrumpen o bloquean el uso del teléfono. Los antecedentes muestran que las experiencias digitales no pueden juzgarse solo por su duración y que las respuestas existentes se concentran, principalmente, en limitar la actividad presente. A partir de esta revisión se distinguen dos situaciones de uso: aquella en que una intención alternativa pierde presencia y aquella en que la actividad digital conserva sentido, por lo que interrumpirla sería improcedente.
+La investigación reúne bibliografía sobre ocio, conflicto entre metas, bienestar digital, recuerdo de acciones futuras y uso de objetos físicos para interactuar con información. También considera ocho entrevistas semiestructuradas realizadas a personas de 19 a 27 años y un análisis de herramientas que miden, interrumpen o bloquean el uso del teléfono. Los antecedentes muestran que las experiencias digitales no pueden juzgarse solo por su duración y que las respuestas existentes se concentran, principalmente, en limitar la actividad presente. A partir de esta revisión se distinguen dos situaciones de uso: aquella en que una intención alternativa pierde presencia y aquella en que la actividad digital conserva sentido, por lo que interrumpirla sería improcedente.
 
 Relevo se formula como un sistema phygital que vincula una aplicación Android con un objeto situado cerca del primer paso de una actividad elegida. Cuando se cumple una condición configurada por la persona, el objeto emite una señal ambiental breve. Su propósito es hacer nuevamente perceptible la intención, sin bloquear el teléfono ni decidir qué debe ocurrir después. La propuesta se entiende como una hipótesis de diseño que deberá comprobar su aporte frente a una notificación digital equivalente.
 
@@ -160,7 +160,7 @@ El recurso externo reduce ciertas demandas, pero introduce otras. Es necesario f
 
 Los recordatorios basados en ubicación exploran el vínculo entre intención y contexto. Place-Its permitió asociar mensajes a lugares en teléfonos móviles (Sohn et al., 2005), mientras O’Rear y Radvansky (2019) estudiaron cómo el lugar puede favorecer el recuerdo de una acción futura. Los hallazgos muestran que el contexto puede colaborar con la recuperación, aunque la proximidad no garantiza que la acción se realice.
 
-En el campo de la interacción tangible, *The Tangible Reminder* vinculó objetos cotidianos con información de citas y señales ambientales (Hermann et al., 2007). El proyecto demostró que un recordatorio puede distribuirse entre información digital, presencia física y entorno. Su propósito, sin embargo, era comunicar compromisos temporales mediante un objeto con información visible. No responde directamente a sesiones de ocio digital ni a intenciones que la persona puede decidir no ejecutar.
+En el campo de la **interacción tangible**, que incorpora objetos físicos a la manera de representar o manipular información, *The Tangible Reminder* vinculó objetos cotidianos con información de citas y señales ambientales (Hermann et al., 2007). El proyecto demostró que un recordatorio puede distribuirse entre información digital, presencia física y entorno. Su propósito, sin embargo, era comunicar compromisos temporales mediante un objeto con información visible. No responde directamente a sesiones de ocio digital ni a intenciones que la persona puede decidir no ejecutar.
 
 ## 5.5 Estado de la cuestión
 
@@ -286,13 +286,13 @@ Estas preguntas permiten avanzar desde la teoría sin confundir una posibilidad 
 
 ## 7.1 Método y participantes
 
-Se realizó un estudio cualitativo exploratorio para conocer experiencias de ocio digital, momentos de continuidad, intenciones alternativas, formas de cierre y estrategias utilizadas frente al teléfono. El formato semiestructurado permitió mantener una pauta común y profundizar en situaciones particulares mediante repreguntas.
+Se realizó un estudio cualitativo exploratorio para comprender relatos y reconocer patrones iniciales, sin buscar una representación estadística de la población. El estudio abordó experiencias de ocio digital, momentos de continuidad, intenciones alternativas, formas de cierre y estrategias utilizadas frente al teléfono. El formato semiestructurado permitió mantener una pauta común y profundizar en situaciones particulares mediante repreguntas.
 
 Participaron ocho personas de 19 a 27 años. Las entrevistas fueron habladas y presenciales, y se realizaron en Santiago los días 11 y 12 de junio de 2026. El reclutamiento se efectuó mediante contactos proporcionados por personas cercanas al investigador. La edad fue el único criterio común confirmado. En consecuencia, el lugar y el rango etario describen el levantamiento, pero no permiten generalizar los resultados a todos los adultos jóvenes.
 
 La pauta avanzó desde las actividades de tiempo libre hacia el relato de una sesión reciente, su propósito, continuidad, percepción temporal, valoración y cierre. Dos preguntas adicionales abordaron las estrategias para descansar o separarse del teléfono y la reacción ante el concepto In(Visible). Se obtuvo consentimiento informado oral para la participación y el uso académico anonimizado del material.
 
-Las conversaciones fueron transcritas y regularizadas para facilitar su lectura. El corpus se organizó con códigos P1–P8 y Q1–Q13. La unidad principal fue el episodio: una situación relatada en relación con actividad, intención, continuidad, recuerdo, valoración o estrategia. El análisis utilizó matrices comparativas inspiradas en el método Framework (Goldsmith, 2021) y tipos ideales revisables construidos a partir de semejanzas y contrastes entre casos (Stapley et al., 2022).
+Las conversaciones fueron transcritas y regularizadas para facilitar su lectura. El corpus se organizó con códigos P1–P8 y Q1–Q13. La unidad principal fue el episodio: una situación relatada en relación con actividad, intención, continuidad, recuerdo, valoración o estrategia. El método Framework organizó temas y casos en una matriz común, manteniendo el vínculo con cada entrevista (Goldsmith, 2021). A partir de semejanzas y contrastes se construyeron tipos ideales revisables: modelos analíticos que reúnen rasgos recurrentes sin convertirlos en perfiles permanentes de los participantes (Stapley et al., 2022).
 
 Las referencias internas que combinan participante y pregunta —por ejemplo, P2, Q3–Q7— permiten localizar el segmento del corpus que sustenta una paráfrasis. No corresponden a citas textuales ni sustituyen la interpretación transversal; su función es mantener trazabilidad entre las respuestas anonimizadas y los hallazgos presentados.
 
@@ -424,7 +424,7 @@ Lo que parece funcionar en esta familia es la proximidad entre intervención y a
 
 ## 8.4 Llaves físicas y bloqueadores
 
-Brick vincula una aplicación con un dispositivo físico utilizado para activar o revertir modos de bloqueo. Al momento de la consulta, la marca declaraba compatibilidad con Android 12 o posterior e iOS 17 o posterior, y mostraba un precio de USD 59 (Brick LLC, s. f.-a). Su propuesta de valor combina precompromiso y distancia: para recuperar el acceso es necesario volver al objeto.
+Brick vincula una aplicación con un dispositivo físico utilizado para activar o revertir modos de bloqueo. Al momento de la consulta, la marca declaraba compatibilidad con Android 12 o posterior e iOS 17 o posterior, y mostraba un precio de USD 59 (Brick LLC, s. f.-a). Su propuesta de valor combina distancia y **precompromiso**, es decir, una decisión previa que restringe deliberadamente las opciones disponibles durante una situación: para recuperar el acceso es necesario volver al objeto.
 
 Unpluq utiliza una etiqueta con comunicación de campo cercano —NFC, tecnología que intercambia datos a muy corta distancia— junto con horarios, barreras y estadísticas. Su modelo incluye una suscripción (Unpluq, s. f.). Screenless Breaker ofrece una llave NFC que permite reabrir aplicaciones bloqueadas y mostraba un precio de EUR 45 (Screenless, s. f.). Su sitio entrega información contradictoria: una tabla menciona iOS y Android, mientras la sección de preguntas frecuentes limita la compatibilidad actual a iOS y iPadOS y presenta Android como una versión planificada. Brick Zone amplía la lógica hacia un espacio declarado mediante Bluetooth y presentaba un precio de USD 99 (Brick LLC, s. f.-b).
 
@@ -595,7 +595,7 @@ Android será la plataforma del primer prototipo integrado. La forma, el canal d
 | Convivientes | Comparten el espacio donde puede aparecer la señal. | Discreción y ausencia de molestias. |
 | Diseñador | Articula investigación, experiencia, forma y evaluación. | Mantener coherencia entre problema y decisiones. |
 | Desarrollo Android | Implementa permisos, condición, estados y comunicación. | Funcionamiento comprensible y recuperación de fallos. |
-| Desarrollo electrónico | Resuelve energía, enlace y actuadores. | Fiabilidad, seguridad y mantenimiento. |
+| Desarrollo electrónico | Resuelve energía, enlace y componentes que producen luz, vibración o sonido. | Fiabilidad, seguridad y mantenimiento. |
 | Fabricación y proveedores | Producen carcasa, circuito y ensamblaje. | Costos, trazabilidad y reparación. |
 | Especialistas en accesibilidad | Revisan canales, controles y barreras de uso. | Evitar exclusiones y promesas no comprobadas. |
 
@@ -659,11 +659,11 @@ La secuencia no exige consultar la aplicación después del pulso para comprende
 
 ## 11.6 Flujo del sistema
 
-La persona formula el contenido y establece la regla. Android consulta localmente la condición autorizada. Cuando el evento ocurre dentro de una ventana vigente, la aplicación envía mediante Bluetooth de baja energía un comando al objeto. Este verifica que el mensaje corresponda al ciclo activo y ejecuta el patrón de señal. Una vez silenciado o vencido, vuelve a reposo.
+La persona formula el contenido y establece la regla. Android consulta localmente la condición autorizada. Cuando el evento ocurre dentro de una ventana vigente, la aplicación envía un comando al objeto mediante Bluetooth de baja energía, una comunicación inalámbrica de corto alcance diseñada para consumir poca energía. El objeto verifica que el mensaje corresponda al ciclo activo y ejecuta el patrón de señal. Una vez silenciado o vencido, vuelve a reposo.
 
 El comando necesita, como mínimo, una identificación de ciclo, un patrón y un vencimiento. Esta información evita que una señal retrasada aparezca cuando ya perdió sentido. El objeto no conserva el texto de la intención ni decide cuándo activarse por cuenta propia.
 
-Ante un fallo, el sistema debe priorizar la claridad. Si se revoca un permiso, se limita la ejecución en segundo plano, se pierde la conexión o la batería es insuficiente, la aplicación informa el estado y permite desarmar. No debe aparentar que una condición fue evaluada cuando no existían los medios técnicos para hacerlo.
+Ante un fallo, el sistema debe priorizar la claridad. Si se revoca un permiso, se limita la ejecución en segundo plano —la capacidad de continuar una tarea aunque la aplicación no esté visible—, se pierde la conexión o la batería es insuficiente, la aplicación informa el estado y permite desarmar. No debe aparentar que una condición fue evaluada cuando no existían los medios técnicos para hacerlo.
 
 ## 11.7 Estados principales
 
@@ -682,7 +682,7 @@ La arquitectura detallada contempla validaciones, errores y retornos. Algunos es
 
 ## 11.8 Flujo de diseño
 
-El desarrollo avanza desde la pregunta hacia la especificación. Primero debe comprobarse que una señal puede recuperar la intención. Después se compara el lugar elegido con un lugar neutro y con una notificación. Solo si existe una diferencia se define el canal físico, se integra la electrónica y se estudia una forma de mayor fidelidad.
+El desarrollo avanza desde la pregunta hacia la especificación. Primero debe comprobarse que una señal puede recuperar la intención. Después se compara el lugar elegido con un lugar neutro y con una notificación. Solo si existe una diferencia se define el canal físico, se integra la electrónica y se estudia una forma de mayor fidelidad, es decir, más próxima a las condiciones de uso y funcionamiento que se quieren evaluar.
 
 La secuencia proyectual es la siguiente:
 
@@ -715,19 +715,19 @@ Las Pautas de Accesibilidad para el Contenido Web ofrecen un criterio preventivo
 
 ## 12.1 Plataforma digital
 
-El primer prototipo integrado se desarrollará para Android. La decisión responde a dos capacidades necesarias: consultar estadísticas autorizadas de uso mediante UsageStatsManager y comunicarse con un dispositivo cercano mediante Bluetooth de baja energía. Ambas funciones cuentan con documentación nativa y permiten construir una prueba acotada (Google, s. f.-a, s. f.-b, s. f.-d).
+El primer prototipo integrado se desarrollará para Android. La decisión responde a dos capacidades necesarias: consultar estadísticas autorizadas de otras aplicaciones mediante UsageStatsManager, una interfaz de programación provista por Android, y comunicarse con un dispositivo cercano mediante Bluetooth de baja energía. Ambas funciones cuentan con documentación nativa y permiten construir una prueba acotada (Google, s. f.-a, s. f.-b, s. f.-d).
 
-Un sitio web sería más fácil de distribuir y permitiría acceso desde distintos sistemas. Sin embargo, el navegador no puede observar de manera confiable el uso de otras aplicaciones del teléfono ni mantener las mismas condiciones de ejecución en segundo plano. Web Bluetooth, además, depende del navegador y no resuelve el acceso al uso global del dispositivo (Chrome for Developers, s. f.). Por estas razones, una versión web no puede ejecutar el núcleo técnico del prototipo.
+Un sitio web sería más fácil de distribuir y permitiría acceso desde distintos sistemas. Sin embargo, el navegador no puede observar de manera confiable el uso de otras aplicaciones del teléfono ni mantener las mismas condiciones de ejecución en segundo plano. Web Bluetooth, la interfaz que permite a ciertos navegadores comunicarse con dispositivos cercanos compatibles, tampoco resuelve el acceso al uso global del teléfono (Chrome for Developers, s. f.). Por estas razones, una versión web no puede ejecutar el núcleo técnico del prototipo.
 
-iPhone ofrece marcos como Device Activity y Family Controls, pero su implementación depende de permisos, capacidades y procesos de distribución específicos de Apple (Apple Developer, s. f.-a, s. f.-b, s. f.-c). Incorporar ambos sistemas durante la primera etapa duplicaría desarrollo y pruebas antes de comprobar la hipótesis central. La elección de Android concentra recursos; no impide estudiar otras plataformas si el mecanismo demuestra valor.
+iPhone ofrece marcos de desarrollo como Device Activity y Family Controls, destinados a observar actividad autorizada y aplicar controles definidos por la persona. Su implementación depende de permisos, capacidades y procesos de distribución específicos de Apple (Apple Developer, s. f.-a, s. f.-b, s. f.-c). Incorporar ambos sistemas durante la primera etapa duplicaría desarrollo y pruebas antes de comprobar la hipótesis central. La elección de Android concentra recursos; no impide estudiar otras plataformas si el mecanismo demuestra valor.
 
-Las capacidades de Android también tienen límites. UsageStatsManager requiere un permiso especial y no detecta estados subjetivos. La ejecución en segundo plano y la comunicación Bluetooth varían según versión, fabricante y políticas de energía. El prototipo deberá probar pantalla bloqueada, cambio de aplicación, reinicio, pérdida de permiso y reconexión. No se afirma compatibilidad universal.
+Las capacidades de Android también tienen límites. UsageStatsManager requiere que la persona conceda desde los ajustes un permiso especial para consultar estadísticas de uso y no detecta estados subjetivos. La ejecución en segundo plano y la comunicación Bluetooth varían según versión, fabricante y políticas de energía. El prototipo deberá probar pantalla bloqueada, cambio de aplicación, reinicio, pérdida de permiso y reconexión. No se afirma compatibilidad universal.
 
 ## 12.2 Arquitectura técnica
 
 La aplicación conserva la información del ciclo y evalúa la condición de manera local. Bluetooth de baja energía transporta el comando hacia el objeto. Esta arquitectura reduce el envío de datos a servicios externos y permite que el dispositivo físico se mantenga simple. Procesamiento local no significa privacidad absoluta: los permisos, registros y respaldos deben documentarse.
 
-Un microcontrolador ESP32-C3 puede facilitar las primeras pruebas por su disponibilidad. Para una etapa de menor consumo se consideran componentes de la familia nRF52 y un gestor de energía como nPM1100. Los canales candidatos incluyen luz difusa, vibración y sonido breve. Las hojas técnicas de Nordic Semiconductor, Precision Microdrives y Texas Instruments ayudan a estimar capacidades, pero no prueban autonomía ni percepción del conjunto (Nordic Semiconductor ASA, s. f.-a, s. f.-b; Precision Microdrives Ltd., 2023; Texas Instruments, 2018).
+Un microcontrolador —circuito programable que ejecuta la lógica del objeto— como el ESP32-C3 puede facilitar las primeras pruebas por su disponibilidad. Para una etapa de menor consumo se considera la familia de microcontroladores nRF52 y un circuito de gestión de alimentación y carga como el nPM1100. Los actuadores, componentes que transforman una orden eléctrica en una salida perceptible, podrían producir luz difusa, vibración o sonido breve. Las hojas técnicas de Nordic Semiconductor, Precision Microdrives y Texas Instruments ayudan a estimar capacidades, pero no prueban autonomía ni percepción del conjunto (Nordic Semiconductor ASA, s. f.-a, s. f.-b; Precision Microdrives Ltd., 2023; Texas Instruments, 2018).
 
 La batería y el sistema de carga deberán seleccionarse a partir de mediciones del ciclo real: reposo, conexión, señal y recuperación. También se revisarán temperatura, seguridad, reemplazo y fin de vida. Una cifra de consumo aislada no basta para prometer duración.
 
@@ -743,7 +743,7 @@ Al final de su vida útil, batería, placa y carcasa deberían separarse. Esta c
 
 ## 12.4 Costos
 
-La estimación preliminar del prototipo distingue componentes, fabricación de carcasa, reposición, ensamblaje básico y contingencia. El rango calculado se sitúa entre CLP 51.140 y CLP 92.640. Al incorporar una contingencia de 15 %, el presupuesto se comunica como **CLP 59.000–107.000**.
+La estimación preliminar del prototipo distingue componentes, fabricación de carcasa, reposición, ensamblaje básico y una contingencia, entendida como reserva para imprevistos o variaciones de precio. El rango calculado se sitúa entre CLP 51.140 y CLP 92.640. Al incorporar una contingencia de 15 %, el presupuesto se comunica como **CLP 59.000–107.000**.
 
 Esta cifra no corresponde al precio del producto. Tampoco incluye horas profesionales, certificación, desarrollo completo, impuestos, soporte, garantía o producción en serie. Para evitar confusiones se separan cuatro magnitudes:
 
@@ -752,13 +752,13 @@ Esta cifra no corresponde al precio del producto. Tampoco incluye horas profesio
 3. costo de producción, logística y soporte;
 4. precio eventual y disposición de pago.
 
-La producción en cantidad exigirá cotizaciones de placa, carcasa, batería, ensamblaje, pruebas, embalaje, merma y distribución. Antes de ese cálculo debe comprobarse que la capa física aporta valor. Escalar una solución no validada solo aumenta el costo del supuesto.
+La producción en cantidad exigirá cotizaciones de placa, carcasa, batería, ensamblaje, pruebas, embalaje, distribución y merma, término que designa el material o las unidades perdidas durante la fabricación. Antes de ese cálculo debe comprobarse que la capa física aporta valor. Escalar una solución no validada solo aumenta el costo del supuesto.
 
 ## 12.5 Cumplimiento y seguridad
 
 Un objeto con comunicación por radio deberá revisar la normativa chilena aplicable a equipos de alcance reducido, junto con ensayos, documentación y etiquetado (Subsecretaría de Telecomunicaciones, 2026b). El uso de batería incorpora exigencias adicionales de transporte, carga y protección. El prototipo académico no equivale a certificación de producto.
 
-La distribución de la aplicación también depende de los requisitos de Android y Google Play, especialmente cuando se emplean servicios en primer plano o permisos sensibles (Google Play, s. f.). Estas condiciones pueden cambiar y deberán verificarse antes de publicar.
+La distribución de la aplicación también depende de los requisitos de Android y Google Play, especialmente cuando se emplean servicios en primer plano, tareas persistentes que deben informar su actividad mediante una notificación visible, o permisos sensibles (Google Play, s. f.). Estas condiciones pueden cambiar y deberán verificarse antes de publicar.
 
 ## 12.6 Modelo de gestión
 
@@ -806,7 +806,7 @@ El propósito no es demostrar que el sistema funciona en todos los teléfonos. S
 
 ## 13.5 Piloto situado
 
-Solo después de resolver las etapas anteriores se realizará un piloto doméstico de duración acotada. El protocolo definirá número de participantes, días de uso, criterios de inclusión, consentimiento, registros y forma de retiro. Se observarán armado, reubicación, habituación, pérdida, carga, convivencia y abandono.
+Solo después de resolver las etapas anteriores se realizará un piloto doméstico de duración acotada. El protocolo definirá número de participantes, días de uso, criterios de inclusión, consentimiento, registros y forma de retiro. Se observarán armado, reubicación, pérdida, carga, convivencia, abandono y habituación, entendida como la disminución de la respuesta ante una señal repetida.
 
 El piloto no permitirá afirmar eficacia poblacional ni adopción comercial. Su función será conocer si la relación conserva sentido fuera de una sesión guiada y si el mantenimiento cotidiano sigue siendo proporcional.
 
@@ -814,7 +814,7 @@ El piloto no permitirá afirmar eficacia poblacional ni adopción comercial. Su 
 
 Cada prueba utilizará una ficha con fecha, versión, pregunta, participantes codificados, contexto, materiales, procedimiento, evidencia, interpretación, límites y decisión. Las observaciones se separarán de las inferencias. Una persona que mire el objeto no necesariamente comprendió la intención; una conexión correcta no demuestra que la señal sea útil.
 
-Los instrumentos combinarán observación, preguntas abiertas, reconstrucción del significado, registro de errores y comparación entre condiciones. Las escalas breves podrán apoyar la lectura de carga o intrusión, pero no reemplazarán el relato del episodio. También se conservarán contraejemplos y razones de abandono.
+Los instrumentos combinarán observación, preguntas abiertas, reconstrucción del significado, registro de errores y comparación entre condiciones. Las escalas breves —cuestionarios de pocos ítems para recoger una valoración acotada— podrán apoyar la lectura de carga o intrusión, pero no reemplazarán el relato del episodio. También se conservarán contraejemplos y razones de abandono.
 
 ## 13.7 Criterios de decisión
 
@@ -939,6 +939,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**26 de agosto de 2026 — Accesibilidad conceptual.** Se explicaron en su primera aparición los conceptos metodológicos y técnicos indispensables para comprender el análisis y la factibilidad: estudio cualitativo exploratorio, método Framework, tipos ideales, precompromiso, Bluetooth de baja energía, ejecución en segundo plano, fidelidad de prototipo, UsageStatsManager, Web Bluetooth, marcos de Apple, microcontrolador, actuador, contingencia, merma, servicio en primer plano, habituación y escalas breves. Antes, varios nombres aparecían sin indicar su función para el proyecto. Las explicaciones se integraron en las frases existentes y no modifican decisiones técnicas ni resultados.
 
 **26 de agosto de 2026 — Orden narrativo de antecedentes y marco teórico.** Los capítulos 5 y 6 se limitaron a explicar antecedentes, relaciones conceptuales y preguntas abiertas. Antes, algunos cierres convertían el primer paso, la condición observable, la señal y la distribución phygital en requisitos antes de presentar usuarios, referentes y criterios. Se conservaron los conceptos necesarios, pero su traducción proyectual quedó reservada para los capítulos 9 y 10. También se restituyeron los títulos históricos de los ámbitos 2 y 3 y de las conclusiones del marco teórico, sin recuperar las afirmaciones desactualizadas de la memoria anterior.
 

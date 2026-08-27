@@ -18,9 +18,10 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 26 de agosto de 2026:** el índice de memoria separa documentos activos e históricos. El dictamen de reconstrucción y la auditoría narrativa de la v2 declaran que fueron sustituidos por la v4 y no gobiernan nuevas redacciones.
 
+**Resuelto el 26 de agosto de 2026:** los conceptos metodológicos y técnicos necesarios para leer los capítulos 5, 7, 8, 11, 12 y 13 se explican ahora en su primera aparición, mediante su función dentro del proyecto.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
-| Conceptos técnicos poco accesibles | Aparecen nombres de métodos, APIs y componentes sin explicación suficiente para un lector de Diseño. | Explicar función y condición provisional en la primera aparición; trasladar especificaciones extensas a factibilidad o anexos. |
 | Extensión, APA y anexos sin cierre total | La auditoría existente realiza una revisión básica, pero no separa cuerpo, referencias y registro de cambios ni incorpora anexos metodológicos. | Ejecutar conteo por cuerpo académico, matriz cita–referencia completa y selección de anexos indispensables antes de exportar. |
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
@@ -127,3 +128,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** el dictamen de reconstrucción y una auditoría de la v2 podían interpretarse como instrucciones vigentes y competir con la estructura de catorce capítulos.
 - **Motivo:** asegurar que agentes y futuras conversaciones comiencen desde la v4 sin perder la trazabilidad del proceso.
 - **Alcance:** no se reescribieron diagnósticos históricos ni se eliminaron versiones anteriores.
+
+### 2026-08-26 — Resolución de accesibilidad conceptual
+
+- **Cambio:** el pendiente sobre métodos, interfaces técnicas y componentes pasó a resuelto mediante definiciones integradas en la memoria.
+- **Versión anterior:** varios términos se presentaban por nombre propio y obligaban al lector a inferir su función.
+- **Motivo:** mantener rigor técnico sin exigir conocimientos previos de investigación cualitativa, desarrollo móvil o electrónica.
+- **Alcance:** no se añadió un glosario separado ni se expandieron especificaciones; cada explicación aparece donde resulta necesaria.
