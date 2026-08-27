@@ -22,10 +22,11 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 27 de agosto de 2026:** el conteo distingue archivo completo, cuerpo, referencias y registro de cambios. La matriz bibliográfica comprueba las 49 referencias y corrige las inconsistencias APA detectadas.
 
+**Resuelto el 27 de agosto de 2026:** los ocho criterios del capítulo 9 muestran ahora su fundamento próximo y cuentan con una matriz que distingue evidencia, aporte y límite pendiente.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
 | Anexos metodológicos sin selección final | El repositorio contiene corpus, matrices y registros de mercado, pero la memoria no define cuáles acompañarán una entrega formal y cuáles permanecerán solo como respaldo digital. | Seleccionar el conjunto mínimo de anexos, asignarles función y enlazarlos desde el apartado pertinente sin duplicar el repositorio. |
-| Trazabilidad individual de criterios | El capítulo 9 afirma que cada criterio deriva de evidencia, pero no identifica de forma visible qué lo sostiene. | Vincular cada criterio con literatura, entrevistas, mercado, decisión ética o hipótesis, sin convertir el capítulo en una tabla de metadatos. |
 | Clasificación del cierre académico | El apartado 13.8 distingue límites, pero algunos pasajes presentan la propuesta de valor y la distribución phygital con tono de resultado. | Separar explícitamente hallazgos alcanzados, decisión proyectual e hipótesis aún no comprobada. |
 | Registros del producto y de la investigación | El producto excluye registros de cumplimiento, mientras los protocolos necesitan observaciones con consentimiento. | Aclarar que la investigación registra pruebas y errores, pero Relevo no registra si la persona ejecutó la intención. |
 
@@ -71,6 +72,13 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Trazabilidad de criterios resuelta
+
+- **Cambio:** el pendiente sobre los criterios pasó a resuelto tras integrar fundamentos en el capítulo 9 y crear su matriz de correspondencia.
+- **Versión anterior:** los criterios eran coherentes con la investigación, pero su procedencia debía reconstruirse manualmente.
+- **Motivo:** cerrar la cadena documental entre evidencia y formulación antes de definir protocolos de prueba.
+- **Alcance:** siguen abiertas la condición de activación y las reglas operativas de éxito; la trazabilidad no sustituye su validación.
 
 ### 2026-08-27 — Auditoría transversal y cierre bibliográfico
 

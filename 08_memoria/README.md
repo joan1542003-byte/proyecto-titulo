@@ -9,6 +9,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 49 entradas bibliográficas y correcciones APA aplicadas.
+- [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): separación entre correcciones documentales inmediatas y evidencia que requiere prototipado.
 - [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
@@ -62,6 +63,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Trazabilidad de criterios
+
+- **Cambio:** se incorporó la matriz que vincula individualmente los ocho criterios de diseño con literatura, entrevistas y estado del arte.
+- **Versión anterior:** el índice permitía comprobar citas y referencias, pero no la procedencia de cada criterio.
+- **Motivo:** hacer visible la cadena entre investigación y formulación sin recargar la lectura de la memoria.
+- **Alcance:** la matriz registra fundamentos y límites; no presenta los criterios como resultados validados.
 
 ### 2026-08-27 — Matriz bibliográfica y extensión actualizada
 

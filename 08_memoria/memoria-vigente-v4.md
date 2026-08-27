@@ -495,35 +495,35 @@ Los criterios traducen la investigación en condiciones para formular y evaluar 
 
 ## 9.1 Partir de una intención propia
 
-La intervención debe conservar una actividad elegida por la persona. No puede deducirla desde el tiempo de uso, la aplicación abierta o una categoría de productividad. Sin una intención formulada, no existe contenido legítimo que recuperar.
+La intervención debe conservar una actividad elegida por la persona. No puede deducirla desde el tiempo de uso, la aplicación abierta o una categoría de productividad, porque experiencias de duración semejante pueden adquirir sentidos distintos según el propósito y el contexto (Lukoff et al., 2018; Meier & Reinecke, 2021). Los contrastes entre P2–P3 y P6–P8 refuerzan esta diferencia dentro de las entrevistas. Sin una intención formulada, no existe contenido legítimo que recuperar.
 
 ## 9.2 Relacionar la intención con un primer paso
 
-Las metas amplias dificultan reconocer cómo comenzar. Cada intención debe expresarse mediante una acción concreta y próxima. El primer paso no obliga a completar la actividad; solo reduce la distancia entre recordarla e iniciarla.
+Las metas amplias dificultan reconocer cómo comenzar. Las intenciones de implementación muestran que vincular una situación con una respuesta prevista puede favorecer el paso desde una meta hacia la acción (Gollwitzer & Sheeran, 2006). Por ello, cada intención debe expresarse mediante una acción concreta y próxima. El primer paso no obliga a completar la actividad; solo reduce la distancia entre recordarla e iniciarla.
 
 ## 9.3 Utilizar una condición comprensible
 
-La activación debe depender de un evento que la persona pueda entender y modificar. El sistema no puede afirmar que detecta aburrimiento, automatismo o culpa. Tiempo, continuidad de uso u horario son condiciones posibles, pero su significado debe explicarse y probarse.
+La activación debe depender de un evento que la persona pueda entender y modificar. Los sistemas pueden registrar tiempo, horario o continuidad de uso, pero esos datos no revelan por sí solos aburrimiento, culpa o satisfacción. La diferencia entre episodios relatados por una misma persona confirma que una condición técnica no equivale al sentido de la experiencia. Tiempo, continuidad de uso u horario son condiciones posibles, pero su significado debe explicarse y probarse.
 
 ## 9.4 Abrir una elección, no imponer una conducta
 
-La señal debe devolver la intención al presente sin bloquear el teléfono. Ignorarla, detenerla, cambiar la intención o continuar con la actividad digital son respuestas válidas. No se utilizarán sanciones, comparaciones ni registros de cumplimiento.
+La señal debe devolver la intención al presente sin bloquear el teléfono. Las intervenciones restrictivas pueden sostener un compromiso, pero también interferir con usos legítimos, mientras una pausa breve conserva la posibilidad de continuar (Grüning et al., 2023; Radtke et al., 2022). Ignorar la señal, detenerla, cambiar la intención o permanecer en la actividad digital son respuestas válidas. No se utilizarán sanciones, comparaciones ni registros de cumplimiento.
 
 ## 9.5 Reconocer cuándo no intervenir
 
-Una actividad digital elegida, relacional, concentrada o reparadora no requiere corrección. La propuesta debe permanecer inactiva cuando no exista una intención alternativa y permitir que una regla pierda vigencia sin convertirlo en un error.
+Una actividad digital elegida, relacional, concentrada o reparadora no requiere corrección. P6 y P7 relataron experiencias extensas o focalizadas que conservaron sentido, mientras P4 y P8 mostraron que la pertinencia puede cambiar dentro de una misma persona. La propuesta debe permanecer inactiva cuando no exista una intención alternativa y permitir que una regla pierda vigencia sin convertirlo en un error.
 
 ## 9.6 Mantener una carga proporcional
 
-Configurar, emparejar, cargar, situar y rearmar agregan esfuerzo. Cada paso debe aportar a la comprensión o al funcionamiento. Si la carga supera el beneficio, la propuesta deberá simplificarse.
+Configurar, emparejar, cargar, situar y rearmar agregan esfuerzo. Chiu y Gilbert (2024) observaron que aumentar el esfuerzo físico necesario para preparar un recordatorio reduce su uso. Los objetos revisados también incorporan costos de compatibilidad, mantenimiento y aprendizaje. Cada paso debe aportar a la comprensión o al funcionamiento; si la carga supera el beneficio, la propuesta deberá simplificarse.
 
 ## 9.7 Proteger privacidad y convivencia
 
-La intención pertenece a la persona. Una señal situada no debe exponer su contenido ni molestar a quienes comparten el espacio. La intensidad, el canal, la duración y la ubicación deben poder adaptarse al contexto.
+La intención pertenece a la persona. Las preferencias por señales discretas y el rechazo a comparaciones entre días aparecieron en P3–P5 y P7–P8, aunque fueron respuestas ante un concepto anterior y no una validación formal. Una señal situada no debe exponer su contenido ni molestar a quienes comparten el espacio. La intensidad, el canal, la duración y la ubicación deberán ajustarse al contexto mediante pruebas.
 
 ## 9.8 Demostrar el valor de la capa física
 
-El objeto no se justifica por su presencia. Debe aportar una asociación con el lugar o una forma de recuperación que una notificación no produzca de igual manera. La comparación entre ambas alternativas será una condición central de evaluación.
+El objeto no se justifica por su presencia. Los recordatorios tangibles y basados en ubicación muestran que el entorno puede participar en la recuperación de una acción futura, pero no garantizan que la persona comprenda la señal ni que actúe (Hermann et al., 2007; O’Rear & Radvansky, 2019). Debe aportar una asociación con el lugar o una forma de recuperación que una notificación no produzca de igual manera. La comparación entre ambas alternativas será una condición central de evaluación.
 
 ## 9.9 Síntesis
 
@@ -939,6 +939,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Trazabilidad individual de los criterios de diseño.** Cada criterio del capítulo 9 incorpora ahora su fundamento más próximo en literatura, entrevistas o estado del arte. Antes, el capítulo declaraba que los criterios provenían de la investigación, pero el lector debía reconstruir esa relación en secciones anteriores. Se mantuvieron los ocho criterios y su sentido original; la revisión no los convierte en resultados validados ni cierra las decisiones que requieren pruebas.
 
 **27 de agosto de 2026 — Correspondencia APA 7 y orden bibliográfico.** Se completó la comprobación entre las citas del cuerpo y las 49 entradas de la lista de referencias. No se encontraron citas sin referencia ni referencias huérfanas. Se corrigieron el orden de una cita parentética, la posición alfabética de Kirsh, Kitchen Safe, one sec y O’Rear, y los sufijos 2026a/2026b de la Subsecretaría de Telecomunicaciones según el orden alfabético de los títulos. Antes, esas cuatro inconsistencias impedían declarar cerrado el control bibliográfico.
 

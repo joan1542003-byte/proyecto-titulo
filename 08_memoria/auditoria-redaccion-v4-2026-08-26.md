@@ -27,7 +27,7 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 18.260 palabras: 16.121 antes de las referencias, 1.204 en la bibliografía y 935 en el registro de cambios. Los capítulos 1–13 contienen 15.458 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 18.590 palabras: 16.375 antes de las referencias, 1.204 en la bibliografía y 1.011 en el registro de cambios. Los capítulos 1–13 contienen 15.712 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
@@ -57,6 +57,10 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 
 La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) verifica las 49 entradas de la bibliografía. Todas poseen al menos una cita en el cuerpo y no existen citas autor–fecha sin referencia. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de dos documentos de la Subsecretaría de Telecomunicaciones. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
 
+## Control de trazabilidad de criterios
+
+La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) relaciona cada criterio del capítulo 9 con literatura, entrevistas o estado del arte. El control confirma que los ocho criterios poseen un fundamento identificable y conservan un límite explícito. Ninguno se presenta como una característica validada de Relevo.
+
 ## Decisión editorial
 
 `memoria-vigente-v4.md` reemplaza a la v3 como archivo académico activo. Las versiones anteriores se conservan para trazabilidad, pero no deben utilizarse como base de redacción mientras la v4 siga vigente. No se genera un nuevo DOCX porque el formato solicitado para esta etapa es Markdown.
@@ -64,6 +68,8 @@ La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) verifi
 ---
 
 ## Registro de cambios
+
+**27 de agosto de 2026 — Trazabilidad de criterios.** Se actualizó la extensión después de fundamentar individualmente los ocho criterios del capítulo 9 y se enlazó su matriz de respaldo. Antes, la auditoría registraba 18.260 palabras y no contaba con un control específico para la relación entre evidencia y criterios. La modificación no añadió referencias ni resultados de pruebas.
 
 **27 de agosto de 2026 — Actualización de extensión y control APA.** Se reemplazó el conteo aproximado del 26 de agosto por una medición reproducible del archivo completo, el cuerpo, las referencias y el registro de cambios. También se enlazó la matriz completa de 49 referencias. Antes, la auditoría informaba 16.470 palabras y solo declaraba una correspondencia bibliográfica básica. Los límites de las secciones siguen cumpliéndose y no se añadieron fuentes nuevas.
 
