@@ -37,14 +37,14 @@ La carpeta `Encargos` contiene 18 archivos DOCX y ningún PDF. Las referencias s
 | Tres ámbitos teóricos y síntesis de intersección | E02–E04, E10; E12, §3; memoria histórica E12, §5 | Vigente | Cap. 6, §§6.1–6.4 | Cumple; conservar las definiciones al ingresar cada concepto. |
 | Planteamiento del problema, aristas y justificación | E04–E05; E12, §4 | Vigente | Caps. 3 y 4 | Cumple; las tres aristas son visibles y respetan la extensión solicitada. |
 | Estado del arte, referentes y benchmark crítico | E02–E05; E10; E12, §3 y §6 | Vigente | Caps. 5 y 8 | Cumple; se comparan mecanismos, evidencia, fortalezas y límites. |
-| POV, árbol de problemas y formulación centrada en usuario | E05–E06; E07 | Superado como formato literal, vigente como función | §§10.1–10.3 | Cumple mediante problema de diseño, punto de vista y oportunidad. |
-| Hipótesis propositiva y objetivos alineados | E06–E08; E10; E12, §5 | Vigente | §§10.4–10.6 | Cumple; se mantiene una hipótesis y se separa de los resultados futuros. |
+| POV, árbol de problemas y formulación centrada en usuario | E05–E06; E07 | Superado como formato literal, vigente como función | §§10.1–10.4 | Cumple mediante problema de diseño, punto de vista, pregunta y oportunidad. |
+| Hipótesis propositiva y objetivos alineados | E06–E08; E10; E12, §5 | Vigente | §§10.5–10.7 | Cumple; se mantiene una hipótesis y se separa de los resultados futuros. |
 | Usuario y contexto de aplicación | E10; E12, §5; E15, bloque Johan | Vigente y prioritario | Cap. 7 | Cumple mediante usuario principal y límite situacionales; el hogar sigue como hipótesis. |
-| Mapa de actores | E04–E05; E12, §5; E16 | Vigente como contenido, no como lámina | §10.9 | Cumple y vincula responsabilidades con la formulación. |
-| Definición del proyecto: qué, por qué, cómo, dónde, cuándo | E12, §§5–6; E15 | Vigente | §§10.7–10.8 y cap. 11 | Cumple sin adelantar la solución en la apertura. |
+| Mapa de actores | E04–E05; E12, §5; E16 | Vigente como contenido, no como lámina | §10.10 | Cumple y vincula responsabilidades con la formulación. |
+| Definición del proyecto: qué, por qué, cómo, dónde, cuándo | E12, §§5–6; E15 | Vigente | §§10.8–10.9 y cap. 11 | Cumple sin adelantar la solución en la apertura. |
 | Metodología, etapas, métodos y resultados esperados | E04–E06; E10; E12, §5 | Vigente | Cap. 13 | Cumple con etapas descriptivas y criterios de decisión. |
-| Teoría de cambio: cadena, mecanismo, contrato, supuestos e indicadores | E11, componentes 1–7 | Vigente como herramienta de control; no es un título obligatorio | §§10.3–10.8 y 11.1–11.6 | Sus relaciones están incorporadas sin crear un capítulo adicional. |
-| Propuesta phygital visible y no solo nombrada | E07; E12, §6; E15 | Vigente; phygital es condición del proyecto | §10.7 y cap. 11 | Cumple mediante aplicación, objeto situado, lugar y señal ambiental. |
+| Teoría de cambio: cadena, mecanismo, contrato, supuestos e indicadores | E11, componentes 1–7 | Vigente como herramienta de control; no es un título obligatorio | §§10.4–10.9 y 11.1–11.6 | Sus relaciones están incorporadas sin crear un capítulo adicional. |
+| Propuesta phygital visible y no solo nombrada | E07; E12, §6; E15 | Vigente; phygital es condición del proyecto | §10.8 y cap. 11 | Cumple mediante aplicación, objeto situado, lugar y señal ambiental. |
 | Desarrollo, alternativas, decisiones y descartes | E08; E12, §6; E15 | Vigente | Cap. 11 | Cumple; forma y canal permanecen abiertos a prueba. |
 | Viaje, flujo funcional y flujo técnico | E16, §§3–5; E15 | Vigente como resultado proyectual | §7.7 y §§11.5–11.8 | Cumple mediante recorridos, secuencia de uso, flujo del sistema y flujo de diseño. |
 | Producción, costos, mantenimiento, ética y gestión | E12, §6; E15; criterio institucional de Proyecto de Título | Vigente y ampliado para Proyecto de Título | Cap. 12 | Mantener costos como estimación no cotizada y distinguir requisito, alternativa, meta y decisión validada. |
@@ -120,3 +120,10 @@ Este orden solo debe modificarse si una exigencia institucional posterior o un p
 - **Versión anterior:** se usaba “objeto físico sin pantalla” como parte principal de la definición.
 - **Motivo:** separar identidad funcional de restricciones técnicas.
 - **Alcance:** la matriz histórica conserva referencias antiguas cuando son necesarias para explicar decisiones previas.
+
+### 2026-08-26 — Pregunta de investigación y renumeración
+
+- **Cambio:** se incorporó la pregunta de investigación dentro de la correspondencia del capítulo 10 y se actualizaron las referencias a oportunidad, hipótesis, objetivos, definición, alcance y mapa de actores.
+- **Versión anterior:** la matriz remitía a una secuencia que pasaba directamente desde el punto de vista hacia la oportunidad de diseño.
+- **Motivo:** mantener la trazabilidad sincronizada con la memoria v4 después de resolver la ausencia de una pregunta explícita.
+- **Alcance:** no se reinterpretaron los encargos ni se modificó la formulación sustantiva del proyecto.

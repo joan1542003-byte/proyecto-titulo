@@ -57,6 +57,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-08-26 — Pregunta de investigación explícita
+
+- **Cambio:** se añadió la pregunta de investigación al apartado 10.3 de la memoria v4 y se sincronizaron la numeración, el resumen vigente y la matriz histórica.
+- **Versión anterior:** la relación investigada debía inferirse desde el problema, la hipótesis y los objetivos.
+- **Motivo:** hacer verificable la coherencia entre investigación, formulación y futuras pruebas.
+- **Alcance:** no se presupone eficacia ni se modifican los resultados disponibles.
+
 ### 2026-08-26 — Priorización de cabos sueltos
 
 - **Cambio:** se añadió una matriz que ordena los pendientes por dependencia y distingue redacción, prototipado y cierre productivo.

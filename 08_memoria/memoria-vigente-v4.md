@@ -537,42 +537,48 @@ El punto de vista sintetiza al usuario, su necesidad y la razón que la explica:
 
 Esta formulación no describe a todas las personas del rango etario ni convierte la edad en una causa. Solo resulta pertinente cuando existe una intención propia que se desea recuperar. Si la actividad digital es significativa o no existe una alternativa, la necesidad desaparece.
 
-## 10.3 Oportunidad de diseño
+## 10.3 Pregunta de investigación
+
+> ¿En qué condiciones una intervención phygital, configurada por la persona y vinculada al primer paso de una actividad elegida, puede volver perceptible esa intención durante una sesión de ocio digital, sin bloquear ni evaluar la decisión posterior?
+
+La pregunta no supone que la intervención resulte efectiva ni que la capa física sea necesaria. Ambas relaciones deben comprobarse. Volver perceptible una intención significa que la persona pueda reconocerla y recordar cómo comenzarla después de recibir la señal; no significa abandonar el teléfono, realizar la actividad ni reducir el tiempo de uso.
+
+## 10.4 Oportunidad de diseño
 
 La oportunidad consiste en trasladar una señal fuera del flujo del teléfono y relacionarla con el lugar donde puede comenzar la actividad elegida. De este modo, el entorno participa en la recuperación sin transformarse en una barrera. La intervención no presenta una orden ni mide cumplimiento; vuelve perceptible una posibilidad que la persona había decidido conservar.
 
 Esta dirección se diferencia de cuatro mecanismos predominantes. No utiliza la medición como argumento principal, no introduce bloqueo, no se limita a una pausa dentro de la pantalla y no separa el teléfono como única acción. Su especialización se encuentra en la relación entre intención, primer paso y lugar.
 
-## 10.4 Hipótesis
+## 10.5 Hipótesis
 
 > Si una persona registra una intención y su primer paso, sitúa una señal física junto a ese comienzo y la recibe cuando se cumple una condición configurada, entonces la intención podría volver a estar disponible para decidir, sin bloquear la actividad digital ni imponer su ejecución.
 
 La hipótesis reúne cuatro relaciones que deben evaluarse por separado. Primero, la señal debe asociarse con la intención. Segundo, el lugar debe aportar significado. Tercero, la persona debe poder ignorar o detener la intervención. Cuarto, la condición técnica debe funcionar de manera comprensible. La propuesta se debilita si exige consultar el teléfono para descifrar la señal, si el lugar no produce una diferencia frente a una notificación o si la carga de uso supera el beneficio.
 
-## 10.5 Objetivo general
+## 10.6 Objetivo general
 
 Diseñar y evaluar formativamente un sistema phygital que apoye la recuperación situada de una intención personal durante episodios de ocio digital, mediante una señal asociada al primer paso de la actividad, sin bloquear ni calificar la decisión posterior.
 
-## 10.6 Objetivos específicos
+## 10.7 Objetivos específicos
 
 1. Caracterizar la relación entre ocio digital, continuidad, intención alternativa y contexto mediante revisión bibliográfica, entrevistas y análisis de referentes.
 2. Traducir los hallazgos en una experiencia phygital que articule configuración digital, señal física, lugar y control de la persona.
 3. Comparar la señal situada con una notificación digital para establecer si la capa física aporta una diferencia reconocible.
 4. Evaluar comprensión, percepción, autonomía, funcionamiento técnico, convivencia y carga de uso mediante prototipos progresivos.
 
-## 10.7 Definición del proyecto
+## 10.8 Definición del proyecto
 
 Relevo es un sistema phygital compuesto por una aplicación Android y un objeto de señal situado junto al primer paso de una actividad elegida. La aplicación permite registrar la intención, definir cómo comienza y configurar una condición de activación. Cuando esa condición se cumple, el objeto emite un pulso ambiental breve. La persona puede considerar la intención, continuar con la actividad digital o detener la señal.
 
 El **pulso ambiental** es una señal física de corta duración que busca llamar la atención sin entregar una instrucción. Su significado proviene de la asociación creada previamente entre intención, objeto y lugar. La señal no informa que la persona ha fallado ni indica qué debe hacer; solo vuelve perceptible la actividad que decidió mantener disponible.
 
-## 10.8 Alcance
+## 10.9 Alcance
 
 El alcance inicial considera una persona, una intención activa, un primer paso, una aplicación seleccionada, una condición observable, un objeto y un lugar doméstico elegido manualmente. El sistema no infiere estados emocionales, no determina si una sesión es adecuada y no observa si la persona cumple la actividad. Tampoco utiliza puntajes, rachas, comparaciones o recompensas.
 
 Android será la plataforma del primer prototipo integrado. La forma, el canal de señal, la autonomía energética, los materiales, el precio y la adopción sostenida deberán definirse mediante desarrollo y pruebas. La propuesta mantiene su carácter phygital, pero la configuración del componente físico puede cambiar si la evidencia muestra que otra relación objetual responde mejor al problema.
 
-## 10.9 Mapa de actores
+## 10.10 Mapa de actores
 
 | Actor | Relación con Relevo | Necesidad o responsabilidad principal |
 | --- | --- | --- |
@@ -917,5 +923,7 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**26 de agosto de 2026 — Pregunta de investigación.** Se incorporó una pregunta explícita entre el punto de vista y la oportunidad de diseño. Antes, el capítulo pasaba directamente desde la caracterización de la necesidad hacia la oportunidad, por lo que la relación que debía investigarse solo podía inferirse desde la hipótesis y los objetivos. La nueva pregunta establece como variables la configuración personal, el vínculo con el primer paso, la posibilidad de reconocer la intención y la preservación de la decisión posterior. También aclara que volver perceptible una intención no equivale a ejecutar la actividad ni a reducir el uso del teléfono. La numeración posterior del capítulo 10 se actualizó sin cambiar su contenido.
 
 **26 de agosto de 2026 — Memoria vigente v4.** Se reorganizó la memoria con los mismos títulos y la misma secuencia del cierre del primer semestre. La formulación de Relevo se trasladó al capítulo 10; antes aparecía anticipada en la motivación, la introducción y apartados iniciales. La motivación se reescribió en presente y quedó limitada a la experiencia personal que origina la pregunta. Se reemplazó la expresión “continuidad digital poco deliberada” por descripciones directas de sesiones que continúan sin una decisión renovada. Se eliminaron códigos internos de prototipado y referencias al proceso de versiones dentro del cuerpo académico. También se incorporaron el análisis actualizado de mercado, los dos usuarios situacionales, la justificación de Android frente a web e iPhone, y los flujos de usuario, sistema y desarrollo. Estos cambios buscan que la propuesta aparezca como consecuencia de la investigación y que cada concepto se explique al ingresar en el relato.

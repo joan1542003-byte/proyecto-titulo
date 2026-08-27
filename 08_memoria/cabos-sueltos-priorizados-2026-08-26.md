@@ -6,9 +6,10 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 ## Prioridad 0 — Corregir en la siguiente versión escrita
 
+**Resuelto el 26 de agosto de 2026:** la memoria incorpora ahora una pregunta de investigación explícita en el apartado 10.3. La formulación no presupone eficacia y define qué significa volver perceptible una intención.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
-| Pregunta de investigación no localizable | El capítulo 10 contiene punto de vista, oportunidad e hipótesis, pero no una pregunta explícita. | Recuperar una pregunta de investigación coherente con la hipótesis y ubicarla antes de los objetivos. |
 | Cierre académico insuficiente | La síntesis del capítulo 13 conduce directamente a las referencias. | Incorporar conclusiones que respondan la pregunta, delimiten la contribución del Diseño y separen aportes documentados de resultados pendientes. |
 | Documentos rectores desactualizados | El dictamen rector conserva una arquitectura de 16 capítulos mientras la v4 aplica 14; otra auditoría declara revisar una versión anterior. | Establecer la v4 y su arquitectura de 14 capítulos como única referencia activa; rotular los dictámenes anteriores como históricos. |
 | Trazabilidad insuficiente de entrevistas | El capítulo 7 identifica participantes, pero no siempre remite a preguntas o segmentos verificables de la matriz P1–P8. | Incorporar referencias internas breves a los segmentos que sostienen cada hallazgo, sin convertir el capítulo en una transcripción. |
@@ -22,7 +23,7 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
 | Condición de activación | Se mantiene abierta entre distintas reglas observables. Sin esta definición no puede comprobarse la secuencia técnica completa. | Comparar alternativas y seleccionar una condición provisional para el primer prototipo, declarando sus límites. | 11.2, 12.2 y 13.4. |
-| Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.4, 13.1 y 13.2; después, resultados. |
+| Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
@@ -41,7 +42,7 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 | --- | --- | --- | --- |
 | Factibilidad Android y enlace físico | Existe una arquitectura posible, pero no una integración medida. | Registrar permisos, segundo plano, latencia, reconexión, vencimiento y consumo energético. | 12.1, 12.2 y 13.4. |
 | Costos y producción | Los montos son presupuestos preliminares sin cotizaciones verificadas. | Solicitar cotizaciones, documentar cantidades, procesos, ensamblaje y diferencia entre prototipo y producción. | 12.3, 12.4 y 12.6. |
-| Gestión y cumplimiento | Se describen actores y requisitos, pero no acuerdos, certificaciones ni proveedores confirmados. | Definir responsables, dependencias, protección de datos y ruta de cumplimiento proporcional al prototipo. | 10.9, 12.5 y 12.6. |
+| Gestión y cumplimiento | Se describen actores y requisitos, pero no acuerdos, certificaciones ni proveedores confirmados. | Definir responsables, dependencias, protección de datos y ruta de cumplimiento proporcional al prototipo. | 10.10, 12.5 y 12.6. |
 
 ## Correcciones documentales que sí pueden hacerse ahora
 
@@ -72,3 +73,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** la matriz priorizaba principalmente la evidencia que requiere prototipado.
 - **Motivo:** distinguir los problemas que sí pueden corregirse en la próxima versión escrita antes de ejecutar pruebas.
 - **Alcance:** los hallazgos provienen de una auditoría documental; todavía no constituyen la reescritura de la memoria.
+
+### 2026-08-26 — Resolución de la pregunta de investigación
+
+- **Cambio:** la ausencia de una pregunta explícita pasó de pendiente crítico a resuelta y se actualizaron las referencias internas afectadas por la nueva numeración.
+- **Versión anterior:** el capítulo 10 avanzaba desde el punto de vista directamente hacia la oportunidad de diseño.
+- **Motivo:** hacer localizable la relación que orienta la hipótesis, los objetivos y las pruebas posteriores.
+- **Alcance:** no se declara eficacia ni se modifican los resultados disponibles.
