@@ -24,10 +24,11 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 27 de agosto de 2026:** los ocho criterios del capítulo 9 muestran ahora su fundamento próximo y cuentan con una matriz que distingue evidencia, aporte y límite pendiente.
 
+**Resuelto el 27 de agosto de 2026:** las conclusiones separan hallazgos, decisión proyectual, aporte alcanzado, hipótesis pendiente y criterio de continuidad. Lo phygital se mantiene como medio; el valor específico de la relación física y digital continúa abierto a prueba.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
 | Anexos metodológicos sin selección final | El repositorio contiene corpus, matrices y registros de mercado, pero la memoria no define cuáles acompañarán una entrega formal y cuáles permanecerán solo como respaldo digital. | Seleccionar el conjunto mínimo de anexos, asignarles función y enlazarlos desde el apartado pertinente sin duplicar el repositorio. |
-| Clasificación del cierre académico | El apartado 13.8 distingue límites, pero algunos pasajes presentan la propuesta de valor y la distribución phygital con tono de resultado. | Separar explícitamente hallazgos alcanzados, decisión proyectual e hipótesis aún no comprobada. |
 | Registros del producto y de la investigación | El producto excluye registros de cumplimiento, mientras los protocolos necesitan observaciones con consentimiento. | Aclarar que la investigación registra pruebas y errores, pero Relevo no registra si la persona ejecutó la intención. |
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
@@ -72,6 +73,13 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Clasificación del cierre resuelta
+
+- **Cambio:** el cierre académico distingue ahora el nivel de evidencia de cada afirmación y mantiene el valor del objeto como hipótesis.
+- **Versión anterior:** decisión proyectual, propuesta de valor y comprobación pendiente aparecían demasiado próximas.
+- **Motivo:** impedir que el medio phygital o la arquitectura propuesta se lean como resultados de eficacia.
+- **Alcance:** la nueva redacción no cambia la dirección de Relevo ni reemplaza las comparaciones previstas.
 
 ### 2026-08-27 — Trazabilidad de criterios resuelta
 

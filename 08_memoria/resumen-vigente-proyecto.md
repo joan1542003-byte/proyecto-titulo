@@ -24,15 +24,17 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El documento completo tiene 18.590 palabras; los capítulos 1–13 contienen 15.712. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales, el aporte del objeto frente a una notificación y las reglas con que se interpretarán las pruebas.
+El documento completo tiene 18.649 palabras; los capítulos 1–13 contienen 15.698. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal de señal, la forma, la materialidad, la electrónica final, los costos reales, el aporte del objeto frente a una notificación y las reglas con que se interpretarán las pruebas.
 
 ## Qué cambió en esta actualización
 
-Los ocho criterios de diseño muestran ahora de dónde provienen y qué no permiten afirmar todavía. La nueva matriz relaciona literatura, entrevistas y mercado con cada criterio, mientras mantiene abiertas las decisiones que requieren pruebas. Los siguientes cabos documentales son la clasificación del cierre académico, la separación entre registros de investigación y del producto y la selección de anexos.
+Las conclusiones separan ahora los hallazgos de la investigación, la decisión proyectual, el aporte alcanzado y la hipótesis que deberá comprobarse. Lo phygital se mantiene como el medio elegido para desarrollar Relevo; el posible aporte del objeto frente a una notificación continúa abierto. Los siguientes cabos documentales son la separación entre registros de investigación y del producto y la selección de anexos.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-27 — Clasificación del cierre académico.** Antes, la propuesta de valor y el aporte del objeto podían leerse como resultados. Ahora las conclusiones distinguen evidencia, decisión e hipótesis. La dirección phygital no cambió y su aporte específico continúa sujeto a pruebas.
 
 **2026-08-27 — Trazabilidad de criterios.** Antes, el capítulo 9 declaraba una procedencia general y obligaba al lector a reconstruirla. Ahora cada criterio incorpora su fundamento próximo y una matriz separada conserva evidencia y límites. Relevo mantiene la misma definición y no se añadieron resultados de pruebas.
 
