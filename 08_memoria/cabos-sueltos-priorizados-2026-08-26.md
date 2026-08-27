@@ -14,10 +14,11 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 26 de agosto de 2026:** el capítulo 8 enlaza un registro metodológico que identifica pregunta, términos, fuentes, criterios, corpus nuclear y límites. También explicita qué datos de búsqueda no fueron preservados.
 
+**Resuelto el 26 de agosto de 2026:** los capítulos 5 y 6 permanecen ahora en el nivel de antecedentes, conceptos y preguntas. La combinación concreta de intención, primer paso, condición, señal y capa física se reserva para los criterios de diseño y la formulación.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
 | Documentos rectores desactualizados | El dictamen rector conserva una arquitectura de 16 capítulos mientras la v4 aplica 14; otra auditoría declara revisar una versión anterior. | Establecer la v4 y su arquitectura de 14 capítulos como única referencia activa; rotular los dictámenes anteriores como históricos. |
-| Derivación proyectual adelantada | Algunos cierres de los capítulos 5 y 6 introducen primer paso, lugar, señal o capa física antes de la formulación. | Mantener esos capítulos en el nivel de implicaciones y preguntas; reservar la combinación concreta para criterios de diseño y formulación. |
 | Conceptos técnicos poco accesibles | Aparecen nombres de métodos, APIs y componentes sin explicación suficiente para un lector de Diseño. | Explicar función y condición provisional en la primera aparición; trasladar especificaciones extensas a factibilidad o anexos. |
 | Extensión, APA y anexos sin cierre total | La auditoría existente realiza una revisión básica, pero no separa cuerpo, referencias y registro de cambios ni incorpora anexos metodológicos. | Ejecutar conteo por cuerpo académico, matriz cita–referencia completa y selección de anexos indispensables antes de exportar. |
 
@@ -111,3 +112,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** el método existía fuera de la memoria, pero su relación con el capítulo era poco visible y no declaraba la ausencia de consultas y conteos literales.
 - **Motivo:** permitir auditar la propuesta de valor sin sobredimensionar el alcance del estudio.
 - **Alcance:** la oportunidad continúa limitada al corpus y no se presenta como novedad universal.
+
+### 2026-08-26 — Resolución de la derivación proyectual adelantada
+
+- **Cambio:** los cierres de los capítulos 5 y 6 se reescribieron como relaciones teóricas y preguntas abiertas.
+- **Versión anterior:** algunos párrafos anticipaban el primer paso, la señal, la condición observable y la distribución phygital como si ya fueran requisitos derivados.
+- **Motivo:** preservar el orden narrativo de la memoria y hacer que la propuesta aparezca después de la investigación de usuarios y del estado del arte.
+- **Alcance:** se mantuvieron los conceptos de autonomía, memoria prospectiva, espacio e interacción phygital; solo se retiró su conversión prematura en una solución concreta.

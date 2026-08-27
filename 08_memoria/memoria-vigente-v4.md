@@ -142,7 +142,7 @@ Biedermann et al. (2021) analizaron 28 intervenciones y encontraron resultados v
 
 Una línea distinta introduce una pausa antes de abrir o continuar en una aplicación. Grüning et al. (2023) estudiaron one sec, que demora la apertura y pide reconsiderar la acción. Haliburton et al. (2024) examinaron fricciones similares durante un periodo prolongado. Ambos trabajos muestran que una interrupción breve puede modificar recorridos y que el efecto depende del uso sostenido y del esfuerzo requerido.
 
-Estas investigaciones aportan dos aprendizajes. Primero, una pausa puede crear un momento de decisión donde antes había continuidad. Segundo, alterar la conducta presente no permite saber si otra intención fue recuperada. Una persona puede cerrar una aplicación porque encontró una barrera y seguir sin recordar aquello que quería hacer. El antecedente abre una oportunidad, pero también muestra el límite de intervenir únicamente dentro del teléfono.
+Estas investigaciones permiten distinguir dos efectos. Una pausa puede crear un momento de decisión donde antes había continuidad. Sin embargo, alterar la conducta presente no permite saber si otra intención fue recuperada. Una persona puede cerrar una aplicación porque encontró una barrera y seguir sin recordar aquello que quería hacer. La interrupción de una conducta y la recuperación de una intención son fenómenos relacionados, pero no equivalentes.
 
 ## 5.3 Desconexión y separación física
 
@@ -168,7 +168,7 @@ La literatura permite establecer cuatro acuerdos parciales. La duración no bast
 
 Las métricas describen el uso, pero no recuperan por sí mismas el propósito. Los bloqueos modifican el acceso, aunque pueden actuar sin considerar el sentido de la actividad. Las pausas crean una reconsideración dentro del teléfono, pero no necesariamente devuelven una intención alternativa. Los recordatorios externos apoyan el recuerdo, aunque exigen una relación comprensible entre señal, lugar y acción.
 
-El espacio menos desarrollado aparece en la intersección de esas líneas: cómo apoyar una intención formulada por la propia persona, hacerla perceptible cuando una sesión digital continúa y relacionarla con el lugar donde puede comenzar, sin convertir el apoyo en bloqueo o mandato. Esta pregunta no supone que la respuesta deba ser física. Exige comparar alternativas y comprobar si el entorno aporta algo que una señal digital no ofrece.
+La intersección de estas líneas deja una pregunta abierta: bajo qué condiciones una intención formulada por la propia persona puede volver a estar disponible mientras una sesión digital continúa, sin convertir el apoyo en bloqueo o mandato. La literatura revisada no determina todavía qué soporte, momento o contexto respondería mejor a esa pregunta. Tampoco permite suponer que una respuesta física sea necesariamente superior a una digital.
 
 La revisión es exploratoria. Se priorizaron publicaciones desde 2019 y se mantuvieron antecedentes anteriores cuando resultaban necesarios para definir memoria prospectiva, interacción tangible o uso del espacio. No se realizó una revisión sistemática ni un estudio de patentes. Por ello, los vacíos identificados delimitan una oportunidad de investigación y no demuestran la inexistencia universal de soluciones semejantes.
 
@@ -202,7 +202,7 @@ Una **decisión renovada** ocurre cuando la persona vuelve a considerar si desea
 
 El concepto ayuda a describir la situación con palabras simples. No se afirma que la persona actúe sin conciencia, que pierda el control ni que toda continuidad sea indeseada. Solo se reconoce que una sesión puede seguir mientras otra posibilidad deja de estar presente.
 
-## 6.2 Ámbito 2: arquitecturas de atención y autonomía
+## 6.2 Ámbito 2: arquitecturas de atención y bienestar digital
 
 ### 6.2.1 Continuidad diseñada
 
@@ -216,13 +216,13 @@ La asimetría entre acciones importa. Continuar viendo contenido puede requerir 
 
 La **fricción** es el esfuerzo adicional introducido en una interacción. Puede consistir en esperar, confirmar, realizar un gesto o desplazarse hacia un objeto. Una fricción bien dirigida abre tiempo para reconsiderar; una fricción excesiva puede frustrar, ser eludida o dificultar una actividad legítima.
 
-Lyngs et al. (2019) muestran que las herramientas de autocontrol emplean fricciones con distintos niveles de intensidad. Algunas eliminan estímulos; otras bloquean; otras presentan mensajes o demoras. Grüning et al. (2023) y Haliburton et al. (2024) encontraron que una pausa antes de abrir una aplicación puede cambiar el curso de la interacción. El mecanismo es relevante porque restituye un punto de elección, pero sigue concentrado en la acción digital presente.
+Lyngs et al. (2019) muestran que las herramientas de autocontrol emplean fricciones con distintos niveles de intensidad. Algunas eliminan estímulos; otras bloquean; otras presentan mensajes o demoras. Grüning et al. (2023) y Haliburton et al. (2024) encontraron que una pausa antes de abrir una aplicación puede cambiar el curso de la interacción. El mecanismo es relevante porque puede abrir un punto de elección, pero sigue concentrado en la acción digital presente.
 
-Para el problema estudiado, la fricción no debería ser el propósito principal. Hacer más difícil continuar no equivale a recordar qué otra cosa se quería hacer. Una señal podría abrir una reconsideración sin impedir la acción actual. La diferencia está entre restringir una opción y volver visible otra.
+Para el problema estudiado, conviene distinguir la fricción de la recuperación de una intención. Hacer más difícil continuar puede abrir una reconsideración, pero no equivale a recordar qué otra cosa se quería hacer. La literatura deja pendiente qué mecanismo permitiría que una alternativa volviera a ser considerada sin restringir la actividad presente.
 
 ### 6.2.3 Autonomía y posibilidad de no intervenir
 
-La autonomía no se resuelve únicamente declarando que la persona conserva el control. Debe expresarse en acciones concretas: poder configurar, modificar, ignorar, silenciar y retirar una ayuda. Una señal persistente o difícil de detener puede ejercer presión aun cuando no exista un bloqueo formal.
+La autonomía no se resuelve únicamente declarando que la persona conserva el control. También depende de que comprenda la intervención y pueda aceptarla, ajustarla o rechazarla. Una ayuda persistente o difícil de detener puede ejercer presión aun cuando no exista un bloqueo formal.
 
 También es necesario reconocer cuándo una intervención sería improcedente. Una videollamada significativa, un videojuego concentrado, un pódcast elegido o una sesión de descanso pueden extenderse sin constituir el problema descrito. Si no existe una intención alternativa formulada, la duración o la aplicación no bastan para justificar una interrupción.
 
@@ -232,11 +232,11 @@ Esta frontera cambia la definición de éxito. Continuar con el teléfono despu�
 
 Los sistemas digitales operan a partir de eventos que pueden registrar: tiempo transcurrido, aplicación activa, horario, conexión o movimiento. No pueden conocer de manera directa si una persona está aburrida, culpable, concentrada o satisfecha. Confundir un dato técnico con una experiencia subjetiva produciría intervenciones injustificadas.
 
-Las **intenciones de implementación** vinculan una situación anticipada con una acción prevista: si ocurre una condición, entonces se realiza una respuesta (Gollwitzer & Sheeran, 2006). Esta estructura puede orientar una herramienta sin atribuirle capacidades de interpretación que no posee. La persona define de antemano una relación entre una condición observable y una señal; el sistema ejecuta esa relación, pero no decide si el momento es problemático.
+Las **intenciones de implementación** vinculan una situación anticipada con una acción prevista: si ocurre una condición, entonces se realiza una respuesta (Gollwitzer & Sheeran, 2006). Esta estructura permite comprender cómo un evento observable puede relacionarse con una acción futura sin atribuirle un significado subjetivo. El vínculo se establece de antemano; el evento no demuestra por sí mismo que el momento sea problemático.
 
-Cada condición tiene consecuencias. El uso continuo mantiene cercanía con una sesión específica, aunque puede interrumpir actividades significativas. El uso acumulado admite pausas, pero exige explicar qué se suma y cuándo se reinicia. Una franja horaria simplifica la técnica, pero puede perder relación con la actividad digital. La condición debe elegirse por su sentido para la experiencia, no solo por facilidad de programación.
+Los eventos observables tampoco son equivalentes. El uso continuo describe una secuencia; el uso acumulado reúne periodos diferentes; una franja horaria solo indica una coincidencia temporal. Cada dato permite reconocer una condición limitada, pero ninguno revela por sí solo el propósito, la satisfacción o el conflicto experimentado por la persona.
 
-## 6.3 Ámbito 3: memoria prospectiva, espacio e interacción tangible
+## 6.3 Ámbito 3: mediación material de información personal
 
 ### 6.3.1 Recordar una acción futura
 
@@ -252,7 +252,7 @@ Externalizar una intención permite que el entorno participe en su recuerdo. Una
 
 La estrategia ofrece ventajas y costos. Puede reducir la necesidad de mantener una meta presente, pero exige confiar en la señal, configurarla y encontrarla en el momento adecuado. Chiu y Gilbert (2024) muestran que el esfuerzo físico requerido para establecer un recordatorio modifica la decisión de externalizar. Por ello, cada paso adicional debe justificar su presencia.
 
-Una señal efectiva no necesita contener toda la información. Puede funcionar como clave si la persona comprende su relación con la intención. Sin embargo, una forma demasiado ambigua obliga a consultar otra fuente y puede devolver la atención al mismo dispositivo del que se intentaba salir. El grado adecuado de información depende del contexto y debe ser probado.
+Una señal no necesita contener toda la información para funcionar como clave, siempre que la persona comprenda su relación con la intención. Si resulta demasiado ambigua, puede obligar a consultar una fuente adicional y aumentar el esfuerzo necesario para recordar. El grado adecuado de información depende del contexto y no puede establecerse únicamente desde la teoría.
 
 ### 6.3.3 El espacio como parte de la acción
 
@@ -260,7 +260,7 @@ Kirsh (1995) explica que las personas organizan el espacio para reducir demandas
 
 Los recordatorios situados amplían esta idea. Sohn et al. (2005) y O’Rear y Radvansky (2019) muestran que el lugar puede ayudar a recuperar una intención, aunque estar cerca no asegura actuar. La relación funciona cuando el contexto es significativo para la persona y cuando la señal puede percibirse sin competir de manera excesiva con otras actividades.
 
-Para estudiar esa relación conviene distinguir la meta de su **primer paso**. Una meta como hacer ejercicio puede ser amplia y distante. Ponerse las zapatillas es una acción concreta que permite comenzar. Leer puede iniciar al abrir un libro; dibujar, al disponer los materiales. Vincular una intención con su primer paso reduce la distancia entre recordar y reconocer qué hacer a continuación.
+Para estudiar esa relación puede ser útil distinguir una meta amplia de las acciones concretas que permiten iniciarla. Hacer ejercicio, por ejemplo, puede comenzar al preparar las zapatillas; leer, al abrir un libro; dibujar, al disponer los materiales. Esta diferencia ayuda a observar la distancia entre recordar una intención y reconocer cómo podría comenzar, pero todavía no establece cómo debe diseñarse una intervención.
 
 El lugar también introduce límites. Una señal puede molestar a otras personas, revelar información privada, perderse entre objetos o dejar de ser visible. El hogar no es homogéneo: sus superficies, recorridos, sonidos y acuerdos de convivencia cambian. Situar una interacción exige estudiar esas condiciones y permitir que la asociación pueda modificarse.
 
@@ -268,19 +268,19 @@ El lugar también introduce límites. Una señal puede molestar a otras personas
 
 La interacción tangible incorpora objetos físicos como parte del modo en que se representa o manipula información. Su aporte no depende únicamente de tocar. La ubicación, la presencia, el peso y el movimiento pueden participar en el significado de la acción.
 
-Una experiencia **phygital** integra componentes físicos y digitales que cumplen funciones complementarias dentro de un mismo sistema. No consiste en añadir un objeto a una aplicación. La capa digital puede conservar información, configurar reglas o procesar eventos; la capa física puede situar una señal y relacionarla con el entorno. La propuesta solo es coherente si esa distribución mejora la comprensión o la acción.
+Una experiencia **phygital** integra componentes físicos y digitales que cumplen funciones complementarias dentro de un mismo sistema. No consiste simplemente en añadir un objeto a una aplicación. Las funciones pueden distribuirse de distintas maneras y ninguna capa posee un valor superior por sí misma. La relación solo adquiere sentido cuando la integración aporta a la experiencia y puede estudiarse como un conjunto.
 
 *The Tangible Reminder* constituye un antecedente porque conectó información de citas con objetos y señales ambientales (Hermann et al., 2007). El caso muestra que el entorno puede hacer visible un compromiso sin depender exclusivamente de una alerta convencional. Al mismo tiempo, recuerda que cada objeto trae exigencias de energía, mantención, costo y aprendizaje.
 
 Waggoner et al. (2026) señalan que las experiencias phygital requieren métodos capaces de observar la relación entre canales, lugares y momentos. Evaluar solo la aplicación o solo el objeto fragmentaría el sistema. También resulta necesario comprobar si la capa física aporta valor frente a una solución exclusivamente digital.
 
-## 6.4 Conclusiones de la intersección
+## 6.4 Conclusiones del marco teórico
 
-Los tres ámbitos convergen en una situación precisa. Una sesión de ocio digital puede continuar y conservar valor, pero también puede coincidir con una intención alternativa que deja de orientar el siguiente paso. La interfaz influye al mantener disponible la acción actual; la memoria prospectiva explica por qué recordar después no equivale a recordar a tiempo; y el espacio ofrece recursos para volver perceptible una intención fuera del flujo digital.
+Los tres ámbitos convergen en una situación precisa. Una sesión de ocio digital puede continuar y conservar valor, pero también puede coincidir con una intención alternativa que deja de orientar la acción. La interfaz influye al mantener disponible la actividad presente; la memoria prospectiva explica por qué recordar después no equivale a recordar a tiempo; y el estudio del espacio muestra que el entorno puede participar en la organización y recuperación de acciones.
 
-Esta intersección establece cinco condiciones para avanzar. Primero, la persona debe formular la intención; el sistema no puede inferirla. Segundo, conviene relacionarla con un primer paso concreto. Tercero, la activación debe depender de una condición comprensible y observable. Cuarto, la señal debe recuperar la intención sin imponer su ejecución. Quinto, cualquier componente físico debe demostrar un aporte específico frente a una alternativa más simple.
+La intersección no determina una solución. Plantea preguntas que deben contrastarse con la investigación de usuarios y el estado del arte: cómo vuelve a estar disponible una intención, qué eventos pueden relacionarse legítimamente con ella, qué papel cumple el contexto y cómo se conserva la autonomía. También obliga a considerar el esfuerzo necesario para establecer y mantener cualquier apoyo.
 
-Estas relaciones no determinan una forma única. Delimitan el problema que una propuesta debe responder y los límites que no debería transgredir. El diseño tendrá que sostener la autonomía, admitir la no intervención y mantener proporcionado el esfuerzo de configuración.
+Estas preguntas permiten avanzar desde la teoría sin confundir una posibilidad con una decisión de diseño. Los criterios y la formulación del proyecto deberán aparecer después de examinar la experiencia de los usuarios y las respuestas existentes.
 
 # 7. Usuario, contexto y hallazgos de entrevistas
 
@@ -939,6 +939,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**26 de agosto de 2026 — Orden narrativo de antecedentes y marco teórico.** Los capítulos 5 y 6 se limitaron a explicar antecedentes, relaciones conceptuales y preguntas abiertas. Antes, algunos cierres convertían el primer paso, la condición observable, la señal y la distribución phygital en requisitos antes de presentar usuarios, referentes y criterios. Se conservaron los conceptos necesarios, pero su traducción proyectual quedó reservada para los capítulos 9 y 10. También se restituyeron los títulos históricos de los ámbitos 2 y 3 y de las conclusiones del marco teórico, sin recuperar las afirmaciones desactualizadas de la memoria anterior.
 
 **26 de agosto de 2026 — Vigencia y alcance del mercado.** Se aclaró que las seis familias del estado del arte son una clasificación analítica del proyecto y no una taxonomía universal. La comparación de Screenless registra ahora la contradicción de su sitio sobre Android; Focusaur distingue el despacho estadounidense de su tienda europea, y kSafe se mantiene como antecedente de mecanismo sin afirmar stock ni distribución en Chile. Antes, estas condiciones podían leerse como disponibilidades más amplias de lo que permiten las fuentes. La revisión no modifica la oportunidad de diseño ni presenta información comercial como evidencia de eficacia.
 
