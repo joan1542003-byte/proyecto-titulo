@@ -220,7 +220,7 @@
 ## D-022 — Memoria v2 como documento académico activo
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente
+- **Estado:** histórica; sustituida por D-033
 - **Decisión:** declarar `08_memoria/memoria-vigente-v2.md` como memoria integral activa y preservar `memoria-vigente.md` como antecedente.
 - **Fundamento:** la v2 integra los siete módulos reconstruidos y superó auditoría metodológica, editorial, bibliográfica y de coherencia.
 - **Consecuencia:** las versiones históricas y los módulos documentan proceso, pero no gobiernan la formulación académica vigente.
@@ -307,7 +307,7 @@
 - **Decisión:** representar un ciclo compuesto por una intención, un primer paso, una condición observable provisional, un testigo situado y un único pulso. El armado se confirma provisionalmente mediante pulsación prolongada en el control físico; después del pulso, silencio, vencimiento o desarmado, el ciclo termina y solo puede rearmarse de forma explícita.
 - **Tres interacciones:** formular y preparar; situar, probar y armar; recibir el pulso y cerrar.
 - **Representación phygital:** la tercera interacción incluye un marco contextual del pulso físico. Android solo aporta espera, cierre y recuperación técnica; no sustituye el momento situado ni requiere consulta para interpretar la señal.
-- **Fundamento:** el recorrido debe ser conectable, no coercitivo y compatible con la memoria v2 y la pauta E17. Un cierre por ciclo evita repetición insistente y registro implícito de conducta.
+- **Fundamento:** el recorrido debe ser conectable, no coercitivo y compatible con la memoria v4 y la pauta E17. Un cierre por ciclo evita repetición insistente y registro implícito de conducta.
 - **Límite:** gesto, condición, canal y forma permanecen como hipótesis sujetas a pruebas progresivas; esta decisión no demuestra comprensión, accesibilidad, eficacia ni viabilidad técnica.
 - **Documento asociado:** [Preparación escrita de Encargo 17](../05_propuesta_phygital/preparacion-escrita-encargo-17.md).
 
@@ -324,6 +324,13 @@
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Estado histórico de D-022
+
+- **Cambio:** D-022 se marcó como histórica y sustituida por D-033; la referencia documental de D-032 se sincronizó con la v4.
+- **Versión anterior:** D-022 y D-033 aparecían simultáneamente como vigentes, aunque declaraban versiones distintas de la memoria activa.
+- **Motivo:** mantener una sola fuente de verdad documental sin eliminar la secuencia de decisiones.
+- **Resultado:** la v4 es la única memoria académica activa.
 
 ### 2026-08-26 — D-033
 

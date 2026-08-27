@@ -2,19 +2,19 @@
 id: MEM-VIG-001
 titulo: "Memoria vigente de Relevo"
 autoria: Johan Yantén
-estado_documental: vigente
-relacion_con_proyecto: "base escrita activa del proyecto de título"
+estado_documental: histórico
+relacion_con_proyecto: "versión v1 preservada; sustituida por memoria-vigente-v4.md"
 sensibilidad: anonimizada
 version_base: "memoria-relevo-sistema-editorial-v3.md"
 fuente_base_sha256: 525edebd9bef5246adc7e80f323b5ca3670aaea982f15afde520384eb0d6ae1d
 fecha_actualizacion: 2026-08-24
 ---
 
-# Memoria vigente de Relevo
+# Memoria histórica de Relevo — v1
 
 ## Estado de la versión
 
-Este documento constituye la base escrita vigente del proyecto. Deriva de la versión editorial v3, seleccionada por contener la formulación más desarrollada de Relevo, pero corrige su metodología, elimina referencias a entregas docentes del cuerpo académico, actualiza el mercado y distingue decisiones, hipótesis y pendientes.
+Este documento fue la base escrita activa del proyecto el 24 de agosto de 2026. Se conserva para trazabilidad, pero fue sustituido por `memoria-vigente-v4.md` y no gobierna la redacción actual. Deriva de la versión editorial v3 y registra una etapa anterior de la formulación de Relevo.
 
 UNIVERSIDAD DIEGO PORTALES / ESCUELA DE DISEÑO
 
@@ -933,6 +933,13 @@ En esta versión se utilizó inteligencia artificial generativa como apoyo para 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Reclasificación como memoria histórica
+
+- **Cambio:** el encabezado y el estado documental identifican esta versión como v1 histórica y remiten a `memoria-vigente-v4.md`.
+- **Versión anterior:** el archivo se presentaba como base escrita vigente pese a haber sido sustituido por v2, v3 y v4.
+- **Motivo:** evitar que el nombre heredado del archivo lleve a nuevas conversaciones a utilizar una formulación anterior.
+- **Alcance:** no se reescribió el cuerpo histórico ni se eliminó información de proceso.
 
 ### 2026-08-24 — Corrección de alcance de fuentes
 

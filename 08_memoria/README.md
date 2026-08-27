@@ -4,13 +4,18 @@
 
 Integrar los resultados validados en una narrativa académica clara. Este directorio no debe convertirse en depósito de toda la investigación; debe contener únicamente aquello que contribuya al argumento final.
 
-## Documentos vigentes
+## Documentos activos
 
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): separación entre correcciones documentales inmediatas y evidencia que requiere prototipado.
 - [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
+
+## Antecedentes y documentos históricos
+
+Los siguientes archivos conservan decisiones y diagnósticos que ayudaron a construir la v4. No gobiernan la arquitectura ni la redacción actual y deben leerse según la versión que declaran haber revisado.
+
 - [Auditoría de estructura narrativa del 26 de agosto](auditoria-estructura-narrativa-2026-08-26.md): contraste entre la v2, el cierre del primer semestre, la rúbrica y los encargos acumulativos.
 - [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
 - [Auditoría final editorial del 25 de agosto](auditoria-final-editorial-2026-08-25.md): control posterior a la incorporación de los 35 estados.
@@ -19,7 +24,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Memoria v2](memoria-vigente-v2.md): cierre editorial anterior, preservado para trazabilidad.
 - [Memoria v1](memoria-vigente.md): antecedente preservado; no gobierna la formulación actual.
 - [Matriz de incorporación del feedback E15](matriz-incorporacion-feedback-e15.md)
-- [Dictamen rector de reconstrucción](dictamen-rector-reconstruccion-memoria.md)
+- [Dictamen histórico de reconstrucción](dictamen-rector-reconstruccion-memoria.md): criterio que gobernó la construcción de la v2; sustituido por la v4 y su auditoría activa.
 - [`borradores-v2`](borradores-v2/): siete módulos fuente para trazabilidad; no deben leerse como siete memorias separadas.
 
 ## Arquitectura narrativa vigente
@@ -56,6 +61,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-26 — Jerarquía documental de la memoria
+
+- **Cambio:** se separaron los documentos activos de las auditorías, dictámenes y versiones históricas.
+- **Versión anterior:** una sola lista titulada “Documentos vigentes” reunía la v4 con informes que revisaban la v2 o proponían una arquitectura posteriormente sustituida.
+- **Motivo:** impedir que nuevas conversaciones utilicen como instrucción vigente un diagnóstico conservado únicamente por trazabilidad.
+- **Alcance:** no se eliminaron archivos ni se alteró su contenido académico; la v4 y su auditoría son las únicas referencias activas de escritura.
 
 ### 2026-08-26 — Trazabilidad del estudio de mercado
 

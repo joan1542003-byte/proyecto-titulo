@@ -21,9 +21,9 @@
 
 La evaluación considera claridad, jerarquía, coherencia con el flujo, fundamento, completitud y conexión del recorrido.
 
-### Petición vigente del autor
+### Estado posterior del encargo
 
-La memoria integral v2 y la arquitectura escrita ya fueron revisadas. La prioridad vigente es desarrollar el Encargo 17 en Figma y documentar la entrega, cerrando previamente solo las decisiones que bloqueen la estructura.
+El Encargo 17 fue desarrollado y documentado. La pauta permanece como fuente histórica de sus requisitos; cualquier revisión futura debe contrastarse con la [memoria v4](../08_memoria/memoria-vigente-v4.md), que sustituyó a la v2 como fuente académica activa.
 
 El testigo físico representa una intención activa y emite un pulso ambiental situado. Ningún wireframe podrá insinuar una interfaz de consulta, menú, texto, historial o respuesta visual instalada en el testigo.
 
@@ -34,6 +34,13 @@ La tercera interacción principal ocurre físicamente cuando el testigo emite un
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Estado documental posterior al Encargo 17
+
+- **Cambio:** se reemplazó la prioridad de desarrollo por el estado completado y se actualizó la fuente académica activa a la memoria v4.
+- **Versión anterior:** el archivo declaraba vigente la memoria v2 y presentaba el Encargo 17 como trabajo pendiente.
+- **Motivo:** impedir que una pauta histórica reactive una prioridad ya cerrada o gobierne futuras revisiones desde una memoria sustituida.
+- **Alcance:** las exigencias originales del encargo no fueron modificadas.
 
 ### 2026-08-24 — Creación
 

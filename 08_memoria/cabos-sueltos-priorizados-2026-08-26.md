@@ -16,9 +16,10 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 26 de agosto de 2026:** los capítulos 5 y 6 permanecen ahora en el nivel de antecedentes, conceptos y preguntas. La combinación concreta de intención, primer paso, condición, señal y capa física se reserva para los criterios de diseño y la formulación.
 
+**Resuelto el 26 de agosto de 2026:** el índice de memoria separa documentos activos e históricos. El dictamen de reconstrucción y la auditoría narrativa de la v2 declaran que fueron sustituidos por la v4 y no gobiernan nuevas redacciones.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
-| Documentos rectores desactualizados | El dictamen rector conserva una arquitectura de 16 capítulos mientras la v4 aplica 14; otra auditoría declara revisar una versión anterior. | Establecer la v4 y su arquitectura de 14 capítulos como única referencia activa; rotular los dictámenes anteriores como históricos. |
 | Conceptos técnicos poco accesibles | Aparecen nombres de métodos, APIs y componentes sin explicación suficiente para un lector de Diseño. | Explicar función y condición provisional en la primera aparición; trasladar especificaciones extensas a factibilidad o anexos. |
 | Extensión, APA y anexos sin cierre total | La auditoría existente realiza una revisión básica, pero no separa cuerpo, referencias y registro de cambios ni incorpora anexos metodológicos. | Ejecutar conteo por cuerpo académico, matriz cita–referencia completa y selección de anexos indispensables antes de exportar. |
 
@@ -119,3 +120,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** algunos párrafos anticipaban el primer paso, la señal, la condición observable y la distribución phygital como si ya fueran requisitos derivados.
 - **Motivo:** preservar el orden narrativo de la memoria y hacer que la propuesta aparezca después de la investigación de usuarios y del estado del arte.
 - **Alcance:** se mantuvieron los conceptos de autonomía, memoria prospectiva, espacio e interacción phygital; solo se retiró su conversión prematura en una solución concreta.
+
+### 2026-08-26 — Resolución de la jerarquía documental
+
+- **Cambio:** el pendiente sobre documentos rectores pasó a resuelto; el índice distingue referencias activas de antecedentes y los dos informes ambiguos se reclasificaron.
+- **Versión anterior:** el dictamen de reconstrucción y una auditoría de la v2 podían interpretarse como instrucciones vigentes y competir con la estructura de catorce capítulos.
+- **Motivo:** asegurar que agentes y futuras conversaciones comiencen desde la v4 sin perder la trazabilidad del proceso.
+- **Alcance:** no se reescribieron diagnósticos históricos ni se eliminaron versiones anteriores.

@@ -2,7 +2,8 @@
 
 - **Fecha:** 24 de agosto de 2026
 - **Documento auditado:** [`memoria-vigente-v2.md`](memoria-vigente-v2.md)
-- **Dictamen:** aprobada como memoria integral activa del estado actual del Proyecto de Título; condicionada a incorporar resultados cuando se ejecuten los prototipos.
+- **Estado documental:** auditoría histórica de la v2; sustituida posteriormente por la memoria v4 y su auditoría de redacción.
+- **Dictamen original:** aprobada como memoria integral activa al 24 de agosto de 2026; condicionada a incorporar resultados cuando se ejecuten los prototipos.
 
 ## 1. Alcance del dictamen
 
@@ -67,13 +68,20 @@ La memoria está completa para el estado real del proyecto, pero el Proyecto de 
 
 La condición de activación es el pendiente crítico más cercano. Elegir continuidad, acumulación u horario antes de P0–P2 podría cerrar una solución técnica sin demostrar el valor físico. La forma final tampoco debe cerrarse antes de comparar el testigo situado con la notificación.
 
-## 6. Decisión de activación documental
+## 6. Decisión de activación documental adoptada el 24 de agosto de 2026
 
-`memoria-vigente-v2.md` puede sustituir a la v1 como documento activo del repositorio. La v1 debe conservarse como antecedente, no eliminarse. Los siete módulos, las seis auditorías y el dictamen rector permanecen como capa de proceso y trazabilidad; la memoria v2 es el único texto académico que debe leerse como formulación integral vigente.
+En esa fecha, `memoria-vigente-v2.md` sustituyó a la v1 como documento activo del repositorio. La v1 se conservó como antecedente. Los siete módulos, las seis auditorías y el dictamen rector quedaron como capa de proceso y trazabilidad. Esta decisión fue sustituida posteriormente por D-033, que declara activa la v4.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Reclasificación como auditoría histórica
+
+- **Cambio:** el dictamen y su decisión de activación quedaron fechados y subordinados a D-033.
+- **Versión anterior:** el documento seguía afirmando en presente que la v2 era la única formulación integral vigente.
+- **Motivo:** conservar el resultado de la auditoría sin convertir una decisión temporal en instrucción actual.
+- **Alcance:** no se modificaron las verificaciones realizadas sobre la v2.
 
 ### 2026-08-24 — Creación de la auditoría rectora
 

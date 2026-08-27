@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Esta carpeta reúne las referencias visuales destinadas a reconstruir en Figma los 35 estados del ciclo mínimo de Relevo. Las láminas traducen la arquitectura descrita en la [memoria integral v2](../../08_memoria/memoria-vigente-v2.md) y en el [anexo de cobertura](../anexo-cobertura-interacciones-encargo-17.md) a composiciones de baja o media fidelidad, sin fijar la interfaz final del producto.
+Esta carpeta reúne las referencias visuales destinadas a reconstruir en Figma los 35 estados del ciclo mínimo de Relevo. Las láminas fueron producidas durante la vigencia de la memoria v2; la [memoria v4](../../08_memoria/memoria-vigente-v4.md) gobierna cualquier revisión posterior. El [anexo de cobertura](../anexo-cobertura-interacciones-encargo-17.md) conserva la relación entre estados y composiciones de baja o media fidelidad, sin fijar la interfaz final del producto.
 
 Cada PNG mide exactamente `3840 × 2160 px`. El lenguaje gráfico es contemporáneo, minimalista e inspirado en principios de composición asociados a iOS, pero no copia componentes de Apple ni modifica la decisión de usar Android como plataforma técnica inicial.
 
@@ -63,6 +63,13 @@ Estas láminas no validan usabilidad, accesibilidad, percepción del pulso, esta
 ---
 
 ## Registro de creación (disclaimer)
+
+### 2026-08-26 — Jerarquía de fuentes para futuras revisiones
+
+- **Cambio:** se distinguió la memoria utilizada durante la producción de la fuente académica actualmente activa.
+- **Versión anterior:** el README remitía únicamente a la v2 y podía interpretarse como instrucción vigente.
+- **Motivo:** preservar el origen de las láminas sin desincronizar nuevas iteraciones de la memoria v4.
+- **Alcance:** no se modificaron imágenes, estados ni decisiones visuales.
 
 ### 2026-08-25 — Serie completa de referencias 4K
 

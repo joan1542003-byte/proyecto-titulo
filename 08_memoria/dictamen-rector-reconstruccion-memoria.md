@@ -3,10 +3,12 @@ id: DICTAMEN-MEMORIA-PT-001
 titulo: "Dictamen rector para la reconstrucción de la memoria de Proyecto de Título"
 proyecto: "Relevo"
 fecha: 2026-08-24
-estado: "criterio de integración"
+estado: "histórico; sustituido por la memoria v4 y su auditoría"
 ---
 
 # Dictamen rector para la reconstrucción de la memoria
+
+> **Estado documental:** antecedente histórico creado para reconstruir la memoria v2. No gobierna la arquitectura ni la redacción actual. Para trabajo vigente deben utilizarse `memoria-vigente-v4.md`, `auditoria-redaccion-v4-2026-08-26.md` y el README de esta carpeta.
 
 ## Veredicto
 
@@ -203,6 +205,13 @@ La memoria estará lista para cierre editorial cuando una persona ajena al proce
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Reclasificación como antecedente histórico
+
+- **Cambio:** el dictamen dejó de presentarse como criterio activo de integración y ahora identifica la v4 y su auditoría como referencias vigentes.
+- **Versión anterior:** su encabezado y su cierre afirmaban que gobernaba la siguiente versión de la memoria.
+- **Motivo:** la reconstrucción que orientaba ya fue ejecutada y posteriormente sustituida por una arquitectura de catorce capítulos.
+- **Alcance:** se conserva íntegramente el diagnóstico original; sus afirmaciones no deben trasladarse a la v4 sin nueva verificación.
 
 ### 2026-08-24 — Creación del dictamen rector
 

@@ -9,7 +9,7 @@ Este anexo amplía el tablero evaluable de nueve marcos sin reemplazarlo. Su fun
 - **Tablero:** `13:3`.
 - **Referencias detalladas para calcar:** [catorce láminas 4K con los 35 estados](wireframes-referencia-ios-4k/README.md).
 
-La cobertura es exhaustiva respecto del ciclo mínimo definido en la [memoria integral v2](../08_memoria/memoria-vigente-v2.md), no respecto de funciones futuras. Cada estado tiene un wireframe independiente para poder revisarlo; esto no significa que la persona deba mirar el teléfono durante todo el recorrido. En uso, el pulso situado del testigo conserva el papel central y Android se limita a configurar, informar estado y facilitar recuperación.
+La cobertura se construyó respecto del ciclo mínimo documentado entonces en la memoria v2. Para cualquier revisión posterior debe interpretarse bajo la [memoria v4](../08_memoria/memoria-vigente-v4.md), no como autorización para agregar funciones futuras. Cada estado tiene un wireframe independiente para poder revisarlo; esto no significa que la persona deba mirar el teléfono durante todo el recorrido. En uso, el pulso situado del testigo conserva el papel central y Android se limita a configurar, informar estado y facilitar recuperación.
 
 ## Reglas que delimitan la cobertura
 
@@ -107,6 +107,13 @@ Los wireframes describen estructura y comportamiento esperado. No validan la con
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Fuente académica vigente
+
+- **Cambio:** el anexo distingue la memoria v2 utilizada al crear la cobertura de la v4 que gobierna revisiones posteriores.
+- **Versión anterior:** la v2 aparecía como fuente activa sin indicar que había sido sustituida.
+- **Motivo:** evitar divergencias entre los wireframes documentados y la memoria vigente.
+- **Alcance:** no se añadieron ni eliminaron estados de interacción.
 
 ### 2026-08-25 — Cobertura visual 4K por estado
 

@@ -4,6 +4,8 @@
 
 **Documento auditado:** `08_memoria/memoria-vigente-v2.md`
 
+> **Estado documental:** auditoría histórica. Su diagnóstico permitió reordenar versiones posteriores, pero la propuesta de dieciséis capítulos fue sustituida por la estructura vigente de catorce capítulos de `memoria-vigente-v4.md`.
+
 **Propósito:** corregir el orden de la memoria antes de una nueva revisión de estilo y de la exportación a DOCX.
 
 ## Fuentes rectoras consultadas
@@ -100,6 +102,8 @@ Este orden no oculta el producto hasta el final: la introducción lo nombra de m
 ---
 
 ## Registro de cambios
+
+**26 de agosto de 2026 — Reclasificación como auditoría histórica.** Antes, el archivo podía confundirse con una instrucción vigente pese a auditar la v2 y proponer dieciséis capítulos. Ahora declara expresamente que su función es documentar el razonamiento que antecedió a la v4. No se modificaron sus hallazgos ni su propuesta original.
 
 **Documento nuevo.** Antes de esta auditoría, la arquitectura vigente estaba declarada en el README y comenzaba la formulación en el capítulo 3. Se creó este documento para registrar las fuentes rectoras, el diagnóstico, el nuevo orden, la normalización terminológica y las razones de cada cambio antes de intervenir la memoria. No añade resultados de investigación ni modifica por sí solo la formulación de Relevo.
 

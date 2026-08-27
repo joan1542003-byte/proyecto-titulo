@@ -2,7 +2,7 @@
 
 ## Estado de preparación
 
-Relevo cuenta con una base suficiente para desarrollar los wireframes del Encargo 17. La fuente académica activa es la [memoria integral v2](../08_memoria/memoria-vigente-v2.md). La entrega no fija eficacia, forma, materialidad, canal sensorial ni condición definitiva: traduce la arquitectura vigente a un recorrido estructural de baja fidelidad.
+Este documento registra la preparación utilizada para desarrollar los wireframes del Encargo 17. La memoria v2 fue su base durante esa etapa; para cualquier revisión posterior, la fuente académica activa es la [memoria v4](../08_memoria/memoria-vigente-v4.md). La entrega no fija eficacia, forma, materialidad, canal sensorial ni condición definitiva: traduce la arquitectura a un recorrido estructural de baja fidelidad.
 
 ## Ciclo mínimo representado
 
@@ -162,6 +162,13 @@ Condición de activación definitiva; canal, duración e intensidad del pulso; f
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-26 — Sincronización documental con la memoria v4
+
+- **Cambio:** se distinguió la base histórica de creación de la fuente académica que gobierna futuras revisiones.
+- **Versión anterior:** la preparación seguía presentando la memoria v2 como activa.
+- **Motivo:** conservar la trazabilidad del Encargo 17 sin permitir que una versión sustituida gobierne nuevos cambios.
+- **Alcance:** no se alteraron el ciclo, las interacciones ni los wireframes.
 
 ### 2026-08-25 — Cierre estructural para wireframes
 

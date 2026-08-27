@@ -102,7 +102,7 @@ Antes de replicar o modificar una lámina, comprobar:
 - lenguaje técnico separado de la decisión personal;
 - ausencia de bloqueo, puntaje, racha, cumplimiento, vigilancia, inferencia subjetiva o rearme automático;
 - no presentar Android como una interfaz visual literal ni trasladar controles técnicos al testigo físico;
-- no añadir funciones de mercado, seguimiento o personalización no respaldadas por la memoria vigente v2.
+- no añadir funciones de mercado, seguimiento o personalización no respaldadas por la memoria vigente v4.
 
 ## Registro breve de prompts
 
@@ -119,6 +119,13 @@ Se solicitó una lámina con la misma composición y sistema visual para `Permis
 El built-in `image_gen` produjo ambas imágenes en `1672 × 941 px`. Cada salida se amplió proporcionalmente hasta un lienzo final exacto de `3840 × 2160 px`, con interpolación bicúbica de alta calidad, sin recortar ni estirar el contenido. Las salidas nativas se conservaron fuera del repositorio como originales de generación; las versiones finales de este directorio son las copias de trabajo.
 
 ## Registro de creación (disclaimer)
+
+### 2026-08-26 — Actualización de la fuente académica
+
+- **Cambio:** la regla de no agregar funciones remite ahora a la memoria v4.
+- **Versión anterior:** el contrato señalaba la v2 como memoria vigente.
+- **Motivo:** mantener el contrato visual subordinado a la única memoria activa.
+- **Alcance:** no se alteraron tokens, composición ni reglas de estilo.
 
 **Fecha:** 25 de agosto de 2026.
 
