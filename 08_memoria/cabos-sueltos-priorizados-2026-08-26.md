@@ -6,7 +6,7 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 ## Prioridad 0 — Corregir en la siguiente versión escrita
 
-**Resuelto el 26 de agosto de 2026:** la memoria incorpora ahora una pregunta de investigación explícita en el apartado 10.3. La formulación no presupone eficacia y define qué significa volver perceptible una intención.
+**Resuelto el 26 de agosto de 2026:** la memoria incorpora una pregunta de investigación explícita en el apartado 10.3. La formulación se concentra en el problema; el carácter phygital permanece como medio del proyecto y no como hipótesis. También define qué significa volver a considerar una actividad.
 
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
@@ -80,3 +80,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** el capítulo 10 avanzaba desde el punto de vista directamente hacia la oportunidad de diseño.
 - **Motivo:** hacer localizable la relación que orienta la hipótesis, los objetivos y las pruebas posteriores.
 - **Alcance:** no se declara eficacia ni se modifican los resultados disponibles.
+
+### 2026-08-26 — Separación entre pregunta y medio proyectual
+
+- **Cambio:** se retiró la intervención phygital de la pregunta de investigación y se mantuvo como medio definido para responder al problema.
+- **Versión anterior:** la pregunta trataba el carácter phygital como parte de la relación que debía comprobarse.
+- **Motivo:** separar el fenómeno investigado de la respuesta disciplinar y evitar que la pregunta anticipe su solución.
+- **Alcance:** Relevo continúa siendo obligatoriamente phygital; la corrección no cambia el proyecto ni su hipótesis operativa.

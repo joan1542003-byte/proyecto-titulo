@@ -59,9 +59,9 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ### 2026-08-26 — Pregunta de investigación explícita
 
-- **Cambio:** se añadió la pregunta de investigación al apartado 10.3 de la memoria v4 y se sincronizaron la numeración, el resumen vigente y la matriz histórica.
+- **Cambio:** se añadió la pregunta de investigación al apartado 10.3 y se corrigió para que estudie el problema sin tratar el carácter phygital como hipótesis.
 - **Versión anterior:** la relación investigada debía inferirse desde el problema, la hipótesis y los objetivos.
-- **Motivo:** hacer verificable la coherencia entre investigación, formulación y futuras pruebas.
+- **Motivo:** hacer verificable la coherencia entre investigación, formulación y futuras pruebas, manteniendo phygital como medio disciplinar del proyecto.
 - **Alcance:** no se presupone eficacia ni se modifican los resultados disponibles.
 
 ### 2026-08-26 — Priorización de cabos sueltos

@@ -28,13 +28,13 @@ El documento completo tiene aproximadamente 16.470 palabras y cumple los límite
 
 ## Qué cambió en esta actualización
 
-La v4 incorpora una pregunta de investigación explícita: busca establecer en qué condiciones una intervención phygital configurada por la persona y vinculada al primer paso puede volver perceptible una intención, sin bloquear ni evaluar la decisión posterior. La pregunta no presupone que el objeto funcione ni que sea superior a una notificación. El valor físico y el desempeño de Relevo continúan pendientes de evaluación.
+La v4 incorpora una pregunta de investigación explícita sobre las condiciones que pueden ayudar a una persona a volver a considerar una actividad elegida cuando esa intención deja de orientar su decisión inmediata. El carácter phygital no se presenta como una hipótesis: es el medio de diseño definido para abordar el problema. Lo que permanece pendiente de evaluación es si la relación entre intención, señal, primer paso y lugar resulta comprensible y aporta algo frente a una notificación.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
 
-**2026-08-26 — Pregunta de investigación.** Antes, la relación investigada solo podía reconstruirse desde el problema, la hipótesis y los objetivos. Ahora queda formulada explícitamente y se aclara que reconocer una intención no equivale a realizarla, abandonar el teléfono ni reducir minutos de uso. El funcionamiento propuesto no cambió.
+**2026-08-26 — Pregunta de investigación.** Antes, la relación investigada solo podía reconstruirse desde el problema, la hipótesis y los objetivos. Una primera corrección incluyó el medio phygital dentro de la pregunta; ahora la pregunta se concentra en el problema y reserva lo phygital para la respuesta proyectual. También se aclara que considerar una intención no equivale a realizarla, abandonar el teléfono ni reducir minutos de uso. El funcionamiento propuesto no cambió.
 
 **2026-08-26 — Sincronización con la memoria v4.** Antes, el resumen remitía a la v3, utilizaba una denominación compleja para el fenómeno y describía la validación mediante códigos internos. Ahora registra el orden de catorce capítulos, la aparición de Relevo en la formulación, el cumplimiento de extensión y los pendientes mediante lenguaje directo. El funcionamiento básico del sistema no cambió.
 
