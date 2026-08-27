@@ -28,11 +28,13 @@ El documento completo tiene aproximadamente 16.470 palabras y cumple los límite
 
 ## Qué cambió en esta actualización
 
-La v4 incorpora conclusiones explícitas que responden la pregunta de investigación con el nivel de evidencia disponible. El cierre sostiene que la intención debe ser propia, su comienzo debe expresarse de forma reconocible y la persona debe conservar la posibilidad de continuar o cambiar de idea. El carácter phygital es el medio definido para abordar el problema. Permanece pendiente comprobar si la relación entre intención, señal, primer paso y lugar resulta comprensible y aporta algo frente a una notificación.
+La v4 incorpora trazabilidad P/Q en los hallazgos, contraejemplos y estrategias del capítulo de usuarios. Esto permite comprobar las paráfrasis contra el corpus anonimizado y distingue con mayor claridad evidencia, síntesis e interpretación. Las respuestas sobre In(Visible) se mantienen como orientación general y no como validación de Relevo. Permanece pendiente comprobar si la relación entre intención, señal, primer paso y lugar resulta comprensible y aporta algo frente a una notificación.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-26 — Trazabilidad P/Q.** Antes, el capítulo de usuarios identificaba participantes sin localizar siempre las preguntas que sostenían cada hallazgo. Ahora los apartados 7.3–7.5 remiten a segmentos P/Q del corpus y Q13 queda acotada al concepto histórico consultado. No se añadieron testimonios ni se presentaron paráfrasis como citas literales.
 
 **2026-08-26 — Conclusiones.** Antes, el capítulo 13 terminaba con una síntesis breve del funcionamiento. Ahora responde la pregunta de investigación, diferencia contribuciones documentadas de resultados pendientes y establece cuándo mantener o modificar la dirección física. Se conservaron los catorce capítulos y no se añadieron resultados de pruebas inexistentes.
 

@@ -10,10 +10,11 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 26 de agosto de 2026:** el apartado 13.8 contiene conclusiones explícitas que responden la pregunta, delimitan el aporte del Diseño y separan contribuciones documentadas de resultados pendientes.
 
+**Resuelto el 26 de agosto de 2026:** los hallazgos centrales, los contraejemplos y las estrategias del capítulo 7 remiten ahora a segmentos P/Q verificables del corpus anonimizado.
+
 | Cabo suelto | Evidencia | Corrección necesaria |
 | --- | --- | --- |
 | Documentos rectores desactualizados | El dictamen rector conserva una arquitectura de 16 capítulos mientras la v4 aplica 14; otra auditoría declara revisar una versión anterior. | Establecer la v4 y su arquitectura de 14 capítulos como única referencia activa; rotular los dictámenes anteriores como históricos. |
-| Trazabilidad insuficiente de entrevistas | El capítulo 7 identifica participantes, pero no siempre remite a preguntas o segmentos verificables de la matriz P1–P8. | Incorporar referencias internas breves a los segmentos que sostienen cada hallazgo, sin convertir el capítulo en una transcripción. |
 | Registro de búsqueda de mercado incompleto | El capítulo 8 explica alcance y criterios, pero no deja una estrategia reproducible con términos, fuentes consultadas, inclusión y exclusión. | Consolidar el registro de búsqueda y enlazarlo metodológicamente con las conclusiones del estado del arte. |
 | Derivación proyectual adelantada | Algunos cierres de los capítulos 5 y 6 introducen primer paso, lugar, señal o capa física antes de la formulación. | Mantener esos capítulos en el nivel de implicaciones y preguntas; reservar la combinación concreta para criterios de diseño y formulación. |
 | Conceptos técnicos poco accesibles | Aparecen nombres de métodos, APIs y componentes sin explicación suficiente para un lector de Diseño. | Explicar función y condición provisional en la primera aparición; trasladar especificaciones extensas a factibilidad o anexos. |
@@ -95,3 +96,10 @@ El siguiente paso debe ser la prueba de asociación entre intención, señal y l
 - **Versión anterior:** el capítulo terminaba con una síntesis breve del funcionamiento y sus pruebas pendientes.
 - **Motivo:** responder la pregunta de investigación y hacer visibles aporte disciplinar, límites y criterio de continuidad.
 - **Alcance:** el cierre no presenta wireframes, planes o decisiones como resultados de uso.
+
+### 2026-08-26 — Resolución de trazabilidad cualitativa
+
+- **Cambio:** se localizaron los hallazgos de los apartados 7.3–7.5 mediante identificadores P/Q y se acotó la interpretación de Q13.
+- **Versión anterior:** el lector podía identificar al participante, pero no la pregunta concreta que sustentaba cada paráfrasis.
+- **Motivo:** permitir verificación contra el corpus anonimizado sin recargar la memoria con transcripciones.
+- **Alcance:** las referencias son internas; no convierten respuestas normalizadas en citas textuales ni amplían la muestra.

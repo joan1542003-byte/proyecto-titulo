@@ -294,6 +294,8 @@ La pauta avanzó desde las actividades de tiempo libre hacia el relato de una se
 
 Las conversaciones fueron transcritas y regularizadas para facilitar su lectura. El corpus se organizó con códigos P1–P8 y Q1–Q13. La unidad principal fue el episodio: una situación relatada en relación con actividad, intención, continuidad, recuerdo, valoración o estrategia. El análisis utilizó matrices comparativas inspiradas en el método Framework (Goldsmith, 2021) y tipos ideales revisables construidos a partir de semejanzas y contrastes entre casos (Stapley et al., 2022).
 
+Las referencias internas que combinan participante y pregunta —por ejemplo, P2, Q3–Q7— permiten localizar el segmento del corpus que sustenta una paráfrasis. No corresponden a citas textuales ni sustituyen la interpretación transversal; su función es mantener trazabilidad entre las respuestas anonimizadas y los hallazgos presentados.
+
 La interpretación fue realizada por el investigador y no contó con un segundo codificador. Tampoco se observaron directamente las conductas ni los espacios domésticos. Los hallazgos permiten reconocer patrones y contraejemplos dentro del corpus, pero no estimar frecuencia, causalidad, eficacia o disposición de pago.
 
 ## 7.2 Caracterización del corpus
@@ -315,29 +317,29 @@ La diversidad interna fue más útil que una división demográfica. Una misma p
 
 ## 7.3 Episodios centrales
 
-P2 relató que abrió Instagram al acostarse para mirar memes. Reconoció el sueño y, aun así, continuó usando el teléfono. Recordaba la sesión con claridad, pero evaluó su cierre como incompleto. El episodio no indica que hubiera olvidado lo ocurrido. Muestra una tensión entre una intención alternativa —dormir— y la continuidad de la actividad.
+P2 relató que abrió Instagram al acostarse para mirar memes. Reconoció el sueño y, aun así, continuó usando el teléfono. Recordaba la sesión con claridad, pero evaluó su cierre como incompleto. El episodio no indica que hubiera olvidado lo ocurrido. Muestra una tensión entre una intención alternativa —dormir— y la continuidad de la actividad (P2, Q3–Q7).
 
-P3 describió videos humorísticos en Instagram como una forma de pasar el tiempo. Relató una pérdida de noción temporal y reconoció otras actividades que habría preferido realizar. Al mismo tiempo, valoró la sesión como una pausa frente a responsabilidades. Esta ambivalencia es importante: una actividad puede resultar agradable y competir con otra intención sin volverse, por ello, incorrecta.
+P3 describió videos humorísticos en Instagram como una forma de pasar el tiempo. Relató una pérdida de noción temporal y reconoció otras actividades que habría preferido realizar. Al mismo tiempo, consideró que la sesión había funcionado como una pausa frente a sus responsabilidades. Esta ambivalencia es importante: una actividad puede ofrecer descanso y competir con otra intención sin volverse, por ello, incorrecta (P3, Q3–Q8).
 
-P5 mencionó entretenimiento inmediato y aburrimiento posterior. También habló de estrategias que no siempre evitaban volver al teléfono. Su relato ayuda a diferenciar una valoración negativa después de la sesión de una intención alternativa ya formulada. No toda insatisfacción posterior indica que existía una actividad concreta que pudiera recuperarse durante el episodio.
+P5 mencionó entretenimiento inmediato y aburrimiento posterior. También habló de estrategias que no siempre evitaban volver al teléfono. Su relato ayuda a diferenciar una valoración negativa después de la sesión de una intención alternativa ya formulada. No toda insatisfacción posterior indica que existía una actividad concreta que pudiera recuperarse durante el episodio (P5, Q3–Q10 y Q12).
 
-P1 y P4 mostraron variaciones semejantes. Ambos distinguieron momentos de uso dirigido de otros más rutinarios. Estos relatos impiden tratar a una persona como un usuario permanente del problema. La pertinencia cambia según la actividad y el contexto.
+P1 y P4 mostraron variaciones semejantes. Ambos distinguieron momentos de uso dirigido de otros más rutinarios. Estos relatos impiden tratar a una persona como un usuario permanente del problema. La pertinencia cambia según la actividad y el contexto (P1, Q3–Q5, Q8 y Q12; P4, Q3–Q8 y Q12).
 
 ## 7.4 Contraejemplos y necesidad de no intervenir
 
-P6 relató una videollamada extensa que valoró por su contenido y por el vínculo con otra persona. P7 describió un pódcast elegido mientras comía y no reconoció una obligación que exigiera corregir la experiencia. P4 diferenció el sudoku focalizado de actividades digitales menos dirigidas. P8 mostró que una rutina difícil de describir puede coincidir con un descanso que se considera aceptable.
+P6 relató una videollamada extensa que valoró por su contenido y por el vínculo con otra persona (P6, Q3–Q9). P7 describió un pódcast elegido mientras comía y no reconoció una obligación que exigiera corregir la experiencia (P7, Q3–Q10). P4 diferenció el sudoku focalizado de actividades digitales menos dirigidas (P4, Q3–Q8). P8 mostró que una rutina difícil de describir puede coincidir con un descanso que se considera aceptable (P8, Q3–Q10).
 
-Estos contraejemplos cumplen una función central. Demuestran que ni la duración, ni la presencia del teléfono, ni una categoría de aplicación autorizan por sí solas una intervención. Una señal activada únicamente por tiempo podría interrumpir una conversación importante, una actividad concentrada o una pausa deliberada.
+Estos contraejemplos cumplen una función central. Dentro del corpus muestran que ni la duración, ni la presencia del teléfono, ni una categoría de aplicación bastan por sí solas para decidir una intervención. De ellos se deriva un riesgo de diseño: una señal activada únicamente por tiempo podría interrumpir una conversación importante, una actividad concentrada o una pausa deliberada.
 
-La ausencia de una intención alternativa también es significativa. Si la persona no ha formulado otra actividad que quiera mantener disponible, el sistema carece de contenido legítimo para recordar. Permanecer inactivo no constituye una falla, sino una forma de respetar el propósito actual.
+La ausencia de una intención alternativa también resulta significativa para la propuesta. Si la persona no ha formulado otra actividad que quiera mantener disponible, el sistema carece de contenido legítimo para recordar. Permanecer inactivo no constituye una falla, sino una forma de respetar el propósito actual.
 
 ## 7.5 Estrategias existentes
 
-Ante la pregunta por formas de descansar o separarse del teléfono, las personas mencionaron alejarlo, cargarlo en otro lugar, silenciarlo o activar modos de no molestar. Estas estrategias fueron declaradas, pero no observadas ni comparadas. Su aporte consiste en mostrar que la distancia, el lugar y el silencio ya forman parte del repertorio cotidiano de algunos participantes.
+Ante la pregunta por formas de descansar o separarse del teléfono, las personas mencionaron alejarlo, cargarlo en otro lugar, silenciarlo o activar modos de no molestar (P1–P5 y P7–P8, Q12). Estas estrategias fueron declaradas, pero no observadas ni comparadas. Su aporte consiste en mostrar que la distancia, el lugar y el silencio ya forman parte del repertorio cotidiano de algunos participantes.
 
 También revelan una dificultad. Alejar el teléfono puede disminuir su disponibilidad, aunque no siempre evita el retorno ni recuerda qué actividad se quería comenzar. El espacio aparece como un recurso posible, pero su eficacia no puede darse por supuesta.
 
-Las respuestas frente a In(Visible) orientaron de manera preliminar hacia un tono tranquilo, discreto y no punitivo, además de la posibilidad de ignorar o silenciar. Como la pregunta no incluyó una prueba de producto, esas reacciones no constituyen validación ni permiten inferir una preferencia formal.
+Las respuestas frente a In(Visible) incluyeron solicitudes de señales calmadas, discretas o visuales y el rechazo de notas o comparaciones entre días (P3–P5 y P7–P8, Q13). Como la pregunta se refería a un concepto anterior y no incluyó una prueba de Relevo, esas reacciones solo orientan criterios generales; no validan el producto ni permiten cerrar su forma.
 
 ## 7.6 Dos tipos de usuario
 
@@ -931,6 +933,8 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+**26 de agosto de 2026 — Trazabilidad de entrevistas.** Se añadieron identificadores P/Q a los hallazgos de los apartados 7.3, 7.4 y 7.5, y se explicó su función metodológica. Antes, el capítulo identificaba participantes, pero obligaba a reconstruir manualmente qué preguntas sostenían cada paráfrasis. La revisión corrigió dos sobreextensiones: P3 describió una pausa ambivalente, no una experiencia agradable, y P6 no declaró en Q12 una estrategia de separación. También se acotó Q13 al concepto histórico In(Visible): sus respuestas solo orientan criterios generales de calma, discreción y representación visual; no sostienen preferencias formales ni validan Relevo. No se incorporaron citas literales nuevas ni se modificaron las respuestas del corpus.
 
 **26 de agosto de 2026 — Conclusiones.** El apartado 13.8, antes titulado “Síntesis del proyecto”, fue reemplazado por un cierre académico que responde la pregunta de investigación según el nivel de evidencia disponible. La versión anterior resumía el funcionamiento y declaraba que su valor debía probarse, pero no reunía hallazgos, aporte disciplinar, límites y criterio de continuidad. La nueva redacción distingue lo que sostienen la literatura, las entrevistas y la estructuración proyectual de aquello que requiere prototipado. Se mantuvieron los catorce capítulos de la arquitectura histórica y no se incorporaron resultados inexistentes.
 

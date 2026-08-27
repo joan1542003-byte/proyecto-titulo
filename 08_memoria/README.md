@@ -57,6 +57,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-08-26 — Trazabilidad P/Q del capítulo de usuarios
+
+- **Cambio:** los apartados de episodios, contraejemplos y estrategias remiten ahora a preguntas concretas del corpus anonimizado.
+- **Versión anterior:** la memoria permitía reconocer participantes, pero no localizar cada paráfrasis con suficiente rapidez.
+- **Motivo:** reforzar la verificabilidad de los hallazgos sin incorporar transcripciones extensas.
+- **Alcance:** Q13 continúa vinculada a In(Visible) y no se utiliza como validación de Relevo.
+
 ### 2026-08-26 — Conclusiones explícitas
 
 - **Cambio:** el apartado 13.8 pasó de una síntesis breve a conclusiones que responden la pregunta, precisan el aporte de Diseño y distinguen resultados de pendientes.
