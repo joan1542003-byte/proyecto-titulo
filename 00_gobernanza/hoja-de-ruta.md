@@ -87,9 +87,11 @@ Incluye bibliografía académica reciente, productos disponibles, aproximaciones
 
 ### Fase 4 — Definición de la propuesta phygital
 
-**Estado:** arquitectura provisional documentada; valor físico y forma final pendientes de las pruebas de asociación, comparación y señal.
+**Estado:** arquitectura provisional documentada y dirección visual en exploración; valor físico, identidad final y forma del objeto pendientes de selección y pruebas de asociación, comparación y señal.
 
 La propuesta se formulará desde requisitos derivados de investigación. Se registrarán propuesta de valor, principios de interacción, relación físico-digital, flujo de usuario, flujo técnico, alcance, ventajas, límites y decisiones descartadas.
+
+La [investigación visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) puede definir principios, alternativas y reglas preventivas. No puede fijar mediante imágenes la forma industrial, el canal físico o resultados de comprensión todavía no observados.
 
 ### Fase 5 — Desarrollo y factibilidad
 
@@ -125,6 +127,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Exploración visual dentro de la fase 4
+
+- **Cambio:** se incorporó la dirección visual como desarrollo de la propuesta y se separó de las decisiones que dependen de validación.
+- **Versión anterior:** la fase 4 registraba arquitectura, pero no enlazaba un proceso visual trazable.
+- **Motivo:** permitir investigación formal sin convertir una preferencia estética en especificación funcional.
+- **Decisión derivada:** comparar y seleccionar una dirección antes de sistematizarla; mantener abiertos objeto y señal física.
 
 ### 2026-08-28 — Puerta operativa de la fase A
 

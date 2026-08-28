@@ -330,9 +330,25 @@
 - **Consecuencia:** el siguiente avance verificable es un ensayo técnico interno de la señal. La documentación existente no constituye ejecución ni permite afirmar resultados.
 - **Documentos asociados:** [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md), [ensayo interno documental](../07_validacion/ensayo-interno-protocolo-01-2026-08-27.md) y [especificación de materiales de fase A](../07_validacion/especificacion-materiales-fase-a.md).
 
+## D-035 — Dirección visual mediante alternativas comparables
+
+- **Fecha:** 2026-08-28
+- **Estado:** vigente para la exploración visual; selección pendiente
+- **Decisión:** investigar una familia monocromática, modular y matricial mediante tres direcciones comparables. Los referentes de Nothing, Figma Community y Behance se utilizarán para estudiar contraste, ritmo, modularidad y construcción de signos, sin reproducir sus glifos, componentes o composiciones.
+- **Fundamento:** la gráfica necesita responder al relevo entre intención digital y señal situada, mantener autonomía y funcionar en aplicación, objeto y comunicación. Una afinidad estilística no basta para justificar identidad.
+- **Consecuencia:** tipografía matricial limitada a identidad y acentos; texto funcional en una fuente legible; rojo de identidad separado del canal físico; forma del objeto abierta; ninguna dirección se sistematiza antes de la selección del autor.
+- **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [criterios](../10_recursos_visuales/08_direccion_visual_relevo/criterios-sistema-visual.md) y [exploraciones](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/README.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — D-035
+
+- **Cambio:** se registró el método de exploración visual, sus límites de apropiación y las decisiones que permanecen abiertas.
+- **Versión anterior:** las colecciones visuales no contaban con una decisión central que gobernara selección, diferenciación y relación con aspectos no validados.
+- **Motivo:** mantener trazabilidad entre referentes, propósito del proyecto y futura sistematización.
+- **Resultado:** tres direcciones abiertas; no existe identidad visual final.
 
 ### 2026-08-28 — D-034
 
