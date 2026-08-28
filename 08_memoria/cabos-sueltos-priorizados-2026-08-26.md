@@ -43,7 +43,7 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 | Condición de activación | Se mantiene abierta entre distintas reglas observables. Sin esta definición no puede comprobarse la secuencia técnica completa. | Comparar alternativas y seleccionar una condición provisional para el primer prototipo, declarando sus límites. | 11.2, 12.2 y 13.4. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
-| Ensayo técnico de la fase A | El recorrido documental ya corrigió tiempo y plataforma, pero la señal y la activación remota no se han ensayado. | Preparar objeto simple, pulso difuso, silenciamiento y activación remota; medir el recorrido sin participantes. | `07_validacion/`. |
+| Ensayo técnico de la fase A | Los requisitos y criterios técnicos ya están definidos, pero el material no ha sido construido ni medido. | Construir el material mínimo y ejecutar las series de activación, duración, silenciamiento, reinicio, perceptibilidad instrumental, estabilidad y alimentación. | `07_validacion/especificacion-materiales-fase-a.md`. |
 | Notificación local para la fase B | La comparación exige un aviso en el mismo teléfono Android utilizado durante la espera, pero el emisor todavía no existe. | Construir y verificar un disparador local único, sin mensajería externa ni historial de cumplimiento. | 12.1, 13.2 y protocolo 01. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
@@ -73,11 +73,18 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es ensayar técnicamente la fase A sin participantes. El reclutamiento solo podrá comenzar después de verificar la señal y la activación remota, completar contacto y fecha de eliminación y obtener revisión académica del consentimiento. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
+El siguiente paso es construir el material mínimo y ejecutar su ensayo técnico sin participantes. El reclutamiento solo podrá comenzar después de verificar la señal y la activación remota, completar contacto y fecha de eliminación y obtener revisión académica del consentimiento. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Puerta técnica de fase A definida
+
+- **Cambio:** el pendiente de ensayo técnico remite ahora a una especificación con criterios medibles.
+- **Versión anterior:** se pedía preparar una señal simple, pero no se definía cuándo podía utilizarse con participantes.
+- **Motivo:** separar estabilidad y seguridad del material de comprensión de la asociación.
+- **Alcance:** el material todavía no ha sido construido ni ensayado.
 
 ### 2026-08-27 — Ensayo interno documental completado
 

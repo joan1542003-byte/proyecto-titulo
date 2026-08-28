@@ -20,6 +20,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador para comunicar propósito, voluntariedad, riesgos, datos y retiro.
 - [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
 - [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
+- [Especificación mínima de materiales](especificacion-materiales-fase-a.md): requisitos y comprobaciones técnicas previas de la señal manual de fase A.
 
 ## Regla de medición
 
@@ -40,6 +41,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Material mínimo de fase A
+
+- **Cambio:** se documentaron componentes, comportamiento, repetibilidad, silenciamiento, estabilidad y seguridad del material de prueba.
+- **Versión anterior:** el ensayo interno identificaba la necesidad, pero no definía una puerta técnica anterior a participantes.
+- **Motivo:** impedir que fallos de construcción se interpreten como fallos de asociación.
+- **Alcance:** no se diseñó la forma final ni se registraron resultados técnicos.
 
 ### 2026-08-27 — Ensayo interno documental
 
