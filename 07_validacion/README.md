@@ -19,6 +19,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador para comunicar propósito, voluntariedad, riesgos, datos y retiro.
 - [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
+- [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
 
 ## Regla de medición
 
@@ -39,6 +40,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Ensayo interno documental
+
+- **Cambio:** se añadió un recorrido temporal y operativo sin participantes; se corrigieron duración y compatibilidad Android.
+- **Versión anterior:** el protocolo podía leerse como listo, aunque la fase B no cabía en el tiempo declarado y carecía de un emisor de notificación.
+- **Motivo:** detectar fallos del procedimiento antes de fabricar, reclutar o recoger datos.
+- **Alcance:** la fase A necesita ensayo técnico; la fase B permanece bloqueada hasta disponer de una notificación local.
 
 ### 2026-08-27 — Parámetros e instrumentos preparados
 

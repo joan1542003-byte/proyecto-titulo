@@ -24,7 +24,7 @@ Iniciar la actividad tampoco constituye el resultado principal. Después de reco
 
 ## Participantes y alcance
 
-La muestra formativa estará compuesta por seis personas de 18 a 30 años que no hayan participado en las entrevistas anteriores. Cada una deberá poder describir un episodio reciente en que otra intención dejó de orientar el momento y formular una actividad con un primer paso concreto. No se exigirá utilizar Android, porque la activación será manual y la integración técnica queda fuera de esta prueba.
+La muestra formativa estará compuesta por seis personas de 18 a 30 años que no hayan participado en las entrevistas anteriores. Cada una deberá poder describir un episodio reciente en que otra intención dejó de orientar el momento, formular una actividad con un primer paso concreto y utilizar un teléfono Android compatible con el prototipo local de notificación. La fase A mantendrá activación manual; Android se incorpora únicamente en la fase B para que el aviso digital aparezca en el mismo teléfono utilizado durante la espera.
 
 El reclutamiento se realizará mediante referencias, con participación voluntaria y sin pago. Estas condiciones deberán informarse antes de aceptar. Si la convocatoria o la compensación cambian, la modificación se registrará antes de incorporar a la primera persona.
 
@@ -114,13 +114,13 @@ La ejecución utilizará el [consentimiento informado](consentimiento-protocolo-
 
 | Parámetro | Decisión provisional | Razón y control |
 | --- | --- | --- |
-| Sesiones | Fase A y fase B se realizarán en sesiones distintas de 35 a 50 minutos. | Separar la comprensión inicial de la comparación reduce cansancio y aprendizaje inmediato. |
+| Sesiones | La fase A durará entre 35 y 45 minutos; la fase B, entre 60 y 75 minutos. | Tres condiciones con intervalos de ocho minutos no caben de manera responsable en una sesión de 50 minutos. Separar las fases reduce cansancio y aprendizaje inmediato. |
 | Intervalo | La señal aparecerá ocho minutos después de terminar la configuración. | Es un intervalo breve y controlable; no permite inferir recuerdo a largo plazo. |
 | Actividad de espera | Ocio digital elegido por la persona en su propio teléfono, mantenido durante el intervalo. | Conserva relación con el problema sin imponer una aplicación específica. Las notificaciones ajenas se silenciarán durante el ensayo. |
 | Señal provisional | Tres pulsos de luz blanca cálida y difusa durante tres segundos, con intensidad comprobada antes de comenzar. | Aísla la asociación sin decidir el canal final. Si la luz no es accesible, se ofrecerá una señal táctil equivalente y el caso se analizará por separado. |
 | Lugar situado | Junto al objeto o material necesario para ejecutar el primer paso. | La persona debe explicar la relación antes de activar. |
 | Lugar neutro | En la misma habitación y con visibilidad semejante, al menos a un metro del primer paso y fuera de su recorrido inmediato. | Busca conservar perceptibilidad sin mantener la relación semántica con el comienzo. |
-| Notificación | Un único aviso de Android con el texto `Relevo · Tu intención está disponible`, sin mostrar la intención ni repetir el aviso. | Funciona como alternativa digital realista. Abrir el teléfono para recuperar el contenido se registra como consulta. |
+| Notificación | Un único aviso local de Android con el texto `Relevo · Tu intención está disponible`, sin mostrar la intención ni repetir el aviso. | Debe aparecer en el teléfono usado durante la espera. Abrirlo para recuperar el contenido se registra como consulta. La fase B no comenzará hasta disponer de un prototipo que emita el aviso sin almacenar historial ni depender de mensajería externa. |
 | Intenciones de la fase B | Tres intenciones personales distintas, con primer paso claro y valoración semejante declarada por la persona. | Evita repetir exactamente la misma asociación. La diferencia entre intenciones se conserva como límite interpretativo. |
 | Contrabalanceo | Se utilizarán las seis secuencias posibles de las condiciones A, B y C, una por participante. | Distribuye el efecto del orden entre las seis personas. |
 | Consentimiento y retiro | Consentimiento escrito antes de la sesión; retiro posible sin justificar y sin conservar la ficha incompleta. | Separa participación voluntaria de desempeño en la prueba. |
@@ -138,6 +138,13 @@ International Organization for Standardization. (2023). *Systems and software en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-27 — Correcciones del ensayo interno documental
+
+- **Cambio:** se amplió la fase B a 60–75 minutos, se incorporó compatibilidad Android al reclutamiento y se condicionó la comparación a un emisor local estandarizado.
+- **Versión anterior:** ambas sesiones se limitaban a 35–50 minutos y Android no era requisito, aunque una condición exigía recibir una notificación en el teléfono personal.
+- **Motivo:** eliminar contradicciones de tiempo y soporte antes de involucrar participantes.
+- **Alcance:** la fase A continúa siendo manual; la fase B permanece bloqueada hasta disponer del prototipo de notificación.
 
 ### 2026-08-27 — Parámetros de ejecución cerrados
 

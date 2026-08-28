@@ -43,7 +43,8 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 | Condición de activación | Se mantiene abierta entre distintas reglas observables. Sin esta definición no puede comprobarse la secuencia técnica completa. | Comparar alternativas y seleccionar una condición provisional para el primer prototipo, declarando sus límites. | 11.2, 12.2 y 13.4. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
-| Revisión piloto de los instrumentos | El protocolo, el consentimiento y la ficha están redactados, pero no se han probado como conjunto. | Ejecutar una revisión interna sin datos de participantes, completar contacto y fecha de eliminación, y obtener revisión académica antes de reclutar. | `07_validacion/`. |
+| Ensayo técnico de la fase A | El recorrido documental ya corrigió tiempo y plataforma, pero la señal y la activación remota no se han ensayado. | Preparar objeto simple, pulso difuso, silenciamiento y activación remota; medir el recorrido sin participantes. | `07_validacion/`. |
+| Notificación local para la fase B | La comparación exige un aviso en el mismo teléfono Android utilizado durante la espera, pero el emisor todavía no existe. | Construir y verificar un disparador local único, sin mensajería externa ni historial de cumplimiento. | 12.1, 13.2 y protocolo 01. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
 
@@ -72,11 +73,18 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es revisar internamente el protocolo, el consentimiento y la ficha como un conjunto, sin utilizar datos de participantes. Después de completar contacto, fecha de eliminación y revisión académica, podrá comenzar el reclutamiento para la prueba de asociación. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación.
+El siguiente paso es ensayar técnicamente la fase A sin participantes. El reclutamiento solo podrá comenzar después de verificar la señal y la activación remota, completar contacto y fecha de eliminación y obtener revisión académica del consentimiento. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Ensayo interno documental completado
+
+- **Cambio:** la revisión piloto general se dividió en ensayo técnico de fase A y desarrollo de la notificación local para fase B.
+- **Versión anterior:** los instrumentos estaban preparados, pero no se habían recorrido tiempos y dependencias como conjunto.
+- **Motivo:** el recorrido detectó que la fase B excedía el tiempo declarado y dependía de Android sin exigirlo en la muestra.
+- **Alcance:** no participaron usuarios ni se produjeron resultados; el reclutamiento sigue detenido.
 
 ### 2026-08-27 — Parámetros e instrumentos preparados
 

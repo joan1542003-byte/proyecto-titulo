@@ -15,7 +15,7 @@ La actividad busca conocer si una señal breve puede asociarse con una intenció
 
 ## Qué se le pedirá
 
-La participación contempla dos sesiones de 35 a 50 minutos. Se le pedirá formular actividades cotidianas que quiera mantener disponibles, identificar cómo comienzan, situar un objeto de prueba, utilizar su teléfono durante un intervalo breve y explicar qué comprendió después de una señal. Puede ignorar la señal, continuar con el teléfono, cambiar de idea o detener la actividad.
+La participación contempla dos sesiones. La primera durará entre 35 y 45 minutos; la segunda, entre 60 y 75 minutos. Se le pedirá formular actividades cotidianas que quiera mantener disponibles, identificar cómo comienzan, situar un objeto de prueba, utilizar su teléfono Android durante intervalos breves y explicar qué comprendió después de una señal. Puede ignorar la señal, continuar con el teléfono, cambiar de idea o detener la actividad.
 
 ## Participación voluntaria
 
@@ -50,6 +50,13 @@ Declaro que leí o escuché esta información, pude hacer preguntas y acepto par
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-27 — Duración y plataforma corregidas
+
+- **Cambio:** se diferenciaron las duraciones de ambas sesiones y se explicitó el uso de Android en la comparación.
+- **Versión anterior:** el documento indicaba 35–50 minutos para las dos sesiones y hablaba de teléfono sin precisar plataforma.
+- **Motivo:** mantener correspondencia con el ensayo interno del protocolo y evitar una invitación incompleta.
+- **Alcance:** el consentimiento continúa como borrador y no debe utilizarse antes de completar sus campos y revisión.
 
 ### 2026-08-27 — Creación del borrador
 
