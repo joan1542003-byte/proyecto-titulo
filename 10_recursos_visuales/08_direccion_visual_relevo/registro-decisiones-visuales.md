@@ -15,7 +15,8 @@ Este registro distingue decisiones de trabajo, alternativas candidatas y aspecto
 | V-007 | La forma física mostrada en los tableros no gobierna el producto. | Forma, material, canal y electrónica continúan sujetos a pruebas. | Vigente como límite. | Solo puede cerrarse después de asociación, comparación y desarrollo formal. |
 | V-008 | El rojo de identidad no determina el color del pulso físico. | Una elección gráfica no demuestra percepción, accesibilidad o convivencia. | Vigente como límite. | Probar el canal físico por separado. |
 | V-009 | La aplicación no se organizará como tablero de métricas o productividad. | Relevo configura un ciclo y conserva autonomía; no mide cumplimiento. | Vigente. | Revisar cada pantalla y componente de alta fidelidad. |
-| V-010 | Las tres direcciones permanecen abiertas hasta la selección del autor. | Cada alternativa resuelve de forma distinta diferenciación, calma y transferencia entre soportes. | Abierta. | Seleccionar, combinar o solicitar una nueva iteración. |
+| V-010 | `Transferencia situada` es la dirección conceptual seleccionada. | Presenta con mayor claridad el paso entre intención, vínculo y señal, y coincide con el tono visual buscado por el autor. | Vigente. | Revisar su desempeño al construir el sistema y sus aplicaciones. |
+| V-011 | De `Ensamble de relevo` se incorpora únicamente la secuencia origen–vínculo–señal situada. | Esta regla aporta una gramática propia sin imponer una forma industrial ni una apariencia mecánica. | Vigente. | Evitar que el vínculo se convierta en progreso lineal, control o cumplimiento. |
 
 ## Decisiones que no deben anticiparse
 
@@ -30,6 +31,13 @@ Este registro distingue decisiones de trabajo, alternativas candidatas y aspecto
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Selección de dirección
+
+- **Cambio:** V-010 pasó de alternativa abierta a dirección seleccionada y se añadió V-011 para delimitar el aporte de la tercera exploración.
+- **Versión anterior:** las tres direcciones seguían abiertas y la posible combinación no distinguía con precisión qué rasgo se adoptaría.
+- **Motivo:** registrar la decisión del autor sin confundir una regla gráfica con la forma del producto.
+- **Alcance:** se cierra la dirección conceptual, no el diseño industrial ni los parámetros de la señal física.
 
 ### 2026-08-28 — Creación
 

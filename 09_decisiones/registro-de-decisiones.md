@@ -333,15 +333,30 @@
 ## D-035 — Dirección visual mediante alternativas comparables
 
 - **Fecha:** 2026-08-28
-- **Estado:** vigente para la exploración visual; selección pendiente
+- **Estado:** vigente como método; selección resuelta por D-036
 - **Decisión:** investigar una familia monocromática, modular y matricial mediante tres direcciones comparables. Los referentes de Nothing, Figma Community y Behance se utilizarán para estudiar contraste, ritmo, modularidad y construcción de signos, sin reproducir sus glifos, componentes o composiciones.
 - **Fundamento:** la gráfica necesita responder al relevo entre intención digital y señal situada, mantener autonomía y funcionar en aplicación, objeto y comunicación. Una afinidad estilística no basta para justificar identidad.
-- **Consecuencia:** tipografía matricial limitada a identidad y acentos; texto funcional en una fuente legible; rojo de identidad separado del canal físico; forma del objeto abierta; ninguna dirección se sistematiza antes de la selección del autor.
+- **Consecuencia:** tipografía matricial limitada a identidad y acentos; texto funcional en una fuente legible; rojo de identidad separado del canal físico; forma del objeto abierta. La selección posterior se registra en D-036.
 - **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [criterios](../10_recursos_visuales/08_direccion_visual_relevo/criterios-sistema-visual.md) y [exploraciones](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/README.md).
+
+## D-036 — Transferencia situada como dirección visual seleccionada
+
+- **Fecha:** 2026-08-28
+- **Estado:** vigente
+- **Decisión:** adoptar `Transferencia situada` como base conceptual de la dirección visual e incorporar de `Ensamble de relevo` únicamente la secuencia origen–vínculo–señal situada.
+- **Fundamento:** la primera dirección comunica con claridad la transferencia entre soportes y responde al tono buscado; la regla de la tercera aporta una gramática propia sin exigir su apariencia mecánica.
+- **Consecuencia:** puede comenzar la sistematización de tipografía, retícula y componentes. No se adopta el objeto rectangular de la tercera dirección ni se cierran forma industrial, color o canal físico.
+- **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [tablero seleccionado](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/direccion-seleccionada-v1-transferencia-situada.png) y [registro visual](../10_recursos_visuales/08_direccion_visual_relevo/registro-decisiones-visuales.md).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — D-036
+
+- **Cambio:** se registró la selección de `Transferencia situada` y el alcance preciso del aporte de `Ensamble de relevo`.
+- **Versión anterior:** D-035 mantenía las tres direcciones abiertas para comparación.
+- **Motivo:** hacer trazable la elección del autor y evitar que la lógica gráfica adoptada se interprete como definición formal del objeto.
 
 ### 2026-08-28 — D-035
 

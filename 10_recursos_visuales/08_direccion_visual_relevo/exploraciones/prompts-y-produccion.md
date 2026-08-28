@@ -41,16 +41,24 @@ El prompt definió dos campos modulares que intercambian una unidad mediante un 
 | `direccion-01-transferencia-situada.png` | 1672 × 941 px | Comparación conceptual. |
 | `direccion-02-campo-ambiental.png` | 1672 × 941 px | Comparación conceptual. |
 | `direccion-03-ensamble-de-relevo.png` | 1672 × 941 px | Comparación conceptual. |
+| `direccion-seleccionada-v1-transferencia-situada.png` | 1672 × 941 px | Refinamiento de la dirección seleccionada. |
 
 Aunque el prompt solicitó una composición 4K, el generador integrado produjo archivos de 1672 × 941 px. Son suficientes para evaluar dirección, pero no deben presentarse como originales 4K ni utilizarse como artes finales de impresión.
 
 ## Control de calidad
 
-Se revisaron jerarquía, coherencia, recorte, presencia del objeto fuera del teléfono, ausencia de pantalla física, relación con la memoria y riesgos semánticos. No se corrigieron los textos generados ni las formas del objeto porque esas diferencias permiten detectar problemas antes de seleccionar una dirección.
+Se revisaron jerarquía, coherencia, recorte, presencia del objeto fuera del teléfono, ausencia de pantalla física, relación con la memoria y riesgos semánticos. En la versión seleccionada se corrigieron la redacción imperativa, el uso innecesario de inglés y la ambigüedad entre vínculo gráfico y forma industrial. La imagen tomó como referencias internas las direcciones 01 y 03, pero mantuvo el objeto como estudio material abierto.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Refinamiento de la selección
+
+- **Cambio:** se añadió la salida refinada y se documentaron sus referencias y correcciones.
+- **Versión anterior:** el registro contenía únicamente las tres alternativas iniciales.
+- **Motivo:** preservar la trazabilidad entre selección, retroalimentación y nueva generación.
+- **Alcance:** la salida conserva resolución exploratoria de 1672 × 941 px y no constituye arte final de impresión.
 
 ### 2026-08-28 — Registro de generación
 

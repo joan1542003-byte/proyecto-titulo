@@ -2,7 +2,7 @@
 
 ## Estado
 
-Exploración fundamentada en desarrollo. Este directorio no fija todavía una identidad definitiva ni la forma industrial del objeto. Organiza los criterios, referentes y alternativas que deberán revisarse antes de producir un manual visual o trasladar la dirección seleccionada a la aplicación, el objeto y la memoria.
+Dirección conceptual seleccionada y en proceso de sistematización. `Transferencia situada` constituye la base visual de Relevo e incorpora, de manera acotada, la relación origen–vínculo–señal explorada en `Ensamble de relevo`. La decisión no fija todavía la forma industrial del objeto, el canal físico ni el color definitivo de la señal.
 
 ## Pregunta rectora
 
@@ -16,25 +16,33 @@ Exploración fundamentada en desarrollo. Este directorio no fija todavía una id
 - [Auditoría de exploraciones anteriores](auditoria-exploraciones-previas.md).
 - [Registro de decisiones visuales](registro-decisiones-visuales.md).
 - `referencias/`: imágenes aportadas por el autor y registro de procedencia.
-- [Exploraciones](exploraciones/README.md): tres alternativas y su comparación preliminar.
+- [Exploraciones](exploraciones/README.md): tres alternativas, comparación y dirección seleccionada.
+- [Tablero refinado de la dirección seleccionada](exploraciones/direccion-seleccionada-v1-transferencia-situada.png).
 
 ## Relación con exploraciones anteriores
 
 Las colecciones previas de `10_recursos_visuales` siguen siendo antecedentes. Sus motivos de pulso, vacío, lugar y transición pueden informar esta etapa, pero la paleta cobalto, la ilustración serigráfica y la forma concreta de los objetos no se consideran decisiones vigentes. La nueva exploración se concentra en un lenguaje monocromático, modular y matricial, con un acento cromático restringido.
 
-## Regla de cierre
+## Decisión vigente
 
-Una dirección solo podrá declararse seleccionada cuando:
+La dirección 01 fue seleccionada por el autor el 28 de agosto de 2026. Su desarrollo deberá:
 
-1. pueda distinguirse de Nothing y de sus derivados;
-2. funcione en aplicación, objeto, documentación y comunicación;
-3. mantenga legibilidad y accesibilidad sin depender de color ni tipografía de puntos;
-4. represente una señal que abre una decisión, no una alarma o sanción;
-5. no cierre aspectos del producto que todavía requieren validación.
+1. distinguirse de Nothing y de sus derivados;
+2. funcionar en aplicación, objeto, documentación y comunicación;
+3. mantener legibilidad y accesibilidad sin depender de color ni tipografía de puntos;
+4. representar una señal que abre una decisión, no una alarma o sanción;
+5. no cerrar aspectos del producto que todavía requieren validación.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Selección de Transferencia situada
+
+- **Cambio:** se seleccionó la dirección 01 y se produjo un tablero refinado que incorpora la secuencia origen–vínculo–señal de la dirección 03.
+- **Versión anterior:** las tres alternativas permanecían abiertas y no existía una síntesis elegida.
+- **Motivo:** conservar la claridad y jerarquía de la primera dirección, sumando una gramática relacional propia sin adoptar la apariencia mecánica ni la forma del objeto de la tercera.
+- **Alcance:** la selección permite iniciar la sistematización visual; no define todavía la forma industrial, el canal físico o su validación con usuarios.
 
 ### 2026-08-28 — Apertura de la dirección visual
 

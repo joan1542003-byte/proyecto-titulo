@@ -2,7 +2,15 @@
 
 ## Estado
 
-Tres alternativas generadas para comparación. Ninguna constituye una identidad seleccionada ni un diseño final de la aplicación o del objeto. Los textos y formas presentes en las imágenes son material de exploración y deberán reconstruirse, corregirse y sistematizarse después de elegir una dirección.
+Tres alternativas generadas para comparación. La dirección 01, `Transferencia situada`, fue seleccionada como base conceptual. Los textos y formas de las primeras imágenes continúan siendo material exploratorio y no constituyen el diseño final de la aplicación o del objeto.
+
+## Dirección seleccionada
+
+![Transferencia situada refinada](direccion-seleccionada-v1-transferencia-situada.png)
+
+La versión refinada conserva la jerarquía, el contraste y la noción de transferencia de la primera alternativa. De la dirección 03 adopta solo una regla abstracta: un origen se relaciona mediante un vínculo breve con una señal situada. No adopta su objeto rectangular, su apariencia mecánica ni la idea de progreso lineal.
+
+También corrige problemas detectados en la primera generación. Se elimina la instrucción `Inicia lo que importa`, porque atribuye valor a una actividad y contradice la autonomía que busca Relevo. En su lugar, el tablero utiliza una formulación descriptiva: `Una señal breve. La decisión sigue abierta.` El objeto representado continúa siendo un estudio material, no una forma seleccionada.
 
 ## Dirección 01 — Transferencia situada
 
@@ -91,7 +99,7 @@ Escala: 1 = débil; 5 = fuerte. La evaluación es editorial y sirve para orienta
 
 `Transferencia situada` es la alternativa más próxima al gusto expresado por el autor y comunica con fuerza el cambio de estado, pero necesita alejarse de la tipografía punteada y suavizar su semántica. `Campo ambiental` protege mejor el tono de Relevo, aunque requiere una estructura más reconocible. `Ensamble de relevo` ofrece la gramática más propia y transferible, pero debe reducir su apariencia mecánica.
 
-Una evolución razonable podría tomar la lógica de origen–vínculo–destino de `Ensamble de relevo`, la jerarquía de `Transferencia situada` y la calma material de `Campo ambiental`. Esta combinación deberá producirse como una nueva alternativa después de la selección del autor; no se considera elegida automáticamente.
+La selección confirma la jerarquía de `Transferencia situada` e incorpora la lógica origen–vínculo–señal de `Ensamble de relevo`. La calma material de `Campo ambiental` permanece como criterio secundario para futuras aplicaciones, sin convertir las tres propuestas en una mezcla indistinta.
 
 ## Producción
 
@@ -100,6 +108,13 @@ Las tres imágenes fueron generadas mediante el generador integrado, utilizando 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Selección y refinamiento
+
+- **Cambio:** se registró la selección de la dirección 01 y se añadió una versión refinada con la lógica relacional de la dirección 03.
+- **Versión anterior:** el documento terminaba en una comparación abierta y sugería una combinación todavía no elegida.
+- **Motivo:** convertir la preferencia del autor en una decisión trazable y separar la gramática gráfica adoptada de la forma objetual descartada.
+- **Alcance:** el tablero orienta la siguiente etapa; tipografías, retícula, componentes, objeto y señal física aún deben sistematizarse o validarse según corresponda.
 
 ### 2026-08-28 — Tres direcciones comparables
 

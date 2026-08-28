@@ -34,7 +34,7 @@ La versión breve y mantenida después de cada actualización está en el [resum
 
 El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La fase A aún requiere construir y comprobar técnicamente ese material antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
 
-La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) se encuentra en exploración. Existen tres alternativas comparables y criterios documentados, pero todavía no se ha seleccionado una identidad ni se han cerrado logotipo, tipografía, forma del objeto o color de la señal física.
+La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) ya cuenta con una base conceptual seleccionada: `Transferencia situada`. Su refinamiento incorpora la secuencia origen–vínculo–señal de una segunda exploración, sin adoptar su forma objetual. Permanecen abiertos el logotipo final, la tipografía, la forma industrial y los parámetros de la señal física.
 
 La base metodológica del corpus quedó consolidada:
 
@@ -97,6 +97,12 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Dirección visual seleccionada
+
+- **Cambio:** se actualizó el estado visual desde exploración abierta a dirección conceptual seleccionada.
+- **Versión anterior:** el repositorio informaba tres alternativas sin selección.
+- **Motivo:** reflejar la decisión del autor y mantener visibles los aspectos que todavía requieren desarrollo o validación.
 
 ### 2026-08-28 — Dirección visual en exploración
 
