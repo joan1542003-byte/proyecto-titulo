@@ -17,7 +17,7 @@ Dirección conceptual seleccionada y en proceso de sistematización. `Transferen
 - [Registro de decisiones visuales](registro-decisiones-visuales.md).
 - `referencias/`: imágenes aportadas por el autor y registro de procedencia.
 - [Exploraciones](exploraciones/README.md): tres alternativas, comparación y dirección seleccionada.
-- [Tablero refinado de la dirección seleccionada](exploraciones/direccion-seleccionada-v1-transferencia-situada.png).
+- [Tablero refinado de la dirección seleccionada](exploraciones/direccion-seleccionada-v2-sistema-modular.png).
 
 ## Relación con exploraciones anteriores
 
@@ -27,7 +27,7 @@ Las colecciones previas de `10_recursos_visuales` siguen siendo antecedentes. Su
 
 La dirección 01 fue seleccionada por el autor el 28 de agosto de 2026. Su desarrollo deberá:
 
-1. distinguirse de Nothing y de sus derivados;
+1. construir un lenguaje reconocible como propio;
 2. funcionar en aplicación, objeto, documentación y comunicación;
 3. mantener legibilidad y accesibilidad sin depender de color ni tipografía de puntos;
 4. representar una señal que abre una decisión, no una alarma o sanción;
@@ -36,6 +36,13 @@ La dirección 01 fue seleccionada por el autor el 28 de agosto de 2026. Su desar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Refinamiento modular de la dirección seleccionada
+
+- **Cambio:** se reemplazó el tablero de síntesis por una composición más modular, variada y próxima a la riqueza visual de la primera exploración.
+- **Versión anterior:** la síntesis privilegiaba un gran campo oscuro y comunicaba la secuencia con claridad, pero reducía demasiado la variedad de componentes.
+- **Motivo:** demostrar que la misma regla gráfica puede operar en palabra, diagrama, módulo, aplicación editorial y estudio material sin perder coherencia.
+- **Alcance:** el tablero desarrolla el sistema gráfico; el objeto representado sigue siendo una aproximación material y no una forma industrial definida.
 
 ### 2026-08-28 — Selección de Transferencia situada
 

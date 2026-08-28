@@ -68,7 +68,7 @@ Convertir la alternativa seleccionada en tokens, reglas tipográficas, component
 | Criterio | Pregunta de control |
 | --- | --- |
 | Pertinencia | ¿Representa recuperación, transición y elección sin comunicar control o culpa? |
-| Diferenciación | ¿Puede reconocerse como Relevo sin depender de copiar la composición, tipografía o iconografía de Nothing? |
+| Diferenciación | ¿Puede reconocerse como Relevo sin depender de copiar la composición, tipografía o iconografía de sus referentes? |
 | Coherencia phygital | ¿La misma lógica puede trasladarse entre aplicación, señal física y comunicación? |
 | Legibilidad | ¿El contenido sigue siendo claro cuando se elimina la tipografía matricial decorativa? |
 | Accesibilidad | ¿Los estados se distinguen por más de una señal y mantienen contraste, tamaño y control adecuados? |
@@ -78,11 +78,18 @@ Convertir la alternativa seleccionada en tokens, reglas tipográficas, component
 
 ## Condición para avanzar
 
-La etapa de sistematización no comienza hasta comparar las tres alternativas y registrar una selección. Elegir una dirección visual no validará el producto ni cerrará el canal de señal física.
+Las tres alternativas ya fueron comparadas y la dirección seleccionada quedó registrada. La sistematización puede avanzar sin presentar esta elección visual como validación del producto ni como definición del canal físico.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Apertura de la sistematización
+
+- **Cambio:** se actualizó la condición de avance después de seleccionar la dirección y se generalizó el criterio de diferenciación frente a sus referentes.
+- **Versión anterior:** el plan mantenía la sistematización bloqueada hasta una selección todavía pendiente.
+- **Motivo:** alinear el plan con la decisión vigente y justificar la identidad desde Relevo.
+- **Alcance:** se habilita el desarrollo gráfico; no se valida la experiencia ni se define la señal física.
 
 ### 2026-08-28 — Creación del plan
 

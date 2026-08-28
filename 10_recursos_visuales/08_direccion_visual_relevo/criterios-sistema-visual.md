@@ -112,7 +112,7 @@ Las acciones esenciales utilizarán símbolos convencionales y etiquetas claras.
 
 ## Usos que deben evitarse
 
-- copiar composiciones, glifos o widgets reconocibles de Nothing;
+- copiar composiciones, signos o componentes reconocibles de terceros;
 - utilizar el rojo para culpa, fallo de conducta o bloqueo;
 - componer párrafos completos con tipografía matricial;
 - convertir cada sección en una tarjeta redondeada;
@@ -134,6 +134,13 @@ WCAG 2.2 establece que el color no debe ser el único medio para comunicar infor
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Criterio de autoría visual
+
+- **Cambio:** la prohibición de copia se formuló de manera general para signos, componentes y composiciones de terceros.
+- **Versión anterior:** el límite se expresaba mediante el nombre de un referente específico.
+- **Motivo:** evaluar la originalidad del sistema desde una regla permanente y no desde una comparación pública de marcas.
+- **Alcance:** las fuentes consultadas se mantienen registradas por trazabilidad académica.
 
 ### 2026-08-28 — Primera gramática visual
 

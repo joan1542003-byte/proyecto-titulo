@@ -32,7 +32,7 @@ La colección `01_escenas`–`05_contactos` utiliza cobalto, marfil, coral y una
 - `relevo-matriz-03-traza-pulso.png`, por expresar una señal acotada;
 - `relevo-4k-04-umbral-sin-objeto.png`, por mantener la relación espacial sin fijar una forma física.
 
-Requieren reformulación porque mezclan puntos, cobalto, coral, órbitas y efectos de impresión sin una semántica estable. `relevo-matriz-04-glyph-modular.png` presenta además un riesgo alto de parecer una variación del lenguaje Glyph.
+Requieren reformulación porque mezclan puntos, cobalto, coral, órbitas y efectos de impresión sin una semántica estable. `relevo-matriz-04-glyph-modular.png` presenta además un riesgo alto de parecer una variación demasiado directa de un referente comercial.
 
 ## Colección expandida 4K
 
@@ -60,11 +60,18 @@ Esta decisión de almacenamiento no debe resolverse agregando todos los archivos
 
 ## Dictamen
 
-Las colecciones anteriores no se descartan. Se reclasifican como archivo de exploración. Su aporte más sólido está en los conceptos de umbral, señal, vacío y relación espacial. La nueva dirección debe reducir la cantidad de recursos, asignar una función estable a cada forma y construir una diferencia reconocible respecto de Nothing.
+Las colecciones anteriores no se descartan. Se reclasifican como archivo de exploración. Su aporte más sólido está en los conceptos de umbral, señal, vacío y relación espacial. La nueva dirección debe reducir la cantidad de recursos, asignar una función estable a cada forma y construir una diferencia reconocible frente a sus antecedentes visuales.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Reformulación de la comparación visual
+
+- **Cambio:** el dictamen y el riesgo de semejanza se expresaron frente a antecedentes visuales y referentes comerciales, sin convertir una marca externa en parte del relato de Relevo.
+- **Versión anterior:** la auditoría nombraba directamente el lenguaje comercial con el que algunas piezas podían confundirse.
+- **Motivo:** mantener la comparación como herramienta interna de evaluación y fundamentar la propuesta desde sus propias reglas.
+- **Alcance:** los nombres históricos de archivos se conservan para no romper la trazabilidad del archivo.
 
 ### 2026-08-28 — Auditoría inicial
 

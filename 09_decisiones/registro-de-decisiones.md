@@ -334,7 +334,7 @@
 
 - **Fecha:** 2026-08-28
 - **Estado:** vigente como método; selección resuelta por D-036
-- **Decisión:** investigar una familia monocromática, modular y matricial mediante tres direcciones comparables. Los referentes de Nothing, Figma Community y Behance se utilizarán para estudiar contraste, ritmo, modularidad y construcción de signos, sin reproducir sus glifos, componentes o composiciones.
+- **Decisión:** investigar una familia monocromática, modular y matricial mediante tres direcciones comparables. Los referentes aportados se utilizarán para estudiar contraste, ritmo, modularidad y construcción de signos, sin reproducir signos, componentes o composiciones reconocibles.
 - **Fundamento:** la gráfica necesita responder al relevo entre intención digital y señal situada, mantener autonomía y funcionar en aplicación, objeto y comunicación. Una afinidad estilística no basta para justificar identidad.
 - **Consecuencia:** tipografía matricial limitada a identidad y acentos; texto funcional en una fuente legible; rojo de identidad separado del canal físico; forma del objeto abierta. La selección posterior se registra en D-036.
 - **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [criterios](../10_recursos_visuales/08_direccion_visual_relevo/criterios-sistema-visual.md) y [exploraciones](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/README.md).
@@ -346,11 +346,17 @@
 - **Decisión:** adoptar `Transferencia situada` como base conceptual de la dirección visual e incorporar de `Ensamble de relevo` únicamente la secuencia origen–vínculo–señal situada.
 - **Fundamento:** la primera dirección comunica con claridad la transferencia entre soportes y responde al tono buscado; la regla de la tercera aporta una gramática propia sin exigir su apariencia mecánica.
 - **Consecuencia:** puede comenzar la sistematización de tipografía, retícula y componentes. No se adopta el objeto rectangular de la tercera dirección ni se cierran forma industrial, color o canal físico.
-- **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [tablero seleccionado](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/direccion-seleccionada-v1-transferencia-situada.png) y [registro visual](../10_recursos_visuales/08_direccion_visual_relevo/registro-decisiones-visuales.md).
+- **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [tablero seleccionado](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/direccion-seleccionada-v2-sistema-modular.png) y [registro visual](../10_recursos_visuales/08_direccion_visual_relevo/registro-decisiones-visuales.md).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Reformulación de D-035
+
+- **Cambio:** la decisión sobre referentes se redactó como una regla general de estudio y no reproducción de signos, componentes o composiciones reconocibles.
+- **Versión anterior:** D-035 enumeraba marcas y plataformas específicas dentro de la decisión central.
+- **Motivo:** mantener los nombres de las fuentes en la investigación y la bibliografía, pero justificar públicamente la dirección desde el funcionamiento de Relevo.
 
 ### 2026-08-28 — D-036
 

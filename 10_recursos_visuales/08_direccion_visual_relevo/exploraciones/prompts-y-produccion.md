@@ -7,7 +7,7 @@ Las tres generaciones utilizaron como referencias de estilo:
 - `../referencias/referencia-01-widgets-modulares.png`;
 - `../referencias/referencia-02-matriz-tipografica.png`.
 
-Ambas imágenes se indicaron como inspiración para contraste, modularidad, ritmo y matrices de puntos. Los prompts prohibieron reproducir logos, Glyph Interface, widgets, tipografías o composiciones reconocibles de Nothing.
+Ambas imágenes se indicaron como inspiración para contraste, modularidad, ritmo y matrices de puntos. Los prompts prohibieron reproducir marcas, interfaces, componentes, tipografías o composiciones reconocibles de terceros.
 
 ## Especificación común
 
@@ -42,6 +42,7 @@ El prompt definió dos campos modulares que intercambian una unidad mediante un 
 | `direccion-02-campo-ambiental.png` | 1672 × 941 px | Comparación conceptual. |
 | `direccion-03-ensamble-de-relevo.png` | 1672 × 941 px | Comparación conceptual. |
 | `direccion-seleccionada-v1-transferencia-situada.png` | 1672 × 941 px | Refinamiento de la dirección seleccionada. |
+| `direccion-seleccionada-v2-sistema-modular.png` | 1672 × 941 px | Segunda iteración: sistema modular seleccionado. |
 
 Aunque el prompt solicitó una composición 4K, el generador integrado produjo archivos de 1672 × 941 px. Son suficientes para evaluar dirección, pero no deben presentarse como originales 4K ni utilizarse como artes finales de impresión.
 
@@ -52,6 +53,13 @@ Se revisaron jerarquía, coherencia, recorte, presencia del objeto fuera del tel
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Segunda iteración modular
+
+- **Cambio:** se añadió una versión refinada a partir de la primera exploración y de la síntesis v1; después se corrigieron una errata y el nombre provisional de la muestra tipográfica.
+- **Versión anterior:** la v1 comunicaba la secuencia principal, pero no exploraba con suficiente amplitud su aplicación como sistema.
+- **Motivo:** recuperar densidad, variedad de escalas y componentes sin copiar signos o composiciones reconocibles de los referentes.
+- **Alcance:** la salida es un tablero conceptual; no reemplaza la construcción vectorial ni las pruebas posteriores de legibilidad y aplicación.
 
 ### 2026-08-28 — Refinamiento de la selección
 

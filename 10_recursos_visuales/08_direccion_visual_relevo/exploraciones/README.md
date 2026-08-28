@@ -6,11 +6,13 @@ Tres alternativas generadas para comparación. La dirección 01, `Transferencia 
 
 ## Dirección seleccionada
 
-![Transferencia situada refinada](direccion-seleccionada-v1-transferencia-situada.png)
+![Transferencia situada refinada](direccion-seleccionada-v2-sistema-modular.png)
 
 La versión refinada conserva la jerarquía, el contraste y la noción de transferencia de la primera alternativa. De la dirección 03 adopta solo una regla abstracta: un origen se relaciona mediante un vínculo breve con una señal situada. No adopta su objeto rectangular, su apariencia mecánica ni la idea de progreso lineal.
 
 También corrige problemas detectados en la primera generación. Se elimina la instrucción `Inicia lo que importa`, porque atribuye valor a una actividad y contradice la autonomía que busca Relevo. En su lugar, el tablero utiliza una formulación descriptiva: `Una señal breve. La decisión sigue abierta.` El objeto representado continúa siendo un estudio material, no una forma seleccionada.
+
+La segunda iteración recupera la densidad y variedad de la primera propuesta mediante módulos de distintas escalas. Esta decisión no es decorativa: permite comprobar que la secuencia origen–vínculo–señal puede sostener el nombre, los diagramas, los componentes digitales y la comunicación editorial. La matriz de puntos se reserva para signos y transiciones; el texto explicativo utiliza una tipografía de lectura convencional.
 
 ## Dirección 01 — Transferencia situada
 
@@ -29,7 +31,7 @@ Una matriz densa cede protagonismo a un punto situado mediante una trayectoria b
 
 ### Riesgos y correcciones necesarias
 
-- el logotipo construido con puntos se aproxima demasiado al territorio visual de Nothing;
+- el logotipo construido con puntos puede aproximarse demasiado a referentes comerciales del mismo territorio;
 - la frase `Inicia lo que importa` jerarquiza moralmente una actividad y no corresponde al tono autónomo de Relevo;
 - la forma circular mostrada es una hipótesis visual, no una decisión industrial;
 - el rojo aplicado a la señal puede interpretarse como alarma;
@@ -46,7 +48,7 @@ La señal aparece como una concentración local dentro de un campo amplio. La pr
 ### Fortalezas
 
 - comunica calma, proximidad y presencia ambiental;
-- se distancia más del tablero modular de Nothing;
+- se distancia con mayor claridad del antecedente modular principal;
 - permite relacionar la señal con espacio, distancia y luz;
 - ofrece una transición natural hacia materialidad y fotografía.
 
@@ -69,7 +71,7 @@ Dos campos intercambian una unidad activa por medio de un conector. La identidad
 ### Fortalezas
 
 - traduce el nombre Relevo a una regla gráfica específica;
-- ofrece el mayor potencial de diferenciación respecto de Nothing;
+- ofrece el mayor potencial de diferenciación frente a los referentes;
 - permite construir diagramas, componentes y estados mediante una lógica estable;
 - facilita documentar arquitectura, montaje y relación entre capas.
 
@@ -88,7 +90,7 @@ Escala: 1 = débil; 5 = fuerte. La evaluación es editorial y sirve para orienta
 | Criterio | Transferencia situada | Campo ambiental | Ensamble de relevo |
 | --- | ---: | ---: | ---: |
 | Relación con el propósito | 5 | 4 | 5 |
-| Diferenciación respecto de Nothing | 3 | 4 | 5 |
+| Diferenciación frente a los referentes | 3 | 4 | 5 |
 | Calma y ausencia de sanción | 3 | 5 | 3 |
 | Coherencia entre soportes | 5 | 4 | 5 |
 | Legibilidad potencial | 4 | 4 | 5 |
@@ -103,11 +105,18 @@ La selección confirma la jerarquía de `Transferencia situada` e incorpora la l
 
 ## Producción
 
-Las tres imágenes fueron generadas mediante el generador integrado, utilizando las dos referencias aportadas como inspiración visual. Cada prompt prohibió reproducir logos, glifos o composiciones de Nothing y mantuvo abiertos la forma industrial, el canal físico y la señal definitiva.
+Las tres imágenes fueron generadas mediante el generador integrado, utilizando las dos referencias aportadas como inspiración visual. Cada prompt prohibió reproducir marcas, signos o composiciones reconocibles y mantuvo abiertos la forma industrial, el canal físico y la señal definitiva.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Segunda iteración seleccionada
+
+- **Cambio:** el tablero oscuro de síntesis fue sustituido por una versión clara, modular y más cercana a la primera exploración elegida por el autor.
+- **Versión anterior:** la versión v1 concentraba la propuesta en pocos elementos de gran tamaño y perdía parte del ritmo modular buscado.
+- **Motivo:** perfeccionar la dirección seleccionada sin cambiar su concepto y demostrar su funcionamiento en más de un soporte.
+- **Alcance:** se precisan jerarquía, modularidad y uso de la matriz; tipografía definitiva, objeto y señal física permanecen abiertos.
 
 ### 2026-08-28 — Selección y refinamiento
 
