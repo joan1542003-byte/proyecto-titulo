@@ -32,6 +32,8 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 27 de agosto de 2026:** el primer protocolo define asociación completa, umbrales de avance, modificación y detención, reglas comparativas y fallos críticos. Estos criterios se fijaron antes de obtener resultados.
 
+**Resuelto el 27 de agosto de 2026:** se cerraron los parámetros provisionales del protocolo 01 y se prepararon un consentimiento escrito y una ficha de registro sin datos.
+
 No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avances dependen de decisiones metodológicas o evidencia obtenida mediante prototipos.
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
@@ -41,7 +43,7 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 | Condición de activación | Se mantiene abierta entre distintas reglas observables. Sin esta definición no puede comprobarse la secuencia técnica completa. | Comparar alternativas y seleccionar una condición provisional para el primer prototipo, declarando sus límites. | 11.2, 12.2 y 13.4. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
-| Cierre operativo del protocolo 01 | Existen variables, umbrales y reglas de decisión, pero faltan parámetros de ejecución. | Cerrar muestra, tiempos, actividad de espera, canal provisional, lugar neutro, notificación, gestión de registros y contrabalanceo antes de reclutar. | `07_validacion/protocolo-01-asociacion-y-comparacion.md`. |
+| Revisión piloto de los instrumentos | El protocolo, el consentimiento y la ficha están redactados, pero no se han probado como conjunto. | Ejecutar una revisión interna sin datos de participantes, completar contacto y fecha de eliminación, y obtener revisión académica antes de reclutar. | `07_validacion/`. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
 
@@ -70,11 +72,18 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es cerrar los ocho parámetros de ejecución del protocolo 01 antes de reclutar. Después podrá realizarse la prueba de asociación entre intención, señal y lugar. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación. Si no lo hace, corresponde revisar la propuesta antes de invertir en integración o fabricación detallada.
+El siguiente paso es revisar internamente el protocolo, el consentimiento y la ficha como un conjunto, sin utilizar datos de participantes. Después de completar contacto, fecha de eliminación y revisión académica, podrá comenzar el reclutamiento para la prueba de asociación. La condición técnica completa, la carcasa final y la producción dependen de que esa relación básica resulte comprensible y aporte algo frente a una notificación.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Parámetros e instrumentos preparados
+
+- **Cambio:** el cierre operativo del protocolo pasó a resuelto y fue reemplazado por una revisión piloto de sus instrumentos.
+- **Versión anterior:** muestra, tiempos, señal, condiciones comparativas y gestión de registros permanecían abiertos.
+- **Motivo:** avanzar desde reglas generales hacia materiales aplicables sin reclutar prematuramente.
+- **Alcance:** contacto, fecha exacta de eliminación y revisión académica siguen pendientes; no existen datos de prueba.
 
 ### 2026-08-27 — Reglas operativas definidas
 

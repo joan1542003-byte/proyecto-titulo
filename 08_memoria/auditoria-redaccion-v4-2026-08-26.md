@@ -27,7 +27,7 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 19.156 palabras: 16.656 antes de las referencias, 1.204 en la bibliografía y 1.296 en el registro de cambios. Los capítulos 1–13 contienen 15.993 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 19.226 palabras: 16.646 antes de las referencias, 1.204 en la bibliografía y 1.376 en el registro de cambios. Los capítulos 1–13 contienen 15.983 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
@@ -69,7 +69,9 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 
 ## Registro de cambios
 
-**27 de agosto de 2026 — Reglas operativas de validación.** Se actualizó la extensión después de incorporar al capítulo 13 la definición de asociación completa, umbrales formativos y fallos críticos. Antes, la memoria no fijaba cómo avanzar, modificar o detener la primera configuración. El protocolo enlazado sigue sin ejecutar y conserva preguntas previas al reclutamiento.
+**27 de agosto de 2026 — Parámetros e instrumentos del protocolo 01.** Se actualizó la extensión después de fijar la muestra en seis personas y traducir los umbrales a cantidades de casos. El protocolo cuenta ahora con parámetros de ejecución, borrador de consentimiento y ficha vacía de registro. No se han reclutado participantes ni producido resultados.
+
+**27 de agosto de 2026 — Reglas operativas de validación.** Se actualizó la extensión después de incorporar al capítulo 13 la definición de asociación completa, umbrales formativos y fallos críticos. Antes, la memoria no fijaba cómo avanzar, modificar o detener la primera configuración. En ese control, el protocolo conservaba preguntas previas al reclutamiento que fueron cerradas en la revisión siguiente.
 
 **27 de agosto de 2026 — Selección de anexos.** Se actualizó la extensión después de enlazar el índice de anexos desde usuarios y arquitectura de interacción. Antes, la evidencia complementaria estaba distribuida por el repositorio sin una selección formal. El nuevo índice no duplica documentos ni incorpora materiales internos como evidencia.
 

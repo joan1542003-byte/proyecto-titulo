@@ -17,6 +17,8 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 ## Protocolos planificados
 
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
+- [Consentimiento informado](consentimiento-protocolo-01.md): borrador para comunicar propósito, voluntariedad, riesgos, datos y retiro.
+- [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
 
 ## Regla de medición
 
@@ -37,6 +39,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-27 — Parámetros e instrumentos preparados
+
+- **Cambio:** se cerraron los parámetros provisionales y se añadieron consentimiento y ficha de registro.
+- **Versión anterior:** el protocolo contenía ocho preguntas abiertas y no tenía instrumentos de aplicación.
+- **Motivo:** permitir una revisión piloto completa antes del reclutamiento.
+- **Alcance:** no se han recogido datos; contacto, fecha de eliminación y revisión académica del consentimiento siguen pendientes.
 
 ### 2026-08-27 — Primer protocolo operacional
 

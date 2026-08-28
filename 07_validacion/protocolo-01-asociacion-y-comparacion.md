@@ -24,7 +24,9 @@ Iniciar la actividad tampoco constituye el resultado principal. Después de reco
 
 ## Participantes y alcance
 
-Se propone una muestra formativa inicial de seis a ocho personas adultas capaces de formular una actividad que quieran mantener disponible y reconocer su primer paso. El número definitivo, los criterios de inclusión, la convocatoria, el consentimiento y la compensación deberán cerrarse antes del reclutamiento.
+La muestra formativa estará compuesta por seis personas de 18 a 30 años que no hayan participado en las entrevistas anteriores. Cada una deberá poder describir un episodio reciente en que otra intención dejó de orientar el momento y formular una actividad con un primer paso concreto. No se exigirá utilizar Android, porque la activación será manual y la integración técnica queda fuera de esta prueba.
+
+El reclutamiento se realizará mediante referencias, con participación voluntaria y sin pago. Estas condiciones deberán informarse antes de aceptar. Si la convocatoria o la compensación cambian, la modificación se registrará antes de incorporar a la primera persona.
 
 La muestra no permitirá estimar prevalencia ni eficacia. Su función será encontrar fallos de comprensión, diferencias entre condiciones y razones que obliguen a modificar el prototipo.
 
@@ -57,9 +59,9 @@ Una **asociación completa** ocurre cuando los cinco momentos pueden reconstruir
 
 ### Reglas de decisión de la fase A
 
-- **Avanzar a la comparación:** al menos el 75 % de las personas completa la asociación sin consultar el teléfono y no aparece un fallo crítico de autonomía, privacidad o seguridad.
-- **Modificar y repetir:** entre el 50 % y el 74 % completa la asociación, o se repite una confusión localizada en la señal, la explicación, el lugar o el primer paso.
-- **Detener la configuración probada:** menos del 50 % completa la asociación después de una iteración correctiva, o el significado depende de mostrar texto en el objeto, reabrir el teléfono o aumentar la señal hasta un nivel invasivo.
+- **Avanzar a la comparación:** al menos cinco de las seis personas completan la asociación sin consultar el teléfono y no aparece un fallo crítico de autonomía, privacidad o seguridad.
+- **Modificar y repetir:** tres o cuatro personas completan la asociación, o se repite una confusión localizada en la señal, la explicación, el lugar o el primer paso.
+- **Detener la configuración probada:** dos o menos personas completan la asociación después de una iteración correctiva, o el significado depende de mostrar texto en el objeto, reabrir el teléfono o aumentar la señal hasta un nivel invasivo.
 
 Los porcentajes funcionan como puertas formativas para una muestra pequeña; no representan estimaciones sobre una población. Cualquier cambio de umbral deberá hacerse antes de observar resultados y quedar registrado con su motivo.
 
@@ -106,16 +108,26 @@ Cada ficha deberá incluir código de participante, versión del prototipo, inte
 
 Los registros pertenecen a la investigación. No se incorporarán al historial funcional de Relevo ni se utilizarán para puntuar cumplimiento.
 
-## Preguntas que deben cerrarse antes de ejecutar
+La ejecución utilizará el [consentimiento informado](consentimiento-protocolo-01.md) y la [ficha de registro](ficha-registro-protocolo-01.md). Ambos documentos permanecen como plantillas sin datos hasta completar su revisión.
 
-1. Número definitivo y procedencia de participantes.
-2. Duración entre configuración y señal.
-3. Actividad de espera comparable entre sesiones.
-4. Canal e intensidad provisionales del pulso.
-5. Definición práctica de lugar neutro.
-6. Texto y comportamiento de la notificación equivalente.
-7. Consentimiento, retiro, acceso a registros y plazo de conservación.
-8. Forma de contrabalancear las tres condiciones.
+## Parámetros de ejecución
+
+| Parámetro | Decisión provisional | Razón y control |
+| --- | --- | --- |
+| Sesiones | Fase A y fase B se realizarán en sesiones distintas de 35 a 50 minutos. | Separar la comprensión inicial de la comparación reduce cansancio y aprendizaje inmediato. |
+| Intervalo | La señal aparecerá ocho minutos después de terminar la configuración. | Es un intervalo breve y controlable; no permite inferir recuerdo a largo plazo. |
+| Actividad de espera | Ocio digital elegido por la persona en su propio teléfono, mantenido durante el intervalo. | Conserva relación con el problema sin imponer una aplicación específica. Las notificaciones ajenas se silenciarán durante el ensayo. |
+| Señal provisional | Tres pulsos de luz blanca cálida y difusa durante tres segundos, con intensidad comprobada antes de comenzar. | Aísla la asociación sin decidir el canal final. Si la luz no es accesible, se ofrecerá una señal táctil equivalente y el caso se analizará por separado. |
+| Lugar situado | Junto al objeto o material necesario para ejecutar el primer paso. | La persona debe explicar la relación antes de activar. |
+| Lugar neutro | En la misma habitación y con visibilidad semejante, al menos a un metro del primer paso y fuera de su recorrido inmediato. | Busca conservar perceptibilidad sin mantener la relación semántica con el comienzo. |
+| Notificación | Un único aviso de Android con el texto `Relevo · Tu intención está disponible`, sin mostrar la intención ni repetir el aviso. | Funciona como alternativa digital realista. Abrir el teléfono para recuperar el contenido se registra como consulta. |
+| Intenciones de la fase B | Tres intenciones personales distintas, con primer paso claro y valoración semejante declarada por la persona. | Evita repetir exactamente la misma asociación. La diferencia entre intenciones se conserva como límite interpretativo. |
+| Contrabalanceo | Se utilizarán las seis secuencias posibles de las condiciones A, B y C, una por participante. | Distribuye el efecto del orden entre las seis personas. |
+| Consentimiento y retiro | Consentimiento escrito antes de la sesión; retiro posible sin justificar y sin conservar la ficha incompleta. | Separa participación voluntaria de desempeño en la prueba. |
+| Registro | Notas estructuradas y ficha codificada; sin grabación de pantalla, historial de aplicaciones ni audio por defecto. | Reduce datos personales. Una grabación adicional requeriría autorización específica. |
+| Conservación | Las fichas codificadas se conservarán hasta 30 días después de la evaluación final del proyecto y luego se eliminarán. Los datos de contacto se mantendrán separados y se borrarán al terminar la sesión. | Limita acceso y duración. La fecha exacta deberá figurar en el consentimiento. |
+
+Los parámetros quedan fijados para preparar materiales. Cualquier ajuste anterior a la primera sesión deberá registrarse con fecha y motivo. Después de comenzar el estudio solo podrán cambiarse por seguridad o por un fallo crítico; en ese caso, los datos obtenidos con versiones diferentes no se mezclarán sin distinguirlas.
 
 ## Referencias metodológicas
 
@@ -126,6 +138,13 @@ International Organization for Standardization. (2023). *Systems and software en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-27 — Parámetros de ejecución cerrados
+
+- **Cambio:** se fijaron seis participantes, dos sesiones, intervalo, actividad de espera, señal provisional, definiciones de lugar, notificación, intenciones comparables, contrabalanceo y tratamiento de registros.
+- **Versión anterior:** ocho parámetros permanecían formulados como preguntas previas a la ejecución.
+- **Motivo:** permitir preparar materiales sin ajustar condiciones después de observar resultados.
+- **Alcance:** las decisiones son formativas y deberán declararse como límites; ningún dato ha sido recogido.
 
 ### 2026-08-27 — Creación del protocolo planificado
 
