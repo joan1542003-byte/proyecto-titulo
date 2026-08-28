@@ -31,7 +31,7 @@ Su formulación busca recuperar una intención personal cuando una sesión de oc
 
 El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente la conducta ni reducir el tiempo de pantalla como un fin aislado. Su valor depende de apoyar una decisión autónoma mediante una señal configurable y no punitiva. Relevo seguirá siendo phygital y su interfaz objetual se basará en señales ambientales, no en una nueva superficie de consulta. Si el testigo transportable no aporta valor, se reformula o reemplaza la dirección física; no se convierte el proyecto en una aplicación aislada.
 
-La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El desarrollo estructural contiene tres interacciones, nueve marcos de síntesis y 35 estados; constituye diseño documentado, no validación. La línea sustantiva activa es preparar la prueba de asociación entre intención, primer paso, lugar y señal mediante la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). El Encargo 17 quedó completado.
+La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El desarrollo estructural contiene tres interacciones, nueve marcos de síntesis y 35 estados; constituye diseño documentado, no validación. La línea sustantiva activa es la prueba de asociación entre intención, primer paso, lugar y señal de la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). Sus instrumentos están preparados en [`07_validacion`](07_validacion/README.md), pero la fase A exige construir y comprobar primero la señal manual. La fase B permanece bloqueada hasta disponer de una notificación local Android equivalente. No existen resultados de validación. El Encargo 17 quedó completado.
 
 **In(Visible)** es una etapa histórica anterior. No debe confundirse con la definición vigente de Relevo ni presentarse como su nombre actual. Las memorias y entregas antiguas sirven para reconstruir la evolución, no para fijar automáticamente decisiones actuales.
 
@@ -134,6 +134,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Estado verificable de validación
+
+- **Cambio:** se añadió la ruta documental vigente y se separaron los requisitos pendientes de las fases A y B.
+- **Versión anterior:** las instrucciones solo indicaban preparar la prueba de asociación mediante la Issue #8.
+- **Motivo:** impedir que nuevas conversaciones confundan instrumentos preparados con una prueba ejecutada.
+- **Alcance:** el siguiente trabajo es técnico y previo a participantes; no hay datos ni resultados que incorporar a la memoria.
 
 ### 2026-08-26 — Memoria v4 y control de anticipación
 

@@ -321,9 +321,25 @@
 - **Consecuencia:** la v3 y sus DOCX quedan como antecedentes. No se genera un nuevo DOCX en esta etapa y el resumen vigente debe enlazar la v4.
 - **Documentos asociados:** [Memoria v4](../08_memoria/memoria-vigente-v4.md) y [auditoría de redacción](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
 
+## D-034 — Puerta técnica antes de ejecutar la primera validación
+
+- **Fecha:** 2026-08-28
+- **Estado:** vigente para la fase de prototipado y evaluación
+- **Decisión:** no convocar participantes para la fase A hasta construir y comprobar la señal manual definida en la especificación de materiales. No ejecutar la fase B hasta disponer además de una notificación local Android que permita comparar condiciones equivalentes.
+- **Fundamento:** el protocolo y sus instrumentos están preparados, pero un fallo de construcción no debe interpretarse como un fallo de asociación. La comparación digital tampoco es válida si depende de una simulación desigual.
+- **Consecuencia:** el siguiente avance verificable es un ensayo técnico interno de la señal. La documentación existente no constituye ejecución ni permite afirmar resultados.
+- **Documentos asociados:** [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md), [ensayo interno documental](../07_validacion/ensayo-interno-protocolo-01-2026-08-27.md) y [especificación de materiales de fase A](../07_validacion/especificacion-materiales-fase-a.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — D-034
+
+- **Cambio:** se registró la puerta técnica que separa la preparación documental de la ejecución con participantes.
+- **Versión anterior:** los documentos de validación describían la dependencia, pero el registro central terminaba en la decisión sobre la memoria v4.
+- **Motivo:** mantener una sola fuente de verdad sobre el siguiente paso y evitar resultados implícitos.
+- **Resultado:** fase A condicionada a un ensayo técnico; fase B condicionada además a una notificación Android local comparable.
 
 ### 2026-08-26 — Estado histórico de D-022
 

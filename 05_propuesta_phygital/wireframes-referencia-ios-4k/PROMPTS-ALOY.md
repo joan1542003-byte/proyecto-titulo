@@ -8,7 +8,7 @@ Este documento registra la generación, corrección y auditoría de las cuatro l
 **Generador:** built-in `image_gen`  
 **Referencia visual obligatoria:** [`A2-configuracion-ios-4k.png`](A2-configuracion-ios-4k.png)  
 **Contrato visual preservado:** [`STYLE-CONTRACT.md`](STYLE-CONTRACT.md)  
-**Base conceptual:** [`memoria-vigente-v2.md`](../../08_memoria/memoria-vigente-v2.md), [`encargo-17-requisitos.md`](../../01_contexto_y_fuentes/encargo-17-requisitos.md) y [`anexo-cobertura-interacciones-encargo-17.md`](anexo-cobertura-interacciones-encargo-17.md).
+**Base conceptual:** [`memoria-vigente-v2.md`](../../08_memoria/memoria-vigente-v2.md), [`encargo-17-requisitos.md`](../../01_contexto_y_fuentes/encargo-17-requisitos.md) y [`anexo-cobertura-interacciones-encargo-17.md`](../anexo-cobertura-interacciones-encargo-17.md).
 
 ## Criterio global utilizado
 
@@ -121,6 +121,8 @@ Esta operación no recortó pantallas, no estiró el contenido y no modificó la
 - [`D2-senal-ios-4k.png`](D2-senal-ios-4k.png)
 
 ## Disclaimer y registro de cambios
+
+**Corrección de enlace (2026-08-28):** se corrigió la ruta relativa del anexo de cobertura. Antes apuntaba dentro de `wireframes-referencia-ios-4k`; ahora enlaza el documento existente en la carpeta superior. No se modificaron los prompts, las imágenes ni su base conceptual histórica.
 
 **Archivo nuevo:** `PROMPTS-ALOY.md` se creó para registrar la generación y auditoría de las cuatro láminas nuevas.
 

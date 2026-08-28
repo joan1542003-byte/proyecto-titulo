@@ -99,9 +99,11 @@ Incluye arquitectura técnica, producción, materiales, componentes, costos, man
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8); comenzar por la asociación entre intención, primer paso, lugar y señal.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). El protocolo, el consentimiento, la ficha de registro y la especificación mínima de materiales están preparados. La fase A no puede comenzar con participantes hasta construir y comprobar la señal manual; la fase B depende además de una notificación local Android equivalente.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
+
+Siguiente puerta de avance: registrar que la señal manual cumple repetibilidad, intensidad, silenciamiento, estabilidad y seguridad según la [especificación de materiales](../07_validacion/especificacion-materiales-fase-a.md). Esta comprobación habilita el piloto técnico, no el reclutamiento automático ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
@@ -123,6 +125,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Puerta operativa de la fase A
+
+- **Cambio:** se reemplazó el inicio genérico de la prueba por una puerta técnica verificable y se registró por separado el bloqueo de la fase B.
+- **Versión anterior:** la hoja de ruta indicaba comenzar por la asociación, sin mostrar qué documentación ya existía ni qué impedía ejecutarla.
+- **Motivo:** sincronizar la gobernanza con `07_validacion` y mantener separadas preparación, ejecución y resultados.
+- **Decisión derivada:** la única acción sustantiva siguiente es construir y comprobar la señal manual; todavía no corresponde reclutar ni interpretar resultados.
 
 ### 2026-08-26 — Memoria v4 y etapas descriptivas
 
