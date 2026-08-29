@@ -4,6 +4,8 @@
 
 Relevo cuenta con una memoria integral en Markdown, auditada según los títulos, la secuencia y los límites del examen. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión. La línea sustantiva activa es la [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
 
+El calendario de término se encuentra en el [plan de cierre de agosto a diciembre de 2026](plan-de-cierre-agosto-diciembre-2026.md). Este fija el 31 de octubre como término práctico del producto, el 15 de noviembre como cierre interno total y el 11 de diciembre como fecha objetivo de entrega pendiente de confirmación oficial.
+
 El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuando sus preguntas, evidencia, límites y decisiones están registrados. El producto phygital no se desarrolla como una respuesta autónoma; debe poder reconstruirse desde la investigación.
 
 ## Base metodológica consolidada
@@ -127,6 +129,12 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-29 — Calendario de cierre
+
+- **Cambio:** se enlazó la secuencia por fases con un calendario de hitos y criterios de salida hasta diciembre.
+- **Versión anterior:** la hoja de ruta declaraba dependencias, pero no indicaba cuándo debía quedar terminado el producto, la memoria o la preparación de entrega.
+- **Motivo:** convertir la ruta metodológica en un compromiso temporal verificable sin duplicar el calendario completo.
 
 ### 2026-08-28 — Inicio de la sistematización intersoportes
 

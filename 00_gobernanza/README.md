@@ -15,6 +15,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 
 - `directrices-de-trabajo.md`: mandato integral de investigación, desarrollo, escritura, trazabilidad y colaboración.
 - `hoja-de-ruta.md`: secuencia de trabajo y condiciones para avanzar.
+- `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - GitHub Issues: tareas operativas, bloqueos y criterios de cierre.
 
@@ -35,6 +36,12 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios
+
+### 2026-08-29 — Plan de cierre temporal
+
+- **Cambio:** se incorporó el plan de cierre entre agosto y diciembre de 2026.
+- **Versión anterior:** la gobernanza definía una secuencia por fases, pero no un calendario de término con hitos fechados.
+- **Motivo:** coordinar prototipado, validación, producto, memoria y preparación de entrega bajo un cierre interno al 15 de noviembre.
 
 ### 2026-08-23 — Incorporación de directrices
 

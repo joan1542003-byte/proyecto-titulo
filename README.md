@@ -50,6 +50,8 @@ El criterio común de selección confirmado para P1–P8 es la edad; no se utili
 
 La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md). La [v3](08_memoria/memoria-vigente-v3.md), las auditorías anteriores y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
 
+El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla sus hitos. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre; diciembre se reserva para estudio, presentación y correcciones menores antes de la entrega objetivo del día 11.
+
 ## Inicio para nuevas conversaciones
 
 Antes de trabajar con ChatGPT o Codex, conecta GitHub y usa [Instrucciones maestras para conversaciones](INSTRUCCIONES_CHATGPT.md). Ese documento define el protocolo de lectura del repositorio, el contexto estable, las reglas de investigación y escritura, y el registro de resultados.
@@ -97,6 +99,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-29 — Plan de cierre hasta la entrega
+
+- **Cambio:** se incorporaron el estado de madurez, los hitos de cierre de octubre, noviembre y diciembre, y la Issue #9 como tablero operativo.
+- **Versión anterior:** el README identificaba la línea activa, pero no comunicaba el plazo total ni la función de cada periodo.
+- **Motivo:** permitir que cualquier conversación o colaborador comprenda de inmediato qué debe terminarse y cuándo.
+- **Alcance:** no se modificó la memoria ni se añadieron resultados de validación.
 
 ### 2026-08-28 — Aplicaciones del sistema visual
 
