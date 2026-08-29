@@ -6,6 +6,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 
 - [Inventario de fuentes](inventario-de-fuentes.md): identifica cada fuente, su función, nivel y relación con otras versiones.
 - [Inventario del archivo local](inventario-archivo-local.md): registra materiales encontrados en las carpetas del proyecto.
+- [Biblioteca de diseño](biblioteca_diseno/README.md): conserva cuatro obras aportadas para consulta académica interna, documenta su cobertura y reúne resúmenes críticos aplicados a Relevo.
 - [Declaración de procedencia de entrevistas](declaracion-procedencia-entrevistas.md): fija las condiciones confirmadas del levantamiento.
 - [Auditoría metodológica](auditoria-metodologica.md): determina qué puede afirmarse y con qué cautelas.
 - [Auditoría de integridad del corpus](auditoria-integridad-corpus-entrevistas.md): comprueba cobertura, discrepancias y regla de consolidación.
@@ -43,6 +44,13 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-29 — Biblioteca de diseño enlazada
+
+- **Cambio:** se incorporó el acceso a la biblioteca de Norman, Albers, Munari e Isaacson y a su síntesis aplicada.
+- **Versión anterior:** el índice registraba fuentes académicas de forma general, pero no daba acceso a este corpus bibliográfico ni a sus límites de lectura.
+- **Motivo:** mantener juntos los archivos originales, su procedencia, la cobertura comprobada y las interpretaciones que pueden orientar el sistema visual.
+- **Alcance:** las obras formulan criterios y preguntas de validación; no prueban por sí solas la eficacia de Relevo ni autorizan redistribución fuera del repositorio privado.
 
 ### 2026-08-26 — Sincronización con la memoria v4
 

@@ -24,6 +24,7 @@
 | F-009 | Referentes de producto y mercado | Secundaria | Parcialmente inventariados | Analizar mecanismos, posicionamiento y brechas; actualizar datos antes de citarlos. |
 | F-010 | Declaración metodológica del autor | Normativa y aclaratoria | Consolidada el 23 de agosto de 2026 | Resolver procedencia, modalidad, reclutamiento, consentimiento, autoría de preguntas, transcripción y edad de P6. |
 | F-011 | Autoevaluación E12 para el Pase | Histórica y derivada | Convertida y contrastada con la planificación | Reconstruir qué se declaraba cumplido en E12; no certificar un resultado oficial ni sustituir evidencia. |
+| F-012 | Biblioteca de diseño: Norman, Albers, Munari e Isaacson | Secundaria, teórica, profesional, histórica y biográfica según la obra | Cuatro PDF canónicos, cobertura auditada y siete documentos de lectura | Fundamentar provisionalmente criterios de interacción, percepción cromática, comunicación, materialidad e integración; no sustituir pruebas con usuarios, accesibilidad, factibilidad ni validación. |
 
 ## Relación entre F-004 y F-004-D
 
@@ -92,10 +93,18 @@ La jerarquía no reemplaza la evidencia: cuando dos documentos discrepan, se reg
 - Las fuentes académicas externas se registran con referencia APA 7 y enlace verificable.
 - Los documentos históricos no se citan en la memoria como encargos docentes; su contenido pertinente debe reformularse desde la evidencia correspondiente.
 - F-002 puede citarse en la documentación de proceso, pero sus observaciones no prueban por sí mismas una necesidad de usuario ni una oportunidad de mercado.
+- F-012 se cita desde la edición efectivamente verificada. Si faltan datos editoriales o páginas respecto del índice de la obra, la limitación debe acompañar cualquier uso académico.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-29 — Biblioteca de diseño incorporada como F-012
+
+- **Cambio:** se registró el conjunto de Norman, Albers, Munari e Isaacson con una función y un límite probatorio comunes.
+- **Versión anterior:** F-008 agrupaba bibliografía académica y técnica sin identificar esta biblioteca ni distinguir la fuente biográfica de las fuentes teóricas y profesionales.
+- **Motivo:** impedir que los cuatro libros se usen como autoridades equivalentes y enlazar su aplicación con una cobertura documentada.
+- **Decisión derivada:** Norman, Albers y Munari pueden orientar criterios que deben probarse; Isaacson se reserva para contexto histórico y procesos de producto. La copia de Munari no debe citarse como edición completa.
 
 ### 2026-08-23 — Corpus compuesto y rango observado
 
