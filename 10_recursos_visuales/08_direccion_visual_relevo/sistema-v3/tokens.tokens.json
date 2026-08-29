@@ -1,0 +1,41 @@
+{
+  "$description": "Tokens visuales provisionales de Relevo v3. DTCG 2025.10.",
+  "color": {
+    "light": {
+      "canvas": { "$type": "color", "$value": "#F4F4F2" },
+      "surface": { "$type": "color", "$value": "#FFFFFF" },
+      "surfaceQuiet": { "$type": "color", "$value": "#E9E9E5" },
+      "textPrimary": { "$type": "color", "$value": "#1B1D1E" },
+      "textSecondary": { "$type": "color", "$value": "#5E6162" },
+      "divider": { "$type": "color", "$value": "#C9CBC8" },
+      "outlineFunctional": { "$type": "color", "$value": "#777B7A" },
+      "signal": { "$type": "color", "$value": "#B8121A" },
+      "identity": { "$type": "color", "$value": "#D71921" }
+    },
+    "dark": {
+      "canvas": { "$type": "color", "$value": "#111314" },
+      "surface": { "$type": "color", "$value": "#1B1D1E" },
+      "surfaceQuiet": { "$type": "color", "$value": "#242728" },
+      "textPrimary": { "$type": "color", "$value": "#F1F1F1" },
+      "textSecondary": { "$type": "color", "$value": "#B6B8B7" },
+      "divider": { "$type": "color", "$value": "#3A3D3E" },
+      "outlineFunctional": { "$type": "color", "$value": "#767A79" },
+      "signal": { "$type": "color", "$value": "#EF3E45" }
+    }
+  },
+  "space": {
+    "1": { "$type": "dimension", "$value": { "value": 4, "unit": "dp" } },
+    "2": { "$type": "dimension", "$value": { "value": 8, "unit": "dp" } },
+    "3": { "$type": "dimension", "$value": { "value": 12, "unit": "dp" } },
+    "4": { "$type": "dimension", "$value": { "value": 16, "unit": "dp" } },
+    "6": { "$type": "dimension", "$value": { "value": 24, "unit": "dp" } },
+    "8": { "$type": "dimension", "$value": { "value": 32, "unit": "dp" } },
+    "12": { "$type": "dimension", "$value": { "value": 48, "unit": "dp" } },
+    "16": { "$type": "dimension", "$value": { "value": 64, "unit": "dp" } }
+  },
+  "radius": {
+    "field": { "$type": "dimension", "$value": { "value": 8, "unit": "dp" } },
+    "group": { "$type": "dimension", "$value": { "value": 16, "unit": "dp" } },
+    "prominent": { "$type": "dimension", "$value": { "value": 24, "unit": "dp" } }
+  }
+}

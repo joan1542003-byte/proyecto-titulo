@@ -21,6 +21,7 @@ Dirección conceptual seleccionada y en proceso de sistematización. `Transferen
 - [Aplicaciones del sistema](aplicaciones/README.md): objeto, memoria y aplicación Android.
 - [Matriz entre soportes](aplicaciones/matriz-intersoportes.md).
 - [Investigación de referentes aplicada](aplicaciones/investigacion-referentes-aplicados.md).
+- [Sistema visual v3](sistema-v3/README.md): metodología, tokens, temas claro/oscuro, Android y familias editoriales.
 
 ## Relación con exploraciones anteriores
 
@@ -39,6 +40,13 @@ La dirección 01 fue seleccionada por el autor el 28 de agosto de 2026. Su desar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Sistema visual v3
+
+- **Cambio:** se añadió una especificación medible con temas claro y oscuro, tokens, arquitectura Android, sistema editorial y matriz de decisiones.
+- **Versión anterior:** la dirección se expresaba mediante principios y láminas exploratorias sin una ficha completa de medidas y componentes.
+- **Motivo:** trasladar la dirección seleccionada a soportes concretos con criterios verificables y trazabilidad metodológica.
+- **Alcance:** las reglas constituyen una base de desarrollo; tipografía, interpretación del rojo, forma industrial y señal física todavía requieren pruebas.
 
 ### 2026-08-28 — Aplicaciones intersoportes
 
