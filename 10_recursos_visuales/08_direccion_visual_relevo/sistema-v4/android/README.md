@@ -1,94 +1,63 @@
 # Android v4
 
-## 01. Inicio — ciclo activo, tema claro
+## Propósito
 
-![Pantalla de inicio con un ciclo activo](01-inicio-ciclo-activo-claro-v1.png)
+Este directorio indexa las referencias visuales del flujo Android de Relevo. Las imágenes son material de dirección y reconstrucción: no sustituyen el wireframe, el prototipo funcional ni las pruebas de interacción.
 
-### Función
+La aplicación organiza una intención, un primer paso, una condición, una vigencia, un lugar y un testigo. El testigo emite la señal situada en el lugar elegido. La aplicación informa, confirma y ofrece recuperación; no registra si la persona comenzó la actividad ni convierte la señal en una evaluación.
 
-La pantalla permite reconocer qué intención está activa, cuál es su primer paso, qué condición fue configurada y dónde se encuentra el testigo. También ofrece dos salidas: editar la configuración o desactivarla.
+## Estado de la dirección
 
-La aplicación informa el vínculo, pero no representa el pulso como si ocurriera en el teléfono. El campo de puntos termina en un nodo rojo porque su función es mostrar que la intención fue situada; no comunica progreso ni cumplimiento.
+El modo oscuro es la única dirección vigente para nuevas pantallas. Las tres piezas iniciales conservadas en este directorio son exploraciones históricas:
 
-### Decisiones visuales
+- 01-inicio-ciclo-activo-claro-v1.png
+- 02-configurar-intencion-claro-v1.png
+- 03-senal-situada-oscuro-v1.png
 
-| Decisión | Fundamento | Comprobación posterior |
-| --- | --- | --- |
-| Título contenido | Evita que la intención adopte el tono promocional de una pantalla de bienvenida. | Probar lectura con escalamiento de fuente. |
-| Información separada por reglas | Primer paso y condición son datos relacionados, no tarjetas independientes. | Comprobar comprensión del agrupamiento. |
-| Campo de transferencia asimétrico | Relaciona intención y testigo mediante una reducción de densidad. | Verificar que no se interprete como avance o cuenta regresiva. |
-| Un solo nodo rojo | El color identifica la señal situada y no compite con conexión, peligro o acciones. | Probar comprensión sin depender solo del color. |
-| Estado del testigo en una franja compacta | Mantiene visibles lugar y conexión sin convertir el dispositivo físico en protagonista de la aplicación. | Evaluar legibilidad y estados de desconexión. |
-| Acciones de bajo peso visual | Editar y desactivar son controles disponibles, pero no deben desplazar la intención activa. | Confirmar objetivos táctiles mínimos de 48 dp al reconstruir la pantalla. |
+No deben utilizarse como referencia de implementación. Las imágenes oscuras y sus estados detallados están documentados en oscuro/README.md.
 
-### Auditoría de la imagen
+## Índice de pantallas
 
-- **Aprobado:** jerarquía, retícula, tono, densidad informativa, reducción de tarjetas, relación entre intención y testigo, y uso localizado del rojo.
-- **Debe reconstruirse manualmente:** tipografía exacta, medidas en dp y sp, iconografía, áreas táctiles, estados de foco y contraste final.
-- **No constituye validación:** la pieza es una dirección visual de alta fidelidad; no demuestra comprensión, accesibilidad ni funcionamiento del sistema.
+| Orden | Función | Referencia actual | Estado | Ajuste antes de reconstruir |
+|---|---|---|---|---|
+| 01 | Inicio sin ciclo | oscuro/01-inicio-sin-ciclo-oscuro-v1.png | Vigente; candidata principal | Sustituir texto raster por texto real y validar el estado vacío |
+| 02 | Formular intención | oscuro/02-formular-intencion-oscuro-v2.png | Aprobada como dirección | Reconstrucción manual de campos, foco y validación |
+| 03 | Configurar condición | oscuro/03-condicion-provisional-oscuro-v2.png | Candidata | Resolver el retorno duplicado y validar elecciones |
+| 04 | Revisar ciclo | oscuro/04-revisar-ciclo-oscuro-v2.png | Aprobada como dirección | Reconstruir filas, reglas y jerarquía de acciones |
+| 05 | Vincular testigo | oscuro/05-vincular-testigo-oscuro-v2.png | Candidata | Normalizar alineación y jerarquía de la acción principal |
+| 06 | Probar señal | oscuro/06-probar-pulso-oscuro-v2.png | Aprobada como dirección | Validar emisión de prueba y declaración posterior |
+| 07 | Ciclo activo en espera | oscuro/07-ciclo-activo-espera-oscuro-v2.png | Aprobada como dirección | Reemplazar copy heredado y validar desarme |
+| 08 | Señal situada | oscuro/08-senal-situada-oscuro-v2.png | Aprobada; mejor referencia de esta etapa | Reconstruir gráfico con texto equivalente y un único nodo rojo |
+| 09 | Recuperar vínculo | oscuro/09-fallo-vinculo-oscuro-v2.png | Candidata | Reducir la repetición del estado y normalizar la acción |
+| 10 | Ciclo cerrado | oscuro/10-ciclo-cerrado-oscuro-v2.png | Aprobada como dirección | Reconstruir cierre, salida y preparación explícita de otro ciclo |
 
-### Estado
+Se revisaron visualmente los 19 PNG de android/oscuro. Las versiones v1 de 02 a 10 son históricas, superadas o rechazadas; cuando existe v2, ninguna v1 funciona como referencia de implementación. La tabla completa de descarte y las fichas de las versiones vigentes o candidatas están en oscuro/README.md.
 
-Dirección aprobada para desarrollar las siguientes pantallas. No debe tomarse como archivo de producción ni copiarse sin reconstruir su retícula y controles.
+## Documentación relacionada
 
-## 02. Configurar intención — tema claro
+- oscuro/README.md: auditoría individual, riesgos, prompts y reconstrucción necesaria.
+- inventario-pantallas-oscuras.md: cobertura de interacciones y estados.
+- ../manual-sistema-visual-relevo.md: reglas generales del sistema.
+- ../tokens-y-especificaciones.md: valores técnicos y estados de madurez.
+- ../componentes-y-semantica.md: contrato entre contenido, icono, elección, acción, estado, gráfico y decoración.
 
-![Pantalla para configurar una intención y su primer paso](02-configurar-intencion-claro-v1.png)
+## Reglas que gobiernan estas pantallas
 
-### Función
-
-La pantalla transforma una actividad general en una intención activa y un primer paso concreto. Este momento todavía no vincula el testigo; por esa razón, la composición utiliza un campo de origen en grafito y no presenta un nodo rojo.
-
-### Decisiones visuales
-
-- La navegación de retorno ocupa el extremo izquierdo y la marca queda centrada, de acuerdo con una lectura convencional del encabezado móvil.
-- Los campos se construyen mediante reglas continuas. Así se distinguen de la matriz de puntos y se evita convertir cada dato en una tarjeta.
-- La matriz permanece densa y abierta: representa una intención todavía no situada, no una transferencia terminada.
-- Las acciones comparten una fila. `Continuar` conserva contraste y tamaño táctil sin transformarse en una superficie dominante; `Cancelar` permanece disponible con menor peso.
-- No se utiliza rojo porque aún no existe una señal situada.
-
-### Estado
-
-Dirección aprobada. La siguiente comprobación debe revisar la comprensión de `primer paso`, el orden de foco, el comportamiento del teclado y los estados vacío, activo y error de ambos campos.
-
-## 03. Señal situada — tema oscuro
-
-![Pantalla oscura que informa una señal situada](03-senal-situada-oscuro-v1.png)
-
-### Función
-
-La pantalla confirma que el testigo emitió la señal en el lugar configurado. No reproduce el pulso en el teléfono, no solicita cumplimiento ni evalúa la decisión posterior. La persona puede silenciar el testigo o cerrar el ciclo.
-
-### Decisiones visuales
-
-- El modo oscuro concentra la atención en un estado puntual sin cambiar la arquitectura tipográfica del tema claro.
-- Un campo claro se reduce hasta un único nodo rojo. La posición y el texto permiten comprender el estado sin depender exclusivamente del color.
-- La intención, el primer paso y el lugar permanecen visibles para favorecer reconocimiento y control.
-- Las acciones no usan relleno rojo ni una jerarquía punitiva. `Cerrar ciclo` recibe un borde; `Silenciar` conserva menor peso.
-- No aparecen confirmaciones de éxito, métricas, rachas ni preguntas sobre cumplimiento.
-
-### Estado
-
-Dirección aprobada. Debe evaluarse frente a una notificación equivalente y junto al pulso físico real; la imagen por sí sola no demuestra el valor del cambio de medio.
-
----
+- Canvas #111314; superficie funcional #1B1D1E; texto principal #F1F1F1; texto secundario #B6B8B7; reglas #3A3D3E.
+- IBM Plex Sans para lectura, instrucciones y acciones; IBM Plex Mono para metadatos breves.
+- El rojo #EF3E45 se reserva al nodo de señal situada. No representa acción, error, batería, vínculo ni selección.
+- Los puntos solo pueden aparecer como marca, señal expresiva breve o gráfico informativo acompañado de texto equivalente.
+- Una elección debe mostrar sus límites y estados; una acción debe expresar qué ejecuta; un estado no debe parecer pulsable.
+- El testigo emite la señal situada; la aplicación comunica la configuración y el estado de esa relación.
+- No se incorporan métricas, rachas, premios, culpa, evaluación, moralización ni rearme automático.
 
 ## Registro de cambios (disclaimer)
 
-### 2026-08-29 — Creación
+### 2026-08-29 — Corrección del índice Android v4
 
-- **Cambio:** se reemplazó la composición Android anterior por una pantalla individual de mayor fidelidad.
-- **Versión anterior:** saludo y títulos sobredimensionados, grandes superficies vacías, tarjetas genéricas y botones negros dominantes.
-- **Motivo:** acercar Android al lenguaje modular de Relevo mediante precisión editorial, densidad controlada y una relación funcional entre intención, transferencia y señal situada.
-
-### 2026-08-29 — Segunda pantalla
-
-- **Cambio:** se incorporó la configuración de intención y primer paso con campos lineales y acciones compactas.
-- **Versión anterior:** la primera exploración usaba cajas sobredimensionadas, grandes superficies vacías y un botón negro de ancho completo.
-- **Motivo:** demostrar que la identidad puede mantenerse durante una tarea de escritura sin sacrificar controles reconocibles ni convertir la matriz en decoración.
-
-### 2026-08-29 — Tema oscuro y señal situada
-
-- **Cambio:** se incorporó el estado oscuro que confirma la emisión del pulso en el lugar elegido.
-- **Versión anterior:** la exploración oscura utilizaba varios acentos rojos y controles genéricos, lo que confundía señal, estado técnico y acción.
-- **Motivo:** reservar el rojo para un único nodo situado y sostener que el pulso pertenece al testigo físico, no a la pantalla.
+- Qué se modificó: se reemplazó el índice anterior por una tabla de estado para las diez pantallas, con enlaces a la dirección oscura, documentos operativos y estados diferenciados para cada versión.
+- Cómo estaba antes: el README trataba varias v1 como referencias aprobadas y mezclaba exploraciones claras, imágenes históricas y dirección vigente sin una jerarquía única.
+- Qué se conservó: los archivos PNG y las tres exploraciones iniciales; se mantienen como registro del proceso, no como guía de implementación.
+- Por qué: al existir v2 para las pantallas 02–10, las v1 deben leerse como antecedentes. La nueva clasificación evita que una exploración superada, en particular la silueta industrial de 05 v1, se interprete como decisión cerrada.
+- Corrección de lenguaje: se eliminó la descripción del testigo por ausencia y se explicitó su función: emite la señal situada en el lugar elegido.
+- Alcance: esta actualización no modifica imágenes, wireframes, memoria, inventario ni decisiones técnicas del testigo. Tampoco cierra su forma industrial.

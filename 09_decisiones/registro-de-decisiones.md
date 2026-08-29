@@ -357,9 +357,25 @@
 - **Consecuencia:** se crea una matriz entre soportes; la aplicación no incorpora funciones nuevas, el objeto se explora mediante familias sin forma seleccionada y la memoria reserva la matriz para identidad y relaciones.
 - **Documentos asociados:** [aplicaciones visuales](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/README.md), [matriz entre soportes](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/matriz-intersoportes.md) y [auditoría](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/auditoria-piezas.md).
 
+## D-038 — Sistema visual v4 oscuro y semántico
+
+- **Fecha:** 2026-08-29
+- **Estado:** vigente como contrato de trabajo; la materialidad, la interacción física y varios componentes permanecen por validar
+- **Decisión:** consolidar las nuevas piezas en un sistema oscuro gobernado por la secuencia origen–vínculo–señal situada. El rojo se reserva para la señal situada; IBM Plex Sans se utiliza para lectura e IBM Plex Mono para datos breves y metadatos. Cada elemento debe clasificarse como contenido, icono, elección, acción, estado, gráfico informativo o decoración antes de diseñarse.
+- **Fundamento:** la síntesis de Norman, Albers, Munari e Isaacson se contrastó con la memoria v4, el Encargo 17 y la auditoría de las pantallas oscuras. La coherencia se define por función, jerarquía y continuidad entre soportes, no por semejanza superficial con un referente.
+- **Consecuencia:** el manual, los tokens, los componentes y la metodología de validación gobiernan las próximas piezas de aplicación, objeto y memoria. Las exploraciones claras y las v1 superadas se conservan como antecedentes; no se adoptan métricas, recompensas, culpa ni decoración que interfiera con elecciones o acciones.
+- **Límite:** el sistema documenta una dirección visual y criterios verificables, pero no demuestra comprensión, accesibilidad, factibilidad técnica ni eficacia de la señal.
+- **Documentos asociados:** [manual visual v4](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/manual-sistema-visual-relevo.md), [tokens](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/tokens-y-especificaciones.md), [componentes y semántica](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/componentes-y-semantica.md), [sistema editorial y físico](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/sistema-editorial-y-fisico.md) y [metodología de validación](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/metodologia-validacion-visual.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-29 — D-038
+
+- **Cambio:** se registró el sistema visual v4, su gramática, sus roles semánticos y sus límites de validación.
+- **Versión anterior:** D-036 seleccionaba la dirección y D-037 diferenciaba soportes, pero todavía no existía un contrato integral para producir y auditar piezas.
+- **Motivo:** convertir la exploración visual en reglas trazables sin presentar hipótesis formales o técnicas como decisiones cerradas.
 
 ### 2026-08-28 — D-037
 
