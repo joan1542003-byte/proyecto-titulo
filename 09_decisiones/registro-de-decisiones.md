@@ -348,9 +348,24 @@
 - **Consecuencia:** puede comenzar la sistematización de tipografía, retícula y componentes. No se adopta el objeto rectangular de la tercera dirección ni se cierran forma industrial, color o canal físico.
 - **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [tablero seleccionado](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/direccion-seleccionada-v2-sistema-modular.png) y [registro visual](../10_recursos_visuales/08_direccion_visual_relevo/registro-decisiones-visuales.md).
 
+## D-037 — Misma lógica, funciones visuales diferenciadas
+
+- **Fecha:** 2026-08-28
+- **Estado:** vigente
+- **Decisión:** aplicar la gramática origen–vínculo–señal situada de acuerdo con la función de cada soporte: la aplicación organiza, el objeto señala y la memoria explica.
+- **Fundamento:** repetir una composición en todos los medios reduciría la relación phygital a una apariencia común. La coherencia requiere roles compartidos, mientras cada soporte conserva un aporte específico.
+- **Consecuencia:** se crea una matriz entre soportes; la aplicación no incorpora funciones nuevas, el objeto se explora mediante familias sin forma seleccionada y la memoria reserva la matriz para identidad y relaciones.
+- **Documentos asociados:** [aplicaciones visuales](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/README.md), [matriz entre soportes](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/matriz-intersoportes.md) y [auditoría](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/auditoria-piezas.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — D-037
+
+- **Cambio:** se registró la especialización visual de aplicación, objeto y memoria.
+- **Versión anterior:** D-036 seleccionaba la dirección, pero no definía cómo debía variar entre soportes.
+- **Motivo:** conservar coherencia sin duplicar interfaces, objetos o recursos editoriales.
 
 ### 2026-08-28 — Reformulación de D-035
 

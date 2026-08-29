@@ -66,7 +66,7 @@ La señal aparece como una concentración local dentro de un campo amplio. La pr
 
 ### Idea
 
-Dos campos intercambian una unidad activa por medio de un conector. La identidad se apoya en origen, vínculo y destino, no en un glifo aislado.
+Dos campos intercambian una unidad activa por medio de un conector. La identidad se apoya en origen, vínculo y señal situada, no en un signo aislado.
 
 ### Fortalezas
 
@@ -110,6 +110,13 @@ Las tres imágenes fueron generadas mediante el generador integrado, utilizando 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Terminología unificada
+
+- **Cambio:** `destino` se reemplazó por `señal situada` y `glifo` por `signo` en la descripción conceptual.
+- **Versión anterior:** la tercera exploración utilizaba términos que sugerían finalidad o dependían de un lenguaje externo.
+- **Motivo:** mantener una relación coherente con autonomía, lugar y funcionamiento de Relevo.
+- **Alcance:** la corrección es semántica; no modifica la imagen histórica de la exploración.
 
 ### 2026-08-28 — Segunda iteración seleccionada
 

@@ -63,6 +63,8 @@ Comparar las direcciones mediante una matriz común. La selección debe poder ju
 
 Convertir la alternativa seleccionada en tokens, reglas tipográficas, componentes base, aplicaciones editoriales y criterios para el objeto. Registrar usos incorrectos y decisiones pendientes.
 
+**Estado:** en desarrollo. La matriz entre soportes y las primeras aplicaciones para objeto, memoria y Android están documentadas. Falta reconstruirlas en formatos editables y probarlas con contenido, escala y condiciones reales.
+
 ## Criterios de evaluación
 
 | Criterio | Pregunta de control |
@@ -83,6 +85,13 @@ Las tres alternativas ya fueron comparadas y la dirección seleccionada quedó r
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Inicio de aplicaciones intersoportes
+
+- **Cambio:** se registró el estado de la etapa 6 y sus condiciones de continuidad.
+- **Versión anterior:** la sistematización estaba habilitada, pero no contaba con aplicaciones comparables.
+- **Motivo:** distinguir la exploración visual ya realizada de la construcción editable y las pruebas todavía pendientes.
+- **Alcance:** el avance no equivale a una identidad final.
 
 ### 2026-08-28 — Apertura de la sistematización
 

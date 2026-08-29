@@ -18,6 +18,9 @@ Dirección conceptual seleccionada y en proceso de sistematización. `Transferen
 - `referencias/`: imágenes aportadas por el autor y registro de procedencia.
 - [Exploraciones](exploraciones/README.md): tres alternativas, comparación y dirección seleccionada.
 - [Tablero refinado de la dirección seleccionada](exploraciones/direccion-seleccionada-v2-sistema-modular.png).
+- [Aplicaciones del sistema](aplicaciones/README.md): objeto, memoria y aplicación Android.
+- [Matriz entre soportes](aplicaciones/matriz-intersoportes.md).
+- [Investigación de referentes aplicada](aplicaciones/investigacion-referentes-aplicados.md).
 
 ## Relación con exploraciones anteriores
 
@@ -36,6 +39,13 @@ La dirección 01 fue seleccionada por el autor el 28 de agosto de 2026. Su desar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Aplicaciones intersoportes
+
+- **Cambio:** se añadieron piezas, investigación y reglas específicas para objeto, memoria y aplicación.
+- **Versión anterior:** la dirección seleccionada se demostraba mediante un tablero general.
+- **Motivo:** comprobar cómo una misma gramática cambia de expresión según la función de cada soporte.
+- **Alcance:** las aplicaciones son exploratorias y no cierran forma, señal, identidad editorial ni interfaz final.
 
 ### 2026-08-28 — Refinamiento modular de la dirección seleccionada
 

@@ -9,7 +9,7 @@
 
 - [Nothing Widgets 2.0 — Figma Community](https://www.figma.com/community/file/1263226487403928191/nothing-widgets-2-0).
 - [Nothing Phone (3), nota especulativa de PhoneArena](https://www.phonearena.com/news/did-nothing-ceo-hint-the-phone-3-design-mysterious-new-button-on-the-side_id158706).
-- [36 Days of Type (Numbers) — Behance](https://www.behance.net/gallery/26199707/36-Days-of-Type-(Numbers)?tracking_source=search_projects%7Cdots&l=46).
+- [36 Days of Type / Numbers — Behance](https://www.behance.net/gallery/26231003/36-Days-of-Type-Numbers).
 
 ## Condición de uso
 
@@ -18,6 +18,13 @@ Las imágenes se conservan como referencias visuales privadas entregadas por el 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-28 — Corrección del enlace tipográfico
+
+- **Cambio:** se sustituyó la URL aportada inicialmente por la página verificable de DAQ Studio.
+- **Versión anterior:** el identificador enlazado no coincidía con el proyecto documentado en la investigación.
+- **Motivo:** unificar procedencia, autoría y bibliografía antes de ampliar el sistema visual.
+- **Alcance:** la corrección no cambia la función del referente ni autoriza reproducir sus signos.
 
 ### 2026-08-28 — Registro de procedencia
 
