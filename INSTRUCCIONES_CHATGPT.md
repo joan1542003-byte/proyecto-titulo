@@ -31,7 +31,11 @@ Su formulación busca recuperar una intención personal cuando una sesión de oc
 
 El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente la conducta ni reducir el tiempo de pantalla como un fin aislado. Su valor depende de apoyar una decisión autónoma mediante una señal configurable y no punitiva. Relevo seguirá siendo phygital y su interfaz objetual se basará en señales ambientales, no en una nueva superficie de consulta. Si el testigo transportable no aporta valor, se reformula o reemplaza la dirección física; no se convierte el proyecto en una aplicación aislada.
 
-La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El desarrollo estructural contiene tres interacciones, nueve marcos de síntesis y 35 estados; constituye diseño documentado, no validación. La línea sustantiva activa es la prueba de asociación entre intención, primer paso, lugar y señal de la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). Sus instrumentos están preparados en [`07_validacion`](07_validacion/README.md), pero la fase A exige construir y comprobar primero la señal manual. La fase B permanece bloqueada hasta disponer de una notificación local Android equivalente. No existen resultados de validación. El Encargo 17 quedó completado.
+La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El desarrollo estructural contiene tres interacciones, nueve marcos de síntesis y 35 estados; constituye diseño documentado, no validación. La línea sustantiva activa es la prueba de asociación entre intención, primer paso, lugar y señal de la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
+
+Los instrumentos están preparados en [`07_validacion`](07_validacion/README.md). La fase A cuenta con [arquitectura cableada y componentes identificados](06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), [firmware provisional](06_desarrollo_y_factibilidad/prototipo-fase-a/README.md) y un [esquema funcional para revisión](06_desarrollo_y_factibilidad/esquema-conexion-provisional-fase-a-2026-08-30.md). El circuito no está aprobado para energizar: faltan revisión electrónica, vía única de alimentación del Nano, terminales y protección de la rama LED, compra, compilación, construcción y ensayo técnico. La protoboard se limita a señales de baja corriente. El subtotal de CLP 28.130 —CLP 32.350 con contingencia— cubre solo partidas identificadas.
+
+El consentimiento fija eliminación de fichas a más tardar el 13 de enero de 2027, pero aún requiere el correo del responsable y revisión académica. La fase B permanece bloqueada hasta disponer de una notificación local Android equivalente. No existen resultados de validación. El Encargo 17 quedó completado.
 
 **In(Visible)** es una etapa histórica anterior. No debe confundirse con la definición vigente de Relevo ni presentarse como su nombre actual. Las memorias y entregas antiguas sirven para reconstruir la evolución, no para fijar automáticamente decisiones actuales.
 
@@ -134,6 +138,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Preparación técnica y administrativa de fase A
+
+- **Cambio:** se incorporaron montaje, firmware, esquema eléctrico, alcance parcial del costo, restricciones de potencia y fecha máxima de eliminación.
+- **Versión anterior:** las instrucciones solo indicaban que instrumentos y requisitos estaban preparados y que faltaba construir la señal.
+- **Motivo:** permitir que una conversación nueva retome el bloqueo real sin confundir documentación con funcionamiento comprobado.
+- **Alcance:** siguen pendientes revisión electrónica, compra, compilación, construcción, ensayo, correo del responsable y revisión académica; no existen resultados.
 
 ### 2026-08-28 — Estado verificable de validación
 
