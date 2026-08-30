@@ -34,7 +34,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Prototipo Android | Inicial | Plataforma justificada, wireframes y referencias visuales. | Aplicación funcional, condición provisional, notificación local y estados de recuperación. |
 | Testigo físico | Preparado para revisión y construcción | Función, requisitos, arquitectura cableada, firmware provisional, lista de materiales y silenciamiento DPDT documentados. | Revisar el circuito, comprar, compilar, construir y comprobar señal, energía, estabilidad, temperatura y seguridad. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha, criterios previos y montaje provisional trazado. | Completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
-| Producción y costos | Provisional | Reglas de factibilidad y costo electrónico del montaje de fase A con proveedores y fecha de corte. | Cotización al comprar, cuerpo y difusor, herramientas, trabajo, tiempos y costo del prototipo integrado. |
+| Producción y costos | Provisional | Reglas de factibilidad y subtotal de componentes identificados para fase A, con proveedores y fecha de corte. | Revisión de terminales y protección, cotización al comprar, cuerpo y difusor, herramientas, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
 
 ## Ruta crítica
@@ -261,6 +261,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Costo parcial anterior a la revisión
+
+- **Cambio:** el estado de producción distingue el subtotal de piezas identificadas de las partidas de terminales y protección todavía no definidas.
+- **Versión anterior:** el costo de fase A podía leerse como una referencia electrónica completa.
+- **Motivo:** impedir que una contingencia porcentual oculte componentes obligatorios pendientes de revisión.
+- **Consecuencia:** la compra continúa bloqueada hasta completar lista y cotización.
 
 ### 2026-08-30 — Estado técnico de fase A
 

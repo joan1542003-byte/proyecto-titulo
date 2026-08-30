@@ -8,6 +8,8 @@
 
 **Fuente provisional:** [firmware del montaje](prototipo-fase-a/README.md)
 
+**Esquema provisional:** [tabla funcional y revisión anterior a energizar](esquema-conexion-provisional-fase-a-2026-08-30.md)
+
 ## Alcance de la decisión
 
 Este montaje existe para comprobar el material antes de involucrar participantes. Debe emitir tres pulsos en 3 s ± 0,3 s, responder a una activación ubicada a tres metros, permitir silenciamiento físico y volver a reposo. No integra Android, Bluetooth, batería, forma final ni automatización.
@@ -16,7 +18,7 @@ La selección no define la electrónica de Relevo. Aísla las variables necesari
 
 ## Alternativas comparadas
 
-Los subtotales corresponden a los precios observados en las fichas digitales del comercio en la fecha de corte. Algunas páginas exhibían además un precio anterior tachado; ese valor no se utilizó. Los montos permiten planificar y comparar, pero deben verificarse nuevamente al comprar. Incluyen controlador, luz, regulación, alimentación, conversión de voltaje, silenciamiento y montaje de protoboard. No incluyen cuerpo, difusor, envío, herramientas ni trabajo profesional.
+Los subtotales corresponden a los precios observados en las fichas digitales del comercio en la fecha de corte. Algunas páginas exhibían además un precio anterior tachado; ese valor no se utilizó. Los montos permiten planificar y comparar, pero deben verificarse nuevamente al comprar. Incluyen controlador, luz, regulación, alimentación, conversión de voltaje, silenciamiento y montaje de protoboard. No incluyen cuerpo, difusor, envío, herramientas, trabajo profesional, terminales ni protección de la rama de potencia.
 
 | Alternativa | Activación | Ventaja para la prueba | Riesgo o variable añadida | Subtotal de referencia | Decisión |
 | --- | --- | --- | --- | ---: | --- |
@@ -40,11 +42,11 @@ Los subtotales B y C reemplazan el cable y el pulsador de A por un [kit infrarro
 | Interruptor de palanca DPDT, seis pines | 1 | Un polo interrumpe la rama luminosa y el segundo comunica el estado de silencio al controlador. | CLP 1.490 | [MechatronicStore](https://www.mechatronicstore.cl/interruptor-palanca-dpdt-6-pines-3a/); valor observado en la fecha de corte; se utiliza solo en baja tensión. |
 | Cable paralelo de dos conductores, 24 AWG | 3 m | Separar el pulsador de activación del montaje. | CLP 600 | [MechatronicStore](https://www.mechatronicstore.cl/cable-paralelo-variedad-calibres/); variante 24 AWG a CLP 200 por metro. |
 | Pulsador momentáneo | 1 | Iniciar la secuencia desde tres metros. | CLP 290 | [MechatronicStore](https://www.mechatronicstore.cl/boton-pulsador-switch-2-pines-6x6x7mm/). |
-| Kit de protoboard, fuente y cables | 1 | Mantener el montaje modificable durante el ensayo. | CLP 5.690 | [MechatronicStore](https://www.mechatronicstore.cl/kit-protoboard-fuente-mb102-usb-set-de-cables/); valor observado en la fecha de corte. La fuente incluida no sustituye la conversión medida para el conjunto. |
-| **Subtotal electrónico** |  |  | **CLP 28.130** | Sin envío, cuerpo, difusor, herramientas ni fabricación. |
-| **Subtotal con 15 % de contingencia** |  |  | **CLP 32.350** | Resultado de CLP 32.349,5 redondeado al peso; reserva de planificación, no cotización ni costo final. |
+| Kit de protoboard, fuente y cables | 1 | Mantener modificables las señales y conexiones de baja corriente; la rama LED no atraviesa la protoboard. | CLP 5.690 | [MechatronicStore](https://www.mechatronicstore.cl/kit-protoboard-fuente-mb102-usb-set-de-cables/); valor observado en la fecha de corte. La fuente incluida no sustituye la conversión medida para el conjunto. |
+| **Subtotal de componentes identificados** |  |  | **CLP 28.130** | Sin envío, cuerpo, difusor, herramientas, fabricación, terminales ni protección de la rama de potencia. |
+| **Subtotal con 15 % de contingencia sobre partidas identificadas** |  |  | **CLP 32.350** | Resultado de CLP 32.349,5 redondeado al peso; no cubre terminales, protección ni otras partidas todavía no definidas. |
 
-La disponibilidad de una página no reserva stock. Precio, variante y existencia deben comprobarse nuevamente antes de comprar. El cuerpo y el difusor se resolverán con material reutilizable o una compra separada solo después de confirmar estabilidad, distribución de luz y ausencia de contacto con partes eléctricas.
+La disponibilidad de una página no reserva stock. Precio, variante y existencia deben comprobarse nuevamente antes de comprar. La revisión electrónica debe añadir los terminales y la protección de la rama de potencia antes de cerrar el costo. El cuerpo y el difusor se resolverán con material reutilizable o una compra separada solo después de confirmar estabilidad, distribución de luz y ausencia de contacto con partes eléctricas.
 
 ## Arquitectura funcional del montaje
 
@@ -149,6 +151,20 @@ MechatronicStore. (s. f.-k). *Control remoto RF inalámbrico con relé de 5 V, u
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Separación entre señales y rama de potencia
+
+- **Cambio:** la protoboard se restringió a conexiones de baja corriente; terminales y protección de la rama LED quedaron como partidas obligatorias por definir.
+- **Versión anterior:** el kit de protoboard podía interpretarse como soporte de toda la corriente de la tira y el subtotal parecía cubrir la electrónica completa.
+- **Motivo:** una carga nominal cercana a 1,17 A exige revisar conductores, terminales y protección antes de energizar.
+- **Resultado:** CLP 28.130 continúa como subtotal de componentes identificados, no como costo completo de construcción.
+
+### 2026-08-30 — Esquema funcional para revisión
+
+- **Cambio:** se enlazó una hoja separada con conexiones funcionales, campos de terminales reales y puertas anteriores a la energización.
+- **Versión anterior:** la arquitectura explicaba relaciones, pero no ofrecía un registro verificable para la revisión electrónica.
+- **Motivo:** hacer ejecutable el siguiente paso sin inventar un pinout ni afirmar seguridad.
+- **Alcance:** el esquema continúa sin aprobación, medición ni construcción.
 
 ### 2026-08-30 — Cable identificable y mapa del DPDT
 

@@ -28,10 +28,18 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
+- [Esquema de conexión provisional](esquema-conexion-provisional-fase-a-2026-08-30.md): tabla funcional, registro de terminales y puertas para revisión antes de energizar.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Esquema anterior a la construcción
+
+- **Cambio:** se enlazó la tabla de conexiones que distingue relaciones funcionales de terminales todavía no identificados.
+- **Versión anterior:** la lista de materiales y la arquitectura no ofrecían un registro único para la revisión electrónica.
+- **Motivo:** impedir que fotografías o etiquetas no comprobadas se conviertan en instrucciones de montaje.
+- **Alcance:** no se aprobó, conectó ni energizó el circuito.
 
 ### 2026-08-30 — Montaje mínimo para fase A
 
