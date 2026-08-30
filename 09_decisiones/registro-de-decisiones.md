@@ -384,13 +384,20 @@
 - **Estado:** vigente para la formulación v4; revisable con nueva evidencia
 - **Decisión:** utilizar los dos tipos situacionales como base para fichas de perfil, recorridos y requisitos trazables. No producir una persona biográfica mientras el corpus no respalde atributos estables adicionales. La síntesis narrativa de la memoria no sustituye todavía esos entregables autónomos.
 - **Fundamento:** una misma persona puede ocupar el patrón principal o el límite según el episodio. Añadir nombre, ocupación, vivienda, retrato o biografía convertiría una herramienta de comunicación en información aparentemente empírica y podría ocultar esa variación.
-- **Consecuencia:** `03_usuarios` conserva el proceso analítico; la memoria v4 contiene su síntesis académica; la Issue #2 permanece abierta para elaborar fichas situacionales, recorridos diferenciados y una matriz de requisitos sin inventar contenido.
+- **Consecuencia:** `03_usuarios` conserva el proceso analítico y las fichas situacionales; la memoria v4 contiene su síntesis académica; la Issue #2 permanece abierta para elaborar recorridos diferenciados y una matriz de requisitos sin inventar contenido.
 - **Alternativa descartada:** declarar la fase completamente cerrada solo porque sus resultados aparecen redactados en la memoria, o producir dos personas convencionales mediante atributos ficticios.
-- **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
+- **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md), [perfiles situacionales](../03_usuarios/perfiles-situacionales.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Fichas situacionales asociadas a D-040
+
+- **Cambio:** se enlazaron las fichas trazables de U1 y U2 y se redujo el pendiente de la Issue #2 a recorridos y matriz de requisitos.
+- **Versión anterior:** D-040 registraba las fichas como un entregable todavía inexistente.
+- **Motivo:** mantener la decisión sincronizada con el primer producto documental de su implementación.
+- **Resultado:** los perfiles ya pueden auditarse de manera autónoma; sus transiciones e implicaciones continúan sujetas a prototipos.
 
 ### 2026-08-30 — D-040
 
