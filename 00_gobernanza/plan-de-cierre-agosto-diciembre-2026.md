@@ -4,13 +4,15 @@
 
 **Cierre total interno:** 15 de noviembre de 2026
 
-**Entrega objetivo:** 11 de diciembre de 2026, sujeta a confirmación en el calendario oficial.
+**Entrega oficial de memoria:** 2 de diciembre de 2026.
+
+**Periodo oficial de exámenes de Proyecto de Título:** 14–18 de diciembre de 2026.
 
 ## Propósito
 
 Este documento traduce el estado real de Relevo en una ruta de cierre. Su función es evitar que la investigación, la escritura, el sistema visual y el prototipado avancen como líneas separadas. Desde esta fecha, cada tarea debe ayudar a responder una pregunta pendiente, producir evidencia o cerrar un entregable necesario.
 
-La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al 15 de noviembre con producto, evidencia, memoria y entrega cerrados. La segunda mitad de noviembre funciona como margen de seguridad. Diciembre se reserva para estudiar la memoria, preparar la presentación y realizar únicamente correcciones menores.
+La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al 15 de noviembre con producto, evidencia, memoria y entrega cerrados. El margen previo al Pase de Examen permite resolver fallos menores sin trasladar desarrollo sustantivo a diciembre. Después de entregar la memoria, el trabajo se concentra en estudiar, ensayar la defensa y comprobar la demostración del prototipo.
 
 ## Etapa actual
 
@@ -52,11 +54,13 @@ Si un paso falla, se itera dentro de su periodo. No se compensa un vacío de evi
 
 ## Calendario maestro
 
+Las fechas institucionales se encuentran consolidadas en el [calendario oficial del segundo semestre de 2026](calendario-oficial-segundo-semestre-2026.md). Cuando una fecha interna y una oficial cumplan funciones distintas, ambas se conservan con su alcance explícito.
+
 ### 29 de agosto–6 de septiembre — Preparar el paso desde documentación a prueba
 
 **Objetivo:** dejar lista la prueba inicial y eliminar bloqueos operativos.
 
-- confirmar la fecha oficial de entrega y las evaluaciones intermedias;
+- incorporar los hitos oficiales a la planificación y a la Issue #9;
 - reconciliar el estado de las Issues #2, #4 y #5 con los documentos vigentes;
 - seleccionar una condición provisional para el prototipo, sin declararla definitiva;
 - construir el material mínimo de señal manual;
@@ -90,6 +94,8 @@ Si un paso falla, se itera dentro de su periodo. No se compensa un vacío de evi
 
 **Criterio de salida:** existe una modalidad justificable, reproducible y con una alternativa accesible; se conocen sus contextos de fallo.
 
+El avance se presenta en la corrección cruzada oficial del 30 de septiembre. Las observaciones pertinentes se registran y se traducen en decisiones antes de cerrar esta etapa.
+
 ### 5–18 de octubre — Prototipo Android e integración técnica
 
 **Objetivo:** convertir el flujo documentado en un sistema funcional mínimo.
@@ -117,6 +123,8 @@ Si un paso falla, se itera dentro de su periodo. No se compensa un vacío de evi
 
 **Criterio de salida del 31 de octubre:** el producto funciona de inicio a cierre, la forma y la gráfica responden a decisiones documentadas, los riesgos principales se conocen y no quedan funciones esenciales por inventar.
 
+La semana de Pruebas Solemnes del 19 al 23 de octubre obliga a proteger la ruta crítica: durante esos días se priorizan comprobaciones indispensables y documentación de resultados, sin abrir exploraciones secundarias.
+
 ### 1–8 de noviembre — Validación final acotada y congelamiento
 
 **Objetivo:** comprobar la versión integrada y cerrar decisiones.
@@ -143,31 +151,44 @@ Si un paso falla, se itera dentro de su periodo. No se compensa un vacío de evi
 
 **Criterio de salida del 15 de noviembre:** no queda investigación, diseño, desarrollo, redacción o producción indispensable pendiente. El proyecto puede entregarse aunque durante las semanas siguientes solo se ensaye y corrijan detalles.
 
-### 16–30 de noviembre — Margen de seguridad y defensa
+### 16–24 de noviembre — Margen de seguridad y Pase de Examen
 
-**Objetivo:** proteger el cierre frente a fallos y preparar la comunicación.
+**Objetivo:** proteger el cierre frente a fallos y demostrar que el proyecto se encuentra en condiciones de pasar a examen.
 
 - ensayar la presentación y ajustar su duración;
-- revisar la memoria como lector externo;
+- revisar la memoria como lector externo y preparar el material requerido para el Pase de Examen;
 - comprobar respaldos, exportaciones, impresión y funcionamiento del prototipo;
 - corregir erratas, enlaces, diagramación o fallos menores;
 - repetir una prueba solo si resuelve una duda crítica detectada antes del congelamiento.
 
 No se abre una nueva función, una nueva dirección visual ni una reformulación general durante este periodo.
 
-### 1–10 de diciembre — Estudio y preparación final
+### 25 de noviembre — Entrega del Pase de Examen
 
-**Objetivo:** dominar el argumento y llegar a la entrega sin cambios estructurales.
+Presentar los antecedentes y entregables solicitados por la Escuela. Cualquier observación recibida se clasifica según su impacto en la memoria, la demostración o la defensa; solo se ejecutan cambios compatibles con la entrega oficial del 2 de diciembre.
+
+### 26 de noviembre–2 de diciembre — Cierre y entrega de memoria
+
+**Objetivo:** entregar una memoria definitiva, coherente y respaldada.
+
+- incorporar únicamente correcciones necesarias surgidas del Pase de Examen;
+- comprobar índice, figuras, anexos, referencias y consistencia APA 7;
+- verificar exportación, legibilidad, nombre de archivo y respaldos;
+- entregar la memoria el 2 de diciembre según el formato institucional.
+
+### 3–13 de diciembre — Estudio y preparación de la defensa
+
+**Objetivo:** dominar el argumento y llegar al examen sin cambios estructurales.
 
 - estudiar la memoria, las fuentes centrales, los resultados y las limitaciones;
 - practicar respuestas sobre problema, usuario, aporte, decisiones, factibilidad y evidencia;
 - ensayar demostración y planes de contingencia;
-- realizar solo correcciones pequeñas autorizadas y verificables;
-- confirmar el paquete final y sus respaldos.
+- realizar solo correcciones pequeñas en la presentación o la demostración;
+- confirmar el funcionamiento del prototipo y sus planes de contingencia.
 
-### 11 de diciembre — Entrega objetivo
+### 14–18 de diciembre — Exámenes de Proyecto de Título
 
-Entregar la memoria, los anexos, la presentación y el prototipo según el formato oficial confirmado. Conservar una copia local, una copia externa y la versión etiquetada en GitHub.
+Presentar y defender Relevo dentro del periodo oficial asignado por la Escuela. Conservar una copia local, una copia externa y la versión etiquetada en GitHub de todos los entregables.
 
 ## Hitos de control
 
@@ -175,13 +196,16 @@ Entregar la memoria, los anexos, la presentación y el prototipo según el forma
 | --- | --- | --- |
 | 6 de septiembre | Material y protocolo habilitados | Señal segura y repetible; ensayo interno completado. |
 | 20 de septiembre | Núcleo conceptual probado | Decisión sobre asociación y papel del lugar. |
+| 30 de septiembre | Corrección cruzada oficial | Avance presentado y observaciones traducidas en tareas o decisiones. |
 | 4 de octubre | Modalidad provisional cerrada | Señal perceptible, silenciable y contextualizada. |
 | 18 de octubre | Ciclo funcional integrado | Android y testigo ejecutan el recorrido y sus fallos críticos. |
+| 19–23 de octubre | Semana de Pruebas Solemnes | Ruta crítica protegida y alcance secundario suspendido. |
 | 31 de octubre | Proyecto prácticamente terminado | Producto presentable, forma definida y costos documentados. |
 | 8 de noviembre | Diseño congelado | Validación integrada analizada; solo quedan correcciones de cierre. |
 | 15 de noviembre | Proyecto 100 % cerrado | Producto, memoria, anexos y presentación completos. |
-| 30 de noviembre | Entrega verificada | Ensayos, respaldos y exportaciones comprobados. |
-| 11 de diciembre | Entrega | Paquete oficial entregado. |
+| 25 de noviembre | Pase de Examen | Antecedentes entregados y observaciones clasificadas. |
+| 2 de diciembre | Entrega de memoria | Memoria definitiva entregada y respaldada. |
+| 14–18 de diciembre | Examen de Proyecto de Título | Presentación, defensa y demostración realizadas. |
 
 ## Prioridades y renuncias
 
@@ -238,9 +262,16 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 
 ## Registro de cambios (disclaimer)
 
+### 2026-08-30 — Incorporación del calendario oficial
+
+- **Cambio:** se reemplazó la fecha estimada del 11 de diciembre por los hitos oficiales del Pase de Examen, la entrega de memoria y el periodo de exámenes; también se incorporaron la corrección cruzada y la Semana de Pruebas Solemnes.
+- **Versión anterior:** el plan trataba el 11 de diciembre como entrega objetivo pendiente de confirmación y no distinguía los hitos institucionales de noviembre y diciembre.
+- **Motivo:** alinear la ruta de cierre con el calendario de la Coordinación de Titulación y preservar el 15 de noviembre como cierre interno.
+- **Consecuencia:** diciembre deja de considerarse un periodo previo a la entrega general: la memoria se entrega el día 2 y los días posteriores se reservan para preparar la defensa.
+
 ### 2026-08-29 — Creación del plan de cierre
 
 - **Cambio:** se documentaron el estado real del proyecto, la ruta crítica, el calendario hasta la entrega, los criterios de salida, los riesgos, las renuncias necesarias y su seguimiento en la Issue #9.
 - **Versión anterior:** la hoja de ruta organizaba fases y dependencias, pero no asignaba fechas de cierre ni reservaba diciembre para estudio y correcciones menores.
-- **Motivo:** asegurar un proyecto prácticamente terminado en octubre, cerrado al 100 % el 15 de noviembre y preparado para la entrega aproximada del 11 de diciembre.
-- **Límite:** las fechas de evaluaciones docentes y de entrega deben confirmarse con el calendario oficial; el plan no sustituye esas instrucciones.
+- **Motivo:** asegurar un proyecto prácticamente terminado en octubre y cerrado al 100 % el 15 de noviembre, antes de los hitos institucionales de cierre.
+- **Límite:** las fechas utilizadas en la creación eran aproximadas y fueron reemplazadas el 30 de agosto por el calendario oficial.

@@ -4,7 +4,7 @@
 
 Relevo cuenta con una memoria integral en Markdown, auditada según los títulos, la secuencia y los límites del examen. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión. La línea sustantiva activa es la [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
 
-El calendario de término se encuentra en el [plan de cierre de agosto a diciembre de 2026](plan-de-cierre-agosto-diciembre-2026.md). Este fija el 31 de octubre como término práctico del producto, el 15 de noviembre como cierre interno total y el 11 de diciembre como fecha objetivo de entrega pendiente de confirmación oficial.
+El calendario de término se encuentra en el [plan de cierre de agosto a diciembre de 2026](plan-de-cierre-agosto-diciembre-2026.md) y sus fechas institucionales se respaldan en el [calendario oficial del segundo semestre de 2026](calendario-oficial-segundo-semestre-2026.md). El producto debe estar prácticamente terminado el 31 de octubre y completamente cerrado el 15 de noviembre. El Pase de Examen se entrega el 25 de noviembre, la memoria el 2 de diciembre y los exámenes de Proyecto de Título se realizan entre el 14 y el 18 de diciembre.
 
 El trabajo avanza por dependencias: una etapa solo alimenta a la siguiente cuando sus preguntas, evidencia, límites y decisiones están registrados. El producto phygital no se desarrolla como una respuesta autónoma; debe poder reconstruirse desde la investigación.
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Calendario institucional confirmado
+
+- **Cambio:** se incorporaron el Pase de Examen del 25 de noviembre, la entrega de memoria del 2 de diciembre y el periodo de exámenes del 14 al 18 de diciembre.
+- **Versión anterior:** la hoja de ruta utilizaba el 11 de diciembre como fecha objetivo pendiente de confirmación.
+- **Motivo:** sincronizar la ruta general con el calendario oficial de la Coordinación de Titulación.
+- **Decisión derivada:** se mantienen el 31 de octubre y el 15 de noviembre como cierres internos anticipados.
 
 ### 2026-08-29 — Calendario de cierre
 

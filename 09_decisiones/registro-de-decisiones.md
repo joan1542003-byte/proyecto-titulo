@@ -367,19 +367,26 @@
 - **Límite:** el sistema documenta una dirección visual y criterios verificables, pero no demuestra comprensión, accesibilidad, factibilidad técnica ni eficacia de la señal.
 - **Documentos asociados:** [manual visual v4](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/manual-sistema-visual-relevo.md), [tokens](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/tokens-y-especificaciones.md), [componentes y semántica](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/componentes-y-semantica.md), [sistema editorial y físico](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/sistema-editorial-y-fisico.md) y [metodología de validación](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/metodologia-validacion-visual.md).
 
-## D-039 — Cierre interno al 15 de noviembre
+## D-039 — Cierre interno al 15 de noviembre y calendario oficial
 
 - **Fecha:** 2026-08-29
-- **Estado:** vigente como marco temporal; la fecha oficial de entrega debe confirmarse
-- **Decisión:** orientar el trabajo a un producto prácticamente terminado el 31 de octubre y a un cierre total de producto, evidencia, memoria y entregables el 15 de noviembre. La segunda mitad de noviembre se reserva como margen de seguridad y diciembre para estudio, ensayo y correcciones menores antes de la entrega objetivo del 11 de diciembre.
+- **Estado:** vigente como marco temporal alineado con el calendario oficial
+- **Decisión:** orientar el trabajo a un producto prácticamente terminado el 31 de octubre y a un cierre total de producto, evidencia, memoria y entregables el 15 de noviembre. El Pase de Examen se entrega el 25 de noviembre, la memoria el 2 de diciembre y los exámenes de Proyecto de Título se realizan entre el 14 y el 18 de diciembre.
 - **Fundamento:** los fundamentos documentales están avanzados, mientras la ruta crítica se concentra en prototipo físico, asociación, modalidad de señal, integración Android, pruebas, producción y actualización final de la memoria. Posponer estos componentes hasta noviembre o diciembre pondría en riesgo la entrega.
 - **Consecuencia:** cada semana debe cerrar un entregable y una decisión; no se abrirán funciones, estudios o colecciones visuales que no resuelvan una dependencia del cierre. Ante retrasos se reduce alcance secundario antes de desplazar el 15 de noviembre.
-- **Límite:** el calendario debe ajustarse si la Universidad confirma fechas obligatorias diferentes, dejando registro de causa e impacto.
-- **Documentos asociados:** [Plan de cierre agosto–diciembre de 2026](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) e [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9).
+- **Límite:** una comunicación institucional posterior puede modificar estas fechas; cualquier cambio debe registrar causa e impacto.
+- **Documentos asociados:** [Calendario oficial del segundo semestre](../00_gobernanza/calendario-oficial-segundo-semestre-2026.md), [Plan de cierre agosto–diciembre de 2026](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) e [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Actualización de D-039
+
+- **Cambio:** se incorporaron el Pase de Examen, la entrega de memoria y el periodo oficial de exámenes.
+- **Versión anterior:** D-039 utilizaba el 11 de diciembre como fecha estimada y todavía exigía confirmar el calendario.
+- **Motivo:** la consulta del calendario oficial permitió sustituir la estimación por hitos institucionales verificables.
+- **Resultado:** el cierre interno del 15 de noviembre se conserva y queda claramente separado de las entregas oficiales.
 
 ### 2026-08-29 — D-039
 
