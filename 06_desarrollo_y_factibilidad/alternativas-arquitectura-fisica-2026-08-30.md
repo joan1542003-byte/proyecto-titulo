@@ -1,7 +1,9 @@
 # Alternativas para simplificar la arquitectura física de Relevo
 
-**Fecha de corte:** 30 de agosto de 2026  
-**Estado:** exploración comparativa; no reemplaza la arquitectura provisional ni autoriza compras o energización  
+**Fecha de corte:** 30 de agosto de 2026
+
+**Estado:** exploración comparativa; no reemplaza la arquitectura provisional ni autoriza compras o energización
+
 **Pregunta:** ¿cuál es el montaje mínimo capaz de producir una señal física situada, perceptible y controlable sin añadir complejidad que la prueba todavía no necesita?
 
 ## Punto de partida
@@ -34,7 +36,8 @@ Las alternativas se revisaron según seis preguntas. La prioridad sigue el prop�
 
 Combina Arduino Nano, tira LED de 12 V, fuente, convertidor reductor, módulo MOSFET, interruptor y activación cableada. Su principal ventaja es disponer de una fuente luminosa amplia y regulable. A cambio, incorpora una rama de potencia que exige revisión, protección y terminales antes de energizar.
 
-**Mantenerla si:** una fuente de 5 V no alcanza la perceptibilidad necesaria o el difusor exige una superficie luminosa mayor.  
+**Mantenerla si:** una fuente de 5 V no alcanza la perceptibilidad necesaria o el difusor exige una superficie luminosa mayor.
+
 **No elegirla todavía como forma final:** resolvería luminosidad antes de saber cuánta luz necesita realmente la experiencia.
 
 ### B. Núcleo único de 5 V con ESP32-C3 — candidata prioritaria
@@ -54,28 +57,32 @@ Esta opción elimina del primer montaje la fuente de 12 V, el convertidor LM2596
 
 El subtotal es aproximadamente 38 % menor que las partidas identificadas del montaje de 12 V. La comparación no demuestra todavía un costo final menor, porque las exclusiones no son idénticas y el hardware no ha sido probado.
 
-**Ventaja principal:** una sola familia de alimentación y una placa que puede servir tanto en la prueba manual como en la integración Android.  
+**Ventaja principal:** una sola familia de alimentación y una placa que puede servir tanto en la prueba manual como en la integración Android.
+
 **Riesgo principal:** reducir piezas puede trasladar complejidad al enlace Bluetooth y a la programación. Android admite el intercambio de pequeñas cantidades de datos mediante Bluetooth Low Energy, pero exige permisos, descubrimiento, conexión y manejo explícito de desconexiones ([Android Developers, 2026](https://developer.android.com/develop/connectivity/bluetooth/ble/ble-overview)).
 
 ### C. Núcleo de 5 V con Arduino Nano y activación cableada
 
 Reemplaza la tira de 12 V por el mismo anillo WS2812, conserva el Nano y utiliza USB para alimentación. Es la alternativa más directa para una fase A sin Bluetooth y reutiliza el firmware ya preparado con ajustes en la salida luminosa.
 
-**Ventaja:** reduce riesgos eléctricos y conserva una activación determinista.  
+**Ventaja:** reduce riesgos eléctricos y conserva una activación determinista.
+
 **Límite:** obliga a cambiar de controlador cuando se integre Android, duplicando parte del desarrollo. Por eso funciona como reserva si Bluetooth interfiere con la primera prueba, no como primera ruta de continuidad.
 
 ### D. Lámpara o bombilla inteligente comercial
 
 Una luminaria existente podría emitir el pulso mediante una integración local o una automatización. Reduciría la fabricación electrónica inicial, pero introduciría ecosistema del fabricante, configuración de red, forma y luminosidad no controladas, y posibles dependencias de nube. También debilitaría la relación entre objeto transportable, lugar elegido y primer paso.
 
-**Uso pertinente:** referencia o prototipo de percepción muy temprano.  
+**Uso pertinente:** referencia o prototipo de percepción muy temprano.
+
 **Descarte para el prototipo central:** simplifica la construcción a costa de perder control sobre la experiencia, la privacidad y la identidad física de Relevo.
 
 ### E. Etiqueta NFC o marcador físico pasivo
 
 Una etiqueta NFC es barata, no necesita alimentación y puede vincular un lugar con una acción del teléfono. Sin embargo, exige acercar o desbloquear el teléfono para activar o leer la interacción. La señal vuelve a depender de la pantalla y deja de aparecer de manera situada cuando se cumple la condición.
 
-**Uso pertinente:** emparejamiento, identificación o configuración futura.  
+**Uso pertinente:** emparejamiento, identificación o configuración futura.
+
 **Descarte como señal principal:** cambia la hipótesis que se necesita estudiar; el objeto se convierte en un acceso al teléfono, no en una salida física situada.
 
 ## Comparación sintética
