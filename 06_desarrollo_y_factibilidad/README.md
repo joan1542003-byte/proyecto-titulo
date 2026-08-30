@@ -27,10 +27,18 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 ## Documentación vigente
 
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
+- [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Montaje mínimo para fase A
+
+- **Cambio:** se enlazó una configuración provisional construible para producir la señal manual de la primera prueba.
+- **Versión anterior:** el directorio enumeraba electrónica, materiales y costos como áreas, pero solo contenía la decisión de plataforma Android.
+- **Motivo:** desbloquear el ensayo técnico sin confundir su montaje con la arquitectura final de Relevo.
+- **Alcance:** componentes y precios no comprados; cuerpo, difusor, herramientas, revisión electrónica y envío permanecen fuera del subtotal.
 
 ### 2026-08-25 — Plataforma inicial documentada
 

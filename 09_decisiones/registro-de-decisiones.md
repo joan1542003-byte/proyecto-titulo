@@ -388,9 +388,26 @@
 - **Alternativa descartada:** declarar la fase completamente cerrada solo porque sus resultados aparecen redactados en la memoria, o producir dos personas convencionales mediante atributos ficticios.
 - **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md), [perfiles situacionales](../03_usuarios/perfiles-situacionales.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md), [matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
 
+## D-041 — Activación cableada para aislar el ensayo de fase A
+
+- **Fecha:** 2026-08-30
+- **Estado:** seleccionada para construir; no comprada, montada ni ensayada
+- **Decisión:** utilizar un pulsador conectado mediante tres metros de cable para activar el montaje luminoso de fase A. Infrarrojo queda como reserva si el cable altera el espacio; radio de 433 MHz se descarta para esta prueba.
+- **Fundamento:** la fase A necesita comprobar repetibilidad, duración, silenciamiento, estabilidad y seguridad del material sin introducir fallos de radio, Bluetooth o Android. La opción cableada agrega menos variables y tiene trazabilidad de componentes y costos.
+- **Consecuencia:** se documenta un subtotal electrónico de CLP 35.000 y CLP 40.250 con 15 % de contingencia, sin cuerpo, difusor, herramientas, envío ni trabajo. El cable debe fijarse fuera del recorrido.
+- **Límite:** la decisión pertenece al dispositivo de ensayo y no define el enlace, la electrónica, la forma ni el costo del producto. No autoriza compra, uso con participantes ni afirmaciones de seguridad certificada.
+- **Documentos asociados:** [Montaje mínimo de fase A](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), [especificación](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) e [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — D-041
+
+- **Cambio:** se registró la activación cableada como arquitectura provisional del montaje de fase A y se separó de la electrónica final.
+- **Versión anterior:** la puerta técnica exigía activación remota, pero no comparaba mecanismos ni documentaba una lista construible.
+- **Motivo:** reducir variables antes del primer ensayo técnico y hacer trazables sus costos y riesgos.
+- **Resultado:** la construcción puede planificarse; compra, montaje, revisión y ensayo permanecen pendientes.
 
 ### 2026-08-30 — Matriz de requisitos asociada a D-040
 
