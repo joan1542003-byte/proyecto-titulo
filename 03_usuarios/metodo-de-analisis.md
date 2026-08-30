@@ -2,7 +2,7 @@
 
 ## Propósito
 
-Definir un procedimiento coherente, trazable y adecuado para analizar las ocho entrevistas antes de formular tipos de usuario, personas o mapas de recorrido.
+Definir un procedimiento coherente, trazable y adecuado para analizar las ocho entrevistas antes de formular tipos de usuario, perfiles situacionales o mapas de recorrido.
 
 La pregunta central de la fase es:
 
@@ -31,7 +31,7 @@ La transcripción y la regularización académica se realizaron después de las 
 | Análisis de tipos ideales | Construir una tipología cualitativa a partir de reconstrucciones completas de casos, semejanzas, diferencias y casos óptimos. | Responde directamente a la necesidad de desarrollar dos tipos sin fingir una segmentación poblacional. | **Seleccionado para la segunda etapa analítica.** |
 | Agrupación estadística | Formar segmentos mediante distancias o patrones cuantitativos. | Ocho casos y variables principalmente cualitativas no permiten una agrupación estable ni representativa. | Descartado para este corpus. |
 | Personas cualitativas | Convertir patrones respaldados en representaciones concretas para diseñar. | Es pertinente después de construir la tipología; no sustituye el análisis. | Seleccionado como traducción de diseño posterior. |
-| Mapa de recorrido | Representar la experiencia a lo largo del tiempo, sus acciones, contexto, tensiones y cambios. | Permite conectar el patrón de usuario con requisitos, siempre que derive de evidencia y diferencie estado actual de escenario futuro. | Seleccionado después de validar los tipos y las personas. |
+| Mapa de recorrido | Representar la experiencia a lo largo del tiempo, sus acciones, contexto, tensiones y cambios. | Permite conectar el patrón de usuario con requisitos, siempre que derive de evidencia y diferencie estado actual de escenario futuro. | Seleccionado después de validar los tipos y perfiles situacionales. |
 
 ## Decisión metodológica
 
@@ -108,11 +108,11 @@ La elección se evaluará mediante seis criterios:
 
 No se escogerá una alternativa antes de completar la matriz y las reconstrucciones de caso.
 
-## Capa 3 — Personas cualitativas
+## Capa 3 — Perfiles cualitativos situacionales
 
-Jansen et al. (2022) distinguen metodologías cualitativas, cuantitativas y mixtas para crear personas. Debido al tamaño y naturaleza del corpus, Relevo utilizará personas cualitativas. Nielsen (2019) aporta una secuencia orientada a conectar datos, descripción y escenarios.
+Jansen et al. (2022) distinguen metodologías cualitativas, cuantitativas y mixtas para crear personas. Sus criterios de trazabilidad resultan útiles para organizar evidencia, mientras Nielsen (2019) aporta una secuencia orientada a conectar datos, descripción y escenarios. Después del análisis, Relevo adopta perfiles situacionales en lugar de personas biográficas: describen condiciones, necesidades y límites que pueden aparecer en momentos distintos de una misma persona.
 
-Cada persona deberá contener:
+Cada perfil debe contener:
 
 - tipo ideal del que deriva;
 - participantes y evidencias que la sustentan;
@@ -127,14 +127,14 @@ Cada persona deberá contener:
 - contradicciones internas;
 - nivel de confianza de cada atributo.
 
-No se incorporarán nombre, fotografía, ocupación, frase, biografía o rasgo demográfico solo para hacerla parecer real. Las revisiones recientes muestran que la falta de transparencia en la creación de personas favorece perfiles sesgados o inauténticos (Bartels et al., 2023).
+No se incorporarán nombre, fotografía, ocupación, frase, biografía o rasgo demográfico solo para hacer el perfil más verosímil. Las revisiones recientes muestran que la falta de transparencia en la creación de personas favorece representaciones sesgadas o inauténticas (Bartels et al., 2023).
 
 ## Capa 4 — Mapas de recorrido
 
-El recorrido no se elaborará como decoración de la persona. Tendrá dos versiones separadas:
+El recorrido no se utiliza como decoración del perfil. Distingue dos capas:
 
 - **recorrido actual:** reconstrucción de la experiencia sin Relevo;
-- **escenario futuro:** hipótesis de interacción con Relevo que deberá validarse.
+- **escenario futuro:** hipótesis de interacción con Relevo desarrollada en la arquitectura del proyecto y todavía pendiente de validación.
 
 Cada etapa registrará, cuando exista evidencia:
 
@@ -185,7 +185,7 @@ Ningún fragmento se excluye por los rótulos heredados de versiones previas: el
 
 ## Qué no se hará
 
-- Construir personas antes de la matriz y la tipología.
+- Construir perfiles antes de la matriz y la tipología.
 - Copiar los tres perfiles históricos como resultados.
 - Inventar detalles para completar plantillas.
 - Usar dos tipos porque visualmente ordenan mejor el proyecto.
@@ -235,6 +235,13 @@ Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qual
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Perfiles situacionales como traducción vigente
+
+- **Cambio:** se reemplazó la producción futura de personas cualitativas por perfiles situacionales trazables y se aclaró la relación entre recorridos actuales y escenarios futuros.
+- **Versión anterior:** el método anunciaba personas cualitativas como una capa todavía pendiente después de la tipología.
+- **Motivo:** el análisis mostró que el patrón cambia según el episodio y no respalda una identidad biográfica estable; la memoria v4 ya desarrolla perfiles y recorridos mediante esa lógica.
+- **Resultado:** se mantienen los controles metodológicos de las personas cualitativas sin inventar atributos ni duplicar entregables.
 
 ### 2026-08-23 — Precisión del rango observado
 

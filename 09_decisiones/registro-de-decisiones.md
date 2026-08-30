@@ -30,10 +30,11 @@
 ## D-004 — Una fase principal a la vez
 
 - **Fecha:** 2026-08-23
-- **Estado:** vigente
+- **Estado:** vigente como regla de trabajo; la consecuencia original es histórica
 - **Decisión:** no desarrollar simultáneamente usuarios, mercado, propuesta y memoria.
 - **Fundamento:** las decisiones posteriores dependen de resultados previos y deben poder rastrearse.
-- **Consecuencia actual:** la fase sustantiva activa es usuarios. El orden interno es corpus, códigos, casos, matriz, tipos, personas y recorridos.
+- **Consecuencia original:** la fase sustantiva activa era usuarios, siguiendo el orden corpus, códigos, casos, matriz, tipos, perfiles y recorridos.
+- **Consecuencia vigente:** la línea sustantiva activa se consulta en la hoja de ruta; al 30 de agosto corresponde a la prueba de asociación de la Issue #8. La Issue #2 conserva un cierre documental acotado y no abre una segunda línea de investigación.
 
 ## D-005 — Formulación vigente, no definitiva
 
@@ -204,10 +205,10 @@
 ## D-020 — Memoria como única línea activa y Encargo 17 en pausa
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente
+- **Estado:** histórica; sustituida por el cierre de las Issues #6 y #7 y por D-034
 - **Decisión:** priorizar la reconstrucción y auditoría de la memoria; mantener la Issue #6 y el desarrollo de wireframes en pausa.
 - **Fundamento:** el escrito debe fijar problema, usuarios, propuesta, flujos, factibilidad y evaluación antes de desarrollar estructura visual.
-- **Consecuencia:** la Issue #7 gobierna el trabajo académico actual.
+- **Consecuencia histórica:** la Issue #7 gobernó la reconstrucción de la memoria antes de activar la prueba de asociación.
 
 ## D-021 — Criterios oficiales como control de estructura
 
@@ -377,9 +378,26 @@
 - **Límite:** una comunicación institucional posterior puede modificar estas fechas; cualquier cambio debe registrar causa e impacto.
 - **Documentos asociados:** [Calendario oficial del segundo semestre](../00_gobernanza/calendario-oficial-segundo-semestre-2026.md), [Plan de cierre agosto–diciembre de 2026](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) e [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9).
 
+## D-040 — Perfiles situacionales en lugar de personas biográficas
+
+- **Fecha:** 2026-08-30
+- **Estado:** vigente para la formulación v4; revisable con nueva evidencia
+- **Decisión:** utilizar los dos tipos situacionales como base para fichas de perfil, recorridos y requisitos trazables. No producir una persona biográfica mientras el corpus no respalde atributos estables adicionales. La síntesis narrativa de la memoria no sustituye todavía esos entregables autónomos.
+- **Fundamento:** una misma persona puede ocupar el patrón principal o el límite según el episodio. Añadir nombre, ocupación, vivienda, retrato o biografía convertiría una herramienta de comunicación en información aparentemente empírica y podría ocultar esa variación.
+- **Consecuencia:** `03_usuarios` conserva el proceso analítico; la memoria v4 contiene su síntesis académica; la Issue #2 permanece abierta para elaborar fichas situacionales, recorridos diferenciados y una matriz de requisitos sin inventar contenido.
+- **Alternativa descartada:** declarar la fase completamente cerrada solo porque sus resultados aparecen redactados en la memoria, o producir dos personas convencionales mediante atributos ficticios.
+- **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — D-040
+
+- **Cambio:** se registró la elección de perfiles situacionales y se separó la síntesis narrativa de los entregables autónomos pendientes.
+- **Versión anterior:** la hoja de ruta declaraba la fase completada, mientras el README y la Issue #2 todavía exigían personas y recorridos futuros.
+- **Motivo:** eliminar la contradicción sin fabricar atributos ni duplicar la síntesis ya incorporada a la memoria v4.
+- **Resultado:** el análisis queda cerrado provisionalmente y la traducción de diseño permanece abierta con un alcance preciso.
 
 ### 2026-08-30 — Actualización de D-039
 

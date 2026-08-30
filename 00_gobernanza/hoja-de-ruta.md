@@ -52,7 +52,7 @@ Documentación: [Fuentes locales migradas](../99_archivo/fuentes-locales/README.
 
 ### Fase 1 — Usuarios
 
-**Estado:** completada para la formulación v4; abierta a contraste mediante prototipos y nuevas entrevistas si fueran necesarias.
+**Estado:** análisis y tipología completados; traducción narrativa incorporada a la memoria v4; entregables autónomos de diseño pendientes.
 
 Orden obligatorio:
 
@@ -63,11 +63,11 @@ Orden obligatorio:
 5. [Completado] reconocer patrones, contradicciones y casos negativos;
 6. [Completado] proponer dos tipos situacionales;
 7. [Completado] elegir usuario principal más usuario límite;
-8. [Completado] desarrollar perfiles situacionales, necesidades, tensiones y recorridos;
-9. [Completado] traducir los hallazgos a requisitos y límites del proyecto;
+8. [Parcial] convertir la síntesis narrativa en fichas de perfiles situacionales y recorridos actual/futuro trazables;
+9. [Parcial] consolidar una matriz autónoma de requisitos y límites derivados de usuarios;
 10. [Completado] redactar el apartado de usuario para la memoria v4.
 
-No se elaborarán biografías o visualidades ficticias. Los perfiles se revisarán cuando las pruebas produzcan evidencia nueva.
+No se elaborarán biografías o visualidades ficticias. Los entregables pendientes deben ordenar evidencia ya existente y declarar sus vacíos; los perfiles se revisarán cuando las pruebas produzcan evidencia nueva.
 
 ### Fase 2 — Problema y valor
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Estado verificable de usuarios
+
+- **Cambio:** se separó el análisis completado de los perfiles, recorridos y requisitos que existen en forma narrativa, pero todavía no como entregables autónomos.
+- **Versión anterior:** la hoja de ruta marcaba toda la traducción de usuarios como completada.
+- **Motivo:** evitar que el apartado redactado de la memoria se confunda con el cierre de las herramientas de diseño que deben sostenerlo.
+- **Decisión derivada:** la Issue #2 permanece abierta únicamente para producir tres documentos trazables, sin crear personas biográficas.
 
 ### 2026-08-30 — Calendario institucional confirmado
 

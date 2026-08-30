@@ -195,9 +195,9 @@ El cambio de estado depende de la intención de la persona, no de una clasificac
 | Papel de Relevo | Hacer recuperable una intención y apoyar la transición | Permanecer silencioso o disponible bajo demanda |
 | Riesgo principal | No actuar cuando la persona pide apoyo | Interrumpir, juzgar o convertir descanso en rendimiento |
 
-## Vacíos antes de convertir los tipos en personas
+## Preguntas abiertas para validar los perfiles y el escenario futuro
 
-Los tipos son suficientes para orientar la siguiente etapa, pero no justifican todavía completar una persona con biografía, ocupación, vivienda o rasgos emocionales estables. Deben resolverse mediante nuevas preguntas o validación:
+Los tipos permiten construir perfiles situacionales sin añadir biografía, ocupación, vivienda o rasgos emocionales estables. Las siguientes preguntas no impiden describir necesidades y recorridos actuales, pero deben resolverse mediante prototipos y validación antes de cerrar la interacción:
 
 - cómo y cuándo se formula una intención antes de una sesión;
 - qué señal resulta perceptible sin sentirse intrusiva;
@@ -220,6 +220,13 @@ La tipología deberá revisarse si nuevas entrevistas muestran que:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Perfiles situacionales y preguntas de validación
+
+- **Cambio:** se reemplazó la conversión futura a personas biográficas por perfiles situacionales y se reclasificaron los vacíos como preguntas para prototipos y validación.
+- **Versión anterior:** el documento trataba esas preguntas como requisitos previos para elaborar personas y recorridos.
+- **Motivo:** la memoria v4 ya desarrolla necesidades y recorridos respaldados por el corpus, mientras forma, canal, ubicación e interacción continúan abiertas a prueba.
+- **Resultado:** el cierre analítico de usuarios deja de confundirse con el cierre empírico del producto.
 
 ### 2026-08-23 — Creación y elección de estructura
 
