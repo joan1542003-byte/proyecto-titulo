@@ -32,7 +32,7 @@ La versión breve y mantenida después de cada actualización está en el [resum
 
 **Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
 
-El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La fase A cuenta además con una [arquitectura provisional, lista de materiales y costos](06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), junto con [firmware preparado para revisión](06_desarrollo_y_factibilidad/prototipo-fase-a/README.md). Todavía falta revisar el circuito, comprar, compilar, construir y completar el ensayo técnico antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
+El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La fase A cuenta con una [arquitectura provisional y un costo parcial de componentes identificados](06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), un [esquema de conexión pendiente de revisión eléctrica](06_desarrollo_y_factibilidad/esquema-conexion-provisional-fase-a-2026-08-30.md) y [firmware preparado para revisión](06_desarrollo_y_factibilidad/prototipo-fase-a/README.md). El circuito aún no está aprobado para energización: faltan la revisión electrónica, una única ruta de alimentación para el Nano, terminales y protección de la rama de 12 V. Después corresponde comprar, compilar, construir y completar el ensayo técnico antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
 
 La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) ya cuenta con una base conceptual seleccionada: `Transferencia situada`. El sistema dispone de [aplicaciones exploratorias](10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/README.md) para objeto, memoria y Android, gobernadas por una matriz común. Permanecen abiertos el logotipo final, la tipografía, la forma industrial y los parámetros de la señal física.
 
@@ -99,6 +99,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Puerta eléctrica explicitada
+
+- **Cambio:** la portada distingue el costo parcial del montaje, enlaza el esquema de conexión y declara las condiciones que impiden energizar el circuito.
+- **Versión anterior:** resumía esos pendientes como una revisión general y podía dar a entender que la lista de materiales estaba completa.
+- **Motivo:** evitar que la portada contradiga la documentación técnica y que una arquitectura provisional se interprete como un montaje seguro o validado.
+- **Alcance:** no se modificó el diseño del circuito ni se añadieron costos, componentes o resultados.
 
 ### 2026-08-30 — Montaje de fase A y calendario sincronizados
 
