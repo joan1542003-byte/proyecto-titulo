@@ -28,11 +28,19 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
+- [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, dos núcleos de 5 V y soluciones comerciales o pasivas; propone probar primero ESP32-C3 con una señal luminosa pequeña sin sustituir aún la arquitectura vigente.
 - [Esquema de conexión provisional](esquema-conexion-provisional-fase-a-2026-08-30.md): tabla funcional, registro de terminales y puertas para revisión antes de energizar.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Alternativas físicas de menor complejidad
+
+- **Cambio:** se enlazó una comparación de cinco arquitecturas y una puerta de prueba para un núcleo de 5 V.
+- **Versión anterior:** el directorio documentaba la construcción de fase A, pero no una revisión explícita de si podía resolverse con menos piezas y una sola alimentación.
+- **Motivo:** evitar comprar o consolidar la arquitectura de 12 V antes de comprobar si una solución más simple conserva la función física situada.
+- **Alcance:** la alternativa ESP32-C3 es candidata de prototipo, no arquitectura final ni circuito aprobado.
 
 ### 2026-08-30 — Esquema anterior a la construcción
 
