@@ -32,7 +32,7 @@ La versión breve y mantenida después de cada actualización está en el [resum
 
 **Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
 
-El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La fase A aún requiere construir y comprobar técnicamente ese material antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
+El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La fase A cuenta además con una [arquitectura provisional, lista de materiales y costos](06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), junto con [firmware preparado para revisión](06_desarrollo_y_factibilidad/prototipo-fase-a/README.md). Todavía falta revisar el circuito, comprar, compilar, construir y completar el ensayo técnico antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
 
 La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) ya cuenta con una base conceptual seleccionada: `Transferencia situada`. El sistema dispone de [aplicaciones exploratorias](10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/README.md) para objeto, memoria y Android, gobernadas por una matriz común. Permanecen abiertos el logotipo final, la tipografía, la forma industrial y los parámetros de la señal física.
 
@@ -50,7 +50,7 @@ El criterio común de selección confirmado para P1–P8 es la edad; no se utili
 
 La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md). La [v3](08_memoria/memoria-vigente-v3.md), las auditorías anteriores y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
 
-El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla sus hitos. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre; diciembre se reserva para estudio, presentación y correcciones menores antes de la entrega objetivo del día 11.
+El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla sus hitos. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre. La memoria se entrega oficialmente el 2 de diciembre y el examen se realiza entre el 14 y el 18; el periodo intermedio se reserva para estudiar, ensayar y resolver correcciones menores.
 
 ## Inicio para nuevas conversaciones
 
@@ -99,6 +99,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Montaje de fase A y calendario sincronizados
+
+- **Cambio:** el estado principal enlaza la arquitectura cableada, sus costos, el firmware provisional y las puertas que siguen pendientes; también corrige la entrega de memoria al 2 de diciembre y el examen al periodo del 14 al 18.
+- **Versión anterior:** solo informaba requisitos e instrumentos, por lo que no distinguía el avance de diseño técnico de una construcción todavía inexistente, y conservaba el 11 de diciembre como fecha estimada.
+- **Motivo:** mantener visible el siguiente paso real sin presentar código o lista de materiales como funcionamiento comprobado.
+- **Alcance:** no se compraron componentes, no se compiló el firmware y no se ejecutaron ensayos.
 
 ### 2026-08-29 — Plan de cierre hasta la entrega
 

@@ -103,7 +103,7 @@ Incluye arquitectura técnica, producción, materiales, componentes, costos, man
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). El protocolo, el consentimiento, la ficha de registro y la especificación mínima de materiales están preparados. La fase A no puede comenzar con participantes hasta construir y comprobar la señal manual; la fase B depende además de una notificación local Android equivalente.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). El protocolo, el consentimiento, los instrumentos, la arquitectura cableada, la lista de materiales y el firmware provisional están preparados. La fase A no puede comenzar con participantes hasta revisar el circuito, comprar, compilar, construir y comprobar la señal manual; la fase B depende además de una notificación local Android equivalente.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Preparación técnica anterior a la construcción
+
+- **Cambio:** la fase activa incorpora arquitectura cableada, costos y firmware provisional, manteniendo separadas preparación, construcción, ensayo y trabajo con participantes.
+- **Versión anterior:** la hoja de ruta solo reconocía instrumentos y requisitos mínimos.
+- **Motivo:** sincronizar la dependencia principal con el montaje ya documentado.
+- **Decisión derivada:** la próxima acción sustantiva sigue siendo construir y comprobar la señal; el código preparado no modifica esa puerta.
 
 ### 2026-08-30 — Estado verificable de usuarios
 

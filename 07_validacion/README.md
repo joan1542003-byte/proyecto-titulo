@@ -22,6 +22,8 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
 - [Especificación mínima de materiales](especificacion-materiales-fase-a.md): requisitos y comprobaciones técnicas previas de la señal manual de fase A.
 - [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar repeticiones, incidentes, correcciones y la puerta anterior a participantes.
+- [Montaje mínimo de fase A](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md): arquitectura cableada provisional, lista de materiales, costos, riesgos y secuencia de construcción.
+- [Firmware provisional](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md): lógica preparada para tres pulsos, rechazo de órdenes acumuladas y silenciamiento; aún no compilada ni probada.
 
 ## Regla de medición
 
@@ -42,6 +44,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Arquitectura y firmware anteriores al ensayo
+
+- **Cambio:** se enlazaron el montaje provisional y su firmware desde el índice de validación.
+- **Versión anterior:** el directorio permitía localizar requisitos y ficha, pero no la configuración elegida para ejecutarlos.
+- **Motivo:** conservar una ruta única entre criterio, construcción, código y registro técnico.
+- **Alcance:** los documentos preparan la prueba; no contienen resultados ni habilitan participantes.
 
 ### 2026-08-30 — Ficha ejecutable del ensayo técnico
 

@@ -32,9 +32,9 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
 | Prototipo Android | Inicial | Plataforma justificada, wireframes y referencias visuales. | Aplicación funcional, condición provisional, notificación local y estados de recuperación. |
-| Testigo físico | Pendiente crítico | Función y requisitos mínimos documentados. | Señal reproducible, electrónica, energía, silenciamiento, forma, materiales y seguridad. |
-| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos. | Construir y comprobar materiales; luego reclutar, ejecutar, analizar e iterar. |
-| Producción y costos | Inicial | Áreas y reglas de factibilidad identificadas. | Lista de materiales vigente, proveedores, cotizaciones, tiempos y costo de prototipo. |
+| Testigo físico | Preparado para revisión y construcción | Función, requisitos, arquitectura cableada, firmware provisional, lista de materiales y silenciamiento DPDT documentados. | Revisar el circuito, comprar, compilar, construir y comprobar señal, energía, estabilidad, temperatura y seguridad. |
+| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha, criterios previos y montaje provisional trazado. | Completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
+| Producción y costos | Provisional | Reglas de factibilidad y costo electrónico del montaje de fase A con proveedores y fecha de corte. | Cotización al comprar, cuerpo y difusor, herramientas, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
 
 ## Ruta crítica
@@ -261,6 +261,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Estado técnico de fase A
+
+- **Cambio:** se actualizó el estado del testigo, la validación y los costos después de preparar arquitectura, firmware, materiales y ficha técnica.
+- **Versión anterior:** estas áreas aparecían como si solo contaran con requisitos generales y sin una lista de materiales vigente.
+- **Motivo:** mostrar qué está listo para revisión y qué continúa bloqueando la prueba.
+- **Consecuencia:** la ruta crítica no cambia; el siguiente hito es construir y comprobar, no ampliar el concepto ni iniciar participantes.
 
 ### 2026-08-30 — Incorporación del calendario oficial
 
