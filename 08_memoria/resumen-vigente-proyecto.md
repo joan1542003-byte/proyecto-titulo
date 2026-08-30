@@ -1,6 +1,6 @@
 # Resumen vigente de Relevo
 
-**Actualizado:** 27 de agosto de 2026.
+**Actualizado:** 30 de agosto de 2026.
 
 ## Qué es
 
@@ -24,15 +24,21 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El documento completo tiene 19.226 palabras; los capítulos 1–13 contienen 15.983. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos reales y el aporte del objeto frente a una notificación.
+El documento completo tiene 19.226 palabras; los capítulos 1–13 contienen 15.983. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos definitivos y el aporte del objeto frente a una notificación.
+
+La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
 
 ## Qué cambió en esta actualización
+
+La traducción de usuarios quedó consolidada en tres documentos autónomos: perfiles, recorridos y requisitos. Antes, estos contenidos estaban redactados en la memoria y distribuidos entre matrices y flujos, pero no podían auditarse como una cadena completa entre evidencia, necesidad, límite y prueba.
 
 El primer protocolo cuenta ahora con seis participantes previstos, dos sesiones, intervalos, señal provisional, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y ficha de registro. Ningún instrumento contiene datos. Antes de reclutar deben completarse contacto, fecha exacta de eliminación, revisión académica y un ensayo interno del procedimiento.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-30 — Cierre provisional de la fase de usuarios.** Antes, la memoria contenía tipos, necesidades y recorridos narrativos, mientras los entregables autónomos permanecían incompletos o contradictorios entre la hoja de ruta y la Issue #2. Ahora existen perfiles situacionales, recorridos que separan evidencia e hipótesis y una matriz de catorce requisitos con prioridad, validación y límites. La memoria v4 no fue reescrita y la fase sigue abierta a nueva evidencia.
 
 **2026-08-27 — Parámetros e instrumentos del protocolo 01.** Antes, ocho decisiones de ejecución estaban abiertas. Ahora existe una configuración provisional y dos plantillas sin datos. La prueba sigue pendiente y la memoria no presenta resultados.
 

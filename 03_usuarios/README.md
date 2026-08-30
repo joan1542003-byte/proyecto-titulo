@@ -19,6 +19,7 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 - [Comparación y tipos de usuario](comparacion-y-tipos-de-usuario.md): elección de usuario principal más usuario límite.
 - [Perfiles situacionales](perfiles-situacionales.md): fichas textuales de U1 y U2 con evidencia P/Q, niveles de confianza, condiciones, límites y atributos excluidos.
 - [Recorridos situacionales](recorridos-situacionales.md): recorridos actuales de U1 y U2 separados del escenario futuro hipotético con Relevo.
+- [Matriz de requisitos](matriz-requisitos-de-usuarios.md): relación entre hallazgos, necesidades, requisitos, límites, evidencia, prioridad y validación.
 - [Memoria v4, capítulo 7](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas): síntesis académica de participantes, episodios, contraejemplos, tipos situacionales, recorridos, contexto y necesidades.
 - [Instrumentos y procedencia](../99_archivo/fuentes-locales/instrumentos/README.md): guiones, condiciones aplicadas, equivalencias y control de integridad de los DOCX.
 
@@ -74,7 +75,7 @@ La decisión deriva de P1–P8 y permanece abierta a revisión con nueva evidenc
 
 ## Estado
 
-**Fase analítica completada; traducción de diseño próxima a cierre.** Corpus, códigos, casos, matriz, tipología, perfiles y recorridos situacionales están documentados. Falta consolidar una matriz autónoma que vincule hallazgos con necesidades, requisitos y criterios de no intervención.
+**Fase completada provisionalmente y abierta a contraste.** Corpus, códigos, casos, matriz analítica, tipología, perfiles, recorridos y requisitos están documentados. La siguiente modificación debe provenir de una auditoría de coherencia o de evidencia obtenida mediante prototipos.
 
 Estos documentos no incorporarán nombres, retratos ni biografías inventadas. Su función será hacer visible la trazabilidad previa a nuevas pruebas. Después, la evidencia de prototipos podrá precisar necesidades, modificar recorridos o revelar un patrón no cubierto.
 
@@ -102,6 +103,13 @@ Estos documentos no incorporarán nombres, retratos ni biografías inventadas. S
 - **Versión anterior:** ambos niveles estaban distribuidos entre la memoria y los flujos del producto.
 - **Motivo:** evitar que una secuencia diseñada se presente como comportamiento observado y cerrar el segundo entregable de la Issue #2.
 - **Resultado:** solo permanece pendiente la matriz autónoma de requisitos de usuarios.
+
+### 2026-08-30 — Requisitos de usuarios consolidados
+
+- **Cambio:** se añadió una matriz autónoma con catorce requisitos y una puerta de decisión para la dimensión física.
+- **Versión anterior:** los requisitos debían reconstruirse desde entrevistas, criterios de la memoria, perfiles, recorridos y validación.
+- **Motivo:** cerrar la traducción de hallazgos a condiciones verificables antes de obtener resultados de prototipos.
+- **Resultado:** la fase queda completada provisionalmente; no se considera validada.
 
 ### 2026-08-23 — Criterio etario y pausa
 

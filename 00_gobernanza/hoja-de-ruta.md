@@ -52,7 +52,7 @@ Documentación: [Fuentes locales migradas](../99_archivo/fuentes-locales/README.
 
 ### Fase 1 — Usuarios
 
-**Estado:** análisis y tipología completados; traducción narrativa incorporada a la memoria v4; entregables autónomos de diseño pendientes.
+**Estado:** análisis, tipología y traducción de diseño completados provisionalmente; abiertos a contraste mediante prototipos.
 
 Orden obligatorio:
 
@@ -64,7 +64,7 @@ Orden obligatorio:
 6. [Completado] proponer dos tipos situacionales;
 7. [Completado] elegir usuario principal más usuario límite;
 8. [Completado] convertir la síntesis narrativa en fichas de perfiles situacionales y recorridos actual/futuro trazables;
-9. [Parcial] consolidar una matriz autónoma de requisitos y límites derivados de usuarios;
+9. [Completado] consolidar una matriz autónoma de requisitos y límites derivados de usuarios;
 10. [Completado] redactar el apartado de usuario para la memoria v4.
 
 No se elaborarán biografías o visualidades ficticias. Los entregables pendientes deben ordenar evidencia ya existente y declarar sus vacíos; los perfiles se revisarán cuando las pruebas produzcan evidencia nueva.
@@ -143,6 +143,13 @@ Una fase se considera suficientemente desarrollada cuando:
 - **Versión anterior:** la traducción existía solo en forma narrativa dentro de la memoria y la arquitectura de interacción.
 - **Motivo:** cerrar herramientas de diseño trazables antes de consolidar requisitos.
 - **Decisión derivada:** la matriz de requisitos es el único entregable autónomo pendiente de la fase de usuarios.
+
+### 2026-08-30 — Cierre provisional de la fase de usuarios
+
+- **Cambio:** se completó la matriz autónoma de requisitos y se comprobó su correspondencia con perfiles, recorridos, memoria y validación.
+- **Versión anterior:** la fase mantenía pendiente la traducción final entre hallazgos y requisitos verificables.
+- **Motivo:** cerrar la capa documental antes de modificarla con resultados futuros.
+- **Decisión derivada:** la fase se revisará únicamente ante una contradicción auditada o nueva evidencia de prototipos.
 
 ### 2026-08-30 — Calendario institucional confirmado
 

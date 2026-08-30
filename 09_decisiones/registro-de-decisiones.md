@@ -384,13 +384,20 @@
 - **Estado:** vigente para la formulación v4; revisable con nueva evidencia
 - **Decisión:** utilizar los dos tipos situacionales como base para fichas de perfil, recorridos y requisitos trazables. No producir una persona biográfica mientras el corpus no respalde atributos estables adicionales. La síntesis narrativa de la memoria no sustituye todavía esos entregables autónomos.
 - **Fundamento:** una misma persona puede ocupar el patrón principal o el límite según el episodio. Añadir nombre, ocupación, vivienda, retrato o biografía convertiría una herramienta de comunicación en información aparentemente empírica y podría ocultar esa variación.
-- **Consecuencia:** `03_usuarios` conserva el proceso analítico, las fichas y los recorridos situacionales; la memoria v4 contiene su síntesis académica; la Issue #2 permanece abierta solo para elaborar una matriz de requisitos sin inventar contenido.
+- **Consecuencia:** `03_usuarios` conserva el proceso analítico, las fichas, los recorridos y la matriz de requisitos; la memoria v4 contiene su síntesis académica. La fase puede cerrarse provisionalmente y reabrirse únicamente ante una contradicción o nueva evidencia.
 - **Alternativa descartada:** declarar la fase completamente cerrada solo porque sus resultados aparecen redactados en la memoria, o producir dos personas convencionales mediante atributos ficticios.
-- **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md), [perfiles situacionales](../03_usuarios/perfiles-situacionales.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
+- **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md), [perfiles situacionales](../03_usuarios/perfiles-situacionales.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md), [matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Matriz de requisitos asociada a D-040
+
+- **Cambio:** se enlazó la matriz de requisitos de usuarios y se registró el cierre provisional de la fase.
+- **Versión anterior:** perfiles y recorridos estaban completados, pero sus implicaciones todavía no formaban una especificación autónoma verificable.
+- **Motivo:** completar la cadena evidencia → necesidad → requisito → límite → prueba.
+- **Resultado:** cualquier revisión posterior debe enlazar una contradicción o evidencia nueva.
 
 ### 2026-08-30 — Recorridos asociados a D-040
 
