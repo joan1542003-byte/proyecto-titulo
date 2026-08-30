@@ -1,7 +1,9 @@
 # Ficha de ensayo técnico — material de fase A
 
-**Estado:** plantilla sin ejecutar  
-**Uso:** comprobar estabilidad, repetibilidad y seguridad antes de trabajar con participantes  
+**Estado:** plantilla sin ejecutar
+
+**Uso:** comprobar estabilidad, repetibilidad y seguridad antes de trabajar con participantes
+
 **Documento relacionado:** [Especificación mínima de materiales](especificacion-materiales-fase-a.md)
 
 ## Regla de uso
@@ -175,10 +177,12 @@ Marcar una sola alternativa:
 - [ ] **Modificar y repetir:** existe un fallo aislable de repetibilidad, silenciamiento, estabilidad o alimentación.
 - [ ] **Detener el montaje:** exige una intensidad invasiva, presenta un riesgo o no permite una salida física comprensible.
 
-**Fundamento de la decisión:**  
+**Fundamento de la decisión:**
+
 ____
 
-**Siguiente acción, responsable y fecha:**  
+**Siguiente acción, responsable y fecha:**
+
 ____
 
 **Firma o iniciales de quien ejecuta:** ____
