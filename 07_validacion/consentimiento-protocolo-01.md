@@ -2,7 +2,7 @@
 
 **Estado:** borrador para revisión antes del reclutamiento
 **Proyecto:** Relevo
-**Responsable:** Johan Yanten
+**Responsable:** Johan Yantén
 **Institución:** Escuela de Diseño, Universidad Diego Portales
 
 ## Invitación
@@ -27,16 +27,16 @@ La señal puede resultar poco visible, molesta o confusa. También podría incom
 
 ## Datos y privacidad
 
-Se registrarán notas estructuradas mediante un código de participante. No se grabará audio, pantalla ni historial de aplicaciones. Los datos de contacto permanecerán separados de la ficha y se eliminarán al terminar la segunda sesión. Las fichas codificadas se conservarán hasta 30 días después de la evaluación final del proyecto y luego se eliminarán. La fecha exacta de eliminación se completará antes de firmar.
+Se registrarán notas estructuradas mediante un código de participante. No se grabará audio, pantalla ni historial de aplicaciones. Los datos de contacto permanecerán separados de la ficha y se eliminarán al terminar la segunda sesión. Si la persona se retira o no realiza esa sesión, se eliminarán al finalizar su participación. Las fichas codificadas podrán eliminarse cuando termine el análisis y, en cualquier caso, se eliminarán a más tardar el 13 de enero de 2027. Este plazo se fijó para no superar treinta días desde el comienzo del periodo oficial de exámenes.
 
-Los resultados podrán utilizarse de forma anonimizada en la memoria, presentaciones académicas y documentación del proceso. No se publicarán nombres ni datos que permitan identificarle.
+Mientras exista la ficha codificada, la persona podrá solicitar su retiro mediante su código. Después de eliminarla, podrán conservarse resultados agregados o síntesis anónimas ya incorporadas a la memoria, presentaciones académicas y documentación del proceso, porque no permitirán volver a identificar ni separar su aporte. No se publicarán nombres ni datos que permitan identificarle.
 
 ## Contacto
 
 Puede solicitar información, retiro de sus datos o aclaraciones mediante el contacto que se indique antes de la sesión.
 
 - Correo del responsable: ____________________________________
-- Fecha límite de conservación: ______________________________
+- Fecha límite de conservación: 13 de enero de 2027
 
 ## Declaración
 
@@ -51,6 +51,13 @@ Declaro que leí o escuché esta información, pude hacer preguntas y acepto par
 
 ## Registro de cambios (disclaimer)
 
+### 2026-08-30 — Fecha máxima de eliminación
+
+- **Cambio:** se fijó el 13 de enero de 2027 como fecha límite para eliminar las fichas codificadas.
+- **Versión anterior:** el texto prometía eliminación hasta treinta días después de la evaluación final, pero dejaba el día exacto en blanco.
+- **Motivo:** utilizar una fecha conservadora, calculada treinta días después del inicio del periodo oficial de exámenes del 14 al 18 de diciembre.
+- **Alcance:** el correo del responsable y la revisión académica continúan pendientes; si cambia el calendario oficial, la fecha debe revisarse antes de utilizar el consentimiento.
+
 ### 2026-08-27 — Duración y plataforma corregidas
 
 - **Cambio:** se diferenciaron las duraciones de ambas sesiones y se explicitó el uso de Android en la comparación.
@@ -63,4 +70,4 @@ Declaro que leí o escuché esta información, pude hacer preguntas y acepto par
 - **Cambio:** se creó un consentimiento escrito para las dos sesiones del Protocolo 01.
 - **Versión anterior:** las reglas de participación y conservación estaban descritas en el protocolo, pero no existía un documento entregable a participantes.
 - **Motivo:** comunicar propósito, actividades, voluntariedad, riesgos, datos y retiro antes del reclutamiento.
-- **Alcance:** el borrador requiere completar contacto, fecha de eliminación y revisión académica antes de utilizarse.
+- **Alcance:** el borrador requiere completar el correo del responsable y obtener revisión académica antes de utilizarse.

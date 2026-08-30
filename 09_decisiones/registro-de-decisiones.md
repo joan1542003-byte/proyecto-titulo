@@ -398,9 +398,26 @@
 - **Límite:** la decisión pertenece al dispositivo de ensayo y no define el enlace, la electrónica, la forma ni el costo del producto. No autoriza compra, uso con participantes ni afirmaciones de seguridad certificada.
 - **Documentos asociados:** [Montaje mínimo de fase A](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), [especificación](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) e [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
 
+## D-042 — Fecha máxima de eliminación de fichas
+
+- **Fecha:** 2026-08-30
+- **Estado:** vigente para el Protocolo 01; revisar si cambia el calendario oficial
+- **Decisión:** eliminar las fichas codificadas al cerrar el análisis o, a más tardar, el 13 de enero de 2027. Los datos de contacto se eliminan al terminar la segunda sesión o al finalizar antes la participación.
+- **Fundamento:** el periodo oficial de exámenes comienza el 14 de diciembre de 2026. Fijar el límite treinta días después de esa primera fecha evita conservar registros por más de treinta días, con independencia del día exacto asignado dentro del periodo.
+- **Consecuencia:** el consentimiento ya puede comunicar una fecha concreta, retiro de fichas y destino de síntesis anónimas; el correo del responsable y la revisión académica continúan bloqueando su uso.
+- **Límite:** una modificación institucional del calendario obliga a revisar la fecha antes de reclutar. La decisión no autoriza recolección de datos.
+- **Documentos asociados:** [Consentimiento](../07_validacion/consentimiento-protocolo-01.md), [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) y [calendario oficial](../00_gobernanza/calendario-oficial-segundo-semestre-2026.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — D-042
+
+- **Cambio:** se registró una fecha máxima verificable para eliminar fichas y se mantuvo separada de los contactos, que se borran al finalizar la participación; también se distinguieron fichas retirables de síntesis anónimas ya integradas.
+- **Versión anterior:** el protocolo utilizaba un plazo relativo y el consentimiento dejaba la fecha en blanco.
+- **Motivo:** cerrar un requisito de privacidad sin depender de la asignación exacta del examen.
+- **Resultado:** el correo del responsable y la revisión académica permanecen pendientes; no se habilita reclutamiento.
 
 ### 2026-08-30 — Alcance real del costo de D-041
 

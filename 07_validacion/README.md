@@ -17,7 +17,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 ## Protocolos planificados
 
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
-- [Consentimiento informado](consentimiento-protocolo-01.md): borrador para comunicar propósito, voluntariedad, riesgos, datos y retiro.
+- [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
 - [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
 - [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
 - [Especificación mínima de materiales](especificacion-materiales-fase-a.md): requisitos y comprobaciones técnicas previas de la señal manual de fase A.
@@ -44,6 +44,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Fecha de eliminación fijada
+
+- **Cambio:** el índice distingue la fecha máxima ya resuelta del correo y la revisión que siguen abiertos.
+- **Versión anterior:** el consentimiento aparecía como borrador sin mostrar cuál de sus campos administrativos permanecía pendiente.
+- **Motivo:** evitar reabrir decisiones cerradas y mantener visible el bloqueo real.
+- **Alcance:** el documento no está autorizado para reclutamiento.
 
 ### 2026-08-30 — Arquitectura y firmware anteriores al ensayo
 
@@ -78,7 +85,7 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 - **Cambio:** se cerraron los parámetros provisionales y se añadieron consentimiento y ficha de registro.
 - **Versión anterior:** el protocolo contenía ocho preguntas abiertas y no tenía instrumentos de aplicación.
 - **Motivo:** permitir una revisión piloto completa antes del reclutamiento.
-- **Alcance:** no se han recogido datos; contacto, fecha de eliminación y revisión académica del consentimiento siguen pendientes.
+- **Alcance en esa versión:** no se habían recogido datos y contacto, fecha y revisión seguían pendientes. La fecha fue resuelta el 30 de agosto; correo y revisión continúan abiertos.
 
 ### 2026-08-27 — Primer protocolo operacional
 

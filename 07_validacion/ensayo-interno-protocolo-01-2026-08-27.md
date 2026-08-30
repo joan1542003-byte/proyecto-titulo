@@ -46,7 +46,7 @@ La fase B no cabe en el rango original de 35–50 minutos. Se corrigió a 60–7
 | Tres intenciones distintas reducen repetición, pero agregan variación semántica. | Una intención podría recordarse con mayor facilidad por su contenido y no por la condición. | Pedir valoración y claridad semejantes, contrabalancear su asignación y declarar el límite. |
 | Un solo investigador observa y toma notas. | Puede perder acciones mientras opera la señal. | Utilizar activación remota preparada, campos breves durante el ensayo y completar interpretación después. |
 | La señal luminosa no es universalmente accesible. | Una dificultad perceptiva podría confundirse con fallo de asociación. | Comprobar percepción antes de comenzar y analizar por separado cualquier alternativa táctil. |
-| El consentimiento carece de contacto y fecha exacta. | No está listo para entrega ni firma. | Completar ambos campos y obtener revisión académica antes de invitar participantes. |
+| En el ensayo del 27 de agosto, el consentimiento carecía de contacto y fecha exacta. | No estaba listo para entrega ni firma. | La fecha se resolvió el 30 de agosto. Completar el correo y obtener revisión académica antes de invitar participantes. |
 
 ## Estado resultante
 
@@ -61,6 +61,13 @@ Construir el material mínimo de la fase A: objeto simple con señal difusa, con
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Seguimiento del hallazgo administrativo
+
+- **Cambio:** el hallazgo histórico conserva los dos vacíos detectados y registra que la fecha ya fue resuelta.
+- **Versión anterior:** la tabla podía leerse como si ambos campos continuaran abiertos.
+- **Motivo:** mantener el ensayo como registro temporal sin desactualizar el estado operativo.
+- **Alcance:** correo y revisión académica continúan pendientes; no se habilita reclutamiento.
 
 ### 2026-08-27 — Creación del ensayo interno
 

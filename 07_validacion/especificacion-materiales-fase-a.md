@@ -61,13 +61,20 @@ La ficha deberá conservar fecha, versión, componentes utilizados, superficie, 
 - **Modificar:** falla repetibilidad, silenciamiento, estabilidad o alimentación, pero la causa puede aislarse.
 - **Detener:** requiere una intensidad invasiva, genera riesgo eléctrico o no admite una salida física comprensible.
 
-El resultado técnico no autoriza por sí solo a trabajar con participantes. Antes del reclutamiento deben completarse contacto y fecha de eliminación del consentimiento, obtenerse la revisión académica del conjunto y cerrarse cualquier corrección solicitada.
+El resultado técnico no autoriza por sí solo a trabajar con participantes. Antes del reclutamiento debe completarse el correo del responsable, obtenerse la revisión académica del conjunto y cerrarse cualquier corrección solicitada. La fecha máxima de eliminación ya está fijada en el consentimiento.
 
 Cumplir esta especificación solo demuestra que el material puede ejecutar el ensayo de manera estable. No demuestra que la señal se perciba, se comprenda o recupere una intención.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Bloqueo administrativo actualizado
+
+- **Cambio:** se retiró la fecha de eliminación de los campos pendientes y se mantuvieron correo y revisión académica.
+- **Versión anterior:** la especificación seguía tratando contacto y fecha como dos vacíos.
+- **Motivo:** sincronizar la puerta técnica con el consentimiento vigente.
+- **Alcance:** completar el material no autoriza reclutamiento.
 
 ### 2026-08-30 — Correcciones posteriores a auditoría
 

@@ -73,11 +73,18 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es construir el material mínimo y ejecutar su ensayo técnico sin participantes. El reclutamiento solo podrá comenzar después de verificar la señal y la activación remota, completar contacto y fecha de eliminación y obtener revisión académica del consentimiento. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
+El siguiente paso es construir el material mínimo y ejecutar su ensayo técnico sin participantes. El reclutamiento solo podrá comenzar después de verificar la señal y la activación remota, completar el contacto del responsable y obtener revisión académica del consentimiento. La fecha máxima de eliminación ya fue fijada en el 13 de enero de 2027. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Fecha de eliminación resuelta
+
+- **Cambio:** el pendiente administrativo se redujo al correo del responsable y la revisión académica; la eliminación máxima quedó fijada para el 13 de enero de 2027.
+- **Versión anterior:** contacto y fecha exacta permanecían abiertos como un único bloqueo.
+- **Motivo:** cerrar lo derivable del calendario oficial sin inventar un dato personal del autor.
+- **Alcance:** no se habilita reclutamiento ni se modifica el protocolo de prueba.
 
 ### 2026-08-27 — Puerta técnica de fase A definida
 
@@ -98,7 +105,7 @@ El siguiente paso es construir el material mínimo y ejecutar su ensayo técnico
 - **Cambio:** el cierre operativo del protocolo pasó a resuelto y fue reemplazado por una revisión piloto de sus instrumentos.
 - **Versión anterior:** muestra, tiempos, señal, condiciones comparativas y gestión de registros permanecían abiertos.
 - **Motivo:** avanzar desde reglas generales hacia materiales aplicables sin reclutar prematuramente.
-- **Alcance:** contacto, fecha exacta de eliminación y revisión académica siguen pendientes; no existen datos de prueba.
+- **Alcance en esa versión:** contacto, fecha y revisión seguían pendientes. La fecha fue resuelta el 30 de agosto; correo y revisión continúan abiertos y no existen datos de prueba.
 
 ### 2026-08-27 — Reglas operativas definidas
 

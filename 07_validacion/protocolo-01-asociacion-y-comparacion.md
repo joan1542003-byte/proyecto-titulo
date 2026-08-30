@@ -125,7 +125,7 @@ La ejecución utilizará el [consentimiento informado](consentimiento-protocolo-
 | Contrabalanceo | Se utilizarán las seis secuencias posibles de las condiciones A, B y C, una por participante. | Distribuye el efecto del orden entre las seis personas. |
 | Consentimiento y retiro | Consentimiento escrito antes de la sesión; retiro posible sin justificar y sin conservar la ficha incompleta. | Separa participación voluntaria de desempeño en la prueba. |
 | Registro | Notas estructuradas y ficha codificada; sin grabación de pantalla, historial de aplicaciones ni audio por defecto. | Reduce datos personales. Una grabación adicional requeriría autorización específica. |
-| Conservación | Las fichas codificadas se conservarán hasta 30 días después de la evaluación final del proyecto y luego se eliminarán. Los datos de contacto se mantendrán separados y se borrarán al terminar la sesión. | Limita acceso y duración. La fecha exacta deberá figurar en el consentimiento. |
+| Conservación | Las fichas codificadas podrán eliminarse al cerrar el análisis y se eliminarán, como máximo, el 13 de enero de 2027. Los contactos se mantendrán separados y se borrarán al terminar la segunda sesión o al finalizar antes la participación. | El plazo no supera treinta días desde el comienzo del [periodo oficial de exámenes](../00_gobernanza/calendario-oficial-segundo-semestre-2026.md). Después podrán permanecer únicamente resultados agregados o síntesis anónimas sin vínculo recuperable con la ficha. Si el calendario cambia, debe revisarse antes de reclutar. |
 
 Los parámetros quedan fijados para preparar materiales. Cualquier ajuste anterior a la primera sesión deberá registrarse con fecha y motivo. Después de comenzar el estudio solo podrán cambiarse por seguridad o por un fallo crítico; en ese caso, los datos obtenidos con versiones diferentes no se mezclarán sin distinguirlas.
 
@@ -138,6 +138,13 @@ International Organization for Standardization. (2023). *Systems and software en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Conservación con fecha máxima
+
+- **Cambio:** se reemplazó un plazo relativo por la eliminación a más tardar el 13 de enero de 2027; se permitió eliminar antes al cerrar el análisis y se aclaró el tratamiento de contactos, retiro y síntesis anónimas.
+- **Versión anterior:** el protocolo exigía completar la fecha después y podía interpretarse como conservación durante treinta días exactos desde una defensa aún no asignada.
+- **Motivo:** comunicar un límite verificable que no exceda treinta días desde el inicio del periodo oficial de exámenes.
+- **Alcance:** el protocolo continúa sin ejecutar y el consentimiento aún requiere contacto y revisión académica.
 
 ### 2026-08-27 — Correcciones del ensayo interno documental
 

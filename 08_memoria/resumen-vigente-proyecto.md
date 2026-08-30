@@ -34,11 +34,13 @@ La traducción de usuarios está consolidada en tres documentos autónomos: perf
 
 El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, señal provisional, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y ficha de registro. El ensayo interno documental ya fue realizado. Para la fase A existe una arquitectura cableada provisional, una lista con CLP 28.130 en componentes identificados y firmware preparado para revisión. Terminales y protección de la rama de potencia todavía no están definidos ni valorizados.
 
-No se han comprado componentes, compilado el firmware, construido el montaje ni ejecutado la ficha técnica. Antes de reclutar deben completarse esas acciones, incorporar el contacto y la fecha exacta de eliminación de datos al consentimiento y obtener revisión académica. Ningún instrumento contiene resultados.
+No se han comprado componentes, compilado el firmware, construido el montaje ni ejecutado la ficha técnica. Antes de reclutar deben completarse esas acciones, incorporar el contacto del responsable al consentimiento y obtener revisión académica. La eliminación de fichas está fijada a más tardar para el 13 de enero de 2027. Ningún instrumento contiene resultados.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-30 — Fecha máxima de eliminación.** Antes, el resumen mantenía contacto y fecha como campos administrativos abiertos. Ahora la eliminación de fichas está fijada para el 13 de enero de 2027; el correo del responsable y la revisión académica siguen pendientes. No se reclutaron participantes ni se generaron datos.
 
 **2026-08-30 — Preparación técnica de fase A.** Antes, el resumen mantenía el ensayo interno como pendiente y no permitía localizar la arquitectura elegida. Ahora registra el montaje cableado, el subtotal parcial y el firmware provisional, además de separar revisión, compra, compilación, construcción y ensayo. Terminales y protección continúan fuera del monto. La memoria v4 no fue modificada y no existen resultados técnicos ni con participantes.
 
