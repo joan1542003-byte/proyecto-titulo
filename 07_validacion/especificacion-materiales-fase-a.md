@@ -22,7 +22,7 @@ El material debe funcionar como una señal controlada, no como una representaci�
 ## Comportamiento esperado
 
 1. El material permanece apagado al conectarse.
-2. Una activación produce una sola secuencia de tres pulsos durante tres segundos.
+2. Una activación produce una sola secuencia de tres pulsos cuya duración total es de 3 s ± 0,3 s.
 3. Una nueva orden recibida durante la secuencia no acumula señales.
 4. El control físico detiene el pulso y devuelve el material a reposo.
 5. No existe repetición automática.
@@ -36,19 +36,18 @@ El material debe funcionar como una señal controlada, no como una representaci�
 - ubicar el material en tres superficies: mesa clara, mesa oscura y suelo o mueble bajo;
 - probar con iluminación diurna y artificial disponible;
 - marcar distancias de uno, dos y tres metros;
-- preparar cronómetro y ficha técnica sin datos personales.
+- preparar cronómetro y la [ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md), sin datos personales.
 
 ### Comprobaciones
 
 | Prueba | Repeticiones | Criterio para continuar |
 | --- | ---: | --- |
-| Activación desde reposo | 10 | Diez secuencias únicas, sin disparos dobles. |
-| Duración del patrón | 10 | Cada secuencia dura 3 s ± 0,3 s. |
+| Activación y duración | 10 | Las mismas diez secuencias son únicas, no presentan disparos dobles y duran 3 s ± 0,3 s. |
 | Silenciamiento | 10 | Detiene la señal en menos de 1 s y no vuelve a encenderse. |
 | Recuperación de energía | 5 | Reinicia apagado y espera una nueva orden. |
 | Perceptibilidad instrumental | 3 superficies × 3 distancias | El investigador identifica el comienzo del pulso sin mirar directamente la fuente. Esto no reemplaza una prueba de accesibilidad. |
 | Estabilidad | 3 superficies | No vuelca ni se desplaza al accionar el control. |
-| Temperatura y alimentación | 30 min encendido | No aparece calentamiento perceptible, cable expuesto ni interrupción. |
+| Temperatura y alimentación | 30 min encendido | No aparece calentamiento perceptible, conductor expuesto, aislación dañada, deformación, olor, parpadeo no programado ni interrupción. |
 
 Si una comprobación falla, el material no pasa a sesión con participantes. Se corrige la causa y se repite la serie completa afectada.
 
@@ -58,15 +57,31 @@ La ficha deberá conservar fecha, versión, componentes utilizados, superficie, 
 
 ## Decisión posterior
 
-- **Preparado para revisión académica:** cumple todas las comprobaciones y el consentimiento tiene contacto y fecha de eliminación.
+- **Material técnicamente preparado para revisión académica:** cumple todas las comprobaciones y conserva el registro completo.
 - **Modificar:** falla repetibilidad, silenciamiento, estabilidad o alimentación, pero la causa puede aislarse.
 - **Detener:** requiere una intensidad invasiva, genera riesgo eléctrico o no admite una salida física comprensible.
+
+El resultado técnico no autoriza por sí solo a trabajar con participantes. Antes del reclutamiento deben completarse contacto y fecha de eliminación del consentimiento, obtenerse la revisión académica del conjunto y cerrarse cualquier corrección solicitada.
 
 Cumplir esta especificación solo demuestra que el material puede ejecutar el ensayo de manera estable. No demuestra que la señal se perciba, se comprenda o recupere una intención.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Correcciones posteriores a auditoría
+
+- **Cambio:** se unificaron activación y duración en una serie de diez secuencias, se amplió el criterio observable de seguridad y se separó la aptitud técnica de la autorización para participantes.
+- **Versión anterior:** activación y duración podían leerse como veinte pruebas distintas; la decisión mezclaba cumplimiento material con campos administrativos del consentimiento.
+- **Motivo:** hacer reproducible la ficha y evitar que una comprobación técnica se interprete como autorización metodológica.
+- **Alcance:** no se modificó el patrón de señal ni se registraron resultados.
+
+### 2026-08-30 — Instrumento de registro enlazado
+
+- **Cambio:** la preparación remite a una ficha independiente para registrar todas las repeticiones, incidentes y decisiones.
+- **Versión anterior:** la especificación enumeraba los campos requeridos, pero el instrumento todavía no existía.
+- **Motivo:** convertir la puerta técnica en un procedimiento ejecutable y auditable.
+- **Alcance:** no se modificaron componentes, umbrales ni criterios de decisión; el ensayo continúa sin ejecutar.
 
 ### 2026-08-27 — Creación
 

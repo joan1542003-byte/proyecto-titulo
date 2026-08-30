@@ -21,6 +21,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
 - [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
 - [Especificación mínima de materiales](especificacion-materiales-fase-a.md): requisitos y comprobaciones técnicas previas de la señal manual de fase A.
+- [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar repeticiones, incidentes, correcciones y la puerta anterior a participantes.
 
 ## Regla de medición
 
@@ -41,6 +42,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Ficha ejecutable del ensayo técnico
+
+- **Cambio:** se enlazó la ficha que operacionaliza las comprobaciones de fase A.
+- **Versión anterior:** el directorio definía pruebas y umbrales, pero no ofrecía un registro independiente para cada repetición.
+- **Motivo:** asegurar trazabilidad técnica antes de solicitar revisión académica o reclutar.
+- **Alcance:** no se ejecutó el ensayo ni se añadieron resultados.
 
 ### 2026-08-27 — Material mínimo de fase A
 
