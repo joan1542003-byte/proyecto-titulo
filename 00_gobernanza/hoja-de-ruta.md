@@ -63,7 +63,7 @@ Orden obligatorio:
 5. [Completado] reconocer patrones, contradicciones y casos negativos;
 6. [Completado] proponer dos tipos situacionales;
 7. [Completado] elegir usuario principal más usuario límite;
-8. [Parcial] convertir la síntesis narrativa en fichas de perfiles situacionales y recorridos actual/futuro trazables;
+8. [Completado] convertir la síntesis narrativa en fichas de perfiles situacionales y recorridos actual/futuro trazables;
 9. [Parcial] consolidar una matriz autónoma de requisitos y límites derivados de usuarios;
 10. [Completado] redactar el apartado de usuario para la memoria v4.
 
@@ -136,6 +136,13 @@ Una fase se considera suficientemente desarrollada cuando:
 - **Versión anterior:** la hoja de ruta marcaba toda la traducción de usuarios como completada.
 - **Motivo:** evitar que el apartado redactado de la memoria se confunda con el cierre de las herramientas de diseño que deben sostenerlo.
 - **Decisión derivada:** la Issue #2 permanece abierta únicamente para producir tres documentos trazables, sin crear personas biográficas.
+
+### 2026-08-30 — Perfiles y recorridos documentados
+
+- **Cambio:** se completaron las fichas de perfiles situacionales y la separación entre recorridos actuales y escenario futuro.
+- **Versión anterior:** la traducción existía solo en forma narrativa dentro de la memoria y la arquitectura de interacción.
+- **Motivo:** cerrar herramientas de diseño trazables antes de consolidar requisitos.
+- **Decisión derivada:** la matriz de requisitos es el único entregable autónomo pendiente de la fase de usuarios.
 
 ### 2026-08-30 — Calendario institucional confirmado
 

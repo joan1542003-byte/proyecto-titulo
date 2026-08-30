@@ -384,13 +384,20 @@
 - **Estado:** vigente para la formulación v4; revisable con nueva evidencia
 - **Decisión:** utilizar los dos tipos situacionales como base para fichas de perfil, recorridos y requisitos trazables. No producir una persona biográfica mientras el corpus no respalde atributos estables adicionales. La síntesis narrativa de la memoria no sustituye todavía esos entregables autónomos.
 - **Fundamento:** una misma persona puede ocupar el patrón principal o el límite según el episodio. Añadir nombre, ocupación, vivienda, retrato o biografía convertiría una herramienta de comunicación en información aparentemente empírica y podría ocultar esa variación.
-- **Consecuencia:** `03_usuarios` conserva el proceso analítico y las fichas situacionales; la memoria v4 contiene su síntesis académica; la Issue #2 permanece abierta para elaborar recorridos diferenciados y una matriz de requisitos sin inventar contenido.
+- **Consecuencia:** `03_usuarios` conserva el proceso analítico, las fichas y los recorridos situacionales; la memoria v4 contiene su síntesis académica; la Issue #2 permanece abierta solo para elaborar una matriz de requisitos sin inventar contenido.
 - **Alternativa descartada:** declarar la fase completamente cerrada solo porque sus resultados aparecen redactados en la memoria, o producir dos personas convencionales mediante atributos ficticios.
-- **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md), [perfiles situacionales](../03_usuarios/perfiles-situacionales.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
+- **Documentos asociados:** [Índice de usuarios](../03_usuarios/README.md), [comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md), [perfiles situacionales](../03_usuarios/perfiles-situacionales.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Recorridos asociados a D-040
+
+- **Cambio:** se enlazaron los recorridos de U1 y U2 y el escenario futuro separado como hipótesis.
+- **Versión anterior:** D-040 mantenía perfiles, recorridos y requisitos como productos de implementación; solo las fichas estaban terminadas.
+- **Motivo:** sincronizar la decisión con el segundo entregable autónomo completado.
+- **Resultado:** la Issue #2 queda reducida a una matriz de requisitos y su comprobación final.
 
 ### 2026-08-30 — Fichas situacionales asociadas a D-040
 

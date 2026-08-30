@@ -18,6 +18,7 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 - [Matriz de evidencia](matriz-evidencia-p1-p8.md): comparación transversal, contradicciones y casos óptimos.
 - [Comparación y tipos de usuario](comparacion-y-tipos-de-usuario.md): elección de usuario principal más usuario límite.
 - [Perfiles situacionales](perfiles-situacionales.md): fichas textuales de U1 y U2 con evidencia P/Q, niveles de confianza, condiciones, límites y atributos excluidos.
+- [Recorridos situacionales](recorridos-situacionales.md): recorridos actuales de U1 y U2 separados del escenario futuro hipotético con Relevo.
 - [Memoria v4, capítulo 7](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas): síntesis académica de participantes, episodios, contraejemplos, tipos situacionales, recorridos, contexto y necesidades.
 - [Instrumentos y procedencia](../99_archivo/fuentes-locales/instrumentos/README.md): guiones, condiciones aplicadas, equivalencias y control de integridad de los DOCX.
 
@@ -73,7 +74,7 @@ La decisión deriva de P1–P8 y permanece abierta a revisión con nueva evidenc
 
 ## Estado
 
-**Fase analítica completada; traducción de diseño parcialmente desarrollada.** Corpus, códigos, casos, matriz, tipología y fichas de perfiles situacionales están documentados. La memoria v4 contiene recorridos, necesidades y límites en forma narrativa, suficientes para sostener su formulación actual. Todavía faltan dos entregables autónomos: recorrido actual y escenario futuro diferenciados, y una matriz que vincule hallazgos con requisitos y criterios de no intervención.
+**Fase analítica completada; traducción de diseño próxima a cierre.** Corpus, códigos, casos, matriz, tipología, perfiles y recorridos situacionales están documentados. Falta consolidar una matriz autónoma que vincule hallazgos con necesidades, requisitos y criterios de no intervención.
 
 Estos documentos no incorporarán nombres, retratos ni biografías inventadas. Su función será hacer visible la trazabilidad previa a nuevas pruebas. Después, la evidencia de prototipos podrá precisar necesidades, modificar recorridos o revelar un patrón no cubierto.
 
@@ -94,6 +95,13 @@ Estos documentos no incorporarán nombres, retratos ni biografías inventadas. S
 - **Versión anterior:** los perfiles solo podían reconstruirse desde la comparación de tipos y la narración de la memoria v4.
 - **Motivo:** cerrar el primer entregable pendiente de la Issue #2 sin inventar personas biográficas.
 - **Resultado:** la fase conserva pendientes los recorridos y la matriz de requisitos.
+
+### 2026-08-30 — Recorridos actuales y futuros diferenciados
+
+- **Cambio:** se añadió un documento que separa los recorridos actuales respaldados por P/Q del escenario futuro hipotético con Relevo.
+- **Versión anterior:** ambos niveles estaban distribuidos entre la memoria y los flujos del producto.
+- **Motivo:** evitar que una secuencia diseñada se presente como comportamiento observado y cerrar el segundo entregable de la Issue #2.
+- **Resultado:** solo permanece pendiente la matriz autónoma de requisitos de usuarios.
 
 ### 2026-08-23 — Criterio etario y pausa
 
