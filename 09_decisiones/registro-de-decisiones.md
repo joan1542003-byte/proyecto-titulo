@@ -394,13 +394,34 @@
 - **Estado:** seleccionada para construir; no comprada, montada ni ensayada
 - **Decisión:** utilizar un pulsador conectado mediante tres metros de cable para activar el montaje luminoso de fase A. Infrarrojo queda como reserva si el cable altera el espacio; radio de 433 MHz se descarta para esta prueba.
 - **Fundamento:** la fase A necesita comprobar repetibilidad, duración, silenciamiento, estabilidad y seguridad del material sin introducir fallos de radio, Bluetooth o Android. La opción cableada agrega menos variables y tiene trazabilidad de componentes y costos.
-- **Consecuencia:** se documenta un subtotal electrónico de CLP 35.000 y CLP 40.250 con 15 % de contingencia, sin cuerpo, difusor, herramientas, envío ni trabajo. El cable debe fijarse fuera del recorrido.
+- **Consecuencia:** se documenta un subtotal electrónico de CLP 28.130 y CLP 32.350 con 15 % de contingencia, sin cuerpo, difusor, herramientas, envío ni trabajo. El cable debe fijarse fuera del recorrido. Un interruptor DPDT separa el corte físico de la luz y el retorno lógico a reposo.
 - **Límite:** la decisión pertenece al dispositivo de ensayo y no define el enlace, la electrónica, la forma ni el costo del producto. No autoriza compra, uso con participantes ni afirmaciones de seguridad certificada.
 - **Documentos asociados:** [Montaje mínimo de fase A](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), [especificación](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) e [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Cable y mapa verificables de D-041
+
+- **Cambio:** se sustituyó una ficha comercial internamente contradictoria por cable paralelo de dos conductores y 24 AWG, y se documentó qué terminal de cada polo queda sin conexión.
+- **Versión anterior:** el cable podía identificarse como apantallado o UTP Cat 5 según la sección consultada, y el DPDT ON-ON no tenía mapa de registro.
+- **Motivo:** impedir una compra ambigua y hacer reproducible el corte físico y lógico.
+- **Resultado:** CLP 28.130 y CLP 32.350 con contingencia; decisión aún no construida ni ensayada.
+
+### 2026-08-30 — Precio vigente y verificación de D-041
+
+- **Cambio:** se reemplazaron precios anteriores visibles en el catálogo por los valores vigentes indicados en las fichas digitales y se exigió comprobar continuidad, estado de D3 y apagado físico antes de energizar.
+- **Versión anterior:** D-041 registraba CLP 34.610 y CLP 39.802 con contingencia, sin detallar cómo verificar ambos polos.
+- **Motivo:** mantener costo y arquitectura trazables antes de cualquier compra.
+- **Resultado de esa revisión:** CLP 29.000 y CLP 33.350 con contingencia; valores reemplazados por la corrección posterior del cable.
+
+### 2026-08-30 — Corrección técnica y económica de D-041
+
+- **Cambio:** se incorporó un interruptor DPDT para que el silenciamiento corte la luz y restablezca el estado lógico; se actualizaron subtotal y contingencia.
+- **Versión anterior:** un interruptor de un polo no podía comunicar el silenciamiento al controlador, aunque el texto exigía retorno inmediato a reposo.
+- **Motivo:** eliminar una contradicción anterior a la escritura del firmware.
+- **Resultado:** la arquitectura continúa seleccionada, todavía sin compra, montaje ni ensayo.
 
 ### 2026-08-30 — D-041
 

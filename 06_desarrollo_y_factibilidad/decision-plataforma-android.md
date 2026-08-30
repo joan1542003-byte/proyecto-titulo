@@ -44,9 +44,9 @@ La integración con iPhone es técnicamente plausible, pero no está demostrada 
 
 ## Consecuencias
 
-- Los prototipos conceptuales P0–P2 pueden simular la activación y no dependen de Android.
-- P3 utilizará Android como banco técnico documentado.
-- Cuando se retome el desarrollo de wireframes, estos representarán una aplicación móvil Android sin prometer compatibilidad multiplataforma.
+- La fase A puede simular la activación y no depende de Android.
+- La fase B requiere una notificación local Android equivalente antes de comparar soportes.
+- Los wireframes ya representan una aplicación móvil Android sin prometer compatibilidad multiplataforma; la implementación funcional continúa pendiente.
 - No se construirá una web operativa ni una aplicación iOS durante el prototipo inicial.
 - La condición de activación continúa abierta; seleccionar Android no decide entre continuidad, acumulación u horario.
 - Una expansión futura requerirá volver a evaluar arquitectura, recursos, privacidad y compatibilidad después de demostrar el aporte físico.
@@ -72,6 +72,13 @@ WebKit. (s. f.). *Tracking prevention in WebKit*. Recuperado el 25 de agosto de 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Alineación con la ruta de validación vigente
+
+- **Cambio:** se sustituyeron P0–P3 y la reanudación futura de wireframes por fase A, fase B e implementación funcional pendiente.
+- **Versión anterior:** las consecuencias utilizaban una nomenclatura reemplazada y describían los wireframes como trabajo todavía no retomado.
+- **Motivo:** mantener la decisión de plataforma alineada con el Protocolo 01 y el Encargo 17 ya desarrollado.
+- **Alcance:** Android continúa como plataforma inicial; no se afirma funcionamiento ni compatibilidad comprobada.
 
 ### 2026-08-25 — Creación
 

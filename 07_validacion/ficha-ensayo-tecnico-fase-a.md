@@ -66,20 +66,20 @@ Si una casilla no cumple, el ensayo se detiene y la causa se corrige antes de co
 
 ## A. Activación y duración
 
-**Criterio:** las mismas diez secuencias deben ser únicas, no presentar disparos dobles y durar 3 s ± 0,3 s.
+**Criterio:** las mismas diez secuencias deben ser únicas, contener tres pulsos separados por dos intervalos apagados, no presentar disparos dobles y durar 3 s ± 0,3 s.
 
-| Repetición | Parte desde reposo | Secuencia única | Duración | Disparo doble o acumulación | Cumple | Observación |
-| ---: | --- | --- | ---: | --- | --- | --- |
-| 1 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 2 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 3 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 4 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 5 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 6 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 7 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 8 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 9 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 10 | ☐ | ☐ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| Repetición | Parte desde reposo | Pulsos observados | Intervalos apagados | Duración | Disparo doble o acumulación | Cumple | Observación |
+| ---: | --- | ---: | ---: | ---: | --- | --- | --- |
+| 1 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 2 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 3 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 4 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 5 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 6 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 7 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 8 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 9 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| 10 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
 
 ## B. Silenciamiento
 
@@ -192,6 +192,13 @@ Cumplir esta ficha autoriza únicamente a solicitar revisión académica del mat
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Comprobación observable del patrón
+
+- **Cambio:** cada repetición debe registrar el número de pulsos y de intervalos apagados, además de la duración total.
+- **Versión anterior:** la ficha podía aprobar una secuencia única de tres segundos sin demostrar que contuviera los tres pulsos definidos.
+- **Motivo:** hacer comprobable el patrón completo y no solo su inicio y término.
+- **Alcance:** se cuentan eventos visibles; la ficha no evalúa todavía la percepción de participantes.
 
 ### 2026-08-30 — Correcciones posteriores a auditoría
 

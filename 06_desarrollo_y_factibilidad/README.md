@@ -45,7 +45,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 - **Cambio:** se enlazó la justificación comparativa de Android como única plataforma del primer prototipo técnico integrado.
 - **Versión anterior:** el directorio mencionaba arquitectura Android, pero no documentaba por qué se descartaban web e iPhone en esta etapa.
 - **Motivo:** separar una decisión de alcance de una afirmación de superioridad o compatibilidad universal.
-- **Alcance:** la condición de activación y el desempeño técnico permanecen pendientes de P3.
+- **Alcance:** la condición de activación y el desempeño técnico permanecen pendientes de implementación y pruebas Android.
 
 ### 2026-08-23 — Creación
 
