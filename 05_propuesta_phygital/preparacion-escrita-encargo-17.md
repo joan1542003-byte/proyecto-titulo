@@ -157,11 +157,18 @@ Encabezado; progreso; campo de texto; selector; tarjeta de estado; aviso técnic
 
 ## Decisiones que permanecen abiertas después de la entrega
 
-Condición de activación definitiva; canal, duración e intensidad del pulso; forma, materialidad y control final del testigo; gesto de salida; accesibilidad; convivencia; electrónica; costos reales y valor frente a una notificación equivalente. Estas decisiones requieren P0–P4 y no bloquean un wireframe estructural.
+Condición de activación definitiva; canal, duración e intensidad del pulso; forma, materialidad y control final del testigo; gesto de salida; accesibilidad; convivencia; electrónica; costos reales y valor frente a una notificación equivalente. Estas decisiones requieren el Protocolo 01, comparaciones posteriores de modalidad y soporte, y pruebas técnicas de Android y del testigo; no bloquean un wireframe estructural.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Nomenclatura de validación vigente
+
+- **Cambio:** la secuencia genérica P0–P4 fue reemplazada por las dependencias operativas vigentes: Protocolo 01, comparaciones posteriores y pruebas técnicas.
+- **Versión anterior:** todas las decisiones abiertas se remitían a una nomenclatura anterior del plan de evaluación.
+- **Motivo:** mantener esta preparación alineada con la matriz de requisitos y la Issue #8 sin alterar su valor histórico.
+- **Alcance:** no se modificaron el ciclo, las tres interacciones ni los nueve marcos.
 
 ### 2026-08-26 — Sincronización documental con la memoria v4
 

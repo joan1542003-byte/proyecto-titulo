@@ -34,7 +34,7 @@ La entrega cuenta también con una [versión HTML de media fidelidad](wireframes
 - Después del pulso, silencio, vencimiento o desarmado, el ciclo termina.
 - El rearme siempre es explícito.
 - Iniciar, continuar, ignorar o silenciar son respuestas válidas y no se registran como cumplimiento.
-- La condición mostrada en los wireframes funciona como ejemplo estructural; P0–P4 deben determinar su pertinencia y factibilidad.
+- La condición mostrada en los wireframes funciona como ejemplo estructural. El Protocolo 01 no la valida: su selección y factibilidad deberán comprobarse después mediante pruebas técnicas de Android.
 
 ## Correspondencia con la pauta
 
@@ -78,7 +78,7 @@ Los wireframes no son una interfaz validada ni una especificación técnica fina
 5. Probar accesibilidad y convivencia.
 6. Verificar enlace, batería, vencimiento y segundo plano en Android.
 
-Estos puntos pertenecen al desarrollo P0–P4. Convertirlos ahora en especificaciones cerradas produciría una precisión no respaldada.
+Estos puntos se distribuyen entre el Protocolo 01, las comparaciones posteriores de modalidad y las pruebas técnicas de Android y del testigo. Convertirlos ahora en especificaciones cerradas produciría una precisión no respaldada.
 
 ## Cobertura complementaria
 
@@ -89,6 +89,13 @@ El anexo mantiene cinco familias de estados: configuración; vinculación y prue
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Nomenclatura de validación vigente
+
+- **Cambio:** se sustituyeron las referencias activas a P0–P4 por el Protocolo 01, las comparaciones de modalidad y las pruebas técnicas posteriores.
+- **Versión anterior:** el documento atribuía todas las decisiones abiertas a una secuencia P0–P4 que ya no corresponde a la nomenclatura operativa del repositorio.
+- **Motivo:** evitar confundir prioridades, fases de validación y etapas de implementación.
+- **Alcance:** no se modificaron los wireframes, su cobertura ni las decisiones que permanecen abiertas.
 
 ### 2026-08-26 — Separación entre interfaz, contexto y documentación
 
