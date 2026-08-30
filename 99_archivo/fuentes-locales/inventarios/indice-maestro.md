@@ -2,23 +2,25 @@
 
 ## Estado general
 
-**Migración activa.** La organización documental es la única línea principal de trabajo. El desarrollo de personas y recorridos permanece pausado hasta completar una base archivística suficiente.
+**Migración general en pausa; mantenimiento selectivo.** La base archivística ya permite reconstruir los hitos principales, distinguir fuentes activas e históricas y rastrear la procedencia de entrevistas, feedback y memorias. La línea sustantiva actual es el paso desde documentación hacia prototipo y validación.
 
-**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, la familia de cuatro DOCX de instrumentos y entrevistas, el bloque propio del feedback E15, la resolución de los tres archivos de `Fin semestre 1` y la autoevaluación E12.
+Solo se reabre una unidad de migración cuando un archivo local concreto sea necesario para resolver una laguna de la memoria, una prueba, una decisión o un entregable. No se convierte material únicamente para aumentar cobertura.
+
+**Avance verificado:** están completados los sublotes textuales del semestre 1, las memorias y los Markdown de proceso del semestre 2, la familia de cuatro DOCX de instrumentos y entrevistas, el bloque propio del feedback E15, la resolución de los tres archivos de `Fin semestre 1` y la autoevaluación E12. La [memoria v4](../../../08_memoria/memoria-vigente-v4.md) es la única memoria académica activa; los [perfiles](../../../03_usuarios/perfiles-situacionales.md), [recorridos](../../../03_usuarios/recorridos-situacionales.md) y [requisitos](../../../03_usuarios/matriz-requisitos-de-usuarios.md) ya no están pausados.
 
 ## Colecciones
 
 | ID | Colección | Contenido | Estado | Próxima acción |
 |---|---|---|---|---|
 | C-00 | Gobernanza del archivo | Protocolo, estados y reglas | Completada v1 | Revisar después del primer lote |
-| C-01 | Inventarios | Mapa, índice y omisiones | Activa | Añadir manifiesto detallado |
+| C-01 | Inventarios | Mapa, índice y omisiones | Mantenimiento | Actualizar solo al abrir o cerrar una unidad selectiva |
 | C-02 | E09 | Auditoría y memoria actualizada | Migrado | Comparar fuentes editables solo si aportan contenido único |
 | C-03 | E10 | Corrección cruzada, guiones y transcripción | Parcial | Comparar DOCX y materiales editables |
 | C-04 | E11 | Guía, plan, guion y memoria revisada | Migrado en Markdown | Revisar equivalentes DOCX |
 | C-05 | E12 | Borradores, entrega histórica, autoevaluación y medios de In(Visible) | Parcial | Verificar equivalencias de los DOCX y PDF restantes |
 | C-06 | Cierre del semestre 1 | Mapa triple, memoria final de Relevo y equivalencias PDF | Cerrado | Mantener trazabilidad si aparece una nueva copia |
 | C-07 | Instrumentos de usuarios | Dos guiones, aplicación, equivalencias y corpus anonimizado | Cerrado | Mantener al día si aparece una nueva fuente |
-| C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Textos principales migrados | Crear manifiestos selectivos de binarios y equivalencias |
+| C-08 | Semestre 2 | Relevo, perfiles, flujos y memorias | Textos principales migrados; vigencia resuelta | Crear fichas binarias solo cuando cubran una necesidad concreta |
 | C-09 | Bibliografía | Fuentes académicas y guías | Pendiente | Crear fichas APA 7 |
 | C-10 | Administración | Pautas, rúbricas, planes y feedback | Parcial | E15 convertido; revisar las demás pautas y planificaciones |
 | C-11 | Recursos visuales | Diagramas, mapas y renders | Pendiente | Crear índice selectivo |
@@ -50,7 +52,7 @@
 
 ### Lote 3 — Segundo semestre
 
-**Estado:** auditoría, memorias y 21 Markdown de perfiles, mapas, flujos y proceso completados; binarios y equivalencias pendientes.
+**Estado:** auditoría, memorias y 21 Markdown de perfiles, mapas, flujos y proceso completados; la memoria v4 está declarada como única memoria activa. Los binarios y equivalencias restantes no bloquean el proyecto y se revisarán de manera selectiva.
 
 **Criterio de cierre:**
 
@@ -78,9 +80,27 @@
 - **Migrado:** contenido disponible con metadatos.
 - **Cerrado:** colección revisada y con decisión para cada elemento.
 
+## Puerta para reabrir una unidad
+
+Una tarea de archivo entra a la ruta activa solo si cumple las cuatro condiciones:
+
+1. identifica un archivo o familia exactos;
+2. explica qué laguna vigente resuelve;
+3. no duplica contenido ya preservado;
+4. define conversión, ficha, equivalencia u omisión como resultado verificable.
+
+Las equivalencias restantes de E12, otros DOCX, binarios, bibliografía archivística e índice visual se conservan como backlog. No preceden al material de fase A, la validación, Android, producción ni costos.
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Paso a mantenimiento selectivo
+
+- **Cambio:** la migración general dejó de figurar como única línea activa; se declaró la memoria v4, se actualizó el estado de usuarios y se añadió una puerta para reabrir unidades concretas.
+- **Versión anterior:** el índice afirmaba que personas y recorridos estaban pausados y mantenía abierta la vigencia de las memorias del segundo semestre.
+- **Motivo:** la base archivística ya es suficiente para el cierre y no debe competir con prototipado, validación, producción ni actualización de la memoria.
+- **Alcance:** los pendientes archivísticos no se eliminan; permanecen como backlog selectivo y deben activarse mediante una necesidad demostrable.
 
 ### 2026-08-23 — Creación
 
