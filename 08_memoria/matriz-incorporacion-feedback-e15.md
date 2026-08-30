@@ -2,43 +2,51 @@
 
 Las observaciones docentes orientan decisiones y tareas, pero no constituyen evidencia empírica.
 
-| ID | Estado al 24-08-2026 | Incorporación o pendiente |
-| --- | --- | --- |
-| E15-01 | Resuelto en escritura | Relevo se define mediante aplicación Android, testigo sin pantalla y lugar. |
-| E15-02 | Parcial | El hogar es contexto variable e hipótesis; falta investigación espacial específica. |
-| E15-03 | Resuelto | Usuario, problema, intervención y exclusiones están delimitados. |
-| E15-04 | Resuelto en planificación | Se separan éxito, modificación y abandono; falta aplicar protocolos. |
-| E15-05 | Resuelto | Se corrigieron modalidad, fechas, Santiago, consentimiento, rango 19–27 y P6 con 27 años. |
-| E15-06 | Resuelto en escritura; vigilancia abierta | Mercado organizado por mecanismos, registro de búsqueda y fichas verificadas con fecha de corte; debe actualizarse ante cambios relevantes. |
-| E15-07 | Parcial avanzado | Valor personal, phygital y disciplinar separados; falta comparar con notificación. |
-| E15-08 | Resuelto en escritura | Se documentan flujos de usuario, técnico y de diseño. |
-| E15-09 | Parcial crítico | Android es provisional; faltan pruebas de permisos, segundo plano y BLE. |
-| E15-10 | Parcial | Luz, sonido y vibración continúan pendientes de prueba. |
-| E15-11 | Parcial | Accesibilidad incorporada como requisito; falta validación por canales. |
-| E15-12 | Parcial avanzado | Se justifica excluir puntos, rachas y rankings sin rechazar toda gamificación. |
-| E15-13 | Parcial | Android es provisional; faltan comparación con iOS y versiones objetivo. |
-| E15-14 | Resuelto | La tecnología se subordina a preguntas y puertas de decisión. |
-| E15-15 | Parcial crítico | Costos como escenarios; faltan cotizaciones y disposición de pago. |
-| E15-16 | Resuelto en planificación | Rol profesional separado de la lista de materiales, el costo de producción y el precio. |
-| E15-17 | Resuelto | Formulación canónica de qué es Relevo, cómo funciona y por qué existe. |
-| E15-18 | Resuelto | El sistema se presenta antes del detalle y reaparece al justificar decisiones. |
-| E15-19 | Resuelto en memoria vigente | Se eliminó del cuerpo el lenguaje de entregas. |
-| E15-20 | Resuelto para la v2 | Errores metodológicos corregidos; auditoría APA, bibliográfica y editorial completada. Debe repetirse cuando ingresen resultados. |
-| E15-21 | Parcial avanzado | Cronología, decisiones, fuentes y módulos están enlazados; falta registrar los próximos hitos de prototipado. |
-| E15-22 | Resuelto como prioridad | La memoria escrita quedó integrada; la visualidad y el Encargo 17 permanecen en pausa. |
+| ID | Estado al 30-08-2026 | Incorporación o pendiente | Evidencia vigente |
+| --- | --- | --- | --- |
+| E15-01 | Resuelto documentalmente | Relevo distingue aplicación Android, testigo físico situado, lugar y señal. La forma del testigo continúa abierta. | [Memoria v4](memoria-vigente-v4.md) y [propuesta phygital](../05_propuesta_phygital/README.md). |
+| E15-02 | Parcial | El hogar se mantiene como contexto variable e hipótesis. Falta observación espacial o prueba situada que permita precisar condiciones domésticas. | [Recorridos situacionales](../03_usuarios/recorridos-situacionales.md) y [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md). |
+| E15-03 | Resuelto documentalmente | Problema, usuario, alcance y exclusiones están delimitados sin afirmar eficacia. | [Memoria v4](memoria-vigente-v4.md) y [matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md). |
+| E15-04 | Especificado; no validado | Existen puertas para avanzar, modificar y detener. Deben aplicarse con participantes después del ensayo técnico. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) e [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). |
+| E15-05 | Resuelto documentalmente | El corpus P1–P8 se tradujo en tipos situacionales, perfiles, recorridos y requisitos con niveles de confianza. | [Usuarios](../03_usuarios/README.md). |
+| E15-06 | Resuelto con corte temporal | El mercado está organizado por mecanismos, límites y líneas de desarrollo. Requiere vigilancia breve, no una búsqueda general permanente. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) y [registro de búsqueda](../04_mercado_y_referentes/registro-busqueda-2026-08-24.md). |
+| E15-07 | Parcial avanzado | El valor personal, phygital y disciplinar está formulado. Su aporte diferencial frente a una notificación sigue siendo una hipótesis de fase B. | [Memoria v4](memoria-vigente-v4.md), [PE-01](../03_usuarios/matriz-requisitos-de-usuarios.md) y [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md). |
+| E15-08 | Resuelto documentalmente | Los recorridos de usuario, el flujo del sistema y el proceso de diseño se mantienen separados. | [Propuesta phygital](../05_propuesta_phygital/README.md) y [memoria v4](memoria-vigente-v4.md). |
+| E15-09 | Parcial crítico | Acciones, estados y fallos están representados; faltan implementación y pruebas de permisos, segundo plano, enlace y recuperación. | [Cobertura de interacciones](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) y [factibilidad](../06_desarrollo_y_factibilidad/README.md). |
+| E15-10 | Pendiente de prueba | Luz, sonido, vibración y alternativas no están comparados con personas ni en condiciones domésticas. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) y [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md). |
+| E15-11 | Especificado; no validado | Accesibilidad, alternativa perceptiva y no dependencia exclusiva del color forman parte de los requisitos. Falta comprobarlos. | [RU-08 y RU-11](../03_usuarios/matriz-requisitos-de-usuarios.md). |
+| E15-12 | Resuelto como criterio | Se excluyen puntajes, rachas, rankings y evaluación de cumplimiento; la acción posterior conserva valor personal. | [RU-06 y RU-13](../03_usuarios/matriz-requisitos-de-usuarios.md) y [memoria v4](memoria-vigente-v4.md). |
+| E15-13 | Resuelto para el alcance inicial | Android es la plataforma del prototipo; web e iPhone se descartaron para esta etapa, no como imposibilidades generales. La factibilidad Android aún debe probarse. | [Decisión de plataforma](../06_desarrollo_y_factibilidad/decision-plataforma-android.md). |
+| E15-14 | Resuelto como criterio | La implementación está subordinada a requisitos y puertas de decisión. | [Hoja de ruta](../00_gobernanza/hoja-de-ruta.md) y [registro de decisiones](../09_decisiones/registro-de-decisiones.md). |
+| E15-15 | Pendiente crítico | Existen categorías y supuestos preliminares, pero faltan lista de materiales vigente, proveedores, cotizaciones, tiempos y costo del prototipo. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) y [factibilidad](../06_desarrollo_y_factibilidad/README.md). |
+| E15-16 | Parcial avanzado | El rol profesional está separado de materiales, fabricación y precio. Falta consolidar horas y costos de diseño con la producción final. | [Memoria v4](memoria-vigente-v4.md) y [plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md). |
+| E15-17 | Resuelto documentalmente | La formulación vigente explica qué aborda Relevo, cómo opera y por qué el diseño interviene. | [Resumen vigente](resumen-vigente-proyecto.md) y [memoria v4](memoria-vigente-v4.md). |
+| E15-18 | Reformulado y resuelto | La memoria no adelanta la solución: construye problema, antecedentes y usuario antes de formular Relevo. La definición aparece cuando la secuencia narrativa permite comprenderla. | [Memoria v4](memoria-vigente-v4.md) y [dictamen rector](dictamen-rector-reconstruccion-memoria.md). |
+| E15-19 | Pendiente para la defensa | La memoria ya evita lenguaje de encargos, pero el guion oral y las diapositivas se desarrollan como medios distintos durante el cierre. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md). |
+| E15-20 | Resuelto para v4; control recurrente | La v4 fue auditada en estructura, fuentes y escritura. La revisión APA 7, editorial y de privacidad debe repetirse al incorporar resultados. | [Auditorías de memoria](README.md). |
+| E15-21 | Resuelto como sistema continuo | Cronología, decisiones y calendario están enlazados. Los próximos hitos se registran en la Issue #9 y en el plan de cierre. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md), [decisiones](../09_decisiones/registro-de-decisiones.md) e [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9). |
+| E15-22 | Parcial avanzado | Encargo 17, wireframes y sistema visual ya están desarrollados y documentados. Faltan aplicaciones finales, pruebas de legibilidad y registro definitivo del producto. | [Entrega Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) y [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md). |
 
 ## Pendientes prioritarios
 
-1. Cerrar y ejecutar P0 para probar asociación sin texto.
-2. Comparar en P1 testigo situado, lugar neutro y notificación.
-3. Probar en P2 canales, salida, accesibilidad y convivencia.
-4. Elegir y probar en P3 la condición operacional, Android, permisos, segundo plano y BLE.
-5. Cotizar el prototipo solo después de sostener el valor físico.
-6. Integrar resultados y repetir la auditoría APA, bibliográfica y editorial.
+1. Completar el material mínimo y ejecutar el ensayo técnico de la fase A.
+2. Aplicar la fase A con participantes para probar asociación y control.
+3. Habilitar la fase B y comparar testigo situado, lugar neutro y notificación solo si la primera puerta permite avanzar.
+4. Probar modalidades, accesibilidad y convivencia antes de cerrar el canal de la señal.
+5. Implementar y comprobar Android, permisos, segundo plano, enlace y recuperación.
+6. Cerrar forma, materiales, proveedores, cotizaciones y costos después de sostener el aporte físico.
+7. Incorporar resultados y repetir la auditoría APA 7, bibliográfica, editorial y de privacidad.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Reconciliación con memoria v4 y ruta de validación
+
+- **Cambio:** se revisaron E15-01–E15-22, se añadieron enlaces de evidencia y se sustituyó la secuencia P0–P4 por las fases y dependencias vigentes.
+- **Versión anterior:** la matriz estaba fechada el 24 de agosto, remitía a la memoria v2 y declaraba en pausa el Encargo 17 y la visualidad.
+- **Motivo:** distinguir avances documentales de resultados todavía inexistentes y mantener el feedback histórico alineado con usuarios, mercado, plataforma, sistema visual y validación.
+- **Alcance:** no se consideran validados el contexto doméstico, la asociación, el aporte del objeto, la modalidad de señal, la accesibilidad, Android ni los costos.
 
 ### 2026-08-24 — Sincronización con la memoria v2
 
