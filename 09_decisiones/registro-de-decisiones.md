@@ -409,9 +409,9 @@
 - **Motivo:** impedir una compra ambigua y hacer reproducible el corte físico y lógico.
 - **Resultado:** CLP 28.130 y CLP 32.350 con contingencia; decisión aún no construida ni ensayada.
 
-### 2026-08-30 — Precio vigente y verificación de D-041
+### 2026-08-30 — Precio observado y verificación de D-041
 
-- **Cambio:** se reemplazaron precios anteriores visibles en el catálogo por los valores vigentes indicados en las fichas digitales y se exigió comprobar continuidad, estado de D3 y apagado físico antes de energizar.
+- **Cambio:** se reemplazaron precios anteriores visibles en el catálogo por los valores observados en las fichas digitales durante la consulta y se exigió comprobar continuidad, estado de D3 y apagado físico antes de energizar.
 - **Versión anterior:** D-041 registraba CLP 34.610 y CLP 39.802 con contingencia, sin detallar cómo verificar ambos polos.
 - **Motivo:** mantener costo y arquitectura trazables antes de cualquier compra.
 - **Resultado de esa revisión:** CLP 29.000 y CLP 33.350 con contingencia; valores reemplazados por la corrección posterior del cable.

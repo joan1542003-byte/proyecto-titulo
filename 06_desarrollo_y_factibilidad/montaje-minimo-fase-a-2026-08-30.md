@@ -16,7 +16,7 @@ La selección no define la electrónica de Relevo. Aísla las variables necesari
 
 ## Alternativas comparadas
 
-Los subtotales corresponden a los precios vigentes indicados por las fichas digitales del comercio en la fecha de corte. Algunas páginas exhibían además un precio anterior tachado; ese valor no se utilizó. Los montos incluyen controlador, luz, regulación, alimentación, conversión de voltaje, silenciamiento y montaje de protoboard. No incluyen cuerpo, difusor, envío, herramientas ni trabajo profesional.
+Los subtotales corresponden a los precios observados en las fichas digitales del comercio en la fecha de corte. Algunas páginas exhibían además un precio anterior tachado; ese valor no se utilizó. Los montos permiten planificar y comparar, pero deben verificarse nuevamente al comprar. Incluyen controlador, luz, regulación, alimentación, conversión de voltaje, silenciamiento y montaje de protoboard. No incluyen cuerpo, difusor, envío, herramientas ni trabajo profesional.
 
 | Alternativa | Activación | Ventaja para la prueba | Riesgo o variable añadida | Subtotal de referencia | Decisión |
 | --- | --- | --- | --- | ---: | --- |
@@ -30,17 +30,17 @@ Los subtotales B y C reemplazan el cable y el pulsador de A por un [kit infrarro
 
 ## Lista provisional de materiales — alternativa A
 
-| Partida | Cantidad | Función | Precio publicado | Fuente y condición |
+| Partida | Cantidad | Función | Precio observado | Fuente y condición |
 | --- | ---: | --- | ---: | --- |
-| Arduino Nano V3.0 compatible, con cable | 1 | Ejecutar el patrón y controlar estados. | CLP 4.490 | [MechatronicStore](https://www.mechatronicstore.cl/arduino-nano-v3-0-atmega328-cable/); precio vigente publicado. Arduino documenta las capacidades generales de la [placa Nano](https://docs.arduino.cc/hardware/nano). |
+| Arduino Nano V3.0 compatible, con cable | 1 | Ejecutar el patrón y controlar estados. | CLP 4.490 | [MechatronicStore](https://www.mechatronicstore.cl/arduino-nano-v3-0-atmega328-cable/); valor observado en la fecha de corte. Arduino documenta las capacidades generales de la [placa Nano](https://docs.arduino.cc/hardware/nano). |
 | Tira LED rígida 5050, 12 V, blanca cálida | 1 m | Producir luz regulable; se utilizará solo el segmento necesario. | CLP 7.500 | [MechatronicStore](https://www.mechatronicstore.cl/tira-led-5050-rigida-1m-12v-blanco-calido-frio/); compra mínima publicada. |
 | Módulo MOSFET para PWM, 5–36 V | 1 | Conmutar la tira desde una salida de control sin alimentarla desde el pin del microcontrolador. | CLP 1.590 | [MechatronicStore](https://www.mechatronicstore.cl/modulo-regulador-switch-pwm-circuitos-de-potencia-15a-400w-mosfet/). |
 | Fuente comercial 12 V, 2 A | 1 | Alimentar la rama luminosa mediante una fuente cerrada. | CLP 4.490 | [MechatronicStore](https://www.mechatronicstore.cl/transformador-cargador-fuente-de-alimentacion-12v-2a/). |
 | Convertidor reductor LM2596S | 1 | Entregar 5 V al controlador desde la fuente de 12 V. | CLP 1.990 | [MechatronicStore](https://www.mechatronicstore.cl/modulo-de-fuente-de-alimentacion-reductora-ajustable-lm2596s-dc-dc-1-25-30v/); su salida debe ajustarse y medirse antes de conectar la placa. |
-| Interruptor de palanca DPDT, seis pines | 1 | Un polo interrumpe la rama luminosa y el segundo comunica el estado de silencio al controlador. | CLP 1.490 | [MechatronicStore](https://www.mechatronicstore.cl/interruptor-palanca-dpdt-6-pines-3a/); precio vigente publicado; se utiliza solo en baja tensión. |
+| Interruptor de palanca DPDT, seis pines | 1 | Un polo interrumpe la rama luminosa y el segundo comunica el estado de silencio al controlador. | CLP 1.490 | [MechatronicStore](https://www.mechatronicstore.cl/interruptor-palanca-dpdt-6-pines-3a/); valor observado en la fecha de corte; se utiliza solo en baja tensión. |
 | Cable paralelo de dos conductores, 24 AWG | 3 m | Separar el pulsador de activación del montaje. | CLP 600 | [MechatronicStore](https://www.mechatronicstore.cl/cable-paralelo-variedad-calibres/); variante 24 AWG a CLP 200 por metro. |
 | Pulsador momentáneo | 1 | Iniciar la secuencia desde tres metros. | CLP 290 | [MechatronicStore](https://www.mechatronicstore.cl/boton-pulsador-switch-2-pines-6x6x7mm/). |
-| Kit de protoboard, fuente y cables | 1 | Mantener el montaje modificable durante el ensayo. | CLP 5.690 | [MechatronicStore](https://www.mechatronicstore.cl/kit-protoboard-fuente-mb102-usb-set-de-cables/); precio vigente publicado. La fuente incluida no sustituye la conversión medida para el conjunto. |
+| Kit de protoboard, fuente y cables | 1 | Mantener el montaje modificable durante el ensayo. | CLP 5.690 | [MechatronicStore](https://www.mechatronicstore.cl/kit-protoboard-fuente-mb102-usb-set-de-cables/); valor observado en la fecha de corte. La fuente incluida no sustituye la conversión medida para el conjunto. |
 | **Subtotal electrónico** |  |  | **CLP 28.130** | Sin envío, cuerpo, difusor, herramientas ni fabricación. |
 | **Subtotal con 15 % de contingencia** |  |  | **CLP 32.350** | Resultado de CLP 32.349,5 redondeado al peso; reserva de planificación, no cotización ni costo final. |
 
@@ -159,7 +159,7 @@ MechatronicStore. (s. f.-k). *Control remoto RF inalámbrico con relé de 5 V, u
 
 ### 2026-08-30 — Corrección posterior a auditoría técnica
 
-- **Cambio:** se documentaron las dos posiciones verificables del DPDT, su estabilización lógica y la comprobación de apagado durante el arranque. Los precios vigentes del controlador, interruptor y kit de protoboard sustituyeron los valores anteriores mostrados por las páginas.
+- **Cambio:** se documentaron las dos posiciones verificables del DPDT, su estabilización lógica y la comprobación de apagado durante el arranque. Los valores observados del controlador, interruptor y kit de protoboard sustituyeron los precios anteriores mostrados por las páginas.
 - **Versión anterior:** el cableado del DPDT no era reproducible, el posible destello de inicio no estaba controlado y se habían sumado precios anteriores del catálogo.
 - **Motivo:** separar especificación, precio observado y funcionamiento todavía no comprobado antes de comprar o construir.
 - **Resultado:** ese subtotal fue reemplazado al seleccionar un cable con una ficha comercial coherente.
@@ -176,7 +176,7 @@ MechatronicStore. (s. f.-k). *Control remoto RF inalámbrico con relé de 5 V, u
 - **Cambio:** el interruptor simple se sustituyó por uno DPDT; un polo corta la luz y el otro comunica silencio al controlador. Se recalcularon subtotales y contingencia.
 - **Versión anterior:** el interruptor podía detener físicamente la luz, pero no garantizaba que el programa abandonara el estado activo de inmediato.
 - **Motivo:** cumplir simultáneamente el silenciamiento independiente y el retorno lógico a reposo exigidos por la ficha.
-- **Resultado:** el subtotal calculado entonces fue reemplazado por la consulta vigente registrada en la corrección posterior.
+- **Resultado:** el subtotal calculado entonces fue reemplazado por la consulta registrada en la corrección posterior.
 
 ### 2026-08-30 — Creación del montaje provisional
 
