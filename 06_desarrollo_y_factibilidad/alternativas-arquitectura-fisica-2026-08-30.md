@@ -40,22 +40,24 @@ Combina Arduino Nano, tira LED de 12 V, fuente, convertidor reductor, módulo MO
 
 **No elegirla todavía como forma final:** resolvería luminosidad antes de saber cuánta luz necesita realmente la experiencia.
 
-### B. Núcleo único de 5 V con ESP32-C3 — candidata prioritaria
+### B. Núcleo único de 5 V con XIAO ESP32-C3 — candidata prioritaria
 
-La propuesta reúne una placa ESP32-C3, un anillo WS2812 de 12 LED, un pulsador o interruptor físico, alimentación USB de 5 V y un difusor temporal. La placa integra Bluetooth Low Energy, por lo que puede recibir la activación remota y, más adelante, comunicarse localmente con Android. El anillo necesita una sola línea de datos y permite limitar por software cantidad de LED, color y brillo.
+La propuesta reúne una placa Seeed Studio XIAO ESP32-C3, un anillo WS2812 de 12 LED, un pulsador o interruptor físico, alimentación USB de 5 V y un difusor temporal. La placa integra Bluetooth Low Energy, por lo que puede recibir la activación remota y, más adelante, comunicarse localmente con Android. El anillo necesita una sola línea de datos y permite limitar por software cantidad de LED, color y brillo.
+
+La primera comparación consideró una ESP32-C3 Super Mini genérica. Se reemplaza como candidata porque la [ficha comercial consultada](https://www.mechatronicstore.cl/placa-de-desarrollo-esp32-c3-super-mini/) asigna su LED a GPIO48, pin que no corresponde al mapa documentado del ESP32-C3, y no aporta un esquema del fabricante que permita resolver esa contradicción. La XIAO cuesta más, pero dispone de documentación oficial, esquema, mapa de pines y archivos de diseño. En una arquitectura que aún debe revisarse antes de energizar, esa trazabilidad pesa más que ahorrar CLP 840.
 
 Esta opción elimina del primer montaje la fuente de 12 V, el convertidor LM2596S, la tira rígida y el módulo MOSFET. No elimina la revisión electrónica: deben confirmarse la alimentación del anillo, la compatibilidad entre la señal lógica de 3,3 V y su entrada de datos, la corriente máxima configurada, la condición de apagado al iniciar y el control físico.
 
 | Partida preliminar | Precio observado | Fuente |
 | --- | ---: | --- |
-| ESP32-C3 Super Mini | CLP 7.990 | [MechatronicStore](https://www.mechatronicstore.cl/placa-de-desarrollo-esp32-c3-super-mini/) |
+| Seeed Studio XIAO ESP32-C3 | CLP 8.830 | [MechatronicStore](https://www.mechatronicstore.cl/seeed-studio-xiao-esp32-c3/) |
 | Anillo WS2812 de 12 LED, 5 V | CLP 3.500 | [Afel](https://afel.cl/products/anillo-led-rgb-ws2812-de-12-leds) |
 | Pulsador simple | CLP 290 | [MechatronicStore](https://www.mechatronicstore.cl/boton-pulsador-switch-2-pines-6x6x7mm/) |
 | Fuente cerrada USB de 5 V y 2 A | CLP 3.490 | [MechatronicStore, precio citado en guía técnica](https://www.mechatronicstore.cl/blog/matriz-led-ws2812b-8x8-con-esp32-fastled) |
 | Cable USB-C de un metro | CLP 2.190 | [MechatronicStore, precio citado en guía técnica](https://www.mechatronicstore.cl/blog/matriz-led-ws2812b-8x8-con-esp32-fastled) |
-| **Subtotal preliminar identificado** | **CLP 17.460** | Sin cuerpo, difusor, interruptor definitivo, protecciones, conexiones, envío ni revisión |
+| **Subtotal preliminar identificado** | **CLP 18.300** | Sin cuerpo, difusor, interruptor definitivo, desplazador de nivel, resistencia, condensador, terminales, conexiones, envío ni revisión |
 
-El subtotal es aproximadamente 38 % menor que las partidas identificadas del montaje de 12 V. La comparación no demuestra todavía un costo final menor, porque las exclusiones no son idénticas y el hardware no ha sido probado.
+El subtotal es aproximadamente 35 % menor que las partidas identificadas del montaje de 12 V. La comparación no demuestra todavía un costo final menor, porque las exclusiones no son idénticas, faltan auxiliares eléctricos y el hardware no ha sido probado.
 
 **Ventaja principal:** una sola familia de alimentación y una placa que puede servir tanto en la prueba manual como en la integración Android.
 
@@ -90,7 +92,7 @@ Una etiqueta NFC es barata, no necesita alimentación y puede vincular un lugar 
 | Alternativa | Piezas y alimentación | Continuidad con Android | Aporte físico situado | Decisión provisional |
 | --- | --- | --- | --- | --- |
 | A. 12 V actual | Alta complejidad; 12 V y 5 V | Requiere añadir Bluetooth o cambiar placa | Alto si la luz amplia resulta necesaria | Conservar como respaldo |
-| B. ESP32-C3 + anillo 5 V | Baja; una fuente de 5 V | Alta, mediante Bluetooth Low Energy | Alto; señal autónoma y desplazable | **Prototipar primero** |
+| B. XIAO ESP32-C3 + anillo 5 V | Baja; una fuente de 5 V | Alta, mediante Bluetooth Low Energy | Alto; señal autónoma y desplazable | **Prototipar primero** |
 | C. Nano + anillo 5 V | Baja; una fuente de 5 V | Baja; necesita sustitución posterior | Alto | Reserva para aislar radio |
 | D. Luminaria comercial | Baja fabricación, alta dependencia externa | Variable según fabricante | Medio; forma y lugar condicionados | Solo exploración perceptiva |
 | E. NFC pasivo | Mínima | Alta como entrada al teléfono | Bajo como salida física | No usar como señal principal |
@@ -99,7 +101,7 @@ Una etiqueta NFC es barata, no necesita alimentación y puede vincular un lugar 
 
 No se recomienda comprar todavía el montaje completo de 12 V. El siguiente paso es un **prototipo técnico comparativo de 5 V**, sin participantes y sin forma final:
 
-1. revisar con una persona competente un esquema de ESP32-C3, anillo, control físico y USB;
+1. revisar con una persona competente un esquema de XIAO ESP32-C3, anillo, control físico y USB;
 2. construir el núcleo sobre una base abierta y limitar el brillo desde el programa;
 3. ejecutar las mismas series de activación, duración, silencio, reinicio, distancia y estabilidad ya definidas para fase A;
 4. registrar perceptibilidad en las tres superficies e iluminaciones previstas;
@@ -126,9 +128,20 @@ Afel. (s. f.). *Anillo LED RGB WS2812 de 12 leds*. Recuperado el 30 de agosto de
 
 Espressif Systems. (s. f.). *Bluetooth Low Energy: ESP32-C3*. Recuperado el 30 de agosto de 2026, de https://docs.espressif.com/projects/esp-idf/en/stable/esp32c3/api-guides/ble/index.html
 
-MechatronicStore. (s. f.). *Placa de desarrollo ESP32-C3 Super Mini*. Recuperado el 30 de agosto de 2026, de https://www.mechatronicstore.cl/placa-de-desarrollo-esp32-c3-super-mini/
+Espressif Systems. (2025). *ESP32-C3 series datasheet* (versión 2.3). https://documentation.espressif.com/esp32-c3_datasheet_en.html
+
+MechatronicStore. (s. f.). *Seeed Studio XIAO ESP32-C3*. Recuperado el 30 de agosto de 2026, de https://www.mechatronicstore.cl/seeed-studio-xiao-esp32-c3/
+
+Seeed Studio. (s. f.). *Getting started with Seeed Studio XIAO ESP32C3*. Recuperado el 30 de agosto de 2026, de https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Controlador sustituido por una placa documentada
+
+- **Cambio:** la ESP32-C3 Super Mini genérica se sustituyó por una Seeed Studio XIAO ESP32-C3 y el subtotal identificado pasó de CLP 17.460 a CLP 18.300.
+- **Versión anterior:** la candidata dependía de una ficha comercial cuyo pin para el LED integrado no corresponde al mapa del ESP32-C3 y que no enlaza un esquema de fabricante.
+- **Motivo:** una placa con esquema, pinout y archivos oficiales permite preparar una revisión eléctrica reproducible; la diferencia de CLP 840 no justifica conservar una base ambigua.
+- **Alcance:** el nuevo subtotal sigue incompleto y la sustitución no aprueba conexiones, compra ni energización.
 
 ### 2026-08-30 — Exploración inicial
 

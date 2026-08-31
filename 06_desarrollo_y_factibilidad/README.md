@@ -28,12 +28,20 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
-- [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, dos núcleos de 5 V y soluciones comerciales o pasivas; propone probar primero ESP32-C3 con una señal luminosa pequeña sin sustituir aún la arquitectura vigente.
+- [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, dos núcleos de 5 V y soluciones comerciales o pasivas; propone probar primero una XIAO ESP32-C3 con una señal luminosa pequeña sin sustituir aún la arquitectura vigente.
+- [Esquema provisional del núcleo de 5 V](esquema-provisional-xiao-esp32c3-5v-2026-08-30.md): alimentación, conversión lógica, señales, silencio, arranque y campos exigidos para la revisión electrónica anterior al montaje.
 - [Esquema de conexión provisional](esquema-conexion-provisional-fase-a-2026-08-30.md): tabla funcional, registro de terminales y puertas para revisión antes de energizar.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Esquema revisable del núcleo de 5 V
+
+- **Cambio:** se enlazó el esquema funcional de la XIAO ESP32-C3 y se corrigió la candidata genérica por una placa con documentación oficial.
+- **Versión anterior:** la alternativa de 5 V todavía no definía distribución, conversión de 3,3 V a 5 V, asignación provisional de señales ni comportamiento de silencio y arranque.
+- **Motivo:** convertir la simplificación en una propuesta auditable sin adelantar conexiones aprobadas.
+- **Alcance:** no existe compra, montaje, energización ni resultado; la arquitectura de 12 V permanece como respaldo.
 
 ### 2026-08-30 — Alternativas físicas de menor complejidad
 
