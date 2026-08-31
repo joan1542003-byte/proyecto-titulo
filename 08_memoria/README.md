@@ -8,6 +8,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
+- [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 49 entradas bibliográficas y correcciones APA aplicadas.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
@@ -75,6 +76,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-31 — Revisión final textual enlazada
+
+- **Cambio:** se añadió el dictamen final de la memoria v4 al índice de documentos activos.
+- **Versión anterior:** la revisión podía reconstruirse desde varias auditorías y matrices, pero no existía un cierre único con verificaciones actualizadas.
+- **Motivo:** facilitar la comprobación del estado editorial y separar errores de escritura de resultados todavía pendientes.
+- **Alcance:** la v4 continúa como memoria académica activa; no se añadieron resultados ni se generó un nuevo DOCX.
 
 ### 2026-08-30 — Auditorías internas clasificadas
 

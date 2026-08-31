@@ -1,7 +1,7 @@
 # Auditoría de redacción y estructura — memoria v4
 
 **Fecha de creación:** 26 de agosto de 2026
-**Último control:** 30 de agosto de 2026
+**Último control:** 31 de agosto de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 
 ## Resultado
@@ -27,14 +27,14 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 19.340 palabras: 16.663 antes de las referencias, 1.204 en la bibliografía y 1.473 en el registro de cambios. Los capítulos 1–13 contienen 16.000 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 19.809 palabras: 16.776 antes de las referencias, 1.204 en la bibliografía y 1.829 en el registro de cambios. Los capítulos 1–13 contienen 16.113 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
 | Resumen | 295 | 200–300 | Cumple. |
 | Abstract | 271 | 200–300 | Cumple. |
 | Motivación personal | 178 | 100–300 | Cumple. |
-| Introducción | 686 | 600–1.200 | Cumple. |
+| Introducción | 623 | 600–1.200 | Cumple. |
 | Planteamiento del problema | 798 | 400–800 | Cumple. |
 | Justificación | 358 | 300–600 | Cumple. |
 
@@ -44,6 +44,7 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 
 - La motivación se limita a la experiencia personal presente. No explica la evolución del proyecto ni adelanta el producto.
 - La introducción define ocio digital, desplazamiento infinito, decisión renovada y memoria prospectiva antes de utilizarlos como base argumental.
+- La introducción y el cierre del marco teórico desarrollan el argumento sin describir la organización del documento ni anunciar la formulación.
 - Se usa únicamente `desplazamiento infinito`; no se alterna con su denominación en inglés.
 - Se eliminó la expresión `continuidad digital poco deliberada`. El fenómeno se describe mediante frases directas, sin convertirlo en una categoría innecesaria.
 - El problema mantiene tres aristas: experiencial y cognitiva, tecnológica y evaluativa.
@@ -52,6 +53,8 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 - Relevo se formula después de los criterios de diseño y se describe en términos positivos por la relación que construye entre intención, primer paso, lugar y señal.
 - Las etapas de prueba tienen nombres descriptivos. No se utilizan códigos internos en la memoria.
 - Las afirmaciones sobre entrevistas, mercado, funcionamiento y factibilidad distinguen evidencia, hipótesis y trabajo pendiente.
+- Q13 se presenta por su función metodológica —una propuesta preliminar de señal ambiental— sin trasladar al cuerpo el nombre de una etapa histórica.
+- La factibilidad utiliza la comparación técnica y económica vigente al 30 de agosto y distingue desembolsos incompletos de costo, producción y precio.
 
 ## Control de APA 7
 
@@ -68,6 +71,8 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+**31 de agosto de 2026 — Revisión final textual y vigencia técnica.** Se repitieron los controles de estructura, extensión, metalenguaje y consistencia con factibilidad. Antes, la memoria conservaba dos pasajes autorreferenciales, nombraba una etapa histórica en el método y utilizaba un rango económico anterior a la comparación B1/B2. Ahora el cuerpo mantiene el mismo orden y las mismas fuentes, pero explica Q13 por su función, enlaza la arquitectura técnica activa y comunica solo desembolsos trazables. No se añadieron resultados ni se cerraron decisiones que requieren pruebas.
 
 **30 de agosto de 2026 — Asociación y control.** Se actualizó la extensión después de separar los cuatro momentos de asociación de la comprensión de las salidas. Antes, memoria y protocolo usaban cuatro y cinco componentes respectivamente. El cambio no altera los límites por apartado, la muestra ni los resultados inexistentes.
 

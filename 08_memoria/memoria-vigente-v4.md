@@ -64,13 +64,11 @@ Dentro de ese marco aparece una situación específica. Al comenzar una activida
 
 Algunas interfaces favorecen la continuidad. El **desplazamiento infinito** es un patrón que carga contenido nuevo a medida que la persona avanza, sin presentar un final de página claramente marcado. La reproducción automática y las recomendaciones encadenadas cumplen una función semejante: el siguiente contenido aparece sin exigir una elección nueva. Estas características no determinan por sí solas la conducta, pero reducen los puntos de cierre y mantienen disponible la acción actual (de Segovia Vicente et al., 2024; Montag et al., 2019).
 
-La respuesta habitual frente a esta situación ha sido medir el tiempo, fijar límites, bloquear aplicaciones o introducir pausas antes de abrirlas. Tales recursos pueden ser útiles cuando alguien quiere reducir una conducta concreta. Sin embargo, detener la actividad presente no basta para recuperar aquello que se quería hacer. Un bloqueo puede cerrar una aplicación y, al mismo tiempo, dejar ausente la intención alternativa. También puede interrumpir una conversación o un descanso que la persona sí desea mantener. Por eso resulta necesario distinguir entre impedir una acción y volver perceptible otra posibilidad.
+Las herramientas revisadas frente a esta situación miden el tiempo, fijan límites, bloquean aplicaciones o introducen pausas antes de abrirlas (Apple, s. f.; Google, s. f.-c; Lyngs et al., 2019). Tales recursos pueden ser útiles cuando alguien quiere reducir una conducta concreta. Sin embargo, detener la actividad presente no basta para recuperar aquello que se quería hacer. Un bloqueo puede cerrar una aplicación y, al mismo tiempo, dejar ausente la intención alternativa. También puede interrumpir una conversación o un descanso que la persona sí desea mantener. Por eso resulta necesario distinguir entre impedir una acción y volver perceptible otra posibilidad.
 
 La memoria prospectiva permite precisar esta diferencia. El concepto se refiere a la capacidad de recordar una acción que se quiere realizar en el futuro cuando aparece una ocasión adecuada (McDaniel & Einstein, 2000). Recordar al final del día que se quería leer no equivale a recuperar esa intención cuando todavía existía la oportunidad de abrir el libro. Desde esta perspectiva, el problema no consiste en almacenar una meta, sino en encontrar una señal pertinente que ayude a traerla de vuelta al presente.
 
 Esta investigación pregunta cómo puede el Diseño apoyar la recuperación oportuna de una intención personal durante una sesión de ocio digital, sin prohibir la actividad actual ni imponer una jerarquía entre formas de descanso. Para responder, es necesario estudiar la experiencia subjetiva del ocio, las decisiones de interfaz que sostienen la continuidad, el papel del contexto y las formas en que las personas delegan parte del recuerdo en objetos, notas o alarmas. También es indispensable conocer qué soluciones existen, qué problemas resuelven y qué aspectos dejan abiertos.
-
-La secuencia de la memoria sigue ese recorrido. Primero se delimita el problema y se justifica su relevancia. Luego se revisan los antecedentes, el marco teórico, las entrevistas y el estado del arte. A partir de esa base se establecen criterios y, más adelante, se desarrolla una propuesta, su factibilidad y el plan necesario para comprobarla. De este modo, las decisiones proyectuales aparecen después de la investigación que les da sustento.
 
 # 3. Planteamiento del problema
 
@@ -124,7 +122,7 @@ Finalmente, estudiar este problema permite ampliar el bienestar digital más all
 
 ## 5.1 Del tiempo de pantalla a la experiencia de uso
 
-Las primeras herramientas de bienestar digital hicieron visible el uso del teléfono mediante indicadores como minutos diarios, cantidad de aperturas y aplicaciones más consultadas. Estas mediciones permiten reconocer patrones, establecer límites y comparar periodos. Su utilidad es descriptiva: muestran cuánto ocurrió, pero no explican por qué ocurrió ni qué significado tuvo para la persona.
+Las herramientas nativas revisadas hacen visible el uso del teléfono mediante indicadores como minutos diarios, cantidad de aperturas y aplicaciones más consultadas (Apple, s. f.; Google, s. f.-c). Estas mediciones permiten reconocer patrones, establecer límites y comparar periodos. Su utilidad es descriptiva: muestran cuánto ocurrió, pero no explican por qué ocurrió ni qué significado tuvo para la persona.
 
 Lukoff et al. (2018) estudiaron la diferencia entre usos del teléfono percibidos como significativos y carentes de sentido. La valoración dependía del propósito, la actividad y la autonomía experimentada. Usos de duración semejante podían producir experiencias distintas, lo que cuestiona que una cifra aislada represente la calidad del ocio digital.
 
@@ -280,7 +278,7 @@ Los tres ámbitos convergen en una situación precisa. Una sesión de ocio digit
 
 La intersección no determina una solución. Plantea preguntas que deben contrastarse con la investigación de usuarios y el estado del arte: cómo vuelve a estar disponible una intención, qué eventos pueden relacionarse legítimamente con ella, qué papel cumple el contexto y cómo se conserva la autonomía. También obliga a considerar el esfuerzo necesario para establecer y mantener cualquier apoyo.
 
-Estas preguntas permiten avanzar desde la teoría sin confundir una posibilidad con una decisión de diseño. Los criterios y la formulación del proyecto deberán aparecer después de examinar la experiencia de los usuarios y las respuestas existentes.
+El marco teórico ofrece, por tanto, una pauta para observar el fenómeno: reconocer episodios donde coexisten continuidad e intención alternativa, distinguirlos de usos elegidos y examinar las estrategias que las personas ya emplean. Esta pauta orienta la lectura de las entrevistas sin imponer de antemano una solución.
 
 # 7. Usuario, contexto y hallazgos de entrevistas
 
@@ -290,7 +288,7 @@ Se realizó un estudio cualitativo exploratorio para comprender relatos y recono
 
 Participaron ocho personas de 19 a 27 años. Las entrevistas fueron habladas y presenciales, y se realizaron en Santiago los días 11 y 12 de junio de 2026. El reclutamiento se efectuó mediante contactos proporcionados por personas cercanas al investigador. La edad fue el único criterio común confirmado. En consecuencia, el lugar y el rango etario describen el levantamiento, pero no permiten generalizar los resultados a todos los adultos jóvenes.
 
-La pauta avanzó desde las actividades de tiempo libre hacia el relato de una sesión reciente, su propósito, continuidad, percepción temporal, valoración y cierre. Dos preguntas adicionales abordaron las estrategias para descansar o separarse del teléfono y la reacción ante el concepto In(Visible). Se obtuvo consentimiento informado oral para la participación y el uso académico anonimizado del material.
+La pauta avanzó desde las actividades de tiempo libre hacia el relato de una sesión reciente, su propósito, continuidad, percepción temporal, valoración y cierre. Dos preguntas adicionales abordaron las estrategias para descansar o separarse del teléfono y la reacción ante una propuesta preliminar basada en una señal ambiental. Se obtuvo consentimiento informado oral para la participación y el uso académico anonimizado del material.
 
 Las conversaciones fueron transcritas y regularizadas para facilitar su lectura. El corpus se organizó con códigos P1–P8 y Q1–Q13. La unidad principal fue el episodio: una situación relatada en relación con actividad, intención, continuidad, recuerdo, valoración o estrategia. El método Framework organizó temas y casos en una matriz común, manteniendo el vínculo con cada entrevista (Goldsmith, 2021). A partir de semejanzas y contrastes se construyeron tipos ideales revisables: modelos analíticos que reúnen rasgos recurrentes sin convertirlos en perfiles permanentes de los participantes (Stapley et al., 2022).
 
@@ -341,7 +339,7 @@ Ante la pregunta por formas de descansar o separarse del teléfono, las personas
 
 También revelan una dificultad. Alejar el teléfono puede disminuir su disponibilidad, aunque no siempre evita el retorno ni recuerda qué actividad se quería comenzar. El espacio aparece como un recurso posible, pero su eficacia no puede darse por supuesta.
 
-Las respuestas frente a In(Visible) incluyeron solicitudes de señales calmadas, discretas o visuales y el rechazo de notas o comparaciones entre días (P3–P5 y P7–P8, Q13). Como la pregunta se refería a un concepto anterior y no incluyó una prueba de Relevo, esas reacciones solo orientan criterios generales; no validan el producto ni permiten cerrar su forma.
+Las respuestas ante la propuesta preliminar incluyeron solicitudes de señales calmadas, discretas o visuales y el rechazo de notas o comparaciones entre días (P3–P5 y P7–P8, Q13). Como la pregunta presentó una idea y no una experiencia de uso, esas reacciones solo orientan criterios generales; no validan el producto ni permiten cerrar su forma.
 
 ## 7.6 Dos tipos de usuario
 
@@ -410,7 +408,7 @@ Apple Screen Time y Google Digital Wellbeing integran al sistema operativo medic
 
 Su lógica se apoya en categorías cuantificables: minutos, aperturas, horarios y aplicaciones. Esta información resulta útil cuando la persona desea observar o reducir un uso específico. El límite aparece cuando el problema depende del sentido de la sesión. El sistema conoce que una aplicación estuvo activa, pero no sabe si la persona conversaba, descansaba, buscaba información o recorría contenido sin un propósito renovado.
 
-Pause Point, anunciado por Google en 2026, representa una evolución hacia la reconsideración. La función permite introducir una pausa temporal en aplicaciones seleccionadas y refleja un interés actual por crear cierres flexibles dentro del sistema operativo (Sanders, 2026). Su disponibilidad depende de versiones y dispositivos, por lo que no constituye una capacidad universal. Aun así, muestra que el mercado comienza a desplazarse desde el conteo hacia intervenciones breves y reversibles.
+Pause Point, anunciado por Google en 2026, representa una evolución hacia la reconsideración. La función permite introducir una pausa temporal en aplicaciones seleccionadas y refleja un interés por crear cierres flexibles dentro del sistema operativo (Sanders, 2026). Su disponibilidad depende de versiones y dispositivos, por lo que no constituye una capacidad universal. Dentro del corpus revisado, este caso amplía el conteo con una intervención breve y reversible.
 
 Las herramientas nativas funcionan bien como línea base porque reducen costos y concentran el control en un entorno conocido. No resuelven, en cambio, la recuperación situada de una intención. El significado continúa dentro del teléfono y suele expresarse mediante información temporal o restricciones de acceso.
 
@@ -420,7 +418,7 @@ one sec introduce una demora antes de abrir determinadas aplicaciones y pide rec
 
 El aporte de one sec consiste en actuar cerca del momento de decisión. A diferencia de un informe semanal, la fricción aparece antes de continuar. También conserva una salida: la persona puede avanzar después de la pausa. Su límite para el problema investigado es que toda la interacción ocurre en la misma pantalla y se concentra en decidir si abrir o no una aplicación. La herramienta no conserva necesariamente una actividad alternativa ni la relaciona con el lugar donde puede comenzar.
 
-Otras aplicaciones utilizan respiración, preguntas, mensajes personalizados, escalas de intención o cambios visuales. La variedad muestra que el mercado reconoce un problema de continuidad y busca introducir momentos de reflexión. Sin embargo, muchas propuestas dependen de la repetición de un aviso dentro del dispositivo. Con el tiempo, ese aviso puede volverse parte del flujo, ser omitido o requerir una intensidad creciente.
+Las aplicaciones examinadas utilizan respiración, preguntas, mensajes personalizados, escalas de intención o cambios visuales. La variedad muestra distintas maneras de introducir reflexión dentro del flujo. Como muchas dependen de avisos repetidos en el dispositivo, su permanencia y su posible omisión deben estudiarse durante periodos más largos; las funciones declaradas no permiten anticipar ese resultado.
 
 Lo que parece funcionar en esta familia es la proximidad entre intervención y acción. La pausa modifica el recorrido antes de que la sesión se establezca o continúe. Lo menos resuelto es la permanencia del efecto, la transferencia hacia otra actividad y la carga que surge cuando la herramienta se vuelve predecible o fácil de eludir.
 
@@ -428,9 +426,9 @@ Lo que parece funcionar en esta familia es la proximidad entre intervención y a
 
 Brick vincula una aplicación con un dispositivo físico utilizado para activar o revertir modos de bloqueo. Al momento de la consulta, la marca declaraba compatibilidad con Android 12 o posterior e iOS 17 o posterior, y mostraba un precio de USD 59 (Brick LLC, s. f.-a). Su propuesta de valor combina distancia y **precompromiso**, es decir, una decisión previa que restringe deliberadamente las opciones disponibles durante una situación: para recuperar el acceso es necesario volver al objeto.
 
-Unpluq utiliza una etiqueta con comunicación de campo cercano —NFC, tecnología que intercambia datos a muy corta distancia— junto con horarios, barreras y estadísticas. Su modelo incluye una suscripción (Unpluq, s. f.). Screenless Breaker ofrece una llave NFC que permite reabrir aplicaciones bloqueadas y mostraba un precio de EUR 45 (Screenless, s. f.). Su sitio entrega información contradictoria: una tabla menciona iOS y Android, mientras la sección de preguntas frecuentes limita la compatibilidad actual a iOS y iPadOS y presenta Android como una versión planificada. Brick Zone amplía la lógica hacia un espacio declarado mediante Bluetooth y presentaba un precio de USD 99 (Brick LLC, s. f.-b).
+Unpluq utiliza una etiqueta con comunicación de campo cercano —NFC, tecnología que intercambia datos a muy corta distancia— junto con horarios, barreras y estadísticas. Su modelo incluye una suscripción (Unpluq, s. f.). Screenless Breaker ofrece una llave NFC que permite reabrir aplicaciones bloqueadas (Screenless, s. f.). Su sitio entregaba información contradictoria tanto en precio como en compatibilidad: una tabla mencionaba iOS y Android, mientras la sección de preguntas frecuentes limitaba la compatibilidad actual a iOS y iPadOS y presentaba Android como una versión planificada. Brick Zone amplía la lógica hacia un espacio declarado mediante Bluetooth y mostraba un precio de USD 99 en la tienda estadounidense consultada (Brick LLC, s. f.-b).
 
-Estos productos muestran que existe un mercado dispuesto a incorporar objetos en el control del teléfono. El componente físico hace visible el compromiso y aumenta el esfuerzo necesario para revertirlo. Esa fricción puede ser valiosa para quien desea una barrera difícil de eludir.
+Estos productos muestran una oferta comercial que incorpora objetos al control del teléfono. Su presencia no demuestra demanda, adopción ni disposición de pago. El componente físico hace visible el compromiso y aumenta el esfuerzo necesario para revertirlo. Esa fricción puede ser valiosa para quien desea una barrera difícil de eludir.
 
 La misma fortaleza define su límite. El objeto funciona principalmente como llave o condición de acceso. Su propósito es mantener la restricción, no recuperar una intención alternativa. Además, introduce costos de compra, compatibilidad, transporte y aprendizaje. Cuando la actividad digital es legítima, una barrera puede resultar desproporcionada.
 
@@ -444,7 +442,7 @@ Las estrategias mencionadas en las entrevistas —dejar el teléfono lejos, carg
 
 ## 8.6 Objetos de foco y formación de hábitos
 
-Focusaur declara un dispositivo físico acompañado de una aplicación, etiquetas NFC, sonidos y funciones de hábito. Su comunicación comercial combina foco, constancia y recompensa, y mostraba un precio promocional de USD 129 frente a un valor de referencia de USD 169 en la fecha de consulta (Focusaur, s. f.). La oferta permite observar una dirección de mercado en que el objeto deja de ser una simple llave y participa de un ritual de inicio.
+Focusaur declara un dispositivo físico acompañado de una aplicación, etiquetas NFC, sonidos y funciones de hábito. Su comunicación comercial combina foco, constancia y recompensa, y mostraba en la tienda estadounidense un precio promocional de USD 129 frente a un valor de referencia de USD 169 en la fecha de consulta (Focusaur, s. f.). La oferta permite observar una variante en que el objeto deja de ser una simple llave y participa de un ritual de inicio.
 
 La política de despacho consultada limita la tienda principal a Estados Unidos y remite a una tienda separada para Europa. No se comprobó disponibilidad en Chile. Esta condición importa porque una oferta visible en línea no equivale a acceso local ni permite comparar su costo final con el de una propuesta desarrollada en el país.
 
@@ -470,7 +468,7 @@ La evidencia académica sobre autocontrol digital continúa siendo heterogénea.
 
 Una tendencia reciente consiste en permitir que las reglas se revisen. Kidel Peña-Albert et al. (2026) estudiaron una invitación a reconfigurar una herramienta de autocontrol digital. De 138 personas del grupo experimental, 63 aceptaron la propuesta. El resultado no demuestra eficacia general, pero indica que una regla puede perder pertinencia y que su ajuste forma parte de la experiencia.
 
-También se observa una convergencia entre funciones nativas, aplicaciones de pausa y objetos conectados. El mercado no avanza en una sola dirección: algunas propuestas reducen complejidad dentro del sistema operativo, mientras otras agregan una capa física para aumentar compromiso o relacionar la acción con un lugar. Esta tensión vuelve necesaria una comparación directa entre alternativas digitales y phygitales.
+El corpus también reúne funciones nativas, aplicaciones de pausa y objetos conectados que incorporan mecanismos próximos. Las propuestas no siguen una sola dirección: algunas reducen complejidad dentro del sistema operativo, mientras otras agregan una capa física para aumentar compromiso o relacionar la acción con un lugar. Esta tensión vuelve necesaria una comparación directa entre alternativas digitales y phygitales.
 
 ## 8.9 Matriz comparativa
 
@@ -505,7 +503,7 @@ Las metas amplias dificultan reconocer cómo comenzar. Las intenciones de implem
 
 ## 9.3 Utilizar una condición comprensible
 
-La activación debe depender de un evento que la persona pueda entender y modificar. Los sistemas pueden registrar tiempo, horario o continuidad de uso, pero esos datos no revelan por sí solos aburrimiento, culpa o satisfacción. La diferencia entre episodios relatados por una misma persona confirma que una condición técnica no equivale al sentido de la experiencia. Tiempo, continuidad de uso u horario son condiciones posibles, pero su significado debe explicarse y probarse.
+La activación debe depender de un evento que la persona pueda entender y modificar. Android puede registrar tiempo, horario o continuidad de uso con autorización, pero esos datos no revelan por sí solos aburrimiento, culpa o satisfacción (Google, s. f.-d). La diferencia entre episodios relatados por una misma persona confirma que una condición técnica no equivale al sentido de la experiencia. Tiempo, continuidad de uso u horario son condiciones posibles, pero su significado debe explicarse y probarse.
 
 ## 9.4 Abrir una elección, no imponer una conducta
 
@@ -661,7 +659,7 @@ La secuencia no exige consultar la aplicación después del pulso para comprende
 
 ## 11.6 Flujo del sistema
 
-La persona formula el contenido y establece la regla. Android consulta localmente la condición autorizada. Cuando el evento ocurre dentro de una ventana vigente, la aplicación envía un comando al objeto mediante Bluetooth de baja energía, una comunicación inalámbrica de corto alcance diseñada para consumir poca energía. El objeto verifica que el mensaje corresponda al ciclo activo y ejecuta el patrón de señal. Una vez silenciado o vencido, vuelve a reposo.
+Esta arquitectura describe el comportamiento previsto y todavía no está implementada ni validada. La persona formularía el contenido y establecería la regla. Android consultaría localmente la condición autorizada. Cuando el evento ocurriera dentro de una ventana vigente, la aplicación enviaría un comando al objeto mediante Bluetooth de baja energía, una comunicación inalámbrica de corto alcance diseñada para consumir poca energía. El objeto verificaría que el mensaje correspondiera al ciclo activo y ejecutaría el patrón de señal. Una vez silenciado o vencido, volvería a reposo.
 
 El comando necesita, como mínimo, una identificación de ciclo, un patrón y un vencimiento. Esta información evita que una señal retrasada aparezca cuando ya perdió sentido. El objeto no conserva el texto de la intención ni decide cuándo activarse por cuenta propia.
 
@@ -703,7 +701,7 @@ Una especificación formal o técnica que aparezca antes de resolver la pregunta
 
 ## 11.9 Privacidad, autonomía y convivencia
 
-La aplicación necesita conservar la intención, el primer paso, la condición y el estado del objeto para ejecutar un ciclo. Esa información debería permanecer en el teléfono durante el prototipo y poder eliminarse de manera clara. Consultar una condición autorizada no exige conservar un historial de aplicaciones ni calificar la conducta posterior. El objeto recibe solo lo necesario para ejecutar la señal. Ninguno de los componentes registra si la persona inició la actividad, continuó con el teléfono o ignoró el pulso.
+El diseño prevé conservar la intención, el primer paso, la condición y el estado del objeto para ejecutar un ciclo. Esa información debería permanecer en el teléfono durante el prototipo y poder eliminarse de manera clara. Consultar una condición autorizada no exigiría conservar un historial de aplicaciones ni calificar la conducta posterior. El objeto recibiría solo lo necesario para ejecutar la señal. Ninguno de los componentes debería registrar si la persona inició la actividad, continuó con el teléfono o ignoró el pulso.
 
 El control debe estar disponible en ambos componentes. Desde la aplicación se puede pausar, editar o desarmar. Desde el objeto se puede silenciar el pulso. La ausencia de respuesta no produce recordatorios repetidos, culpa o pérdida de funciones.
 
@@ -731,7 +729,9 @@ Las capacidades de Android también tienen límites. UsageStatsManager requiere 
 
 La aplicación conserva la información del ciclo y evalúa la condición de manera local. Bluetooth de baja energía transporta el comando hacia el objeto. Esta arquitectura reduce el envío de datos a servicios externos y permite que el dispositivo físico se mantenga simple. Procesamiento local no significa privacidad absoluta: los permisos, registros y respaldos deben documentarse.
 
-Un microcontrolador —circuito programable que ejecuta la lógica del objeto— como el ESP32-C3 puede facilitar las primeras pruebas por su disponibilidad. Para una etapa de menor consumo se considera la familia de microcontroladores nRF52 y un circuito de gestión de alimentación y carga como el nPM1100. Los actuadores, componentes que transforman una orden eléctrica en una salida perceptible, podrían producir luz difusa, vibración o sonido breve. Las hojas técnicas de Nordic Semiconductor, Precision Microdrives y Texas Instruments ayudan a estimar capacidades, pero no prueban autonomía ni percepción del conjunto (Nordic Semiconductor ASA, s. f.-a, s. f.-b; Precision Microdrives Ltd., 2023; Texas Instruments, 2018).
+La siguiente comprobación técnica utiliza una placa XIAO ESP32-C3 como base común y compara dos maneras de producir una señal luminosa con alimentación de 5 V. La primera emplea un anillo direccionable; la segunda, una fuente cálida no direccionable. Ninguna está seleccionada: deben probarse con el mismo soporte, difusor, distancia y secuencia. El montaje de 12 V se conserva como respaldo si una fuente pequeña no alcanza la perceptibilidad necesaria. La [comparación de arquitecturas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) registra los componentes, riesgos y puertas previas a cualquier compra o energización.
+
+Si una integración posterior exige menor consumo, podrá estudiarse la familia de microcontroladores nRF52 y un circuito de gestión de alimentación y carga como el nPM1100. Los actuadores, componentes que transforman una orden eléctrica en una salida perceptible, podrían producir luz difusa, vibración o sonido breve. Las hojas técnicas de Nordic Semiconductor, Precision Microdrives y Texas Instruments permiten estimar capacidades, pero no prueban autonomía ni percepción del conjunto (Nordic Semiconductor ASA, s. f.-a, s. f.-b; Precision Microdrives Ltd., 2023; Texas Instruments, 2018).
 
 La batería y el sistema de carga deberán seleccionarse a partir de mediciones del ciclo real: reposo, conexión, señal y recuperación. También se revisarán temperatura, seguridad, reemplazo y fin de vida. Una cifra de consumo aislada no basta para prometer duración.
 
@@ -747,9 +747,9 @@ Al final de su vida útil, batería, placa y carcasa deberían separarse. Esta c
 
 ## 12.4 Costos
 
-La estimación preliminar del prototipo distingue componentes, fabricación de carcasa, reposición, ensamblaje básico y una contingencia, entendida como reserva para imprevistos o variaciones de precio. El rango calculado se sitúa entre CLP 51.140 y CLP 92.640. Al incorporar una contingencia de 15 %, el presupuesto se comunica como **CLP 59.000–107.000**.
+La estimación se encuentra en una etapa de prototipo técnico abierto. Con precios observados al 30 de agosto de 2026, la variante direccionable reúne partidas identificadas por CLP 22.383, más el conversor lógico; si también debe comprarse una base de ensayo, alcanza CLP 28.073 más ese componente. La alternativa de luz cálida reúne CLP 23.591, más una resistencia de estado y conductores internos; con base de ensayo alcanza CLP 29.281 más esas partidas. El montaje de 12 V utilizado como respaldo suma CLP 28.130, con exclusiones propias. Ninguna cifra demuestra ahorro ni representa un presupuesto completo.
 
-Esta cifra no corresponde al precio del producto. Tampoco incluye horas profesionales, certificación, desarrollo completo, impuestos, soporte, garantía o producción en serie. Para evitar confusiones se separan cuatro magnitudes:
+Los montos corresponden a desembolsos de experimentación. Todavía excluyen, según la variante, cuerpo, difusor, herramientas, envíos, revisión electrónica y partidas sin proveedor confirmado. La [lista de materiales y compra escalonada](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) distingue lo que debe comprarse, lo que podría reutilizarse y lo que solo puede definirse después de medir. Para evitar confusiones se separan cuatro magnitudes:
 
 1. costo del prototipo académico;
 2. trabajo profesional de investigación, diseño, programación y electrónica;
@@ -840,7 +840,7 @@ Las entrevistas muestran que esta tensión aparece en algunos relatos, pero no e
 
 Los antecedentes muestran que medir, pausar, bloquear, separar y recordar cumplen funciones diferentes. Ninguna de ellas sustituye por sí sola la recuperación situada de una actividad alternativa. Frente a ese límite, la decisión proyectual consiste en articular intención, primer paso, señal y lugar. El medio elegido es phygital: la aplicación conserva y configura la información, mientras el objeto lleva una señal al espacio donde la actividad puede comenzar. Esta articulación define la propuesta de valor que Relevo busca ofrecer; todavía no demuestra que el objeto produzca una ayuda mayor que una notificación.
 
-El aporte alcanzado pertenece a la investigación y a la estructuración del proyecto. La memoria delimita un problema abordable desde Diseño, establece criterios de autonomía y no intervención, identifica dos situaciones de usuario, analiza respuestas existentes y organiza una arquitectura de uso, sistema y desarrollo. Los wireframes permiten examinar el recorrido y sus estados, pero no demuestran comprensión, eficacia o preferencia.
+El aporte alcanzado pertenece a la investigación y a la estructuración del proyecto. La memoria delimita un problema abordable desde Diseño, establece criterios de autonomía y no intervención, identifica dos situaciones de usuario, analiza respuestas existentes y organiza una arquitectura de uso, sistema y desarrollo. La arquitectura de interacción permite examinar el recorrido y sus estados, pero no demuestra comprensión, eficacia o preferencia.
 
 La hipótesis pendiente reúne las relaciones que el desarrollo deberá comprobar: si la señal permite reconocer la intención sin consultar el teléfono, si un lugar relacionado con el primer paso aporta más que una ubicación neutra y si el objeto ofrece una diferencia suficiente frente a una notificación. También continúan abiertos la condición de activación, el canal sensorial, la convivencia doméstica, la accesibilidad, la integración técnica, la producción y los costos definitivos. Estas preguntas deberán resolverse antes de cerrar la forma y fabricar una solución completa.
 
@@ -949,6 +949,25 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-08-31 — Revisión final de vigencia y continuidad narrativa
+
+- **Cambio:** se retiraron dos pasajes que explicaban la organización del documento en vez de desarrollar el argumento; la transición entre teoría y entrevistas ahora se concentra en la pauta de observación derivada del marco teórico.
+- **Versión anterior:** la introducción describía el orden de los capítulos y el cierre del marco teórico anunciaba cuándo debían aparecer los criterios y la formulación.
+- **Motivo:** mantener una lectura académica centrada en el fenómeno y evitar metalenguaje innecesario.
+- **Cambio:** la pregunta adicional Q13 se describe como una propuesta preliminar de señal ambiental, sin trasladar al cuerpo académico el nombre de una etapa histórica.
+- **Versión anterior:** el capítulo 7 nombraba In(Visible) y explicaba su relación temporal con Relevo.
+- **Motivo:** conservar la procedencia metodológica relevante sin convertir la evolución interna del proyecto en parte de la argumentación.
+- **Cambio:** la factibilidad técnica y económica se sincronizó con la comparación B1/B2 del 30 de agosto; se añadieron las rutas activas de 5 V, sus montos incompletos, sus exclusiones y los enlaces al desglose verificable.
+- **Versión anterior:** la memoria presentaba una arquitectura genérica y un rango global de CLP 59.000–107.000 que ya no permitía reconstruir qué partidas correspondían al ensayo vigente.
+- **Motivo:** distinguir desembolso experimental, costo del prototipo, trabajo profesional, producción y precio sin comunicar una precisión inexistente.
+- **Cambio:** en las conclusiones, `wireframes` se reemplazó por `arquitectura de interacción`.
+- **Versión anterior:** el cierre nombraba el formato utilizado para representar el recorrido.
+- **Motivo:** comunicar el aporte proyectual y su límite, no la herramienta con que fue documentado.
+- **Cambio:** se acotaron generalizaciones sobre herramientas y mercado al corpus revisado, se eliminaron precios comerciales ambiguos y se declaró explícitamente que la arquitectura de uso aún no está implementada.
+- **Versión anterior:** algunos pasajes podían convertir una oferta comercial en evidencia de demanda o describir funciones proyectadas mediante verbos de funcionamiento actual.
+- **Motivo:** separar funciones declaradas, evidencia comercial, comportamiento previsto y resultados comprobados.
+- **Alcance:** no se añadieron resultados, no se cerró la condición de activación ni se seleccionaron señal, forma, material o arquitectura electrónica final.
 
 ### 2026-08-30 — Asociación y control separados
 

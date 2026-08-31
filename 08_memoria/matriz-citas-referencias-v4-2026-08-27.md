@@ -1,12 +1,15 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
+**Última comprobación:** 31 de agosto de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
 
 La memoria contiene 49 referencias y todas poseen al menos una cita correspondiente en el cuerpo. No se identificaron citas autor–fecha sin entrada bibliográfica ni referencias huérfanas. La revisión combinó extracción de nombres y fechas con comprobación manual de citas narrativas, citas parentéticas, autores institucionales y sufijos para obras del mismo autor.
+
+La convención de autoría se mantiene según APA 7: `y` integra los apellidos en citas narrativas, mientras `&` se utiliza en citas parentéticas y antes del último autor en la lista de referencias. Esta diferencia es intencional y no constituye una inconsistencia de idioma.
 
 ## Matriz
 
@@ -76,6 +79,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-31 — Correspondencia ratificada después de la revisión final
+
+- **Cambio:** se comprobó nuevamente la matriz después de actualizar narrativa, factibilidad y costos, y se explicitó la convención de `y` y `&`.
+- **Versión anterior:** el último control correspondía a la redacción del 27 de agosto.
+- **Motivo:** confirmar que la revisión final no introdujo autores, fechas o referencias sin correspondencia.
+- **Alcance:** se mantienen las mismas 49 referencias; los nuevos enlaces internos documentan el proceso técnico y no constituyen fuentes bibliográficas añadidas.
 
 ### 2026-08-27 — Creación y cierre de correspondencia
 

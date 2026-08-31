@@ -1,6 +1,6 @@
 # Resumen vigente de Relevo
 
-**Actualizado:** 30 de agosto de 2026.
+**Actualizado:** 31 de agosto de 2026.
 
 ## Qué es
 
@@ -24,11 +24,13 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El documento completo tiene 19.226 palabras; los capítulos 1–13 contienen 15.983. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos definitivos y el aporte del objeto frente a una notificación.
+El documento completo tiene 19.809 palabras; los capítulos 1–13 contienen 16.113. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos definitivos y el aporte del objeto frente a una notificación.
 
 La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
 
 ## Qué cambió en esta actualización
+
+La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y reemplazó el rango económico anterior por los desembolsos trazables de las alternativas B1, B2 y 12 V. La estructura, la formulación y las 49 referencias se mantienen; no se añadieron resultados ni se cerraron decisiones pendientes de prueba.
 
 La traducción de usuarios está consolidada en tres documentos autónomos: perfiles, recorridos y requisitos. Estos contenidos pueden auditarse como una cadena entre evidencia, necesidad, límite y prueba.
 
@@ -39,6 +41,8 @@ No se han comprado componentes, compilado el firmware, construido el montaje ni 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-31 — Revisión final textual y sincronización económica.** Antes, el resumen conservaba un conteo anterior y la memoria incluía metalenguaje, el nombre de una etapa histórica y un rango de costos que ya no representaba la comparación técnica activa. Ahora se registran 16.113 palabras en los capítulos 1–13, Q13 se explica como propuesta preliminar y la factibilidad distingue los desembolsos incompletos de B1, B2 y 12 V. No cambiaron la pregunta, la hipótesis ni el funcionamiento propuesto; siguen sin existir resultados de validación.
 
 **2026-08-30 — B2 especificada y costo corregido.** Antes, B2 aparecía a CLP 26.655 más partidas pendientes y sin una especificación eléctrica equivalente a B1. Ahora dispone de esquema revisable y su escenario con base incorpora resistencias y protección. Siguen pendientes inventario, revisión, compra y prueba comparativa.
 
