@@ -788,7 +788,7 @@ El desarrollo se organiza en etapas consecutivas. Cada una responde una pregunta
 
 La primera prueba utiliza un objeto simple y una activación manual. La persona formula una intención y su primer paso, elige un lugar y recibe una señal simulada durante otra actividad. El objetivo es conocer si puede relacionar el pulso con la intención sin consultar el teléfono.
 
-El registro distinguirá cuatro momentos: percepción de la señal, atribución al sistema, recuperación de la intención e identificación del primer paso. Iniciar la actividad no será requisito. Si la señal se percibe pero no permite reconstruir el significado, la asociación deberá reformularse antes de avanzar.
+El registro distinguirá cuatro momentos: percepción de la señal, atribución al sistema, recuperación de la intención e identificación del primer paso. Por separado, se comprobará si la persona entiende que puede ignorar, silenciar o seguir la señal. Iniciar la actividad no será requisito. Si el significado no puede reconstruirse o las salidas no se comprenden, la configuración deberá reformularse antes de avanzar.
 
 ## 13.2 Comparación con alternativas
 
@@ -949,6 +949,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Asociación y control separados
+
+- **Cambio:** se mantuvieron cuatro momentos para reconstruir la asociación y se añadió el control como condición independiente de autonomía.
+- **Versión anterior:** la memoria nombraba cuatro momentos, mientras el protocolo incluía el control como un quinto componente de la asociación completa.
+- **Motivo:** evitar que comprender las salidas altere la medición del recuerdo y, al mismo tiempo, impedir el avance cuando ignorar o silenciar no resulta claro.
+- **Alcance:** no se modificaron la muestra, los resultados —todavía inexistentes— ni la exigencia de no presentar la acción posterior como cumplimiento.
 
 **27 de agosto de 2026 — Muestra y umbrales del primer protocolo.** La muestra formativa se fijó en seis personas y los porcentajes se tradujeron a cinco casos para avanzar, tres o cuatro para modificar y dos o menos para detener la configuración después de una iteración. Antes, el rango de seis a ocho participantes dejaba ambiguo el número exacto necesario en cada decisión. No se han reclutado participantes ni recogido datos.
 

@@ -45,7 +45,7 @@ La activación manual evita atribuir a Android o Bluetooth un fallo que pertenec
 
 ### Cadena observable
 
-Cada ensayo se registra en cinco momentos independientes:
+Cada ensayo registra cuatro momentos de asociación:
 
 | Momento | Pregunta de observación | Evidencia mínima |
 | --- | --- | --- |
@@ -53,9 +53,10 @@ Cada ensayo se registra en cinco momentos independientes:
 | Atribución | ¿Reconoció que la señal provenía de Relevo? | Identificación espontánea del sistema o del ciclo configurado. |
 | Recuperación | ¿Recordó la intención correcta? | Reconstrucción de la actividad sin abrir el teléfono. |
 | Primer paso | ¿Recordó cómo comenzaba? | Descripción del primer paso configurado sin ayuda. |
-| Control | ¿Comprendió que podía ignorar, silenciar o actuar? | Explicación de al menos dos salidas sin presentar una como obligatoria. |
 
-Una **asociación completa** ocurre cuando los cinco momentos pueden reconstruirse sin consultar el teléfono ni recibir pistas sobre el contenido. Percibir la señal sin recuperar la intención se registra como asociación parcial, no como éxito.
+Una **asociación completa** ocurre cuando los cuatro momentos pueden reconstruirse sin consultar el teléfono ni recibir pistas sobre el contenido. Percibir la señal sin recuperar la intención se registra como asociación parcial, no como éxito.
+
+El control se comprueba por separado. La persona debe explicar que puede ignorar, silenciar o actuar, y reconocer al menos dos de esas salidas sin presentar una como obligatoria. Esta comprobación no cambia el resultado de asociación; una falla de control impide avanzar por comprometer la autonomía de la experiencia.
 
 ### Reglas de decisión de la fase A
 
@@ -138,6 +139,13 @@ International Organization for Standardization. (2023). *Systems and software en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Control separado de la asociación
+
+- **Cambio:** la asociación completa vuelve a sus cuatro momentos y la comprensión del control se registra como condición independiente y obligatoria.
+- **Versión anterior:** el protocolo contaba control como quinto momento, mientras la memoria definía cuatro componentes de asociación.
+- **Motivo:** medir por separado recuperación de significado y autonomía sin debilitar ninguna de las dos puertas.
+- **Alcance:** los umbrales de muestra no cambian; no se añadieron resultados ni se habilitó el reclutamiento.
 
 ### 2026-08-30 — Conservación con fecha máxima
 

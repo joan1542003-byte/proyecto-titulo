@@ -1,7 +1,7 @@
 # Auditoría de redacción y estructura — memoria v4
 
 **Fecha de creación:** 26 de agosto de 2026
-**Último control:** 27 de agosto de 2026
+**Último control:** 30 de agosto de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 
 ## Resultado
@@ -27,7 +27,7 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 19.226 palabras: 16.646 antes de las referencias, 1.204 en la bibliografía y 1.376 en el registro de cambios. Los capítulos 1–13 contienen 15.983 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 19.340 palabras: 16.663 antes de las referencias, 1.204 en la bibliografía y 1.473 en el registro de cambios. Los capítulos 1–13 contienen 16.000 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
@@ -68,6 +68,8 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+**30 de agosto de 2026 — Asociación y control.** Se actualizó la extensión después de separar los cuatro momentos de asociación de la comprensión de las salidas. Antes, memoria y protocolo usaban cuatro y cinco componentes respectivamente. El cambio no altera los límites por apartado, la muestra ni los resultados inexistentes.
 
 **27 de agosto de 2026 — Parámetros e instrumentos del protocolo 01.** Se actualizó la extensión después de fijar la muestra en seis personas y traducir los umbrales a cantidades de casos. El protocolo cuenta ahora con parámetros de ejecución, borrador de consentimiento y ficha vacía de registro. No se han reclutado participantes ni producido resultados.
 

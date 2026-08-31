@@ -30,10 +30,11 @@
 | Lo atribuyó a Relevo |  |  | Sí / No / Dudoso |
 | Recuperó la intención |  |  | Sí / No / Parcial |
 | Recuperó el primer paso |  |  | Sí / No / Parcial |
-| Comprendió sus salidas |  |  | Sí / No / Parcial |
 
 - Consultó el teléfono para reconstruir el significado: sí / no
 - Asociación completa: sí / no
+- Comprendió que podía ignorar, silenciar o actuar: sí / no / parcial
+- Salidas que pudo explicar sin ayuda:
 - Decisión posterior declarada, sin evaluarla como cumplimiento:
 
 ## Fase B — Comparación
@@ -91,6 +92,13 @@ Indicar qué no permite afirmar esta sesión.
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Control registrado fuera de la asociación
+
+- **Cambio:** la tabla conserva cuatro momentos de asociación y traslada la comprensión de salidas a campos independientes.
+- **Versión anterior:** el control aparecía como quinta fila y podía interpretarse como parte del resultado de asociación completa.
+- **Motivo:** permitir que el análisis distinga recuperación de significado y autonomía, aunque ambas sean necesarias para avanzar.
+- **Alcance:** la ficha permanece vacía y no constituye evidencia.
 
 ### 2026-08-27 — Creación de la plantilla
 
