@@ -11,7 +11,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 49 entradas bibliográficas y correcciones APA aplicadas.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
-- [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): separación entre correcciones documentales inmediatas y evidencia que requiere prototipado.
+- [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 30 de agosto entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
 - [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 
@@ -64,6 +64,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Cabos sueltos reconciliados
+
+- **Cambio:** el índice explicita la fecha de corte del registro activo de pendientes.
+- **Versión anterior:** el enlace no indicaba que perfiles, recorridos y la puerta B1/B2 habían sido actualizados después de su creación.
+- **Motivo:** evitar que una fotografía documental antigua se interprete como estado vigente.
+- **Alcance:** el registro ordena pendientes; no sustituye la evidencia de pruebas.
 
 ### 2026-08-27 — Selección de anexos
 

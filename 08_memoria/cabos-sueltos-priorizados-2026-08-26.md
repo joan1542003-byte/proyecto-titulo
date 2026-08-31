@@ -1,5 +1,7 @@
 # Cabos sueltos priorizados antes del siguiente cierre de la memoria
 
+**Última reconciliación:** 30 de agosto de 2026
+
 ## Dictamen
 
 La memoria v4 posee una estructura académica coherente y puede funcionar como base del desarrollo. Sin embargo, todavía no corresponde tratarla como memoria final de Proyecto de Título: faltan resultados de diseño y producción que no pueden resolverse mediante redacción. Los pendientes se separan a continuación entre correcciones documentales inmediatas y evidencia que debe producirse mediante prototipos.
@@ -34,34 +36,40 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 27 de agosto de 2026:** se cerraron los parámetros provisionales del protocolo 01 y se prepararon un consentimiento escrito y una ficha de registro sin datos.
 
+**Resuelto el 30 de agosto de 2026:** los perfiles U1 y U2, sus recorridos actuales, el escenario futuro y la matriz de requisitos existen como documentos autónomos y trazables. Se descartó construir personas biográficas con atributos no respaldados.
+
+**Resuelto el 30 de agosto de 2026:** memoria, protocolo y ficha distinguen cuatro momentos de asociación. La comprensión de ignorar, silenciar o actuar se registra por separado como condición obligatoria de autonomía.
+
+**Resuelto el 30 de agosto de 2026:** B1 y B2 poseen esquemas revisables y costos con exclusiones visibles. La arquitectura de 12 V se conserva como respaldo; ninguna alternativa está aprobada para compra o energización.
+
 No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avances dependen de decisiones metodológicas o evidencia obtenida mediante prototipos.
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
 
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
-| Condición de activación | Se mantiene abierta entre distintas reglas observables. Sin esta definición no puede comprobarse la secuencia técnica completa. | Comparar alternativas y seleccionar una condición provisional para el primer prototipo, declarando sus límites. | 11.2, 12.2 y 13.4. |
+| Condición Android de activación | La activación del ensayo de fase A se resolvió mediante un pulsador cableado a tres metros. Sigue abierta la condición observable que utilizará Android en la integración posterior. | Seleccionar una condición local técnicamente observable después de estabilizar la señal física; documentar permisos, falsos positivos, vencimiento y salida. | 11.2, 12.2 y 13.4. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
-| Ensayo técnico de la fase A | Los requisitos y criterios técnicos ya están definidos, pero el material no ha sido construido ni medido. | Construir el material mínimo y ejecutar las series de activación, duración, silenciamiento, reinicio, perceptibilidad instrumental, estabilidad y alimentación. | `07_validacion/especificacion-materiales-fase-a.md`. |
+| Ensayo técnico de la fase A | B1 y B2 cuentan con esquemas y compra escalonada, pero faltan inventario, revisión electrónica competente, selección luminosa, construcción y mediciones. | Inventariar, revisar ambas alternativas, compararlas con condiciones equivalentes y construir solo la seleccionada; después ejecutar las series técnicas. | `06_desarrollo_y_factibilidad/`, Issue #10 y `07_validacion/especificacion-materiales-fase-a.md`. |
 | Notificación local para la fase B | La comparación exige un aviso en el mismo teléfono Android utilizado durante la espera, pero el emisor todavía no existe. | Construir y verificar un disparador local único, sin mensajería externa ni historial de cumplimiento. | 12.1, 13.2 y protocolo 01. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
 
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
-| Canal y cualidades de la señal | Luz, sonido y vibración aparecen como alternativas, no como resultado. | Comparar percepción, molestia, discreción y posibilidad de silenciamiento en distintos contextos. | 11.3, 11.9, 11.10 y 13.3. |
+| Canal y cualidades de la señal | La siguiente comparación se acotó a B1 y B2 luminosas de 5 V. Color, distribución, intensidad y difusión siguen abiertos; sonido y vibración permanecen como alternativas posteriores de accesibilidad. | Revisar B1/B2, usar el mismo difusor y comparar perceptibilidad, uniformidad, intrusión, silencio, estabilidad y consumo antes de ampliar canales. | 11.3, 11.9, 11.10, 13.3 e Issue #10. |
 | Contexto doméstico | El hogar es un alcance de diseño, no un hallazgo observado sistemáticamente. | Registrar superficies, ruido, iluminación, convivencia, privacidad y desplazamiento del objeto. | 7.8, 11.4 y resultados. |
 | Forma y materialidad | La forma circular continúa como hipótesis y aún no existen medidas, estabilidad, mantenimiento ni reparación comprobados. | Construir alternativas volumétricas y comparar visibilidad, manipulación, emplazamiento y acceso a componentes. | 11.3, 12.3 y 13.3. |
 | Accesibilidad | La memoria declara criterios generales, pero no demuestra acceso multimodal. | Probar combinaciones de señal y salida con necesidades visuales, auditivas y motrices pertinentes al alcance. | 11.10 y resultados. |
-| Traducción operativa de los dos usuarios | Existen usuario principal y usuario límite, pero faltan fichas situacionales y recorridos actual/futuro independientes. | Derivar user persona y journey map desde la matriz P1–P8, indicando qué es evidencia y qué es síntesis de diseño. | 7.6, 7.7 y `03_usuarios/`. |
+| Contraste de perfiles y recorridos | U1, U2, recorridos actuales, escenario futuro y requisitos ya están documentados. Su validez fuera del corpus exploratorio todavía no ha sido comprobada. | Utilizar perfiles y recorridos para preparar las pruebas; modificarlos solo ante una contradicción trazable o nueva evidencia. No fabricar personas biográficas. | 7.6, 7.7, `03_usuarios/` e Issue #2 cerrada. |
 
 ## Prioridad 3 — Resolver antes del cierre productivo
 
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
 | Factibilidad Android y enlace físico | Existe una arquitectura posible, pero no una integración medida. | Registrar permisos, segundo plano, latencia, reconexión, vencimiento y consumo energético. | 12.1, 12.2 y 13.4. |
-| Costos y producción | Los montos son presupuestos preliminares sin cotizaciones verificadas. | Solicitar cotizaciones, documentar cantidades, procesos, ensamblaje y diferencia entre prototipo y producción. | 12.3, 12.4 y 12.6. |
+| Costos y producción | Existen precios locales fechados y escenarios de desembolso para 12 V, B1 y B2, pero no corresponden a cotizaciones de producción ni incluyen todas las partidas. | Registrar inventario y precios pagados, cerrar la BOM de la alternativa elegida y luego solicitar cotizaciones de fabricación, ensamblaje y terminación. | 12.3, 12.4, 12.6 y `06_desarrollo_y_factibilidad/`. |
 | Gestión y cumplimiento | Se describen actores y requisitos, pero no acuerdos, certificaciones ni proveedores confirmados. | Definir responsables, dependencias, protección de datos y ruta de cumplimiento proporcional al prototipo. | 10.10, 12.5 y 12.6. |
 
 ## Correcciones documentales que sí pueden hacerse ahora
@@ -73,11 +81,28 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es construir el material mínimo y ejecutar su ensayo técnico sin participantes. El reclutamiento solo podrá comenzar después de verificar la señal y la activación remota, completar el contacto del responsable y obtener revisión académica del consentimiento. La fecha máxima de eliminación ya fue fijada en el 13 de enero de 2027. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
+El siguiente paso es inventariar componentes, someter B1 y B2 a revisión electrónica competente y comparar ambas fuentes luminosas bajo condiciones equivalentes. Solo entonces corresponde completar y construir la alternativa seleccionada y ejecutar el ensayo técnico sin participantes. El reclutamiento podrá comenzar después de verificar el material, completar el contacto del responsable y obtener revisión académica del consentimiento. La fecha máxima de eliminación está fijada en el 13 de enero de 2027. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
+
+## Estado coordinado en GitHub
+
+- [Issue #2](https://github.com/joan1542003-byte/proyecto-titulo/issues/2): cerrada; perfiles, recorridos y requisitos completados provisionalmente.
+- [Issue #5](https://github.com/joan1542003-byte/proyecto-titulo/issues/5): cerrada; el feedback E15 fue incorporado y transferido a la ruta vigente.
+- [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8): abierta; validación prioritaria y reclutamiento bloqueado.
+- [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9): abierta; gobierna el calendario de cierre.
+- [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10): abierta; concentra inventario, revisión y comparación B1/B2.
+
+La [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece abierta únicamente como migración histórica en pausa y no gobierna el desarrollo actual.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Reconciliación de pendientes e Issues
+
+- **Cambio:** se retiraron perfiles y recorridos de los entregables faltantes, se distinguió la activación cableada de la condición Android, se incorporó la puerta B1/B2 y se actualizó el orden de trabajo y el mapa de Issues.
+- **Versión anterior:** el documento todavía pedía user personas y journey maps independientes, suponía la activación completa abierta y remitía directamente a construir el material.
+- **Motivo:** mantener un único registro operativo coherente con usuarios, desarrollo, validación, decisiones y GitHub.
+- **Alcance:** perfiles y recorridos están documentados, no validados; la condición Android, el objeto, la señal y los costos productivos continúan abiertos.
 
 ### 2026-08-30 — Fecha de eliminación resuelta
 
