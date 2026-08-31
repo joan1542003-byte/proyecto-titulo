@@ -71,12 +71,15 @@ El conversor lógico es el principal obstáculo de abastecimiento de B1. Una pub
 
 | Partida específica | Cantidad | Función | Desembolso observado | Estado |
 | --- | ---: | --- | ---: | --- |
-| Paquete de LED blancos cálidos, 3000 K | 1 paquete | Permitir ensayar cantidad, separación y difusión. | CLP 2.249 | [Mercado Libre Chile](https://www.mercadolibre.cl/diodo-led-pirana-5x5mm-luz-calida-3000k-alto-brillo-80-x20/up/MLCU110634405); formato de veinte unidades. Verificar vendedor y plazo antes de comprar. |
+| Paquete de LED blancos de 5 mm | 1 paquete de 10 | Permitir ensayar cuatro y ocho ramas con el mismo difusor. | CLP 506 | [Altronics](https://altronics.cl/led-5mm-blanco); la publicación informa 3,0–3,2 V y 20 mA. El intervalo 2800–3200 aparece con una unidad ambigua, por lo que la apariencia cálida debe comprobarse en la pieza real. |
 | Módulo MOSFET para PWM, 5–36 V | 1 | Regular la luz sin cargar una salida de la XIAO. | CLP 1.590 | [MechatronicStore](https://www.mechatronicstore.cl/modulo-regulador-switch-pwm-circuitos-de-potencia-15a-400w-mosfet/); su funcionamiento a 5 V y con lógica de 3,3 V debe revisarse en la unidad real. |
-| Resistencias para cada rama LED y condición de apagado | Por definir | Limitar corriente y mantener la salida apagada durante el arranque. | **Pendiente** | La cantidad y el valor dependen del arreglo eléctrico aprobado; no deben inferirse desde una imagen. |
-| **Subtotal B2 identificado, comprando fuente, jack y cable USB-C** |  |  | **CLP 20.965 + pendientes** | Incluye el paquete completo de LED, no solo los finalmente usados. |
-| **Subtotal B2 identificado, reutilizando fuente, jack y cable USB-C** |  |  | **CLP 14.279 + pendientes** | Excluye resistencias, protección y soporte. |
-| **B2 si además debe comprarse la base de ensayo** |  |  | **CLP 26.655 + pendientes** | Escenario comparable con la inclusión del kit en el montaje de 12 V. |
+| Resistencias de 150 Ω, 0,25 W, 1 % | 1 paquete de 100 | Asignar una resistencia a cada rama LED y comenzar entre 12,7 y 15 mA según la tensión real. | CLP 3.075 | [Altronics](https://altronics.cl/pack-100-res-150-025w1p). Se usarían cuatro u ocho unidades; el resto debe registrarse como sobrante reutilizable. |
+| Resistencia de 10 kΩ para estado apagado | 1 | Mantener la entrada de control en un estado definido si el módulo no lo incorpora. | **Pendiente o reutilizable** | Solo se añade después de revisar la entrada real del módulo; no se presume desde la publicación comercial. |
+| Portafusible en línea de 5 × 20 mm | 1 | Alojar la protección candidata de la rama luminosa. | CLP 494 | [Altronics](https://altronics.cl/portafusible-5x20-volante). |
+| Pack de cinco fusibles rápidos | 1 pack | Permitir seleccionar una protección después de medir la corriente. | CLP 800 | [MechatronicStore](https://www.mechatronicstore.cl/pack-5-fusibles-ceramicos-5x20mm-250v-accion-rapida-distintos-amper/). Un valor de 0,5 o 1 A es candidato de revisión, no una selección aprobada. |
+| **Subtotal B2 identificado, comprando fuente, jack y cable USB-C** |  |  | **CLP 23.591 + resistencia de 10 kΩ y conductores internos** | Incluye paquetes completos, portafusible y fusibles. |
+| **Subtotal B2 identificado, reutilizando fuente, jack y cable USB-C** |  |  | **CLP 16.905 + resistencia de 10 kΩ y conductores internos** | La procedencia de las piezas reutilizadas debe registrarse. |
+| **B2 si además debe comprarse la base de ensayo** |  |  | **CLP 29.281 + resistencia de 10 kΩ y conductores internos** | Escenario comparable con la inclusión del kit en el montaje de 12 V. |
 
 B2 no es automáticamente más barata que B1 en el primer desembolso: el módulo de control compensa parte del ahorro de la fuente luminosa. Su posible ventaja está en reducir funciones que Relevo no necesita —color y control individual de doce puntos— y evitar el conversor lógico de disponibilidad incierta. Esa ventaja solo existe si la revisión confirma el control desde 3,3 V, el arreglo de LED es seguro y la luz difundida cumple la prueba.
 
@@ -88,11 +91,11 @@ B2 no es automáticamente más barata que B1 en el primer desembolso: el módulo
 | Controlador | Nano compatible; requeriría otra solución para Bluetooth. | XIAO ESP32-C3, reutilizable en la integración Android. | XIAO ESP32-C3, reutilizable en la integración Android. |
 | Control de luz | MOSFET y tira cálida de un metro. | Datos digitales, conversor lógico, resistencia y condensador. | MOSFET, resistencias y arreglo cálido por definir. |
 | Superficie luminosa disponible | Amplia; puede cortarse y distribuirse. | Pequeña y circular. | Variable según número y disposición de LED. |
-| Subtotal publicado o identificado | CLP 28.130. | CLP 22.383 más conversor lógico; CLP 28.073 más conversor si también debe comprarse la base de ensayo. | CLP 20.965 más partidas pendientes; CLP 26.655 si también debe comprarse la base de ensayo. |
+| Subtotal publicado o identificado | CLP 28.130. | CLP 22.383 más conversor lógico; CLP 28.073 más conversor si también debe comprarse la base de ensayo. | CLP 23.591 más resistencia de 10 kΩ y conductores; CLP 29.281 más esas partidas si también debe comprarse la base de ensayo. |
 | Exclusiones relevantes | Terminales, protección, cuerpo, difusor, herramientas, envío y revisión. | Conversor, resistencia, condensador, protección, conductores, cuerpo, difusor, herramientas, envío y revisión. | Resistencias, protección, conductores, cuerpo, difusor, herramientas, envío y revisión. |
 | Razón para conservarla | Si las fuentes pequeñas no alcanzan visibilidad o superficie. | Si el control digital simplifica el patrón y el conversor se consigue con trazabilidad. | Si una salida cálida única cumple la señal con menos funciones y fallos. |
 
-La diferencia porcentual publicada entre 12 V y 5 V no debe seguir utilizándose como prueba de ahorro. Las exclusiones no son equivalentes y, en B1, falta justamente el componente que permite controlar el anillo de manera robusta. Cuando se iguala al menos la base de ensayo, B1 alcanza CLP 28.073 antes del conversor lógico y B2 llega a CLP 26.655 antes de sus partidas pendientes. La comparación válida se cerrará después de completar auxiliares y registrar qué elementos ya estaban disponibles.
+La diferencia porcentual publicada entre 12 V y 5 V no debe seguir utilizándose como prueba de ahorro. Las exclusiones no son equivalentes y, en B1, falta justamente el componente que permite controlar el anillo de manera robusta. Cuando se iguala al menos la base de ensayo, B1 alcanza CLP 28.073 antes del conversor lógico y B2 llega a CLP 29.281 antes de la resistencia de estado y los conductores internos. La comparación válida se cerrará después de completar auxiliares y registrar qué elementos ya estaban disponibles.
 
 Tampoco existen costos hundidos que obliguen a continuar con 12 V: el repositorio registra que sus componentes no fueron comprados y el montaje no fue construido. La arquitectura debe elegirse por la calidad y claridad de la prueba siguiente, no para justificar una inversión inexistente.
 
@@ -162,6 +165,10 @@ MechatronicStore. (s. f.). *Módulo regulador PWM de potencia con MOSFET*. Recup
 
 MechatronicStore. (s. f.). *Seeed Studio XIAO ESP32-C3*. Recuperado el 30 de agosto de 2026, de https://www.mechatronicstore.cl/seeed-studio-xiao-esp32-c3/
 
+Altronics. (s. f.). *LED 5 mm blanco*. Recuperado el 30 de agosto de 2026, de https://altronics.cl/led-5mm-blanco
+
+Altronics. (s. f.). *Pack 100 resistencias 150 Ω, 0,25 W, 1 %*. Recuperado el 30 de agosto de 2026, de https://altronics.cl/pack-100-res-150-025w1p
+
 ## Registro de cambios (disclaimer)
 
 ### 2026-08-30 — Creación de la comparación de compra
@@ -184,3 +191,10 @@ MechatronicStore. (s. f.). *Seeed Studio XIAO ESP32-C3*. Recuperado el 30 de ago
 - **Versión anterior:** la lista suponía una fuente USB y un cable USB-C, pero no definía cómo separar su salida hacia la XIAO y la luz sin atravesar la placa; varios auxiliares permanecían sin precio.
 - **Motivo:** convertir el subtotal en una ruta físicamente revisable y hacer visible que B1 se aproxima al costo de 12 V antes de conseguir el conversor lógico.
 - **Alcance:** el fusible de 1 A es una hipótesis de revisión, no una selección aprobada; la conexión simultánea de USB-C y alimentación externa permanece prohibida hasta revisión.
+
+### 2026-08-30 — B2 convertida en alternativa revisable
+
+- **Cambio:** se sustituyó el paquete remoto de LED por una muestra local, se incorporaron resistencias individuales de 150 Ω y protección, y se recalcularon los escenarios de compra de B2.
+- **Versión anterior:** B2 costaba CLP 20.965 o CLP 26.655 con base, pero mantenía resistencias y protección sin identificar; por ello aparentaba una ventaja económica no comparable.
+- **Motivo:** alinear la lista con el esquema eléctrico B2 y separar su posible simplicidad funcional de una promesa de menor costo.
+- **Alcance:** el resistor de estado, los conductores internos y el valor de fusible siguen sujetos a revisión; la publicación del LED no confirma de manera trazable su temperatura de color.

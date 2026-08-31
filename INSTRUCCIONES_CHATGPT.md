@@ -33,7 +33,7 @@ El proyecto no busca prohibir aplicaciones, castigar el uso, evaluar moralmente 
 
 La condición de activación permanece abierta entre continuidad de uso, acumulación dentro de una ventana y horario. La notificación es un control comparativo para aislar el aporte físico, no la salida final. El desarrollo estructural contiene tres interacciones, nueve marcos de síntesis y 35 estados; constituye diseño documentado, no validación. La línea sustantiva activa es la prueba de asociación entre intención, primer paso, lugar y señal de la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
 
-Los instrumentos están preparados en [`07_validacion`](07_validacion/README.md). La activación de fase A continúa cableada para aislar la prueba, pero su fuente luminosa está en comparación antes de la compra. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) enfrenta B1 —XIAO ESP32-C3 y anillo direccionable— con B2 —XIAO y luz cálida no direccionable— bajo la misma alimentación de 5 V. Consulta la [comparación de arquitecturas](06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md), la [lista de materiales por puertas](06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) y los esquemas revisables antes de proponer una compra. B1 alcanza CLP 28.073 más el conversor lógico cuando necesita base de ensayo; B2 todavía requiere cerrar su circuito y partidas. El costo no decide la elección. El montaje de 12 V y su firmware se conservan como respaldo, no como ruta inmediata. Ninguna variante está aprobada para energizar.
+Los instrumentos están preparados en [`07_validacion`](07_validacion/README.md). La activación de fase A continúa cableada para aislar la prueba, pero su fuente luminosa está en comparación antes de la compra. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) enfrenta B1 —XIAO ESP32-C3 y anillo direccionable— con B2 —XIAO y luz cálida no direccionable— bajo la misma alimentación de 5 V. Consulta la [comparación de arquitecturas](06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md), la [lista de materiales por puertas](06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) y ambos esquemas antes de proponer una compra. B1 alcanza CLP 28.073 más el conversor lógico cuando necesita base de ensayo; B2 alcanza CLP 29.281 más la resistencia de estado y los conductores internos. El costo no decide la elección. El montaje de 12 V y su firmware se conservan como respaldo, no como ruta inmediata. Ninguna variante está aprobada para energizar.
 
 El consentimiento fija eliminación de fichas a más tardar el 13 de enero de 2027, pero aún requiere el correo del responsable y revisión académica. La fase B permanece bloqueada hasta disponer de una notificación local Android equivalente. No existen resultados de validación. El Encargo 17 quedó completado.
 
@@ -138,6 +138,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Contexto B2 cerrado documentalmente
+
+- **Cambio:** se reemplazó el circuito B2 pendiente por su costo y esquema revisable vigentes.
+- **Versión anterior:** las instrucciones indicaban que B2 aún debía cerrar circuito y partidas.
+- **Motivo:** impedir que nuevas conversaciones repitan trabajo ya resuelto o usen el subtotal anterior.
+- **Alcance:** inventario, revisión competente y comparación luminosa siguen pendientes.
 
 ### 2026-08-30 — Contexto técnico actualizado a B1/B2
 

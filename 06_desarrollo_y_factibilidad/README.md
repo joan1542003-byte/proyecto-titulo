@@ -30,12 +30,20 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 - [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
 - [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, variantes de 5 V y soluciones comerciales o pasivas; propone contrastar dos fuentes luminosas pequeñas antes de sustituir la arquitectura vigente.
 - [Esquema provisional del núcleo de 5 V](esquema-provisional-xiao-esp32c3-5v-2026-08-30.md): alimentación, conversión lógica, señales, silencio, arranque y campos exigidos para la revisión electrónica anterior al montaje.
+- [Esquema provisional B2](esquema-provisional-xiao-luz-calida-5v-2026-08-30.md): arreglo cálido no direccionable, resistencias por rama, control MOSFET, apagado seguro, secuencia de medición y puerta anterior a la comparación con B1.
 - [Lista de materiales y compra escalonada del núcleo de 5 V](lista-materiales-y-compra-escalonada-5v-2026-08-30.md): compara una luz direccionable y una luz cálida sencilla, separa desembolso y costo atribuible, y condiciona cada compra a una puerta de revisión o prueba.
 - [Esquema de conexión provisional](esquema-conexion-provisional-fase-a-2026-08-30.md): tabla funcional, registro de terminales y puertas para revisión antes de energizar.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — B2 preparada para revisión
+
+- **Cambio:** se enlazó el esquema revisable de la variante cálida no direccionable.
+- **Versión anterior:** el directorio disponía de esquema B1 y una descripción de B2, pero no de una especificación eléctrica equivalente.
+- **Motivo:** impedir una comparación asimétrica y cerrar cálculos, estados y verificaciones antes de comprar.
+- **Alcance:** el documento habilita revisión; no autoriza montaje, energización ni selección de B2.
 
 ### 2026-08-30 — Compra de 5 V dividida por puertas
 

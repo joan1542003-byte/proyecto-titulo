@@ -97,7 +97,7 @@ La [investigación visual](../10_recursos_visuales/08_direccion_visual_relevo/RE
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado:** alternativas de 5 V comparadas documentalmente; B1 dispone de esquema revisable y B2 debe alcanzar el mismo nivel antes de comprar. Integración, mediciones, revisión electrónica y cumplimiento permanecen pendientes.
+**Estado:** alternativas de 5 V comparadas documentalmente y B1/B2 disponen de esquemas revisables. Inventario, integración, mediciones, revisión electrónica y cumplimiento permanecen pendientes.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
@@ -107,7 +107,7 @@ Incluye arquitectura técnica, producción, materiales, componentes, costos, man
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
-Siguiente puerta de avance: completar el esquema revisable de B2, revisar B1 y B2 con una persona competente y comparar sus fuentes luminosas en condiciones equivalentes. Solo la variante elegida podrá pasar a la comprobación de repetibilidad, intensidad, silenciamiento, estabilidad y seguridad definida en la [especificación de materiales](../07_validacion/especificacion-materiales-fase-a.md). Esta comprobación habilita el piloto técnico, no el reclutamiento automático ni una afirmación de eficacia.
+Siguiente puerta de avance: inventariar el material, revisar los esquemas B1 y B2 con una persona competente y comparar sus fuentes luminosas en condiciones equivalentes. Solo la variante elegida podrá pasar a la comprobación de repetibilidad, intensidad, silenciamiento, estabilidad y seguridad definida en la [especificación de materiales](../07_validacion/especificacion-materiales-fase-a.md). Esta comprobación habilita el piloto técnico, no el reclutamiento automático ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — B2 deja de ser bloqueo documental
+
+- **Cambio:** la siguiente puerta comienza en inventario y revisión porque B2 ya dispone de esquema revisable.
+- **Versión anterior:** la hoja de ruta situaba la redacción del esquema B2 como primer pendiente.
+- **Motivo:** mantener la secuencia de trabajo en el estado comprobable del repositorio.
+- **Alcance:** la revisión, la compra y la comparación continúan pendientes.
 
 ### 2026-08-30 — Puerta B1/B2 anterior a la construcción
 

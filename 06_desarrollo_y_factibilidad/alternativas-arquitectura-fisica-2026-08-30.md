@@ -73,6 +73,8 @@ Una segunda variante conserva la XIAO y la alimentación de 5 V, pero reemplaza 
 
 Su función es desafiar a B1 bajo las mismas condiciones de distancia, iluminación y difusión. Si produce el patrón con menos estados de fallo y componentes disponibles localmente, podrá reemplazar al anillo. Si la superficie resulta irregular o exige una fabricación más compleja, B1 conservará prioridad.
 
+El [esquema provisional B2](esquema-provisional-xiao-luz-calida-5v-2026-08-30.md) propone comenzar con cuatro ramas LED y 150 Ω por rama, ampliar hasta ocho solo si la percepción lo exige y comprobar el estado apagado del módulo antes de conectar la carga. Al incorporar resistencias y protección, su escenario con base asciende a CLP 29.281, más la resistencia de estado y los conductores internos. Por tanto, B2 se estudia por adecuación funcional y no por una ventaja económica.
+
 ### C. Núcleo de 5 V con Arduino Nano y activación cableada
 
 Reemplaza la tira de 12 V por el mismo anillo WS2812, conserva el Nano y utiliza USB para alimentación. Es la alternativa más directa para una fase A sin Bluetooth y reutiliza el firmware ya preparado con ajustes en la salida luminosa.
@@ -147,6 +149,13 @@ MechatronicStore. (s. f.). *Seeed Studio XIAO ESP32-C3*. Recuperado el 30 de ago
 Seeed Studio. (s. f.). *Getting started with Seeed Studio XIAO ESP32C3*. Recuperado el 30 de agosto de 2026, de https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Esquema B2 y costo comparable
+
+- **Cambio:** se enlazó el esquema eléctrico revisable de B2 y se incorporó su costo actualizado con resistencias y protección.
+- **Versión anterior:** la alternativa describía su propósito, pero todavía dejaba cantidad, resistencias y condición de apagado sin una propuesta verificable.
+- **Motivo:** comparar B1 y B2 con un nivel documental equivalente y evitar atribuir simplicidad a una lista incompleta.
+- **Alcance:** la cantidad final de LED, la temperatura de color y el fusible siguen sujetos a prueba y revisión.
 
 ### 2026-08-30 — Comparación interna de las fuentes de 5 V
 

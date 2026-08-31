@@ -24,6 +24,8 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar repeticiones, incidentes, correcciones y la puerta anterior a participantes.
 - [Comparación de arquitecturas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md): mantiene la activación cableada, enfrenta B1 y B2 de 5 V y conserva el montaje de 12 V como respaldo.
 - [Lista de materiales y compra por puertas](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md): separa desembolso, reutilización y partidas pendientes antes de construir.
+- [Esquema B1 de 5 V](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md): relaciones funcionales del anillo direccionable y condiciones anteriores a su revisión.
+- [Esquema B2 de 5 V](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md): ramas LED, control de potencia, cálculo inicial y criterios de apagado; debe revisarse antes de la comparación luminosa.
 - [Montaje de 12 V](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md): arquitectura de respaldo, costos, riesgos y secuencia de construcción si las fuentes pequeñas no cumplen.
 - [Firmware provisional de 12 V](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md): lógica de respaldo preparada para tres pulsos, rechazo de órdenes acumuladas y silenciamiento; aún no compilada ni probada.
 
@@ -46,6 +48,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Esquema B2 incorporado a la puerta técnica
+
+- **Cambio:** se añadieron los esquemas B1 y B2 como evidencia obligatoria anterior al ensayo.
+- **Versión anterior:** el índice exigía comparar las variantes, pero no enlazaba sus especificaciones eléctricas.
+- **Motivo:** hacer verificable que ambas fuentes luminosas se comparan bajo exigencias equivalentes.
+- **Alcance:** no existen revisión electrónica, montaje ni resultados.
 
 ### 2026-08-30 — Puerta luminosa anterior al ensayo
 

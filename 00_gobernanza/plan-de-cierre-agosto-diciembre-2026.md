@@ -32,7 +32,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
 | Prototipo Android | Inicial | Plataforma justificada, wireframes y referencias visuales. | Aplicación funcional, condición provisional, notificación local y estados de recuperación. |
-| Testigo físico | Alternativas preparadas para decisión | Función, requisitos, activación cableada y comparación B1/B2 de 5 V documentadas; B1 dispone de esquema revisable. | Completar B2, revisar ambas variantes, comparar luz y construir solo la elegida. |
+| Testigo físico | Alternativas preparadas para decisión | Función, requisitos, activación cableada, comparación B1/B2 y ambos esquemas revisables documentados. | Inventariar, revisar ambas variantes, comparar luz y construir solo la elegida. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Resolver la puerta B1/B2, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
@@ -63,7 +63,7 @@ Las fechas institucionales se encuentran consolidadas en el [calendario oficial 
 - incorporar los hitos oficiales a la planificación y a la Issue #9;
 - reconciliar el estado de las Issues #2, #4 y #5 con los documentos vigentes;
 - seleccionar una condición provisional para el prototipo, sin declararla definitiva;
-- cerrar el esquema y la revisión comparativa B1/B2;
+- inventariar material y obtener revisión comparativa B1/B2;
 - construir únicamente el material mínimo seleccionado para la señal manual;
 - verificar activación, duración, silenciamiento, estabilidad, alimentación y seguridad;
 - realizar un ensayo interno completo del protocolo;
@@ -262,6 +262,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Esquema B2 retirado de la ruta crítica
+
+- **Cambio:** la planificación comienza la siguiente puerta en inventario y revisión, no en redactar B2.
+- **Versión anterior:** el esquema B2 figuraba como pendiente de la primera semana.
+- **Motivo:** sincronizar los hitos con la evidencia ya incorporada al repositorio.
+- **Alcance:** no se adelantaron compras ni pruebas.
 
 ### 2026-08-30 — Ruta crítica sincronizada con la comparación de 5 V
 

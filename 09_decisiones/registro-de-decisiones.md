@@ -413,21 +413,28 @@
 - **Fecha:** 2026-08-30
 - **Estado:** vigente; comparación documental preparada, revisión y prueba pendientes
 - **Decisión:** conservar la XIAO ESP32-C3 y la activación cableada como núcleo común; comparar B1, con anillo WS2812, y B2, con luz cálida no direccionable, antes de completar una compra. La arquitectura de 12 V permanece como respaldo si ninguna fuente pequeña alcanza la perceptibilidad necesaria.
-- **Fundamento:** el anillo añade control de color y de puntos que Relevo puede no necesitar, mientras la alternativa cálida puede trasladar complejidad al arreglo eléctrico y a la difusión. Además, al igualar base y auxiliares, B1 llega a CLP 28.073 antes del conversor lógico y B2 a CLP 26.655 antes de sus partidas pendientes; no existe una ventaja económica demostrada.
-- **Consecuencia:** B2 debe disponer de un esquema revisable equivalente a B1. Una persona competente revisará ambas variantes y la primera comparación se limitará a distribución, perceptibilidad, control y estabilidad de la luz. Solo después se completa y construye una de ellas.
+- **Fundamento:** el anillo añade control de color y de puntos que Relevo puede no necesitar, mientras la alternativa cálida traslada complejidad al arreglo eléctrico y a la difusión. Al igualar base y auxiliares, B1 llega a CLP 28.073 antes del conversor lógico y B2 a CLP 29.281 antes de la resistencia de estado y los conductores internos; no existe una ventaja económica demostrada.
+- **Consecuencia:** B1 y B2 disponen de esquemas revisables equivalentes. Una persona competente revisará ambas variantes y la primera comparación se limitará a distribución, perceptibilidad, control y estabilidad de la luz. Solo después se completa y construye una de ellas.
 - **Límite:** esta decisión no selecciona una fuente luminosa, no autoriza energización ni convierte una cotización en costo de producción. El valor específico del objeto y de la señal continúa sujeto a validación.
-- **Documentos asociados:** [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md), [lista de materiales y compra escalonada](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md), [esquema de B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
+- **Documentos asociados:** [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md), [lista de materiales y compra escalonada](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md), [esquema de B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md), [esquema de B2](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — D-043 actualizada con esquema B2
+
+- **Cambio:** se reemplazó el costo incompleto de B2 y se registró que ambas variantes ya poseen esquema revisable.
+- **Versión anterior:** B2 aparecía a CLP 26.655 con partidas eléctricas abiertas y su esquema figuraba como obligación pendiente.
+- **Motivo:** sostener la decisión con costos equivalentes y con el mismo grado de especificación técnica.
+- **Resultado:** la revisión competente y la comparación luminosa continúan pendientes; ninguna variante ha sido seleccionada.
 
 ### 2026-08-30 — D-043 y alcance de D-041
 
 - **Cambio:** se registró la comparación B1/B2 como puerta anterior a la compra y se acotó D-041 a la activación cableada que ambas variantes comparten.
 - **Versión anterior:** D-041 podía leerse como selección simultánea del pulsador y de todo el montaje luminoso de 12 V.
 - **Motivo:** conservar la decisión experimental válida sin convertir una arquitectura de respaldo en obligación de construcción.
-- **Resultado:** no existe variante luminosa seleccionada; B2 debe alcanzar revisión documental y ambas opciones deben compararse antes de comprar.
+- **Resultado:** no existe variante luminosa seleccionada; ambas opciones poseen especificación documental y deben superar revisión competente y comparación antes de comprar.
 
 ### 2026-08-30 — D-042
 
