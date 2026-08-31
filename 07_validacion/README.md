@@ -22,8 +22,10 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
 - [Especificación mínima de materiales](especificacion-materiales-fase-a.md): requisitos y comprobaciones técnicas previas de la señal manual de fase A.
 - [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar repeticiones, incidentes, correcciones y la puerta anterior a participantes.
-- [Montaje mínimo de fase A](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md): arquitectura cableada provisional, lista de materiales, costos, riesgos y secuencia de construcción.
-- [Firmware provisional](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md): lógica preparada para tres pulsos, rechazo de órdenes acumuladas y silenciamiento; aún no compilada ni probada.
+- [Comparación de arquitecturas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md): mantiene la activación cableada, enfrenta B1 y B2 de 5 V y conserva el montaje de 12 V como respaldo.
+- [Lista de materiales y compra por puertas](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md): separa desembolso, reutilización y partidas pendientes antes de construir.
+- [Montaje de 12 V](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md): arquitectura de respaldo, costos, riesgos y secuencia de construcción si las fuentes pequeñas no cumplen.
+- [Firmware provisional de 12 V](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md): lógica de respaldo preparada para tres pulsos, rechazo de órdenes acumuladas y silenciamiento; aún no compilada ni probada.
 
 ## Regla de medición
 
@@ -44,6 +46,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Puerta luminosa anterior al ensayo
+
+- **Cambio:** el índice enlaza B1/B2 y la compra escalonada como dependencia anterior al ensayo, y reclasifica montaje y firmware de 12 V como respaldo.
+- **Versión anterior:** validación remitía directamente a construir la configuración de 12 V.
+- **Motivo:** mantener un único estado operativo entre desarrollo, gobernanza y validación.
+- **Alcance:** el protocolo y sus criterios no cambian; ninguna variante fue construida ni probada.
 
 ### 2026-08-30 — Fecha de eliminación fijada
 

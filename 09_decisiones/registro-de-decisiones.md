@@ -391,10 +391,10 @@
 ## D-041 — Activación cableada para aislar el ensayo de fase A
 
 - **Fecha:** 2026-08-30
-- **Estado:** seleccionada para construir; no comprada, montada ni ensayada
+- **Estado:** activación vigente; la arquitectura luminosa de 12 V fue desplazada a respaldo por D-043
 - **Decisión:** utilizar un pulsador conectado mediante tres metros de cable para activar el montaje luminoso de fase A. Infrarrojo queda como reserva si el cable altera el espacio; radio de 433 MHz se descarta para esta prueba.
 - **Fundamento:** la fase A necesita comprobar repetibilidad, duración, silenciamiento, estabilidad y seguridad del material sin introducir fallos de radio, Bluetooth o Android. La opción cableada agrega menos variables y tiene trazabilidad de componentes y costos.
-- **Consecuencia:** se documenta un subtotal de componentes identificados de CLP 28.130 y CLP 32.350 con 15 % de contingencia sobre esas partidas. No incluye cuerpo, difusor, herramientas, envío, trabajo, terminales ni protección de la rama de potencia. El cable debe fijarse fuera del recorrido. Un interruptor DPDT separa el corte físico de la luz y el retorno lógico a reposo.
+- **Consecuencia:** el pulsador y sus tres metros de cable se conservan en B1 y B2 para aislar la señal del enlace Bluetooth. El montaje de 12 V y sus subtotales de CLP 28.130 y CLP 32.350 permanecen como respaldo comparable, no como compra inmediata. El cable debe fijarse fuera del recorrido.
 - **Límite:** la decisión pertenece al dispositivo de ensayo y no define el enlace, la electrónica, la forma ni el costo del producto. No autoriza compra, uso con participantes ni afirmaciones de seguridad certificada.
 - **Documentos asociados:** [Montaje mínimo de fase A](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), [especificación](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) e [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
 
@@ -408,9 +408,26 @@
 - **Límite:** una modificación institucional del calendario obliga a revisar la fecha antes de reclutar. La decisión no autoriza recolección de datos.
 - **Documentos asociados:** [Consentimiento](../07_validacion/consentimiento-protocolo-01.md), [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) y [calendario oficial](../00_gobernanza/calendario-oficial-segundo-semestre-2026.md).
 
+## D-043 — Comparar dos fuentes luminosas de 5 V antes de comprar
+
+- **Fecha:** 2026-08-30
+- **Estado:** vigente; comparación documental preparada, revisión y prueba pendientes
+- **Decisión:** conservar la XIAO ESP32-C3 y la activación cableada como núcleo común; comparar B1, con anillo WS2812, y B2, con luz cálida no direccionable, antes de completar una compra. La arquitectura de 12 V permanece como respaldo si ninguna fuente pequeña alcanza la perceptibilidad necesaria.
+- **Fundamento:** el anillo añade control de color y de puntos que Relevo puede no necesitar, mientras la alternativa cálida puede trasladar complejidad al arreglo eléctrico y a la difusión. Además, al igualar base y auxiliares, B1 llega a CLP 28.073 antes del conversor lógico y B2 a CLP 26.655 antes de sus partidas pendientes; no existe una ventaja económica demostrada.
+- **Consecuencia:** B2 debe disponer de un esquema revisable equivalente a B1. Una persona competente revisará ambas variantes y la primera comparación se limitará a distribución, perceptibilidad, control y estabilidad de la luz. Solo después se completa y construye una de ellas.
+- **Límite:** esta decisión no selecciona una fuente luminosa, no autoriza energización ni convierte una cotización en costo de producción. El valor específico del objeto y de la señal continúa sujeto a validación.
+- **Documentos asociados:** [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md), [lista de materiales y compra escalonada](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md), [esquema de B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — D-043 y alcance de D-041
+
+- **Cambio:** se registró la comparación B1/B2 como puerta anterior a la compra y se acotó D-041 a la activación cableada que ambas variantes comparten.
+- **Versión anterior:** D-041 podía leerse como selección simultánea del pulsador y de todo el montaje luminoso de 12 V.
+- **Motivo:** conservar la decisión experimental válida sin convertir una arquitectura de respaldo en obligación de construcción.
+- **Resultado:** no existe variante luminosa seleccionada; B2 debe alcanzar revisión documental y ambas opciones deben compararse antes de comprar.
 
 ### 2026-08-30 — D-042
 

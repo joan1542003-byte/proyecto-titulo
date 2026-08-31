@@ -32,9 +32,9 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
 | Prototipo Android | Inicial | Plataforma justificada, wireframes y referencias visuales. | Aplicación funcional, condición provisional, notificación local y estados de recuperación. |
-| Testigo físico | Preparado para revisión y construcción | Función, requisitos, arquitectura cableada, firmware provisional, lista de materiales y silenciamiento DPDT documentados. | Revisar el circuito, comprar, compilar, construir y comprobar señal, energía, estabilidad, temperatura y seguridad. |
-| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha, criterios previos y montaje provisional trazado. | Completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
-| Producción y costos | Provisional | Reglas de factibilidad y subtotal de componentes identificados para fase A, con proveedores y fecha de corte. | Revisión de terminales y protección, cotización al comprar, cuerpo y difusor, herramientas, trabajo, tiempos y costo del prototipo integrado. |
+| Testigo físico | Alternativas preparadas para decisión | Función, requisitos, activación cableada y comparación B1/B2 de 5 V documentadas; B1 dispone de esquema revisable. | Completar B2, revisar ambas variantes, comparar luz y construir solo la elegida. |
+| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Resolver la puerta B1/B2, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
+| Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
 
 ## Ruta crítica
@@ -63,7 +63,8 @@ Las fechas institucionales se encuentran consolidadas en el [calendario oficial 
 - incorporar los hitos oficiales a la planificación y a la Issue #9;
 - reconciliar el estado de las Issues #2, #4 y #5 con los documentos vigentes;
 - seleccionar una condición provisional para el prototipo, sin declararla definitiva;
-- construir el material mínimo de señal manual;
+- cerrar el esquema y la revisión comparativa B1/B2;
+- construir únicamente el material mínimo seleccionado para la señal manual;
 - verificar activación, duración, silenciamiento, estabilidad, alimentación y seguridad;
 - realizar un ensayo interno completo del protocolo;
 - completar los datos administrativos del consentimiento y cerrar el reclutamiento.
@@ -261,6 +262,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Ruta crítica sincronizada con la comparación de 5 V
+
+- **Cambio:** el estado por área y la primera etapa incorporan la decisión B1/B2 antes de construir la señal manual.
+- **Versión anterior:** el plan trataba la arquitectura de 12 V como montaje preparado para compra y construcción.
+- **Motivo:** impedir que el calendario convierta una opción de respaldo en una obligación técnica.
+- **Consecuencia:** las fechas no cambian; la compra queda acotada a la variante seleccionada después de revisión y comparación.
 
 ### 2026-08-30 — Costo parcial anterior a la revisión
 

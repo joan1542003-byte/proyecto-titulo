@@ -32,7 +32,7 @@ La versión breve y mantenida después de cada actualización está en el [resum
 
 **Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
 
-El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La fase A cuenta con una [arquitectura provisional y un costo parcial de componentes identificados](06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), un [esquema de conexión pendiente de revisión eléctrica](06_desarrollo_y_factibilidad/esquema-conexion-provisional-fase-a-2026-08-30.md) y [firmware preparado para revisión](06_desarrollo_y_factibilidad/prototipo-fase-a/README.md). El circuito aún no está aprobado para energización: faltan la revisión electrónica, una única ruta de alimentación para el Nano, terminales y protección de la rama de 12 V. Después corresponde comprar, compilar, construir y completar el ensayo técnico antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
+El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La activación cableada de fase A se mantiene, pero la electrónica que producirá la luz se encuentra en una comparación previa a la compra. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) contrasta dos variantes de 5 V con una XIAO ESP32-C3: B1 utiliza un anillo direccionable y B2 una fuente cálida no direccionable. La [lista de materiales y compra por puertas](06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) muestra que ninguna ventaja económica está demostrada; el montaje de 12 V permanece como respaldo si las fuentes pequeñas no alcanzan la perceptibilidad requerida. Antes de comprar o energizar deben completarse el esquema revisable de B2, el inventario y la revisión electrónica de ambas variantes. Después corresponde comparar la luz, completar solo la variante elegida y ejecutar el ensayo técnico antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
 
 La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) ya cuenta con una base conceptual seleccionada: `Transferencia situada`. El sistema dispone de [aplicaciones exploratorias](10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/README.md) para objeto, memoria y Android, gobernadas por una matriz común. Permanecen abiertos el logotipo final, la tipografía, la forma industrial y los parámetros de la señal física.
 
@@ -99,6 +99,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Ruta técnica sincronizada con la comparación de 5 V
+
+- **Cambio:** el estado principal reemplaza el montaje de 12 V como siguiente compra por una comparación previa entre B1 y B2 de 5 V, gestionada en la Issue #10.
+- **Versión anterior:** la portada todavía presentaba Nano, tira de 12 V y su circuito como la única arquitectura preparada para avanzar.
+- **Motivo:** la revisión posterior demostró que deben compararse fuentes luminosas pequeñas antes de consolidar potencia, forma y costo.
+- **Alcance:** la activación cableada y la Issue #8 se mantienen; no se compraron piezas, no se energizó un circuito y 12 V continúa disponible como respaldo.
 
 ### 2026-08-30 — Puerta eléctrica explicitada
 

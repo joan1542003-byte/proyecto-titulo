@@ -97,17 +97,17 @@ La [investigación visual](../10_recursos_visuales/08_direccion_visual_relevo/RE
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado:** documentada como factibilidad planificada; integración, mediciones, cotizaciones y cumplimiento pendientes.
+**Estado:** alternativas de 5 V comparadas documentalmente; B1 dispone de esquema revisable y B2 debe alcanzar el mismo nivel antes de comprar. Integración, mediciones, revisión electrónica y cumplimiento permanecen pendientes.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). El protocolo, el consentimiento, los instrumentos, la arquitectura cableada, la lista de materiales y el firmware provisional están preparados. La fase A no puede comenzar con participantes hasta revisar el circuito, comprar, compilar, construir y comprobar la señal manual; la fase B depende además de una notificación local Android equivalente.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8), con una puerta técnica específica en la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10). El protocolo, el consentimiento y los instrumentos están preparados. La activación sigue siendo cableada, pero la luz se decidirá entre B1 y B2 de 5 V antes de completar una compra. El montaje de 12 V permanece como respaldo. La fase A no puede comenzar con participantes hasta revisar, construir y comprobar la variante elegida; la fase B depende además de una notificación local Android equivalente.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
-Siguiente puerta de avance: registrar que la señal manual cumple repetibilidad, intensidad, silenciamiento, estabilidad y seguridad según la [especificación de materiales](../07_validacion/especificacion-materiales-fase-a.md). Esta comprobación habilita el piloto técnico, no el reclutamiento automático ni una afirmación de eficacia.
+Siguiente puerta de avance: completar el esquema revisable de B2, revisar B1 y B2 con una persona competente y comparar sus fuentes luminosas en condiciones equivalentes. Solo la variante elegida podrá pasar a la comprobación de repetibilidad, intensidad, silenciamiento, estabilidad y seguridad definida en la [especificación de materiales](../07_validacion/especificacion-materiales-fase-a.md). Esta comprobación habilita el piloto técnico, no el reclutamiento automático ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Puerta B1/B2 anterior a la construcción
+
+- **Cambio:** desarrollo y prototipado incorporan la comparación entre dos fuentes de 5 V y enlazan la Issue #10 como dependencia de la Issue #8.
+- **Versión anterior:** la hoja de ruta daba por preparada una única arquitectura cableada de 12 V y situaba su construcción como acción inmediata.
+- **Motivo:** decidir la escala y el tipo de luz antes de consolidar componentes que pueden resultar innecesarios.
+- **Decisión derivada:** primero se iguala la documentación y revisión de B1 y B2; después se construye solo la variante seleccionada.
 
 ### 2026-08-30 — Preparación técnica anterior a la construcción
 

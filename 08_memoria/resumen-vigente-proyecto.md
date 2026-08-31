@@ -32,13 +32,15 @@ La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacion
 
 La traducción de usuarios está consolidada en tres documentos autónomos: perfiles, recorridos y requisitos. Estos contenidos pueden auditarse como una cadena entre evidencia, necesidad, límite y prueba.
 
-El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, señal provisional, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y ficha de registro. El ensayo interno documental ya fue realizado. Para la fase A existe una arquitectura cableada provisional, una lista con CLP 28.130 en componentes identificados y firmware preparado para revisión. Terminales y protección de la rama de potencia todavía no están definidos ni valorizados.
+El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, señal provisional, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y ficha de registro. El ensayo interno documental ya fue realizado. La activación manual de fase A se mantiene, pero la fuente luminosa está en una comparación previa a la compra: B1 combina XIAO ESP32-C3 y anillo direccionable; B2 conserva la XIAO y utiliza luz cálida no direccionable. Cuando se igualan auxiliares y base de ensayo, B1 alcanza CLP 28.073 más el conversor lógico y B2 CLP 26.655 más partidas pendientes. Estas cifras son desembolsos incompletos, no costos de producción. El montaje de 12 V permanece como respaldo.
 
 No se han comprado componentes, compilado el firmware, construido el montaje ni ejecutado la ficha técnica. Antes de reclutar deben completarse esas acciones, incorporar el contacto del responsable al consentimiento y obtener revisión académica. La eliminación de fichas está fijada a más tardar para el 13 de enero de 2027. Ningún instrumento contiene resultados.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-08-30 — Comparación B1/B2 anterior a la compra.** Antes, el resumen presentaba el montaje cableado de 12 V y CLP 28.130 como única arquitectura preparada. Ahora distingue dos variantes de 5 V, explicita que el ahorro no está demostrado y conserva 12 V como respaldo. La definición de Relevo y la memoria v4 no cambiaron; siguen pendientes revisión, compra, construcción y resultados.
 
 **2026-08-30 — Fecha máxima de eliminación.** Antes, el resumen mantenía contacto y fecha como campos administrativos abiertos. Ahora la eliminación de fichas está fijada para el 13 de enero de 2027; el correo del responsable y la revisión académica siguen pendientes. No se reclutaron participantes ni se generaron datos.
 
