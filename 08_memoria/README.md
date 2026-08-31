@@ -30,6 +30,17 @@ Los siguientes archivos conservan decisiones y diagnósticos que ayudaron a cons
 - [Dictamen histórico de reconstrucción](dictamen-rector-reconstruccion-memoria.md): criterio que gobernó la construcción de la v2; sustituido por la v4 y su auditoría activa.
 - [`borradores-v2`](borradores-v2/): siete módulos fuente para trazabilidad; no deben leerse como siete memorias separadas.
 
+### Auditorías internas del 24 de agosto
+
+Estas seis auditorías describen el estado anterior a la memoria v4 y a los cierres documentales posteriores. Conservan preguntas, riesgos y antecedentes de decisión, pero sus diagnósticos de ausencia o prioridad no gobiernan el proyecto actual.
+
+- [Auditoría 01 — arquitectura narrativa](auditoria-agente-01-arquitectura.md): revisión de tesis, secuencia y dependencias sobre una memoria anterior.
+- [Auditoría 02 — problema y teoría](auditoria-agente-02-problema-teoria.md): control histórico de relevancia, conceptos y aporte disciplinar.
+- [Auditoría 03 — método y usuarios](auditoria-agente-03-metodo-usuarios.md): examen previo de procedencia, límites del corpus y tipos de usuario.
+- [Auditoría 04 — mercado](auditoria-agente-04-mercado.md): antecedente que impulsó el estudio autónomo y la reformulación prudente de la propuesta de valor.
+- [Auditoría 05 — sistema y factibilidad](auditoria-agente-05-sistema-factibilidad.md): diagnóstico anterior a los esquemas B1/B2 y a la compra escalonada.
+- [Auditoría 06 — validación y edición](auditoria-agente-06-validacion-editorial.md): revisión previa al Protocolo 01, sus fichas y la auditoría editorial v4.
+
 ## Arquitectura narrativa vigente
 
 0. Identificación académica, resumen, abstract e índice.
@@ -64,6 +75,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Auditorías internas clasificadas
+
+- **Cambio:** se incorporaron las seis auditorías del 24 de agosto al bloque histórico con alcance individual.
+- **Versión anterior:** los archivos estaban rastreados en `08_memoria`, pero no figuraban entre los documentos activos ni los antecedentes.
+- **Motivo:** impedir que diagnósticos anteriores a la v4, el estudio de mercado y los esquemas B1/B2 se interpreten como estado vigente.
+- **Alcance:** no se modificó el contenido de las auditorías ni se reactivaron sus recomendaciones superadas.
 
 ### 2026-08-30 — Cabos sueltos reconciliados
 
