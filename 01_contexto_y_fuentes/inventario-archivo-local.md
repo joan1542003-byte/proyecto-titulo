@@ -1,10 +1,14 @@
 # Inventario del archivo local
 
+**Fecha de corte del levantamiento:** 23 de agosto de 2026
+
+**Uso vigente:** fotografía archivística; el estado posterior se consulta en la tabla de actualización y en los documentos canónicos enlazados.
+
 ## Propósito
 
 Registrar qué materiales existen, cómo se relacionan y qué riesgos presentan antes de reorganizar el archivo físico o trasladar información a GitHub.
 
-Este inventario es descriptivo. No establece por sí solo qué versión es verdadera, vigente o definitiva.
+Este inventario es descriptivo. No establece por sí solo qué versión es verdadera, vigente o definitiva. Los conteos y vacíos corresponden al corte indicado y no deben leerse como un diagnóstico actual sin revisar la actualización posterior.
 
 ## Alcance y método
 
@@ -29,6 +33,18 @@ Las fechas de modificación pueden corresponder a copia o sincronización, no a 
 | `tmp` del nivel raíz | 718 archivos y 51 subcarpetas | Renders, imágenes, extracciones y temporales |
 | `bibliografia` | 9 archivos | Fuentes por revisar en profundidad |
 | `fuentes usadas` | 1 archivo | Fuente ya utilizada, pendiente de ficha |
+
+## Estado posterior al corte
+
+| Área | Estado al 30 de agosto de 2026 | Documento canónico |
+| --- | --- | --- |
+| Memoria | La v4 es la única memoria académica activa; las anteriores conservan trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) e [índice de memoria](../08_memoria/README.md) |
+| Usuarios | Corpus, códigos, comparación, U1/U2, perfiles, recorridos y requisitos están completados provisionalmente y abiertos a nueva evidencia. | [Índice de usuarios](../03_usuarios/README.md) |
+| Mercado | Existe un estudio exploratorio autónomo, fichas y registro de búsqueda con corte del 24 de agosto. No prueba novedad universal ni disposición de pago. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
+| Desarrollo y costos | B1 y B2 tienen esquemas revisables y desembolsos parciales; faltan inventario, revisión, compra, medición y costos de producción. | [Desarrollo y factibilidad](../06_desarrollo_y_factibilidad/README.md) |
+| Validación | El Protocolo 01, consentimiento y fichas están preparados, pero no existen participantes ni resultados. | [Índice de validación](../07_validacion/README.md) |
+| Sistema visual | Existe una dirección documentada y un sistema oscuro v4 en desarrollo. Las exploraciones no fijan por sí solas la forma final del producto. | [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
+| Gobernanza | La ruta crítica se gestiona mediante hoja de ruta, plan de cierre e Issues #8–#10. | [Hoja de ruta](../00_gobernanza/hoja-de-ruta.md) |
 
 ## Carpeta Fin semestre 1
 
@@ -71,7 +87,7 @@ Existe una cadena extensa de borradores y entregas de In(Visible), seguida por l
 
 ### Relevo y producción de agosto
 
-`Fin semestre 1` y `SEMESTRE 2/output` documentan el paso a Relevo, el testigo situado sin pantalla, la arquitectura técnica, el storyboard, la validación propuesta y múltiples versiones de mapas de usuario, flujos funcionales y flujos técnicos.
+`Fin semestre 1` y `SEMESTRE 2/output` documentan el paso a Relevo, el testigo físico situado, la arquitectura técnica, el storyboard, la validación propuesta y múltiples versiones de mapas de usuario, flujos funcionales y flujos técnicos.
 
 ## Cronología provisional
 
@@ -142,11 +158,11 @@ No deben subirse sin revisión y anonimización:
 - scripts con rutas, nombres, credenciales o datos locales;
 - memorias que incluyan citas o contexto identificable.
 
-## Vacíos detectados
+## Vacíos detectados al corte y estado posterior
 
 ### Versión maestra
 
-No existe todavía una declaración inequívoca de la memoria vigente del segundo semestre. El cierre del primero sí quedó identificado y se relacionó con In(Visible), el feedback E15 y las tres ramas de agosto.
+Al corte no existía una declaración inequívoca de la memoria vigente del segundo semestre. Este vacío quedó resuelto: `08_memoria/memoria-vigente-v4.md` gobierna la redacción académica y las versiones anteriores están clasificadas como antecedentes.
 
 ### Resultado del Pase
 
@@ -158,17 +174,19 @@ La transcripción digital consolidada está disponible. Las notas manuscritas ya
 
 ### Mercado
 
-No se encontró un estudio autónomo y actualizado del mercado. Hay referentes dispersos, una auditoría bibliográfica y referencias incluidas en memorias.
+Al corte no se encontró un estudio autónomo y actualizado del mercado. El 24 de agosto se incorporaron un estudio exploratorio, fichas y registro metodológico. Su fecha sigue siendo necesaria porque disponibilidad, funciones y precios pueden cambiar.
 
 ### Producción y costos
 
-No se encontró un expediente independiente con lista de materiales, componentes, cotizaciones, proveedores, costo unitario o escenarios de fabricación.
+Al corte no se encontró un expediente independiente. Actualmente existen alternativas de arquitectura, esquemas y listas de compra del prototipo, pero no una cotización de producción, un costo unitario cerrado ni escenarios de fabricación validados. El vacío se redujo, no se cerró.
 
 ### Validación
 
-Existen planes, láminas y documentos de control de calidad, pero no un expediente autónomo con protocolos aplicados, datos primarios y resultados de participantes.
+Actualmente existe un expediente autónomo con protocolo, consentimiento y fichas sin datos. Sigue sin haber protocolos aplicados, datos primarios ni resultados de participantes; esa ausencia no puede resolverse mediante documentación.
 
-## Decisiones derivadas
+## Decisiones derivadas en el corte
+
+Estas decisiones explican la organización iniciada el 23 de agosto. No sustituyen la hoja de ruta ni las decisiones posteriores.
 
 - Mantener todo el archivo local intacto hasta normalizar versiones.
 - Tratar `SEMESTRE 2/output` como conjunto de entregables derivados, no como base empírica.
@@ -189,6 +207,13 @@ Existen planes, láminas y documentos de control de calidad, pero no un expedien
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Inventario fechado y reconciliado
+
+- **Cambio:** se fijó el corte del 23 de agosto, se añadió el estado posterior por área y se actualizaron los vacíos de memoria, mercado, desarrollo y validación sin borrar la fotografía original.
+- **Versión anterior:** afirmaciones históricas de ausencia podían interpretarse como estado vigente pese a la incorporación posterior de la v4, usuarios, mercado, factibilidad y protocolos.
+- **Motivo:** conservar el valor archivístico del levantamiento y evitar que gobierne decisiones actuales por desactualización.
+- **Alcance:** no se repitió la enumeración local, no se alteraron archivos fuente y siguen abiertos resultados de pruebas, costos productivos y normalización histórica.
 
 ### 2026-08-23 — Estado real del corpus
 

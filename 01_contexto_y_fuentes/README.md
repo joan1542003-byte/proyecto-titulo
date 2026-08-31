@@ -5,7 +5,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 ## Documentos
 
 - [Inventario de fuentes](inventario-de-fuentes.md): identifica cada fuente, su función, nivel y relación con otras versiones.
-- [Inventario del archivo local](inventario-archivo-local.md): registra materiales encontrados en las carpetas del proyecto.
+- [Inventario del archivo local](inventario-archivo-local.md): fotografía archivística con corte del 23 de agosto y tabla de reconciliación con el estado vigente.
 - [Biblioteca de diseño](biblioteca_diseno/README.md): conserva cuatro obras aportadas para consulta académica interna, documenta su cobertura y reúne resúmenes críticos aplicados a Relevo.
 - [Declaración de procedencia de entrevistas](declaracion-procedencia-entrevistas.md): fija las condiciones confirmadas del levantamiento.
 - [Auditoría metodológica](auditoria-metodologica.md): determina qué puede afirmarse y con qué cautelas.
@@ -44,6 +44,13 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Inventario local fechado
+
+- **Cambio:** el índice identifica el inventario como fotografía archivística y no como diagnóstico operativo permanente.
+- **Versión anterior:** la descripción no advertía que varios vacíos habían sido resueltos después del levantamiento.
+- **Motivo:** dirigir nuevas revisiones hacia los documentos canónicos actuales sin perder el mapa del archivo local.
+- **Alcance:** no se modificó la procedencia de las fuentes.
 
 ### 2026-08-29 — Biblioteca de diseño enlazada
 
