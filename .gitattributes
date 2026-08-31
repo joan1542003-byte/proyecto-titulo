@@ -1,0 +1,6 @@
+10_recursos_visuales/07_coleccion_expandida_4k/**/*.png filter=lfs diff=lfs merge=lfs -text
+10_recursos_visuales/09_archivo_generaciones_completo/**/*.png filter=lfs diff=lfs merge=lfs -text
+10_recursos_visuales/10_tipografias/**/*.ttf filter=lfs diff=lfs merge=lfs -text
+10_recursos_visuales/10_tipografias/**/*.woff2 filter=lfs diff=lfs merge=lfs -text
+10_recursos_visuales/10_tipografias/**/*.zip filter=lfs diff=lfs merge=lfs -text
+10_recursos_visuales/06_graficos_4k/**/*.png filter=lfs diff=lfs merge=lfs -text

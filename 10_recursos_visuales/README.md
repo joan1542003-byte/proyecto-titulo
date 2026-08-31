@@ -32,6 +32,11 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `03_transparentes` | Objetos, símbolos, halos y elementos compositivos sin fondo. |
 | `04_variantes_color` | Recoloraciones y alternativas cromáticas de la misma línea. |
 | `05_contactos` | Hojas de contacto para comparar familias visuales. |
+| `06_graficos_4k` | Segunda exploración: matriz de puntos, formas modulares, paneles y composiciones 4K sin objeto obligatorio. |
+| `07_coleccion_expandida_4k` | Colección amplia de 23 piezas únicas: editoriales, patrones, diagramas, materia, overlays transparentes y formatos verticales/cuadrados. |
+| `08_direccion_visual_relevo` | Desarrollo documentado del sistema, selección vigente, aplicaciones, interfaz, reglas y decisiones. |
+| `09_archivo_generaciones_completo` | Archivo de 192 generaciones únicas recuperadas; conserva el proceso, pero no define vigencia. |
+| `10_tipografias` | IBM Plex Sans y Mono en formatos instalables y web, con paquetes y licencias oficiales. |
 
 ## Paleta inicial
 
@@ -49,9 +54,30 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 
 Las imágenes adjuntas por el autor se usan como referencias de estilo, atmósfera y tratamiento gráfico. Las instrucciones del repositorio se consideran contexto de proyecto; la petición actual —crear un sistema visual amplio para Relevo— gobierna el alcance de esta carpeta. Ningún recurso visual debe leerse como evidencia de usuarios ni como resultado de validación.
 
+La segunda exploración incorpora una gramática de puntos redondos, barras, órbitas, trazas y módulos de alto contraste inspirada en referencias de tipografía modular y dispositivos minimalistas. Se usa como investigación formal, no como reproducción de una marca existente ni como identidad cerrada de Relevo.
+
 ## Registro de cambios
 
 ### 2026-08-25 — Creación
 
 - Se creó la primera dirección visual y la estructura de carpetas para una colección de escenas, texturas, transparentes y variantes.
 - Se dejó explícito el carácter exploratorio de la forma del testigo y la separación entre recursos gráficos, evidencia y decisiones validadas.
+
+### 2026-08-25 — Segunda exploración modular
+
+- Se añadió `06_graficos_4k` con composiciones sin objeto, módulos transparentes y paneles cromáticos basados en matrices de puntos, órbitas, barras y trazas de pulso.
+- Los recursos se mantienen como exploración formal; no fijan la forma del testigo ni sustituyen la validación P0–P4.
+
+### 2026-08-25 — Colección expandida 4K
+
+- Se añadió `07_coleccion_expandida_4k` con 23 piezas únicas y una hoja de contacto.
+- La colección abre el lenguaje hacia poster editorial, patrón, blueprint, materialidad, constelación nocturna, collage, diagramas abstractos y módulos con transparencia real.
+- La forma del objeto aparece solo cuando aporta contexto; la mayoría de las piezas trabajan con señal, vacío, ruta, densidad y relación espacial.
+
+### 2026-08-31 — Recuperación multimedia y tipográfica
+
+- Se añadió `09_archivo_generaciones_completo` con 192 imágenes únicas que no estaban presentes en las colecciones del repositorio.
+- Se añadió `10_tipografias` con IBM Plex Sans Variable e IBM Plex Mono Variable en TTF y WOFF2, además de sus paquetes y licencias oficiales.
+- Se distinguió explícitamente entre archivo completo, exploración y sistema vigente para evitar que la conservación del proceso se interprete como aprobación de todas las piezas.
+- **Versión anterior:** el índice principal solo describía las colecciones 01–07 y dejaba fuera tanto el desarrollo vigente de `08_direccion_visual_relevo` como parte importante de las generaciones recientes.
+- **Motivo:** asegurar que los recursos útiles y las dependencias tipográficas permanezcan accesibles, ordenados y trazables.
