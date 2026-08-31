@@ -51,7 +51,7 @@ La actividad digital responde a un propósito o se acepta como descanso. Puede s
 | 3. Continuidad aceptada | La actividad puede extenderse o repetirse sin que aparezca conflicto suficiente. | P6 acepta la duración de la videollamada; P8 considera Instagram un descanso porque estaba al día. | Extensión y recuerdo rutinario no justifican una intervención. | P6, Q3–Q7; P8, Q3–Q10. | Permanecer inactivo puede ser el comportamiento correcto. |
 | 4. Valoración | La persona reconoce descanso, satisfacción, vínculo o neutralidad legítima. | P1 se declara satisfecha; P4 descansada; P6 desea repetir; P7 considera válido el episodio. | El ocio no necesita demostrar productividad para ser aceptable. | P1, Q3–Q7; P4, Q3–Q7; P6, Q3–Q10; P7, Q3–Q10. | Evitar notas, rachas, comparaciones y mensajes moralizantes. |
 | 5. Cierre | La actividad termina sin una necesidad declarada de corrección. | P6 conserva nostalgia y entusiasmo; P7 no reconoce laguna ni obligación pendiente. | Reducir confianza o autonomía sería un riesgo hipotético de una ayuda innecesaria; no es un resultado observado. | P6, Q5–Q10; P7, Q5–Q11. | No intervenir si no existe una intención alternativa configurada. |
-| 6. Gestión selectiva | En otras actividades, la misma persona puede guardar o silenciar el teléfono. | P6 reduce interferencias cuando lee o arma; P7 lo guarda durante deporte; P8 lo silencia cuando tiene tareas. | El perfil cambia según la situación, no según la identidad. | P6–P8, Q12–Q13. | Permitir activar apoyo solo cuando la persona lo considera pertinente. |
+| 6. Gestión selectiva | En otras actividades, algunas personas guardan o silencian el teléfono; también pueden reconocer interferencias sin declarar una estrategia. | P6 informa que el sonido cercano le molesta cuando lee o arma; P7 guarda el teléfono durante deporte; P8 lo silencia cuando tiene tareas. | El perfil cambia según la situación, no según la identidad. La molestia no demuestra una acción de separación. | P6–P8, Q12–Q13. | Permitir activar apoyo solo cuando la persona lo considera pertinente. |
 
 ### Variaciones y contraejemplos
 
@@ -101,6 +101,13 @@ La siguiente secuencia no proviene de una prueba con participantes. Traduce la m
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Gestión selectiva de P6 corregida
+
+- **Cambio:** el recorrido diferencia la molestia reportada por P6 de las acciones de guardar o silenciar declaradas por P7 y P8.
+- **Versión anterior:** la sexta etapa afirmaba que P6 reducía interferencias al leer o armar.
+- **Motivo:** no transformar una respuesta sobre el sonido cercano en una conducta que la entrevista no documentó.
+- **Alcance:** la etapa continúa mostrando variación situacional, pero no atribuye eficacia ni estrategia a P6.
 
 ### 2026-08-30 — Creación de recorridos situacionales
 

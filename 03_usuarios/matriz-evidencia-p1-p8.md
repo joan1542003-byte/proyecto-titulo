@@ -28,7 +28,7 @@ Las expresiones breve, claro, positivo o ambivalente describen el material del c
 | P3 | Valora actividades que aportan crecimiento o plenitud | Alejar el teléfono y activar no molestar | Si está cerca, vuelve a tomarlo | Considera útil una señal tranquila | No calificar como fracaso toda pausa frente a obligaciones |
 | P4 | Jerarquiza caminar, ejercicio y aprendizaje | Dejarlo en casa, silenciarlo o borrar TikTok temporalmente | Las medidas son situacionales | Curiosidad, especialmente para TikTok; pide calma | No intervenir en sudoku u otra actividad digital dirigida |
 | P5 | Equipara tiempo bien gastado con ordenar, limpiar, aprender o ejercitarse | Dejarlo a un lado o cargando | Vuelve a mirarlo | Anticipa dificultad inicial; prefiere una señal visual | No reforzar culpa ni productividad como regla |
-| P6 | Valora novedad, concentración y ausencia de preocupaciones | Reducir sonido o presencia cuando lee o arma | Sin evidencia suficiente de fracaso sistemático | Lo usaría para navegación automática | No intervenir en videollamadas significativas ni otros usos elegidos |
+| P6 | Valora novedad, concentración y ausencia de preocupaciones | No se registró una estrategia; el sonido del teléfono cercano le molesta cuando lee o arma | Sin evidencia suficiente de fracaso sistemático | Lo usaría para navegación automática | No intervenir en videollamadas significativas ni otros usos elegidos |
 | P7 | Defiende la autonomía del ocio, con matices de salud y convivencia | Guardarlo durante deporte; dejarlo fuera o activar no molestar en casa | No es una rutina fija | Lo probaría, pero no lo necesita a diario; exige discreción y ausencia de notas o comparaciones | El episodio narrado ya es coherente con su intención |
 | P8 | Rechaza jerarquía universal y considera las restricciones de tiempo | Silenciar o guardar cuando tiene tareas | El hábito de abrir Instagram puede reaparecer | Le resultaría extraño al principio; prefiere imagen o luz | No intervenir cuando está al día y elige descansar en Instagram |
 
@@ -95,6 +95,13 @@ La decisión definitiva y sus implicancias se desarrollan en un documento separa
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Q12 de P6 acotada a la respuesta registrada
+
+- **Cambio:** se reemplazó una estrategia atribuida a P6 por el dato disponible: molestia ante el sonido cercano durante lectura o armado.
+- **Versión anterior:** la matriz afirmaba que P6 reducía sonido o presencia, conducta que no aparece en Q12.
+- **Motivo:** distinguir una interferencia percibida de una acción concreta de separación o silenciamiento.
+- **Alcance:** no cambia la pertinencia situacional de P6 ni se infiere qué hace frente a esa molestia.
 
 ### 2026-08-23 — Creación de la matriz
 

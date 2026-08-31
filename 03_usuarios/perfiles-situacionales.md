@@ -75,7 +75,7 @@ Este perfil aparece cuando la actividad digital coincide con la intención de la
 | Indicadores del perfil | Propósito reconocible, ausencia de una intención competidora, valoración aceptada o concentración en una actividad concreta. | Manga de P1 (Q3–Q5), sudoku de P4 (Q3–Q7), videollamada de P6 (Q3–Q7), pódcast de P7 (Q3–Q7). | Alta |
 | Tensión principal | Una regla basada en tiempo o aplicación puede interrumpir una experiencia legítima, incluso cuando es extensa o difícil de resumir. | P6 presenta una sesión extensa y valiosa (Q3–Q7); P8 presenta recuerdo rutinario sin malestar (Q3–Q10). | Alta |
 | Puntos de dolor ante una intervención | Interrupción injustificada, sensación de vigilancia, comparación del descanso, paternalismo y pérdida de confianza en el sistema. Son riesgos inferidos; las personas no utilizaron Relevo. | P6 y P7 delimitan uso selectivo y discreción (Q12–Q13); P7 rechaza notas y comparaciones (Q13). | Media; debe comprobarse con prototipos |
-| Estrategias actuales | Puede separar o silenciar el teléfono en actividades concretas, aunque el episodio elegido no necesite corrección. | P6 reduce interferencias al leer o armar (Q12); P7 guarda el teléfono durante deporte o activa no molestar (Q12); P8 lo guarda cuando tiene tareas (Q12). | Alta como práctica declarada |
+| Estrategias actuales | Algunas personas separan o silencian el teléfono en actividades concretas, aunque el episodio elegido no necesite corrección. P6 solo permite reconocer una molestia, no una estrategia. | P6 declara que el sonido cercano le molesta al leer o armar (Q12); P7 guarda el teléfono durante deporte o activa no molestar (Q12); P8 lo guarda cuando tiene tareas (Q12). | Alta para las prácticas de P7–P8; insuficiente para atribuir una acción a P6 |
 | Deseos y criterios de valor | Disfrutar el tiempo libre, sostener relaciones o concentración y recibir apoyo solo cuando se configura voluntariamente. | P6, Q3–Q10 y Q13; P7, Q3–Q13; P8, Q3–Q13. | Alta para autonomía; media para modalidad de apoyo |
 | Límite de intervención | Sin intención alternativa explícita, el sistema carece de contenido legítimo que recuperar. Una señal debe poder omitirse, descartarse o no activarse. | Contraste P2/P3 frente a P6/P7/P8; P6–P8, Q13. | Alta como criterio; interacción específica pendiente |
 | Contradicción interna | La misma persona puede necesitar apoyo en otro episodio. Un límite actual no permite clasificarla permanentemente fuera del proyecto. | P4 contrasta sudoku y TikTok (Q3–Q13); P6 contrasta videollamada y redes rutinarias (Q3–Q13); P8 cambia cuando tiene tareas (Q12). | Alta |
@@ -131,6 +131,13 @@ La evidencia disponible no permite asignar a los perfiles:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Estrategia de P6 corregida
+
+- **Cambio:** la ficha distingue la molestia declarada por P6 de las acciones concretas informadas por P7 y P8.
+- **Versión anterior:** P6 aparecía reduciendo interferencias, aunque Q12 no registra separación, silenciamiento ni otra conducta.
+- **Motivo:** conservar la trazabilidad del perfil y evitar convertir una experiencia en una práctica no declarada.
+- **Alcance:** U2 se mantiene; la corrección reduce la confianza de esa atribución particular, no la del patrón de no intervención.
 
 ### 2026-08-30 — Creación de las fichas situacionales
 
