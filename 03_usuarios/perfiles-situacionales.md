@@ -68,15 +68,15 @@ Este perfil aparece cuando la actividad digital coincide con la intención de la
 
 | Dimensión | Descripción respaldada | Evidencia principal | Confianza |
 | --- | --- | --- | --- |
-| Tipo analítico | Configuración límite que define cuándo una intervención sería innecesaria o contraproducente. No representa un usuario secundario. | P6 excluye la videollamada de una posible intervención (Q3–Q13); P7 no reconoce necesidad de corrección en el episodio descrito (Q3–Q13). | Alta |
+| Tipo analítico | Configuración límite que define cuándo una intervención sería innecesaria o contraproducente. No representa un usuario secundario. | P6 describe la videollamada como elegida y significativa y reserva el uso hipotético del objeto para la navegación automática (Q3–Q13); P7 no reconoce necesidad de corrección en el episodio descrito (Q3–Q13). | Alta |
 | Situación pertinente | La actividad digital es elegida o aceptada, conserva valor y no coincide con una intención alternativa que la persona quiera recuperar. | P6, Q3–Q7; P7, Q3–Q10; P8, Q3–Q10. | Alta |
 | Objetivo de la persona | Mantener una experiencia de descanso, vínculo, concentración o entretenimiento sin que sea reinterpretada desde una norma externa. | P6 valora la conversación y el vínculo (Q3–Q7); P7 defiende la autonomía del tiempo libre (Q8–Q11). | Alta |
-| Necesidad central | Conservar autoridad para decidir si la actividad actual merece continuidad y si una ayuda resulta pertinente. | P6, Q12–Q13; P7, Q8–Q13; P8, Q8–Q13. | Alta |
+| Necesidad central | Implicación de diseño: conservar autoridad para decidir si la actividad actual merece continuidad y si una ayuda resulta pertinente. | Derivación analítica del contraste entre P6–P8, Q8–Q13; las personas no formularon esta necesidad con esas palabras. | Hipótesis de diseño |
 | Indicadores del perfil | Propósito reconocible, ausencia de una intención competidora, valoración aceptada o concentración en una actividad concreta. | Manga de P1 (Q3–Q5), sudoku de P4 (Q3–Q7), videollamada de P6 (Q3–Q7), pódcast de P7 (Q3–Q7). | Alta |
 | Tensión principal | Una regla basada en tiempo o aplicación puede interrumpir una experiencia legítima, incluso cuando es extensa o difícil de resumir. | P6 presenta una sesión extensa y valiosa (Q3–Q7); P8 presenta recuerdo rutinario sin malestar (Q3–Q10). | Alta |
-| Puntos de dolor ante una intervención | Interrupción injustificada, sensación de vigilancia, comparación del descanso, paternalismo y pérdida de confianza en el sistema. Son riesgos inferidos; las personas no utilizaron Relevo. | P6 y P7 delimitan uso selectivo y discreción (Q12–Q13); P7 rechaza notas y comparaciones (Q13). | Media; debe comprobarse con prototipos |
+| Puntos de dolor ante una intervención | Interrupción injustificada, sensación de vigilancia, comparación del descanso, paternalismo y pérdida de confianza en el sistema. Son riesgos inferidos; las personas no utilizaron Relevo. | P6 distingue videollamada significativa y navegación automática; P7 rechaza notas y comparaciones (Q12–Q13). | Media; debe comprobarse con prototipos |
 | Estrategias actuales | Algunas personas separan o silencian el teléfono en actividades concretas, aunque el episodio elegido no necesite corrección. P6 solo permite reconocer una molestia, no una estrategia. | P6 declara que el sonido cercano le molesta al leer o armar (Q12); P7 guarda el teléfono durante deporte o activa no molestar (Q12); P8 lo guarda cuando tiene tareas (Q12). | Alta para las prácticas de P7–P8; insuficiente para atribuir una acción a P6 |
-| Deseos y criterios de valor | Disfrutar el tiempo libre, sostener relaciones o concentración y recibir apoyo solo cuando se configura voluntariamente. | P6, Q3–Q10 y Q13; P7, Q3–Q13; P8, Q3–Q13. | Alta para autonomía; media para modalidad de apoyo |
+| Deseos y criterios de valor | Disfrutar el tiempo libre y sostener relaciones o concentración. Como síntesis de diseño, el apoyo debería aparecer solo en situaciones elegidas por la persona. | P6, Q3–Q10 y Q13; P7, Q3–Q13; P8, Q3–Q13. La configuración voluntaria es una derivación, no una frase declarada. | Alta para el valor del ocio; media como hipótesis de apoyo |
 | Límite de intervención | Sin intención alternativa explícita, el sistema carece de contenido legítimo que recuperar. Una señal debe poder omitirse, descartarse o no activarse. | Contraste P2/P3 frente a P6/P7/P8; P6–P8, Q13. | Alta como criterio; interacción específica pendiente |
 | Contradicción interna | La misma persona puede necesitar apoyo en otro episodio. Un límite actual no permite clasificarla permanentemente fuera del proyecto. | P4 contrasta sudoku y TikTok (Q3–Q13); P6 contrasta videollamada y redes rutinarias (Q3–Q13); P8 cambia cuando tiene tareas (Q12). | Alta |
 | Implicación para Relevo | El sistema debe permanecer inactivo cuando no existe una intención configurada y permitir continuar sin sanción después de la señal. | Derivación del patrón U2 y de las respuestas Q13. | Hipótesis de diseño |
@@ -138,6 +138,13 @@ La evidencia disponible no permite asignar a los perfiles:
 - **Versión anterior:** P6 aparecía reduciendo interferencias, aunque Q12 no registra separación, silenciamiento ni otra conducta.
 - **Motivo:** conservar la trazabilidad del perfil y evitar convertir una experiencia en una práctica no declarada.
 - **Alcance:** U2 se mantiene; la corrección reduce la confianza de esa atribución particular, no la del patrón de no intervención.
+
+### 2026-08-30 — Inferencias de P6 reetiquetadas
+
+- **Cambio:** se sustituyó la exclusión literal de la videollamada y se identificaron autoridad, configuración voluntaria y puntos de dolor como derivaciones de diseño.
+- **Versión anterior:** algunas síntesis podían leerse como necesidades o preferencias formuladas directamente por P6.
+- **Motivo:** diferenciar respuesta registrada, interpretación analítica e hipótesis proyectual.
+- **Alcance:** no cambia U2 ni la decisión de no intervenir sin una intención alternativa.
 
 ### 2026-08-30 — Creación de las fichas situacionales
 

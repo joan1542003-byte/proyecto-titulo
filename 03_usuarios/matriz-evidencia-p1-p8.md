@@ -43,7 +43,7 @@ La siguiente tabla no mide intensidad. Solo indica si existe evidencia explícit
 | P3 | Sí | Sí | Sí | Sí | Parcial: cumple función de pausa | Sí | Sí: no negar el descanso |
 | P4 | Sí, en TikTok | No en sudoku | Sí, en TikTok | No en sudoku | Sí, sudoku | Posible | Sí, actividad específica |
 | P5 | Sí | Posible, no explícita | Sí | Sí | Parcial: entretenimiento inmediato | Sí | Sí: no reforzar culpa |
-| P6 | Sí, en usos generales | Posible en otros episodios | Sí, en uso rutinario | No en videollamada | Sí, videollamada | Sin dato suficiente | Sí, formulado por P6 |
+| P6 | Sí, en usos generales | No documentada; su posibilidad en otro episodio es una hipótesis | Sí, en uso rutinario | No en videollamada | Sí, videollamada | Sin dato suficiente | Sí, formulado por P6 |
 | P7 | No en el episodio | No | No | No | Sí | Estrategia no rutinaria, sin problema declarado | Sí, formulado por P7 |
 | P8 | Sí | No en el episodio | Sí | No | Sí, según su propia valoración | Posible | Sí, obligaciones cumplidas |
 
@@ -67,7 +67,7 @@ Alejar, guardar, cargar, silenciar, activar no molestar o borrar una aplicación
 
 ### 5. El objeto solo es aceptable si conserva autonomía
 
-La preferencia transversal es una señal simple, tranquila, visual y discreta. Se rechazan castigo, nota, comparación y uso obligatorio. P6 y P7 exigen una intervención selectiva; P5 y P8 anticipan fricción inicial.
+La preferencia transversal es una señal simple, tranquila, visual y discreta. Se rechazan castigo, nota, comparación y uso obligatorio. Los contrastes de P6 y P7 sugieren una intervención selectiva; P5 y P8 anticipan fricción inicial.
 
 ## Casos óptimos provisionales
 
@@ -102,6 +102,13 @@ La decisión definitiva y sus implicancias se desarrollan en un documento separa
 - **Versión anterior:** la matriz afirmaba que P6 reducía sonido o presencia, conducta que no aparece en Q12.
 - **Motivo:** distinguir una interferencia percibida de una acción concreta de separación o silenciamiento.
 - **Alcance:** no cambia la pertinencia situacional de P6 ni se infiere qué hace frente a esa molestia.
+
+### 2026-08-30 — Hipótesis de P6 diferenciada de evidencia
+
+- **Cambio:** la intención desplazada dejó de aparecer como posibilidad empírica y la intervención selectiva se formuló como inferencia del contraste.
+- **Versión anterior:** la tabla podía sugerir que P6 había descrito una intención alternativa concreta en otro episodio.
+- **Motivo:** Q13 identifica una situación hipotética de uso, pero no documenta intención, desplazamiento ni experiencia con Relevo.
+- **Alcance:** P6 continúa aportando variación situacional y un límite de no intervención.
 
 ### 2026-08-23 — Creación de la matriz
 

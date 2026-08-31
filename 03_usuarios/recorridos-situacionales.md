@@ -85,7 +85,7 @@ La siguiente secuencia no proviene de una prueba con participantes. Traduce la m
 | Alejar el teléfono es una estrategia existente, pero puede ser frágil. | Situar el objeto junto al primer paso, sin exigir depositar siempre el teléfono. | Añadir carga física sin aportar recuperación de la intención. |
 | Descanso y conflicto pueden coexistir. | Señal reversible y decisión posterior libre. | Convertir la señal en juicio sobre el ocio. |
 | Duración y aplicación no distinguen U1 de U2. | Intención explícita antes del ciclo. | Inferir pertinencia desde datos técnicos insuficientes. |
-| P6–P8 exigen intervención selectiva. | No actuar sin ciclo vigente; permitir ignorar o detener. | Interrumpir experiencias legítimas y perder confianza. |
+| Los contrastes de P6–P8 fundamentan un criterio de intervención selectiva. | No actuar sin ciclo vigente; permitir ignorar o detener. | Interrumpir experiencias legítimas y perder confianza. |
 
 ## Afirmaciones que este documento no autoriza
 

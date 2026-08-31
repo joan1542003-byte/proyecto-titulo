@@ -125,7 +125,7 @@ El episodio puede ser largo, cotidiano, emocionalmente neutro o incluso difícil
 
 ### Evidencia central
 
-- **P6:** la videollamada prolongada es relacional, memorable y deseada; la persona excluye ese uso de una posible intervención.
+- **P6:** la videollamada prolongada es relacional, memorable y deseada; en Q13 reserva el uso hipotético del objeto para momentos de navegación automática.
 - **P7:** el podcast en YouTube es una actividad elegida, recordada y legítima porque no hay obligaciones pendientes; no experimenta lagunas.
 
 ### Evidencia complementaria
@@ -220,6 +220,13 @@ La tipología deberá revisarse si nuevas entrevistas muestran que:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — Contraste de P6 formulado sin exclusión literal
+
+- **Cambio:** la evidencia central relaciona la videollamada significativa con la situación hipotética de uso indicada en Q13.
+- **Versión anterior:** se afirmaba que P6 había excluido explícitamente la videollamada de una intervención.
+- **Motivo:** conservar el contraste sin atribuir una frase o decisión que no aparece en el corpus.
+- **Alcance:** la elección de usuario principal más usuario límite permanece vigente.
 
 ### 2026-08-30 — Perfiles situacionales y preguntas de validación
 

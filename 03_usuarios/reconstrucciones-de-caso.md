@@ -156,7 +156,7 @@ P6 combina juegos, lectura, videollamadas, vida familiar, música, maquetas y su
 
 También reconoce que algunas horas rutinarias en redes sociales o escuchando música en la cama pueden sentirse desaprovechadas. Para valorar el ocio necesita dejar de pensar en trabajo y estudios y concentrarse en lo que hace (Q8–Q10).
 
-Cuando lee o arma maquetas, el sonido del teléfono interfiere. Usaría el objeto en momentos de navegación automática, no para una videollamada significativa (Q12–Q13).
+Cuando lee o arma maquetas, el sonido del teléfono cercano le resulta molesto. En Q13 reserva el uso hipotético del objeto para momentos de navegación automática (Q12–Q13).
 
 ### Interpretación
 
@@ -244,6 +244,13 @@ Esta síntesis no constituye todavía la decisión sobre los dos tipos.
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-08-30 — P6 acotada a Q12–Q13
+
+- **Cambio:** se reemplazó “interfiere” por la molestia declarada y se retiró la exclusión literal de la videollamada.
+- **Versión anterior:** la reconstrucción convertía el contraste analítico en una decisión expresada directamente por P6.
+- **Motivo:** mantener separadas respuesta, interpretación y tipología.
+- **Alcance:** la videollamada sigue funcionando como caso límite y Q13 como apertura condicional a otro patrón.
 
 ### 2026-08-23 — Creación
 
