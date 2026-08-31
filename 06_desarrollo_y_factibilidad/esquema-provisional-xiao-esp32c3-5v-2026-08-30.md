@@ -25,7 +25,7 @@ La selección de una placa documentada corrige la ambigüedad de la ESP32-C3 Sup
 
 ```mermaid
 flowchart LR
-    A["Fuente cerrada de 5 V y 2 A"] --> B["Distribución protegida de 5 V"]
+    A["Fuente cerrada de 5 V y 3 A"] --> B["Jack y distribución protegida de 5 V"]
     B --> C["XIAO ESP32-C3"]
     B --> D["Anillo WS2812 de 12 LED"]
     C --> E["Conversor lógico 3,3 V a 5 V"]
@@ -101,7 +101,7 @@ Esta separación permite saber si un fallo pertenece a la luz, al programa, a la
 | XIAO ESP32-C3 | ____ | D1 / D2 / D6 / 5 V / GND | Foto y continuidad | ____ |
 | Anillo WS2812 | ____ | +5 V / GND / DIN / DOUT | Foto, ficha y continuidad | ____ |
 | Conversor lógico | ____ | Alimentación / entrada / salida / habilitación | Hoja de datos | ____ |
-| Fuente de 5 V | ____ | Positivo / negativo / corriente nominal | Medición sin carga | ____ |
+| Fuente de 5 V y 3 A | ____ | Jack 5,5 × 2,1 mm / positivo / negativo | Medición sin carga | ____ |
 | Condensador | ____ | Capacidad / tensión / polaridad | Rotulado | ____ |
 | Resistencia de datos | ____ | Valor medido | Multímetro | ____ |
 | Pulsadores | ____ | Común / contacto | Continuidad | ____ |
@@ -137,3 +137,10 @@ Seeed Studio. (s. f.). *Getting started with Seeed Studio XIAO ESP32C3*. Recuper
 - **Versión anterior:** la exploración identificaba componentes y riesgos, pero no mostraba cómo revisar alimentación, conversión lógica, silencio y arranque como un conjunto.
 - **Motivo:** permitir una revisión electrónica informada antes de comprar o energizar componentes.
 - **Alcance:** no se diseñó una placa, no se cerraron terminales físicos y no existe montaje ni resultado técnico.
+
+### 2026-08-30 — Entrada de alimentación definida para revisión
+
+- **Cambio:** la fuente USB genérica de 5 V y 2 A se sustituyó en el diagrama por una fuente cerrada de 5 V y 3 A con jack y distribución separada.
+- **Versión anterior:** el esquema no mostraba cómo extraer y dividir la alimentación de un cable USB-C sin hacer circular la corriente luminosa por la placa.
+- **Motivo:** disponer de una entrada accesible para medir, proteger y separar las ramas del controlador y la luz.
+- **Alcance:** la polaridad, la ruta hacia 5V/VBUS y la coexistencia con USB-C todavía deben aprobarse antes de energizar.

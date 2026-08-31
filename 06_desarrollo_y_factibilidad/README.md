@@ -28,13 +28,21 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
-- [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, dos núcleos de 5 V y soluciones comerciales o pasivas; propone probar primero una XIAO ESP32-C3 con una señal luminosa pequeña sin sustituir aún la arquitectura vigente.
+- [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, variantes de 5 V y soluciones comerciales o pasivas; propone contrastar dos fuentes luminosas pequeñas antes de sustituir la arquitectura vigente.
 - [Esquema provisional del núcleo de 5 V](esquema-provisional-xiao-esp32c3-5v-2026-08-30.md): alimentación, conversión lógica, señales, silencio, arranque y campos exigidos para la revisión electrónica anterior al montaje.
+- [Lista de materiales y compra escalonada del núcleo de 5 V](lista-materiales-y-compra-escalonada-5v-2026-08-30.md): compara una luz direccionable y una luz cálida sencilla, separa desembolso y costo atribuible, y condiciona cada compra a una puerta de revisión o prueba.
 - [Esquema de conexión provisional](esquema-conexion-provisional-fase-a-2026-08-30.md): tabla funcional, registro de terminales y puertas para revisión antes de energizar.
 
 ---
 
 ## Registro de cambios
+
+### 2026-08-30 — Compra de 5 V dividida por puertas
+
+- **Cambio:** se enlazó una lista de materiales ampliada y una ruta de compra que compara el anillo direccionable con una fuente de luz cálida no direccionable.
+- **Versión anterior:** el subtotal de 5 V omitía auxiliares y no distinguía el dinero pagado por un paquete del valor de las piezas usadas.
+- **Motivo:** comparar arquitecturas con exclusiones visibles y evitar adquirir el conjunto antes de resolver la fuente luminosa.
+- **Alcance:** los precios son referencias de abastecimiento; no constituyen costo de producción ni autorización de compra.
 
 ### 2026-08-30 — Esquema revisable del núcleo de 5 V
 
