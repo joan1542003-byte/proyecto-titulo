@@ -1,7 +1,9 @@
 # Revisión final textual de la memoria v4
 
-**Fecha:** 31 de agosto de 2026  
-**Documento:** `memoria-vigente-v4.md`  
+**Fecha:** 31 de agosto de 2026
+
+**Documento:** `memoria-vigente-v4.md`
+
 **Alcance:** estructura, continuidad argumental, claridad, vigencia documental, citas, referencias, APA 7 y correspondencia con el estado real del proyecto. No incluye diseño editorial ni resultados inexistentes.
 
 ## Fuentes de control
