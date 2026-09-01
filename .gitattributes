@@ -4,3 +4,4 @@
 10_recursos_visuales/10_tipografias/**/*.woff2 filter=lfs diff=lfs merge=lfs -text
 10_recursos_visuales/10_tipografias/**/*.zip filter=lfs diff=lfs merge=lfs -text
 10_recursos_visuales/06_graficos_4k/**/*.png filter=lfs diff=lfs merge=lfs -text
+10_recursos_visuales/11_exploracion_sistema_visual_2026-08-31/**/*.png filter=lfs diff=lfs merge=lfs -text

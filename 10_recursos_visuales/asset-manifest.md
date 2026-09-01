@@ -165,3 +165,20 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - **Versión anterior:** el manifiesto terminaba en las colecciones visuales iniciales y no permitía localizar las generaciones omitidas ni instalar las familias especificadas.
 - **Motivo:** alinear el inventario con los archivos realmente disponibles y conservar su procedencia.
 - **Alcance:** la incorporación de archivos no modifica por sí sola la selección visual vigente ni valida las piezas archivadas.
+
+## Exploración ampliada — `11_exploracion_sistema_visual_2026-08-31`
+
+- 2 pantallas Android comparativas.
+- 2 aplicaciones editoriales.
+- 1 cartel claro.
+- 4 módulos con transparencia real.
+- 2 fondos panorámicos.
+- 1 cartel oscuro descartado y conservado por trazabilidad.
+- Total: 12 PNG, sin archivos vacíos.
+
+### 2026-08-31 — Registro de la nueva colección
+
+- **Cambio:** se incorporó el inventario de la exploración ampliada y su documentación de auditoría.
+- **Versión anterior:** el manifiesto terminaba en el archivo recuperado y las tipografías.
+- **Motivo:** mantener correspondencia entre archivos, estado y usos autorizados.
+- **Alcance:** las piezas candidatas requieren reconstrucción; las piezas observadas no deben pasar a producción sin corregirse.

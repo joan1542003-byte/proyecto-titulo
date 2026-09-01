@@ -37,6 +37,7 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `08_direccion_visual_relevo` | Desarrollo documentado del sistema, selección vigente, aplicaciones, interfaz, reglas y decisiones. |
 | `09_archivo_generaciones_completo` | Archivo de 192 generaciones únicas recuperadas; conserva el proceso, pero no define vigencia. |
 | `10_tipografias` | IBM Plex Sans y Mono en formatos instalables y web, con paquetes y licencias oficiales. |
+| `11_exploracion_sistema_visual_2026-08-31` | Doce nuevas piezas claras, oscuras y transparentes, con fundamentación, auditoría, descarte documentado y plan de continuidad. |
 
 ## Paleta inicial
 
@@ -81,3 +82,10 @@ La segunda exploración incorpora una gramática de puntos redondos, barras, ór
 - Se distinguió explícitamente entre archivo completo, exploración y sistema vigente para evitar que la conservación del proceso se interprete como aprobación de todas las piezas.
 - **Versión anterior:** el índice principal solo describía las colecciones 01–07 y dejaba fuera tanto el desarrollo vigente de `08_direccion_visual_relevo` como parte importante de las generaciones recientes.
 - **Motivo:** asegurar que los recursos útiles y las dependencias tipográficas permanezcan accesibles, ordenados y trazables.
+
+### 2026-08-31 — Exploración visual ampliada
+
+- Se añadió una colección independiente para Android, editorial, carteles, módulos transparentes y fondos.
+- Cada pieza fue auditada; los resultados con texto sintético o ambigüedad semántica quedaron identificados y no deben incorporarse directamente.
+- **Versión anterior:** la carpeta conservaba abundante material, pero no una tanda nueva que comparara claro y oscuro y justificara cada familia desde el contrato v4.
+- **Motivo:** desarrollar variedad controlada y recursos reutilizables sin convertir toda generación en decisión vigente.
