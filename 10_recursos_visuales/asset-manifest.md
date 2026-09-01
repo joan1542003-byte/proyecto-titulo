@@ -191,3 +191,17 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - **Versión anterior:** el manifiesto registraba doce piezas en cinco familias incompletas.
 - **Motivo:** permitir comparación sistemática y trazabilidad antes de la selección final.
 - **Alcance:** el conteo expresa cobertura; la aprobación depende de la auditoría y de la reconstrucción posterior.
+
+## Expansión no física — `12_expansion_sistema_visual_2026-09-01`
+
+- Meta: 50 piezas distribuidas en Android, editorial, carteles, módulos transparentes y fondos.
+- Producidas: 8 pantallas Android complementarias y una hoja de contacto.
+- Documentación: README, auditoría parcial y plan nominal de cincuenta piezas.
+- Exclusión: no se producen nuevas visualizaciones del dispositivo físico.
+
+### 2026-09-01 — Registro de expansión en curso
+
+- **Cambio:** se incorporó el inventario parcial de la colección 12.
+- **Versión anterior:** el manifiesto terminaba en la colección 11.
+- **Motivo:** mantener trazabilidad aun cuando la generación se encuentra incompleta.
+- **Alcance:** las cuarenta y dos piezas pendientes no se contabilizan como archivos producidos.
