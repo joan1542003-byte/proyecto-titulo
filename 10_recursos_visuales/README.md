@@ -44,7 +44,7 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `09_archivo_generaciones_completo` | Archivo de 192 generaciones únicas recuperadas; conserva el proceso, pero no define vigencia. |
 | `10_tipografias` | IBM Plex Sans y Mono en formatos instalables y web, con paquetes y licencias oficiales. |
 | `11_exploracion_sistema_visual_2026-08-31` | Sesenta piezas vigentes en seis familias de diez, más hojas de contacto, auditoría y descartes documentados. |
-| `12_expansion_sistema_visual_2026-09-01` | Expansión en curso de cincuenta piezas no físicas; ocho estados Android producidos y cuarenta y dos piezas preparadas. |
+| `12_expansion_sistema_visual_2026-09-01` | Expansión no física con 38 piezas producidas: ocho estados Android, diez editoriales, diez carteles y diez módulos transparentes. |
 
 ## Paleta inicial
 
@@ -110,3 +110,10 @@ La segunda exploración incorpora una gramática de puntos redondos, barras, ór
 - **Versión anterior:** la ampliación más reciente incluía también escenas y formas del dispositivo físico.
 - **Motivo:** profundizar Android, editorial, carteles, módulos y fondos con la referencia visual preferida, dejando fuera nuevas visualizaciones del objeto.
 - **Alcance:** la colección permanece en desarrollo y no cambia la función phygital del proyecto.
+
+### 2026-09-01 — Biblioteca editorial y gráfica ampliada
+
+- **Cambio:** se incorporaron treinta piezas nuevas y tres hojas de contacto a la colección 12.
+- **Versión anterior:** la colección contenía ocho pantallas Android y las demás familias solo estaban planificadas.
+- **Motivo:** ampliar las aplicaciones editoriales, los carteles y los recursos transparentes sin producir más imágenes del objeto físico.
+- **Alcance:** la biblioteca reúne referencias rasterizadas para reconstrucción; no reemplaza archivos editables ni validaciones.

@@ -19,16 +19,16 @@
 
 | N.º | Archivo | Objetivo |
 |---:|---|---|
-| 11 | `editorial-11-pregunta-investigacion-claro-v1.png` | Presentar la pregunta central. |
+| 11 | `editorial-11-pregunta-investigacion-oscuro-v1.png` | Presentar la pregunta central. |
 | 12 | `editorial-12-dos-tipos-usuario-claro-v1.png` | Comparar usuario principal y usuario límite. |
 | 13 | `editorial-13-no-intervenir-oscuro-v1.png` | Explicar cuándo no corresponde intervenir. |
 | 14 | `editorial-14-metodo-evidencia-claro-v1.png` | Mostrar cómo la evidencia conduce a decisiones. |
 | 15 | `editorial-15-arquitectura-phygital-oscuro-v1.png` | Distribuir funciones sin dibujar productos. |
-| 16 | `editorial-16-android-y-alcance-claro-v1.png` | Justificar la plataforma y el alcance inicial. |
+| 16 | `editorial-16-android-alcance-claro-v1.png` | Justificar la plataforma y el alcance inicial. |
 | 17 | `editorial-17-criterios-diseno-oscuro-v1.png` | Sintetizar criterios de diseño. |
 | 18 | `editorial-18-estado-arte-brechas-claro-v1.png` | Comparar enfoques y brechas. |
 | 19 | `editorial-19-flujo-tecnico-oscuro-v1.png` | Representar el flujo técnico de manera abstracta. |
-| 20 | `editorial-20-limites-y-continuidad-claro-v1.png` | Diferenciar evidencia, pendientes y próximos pasos. |
+| 20 | `editorial-20-limites-continuidad-claro-v1.png` | Diferenciar evidencia, pendientes y próximos pasos. |
 
 ## Carteles
 
@@ -43,7 +43,7 @@
 | 17 | `cartel-17-telefono-configura-oscuro-v1.png` | El teléfono configura. |
 | 18 | `cartel-18-vinculo-transmite-claro-v1.png` | El vínculo transmite. |
 | 19 | `cartel-19-persona-decide-oscuro-v1.png` | La persona decide. |
-| 20 | `cartel-20-transferencia-cinco-momentos-claro-v1.png` | Cinco momentos del ciclo. |
+| 20 | `cartel-20-cinco-momentos-claro-v1.png` | Cinco momentos del ciclo. |
 
 ## Módulos transparentes
 
@@ -87,3 +87,10 @@ Se termina una familia antes de comenzar la siguiente. Cada resultado se inspecc
 - **Versión anterior:** la petición de ampliar el sistema no tenía una cola independiente de la colección 11.
 - **Motivo:** continuar la producción sin repetir piezas ni reabrir la exploración física.
 - **Alcance:** el plan organiza la generación; no aprueba por anticipado sus resultados.
+
+### 2026-09-01 — Ajuste de nombres producidos
+
+- **Cambio:** se actualizaron cuatro nombres planificados para que coincidan con los archivos generados.
+- **Versión anterior:** los nombres indicaban variantes claras o palabras adicionales que no coincidían con el inventario real.
+- **Motivo:** conservar trazabilidad exacta entre el plan y las carpetas.
+- **Alcance:** el ajuste modifica identificadores; no cambia el contenido ni la evaluación de las piezas.

@@ -194,9 +194,9 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 
 ## Expansión no física — `12_expansion_sistema_visual_2026-09-01`
 
-- Meta: 50 piezas distribuidas en Android, editorial, carteles, módulos transparentes y fondos.
-- Producidas: 8 pantallas Android complementarias y una hoja de contacto.
-- Documentación: README, auditoría parcial y plan nominal de cincuenta piezas.
+- Plan inicial: 50 piezas distribuidas en Android, editorial, carteles, módulos transparentes y fondos.
+- Producidas: 38 piezas —8 Android, 10 editoriales, 10 carteles y 10 módulos transparentes— y cuatro hojas de contacto.
+- Documentación: README, auditoría Android, auditoría editorial y gráfica, plan inicial y plan extensivo de noventa piezas.
 - Exclusión: no se producen nuevas visualizaciones del dispositivo físico.
 
 ### 2026-09-01 — Registro de expansión en curso
@@ -205,3 +205,10 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - **Versión anterior:** el manifiesto terminaba en la colección 11.
 - **Motivo:** mantener trazabilidad aun cuando la generación se encuentra incompleta.
 - **Alcance:** las cuarenta y dos piezas pendientes no se contabilizan como archivos producidos.
+
+### 2026-09-01 — Registro de treinta piezas nuevas
+
+- **Cambio:** se registraron las series 11–20 de editorial, carteles y módulos transparentes.
+- **Versión anterior:** el manifiesto solo contabilizaba las ocho pantallas Android complementarias.
+- **Motivo:** mantener correspondencia entre el inventario, las hojas de contacto y los archivos disponibles.
+- **Alcance:** los diez módulos tienen canal alfa verificado; las piezas editoriales y los carteles permanecen como referencias rasterizadas.
