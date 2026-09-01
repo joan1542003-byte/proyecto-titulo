@@ -1,41 +1,59 @@
 # Prompts y producción
 
-## Referencias utilizadas
+## Referencias y alcance
 
-Las generaciones utilizaron como referencias visuales las cuatro imágenes entregadas por el autor el 31 de agosto de 2026. Se tomaron de ellas jerarquía, relación claro–oscuro, retícula editorial, matriz de puntos, tipografía continua y reserva del rojo. No se solicitó reproducir una marca, interfaz o composición de terceros.
+Las generaciones utilizaron las referencias visuales entregadas por el autor y los documentos vigentes del repositorio. De ellas se tomaron la retícula, la relación entre blanco cálido y grafito, la matriz de puntos, la jerarquía tipográfica y la reserva del rojo. Las referencias orientan; no se incorporan nombres ni rasgos de marcas ajenas en la argumentación de Relevo.
+
+Cada instrucción pidió una sola pieza independiente. No se usaron láminas múltiples para simular cantidad.
 
 ## Estructura común de los prompts
 
-Cada instrucción indicó: uso de la pieza, soporte, relación semántica, composición, paleta, tipografía, contenido permitido, restricciones y errores que debían evitarse. Todas las generaciones pidieron una sola pieza independiente.
+Los prompts definieron:
 
-## Registro de generaciones
+1. soporte y proporción;
+2. función dentro del proyecto;
+3. información que debía aparecer;
+4. jerarquía entre lectura, acción y decoración;
+5. paleta y función del rojo;
+6. relación de origen, vínculo y señal;
+7. elementos prohibidos;
+8. condición de reconstrucción posterior.
 
-| Archivo | Solicitud central | Restricciones principales |
-|---|---|---|
-| `01_android/android-formular-intencion-oscuro-v1.png` | Formular intención y primer paso en Android oscuro. | Sin rojo, sin marco de teléfono, sin métricas, una acción principal. |
-| `01_android/android-revisar-ciclo-claro-exploratorio-v1.png` | Revisar intención, primer paso, condición y vigencia en claro. | Sin rojo, filas legibles, tema claro comparativo. |
-| `02_editorial/editorial-estado-del-arte-claro-v1.png` | Doble página con tabla comparativa y gráfico de relación. | APA 7, texto mínimo, rojo solo en señal, sin citas inventadas. |
-| `02_editorial/editorial-viaje-usuario-oscuro-v1.png` | Viaje de usuario horizontal para presentación. | Sin progreso, sin métricas, señal roja solo al final. |
-| `03_carteles/cartel-transferencia-situada-claro-v1.png` | Cartel vertical de origen, transferencia y señal. | Texto español exacto, sin objeto ni interfaz. |
-| `99_descartados/cartel-transferencia-situada-oscuro-rechazado-v1.png` | Contraparte oscura del cartel. | El resultado incumplió la reserva del rojo y fue descartado. |
-| `04_modulos_transparentes/modulo-transferencia-grafito-transparente-v1.png` | Campo grafito que se reduce hasta un nodo situado. | Alfa real, sin texto, sin progreso ni botón. |
-| `04_modulos_transparentes/modulo-transferencia-blanco-transparente-exploratorio-v1.png` | Contraparte blanca para fondos oscuros. | Alfa real, sin canvas, sin brillo. |
-| `04_modulos_transparentes/simbolo-senal-orbita-abierta-exploratorio-v1.png` | Señal central con anillos abiertos. | Sin selector, objetivo, carga ni botón. |
-| `04_modulos_transparentes/simbolo-vinculo-neutral-transparente-v1.png` | Conector neutral sin dirección. | Sin rojo, flechas, control deslizante ni progreso. |
-| `05_fondos/fondo-campo-transferencia-claro-v1.png` | Fondo editorial claro con campo lateral y espacio negativo. | Sin texto, objeto, interfaz ni flechas. |
-| `05_fondos/fondo-campo-transferencia-oscuro-v1.png` | Contraparte oscura para presentación. | Sin brillo, gradiente ni efecto de partículas luminosas. |
+## Matriz de producción
 
-## Producción y límites
+| Familia | Cantidad | Restricciones dominantes |
+|---|---:|---|
+| Android | 10 | Sin marco de teléfono; modo oscuro; sin métricas ni gamificación; rojo solo en señal situada; controles inequívocos. |
+| Editorial | 10 | Retícula académica; contenido sintético no citable; espacio para texto real; claro para lectura y oscuro para aperturas o síntesis. |
+| Carteles | 10 | Un mensaje por pieza; sistema de puntos como estructura; rojo excepcional; ausencia de forma física e interfaz. |
+| Módulos transparentes | 10 | Un recurso aislado; canal alfa real; sin texto; sin fondo simulado; aptitud para reconstrucción vectorial. |
+| Fondos | 10 | Espacio negativo; patrones fuera de zonas de contenido; sin texto ni controles; variantes funcionales y materiales. |
+| Contexto físico | 10 | Una escena cotidiana por pieza; señal discreta; sin pantalla incorporada; forma tratada como hipótesis y no como producto aprobado. |
 
-El generador integrado produjo resoluciones entre 852 × 1846 px y 1774 × 887 px, según la proporción solicitada. Solicitar 4K orientó la composición, pero no produjo archivos 4K nativos. Por ello, estas imágenes son objetivos visuales y recursos de exploración; no se deben presentar como artes finales 4K.
+## Verificaciones realizadas
 
-Los cuatro archivos solicitados con transparencia tienen canal alfa y esquinas con alfa 0. Dos de ellos requieren limpieza visual antes de uso. Los textos generados deben sustituirse durante la reconstrucción, incluso cuando parecen correctos.
+- conteo de diez piezas por familia;
+- hoja de contacto por familia;
+- revisión visual de jerarquía, legibilidad y uso del rojo;
+- comprobación del canal alfa en los diez módulos transparentes;
+- separación de cuatro resultados incompatibles en la carpeta 99_descartados;
+- registro nominal de las sesenta piezas en matriz-60-piezas.md.
+
+## Límites técnicos
+
+Las imágenes rasterizadas no son originales maestros ni especificaciones industriales. La resolución obtenida depende del generador y no debe describirse como 4K si el archivo no alcanza esas dimensiones. Los textos de mockup deben reconstruirse desde la memoria. Los módulos transparentes requieren limpieza o vectorización antes de impresión o implementación.
 
 ## Registro de cambios
 
-### 2026-08-31 — Creación del registro de producción
+### 2026-09-01 — Ampliación del registro de producción
 
-- **Cambio:** se registraron las doce generaciones, sus objetivos y restricciones.
-- **Versión anterior:** las imágenes tenían nombres descriptivos, pero no una relación explícita con las instrucciones que las originaron.
-- **Motivo:** permitir repetición, corrección y auditoría del proceso.
-- **Alcance:** los resúmenes conservan la intención del prompt; los archivos rasterizados siguen siendo exploraciones.
+- **Cambio:** el registro pasó de doce generaciones a seis familias de diez piezas e incorporó verificaciones y restricciones por soporte.
+- **Versión anterior:** se enumeraban solo las primeras doce imágenes.
+- **Motivo:** documentar el proceso completo sin duplicar el inventario nominal disponible en matriz-60-piezas.md.
+- **Alcance:** el registro conserva objetivos y límites; los prompts extensos permanecen como historial de generación y no como especificación final.
+
+### 2026-08-31 — Creación del registro
+
+- **Cambio:** se documentaron las primeras doce generaciones.
+- **Versión anterior:** los archivos solo tenían nombres descriptivos.
+- **Motivo:** permitir repetición, corrección y auditoría.

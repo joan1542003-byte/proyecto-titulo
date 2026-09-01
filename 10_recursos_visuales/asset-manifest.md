@@ -168,13 +168,15 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 
 ## Exploración ampliada — `11_exploracion_sistema_visual_2026-08-31`
 
-- 2 pantallas Android comparativas.
-- 2 aplicaciones editoriales.
-- 1 cartel claro.
-- 4 módulos con transparencia real.
-- 2 fondos panorámicos.
-- 1 cartel oscuro descartado y conservado por trazabilidad.
-- Total: 12 PNG, sin archivos vacíos.
+- 10 pantallas Android oscuras que cubren el ciclo completo.
+- 10 aplicaciones editoriales claras y oscuras.
+- 10 carteles conceptuales.
+- 10 módulos con canal alfa real.
+- 10 fondos funcionales y materiales.
+- 10 escenas de contexto físico.
+- 6 hojas de contacto para auditoría.
+- 4 descartes conservados por trazabilidad.
+- Total vigente: 60 piezas, sin contar hojas de contacto ni descartes.
 
 ### 2026-08-31 — Registro de la nueva colección
 
@@ -182,3 +184,10 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - **Versión anterior:** el manifiesto terminaba en el archivo recuperado y las tipografías.
 - **Motivo:** mantener correspondencia entre archivos, estado y usos autorizados.
 - **Alcance:** las piezas candidatas requieren reconstrucción; las piezas observadas no deben pasar a producción sin corregirse.
+
+### 2026-09-01 — Ampliación a sesenta piezas
+
+- **Cambio:** se completaron seis familias de diez piezas y se añadieron hojas de contacto, matriz nominal y auditoría.
+- **Versión anterior:** el manifiesto registraba doce piezas en cinco familias incompletas.
+- **Motivo:** permitir comparación sistemática y trazabilidad antes de la selección final.
+- **Alcance:** el conteo expresa cobertura; la aprobación depende de la auditoría y de la reconstrucción posterior.

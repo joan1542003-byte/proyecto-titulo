@@ -27,6 +27,8 @@ La decisión deriva del concepto del proyecto y no de una referencia formal aisl
 
 El rojo `#EF3E45` identifica exclusivamente la señal situada. No se aplica a botones, errores, títulos, selección, batería ni decoración. Esta restricción reduce ambigüedad entre una acción digital y el momento perceptible del sistema. Albers (2013) advierte que el color cambia según contexto, proporción y soporte; por ello, el valor debe revisarse en pantalla, papel y material físico.
 
+Varias imágenes generadas aproximan el rojo con valores cercanos, en especial `#D71921`. Esa variación pertenece al mockup y no modifica el token vigente: toda reconstrucción debe aplicar `#EF3E45` y volver a comprobar contraste, impresión y percepción sin color.
+
 ### Blanco cálido y grafito
 
 El fondo claro `#F4F4F2` se aproxima al comportamiento del papel y facilita una memoria con lectura prolongada. El grafito `#111314` reduce el contraste extremo de un negro absoluto y sostiene la interfaz digital vigente. Ambos mantienen texto legible, reglas delgadas y espacios amplios, pero no se consideran equivalentes automáticos.
@@ -67,6 +69,13 @@ Norman, D. A. (2002). *The design of everyday things*. Basic Books.
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios
+
+### 2026-09-01 — Aclaración cromática y ampliación
+
+- **Cambio:** se distinguió el token vigente `#EF3E45` de las aproximaciones cromáticas presentes en imágenes generadas.
+- **Versión anterior:** la fundamentación declaraba el token, pero no advertía que algunos mockups podían mostrar otro valor.
+- **Motivo:** impedir que una variación del generador se interprete como una segunda paleta aprobada.
+- **Alcance:** el valor continúa sujeto a pruebas de contraste, impresión y percepción.
 
 ### 2026-08-31 — Fundamentación inicial
 

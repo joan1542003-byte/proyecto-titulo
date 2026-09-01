@@ -2,36 +2,63 @@
 
 ## Criterios
 
-Cada pieza se revisó según cinco preguntas: ¿expresa una relación propia de Relevo?, ¿mantiene una jerarquía clara?, ¿distingue información, decoración y acción?, ¿respeta el rol del rojo?, ¿puede reconstruirse sin copiar errores del texto generado?
+La revisión considera cinco preguntas: ¿la pieza expresa una relación propia de Relevo?, ¿mantiene jerarquía clara?, ¿distingue información, decoración y acción?, ¿respeta el uso excepcional del rojo?, ¿puede reconstruirse sin trasladar errores del texto generado?
 
-## Inventario
+## Resultado por familia
 
-| Archivo | Resolución | Evaluación | Uso permitido | Corrección necesaria |
-|---|---:|---|---|---|
-| `01_android/android-formular-intencion-oscuro-v1.png` | 853 × 1844 | Candidato visual. Buena jerarquía y ausencia correcta de rojo. | Referencia para reconstruir el marco de formulación. | Reducir altura del gráfico, verificar texto real y adaptar a 390 × 844 dp. |
-| `01_android/android-revisar-ciclo-claro-exploratorio-v1.png` | 852 × 1846 | Exploración comparativa. La composición es útil, pero el generador sustituyó el español por inglés. | Estudiar jerarquía, ritmo y filas de resumen. | No reutilizar el texto; reconstruir en español y mantener el tema claro como hipótesis. |
-| `02_editorial/editorial-estado-del-arte-claro-v1.png` | 1672 × 941 | Candidato compositivo. | Retícula, relación entre tabla, diagrama, pies y folios. | Reemplazar toda afirmación por contenido verificado de la memoria. |
-| `02_editorial/editorial-viaje-usuario-oscuro-v1.png` | 1672 × 941 | Candidato de presentación, no de evidencia. | Organización horizontal y cambio de densidad. | Eliminar la cita sintética y reconstruir solo con hallazgos trazables. |
-| `03_carteles/cartel-transferencia-situada-claro-v1.png` | 941 × 1672 | Candidato sólido. | Cartel, portada o apertura reconstruida. | Ajustar retícula y reproducir la marca con un alfabeto propio. |
-| `04_modulos_transparentes/modulo-transferencia-grafito-transparente-v1.png` | 1774 × 887 | Candidato reutilizable. Alfa correcto en las cuatro esquinas. | Sobre fondos claros, presentaciones y diagramas. | Limpiar irregularidades antes de convertir a vector. |
-| `04_modulos_transparentes/modulo-transferencia-blanco-transparente-exploratorio-v1.png` | 1774 × 887 | Requiere corrección. Alfa correcto, pero presenta bordes y puntos contaminados. | Solo comparación interna. | Regenerar o reconstruir; no usar como arte final. |
-| `04_modulos_transparentes/simbolo-senal-orbita-abierta-exploratorio-v1.png` | 1254 × 1254 | Requiere revisión semántica. Alfa correcto. | Ensayo de apertura y señal. | Reducir semejanza con objetivo, selector o indicador de carga; aplanar el rojo. |
-| `04_modulos_transparentes/simbolo-vinculo-neutral-transparente-v1.png` | 1254 × 1254 | Candidato reutilizable. Alfa correcto. | Diagramas y separadores informativos. | Comprobar que no parezca control deslizante. |
-| `05_fondos/fondo-campo-transferencia-claro-v1.png` | 1672 × 941 | Candidato sólido. | Fondo editorial y presentación con texto en espacio negativo. | Controlar contraste y recorte según formato. |
-| `05_fondos/fondo-campo-transferencia-oscuro-v1.png` | 1672 × 941 | Candidato sólido. | Fondo digital y presentación. | Mantener la matriz fuera de zonas de lectura e interacción. |
-| `99_descartados/cartel-transferencia-situada-oscuro-rechazado-v1.png` | 941 × 1672 | Descartado. | Comparación interna del proceso. | Regenerar con texto blanco o gris, nodo rojo menor y sin acento rojo en la marca. |
+| Familia | Resultado | Fortalezas | Riesgos y correcciones |
+|---|---|---|---|
+| Android | 10 pantallas vigentes | El ciclo completo puede leerse de principio a fin; controles y patrones decorativos se distinguen. | Revisar microcopias en el prototipo real, adaptar a 390 × 844 dp y comprobar contraste y tamaño táctil. |
+| Editorial | 10 composiciones vigentes | Existe variedad para portada, capítulos, evidencia, tablas y argumentación visual. | Todo dato, cita y referencia visible en mockups debe sustituirse por contenido verificado. |
+| Carteles | 10 piezas vigentes | La gramática admite mensajes distintos sin perder reconocimiento. | Evitar que el punto rojo crezca hasta convertirse en espectáculo o alarma. |
+| Módulos transparentes | 10 PNG vigentes | Todos tienen canal alfa real y pueden probarse sobre soportes distintos. | Reconstruir en vector los candidatos seleccionados; limpiar halos, uniones y bordes irregulares. |
+| Fondos | 10 piezas vigentes | Hay soportes neutros, campos de origen, señales diagonales y texturas materiales. | Mantener patrones fuera de lectura y controles; validar recortes por formato. |
+| Contexto físico | 10 escenas vigentes | Permiten comparar presencia, orientación y convivencia con actividades cotidianas. | Varias formas pueden parecer parlante, temporizador o accesorio doméstico. Ninguna debe asumirse como final sin pruebas. |
 
-## Hallazgos de la auditoría
+## Auditoría del ciclo Android
 
-La familia más consistente combina un campo lateral, una transición amplia y un nodo situado pequeño. Las piezas pierden precisión cuando convierten la señal en un círculo dominante o cuando distribuyen puntos como decoración indiferenciada. El sistema se fortalece al reservar la matriz para relaciones y al permitir que la tipografía convencional sostenga el contenido.
+Las diez pantallas cubren formulación, condición, revisión, vínculo, prueba, armado, espera, señal, recuperación y cierre. La secuencia evita métricas, rachas y recompensas. El rojo aparece en la señal situada, no como confirmación constante. La pantalla clara con texto en inglés se retiró del conjunto vigente porque una composición útil no compensa una microcopia inválida.
 
-La generación de imágenes puede proponer composición y atmósfera, pero no es confiable para textos académicos, citas, datos ni microcopias definitivas. Por ello, cada pieza textual debe reconstruirse desde la memoria y el registro de decisiones.
+## Auditoría editorial
+
+La colección ofrece una dirección para la memoria sin imponer una única plantilla. Las piezas claras priorizan lectura prolongada y reproducción; las oscuras funcionan mejor como aperturas, síntesis o secuencias de alto contraste. Los mockups de APA 7 y estado del arte demuestran estructura, no contenido. Ninguna referencia generada puede citarse.
+
+## Auditoría de carteles
+
+Los carteles prueban que origen, vínculo y señal pueden organizar mensajes sobre intención, primer paso, decisión y presencia. Se descartó una versión con múltiples acentos rojos y desenfoque porque convertía la señal en ruido visual. La variante nueva utiliza un único nodo y espacio negativo.
+
+## Auditoría de módulos y fondos
+
+Los diez módulos poseen canal alfa comprobado. Algunos bordes conservan irregularidades propias de la generación rasterizada; por ello sirven como objetivos visuales y no como originales maestros. Una secuencia con volumen tridimensional fue descartada porque rompía el lenguaje plano. Los fondos se dividen entre soportes funcionales y texturas atmosféricas; esta diferencia debe mantenerse al maquetar.
+
+## Auditoría del contexto físico
+
+Las diez escenas sitúan el testigo junto a actividades como leer, caminar, cocinar, estirar, dibujar, cuidar una planta, practicar guitarra, ordenar y coser. La variación formal es deliberada: sirve para comparar escala, apoyo, orientación y visibilidad. No demuestra ergonomía, electrónica, factibilidad productiva ni preferencia de usuarios. Las perforaciones, cilindros y volúmenes monolíticos deben evaluarse porque pueden activar modelos mentales ajenos a Relevo.
+
+## Descartes documentados
+
+| Archivo | Motivo |
+|---|---|
+| `android-revisar-ciclo-claro-texto-invalido.png` | Texto en inglés y modo claro fuera de la dirección vigente de Android. |
+| `cartel-primer-paso-claro-exceso-rojo.png` | Exceso de rojo, desenfoque y jerarquía insuficiente. |
+| `secuencia-completa-grafito-volumen-inconsistente.png` | Volumen, conexiones y esfera incompatibles con el sistema plano. |
+| `cartel-transferencia-situada-oscuro-rechazado-v1.png` | Rojo dominante y contraste tipográfico deficiente. |
+
+## Decisión vigente
+
+La colección no define todavía un arte final único. Sí fija un sistema: tipografía convencional para leer, mono para datos breves, campo de puntos para representar relaciones, espacio negativo como parte activa de la jerarquía y rojo reservado para una señal situada. La siguiente reducción debe escoger un conjunto pequeño por soporte y reconstruirlo de forma editable.
 
 ## Registro de cambios
 
+### 2026-09-01 — Auditoría de sesenta piezas
+
+- **Cambio:** se revisaron seis familias de diez piezas, el canal alfa de diez módulos, la cobertura del ciclo Android y cuatro descartes.
+- **Versión anterior:** la auditoría cubría doce archivos y no permitía comparar familias completas.
+- **Motivo:** distinguir amplitud exploratoria, candidatos de reconstrucción y resultados incompatibles con las reglas vigentes.
+- **Alcance:** la auditoría visual no reemplaza pruebas de comprensión, accesibilidad, ergonomía ni factibilidad técnica.
+
 ### 2026-08-31 — Primera auditoría
 
-- **Cambio:** se verificaron doce archivos, sus resoluciones y la transparencia de cuatro módulos.
-- **Versión anterior:** las piezas estaban generadas, pero aún no existía una clasificación entre candidatos, comparaciones y resultados que requieren corrección.
+- **Cambio:** se verificaron doce archivos y la transparencia de cuatro módulos.
+- **Versión anterior:** las piezas no tenían clasificación explícita.
 - **Motivo:** conservar diversidad sin tratar todos los resultados como igualmente válidos.
-- **Alcance:** la auditoría visual no reemplaza pruebas de comprensión, accesibilidad o implementación.

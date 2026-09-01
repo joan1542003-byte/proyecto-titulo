@@ -1,60 +1,57 @@
-# Plan de próximas generaciones
+# Plan posterior a la exploración visual
 
-La siguiente tanda debe producir una imagen independiente por pieza y utilizar las cuatro referencias visuales entregadas por el autor. Cada resultado se revisará antes de incorporarse a la selección.
+La meta de diez piezas por familia se completó. La prioridad ya no es aumentar el volumen, sino reducir, reconstruir y comprobar.
 
-## Prioridad alta
+## Prioridad 1 — Selección
 
-1. Pantalla Android oscura para vincular el testigo, sin rojo.
-2. Pantalla Android oscura para probar la señal, diferenciando prueba y armado.
-3. Pantalla Android oscura de espera, sin métricas ni rojo.
-4. Pantalla Android oscura posterior a la señal situada, con un único nodo rojo y salidas libres.
-5. Regeneración clara del marco de revisión con texto íntegramente en español.
-6. Módulo blanco de transferencia con alfa limpio y sin contaminación cromática.
-7. Símbolo de señal situada que no parezca objetivo, selector ni carga.
+1. Elegir tres pantallas Android que definan la interfaz: formulación, espera y señal situada.
+2. Elegir tres composiciones editoriales: portada, página argumentativa y página de evidencia.
+3. Elegir dos carteles: uno claro y uno oscuro.
+4. Elegir cuatro módulos transparentes: origen claro, origen oscuro, vínculo y señal.
+5. Elegir dos fondos por modo.
+6. Elegir tres escenas físicas que representen contextos y escalas contrastantes.
 
-## Prioridad media
+La selección debe justificar qué conserva cada pieza y qué se excluye. No se elige por gusto aislado, sino por coherencia, legibilidad, función y posibilidad de implementación.
 
-8. Portada editorial clara sin fotografía de objeto.
-9. Apertura de capítulo oscura para presentación digital.
-10. Sistema de figuras y tablas APA 7 en página clara.
-11. Cartel oscuro con rojo limitado al nodo, nunca al título.
-12. Fondo vertical claro para portada y separador.
-13. Fondo vertical oscuro para presentación.
-14. Patrón modular recortable sin nodo rojo para zonas previas a la señal.
+## Prioridad 2 — Reconstrucción editable
 
-## Contexto físico
+- Reconstruir Android en una herramienta de interfaz con grilla, componentes y estados reales.
+- Maquetar las páginas editoriales con contenido vigente de la memoria y estilos de párrafo.
+- Vectorizar módulos escogidos para eliminar halos e irregularidades.
+- Preparar fondos en tamaños concretos y zonas seguras de contenido.
+- Separar la visualización conceptual del dispositivo de las decisiones industriales.
 
-15. Estudio material claro junto a un primer paso cotidiano, sin fijar la forma final.
-16. Estudio material oscuro en contexto nocturno, sin convertir el testigo en lámpara ambiental.
-17. Comparación de escalas en una misma ubicación, sin interfaz ni medidas inventadas.
-18. Estudio de distribución de señal que evite semejanza con altavoz, reloj o asistente doméstico.
+## Prioridad 3 — Verificación
 
-## Recursos aislados
+- Contraste y legibilidad en claro y oscuro.
+- Tamaños táctiles y jerarquía de acciones en Android.
+- Comprensión de los estados del ciclo sin explicación oral.
+- Reproducción impresa de grises, puntos finos y rojo.
+- Reconocimiento del rojo como señal y no como alarma.
+- Modelos mentales activados por las formas físicas.
 
-19. Campo de origen grafito con transparencia.
-20. Campo de origen blanco con transparencia.
-21. Vínculo horizontal grafito y blanco, en archivos separados.
-22. Traza curva abierta, sin flecha ni nodo rojo.
-23. Nodo situado rojo aislado con alfa real.
-24. Textura de papel clara sin puntos.
-25. Textura grafito plana sin ruido que perjudique contraste.
+## Criterios de rechazo vigentes
 
-## Criterios de rechazo
-
-- rojo fuera de la señal situada;
-- texto en inglés o contenido no verificable;
-- puntos interpretables como progreso, paginación, selector o carga;
+- rojo fuera de la señal situada o de una llamada editorial excepcional;
+- texto no verificado usado como contenido final;
+- puntos interpretables como progreso, selector, carga o puntuación;
 - decoración que parezca interactiva;
-- interfaz dentro del objeto físico;
-- objeto presentado como forma industrial aprobada;
+- forma física presentada como decisión aprobada sin pruebas;
 - citas, estadísticas o participantes inventados;
-- degradados, resplandores, vidrio, sombras decorativas o tarjetas sin función.
+- volumen, brillo o efectos que conviertan la señal en espectáculo;
+- composición que no reserve espacio suficiente para contenido real.
 
 ## Registro de cambios
 
+### 2026-09-01 — Cierre de la cola de generación
+
+- **Cambio:** el documento deja de solicitar veinticinco imágenes pendientes y pasa a ordenar selección, reconstrucción y verificación.
+- **Versión anterior:** la prioridad era completar pantallas, módulos, fondos, editorial y contexto físico.
+- **Motivo:** las seis familias ya alcanzaron diez piezas; seguir generando sin reducir produciría redundancia.
+- **Alcance:** nuevas generaciones solo se justifican para corregir una carencia detectada durante la selección o las pruebas.
+
 ### 2026-08-31 — Creación de la cola visual
 
-- **Cambio:** se definieron veinticinco generaciones pendientes y sus criterios de rechazo.
-- **Versión anterior:** la ampliación visual dependía de solicitudes sucesivas sin una secuencia verificable.
-- **Motivo:** permitir continuidad cuando se restablezca la generación y evitar piezas redundantes.
-- **Alcance:** el plan puede ajustarse según pruebas, memoria y decisiones posteriores.
+- **Cambio:** se definieron veinticinco generaciones y criterios de rechazo.
+- **Versión anterior:** la ampliación dependía de solicitudes sucesivas.
+- **Motivo:** ordenar la producción hasta completar una base comparable.
