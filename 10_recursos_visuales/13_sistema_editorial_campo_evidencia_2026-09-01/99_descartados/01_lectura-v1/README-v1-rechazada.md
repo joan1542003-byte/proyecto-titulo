@@ -46,3 +46,9 @@ Se solicitó una única página editorial A3 horizontal para «Campo de evidenci
 - **Versión anterior:** la carpeta no contenía una prueba específica de lectura sostenida con contenido de la memoria.
 - **Motivo:** comprobar cómo funciona la dirección «Campo de evidencia» cuando el texto académico, y no la imagen, ocupa el lugar principal.
 - **Alcance:** no modifica la memoria, no fija la tipografía final y no constituye una página lista para impresión.
+
+### Auditoría posterior — rechazo de v1
+
+- **Decisión:** se rechaza la v1 como referencia vigente y se conserva únicamente como antecedente en `99_descartados`.
+- **Motivos:** la tipografía serif no corresponde al sistema definido; la trama de puntos inferior izquierda era decorativa porque no codificaba información; faltaba folio o navegación mínima; y la jerarquía no expresaba con suficiente claridad la identidad editorial de Relevo.
+- **Corrección derivada:** la v2 debe usar IBM Plex Sans para lectura e IBM Plex Mono solo para metadatos o folio, eliminar la trama, incorporar navegación mínima y construir su gesto distintivo mediante escala, regla o vacío.
