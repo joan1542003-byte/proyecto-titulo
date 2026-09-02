@@ -15,13 +15,13 @@ El A3 horizontal se adopta como formato de exploración porque permite disponer 
 | Elemento | Especificación inicial | Razón de uso |
 | --- | --- | --- |
 | Página | 420 × 297 mm, orientación horizontal. | Da espacio para comparar evidencia y mantener columnas de lectura moderadas. |
-| Márgenes | 22 mm interior; 18 mm exterior, superior e inferior. | Protegen encuadernación y generan un borde de lectura estable. |
-| Retícula | 12 columnas, calles de 4 mm. | Permite texto, figuras y tablas sin imponer composiciones rígidas. |
-| Ritmo vertical | Módulo base de 4 mm. | Ordena espaciados y alineación de pies, títulos y notas. |
+| Márgenes | 22 mm interior; 18 mm exterior y superior; 19 mm inferior. | Protegen la encuadernación y producen un área útil exacta de 380 × 260 mm. |
+| Retícula | 12 columnas de 28 mm, con calles de 4 mm. | Permite texto, figuras y tablas sin imponer composiciones rígidas. |
+| Ritmo vertical | 65 módulos de 4 mm. | Ordena espaciados y alineación dentro de los 260 mm de alto útil. |
 | Cuerpo | IBM Plex Sans, 10,5–11,5 pt; interlineado 15–16 pt. | Prioriza lectura sostenida y referencias APA 7 legibles. |
 | Jerarquía | Sans para título y lectura; Plex Mono solo en folios, códigos, fechas y microdatos. | Distingue navegación de contenido sin fragmentar la voz académica. |
 
-Estas cifras son un punto de partida de composición. La decisión final debe fijarse después de volcar un capítulo completo con tablas, figuras y referencias reales.
+La construcción completa y sus combinaciones autorizadas se encuentran en [`grilla-canonica-A3-horizontal.md`](../../../13_sistema_editorial_campo_evidencia_2026-09-01/00_direccion_y_grilla/grilla-canonica-A3-horizontal.md). La retícula está cerrada para producir pruebas; su adopción final depende de volcar un capítulo completo con tablas, figuras y referencias reales, e imprimirlo a tamaño real.
 
 ## Familias de página
 
@@ -82,3 +82,10 @@ La secuencia conserva la arquitectura vigente de la memoria. Cada bloque debe re
 - **Versión anterior:** las exploraciones de memoria utilizaban formatos y composiciones heterogéneas, con predominio de páginas de referencia y recurrencia innecesaria del diagrama conceptual.
 - **Motivo:** responder a la necesidad de una publicación continua, académica y legible, donde los recursos visuales acompañen la información en vez de repetir una firma gráfica.
 - **Alcance:** esta guía no reemplaza la plantilla institucional ni fija la diagramación final; establece un marco verificable para producirla.
+
+### 2026-09-01 — Cierre numérico de la retícula
+
+- **Cambio:** el margen inferior pasó de 18 a 19 mm; se fijaron columnas de 28 mm y 65 módulos verticales de 4 mm.
+- **Versión anterior:** la altura útil era de 261 mm y no cerraba exactamente sobre el módulo vertical propuesto.
+- **Motivo:** permitir que toda la publicación comparta una grilla calculable, aun cuando cambie la disposición de cada página.
+- **Alcance:** la retícula queda vigente para pruebas con contenido real y permanece sujeta a validación impresa.
