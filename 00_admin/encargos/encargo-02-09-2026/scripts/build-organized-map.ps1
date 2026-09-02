@@ -27,7 +27,7 @@ $visualNotes = @{
   "2.2" = "La pantalla conserva a la vista la intención, el primer paso y el lugar durante la prueba. Emitir el pulso es la única acción delimitada; la evaluación de su percepción ocurre después y permanece bajo control de la persona."
   "2.3" = "El diagrama circular representa el control físico y se acompaña con una instrucción temporal. El estado de espera no se dibuja como botón: el armado se confirma en el testigo, mientras la pantalla solo permite abandonar el proceso."
   "3.1" = "El ciclo activo prioriza lectura y vigilancia del estado. La ausencia de rojo comunica que la señal situada todavía no ocurre; el único control disponible permite desarmar el ciclo de forma explícita."
-  "3.2" = "El campo de puntos representa la transferencia de una señal, no un conjunto de opciones. Un único punto rojo identifica el momento situado. Los controles reales quedan separados en el borde inferior y mantienen etiquetas verbales."
+  "3.2" = "El campo de puntos representa la transferencia de una señal, no un conjunto de opciones. Un único punto rojo identifica el momento situado. Los controles reales quedan separados en el borde inferior y mantienen etiquetas verbales; no se incluyen iconos sin una función definida."
   "3.3" = "El cierre se presenta como un estado neutral, sin recompensa ni evaluación de conducta. La última configuración queda disponible como referencia y las acciones permiten salir o preparar otro ciclo sin rearmarlo automáticamente."
 }
 

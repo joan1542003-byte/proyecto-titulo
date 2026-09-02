@@ -12,7 +12,7 @@ Este marco pertenece a la interacción 3 de la ruta principal. La numeración pe
 
 ## Decisiones visuales
 
-El campo de puntos representa la transferencia de una señal, no un conjunto de opciones. Un único punto rojo identifica el momento situado. Los controles reales quedan separados en el borde inferior y mantienen etiquetas verbales.
+El campo de puntos representa la transferencia de una señal, no un conjunto de opciones. Un único punto rojo identifica el momento situado. Los controles reales quedan separados en el borde inferior y mantienen etiquetas verbales; no se incluyen iconos sin una función definida.
 
 
 ---

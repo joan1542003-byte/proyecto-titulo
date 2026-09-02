@@ -56,6 +56,7 @@ See `src/mobile/COMPONENTS.md` for the full component and gesture contract.
 - Las nueve pantallas principales utilizan fidelidad media y el lenguaje oscuro v4. Los 35 estados de cobertura permanecen en baja fidelidad hasta que su estructura se estabilice.
 - El rojo se reserva al acontecimiento situado de 3.2; no comunica prioridad, error, selección ni decoración.
 - La marca de puntos, los campos informativos y los estados nunca deben adquirir apariencia de botón. En 2.3, el armado se confirma mediante el control físico y no mediante una acción principal de pantalla.
+- No se incorporan menús, iconos ni controles heredados de una referencia si no tienen una consecuencia definida en el recorrido.
 - El mapa general se divide en arquitectura, ruta ampliada y cobertura por familias. No se deben reunir 44 miniaturas ilegibles como única representación.
 - Los documentos de entrega describen decisiones y piezas del proyecto; evitan nombres o explicaciones sobre herramientas de producción.
 - Cada marco debe poder revisarse y descargarse por separado sin convertir esa función de presentación en una característica atribuida a Relevo.

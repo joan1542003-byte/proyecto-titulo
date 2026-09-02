@@ -29,6 +29,8 @@ El archivo visual local se comparó por huella digital con el repositorio. Despu
 
 La revisión automatizada confirmó el idioma español, el lienzo de 412 × 915 dp, las exportaciones de 824 × 1830 px, la navegación, la ausencia de simulación de teléfono, el uso exclusivo del rojo en la señal situada, la descripción accesible del gráfico, la inexistencia de desbordes y cero errores de consola.
 
+La auditoría visual paso a paso confirmó que las acciones aparentes corresponden al recorrido. Como corrección, se eliminó de 3.2 un icono de menú sin consecuencia definida.
+
 ## Límites de la verificación
 
 Esta revisión detecta archivos faltantes, copias diferentes, dimensiones incorrectas y errores visibles en la pantalla principal. No evalúa interacción, orden de foco, teclado, permisos, conexión BLE ni percepción del pulso.

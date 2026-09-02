@@ -66,7 +66,7 @@ function ScreenHeader({ signal = false }: { signal?: boolean }) {
   return (
     <header className={`screen-header ${signal ? "is-signal" : ""}`}>
       {signal ? <DotWordmark /> : <span className="screen-back" aria-hidden="true"><b>←</b> Atrás</span>}
-      {signal ? <span className="screen-menu" aria-hidden="true">•••</span> : <DotWordmark />}
+      {!signal && <DotWordmark />}
     </header>
   );
 }

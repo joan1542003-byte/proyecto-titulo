@@ -14,6 +14,7 @@ La ruta principal tiene nueve marcos, organizados en tres interacciones. A ellos
 - `04_mapa_completo`: mapa general, ruta dividida en tres interacciones, cobertura dividida en cinco familias y una carpeta por wireframe.
 - `05_referencias_visuales_rescatadas`: cuatro exploraciones útiles recuperadas del archivo local.
 - `INVENTARIO-DE-RECURSOS-VISUALES.md`: comprobación del respaldo de 198 PNG y de las 25 imágenes transparentes.
+- `AUDITORIA-VISUAL-RUTA-PRINCIPAL.md`: revisión paso a paso de las nueve pantallas y riesgos pendientes de comprobar.
 - `EXPLICACION-Y-JUSTIFICACION.md`: lectura breve de cada marco y de cada estado.
 - `VERIFICACION.md`: control de archivos, dimensiones y coincidencia entre copias.
 - `manifest.json`: inventario técnico de las 44 exportaciones.
@@ -63,6 +64,13 @@ Conviene comenzar por `04_mapa_completo/00_mapa_general/mapa-general-jerarquico.
 - **Cómo estaba antes:** los marcos principales conservaban una apariencia estructural genérica y una sola lámina reducía las 44 vistas hasta volver ilegible su contenido.
 - **Qué se reemplazó:** el mapa de miniaturas se trasladó al historial; en su lugar se incorporaron una arquitectura general, un atlas ampliado y una lámina de cobertura.
 - **Por qué se hizo:** permitir que la estructura completa y el diseño de cada pantalla puedan revisarse sin competir dentro de una misma imagen.
+
+### 2026-09-02 — Auditoría visual del recorrido
+
+- **Qué se incorporó:** revisión de las nueve pantallas a partir de sus exportaciones vigentes.
+- **Cómo estaba antes:** las justificaciones podían consultarse por separado, pero no existía una evaluación continua del recorrido.
+- **Qué se reemplazó:** se retiró de 3.2 un menú sin función que parecía interactivo.
+- **Por qué se hizo:** alinear la apariencia de cada elemento con su papel real dentro de la experiencia.
 
 ### 2026-09-02 — Reorganización y auditoría visual
 
