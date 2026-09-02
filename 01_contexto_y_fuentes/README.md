@@ -13,6 +13,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
 - [Feedback E15](feedback-e15.md): sintetiza observaciones pertinentes sin convertirlas en decisiones automáticas.
 - [Criterios oficiales para la memoria de Proyecto de Título](criterios-oficiales-memoria-proyecto-titulo.md): consolida estructura, áreas de evaluación y límites documentales verificados en reglamento y pautas institucionales.
+- [Matriz de pase — Proyecto de Título](matriz-de-pase-proyecto-titulo.md): integra las ocho dimensiones de evaluación institucional y su correspondencia documental con Relevo.
 - [Matriz histórica de encargos y memoria](matriz-historica-encargos-memoria.md): reconstruye requisitos acumulativos, distingue formatos de proceso y audita su ubicación en la memoria v4.
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
@@ -44,6 +45,13 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-01 — Matriz de pase incorporada
+
+- **Cambio:** se añadió el acceso a la matriz de pase recibida y a su correspondencia con el repositorio.
+- **Versión anterior:** el índice reunía criterios históricos y oficiales, pero no esta pauta institucional directa.
+- **Motivo:** hacer verificable el alcance completo de Proyecto de Título, incluyendo gestión, prototipado y validación.
+- **Alcance:** el enlace no convierte la pauta en evidencia ni modifica el estado de criterios pendientes.
 
 ### 2026-08-30 — Inventario local fechado
 

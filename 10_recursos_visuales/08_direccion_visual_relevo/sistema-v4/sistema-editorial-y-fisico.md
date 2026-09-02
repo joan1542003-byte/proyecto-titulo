@@ -14,7 +14,7 @@ Este documento traduce `Transferencia situada` a la memoria, las láminas, los d
 
 ## Gramática editorial
 
-La memoria organiza el argumento desde el problema hacia la propuesta, sin adelantar conclusiones. La gráfica puede utilizar origen, vínculo y señal situada para ayudar a comprender una relación, pero cada aparición debe indicar qué representa.
+La memoria organiza el argumento desde el problema hacia la propuesta, sin adelantar conclusiones. La gráfica puede usar una relación entre condición, vínculo y señal cuando un diagrama realmente necesita explicarla, pero cada aparición debe indicar qué representa. Esa relación no funciona como firma visual ni como rótulo repetido de página.
 
 Los puntos son un gráfico informativo solo cuando muestran una relación documentada y cuentan con una leyenda verbal. En una portada o un acento sin función cognitiva son decoración: deben tener peso secundario y poder retirarse sin alterar la lectura. No se usan para representar porcentajes, progreso, datos inexistentes o resultados de usuarios.
 
@@ -26,7 +26,7 @@ La tipografía de lectura sigue siendo IBM Plex Sans. IBM Plex Mono se reserva p
 
 Cada página debe tener un foco: argumento, evidencia, diagrama, fotografía o decisión. El título introduce la lectura; el cuerpo desarrolla; las figuras y tablas demuestran o relacionan; el pie explica la procedencia y el límite.
 
-La retícula de doce columnas, los márgenes y el ritmo de la memoria son hipótesis de composición heredadas de v3. Deben reconstruirse con contenido real y ajustarse a la plantilla institucional antes de tratarse como especificación. La estética no puede reducir el cuerpo, esconder citas ni separar una figura de su explicación.
+La retícula de doce columnas, los márgenes y el ritmo de la memoria son hipótesis de composición heredadas de v3. La dirección vigente explora una página A3 horizontal para dar espacio a lectura, figuras y tablas; debe reconstruirse con contenido real y ajustarse a la plantilla institucional antes de tratarse como especificación. La estética no puede reducir el cuerpo, esconder citas ni separar una figura de su explicación.
 
 ### Figuras, tablas y fuentes
 
@@ -156,3 +156,10 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 - **Motivo:** hacer explícita la función de cada soporte y trasladar los principios visuales a condiciones reales de lectura, percepción y producción.
 - **Decisión de continuidad:** las familias físicas permanecen abiertas; ninguna fotografía, lámina o referencia visual selecciona forma, material, mecanismo o canal.
 - **Asuntos abiertos:** realizar pruebas situadas, levantar costos y electrónica, definir condiciones de instalación y validar la legibilidad editorial con contenido real.
+
+### 2026-09-01 — Precisión editorial A3
+
+- **Cambio:** se precisó que la relación conceptual no debe repetirse como rótulo o firma, y se registró la exploración de una publicación A3 horizontal.
+- **Versión anterior:** el documento permitía interpretar la tríada conceptual como un recurso recurrente y no registraba un formato editorial de trabajo.
+- **Motivo:** proteger el foco del texto académico y orientar una publicación continua con espacio suficiente para evidencia y lectura.
+- **Alcance:** se mantiene la condición de ajustar retícula y formato a la pauta institucional antes de la producción final.
