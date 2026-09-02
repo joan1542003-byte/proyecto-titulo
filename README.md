@@ -28,6 +28,8 @@ Esta formulación continúa abierta a revisión. El producto final deberá respo
 
 La versión breve y mantenida después de cada actualización está en el [resumen vigente de Relevo](08_memoria/resumen-vigente-proyecto.md).
 
+Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pase, el feedback aplicado, las investigaciones, decisiones, propuesta de valor y pendientes, consultar el [resumen general del proyecto](00_gobernanza/resumen-general-del-proyecto.md).
+
 ## Estado actual
 
 **Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
