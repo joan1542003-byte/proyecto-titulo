@@ -6,7 +6,7 @@ El color organiza funciones; no decora estados. La paleta se sostiene sobre neut
 
 ## Aplicación Android: modo oscuro (por defecto)
 
-| Token | HEX | RGB | Función |
+| Aplicación | HEX | RGB | Función |
 |---|---|---|---|
 | Canvas | `#111314` | 17, 19, 20 | Fondo general |
 | Superficie funcional | `#1B1D1E` | 27, 29, 30 | Agrupación que necesita límite propio |
@@ -19,7 +19,7 @@ El color organiza funciones; no decora estados. La paleta se sostiene sobre neut
 
 ## Editorial (claro)
 
-| Token | HEX | RGB | Función |
+| Aplicación | HEX | RGB | Función |
 |---|---|---|---|
 | Papel cálido | `#F4F2ED` | 244, 242, 237 | Campo editorial principal |
 | Tinta | `#181A1B` | 24, 26, 27 | Texto y estructura principal |
