@@ -18,7 +18,7 @@ La aplicación configura, acompaña y confirma. El testigo emite la señal situa
 - Gráfico informativo: composición que explica una relación; necesita texto o leyenda equivalente.
 - Decoración: elemento prescindible que no contiene información indispensable ni interacción; no debe parecer botón, selector, pestaña, paginación o progreso.
 
-El rojo #EF3E45 identifica únicamente el nodo de señal situada. Antes de situar la intención no aparece. Los puntos solo se permiten como marca, señal expresiva breve o gráfico informativo con texto equivalente; no son selección, progreso ni estado. El testigo emite la señal situada y la aplicación comunica el vínculo, la prueba y sus estados.
+El rojo #D71921 identifica únicamente el nodo de señal situada. Antes de situar la intención no aparece. Los puntos solo se permiten como marca, señal expresiva breve o gráfico informativo con texto equivalente; no son selección, progreso ni estado. El testigo emite la señal situada y la aplicación comunica el vínculo, la prueba y sus estados.
 
 ## Referencias vigentes y candidatas
 
@@ -158,11 +158,11 @@ Función y estado fuente: marcos 3.2/3.3, comunicación de que el testigo emiti�
 
 Categorías semánticas: SEÑAL SITUADA, intención, lugar y primer paso son contenido; la relación intención → vínculo → señal situada es gráfico informativo; el único nodo rojo es señal situada; Se emitió una señal en el testigo es estado; Silenciar testigo y Cerrar ciclo son acciones; puntos y reglas pertenecen al gráfico informativo, no a controles.
 
-Decisión: un único nodo #EF3E45 identifica el acontecimiento. La matriz y la transferencia se acompañan con texto equivalente. La pantalla devuelve la decisión a la persona mediante Ahora decides si comienzas.
+Decisión: un único nodo #D71921 identifica el acontecimiento. La matriz y la transferencia se acompañan con texto equivalente. La pantalla devuelve la decisión a la persona mediante Ahora decides si comienzas.
 
 Riesgo: los puntos pueden parecer progreso o selección si pierden sus rótulos. El nodo rojo no debe ser pulsable ni transformarse en alerta. El icono de silencio requiere significado convencional y etiqueta accesible.
 
-Prompt registrado: Pantalla Android oscura única, SEÑAL SITUADA, relación informativa etiquetada INTENCIÓN → VÍNCULO → SEÑAL SITUADA, un único nodo rojo #EF3E45, lugar, primer paso, Ahora decides si comienzas, Silenciar testigo, Cerrar ciclo; sin métricas ni controles decorativos.
+Prompt registrado: Pantalla Android oscura única, SEÑAL SITUADA, relación informativa etiquetada INTENCIÓN → VÍNCULO → SEÑAL SITUADA, un único nodo rojo #D71921, lugar, primer paso, Ahora decides si comienzas, Silenciar testigo, Cerrar ciclo; sin métricas ni controles decorativos.
 
 Reconstrucción necesaria: gráfico con texto equivalente, contraste en escala de grises, estado de silencio, cierre sin evaluación y sincronía con el testigo.
 
@@ -248,3 +248,10 @@ Las imágenes rasterizadas pueden contener errores tipográficos, textura, propo
 - Corrección de lenguaje: se eliminó la descripción del testigo por ausencia y se documentó positivamente que emite la señal situada en el lugar elegido. Las imágenes rasterizadas que aún contienen copy heredado quedan señaladas para corrección durante la reconstrucción manual.
 - Por qué: hacer coincidir el registro con la auditoría visual y con el contrato semántico del sistema, evitando contradicciones entre versiones y decisiones prematuras sobre el objeto.
 - Alcance: no se modificaron PNG, wireframes, memoria, inventario ni otros documentos. La forma industrial, el material y el mecanismo del testigo siguen abiertos a investigación y validación.
+
+### 2026-09-01 — Unificación cromática
+
+- **Cambio:** las menciones del rojo de señal se actualizaron a `#D71921`.
+- **Versión anterior:** las fichas y prompts registraban `#EF3E45`.
+- **Motivo:** sincronizar las referencias Android con el token semántico y el control editorial vigentes.
+- **Alcance:** no se modificaron los PNG ni se autorizó el rojo para selección, navegación o decoración.

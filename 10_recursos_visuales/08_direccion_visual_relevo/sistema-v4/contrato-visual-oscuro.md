@@ -55,7 +55,7 @@ Elemento prescindible. No contiene información indispensable ni interacción. N
 | Texto secundario | `#B6B8B7` | Ayudas, metadatos y estados secundarios. |
 | Regla | `#3A3D3E` | Separación que no comunica un estado. |
 | Borde funcional | `#767A79` | Campos, foco y acciones delineadas. |
-| Señal situada | `#EF3E45` | Únicamente el nodo de señal situada. |
+| Señal situada | `#D71921` | Únicamente el nodo de señal situada; no sirve como navegación ni decoración. |
 
 El rojo no se utiliza en pantallas previas a situar la intención ni para errores, batería, conexión, selección o acción primaria. La información crítica debe conservarse en texto, forma y estructura aunque el color desaparezca.
 
@@ -211,3 +211,10 @@ Este contrato no cierra la forma, materialidad, canal, duración o intensidad de
 - **Versión anterior:** el sistema V4 reunía exploraciones claras y oscuras, pero no distinguía con suficiente precisión decoración, iconografía, elección, acción, estado y gráfico informativo.
 - **Motivo:** establecer un criterio común para continuar Android sin confundir identidad visual con función de interfaz.
 - **Alcance:** el contrato gobierna nuevas exploraciones; no convierte las imágenes existentes en diseños finales ni valida el producto.
+
+### 2026-09-01 — Unificación cromática
+
+- **Cambio:** el token de señal se actualizó a `#D71921` y se excluyó de navegación y decoración.
+- **Versión anterior:** el contrato usaba `#EF3E45` sin registrar la discrepancia con los criterios visuales generales.
+- **Motivo:** mantener una única fuente cromática para soportes editoriales y digitales.
+- **Alcance:** no altera los estados funcionales ni modifica imágenes anteriores.

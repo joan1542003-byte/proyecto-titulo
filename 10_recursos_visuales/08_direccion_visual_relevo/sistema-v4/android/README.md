@@ -45,7 +45,7 @@ Se revisaron visualmente los 19 PNG de android/oscuro. Las versiones v1 de 02 a 
 
 - Canvas #111314; superficie funcional #1B1D1E; texto principal #F1F1F1; texto secundario #B6B8B7; reglas #3A3D3E.
 - IBM Plex Sans para lectura, instrucciones y acciones; IBM Plex Mono para metadatos breves.
-- El rojo #EF3E45 se reserva al nodo de señal situada. No representa acción, error, batería, vínculo ni selección.
+- El rojo #D71921 se reserva al nodo de señal situada. No representa acción, error, batería, vínculo, selección, navegación ni decoración.
 - Los puntos solo pueden aparecer como marca, señal expresiva breve o gráfico informativo acompañado de texto equivalente.
 - Una elección debe mostrar sus límites y estados; una acción debe expresar qué ejecuta; un estado no debe parecer pulsable.
 - El testigo emite la señal situada; la aplicación comunica la configuración y el estado de esa relación.
@@ -61,3 +61,10 @@ Se revisaron visualmente los 19 PNG de android/oscuro. Las versiones v1 de 02 a 
 - Por qué: al existir v2 para las pantallas 02–10, las v1 deben leerse como antecedentes. La nueva clasificación evita que una exploración superada, en particular la silueta industrial de 05 v1, se interprete como decisión cerrada.
 - Corrección de lenguaje: se eliminó la descripción del testigo por ausencia y se explicitó su función: emite la señal situada en el lugar elegido.
 - Alcance: esta actualización no modifica imágenes, wireframes, memoria, inventario ni decisiones técnicas del testigo. Tampoco cierra su forma industrial.
+
+### 2026-09-01 — Unificación cromática
+
+- **Cambio:** el rojo operativo pasó a `#D71921` y se excluyó de navegación y decoración.
+- **Versión anterior:** el índice Android indicaba `#EF3E45`.
+- **Motivo:** sincronizar Android con el token semántico vigente y el sistema editorial.
+- **Alcance:** no modifica los PNG existentes ni convierte el rojo en un estado de interfaz.

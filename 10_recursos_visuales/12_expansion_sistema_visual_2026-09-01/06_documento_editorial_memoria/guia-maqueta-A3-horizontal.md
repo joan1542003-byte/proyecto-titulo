@@ -42,7 +42,7 @@ El punto, la línea y el rojo tienen usos restringidos.
 
 - **Punto:** representa una unidad, nodo o relación cuando existe una leyenda que lo explica. En portada puede aparecer como textura de bajo contraste, sin competir con el título.
 - **Línea:** organiza columnas, separa información o expresa relación entre elementos identificados. No se usa como adorno automático.
-- **Rojo `#EF3E45`:** aparece una sola vez en un diagrama cuando identifica la señal o el elemento situado que exige atención. En páginas de texto puede actuar como acento de navegación muy puntual, nunca como subrayado sistemático.
+- **Rojo `#D71921`:** aparece una sola vez en un diagrama cuando identifica la señal o el elemento situado que exige atención. No opera como acento de navegación, subrayado ni decoración en páginas de texto.
 - **Negro grafito y blanco cálido:** permiten alternar páginas de apertura y lectura. El blanco cálido es el soporte principal de contenido extenso; el grafito reserva contraste para portadas, separadores o piezas de exposición.
 
 Las palabras que nombran el marco conceptual no forman una cenefa ni un eslogan recurrente. Solo se emplean en el pasaje donde la memoria define el concepto o en un diagrama que realmente necesite distinguir sus partes.

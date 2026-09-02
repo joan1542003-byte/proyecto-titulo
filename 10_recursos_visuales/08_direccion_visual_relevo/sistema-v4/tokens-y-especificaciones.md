@@ -24,7 +24,7 @@ Los valores de Android se expresan en `dp` para geometría y `sp` para texto. Lo
 | `color.text.secondary` | `#B6B8B7` | Vigente | Ayuda, metadatos y estados secundarios | Información crítica aislada | Contraste y comprensión sin color |
 | `color.rule` | `#3A3D3E` | Vigente | Separación no informativa | Foco, selección o error | Verificar que su ausencia no quite significado |
 | `color.border.functional` | `#767A79` | Vigente | Campo, foco y control delineado | Decoración pura | Contraste no textual y foco visible |
-| `color.signal.situated` | `#EF3E45` | Vigente como rol; valor por validar | Único nodo de señal situada | Error, batería, vínculo, selección, acción o decoración | Asociación, escala de grises, contraste y daltonismo |
+| `color.signal.situated` | `#D71921` | Vigente | Único nodo de señal situada | Error, batería, vínculo, selección, acción, navegación o decoración | Asociación, escala de grises, contraste y daltonismo |
 
 No existe una paleta clara vigente para nuevas piezas. Los valores claros documentados en v3 y las pantallas claras de v4 son históricos. El papel puede exigir una adaptación física de contraste, pero esa adaptación no crea un tema claro de interfaz.
 
@@ -171,3 +171,10 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 - **Cambio:** se corrigió el año de la guía de accesibilidad de Android a 2023.
 - **Situación anterior:** la referencia utilizaba el año de trabajo del proyecto como fecha editorial.
 - **Motivo:** citar la fecha publicada por la fuente oficial y conservar trazabilidad APA 7.
+
+### 2026-09-01 — Unificación del rojo de señal
+
+- **Cambio:** `color.signal.situated` se fijó en `#D71921` y se prohibió su uso como navegación o decoración.
+- **Versión anterior:** v4 usaba `#EF3E45`, mientras que los criterios visuales generales registraban `#D71921`.
+- **Motivo:** eliminar una discrepancia de sistema y mantener un valor con mejor contraste sobre papel claro.
+- **Alcance:** las imágenes históricas no se recolorean; las piezas nuevas y reconstrucciones editables deben usar el valor vigente.

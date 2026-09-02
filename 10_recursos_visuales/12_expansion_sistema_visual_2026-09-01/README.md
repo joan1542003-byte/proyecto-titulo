@@ -10,7 +10,7 @@ La referencia principal es la lámina oscura seleccionada por el autor: grafito 
 
 - Fondo digital `#111314`.
 - IBM Plex Sans para lectura e IBM Plex Mono para etiquetas y datos breves.
-- Rojo `#EF3E45` reservado a la señal situada.
+- Rojo `#D71921` reservado a la señal situada; no funciona como acento de navegación ni decoración.
 - Los estados técnicos no utilizan rojo como atajo.
 - Los puntos solo explican una relación documentada y con leyenda; no representan progreso, puntuación, selección ni carga.
 - La decoración es secundaria y no invade controles ni contenido.

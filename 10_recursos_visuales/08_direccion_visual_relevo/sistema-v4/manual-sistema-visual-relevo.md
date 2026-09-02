@@ -77,7 +77,7 @@ El sistema v4 utiliza una paleta oscura y plana. El color se define por función
 | Texto secundario | `#B6B8B7` | Ayuda, metadatos y estados secundarios | No usarlo para información crítica si pierde contraste |
 | Regla | `#3A3D3E` | Separación no informativa | No comunicar selección, error o foco |
 | Borde funcional | `#767A79` | Campo, foco y control delineado | Debe distinguirse también por forma y texto |
-| Señal situada | `#EF3E45` | Único nodo de señal situada | No usar en acciones, errores, batería, vínculo, selección o decoración |
+| Señal situada | `#D71921` | Único nodo de señal situada | No usar en acciones, errores, batería, vínculo, selección, navegación o decoración |
 
 El rojo solo aparece cuando la señal situada es el contenido semántico de la pantalla o de la pieza. Antes de situar la intención se omite. Si una pieza requiere rojo por otra razón, se considera una contradicción y no se aprueba hasta resolverla. La comprensión debe mantenerse en escala de grises y mediante texto o estructura equivalente.
 
@@ -197,3 +197,10 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 - **Cambio:** se corrigió el año de la guía de accesibilidad de Android según la fecha publicada en la fuente oficial.
 - **Situación anterior:** la referencia usaba 2026 como año de publicación.
 - **Motivo:** mantener APA 7 trazable y distinguir la fecha de consulta de la fecha editorial.
+
+### 2026-09-01 — Unificación del rojo de señal
+
+- **Cambio:** se sustituyó el rojo de señal por `#D71921` y se precisó que no funciona como acento editorial automático.
+- **Versión anterior:** el manual usaba `#EF3E45` y no nombraba navegación dentro de los usos excluidos.
+- **Motivo:** alinear el manual con los criterios visuales vigentes y la auditoría editorial A3.
+- **Alcance:** el cambio rige piezas nuevas; no altera el sentido semántico del nodo de señal situada.

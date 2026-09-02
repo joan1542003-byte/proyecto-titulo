@@ -89,3 +89,10 @@ Cuando una imagen contradice un documento vigente, prevalece el documento hasta 
 - **Motivo:** convertir el sistema visual en una fuente navegable y gobernable, distinguir reglas vigentes de hipótesis y evitar que las imágenes actúen como especificación aislada.
 - **Decisión de continuidad:** v3 y las exploraciones claras permanecen como historial; la v4 gobierna nuevas piezas digitales oscuras.
 - **Asuntos abiertos:** validar comprensión, accesibilidad, color contextual, tipografía, movimiento, funcionamiento Android y todas las variables físicas del testigo.
+
+### 2026-09-01 — Control editorial A3
+
+- **Cambio:** v4 reconoce la página A3 horizontal única como formato de exploración editorial y fija `#D71921` como único rojo de señal.
+- **Versión anterior:** la documentación visual no diferenciaba con suficiente claridad una página horizontal de un pliego y coexistían dos rojos de señal.
+- **Motivo:** alinear la producción de memoria con el contrato visual y prevenir usos decorativos del sistema.
+- **Alcance:** la decisión editorial no reemplaza una plantilla institucional ni valida los textos de las maquetas generadas.

@@ -82,7 +82,7 @@ La referencia concentra un rojo intenso en nodos, muestras y algunos controles. 
 
 **Transferencia:** un acento único puede crear reconocimiento y separar un momento del sistema.
 
-**Transformación necesaria:** en Relevo el rojo `#EF3E45` se reserva al nodo de señal situada. No representa error, batería, conexión, confirmación, acción primaria ni selección.
+**Transformación necesaria:** en Relevo el rojo `#D71921` se reserva al nodo de señal situada. No representa error, batería, conexión, confirmación, acción primaria, selección, navegación ni decoración.
 
 ### Modularidad
 
@@ -131,3 +131,10 @@ Para Relevo, el aprendizaje más importante es de separación funcional: la grá
 - **Cambio:** la comparación del testigo se formuló desde la señal que debe emitir y no desde características ajenas que carece de sentido enumerar.
 - **Versión anterior:** la tabla definía el objeto mediante una negación innecesaria.
 - **Motivo:** concentrar la investigación en las funciones pertinentes para Relevo.
+
+### 2026-09-01 — Unificación del rojo de señal
+
+- **Cambio:** se actualizó el valor de señal a `#D71921` y se excluyó de navegación y decoración.
+- **Versión anterior:** la transferencia de la referencia usaba `#EF3E45`.
+- **Motivo:** alinear la interpretación de la referencia con el token vigente de Relevo.
+- **Alcance:** la actualización no aumenta la semejanza con la referencia ni modifica sus límites de uso.
