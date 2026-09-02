@@ -28,7 +28,7 @@ Esta colección conserva únicamente el bloque de feedback correspondiente a Rel
 1. [Registro normalizado](registro-normalizado.md): conserva las notas directas, la síntesis estructurada y la deliberación como capas distintas.
 2. [Matriz de trazabilidad](matriz-de-trazabilidad.md): transforma las observaciones en preguntas, tareas o exclusiones con estado explícito.
 3. [Informe de integridad](informe-de-integridad-docx.md): documenta estructura, revisión visual, comentarios, límites y omisiones.
-4. [Síntesis activa](../../../../../01_contexto_y_fuentes/feedback-e15.md): reúne únicamente los aprendizajes utilizables por el proyecto actual.
+4. [Síntesis activa](../../../../01_contexto_y_fuentes/feedback-e15.md): reúne únicamente los aprendizajes utilizables por el proyecto actual.
 
 ## Jerarquía de lectura
 

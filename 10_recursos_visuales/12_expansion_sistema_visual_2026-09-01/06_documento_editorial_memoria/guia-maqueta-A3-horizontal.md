@@ -21,7 +21,7 @@ El A3 horizontal se adopta como formato de exploración porque permite disponer 
 | Cuerpo | IBM Plex Sans, 10,5–11,5 pt; interlineado 15–16 pt. | Prioriza lectura sostenida y referencias APA 7 legibles. |
 | Jerarquía | Sans para título y lectura; Plex Mono solo en folios, códigos, fechas y microdatos. | Distingue navegación de contenido sin fragmentar la voz académica. |
 
-La construcción completa y sus combinaciones autorizadas se encuentran en [`grilla-canonica-A3-horizontal.md`](../../../13_sistema_editorial_campo_evidencia_2026-09-01/00_direccion_y_grilla/grilla-canonica-A3-horizontal.md). La retícula está cerrada para producir pruebas; su adopción final depende de volcar un capítulo completo con tablas, figuras y referencias reales, e imprimirlo a tamaño real.
+La construcción completa y sus combinaciones autorizadas se encuentran en [`grilla-canonica-A3-horizontal.md`](../../13_sistema_editorial_campo_evidencia_2026-09-01/00_direccion_y_grilla/grilla-canonica-A3-horizontal.md). La retícula está cerrada para producir pruebas; su adopción final depende de volcar un capítulo completo con tablas, figuras y referencias reales, e imprimirlo a tamaño real.
 
 ## Familias de página
 

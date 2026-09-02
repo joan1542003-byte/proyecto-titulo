@@ -398,7 +398,7 @@ El objeto debe leerse como pieza doméstica discreta —base de mesa o velador, 
 
 In(Visible) no pide nada mientras descansas: dejar y retirar el celular marca el inicio y el cierre de la sesión. El esquema resume esa lógica; el storyboard de la Etapa 2 la desarrollará en detalle.
 
-![Esquema de flujo In(Visible)](assets/flujo_invisible.png)
+![Esquema de flujo In(Visible)](../e12/assets/flujo_invisible.png)
 
 *Figura 1. Esquema de flujo de uso de In(Visible). Elaboración propia del autor, 2026.*
 

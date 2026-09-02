@@ -5,7 +5,7 @@
 **Archivo:** `evidencia-7-1-a-7-4-campo-de-evidencia-v2.png`  
 **Formato:** imagen rasterizada horizontal, 1492 × 1054 px; proporción aproximada 420:297.  
 **Dirección:** Campo de evidencia.  
-**Fuente textual:** [`08_memoria/memoria-vigente-v4.md`](../../../../../../08_memoria/memoria-vigente-v4.md), apartados 7.1–7.4.
+**Fuente textual:** [`08_memoria/memoria-vigente-v4.md`](../../../../08_memoria/memoria-vigente-v4.md), apartados 7.1–7.4.
 
 ## Decisiones aplicadas
 

@@ -60,6 +60,8 @@ El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agos
 
 Antes de trabajar con ChatGPT o Codex, conecta GitHub y usa [Instrucciones maestras para conversaciones](INSTRUCCIONES_CHATGPT.md). Ese documento define el protocolo de lectura del repositorio, el contexto estable, las reglas de investigación y escritura, y el registro de resultados.
 
+Para ubicar rápidamente cada área, consulta el [índice operativo del repositorio](00_gobernanza/indice-del-repositorio.md).
+
 ## Principios de trabajo
 
 - Investigar antes de concluir o diseñar.

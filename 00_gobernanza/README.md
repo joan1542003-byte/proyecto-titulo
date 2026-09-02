@@ -17,6 +17,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `hoja-de-ruta.md`: secuencia de trabajo y condiciones para avanzar.
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
+- `indice-del-repositorio.md`: orden de lectura, estado de cada carpeta y fuentes que deben tomarse como referencia.
 - GitHub Issues: tareas operativas, bloqueos y criterios de cierre.
 
 ## Regla principal
@@ -35,7 +36,13 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 
 ---
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Creación del índice operativo
+
+- **Cambio:** se agregó `indice-del-repositorio.md` al conjunto de documentos de gobernanza.
+- **Versión anterior:** la descripción de las carpetas estaba repartida entre distintos README.
+- **Motivo:** ofrecer un único punto de entrada para distinguir fuentes vigentes, entregas fechadas y archivo histórico.
 
 ### 2026-08-29 — Plan de cierre temporal
 

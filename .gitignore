@@ -8,6 +8,7 @@ transcripciones_identificables/
 # Archivos temporales y de sistema
 tmp/
 .codex_tmp/
+**/node_modules/
 ~$*
 .DS_Store
 Thumbs.db

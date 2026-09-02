@@ -1,0 +1,12 @@
+{
+  "name": "relevo-memoria-editorial",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "export": "node export.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1"
+  }
+}

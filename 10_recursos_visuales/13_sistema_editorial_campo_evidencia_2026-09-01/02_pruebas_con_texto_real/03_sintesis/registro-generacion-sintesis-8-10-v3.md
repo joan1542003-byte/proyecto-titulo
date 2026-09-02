@@ -2,7 +2,7 @@
 
 **Estado:** referencia de composición activa para revisión editorial; no es arte final.
 
-**Fuente textual:** [`08_memoria/memoria-vigente-v4.md`](../../../../../08_memoria/memoria-vigente-v4.md), sección `8.10 Oportunidad de diseño`.
+**Fuente textual:** [`08_memoria/memoria-vigente-v4.md`](../../../../08_memoria/memoria-vigente-v4.md), sección `8.10 Oportunidad de diseño`.
 
 **Archivo:** [`sintesis-8-10-campo-evidencia-v3.png`](sintesis-8-10-campo-evidencia-v3.png).
 

@@ -6,3 +6,4 @@
 10_recursos_visuales/06_graficos_4k/**/*.png filter=lfs diff=lfs merge=lfs -text
 10_recursos_visuales/11_exploracion_sistema_visual_2026-08-31/**/*.png filter=lfs diff=lfs merge=lfs -text
 10_recursos_visuales/12_expansion_sistema_visual_2026-09-01/**/*.png filter=lfs diff=lfs merge=lfs -text
+10_recursos_visuales/14_memoria_editorial_completa_2026-09-01/paginas_png/**/*.png filter=lfs diff=lfs merge=lfs -text

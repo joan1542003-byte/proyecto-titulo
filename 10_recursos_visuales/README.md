@@ -1,6 +1,6 @@
 # Sistema visual de Relevo
 
-## Estado vigente — 2026-09-01
+## Estado vigente — 2026-09-02
 
 La dirección vigente se documenta en `08_direccion_visual_relevo/sistema-v4` y se amplía en `11_exploracion_sistema_visual_2026-08-31`. Se organiza alrededor de grafito, blanco cálido, grises y rojo de señal; utiliza IBM Plex Sans para lectura, IBM Plex Mono para datos breves y una gramática de puntos que representa origen, vínculo y señal situada.
 
@@ -45,6 +45,8 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `10_tipografias` | IBM Plex Sans y Mono en formatos instalables y web, con paquetes y licencias oficiales. |
 | `11_exploracion_sistema_visual_2026-08-31` | Sesenta piezas vigentes en seis familias de diez, más hojas de contacto, auditoría y descartes documentados. |
 | `12_expansion_sistema_visual_2026-09-01` | Expansión no física con 38 piezas producidas: ocho estados Android, diez editoriales, diez carteles y diez módulos transparentes. |
+| `13_sistema_editorial_campo_evidencia_2026-09-01` | Sistema editorial de la memoria: retícula A3 horizontal, pruebas con texto real, figuras, síntesis y descartes documentados. |
+| `14_memoria_editorial_completa_2026-09-01` | Maqueta integral reproducible de la memoria vigente y sus páginas PNG; conserva la fuente y excluye dependencias instaladas. |
 
 ## Paleta inicial
 
@@ -64,7 +66,7 @@ Las imágenes adjuntas por el autor se usan como referencias de estilo, atmósfe
 
 La segunda exploración incorpora una gramática de puntos redondos, barras, órbitas, trazas y módulos de alto contraste inspirada en referencias de tipografía modular y dispositivos minimalistas. Se usa como investigación formal, no como reproducción de una marca existente ni como identidad cerrada de Relevo.
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
 
 ### 2026-08-25 — Creación
 
@@ -117,3 +119,10 @@ La segunda exploración incorpora una gramática de puntos redondos, barras, ór
 - **Versión anterior:** la colección contenía ocho pantallas Android y las demás familias solo estaban planificadas.
 - **Motivo:** ampliar las aplicaciones editoriales, los carteles y los recursos transparentes sin producir más imágenes del objeto físico.
 - **Alcance:** la biblioteca reúne referencias rasterizadas para reconstrucción; no reemplaza archivos editables ni validaciones.
+
+### 2026-09-02 — Registro de la maqueta editorial integral
+
+- **Cambio:** se incorporó al índice la maqueta completa de la memoria y se actualizó la fecha de vigencia.
+- **Versión anterior:** el índice terminaba en la expansión no física y no permitía localizar las páginas A3 exportadas ni su renderer.
+- **Motivo:** conservar la maqueta como proceso visual trazable y separar su fuente reproducible de las colecciones exploratorias.
+- **Alcance:** las páginas PNG requieren revisión editorial a tamaño real; no sustituyen la memoria Markdown ni constituyen arte final de impresión.
