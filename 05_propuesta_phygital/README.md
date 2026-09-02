@@ -26,7 +26,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 - [Entrega 02-09-2026: pantalla principal y wireframes completos](../00_admin/encargos/encargo-02-09-2026/README.md)
 - [Entregables clave: pantalla principal, mapa completo, naming y color](entregables-clave-2026-09-01/README.md)
 
-- [Archivo editorial de wireframes — versión vigente](wireframes-board-html/README.md)
+- [Tablero editorial anterior — registro de proceso](wireframes-board-html/README.md)
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Tablero HTML de wireframes — versión vigente](wireframes-media-html/README.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
@@ -46,10 +46,17 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 
 ### 2026-09-02 — Entrega fechada de wireframes
 
-- **Cambio:** se enlazó una entrega autónoma con la pantalla 1.1 en alta fidelidad, los nueve marcos principales, los 35 estados de cobertura y el mapa completo.
+- **Cambio:** se enlazó una entrega autónoma con la pantalla 3.1 destacada, los nueve marcos principales, los 35 estados de cobertura y tres mapas legibles.
 - **Versión anterior:** las piezas estaban disponibles en sus carpetas de producción, pero no reunidas bajo la fecha del encargo.
 - **Motivo:** facilitar la entrega y mantener una lectura clara entre dirección visual, ruta evaluable y cobertura complementaria.
-- **Alcance:** organización y desarrollo visual de una pantalla; no implica validación integral de la aplicación.
+- **Alcance:** organización y desarrollo visual de la ruta principal; no implica validación integral de la aplicación.
+
+### 2026-09-02 — Jerarquía de fuentes para los wireframes
+
+- **Cambio:** el tablero HTML de 44 vistas quedó identificado como fuente vigente y el tablero editorial anterior pasó a registro de proceso.
+- **Versión anterior:** ambos aparecían como vigentes dentro del mismo índice.
+- **Motivo:** evitar dos fuentes activas para las mismas pantallas y dirigir la revisión hacia la versión que contiene las exportaciones y los mapas actuales.
+- **Alcance:** el tablero anterior se conserva y no se modifica su contenido.
 
 ### 2026-09-01 — Wireframes HTML sin simulación de dispositivo
 

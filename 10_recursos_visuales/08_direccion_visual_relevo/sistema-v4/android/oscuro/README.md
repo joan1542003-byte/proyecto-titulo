@@ -2,7 +2,7 @@
 
 ## Alcance y estado
 
-Esta carpeta contiene 19 referencias rasterizadas del flujo Android de Relevo: una pantalla de inicio y dos versiones para cada pantalla 02–10. Se auditaron visualmente todos los PNG en la revisión del 29 de agosto de 2026.
+Esta carpeta contiene 20 referencias rasterizadas del flujo Android de Relevo: una pantalla de inicio, dos versiones para cada pantalla 02–10 y una referencia horizontal adicional para la señal situada. Se auditaron visualmente todos los PNG vigentes.
 
 El modo oscuro es la única dirección vigente. Las v1 superadas se conservan para hacer trazable el proceso, pero no deben utilizarse para reconstruir la interfaz cuando existe una v2. Las imágenes son referencias visuales: todavía requieren reconstrucción manual, texto real, estados funcionales, pruebas de interacción y auditoría de accesibilidad.
 
@@ -36,7 +36,7 @@ Decisión: una sola acción visible, sin rojo, puntos, métricas ni módulos inn
 
 Riesgo: el raster presenta una leve textura; la reconstrucción debe usar un fondo plano. La marca debe permanecer identificable como marca y no como control.
 
-Prompt registrado: Pantalla Android oscura única, 390×844, RELEVO, SIN CONFIGURAR, Todavía no hay un ciclo activo., Puedes definir una intención y un primer paso., Crear intención; IBM Plex, retícula 8 dp, sin rojo ni métricas.
+Criterio de reconstrucción: Pantalla Android oscura única, 390×844, RELEVO, SIN CONFIGURAR, Todavía no hay un ciclo activo., Puedes definir una intención y un primer paso., Crear intención; IBM Plex, retícula 8 dp, sin rojo ni métricas.
 
 Reconstrucción necesaria: texto real, escala sp, área táctil, foco, estado vacío y ampliación de texto.
 
@@ -54,7 +54,7 @@ Decisión: la v2 reduce el título, incorpora retorno claro y cambia las cajas g
 
 Riesgo: los campos pueden parecer texto estático si el foco, el cursor y la validación no se implementan. Cancelar y Atrás pueden duplicar salida si no se define su consecuencia.
 
-Prompt registrado: Pantalla Android oscura única, FORMULAR, ¿Qué quieres iniciar?, campos lineales Salir a caminar y Ponerte las zapatillas, ayuda breve, Atrás, Cancelar, Continuar; IBM Plex, retícula 8 dp, sin rojo ni tarjetas genéricas.
+Criterio de reconstrucción: Pantalla Android oscura única, FORMULAR, ¿Qué quieres iniciar?, campos lineales Salir a caminar y Ponerte las zapatillas, ayuda breve, Atrás, Cancelar, Continuar; IBM Plex, retícula 8 dp, sin rojo ni tarjetas genéricas.
 
 Reconstrucción necesaria: teclado, foco, edición, validación, errores, orden de lectura y decisión sobre las dos salidas.
 
@@ -72,7 +72,7 @@ Decisión: la v2 elimina comillas, reduce la escala del título y limita visualm
 
 Riesgo: mantiene retorno en la barra superior y una acción Atrás inferior. Esa duplicación puede generar duda sobre la navegación. Los cheurones no deben cargar por sí solos el significado de cada campo.
 
-Prompt registrado: Pantalla Android oscura única, CONFIGURAR CONDICIÓN, aplicación, condición provisional y vigencia como tres campos seleccionables delineados, Atrás, Revisar ciclo; IBM Plex, sin rojo, puntos ni tarjetas universales.
+Criterio de reconstrucción: Pantalla Android oscura única, CONFIGURAR CONDICIÓN, aplicación, condición provisional y vigencia como tres campos seleccionables delineados, Atrás, Revisar ciclo; IBM Plex, sin rojo, puntos ni tarjetas universales.
 
 Reconstrucción necesaria: conservar una sola salida, definir estados seleccionado/no seleccionado, permisos, valores no disponibles y lectura accesible.
 
@@ -90,7 +90,7 @@ Decisión: la v2 reemplaza la tarjeta-resumen dominante por una agrupación de f
 
 Riesgo: las filas deben seguir siendo legibles como resumen y no parecer una lista de opciones. Un icono informativo no es necesario si el texto ya explica el estado.
 
-Prompt registrado: Pantalla Android oscura única, REVISAR, Salir a caminar, primer paso, condición provisional, vigencia, estado El ciclo aún no está armado, acciones Editar y Continuar para situar; filas con reglas, sin tarjeta gigante ni rojo.
+Criterio de reconstrucción: Pantalla Android oscura única, REVISAR, Salir a caminar, primer paso, condición provisional, vigencia, estado El ciclo aún no está armado, acciones Editar y Continuar para situar; filas con reglas, sin tarjeta gigante ni rojo.
 
 Reconstrucción necesaria: texto real, lectura lineal, foco, navegación y prueba para distinguir contenido de elección.
 
@@ -108,7 +108,7 @@ Decisión: la v2 elimina la silueta que fijaba prematuramente una forma industri
 
 Riesgo: la alineación vertical y la jerarquía de Vincular testigo todavía pueden normalizarse. Elegir otro debe tener una consecuencia distinta y visible.
 
-Prompt registrado: Pantalla Android oscura única, SITUAR, Confirma el testigo, explicación breve, filas TESTIGO — Relevo, Vínculo disponible, Batería suficiente para probar, acciones Elegir otro y Vincular testigo; IBM Plex, sin representación industrial cerrada ni rojo.
+Criterio de reconstrucción: Pantalla Android oscura única, SITUAR, Confirma el testigo, explicación breve, filas TESTIGO — Relevo, Vínculo disponible, Batería suficiente para probar, acciones Elegir otro y Vincular testigo; IBM Plex, sin representación industrial cerrada ni rojo.
 
 Reconstrucción necesaria: alinear etiquetas y valores, definir jerarquía de acciones, vínculo disponible, batería insuficiente y recuperación.
 
@@ -126,7 +126,7 @@ Decisión: la v2 aclara que la prueba emite una señal breve en el testigo y que
 
 Riesgo: Emitir pulso podría confundirse con armar el ciclo si el texto explicativo desaparece. La prueba y el armado deben conservar estados distintos.
 
-Prompt registrado: Pantalla Android oscura única, PROBAR EL PULSO, Sitúa el testigo junto al primer paso., filas de intención, primer paso y lugar, estados de vínculo y batería, El resultado lo declaras tú después de la prueba., Ajustar lugar, Emitir pulso; sin rojo ni simulación gráfica del evento.
+Criterio de reconstrucción: Pantalla Android oscura única, PROBAR EL PULSO, Sitúa el testigo junto al primer paso., filas de intención, primer paso y lugar, estados de vínculo y batería, El resultado lo declaras tú después de la prueba., Ajustar lugar, Emitir pulso; sin rojo ni simulación gráfica del evento.
 
 Reconstrucción necesaria: emisión real, resultado declarado, permisos, errores y separación entre probar y armar.
 
@@ -144,7 +144,7 @@ Decisión: la espera se comunica sin contador, racha, porcentaje, premio ni eval
 
 Riesgo: el texto heredado de la imagen necesita corrección manual para expresar esa función con claridad. CICLO ACTIVO debe significar configuración armada, no actividad realizada.
 
-Prompt registrado: Pantalla Android oscura única, CICLO ACTIVO, intención, primer paso, condición provisional, vigencia, testigo, vínculo disponible, estado de espera, Desarmar ciclo; retícula precisa, sin métricas, progreso, culpa ni rojo.
+Criterio de reconstrucción: Pantalla Android oscura única, CICLO ACTIVO, intención, primer paso, condición provisional, vigencia, testigo, vínculo disponible, estado de espera, Desarmar ciclo; retícula precisa, sin métricas, progreso, culpa ni rojo.
 
 Reconstrucción necesaria: reemplazar copy heredado, definir actualización de estados, desarme explícito y comportamiento ante pérdida de vínculo.
 
@@ -162,7 +162,9 @@ Decisión: un único nodo #D71921 identifica el acontecimiento. La matriz y la t
 
 Riesgo: los puntos pueden parecer progreso o selección si pierden sus rótulos. El nodo rojo no debe ser pulsable ni transformarse en alerta. El icono de silencio requiere significado convencional y etiqueta accesible.
 
-Prompt registrado: Pantalla Android oscura única, SEÑAL SITUADA, relación informativa etiquetada INTENCIÓN → VÍNCULO → SEÑAL SITUADA, un único nodo rojo #D71921, lugar, primer paso, Ahora decides si comienzas, Silenciar testigo, Cerrar ciclo; sin métricas ni controles decorativos.
+Criterio de reconstrucción: Pantalla Android oscura única, SEÑAL SITUADA, relación informativa etiquetada INTENCIÓN → VÍNCULO → SEÑAL SITUADA, un único nodo rojo #D71921, lugar, primer paso, Ahora decides si comienzas, Silenciar testigo, Cerrar ciclo; sin métricas ni controles decorativos.
+
+La referencia `11-referencia-senal-situada-horizontal.png` amplía este criterio: propone una transferencia horizontal más directa y una jerarquía tipográfica contenida. Se conserva como referencia de calidad para 3.2, no como una pantalla nueva ni como sustituto del marco vigente.
 
 Reconstrucción necesaria: gráfico con texto equivalente, contraste en escala de grises, estado de silencio, cierre sin evaluación y sincronía con el testigo.
 
@@ -180,7 +182,7 @@ Decisión: la v2 elimina comillas, guiones ambiguos e iconografía innecesaria. 
 
 Riesgo: Vínculo perdido aparece repetido como titular y estado. La versión candidata debe mostrarlo una vez y establecer una jerarquía evidente para Reintentar vínculo como recuperación.
 
-Prompt registrado: Pantalla Android oscura única, RECUPERAR, Vínculo perdido una sola vez, testigo, explicación El ciclo no se modificó. Comprueba la conexión y vuelve a intentarlo., acciones Reintentar vínculo y Cerrar ciclo; estado textual, sin rojo ni iconos ambiguos.
+Criterio de reconstrucción: Pantalla Android oscura única, RECUPERAR, Vínculo perdido una sola vez, testigo, explicación El ciclo no se modificó. Comprueba la conexión y vuelve a intentarlo., acciones Reintentar vínculo y Cerrar ciclo; estado textual, sin rojo ni iconos ambiguos.
 
 Reconstrucción necesaria: reducir repetición, ordenar acciones, documentar permisos, reconexión y conservación del ciclo.
 
@@ -198,7 +200,7 @@ Decisión: la v2 elimina el check de éxito, las comillas y la iconografía ambi
 
 Riesgo: la barra superior y la marca deben mantener una jerarquía única. Preparar otro ciclo debe iniciar una nueva configuración explícita, nunca un rearme automático.
 
-Prompt registrado: Pantalla Android oscura única, CICLO CERRADO, Ciclo cerrado, intención, estado del ciclo, última configuración, Testigo desvinculado, Salir, Preparar otro ciclo; cierre no evaluativo, sin check de logro, métricas ni rojo.
+Criterio de reconstrucción: Pantalla Android oscura única, CICLO CERRADO, Ciclo cerrado, intención, estado del ciclo, última configuración, Testigo desvinculado, Salir, Preparar otro ciclo; cierre no evaluativo, sin check de logro, métricas ni rojo.
 
 Reconstrucción necesaria: confirmar cierre, desvinculación, salida, nueva configuración y orden de foco.
 
@@ -241,7 +243,7 @@ Las imágenes rasterizadas pueden contener errores tipográficos, textura, propo
 
 ### 2026-08-29 — Corrección de estados y fichas de imágenes
 
-- Qué se modificó: se reescribió el README para documentar la dirección oscura vigente, las diez referencias actuales o candidatas, la tabla breve de descarte de v1, los prompts existentes, los riesgos y la reconstrucción necesaria.
+- Qué se modificó: se reescribió el README para documentar la dirección oscura vigente, las diez referencias actuales o candidatas, la tabla breve de descarte de v1, los criterios existentes, los riesgos y la reconstrucción necesaria.
 - Cómo estaba antes: el documento registraba principalmente las v1 y las presentaba como aprobadas, mientras que las v2 no tenían una ficha equivalente. También conservaba formulaciones heredadas que describían al testigo por ausencia o situaban el evento mediante lenguaje impreciso.
 - Qué se reemplazó: las v1 de 02–10 dejaron de figurar como referencias de implementación. 05-vincular-testigo-oscuro-v1.png quedó explícitamente rechazada por fijar una silueta industrial; las demás v1 quedaron como históricas o superadas según su problema.
 - Qué se incorporó: 02, 04, 06, 07, 08 y 10 v2 como dirección aprobada; 03, 05 y 09 v2 como candidatas con ajustes concretos; 08 v2 como mejor referencia actual de señal situada.
@@ -255,3 +257,10 @@ Las imágenes rasterizadas pueden contener errores tipográficos, textura, propo
 - **Versión anterior:** las fichas y prompts registraban `#EF3E45`.
 - **Motivo:** sincronizar las referencias Android con el token semántico y el control editorial vigentes.
 - **Alcance:** no se modificaron los PNG ni se autorizó el rojo para selección, navegación o decoración.
+
+### 2026-09-02 — Referencia horizontal de señal situada
+
+- **Cambio:** se incorporó una referencia adicional para la composición del marco 3.2 y se reemplazó la etiqueta de proceso por criterios de reconstrucción.
+- **Versión anterior:** la carpeta reunía 19 imágenes y la referencia 08 v2 concentraba por sí sola la dirección de la señal situada.
+- **Motivo:** conservar una composición especialmente clara sin convertirla en un paso nuevo ni introducir lenguaje ajeno al proyecto.
+- **Alcance:** la referencia orienta jerarquía, ritmo y transferencia; el contenido funcional continúa gobernado por el wireframe y la memoria.

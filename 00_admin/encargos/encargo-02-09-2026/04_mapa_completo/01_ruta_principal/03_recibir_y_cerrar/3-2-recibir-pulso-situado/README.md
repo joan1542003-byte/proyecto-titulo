@@ -10,6 +10,10 @@ Representa el momento físico en que el testigo emite el pulso cerca del primer 
 
 Este marco pertenece a la interacción 3 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+El campo de puntos representa la transferencia de una señal, no un conjunto de opciones. Un único punto rojo identifica el momento situado. Los controles reales quedan separados en el borde inferior y mantienen etiquetas verbales.
+
 
 ---
 

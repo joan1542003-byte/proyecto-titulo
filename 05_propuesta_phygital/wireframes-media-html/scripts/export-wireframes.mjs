@@ -32,7 +32,8 @@ for (const target of targets) {
   await surface.evaluate((node) => node.scrollIntoView({ block: "center", inline: "nearest" }));
   const box = await surface.boundingBox();
   if (!box || Math.abs(box.width - 412) > 1 || Math.abs(box.height - 915) > 1) throw new Error(`Lienzo inesperado en ${target.id}: ${box?.width} × ${box?.height}`);
-  const overflow = await surface.locator(".wireframe-canvas").evaluate((node) => node.scrollHeight > node.clientHeight + 1 || node.scrollWidth > node.clientWidth + 1);
+  const canvas = surface.locator(".delivery-screen, .wireframe-canvas").first();
+  const overflow = await canvas.evaluate((node) => node.scrollHeight > node.clientHeight + 1 || node.scrollWidth > node.clientWidth + 1);
   if (overflow) throw new Error(`El contenido desborda el lienzo en ${target.mode} ${target.id}`);
   await surface.screenshot({ path: path.join(outputDir, fileName) });
   manifest.push({ ...target, file: fileName, canvas: "412x915dp", png: "824x1830px", url });

@@ -10,6 +10,10 @@ Ordena en una sola lectura la intención, el primer paso, la condición y la vig
 
 Este marco pertenece a la interacción 1 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+La revisión transforma lo ingresado en una lectura vertical estable. Los separadores ordenan cada dato y el aviso de estado distingue con claridad que el ciclo aún no está armado.
+
 
 ---
 

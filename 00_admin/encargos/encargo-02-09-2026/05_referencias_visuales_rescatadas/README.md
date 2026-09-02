@@ -1,6 +1,6 @@
 # Referencias visuales rescatadas
 
-Esta carpeta reúne cuatro generaciones que no tenían una copia exacta dentro del repositorio y que todavía aportan decisiones gráficas útiles. Se conservan como **referencias de proceso**, no como páginas finales de la memoria.
+Esta carpeta reúne cuatro exploraciones que no tenían una copia exacta dentro del repositorio y que todavía aportan decisiones gráficas útiles. Se conservan como **referencias de proceso**, no como páginas finales de la memoria.
 
 ## Piezas
 
@@ -28,9 +28,9 @@ Se copiaron únicamente piezas con valor compositivo o metodológico. No se inco
 
 ## Registro de cambios (disclaimer)
 
-### 2026-09-02 — Rescate desde el archivo local de generaciones
+### 2026-09-02 — Rescate desde el archivo visual local
 
 - **Qué se incorporó:** cuatro referencias visuales que no tenían una copia exacta en Git.
-- **Cómo estaba antes:** permanecían únicamente en la carpeta local de imágenes generadas.
+- **Cómo estaba antes:** permanecían únicamente en el archivo visual local.
 - **Qué se descartó:** borradores con errores visibles o con contenido que podía contradecir la definición vigente de Relevo.
 - **Por qué se hizo:** conservar exploraciones útiles sin confundirlas con entregables aprobados o evidencia de investigación.

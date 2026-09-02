@@ -13,6 +13,7 @@
     "prebuild": "npm run check:runtime",
     "build": "tsc && vite build && node scripts/prepare-sites-build.mjs",
     "export:wireframes": "node scripts/export-wireframes.mjs",
+    "export:maps": "node scripts/export-maps.mjs",
     "qa:wireframes": "node scripts/qa-wireframes.mjs"
   },
   "dependencies": {

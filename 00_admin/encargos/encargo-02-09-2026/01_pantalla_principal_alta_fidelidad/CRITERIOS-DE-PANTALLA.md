@@ -1,4 +1,4 @@
-# Pantalla destacada — Ciclo activo
+# Criterios de la pantalla destacada — Ciclo activo
 
 ## Selección
 
@@ -58,6 +58,6 @@ La pieza fija una dirección de interfaz y permite discutir jerarquía, densidad
 
 ### 2026-09-02 — Creación de la primera pantalla de alta fidelidad
 
-- **Qué se incorporó:** imagen de alta fidelidad para 1.1 Formular, prompt y criterios de selección.
+- **Qué se incorporó:** imagen de alta fidelidad para 1.1 Formular y criterios de selección.
 - **Cómo estaba antes:** existían un wireframe estructural y una referencia visual con contenido de ejemplo.
 - **Por qué se hizo:** probar la aplicación del sistema visual en una interfaz concreta.

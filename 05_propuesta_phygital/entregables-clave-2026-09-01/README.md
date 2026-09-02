@@ -1,6 +1,6 @@
 # Entregables clave de Relevo
 
-Este paquete cierra cuatro definiciones necesarias antes de avanzar hacia un prototipo funcional: la pantalla principal en alta fidelidad, el mapa completo de wireframes, el sistema de naming y los códigos cromáticos. Todas las decisiones se derivan de la memoria vigente, del flujo del Encargo 17 y del sistema visual v4.
+Este paquete conserva el cierre preparado el 1 de septiembre. La entrega vigente de wireframes y mapas se encuentra en [`00_admin/encargos/encargo-02-09-2026`](../../00_admin/encargos/encargo-02-09-2026/). Se mantiene esta carpeta para documentar el proceso y consultar naming y códigos cromáticos.
 
 ## Contenido
 
@@ -8,7 +8,7 @@ Este paquete cierra cuatro definiciones necesarias antes de avanzar hacia un pro
 |---|---|---|
 | Pantalla principal | [`01_pantalla_principal/pantalla-principal-ciclo-activo-alta-fidelidad.png`](01_pantalla_principal/pantalla-principal-ciclo-activo-alta-fidelidad.png) | Dirección visual aprobable; requiere prueba en prototipo Android |
 | Justificación de la pantalla | [`01_pantalla_principal/justificacion-pantalla-principal.md`](01_pantalla_principal/justificacion-pantalla-principal.md) | Cerrada para esta etapa |
-| Mapa completo | [`02_mapa_wireframes/mapa-completo-wireframes-baja-fidelidad.png`](02_mapa_wireframes/mapa-completo-wireframes-baja-fidelidad.png) | 9 momentos principales y 35 estados de cobertura |
+| Mapa completo | [`02_mapa_wireframes/mapa-completo-wireframes-baja-fidelidad.png`](02_mapa_wireframes/mapa-completo-wireframes-baja-fidelidad.png) | Antecedente reemplazado por tres mapas legibles en la entrega del 2 de septiembre |
 | Lectura del mapa | [`02_mapa_wireframes/lectura-y-cobertura.md`](02_mapa_wireframes/lectura-y-cobertura.md) | Cerrada para esta etapa |
 | Naming | [`naming.md`](naming.md) | Arquitectura verbal definida; disponibilidad legal pendiente |
 | Códigos cromáticos | [`codigos-cromaticos.md`](codigos-cromaticos.md) | Roles y valores vigentes; impresión y percepción contextual por validar |
@@ -22,6 +22,12 @@ Las imágenes no reemplazan esas fuentes. Si una imagen y un documento se contra
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Derivación a la entrega vigente
+
+- **Cambio:** se indicó que el mapa de miniaturas es un antecedente y se enlazó la entrega que lo reemplaza.
+- **Situación anterior:** el paquete podía interpretarse como la fuente vigente de los wireframes.
+- **Motivo:** conservar el historial sin competir con la ruta y los mapas corregidos del 2 de septiembre.
 
 ### 2026-09-01 — Creación del paquete
 

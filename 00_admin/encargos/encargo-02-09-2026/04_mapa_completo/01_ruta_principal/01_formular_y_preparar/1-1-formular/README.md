@@ -10,6 +10,10 @@ Permite escribir una intención y convertirla en un primer paso concreto. Está 
 
 Este marco pertenece a la interacción 1 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+Los dos campos se presentan como líneas de escritura y no como tarjetas. La pregunta abre el recorrido, mientras la explicación breve aclara el nivel de concreción esperado sin competir con la acción de continuar.
+
 
 ---
 

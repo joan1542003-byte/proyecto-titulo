@@ -10,6 +10,10 @@ Permite terminar el ciclo o resolver un fallo técnico sin abrir una cuarta inte
 
 Este marco pertenece a la interacción 3 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+El cierre se presenta como un estado neutral, sin recompensa ni evaluación de conducta. La última configuración queda disponible como referencia y las acciones permiten salir o preparar otro ciclo sin rearmarlo automáticamente.
+
 
 ---
 

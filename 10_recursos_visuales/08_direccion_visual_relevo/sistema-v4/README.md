@@ -79,7 +79,7 @@ Cuando una imagen contradice un documento vigente, prevalece el documento hasta 
 
 - **Cambio:** se abrió una versión centrada en piezas individuales y auditables.
 - **Situación anterior:** el sistema v3 definía fundamentos generales y reunía exploraciones Android de calidad desigual.
-- **Motivo:** evitar que una imagen panorámica o una serie generada oculte fallas de jerarquía, legibilidad y coherencia entre estados.
+- **Motivo:** evitar que una imagen panorámica o una serie extensa oculte fallas de jerarquía, legibilidad y coherencia entre estados.
 - **Asuntos abiertos:** definir una fuente única de reglas, estados de madurez y condiciones de validación.
 
 ### 2026-08-29 — Consolidación documental v4
@@ -95,4 +95,4 @@ Cuando una imagen contradice un documento vigente, prevalece el documento hasta 
 - **Cambio:** v4 reconoce la página A3 horizontal única como formato de exploración editorial y fija `#D71921` como único rojo de señal.
 - **Versión anterior:** la documentación visual no diferenciaba con suficiente claridad una página horizontal de un pliego y coexistían dos rojos de señal.
 - **Motivo:** alinear la producción de memoria con el contrato visual y prevenir usos decorativos del sistema.
-- **Alcance:** la decisión editorial no reemplaza una plantilla institucional ni valida los textos de las maquetas generadas.
+- **Alcance:** la decisión editorial no reemplaza una plantilla institucional ni valida los textos de las maquetas exploratorias.

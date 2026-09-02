@@ -10,6 +10,10 @@ Permite emitir una señal breve antes de armar el ciclo. La prueba existe para q
 
 Este marco pertenece a la interacción 2 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+La pantalla conserva a la vista la intención, el primer paso y el lugar durante la prueba. Emitir el pulso es la única acción delimitada; la evaluación de su percepción ocurre después y permanece bajo control de la persona.
+
 
 ---
 

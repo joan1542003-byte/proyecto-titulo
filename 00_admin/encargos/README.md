@@ -4,11 +4,17 @@ Este directorio conserva entregas cerradas por fecha. Cada carpeta debe poder le
 
 ## Entregas disponibles
 
-- [02-09-2026 — Wireframes de Relevo](encargo-02-09-2026/README.md): pantalla principal en alta fidelidad, nueve wireframes, 35 estados de cobertura y mapa completo.
+- [02-09-2026 — Wireframes de Relevo](encargo-02-09-2026/README.md): pantalla destacada, nueve wireframes de fidelidad media, 35 estados de cobertura y tres mapas legibles.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Actualización del contenido vigente
+
+- **Qué se incorporó:** nivel de fidelidad de la ruta y estructura de mapas corregida.
+- **Cómo estaba antes:** el índice resumía la entrega como una pantalla principal y un mapa completo único.
+- **Por qué se hizo:** describir con precisión el contenido disponible para revisión.
 
 ### 2026-09-02 — Creación del índice
 

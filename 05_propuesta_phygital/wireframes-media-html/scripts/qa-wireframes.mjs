@@ -38,8 +38,11 @@ for (const width of [1366, 1536, 1920]) {
 }
 
 await page.goto(`${baseUrl}/?mode=entrega&frame=3.2`, { waitUntil: "networkidle" });
-if (!(await page.getByTestId("export-surface").locator(".wireframe-canvas").evaluate((node) => node.classList.contains("is-physical")))) throw new Error("3.2 no se identifica como momento físico");
-if (await page.getByTestId("export-surface").locator("button").count()) throw new Error("3.2 representa respuestas físicas como botones");
+const signalScreen = page.getByTestId("export-surface").locator(".delivery-screen.screen-signal");
+if ((await signalScreen.count()) !== 1) throw new Error("3.2 no se identifica como momento situado");
+if ((await signalScreen.locator(".signal-field").getAttribute("role")) !== "img") throw new Error("El campo de puntos de 3.2 no está identificado como gráfico informativo");
+if (!(await signalScreen.locator(".signal-field").getAttribute("aria-label"))) throw new Error("El gráfico de 3.2 no tiene una descripción equivalente");
+if ((await signalScreen.locator(".signal-field .is-endpoint").count()) !== 1) throw new Error("3.2 no contiene un único nodo de señal situada");
 
 const manifest = JSON.parse(readFileSync(path.resolve("public/exports/manifest.json"), "utf8"));
 if (manifest.length !== 44) throw new Error(`Se esperaban 44 exportaciones y se encontraron ${manifest.length}`);
@@ -53,10 +56,11 @@ for (const item of manifest) {
 }
 
 const css = readFileSync(path.resolve("src/prototype.css"), "utf8");
-for (const forbidden of ["box-shadow", "linear-gradient", "radial-gradient"]) {
+for (const forbidden of ["linear-gradient", "radial-gradient"]) {
   if (css.toLowerCase().includes(forbidden)) throw new Error(`El CSS contiene un recurso impropio de wireframe: ${forbidden}`);
 }
 if ((css.match(/#d71921/gi) ?? []).length !== 1 || (css.match(/var\(--signal\)/g) ?? []).length !== 1) throw new Error("El rojo no está restringido al nodo de señal situada");
+if ((await signalScreen.evaluate((node) => getComputedStyle(node).boxShadow)) !== "none") throw new Error("La pantalla exportable utiliza una sombra decorativa");
 
 const overflow = await page.getByTestId("wireframe-current").evaluate((node) => node.scrollWidth > node.clientWidth + 1);
 if (overflow) throw new Error("Existe desborde horizontal en el tablero");

@@ -15,11 +15,11 @@ Cada wireframe usa una ventana representativa de Android de **412 × 915 dp** y 
 - El rojo `#D71921` se reserva para la señal situada; no identifica botones, errores ni decoración.
 - Sin sombras, degradados, texturas ni recursos que alteren la lectura estructural.
 
-Aunque corresponde a baja fidelidad, la composición utiliza el sistema visual de Relevo para mantener consistencia. Esto no convierte los wireframes en una interfaz validada ni en el diseño definitivo de Android.
+Los 35 estados de cobertura se mantienen en baja fidelidad. Las nueve pantallas principales avanzan a fidelidad media: muestran la jerarquía, la tipografía, el contraste y la distinción entre controles y contenido, pero siguen abiertas a corrección. Esta diferencia no convierte la interfaz en una propuesta validada ni en el diseño definitivo de Android.
 
 ## Uso
 
-El tablero permite cambiar entre ruta principal y cobertura, revisar la justificación de cada marco y descargar cada PNG por separado. Los archivos están en [`public/exports`](public/exports/). La fuente de contenido está en [`src/wireframes.ts`](src/wireframes.ts), la presentación en [`src/Prototype.tsx`](src/Prototype.tsx) y la especificación en [`DECISIONES-DE-DISENO.md`](DECISIONES-DE-DISENO.md).
+El tablero permite cambiar entre ruta principal y cobertura, revisar la justificación de cada marco y descargar cada PNG por separado. Los archivos están en [`public/exports`](public/exports/) y los tres mapas en [`public/exports/maps`](public/exports/maps/). La fuente de contenido está en [`src/wireframes.ts`](src/wireframes.ts), la presentación en [`src/Prototype.tsx`](src/Prototype.tsx) y la especificación en [`DECISIONES-DE-DISENO.md`](DECISIONES-DE-DISENO.md).
 
 ## Verificación vigente
 
@@ -33,6 +33,13 @@ El tablero permite cambiar entre ruta principal y cobertura, revisar la justific
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Desarrollo visual de la ruta principal
+
+- **Cambio:** las nueve pantallas principales se reconstruyeron con el sistema oscuro de Relevo y se incorporaron tres mapas exportables.
+- **Antes:** los marcos principales funcionaban como esquemas estructurales y el mapa completo reducía las vistas hasta dificultar su lectura.
+- **Motivo:** elevar la calidad del recorrido principal y separar la arquitectura general, la secuencia legible y la cobertura técnica.
+- **Alcance:** los estados complementarios permanecen en baja fidelidad y todo el conjunto requiere pruebas de interacción y accesibilidad.
 
 ### 2026-09-01 — Ajuste a ventana Android representativa
 

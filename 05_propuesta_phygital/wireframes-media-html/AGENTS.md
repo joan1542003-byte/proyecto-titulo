@@ -53,8 +53,22 @@ See `src/mobile/COMPONENTS.md` for the full component and gesture contract.
 - El testigo físico no incorpora texto, menú, historial ni interfaz de consulta.
 - La condición, el gesto de armado y el pulso se presentan como decisiones provisionales, no como resultados validados.
 - Continuar, ignorar, silenciar, cambiar de intención y cerrar son respuestas legítimas; el sistema no registra cumplimiento.
-- El lenguaje visual debe mantenerse monocromático y de media fidelidad. Nothing, Material Design e iOS 26 orientan ritmo, jerarquía y superficies, pero no definen una identidad final.
+- Las nueve pantallas principales utilizan fidelidad media y el lenguaje oscuro v4. Los 35 estados de cobertura permanecen en baja fidelidad hasta que su estructura se estabilice.
+- El rojo se reserva al acontecimiento situado de 3.2; no comunica prioridad, error, selección ni decoración.
+- La marca de puntos, los campos informativos y los estados nunca deben adquirir apariencia de botón. En 2.3, el armado se confirma mediante el control físico y no mediante una acción principal de pantalla.
+- El mapa general se divide en arquitectura, ruta ampliada y cobertura por familias. No se deben reunir 44 miniaturas ilegibles como única representación.
+- Los documentos de entrega describen decisiones y piezas del proyecto; evitan nombres o explicaciones sobre herramientas de producción.
 - Cada marco debe poder revisarse y descargarse por separado sin convertir esa función de presentación en una característica atribuida a Relevo.
+
+---
+
+## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Criterios durables de interfaz y documentación
+
+- **Qué se incorporó:** nivel de fidelidad por conjunto, función exclusiva del rojo, diferencia entre información y control, armado físico y estructura de mapas.
+- **Cómo estaba antes:** la guía definía toda la entrega como monocromática y de fidelidad media, sin registrar la diferencia entre ruta principal y cobertura ni el problema de legibilidad del mapa único.
+- **Por qué se hizo:** conservar las decisiones que gobiernan futuras correcciones del tablero y evitar que reaparezcan ambigüedades ya resueltas.
 
 ## Keyboard Rule
 

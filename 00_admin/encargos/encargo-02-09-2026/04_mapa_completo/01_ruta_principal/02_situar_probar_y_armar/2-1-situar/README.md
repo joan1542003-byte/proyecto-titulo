@@ -10,6 +10,10 @@ Vincula el testigo con la intención y con el lugar donde podría comenzar el pr
 
 Este marco pertenece a la interacción 2 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+El testigo se describe mediante datos verificables y una sola acción principal. El bloque de apoyo se reconoce como información porque carece de contenedor y utiliza una línea inicial, no la apariencia de un botón.
+
 
 ---
 

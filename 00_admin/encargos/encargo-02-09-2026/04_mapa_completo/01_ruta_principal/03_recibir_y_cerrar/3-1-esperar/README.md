@@ -10,6 +10,10 @@ Muestra que el ciclo está activo y que la condición sigue vigente. La pantalla
 
 Este marco pertenece a la interacción 3 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+El ciclo activo prioriza lectura y vigilancia del estado. La ausencia de rojo comunica que la señal situada todavía no ocurre; el único control disponible permite desarmar el ciclo de forma explícita.
+
 ## Desarrollo visual relacionado
 
 pantalla-alta-fidelidad.png desarrolla este marco con el sistema visual oscuro vigente. Se eligió como pantalla destacada porque reúne las variables centrales del ciclo y representa una vista real de la aplicación. El pulso situado todavía no ocurre, por lo que el rojo permanece ausente.

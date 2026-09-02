@@ -10,6 +10,10 @@ Cierra la preparación mediante una acción deliberada. El armado no sucede auto
 
 Este marco pertenece a la interacción 2 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+El diagrama circular representa el control físico y se acompaña con una instrucción temporal. El estado de espera no se dibuja como botón: el armado se confirma en el testigo, mientras la pantalla solo permite abandonar el proceso.
+
 
 ---
 

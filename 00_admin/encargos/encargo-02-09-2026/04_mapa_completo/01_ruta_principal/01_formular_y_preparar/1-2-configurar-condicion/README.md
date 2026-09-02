@@ -10,6 +10,10 @@ Reúne la aplicación, la condición observable y la vigencia del ciclo. La cond
 
 Este marco pertenece a la interacción 1 de la ruta principal. La numeración permite reconocer su posición sin confundirla con los estados técnicos y las excepciones de cobertura.
 
+## Decisiones visuales
+
+Las tres decisiones se agrupan en controles equivalentes, con contorno visible y flecha lateral. La repetición permite comparar aplicación, condición y vigencia sin introducir una jerarquía que todavía no corresponde.
+
 
 ---
 
