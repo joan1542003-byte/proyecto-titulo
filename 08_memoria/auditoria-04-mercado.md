@@ -2,7 +2,7 @@
 
 **Proyecto:** Relevo, Proyecto de Título de Diseño, Universidad Diego Portales
 
-**Agente:** Luna Max, auditoría especializada de mercado y referentes
+**Tipo de documento:** auditoría interna especializada de mercado y referentes
 
 **Fecha de corte:** 24 de agosto de 2026
 
@@ -516,9 +516,15 @@ Unpluq. (s. f.). *Unpluq: Stop scrolling. Reduce distractions. Reduce screentime
 
 ### 2026-08-24 — Creación del informe de Auditoría 4
 
-- **Cambio:** se creó `08_memoria/auditoria-agente-04-mercado.md` con una auditoría integral del estado del arte, mercado actual y referentes de Relevo.
+- **Cambio:** se creó `08_memoria/auditoria-04-mercado.md` con una auditoría integral del estado del arte, mercado actual y referentes de Relevo.
 - **Versión anterior:** no existía un informe especializado para esta auditoría. La memoria vigente contenía un capítulo 6 con una matriz de productos y una formulación provisional de oportunidad, mientras `04_mercado_y_referentes` contenía únicamente su README.
 - **Motivo:** evaluar el mercado como sistema de mecanismos, modelos de valor, fricciones, adopción, límites y tendencias; actualizar referentes vigentes; separar evidencia independiente de promesas comerciales; y evitar que la oportunidad se sostenga en una afirmación de inexistencia no reproducible.
 - **Fuentes incorporadas:** papers y revisiones académicas desde 2021, estudios de 2023–2026, y sitios oficiales de Google, Apple, Brick, Unpluq, Screenless, Focusaur y one sec, verificados con fecha de corte 24 de agosto de 2026.
 - **Alcance:** este archivo propone mantener, reemplazar, ampliar y retirar elementos del capítulo 6. No modifica `08_memoria/memoria-vigente.md`, no constituye validación de Relevo, no demuestra eficacia del objeto sin pantalla y no autoriza a presentar promesas comerciales como resultados científicos.
 - **Pendiente derivado:** crear el registro de búsqueda y las fichas de fuente/producto en `04_mercado_y_referentes` antes de integrar la reescritura en la memoria.
+
+### 2026-09-02 — Normalización del nombre del archivo y los metadatos
+
+- **Cambio:** se eliminó la identificación de colaboración del nombre del archivo y del encabezado visible.
+- **Cómo estaba antes:** el documento llevaba un nombre y una identificación asociados a su preparación, aunque su contenido corresponde a una auditoría temática de mercado.
+- **Motivo:** ordenar el repositorio por función documental y conservar una lectura institucional del estado del arte, sin modificar sus hallazgos ni sus fuentes.

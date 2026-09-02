@@ -24,17 +24,19 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 ## Documentos activos
 
 - [Entrega 02-09-2026: pantalla principal y wireframes completos](../00_admin/encargos/encargo-02-09-2026/README.md)
-- [Entregables clave: pantalla principal, mapa completo, naming y color](entregables-clave-2026-09-01/README.md)
-
 - [Tablero editorial anterior — registro de proceso](wireframes-board-html/README.md)
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Tablero HTML de wireframes — versión vigente](wireframes-media-html/README.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
-- [Láminas 4K de wireframes para calcar — serie vigente](wireframes-referencia-ios-4k/README.md)
+- [Láminas 4K de wireframes para calcar — serie vigente](wireframes-referencia-4k/README.md)
 - [Láminas sintéticas anteriores — registro de proceso](wireframes-referencia/README.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
 - [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md)
+
+## Material histórico y de apoyo
+
+- [Entregables clave del 01-09-2026](entregables-clave-2026-09-01/README.md): paquete conservado para reconstruir el proceso; su mapa y sus exportaciones fueron reemplazados por la entrega fechada del 2 de septiembre.
 
 ## Estado
 
@@ -50,6 +52,12 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 - **Versión anterior:** las piezas estaban disponibles en sus carpetas de producción, pero no reunidas bajo la fecha del encargo.
 - **Motivo:** facilitar la entrega y mantener una lectura clara entre dirección visual, ruta evaluable y cobertura complementaria.
 - **Alcance:** organización y desarrollo visual de la ruta principal; no implica validación integral de la aplicación.
+
+### 2026-09-02 — Separación del paquete histórico
+
+- **Cambio:** `entregables-clave-2026-09-01` pasó del bloque de documentos activos al bloque de material histórico y de apoyo.
+- **Versión anterior:** el índice lo mostraba junto a la entrega vigente, aunque su propio README indicaba que el mapa había sido reemplazado.
+- **Motivo:** mantener una sola fuente activa para pantalla, mapa, naming y color, sin perder el paquete anterior ni su trazabilidad.
 
 ### 2026-09-02 — Jerarquía de fuentes para los wireframes
 
@@ -134,3 +142,9 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 - **Cambio:** establecimiento de los documentos y la pregunta de control de la propuesta.
 - **Versión anterior:** los flujos y decisiones estaban distribuidos entre memoria, diagramas y prototipos.
 - **Motivo:** mantener una arquitectura única y trazable del sistema.
+
+### 2026-09-02 — Actualización de enlace visual
+
+- **Cambio:** se actualizó el enlace a la serie de láminas 4K después de normalizar el nombre de su carpeta.
+- **Cómo estaba antes:** el enlace incorporaba una etiqueta de plataforma que correspondía a una referencia compositiva, no a la decisión técnica del proyecto.
+- **Motivo:** evitar confusiones entre referencia visual y plataforma, sin modificar la serie ni su función dentro de la entrega.

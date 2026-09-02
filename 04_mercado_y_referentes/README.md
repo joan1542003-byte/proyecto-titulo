@@ -34,9 +34,9 @@ Un referente no se incorporará solo porque se parece formalmente a Relevo. Debe
 - [Estudio de mercado y antecedentes de Relevo](estudio-mercado-relevo-2026-08-24.md): respuesta auditada a si la idea existe, qué se ha intentado y cuál es la oportunidad defendible.
 - [Registro de búsqueda al 24 de agosto de 2026](registro-busqueda-2026-08-24.md): estrategia, consultas, fecha de corte, inclusiones, exclusiones y límites.
 - [Fichas de mercado y referentes](fichas-mercado-2026-08-24.md): fuentes, funciones declaradas, precios observados, fuerza de evidencia y decisiones para Relevo.
-- [Investigación académica — Agente Samus](investigacion-agente-samus-academia.md): literatura y prototipos con evidencia primaria.
-- [Investigación comercial — Agente Zelda](investigacion-agente-zelda-mercado.md): productos, modelos, precios y señales de disponibilidad.
-- [Investigación de frontera — Agente Solid Snake](investigacion-agente-solid-snake-frontera.md): proyectos emergentes, tesis y patentes como antecedentes, no como opinión jurídica.
+- [Investigación académica del mecanismo](investigacion-academica-mecanismo-relevo.md): literatura y prototipos con evidencia primaria.
+- [Investigación de mercado y referentes](investigacion-mercado-y-referentes.md): productos, modelos, precios y señales de disponibilidad.
+- [Investigación de frontera y coincidencias](investigacion-frontera-y-coincidencias.md): proyectos emergentes, tesis y patentes como antecedentes, no como opinión jurídica.
 - [Capítulo 8 de la memoria vigente](../08_memoria/memoria-vigente-v4.md#8-estado-del-arte-y-referentes): síntesis académica integrada.
 
 ---
@@ -52,7 +52,7 @@ Un referente no se incorporará solo porque se parece formalmente a Relevo. Debe
 
 ### 2026-08-24 — Estudio ampliado y auditado
 
-- **Cambio:** se incorporaron una síntesis ejecutiva y tres investigaciones especializadas identificadas como Samus, Zelda y Solid Snake.
+- **Cambio:** se incorporaron una síntesis ejecutiva y tres investigaciones especializadas, separadas por función: evidencia académica, mercado y coincidencias de frontera.
 - **Versión anterior:** el directorio contenía fichas y una búsqueda inicial, pero no respondía en un solo documento si la combinación de Relevo ya existía o había sido intentada.
 - **Motivo:** distinguir antecedentes parciales, evidencia independiente, afirmaciones comerciales y oportunidad investigable.
 - **Alcance:** la revisión es exploratoria; no acredita novedad universal, eficacia, demanda ni libertad de operación jurídica.
@@ -69,3 +69,9 @@ Un referente no se incorporará solo porque se parece formalmente a Relevo. Debe
 - **Cambio:** definición del alcance de mercado y del criterio de comparación.
 - **Versión anterior:** los referentes se concentraban en matrices de características.
 - **Motivo:** pasar de un catálogo de productos a una comprensión de comportamiento, adopción y oportunidad.
+
+### 2026-09-02 — Normalización de nombres temáticos
+
+- **Cambio:** se actualizaron los enlaces a las tres investigaciones especializadas para que coincidan con sus nombres temáticos actuales.
+- **Cómo estaba antes:** los archivos incluían nombres de preparación que no ayudaban a identificar su contenido.
+- **Motivo:** facilitar la navegación y ordenar el directorio por función, sin modificar la investigación ni sus fuentes.

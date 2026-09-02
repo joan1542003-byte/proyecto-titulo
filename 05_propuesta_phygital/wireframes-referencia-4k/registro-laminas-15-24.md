@@ -1,20 +1,20 @@
-# Registro de generación — ALOY
+# Registro de producción visual — Estados 15–24
 
 ## Propósito
 
-Este documento registra la generación, corrección y auditoría de las cuatro láminas nuevas de referencia visual para los estados 15–24 del Encargo 17. Las imágenes sirven para calcar y discutir en Figma; no son una interfaz final ni sustituyen los wireframes estructurales editables.
+Este documento registra la producción, corrección y auditoría de las cuatro láminas nuevas de referencia visual para los estados 15–24 del Encargo 17. Las imágenes sirven para calcar y discutir en Figma; no son una interfaz final ni sustituyen los wireframes estructurales editables.
 
 **Fecha:** 25 de agosto de 2026  
-**Generador:** built-in `image_gen`  
-**Referencia visual obligatoria:** [`A2-configuracion-ios-4k.png`](A2-configuracion-ios-4k.png)  
-**Contrato visual preservado:** [`STYLE-CONTRACT.md`](STYLE-CONTRACT.md)  
+**Tipo de pieza:** referencia visual raster 4K
+**Referencia visual:** [`A2-configuracion-4k.png`](A2-configuracion-4k.png)
+**Contrato visual preservado:** [`contrato-visual.md`](contrato-visual.md)
 **Base conceptual:** [`memoria-vigente-v2.md`](../../08_memoria/memoria-vigente-v2.md), [`encargo-17-requisitos.md`](../../01_contexto_y_fuentes/encargo-17-requisitos.md) y [`anexo-cobertura-interacciones-encargo-17.md`](../anexo-cobertura-interacciones-encargo-17.md).
 
 ## Criterio global utilizado
 
 Se pidió una lámina horizontal de 3840 × 2160 px, 16:9, con dos o tres wireframes o paneles grandes, completos y fáciles de reconstruir. La dirección visual mantiene el lenguaje de A2: fondo blanco cálido, retícula tenue, superficies agrupadas, bordes cálidos, radios suaves, tipografía sans serif de sistema, jerarquía sobria y escala de grises.
 
-La referencia visual se interpretó como un sistema compositivo contemporáneo e iOS-inspired original. No se imitó una interfaz de Android ni se incorporaron barras del sistema, menús de ajustes, botones Android, logotipos o marcos de dispositivo.
+La referencia visual se interpretó como un sistema compositivo contemporáneo y original. No se imitó una interfaz de Android ni se incorporaron barras del sistema, menús de ajustes, botones Android, logotipos o marcos de dispositivo.
 
 El contrato conceptual aplicado a todas las láminas fue:
 
@@ -32,7 +32,7 @@ La aplicación conserva significado y comunica estados técnicos. El testigo fí
 ```text
 Use case: ui-mockup or infographic-diagram.
 Asset type: 4K landscape wireframe reference sheet for Relevo, a phygital Design graduation project.
-Input images: Image 1 is the mandatory A2 Relevo iOS 4K visual reference only. Match its warm-white canvas, faint warm grid, flat rounded surfaces, grouped cards, calm contemporary iOS-inspired hierarchy, restrained grayscale, thin warm-gray borders, generous spacing, soft neutral shadows, and system-like sans-serif typography. Create a new composition; do not copy the reference screens.
+Input images: Image 1 is the mandatory A2 Relevo 4K visual reference only. Match its warm-white canvas, faint warm grid, flat rounded surfaces, grouped cards, calm contemporary hierarchy, restrained grayscale, thin warm-gray borders, generous spacing, soft neutral shadows, and system-like sans-serif typography. Create a new composition; do not copy the reference screens.
 Style/medium: original contemporary minimal product-design reference, low-to-medium fidelity, intended for tracing in Figma, not final UI and not concept art.
 Color palette: #FCFBF8, #FFFFFF, #F1EEE9, #D8D4CE, #262522, #6D6A65 only.
 Constraints: Spanish text must be rendered verbatim and legibly; exact state labels; no logo or watermark; no saturated colors; no gradients; no Android system UI; no iPhone device frame; no blocking, scoring, streaks, compliance tracking, surveillance, subjective inference, automatic re-arm, or screen/text on the physical token.
@@ -43,9 +43,9 @@ La instrucción de 3840 × 2160 se incluyó en cada llamada. El built-in produjo
 
 ## Prompts específicos y estados cubiertos
 
-### C1 — `C1-armado-ios-4k.png`
+### C1 — `C1-armado-4k.png`
 
-Se generaron tres superficies móviles alineadas para:
+Se produjeron tres superficies móviles alineadas para:
 
 1. **15 · Armando** — título `Armando el ciclo`; vínculo del testigo en curso; condición provisional por validar; vigencia visible; estado `Esperando confirmación`; acción `Cancelar`.
 2. **16 · Armado** — ciclo activo; intención `Leer un capítulo`; primer paso `Abrir el libro`; condición provisional en espera; testigo situado; acción `Desarmar`.
@@ -53,16 +53,16 @@ Se generaron tres superficies móviles alineadas para:
 
 La instrucción crítica fue separar confirmación técnica de cumplimiento personal. El estado 17 se describió como incertidumbre del vínculo, no como error de usuario.
 
-### C2 — `C2-armado-ios-4k.png`
+### C2 — `C2-armado-4k.png`
 
-Se generaron dos superficies móviles alineadas para:
+Se produjeron dos superficies móviles alineadas para:
 
 1. **18 · Desarmado voluntario** — estado detenido, sin pulso posterior; acciones `Preparar de nuevo` y `Cerrar ciclo`; la salida se muestra como decisión válida.
 2. **19 · Editar ciclo armado** — aviso `El ciclo está armado`; la edición requiere desarmar primero; acciones `Desarmar y editar` y `Conservar ciclo`; la transición es reversible y no se representa como bloqueo.
 
-### D1 — `D1-espera-ios-4k.png`
+### D1 — `D1-espera-4k.png`
 
-Se generaron tres superficies móviles alineadas para:
+Se produjeron tres superficies móviles alineadas para:
 
 1. **20 · Armado en espera** — intención, primer paso, condición provisional, vigencia, testigo situado y acción `Desarmar`.
 2. **21 · Condición cumplida** — condición reconocida y orden vigente; estado `Enviando la orden al testigo`; no se declara que la intención fue realizada ni que la entrega física ya fue confirmada.
@@ -70,7 +70,7 @@ Se generaron tres superficies móviles alineadas para:
 
 La primera salida D1 omitió el nombre `RELEVO` en la navegación superior. Se revisó visualmente y se realizó una edición focalizada que añadió `RELEVO` a las tres superficies sin alterar la arquitectura, los estados ni el contenido. La versión corregida es la utilizada como archivo final.
 
-### D2 — `D2-senal-ios-4k.png`
+### D2 — `D2-senal-4k.png`
 
 Se construyeron dos paneles diagramáticos, porque estos estados dejan de ser una pantalla móvil:
 
@@ -81,7 +81,7 @@ El estado 23 no se convirtió en una pantalla del objeto. La escena conserva la 
 
 ## Corrección y normalización técnica
 
-Las salidas nativas de `image_gen` fueron inspeccionadas antes de copiarlas al repositorio. Todas midieron 1672 × 941 px. Para obtener el formato solicitado sin deformar el contenido:
+Las salidas originales fueron inspeccionadas antes de copiarlas al repositorio. Todas midieron 1672 × 941 px. Para obtener el formato solicitado sin deformar el contenido:
 
 1. se creó un lienzo final de 3840 × 2160 px con fondo `#FCFBF8`;
 2. cada salida se escaló proporcionalmente a 3838 × 2160 px mediante interpolación bicúbica de alta calidad;
@@ -111,22 +111,28 @@ Esta operación no recortó pantallas, no estiró el contenido y no modificó la
 | Sin bloqueo, puntuación, racha, vigilancia o cumplimiento | Conforme |
 | Sin afirmación de acción realizada | Conforme |
 | Sin rearme automático | Conforme |
-| `STYLE-CONTRACT.md` modificado | No; preservado |
+| `contrato-visual.md` modificado | No; preservado |
 
 ## Archivos finales
 
-- [`C1-armado-ios-4k.png`](C1-armado-ios-4k.png)
-- [`C2-armado-ios-4k.png`](C2-armado-ios-4k.png)
-- [`D1-espera-ios-4k.png`](D1-espera-ios-4k.png)
-- [`D2-senal-ios-4k.png`](D2-senal-ios-4k.png)
+- [`C1-armado-4k.png`](C1-armado-4k.png)
+- [`C2-armado-4k.png`](C2-armado-4k.png)
+- [`D1-espera-4k.png`](D1-espera-4k.png)
+- [`D2-senal-4k.png`](D2-senal-4k.png)
 
 ## Disclaimer y registro de cambios
 
-**Corrección de enlace (2026-08-28):** se corrigió la ruta relativa del anexo de cobertura. Antes apuntaba dentro de `wireframes-referencia-ios-4k`; ahora enlaza el documento existente en la carpeta superior. No se modificaron los prompts, las imágenes ni su base conceptual histórica.
+**Corrección de enlace (2026-08-28):** se corrigió la ruta relativa del anexo de cobertura. Antes apuntaba dentro de la carpeta de referencias 4K; ahora enlaza el documento existente en la carpeta superior. No se modificaron los registros, las imágenes ni su base conceptual histórica.
 
-**Archivo nuevo:** `PROMPTS-ALOY.md` se creó para registrar la generación y auditoría de las cuatro láminas nuevas.
+**Archivo anterior:** este registro se llamaba `PROMPTS-ALOY.md` y documenta la producción y auditoría de las cuatro láminas nuevas.
 
-**Archivos nuevos:** se añadieron `C1-armado-ios-4k.png`, `C2-armado-ios-4k.png`, `D1-espera-ios-4k.png` y `D2-senal-ios-4k.png`. No reemplazan las láminas A1, A2 ni las referencias A/B existentes.
+**Archivos nuevos:** se añadieron `C1-armado-4k.png`, `C2-armado-4k.png`, `D1-espera-4k.png` y `D2-senal-4k.png`. No reemplazan las láminas A1, A2 ni las referencias A/B existentes.
+
+### 2026-09-02 — Normalización del nombre y del registro
+
+- **Cambio:** se eliminó la referencia a una plataforma del nombre de la carpeta y de los archivos, se reemplazaron nombres operativos por nombres descriptivos y se retiró el identificador de colaboración del encabezado.
+- **Cómo estaba antes:** la carpeta y el registro usaban “iOS” y un nombre de trabajo, aunque estas láminas solo cumplen una función de referencia compositiva.
+- **Motivo:** evitar que una referencia estética se confunda con una decisión técnica del proyecto y ordenar la documentación por función, sin modificar las imágenes ni su cobertura.
 
 **Corrección aplicada:** D1 tuvo una edición focalizada para añadir `RELEVO` en la navegación superior y hacer consistente la serie. No se modificó el significado de los estados 20–22.
 

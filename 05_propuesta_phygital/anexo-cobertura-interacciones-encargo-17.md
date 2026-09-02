@@ -7,7 +7,7 @@ Este anexo amplía el tablero evaluable de nueve marcos sin reemplazarlo. Su fun
 - **Figma:** [Anexo · Cobertura de estados](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4?node-id=13-2)
 - **Página:** `13:2`.
 - **Tablero:** `13:3`.
-- **Referencias detalladas para calcar:** [catorce láminas 4K con los 35 estados](wireframes-referencia-ios-4k/README.md).
+- **Referencias detalladas para calcar:** [catorce láminas 4K con los 35 estados](wireframes-referencia-4k/README.md).
 
 La cobertura se construyó respecto del ciclo mínimo documentado entonces en la memoria v2. Para cualquier revisión posterior debe interpretarse bajo la [memoria v4](../08_memoria/memoria-vigente-v4.md), no como autorización para agregar funciones futuras. Cada estado tiene un wireframe independiente para poder revisarlo; esto no significa que la persona deba mirar el teléfono durante todo el recorrido. En uso, el pulso situado del testigo conserva el papel central y Android se limita a configurar, informar estado y facilitar recuperación.
 
@@ -142,3 +142,9 @@ Los wireframes describen estructura y comportamiento esperado. No validan la con
 - **Versión anterior:** el Encargo 17 mostraba únicamente la ruta evaluable de tres interacciones y nueve marcos.
 - **Motivo:** verificar todas las interacciones relevantes sin sobrecargar ni modificar el tablero exigido por la pauta.
 - **Alcance:** la matriz amplía la cobertura estructural; no incorpora funciones futuras ni acredita validación técnica o con usuarios.
+
+### 2026-09-02 — Actualización de enlace visual
+
+- **Cambio:** se actualizó el enlace a las catorce láminas 4K después de normalizar el nombre de su carpeta.
+- **Cómo estaba antes:** el enlace incluía una etiqueta de plataforma que podía confundirse con una decisión técnica.
+- **Motivo:** mantener la ruta funcional y separar la referencia compositiva de la plataforma documentada, sin modificar los 35 estados ni su cobertura.

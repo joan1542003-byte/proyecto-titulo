@@ -1,7 +1,6 @@
 ---
-id: MER-ZELDA-2026-08-24
+id: MER-MERCADO-2026-08-24
 titulo: "Investigación de mercado y referentes para Relevo"
-agente: "Zelda"
 fecha_de_consulta: "24 de agosto de 2026"
 alcance: "mercado global y señales de disponibilidad en Chile"
 estado: "síntesis exploratoria, no exhaustiva"
@@ -55,8 +54,14 @@ Todas las páginas de producto, documentación oficial y precios fueron consulta
 
 ## Registro de cambios (disclaimer)
 
-### 2026-08-24 — Creación de la investigación de Agente Zelda
+### 2026-08-24 — Creación de la investigación de mercado
 
 - **Cambio:** se creó este estudio comparativo con fuentes primarias verificadas, tabla de mecanismos, mercado chileno observado, evidencia independiente, afirmaciones comerciales y distancia respecto de Relevo.
 - **Motivo:** responder si la idea existe, qué soluciones la anteceden y qué diferencia defendible queda abierta.
 - **Límite:** la búsqueda es exploratoria y no exhaustiva; no prueba novedad universal, eficacia de Relevo, adopción sostenida ni disposición de pago. No se modificaron otros archivos, no se hizo commit y no se hizo push.
+
+### 2026-09-02 — Normalización del nombre de archivo
+
+- **Cambio:** se eliminó el nombre de colaboración de la identificación y de la ruta del documento.
+- **Versión anterior:** el archivo se organizaba según quien lo había preparado y no según su función dentro del estudio.
+- **Motivo:** facilitar la lectura del área de mercado y conservar una nomenclatura profesional; no se alteraron sus fuentes ni conclusiones.

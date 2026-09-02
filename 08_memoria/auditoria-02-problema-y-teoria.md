@@ -1,5 +1,5 @@
 ---
-id: AUD-AG-02
+id: AUD-02-PROBLEMA-TEORIA-2026-08-24
 titulo: "Auditoría 2 — Problema, relevancia, marco conceptual y aporte disciplinar"
 proyecto: Relevo
 autor: "Johan Yantén"
@@ -327,3 +327,9 @@ Si estas respuestas quedan explícitas, el núcleo de Relevo puede sostenerse co
 - **Versión anterior:** no existía un informe separado que examinara esas relaciones como una cadena de evidencia, interpretación, hipótesis y decisión a nivel de Proyecto de Título.
 - **Motivo:** la memoria vigente presenta una formulación proyectual sólida, pero algunas frases hacen que una interpretación retrospectiva parezca un hallazgo demostrado y que el valor del objeto físico parezca resuelto antes de compararlo con una notificación.
 - **Alcance:** el informe propone mantener el giro conceptual y los dos tipos situacionales, reemplazar el lenguaje causal o universal, ampliar el marco de interacción tangible/phygital y de investigación mediante diseño, y convertir el aporte en una contribución esperada y comprobable. No modifica `08_memoria/memoria-vigente.md`, no altera las entrevistas, no agrega resultados y no constituye una validación del producto.
+
+### 2026-09-02 — Normalización del nombre del archivo y del identificador
+
+- **Cambio:** se reemplazó el identificador abreviado por uno descriptivo y se normalizó el nombre del archivo.
+- **Cómo estaba antes:** el identificador y el nombre incluían una abreviatura vinculada al origen del informe, sin describir directamente su función.
+- **Motivo:** facilitar la búsqueda y ordenar los documentos por tema, manteniendo intacto el contenido de la auditoría.

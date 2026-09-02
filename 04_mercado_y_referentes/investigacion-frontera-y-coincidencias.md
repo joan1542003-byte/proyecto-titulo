@@ -1,8 +1,7 @@
 ---
-id: MER-SS-2026-08-24
+id: MER-FRONTERA-2026-08-24
 titulo: "Investigación de frontera: antecedentes, mercado y riesgo de coincidencia para Relevo"
 fecha_de_corte: 2026-08-24
-agente: "Solid Snake"
 estado: "investigación exploratoria; no constituye opinión legal"
 ---
 
@@ -81,9 +80,15 @@ Todas las páginas web y registros fueron consultados el 24 de agosto de 2026.
 
 ## Registro de cambios (disclaimer)
 
-### 2026-08-24 — Creación por Agente Solid Snake
+### 2026-08-24 — Creación de la investigación de frontera
 
 - **Cambio:** se creó una investigación de frontera centrada en coincidencias funcionales, formales, mecanismos, evidencia independiente, afirmaciones comerciales y riesgo de patentes.
 - **Antes:** el repositorio tenía un registro general de mercado, pero no una búsqueda concentrada en la combinación teléfono–intención–objeto–lugar–señal ambiental.
 - **Motivo:** determinar qué parte de Relevo ya fue intentada y formular un vacío defendible sin afirmar novedad universal.
 - **Alcance:** investigación exploratoria basada únicamente en fuentes primarias verificadas; no es una revisión exhaustiva de patentes, un estudio de mercado ni una opinión jurídica. No modifica otros archivos, no incorpora resultados de Relevo y no se realizó commit ni push.
+
+### 2026-09-02 — Normalización del nombre de archivo
+
+- **Cambio:** se eliminó el nombre de colaboración de la identificación y de la ruta del documento.
+- **Versión anterior:** el archivo llevaba un nombre propio que no informaba sobre el alcance de la investigación.
+- **Motivo:** ordenar la documentación por función y conservar claramente su límite jurídico y exploratorio.

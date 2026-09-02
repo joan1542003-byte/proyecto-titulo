@@ -35,12 +35,12 @@ Los siguientes archivos conservan decisiones y diagnósticos que ayudaron a cons
 
 Estas seis auditorías describen el estado anterior a la memoria v4 y a los cierres documentales posteriores. Conservan preguntas, riesgos y antecedentes de decisión, pero sus diagnósticos de ausencia o prioridad no gobiernan el proyecto actual.
 
-- [Auditoría 01 — arquitectura narrativa](auditoria-agente-01-arquitectura.md): revisión de tesis, secuencia y dependencias sobre una memoria anterior.
-- [Auditoría 02 — problema y teoría](auditoria-agente-02-problema-teoria.md): control histórico de relevancia, conceptos y aporte disciplinar.
-- [Auditoría 03 — método y usuarios](auditoria-agente-03-metodo-usuarios.md): examen previo de procedencia, límites del corpus y tipos de usuario.
-- [Auditoría 04 — mercado](auditoria-agente-04-mercado.md): antecedente que impulsó el estudio autónomo y la reformulación prudente de la propuesta de valor.
-- [Auditoría 05 — sistema y factibilidad](auditoria-agente-05-sistema-factibilidad.md): diagnóstico anterior a los esquemas B1/B2 y a la compra escalonada.
-- [Auditoría 06 — validación y edición](auditoria-agente-06-validacion-editorial.md): revisión previa al Protocolo 01, sus fichas y la auditoría editorial v4.
+- [Auditoría 01 — arquitectura narrativa](auditoria-01-arquitectura.md): revisión de tesis, secuencia y dependencias sobre una memoria anterior.
+- [Auditoría 02 — problema y teoría](auditoria-02-problema-y-teoria.md): control histórico de relevancia, conceptos y aporte disciplinar.
+- [Auditoría 03 — método y usuarios](auditoria-03-metodo-y-usuarios.md): examen previo de procedencia, límites del corpus y tipos de usuario.
+- [Auditoría 04 — mercado](auditoria-04-mercado.md): antecedente que impulsó el estudio autónomo y la reformulación prudente de la propuesta de valor.
+- [Auditoría 05 — sistema y factibilidad](auditoria-05-sistema-y-factibilidad.md): diagnóstico anterior a los esquemas B1/B2 y a la compra escalonada.
+- [Auditoría 06 — validación y edición](auditoria-06-validacion-y-editorial.md): revisión previa al Protocolo 01, sus fichas y la auditoría editorial v4.
 
 ## Arquitectura narrativa vigente
 
@@ -223,3 +223,9 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 - **Cambio:** definición del propósito, arquitectura provisional y controles de la memoria.
 - **Versión anterior:** la arquitectura dependía de cada versión entregada.
 - **Motivo:** subordinar la redacción final a la investigación y no al orden heredado de los borradores.
+
+### 2026-09-02 — Normalización de auditorías internas
+
+- **Cambio:** se actualizaron los enlaces a las seis auditorías con nombres temáticos y se retiraron del índice las referencias a nombres de preparación.
+- **Cómo estaba antes:** algunos nombres de archivo identificaban su origen operativo y no el contenido que el lector debía encontrar.
+- **Motivo:** ordenar la carpeta de memoria por función documental y mejorar la navegación, sin eliminar informes históricos ni alterar su contenido.

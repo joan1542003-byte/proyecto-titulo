@@ -1,7 +1,7 @@
 ---
 id: AUD-003
 titulo: "Auditoría 3 — Metodología, usuarios y trazabilidad P1–P8"
-autoria: "Agente Luna Max / revisión para Sol"
+tipo_documento: "auditoría interna de método y usuarios"
 estado_documental: "informe de auditoría"
 fecha: 2026-08-24
 alcance: "memoria vigente y documentación metodológica de usuarios"
@@ -372,3 +372,9 @@ La auditoría puede considerarse incorporada cuando la memoria:
 - **Alcance:** el informe propone reemplazos, reclasificaciones y preguntas de control; no modifica `memoria-vigente.md`, no altera el corpus y no constituye validación del producto.
 - **Hallazgo central:** la procedencia factual está corregida en términos generales, pero Q13 debe separarse explícitamente de la validación del Relevo actual porque corresponde a la reacción ante el concepto histórico In(Visible).
 - **Pendiente derivado:** integrar las correcciones en una futura versión de la memoria después de la revisión del modelo principal y resolver las preguntas metodológicas que puedan cambiar la redacción.
+
+### 2026-09-02 — Normalización del nombre del archivo y los metadatos
+
+- **Cambio:** se eliminó la identificación de colaboración del nombre del archivo y del encabezado visible.
+- **Cómo estaba antes:** el documento identificaba a quienes participaron en su preparación, aunque su contenido corresponde a una auditoría temática de método y usuarios.
+- **Motivo:** ordenar el repositorio por función documental, sin alterar el diagnóstico metodológico ni la trazabilidad del levantamiento.

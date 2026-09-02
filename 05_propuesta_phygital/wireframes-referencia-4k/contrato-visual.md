@@ -1,10 +1,10 @@
-# STYLE CONTRACT — Wireframes Relevo · iOS 4K
+# Contrato visual — Wireframes Relevo · 4K
 
 ## Propósito
 
-Este contrato fija el sistema visual de las catorce láminas 4K que cubren los estados 01–35. Su función es permitir que otra persona pueda reconstruir los wireframes en Figma manteniendo continuidad entre estados, sin convertir estas referencias en una interfaz final ni en una copia literal de iOS.
+Este contrato fija el sistema visual de las catorce láminas 4K que cubren los estados 01–35. Su función es permitir que otra persona pueda reconstruir los wireframes en Figma manteniendo continuidad entre estados, sin convertir estas referencias en una interfaz final ni en una copia literal de una plataforma.
 
-La estética toma referencias contemporáneas de composición iOS —tarjetas agrupadas, hojas inferiores, navegación sobria y jerarquía espacial—, pero el sistema representado sigue siendo Relevo y su arquitectura inicial continúa siendo Android. La referencia visual no modifica esa decisión técnica.
+La estética toma referencias contemporáneas de composición digital —tarjetas agrupadas, hojas inferiores, navegación sobria y jerarquía espacial—, pero el sistema representado sigue siendo Relevo y su arquitectura inicial continúa siendo Android. La referencia visual no modifica esa decisión técnica.
 
 ## Lienzo y composición
 
@@ -39,7 +39,7 @@ No utilizar azul de sistema, verde de éxito, rojo de error, gradientes intensos
 
 ## Tipografía
 
-- Sans serif limpia de sistema, equivalente visual a SF Pro o Inter; no usar una tipografía decorativa.
+- Sans serif limpia de sistema, equivalente visual a Inter; no usar una tipografía decorativa.
 - Títulos de pantalla: peso semibold, aproximadamente `48–60 px` en el lienzo final, interlineado compacto.
 - Cuerpo: regular, aproximadamente `28–34 px`, interlineado entre `1.25` y `1.4`.
 - Etiquetas de campo: medium, aproximadamente `22–26 px`.
@@ -104,11 +104,11 @@ Antes de replicar o modificar una lámina, comprobar:
 - no presentar Android como una interfaz visual literal ni trasladar controles técnicos al testigo físico;
 - no añadir funciones de mercado, seguimiento o personalización no respaldadas por la memoria vigente v4.
 
-## Registro breve de prompts
+## Registro breve de producción
 
 ### A1 — Estados 01–03
 
-Se solicitó una lámina `ui-mockup` de 3840 × 2160 con tres pantallas completas: `Sin configurar`, `Datos incompletos` y `Permiso requerido`. El prompt fijó la copia aprobada, una intención y un primer paso, condición provisional, vigencia, permiso técnico y acciones de recuperación. También exigió paleta cálida acromática, tarjetas agrupadas, navegación sobria, estilo iOS contemporáneo original y exclusión explícita de patrones Android.
+Se solicitó una lámina `ui-mockup` de 3840 × 2160 con tres pantallas completas: `Sin configurar`, `Datos incompletos` y `Permiso requerido`. La especificación fijó la copia aprobada, una intención y un primer paso, condición provisional, vigencia, permiso técnico y acciones de recuperación. También exigió paleta cálida acromática, tarjetas agrupadas, navegación sobria, composición contemporánea original y exclusión explícita de patrones Android.
 
 ### A2 — Estados 04–06
 
@@ -116,7 +116,7 @@ Se solicitó una lámina con la misma composición y sistema visual para `Permis
 
 ### Normalización técnica
 
-El built-in `image_gen` produjo ambas imágenes en `1672 × 941 px`. Cada salida se amplió proporcionalmente hasta un lienzo final exacto de `3840 × 2160 px`, con interpolación bicúbica de alta calidad, sin recortar ni estirar el contenido. Las salidas nativas se conservaron fuera del repositorio como originales de generación; las versiones finales de este directorio son las copias de trabajo.
+Las salidas originales midieron `1672 × 941 px`. Cada una se amplió proporcionalmente hasta un lienzo final exacto de `3840 × 2160 px`, con interpolación bicúbica de alta calidad, sin recortar ni estirar el contenido. Los originales se conservaron fuera del repositorio; las versiones finales de este directorio son las copias de trabajo.
 
 ## Registro de creación (disclaimer)
 
@@ -129,9 +129,9 @@ El built-in `image_gen` produjo ambas imágenes en `1672 × 941 px`. Cada salida
 
 **Fecha:** 25 de agosto de 2026.
 
-**Archivo nuevo:** se creó este contrato junto con `A1-configuracion-ios-4k.png` y `A2-configuracion-ios-4k.png` dentro de `wireframes-referencia-ios-4k`.
+**Archivo nuevo:** se creó este contrato junto con `A1-configuracion-4k.png` y `A2-configuracion-4k.png` dentro de `wireframes-referencia-4k`.
 
-**Decisión:** se adoptó una referencia visual contemporánea inspirada en patrones de composición iOS, sin fijar una identidad final ni contradecir la decisión de Android como plataforma técnica inicial.
+**Decisión:** se adoptó una referencia visual contemporánea basada en patrones de composición espacial, sin fijar una identidad final ni contradecir la decisión de Android como plataforma técnica inicial.
 
 **Alcance:** las láminas son referencias visuales de baja/media fidelidad para calcar y discutir en Figma. No sustituyen el tablero evaluable de Encargo 17, no validan el producto y no cierran forma, materialidad, canal, condición ni accesibilidad.
 
@@ -141,7 +141,7 @@ El built-in `image_gen` produjo ambas imágenes en `1672 × 941 px`. Cada salida
 - **Versión anterior:** la lámina A1 contenía una variante textual incorrecta sobre probar la condición provisional; el mapa de copia tenía una formulación distinta para el estado 03 y el estado 04 decía `Sin este permiso no se puede observar la condición elegida`.
 - **Motivo:** corregir el error textual, describir con precisión el alcance técnico del permiso y mantener continuidad entre el mapa de copia y las referencias visuales.
 - **Alcance:** solo se modificaron las filas 03 y 04 del mapa de copia; no se alteran las decisiones de plataforma, la arquitectura phygital ni el alcance conceptual de Relevo.
-- **Prompt registrado:** edición localizada con el built-in `image_gen`; A1 fue el objetivo y A2 la referencia visual obligatoria. Se indicó conservar composición, retícula, estilo, estados 01–02 y todas las acciones, cambiando únicamente el cuerpo textual del estado 03 por `Relevo necesita consultar el estado de uso de la aplicación elegida para observar la condición provisional durante el ciclo`.
+- **Registro de corrección:** A1 fue el objetivo y A2 la referencia visual. Se indicó conservar composición, retícula, estilo, estados 01–02 y todas las acciones, cambiando únicamente el cuerpo textual del estado 03 por `Relevo necesita consultar el estado de uso de la aplicación elegida para observar la condición provisional durante el ciclo`.
 - **Auditoría:** la salida se revisó visualmente por legibilidad, ausencia de la errata de la frase del estado 03, coherencia con la memoria v2, ausencia de interfaz Android literal y conservación del testigo físico sin pantalla. La salida nativa de `1672 × 941 px` se normalizó proporcionalmente a `3840 × 2160 px` mediante ajuste por altura y relleno lateral mínimo, sin estirar el contenido.
 
 ### 2026-08-25 — Extensión del contrato a la serie completa
@@ -150,3 +150,9 @@ El built-in `image_gen` produjo ambas imágenes en `1672 × 941 px`. Cada salida
 - **Versión anterior:** el contrato se describía como aplicable únicamente a A1 y A2, aunque las familias posteriores ya reutilizaban sus reglas.
 - **Motivo:** registrar formalmente la continuidad visual de toda la serie y evitar que las láminas B–E se interpreten como referencias aisladas.
 - **Alcance:** no se modifican los tokens ni las reglas visuales; solo se corrige el alcance documental del contrato.
+
+### 2026-09-02 — Normalización del nombre y del contrato
+
+- **Cambio:** se retiró la referencia a una plataforma del título y de las rutas, y se reemplazaron nombres operativos por nombres descriptivos.
+- **Cómo estaba antes:** el contrato se identificaba con una plataforma y remitía a archivos que ya habían sido renombrados.
+- **Motivo:** separar la referencia visual de la decisión técnica y asegurar que el contrato sea localizable desde la carpeta vigente, sin cambiar sus reglas de diseño.

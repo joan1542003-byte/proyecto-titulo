@@ -90,9 +90,9 @@ La síntesis integra las revisiones de Biedermann et al. (2021) y Monge Roffarel
 
 La bibliografía y los enlaces directos pueden consultarse en:
 
-- [Investigación académica — Agente Samus](investigacion-agente-samus-academia.md).
-- [Investigación comercial — Agente Zelda](investigacion-agente-zelda-mercado.md).
-- [Investigación de frontera y patentes — Agente Solid Snake](investigacion-agente-solid-snake-frontera.md).
+- [Investigación académica del mecanismo](investigacion-academica-mecanismo-relevo.md).
+- [Investigación de mercado y referentes](investigacion-mercado-y-referentes.md).
+- [Investigación de frontera y coincidencias](investigacion-frontera-y-coincidencias.md).
 - [Registro de búsqueda](registro-busqueda-2026-08-24.md).
 - [Fichas verificadas de mercado](fichas-mercado-2026-08-24.md).
 
@@ -110,3 +110,9 @@ La búsqueda tiene fecha de corte del 24 de agosto de 2026 y no es una revisión
 - **Versión anterior:** la información estaba distribuida entre el registro de búsqueda, fichas y tres investigaciones especializadas.
 - **Motivo:** permitir una lectura directa sin confundir coincidencia formal, afirmación comercial, evidencia académica y novedad universal.
 - **Alcance:** la síntesis no demuestra eficacia, patentabilidad, libertad de operación ni demanda comercial; convierte la revisión disponible en criterios de desarrollo y validación.
+
+### 2026-09-02 — Actualización de enlaces internos
+
+- **Cambio:** se actualizaron los enlaces a las investigaciones especializadas después de normalizar sus nombres.
+- **Cómo estaba antes:** la síntesis remitía a nombres de archivo asociados al origen operativo de cada documento.
+- **Motivo:** mantener la navegación funcional y hacer que cada enlace describa el contenido al que conduce, sin cambiar la síntesis ni sus conclusiones.

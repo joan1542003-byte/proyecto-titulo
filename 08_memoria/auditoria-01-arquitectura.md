@@ -1,7 +1,7 @@
 ---
 id: AUD-MEM-ARQ-001
 titulo: "Auditoría integral de arquitectura narrativa y tesis central"
-agente: "Luna Max — Auditoría 1"
+tipo_documento: "auditoría interna de arquitectura narrativa"
 fecha: 2026-08-24
 estado: "informe de auditoría; no sustituye la decisión de integración"
 alcance: "arquitectura narrativa, tesis, dependencias, circularidad expositiva y correspondencia con Proyecto de Título"
@@ -480,3 +480,9 @@ No se recomienda comenzar por la forma, el diseño visual ni el detalle de la el
 - **Motivo:** hacer visible la diferencia entre la coherencia conceptual actual de Relevo y las exigencias estructurales de una memoria de Proyecto de Título, especialmente antecedentes, método, síntesis, producción y modelo de gestión.
 - **Fuentes de contraste:** `INSTRUCCIONES_CHATGPT.md`, `00_gobernanza/directrices-de-trabajo.md`, `08_memoria/memoria-vigente.md`, `08_memoria/matriz-incorporacion-feedback-e15.md`, `INSTRUCTIVO EXAMEN PROYECTO DE TÍTULO 2026.docx`, `Acta Examen PROYECTO DE TÍTULO 2026.docx` y la síntesis del Reglamento entregada en la instrucción de esta auditoría.
 - **Alcance:** informe interno para la integración posterior por el modelo principal. No modifica `08_memoria/memoria-vigente.md`, no reemplaza decisiones del autor, no inventa resultados de entrevistas o validaciones y no contiene commit ni push.
+
+### 2026-09-02 — Normalización del nombre del archivo y los metadatos
+
+- **Cambio:** se eliminó la identificación de colaboración del nombre del archivo y del encabezado visible.
+- **Cómo estaba antes:** el archivo llevaba un nombre y un metadato asociados a su preparación, aunque su contenido corresponde a una auditoría temática de arquitectura.
+- **Motivo:** ordenar el repositorio por función documental y alcance, sin alterar el diagnóstico ni su condición histórica.

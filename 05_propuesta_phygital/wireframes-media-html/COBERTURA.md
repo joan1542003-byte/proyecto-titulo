@@ -4,7 +4,7 @@
 
 Este documento fija la cobertura que debe conservar la versión HTML de los wireframes del Encargo 17. La implementación puede presentar los marcos por separado y permitir la descarga individual de cada uno, pero no debe alterar la arquitectura evaluable ni convertir el anexo de estados en una nueva experiencia.
 
-La cobertura se basa en el [Encargo 17](../../01_contexto_y_fuentes/encargo-17-requisitos.md), la [entrega escrita](../entrega-encargo-17.md), el [anexo de cobertura](../anexo-cobertura-interacciones-encargo-17.md), la [memoria vigente v4](../../08_memoria/memoria-vigente-v4.md) y las [referencias visuales 4K](../wireframes-referencia-ios-4k/README.md).
+La cobertura se basa en el [Encargo 17](../../01_contexto_y_fuentes/encargo-17-requisitos.md), la [entrega escrita](../entrega-encargo-17.md), el [anexo de cobertura](../anexo-cobertura-interacciones-encargo-17.md), la [memoria vigente v4](../../08_memoria/memoria-vigente-v4.md) y las [referencias visuales 4K](../wireframes-referencia-4k/README.md).
 
 El sistema es phygital: la aplicación configura y comunica estados; el testigo físico situado emite un pulso ambiental en el lugar asociado al primer paso. El estado físico situado forma parte del recorrido, aunque no sea una pantalla. El testigo no tiene interfaz de consulta: no muestra texto, menú, historial ni instrucciones, y no reemplaza a la aplicación.
 
@@ -193,3 +193,9 @@ La implementación debe diferenciar, al menos, los estados principales de la mem
 **Motivo:** mantener trazabilidad entre la pauta, la memoria vigente, el anexo de estados y la futura implementación, haciendo explícito el papel del pulso físico situado dentro del recorrido phygital.
 
 **Alcance:** este documento no agrega funciones, no acredita validación y no reemplaza la entrega evaluable ni la investigación de la memoria.
+
+### 2026-09-02 — Actualización de enlace visual
+
+- **Cambio:** se actualizó la ruta de las referencias visuales 4K después de normalizar el nombre de su carpeta.
+- **Cómo estaba antes:** la ruta incluía una etiqueta de plataforma que podía confundirse con la decisión técnica del proyecto.
+- **Motivo:** conservar la navegación funcional y distinguir la referencia visual del sistema Android documentado, sin modificar la cobertura HTML.

@@ -15,7 +15,7 @@
 | Autonomía | No hay bloqueo, puntuación, inferencia de conducta ni registro de cumplimiento. |
 | Capas del sistema | Aplicación, testigo y situación física se diferencian de forma comprensible. |
 | Estados 23–24 | Representan el pulso situado y las respuestas posibles sin convertirlas en cumplimiento. |
-| Lenguaje visual | Minimalista y contemporáneo, inspirado en composición iOS sin reproducir una interfaz Android. |
+| Lenguaje visual | Minimalista y contemporáneo, basado en una composición espacial sobria sin reproducir una interfaz del sistema. |
 | Uso previsto | Texto y jerarquía suficientemente legibles para calcar en Figma. |
 
 ## Alcance del veredicto
@@ -32,3 +32,9 @@ La aprobación corresponde a cobertura, coherencia y utilidad como referencia de
 - **Versión anterior:** las familias visuales contaban con revisiones parciales de producción, pero no con un veredicto único de cierre.
 - **Motivo:** comprobar de manera independiente la cobertura y la coherencia antes de publicar la serie como referencia vigente.
 - **Alcance:** auditoría documental y visual; no constituye validación con usuarios ni prueba técnica del producto.
+
+### 2026-09-02 — Normalización del nombre de la serie
+
+- **Cambio:** se retiró del registro cualquier referencia a una plataforma en el nombre de la serie.
+- **Cómo estaba antes:** el conjunto se identificaba con una etiqueta asociada a una plataforma, aunque su función era servir como referencia visual.
+- **Motivo:** separar la referencia compositiva de la decisión técnica de Relevo, sin modificar el veredicto ni las imágenes.

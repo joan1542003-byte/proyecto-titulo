@@ -1,7 +1,7 @@
 # Memoria editorial completa de Relevo
 
-**Estado:** primera maqueta integral automatizada.
-**Fuente textual:** `08_memoria/memoria-vigente-v4.md`.
+**Estado:** primera maqueta integral reproducible, exportada el 1 de septiembre de 2026.
+**Fuente textual:** `08_memoria/memoria-vigente-v4.md` en la versión disponible al momento de la exportación.
 **Formato:** A3 horizontal, una página por archivo PNG.
 
 ## Propósito
@@ -26,7 +26,7 @@ Esta carpeta contiene el sistema utilizado para trasladar la memoria vigente a p
 
 ## Limitaciones de esta versión
 
-La paginación automática debe revisarse visualmente. En especial, es necesario comprobar tablas extensas, listas, referencias, viudas, huérfanas, equilibrio de columnas y tamaño real de impresión. Los diagramas y figuras definitivos se incorporarán después de esta auditoría, no antes.
+La paginación debe revisarse visualmente. En especial, es necesario comprobar tablas extensas, listas, referencias, viudas, huérfanas, equilibrio de columnas y tamaño real de impresión. La memoria vigente recibió cambios después de esta exportación, por lo que las 70 páginas deben volver a construirse cuando el texto académico se congele. Los diagramas y figuras definitivos se incorporarán después de esta auditoría, no antes.
 
 ---
 
@@ -38,3 +38,9 @@ La paginación automática debe revisarse visualmente. En especial, es necesario
 - **Versión anterior:** solo existían páginas aisladas para probar lectura, evidencia y síntesis.
 - **Motivo:** desarrollar el diseño de la publicación completa sin inventar el texto de cada página mediante generación de imágenes.
 - **Alcance:** esta versión permite auditar la memoria completa, pero todavía no constituye el arte final de impresión.
+
+### 2026-09-02 — Advertencia de sincronización textual
+
+- **Cambio:** se aclaró que las páginas PNG corresponden a una captura de la memoria disponible el 1 de septiembre.
+- **Versión anterior:** el README indicaba la memoria v4 como fuente, pero no advertía que el texto había recibido modificaciones posteriores.
+- **Motivo:** evitar que una exportación visual anterior se confunda con la paginación final de la memoria actual.

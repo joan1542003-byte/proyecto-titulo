@@ -3,7 +3,7 @@
 ---
 id: AUD-05-SISTEMA-FACTIBILIDAD-2026-08-24
 titulo: "Auditoría 5 — propuesta phygital, sistema, interacción, factibilidad y modelo de gestión"
-agente: "Luna Max"
+tipo_documento: "auditoría interna de sistema y factibilidad"
 fecha: 2026-08-24
 estado: "informe de auditoría; no integrado a la memoria vigente"
 alcance: "Revisión de 05_propuesta_phygital, 06_desarrollo_y_factibilidad y de los capítulos correspondientes de memoria-vigente.md"
@@ -67,7 +67,7 @@ La memoria identifica tres componentes, pero el significado no reside en ellos p
 
 | Elemento | Función que sí está fundamentada como propuesta | Lo que no puede afirmarse todavía | Decisión de auditoría |
 | --- | --- | --- | --- |
-| Persona | Define intención, primer paso, aplicación, ventana y modalidad; sitúa el objeto e interpreta la señal | Que recuerde siempre la asociación o que actúe después | Mantener como agente decisor explícito del sistema |
+| Persona | Define intención, primer paso, aplicación, ventana y modalidad; sitúa el objeto e interpreta la señal | Que recuerde siempre la asociación o que actúe después | Mantener como actor decisor explícito del sistema |
 | Aplicación Android | Configura la regla, solicita permisos, evalúa una condición técnica y comunica el estado | Que la evaluación sea instantánea, estable entre fabricantes o equivalente a detectar automatismo | Mantener como plataforma de prototipo, con alcance técnico acotado |
 | Regla local | Traduce una condición definida por la persona a un evento operacional | Que represente una experiencia subjetiva o que mida pérdida de control | Reemplazar lenguaje de “automatismo” por una condición observable |
 | Bluetooth LE | Transporta un identificador de patrón y estados técnicos entre aplicación y objeto | Que la conexión permanezca disponible durante todas las ventanas de uso | Mantener como alternativa técnica condicionada a pruebas |
@@ -545,3 +545,9 @@ El siguiente paso sustantivo único es el punto 3: **definir la condición opera
 - **Versión anterior:** la auditoría afirmaba una inconsistencia y calculaba un máximo aproximado de CLP 112.000 a partir de una suma que no correspondía a la base trazable de la lista de materiales. También describía la ausencia de pantalla como decisión provisional y dejaba formulaciones que podían hacerla depender de la dirección del testigo transportable.
 - **Nueva formulación:** la suma base correcta es CLP 51.140–92.640; con 15 % de contingencia resulta CLP 58.811–106.536 y se comunica, por redondeo, como CLP 59.000–107.000. La ausencia de pantalla es una restricción firme del proyecto. Si falla el testigo transportable, se reformula o reemplaza esa dirección física, manteniendo siempre el carácter phygital y un objeto físico sin pantalla.
 - **Motivo:** reconocer y corregir el error de cálculo introducido en la auditoría, evitar una conclusión económica basada en una base incorrecta y alinear la arquitectura física con la restricción firme del proyecto. El rango sigue siendo planificación no cotizada y no valida factibilidad, producción ni precio.
+
+### 2026-09-02 — Normalización del nombre del archivo y los metadatos
+
+- **Cambio:** se eliminó la identificación de colaboración del nombre del archivo y del encabezado visible; además, se precisó “actor decisor” en la tabla de roles.
+- **Cómo estaba antes:** el archivo y sus metadatos estaban asociados a su preparación, y una fila de la tabla utilizaba “agente” en el sentido de rol del sistema.
+- **Motivo:** distinguir la organización del documento de los actores que participan en la experiencia de Relevo y ordenar la carpeta por función, sin modificar la auditoría ni sus recomendaciones.

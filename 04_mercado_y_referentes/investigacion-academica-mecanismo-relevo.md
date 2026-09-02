@@ -1,5 +1,5 @@
 ---
-id: MER-INV-SAMUS-2026-08-24
+id: MER-INV-ACADEMICA-2026-08-24
 titulo: "Relevo: evidencia y mercado"
 fecha_consulta: 2026-08-24
 estado: "investigación exploratoria primaria"
@@ -81,9 +81,15 @@ Fuentes oficiales de mercado consultadas el 24 de agosto de 2026: [Google Pause 
 
 ## Registro de cambios (disclaimer)
 
-### 2026-08-24 — Creación por Agente Samus
+### 2026-08-24 — Creación del estudio académico
 
 - **Cambio:** se creó este estudio con literatura, prototipos y productos oficiales; añade respuesta central, tabla, límites y consecuencias de evaluación.
 - **Criterio:** se distinguieron coincidencia funcional, coincidencia formal, mecanismo, evidencia independiente, afirmación comercial e inferencia.
 - **Alcance:** búsqueda exploratoria de fuentes primarias verificadas al 24 de agosto de 2026; no demuestra novedad universal, eficacia, adopción ni disponibilidad en Chile.
 - **Restricción aplicada:** no se modificaron otros archivos, no se realizó commit y no se realizó push.
+
+### 2026-09-02 — Normalización del nombre de archivo
+
+- **Cambio:** se reemplazó el identificador de colaboración por un nombre descriptivo según la función del documento.
+- **Versión anterior:** el archivo incluía el nombre de una persona colaboradora en su ruta y en el registro de creación.
+- **Motivo:** ordenar el repositorio por contenido y no por quién participó en su elaboración; el estudio y sus fuentes no cambian.

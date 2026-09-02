@@ -399,3 +399,9 @@ Si esa asociación no aparece, la memoria debe registrar el resultado como una r
 - **Alcance:** este archivo propone correcciones y criterios; no modifica memoria-vigente.md, no incorpora resultados inexistentes, no reemplaza protocolos ejecutados y no constituye una conclusión final del proyecto.
 - **Archivos no modificados:** 08_memoria/memoria-vigente.md y 07_validacion/README.md.
 - **Pendientes derivados:** reestructurar el capítulo de evaluación, formalizar H2–H4, definir variables y codificación, ejecutar la primera prueba de asociación, auditar APA 7 con una matriz cita–referencia y reescribir las conclusiones.
+
+### 2026-09-02 — Normalización del nombre del archivo
+
+- **Cambio:** se normalizó el nombre del archivo para describir directamente su función: validación y calidad editorial.
+- **Cómo estaba antes:** el archivo llevaba un nombre compuesto que mezclaba su función con el origen de la revisión.
+- **Motivo:** facilitar la navegación del repositorio y mantener separadas las auditorías temáticas, sin modificar su diagnóstico ni sus pendientes.

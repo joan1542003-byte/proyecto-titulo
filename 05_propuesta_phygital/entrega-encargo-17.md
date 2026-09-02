@@ -14,7 +14,7 @@ La entrega contiene exactamente tres interacciones y nueve marcos. Ocho marcos c
 
 Como complemento, el [anexo de cobertura de interacciones](anexo-cobertura-interacciones-encargo-17.md) registra y representa las 35 ramificaciones del ciclo mínimo en una [página separada del mismo archivo Figma](https://www.figma.com/design/kjzrPcLGWfoJZAVANivEo4?node-id=13-2). El anexo permite revisar validaciones, salidas voluntarias, fallos técnicos y estados límite sin alterar el tablero exigido por la pauta ni presentarlos como funciones adicionales.
 
-Además, se produjeron [catorce láminas de referencia en 4K](wireframes-referencia-ios-4k/README.md) para reconstruir manualmente los 35 estados en Figma. Estas imágenes amplían componentes y jerarquías, pero no forman parte de la cuenta evaluable de nueve marcos ni fijan el diseño final. La serie sintética anterior de siete láminas se conserva como registro de proceso.
+Además, se produjeron [catorce láminas de referencia en 4K](wireframes-referencia-4k/README.md) para reconstruir manualmente los 35 estados en Figma. Estas imágenes amplían componentes y jerarquías, pero no forman parte de la cuenta evaluable de nueve marcos ni fijan el diseño final. La serie sintética anterior de siete láminas se conserva como registro de proceso.
 
 La entrega cuenta también con una [versión HTML de media fidelidad](wireframes-media-html/README.md). Permite recorrer los nueve marcos evaluables, consultar el anexo de 35 estados y descargar los 44 wireframes por separado. Esta capa facilita la revisión y el calco; no agrega funciones a Relevo ni sustituye el archivo Figma.
 
@@ -138,3 +138,9 @@ El anexo mantiene cinco familias de estados: configuración; vinculación y prue
 - **Versión anterior:** solo existían requisitos y una preparación escrita; no había un entregable visual editable.
 - **Motivo:** mantener trazabilidad entre memoria, decisiones, estructura y archivo de trabajo.
 - **Alcance:** el documento registra un wireframe de baja fidelidad y no resultados de validación.
+
+### 2026-09-02 — Actualización de enlace visual
+
+- **Cambio:** se actualizó el enlace a las catorce láminas 4K después de normalizar el nombre de su carpeta.
+- **Cómo estaba antes:** el enlace incluía una etiqueta de plataforma que podía confundirse con una decisión técnica.
+- **Motivo:** mantener la ruta funcional y separar la referencia compositiva de la plataforma documentada, sin modificar la cobertura ni el alcance de la entrega.

@@ -6,12 +6,12 @@ fecha_de_corte: 2026-08-24
 estado: "borrador académico listo para integración; no constituye validación del producto"
 documentos_de_apoyo:
   - ../dictamen-rector-reconstruccion-memoria.md
-  - ../auditoria-agente-01-arquitectura.md
-  - ../auditoria-agente-02-problema-teoria.md
-  - ../auditoria-agente-03-metodo-usuarios.md
-  - ../auditoria-agente-04-mercado.md
-  - ../auditoria-agente-05-sistema-factibilidad.md
-  - ../auditoria-agente-06-validacion-editorial.md
+  - ../auditoria-01-arquitectura.md
+  - ../auditoria-02-problema-y-teoria.md
+  - ../auditoria-03-metodo-y-usuarios.md
+  - ../auditoria-04-mercado.md
+  - ../auditoria-05-sistema-y-factibilidad.md
+  - ../auditoria-06-validacion-y-editorial.md
   - ../../04_mercado_y_referentes/README.md
 ---
 
@@ -169,3 +169,9 @@ Unpluq. (s. f.). *Unpluq: Stop scrolling. Reduce distractions. Reduce screentime
 - **Antes:** el cuerpo remitía a rutas de carpetas mediante texto técnico; el registro bibliográfico fechaba como 2026 algunas páginas oficiales sin fecha; Unpluq aparecía con un monto dinámico dentro de la comparación económica; la formulación sobre sanciones podía leerse como una generalización.
 - **Después:** el cuerpo indica que el registro de búsqueda y las fichas se conservan como anexos digitales; Apple Support, Google Help y las páginas de Brick pasan a `s. f.` con fecha de recuperación y sufijos `s. f.-a/b`; se retira el monto de Unpluq de la comparación y se aclara que su interfaz no ofrece un total comparable; los mecanismos restrictivos se describen solo bajo la condición de ser difíciles de eludir.
 - **Motivo:** eliminar metalenguaje de repositorio, aplicar la convención APA 7 en español del proyecto, evitar una comparación económica engañosa y precisar el alcance de la evidencia sobre restricciones.
+
+### 2026-09-02 — Actualización de enlaces internos
+
+- **Cambio:** se actualizaron los enlaces a las auditorías y fichas especializadas después de normalizar sus nombres.
+- **Cómo estaba antes:** el borrador remitía a nombres de archivo asociados al origen operativo de cada documento.
+- **Motivo:** mantener la navegación funcional y ordenar la documentación por función, sin modificar el contenido académico del borrador.
