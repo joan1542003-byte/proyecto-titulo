@@ -1,30 +1,63 @@
-# Pantalla 1.1 Formular — prompt y criterios
+# Pantalla destacada — Ciclo activo
 
-## Función
+## Selección
 
-Esta imagen desarrolla la primera pantalla del recorrido principal. Su objetivo es mostrar cómo se traduce el sistema visual de Relevo a una interfaz concreta sin adelantar el acabado de las demás pantallas.
+La pantalla destacada corresponde al marco **3.1 Esperar**. Es un momento central de la aplicación porque reúne la intención, el primer paso, la condición provisional, la vigencia y el testigo ya vinculado. También hace visible que el ciclo puede desarmarse. Por lo tanto, explica mejor el funcionamiento de Relevo que una pantalla inicial de formulario.
 
-La composición mantiene dos campos editables, una salida secundaria y una acción principal. No utiliza rojo porque la señal situada todavía no ocurre en este punto del recorrido. Tampoco incorpora métricas, progreso, ilustraciones o elementos decorativos que puedan confundirse con elecciones.
+La composición no usa rojo. Ese color se reserva para el pulso situado y aquí la condición todavía está en espera. Tampoco incorpora progreso, recompensas ni métricas: el ciclo activo describe un estado del sistema, no evalúa la conducta de la persona.
 
-## Prompt final
+## Contenido visible
 
-> Diseñar una única pantalla Android oscura de alta fidelidad para el marco 1.1 Formular de Relevo. Usar una retícula de 8 unidades, margen de 24, IBM Plex Sans para lectura e IBM Plex Mono para etiquetas. Mantener fondo #111314, superficies #1B1D1E y #242728, texto #F1F1F1 y #B6B8B7, reglas #3A3D3E y bordes #767A79. Incluir únicamente los textos: RELEVO; FORMULAR; ¿Qué quieres iniciar?; INTENCIÓN; Leer un capítulo; PRIMER PASO; Abrir el libro; Define una acción concreta que puedas comenzar en el lugar.; Cancelar; Continuar. Distinguir los campos editables de las acciones. Cancelar es secundaria y Continuar es primaria. No usar rojo, sombras, degradados, texturas, puntos decorativos, métricas, marco de teléfono, barra Android, iconos ni contenido adicional.
+- **Intención:** Salir a caminar.
+- **Primer paso:** Ponerte las zapatillas.
+- **Condición provisional:** Después de 25 min en Instagram.
+- **Vigencia:** Hoy, de 20:00 a 22:00.
+- **Testigo:** Dormitorio.
+- **Estado:** testigo vinculado y en espera.
+- **Acción:** desarmar el ciclo.
 
-## Producción
+## Criterios de diseño
 
-La imagen se generó mediante la herramienta integrada de generación visual, usando como referencias la dirección oscura `02-formular-intencion-oscuro-v2.png` y el wireframe vigente `1-1-formular.png`. La primera salida omitió una parte del texto de ayuda; se corrigió antes de incorporar la versión final. El archivo se normalizó a **824 × 1830 px** para coincidir con las demás exportaciones.
+La pantalla aplica el modo oscuro vigente, una retícula regular, jerarquía tipográfica contenida y separadores en lugar de tarjetas decorativas. IBM Plex Sans se destina a la lectura e IBM Plex Mono a etiquetas y datos breves. El fondo grafito, el texto blanco cálido y los grises intermedios mantienen contraste sin convertir cada bloque en una acción.
+
+El botón final es el único control con contenedor completo. Las etiquetas, divisores y estados no parecen seleccionables. Esta diferencia evita confundir información con interacción.
+
+## Archivos
+
+- `3-1-ciclo-activo-alta-fidelidad-v3.png`: pantalla destacada vigente.
+- `3-1-ciclo-activo-alta-fidelidad-v2.png`: versión anterior que se conserva para comparar el ajuste de lenguaje.
+- `1-1-formular-alta-fidelidad-v1.png`: exploración anterior que se conserva para registrar el proceso, pero ya no funciona como pantalla principal.
+
+La pieza vigente se produjo a partir de `10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/android/oscuro/07-ciclo-activo-espera-oscuro-v2.png`. Se mantuvo la composición y se reemplazó “El testigo espera fuera de la pantalla” por “El testigo está listo para emitir el pulso”. También se cambió “Sin señal situada” por “En espera”. El ajuste comunica el estado sin explicar innecesariamente el soporte.
+
+## Instrucción de ajuste visual
+
+La edición debía conservar composición, proporciones, retícula, jerarquía, tipografías, colores, divisores y márgenes. Solo podía cambiar los dos bloques de estado mencionados. Se prohibió agregar rojo, iconos, sombras, degradados, marcos de teléfono, barras de sistema o contenido nuevo.
 
 ## Límite
 
-La imagen fija una dirección visual y permite discutir jerarquía, densidad y lenguaje gráfico. No reemplaza la construcción editable de la interfaz ni demuestra accesibilidad, interacción con teclado o comportamiento en Android.
+La pieza fija una dirección de interfaz y permite discutir jerarquía, densidad y lenguaje gráfico. No reemplaza una interfaz editable ni demuestra accesibilidad, interacción con teclado, permisos o funcionamiento en Android.
 
 ---
 
 ## Registro de cambios (disclaimer)
 
-### 2026-09-02 — Creación de la pantalla principal
+### 2026-09-02 — Cambio de pantalla destacada
 
-- **Qué se incorporó:** imagen de alta fidelidad, prompt final, referencias utilizadas y criterio de selección.
-- **Cómo estaba antes:** existían un wireframe estructural y una referencia visual con otro contenido de ejemplo.
-- **Qué se reemplazó:** el contenido de ejemplo se cambió por “Leer un capítulo” y “Abrir el libro”, correspondientes al wireframe vigente.
-- **Por qué se hizo:** mostrar una aplicación concreta del sistema visual sin rediseñar todavía las 44 vistas.
+- **Qué se incorporó:** la pantalla 3.1 Ciclo activo como pieza principal de alta fidelidad.
+- **Cómo estaba antes:** la carpeta destacaba 1.1 Formular, una pantalla correcta pero menos representativa del funcionamiento de Relevo.
+- **Qué se reemplazó:** se cambió la jerarquía de las piezas; la versión 1.1 se conserva como registro de proceso.
+- **Por qué se hizo:** mostrar un momento importante que reúna la relación entre intención, condición, vigencia y testigo sin confundir la interacción física con una pantalla.
+
+### 2026-09-02 — Corrección del lenguaje de estado
+
+- **Qué se incorporó:** la versión 3 con los estados “Testigo vinculado” y “En espera”.
+- **Cómo estaba antes:** la versión 2 decía “fuera de la pantalla” y “sin señal situada”.
+- **Qué se reemplazó:** una explicación del soporte por información directa sobre el estado del ciclo.
+- **Por qué se hizo:** reducir metalenguaje y hacer que la pantalla se lea como una interfaz, no como una justificación del proyecto.
+
+### 2026-09-02 — Creación de la primera pantalla de alta fidelidad
+
+- **Qué se incorporó:** imagen de alta fidelidad para 1.1 Formular, prompt y criterios de selección.
+- **Cómo estaba antes:** existían un wireframe estructural y una referencia visual con contenido de ejemplo.
+- **Por qué se hizo:** probar la aplicación del sistema visual en una interfaz concreta.

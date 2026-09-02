@@ -4,7 +4,7 @@
 
 ### 1.1 Formular
 
-Permite escribir una intención y convertirla en un primer paso concreto. Está primero porque Relevo necesita partir de una decisión expresada por la persona, no de una interpretación automática de su conducta. Si la información queda incompleta, se conserva como borrador. Esta pantalla cuenta además con una versión de alta fidelidad que fija la dirección visual del sistema.
+Permite escribir una intención y convertirla en un primer paso concreto. Está primero porque Relevo necesita partir de una decisión expresada por la persona, no de una interpretación automática de su conducta. Si la información queda incompleta, se conserva como borrador. Su versión de alta fidelidad se conserva como exploración anterior del sistema visual.
 
 ### 1.2 Configurar condición provisional
 
@@ -28,7 +28,7 @@ Cierra la preparación mediante una acción deliberada. El armado no sucede auto
 
 ### 3.1 Esperar
 
-Muestra que el ciclo está activo y que la condición sigue vigente. La pantalla evita contadores, premios o evaluaciones porque esperar no significa que la persona esté fallando. También mantiene visible la posibilidad de desarmar el ciclo en cualquier momento.
+Muestra que el ciclo está activo y que la condición sigue vigente. La pantalla evita contadores, premios o evaluaciones porque esperar no significa que la persona esté fallando. También mantiene visible la posibilidad de desarmar el ciclo en cualquier momento. Su desarrollo en alta fidelidad se eligió como pantalla destacada porque reúne intención, primer paso, condición, vigencia y testigo.
 
 ### 3.2 Recibir el pulso situado
 
@@ -109,6 +109,13 @@ La cobertura busca que Relevo pueda fallar, detenerse o cambiar de dirección si
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Actualización de la pantalla destacada
+
+- **Qué se incorporó:** la relación entre 3.1 Esperar y su desarrollo de alta fidelidad.
+- **Cómo estaba antes:** la explicación asociaba la muestra visual principal únicamente con 1.1 Formular.
+- **Qué se reemplazó:** la exploración 1.1 se mantiene, pero 3.1 pasa a representar la dirección principal.
+- **Por qué se hizo:** destacar una pantalla que explique mejor el funcionamiento del ciclo activo.
 
 ### 2026-09-02 — Explicación individual de la entrega
 
