@@ -34,8 +34,9 @@ function StateIcon({ frame }: { frame: Wireframe }) {
 }
 
 function Field({ label, value, kind = "Contenido" }: { label: string; value: string; kind?: string }) {
+  const interactive = kind === "Campo" || kind === "Selector";
   return (
-    <div className="wf-field">
+    <div className={`wf-field ${interactive ? "is-interactive" : "is-informative"}`}>
       <div><span>{label}</span><small>{kind}</small></div>
       <strong>{value}</strong>
     </div>
@@ -92,13 +93,12 @@ function WireframeCanvas({ frame, mode }: { frame: Wireframe; mode: Mode }) {
   const physical = frame.visual === "physical";
   return (
     <article className="export-surface" data-testid="export-surface">
-      <header className="export-header">
-        <div><span>{physical ? "MOMENTO FÍSICO" : "CAPA DIGITAL"}</span><strong>{frame.id}</strong></div>
-        <p>{mode === "entrega" ? frame.interaction : coverage?.family}</p>
-      </header>
-
       <section className={`wireframe-canvas ${physical ? "is-physical" : ""}`}>
-        <div className="wireframe-topline"><StateIcon frame={frame} /><span>{frame.eyebrow ?? (physical ? "Señal situada" : "Estado del ciclo")}</span></div>
+        <header className="wireframe-header">
+          <span className="wireframe-brand">RELEVO</span>
+          <span>{frame.id}</span>
+        </header>
+        <div className="wireframe-topline"><StateIcon frame={frame} /><span>{frame.eyebrow ?? (physical ? "Momento físico" : "Estado del ciclo")}</span></div>
         <div className="wireframe-intro"><h2>{frame.title}</h2><p>{frame.short}</p></div>
         <div className="wireframe-content">
           {physical ? <PhysicalBody frame={frame} /> : coverage ? <CoverageBody frame={coverage} /> : <DeliveryBody frame={frame} />}
@@ -109,12 +109,6 @@ function WireframeCanvas({ frame, mode }: { frame: Wireframe; mode: Mode }) {
           <div className="wireframe-actions"><button type="button">{mode === "cobertura" ? coverage?.primary : frame.action.split(".")[0]}</button><p>La persona puede salir o cambiar de decisión.</p></div>
         )}
       </section>
-
-      <footer className="export-legend">
-        <span>LECTURA DEL MARCO</span>
-        <p>{frame.objective}</p>
-        <dl><div><dt>Jerarquía</dt><dd>{frame.hierarchy}</dd></div><div><dt>Error o salida</dt><dd>{frame.error}</dd></div></dl>
-      </footer>
     </article>
   );
 }
@@ -174,7 +168,7 @@ export default function Prototype() {
 
         <section className="canvas-panel">
           <div className="canvas-toolbar">
-            <div><span>{index + 1} / {source.length}</span><strong>{frame.title}</strong></div>
+            <div><span>{index + 1} / {source.length} · {frame.id}</span><strong>{frame.title}</strong><small>{frame.visual === "physical" ? "Momento contextual" : "Pantalla base · 412 × 915 dp"}</small></div>
             <a data-testid="download-frame" href={`/exports/${frame.slug}.png`} download={`${frame.slug}.png`}><DownloadIcon /> Exportar PNG</a>
           </div>
           <WireframeCanvas frame={frame} mode={mode} />
@@ -187,6 +181,7 @@ export default function Prototype() {
         <aside className="rationale" aria-label="Fundamento del wireframe">
           <div className="panel-heading"><span>03</span><div><h2>Fundamento</h2><p>Decisiones verificables</p></div></div>
           <dl>
+            <div><dt>Conjunto</dt><dd>{mode === "entrega" ? frame.interaction : coverage?.family}</dd></div>
             <div><dt>Objetivo</dt><dd>{frame.objective}</dd></div>
             <div><dt>Información crítica</dt><dd>{frame.critical}</dd></div>
             <div><dt>Acción esperada</dt><dd>{frame.action}</dd></div>
@@ -194,7 +189,7 @@ export default function Prototype() {
             <div><dt>Error o salida</dt><dd>{frame.error}</dd></div>
             {coverage && <><div><dt>Disparador</dt><dd>{coverage.trigger}</dd></div><div><dt>Continuidad</dt><dd>{coverage.id} → {coverage.continuity}</dd></div></>}
           </dl>
-          <div className="decision-note"><strong>Regla de representación</strong><p>El marco muestra estructura, estado y salida. No simula hardware, no fija identidad visual y no convierte el momento físico en pantalla.</p></div>
+          <div className="decision-note"><strong>Regla de representación</strong><p>El lienzo utiliza una ventana Android representativa de 412 × 915 dp, sin marco de hardware. Aplica la retícula y semántica vigentes sin presentarse como interfaz validada.</p></div>
         </aside>
       </div>
     </main>

@@ -4,6 +4,8 @@
     "key": "frame",
     "id": "1.1",
     "file": "1-1-formular.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=1.1"
   },
   {
@@ -11,6 +13,8 @@
     "key": "frame",
     "id": "1.2",
     "file": "1-2-configurar-condicion.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=1.2"
   },
   {
@@ -18,6 +22,8 @@
     "key": "frame",
     "id": "1.3",
     "file": "1-3-revisar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=1.3"
   },
   {
@@ -25,6 +31,8 @@
     "key": "frame",
     "id": "2.1",
     "file": "2-1-situar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=2.1"
   },
   {
@@ -32,6 +40,8 @@
     "key": "frame",
     "id": "2.2",
     "file": "2-2-probar-pulso.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=2.2"
   },
   {
@@ -39,6 +49,8 @@
     "key": "frame",
     "id": "2.3",
     "file": "2-3-armar-control-fisico.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=2.3"
   },
   {
@@ -46,6 +58,8 @@
     "key": "frame",
     "id": "3.1",
     "file": "3-1-esperar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=3.1"
   },
   {
@@ -53,6 +67,8 @@
     "key": "frame",
     "id": "3.2",
     "file": "3-2-recibir-pulso-situado.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=3.2"
   },
   {
@@ -60,6 +76,8 @@
     "key": "frame",
     "id": "3.3",
     "file": "3-3-cerrar-o-recuperar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=entrega&frame=3.3"
   },
   {
@@ -67,6 +85,8 @@
     "key": "state",
     "id": "01",
     "file": "cobertura-01-sin-configurar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=01"
   },
   {
@@ -74,6 +94,8 @@
     "key": "state",
     "id": "02",
     "file": "cobertura-02-datos-incompletos.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=02"
   },
   {
@@ -81,6 +103,8 @@
     "key": "state",
     "id": "03",
     "file": "cobertura-03-permiso-requerido.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=03"
   },
   {
@@ -88,6 +112,8 @@
     "key": "state",
     "id": "04",
     "file": "cobertura-04-permiso-denegado.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=04"
   },
   {
@@ -95,6 +121,8 @@
     "key": "state",
     "id": "05",
     "file": "cobertura-05-revisión.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=05"
   },
   {
@@ -102,6 +130,8 @@
     "key": "state",
     "id": "06",
     "file": "cobertura-06-salida-voluntaria.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=06"
   },
   {
@@ -109,6 +139,8 @@
     "key": "state",
     "id": "07",
     "file": "cobertura-07-buscando-testigo.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=07"
   },
   {
@@ -116,6 +148,8 @@
     "key": "state",
     "id": "08",
     "file": "cobertura-08-elegir-y-confirmar-testigo.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=08"
   },
   {
@@ -123,6 +157,8 @@
     "key": "state",
     "id": "09",
     "file": "cobertura-09-testigo-no-reconocido.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=09"
   },
   {
@@ -130,6 +166,8 @@
     "key": "state",
     "id": "10",
     "file": "cobertura-10-batería-baja.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=10"
   },
   {
@@ -137,6 +175,8 @@
     "key": "state",
     "id": "11",
     "file": "cobertura-11-probar-lugar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=11"
   },
   {
@@ -144,6 +184,8 @@
     "key": "state",
     "id": "12",
     "file": "cobertura-12-señal-no-percibida.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=12"
   },
   {
@@ -151,6 +193,8 @@
     "key": "state",
     "id": "13",
     "file": "cobertura-13-señal-intrusiva.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=13"
   },
   {
@@ -158,6 +202,8 @@
     "key": "state",
     "id": "14",
     "file": "cobertura-14-listo-para-armar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=14"
   },
   {
@@ -165,6 +211,8 @@
     "key": "state",
     "id": "15",
     "file": "cobertura-15-vinculando-o-armando.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=15"
   },
   {
@@ -172,6 +220,8 @@
     "key": "state",
     "id": "16",
     "file": "cobertura-16-armado.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=16"
   },
   {
@@ -179,6 +229,8 @@
     "key": "state",
     "id": "17",
     "file": "cobertura-17-confirmación-ambigua-o-fallo.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=17"
   },
   {
@@ -186,6 +238,8 @@
     "key": "state",
     "id": "18",
     "file": "cobertura-18-desarmado-voluntario.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=18"
   },
   {
@@ -193,6 +247,8 @@
     "key": "state",
     "id": "19",
     "file": "cobertura-19-editar-mientras-está-armado.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=19"
   },
   {
@@ -200,6 +256,8 @@
     "key": "state",
     "id": "20",
     "file": "cobertura-20-armado-en-espera.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=20"
   },
   {
@@ -207,6 +265,8 @@
     "key": "state",
     "id": "21",
     "file": "cobertura-21-condición-cumplida-y-orden-válida.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=21"
   },
   {
@@ -214,6 +274,8 @@
     "key": "state",
     "id": "22",
     "file": "cobertura-22-orden-tardía-o-expirada.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=22"
   },
   {
@@ -221,6 +283,8 @@
     "key": "state",
     "id": "23",
     "file": "cobertura-23-señal-física-activa.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=23"
   },
   {
@@ -228,6 +292,8 @@
     "key": "state",
     "id": "24",
     "file": "cobertura-24-silenciar-ignorar-o-continuar.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=24"
   },
   {
@@ -235,6 +301,8 @@
     "key": "state",
     "id": "25",
     "file": "cobertura-25-intención-cumplida-o-cierre.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=25"
   },
   {
@@ -242,6 +310,8 @@
     "key": "state",
     "id": "26",
     "file": "cobertura-26-intención-cambiada.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=26"
   },
   {
@@ -249,6 +319,8 @@
     "key": "state",
     "id": "27",
     "file": "cobertura-27-permiso-revocado.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=27"
   },
   {
@@ -256,6 +328,8 @@
     "key": "state",
     "id": "28",
     "file": "cobertura-28-restricción-en-segundo-plano.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=28"
   },
   {
@@ -263,6 +337,8 @@
     "key": "state",
     "id": "29",
     "file": "cobertura-29-pérdida-de-ble-o-reconexión.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=29"
   },
   {
@@ -270,6 +346,8 @@
     "key": "state",
     "id": "30",
     "file": "cobertura-30-objeto-movido.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=30"
   },
   {
@@ -277,6 +355,8 @@
     "key": "state",
     "id": "31",
     "file": "cobertura-31-batería-crítica.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=31"
   },
   {
@@ -284,6 +364,8 @@
     "key": "state",
     "id": "32",
     "file": "cobertura-32-reinicio-del-objeto.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=32"
   },
   {
@@ -291,6 +373,8 @@
     "key": "state",
     "id": "33",
     "file": "cobertura-33-vencimiento-sin-activación.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=33"
   },
   {
@@ -298,6 +382,8 @@
     "key": "state",
     "id": "34",
     "file": "cobertura-34-rearme-explícito.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=34"
   },
   {
@@ -305,6 +391,8 @@
     "key": "state",
     "id": "35",
     "file": "cobertura-35-eliminar-configuración.png",
+    "canvas": "412x915dp",
+    "png": "824x1830px",
     "url": "http://127.0.0.1:4173/?mode=cobertura&state=35"
   }
 ]
