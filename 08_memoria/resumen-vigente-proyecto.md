@@ -24,9 +24,11 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-El documento completo tiene 19.809 palabras; los capítulos 1–13 contienen 16.113. Cumple los límites explícitos de resumen, motivación, introducción, problema y justificación. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos definitivos y el aporte del objeto frente a una notificación.
+El control editorial del 31 de agosto registró 19.809 palabras en el archivo y 16.113 en los capítulos 1–13, antes de esta nota de actualización. La memoria mantiene los catorce títulos y el marco de extensión definido; el conteo deberá volver a comprobarse cuando se integre la encuesta. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos definitivos y el aporte del objeto frente a una notificación.
 
 La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
+
+Existe además una encuesta con **70 participantes** pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria. Mientras no se documenten sus materiales y resultados, no forma parte de la evidencia vigente ni se mezcla con el corpus P1–P8. El seguimiento está en [Encuesta de 70 participantes — pendiente](../03_usuarios/encuesta-70-participantes-pendiente.md).
 
 ## Qué cambió en esta actualización
 
@@ -41,6 +43,8 @@ No se han comprado componentes, compilado el firmware, construido el montaje ni 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-09-02 — Encuesta complementaria registrada.** Se añadió una nota sobre una encuesta de 70 participantes pendiente de publicación e integración. No se incorporaron resultados ni se modificaron la formulación, los hallazgos P1–P8 o las decisiones del proyecto.
 
 **2026-08-31 — Revisión final textual y sincronización económica.** Antes, el resumen conservaba un conteo anterior y la memoria incluía metalenguaje, el nombre de una etapa histórica y un rango de costos que ya no representaba la comparación técnica activa. Ahora se registran 16.113 palabras en los capítulos 1–13, Q13 se explica como propuesta preliminar y la factibilidad distingue los desembolsos incompletos de B1, B2 y 12 V. No cambiaron la pregunta, la hipótesis ni el funcionamiento propuesto; siguen sin existir resultados de validación.
 

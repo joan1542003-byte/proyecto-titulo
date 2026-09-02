@@ -20,6 +20,7 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 - [Perfiles situacionales](perfiles-situacionales.md): fichas textuales de U1 y U2 con evidencia P/Q, niveles de confianza, condiciones, límites y atributos excluidos.
 - [Recorridos situacionales](recorridos-situacionales.md): recorridos actuales de U1 y U2 separados del escenario futuro hipotético con Relevo.
 - [Matriz de requisitos](matriz-requisitos-de-usuarios.md): relación entre hallazgos, necesidades, requisitos, límites, evidencia, prioridad y validación.
+- [Encuesta de 70 participantes — pendiente](encuesta-70-participantes-pendiente.md): fuente complementaria aún no publicada ni integrada al análisis.
 - [Memoria v4, capítulo 7](../08_memoria/memoria-vigente-v4.md#7-usuario-contexto-y-hallazgos-de-entrevistas): síntesis académica de participantes, episodios, contraejemplos, tipos situacionales, recorridos, contexto y necesidades.
 - [Instrumentos y procedencia](../99_archivo/fuentes-locales/instrumentos/README.md): guiones, condiciones aplicadas, equivalencias y control de integridad de los DOCX.
 
@@ -52,6 +53,10 @@ Los pasos 1–9 se conservan como documentos analíticos en esta carpeta. Los pa
 - Transcripción y regularización académica posteriores como corpus operativo.
 - P6 corregida a 27 años.
 
+## Investigación pendiente de publicar
+
+Existe una encuesta complementaria con **70 participantes**. Al 2 de septiembre de 2026 todavía no se ha publicado ni integrado al análisis del repositorio o de la memoria. No se incorpora como resultado ni se mezcla con el corpus P1–P8 hasta revisar su instrumento, procedencia, consentimiento, anonimización y forma de análisis. El seguimiento está en [Encuesta de 70 participantes — pendiente](encuesta-70-participantes-pendiente.md).
+
 ## Limitaciones vigentes
 
 - Los tres perfiles ficticios existentes no se reutilizarán como resultados.
@@ -77,11 +82,19 @@ La decisión deriva de P1–P8 y permanece abierta a revisión con nueva evidenc
 
 **Fase completada provisionalmente y abierta a contraste.** Corpus, códigos, casos, matriz analítica, tipología, perfiles, recorridos y requisitos están documentados. La siguiente modificación debe provenir de una auditoría de coherencia o de evidencia obtenida mediante prototipos.
 
+La encuesta de 70 participantes constituye una línea adicional pendiente de publicación y revisión. Su incorporación podría complementar o modificar los hallazgos, pero todavía no cambia el estado de la fase.
+
 Estos documentos no incorporarán nombres, retratos ni biografías inventadas. Su función será hacer visible la trazabilidad previa a nuevas pruebas. Después, la evidencia de prototipos podrá precisar necesidades, modificar recorridos o revelar un patrón no cubierto.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Encuesta complementaria registrada
+
+- **Cambio:** se añadió una ficha para registrar una encuesta de 70 participantes pendiente de publicación, revisión e integración.
+- **Motivo:** actualizar el estado de usuarios sin presentar una fuente todavía no documentada como evidencia analizada.
+- **Alcance:** la encuesta no se mezcla con P1–P8 ni modifica los hallazgos vigentes hasta completar su trazabilidad.
 
 ### 2026-08-30 — Reconciliación del estado de la fase de usuarios
 

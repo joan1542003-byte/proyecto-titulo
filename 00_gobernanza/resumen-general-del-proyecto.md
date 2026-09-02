@@ -71,6 +71,8 @@ El [corpus anonimizado P1–P8](../03_usuarios/corpus-anonimizado.md) se codific
 
 No se han hecho nuevas entrevistas después del examen. Lo nuevo de esta etapa es que el análisis existente quedó más ordenado, trazable y conectado con decisiones de diseño.
 
+Además, existe una [encuesta complementaria con 70 participantes](../03_usuarios/encuesta-70-participantes-pendiente.md) que está pendiente de publicarse, revisarse e integrarse al repositorio y a la memoria. Por ahora no se mezcla con P1–P8 ni se usa como evidencia: primero hay que publicar los materiales, revisar su procedencia, consentimiento, anonimización y análisis.
+
 ### Teoría
 
 La [memoria v4](../08_memoria/memoria-vigente-v4.md) organiza la investigación teórica en tres partes:
@@ -195,6 +197,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 |---|---|---|
 | Problema acotado, usuario principal y usuario límite. | Observar el uso en espacios reales y confirmar el contexto doméstico. | [Usuarios](../03_usuarios/README.md) |
 | Entrevistas analizadas, perfiles, recorridos y requisitos. | Ejecutar una nueva prueba con participantes; todavía no hay resultados. | [Matriz de evidencia](../03_usuarios/matriz-evidencia-p1-p8.md) |
+| Encuesta complementaria de 70 participantes registrada como fuente pendiente. | Publicar sus materiales, revisar la metodología y decidir si complementa o modifica la memoria. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) |
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
@@ -209,6 +212,7 @@ Estas fechas vienen del [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md
 | Fecha estimada | Qué toca hacer | Resultado esperado | Enlace |
 |---|---|---|---|
 | **2–6 septiembre 2026** | Inventariar materiales, revisar B1/B2, construir solo el mínimo y repetir el ensayo interno. | Señal manual segura y procedimiento listo. | [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **Septiembre 2026 — fecha por confirmar** | Publicar la encuesta de 70 participantes, revisar su metodología y decidir cómo integrar sus resultados. | Fuente documentada, trazable y lista para complementar o modificar la memoria si corresponde. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 | **7–20 septiembre 2026** | Ejecutar la prueba de asociación y observar qué pasa con el lugar. | Decidir si se mantiene, itera o reformula la relación intención–lugar–señal. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) |
 | **21 septiembre–4 octubre 2026** | Comparar luz, sonido, vibración o una combinación acotada; revisar accesibilidad y convivencia. | Elegir una modalidad provisional, perceptible y silenciable. | [Requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) · [Hoja de ruta](hoja-de-ruta.md) |
 | **5–18 octubre 2026** | Implementar el ciclo Android, la notificación local y la integración técnica mínima. | Recorrido funcional con recuperación ante fallos críticos. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
@@ -244,6 +248,12 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Encuesta de 70 participantes registrada
+
+- **Cambio:** se añadió al apartado de usuarios la existencia de una encuesta con 70 participantes y se enlazó su ficha de seguimiento.
+- **Motivo:** dejar visible una fuente potencial que todavía debe publicarse y revisarse antes de entrar en la memoria como evidencia.
+- **Alcance:** no se incorporaron resultados ni se mezcló la encuesta con las ocho entrevistas P1–P8.
 
 ### 2026-09-02 — Tono, enlaces y categorías ampliadas
 

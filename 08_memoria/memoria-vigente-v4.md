@@ -288,6 +288,10 @@ Se realizó un estudio cualitativo exploratorio para comprender relatos y recono
 
 Participaron ocho personas de 19 a 27 años. Las entrevistas fueron habladas y presenciales, y se realizaron en Santiago los días 11 y 12 de junio de 2026. El reclutamiento se efectuó mediante contactos proporcionados por personas cercanas al investigador. La edad fue el único criterio común confirmado. En consecuencia, el lugar y el rango etario describen el levantamiento, pero no permiten generalizar los resultados a todos los adultos jóvenes.
 
+### 7.1.1 Encuesta complementaria pendiente de integración
+
+Al 2 de septiembre de 2026, el proyecto cuenta además con una encuesta realizada a 70 participantes que está pendiente de publicación y revisión. Sus materiales, procedencia, consentimiento, anonimización, tratamiento y análisis todavía no están documentados en este repositorio. Por esa razón, la encuesta no forma parte del corpus P1–P8 ni se utiliza aún para sostener hallazgos, decisiones o conclusiones. Su incorporación deberá registrarse en la [ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) y solo después de revisar sus resultados podrá complementar, matizar o modificar la investigación presentada en este capítulo.
+
 La pauta avanzó desde las actividades de tiempo libre hacia el relato de una sesión reciente, su propósito, continuidad, percepción temporal, valoración y cierre. Dos preguntas adicionales abordaron las estrategias para descansar o separarse del teléfono y la reacción ante una propuesta preliminar basada en una señal ambiental. Se obtuvo consentimiento informado oral para la participación y el uso académico anonimizado del material.
 
 Las conversaciones fueron transcritas y regularizadas para facilitar su lectura. El corpus se organizó con códigos P1–P8 y Q1–Q13. La unidad principal fue el episodio: una situación relatada en relación con actividad, intención, continuidad, recuerdo, valoración o estrategia. El método Framework organizó temas y casos en una matriz común, manteniendo el vínculo con cada entrevista (Goldsmith, 2021). A partir de semejanzas y contrastes se construyeron tipos ideales revisables: modelos analíticos que reúnen rasgos recurrentes sin convertirlos en perfiles permanentes de los participantes (Stapley et al., 2022).
@@ -949,6 +953,12 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-09-02 — Encuesta complementaria registrada
+
+- **Cambio:** se añadió una nota en el capítulo 7 para dejar constancia de una encuesta de 70 participantes pendiente de publicación y revisión.
+- **Motivo:** actualizar la memoria con una fuente potencial sin presentar sus resultados como evidencia ni mezclarlos con el corpus cualitativo P1–P8.
+- **Alcance:** la encuesta todavía no modifica hallazgos, decisiones, conclusiones ni la formulación; primero deben documentarse sus materiales, procedencia, consentimiento, anonimización y análisis.
 
 ### 2026-08-31 — Revisión final de vigencia y continuidad narrativa
 

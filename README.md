@@ -48,6 +48,8 @@ La base metodológica del corpus quedó consolidada:
 - P6 tiene 27 años;
 - la duración individual de las entrevistas no quedó registrada.
 
+Existe además una [encuesta complementaria con 70 participantes](03_usuarios/encuesta-70-participantes-pendiente.md), pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria. No forma parte todavía de la evidencia vigente ni del corpus P1–P8.
+
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
 La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md). La [v3](08_memoria/memoria-vigente-v3.md), las auditorías anteriores y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
@@ -101,6 +103,12 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Encuesta complementaria registrada
+
+- **Cambio:** se añadió al estado principal una encuesta de 70 participantes pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria.
+- **Motivo:** hacer visible esta línea de investigación sin confundirla con el corpus P1–P8 ni con resultados ya analizados.
+- **Alcance:** la fuente queda documentada como pendiente; no se agregaron conclusiones ni datos identificables.
 
 ### 2026-08-30 — Esquema B2 completado para revisión
 
