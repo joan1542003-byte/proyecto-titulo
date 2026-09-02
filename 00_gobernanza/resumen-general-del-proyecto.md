@@ -5,253 +5,255 @@ fecha_de_corte: 2026-09-02
 estado: "síntesis ejecutiva del estado vigente"
 ---
 
-# Resumen general del proyecto — Relevo
+# Relevo, explicado rápido y sin vueltas
 
-Este documento resume la evolución desde el examen del primer semestre y la memoria del Pase hasta la memoria vigente v4. Reúne el feedback aplicado, las investigaciones realizadas, las decisiones de diseño y lo que todavía debe comprobarse. La fecha de corte es el 2 de septiembre de 2026.
+Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han hecho y qué falta probar.
 
-La síntesis distingue entre lo que está documentado, lo que es una decisión de diseño y lo que sigue siendo una hipótesis. Todavía no existen resultados de validación con participantes.
+La fecha de corte es el 2 de septiembre de 2026. Cuando algo todavía no está probado, se dice explícitamente: **aún no hay resultados de validación con participantes**.
 
-## 1. Qué es Relevo hoy
+## 1. La idea en una frase
 
-Relevo es un sistema **phygital** compuesto por una aplicación Android y un testigo físico situado junto al comienzo de una actividad elegida. La persona registra una intención propia, define su primer paso y configura una condición. Cuando esa condición se cumple, el testigo emite un pulso ambiental breve. La persona puede continuar con el ocio digital, silenciar la señal, cambiar de idea o iniciar la alternativa.
+Relevo ayuda a recuperar una intención personal cuando una sesión de ocio digital continúa y esa otra cosa que la persona quería hacer deja de estar presente al momento de decidir el siguiente paso.
 
-Relevo no bloquea aplicaciones, no mide el valor de una persona, no entrega puntos, no crea rachas y no registra si la actividad se realizó. Su propósito es volver a hacer perceptible una intención propia sin convertirla en una orden.
+La propuesta combina:
 
-### Propuesta de valor
+- una [aplicación Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md), donde la persona escribe su intención, define un primer paso y configura una condición;
+- un [testigo físico situado](../05_propuesta_phygital/README.md), ubicado cerca del comienzo de la actividad elegida;
+- un [pulso ambiental breve](../07_validacion/protocolo-01-asociacion-y-comparacion.md), que vuelve a hacer visible esa intención.
 
-> Relevo devuelve una intención elegida al momento y al lugar en que puede comenzar, mediante una señal breve, situada y voluntaria.
+La persona sigue teniendo la última palabra: puede continuar con el ocio digital, ignorar la señal, silenciarla, cambiar de idea o iniciar la alternativa. Relevo no bloquea aplicaciones, no entrega puntos, no crea rachas y no registra si la actividad se realizó.
 
-La propuesta es relevante porque las herramientas existentes suelen medir el tiempo, bloquear el acceso o interrumpir dentro del teléfono. Relevo investiga otra posibilidad: mantener disponible una alternativa sin asumir que todo ocio digital es negativo y sin imponer una conducta.
+### ¿Por qué alguien querría usarlo?
 
-La deseabilidad todavía es una hipótesis. Una persona podría querer Relevo cuando tiene algo que desea hacer, sabe cómo comenzar y, aun así, pierde esa alternativa durante una sesión digital. No debería quererlo —ni recibir una intervención— cuando ese ocio es significativo, reparador o coherente con su intención del momento.
+No porque use “demasiado” el teléfono. La situación que nos interesa es más específica: alguien tiene una actividad que sí quiere hacer, sabe cómo empezar, pero durante una sesión digital esa intención deja de orientar el momento.
 
-## 2. Evolución desde el primer semestre
+Relevo podría ser deseable porque devuelve esa posibilidad sin retar, castigar o decidir por la persona. Pero esto todavía es una hipótesis: debemos comprobar si el testigo situado realmente aporta algo frente a una notificación común.
 
-| Momento | Qué cambió | Por qué se tomó la decisión | Enlace |
+### ¿Por qué es relevante?
+
+Muchas herramientas de bienestar digital cuentan minutos, bloquean aplicaciones o interrumpen dentro de la pantalla. Eso puede servir cuando alguien quiere limitar una conducta, pero no necesariamente ayuda a recuperar una alternativa propia. Relevo investiga ese espacio intermedio: recordar una intención sin convertirla en obligación.
+
+La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionales](../03_usuarios/perfiles-situacionales.md) y el [estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) explican esta definición con más detalle.
+
+## 2. Cómo llegamos hasta aquí
+
+| Momento | Qué pasó | Por qué fue importante | Enlace |
 |---|---|---|---|
-| Exploraciones iniciales, incluida In(Visible) | El proyecto pasó de un tema amplio sobre ocio digital y desconexión a una situación concreta: una intención alternativa deja de orientar el siguiente paso. | Un problema situado permite investigar una experiencia específica y no generalizar que usar el teléfono siempre es un problema. | [Matriz histórica](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) |
-| Examen/Pase del primer semestre | La comisión señaló que no se entendían con precisión el objeto, el contexto, la plataforma, el usuario, la modalidad de señal, los costos ni la diferencia entre flujo de usuario y flujo técnico. | La propuesta debía poder explicarse como experiencia y sistema, no solo como idea o programación. | [Feedback E15](../01_contexto_y_fuentes/feedback-e15.md) |
-| Después del feedback | Se definieron aplicación, testigo, lugar, señal, primer paso, usuario principal y usuario límite. También se separaron los flujos y se explicitaron las exclusiones. | Evitar que el proyecto prometiera bloqueo, productividad, reducción de pantalla o eficacia que todavía no estaban demostrados. | [Matriz de incorporación](../08_memoria/matriz-incorporacion-feedback-e15.md) |
-| Memoria v4 | La memoria recuperó una secuencia clara: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución debía aparecer después de construir el problema y sus fundamentos, no dirigir la lectura desde el inicio. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
-| Estado actual | Existen wireframes, un sistema visual, una comparación técnica B1/B2 y un protocolo de prueba. La implementación y la validación siguen pendientes. | Convertir las decisiones principales en pruebas antes de cerrar la forma, el canal y el costo del producto. | [README del proyecto](../README.md) · [Hoja de ruta](hoja-de-ruta.md) |
+| Exploraciones iniciales, incluida In(Visible) | El tema partía más amplio: ocio digital, desconexión y relación con el teléfono. | Se necesitaba pasar de un tema general a una situación concreta que se pudiera investigar. | [Matriz histórica](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) |
+| Examen/Pase del primer semestre — 20 de julio | La comisión dijo que no se entendían bien el objeto, el contexto, el usuario, la plataforma, la señal, los costos y los flujos. | El proyecto tenía una idea interesante, pero todavía no se podía explicar con claridad como experiencia completa. | [Feedback E15](../01_contexto_y_fuentes/feedback-e15.md) |
+| Después del feedback | Se definieron aplicación, testigo, primer paso, lugar, señal, usuario principal y usuario límite. | El problema dejó de ser “usar mucho el celular” y pasó a ser una intención alternativa que pierde presencia. | [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
+| Encargo 16 y Encargo 17 | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño. Después se construyeron nueve wireframes y 35 estados complementarios. | Se hicieron visibles los estados normales, los errores, las salidas voluntarias y la relación entre app y objeto. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Cobertura de estados](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
+| Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
+| Estado actual — 2 de septiembre | Hay una propuesta definida, wireframes, dirección visual, costos preliminares, alternativas técnicas y protocolo. | El proyecto está pasando de estar bien documentado a tener que demostrar que funciona. | [Hoja de ruta](hoja-de-ruta.md) |
 
-La [matriz histórica de encargos y memoria](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conserva el recorrido completo del primer semestre y explica qué aprendizajes se mantuvieron y cuáles pertenecían solo a los formatos docentes.
+## 3. Qué feedback aplicamos
 
-## 3. Cómo se aplicó el feedback de la comisión
+El feedback de la comisión no se pegó literalmente en la memoria. Se convirtió en decisiones, criterios, documentos y pruebas pendientes.
 
-El feedback no se copió literalmente en la memoria. Se convirtió en preguntas, criterios de diseño, decisiones, documentos y pruebas pendientes.
-
-| Tema señalado por la comisión | Integración en la memoria y el repositorio | Lo que aún falta | Enlace |
+| Lo que nos dijeron | Qué cambiamos | Por qué | Enlace |
 |---|---|---|---|
-| “¿Qué es exactamente Relevo?” | Se definió el sistema completo: aplicación Android, testigo físico, lugar, condición y pulso. | Cerrar la forma final del testigo. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Propuesta phygital](../05_propuesta_phygital/README.md) |
-| Contexto y usuario poco precisos | Se construyeron ocho casos a partir de entrevistas, dos tipos situacionales —usuario principal y usuario límite— y un contexto doméstico tratado como hipótesis. | Observar y probar el uso en espacios reales. | [Perfiles](../03_usuarios/perfiles-situacionales.md) · [Recorridos](../03_usuarios/recorridos-situacionales.md) |
-| Separar experiencia y programación | Se documentaron por separado el recorrido de la persona, el flujo del sistema y el proceso de diseño. | Probar permisos, segundo plano, vínculo, batería, vencimiento y recuperación. | [Cobertura de interacciones](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
-| Justificar la señal | Luz, sonido, vibración y lugar se definieron como alternativas a comparar, no como solución cerrada. | Comparar perceptibilidad, molestia, discreción, accesibilidad y convivencia. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
-| Mostrar valor y diferencia frente a una notificación | Se formuló la hipótesis de que el lugar y la presencia física podrían aportar significado, y se incorporó una notificación digital como comparación. | Comprobar si lo físico aporta algo suficiente o solo agrega carga. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
-| Evitar una solución punitiva | Se excluyeron bloqueos, rankings, rachas, premios y evaluación de cumplimiento. Ignorar o silenciar son respuestas válidas. | Verificar que las personas entiendan y puedan ejercer esas salidas. | [Requisitos de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) |
-| Definir plataforma y factibilidad | Android quedó como única plataforma del primer prototipo, con una justificación comparativa frente a web e iPhone. | Construir y probar la integración Android/BLE. | [Decisión Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) |
-| Incluir producción, costos y rol del diseñador | Se separaron materiales, electrónica, fabricación, reparación, costos y responsabilidades del diseño. | Completar proveedores, cotizaciones, tiempos, cuerpo, difusor y horas de trabajo. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) · [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) |
-| Mejorar memoria, redacción y cronología | La v4 reorganizó la narración, auditó citas y referencias APA 7, eliminó metalenguaje y recuperó la evolución marzo–julio. | Reauditar después de incorporar resultados y preparar la presentación oral como pieza independiente. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
+| “No se entiende bien qué es el objeto” | Ahora se explica el sistema completo: aplicación, testigo, lugar, condición y pulso. | Una persona debe entender la experiencia antes de entrar en la parte técnica. | [Propuesta phygital](../05_propuesta_phygital/README.md) |
+| “El contexto y el usuario son muy amplios” | Se definieron un usuario principal y un usuario límite. El hogar quedó como contexto inicial de prueba, no como verdad definitiva. | La misma persona puede querer una señal en una situación y no quererla en otra. | [Perfiles](../03_usuarios/perfiles-situacionales.md) · [Recorridos](../03_usuarios/recorridos-situacionales.md) |
+| “Hay que separar los flujos” | Se separaron el recorrido de la persona, el funcionamiento del sistema y el proceso de diseño. | Así se pueden detectar fallos de comprensión sin confundirlos con fallos de programación. | [Cobertura de interacciones](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
+| “Hay que justificar la luz, el sonido o la vibración” | Se dejó la modalidad abierta y se preparó una comparación. | Todavía no sabemos qué señal se percibe bien sin volverse una alarma o una molestia. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| “Hay que demostrar el valor del objeto” | Se agregó una comparación entre objeto situado, objeto en un lugar neutro y notificación digital. | Permite saber si el valor está en el objeto, en el lugar o simplemente en recibir un aviso. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| “No conviertan esto en algo punitivo” | Se descartaron bloqueos, rankings, rachas, premios y evaluación de cumplimiento. | La intención es devolver una opción, no transformar la actividad en una obligación. | [Requisitos de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) |
+| “Faltan plataforma, costos y rol del diseñador” | Android quedó como plataforma inicial; se documentaron materiales, costos, producción y responsabilidades del diseño. | Acotar el desarrollo permite comprobar primero el valor de la experiencia. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
+| “La memoria necesita mejor orden y redacción” | La v4 corrigió la secuencia, la ortografía, la terminología, la cronología, las citas y la relación entre capítulos. | La memoria debe poder leerse sin que el autor tenga que explicarla oralmente. | [Matriz E15](../08_memoria/matriz-incorporacion-feedback-e15.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
-El detalle de cada observación está en la [matriz de incorporación del feedback E15](../08_memoria/matriz-incorporacion-feedback-e15.md) y en el [feedback original de la comisión](../01_contexto_y_fuentes/feedback-e15.md).
-
-## 4. Qué investigación se realizó
+## 4. Qué investigamos
 
 ### Usuarios
 
-- Se realizaron [ocho entrevistas semiestructuradas](../01_contexto_y_fuentes/declaracion-procedencia-entrevistas.md), habladas y presenciales en Santiago los días 11 y 12 de junio de 2026.
-- Las personas tenían entre 19 y 27 años; el criterio de convocatoria fue de 18 a 30 años, según el [registro metodológico del corpus](../03_usuarios/metodo-de-analisis.md).
-- El [corpus anonimizado P1–P8](../03_usuarios/corpus-anonimizado.md) se codificó y se transformó en patrones, tipos situacionales, perfiles, recorridos y una matriz de requisitos.
-- La investigación mostró que el mismo uso digital puede ser significativo en un momento e inoportuno en otro. Por eso la unidad de análisis pasó a ser el episodio concreto y no el número de minutos de pantalla; la [matriz de evidencia](../03_usuarios/matriz-evidencia-p1-p8.md) conserva esa relación.
-- No se han realizado nuevas entrevistas después del examen. Lo nuevo de esta etapa es la profundización y trazabilidad del análisis existente, no una nueva muestra; el [inventario de fuentes](../01_contexto_y_fuentes/inventario-de-fuentes.md) mantiene la procedencia.
+Se hicieron [ocho entrevistas semiestructuradas](../01_contexto_y_fuentes/declaracion-procedencia-entrevistas.md), presenciales y habladas, en Santiago los días 11 y 12 de junio de 2026. Las personas observadas tenían entre 19 y 27 años; el criterio de convocatoria era de 18 a 30 años.
 
-Ver [corpus y análisis de usuarios](../03_usuarios/README.md), [perfiles situacionales](../03_usuarios/perfiles-situacionales.md) y [matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md).
+El [corpus anonimizado P1–P8](../03_usuarios/corpus-anonimizado.md) se codificó y se transformó en [patrones, tipos, perfiles, recorridos y requisitos](../03_usuarios/README.md). El hallazgo más importante fue que el mismo uso digital puede ser valioso en un momento e inoportuno en otro. Por eso no usamos los minutos de pantalla como medida principal.
 
-### Investigación teórica
+No se han hecho nuevas entrevistas después del examen. Lo nuevo de esta etapa es que el análisis existente quedó más ordenado, trazable y conectado con decisiones de diseño.
 
-La [memoria v4](../08_memoria/memoria-vigente-v4.md) organiza tres ámbitos que se cruzan para explicar el problema:
+### Teoría
 
-1. **Experiencia subjetiva del ocio digital:** el valor de una actividad depende del propósito, el contexto y la autonomía, no solo de su duración.
-2. **Arquitecturas de atención y bienestar digital:** las pausas y fricciones pueden abrir una reconsideración, pero los bloqueos no son una respuesta universal.
-3. **Memoria prospectiva, espacio e interacción tangible:** una intención puede externalizarse en un objeto o lugar, siempre que la relación sea comprensible y el esfuerzo de configuración sea proporcional.
+La [memoria v4](../08_memoria/memoria-vigente-v4.md) organiza la investigación teórica en tres partes:
 
-Entre las referencias principales están Lukoff, Meier y Reinecke, Radtke, Lyngs, Biedermann, Monge Roffarello y De Russis, Grüning, Haliburton, Gilbert, Chiu y Kirsh. Estas fuentes ayudaron a delimitar el problema y los criterios; no se usan como prueba de que Relevo funcionará. La [metodología de investigación](../02_investigacion/README.md) y la bibliografía de la [memoria v4](../08_memoria/memoria-vigente-v4.md) permiten revisar las fuentes completas.
+1. **Experiencia del ocio digital:** el sentido de una actividad depende del propósito, el contexto y la autonomía, no solamente de cuánto dura.
+2. **Atención y bienestar digital:** las pausas y fricciones pueden abrir una reconsideración, pero bloquear no es una solución universal.
+3. **Memoria prospectiva, espacio y objetos:** una intención puede apoyarse en un recurso externo, siempre que la relación sea comprensible y el esfuerzo de configurarlo tenga sentido.
 
-### Mercado y referentes
+### Mercado y estado del arte
 
-La investigación de mercado, cerrada el 24 de agosto, ordenó los antecedentes en seis familias: medición y límites; pausas dentro del teléfono; llaves y bloqueadores físicos; separación física; objetos de foco y hábitos; y recordatorios tangibles o situados.
+La [investigación de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) se cerró el 24 de agosto de 2026. Revisó artículos académicos, herramientas nativas, productos, sitios comerciales, fichas técnicas y patentes. El registro organiza seis familias y nueve referentes nucleares; no es una revisión sistemática ni una prueba de demanda.
 
-Los referentes más útiles fueron:
+La búsqueda mostró que sí existen partes de la idea, pero no se encontró en el corpus una propuesta que reuniera explícitamente todos estos elementos: intención propia, primer paso concreto, condición digital, testigo ubicado junto a ese primer paso, pulso ambiental y decisión abierta.
 
-- **one sec:** demuestra el valor posible de una pausa voluntaria, pero permanece dentro de la pantalla.
-- **Brick Zone, Unpluq y similares:** muestran la relación entre objeto, Bluetooth y espacio, aunque principalmente bloquean o restringen.
-- **Focusaur y FocuShift:** exploran objetos conectados, sesiones y rituales, pero mezclan productividad, recompensas o barreras.
-- **The Tangible Reminder, Wobble, Raya y Remind Holder:** muestran cómo un objeto y su ubicación pueden externalizar un recordatorio, aunque no abordan exactamente la transición desde ocio digital hacia una alternativa personal.
+Eso no permite decir que Relevo sea una invención universalmente inédita. La oportunidad está en investigar esa combinación concreta y comprobar si realmente aporta algo.
 
-La conclusión no es que Relevo sea universalmente inédito. La oportunidad defendible es investigar la combinación intención propia + primer paso + lugar significativo + pulso ambiental + elección abierta. Ver el [estudio de mercado y antecedentes](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md).
+### Investigación de diseño
 
-### Referentes de diseño
+La [síntesis aplicada del sistema visual](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md) toma cuatro referentes de diseño:
 
-Norman orienta la comprensión de acciones, estados, retroalimentación y errores; Albers orienta la evaluación del color en relación con el fondo y el soporte; Munari vincula signo, forma, material, función y uso; e Isaacson sirve como referencia para pensar la integración entre producto y experiencia. Son criterios para diseñar y revisar, no sustitutos de la investigación con personas.
+- **Norman:** ayuda a ordenar acciones, estados, retroalimentación y errores.
+- **Albers:** ayuda a entender que un color cambia según el fondo, la luz y el soporte.
+- **Munari:** conecta signo, forma, material, función y uso.
+- **Isaacson:** sirve para pensar la integración entre producto, tecnología y experiencia.
 
-## 5. Decisiones principales y sus razones
+Se usan como criterios para diseñar y revisar, no como reemplazo de las pruebas con personas.
 
-| Decisión | Por qué | Evidencia o detalle |
+## 5. Referentes y estado del arte: qué parte cubre cada uno
+
+No se tomaron los referentes solo como inspiración visual. Cada grupo responde a una parte distinta del problema o del proyecto.
+
+| Parte del proyecto o de la problemática | Referentes | Qué nos ayudaron a entender | Cómo se refleja en Relevo | Enlace |
+|---|---|---|---|---|
+| **Problema base: qué significa usar el teléfono** | Lukoff et al.; Meier y Reinecke; Radtke et al. | El mismo tiempo de uso puede tener sentidos distintos. No se puede suponer que toda sesión larga sea mala. | Relevo trabaja con episodios concretos y acepta que a veces no debe intervenir. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
+| **Continuidad y autocontrol digital** | Lyngs et al.; Biedermann et al.; Monge Roffarello y De Russis; Grüning et al.; Haliburton et al. | Las herramientas de autocontrol tienen resultados variados. Una pausa puede abrir una elección, pero no garantiza un cambio duradero. | No se promete reducir minutos ni formar hábitos; se probará una recuperación puntual de la intención. | [Antecedentes y estado de la cuestión](../08_memoria/memoria-vigente-v4.md) |
+| **Memoria e intención futura** | Risko y Gilbert; Gilbert et al.; Chiu y Gilbert | Externalizar una intención puede ayudar, pero configurar el recordatorio también cuesta y puede hacer que se abandone. | El ciclo se limita a una intención, un primer paso y una configuración breve. | [Marco teórico](../08_memoria/memoria-vigente-v4.md) |
+| **Espacio como apoyo para comenzar** | Kirsh | El espacio puede hacer visibles relaciones entre una intención y una acción. | El testigo se ubica cerca del lugar donde comienza el primer paso, no en cualquier parte de la casa. | [Criterios de diseño](../08_memoria/memoria-vigente-v4.md) |
+| **Medición y límites dentro del teléfono** | Apple Screen Time; Bienestar Digital de Android | Dan métricas, horarios y límites, pero se enfocan en tiempo o acceso. | Relevo no usa los minutos como juicio y no bloquea el teléfono. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
+| **Pausa y fricción en pantalla** | one sec; MindPhone; Android Pause Point | Una demora puede interrumpir la continuidad y abrir reconsideración, pero todo ocurre en la pantalla. | La notificación digital se mantiene como comparación, mientras el testigo prueba qué cambia al sacar la señal del teléfono. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
+| **Bloqueadores y llaves físicas** | Brick Zone; Unpluq; Screenless Breaker; Shush; kSafe | Los objetos pueden introducir distancia o compromiso, pero suelen impedir el acceso. | Relevo toma la presencia física, pero descarta bloqueo, castigo y precompromiso obligatorio. | [Fichas de mercado](../04_mercado_y_referentes/fichas-mercado-2026-08-24.md) |
+| **Objetos de foco y hábitos** | Focusaur; FocuShift; Jaye Band | Hay interés comercial por objetos conectados, rituales y alertas, pero suelen mezclar productividad, recompensas o hábitos. | Relevo mantiene una función más acotada: hacer disponible una intención propia. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
+| **Recordatorios tangibles y situados** | The Tangible Reminder; Wobble; Raya; Remind Holder | Un objeto, su ubicación y una señal ambiental pueden apoyar un recordatorio. No resuelven exactamente la transición desde ocio digital. | Son el antecedente más cercano para investigar la relación entre objeto, lugar y acción. | [Estado del arte](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
+| **Comprensión, color y materialidad** | Norman; Albers; Munari; Isaacson | La forma y la gráfica deben ayudar a entender el sistema y también considerar producción, soporte y uso. | La identidad visual se trata como sistema aplicado a Android, memoria y testigo, no como decoración aislada. | [Síntesis visual](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md) |
+
+### Qué deja este estado del arte
+
+El mercado ya tiene medidores, bloqueadores, pausas, objetos de foco y recordatorios situados. Lo que todavía no está resuelto es si un objeto colocado junto al primer paso de una actividad puede recuperar una intención sin bloquear, premiar ni evaluar. Esa es la pregunta que la fase de validación debe responder.
+
+## 6. Decisiones principales y por qué
+
+| Decisión | Por qué se tomó | Evidencia |
 |---|---|---|
-| Sistema phygital | La aplicación conserva y configura el significado; el testigo lo vuelve perceptible en el lugar donde puede comenzar la actividad. La separación permite comprobar si la capa física agrega valor. | [Propuesta phygital](../05_propuesta_phygital/README.md) |
-| Un ciclo con una intención, un primer paso y un pulso | Reduce complejidad, hace observable la asociación y evita que el sistema parezca un gestor general de productividad. | [Secuencia de uso en la memoria v4](../08_memoria/memoria-vigente-v4.md) |
-| Usuario situacional, no una “persona” fija | La misma persona puede querer una pausa en un episodio y no querer intervenir en otro. Esto evita juzgar el ocio digital por adelantado. | [Perfiles situacionales](../03_usuarios/perfiles-situacionales.md) |
-| Android como primera plataforma | Permite concentrar el prototipo en una sola arquitectura con actividad autorizada, notificación local y posible comunicación BLE. Web e iPhone quedan fuera de esta etapa para no duplicar el desarrollo. | [Decisión de plataforma](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) |
-| Condición de activación abierta | Continuidad, acumulación dentro de una ventana y horario tienen implicancias distintas de privacidad, significado y factibilidad; deben probarse antes de elegir. | [Criterios de diseño](../08_memoria/memoria-vigente-v4.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
-| Sin bloqueo, gamificación ni historial de cumplimiento | La propuesta busca devolver una decisión, no imponerla ni transformar una intención en rendimiento medible. | [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) |
-| Comparar objeto situado, objeto en lugar neutro y notificación | Permite aislar qué aporta el objeto y qué aporta específicamente su ubicación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| **Hacerlo phygital** | La aplicación configura el significado y el testigo lo lleva al lugar donde puede comenzar la actividad. Así se puede comprobar si lo físico aporta algo. | [Propuesta phygital](../05_propuesta_phygital/README.md) |
+| **Trabajar con una situación, no con un usuario fijo** | La misma persona puede querer una señal en un momento y no quererla en otro. | [Perfiles situacionales](../03_usuarios/perfiles-situacionales.md) |
+| **Un ciclo con una intención, un primer paso y un pulso** | Mantiene la experiencia entendible y evita convertir Relevo en una agenda o app general de productividad. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
+| **Android como primera plataforma** | Permite concentrar el esfuerzo en una sola arquitectura con notificación local, actividad autorizada y posible Bluetooth Low Energy. Web e iPhone quedan fuera por ahora para no duplicar el desarrollo. | [Decisión de plataforma Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) |
+| **Dejar abierta la condición de activación** | Continuidad, acumulación y horario tienen implicancias distintas de privacidad, significado y factibilidad. Primero hay que probarlas. | [Hoja de ruta](hoja-de-ruta.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| **No bloquear ni gamificar** | La propuesta busca devolver una opción, no medir rendimiento ni imponer una conducta. | [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) |
+| **Comparar objeto situado, objeto neutro y notificación** | Es la manera más clara de separar el valor del objeto del valor de su ubicación y del aviso digital. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| **Diseñar con producción y costos en mente** | La forma final no puede definirse solo por apariencia; debe poder construirse, mantenerse y explicarse. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 
-El rol del diseño quedó definido como articular problema, evidencia, experiencia, lenguaje, objeto y sistema. La electrónica, la fabricación, los costos y el mantenimiento se tratan como restricciones y colaboraciones que deben documentarse; diseñar la experiencia no equivale a afirmar que toda la producción ya está resuelta.
+El rol del diseño quedó entendido como articular problema, evidencia, experiencia, lenguaje, objeto y sistema. La electrónica, la fabricación, el mantenimiento y los costos son restricciones y colaboraciones que deben hacerse visibles; diseñar la experiencia no significa que toda la producción ya esté resuelta.
 
-## 6. Naming y lenguaje
+## 7. Naming y lenguaje
 
-**Relevo** es el nombre del sistema completo porque sugiere un cambio de turno sin afirmar que la persona abandonará el teléfono ni que necesariamente realizará otra actividad.
+**Relevo** es el nombre del sistema completo porque sugiere un cambio de turno, pero no dice que la persona tenga que abandonar el teléfono ni que obligatoriamente deba hacer otra actividad.
 
-La arquitectura verbal quedó así:
+La arquitectura de nombres quedó así:
 
 - **aplicación Relevo:** configura y conserva la intención;
-- **testigo Relevo:** objeto que mantiene presente esa intención sin atribuirle inteligencia;
-- **ciclo:** unidad temporal desde el armado hasta el cierre;
+- **testigo Relevo:** objeto que la mantiene presente sin fingir que es inteligente;
+- **ciclo:** unidad de uso desde el armado hasta el cierre;
 - **pulso ambiental:** manifestación física breve;
 - **señal situada:** relación entre pulso, primer paso y lugar.
 
-Se eligió **testigo** en lugar de “dispositivo”, “token”, “asistente” u “objeto inteligente” porque describe una función sin cerrar la forma industrial ni sugerir vigilancia, autonomía o evaluación.
+Se eligió **testigo** en vez de “dispositivo”, “token”, “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
-El descriptor actual es: **“Sistema phygital para recuperar intenciones personales durante el ocio digital.”** La decisión de naming es académica y de prototipo; todavía no es una comprobación de marca, dominio o disponibilidad comercial. Ver [decisiones de naming](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md).
+El descriptor actual es: **“Sistema phygital para recuperar intenciones personales durante el ocio digital.”** Ver [decisiones de naming](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md).
 
-## 7. Decisiones cromáticas y visuales
+## 8. Decisiones visuales y cromáticas
 
-- La dirección conceptual seleccionada es **Transferencia situada**, porque permite representar el paso de la intención desde la aplicación hacia el lugar y luego hacia el pulso, sin fingir que el objeto final ya está resuelto.
-- Android utiliza un modo oscuro para favorecer continuidad, concentración y lectura prolongada.
-- La memoria y las piezas editoriales utilizan un fondo claro y cálido porque necesitan lectura extensa, impresión y convivencia con citas, tablas e imágenes.
-- El rojo `#D71921` se reserva para la señal situada. No se usa para botones, errores, éxito, navegación ni decoración; así la aparición del color comunica un acontecimiento específico.
-- La interfaz no depende únicamente del color: el contraste, el texto y la estructura deben explicar los estados. El rojo no se usa como texto pequeño sobre el fondo oscuro por su contraste insuficiente.
-- La forma, tipografía final, material, difusor y parámetros definitivos del pulso permanecen abiertos hasta las pruebas de legibilidad, accesibilidad y convivencia.
+La dirección conceptual es **Transferencia situada**. La idea visual es mostrar cómo una intención pasa de la aplicación al lugar y luego al pulso, sin hacer creer que la forma final del objeto ya está decidida.
 
-Ver [códigos cromáticos](../05_propuesta_phygital/entregables-clave-2026-09-01/codigos-cromaticos.md) y [síntesis aplicada del sistema visual](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
+- Android usa un **modo oscuro** para mantener continuidad y facilitar la lectura de la aplicación.
+- La memoria y las piezas editoriales usan un **fondo claro y cálido** porque necesitan lectura larga, impresión, citas, tablas e imágenes.
+- El rojo **`#D71921`** se reserva para la señal situada. No se usa como color general de botones, errores, éxito o decoración.
+- El color nunca funciona solo: los estados también deben explicarse con texto, estructura y contraste.
+- La forma, la tipografía final, el material, el difusor y los parámetros del pulso siguen abiertos hasta probar legibilidad, accesibilidad y convivencia.
 
-## 8. Cómo se ha implementado hasta ahora
+Ver [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [códigos cromáticos](../05_propuesta_phygital/entregables-clave-2026-09-01/codigos-cromaticos.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
 
-La implementación actual es principalmente estructural y preparatoria:
+## 9. Cómo se ha implementado hasta ahora
 
-1. **Formular:** registrar intención, primer paso y condición provisional.
-2. **Situar:** vincular el testigo con el lugar donde comienza la actividad.
-3. **Probar y armar:** comprobar el pulso y activar el ciclo de manera explícita.
+Hasta ahora la implementación es principalmente estructural y preparatoria:
+
+1. **Formular:** escribir una intención, un primer paso y una condición provisional.
+2. **Situar:** relacionar el testigo con el lugar donde comienza la actividad.
+3. **Probar y armar:** comprobar el pulso y activar el ciclo de forma explícita.
 4. **Esperar y señalar:** emitir un pulso breve cuando corresponde.
 5. **Decidir y cerrar:** continuar, ignorar, silenciar, iniciar, desarmar o dejar vencer el ciclo.
 
-El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió el flujo en tres interacciones y nueve marcos principales. El anexo amplía la cobertura a 35 estados, incluidos permisos, errores, salidas voluntarias y recuperación. Estos wireframes muestran la arquitectura de la experiencia; no demuestran comprensión ni funcionamiento real.
+El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió este recorrido en tres interacciones y nueve marcos principales. El [anexo de cobertura](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) lo amplió a 35 estados, incluyendo errores, permisos, salidas voluntarias y recuperación.
 
-La [dirección visual y sus aplicaciones](../10_recursos_visuales/08_direccion_visual_relevo/README.md) reúne las exploraciones para Android, memoria y objeto. La [versión HTML de los wireframes](../05_propuesta_phygital/wireframes-media-html/README.md) facilita revisar el recorrido, pero tampoco reemplaza las pruebas con personas.
+En lo técnico, la fase A mantiene una activación manual cableada. Se comparan dos variantes de 5 V: **B1**, con XIAO ESP32-C3 y anillo direccionable; y **B2**, con XIAO ESP32-C3 y luz cálida no direccionable. Todavía no se han comprado componentes, energizado circuitos, construido el montaje ni ejecutado la fase con participantes. Ver [alternativas técnicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) y [validación](../07_validacion/README.md).
 
-En lo técnico, la fase A mantiene una activación manual cableada. Antes de comprar se comparan dos variantes de 5 V para la señal: B1, con XIAO ESP32-C3 y anillo direccionable; B2, con XIAO ESP32-C3 y luz cálida no direccionable. Aún no se ha comprado, energizado ni construido el montaje, y la fase B permanece bloqueada hasta contar con una notificación local Android comparable.
+## 10. Costos estimados
 
-Ver [decisión de plataforma Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md), [alternativas físicas B1/B2](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) y [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md).
+Sí, los costos ya están documentados. Son precios observados al 30 de agosto de 2026 y sirven para tomar decisiones de prototipo; todavía no son el costo final de producción ni el precio de venta.
 
-## 9. Costos estimados y estado de factibilidad
-
-Los montos corresponden a precios observados y desembolsos estimados al 30 de agosto de 2026. No son el precio de venta ni el costo final de producción. Todavía faltan cuerpo, difusor, conductores internos, protección definitiva, revisión electrónica, envío, horas de trabajo y posibles compras adicionales.
-
-| Alternativa | Monto documentado | Qué significa | Enlace |
+| Alternativa | Costo preliminar | Qué incluye / qué falta | Enlace |
 |---|---:|---|---|
-| Montaje provisional de 12 V | **CLP 28.130** | Costo parcial de referencia. Excluye terminales y protección de potencia; se mantiene como respaldo si las fuentes de 5 V no alcanzan la visibilidad necesaria. | [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) |
-| B1: XIAO ESP32-C3 + anillo direccionable de 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Incluye las partidas con precio identificado. El conversor lógico, conductores internos, cuerpo, difusor, envío y revisión siguen abiertos. | [Lista B1](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
-| B2: XIAO ESP32-C3 + luz cálida no direccionable de 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Incluye paquetes de LED, módulo de control y protección candidata. La ventaja de B2 sería funcional —menos funciones de color—, no necesariamente económica. | [Lista B2](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
-| Núcleo común B1/B2 | **CLP 17.126** si todo debe comprarse; **CLP 10.440** reutilizando fuente, jack y cable USB-C | Corresponde a XIAO, pulsador, cable de activación, interruptor, borneras, fuente, jack y cable de programación. Debe confirmarse qué existe realmente en el taller. | [Costos comunes](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
+| Montaje provisional de 12 V | **CLP 28.130** | Referencia parcial. Excluye terminales y protección de potencia; queda como respaldo. | [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) |
+| B1: XIAO + anillo 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Faltan conversor lógico, conductores internos, cuerpo, difusor, envío y revisión. | [Lista B1](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
+| B2: XIAO + luz cálida 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Faltan resistencia de estado, conductores, cuerpo, difusor, envío y revisión. | [Lista B2](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
+| Núcleo común B1/B2 | **CLP 17.126** comprando todo; **CLP 10.440** reutilizando fuente, jack y cable USB-C | Incluye XIAO, pulsador, cable, interruptor, borneras, fuente, jack y cable de programación. Hay que confirmar qué piezas existen. | [Costos comunes](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
 
-La comparación no permite declarar todavía un ahorro. Las listas no son completamente equivalentes y los componentes no han sido comprados. La decisión correcta es revisar B1 y B2, medir la señal y completar solo la variante que resulte segura, estable, perceptible y coherente con la prueba. Ver la [ruta de compra por puertas](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md).
+La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro**. Las listas aún tienen exclusiones distintas, los componentes no se han comprado y la forma final no existe. La decisión será elegir la variante que funcione mejor y tenga una lista completa, no necesariamente la que tenga el subtotal menor.
 
-## 10. Lo que ya se hizo y cambios aplicados
+## 11. Qué ya está listo y qué falta
 
-| Área | Ya realizado | Cambio aplicado y por qué | Enlace |
-|---|---|---|---|
-| Problema y alcance | Se delimitó una situación concreta de ocio digital y una intención alternativa. | Se dejó de tratar el tiempo de pantalla como problema universal para poder investigar episodios situados. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
-| Usuarios | Se analizaron las ocho entrevistas P1–P8 y se construyeron perfiles, recorridos y requisitos. | Se pasó de una persona genérica a un usuario principal y un usuario límite, porque no todas las situaciones requieren intervención. | [Usuarios](../03_usuarios/README.md) |
-| Feedback del Pase | Se respondieron las observaciones sobre objeto, contexto, plataforma, costos, señal y flujos. | El feedback se tradujo en decisiones y pruebas pendientes, sin presentarlo como evidencia empírica. | [Matriz E15](../08_memoria/matriz-incorporacion-feedback-e15.md) |
-| Teoría y referentes | Se consolidaron tres ámbitos y se conectaron con antecedentes de bienestar digital, memoria prospectiva, espacio y tangibilidad. | Se ordenó la teoría antes de la solución para explicar por qué Relevo podría ser pertinente. | [Marco teórico v4](../08_memoria/memoria-vigente-v4.md) |
-| Mercado | Se realizó una exploración con corte al 24 de agosto y seis familias de referentes. | Se abandonó la afirmación de novedad absoluta y se definió una diferencia investigable frente a bloqueadores y notificaciones. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
-| Experiencia y flujos | Se desarrollaron tres interacciones, nueve marcos principales y 35 estados complementarios. | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño para hacer visibles errores y salidas voluntarias. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Anexo](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
-| Lenguaje e identidad | Se definieron Relevo, aplicación, testigo, ciclo, pulso ambiental y señal situada. | Se escogieron palabras funcionales que no atribuyen inteligencia, vigilancia ni obligación al objeto. | [Naming](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md) |
-| Sistema visual | Se seleccionó Transferencia situada, con modo oscuro para Android, soporte editorial claro y rojo reservado para la señal. | El color dejó de ser decorativo y pasó a comunicar estados y acontecimientos con criterios de contraste. | [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) · [Códigos cromáticos](../05_propuesta_phygital/entregables-clave-2026-09-01/codigos-cromaticos.md) |
-| Técnica y validación | Se justificó Android, se comparan B1/B2 y se preparó el Protocolo 01. | Se decidió no comprar ni construir el conjunto completo antes de revisar seguridad, señal y factibilidad. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Protocolo](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
-
-## 11. Qué está resuelto y qué falta
-
-### Resuelto o suficientemente definido
-
-- [problema y límites del proyecto](../08_memoria/memoria-vigente-v4.md);
-- [usuario principal y usuario límite](../03_usuarios/perfiles-situacionales.md);
-- [corpus y análisis de las ocho entrevistas](../03_usuarios/matriz-evidencia-p1-p8.md);
-- [marco teórico y criterios de diseño](../08_memoria/memoria-vigente-v4.md);
-- [mercado y referentes con corte temporal](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md);
-- [definición de aplicación, testigo, lugar y señal](../05_propuesta_phygital/README.md);
-- [arquitectura de flujos y wireframes](../05_propuesta_phygital/entrega-encargo-17.md);
-- [plataforma Android inicial](../06_desarrollo_y_factibilidad/decision-plataforma-android.md);
-- [naming, dirección visual y paleta base](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md);
-- [protocolo, consentimiento, ficha y criterios previos de decisión](../07_validacion/README.md);
-- [memoria v4 con estructura, trazabilidad y control APA 7](../08_memoria/memoria-vigente-v4.md).
-
-### Pendiente crítico
-
-- [construir una señal segura, repetible y perceptible](../07_validacion/especificacion-materiales-fase-a.md);
-- [ejecutar la prueba de asociación con participantes](../07_validacion/protocolo-01-asociacion-y-comparacion.md);
-- [comparar modalidad, lugar y notificación](../07_validacion/protocolo-01-asociacion-y-comparacion.md);
-- [probar accesibilidad, convivencia y posibilidad de no intervenir](../03_usuarios/matriz-requisitos-de-usuarios.md);
-- [implementar Android, permisos, segundo plano y BLE](../06_desarrollo_y_factibilidad/decision-plataforma-android.md);
-- [decidir forma, material, protección, reparación, proveedores y costo real](../06_desarrollo_y_factibilidad/README.md);
-- [incorporar resultados a la memoria y preparar la defensa oral](plan-de-cierre-agosto-diciembre-2026.md).
+| Ya está hecho | Falta hacer | Evidencia |
+|---|---|---|
+| Problema acotado, usuario principal y usuario límite. | Observar el uso en espacios reales y confirmar el contexto doméstico. | [Usuarios](../03_usuarios/README.md) |
+| Entrevistas analizadas, perfiles, recorridos y requisitos. | Ejecutar una nueva prueba con participantes; todavía no hay resultados. | [Matriz de evidencia](../03_usuarios/matriz-evidencia-p1-p8.md) |
+| Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
+| Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
+| Naming, dirección visual y paleta base. | Cerrar tipografía, forma, material, difusor y señal final después de probar. | [Naming](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md) · [Visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
+| Costos preliminares y alternativas B1/B2. | Inventariar, revisar, comprar solo lo necesario y cerrar costo real del prototipo. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
+| Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
 ## 12. Próximos pasos y fechas estimadas
 
-| Fecha estimada | Paso siguiente | Resultado esperado | Enlace |
-|---|---|---|---|
-| 2–6 septiembre 2026 | Inventario y revisión de B1/B2; construir solo el material mínimo; ensayo interno del protocolo. | Señal manual segura y procedimiento habilitado. | [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) · [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) |
-| 7–20 septiembre 2026 | Ejecutar la prueba de asociación y observar el papel del lugar. | Decidir si se avanza, itera o reformula la relación intención–lugar–señal. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) |
-| 21 septiembre–4 octubre 2026 | Comparar luz, sonido, vibración o combinación acotada; revisar accesibilidad y convivencia. | Modalidad provisional justificable y silenciable. | [Hoja de ruta](hoja-de-ruta.md) · [Requisitos de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) |
-| 5–18 octubre 2026 | Implementar el ciclo Android, la notificación local y la integración técnica mínima. | Recorrido funcional con recuperación ante fallos críticos. | [Decisión Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) |
-| 19–31 octubre 2026 | Cerrar forma, montaje, sistema visual aplicado, costos y registro del prototipo. | Producto prácticamente terminado y presentable. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) · [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
-| 1–15 noviembre 2026 | Validación final acotada, análisis, ajustes y auditoría integral. | Producto, evidencia, memoria y anexos cerrados internamente. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) |
-| 25 noviembre 2026 | Pase de Examen. | Clasificar observaciones sin abrir una reformulación general. | [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) |
-| 2 diciembre 2026 | Entrega oficial de la memoria. | Memoria definitiva exportada y respaldada. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
-| 14–18 diciembre 2026 | Examen de Proyecto de Título. | Presentación, defensa y demostración del prototipo. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) |
+Estas fechas vienen del [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md). Son estimadas y pueden ajustarse, pero sirven para no perder la ruta crítica.
 
-El detalle operativo está en el [plan de cierre agosto–diciembre de 2026](plan-de-cierre-agosto-diciembre-2026.md) y en la [hoja de ruta](hoja-de-ruta.md).
+| Fecha estimada | Qué toca hacer | Resultado esperado | Enlace |
+|---|---|---|---|
+| **2–6 septiembre 2026** | Inventariar materiales, revisar B1/B2, construir solo el mínimo y repetir el ensayo interno. | Señal manual segura y procedimiento listo. | [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **7–20 septiembre 2026** | Ejecutar la prueba de asociación y observar qué pasa con el lugar. | Decidir si se mantiene, itera o reformula la relación intención–lugar–señal. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) |
+| **21 septiembre–4 octubre 2026** | Comparar luz, sonido, vibración o una combinación acotada; revisar accesibilidad y convivencia. | Elegir una modalidad provisional, perceptible y silenciable. | [Requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) · [Hoja de ruta](hoja-de-ruta.md) |
+| **5–18 octubre 2026** | Implementar el ciclo Android, la notificación local y la integración técnica mínima. | Recorrido funcional con recuperación ante fallos críticos. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **19–31 octubre 2026** | Cerrar forma, montaje, sistema visual aplicado, costos y registro del prototipo. | Producto prácticamente terminado y presentable. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) · [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
+| **1–15 noviembre 2026** | Validación final acotada, análisis, ajustes y auditoría integral. | Producto, evidencia, memoria y anexos cerrados internamente. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **25 noviembre 2026** | Presentar el Pase de Examen y clasificar observaciones. | Corregir lo necesario sin abrir una reformulación completa. | [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) |
+| **2 diciembre 2026** | Entregar la memoria oficial. | Memoria definitiva exportada y respaldada. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
+| **14–18 diciembre 2026** | Presentar y defender el proyecto. | Examen, demostración y cierre del proyecto. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) |
 
 ## Cierre
 
-Desde el examen del primer semestre, Relevo pasó de ser una propuesta difícil de leer a un proyecto con problema acotado, usuarios situacionales, investigación trazable, referentes comparados, flujos separados, una arquitectura phygital explícita y una ruta de validación.
+Desde el examen, Relevo pasó de ser una idea difícil de leer a tener un problema acotado, usuarios situacionales, investigación trazable, estado del arte, propuesta phygital, flujos separados, naming, sistema visual, costos preliminares y un plan de validación.
 
-El proyecto ya puede responder qué es, para quién se plantea y por qué podría ser relevante. La pregunta decisiva que queda es si el testigo físico situado recupera una intención de manera más clara o pertinente que una notificación digital, sin aumentar demasiado la carga, la intrusión o los problemas de accesibilidad. Esa respuesta debe venir de las pruebas, no de la memoria ni de los wireframes.
+La pregunta que queda es la más importante: **¿el testigo físico situado recupera una intención de una manera más clara o pertinente que una notificación digital, sin aumentar demasiado la carga, la intrusión o los problemas de accesibilidad?**
+
+Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que responder el prototipo y las pruebas.
 
 ## Documentos principales
 
+- [README del repositorio](../README.md).
 - [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md).
 - [Resumen vigente del proyecto](../08_memoria/resumen-vigente-proyecto.md).
-- [Matriz de incorporación del feedback E15](../08_memoria/matriz-incorporacion-feedback-e15.md).
+- [Feedback original de la comisión](../01_contexto_y_fuentes/feedback-e15.md).
+- [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md).
 - [Matriz histórica del Pase y la memoria](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md).
-- [Análisis de usuarios](../03_usuarios/README.md).
-- [Estudio de mercado y referentes](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md).
-- [Propuesta phygital](../05_propuesta_phygital/README.md).
-- [Factibilidad y desarrollo](../06_desarrollo_y_factibilidad/README.md).
-- [Validación](../07_validacion/README.md).
+- [Investigación de usuarios](../03_usuarios/README.md).
+- [Estado del arte y mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md).
+- [Propuesta phygital y wireframes](../05_propuesta_phygital/README.md).
+- [Factibilidad, materiales y costos](../06_desarrollo_y_factibilidad/README.md).
+- [Protocolo de validación](../07_validacion/README.md).
+- [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md).
 
 ---
 
 ## Registro de cambios (disclaimer)
 
-### 2026-09-02 — Costos, enlaces y calendario ampliados
+### 2026-09-02 — Tono, enlaces y categorías ampliadas
 
-- **Cambio:** se añadieron enlaces de evidencia a las tablas principales, costos estimados de 12 V, B1 y B2, un registro de avances y cambios aplicados, y una tabla de próximos pasos con fechas estimadas.
-- **Motivo:** permitir que cada afirmación importante pueda verificarse directamente en el repositorio y que el estado económico y temporal del proyecto se entienda sin reconstruirlo desde varias carpetas.
-- **Alcance:** los costos siguen siendo parciales y estimados; no se compraron componentes, no se agregaron resultados de validación y las fechas corresponden al plan vigente.
+- **Cambio:** se reescribió el resumen en un tono más natural y directo, se incorporaron referentes, estado del arte e investigación de mercado organizados por parte del problema, y se reforzaron los enlaces de evidencia.
+- **Cambio adicional:** se mantuvieron los costos de 12 V, B1, B2 y núcleo común, junto con el registro de avances y la tabla de fechas estimadas.
+- **Motivo:** facilitar una lectura rápida del proyecto sin perder el porqué de las decisiones ni la trazabilidad documental.
+- **Alcance:** no se agregan resultados de validación, no se presenta una forma física como definitiva y los costos continúan siendo preliminares.
 
 ### 2026-09-02 — Creación del resumen general
 
-- **Cambio:** se creó una síntesis ejecutiva que reúne la evolución desde el examen del primer semestre hasta la memoria v4, la aplicación del feedback, la investigación, los referentes, las decisiones de producto, naming, color, implementación y los próximos hitos.
-- **Motivo:** ofrecer una lectura simple y ordenada del proyecto sin obligar a reconstruir el estado desde múltiples carpetas.
-- **Alcance:** este documento no agrega evidencia, no reemplaza la memoria y no presenta como resultados las pruebas aún no ejecutadas.
+- **Cambio:** se creó una síntesis ejecutiva de la evolución desde el examen del primer semestre hasta la memoria v4.
+- **Motivo:** reunir en un solo documento el feedback, la investigación, las decisiones, la implementación y los próximos pasos.
+- **Alcance:** este documento no reemplaza la memoria ni agrega evidencia nueva.
