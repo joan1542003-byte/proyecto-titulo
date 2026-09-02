@@ -27,7 +27,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 - [Archivo editorial de wireframes — versión vigente](wireframes-board-html/README.md)
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
-- [Prototipo HTML móvil anterior — registro de proceso](wireframes-media-html/README.md)
+- [Tablero HTML de wireframes — versión vigente](wireframes-media-html/README.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
 - [Láminas 4K de wireframes para calcar — serie vigente](wireframes-referencia-ios-4k/README.md)
 - [Láminas sintéticas anteriores — registro de proceso](wireframes-referencia/README.md)
@@ -42,6 +42,13 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 ---
 
 ## Registro de cambios
+
+### 2026-09-01 — Wireframes HTML sin simulación de dispositivo
+
+- **Cambio:** el tablero HTML vigente presenta catálogo, lienzo exportable y fundamento sin marco de teléfono.
+- **Versión anterior:** el enlace describía la implementación como un prototipo móvil anterior.
+- **Motivo:** reconocer la nueva fuente vigente de 44 wireframes exportables y evitar que el dispositivo simulado se confunda con la entrega.
+- **Alcance:** actualización de presentación, exportación y documentación; la arquitectura de interacción no cambia.
 
 ### 2026-09-01 — Entregables clave consolidados
 

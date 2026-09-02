@@ -16,15 +16,12 @@ const browser = await chromium.launch({
   headless: true,
   executablePath: process.env.RELEVO_BROWSER_PATH ?? "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
 });
-const page = await browser.newPage({ viewport: { width: 1400, height: 1200 }, deviceScaleFactor: 2 });
+const page = await browser.newPage({ viewport: { width: 1900, height: 1500 }, deviceScaleFactor: 2 });
 const manifest = [];
 
 for (const target of targets) {
   const url = `${baseUrl}/?mode=${target.mode}&${target.key}=${encodeURIComponent(target.id)}`;
   await page.goto(url, { waitUntil: "networkidle" });
-  await page.locator('[data-testid="home-indicator"], [data-testid="android-navigation-bar"]').evaluateAll((nodes) => {
-    for (const node of nodes) node.style.display = "none";
-  });
   const current = page.getByTestId("wireframe-current");
   await current.waitFor({ state: "visible" });
   if ((await current.getAttribute("data-frame-id")) !== target.id) throw new Error(`No se pudo abrir ${target.mode} ${target.id}`);
@@ -32,7 +29,6 @@ for (const target of targets) {
   const fileName = await download.getAttribute("download");
   if (!fileName) throw new Error(`El marco ${target.id} no declara nombre de descarga`);
   const surface = page.getByTestId("export-surface");
-  await surface.evaluate((node) => { node.style.borderRadius = "0"; });
   await surface.evaluate((node) => node.scrollIntoView({ block: "center", inline: "nearest" }));
   await surface.screenshot({ path: path.join(outputDir, fileName) });
   manifest.push({ ...target, file: fileName, url });
