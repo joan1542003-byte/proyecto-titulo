@@ -7,7 +7,7 @@ Este documento separa dos niveles que no deben confundirse:
 1. los **recorridos actuales**, reconstruidos desde episodios narrados en las entrevistas;
 2. el **escenario futuro con Relevo**, que organiza una hipótesis de interacción y todavía no constituye evidencia de uso.
 
-Los recorridos se apoyan en los [perfiles situacionales](perfiles-situacionales.md), las [reconstrucciones P1–P8](reconstrucciones-de-caso.md), la [matriz de evidencia](matriz-evidencia-p1-p8.md) y la arquitectura documentada en la [cobertura del Encargo 17](../05_propuesta_phygital/wireframes-media-html/COBERTURA.md). Los identificadores P/Q remiten al corpus anonimizado.
+Los recorridos se apoyan en los [perfiles situacionales](perfiles-situacionales.md), las [reconstrucciones P1–P8](reconstrucciones-de-caso.md), la [matriz de evidencia](matriz-evidencia-p1-p8.md) y la arquitectura documentada en la [cobertura del Encargo 17](../05_propuesta_phygital/wireframes-media-html/cobertura.md). Los identificadores P/Q remiten al corpus anonimizado.
 
 ## Reglas de lectura
 
@@ -115,3 +115,9 @@ La siguiente secuencia no proviene de una prueba con participantes. Traduce la m
 - **Versión anterior:** la memoria v4 contenía una síntesis narrativa de ambos recorridos y la propuesta documentaba el flujo futuro, pero no existía un instrumento que diferenciara evidencia e hipótesis etapa por etapa.
 - **Motivo:** cerrar el segundo entregable de la Issue #2 y sostener la futura matriz de requisitos sin presentar el flujo diseñado como resultado de entrevistas.
 - **Límite:** las transiciones futuras no han sido observadas; deberán revisarse con prototipos y participantes.
+
+### 2026-09-02 — Normalización de referencia
+
+- **Qué cambió:** se actualizó el enlace a la cobertura HTML después de renombrar el archivo con un nombre descriptivo en minúscula.
+- **Cómo estaba antes:** el enlace apuntaba a `COBERTURA.md`, un nombre en mayúsculas que no seguía la convención de los documentos del área.
+- **Por qué se decidió:** facilitar la navegación y mantener una convención de nombres consistente sin modificar el recorrido ni sus evidencias.

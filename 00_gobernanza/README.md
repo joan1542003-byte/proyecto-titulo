@@ -18,6 +18,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - `indice-del-repositorio.md`: orden de lectura, estado de cada carpeta y fuentes que deben tomarse como referencia.
+- `auditoria-organizacion-2026-09-02.md`: revisión global de estructura, duplicados, nombres, enlaces y archivos conservados.
 - GitHub Issues: tareas operativas, bloqueos y criterios de cierre.
 
 ## Regla principal
@@ -61,3 +62,9 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 - **Cambio:** creación de la política general de gobernanza.
 - **Versión anterior:** no existía un documento equivalente.
 - **Motivo:** impedir que borradores, fuentes primarias y síntesis derivadas se mezclen durante el desarrollo.
+
+### 2026-09-02 — Auditoría global de organización
+
+- **Cambio:** se incorporó un registro específico para explicar la revisión del repositorio completo, el tratamiento de duplicados y los criterios de conservación.
+- **Versión anterior:** la gobernanza describía las reglas, pero no reunía en un documento único el resultado de la auditoría estructural.
+- **Motivo:** dejar evidencia de por qué se mantienen las copias funcionales y por qué solo se retiran redundancias comprobadas.

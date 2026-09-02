@@ -85,6 +85,7 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 
 | Directorio | Función |
 |---|---|
+| `00_admin` | Entregas fechadas, controles y herramientas de apoyo para revisión. |
 | `00_gobernanza` | Reglas, metodología de trabajo, hoja de ruta y criterios de calidad. |
 | `01_contexto_y_fuentes` | Contexto, inventario, procedencia y evaluación de las fuentes. |
 | `02_investigacion` | Preguntas, marco conceptual, fichas bibliográficas y síntesis de evidencia. |
@@ -111,6 +112,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 - **Cambio:** se añadió al estado principal una encuesta de 70 participantes pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria.
 - **Motivo:** hacer visible esta línea de investigación sin confundirla con el corpus P1–P8 ni con resultados ya analizados.
 - **Alcance:** la fuente queda documentada como pendiente; no se agregaron conclusiones ni datos identificables.
+
+### 2026-09-02 — Administración incorporada al mapa principal
+
+- **Qué cambió:** se añadió `00_admin` a la arquitectura visible de la portada y se vinculó conceptualmente con las entregas fechadas y sus controles.
+- **Cómo estaba antes:** la carpeta existía y era navegable desde otros índices, pero no aparecía en el mapa principal del repositorio.
+- **Por qué se decidió:** completar el recorrido de lectura desde la raíz y evitar que las entregas administrativas parezcan una parte ausente del proyecto.
+- **Alcance:** no se modificó el contenido de las entregas ni la jerarquía de las áreas de investigación y desarrollo.
 
 ### 2026-08-30 — Esquema B2 completado para revisión
 

@@ -6,11 +6,12 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 
 1. [README principal](../README.md): síntesis del proyecto, estado actual y arquitectura general.
 2. [Directrices de trabajo](directrices-de-trabajo.md): reglas para investigar, escribir, decidir y registrar cambios.
-3. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
-4. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
-5. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
-6. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
-7. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
+3. [Auditoría de organización](auditoria-organizacion-2026-09-02.md): resultado de la revisión estructural y criterio de conservación.
+4. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
+5. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
+6. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
+7. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
+8. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
 
 ## Mapa de carpetas
 

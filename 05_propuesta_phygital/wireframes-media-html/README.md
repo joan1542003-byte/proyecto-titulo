@@ -6,6 +6,8 @@ El tablero reúne los nueve wireframes de la ruta principal y 35 estados complem
 
 Cada wireframe usa una ventana representativa de Android de **412 × 915 dp** y se exporta a **824 × 1830 px**. Esta medida no se presenta como un promedio estadístico ni como un modelo de teléfono específico: es una base de trabajo contemporánea para revisar jerarquía, alcance táctil y distribución vertical. No se dibuja hardware, barra de estado ni navegación del sistema.
 
+El entorno de revisión puede conservar recursos auxiliares de marco y teclado para comprobar el comportamiento del tablero. Esos elementos pertenecen a la herramienta de revisión: no forman parte de Relevo, no aparecen en los PNG exportados y no agregan una decisión de plataforma al proyecto.
+
 ## Criterios de representación
 
 - Retícula de 8 dp y margen interior de 24 dp.
@@ -19,7 +21,7 @@ Los 35 estados de cobertura se mantienen en baja fidelidad. Las nueve pantallas 
 
 ## Uso
 
-El tablero permite cambiar entre ruta principal y cobertura, revisar la justificación de cada marco y descargar cada PNG por separado. Los archivos están en [`public/exports`](public/exports/) y los tres mapas en [`public/exports/maps`](public/exports/maps/). La fuente de contenido está en [`src/wireframes.ts`](src/wireframes.ts), la presentación en [`src/Prototype.tsx`](src/Prototype.tsx) y la especificación en [`DECISIONES-DE-DISENO.md`](DECISIONES-DE-DISENO.md).
+El tablero permite cambiar entre ruta principal y cobertura, revisar la justificación de cada marco y descargar cada PNG por separado. Los archivos están en [`public/exports`](public/exports/) y los tres mapas en [`public/exports/maps`](public/exports/maps/). La fuente de contenido está en [`src/wireframes.ts`](src/wireframes.ts), la presentación en [`src/Prototype.tsx`](src/Prototype.tsx) y la especificación en [`decisiones-de-diseno.md`](decisiones-de-diseno.md).
 
 ## Verificación vigente
 
@@ -46,3 +48,10 @@ El tablero permite cambiar entre ruta principal y cobertura, revisar la justific
 - **Cambio:** el lienzo 4:5 de 920 × 1150 px se sustituyó por una ventana de 412 × 915 dp, exportada al doble de densidad.
 - **Antes:** la lámina priorizaba comparación editorial, pero no conservaba proporciones propias de una pantalla móvil.
 - **Motivo:** permitir que cada exportable pueda reconstruirse como pantalla Android sin simular un dispositivo ni atribuirle un modelo específico.
+
+### 2026-09-02 — Separación entre entorno de revisión y exportables
+
+- **Qué cambió:** se aclaró que los recursos auxiliares que pueda usar el tablero para revisar dimensiones o teclado pertenecen a la herramienta y no a los wireframes exportados.
+- **Cómo estaba antes:** el README explicaba que los PNG no tenían hardware, pero no distinguía esa condición del entorno de revisión.
+- **Por qué se decidió:** evitar que una persona confunda el soporte técnico del tablero con una decisión visual o de plataforma de Relevo.
+- **Alcance:** no se modificaron el runtime, las exportaciones, la cobertura ni las medidas de trabajo.

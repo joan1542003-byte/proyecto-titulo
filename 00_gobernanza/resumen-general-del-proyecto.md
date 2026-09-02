@@ -5,7 +5,7 @@ fecha_de_corte: 2026-09-02
 estado: "síntesis del estado de proyecto"
 ---
 
-# Para qué sirve este documento?
+# ¿Para qué sirve este documento?
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han hecho y qué falta probar.
 
@@ -18,16 +18,18 @@ Relevo ayuda a recuperar una intención personal cuando una sesión de ocio digi
 La propuesta combina:
 
 - una [aplicación Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md), donde la persona escribe su intención, define un primer paso y configura una condición;
-- un [testigo físico situado](../05_propuesta_phygital/README.md), ubicado cerca del comienzo de la actividad elegida (por ejemeplo salir a caminar, el objeto se deja cerca de unas zapatillas)
-- un [pulso ambiental breve](../07_validacion/protocolo-01-asociacion-y-comparacion.md), que vuelve a hacer visible esa intención en el espacio fisico.
+- un [testigo físico situado](../05_propuesta_phygital/README.md), ubicado cerca del comienzo de la actividad elegida (por ejemplo, salir a caminar; el objeto se deja cerca de unas zapatillas);
+- un [pulso ambiental breve](../07_validacion/protocolo-01-asociacion-y-comparacion.md), que vuelve a hacer visible esa intención en el espacio físico.
 
 La persona sigue teniendo la última palabra: puede continuar con el ocio digital, ignorar la señal, silenciarla, cambiar de idea o iniciar la alternativa. Relevo no bloquea aplicaciones, no entrega puntos, no crea rachas y no registra si la actividad se realizó.
 
-### Por qué alguien querría usarlo?
+### ¿Por qué alguien querría usarlo?
 
-No porque use “demasiado” el teléfono. La situación que nos interesa es más específica: alguien tiene una actividad que sí quiere hacer, sabe cómo empezar, pero durante una sesión digital esa intención deja de existir, se consume totalmente por el télefono. ***Documentado en entrevista a usuarios y referentes teóricos.***
+No porque use “demasiado” el teléfono. La situación que nos interesa es más específica: alguien tiene una actividad que sí quiere hacer, sabe cómo empezar, pero durante una sesión digital esa intención deja de estar presente porque la atención se concentra en el teléfono. Esta situación aparece en las entrevistas y se interpreta junto con los referentes teóricos revisados.
 
-**Deseabilidad**? Relevo podría ser deseable porque devuelve esa posibilidad sin retar, castigar o decidir por la persona.
+### ¿Por qué podría ser deseable?
+
+Relevo podría ser deseable porque devuelve esa posibilidad sin retar, castigar o decidir por la persona.
 
 ### ¿Por qué es relevante?
 
@@ -148,7 +150,7 @@ La arquitectura de nombres quedó así:
 
 Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
-El descriptor actual es: **“Sistema phygital para recuperar intenciones personales durante el ocio digital.”** Ver [decisiones de naming](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md).
+El descriptor actual es: **“Sistema phygital para recuperar intenciones personales durante el ocio digital.”** Ver [decisiones de naming](../00_admin/encargos/encargo-02-09-2026/03_naming/README.md).
 
 ## 8. Decisiones visuales y cromáticas
 
@@ -160,7 +162,7 @@ La dirección conceptual es **Transferencia situada**. La idea visual es mostrar
 - El color nunca funciona solo: los estados también deben explicarse con texto, estructura y contraste.
 - La forma, la tipografía final, el material, el difusor y los parámetros del pulso siguen abiertos hasta probar legibilidad, accesibilidad y convivencia.
 
-Ver [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [códigos cromáticos](../05_propuesta_phygital/entregables-clave-2026-09-01/codigos-cromaticos.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
+Ver [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [códigos cromáticos](../00_admin/encargos/encargo-02-09-2026/04_codigos_cromaticos/README.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
 
 ## 9. Cómo se ha implementado hasta ahora
 
@@ -199,7 +201,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
-| Naming, dirección visual y paleta base. | Cerrar tipografía, forma, material, difusor y señal final después de probar. | [Naming](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md) · [Visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
+| Naming, dirección visual y paleta base. | Cerrar tipografía, forma, material, difusor y señal final después de probar. | [Naming](../00_admin/encargos/encargo-02-09-2026/03_naming/README.md) · [Visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
 | Costos preliminares y alternativas B1/B2. | Inventariar, revisar, comprar solo lo necesario y cerrar costo real del prototipo. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
@@ -277,3 +279,10 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 - **Cambio:** se creó una síntesis ejecutiva de la evolución desde el examen del primer semestre hasta la memoria v4.
 - **Motivo:** reunir en un solo documento el feedback, la investigación, las decisiones, la implementación y los próximos pasos.
 - **Alcance:** este documento no reemplaza la memoria ni agrega evidencia nueva.
+
+### 2026-09-02 — Corrección de enlaces y redacción de entrada
+
+- **Qué cambió:** se corrigieron erratas de lectura y se actualizaron los enlaces de naming y códigos cromáticos para dirigir a la entrega fechada vigente, no al paquete histórico del 1 de septiembre.
+- **Cómo estaba antes:** el resumen mezclaba un enlace histórico con la fuente vigente y contenía formulaciones y signos de interrogación incompletos.
+- **Por qué se decidió:** asegurar que una lectura rápida del proyecto conduzca a los documentos actuales y no introduzca ruido en su comprensión.
+- **Alcance:** no se modificó la formulación del proyecto, la evidencia ni las decisiones de diseño.

@@ -28,7 +28,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Tablero HTML de wireframes — versión vigente](wireframes-media-html/README.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
-- [Láminas 4K de wireframes para calcar — serie vigente](wireframes-referencia-4k/README.md)
+- [Láminas 4K de wireframes para calcar — anexo de referencia](wireframes-referencia-4k/README.md)
 - [Láminas sintéticas anteriores — registro de proceso](wireframes-referencia/README.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
@@ -148,3 +148,10 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 - **Cambio:** se actualizó el enlace a la serie de láminas 4K después de normalizar el nombre de su carpeta.
 - **Cómo estaba antes:** el enlace incorporaba una etiqueta de plataforma que correspondía a una referencia compositiva, no a la decisión técnica del proyecto.
 - **Motivo:** evitar confusiones entre referencia visual y plataforma, sin modificar la serie ni su función dentro de la entrega.
+
+### 2026-09-02 — Distinción entre fuente y anexo visual
+
+- **Qué cambió:** las láminas 4K se describen como anexo de referencia para reconstrucción, no como la fuente final de la interfaz.
+- **Cómo estaba antes:** la expresión “serie vigente” podía sugerir que esas imágenes reemplazaban el tablero y los documentos actuales.
+- **Por qué se decidió:** mantener una sola fuente de interacción y ubicar las láminas en su función real: apoyo visual de baja o media fidelidad.
+- **Alcance:** no se modificaron las imágenes, la cobertura ni la dirección visual.
