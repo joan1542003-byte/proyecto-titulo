@@ -1,6 +1,6 @@
 # Plan de cierre de Relevo — agosto a diciembre de 2026
 
-**Fecha de planificación:** 29 de agosto de 2026
+**Fecha de planificación:** 2 de septiembre de 2026
 
 **Cierre total interno:** 15 de noviembre de 2026
 
@@ -16,7 +16,7 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 ## Etapa actual
 
-Relevo se encuentra en la transición entre **definición documentada** y **desarrollo comprobable**. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen una memoria estructuralmente avanzada, wireframes de media fidelidad y un sistema visual v4. Sin embargo, todavía no existe evidencia suficiente para cerrar el comportamiento de la señal, el aporte del lugar, la forma física, la integración técnica ni la experiencia de uso.
+Relevo se encuentra en una etapa de **revisión y ordenamiento de wireframes antes del desarrollo funcional**. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen wireframes de media fidelidad, un sistema visual v4 y una memoria estructuralmente avanzada. El siguiente paso no es sumar funciones: es revisar lo que ya está diseñado, fijar un alcance mínimo, ordenar la construcción de la app y recién después probar con usuarios.
 
 Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La prioridad es convertir las hipótesis más importantes en prototipos, pruebas y decisiones.
 
@@ -26,14 +26,14 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | --- | --- | --- | --- |
 | Gobernanza y fuentes | Suficiente para cierre | Repositorio, jerarquía documental, biblioteca, trazabilidad y directrices. | Reconciliar algunas Issues antiguas y mantener los índices sincronizados. |
 | Problema y relevancia | Avanzado | Fenómeno, tres aristas, justificación y aporte disciplinar documentados. | Ajustar únicamente si la evidencia de prototipos contradice la formulación. |
-| Usuarios | Avanzado | Corpus, análisis, dos tipos situacionales, usuario principal y usuario límite. | Contrastar necesidades y comprensión durante las pruebas de uso. |
+| Usuarios | Avanzado, con una fuente pendiente | Corpus, análisis, dos tipos situacionales, usuario principal y usuario límite. Existe además una encuesta de 70 participantes pendiente de publicación. | Publicar y revisar la encuesta; luego contrastar necesidades y comprensión durante las pruebas de uso. |
 | Estado del arte y mercado | Avanzado con corte temporal | Corpus comparativo, mecanismos, límites y oportunidad de Relevo. | Vigilancia breve en octubre; no rehacer el estudio sin una razón concreta. |
 | Memoria | Avanzada, no final | Estructura v4, extensión, APA 7, trazabilidad y anexos preparados. | Incorporar decisiones, resultados, límites, factibilidad y evidencia final. |
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
-| Prototipo Android | Inicial | Plataforma justificada, wireframes y referencias visuales. | Aplicación funcional, condición provisional, notificación local y estados de recuperación. |
+| Prototipo Android | Inicial | Plataforma justificada, wireframes y referencias visuales. | Revisar wireframes, definir el MVP, construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
 | Testigo físico | Alternativas preparadas para decisión | Función, requisitos, activación cableada, comparación B1/B2 y ambos esquemas revisables documentados. | Inventariar, revisar ambas variantes, comparar luz y construir solo la elegida. |
-| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Resolver la puerta B1/B2, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
+| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Revisar wireframes y prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
 
@@ -41,14 +41,15 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 
 El cierre depende de la siguiente secuencia:
 
-1. construir una señal manual segura y repetible;
-2. probar la asociación entre intención, primer paso, lugar y señal;
-3. decidir qué se mantiene o cambia en la interacción;
-4. comparar modalidades, emplazamiento y soporte físico frente a una notificación;
-5. construir el prototipo Android y el testigo con integración suficiente;
-6. comprobar comprensión, recuperación ante fallos y uso doméstico acotado;
-7. cerrar forma, componentes, producción y costos de acuerdo con la evidencia;
-8. incorporar resultados reales a la memoria y congelar el proyecto.
+1. revisar los wireframes existentes y detectar vacíos, contradicciones y estados que sobran;
+2. establecer el recorrido mínimo, el backlog y los pasos de desarrollo;
+3. corregir y congelar una primera versión de wireframes antes de programar;
+4. construir la navegación y el estado básico de la app, sin integrar todavía toda la electrónica;
+5. construir una señal manual segura y probar internamente app, flujo y testigo;
+6. ejecutar la prueba con usuarios solo cuando el prototipo y el protocolo estén listos;
+7. comparar lugar, modalidad y notificación, y decidir qué se mantiene o cambia;
+8. integrar Android y el testigo, cerrar forma, producción y costos;
+9. incorporar resultados reales a la memoria y congelar el proyecto.
 
 Si un paso falla, se itera dentro de su periodo. No se compensa un vacío de evidencia añadiendo texto, funciones o piezas visuales.
 
@@ -56,75 +57,100 @@ Si un paso falla, se itera dentro de su periodo. No se compensa un vacío de evi
 
 Las fechas institucionales se encuentran consolidadas en el [calendario oficial del segundo semestre de 2026](calendario-oficial-segundo-semestre-2026.md). Cuando una fecha interna y una oficial cumplan funciones distintas, ambas se conservan con su alcance explícito.
 
-### 29 de agosto–6 de septiembre — Preparar el paso desde documentación a prueba
+### 2–5 de septiembre — Revisar wireframes y ordenar el trabajo
 
-**Objetivo:** dejar lista la prueba inicial y eliminar bloqueos operativos.
+**Objetivo:** entender bien lo que ya existe y establecer el orden de construcción antes de programar o probar con usuarios.
 
-- incorporar los hitos oficiales a la planificación y a la Issue #9;
-- reconciliar el estado de las Issues #2, #4 y #5 con los documentos vigentes;
-- seleccionar una condición provisional para el prototipo, sin declararla definitiva;
-- inventariar material y obtener revisión comparativa B1/B2;
-- construir únicamente el material mínimo seleccionado para la señal manual;
-- verificar activación, duración, silenciamiento, estabilidad, alimentación y seguridad;
-- realizar un ensayo interno completo del protocolo;
-- completar los datos administrativos del consentimiento y cerrar el reclutamiento.
+- revisar los nueve wireframes principales y los estados complementarios;
+- detectar pantallas repetidas, vacíos, contradicciones, textos poco claros y estados que no aportan al MVP;
+- relacionar cada pantalla con una necesidad de usuario, una hipótesis o un requisito de Relevo;
+- separar lo imprescindible para la primera prueba de lo que puede quedar fuera del cierre;
+- inventariar materiales y revisar B1/B2 en paralelo, sin comprar todavía;
+- dejar registrada la encuesta de 70 participantes como fuente pendiente, sin usarla aún como evidencia;
+- establecer el backlog y los pasos concretos de desarrollo.
 
-**Criterio de salida:** existe un material repetible y seguro, el procedimiento puede ejecutarse en el tiempo previsto y no quedan campos metodológicos vacíos.
+**Criterio de salida:** existe un flujo mínimo acordado, una lista de decisiones abiertas y un orden de trabajo que el equipo puede seguir.
 
-### 7–20 de septiembre — Asociación, comprensión y papel del lugar
+### 6–12 de septiembre — Corregir y congelar el wireframe v1
 
-**Objetivo:** comprobar si el núcleo de Relevo adquiere sentido para las personas.
+**Objetivo:** transformar la revisión en una versión de wireframes suficientemente clara para construir la app.
 
-- ejecutar la prueba de asociación con el número de participantes definido en el protocolo;
-- registrar percepción, recuerdo de intención, identificación del primer paso, necesidad de consultar el teléfono y confusiones;
-- comparar lugar congruente y lugar neutro cuando la primera puerta lo permita;
-- analizar casos positivos, negativos y ambiguos;
-- decidir si se avanza, se itera o se reformula la relación intención–lugar–señal.
+- corregir jerarquía, textos, navegación, estados de error, recuperación y accesibilidad;
+- revisar la aplicación del naming y del sistema visual en las pantallas prioritarias;
+- hacer un recorrido interno de principio a fin con el flujo mínimo;
+- documentar qué se cambió, qué se descartó y qué queda pendiente de validar;
+- congelar el wireframe v1 como base del desarrollo.
 
-**Criterio de salida:** existe una decisión documentada sobre el valor del lugar y la comprensibilidad de la señal. No basta con que el objeto guste.
+**Criterio de salida:** el flujo principal y sus estados críticos están definidos; cualquier cambio posterior debe responder a una prueba o a un problema concreto.
 
-### 21 de septiembre–4 de octubre — Modalidad de señal, accesibilidad y convivencia
+### 13–19 de septiembre — Construir la app base y una señal manual
 
-**Objetivo:** definir cómo debe percibirse la señal sin convertirla en alarma, instrucción o evaluación.
+**Objetivo:** convertir el wireframe congelado en un prototipo funcional acotado y tener una primera señal física segura.
 
-- comparar luz, sonido, vibración o una combinación acotada;
-- observar percepción, molestia, discreción, silenciamiento y lectura en diferentes condiciones domésticas;
-- incorporar alternativas que no dependan únicamente del color;
-- registrar convivencia, exposición y situaciones en que Relevo no debería intervenir;
-- seleccionar una modalidad provisional con parámetros medibles.
+- crear la navegación Android y las pantallas prioritarias con componentes funcionales;
+- implementar el recorrido mínimo: intención, primer paso, condición provisional, prueba, armado, desarme y recuperación;
+- usar una condición local o simulada para probar el flujo sin depender todavía de toda la electrónica;
+- revisar B1/B2 y construir solo la alternativa manual que cumpla los requisitos de seguridad y repetibilidad;
+- preparar una lista de fallos que deben probarse antes de invitar participantes.
 
-**Criterio de salida:** existe una modalidad justificable, reproducible y con una alternativa accesible; se conocen sus contextos de fallo.
+**Criterio de salida:** una persona puede recorrer la app sin explicación del autor y la señal manual puede activarse de forma segura y repetible.
 
-El avance se presenta en la corrección cruzada oficial del 30 de septiembre. Las observaciones pertinentes se registran y se traducen en decisiones antes de cerrar esta etapa.
+### 20–29 de septiembre — Prueba interna y preparación de la corrección cruzada
 
-### 5–18 de octubre — Prototipo Android e integración técnica
+**Objetivo:** encontrar problemas antes de mostrar el avance y dejar listo el protocolo de usuarios.
 
-**Objetivo:** convertir el flujo documentado en un sistema funcional mínimo.
+- probar internamente wireframes, navegación, contenidos, señal manual y estados de recuperación;
+- revisar percepción, molestia, silenciamiento, legibilidad y alternativas que no dependan solo del color;
+- corregir únicamente fallos que afecten comprensión, seguridad, accesibilidad o funcionamiento;
+- preparar consentimiento, guion, criterios de observación y reclutamiento;
+- publicar la encuesta de 70 participantes si sus materiales están disponibles; si no, mantenerla como pendiente documentada;
+- preparar el material de avance para la fecha institucional del 30 de septiembre.
 
-- reconstruir las pantallas Android prioritarias con componentes reales;
-- implementar intención, primer paso, condición provisional, vigencia, vínculo, prueba, armado, desarme y recuperación;
-- construir la notificación local equivalente para la comparación;
-- integrar el testigo mediante la arquitectura técnica más acotada viable;
-- comprobar pérdida de vínculo, batería baja, reinicio, expiración y cancelación;
-- documentar privacidad, datos operativos y límites de la plataforma.
+**Criterio de salida:** el prototipo y el protocolo son suficientemente estables para una prueba piloto, y las dudas que se llevarán a la corrección están explicitadas.
 
-**Criterio de salida:** una persona puede completar el ciclo principal y recuperarse de los fallos críticos sin depender de una explicación del autor.
+### 30 de septiembre — Corrección cruzada oficial
 
-### 19–31 de octubre — Producto prácticamente terminado
+Presentar el avance según el [calendario oficial](calendario-oficial-segundo-semestre-2026.md). Registrar el feedback recibido y traducirlo en tareas, decisiones o límites antes de continuar con las pruebas.
 
-**Objetivo:** cerrar la configuración del proyecto que será presentada.
+### 1–7 de octubre — Aplicar feedback y cerrar el piloto técnico
 
-- probar el flujo integrado con personas y registrar problemas de comprensión y uso;
-- ajustar interfaz, señal y comportamiento técnico a partir de hallazgos;
-- seleccionar forma, dimensiones, montaje y acceso a componentes del testigo;
-- producir un prototipo físico presentable y mantenible;
-- cerrar lista de materiales, costos de prototipo, proveedores y tiempos de fabricación;
-- completar aplicaciones finales del sistema visual en Android, objeto y memoria;
-- tomar un primer registro fotográfico y audiovisual del funcionamiento.
+**Objetivo:** incorporar lo necesario de la corrección cruzada y comprobar que el protocolo se puede ejecutar.
 
-**Criterio de salida del 31 de octubre:** el producto funciona de inicio a cierre, la forma y la gráfica responden a decisiones documentadas, los riesgos principales se conocen y no quedan funciones esenciales por inventar.
+- clasificar las observaciones por impacto y aplicar solo las que correspondan al alcance;
+- ejecutar un piloto técnico completo con app, señal y registro de observaciones;
+- comprobar vínculo, reinicio, cancelación, silenciamiento, condición provisional y recuperación;
+- cerrar consentimiento, reclutamiento y agenda de participantes;
+- definir qué comparación es realmente viable: lugar, modalidad, notificación o una combinación acotada.
 
-La semana de Pruebas Solemnes del 19 al 23 de octubre obliga a proteger la ruta crítica: durante esos días se priorizan comprobaciones indispensables y documentación de resultados, sin abrir exploraciones secundarias.
+**Criterio de salida:** no quedan fallos críticos sin resolver y la prueba con usuarios tiene una versión concreta del prototipo, una tarea clara y un criterio de observación.
+
+### 8–17 de octubre — Prueba con usuarios y análisis inicial
+
+**Objetivo:** obtener evidencia sobre comprensión, asociación, carga e interpretación antes del cierre del producto.
+
+- ejecutar la prueba con los participantes definidos en el protocolo y con consentimiento;
+- observar si el testigo situado ayuda a recuperar una intención y cómo se relaciona con el lugar;
+- comparar con una notificación u otra condición solo si la app y el protocolo están técnicamente preparados;
+- registrar percepción, recuerdo, primer paso, consulta del teléfono, confusiones, molestia y autonomía;
+- analizar los hallazgos a medida que se producen y anotar cambios necesarios sin alterar el objetivo de la prueba.
+
+**Criterio de salida:** existe evidencia inicial suficiente para decidir qué mantener, qué iterar y qué limitaciones declarar. No se presentan resultados antes de cerrar y analizar las sesiones.
+
+### 19–23 de octubre — Pruebas Solemnes oficiales
+
+Reservar este periodo para las [Pruebas Solemnes](calendario-oficial-segundo-semestre-2026.md). No abrir nuevas líneas de investigación ni cambios estructurales; solo mantener comprobaciones indispensables y respaldar el avance.
+
+### 24–31 de octubre — Integración y producto prácticamente terminado
+
+**Objetivo:** convertir los hallazgos en una versión integrada, presentable y documentada.
+
+- cerrar el análisis de usuarios y decidir lugar, modalidad, notificación y límites de la propuesta;
+- integrar Android y el testigo con la arquitectura más acotada que sea estable;
+- ajustar interfaz, señal y comportamiento técnico a partir de problemas observados;
+- cerrar forma, dimensiones, montaje, acceso a componentes y aplicaciones del sistema visual;
+- completar materiales, costos, proveedores, tiempos de fabricación y registro fotográfico/audiovisual.
+
+**Criterio de salida del 31 de octubre:** el producto funciona de inicio a cierre, las decisiones están justificadas por evidencia o restricciones explícitas y no quedan funciones esenciales por inventar.
 
 ### 1–8 de noviembre — Validación final acotada y congelamiento
 
@@ -195,14 +221,16 @@ Presentar y defender Relevo dentro del periodo oficial asignado por la Escuela. 
 
 | Fecha | Hito | Condición mínima |
 | --- | --- | --- |
-| 6 de septiembre | Material y protocolo habilitados | Señal segura y repetible; ensayo interno completado. |
-| 20 de septiembre | Núcleo conceptual probado | Decisión sobre asociación y papel del lugar. |
+| 5 de septiembre | Wireframes auditados y orden de trabajo definido | Flujo mínimo, MVP, decisiones abiertas y backlog registrados. |
+| 12 de septiembre | Wireframe v1 congelado | Flujo principal, estados críticos y correcciones visuales documentados. |
+| 19 de septiembre | App base y señal manual disponibles | Navegación funcional y activación física segura y repetible. |
+| 29 de septiembre | Prueba interna cerrada | Fallos críticos registrados/corregidos y material listo para la corrección. |
 | 30 de septiembre | Corrección cruzada oficial | Avance presentado y observaciones traducidas en tareas o decisiones. |
-| 4 de octubre | Modalidad provisional cerrada | Señal perceptible, silenciable y contextualizada. |
-| 18 de octubre | Ciclo funcional integrado | Android y testigo ejecutan el recorrido y sus fallos críticos. |
-| 19–23 de octubre | Semana de Pruebas Solemnes | Ruta crítica protegida y alcance secundario suspendido. |
-| 31 de octubre | Proyecto prácticamente terminado | Producto presentable, forma definida y costos documentados. |
-| 8 de noviembre | Diseño congelado | Validación integrada analizada; solo quedan correcciones de cierre. |
+| 7 de octubre | Piloto técnico y protocolo cerrados | App, señal, consentimiento, criterios y reclutamiento preparados. |
+| 17 de octubre | Ventana de prueba con usuarios cerrada | Sesiones realizadas o incidencias documentadas; análisis inicial en curso. |
+| 19–23 de octubre | Pruebas Solemnes oficiales | Ruta crítica protegida y alcance secundario suspendido. |
+| 31 de octubre | Proyecto prácticamente terminado | Integración estable, forma definida, costos y registro documentados. |
+| 8 de noviembre | Diseño y alcance congelados | Validación integrada analizada; solo quedan correcciones de cierre. |
 | 15 de noviembre | Proyecto 100 % cerrado | Producto, memoria, anexos y presentación completos. |
 | 25 de noviembre | Pase de Examen | Antecedentes entregados y observaciones clasificadas. |
 | 2 de diciembre | Entrega de memoria | Memoria definitiva entregada y respaldada. |
@@ -262,6 +290,12 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-02 — Secuencia de desarrollo reordenada
+
+- **Cambio:** el calendario ahora comienza con la revisión de wireframes y la definición del MVP; después ordena la corrección del wireframe, la app base, la señal manual, la prueba interna, la prueba con usuarios y la integración final.
+- **Motivo:** evitar probar con usuarios o cerrar la electrónica antes de contar con un flujo, un prototipo y un protocolo suficientemente estables.
+- **Alcance:** se mantienen las fechas institucionales del 30 de septiembre, 19–23 de octubre, 25 de noviembre, 2 de diciembre y 14–18 de diciembre; el 15 de noviembre sigue siendo el cierre interno.
 
 ### 2026-08-30 — Esquema B2 retirado de la ruta crítica
 
