@@ -23,6 +23,8 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 ## Documentos activos
 
+- [Entregables clave: pantalla principal, mapa completo, naming y color](entregables-clave-2026-09-01/README.md)
+
 - [Archivo editorial de wireframes — versión vigente](wireframes-board-html/README.md)
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Prototipo HTML móvil anterior — registro de proceso](wireframes-media-html/README.md)
@@ -40,6 +42,13 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 ---
 
 ## Registro de cambios
+
+### 2026-09-01 — Entregables clave consolidados
+
+- **Cambio:** se enlazaron la pantalla principal en alta fidelidad, el mapa completo de 44 wireframes, el naming y los códigos cromáticos.
+- **Versión anterior:** estos contenidos estaban distribuidos entre exportaciones, documentos de sistema y exploraciones visuales.
+- **Motivo:** permitir su revisión conjunta y mantener una fuente clara para las siguientes decisiones de prototipado.
+- **Alcance:** cierre documental y visual de esta etapa; no reemplaza pruebas de comprensión, accesibilidad, interacción ni producción.
 
 ### 2026-08-26 — Archivo editorial vigente
 

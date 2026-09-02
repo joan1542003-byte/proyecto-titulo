@@ -11,7 +11,7 @@ Las nuevas pantallas digitales se desarrollan únicamente en modo oscuro. Las ex
 ## Reglas no negociables
 
 - El canvas vigente es `#111314`; el texto funcional usa tipografía continua.
-- El rojo `#EF3E45` se reserva al nodo de señal situada.
+- El rojo `#D71921` se reserva al nodo de señal situada.
 - IBM Plex Sans se utiliza para lectura, instrucciones y acciones; IBM Plex Mono, para datos y etiquetas técnicas.
 - Los puntos solo funcionan como marca, expresión breve o gráfico informativo acompañado de texto equivalente.
 - Decoración, icono, elección, acción, estado y gráfico informativo deben poder distinguirse.
