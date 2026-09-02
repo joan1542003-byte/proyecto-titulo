@@ -57,3 +57,8 @@ Esta revisión detecta archivos faltantes, copias diferentes, dimensiones incorr
 - **Qué se incorporó:** conteo, control de dimensiones, revisión visual y comparación entre las dos copias de la entrega.
 - **Cómo estaba antes:** no existía un informe de integridad para esta carpeta fechada.
 - **Por qué se hizo:** evitar una entrega incompleta o distinta entre el repositorio y la carpeta local de encargos.
+
+### 2026-09-02 — Normalización del nombre del archivo
+
+- **Qué cambió:** el archivo pasó de `VERIFICACION.md` a `verificacion.md`.
+- **Por qué se hizo:** unificar nombres descriptivos en minúscula y facilitar la navegación, sin alterar los controles.

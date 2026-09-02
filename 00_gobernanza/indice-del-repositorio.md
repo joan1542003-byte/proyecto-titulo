@@ -24,7 +24,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 | `04_mercado_y_referentes` | Vigente y en desarrollo | Estado del arte, mercado, referentes, comparación y oportunidades. |
 | `05_propuesta_phygital` | Vigente y en desarrollo | Propuesta, arquitectura de experiencia, flujos y wireframes. |
 | `06_desarrollo_y_factibilidad` | Vigente y en desarrollo | Tecnología, producción, costos, riesgos y límites. |
-| `07_validacion` | Planificada | Protocolos, criterios de evaluación y resultados cuando existan. |
+| `07_validacion` | Preparada; ejecución pendiente | Protocolos, criterios de evaluación, instrumentos y puertas técnicas; todavía no hay resultados. |
 | `08_memoria` | Texto académico vigente | Versiones, anexos, auditorías, referencias y resumen del proyecto. |
 | `09_decisiones` | Registro vigente | Decisiones tomadas, razones, evidencia y consecuencias. |
 | `10_recursos_visuales` | Vigente y exploratoria | Sistema visual, piezas editoriales, gráficos, tipografías y exportaciones. |
@@ -37,6 +37,13 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La dirección visual se consulta desde `10_recursos_visuales/08_direccion_visual_relevo/README.md` y sus carpetas de sistema.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde `99_archivo` o desde la carpeta histórica indicada por cada README.
+
+## Política de duplicados y archivo
+
+- Una copia adicional se conserva solo cuando cumple una función distinta: fuente editable, entrega, respaldo práctico o archivo histórico.
+- La fuente vigente siempre es la que enlaza el README correspondiente; las copias planas se identifican como respaldo.
+- Un archivo idéntico que no aporta una función nueva puede retirarse después de comprobar su coincidencia y dejar constancia de la decisión.
+- Las piezas históricas se conservan cuando permiten reconstruir el proceso, aunque ya no formen parte del recorrido principal.
 
 ## Convenciones de orden
 
@@ -61,3 +68,9 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 - **Cómo estaba antes:** la función de cada carpeta estaba distribuida entre el README principal y varios índices locales.
 - **Qué se conservó:** no se eliminaron archivos ni se alteró el contenido de las áreas de trabajo.
 - **Por qué se decidió:** reducir ambigüedades entre memoria vigente, entregas fechadas, exploraciones y archivo histórico.
+
+### 2026-09-02 — Precisión del estado de validación y criterio de duplicados
+
+- **Qué cambió:** se reemplazó la etiqueta “Planificada” por una descripción que distingue instrumentos preparados, puertas técnicas y ejecución pendiente; además, se incorporó una política breve para decidir cuándo conservar o retirar copias.
+- **Cómo estaba antes:** el índice podía hacer pensar que no existía trabajo de validación documentado y no explicitaba cómo se tratarían los duplicados.
+- **Por qué se decidió:** mantener el índice consistente con `07_validacion/README.md` y hacer que futuras limpiezas sean comprobables y reversibles en su justificación.

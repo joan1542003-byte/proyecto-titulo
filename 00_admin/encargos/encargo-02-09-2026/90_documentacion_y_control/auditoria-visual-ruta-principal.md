@@ -82,3 +82,8 @@ El cierre describe el estado del sistema sin afirmar que la actividad se realiz�
 - **Cómo estaba antes:** existían fundamentos individuales, pero no una lectura continua basada en las exportaciones vigentes.
 - **Qué se reemplazó:** en 3.2 se retiró un menú sin función definida.
 - **Por qué se hizo:** asegurar que todo elemento con apariencia de control corresponda a una interacción real y dejar visibles los límites de la revisión visual.
+
+### 2026-09-02 — Normalización del nombre del archivo
+
+- **Qué cambió:** el archivo pasó de `AUDITORIA-VISUAL-RUTA-PRINCIPAL.md` a `auditoria-visual-ruta-principal.md`.
+- **Por qué se hizo:** unificar nombres descriptivos en minúscula y facilitar la navegación, sin alterar la auditoría.

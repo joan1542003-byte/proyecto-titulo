@@ -33,3 +33,8 @@ Este inventario verifica respaldo e identidad de archivos. Una pieza solo pasa a
 - **Cómo estaba antes:** el archivo local y el repositorio no contaban con una comprobación común y el nombre del documento describía el medio de producción en vez de su función.
 - **Qué se reemplazó:** la auditoría técnica anterior se convirtió en un inventario legible y centrado en los recursos del proyecto.
 - **Por qué se hizo:** confirmar qué material está respaldado sin introducir referencias ajenas a la entrega.
+
+### 2026-09-02 — Normalización del nombre del archivo
+
+- **Qué cambió:** el archivo pasó de `INVENTARIO-DE-RECURSOS-VISUALES.md` a `inventario-de-recursos-visuales.md`.
+- **Por qué se hizo:** unificar nombres descriptivos en minúscula y facilitar la navegación, sin alterar el inventario.

@@ -8,7 +8,7 @@ $deliveryRoot = Join-Path $RepositoryRoot "00_admin/encargos/encargo-02-09-2026"
 $routeSource = Join-Path $deliveryRoot "90_documentacion_y_control/exportaciones_planas_ruta_principal"
 $coverageSource = Join-Path $deliveryRoot "90_documentacion_y_control/exportaciones_planas_estados_complementarios"
 $mapRoot = Join-Path $deliveryRoot "02_mapa_wireframes"
-$explanationPath = Join-Path $deliveryRoot "90_documentacion_y_control/EXPLICACION-Y-JUSTIFICACION.md"
+$explanationPath = Join-Path $deliveryRoot "90_documentacion_y_control/explicacion-y-justificacion.md"
 $principalSource = Join-Path $deliveryRoot "01_pantalla_clave_media_alta_fidelidad/3-1-ciclo-activo-alta-fidelidad-v3.png"
 
 $explanation = Get-Content -LiteralPath $explanationPath -Raw -Encoding UTF8

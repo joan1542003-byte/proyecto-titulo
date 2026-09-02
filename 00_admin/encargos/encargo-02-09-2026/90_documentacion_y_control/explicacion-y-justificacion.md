@@ -124,3 +124,8 @@ La cobertura busca que Relevo pueda fallar, detenerse o cambiar de dirección si
 - **Qué se reemplazó:** no se reemplazó contenido de investigación; se reorganizó en un lenguaje más directo para acompañar las imágenes.
 - **Por qué se hizo:** permitir que cada archivo se entienda por su función y no solo por su apariencia o número.
 - **Alcance:** las justificaciones describen la estructura vigente; no demuestran eficacia, accesibilidad o funcionamiento técnico.
+
+### 2026-09-02 — Normalización del nombre del archivo
+
+- **Qué cambió:** el archivo pasó de `EXPLICACION-Y-JUSTIFICACION.md` a `explicacion-y-justificacion.md`.
+- **Por qué se hizo:** unificar nombres descriptivos en minúscula y facilitar la navegación, sin alterar las explicaciones.
