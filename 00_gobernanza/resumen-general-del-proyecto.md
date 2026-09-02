@@ -1,37 +1,37 @@
 ---
-id: RESUMEN-GENERAL-RELEVO-2026-09-02
-titulo: "Resumen general del proyecto — Relevo"
+id: ESTADO-RELEVO-2026-09-02
+titulo: "Resumen y estado del proyecto — Relevo"
 fecha_de_corte: 2026-09-02
-estado: "síntesis ejecutiva del estado vigente"
+estado: "síntesis del estado de proyecto"
 ---
 
-# Relevo, explicado rápido y sin vueltas
+# Para qué sirve este documento?
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han hecho y qué falta probar.
 
-La fecha de corte es el 2 de septiembre de 2026. Cuando algo todavía no está probado, se dice explícitamente: **aún no hay resultados de validación con participantes**.
+La fecha de corte es el 2 de septiembre de 2026.
 
-## 1. La idea en una frase
+## 1. El objetivo del proyecto.
 
-Relevo ayuda a recuperar una intención personal cuando una sesión de ocio digital continúa y esa otra cosa que la persona quería hacer deja de estar presente al momento de decidir el siguiente paso.
+Relevo ayuda a recuperar una intención personal cuando una sesión de ocio digital continúa y esa "otra cosa" que la persona quería hacer deja de estar presente.
 
 La propuesta combina:
 
 - una [aplicación Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md), donde la persona escribe su intención, define un primer paso y configura una condición;
-- un [testigo físico situado](../05_propuesta_phygital/README.md), ubicado cerca del comienzo de la actividad elegida;
-- un [pulso ambiental breve](../07_validacion/protocolo-01-asociacion-y-comparacion.md), que vuelve a hacer visible esa intención.
+- un [testigo físico situado](../05_propuesta_phygital/README.md), ubicado cerca del comienzo de la actividad elegida (por ejemeplo salir a caminar, el objeto se deja cerca de unas zapatillas)
+- un [pulso ambiental breve](../07_validacion/protocolo-01-asociacion-y-comparacion.md), que vuelve a hacer visible esa intención en el espacio fisico.
 
 La persona sigue teniendo la última palabra: puede continuar con el ocio digital, ignorar la señal, silenciarla, cambiar de idea o iniciar la alternativa. Relevo no bloquea aplicaciones, no entrega puntos, no crea rachas y no registra si la actividad se realizó.
 
-### ¿Por qué alguien querría usarlo?
+### Por qué alguien querría usarlo?
 
-No porque use “demasiado” el teléfono. La situación que nos interesa es más específica: alguien tiene una actividad que sí quiere hacer, sabe cómo empezar, pero durante una sesión digital esa intención deja de orientar el momento.
+No porque use “demasiado” el teléfono. La situación que nos interesa es más específica: alguien tiene una actividad que sí quiere hacer, sabe cómo empezar, pero durante una sesión digital esa intención deja de existir, se consume totalmente por el télefono. ***Documentado en entrevista a usuarios y referentes teóricos.***
 
-Relevo podría ser deseable porque devuelve esa posibilidad sin retar, castigar o decidir por la persona. Pero esto todavía es una hipótesis: debemos comprobar si el testigo situado realmente aporta algo frente a una notificación común.
+**Deseabilidad**? Relevo podría ser deseable porque devuelve esa posibilidad sin retar, castigar o decidir por la persona.
 
 ### ¿Por qué es relevante?
 
-Muchas herramientas de bienestar digital cuentan minutos, bloquean aplicaciones o interrumpen dentro de la pantalla. Eso puede servir cuando alguien quiere limitar una conducta, pero no necesariamente ayuda a recuperar una alternativa propia. Relevo investiga ese espacio intermedio: recordar una intención sin convertirla en obligación.
+**Muchas herramientas de bienestar digital cuentan minutos, bloquean aplicaciones o interrumpen dentro de la pantalla.** Eso puede servir cuando alguien quiere limitar una conducta, pero no necesariamente ayuda a recuperar una alternativa propia. El proyecto investiga ese espacio intermedio: recordar una intención sin convertirla en obligación.
 
 La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionales](../03_usuarios/perfiles-situacionales.md) y el [estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) explican esta definición con más detalle.
 
@@ -50,7 +50,7 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 
 El feedback de la comisión no se pegó literalmente en la memoria. Se convirtió en decisiones, criterios, documentos y pruebas pendientes.
 
-| Lo que nos dijeron | Qué cambiamos | Por qué | Enlace |
+| Feedback | Qué cambios hice | Por qué | Enlace |
 |---|---|---|---|
 | “No se entiende bien qué es el objeto” | Ahora se explica el sistema completo: aplicación, testigo, lugar, condición y pulso. | Una persona debe entender la experiencia antes de entrar en la parte técnica. | [Propuesta phygital](../05_propuesta_phygital/README.md) |
 | “El contexto y el usuario son muy amplios” | Se definieron un usuario principal y un usuario límite. El hogar quedó como contexto inicial de prueba, no como verdad definitiva. | La misma persona puede querer una señal en una situación y no quererla en otra. | [Perfiles](../03_usuarios/perfiles-situacionales.md) · [Recorridos](../03_usuarios/recorridos-situacionales.md) |
@@ -68,8 +68,6 @@ El feedback de la comisión no se pegó literalmente en la memoria. Se convirti�
 Se hicieron [ocho entrevistas semiestructuradas](../01_contexto_y_fuentes/declaracion-procedencia-entrevistas.md), presenciales y habladas, en Santiago los días 11 y 12 de junio de 2026. Las personas observadas tenían entre 19 y 27 años; el criterio de convocatoria era de 18 a 30 años.
 
 El [corpus anonimizado P1–P8](../03_usuarios/corpus-anonimizado.md) se codificó y se transformó en [patrones, tipos, perfiles, recorridos y requisitos](../03_usuarios/README.md). El hallazgo más importante fue que el mismo uso digital puede ser valioso en un momento e inoportuno en otro. Por eso no usamos los minutos de pantalla como medida principal.
-
-No se han hecho nuevas entrevistas después del examen. Lo nuevo de esta etapa es que el análisis existente quedó más ordenado, trazable y conectado con decisiones de diseño.
 
 Además, existe una [encuesta complementaria con 70 participantes](../03_usuarios/encuesta-70-participantes-pendiente.md) que está pendiente de publicarse, revisarse e integrarse al repositorio y a la memoria. Por ahora no se mezcla con P1–P8 ni se usa como evidencia: primero hay que publicar los materiales, revisar su procedencia, consentimiento, anonimización y análisis.
 
@@ -148,13 +146,13 @@ La arquitectura de nombres quedó así:
 - **pulso ambiental:** manifestación física breve;
 - **señal situada:** relación entre pulso, primer paso y lugar.
 
-Se eligió **testigo** en vez de “dispositivo”, “token”, “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
+Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
 El descriptor actual es: **“Sistema phygital para recuperar intenciones personales durante el ocio digital.”** Ver [decisiones de naming](../05_propuesta_phygital/entregables-clave-2026-09-01/naming.md).
 
 ## 8. Decisiones visuales y cromáticas
 
-La dirección conceptual es **Transferencia situada**. La idea visual es mostrar cómo una intención pasa de la aplicación al lugar y luego al pulso, sin hacer creer que la forma final del objeto ya está decidida.
+La dirección conceptual es **Transferencia situada**. La idea visual es mostrar **cómo una intención pasa de la aplicación al lugar** y luego al pulso, sin hacer creer que la forma final del objeto ya está decidida.
 
 - Android usa un **modo oscuro** para mantener continuidad y facilitar la lectura de la aplicación.
 - La memoria y las piezas editoriales usan un **fondo claro y cálido** porque necesitan lectura larga, impresión, citas, tablas e imágenes.
