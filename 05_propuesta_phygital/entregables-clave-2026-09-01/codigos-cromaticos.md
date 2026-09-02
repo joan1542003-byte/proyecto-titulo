@@ -4,7 +4,7 @@
 
 El color organiza funciones; no decora estados. La paleta se sostiene sobre neutros de alto contraste y reserva un único rojo para la señal situada. Así, una aparición cromática excepcional corresponde a un acontecimiento excepcional del sistema.
 
-## Aplicación Android: modo oscuro
+## Aplicación Android: modo oscuro (por defecto)
 
 | Token | HEX | RGB | Función |
 |---|---|---|---|
@@ -17,7 +17,7 @@ El color organiza funciones; no decora estados. La paleta se sostiene sobre neut
 | Borde funcional | `#767A79` | 118, 122, 121 | Controles y límites necesarios |
 | Señal situada | `#D71921` | 215, 25, 33 | Únicamente el nodo de señal situada |
 
-## Publicación editorial: modo claro
+## Editorial (claro)
 
 | Token | HEX | RGB | Función |
 |---|---|---|---|
