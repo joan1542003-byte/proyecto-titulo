@@ -23,6 +23,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 ## Documentos activos
 
+- [Entrega 02-09-2026: pantalla principal y wireframes completos](../00_admin/encargos/encargo-02-09-2026/README.md)
 - [Entregables clave: pantalla principal, mapa completo, naming y color](entregables-clave-2026-09-01/README.md)
 
 - [Archivo editorial de wireframes — versión vigente](wireframes-board-html/README.md)
@@ -42,6 +43,13 @@ La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 q
 ---
 
 ## Registro de cambios
+
+### 2026-09-02 — Entrega fechada de wireframes
+
+- **Cambio:** se enlazó una entrega autónoma con la pantalla 1.1 en alta fidelidad, los nueve marcos principales, los 35 estados de cobertura y el mapa completo.
+- **Versión anterior:** las piezas estaban disponibles en sus carpetas de producción, pero no reunidas bajo la fecha del encargo.
+- **Motivo:** facilitar la entrega y mantener una lectura clara entre dirección visual, ruta evaluable y cobertura complementaria.
+- **Alcance:** organización y desarrollo visual de una pantalla; no implica validación integral de la aplicación.
 
 ### 2026-09-01 — Wireframes HTML sin simulación de dispositivo
 
