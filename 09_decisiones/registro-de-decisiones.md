@@ -418,9 +418,26 @@
 - **Límite:** esta decisión no selecciona una fuente luminosa, no autoriza energización ni convierte una cotización en costo de producción. El valor específico del objeto y de la señal continúa sujeto a validación.
 - **Documentos asociados:** [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md), [lista de materiales y compra escalonada](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md), [esquema de B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md), [esquema de B2](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
 
+## D-044 — Comunicar desde la situación y revelar el sistema por capas
+
+- **Fecha:** 2026-09-04
+- **Estado:** vigente como criterio de comunicación; comprensión pendiente de prueba
+- **Decisión:** toda explicación inicial de Relevo comenzará por una situación reconocible y seguirá el orden situación, tensión, propuesta, secuencia, autonomía, diferencia y estado de validación. Los términos `phygital`, `testigo`, `condición` y `pulso` aparecerán después de su traducción cotidiana. Los ejemplos se identificarán como hipotéticos cuando no procedan de una prueba.
+- **Fundamento:** el contenido vigente define el proyecto con precisión, pero presenta varias categorías internas antes de que una audiencia nueva pueda imaginar el uso. El diseño de productos exige comunicar la necesidad, la experiencia completa, los roles del sistema y la hipótesis comprobable, no solo sus componentes.
+- **Consecuencia:** el README adopta una entrada basada en una escena; una guía transversal gobierna presentaciones, demostraciones, paneles, conversaciones y casos de estudio. La formulación académica y el descriptor técnico permanecen vigentes.
+- **Límite:** esta decisión mejora la arquitectura del mensaje, pero no demuestra que se comprenda. Las versiones breves y visuales deberán someterse a una prueba formativa y revisarse si se interpretan como bloqueo, vigilancia, productividad obligatoria o eficacia validada.
+- **Documentos asociados:** [Guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md), [README principal](../README.md), [resumen vigente](../08_memoria/resumen-vigente-proyecto.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-04 — D-044
+
+- **Cambio:** se registró una arquitectura transversal para explicar Relevo desde una situación antes de introducir la terminología del sistema.
+- **Versión anterior:** la comunicación dependía de síntesis correctas pero distribuidas y no existía un orden común para audiencias, formatos y ejemplos.
+- **Motivo:** hacer el proyecto comprensible sin simplificar sus límites ni convertir hipótesis en resultados.
+- **Resultado:** existe una narrativa central y una guía de uso; su comprensión continúa pendiente de prueba.
 
 ### 2026-08-30 — D-043 actualizada con esquema B2
 

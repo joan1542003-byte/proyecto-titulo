@@ -5,13 +5,14 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 ## Orden de lectura
 
 1. [README principal](../README.md): síntesis del proyecto, estado actual y arquitectura general.
-2. [Directrices de trabajo](directrices-de-trabajo.md): reglas para investigar, escribir, decidir y registrar cambios.
-3. [Auditoría de organización](auditoria-organizacion-2026-09-02.md): resultado de la revisión estructural y criterio de conservación.
-4. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
-5. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
-6. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
-7. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
-8. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
+2. [Guía de comunicación](guia-comunicacion-relevo.md): forma de explicar Relevo por audiencias, tiempos, ejemplos y niveles de certeza.
+3. [Directrices de trabajo](directrices-de-trabajo.md): reglas para investigar, escribir, decidir y registrar cambios.
+4. [Auditoría de organización](auditoria-organizacion-2026-09-02.md): resultado de la revisión estructural y criterio de conservación.
+5. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
+6. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
+7. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
+8. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
+9. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
 
 ## Mapa de carpetas
 
@@ -35,6 +36,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 
 - La memoria que debe orientar la redacción es `08_memoria/memoria-vigente-v4.md`.
 - La explicación breve que debe acompañar cada actualización es `08_memoria/resumen-vigente-proyecto.md`.
+- La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La dirección visual se consulta desde `10_recursos_visuales/08_direccion_visual_relevo/README.md` y sus carpetas de sistema.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde `99_archivo` o desde la carpeta histórica indicada por cada README.
@@ -62,6 +64,13 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-04 — Ruta de comunicación incorporada
+
+- **Qué cambió:** la guía de comunicación se incorporó al orden de lectura y a las fuentes de referencia actuales.
+- **Cómo estaba antes:** el índice dirigía a la formulación y a la memoria, pero no a un criterio transversal para explicar el proyecto a distintas audiencias.
+- **Por qué se decidió:** separar la precisión académica del primer nivel de comunicación sin permitir que ambas versiones se contradigan.
+- **Alcance:** no cambia la jerarquía de evidencia ni reemplaza el resumen vigente o la memoria.
 
 ### 2026-09-02 — Creación del índice operativo
 

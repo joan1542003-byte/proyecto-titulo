@@ -20,15 +20,19 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 
 ## Síntesis vigente
 
-Relevo es un proyecto phygital que busca recuperar una intención personal cuando una sesión de ocio digital continúa y esa alternativa deja de orientar el siguiente paso. La propuesta combina una aplicación Android con un objeto situado junto al comienzo de una actividad elegida.
+A veces una persona sigue viendo contenido en el teléfono aunque antes quería leer, caminar, dibujar o comenzar otra actividad. No necesariamente olvidó esa intención: mientras la sesión continúa, esa posibilidad puede dejar de participar en la siguiente decisión.
 
-El proyecto no pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento. Su valor propuesto depende de apoyar una decisión autónoma mediante una señal breve, configurable y no punitiva.
+Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y su primer paso en una aplicación Android, y sitúa un objeto cerca del lugar donde puede comenzar. Si se cumple una condición configurada, el objeto emite una señal breve. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea.
+
+En términos de diseño, Relevo es un sistema phygital: la aplicación organiza, el objeto señala, el lugar aporta significado y la persona conserva la decisión. No pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento.
 
 Esta formulación continúa abierta a revisión. El producto final deberá responder a la investigación y a la evidencia, no antecederlas.
 
 La versión breve y mantenida después de cada actualización está en el [resumen vigente de Relevo](08_memoria/resumen-vigente-proyecto.md).
 
 Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pase, el feedback aplicado, las investigaciones, decisiones, propuesta de valor y pendientes, consultar el [resumen general del proyecto](00_gobernanza/resumen-general-del-proyecto.md).
+
+Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
 ## Estado actual
 
@@ -106,6 +110,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-04 — Entrada del proyecto explicada desde una situación
+
+- **Cambio:** la síntesis comienza con una escena cotidiana, presenta después el funcionamiento y enlaza la guía transversal de comunicación.
+- **Versión anterior:** la primera explicación abría con la categoría `proyecto phygital` y una formulación abstracta antes de mostrar una situación de uso.
+- **Motivo:** permitir que una persona nueva comprenda primero el problema, el aporte y la decisión abierta, y conozca después la categoría técnica.
+- **Alcance:** no se modificaron la formulación académica, el producto ni su estado de validación.
 
 ### 2026-09-02 — Encuesta complementaria registrada
 

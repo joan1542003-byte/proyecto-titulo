@@ -14,6 +14,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 ## Documentos
 
 - `directrices-de-trabajo.md`: mandato integral de investigación, desarrollo, escritura, trazabilidad y colaboración.
+- `guia-comunicacion-relevo.md`: arquitectura de mensaje, explicaciones por duración, ejemplos de uso, preguntas frecuentes y control de afirmaciones.
 - `hoja-de-ruta.md`: secuencia de trabajo y condiciones para avanzar.
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
@@ -38,6 +39,13 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-04 — Guía transversal de comunicación
+
+- **Cambio:** se agregó `guia-comunicacion-relevo.md` al conjunto de documentos de gobernanza.
+- **Versión anterior:** la explicación del proyecto estaba distribuida entre el README, la memoria, la propuesta y los documentos visuales.
+- **Motivo:** mantener una narrativa coherente entre presentaciones, demostraciones, paneles y conversaciones sin alterar la formulación académica.
+- **Alcance:** la guía organiza el mensaje; su comprensión todavía debe probarse con personas.
 
 ### 2026-09-02 — Creación del índice operativo
 
