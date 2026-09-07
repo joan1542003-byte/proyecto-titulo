@@ -2,6 +2,8 @@
 
 **Fecha de planificación:** 2 de septiembre de 2026
 
+**Última revisión de estado:** 7 de septiembre de 2026
+
 **Cierre total interno:** 15 de noviembre de 2026
 
 **Entrega oficial de memoria:** 2 de diciembre de 2026.
@@ -16,7 +18,9 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 ## Etapa actual
 
-Relevo se encuentra en una etapa de **revisión y ordenamiento de wireframes antes del desarrollo funcional**. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen wireframes de media fidelidad, un sistema visual v4 y una memoria estructuralmente avanzada. El siguiente paso no es sumar funciones: es revisar lo que ya está diseñado, fijar un alcance mínimo, ordenar la construcción de la app y recién después probar con usuarios.
+Relevo se encuentra en una etapa de **corrección y cierre del wireframe v1 antes del desarrollo funcional**. La cobertura técnica del tablero y sus 44 exportaciones fue verificada, y el recorrido mínimo ya está separado de los estados complementarios en el [alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md). La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen un sistema visual v4 y una memoria estructuralmente avanzada.
+
+El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. Sin embargo, la tarea técnica paralela no está cerrada: faltan el inventario y la revisión electrónica de B1 y B2. Esto debe mantenerse visible porque condiciona la construcción de una señal segura, aunque no impide congelar el wireframe.
 
 Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La prioridad es convertir las hipótesis más importantes en prototipos, pruebas y decisiones.
 
@@ -31,7 +35,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Memoria | Avanzada, no final | Estructura v4, extensión, APA 7, trazabilidad y anexos preparados. | Incorporar decisiones, resultados, límites, factibilidad y evidencia final. |
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
-| Prototipo Android | Inicial | Plataforma justificada, wireframes y referencias visuales. | Revisar wireframes, definir el MVP, construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
+| Prototipo Android | Inicial | Plataforma justificada, wireframes verificados, recorrido mínimo y backlog definidos. | Congelar el wireframe v1, construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
 | Testigo físico | Alternativas preparadas para decisión | Función, requisitos, activación cableada, comparación B1/B2 y ambos esquemas revisables documentados. | Inventariar, revisar ambas variantes, comparar luz y construir solo la elegida. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Revisar wireframes y prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
@@ -290,6 +294,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Revisión del primer hito
+
+- **Cambio:** se registró el cierre documental tardío del hito del 5 de septiembre, se enlazó el alcance del primer prototipo y se mantuvo visible la deuda técnica de inventario y revisión electrónica.
+- **Versión anterior:** el plan situaba al proyecto antes de definir el recorrido mínimo y no diferenciaba ese avance del trabajo físico pendiente.
+- **Motivo:** conservar una ruta crítica basada en el estado comprobado, sin declarar cerrado un trabajo técnico que no se ha ejecutado.
+- **Alcance:** se mantienen las fechas y dependencias del calendario original.
 
 ### 2026-09-02 — Secuencia de desarrollo reordenada
 

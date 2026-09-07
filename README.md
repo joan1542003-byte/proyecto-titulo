@@ -40,7 +40,7 @@ Para explicarlo a público general, comisiones, posibles usuarios o equipos de d
 
 El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La activación cableada de fase A se mantiene, pero la electrónica que producirá la luz se encuentra en una comparación previa a la compra. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) contrasta dos variantes de 5 V con una XIAO ESP32-C3: B1 utiliza un anillo direccionable y B2 una fuente cálida no direccionable. Ambas disponen de esquemas revisables y la [lista de materiales y compra por puertas](06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) muestra que ninguna ventaja económica está demostrada; el montaje de 12 V permanece como respaldo si las fuentes pequeñas no alcanzan la perceptibilidad requerida. Antes de comprar o energizar faltan el inventario y la revisión electrónica competente. Después corresponde comparar la luz, completar solo la variante elegida y ejecutar el ensayo técnico antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
 
-La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) ya cuenta con una base conceptual seleccionada: `Transferencia situada`. El sistema dispone de [aplicaciones exploratorias](10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/README.md) para objeto, memoria y Android, gobernadas por una matriz común. Permanecen abiertos el logotipo final, la tipografía, la forma industrial y los parámetros de la señal física.
+La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) ya cuenta con una base conceptual seleccionada: `Transferencia situada`. El sistema utiliza IBM Plex Sans y Mono, una paleta de grafito, blanco, grises y rojo de señal, y una gramática de puntos compartida por Android, la memoria y las piezas de comunicación. Permanecen abiertos el logotipo definitivo, la aplicación editorial final, la forma industrial y los parámetros perceptivos de la señal física.
 
 La base metodológica del corpus quedó consolidada:
 
@@ -54,11 +54,11 @@ La base metodológica del corpus quedó consolidada:
 
 Existe además una [encuesta complementaria con 70 participantes](03_usuarios/encuesta-70-participantes-pendiente.md), pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria. No forma parte todavía de la evidencia vigente ni del corpus P1–P8.
 
-El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Como el trabajo vigente no exige visualidad, los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
+El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
 La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md). La [v3](08_memoria/memoria-vigente-v3.md), las auditorías anteriores y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
 
-El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla sus hitos. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre. La memoria se entrega oficialmente el 2 de diciembre y el examen se realiza entre el 14 y el 18; el periodo intermedio se reserva para estudiar, ensayar y resolver correcciones menores.
+El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. Entre el 6 y el 12 de septiembre corresponde congelar el wireframe v1; el [alcance del primer prototipo y su backlog](05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) evita confundir los 35 estados documentados con lo que debe construirse primero. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla los hitos y la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la puerta técnica todavía pendiente. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre. La memoria se entrega oficialmente el 2 de diciembre y el examen se realiza entre el 14 y el 18; el periodo intermedio se reserva para estudiar, ensayar y resolver correcciones menores.
 
 ## Inicio para nuevas conversaciones
 
@@ -110,6 +110,13 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Estado de prototipado y sistema visual
+
+- **Cambio:** se actualizó la etapa vigente, se enlazó el alcance del primer prototipo y se distinguieron las decisiones visuales ya seleccionadas de las que siguen abiertas.
+- **Versión anterior:** el README afirmaba que el trabajo no exigía visualidad, mantenía la tipografía como pendiente y no separaba los 35 estados del alcance inicial de construcción.
+- **Motivo:** ofrecer una entrada coherente con los entregables y pendientes reales del repositorio.
+- **Alcance:** no acredita validación ni resuelve la revisión electrónica pendiente.
 
 ### 2026-09-04 — Entrada del proyecto explicada desde una situación
 

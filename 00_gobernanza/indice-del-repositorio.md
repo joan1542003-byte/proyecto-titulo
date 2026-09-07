@@ -7,12 +7,13 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 1. [README principal](../README.md): síntesis del proyecto, estado actual y arquitectura general.
 2. [Guía de comunicación](guia-comunicacion-relevo.md): forma de explicar Relevo por audiencias, tiempos, ejemplos y niveles de certeza.
 3. [Directrices de trabajo](directrices-de-trabajo.md): reglas para investigar, escribir, decidir y registrar cambios.
-4. [Auditoría de organización](auditoria-organizacion-2026-09-02.md): resultado de la revisión estructural y criterio de conservación.
-5. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
-6. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
-7. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
-8. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
-9. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
+4. [Auditoría integral del 7 de septiembre](auditoria-integridad-2026-09-07.md): comprobaciones, correcciones, fuentes vigentes y pendientes reales.
+5. [Auditoría de organización](auditoria-organizacion-2026-09-02.md): revisión estructural anterior y criterio de conservación.
+6. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
+7. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
+8. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
+9. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
+10. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
 
 ## Mapa de carpetas
 
@@ -64,6 +65,13 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Auditoría integral incorporada
+
+- **Qué cambió:** se añadió la auditoría transversal más reciente al orden de lectura.
+- **Cómo estaba antes:** el índice dirigía únicamente a la auditoría estructural del 2 de septiembre.
+- **Por qué se decidió:** permitir que una revisión nueva encuentre primero el estado comprobado después de sincronizar wireframes, maqueta editorial y video.
+- **Alcance:** la auditoría anterior se conserva como historial y criterio de organización.
 
 ### 2026-09-04 — Ruta de comunicación incorporada
 

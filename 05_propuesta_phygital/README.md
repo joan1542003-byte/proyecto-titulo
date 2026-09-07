@@ -33,6 +33,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
 - [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md)
+- [Alcance del primer prototipo y backlog](alcance-primer-prototipo-y-backlog-2026-09-07.md)
 
 ## Material histórico y de apoyo
 
@@ -40,11 +41,18 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 ## Estado
 
-La formulación vigente es una hipótesis. El ciclo estructural del Encargo 17 quedó representado en nueve marcos evaluables y complementado por un anexo de 35 estados: formular y preparar; vincular, situar, probar y armar; esperar, recibir el pulso, cerrar o recuperar. La condición, la señal y la forma física continúan sujetas a prototipado.
+La formulación vigente es una hipótesis. El ciclo estructural quedó representado en nueve marcos evaluables y complementado por un anexo de 35 estados: formular y preparar; vincular, situar, probar y armar; esperar, recibir el pulso, cerrar o recuperar. La cobertura y las 44 exportaciones fueron verificadas el 7 de septiembre. El trabajo actual consiste en congelar el recorrido mínimo que guiará el primer prototipo; la condición, la señal y la forma física continúan sujetas a prototipado.
 
 ---
 
 ## Registro de cambios
+
+### 2026-09-07 — Alcance del primer prototipo
+
+- **Cambio:** se enlazó el alcance de construcción inicial y se actualizó el estado de los wireframes después de comprobar su cobertura y funcionamiento.
+- **Versión anterior:** el índice describía nueve marcos y 35 estados, pero no distinguía qué debía construirse primero.
+- **Motivo:** impedir que la cobertura exhaustiva se convierta en un prototipo sobredimensionado y ordenar el paso desde wireframes hacia desarrollo.
+- **Alcance:** no cierra la condición, la señal, la electrónica ni la validación con usuarios.
 
 ### 2026-09-02 — Entrega fechada de wireframes
 

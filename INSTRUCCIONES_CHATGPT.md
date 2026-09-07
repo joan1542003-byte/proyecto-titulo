@@ -91,7 +91,7 @@ El consentimiento fija eliminación de fichas a más tardar el 13 de enero de 20
 - No uses expresiones como “según el taller” o “en el encargo” dentro del cuerpo definitivo de la memoria. Esa información puede conservarse en el archivo histórico o en la trazabilidad.
 - No mezcles observaciones docentes con evidencia empírica: el feedback orienta tareas y decisiones, pero no demuestra hechos.
 - Mantén un tono académico natural; no ocultes incertidumbre ni simules conclusiones.
-- La entrega actual no exige visualidad. Verifica el estado antes de iniciar trabajo visual.
+- La visualidad ya tiene una dirección documentada, pero no reemplaza la investigación ni la validación. Antes de producir nuevas piezas, consulta `10_recursos_visuales/README.md`, distingue el sistema vigente del archivo histórico y verifica qué soporte necesita realmente la tarea.
 
 ## Uso de GitHub
 
@@ -138,6 +138,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Consulta obligatoria del sistema visual vigente
+
+- **Cambio:** se reemplazó la instrucción desactualizada que afirmaba que la entrega no exigía visualidad por una regla de consulta y selección del sistema vigente.
+- **Versión anterior:** una conversación nueva podía omitir los recursos visuales producidos o tratar una exploración histórica como identidad activa.
+- **Motivo:** alinear las instrucciones con la etapa actual sin permitir que la producción visual sustituya la investigación o la validación.
+- **Alcance:** no obliga a producir visualidad cuando la tarea es exclusivamente académica o técnica.
 
 ### 2026-08-30 — Contexto B2 cerrado documentalmente
 

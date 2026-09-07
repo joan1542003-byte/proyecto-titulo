@@ -148,22 +148,24 @@ La implementación debe diferenciar, al menos, los estados principales de la mem
 
 ## 4. Checklist verificable de la pauta
 
-- [ ] Se presentan exactamente **tres interacciones principales** derivadas del flujo: formular/preparar; situar/probar/armar; recibir/cerrar.
-- [ ] Cada interacción contiene **tres marcos como máximo** y la síntesis evaluable suma exactamente **nueve marcos**.
-- [ ] Los nueve marcos conservan los nombres y funciones definidos en la sección 1.
-- [ ] Cada marco identifica componentes mediante etiquetas simples y legibles.
-- [ ] Cada interacción incluye una leyenda de **tres a cinco líneas**.
-- [ ] En cada interacción se distinguen objetivo, información crítica, acción esperada, jerarquía y tratamiento de errores.
-- [ ] Se conserva un recorrido conectado desde la formulación hasta el cierre o la recuperación.
-- [ ] La representación mantiene fidelidad baja o media y no se presenta como diseño visual final.
-- [ ] La versión HTML permite revisar cada marco de forma independiente sin duplicarlo como una nueva interacción.
-- [ ] La descarga individual de un marco conserva su número, nombre, interacción y leyenda correspondiente.
-- [ ] El marco 3.2 representa el pulso físico situado dentro del recorrido phygital y no una interfaz instalada en el testigo.
-- [ ] El objeto no muestra texto, menú, historial, instrucciones ni una respuesta visual de consulta.
-- [ ] El anexo 01–35 está separado de la síntesis evaluable y no se cuenta como 35 pantallas exigidas.
-- [ ] Las condiciones, señales, materiales, gestos, permisos y umbrales se presentan como decisiones provisionales cuando todavía no han sido validados.
-- [ ] Ignorar, continuar, silenciar, cambiar de idea, desarmar y cerrar aparecen como salidas legítimas; no se representan como incumplimiento.
-- [ ] No existe rearme automático, registro de cumplimiento, puntaje, racha, bloqueo ni sanción.
+- [x] Se presentan exactamente **tres interacciones principales** derivadas del flujo: formular/preparar; situar/probar/armar; recibir/cerrar.
+- [x] Cada interacción contiene **tres marcos como máximo** y la síntesis evaluable suma exactamente **nueve marcos**.
+- [x] Los nueve marcos conservan los nombres y funciones definidos en la sección 1.
+- [x] Cada marco identifica componentes mediante etiquetas simples y legibles.
+- [x] Cada interacción incluye una leyenda de **tres a cinco líneas**.
+- [x] En cada interacción se distinguen objetivo, información crítica, acción esperada, jerarquía y tratamiento de errores.
+- [x] Se conserva un recorrido conectado desde la formulación hasta el cierre o la recuperación.
+- [x] La representación mantiene fidelidad baja o media y no se presenta como diseño visual final.
+- [x] La versión HTML permite revisar cada marco de forma independiente sin duplicarlo como una nueva interacción.
+- [x] La descarga individual de un marco conserva su número, nombre, interacción y leyenda correspondiente.
+- [x] El marco 3.2 representa el pulso físico situado dentro del recorrido phygital y no una interfaz instalada en el testigo.
+- [x] El objeto no muestra texto, menú, historial, instrucciones ni una respuesta visual de consulta.
+- [x] El anexo 01–35 está separado de la síntesis evaluable y no se cuenta como 35 pantallas exigidas.
+- [x] Las condiciones, señales, materiales, gestos, permisos y umbrales se presentan como decisiones provisionales cuando todavía no han sido validados.
+- [x] Ignorar, continuar, silenciar, cambiar de idea, desarmar y cerrar aparecen como salidas legítimas; no se representan como incumplimiento.
+- [x] No existe rearme automático, registro de cumplimiento, puntaje, racha, bloqueo ni sanción.
+
+**Verificación:** 7 de septiembre de 2026. El control automatizado confirmó tres interacciones, nueve marcos evaluables, 44 exportaciones de 824 × 1830 px, navegación funcional, lienzo independiente de 412 × 915 px, ausencia de simulación de teléfono y cero errores de consola. La correspondencia semántica se contrastó con las secciones 1–3 de este documento.
 
 ## 5. Contradicciones a evitar
 
@@ -199,3 +201,10 @@ La implementación debe diferenciar, al menos, los estados principales de la mem
 - **Cambio:** se actualizó la ruta de las referencias visuales 4K después de normalizar el nombre de su carpeta.
 - **Cómo estaba antes:** la ruta incluía una etiqueta de plataforma que podía confundirse con la decisión técnica del proyecto.
 - **Motivo:** conservar la navegación funcional y distinguir la referencia visual del sistema Android documentado, sin modificar la cobertura HTML.
+
+### 2026-09-07 — Cierre de verificación
+
+- **Cambio:** se marcó como comprobada la cobertura exigida y se registraron las pruebas técnicas utilizadas.
+- **Cómo estaba antes:** el checklist permanecía vacío aunque los marcos, estados y exportaciones ya estaban implementados.
+- **Motivo:** evitar que un registro desactualizado hiciera parecer incompleta una entrega verificada.
+- **Alcance:** el cierre acredita cobertura documental y funcionamiento del tablero; no equivale a validación con usuarios ni convierte el wireframe en interfaz final.

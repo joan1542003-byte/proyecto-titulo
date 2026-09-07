@@ -38,7 +38,7 @@ La versión actual propone:
 - una aplicación Android para configurar una intención, su primer paso y una condición de activación;
 - un objeto de señal situado cerca del primer paso de la actividad elegida;
 - un pulso ambiental breve cuyo canal sensorial deberá definirse mediante pruebas;
-- procesamiento local en Android y comunicación con el objeto mediante Bluetooth de baja energía;
+- una arquitectura objetivo con procesamiento local en Android y comunicación mediante Bluetooth de baja energía, cuya integración todavía debe construirse y comprobarse;
 - ausencia de puntajes, rachas, recompensas o registros de cumplimiento;
 - una decisión libre después de la señal.
 
@@ -77,6 +77,13 @@ Relevo no es:
 ---
 
 ## Registro de cambios
+
+### 2026-09-07 — Estado de la arquitectura objetivo
+
+- **Cambio:** se precisó que el procesamiento local y Bluetooth de baja energía describen la arquitectura prevista y todavía deben implementarse y comprobarse.
+- **Versión anterior:** la enumeración podía leerse como una capacidad ya construida.
+- **Motivo:** separar con claridad la propuesta técnica de los resultados disponibles.
+- **Alcance:** Android y la integración phygital continúan como dirección del prototipo.
 
 ### 2026-08-30 — Sincronización con la memoria v4
 

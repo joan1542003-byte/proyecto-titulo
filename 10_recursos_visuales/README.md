@@ -1,6 +1,6 @@
 # Sistema visual de Relevo
 
-## Estado vigente — 2026-09-02
+## Estado vigente — 2026-09-07
 
 La dirección vigente se documenta en `08_direccion_visual_relevo/sistema-v4` y se amplía en `11_exploracion_sistema_visual_2026-08-31`. Se organiza alrededor de grafito, blanco cálido, grises y rojo de señal; utiliza IBM Plex Sans para lectura, IBM Plex Mono para datos breves y una gramática de puntos que representa origen, vínculo y señal situada.
 
@@ -12,14 +12,15 @@ Las paletas azules, coral, salvia, amarilla y violeta que aparecen más abajo pe
 
 Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje visual para exploración, memoria, presentación y prototipado. No fija por sí sola la forma definitiva del testigo, el canal de señal, la materialidad ni la identidad final del producto: esas decisiones siguen abiertas y deben contrastarse con las pruebas del proyecto.
 
-## Línea visual
+## Sistema vigente
 
-- **Base:** azul cobalto profundo, marfil cálido y tinta negra.
-- **Extensiones:** coral apagado, verde salvia, amarillo señal y violeta nocturno.
-- **Tratamiento:** grabado/serigrafía de dos o tres tintas, grano de papel, halftone, bordes ligeramente imperfectos, grandes campos de vacío y líneas de pulso.
-- **Motivos:** umbral, primer paso, lugar situado, halo, órbita, camino, estrella mínima, luna, objeto-testigo y figura humana anónima.
-- **Composición:** una acción o relación por imagen; centro de gravedad claro; espacio negativo utilizable para títulos o diagramas.
-- **Tono:** tranquilo, sugerente, autónomo y no punitivo.
+- **Color digital:** grafito `#111314`, superficie `#1B1D1E`, elevación `#242728`, blanco `#F1F1F1`, gris secundario `#B6B8B7`, contorno `#3A3D3E`, gris inactivo `#767A79` y rojo de señal `#D71921`.
+- **Color editorial:** papel cálido `#F4F2ED`, tinta `#181A1B`, gris `#616566`, regla `#C9CBC8` y rojo de señal `#D71921`.
+- **Tipografía:** IBM Plex Sans para lectura y jerarquía; IBM Plex Mono para datos breves, folios, estados y rotulación técnica.
+- **Gramática:** matrices de puntos, reducción gradual y un nodo final expresan el paso desde una intención disponible hacia una señal situada. No deben repetirse como adorno en todas las páginas.
+- **Composición:** retícula consistente, jerarquía clara, espacio negativo y una relación principal por pieza.
+- **Tono:** preciso, tranquilo, autónomo y no punitivo.
+- **Uso del rojo:** una señal o decisión relevante. No es un color decorativo ni se usa para competir con controles principales.
 
 ## No usar como significado
 
@@ -46,9 +47,14 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `11_exploracion_sistema_visual_2026-08-31` | Sesenta piezas vigentes en seis familias de diez, más hojas de contacto, auditoría y descartes documentados. |
 | `12_expansion_sistema_visual_2026-09-01` | Expansión no física con 38 piezas producidas: ocho estados Android, diez editoriales, diez carteles y diez módulos transparentes. |
 | `13_sistema_editorial_campo_evidencia_2026-09-01` | Sistema editorial de la memoria: retícula A3 horizontal, pruebas con texto real, figuras, síntesis y descartes documentados. |
-| `14_memoria_editorial_completa_2026-09-01` | Maqueta integral reproducible de la memoria vigente y sus páginas PNG; conserva la fuente y excluye dependencias instaladas. |
+| `14_memoria_editorial_completa_2026-09-01` | Maqueta integral reproducible de la memoria vigente y sus 86 páginas PNG; conserva la fuente y excluye dependencias instaladas. |
+| `15_video_lanzamiento_relevo_2026-09-04` | Video explicativo 4K, guion, locución, subtítulos, láminas y fuente reproducible. Es una pieza de comunicación, no evidencia de validación. |
 
-## Paleta inicial
+## Dirección histórica inicial — no vigente
+
+Las siguientes decisiones pertenecen a la primera exploración visual. Se conservan para mostrar el proceso, pero no deben utilizarse para producir nuevas aplicaciones ni para describir el sistema actual.
+
+### Paleta histórica
 
 | Nombre | HEX | Función |
 |---|---|---|
@@ -126,3 +132,10 @@ La segunda exploración incorpora una gramática de puntos redondos, barras, ór
 - **Versión anterior:** el índice terminaba en la expansión no física y no permitía localizar las páginas A3 exportadas ni su renderer.
 - **Motivo:** conservar la maqueta como proceso visual trazable y separar su fuente reproducible de las colecciones exploratorias.
 - **Alcance:** las páginas PNG requieren revisión editorial a tamaño real; no sustituyen la memoria Markdown ni constituyen arte final de impresión.
+
+### 2026-09-07 — Separación entre sistema vigente y exploración histórica
+
+- **Cambio:** se reemplazó la antigua descripción principal por los colores, tipografías y reglas vigentes; la paleta cobalto, coral, salvia, amarilla y violeta quedó rotulada como histórica. También se incorporaron la maqueta de 86 páginas y el video 4K al mapa.
+- **Versión anterior:** el encabezado identificaba correctamente el sistema vigente, pero las secciones siguientes volvían a presentar la primera exploración cromática como dirección activa y el índice terminaba en la carpeta 14.
+- **Motivo:** evitar dos sistemas visuales simultáneos y permitir localizar todos los entregables actuales desde un solo índice.
+- **Alcance:** la corrección organiza la vigencia documental; no elimina exploraciones ni convierte las aplicaciones rasterizadas en artes finales.

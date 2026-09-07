@@ -1,7 +1,7 @@
 ---
-id: ESTADO-RELEVO-2026-09-02
+id: ESTADO-RELEVO-2026-09-07
 titulo: "Resumen y estado del proyecto — Relevo"
-fecha_de_corte: 2026-09-02
+fecha_de_corte: 2026-09-07
 estado: "síntesis del estado de proyecto"
 ---
 
@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han hecho y qué falta probar.
 
-La fecha de corte es el 2 de septiembre de 2026.
+La fecha de corte es el 7 de septiembre de 2026.
 
 ## 1. El objetivo del proyecto.
 
@@ -46,7 +46,7 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 | Después del feedback | Se definieron aplicación, testigo, primer paso, lugar, señal, usuario principal y usuario límite. | El problema dejó de ser “usar mucho el celular” y pasó a ser una intención alternativa que pierde presencia. | [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
 | Encargo 16 y Encargo 17 | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño. Después se construyeron nueve wireframes y 35 estados complementarios. | Se hicieron visibles los estados normales, los errores, las salidas voluntarias y la relación entre app y objeto. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Cobertura de estados](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
 | Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
-| Estado actual — 2 de septiembre | Hay una propuesta definida, wireframes, dirección visual, costos preliminares, alternativas técnicas y protocolo. | El proyecto está pasando de estar bien documentado a tener que demostrar que funciona. | [Hoja de ruta](hoja-de-ruta.md) |
+| Estado actual — 7 de septiembre | Los wireframes y sus exportaciones están verificados; existe un alcance inicial con backlog y la dirección visual cuenta con aplicaciones editoriales y audiovisuales. | El proyecto está cerrando el wireframe v1 antes de construir el prototipo. La revisión electrónica, el inventario y la validación continúan pendientes. | [Alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) · [Hoja de ruta](hoja-de-ruta.md) |
 
 ## 3. Qué feedback aplicamos
 
@@ -254,6 +254,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Actualización del estado operativo
+
+- **Cambio:** se actualizó la fecha de corte y el proyecto pasó de una revisión general de wireframes al cierre del wireframe v1, con alcance inicial y backlog documentados.
+- **Versión anterior:** el estado permanecía fechado el 2 de septiembre y no registraba la verificación de 44 exportaciones ni la deuda técnica paralela.
+- **Motivo:** permitir que una lectura ejecutiva distinga los avances comprobados de la revisión electrónica y la validación todavía pendientes.
+- **Alcance:** no modifica la formulación de Relevo ni añade resultados empíricos.
 
 ### 2026-09-02 — Calendario de cierre reordenado
 

@@ -1,8 +1,10 @@
 # Memoria editorial completa de Relevo
 
-**Estado:** primera maqueta integral reproducible, exportada el 1 de septiembre de 2026.
-**Fuente textual:** `08_memoria/memoria-vigente-v4.md` en la versión disponible al momento de la exportación.
-**Formato:** A3 horizontal, una página por archivo PNG.
+**Estado:** maqueta integral reproducible, sincronizada el 7 de septiembre de 2026.
+
+**Fuente textual:** `08_memoria/memoria-vigente-v4.md` en la versión disponible al 7 de septiembre.
+
+**Formato:** A3 horizontal, 86 páginas y un archivo PNG por página.
 
 ## Propósito
 
@@ -24,9 +26,9 @@ Esta carpeta contiene el sistema utilizado para trasladar la memoria vigente a p
 - el rojo no se utiliza como adorno editorial;
 - las imágenes son pruebas de diagramación y no reemplazan el archivo editable final.
 
-## Limitaciones de esta versión
+## Revisión pendiente
 
-La paginación debe revisarse visualmente. En especial, es necesario comprobar tablas extensas, listas, referencias, viudas, huérfanas, equilibrio de columnas y tamaño real de impresión. La memoria vigente recibió cambios después de esta exportación, por lo que las 70 páginas deben volver a construirse cuando el texto académico se congele. Los diagramas y figuras definitivos se incorporarán después de esta auditoría, no antes.
+La fuente HTML, el manifiesto y las 86 páginas PNG corresponden entre sí. La paginación todavía debe revisarse a tamaño real para comprobar tablas extensas, listas, referencias, viudas, huérfanas, equilibrio de columnas y legibilidad de impresión. Los diagramas y figuras definitivos deben incorporarse después de esa revisión. Cada cambio posterior de la memoria obliga a reconstruir y volver a exportar esta carpeta.
 
 ---
 
@@ -44,3 +46,10 @@ La paginación debe revisarse visualmente. En especial, es necesario comprobar t
 - **Cambio:** se aclaró que las páginas PNG corresponden a una captura de la memoria disponible el 1 de septiembre.
 - **Versión anterior:** el README indicaba la memoria v4 como fuente, pero no advertía que el texto había recibido modificaciones posteriores.
 - **Motivo:** evitar que una exportación visual anterior se confunda con la paginación final de la memoria actual.
+
+### 2026-09-07 — Sincronización de fuente y exportaciones
+
+- **Cambio:** se reconstruyeron el HTML, el manifiesto y las páginas PNG desde la memoria vigente; la publicación pasó de 70 a 86 páginas.
+- **Versión anterior:** la fuente generaba 86 páginas, pero la carpeta pública conservaba 70 exportaciones anteriores y el README advertía la diferencia.
+- **Motivo:** asegurar que todos los formatos publicados correspondan a la misma fuente textual.
+- **Alcance:** sincronización técnica y editorial; todavía falta la revisión visual a tamaño real y no constituye arte final de impresión.

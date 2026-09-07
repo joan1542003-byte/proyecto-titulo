@@ -1,6 +1,6 @@
 # Resumen vigente de Relevo
 
-**Actualizado:** 31 de agosto de 2026.
+**Actualizado:** 7 de septiembre de 2026.
 
 ## Qué es
 
@@ -24,6 +24,8 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
+Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento, exportación y dimensiones fueron comprobados el 7 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. La etapa actual es congelar esa versión antes de construir la navegación Android.
+
 El control editorial del 31 de agosto registró 19.809 palabras en el archivo y 16.113 en los capítulos 1–13, antes de esta nota de actualización. La memoria mantiene los catorce títulos y el marco de extensión definido; el conteo deberá volver a comprobarse cuando se integre la encuesta. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos definitivos y el aporte del objeto frente a una notificación.
 
 La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
@@ -43,6 +45,8 @@ No se han comprado componentes, compilado el firmware, construido el montaje ni 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-09-07 — Paso a prototipado.** Antes, el resumen describía la arquitectura de interacción sin precisar qué parte debía construirse primero. Ahora registra la verificación de los wireframes y remite a un alcance inicial con backlog. No se añadieron resultados de validación ni se cerraron la condición, la señal o la integración técnica.
 
 **2026-09-02 — Encuesta complementaria registrada.** Se añadió una nota sobre una encuesta de 70 participantes pendiente de publicación e integración. No se incorporaron resultados ni se modificaron la formulación, los hallazgos P1–P8 o las decisiones del proyecto.
 

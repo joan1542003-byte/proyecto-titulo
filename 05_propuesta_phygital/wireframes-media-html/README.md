@@ -32,9 +32,28 @@ El tablero permite cambiar entre ruta principal y cobertura, revisar la justific
 - Tablero revisado a 1366, 1536 y 1920 px de ancho.
 - Compilación y auditoría automatizada aprobadas; errores de consola: 0.
 
+## Reproducir la verificación
+
+Con las dependencias instaladas, ejecutar `pnpm run build` y mantener `pnpm run dev` activo. En una segunda terminal de PowerShell:
+
+```powershell
+$env:RELEVO_PREVIEW_URL='http://127.0.0.1:5173'
+pnpm run qa:wireframes
+pnpm run test:sites
+```
+
+El control comprueba medidas, archivos exportados, navegación, adaptación del tablero, uso restringido del rojo y ausencia de errores de consola. La auditoría necesita la vista local activa porque revisa el resultado renderizado, no solo el código fuente.
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Verificación reproducible
+
+- **Cambio:** se registraron los comandos y las condiciones utilizadas para comprobar el tablero y sus exportaciones.
+- **Antes:** el README declaraba los resultados, pero no indicaba que la auditoría necesitaba la vista local activa ni cómo repetirla.
+- **Motivo:** evitar falsos fallos por conexión rechazada y permitir que otra persona reproduzca el control.
+- **Alcance:** la verificación técnica no sustituye pruebas de comprensión, interacción o accesibilidad con usuarios.
 
 ### 2026-09-02 — Desarrollo visual de la ruta principal
 
