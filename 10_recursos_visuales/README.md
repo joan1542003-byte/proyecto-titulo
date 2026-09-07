@@ -2,7 +2,9 @@
 
 ## Estado vigente — 2026-09-07
 
-La dirección vigente se documenta en `08_direccion_visual_relevo/sistema-v4` y se amplía en `11_exploracion_sistema_visual_2026-08-31`. Se organiza alrededor de grafito, blanco cálido, grises y rojo de señal; utiliza IBM Plex Sans para lectura, IBM Plex Mono para datos breves y una gramática de puntos que representa origen, vínculo y señal situada.
+La comunicación vigente se documenta en [Comunicación, nombre y color de Relevo](comunicacion-naming-y-paleta-2026-09-07.md). Parte de cercanía, brevedad, traslado y autonomía; utiliza carbón, papel cálido, grises y ámbar de señal. IBM Plex Sans se mantiene para lectura e IBM Plex Mono queda restringida a datos breves.
+
+El sistema v4 y la exploración anterior permanecen como desarrollo documentado, pero ya no gobiernan nuevas piezas. Sus matrices de puntos y el rojo pueden reutilizarse solo si una aplicación concreta demuestra que cumplen una función; no constituyen una firma obligatoria.
 
 Las paletas azules, coral, salvia, amarilla y violeta que aparecen más abajo pertenecen a una exploración histórica. Se conservan para documentar el proceso, pero no describen la identidad vigente.
 
@@ -14,13 +16,12 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 
 ## Sistema vigente
 
-- **Color digital:** grafito `#111314`, superficie `#1B1D1E`, elevación `#242728`, blanco `#F1F1F1`, gris secundario `#B6B8B7`, contorno `#3A3D3E`, gris inactivo `#767A79` y rojo de señal `#D71921`.
-- **Color editorial:** papel cálido `#F4F2ED`, tinta `#181A1B`, gris `#616566`, regla `#C9CBC8` y rojo de señal `#D71921`.
+- **Color:** carbón `#17191B`, superficie `#1F2326`, papel cálido `#F4F1EA`, gris claro `#AEB4B8` y ámbar de señal `#FFB000`. El error técnico usa `#E35D6A` y no comparte color con la activación cotidiana.
 - **Tipografía:** IBM Plex Sans para lectura y jerarquía; IBM Plex Mono para datos breves, folios, estados y rotulación técnica.
-- **Gramática:** matrices de puntos, reducción gradual y un nodo final expresan el paso desde una intención disponible hacia una señal situada. No deben repetirse como adorno en todas las páginas.
+- **Gramática:** proximidad, trayectos breves, campos amplios y halos discretos. Las matrices de puntos pertenecen al proceso anterior y solo se recuperan cuando expliquen una relación concreta.
 - **Composición:** retícula consistente, jerarquía clara, espacio negativo y una relación principal por pieza.
 - **Tono:** preciso, tranquilo, autónomo y no punitivo.
-- **Uso del rojo:** una señal o decisión relevante. No es un color decorativo ni se usa para competir con controles principales.
+- **Uso del ámbar:** una señal, selección o estado activo. No es un color decorativo ni reemplaza texto, forma o icono.
 
 ## No usar como significado
 
@@ -50,6 +51,8 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `14_memoria_editorial_completa_2026-09-01` | Maqueta integral reproducible de la memoria vigente y sus 86 páginas PNG; conserva la fuente y excluye dependencias instaladas. |
 | `15_video_lanzamiento_relevo_2026-09-04` | Video explicativo 4K, guion, locución, subtítulos, láminas y fuente reproducible. Es una pieza de comunicación, no evidencia de validación. |
 
+[Comunicación, nombre y color de Relevo](comunicacion-naming-y-paleta-2026-09-07.md) gobierna la explicación pública, el descriptor, la situación del naming y los nuevos códigos cromáticos.
+
 ## Dirección histórica inicial — no vigente
 
 Las siguientes decisiones pertenecen a la primera exploración visual. Se conservan para mostrar el proceso, pero no deben utilizarse para producir nuevas aplicaciones ni para describir el sistema actual.
@@ -73,6 +76,13 @@ Las imágenes adjuntas por el autor se usan como referencias de estilo, atmósfe
 La segunda exploración incorpora una gramática de puntos redondos, barras, órbitas, trazas y módulos de alto contraste inspirada en referencias de tipografía modular y dispositivos minimalistas. Se usa como investigación formal, no como reproducción de una marca existente ni como identidad cerrada de Relevo.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Comunicación derivada del funcionamiento
+
+- **Cambio:** se reemplazó el sistema v4 como dirección rectora por una base que nace de cercanía, brevedad, traslado y autonomía; el ámbar sustituye provisionalmente al rojo como señal funcional.
+- **Versión anterior:** el sistema vigente se articulaba mediante grafito, rojo y matrices de puntos asociadas a una referencia tecnológica reconocible.
+- **Motivo:** separar la identidad de una estética comercial y evitar que una invitación cotidiana se lea como alarma o error.
+- **Alcance:** los archivos previos se preservan como proceso; la nueva paleta requiere pruebas y el nombre necesita revisión oficial antes de cualquier uso comercial.
 
 ### 2026-08-25 — Creación
 

@@ -17,7 +17,7 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 1. La persona registra una intención y su primer paso en la aplicación.
 2. Elige una condición observable de activación, todavía por definir mediante pruebas.
 3. Sitúa manualmente el objeto junto al primer paso de la actividad.
-4. Cuando se cumple la condición, el objeto emite un pulso ambiental.
+4. Cuando se cumple la condición, el objeto emite una señal breve de luz y sonido.
 5. La persona puede continuar, silenciar la señal o iniciar la alternativa. Relevo no registra esa decisión como éxito o fracaso.
 
 ## Estado actual
@@ -26,7 +26,7 @@ La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y l
 
 Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento, exportación y dimensiones fueron comprobados el 7 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. La etapa actual es congelar esa versión antes de construir la navegación Android.
 
-El control editorial del 31 de agosto registró 19.809 palabras en el archivo y 16.113 en los capítulos 1–13, antes de esta nota de actualización. La memoria mantiene los catorce títulos y el marco de extensión definido; el conteo deberá volver a comprobarse cuando se integre la encuesta. Permanecen abiertas la condición de activación, el canal final de señal, la forma, la materialidad, la electrónica final, los costos definitivos y el aporte del objeto frente a una notificación.
+El control editorial del 31 de agosto registró 19.809 palabras en el archivo y 16.113 en los capítulos 1–13, antes de esta nota de actualización. La memoria mantiene los catorce títulos y el marco de extensión definido; el conteo deberá volver a comprobarse cuando se integre la encuesta. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada.
 
 La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
 
@@ -34,17 +34,21 @@ Existe además una encuesta con **70 participantes** pendiente de publicación, 
 
 ## Qué cambió en esta actualización
 
-La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y reemplazó el rango económico anterior por los desembolsos trazables de las alternativas B1, B2 y 12 V. La estructura, la formulación y las 49 referencias se mantienen; no se añadieron resultados ni se cerraron decisiones pendientes de prueba.
+La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. Los montajes anteriores continúan como recursos de prueba, no como forma integrada. Relevo se conserva como nombre académico y la comunicación se orienta mediante el descriptor `Una señal donde quieres empezar`; el ámbar reemplaza provisionalmente al rojo como color funcional. Ninguna dimensión, autonomía, percepción o ventaja está validada.
+
+La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y corrigió los costos documentados. La estructura, la formulación y las 49 referencias se mantienen; no se añadieron resultados ni se cerraron decisiones pendientes de prueba.
 
 La traducción de usuarios está consolidada en tres documentos autónomos: perfiles, recorridos y requisitos. Estos contenidos pueden auditarse como una cadena entre evidencia, necesidad, límite y prueba.
 
-El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, señal provisional, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y ficha de registro. El ensayo interno documental ya fue realizado. La activación manual de fase A se mantiene, pero la fuente luminosa está en una comparación previa a la compra: B1 combina XIAO ESP32-C3 y anillo direccionable; B2 conserva la XIAO y utiliza luz cálida no direccionable. Ambas poseen esquemas revisables. Cuando se igualan auxiliares y base de ensayo, B1 alcanza CLP 28.073 más el conversor lógico y B2 CLP 29.281 más la resistencia de estado y los conductores internos. Estas cifras son desembolsos incompletos, no costos de producción. El montaje de 12 V permanece como respaldo.
+El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, señal provisional, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y ficha de registro. El ensayo interno documental ya fue realizado. B1, B2 y el montaje de 12 V quedan documentados como alternativas de mesa para aislar la luz. La ruta integrada recomendada utiliza XIAO nRF52840, batería recargable, una luz y un transductor sonoro; su lista de materiales todavía no tiene un total porque faltan cotizaciones comparables de batería, carcasa y auxiliares.
 
 No se han comprado componentes, compilado el firmware, construido el montaje ni ejecutado la ficha técnica. Antes de reclutar deben completarse esas acciones, incorporar el contacto del responsable al consentimiento y obtener revisión académica. La eliminación de fichas está fijada a más tardar para el 13 de enero de 2027. Ningún instrumento contiene resultados.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-09-07 — Arquitectura portátil y comunicación.** Antes, el resumen mantenía abiertos el canal de señal y la electrónica integrada, y presentaba los montajes B1/B2 como ruta principal. Ahora acota el testigo a luz y sonido, selecciona una candidata BLE recargable y registra el descriptor y la nueva paleta. Se mantienen pendientes construcción, costos, pruebas, comparación con notificación y despeje comercial del nombre.
 
 **2026-09-07 — Paso a prototipado.** Antes, el resumen describía la arquitectura de interacción sin precisar qué parte debía construirse primero. Ahora registra la verificación de los wireframes y remite a un alcance inicial con backlog. No se añadieron resultados de validación ni se cerraron la condición, la señal o la integración técnica.
 

@@ -22,7 +22,7 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 
 A veces una persona sigue viendo contenido en el teléfono aunque antes quería leer, caminar, dibujar o comenzar otra actividad. No necesariamente olvidó esa intención: mientras la sesión continúa, esa posibilidad puede dejar de participar en la siguiente decisión.
 
-Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y su primer paso en una aplicación Android, y sitúa un objeto cerca del lugar donde puede comenzar. Si se cumple una condición configurada, el objeto emite una señal breve. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea.
+Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y su primer paso en una aplicación Android, y deja un objeto pequeño cerca del lugar donde puede comenzar. Si se cumple una condición configurada, el objeto emite una señal breve de luz y sonido. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea.
 
 En términos de diseño, Relevo es un sistema phygital: la aplicación organiza, el objeto señala, el lugar aporta significado y la persona conserva la decisión. No pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento.
 
@@ -34,13 +34,15 @@ Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pas
 
 Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
+La definición física más reciente y la decisión sobre nombre, descriptor y color se encuentran en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y en [comunicación, nombre y color](10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Estado actual
 
 **Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
 
-El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). La activación cableada de fase A se mantiene, pero la electrónica que producirá la luz se encuentra en una comparación previa a la compra. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) contrasta dos variantes de 5 V con una XIAO ESP32-C3: B1 utiliza un anillo direccionable y B2 una fuente cálida no direccionable. Ambas disponen de esquemas revisables y la [lista de materiales y compra por puertas](06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) muestra que ninguna ventaja económica está demostrada; el montaje de 12 V permanece como respaldo si las fuentes pequeñas no alcanzan la perceptibilidad requerida. Antes de comprar o energizar faltan el inventario y la revisión electrónica competente. Después corresponde comparar la luz, completar solo la variante elegida y ejecutar el ensayo técnico antes de convocar participantes. La fase B permanece bloqueada hasta disponer de una notificación local Android comparable. No existen resultados de validación.
+El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal manual están documentados en [`07_validacion`](07_validacion/README.md). Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Esta ruta reduce piezas y permite una carcasa transportable sin diseñar una placa propia. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como pruebas de mesa documentadas. Antes de comprar o energizar faltan inventario, selección con ficha técnica y revisión electrónica competente. La fase B permanece bloqueada hasta disponer de una notificación Android comparable. No existen resultados de validación.
 
-La [dirección visual de Relevo](10_recursos_visuales/08_direccion_visual_relevo/README.md) ya cuenta con una base conceptual seleccionada: `Transferencia situada`. El sistema utiliza IBM Plex Sans y Mono, una paleta de grafito, blanco, grises y rojo de señal, y una gramática de puntos compartida por Android, la memoria y las piezas de comunicación. Permanecen abiertos el logotipo definitivo, la aplicación editorial final, la forma industrial y los parámetros perceptivos de la señal física.
+La [dirección de comunicación](10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) parte de cercanía, brevedad, traslado y autonomía, sin imitar una identidad comercial. Conserva IBM Plex Sans para lectura, limita IBM Plex Mono a datos breves y propone carbón, papel cálido, grises y ámbar de señal. El sistema anterior se preserva como proceso, no como regla para nuevas piezas. Permanecen abiertos el logotipo definitivo, las pruebas de color, la forma industrial y los parámetros perceptivos de la señal física.
 
 La base metodológica del corpus quedó consolidada:
 
@@ -107,9 +109,14 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
----
-
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Testigo portátil y comunicación funcional
+
+- **Cambio:** la síntesis explicita luz y sonido, enlaza la arquitectura nRF52840 y reemplaza la dirección visual anterior por una comunicación basada en función.
+- **Versión anterior:** el estado principal priorizaba la comparación B1/B2 de mesa y una gramática de puntos con rojo de señal.
+- **Motivo:** responder a un objeto pequeño y transportable, reducir mano de obra y separar la identidad de referentes comerciales.
+- **Límite:** no hay compra, construcción, mediciones ni validación; el nombre requiere despeje antes de un uso comercial.
 
 ### 2026-09-07 — Estado de prototipado y sistema visual
 

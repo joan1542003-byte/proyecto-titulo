@@ -411,7 +411,7 @@
 ## D-043 — Comparar dos fuentes luminosas de 5 V antes de comprar
 
 - **Fecha:** 2026-08-30
-- **Estado:** vigente; comparación documental preparada, revisión y prueba pendientes
+- **Estado:** vigente solo para una posible prueba luminosa de mesa; sustituida por D-045 como ruta del prototipo portátil
 - **Decisión:** conservar la XIAO ESP32-C3 y la activación cableada como núcleo común; comparar B1, con anillo WS2812, y B2, con luz cálida no direccionable, antes de completar una compra. La arquitectura de 12 V permanece como respaldo si ninguna fuente pequeña alcanza la perceptibilidad necesaria.
 - **Fundamento:** el anillo añade control de color y de puntos que Relevo puede no necesitar, mientras la alternativa cálida traslada complejidad al arreglo eléctrico y a la difusión. Al igualar base y auxiliares, B1 llega a CLP 28.073 antes del conversor lógico y B2 a CLP 29.281 antes de la resistencia de estado y los conductores internos; no existe una ventaja económica demostrada.
 - **Consecuencia:** B1 y B2 disponen de esquemas revisables equivalentes. Una persona competente revisará ambas variantes y la primera comparación se limitará a distribución, perceptibilidad, control y estabilidad de la luz. Solo después se completa y construye una de ellas.
@@ -428,9 +428,36 @@
 - **Límite:** esta decisión mejora la arquitectura del mensaje, pero no demuestra que se comprenda. Las versiones breves y visuales deberán someterse a una prueba formativa y revisarse si se interpretan como bloqueo, vigilancia, productividad obligatoria o eficacia validada.
 - **Documentos asociados:** [Guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md), [README principal](../README.md), [resumen vigente](../08_memoria/resumen-vigente-proyecto.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md).
 
+## D-045 — Testigo portátil con BLE, luz y sonido
+
+- **Fecha:** 2026-09-07
+- **Estado:** vigente como arquitectura recomendada; construcción y mediciones pendientes
+- **Decisión:** desarrollar el siguiente prototipo portátil alrededor de una XIAO nRF52840, una batería recargable protegida, una luz única, un transductor sonoro pequeño y un control local. La escala de los localizadores comerciales sirve como referencia de portabilidad, no como forma ni tecnología que deba copiarse.
+- **Fundamento:** una placa de 21 × 17,8 mm con BLE, carga de batería y LED integrado reduce componentes y uniones. Una carcasa ligeramente mayor que un AirTag permite construir y reparar el prototipo sin diseñar una PCB propia. El montaje ESP32-C3 de D-043 sigue sirviendo para una prueba de mesa, pero su anillo de LED y alimentación de 5 V no responden a la nueva exigencia portátil.
+- **Consecuencia:** el prototipo integrado buscará 42–48 mm de diámetro y 12–16 mm de grosor, emitirá luz y sonido moderados, y se cargará por USB-C. Estas dimensiones son metas de diseño. El enlace Android se probará con permisos de uso, segundo plano, ahorro de batería y pérdida de conexión.
+- **Límite:** la arquitectura no está comprada ni construida. Autonomía, volumen, percepción, tamaño, seguridad y fiabilidad todavía no se han medido. Una placa propia con pila tipo moneda solo se considerará después de demostrar que la capa física aporta valor.
+- **Documentos asociados:** [Estudio del testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md), [decisión Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) y [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md).
+
+## D-046 — Comunicación basada en función y señal ámbar provisional
+
+- **Fecha:** 2026-09-07
+- **Estado:** vigente; comprensión, color y disponibilidad comercial del nombre pendientes de prueba
+- **Decisión:** conservar Relevo como nombre académico y explicar el proyecto mediante el descriptor `Una señal donde quieres empezar`. La nueva dirección parte de cercanía, brevedad, traslado y autonomía; deja de usar como regla una estética comercial reconocible. El ámbar `#FFB000` sustituye provisionalmente al rojo como color funcional de señal.
+- **Fundamento:** el nombre representa el paso entre una actividad en curso y una alternativa elegida, mientras el descriptor traduce la función sin jerga. Separar señal y error evita que la intervención cotidiana parezca alarma o castigo. Los pares cromáticos principales superan el contraste 4,5:1, aunque el significado del color no se supone universal.
+- **Consecuencia:** las piezas nuevas usarán carbón, papel cálido, grises y ámbar; los puntos y el rojo quedan como archivo o recursos condicionados a una función concreta. Los estados se comunicarán también con texto, forma o icono.
+- **Límite:** existen usos actuales del nombre Relevo. Antes de un lanzamiento comercial se requiere búsqueda oficial en INAPI, dominios y tiendas. La paleta debe probarse impresa, en pantalla y con personas.
+- **Documentos asociados:** [Comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) y [sistema visual](../10_recursos_visuales/README.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — D-045 y D-046
+
+- **Cambio:** se registraron la arquitectura portátil recomendada y una dirección de comunicación independiente de referentes comerciales.
+- **Versión anterior:** la ruta integrada seguía abierta entre montajes de mesa de 5 V; la comunicación vigente dependía de rojo, grafito y matrices de puntos.
+- **Motivo:** responder a un testigo pequeño con luz y sonido, reducir mano de obra y explicar su valor desde la función.
+- **Resultado:** existen decisiones comparables y límites explícitos; compra, construcción, pruebas perceptivas, autonomía y despeje comercial del nombre permanecen pendientes.
 
 ### 2026-09-04 — D-044
 

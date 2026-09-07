@@ -39,7 +39,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La explicación breve que debe acompañar cada actualización es `08_memoria/resumen-vigente-proyecto.md`.
 - La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
-- La dirección visual se consulta desde `10_recursos_visuales/08_direccion_visual_relevo/README.md` y sus carpetas de sistema.
+- La dirección vigente de comunicación, naming y color se consulta en `10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md`; las carpetas anteriores conservan el proceso visual.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde `99_archivo` o desde la carpeta histórica indicada por cada README.
 
 ## Política de duplicados y archivo

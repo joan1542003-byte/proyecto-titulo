@@ -26,6 +26,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas, selecciona un módulo BLE compacto con batería recargable para el siguiente prototipo y explicita costos, riesgos, montaje y pruebas pendientes.
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
 - [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, variantes de 5 V y soluciones comerciales o pasivas; propone contrastar dos fuentes luminosas pequeñas antes de sustituir la arquitectura vigente.
@@ -37,6 +38,13 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 ---
 
 ## Registro de cambios
+
+### 2026-09-07 — Arquitectura portátil recomendada
+
+- **Cambio:** se enlazó el estudio de mercado y factibilidad para un testigo pequeño con luz y sonido.
+- **Versión anterior:** las opciones vigentes se concentraban en montajes de mesa de 5 y 12 V y no respondían a una forma transportable comparable en escala con un localizador.
+- **Motivo:** reducir volumen, componentes y mano de obra sin intentar miniaturización industrial antes de validar el valor del objeto.
+- **Alcance:** la XIAO nRF52840 es la candidata recomendada; dimensiones, batería, volumen, autonomía y fiabilidad Android siguen sujetos a construcción y medición.
 
 ### 2026-08-30 — B2 preparada para revisión
 

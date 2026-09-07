@@ -204,7 +204,7 @@ La respuesta honesta tiene dos partes:
 
 - **Título:** `Que una intención vuelva a tener lugar.`
 - **Imagen o diagrama:** una escena con la actividad digital en un plano y el primer paso en otro; el objeto solo aparece donde cumple una función.
-- **Bajada:** `Relevo lleva una señal breve desde la aplicación hasta el lugar donde puede comenzar una actividad elegida. La persona decide qué hacer.`
+- **Bajada:** `Relevo emite una señal breve de luz y sonido junto al lugar donde puede comenzar una actividad elegida. La persona decide qué hacer.`
 - **Pie:** `Propuesta phygital en desarrollo. Su ventaja frente a una notificación todavía debe validarse.`
 
 ### 11.2 Relato de cinco minutos
@@ -386,6 +386,13 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Señal física y dirección de comunicación
+
+- **Qué cambió:** la bajada explicita luz y sonido y la guía se vincula con la nueva definición física y cromática.
+- **Cómo era antes:** la salida se describía de forma genérica y la dirección visual dependía del sistema v4.
+- **Por qué:** permitir que una audiencia imagine el uso real sin introducir primero la arquitectura técnica ni una estética comercial.
+- **Límite:** la comprensión, el volumen, la luz y la ventaja frente a una notificación siguen pendientes de prueba.
 
 ### 2026-09-04 — Creación de la guía
 
