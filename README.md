@@ -34,7 +34,7 @@ Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pas
 
 Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
-La definición física más reciente y la decisión sobre nombre, descriptor y color se encuentran en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y en [comunicación, nombre y color](10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
+La definición física más reciente y la decisión sobre nombre, descriptor y color se encuentran en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y en [comunicación, nombre y color](10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md). La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
 ## Estado actual
 
@@ -111,12 +111,12 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 
 ## Registro de cambios (disclaimer)
 
-### 2026-09-07 — Testigo portátil y comunicación funcional
+### 2026-09-07 — Testigo portátil, prueba temprana y comunicación funcional
 
-- **Cambio:** la síntesis explicita luz y sonido, enlaza la arquitectura nRF52840 y reemplaza la dirección visual anterior por una comunicación basada en función.
-- **Versión anterior:** el estado principal priorizaba la comparación B1/B2 de mesa y una gramática de puntos con rojo de señal.
-- **Motivo:** responder a un objeto pequeño y transportable, reducir mano de obra y separar la identidad de referentes comerciales.
-- **Límite:** no hay compra, construcción, mediciones ni validación; el nombre requiere despeje antes de un uso comercial.
+- **Cambio:** la síntesis explicita luz y sonido, enlaza la arquitectura nRF52840, separa una prueba con plataforma existente de la integración portátil y reemplaza la dirección visual anterior por una comunicación basada en función.
+- **Versión anterior:** el estado principal priorizaba la comparación B1/B2 de mesa y una gramática de puntos con rojo de señal; no diferenciaba entre una plataforma de ensayo y el objeto que se integrará después.
+- **Motivo:** responder a un objeto pequeño y transportable, reducir mano de obra al inicio y separar la identidad de referentes comerciales.
+- **Límite:** no hay compra, construcción, mediciones ni validación; el nombre requiere despeje antes de un uso comercial y la plataforma existente no define el acabado final.
 
 ### 2026-09-07 — Estado de prototipado y sistema visual
 

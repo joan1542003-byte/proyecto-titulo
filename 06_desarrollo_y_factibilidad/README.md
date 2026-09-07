@@ -27,6 +27,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 ## Documentación vigente
 
 - [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas, selecciona un módulo BLE compacto con batería recargable para el siguiente prototipo y explicita costos, riesgos, montaje y pruebas pendientes.
+- [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md): separa una prueba rápida con una plataforma ya construida de la integración final con XIAO; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
 - [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, variantes de 5 V y soluciones comerciales o pasivas; propone contrastar dos fuentes luminosas pequeñas antes de sustituir la arquitectura vigente.
@@ -38,6 +39,13 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 ---
 
 ## Registro de cambios
+
+### 2026-09-07 — Plataformas ya fabricadas y precedente de montaje
+
+- **Cambio:** se incorporó una comparación de plataformas que ya integran luz, sonido y conectividad, junto con BleenyButton como antecedente abierto de carcasa, batería y fijación para XIAO.
+- **Versión anterior:** el estudio físico partía de módulos y componentes que había que integrar desde cero, sin una distinción clara entre prueba rápida e integración.
+- **Motivo:** hacer viable una prueba temprana de la experiencia antes de invertir tiempo en alimentación, electrónica y una carcasa final.
+- **Alcance:** micro:bit V2 sirve para una prueba inmediata; Circuit Playground Bluefruit exige confirmar stock; XIAO nRF52840 conserva la ruta de integración posterior y cualquier reutilización del precedente requiere revisar su licencia GPL-3.0.
 
 ### 2026-09-07 — Arquitectura portátil recomendada
 

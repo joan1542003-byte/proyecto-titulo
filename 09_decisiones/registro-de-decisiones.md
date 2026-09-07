@@ -448,6 +448,16 @@
 - **Límite:** existen usos actuales del nombre Relevo. Antes de un lanzamiento comercial se requiere búsqueda oficial en INAPI, dominios y tiendas. La paleta debe probarse impresa, en pantalla y con personas.
 - **Documentos asociados:** [Comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) y [sistema visual](../10_recursos_visuales/README.md).
 
+## D-047 — Prueba rápida separada de la integración portátil
+
+- **Fecha:** 2026-09-07
+- **Estado:** vigente como secuencia de desarrollo; compras y construcción pendientes
+- **Decisión:** comprobar primero el recorrido Android → señal de luz y sonido con una plataforma ya fabricada y disponible, preferentemente micro:bit V2. La integración del objeto final se mantiene en XIAO nRF52840 y usará BleenyButton como precedente de batería, carcasa y fijación, sin trasladar su finalidad ni sus archivos de manera automática.
+- **Fundamento:** una prueba de comprensión no requiere fabricar a la vez electrónica, alimentación, carcasa y firmware de bajo consumo. micro:bit V2 permite aislar la llegada de la señal y su control local; BleenyButton muestra una ruta abierta y reproducible para resolver posteriormente el montaje portátil de la familia XIAO. Circuit Playground Bluefruit se conserva como alternativa solo si se confirma disponibilidad, precio y plazo adecuados.
+- **Consecuencia:** la primera prueba no se presenta como el objeto final ni emplea la matriz LED para texto, menús, reloj o navegación. El smartwatch, el localizador comercial y M5StickS3 no orientan la forma del proyecto porque desplazan el uso hacia la muñeca, incorporan pantalla o reabren problemas de energía.
+- **Límite:** ningún antecedente demuestra autonomía, seguridad de batería, intensidad de luz, volumen, percepción o valor de la intervención. Antes de reutilizar software o archivos del precedente BleenyButton se debe revisar la licencia GPL-3.0. No se autoriza una compra hasta confirmar disponibilidad, costo y la necesidad de la prueba.
+- **Documentos asociados:** [Plataformas físicas existentes y modificables](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [estudio del testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md), [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
+
 ---
 
 ## Registro de cambios (disclaimer)
@@ -458,6 +468,13 @@
 - **Versión anterior:** la ruta integrada seguía abierta entre montajes de mesa de 5 V; la comunicación vigente dependía de rojo, grafito y matrices de puntos.
 - **Motivo:** responder a un testigo pequeño con luz y sonido, reducir mano de obra y explicar su valor desde la función.
 - **Resultado:** existen decisiones comparables y límites explícitos; compra, construcción, pruebas perceptivas, autonomía y despeje comercial del nombre permanecen pendientes.
+
+### 2026-09-07 — D-047
+
+- **Cambio:** se separó la plataforma de prueba rápida de la arquitectura que integrará el testigo portátil; se añadió un precedente abierto para carcasa, batería y fijación.
+- **Versión anterior:** D-045 definía la XIAO como ruta recomendada, pero no distinguía qué se podía ensayar sin fabricarla ni qué antecedente reducía el riesgo mecánico.
+- **Motivo:** aprovechar plataformas existentes sin permitir que un smartwatch o una placa educativa definan el producto.
+- **Resultado:** micro:bit V2 queda como vía de ensayo; XIAO y BleenyButton definen una ruta posterior de integración que sigue sujeta a compra, licencia, medidas y pruebas.
 
 ### 2026-09-04 — D-044
 
