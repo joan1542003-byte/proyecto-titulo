@@ -97,17 +97,17 @@ La [investigación visual](../10_recursos_visuales/08_direccion_visual_relevo/RE
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado:** arquitectura portátil seleccionada como candidata y prueba temprana separada de la integración. La XIAO nRF52840 orienta el testigo compacto; una plataforma existente permitirá comprobar primero Android, BLE, luz, sonido y silencio local. Acceso a componentes, integración, mediciones, revisión electrónica y cumplimiento permanecen pendientes.
+**Estado:** arquitectura portátil seleccionada como candidata y prueba temprana separada de la integración. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, luz, sonido y silencio local está compilado; faltan acceso a la placa, instalación, luz cálida externa, mediciones y revisión del montaje.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La primera puerta física está en la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): comprobar Android → BLE → luz y sonido con una plataforma ya fabricada. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior con XIAO nRF52840. El protocolo, el consentimiento y los instrumentos están preparados, pero no se puede comenzar con participantes hasta verificar un comportamiento seguro y repetible; la comparación posterior depende además de una notificación Android equivalente.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La primera puerta física está en la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): instalar el [paquete micro:bit compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), comprobar el banco BLE y preparar después la salida cálida de fase A. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior con XIAO nRF52840. El protocolo, el consentimiento y los instrumentos están preparados, pero no se puede comenzar con participantes hasta verificar un comportamiento seguro y repetible; la comparación posterior depende además de una notificación Android equivalente.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
-Siguiente puerta de avance: congelar el wireframe v1 y, después, conseguir acceso a una plataforma existente para ejecutar la Issue #11. La comprobación debe registrar conexión y reconexión, latencia, comportamiento de luz y sonido, silencio local y fallos observados. Si esa base resulta estable, podrá utilizarse en un ensayo técnico y alimentar la posterior integración XIAO. La comprobación no habilita por sí sola el reclutamiento ni una afirmación de eficacia.
+Siguiente puerta de avance: conseguir acceso a una micro:bit V2, instalar `relevo-prueba-mesa-v0.1.hex` y ejecutar el banco sin participantes. La comprobación debe registrar conexión y reconexión, latencia, patrón rojo de referencia, sonido, silencio local y fallos observados. Después se conecta una luz blanca cálida externa revisada y se repiten las series materiales de fase A. Ninguna de estas acciones habilita por sí sola el reclutamiento ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Puerta micro:bit ejecutable
+
+- **Cambio:** la hoja de ruta reconoce el programa compilado, elimina el wireframe ya resuelto como bloqueo inmediato y divide la comprobación entre banco rojo sin participantes y material cálido de fase A.
+- **Versión anterior:** el siguiente paso todavía comenzaba por congelar el wireframe y trataba la plataforma existente como una única prueba de luz.
+- **Motivo:** hacer que el orden operativo corresponda al estado real y a las capacidades de micro:bit V2.
+- **Alcance:** la compilación no demuestra funcionamiento; siguen pendientes placa, instalación, montaje cálido, mediciones y revisión.
 
 ### 2026-09-07 — Puertas físicas reordenadas
 

@@ -1,0 +1,13 @@
+{
+    "name": "relevo-prueba-microbit-ble",
+    "description": "Prueba técnica Android-BLE para la señal física de Relevo",
+  "dependencies": {
+    "core": "*",
+    "bluetooth": "*",
+    "microphone": "*"
+  },
+    "files": [
+        "main.ts"
+    ],
+    "preferredEditor": "tsprj"
+}

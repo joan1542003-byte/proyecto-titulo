@@ -28,6 +28,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 - [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas, selecciona un módulo BLE compacto con batería recargable para el siguiente prototipo y explicita costos, riesgos, montaje y pruebas pendientes.
 - [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md): separa una prueba rápida con una plataforma ya construida de la integración final con XIAO; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
+- [Prueba Android–BLE con micro:bit V2](prueba-microbit-ble/README.md): contiene el proyecto MakeCode, una compilación de mesa, el contrato de mensajes y la conexión mínima de una luz cálida externa anterior a participantes.
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Especificación y puerta técnica de fase A](../07_validacion/especificacion-materiales-fase-a.md): conecta la plataforma vigente con comprobaciones de BLE, luz, sonido, control y seguridad anteriores a participantes.
 
@@ -45,6 +46,13 @@ Estos documentos conservan exploraciones, cálculos y riesgos útiles, pero deja
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Paquete micro:bit compilado
+
+- **Cambio:** se enlazó el programa MakeCode que recibe `activar`, ejecuta luz y sonido, admite silencio local y distingue el banco con matriz roja de la fuente cálida requerida para participantes.
+- **Versión anterior:** la ruta micro:bit estaba descrita, pero no disponía de código, binario trazable ni una corrección de la incompatibilidad cromática.
+- **Motivo:** convertir la siguiente puerta en una tarea instalable y evitar que una prueba de transporte BLE se confunda con el material perceptivo de fase A.
+- **Alcance:** la compilación terminó sin errores; no existe instalación, medición ni prueba física, y el binario de mesa no habilita participantes.
 
 ### 2026-09-08 — Separación entre ruta vigente y antecedentes de mesa
 

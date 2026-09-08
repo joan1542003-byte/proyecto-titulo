@@ -12,3 +12,4 @@
 10_recursos_visuales/15_video_lanzamiento_relevo_2026-09-04/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
 10_recursos_visuales/15_video_lanzamiento_relevo_2026-09-04/**/*.ttf filter=lfs diff=lfs merge=lfs -text
 10_recursos_visuales/15_video_lanzamiento_relevo_2026-09-04/**/*.woff2 filter=lfs diff=lfs merge=lfs -text
+*.hex -text

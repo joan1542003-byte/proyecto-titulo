@@ -25,12 +25,13 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Ruta operativa vigente
 
-1. Acceder a una plataforma ya fabricada, preferentemente micro:bit V2, y preparar una cubierta neutra que deje percibir luz y sonido.
-2. Comprobar el recorrido Android → Bluetooth de baja energía (BLE) → luz y sonido, junto con la orden de activación y el silenciamiento local. Este trabajo está controlado por la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) y descrito en el [estudio de plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
-3. Ejecutar la [ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md). Una falla de conexión impide usar la sesión para evaluar comprensión; debe registrarse, corregirse y repetirse.
-4. Completar el correo de contacto, someter protocolo, consentimiento y materiales a revisión académica y resolver las observaciones antes de reclutar.
-5. Aplicar la fase A. Solo si supera sus reglas de decisión se habilita la comparación de la fase B.
-6. Integrar después un testigo portátil basado en XIAO nRF52840, si la evidencia justifica continuar. Esta etapa corresponde a la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10), no a la puerta técnica inmediata.
+1. Acceder a una micro:bit V2 e instalar el [programa Android–BLE compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md).
+2. Comprobar sin participantes el recorrido Android → Bluetooth de baja energía (BLE) → matriz roja y sonido, junto con la orden `activar`, la reconexión y el silenciamiento local. La matriz solo representa el canal luminoso en este banco técnico.
+3. Conectar y revisar una luz blanca cálida externa, preparar una cubierta neutra y comprobar que los indicadores de placa no compiten con la señal. Este material, no la matriz roja, corresponde a la fase A.
+4. Ejecutar la [ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md). Una falla de conexión o material impide usar la sesión para evaluar comprensión; debe registrarse, corregirse y repetirse. Este trabajo está controlado por la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) y descrito en el [estudio de plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
+5. Completar el correo de contacto, someter protocolo, consentimiento y materiales a revisión académica y resolver las observaciones antes de reclutar.
+6. Aplicar la fase A. Solo si supera sus reglas de decisión se habilita la comparación de la fase B.
+7. Integrar después un testigo portátil basado en XIAO nRF52840, si la evidencia justifica continuar. Esta etapa corresponde a la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10), no a la puerta técnica inmediata.
 
 La activación de la fase A sigue siendo manual porque el investigador decide cuándo enviar la orden. El uso de BLE no incorpora todavía detección automática de aplicaciones ni una condición algorítmica. Antes de cada sesión, el enlace y los controles deben superar la verificación indicada en la ficha.
 
@@ -38,7 +39,7 @@ La activación de la fase A sigue siendo manual porque el investigador decide cu
 
 Los montajes [B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md), [B2](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md) y [12 V](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), junto con su [firmware provisional](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md), conservan valor como exploraciones de mesa sobre luz, alimentación y control. No es necesario construirlos antes de la prueba con plataforma existente y no representan la arquitectura portátil elegida.
 
-**Estado al 8 de septiembre de 2026:** no existen resultados técnicos ni con participantes. Faltan acceso a la plataforma, programación, ensayo técnico documentado, contacto del responsable y revisión académica.
+**Estado al 8 de septiembre de 2026:** el programa MakeCode y su binario de mesa están preparados y la compilación terminó sin errores. No existen instalación, montaje cálido, resultados técnicos ni resultados con participantes. Faltan acceso a la plataforma, prueba física, ensayo documentado, contacto del responsable y revisión académica.
 
 ## Regla de medición
 
@@ -59,6 +60,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Programa compilado y doble puerta material
+
+- **Cambio:** la ruta comienza con un binario de mesa para matriz roja y separa después la incorporación de una luz cálida externa antes de fase A.
+- **Versión anterior:** `programación` figuraba como pendiente general y la plataforma micro:bit podía interpretarse como material perceptivo completo.
+- **Motivo:** aprovechar lo integrado para aislar fallos técnicos sin cambiar silenciosamente la señal descrita para participantes.
+- **Alcance:** no se ha instalado ni ejecutado el programa; tampoco se ha conectado, difundido o medido la luz cálida.
 
 ### 2026-09-08 — Validación alineada con la ruta física vigente
 

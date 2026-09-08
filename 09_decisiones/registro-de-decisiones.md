@@ -468,9 +468,26 @@
 - **Límite:** la decisión no demuestra que una sola orden baste para el uso final, ni resuelve segundo plano, seguridad del enlace, condición automática o recuperación entre dispositivos.
 - **Documentos asociados:** [Especificación de fase A](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md), [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) y [plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
+## D-049 — Banco micro:bit separado de la luz de fase A
+
+- **Fecha:** 2026-09-08
+- **Estado:** vigente para la primera comprobación física; instalación y mediciones pendientes
+- **Decisión:** usar la matriz roja integrada de micro:bit V2 únicamente en un banco sin participantes para comprobar BLE, tiempos, sonido, reconexión y silencio. Antes de la fase A se conectará una luz blanca cálida externa en P1, con resistencia, difusión y revisión del montaje. El programa conserva ambos modos y el binario disponible corresponde solo al banco.
+- **Fundamento:** la documentación oficial identifica la matriz como un conjunto de LED rojos, mientras el protocolo vigente define una señal blanca cálida. Separar las puertas aprovecha la plataforma existente sin sustituir silenciosamente el estímulo que se pretende evaluar.
+- **Consecuencia:** el proyecto MakeCode y su binario de mesa quedan disponibles; la fuente cálida debe superar la ficha técnica completa antes de una revisión académica o de cualquier reclutamiento.
+- **Límite:** el código compilado no acredita conexión, latencia, brillo, volumen, estabilidad ni comprensión. Si el LED externo no alcanza la perceptibilidad prevista, se revisa el circuito o se cambia de plataforma; no se fuerza el pin por ensayo y error.
+- **Documentos asociados:** [Paquete micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [especificación de fase A](../07_validacion/especificacion-materiales-fase-a.md) y [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — D-049
+
+- **Cambio:** se registró la separación entre la matriz roja de banco y la salida cálida que requiere la fase A, junto con el estado del programa compilado.
+- **Versión anterior:** D-047 elegía micro:bit como vía rápida y D-048 fijaba el comando, pero ninguna decisión resolvía la incompatibilidad cromática de la matriz.
+- **Motivo:** mantener correspondencia entre capacidad física, protocolo y alcance de cada prueba.
+- **Resultado:** existe una ruta instalable sin participantes; el montaje cálido y todas las mediciones siguen abiertos.
 
 ### 2026-09-08 — D-048
 

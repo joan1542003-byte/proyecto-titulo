@@ -40,7 +40,7 @@ La definición física más reciente y la decisión sobre nombre, descriptor y c
 
 **Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
 
-El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal están documentados en [`07_validacion`](07_validacion/README.md). La primera comprobación física usará una plataforma existente para aislar Android, BLE, luz, sonido y silencio local. Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como antecedentes de mesa. Antes de usar la señal con participantes faltan acceso a la plataforma, firmware, comprobación técnica y revisión competente. La comparación posterior permanece bloqueada hasta disponer de una notificación Android equivalente. No existen resultados de validación.
+El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal están documentados en [`07_validacion`](07_validacion/README.md). El [programa Android–BLE para micro:bit V2](06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) ya compila y permite comprobar matriz, sonido y silencio local sin participantes. Como la matriz integrada es roja, la fase A exige añadir y revisar una luz blanca cálida externa antes de evaluar comprensión. Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como antecedentes de mesa. Antes de usar la señal con participantes faltan acceso a la placa, instalación, montaje cálido, ensayo técnico y revisión competente. La comparación posterior permanece bloqueada hasta disponer de una notificación Android equivalente. No existen resultados de validación.
 
 La [dirección de comunicación](10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) parte de cercanía, brevedad, traslado y autonomía, sin imitar una identidad comercial. Conserva IBM Plex Sans para lectura, limita IBM Plex Mono a datos breves y propone carbón, papel cálido, grises y ámbar de señal. El sistema anterior se preserva como proceso, no como regla para nuevas piezas. Permanecen abiertos el logotipo definitivo, las pruebas de color, la forma industrial y los parámetros perceptivos de la señal física.
 
@@ -110,6 +110,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Programa micro:bit y límite luminoso
+
+- **Cambio:** el estado principal enlaza el programa compilado, separa el banco con matriz roja de la señal cálida de fase A y actualiza los bloqueos anteriores a participantes.
+- **Versión anterior:** `firmware` aparecía como un pendiente total y la plataforma existente no advertía su incompatibilidad cromática.
+- **Motivo:** mostrar el avance real sin confundir compilación con funcionamiento ni una luz roja con el material definido por el protocolo.
+- **Alcance:** no se ha instalado el binario ni montado o medido la luz externa; no existen resultados.
 
 ### 2026-09-07 — Testigo portátil, prueba temprana y comunicación funcional
 

@@ -176,7 +176,7 @@ Hasta ahora la implementación es principalmente estructural y preparatoria:
 
 El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió este recorrido en tres interacciones y nueve marcos principales. El [anexo de cobertura](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) lo amplió a 35 estados, incluyendo errores, permisos, salidas voluntarias y recuperación.
 
-La ruta física actual separa dos propósitos. Primero se comprobará Android → BLE → luz y sonido con una plataforma ya fabricada, preferentemente una micro:bit V2 prestada o disponible. Después se integrará el testigo portátil con XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local. BleenyButton aporta un precedente abierto para estudiar batería, fijación y carcasa. Los montajes B1, B2 y 12 V se conservan como antecedentes de mesa, no como dirección principal. Todavía no se han comprado componentes, compilado firmware, construido el montaje ni ejecutado pruebas con participantes. Ver [plataformas físicas existentes y modificables](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y [validación](../07_validacion/README.md).
+La ruta física actual separa dos propósitos. Primero se instalará en una micro:bit V2 un programa ya compilado para comprobar Android → BLE, sonido, tiempos y silencio local. Su matriz roja se usa solo en el banco sin participantes; la prueba de asociación requiere añadir una luz blanca cálida externa y difundida. Después se integrará el testigo portátil con XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local. BleenyButton aporta un precedente abierto para estudiar batería, fijación y carcasa. Los montajes B1, B2 y 12 V se conservan como antecedentes de mesa, no como dirección principal. Todavía no se han comprado componentes, instalado el binario, construido el montaje ni ejecutado pruebas con participantes. Ver [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas existentes y modificables](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y [validación](../07_validacion/README.md).
 
 ## 10. Costos estimados
 
@@ -204,7 +204,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
 | Naming, dirección visual y paleta base. | Cerrar tipografía, forma, material, difusor y señal final después de probar. | [Naming](../00_admin/encargos/encargo-02-09-2026/03_naming/README.md) · [Visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
-| Plataformas de ensayo y arquitectura portátil comparadas; B1/B2 conservadas como antecedentes. | Confirmar acceso a una plataforma de prueba, completar la lista XIAO y comprar solo después de revisar necesidad, costo y seguridad. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
+| Plataformas comparadas y programa micro:bit compilado; B1/B2 conservadas como antecedentes. | Conseguir la placa, instalar y medir el banco, revisar la luz cálida externa y completar la lista XIAO solo si la evidencia justifica continuar. | [Programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
 ## 12. Próximos pasos y fechas estimadas
@@ -256,6 +256,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Banco micro:bit preparado
+
+- **Cambio:** el resumen registra el programa compilado, la diferencia entre matriz roja y luz cálida y el nuevo bloqueo operativo de instalación y medición.
+- **Versión anterior:** señalaba que todavía faltaba compilar firmware y presentaba la plataforma existente como un solo material de prueba.
+- **Motivo:** comunicar con precisión qué está listo y evitar que una salida roja se utilice con participantes por conveniencia.
+- **Alcance:** no hay placa, montaje, instalación, ficha ni resultados; la integración XIAO sigue condicionada a evidencia posterior.
 
 ### 2026-09-07 — Sincronización física y comunicacional
 

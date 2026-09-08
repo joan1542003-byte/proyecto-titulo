@@ -9,7 +9,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
-- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 49 entradas bibliográficas y correcciones APA aplicadas.
+- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 51 entradas bibliográficas y correcciones APA aplicadas.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 30 de agosto entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
@@ -76,6 +76,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Control bibliográfico sincronizado
+
+- **Cambio:** el índice registra 51 referencias después de incorporar la fuente oficial sobre la matriz de micro:bit.
+- **Versión anterior:** la descripción permanecía en 49 entradas y no coincidía con la matriz ni con la memoria vigente.
+- **Motivo:** mantener una sola cifra verificable en los accesos al documento académico.
+- **Alcance:** el cambio describe correspondencia bibliográfica; no añade resultados ni valida la plataforma física.
 
 ### 2026-08-31 — Revisión final textual enlazada
 

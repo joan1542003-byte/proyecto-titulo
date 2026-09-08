@@ -135,6 +135,8 @@ La ejecución utilizará el [consentimiento informado](consentimiento-protocolo-
 
 Los parámetros quedan fijados para preparar materiales. Cualquier ajuste anterior a la primera sesión deberá registrarse con fecha y motivo. Después de comenzar el estudio solo podrán cambiarse por seguridad o por un fallo crítico; en ese caso, los datos obtenidos con versiones diferentes no se mezclarán sin distinguirlas.
 
+La matriz integrada de micro:bit se limita a pruebas de mesa sin participantes porque emite luz roja. En las sesiones de la fase A se utilizará una fuente externa de luz blanca cálida y difusa, conectada y comprobada mediante la [ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md). Los indicadores de encendido o conexión de la placa se cubrirán o quedarán fuera del campo visible para que no actúen como señales adicionales.
+
 ## Referencias metodológicas
 
 International Organization for Standardization. (2019). *Ergonomics of human-system interaction—Part 210: Human-centred design for interactive systems (ISO Standard No. 9241-210:2019).* https://www.iso.org/standard/77520.html
@@ -144,6 +146,13 @@ International Organization for Standardization. (2023). *Systems and software en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Fuente luminosa válida para la fase A
+
+- **Cambio:** se reservó la matriz roja de micro:bit para pruebas de mesa y se exigió una fuente externa de luz blanca cálida y difusa para las sesiones, junto con el control de indicadores ajenos a la señal.
+- **Versión anterior:** el protocolo definía la señal como luz blanca cálida, pero no aclaraba que la matriz integrada de la plataforma seleccionada emite luz roja.
+- **Motivo:** evitar que la implementación técnica contradiga el estímulo fijado y que luces de estado introduzcan señales no controladas.
+- **Alcance:** la decisión no valida todavía perceptibilidad, seguridad ni comprensión; esas condiciones deben comprobarse antes de reclutar.
 
 ### 2026-09-08 — Activación manual sobre un enlace verificado
 

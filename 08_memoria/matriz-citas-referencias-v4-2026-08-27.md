@@ -1,13 +1,13 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
-**Última comprobación:** 7 de septiembre de 2026
+**Última comprobación:** 8 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
 
-La memoria contiene 50 referencias y todas poseen al menos una cita correspondiente en el cuerpo. No se identificaron citas autor–fecha sin entrada bibliográfica ni referencias huérfanas. La revisión combinó extracción de nombres y fechas con comprobación manual de citas narrativas, citas parentéticas, autores institucionales y sufijos para obras del mismo autor.
+La memoria contiene 51 referencias y todas poseen al menos una cita correspondiente en el cuerpo. No se identificaron citas autor–fecha sin entrada bibliográfica ni referencias huérfanas. La revisión combinó extracción de nombres y fechas con comprobación manual de citas narrativas, citas parentéticas, autores institucionales y sufijos para obras del mismo autor.
 
 La convención de autoría se mantiene según APA 7: `y` integra los apellidos en citas narrativas, mientras `&` se utiliza en citas parentéticas y antes del último autor en la lista de referencias. Esta diferencia es intencional y no constituye una inconsistencia de idioma.
 
@@ -47,7 +47,8 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | MCI Electronics | s. f. | Sí | Sí | Conforme |
 | MechatronicStore | s. f. | Sí | Sí | Conforme |
 | Meier y Reinecke | 2021 | Sí | Sí | Conforme |
-| Micro:bit Educational Foundation | s. f. | Sí | Sí | Conforme |
+| Micro:bit Educational Foundation | s. f.-a | Sí | Sí | Conforme |
+| Micro:bit Educational Foundation | s. f.-b | Sí | Sí | Conforme |
 | Monge Roffarello y De Russis | 2023 | Sí | Sí | Conforme |
 | Montag et al. | 2019 | Sí | Sí | Conforme |
 | one sec | s. f. | Sí | Sí | Conforme |
@@ -72,6 +73,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 2. Kirsh se ubicó antes de Kitchen Safe en la lista de referencias.
 3. one sec se ubicó antes de O’Rear en la lista de referencias.
 4. Las obras de la Subsecretaría de Telecomunicaciones se reasignaron como 2026a para *Equipos de alcance reducido* y 2026b para el *Informe final*, junto con sus citas respectivas.
+5. Las páginas *Bluetooth* y *Hardware* de Micro:bit Educational Foundation se distinguen como s. f.-a y s. f.-b según el orden alfabético de sus títulos.
 
 ## Límites y mantenimiento
 
@@ -80,6 +82,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Fuente de hardware incorporada
+
+- **Cambio:** se añadió la especificación oficial de la matriz roja de micro:bit, se asignaron sufijos a las dos obras sin fecha de la entidad y se comprobó una correspondencia total de 51 referencias.
+- **Versión anterior:** la memoria citaba una sola página de Micro:bit Educational Foundation y la matriz registraba 50 entradas.
+- **Motivo:** respaldar la separación entre banco técnico y luz cálida de fase A con una fuente primaria.
+- **Alcance:** la correspondencia formal no demuestra funcionamiento del prototipo ni calidad perceptiva del material.
 
 ### 2026-09-07 — Correspondencia actualizada para la ruta física
 

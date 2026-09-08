@@ -26,7 +26,7 @@ La última condición no prohíbe que una placa tenga LED. Relevo puede usar una
 
 | Plataforma | Ya resuelto | Trabajo adicional | Adecuación a Relevo | Dictamen |
 |---|---|---|---|---|
-| **BBC micro:bit V2** | BLE 5.0, matriz LED 5 × 5, altavoz, botones, suspensión, programación visual o Python | Alimentación portátil y carcasa; una integración Android propia para el recorrido final | Muy buena para probar el vínculo Android → luz/sonido y comprensión del objeto; su placa expuesta no representa el acabado final | **Ruta inmediata de prueba** |
+| **BBC micro:bit V2** | BLE 5.0, matriz de 25 LED rojos, altavoz, botones, suspensión y programación documentada | Alimentación, cubierta y una luz cálida externa antes de trabajar con participantes; integración Android propia para el recorrido final | Muy buena para aislar BLE, tiempos, sonido y silencio local; la matriz integrada no reproduce la señal cromática definida para fase A | **Ruta inmediata de banco** |
 | **Circuit Playground Bluefruit** | nRF52840, BLE, diez LED, altavoz de 7,5 mm, dos botones, interruptor, alimentación externa o LiPo y forma circular de 50,6 mm | Batería, sistema de carga externo o pilas y carcasa/difusor; comprobar disponibilidad | Muy buena para una maqueta portátil sin soldar: integra casi todo lo requerido y admite una carcasa circular | **Ruta preferente si se consigue** |
 | **BleenyButton sobre XIAO nRF52840** | Repositorio abierto con XIAO, batería LiPo de 170 mAh, pulsador, firmware BLE, archivos STL y carcasa atornillada | Reemplazar el propósito de botón por el comportamiento de Relevo y añadir luz controlada más un transductor sonoro | No es un producto terminado, pero aporta una receta mecánica y de alimentación reproducible para la integración final | **Antecedente constructivo prioritario** |
 | **M5Stack ATOM Echo** | Cuerpo comercial de 24 × 24 × 17 mm, BLE, LED RGB, altavoz, botón y orificio de fijación | Alimentación portátil, gestión de batería, firmware BLE de bajo consumo y control de volumen | Muy compacto, pero la necesidad de agregar energía reabre la dificultad que se busca evitar; su altavoz de 0,5 W requiere regular cuidadosamente la salida | **Referencia de escala, no ruta inicial** |
@@ -36,8 +36,11 @@ La última condición no prohíbe que una placa tenga LED. Relevo puede usar una
 ## Ruta recomendada por etapas
 
 ```text
-Prueba de comprensión y conexión
+Prueba de conexión y comportamiento
 micro:bit V2 + portapilas + funda simple
+        │
+        ├─ banco sin participantes → matriz roja integrada
+        ├─ material de fase A → luz cálida externa revisada
         │
         ├─ si se consigue la placa circular con batería →
         │  Circuit Playground Bluefruit + LiPo + carcasa/difusor
@@ -49,7 +52,7 @@ micro:bit V2 + portapilas + funda simple
 
 ### Etapa 1 — micro:bit V2
 
-Es la vía más rápida y disponible para evitar que Android, BLE, luz, sonido y control local se transformen simultáneamente en un problema de electrónica. La placa mide aproximadamente 4 × 5 cm, tiene un altavoz y 25 LED, y MCI Electronics la lista disponible por CLP 24.990 al 7 de septiembre de 2026. El soporte oficial documenta Bluetooth 5.0 en V2, un perfil BLE propio, servicio UART y uso desde Android.
+Es la vía más rápida y disponible para evitar que Android, BLE, sonido y control local se transformen simultáneamente en un problema de electrónica. La placa mide aproximadamente 4 × 5 cm, tiene un altavoz y una matriz de 25 LED rojos, y MCI Electronics la lista disponible por CLP 24.990 al 7 de septiembre de 2026. El soporte oficial documenta Bluetooth 5.0 en V2, un perfil BLE propio, servicio UART y uso desde Android.
 
 Su carcasa inicial debe ser una funda impresa o de cartón rígido que:
 
@@ -60,6 +63,10 @@ Su carcasa inicial debe ser una funda impresa o de cartón rígido que:
 5. no simule un acabado industrial ni oculte que es una plataforma de ensayo.
 
 Para el primer recorrido portátil se puede usar el portapilas oficial de dos AAA. Esta solución aumenta el volumen y no es la forma final, pero permite ensayar la situación sin diseñar alimentación ni carga. La prueba no requiere rastrear, contar pasos ni usar los sensores del micro:bit.
+
+La matriz integrada permite revisar sin participantes la recepción del comando, los tres pulsos, el tono, la interrupción y la reconexión. No permite aprobar el material de fase A porque su emisión es roja y el protocolo exige luz blanca cálida. Para esa segunda puerta se incorpora un LED cálido externo en P1 con resistencia limitadora, difusor y revisión previa. Si la fuente no alcanza la perceptibilidad prevista, no se fuerza el pin ni se modifica la resistencia sin revisar la ficha del componente y el circuito.
+
+El [paquete Android–BLE para micro:bit](prueba-microbit-ble/README.md) contiene el proyecto MakeCode, el binario de mesa, los parámetros de señal y el procedimiento de instalación. La compilación quedó comprobada; el comportamiento físico y la salida cálida continúan sin medir.
 
 ### Etapa 2 — Circuit Playground Bluefruit, condicionada a disponibilidad
 
@@ -105,11 +112,12 @@ Escala de 1 a 5, donde 5 reduce más el esfuerzo en la etapa indicada.
 
 ## Decisión de trabajo
 
-1. Conseguir prestado o acceder a un micro:bit V2 solo para demostrar el recorrido físico y BLE.
-2. En paralelo, consultar disponibilidad real de Circuit Playground Bluefruit en un distribuidor. Solo después de confirmar precio, plazo y necesidad de la prueba se decidirá si vale la pena incorporarla.
-3. Usar BleenyButton como referencia concreta de carcasa, batería y fijación para la XIAO; no copiar su finalidad ni sus archivos sin revisar la licencia.
-4. No usar un smartwatch ni modificar un localizador comercial: ambos añaden pantalla, restricciones de firmware o ingeniería inversa sin responder mejor a la hipótesis.
-5. Mantener la XIAO nRF52840 como ruta de integración cuando ya existan medidas de luz, sonido, latencia y comprensión.
+1. Conseguir prestado o acceder a un micro:bit V2 para instalar el programa y comprobar BLE, tiempos, sonido y silencio con la matriz roja, sin participantes.
+2. Añadir y revisar una luz blanca cálida externa antes de usar la plataforma como material de fase A; la matriz integrada no se considera equivalente.
+3. En paralelo, consultar disponibilidad real de Circuit Playground Bluefruit en un distribuidor. Solo después de confirmar precio, plazo y necesidad de la prueba se decidirá si vale la pena incorporarla.
+4. Usar BleenyButton como referencia concreta de carcasa, batería y fijación para la XIAO; no copiar su finalidad ni sus archivos sin revisar la licencia.
+5. No usar un smartwatch ni modificar un localizador comercial: ambos añaden pantalla, restricciones de firmware o ingeniería inversa sin responder mejor a la hipótesis.
+6. Mantener la XIAO nRF52840 como ruta de integración cuando ya existan medidas de luz, sonido, latencia y comprensión.
 
 ## Prueba mínima con plataforma existente
 
@@ -134,9 +142,18 @@ El trabajo quedó trazado en la [Issue #11: Probar la señal situada con una pla
 - M5Stack. (s. f.). *M5StickS3 ESP32S3 mini IoT development kit*. https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit
 - MCI Electronics. (s. f.). *Placa BBC micro:bit V2*. https://mcielectronics.cl/shop/product/bbc-microbit-v2-placa-unica/
 - Micro:bit Educational Foundation. (s. f.). *Bluetooth*. https://tech.microbit.org/bluetooth/
+- Micro:bit Educational Foundation. (s. f.). *Connecting an LED to the micro:bit*. https://support.microbit.org/support/solutions/articles/19000101863-connecting-an-led-to-the-micro-bit
+- Micro:bit Educational Foundation. (s. f.). *Hardware*. https://tech.microbit.org/hardware/
 - Micro:bit Educational Foundation. (2025). *Using the micro:bit Bluetooth Low Energy UART*. https://support.microbit.org/support/solutions/articles/19000062330-using-the-micro-bit-bluetooth-low-energy-uart-serial-over-bluetooth-
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Matriz roja separada de la luz cálida
+
+- **Qué cambió:** la matriz integrada queda limitada al banco técnico; la prueba con participantes exige una fuente cálida externa revisada, y se enlaza el paquete MakeCode ya compilado.
+- **Cómo era antes:** el documento trataba los 25 LED de micro:bit como una salida capaz de cubrir conexión y comprensión sin declarar que todos emiten luz roja.
+- **Por qué:** la especificación oficial de la placa contradice la luz blanca cálida fijada en el protocolo; mantener ambas como equivalentes habría invalidado el control del material.
+- **Alcance:** no se ha conectado el LED externo ni instalado el binario; brillo, difusión, volumen, latencia y estabilidad siguen sujetos al ensayo técnico.
 
 ### 2026-09-08 — Interfaz BLE mínima para la primera prueba
 

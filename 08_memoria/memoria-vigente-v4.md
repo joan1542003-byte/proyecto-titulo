@@ -733,7 +733,7 @@ Las capacidades de Android también tienen límites. UsageStatsManager requiere 
 
 La aplicación conserva la información del ciclo y evalúa la condición de manera local. Bluetooth de baja energía transporta el comando hacia el objeto. Esta arquitectura reduce el envío de datos a servicios externos y permite que el dispositivo físico se mantenga simple. Procesamiento local no significa privacidad absoluta: los permisos, registros y respaldos deben documentarse.
 
-La comprobación técnica se divide en dos niveles. El primero utiliza una plataforma ya fabricada, preferentemente micro:bit V2, para aislar la conexión con Android y el comportamiento de luz, sonido y silencio local. La matriz de la placa funciona únicamente como fuente luminosa; no muestra texto ni incorpora navegación. Esta etapa permite identificar fallos de enlace y comprensión antes de fabricar una carcasa propia (Micro:bit Educational Foundation, s. f.).
+La comprobación técnica se divide en dos niveles. El primero utiliza una micro:bit V2 para aislar la conexión con Android, los tiempos, el sonido y el silencio local. En el banco sin participantes, su matriz roja representa únicamente el encendido y no muestra texto ni navegación. Como ese color no corresponde a la señal provisional, el material destinado a evaluar comprensión incorpora después una luz blanca cálida externa y difundida. Así, la facilidad de la plataforma no cambia silenciosamente el estímulo descrito en el protocolo (Micro:bit Educational Foundation, s. f.-a, s. f.-b).
 
 El segundo nivel integra el testigo portátil mediante una XIAO nRF52840, batería recargable protegida, una luz, un transductor sonoro pequeño y un control local. La placa reúne Bluetooth de baja energía y gestión de carga en 21 × 17,8 mm, por lo que reduce el tamaño y el número de conexiones frente a los montajes de mesa anteriores (Seeed Studio, 2026). BleenyButton demuestra una disposición abierta de la misma placa con batería, botón y carcasa atornillada; se estudia como antecedente constructivo, no como solución de uso. Cualquier reutilización de sus archivos o código exige revisar su licencia GPL-3.0 (Asterics Foundation, s. f.).
 
@@ -918,7 +918,9 @@ MechatronicStore. (s. f.). *Seeed Studio XIAO nRF52840*. Recuperado el 7 de sept
 
 Meier, A., & Reinecke, L. (2021). Computer-mediated communication, social media, and mental health: A conceptual and empirical meta-review. *Communication Research, 48*(8), 1182–1209. https://doi.org/10.1177/0093650220958224
 
-Micro:bit Educational Foundation. (s. f.). *Bluetooth*. Recuperado el 7 de septiembre de 2026, de https://tech.microbit.org/bluetooth/
+Micro:bit Educational Foundation. (s. f.-a). *Bluetooth*. Recuperado el 7 de septiembre de 2026, de https://tech.microbit.org/bluetooth/
+
+Micro:bit Educational Foundation. (s. f.-b). *Hardware*. Recuperado el 8 de septiembre de 2026, de https://tech.microbit.org/hardware/
 
 Monge Roffarello, A., & De Russis, L. (2023). Achieving digital wellbeing through digital self-control tools: A systematic review and meta-analysis. *ACM Transactions on Computer-Human Interaction, 30*(4), Artículo 53, 1–66. https://doi.org/10.1145/3571810
 
@@ -957,6 +959,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Compatibilidad material de la prueba micro:bit
+
+- **Cambio:** se distinguió la matriz roja utilizada en el banco técnico de la luz blanca cálida externa requerida para evaluar comprensión, y se añadió la fuente técnica correspondiente.
+- **Versión anterior:** la matriz integrada aparecía como fuente luminosa de la primera etapa sin advertir que su color no coincidía con la señal descrita en el protocolo.
+- **Motivo:** mantener correspondencia entre arquitectura, material de prueba y afirmaciones académicas, sin atribuir a una plataforma una capacidad que no posee.
+- **Alcance:** el programa compila, pero no ha sido instalado ni medido; no se añadieron resultados ni se habilitaron participantes.
 
 ### 2026-09-07 — Ruta física portátil sincronizada
 

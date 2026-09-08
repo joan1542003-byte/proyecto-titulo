@@ -40,7 +40,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La dirección vigente de comunicación, naming y color se consulta en `10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md`; las carpetas anteriores conservan el proceso visual.
-- La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`, junto con las Issues #11 para la prueba temprana y #10 para la integración portátil.
+- La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`; el código y el binario de la puerta inmediata están en `06_desarrollo_y_factibilidad/prueba-microbit-ble/`. La Issue #11 controla esa prueba y la #10 conserva la integración portátil.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde `99_archivo` o desde la carpeta histórica indicada por cada README.
 
 ## Política de duplicados y archivo
@@ -66,6 +66,13 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Paquete ejecutable incorporado al recorrido
+
+- **Qué cambió:** el índice enlaza la implementación micro:bit además del estudio comparativo.
+- **Cómo estaba antes:** permitía encontrar la decisión física, pero no el programa que materializa la siguiente puerta.
+- **Por qué se decidió:** reducir búsquedas y evitar que una conversación vuelva a programar o seleccione un montaje histórico.
+- **Alcance:** el enlace conduce a una compilación sin prueba física; no acredita resultados.
 
 ### 2026-09-07 — Ruta física incorporada
 

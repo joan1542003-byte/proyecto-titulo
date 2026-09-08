@@ -1,7 +1,7 @@
 # Auditoría de redacción y estructura — memoria v4
 
 **Fecha de creación:** 26 de agosto de 2026
-**Último control:** 7 de septiembre de 2026
+**Último control:** 8 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 
 ## Resultado
@@ -27,7 +27,7 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 20.307 palabras: 16.999 antes de las referencias, 1.207 en la bibliografía y 2.097 en el registro de cambios, además de los encabezados delimitadores. Los capítulos 1–13 contienen 16.334 palabras y se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen. El archivo operativo supera ese rango porque conserva referencias y trazabilidad; la versión editorial deberá comprobar el criterio institucional exacto antes de decidir qué segmentos acompañan el cuerpo académico.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 20.453 palabras: 17.022 antes de las referencias, 1.226 en la bibliografía y 2.205 en el registro de cambios, además de los encabezados delimitadores. Los capítulos 1–13 contienen 16.359 palabras y se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen. El archivo operativo supera ese rango porque conserva referencias y trazabilidad; la versión editorial deberá comprobar el criterio institucional exacto antes de decidir qué segmentos acompañan el cuerpo académico.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
@@ -58,7 +58,7 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 
 ## Control de APA 7
 
-La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) verifica las 49 entradas de la bibliografía. Todas poseen al menos una cita en el cuerpo y no existen citas autor–fecha sin referencia. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de dos documentos de la Subsecretaría de Telecomunicaciones. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
+La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) verifica las 51 entradas de la bibliografía. Todas poseen al menos una cita en el cuerpo y no existen citas autor–fecha sin referencia. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de obras con la misma autoría y sin fecha. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
 
 ## Control de trazabilidad de criterios
 
@@ -71,6 +71,8 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+**8 de septiembre de 2026 — Fuente luminosa y conteo sincronizados.** Se actualizó el control después de distinguir la matriz roja del banco técnico y la luz blanca cálida del material con participantes. Antes, la auditoría registraba 20.307 palabras totales, 16.334 en los capítulos 1–13 y 49 referencias en su apartado APA. Ahora registra 20.453, 16.359 y 51, respectivamente. La modificación conserva el cuerpo dentro del rango y no incorpora resultados de validación.
 
 **7 de septiembre de 2026 — Ruta física y control editorial.** Se actualizó el conteo después de sustituir la ruta B1/B2 por una prueba con plataforma existente y una integración portátil con XIAO nRF52840. Antes, la auditoría registraba 19.809 palabras totales, 16.113 en los capítulos 1–13 y 49 referencias. Ahora registra 20.307, 16.334 y 50, respectivamente. El cuerpo se mantiene dentro del rango; no se incorporaron resultados y el total operativo incluye bibliografía y trazabilidad.
 

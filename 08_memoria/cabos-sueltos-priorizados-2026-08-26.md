@@ -53,7 +53,7 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 | Condición Android de activación | La primera comprobación utilizará un temporizador iniciado manualmente desde Android. Sigue abierta la condición observable que activará el sistema integrado. | Comprobar primero la orden BLE; después seleccionar una condición local y documentar permisos, falsos positivos, vencimiento y salida. | 11.2, 12.2, 13.4 e Issue #11. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
-| Ensayo técnico de la fase A | El protocolo y la ficha están alineados con una plataforma existente, pero no hay acceso a la unidad, firmware ni mediciones. | Conseguir micro:bit V2 o justificar la alternativa, programar la orden `activar`, comprobar el silencio local y completar todas las series técnicas. | `06_desarrollo_y_factibilidad/`, Issue #11 y `07_validacion/especificacion-materiales-fase-a.md`. |
+| Ensayo técnico de la fase A | El programa micro:bit y el binario de mesa están preparados, pero no hay acceso a la unidad, instalación, luz cálida externa ni mediciones. | Conseguir micro:bit V2, instalar el binario, comprobar BLE y silencio sin participantes, montar la salida cálida revisada y completar todas las series técnicas. | `06_desarrollo_y_factibilidad/prueba-microbit-ble/`, Issue #11 y `07_validacion/especificacion-materiales-fase-a.md`. |
 | Notificación local para la fase B | La comparación exige un aviso en el mismo teléfono Android utilizado durante la espera, pero el emisor todavía no existe. | Construir y verificar un disparador local único, sin mensajería externa ni historial de cumplimiento. | 12.1, 13.2 y protocolo 01. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
@@ -83,7 +83,7 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es acceder a una plataforma existente, preferentemente micro:bit V2, programar la activación por BLE, comprobar el silencio local y ejecutar el ensayo técnico completo. El reclutamiento podrá comenzar únicamente después de verificar el material, completar el contacto del responsable y obtener revisión académica del consentimiento y del protocolo. La fecha máxima de eliminación está fijada en el 13 de enero de 2027. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada. La integración con XIAO nRF52840 se realiza después, si la evidencia justifica continuar.
+El siguiente paso es acceder a una micro:bit V2, instalar el binario ya compilado y comprobar BLE, tiempos, sonido y silencio local con la matriz roja, sin participantes. Después se incorpora una luz blanca cálida externa revisada y se ejecuta la ficha técnica completa. El reclutamiento podrá comenzar únicamente después de verificar el material, completar el contacto del responsable y obtener revisión académica del consentimiento y del protocolo. La fecha máxima de eliminación está fijada en el 13 de enero de 2027. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada. La integración con XIAO nRF52840 se realiza después, si la evidencia justifica continuar.
 
 ## Estado coordinado en GitHub
 
@@ -99,6 +99,13 @@ La [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) perm
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Firmware preparado y montaje pendiente precisado
+
+- **Cambio:** el cabo técnico deja de pedir programación desde cero y distingue instalación de banco, luz cálida externa y mediciones.
+- **Versión anterior:** acceso, firmware y ensayo aparecían como un único vacío, aunque el código ya estaba compilado.
+- **Motivo:** mostrar qué dependencia fue resuelta y cuál bloquea realmente la prueba con participantes.
+- **Alcance:** no se ha usado una placa real ni completado una ficha; el pendiente continúa abierto.
 
 ### 2026-09-08 — Pendientes físicos y de validación reconciliados
 

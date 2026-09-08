@@ -65,7 +65,9 @@ La iluminación y el entorno sonoro de cada condición se fijan y registran ante
 - [ ] La plataforma permanece en reposo al encenderse, enlazarse y reconectarse.
 - [ ] Android envía `activar` por BLE a tres metros sin acercarse al material.
 - [ ] El control físico de silenciamiento funciona sin depender del enlace.
+- [ ] Los indicadores de alimentación o conexión ajenos a la señal están cubiertos, desactivados o fuera del campo visible, y su tratamiento quedó registrado.
 - [ ] La luz blanca cálida puede regularse al menos en tres niveles reproducibles.
+- [ ] Si se utiliza micro:bit V2, la fuente de fase A es un LED cálido externo revisado; la matriz roja integrada se limita al banco técnico sin participantes.
 - [ ] El tono puede regularse al menos en tres niveles reproducibles y no contiene voz.
 - [ ] El difusor evita una fuente puntual directa.
 - [ ] La cubierta no utiliza los LED para mostrar letras, números, menús ni instrucciones.
@@ -215,6 +217,13 @@ Cumplir esta ficha autoriza únicamente a solicitar revisión académica del mat
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Control de luz e indicadores en micro:bit
+
+- **Cambio:** el control previo distingue la matriz roja de banco de la luz cálida exigida para fase A y obliga a registrar los indicadores ajenos a la señal.
+- **Versión anterior:** la ficha pedía luz cálida, pero no impedía aprobar la matriz integrada ni aclaraba qué significaba reposo cuando la placa mantenía indicadores de estado.
+- **Motivo:** comprobar el material que describe el protocolo y evitar que otra luz altere la percepción de los pulsos.
+- **Alcance:** las nuevas casillas permanecen vacías; no acreditan montaje, seguridad, visibilidad ni resultados.
 
 ### 2026-09-08 — Registro técnico de Android, BLE, luz y sonido
 

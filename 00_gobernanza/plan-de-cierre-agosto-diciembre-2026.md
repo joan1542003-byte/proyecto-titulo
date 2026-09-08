@@ -2,7 +2,7 @@
 
 **Fecha de planificación:** 2 de septiembre de 2026
 
-**Última revisión de estado:** 7 de septiembre de 2026
+**Última revisión de estado:** 8 de septiembre de 2026
 
 **Cierre total interno:** 15 de noviembre de 2026
 
@@ -18,9 +18,9 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 ## Etapa actual
 
-Relevo se encuentra en una etapa de **corrección y cierre del wireframe v1 antes del desarrollo funcional**. La cobertura técnica del tablero y sus 44 exportaciones fue verificada, y el recorrido mínimo ya está separado de los estados complementarios en el [alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md). La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen un sistema visual v4 y una memoria estructuralmente avanzada.
+Relevo se encuentra en una etapa de **cierre del wireframe v1 y preparación del primer banco físico**. La cobertura técnica del tablero y sus 44 exportaciones fue verificada, y el recorrido mínimo ya está separado de los estados complementarios en el [alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md). La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen un sistema visual v4 y una memoria estructuralmente avanzada.
 
-El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. Todavía faltan acceso a la plataforma, firmware, conexión Android, mediciones y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden congelar el wireframe.
+El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. El programa mínimo para micro:bit V2 ya compila y dispone de un archivo instalable. Todavía faltan acceso a la placa, instalación, conexión medida, incorporación de una luz blanca cálida externa, ensayo y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden cerrar el wireframe.
 
 Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La prioridad es convertir las hipótesis más importantes en prototipos, pruebas y decisiones.
 
@@ -36,7 +36,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
 | Prototipo Android | Inicial | Plataforma justificada, wireframes verificados, recorrido mínimo y backlog definidos. | Congelar el wireframe v1, construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
-| Testigo físico | Ruta por etapas documentada | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas. | Conseguir acceso a la plataforma, comprobar el comportamiento y completar después la integración portátil. |
+| Testigo físico | Banco preparado, no ejecutado | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado y documentado. | Acceder a la placa, instalar, añadir la salida cálida, medir, revisar el montaje y completar después la integración portátil. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Revisar wireframes y prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
@@ -48,8 +48,8 @@ El cierre depende de la siguiente secuencia:
 1. revisar los wireframes existentes y detectar vacíos, contradicciones y estados que sobran;
 2. establecer el recorrido mínimo, el backlog y los pasos de desarrollo;
 3. corregir y congelar una primera versión de wireframes antes de programar;
-4. construir la navegación y el estado básico de la app, sin integrar todavía toda la electrónica;
-5. comprobar una señal segura con una plataforma existente y probar internamente app, flujo y testigo;
+4. comprobar conexión, señal y silencio local con una plataforma existente, sin participantes ni aplicación propia;
+5. preparar la salida cálida de fase A y construir la navegación básica de la app antes de probar internamente el sistema;
 6. ejecutar la prueba con usuarios solo cuando el prototipo y el protocolo estén listos;
 7. comparar lugar, modalidad y notificación, y decidir qué se mantiene o cambia;
 8. integrar Android y el testigo, cerrar forma, producción y costos;
@@ -294,6 +294,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Banco micro:bit preparado
+
+- **Cambio:** se registró la compilación del programa mínimo, se separó el banco rojo sin participantes de la salida cálida de fase A y se adelantó la comprobación técnica a la construcción de la aplicación propia.
+- **Versión anterior:** el plan decía que faltaba firmware y situaba la primera comprobación física después de construir la navegación Android.
+- **Motivo:** aprovechar una terminal UART como instrumento temporal y resolver primero las incertidumbres de conexión, señal y control local.
+- **Alcance:** no existen instalación, mediciones, revisión del montaje ni resultados; las fechas de cierre se mantienen.
 
 ### 2026-09-07 — Secuencia física actualizada
 

@@ -5,7 +5,7 @@
 
 ## Principio de construcción
 
-El material debe funcionar como una señal controlada, no como una representación de la forma final de Relevo. La vía inmediata es una plataforma ya fabricada, preferentemente micro:bit V2, dentro de una cubierta neutra. Su apariencia solo necesita evitar significados ajenos, permanecer estable y permitir percibir luz y sonido. No se evaluarán identidad visual, acabado, tamaño definitivo, autonomía energética ni fabricación.
+El material debe funcionar como una señal controlada, no como una representación de la forma final de Relevo. La vía inmediata es una plataforma ya fabricada, preferentemente micro:bit V2, dentro de una cubierta neutra. Como su matriz integrada emite luz roja, esta se utiliza únicamente en el banco técnico. Antes de trabajar con participantes, la plataforma debe incorporar una luz blanca cálida externa, difundida y revisada, o ser reemplazada por otra que cumpla el mismo requisito. Su apariencia solo necesita evitar significados ajenos, permanecer estable y permitir percibir luz y sonido. No se evaluarán identidad visual, acabado, tamaño definitivo, autonomía energética ni fabricación.
 
 En esta etapa, **manual** describe la decisión de activación: el investigador determina cuándo enviar la orden desde Android. La orden puede viajar por Bluetooth de baja energía (BLE), siempre que el enlace haya sido comprobado antes de la sesión. No se incorporan todavía detección de aplicaciones, automatización ni reglas contextuales.
 
@@ -13,7 +13,7 @@ En esta etapa, **manual** describe la decisión de activación: el investigador 
 
 | Componente | Requisito mínimo | Fuera de alcance |
 | --- | --- | --- |
-| Cuerpo neutro | Volumen estable, sin texto ni iconos; cubre la placa sin impedir el paso de luz y sonido ni el acceso al control local. | Forma, material industrial o portabilidad final. |
+| Cuerpo neutro | Volumen estable, sin texto ni iconos; cubre la placa y sus indicadores ajenos a la señal sin impedir el paso de la luz definida, el sonido ni el acceso al control local. | Forma, material industrial o portabilidad final. |
 | Fuente de luz | Luz blanca cálida regulable y visible desde varios ángulos; no muestra letras, números ni información. | Patrón luminoso definitivo o color de identidad. |
 | Difusor | Evita puntos luminosos directos y distribuye el pulso. | Textura, color o proceso productivo definitivo. |
 | Fuente sonora | Tono breve, sin voz, regulable y reconocible en el entorno registrado. | Timbre definitivo, mensajes hablados o volumen comercial. |
@@ -24,7 +24,7 @@ En esta etapa, **manual** describe la decisión de activación: el investigador 
 
 ## Comportamiento esperado
 
-1. El material permanece apagado al conectarse.
+1. El canal de señal permanece apagado al encender, conectar o reconectar el material. Los indicadores de alimentación o enlace que no puedan desactivarse se cubren o se excluyen del campo visible y quedan anotados.
 2. La orden `activar` produce una sola secuencia de tres pulsos luminosos cuya duración total es de 3 s ± 0,3 s y un tono breve sincronizado con el inicio.
 3. Una nueva orden recibida durante la secuencia no acumula señales.
 4. El control físico detiene la señal en menos de un segundo y devuelve el material a reposo.
@@ -70,11 +70,20 @@ La ficha deberá conservar fecha, plataforma, dispositivo Android, versión del 
 
 El resultado técnico no autoriza por sí solo a trabajar con participantes. Antes del reclutamiento debe completarse el correo del responsable, obtenerse la revisión académica del conjunto y cerrarse cualquier corrección solicitada. La fecha máxima de eliminación ya está fijada en el consentimiento. La plataforma y la secuencia de comprobación se fundamentan en el [estudio de alternativas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y se controlan mediante la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11).
 
+El código y la conexión inicial están documentados en el [paquete Android–BLE con micro:bit V2](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md). Su compilación no sustituye ninguna repetición de esta especificación.
+
 Cumplir esta especificación solo demuestra que el material puede ejecutar el ensayo de manera estable. No demuestra que la señal se perciba, se comprenda o recupere una intención.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Compatibilidad de la fuente luminosa
+
+- **Cambio:** se limitó la matriz roja de micro:bit al banco técnico, se exigió una salida cálida externa antes de participantes y se precisó el tratamiento de indicadores ajenos a la señal.
+- **Versión anterior:** la plataforma preferente y la luz blanca cálida aparecían como requisitos simultáneos, aunque la matriz integrada no puede producir ese color; `apagado` tampoco distinguía señal de indicadores de estado.
+- **Motivo:** evitar una equivalencia material falsa y asegurar que la fase A use la señal descrita en el protocolo.
+- **Alcance:** la fuente cálida, su resistor, la difusión y la visibilidad todavía deben montarse, revisarse y medirse; no existen resultados.
 
 ### 2026-09-08 — Puerta técnica adaptada a la plataforma existente
 
