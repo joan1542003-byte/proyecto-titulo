@@ -11,7 +11,7 @@ Se le invita a participar en una prueba formativa de un proyecto de titulación 
 
 ## Propósito de la prueba
 
-La actividad busca conocer si una señal breve puede asociarse con una intención personal y con el lugar donde una actividad puede comenzar. También compara esa señal con una notificación digital. La prueba evalúa prototipos y explicaciones; no evalúa su memoria, productividad, autocontrol ni desempeño personal.
+La actividad busca conocer si una señal breve de luz y sonido puede asociarse con una intención personal y con el lugar donde una actividad puede comenzar. También compara esa señal con una notificación digital. La prueba evalúa prototipos y explicaciones; no evalúa su memoria, productividad, autocontrol ni desempeño personal.
 
 ## Qué se le pedirá
 
@@ -23,7 +23,7 @@ Participar es voluntario y no contempla pago. Puede omitir una pregunta, solicit
 
 ## Riesgos y molestias posibles
 
-La señal puede resultar poco visible, molesta o confusa. También podría incomodarle hablar sobre una intención personal. Puede elegir actividades no sensibles y detener el ensayo en cualquier momento. La prueba no busca abordar adicción, salud mental ni situaciones clínicas.
+La luz puede resultar poco visible y el sonido puede sentirse molesto, insuficiente o confuso. Antes de comenzar se comprueba que ambos niveles sean perceptibles y aceptables para la persona. Puede solicitar que se reduzcan, detener la señal o no continuar. También podría incomodarle hablar sobre una intención personal; puede elegir actividades no sensibles. La prueba no busca abordar adicción, salud mental ni situaciones clínicas.
 
 ## Datos y privacidad
 
@@ -50,6 +50,13 @@ Declaro que leí o escuché esta información, pude hacer preguntas y acepto par
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Canales de la señal explicitados
+
+- **Cambio:** se informó que la señal provisional combina luz y sonido, se añadieron las molestias posibles de ambos canales y el derecho a ajustar o detener su intensidad.
+- **Versión anterior:** el consentimiento mencionaba una señal genérica y solo advertía que podía resultar poco visible, molesta o confusa.
+- **Motivo:** describir con claridad la experiencia prevista antes de solicitar consentimiento.
+- **Alcance:** el documento continúa como borrador; falta completar el correo y obtener revisión académica antes de utilizarlo.
 
 ### 2026-08-30 — Fecha máxima de eliminación
 

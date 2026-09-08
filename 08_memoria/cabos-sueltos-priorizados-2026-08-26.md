@@ -1,6 +1,6 @@
 # Cabos sueltos priorizados antes del siguiente cierre de la memoria
 
-**Última reconciliación:** 30 de agosto de 2026
+**Última reconciliación:** 8 de septiembre de 2026
 
 ## Dictamen
 
@@ -42,23 +42,25 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 30 de agosto de 2026:** B1 y B2 poseen esquemas revisables y costos con exclusiones visibles. La arquitectura de 12 V se conserva como respaldo; ninguna alternativa está aprobada para compra o energización.
 
+**Resuelto el 8 de septiembre de 2026:** la prueba física inmediata se separó de la integración final. Una plataforma existente comprobará Android, BLE, luz, sonido y control local; XIAO nRF52840 queda para el testigo portátil posterior. B1, B2 y 12 V permanecen como antecedentes de mesa.
+
 No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avances dependen de decisiones metodológicas o evidencia obtenida mediante prototipos.
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
 
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
-| Condición Android de activación | La activación del ensayo de fase A se resolvió mediante un pulsador cableado a tres metros. Sigue abierta la condición observable que utilizará Android en la integración posterior. | Seleccionar una condición local técnicamente observable después de estabilizar la señal física; documentar permisos, falsos positivos, vencimiento y salida. | 11.2, 12.2 y 13.4. |
+| Condición Android de activación | La primera comprobación utilizará un temporizador iniciado manualmente desde Android. Sigue abierta la condición observable que activará el sistema integrado. | Comprobar primero la orden BLE; después seleccionar una condición local y documentar permisos, falsos positivos, vencimiento y salida. | 11.2, 12.2, 13.4 e Issue #11. |
 | Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
-| Ensayo técnico de la fase A | B1 y B2 cuentan con esquemas y compra escalonada, pero faltan inventario, revisión electrónica competente, selección luminosa, construcción y mediciones. | Inventariar, revisar ambas alternativas, compararlas con condiciones equivalentes y construir solo la seleccionada; después ejecutar las series técnicas. | `06_desarrollo_y_factibilidad/`, Issue #10 y `07_validacion/especificacion-materiales-fase-a.md`. |
+| Ensayo técnico de la fase A | El protocolo y la ficha están alineados con una plataforma existente, pero no hay acceso a la unidad, firmware ni mediciones. | Conseguir micro:bit V2 o justificar la alternativa, programar la orden `activar`, comprobar el silencio local y completar todas las series técnicas. | `06_desarrollo_y_factibilidad/`, Issue #11 y `07_validacion/especificacion-materiales-fase-a.md`. |
 | Notificación local para la fase B | La comparación exige un aviso en el mismo teléfono Android utilizado durante la espera, pero el emisor todavía no existe. | Construir y verificar un disparador local único, sin mensajería externa ni historial de cumplimiento. | 12.1, 13.2 y protocolo 01. |
 
 ## Prioridad 2 — Resolver durante el prototipado inmediato
 
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
-| Canal y cualidades de la señal | La siguiente comparación se acotó a B1 y B2 luminosas de 5 V. Color, distribución, intensidad y difusión siguen abiertos; sonido y vibración permanecen como alternativas posteriores de accesibilidad. | Revisar B1/B2, usar el mismo difusor y comparar perceptibilidad, uniformidad, intrusión, silencio, estabilidad y consumo antes de ampliar canales. | 11.3, 11.9, 11.10, 13.3 e Issue #10. |
+| Canal y cualidades de la señal | Luz y sonido son las salidas vigentes; patrón, color, distribución, intensidad, tono, volumen e interacción entre canales siguen abiertos. | Probar niveles reproducibles y registrar percepción, intrusión y alternativas de acceso antes de fijar el lenguaje de señal. | 11.3, 11.9, 11.10, 13.3 e Issues #11 y #10. |
 | Contexto doméstico | El hogar es un alcance de diseño, no un hallazgo observado sistemáticamente. | Registrar superficies, ruido, iluminación, convivencia, privacidad y desplazamiento del objeto. | 7.8, 11.4 y resultados. |
 | Forma y materialidad | La forma circular continúa como hipótesis y aún no existen medidas, estabilidad, mantenimiento ni reparación comprobados. | Construir alternativas volumétricas y comparar visibilidad, manipulación, emplazamiento y acceso a componentes. | 11.3, 12.3 y 13.3. |
 | Accesibilidad | La memoria declara criterios generales, pero no demuestra acceso multimodal. | Probar combinaciones de señal y salida con necesidades visuales, auditivas y motrices pertinentes al alcance. | 11.10 y resultados. |
@@ -68,8 +70,8 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
-| Factibilidad Android y enlace físico | Existe una arquitectura posible, pero no una integración medida. | Registrar permisos, segundo plano, latencia, reconexión, vencimiento y consumo energético. | 12.1, 12.2 y 13.4. |
-| Costos y producción | Existen precios locales fechados y escenarios de desembolso para 12 V, B1 y B2, pero no corresponden a cotizaciones de producción ni incluyen todas las partidas. | Registrar inventario y precios pagados, cerrar la BOM de la alternativa elegida y luego solicitar cotizaciones de fabricación, ensamblaje y terminación. | 12.3, 12.4, 12.6 y `06_desarrollo_y_factibilidad/`. |
+| Factibilidad Android y enlace físico | Existe una ruta de prueba con plataforma existente y una candidata de integración, pero ninguna conexión ha sido medida. | Registrar permisos, latencia, reconexión y fallos en la plataforma de prueba; estudiar segundo plano, vencimiento y consumo al incorporar la condición automática. | 12.1, 12.2, 13.4 e Issue #11. |
+| Costos y producción | Existen precios fechados para montajes de mesa y para la placa XIAO, pero falta una lista completa del testigo portátil y no hay cotizaciones productivas. | Registrar el costo real de la prueba; después de demostrar el aporte físico, cerrar la lista de materiales y cotizar carcasa, ensamblaje y terminación. | 12.3, 12.4, 12.6, Issue #10 y `06_desarrollo_y_factibilidad/`. |
 | Gestión y cumplimiento | Se describen actores y requisitos, pero no acuerdos, certificaciones ni proveedores confirmados. | Definir responsables, dependencias, protección de datos y ruta de cumplimiento proporcional al prototipo. | 10.10, 12.5 y 12.6. |
 
 ## Correcciones documentales que sí pueden hacerse ahora
@@ -81,7 +83,7 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 
 ## Orden de trabajo recomendado
 
-El siguiente paso es inventariar componentes, someter B1 y B2 a revisión electrónica competente y comparar ambas fuentes luminosas bajo condiciones equivalentes. Solo entonces corresponde completar y construir la alternativa seleccionada y ejecutar el ensayo técnico sin participantes. El reclutamiento podrá comenzar después de verificar el material, completar el contacto del responsable y obtener revisión académica del consentimiento. La fecha máxima de eliminación está fijada en el 13 de enero de 2027. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada.
+El siguiente paso es acceder a una plataforma existente, preferentemente micro:bit V2, programar la activación por BLE, comprobar el silencio local y ejecutar el ensayo técnico completo. El reclutamiento podrá comenzar únicamente después de verificar el material, completar el contacto del responsable y obtener revisión académica del consentimiento y del protocolo. La fecha máxima de eliminación está fijada en el 13 de enero de 2027. La fase B permanece bloqueada hasta disponer de una notificación local estandarizada. La integración con XIAO nRF52840 se realiza después, si la evidencia justifica continuar.
 
 ## Estado coordinado en GitHub
 
@@ -89,13 +91,21 @@ El siguiente paso es inventariar componentes, someter B1 y B2 a revisión electr
 - [Issue #5](https://github.com/joan1542003-byte/proyecto-titulo/issues/5): cerrada; el feedback E15 fue incorporado y transferido a la ruta vigente.
 - [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8): abierta; validación prioritaria y reclutamiento bloqueado.
 - [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9): abierta; gobierna el calendario de cierre.
-- [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10): abierta; concentra inventario, revisión y comparación B1/B2.
+- [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10): abierta; conserva la integración posterior del testigo portátil con XIAO nRF52840.
+- [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): abierta; controla la comprobación inmediata con una plataforma existente.
 
 La [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece abierta únicamente como migración histórica en pausa y no gobierna el desarrollo actual.
 
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Pendientes físicos y de validación reconciliados
+
+- **Cambio:** la lista sustituye el pulsador cableado y la comparación B1/B2 como próximos pasos por una prueba Android–BLE en plataforma existente; diferencia esa puerta de la integración posterior con XIAO.
+- **Versión anterior:** el orden de trabajo todavía respondía a la arquitectura luminosa de mesa definida el 30 de agosto.
+- **Motivo:** evitar que un registro operativo activo contradiga la decisión física y el protocolo vigentes.
+- **Alcance:** no se cerraron conexión, condición automática, prueba con participantes, costos ni producción; no se añadieron resultados.
 
 ### 2026-08-30 — Reconciliación de pendientes e Issues
 

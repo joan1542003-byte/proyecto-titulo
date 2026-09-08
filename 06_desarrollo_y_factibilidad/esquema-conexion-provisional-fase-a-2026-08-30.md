@@ -2,7 +2,9 @@
 
 **Fecha de corte:** 30 de agosto de 2026
 
-**Estado:** borrador para revisión electrónica; no aprobado para energizar
+**Estado:** antecedente del montaje de 12 V; fuera de la ruta operativa vigente
+
+> **Lectura vigente:** la tabla conserva las relaciones del montaje anterior, pero no corresponde a la plataforma de prueba ni al testigo portátil recomendados. No está aprobada para construcción o energización.
 
 **Relación:** desarrolla el [montaje mínimo](montaje-minimo-fase-a-2026-08-30.md) y el [firmware provisional](prototipo-fase-a/README.md)
 
@@ -119,6 +121,13 @@ MechatronicStore. (s. f.-f). *Tira LED 5050 rígida de 1 m, 12 V, blanco cálido
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Esquema reclasificado como antecedente
+
+- **Cambio:** la tabla de conexiones quedó vinculada explícitamente al montaje histórico de 12 V.
+- **Versión anterior:** figuraba como borrador previo a una revisión electrónica y podía leerse como siguiente instrucción de montaje.
+- **Motivo:** conservar la trazabilidad técnica sin mantener activa una arquitectura sustituida.
+- **Alcance:** las relaciones y advertencias originales no fueron modificadas ni comprobadas físicamente.
 
 ### 2026-08-30 — Creación
 

@@ -113,13 +113,13 @@ Escala de 1 a 5, donde 5 reduce más el esfuerzo en la etapa indicada.
 
 ## Prueba mínima con plataforma existente
 
-- Android envía `activar`, `silenciar` o `cancelar` por BLE.
+- Android envía una orden `activar` por BLE.
 - El objeto confirma recepción y ejecuta tres pulsos de luz más un tono corto.
 - Un botón local silencia inmediatamente y apaga la señal.
 - La persona deja el objeto junto al primer paso de una actividad elegida.
 - Se registra si entiende qué significa, qué opciones reconoce y si percibe la señal.
 
-La primera versión puede utilizar un temporizador manual desde Android. La detección de uso de aplicaciones se incorpora después de demostrar conexión, percepción y comprensión.
+La primera versión puede utilizar un temporizador manual desde Android. Si se cancela antes del momento definido, la aplicación no envía la orden. La detección de uso de aplicaciones y un protocolo BLE más amplio se incorporan solo después de demostrar conexión, percepción y comprensión.
 
 El trabajo quedó trazado en la [Issue #11: Probar la señal situada con una plataforma existente](https://github.com/joan1542003-byte/proyecto-titulo/issues/11). La Issue #10 conserva la construcción y verificación del testigo portátil integrado; no son tareas equivalentes.
 
@@ -137,6 +137,13 @@ El trabajo quedó trazado en la [Issue #11: Probar la señal situada con una pla
 - Micro:bit Educational Foundation. (2025). *Using the micro:bit Bluetooth Low Energy UART*. https://support.microbit.org/support/solutions/articles/19000062330-using-the-micro-bit-bluetooth-low-energy-uart-serial-over-bluetooth-
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Interfaz BLE mínima para la primera prueba
+
+- **Qué cambió:** la plataforma de prueba recibe únicamente la orden `activar`; el silencio se resuelve mediante el control físico y una cancelación previa ocurre en Android antes de transmitir.
+- **Cómo era antes:** la prueba mínima proponía enviar `activar`, `silenciar` y `cancelar` al objeto por BLE.
+- **Por qué:** reducir estados y fallos ajenos a la pregunta principal, sin eliminar la salida local que debe comprender la persona.
+- **Límite:** esta simplificación gobierna la fase A; no fija el protocolo BLE ni los controles definitivos del producto integrado.
 
 ### 2026-09-07 — Creación
 

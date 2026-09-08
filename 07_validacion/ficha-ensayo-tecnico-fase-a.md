@@ -2,7 +2,7 @@
 
 **Estado:** plantilla sin ejecutar
 
-**Uso:** comprobar estabilidad, repetibilidad y seguridad antes de trabajar con participantes
+**Uso:** comprobar conexión, estabilidad, repetibilidad, control y seguridad antes de trabajar con participantes
 
 **Documento relacionado:** [Especificación mínima de materiales](especificacion-materiales-fase-a.md)
 
@@ -18,8 +18,12 @@ Esta ficha registra el desempeño del material, no el de una persona. No contien
 | Fecha | ____ / ____ / 2026 |
 | Hora de inicio y término | ____ / ____ |
 | Responsable | ____ |
+| Plataforma y código de unidad | ____ |
+| Dispositivo Android y versión del sistema | ____ |
+| Aplicación o control y versión | ____ |
 | Versión del montaje | ____ |
-| Versión del control o código | ____ |
+| Firmware o versión del código | ____ |
+| Servicio o perfil BLE utilizado | ____ |
 | Fuente de alimentación | ____ |
 | Ubicación de fotografías o video técnico | ____ |
 
@@ -30,7 +34,8 @@ Esta ficha registra el desempeño del material, no el de una persona. No contien
 | Cuerpo estable | ____ | Sostener y situar el material. | ____ |
 | Fuente de luz | ____ | Emitir el patrón. | ____ |
 | Difusor | ____ | Distribuir la señal. | ____ |
-| Activación remota | ____ | Iniciar la secuencia a distancia. | ____ |
+| Fuente sonora | ____ | Emitir un tono breve. | ____ |
+| Activación remota | ____ | Recibir órdenes BLE desde Android. | ____ |
 | Control de silenciamiento | ____ | Detener la secuencia. | ____ |
 | Controlador | ____ | Ejecutar el patrón y volver a reposo. | ____ |
 | Alimentación y protección | ____ | Mantener operación estable y segura. | ____ |
@@ -38,52 +43,68 @@ Esta ficha registra el desempeño del material, no el de una persona. No contien
 
 ## Condiciones de comprobación
 
-| Código | Superficie | Iluminación | Distancia | Observación del entorno |
-| --- | --- | --- | ---: | --- |
-| C1 | Mesa clara | ____ (diurna/artificial; lux si se dispone) | 1 m | ____ |
-| C2 | Mesa clara | ____ (diurna/artificial; lux si se dispone) | 2 m | ____ |
-| C3 | Mesa clara | ____ (diurna/artificial; lux si se dispone) | 3 m | ____ |
-| C4 | Mesa oscura | ____ (diurna/artificial; lux si se dispone) | 1 m | ____ |
-| C5 | Mesa oscura | ____ (diurna/artificial; lux si se dispone) | 2 m | ____ |
-| C6 | Mesa oscura | ____ (diurna/artificial; lux si se dispone) | 3 m | ____ |
-| C7 | Suelo o mueble bajo | ____ (diurna/artificial; lux si se dispone) | 1 m | ____ |
-| C8 | Suelo o mueble bajo | ____ (diurna/artificial; lux si se dispone) | 2 m | ____ |
-| C9 | Suelo o mueble bajo | ____ (diurna/artificial; lux si se dispone) | 3 m | ____ |
+| Código | Superficie | Iluminación | Entorno sonoro | Distancia | Observación del entorno |
+| --- | --- | --- | --- | ---: | --- |
+| C1 | Mesa clara | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 1 m | ____ |
+| C2 | Mesa clara | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 2 m | ____ |
+| C3 | Mesa clara | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 3 m | ____ |
+| C4 | Mesa oscura | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 1 m | ____ |
+| C5 | Mesa oscura | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 2 m | ____ |
+| C6 | Mesa oscura | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 3 m | ____ |
+| C7 | Suelo o mueble bajo | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 1 m | ____ |
+| C8 | Suelo o mueble bajo | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 2 m | ____ |
+| C9 | Suelo o mueble bajo | ____ (diurna/artificial; lux si se dispone) | ____ (dB si se dispone) | 3 m | ____ |
 
-La iluminación de cada condición se fija y registra antes de iniciar la serie. El conjunto debe incluir al menos una condición diurna y una artificial cuando ambas estén disponibles. Cambiar la iluminación durante una repetición invalida esa fila.
+La iluminación y el entorno sonoro de cada condición se fijan y registran antes de iniciar la serie. El conjunto debe incluir al menos una condición diurna y una artificial cuando ambas estén disponibles. Cambiar la luz o introducir un ruido puntual durante una repetición invalida esa fila.
 
 ## Control previo del montaje
 
 - [ ] La fuente comercial de baja tensión y su valor nominal están identificados.
 - [ ] No existen conductores expuestos, aislación dañada, conexiones sueltas ni piezas deformadas.
 - [ ] El montaje parte apagado y el control físico devuelve el sistema a reposo.
-- [ ] La activación remota funciona a tres metros sin acercarse al material.
+- [ ] La plataforma permanece en reposo al encenderse, enlazarse y reconectarse.
+- [ ] Android envía `activar` por BLE a tres metros sin acercarse al material.
+- [ ] El control físico de silenciamiento funciona sin depender del enlace.
 - [ ] La luz blanca cálida puede regularse al menos en tres niveles reproducibles.
+- [ ] El tono puede regularse al menos en tres niveles reproducibles y no contiene voz.
 - [ ] El difusor evita una fuente puntual directa.
-- [ ] El comienzo del pulso puede identificarse desde una posición frontal, una oblicua y una lateral en la condición registrada.
+- [ ] La cubierta no utiliza los LED para mostrar letras, números, menús ni instrucciones.
+- [ ] El comienzo de la señal puede identificarse desde una posición frontal, una oblicua y una lateral en la condición registrada.
 
 Si una casilla no cumple, el ensayo se detiene y la causa se corrige antes de comenzar la sección A. Este control no sustituye una revisión eléctrica competente cuando el montaje requiera intervenir alimentación de red.
 
-## A. Activación y duración
+## A. Conexión y reconexión BLE
 
-**Criterio:** las mismas diez secuencias deben ser únicas, contener tres pulsos separados por dos intervalos apagados, no presentar disparos dobles y durar 3 s ± 0,3 s.
+**Criterio:** en cinco ciclos, Android enlaza con la plataforma, esta permanece en reposo y vuelve a aceptar la conexión después de reiniciarse. El tiempo se registra para describir la operación; no se reemplaza por un promedio.
 
-| Repetición | Parte desde reposo | Pulsos observados | Intervalos apagados | Duración | Disparo doble o acumulación | Cumple | Observación |
-| ---: | --- | ---: | ---: | ---: | --- | --- | --- |
-| 1 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 2 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 3 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 4 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 5 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 6 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 7 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 8 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 9 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
-| 10 | ☐ | ____ | ____ | ____ s | ☐ Sí ☐ No | ☐ | ____ |
+| Repetición | Enlace establecido | Tiempo de enlace | Permanece en reposo | Reconecta tras reinicio | Cumple | Observación |
+| ---: | --- | ---: | --- | --- | --- | --- |
+| 1 | ☐ | ____ s | ☐ | ☐ | ☐ | ____ |
+| 2 | ☐ | ____ s | ☐ | ☐ | ☐ | ____ |
+| 3 | ☐ | ____ s | ☐ | ☐ | ☐ | ____ |
+| 4 | ☐ | ____ s | ☐ | ☐ | ☐ | ____ |
+| 5 | ☐ | ____ s | ☐ | ☐ | ☐ | ____ |
 
-## B. Silenciamiento
+## B. Activación, latencia y patrón
 
-**Criterio:** el control detiene la señal en menos de 1 s y no existe reactivación espontánea.
+**Criterio:** cada una de las diez órdenes debe producir una sola secuencia, contener tres pulsos separados por dos intervalos apagados y un único tono al comienzo, no presentar disparos dobles y durar 3 s ± 0,3 s. La latencia entre envío y comienzo se registra en cada repetición; una variación que cambie el momento previsto impide continuar hasta corregirla.
+
+| Repetición | Parte desde reposo | Latencia | Pulsos | Intervalos | Tono único | Duración | Sin duplicación | Cumple |
+| ---: | --- | ---: | ---: | ---: | --- | ---: | --- | --- |
+| 1 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 2 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 3 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 4 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 5 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 6 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 7 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 8 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 9 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+| 10 | ☐ | ____ s | ____ | ____ | ☐ | ____ s | ☐ | ☐ |
+
+## C. Silenciamiento local
+
+**Criterio:** el control físico detiene la señal en menos de 1 s y no produce una reactivación espontánea. Se realizan diez repeticiones.
 
 | Repetición | Tiempo hasta reposo | No se reactiva | Cumple | Observación |
 | ---: | ---: | --- | --- | --- |
@@ -98,7 +119,7 @@ Si una casilla no cumple, el ensayo se detiene y la causa se corrige antes de co
 | 9 | ____ s | ☐ | ☐ | ____ |
 | 10 | ____ s | ☐ | ☐ | ____ |
 
-## C. Recuperación de energía
+## D. Recuperación de energía
 
 **Criterio:** después de recuperar alimentación, el material permanece en reposo hasta recibir una orden nueva.
 
@@ -110,23 +131,23 @@ Si una casilla no cumple, el ensayo se detiene y la causa se corrige antes de co
 | 4 | ☐ | ☐ | ☐ | ____ |
 | 5 | ☐ | ☐ | ☐ | ____ |
 
-## D. Perceptibilidad instrumental
+## E. Perceptibilidad instrumental de luz y sonido
 
-**Criterio:** quien ejecuta el ensayo identifica el comienzo del pulso sin mirar directamente la fuente en las nueve condiciones registradas. Esta comprobación solo verifica que el material puede probarse; no demuestra accesibilidad ni percepción por parte de usuarios.
+**Criterio:** quien ejecuta el ensayo identifica el comienzo luminoso sin mirar directamente la fuente y reconoce el tono en las nueve condiciones registradas. Se utiliza el nivel mínimo reproducible que permita cumplir. Esta comprobación solo verifica que el material puede probarse; no demuestra accesibilidad ni percepción por parte de usuarios.
 
-| Condición | Comienzo identificado | Sin mirada directa | Cumple | Observación |
-| --- | --- | --- | --- | --- |
-| C1 | ☐ | ☐ | ☐ | ____ |
-| C2 | ☐ | ☐ | ☐ | ____ |
-| C3 | ☐ | ☐ | ☐ | ____ |
-| C4 | ☐ | ☐ | ☐ | ____ |
-| C5 | ☐ | ☐ | ☐ | ____ |
-| C6 | ☐ | ☐ | ☐ | ____ |
-| C7 | ☐ | ☐ | ☐ | ____ |
-| C8 | ☐ | ☐ | ☐ | ____ |
-| C9 | ☐ | ☐ | ☐ | ____ |
+| Condición | Luz identificada sin mirada directa | Tono identificado | Nivel de luz / sonido | Cumple | Observación |
+| --- | --- | --- | --- | --- | --- |
+| C1 | ☐ | ☐ | ____ | ☐ | ____ |
+| C2 | ☐ | ☐ | ____ | ☐ | ____ |
+| C3 | ☐ | ☐ | ____ | ☐ | ____ |
+| C4 | ☐ | ☐ | ____ | ☐ | ____ |
+| C5 | ☐ | ☐ | ____ | ☐ | ____ |
+| C6 | ☐ | ☐ | ____ | ☐ | ____ |
+| C7 | ☐ | ☐ | ____ | ☐ | ____ |
+| C8 | ☐ | ☐ | ____ | ☐ | ____ |
+| C9 | ☐ | ☐ | ____ | ☐ | ____ |
 
-## E. Estabilidad
+## F. Estabilidad
 
 **Criterio:** el material no vuelca ni se desplaza al accionar el control.
 
@@ -136,7 +157,7 @@ Si una casilla no cumple, el ensayo se detiene y la causa se corrige antes de co
 | Mesa oscura | ☐ | ☐ | ☐ | ____ |
 | Suelo o mueble bajo | ☐ | ☐ | ☐ | ____ |
 
-## F. Operación durante 30 minutos
+## G. Operación durante 30 minutos
 
 **Criterio:** no aparece calentamiento perceptible, conductor expuesto, aislación dañada, deformación, olor, parpadeo no programado ni interrupción. Si se dispone de termómetro, se registran temperatura inicial y final en observaciones; cualquier aumento o señal inesperada obliga a revisar el montaje antes de continuar.
 
@@ -162,6 +183,8 @@ Ante olor, calor, deformación, cable suelto o conducta eléctrica inesperada, s
 - [ ] Todas las filas fueron completadas, incluidas las fallidas.
 - [ ] No se borraron repeticiones ni se reemplazaron por un promedio.
 - [ ] Cada modificación del montaje quedó registrada.
+- [ ] Dispositivo Android, control, firmware, plataforma y alimentación están identificados.
+- [ ] Se probaron la orden BLE de activación y el silenciamiento físico.
 - [ ] Las series afectadas por una modificación se repitieron desde el inicio.
 - [ ] Se utilizaron condiciones diurnas y artificiales, o se justificó por qué una no estaba disponible.
 - [ ] No se registraron datos personales ni conclusiones sobre usuarios.
@@ -174,7 +197,7 @@ Una fila vacía, interrumpida o sin registro válido cuenta como **no cumplida**
 Marcar una sola alternativa:
 
 - [ ] **Material técnicamente preparado para revisión académica:** todas las comprobaciones y el control de integridad cumplen.
-- [ ] **Modificar y repetir:** existe un fallo aislable de repetibilidad, silenciamiento, estabilidad o alimentación.
+- [ ] **Modificar y repetir:** existe un fallo aislable de conexión, repetibilidad, señal, silenciamiento, estabilidad o alimentación.
 - [ ] **Detener el montaje:** exige una intensidad invasiva, presenta un riesgo o no permite una salida física comprensible.
 
 **Fundamento de la decisión:**
@@ -192,6 +215,13 @@ Cumplir esta ficha autoriza únicamente a solicitar revisión académica del mat
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Registro técnico de Android, BLE, luz y sonido
+
+- **Cambio:** la ficha ahora identifica plataforma, Android, control y firmware; añade conexión, reconexión, latencia, sonido y silenciamiento local.
+- **Versión anterior:** el instrumento comprobaba un montaje luminoso activado a distancia, pero no permitía distinguir fallos del enlace, del comando o del canal sonoro.
+- **Motivo:** la plataforma existente reduce fabricación, pero incorpora dependencias técnicas que deben quedar verificadas antes de interpretar una sesión con participantes.
+- **Alcance:** todos los campos permanecen vacíos; no se añadieron resultados ni conclusiones sobre usuarios.
 
 ### 2026-08-30 — Comprobación observable del patrón
 

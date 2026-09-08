@@ -24,7 +24,7 @@ Iniciar la actividad tampoco constituye el resultado principal. Después de reco
 
 ## Participantes y alcance
 
-La muestra formativa estará compuesta por seis personas de 18 a 30 años que no hayan participado en las entrevistas anteriores. Cada una deberá poder describir un episodio reciente en que otra intención dejó de orientar el momento, formular una actividad con un primer paso concreto y utilizar un teléfono Android compatible con el prototipo local de notificación. La fase A mantendrá activación manual; Android se incorpora únicamente en la fase B para que el aviso digital aparezca en el mismo teléfono utilizado durante la espera.
+La muestra formativa estará compuesta por seis personas de 18 a 30 años que no hayan participado en las entrevistas anteriores. Cada una deberá poder describir un episodio reciente en que otra intención dejó de orientar el momento, formular una actividad con un primer paso concreto y utilizar un teléfono Android compatible con el prototipo local de notificación. En la fase A, el investigador controla la señal desde un dispositivo Android; el teléfono de cada participante se incorpora como condición de comparación únicamente en la fase B.
 
 El reclutamiento se realizará mediante referencias, con participación voluntaria y sin pago. Estas condiciones deberán informarse antes de aceptar. Si la convocatoria o la compensación cambian, la modificación se registrará antes de incorporar a la primera persona.
 
@@ -34,14 +34,16 @@ La muestra no permitirá estimar prevalencia ni eficacia. Su función será enco
 
 ### Preparación
 
+Antes de la primera sesión, la plataforma debe cumplir por completo la [especificación mínima](especificacion-materiales-fase-a.md) y su [ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md). Inmediatamente antes de recibir a cada participante, el investigador realiza tres activaciones de control, un silenciamiento físico y una reconexión. Estas acciones no forman parte de los resultados de usuario.
+
 1. La persona formula una intención en sus propias palabras.
 2. Define un primer paso observable.
 3. Elige un lugar que relacione con ese comienzo.
 4. Sitúa un objeto simple en ese lugar.
-5. Recibe una explicación breve sobre el pulso y practica cómo detenerlo.
-6. Realiza otra actividad mientras el investigador activa manualmente la señal.
+5. Recibe una explicación breve sobre la señal de luz y sonido, y practica cómo detenerla.
+6. Realiza otra actividad mientras el investigador envía manualmente la orden de activación desde Android.
 
-La activación manual evita atribuir a Android o Bluetooth un fallo que pertenece a la asociación conceptual.
+La activación es manual porque el investigador decide el momento; no depende todavía de una detección automática. La transmisión por Bluetooth de baja energía se controla por separado. Si una orden no llega, llega tarde, se duplica o el objeto se desconecta, el intento queda invalidado: se registra el incidente, se restablece el sistema y se repite sin contabilizarlo como fallo de asociación.
 
 ### Cadena observable
 
@@ -49,7 +51,7 @@ Cada ensayo registra cuatro momentos de asociación:
 
 | Momento | Pregunta de observación | Evidencia mínima |
 | --- | --- | --- |
-| Percepción | ¿La persona detectó el pulso? | Reacción observable o confirmación posterior sin sugerir el significado. |
+| Percepción | ¿La persona detectó la señal? | Reacción observable o confirmación posterior sin sugerir el significado. |
 | Atribución | ¿Reconoció que la señal provenía de Relevo? | Identificación espontánea del sistema o del ciclo configurado. |
 | Recuperación | ¿Recordó la intención correcta? | Reconstrucción de la actividad sin abrir el teléfono. |
 | Primer paso | ¿Recordó cómo comenzaba? | Descripción del primer paso configurado sin ayuda. |
@@ -68,7 +70,7 @@ Los porcentajes funcionan como puertas formativas para una muestra pequeña; no 
 
 ## Fase B — Comparación de soporte y lugar
 
-Cada participante recibe, en orden contrabalanceado, tres condiciones con contenido, momento y duración equivalentes:
+Cada participante recibe, en orden contrabalanceado, tres condiciones. Se utiliza una intención distinta en cada una, con primeros pasos de claridad y relevancia semejantes según la valoración de la persona. El intervalo y el momento de activación se mantienen equivalentes; el lugar o el canal cambian según la condición porque forman parte de la comparación:
 
 1. objeto situado junto al primer paso;
 2. el mismo objeto en un lugar neutro;
@@ -103,9 +105,11 @@ Un fallo crítico impide avanzar aunque se alcance el porcentaje previsto:
 - el ensayo genera una barrera de accesibilidad que no admite una alternativa razonable;
 - el registro metodológico recoge información no contemplada por el consentimiento.
 
+Una falla de conexión, energía o ejecución del patrón no se interpreta como respuesta del participante. Invalida el intento afectado y obliga a repetirlo después de restablecer las condiciones técnicas. Si reaparece, la sesión se detiene y el material vuelve a ensayo técnico.
+
 ## Registro por sesión
 
-Cada ficha deberá incluir código de participante, versión del prototipo, intención, primer paso, relación con el lugar, orden de condiciones, observaciones por momento, consultas del teléfono, incidentes, respuestas abiertas, interpretación, límite y decisión. La conducta observada se separará de la inferencia del investigador.
+Cada ficha deberá incluir código de participante, plataforma, versión del prototipo y del control, comprobación previa, intención, primer paso, relación con el lugar, orden de condiciones, observaciones por momento, consultas del teléfono, incidentes técnicos o metodológicos, respuestas abiertas, interpretación, límite y decisión. La conducta observada se separará de la inferencia del investigador.
 
 Los registros pertenecen a la investigación. No se incorporarán al historial funcional de Relevo ni se utilizarán para puntuar cumplimiento.
 
@@ -118,7 +122,8 @@ La ejecución utilizará el [consentimiento informado](consentimiento-protocolo-
 | Sesiones | La fase A durará entre 35 y 45 minutos; la fase B, entre 60 y 75 minutos. | Tres condiciones con intervalos de ocho minutos no caben de manera responsable en una sesión de 50 minutos. Separar las fases reduce cansancio y aprendizaje inmediato. |
 | Intervalo | La señal aparecerá ocho minutos después de terminar la configuración. | Es un intervalo breve y controlable; no permite inferir recuerdo a largo plazo. |
 | Actividad de espera | Ocio digital elegido por la persona en su propio teléfono, mantenido durante el intervalo. | Conserva relación con el problema sin imponer una aplicación específica. Las notificaciones ajenas se silenciarán durante el ensayo. |
-| Señal provisional | Tres pulsos de luz blanca cálida y difusa durante tres segundos, con intensidad comprobada antes de comenzar. | Aísla la asociación sin decidir el canal final. Si la luz no es accesible, se ofrecerá una señal táctil equivalente y el caso se analizará por separado. |
+| Puerta técnica | Cinco reconexiones, diez activaciones, silenciamiento local, recuperación de energía, estabilidad y operación de 30 minutos deben cumplir la ficha técnica. | Evita atribuir a la comprensión una falla de BLE, código, luz, sonido, control o alimentación. Esta puerta no autoriza por sí sola el reclutamiento. |
+| Señal provisional | Tres pulsos de luz blanca cálida y difusa durante tres segundos, acompañados por un tono breve al comienzo; ambos niveles se comprueban antes de cada sesión. | Representa las dos salidas vigentes sin fijar todavía su lenguaje final. Si uno de los canales no es accesible o resulta molesto, la variante se acuerda antes de comenzar y se analiza por separado. |
 | Lugar situado | Junto al objeto o material necesario para ejecutar el primer paso. | La persona debe explicar la relación antes de activar. |
 | Lugar neutro | En la misma habitación y con visibilidad semejante, al menos a un metro del primer paso y fuera de su recorrido inmediato. | Busca conservar perceptibilidad sin mantener la relación semántica con el comienzo. |
 | Notificación | Un único aviso local de Android con el texto `Relevo · Tu intención está disponible`, sin mostrar la intención ni repetir el aviso. | Debe aparecer en el teléfono usado durante la espera. Abrirlo para recuperar el contenido se registra como consulta. La fase B no comenzará hasta disponer de un prototipo que emita el aviso sin almacenar historial ni depender de mensajería externa. |
@@ -139,6 +144,13 @@ International Organization for Standardization. (2023). *Systems and software en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Activación manual sobre un enlace verificado
+
+- **Cambio:** se definió que el investigador inicia la señal desde Android por BLE, se incorporaron luz y sonido, una comprobación previa por sesión y una regla que invalida los intentos afectados por fallas técnicas.
+- **Versión anterior:** la activación manual excluía Android y Bluetooth, y la señal provisional utilizaba únicamente luz.
+- **Motivo:** alinear el protocolo con el testigo vigente sin permitir que una desconexión, una orden duplicada o una falla de alimentación se interpreten como falta de comprensión.
+- **Alcance:** se conservan seis participantes, las dos fases, el contrabalanceo y las puertas de decisión; el protocolo sigue sin ejecutar y el reclutamiento continúa bloqueado.
 
 ### 2026-08-30 — Control separado de la asociación
 

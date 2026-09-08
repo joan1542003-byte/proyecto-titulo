@@ -44,7 +44,7 @@ La integración con iPhone es técnicamente plausible, pero no está demostrada 
 
 ## Consecuencias
 
-- La fase A puede simular la activación y no depende de Android.
+- La fase A mantiene un momento de activación decidido manualmente por el investigador, pero utiliza Android para comprobar el envío por BLE hacia la plataforma física. La detección automática permanece fuera de esta fase.
 - La fase B requiere una notificación local Android equivalente antes de comparar soportes.
 - Los wireframes ya representan una aplicación móvil Android sin prometer compatibilidad multiplataforma; la implementación funcional continúa pendiente.
 - No se construirá una web operativa ni una aplicación iOS durante el prototipo inicial.
@@ -72,6 +72,13 @@ WebKit. (s. f.). *Tracking prevention in WebKit*. Recuperado el 25 de agosto de 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Android incorporado a la puerta técnica
+
+- **Cambio:** la fase A conserva la activación manual, pero ahora prueba la transmisión Android–BLE antes de trabajar con participantes.
+- **Versión anterior:** se indicaba que la fase A no dependía de Android porque la señal se simulaba mediante un control separado.
+- **Motivo:** alinear la decisión de plataforma con la ruta inmediata de prueba sobre una plataforma existente, sin adelantar la detección automática.
+- **Alcance:** no se ha demostrado conexión, latencia, reconexión ni funcionamiento en segundo plano.
 
 ### 2026-08-30 — Alineación con la ruta de validación vigente
 

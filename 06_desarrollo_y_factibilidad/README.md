@@ -29,16 +29,29 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 - [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas, selecciona un módulo BLE compacto con batería recargable para el siguiente prototipo y explicita costos, riesgos, montaje y pruebas pendientes.
 - [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md): separa una prueba rápida con una plataforma ya construida de la integración final con XIAO; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
-- [Montaje mínimo de fase A](montaje-minimo-fase-a-2026-08-30.md): alternativas de activación, arquitectura cableada seleccionada, lista de materiales con fecha de corte, riesgos y puerta anterior al ensayo técnico.
-- [Alternativas para simplificar la arquitectura física](alternativas-arquitectura-fisica-2026-08-30.md): comparación entre el montaje de 12 V, variantes de 5 V y soluciones comerciales o pasivas; propone contrastar dos fuentes luminosas pequeñas antes de sustituir la arquitectura vigente.
-- [Esquema provisional del núcleo de 5 V](esquema-provisional-xiao-esp32c3-5v-2026-08-30.md): alimentación, conversión lógica, señales, silencio, arranque y campos exigidos para la revisión electrónica anterior al montaje.
-- [Esquema provisional B2](esquema-provisional-xiao-luz-calida-5v-2026-08-30.md): arreglo cálido no direccionable, resistencias por rama, control MOSFET, apagado seguro, secuencia de medición y puerta anterior a la comparación con B1.
-- [Lista de materiales y compra escalonada del núcleo de 5 V](lista-materiales-y-compra-escalonada-5v-2026-08-30.md): compara una luz direccionable y una luz cálida sencilla, separa desembolso y costo atribuible, y condiciona cada compra a una puerta de revisión o prueba.
-- [Esquema de conexión provisional](esquema-conexion-provisional-fase-a-2026-08-30.md): tabla funcional, registro de terminales y puertas para revisión antes de energizar.
+- [Especificación y puerta técnica de fase A](../07_validacion/especificacion-materiales-fase-a.md): conecta la plataforma vigente con comprobaciones de BLE, luz, sonido, control y seguridad anteriores a participantes.
+
+## Antecedentes de mesa del 30 de agosto
+
+Estos documentos conservan exploraciones, cálculos y riesgos útiles, pero dejaron de gobernar la siguiente construcción cuando se adoptó la secuencia D-047. No deben utilizarse como lista de compra ni como requisito de la fase A vigente.
+
+- [Montaje luminoso de 12 V](montaje-minimo-fase-a-2026-08-30.md) y su [firmware provisional](prototipo-fase-a/README.md).
+- [Comparación de arquitecturas de mesa](alternativas-arquitectura-fisica-2026-08-30.md).
+- [Esquema B1 con XIAO ESP32-C3 y anillo](esquema-provisional-xiao-esp32c3-5v-2026-08-30.md).
+- [Esquema B2 con luz cálida](esquema-provisional-xiao-luz-calida-5v-2026-08-30.md).
+- [Lista de materiales B1/B2](lista-materiales-y-compra-escalonada-5v-2026-08-30.md).
+- [Esquema funcional de conexión de 12 V](esquema-conexion-provisional-fase-a-2026-08-30.md).
 
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Separación entre ruta vigente y antecedentes de mesa
+
+- **Cambio:** el índice conserva como vigentes la prueba con plataforma existente, la integración XIAO y Android; los documentos B1, B2 y 12 V pasan a una sección histórica explícita.
+- **Versión anterior:** todos los montajes aparecían juntos bajo documentación vigente y podían interpretarse como pasos simultáneos.
+- **Motivo:** mantener accesibles los cálculos sin crear dos rutas operativas incompatibles.
+- **Alcance:** ningún antecedente fue eliminado; tampoco se autoriza compra, montaje o energización.
 
 ### 2026-09-07 — Plataformas ya fabricadas y precedente de montaje
 

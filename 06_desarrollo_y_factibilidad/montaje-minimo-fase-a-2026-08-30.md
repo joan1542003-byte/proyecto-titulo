@@ -2,7 +2,9 @@
 
 **Fecha de corte:** 30 de agosto de 2026
 
-**Estado:** arquitectura provisional seleccionada; componentes no comprados y montaje no construido
+**Estado:** antecedente luminoso de mesa; sustituido como montaje de fase A
+
+> **Lectura vigente:** esta arquitectura de 12 V documenta una alternativa anterior. No cumple por sí sola la especificación actual de BLE, luz y sonido. La fase A se comprobará primero con una plataforma existente; no corresponde comprar ni construir este montaje para desbloquearla.
 
 **Función:** producir una señal luminosa estable para ejecutar la [ficha de ensayo técnico](../07_validacion/ficha-ensayo-tecnico-fase-a.md)
 
@@ -151,6 +153,13 @@ MechatronicStore. (s. f.-k). *Control remoto RF inalámbrico con relé de 5 V, u
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Montaje reclasificado como antecedente
+
+- **Cambio:** la arquitectura de 12 V dejó de figurar como montaje seleccionado para la fase A.
+- **Versión anterior:** era la configuración provisional construible y anterior al ensayo técnico.
+- **Motivo:** la plataforma existente permite probar conexión, luz, sonido y silencio con menos fabricación temprana.
+- **Alcance:** se conservan su lista, esquema, riesgos y firmware como documentación histórica; no se energizó ni probó.
 
 ### 2026-08-30 — Separación entre señales y rama de potencia
 

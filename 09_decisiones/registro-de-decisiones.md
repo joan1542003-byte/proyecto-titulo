@@ -458,9 +458,26 @@
 - **Límite:** ningún antecedente demuestra autonomía, seguridad de batería, intensidad de luz, volumen, percepción o valor de la intervención. Antes de reutilizar software o archivos del precedente BleenyButton se debe revisar la licencia GPL-3.0. No se autoriza una compra hasta confirmar disponibilidad, costo y la necesidad de la prueba.
 - **Documentos asociados:** [Plataformas físicas existentes y modificables](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [estudio del testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md), [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
 
+## D-048 — Interfaz BLE mínima para la fase A
+
+- **Fecha:** 2026-09-08
+- **Estado:** vigente para la primera comprobación física; protocolo final pendiente
+- **Decisión:** el objeto de prueba recibirá por BLE una sola orden, `activar`. Si el temporizador se cancela antes de emitir la señal, Android no enviará la orden. Una señal ya iniciada se detiene mediante el control físico local.
+- **Fundamento:** la fase A necesita comprobar llegada, percepción, asociación y control, no diseñar todavía un protocolo remoto completo. Reducir los comandos disminuye estados de fallo y conserva una salida que funciona incluso si se pierde el enlace.
+- **Consecuencia:** la ficha técnica mide conexión, reconexión, latencia, patrón y silencio local. Las acciones de pausar o desarmar continúan en Android y el protocolo BLE del producto integrado se definirá después.
+- **Límite:** la decisión no demuestra que una sola orden baste para el uso final, ni resuelve segundo plano, seguridad del enlace, condición automática o recuperación entre dispositivos.
+- **Documentos asociados:** [Especificación de fase A](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md), [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) y [plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — D-048
+
+- **Cambio:** se acotó la comunicación BLE de la fase A a una orden de activación y se mantuvo el silencio como control físico local.
+- **Versión anterior:** la prueba mínima enviaba tres órdenes al objeto sin que la fase de asociación necesitara esos estados remotos.
+- **Motivo:** comprobar el vínculo crítico con menos dependencias y asegurar una salida disponible cuando se interrumpe la conexión.
+- **Resultado:** la puerta técnica y el protocolo usan una interfaz mínima; el protocolo del producto integrado permanece abierto.
 
 ### 2026-09-07 — D-045 y D-046
 

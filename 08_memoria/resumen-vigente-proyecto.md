@@ -1,6 +1,6 @@
 # Resumen vigente de Relevo
 
-**Actualizado:** 7 de septiembre de 2026.
+**Actualizado:** 8 de septiembre de 2026.
 
 ## Qué es
 
@@ -40,13 +40,15 @@ La revisión final retiró pasajes que explicaban la organización del escrito e
 
 La traducción de usuarios está consolidada en tres documentos autónomos: perfiles, recorridos y requisitos. Estos contenidos pueden auditarse como una cadena entre evidencia, necesidad, límite y prueba.
 
-El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, señal provisional, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y ficha de registro. El ensayo interno documental ya fue realizado. B1, B2 y el montaje de 12 V quedan documentados como alternativas de mesa para aislar la luz. La ruta integrada recomendada utiliza XIAO nRF52840, batería recargable, una luz y un transductor sonoro; su lista de materiales todavía no tiene un total porque faltan cotizaciones comparables de batería, carcasa y auxiliares.
+El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y fichas de registro. La señal provisional combina tres pulsos de luz y un tono breve. Antes de involucrar participantes, una plataforma existente debe superar comprobaciones de BLE, reconexión, latencia, patrón, controles, estabilidad y seguridad. B1, B2 y el montaje de 12 V quedan como antecedentes de mesa. La ruta integrada recomendada utiliza XIAO nRF52840, batería recargable, una luz y un transductor sonoro; su lista de materiales todavía no tiene un total porque faltan cotizaciones comparables de batería, carcasa y auxiliares.
 
-No se han comprado componentes, compilado el firmware, construido el montaje ni ejecutado la ficha técnica. Antes de reclutar deben completarse esas acciones, incorporar el contacto del responsable al consentimiento y obtener revisión académica. La eliminación de fichas está fijada a más tardar para el 13 de enero de 2027. Ningún instrumento contiene resultados.
+No hay evidencia de acceso a la plataforma, firmware ejecutado, conexión medida ni ficha técnica completada. Antes de reclutar deben resolverse esas acciones, incorporar el contacto del responsable al consentimiento y obtener revisión académica. La eliminación de fichas está fijada a más tardar para el 13 de enero de 2027. Ningún instrumento contiene resultados.
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
 # Registro de cambios (disclaimer)
+
+**2026-09-08 — Validación y ruta física sincronizadas.** Antes, el resumen todavía vinculaba la puerta técnica a los montajes luminosos B1/B2. Ahora identifica la prueba previa con plataforma existente, incorpora luz y sonido al protocolo y separa los incidentes técnicos de las respuestas de participantes. El cambio evita que un problema de conexión se confunda con falta de comprensión; no existen resultados ni autorización para reclutar.
 
 **2026-09-07 — Arquitectura portátil y comunicación.** Antes, el resumen mantenía abiertos el canal de señal y la electrónica integrada, y presentaba los montajes B1/B2 como ruta principal. Ahora acota el testigo a luz y sonido, selecciona una candidata BLE recargable y registra el descriptor y la nueva paleta. Se mantienen pendientes construcción, costos, pruebas, comparación con notificación y despeje comercial del nombre.
 

@@ -2,7 +2,9 @@
 
 **Fecha de corte:** 30 de agosto de 2026
 
-**Estado:** preparado para revisión electrónica; no aprobado para compra, conexión o energización
+**Estado:** antecedente técnico B1; fuera de la ruta operativa vigente
+
+> **Lectura vigente:** el esquema conserva una alternativa luminosa de 5 V para consulta. La fase A se comprobará con una plataforma existente y la integración posterior se orienta a XIAO nRF52840. No está aprobado para compra, conexión ni energización.
 
 **Arquitectura evaluada:** Seeed Studio XIAO ESP32-C3, anillo WS2812 de 12 LED, alimentación de 5 V, control físico y activación técnica separada de Bluetooth
 
@@ -130,6 +132,13 @@ Android Developers. (2026, 26 de febrero). *Bluetooth Low Energy overview*. http
 Seeed Studio. (s. f.). *Getting started with Seeed Studio XIAO ESP32C3*. Recuperado el 30 de agosto de 2026, de https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — B1 reclasificada como antecedente
+
+- **Cambio:** el esquema quedó rotulado como alternativa de mesa fuera de la ruta vigente.
+- **Versión anterior:** estaba preparado para una revisión electrónica anterior a su posible construcción.
+- **Motivo:** impedir que B1 compita como siguiente prototipo con la plataforma existente y la integración XIAO nRF52840.
+- **Alcance:** no se cambiaron conexiones, cálculos ni advertencias técnicas.
 
 ### 2026-08-30 — Creación para revisión
 

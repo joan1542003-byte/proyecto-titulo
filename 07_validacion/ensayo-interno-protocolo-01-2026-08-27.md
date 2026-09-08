@@ -58,9 +58,22 @@ La fase B no cabe en el rango original de 35–50 minutos. Se corrigió a 60–7
 
 Construir el material mínimo de la fase A: objeto simple con señal difusa, control de silenciamiento y activación remota. Luego ejecutar un ensayo técnico sin registrar respuestas personales y corregir tiempos, instrucciones y ficha.
 
+## Seguimiento operativo al 8 de septiembre de 2026
+
+La necesidad detectada en el ensayo se mantiene, pero su implementación cambió. En vez de fabricar primero un montaje propio, se utilizará una plataforma existente, preferentemente micro:bit V2, para comprobar Android, BLE, luz, sonido y silencio local. Después se ejecutará la ficha técnica actualizada. Los montajes B1, B2 y 12 V permanecen como antecedentes de mesa; no son requisitos para avanzar por esta ruta.
+
+Este cambio reduce trabajo electrónico anterior a la pregunta de asociación, pero no elimina la puerta técnica. Una falla de conexión o ejecución debe resolverse antes de reclutar y nunca puede interpretarse como una respuesta de usuario. La ruta vigente se documenta en el [estudio de plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Seguimiento de la vía de implementación
+
+- **Cambio:** se añadió un seguimiento que reemplaza la fabricación inmediata de un montaje propio por una comprobación con plataforma existente y deja B1, B2 y 12 V como antecedentes.
+- **Versión anterior:** la siguiente acción exigía construir directamente un objeto simple con activación remota.
+- **Motivo:** conservar el hallazgo metodológico del 27 de agosto y, al mismo tiempo, señalar con precisión cómo se resolverá en la ruta vigente.
+- **Alcance:** el ensayo interno sigue siendo documental; no contiene resultados técnicos ni con participantes.
 
 ### 2026-08-30 — Seguimiento del hallazgo administrativo
 

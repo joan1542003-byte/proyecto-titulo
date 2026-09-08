@@ -2,7 +2,9 @@
 
 **Fecha de corte:** 30 de agosto de 2026
 
-**Estado:** exploración comparativa; no reemplaza la arquitectura provisional ni autoriza compras o energización
+**Estado:** antecedente técnico de mesa; sustituido como ruta operativa por D-047
+
+> **Lectura vigente:** esta comparación conserva criterios y costos del 30 de agosto. La fase A se comprobará primero con una plataforma existente y la integración posterior utiliza XIAO nRF52840. Este documento no autoriza compras ni energización.
 
 **Pregunta:** ¿cuál es el montaje mínimo capaz de producir una señal física situada, perceptible y controlable sin añadir complejidad que la prueba todavía no necesita?
 
@@ -149,6 +151,13 @@ MechatronicStore. (s. f.). *Seeed Studio XIAO ESP32-C3*. Recuperado el 30 de ago
 Seeed Studio. (s. f.). *Getting started with Seeed Studio XIAO ESP32C3*. Recuperado el 30 de agosto de 2026, de https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Estado reclasificado
+
+- **Cambio:** la comparación quedó identificada como antecedente de mesa sustituido por la secuencia D-047.
+- **Versión anterior:** se presentaba como exploración anterior a una arquitectura provisional todavía operativa.
+- **Motivo:** conservar el análisis B1/B2 sin confundirlo con la prueba inmediata sobre plataforma existente.
+- **Alcance:** no se alteraron cálculos, fuentes ni conclusiones del corte del 30 de agosto.
 
 ### 2026-08-30 — Esquema B2 y costo comparable
 

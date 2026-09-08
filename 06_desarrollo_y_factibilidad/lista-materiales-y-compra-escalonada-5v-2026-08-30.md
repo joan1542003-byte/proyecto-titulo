@@ -2,9 +2,11 @@
 
 **Fecha de corte:** 30 de agosto de 2026
 
-**Estado:** decisión de abastecimiento anterior a la compra; valores por verificar al pagar
+**Estado:** antecedente de abastecimiento B1/B2; no utilizar como lista de compra vigente
 
 **Alcance:** prototipo técnico abierto, sin forma final y sin participantes
+
+> **Lectura vigente:** la prueba inmediata utiliza una plataforma existente y la integración portátil posterior se orienta a XIAO nRF52840. Los valores de esta lista permiten reconstruir la comparación del 30 de agosto, pero no gobiernan una compra actual.
 
 ## Decisión que debe apoyar esta lista
 
@@ -170,6 +172,13 @@ Altronics. (s. f.). *LED 5 mm blanco*. Recuperado el 30 de agosto de 2026, de ht
 Altronics. (s. f.). *Pack 100 resistencias 150 Ω, 0,25 W, 1 %*. Recuperado el 30 de agosto de 2026, de https://altronics.cl/pack-100-res-150-025w1p
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Lista reclasificada como antecedente
+
+- **Cambio:** se indicó que la lista B1/B2 ya no controla el abastecimiento inmediato.
+- **Versión anterior:** figuraba como decisión de compra pendiente para la siguiente comprobación.
+- **Motivo:** evitar adquirir componentes de una ruta sustituida antes de probar la plataforma existente.
+- **Alcance:** precios, exclusiones y cálculos históricos se conservan sin modificación.
 
 ### 2026-08-30 — Creación de la comparación de compra
 

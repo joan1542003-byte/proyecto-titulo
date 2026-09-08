@@ -20,14 +20,25 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
 - [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
 - [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
-- [Especificación mínima de materiales](especificacion-materiales-fase-a.md): requisitos y comprobaciones técnicas previas de la señal manual de fase A.
-- [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar repeticiones, incidentes, correcciones y la puerta anterior a participantes.
-- [Comparación de arquitecturas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md): mantiene la activación cableada, enfrenta B1 y B2 de 5 V y conserva el montaje de 12 V como respaldo.
-- [Lista de materiales y compra por puertas](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md): separa desembolso, reutilización y partidas pendientes antes de construir.
-- [Esquema B1 de 5 V](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md): relaciones funcionales del anillo direccionable y condiciones anteriores a su revisión.
-- [Esquema B2 de 5 V](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md): ramas LED, control de potencia, cálculo inicial y criterios de apagado; debe revisarse antes de la comparación luminosa.
-- [Montaje de 12 V](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md): arquitectura de respaldo, costos, riesgos y secuencia de construcción si las fuentes pequeñas no cumplen.
-- [Firmware provisional de 12 V](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md): lógica de respaldo preparada para tres pulsos, rechazo de órdenes acumuladas y silenciamiento; aún no compilada ni probada.
+- [Especificación mínima de materiales](especificacion-materiales-fase-a.md): define qué debe comprobarse en la plataforma de ensayo antes de involucrar participantes.
+- [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar conexión, señal, controles, seguridad, incidentes y correcciones.
+
+## Ruta operativa vigente
+
+1. Acceder a una plataforma ya fabricada, preferentemente micro:bit V2, y preparar una cubierta neutra que deje percibir luz y sonido.
+2. Comprobar el recorrido Android → Bluetooth de baja energía (BLE) → luz y sonido, junto con la orden de activación y el silenciamiento local. Este trabajo está controlado por la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) y descrito en el [estudio de plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
+3. Ejecutar la [ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md). Una falla de conexión impide usar la sesión para evaluar comprensión; debe registrarse, corregirse y repetirse.
+4. Completar el correo de contacto, someter protocolo, consentimiento y materiales a revisión académica y resolver las observaciones antes de reclutar.
+5. Aplicar la fase A. Solo si supera sus reglas de decisión se habilita la comparación de la fase B.
+6. Integrar después un testigo portátil basado en XIAO nRF52840, si la evidencia justifica continuar. Esta etapa corresponde a la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10), no a la puerta técnica inmediata.
+
+La activación de la fase A sigue siendo manual porque el investigador decide cuándo enviar la orden. El uso de BLE no incorpora todavía detección automática de aplicaciones ni una condición algorítmica. Antes de cada sesión, el enlace y los controles deben superar la verificación indicada en la ficha.
+
+## Antecedentes técnicos, no dependencias activas
+
+Los montajes [B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md), [B2](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md) y [12 V](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), junto con su [firmware provisional](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md), conservan valor como exploraciones de mesa sobre luz, alimentación y control. No es necesario construirlos antes de la prueba con plataforma existente y no representan la arquitectura portátil elegida.
+
+**Estado al 8 de septiembre de 2026:** no existen resultados técnicos ni con participantes. Faltan acceso a la plataforma, programación, ensayo técnico documentado, contacto del responsable y revisión académica.
 
 ## Regla de medición
 
@@ -48,6 +59,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Validación alineada con la ruta física vigente
+
+- **Cambio:** se sustituyó la construcción obligatoria de B1/B2 por una secuencia que primero comprueba Android, BLE, luz, sonido y control local en una plataforma existente; la integración con XIAO queda como etapa posterior.
+- **Versión anterior:** el índice presentaba B1, B2 y el montaje de 12 V como dependencias operativas de la fase A, aunque el desarrollo ya había elegido una prueba previa con micro:bit V2.
+- **Motivo:** separar la pregunta de comprensión del riesgo de fabricar simultáneamente electrónica, alimentación y carcasa, y mantener una sola ruta vigente en el repositorio.
+- **Alcance:** no se modificaron la muestra ni las reglas de decisión; tampoco se ejecutaron ensayos ni se habilitó el reclutamiento.
 
 ### 2026-08-30 — Esquema B2 incorporado a la puerta técnica
 

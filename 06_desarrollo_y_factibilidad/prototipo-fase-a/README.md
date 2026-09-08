@@ -1,6 +1,8 @@
 # Firmware provisional del montaje de fase A
 
-**Estado:** fuente preparada; no compilada, cargada ni ensayada en hardware
+**Estado:** antecedente de firmware para el montaje de 12 V; fuera de la ruta operativa vigente
+
+> **Lectura vigente:** este código conserva la lógica luminosa del montaje anterior. No implementa BLE ni sonido y no debe utilizarse como firmware de la plataforma existente o del testigo portátil. Nunca fue compilado, cargado ni ensayado en hardware.
 
 ## Función
 
@@ -78,6 +80,13 @@ La fuente mantiene toda alimentación de red dentro de un adaptador comercial ce
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Firmware reclasificado como antecedente
+
+- **Cambio:** la fuente quedó identificada como código histórico del montaje luminoso de 12 V.
+- **Versión anterior:** aparecía como firmware preparado para la fase A vigente.
+- **Motivo:** evitar que una implementación sin BLE ni sonido se confunda con el siguiente prototipo.
+- **Alcance:** el archivo `.ino` no fue eliminado ni modificado; continúa sin compilación o prueba registrada.
 
 ### 2026-08-30 — Auditoría de temporización y silencio
 

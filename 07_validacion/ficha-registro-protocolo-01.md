@@ -7,7 +7,9 @@
 - Código de participante:
 - Fecha:
 - Sesión: A — asociación / B — comparación
+- Plataforma y código de unidad:
 - Versión del prototipo:
+- Firmware y versión del control Android:
 - Investigador:
 - Consentimiento firmado: sí / no
 - Incidentes previos:
@@ -20,13 +22,14 @@
 - Actividad digital de espera:
 - Hora de configuración:
 - Hora de activación:
-- Canal e intensidad comprobados: sí / no
+- Tres activaciones, silenciamiento local y reconexión comprobados: sí / no
+- Niveles de luz y sonido comprobados: sí / no
 
 ## Fase A — Cadena observable
 
 | Momento | Observación directa | Respuesta posterior | Resultado |
 | --- | --- | --- | --- |
-| Percibió el pulso |  |  | Sí / No / Dudoso |
+| Percibió la señal |  |  | Sí / No / Dudoso |
 | Lo atribuyó a Relevo |  |  | Sí / No / Dudoso |
 | Recuperó la intención |  |  | Sí / No / Parcial |
 | Recuperó el primer paso |  |  | Sí / No / Parcial |
@@ -50,6 +53,17 @@
 - Preferencia explicada:
 - Diferencia percibida entre situado y neutro:
 - Diferencia percibida entre objeto y notificación:
+
+## Incidentes técnicos
+
+- Enlace interrumpido, orden tardía o duplicada: sí / no
+- Señal incompleta o distinta del patrón previsto: sí / no
+- Falla de alimentación o del control local: sí / no
+- Momento y descripción:
+- Acción realizada:
+- Intento invalidado y repetido: sí / no / no corresponde
+
+Un intento con una falla técnica no se utiliza para decidir si hubo asociación. El incidente se conserva, el sistema se restablece y la repetición se identifica como un intento nuevo. Si la falla vuelve a aparecer, la sesión se detiene.
 
 ## Fallos críticos
 
@@ -92,6 +106,13 @@ Indicar qué no permite afirmar esta sesión.
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Separación de incidentes técnicos y respuestas de usuario
+
+- **Cambio:** se añadieron plataforma, firmware, control Android, comprobaciones previas e incidentes de enlace, patrón, alimentación y silenciamiento.
+- **Versión anterior:** la ficha registraba una activación genérica, sin permitir distinguir una respuesta de usuario de una falla en la transmisión o el material.
+- **Motivo:** impedir que un problema técnico se contabilice como falta de percepción o asociación.
+- **Alcance:** la plantilla permanece vacía; no se añadieron datos ni se modificaron las reglas de decisión.
 
 ### 2026-08-30 — Control registrado fuera de la asociación
 
