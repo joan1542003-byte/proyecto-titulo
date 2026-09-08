@@ -34,7 +34,7 @@ Existe además una encuesta con **70 participantes** pendiente de publicación, 
 
 ## Qué cambió en esta actualización
 
-La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. Los montajes anteriores continúan como recursos de prueba, no como forma integrada. Relevo se conserva como nombre académico y la comunicación se orienta mediante el descriptor `Una señal donde quieres empezar`; el ámbar reemplaza provisionalmente al rojo como color funcional. Ninguna dimensión, autonomía, percepción o ventaja está validada.
+La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. Antes de fabricar la versión integrada se comprobará el recorrido Android → BLE → luz y sonido con una plataforma existente, preferentemente una micro:bit V2 prestada o disponible. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. BleenyButton sirve como antecedente de batería, fijación y carcasa; no define la finalidad ni la interacción de Relevo. Los montajes anteriores continúan como recursos de prueba, no como forma integrada. Relevo se conserva como nombre académico y la comunicación se orienta mediante el descriptor `Una señal donde quieres empezar`; el ámbar reemplaza provisionalmente al rojo como color funcional. Ninguna dimensión, autonomía, percepción o ventaja está validada.
 
 La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y corrigió los costos documentados. La estructura, la formulación y las 49 referencias se mantienen; no se añadieron resultados ni se cerraron decisiones pendientes de prueba.
 
@@ -49,6 +49,8 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 # Registro de cambios (disclaimer)
 
 **2026-09-07 — Arquitectura portátil y comunicación.** Antes, el resumen mantenía abiertos el canal de señal y la electrónica integrada, y presentaba los montajes B1/B2 como ruta principal. Ahora acota el testigo a luz y sonido, selecciona una candidata BLE recargable y registra el descriptor y la nueva paleta. Se mantienen pendientes construcción, costos, pruebas, comparación con notificación y despeje comercial del nombre.
+
+**2026-09-07 — Prueba separada de la integración.** Antes, la arquitectura portátil estaba definida, pero no se explicaba cómo comprobar el vínculo físico sin construirla de inmediato. Ahora se distingue una prueba con plataforma existente de la integración XIAO y se registra BleenyButton como antecedente constructivo. No se eligió un producto final ni se autorizó una compra.
 
 **2026-09-07 — Paso a prototipado.** Antes, el resumen describía la arquitectura de interacción sin precisar qué parte debía construirse primero. Ahora registra la verificación de los wireframes y remite a un alcance inicial con backlog. No se añadieron resultados de validación ni se cerraron la condición, la señal o la integración técnica.
 

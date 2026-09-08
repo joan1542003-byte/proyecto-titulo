@@ -150,7 +150,7 @@ La arquitectura de nombres quedó así:
 
 Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
-El descriptor actual es: **“Sistema phygital para recuperar intenciones personales durante el ocio digital.”** Ver [decisiones de naming](../00_admin/encargos/encargo-02-09-2026/03_naming/README.md).
+El descriptor actual para explicar el proyecto de manera directa es: **“Una señal donde quieres empezar.”** La formulación académica —sistema phygital para recuperar intenciones personales durante el ocio digital— se conserva para desarrollar su alcance, no como frase principal de presentación. Ver [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
 
 ## 8. Decisiones visuales y cromáticas
 
@@ -158,11 +158,11 @@ La dirección conceptual es **Transferencia situada**. La idea visual es mostrar
 
 - Android usa un **modo oscuro** para mantener continuidad y facilitar la lectura de la aplicación.
 - La memoria y las piezas editoriales usan un **fondo claro y cálido** porque necesitan lectura larga, impresión, citas, tablas e imágenes.
-- El rojo **`#D71921`** se reserva para la señal situada. No se usa como color general de botones, errores, éxito o decoración.
+- El ámbar **`#FFB000`** identifica provisionalmente la señal situada. El rojo anterior queda como registro del proceso y no gobierna las piezas nuevas.
 - El color nunca funciona solo: los estados también deben explicarse con texto, estructura y contraste.
 - La forma, la tipografía final, el material, el difusor y los parámetros del pulso siguen abiertos hasta probar legibilidad, accesibilidad y convivencia.
 
-Ver [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [códigos cromáticos](../00_admin/encargos/encargo-02-09-2026/04_codigos_cromaticos/README.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
+Ver [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
 
 ## 9. Cómo se ha implementado hasta ahora
 
@@ -176,20 +176,22 @@ Hasta ahora la implementación es principalmente estructural y preparatoria:
 
 El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió este recorrido en tres interacciones y nueve marcos principales. El [anexo de cobertura](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) lo amplió a 35 estados, incluyendo errores, permisos, salidas voluntarias y recuperación.
 
-En lo técnico, la fase A mantiene una activación manual cableada. Se comparan dos variantes de 5 V: **B1**, con XIAO ESP32-C3 y anillo direccionable; y **B2**, con XIAO ESP32-C3 y luz cálida no direccionable. Todavía no se han comprado componentes, energizado circuitos, construido el montaje ni ejecutado la fase con participantes. Ver [alternativas técnicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) y [validación](../07_validacion/README.md).
+La ruta física actual separa dos propósitos. Primero se comprobará Android → BLE → luz y sonido con una plataforma ya fabricada, preferentemente una micro:bit V2 prestada o disponible. Después se integrará el testigo portátil con XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local. BleenyButton aporta un precedente abierto para estudiar batería, fijación y carcasa. Los montajes B1, B2 y 12 V se conservan como antecedentes de mesa, no como dirección principal. Todavía no se han comprado componentes, compilado firmware, construido el montaje ni ejecutado pruebas con participantes. Ver [plataformas físicas existentes y modificables](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y [validación](../07_validacion/README.md).
 
 ## 10. Costos estimados
 
-Sí, los costos ya están documentados. Son precios observados al 30 de agosto de 2026 y sirven para tomar decisiones de prototipo; todavía no son el costo final de producción ni el precio de venta.
+Existen precios de referencia para comparar rutas, pero todavía no hay un presupuesto completo del testigo portátil. Los valores de B1, B2 y 12 V fueron observados el 30 de agosto; los de las plataformas compactas, el 7 de septiembre de 2026. No corresponden al costo final de producción ni al precio de venta.
 
 | Alternativa | Costo preliminar | Qué incluye / qué falta | Enlace |
 |---|---:|---|---|
+| micro:bit V2 | **CLP 24.990** | Plataforma disponible para una prueba rápida. Faltan acceso o préstamo, alimentación portátil y funda de ensayo; no representa el producto final. | [Plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) |
+| XIAO nRF52840 | **CLP 16.590 solo la placa** | Ruta de integración vigente. Faltan batería, luz, transductor, control, conexiones, carcasa, difusión, envío y revisión. | [Testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) |
 | Montaje provisional de 12 V | **CLP 28.130** | Referencia parcial. Excluye terminales y protección de potencia; queda como respaldo. | [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) |
 | B1: XIAO + anillo 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Faltan conversor lógico, conductores internos, cuerpo, difusor, envío y revisión. | [Lista B1](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
 | B2: XIAO + luz cálida 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Faltan resistencia de estado, conductores, cuerpo, difusor, envío y revisión. | [Lista B2](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
 | Núcleo común B1/B2 | **CLP 17.126** comprando todo; **CLP 10.440** reutilizando fuente, jack y cable USB-C | Incluye XIAO, pulsador, cable, interruptor, borneras, fuente, jack y cable de programación. Hay que confirmar qué piezas existen. | [Costos comunes](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
 
-La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro**. Las listas aún tienen exclusiones distintas, los componentes no se han comprado y la forma final no existe. La decisión será elegir la variante que funcione mejor y tenga una lista completa, no necesariamente la que tenga el subtotal menor.
+La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro ni un costo cerrado**. La micro:bit reduce trabajo de la primera prueba, pero no sustituye el prototipo integrado. La XIAO reduce tamaño y componentes, aunque su subtotal sigue incompleto. Ninguna compra debe decidirse solo por el precio de la placa.
 
 ## 11. Qué ya está listo y qué falta
 
@@ -202,7 +204,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
 | Naming, dirección visual y paleta base. | Cerrar tipografía, forma, material, difusor y señal final después de probar. | [Naming](../00_admin/encargos/encargo-02-09-2026/03_naming/README.md) · [Visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
-| Costos preliminares y alternativas B1/B2. | Inventariar, revisar, comprar solo lo necesario y cerrar costo real del prototipo. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
+| Plataformas de ensayo y arquitectura portátil comparadas; B1/B2 conservadas como antecedentes. | Confirmar acceso a una plataforma de prueba, completar la lista XIAO y comprar solo después de revisar necesidad, costo y seguridad. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
 ## 12. Próximos pasos y fechas estimadas
@@ -254,6 +256,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Sincronización física y comunicacional
+
+- **Cambio:** se actualizaron descriptor, color de señal, ruta técnica y costos de referencia conforme a D-045, D-046 y D-047.
+- **Versión anterior:** el resumen todavía presentaba el descriptor técnico como frase principal, el rojo como color vigente y B1/B2 como ruta física activa.
+- **Motivo:** evitar que la síntesis ejecutiva contradiga las decisiones actuales del repositorio.
+- **Alcance:** no se incorporan resultados ni se declara una forma, un costo o una ventaja validados; la prueba y la integración continúan pendientes.
 
 ### 2026-09-07 — Actualización del estado operativo
 
