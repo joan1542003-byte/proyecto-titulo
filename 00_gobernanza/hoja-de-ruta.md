@@ -97,17 +97,17 @@ La [investigación visual](../10_recursos_visuales/08_direccion_visual_relevo/RE
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado:** alternativas de 5 V comparadas documentalmente y B1/B2 disponen de esquemas revisables. Inventario, integración, mediciones, revisión electrónica y cumplimiento permanecen pendientes.
+**Estado:** arquitectura portátil seleccionada como candidata y prueba temprana separada de la integración. La XIAO nRF52840 orienta el testigo compacto; una plataforma existente permitirá comprobar primero Android, BLE, luz, sonido y silencio local. Acceso a componentes, integración, mediciones, revisión electrónica y cumplimiento permanecen pendientes.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8), con una puerta técnica específica en la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10). El protocolo, el consentimiento y los instrumentos están preparados. La activación sigue siendo cableada, pero la luz se decidirá entre B1 y B2 de 5 V antes de completar una compra. El montaje de 12 V permanece como respaldo. La fase A no puede comenzar con participantes hasta revisar, construir y comprobar la variante elegida; la fase B depende además de una notificación local Android equivalente.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La primera puerta física está en la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): comprobar Android → BLE → luz y sonido con una plataforma ya fabricada. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior con XIAO nRF52840. El protocolo, el consentimiento y los instrumentos están preparados, pero no se puede comenzar con participantes hasta verificar un comportamiento seguro y repetible; la comparación posterior depende además de una notificación Android equivalente.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
-Siguiente puerta de avance: inventariar el material, revisar los esquemas B1 y B2 con una persona competente y comparar sus fuentes luminosas en condiciones equivalentes. Solo la variante elegida podrá pasar a la comprobación de repetibilidad, intensidad, silenciamiento, estabilidad y seguridad definida en la [especificación de materiales](../07_validacion/especificacion-materiales-fase-a.md). Esta comprobación habilita el piloto técnico, no el reclutamiento automático ni una afirmación de eficacia.
+Siguiente puerta de avance: congelar el wireframe v1 y, después, conseguir acceso a una plataforma existente para ejecutar la Issue #11. La comprobación debe registrar conexión y reconexión, latencia, comportamiento de luz y sonido, silencio local y fallos observados. Si esa base resulta estable, podrá utilizarse en un ensayo técnico y alimentar la posterior integración XIAO. La comprobación no habilita por sí sola el reclutamiento ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Puertas físicas reordenadas
+
+- **Cambio:** la fase de factibilidad y la de prototipado distinguen ahora la comprobación con plataforma existente de la integración portátil con XIAO nRF52840.
+- **Versión anterior:** la siguiente puerta exigía inventariar y comparar B1/B2 como rutas físicas principales.
+- **Motivo:** sincronizar la hoja de ruta con D-047 y evitar fabricar varias arquitecturas antes de comprobar el comportamiento mínimo.
+- **Alcance:** las Issues #11, #10 y #8 siguen abiertas; no se incorporan resultados ni se omite la revisión electrónica.
 
 ### 2026-08-30 — B2 deja de ser bloqueo documental
 

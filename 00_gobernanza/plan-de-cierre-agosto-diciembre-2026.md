@@ -20,7 +20,7 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 Relevo se encuentra en una etapa de **corrección y cierre del wireframe v1 antes del desarrollo funcional**. La cobertura técnica del tablero y sus 44 exportaciones fue verificada, y el recorrido mínimo ya está separado de los estados complementarios en el [alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md). La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen un sistema visual v4 y una memoria estructuralmente avanzada.
 
-El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. Sin embargo, la tarea técnica paralela no está cerrada: faltan el inventario y la revisión electrónica de B1 y B2. Esto debe mantenerse visible porque condiciona la construcción de una señal segura, aunque no impide congelar el wireframe.
+El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. Todavía faltan acceso a la plataforma, firmware, conexión Android, mediciones y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden congelar el wireframe.
 
 Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La prioridad es convertir las hipótesis más importantes en prototipos, pruebas y decisiones.
 
@@ -36,7 +36,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
 | Prototipo Android | Inicial | Plataforma justificada, wireframes verificados, recorrido mínimo y backlog definidos. | Congelar el wireframe v1, construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
-| Testigo físico | Alternativas preparadas para decisión | Función, requisitos, activación cableada, comparación B1/B2 y ambos esquemas revisables documentados. | Inventariar, revisar ambas variantes, comparar luz y construir solo la elegida. |
+| Testigo físico | Ruta por etapas documentada | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas. | Conseguir acceso a la plataforma, comprobar el comportamiento y completar después la integración portátil. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Revisar wireframes y prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
@@ -49,7 +49,7 @@ El cierre depende de la siguiente secuencia:
 2. establecer el recorrido mínimo, el backlog y los pasos de desarrollo;
 3. corregir y congelar una primera versión de wireframes antes de programar;
 4. construir la navegación y el estado básico de la app, sin integrar todavía toda la electrónica;
-5. construir una señal manual segura y probar internamente app, flujo y testigo;
+5. comprobar una señal segura con una plataforma existente y probar internamente app, flujo y testigo;
 6. ejecutar la prueba con usuarios solo cuando el prototipo y el protocolo estén listos;
 7. comparar lugar, modalidad y notificación, y decidir qué se mantiene o cambia;
 8. integrar Android y el testigo, cerrar forma, producción y costos;
@@ -69,7 +69,7 @@ Las fechas institucionales se encuentran consolidadas en el [calendario oficial 
 - detectar pantallas repetidas, vacíos, contradicciones, textos poco claros y estados que no aportan al MVP;
 - relacionar cada pantalla con una necesidad de usuario, una hipótesis o un requisito de Relevo;
 - separar lo imprescindible para la primera prueba de lo que puede quedar fuera del cierre;
-- inventariar materiales y revisar B1/B2 en paralelo, sin comprar todavía;
+- revisar alternativas físicas sin comprar y separar la prueba temprana de la integración portátil;
 - dejar registrada la encuesta de 70 participantes como fuente pendiente, sin usarla aún como evidencia;
 - establecer el backlog y los pasos concretos de desarrollo.
 
@@ -94,7 +94,7 @@ Las fechas institucionales se encuentran consolidadas en el [calendario oficial 
 - crear la navegación Android y las pantallas prioritarias con componentes funcionales;
 - implementar el recorrido mínimo: intención, primer paso, condición provisional, prueba, armado, desarme y recuperación;
 - usar una condición local o simulada para probar el flujo sin depender todavía de toda la electrónica;
-- revisar B1/B2 y construir solo la alternativa manual que cumpla los requisitos de seguridad y repetibilidad;
+- ejecutar la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) con una plataforma existente y comprobar conexión, luz, sonido y silencio local;
 - preparar una lista de fallos que deben probarse antes de invitar participantes.
 
 **Criterio de salida:** una persona puede recorrer la app sin explicación del autor y la señal manual puede activarse de forma segura y repetible.
@@ -294,6 +294,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Secuencia física actualizada
+
+- **Cambio:** la ruta crítica y el calendario reemplazan la comparación B1/B2 como acción inmediata por la Issue #11 y conservan la Issue #10 para la integración posterior.
+- **Versión anterior:** el plan exigía revisar dos montajes de 5 V antes de construir una señal manual.
+- **Motivo:** usar una plataforma ya fabricada para reducir variables y reservar la integración XIAO para después de comprobar conexión y comportamiento.
+- **Alcance:** no cambian los hitos de cierre; acceso a hardware, firmware, mediciones, seguridad y pruebas siguen pendientes.
 
 ### 2026-09-07 — Revisión del primer hito
 

@@ -40,6 +40,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La dirección vigente de comunicación, naming y color se consulta en `10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md`; las carpetas anteriores conservan el proceso visual.
+- La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`, junto con las Issues #11 para la prueba temprana y #10 para la integración portátil.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde `99_archivo` o desde la carpeta histórica indicada por cada README.
 
 ## Política de duplicados y archivo
@@ -65,6 +66,13 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Ruta física incorporada
+
+- **Qué cambió:** se añadió al índice la fuente vigente para distinguir la prueba con plataforma existente de la integración portátil.
+- **Cómo estaba antes:** el índice dirigía a factibilidad en términos generales, sin señalar la secuencia controlada por las Issues #11 y #10.
+- **Por qué se decidió:** impedir que B1/B2 o una exploración histórica vuelvan a orientar accidentalmente el siguiente prototipo.
+- **Alcance:** el índice organiza las fuentes; no acredita construcción ni resultados.
 
 ### 2026-09-07 — Auditoría integral incorporada
 

@@ -8,7 +8,7 @@ Comprobar que la documentación vigente sea localizable, coherente y reproducibl
 
 El repositorio tiene una fuente académica identificada, una definición común de Relevo, enlaces internos funcionales y entregables visuales reproducibles. Se corrigieron desajustes de estado, alcance, color, paginación y ejecución técnica. No se encontraron enlaces locales rotos, archivos JSON inválidos ni exportaciones PNG dañadas.
 
-El proyecto no está terminado en términos empíricos o productivos. Permanecen pendientes la revisión electrónica, el inventario, la construcción del prototipo Android y físico, la encuesta complementaria y las pruebas con participantes. Estos asuntos no son fallas documentales: son trabajo futuro visible y ordenado.
+El proyecto no está terminado en términos empíricos o productivos. Permanecen pendientes el acceso a una plataforma de ensayo, la comprobación BLE, la integración electrónica portátil, la construcción del prototipo Android, la encuesta complementaria y las pruebas con participantes. Estos asuntos no son fallas documentales: son trabajo futuro visible y ordenado.
 
 ## Definición común comprobada
 
@@ -51,15 +51,15 @@ El alcance excluye bloqueo, puntajes, rachas, evaluación de cumplimiento e infe
 | ¿Qué se construye primero? | [`alcance-primer-prototipo-y-backlog-2026-09-07.md`](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) |
 | ¿Qué wireframes están vigentes? | [`wireframes-media-html`](../05_propuesta_phygital/wireframes-media-html/README.md) |
 | ¿Qué sistema visual está activo? | [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md) y [`sistema-v4`](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/README.md) |
-| ¿Qué impide probar con personas? | [`07_validacion/README.md`](../07_validacion/README.md) y las Issues #8 y #10 |
+| ¿Qué impide probar con personas? | [`07_validacion/README.md`](../07_validacion/README.md) y las Issues [#8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8), [#11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) y [#10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) |
 | ¿Cuáles son las fechas de cierre? | [`plan-de-cierre-agosto-diciembre-2026.md`](plan-de-cierre-agosto-diciembre-2026.md) |
 
 ## Pendientes reales y orden inmediato
 
 1. Congelar el wireframe v1 antes del 12 de septiembre mediante un recorrido interno completo.
-2. Inventariar materiales y obtener revisión electrónica competente de B1 y B2 antes de comprar o energizar.
-3. Construir la navegación Android mínima y una señal manual segura.
-4. Ejecutar el ensayo técnico y corregir fallos críticos.
+2. Conseguir acceso a una plataforma existente y ejecutar la Issue #11 sin presentarla como el objeto final.
+3. Construir la navegación Android mínima y comprobar BLE, luz, sonido y silencio local.
+4. Registrar latencia, reconexión y fallos críticos antes de decidir la integración XIAO.
 5. Completar contacto y revisión académica del consentimiento antes de reclutar.
 6. Ejecutar la prueba de asociación y, después, la comparación con una notificación.
 7. Integrar resultados reales en la memoria, factibilidad y decisiones.
@@ -73,6 +73,13 @@ Una auditoría documental puede comprobar coherencia, trazabilidad y funcionamie
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Ruta física sincronizada
+
+- **Qué cambió:** se reemplazó la puerta B1/B2 por una comprobación con plataforma existente y una integración posterior con XIAO nRF52840.
+- **Cómo estaba antes:** la auditoría indicaba inventario y revisión de dos montajes de 5 V como segundo paso inmediato.
+- **Por qué se decidió:** mantener el control transversal alineado con D-047 y con las Issues #11 y #10.
+- **Alcance:** la nueva secuencia sigue sin acreditar construcción, seguridad, funcionamiento o resultados con participantes.
 
 ### 2026-09-07 — Creación
 
