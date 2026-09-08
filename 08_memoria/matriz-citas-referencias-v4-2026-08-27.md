@@ -1,13 +1,13 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
-**Última comprobación:** 31 de agosto de 2026
+**Última comprobación:** 7 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
 
-La memoria contiene 49 referencias y todas poseen al menos una cita correspondiente en el cuerpo. No se identificaron citas autor–fecha sin entrada bibliográfica ni referencias huérfanas. La revisión combinó extracción de nombres y fechas con comprobación manual de citas narrativas, citas parentéticas, autores institucionales y sufijos para obras del mismo autor.
+La memoria contiene 50 referencias y todas poseen al menos una cita correspondiente en el cuerpo. No se identificaron citas autor–fecha sin entrada bibliográfica ni referencias huérfanas. La revisión combinó extracción de nombres y fechas con comprobación manual de citas narrativas, citas parentéticas, autores institucionales y sufijos para obras del mismo autor.
 
 La convención de autoría se mantiene según APA 7: `y` integra los apellidos en citas narrativas, mientras `&` se utiliza en citas parentéticas y antes del último autor en la lista de referencias. Esta diferencia es intencional y no constituye una inconsistencia de idioma.
 
@@ -19,6 +19,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Apple Developer | s. f.-a | Sí | Sí | Conforme |
 | Apple Developer | s. f.-b | Sí | Sí | Conforme |
 | Apple Developer | s. f.-c | Sí | Sí | Conforme |
+| Asterics Foundation | s. f. | Sí | Sí | Conforme |
 | Biedermann et al. | 2021 | Sí | Sí | Conforme |
 | Brick LLC | s. f.-a | Sí | Sí | Conforme |
 | Brick LLC | s. f.-b | Sí | Sí | Conforme |
@@ -43,23 +44,23 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Lukoff et al. | 2018 | Sí | Sí | Conforme |
 | Lyngs et al. | 2019 | Sí | Sí | Conforme |
 | McDaniel y Einstein | 2000 | Sí | Sí | Conforme |
+| MCI Electronics | s. f. | Sí | Sí | Conforme |
+| MechatronicStore | s. f. | Sí | Sí | Conforme |
 | Meier y Reinecke | 2021 | Sí | Sí | Conforme |
+| Micro:bit Educational Foundation | s. f. | Sí | Sí | Conforme |
 | Monge Roffarello y De Russis | 2023 | Sí | Sí | Conforme |
 | Montag et al. | 2019 | Sí | Sí | Conforme |
-| Nordic Semiconductor ASA | s. f.-a | Sí | Sí | Conforme |
-| Nordic Semiconductor ASA | s. f.-b | Sí | Sí | Conforme |
 | one sec | s. f. | Sí | Sí | Conforme |
 | O’Rear y Radvansky | 2019 | Sí | Sí | Conforme |
-| Precision Microdrives Ltd. | 2023 | Sí | Sí | Conforme |
 | Radtke et al. | 2022 | Sí | Sí | Conforme |
 | Risko y Gilbert | 2016 | Sí | Sí | Conforme |
 | Sanders | 2026 | Sí | Sí | Conforme |
 | Screenless | s. f. | Sí | Sí | Conforme |
+| Seeed Studio | 2026 | Sí | Sí | Conforme |
 | Sohn et al. | 2005 | Sí | Sí | Conforme |
 | Stapley et al. | 2022 | Sí | Sí | Conforme |
 | Subsecretaría de Telecomunicaciones | 2026a | Sí | Sí | Conforme |
 | Subsecretaría de Telecomunicaciones | 2026b | Sí | Sí | Conforme |
-| Texas Instruments | 2018 | Sí | Sí | Conforme |
 | Tonietto et al. | 2021 | Sí | Sí | Conforme |
 | Unpluq | s. f. | Sí | Sí | Conforme |
 | Waggoner et al. | 2026 | Sí | Sí | Conforme |
@@ -79,6 +80,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-07 — Correspondencia actualizada para la ruta física
+
+- **Cambio:** se incorporaron Asterics Foundation, MCI Electronics, MechatronicStore, Micro:bit Educational Foundation y Seeed Studio; se retiraron cuatro referencias de componentes que dejaron de citarse.
+- **Versión anterior:** la matriz contenía 49 entradas y correspondía a una arquitectura basada en nPM1100, nRF52810 y una salida háptica.
+- **Motivo:** mantener correspondencia exacta con la prueba micro:bit y la integración XIAO nRF52840 descritas en la memoria.
+- **Alcance:** las 50 referencias poseen cita y entrada; esta comprobación no valida por sí sola la calidad del prototipo ni los precios futuros.
 
 ### 2026-08-31 — Correspondencia ratificada después de la revisión final
 

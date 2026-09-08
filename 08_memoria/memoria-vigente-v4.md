@@ -588,7 +588,7 @@ El **pulso ambiental** es una señal física de corta duración que busca llamar
 
 El alcance inicial considera una persona, una intención activa, un primer paso, una aplicación seleccionada, una condición observable, un objeto y un lugar doméstico elegido manualmente. El sistema no infiere estados emocionales, no determina si una sesión es adecuada y no observa si la persona cumple la actividad. Tampoco utiliza puntajes, rachas, comparaciones o recompensas.
 
-Android será la plataforma del primer prototipo integrado. La forma, el canal de señal, la autonomía energética, los materiales, el precio y la adopción sostenida deberán definirse mediante desarrollo y pruebas. La propuesta mantiene su carácter phygital, pero la configuración del componente físico puede cambiar si la evidencia muestra que otra relación objetual responde mejor al problema.
+Android será la plataforma del primer prototipo integrado. El objeto emitirá luz y sonido; su forma definitiva, intensidad, duración, autonomía energética, materiales, precio y adopción sostenida deberán definirse mediante desarrollo y pruebas. La propuesta mantiene su carácter phygital, pero la configuración del componente físico puede cambiar si la evidencia muestra que otra relación objetual responde mejor al problema.
 
 ## 10.10 Mapa de actores
 
@@ -599,7 +599,7 @@ Android será la plataforma del primer prototipo integrado. La forma, el canal d
 | Convivientes | Comparten el espacio donde puede aparecer la señal. | Discreción y ausencia de molestias. |
 | Diseñador | Articula investigación, experiencia, forma y evaluación. | Mantener coherencia entre problema y decisiones. |
 | Desarrollo Android | Implementa permisos, condición, estados y comunicación. | Funcionamiento comprensible y recuperación de fallos. |
-| Desarrollo electrónico | Resuelve energía, enlace y componentes que producen luz, vibración o sonido. | Fiabilidad, seguridad y mantenimiento. |
+| Desarrollo electrónico | Resuelve energía, enlace y componentes que producen luz y sonido. | Fiabilidad, seguridad y mantenimiento. |
 | Fabricación y proveedores | Producen carcasa, circuito y ensamblaje. | Costos, trazabilidad y reparación. |
 | Especialistas en accesibilidad | Revisan canales, controles y barreras de uso. | Evitar exclusiones y promesas no comprobadas. |
 
@@ -629,9 +629,9 @@ La interfaz también debe distinguir entre información personal y estado del si
 
 ## 11.3 El testigo
 
-El objeto se concibe como un cuerpo compacto y transportable que puede ubicarse sobre distintas superficies del hogar. Su presencia indica que existe una intención activa vinculada a ese lugar. Una superficie de señal difusa permite emitir un pulso visible desde diferentes ángulos, mientras un control físico accesible permite silenciarlo o probarlo.
+El objeto se concibe como un cuerpo compacto y transportable que puede ubicarse sobre distintas superficies del hogar. Su presencia indica que existe una intención activa vinculada a ese lugar. Una superficie de señal difusa permite emitir un pulso visible desde diferentes ángulos; un sonido breve amplía su percepción y un control físico accesible permite silenciarlo o probarlo.
 
-La forma circular se mantiene como hipótesis porque evita una orientación frontal rígida y facilita una lectura ambiental. No se fijan aún medidas, peso, color o material definitivo. Esas decisiones dependen de la distancia de percepción, el espacio para batería y componentes, la estabilidad sobre la superficie y la posibilidad de abrir el cuerpo para reparar.
+La forma circular se mantiene como hipótesis porque evita una orientación frontal rígida y facilita una lectura ambiental. Como meta de prototipo se considera una envolvente de 42–48 mm de diámetro y 12–16 mm de grosor, mayor que un localizador comercial compacto para permitir montaje, apertura y reparación con componentes de desarrollo. Las medidas, el peso, el color y el material deberán corregirse después de comprobar percepción, estabilidad, autonomía y espacio interior.
 
 El objeto debe diferenciar tres estados sin exigir una vigilancia constante: reposo, señal y necesidad de atención técnica. La señal vinculada a la intención requiere un comportamiento distinto de batería baja o pérdida de conexión. Si ambos estados se expresan del mismo modo, el significado se vuelve ambiguo.
 
@@ -688,14 +688,14 @@ La cobertura completa del recorrido y sus estados alternativos se conserva en el
 
 ## 11.8 Flujo de diseño
 
-El desarrollo avanza desde la pregunta hacia la especificación. Primero debe comprobarse que una señal puede recuperar la intención. Después se compara el lugar elegido con un lugar neutro y con una notificación. Solo si existe una diferencia se define el canal físico, se integra la electrónica y se estudia una forma de mayor fidelidad, es decir, más próxima a las condiciones de uso y funcionamiento que se quieren evaluar.
+El desarrollo avanza desde la pregunta hacia la especificación. Primero debe comprobarse que una señal puede recuperar la intención. Después se compara el lugar elegido con un lugar neutro y con una notificación. Solo si existe una diferencia se afinan los parámetros de luz y sonido, se integra la electrónica y se estudia una forma de mayor fidelidad, es decir, más próxima a las condiciones de uso y funcionamiento que se quieren evaluar.
 
 La secuencia proyectual es la siguiente:
 
 1. Delimitar el episodio pertinente y el caso donde no se debe intervenir.
 2. Probar la relación entre intención, primer paso, lugar y señal.
 3. Comparar la alternativa situada con una notificación digital.
-4. Definir canal, intensidad, duración y control físico.
+4. Definir intensidad, duración, ritmo y control físico.
 5. Seleccionar una condición observable y su vencimiento.
 6. Probar permisos, comunicación y fallos.
 7. Integrar aplicación, objeto y entorno en un prototipo acotado.
@@ -709,11 +709,11 @@ El diseño prevé conservar la intención, el primer paso, la condición y el es
 
 El control debe estar disponible en ambos componentes. Desde la aplicación se puede pausar, editar o desarmar. Desde el objeto se puede silenciar el pulso. La ausencia de respuesta no produce recordatorios repetidos, culpa o pérdida de funciones.
 
-La convivencia requiere probar distancia, brillo, vibración o sonido según el canal elegido. Una señal útil para una persona puede ser molesta para otra. Tampoco debe revelar el contenido de la intención. Su carácter ambiental permite que el significado sea personal, pero esa discreción tendrá que comprobarse en contextos reales.
+La convivencia requiere probar distancia, brillo, volumen y duración. Una señal útil para una persona puede ser molesta para otra. Tampoco debe revelar el contenido de la intención. Su carácter ambiental permite que el significado sea personal, pero esa discreción tendrá que comprobarse en contextos reales.
 
 ## 11.10 Accesibilidad
 
-La accesibilidad se estudiará por dimensiones visuales, auditivas, táctiles, cognitivas y motoras. Ningún canal aislado puede declararse universal. Una luz puede pasar inadvertida; una vibración depende de la superficie; un sonido puede molestar o no percibirse. El prototipo deberá permitir comparar canales y facilitar el control físico sin movimientos precisos.
+La accesibilidad se estudiará por dimensiones visuales, auditivas, táctiles, cognitivas y motoras. Ningún canal aislado puede declararse universal. Una luz puede pasar inadvertida y un sonido puede molestar o no percibirse. El prototipo deberá comprobar si ambos canales se complementan, permitir regularlos y facilitar el control físico sin movimientos precisos. Una alternativa táctil se estudiará como adaptación si las pruebas muestran que la combinación excluye a una persona, no como función añadida de antemano.
 
 Las Pautas de Accesibilidad para el Contenido Web ofrecen un criterio preventivo frente a destellos, aunque cumplirlo no demuestra que una señal sea perceptible o adecuada (World Wide Web Consortium, s. f.). En la aplicación, los estados deben explicarse con lenguaje claro y no depender solo del color.
 
@@ -733,9 +733,11 @@ Las capacidades de Android también tienen límites. UsageStatsManager requiere 
 
 La aplicación conserva la información del ciclo y evalúa la condición de manera local. Bluetooth de baja energía transporta el comando hacia el objeto. Esta arquitectura reduce el envío de datos a servicios externos y permite que el dispositivo físico se mantenga simple. Procesamiento local no significa privacidad absoluta: los permisos, registros y respaldos deben documentarse.
 
-La siguiente comprobación técnica utiliza una placa XIAO ESP32-C3 como base común y compara dos maneras de producir una señal luminosa con alimentación de 5 V. La primera emplea un anillo direccionable; la segunda, una fuente cálida no direccionable. Ninguna está seleccionada: deben probarse con el mismo soporte, difusor, distancia y secuencia. El montaje de 12 V se conserva como respaldo si una fuente pequeña no alcanza la perceptibilidad necesaria. La [comparación de arquitecturas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) registra los componentes, riesgos y puertas previas a cualquier compra o energización.
+La comprobación técnica se divide en dos niveles. El primero utiliza una plataforma ya fabricada, preferentemente micro:bit V2, para aislar la conexión con Android y el comportamiento de luz, sonido y silencio local. La matriz de la placa funciona únicamente como fuente luminosa; no muestra texto ni incorpora navegación. Esta etapa permite identificar fallos de enlace y comprensión antes de fabricar una carcasa propia (Micro:bit Educational Foundation, s. f.).
 
-Si una integración posterior exige menor consumo, podrá estudiarse la familia de microcontroladores nRF52 y un circuito de gestión de alimentación y carga como el nPM1100. Los actuadores, componentes que transforman una orden eléctrica en una salida perceptible, podrían producir luz difusa, vibración o sonido breve. Las hojas técnicas de Nordic Semiconductor, Precision Microdrives y Texas Instruments permiten estimar capacidades, pero no prueban autonomía ni percepción del conjunto (Nordic Semiconductor ASA, s. f.-a, s. f.-b; Precision Microdrives Ltd., 2023; Texas Instruments, 2018).
+El segundo nivel integra el testigo portátil mediante una XIAO nRF52840, batería recargable protegida, una luz, un transductor sonoro pequeño y un control local. La placa reúne Bluetooth de baja energía y gestión de carga en 21 × 17,8 mm, por lo que reduce el tamaño y el número de conexiones frente a los montajes de mesa anteriores (Seeed Studio, 2026). BleenyButton demuestra una disposición abierta de la misma placa con batería, botón y carcasa atornillada; se estudia como antecedente constructivo, no como solución de uso. Cualquier reutilización de sus archivos o código exige revisar su licencia GPL-3.0 (Asterics Foundation, s. f.).
+
+Los montajes B1, B2 y 12 V permanecen documentados como alternativas de mesa para aislar la señal luminosa. Ya no definen la ruta integrada. La selección de componentes permite estimar posibilidades, pero no prueba autonomía, percepción ni fiabilidad del conjunto. La [comparación de plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y el [estudio del testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) registran la decisión y sus límites.
 
 La batería y el sistema de carga deberán seleccionarse a partir de mediciones del ciclo real: reposo, conexión, señal y recuperación. También se revisarán temperatura, seguridad, reemplazo y fin de vida. Una cifra de consumo aislada no basta para prometer duración.
 
@@ -751,9 +753,9 @@ Al final de su vida útil, batería, placa y carcasa deberían separarse. Esta c
 
 ## 12.4 Costos
 
-La estimación se encuentra en una etapa de prototipo técnico abierto. Con precios observados al 30 de agosto de 2026, la variante direccionable reúne partidas identificadas por CLP 22.383, más el conversor lógico; si también debe comprarse una base de ensayo, alcanza CLP 28.073 más ese componente. La alternativa de luz cálida reúne CLP 23.591, más una resistencia de estado y conductores internos; con base de ensayo alcanza CLP 29.281 más esas partidas. El montaje de 12 V utilizado como respaldo suma CLP 28.130, con exclusiones propias. Ninguna cifra demuestra ahorro ni representa un presupuesto completo.
+La estimación se encuentra en una etapa de prototipo técnico abierto. Al 7 de septiembre de 2026, una micro:bit V2 se ofrecía localmente por CLP 24.990 y una XIAO nRF52840 por CLP 16.590 (MCI Electronics, s. f.; MechatronicStore, s. f.). El primer valor corresponde a una plataforma completa de ensayo que se buscará conseguir prestada o disponible; el segundo incluye solo la placa de la integración portátil. Aún faltan batería, luz, transductor, control, conexiones, carcasa, difusor, envío y revisión especializada. Por tanto, ninguno representa el costo del prototipo.
 
-Los montos corresponden a desembolsos de experimentación. Todavía excluyen, según la variante, cuerpo, difusor, herramientas, envíos, revisión electrónica y partidas sin proveedor confirmado. La [lista de materiales y compra escalonada](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) distingue lo que debe comprarse, lo que podría reutilizarse y lo que solo puede definirse después de medir. Para evitar confusiones se separan cuatro magnitudes:
+Las variantes B1 y B2 de 5 V y el montaje de 12 V conservan sus desgloses como antecedentes experimentales del 30 de agosto de 2026. Sus montos no son comparables directamente con la nueva arquitectura porque responden a una escala, alimentación y propósito diferentes. La [comparación de plataformas](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y el [estudio del testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) distinguen las partidas verificadas de las todavía abiertas. Para evitar confusiones se separan cuatro magnitudes:
 
 1. costo del prototipo académico;
 2. trabajo profesional de investigación, diseño, programación y electrónica;
@@ -780,7 +782,7 @@ Un posible modelo inicial corresponde a producción acotada con aplicación comp
 
 Las entrevistas fueron realizadas a ocho personas reclutadas mediante referencias. La edad fue el único criterio común y no se observaron las conductas ni los hogares. Los resultados no permiten estimar prevalencia, definir un mercado ni afirmar que la propuesta será aceptada.
 
-La condición de activación, el canal de señal, la forma, la autonomía, los materiales y los costos reales continúan abiertos. Tampoco se ha demostrado que el objeto ayude a recuperar intenciones, que el lugar produzca una diferencia o que la experiencia sea preferible a una notificación.
+La condición de activación, los parámetros de luz y sonido, la forma, la autonomía, los materiales y los costos reales continúan abiertos. Tampoco se ha demostrado que el objeto ayude a recuperar intenciones, que el lugar produzca una diferencia o que la experiencia sea preferible a una notificación.
 
 El alcance no incluye adicción, tratamiento clínico, control parental, vigilancia, productividad general ni reducción universal del tiempo de pantalla. El sistema tampoco busca detectar emociones o interpretar la calidad del ocio. Estas exclusiones mantienen el problema dentro de una escala abordable desde Diseño.
 
@@ -800,11 +802,11 @@ La segunda etapa compara tres condiciones: objeto en un lugar relacionado con el
 
 La comparación busca saber si el lugar o la materialidad aportan una diferencia reconocible. Se observarán comprensión, necesidad de consultar el teléfono, carga, intrusión y control. Si la notificación ofrece el mismo apoyo con menor esfuerzo, la configuración física deberá reconsiderarse.
 
-## 13.3 Forma, canal y salida
+## 13.3 Forma y parámetros de la señal
 
-Una vez sostenida la asociación, se compararán formas y canales. Luz, vibración y sonido breve se probarán sobre superficies y distancias reales. También se evaluará el control para silenciar, la estabilidad del objeto y su lectura como parte del entorno.
+Una vez sostenida la asociación, se compararán formas y comportamientos para la luz y el sonido. Intensidad, duración, ritmo y separación entre ambos se probarán sobre superficies y distancias reales. También se evaluará el control para silenciar, la estabilidad del objeto y su lectura como parte del entorno.
 
-La selección no se basará solo en preferencia. Debe considerar percepción, privacidad, convivencia, accesibilidad y consumo energético. Una señal intensa puede ser visible y, al mismo tiempo, resultar invasiva. Un canal discreto puede respetar el entorno y pasar inadvertido. El equilibrio se definirá mediante evidencia situada.
+La selección no se basará solo en preferencia. Debe considerar percepción, privacidad, convivencia, accesibilidad y consumo energético. Una señal intensa puede percibirse y, al mismo tiempo, resultar invasiva; una señal discreta puede respetar el entorno y pasar inadvertida. El equilibrio se definirá mediante evidencia situada.
 
 ## 13.4 Integración técnica
 
@@ -846,7 +848,7 @@ Los antecedentes muestran que medir, pausar, bloquear, separar y recordar cumple
 
 El aporte alcanzado pertenece a la investigación y a la estructuración del proyecto. La memoria delimita un problema abordable desde Diseño, establece criterios de autonomía y no intervención, identifica dos situaciones de usuario, analiza respuestas existentes y organiza una arquitectura de uso, sistema y desarrollo. La arquitectura de interacción permite examinar el recorrido y sus estados, pero no demuestra comprensión, eficacia o preferencia.
 
-La hipótesis pendiente reúne las relaciones que el desarrollo deberá comprobar: si la señal permite reconocer la intención sin consultar el teléfono, si un lugar relacionado con el primer paso aporta más que una ubicación neutra y si el objeto ofrece una diferencia suficiente frente a una notificación. También continúan abiertos la condición de activación, el canal sensorial, la convivencia doméstica, la accesibilidad, la integración técnica, la producción y los costos definitivos. Estas preguntas deberán resolverse antes de cerrar la forma y fabricar una solución completa.
+La hipótesis pendiente reúne las relaciones que el desarrollo deberá comprobar: si la señal permite reconocer la intención sin consultar el teléfono, si un lugar relacionado con el primer paso aporta más que una ubicación neutra y si el objeto ofrece una diferencia suficiente frente a una notificación. También continúan abiertos la condición de activación, los parámetros perceptivos de la luz y el sonido, la convivencia doméstica, la accesibilidad, la integración técnica, la producción y los costos definitivos. Estas preguntas deberán resolverse antes de cerrar la forma y fabricar una solución completa.
 
 El criterio de continuidad comienza con una prueba controlada de la asociación entre intención, señal, primer paso y lugar. Si esa relación resulta comprensible, corresponderá compararla con una notificación y con una ubicación neutra. Si el objeto no aporta una diferencia reconocible o introduce una carga desproporcionada, deberá reformularse la relación entre los componentes físicos y digitales. La continuidad de Relevo dependerá de lo que los prototipos permitan aprender y no de sostener anticipadamente una configuración.
 
@@ -859,6 +861,8 @@ Apple Developer. (s. f.-a). *Core Bluetooth*. Recuperado el 25 de agosto de 2026
 Apple Developer. (s. f.-b). *Device Activity*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/DeviceActivity
 
 Apple Developer. (s. f.-c). *Family Controls App and Website Usage*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls.app-and-website-usage
+
+Asterics Foundation. (s. f.). *BleenyButton* [Repositorio de código]. GitHub. Recuperado el 7 de septiembre de 2026, de https://github.com/asterics/BleenyButton
 
 Biedermann, D., Schneider, J., & Drachsler, H. (2021). Digital self-control interventions for distracting media multitasking: A systematic review. *Journal of Computer Assisted Learning, 37*(5), 1217–1231. https://doi.org/10.1111/jcal.12581
 
@@ -908,21 +912,21 @@ Lyngs, U., Lukoff, K., Slovak, P., Binns, R., Slack, A., Inzlicht, M., Van Kleek
 
 McDaniel, M. A., & Einstein, G. O. (2000). Strategic and automatic processes in prospective memory retrieval: A multiprocess framework. *Applied Cognitive Psychology, 14*, S127–S144. https://doi.org/10.1002/acp.775
 
+MCI Electronics. (s. f.). *Placa BBC micro:bit V2*. Recuperado el 7 de septiembre de 2026, de https://mcielectronics.cl/shop/product/bbc-microbit-v2-placa-unica/
+
+MechatronicStore. (s. f.). *Seeed Studio XIAO nRF52840*. Recuperado el 7 de septiembre de 2026, de https://www.mechatronicstore.cl/seed-studio-xiao-nrf52840/
+
 Meier, A., & Reinecke, L. (2021). Computer-mediated communication, social media, and mental health: A conceptual and empirical meta-review. *Communication Research, 48*(8), 1182–1209. https://doi.org/10.1177/0093650220958224
+
+Micro:bit Educational Foundation. (s. f.). *Bluetooth*. Recuperado el 7 de septiembre de 2026, de https://tech.microbit.org/bluetooth/
 
 Monge Roffarello, A., & De Russis, L. (2023). Achieving digital wellbeing through digital self-control tools: A systematic review and meta-analysis. *ACM Transactions on Computer-Human Interaction, 30*(4), Artículo 53, 1–66. https://doi.org/10.1145/3571810
 
 Montag, C., Lachmann, B., Herrlich, M., & Zweig, K. (2019). Addictive features of social media/messenger platforms and freemium games against the background of psychological and economic theories. *International Journal of Environmental Research and Public Health, 16*(14), 2612. https://doi.org/10.3390/ijerph16142612
 
-Nordic Semiconductor ASA. (s. f.-a). *nPM1100 product specification*. Recuperado el 24 de agosto de 2026, de https://docs.nordicsemi.com/r/bundle/ps_npm1100/page/keyfeatures_html5.html
-
-Nordic Semiconductor ASA. (s. f.-b). *nRF52810 product specification*. Recuperado el 24 de agosto de 2026, de https://docs-be.nordicsemi.com/bundle/nRF52810-PS/raw/resource/enus/nRF52810_PS_v1.1.pdf
-
 one sec. (s. f.). *Cut your screen time in half*. Recuperado el 24 de agosto de 2026, de https://one-sec.app/
 
 O’Rear, A. E., & Radvansky, G. A. (2019). Location-based prospective memory. *Quarterly Journal of Experimental Psychology, 72*(3), 491–507. https://doi.org/10.1177/1747021818758608
-
-Precision Microdrives Ltd. (2023). *C08-00A: 8 mm linear resonant actuator* [Hoja de datos]. https://precisionmicrodrives.com/cdn/datasheets/C08-00A%20-%20datasheet%20-%20002/c08-00a-datasheet-002.pdf
 
 Radtke, T., Apel, T., Schenkel, K., Keller, J., & von Lindern, E. (2022). Digital detox: An effective solution in the smartphone era? A systematic literature review. *Mobile Media & Communication, 10*(2), 190–215. https://doi.org/10.1177/20501579211028647
 
@@ -932,6 +936,8 @@ Sanders, S. (2026, 12 de mayo). *Reclaim your time with Pause Point*. Google. ht
 
 Screenless. (s. f.). *Screenless Breaker*. Recuperado el 24 de agosto de 2026, de https://screenlessapp.com/en/products/screenless-breaker-v1
 
+Seeed Studio. (2026). *Getting started with Seeed Studio XIAO nRF52840 series*. https://wiki.seeedstudio.com/XIAO_BLE/
+
 Sohn, T., Li, K. A., Lee, G., Smith, I., Scott, J., & Griswold, W. G. (2005). Place-Its: A study of location-based reminders on mobile phones. En M. Beigl, S. Intille, J. Rekimoto, & H. Tokuda (Eds.), *UbiComp 2005: Ubiquitous computing* (Lecture Notes in Computer Science, Vol. 3660, pp. 232–250). Springer. https://doi.org/10.1007/11551201_14
 
 Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, 1–9. https://doi.org/10.1177/16094069221100633
@@ -939,8 +945,6 @@ Stapley, E., O’Keeffe, S., & Midgley, N. (2022). Developing typologies in qual
 Subsecretaría de Telecomunicaciones. (2026a, 15 de enero). *Equipos de alcance reducido*. https://www.subtel.gob.cl/equipos-de-alcance-reducido/
 
 Subsecretaría de Telecomunicaciones. (2026b). *Informe final: Estudio Duodécima Encuesta sobre acceso, usos y usuarios de Internet en Chile*. Ministerio de Transportes y Telecomunicaciones, Gobierno de Chile. https://www.subtel.gob.cl/wp-content/uploads/2026/02/Informe-Final-Acceso-y-Uso-Internet-2025_03.pdf
-
-Texas Instruments. (2018). *DRV2605L: 2- to 5.2-V haptic driver for LRA and ERM with effect library and Smart-Loop architecture* [Hoja de datos]. https://www.ti.com/lit/ds/symlink/drv2605l.pdf
 
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W., & Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, 104198. https://doi.org/10.1016/j.jesp.2021.104198
 
@@ -953,6 +957,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-09-07 — Ruta física portátil sincronizada
+
+- **Cambio:** se actualizó la bajada proyectual, la arquitectura técnica, los costos, el plan de pruebas y las conclusiones para distinguir una plataforma de ensayo de la integración portátil con XIAO nRF52840.
+- **Versión anterior:** la memoria presentaba B1/B2 con XIAO ESP32-C3 y alimentación de 5 V como siguiente comprobación, mantenía abiertos los canales de salida y no incorporaba un precedente constructivo para la versión compacta.
+- **Motivo:** alinear el texto académico con D-045 y D-047, reducir trabajo inicial sin permitir que una placa educativa defina el producto y mantener trazabilidad entre factibilidad y propuesta.
+- **Alcance:** se seleccionan luz y sonido como salidas y una arquitectura candidata para prototipar; no se declaran forma, costo, autonomía, percepción ni funcionamiento validados. No se autorizó una compra.
 
 ### 2026-09-02 — Encuesta complementaria registrada
 

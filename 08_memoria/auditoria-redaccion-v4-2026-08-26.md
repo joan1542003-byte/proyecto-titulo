@@ -1,7 +1,7 @@
 # Auditoría de redacción y estructura — memoria v4
 
 **Fecha de creación:** 26 de agosto de 2026
-**Último control:** 31 de agosto de 2026
+**Último control:** 7 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 
 ## Resultado
@@ -27,7 +27,7 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 19.809 palabras: 16.776 antes de las referencias, 1.204 en la bibliografía y 1.829 en el registro de cambios. Los capítulos 1–13 contienen 16.113 palabras. Tanto el total como el cuerpo académico se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen.
+El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 20.307 palabras: 16.999 antes de las referencias, 1.207 en la bibliografía y 2.097 en el registro de cambios, además de los encabezados delimitadores. Los capítulos 1–13 contienen 16.334 palabras y se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen. El archivo operativo supera ese rango porque conserva referencias y trazabilidad; la versión editorial deberá comprobar el criterio institucional exacto antes de decidir qué segmentos acompañan el cuerpo académico.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
@@ -71,6 +71,8 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+**7 de septiembre de 2026 — Ruta física y control editorial.** Se actualizó el conteo después de sustituir la ruta B1/B2 por una prueba con plataforma existente y una integración portátil con XIAO nRF52840. Antes, la auditoría registraba 19.809 palabras totales, 16.113 en los capítulos 1–13 y 49 referencias. Ahora registra 20.307, 16.334 y 50, respectivamente. El cuerpo se mantiene dentro del rango; no se incorporaron resultados y el total operativo incluye bibliografía y trazabilidad.
 
 **31 de agosto de 2026 — Revisión final textual y vigencia técnica.** Se repitieron los controles de estructura, extensión, metalenguaje y consistencia con factibilidad. Antes, la memoria conservaba dos pasajes autorreferenciales, nombraba una etapa histórica en el método y utilizaba un rango económico anterior a la comparación B1/B2. Ahora el cuerpo mantiene el mismo orden y las mismas fuentes, pero explica Q13 por su función, enlaza la arquitectura técnica activa y comunica solo desembolsos trazables. No se añadieron resultados ni se cerraron decisiones que requieren pruebas.
 
