@@ -102,7 +102,31 @@ La voz es directa, calmada y concreta. Se habla de lo que la persona eligió, de
 
 La selección cromática se apoya en contraste medible y separación semántica entre señal y error. No se atribuyen efectos universales a los colores. El nombre se evalúa por pertinencia conceptual y uso actual; no se presenta como marca jurídicamente disponible.
 
+## Encontrabilidad: objeto, señal y significado
+
+No hay evidencia en Relevo para afirmar que un color tenga un significado universal de encontrabilidad. El ámbar es una decisión provisional de contraste y separación de estados, no una garantía de reconocimiento.
+
+| Pregunta | Qué comprobar | Decisión que informa |
+| --- | --- | --- |
+| ¿Se encuentra el objeto en reposo? | Visibilidad del cuerpo sobre superficies claras/oscuras, obstáculos y ubicación. | Contraste de carcasa y lugar. No exige luz permanente. |
+| ¿Se nota la activación? | Luz cálida difundida en las distancias e iluminaciones del ensayo, junto al tono inicial. | Difusión, intensidad y orientación. |
+| ¿Se comprende la señal? | Atribución, intención y primer paso sin pistas. | Asociación y explicación; cambiar color por sí solo no demuestra resolverla. |
+| ¿Se distinguen los estados en Android? | Texto, forma o icono además de ámbar; separar error técnico de señal. | Claridad y accesibilidad de la interfaz. |
+
+W3C establece que el color no debe ser la única forma de transmitir información visual en contenido web (W3C, s. f.). Se toma como criterio de accesibilidad para la interfaz; no es una certificación del objeto físico ni evidencia de percepción doméstica.
+
+Se mantiene la paleta de este documento. Para revisar aplicaciones, comparar los mismos estados sobre fondos claros y oscuros, registrar errores de interpretación y corregir contraste o redundancia antes de ampliar colores. La prueba física mantiene blanco cálido: no se cambia a ámbar para coincidir con la marca. Patrón y modalidades se consultan en [señal física](../06_desarrollo_y_factibilidad/senal-luz-sonido-y-vibracion.md) y en el [protocolo](../07_validacion/protocolo-01-asociacion-y-comparacion.md).
+
+**Fuente complementaria:** World Wide Web Consortium. (s. f.). *Understanding Success Criterion 1.4.1: Use of Color*. Recuperado el 9 de septiembre de 2026, de https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se respondió encontrabilidad separando cuerpo, activación y significado, con límites de evidencia y criterio de accesibilidad.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-07 — Creación
 

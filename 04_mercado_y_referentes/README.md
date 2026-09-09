@@ -1,5 +1,8 @@
 # Mercado y referentes
 
+
+**Consulta del feedback:** [UGREEN: localizador como referente de objeto compacto](ugreen-localizador-como-referente.md). Respuesta documental disponible; validación empírica pendiente.
+
 ## Propósito
 
 Comprender el mercado actual de bienestar digital y objetos phygital relacionados, identificando qué propuestas se adoptan, cuáles fallan, qué modelos sostienen su uso y qué se está desarrollando.
@@ -42,6 +45,13 @@ Un referente no se incorporará solo porque se parece formalmente a Relevo. Debe
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-08-26 — Sincronización metodológica con la memoria v4
 

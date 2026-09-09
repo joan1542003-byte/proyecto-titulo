@@ -161,7 +161,18 @@ Relevo no debe intentar ser un AirTag artesanal. La ruta más proporcionada es u
 - Samsung. (s. f.). *Galaxy SmartTag2*. https://www.samsung.com/latin/mobile-accessories/galaxy-smarttag2-black-ei-t5600kwegww/
 - Seeed Studio. (2026). *Getting started with Seeed Studio XIAO nRF52840 series*. https://wiki.seeedstudio.com/XIAO_BLE/
 
+## Referente y decisiones complementarias del feedback
+
+El localizador UGREEN mencionado por el autor se analiza en la [ficha FineTrack](../04_mercado_y_referentes/ugreen-localizador-como-referente.md). Informa portabilidad y fijación; no sustituye la ruta micro:bit/XIAO. Los criterios de forma y lugar se mantienen en [forma adaptable y ubicación](../05_propuesta_phygital/forma-adaptable-y-ubicacion.md), y la alternativa háptica en [luz, sonido y vibración](senal-luz-sonido-y-vibracion.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se conectaron referente, forma y modalidades con sus respuestas específicas.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-07 — Creación
 

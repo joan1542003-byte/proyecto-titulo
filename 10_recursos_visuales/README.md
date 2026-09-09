@@ -1,5 +1,8 @@
 # Sistema visual de Relevo
 
+
+**Consulta del feedback:** [Encontrabilidad: cuerpo, activación y significado](comunicacion-naming-y-paleta-2026-09-07.md#encontrabilidad-objeto-señal-y-significado). Respuesta documental disponible; validación empírica pendiente.
+
 ## Estado vigente — 2026-09-07
 
 La comunicación vigente se documenta en [Comunicación, nombre y color de Relevo](comunicacion-naming-y-paleta-2026-09-07.md). Parte de cercanía, brevedad, traslado y autonomía; utiliza carbón, papel cálido, grises y ámbar de señal. IBM Plex Sans se mantiene para lectura e IBM Plex Mono queda restringida a datos breves.
@@ -76,6 +79,13 @@ Las imágenes adjuntas por el autor se usan como referencias de estilo, atmósfe
 La segunda exploración incorpora una gramática de puntos redondos, barras, órbitas, trazas y módulos de alto contraste inspirada en referencias de tipografía modular y dispositivos minimalistas. Se usa como investigación formal, no como reproducción de una marca existente ni como identidad cerrada de Relevo.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-08 — Autoridad visual única
 

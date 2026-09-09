@@ -76,7 +76,7 @@ Excluir estas funciones evita desviar la prueba hacia gestión, vigilancia o per
 
 - comparar el objeto situado con ubicación neutra y notificación;
 - decidir la condición y la modalidad de señal mediante evidencia;
-- integrar Bluetooth de baja energía solo después de revisar y construir la arquitectura elegida;
+- usar BLE en el banco micro:bit conforme a la Issue #11; integrar después el enlace del testigo portátil cuando la evidencia y la revisión de arquitectura lo permitan;
 - añadir fallos técnicos reales de permisos, batería, conexión y segundo plano;
 - incorporar únicamente los estados complementarios que sigan siendo necesarios.
 
@@ -106,7 +106,18 @@ Estos pendientes impiden llamar al prototipo producto validado, pero no impiden 
 
 ---
 
+## Respuestas de apoyo para construir
+
+El [plan por preguntas](../07_validacion/que-prototipar-y-como-validar-el-valor.md) distingue interacción, comportamiento y valor; [forma adaptable y ubicación](forma-adaptable-y-ubicacion.md) explica por qué un objeto puede cambiar de actividad entre ciclos sin atender muchas tareas simultáneamente. Estos criterios no reabren los nueve marcos congelados.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se enlazaron las respuestas de interacción, comportamiento y alcance físico. Se distinguió el BLE de banco de la integración portátil posterior.
+- **Versión anterior:** había respuestas dispersas, índices incompletos o formulaciones sustituidas.
+- **Motivo:** mantener una respuesta localizable y coherente con las decisiones vigentes.
+- **Alcance:** actualización documental; no se añaden resultados ni se cambian los parámetros del protocolo.
 
 ### 2026-09-09 — Primera etapa cerrada
 

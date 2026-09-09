@@ -1,5 +1,8 @@
 # Desarrollo y factibilidad
 
+
+**Consulta del feedback:** [Luz, sonido y evaluación condicionada de vibración](senal-luz-sonido-y-vibracion.md). Respuesta documental disponible; validación empírica pendiente.
+
 ## Propósito
 
 Documentar la capa de desarrollo que puede no aparecer completa en la memoria, pero que determina si Relevo puede producirse, probarse y sostenerse.
@@ -48,6 +51,13 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-08 — Antecedentes de mesa trasladados
 

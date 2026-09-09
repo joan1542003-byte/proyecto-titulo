@@ -1,18 +1,21 @@
 # Validación
 
+
+**Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
+
 ## Propósito
 
 Comprobar por separado las hipótesis de Relevo y usar los resultados para mantener, modificar o abandonar decisiones.
 
-## Orden provisional de pruebas
+## Orden de pruebas vigente
 
-1. **Asociación:** ubicación congruente frente a ubicación neutra.
-2. **Comprensión:** recuperación de intención y primer paso sin abrir el teléfono.
-3. **Modalidad:** luz, sonido y vibración según contexto y accesibilidad.
-4. **Soporte:** objeto físico frente a notificación Android.
-5. **Forma:** ubicación, tamaño, montaje y manipulación.
-6. **Integración:** aplicación, detección, comunicación y comportamiento ante fallos.
-7. **Uso doméstico:** piloto longitudinal breve y efecto de habituación.
+1. **Banco técnico:** Android–BLE, patrón, sonido, reconexión y silencio local sin participantes.
+2. **Material de fase A:** salida blanca cálida difundida, estabilidad y revisión del conjunto.
+3. **Asociación y comprensión:** percepción, atribución, intención y primer paso; autonomía por separado.
+4. **Comparación de soporte y lugar:** objeto situado, mismo objeto neutro y notificación Android equivalente, solo si fase A permite avanzar.
+5. **Modalidades y forma:** ajustar parámetros y comparar variantes justificadas; vibración solo ante una pregunta concreta de percepción o acceso.
+6. **Integración:** condición, Android, electrónica portátil y comportamiento ante fallos.
+7. **Uso doméstico:** piloto posterior para estudiar carga y habituación; sin resultados todavía.
 
 ## Protocolos planificados
 
@@ -60,6 +63,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback. Se alineó el orden de pruebas con las fases A/B y la puerta técnica vigente.
+- **Versión anterior:** había respuestas dispersas, índices incompletos o formulaciones sustituidas.
+- **Motivo:** mantener una respuesta localizable y coherente con las decisiones vigentes.
+- **Alcance:** actualización documental; no se añaden resultados ni se cambian los parámetros del protocolo.
 
 ### 2026-09-08 — Programa compilado y doble puerta material
 

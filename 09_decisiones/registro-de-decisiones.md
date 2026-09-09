@@ -1,10 +1,11 @@
 # Registro de decisiones
 
-## D-001 — Repositorio privado y fuentes identificables excluidas
+## D-001 — Visibilidad del repositorio y fuentes identificables excluidas
 
 - **Fecha:** 2026-08-23
-- **Estado:** vigente como antecedente conceptual; su traducción visual obligatoria fue sustituida por D-046
-- **Decisión:** usar un repositorio privado y no subir fuentes identificables de participantes.
+- **Estado:** exclusión de datos identificables vigente; repositorio público comprobado mediante API el 9 de septiembre de 2026.
+- **Decisión original:** usar un repositorio privado y no subir fuentes identificables de participantes.
+- **Estado verificado:** GitHub informa `visibility: public`. Se corrige la descripción; no se cambia la configuración del repositorio. La exclusión de datos identificables permanece vigente.
 - **Fundamento:** la documentación de proceso no requiere publicar datos personales.
 - **Consecuencia:** GitHub almacenará inventarios, análisis anonimizados y decisiones.
 - **Condición de revisión:** ninguna fuente identificable se incorporará sin necesidad académica explícita y autorización adecuada.
@@ -34,7 +35,7 @@
 - **Decisión:** no desarrollar simultáneamente usuarios, mercado, propuesta y memoria.
 - **Fundamento:** las decisiones posteriores dependen de resultados previos y deben poder rastrearse.
 - **Consecuencia original:** la fase sustantiva activa era usuarios, siguiendo el orden corpus, códigos, casos, matriz, tipos, perfiles y recorridos.
-- **Consecuencia vigente:** la línea sustantiva activa se consulta en la hoja de ruta; al 30 de agosto corresponde a la prueba de asociación de la Issue #8. La Issue #2 conserva un cierre documental acotado y no abre una segunda línea de investigación.
+- **Consecuencia vigente:** la línea sustantiva activa se consulta en la hoja de ruta; al 9 de septiembre corresponde a la prueba de asociación de la Issue #8, precedida por el banco de la Issue #11. La documentación de usuarios está completada provisionalmente y solo se reabre por evidencia o contradicción.
 
 ## D-005 — Formulación vigente, no definitiva
 
@@ -500,7 +501,26 @@
 
 ---
 
+## D-052 — Feedback respondido por área y separado de evidencia
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente como criterio documental y de alcance; hipótesis sin validar.
+- **Pregunta:** ¿cómo responder íntegramente al feedback sin duplicar especificaciones ni convertir decisiones en resultados?
+- **Decisión:** mantener una matriz de 23 preguntas con fuentes responsables por área. Describir el objeto como adaptable entre ciclos, conservar una intención activa y distinguir intervalo de ensayo, duración de señal y condición futura. Luz y sonido siguen en la ruta de prueba; vibración se evalúa ante una necesidad concreta. UGREEN se incorpora como referente de localizador, no como hardware seleccionado.
+- **Fundamento:** feedback aportado por el autor y aclaración del 9 de septiembre, perfiles U1/U2, alcance v1, D-045 a D-051 y protocolo vigente.
+- **Alternativas descartadas:** un documento monolítico desconectado de las áreas; prometer forma universal; elegir un tiempo por intuición; dar por probada la señal; sustituir la plataforma por semejanza con un localizador.
+- **Consecuencia:** los ejemplos públicos muestran intención → primer paso → lugar → señal → decisión; los índices y las Issues se sincronizan. El siguiente trabajo empírico sigue siendo el banco #11.
+- **Condición de revisión:** resultados o fallos que contradigan asociación, ubicación, carga, percepción o acceso. Cambiar la hipótesis no implica convertir Relevo en una app aislada.
+- **Documento asociado:** [Matriz del feedback](../01_contexto_y_fuentes/feedback-2026-09-02.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se registró D-052 y la relación entre respuestas, fuentes y pruebas; se corrigieron el estado de D-001 y la consecuencia desactualizada de D-004.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-09 — D-051
 

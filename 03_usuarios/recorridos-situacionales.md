@@ -93,14 +93,37 @@ La siguiente secuencia no proviene de una prueba con participantes. Traduce la m
 - que una persona iniciará el primer paso después del pulso;
 - que U1 y U2 serán comprendidos por futuros participantes;
 - que el lugar aporta más que una notificación;
-- que la señal final será luminosa, sonora, háptica o una combinación;
+- que luz y sonido, seleccionados para prototipar, ya tengan parámetros finales o eficacia demostrada; vibración es una alternativa condicionada;
 - que la condición de activación, la forma, la electrónica o la autonomía están cerradas;
 - que ignorar una señal representa fracaso o que comenzar la actividad representa éxito;
 - que los recorridos describen a todas las personas de 18 a 30 años.
 
 ---
 
+## Estado del usuario y recorrido explicable
+
+La situación principal es querer conservar una alternativa y reconocer cómo empezarla mientras continúa el ocio digital. No se presupone adicción, culpa, agotamiento ni falta de motivación. Los relatos P2 y P3 respaldan la tensión; los contrastes P6–P8 impiden tratar toda continuidad como un problema. La [ficha U1/U2](perfiles-situacionales.md) conserva la trazabilidad detallada.
+
+La preparación y la recepción ocurren en momentos distintos. En la primera, la persona reconoce una intención y acepta configurar el apoyo; en la segunda, debe percibir e interpretar una señal. El sistema no descubre por sí solo qué desea ni obliga a cambiar. Si todavía no sabe qué hacer o cómo comenzar, el caso excede la asociación prevista hasta que pueda formular un primer paso.
+
+| Momento del escenario futuro | Acción de la persona | Respuesta prevista | Qué observar |
+| --- | --- | --- | --- |
+| Preparar | Expresa intención, primer paso y vigencia. | Android conserva el ciclo. | Comprensión y carga de configuración. |
+| Situar y probar | Elige lugar, prueba percepción y silencio; confirma armado. | El objeto queda asociado al comienzo. | Relación explicable y control comprensible. |
+| Esperar | Continúa una actividad digital. | Se evalúa solo la condición autorizada; en el ensayo el investigador controla la activación. | Expectativa temporal y fallos técnicos. |
+| Recibir y recordar | Percibe el pulso y puede recuperar intención y primer paso. | Luz y sonido aparecen en el lugar. | Los cuatro momentos de asociación del protocolo. |
+| Decidir y cerrar | Inicia, continúa, silencia o cambia de idea. | Finaliza el ciclo sin puntuar cumplimiento. | Autonomía y claridad de las salidas. |
+
+Es una síntesis de la hipótesis futura ya descrita, no un recorrido observado. Los ejemplos de ejercicio y buceo se mantienen en la [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md); la ubicación y los casos que no funcionan, en [forma adaptable y ubicación](../05_propuesta_phygital/forma-adaptable-y-ubicacion.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se explicitó el estado situacional, la separación entre preparación y recepción y las observaciones del recorrido.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-08-30 — Gestión selectiva de P6 corregida
 

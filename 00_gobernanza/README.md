@@ -2,6 +2,9 @@
 
 Este directorio define cómo se investiga, documenta, decide y revisa el proyecto de título. Sus reglas prevalecen sobre los borradores históricos cuando existe una contradicción de método o de nomenclatura.
 
+
+**Consulta del feedback:** [Cobertura del feedback y respuestas por área](../01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
+
 ## Función
 
 La gobernanza busca que cada resultado pueda responder cuatro preguntas:
@@ -39,6 +42,13 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-04 — Guía transversal de comunicación
 

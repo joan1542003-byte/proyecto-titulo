@@ -2,6 +2,9 @@
 
 Este documento indica dónde comenzar, qué archivo funciona como referencia vigente y cómo distinguir el desarrollo actual del material histórico. Su propósito es evitar que una versión anterior oriente una decisión nueva por accidente.
 
+
+**Consulta del feedback:** [Las 23 preguntas y sus documentos responsables](../01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
+
 ## Orden de lectura
 
 1. [README principal](../README.md): síntesis del proyecto, estado actual y arquitectura general.
@@ -67,7 +70,18 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 
 ---
 
+## Último control del feedback
+
+La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se enlazó la auditoría de cobertura y vigencia. Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** había respuestas dispersas, índices incompletos o formulaciones sustituidas.
+- **Motivo:** mantener una respuesta localizable y coherente con las decisiones vigentes.
+- **Alcance:** actualización documental; no se añaden resultados ni se cambian los parámetros del protocolo.
 
 ### 2026-09-09 — Línea base de interfaz incorporada
 

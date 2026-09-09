@@ -13,7 +13,7 @@ La fecha de corte es el 9 de septiembre de 2026.
 
 ## 1. El objetivo del proyecto.
 
-Relevo ayuda a recuperar una intención personal cuando una sesión de ocio digital continúa y esa "otra cosa" que la persona quería hacer deja de estar presente.
+Relevo busca ayudar a recuperar una intención personal cuando una sesión de ocio digital continúa y esa "otra cosa" que la persona quería hacer deja de estar presente.
 
 La propuesta combina:
 
@@ -57,7 +57,7 @@ El feedback de la comisión no se pegó literalmente en la memoria. Se convirti�
 | “No se entiende bien qué es el objeto” | Ahora se explica el sistema completo: aplicación, testigo, lugar, condición y pulso. | Una persona debe entender la experiencia antes de entrar en la parte técnica. | [Propuesta phygital](../05_propuesta_phygital/README.md) |
 | “El contexto y el usuario son muy amplios” | Se definieron un usuario principal y un usuario límite. El hogar quedó como contexto inicial de prueba, no como verdad definitiva. | La misma persona puede querer una señal en una situación y no quererla en otra. | [Perfiles](../03_usuarios/perfiles-situacionales.md) · [Recorridos](../03_usuarios/recorridos-situacionales.md) |
 | “Hay que separar los flujos” | Se separaron el recorrido de la persona, el funcionamiento del sistema y el proceso de diseño. | Así se pueden detectar fallos de comprensión sin confundirlos con fallos de programación. | [Cobertura de interacciones](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
-| “Hay que justificar la luz, el sonido o la vibración” | Se dejó la modalidad abierta y se preparó una comparación. | Todavía no sabemos qué señal se percibe bien sin volverse una alarma o una molestia. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| “Hay que justificar la luz, el sonido o la vibración” | Se seleccionaron luz y sonido para el prototipo; vibración queda como alternativa condicionada. | Todavía no sabemos qué señal se percibe bien sin volverse una alarma o una molestia. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | “Hay que demostrar el valor del objeto” | Se agregó una comparación entre objeto situado, objeto en un lugar neutro y notificación digital. | Permite saber si el valor está en el objeto, en el lugar o simplemente en recibir un aviso. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | “No conviertan esto en algo punitivo” | Se descartaron bloqueos, rankings, rachas, premios y evaluación de cumplimiento. | La intención es devolver una opción, no transformar la actividad en una obligación. | [Requisitos de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) |
 | “Faltan plataforma, costos y rol del diseñador” | Android quedó como plataforma inicial; se documentaron materiales, costos, producción y responsabilidades del diseño. | Acotar el desarrollo permite comprobar primero el valor de la experiencia. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
@@ -154,13 +154,13 @@ El descriptor actual para explicar el proyecto de manera directa es: **“Una se
 
 ## 8. Decisiones visuales y cromáticas
 
-La dirección conceptual es **Transferencia situada**. La idea visual es mostrar **cómo una intención pasa de la aplicación al lugar** y luego al pulso, sin hacer creer que la forma final del objeto ya está decidida.
+La dirección vigente parte de **cercanía, brevedad, traslado y autonomía**, según D-046. **Transferencia situada** conserva valor conceptual dentro del proceso anterior; su sistema gráfico no gobierna piezas nuevas.
 
 - Android usa un **modo oscuro** para mantener continuidad y facilitar la lectura de la aplicación.
 - La memoria y las piezas editoriales usan un **fondo claro y cálido** porque necesitan lectura larga, impresión, citas, tablas e imágenes.
 - El ámbar **`#FFB000`** identifica provisionalmente la señal situada. El rojo anterior queda como registro del proceso y no gobierna las piezas nuevas.
 - El color nunca funciona solo: los estados también deben explicarse con texto, estructura y contraste.
-- La forma, la tipografía final, el material, el difusor y los parámetros del pulso siguen abiertos hasta probar legibilidad, accesibilidad y convivencia.
+- IBM Plex Sans y Mono tienen usos definidos. La forma, el logotipo final, el material, el difusor y los parámetros del pulso siguen sujetos a pruebas de legibilidad, accesibilidad y convivencia.
 
 Ver [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
 
@@ -213,9 +213,9 @@ Estas fechas vienen del [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md
 
 | Fecha estimada | Qué toca hacer | Resultado esperado | Enlace |
 |---|---|---|---|
-| **2–5 septiembre 2026** | Revisar los nueve wireframes y estados prioritarios; inventariar materiales y revisar B1/B2 en paralelo; establecer el MVP, el backlog y los pasos de desarrollo. | Wireframes auditados y orden de trabajo definido; se verifica que el desarrollo responda a las directrices de diseño y de Relevo. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **2–5 septiembre 2026 — antecedente del plan** | Revisión de wireframes y definición de alcance. La comparación B1/B2 fue sustituida por la ruta micro:bit → integración XIAO; no constituye una tarea actual. | Wireframes auditados y orden de trabajo definido; se verifica que el desarrollo responda a las directrices de diseño y de Relevo. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **6–12 septiembre 2026** | Hito cerrado el 9 de septiembre: navegación, textos, estados, accesibilidad estructural y aplicación visual revisados; wireframe v1 congelado. | Base aprobada para construir la app, con cambios y pendientes documentados. | [Cierre v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **13–19 septiembre 2026** | Construir la navegación y el flujo mínimo de la app Android; preparar una señal manual segura y repetible. | Prototipo funcional inicial sin depender todavía de toda la electrónica. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **13–19 septiembre 2026** | Construir la navegación y el flujo mínimo de la app Android; preparar una señal manual segura y repetible. | Prototipo funcional inicial sin depender todavía de toda la electrónica. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Banco micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **20–29 septiembre 2026** | Probar internamente wireframes, app, contenidos, señal y recuperación; preparar consentimiento, guion, criterios y reclutamiento. | Fallos críticos corregidos y avance listo para la corrección cruzada. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **26 septiembre 2026 — estimada y condicionada** | Publicar la encuesta de 70 participantes si sus materiales están disponibles y revisar su metodología. | Fuente trazable para complementar o modificar la memoria; hasta entonces sigue pendiente y no se presentan resultados. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 | **30 septiembre 2026** | Presentar el avance en la corrección cruzada oficial y registrar el feedback. | Observaciones traducidas en tareas, decisiones o límites concretos. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Matriz de feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
@@ -255,7 +255,18 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 
 ---
 
+## Respuestas completas al feedback del 2 de septiembre
+
+La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. La aclaración de UGREEN permite estudiarlo como referente compacto sin asumir un modelo o plataforma de control. El siguiente ensayo sigue en la Issue #11.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se incorporó el acceso a todas las preguntas y se separó cierre documental de validación. Se sincronizaron alcance de señal, autoridad visual y planificación histórica.
+- **Versión anterior:** había respuestas dispersas, índices incompletos o formulaciones sustituidas.
+- **Motivo:** mantener una respuesta localizable y coherente con las decisiones vigentes.
+- **Alcance:** actualización documental; no se añaden resultados ni se cambian los parámetros del protocolo.
 
 ### 2026-09-09 — Wireframe v1 como base de desarrollo
 

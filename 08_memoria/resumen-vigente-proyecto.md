@@ -1,10 +1,10 @@
 # Resumen vigente de Relevo
 
-**Actualizado:** 8 de septiembre de 2026.
+**Actualizado:** 9 de septiembre de 2026.
 
 ## Qué es
 
-Relevo es un sistema phygital que ayuda a recuperar una intención personal cuando una sesión de ocio digital continúa y esa alternativa deja de orientar el siguiente paso. Una aplicación Android conserva la intención y configura el ciclo; un objeto situado cerca del comienzo de la actividad emite una señal breve. La persona decide si continúa, silencia la señal o inicia la alternativa.
+Relevo es un sistema phygital que busca ayudar a recuperar una intención personal cuando una sesión de ocio digital continúa y esa alternativa deja de orientar el siguiente paso. Una aplicación Android conserva la intención y configura el ciclo; un objeto situado cerca del comienzo de la actividad emite una señal breve. La persona decide si continúa, silencia la señal o inicia la alternativa.
 
 ## Para quién y en qué situación
 
@@ -24,7 +24,7 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
 
-Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento, exportación y dimensiones fueron comprobados el 7 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. Esa estructura constituye la base vigente; la puerta inmediata pasó al banco físico con micro:bit V2.
+Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento estructural, exportación y dimensiones fueron comprobados el 7 de septiembre, y el wireframe v1 quedó congelado el 9 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. Esa estructura constituye la base vigente; la puerta inmediata pasó al banco físico con micro:bit V2.
 
 El control editorial del 8 de septiembre registra 20.453 palabras en el Markdown completo, 17.022 antes de las referencias y 16.359 en los capítulos 1–13. El cuerpo académico se mantiene dentro del rango general de 15.000 a 20.000 palabras; el total operativo incluye bibliografía y registro de cambios. La memoria conserva los catorce títulos y deberá volver a contarse cuando se integre nueva evidencia. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada.
 
@@ -46,7 +46,18 @@ No hay evidencia de acceso a la plataforma, firmware ejecutado, conexión medida
 
 Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
 
+## Feedback y fuentes de detalle
+
+Las respuestas al feedback del 2 de septiembre están distribuidas por área y accesibles en la [matriz de cobertura](../01_contexto_y_fuentes/feedback-2026-09-02.md). Se precisaron los ejemplos de ejercicio/buceo, adaptabilidad y ubicación, UGREEN como referente, encontrabilidad, vibración y los tres tiempos de la experiencia. Ninguna respuesta acredita validación; el banco físico continúa pendiente. La memoria conserva su estructura y el protocolo sus parámetros.
+
 # Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se enlazaron las respuestas y su estado sin atribuir resultados. Se sincronizaron fecha, cierre v1 y nivel de afirmación de la propuesta.
+- **Versión anterior:** había respuestas dispersas, índices incompletos o formulaciones sustituidas.
+- **Motivo:** mantener una respuesta localizable y coherente con las decisiones vigentes.
+- **Alcance:** actualización documental; no se añaden resultados ni se cambian los parámetros del protocolo.
 
 **2026-09-08 — Programa micro:bit y señal luminosa separados.** Antes, el resumen trataba la plataforma existente como una sola prueba y no advertía que su matriz integrada es roja. Ahora registra un programa compilado para el banco técnico, reserva la luz blanca cálida externa para el material con participantes y actualiza el control a 20.453 palabras totales, 16.359 en los capítulos 1–13 y 51 referencias. No existe instalación, medición ni resultado.
 

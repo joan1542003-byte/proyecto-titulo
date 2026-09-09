@@ -1,7 +1,7 @@
 ---
 id: COMUNICACION-RELEVO-2026-09-04
 titulo: "Guía de comunicación y explicación de Relevo"
-fecha_de_corte: 2026-09-04
+fecha_de_corte: 2026-09-09
 estado: "criterio vigente de comunicación; comprensión pendiente de prueba"
 ---
 
@@ -63,13 +63,13 @@ El orden recomendado para cualquier explicación es:
 
 ### 4.1 Titular recomendado, pendiente de prueba
 
-> **Que una intención vuelva a tener lugar.**
+> **Una señal donde quieres empezar.**
 
-Esta frase es una propuesta de comunicación y no reemplaza el descriptor técnico vigente. Puede funcionar como apertura expresiva, pero nunca debe aparecer sola. Debe acompañarse de una bajada explícita para que `tener lugar` se entienda tanto como volver al presente como vincularse con un espacio.
+Este es el descriptor público vigente según D-046. La frase anterior, «Que una intención vuelva a tener lugar», se conserva como antecedente expresivo y no gobierna piezas nuevas. El descriptor se acompaña de una bajada que explique intención, primer paso y decisión.
 
 ### 4.2 Bajada pública
 
-> Relevo ayuda a volver a tener presente algo que querías hacer cuando el teléfono sigue ocupando tu atención. Lo preparas en la aplicación y una señal breve aparece junto al lugar donde puedes comenzar. Tú decides si actuar, continuar o cambiar de idea.
+> Relevo busca ayudar a volver a tener presente algo que querías hacer cuando el teléfono sigue ocupando tu atención. Lo preparas en la aplicación y una señal breve aparece junto al lugar donde puedes comenzar. Tú decides si actuar, continuar o cambiar de idea.
 
 ### 4.3 Descriptor técnico vigente
 
@@ -79,7 +79,7 @@ El descriptor sirve para fichas, créditos y contextos académicos. No debería 
 
 ### 4.4 Explicación en 10 segundos
 
-> Relevo vuelve a poner una intención en el lugar donde puede empezar. Una señal breve la hace presente fuera del teléfono y tú decides qué hacer.
+> Relevo busca volver a poner una intención en el lugar donde puede empezar. Una señal breve la hace presente fuera del teléfono y tú decides qué hacer.
 
 ### 4.5 Explicación en 30 segundos
 
@@ -202,7 +202,7 @@ La respuesta honesta tiene dos partes:
 
 ### 11.1 Una diapositiva
 
-- **Título:** `Que una intención vuelva a tener lugar.`
+- **Título:** `Una señal donde quieres empezar.`
 - **Imagen o diagrama:** una escena con la actividad digital en un plano y el primer paso en otro; el objeto solo aparece donde cumple una función.
 - **Bajada:** `Relevo emite una señal breve de luz y sonido junto al lugar donde puede comenzar una actividad elegida. La persona decide qué hacer.`
 - **Pie:** `Propuesta phygital en desarrollo. Su ventaja frente a una notificación todavía debe validarse.`
@@ -325,7 +325,7 @@ Para una situación, no para una identidad fija: alguien tiene una intención al
 5. **La decisión final queda abierta.** No cerrar todas las escenas con una persona productiva o satisfecha después de obedecer.
 6. **La forma exploratoria se rotula.** Un render no debe hacer creer que existen medidas, materialidad o electrónica aprobadas.
 7. **La evidencia se distingue de la ilustración.** Una imagen generada explica o explora; no documenta uso real.
-8. **La terminología no reemplaza la escena.** `Transferencia situada` funciona como concepto del sistema visual, pero necesita una demostración concreta.
+8. **La terminología no reemplaza la escena.** La dirección vigente explica cercanía, brevedad, traslado y autonomía. `Transferencia situada` conserva valor como antecedente conceptual; D-046 gobierna las piezas nuevas.
 9. **La tipografía expresiva no carga argumentos largos.** La explicación principal debe conservar legibilidad y jerarquía.
 10. **Cada soporte tiene un trabajo distinto.** La aplicación organiza, el objeto señala y la memoria explica; la comunicación debe preservar esa separación.
 
@@ -385,7 +385,34 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 
 ---
 
+## Intención, primer paso y ejemplos de ejercicio y buceo
+
+### Descripción del proyecto
+
+Relevo es un sistema phygital que busca recordarte una actividad que elegiste y cómo comenzarla. Registras una intención y un primer paso en una aplicación Android, y sitúas un pequeño objeto junto a ese comienzo. Cuando se cumple una condición que configuraste, el objeto emite una señal breve de luz y sonido. Puedes empezar, continuar con el teléfono o silenciar la señal.
+
+### Cómo se comunica la transición
+
+Dejar de ver TikTok no produce por sí solo ejercicio ni buceo. El mecanismo propuesto es recuperar un comienzo posible. Mostrar esta cadena, como escenario hipotético:
+
+**Quiero ejercitarme → elijo ponerme las zapatillas → sitúo Relevo junto a ellas y preparo el ciclo → uso TikTok → aparece la señal → recuerdo ese comienzo → decido.**
+
+Para buceo hay que delimitar la intención. Si existe una salida planificada, preparar la bolsa junto al equipo puede ser el primer paso. Si la persona solo desea aprender algún día, necesita resolver otras decisiones antes de que este ejemplo describa un comienzo disponible. Relevo no aporta por sí mismo tiempo libre, entrenamiento, reservas o equipamiento. El objeto del ejemplo permanece en casa; no se propone usarlo bajo el agua.
+
+### Qué logra y qué busca lograr
+
+Hoy existen investigación, recorrido y programa compilado. Lo que el producto busca aportar es que la persona vuelva a considerar una intención y recuerde su primer paso sin consultar obligatoriamente el teléfono. La ejecución física, esa asociación y la ventaja del lugar siguen por probar. Iniciar o completar la actividad son resultados posteriores diferentes. La explicación pública debe decir «busca» o «podría» cuando describe ese aporte.
+
+Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadieron descripción directa, puente entre TikTok y primer paso, límites de buceo y niveles de afirmación; se alinearon titular y dirección visual con D-046.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-08 — Fuente visual sincronizada
 

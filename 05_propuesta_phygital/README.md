@@ -1,5 +1,8 @@
 # Propuesta phygital
 
+
+**Consulta del feedback:** [Forma adaptable, alternativas y ubicación](forma-adaptable-y-ubicacion.md). Respuesta documental disponible; validación empírica pendiente.
+
 ## Propósito
 
 Traducir investigación y evidencia de usuarios a una propuesta coherente donde la capa física, la capa digital y el lugar tengan funciones explícitas.
@@ -46,6 +49,13 @@ La formulación vigente es una hipótesis. El ciclo estructural quedó represent
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-09 — Wireframe v1 congelado
 

@@ -54,7 +54,7 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 - Las etapas de prueba tienen nombres descriptivos. No se utilizan códigos internos en la memoria.
 - Las afirmaciones sobre entrevistas, mercado, funcionamiento y factibilidad distinguen evidencia, hipótesis y trabajo pendiente.
 - Q13 se presenta por su función metodológica —una propuesta preliminar de señal ambiental— sin trasladar al cuerpo el nombre de una etapa histórica.
-- La factibilidad utiliza la comparación técnica y económica vigente al 30 de agosto y distingue desembolsos incompletos de costo, producción y precio.
+- La factibilidad distingue la ruta micro:bit/XIAO vigente desde el 7–8 de septiembre de los costos de mesa del 30 de agosto, conservados como antecedentes; separa desembolsos incompletos de costo, producción y precio.
 
 ## Control de APA 7
 
@@ -71,6 +71,13 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se corrigió una referencia temporal de factibilidad que seguía atribuyendo vigencia a la comparación de agosto.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 **8 de septiembre de 2026 — Fuente luminosa y conteo sincronizados.** Se actualizó el control después de distinguir la matriz roja del banco técnico y la luz blanca cálida del material con participantes. Antes, la auditoría registraba 20.307 palabras totales, 16.334 en los capítulos 1–13 y 49 referencias en su apartado APA. Ahora registra 20.453, 16.359 y 51, respectivamente. La modificación conserva el cuerpo dentro del rango y no incorpora resultados de validación.
 

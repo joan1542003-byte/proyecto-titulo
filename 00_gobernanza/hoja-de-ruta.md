@@ -93,7 +93,7 @@ Incluye bibliografía académica reciente, productos disponibles, aproximaciones
 
 La propuesta se formulará desde requisitos derivados de investigación. Se registrarán propuesta de valor, principios de interacción, relación físico-digital, flujo de usuario, flujo técnico, alcance, ventajas, límites y decisiones descartadas.
 
-La [investigación visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) puede definir principios, alternativas y reglas preventivas. No puede fijar mediante imágenes la forma industrial, el canal físico o resultados de comprensión todavía no observados.
+La [comunicación y paleta vigentes](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) gobiernan piezas nuevas. La investigación visual anterior conserva trazabilidad. Luz y sonido están seleccionados para prototipar; su percepción y parámetros, la forma industrial y los resultados de comprensión requieren pruebas.
 
 ### Fase 5 — Desarrollo y factibilidad
 
@@ -129,6 +129,13 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se corrigió la referencia visual rectora y se distinguió selección de canales de validación.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-08 — Puerta micro:bit ejecutable
 

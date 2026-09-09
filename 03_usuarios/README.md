@@ -1,5 +1,8 @@
 # Usuarios
 
+
+**Consulta del feedback:** [Estado del usuario y recorrido explicable](recorridos-situacionales.md#estado-del-usuario-y-recorrido-explicable). Respuesta documental disponible; validación empírica pendiente.
+
 ## Propósito
 
 Comprender comportamientos, necesidades, tensiones, deseos, experiencias y límites de intervención, y traducirlos a perfiles situacionales, recorridos y criterios de diseño sin convertirlos en segmentos demográficos rígidos.
@@ -89,6 +92,13 @@ Estos documentos no incorporarán nombres, retratos ni biografías inventadas. S
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-02 — Encuesta complementaria registrada
 

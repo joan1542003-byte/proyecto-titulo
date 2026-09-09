@@ -1,6 +1,11 @@
 # Proyecto de título — Relevo
 
-Repositorio privado de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
+Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
+
+
+**Consulta del feedback:** [Respuestas al feedback del 2 de septiembre](01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
+
+**Visibilidad comprobada el 9 de septiembre de 2026:** público, según la API de GitHub. La documentación no modifica esa configuración; los datos identificables siguen excluidos.
 
 ## Propósito del repositorio
 
@@ -110,6 +115,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la matriz del feedback y se corrigió la descripción de visibilidad con el estado público comprobado en GitHub.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-09 — Wireframe v1 cerrado
 

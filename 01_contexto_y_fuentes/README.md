@@ -2,6 +2,9 @@
 
 Este directorio conserva la procedencia, el estado y las limitaciones de los materiales que sostienen el proyecto. Su función es impedir que una versión antigua, una transcripción o una interpretación posterior se trate como evidencia equivalente al levantamiento original.
 
+
+**Consulta del feedback:** [Feedback del 2 de septiembre: fuente, respuestas y pendientes](feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
+
 ## Documentos
 
 - [Inventario de fuentes](inventario-de-fuentes.md): identifica cada fuente, su función, nivel y relación con otras versiones.
@@ -45,6 +48,13 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se añadió acceso directo a la respuesta responsable del feedback.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-01 — Matriz de pase incorporada
 

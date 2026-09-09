@@ -145,7 +145,18 @@ International Organization for Standardization. (2023). *Systems and software en
 
 ---
 
+## Relación con las preguntas de prototipado
+
+La guía [qué prototipar y cómo validar el valor](que-prototipar-y-como-validar-el-valor.md) explica materiales, comportamiento y la diferencia entre intervalo experimental y umbral del producto. Este protocolo conserva autoridad sobre muestra, tiempos, señal, variantes, registro y reglas de decisión. La documentación del feedback no cambia esos parámetros ni añade resultados.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se enlazó la explicación operativa manteniendo íntegros muestra, procedimiento y umbrales.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-08 — Fuente luminosa válida para la fase A
 

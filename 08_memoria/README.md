@@ -12,7 +12,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 51 entradas bibliográficas y correcciones APA aplicadas.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
-- [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 30 de agosto entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
+- [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 8 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 
 ## Antecedentes y documentos históricos
@@ -78,6 +78,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Respuesta al feedback del 2 de septiembre
+
+- **Cambio:** Se corrigió la fecha del índice de pendientes para que corresponda al documento enlazado.
+- **Versión anterior:** La respuesta estaba dispersa o conservaba formulaciones anteriores.
+- **Motivo:** mantener una respuesta localizable, clara y coherente con las decisiones vigentes.
+- **Alcance:** No se incorporan resultados de pruebas ni se modifica el protocolo vigente.
 
 ### 2026-09-08 — Antecedentes trasladados al archivo central
 
