@@ -68,6 +68,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) registra 15.033 en la versión actual.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -81,6 +82,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Extensión aproximada de 15.000 palabras
+
+- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
+- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
+- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
+- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

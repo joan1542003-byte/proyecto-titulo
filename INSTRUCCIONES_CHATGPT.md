@@ -90,7 +90,7 @@ Al cambiar una respuesta, sincroniza su fuente responsable, índice, resumen afe
 - Usa siempre **phygital**.
 - Conserva en la memoria los catorce títulos y la progresión de `08_memoria/memoria-vigente-v4.md`. La formulación de Relevo comienza en el capítulo 10; antes de ese punto, el texto desarrolla la experiencia, el problema, la teoría, los usuarios, el mercado y los criterios.
 - Limita la motivación personal a la experiencia y la inquietud presentes. No la utilices para narrar cómo cambió el proyecto ni para describir la solución.
-- Respeta los límites de extensión del examen y compruébalos antes de cerrar una versión.
+- Mantén aproximadamente 15.000 palabras de texto académico, según la petición del autor del 9 de septiembre: cuenta preliminares y capítulos 1–13, excluye bibliografía y registro administrativo. Comprueba el conteo y los límites particulares del examen antes de cerrar; no añadas relleno para alcanzar una cifra exacta.
 - Evita exceso de comillas, metalenguaje, autorreferencias y comentarios sobre el proceso que no pertenezcan al documento.
 - No uses códigos internos de prototipado dentro del cuerpo académico. Nombra cada etapa por la pregunta que busca resolver.
 - Evita repetir una misma idea con palabras distintas.
@@ -145,6 +145,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Extensión aproximada de 15.000 palabras
+
+- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
+- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
+- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
+- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

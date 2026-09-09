@@ -153,7 +153,26 @@
 - **Condición de revisión:** una nueva exigencia institucional o un problema de lectura que justifique cambiar la jerarquía.
 - **Documento asociado:** [Control editorial de la memoria](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
 
+## D-055 — Extensión académica aproximada de 15.000 palabras
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente como objetivo editorial.
+- **Pregunta:** ¿qué extensión mantener en las próximas revisiones de la memoria?
+- **Decisión:** aproximarse a 15.000 palabras contando preliminares y capítulos 1–13; excluir bibliografía y registro administrativo. Conservar los límites particulares de los apartados y declarar el método de conteo.
+- **Fundamento:** petición expresa del autor y preferencia por una escritura comprensible, ordenada y sin repeticiones.
+- **Alternativas descartadas:** contar el historial como texto académico; retirar citas o evidencia para reducir extensión; rellenar hasta una cifra exacta.
+- **Consecuencia:** el segmento académico pasa de 17.920 a 15.033 palabras. Los 52 registros bibliográficos, citas, tablas y parámetros del protocolo se mantienen.
+- **Condición de revisión:** nuevos resultados que requieran redistribuir espacio o una delimitación de conteo confirmada para la entrega institucional.
+- **Documento asociado:** [Control de extensión](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Extensión aproximada de 15.000 palabras
+
+- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
+- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
+- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
+- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
 
 ### 2026-09-09 — Jerarquía editorial
 

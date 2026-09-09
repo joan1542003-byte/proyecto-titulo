@@ -3,7 +3,7 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
-**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto.
+**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto. La memoria tiene 15.033 palabras de texto académico, sin bibliografía ni registro administrativo.
 
 **Consulta del feedback:** [Respuestas al feedback del 2 de septiembre](01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
@@ -117,6 +117,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Extensión aproximada de 15.000 palabras
+
+- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
+- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
+- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
+- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

@@ -26,13 +26,15 @@ La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y l
 
 Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento estructural, exportación y dimensiones fueron comprobados el 7 de septiembre, y el wireframe v1 quedó congelado el 9 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. Esa estructura constituye la base vigente; la puerta inmediata pasó al banco físico con micro:bit V2.
 
-El control editorial del 9 de septiembre, actualizado tras la edición de lectura, registra 21.589 palabras en el Markdown completo, 17.920 antes de las referencias y 17.252 en los capítulos 1–13, mediante separación por espacios en blanco. El cuerpo académico se mantiene dentro del rango general de 15.000 a 20.000 palabras; el total operativo incluye bibliografía y registro de cambios. La memoria conserva los catorce títulos y deberá volver a contarse cuando se integre nueva evidencia. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada.
+El control editorial del 9 de septiembre registra **15.033 palabras de texto académico**, incluyendo preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. Responde al objetivo aproximado de 15.000 solicitado por el autor. Los capítulos 1–13 suman 14.365; el archivo operativo completo contiene 18.791. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) declara el método y separa esos segmentos. La memoria conserva los catorce títulos y deberá volver a contarse cuando cambie. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada.
 
 La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
 
 Existe además una encuesta con **70 participantes** pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria. Mientras no se documenten sus materiales y resultados, no forma parte de la evidencia vigente ni se mezcla con el corpus P1–P8. El seguimiento está en [Encuesta de 70 participantes — pendiente](../03_usuarios/encuesta-70-participantes-pendiente.md).
 
 ## Qué cambió en esta actualización
+
+Se redujeron 2.887 palabras mediante una redacción más compacta en antecedentes, teoría, referentes, sistema, factibilidad y conclusiones. Se conservan las 52 referencias, las citas, las tablas, la pregunta, la hipótesis y los parámetros de validación. El objetivo editorial pasa a ser aproximadamente 15.000 palabras antes de la bibliografía, excluyendo también el registro administrativo.
 
 La edición de lectura conserva los catorce capítulos y reúne los subapartados breves bajo títulos temáticos sin numeración secundaria. La formulación pasa de diez apartados a cuatro, el marco teórico elimina el tercer nivel y el método de entrevistas se lee sin la interrupción de la encuesta pendiente. Se mejoran transiciones, repeticiones y explicaciones de ciclo, armado y componentes. Las 52 referencias y el protocolo se conservan. El [control editorial](auditoria-redaccion-v4-2026-08-26.md) documenta la nueva organización y la extensión.
 
@@ -55,6 +57,13 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 Las respuestas al feedback del 2 de septiembre están distribuidas por área y accesibles en la [matriz de cobertura](../01_contexto_y_fuentes/feedback-2026-09-02.md). Se precisaron los ejemplos de ejercicio/buceo, adaptabilidad y ubicación, UGREEN como referente, encontrabilidad, vibración y los tres tiempos de la experiencia. Ninguna respuesta acredita validación; el banco físico continúa pendiente. La memoria conserva su estructura y el protocolo sus parámetros.
 
 # Registro de cambios (disclaimer)
+
+### 2026-09-09 — Extensión aproximada de 15.000 palabras
+
+- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
+- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
+- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
+- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 
