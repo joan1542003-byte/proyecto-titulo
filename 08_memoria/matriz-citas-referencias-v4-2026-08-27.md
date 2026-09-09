@@ -1,13 +1,13 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
-**Última comprobación:** 8 de septiembre de 2026
+**Última comprobación:** 9 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
 
-La memoria contiene 51 referencias y todas poseen al menos una cita correspondiente en el cuerpo. No se identificaron citas autor–fecha sin entrada bibliográfica ni referencias huérfanas. La revisión combinó extracción de nombres y fechas con comprobación manual de citas narrativas, citas parentéticas, autores institucionales y sufijos para obras del mismo autor.
+La memoria contiene 52 referencias. La auditoría anterior registró correspondencia para 51; esta revisión conserva esas entradas y verifica la incorporación de Gibbons (2017) y su cita en 11.11. La nueva fuente es una guía metodológica profesional, no evidencia empírica de eficacia. No se rehizo la evaluación de contenido de las 51 fuentes previas.
 
 La convención de autoría se mantiene según APA 7: `y` integra los apellidos en citas narrativas, mientras `&` se utiliza en citas parentéticas y antes del último autor en la lista de referencias. Esta diferencia es intencional y no constituye una inconsistencia de idioma.
 
@@ -27,6 +27,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Chrome for Developers | s. f. | Sí | Sí | Conforme |
 | de Segovia Vicente et al. | 2024 | Sí | Sí | Conforme |
 | Focusaur | s. f. | Sí | Sí | Conforme |
+| Gibbons | 2017 | Sí, 11.11 | Sí | Incorporación verificada el 9 de septiembre |
 | Gilbert et al. | 2023 | Sí | Sí | Conforme |
 | Goldsmith | 2021 | Sí | Sí | Conforme |
 | Gollwitzer y Sheeran | 2006 | Sí | Sí | Conforme |
@@ -82,6 +83,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Coherencia de la memoria y alcance de cierre
+
+- **Cambio:** Se añadió Gibbons (2017), se actualizó el inventario a 52 referencias y se delimitó la comprobación nueva respecto de la auditoría previa.
+- **Versión anterior:** la memoria y sus controles no reflejaban de manera uniforme el alcance de la prueba y las decisiones documentadas.
+- **Motivo:** mantener continuidad entre investigación, experiencia, construcción y evaluación antes de ampliar el proyecto.
+- **Alcance:** No se añaden resultados empíricos ni se modifica el protocolo de participantes.
 
 ### 2026-09-08 — Fuente de hardware incorporada
 

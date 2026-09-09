@@ -3,6 +3,8 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
+**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente.
+
 **Consulta del feedback:** [Respuestas al feedback del 2 de septiembre](01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
 **Visibilidad comprobada el 9 de septiembre de 2026:** público, según la API de GitHub. La documentación no modifica esa configuración; los datos identificables siguen excluidos.
@@ -115,6 +117,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Coherencia de la memoria
+
+- **Cambio:** se sincronizó este documento con la revisión de la memoria y su auditoría de cobertura.
+- **Versión anterior:** describía el estado previo a la reconciliación del recorrido, soporte y alcance comparativo.
+- **Motivo:** mantener una base académica consistente y pendientes localizables.
+- **Alcance:** documental; no incorpora resultados ni modifica el protocolo.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

@@ -13,7 +13,7 @@ El repositorio es la fuente central de contexto, decisiones, documentación y ta
 1. Accede al repositorio mediante la app o el conector de GitHub; si no están disponibles, usa una copia Git actualizada y la API o web oficial. Verifica rama y revisión antes de escribir.
 2. Lee primero `README.md`.
 3. Revisa `00_gobernanza/directrices-de-trabajo.md`, `00_gobernanza/hoja-de-ruta.md` y las Issues abiertas.
-4. Identifica la única fase sustantiva activa y consulta solo los archivos pertinentes para la solicitud. Para trabajo de memoria, abre `08_memoria/memoria-vigente-v4.md`, `08_memoria/resumen-vigente-proyecto.md` y `08_memoria/auditoria-redaccion-v4-2026-08-26.md`; las versiones v3, v2 y v1 son antecedentes.
+4. Identifica la única fase sustantiva activa y consulta solo los archivos pertinentes para la solicitud. Para trabajo de memoria, abre `08_memoria/memoria-vigente-v4.md`, `08_memoria/resumen-vigente-proyecto.md` y `08_memoria/auditoria-redaccion-v4-2026-08-26.md` y la [auditoría de coherencia](08_memoria/auditoria-coherencia-memoria-2026-09-09.md); las versiones v3, v2 y v1 son antecedentes.
 5. Distingue con claridad:
    - la petición actual del usuario;
    - las instrucciones vigentes del repositorio;
@@ -144,6 +144,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Coherencia de la memoria
+
+- **Cambio:** se sincronizó este documento con la revisión de la memoria y su auditoría de cobertura.
+- **Versión anterior:** describía el estado previo a la reconciliación del recorrido, soporte y alcance comparativo.
+- **Motivo:** mantener una base académica consistente y pendientes localizables.
+- **Alcance:** documental; no incorpora resultados ni modifica el protocolo.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

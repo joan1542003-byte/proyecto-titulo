@@ -1,7 +1,7 @@
 # Auditoría de redacción y estructura — memoria v4
 
 **Fecha de creación:** 26 de agosto de 2026
-**Último control:** 8 de septiembre de 2026
+**Último control:** 9 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 
 ## Resultado
@@ -27,7 +27,7 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-El conteo se actualizó mediante `Measure-Object -Word` sobre segmentos delimitados del Markdown. El archivo completo contiene 20.453 palabras: 17.022 antes de las referencias, 1.226 en la bibliografía y 2.205 en el registro de cambios, además de los encabezados delimitadores. Los capítulos 1–13 contienen 16.359 palabras y se mantienen dentro del rango general de 15.000 a 20.000 palabras indicado para el examen. El archivo operativo supera ese rango porque conserva referencias y trazabilidad; la versión editorial deberá comprobar el criterio institucional exacto antes de decidir qué segmentos acompañan el cuerpo académico.
+Conteo del 9 de septiembre mediante separación por espacios en blanco del Markdown sin renderizar (`str.split` de Python). Los segmentos incluyen sus encabezados: archivo completo 21.551; inicio hasta antes de `# 14. Referencias`, 18.000; desde `# 1. Motivación personal` hasta antes de referencias, 17.337; referencias hasta antes de `## Registro de cambios`, 1.239; registro hasta el final, 2.312. Los capítulos 1–13 se mantienen dentro del rango general de 15.000–20.000 palabras. El total operativo incluye bibliografía y trazabilidad. Este método explícito reemplaza el conteo anterior con PowerShell; no se interpreta la diferencia entre métodos como crecimiento exacto del texto. Los apartados preliminares no cambiaron y conservan los conteos aproximados de la tabla. La entrega editorial deberá confirmar qué segmentos computa la institución.
 
 | Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
@@ -58,7 +58,7 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 
 ## Control de APA 7
 
-La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) verifica las 51 entradas de la bibliografía. Todas poseen al menos una cita en el cuerpo y no existen citas autor–fecha sin referencia. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de obras con la misma autoría y sin fecha. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
+La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) registra 52 entradas. Se preserva la auditoría previa de 51 referencias y se verifica la nueva cita de Gibbons (2017) en 11.11; esta actualización no repite la evaluación del contenido de todas las fuentes. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de obras con la misma autoría y sin fecha. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
 
 ## Control de trazabilidad de criterios
 
@@ -71,6 +71,13 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Coherencia de la memoria
+
+- **Cambio:** se sincronizó este documento con la revisión de la memoria y su auditoría de cobertura.
+- **Versión anterior:** describía el estado previo a la reconciliación del recorrido, soporte y alcance comparativo.
+- **Motivo:** mantener una base académica consistente y pendientes localizables.
+- **Alcance:** documental; no incorpora resultados ni modifica el protocolo.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

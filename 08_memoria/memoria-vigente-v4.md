@@ -631,11 +631,11 @@ La interfaz también debe distinguir entre información personal y estado del si
 
 El objeto se concibe como un cuerpo compacto y transportable que puede ubicarse sobre distintas superficies del hogar. Su presencia indica que existe una intención activa vinculada a ese lugar. Una superficie de señal difusa permite emitir un pulso visible desde diferentes ángulos; un sonido breve amplía su percepción y un control físico accesible permite silenciarlo o probarlo.
 
-La forma circular se mantiene como hipótesis porque evita una orientación frontal rígida y facilita una lectura ambiental. Como meta de prototipo se considera una envolvente de 42–48 mm de diámetro y 12–16 mm de grosor, mayor que un localizador comercial compacto para permitir montaje, apertura y reparación con componentes de desarrollo. Las medidas, el peso, el color y el material deberán corregirse después de comprobar percepción, estabilidad, autonomía y espacio interior.
+La forma circular se mantiene como candidata porque podría reducir la dependencia de una orientación frontal. Se comparará con una forma rectangular redondeada de volumen interno equivalente mediante estabilidad, manipulación, visibilidad de la señal y acceso al control; la preferencia visual no basta para elegirla. Como meta de prototipo se considera una envolvente de 42–48 mm de diámetro y 12–16 mm de grosor, mayor que un localizador comercial compacto para permitir montaje, apertura y reparación con componentes de desarrollo. Las medidas, el peso, el color y el material deberán corregirse después de comprobar percepción, estabilidad, autonomía y espacio interior.
 
-El objeto debe diferenciar tres estados sin exigir una vigilancia constante: reposo, señal y necesidad de atención técnica. La señal vinculada a la intención requiere un comportamiento distinto de batería baja o pérdida de conexión. Si ambos estados se expresan del mismo modo, el significado se vuelve ambiguo.
+El sistema debe distinguir reposo, señal y necesidad de atención técnica sin exigir vigilancia constante. En la prueba, el objeto emite únicamente el pulso asociado a la intención; los indicadores de placa ajenos se ocultan. En la integración posterior, la aplicación comunica el estado técnico disponible. Cualquier aviso físico de batería o conexión requerirá definir un patrón diferente y comprobar que no se confunde con la intención; todavía no se especifica como un canal adicional obligatorio.
 
-La transportabilidad permite que una misma persona relacione el objeto con actividades diferentes. También crea riesgos: puede perderse, cambiar de lugar, quedar cubierto o asociarse con demasiadas intenciones. Por esa razón, el alcance inicial considera una sola intención activa y exige probar la señal después de cada cambio de ubicación.
+La transportabilidad propone que una misma persona relacione el objeto con actividades diferentes entre ciclos. Esta adaptabilidad no equivale a una forma universal ni a manejar varias tareas al mismo tiempo. También crea riesgos: puede perderse, cambiar de lugar, quedar cubierto o asociarse con demasiadas intenciones. Por esa razón, el alcance inicial considera una sola intención activa y exige probar la señal después de cada cambio de ubicación.
 
 ## 11.4 El primer paso y el lugar
 
@@ -647,25 +647,25 @@ El hogar exige flexibilidad. Las superficies cambian, los objetos se mueven y ot
 
 ## 11.5 Secuencia de uso
 
-1. **Elegir una intención.** La persona identifica una actividad que desea mantener disponible.
-2. **Definir el primer paso.** Expresa una acción concreta que permite comenzar.
-3. **Vincular el objeto.** La aplicación confirma la identidad y el estado técnico del dispositivo.
-4. **Situar.** El objeto se coloca junto al primer paso y se comprueba la relación con el lugar.
-5. **Probar la señal.** La persona revisa si el pulso puede percibirse y detenerse.
-6. **Configurar la condición.** Se elige una regla observable y una ventana de vigencia.
-7. **Armar.** La persona activa el ciclo de manera explícita.
-8. **Esperar.** La sesión digital transcurre sin que el sistema juzgue su valor.
-9. **Recibir el pulso.** Si la condición se cumple y la conexión está disponible, el objeto emite la señal.
-10. **Decidir.** La persona puede iniciar la actividad, continuar, ignorar o silenciar.
-11. **Cerrar o rearmar.** El ciclo termina, cambia de intención o se prepara nuevamente.
+La secuencia propuesta mantiene el orden de la interfaz estructural: formular, configurar, revisar, situar, probar, armar, esperar, recibir y cerrar. Describe el sistema integrado previsto; no implica que el banco técnico ya implemente todas esas acciones.
 
-La secuencia no exige consultar la aplicación después del pulso para comprender qué intención representa. El teléfono reaparece cuando es necesario configurar, modificar o resolver un estado técnico.
+1. **Formular.** La persona registra una intención y un primer paso concreto.
+2. **Configurar.** Selecciona la aplicación, una condición observable provisional y la vigencia del ciclo.
+3. **Revisar.** Comprueba y puede corregir lo preparado antes de continuar.
+4. **Situar.** Confirma la vinculación y disponibilidad del objeto, y lo coloca cerca del primer paso.
+5. **Probar.** Emite un pulso de prueba y comprueba percepción y silencio local.
+6. **Armar.** Confirma explícitamente el ciclo mediante el control físico previsto; una confirmación ambigua permite repetir o salir.
+7. **Esperar.** Utiliza el teléfono mientras la condición permanece vigente y puede desarmar.
+8. **Recibir y decidir.** Percibe la señal y puede reconsiderar la intención, continuar, ignorar o silenciar.
+9. **Cerrar.** El ciclo termina sin evaluar cumplimiento; otro ciclo requiere preparación y rearme voluntarios.
+
+Comprender la señal no debería exigir consultar de nuevo la aplicación. El teléfono interviene para configurar, modificar o resolver un estado técnico. En la comprobación con micro:bit, la terminal Android y la orden manual solo representan transporte y comportamiento de señal: no verifican el armado físico ni la condición automática de este recorrido.
 
 ## 11.6 Flujo del sistema
 
 Esta arquitectura describe el comportamiento previsto y todavía no está implementada ni validada. La persona formularía el contenido y establecería la regla. Android consultaría localmente la condición autorizada. Cuando el evento ocurriera dentro de una ventana vigente, la aplicación enviaría un comando al objeto mediante Bluetooth de baja energía, una comunicación inalámbrica de corto alcance diseñada para consumir poca energía. El objeto verificaría que el mensaje correspondiera al ciclo activo y ejecutaría el patrón de señal. Una vez silenciado o vencido, volvería a reposo.
 
-El comando necesita, como mínimo, una identificación de ciclo, un patrón y un vencimiento. Esta información evita que una señal retrasada aparezca cuando ya perdió sentido. El objeto no conserva el texto de la intención ni decide cuándo activarse por cuenta propia.
+Para la integración se deberán resolver la identificación del ciclo, las órdenes duplicadas y el vencimiento, y decidir qué verifica cada componente. El formato de mensajes todavía no está cerrado. La prueba previa utiliza solo la orden de activación: sirve para comprobar llegada, patrón y silencio local, pero no demuestra control de mensajes tardíos en uso autónomo. El objeto no necesita conservar el texto de la intención ni decidir cuándo activarse por cuenta propia.
 
 Ante un fallo, el sistema debe priorizar la claridad. Si se revoca un permiso, se limita la ejecución en segundo plano —la capacidad de continuar una tarea aunque la aplicación no esté visible—, se pierde la conexión o la batería es insuficiente, la aplicación informa el estado y permite desarmar. No debe aparentar que una condición fue evaluada cuando no existían los medios técnicos para hacerlo.
 
@@ -688,18 +688,18 @@ La cobertura completa del recorrido y sus estados alternativos se conserva en el
 
 ## 11.8 Flujo de diseño
 
-El desarrollo avanza desde la pregunta hacia la especificación. Primero debe comprobarse que una señal puede recuperar la intención. Después se compara el lugar elegido con un lugar neutro y con una notificación. Solo si existe una diferencia se afinan los parámetros de luz y sonido, se integra la electrónica y se estudia una forma de mayor fidelidad, es decir, más próxima a las condiciones de uso y funcionamiento que se quieren evaluar.
+El desarrollo avanza desde la pregunta hacia la especificación. Antes de recibir participantes se comprobarán el enlace, la repetibilidad, la señal y el control local, y se revisarán los materiales. Con ese soporte se estudia si una señal puede recuperar la intención. Después se compara el lugar elegido con un lugar neutro y con una notificación. Solo si existe una diferencia se afinan los parámetros de luz y sonido, se integra la electrónica y se estudia una forma de mayor fidelidad, es decir, más próxima a las condiciones de uso y funcionamiento que se quieren evaluar.
 
 La secuencia proyectual es la siguiente:
 
-1. Delimitar el episodio pertinente y el caso donde no se debe intervenir.
+1. Delimitar el episodio pertinente y el caso donde no se debe intervenir; verificar el banco técnico y los materiales antes de trabajar con personas.
 2. Probar la relación entre intención, primer paso, lugar y señal.
 3. Comparar la alternativa situada con una notificación digital.
 4. Definir intensidad, duración, ritmo y control físico.
 5. Seleccionar una condición observable y su vencimiento.
 6. Probar permisos, comunicación y fallos.
 7. Integrar aplicación, objeto y entorno en un prototipo acotado.
-8. Revisar fabricación, mantenimiento, privacidad y accesibilidad.
+8. Consolidar fabricación y mantenimiento con medidas reales; revisar privacidad y accesibilidad en cada etapa, desde la preparación inicial.
 
 Una especificación formal o técnica que aparezca antes de resolver la pregunta correspondiente se mantiene como candidata. Este criterio evita que la disponibilidad de un componente determine el sentido del proyecto.
 
@@ -716,6 +716,30 @@ La convivencia requiere probar distancia, brillo, volumen y duración. Una seña
 La accesibilidad se estudiará por dimensiones visuales, auditivas, táctiles, cognitivas y motoras. Ningún canal aislado puede declararse universal. Una luz puede pasar inadvertida y un sonido puede molestar o no percibirse. El prototipo deberá comprobar si ambos canales se complementan, permitir regularlos y facilitar el control físico sin movimientos precisos. Una alternativa táctil se estudiará como adaptación si las pruebas muestran que la combinación excluye a una persona, no como función añadida de antemano.
 
 Las Pautas de Accesibilidad para el Contenido Web ofrecen un criterio preventivo frente a destellos, aunque cumplirlo no demuestra que una señal sea perceptible o adecuada (World Wide Web Consortium, s. f.). En la aplicación, los estados deben explicarse con lenguaje claro y no depender solo del color.
+
+## 11.11 Continuidad de la experiencia y soporte
+
+La experiencia comprende preparación, uso, recuperación de fallos y retiro. Para conectar lo visible con los procesos que lo sostienen se utiliza una lectura de diseño de servicios. Un mapa de servicio, o *service blueprint*, relaciona acciones de la persona, puntos de contacto y procesos internos (Gibbons, 2017). Aquí permite revisar responsabilidades sin suponer que exista una organización comercial operando Relevo.
+
+| Momento previsto | Qué necesita la persona | Soporte que debe estar resuelto | Estado |
+| --- | --- | --- | --- |
+| Conocer y aceptar | Entender propósito, límites y condiciones de participación. | Explicación consistente y, en la investigación, consentimiento revisado. | Comunicación documentada; revisión y contacto del responsable pendientes. |
+| Preparar | Registrar intención, configurar y verificar objeto y lugar. | Material comprobado, enlace disponible y explicación de permisos. | Recorrido diseñado; ejecución sin demostrar. |
+| Recibir y cerrar | Percibir la señal y conservar una salida local. | Patrón reproducible y término sin insistencia. | Programa compilado; medición pendiente. |
+| Recuperar un fallo | Saber si el ciclo sigue activo y poder detenerlo. | Separación entre incidente técnico y respuesta de usuario; procedimiento para restablecer el sistema. | Casos identificados; recuperación integrada pendiente. |
+| Mantener o retirar | Cargar, reubicar, reparar o dejar de usar el sistema. | Componentes accesibles y procedimientos para desvincular y eliminar datos; retorno del material si fue prestado. | Criterios definidos; procedimiento operativo y responsables por confirmar. |
+
+La tabla es una síntesis de requisitos, no un servicio funcionando ni un mapa operativo completo. En la investigación, el autor coordina materiales y registros y debe obtener la revisión competente. Antes de un piloto se deberá precisar quién recibe un incidente, qué se hace ante una falla repetida y cómo se devuelve el equipo. Una eventual comercialización necesitaría además definir distribución, soporte, repuestos y condiciones de mantenimiento; esas funciones no pueden atribuirse a proveedores aún no acordados.
+
+## 11.12 Nombre y comunicación del propósito
+
+Relevo se conserva como nombre académico por su relación con el paso entre la actividad presente y una alternativa elegida. El descriptor «Una señal donde quieres empezar» explica el vínculo con el lugar. Son decisiones de comunicación: su comprensión necesita pruebas y la disponibilidad del nombre para un uso comercial requiere revisión específica.
+
+La explicación debe mostrar un comienzo disponible. Como escenario hipotético, hacer ejercicio puede comenzar por ponerse las zapatillas; el objeto se sitúa junto a ellas y la señal busca recuperar esa acción. Bucear necesita delimitar una actividad previa realizable, como preparar la bolsa para una salida ya planificada. El sistema no convierte por sí mismo tiempo liberado en recursos, habilidades o una actividad completada.
+
+La paleta gráfica utiliza carbón, papel cálido, grises y ámbar de señal. El ámbar diferencia provisionalmente una activación de un error, pero no se le atribuye un significado universal de encontrabilidad. Encontrar el objeto, notar el pulso y recuperar la intención son comprobaciones distintas. La señal física de la prueba sigue siendo blanca cálida y difundida; la identidad no reemplaza el ensayo perceptivo.
+
+La [dirección de comunicación](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) registra estas decisiones; la [guía explicativa](../00_gobernanza/guia-comunicacion-relevo.md) distingue la promesa del producto de la evidencia disponible. La comunicación deberá revisarse si hace pensar que Relevo obliga a actuar o detecta un estado subjetivo.
 
 # 12. Factibilidad y límites
 
@@ -792,13 +816,17 @@ El desarrollo se organiza en etapas consecutivas. Cada una responde una pregunta
 
 ## 13.1 Asociación entre intención, señal y lugar
 
-La primera prueba utiliza un objeto simple y una activación manual. La persona formula una intención y su primer paso, elige un lugar y recibe una señal simulada durante otra actividad. El objetivo es conocer si puede relacionar el pulso con la intención sin consultar el teléfono.
+La primera prueba con personas utiliza un objeto simple y una señal física real activada manualmente desde Android. Antes, el banco y la salida blanca cálida externa deben superar las comprobaciones técnicas y la revisión del material y del procedimiento. La persona formula una intención y su primer paso, elige un lugar y recibe el pulso durante otra actividad. El objetivo es conocer si puede relacionarlo con la intención sin consultar el teléfono.
+
+El intervalo de ocho minutos después de configurar y el patrón de tres segundos son parámetros del ensayo. No definen el tiempo ideal para interrumpir una sesión ni prueban que el sistema reconozca cuándo una intención deja de orientar la decisión. Esa condición sigue pendiente de evaluación específica.
 
 El registro distinguirá cuatro momentos: percepción de la señal, atribución al sistema, recuperación de la intención e identificación del primer paso. Por separado, se comprobará si la persona entiende que puede ignorar, silenciar o seguir la señal. Iniciar la actividad no será requisito. Si el significado no puede reconstruirse o las salidas no se comprenden, la configuración deberá reformularse antes de avanzar.
 
 ## 13.2 Comparación con alternativas
 
-La segunda etapa compara tres condiciones: objeto en un lugar relacionado con el primer paso, el mismo objeto en un lugar neutro y una notificación digital equivalente. Se mantendrán constantes el contenido, el momento y la duración en la medida de lo posible.
+La segunda etapa compara tres condiciones: objeto junto al primer paso, el mismo objeto en un lugar neutro y una notificación local Android. Cada persona prepara una intención distinta en cada condición, con relevancia y claridad semejantes según su valoración. Los órdenes se distribuyen entre las seis secuencias posibles para reducir el efecto de practicar antes con una alternativa. El intervalo se mantiene equivalente; la diferencia entre intenciones se conserva como límite.
+
+La notificación prevista dice «Relevo · Tu intención está disponible» y no muestra el contenido de la intención. Es un control sin contenido específico que permite estudiar la asociación; no representa todas las posibilidades de un recordatorio digital. Por tanto, un resultado favorable no demostraría superioridad frente a una notificación que explicite la intención y el primer paso. Esa comparación requeriría una prueba adicional previamente definida, si se quisiera sostener tal afirmación.
 
 La comparación busca saber si el lugar o la materialidad aportan una diferencia reconocible. Se observarán comprensión, necesidad de consultar el teléfono, carga, intrusión y control. Si la notificación ofrece el mismo apoyo con menor esfuerzo, la configuración física deberá reconsiderarse.
 
@@ -830,11 +858,11 @@ Estos registros pertenecen a la investigación y no a las funciones de Relevo. S
 
 ## 13.7 Criterios de decisión
 
-La propuesta se mantiene cuando la señal puede relacionarse con la intención, el lugar aporta una diferencia, la salida es clara y la ejecución técnica resulta proporcional. Se modifica cuando falla una capa específica, como intensidad, vínculo, forma o explicación. Se detiene cuando el componente físico no ofrece una ventaja frente a la notificación o cuando ninguna alternativa evita intrusión, vigilancia o una carga excesiva.
+La propuesta se mantiene cuando la señal puede relacionarse con la intención, el lugar aporta una diferencia, la salida es clara y la ejecución técnica resulta proporcional. Se modifica cuando falla una capa específica, como intensidad, vínculo, forma o explicación. Se detiene la configuración física probada cuando no ofrece un aporte suficiente frente al control utilizado o produce intrusión, vigilancia o una carga excesiva que no puede corregirse. Ese resultado exige reformular la relación phygital; no demuestra que toda alternativa física carezca de valor.
 
-El [primer protocolo](../07_validacion/protocolo-01-asociacion-y-comparacion.md) considera completa la asociación cuando la persona percibe la señal, la atribuye al ciclo, recupera la intención y el primer paso, y comprende sus salidas sin consultar el teléfono. En una muestra formativa de seis personas, se avanzará con al menos cinco asociaciones completas; con tres o cuatro se modificará la capa donde aparece el fallo; y con dos o menos, después de una iteración correctiva, se detendrá la configuración probada.
+El [primer protocolo](../07_validacion/protocolo-01-asociacion-y-comparacion.md) considera completa la asociación cuando la persona percibe la señal, la atribuye al ciclo y recupera la intención y el primer paso sin consultar el teléfono ni recibir pistas. La comprensión de las salidas se registra por separado: reconocer al menos dos opciones sin considerar obligatoria una de ellas es una condición de autonomía para avanzar, no un quinto componente de la asociación. En una muestra formativa de seis personas, se avanzará con al menos cinco asociaciones completas; con tres o cuatro se modificará la capa donde aparece el fallo; y con dos o menos, después de una iteración correctiva, se detendrá la configuración probada.
 
-La comparación posterior mantendrá el objeto situado solo si iguala o supera a la notificación en asociación, aporta más que el mismo objeto en un lugar neutro y no introduce una carga o intrusión recurrente. Un fallo crítico de autonomía, privacidad, seguridad o accesibilidad impedirá avanzar aunque se alcance el porcentaje previsto. Estos umbrales organizan una decisión formativa y no estiman eficacia poblacional.
+La comparación posterior mantendrá la configuración situada si iguala o supera al aviso sin contenido específico en asociación, supera el lugar neutro para una mayoría simple y no introduce carga o intrusión recurrentes. Este criterio conserva el alcance limitado del control digital utilizado. Un fallo crítico de autonomía, privacidad, seguridad o accesibilidad impedirá avanzar aunque se alcance el porcentaje previsto. Estos umbrales organizan una decisión formativa y no estiman eficacia poblacional.
 
 Los resultados se comunicarán según su alcance. Una prueba conceptual puede sostener comprensión en una situación; no demuestra uso prolongado. Una integración técnica documenta funcionamiento bajo ciertas condiciones; no valida la experiencia. Un piloto aporta indicios situados; no permite generalizar a toda la población.
 
@@ -877,6 +905,8 @@ Chrome for Developers. (s. f.). *Communicating with Bluetooth devices over JavaS
 de Segovia Vicente, D., Van Gaeveren, K., Murphy, S. L., & Vanden Abeele, M. M. P. (2024). Does mindless scrolling hamper well-being? Combining ESM and log-data to examine the link between mindless scrolling, goal conflict, guilt, and daily well-being. *Journal of Computer-Mediated Communication, 29*(1), zmad056. https://doi.org/10.1093/jcmc/zmad056
 
 Focusaur. (s. f.). *Focusaur: The phone-free focus device for deep work & habits*. Recuperado el 24 de agosto de 2026, de https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-habits
+
+Gibbons, S. (2017, 27 de agosto). *Service blueprints: Definition*. Nielsen Norman Group. https://www.nngroup.com/articles/service-blueprints-definition/
 
 Gilbert, S. J., Boldt, A., Sachdeva, C., Scarampi, C., & Tsai, P.-C. (2023). Outsourcing memory to external tools: A review of intention offloading. *Psychonomic Bulletin & Review, 30*(1), 60–76. https://doi.org/10.3758/s13423-022-02139-4
 
@@ -959,6 +989,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Coherencia de la memoria y alcance de cierre
+
+- **Cambio:** Se alinearon secuencia, estados, banco y protocolo; se incorporaron continuidad del servicio y comunicación; se acotó la comparación digital y se separó autonomía de asociación.
+- **Versión anterior:** la memoria y sus controles no reflejaban de manera uniforme el alcance de la prueba y las decisiones documentadas.
+- **Motivo:** mantener continuidad entre investigación, experiencia, construcción y evaluación antes de ampliar el proyecto.
+- **Alcance:** Se mantienen los catorce capítulos y la formulación desde el capítulo 10. Una nueva fuente metodológica sustenta la lectura de servicio; no se añaden resultados ni se cambia el protocolo.
 
 ### 2026-09-08 — Compatibilidad material de la prueba micro:bit
 

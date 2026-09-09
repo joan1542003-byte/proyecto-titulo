@@ -6,13 +6,15 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos activos
 
+- [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
+
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): comprobación de orden narrativo, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
-- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 51 entradas bibliográficas y correcciones APA aplicadas.
+- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 52 entradas bibliográficas y correcciones APA aplicadas.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
-- [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 8 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
+- [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 
 ## Antecedentes y documentos históricos
@@ -78,6 +80,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Coherencia de la memoria
+
+- **Cambio:** se sincronizó este documento con la revisión de la memoria y su auditoría de cobertura.
+- **Versión anterior:** describía el estado previo a la reconciliación del recorrido, soporte y alcance comparativo.
+- **Motivo:** mantener una base académica consistente y pendientes localizables.
+- **Alcance:** documental; no incorpora resultados ni modifica el protocolo.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

@@ -16,7 +16,7 @@ El hogar es el primer contexto de prueba, todavía como hipótesis y no como con
 
 1. La persona registra una intención y su primer paso en la aplicación.
 2. Elige una condición observable de activación, todavía por definir mediante pruebas.
-3. Sitúa manualmente el objeto junto al primer paso de la actividad.
+3. Revisa el ciclo, sitúa y vincula el objeto, prueba la señal y confirma el armado físico previsto.
 4. Cuando se cumple la condición, el objeto emite una señal breve de luz y sonido.
 5. La persona puede continuar, silenciar la señal o iniciar la alternativa. Relevo no registra esa decisión como éxito o fracaso.
 
@@ -26,7 +26,7 @@ La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y l
 
 Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento estructural, exportación y dimensiones fueron comprobados el 7 de septiembre, y el wireframe v1 quedó congelado el 9 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. Esa estructura constituye la base vigente; la puerta inmediata pasó al banco físico con micro:bit V2.
 
-El control editorial del 8 de septiembre registra 20.453 palabras en el Markdown completo, 17.022 antes de las referencias y 16.359 en los capítulos 1–13. El cuerpo académico se mantiene dentro del rango general de 15.000 a 20.000 palabras; el total operativo incluye bibliografía y registro de cambios. La memoria conserva los catorce títulos y deberá volver a contarse cuando se integre nueva evidencia. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada.
+El control editorial del 9 de septiembre registra 21.551 palabras en el Markdown completo, 18.000 antes de las referencias y 17.337 en los capítulos 1–13, mediante separación por espacios en blanco. El cuerpo académico se mantiene dentro del rango general de 15.000 a 20.000 palabras; el total operativo incluye bibliografía y registro de cambios. La memoria conserva los catorce títulos y deberá volver a contarse cuando se integre nueva evidencia. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada.
 
 La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
 
@@ -34,9 +34,11 @@ Existe además una encuesta con **70 participantes** pendiente de publicación, 
 
 ## Qué cambió en esta actualización
 
+La [auditoría de coherencia](auditoria-coherencia-memoria-2026-09-09.md) sincroniza el recorrido de nueve momentos, distingue capacidades previstas del banco construido y conecta soporte, mantenimiento y retiro. El nombre y la comunicación tienen un apartado propio. La asociación se evalúa mediante cuatro componentes; comprender salidas se registra por separado. El control digital es un aviso genérico sin el texto de la intención: la comparación no demostrará superioridad frente a cualquier recordatorio.
+
 La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. El programa para comprobar Android → BLE → luz, sonido y silencio local en micro:bit V2 ya compila. Su matriz roja se reserva al banco sin participantes; la prueba de asociación requiere una luz blanca cálida externa y difundida. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. BleenyButton sirve como antecedente de batería, fijación y carcasa; no define la finalidad ni la interacción de Relevo. Los montajes anteriores continúan como recursos de prueba, no como forma integrada. Relevo se conserva como nombre académico y la comunicación se orienta mediante el descriptor `Una señal donde quieres empezar`; el ámbar reemplaza provisionalmente al rojo como color funcional. Ninguna dimensión, autonomía, percepción o ventaja está validada.
 
-La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y corrigió los costos documentados. La estructura y la formulación se mantienen; la bibliografía contiene 51 referencias con correspondencia comprobada. No se añadieron resultados ni se cerraron decisiones pendientes de prueba.
+La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y corrigió los costos documentados. La estructura y la formulación se mantienen; la bibliografía contiene 52 referencias, con la fuente metodológica de Gibbons añadida a las 51 auditadas previamente. No se añadieron resultados ni se cerraron decisiones pendientes de prueba.
 
 La traducción de usuarios está consolidada en tres documentos autónomos: perfiles, recorridos y requisitos. Estos contenidos pueden auditarse como una cadena entre evidencia, necesidad, límite y prueba.
 
@@ -51,6 +53,13 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 Las respuestas al feedback del 2 de septiembre están distribuidas por área y accesibles en la [matriz de cobertura](../01_contexto_y_fuentes/feedback-2026-09-02.md). Se precisaron los ejemplos de ejercicio/buceo, adaptabilidad y ubicación, UGREEN como referente, encontrabilidad, vibración y los tres tiempos de la experiencia. Ninguna respuesta acredita validación; el banco físico continúa pendiente. La memoria conserva su estructura y el protocolo sus parámetros.
 
 # Registro de cambios (disclaimer)
+
+### 2026-09-09 — Coherencia de la memoria
+
+- **Cambio:** se sincronizó este documento con la revisión de la memoria y su auditoría de cobertura.
+- **Versión anterior:** describía el estado previo a la reconciliación del recorrido, soporte y alcance comparativo.
+- **Motivo:** mantener una base académica consistente y pendientes localizables.
+- **Alcance:** documental; no incorpora resultados ni modifica el protocolo.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

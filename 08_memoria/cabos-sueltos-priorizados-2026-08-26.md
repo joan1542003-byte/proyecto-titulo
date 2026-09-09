@@ -1,6 +1,6 @@
 # Cabos sueltos priorizados antes del siguiente cierre de la memoria
 
-**Última reconciliación:** 8 de septiembre de 2026
+**Última reconciliación:** 9 de septiembre de 2026
 
 ## Dictamen
 
@@ -44,14 +44,14 @@ La memoria v4 posee una estructura académica coherente y puede funcionar como b
 
 **Resuelto el 8 de septiembre de 2026:** la prueba física inmediata se separó de la integración final. Una plataforma existente comprobará Android, BLE, luz, sonido y control local; XIAO nRF52840 queda para el testigo portátil posterior. B1, B2 y 12 V permanecen como antecedentes de mesa.
 
-No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avances dependen de decisiones metodológicas o evidencia obtenida mediante prototipos.
+La revisión del 9 de septiembre corrigió nuevas discrepancias de secuencia, control de la señal y lectura del protocolo, y añadió continuidad del servicio y comunicación a la memoria. La [auditoría de coherencia](auditoria-coherencia-memoria-2026-09-09.md) registra qué está sustentado y qué falta. El cierre de una revisión documental no garantiza ausencia de futuros hallazgos.
 
 ## Prioridad 1 — Resolver antes de volver a ampliar la propuesta
 
 | Cabo suelto | Estado actual | Acción siguiente | Lugar de incorporación |
 | --- | --- | --- | --- |
-| Condición Android de activación | La primera comprobación utilizará un temporizador iniciado manualmente desde Android. Sigue abierta la condición observable que activará el sistema integrado. | Comprobar primero la orden BLE; después seleccionar una condición local y documentar permisos, falsos positivos, vencimiento y salida. | 11.2, 12.2, 13.4 e Issue #11. |
-| Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Diseñar una prueba equivalente entre notificación, señal física situada y señal física en lugar neutro. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
+| Condición Android de activación | El banco recibe una orden manual desde Android; el intervalo controlado de la prueba con personas no equivale a un temporizador automático ya implementado. Sigue abierta la condición observable que activará el sistema integrado. | Comprobar primero la orden BLE; después seleccionar una condición local y documentar permisos, falsos positivos, vencimiento y salida. | 11.2, 12.2, 13.4 e Issue #11. |
+| Valor específico del objeto | La memoria formula que el lugar y la señal física podrían aportar más que una notificación, pero no existe comparación ejecutada. | Ejecutar el protocolo existente después de cerrar sus puertas. Su aviso digital no muestra la intención: declarar ese límite y no inferir superioridad frente a recordatorios que sí la expliciten. | 9.8, 10.5, 13.1 y 13.2; después, resultados. |
 | Asociación entre señal e intención | Se supone que una señal breve puede devolver una intención sin exigir consultar el teléfono. | Probar reconocimiento, recuerdo de la intención y necesidad de volver a la aplicación. | 13.1; después, resultados. |
 | Ensayo técnico de la fase A | El programa micro:bit y el binario de mesa están preparados, pero no hay acceso a la unidad, instalación, luz cálida externa ni mediciones. | Conseguir micro:bit V2, instalar el binario, comprobar BLE y silencio sin participantes, montar la salida cálida revisada y completar todas las series técnicas. | `06_desarrollo_y_factibilidad/prueba-microbit-ble/`, Issue #11 y `07_validacion/especificacion-materiales-fase-a.md`. |
 | Notificación local para la fase B | La comparación exige un aviso en el mismo teléfono Android utilizado durante la espera, pero el emisor todavía no existe. | Construir y verificar un disparador local único, sin mensajería externa ni historial de cumplimiento. | 12.1, 13.2 y protocolo 01. |
@@ -72,6 +72,8 @@ No quedan correcciones documentales abiertas en prioridad 0. Los siguientes avan
 | --- | --- | --- | --- |
 | Factibilidad Android y enlace físico | Existe una ruta de prueba con plataforma existente y una candidata de integración, pero ninguna conexión ha sido medida. | Registrar permisos, latencia, reconexión y fallos en la plataforma de prueba; estudiar segundo plano, vencimiento y consumo al incorporar la condición automática. | 12.1, 12.2, 13.4 e Issue #11. |
 | Costos y producción | Existen precios fechados para montajes de mesa y para la placa XIAO, pero falta una lista completa del testigo portátil y no hay cotizaciones productivas. | Registrar el costo real de la prueba; después de demostrar el aporte físico, cerrar la lista de materiales y cotizar carcasa, ensamblaje y terminación. | 12.3, 12.4, 12.6, Issue #10 y `06_desarrollo_y_factibilidad/`. |
+| Continuidad del servicio | La memoria relaciona preparación, uso, fallos, mantenimiento y retiro; falta el procedimiento operativo completo. | Antes del piloto, definir responsable de incidentes, préstamo/devolución si corresponde, recuperación, soporte y eliminación de datos. | 11.11, 12.6 y 13.5; Issue #9. |
+| Naming y promesa pública | Nombre y descriptor están justificados como decisiones académicas; comprensión y disponibilidad comercial sin acreditar. | Probar paráfrasis del mensaje; antes de comercializar, realizar revisión específica del nombre. | 11.12 y dirección de comunicación; Issue #9. |
 | Gestión y cumplimiento | Se describen actores y requisitos, pero no acuerdos, certificaciones ni proveedores confirmados. | Definir responsables, dependencias, protección de datos y ruta de cumplimiento proporcional al prototipo. | 10.10, 12.5 y 12.6. |
 
 ## Correcciones documentales que sí pueden hacerse ahora
@@ -99,6 +101,13 @@ La [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) perm
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Coherencia de la memoria y alcance de cierre
+
+- **Cambio:** Se retiró la afirmación de ausencia total de correcciones y se actualizaron comparación, condición y pendientes de servicio y comunicación.
+- **Versión anterior:** la memoria y sus controles no reflejaban de manera uniforme el alcance de la prueba y las decisiones documentadas.
+- **Motivo:** mantener continuidad entre investigación, experiencia, construcción y evaluación antes de ampliar el proyecto.
+- **Alcance:** No se añaden resultados empíricos ni se modifica el protocolo de participantes.
 
 ### 2026-09-08 — Firmware preparado y montaje pendiente precisado
 

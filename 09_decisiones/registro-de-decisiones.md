@@ -129,6 +129,18 @@
 
 ---
 
+## D-053 — Memoria reconciliada antes de ampliar el proyecto
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente como criterio documental; eficacia pendiente.
+- **Pregunta:** ¿qué resolver primero para completar el proyecto con respaldo académico?
+- **Decisión:** sincronizar la memoria con el recorrido congelado y el protocolo, explicitar soporte y ciclo de vida y localizar las condiciones de cierre por área.
+- **Fundamento:** solicitud del autor de abordar una sola cosa; pauta institucional, decisiones vigentes y contraste documental.
+- **Alternativas descartadas:** ampliar simultáneamente marca, servicio y hardware; declarar eficacia por cobertura escrita.
+- **Consecuencia:** asociación y autonomía se registran por separado; el control genérico limita la conclusión comparativa; se preservan capítulos, evidencias y parámetros. El banco #11 sigue como siguiente paso empírico.
+- **Condición de revisión:** evidencia nueva, cambio de protocolo o recorrido que requiera sincronizar memoria y resumen.
+- **Documento asociado:** [Auditoría de coherencia](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md).
+
 ## Registro de cambios (disclaimer)
 
 ### 2026-08-23 — D-012 a D-014
@@ -514,6 +526,13 @@
 - **Documento asociado:** [Matriz del feedback](../01_contexto_y_fuentes/feedback-2026-09-02.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Coherencia de la memoria
+
+- **Cambio:** se sincronizó este documento con la revisión de la memoria y su auditoría de cobertura.
+- **Versión anterior:** describía el estado previo a la reconciliación del recorrido, soporte y alcance comparativo.
+- **Motivo:** mantener una base académica consistente y pendientes localizables.
+- **Alcance:** documental; no incorpora resultados ni modifica el protocolo.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 
