@@ -95,7 +95,9 @@ El wireframe v1 puede considerarse listo para construcción cuando:
 
 ## Pendientes que no deben ocultarse
 
-- Falta realizar el inventario físico y la revisión electrónica competente de B1 y B2.
+- Falta acceder a la micro:bit V2, instalar el programa compilado y comprobar en mesa la recepción BLE, el silencio local, la luz y el sonido.
+- La matriz roja de la placa sirve solo para comprobar transporte de mensajes; antes de involucrar participantes debe conectarse y revisar una salida de luz cálida externa.
+- La integración portátil con XIAO nRF52840 continúa después de esa prueba, no en paralelo.
 - No existe todavía una app Android funcional ni una notificación local comparable.
 - No se ha construido ni ensayado la señal manual con la ficha técnica.
 - No hay resultados con participantes.
@@ -105,6 +107,13 @@ Estos pendientes impiden llamar al prototipo producto validado, pero no impiden 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Backlog físico sincronizado
+
+- **Qué cambió:** se reemplazó la revisión pendiente de B1 y B2 por la secuencia vigente: prueba micro:bit, salida cálida externa e integración portátil posterior.
+- **Cómo estaba antes:** el backlog aún trataba como pendiente una bifurcación de mesa trasladada al archivo histórico.
+- **Por qué se decidió:** impedir que una tarea superada compita con la puerta técnica actual.
+- **Alcance:** la nueva secuencia sigue pendiente de hardware, medición y revisión; no acredita funcionamiento.
 
 ### 2026-09-07 — Creación
 

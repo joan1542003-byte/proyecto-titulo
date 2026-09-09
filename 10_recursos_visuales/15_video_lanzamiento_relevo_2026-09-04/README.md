@@ -30,7 +30,7 @@ python render_video.py --ffmpeg C:\ruta\a\ffmpeg.exe
 
 El render vuelve a construir las diez láminas antes de codificar. La voz y los subtítulos se mantienen como archivos fuente para facilitar futuras revisiones de ritmo o contenido.
 
-La pieza utiliza los códigos vigentes del sistema: grafito `#111314`, blanco `#F1F1F1`, gris secundario `#B6B8B7` y rojo de señal `#D71921`. El rojo se reserva para la aparición o confirmación de una señal relevante.
+La pieza conserva los códigos con que fue producida el 4 de septiembre: grafito `#111314`, blanco `#F1F1F1`, gris secundario `#B6B8B7` y rojo de señal `#D71921`. Estos valores permiten reproducir el video, pero no gobiernan piezas nuevas. La dirección vigente se consulta en [Comunicación, nombre y color de Relevo](../comunicacion-naming-y-paleta-2026-09-07.md), donde el ámbar separa la señal cotidiana de los estados de error.
 
 ## Límites
 
@@ -42,6 +42,13 @@ La pieza utiliza los códigos vigentes del sistema: grafito `#111314`, blanco `#
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Paleta identificada como propia de la pieza
+
+- **Qué cambió:** los colores del video quedaron registrados como decisiones de su fecha de producción y se enlazó la dirección cromática vigente.
+- **Cómo estaba antes:** el README llamaba vigentes a los códigos del 4 de septiembre, pese al cambio de dirección documentado tres días después.
+- **Por qué se decidió:** conservar la reproducibilidad del montaje sin presentarlo como autoridad para nuevas aplicaciones.
+- **Alcance:** no se modificaron el archivo MP4, los fotogramas, la locución ni el guion.
 
 ### 2026-09-04 — Creación del video promocional
 

@@ -82,13 +82,20 @@ Estos puntos se distribuyen entre el Protocolo 01, las comparaciones posteriores
 
 ## Cobertura complementaria
 
-La [versión HTML vigente](wireframes-board-html/README.md) presenta cada marco dentro de un archivo editorial: el teléfono contiene solo la interfaz digital; la selección, la explicación, la correspondencia con la pauta y la descarga permanecen fuera. El marco `3.2` sustituye el teléfono por una escena situada porque el pulso ocurre en el espacio físico y el testigo no funciona como pantalla.
+La [versión HTML vigente](wireframes-media-html/README.md) presenta cada marco dentro de un tablero de revisión: el lienzo exportable contiene solo la interfaz digital, mientras la selección, la explicación, la correspondencia con la pauta y la descarga permanecen fuera. El marco `3.2` representa una escena situada porque el pulso ocurre en el espacio físico y el testigo no funciona como una pantalla.
 
 El anexo mantiene cinco familias de estados: configuración; vinculación y prueba física; armado; espera y señal; cierre y recuperación. Cada estado posee un wireframe separado para inspección, aunque no todos exigen atención de la persona durante el uso. En particular, la vinculación del testigo queda explícita como precondición del emplazamiento y el vencimiento sin pulso queda registrado como un cierre válido.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Fuente HTML corregida
+
+- **Cambio:** la cobertura complementaria enlaza el tablero vigente de 44 vistas y diferencia el lienzo exportable de sus controles de revisión.
+- **Versión anterior:** el texto llamaba vigente al tablero editorial del 26 de agosto, ya sustituido y archivado.
+- **Motivo:** mantener una sola fuente operativa para el mapa y evitar que una versión anterior se reconstruya por error.
+- **Alcance:** no se modificaron los nueve marcos evaluables ni los 35 estados complementarios.
 
 ### 2026-08-30 — Nomenclatura de validación vigente
 

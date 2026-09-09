@@ -1,12 +1,14 @@
 # Expansión del sistema visual de Relevo
 
+**Estado:** expansión histórica del 1 de septiembre; útil como biblioteca y no como autoridad visual actual.
+
 ## Propósito
 
-Esta carpeta amplía el sistema visual sin producir nuevas imágenes del dispositivo físico. La producción se concentra en estados Android, aplicaciones editoriales, carteles, módulos transparentes y fondos. La prioridad actual está en construir una biblioteca amplia de recursos editoriales y gráficos que pueda reconstruirse más adelante en herramientas de diseño.
+Esta carpeta amplió el sistema visual sin producir nuevas imágenes del dispositivo físico. La producción se concentró en estados Android, aplicaciones editoriales, carteles, módulos transparentes y fondos. Su prioridad fue construir una biblioteca amplia de recursos editoriales y gráficos que pudiera reconstruirse más adelante en herramientas de diseño. Las decisiones actuales se consultan en el [índice del sistema visual](../README.md) y en la [dirección de comunicación y color](../comunicacion-naming-y-paleta-2026-09-07.md).
 
 La referencia principal es la lámina oscura seleccionada por el autor: grafito profundo, blanco cálido, contraste sobrio, tipografía funcional, retícula precisa y puntos que cambian de densidad. La referencia orienta el nivel de acabado; Relevo conserva su propio contenido, gramática y criterios de uso.
 
-## Reglas vigentes
+## Reglas de esta etapa
 
 - Fondo digital `#111314`.
 - IBM Plex Sans para lectura e IBM Plex Mono para etiquetas y datos breves.
@@ -49,6 +51,13 @@ La ampliación solicitada supera el plan inicial: editorial, carteles y módulos
 
 ## Registro de cambios
 
+### 2026-09-08 — Expansión separada de la dirección vigente
+
+- **Cambio:** la colección quedó identificada como una etapa fechada y sus reglas cromáticas como decisiones de ese momento.
+- **Versión anterior:** el README utilizaba presente y llamaba vigentes a los códigos anteriores al cambio del 7 de septiembre.
+- **Motivo:** permitir que la biblioteca siga disponible sin confundirla con una especificación actual.
+- **Alcance:** las 61 piezas registradas, sus auditorías y sus planes permanecen intactos.
+
 ### 2026-09-01 — Giro a publicación editorial
 
 - **Cambio:** la expansión prioriza ahora páginas de memoria A3 horizontal y regula el uso de puntos y rótulos conceptuales.
@@ -75,4 +84,4 @@ La ampliación solicitada supera el plan inicial: editorial, carteles y módulos
 - **Cambio:** se añadieron diez piezas editoriales, diez carteles y diez módulos PNG transparentes, junto con tres hojas de contacto.
 - **Versión anterior:** estas tres familias estaban planificadas, pero todavía no contenían archivos producidos.
 - **Motivo:** disponer de variedad controlada para memoria, comunicación y composición antes de seleccionar artes finales.
-- **Alcance:** las piezas son referencias visuales vigentes para reconstrucción; sus textos no sustituyen la redacción académica de la memoria.
+- **Alcance:** las piezas permanecen disponibles como referencias de reconstrucción; sus textos no sustituyen la redacción académica ni la dirección visual actual.

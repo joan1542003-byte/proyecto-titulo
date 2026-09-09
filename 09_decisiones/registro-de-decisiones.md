@@ -3,7 +3,7 @@
 ## D-001 — Repositorio privado y fuentes identificables excluidas
 
 - **Fecha:** 2026-08-23
-- **Estado:** vigente
+- **Estado:** vigente como antecedente conceptual; su traducción visual obligatoria fue sustituida por D-046
 - **Decisión:** usar un repositorio privado y no subir fuentes identificables de participantes.
 - **Fundamento:** la documentación de proceso no requiere publicar datos personales.
 - **Consecuencia:** GitHub almacenará inventarios, análisis anonimizados y decisiones.
@@ -213,7 +213,7 @@
 ## D-021 — Criterios oficiales como control de estructura
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente
+- **Estado:** vigente como principio funcional entre soportes; la gramática gráfica específica es opcional bajo D-046
 - **Decisión:** auditar la memoria como Proyecto de Título mediante formulación, investigación, diseño, producción y gestión.
 - **Fundamento:** reglamento y pautas institucionales exigen una memoria integral y no solo una propuesta conceptual.
 - **Documento asociado:** [Criterios oficiales](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md).
@@ -361,10 +361,10 @@
 ## D-038 — Sistema visual v4 oscuro y semántico
 
 - **Fecha:** 2026-08-29
-- **Estado:** vigente como contrato de trabajo; la materialidad, la interacción física y varios componentes permanecen por validar
-- **Decisión:** consolidar las nuevas piezas en un sistema oscuro gobernado por la secuencia origen–vínculo–señal situada. El rojo se reserva para la señal situada; IBM Plex Sans se utiliza para lectura e IBM Plex Mono para datos breves y metadatos. Cada elemento debe clasificarse como contenido, icono, elección, acción, estado, gráfico informativo o decoración antes de diseñarse.
+- **Estado:** sustituida el 7 de septiembre de 2026 por D-046 como contrato visual; conserva criterios semánticos y de accesibilidad
+- **Decisión tomada entonces:** consolidar las piezas de v4 en un sistema oscuro gobernado por la secuencia origen–vínculo–señal situada. El rojo se reservaba para la señal situada; IBM Plex Sans se utilizaba para lectura e IBM Plex Mono para datos breves y metadatos. Cada elemento debía clasificarse como contenido, icono, elección, acción, estado, gráfico informativo o decoración antes de diseñarse.
 - **Fundamento:** la síntesis de Norman, Albers, Munari e Isaacson se contrastó con la memoria v4, el Encargo 17 y la auditoría de las pantallas oscuras. La coherencia se define por función, jerarquía y continuidad entre soportes, no por semejanza superficial con un referente.
-- **Consecuencia:** el manual, los tokens, los componentes y la metodología de validación gobiernan las próximas piezas de aplicación, objeto y memoria. Las exploraciones claras y las v1 superadas se conservan como antecedentes; no se adoptan métricas, recompensas, culpa ni decoración que interfiera con elecciones o acciones.
+- **Consecuencia en esa etapa:** el manual, los tokens, los componentes y la metodología de validación gobernaron las piezas v4 de aplicación, objeto y memoria. La prohibición de métricas, recompensas, culpa y decoración que interfiera con elecciones o acciones se mantiene por razones funcionales, no por pertenecer a esa estética.
 - **Límite:** el sistema documenta una dirección visual y criterios verificables, pero no demuestra comprensión, accesibilidad, factibilidad técnica ni eficacia de la señal.
 - **Documentos asociados:** [manual visual v4](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/manual-sistema-visual-relevo.md), [tokens](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/tokens-y-especificaciones.md), [componentes y semántica](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/componentes-y-semantica.md), [sistema editorial y físico](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/sistema-editorial-y-fisico.md) y [metodología de validación](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/metodologia-validacion-visual.md).
 
@@ -396,7 +396,7 @@
 - **Fundamento:** la fase A necesita comprobar repetibilidad, duración, silenciamiento, estabilidad y seguridad del material sin introducir fallos de radio, Bluetooth o Android. La opción cableada agrega menos variables y tiene trazabilidad de componentes y costos.
 - **Consecuencia:** el pulsador y sus tres metros de cable se conservan en B1 y B2 para aislar la señal del enlace Bluetooth. El montaje de 12 V y sus subtotales de CLP 28.130 y CLP 32.350 permanecen como respaldo comparable, no como compra inmediata. El cable debe fijarse fuera del recorrido.
 - **Límite:** la decisión pertenece al dispositivo de ensayo y no define el enlace, la electrónica, la forma ni el costo del producto. No autoriza compra, uso con participantes ni afirmaciones de seguridad certificada.
-- **Documentos asociados:** [Montaje mínimo de fase A](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), [especificación](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) e [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
+- **Documentos asociados:** [Montaje mínimo de fase A](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/montaje-luminoso-12v.md), [especificación](../07_validacion/especificacion-materiales-fase-a.md), [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) e [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).
 
 ## D-042 — Fecha máxima de eliminación de fichas
 
@@ -416,7 +416,7 @@
 - **Fundamento:** el anillo añade control de color y de puntos que Relevo puede no necesitar, mientras la alternativa cálida traslada complejidad al arreglo eléctrico y a la difusión. Al igualar base y auxiliares, B1 llega a CLP 28.073 antes del conversor lógico y B2 a CLP 29.281 antes de la resistencia de estado y los conductores internos; no existe una ventaja económica demostrada.
 - **Consecuencia:** B1 y B2 disponen de esquemas revisables equivalentes. Una persona competente revisará ambas variantes y la primera comparación se limitará a distribución, perceptibilidad, control y estabilidad de la luz. Solo después se completa y construye una de ellas.
 - **Límite:** esta decisión no selecciona una fuente luminosa, no autoriza energización ni convierte una cotización en costo de producción. El valor específico del objeto y de la señal continúa sujeto a validación.
-- **Documentos asociados:** [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md), [lista de materiales y compra escalonada](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md), [esquema de B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md), [esquema de B2](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
+- **Documentos asociados:** [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md), [lista de materiales y compra escalonada](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md), [esquema de B1](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/esquema-b1-xiao-anillo-5v.md), [esquema de B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/esquema-b2-xiao-luz-calida-5v.md) e [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
 
 ## D-044 — Comunicar desde la situación y revelar el sistema por capas
 
@@ -478,9 +478,33 @@
 - **Límite:** el código compilado no acredita conexión, latencia, brillo, volumen, estabilidad ni comprensión. Si el LED externo no alcanza la perceptibilidad prevista, se revisa el circuito o se cambia de plataforma; no se fuerza el pin por ensayo y error.
 - **Documentos asociados:** [Paquete micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [especificación de fase A](../07_validacion/especificacion-materiales-fase-a.md) y [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md).
 
+## D-050 — Fuentes activas separadas del material reemplazado
+
+- **Fecha:** 2026-09-08
+- **Estado:** vigente como regla documental
+- **Decisión:** mantener en las áreas `05` a `10` únicamente las fuentes que gobiernan el trabajo actual y trasladar versiones, prototipos o exploraciones explícitamente sustituidas a `99_archivo/antiguo`.
+- **Fundamento:** una clasificación escrita no bastaba cuando el archivo anterior permanecía junto al vigente y conservaba nombres como `memoria-vigente` o declaraciones de autoridad ya superadas.
+- **Consecuencia:** cada conjunto archivado indica por qué dejó de gobernar, qué aprendizaje conserva y qué fuente lo reemplaza. Las entregas fechadas y los duplicados con una función operativa distinta permanecen en su ubicación.
+- **Límite:** archivar no equivale a invalidar ni borrar. La evidencia, los resultados, las imágenes y el historial de Git se conservan; solo cambia su lugar dentro de la navegación.
+- **Documentos asociados:** [índice de material antiguo](../99_archivo/antiguo/README.md) y [auditoría de organización](../00_gobernanza/auditoria-organizacion-2026-09-08.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — D-036 a D-038 sincronizadas con D-046
+
+- **Cambio:** se acotaron D-036 y D-037 a los principios que aún conservan validez y se marcó D-038 como contrato visual sustituido.
+- **Versión anterior:** las tres decisiones figuraban vigentes sin explicar qué había cambiado con la dirección del 7 de septiembre.
+- **Motivo:** impedir que el registro mantenga dos autoridades visuales simultáneas.
+- **Resultado:** D-046 gobierna color y comunicación; D-036 y D-037 conservan solo su aporte conceptual y funcional.
+
+### 2026-09-08 — D-050
+
+- **Cambio:** se registró una regla única para separar fuentes activas, antecedentes y duplicados funcionales.
+- **Versión anterior:** los README distinguían estados, pero documentos sustituidos todavía convivían con las fuentes actuales.
+- **Motivo:** reducir errores de lectura y preservar el proceso en una ubicación explícita.
+- **Resultado:** `99_archivo/antiguo` concentra cuatro áreas históricas y las rutas activas mantienen una sola autoridad.
 
 ### 2026-09-08 — D-049
 

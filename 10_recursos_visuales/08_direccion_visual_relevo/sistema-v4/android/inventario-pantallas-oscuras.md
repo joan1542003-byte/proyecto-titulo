@@ -1,5 +1,7 @@
 # Inventario de pantallas oscuras de Relevo
 
+**Estado:** inventario de cobertura de la etapa v4. Mantiene valor para localizar marcos y estados, pero las decisiones visuales actuales se consultan en [Comunicación, nombre y color de Relevo](../../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 Este inventario convierte la cobertura del Encargo 17 en una guía visual para Android. Incluye las tres interacciones evaluables, los nueve marcos principales y los 35 estados documentados en el anexo. No agrega funciones ni convierte todos los estados en destinos que la persona deba recorrer.
@@ -116,7 +118,7 @@ Las imágenes finales se encuentran en `android/oscuro/`. El registro detallado 
 | `09-fallo-vinculo-oscuro-v2.png` | 3.3 / 17–29 | Candidata; debe reducir la repetición del estado y normalizar la acción. |
 | `10-ciclo-cerrado-oscuro-v2.png` | 3.3 / 25–34 | Dirección aprobada; el cierre no evalúa cumplimiento. |
 
-Las dos pantallas claras descritas en `android/README.md` son históricas. No forman parte de esta dirección vigente.
+Las dos pantallas claras descritas en `android/README.md` eran históricas respecto de v4 y no formaban parte de su conjunto oscuro.
 
 ## Criterios de aprobación
 
@@ -137,6 +139,13 @@ La conformidad visual no acredita comprensión, accesibilidad o funcionamiento. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Inventario acotado a su etapa
+
+- **Cambio:** se aclaró que la cobertura documentada puede consultarse sin adoptar la apariencia de v4.
+- **Versión anterior:** el inventario no señalaba en su portada la sustitución de la dirección visual.
+- **Motivo:** conservar la trazabilidad entre Encargo 17, estados e imágenes sin mantener dos autoridades gráficas.
+- **Alcance:** los nueve marcos y 35 estados no se modificaron.
 
 ### 2026-08-29 — Creación
 

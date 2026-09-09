@@ -7,13 +7,14 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 1. [README principal](../README.md): síntesis del proyecto, estado actual y arquitectura general.
 2. [Guía de comunicación](guia-comunicacion-relevo.md): forma de explicar Relevo por audiencias, tiempos, ejemplos y niveles de certeza.
 3. [Directrices de trabajo](directrices-de-trabajo.md): reglas para investigar, escribir, decidir y registrar cambios.
-4. [Auditoría integral del 7 de septiembre](auditoria-integridad-2026-09-07.md): comprobaciones, correcciones, fuentes vigentes y pendientes reales.
-5. [Auditoría de organización](auditoria-organizacion-2026-09-02.md): revisión estructural anterior y criterio de conservación.
-6. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
-7. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
-8. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
-9. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
-10. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
+4. [Auditoría de organización del 8 de septiembre](auditoria-organizacion-2026-09-08.md): traslados al archivo antiguo, excepciones y controles de cierre.
+5. [Auditoría integral del 8 de septiembre](auditoria-integridad-2026-09-08.md): comprobaciones, correcciones, fuentes vigentes y pendientes reales.
+6. [Auditoría de organización del 2 de septiembre](auditoria-organizacion-2026-09-02.md): antecedente estructural y criterio de conservación.
+7. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
+8. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
+9. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
+10. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
+11. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
 
 ## Mapa de carpetas
 
@@ -28,10 +29,10 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 | `05_propuesta_phygital` | Vigente y en desarrollo | Propuesta, arquitectura de experiencia, flujos y wireframes. |
 | `06_desarrollo_y_factibilidad` | Vigente y en desarrollo | Tecnología, producción, costos, riesgos y límites. |
 | `07_validacion` | Preparada; ejecución pendiente | Protocolos, criterios de evaluación, instrumentos y puertas técnicas; todavía no hay resultados. |
-| `08_memoria` | Texto académico vigente | Versiones, anexos, auditorías, referencias y resumen del proyecto. |
+| `08_memoria` | Texto académico vigente | Memoria v4, anexos, matrices, controles editoriales y resumen del proyecto. |
 | `09_decisiones` | Registro vigente | Decisiones tomadas, razones, evidencia y consecuencias. |
 | `10_recursos_visuales` | Vigente y exploratoria | Sistema visual, piezas editoriales, gráficos, tipografías y exportaciones. |
-| `99_archivo` | Histórico | Fuentes locales, entregas anteriores y material conservado por trazabilidad. |
+| `99_archivo` | Histórico | Fuentes locales y [material antiguo o reemplazado](../99_archivo/antiguo/README.md), conservados por trazabilidad. |
 
 ## Fuentes de referencia actuales
 
@@ -41,7 +42,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La dirección vigente de comunicación, naming y color se consulta en `10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md`; las carpetas anteriores conservan el proceso visual.
 - La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`; el código y el binario de la puerta inmediata están en `06_desarrollo_y_factibilidad/prueba-microbit-ble/`. La Issue #11 controla esa prueba y la #10 conserva la integración portátil.
-- Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde `99_archivo` o desde la carpeta histórica indicada por cada README.
+- Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde [`99_archivo/antiguo`](../99_archivo/antiguo/README.md).
 
 ## Política de duplicados y archivo
 
@@ -67,10 +68,17 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-08 — Ruta única para material reemplazado
+
+- **Qué cambió:** el índice distingue la memoria activa de sus versiones anteriores y enlaza el archivo central de antecedentes.
+- **Cómo estaba antes:** reconocía el carácter histórico de `99_archivo`, pero permitía que documentos sustituidos permanecieran mezclados en áreas vigentes.
+- **Por qué se decidió:** reducir ambigüedad y mantener una regla simple de navegación para nuevas revisiones.
+- **Alcance:** no se eliminaron entregas fechadas, fuentes, evidencia ni duplicados que cumplen funciones distintas.
+
 ### 2026-09-08 — Paquete ejecutable incorporado al recorrido
 
-- **Qué cambió:** el índice enlaza la implementación micro:bit además del estudio comparativo.
-- **Cómo estaba antes:** permitía encontrar la decisión física, pero no el programa que materializa la siguiente puerta.
+- **Qué cambió:** el índice enlaza la implementación micro:bit además del estudio comparativo y prioriza las dos auditorías del 8 de septiembre sobre el antecedente del día 2.
+- **Cómo estaba antes:** permitía encontrar la decisión física, pero no el programa que materializa la siguiente puerta; además, la auditoría organizacional más reciente no aparecía en el orden de lectura.
 - **Por qué se decidió:** reducir búsquedas y evitar que una conversación vuelva a programar o seleccione un montaje histórico.
 - **Alcance:** el enlace conduce a una compilación sin prueba física; no acredita resultados.
 

@@ -1,5 +1,7 @@
 # Criterios para el sistema visual de Relevo
 
+**Estado:** antecedente metodológico de la dirección seleccionada el 28 de agosto de 2026. Sus valores cromáticos y recursos matriciales no gobiernan piezas nuevas. La autoridad actual se encuentra en [Comunicación, nombre y color de Relevo](../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Concepto provisional
 
 **La intención toma relevo.**
@@ -134,6 +136,13 @@ WCAG 2.2 establece que el color no debe ser el único medio para comunicar infor
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Reclasificación como antecedente
+
+- **Cambio:** se explicitó que este documento conserva los criterios de la etapa matricial y se enlazó la autoridad visual actual.
+- **Versión anterior:** el archivo presentaba una gramática provisional sin advertir en su propia portada que había sido sustituida.
+- **Motivo:** evitar que el rojo y la matriz se interpreten como reglas vigentes fuera del contexto en que fueron explorados.
+- **Alcance:** no se alteraron retrospectivamente sus valores ni decisiones; se preservan para reconstruir y evaluar el proceso.
 
 ### 2026-08-28 — Criterio de autoría visual
 

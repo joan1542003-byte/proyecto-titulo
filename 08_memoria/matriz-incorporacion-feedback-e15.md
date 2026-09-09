@@ -21,7 +21,7 @@ Las observaciones docentes orientan decisiones y tareas, pero no constituyen evi
 | E15-15 | Pendiente crítico | Existen categorías y supuestos preliminares, pero faltan lista de materiales vigente, proveedores, cotizaciones, tiempos y costo del prototipo. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) y [factibilidad](../06_desarrollo_y_factibilidad/README.md). |
 | E15-16 | Parcial avanzado | El rol profesional está separado de materiales, fabricación y precio. Falta consolidar horas y costos de diseño con la producción final. | [Memoria v4](memoria-vigente-v4.md) y [plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md). |
 | E15-17 | Resuelto documentalmente | La formulación vigente explica qué aborda Relevo, cómo opera y por qué el diseño interviene. | [Resumen vigente](resumen-vigente-proyecto.md) y [memoria v4](memoria-vigente-v4.md). |
-| E15-18 | Reformulado y resuelto | La memoria no adelanta la solución: construye problema, antecedentes y usuario antes de formular Relevo. La definición aparece cuando la secuencia narrativa permite comprenderla. | [Memoria v4](memoria-vigente-v4.md) y [dictamen rector](dictamen-rector-reconstruccion-memoria.md). |
+| E15-18 | Reformulado y resuelto | La memoria no adelanta la solución: construye problema, antecedentes y usuario antes de formular Relevo. La definición aparece cuando la secuencia narrativa permite comprenderla. | [Memoria v4](memoria-vigente-v4.md) y [dictamen rector](../99_archivo/antiguo/memoria/dictamen-reconstruccion-v2.md). |
 | E15-19 | Pendiente para la defensa | La memoria ya evita lenguaje de encargos, pero el guion oral y las diapositivas se desarrollan como medios distintos durante el cierre. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md). |
 | E15-20 | Resuelto para v4; control recurrente | La v4 fue auditada en estructura, fuentes y escritura. La revisión APA 7, editorial y de privacidad debe repetirse al incorporar resultados. | [Auditorías de memoria](README.md). |
 | E15-21 | Resuelto como sistema continuo | Cronología, decisiones y calendario están enlazados. Los próximos hitos se registran en la Issue #9 y en el plan de cierre. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md), [decisiones](../09_decisiones/registro-de-decisiones.md) e [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9). |
@@ -61,3 +61,10 @@ Las observaciones docentes orientan decisiones y tareas, pero no constituyen evi
 - **Versión anterior:** los puntos estaban distribuidos entre pauta, Issues y borradores.
 - **Motivo:** mantener trazabilidad sin confundir feedback con evidencia.
 - **Alcance:** los estados editoriales no sustituyen pruebas, validaciones ni cotizaciones.
+
+### 2026-09-08 — Rutas sincronizadas tras la reorganización
+
+- **Cambio:** se actualizaron los enlaces locales afectados por la separación entre fuentes vigentes y material antiguo.
+- **Versión anterior:** las rutas partían desde la ubicación activa original y dejaron de resolver al trasladar los antecedentes.
+- **Motivo:** conservar navegación verificable sin alterar el contenido académico o proyectual del documento.
+- **Alcance:** solo cambiaron ubicación y enlaces; la evidencia, las interpretaciones y el estado histórico permanecen iguales.

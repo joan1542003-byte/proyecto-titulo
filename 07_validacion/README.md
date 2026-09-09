@@ -37,7 +37,7 @@ La activación de la fase A sigue siendo manual porque el investigador decide cu
 
 ## Antecedentes técnicos, no dependencias activas
 
-Los montajes [B1](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-esp32c3-5v-2026-08-30.md), [B2](../06_desarrollo_y_factibilidad/esquema-provisional-xiao-luz-calida-5v-2026-08-30.md) y [12 V](../06_desarrollo_y_factibilidad/montaje-minimo-fase-a-2026-08-30.md), junto con su [firmware provisional](../06_desarrollo_y_factibilidad/prototipo-fase-a/README.md), conservan valor como exploraciones de mesa sobre luz, alimentación y control. No es necesario construirlos antes de la prueba con plataforma existente y no representan la arquitectura portátil elegida.
+Los montajes [B1](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/esquema-b1-xiao-anillo-5v.md), [B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/esquema-b2-xiao-luz-calida-5v.md) y [12 V](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/montaje-luminoso-12v.md), junto con su [firmware provisional](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/firmware-12v/README.md), conservan valor como exploraciones de mesa sobre luz, alimentación y control. No es necesario construirlos antes de la prueba con plataforma existente y no representan la arquitectura portátil elegida.
 
 **Estado al 8 de septiembre de 2026:** el programa MakeCode y su binario de mesa están preparados y la compilación terminó sin errores. No existen instalación, montaje cálido, resultados técnicos ni resultados con participantes. Faltan acceso a la plataforma, prueba física, ensayo documentado, contacto del responsable y revisión académica.
 

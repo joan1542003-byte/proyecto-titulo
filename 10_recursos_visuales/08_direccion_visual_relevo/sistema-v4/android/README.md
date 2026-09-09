@@ -1,5 +1,7 @@
 # Android v4
 
+**Estado:** referencias Android de la etapa v4. Conservan utilidad estructural y comparativa, pero su paleta no gobierna nuevas pantallas. La dirección actual se consulta en [Comunicación, nombre y color de Relevo](../../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 Este directorio indexa las referencias visuales del flujo Android de Relevo. Las imágenes son material de dirección y reconstrucción: no sustituyen el wireframe, el prototipo funcional ni las pruebas de interacción.
@@ -8,19 +10,13 @@ La aplicación organiza una intención, un primer paso, una condición, una vige
 
 ## Estado de la dirección
 
-El modo oscuro es la única dirección vigente para nuevas pantallas. Las tres piezas iniciales conservadas en este directorio son exploraciones históricas:
-
-- 01-inicio-ciclo-activo-claro-v1.png
-- 02-configurar-intencion-claro-v1.png
-- 03-senal-situada-oscuro-v1.png
-
-No deben utilizarse como referencia de implementación. Las imágenes oscuras y sus estados detallados están documentados en oscuro/README.md.
+El modo oscuro fue la única dirección de la etapa v4. Las tres piezas iniciales y las versiones v1 superadas de los estados 02–10 se conservan en el [archivo de pantallas Android](../../../../99_archivo/antiguo/sistema-visual/pantallas-android-superadas/). No deben utilizarse como referencia de implementación. Las imágenes retenidas para estudiar v4 y sus estados detallados están documentados en `oscuro/README.md`.
 
 ## Índice de pantallas
 
 | Orden | Función | Referencia actual | Estado | Ajuste antes de reconstruir |
 |---|---|---|---|---|
-| 01 | Inicio sin ciclo | oscuro/01-inicio-sin-ciclo-oscuro-v1.png | Vigente; candidata principal | Sustituir texto raster por texto real y validar el estado vacío |
+| 01 | Inicio sin ciclo | oscuro/01-inicio-sin-ciclo-oscuro-v1.png | Candidata principal de v4 | Sustituir texto raster por texto real y validar el estado vacío |
 | 02 | Formular intención | oscuro/02-formular-intencion-oscuro-v2.png | Aprobada como dirección | Reconstrucción manual de campos, foco y validación |
 | 03 | Configurar condición | oscuro/03-condicion-provisional-oscuro-v2.png | Candidata | Resolver el retorno duplicado y validar elecciones |
 | 04 | Revisar ciclo | oscuro/04-revisar-ciclo-oscuro-v2.png | Aprobada como dirección | Reconstruir filas, reglas y jerarquía de acciones |
@@ -31,7 +27,7 @@ No deben utilizarse como referencia de implementación. Las imágenes oscuras y 
 | 09 | Recuperar vínculo | oscuro/09-fallo-vinculo-oscuro-v2.png | Candidata | Reducir la repetición del estado y normalizar la acción |
 | 10 | Ciclo cerrado | oscuro/10-ciclo-cerrado-oscuro-v2.png | Aprobada como dirección | Reconstruir cierre, salida y preparación explícita de otro ciclo |
 
-Se revisaron visualmente los 19 PNG de android/oscuro. Las versiones v1 de 02 a 10 son históricas, superadas o rechazadas; cuando existe v2, ninguna v1 funciona como referencia de implementación. La tabla completa de descarte y las fichas de las versiones vigentes o candidatas están en oscuro/README.md.
+Se revisaron visualmente los 19 PNG de android/oscuro. Las versiones v1 de 02 a 10 son históricas, superadas o rechazadas; cuando existe v2, ninguna v1 funciona como referencia de implementación. La tabla completa de descarte y las fichas de las versiones retenidas o candidatas de v4 están en oscuro/README.md.
 
 ## Documentación relacionada
 
@@ -52,6 +48,13 @@ Se revisaron visualmente los 19 PNG de android/oscuro. Las versiones v1 de 02 a 
 - No se incorporan métricas, rachas, premios, culpa, evaluación, moralización ni rearme automático.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Pantallas superadas trasladadas
+
+- **Cambio:** las exploraciones iniciales y las v1 descartadas de 02–10 salieron del directorio activo, se enlazaron desde el archivo central y las referencias restantes quedaron acotadas a la etapa v4.
+- **Versión anterior:** las imágenes estaban clasificadas como históricas, pero convivían con las versiones vigentes o candidatas.
+- **Motivo:** hacer que el índice operativo contenga solo referencias útiles para reconstrucción.
+- **Alcance:** `01-inicio-sin-ciclo-oscuro-v1.png` permanece activa porque todavía es candidata principal.
 
 ### 2026-08-29 — Corrección del índice Android v4
 

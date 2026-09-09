@@ -147,7 +147,7 @@ export function useKeyboardDismissDrag() {
       if (event.pointerType === "mouse" && event.button !== 0) return;
       if (
         event.target instanceof Element &&
-        event.target.closest('button, input, textarea, select, a, [role="button"], [contenteditable="true"]')
+        event.target.closest('button, a, [role="button"]')
       ) {
         return;
       }

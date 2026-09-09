@@ -1,8 +1,10 @@
 # Documento editorial de la memoria
 
+**Estado:** exploración editorial histórica del 1 de septiembre. La dirección actual se consulta en [`../../comunicacion-naming-y-paleta-2026-09-07.md`](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 Esta carpeta reúne exploraciones para transformar la memoria de Relevo en una publicación continua. No son páginas terminadas ni sustituyen el archivo Markdown de la memoria: funcionan como referencias de jerarquía, retícula, escala, ritmo y relación entre texto, figuras y tablas.
 
-## Dirección vigente
+## Dirección explorada en esta etapa
 
 La publicación se explora en A3 horizontal (420 × 297 mm por página). El blanco cálido sostiene la lectura extensa; el grafito se reserva para contraste puntual. La marca de puntos, las líneas y el rojo no aparecen por defecto: se usan únicamente cuando ayudan a leer una identidad, una jerarquía o una relación explícita.
 
@@ -14,7 +16,7 @@ La guía de trabajo está en [`guia-maqueta-A3-horizontal.md`](guia-maqueta-A3-h
 | --- | --- | --- |
 | Archivos en la raíz | Borradores previos de formato diverso. | Referencia histórica de estilo; no usar como especificación A3. |
 | [`01_maquetas_A3_horizontales`](01_maquetas_A3_horizontales) | Exploración previa compuesta como pliegos. | Referencia histórica; no usar como plantilla de página A3 única. |
-| [`02_paginas_A3_horizontales_corregidas`](02_paginas_A3_horizontales_corregidas) | Serie vigente de páginas únicas. | Reconstrucción manual tras reemplazar texto y datos por contenido verificado. |
+| [`02_paginas_A3_horizontales_corregidas`](02_paginas_A3_horizontales_corregidas) | Serie corregida de páginas únicas dentro de esta etapa. | Referencia de composición; cualquier reconstrucción debe contrastarse con la dirección actual y usar contenido verificado. |
 
 ## Cobertura de las maquetas A3 previas
 
@@ -43,6 +45,13 @@ La corrección de formato y los criterios de aceptación están documentados en 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Autoridad temporal aclarada
+
+- **Cambio:** se identificó el conjunto como exploración histórica y se sustituyeron las declaraciones de vigencia por descripciones acotadas a su etapa.
+- **Versión anterior:** la segunda serie aparecía como dirección vigente sin distinguir el cambio visual del 7 de septiembre.
+- **Motivo:** conservar una referencia editorial útil sin presentarla como instrucción actual.
+- **Alcance:** no se alteraron las composiciones ni su clasificación de formato.
 
 ### 2026-09-01 — Serie editorial A3 inicial
 

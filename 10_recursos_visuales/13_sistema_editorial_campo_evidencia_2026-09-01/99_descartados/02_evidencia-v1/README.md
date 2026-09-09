@@ -7,7 +7,7 @@ La prueba se conserva únicamente como historial de exploración. No debe utiliz
 ## Motivos del rechazo
 
 - Inventó el encabezado `7.5 INTERPRETACIÓN`, que no corresponde al recorte solicitado y altera la estructura real de la memoria.
-- Usó rojo para `LÍMITE`, contradiciendo la regla vigente que reserva `#D71921` para representar una señal situada.
+- Usó rojo para `LÍMITE`, contradiciendo la regla de esa etapa, que reservaba `#D71921` para representar una señal situada.
 - El gran embudo de puntos dominó la página y funcionó como ornamento, sin codificar una relación legible.
 - Incorporó el pie `Fuente: memoria-vigente...`, que no constituye un pie APA 7 final ni debe aparecer como texto añadido dentro de una imagen generada.
 
@@ -16,6 +16,13 @@ La prueba se conserva únicamente como historial de exploración. No debe utiliz
 La nueva prueba conservará solo los encabezados reales de 7.1–7.4, no utilizará rojo, reducirá los puntos a una codificación explícita de participantes P1–P8 y priorizará la lectura académica sobre la firma gráfica.
 
 ## Disclaimer y registro de cambios
+
+### 2026-09-08 — Regla cromática fechada
+
+- **Cambio:** el motivo de descarte quedó referido a la regla utilizada el 1 de septiembre.
+- **Versión anterior:** el texto todavía llamaba vigente a esa reserva del rojo.
+- **Motivo:** mantener correcto el rechazo histórico sin presentarlo como paleta actual.
+- **Alcance:** la pieza continúa descartada por sus problemas de contenido y jerarquía.
 
 ### 2026-09-01 — Traslado de la v1 a descartados
 

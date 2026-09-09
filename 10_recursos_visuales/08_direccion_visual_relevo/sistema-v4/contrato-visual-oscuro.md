@@ -1,12 +1,14 @@
 # Contrato visual oscuro de Relevo
 
+**Estado:** contrato Android de la etapa v4. Sirve para auditar las pantallas producidas entonces, pero no gobierna diseños nuevos. La autoridad visual actual se encuentra en [Comunicación, nombre y color de Relevo](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
-Este contrato define cómo debe continuar la interfaz Android de Relevo. Es una guía propia para producir y auditar pantallas, no un manual de marca cerrado ni una validación de la experiencia.
+Este contrato definió cómo debía continuar la interfaz Android durante v4. Es una guía para reconstruir y auditar esas pantallas, no un manual de marca cerrado ni una validación de la experiencia.
 
 Relevo es un sistema phygital: la aplicación conserva y organiza una intención, un primer paso, una condición, un lugar y un testigo; el testigo físico emite un pulso situado. La interfaz no debe sustituir ese momento ni convertirlo en una métrica de cumplimiento.
 
-Las pantallas claras `01-inicio-ciclo-activo-claro-v1.png` y `02-configurar-intencion-claro-v1.png` quedan clasificadas como exploraciones históricas. No son dirección vigente para nuevas pantallas. Las nuevas piezas Android se desarrollan exclusivamente en modo oscuro.
+Las pantallas claras `01-inicio-ciclo-activo-claro-v1.png` y `02-configurar-intencion-claro-v1.png` quedaron clasificadas como exploraciones anteriores a v4. No pertenecían a su dirección; las piezas Android de esa etapa se desarrollaban exclusivamente en modo oscuro.
 
 ## Principio rector
 
@@ -205,12 +207,19 @@ Este contrato no cierra la forma, materialidad, canal, duración o intensidad de
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-08 — Contrato acotado a v4
+
+- **Cambio:** se identificó la vigencia histórica del contrato y se enlazó la autoridad visual actual.
+- **Versión anterior:** el propósito todavía ordenaba continuar la interfaz con las reglas de v4.
+- **Motivo:** impedir que una referencia técnica sustituida oriente nuevas pantallas por accidente.
+- **Alcance:** el documento sigue describiendo las piezas existentes y sus criterios de auditoría.
+
 ### 2026-08-29 — Creación
 
 - **Cambio:** se creó el contrato oscuro propio de Relevo con roles de color, tipografía, retícula, clasificación semántica, componentes, accesibilidad y usos incorrectos.
 - **Versión anterior:** el sistema V4 reunía exploraciones claras y oscuras, pero no distinguía con suficiente precisión decoración, iconografía, elección, acción, estado y gráfico informativo.
 - **Motivo:** establecer un criterio común para continuar Android sin confundir identidad visual con función de interfaz.
-- **Alcance:** el contrato gobierna nuevas exploraciones; no convierte las imágenes existentes en diseños finales ni valida el producto.
+- **Alcance en esa etapa:** el contrato gobernaba las exploraciones v4; no convertía las imágenes en diseños finales ni validaba el producto.
 
 ### 2026-09-01 — Unificación cromática
 

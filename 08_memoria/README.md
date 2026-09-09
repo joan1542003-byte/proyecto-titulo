@@ -13,34 +13,36 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 30 de agosto entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
-- [`entregables`](entregables/README.md): criterio de uso, origen y control de las versiones exportadas.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
 
 ## Antecedentes y documentos históricos
 
 Los siguientes archivos conservan decisiones y diagnósticos que ayudaron a construir la v4. No gobiernan la arquitectura ni la redacción actual y deben leerse según la versión que declaran haber revisado.
 
-- [Auditoría de estructura narrativa del 26 de agosto](auditoria-estructura-narrativa-2026-08-26.md): contraste entre la v2, el cierre del primer semestre, la rúbrica y los encargos acumulativos.
-- [Auditoría rectora de la memoria v2](auditoria-sol-memoria-v2.md): dictamen, correcciones y pendientes.
-- [Auditoría final editorial del 25 de agosto](auditoria-final-editorial-2026-08-25.md): control posterior a la incorporación de los 35 estados.
+- [Índice de memorias y auditorías anteriores](../99_archivo/antiguo/memoria/README.md): entrada recomendada para consultar el proceso sin confundirlo con la escritura activa.
+- [Exportaciones DOCX de v2 y v3](../99_archivo/antiguo/memoria/exportaciones-docx-v2-v3/README.md): archivos editables históricos; no representan la memoria vigente.
+
+- [Auditoría de estructura narrativa del 26 de agosto](../99_archivo/antiguo/memoria/auditoria-estructura-v2-2026-08-26.md): contraste entre la v2, el cierre del primer semestre, la rúbrica y los encargos acumulativos.
+- [Auditoría rectora de la memoria v2](../99_archivo/antiguo/memoria/auditoria-rectora-v2.md): dictamen, correcciones y pendientes.
+- [Auditoría final editorial del 25 de agosto](../99_archivo/antiguo/memoria/auditoria-editorial-v2-2026-08-25.md): control posterior a la incorporación de los 35 estados.
 - [Matriz histórica de encargos](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md): requisitos acumulados, vigencia y trazabilidad de estructura.
-- [Memoria v3](memoria-vigente-v3.md): versión anterior, preservada para trazabilidad.
-- [Memoria v2](memoria-vigente-v2.md): cierre editorial anterior, preservado para trazabilidad.
-- [Memoria v1](memoria-vigente.md): antecedente preservado; no gobierna la formulación actual.
+- [Memoria v3](../99_archivo/antiguo/memoria/memoria-v3.md): versión anterior, preservada para trazabilidad.
+- [Memoria v2](../99_archivo/antiguo/memoria/memoria-v2.md): cierre editorial anterior, preservado para trazabilidad.
+- [Memoria v1](../99_archivo/antiguo/memoria/memoria-v1.md): antecedente preservado; no gobierna la formulación actual.
 - [Matriz de incorporación del feedback E15](matriz-incorporacion-feedback-e15.md)
-- [Dictamen histórico de reconstrucción](dictamen-rector-reconstruccion-memoria.md): criterio que gobernó la construcción de la v2; sustituido por la v4 y su auditoría activa.
-- [`borradores-v2`](borradores-v2/): siete módulos fuente para trazabilidad; no deben leerse como siete memorias separadas.
+- [Dictamen histórico de reconstrucción](../99_archivo/antiguo/memoria/dictamen-reconstruccion-v2.md): criterio que gobernó la construcción de la v2; sustituido por la v4 y su auditoría activa.
+- [`borradores-v2`](../99_archivo/antiguo/memoria/borradores-v2/): siete módulos fuente para trazabilidad; no deben leerse como siete memorias separadas.
 
 ### Auditorías internas del 24 de agosto
 
 Estas seis auditorías describen el estado anterior a la memoria v4 y a los cierres documentales posteriores. Conservan preguntas, riesgos y antecedentes de decisión, pero sus diagnósticos de ausencia o prioridad no gobiernan el proyecto actual.
 
-- [Auditoría 01 — arquitectura narrativa](auditoria-01-arquitectura.md): revisión de tesis, secuencia y dependencias sobre una memoria anterior.
-- [Auditoría 02 — problema y teoría](auditoria-02-problema-y-teoria.md): control histórico de relevancia, conceptos y aporte disciplinar.
-- [Auditoría 03 — método y usuarios](auditoria-03-metodo-y-usuarios.md): examen previo de procedencia, límites del corpus y tipos de usuario.
-- [Auditoría 04 — mercado](auditoria-04-mercado.md): antecedente que impulsó el estudio autónomo y la reformulación prudente de la propuesta de valor.
-- [Auditoría 05 — sistema y factibilidad](auditoria-05-sistema-y-factibilidad.md): diagnóstico anterior a los esquemas B1/B2 y a la compra escalonada.
-- [Auditoría 06 — validación y edición](auditoria-06-validacion-y-editorial.md): revisión previa al Protocolo 01, sus fichas y la auditoría editorial v4.
+- [Auditoría 01 — arquitectura narrativa](../99_archivo/antiguo/memoria/auditoria-01-arquitectura.md): revisión de tesis, secuencia y dependencias sobre una memoria anterior.
+- [Auditoría 02 — problema y teoría](../99_archivo/antiguo/memoria/auditoria-02-problema-y-teoria.md): control histórico de relevancia, conceptos y aporte disciplinar.
+- [Auditoría 03 — método y usuarios](../99_archivo/antiguo/memoria/auditoria-03-metodo-y-usuarios.md): examen previo de procedencia, límites del corpus y tipos de usuario.
+- [Auditoría 04 — mercado](../99_archivo/antiguo/memoria/auditoria-04-mercado.md): antecedente que impulsó el estudio autónomo y la reformulación prudente de la propuesta de valor.
+- [Auditoría 05 — sistema y factibilidad](../99_archivo/antiguo/memoria/auditoria-05-sistema-y-factibilidad.md): diagnóstico anterior a los esquemas B1/B2 y a la compra escalonada.
+- [Auditoría 06 — validación y edición](../99_archivo/antiguo/memoria/auditoria-06-validacion-y-editorial.md): revisión previa al Protocolo 01, sus fichas y la auditoría editorial v4.
 
 ## Arquitectura narrativa vigente
 
@@ -76,6 +78,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Antecedentes trasladados al archivo central
+
+- **Cambio:** las memorias v1–v3, sus borradores, auditorías y exportaciones quedaron reunidas bajo `99_archivo/antiguo/memoria`.
+- **Versión anterior:** los documentos estaban clasificados como históricos, pero convivían físicamente con la v4 y sus controles activos.
+- **Motivo:** reducir el riesgo de editar o citar una versión superada y mantener una sola fuente académica vigente.
+- **Alcance:** no se eliminó contenido ni se alteró la memoria v4; todos los antecedentes continúan enlazados.
 
 ### 2026-09-08 — Control bibliográfico sincronizado
 

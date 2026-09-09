@@ -1,5 +1,7 @@
 # Sistema editorial y físico de Relevo
 
+**Estado:** especificación de la etapa v4. Se conserva como antecedente de composición y prueba; la comunicación y el color actuales se consultan en [Comunicación, nombre y color de Relevo](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 Este documento traduce `Transferencia situada` a la memoria, las láminas, los diagramas, la fotografía y el testigo físico. La misma lógica no se replica de forma literal: cada soporte aporta algo diferente.
@@ -26,7 +28,7 @@ La tipografía de lectura sigue siendo IBM Plex Sans. IBM Plex Mono se reserva p
 
 Cada página debe tener un foco: argumento, evidencia, diagrama, fotografía o decisión. El título introduce la lectura; el cuerpo desarrolla; las figuras y tablas demuestran o relacionan; el pie explica la procedencia y el límite.
 
-La retícula de doce columnas, los márgenes y el ritmo de la memoria son hipótesis de composición heredadas de v3. La dirección vigente explora una página A3 horizontal para dar espacio a lectura, figuras y tablas; debe reconstruirse con contenido real y ajustarse a la plantilla institucional antes de tratarse como especificación. La estética no puede reducir el cuerpo, esconder citas ni separar una figura de su explicación.
+La retícula de doce columnas, los márgenes y el ritmo de la memoria eran hipótesis de composición heredadas de v3. La dirección v4 exploró una página A3 horizontal para dar espacio a lectura, figuras y tablas; cualquier reconstrucción debe usar contenido real, consultar la dirección actual y ajustarse a la plantilla institucional antes de tratarse como especificación. La estética no puede reducir el cuerpo, esconder citas ni separar una figura de su explicación.
 
 ### Figuras, tablas y fuentes
 
@@ -148,6 +150,13 @@ Wallace, S., Bylinskii, Z., Dobres, J., Kerr, B., Berlow, S., Treitman, R., Kuma
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Documento acotado a v4
+
+- **Cambio:** se identificó la especificación como antecedente de la etapa v4 y se enlazó la autoridad actual.
+- **Situación anterior:** el archivo podía leerse como una guía activa aunque su dirección visual ya había sido sustituida.
+- **Motivo:** conservar sus preguntas de producción y prueba sin duplicar la autoridad gráfica.
+- **Alcance:** las reglas de esta etapa no fijan la forma, el material ni el canal del objeto.
 
 ### 2026-08-29 — Creación del sistema editorial y físico
 

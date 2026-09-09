@@ -397,13 +397,13 @@
   },
   {
     "page": 67,
-    "family": "table",
+    "family": "reading",
     "chapter": "11",
     "title": "Bajada proyectual"
   },
   {
     "page": 68,
-    "family": "reading",
+    "family": "table",
     "chapter": "11",
     "title": "Bajada proyectual"
   },
@@ -415,13 +415,13 @@
   },
   {
     "page": 70,
-    "family": "opener",
-    "chapter": "12",
-    "title": "Factibilidad y límites"
+    "family": "reading",
+    "chapter": "11",
+    "title": "Bajada proyectual"
   },
   {
     "page": 71,
-    "family": "reading",
+    "family": "opener",
     "chapter": "12",
     "title": "Factibilidad y límites"
   },
@@ -451,13 +451,13 @@
   },
   {
     "page": 76,
-    "family": "opener",
-    "chapter": "13",
-    "title": "Plan de desarrollo y validación"
+    "family": "reading",
+    "chapter": "12",
+    "title": "Factibilidad y límites"
   },
   {
     "page": 77,
-    "family": "reading",
+    "family": "opener",
     "chapter": "13",
     "title": "Plan de desarrollo y validación"
   },
@@ -487,13 +487,13 @@
   },
   {
     "page": 82,
-    "family": "opener",
-    "chapter": "14",
-    "title": "Referencias"
+    "family": "reading",
+    "chapter": "13",
+    "title": "Plan de desarrollo y validación"
   },
   {
     "page": 83,
-    "family": "reading",
+    "family": "opener",
     "chapter": "14",
     "title": "Referencias"
   },
@@ -511,6 +511,12 @@
   },
   {
     "page": 86,
+    "family": "reading",
+    "chapter": "14",
+    "title": "Referencias"
+  },
+  {
+    "page": 87,
     "family": "reading",
     "chapter": "14",
     "title": "Referencias"

@@ -8,7 +8,7 @@ Este documento registra la producción, corrección y auditoría de las cuatro l
 **Tipo de pieza:** referencia visual raster 4K
 **Referencia visual:** [`A2-configuracion-4k.png`](A2-configuracion-4k.png)
 **Contrato visual preservado:** [`contrato-visual.md`](contrato-visual.md)
-**Base conceptual:** [`memoria-vigente-v2.md`](../../08_memoria/memoria-vigente-v2.md), [`encargo-17-requisitos.md`](../../01_contexto_y_fuentes/encargo-17-requisitos.md) y [`anexo-cobertura-interacciones-encargo-17.md`](../anexo-cobertura-interacciones-encargo-17.md).
+**Base conceptual:** [`memoria-vigente-v2.md`](../../99_archivo/antiguo/memoria/memoria-v2.md), [`encargo-17-requisitos.md`](../../01_contexto_y_fuentes/encargo-17-requisitos.md) y [`anexo-cobertura-interacciones-encargo-17.md`](../anexo-cobertura-interacciones-encargo-17.md).
 
 ## Criterio global utilizado
 
@@ -141,3 +141,10 @@ Esta operación no recortó pantallas, no estiró el contenido y no modificó la
 **Decisión:** D2 utiliza una escena física y un diagrama porque los estados 23–24 no deben representarse como una pantalla del testigo ni como un registro móvil obligatorio.
 
 **Límites:** estas imágenes son referencias visuales generadas para calcar y revisar. No validan percepción, atribución, eficacia, accesibilidad, convivencia, Android/BLE, producción ni el aporte del objeto frente a una notificación.
+
+### 2026-09-08 — Rutas sincronizadas tras la reorganización
+
+- **Cambio:** se actualizaron los enlaces locales afectados por la separación entre fuentes vigentes y material antiguo.
+- **Versión anterior:** las rutas partían desde la ubicación activa original y dejaron de resolver al trasladar los antecedentes.
+- **Motivo:** conservar navegación verificable sin alterar el contenido académico o proyectual del documento.
+- **Alcance:** solo cambiaron ubicación y enlaces; la evidencia, las interpretaciones y el estado histórico permanecen iguales.

@@ -1,7 +1,7 @@
 ---
-id: ESTADO-RELEVO-2026-09-07
+id: ESTADO-RELEVO-2026-09-08
 titulo: "Resumen y estado del proyecto — Relevo"
-fecha_de_corte: 2026-09-07
+fecha_de_corte: 2026-09-08
 estado: "síntesis del estado de proyecto"
 ---
 
@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han hecho y qué falta probar.
 
-La fecha de corte es el 7 de septiembre de 2026.
+La fecha de corte es el 8 de septiembre de 2026.
 
 ## 1. El objetivo del proyecto.
 
@@ -46,7 +46,7 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 | Después del feedback | Se definieron aplicación, testigo, primer paso, lugar, señal, usuario principal y usuario límite. | El problema dejó de ser “usar mucho el celular” y pasó a ser una intención alternativa que pierde presencia. | [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
 | Encargo 16 y Encargo 17 | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño. Después se construyeron nueve wireframes y 35 estados complementarios. | Se hicieron visibles los estados normales, los errores, las salidas voluntarias y la relación entre app y objeto. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Cobertura de estados](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
 | Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
-| Estado actual — 7 de septiembre | Los wireframes y sus exportaciones están verificados; existe un alcance inicial con backlog y la dirección visual cuenta con aplicaciones editoriales y audiovisuales. | El proyecto está cerrando el wireframe v1 antes de construir el prototipo. La revisión electrónica, el inventario y la validación continúan pendientes. | [Alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) · [Hoja de ruta](hoja-de-ruta.md) |
+| Estado actual — 8 de septiembre | Los wireframes y sus exportaciones están verificados; existe un alcance inicial con backlog y el programa de banco para micro:bit ya compila. | El proyecto está cerrando el wireframe v1 y preparando la primera comprobación física. La instalación, el montaje cálido, la revisión electrónica y la validación continúan pendientes. | [Alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) · [Hoja de ruta](hoja-de-ruta.md) |
 
 ## 3. Qué feedback aplicamos
 
@@ -186,10 +186,10 @@ Existen precios de referencia para comparar rutas, pero todavía no hay un presu
 |---|---:|---|---|
 | micro:bit V2 | **CLP 24.990** | Plataforma disponible para una prueba rápida. Faltan acceso o préstamo, alimentación portátil y funda de ensayo; no representa el producto final. | [Plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) |
 | XIAO nRF52840 | **CLP 16.590 solo la placa** | Ruta de integración vigente. Faltan batería, luz, transductor, control, conexiones, carcasa, difusión, envío y revisión. | [Testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) |
-| Montaje provisional de 12 V | **CLP 28.130** | Referencia parcial. Excluye terminales y protección de potencia; queda como respaldo. | [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) |
-| B1: XIAO + anillo 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Faltan conversor lógico, conductores internos, cuerpo, difusor, envío y revisión. | [Lista B1](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
-| B2: XIAO + luz cálida 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Faltan resistencia de estado, conductores, cuerpo, difusor, envío y revisión. | [Lista B2](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
-| Núcleo común B1/B2 | **CLP 17.126** comprando todo; **CLP 10.440** reutilizando fuente, jack y cable USB-C | Incluye XIAO, pulsador, cable, interruptor, borneras, fuente, jack y cable de programación. Hay que confirmar qué piezas existen. | [Costos comunes](../06_desarrollo_y_factibilidad/lista-materiales-y-compra-escalonada-5v-2026-08-30.md) |
+| Montaje provisional de 12 V | **CLP 28.130** | Referencia parcial. Excluye terminales y protección de potencia; queda como respaldo. | [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) |
+| B1: XIAO + anillo 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Faltan conversor lógico, conductores internos, cuerpo, difusor, envío y revisión. | [Lista B1](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
+| B2: XIAO + luz cálida 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Faltan resistencia de estado, conductores, cuerpo, difusor, envío y revisión. | [Lista B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
+| Núcleo común B1/B2 | **CLP 17.126** comprando todo; **CLP 10.440** reutilizando fuente, jack y cable USB-C | Incluye XIAO, pulsador, cable, interruptor, borneras, fuente, jack y cable de programación. Hay que confirmar qué piezas existen. | [Costos comunes](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 
 La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro ni un costo cerrado**. La micro:bit reduce trabajo de la primera prueba, pero no sustituye el prototipo integrado. La XIAO reduce tamaño y componentes, aunque su subtotal sigue incompleto. Ninguna compra debe decidirse solo por el precio de la placa.
 
@@ -213,9 +213,9 @@ Estas fechas vienen del [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md
 
 | Fecha estimada | Qué toca hacer | Resultado esperado | Enlace |
 |---|---|---|---|
-| **2–5 septiembre 2026** | Revisar los nueve wireframes y estados prioritarios; inventariar materiales y revisar B1/B2 en paralelo; establecer el MVP, el backlog y los pasos de desarrollo. | Wireframes auditados y orden de trabajo definido; se verifica que el desarrollo responda a las directrices de diseño y de Relevo. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **2–5 septiembre 2026** | Revisar los nueve wireframes y estados prioritarios; inventariar materiales y revisar B1/B2 en paralelo; establecer el MVP, el backlog y los pasos de desarrollo. | Wireframes auditados y orden de trabajo definido; se verifica que el desarrollo responda a las directrices de diseño y de Relevo. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **6–12 septiembre 2026** | Corregir navegación, textos, estados, accesibilidad y aplicación visual; recorrer el flujo completo y congelar el wireframe v1. | Base aprobada para construir la app, con cambios y pendientes documentados. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **13–19 septiembre 2026** | Construir la navegación y el flujo mínimo de la app Android; preparar una señal manual segura y repetible. | Prototipo funcional inicial sin depender todavía de toda la electrónica. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Alternativas físicas](../06_desarrollo_y_factibilidad/alternativas-arquitectura-fisica-2026-08-30.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **13–19 septiembre 2026** | Construir la navegación y el flujo mínimo de la app Android; preparar una señal manual segura y repetible. | Prototipo funcional inicial sin depender todavía de toda la electrónica. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **20–29 septiembre 2026** | Probar internamente wireframes, app, contenidos, señal y recuperación; preparar consentimiento, guion, criterios y reclutamiento. | Fallos críticos corregidos y avance listo para la corrección cruzada. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **26 septiembre 2026 — estimada y condicionada** | Publicar la encuesta de 70 participantes si sus materiales están disponibles y revisar su metodología. | Fuente trazable para complementar o modificar la memoria; hasta entonces sigue pendiente y no se presentan resultados. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 | **30 septiembre 2026** | Presentar el avance en la corrección cruzada oficial y registrar el feedback. | Observaciones traducidas en tareas, decisiones o límites concretos. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Matriz de feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
@@ -260,6 +260,7 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 ### 2026-09-08 — Banco micro:bit preparado
 
 - **Cambio:** el resumen registra el programa compilado, la diferencia entre matriz roja y luz cálida y el nuevo bloqueo operativo de instalación y medición.
+- **Cambio documental:** la fecha de corte, el identificador y la fila de estado se actualizaron al 8 de septiembre.
 - **Versión anterior:** señalaba que todavía faltaba compilar firmware y presentaba la plataforma existente como un solo material de prueba.
 - **Motivo:** comunicar con precisión qué está listo y evitar que una salida roja se utilice con participantes por conveniencia.
 - **Alcance:** no hay placa, montaje, instalación, ficha ni resultados; la integración XIAO sigue condicionada a evidencia posterior.

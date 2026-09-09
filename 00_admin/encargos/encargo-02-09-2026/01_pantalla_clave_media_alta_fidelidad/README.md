@@ -18,7 +18,7 @@ La composición no usa rojo. Ese color se reserva para el pulso situado y aquí 
 
 ## Criterios de diseño
 
-La pantalla aplica el modo oscuro vigente, una retícula regular, jerarquía tipográfica contenida y separadores en lugar de tarjetas decorativas. IBM Plex Sans se destina a la lectura e IBM Plex Mono a etiquetas y datos breves. El fondo grafito, el texto blanco cálido y los grises intermedios mantienen contraste sin convertir cada bloque en una acción.
+La pantalla aplica el modo oscuro utilizado en la entrega del 2 de septiembre, una retícula regular, jerarquía tipográfica contenida y separadores en lugar de tarjetas decorativas. IBM Plex Sans se destina a la lectura e IBM Plex Mono a etiquetas y datos breves. El fondo grafito, el texto blanco cálido y los grises intermedios mantienen contraste sin convertir cada bloque en una acción.
 
 El botón final es el único control con contenedor completo. Las etiquetas, divisores y estados no parecen seleccionables. Esta diferencia evita confundir información con interacción.
 
@@ -28,7 +28,7 @@ El botón final es el único control con contenedor completo. Las etiquetas, div
 - `3-1-ciclo-activo-alta-fidelidad-v2.png`: versión anterior que se conserva para comparar el ajuste de lenguaje.
 - `1-1-formular-alta-fidelidad-v1.png`: exploración anterior que se conserva para registrar el proceso, pero ya no funciona como pantalla principal.
 
-La pieza vigente se produjo a partir de `10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/android/oscuro/07-ciclo-activo-espera-oscuro-v2.png`. Se mantuvo la composición y se reemplazó “El testigo espera fuera de la pantalla” por “El testigo está listo para emitir el pulso”. También se cambió “Sin señal situada” por “En espera”. El ajuste comunica el estado sin explicar innecesariamente el soporte.
+La pieza seleccionada para esta entrega se produjo a partir de `10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/android/oscuro/07-ciclo-activo-espera-oscuro-v2.png`. Se mantuvo la composición y se reemplazó “El testigo espera fuera de la pantalla” por “El testigo está listo para emitir el pulso”. También se cambió “Sin señal situada” por “En espera”. El ajuste comunica el estado sin explicar innecesariamente el soporte.
 
 ## Instrucción de ajuste visual
 
@@ -41,6 +41,13 @@ La pieza fija una dirección de interfaz y permite discutir jerarquía, densidad
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Vigencia acotada a la entrega
+
+- **Qué cambió:** el modo oscuro y la pantalla principal quedaron descritos como decisiones de la entrega del 2 de septiembre.
+- **Cómo estaba antes:** el documento los presentaba como dirección vigente del proyecto.
+- **Por qué se hizo:** conservar la entrega sin contradecir la dirección adoptada el 7 de septiembre.
+- **Alcance:** no se modificaron las imágenes ni su justificación funcional.
 
 ### 2026-09-02 — Cambio de pantalla destacada
 

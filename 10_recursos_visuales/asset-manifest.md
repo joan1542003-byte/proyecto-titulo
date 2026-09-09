@@ -149,7 +149,7 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - Peso aproximado: 281,4 MB.
 - Los nombres originales `exec-*.png` se conservan como identificadores de procedencia.
 - Los duplicados exactos de imágenes ya presentes en el repositorio se omitieron mediante comparación SHA-256.
-- Este archivo conserva proceso y alternativas; la vigencia se determina únicamente en `08_direccion_visual_relevo/sistema-v4`.
+- Este archivo conserva proceso y alternativas; la vigencia se determina en [`README.md`](README.md) y en [`comunicacion-naming-y-paleta-2026-09-07.md`](comunicacion-naming-y-paleta-2026-09-07.md).
 
 ## Tipografías — `10_tipografias`
 
@@ -157,7 +157,7 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - IBM Plex Mono Variable: TTF romano e itálico, WOFF2 romano e itálico y paquete oficial `1.0.0`.
 - Cada familia conserva su licencia SIL Open Font License 1.1.
 
-## Registro de cambios
+## Historial del inventario
 
 ### 2026-08-31 — Ampliación del manifiesto
 
@@ -176,7 +176,7 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - 10 escenas de contexto físico.
 - 6 hojas de contacto para auditoría.
 - 4 descartes conservados por trazabilidad.
-- Total vigente: 60 piezas, sin contar hojas de contacto ni descartes.
+- Total de la colección fechada: 60 piezas, sin contar hojas de contacto ni descartes.
 
 ### 2026-08-31 — Registro de la nueva colección
 
@@ -195,7 +195,7 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 ## Expansión no física — `12_expansion_sistema_visual_2026-09-01`
 
 - Plan inicial: 50 piezas distribuidas en Android, editorial, carteles, módulos transparentes y fondos.
-- Producidas: 38 piezas —8 Android, 10 editoriales, 10 carteles y 10 módulos transparentes— y cuatro hojas de contacto.
+- Producidas: 61 piezas —8 Android, 20 editoriales, 16 carteles, 10 módulos transparentes y 7 maquetas A3—, además de hojas de contacto.
 - Documentación: README, auditoría Android, auditoría editorial y gráfica, plan inicial y plan extensivo de noventa piezas.
 - Exclusión: no se producen nuevas visualizaciones del dispositivo físico.
 
@@ -212,3 +212,15 @@ Las referencias adjuntas se usaron para describir atmósfera, contraste, grano y
 - **Versión anterior:** el manifiesto solo contabilizaba las ocho pantallas Android complementarias.
 - **Motivo:** mantener correspondencia entre el inventario, las hojas de contacto y los archivos disponibles.
 - **Alcance:** los diez módulos tienen canal alfa verificado; las piezas editoriales y los carteles permanecen como referencias rasterizadas.
+
+---
+
+## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Fuente de vigencia corregida
+
+- **Cambio:** el manifiesto remite al índice visual y a la dirección de comunicación del 7 de septiembre para determinar qué decisiones gobiernan piezas nuevas.
+- **Versión anterior:** remitía únicamente al sistema v4, aunque esa etapa ya había sido reemplazada como autoridad visual.
+- **Motivo:** impedir que el inventario reactive por error una paleta o una gramática anterior.
+- **Alcance:** no se eliminó ni reclasificó ningún recurso multimedia.
+- **Dato corregido:** el resumen de la colección 12 pasó del primer corte de 38 piezas al inventario consolidado de 61.

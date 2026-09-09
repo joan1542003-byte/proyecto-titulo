@@ -24,12 +24,10 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 ## Documentos activos
 
 - [Entrega 02-09-2026: pantalla principal y wireframes completos](../00_admin/encargos/encargo-02-09-2026/README.md)
-- [Tablero editorial anterior — registro de proceso](wireframes-board-html/README.md)
 - [Entrega de Encargo 17 y archivo Figma](entrega-encargo-17.md)
 - [Tablero HTML de wireframes — versión vigente](wireframes-media-html/README.md)
 - [Anexo de cobertura de interacciones de Encargo 17](anexo-cobertura-interacciones-encargo-17.md)
 - [Láminas 4K de wireframes para calcar — anexo de referencia](wireframes-referencia-4k/README.md)
-- [Láminas sintéticas anteriores — registro de proceso](wireframes-referencia/README.md)
 - [Preparación escrita de Encargo 17](preparacion-escrita-encargo-17.md)
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
 - [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md)
@@ -37,7 +35,8 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 ## Material histórico y de apoyo
 
-- [Entregables clave del 01-09-2026](entregables-clave-2026-09-01/README.md): paquete conservado para reconstruir el proceso; su mapa y sus exportaciones fueron reemplazados por la entrega fechada del 2 de septiembre.
+- [Índice de propuesta y wireframes anteriores](../99_archivo/antiguo/propuesta-y-wireframes/README.md): acceso único al tablero editorial, las siete láminas iniciales y el paquete reemplazado.
+- [Entregables clave del 01-09-2026](../99_archivo/antiguo/propuesta-y-wireframes/entregables-2026-09-01/README.md): paquete conservado para reconstruir el proceso; su mapa y sus exportaciones fueron reemplazados por la entrega fechada del 2 de septiembre.
 
 ## Estado
 
@@ -46,6 +45,13 @@ La formulación vigente es una hipótesis. El ciclo estructural quedó represent
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Una sola fuente vigente de wireframes
+
+- **Cambio:** el tablero anterior, las láminas iniciales y el paquete del 1 de septiembre se trasladaron al archivo central y salieron de la lista activa.
+- **Versión anterior:** los tres materiales estaban rotulados como históricos, pero dos todavía aparecían dentro del bloque de documentos activos.
+- **Motivo:** impedir que un antecedente se confunda con el tablero de 44 vistas o con la entrega organizada del 2 de septiembre.
+- **Alcance:** las piezas históricas se conservaron completas y continúan disponibles desde su índice.
 
 ### 2026-09-07 — Alcance del primer prototipo
 

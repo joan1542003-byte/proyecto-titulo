@@ -7,7 +7,7 @@ Esta carpeta conserva las imágenes generadas para Relevo que no estaban duplica
 - Las carpetas mantienen el identificador del lote original para conservar trazabilidad.
 - Los nombres `exec-*.png` son identificadores técnicos de origen. No describen el contenido ni indican jerarquía.
 - Una imagen archivada puede contener una idea valiosa, un ensayo descartado o texto sintético incorrecto. Por ello, no debe pasar directamente a la memoria, a la aplicación ni a producción sin revisión.
-- El sistema vigente y sus decisiones documentadas permanecen en `../08_direccion_visual_relevo/sistema-v4`.
+- Las decisiones vigentes para piezas nuevas se consultan en [`../README.md`](../README.md) y en [`../comunicacion-naming-y-paleta-2026-09-07.md`](../comunicacion-naming-y-paleta-2026-09-07.md). El sistema v4 se conserva como antecedente técnico.
 - La selección editorial no elimina el archivo fuente: ambos niveles cumplen funciones distintas.
 
 ## Inventario recuperado
@@ -30,6 +30,13 @@ Esta carpeta conserva las imágenes generadas para Relevo que no estaban duplica
 La recuperación se realizó comparando la huella SHA-256 de los 280 archivos disponibles en el archivo local de generaciones con los recursos ya presentes en el repositorio. Se copiaron 192 imágenes únicas; los duplicados exactos se omitieron para no multiplicar el mismo archivo.
 
 ## Registro de cambios
+
+### 2026-09-08 — Autoridad visual actualizada
+
+- **Cambio:** se reemplazó la referencia al sistema v4 por las dos fuentes que gobiernan actualmente la comunicación visual.
+- **Versión anterior:** el archivo histórico podía interpretarse como subordinado a una dirección que ya no controla piezas nuevas.
+- **Motivo:** separar con claridad archivo, antecedente técnico y decisión vigente.
+- **Alcance:** las 192 imágenes y su inventario permanecen intactos.
 
 ### 2026-08-31 — Recuperación integral
 

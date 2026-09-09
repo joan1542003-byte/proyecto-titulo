@@ -36,16 +36,25 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 Estos documentos conservan exploraciones, cálculos y riesgos útiles, pero dejaron de gobernar la siguiente construcción cuando se adoptó la secuencia D-047. No deben utilizarse como lista de compra ni como requisito de la fase A vigente.
 
-- [Montaje luminoso de 12 V](montaje-minimo-fase-a-2026-08-30.md) y su [firmware provisional](prototipo-fase-a/README.md).
-- [Comparación de arquitecturas de mesa](alternativas-arquitectura-fisica-2026-08-30.md).
-- [Esquema B1 con XIAO ESP32-C3 y anillo](esquema-provisional-xiao-esp32c3-5v-2026-08-30.md).
-- [Esquema B2 con luz cálida](esquema-provisional-xiao-luz-calida-5v-2026-08-30.md).
-- [Lista de materiales B1/B2](lista-materiales-y-compra-escalonada-5v-2026-08-30.md).
-- [Esquema funcional de conexión de 12 V](esquema-conexion-provisional-fase-a-2026-08-30.md).
+El conjunto y su relación con la ruta actual se explican en el [índice de desarrollo físico anterior](../99_archivo/antiguo/desarrollo-fisico/README.md).
+
+- [Montaje luminoso de 12 V](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/montaje-luminoso-12v.md) y su [firmware provisional](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/firmware-12v/README.md).
+- [Comparación de arquitecturas de mesa](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md).
+- [Esquema B1 con XIAO ESP32-C3 y anillo](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/esquema-b1-xiao-anillo-5v.md).
+- [Esquema B2 con luz cálida](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/esquema-b2-xiao-luz-calida-5v.md).
+- [Lista de materiales B1/B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md).
+- [Esquema funcional de conexión de 12 V](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/esquema-conexion-12v.md).
 
 ---
 
 ## Registro de cambios
+
+### 2026-09-08 — Antecedentes de mesa trasladados
+
+- **Cambio:** los montajes B1, B2 y 12 V, junto con sus esquemas, costos y firmware, se reunieron en `99_archivo/antiguo/desarrollo-fisico`.
+- **Versión anterior:** ya estaban declarados como antecedentes, pero seguían mezclados físicamente con la prueba micro:bit y la ruta portátil.
+- **Motivo:** evitar compras o construcciones basadas en una arquitectura sustituida y conservar sus aprendizajes como comparación.
+- **Alcance:** ningún cálculo fue validado ni eliminado; la ruta vigente continúa sujeta a instalación, ensayo y revisión competente.
 
 ### 2026-09-08 — Paquete micro:bit compilado
 

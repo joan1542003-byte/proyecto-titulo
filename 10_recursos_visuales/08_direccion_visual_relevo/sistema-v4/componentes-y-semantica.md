@@ -1,5 +1,7 @@
 # Componentes y semántica de Relevo
 
+**Estado:** contrato semántico redactado en v4. Las distinciones entre contenido, elección, acción, estado, icono, gráfico y decoración siguen siendo criterios útiles; su expresión cromática y formal debe responder a la [dirección actual](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 Este documento define cómo se distingue cada elemento de la interfaz Android de Relevo. Un componente no se aprueba por su apariencia: debe tener una función, un estado, una jerarquía, un comportamiento y un criterio de accesibilidad.
@@ -181,6 +183,13 @@ Norman, D. A. (2002). *The design of everyday things*. Basic Books.
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Semántica separada de la apariencia v4
+
+- **Cambio:** se conservó la clasificación funcional como criterio transferible y se remitió su apariencia a la autoridad actual.
+- **Situación anterior:** el contrato podía hacer pensar que semántica y aspecto v4 seguían formando una única decisión vigente.
+- **Motivo:** evitar que el cambio de paleta elimine reglas necesarias de comprensión e interacción.
+- **Alcance:** no se alteró el flujo de 35 estados ni se validaron sus componentes.
 
 ### 2026-08-29 — Creación del contrato de componentes
 

@@ -1,5 +1,7 @@
 # Fundamentación y método de la exploración visual
 
+**Estado:** fundamento de la exploración realizada entre el 31 de agosto y el 1 de septiembre de 2026. Documenta el razonamiento de esa etapa; no gobierna piezas nuevas. La dirección actual se consulta en [Comunicación, nombre y color de Relevo](../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 La exploración busca que Relevo pueda reconocerse en diferentes soportes sin repetir una misma composición. La coherencia se construye mediante relaciones estables entre contenido, jerarquía, contraste y significado. El objetivo no es decorar el proyecto, sino darle un sistema capaz de explicar su funcionamiento, orientar acciones y distinguir una señal situada de cualquier otro estado.
@@ -25,13 +27,13 @@ La decisión deriva del concepto del proyecto y no de una referencia formal aisl
 
 ### Rojo de señal
 
-El rojo `#EF3E45` identifica exclusivamente la señal situada. No se aplica a botones, errores, títulos, selección, batería ni decoración. Esta restricción reduce ambigüedad entre una acción digital y el momento perceptible del sistema. Albers (2013) advierte que el color cambia según contexto, proporción y soporte; por ello, el valor debe revisarse en pantalla, papel y material físico.
+En esta exploración, el rojo `#EF3E45` identificó exclusivamente la señal situada. No se aplicó a botones, errores, títulos, selección, batería ni decoración. Esta restricción buscaba reducir ambigüedad entre una acción digital y el momento perceptible del sistema. Albers (2013) advierte que el color cambia según contexto, proporción y soporte; por ello, el valor requería revisión en pantalla, papel y material físico.
 
-Varias imágenes generadas aproximan el rojo con valores cercanos, en especial `#D71921`. Esa variación pertenece al mockup y no modifica el token vigente: toda reconstrucción debe aplicar `#EF3E45` y volver a comprobar contraste, impresión y percepción sin color.
+Varias imágenes aproximan el rojo con valores cercanos, en especial `#D71921`. Esa variación pertenece al mockup y no creó una segunda decisión dentro de la etapa. Ninguno de esos rojos pertenece a la paleta actual.
 
 ### Blanco cálido y grafito
 
-El fondo claro `#F4F4F2` se aproxima al comportamiento del papel y facilita una memoria con lectura prolongada. El grafito `#111314` reduce el contraste extremo de un negro absoluto y sostiene la interfaz digital vigente. Ambos mantienen texto legible, reglas delgadas y espacios amplios, pero no se consideran equivalentes automáticos.
+El fondo claro `#F4F4F2` se aproximaba al comportamiento del papel y facilitaba una memoria con lectura prolongada. El grafito `#111314` reducía el contraste extremo de un negro absoluto y sostenía la interfaz digital de esa etapa. Ambos mantenían texto legible, reglas delgadas y espacios amplios, pero no se consideraban equivalentes automáticos.
 
 La interfaz clara generada en esta colección funciona como comparación. No reemplaza el contrato oscuro v4 mientras no exista una prueba o decisión registrada.
 
@@ -47,7 +49,7 @@ Un elemento es decorativo cuando puede retirarse sin perder información ni acci
 
 | Soporte | Función principal | Uso de la matriz | Tratamiento cromático | Límite |
 |---|---|---|---|---|
-| Android | Formular, revisar, vincular y recuperar. | Gráfico informativo secundario; nunca reemplaza un control. | Grafito vigente; rojo solo después de la señal situada. | No introducir métricas, tarjetas innecesarias ni navegación ajena al flujo. |
+| Android | Formular, revisar, vincular y recuperar. | Gráfico informativo secundario; nunca reemplaza un control. | Grafito de la etapa; rojo solo después de la señal situada. | No introducir métricas, tarjetas innecesarias ni navegación ajena al flujo. |
 | Memoria | Explicar problema, investigación, decisiones y resultados. | Marca, numerales, diagramas y tablas. | Blanco cálido adaptado a papel. | No reducir legibilidad académica ni presentar imágenes generadas como evidencia. |
 | Presentación | Hacer visible una relación a distancia. | Campos amplios y secuencias breves. | Claro u oscuro según contraste ambiental. | No simplificar hallazgos hasta perder precisión. |
 | Objeto | Investigar presencia, lugar y señal. | Puede orientar aperturas o distribución de luz, si una prueba lo respalda. | Depende de material y contexto. | No trasladar una interfaz ni fijar una forma industrial desde una imagen. |
@@ -70,9 +72,16 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 
 ## Registro de cambios
 
+### 2026-09-08 — Exploración separada de la autoridad actual
+
+- **Cambio:** se identificó la vigencia temporal de la colección y se reformularon sus decisiones cromáticas en pasado.
+- **Versión anterior:** el texto seguía ordenando aplicar `#EF3E45` como token vigente.
+- **Motivo:** documentar el proceso sin contradecir la dirección adoptada el 7 de septiembre.
+- **Alcance:** no se alteraron las imágenes ni se presenta la paleta actual como validada.
+
 ### 2026-09-01 — Aclaración cromática y ampliación
 
-- **Cambio:** se distinguió el token vigente `#EF3E45` de las aproximaciones cromáticas presentes en imágenes generadas.
+- **Cambio:** se distinguió el token entonces vigente `#EF3E45` de las aproximaciones cromáticas presentes en imágenes generadas.
 - **Versión anterior:** la fundamentación declaraba el token, pero no advertía que algunos mockups podían mostrar otro valor.
 - **Motivo:** impedir que una variación del generador se interprete como una segunda paleta aprobada.
 - **Alcance:** el valor continúa sujeto a pruebas de contraste, impresión y percepción.

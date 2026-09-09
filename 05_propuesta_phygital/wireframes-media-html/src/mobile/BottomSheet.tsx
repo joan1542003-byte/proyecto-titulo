@@ -74,23 +74,21 @@ export function BottomSheet({
   const portalContainer = screenRef.current ?? undefined;
 
   return (
-    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
-      {/* Keep the portal mounted after `open` flips so AnimatePresence can run
-          the sheet and overlay exit animations before Radix removes them. */}
+    <Dialog.Root open={open} onOpenChange={handleOpenChange} modal={false}>
       <Dialog.Portal container={portalContainer} forceMount>
         <AnimatePresence>
           {open ? (
             <>
-              <Dialog.Overlay asChild forceMount>
-                <motion.div
-                  className="sheet-overlay"
-                  data-testid="sheet-overlay"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.16 }}
-                />
-              </Dialog.Overlay>
+              <motion.div
+                className="sheet-overlay"
+                data-testid="sheet-overlay"
+                aria-hidden="true"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.16 }}
+                onClick={() => handleOpenChange(false)}
+              />
               <Dialog.Content asChild forceMount>
                 <motion.div
                   className="bottom-sheet"

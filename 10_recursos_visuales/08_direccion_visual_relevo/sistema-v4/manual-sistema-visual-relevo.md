@@ -1,12 +1,14 @@
 # Manual del sistema visual de Relevo
 
+**Estado:** contrato de la etapa v4, conservado para reconstruir y auditar piezas producidas con esa dirección. No gobierna diseños nuevos. La autoridad actual se consulta en [Comunicación, nombre y color de Relevo](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 Este manual reúne las reglas visuales y semánticas que deben orientar el desarrollo de Relevo. Su función es permitir que otra persona reconstruya el sistema, comprenda por qué existe cada regla y sepa cuándo una decisión todavía necesita pruebas.
 
 Relevo es un sistema phygital. La aplicación Android organiza una intención, un primer paso, una condición, una vigencia, un lugar y un testigo. El testigo emite una señal situada en el entorno. La persona decide qué hacer después. La interfaz no califica la actividad, no bloquea el teléfono y no convierte la señal en una orden.
 
-La dirección vigente es `Transferencia situada`. El término describe el paso de una intención registrada hacia una señal relacionada con el lugar donde puede comenzar una actividad. No significa avance, porcentaje, cumplimiento ni cuenta regresiva.
+La dirección seleccionada en v4 fue `Transferencia situada`. El término describe el paso de una intención registrada hacia una señal relacionada con el lugar donde puede comenzar una actividad. No significa avance, porcentaje, cumplimiento ni cuenta regresiva.
 
 ## Estado de madurez
 
@@ -14,7 +16,7 @@ Este documento es un contrato de trabajo v4, no una declaración de diseño term
 
 La documentación se interpreta así:
 
-- **Vigente:** regla que gobierna nuevas piezas hasta que una prueba o una decisión registrada la reemplace.
+- **Vigente en v4:** regla que gobernaba las piezas de esa etapa hasta que una prueba o una decisión registrada la reemplazara.
 - **Hipótesis:** propuesta razonable que debe comprobarse antes de cerrarse.
 - **Por validar:** dato o comportamiento que no puede afirmarse con la evidencia disponible.
 - **Histórico:** exploración conservada para comprender el proceso, pero no aplicable a nuevas piezas.
@@ -68,7 +70,7 @@ El tono es directo, respetuoso, situado y no moralizante. Describe lo que el sis
 
 El sistema v4 utiliza una paleta oscura y plana. El color se define por función semántica, no por decoración. Los valores técnicos aparecen también en `tokens-y-especificaciones.md`; si ambos documentos difieren, el registro de decisiones debe resolver la discrepancia antes de producir.
 
-| Rol | Valor vigente | Función | Restricción |
+| Rol | Valor adoptado en v4 | Función | Restricción |
 |---|---|---|---|
 | Canvas | `#111314` | Fondo general | No añadir textura, ruido ni degradado que altere la lectura |
 | Superficie | `#1B1D1E` | Agrupación funcional puntual | No usarla como tarjeta automática para cada dato |
@@ -105,7 +107,7 @@ En editorial, la retícula puede ampliarse a doce columnas para combinar texto, 
 
 Las formas redondeadas tienen función. Un radio de 8 dp puede delimitar un campo; 16 dp puede agrupar una superficie; un radio mayor solo se permite si una prueba muestra que mejora la lectura o la interacción. No se usan cápsulas como estructura universal.
 
-Las reglas y los espacios separan información relacionada. Las superficies se reservan para agrupaciones funcionales. No se colocan círculos, bordes o rellenos detrás de elementos decorativos si pueden parecer controles. Las sombras, el vidrio, el ruido y los degradados no forman parte del contrato vigente.
+Las reglas y los espacios separan información relacionada. Las superficies se reservan para agrupaciones funcionales. No se colocan círculos, bordes o rellenos detrás de elementos decorativos si pueden parecer controles. Las sombras, el vidrio, el ruido y los degradados no formaban parte del contrato v4.
 
 ## Iconografía
 
@@ -184,12 +186,19 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-08 — Manual acotado a su etapa
+
+- **Cambio:** se identificó el manual como contrato histórico de v4 y se acotaron a esa etapa sus etiquetas de vigencia.
+- **Situación anterior:** la carpeta principal advertía la sustitución, pero el manual seguía presentándose internamente como autoridad para piezas nuevas.
+- **Motivo:** preservar criterios útiles sin mantener dos direcciones visuales activas.
+- **Alcance:** no se reescribieron retrospectivamente los tokens de v4; la fuente actual se enlaza al inicio.
+
 ### 2026-08-29 — Creación del manual integral v4
 
 - **Cambio:** se creó un manual central con concepto rector, arquitectura, semántica, color, tipografía, retícula, formas, iconografía, gráficos, imagen, movimiento, accesibilidad, microcopy, traducción por soporte, usos incorrectos y gobernanza.
 - **Situación anterior:** v4 tenía un contrato oscuro y reglas distribuidas entre inventarios, aplicaciones y documentos de v3, pero no un manual único que explicara la relación entre decisiones, límites y validación.
 - **Motivo:** permitir reconstrucción y auditoría coherentes sin convertir exploraciones visuales en una identidad cerrada ni fijar la forma del objeto.
-- **Decisión de continuidad:** v3 queda como antecedente histórico; este manual gobierna nuevas piezas v4 hasta que el registro de decisiones documente una sustitución.
+- **Decisión de continuidad registrada entonces:** v3 quedó como antecedente histórico; este manual gobernó las piezas v4 hasta la sustitución documentada el 7 de septiembre.
 - **Asuntos abiertos:** validar tipografía, color en contexto, iconografía, movimiento, comprensión entre soportes y todas las decisiones materiales y técnicas del testigo.
 
 ### 2026-08-29 — Verificación de la referencia de accesibilidad

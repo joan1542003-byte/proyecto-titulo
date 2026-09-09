@@ -1,8 +1,10 @@
 # Auditoría de piezas editoriales, carteles y módulos PNG
 
+**Estado:** auditoría histórica de la producción realizada el 1 de septiembre. Evalúa coherencia con el sistema utilizado entonces; no convierte esas piezas en dirección actual.
+
 ## Alcance
 
-Se revisaron treinta archivos producidos el 1 de septiembre de 2026: diez editoriales, diez carteles y diez módulos transparentes. La auditoría verifica coherencia con el sistema vigente, utilidad de cada pieza, legibilidad general y condiciones técnicas básicas.
+Se revisaron treinta archivos producidos el 1 de septiembre de 2026: diez editoriales, diez carteles y diez módulos transparentes. La auditoría verifica coherencia con el sistema de esa etapa, utilidad de cada pieza, legibilidad general y condiciones técnicas básicas.
 
 ## Resultado general
 
@@ -32,9 +34,16 @@ Las tres series son coherentes entre sí y suficientemente variadas para funcion
 
 ## Decisión
 
-Las treinta piezas se mantienen en la colección activa. Ninguna se considera arte final editable: deben reconstruirse con tipografías, retículas y vectores controlados antes de impresión o implementación.
+Las treinta piezas se conservan como biblioteca histórica. Ninguna se considera arte final editable ni autoridad visual: antes de reutilizar una composición deben comprobarse la dirección actual, el contenido, la tipografía, la retícula y los vectores.
 
 ## Registro de cambios
+
+### 2026-09-08 — Estado histórico aclarado
+
+- **Cambio:** se acotó la auditoría al sistema usado el 1 de septiembre y se reclasificó la colección como biblioteca histórica.
+- **Versión anterior:** el texto la describía como colección activa y comparaba las piezas con un sistema vigente sin indicar su fecha.
+- **Motivo:** impedir que una aprobación técnica de etapa se confunda con la dirección visual actual.
+- **Alcance:** no se modificaron las imágenes ni la evaluación individual de sus cualidades.
 
 ### 2026-09-01 — Creación de la auditoría
 

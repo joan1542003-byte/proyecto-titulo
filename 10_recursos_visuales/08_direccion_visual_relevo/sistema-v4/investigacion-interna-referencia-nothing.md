@@ -1,5 +1,7 @@
 # Investigación interna de una referencia visual
 
+**Estado:** antecedente de investigación formal de la etapa v4. No gobierna la comunicación ni la apariencia actual de Relevo. La dirección independiente se documenta en [Comunicación, nombre y color de Relevo](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 Este documento estudia el sistema visual de Nothing como antecedente formal y comercial observado durante la investigación de Relevo. Su función es separar principios transferibles de rasgos que deben transformarse para construir una dirección propia. No constituye una guía de reproducción, una asociación de marca ni una autorización para copiar signos, pantallas, iconos o composiciones.
@@ -118,6 +120,13 @@ Para Relevo, el aprendizaje más importante es de separación funcional: la grá
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Antecedente desacoplado de la dirección actual
+
+- **Cambio:** se aclaró que esta investigación explica una etapa del proceso y no orienta piezas nuevas.
+- **Versión anterior:** el límite de copia estaba registrado, pero el archivo no señalaba en su portada que Relevo había abandonado esa dependencia formal.
+- **Motivo:** mantener trazabilidad sin comunicar el proyecto mediante la apariencia de una marca comercial.
+- **Alcance:** las fuentes y observaciones históricas se conservan; no se trasladan sus rasgos a la dirección vigente.
 
 ### 2026-08-29 — Creación
 

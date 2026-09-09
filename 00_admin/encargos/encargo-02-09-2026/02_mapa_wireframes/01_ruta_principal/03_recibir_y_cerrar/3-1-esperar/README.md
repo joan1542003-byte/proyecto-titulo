@@ -16,11 +16,18 @@ El ciclo activo prioriza lectura y vigilancia del estado. La ausencia de rojo co
 
 ## Desarrollo visual relacionado
 
-pantalla-alta-fidelidad.png desarrolla este marco con el sistema visual oscuro vigente. Se eligió como pantalla destacada porque reúne las variables centrales del ciclo y representa una vista real de la aplicación. El pulso situado todavía no ocurre, por lo que el rojo permanece ausente.
+pantalla-alta-fidelidad.png desarrolla este marco con el sistema visual oscuro utilizado en la entrega del 2 de septiembre. Se eligió como pantalla destacada porque reúne las variables centrales del ciclo y representa una vista de trabajo de la aplicación. El pulso situado todavía no ocurre, por lo que el rojo permanece ausente.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Estado visual acotado a la entrega
+
+- **Qué cambió:** la pantalla destacada quedó descrita como aplicación del sistema usado el 2 de septiembre y como vista de trabajo.
+- **Cómo estaba antes:** el texto llamaba vigente a ese sistema y podía confundirse con la dirección posterior.
+- **Por qué se hizo:** conservar el valor de la entrega sin establecer una segunda autoridad visual.
+- **Alcance:** no se modificaron la imagen, el wireframe ni su lugar en el recorrido.
 
 - **Qué se incorporó:** el wireframe, su explicación, su ubicación dentro del mapa organizado y la versión relacionada de alta fidelidad.
 - **Cómo estaba antes:** la imagen estaba disponible únicamente en una carpeta plana junto a los demás marcos.

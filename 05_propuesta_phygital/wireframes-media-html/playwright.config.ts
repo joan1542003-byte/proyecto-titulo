@@ -1,6 +1,7 @@
 import { defineConfig } from "@playwright/test";
 
 const testPort = Number(process.env.MOBILE_RUNTIME_TEST_PORT ?? 4174);
+const browserExecutable = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
 
 export default defineConfig({
   testDir: "./tests",
@@ -9,9 +10,12 @@ export default defineConfig({
   use: {
     baseURL: `http://127.0.0.1:${testPort}`,
     viewport: { width: 1100, height: 1100 },
+    launchOptions: browserExecutable
+      ? { executablePath: browserExecutable }
+      : undefined,
   },
   webServer: {
-    command: `npm run dev -- --port ${testPort}`,
+    command: `pnpm run dev --port ${testPort}`,
     url: `http://127.0.0.1:${testPort}/tests/runtime-fixture.html`,
     reuseExistingServer: process.env.MOBILE_RUNTIME_TEST_PORT == null,
   },

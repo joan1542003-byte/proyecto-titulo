@@ -1,5 +1,7 @@
 # Códigos cromáticos de Relevo
 
+**Estado:** registro de la entrega del 2 de septiembre de 2026. Esta paleta documenta lo presentado en esa fecha; fue sustituida para piezas nuevas por la [dirección de comunicación y color del 7 de septiembre](../../../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Principio
 
 El color diferencia funciones y estados. La paleta utiliza neutros de alto contraste y reserva el rojo para la aparición de la señal situada. De esta manera, un acontecimiento excepcional del sistema recibe también un tratamiento cromático excepcional.
@@ -60,5 +62,12 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 
 - **Qué cambió:** las paletas digital y editorial, sus funciones y restricciones quedaron reunidas dentro del encargo.
 - **Cómo estaba antes:** estos criterios estaban distribuidos entre el manual visual y una carpeta transversal de entregables.
-- **Decisión vigente:** `#D71921` es el único rojo del sistema; valores anteriores quedan como registro histórico.
+- **Decisión para esta entrega:** `#D71921` fue el único rojo del sistema presentado el 2 de septiembre; hoy queda como registro histórico.
 - **Por qué se decidió:** facilitar la aplicación y revisión consistente del color en cada soporte.
+
+### 2026-09-08 — Vigencia temporal aclarada
+
+- **Qué cambió:** se identificó la paleta como decisión de la entrega fechada y se enlazó la autoridad cromática actual.
+- **Cómo estaba antes:** el documento seguía llamando vigente al rojo aun después de su sustitución.
+- **Por qué se decidió:** conservar la entrega sin permitir que gobierne piezas posteriores.
+- **Alcance:** los valores y cálculos originales no se modificaron retrospectivamente.

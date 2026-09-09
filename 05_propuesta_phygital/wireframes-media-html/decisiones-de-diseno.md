@@ -2,18 +2,18 @@
 
 ## Método
 
-Cada decisión responde a cuatro preguntas: qué problema resuelve, de qué antecedente del proyecto se deriva, qué riesgo controla y cómo puede comprobarse. La pauta del Encargo 17 define la cobertura; la memoria vigente define el sentido de la experiencia; el sistema visual v4 aporta retícula, tipografía, color y semántica. Los principios de visibilidad, correspondencia y retroalimentación se apoyan en Norman (2013).
+Cada decisión responde a cuatro preguntas: qué problema resuelve, de qué antecedente del proyecto se deriva, qué riesgo controla y cómo puede comprobarse. La pauta del Encargo 17 define la cobertura; la memoria vigente define el sentido de la experiencia; el sistema visual v4 registra la retícula, la tipografía, el color y la semántica con que se construyó esta versión. La [dirección del 7 de septiembre](../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) gobierna las iteraciones visuales posteriores. Los principios de visibilidad, correspondencia y retroalimentación se apoyan en Norman (2013).
 
-## Decisiones vigentes
+## Decisiones documentadas en el tablero
 
 | Decisión | Fundamento y riesgo controlado | Comprobación |
 |---|---|---|
 | Separar catálogo, wireframe y fundamento | Los controles de la entrega no son funciones de Relevo. Evita que navegación o descarga parezcan parte del producto. | El PNG contiene solo la superficie exportable. |
 | Usar 412 × 915 dp como base | Entrega una proporción móvil Android representativa sin adjudicar universalidad a un supuesto promedio. | Las 44 superficies comparten la misma medida. |
 | No simular hardware | El objeto de revisión es la estructura de la pantalla, no un modelo comercial. | No existen carcasa, cámara, barra de estado ni navegación del sistema. |
-| Aplicar retícula de 8 dp, margen de 24 dp y controles de 48 dp | Traslada los tokens vigentes y permite reconstruir la pantalla con medidas consistentes. | Auditoría CSS y exportación sin desbordes. |
+| Aplicar retícula de 8 dp, margen de 24 dp y controles de 48 dp | Traslada los tokens dimensionales del tablero y permite reconstruir la pantalla con medidas consistentes. | Auditoría CSS y exportación sin desbordes. |
 | Utilizar IBM Plex Sans y Mono | Distingue lectura de información técnica sin introducir una tercera voz tipográfica. | Fuentes locales incluidas con sus licencias. |
-| Trabajar en modo oscuro | Corresponde a la dirección vigente de la interfaz y mantiene continuidad entre sistema visual y wireframes. | Tokens cromáticos coinciden con la especificación v4. |
+| Trabajar en modo oscuro | Corresponde a la dirección de la interfaz y mantiene continuidad entre sistema visual y wireframes. | Los códigos cromáticos coinciden con la especificación v4 de esta versión. |
 | Reservar `#D71921` para la señal situada | El rojo comunica la aparición del pulso físico, no prioridad genérica. Evita volver decorativa la señal. | El rojo aparece solo en la representación del momento físico. |
 | Usar la marca de puntos como identificador, no como control | La trama permite reconocer a Relevo sin añadir un botón o una pestaña falsa. | La marca no tiene contenedor, estado presionado ni consecuencia interactiva. |
 | Diferenciar información, elección y acción | Un dato no debe parecer seleccionable y una elección no debe parecer adorno. | Campos interactivos tienen contorno; información pasiva usa separación; la acción conserva 48 dp. |
@@ -35,6 +35,13 @@ Universidad Diego Portales. (2026). *Encargo 17: Wireframes. Del flujo a la estr
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Alcance temporal de las decisiones visuales
+
+- **Cambio:** se separaron las decisiones estructurales del tablero de los códigos cromáticos propios de la etapa v4 y se enlazó la autoridad posterior.
+- **Antes:** el documento describía todo el conjunto como vigente, aunque la paleta cambió el 7 de septiembre.
+- **Motivo:** mantener la trazabilidad del entregable sin convertir una versión anterior en instrucción para piezas nuevas.
+- **Alcance:** no cambian el flujo, la cobertura, las dimensiones ni los criterios de interacción.
 
 ### 2026-09-02 — Jerarquía visual y mapas legibles
 

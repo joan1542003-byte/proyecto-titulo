@@ -1,12 +1,14 @@
 # Tokens y especificaciones del sistema visual v4
 
+**Estado:** especificación técnica de la etapa v4. Se conserva para reconstruir sus pantallas, pero no define el color ni la comunicación de piezas nuevas. La autoridad actual se encuentra en [Comunicación, nombre y color de Relevo](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Cómo leer este documento
 
 Un **token de diseño** es un nombre que representa una decisión reutilizable, por ejemplo, `color.text.primary` o `space.screen.margin`. Permite cambiar una implementación sin perder el significado común entre pantallas y soportes.
 
 Cada valor tiene un estado:
 
-- **Vigente:** se utiliza en nuevas reconstrucciones.
+- **Vigente en v4:** se utilizaba en las reconstrucciones de esa etapa.
 - **Hipótesis:** se propone como punto de partida y requiere comparación.
 - **Por validar:** todavía no debe tratarse como especificación cerrada.
 - **Histórico:** pertenece a v3 o a una exploración anterior.
@@ -17,16 +19,16 @@ Los valores de Android se expresan en `dp` para geometría y `sp` para texto. Lo
 
 | Token semántico | Valor | Estado | Uso | No usar para | Validación |
 |---|---|---|---|---|---|
-| `color.canvas` | `#111314` | Vigente | Fondo general de nuevas pantallas digitales | Degradados o fondos fotográficos | Escala de grises, brillo bajo y texto ampliado |
-| `color.surface.functional` | `#1B1D1E` | Vigente | Agrupación funcional puntual | Convertir cada dato en tarjeta | Distinguir grupo, elección y estado |
-| `color.surface.quiet` | `#242728` | Vigente | Estado secundario no interactivo | Selecciones, acciones o foco | Comprobar que no parezca pulsable |
-| `color.text.primary` | `#F1F1F1` | Vigente | Contenido, títulos y acciones principales | Jerarquía única para todo | Contraste por tamaño y peso |
-| `color.text.secondary` | `#B6B8B7` | Vigente | Ayuda, metadatos y estados secundarios | Información crítica aislada | Contraste y comprensión sin color |
-| `color.rule` | `#3A3D3E` | Vigente | Separación no informativa | Foco, selección o error | Verificar que su ausencia no quite significado |
-| `color.border.functional` | `#767A79` | Vigente | Campo, foco y control delineado | Decoración pura | Contraste no textual y foco visible |
-| `color.signal.situated` | `#D71921` | Vigente | Único nodo de señal situada | Error, batería, vínculo, selección, acción, navegación o decoración | Asociación, escala de grises, contraste y daltonismo |
+| `color.canvas` | `#111314` | Vigente en v4 | Fondo general de las pantallas de esa etapa | Degradados o fondos fotográficos | Escala de grises, brillo bajo y texto ampliado |
+| `color.surface.functional` | `#1B1D1E` | Vigente en v4 | Agrupación funcional puntual | Convertir cada dato en tarjeta | Distinguir grupo, elección y estado |
+| `color.surface.quiet` | `#242728` | Vigente en v4 | Estado secundario no interactivo | Selecciones, acciones o foco | Comprobar que no parezca pulsable |
+| `color.text.primary` | `#F1F1F1` | Vigente en v4 | Contenido, títulos y acciones principales | Jerarquía única para todo | Contraste por tamaño y peso |
+| `color.text.secondary` | `#B6B8B7` | Vigente en v4 | Ayuda, metadatos y estados secundarios | Información crítica aislada | Contraste y comprensión sin color |
+| `color.rule` | `#3A3D3E` | Vigente en v4 | Separación no informativa | Foco, selección o error | Verificar que su ausencia no quite significado |
+| `color.border.functional` | `#767A79` | Vigente en v4 | Campo, foco y control delineado | Decoración pura | Contraste no textual y foco visible |
+| `color.signal.situated` | `#D71921` | Vigente en v4 | Único nodo de señal situada | Error, batería, vínculo, selección, acción, navegación o decoración | Asociación, escala de grises, contraste y daltonismo |
 
-No existe una paleta clara vigente para nuevas piezas. Los valores claros documentados en v3 y las pantallas claras de v4 son históricos. El papel puede exigir una adaptación física de contraste, pero esa adaptación no crea un tema claro de interfaz.
+V4 no mantuvo una paleta clara para sus nuevas piezas. Los valores claros documentados en v3 y las pantallas claras de v4 son históricos. El papel podía exigir una adaptación física de contraste, pero esa adaptación no creaba un tema claro de interfaz.
 
 ### Reglas cromáticas
 
@@ -42,11 +44,11 @@ La base teórica para estas pruebas es la relatividad perceptual del color descr
 
 | Token | Familia | Tamaño inicial | Interlínea | Estado | Aplicación |
 |---|---|---:|---:|---|---|
-| `type.display` | IBM Plex Sans | 32 sp | 40 sp | Vigente como punto de partida | Título principal breve |
-| `type.screen-title` | IBM Plex Sans | 24 sp | 32 sp | Vigente como punto de partida | Título de pantalla |
-| `type.section` | IBM Plex Sans | 20 sp | 28 sp | Vigente como punto de partida | Sección o agrupación |
-| `type.body` | IBM Plex Sans | 16 sp | 24 sp | Vigente como punto de partida | Lectura e instrucciones |
-| `type.secondary` | IBM Plex Sans | 14 sp | 20 sp | Vigente como punto de partida | Ayuda y explicación secundaria |
+| `type.display` | IBM Plex Sans | 32 sp | 40 sp | Vigente como punto de partida en v4 | Título principal breve |
+| `type.screen-title` | IBM Plex Sans | 24 sp | 32 sp | Vigente como punto de partida en v4 | Título de pantalla |
+| `type.section` | IBM Plex Sans | 20 sp | 28 sp | Vigente como punto de partida en v4 | Sección o agrupación |
+| `type.body` | IBM Plex Sans | 16 sp | 24 sp | Vigente como punto de partida en v4 | Lectura e instrucciones |
+| `type.secondary` | IBM Plex Sans | 14 sp | 20 sp | Vigente como punto de partida en v4 | Ayuda y explicación secundaria |
 | `type.label` | IBM Plex Mono | 12 sp | 16 sp | Hipótesis de trabajo | Metadatos y etiquetas breves |
 | `type.technical` | IBM Plex Mono | 14 sp | 20 sp | Hipótesis de trabajo | Valores, estados técnicos y datos |
 | `type.dot-mark` | Alfabeto puntual en estudio | N/A | N/A | Por validar | Marca, numeral o señal expresiva breve |
@@ -61,9 +63,9 @@ El peso exacto se define en la reconstrucción con las familias disponibles y su
 
 | Token | Valor | Estado | Uso |
 |---|---:|---|---|
-| `space.unit` | 4 dp | Vigente | Subunidad de ajuste |
-| `space.grid` | 8 dp | Vigente | Retícula principal Android |
-| `space.screen.margin` | 24 dp | Vigente como base | Margen lateral Android |
+| `space.unit` | 4 dp | Vigente en v4 | Subunidad de ajuste |
+| `space.grid` | 8 dp | Vigente en v4 | Retícula principal Android |
+| `space.screen.margin` | 24 dp | Vigente como base en v4 | Margen lateral Android |
 | `space.group` | 32 dp | Hipótesis | Separación entre agrupaciones mayores |
 | `space.section` | 48 dp | Hipótesis | Cambio de sección o zona de acción |
 | `space.touch.min` | 48 dp | Requisito de trabajo | Área táctil mínima de control |
@@ -82,9 +84,9 @@ El margen Android se mide desde el borde útil de la ventana, no desde una image
 | `radius.exceptional` | 24 dp | Por validar | Control dominante solo si la prueba lo exige | No usar por defecto |
 | `border.functional.width` | 1 dp | Hipótesis | Campo, división funcional y control delineado | Revisar con escala y foco |
 | `border.focus.width` | 2 dp | Hipótesis | Foco visible | No usar como decoración |
-| `border.rule.width` | 1 dp | Vigente como base | Regla no informativa | No codificar estado |
-| `shadow.default` | 0 | Vigente | No usar sombra como jerarquía | Sustituir por espacio y contraste |
-| `texture.default` | 0 | Vigente | Superficies planas | La textura solo aparece en fotografía documentada |
+| `border.rule.width` | 1 dp | Vigente como base en v4 | Regla no informativa | No codificar estado |
+| `shadow.default` | 0 | Vigente en v4 | No usar sombra como jerarquía | Sustituir por espacio y contraste |
+| `texture.default` | 0 | Vigente en v4 | Superficies planas | La textura solo aparece en fotografía documentada |
 
 Las cápsulas no son un token general. Solo pueden utilizarse si el contenido es compacto y su contenedor comunica una función concreta; la aprobación queda **por validar**.
 
@@ -93,10 +95,10 @@ Las cápsulas no son un token general. Solo pueden utilizarse si el contenido es
 | Token | Valor inicial | Estado | Uso |
 |---|---:|---|---|
 | `icon.box` | 24 × 24 dp | Hipótesis | Área visual del icono convencional |
-| `icon.touch` | 48 × 48 dp | Vigente como mínimo | Área interactiva, incluso si el glifo es menor |
+| `icon.touch` | 48 × 48 dp | Vigente como mínimo en v4 | Área interactiva, incluso si el glifo es menor |
 | `icon.stroke` | 2 dp | Hipótesis | Consistencia de trazo |
-| `icon.color` | `color.text.primary` o `color.text.secondary` | Vigente | No usar rojo salvo el nodo situado, que no es un icono de acción |
-| `icon.label` | Texto accesible obligatorio si interactivo | Vigente | Nombre de acción o entidad |
+| `icon.color` | `color.text.primary` o `color.text.secondary` | Vigente en v4 | No usar rojo salvo el nodo situado, que no es un icono de acción |
+| `icon.label` | Texto accesible obligatorio si interactivo | Vigente en v4 | Nombre de acción o entidad |
 
 El tamaño y trazo se comparan con la biblioteca de iconos elegida durante la implementación. No se inventan símbolos para funciones críticas. Si el icono no aporta comprensión adicional, se elimina.
 
@@ -120,9 +122,9 @@ Si una información desaparece al reducir opacidad, no era decoración. Los cont
 | `motion.duration.standard` | 220 ms | Hipótesis | Transición entre superficies relacionadas |
 | `motion.duration.long` | 300 ms | Por validar | Solo cuando la relación necesite ser observada |
 | `motion.easing.standard` | Curva estándar de plataforma | Por validar | Implementación, no dirección visual cerrada |
-| `motion.reduced` | Sin movimiento no esencial | Vigente | Respeto de preferencia de reducción |
-| `motion.loop` | No permitido | Vigente | No usar bucles permanentes |
-| `motion.flash` | No usar como recurso de señal | Vigente | No simular el pulso físico en Android |
+| `motion.reduced` | Sin movimiento no esencial | Vigente en v4 | Respeto de preferencia de reducción |
+| `motion.loop` | No permitido | Vigente en v4 | No usar bucles permanentes |
+| `motion.flash` | No usar como recurso de señal | Vigente en v4 | No simular el pulso físico en Android |
 
 Las duraciones son hipótesis técnicas. Se prueban con lectura, foco y recuperación; un movimiento agradable no es motivo suficiente para mantenerlo.
 
@@ -133,16 +135,16 @@ Las duraciones son hipótesis técnicas. Se prueban con lectura, foco y recupera
 | Texto pequeño | ≥ 4,5:1 | Requisito de trabajo | Herramienta de contraste y prueba visual |
 | Texto grande | ≥ 3:1 | Requisito de trabajo | Herramienta y lectura situada |
 | Elemento no textual relevante | ≥ 3:1 | Requisito de trabajo | Comparación contra fondos cercanos |
-| Información por color | 0 usos exclusivos | Vigente | Escala de grises y prueba de clasificación |
-| Texto ampliado | Hasta 200 % sin pérdida de contenido | Vigente como objetivo | Android y recorrido completo |
+| Información por color | 0 usos exclusivos | Vigente en v4 | Escala de grises y prueba de clasificación |
+| Texto ampliado | Hasta 200 % sin pérdida de contenido | Vigente como objetivo en v4 | Android y recorrido completo |
 | Objetivo táctil | ≥ 48 × 48 dp | Requisito de trabajo | Auditoría de layout y dispositivo |
-| Orden de foco | Lógico y completo | Vigente como criterio | TalkBack, teclado si corresponde y recorrido manual |
+| Orden de foco | Lógico y completo | Vigente como criterio en v4 | TalkBack, teclado si corresponde y recorrido manual |
 
 Estos valores se basan en WCAG 2.2 y guías de accesibilidad de Android. No convierten una pantalla en accesible automáticamente: también se debe comprobar lenguaje, foco, interacción, movimiento, percepción física y recuperación.
 
 ## Estados de madurez y cambio
 
-Un token cambia de **hipótesis** a **vigente** solo cuando se documenta el soporte, la prueba, el resultado y la consecuencia. Si una prueba contradice el valor, se conserva el valor anterior hasta registrar la nueva decisión; no se cambia silenciosamente el token en el código.
+Dentro de esta documentación, un token cambiaba de **hipótesis** a **vigente en v4** solo cuando se registraban el soporte, la prueba, el resultado y la consecuencia. Esa regla de trazabilidad sigue siendo transferible, aunque los valores visuales actuales se consultan en la autoridad del 7 de septiembre.
 
 ## Referencias
 
@@ -158,12 +160,19 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-08 — Vigencia acotada a v4
+
+- **Cambio:** se añadió el estado histórico del documento y se redefinió la etiqueta `Vigente` como una condición interna de v4.
+- **Situación anterior:** los tokens seguían indicando uso en piezas nuevas sin distinguir que la dirección había sido sustituida.
+- **Motivo:** conservar una especificación reproducible sin contradecir la paleta actual.
+- **Alcance:** las tablas registran los valores originales de v4; no deben copiarse a una pieza nueva sin una decisión actual.
+
 ### 2026-08-29 — Creación de tokens v4
 
 - **Cambio:** se creó una tabla operativa de tokens semánticos para color, tipografía, espaciado, retícula, formas, iconos, opacidad, movimiento y accesibilidad.
 - **Situación anterior:** los valores estaban repartidos entre v3, el contrato oscuro y las pantallas Android, con diferencias de tema y sin estado de madurez común.
 - **Motivo:** consolidar una fuente técnica para reconstrucción, distinguir decisiones vigentes de hipótesis y evitar precisión falsa en valores todavía no probados.
-- **Decisión de continuidad:** los valores de v3 para tema claro permanecen históricos; el canvas oscuro y la reserva semántica del rojo gobiernan las nuevas piezas digitales.
+- **Decisión de continuidad tomada entonces:** los valores de v3 para tema claro permanecían históricos; el canvas oscuro y la reserva semántica del rojo gobernaban las piezas digitales de v4.
 - **Asuntos abiertos:** validar peso tipográfico, radios, opacidades, movimiento, contraste contextual, escalamiento y respuesta del rojo en cada soporte.
 
 ### 2026-08-29 — Verificación de la referencia de accesibilidad
@@ -177,4 +186,4 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 - **Cambio:** `color.signal.situated` se fijó en `#D71921` y se prohibió su uso como navegación o decoración.
 - **Versión anterior:** v4 usaba `#EF3E45`, mientras que los criterios visuales generales registraban `#D71921`.
 - **Motivo:** eliminar una discrepancia de sistema y mantener un valor con mejor contraste sobre papel claro.
-- **Alcance:** las imágenes históricas no se recolorean; las piezas nuevas y reconstrucciones editables deben usar el valor vigente.
+- **Alcance:** las imágenes históricas no se recolorean; las piezas nuevas y reconstrucciones editables deben consultar la dirección actual antes de adoptar color.

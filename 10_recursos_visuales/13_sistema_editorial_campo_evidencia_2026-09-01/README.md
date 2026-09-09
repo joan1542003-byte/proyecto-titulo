@@ -1,6 +1,6 @@
 # Sistema editorial «Campo de evidencia»
 
-**Estado:** dirección editorial seleccionada y en desarrollo.
+**Estado:** base editorial seleccionada; su estructura continúa disponible y su aplicación cromática debe actualizarse antes del arte final.
 
 Esta carpeta reúne la construcción del sistema editorial de la memoria de Relevo. La dirección seleccionada privilegia el texto académico, la evidencia y el vacío. No propone llenar cada página con recursos gráficos: utiliza una retícula constante para ordenar contenidos distintos y reserva los gestos visuales de mayor intensidad para momentos argumentales concretos.
 
@@ -16,7 +16,7 @@ La opción «Campo de evidencia» se reconoce por:
 - composición asimétrica y amplias zonas de descanso;
 - contraste entre numerales de apertura, lectura sostenida y evidencia;
 - fotografía monocromática solo cuando cumple una función documental o argumental;
-- rojo reservado para una señal situada, nunca como decoración o navegación;
+- ámbar `#FFB000` reservado para una señal situada, nunca como decoración o navegación; las referencias rasterizadas anteriores pueden mostrar rojo porque registran la etapa del 1 de septiembre;
 - matrices de puntos únicamente cuando representan información o una relación explicada.
 
 ## Estructura
@@ -34,9 +34,15 @@ Toda página debe declarar su propósito, familia editorial, fuente textual y sp
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-08 — Sistema editorial alineado con la paleta vigente
+
+- **Cambio:** se conservó la dirección «Campo de evidencia», pero se reemplazó el rojo prescriptivo por el ámbar vigente y se aclaró el estado de las referencias anteriores.
+- **Versión anterior:** estructura editorial y color de la etapa del 1 de septiembre se presentaban como una sola decisión aprobada.
+- **Motivo:** mantener la grilla y la jerarquía seleccionadas sin perpetuar un código cromático reemplazado.
+- **Alcance:** no se modificaron las imágenes rasterizadas ni se declaró terminado el arte final.
+
 ### 2026-09-01 — Creación de la dirección seleccionada
 
 - **Cambio:** se creó una ubicación única para desarrollar la opción editorial «Campo de evidencia».
 - **Versión anterior:** las exploraciones A3 estaban repartidas entre series con distintas decisiones de composición.
 - **Motivo:** separar una dirección aprobada de las pruebas históricas y evitar que las imágenes generadas se confundan con páginas finales.
-

@@ -2,7 +2,7 @@
 
 ## Estado
 
-Dirección conceptual seleccionada y en proceso de sistematización. `Transferencia situada` constituye la base visual de Relevo e incorpora, de manera acotada, la relación origen–vínculo–señal explorada en `Ensamble de relevo`. La decisión no fija todavía la forma industrial del objeto, el canal físico ni el color definitivo de la señal.
+La dirección conceptual seleccionada dio origen al sistema v4 y a las aplicaciones documentadas en esta carpeta. Desde el 7 de septiembre constituye una etapa anterior: puede orientar la lectura de pantallas y piezas ya producidas, pero no gobierna nuevas aplicaciones. La fuente actual se apoya en cercanía, brevedad, traslado y autonomía, y se consulta en [comunicación, nombre y color](../comunicacion-naming-y-paleta-2026-09-07.md).
 
 ## Pregunta rectora
 
@@ -21,13 +21,14 @@ Dirección conceptual seleccionada y en proceso de sistematización. `Transferen
 - [Aplicaciones del sistema](aplicaciones/README.md): objeto, memoria y aplicación Android.
 - [Matriz entre soportes](aplicaciones/matriz-intersoportes.md).
 - [Investigación de referentes aplicada](aplicaciones/investigacion-referentes-aplicados.md).
-- [Sistema visual v3](sistema-v3/README.md): metodología, tokens, temas claro/oscuro, Android y familias editoriales.
+- [Sistema visual v4](sistema-v4/README.md): reglas, componentes, Android y especificación editorial de la etapa matricial; se conserva como referencia técnica anterior.
+- [Sistema visual v3 archivado](../../99_archivo/antiguo/sistema-visual/sistema-v3/README.md): metodología y exploraciones conservadas como antecedente.
 
 ## Relación con exploraciones anteriores
 
 Las colecciones previas de `10_recursos_visuales` siguen siendo antecedentes. Sus motivos de pulso, vacío, lugar y transición pueden informar esta etapa, pero la paleta cobalto, la ilustración serigráfica y la forma concreta de los objetos no se consideran decisiones vigentes. La nueva exploración se concentra en un lenguaje monocromático, modular y matricial, con un acento cromático restringido.
 
-## Decisión vigente
+## Decisión de la etapa — 2026-08-28
 
 La dirección 01 fue seleccionada por el autor el 28 de agosto de 2026. Su desarrollo deberá:
 
@@ -40,6 +41,13 @@ La dirección 01 fue seleccionada por el autor el 28 de agosto de 2026. Su desar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Jerarquía entre la dirección actual y sus antecedentes
+
+- **Cambio:** se identificó la comunicación del 7 de septiembre como fuente actual, se conservó v4 como referencia anterior, se trasladó v3 al archivo central y se renombró la selección de 2026-08-28 como decisión de su etapa.
+- **Versión anterior:** la lista documental enlazaba solamente la v3, no explicaba que v4 había sido sustituida y todavía titulaba como vigente una selección histórica.
+- **Motivo:** impedir que reglas cromáticas o formales superadas orienten piezas nuevas.
+- **Alcance:** las exploraciones anteriores siguen disponibles; esta corrección no valida color, forma industrial ni percepción.
 
 ### 2026-08-28 — Sistema visual v3
 

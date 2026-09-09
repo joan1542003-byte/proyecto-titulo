@@ -42,13 +42,13 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `05_contactos` | Hojas de contacto para comparar familias visuales. |
 | `06_graficos_4k` | Segunda exploración: matriz de puntos, formas modulares, paneles y composiciones 4K sin objeto obligatorio. |
 | `07_coleccion_expandida_4k` | Colección amplia de 23 piezas únicas: editoriales, patrones, diagramas, materia, overlays transparentes y formatos verticales/cuadrados. |
-| `08_direccion_visual_relevo` | Desarrollo documentado del sistema, selección vigente, aplicaciones, interfaz, reglas y decisiones. |
+| `08_direccion_visual_relevo` | Etapa matricial documentada, conservada para revisar decisiones, aplicaciones y referencias Android anteriores. |
 | `09_archivo_generaciones_completo` | Archivo de 192 generaciones únicas recuperadas; conserva el proceso, pero no define vigencia. |
 | `10_tipografias` | IBM Plex Sans y Mono en formatos instalables y web, con paquetes y licencias oficiales. |
-| `11_exploracion_sistema_visual_2026-08-31` | Sesenta piezas vigentes en seis familias de diez, más hojas de contacto, auditoría y descartes documentados. |
-| `12_expansion_sistema_visual_2026-09-01` | Expansión no física con 38 piezas producidas: ocho estados Android, diez editoriales, diez carteles y diez módulos transparentes. |
+| `11_exploracion_sistema_visual_2026-08-31` | Sesenta piezas de exploración fechada en seis familias, más hojas de contacto, auditoría y descartes documentados. |
+| `12_expansion_sistema_visual_2026-09-01` | Expansión fechada con 61 piezas registradas entre Android, editorial, carteles, módulos transparentes y maquetas A3. |
 | `13_sistema_editorial_campo_evidencia_2026-09-01` | Sistema editorial de la memoria: retícula A3 horizontal, pruebas con texto real, figuras, síntesis y descartes documentados. |
-| `14_memoria_editorial_completa_2026-09-01` | Maqueta integral reproducible de la memoria vigente y sus 86 páginas PNG; conserva la fuente y excluye dependencias instaladas. |
+| `14_memoria_editorial_completa_2026-09-01` | Maqueta integral reproducible de la memoria vigente y sus 87 páginas PNG; conserva la fuente y excluye dependencias instaladas. |
 | `15_video_lanzamiento_relevo_2026-09-04` | Video explicativo 4K, guion, locución, subtítulos, láminas y fuente reproducible. Es una pieza de comunicación, no evidencia de validación. |
 
 [Comunicación, nombre y color de Relevo](comunicacion-naming-y-paleta-2026-09-07.md) gobierna la explicación pública, el descriptor, la situación del naming y los nuevos códigos cromáticos.
@@ -76,6 +76,14 @@ Las imágenes adjuntas por el autor se usan como referencias de estilo, atmósfe
 La segunda exploración incorpora una gramática de puntos redondos, barras, órbitas, trazas y módulos de alto contraste inspirada en referencias de tipografía modular y dispositivos minimalistas. Se usa como investigación formal, no como reproducción de una marca existente ni como identidad cerrada de Relevo.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Autoridad visual única
+
+- **Cambio:** se reclasificó la dirección matricial y su colección de 60 piezas como desarrollo anterior; la comunicación del 7 de septiembre queda como única autoridad para piezas nuevas, naming y color.
+- **Versión anterior:** el encabezado declaraba correctamente sustituido el sistema v4, pero el mapa de recursos todavía llamaba vigentes a esa dirección y a sus piezas.
+- **Motivo:** evitar que dos sistemas cromáticos y gráficos gobiernen al mismo tiempo.
+- **Alcance:** el material anterior permanece disponible para estudiar decisiones y reconstruir prototipos existentes; no define nuevas piezas por defecto.
+- **Dato corregido:** la colección 12 registra 61 piezas producidas, no las 38 del primer corte de esa misma jornada.
 
 ### 2026-09-07 — Comunicación derivada del funcionamiento
 

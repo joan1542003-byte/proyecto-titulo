@@ -18,7 +18,7 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 ## Etapa actual
 
-Relevo se encuentra en una etapa de **cierre del wireframe v1 y preparación del primer banco físico**. La cobertura técnica del tablero y sus 44 exportaciones fue verificada, y el recorrido mínimo ya está separado de los estados complementarios en el [alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md). La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen un sistema visual v4 y una memoria estructuralmente avanzada.
+Relevo se encuentra en una etapa de **cierre del wireframe v1 y preparación del primer banco físico**. La cobertura técnica del tablero y sus 44 exportaciones fue verificada, y el recorrido mínimo ya está separado de los estados complementarios en el [alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md). La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen una [dirección vigente de comunicación y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), una especificación visual v4 conservada como antecedente técnico y una memoria estructuralmente avanzada.
 
 El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. El programa mínimo para micro:bit V2 ya compila y dispone de un archivo instalable. Todavía faltan acceso a la placa, instalación, conexión medida, incorporación de una luz blanca cálida externa, ensayo y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden cerrar el wireframe.
 
@@ -34,7 +34,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Estado del arte y mercado | Avanzado con corte temporal | Corpus comparativo, mecanismos, límites y oportunidad de Relevo. | Vigilancia breve en octubre; no rehacer el estudio sin una razón concreta. |
 | Memoria | Avanzada, no final | Estructura v4, extensión, APA 7, trazabilidad y anexos preparados. | Incorporar decisiones, resultados, límites, factibilidad y evidencia final. |
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
-| Sistema visual | Avanzado | Dirección `Transferencia situada`, modo oscuro, tokens, componentes y piezas por soporte. | Reconstrucción manual, pruebas de legibilidad y cierre de aplicaciones finales. |
+| Sistema visual | Avanzado | Dirección basada en cercanía, brevedad, traslado y autonomía; modo oscuro para interfaz; paleta funcional y piezas por soporte. | Aplicar la dirección vigente a los prototipos, probar legibilidad y cerrar las aplicaciones finales. |
 | Prototipo Android | Inicial | Plataforma justificada, wireframes verificados, recorrido mínimo y backlog definidos. | Congelar el wireframe v1, construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
 | Testigo físico | Banco preparado, no ejecutado | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado y documentado. | Acceder a la placa, instalar, añadir la salida cálida, medir, revisar el montaje y completar después la integración portátil. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Revisar wireframes y prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
@@ -294,6 +294,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Jerarquía visual aclarada
+
+- **Cambio:** se distinguió la dirección vigente de comunicación y color de la especificación visual v4 conservada como antecedente técnico.
+- **Versión anterior:** el plan presentaba el sistema v4 como si todavía gobernara toda pieza nueva.
+- **Motivo:** evitar dos autoridades visuales simultáneas y alinear el plan con la decisión cromática del 7 de septiembre.
+- **Consecuencia:** los prototipos existentes conservan trazabilidad, pero toda iteración nueva debe consultar la fuente vigente.
 
 ### 2026-09-08 — Banco micro:bit preparado
 

@@ -21,7 +21,7 @@ El alcance visual comprende tres superficies relacionadas pero no idénticas: An
 
 Una clave visible permite reconocer qué puede hacerse o qué significa un elemento. El mapeo relaciona una acción con su resultado; la retroalimentación informa qué ocurrió; una restricción reduce acciones erróneas; y un modelo conceptual ayuda a anticipar cómo funciona un sistema (Norman, 2002). En Relevo, estos principios exigen que una persona pueda distinguir entre contenido, elección, acción, icono, estado y gráfico informativo. Esta formulación evita atribuir a la edición revisada el término *signifier*, que no aparece en su capa textual.
 
-La matriz de puntos no debe asumir una función por su apariencia. Si expresa la transferencia entre intención, primer paso y señal situada, es un gráfico informativo y debe acompañarse de texto equivalente. Si no comunica una relación necesaria, es decoración y debe quedar subordinada. El color rojo queda reservado al nodo de señal situada; antes de situar la intención no se utiliza como llamada de acción, selección, advertencia o adorno.
+La matriz de puntos no debe asumir una función por su apariencia. Si expresa la transferencia entre intención, primer paso y señal situada, es un gráfico informativo y debe acompañarse de texto equivalente. Si no comunica una relación necesaria, es decoración y debe quedar subordinada. El ámbar identifica la señal cotidiana, una selección o un estado activo; no reemplaza texto, forma o icono ni se usa como adorno. El color de error mantiene un rol distinto.
 
 ### 2. La configuración precede a la señal
 
@@ -33,7 +33,7 @@ Esta secuencia traduce el ciclo de acción de Norman: una intención necesita un
 
 Albers muestra que la percepción de un color cambia según el fondo, los colores próximos, la cantidad, la iluminación y el soporte. Por eso, la paleta de Relevo no puede cerrarse mediante valores hexadecimales aislados. Cada combinación debe revisarse en la pantalla Android, en impresos editoriales y junto a los materiales del objeto.
 
-La dirección vigente parte de un modo oscuro: canvas `#111314`, superficie `#1B1D1E`, superficie quiet `#242728`, texto principal `#F1F1F1`, texto secundario `#B6B8B7`, regla `#3A3D3E`, borde funcional `#767A79` y señal `#EF3E45`. Estos valores son puntos de partida del sistema, no una garantía automática de accesibilidad. El rojo tiene una sola función semántica: identificar la señal situada una vez que esa condición forma parte del ciclo. Su contraste y su lectura deben probarse junto a blanco, gris y negro, y no deben ser la única manera de comunicar un estado.
+La dirección vigente parte de carbón `#17191B`, superficie `#1F2326`, papel cálido `#F4F1EA`, gris claro `#AEB4B8`, ámbar de señal `#FFB000` y error `#E35D6A`. Estos valores son puntos de partida del sistema, no una garantía automática de accesibilidad. El ámbar distingue la activación cotidiana del error técnico; su contraste y su lectura deben probarse en contexto y nunca deben ser la única manera de comunicar un estado.
 
 ### 4. La identidad debe servir a la comunicación
 
@@ -90,7 +90,7 @@ Estos criterios deben contrastarse con la versión vigente de las pautas de acce
 | ¿Las elecciones se distinguen de acciones y estados? | Prueba de clasificación con pantallas estáticas y prototipo navegable | Identificación del elemento que se puede escoger, activar o solo leer |
 | ¿La secuencia de configuración prepara la situación real? | Recorrido completo Android–testigo–actividad con una tarea concreta | Errores, dudas, retrocesos y puntos donde se pierde el modelo conceptual |
 | ¿El gráfico de puntos comunica transferencia? | Comparar versión con puntos, texto equivalente y versión sin puntos | Explicación espontánea de la relación; el gráfico no se aprueba por gusto |
-| ¿El rojo conserva un único significado? | Presentar estados previos y posteriores a situar la señal en condiciones claras y oscuras | El rojo se identifica solo con señal situada, sin aparecer antes ni competir con acciones |
+| ¿La señal y el error se distinguen? | Presentar estados activos y fallos en condiciones claras y oscuras | El ámbar se reconoce como señal o estado activo y el rosa rojizo únicamente como error, sin depender solo del color |
 | ¿La paleta se mantiene legible en contexto? | Pruebas de contraste y percepción con fondos, tamaños, brillo y soportes reales | Valores documentados, fallos y ajustes por combinación, no solo por color aislado |
 | ¿El testigo se percibe y no interrumpe? | Prototipos de baja fidelidad en el lugar de uso, con variaciones de luz y distancia | Detección, interpretación, tiempo de respuesta y falsas alarmas |
 | ¿La forma del objeto puede producirse y mantenerse? | Revisión de materiales, montaje, energía, reparación, limpieza y costos | Restricciones y decisiones justificadas antes de cerrar la forma |
@@ -104,7 +104,7 @@ Estos criterios deben contrastarse con la versión vigente de las pautas de acce
 | Relacionar acción y consecuencia | Norman (2002) | Informar qué se configura y qué ocurrirá con el testigo antes de confirmar | El texto no compensa una lógica técnica confusa | Recorrido Android–objeto y análisis de errores |
 | Usar retroalimentación pertinente | Norman (2002) | Confirmar enlace, preparación y fallos sin simular el pulso físico | Más avisos pueden aumentar ruido y dependencia del teléfono | Prueba de comprensión de estados y recuperación |
 | Diseñar para el error y la reversibilidad | Norman (2002) | Permitir revisar o deshacer una configuración sin castigo ni evaluación | No todo fallo técnico puede revertirse desde la interfaz | Prueba de recuperación y revisión técnica |
-| Entender el color en contexto | Albers (2013) | Probar la paleta oscura y el rojo situado en combinaciones reales | La percepción varía con soporte, iluminación y persona | Contraste, simulación y pruebas situadas |
+| Entender el color en contexto | Albers (2013) | Probar la paleta y la separación entre ámbar de señal y color de error en combinaciones reales | La percepción varía con soporte, iluminación y persona | Contraste, simulación y pruebas situadas |
 | Enseñar mediante comparación y experimento | Albers (2013) | Comparar variantes de fondo, señal y texto antes de cerrar el sistema | Un experimento visual no prueba preferencia de uso prolongado | Registro de resultados y prueba de comprensión |
 | Hacer que los signos reduzcan errores de lectura | Munari (1971) | Acompañar los puntos con una leyenda y conservar una jerarquía verbal | El significado depende de contexto y convenciones | Lectura editorial sin explicación oral |
 | Relacionar forma, material y uso | Munari (1971) | Investigar instalación, señal, mantenimiento y transporte del testigo | Los ejemplos del libro no predicen el material adecuado | Prototipos y revisión de producción |
@@ -151,3 +151,10 @@ La biblioteca sostiene una dirección clara, pero no una solución cerrada. El s
 - **Cambio:** se reemplazó la atribución de significantes a la edición de 2002 por affordances percibidas y claves visibles.
 - **Situación anterior:** la síntesis mezclaba el contenido comprobado en esta copia con terminología desarrollada por Norman en ediciones posteriores.
 - **Motivo:** mantener la trazabilidad entre cada principio y la fuente efectivamente leída.
+
+### 2026-09-08 — Sincronización cromática
+
+- **Cambio:** se sustituyeron las referencias operativas al sistema rojo anterior por la paleta vigente y por una prueba explícita de distinción entre señal y error.
+- **Situación anterior:** la síntesis seguía describiendo como vigente la paleta oscura del 29 de agosto.
+- **Motivo:** mantener la traducción de las lecturas alineada con la autoridad visual del 7 de septiembre.
+- **Alcance:** Albers sustenta el método de comparación, no demuestra que la nueva paleta sea definitiva; aún debe probarse en contexto.

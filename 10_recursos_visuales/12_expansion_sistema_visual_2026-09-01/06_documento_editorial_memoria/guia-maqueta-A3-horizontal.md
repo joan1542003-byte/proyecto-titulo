@@ -1,6 +1,6 @@
 # Guía de maqueta editorial A3 horizontal — Memoria de Relevo
 
-**Estado:** dirección de composición para reconstrucción editable.
+**Estado:** dirección de composición explorada el 1 de septiembre; se conserva como antecedente de retícula y formato. La apariencia de una reconstrucción nueva debe contrastarse con la [dirección actual](../../comunicacion-naming-y-paleta-2026-09-07.md).
 **Formato de trabajo:** A3 horizontal, 420 × 297 mm por página.
 **Propósito:** convertir la memoria en una publicación legible, rigurosa y coherente con el sistema visual de Relevo, sin convertir sus recursos gráficos en ornamento repetitivo.
 
@@ -42,7 +42,7 @@ El punto, la línea y el rojo tienen usos restringidos.
 
 - **Punto:** representa una unidad, nodo o relación cuando existe una leyenda que lo explica. En portada puede aparecer como textura de bajo contraste, sin competir con el título.
 - **Línea:** organiza columnas, separa información o expresa relación entre elementos identificados. No se usa como adorno automático.
-- **Rojo `#D71921`:** aparece una sola vez en un diagrama cuando identifica la señal o el elemento situado que exige atención. No opera como acento de navegación, subrayado ni decoración en páginas de texto.
+- **Rojo `#D71921`:** en esta propuesta aparecía una sola vez en un diagrama cuando identificaba la señal o el elemento situado que exigía atención. No operaba como acento de navegación, subrayado ni decoración en páginas de texto.
 - **Negro grafito y blanco cálido:** permiten alternar páginas de apertura y lectura. El blanco cálido es el soporte principal de contenido extenso; el grafito reserva contraste para portadas, separadores o piezas de exposición.
 
 Las palabras que nombran el marco conceptual no forman una cenefa ni un eslogan recurrente. Solo se emplean en el pasaje donde la memoria define el concepto o en un diagrama que realmente necesite distinguir sus partes.
@@ -88,4 +88,11 @@ La secuencia conserva la arquitectura vigente de la memoria. Cada bloque debe re
 - **Cambio:** el margen inferior pasó de 18 a 19 mm; se fijaron columnas de 28 mm y 65 módulos verticales de 4 mm.
 - **Versión anterior:** la altura útil era de 261 mm y no cerraba exactamente sobre el módulo vertical propuesto.
 - **Motivo:** permitir que toda la publicación comparta una grilla calculable, aun cuando cambie la disposición de cada página.
-- **Alcance:** la retícula queda vigente para pruebas con contenido real y permanece sujeta a validación impresa.
+- **Alcance:** la retícula quedó disponible para pruebas con contenido real y continúa sujeta a validación impresa; no determina por sí sola la dirección actual.
+
+### 2026-09-08 — Estado histórico aclarado
+
+- **Cambio:** se acotaron la paleta y la retícula a la exploración del 1 de septiembre y se enlazó la dirección actual.
+- **Versión anterior:** la guía podía leerse como una especificación todavía vigente para todo el sistema editorial.
+- **Motivo:** preservar sus decisiones de formato sin reactivar una paleta sustituida.
+- **Alcance:** no cambia la recomendación de A3 horizontal ni las pruebas de lectura e impresión necesarias.

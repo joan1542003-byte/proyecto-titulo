@@ -1,10 +1,12 @@
 # Android v4 — dirección oscura
 
+**Estado:** archivo de referencias oscuras de la etapa v4. Su anatomía puede compararse con los wireframes, pero sus códigos visuales no gobiernan diseños nuevos. Véase la [dirección actual de comunicación y color](../../../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Alcance y estado
 
-Esta carpeta contiene 20 referencias rasterizadas del flujo Android de Relevo: una pantalla de inicio, dos versiones para cada pantalla 02–10 y una referencia horizontal adicional para la señal situada. Se auditaron visualmente todos los PNG vigentes.
+Esta carpeta documentó 20 referencias rasterizadas del flujo Android de Relevo: una pantalla de inicio, dos versiones para cada pantalla 02–10 y una referencia horizontal adicional para la señal situada. Se auditaron visualmente todos los PNG retenidos en la etapa.
 
-El modo oscuro es la única dirección vigente. Las v1 superadas se conservan para hacer trazable el proceso, pero no deben utilizarse para reconstruir la interfaz cuando existe una v2. Las imágenes son referencias visuales: todavía requieren reconstrucción manual, texto real, estados funcionales, pruebas de interacción y auditoría de accesibilidad.
+El modo oscuro fue la única dirección de v4. Las v1 superadas se conservan para hacer trazable el proceso, pero no deben utilizarse para reconstruir la interfaz cuando existe una v2. Las imágenes son referencias visuales de esa etapa: todavía requieren reconstrucción manual, texto real, estados funcionales, pruebas de interacción y auditoría de accesibilidad.
 
 La aplicación configura, acompaña y confirma. El testigo emite la señal situada en el lugar elegido. La pantalla informa esa relación; no reemplaza la experiencia física ni evalúa si la persona comenzó la actividad.
 
@@ -20,13 +22,13 @@ La aplicación configura, acompaña y confirma. El testigo emite la señal situa
 
 El rojo #D71921 identifica únicamente el nodo de señal situada. Antes de situar la intención no aparece. Los puntos solo se permiten como marca, señal expresiva breve o gráfico informativo con texto equivalente; no son selección, progreso ni estado. El testigo emite la señal situada y la aplicación comunica el vínculo, la prueba y sus estados.
 
-## Referencias vigentes y candidatas
+## Referencias retenidas y candidatas de v4
 
 ### 01 — Inicio sin ciclo
 
 Archivo: 01-inicio-sin-ciclo-oscuro-v1.png
 
-Estado: vigente; candidata principal para el inicio.
+Estado en v4: candidata principal para el inicio.
 
 Función y estado fuente: marco 1.1, estado sin configurar. Presenta la ausencia de ciclo activo y ofrece crear una intención.
 
@@ -218,7 +220,7 @@ Reconstrucción necesaria: confirmar cierre, desvinculación, salida, nueva conf
 | 09-fallo-vinculo-oscuro-v1.png | Histórica; superada | Repetición, guiones ambiguos e indicador técnico confuso | Recuperación sin evaluación |
 | 10-ciclo-cerrado-oscuro-v1.png | Rechazada | Check de éxito e iconografía ambigua; cierre podía parecer logro | Cierre sin afirmar cumplimiento |
 
-No se borran las v1. Su función es documentar decisiones descartadas y evitar que se repitan sus problemas.
+Las v1 no se borraron. Se conservan en el [archivo de pantallas Android superadas](../../../../../99_archivo/antiguo/sistema-visual/pantallas-android-superadas/flujo-v1/) para documentar decisiones descartadas y evitar que se repitan sus problemas.
 
 ## Auditoría común antes de implementar
 
@@ -240,6 +242,13 @@ No se borran las v1. Su función es documentar decisiones descartadas y evitar q
 Las imágenes rasterizadas pueden contener errores tipográficos, textura, proporciones o alineaciones que no deben pasar directamente al prototipo. La auditoría visual no certifica accesibilidad, rendimiento, permisos, conexión, sincronización ni percepción del testigo. Esos aspectos requieren implementación y pruebas con personas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Archivo de versiones v1
+
+- **Cambio:** se trasladaron las v1 de 02–10 a la carpeta histórica, se mantuvieron aquí sus motivos de descarte y aprendizajes y se acotó el resto de la colección a su etapa v4.
+- **Versión anterior:** las versiones superadas estaban almacenadas junto a las v2 que gobiernan la reconstrucción.
+- **Motivo:** reducir errores de selección sin perder la comparación visual que fundamenta cada reemplazo.
+- **Alcance:** las fichas conservan sus estados; ninguna imagen archivada pasa a ser una referencia vigente.
 
 ### 2026-08-29 — Corrección de estados y fichas de imágenes
 

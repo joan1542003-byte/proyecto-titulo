@@ -1,5 +1,7 @@
 # Metodología para validar el sistema visual de Relevo
 
+**Estado:** protocolo formulado durante la etapa v4. Sus preguntas y métodos pueden reutilizarse si se actualizan al diseño que se evalúe; sus tokens y referentes visuales no constituyen una dirección vigente. Véase [Comunicación, nombre y color de Relevo](../../comunicacion-naming-y-paleta-2026-09-07.md).
+
 ## Propósito
 
 Este protocolo define cómo pasar de una regla visual a una decisión respaldada. No busca medir si una persona obedeció una señal ni si redujo su uso del teléfono. Evalúa si comprende la interfaz, reconoce sus opciones, distingue los estados, percibe la señal, asocia el lugar con el primer paso y conserva la posibilidad de decidir.
@@ -258,6 +260,13 @@ Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. 
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Alcance metodológico aclarado
+
+- **Cambio:** se distinguieron los métodos transferibles de las decisiones visuales propias de v4.
+- **Situación anterior:** el protocolo no advertía en su portada que la dirección había sido sustituida.
+- **Motivo:** permitir reutilizar tareas de comprensión, accesibilidad y percepción sin reactivar una paleta histórica.
+- **Alcance:** cualquier aplicación futura debe actualizar estímulos, criterios y registro antes de ejecutar una prueba.
 
 ### 2026-08-29 — Creación del protocolo
 

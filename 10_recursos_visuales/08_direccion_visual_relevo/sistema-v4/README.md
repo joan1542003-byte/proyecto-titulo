@@ -1,16 +1,18 @@
 # Sistema visual v4 de Relevo
 
-## Estado de vigencia
+## Estado documental
 
-La v4 es el contrato operativo actual para desarrollar y auditar el sistema visual de Relevo. Su dirección conceptual es `Transferencia situada`: la relación entre una intención, el primer paso, un lugar y una señal emitida por el testigo físico.
+La v4 documenta el contrato operativo utilizado entre el 29 de agosto y el 7 de septiembre de 2026. Ya no gobierna piezas nuevas: la autoridad actual para comunicación, naming y color es [Comunicación, nombre y color de Relevo](../../comunicacion-naming-y-paleta-2026-09-07.md). Esta carpeta se conserva para reconstruir y auditar pantallas producidas durante la etapa matricial.
+
+Su dirección conceptual fue `Transferencia situada`: la relación entre una intención, el primer paso, un lugar y una señal emitida por el testigo físico.
 
 La aplicación Android organiza y confirma. El testigo emite la señal situada. La persona conserva la decisión. El sistema no mide cumplimiento, no bloquea el teléfono, no moraliza la actividad y no convierte la señal en una orden.
 
-Las nuevas pantallas digitales se desarrollan únicamente en modo oscuro. Las exploraciones claras de v3 y las dos pantallas claras de Android v4 son antecedentes históricos. No son una segunda dirección activa.
+Las pantallas de esta versión se desarrollaron únicamente en modo oscuro. Las exploraciones claras de v3 y las dos pantallas claras de Android v4 son antecedentes históricos. No son una segunda dirección activa.
 
-## Reglas no negociables
+## Reglas de esta versión
 
-- El canvas vigente es `#111314`; el texto funcional usa tipografía continua.
+- El canvas de esta versión es `#111314`; el texto funcional usa tipografía continua.
 - El rojo `#D71921` se reserva al nodo de señal situada.
 - IBM Plex Sans se utiliza para lectura, instrucciones y acciones; IBM Plex Mono, para datos y etiquetas técnicas.
 - Los puntos solo funcionan como marca, expresión breve o gráfico informativo acompañado de texto equivalente.
@@ -42,13 +44,13 @@ La anatomía de la interfaz se deriva de `05_propuesta_phygital/wireframes-media
 
 Cuando una imagen contradice un documento vigente, prevalece el documento hasta registrar una nueva decisión. Una regla pasa de hipótesis a vigente solo después de una prueba pertinente, un registro reproducible y una consecuencia explícita.
 
-## Estado de madurez
+## Estado de madurez al cierre de esta etapa
 
-| Área | Estado actual | Para llamarla definitiva falta |
+| Área | Estado registrado en v4 | Para llamarla definitiva falta |
 |---|---|---|
-| Dirección conceptual | Vigente | Revisar comprensión en las tres superficies |
-| Tema oscuro digital | Vigente como contrato de trabajo | Auditoría en prototipo funcional y texto ampliado |
-| Color y uso del rojo | Rol vigente; percepción por validar | Pruebas de contraste, escala de grises y contexto |
+| Dirección conceptual | Adoptada en v4 | Revisar comprensión en las tres superficies |
+| Tema oscuro digital | Contrato de trabajo de v4 | Auditoría en prototipo funcional y texto ampliado |
+| Color y uso del rojo | Rol adoptado en v4; después sustituido | Pruebas de contraste, escala de grises y contexto |
 | Tipografía y escala | Candidata con valores iniciales | Lectura real, Android, impresión y accesibilidad |
 | Componentes Android | Estructurados | Implementación, foco, TalkBack, estados y recuperación |
 | Editorial | Sistema definido como guía | Maquetación con contenido real, APA 7 e impresión |
@@ -75,6 +77,13 @@ Cuando una imagen contradice un documento vigente, prevalece el documento hasta 
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-08 — Reclasificación como referencia anterior
+
+- **Cambio:** se retiró la condición de contrato vigente, se enlazó la dirección de comunicación adoptada el 7 de septiembre y se acotó la tabla de madurez al cierre de v4.
+- **Versión anterior:** la v4 se presentaba como autoridad actual para todas las piezas digitales y editoriales y su tabla todavía llamaba vigentes a sus decisiones.
+- **Motivo:** resolver la contradicción con el índice general y con la decisión D-046 sobre naming, color y comunicación.
+- **Alcance:** las reglas siguen describiendo las piezas de esta etapa y permiten auditarlas; no gobiernan diseños nuevos.
+
 ### 2026-08-29 — Apertura de v4
 
 - **Cambio:** se abrió una versión centrada en piezas individuales y auditables.
@@ -87,7 +96,7 @@ Cuando una imagen contradice un documento vigente, prevalece el documento hasta 
 - **Cambio:** el archivo se actualizó como índice principal de v4 y enlaza el manual central, cuatro anexos operativos, la documentación Android y la investigación interna.
 - **Situación anterior:** el README solo describía la apertura de v4 y remitía a Android, sin establecer la arquitectura documental, el orden de autoridad ni la madurez de cada área.
 - **Motivo:** convertir el sistema visual en una fuente navegable y gobernable, distinguir reglas vigentes de hipótesis y evitar que las imágenes actúen como especificación aislada.
-- **Decisión de continuidad:** v3 y las exploraciones claras permanecen como historial; la v4 gobierna nuevas piezas digitales oscuras.
+- **Decisión de continuidad registrada entonces:** v3 y las exploraciones claras quedaron como historial; v4 gobernó las nuevas piezas digitales oscuras hasta su sustitución el 7 de septiembre.
 - **Asuntos abiertos:** validar comprensión, accesibilidad, color contextual, tipografía, movimiento, funcionamiento Android y todas las variables físicas del testigo.
 
 ### 2026-09-01 — Control editorial A3

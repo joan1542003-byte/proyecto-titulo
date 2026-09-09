@@ -381,11 +381,18 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 - [GOV.UK — Identify user needs](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/plan-manage-content/identify-user-needs/): formular la necesidad desde la persona, la tarea y su razón, no desde una solución predeterminada.
 - [Office for National Statistics — Plain language](https://service-manual.ons.gov.uk/content/writing-for-users/plain-language): priorizar necesidades, lenguaje directo y una carga de información proporcionada.
 - [Nielsen Norman Group — Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/): presentar primero lo indispensable y revelar el detalle según la necesidad.
-- [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md), [propuesta phygital](../05_propuesta_phygital/README.md), [protocolo de asociación y comparación](../07_validacion/protocolo-01-asociacion-y-comparacion.md) y [manual visual v4](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/manual-sistema-visual-relevo.md): fuentes internas que gobiernan la definición, los límites y el estado real de Relevo.
+- [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md), [propuesta phygital](../05_propuesta_phygital/README.md), [protocolo de asociación y comparación](../07_validacion/protocolo-01-asociacion-y-comparacion.md) y [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md): fuentes internas que gobiernan la definición, los límites y el estado real de Relevo.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Fuente visual sincronizada
+
+- **Cambio:** las fuentes rectoras de comunicación remiten a la dirección del 7 de septiembre.
+- **Versión anterior:** el listado todavía presentaba el manual v4 como autoridad visual vigente.
+- **Motivo:** evitar que la explicación pública reactive una paleta y gramática sustituidas.
+- **Alcance:** el orden narrativo y los mensajes centrales de esta guía no cambiaron.
 
 ### 2026-09-07 — Señal física y dirección de comunicación
 

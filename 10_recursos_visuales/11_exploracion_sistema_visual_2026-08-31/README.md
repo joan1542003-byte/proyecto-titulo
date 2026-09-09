@@ -1,12 +1,14 @@
 # Exploración ampliada del sistema visual de Relevo
 
-Esta carpeta reúne una biblioteca de sesenta piezas vigentes para estudiar cómo el lenguaje de Relevo puede trasladarse entre interfaz Android, memoria, carteles, recursos transparentes, fondos y situaciones físicas. Cada pieza fue generada de manera independiente. Las hojas de contacto sirven para revisar familias completas y no se contabilizan dentro de las sesenta piezas.
+**Estado:** exploración fechada; no gobierna piezas nuevas.
+
+Esta carpeta reúne una biblioteca de sesenta piezas para estudiar cómo el lenguaje de Relevo podía trasladarse entre interfaz Android, memoria, carteles, recursos transparentes, fondos y situaciones físicas. Cada pieza fue generada de manera independiente. Las hojas de contacto sirven para revisar familias completas y no se contabilizan dentro de las sesenta piezas. La vigencia actual se consulta en el [índice del sistema visual](../README.md) y en la [dirección de comunicación y color](../comunicacion-naming-y-paleta-2026-09-07.md).
 
 ## Principio común
 
 El sistema representa una intención que parte desde un campo de origen, atraviesa un vínculo y vuelve a hacerse perceptible mediante una señal situada. La matriz de puntos cambia de densidad y organización; no representa porcentaje, rendimiento ni avance obligatorio. El rojo se reserva para la señal situada o para una decisión de diseño que exige atención puntual.
 
-El modo oscuro es la dirección vigente para la aplicación. El modo claro se desarrolla principalmente para la memoria, carteles, presentaciones y comparaciones de contraste. Esta distinción evita convertir ambos modos en simples inversiones cromáticas.
+La colección ensayó el modo oscuro para la aplicación y el modo claro para memoria, carteles, presentaciones y comparaciones de contraste. Esta distinción evitó convertir ambos modos en simples inversiones cromáticas, pero sus colores pertenecen a la etapa del 31 de agosto.
 
 ## Cobertura alcanzada
 
@@ -41,6 +43,13 @@ Una pieza puede avanzar si mantiene una jerarquía legible, distingue informaci�
 - [`plan-proximas-generaciones.md`](plan-proximas-generaciones.md): tareas posteriores a esta exploración.
 
 ## Registro de cambios
+
+### 2026-09-08 — Colección identificada como exploración fechada
+
+- **Cambio:** se retiró la condición de vigencia general y se enlazaron las fuentes que gobiernan piezas nuevas.
+- **Versión anterior:** las sesenta piezas y su paleta se presentaban como vigentes sin distinguir el cambio de dirección del 7 de septiembre.
+- **Motivo:** conservar amplitud exploratoria sin mantener dos sistemas visuales activos.
+- **Alcance:** no se eliminaron imágenes, hojas de contacto, descartes ni documentos de método.
 
 ### 2026-09-01 — Ampliación a sesenta piezas
 

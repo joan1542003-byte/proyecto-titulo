@@ -6,6 +6,7 @@ Conservar materiales superados o exploratorios sin tratarlos como formulación v
 
 ## Navegación
 
+- [Material antiguo y reemplazado](antiguo/README.md)
 - [Fuentes locales migradas](fuentes-locales/README.md)
 - [Protocolo de migración](fuentes-locales/protocolo-de-migracion.md)
 - [Índice maestro](fuentes-locales/inventarios/indice-maestro.md)
@@ -36,6 +37,13 @@ El archivo no es una papelera. Su función es preservar la evolución del proyec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Índice de material antiguo
+
+- **Cambio:** se añadió una entrada central para versiones, prototipos y exploraciones reemplazadas.
+- **Versión anterior:** el archivo reunía principalmente fuentes locales migradas y no ofrecía una ruta única para antecedentes procedentes de las áreas activas.
+- **Motivo:** separar con claridad lo vigente de lo histórico sin eliminar el proceso.
+- **Alcance:** cada conjunto conserva su contenido y declara la fuente que lo reemplaza.
 
 ### 2026-08-23 — Apertura de la migración local
 

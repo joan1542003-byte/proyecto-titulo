@@ -4,11 +4,11 @@
 
 **Fuente textual:** `08_memoria/memoria-vigente-v4.md` en la versión disponible al 7 de septiembre.
 
-**Formato:** A3 horizontal, 86 páginas y un archivo PNG por página.
+**Formato:** A3 horizontal, 87 páginas y un archivo PNG por página.
 
 ## Propósito
 
-Esta carpeta contiene el sistema utilizado para trasladar la memoria vigente a páginas editoriales completas. La composición mantiene una misma grilla, tipografía IBM Plex, blanco cálido, grafito y rojo restringido. El texto se obtiene directamente del Markdown para impedir que una imagen generativa cambie citas, cifras o argumentos.
+Esta carpeta contiene el sistema utilizado para trasladar la memoria vigente a páginas editoriales completas. La composición mantiene una misma grilla, tipografía IBM Plex, blanco cálido, grafito y el rojo restringido propio de la maqueta del 1 de septiembre. El texto se obtiene directamente del Markdown para impedir que una imagen generativa cambie citas, cifras o argumentos. Antes del arte final, la capa cromática debe actualizarse según la [dirección del 7 de septiembre](../comunicacion-naming-y-paleta-2026-09-07.md); la estructura y la paginación pueden revisarse sin confundir esta maqueta con la autoridad visual vigente.
 
 ## Estructura
 
@@ -28,11 +28,25 @@ Esta carpeta contiene el sistema utilizado para trasladar la memoria vigente a p
 
 ## Revisión pendiente
 
-La fuente HTML, el manifiesto y las 86 páginas PNG corresponden entre sí. La paginación todavía debe revisarse a tamaño real para comprobar tablas extensas, listas, referencias, viudas, huérfanas, equilibrio de columnas y legibilidad de impresión. Los diagramas y figuras definitivos deben incorporarse después de esa revisión. Cada cambio posterior de la memoria obliga a reconstruir y volver a exportar esta carpeta.
+La fuente HTML, el manifiesto y las 87 páginas PNG corresponden entre sí. La paginación todavía debe revisarse a tamaño real para comprobar tablas extensas, listas, referencias, viudas, huérfanas, equilibrio de columnas y legibilidad de impresión. Los diagramas y figuras definitivos deben incorporarse después de esa revisión. Cada cambio posterior de la memoria obliga a reconstruir y volver a exportar esta carpeta.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Exportación sincronizada con la memoria vigente
+
+- **Cambio:** se reconstruyeron el HTML, el manifiesto y 87 páginas PNG desde `memoria-vigente-v4.md`.
+- **Versión anterior:** la carpeta contenía 86 páginas y dos enlaces generados desde una formulación técnica anterior.
+- **Motivo:** mantener correspondencia entre la fuente académica actual y la maqueta reproducible.
+- **Alcance:** la actualización refleja el texto vigente; no constituye una revisión visual a tamaño real ni una aprobación editorial final.
+
+### 2026-09-08 — Alcance cromático aclarado
+
+- **Cambio:** se identificó el rojo como parte de la maqueta fechada y se enlazó la paleta que deberá aplicarse antes del arte final.
+- **Versión anterior:** el propósito podía leerse como si toda la apariencia del 1 de septiembre siguiera gobernando la publicación.
+- **Motivo:** distinguir una fuente textual sincronizada de una capa visual pendiente de actualización.
+- **Alcance:** no se alteraron la grilla, la fuente Markdown ni las 87 exportaciones.
 
 ### 2026-09-01 — Primera maqueta integral
 

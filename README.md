@@ -58,7 +58,7 @@ Existe además una [encuesta complementaria con 70 participantes](03_usuarios/en
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico; la migración general de la [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) permanece en pausa. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md). La [v3](08_memoria/memoria-vigente-v3.md), las auditorías anteriores y la [matriz histórica](01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) conservan la trazabilidad del proceso.
+La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico. La migración selectiva reactivada el 8 de septiembre separó las fuentes activas del [material antiguo y reemplazado](99_archivo/antiguo/README.md), sin eliminar la trazabilidad. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md).
 
 El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. Entre el 6 y el 12 de septiembre corresponde congelar el wireframe v1; el [alcance del primer prototipo y su backlog](05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) evita confundir los 35 estados documentados con lo que debe construirse primero. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla los hitos, la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) controla la primera comprobación física y la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre. La memoria se entrega oficialmente el 2 de diciembre y el examen se realiza entre el 14 y el 18; el periodo intermedio se reserva para estudiar, ensayar y resolver correcciones menores.
 
@@ -100,16 +100,23 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 | `05_propuesta_phygital` | Propósito, arquitectura, interacción, forma y propuesta de valor. |
 | `06_desarrollo_y_factibilidad` | Tecnología, producción, costos, riesgos, ventajas y límites. |
 | `07_validacion` | Hipótesis, protocolos, resultados y criterios de decisión. |
-| `08_memoria` | Arquitectura narrativa, capítulos, versiones y control APA 7. |
+| `08_memoria` | Memoria activa, anexos, matrices y controles editoriales vigentes. |
 | `09_decisiones` | Registro cronológico de decisiones y cambios de dirección. |
 | `10_recursos_visuales` | Escenas, texturas y módulos gráficos sintéticos para explorar la comunicación visual de Relevo. |
-| `99_archivo` | Material histórico y fuentes locales migradas, con estado y procedencia explícitos. |
+| `99_archivo` | Fuentes locales migradas y material antiguo, reemplazado o histórico, con estado y procedencia explícitos. |
 
 ## Gestión de tareas
 
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-08 — Separación de fuentes activas y material antiguo
+
+- **Cambio:** se enlazó el archivo central de versiones, prototipos y exploraciones reemplazadas; también se precisó el contenido vigente de `08_memoria`.
+- **Versión anterior:** los antecedentes convivían dentro de cuatro áreas activas y la migración general todavía figuraba en pausa.
+- **Motivo:** ofrecer una sola ruta de lectura por área sin borrar el proceso que fundamentó decisiones posteriores.
+- **Alcance:** la reorganización no modifica la formulación, la evidencia ni los resultados pendientes del proyecto.
 
 ### 2026-09-08 — Programa micro:bit y límite luminoso
 
