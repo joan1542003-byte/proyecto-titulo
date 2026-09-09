@@ -27,7 +27,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Chrome for Developers | s. f. | Sí | Sí | Conforme |
 | de Segovia Vicente et al. | 2024 | Sí | Sí | Conforme |
 | Focusaur | s. f. | Sí | Sí | Conforme |
-| Gibbons | 2017 | Sí, 11.11 | Sí | Incorporación verificada el 9 de septiembre |
+| Gibbons | 2017 | Sí, [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) | Sí | Incorporación verificada el 9 de septiembre |
 | Gilbert et al. | 2023 | Sí | Sí | Conforme |
 | Goldsmith | 2021 | Sí | Sí | Conforme |
 | Gollwitzer y Sheeran | 2006 | Sí | Sí | Conforme |
@@ -83,6 +83,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Jerarquía y lectura de la memoria
+
+- **Cambio:** se actualizó la referencia a la memoria después de agrupar apartados, mejorar transiciones y sustituir la numeración secundaria por títulos temáticos.
+- **Versión anterior:** conservaba ubicaciones o controles correspondientes a los subapartados numerados.
+- **Motivo:** mantener la trazabilidad sin obligar al lector a reconstruir la estructura anterior.
+- **Alcance:** revisión editorial; fuentes, protocolo y resultados pendientes se mantienen.
 
 ### 2026-09-09 — Coherencia de la memoria y alcance de cierre
 

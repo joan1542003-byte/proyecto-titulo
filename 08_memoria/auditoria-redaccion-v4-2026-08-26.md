@@ -27,18 +27,39 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-Conteo del 9 de septiembre mediante separación por espacios en blanco del Markdown sin renderizar (`str.split` de Python). Los segmentos incluyen sus encabezados: archivo completo 21.551; inicio hasta antes de `# 14. Referencias`, 18.000; desde `# 1. Motivación personal` hasta antes de referencias, 17.337; referencias hasta antes de `## Registro de cambios`, 1.239; registro hasta el final, 2.312. Los capítulos 1–13 se mantienen dentro del rango general de 15.000–20.000 palabras. El total operativo incluye bibliografía y trazabilidad. Este método explícito reemplaza el conteo anterior con PowerShell; no se interpreta la diferencia entre métodos como crecimiento exacto del texto. Los apartados preliminares no cambiaron y conservan los conteos aproximados de la tabla. La entrega editorial deberá confirmar qué segmentos computa la institución.
+Conteo actualizado después de la edición de lectura del 9 de septiembre, mediante separación por espacios en blanco del Markdown sin renderizar (`str.split` de Python). Los segmentos incluyen sus encabezados: archivo completo 21.589; inicio hasta antes de `# 14. Referencias`, 17.920; desde `# 1. Motivación personal` hasta antes de referencias, 17.252; referencias hasta antes de `## Registro de cambios`, 1.239; registro hasta el final, 2.430. Los capítulos 1–13 se mantienen dentro del rango general de 15.000–20.000 palabras. El total operativo incluye bibliografía y trazabilidad. La entrega editorial deberá confirmar qué segmentos computa la institución.
 
-| Apartado con límite explícito | Conteo aproximado | Rango requerido | Resultado |
+Para los límites por apartado se cuenta solo su prosa: se excluyen encabezados, palabras clave y el apartado siguiente. El resumen y el abstract mantienen correspondencia de contenido. La tabla usa ese criterio uniforme, que reemplaza los conteos aproximados previos.
+
+| Apartado con límite explícito | Palabras de prosa | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
-| Resumen | 295 | 200–300 | Cumple. |
-| Abstract | 271 | 200–300 | Cumple. |
+| Resumen | 286 | 200–300 | Cumple. |
+| Abstract | 268 | 200–300 | Cumple. |
 | Motivación personal | 178 | 100–300 | Cumple. |
 | Introducción | 623 | 600–1.200 | Cumple. |
-| Planteamiento del problema | 798 | 400–800 | Cumple. |
+| Planteamiento del problema | 779 | 400–800 | Cumple. |
 | Justificación | 358 | 300–600 | Cumple. |
 
 Los capítulos extensos mantienen una proporción semejante a la memoria del primer semestre: el marco teórico se desarrolla por ámbitos, mientras usuarios y estado del arte reciben espacio suficiente para sostener la formulación.
+
+## Jerarquía y continuidad de lectura
+
+La memoria conserva la numeración de los catorce capítulos. Dentro de ellos utiliza 42 subtítulos temáticos, frente a los 78 subapartados numerados anteriores, y elimina los 14 encabezados de tercer nivel. Los títulos agrupan argumentos; los párrafos enlazan evidencia, interpretación e implicación de diseño. No se añadieron textos para alcanzar una extensión por apartado.
+
+| Capítulo | Organización actual |
+| --- | --- |
+| 3 | Tres aristas; la síntesis continúa sin un cuarto subtítulo. |
+| 5 | Experiencia, intervenciones, recordatorios y alcance de los antecedentes. |
+| 6 | Tres ámbitos teóricos y su conclusión, sin subdivisiones numéricas. |
+| 7 | Método completo, hallazgos contrastados, situaciones de usuario y recorridos/contexto. La encuesta pendiente se separa del método de entrevistas. |
+| 8 | Comparación por mecanismos, con fuentes, tabla y límites conservados. |
+| 9 | Ocho criterios desarrollados en tres argumentos; C1–C8 permanecen identificables en la matriz externa. |
+| 10 | Problema y pregunta, definición y alcance, hipótesis y objetivos, actores. |
+| 11 | Componentes, recorrido, funcionamiento, acceso y autonomía, soporte y comunicación. |
+| 12 | Arquitectura, fabricación/costos, seguridad y gestión/límites. |
+| 13 | Asociación/comparación, desarrollo progresivo, registros/decisiones y conclusiones. Reúne el proceso que antes se repetía en el capítulo 11. |
+
+Se revisaron conectores y repeticiones después de agrupar los textos. Se explican testigo, ciclo, armado, evaluación formativa y componentes de señal; se retiran los códigos internos de los antiguos montajes del cuerpo académico. El cambio es editorial: no introduce datos ni altera la pregunta, la hipótesis o los umbrales de prueba.
 
 ## Controles narrativos
 
@@ -58,11 +79,17 @@ Los capítulos extensos mantienen una proporción semejante a la memoria del pri
 
 ## Control de APA 7
 
-La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) registra 52 entradas. Se preserva la auditoría previa de 51 referencias y se verifica la nueva cita de Gibbons (2017) en 11.11; esta actualización no repite la evaluación del contenido de todas las fuentes. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de obras con la misma autoría y sin fecha. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
+La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) registra 52 entradas. Se preserva la auditoría previa de 51 referencias y se verifica la nueva cita de Gibbons (2017) en [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte); esta actualización no repite la evaluación del contenido de todas las fuentes. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de obras con la misma autoría y sin fecha. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
 
 ## Control de trazabilidad de criterios
 
 La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) relaciona cada criterio del capítulo 9 con literatura, entrevistas o estado del arte. El control confirma que los ocho criterios poseen un fundamento identificable y conservan un límite explícito. Ninguno se presenta como una característica validada de Relevo.
+
+## Verificación de la edición de lectura
+
+Se comprobó que los catorce títulos de capítulo mantienen su orden, que no quedan subtítulos numéricos ni un tercer nivel en el cuerpo, y que las 52 entradas bibliográficas permanecen idénticas. Se conservaron las 84 citas entre paréntesis que contienen fecha, la pregunta de investigación, la hipótesis y los parámetros del protocolo. Los seis apartados con límites particulares cumplen sus rangos. Los registros históricos de los documentos modificados permanecen íntegros.
+
+La comprobación de navegación revisa rutas locales y los destinos de los nuevos enlaces a títulos de la memoria. La revisión de escritura comprueba conexiones y repeticiones; no constituye una prueba de comprensión con lectores externos.
 
 ## Decisión editorial
 
@@ -71,6 +98,13 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Jerarquía y lectura de la memoria
+
+- **Cambio:** se actualizó la referencia a la memoria después de agrupar apartados, mejorar transiciones y sustituir la numeración secundaria por títulos temáticos.
+- **Versión anterior:** conservaba ubicaciones o controles correspondientes a los subapartados numerados.
+- **Motivo:** mantener la trazabilidad sin obligar al lector a reconstruir la estructura anterior.
+- **Alcance:** revisión editorial; fuentes, protocolo y resultados pendientes se mantienen.
 
 ### 2026-09-09 — Coherencia de la memoria
 

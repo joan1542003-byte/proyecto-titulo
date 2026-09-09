@@ -141,7 +141,27 @@
 - **Condición de revisión:** evidencia nueva, cambio de protocolo o recorrido que requiera sincronizar memoria y resumen.
 - **Documento asociado:** [Auditoría de coherencia](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md).
 
+## D-054 — Jerarquía editorial para una lectura continua
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente.
+- **Pregunta:** ¿cómo mantener la profundidad de la memoria sin fragmentar cada idea en un subapartado breve?
+- **Decisión:** conservar los catorce capítulos numerados y organizar su interior mediante títulos temáticos sin numeración secundaria. Agrupar argumentos relacionados, conectar párrafos y explicar los términos especializados al introducirlos.
+- **Fundamento:** solicitud expresa del autor; lectura completa y control de jerarquía, continuidad y extensión.
+- **Alternativas descartadas:** reemplazar números por rótulos igualmente fragmentados; añadir texto para alargar apartados; eliminar evidencia para abreviar la memoria.
+- **Consecuencia:** la formulación se reúne en cuatro bloques; el método de entrevistas conserva continuidad; el proceso de desarrollo se concentra en el capítulo 13. Las matrices enlazan los títulos actuales y conservan ocho criterios identificables.
+- **Condición de revisión:** una nueva exigencia institucional o un problema de lectura que justifique cambiar la jerarquía.
+- **Documento asociado:** [Control editorial de la memoria](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Jerarquía editorial
+
+- **Cambio:** se registró D-054 sobre agrupación de argumentos y títulos temáticos.
+- **Versión anterior:** no se había fijado cómo evitar la proliferación de subapartados breves.
+- **Motivo:** conservar la preferencia del autor y la continuidad de lectura en futuras actualizaciones.
+- **Alcance:** criterio editorial; no altera decisiones de producto ni evidencia.
+
 
 ### 2026-08-23 — D-012 a D-014
 

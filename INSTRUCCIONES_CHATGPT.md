@@ -94,6 +94,7 @@ Al cambiar una respuesta, sincroniza su fuente responsable, índice, resumen afe
 - Evita exceso de comillas, metalenguaje, autorreferencias y comentarios sobre el proceso que no pertenezcan al documento.
 - No uses códigos internos de prototipado dentro del cuerpo académico. Nombra cada etapa por la pregunta que busca resolver.
 - Evita repetir una misma idea con palabras distintas.
+- Reserva la numeración para los catorce capítulos. Usa subtítulos temáticos que agrupen argumentos completos; no abras un apartado para cada párrafo ni recuperes la numeración secundaria eliminada el 9 de septiembre.
 - No uses expresiones como “según el taller” o “en el encargo” dentro del cuerpo definitivo de la memoria. Esa información puede conservarse en el archivo histórico o en la trazabilidad.
 - No mezcles observaciones docentes con evidencia empírica: el feedback orienta tareas y decisiones, pero no demuestra hechos.
 - Mantén un tono académico natural; no ocultes incertidumbre ni simules conclusiones.
@@ -144,6 +145,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Jerarquía y lectura de la memoria
+
+- **Cambio:** se actualizó la referencia a la memoria después de agrupar apartados, mejorar transiciones y sustituir la numeración secundaria por títulos temáticos.
+- **Versión anterior:** conservaba ubicaciones o controles correspondientes a los subapartados numerados.
+- **Motivo:** mantener la trazabilidad sin obligar al lector a reconstruir la estructura anterior.
+- **Alcance:** revisión editorial; fuentes, protocolo y resultados pendientes se mantienen.
 
 ### 2026-09-09 — Coherencia de la memoria
 

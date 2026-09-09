@@ -1,11 +1,12 @@
 # Matriz histórica de encargos y memoria
 
-**Fecha de revisión:** 26 de agosto de 2026
+**Fecha de revisión histórica:** 26 de agosto de 2026
+**Correspondencia editorial actualizada:** 9 de septiembre de 2026
 **Alcance:** Encargos 11, 12, 15 —solo el bloque de Johan Yantén— y 16 como fuentes principales. Los Encargos 02–10 se usan únicamente para corroborar la evolución de la estructura y de la formulación. El Encargo 17 se conserva como desarrollo estructural completado, no como resultado de validación.
 
 ## Resumen vigente de Relevo
 
-Relevo es un proyecto de titulación de Diseño que explora un sistema **phygital** compuesto por una aplicación Android y un objeto situado junto al primer paso de una actividad elegida. El sistema busca recuperar esa intención cuando una sesión de ocio digital continúa y la alternativa deja de orientar el siguiente paso. La formulación, los flujos y el plan de evaluación están documentados; todavía no existen resultados de pruebas de Relevo. La activación, el canal y la forma final siguen abiertos a evidencia.
+Relevo es un proyecto de titulación de Diseño que explora un sistema **phygital** compuesto por una aplicación Android y un objeto situado junto al primer paso de una actividad elegida. El sistema busca recuperar esa intención cuando una sesión de ocio digital continúa y la alternativa deja de orientar el siguiente paso. La formulación, los flujos y el plan de evaluación están documentados; todavía no existen resultados de pruebas de Relevo. La condición de activación y la forma final siguen abiertas a evidencia; luz y sonido están seleccionados para prototipar, con parámetros sin validar.
 
 ## Dictamen de revisión
 
@@ -34,20 +35,20 @@ La carpeta `Encargos` contiene 18 archivos DOCX y ningún PDF. Las referencias s
 |---|---|---|---|---|
 | Portada, bajada, autoría e índice numerado | E12, §1; memoria histórica E12 archivada | Vigente como estructura mínima | Preliminares | Cumple; verificar los datos finales antes de una futura diagramación. |
 | Motivación personal diferenciada del problema | E11, §1; E12, §2; memoria histórica E12, §1 | Vigente | Cap. 1 | Cumple; se limita a la experiencia personal presente. |
-| Tres ámbitos teóricos y síntesis de intersección | E02–E04, E10; E12, §3; memoria histórica E12, §5 | Vigente | Cap. 6, §§6.1–6.4 | Cumple; conservar las definiciones al ingresar cada concepto. |
+| Tres ámbitos teóricos y síntesis de intersección | E02–E04, E10; E12, §3; memoria histórica E12, §5 | Vigente | Cap. 6, [Experiencia subjetiva del ocio digital](../08_memoria/memoria-vigente-v4.md#experiencia-subjetiva-del-ocio-digital) y [Arquitecturas de atención y bienestar digital](../08_memoria/memoria-vigente-v4.md#arquitecturas-de-atención-y-bienestar-digital) y [Mediación material de información personal](../08_memoria/memoria-vigente-v4.md#mediación-material-de-información-personal) y [Conclusiones del marco teórico](../08_memoria/memoria-vigente-v4.md#conclusiones-del-marco-teórico) | Cumple; conservar las definiciones al ingresar cada concepto. |
 | Planteamiento del problema, aristas y justificación | E04–E05; E12, §4 | Vigente | Caps. 3 y 4 | Cumple; las tres aristas son visibles y respetan la extensión solicitada. |
 | Estado del arte, referentes y benchmark crítico | E02–E05; E10; E12, §3 y §6 | Vigente | Caps. 5 y 8 | Cumple; se comparan mecanismos, evidencia, fortalezas y límites. |
-| POV, árbol de problemas y formulación centrada en usuario | E05–E06; E07 | Superado como formato literal, vigente como función | §§10.1–10.4 | Cumple mediante problema de diseño, punto de vista, pregunta y oportunidad. |
-| Hipótesis propositiva y objetivos alineados | E06–E08; E10; E12, §5 | Vigente | §§10.5–10.7 | Cumple; se mantiene una hipótesis y se separa de los resultados futuros. |
+| POV, árbol de problemas y formulación centrada en usuario | E05–E06; E07 | Superado como formato literal, vigente como función | [Problema de diseño y pregunta de investigación](../08_memoria/memoria-vigente-v4.md#problema-de-diseño-y-pregunta-de-investigación) y [Definición y alcance de Relevo](../08_memoria/memoria-vigente-v4.md#definición-y-alcance-de-relevo) | Cumple mediante problema de diseño, punto de vista, pregunta y oportunidad. |
+| Hipótesis propositiva y objetivos alineados | E06–E08; E10; E12, §5 | Vigente | [Hipótesis y objetivos](../08_memoria/memoria-vigente-v4.md#hipótesis-y-objetivos) | Cumple; se mantiene una hipótesis y se separa de los resultados futuros. |
 | Usuario y contexto de aplicación | E10; E12, §5; E15, bloque Johan | Vigente y prioritario | Cap. 7 | Cumple mediante usuario principal y límite situacionales; el hogar sigue como hipótesis. |
-| Mapa de actores | E04–E05; E12, §5; E16 | Vigente como contenido, no como lámina | §10.10 | Cumple y vincula responsabilidades con la formulación. |
-| Definición del proyecto: qué, por qué, cómo, dónde, cuándo | E12, §§5–6; E15 | Vigente | §§10.8–10.9 y cap. 11 | Cumple sin adelantar la solución en la apertura. |
+| Mapa de actores | E04–E05; E12, §5; E16 | Vigente como contenido, no como lámina | [Actores y responsabilidades](../08_memoria/memoria-vigente-v4.md#actores-y-responsabilidades) | Cumple y vincula responsabilidades con la formulación. |
+| Definición del proyecto: qué, por qué, cómo, dónde, cuándo | E12, §§5–6; E15 | Vigente | [Definición y alcance de Relevo](../08_memoria/memoria-vigente-v4.md#definición-y-alcance-de-relevo) y cap. 11 | Cumple sin adelantar la solución en la apertura. |
 | Metodología, etapas, métodos y resultados esperados | E04–E06; E10; E12, §5 | Vigente | Cap. 13 | Cumple con etapas descriptivas y criterios de decisión. |
-| Teoría de cambio: cadena, mecanismo, contrato, supuestos e indicadores | E11, componentes 1–7 | Vigente como herramienta de control; no es un título obligatorio | §§10.4–10.9 y 11.1–11.6 | Sus relaciones están incorporadas sin crear un capítulo adicional. |
-| Propuesta phygital visible y no solo nombrada | E07; E12, §6; E15 | Vigente; phygital es condición del proyecto | §10.8 y cap. 11 | Cumple mediante aplicación, objeto situado, lugar y señal ambiental. |
-| Desarrollo, alternativas, decisiones y descartes | E08; E12, §6; E15 | Vigente | Cap. 11 | Cumple; forma y canal permanecen abiertos a prueba. |
-| Viaje, flujo funcional y flujo técnico | E16, §§3–5; E15 | Vigente como resultado proyectual | §7.7 y §§11.5–11.8 | Cumple mediante recorridos, secuencia de uso, flujo del sistema y flujo de diseño. |
-| Producción, costos, mantenimiento, ética y gestión | E12, §6; E15; criterio institucional de Proyecto de Título | Vigente y ampliado para Proyecto de Título | Cap. 12 | Mantener costos como estimación no cotizada y distinguir requisito, alternativa, meta y decisión validada. |
+| Teoría de cambio: cadena, mecanismo, contrato, supuestos e indicadores | E11, componentes 1–7 | Vigente como herramienta de control; no es un título obligatorio | [Definición y alcance de Relevo](../08_memoria/memoria-vigente-v4.md#definición-y-alcance-de-relevo) y [Hipótesis y objetivos](../08_memoria/memoria-vigente-v4.md#hipótesis-y-objetivos) y [Aplicación, testigo y relación con el lugar](../08_memoria/memoria-vigente-v4.md#aplicación-testigo-y-relación-con-el-lugar) y [Preparación, señal y cierre del ciclo](../08_memoria/memoria-vigente-v4.md#preparación-señal-y-cierre-del-ciclo) y [Funcionamiento y recuperación de fallos](../08_memoria/memoria-vigente-v4.md#funcionamiento-y-recuperación-de-fallos) | Sus relaciones están incorporadas sin crear un capítulo adicional. |
+| Propuesta phygital visible y no solo nombrada | E07; E12, §6; E15 | Vigente; phygital es condición del proyecto | [Definición y alcance de Relevo](../08_memoria/memoria-vigente-v4.md#definición-y-alcance-de-relevo) y cap. 11 | Cumple mediante aplicación, objeto situado, lugar y señal ambiental. |
+| Desarrollo, alternativas, decisiones y descartes | E08; E12, §6; E15 | Vigente | Cap. 11 | Cumple; forma y parámetros de luz y sonido permanecen abiertos a prueba. |
+| Viaje, flujo funcional y flujo técnico | E16, §§3–5; E15 | Vigente como resultado proyectual | [Recorridos, contexto y necesidades de diseño](../08_memoria/memoria-vigente-v4.md#recorridos-contexto-y-necesidades-de-diseño) y [Preparación, señal y cierre del ciclo](../08_memoria/memoria-vigente-v4.md#preparación-señal-y-cierre-del-ciclo) y [Funcionamiento y recuperación de fallos](../08_memoria/memoria-vigente-v4.md#funcionamiento-y-recuperación-de-fallos) y [13. Plan de desarrollo y validación](../08_memoria/memoria-vigente-v4.md#13-plan-de-desarrollo-y-validación) | Cumple mediante recorridos, secuencia de uso, flujo del sistema y flujo de diseño. |
+| Producción, costos, mantenimiento, ética y gestión | E12, §6; E15; criterio institucional de Proyecto de Título | Vigente y ampliado para Proyecto de Título | Cap. 12 | Distinguir precios fechados de partidas, costos completos pendientes y producción sin cotizar y distinguir requisito, alternativa, meta y decisión validada. |
 | Validación y cierre | E11, componente 7; E12, §6; E16 | Vigente, pero los resultados aún no existen | Cap. 13 | Incorporar resultados solo después de ejecutar las pruebas; hoy corresponde presentar plan, hipótesis y límites. |
 | Referencias, APA 7, voz y trazabilidad | E04, checklist; E05; E10; E15 | Vigente | Cap. 14 y registro de cambios | Mantener cada afirmación vinculada con su fuente y distinguir páginas comerciales de evidencia académica. |
 
@@ -91,6 +92,13 @@ Este orden solo debe modificarse si una exigencia institucional posterior o un p
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Jerarquía y lectura de la memoria
+
+- **Cambio:** se actualizó la referencia a la memoria después de agrupar apartados, mejorar transiciones y sustituir la numeración secundaria por títulos temáticos.
+- **Versión anterior:** conservaba ubicaciones o controles correspondientes a los subapartados numerados.
+- **Motivo:** mantener la trazabilidad sin obligar al lector a reconstruir la estructura anterior.
+- **Alcance:** revisión editorial; fuentes, protocolo y resultados pendientes se mantienen.
 
 ### 2026-08-26 — Sincronización con la memoria v4
 

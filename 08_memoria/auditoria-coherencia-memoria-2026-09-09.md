@@ -8,16 +8,16 @@ La memoria describe ahora el mismo recorrido y alcance de prueba que sus documen
 
 La única prioridad sustantiva posterior sigue siendo comprobar el banco físico de la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11), requisito para la prueba de asociación de la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). Esta revisión no abre simultáneamente un rediseño de marca, un producto comercial y un servicio operativo.
 
-## Qué se corrigió
+## Relaciones corregidas y ubicación actual
 
-1. El apartado 11.5 adopta el orden del [wireframe congelado](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md): formular, configurar, revisar, situar, probar, armar, esperar, recibir y cerrar. Distingue el recorrido previsto del banco manual.
-2. Los apartados 11.3 y 11.6 separan forma candidata, estados del sistema y requisitos de integración de capacidades ya construidas. El banco no demuestra armado físico, vencimiento ni control de mensajes tardíos.
-3. Los apartados 11.8 y 13.1 sitúan la revisión técnica y de materiales antes de participantes. Accesibilidad y privacidad se revisan durante el proceso.
-4. El apartado 11.11 conecta preparación, uso, fallos, mantenimiento y retiro con los procesos que deben sostenerlos. Explicita responsabilidades aún sin resolver.
-5. El apartado 11.12 integra nombre, descriptor, ejemplos realizables y diferencia entre paleta gráfica y señal física. No atribuye universalidad al color ni eficacia al nombre.
-6. El apartado 13.1 separa los ocho minutos del ensayo, los tres segundos del patrón y la condición futura de activación.
-7. El apartado 13.2 precisa las tres intenciones distintas y el contrabalanceo. El aviso «Relevo · Tu intención está disponible» no explicita intención ni primer paso: un resultado favorable solo respalda la comparación con ese control, no con cualquier recordatorio digital.
-8. El apartado 13.7 separa cuatro componentes de asociación de la comprensión de salidas. Detener una configuración no equivale a descartar toda relación phygital.
+1. El apartado [Preparación, señal y cierre del ciclo](memoria-vigente-v4.md#preparación-señal-y-cierre-del-ciclo) adopta el orden del [wireframe congelado](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md): formular, configurar, revisar, situar, probar, armar, esperar, recibir y cerrar. Distingue el recorrido previsto del banco manual.
+2. Los apartados [Aplicación, testigo y relación con el lugar](memoria-vigente-v4.md#aplicación-testigo-y-relación-con-el-lugar) y [Funcionamiento y recuperación de fallos](memoria-vigente-v4.md#funcionamiento-y-recuperación-de-fallos) separan forma candidata, estados del sistema y requisitos de integración de capacidades ya construidas. El banco no demuestra armado físico, vencimiento ni control de mensajes tardíos.
+3. Los apartados [13. Plan de desarrollo y validación](memoria-vigente-v4.md#13-plan-de-desarrollo-y-validación) y [Asociación y comparación con alternativas](memoria-vigente-v4.md#asociación-y-comparación-con-alternativas) sitúan la revisión técnica y de materiales antes de participantes. Accesibilidad y privacidad se revisan durante el proceso.
+4. El apartado [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) conecta preparación, uso, fallos, mantenimiento y retiro con los procesos que deben sostenerlos. Explicita responsabilidades aún sin resolver.
+5. El apartado [Nombre y comunicación del propósito](memoria-vigente-v4.md#nombre-y-comunicación-del-propósito) integra nombre, descriptor, ejemplos realizables y diferencia entre paleta gráfica y señal física. No atribuye universalidad al color ni eficacia al nombre.
+6. El apartado [Asociación y comparación con alternativas](memoria-vigente-v4.md#asociación-y-comparación-con-alternativas) separa los ocho minutos del ensayo, los tres segundos del patrón y la condición futura de activación.
+7. El apartado [Asociación y comparación con alternativas](memoria-vigente-v4.md#asociación-y-comparación-con-alternativas) precisa las tres intenciones distintas y el contrabalanceo. El aviso «Relevo · Tu intención está disponible» no explicita intención ni primer paso: un resultado favorable solo respalda la comparación con ese control, no con cualquier recordatorio digital.
+8. El apartado [Registro de evidencia y criterios de decisión](memoria-vigente-v4.md#registro-de-evidencia-y-criterios-de-decisión) separa cuatro componentes de asociación de la comprensión de salidas. Detener una configuración no equivale a descartar toda relación phygital.
 
 ## Mapa de cobertura y evidencia necesaria
 
@@ -27,16 +27,16 @@ Los apartados remiten a la [memoria vigente](memoria-vigente-v4.md). “Document
 | --- | --- | --- | --- |
 | Problema y fundamento | 2–6 y 9 | Literatura y problema articulados; no demuestran eficacia de Relevo. | Revisar el argumento si nueva evidencia contradice la necesidad. |
 | Usuarios y contexto | 7 | Ocho entrevistas; tipos situacionales. Hogar propuesto, no observado. | Contrastar los escenarios con participantes; integrar la encuesta solo tras documentar su método y resultados. |
-| Objetivos y valor | 10 y 13.1–13.2 | Recuperar intención y primer paso es hipótesis. | Registrar asociación, comparación y contraejemplos; no sustituirlos por tiempo de pantalla. |
-| Viaje de uso | 11.5–11.7 | Nueve momentos y alternativas diseñados. | Observar comprensión, errores, retornos y salida en una versión identificada. |
-| Servicio y continuidad | 11.11 y 12.6 | Requisitos de soporte identificados; no hay servicio operativo completo. | Antes del piloto, asignar atención de incidentes, recuperación, préstamo, devolución y retiro en un mapa operativo. |
-| Forma, adaptación y lugar | 11.3–11.4 y 13.3 | Forma candidata adaptable entre ciclos; universalidad no demostrada. | Comparar estabilidad, colocación, manipulación, percepción y acceso al control. |
-| Construcción e integración | 11.6 y 12.2–12.4 | Programa compilado; montaje y medidas pendientes. | Superar banco, documentar componentes reales y después integrar condición, permisos, vencimiento y fallos. |
-| Nombre y comunicación | 11.12 | Relevo es nombre académico; descriptor y paleta son decisiones. | Prueba de comprensión; revisión específica de disponibilidad antes de uso comercial. |
-| Accesibilidad y convivencia | 11.9–11.10 y 13.3 | Criterios y alternativas, sin ensayos perceptivos. | Medir percepción y control con diversidad de capacidades y contextos; registrar exclusión e intrusión. |
-| Autonomía y datos | 11.9 y 13.6–13.7 | Diseño sin registro de cumplimiento; investigación separada. | Revisar consentimiento, contacto responsable, salidas y eliminación; verificar implementación cuando exista. |
-| Producción y costos | 12.3–12.5 | Materiales y dimensiones provisionales, costos incompletos. | Cotizaciones comparables, montaje medido, acceso a batería, reparación y costo de fabricación; no presentar desembolso como precio. |
-| Plan y decisiones | 12.6 y 13 | Secuencia y umbrales documentados; ejecución pendiente. | Versionar registros y decidir mantener, iterar o detener con evidencia, conservando límites. |
+| Objetivos y valor | 10 y [Asociación y comparación con alternativas](memoria-vigente-v4.md#asociación-y-comparación-con-alternativas) | Recuperar intención y primer paso es hipótesis. | Registrar asociación, comparación y contraejemplos; no sustituirlos por tiempo de pantalla. |
+| Viaje de uso | [Preparación, señal y cierre del ciclo](memoria-vigente-v4.md#preparación-señal-y-cierre-del-ciclo) y [Funcionamiento y recuperación de fallos](memoria-vigente-v4.md#funcionamiento-y-recuperación-de-fallos) | Nueve momentos y alternativas diseñados. | Observar comprensión, errores, retornos y salida en una versión identificada. |
+| Servicio y continuidad | [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) y [Gestión y límites de factibilidad](memoria-vigente-v4.md#gestión-y-límites-de-factibilidad) | Requisitos de soporte identificados; no hay servicio operativo completo. | Antes del piloto, asignar atención de incidentes, recuperación, préstamo, devolución y retiro en un mapa operativo. |
+| Forma, adaptación y lugar | [Aplicación, testigo y relación con el lugar](memoria-vigente-v4.md#aplicación-testigo-y-relación-con-el-lugar) y [Forma, integración y piloto doméstico](memoria-vigente-v4.md#forma-integración-y-piloto-doméstico) | Forma candidata adaptable entre ciclos; universalidad no demostrada. | Comparar estabilidad, colocación, manipulación, percepción y acceso al control. |
+| Construcción e integración | [Funcionamiento y recuperación de fallos](memoria-vigente-v4.md#funcionamiento-y-recuperación-de-fallos) y [Plataforma y arquitectura técnica](memoria-vigente-v4.md#plataforma-y-arquitectura-técnica) y [Fabricación, mantenimiento y costos](memoria-vigente-v4.md#fabricación-mantenimiento-y-costos) | Programa compilado; montaje y medidas pendientes. | Superar banco, documentar componentes reales y después integrar condición, permisos, vencimiento y fallos. |
+| Nombre y comunicación | [Nombre y comunicación del propósito](memoria-vigente-v4.md#nombre-y-comunicación-del-propósito) | Relevo es nombre académico; descriptor y paleta son decisiones. | Prueba de comprensión; revisión específica de disponibilidad antes de uso comercial. |
+| Accesibilidad y convivencia | [Autonomía, privacidad y accesibilidad](memoria-vigente-v4.md#autonomía-privacidad-y-accesibilidad) y [Forma, integración y piloto doméstico](memoria-vigente-v4.md#forma-integración-y-piloto-doméstico) | Criterios y alternativas, sin ensayos perceptivos. | Medir percepción y control con diversidad de capacidades y contextos; registrar exclusión e intrusión. |
+| Autonomía y datos | [Autonomía, privacidad y accesibilidad](memoria-vigente-v4.md#autonomía-privacidad-y-accesibilidad) y [Registro de evidencia y criterios de decisión](memoria-vigente-v4.md#registro-de-evidencia-y-criterios-de-decisión) | Diseño sin registro de cumplimiento; investigación separada. | Revisar consentimiento, contacto responsable, salidas y eliminación; verificar implementación cuando exista. |
+| Producción y costos | [Fabricación, mantenimiento y costos](memoria-vigente-v4.md#fabricación-mantenimiento-y-costos) y [Seguridad y condiciones de distribución](memoria-vigente-v4.md#seguridad-y-condiciones-de-distribución) | Materiales y dimensiones provisionales, costos incompletos. | Cotizaciones comparables, montaje medido, acceso a batería, reparación y costo de fabricación; no presentar desembolso como precio. |
+| Plan y decisiones | [Gestión y límites de factibilidad](memoria-vigente-v4.md#gestión-y-límites-de-factibilidad) y 13 | Secuencia y umbrales documentados; ejecución pendiente. | Versionar registros y decidir mantener, iterar o detener con evidencia, conservando límites. |
 
 Los pendientes siguen en [cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md) y las Issues existentes. La [matriz de criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md) conserva la relación entre fundamento y criterio; la [matriz del feedback](../01_contexto_y_fuentes/feedback-2026-09-02.md) sigue siendo la entrada para las 23 preguntas del autor.
 
@@ -46,17 +46,24 @@ La referencia obligatoria es la [pauta institucional documentada](../01_contexto
 
 Como apoyo metodológico, el [Double Diamond de Design Council](https://www.designcouncil.org.uk/resources/the-double-diamond/) orienta la relación entre explorar, definir, desarrollar y probar. El [Service Standard de GDS](https://www.gov.uk/service-manual/service-standard) aporta preguntas sobre necesidades, continuidad de canales, accesibilidad, privacidad, medición y fiabilidad. Se adaptan como lentes de revisión: no son la rúbrica chilena ni certifican este producto.
 
-El apartado 11.11 incorpora la definición profesional de [service blueprint de Sarah Gibbons](https://www.nngroup.com/articles/service-blueprints-definition/) (2017) para relacionar experiencia visible y procesos de soporte. Es una fuente metodológica fundacional anterior a 2019, no evidencia empírica sobre Relevo. Se verificó su página el 9 de septiembre; su fecha original se conserva en la referencia APA. La bibliografía suma 52 entradas: las 51 existentes y esta incorporación.
+El apartado [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) incorpora la definición profesional de [service blueprint de Sarah Gibbons](https://www.nngroup.com/articles/service-blueprints-definition/) (2017) para relacionar experiencia visible y procesos de soporte. Es una fuente metodológica fundacional anterior a 2019, no evidencia empírica sobre Relevo. Se verificó su página el 9 de septiembre; su fecha original se conserva en la referencia APA. La bibliografía suma 52 entradas: las 51 existentes y esta incorporación.
 
 ## Control de cierre documental
 
-Se conserva el contenido previo al capítulo 10, los catorce títulos y las 51 referencias anteriores. Se sincronizan resumen, índices, citas, extensión, instrucciones y decisión D-053. El [control editorial](auditoria-redaccion-v4-2026-08-26.md) registra el conteo actualizado y su método. Las versiones históricas y sus registros se preservan; no gobiernan el estado actual.
+La revisión de coherencia conservó entonces el contenido previo al capítulo 10 y añadió una fuente metodológica. La edición de lectura posterior reorganizó los apartados internos y sus transiciones, manteniendo los catorce capítulos y las 52 referencias. Las ubicaciones de esta auditoría ya remiten a los títulos actuales. Se sincronizan resumen, índices, citas, extensión e instrucciones. El [control editorial](auditoria-redaccion-v4-2026-08-26.md) registra el conteo actualizado y su método. Las versiones históricas y sus registros se preservan; no gobiernan el estado actual.
 
-**Comprobaciones ejecutadas:** catorce títulos idénticos; preliminares y capítulos 1–9 sin cambios; 51 referencias preservadas y una añadida; registros históricos intactos en los archivos modificados; 585 enlaces locales válidos en documentos Markdown de primer nivel de las áreas; protocolo sin cambios. El cuerpo de capítulos 1–13 suma 17.337 palabras con el método declarado en el control editorial.
+**Comprobaciones de la revisión previa ([dafd243](https://github.com/joan1542003-byte/proyecto-titulo/commit/dafd243)), conservadas como antecedente:** catorce títulos idénticos; preliminares y capítulos 1–9 sin cambios; 51 referencias preservadas y una añadida; registros históricos intactos en los archivos modificados; 585 enlaces locales válidos en documentos Markdown de primer nivel de las áreas; protocolo sin cambios. El cuerpo de capítulos 1–13 suma 17.337 palabras con el método declarado en el control editorial.
 
 La revisión no produce resultados de uso, medidas de hardware, registro comercial del nombre ni un costo final. No permite declarar que el proyecto cubre cualquier situación. Su resultado es una base consistente para probar y corregir lo que realmente falta.
 
 ## Registro de cambios
+
+### 2026-09-09 — Jerarquía y lectura de la memoria
+
+- **Cambio:** se actualizó la referencia a la memoria después de agrupar apartados, mejorar transiciones y sustituir la numeración secundaria por títulos temáticos.
+- **Versión anterior:** conservaba ubicaciones o controles correspondientes a los subapartados numerados.
+- **Motivo:** mantener la trazabilidad sin obligar al lector a reconstruir la estructura anterior.
+- **Alcance:** revisión editorial; fuentes, protocolo y resultados pendientes se mantienen.
 
 ### 2026-09-09 — Creación
 
