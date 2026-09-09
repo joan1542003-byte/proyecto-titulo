@@ -1,7 +1,7 @@
 ---
-id: ESTADO-RELEVO-2026-09-08
+id: ESTADO-RELEVO-2026-09-09
 titulo: "Resumen y estado del proyecto — Relevo"
-fecha_de_corte: 2026-09-08
+fecha_de_corte: 2026-09-09
 estado: "síntesis del estado de proyecto"
 ---
 
@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han hecho y qué falta probar.
 
-La fecha de corte es el 8 de septiembre de 2026.
+La fecha de corte es el 9 de septiembre de 2026.
 
 ## 1. El objetivo del proyecto.
 
@@ -46,7 +46,7 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 | Después del feedback | Se definieron aplicación, testigo, primer paso, lugar, señal, usuario principal y usuario límite. | El problema dejó de ser “usar mucho el celular” y pasó a ser una intención alternativa que pierde presencia. | [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
 | Encargo 16 y Encargo 17 | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño. Después se construyeron nueve wireframes y 35 estados complementarios. | Se hicieron visibles los estados normales, los errores, las salidas voluntarias y la relación entre app y objeto. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Cobertura de estados](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
 | Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
-| Estado actual — 8 de septiembre | Los wireframes y sus exportaciones están verificados; existe un alcance inicial con backlog y el programa de banco para micro:bit ya compila. | El proyecto está cerrando el wireframe v1 y preparando la primera comprobación física. La instalación, el montaje cálido, la revisión electrónica y la validación continúan pendientes. | [Alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) · [Hoja de ruta](hoja-de-ruta.md) |
+| Estado actual — 9 de septiembre | El wireframe v1 está congelado, sus 44 exportaciones usan la dirección cromática vigente y el programa de banco para micro:bit ya compila. | El proyecto puede iniciar la navegación Android y preparar la primera comprobación física. La instalación, el montaje cálido, la revisión electrónica y la validación continúan pendientes. | [Cierre del wireframe v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Hoja de ruta](hoja-de-ruta.md) |
 
 ## 3. Qué feedback aplicamos
 
@@ -214,7 +214,7 @@ Estas fechas vienen del [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md
 | Fecha estimada | Qué toca hacer | Resultado esperado | Enlace |
 |---|---|---|---|
 | **2–5 septiembre 2026** | Revisar los nueve wireframes y estados prioritarios; inventariar materiales y revisar B1/B2 en paralelo; establecer el MVP, el backlog y los pasos de desarrollo. | Wireframes auditados y orden de trabajo definido; se verifica que el desarrollo responda a las directrices de diseño y de Relevo. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **6–12 septiembre 2026** | Corregir navegación, textos, estados, accesibilidad y aplicación visual; recorrer el flujo completo y congelar el wireframe v1. | Base aprobada para construir la app, con cambios y pendientes documentados. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| **6–12 septiembre 2026** | Hito cerrado el 9 de septiembre: navegación, textos, estados, accesibilidad estructural y aplicación visual revisados; wireframe v1 congelado. | Base aprobada para construir la app, con cambios y pendientes documentados. | [Cierre v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **13–19 septiembre 2026** | Construir la navegación y el flujo mínimo de la app Android; preparar una señal manual segura y repetible. | Prototipo funcional inicial sin depender todavía de toda la electrónica. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **20–29 septiembre 2026** | Probar internamente wireframes, app, contenidos, señal y recuperación; preparar consentimiento, guion, criterios y reclutamiento. | Fallos críticos corregidos y avance listo para la corrección cruzada. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
 | **26 septiembre 2026 — estimada y condicionada** | Publicar la encuesta de 70 participantes si sus materiales están disponibles y revisar su metodología. | Fuente trazable para complementar o modificar la memoria; hasta entonces sigue pendiente y no se presentan resultados. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
@@ -256,6 +256,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Wireframe v1 como base de desarrollo
+
+- **Cambio:** se actualizó la fecha de corte y el estado del proyecto después del cierre estructural y cromático del wireframe.
+- **Cómo estaba antes:** el resumen situaba al proyecto todavía cerrando esa versión.
+- **Por qué se decidió:** mantener el resumen sincronizado con el hito verificable más reciente.
+- **Alcance:** no se agregan resultados técnicos ni con participantes.
 
 ### 2026-09-08 — Banco micro:bit preparado
 

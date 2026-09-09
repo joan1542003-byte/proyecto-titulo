@@ -13,7 +13,7 @@
 | Desborde en las 44 vistas | No detectado |
 | Tablero a 1366, 1536 y 1920 px | Legible y operativo |
 | Tipografías locales | IBM Plex Sans y Mono |
-| Uso del rojo | Restringido a la señal situada |
+| Uso del ámbar | Restringido a la señal situada |
 | Sombras y degradados | Ausentes |
 | Errores de consola | 0 |
 | Build de producción | Aprobado |
@@ -27,6 +27,13 @@ La aprobación corresponde a estructura, presentación y exportación. No equiva
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Control cromático actualizado
+
+- **Cambio:** la auditoría comprueba el ámbar `#FFB000` como color exclusivo de la señal situada.
+- **Antes:** el control comprobaba el rojo de la etapa v4.
+- **Motivo:** alinear el criterio verificable con la dirección cromática vigente.
+- **Alcance:** el resto de los controles permanece sin cambios.
 
 ### 2026-09-01 — Auditoría posterior al ajuste Android
 

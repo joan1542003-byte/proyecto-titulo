@@ -56,13 +56,13 @@ Excluir estas funciones evita desviar la prueba hacia gestión, vigilancia o per
 
 ## Orden de trabajo
 
-### Ahora — congelar wireframe v1
+### Cerrado el 9 de septiembre — wireframe v1
 
-- recorrer los nueve marcos sin explicación del autor;
-- corregir textos, continuidad, jerarquía y acciones ambiguas;
-- comprobar que la interfaz no promete detectar estados internos;
-- registrar cualquier cambio respecto de las exportaciones vigentes;
-- fijar esta versión como base del desarrollo antes del 12 de septiembre.
+- se recorrieron los nueve marcos sin explicación adicional del autor;
+- se revisaron textos, continuidad, jerarquía y acciones ambiguas;
+- se comprobó que la interfaz no promete detectar estados internos;
+- se alineó el color de señal y se regeneraron las exportaciones vigentes;
+- se fijó esta versión como [base del desarrollo](cierre-wireframe-v1-2026-09-09.md) antes del 12 de septiembre.
 
 ### Siguiente — construir el ciclo base
 
@@ -107,6 +107,13 @@ Estos pendientes impiden llamar al prototipo producto validado, pero no impiden 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Primera etapa cerrada
+
+- **Qué cambió:** el congelamiento dejó de figurar como tarea actual y se enlazó su registro verificable.
+- **Cómo estaba antes:** el documento definía los criterios, pero todavía exigía recorrer y fijar la versión.
+- **Por qué se decidió:** las nueve pantallas, las recuperaciones prioritarias y las exportaciones ya superaron el control interno.
+- **Alcance:** la construcción Android y las pruebas siguen pendientes.
 
 ### 2026-09-08 — Backlog físico sincronizado
 

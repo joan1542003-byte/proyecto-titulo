@@ -15,19 +15,19 @@
 }
 
 :root {
-  --board-ink: #181a1b;
+  --board-ink: #17191b;
   --board-muted: #646866;
   --board-line: #c4c7c4;
-  --board-paper: #f4f2ed;
+  --board-paper: #f4f1ea;
   --board-bg: #e8e9e6;
-  --screen-canvas: #111314;
-  --screen-surface: #1b1d1e;
+  --screen-canvas: #17191b;
+  --screen-surface: #1f2326;
   --screen-quiet: #242728;
-  --screen-text: #f1f1f1;
-  --screen-secondary: #b6b8b7;
+  --screen-text: #f4f1ea;
+  --screen-secondary: #aeb4b8;
   --screen-rule: #3a3d3e;
   --screen-border: #767a79;
-  --signal: #d71921;
+  --signal: #ffb000;
 }
 
 .dot-wordmark {

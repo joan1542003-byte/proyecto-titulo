@@ -32,6 +32,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 - [Requisitos de la pauta](../01_contexto_y_fuentes/encargo-17-requisitos.md)
 - [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md)
 - [Alcance del primer prototipo y backlog](alcance-primer-prototipo-y-backlog-2026-09-07.md)
+- [Cierre del wireframe v1](cierre-wireframe-v1-2026-09-09.md)
 
 ## Material histórico y de apoyo
 
@@ -40,11 +41,18 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 
 ## Estado
 
-La formulación vigente es una hipótesis. El ciclo estructural quedó representado en nueve marcos evaluables y complementado por un anexo de 35 estados: formular y preparar; vincular, situar, probar y armar; esperar, recibir el pulso, cerrar o recuperar. La cobertura y las 44 exportaciones fueron verificadas el 7 de septiembre. El trabajo actual consiste en congelar el recorrido mínimo que guiará el primer prototipo; la condición, la señal y la forma física continúan sujetas a prototipado.
+La formulación vigente es una hipótesis. El ciclo estructural quedó representado en nueve marcos evaluables y complementado por un anexo de 35 estados: formular y preparar; vincular, situar, probar y armar; esperar, recibir el pulso, cerrar o recuperar. El wireframe v1 se congeló el 9 de septiembre después de alinear el color de señal, regenerar sus 44 exportaciones y repetir la auditoría. La condición, la señal y la forma física continúan sujetas a prototipado.
 
 ---
 
 ## Registro de cambios
+
+### 2026-09-09 — Wireframe v1 congelado
+
+- **Cambio:** se añadió el registro de cierre y el recorrido mínimo pasó de trabajo en curso a línea base de desarrollo.
+- **Versión anterior:** las vistas estaban verificadas, pero el índice todavía indicaba que faltaba congelarlas.
+- **Motivo:** iniciar la construcción Android desde una única estructura trazable.
+- **Alcance:** no se declaran validadas la condición, la señal, la forma física ni la comprensión con personas.
 
 ### 2026-09-08 — Una sola fuente vigente de wireframes
 

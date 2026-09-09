@@ -58,9 +58,9 @@ Existe además una [encuesta complementaria con 70 participantes](03_usuarios/en
 
 El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
 
-La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico. La migración selectiva reactivada el 8 de septiembre separó las fuentes activas del [material antiguo y reemplazado](99_archivo/antiguo/README.md), sin eliminar la trazabilidad. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md).
+La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). Su [versión v1 quedó congelada](05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) el 9 de septiembre como base para construir la navegación Android. La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico. La migración selectiva reactivada el 8 de septiembre separó las fuentes activas del [material antiguo y reemplazado](99_archivo/antiguo/README.md), sin eliminar la trazabilidad. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md).
 
-El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. Entre el 6 y el 12 de septiembre corresponde congelar el wireframe v1; el [alcance del primer prototipo y su backlog](05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) evita confundir los 35 estados documentados con lo que debe construirse primero. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla los hitos, la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) controla la primera comprobación física y la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre. La memoria se entrega oficialmente el 2 de diciembre y el examen se realiza entre el 14 y el 18; el periodo intermedio se reserva para estudiar, ensayar y resolver correcciones menores.
+El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. El hito de wireframes se cerró el 9 de septiembre; el [alcance del primer prototipo y su backlog](05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) evita confundir los 35 estados documentados con lo que debe construirse primero. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla los hitos, la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) controla la primera comprobación física y la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre. La memoria se entrega oficialmente el 2 de diciembre y el examen se realiza entre el 14 y el 18; el periodo intermedio se reserva para estudiar, ensayar y resolver correcciones menores.
 
 ## Inicio para nuevas conversaciones
 
@@ -110,6 +110,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Wireframe v1 cerrado
+
+- **Cambio:** el estado actual enlaza la línea base congelada y sitúa la navegación Android como siguiente trabajo de interfaz.
+- **Versión anterior:** el README todavía presentaba el congelamiento como tarea de la semana.
+- **Motivo:** mantener la entrada del repositorio sincronizada con el cierre comprobado.
+- **Alcance:** no se modifican las pruebas físicas ni el estado de validación.
 
 ### 2026-09-08 — Separación de fuentes activas y material antiguo
 

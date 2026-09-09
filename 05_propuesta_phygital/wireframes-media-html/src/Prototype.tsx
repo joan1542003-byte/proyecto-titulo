@@ -357,7 +357,7 @@ function OverviewMap() {
           return <div key={family}><span>{states[0].familyShort}</span><h3>{family.replace(/^. · /, "")}</h3><p>{states[0].id}–{states.at(-1)?.id} · {states.length} estados</p></div>;
         })}
       </section>
-      <footer className="map-footer"><span>Ruta principal: 9 marcos</span><span>Cobertura: 35 estados</span><span>El rojo identifica únicamente la señal situada.</span></footer>
+      <footer className="map-footer"><span>Ruta principal: 9 marcos</span><span>Cobertura: 35 estados</span><span>El ámbar identifica únicamente la señal situada.</span></footer>
     </main>
   );
 }
@@ -456,7 +456,7 @@ export default function Prototype() {
             <div><dt>Error o salida</dt><dd>{frame.error}</dd></div>
             {coverage && <><div><dt>Disparador</dt><dd>{coverage.trigger}</dd></div><div><dt>Continuidad</dt><dd>{coverage.id} → {coverage.continuity}</dd></div></>}
           </dl>
-          <div className="decision-note"><strong>Regla de representación</strong><p>Los controles del tablero permanecen fuera de la superficie móvil. El rojo aparece únicamente cuando la señal situada ya ocurrió.</p></div>
+          <div className="decision-note"><strong>Regla de representación</strong><p>Los controles del tablero permanecen fuera de la superficie móvil. El ámbar aparece únicamente cuando la señal situada ya ocurrió.</p></div>
         </aside>
       </div>
     </main>

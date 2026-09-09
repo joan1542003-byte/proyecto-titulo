@@ -26,7 +26,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 | `02_investigacion` | Vigente | Preguntas, método y síntesis de investigación. |
 | `03_usuarios` | Vigente y en desarrollo | Análisis anonimizado, patrones, tipos de usuario y recorridos. |
 | `04_mercado_y_referentes` | Vigente y en desarrollo | Estado del arte, mercado, referentes, comparación y oportunidades. |
-| `05_propuesta_phygital` | Vigente y en desarrollo | Propuesta, arquitectura de experiencia, flujos y wireframes. |
+| `05_propuesta_phygital` | Wireframe v1 cerrado; prototipo en desarrollo | Propuesta, arquitectura de experiencia, flujos y wireframes. |
 | `06_desarrollo_y_factibilidad` | Vigente y en desarrollo | Tecnología, producción, costos, riesgos y límites. |
 | `07_validacion` | Preparada; ejecución pendiente | Protocolos, criterios de evaluación, instrumentos y puertas técnicas; todavía no hay resultados. |
 | `08_memoria` | Texto académico vigente | Memoria v4, anexos, matrices, controles editoriales y resumen del proyecto. |
@@ -40,6 +40,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La explicación breve que debe acompañar cada actualización es `08_memoria/resumen-vigente-proyecto.md`.
 - La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
+- La línea base para construir Android se consulta en [`cierre-wireframe-v1-2026-09-09.md`](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md); sus fuentes y exportaciones están en `05_propuesta_phygital/wireframes-media-html/`.
 - La dirección vigente de comunicación, naming y color se consulta en `10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md`; las carpetas anteriores conservan el proceso visual.
 - La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`; el código y el binario de la puerta inmediata están en `06_desarrollo_y_factibilidad/prueba-microbit-ble/`. La Issue #11 controla esa prueba y la #10 conserva la integración portátil.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde [`99_archivo/antiguo`](../99_archivo/antiguo/README.md).
@@ -67,6 +68,13 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Línea base de interfaz incorporada
+
+- **Qué cambió:** el índice identifica el wireframe v1 como cerrado y enlaza su registro antes de la construcción Android.
+- **Cómo estaba antes:** la carpeta de propuesta figuraba solamente como desarrollo abierto.
+- **Por qué se decidió:** asegurar que nuevas revisiones partan de una única secuencia y no de entregas históricas.
+- **Alcance:** el cierre es estructural; no acredita implementación ni validación.
 
 ### 2026-09-08 — Ruta única para material reemplazado
 

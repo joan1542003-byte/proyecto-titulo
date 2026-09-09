@@ -2,7 +2,7 @@
 
 **Fecha de planificación:** 2 de septiembre de 2026
 
-**Última revisión de estado:** 8 de septiembre de 2026
+**Última revisión de estado:** 9 de septiembre de 2026
 
 **Cierre total interno:** 15 de noviembre de 2026
 
@@ -18,7 +18,7 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 ## Etapa actual
 
-Relevo se encuentra en una etapa de **cierre del wireframe v1 y preparación del primer banco físico**. La cobertura técnica del tablero y sus 44 exportaciones fue verificada, y el recorrido mínimo ya está separado de los estados complementarios en el [alcance del primer prototipo](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md). La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen una [dirección vigente de comunicación y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), una especificación visual v4 conservada como antecedente técnico y una memoria estructuralmente avanzada.
+Relevo se encuentra en una etapa de **transición desde el wireframe v1 hacia la construcción del prototipo**. El recorrido mínimo se congeló el 9 de septiembre después de alinear el color de señal, regenerar sus 44 exportaciones y repetir la auditoría. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. También existen una [dirección vigente de comunicación y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), una especificación visual v4 conservada como antecedente técnico y una memoria estructuralmente avanzada.
 
 El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. El programa mínimo para micro:bit V2 ya compila y dispone de un archivo instalable. Todavía faltan acceso a la placa, instalación, conexión medida, incorporación de una luz blanca cálida externa, ensayo y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden cerrar el wireframe.
 
@@ -35,7 +35,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Memoria | Avanzada, no final | Estructura v4, extensión, APA 7, trazabilidad y anexos preparados. | Incorporar decisiones, resultados, límites, factibilidad y evidencia final. |
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Avanzado | Dirección basada en cercanía, brevedad, traslado y autonomía; modo oscuro para interfaz; paleta funcional y piezas por soporte. | Aplicar la dirección vigente a los prototipos, probar legibilidad y cerrar las aplicaciones finales. |
-| Prototipo Android | Inicial | Plataforma justificada, wireframes verificados, recorrido mínimo y backlog definidos. | Congelar el wireframe v1, construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
+| Prototipo Android | Preparado para construcción | Plataforma justificada, wireframe v1 congelado, recorrido mínimo y backlog definidos. | Construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
 | Testigo físico | Banco preparado, no ejecutado | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado y documentado. | Acceder a la placa, instalar, añadir la salida cálida, medir, revisar el montaje y completar después la integración portátil. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Revisar wireframes y prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
@@ -86,6 +86,8 @@ Las fechas institucionales se encuentran consolidadas en el [calendario oficial 
 - congelar el wireframe v1 como base del desarrollo.
 
 **Criterio de salida:** el flujo principal y sus estados críticos están definidos; cualquier cambio posterior debe responder a una prueba o a un problema concreto.
+
+**Estado al 9 de septiembre:** hito cerrado. La [línea base v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) registra los nueve marcos, las recuperaciones prioritarias, la corrección cromática, la verificación y los límites que pasan a prototipado.
 
 ### 13–19 de septiembre — Construir la app base y una señal manual
 
@@ -294,6 +296,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Wireframe v1 cerrado
+
+- **Cambio:** la etapa actual y el estado de Android reconocen el congelamiento de la línea base antes de la fecha del hito.
+- **Versión anterior:** el plan mantenía el cierre del wireframe como tarea pendiente.
+- **Motivo:** la ruta, los estados críticos, las exportaciones y el criterio cromático ya fueron revisados y documentados.
+- **Consecuencia:** el siguiente trabajo de interfaz es construir la navegación, no ampliar el mapa ni reabrir decisiones sin evidencia.
 
 ### 2026-09-08 — Jerarquía visual aclarada
 

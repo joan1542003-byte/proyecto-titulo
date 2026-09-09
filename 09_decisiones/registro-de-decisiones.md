@@ -488,9 +488,26 @@
 - **Límite:** archivar no equivale a invalidar ni borrar. La evidencia, los resultados, las imágenes y el historial de Git se conservan; solo cambia su lugar dentro de la navegación.
 - **Documentos asociados:** [índice de material antiguo](../99_archivo/antiguo/README.md) y [auditoría de organización](../00_gobernanza/auditoria-organizacion-2026-09-08.md).
 
+## D-051 — Wireframe v1 como línea base de desarrollo
+
+- **Fecha:** 2026-09-09
+- **Estado:** vigente para construir el primer prototipo; sujeto a cambios motivados por evidencia
+- **Decisión:** congelar los nueve marcos principales y las ocho categorías prioritarias de recuperación después de alinear el color de señal con D-046 y repetir la verificación de las 44 exportaciones.
+- **Fundamento:** el recorrido, las salidas, los errores prioritarios y la representación del momento físico están suficientemente definidos para iniciar Android. Mantenerlos abiertos sin una causa concreta introduciría versiones paralelas y retrabajo.
+- **Consecuencia:** desarrollo toma esta versión como base. Un cambio estructural posterior debe indicar la prueba, el fallo o la contradicción que lo motiva.
+- **Límite:** el congelamiento acredita coherencia interna y reproducción técnica; no acredita comprensión, accesibilidad con personas, comportamiento BLE, percepción ni eficacia.
+- **Documento asociado:** [cierre del wireframe v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — D-051
+
+- **Cambio:** se registró el wireframe v1 como única línea base para desarrollo.
+- **Versión anterior:** el alcance y las exportaciones existían, pero el recorrido continuaba abierto a correcciones generales.
+- **Motivo:** cerrar el hito anterior a programación sin confundirlo con validación.
+- **Resultado:** cualquier reapertura deberá estar respaldada por evidencia o un fallo verificable.
 
 ### 2026-09-08 — D-036 a D-038 sincronizadas con D-046
 

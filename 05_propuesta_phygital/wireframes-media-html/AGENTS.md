@@ -53,8 +53,9 @@ See `src/mobile/COMPONENTS.md` for the full component and gesture contract.
 - El testigo físico no incorpora texto, menú, historial ni interfaz de consulta.
 - La condición, el gesto de armado y el pulso se presentan como decisiones provisionales, no como resultados validados.
 - Continuar, ignorar, silenciar, cambiar de intención y cerrar son respuestas legítimas; el sistema no registra cumplimiento.
-- Las nueve pantallas principales utilizan fidelidad media y el lenguaje oscuro v4. Los 35 estados de cobertura permanecen en baja fidelidad hasta que su estructura se estabilice.
-- El rojo se reserva al acontecimiento situado de 3.2; no comunica prioridad, error, selección ni decoración.
+- Las nueve pantallas principales utilizan fidelidad media y la dirección oscura vigente. Los 35 estados de cobertura permanecen en baja fidelidad.
+- La interfaz usa carbón `#17191B`, superficie `#1F2326`, papel cálido `#F4F1EA`, gris `#AEB4B8` y ámbar de señal `#FFB000`.
+- El ámbar `#FFB000` se reserva al acontecimiento situado de 3.2; no comunica prioridad genérica, error ni decoración.
 - La marca de puntos, los campos informativos y los estados nunca deben adquirir apariencia de botón. En 2.3, el armado se confirma mediante el control físico y no mediante una acción principal de pantalla.
 - No se incorporan menús, iconos ni controles heredados de una referencia si no tienen una consecuencia definida en el recorrido.
 - El mapa general se divide en arquitectura, ruta ampliada y cobertura por familias. No se deben reunir 44 miniaturas ilegibles como única representación.
@@ -67,7 +68,7 @@ See `src/mobile/COMPONENTS.md` for the full component and gesture contract.
 
 ### 2026-09-02 — Criterios durables de interfaz y documentación
 
-- **Qué se incorporó:** nivel de fidelidad por conjunto, función exclusiva del rojo, diferencia entre información y control, armado físico y estructura de mapas.
+- **Qué se incorporó:** nivel de fidelidad por conjunto, función exclusiva del color de señal, diferencia entre información y control, armado físico y estructura de mapas.
 - **Cómo estaba antes:** la guía definía toda la entrega como monocromática y de fidelidad media, sin registrar la diferencia entre ruta principal y cobertura ni el problema de legibilidad del mapa único.
 - **Por qué se hizo:** conservar las decisiones que gobiernan futuras correcciones del tablero y evitar que reaparezcan ambigüedades ya resueltas.
 
@@ -95,3 +96,14 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Fixed phone chrome should not animate with pushed screens. Screen content can animate; the status bar, camera cutout, and preview chrome should stay put.
 - Keep the keyboard below the home indicator/safe area layer in z-index, and above ordinary app UI while visible.
 - Keep the home indicator as the topmost safe-area layer in the z-index above everything else in the prototype.
+
+---
+
+## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Dirección cromática y línea base
+
+- **Qué cambió:** la paleta activa sustituyó los tokens de v4 y la ruta principal quedó congelada como wireframe v1.
+- **Cómo estaba antes:** la guía conservaba los códigos oscuros de v4 y describía la cobertura como todavía inestable.
+- **Por qué se decidió:** alinear futuras modificaciones con la autoridad visual vigente y con una única base de desarrollo.
+- **Alcance:** las hipótesis funcionales y perceptivas siguen sujetas a implementación y prueba.

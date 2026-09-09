@@ -59,7 +59,7 @@ const css = readFileSync(path.resolve("src/prototype.css"), "utf8");
 for (const forbidden of ["linear-gradient", "radial-gradient"]) {
   if (css.toLowerCase().includes(forbidden)) throw new Error(`El CSS contiene un recurso impropio de wireframe: ${forbidden}`);
 }
-if ((css.match(/#d71921/gi) ?? []).length !== 1 || (css.match(/var\(--signal\)/g) ?? []).length !== 1) throw new Error("El rojo no está restringido al nodo de señal situada");
+if ((css.match(/#ffb000/gi) ?? []).length !== 1 || (css.match(/var\(--signal\)/g) ?? []).length !== 1) throw new Error("El ámbar no está restringido al nodo de señal situada");
 if ((await signalScreen.evaluate((node) => getComputedStyle(node).boxShadow)) !== "none") throw new Error("La pantalla exportable utiliza una sombra decorativa");
 
 const overflow = await page.getByTestId("wireframe-current").evaluate((node) => node.scrollWidth > node.clientWidth + 1);

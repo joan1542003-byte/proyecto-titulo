@@ -50,7 +50,7 @@ El [índice de material antiguo](../99_archivo/antiguo/README.md) explica cada g
 
 | Control | Resultado |
 | --- | --- |
-| Enlaces locales en Markdown | 347 archivos y 1.025 destinos comprobados; 0 rotos. |
+| Enlaces locales en Markdown | 348 archivos y 1.036 destinos comprobados; 0 rotos. |
 | Declaraciones de vigencia | Una memoria activa, un tablero vigente y una dirección actual de comunicación. |
 | JSON y manifiestos | 14 archivos comprobados; 0 inválidos. |
 | Imágenes PNG | 743 firmas y dimensiones válidas; la maqueta contiene 87 páginas. |
@@ -74,5 +74,5 @@ La limpieza comprueba estructura, navegación e integridad de archivos. No valid
 - **Versión anterior:** la auditoría del 7 de septiembre comprobaba integridad, pero no existía una separación física entre fuentes activas y antecedentes reemplazados.
 - **Motivo:** permitir que otra persona comprenda qué se movió, por qué se conservó y qué documento gobierna ahora cada área.
 - **Alcance:** el informe no añade evidencia de usuarios ni resultados de producto; registra una intervención documental.
-- **Verificación:** se comprobaron 1.206 archivos versionados o preparados para versión, 1.025 enlaces locales y 97 elementos dentro del nuevo archivo antiguo.
+- **Verificación:** se comprobaron 1.207 archivos versionados o preparados para versión, 1.036 enlaces locales y 97 elementos dentro del nuevo archivo antiguo.
 - **Limpieza local:** se retiraron 2.809 archivos de dependencias ignoradas que no formaban parte de Git ni del registro histórico; los paquetes pueden reinstalarse desde sus archivos de bloqueo.

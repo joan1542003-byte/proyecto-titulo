@@ -4,7 +4,7 @@
 
 El tablero reúne los nueve wireframes de la ruta principal y 35 estados complementarios. Su interfaz de revisión separa tres capas: catálogo, wireframe y fundamento. La navegación, la explicación y la descarga permanecen fuera del área exportable para no confundirse con funciones de Relevo.
 
-La estructura, la cobertura y las medidas continúan vigentes. La capa visual registra el sistema v4 utilizado para construir el tablero el 2 de septiembre; por ello, sus códigos cromáticos no deben copiarse automáticamente en una iteración nueva. La [dirección actual de comunicación y color](../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) gobierna las aplicaciones posteriores.
+La estructura, la cobertura y las medidas quedaron congeladas como wireframe v1 el 9 de septiembre. La base visual proviene del tablero construido el 2 de septiembre y su color de señal fue alineado con la [dirección actual de comunicación y color](../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
 
 Cada wireframe usa una ventana representativa de Android de **412 × 915 dp** y se exporta a **824 × 1830 px**. Esta medida no se presenta como un promedio estadístico ni como un modelo de teléfono específico: es una base de trabajo contemporánea para revisar jerarquía, alcance táctil y distribución vertical. No se dibuja hardware, barra de estado ni navegación del sistema.
 
@@ -15,11 +15,11 @@ El entorno de revisión puede conservar recursos auxiliares de marco y teclado p
 - Retícula de 8 dp y margen interior de 24 dp.
 - Controles representados con un mínimo de 48 dp.
 - IBM Plex Sans para lectura e IBM Plex Mono para identificadores técnicos.
-- Fondo `#111314`, superficies `#1B1D1E`, texto principal `#F1F1F1` y texto secundario `#B6B8B7`.
-- En esta versión, el rojo `#D71921` se reserva para la señal situada; no identifica botones, errores ni decoración. Una reconstrucción posterior debe evaluar el ámbar vigente sin alterar esa separación semántica.
+- Fondo `#17191B`, superficies `#1F2326`, texto principal `#F4F1EA` y texto secundario `#AEB4B8`.
+- El ámbar `#FFB000` se reserva para la señal situada; no identifica botones, errores ni decoración.
 - Sin sombras, degradados, texturas ni recursos que alteren la lectura estructural.
 
-Los 35 estados de cobertura se mantienen en baja fidelidad. Las nueve pantallas principales avanzan a fidelidad media: muestran la jerarquía, la tipografía, el contraste y la distinción entre controles y contenido, pero siguen abiertas a corrección. Esta diferencia no convierte la interfaz en una propuesta validada ni en el diseño definitivo de Android.
+Los 35 estados de cobertura se mantienen en baja fidelidad. Las nueve pantallas principales están en fidelidad media: muestran la jerarquía, la tipografía, el contraste y la distinción entre controles y contenido. Su estructura solo se reabre ante una prueba, un fallo de implementación o una contradicción verificable. Esta condición no convierte la interfaz en una propuesta validada ni en el diseño definitivo de Android.
 
 ## Uso
 
@@ -44,13 +44,27 @@ pnpm run qa:wireframes
 pnpm run test:sites
 ```
 
-El control comprueba medidas, archivos exportados, navegación, adaptación del tablero, uso restringido del rojo y ausencia de errores de consola. La auditoría necesita la vista local activa porque revisa el resultado renderizado, no solo el código fuente.
+El control comprueba medidas, archivos exportados, navegación, adaptación del tablero, uso restringido del ámbar y ausencia de errores de consola. La auditoría necesita la vista local activa porque revisa el resultado renderizado, no solo el código fuente.
 
 Si el navegador de Playwright no está instalado, la suite del runtime puede utilizar un Chromium local sin descargar otro binario. Antes de ejecutarla, se define `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` con la ruta absoluta de Chrome o Edge. La variable solo cambia el ejecutable de prueba; no modifica el tablero ni sus exportaciones.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Línea base congelada
+
+- **Cambio:** los nueve marcos, las recuperaciones prioritarias y sus exportaciones quedan identificados como wireframe v1 para desarrollo.
+- **Antes:** la versión estaba técnicamente verificada, pero seguía abierta a correcciones generales.
+- **Motivo:** impedir que el prototipo Android se construya sobre una secuencia móvil.
+- **Alcance:** los resultados y límites del cierre se documentan en [`cierre-wireframe-v1-2026-09-09.md`](../cierre-wireframe-v1-2026-09-09.md).
+
+### 2026-09-09 — Color de señal alineado con la dirección vigente
+
+- **Cambio:** los tokens base adoptan carbón, superficie, papel cálido y gris vigentes; la señal pasa de rojo `#D71921` a ámbar `#FFB000`.
+- **Antes:** el tablero conservaba los códigos de la etapa v4 y remitía el ámbar a una reconstrucción posterior.
+- **Motivo:** eliminar la contradicción con la dirección cromática adoptada el 7 de septiembre antes de congelar el wireframe v1.
+- **Alcance:** cambia la codificación visual de la señal; no cambia el flujo, la jerarquía, el contenido ni la condición provisional.
 
 ### 2026-09-08 — Runtime interactivo restablecido
 

@@ -13,8 +13,8 @@ Cada decisión responde a cuatro preguntas: qué problema resuelve, de qué ante
 | No simular hardware | El objeto de revisión es la estructura de la pantalla, no un modelo comercial. | No existen carcasa, cámara, barra de estado ni navegación del sistema. |
 | Aplicar retícula de 8 dp, margen de 24 dp y controles de 48 dp | Traslada los tokens dimensionales del tablero y permite reconstruir la pantalla con medidas consistentes. | Auditoría CSS y exportación sin desbordes. |
 | Utilizar IBM Plex Sans y Mono | Distingue lectura de información técnica sin introducir una tercera voz tipográfica. | Fuentes locales incluidas con sus licencias. |
-| Trabajar en modo oscuro | Corresponde a la dirección de la interfaz y mantiene continuidad entre sistema visual y wireframes. | Los códigos cromáticos coinciden con la especificación v4 de esta versión. |
-| Reservar `#D71921` para la señal situada | El rojo comunica la aparición del pulso físico, no prioridad genérica. Evita volver decorativa la señal. | El rojo aparece solo en la representación del momento físico. |
+| Trabajar en modo oscuro | Corresponde a la dirección de la interfaz y mantiene continuidad entre sistema visual y wireframes. | Los fondos, superficies y textos conservan contraste y jerarquía consistentes. |
+| Reservar `#FFB000` para la señal situada | El ámbar distingue la aparición del pulso físico de los errores, sin convertirlo en prioridad genérica. | El ámbar aparece solo en la representación del momento físico. |
 | Usar la marca de puntos como identificador, no como control | La trama permite reconocer a Relevo sin añadir un botón o una pestaña falsa. | La marca no tiene contenedor, estado presionado ni consecuencia interactiva. |
 | Diferenciar información, elección y acción | Un dato no debe parecer seleccionable y una elección no debe parecer adorno. | Campos interactivos tienen contorno; información pasiva usa separación; la acción conserva 48 dp. |
 | Mantener salidas visibles | La experiencia preserva autonomía, reversibilidad y ausencia de sanción. | Cada marco documenta una salida, recuperación o continuidad. |
@@ -35,6 +35,13 @@ Universidad Diego Portales. (2026). *Encargo 17: Wireframes. Del flujo a la estr
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-09 — Semántica cromática actualizada
+
+- **Cambio:** la señal situada adopta el ámbar vigente y el rojo deja de formar parte de las instrucciones del tablero.
+- **Antes:** la documentación reservaba `#D71921` al momento físico de acuerdo con el sistema v4.
+- **Motivo:** mantener una sola autoridad cromática en las piezas activas.
+- **Alcance:** no se modifican las decisiones estructurales ni la cobertura de la entrega.
 
 ### 2026-09-08 — Alcance temporal de las decisiones visuales
 
