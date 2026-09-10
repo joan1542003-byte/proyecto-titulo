@@ -1,38 +1,34 @@
-# Memoria editorial completa de Relevo
+# Maqueta editorial de Relevo — versión anterior
 
-**Estado:** maqueta integral reproducible, sincronizada el 7 de septiembre de 2026.
+**Estado:** antecedente de diagramación. El HTML y las 87 páginas PNG conservan una versión anterior a la revisión y reducción de la memoria del 9 de septiembre de 2026.
 
-**Fuente textual:** `08_memoria/memoria-vigente-v4.md` en la versión disponible al 7 de septiembre.
+**Fuente académica actual:** [memoria v4](../../08_memoria/memoria-vigente-v4.md), con aproximadamente 15.000 palabras de texto académico. Para citar o revisar argumentos debe utilizarse ese documento.
 
-**Formato:** A3 horizontal, 87 páginas y un archivo PNG por página.
+## Qué contiene
 
-## Propósito
+- `renderer/`: fuente utilizada para componer la publicación.
+- `renderer/dist/`: HTML y manifiesto de la exportación conservada.
+- `paginas_png/`: 87 páginas en formato A3 horizontal, una imagen por página.
 
-Esta carpeta contiene el sistema utilizado para trasladar la memoria vigente a páginas editoriales completas. La composición mantiene una misma grilla, tipografía IBM Plex, blanco cálido, grafito y el rojo restringido propio de la maqueta del 1 de septiembre. El texto se obtiene directamente del Markdown para impedir que una imagen generativa cambie citas, cifras o argumentos. Antes del arte final, la capa cromática debe actualizarse según la [dirección del 7 de septiembre](../comunicacion-naming-y-paleta-2026-09-07.md); la estructura y la paginación pueden revisarse sin confundir esta maqueta con la autoridad visual vigente.
+La maqueta conserva la retícula, las tipografías IBM Plex y la paleta con rojo de la etapa en que se produjo. La dirección de comunicación y color que gobierna el proyecto está en [Comunicación, nombre y color](../comunicacion-naming-y-paleta-2026-09-07.md).
 
-## Estructura
+## Cómo usarla sin confundir versiones
 
-- `renderer/`: fuente reproducible de la publicación.
-- `renderer/dist/`: versión HTML generada y manifiesto de páginas.
-- `paginas_png/`: exportaciones individuales en orden de lectura.
+Sirve para reconstruir las decisiones editoriales anteriores. Sus páginas no son una copia actual de la memoria y no constituyen un archivo final de impresión. Los subtítulos, la extensión y algunos pasajes cambiaron después de esta exportación.
 
-## Criterios
+La revisión solicitada el 9 de septiembre se limita a textos y limpieza documental. Por ello se corrige esta descripción y se conservan los artefactos. Cualquier encargo posterior de diagramación deberá partir de la memoria vigente y comprobar correspondencia textual, cortes de página, tablas, referencias y legibilidad antes de presentar una nueva exportación como actual.
 
-- una página A3 horizontal por imagen;
-- portada, preliminares, aperturas, lectura, tablas y referencias comparten la retícula canónica;
-- los capítulos avanzan en el mismo orden narrativo de la memoria;
-- las páginas de lectura pueden ser únicamente tipográficas;
-- no se agregan citas, resultados, cifras ni fotografías inexistentes;
-- el rojo no se utiliza como adorno editorial;
-- las imágenes son pruebas de diagramación y no reemplazan el archivo editable final.
-
-## Revisión pendiente
-
-La fuente HTML, el manifiesto y las 87 páginas PNG corresponden entre sí. La paginación todavía debe revisarse a tamaño real para comprobar tablas extensas, listas, referencias, viudas, huérfanas, equilibrio de columnas y legibilidad de impresión. Los diagramas y figuras definitivos deben incorporarse después de esa revisión. Cada cambio posterior de la memoria obliga a reconstruir y volver a exportar esta carpeta.
-
----
+La herramienta de exportación conservada usa una ruta de Edge para Windows. Su ejecución en otro equipo requiere adaptar esa configuración y revisar el resultado; no se afirma compatibilidad entre sistemas operativos.
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se identificó la maqueta como versión anterior y se enlazó la fuente académica actual.
+- **Antes:** se presentaba como sincronizada pese a la revisión posterior del texto y de sus subtítulos.
+- **Motivo:** evitar que una exportación antigua se cite como memoria vigente.
+- **Alcance:** Solo cambia esta explicación. Se conservan HTML, manifiesto, código y 87 páginas PNG; no se produce visualidad.
 
 ### 2026-09-08 — Exportación sincronizada con la memoria vigente
 

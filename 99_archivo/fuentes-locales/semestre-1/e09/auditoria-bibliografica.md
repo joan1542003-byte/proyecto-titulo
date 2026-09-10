@@ -14,6 +14,8 @@ fecha_migracion: 2026-08-23
 
 ## Nota archivística
 
+**Errata bibliográfica comprobada el 9 de septiembre de 2026:** la entrada atribuida a Thudt, Hinrichs y Carpendale (2020), con DOI `10.1109/TVCG.2019.2934809`, no corresponde a los datos de la obra citada. El registro histórico se conserva; no debe reutilizarse ni considerarse verificado. La [referencia corregida y sus fuentes](../../../../00_gobernanza/auditoria-textual-2026-09-09.md#errata-bibliográfica-del-archivo-histórico) identifican el capítulo de 2018.
+
 Corresponde a una etapa anterior del proyecto. Sus decisiones deben contrastarse con la memoria y la bibliografía vigentes.
 
 Este archivo conserva el contenido de una fuente local propia dentro del archivo histórico. Su ubicación en `99_archivo` indica que no constituye, por sí sola, una definición vigente del proyecto.
@@ -56,6 +58,14 @@ Este archivo conserva el contenido de una fuente local propia dentro del archivo
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se añadió una errata visible antes del contenido migrado.
+- **Antes:** una referencia inconsistente se conservaba, incluso marcada como verificada en la auditoría original.
+- **Motivo:** impedir su reutilización sin alterar silenciosamente una fuente histórica.
+- **Alcance:** Solo se añade la nota archivística y este registro; el contenido de origen permanece intacto.
 
 - **Cambio realizado:** migración al repositorio con metadatos archivísticos, nota de vigencia y estructura Markdown normalizada.
 - **Estado anterior:** archivo local `Yanten Johan E09 - Auditoria bibliografica.md` sin clasificación integrada en el repositorio.

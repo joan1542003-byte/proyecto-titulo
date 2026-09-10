@@ -26,6 +26,8 @@ La investigación se realizó el 29 de agosto de 2026 mediante fuentes oficiales
 - Nothing Technology Limited. (s. f.-c). *Phone (1)*. NOTHING. Recuperado el 29 de agosto de 2026, de https://nothing.tech/pages/phone-1
 - Nothing Technology Limited. (s. f.-d). *Phone (3)*. NOTHING. Recuperado el 29 de agosto de 2026, de https://nothing.tech/products/phone-3
 
+**Actualización de acceso — 9 de septiembre:** la antigua página `nothing.tech/pages/phone-1` responde 404. Para comprobar específicamente la relación entre luz, sonido y vibración puede consultarse la [explicación oficial de Glyph Interface](https://support.nothing.tech/hc/en-us/articles/7456213120273-What-is-the-Glyph-Interface). Esta fuente de soporte no reemplaza una evidencia de comprensión ni acredita atributos materiales no descritos allí.
+
 ## Descomposición de la referencia visual aportada
 
 La imagen `D:\Descargas\exec-c43c012d-582c-4975-8f7f-fef12de02692.png` se utiliza como referencia visual privada. No se considera una fuente normativa ni una pieza de Relevo.
@@ -120,6 +122,14 @@ Para Relevo, el aprendizaje más importante es de separación funcional: la grá
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se añadió una vía oficial de consulta para la función Glyph y se identificó la página antigua como no disponible.
+- **Antes:** el enlace de producto se presentaba sin advertencia pese a responder 404.
+- **Motivo:** mantener trazabilidad de la investigación histórica y una fuente accesible para el mecanismo citado.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-08 — Antecedente desacoplado de la dirección actual
 

@@ -7,13 +7,13 @@ estado: "síntesis del estado de proyecto"
 
 # ¿Para qué sirve este documento?
 
-Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han hecho y qué falta probar.
+Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
 
-La fecha de corte es el 9 de septiembre de 2026.
+La fecha de corte es el 9 de septiembre de 2026. La memoria contiene 15.033 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
 
-## 1. El objetivo del proyecto.
+## El objetivo del proyecto
 
-Relevo busca ayudar a recuperar una intención personal cuando una sesión de ocio digital continúa y esa "otra cosa" que la persona quería hacer deja de estar presente.
+Relevo busca ayudar a recuperar una intención personal cuando una sesión de ocio digital continúa y esa actividad que la persona quería realizar deja de estar presente.
 
 La propuesta combina:
 
@@ -37,7 +37,7 @@ Relevo podría ser deseable porque devuelve esa posibilidad sin retar, castigar 
 
 La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionales](../03_usuarios/perfiles-situacionales.md) y el [estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) explican esta definición con más detalle.
 
-## 2. Cómo llegamos hasta aquí
+## Cómo llegamos hasta aquí
 
 | Momento | Qué pasó | Por qué fue importante | Enlace |
 |---|---|---|---|
@@ -48,7 +48,7 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 | Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
 | Estado actual — 9 de septiembre | El wireframe v1 está congelado, sus 44 exportaciones usan la dirección cromática vigente y el programa de banco para micro:bit ya compila. | El proyecto puede iniciar la navegación Android y preparar la primera comprobación física. La instalación, el montaje cálido, la revisión electrónica y la validación continúan pendientes. | [Cierre del wireframe v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Hoja de ruta](hoja-de-ruta.md) |
 
-## 3. Qué feedback aplicamos
+## Qué feedback aplicamos
 
 El feedback de la comisión no se pegó literalmente en la memoria. Se convirtió en decisiones, criterios, documentos y pruebas pendientes.
 
@@ -63,7 +63,7 @@ El feedback de la comisión no se pegó literalmente en la memoria. Se convirti�
 | “Faltan plataforma, costos y rol del diseñador” | Android quedó como plataforma inicial; se documentaron materiales, costos, producción y responsabilidades del diseño. | Acotar el desarrollo permite comprobar primero el valor de la experiencia. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | “La memoria necesita mejor orden y redacción” | La v4 corrigió la secuencia, la ortografía, la terminología, la cronología, las citas y la relación entre capítulos. | La memoria debe poder leerse sin que el autor tenga que explicarla oralmente. | [Matriz E15](../08_memoria/matriz-incorporacion-feedback-e15.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
-## 4. Qué investigamos
+## Qué investigamos
 
 ### Usuarios
 
@@ -100,7 +100,7 @@ La [síntesis aplicada del sistema visual](../01_contexto_y_fuentes/biblioteca_d
 
 Se usan como criterios para diseñar y revisar, no como reemplazo de las pruebas con personas.
 
-## 5. Referentes y estado del arte: qué parte cubre cada uno
+## Referentes y estado del arte: qué parte cubre cada uno
 
 No se tomaron los referentes solo como inspiración visual. Cada grupo responde a una parte distinta del problema o del proyecto.
 
@@ -121,7 +121,7 @@ No se tomaron los referentes solo como inspiración visual. Cada grupo responde 
 
 El mercado ya tiene medidores, bloqueadores, pausas, objetos de foco y recordatorios situados. Lo que todavía no está resuelto es si un objeto colocado junto al primer paso de una actividad puede recuperar una intención sin bloquear, premiar ni evaluar. Esa es la pregunta que la fase de validación debe responder.
 
-## 6. Decisiones principales y por qué
+## Decisiones principales y por qué
 
 | Decisión | Por qué se tomó | Evidencia |
 |---|---|---|
@@ -136,7 +136,7 @@ El mercado ya tiene medidores, bloqueadores, pausas, objetos de foco y recordato
 
 El rol del diseño quedó entendido como articular problema, evidencia, experiencia, lenguaje, objeto y sistema. La electrónica, la fabricación, el mantenimiento y los costos son restricciones y colaboraciones que deben hacerse visibles; diseñar la experiencia no significa que toda la producción ya esté resuelta.
 
-## 7. Naming y lenguaje
+## Naming y lenguaje
 
 **Relevo** es el nombre del sistema completo porque sugiere un cambio de turno, pero no dice que la persona tenga que abandonar el teléfono ni que obligatoriamente deba hacer otra actividad.
 
@@ -152,7 +152,7 @@ Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto in
 
 El descriptor actual para explicar el proyecto de manera directa es: **“Una señal donde quieres empezar.”** La formulación académica —sistema phygital para recuperar intenciones personales durante el ocio digital— se conserva para desarrollar su alcance, no como frase principal de presentación. Ver [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
 
-## 8. Decisiones visuales y cromáticas
+## Decisiones visuales y cromáticas
 
 La dirección vigente parte de **cercanía, brevedad, traslado y autonomía**, según D-046. **Transferencia situada** conserva valor conceptual dentro del proceso anterior; su sistema gráfico no gobierna piezas nuevas.
 
@@ -164,7 +164,7 @@ La dirección vigente parte de **cercanía, brevedad, traslado y autonomía**, s
 
 Ver [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
 
-## 9. Cómo se ha implementado hasta ahora
+## Cómo se ha implementado hasta ahora
 
 Hasta ahora la implementación es principalmente estructural y preparatoria:
 
@@ -178,7 +178,7 @@ El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió este 
 
 La ruta física actual separa dos propósitos. Primero se instalará en una micro:bit V2 un programa ya compilado para comprobar Android → BLE, sonido, tiempos y silencio local. Su matriz roja se usa solo en el banco sin participantes; la prueba de asociación requiere añadir una luz blanca cálida externa y difundida. Después se integrará el testigo portátil con XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local. BleenyButton aporta un precedente abierto para estudiar batería, fijación y carcasa. Los montajes B1, B2 y 12 V se conservan como antecedentes de mesa, no como dirección principal. Todavía no se han comprado componentes, instalado el binario, construido el montaje ni ejecutado pruebas con participantes. Ver [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas existentes y modificables](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y [validación](../07_validacion/README.md).
 
-## 10. Costos estimados
+## Costos estimados
 
 Existen precios de referencia para comparar rutas, pero todavía no hay un presupuesto completo del testigo portátil. Los valores de B1, B2 y 12 V fueron observados el 30 de agosto; los de las plataformas compactas, el 7 de septiembre de 2026. No corresponden al costo final de producción ni al precio de venta.
 
@@ -193,7 +193,7 @@ Existen precios de referencia para comparar rutas, pero todavía no hay un presu
 
 La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro ni un costo cerrado**. La micro:bit reduce trabajo de la primera prueba, pero no sustituye el prototipo integrado. La XIAO reduce tamaño y componentes, aunque su subtotal sigue incompleto. Ninguna compra debe decidirse solo por el precio de la placa.
 
-## 11. Qué ya está listo y qué falta
+## Qué ya está listo y qué falta
 
 | Ya está hecho | Falta hacer | Evidencia |
 |---|---|---|
@@ -203,32 +203,27 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
-| Naming, dirección visual y paleta base. | Cerrar tipografía, forma, material, difusor y señal final después de probar. | [Naming](../00_admin/encargos/encargo-02-09-2026/03_naming/README.md) · [Visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) |
+| Nombre de trabajo, descriptor, tipografías y paleta seleccionados. | Probar comprensión y legibilidad; cerrar forma, material, difusor y parámetros de la señal. | [Comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) |
 | Plataformas comparadas y programa micro:bit compilado; B1/B2 conservadas como antecedentes. | Conseguir la placa, instalar y medir el banco, revisar la luz cálida externa y completar la lista XIAO solo si la evidencia justifica continuar. | [Programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
-## 12. Próximos pasos y fechas estimadas
+## Próximos pasos e hitos
 
-Estas fechas vienen del [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md). Son estimadas y pueden ajustarse, pero sirven para no perder la ruta crítica.
+El [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) conserva el calendario completo y la [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) registra su avance. Esta síntesis distingue fechas internas de compromisos institucionales.
 
-| Fecha estimada | Qué toca hacer | Resultado esperado | Enlace |
-|---|---|---|---|
-| **2–5 septiembre 2026 — antecedente del plan** | Revisión de wireframes y definición de alcance. La comparación B1/B2 fue sustituida por la ruta micro:bit → integración XIAO; no constituye una tarea actual. | Wireframes auditados y orden de trabajo definido; se verifica que el desarrollo responda a las directrices de diseño y de Relevo. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **6–12 septiembre 2026** | Hito cerrado el 9 de septiembre: navegación, textos, estados, accesibilidad estructural y aplicación visual revisados; wireframe v1 congelado. | Base aprobada para construir la app, con cambios y pendientes documentados. | [Cierre v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **13–19 septiembre 2026** | Construir la navegación y el flujo mínimo de la app Android; preparar una señal manual segura y repetible. | Prototipo funcional inicial sin depender todavía de toda la electrónica. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Banco micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **20–29 septiembre 2026** | Probar internamente wireframes, app, contenidos, señal y recuperación; preparar consentimiento, guion, criterios y reclutamiento. | Fallos críticos corregidos y avance listo para la corrección cruzada. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **26 septiembre 2026 — estimada y condicionada** | Publicar la encuesta de 70 participantes si sus materiales están disponibles y revisar su metodología. | Fuente trazable para complementar o modificar la memoria; hasta entonces sigue pendiente y no se presentan resultados. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
-| **30 septiembre 2026** | Presentar el avance en la corrección cruzada oficial y registrar el feedback. | Observaciones traducidas en tareas, decisiones o límites concretos. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Matriz de feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
-| **1–7 octubre 2026** | Aplicar el feedback pertinente y cerrar el piloto técnico de app, señal, consentimiento y protocolo. | Prueba con usuarios preparada, con una condición de comparación viable y criterios de observación claros. | [Matriz de feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **8–17 octubre 2026** | Ejecutar la prueba con usuarios y registrar comprensión, asociación, carga, consulta del teléfono, confusiones, molestia y autonomía. | Evidencia inicial para decidir qué mantener, qué iterar y qué limitaciones declarar. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Consentimiento](../07_validacion/consentimiento-protocolo-01.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **19–23 octubre 2026** | Reservar el periodo oficial de Pruebas Solemnes y proteger la ruta crítica. | Sin cambios estructurales ni nuevas líneas de investigación durante esa semana. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **24–31 octubre 2026** | Integrar hallazgos, Android y testigo; cerrar forma, montaje, sistema visual aplicado, costos y registro del prototipo. | Producto prácticamente terminado, presentable y con decisiones justificadas. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) · [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **1–8 noviembre 2026** | Hacer validación final acotada, analizar resultados y congelar alcance, interacción, forma, sistema visual y arquitectura. | Versión final identificable; solo quedan correcciones críticas. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **9–15 noviembre 2026** | Cerrar memoria, resultados, costos, anexos, fotografías, diagramas, presentación y respaldos. | Proyecto 100 % cerrado internamente. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **25 noviembre 2026** | Presentar el Pase de Examen y clasificar observaciones. | Corregir lo necesario sin abrir una reformulación completa. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) |
-| **26 noviembre–2 diciembre 2026** | Incorporar solo correcciones necesarias del Pase, revisar exportación y entregar la memoria oficial. | Memoria definitiva exportada, legible y respaldada. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **3–13 diciembre 2026** | Estudiar la memoria, ensayar la defensa y comprobar la demostración y sus contingencias. | Presentación preparada sin cambios estructurales pendientes. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
-| **14–18 diciembre 2026** | Presentar y defender el proyecto. | Examen, demostración y cierre del proyecto. | [Calendario oficial](calendario-oficial-segundo-semestre-2026.md) · [Plan](plan-de-cierre-agosto-diciembre-2026.md) |
+| Hito | Estado o condición |
+| --- | --- |
+| Hasta el 12 de septiembre | Wireframe v1 cerrado el día 9. Falta ejecutar el banco micro:bit o registrar su bloqueo de acceso. |
+| 19 y 29 de septiembre | App base y señal manual; después, prueba interna y preparación de la corrección cruzada. |
+| 30 de septiembre | Corrección cruzada oficial. |
+| 7 y 17 de octubre | Cierre del piloto técnico; prueba con usuarios solo si se cumplen las puertas del protocolo. |
+| 19–23 de octubre | Semana oficial de Pruebas Solemnes. |
+| 31 de octubre y 8 de noviembre | Integración prácticamente terminada; después, validación acotada y congelamiento. |
+| 15 de noviembre | Cierre interno de producto, evidencia, memoria y entrega. |
+| 25 de noviembre y 2 de diciembre | Pase de Examen y entrega oficial de memoria, respectivamente. |
+| 14–18 de diciembre | Periodo oficial de exámenes de Proyecto de Título. |
+
+La encuesta complementaria mantiene una fecha estimada y condicionada en su [ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md); no bloquea el uso del corpus P1–P8 ni aporta resultados antes de su revisión. Las fechas oficiales se respaldan en el [calendario institucional](calendario-oficial-segundo-semestre-2026.md).
 
 ## Cierre
 
@@ -260,6 +255,14 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. La aclaración de UGREEN permite estudiarlo como referente compacto sin asumir un modelo o plataforma de control. El siguiente ensayo sigue en la Issue #11.
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se actualizó el estado de la memoria, se corrigieron fuentes rectoras y se condensó el calendario en hitos.
+- **Antes:** el resumen repetía extensamente el plan, remitía a entregas anteriores y trataba algunas selecciones como pendientes.
+- **Motivo:** reducir redundancia y conservar una síntesis que pueda leerse sin reconstruir el historial.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

@@ -1,6 +1,8 @@
 # Auditoría de integridad del repositorio — 8 de septiembre de 2026
 
-**Última actualización:** 8 de septiembre de 2026.
+**Registro iniciado:** 8 de septiembre de 2026. Incluye adiciones posteriores identificadas en el historial.
+
+**Vigencia:** antecedente de controles realizados entonces. El estado posterior se consulta en la [revisión textual del 9 de septiembre](auditoria-textual-2026-09-09.md); sus cifras no son un conteo permanente del repositorio.
 
 ## Objetivo
 
@@ -8,7 +10,7 @@ Comprobar que la documentación vigente sea localizable, coherente y reproducibl
 
 ## Resultado ejecutivo
 
-El repositorio tiene una fuente académica identificada, una definición común de Relevo, enlaces internos funcionales y entregables visuales reproducibles. Se corrigieron desajustes de estado, alcance, color, paginación y ejecución técnica. No se encontraron enlaces locales rotos, archivos JSON inválidos ni exportaciones PNG dañadas.
+En el corte de esta auditoría se registraron una fuente académica identificada, una definición común de Relevo, enlaces internos funcionales y entregables visuales con fuentes de reproducción. Se corrigieron desajustes de estado, alcance, color, paginación y ejecución técnica. No se encontraron enlaces locales rotos, archivos JSON inválidos ni exportaciones PNG dañadas.
 
 El proyecto no está terminado en términos empíricos o productivos. El programa de banco para micro:bit compila, pero permanecen pendientes el acceso a la placa, la instalación, la comprobación BLE, la salida cálida de fase A, la integración electrónica portátil, la construcción del prototipo Android, la encuesta complementaria y las pruebas con participantes. Estos asuntos no son fallas documentales: son trabajo futuro visible y ordenado.
 
@@ -29,7 +31,7 @@ El alcance excluye bloqueo, puntajes, rachas, evaluación de cumplimiento e infe
 | Runtime móvil | La capa decorativa del teléfono interceptaba entradas y dos gestos no podían comprobarse de forma fiable. | Se restauraron los estilos compartidos, se volvió no interactivo el marco decorativo, se acotó el diálogo al dispositivo simulado y se corrigió el gesto de cierre del teclado. |
 | Automatización web | Los scripts previos al desarrollo y compilación dependían de que `npm` estuviera disponible aunque el proyecto usa `pnpm`. | Se invocó directamente el control de integridad con Node para mantener compatibilidad entre gestores. |
 | Maqueta editorial | La fuente generaba 86 páginas, pero la carpeta pública contenía 70 PNG y una advertencia antigua. | Se reconstruyeron HTML, manifiesto y 87 exportaciones desde la misma fuente después de corregir las rutas técnicas. |
-| Video 4K | El archivo maestro faltaba, dos parámetros de audio no eran compatibles con ffmpeg 8.1 y la paleta no coincidía con el sistema vigente. | Se corrigió la fuente, se aplicó la paleta oficial y se reconstruyó el video con audio y subtítulos. |
+| Video 4K | El archivo maestro faltaba, dos parámetros de audio no eran compatibles con ffmpeg 8.1 y la paleta no coincidía con el sistema vigente. | Se registró la reconstrucción del video con audio y subtítulos. La revisión del 9 de septiembre corrige el alcance cromático: la fuente conserva la paleta de esa pieza, no el ámbar actual. |
 | Arquitectura técnica | Un documento podía hacer pensar que Bluetooth y el procesamiento local ya estaban integrados. | Se rotularon como arquitectura objetivo pendiente de construcción y comprobación. |
 | Banco micro:bit | La plataforma seleccionada no tenía una implementación ejecutable y su matriz roja contradecía la luz cálida del protocolo. | Se añadió código compilable, un archivo instalable y una secuencia en dos niveles: matriz roja solo para banco; luz cálida externa antes de involucrar participantes. |
 | Cierre de wireframes | Las vistas estaban verificadas, pero no existía una línea base formal y el tablero conservaba el rojo de la etapa anterior. | Se adoptó el ámbar vigente, se regeneraron 44 vistas y tres mapas, y se congeló el wireframe v1 con criterios y límites explícitos. |
@@ -80,6 +82,14 @@ Una auditoría documental puede comprobar coherencia, trazabilidad y funcionamie
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se explicitó la fecha de corte y se rectificó la afirmación sobre el color del video.
+- **Antes:** el informe podía leerse como certificación actual y afirmaba que el montaje adoptaba la paleta vigente.
+- **Motivo:** preservar el control histórico sin trasladar sus resultados a versiones posteriores.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Wireframe v1 cerrado
 

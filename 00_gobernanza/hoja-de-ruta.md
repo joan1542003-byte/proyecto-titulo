@@ -46,7 +46,7 @@ Orden obligatorio:
 7. indexar recursos visuales relevantes;
 8. declarar versiones canónicas y omisiones;
 9. comprobar navegación, privacidad y registros de cambios;
-10. reanudar y cerrar la Issue #4 cuando no compita con una fase sustantiva del proyecto.
+10. reabrir una unidad de la Issue #4 solo cuando resuelva una laguna concreta; no completar la migración por cantidad de archivos.
 
 Documentación: [Fuentes locales migradas](../99_archivo/fuentes-locales/README.md).
 
@@ -67,7 +67,7 @@ Orden obligatorio:
 9. [Completado] consolidar una matriz autónoma de requisitos y límites derivados de usuarios;
 10. [Completado] redactar el apartado de usuario para la memoria v4.
 
-No se elaborarán biografías o visualidades ficticias. Los entregables pendientes deben ordenar evidencia ya existente y declarar sus vacíos; los perfiles se revisarán cuando las pruebas produzcan evidencia nueva.
+No se elaborarán biografías o visualidades ficticias. Los entregables existentes ordenan la evidencia y declaran sus vacíos; los perfiles se revisarán cuando las pruebas produzcan evidencia nueva.
 
 ### Fase 2 — Problema y valor
 
@@ -83,7 +83,7 @@ Preguntas centrales:
 
 ### Fase 3 — Estado del arte y mercado
 
-**Estado:** completada con fecha de corte 24 de agosto de 2026; requiere vigilancia periódica.
+**Estado:** estudio principal cerrado el 24 de agosto de 2026, con ampliaciones fechadas de referentes y tecnología hasta el 9 de septiembre. Una nueva revisión requiere información que afecte una decisión concreta.
 
 Incluye bibliografía académica reciente, productos disponibles, aproximaciones en desarrollo, mecanismos de acción, resultados, fallas, condiciones de adopción y espacios no cubiertos. Encontrar productos no será suficiente: se analizará cómo se organiza el mercado y qué enfoques muestran valor o límites.
 
@@ -91,7 +91,7 @@ Incluye bibliografía académica reciente, productos disponibles, aproximaciones
 
 **Estado:** arquitectura provisional documentada y sistematización visual iniciada mediante aplicaciones para objeto, memoria y Android; el valor físico, la identidad final y la forma del objeto siguen pendientes de desarrollo y pruebas de asociación, comparación y señal.
 
-La propuesta se formulará desde requisitos derivados de investigación. Se registrarán propuesta de valor, principios de interacción, relación físico-digital, flujo de usuario, flujo técnico, alcance, ventajas, límites y decisiones descartadas.
+La propuesta documentada deriva de requisitos de investigación e incluye valor, principios de interacción, relación física y digital, flujos, alcance, límites y alternativas descartadas. Sus beneficios esperados se mantienen como hipótesis.
 
 La [comunicación y paleta vigentes](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) gobiernan piezas nuevas. La investigación visual anterior conserva trazabilidad. Luz y sonido están seleccionados para prototipar; su percepción y parámetros, la forma industrial y los resultados de comprensión requieren pruebas.
 
@@ -129,6 +129,14 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se retiraron pendientes ya resueltos y se precisó el carácter selectivo del archivo y de las ampliaciones de mercado.
+- **Antes:** el orden de trabajo conservaba verbos de inicio para entregables terminados y proponía cerrar la migración general.
+- **Motivo:** sincronizar la ruta con los documentos y las Issues abiertas.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

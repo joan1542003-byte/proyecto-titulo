@@ -66,6 +66,8 @@ Estas seis auditorías describen el estado anterior a la memoria v4 y a los cier
 
 La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a las memorias históricas.
 
+**Control de versiones:** la memoria vigente es el Markdown enlazado arriba. La [maqueta anterior de 87 páginas](../10_recursos_visuales/14_memoria_editorial_completa_2026-09-01/README.md) se conserva como antecedente y no incorpora la revisión textual del 9 de septiembre.
+
 ## Controles editoriales
 
 - Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) registra 15.033 en la versión actual.
@@ -82,6 +84,14 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se enlazó el control textual actual y se aclaró la consulta de versiones.
+- **Antes:** el recorrido de lectura no distinguía todos los cambios posteriores a las auditorías y exportaciones anteriores.
+- **Motivo:** facilitar una entrada única a la revisión y evitar estados contradictorios.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Extensión aproximada de 15.000 palabras
 

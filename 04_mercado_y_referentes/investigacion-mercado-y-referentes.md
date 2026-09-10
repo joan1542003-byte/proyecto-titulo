@@ -27,7 +27,7 @@ En esta revisión, **coincidencia funcional** significa que un referente intenta
 | [Unpluq Tag](https://www.unpluq.com/products/premium-subscription?variant=49252257038662) | Formal alta: etiqueta NFC como llave para desbloquear aplicaciones y barreras programadas. | Suscripción premium; la página mostró una configuración de USD 30, sujeta a selección y cambio. El fabricante declara compatibilidad y reducción de uso; no se verificó evidencia independiente del producto. | Demuestra que existe valor comercial para una llave física, pero convierte el objeto en barrera de acceso y registra hábitos. |
 | [Screenless Breaker](https://shop.screenlessapp.com/products/screenless-breaker-v1) | Formal alta: llave NFC pasiva, sin batería, que desbloquea aplicaciones bloqueadas. | Compra única; el sitio consultado mostró €29,99 en la tienda y el catálogo €45, con disponibilidad no totalmente consistente. No hay evidencia independiente localizada. | Se acerca por la materialidad y la ausencia de pantalla del objeto; sigue siendo un mecanismo obligatorio de desbloqueo. |
 | [Shush Digital](https://shush.digital/) | Formal alta: dispositivo físico que bloquea aplicaciones y se escanea para recuperar acceso; precio observado: €39,99. | Compra única, sin suscripción; las cifras de reducción publicadas son afirmaciones comerciales. Producto en español, pero no se verificó fabricación ni distribución latinoamericana. | Es un competidor funcional directo de los bloqueadores físicos; no trabaja con intención, primer paso ni señal ambiental. |
-| [Focusaur](https://eu.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-and-habitsfocusaur-the-phone-free-focus-device-for-deep-work-and-habits) | Formal alta: objeto de foco, detección de movimiento del teléfono, etiquetas NFC para hábitos y aplicación. | Precio observado: €119 en oferta frente a €149; aplicación gratuita con funciones Pro. La marca declara más de 1.300 patrocinadores; eso es señal comercial, no eficacia sostenida. | Es cercano por objeto, lugar y ritual, pero orientado a productividad, recompensa y sesiones de foco; no a ocio digital legítimo con una alternativa personal. |
+| [Focusaur](https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-habits) | Formal alta: objeto de foco, detección de movimiento del teléfono, etiquetas NFC para hábitos y aplicación. | Precio observado: €119 en oferta frente a €149; aplicación gratuita con funciones Pro. La marca declara más de 1.300 patrocinadores; eso es señal comercial, no eficacia sostenida. | Es cercano por objeto, lugar y ritual, pero orientado a productividad, recompensa y sesiones de foco; no a ocio digital legítimo con una alternativa personal. |
 | [kSafe](https://intl.thekitchensafe.com/) y [IDISKK vendido en Chile](https://kyrios.cl/products/caja-de-bloqueo-para-telefono-movil-idiskk-con-temporizador-para-telefonos-moviles-de-hasta-6-7-pulgadas) | Formal media: contenedor físico con temporizador que retira el teléfono del acceso. | kSafe mostró USD 59. En Kyrios, canal minorista chileno, IDISKK mostró CLP 42.990 y estado agotado; no es evidencia de eficacia ni de producción local. | Es precompromiso y separación, no recordatorio situado. El teléfono deja de estar disponible, mientras Relevo conserva la decisión abierta. |
 | [The Tangible Reminder](https://doi.org/10.1049/cp:20070359) | Formal y ambiental alta, pero histórico: objetos asociados a citas y un display periférico. | Prototipo académico de 2007; evaluación heurística pequeña. No es producto vigente ni estudia ocio digital. | Aporta el antecedente de objeto, contexto y señal ambiental; se diferencia por display, citas temporales y ausencia de intención alternativa. |
 
@@ -50,9 +50,17 @@ Relevo no debe presentarse como el primer objeto para reducir el uso del teléfo
 - Grüning, D. J., Riedel, F., y Lorenz-Spreen, P. (2023). *Directing smartphone use through the self-nudge app one sec*. [DOI](https://doi.org/10.1073/pnas.2213114120).
 - Monge Roffarello, A., y De Russis, L. (2023). *Achieving digital wellbeing through digital self-control tools: A systematic review and meta-analysis*. [DOI](https://doi.org/10.1145/3571810).
 
-Todas las páginas de producto, documentación oficial y precios fueron consultados el **24 de agosto de 2026**. Los precios son fotografías comerciales y no incluyen necesariamente envío, impuestos o importación.
+Todas las páginas de producto, documentación oficial y precios fueron consultados el **24 de agosto de 2026**. Los precios son registros históricos de ese corte y no incluyen necesariamente envío, impuestos o importación. La reparación del enlace de Focusaur el 9 de septiembre no actualiza ni confirma esos precios; cualquier comparación económica actual requiere una nueva cotización.
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se sustituyó la ruta mal formada de Focusaur por la ficha oficial accesible.
+- **Antes:** el vínculo contenía un segmento incorrecto o repetido y respondía 404.
+- **Motivo:** permitir recuperar la fuente sin presentar precios históricos como cotizaciones actuales.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-08-24 — Creación de la investigación de mercado
 

@@ -5,6 +5,8 @@ Repositorio de investigación, desarrollo y documentación del proyecto de titul
 
 **Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto. La memoria tiene 15.033 palabras de texto académico, sin bibliografía ni registro administrativo.
 
+**Revisión y limpieza de textos:** [Correcciones y comprobaciones del 9 de septiembre](00_gobernanza/auditoria-textual-2026-09-09.md). Estados, decisiones, enlaces y referencias reconciliados; las entregas antiguas conservan su fecha y sus límites.
+
 **Consulta del feedback:** [Respuestas al feedback del 2 de septiembre](01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
 **Visibilidad comprobada el 9 de septiembre de 2026:** público, según la API de GitHub. La documentación no modifica esa configuración; los datos identificables siguen excluidos.
@@ -117,6 +119,14 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se enlazó el control textual actual y se aclaró la consulta de versiones.
+- **Antes:** el recorrido de lectura no distinguía todos los cambios posteriores a las auditorías y exportaciones anteriores.
+- **Motivo:** facilitar una entrada única a la revisión y evitar estados contradictorios.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Extensión aproximada de 15.000 palabras
 

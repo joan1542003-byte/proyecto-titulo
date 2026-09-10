@@ -1,5 +1,7 @@
 # Registro de decisiones
 
+Las decisiones se ordenan por identificador. Cada estado indica si la regla sigue vigente, fue sustituida o permanece como hipótesis. Las decisiones posteriores precisan las anteriores; el historial de edición está reunido al final.
+
 ## D-001 — Visibilidad del repositorio y fuentes identificables excluidas
 
 - **Fecha:** 2026-08-23
@@ -26,7 +28,7 @@
 - **Estado:** vigente
 - **Decisión:** conservar los perfiles existentes únicamente como exploraciones históricas.
 - **Fundamento:** fueron construidos para representar situaciones y no derivan de una segmentación documentada.
-- **Consecuencia:** los tipos de usuario se desarrollarán después de reconstruir casos y comparar evidencia.
+- **Consecuencia:** los tipos se derivaron de la comparación de P1–P8 y quedaron registrados en D-011. Las fichas, los recorridos y los requisitos están documentados en `03_usuarios`; los perfiles sintéticos anteriores conservan carácter histórico.
 
 ## D-004 — Una fase principal a la vez
 
@@ -56,7 +58,7 @@
 ## D-007 — Los dos tipos de usuario se deciden después del análisis
 
 - **Fecha:** 2026-08-23
-- **Estado:** vigente
+- **Estado:** cerrada mediante D-011; se conserva la secuencia metodológica
 - **Decisión:** no fijar de antemano si se usarán dos variantes del público objetivo o usuario principal más usuario límite.
 - **Fundamento:** la estructura debe responder a patrones, diferencias y casos contradictorios, además del propósito ético de Relevo.
 - **Alternativas:** dos patrones internos del público objetivo; o un patrón principal y un patrón límite que indique cuándo no intervenir.
@@ -79,7 +81,6 @@
 - **Consecuencia:** F-004-D es el corpus operativo y la pérdida de las notas se declara como limitación documental.
 - **Issue asociada:** [#3](https://github.com/joan1542003-byte/proyecto-titulo/issues/3).
 
-
 ## D-010 — Regla de consolidación del corpus
 
 - **Fecha:** 2026-08-23
@@ -100,7 +101,6 @@
 - **Condición de revisión:** nuevas entrevistas, validaciones del concepto o evidencia de un tercer patrón con implicancias de diseño distintas.
 - **Documento asociado:** [Comparación y tipos](../03_usuarios/comparacion-y-tipos-de-usuario.md).
 
-
 ## D-012 — La edad es el único criterio común confirmado
 
 - **Fecha:** 2026-08-23
@@ -113,9 +113,9 @@
 ## D-013 — Perfiles textuales antes que personas visuales
 
 - **Fecha:** 2026-08-23
-- **Estado:** vigente mientras la entrega no exija visualidad
+- **Estado:** vigente como criterio de evidencia; desarrollada mediante D-040
 - **Decisión:** desarrollar fichas de tipo basadas en evidencia, sin nombres, retratos, frases decorativas ni biografías inventadas.
-- **Fundamento:** la entrega todavía no solicita representación visual y el corpus no respalda esos atributos.
+- **Fundamento original:** al tomar la decisión no se requería representación visual. El criterio que sigue vigente es que el corpus no respalda nombres, retratos ni biografías representativas.
 - **Condición de revisión:** una pauta futura que exija una persona visual; en ese caso, todo elemento sintético se marcará como recurso de comunicación y no como dato.
 
 ## D-014 — Migración documental como única línea activa
@@ -126,94 +126,6 @@
 - **Fundamento:** instrucción explícita del autor y necesidad de asegurar trazabilidad antes de continuar.
 - **Consecuencia:** la Issue #4 pasa a ser la tarea principal; la Issue #2 conserva su estado sin abrir trabajo paralelo.
 - **Arquitectura asociada:** [Fuentes locales migradas](../99_archivo/fuentes-locales/README.md).
-
----
-
-## D-053 — Memoria reconciliada antes de ampliar el proyecto
-
-- **Fecha:** 2026-09-09.
-- **Estado:** vigente como criterio documental; eficacia pendiente.
-- **Pregunta:** ¿qué resolver primero para completar el proyecto con respaldo académico?
-- **Decisión:** sincronizar la memoria con el recorrido congelado y el protocolo, explicitar soporte y ciclo de vida y localizar las condiciones de cierre por área.
-- **Fundamento:** solicitud del autor de abordar una sola cosa; pauta institucional, decisiones vigentes y contraste documental.
-- **Alternativas descartadas:** ampliar simultáneamente marca, servicio y hardware; declarar eficacia por cobertura escrita.
-- **Consecuencia:** asociación y autonomía se registran por separado; el control genérico limita la conclusión comparativa; se preservan capítulos, evidencias y parámetros. El banco #11 sigue como siguiente paso empírico.
-- **Condición de revisión:** evidencia nueva, cambio de protocolo o recorrido que requiera sincronizar memoria y resumen.
-- **Documento asociado:** [Auditoría de coherencia](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md).
-
-## D-054 — Jerarquía editorial para una lectura continua
-
-- **Fecha:** 2026-09-09.
-- **Estado:** vigente.
-- **Pregunta:** ¿cómo mantener la profundidad de la memoria sin fragmentar cada idea en un subapartado breve?
-- **Decisión:** conservar los catorce capítulos numerados y organizar su interior mediante títulos temáticos sin numeración secundaria. Agrupar argumentos relacionados, conectar párrafos y explicar los términos especializados al introducirlos.
-- **Fundamento:** solicitud expresa del autor; lectura completa y control de jerarquía, continuidad y extensión.
-- **Alternativas descartadas:** reemplazar números por rótulos igualmente fragmentados; añadir texto para alargar apartados; eliminar evidencia para abreviar la memoria.
-- **Consecuencia:** la formulación se reúne en cuatro bloques; el método de entrevistas conserva continuidad; el proceso de desarrollo se concentra en el capítulo 13. Las matrices enlazan los títulos actuales y conservan ocho criterios identificables.
-- **Condición de revisión:** una nueva exigencia institucional o un problema de lectura que justifique cambiar la jerarquía.
-- **Documento asociado:** [Control editorial de la memoria](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
-
-## D-055 — Extensión académica aproximada de 15.000 palabras
-
-- **Fecha:** 2026-09-09.
-- **Estado:** vigente como objetivo editorial.
-- **Pregunta:** ¿qué extensión mantener en las próximas revisiones de la memoria?
-- **Decisión:** aproximarse a 15.000 palabras contando preliminares y capítulos 1–13; excluir bibliografía y registro administrativo. Conservar los límites particulares de los apartados y declarar el método de conteo.
-- **Fundamento:** petición expresa del autor y preferencia por una escritura comprensible, ordenada y sin repeticiones.
-- **Alternativas descartadas:** contar el historial como texto académico; retirar citas o evidencia para reducir extensión; rellenar hasta una cifra exacta.
-- **Consecuencia:** el segmento académico pasa de 17.920 a 15.033 palabras. Los 52 registros bibliográficos, citas, tablas y parámetros del protocolo se mantienen.
-- **Condición de revisión:** nuevos resultados que requieran redistribuir espacio o una delimitación de conteo confirmada para la entrega institucional.
-- **Documento asociado:** [Control de extensión](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
-
-## Registro de cambios (disclaimer)
-
-### 2026-09-09 — Extensión aproximada de 15.000 palabras
-
-- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
-- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
-- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
-- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
-
-### 2026-09-09 — Jerarquía editorial
-
-- **Cambio:** se registró D-054 sobre agrupación de argumentos y títulos temáticos.
-- **Versión anterior:** no se había fijado cómo evitar la proliferación de subapartados breves.
-- **Motivo:** conservar la preferencia del autor y la continuidad de lectura en futuras actualizaciones.
-- **Alcance:** criterio editorial; no altera decisiones de producto ni evidencia.
-
-
-### 2026-08-23 — D-012 a D-014
-
-- **Cambio:** se registraron el criterio exclusivamente etario, la ausencia de requisito visual y la prioridad de migración.
-- **Versión anterior:** podía inferirse condición estudiantil y personas era el siguiente paso activo.
-- **Motivo:** aclaraciones y nueva prioridad entregadas por el autor.
-- **Resultado:** perfiles pausados, sin visualidad inventada, y archivo local como única línea activa.
-
-### 2026-08-23 — D-010 y D-011
-
-- **Cambio:** se registraron la regla de consolidación de Q1–Q13 y la elección de usuario principal más usuario límite; también se precisaron fechas y rango observado.
-- **Versión anterior:** el archivo dejaba la estructura de tipos abierta y no indicaba qué versión prevalecía en cada bloque.
-- **Motivo:** incorporar la auditoría de integridad y la matriz P1–P8.
-- **Resultado:** la fase puede avanzar a personas y recorridos con una frontera de intervención explícita.
-
-### 2026-08-23 — Consolidación metodológica y D-009
-
-- **Cambio:** se reescribieron D-002 y D-006, se precisó D-004 y se añadió D-009.
-- **Versión anterior:** la jerarquía dependía de notas no disponibles y atribuía a la asistencia automatizada transformaciones más amplias del registro.
-- **Motivo:** el autor confirmó que la herramienta solo transcribió, que todas las preguntas fueron humanas y que las notas ya no existen.
-- **Resultado:** el corpus queda habilitado y la preservación deja de figurar como tarea pendiente.
-
-### 2026-08-23 — Corrección metodológica y transición de fase
-
-- **Cambio:** se incorporaron D-006, D-007 y D-008.
-- **Versión anterior:** no se registraban la corrección de P6 ni el alcance de Santiago.
-- **Motivo:** trasladar aclaraciones del autor al sistema de decisiones.
-
-### 2026-08-23 — Creación
-
-- **Cambio:** se registraron las decisiones iniciales.
-- **Versión anterior:** estaban implícitas o distribuidas entre borradores.
-- **Motivo:** conservar fundamentos, alternativas y condiciones de revisión.
 
 ## D-015 — Memoria vigente basada en v3 corregida
 
@@ -242,7 +154,7 @@
 ## D-018 — Tres interacciones Android provisionales
 
 - **Fecha:** 2026-08-24
-- **Estado:** suspendida por D-020
+- **Estado:** histórica; suspendida por D-020 y sustituida por D-032
 - **Decisión:** preparar configuración, ubicación/prueba/armado y estado/recuperación técnica.
 - **Riesgo:** la tercera interacción principal es física; debe verificarse si una pantalla técnica satisface la pauta.
 - **Condición de revisión:** aclaración docente o prueba del flujo.
@@ -265,7 +177,7 @@
 ## D-021 — Criterios oficiales como control de estructura
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente como principio funcional entre soportes; la gramática gráfica específica es opcional bajo D-046
+- **Estado:** vigente como criterio académico; estructura desarrollada en D-033 y extensión precisada en D-055
 - **Decisión:** auditar la memoria como Proyecto de Título mediante formulación, investigación, diseño, producción y gestión.
 - **Fundamento:** reglamento y pautas institucionales exigen una memoria integral y no solo una propuesta conceptual.
 - **Documento asociado:** [Criterios oficiales](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md).
@@ -318,16 +230,16 @@
 ## D-028 — Corrección de la lista de materiales
 
 - **Fecha:** 2026-08-24
-- **Estado:** vigente como planificación
+- **Estado:** histórica; cálculo del presupuesto preliminar del 24 de agosto, sustituido como base de compra por D-045 y D-047
 - **Decisión:** usar una base de CLP 51.140–92.640 y un total redondeado de CLP 59.000–107.000 después de 15 % de contingencia.
 - **Fundamento:** la auditoría intermedia calculó erróneamente un máximo de CLP 112.000; la suma trazable correcta produce CLP 58.811–106.536 antes de redondeo.
-- **Límite:** no es una cotización, un costo de producción ni un precio.
+- **Límite:** conserva una corrección aritmética de esa etapa. No es una cotización vigente, un costo de producción ni una autorización de compra. Las partidas actuales se consultan en [factibilidad](../06_desarrollo_y_factibilidad/README.md).
 
 ## D-029 — Encargos como trazabilidad estructural y resumen sincronizado
 
 - **Fecha:** 2026-08-24
 - **Estado:** vigente
-- **Decisión:** conservar la profundidad de la memoria v2, pero hacer visibles los requisitos acumulativos de los encargos mediante títulos, puentes y una matriz histórica; actualizar además un resumen breve cada vez que cambie la memoria.
+- **Decisión original:** conservar la profundidad de la memoria v2, pero hacer visibles los requisitos acumulativos de los encargos mediante títulos, puentes y una matriz histórica; actualizar además un resumen breve cada vez que cambie la memoria.
 - **Fundamento:** la reconstrucción integral cubría la mayor parte del contenido, pero había perdido índice, motivación personal, tres ámbitos explícitos y teoría de cambio como bloque reconocible.
 - **Límite:** los encargos orientan organización y proceso; no son evidencia académica del problema y no deben aparecer como metarrelato en el cuerpo de la memoria.
 - **Documentos asociados:** [Matriz histórica](../01_contexto_y_fuentes/matriz-historica-encargos-memoria.md) y [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
@@ -367,8 +279,8 @@
 ## D-033 — Memoria v4 como base académica
 
 - **Fecha:** 2026-08-26
-- **Estado:** vigente; sustituye a la v3 como base de escritura
-- **Decisión:** utilizar `08_memoria/memoria-vigente-v4.md` como memoria activa, con los catorce títulos del cierre del primer semestre, una extensión general de 15.000 a 20.000 palabras y la formulación de Relevo a partir del capítulo 10.
+- **Estado:** vigente; sustituye a la v3 como base de escritura. D-055 precisa la extensión aproximada de 15.000 palabras y su método de conteo
+- **Decisión:** utilizar `08_memoria/memoria-vigente-v4.md` como memoria activa, con los catorce títulos del cierre del primer semestre, la orientación institucional de 15.000 a 20.000 palabras, concretada posteriormente mediante D-055 y la formulación de Relevo a partir del capítulo 10.
 - **Criterios de redacción:** la motivación se limita a la experiencia personal presente; la introducción explica el fenómeno antes de presentar una solución; los conceptos se definen al aparecer; se evita crear términos innecesarios; y las etapas de prueba se nombran por su propósito.
 - **Fundamento:** feedback directo del autor, estructura histórica de `Johan Yantén Dis. Gráfico`, pauta del examen y contraste con otras memorias del repositorio.
 - **Consecuencia:** la v3 y sus DOCX quedan como antecedentes. No se genera un nuevo DOCX en esta etapa y el resumen vigente debe enlazar la v4.
@@ -389,13 +301,13 @@
 - **Estado:** vigente como método; selección resuelta por D-036
 - **Decisión:** investigar una familia monocromática, modular y matricial mediante tres direcciones comparables. Los referentes aportados se utilizarán para estudiar contraste, ritmo, modularidad y construcción de signos, sin reproducir signos, componentes o composiciones reconocibles.
 - **Fundamento:** la gráfica necesita responder al relevo entre intención digital y señal situada, mantener autonomía y funcionar en aplicación, objeto y comunicación. Una afinidad estilística no basta para justificar identidad.
-- **Consecuencia:** tipografía matricial limitada a identidad y acentos; texto funcional en una fuente legible; rojo de identidad separado del canal físico; forma del objeto abierta. La selección posterior se registra en D-036.
+- **Consecuencia original:** tipografía matricial limitada a identidad y acentos; texto funcional en una fuente legible; rojo de identidad separado del canal físico; forma del objeto abierta. D-036 registra la selección conceptual y D-046 sustituye la codificación cromática.
 - **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [criterios](../10_recursos_visuales/08_direccion_visual_relevo/criterios-sistema-visual.md) y [exploraciones](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/README.md).
 
 ## D-036 — Transferencia situada como dirección visual seleccionada
 
 - **Fecha:** 2026-08-28
-- **Estado:** vigente
+- **Estado:** antecedente conceptual; D-046 gobierna la comunicación y el color actuales
 - **Decisión:** adoptar `Transferencia situada` como base conceptual de la dirección visual e incorporar de `Ensamble de relevo` únicamente la secuencia origen–vínculo–señal situada.
 - **Fundamento:** la primera dirección comunica con claridad la transferencia entre soportes y responde al tono buscado; la regla de la tercera aporta una gramática propia sin exigir su apariencia mecánica.
 - **Consecuencia:** puede comenzar la sistematización de tipografía, retícula y componentes. No se adopta el objeto rectangular de la tercera dirección ni se cierran forma industrial, color o canal físico.
@@ -404,7 +316,7 @@
 ## D-037 — Misma lógica, funciones visuales diferenciadas
 
 - **Fecha:** 2026-08-28
-- **Estado:** vigente
+- **Estado:** vigente como principio funcional entre soportes; la gramática gráfica específica es opcional bajo D-046
 - **Decisión:** aplicar la gramática origen–vínculo–señal situada de acuerdo con la función de cada soporte: la aplicación organiza, el objeto señala y la memoria explica.
 - **Fundamento:** repetir una composición en todos los medios reduciría la relación phygital a una apariencia común. La coherencia requiere roles compartidos, mientras cada soporte conserva un aporte específico.
 - **Consecuencia:** se crea una matriz entre soportes; la aplicación no incorpora funciones nuevas, el objeto se explora mediante familias sin forma seleccionada y la memoria reserva la matriz para identidad y relaciones.
@@ -550,8 +462,6 @@
 - **Límite:** el congelamiento acredita coherencia interna y reproducción técnica; no acredita comprensión, accesibilidad con personas, comportamiento BLE, percepción ni eficacia.
 - **Documento asociado:** [cierre del wireframe v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md).
 
----
-
 ## D-052 — Feedback respondido por área y separado de evidencia
 
 - **Fecha:** 2026-09-09.
@@ -564,7 +474,75 @@
 - **Condición de revisión:** resultados o fallos que contradigan asociación, ubicación, carga, percepción o acceso. Cambiar la hipótesis no implica convertir Relevo en una app aislada.
 - **Documento asociado:** [Matriz del feedback](../01_contexto_y_fuentes/feedback-2026-09-02.md).
 
+## D-053 — Memoria reconciliada antes de ampliar el proyecto
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente como criterio documental; eficacia pendiente.
+- **Pregunta:** ¿qué resolver primero para completar el proyecto con respaldo académico?
+- **Decisión:** sincronizar la memoria con el recorrido congelado y el protocolo, explicitar soporte y ciclo de vida y localizar las condiciones de cierre por área.
+- **Fundamento:** solicitud del autor de abordar una sola cosa; pauta institucional, decisiones vigentes y contraste documental.
+- **Alternativas descartadas:** ampliar simultáneamente marca, servicio y hardware; declarar eficacia por cobertura escrita.
+- **Consecuencia:** asociación y autonomía se registran por separado; el control genérico limita la conclusión comparativa; se preservan capítulos, evidencias y parámetros. El banco #11 sigue como siguiente paso empírico.
+- **Condición de revisión:** evidencia nueva, cambio de protocolo o recorrido que requiera sincronizar memoria y resumen.
+- **Documento asociado:** [Auditoría de coherencia](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md).
+
+## D-054 — Jerarquía editorial para una lectura continua
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente.
+- **Pregunta:** ¿cómo mantener la profundidad de la memoria sin fragmentar cada idea en un subapartado breve?
+- **Decisión:** conservar los catorce capítulos numerados y organizar su interior mediante títulos temáticos sin numeración secundaria. Agrupar argumentos relacionados, conectar párrafos y explicar los términos especializados al introducirlos.
+- **Fundamento:** solicitud expresa del autor; lectura completa y control de jerarquía, continuidad y extensión.
+- **Alternativas descartadas:** reemplazar números por rótulos igualmente fragmentados; añadir texto para alargar apartados; eliminar evidencia para abreviar la memoria.
+- **Consecuencia:** la formulación se reúne en cuatro bloques; el método de entrevistas conserva continuidad; el proceso de desarrollo se concentra en el capítulo 13. Las matrices enlazan los títulos actuales y conservan ocho criterios identificables.
+- **Condición de revisión:** una nueva exigencia institucional o un problema de lectura que justifique cambiar la jerarquía.
+- **Documento asociado:** [Control editorial de la memoria](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
+
+## D-055 — Extensión académica aproximada de 15.000 palabras
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente como objetivo editorial.
+- **Pregunta:** ¿qué extensión mantener en las próximas revisiones de la memoria?
+- **Decisión:** aproximarse a 15.000 palabras contando preliminares y capítulos 1–13; excluir bibliografía y registro administrativo. Conservar los límites particulares de los apartados y declarar el método de conteo.
+- **Fundamento:** petición expresa del autor y preferencia por una escritura comprensible, ordenada y sin repeticiones.
+- **Alternativas descartadas:** contar el historial como texto académico; retirar citas o evidencia para reducir extensión; rellenar hasta una cifra exacta.
+- **Consecuencia:** el segmento académico pasa de 17.920 a 15.033 palabras. Los 52 registros bibliográficos, citas, tablas y parámetros del protocolo se mantienen.
+- **Condición de revisión:** nuevos resultados que requieran redistribuir espacio o una delimitación de conteo confirmada para la entrega institucional.
+- **Documento asociado:** [Control de extensión](../08_memoria/auditoria-redaccion-v4-2026-08-26.md).
+
+## D-056 — Limpieza documental con una sola fuente vigente
+
+- **Fecha:** 2026-09-09.
+- **Estado:** vigente para esta revisión.
+- **Decisión:** concentrar el trabajo autorizado en textos, orden y vigencia; conservar los wireframes y las piezas visuales sin desarrollarlos ni regenerarlos.
+- **Fundamento:** instrucción explícita del autor de limpiar el repositorio y limitar la tarea a documentación.
+- **Consecuencia:** ordenar decisiones y registros, corregir estados y enlaces, retirar redundancias textuales y distinguir las exportaciones fechadas de la memoria actual. La versión académica conserva su objetivo aproximado de 15.000 palabras.
+- **Límite:** una actualización documental no acredita funcionamiento físico, comprensión ni resultados. Los antecedentes originales se conservan por su procedencia; no se reescriben como si contuvieran decisiones posteriores.
+- **Documento asociado:** [Revisión y limpieza de textos](../00_gobernanza/auditoria-textual-2026-09-09.md).
+
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se ordenaron D-001–D-056, se unificaron los dos historiales y se corrigieron estados de usuarios, estructura, presupuesto y dirección visual.
+- **Antes:** D-053–D-055 interrumpían el registro; varias decisiones sustituidas figuraban como vigentes y D-021 contenía un estado ajeno a su tema.
+- **Motivo:** mantener una lectura continua y evitar que una instrucción o cifra histórica gobierne el trabajo actual.
+- **Alcance:** Se conservaron las 55 decisiones previas y todas sus entradas de historial; se añadió D-056 para registrar el alcance textual solicitado.
+
+### 2026-09-09 — Extensión aproximada de 15.000 palabras
+
+- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
+- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
+- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
+- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
+
+### 2026-09-09 — Jerarquía editorial
+
+- **Cambio:** se registró D-054 sobre agrupación de argumentos y títulos temáticos.
+- **Versión anterior:** no se había fijado cómo evitar la proliferación de subapartados breves.
+- **Motivo:** conservar la preferencia del autor y la continuidad de lectura en futuras actualizaciones.
+- **Alcance:** criterio editorial; no altera decisiones de producto ni evidencia.
 
 ### 2026-09-09 — Coherencia de la memoria
 
@@ -833,3 +811,36 @@
 - **Versión anterior:** la migración era la única línea activa.
 - **Motivo:** documentar cambio de prioridad, memoria vigente y límites del wireframing.
 - **Alcance:** D-018 permanece provisional.
+
+### 2026-08-23 — D-012 a D-014
+
+- **Cambio:** se registraron el criterio exclusivamente etario, la ausencia de requisito visual y la prioridad de migración.
+- **Versión anterior:** podía inferirse condición estudiantil y personas era el siguiente paso activo.
+- **Motivo:** aclaraciones y nueva prioridad entregadas por el autor.
+- **Resultado:** perfiles pausados, sin visualidad inventada, y archivo local como única línea activa.
+
+### 2026-08-23 — D-010 y D-011
+
+- **Cambio:** se registraron la regla de consolidación de Q1–Q13 y la elección de usuario principal más usuario límite; también se precisaron fechas y rango observado.
+- **Versión anterior:** el archivo dejaba la estructura de tipos abierta y no indicaba qué versión prevalecía en cada bloque.
+- **Motivo:** incorporar la auditoría de integridad y la matriz P1–P8.
+- **Resultado:** la fase puede avanzar a personas y recorridos con una frontera de intervención explícita.
+
+### 2026-08-23 — Consolidación metodológica y D-009
+
+- **Cambio:** se reescribieron D-002 y D-006, se precisó D-004 y se añadió D-009.
+- **Versión anterior:** la jerarquía dependía de notas no disponibles y atribuía a la asistencia automatizada transformaciones más amplias del registro.
+- **Motivo:** el autor confirmó que la herramienta solo transcribió, que todas las preguntas fueron humanas y que las notas ya no existen.
+- **Resultado:** el corpus queda habilitado y la preservación deja de figurar como tarea pendiente.
+
+### 2026-08-23 — Corrección metodológica y transición de fase
+
+- **Cambio:** se incorporaron D-006, D-007 y D-008.
+- **Versión anterior:** no se registraban la corrección de P6 ni el alcance de Santiago.
+- **Motivo:** trasladar aclaraciones del autor al sistema de decisiones.
+
+### 2026-08-23 — Creación
+
+- **Cambio:** se registraron las decisiones iniciales.
+- **Versión anterior:** estaban implícitas o distribuidas entre borradores.
+- **Motivo:** conservar fundamentos, alternativas y condiciones de revisión.

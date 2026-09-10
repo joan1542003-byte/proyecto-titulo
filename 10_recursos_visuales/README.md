@@ -15,7 +15,7 @@ Las paletas azules, coral, salvia, amarilla y violeta que aparecen más abajo pe
 
 **La intención deja una señal en el lugar donde puede empezar.**
 
-Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje visual para exploración, memoria, presentación y prototipado. No fija por sí sola la forma definitiva del testigo, el canal de señal, la materialidad ni la identidad final del producto: esas decisiones siguen abiertas y deben contrastarse con las pruebas del proyecto.
+Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje visual para exploración, memoria, presentación y prototipado. No fija por sí sola la forma definitiva del testigo, la materialidad ni la identidad final del producto. Luz y sonido están seleccionados para prototipar; sus parámetros y percepción requieren las pruebas del proyecto.
 
 ## Sistema vigente
 
@@ -51,7 +51,7 @@ Esta colección traduce provisionalmente la formulación de Relevo a un lenguaje
 | `11_exploracion_sistema_visual_2026-08-31` | Sesenta piezas de exploración fechada en seis familias, más hojas de contacto, auditoría y descartes documentados. |
 | `12_expansion_sistema_visual_2026-09-01` | Expansión fechada con 61 piezas registradas entre Android, editorial, carteles, módulos transparentes y maquetas A3. |
 | `13_sistema_editorial_campo_evidencia_2026-09-01` | Sistema editorial de la memoria: retícula A3 horizontal, pruebas con texto real, figuras, síntesis y descartes documentados. |
-| `14_memoria_editorial_completa_2026-09-01` | Maqueta integral reproducible de la memoria vigente y sus 87 páginas PNG; conserva la fuente y excluye dependencias instaladas. |
+| `14_memoria_editorial_completa_2026-09-01` | Maqueta anterior de 87 páginas PNG; no incorpora la revisión textual del 9 de septiembre. Se conserva como antecedente de diagramación. |
 | `15_video_lanzamiento_relevo_2026-09-04` | Video explicativo 4K, guion, locución, subtítulos, láminas y fuente reproducible. Es una pieza de comunicación, no evidencia de validación. |
 
 [Comunicación, nombre y color de Relevo](comunicacion-naming-y-paleta-2026-09-07.md) gobierna la explicación pública, el descriptor, la situación del naming y los nuevos códigos cromáticos.
@@ -74,11 +74,19 @@ Las siguientes decisiones pertenecen a la primera exploración visual. Se conser
 
 ## Procedencia y lectura
 
-Las imágenes adjuntas por el autor se usan como referencias de estilo, atmósfera y tratamiento gráfico. Las instrucciones del repositorio se consideran contexto de proyecto; la petición actual —crear un sistema visual amplio para Relevo— gobierna el alcance de esta carpeta. Ningún recurso visual debe leerse como evidencia de usuarios ni como resultado de validación.
+Las imágenes adjuntas por el autor se usan como referencias de estilo, atmósfera y tratamiento gráfico. La colección nació de una solicitud de exploración visual. Esa petición histórica no autoriza continuar produciendo piezas: el trabajo solicitado el 9 de septiembre se concentra en textos y limpieza documental. Ningún recurso visual debe leerse como evidencia de usuarios ni como resultado de validación.
 
 La segunda exploración incorpora una gramática de puntos redondos, barras, órbitas, trazas y módulos de alto contraste inspirada en referencias de tipografía modular y dispositivos minimalistas. Se usa como investigación formal, no como reproducción de una marca existente ni como identidad cerrada de Relevo.
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se precisaron la vigencia de la maqueta, la selección de canales y el alcance de la solicitud actual.
+- **Antes:** el índice llamaba vigente a una exportación anterior y mantenía activa una petición histórica de producción visual.
+- **Motivo:** orientar la lectura hacia las fuentes actuales sin desarrollar piezas nuevas.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

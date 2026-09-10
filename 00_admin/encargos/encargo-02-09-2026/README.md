@@ -2,6 +2,8 @@
 
 Esta entrega reúne cuatro resultados: una pantalla clave desarrollada en fidelidad media y alta, el mapa completo de wireframes de baja fidelidad, la definición del nombre **Relevo** y sus códigos cromáticos. La estructura separa estos resultados del material de respaldo para que sea fácil revisar qué responde a cada punto solicitado.
 
+**Vigencia:** entrega fechada del 2 de septiembre. Sus imágenes y fundamentos conservan esa etapa; para el estado actual se consultan el [cierre del wireframe v1](../../../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) y la [dirección de comunicación y color](../../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md). La entrega no autoriza desarrollar nuevas piezas.
+
 ## Entrega principal
 
 | Punto solicitado | Carpeta | Contenido |
@@ -33,6 +35,14 @@ La pantalla clave funciona como referencia de dirección visual. Los wireframes 
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se distinguió la entrega fechada de las fuentes actuales.
+- **Antes:** el índice describía sus resultados sin advertir que nombre, color y línea base recibieron decisiones posteriores.
+- **Motivo:** preservar la entrega y facilitar la consulta vigente.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-02 — Reorganización según los cuatro puntos del encargo
 

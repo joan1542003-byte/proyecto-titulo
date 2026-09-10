@@ -8,6 +8,8 @@
 
 > **Lectura vigente:** la prueba inmediata utiliza una plataforma existente y la integración portátil posterior se orienta a XIAO nRF52840. Los valores de esta lista permiten reconstruir la comparación del 30 de agosto, pero no gobiernan una compra actual.
 
+**Nota de acceso — 9 de septiembre:** la antigua página 27 del catálogo de Electrónica Real devuelve 404. Se conserva como procedencia del precio observado entonces; ese enlace y los valores históricos no sirven como cotización actual ni autorización de compra. La ruta técnica vigente está en [factibilidad](../../../../06_desarrollo_y_factibilidad/README.md).
+
 ## Decisión que debe apoyar esta lista
 
 La arquitectura de 5 V sigue siendo la candidata más conveniente para la siguiente comprobación porque reúne controlador y señal luminosa bajo una misma alimentación y permite conservar la XIAO ESP32-C3 al integrar Android mediante Bluetooth. Sin embargo, el anillo RGB considerado hasta ahora no es la única forma de producir el pulso cálido que necesita Relevo.
@@ -172,6 +174,14 @@ Altronics. (s. f.). *LED 5 mm blanco*. Recuperado el 30 de agosto de 2026, de ht
 Altronics. (s. f.). *Pack 100 resistencias 150 Ω, 0,25 W, 1 %*. Recuperado el 30 de agosto de 2026, de https://altronics.cl/pack-100-res-150-025w1p
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se identificó una URL comercial histórica no disponible.
+- **Antes:** la página paginada de catálogo podía utilizarse como respaldo económico actual.
+- **Motivo:** evitar confundir un precio archivado con una oferta verificable.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-08 — Lista reclasificada como antecedente
 

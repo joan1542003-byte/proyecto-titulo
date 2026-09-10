@@ -1,5 +1,7 @@
 # Auditoría de organización del repositorio — 8 de septiembre de 2026
 
+**Vigencia:** registro de la reorganización del 8 de septiembre. Los conteos y la sincronización de exportaciones corresponden a ese corte. La memoria recibió cambios posteriores; el estado actual se consulta en la [revisión textual del 9 de septiembre](auditoria-textual-2026-09-09.md).
+
 ## Objetivo
 
 Separar las fuentes que gobiernan el proyecto de los materiales reemplazados, reparar la navegación y comprobar que la limpieza no elimine evidencia, entregas ni archivos necesarios para reproducir los resultados.
@@ -67,6 +69,14 @@ La limpieza comprueba estructura, navegación e integridad de archivos. No valid
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se añadió una fecha de corte explícita para conteos y exportaciones.
+- **Antes:** sus resultados fechados podían interpretarse como comprobaciones permanentes.
+- **Motivo:** distinguir trazabilidad histórica y estado actual.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-08 — Creación
 

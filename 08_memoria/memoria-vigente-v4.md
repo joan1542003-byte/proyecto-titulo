@@ -787,7 +787,7 @@ Gollwitzer, P. M., & Sheeran, P. (2006). Implementation intentions and goal achi
 
 Google. (s. f.-a). *Communicate in the background*. Android Developers. Recuperado el 24 de agosto de 2026, de https://developer.android.com/develop/connectivity/bluetooth/ble/background
 
-Google. (s. f.-b). *Companion device pairing*. Android Developers. Recuperado el 24 de agosto de 2026, de https://developer.android.com/develop/connectivity/companion-device-pairing
+Google. (s. f.-b). *Companion device pairing*. Android Developers. Recuperado el 9 de septiembre de 2026, de https://developer.android.com/develop/connectivity/bluetooth/companion-device-pairing
 
 Google. (s. f.-c). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Recuperado el 24 de agosto de 2026, de https://support.google.com/pixelphone/answer/9137850
 
@@ -860,6 +860,14 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se corrigieron la URL y la fecha de consulta de la referencia oficial sobre vinculación de dispositivos Android.
+- **Antes:** la dirección omitía el segmento `bluetooth` y respondía con una página no encontrada.
+- **Motivo:** restablecer el acceso a la misma documentación oficial sin cambiar el argumento académico.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Ajuste al límite aproximado de 15.000 palabras
 

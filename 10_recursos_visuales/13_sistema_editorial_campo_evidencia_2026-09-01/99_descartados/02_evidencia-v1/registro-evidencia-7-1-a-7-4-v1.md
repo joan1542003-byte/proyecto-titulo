@@ -35,9 +35,17 @@ Generar una sola página editorial A3 horizontal, de proporción aproximada 420:
 
 ## Decisión de uso
 
-Se conserva como referencia de composición para orientar la página de evidencia. No se presenta como arte final ni se incorpora directamente a la memoria. La versión final deberá reconstruirse con texto editable, conservando la estructura espacial que funciona y corrigiendo los rótulos, pies y referencias desde la fuente vigente.
+Esta versión está descartada y se conserva exclusivamente para explicar los errores de la primera prueba. La decisión de conservarla inicialmente como referencia condicionada fue reemplazada por su traslado a descartados. El [README de esta carpeta](README.md) registra ese rechazo; no debe utilizarse como dirección de composición ni como texto de la memoria.
 
-## Disclaimer y registro de cambios
+## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se corrigió la decisión de uso para identificar la v1 como descartada.
+- **Antes:** el registro permitía reutilizarla como referencia pese a estar archivada por rechazo.
+- **Motivo:** alinear la explicación con la clasificación y el motivo de descarte.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-01 — Creación de la prueba
 

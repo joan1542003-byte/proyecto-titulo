@@ -28,7 +28,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 
 | Área | Estado | Qué está resuelto | Qué impide cerrarla |
 | --- | --- | --- | --- |
-| Gobernanza y fuentes | Suficiente para cierre | Repositorio, jerarquía documental, biblioteca, trazabilidad y directrices. | Reconciliar algunas Issues antiguas y mantener los índices sincronizados. |
+| Gobernanza y fuentes | Suficiente para cierre | Repositorio, jerarquía documental, biblioteca, trazabilidad y directrices. | Mantener índices e Issues sincronizados; la Issue #4 queda como archivo selectivo en pausa. |
 | Problema y relevancia | Avanzado | Fenómeno, tres aristas, justificación y aporte disciplinar documentados. | Ajustar únicamente si la evidencia de prototipos contradice la formulación. |
 | Usuarios | Avanzado, con una fuente pendiente | Corpus, análisis, dos tipos situacionales, usuario principal y usuario límite. Existe además una encuesta de 70 participantes pendiente de publicación. | Publicar y revisar la encuesta; luego contrastar necesidades y comprensión durante las pruebas de uso. |
 | Estado del arte y mercado | Avanzado con corte temporal | Corpus comparativo, mecanismos, límites y oportunidad de Relevo. | Vigilancia breve en octubre; no rehacer el estudio sin una razón concreta. |
@@ -37,23 +37,20 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Sistema visual | Avanzado | Dirección basada en cercanía, brevedad, traslado y autonomía; modo oscuro para interfaz; paleta funcional y piezas por soporte. | Aplicar la dirección vigente a los prototipos, probar legibilidad y cerrar las aplicaciones finales. |
 | Prototipo Android | Preparado para construcción | Plataforma justificada, wireframe v1 congelado, recorrido mínimo y backlog definidos. | Construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
 | Testigo físico | Banco preparado, no ejecutado | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado y documentado. | Acceder a la placa, instalar, añadir la salida cálida, medir, revisar el montaje y completar después la integración portátil. |
-| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Revisar wireframes y prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
-| Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Elegir arquitectura, medir consumo, cerrar protección y conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
+| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Construir y revisar el prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
+| Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Verificar la arquitectura candidata, medir consumo y cerrar protección, conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
 
 ## Ruta crítica
 
-El cierre depende de la siguiente secuencia:
+La revisión de wireframes, el recorrido mínimo y el congelamiento de la línea base están completados. El cierre pendiente sigue esta secuencia:
 
-1. revisar los wireframes existentes y detectar vacíos, contradicciones y estados que sobran;
-2. establecer el recorrido mínimo, el backlog y los pasos de desarrollo;
-3. corregir y congelar una primera versión de wireframes antes de programar;
-4. comprobar conexión, señal y silencio local con una plataforma existente, sin participantes ni aplicación propia;
-5. preparar la salida cálida de fase A y construir la navegación básica de la app antes de probar internamente el sistema;
-6. ejecutar la prueba con usuarios solo cuando el prototipo y el protocolo estén listos;
-7. comparar lugar, modalidad y notificación, y decidir qué se mantiene o cambia;
-8. integrar Android y el testigo, cerrar forma, producción y costos;
-9. incorporar resultados reales a la memoria y congelar el proyecto.
+1. comprobar conexión, señal y silencio local con una plataforma existente, sin participantes ni aplicación propia;
+2. preparar la salida cálida de fase A y construir la navegación básica de la app para la prueba interna del sistema;
+3. ejecutar la asociación con usuarios cuando el material y el protocolo estén listos;
+4. comparar ubicación y aviso digital según el protocolo, y evaluar modalidades adicionales solo si una barrera observada lo exige;
+5. integrar Android y el testigo, cerrar forma, producción y costos;
+6. incorporar resultados reales a la memoria y congelar el proyecto.
 
 Si un paso falla, se itera dentro de su periodo. No se compensa un vacío de evidencia añadiendo texto, funciones o piezas visuales.
 
@@ -87,7 +84,9 @@ Las fechas institucionales se encuentran consolidadas en el [calendario oficial 
 
 **Criterio de salida:** el flujo principal y sus estados críticos están definidos; cualquier cambio posterior debe responder a una prueba o a un problema concreto.
 
-**Estado al 9 de septiembre:** hito cerrado. La [línea base v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) registra los nueve marcos, las recuperaciones prioritarias, la corrección cromática, la verificación y los límites que pasan a prototipado.
+**Estado al 9 de septiembre:** componente de wireframes cerrado. La [línea base v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) registra los nueve marcos, las recuperaciones prioritarias, la corrección cromática, la verificación y los límites que pasan a prototipado.
+
+**Puerta inmediata hasta el 12 de septiembre:** ejecutar el banco de la Issue #11 o registrar la falta de acceso a hardware. Es el pendiente técnico recogido en la Issue #9; el cierre documental del wireframe no lo resuelve.
 
 ### 13–19 de septiembre — Construir la app base y una señal manual
 
@@ -228,7 +227,7 @@ Presentar y defender Relevo dentro del periodo oficial asignado por la Escuela. 
 | Fecha | Hito | Condición mínima |
 | --- | --- | --- |
 | 5 de septiembre | Wireframes auditados y orden de trabajo definido | Flujo mínimo, MVP, decisiones abiertas y backlog registrados. |
-| 12 de septiembre | Wireframe v1 congelado | Flujo principal, estados críticos y correcciones visuales documentados. |
+| 12 de septiembre | Wireframe cerrado y control del banco | Wireframe v1 cerrado el día 9; banco ejecutado o bloqueo de acceso registrado en la Issue #11. |
 | 19 de septiembre | App base y señal manual disponibles | Navegación funcional y activación física segura y repetible. |
 | 29 de septiembre | Prueba interna cerrada | Fallos críticos registrados/corregidos y material listo para la corrección. |
 | 30 de septiembre | Corrección cruzada oficial | Avance presentado y observaciones traducidas en tareas o decisiones. |
@@ -285,7 +284,7 @@ Si una tarea se retrasa más de una semana, se reduce alcance secundario antes d
 | La señal no recupera la intención | Las personas consultan siempre el teléfono o interpretan alarma. | Iterar significado y lugar antes de construir integración completa. |
 | El prototipo técnico consume octubre | La señal manual o la comunicación fallan repetidamente. | Reducir automatización y conservar una demostración controlada, honesta y documentada. |
 | La forma se cierra tarde | No hay prototipos volumétricos comparables al iniciar octubre. | Probar familias simples en paralelo únicamente dentro de la fase de forma. |
-| El reclutamiento se retrasa | No existen participantes confirmados al 6 de septiembre. | Activar contactos de respaldo respetando los criterios y el consentimiento. |
+| El reclutamiento se retrasa | No hay una vía de reclutamiento preparada al cerrar el piloto técnico del 7 de octubre. | Activar contactos de respaldo respetando los criterios y el consentimiento. |
 | La memoria absorbe tiempo de construcción | Se reescriben capítulos sin resultados nuevos. | Mantenerla en actualización controlada hasta el cierre de cada prueba. |
 | Diciembre se convierte en producción | Quedan costos, fotografías, diagramas o exportaciones después del 15 de noviembre. | Usar el margen de noviembre y retirar entregables secundarios antes de diciembre. |
 
@@ -296,6 +295,14 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se separaron los hitos documentales completados de la puerta técnica del 12 de septiembre y se corrigió el riesgo de reclutamiento.
+- **Antes:** la ruta volvía a iniciar los wireframes, el hito difería de la Issue #9 y el riesgo exigía participantes antes de la puerta técnica.
+- **Motivo:** mantener una secuencia operativa coherente sin adelantar pruebas ni alterar las fechas institucionales.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Wireframe v1 cerrado
 

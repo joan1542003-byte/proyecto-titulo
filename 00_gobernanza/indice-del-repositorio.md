@@ -21,6 +21,8 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 10. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
 11. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
 
+**Última revisión documental:** [Textos, vigencia y limpieza del 9 de septiembre](auditoria-textual-2026-09-09.md). Las auditorías anteriores describen sus respectivos cortes, no el estado permanente de todas las fuentes.
+
 ## Mapa de carpetas
 
 | Carpeta | Estado | Qué contiene |
@@ -77,6 +79,14 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se enlazó el control textual actual y se aclaró la consulta de versiones.
+- **Antes:** el recorrido de lectura no distinguía todos los cambios posteriores a las auditorías y exportaciones anteriores.
+- **Motivo:** facilitar una entrada única a la revisión y evitar estados contradictorios.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Coherencia de la memoria
 

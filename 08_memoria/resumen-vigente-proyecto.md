@@ -38,7 +38,7 @@ Se redujeron 2.887 palabras mediante una redacción más compacta en antecedente
 
 La edición de lectura conserva los catorce capítulos y reúne los subapartados breves bajo títulos temáticos sin numeración secundaria. La formulación pasa de diez apartados a cuatro, el marco teórico elimina el tercer nivel y el método de entrevistas se lee sin la interrupción de la encuesta pendiente. Se mejoran transiciones, repeticiones y explicaciones de ciclo, armado y componentes. Las 52 referencias y el protocolo se conservan. El [control editorial](auditoria-redaccion-v4-2026-08-26.md) documenta la nueva organización y la extensión.
 
-La [auditoría de coherencia](auditoria-coherencia-memoria-2026-09-09.md) sincroniza el recorrido de nueve momentos, distingue capacidades previstas del banco construido y conecta soporte, mantenimiento y retiro. El nombre y la comunicación tienen un apartado propio. La asociación se evalúa mediante cuatro componentes; comprender salidas se registra por separado. El control digital es un aviso genérico sin el texto de la intención: la comparación no demostrará superioridad frente a cualquier recordatorio.
+La [auditoría de coherencia](auditoria-coherencia-memoria-2026-09-09.md) sincroniza el recorrido de nueve momentos, distingue las capacidades previstas del programa de banco compilado y conecta soporte, mantenimiento y retiro. El nombre y la comunicación tienen un apartado propio. La asociación se evalúa mediante cuatro componentes; comprender salidas se registra por separado. El control digital es un aviso genérico sin el texto de la intención: la comparación no demostrará superioridad frente a cualquier recordatorio.
 
 La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. El programa para comprobar Android → BLE → luz, sonido y silencio local en micro:bit V2 ya compila. Su matriz roja se reserva al banco sin participantes; la prueba de asociación requiere una luz blanca cálida externa y difundida. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. BleenyButton sirve como antecedente de batería, fijación y carcasa; no define la finalidad ni la interacción de Relevo. Los montajes anteriores continúan como recursos de prueba, no como forma integrada. Relevo se conserva como nombre académico y la comunicación se orienta mediante el descriptor `Una señal donde quieres empezar`; el ámbar reemplaza provisionalmente al rojo como color funcional. Ninguna dimensión, autonomía, percepción o ventaja está validada.
 
@@ -56,7 +56,17 @@ Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando
 
 Las respuestas al feedback del 2 de septiembre están distribuidas por área y accesibles en la [matriz de cobertura](../01_contexto_y_fuentes/feedback-2026-09-02.md). Se precisaron los ejemplos de ejercicio/buceo, adaptabilidad y ubicación, UGREEN como referente, encontrabilidad, vibración y los tres tiempos de la experiencia. Ninguna respuesta acredita validación; el banco físico continúa pendiente. La memoria conserva su estructura y el protocolo sus parámetros.
 
+La revisión textual del 9 de septiembre corrigió el acceso a la documentación oficial de vinculación Android en la bibliografía. El texto académico conserva 15.033 palabras, las mismas 52 referencias y el estado de validación descrito arriba.
+
 # Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se sincronizó el resumen con la corrección de un enlace bibliográfico.
+- **Antes:** la bibliografía conservaba una ruta oficial incompleta.
+- **Motivo:** mantener trazabilidad entre memoria y resumen, sin alterar formulación ni resultados.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Extensión aproximada de 15.000 palabras
 

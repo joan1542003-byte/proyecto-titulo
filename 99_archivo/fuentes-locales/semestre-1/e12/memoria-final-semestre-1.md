@@ -14,6 +14,8 @@ fecha_migracion: 2026-08-23
 
 ## Nota archivística
 
+**Corrección de acceso — 9 de septiembre de 2026:** la ruta histórica de Paper Phone terminada en `paperphone` no está disponible. La [ficha oficial accesible](https://experiments.withgoogle.com/paper-phone) utiliza `paper-phone` y atribuye el experimento a Special Projects. La referencia migrada conserva el texto original y no debe copiarse sin esta corrección.
+
 Entrega histórica del hito E12 y referencia principal de la etapa In(Visible). La comparación de fuentes posterior confirmó que la [memoria final de Relevo del 8 de julio de 2026](../cierre/memoria-final-relevo.md) es el cierre semestral más tardío localizado. Este documento explica el antecedente conceptual, pero no sustituye esa memoria ni las ramas posteriores del semestre 2.
 
 Este archivo conserva el contenido de una fuente local propia dentro del archivo histórico. Su ubicación en `99_archivo` indica que no constituye, por sí sola, una definición vigente del proyecto.
@@ -506,6 +508,14 @@ Zamorano Negretti, C. S. (2024). *Comunidad a través del juego: codiseño de un
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se documentaron la ruta accesible y la autoría que indica la ficha oficial de Paper Phone.
+- **Antes:** la referencia histórica contenía una URL sin guion y una atribución genérica.
+- **Motivo:** permitir consultar el antecedente sin convertir su referencia original en una cita vigente.
+- **Alcance:** Se conserva el contenido migrado; la corrección aparece en la nota archivística.
 
 - **Cambio realizado:** migración al repositorio con metadatos archivísticos, nota de vigencia y estructura Markdown normalizada.
 - **Estado anterior:** archivo local `Yanten Johan E12 - Memoria final.md` sin clasificación integrada en el repositorio.

@@ -32,16 +32,26 @@ El render vuelve a construir las diez láminas antes de codificar. La voz y los 
 
 La pieza conserva los códigos con que fue producida el 4 de septiembre: grafito `#111314`, blanco `#F1F1F1`, gris secundario `#B6B8B7` y rojo de señal `#D71921`. Estos valores permiten reproducir el video, pero no gobiernan piezas nuevas. La dirección vigente se consulta en [Comunicación, nombre y color de Relevo](../comunicacion-naming-y-paleta-2026-09-07.md), donde el ámbar separa la señal cotidiana de los estados de error.
 
+**Aclaración del registro anterior:** la nota del 7 de septiembre afirmaba una actualización a la paleta vigente. La fuente conservada utiliza los cuatro códigos anteriores; por tanto, esa nota no acredita que el video haya adoptado el ámbar. Se conserva como pieza fechada, no como modelo cromático actual.
+
 ## Límites
 
 - La forma física mostrada es exploratoria y no representa un diseño industrial validado.
-- La condición de activación, el canal final de señal y el aporte frente a una notificación continúan abiertos.
+- La condición de activación y el aporte frente al aviso comparativo continúan abiertos. El proyecto ha seleccionado luz y sonido para prototipar; sus parámetros siguen pendientes de prueba.
 - Las escenas generadas son ilustraciones sintéticas, no registros de participantes.
-- El titular `Que una intención vuelva a tener lugar` continúa pendiente de prueba de comprensión.
+- El titular `Que una intención vuelva a tener lugar` pertenece a esta pieza histórica. El descriptor público actual es `Una señal donde quieres empezar`; su comprensión también requiere prueba.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se corrigió el alcance de una afirmación histórica sobre la paleta y se distinguió el titular del video del descriptor actual.
+- **Antes:** el historial afirmaba una sincronización cromática que no corresponde a la fuente conservada.
+- **Motivo:** mantener una descripción comprobable sin reconstruir el montaje.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-08 — Paleta identificada como propia de la pieza
 

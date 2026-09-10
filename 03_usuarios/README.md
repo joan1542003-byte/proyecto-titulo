@@ -43,7 +43,7 @@ Comprender comportamientos, necesidades, tensiones, deseos, experiencias y lími
 12. Traducir hallazgos a requisitos y criterios de no intervención.
 13. Redactar el apartado de usuario de la memoria después de revisar la trazabilidad.
 
-Los pasos 1–9 se conservan como documentos analíticos en esta carpeta. Los pasos 10–13 están desarrollados en el capítulo 7 y en los criterios del capítulo 9 de la memoria v4. No se crea una persona convencional independiente porque el corpus respalda estados y transiciones, pero no una biografía representativa con ocupación, vivienda o identidad estable.
+Los pasos 1–9 se conservan como documentos analíticos en esta carpeta. Los pasos 10–12 cuentan con [perfiles](perfiles-situacionales.md), [recorridos](recorridos-situacionales.md) y una [matriz de requisitos](matriz-requisitos-de-usuarios.md). El paso 13 sintetiza esos resultados en los capítulos 7 y 9 de la memoria v4. No se crea una persona convencional independiente porque el corpus respalda estados y transiciones, pero no una biografía representativa con ocupación, vivienda o identidad estable.
 
 ## Evidencia disponible
 
@@ -58,7 +58,7 @@ Los pasos 1–9 se conservan como documentos analíticos en esta carpeta. Los pa
 
 ## Investigación pendiente de publicar
 
-Existe una encuesta complementaria con **70 participantes**. Al 2 de septiembre de 2026 todavía no se ha publicado ni integrado al análisis del repositorio o de la memoria. No se incorpora como resultado ni se mezcla con el corpus P1–P8 hasta revisar su instrumento, procedencia, consentimiento, anonimización y forma de análisis. El seguimiento está en [Encuesta de 70 participantes — pendiente](encuesta-70-participantes-pendiente.md).
+Existe una encuesta complementaria con **70 participantes**. Al 9 de septiembre de 2026 todavía no se ha publicado ni integrado al análisis del repositorio o de la memoria. No se incorpora como resultado ni se mezcla con el corpus P1–P8 hasta revisar su instrumento, procedencia, consentimiento, anonimización y forma de análisis. El seguimiento está en [Encuesta de 70 participantes — pendiente](encuesta-70-participantes-pendiente.md).
 
 ## Limitaciones vigentes
 
@@ -68,7 +68,7 @@ Existe una encuesta complementaria con **70 participantes**. Al 2 de septiembre 
 - La duración individual y el guion exacto del consentimiento no quedaron registrados.
 - La transcripción puede contener errores y sus pasajes ambiguos no sostendrán afirmaciones fuertes.
 - Ocho entrevistas por referencias no permiten hablar de segmentos representativos.
-- La elección de los tipos se resolverá por evidencia, no por preferencia formal.
+- La elección de los tipos se fundamenta en el corpus y podrá revisarse con evidencia nueva.
 - El usuario puede ampliarse, delimitarse o reformularse si los hallazgos lo justifican.
 - Un episodio de ocio digital elegido, valioso y sin conflicto se considera un límite legítimo de intervención.
 
@@ -87,11 +87,19 @@ La decisión deriva de P1–P8 y permanece abierta a revisión con nueva evidenc
 
 La encuesta de 70 participantes constituye una línea adicional pendiente de publicación y revisión. Su incorporación podría complementar o modificar los hallazgos, pero todavía no cambia el estado de la fase.
 
-Estos documentos no incorporarán nombres, retratos ni biografías inventadas. Su función será hacer visible la trazabilidad previa a nuevas pruebas. Después, la evidencia de prototipos podrá precisar necesidades, modificar recorridos o revelar un patrón no cubierto.
+Estos documentos no incorporarán nombres, retratos ni biografías inventadas. Su función es hacer visible la trazabilidad previa a nuevas pruebas. Después, la evidencia de prototipos podrá precisar necesidades, modificar recorridos o revelar un patrón no cubierto.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se enlazaron los entregables autónomos y se corrigió el tiempo verbal del estado de la tipología.
+- **Antes:** el índice todavía situaba parte del trabajo únicamente dentro de la memoria y describía la selección de tipos como futura.
+- **Motivo:** hacer coincidir el índice con los documentos y el cierre de la Issue #2.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

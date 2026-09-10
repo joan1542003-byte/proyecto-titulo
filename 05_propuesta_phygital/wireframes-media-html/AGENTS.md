@@ -47,6 +47,8 @@ See `src/mobile/COMPONENTS.md` for the full component and gesture contract.
 
 ## Relevo — decisiones durables del prototipo
 
+La presentación de Relevo es un tablero de revisión; las reglas de marco y teclado anteriores corresponden a los recursos auxiliares de la plantilla. No convierten los wireframes en una simulación de teléfono ni autorizan restaurar ese formato sobre la entrega. La solicitud del 9 de septiembre limita el trabajo actual a documentación y limpieza de textos. Los artefactos y el código conservan su versión.
+
 - La fuente académica vigente es `../../08_memoria/memoria-vigente-v4.md`.
 - La entrega principal conserva exactamente tres interacciones y nueve marcos; los estados 01–35 son un anexo de cobertura.
 - El marco 3.2 y el estado 23 representan un momento físico situado, no una pantalla del objeto.
@@ -61,16 +63,6 @@ See `src/mobile/COMPONENTS.md` for the full component and gesture contract.
 - El mapa general se divide en arquitectura, ruta ampliada y cobertura por familias. No se deben reunir 44 miniaturas ilegibles como única representación.
 - Los documentos de entrega describen decisiones y piezas del proyecto; evitan nombres o explicaciones sobre herramientas de producción.
 - Cada marco debe poder revisarse y descargarse por separado sin convertir esa función de presentación en una característica atribuida a Relevo.
-
----
-
-## Registro de cambios (disclaimer)
-
-### 2026-09-02 — Criterios durables de interfaz y documentación
-
-- **Qué se incorporó:** nivel de fidelidad por conjunto, función exclusiva del color de señal, diferencia entre información y control, armado físico y estructura de mapas.
-- **Cómo estaba antes:** la guía definía toda la entrega como monocromática y de fidelidad media, sin registrar la diferencia entre ruta principal y cobertura ni el problema de legibilidad del mapa único.
-- **Por qué se hizo:** conservar las decisiones que gobiernan futuras correcciones del tablero y evitar que reaparezcan ambigüedades ya resueltas.
 
 ## Keyboard Rule
 
@@ -97,9 +89,15 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Keep the keyboard below the home indicator/safe area layer in z-index, and above ordinary app UI while visible.
 - Keep the home indicator as the topmost safe-area layer in the z-index above everything else in the prototype.
 
----
-
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se reunieron los dos registros de cambios y se aclaró el ámbito de las reglas heredadas.
+- **Antes:** el historial interrumpía instrucciones que continuaban después y el contrato de plantilla podía confundirse con la presentación de Relevo.
+- **Motivo:** mantener una guía coherente sin tocar el tablero ni su código.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Dirección cromática y línea base
 
@@ -107,3 +105,9 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - **Cómo estaba antes:** la guía conservaba los códigos oscuros de v4 y describía la cobertura como todavía inestable.
 - **Por qué se decidió:** alinear futuras modificaciones con la autoridad visual vigente y con una única base de desarrollo.
 - **Alcance:** las hipótesis funcionales y perceptivas siguen sujetas a implementación y prueba.
+
+### 2026-09-02 — Criterios durables de interfaz y documentación
+
+- **Qué se incorporó:** nivel de fidelidad por conjunto, función exclusiva del color de señal, diferencia entre información y control, armado físico y estructura de mapas.
+- **Cómo estaba antes:** la guía definía toda la entrega como monocromática y de fidelidad media, sin registrar la diferencia entre ruta principal y cobertura ni el problema de legibilidad del mapa único.
+- **Por qué se hizo:** conservar las decisiones que gobiernan futuras correcciones del tablero y evitar que reaparezcan ambigüedades ya resueltas.

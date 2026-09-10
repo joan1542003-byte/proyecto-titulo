@@ -77,9 +77,17 @@ Terzimehić, N., Haliburton, L., Greiner, P., et al. (2022). MindPhone: Mindful 
 
 Hermann, M., Mahler, T., de Melo, G., y Weber, M. (2007). The tangible reminder. https://doi.org/10.1049/cp:20070359
 
-Fuentes oficiales de mercado consultadas el 24 de agosto de 2026: [Google Pause Point](https://blog.google/products-and-platforms/platforms/android/pause-point/), [Apple Screen Time](https://support.apple.com/en-euro/guide/iphone/iphbfa595995/ios), [one sec](https://one-sec.app/), [Brick](https://getbrick.com/), [Unpluq](https://www.unpluq.com/), [Screenless Breaker](https://screenlessapp.com/en/products/screenless-breaker-v1) y [Focusaur](https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-and-habits).
+Fuentes oficiales de mercado consultadas el 24 de agosto de 2026: [Google Pause Point](https://blog.google/products-and-platforms/platforms/android/pause-point/), [Apple Screen Time](https://support.apple.com/en-euro/guide/iphone/iphbfa595995/ios), [one sec](https://one-sec.app/), [Brick](https://getbrick.com/), [Unpluq](https://www.unpluq.com/), [Screenless Breaker](https://screenlessapp.com/en/products/screenless-breaker-v1) y [Focusaur](https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-habits).
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se sustituyó la ruta mal formada de Focusaur por la ficha oficial accesible.
+- **Antes:** el vínculo contenía un segmento incorrecto o repetido y respondía 404.
+- **Motivo:** permitir recuperar la fuente sin presentar precios históricos como cotizaciones actuales.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-08-24 — Creación del estudio académico
 

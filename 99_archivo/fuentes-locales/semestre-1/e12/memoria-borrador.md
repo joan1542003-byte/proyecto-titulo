@@ -14,6 +14,8 @@ fecha_migracion: 2026-08-23
 
 ## Nota archivística
 
+**Corrección de acceso — 9 de septiembre de 2026:** la ruta histórica de Paper Phone terminada en `paperphone` no está disponible. La [ficha oficial accesible](https://experiments.withgoogle.com/paper-phone) utiliza `paper-phone` y atribuye el experimento a Special Projects. La referencia migrada conserva el texto original y no debe copiarse sin esta corrección.
+
 Borrador reemplazado. Se conserva para comparar la evolución de estructura, evidencia y decisiones.
 
 Este archivo conserva el contenido de una fuente local propia dentro del archivo histórico. Su ubicación en `99_archivo` indica que no constituye, por sí sola, una definición vigente del proyecto.
@@ -500,6 +502,14 @@ Zamorano Negretti, C. S. (2024). *Comunidad a través del juego: Codiseño de un
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se documentaron la ruta accesible y la autoría que indica la ficha oficial de Paper Phone.
+- **Antes:** la referencia histórica contenía una URL sin guion y una atribución genérica.
+- **Motivo:** permitir consultar el antecedente sin convertir su referencia original en una cita vigente.
+- **Alcance:** Se conserva el contenido migrado; la corrección aparece en la nota archivística.
 
 - **Cambio realizado:** migración al repositorio con metadatos archivísticos, nota de vigencia y estructura Markdown normalizada.
 - **Estado anterior:** archivo local `Yanten Johan E12 - Memoria borrador.md` sin clasificación integrada en el repositorio.

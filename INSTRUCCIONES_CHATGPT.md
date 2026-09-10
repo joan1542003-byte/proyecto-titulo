@@ -23,6 +23,10 @@ El repositorio es la fuente central de contexto, decisiones, documentación y ta
 
 El estado del proyecto cambia. No confíes en una tarea, formulación o prioridad escrita en estas instrucciones si una Issue o un documento vigente del repositorio registra una decisión posterior.
 
+## Alcance de la revisión documental del 9 de septiembre
+
+El autor pidió corregir textos, ordenar el repositorio y limpiar redundancias. Esta revisión no incluye desarrollar wireframes, producir visualidad ni regenerar exportaciones. Las piezas fechadas se conservan y sus documentos explican qué versión representan. La [auditoría textual](00_gobernanza/auditoria-textual-2026-09-09.md) registra lo corregido y sus límites. Una solicitud posterior del autor puede definir un nuevo alcance.
+
 ## Contexto estable del proyecto
 
 Relevo es un proyecto de titulación de Diseño y debe ser **phygital**: integra de manera inseparable una dimensión física y otra digital.
@@ -145,6 +149,14 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se registró el alcance exclusivamente textual de esta revisión.
+- **Antes:** una lectura amplia de «revisar todo» podía abrir trabajo visual o de herramientas no solicitado.
+- **Motivo:** conservar la instrucción explícita del autor para la continuidad de la tarea.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Extensión aproximada de 15.000 palabras
 

@@ -70,7 +70,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 
 ## Correcciones aplicadas
 
-1. La cita conjunta de de Segovia Vicente et al. (2024) y Montag et al. (2019) se ordenó alfabéticamente.
+1. Se ordenó alfabéticamente la cita conjunta que reúne a de Segovia Vicente et al. (2024) y Montag et al. (2019).
 2. Kirsh se ubicó antes de Kitchen Safe en la lista de referencias.
 3. one sec se ubicó antes de O’Rear en la lista de referencias.
 4. Las obras de la Subsecretaría de Telecomunicaciones se reasignaron como 2026a para *Equipos de alcance reducido* y 2026b para el *Informe final*, junto con sus citas respectivas.
@@ -83,6 +83,14 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se reformuló una oración con repetición de «de».
+- **Antes:** la preposición junto al apellido dificultaba leer la corrección bibliográfica.
+- **Motivo:** mejorar la redacción sin alterar el apellido, la cita ni las referencias.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

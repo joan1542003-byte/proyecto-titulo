@@ -9,7 +9,7 @@ estado: "criterio vigente de comunicación; comprensión pendiente de prueba"
 
 > **Alcance:** este documento organiza cómo explicar el proyecto a personas que no conocen su investigación. No cambia la formulación académica, no agrega resultados y no presenta como validado el aporte del objeto. La definición extensa continúa en la [memoria v4](../08_memoria/memoria-vigente-v4.md) y el estado del proyecto en el [resumen general](resumen-general-del-proyecto.md).
 
-## 1. Qué debe entender una persona
+## Qué debe entender una persona
 
 La idea central de Relevo es esta:
 
@@ -25,7 +25,7 @@ Al terminar una explicación breve, alguien debería poder responder cinco pregu
 
 Si una explicación no permite reconstruir esas cinco respuestas, todavía no comunica el producto completo.
 
-## 2. Diagnóstico de la comunicación actual
+## Diagnóstico de la comunicación actual
 
 La formulación vigente es rigurosa y coherente, pero exige demasiado contexto antes de permitir que una persona imagine la experiencia. El problema no está en la definición del proyecto, sino en el orden en que se presenta.
 
@@ -44,7 +44,7 @@ La formulación vigente es rigurosa y coherente, pero exige demasiado contexto a
 
 La explicación actual suele responder **qué componentes tiene Relevo** antes de responder **por qué alguien querría usarlo**. Para una audiencia nueva, el orden debe invertirse.
 
-## 3. Criterio de diseño de producto aplicado a la comunicación
+## Criterio de diseño de producto aplicado a la comunicación
 
 El diseño de productos no consiste solo en dar forma a un objeto o estilizar una interfaz. Parte por comprender una necesidad, delimitar cuándo existe, convertirla en una experiencia posible, prototiparla y revisar si resulta deseable, factible y sostenible. Por eso Relevo debe comunicarse como un sistema de relaciones y decisiones, no como una pieza física aislada.
 
@@ -59,33 +59,33 @@ El orden recomendado para cualquier explicación es:
 
 > **escena reconocible → tensión → propuesta → secuencia de uso → autonomía → diferencia → estado de validación**
 
-## 4. Núcleo verbal
+## Núcleo verbal
 
-### 4.1 Titular recomendado, pendiente de prueba
+**Titular recomendado, pendiente de prueba**
 
 > **Una señal donde quieres empezar.**
 
 Este es el descriptor público vigente según D-046. La frase anterior, «Que una intención vuelva a tener lugar», se conserva como antecedente expresivo y no gobierna piezas nuevas. El descriptor se acompaña de una bajada que explique intención, primer paso y decisión.
 
-### 4.2 Bajada pública
+**Bajada pública**
 
 > Relevo busca ayudar a volver a tener presente algo que querías hacer cuando el teléfono sigue ocupando tu atención. Lo preparas en la aplicación y una señal breve aparece junto al lugar donde puedes comenzar. Tú decides si actuar, continuar o cambiar de idea.
 
-### 4.3 Descriptor técnico vigente
+**Descriptor técnico vigente**
 
 > **Sistema phygital para recuperar intenciones personales durante el ocio digital.**
 
 El descriptor sirve para fichas, créditos y contextos académicos. No debería ser la primera y única explicación para público general.
 
-### 4.4 Explicación en 10 segundos
+**Explicación en 10 segundos**
 
 > Relevo busca volver a poner una intención en el lugar donde puede empezar. Una señal breve la hace presente fuera del teléfono y tú decides qué hacer.
 
-### 4.5 Explicación en 30 segundos
+**Explicación en 30 segundos**
 
 > A veces seguimos viendo contenido en el teléfono aunque antes queríamos leer, caminar o dibujar. No necesariamente olvidamos esa intención: simplemente deja de participar en la siguiente decisión. Con Relevo la persona registra la actividad y su primer paso en una aplicación, y sitúa un objeto junto al lugar donde puede comenzar. Si se cumple una condición configurada, el objeto emite una señal breve. No bloquea el teléfono ni comprueba si la actividad se realizó; vuelve a ofrecer la posibilidad.
 
-### 4.6 Explicación en 90 segundos
+**Explicación en 90 segundos**
 
 > Relevo parte de una situación específica, no de la idea de que todo uso prolongado del teléfono sea malo. Una persona puede estar viendo videos y, al mismo tiempo, haber decidido que quería leer. Mientras la sesión continúa, el próximo contenido permanece muy disponible y la intención de leer deja de orientar el siguiente paso.
 >
@@ -93,21 +93,21 @@ El descriptor sirve para fichas, créditos y contextos académicos. No debería 
 >
 > El proyecto investiga si sacar la señal de la pantalla y situarla junto al comienzo de la actividad ayuda a que la intención vuelva a estar disponible. Esa ventaja todavía debe compararse con una notificación convencional; por eso Relevo se presenta como una propuesta en desarrollo y no como una eficacia demostrada.
 
-## 5. Jerarquía del mensaje
+## Jerarquía del mensaje
 
 Cada capa responde una pregunta distinta. No conviene comprimirlas todas en una sola oración.
 
 | Orden | Pregunta de la audiencia | Mensaje que debe aparecer |
 | --- | --- | --- |
 | 1. Situación | ¿Cuándo tendría sentido? | Quería hacer algo, sabía cómo empezar, pero la sesión digital continuó y esa posibilidad perdió presencia. |
-| 2. Valor | ¿Qué aporta? | Devuelve esa intención a la decisión en un momento pertinente. |
+| 2. Valor | ¿Qué busca aportar? | Volver a poner esa intención en consideración en un momento pertinente. |
 | 3. Experiencia | ¿Cómo se usa? | Se formula una intención, se define un primer paso, se sitúa una señal y se configura un ciclo. |
 | 4. Roles | ¿Para qué sirven la app y el objeto? | La aplicación organiza; el objeto señala; el lugar relaciona la señal con el comienzo. |
 | 5. Autonomía | ¿Me obliga? | No. Continuar, ignorar, silenciar, actuar o cambiar de idea son salidas legítimas. |
 | 6. Diferencia | ¿Por qué no basta el teléfono? | Relevo prueba si una señal fuera de la pantalla y junto al primer paso aporta una asociación más pertinente. |
 | 7. Estado | ¿Ya funciona? | La arquitectura está definida; su comprensión, señal, forma, integración y ventaja frente a una notificación siguen sujetas a prueba. |
 
-## 6. Cómo traducir los conceptos
+## Cómo traducir los conceptos
 
 Los términos especializados deben aparecer después de su explicación cotidiana.
 
@@ -116,7 +116,7 @@ Los términos especializados deben aparecer después de su explicación cotidian
 | Algo que la persona decidió que quería hacer. | **Intención personal** | Una actividad elegida; no una meta inferida por el sistema. |
 | La acción pequeña que permite empezar. | **Primer paso** | Un comienzo concreto y reconocible, como abrir el libro o ponerse las zapatillas. No exige completar la actividad. |
 | Una regla que la persona entiende y configura. | **Condición observable** | Un evento técnico posible, como continuidad, acumulación o una franja horaria. La variante final sigue abierta. |
-| Una señal breve que aparece cerca del comienzo. | **Pulso ambiental** | Una manifestación física no textual. Su canal, intensidad y duración deben probarse. |
+| Una señal breve que aparece cerca del comienzo. | **Pulso ambiental** | Una señal física sin texto. Luz y sonido están seleccionados; intensidad, duración y percepción deben probarse. |
 | El objeto que lleva la señal al lugar. | **Testigo físico situado** | Representa que existe un ciclo activo y emite el pulso; no vigila ni decide. Su forma final no está cerrada. |
 | Una experiencia repartida entre app, objeto y entorno. | **Sistema phygital** | Lo digital configura y conserva información; lo físico y el lugar participan funcionalmente en la experiencia. |
 | Volver a pensar en lo que se quería hacer. | **Recuperar una intención** | Hacerla nuevamente disponible para decidir. No implica diagnosticar olvido ni obligar a actuar. |
@@ -125,7 +125,7 @@ Los términos especializados deben aparecer después de su explicación cotidian
 
 Primera aparición: **explicación cotidiana + término**. Después puede usarse el término técnico sin volver a definirlo en cada párrafo.
 
-## 7. Ejemplo principal de uso
+## Ejemplo principal de uso
 
 > **Estado de los ejemplos:** todas las escenas de esta sección son hipotéticas y sirven para explicar el funcionamiento. No representan testimonios ni resultados de validación.
 
@@ -140,7 +140,7 @@ Primera aparición: **explicación cotidiana + término**. Después puede usarse
 
 Este ejemplo comunica las cuatro relaciones esenciales: una intención propia, un primer paso concreto, un lugar significativo y una decisión abierta.
 
-## 8. Banco de situaciones breves
+## Banco de situaciones breves
 
 | Intención elegida | Primer paso | Lugar del testigo | Qué permite explicar |
 | --- | --- | --- | --- |
@@ -158,13 +158,13 @@ Una persona está jugando en línea con amistades y esa es la actividad que quie
 
 ### Cambio de idea después de la señal
 
-La señal aparece junto al libro, pero la persona decide terminar el video. Puede silenciar el pulso y continuar. El sistema no crea una racha perdida, no insiste y no registra incumplimiento. Esta escena no es un error: demuestra que el producto protege la elección.
+La señal aparece junto al libro, pero la persona decide terminar el video. Puede silenciar el pulso y continuar. El sistema no crea una racha perdida, no insiste y no registra incumplimiento. Esta escena ilustra el criterio de autonomía previsto; su comprensión y su funcionamiento todavía deben comprobarse.
 
 ### Anti-ejemplo: objeto sin relación con el lugar
 
 Si el testigo queda siempre en un mueble neutro y la persona debe abrir la aplicación para recordar qué significa, se debilita la propuesta. El objeto no está para duplicar una notificación; su valor hipotético depende de la relación entre señal, lugar y primer paso.
 
-## 9. Cómo explicar el sistema sin convertirlo en una lista de piezas
+## Cómo explicar el sistema sin convertirlo en una lista de piezas
 
 La secuencia más clara es:
 
@@ -185,9 +185,9 @@ Después se asignan roles:
 La respuesta honesta tiene dos partes:
 
 1. **Razón de diseño:** el teléfono es el lugar donde la sesión continúa. Una señal situada permite probar si la intención puede reaparecer fuera de ese flujo y junto a la acción alternativa.
-2. **Estado de evidencia:** esa ventaja todavía no está demostrada. El proyecto debe comparar el objeto situado con el mismo objeto en un lugar neutro y con una notificación digital. Si no aporta una diferencia suficiente, la configuración tendrá que cambiar.
+2. **Estado de evidencia:** esa ventaja todavía no está demostrada. El proyecto debe comparar el objeto situado con el mismo objeto en un lugar neutro y con el aviso digital genérico definido en el protocolo. Esa comparación no permite afirmar superioridad frente a un recordatorio que muestre la intención y el primer paso. Si no aporta una diferencia suficiente, la configuración tendrá que cambiar.
 
-## 10. Adaptación por audiencia
+## Adaptación por audiencia
 
 | Audiencia | Qué necesita entender primero | Profundidad adecuada | Qué conviene evitar al inicio |
 | --- | --- | --- | --- |
@@ -198,26 +198,26 @@ La respuesta honesta tiene dos partes:
 | Desarrollo técnico | Estados, responsabilidades, permisos, señal, fallos y límites de datos. | Arquitectura funcional después del escenario. | Empezar por componentes sin establecer el comportamiento esperado. |
 | Fabricación o electrónica | Función física, percepción, control, seguridad, reparación y variables abiertas. | Requisitos verificables y prototipos. | Tratar una visualización exploratoria como especificación final. |
 
-## 11. Formatos listos para usar
+## Formatos listos para usar
 
-### 11.1 Una diapositiva
+### Una diapositiva
 
 - **Título:** `Una señal donde quieres empezar.`
 - **Imagen o diagrama:** una escena con la actividad digital en un plano y el primer paso en otro; el objeto solo aparece donde cumple una función.
 - **Bajada:** `Relevo emite una señal breve de luz y sonido junto al lugar donde puede comenzar una actividad elegida. La persona decide qué hacer.`
 - **Pie:** `Propuesta phygital en desarrollo. Su ventaja frente a una notificación todavía debe validarse.`
 
-### 11.2 Relato de cinco minutos
+### Relato de cinco minutos
 
 1. **Escena — 40 s.** Presentar un caso reconocible: ver videos mientras la intención de leer pierde presencia.
-2. **Problema — 45 s.** Explicar que no todo ocio digital es negativo y que el conflicto aparece solo cuando otra intención elegida deja de orientar el siguiente paso.
+2. **Problema — 40 s.** Explicar que no todo ocio digital es negativo y que el conflicto aparece solo cuando otra intención elegida deja de orientar el siguiente paso.
 3. **Criterios — 40 s.** Intención propia, primer paso concreto, posibilidad de no intervenir y decisión abierta.
-4. **Propuesta — 75 s.** Recorrer aplicación, lugar, testigo, condición, pulso y salidas posibles.
-5. **Razón phygital — 45 s.** La aplicación configura; la señal sale de la pantalla y aparece junto al comienzo.
-6. **Diferencia — 35 s.** No mide, bloquea, puntúa ni promete productividad; investiga una asociación situada.
+4. **Propuesta — 70 s.** Recorrer aplicación, lugar, testigo, condición, pulso y salidas posibles.
+5. **Razón phygital — 40 s.** La aplicación configura; la señal sale de la pantalla y aparece junto al comienzo.
+6. **Diferencia — 30 s.** No mide, bloquea, puntúa ni promete productividad; investiga una asociación situada.
 7. **Estado y prueba — 40 s.** Declarar qué está diseñado, qué falta implementar y qué comparación puede sostener o refutar el objeto.
 
-### 11.3 Demostración del prototipo
+### Demostración del prototipo
 
 La demostración debe narrar una experiencia, no una sucesión de pantallas:
 
@@ -230,7 +230,7 @@ La demostración debe narrar una experiencia, no una sucesión de pantallas:
 
 Si el prototipo requiere una activación manual por tratarse de una prueba, debe decirse antes de demostrarlo. No se representa una automatización que todavía no existe.
 
-### 11.4 Portada de sitio, panel o dossier
+### Portada de sitio, panel o dossier
 
 Orden recomendado:
 
@@ -243,11 +243,11 @@ Orden recomendado:
 7. estado real del desarrollo y próxima prueba;
 8. acceso a la memoria, proceso y documentación técnica.
 
-### 11.5 Caso de estudio de diseño
+### Caso de estudio de diseño
 
 El orden recomendado es: situación → investigación → hallazgo → criterios → alternativas → decisión → recorrido → prototipo → prueba → aprendizaje. La estética visual debe aparecer como una consecuencia de la función y no reemplazar el argumento.
 
-## 12. Preguntas frecuentes y respuestas
+## Preguntas frecuentes y respuestas
 
 ### ¿Es una aplicación para usar menos el teléfono?
 
@@ -275,7 +275,7 @@ No necesita guardar el texto de la intención. La persona crea el significado al
 
 ### ¿Qué pasa si ignoro la señal?
 
-Nada punitivo. Se puede ignorar o silenciar. No hay puntos, rachas, culpa ni insistencia automática.
+Nada punitivo. Se puede ignorar o silenciar. El diseño excluye puntos, rachas, reproches e insistencia automática; la respuesta emocional de cada persona debe observarse.
 
 ### ¿Comprueba si realicé la actividad?
 
@@ -283,13 +283,13 @@ No. Relevo no evalúa la acción posterior. Su alcance termina al volver a hacer
 
 ### ¿La forma circular es definitiva?
 
-No. Es una hipótesis de exploración. Forma, material, medidas, canal sensorial y comportamiento final dependen de pruebas perceptivas, técnicas y de convivencia.
+No. Es una hipótesis de exploración. Forma, material y medidas dependen de pruebas físicas y de convivencia. Luz y sonido están seleccionados para prototipar; sus parámetros y el comportamiento final siguen sujetos a comprobación.
 
 ### ¿Para quién es?
 
 Para una situación, no para una identidad fija: alguien tiene una intención alternativa propia, sabe cómo comenzar y quiere mantenerla disponible durante ciertos episodios de ocio digital. La misma persona puede no necesitar ninguna intervención en otro momento.
 
-## 13. Gobierno de afirmaciones
+## Gobierno de afirmaciones
 
 | Estado | Formulación permitida | Formulación que debe evitarse |
 | --- | --- | --- |
@@ -316,7 +316,7 @@ Para una situación, no para una identidad fija: alguien tiene una intención al
 - Los ejemplos creados para explicar el uso deben rotularse como hipotéticos. No se les asignan nombres, citas, fotografías o biografías que puedan confundirse con participantes reales.
 - Los wireframes, renders, diagramas y prototipos muestran una propuesta o un estado de desarrollo; no constituyen por sí mismos evidencia de comprensión, preferencia o eficacia.
 
-## 14. Reglas para la comunicación visual y editorial
+## Reglas para la comunicación visual y editorial
 
 1. **La persona y la situación abren el relato.** El objeto no necesita aparecer en todas las piezas.
 2. **Cada imagen cumple una función.** Puede mostrar continuidad digital, intención, primer paso, lugar, señal o decisión; no necesita representar todo a la vez.
@@ -329,7 +329,7 @@ Para una situación, no para una identidad fija: alguien tiene una intención al
 9. **La tipografía expresiva no carga argumentos largos.** La explicación principal debe conservar legibilidad y jerarquía.
 10. **Cada soporte tiene un trabajo distinto.** La aplicación organiza, el objeto señala y la memoria explica; la comunicación debe preservar esa separación.
 
-## 15. Prueba formativa de comprensión
+## Prueba formativa de comprensión
 
 La guía todavía es una decisión de comunicación, no evidencia de que la audiencia comprenda. Se recomienda probar por separado las versiones de 10 segundos, 30 segundos y la secuencia visual.
 
@@ -358,7 +358,7 @@ La guía todavía es una decisión de comunicación, no evidencia de que la audi
 
 La prueba es satisfactoria cuando la audiencia reconstruye la situación, la relación entre componentes, la libertad de continuar y el estado de hipótesis sin depender de una explicación correctiva. Cualquier umbral numérico deberá definirse antes de ejecutar la prueba y de acuerdo con su carácter formativo; no se improvisa después de observar resultados.
 
-## 16. Lista de control antes de publicar o presentar
+## Lista de control antes de publicar o presentar
 
 - [ ] ¿La primera frase describe una situación o beneficio comprensible sin jerga?
 - [ ] ¿Se entiende qué quería hacer la persona y cuál era el primer paso?
@@ -373,7 +373,7 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 - [ ] ¿Se responde por qué existe una capa física y se declara que falta compararla?
 - [ ] ¿Una persona puede explicar el proyecto sin repetir literalmente el texto?
 
-## 17. Fundamentos consultados
+## Fundamentos consultados
 
 - [Design Council — Framework for Innovation](https://www.designcouncil.org.uk/resources/framework-for-innovation/): comprender el problema, trabajar con las personas, comunicar de forma inclusiva e iterar.
 - [Design Council — History of the Double Diamond](https://www.designcouncil.org.uk/resources/the-double-diamond/history-of-the-double-diamond/): separar el diseño de la respuesta correcta del diseño correcto de la respuesta.
@@ -406,6 +406,14 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se simplificaron los títulos, se ajustó el relato a 300 segundos y se precisaron canales, autonomía y alcance comparativo.
+- **Antes:** la guía tenía numeración secundaria, un relato de cinco minutos que sumaba 320 segundos y algunas formulaciones más concluyentes que la evidencia.
+- **Motivo:** mejorar la lectura y comunicar las decisiones sin convertirlas en beneficios demostrados.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

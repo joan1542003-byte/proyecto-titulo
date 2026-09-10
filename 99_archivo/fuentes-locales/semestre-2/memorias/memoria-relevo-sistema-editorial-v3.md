@@ -17,6 +17,8 @@ fecha_migracion: 2026-08-23
 
 ## Nota archivística
 
+**Nota de acceso — 9 de septiembre de 2026:** la URL histórica `goaro.com` no permitió recuperar la fuente. Aro se conserva como antecedente; su disponibilidad comercial y sus prestaciones actuales no quedan acreditadas por esta referencia. Véase el [control de enlaces](../../../../00_gobernanza/auditoria-textual-2026-09-09.md#enlaces-externos-y-alcance-de-la-comprobación).
+
 Rama editorial propia con la modificación local más reciente de las tres fuentes auditadas. Esa fecha no basta para declararla memoria vigente.
 
 La fuente contiene 370 párrafos, 14 tablas y 11 formas en línea. Se detectaron 11 archivos de medios internos. Los medios se registran en un manifiesto separado y no se publican en esta fase porque la entrega actual no exige visualidad y primero debe resolverse la duplicación entre versiones.
@@ -900,6 +902,14 @@ En esta versión se utilizó inteligencia artificial generativa como apoyo para 
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se aclaró la falta de acceso a una fuente comercial histórica.
+- **Antes:** la URL archivada podía confundirse con una oferta vigente.
+- **Motivo:** mantener el antecedente sin afirmar disponibilidad no comprobada.
+- **Alcance:** La fuente histórica se conserva; solo se añade la advertencia de acceso y su registro.
 
 ### 2026-08-23 — Conversión desde DOCX
 

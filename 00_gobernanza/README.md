@@ -14,6 +14,8 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 3. ¿Qué decisión permite tomar?
 4. ¿Qué falta verificar?
 
+**Revisión más reciente:** [Limpieza y vigencia de textos](auditoria-textual-2026-09-09.md), con correcciones, erratas bibliográficas y alcance de los controles.
+
 ## Documentos
 
 - `directrices-de-trabajo.md`: mandato integral de investigación, desarrollo, escritura, trazabilidad y colaboración.
@@ -42,6 +44,14 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se enlazó el control textual actual y se aclaró la consulta de versiones.
+- **Antes:** el recorrido de lectura no distinguía todos los cambios posteriores a las auditorías y exportaciones anteriores.
+- **Motivo:** facilitar una entrada única a la revisión y evitar estados contradictorios.
+- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

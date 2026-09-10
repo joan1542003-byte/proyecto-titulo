@@ -12,6 +12,8 @@ fecha_actualizacion: 2026-08-24
 
 # Memoria histórica de Relevo — v1
 
+**Nota de acceso — 9 de septiembre de 2026:** la URL histórica `goaro.com` no permitió recuperar la fuente. Aro se conserva como antecedente; su disponibilidad comercial y sus prestaciones actuales no quedan acreditadas por esta referencia. Véase el [control de enlaces](../../../00_gobernanza/auditoria-textual-2026-09-09.md#enlaces-externos-y-alcance-de-la-comprobación).
+
 ## Estado de la versión
 
 Este documento fue la base escrita activa del proyecto el 24 de agosto de 2026. Se conserva para trazabilidad, pero fue sustituido por `memoria-vigente-v4.md` y no gobierna la redacción actual. Deriva de la versión editorial v3 y registra una etapa anterior de la formulación de Relevo.
@@ -933,6 +935,14 @@ En esta versión se utilizó inteligencia artificial generativa como apoyo para 
 ---
 
 ## Registro de cambios (disclaimer)
+
+
+### 2026-09-09 — Limpieza y vigencia documental
+
+- **Cambio:** se aclaró la falta de acceso a una fuente comercial histórica.
+- **Antes:** la URL archivada podía confundirse con una oferta vigente.
+- **Motivo:** mantener el antecedente sin afirmar disponibilidad no comprobada.
+- **Alcance:** La fuente histórica se conserva; solo se añade la advertencia de acceso y su registro.
 
 ### 2026-08-26 — Reclasificación como memoria histórica
 
