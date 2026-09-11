@@ -12,7 +12,7 @@ Se compararon las 198 imágenes PNG del archivo visual local con las copias cons
 | Imágenes con transparencia | 25 |
 | Imágenes transparentes respaldadas | 25 |
 
-Las imágenes transparentes se encuentran organizadas principalmente en:
+En la versión preservada por la etiqueta Git `pre-reinicio-visual-2026-09-11`, las imágenes transparentes se encontraban organizadas principalmente en:
 
 - `10_recursos_visuales/11_exploracion_sistema_visual_2026-08-31/04_modulos_transparentes`;
 - `10_recursos_visuales/12_expansion_sistema_visual_2026-09-01/04_modulos_transparentes`.
@@ -21,11 +21,17 @@ Las imágenes transparentes se encuentran organizadas principalmente en:
 
 Las cuatro piezas sin coincidencia exacta corresponden a borradores descartados o a composiciones editoriales cuyo contenido podía contradecir el estado vigente del proyecto. Sus aportes visuales relevantes ya están representados por versiones posteriores y documentadas. No se incorporaron a la entrega para evitar duplicación y ambigüedad.
 
-Este inventario verifica respaldo e identidad de archivos. Una pieza solo pasa a ser vigente cuando también coincide con la memoria, el recorrido y las directrices visuales actuales.
+Este inventario verificó respaldo e identidad de archivos para la entrega del 2 de septiembre. No determina la vigencia visual posterior; el conjunto anterior al reinicio se recupera mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Inventario acotado a su entrega
+
+- **Qué cambió:** se retiró su autoridad para decidir qué pieza visual es vigente hoy y se aclaró que las rutas enumeradas pertenecen a la versión preservada por la etiqueta Git.
+- **Cómo estaba antes:** el inventario podía leerse como control permanente del sistema visual.
+- **Por qué se decidió:** la nueva investigación no reutiliza automáticamente los recursos contabilizados aquí.
 
 ### 2026-09-02 — Inventario por huella digital
 

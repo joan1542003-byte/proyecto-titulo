@@ -60,7 +60,7 @@ El alcance excluye bloqueo, puntajes, rachas, evaluación de cumplimiento e infe
 | ¿Cuál es la memoria activa? | [`memoria-vigente-v4.md`](../08_memoria/memoria-vigente-v4.md) |
 | ¿Qué se construye primero? | [`alcance-primer-prototipo-y-backlog-2026-09-07.md`](../05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) |
 | ¿Qué wireframes están vigentes? | [`wireframes-media-html`](../05_propuesta_phygital/wireframes-media-html/README.md) |
-| ¿Qué sistema visual está activo? | [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md) y [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) |
+| ¿Qué investigación visual está activa? | [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md), con criterios de [marca y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [plan de pruebas](../10_recursos_visuales/09_plan-de-pruebas.md) |
 | ¿Qué impide probar con personas? | [`07_validacion/README.md`](../07_validacion/README.md) y las Issues [#8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8), [#11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) y [#10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) |
 | ¿Cuáles son las fechas de cierre? | [`plan-de-cierre-agosto-diciembre-2026.md`](plan-de-cierre-agosto-diciembre-2026.md) |
 
@@ -82,6 +82,12 @@ Una auditoría documental puede comprobar coherencia, trazabilidad y funcionamie
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Fuente visual sustituida
+
+- **Qué cambió:** la tabla de autoridad enlaza el estudio, la marca y las pruebas visuales vigentes.
+- **Cómo estaba antes:** enlazaba una dirección del 7 de septiembre ya retirada.
+- **Por qué se decidió:** impedir que una auditoría histórica reabra especificaciones obsoletas.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

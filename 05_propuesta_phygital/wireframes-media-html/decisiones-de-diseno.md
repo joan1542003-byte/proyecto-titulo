@@ -2,9 +2,11 @@
 
 ## Método
 
-Cada decisión responde a cuatro preguntas: qué problema resuelve, de qué antecedente del proyecto se deriva, qué riesgo controla y cómo puede comprobarse. La pauta del Encargo 17 define la cobertura; la memoria vigente define el sentido de la experiencia; el sistema visual v4 registra la retícula, la tipografía, el color y la semántica con que se construyó esta versión. La [dirección del 7 de septiembre](../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) gobierna las iteraciones visuales posteriores. Los principios de visibilidad, correspondencia y retroalimentación se apoyan en Norman (2013).
+Cada decisión responde a cuatro preguntas: qué problema resuelve, de qué antecedente del proyecto se deriva, qué riesgo controla y cómo puede comprobarse. La pauta del Encargo 17 define la cobertura; la memoria vigente define el sentido de la experiencia. La retícula, la tipografía y el color muestran cómo se materializó esta versión, pero no gobiernan iteraciones posteriores. La [investigación visual reiniciada](../../10_recursos_visuales/README.md) conserva el flujo como antecedente estructural y vuelve a comparar su expresión. Los principios de visibilidad, correspondencia y retroalimentación se apoyan en Norman (2013).
 
 ## Decisiones documentadas en el tablero
+
+Esta tabla registra la lógica aplicada al artefacto congelado. Las filas sobre tipografía, modo oscuro, color y marca permiten reconstruirlo, pero dejaron de gobernar nuevas iteraciones el 11 de septiembre de 2026.
 
 | Decisión | Fundamento y riesgo controlado | Comprobación |
 |---|---|---|
@@ -35,6 +37,12 @@ Universidad Diego Portales. (2026). *Encargo 17: Wireframes. Del flujo a la estr
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Autoridad visual retirada
+
+- **Qué cambió:** el método distingue las decisiones funcionales de la apariencia histórica del tablero.
+- **Cómo estaba antes:** el sistema v4 y la dirección del 7 de septiembre gobernaban iteraciones posteriores.
+- **Por qué se decidió:** conservar la trazabilidad sin trasladar una estética retirada a la nueva interfaz.
 
 ### 2026-09-09 — Semántica cromática actualizada
 

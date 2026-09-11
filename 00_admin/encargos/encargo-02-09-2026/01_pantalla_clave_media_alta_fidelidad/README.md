@@ -24,11 +24,11 @@ El botón final es el único control con contenedor completo. Las etiquetas, div
 
 ## Archivos
 
-- `3-1-ciclo-activo-alta-fidelidad-v3.png`: pantalla destacada vigente.
+- `3-1-ciclo-activo-alta-fidelidad-v3.png`: pantalla destacada seleccionada para esta entrega.
 - `3-1-ciclo-activo-alta-fidelidad-v2.png`: versión anterior que se conserva para comparar el ajuste de lenguaje.
 - `1-1-formular-alta-fidelidad-v1.png`: exploración anterior que se conserva para registrar el proceso, pero ya no funciona como pantalla principal.
 
-La pieza seleccionada para esta entrega se produjo a partir de `10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/android/oscuro/07-ciclo-activo-espera-oscuro-v2.png`. Se mantuvo la composición y se reemplazó “El testigo espera fuera de la pantalla” por “El testigo está listo para emitir el pulso”. También se cambió “Sin señal situada” por “En espera”. El ajuste comunica el estado sin explicar innecesariamente el soporte.
+La pieza seleccionada para esta entrega se produjo a partir de una pantalla del sistema v4. Ese antecedente ya no está en la rama activa y puede recuperarse mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`. En la entrega se mantuvo la composición y se reemplazó “El testigo espera fuera de la pantalla” por “El testigo está listo para emitir el pulso”. También se cambió “Sin señal situada” por “En espera”. El ajuste comunica el estado sin explicar innecesariamente el soporte.
 
 ## Instrucción de ajuste visual
 
@@ -41,6 +41,12 @@ La pieza fija una dirección de interfaz y permite discutir jerarquía, densidad
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Procedencia visual archivada
+
+- **Qué cambió:** se sustituyó una ruta retirada por la etiqueta Git que conserva el antecedente.
+- **Cómo estaba antes:** el documento señalaba un archivo inexistente dentro de `10_recursos_visuales`.
+- **Por qué se decidió:** mantener la entrega reproducible sin presentar su apariencia como vigente.
 
 ### 2026-09-08 — Vigencia acotada a la entrega
 

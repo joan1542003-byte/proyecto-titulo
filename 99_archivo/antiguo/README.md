@@ -13,7 +13,7 @@ Nada de lo contenido aquí debe utilizarse como fuente vigente sin comprobar pri
 | [Memoria](memoria/README.md) | Memorias v1–v3, borradores, auditorías y exportaciones anteriores | [`08_memoria/memoria-vigente-v4.md`](../../08_memoria/memoria-vigente-v4.md) |
 | [Desarrollo físico](desarrollo-fisico/README.md) | Montajes de mesa B1, B2 y 12 V del 30 de agosto | [`06_desarrollo_y_factibilidad/README.md`](../../06_desarrollo_y_factibilidad/README.md) |
 | [Propuesta y wireframes](propuesta-y-wireframes/README.md) | Tablero editorial, láminas y paquete reemplazados | [`05_propuesta_phygital/wireframes-media-html/README.md`](../../05_propuesta_phygital/wireframes-media-html/README.md) |
-| [Sistema visual](sistema-visual/README.md) | Sistema v3 y pantallas Android superadas o rechazadas | [`10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md`](../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) |
+| [Sistema visual](sistema-visual/README.md) | Antecedentes parciales anteriores al reinicio; el conjunto completo se conserva en la etiqueta Git `pre-reinicio-visual-2026-09-11` | [Investigación visual vigente](../../10_recursos_visuales/README.md) |
 
 ## Regla de lectura
 
@@ -22,6 +22,12 @@ Cada grupo indica su etapa, el motivo del reemplazo y la fuente actual. Los nomb
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Recuperación visual redirigida
+
+- **Cambio:** el archivo antiguo distingue sus antecedentes parciales de la copia completa protegida por etiqueta Git.
+- **Versión anterior:** remitía a una dirección visual retirada.
+- **Motivo:** evitar enlaces rotos y preservar el carácter histórico del material.
 
 ### 2026-09-08 — Creación
 

@@ -7,11 +7,17 @@
 
 ## Por qué se archivó
 
-La [comunicación, nombre y color del 7 de septiembre](../../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) gobierna las piezas nuevas. El [sistema v4](../../../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/README.md) permanece como referencia técnica anterior para reconstruir pantallas ya producidas. La pantalla `01-inicio-sin-ciclo-oscuro-v1.png` sigue dentro de esa referencia porque todavía era candidata principal en su etapa; no se archivó solo por compartir el sufijo v1.
+La [investigación visual vigente](../../../10_recursos_visuales/README.md) reemplaza estas piezas como fuente de decisión. El conjunto completo anterior al reinicio se recupera mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`; no debe copiarse a una propuesta nueva sin comparación y justificación.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Autoridad retirada
+
+- **Cambio:** el archivo enlaza la investigación vigente y la etiqueta que permite recuperar el sistema anterior completo.
+- **Versión anterior:** presentaba documentos del 7 de septiembre y v4 como referencias técnicas todavía activas.
+- **Motivo:** conservar trazabilidad sin reintroducir decisiones gráficas retiradas.
 
 ### 2026-09-08 — Reubicación
 

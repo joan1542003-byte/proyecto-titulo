@@ -46,7 +46,7 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 | Después del feedback | Se definieron aplicación, testigo, primer paso, lugar, señal, usuario principal y usuario límite. | El problema dejó de ser “usar mucho el celular” y pasó a ser una intención alternativa que pierde presencia. | [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
 | Encargo 16 y Encargo 17 | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño. Después se construyeron nueve wireframes y 35 estados complementarios. | Se hicieron visibles los estados normales, los errores, las salidas voluntarias y la relación entre app y objeto. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Cobertura de estados](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
 | Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
-| Estado actual — 9 de septiembre | El wireframe v1 está congelado, sus 44 exportaciones usan la dirección cromática vigente y el programa de banco para micro:bit ya compila. | El proyecto puede iniciar la navegación Android y preparar la primera comprobación física. La instalación, el montaje cálido, la revisión electrónica y la validación continúan pendientes. | [Cierre del wireframe v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Hoja de ruta](hoja-de-ruta.md) |
+| Estado actual — 11 de septiembre | El wireframe v1 está congelado como estructura, el programa de banco para micro:bit compila y la investigación visual se reinició desde la función. | El proyecto puede iniciar la navegación Android y preparar la primera comprobación física, mientras compara alternativas visuales antes de cerrar especificaciones. | [Cierre del wireframe v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Investigación visual](../10_recursos_visuales/README.md) |
 
 ## Qué feedback aplicamos
 
@@ -138,31 +138,32 @@ El rol del diseño quedó entendido como articular problema, evidencia, experien
 
 ## Naming y lenguaje
 
-**Relevo** es el nombre del sistema completo porque sugiere un cambio de turno, pero no dice que la persona tenga que abandonar el teléfono ni que obligatoriamente deba hacer otra actividad.
+**Relevo** se conserva como nombre académico provisional porque sugiere un cambio de turno sin obligar a abandonar el teléfono. Antes de usarlo comercialmente requiere búsqueda de marcas semejantes y una prueba de comprensión.
 
 La arquitectura de nombres quedó así:
 
 - **aplicación Relevo:** configura y conserva la intención;
 - **testigo Relevo:** objeto que la mantiene presente sin fingir que es inteligente;
 - **ciclo:** unidad de uso desde el armado hasta el cierre;
-- **pulso ambiental:** manifestación física breve;
-- **señal situada:** relación entre pulso, primer paso y lugar.
+- **señal:** manifestación breve de luz y sonido vinculada al lugar.
 
 Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
-El descriptor actual para explicar el proyecto de manera directa es: **“Una señal donde quieres empezar.”** La formulación académica —sistema phygital para recuperar intenciones personales durante el ocio digital— se conserva para desarrollar su alcance, no como frase principal de presentación. Ver [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
+El descriptor recomendado para prototipar es **“Una señal junto a tu primer paso”**. Une la señal con el lugar y no promete que la actividad ocurrirá. Se comparará con otras dos alternativas antes de cerrarlo. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md).
 
-## Decisiones visuales y cromáticas
+## Estado de la investigación visual
 
-La dirección vigente parte de **cercanía, brevedad, traslado y autonomía**, según D-046. **Transferencia situada** conserva valor conceptual dentro del proceso anterior; su sistema gráfico no gobierna piezas nuevas.
+El 11 de septiembre se retiró el sistema gráfico anterior y se reinició el estudio desde la función. La nueva pregunta es cómo comunicar una ayuda breve y voluntaria sin parecer un sistema de vigilancia, bloqueo o productividad obligatoria.
 
-- Android usa un **modo oscuro** para mantener continuidad y facilitar la lectura de la aplicación.
-- La memoria y las piezas editoriales usan un **fondo claro y cálido** porque necesitan lectura larga, impresión, citas, tablas e imágenes.
-- El ámbar **`#FFB000`** identifica provisionalmente la señal situada. El rojo anterior queda como registro del proceso y no gobierna las piezas nuevas.
-- El color nunca funciona solo: los estados también deben explicarse con texto, estructura y contraste.
-- IBM Plex Sans y Mono tienen usos definidos. La forma, el logotipo final, el material, el difusor y los parámetros del pulso siguen sujetos a pruebas de legibilidad, accesibilidad y convivencia.
+- La aplicación conservará la arquitectura del wireframe v1, pero volverá a comparar jerarquía, componentes, color y tipografía.
+- Se diseñarán temas claro y oscuro siguiendo la preferencia del sistema; ninguno será la identidad exclusiva.
+- La paleta se organizará por funciones y todavía no tiene valores definitivos.
+- La señal física se estudiará como comportamiento perceptible; su color no tiene que copiar el acento de la aplicación.
+- El testigo comparará formas reales antes de cerrar carcasa, material o instalación.
+- La memoria priorizará lectura, evidencia y navegación, sin repetir un motivo decorativo en todas las páginas.
+- La marca comenzará con un logotipo tipográfico; un símbolo independiente solo se desarrollará si resuelve una necesidad de reconocimiento.
 
-Ver [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md) y [síntesis visual aplicada](../01_contexto_y_fuentes/biblioteca_diseno/sintesis-aplicada-sistema-visual-relevo.md).
+La dirección recomendada para prototipar se denomina **Herramienta serena**: baja ornamentación, lenguaje directo, jerarquías claras y un acento de uso limitado. No es todavía una identidad validada. Ver [investigación visual](../10_recursos_visuales/README.md), [alternativas y recomendación](../10_recursos_visuales/08_direcciones-y-recomendacion.md) y [referencias](../10_recursos_visuales/referencias.md).
 
 ## Cómo se ha implementado hasta ahora
 
@@ -203,7 +204,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
-| Nombre de trabajo, descriptor, tipografías y paleta seleccionados. | Probar comprensión y legibilidad; cerrar forma, material, difusor y parámetros de la señal. | [Comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) |
+| Nombre provisional y nueva investigación visual escrita. | Probar descriptor, alternativas de interfaz y forma; luego especificar paleta, tipografía, logotipo, material, difusor y señal. | [Marca](../10_recursos_visuales/06_marca-y-lenguaje.md) · [Investigación visual](../10_recursos_visuales/README.md) |
 | Plataformas comparadas y programa micro:bit compilado; B1/B2 conservadas como antecedentes. | Conseguir la placa, instalar y medir el banco, revisar la luz cálida externa y completar la lista XIAO solo si la evidencia justifica continuar. | [Programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
@@ -227,7 +228,7 @@ La encuesta complementaria mantiene una fecha estimada y condicionada en su [fic
 
 ## Cierre
 
-Desde el examen, Relevo pasó de ser una idea difícil de leer a tener un problema acotado, usuarios situacionales, investigación trazable, estado del arte, propuesta phygital, flujos separados, naming, sistema visual, costos preliminares y un plan de validación.
+Desde el examen, Relevo pasó de ser una idea difícil de leer a tener un problema acotado, usuarios situacionales, investigación trazable, estado del arte, propuesta phygital, flujos separados, nombre provisional, criterios visuales, costos preliminares y un plan de validación.
 
 La pregunta que queda es la más importante: **¿el testigo físico situado recupera una intención de una manera más clara o pertinente que una notificación digital, sin aumentar demasiado la carga, la intrusión o los problemas de accesibilidad?**
 
@@ -256,6 +257,12 @@ La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) con
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-11 — Estado visual reiniciado
+
+- **Qué cambió:** se actualizaron nombre, descriptor, vocabulario, estado visual y pendientes según la investigación reiniciada.
+- **Cómo estaba antes:** presentaba una dirección, un modo oscuro, tipografías y un color ámbar como base vigente.
+- **Por qué se decidió:** esas elecciones no estaban validadas y pertenecían al sistema retirado.
+- **Límite:** la dirección recomendada es una hipótesis para prototipar, no una identidad final.
 
 ### 2026-09-09 — Limpieza y vigencia documental
 

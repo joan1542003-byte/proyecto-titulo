@@ -18,7 +18,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 7. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
 8. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
 9. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
-10. [Sistema visual](../10_recursos_visuales/README.md): dirección visual, aplicaciones, exploraciones y piezas editoriales.
+10. [Investigación visual](../10_recursos_visuales/README.md): problema visual, referentes, criterios por soporte, alternativas y plan de pruebas.
 11. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
 
 **Última revisión documental:** [Textos, vigencia y limpieza del 9 de septiembre](auditoria-textual-2026-09-09.md). Las auditorías anteriores describen sus respectivos cortes, no el estado permanente de todas las fuentes.
@@ -38,7 +38,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 | `07_validacion` | Preparada; ejecución pendiente | Protocolos, criterios de evaluación, instrumentos y puertas técnicas; todavía no hay resultados. |
 | `08_memoria` | Texto académico vigente | Memoria v4, anexos, matrices, controles editoriales y resumen del proyecto. |
 | `09_decisiones` | Registro vigente | Decisiones tomadas, razones, evidencia y consecuencias. |
-| `10_recursos_visuales` | Vigente y exploratoria | Sistema visual, piezas editoriales, gráficos, tipografías y exportaciones. |
+| `10_recursos_visuales` | Investigación reiniciada | Documentos Markdown sobre interfaz, testigo, marca, producto, memoria editorial, alternativas y pruebas. No contiene una identidad cerrada ni archivos de producción. |
 | `99_archivo` | Histórico | Fuentes locales y [material antiguo o reemplazado](../99_archivo/antiguo/README.md), conservados por trazabilidad. |
 
 ## Fuentes de referencia actuales
@@ -48,7 +48,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La línea base para construir Android se consulta en [`cierre-wireframe-v1-2026-09-09.md`](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md); sus fuentes y exportaciones están en `05_propuesta_phygital/wireframes-media-html/`.
-- La dirección vigente de comunicación, naming y color se consulta en `10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md`; las carpetas anteriores conservan el proceso visual.
+- El estado visual vigente se consulta en [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md). La paleta, la tipografía, el logotipo, la forma y el descriptor definitivo están abiertos; la etapa anterior se recupera mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
 - La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`; el código y el binario de la puerta inmediata están en `06_desarrollo_y_factibilidad/prueba-microbit-ble/`. La Issue #11 controla esa prueba y la #10 conserva la integración portátil.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde [`99_archivo/antiguo`](../99_archivo/antiguo/README.md).
 
@@ -79,6 +79,13 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Reinicio visual incorporado
+
+- **Qué cambió:** el índice dirige a la nueva investigación escrita y deja de presentar piezas, tipografías o colores anteriores como vigentes.
+- **Cómo estaba antes:** describía `10_recursos_visuales` como una biblioteca activa de gráficos y exportaciones y enlazaba una dirección cerrada el 7 de septiembre.
+- **Por qué se decidió:** la revisión integral mostró alternativas incompatibles y decisiones no probadas; el nuevo apartado vuelve a separar investigación, hipótesis y especificación.
+- **Alcance:** la estructura funcional del wireframe v1 se conserva, pero su apariencia no gobierna la interfaz futura.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

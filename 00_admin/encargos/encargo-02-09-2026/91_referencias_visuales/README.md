@@ -22,11 +22,17 @@ Explora una pieza gráfica de síntesis mediante tipografía, campo de puntos y 
 
 ## Criterio de rescate
 
-Se copiaron únicamente piezas con valor compositivo o metodológico. No se incorporaron una primera versión defectuosa de la pantalla principal ni dos editoriales cuyo contenido se alejaba del proyecto vigente. Las imágenes con transparencia no se duplicaron aquí porque las 25 ya están respaldadas dentro de `10_recursos_visuales`.
+Se copiaron únicamente piezas con valor compositivo o metodológico para la entrega. No se incorporaron una primera versión defectuosa de la pantalla principal ni dos editoriales cuyo contenido se alejaba del proyecto vigente en esa fecha. El conjunto visual completo anterior al reinicio se conserva mediante la etiqueta Git `pre-reinicio-visual-2026-09-11` y un respaldo local; no permanece dentro de `10_recursos_visuales`.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Ubicación del respaldo corregida
+
+- **Qué cambió:** se retiró la afirmación de que las imágenes transparentes continúan en la carpeta visual activa.
+- **Cómo estaba antes:** el documento remitía a un respaldo que fue retirado durante el reinicio.
+- **Por qué se decidió:** mantener una procedencia verificable y evitar que referentes históricos parezcan parte de la nueva dirección.
 
 ### 2026-09-02 — Rescate desde el archivo visual local
 

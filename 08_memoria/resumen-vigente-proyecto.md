@@ -1,6 +1,6 @@
 # Resumen vigente de Relevo
 
-**Actualizado:** 9 de septiembre de 2026.
+**Actualizado:** 11 de septiembre de 2026.
 
 ## Qué es
 
@@ -26,7 +26,7 @@ La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y l
 
 Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento estructural, exportación y dimensiones fueron comprobados el 7 de septiembre, y el wireframe v1 quedó congelado el 9 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. Esa estructura constituye la base vigente; la puerta inmediata pasó al banco físico con micro:bit V2.
 
-El control editorial del 9 de septiembre registra **15.033 palabras de texto académico**, incluyendo preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. Responde al objetivo aproximado de 15.000 solicitado por el autor. Los capítulos 1–13 suman 14.365; el archivo operativo completo contiene 18.791. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) declara el método y separa esos segmentos. La memoria conserva los catorce títulos y deberá volver a contarse cuando cambie. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada.
+El control editorial del 9 de septiembre registra **15.033 palabras de texto académico**, incluyendo preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. Responde al objetivo aproximado de 15.000 solicitado por el autor. Los capítulos 1–13 suman 14.365; el archivo operativo completo contiene 18.791. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) declara el método y separa esos segmentos. La memoria conserva los catorce títulos y deberá volver a contarse cuando cambie. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física ya acota las salidas a luz y sonido y selecciona una arquitectura portátil para prototipar, pero todavía no está construida ni validada. La identidad gráfica anterior fue retirada el 11 de septiembre: existe una nueva investigación escrita y una dirección provisional para comparar, no una paleta, tipografía, logotipo o forma visual definitiva.
 
 La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
 
@@ -40,7 +40,9 @@ La edición de lectura conserva los catorce capítulos y reúne los subapartados
 
 La [auditoría de coherencia](auditoria-coherencia-memoria-2026-09-09.md) sincroniza el recorrido de nueve momentos, distingue las capacidades previstas del programa de banco compilado y conecta soporte, mantenimiento y retiro. El nombre y la comunicación tienen un apartado propio. La asociación se evalúa mediante cuatro componentes; comprender salidas se registra por separado. El control digital es un aviso genérico sin el texto de la intención: la comparación no demostrará superioridad frente a cualquier recordatorio.
 
-La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. El programa para comprobar Android → BLE → luz, sonido y silencio local en micro:bit V2 ya compila. Su matriz roja se reserva al banco sin participantes; la prueba de asociación requiere una luz blanca cálida externa y difundida. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. BleenyButton sirve como antecedente de batería, fijación y carcasa; no define la finalidad ni la interacción de Relevo. Los montajes anteriores continúan como recursos de prueba, no como forma integrada. Relevo se conserva como nombre académico y la comunicación se orienta mediante el descriptor `Una señal donde quieres empezar`; el ámbar reemplaza provisionalmente al rojo como color funcional. Ninguna dimensión, autonomía, percepción o ventaja está validada.
+La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. El programa para comprobar Android → BLE → luz, sonido y silencio local en micro:bit V2 ya compila. Su matriz roja se reserva al banco sin participantes; la prueba de asociación requiere una luz blanca cálida externa y difundida. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. BleenyButton sirve como antecedente de batería, fijación y carcasa; no define la finalidad ni la interacción de Relevo. Los montajes anteriores continúan como recursos de prueba, no como forma integrada.
+
+En el ámbito visual, Relevo se conserva como nombre académico provisional y se recomienda comparar el descriptor `Una señal junto a tu primer paso`. El nuevo estudio define criterios para aplicación, testigo, marca, producto y memoria. Recomienda prototipar una herramienta serena y de baja ornamentación, con temas claro y oscuro, roles cromáticos y continuidad basada en lenguaje y jerarquía. Ninguna de esas decisiones constituye todavía una identidad validada.
 
 La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y corrigió los costos documentados. La estructura y la formulación se mantienen; la bibliografía contiene 52 referencias, con la fuente metodológica de Gibbons añadida a las 51 auditadas previamente. No se añadieron resultados ni se cerraron decisiones pendientes de prueba.
 
@@ -59,6 +61,8 @@ Las respuestas al feedback del 2 de septiembre están distribuidas por área y a
 La revisión textual del 9 de septiembre corrigió el acceso a la documentación oficial de vinculación Android en la bibliografía. El texto académico conserva 15.033 palabras, las mismas 52 referencias y el estado de validación descrito arriba.
 
 # Registro de cambios (disclaimer)
+
+**2026-09-11 — Investigación visual reiniciada.** Antes, el resumen presentaba un descriptor y una paleta como dirección vigente. Ahora registra el retiro de esa etapa, mantiene el nombre como provisional y enlaza una dirección sobria para comparar mediante pruebas. La estructura del wireframe v1 y la arquitectura física no cambiaron.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

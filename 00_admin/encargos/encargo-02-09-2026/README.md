@@ -2,7 +2,7 @@
 
 Esta entrega reúne cuatro resultados: una pantalla clave desarrollada en fidelidad media y alta, el mapa completo de wireframes de baja fidelidad, la definición del nombre **Relevo** y sus códigos cromáticos. La estructura separa estos resultados del material de respaldo para que sea fácil revisar qué responde a cada punto solicitado.
 
-**Vigencia:** entrega fechada del 2 de septiembre. Sus imágenes y fundamentos conservan esa etapa; para el estado actual se consultan el [cierre del wireframe v1](../../../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) y la [dirección de comunicación y color](../../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md). La entrega no autoriza desarrollar nuevas piezas.
+**Vigencia:** entrega histórica del 2 de septiembre. Su estructura de wireframes continúa como antecedente funcional; naming, color y acabado visual fueron reabiertos el 11 de septiembre. Para el estado actual se consultan el [cierre del wireframe v1](../../../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) y la [investigación visual](../../../10_recursos_visuales/README.md).
 
 ## Entrega principal
 
@@ -30,11 +30,17 @@ Esta entrega reúne cuatro resultados: una pantalla clave desarrollada en fideli
 
 Los nueve wireframes principales y los 35 estados complementarios se exportaron a **824 × 1830 px**, equivalentes a una superficie Android de **412 × 915 dp** al doble de resolución. Las imágenes muestran únicamente la interfaz de Relevo: no incorporan carcasa ni elementos del sistema operativo.
 
-La pantalla clave funciona como referencia de dirección visual. Los wireframes permiten revisar arquitectura, jerarquía, decisiones y excepciones sin presentar la aplicación como terminada.
+La pantalla clave registra la dirección presentada en esa fecha. Los wireframes permiten revisar arquitectura, jerarquía, decisiones y excepciones sin presentar la aplicación como terminada; su acabado no gobierna el nuevo desarrollo visual.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Entrega reclasificada como histórica
+
+- **Qué cambió:** se separó la vigencia estructural de los wireframes de las decisiones de naming, color y acabado.
+- **Cómo estaba antes:** la pantalla clave se presentaba como referencia visual del proyecto.
+- **Por qué se decidió:** conservar lo entregado sin contradecir la investigación visual reiniciada.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

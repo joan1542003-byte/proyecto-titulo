@@ -298,39 +298,39 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-035 — Dirección visual mediante alternativas comparables
 
 - **Fecha:** 2026-08-28
-- **Estado:** vigente como método; selección resuelta por D-036
+- **Estado:** sustituida por D-057; se conserva el método de comparar alternativas
 - **Decisión:** investigar una familia monocromática, modular y matricial mediante tres direcciones comparables. Los referentes aportados se utilizarán para estudiar contraste, ritmo, modularidad y construcción de signos, sin reproducir signos, componentes o composiciones reconocibles.
 - **Fundamento:** la gráfica necesita responder al relevo entre intención digital y señal situada, mantener autonomía y funcionar en aplicación, objeto y comunicación. Una afinidad estilística no basta para justificar identidad.
 - **Consecuencia original:** tipografía matricial limitada a identidad y acentos; texto funcional en una fuente legible; rojo de identidad separado del canal físico; forma del objeto abierta. D-036 registra la selección conceptual y D-046 sustituye la codificación cromática.
-- **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [criterios](../10_recursos_visuales/08_direccion_visual_relevo/criterios-sistema-visual.md) y [exploraciones](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/README.md).
+- **Documentos asociados:** [registro del reinicio](../10_recursos_visuales/registro-del-reinicio.md) y etiqueta Git `pre-reinicio-visual-2026-09-11`.
 
 ## D-036 — Transferencia situada como dirección visual seleccionada
 
 - **Fecha:** 2026-08-28
-- **Estado:** antecedente conceptual; D-046 gobierna la comunicación y el color actuales
+- **Estado:** sustituida por D-057; su énfasis en explicar relaciones permanece como aprendizaje
 - **Decisión:** adoptar `Transferencia situada` como base conceptual de la dirección visual e incorporar de `Ensamble de relevo` únicamente la secuencia origen–vínculo–señal situada.
 - **Fundamento:** la primera dirección comunica con claridad la transferencia entre soportes y responde al tono buscado; la regla de la tercera aporta una gramática propia sin exigir su apariencia mecánica.
 - **Consecuencia:** puede comenzar la sistematización de tipografía, retícula y componentes. No se adopta el objeto rectangular de la tercera dirección ni se cierran forma industrial, color o canal físico.
-- **Documentos asociados:** [Dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md), [tablero seleccionado](../10_recursos_visuales/08_direccion_visual_relevo/exploraciones/direccion-seleccionada-v2-sistema-modular.png) y [registro visual](../10_recursos_visuales/08_direccion_visual_relevo/registro-decisiones-visuales.md).
+- **Documentos asociados:** [registro del reinicio](../10_recursos_visuales/registro-del-reinicio.md) y etiqueta Git `pre-reinicio-visual-2026-09-11`.
 
 ## D-037 — Misma lógica, funciones visuales diferenciadas
 
 - **Fecha:** 2026-08-28
-- **Estado:** vigente como principio funcional entre soportes; la gramática gráfica específica es opcional bajo D-046
+- **Estado:** sustituida por D-057; se conserva la diferenciación funcional entre soportes
 - **Decisión:** aplicar la gramática origen–vínculo–señal situada de acuerdo con la función de cada soporte: la aplicación organiza, el objeto señala y la memoria explica.
 - **Fundamento:** repetir una composición en todos los medios reduciría la relación phygital a una apariencia común. La coherencia requiere roles compartidos, mientras cada soporte conserva un aporte específico.
 - **Consecuencia:** se crea una matriz entre soportes; la aplicación no incorpora funciones nuevas, el objeto se explora mediante familias sin forma seleccionada y la memoria reserva la matriz para identidad y relaciones.
-- **Documentos asociados:** [aplicaciones visuales](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/README.md), [matriz entre soportes](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/matriz-intersoportes.md) y [auditoría](../10_recursos_visuales/08_direccion_visual_relevo/aplicaciones/auditoria-piezas.md).
+- **Documentos asociados:** [sistema de producto y memoria editorial](../10_recursos_visuales/07_producto-y-editorial.md) y [registro del reinicio](../10_recursos_visuales/registro-del-reinicio.md).
 
 ## D-038 — Sistema visual v4 oscuro y semántico
 
 - **Fecha:** 2026-08-29
-- **Estado:** sustituida el 7 de septiembre de 2026 por D-046 como contrato visual; conserva criterios semánticos y de accesibilidad
+- **Estado:** sustituida definitivamente el 11 de septiembre de 2026 por D-057; conserva aprendizajes semánticos y de accesibilidad
 - **Decisión tomada entonces:** consolidar las piezas de v4 en un sistema oscuro gobernado por la secuencia origen–vínculo–señal situada. El rojo se reservaba para la señal situada; IBM Plex Sans se utilizaba para lectura e IBM Plex Mono para datos breves y metadatos. Cada elemento debía clasificarse como contenido, icono, elección, acción, estado, gráfico informativo o decoración antes de diseñarse.
 - **Fundamento:** la síntesis de Norman, Albers, Munari e Isaacson se contrastó con la memoria v4, el Encargo 17 y la auditoría de las pantallas oscuras. La coherencia se define por función, jerarquía y continuidad entre soportes, no por semejanza superficial con un referente.
 - **Consecuencia en esa etapa:** el manual, los tokens, los componentes y la metodología de validación gobernaron las piezas v4 de aplicación, objeto y memoria. La prohibición de métricas, recompensas, culpa y decoración que interfiera con elecciones o acciones se mantiene por razones funcionales, no por pertenecer a esa estética.
 - **Límite:** el sistema documenta una dirección visual y criterios verificables, pero no demuestra comprensión, accesibilidad, factibilidad técnica ni eficacia de la señal.
-- **Documentos asociados:** [manual visual v4](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/manual-sistema-visual-relevo.md), [tokens](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/tokens-y-especificaciones.md), [componentes y semántica](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/componentes-y-semantica.md), [sistema editorial y físico](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/sistema-editorial-y-fisico.md) y [metodología de validación](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/metodologia-validacion-visual.md).
+- **Documentos asociados:** [marco metodológico nuevo](../10_recursos_visuales/02_marco-metodologico.md), [registro del reinicio](../10_recursos_visuales/registro-del-reinicio.md) y etiqueta Git `pre-reinicio-visual-2026-09-11`.
 
 ## D-039 — Cierre interno al 15 de noviembre y calendario oficial
 
@@ -405,12 +405,12 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-046 — Comunicación basada en función y señal ámbar provisional
 
 - **Fecha:** 2026-09-07
-- **Estado:** vigente; comprensión, color y disponibilidad comercial del nombre pendientes de prueba
+- **Estado:** sustituida por D-057 en descriptor, paleta y dirección gráfica; el nombre sigue provisional
 - **Decisión:** conservar Relevo como nombre académico y explicar el proyecto mediante el descriptor `Una señal donde quieres empezar`. La nueva dirección parte de cercanía, brevedad, traslado y autonomía; deja de usar como regla una estética comercial reconocible. El ámbar `#FFB000` sustituye provisionalmente al rojo como color funcional de señal.
 - **Fundamento:** el nombre representa el paso entre una actividad en curso y una alternativa elegida, mientras el descriptor traduce la función sin jerga. Separar señal y error evita que la intervención cotidiana parezca alarma o castigo. Los pares cromáticos principales superan el contraste 4,5:1, aunque el significado del color no se supone universal.
 - **Consecuencia:** las piezas nuevas usarán carbón, papel cálido, grises y ámbar; los puntos y el rojo quedan como archivo o recursos condicionados a una función concreta. Los estados se comunicarán también con texto, forma o icono.
 - **Límite:** existen usos actuales del nombre Relevo. Antes de un lanzamiento comercial se requiere búsqueda oficial en INAPI, dominios y tiendas. La paleta debe probarse impresa, en pantalla y con personas.
-- **Documentos asociados:** [Comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md), [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) y [sistema visual](../10_recursos_visuales/README.md).
+- **Documentos asociados:** [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md), [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) e [investigación visual](../10_recursos_visuales/README.md).
 
 ## D-047 — Prueba rápida separada de la integración portátil
 
@@ -456,7 +456,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 
 - **Fecha:** 2026-09-09
 - **Estado:** vigente para construir el primer prototipo; sujeto a cambios motivados por evidencia
-- **Decisión:** congelar los nueve marcos principales y las ocho categorías prioritarias de recuperación después de alinear el color de señal con D-046 y repetir la verificación de las 44 exportaciones.
+- **Decisión:** congelar los nueve marcos principales y las ocho categorías prioritarias de recuperación como estructura de referencia. La apariencia registrada en las 44 exportaciones corresponde a esa entrega y no se congela como identidad.
 - **Fundamento:** el recorrido, las salidas, los errores prioritarios y la representación del momento físico están suficientemente definidos para iniciar Android. Mantenerlos abiertos sin una causa concreta introduciría versiones paralelas y retrabajo.
 - **Consecuencia:** desarrollo toma esta versión como base. Un cambio estructural posterior debe indicar la prueba, el fallo o la contradicción que lo motiva.
 - **Límite:** el congelamiento acredita coherencia interna y reproducción técnica; no acredita comprensión, accesibilidad con personas, comportamiento BLE, percepción ni eficacia.
@@ -513,14 +513,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-056 — Limpieza documental con una sola fuente vigente
 
 - **Fecha:** 2026-09-09.
-- **Estado:** vigente para esta revisión.
+- **Estado:** cerrada para la revisión textual del 9 de septiembre; el alcance visual posterior se registra en D-057.
 - **Decisión:** concentrar el trabajo autorizado en textos, orden y vigencia; conservar los wireframes y las piezas visuales sin desarrollarlos ni regenerarlos.
 - **Fundamento:** instrucción explícita del autor de limpiar el repositorio y limitar la tarea a documentación.
-- **Consecuencia:** ordenar decisiones y registros, corregir estados y enlaces, retirar redundancias textuales y distinguir las exportaciones fechadas de la memoria actual. La versión académica conserva su objetivo aproximado de 15.000 palabras.
+- **Consecuencia en esa revisión:** ordenar decisiones y registros, corregir estados y enlaces, retirar redundancias textuales y distinguir las exportaciones fechadas de la memoria actual. La versión académica conserva su objetivo aproximado de 15.000 palabras.
 - **Límite:** una actualización documental no acredita funcionamiento físico, comprensión ni resultados. Los antecedentes originales se conservan por su procedencia; no se reescriben como si contuvieran decisiones posteriores.
 - **Documento asociado:** [Revisión y limpieza de textos](../00_gobernanza/auditoria-textual-2026-09-09.md).
 
+## D-057 — Reiniciar el sistema visual desde función, contexto y prueba
+
+- **Fecha:** 2026-09-11.
+- **Estado:** vigente para investigación y desarrollo visual.
+- **Decisión:** retirar de la rama activa las imágenes, tipografías, código y manuales del sistema gráfico anterior; conservarlos mediante una etiqueta Git y reemplazarlos por una investigación escrita sobre aplicación, testigo, marca, producto y memoria editorial.
+- **Fundamento:** la auditoría encontró varias direcciones incompatibles, sobreproducción de recursos y especificaciones presentadas con mayor certeza que su evidencia. Paleta, forma, tipografía y motivos se habían desarrollado antes de comprobar comprensión, percepción y producción.
+- **Consecuencia:** `10_recursos_visuales` contiene únicamente documentos Markdown. La dirección **Herramienta serena** se recomienda para prototipar, pero no existe identidad final. `Relevo` sigue como nombre académico provisional y **Una señal junto a tu primer paso** pasa a comparación como descriptor, no como cierre.
+- **Límite:** el reinicio no invalida la memoria, el flujo, el wireframe v1 ni la arquitectura técnica. Tampoco autoriza diseñar piezas antes de realizar las comparaciones y pruebas definidas.
+- **Documentos asociados:** [investigación visual](../10_recursos_visuales/README.md), [direcciones y recomendación](../10_recursos_visuales/08_direcciones-y-recomendacion.md), [plan de pruebas](../10_recursos_visuales/09_plan-de-pruebas.md) y [registro del reinicio](../10_recursos_visuales/registro-del-reinicio.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — D-057 y vigencias visuales
+
+- **Cambio:** se registró el reinicio visual, se reclasificaron D-035 a D-038 y D-046, y se separó en D-051 la estructura de la apariencia del wireframe.
+- **Versión anterior:** D-036, D-037 y D-046 conservaban autoridad simultánea y sus enlaces apuntaban a documentos retirados.
+- **Motivo:** restablecer una sola fuente vigente y conservar el proceso sin convertirlo en obligación formal.
+- **Resultado:** las decisiones visuales nuevas deberán derivar de criterios y pruebas documentados en `10_recursos_visuales`.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

@@ -35,12 +35,18 @@ La imagen demuestra una dirección de jerarquía, composición, tipografía y le
 
 - `08_memoria/memoria-vigente-v4.md`, apartados 10 y 11.
 - `05_propuesta_phygital/wireframes-media-html/`, marco 3.1 y estado 20.
-- `10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/manual-sistema-visual-relevo.md`.
+- Sistema visual v4 conservado en la etiqueta Git `pre-reinicio-visual-2026-09-11`.
 - Norman, D. A. (2013). *The design of everyday things* (Rev. and expanded ed.). Basic Books.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Fuente retirada identificada
+
+- **Qué cambió:** la ruta inexistente al manual v4 se reemplazó por su ubicación histórica en Git.
+- **Cómo estaba antes:** la justificación enlazaba una fuente retirada de la rama principal.
+- **Por qué se decidió:** conservar trazabilidad sin mantener una referencia activa obsoleta.
 
 ### 2026-09-01 — Pantalla de alta fidelidad
 

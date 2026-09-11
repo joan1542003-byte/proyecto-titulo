@@ -1,6 +1,6 @@
 # Códigos cromáticos de Relevo
 
-**Estado:** registro de la entrega del 2 de septiembre de 2026. Esta paleta documenta lo presentado en esa fecha; fue sustituida para piezas nuevas por la [dirección de comunicación y color del 7 de septiembre](../../../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
+**Estado:** registro histórico de la entrega del 2 de septiembre de 2026. Esta paleta documenta lo presentado en esa fecha y no gobierna piezas nuevas. El color volvió a abrirse como decisión dentro de la [investigación visual vigente](../../../../10_recursos_visuales/README.md).
 
 ## Principio
 
@@ -57,6 +57,12 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Paleta reclasificada como histórica
+
+- **Qué cambió:** la paleta permanece como evidencia de la entrega, pero ya no deriva hacia una segunda dirección obsoleta.
+- **Cómo estaba antes:** remitía a una paleta posterior como regla para piezas nuevas.
+- **Por qué se decidió:** el color volvió a abrirse y se evaluará por roles, contraste y pruebas en soporte.
 
 ### 2026-09-02 — Incorporación a la entrega
 

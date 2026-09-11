@@ -25,7 +25,7 @@ Se comprobó la existencia y dimensión de los 44 wireframes. El mapa organizado
 
 La pantalla 3.1 se revisó por contenido, jerarquía y correspondencia con el recorrido. No usa rojo, progreso ni recompensas porque representa un ciclo en espera. La interfaz mantiene visible la salida “Desarmar ciclo”. Además, se reemplazó una frase que explicaba el soporte por los estados directos “Testigo vinculado” y “En espera”.
 
-El archivo visual local se comparó por huella digital con el repositorio. Después del rescate y de la corrección de la pantalla principal, 194 de 198 PNG tienen una coincidencia exacta y las 25 imágenes con transparencia están respaldadas. Los cuatro archivos restantes corresponden a una fuente ya normalizada, un borrador defectuoso y dos editoriales conceptualmente desactualizadas.
+El archivo visual local se comparó por huella digital con el repositorio durante el cierre de esta entrega. En ese momento, 194 de 198 PNG tenían una coincidencia exacta y las 25 imágenes con transparencia estaban respaldadas. El 11 de septiembre el conjunto visual activo fue retirado; su estado previo puede recuperarse mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
 
 La revisión automatizada confirmó el idioma español, el lienzo de 412 × 915 dp, las exportaciones de 824 × 1830 px, la navegación, la ausencia de simulación de teléfono, el uso exclusivo del rojo en la señal situada, la descripción accesible del gráfico, la inexistencia de desbordes y cero errores de consola.
 
@@ -38,6 +38,12 @@ Esta revisión detecta archivos faltantes, copias diferentes, dimensiones incorr
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Alcance temporal de la verificación
+
+- **Qué cambió:** se aclaró que las coincidencias corresponden al cierre de la entrega y no al repositorio actual.
+- **Cómo estaba antes:** el texto presentaba el respaldo visual como estado vigente.
+- **Por qué se decidió:** conservar el control histórico sin contradecir el reinicio posterior.
 
 ### 2026-09-02 — Verificación de la reconstrucción visual
 

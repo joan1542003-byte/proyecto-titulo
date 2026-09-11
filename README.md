@@ -43,7 +43,7 @@ Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pas
 
 Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
-La definición física más reciente y la decisión sobre nombre, descriptor y color se encuentran en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y en [comunicación, nombre y color](10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md). La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
+La definición física más reciente se encuentra en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md). El nombre, el descriptor y la identidad están nuevamente en investigación; sus criterios y alternativas se consultan en [marca, nombre y lenguaje](10_recursos_visuales/06_marca-y-lenguaje.md). La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
 ## Estado actual
 
@@ -51,7 +51,7 @@ La definición física más reciente y la decisión sobre nombre, descriptor y c
 
 El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal están documentados en [`07_validacion`](07_validacion/README.md). El [programa Android–BLE para micro:bit V2](06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) ya compila y permite comprobar matriz, sonido y silencio local sin participantes. Como la matriz integrada es roja, la fase A exige añadir y revisar una luz blanca cálida externa antes de evaluar comprensión. Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como antecedentes de mesa. Antes de usar la señal con participantes faltan acceso a la placa, instalación, montaje cálido, ensayo técnico y revisión competente. La comparación posterior permanece bloqueada hasta disponer de una notificación Android equivalente. No existen resultados de validación.
 
-La [dirección de comunicación](10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) parte de cercanía, brevedad, traslado y autonomía, sin imitar una identidad comercial. Conserva IBM Plex Sans para lectura, limita IBM Plex Mono a datos breves y propone carbón, papel cálido, grises y ámbar de señal. El sistema anterior se preserva como proceso, no como regla para nuevas piezas. Permanecen abiertos el logotipo definitivo, las pruebas de color, la forma industrial y los parámetros perceptivos de la señal física.
+La [investigación visual reiniciada](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. En esta etapa no existe una paleta, tipografía, logotipo ni forma visual definitiva. Se recomienda prototipar una herramienta serena y de baja ornamentación, pero sus decisiones deben probarse en la aplicación, el testigo, la memoria y la comunicación del producto.
 
 La base metodológica del corpus quedó consolidada:
 
@@ -111,7 +111,7 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 | `07_validacion` | Hipótesis, protocolos, resultados y criterios de decisión. |
 | `08_memoria` | Memoria activa, anexos, matrices y controles editoriales vigentes. |
 | `09_decisiones` | Registro cronológico de decisiones y cambios de dirección. |
-| `10_recursos_visuales` | Escenas, texturas y módulos gráficos sintéticos para explorar la comunicación visual de Relevo. |
+| `10_recursos_visuales` | Investigación escrita sobre interfaz, testigo, marca, producto, memoria editorial, alternativas y pruebas. |
 | `99_archivo` | Fuentes locales migradas y material antiguo, reemplazado o histórico, con estado y procedencia explícitos. |
 
 ## Gestión de tareas
@@ -119,6 +119,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Reinicio de la investigación visual
+
+- **Cambio:** la entrada principal enlaza el nuevo estudio visual y vuelve a declarar abiertos nombre comercial, descriptor, paleta, tipografía, logotipo y forma.
+- **Versión anterior:** presentaba como vigente una dirección del 7 de septiembre con tipografías y color ámbar ya seleccionados.
+- **Motivo:** la auditoría encontró decisiones gráficas incompatibles y una producción mayor que su validación.
+- **Alcance:** se retiró la apariencia anterior, no la estructura funcional del proyecto ni el wireframe v1.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

@@ -55,9 +55,9 @@ La presentación de Relevo es un tablero de revisión; las reglas de marco y tec
 - El testigo físico no incorpora texto, menú, historial ni interfaz de consulta.
 - La condición, el gesto de armado y el pulso se presentan como decisiones provisionales, no como resultados validados.
 - Continuar, ignorar, silenciar, cambiar de intención y cerrar son respuestas legítimas; el sistema no registra cumplimiento.
-- Las nueve pantallas principales utilizan fidelidad media y la dirección oscura vigente. Los 35 estados de cobertura permanecen en baja fidelidad.
-- La interfaz usa carbón `#17191B`, superficie `#1F2326`, papel cálido `#F4F1EA`, gris `#AEB4B8` y ámbar de señal `#FFB000`.
-- El ámbar `#FFB000` se reserva al acontecimiento situado de 3.2; no comunica prioridad genérica, error ni decoración.
+- Las nueve pantallas principales registran la fidelidad media de la entrega; los 35 estados de cobertura permanecen como referencia de baja fidelidad.
+- La paleta, la tipografía y el acabado exportado son históricos desde el 11 de septiembre de 2026.
+- Para una iteración visual, conservar contenido, secuencia y estados, y consultar primero [`../../10_recursos_visuales/README.md`](../../10_recursos_visuales/README.md).
 - La marca de puntos, los campos informativos y los estados nunca deben adquirir apariencia de botón. En 2.3, el armado se confirma mediante el control físico y no mediante una acción principal de pantalla.
 - No se incorporan menús, iconos ni controles heredados de una referencia si no tienen una consecuencia definida en el recorrido.
 - El mapa general se divide en arquitectura, ruta ampliada y cobertura por familias. No se deben reunir 44 miniaturas ilegibles como única representación.
@@ -90,6 +90,12 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Keep the home indicator as the topmost safe-area layer in the z-index above everything else in the prototype.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Instrucciones visuales reemplazadas
+
+- **Qué cambió:** se retiró la obligación de aplicar la paleta del wireframe v1.
+- **Cómo estaba antes:** el archivo fijaba colores y uso de ámbar para futuras iteraciones.
+- **Por qué se decidió:** separar la estructura congelada de la identidad reiniciada.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

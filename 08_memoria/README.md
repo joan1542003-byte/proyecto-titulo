@@ -66,7 +66,7 @@ Estas seis auditorías describen el estado anterior a la memoria v4 y a los cier
 
 La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a las memorias históricas.
 
-**Control de versiones:** la memoria vigente es el Markdown enlazado arriba. La [maqueta anterior de 87 páginas](../10_recursos_visuales/14_memoria_editorial_completa_2026-09-01/README.md) se conserva como antecedente y no incorpora la revisión textual del 9 de septiembre.
+**Control de versiones:** la memoria vigente es el Markdown enlazado arriba. La maqueta anterior de 87 páginas pertenece al sistema visual retirado y puede recuperarse mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`; no incorpora la revisión textual del 9 de septiembre ni define la diagramación futura.
 
 ## Controles editoriales
 
@@ -84,6 +84,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-11 — Maqueta visual trasladada al respaldo
+
+- **Cambio:** el control de versiones dejó de enlazar una maqueta eliminada de la rama activa y remite a la etiqueta que conserva el estado anterior.
+- **Versión anterior:** el índice apuntaba a una carpeta visual que ya no existe en `main`.
+- **Motivo:** mantener trazabilidad sin presentar la diagramación anterior como base vigente.
+- **Alcance:** la memoria escrita y su objetivo de extensión no cambian.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

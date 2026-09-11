@@ -1,5 +1,7 @@
 # Explicación y justificación de los wireframes
 
+> **Estado del documento:** registro funcional de la entrega del 2 de septiembre de 2026. La estructura del recorrido continúa sirviendo como hipótesis de interacción; su tratamiento visual, sus colores y la elección de una pantalla destacada no definen el sistema visual vigente. Véanse [`05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md`](../../../../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) y [`10_recursos_visuales/04_interfaz-android.md`](../../../../10_recursos_visuales/04_interfaz-android.md).
+
 ## Ruta principal
 
 ### 1.1 Formular
@@ -109,6 +111,12 @@ La cobertura busca que Relevo pueda fallar, detenerse o cambiar de dirección si
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Separación entre estructura y apariencia
+
+- **Qué cambió:** se explicitó que este documento conserva la lógica funcional de una entrega pasada, pero no fija la dirección visual actual.
+- **Cómo estaba antes:** la justificación podía leerse como una validación vigente de la pantalla destacada y de sus recursos gráficos.
+- **Por qué se decidió:** el recorrido aún aporta al desarrollo de la interacción, mientras que la interfaz se encuentra nuevamente en investigación y deberá resolverse mediante comparación y pruebas.
 
 ### 2026-09-02 — Actualización de la pantalla destacada
 

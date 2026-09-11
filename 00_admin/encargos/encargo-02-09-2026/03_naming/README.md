@@ -1,5 +1,7 @@
 # Naming de Relevo
 
+> **Estado del documento:** antecedente de la entrega del 2 de septiembre de 2026. La arquitectura verbal sigue siendo útil para describir el sistema, pero el descriptor y los términos secundarios se encuentran nuevamente en estudio. La definición vigente está en [`10_recursos_visuales/06_marca-y-lenguaje.md`](../../../../10_recursos_visuales/06_marca-y-lenguaje.md).
+
 ## Nombre principal
 
 **Relevo** es el nombre del sistema completo. La palabra alude a un cambio de turno: una intención que había quedado en segundo plano vuelve a hacerse perceptible. El nombre no promete que la persona abandonará el teléfono ni que realizará la actividad elegida; la decisión continúa en sus manos.
@@ -36,6 +38,12 @@ El nombre queda definido para el proyecto académico y sus prototipos. Una event
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Distinción entre antecedente y definición vigente
+
+- **Qué cambió:** se añadió una advertencia inicial que identifica el documento como parte de una entrega pasada y remite al estudio verbal actual.
+- **Cómo estaba antes:** el descriptor y la arquitectura de nombres podían interpretarse como decisiones cerradas y vigentes.
+- **Por qué se decidió:** el reinicio visual también reabrió la manera de comunicar el proyecto; conservar este archivo permite reconstruir el proceso sin confundirlo con la etapa actual.
 
 ### 2026-09-02 — Incorporación a la entrega
 

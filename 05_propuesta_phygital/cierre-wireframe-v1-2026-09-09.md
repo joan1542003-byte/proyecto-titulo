@@ -4,6 +4,8 @@
 
 **Estado:** línea base congelada para construir el primer prototipo
 
+**Estado visual:** la estructura y la cobertura permanecen como referencia; la paleta, la tipografía y el acabado descritos en este cierre son históricos desde el reinicio visual del 11 de septiembre.
+
 **Referencia Git:** etiqueta `wireframe-v1-2026-09-09`
 
 ## Qué se cierra
@@ -52,7 +54,7 @@ Los demás estados siguen disponibles como cobertura técnica. No forman parte o
 
 ## Corrección previa al cierre
 
-La base adoptó carbón `#17191B`, superficie `#1F2326`, papel cálido `#F4F1EA` y gris `#AEB4B8`. La señal cambió de rojo `#D71921` a ámbar `#FFB000`. Se regeneraron las 44 vistas y los tres mapas. La corrección no modifica el recorrido: alinea las piezas activas y evita que una señal cotidiana comparta el código visual asociado a alerta o error.
+En esa entrega, la base adoptó carbón `#17191B`, superficie `#1F2326`, papel cálido `#F4F1EA` y gris `#AEB4B8`; la señal cambió de rojo `#D71921` a ámbar `#FFB000`. Se regeneraron las 44 vistas y los tres mapas. Estos valores permiten reconstruir el hito, pero no gobiernan la interfaz futura.
 
 ## Verificación
 
@@ -75,6 +77,12 @@ Construir la navegación Android mínima con los nueve marcos y las recuperacion
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Alcance del congelamiento precisado
+
+- **Qué cambió:** se declaró histórica la apariencia y se conservó como vigente únicamente la estructura y cobertura del wireframe.
+- **Cómo estaba antes:** el cierre podía hacer que la paleta pareciera obligatoria para el desarrollo.
+- **Por qué se decidió:** D-052 reinició la investigación visual sin reabrir el recorrido funcional.
 
 ### 2026-09-09 — Creación y congelamiento
 

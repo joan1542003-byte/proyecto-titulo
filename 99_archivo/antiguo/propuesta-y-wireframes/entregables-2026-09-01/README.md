@@ -15,13 +15,19 @@ Este paquete conserva el cierre preparado el 1 de septiembre. La entrega vigente
 
 ## Criterio de autoridad
 
-La función del sistema se lee desde `08_memoria/memoria-vigente-v4.md`. La secuencia y las excepciones se leen desde `05_propuesta_phygital/wireframes-media-html/` y `05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md`. Las decisiones visuales se rigen por `10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/`.
+La función y la secuencia actuales se consultan en la memoria y en el wireframe v1. Las decisiones visuales que dieron origen a esta entrega dejaron de estar vigentes el 11 de septiembre de 2026 y se recuperan mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
 
 Las imágenes no reemplazan esas fuentes. Si una imagen y un documento se contradicen, prevalece el documento vigente hasta registrar una nueva decisión.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Autoridad histórica aclarada
+
+- **Qué cambió:** se reemplazó la ruta retirada del sistema v4 por la etiqueta que conserva esa etapa.
+- **Cómo estaba antes:** la entrega afirmaba que sus decisiones visuales seguían gobernadas por v4.
+- **Por qué se decidió:** mantener el archivo como proceso sin confundirlo con la investigación vigente.
 
 ### 2026-09-02 — Derivación a la entrega vigente
 

@@ -2,7 +2,7 @@
 
 ## Propósito y alcance
 
-Esta síntesis traduce cuatro lecturas de diseño al sistema visual vigente de Relevo. No pretende convertirlas en una receta ni cerrar decisiones que todavía necesitan prueba. El proyecto se entiende aquí como un sistema phygital: una aplicación Android organiza y confirma una intención, un primer paso, una condición, un lugar y la relación con un testigo físico; el testigo emite una señal breve situada en el entorno; la persona conserva la decisión de iniciar o no la actividad.
+Esta síntesis traduce cuatro lecturas de diseño a criterios para investigar el sistema visual de Relevo. No pretende convertirlas en una receta ni cerrar decisiones que todavía necesitan prueba. El proyecto se entiende aquí como un sistema phygital: una aplicación Android organiza y confirma una intención, un primer paso, una condición, un lugar y la relación con un testigo físico; el testigo emite una señal breve en el entorno; la persona conserva la decisión de iniciar o no la actividad.
 
 El alcance visual comprende tres superficies relacionadas pero no idénticas: Android, editorial y objeto físico. La investigación de Norman aporta criterios de comprensión y acción; Albers aporta una forma experimental de estudiar el color en contexto; Munari aporta relación entre comunicación, función, material y uso; Isaacson aporta un caso histórico de integración de producto y experiencia. Ninguna de las cuatro obras sustituye las entrevistas, las pruebas con usuarios, la accesibilidad, la factibilidad técnica ni la evaluación del objeto.
 
@@ -21,7 +21,7 @@ El alcance visual comprende tres superficies relacionadas pero no idénticas: An
 
 Una clave visible permite reconocer qué puede hacerse o qué significa un elemento. El mapeo relaciona una acción con su resultado; la retroalimentación informa qué ocurrió; una restricción reduce acciones erróneas; y un modelo conceptual ayuda a anticipar cómo funciona un sistema (Norman, 2002). En Relevo, estos principios exigen que una persona pueda distinguir entre contenido, elección, acción, icono, estado y gráfico informativo. Esta formulación evita atribuir a la edición revisada el término *signifier*, que no aparece en su capa textual.
 
-La matriz de puntos no debe asumir una función por su apariencia. Si expresa la transferencia entre intención, primer paso y señal situada, es un gráfico informativo y debe acompañarse de texto equivalente. Si no comunica una relación necesaria, es decoración y debe quedar subordinada. El ámbar identifica la señal cotidiana, una selección o un estado activo; no reemplaza texto, forma o icono ni se usa como adorno. El color de error mantiene un rol distinto.
+Ningún motivo gráfico debe asumir una función por su apariencia. Si explica una relación, es un gráfico informativo y debe acompañarse de texto equivalente. Si no comunica una relación necesaria, es decoración y debe quedar subordinada. El color puede distinguir acciones o estados, pero no reemplaza texto, forma o icono ni se usa como adorno.
 
 ### 2. La configuración precede a la señal
 
@@ -33,13 +33,13 @@ Esta secuencia traduce el ciclo de acción de Norman: una intención necesita un
 
 Albers muestra que la percepción de un color cambia según el fondo, los colores próximos, la cantidad, la iluminación y el soporte. Por eso, la paleta de Relevo no puede cerrarse mediante valores hexadecimales aislados. Cada combinación debe revisarse en la pantalla Android, en impresos editoriales y junto a los materiales del objeto.
 
-La dirección vigente parte de carbón `#17191B`, superficie `#1F2326`, papel cálido `#F4F1EA`, gris claro `#AEB4B8`, ámbar de señal `#FFB000` y error `#E35D6A`. Estos valores son puntos de partida del sistema, no una garantía automática de accesibilidad. El ámbar distingue la activación cotidiana del error técnico; su contraste y su lectura deben probarse en contexto y nunca deben ser la única manera de comunicar un estado.
+El estudio reiniciado no fija valores cromáticos. Primero define roles —fondo, superficie, texto, acción, selección, información, advertencia y error— y luego compara alternativas en contexto. La luz física se evalúa aparte porque un estímulo luminoso no cumple la misma función que un acento de interfaz. Ningún estado debe depender solo del color.
 
 ### 4. La identidad debe servir a la comunicación
 
-Munari relaciona signos, formas, colores y relaciones con la posibilidad de evitar interpretaciones equivocadas. La identidad de Relevo puede usar una retícula precisa, tipografía funcional, puntos y reglas, pero debe dejar que el contenido sea el primer nivel de lectura. La expresión visual no puede convertir una elección en una ilustración ni un estado en un botón.
+Munari relaciona signos, formas, colores y relaciones con la posibilidad de evitar interpretaciones equivocadas. La identidad de Relevo debe dejar que el contenido sea el primer nivel de lectura. La expresión visual no puede convertir una elección en una ilustración ni un estado en un botón.
 
-El alfabeto de puntos queda acotado a la marca y a una señal expresiva breve. Para textos largos se usa IBM Plex Sans; para metadatos y valores técnicos, IBM Plex Mono. La escala, el espaciado y el ancho de lectura deben ajustarse a la distancia y al tiempo disponible. El editorial puede ampliar el lenguaje gráfico mediante diagramas, secuencias y ejemplos; no debe exigir que el lector descifre un código que la aplicación nunca explica.
+La tipografía, la retícula y cualquier recurso distintivo se compararán con texto real y según el soporte. La escala, el espaciado y el ancho de lectura deben ajustarse a la distancia y al tiempo disponible. El editorial puede ampliar el lenguaje gráfico mediante diagramas, secuencias y ejemplos; no debe exigir que el lector descifre un código que la aplicación nunca explica.
 
 ### 5. El sistema incluye condiciones materiales
 
@@ -53,7 +53,7 @@ El principio de integración no significa que todas las superficies deban verse 
 
 La aplicación debe priorizar comprensión y recuperación. Cada pantalla necesita un objetivo principal, una acción dominante cuando corresponda y un estado que no parezca pulsable. Las elecciones deben tener límites visibles y estados seleccionado/no seleccionado que no dependan solamente del color. Los iconos deben ser convencionales, escasos, etiquetados para tecnologías de asistencia y provistos de un objetivo táctil suficiente cuando sean interactivos.
 
-El modo oscuro vigente se organiza con una retícula estable, pocas formas redondeadas, jerarquía tipográfica y reglas de separación. Las tarjetas no deben convertirse en la unidad universal de contenido. Una agrupación lineal, una lista o una secuencia de reglas puede comunicar mejor la relación entre pasos y reducir la apariencia de un tablero de métricas. Se excluyen rachas, progreso, premios, evaluación, culpa, moralización y métricas de cumplimiento porque cambiarían el sentido del proyecto: Relevo devuelve una intención a la situación, no califica a la persona.
+La aplicación debe contemplar temas claro y oscuro según la preferencia del sistema. En ambos se compararán retícula, jerarquía y agrupación antes de añadir contenedores. Las tarjetas no deben convertirse en la unidad universal de contenido. Una lista o una secuencia puede comunicar mejor la relación entre pasos y reducir la apariencia de un tablero de métricas. Se excluyen rachas, progreso, premios, evaluación, culpa, moralización y métricas de cumplimiento porque cambiarían el sentido del proyecto: Relevo devuelve una intención a la situación, no califica a la persona.
 
 ### Editorial
 
@@ -89,8 +89,8 @@ Estos criterios deben contrastarse con la versión vigente de las pautas de acce
 | ¿Se comprende la diferencia entre intención y primer paso? | Mostrar una pantalla de configuración sin explicación oral y pedir que se reformule cada término | Reformulaciones correctas y registro de ambigüedades |
 | ¿Las elecciones se distinguen de acciones y estados? | Prueba de clasificación con pantallas estáticas y prototipo navegable | Identificación del elemento que se puede escoger, activar o solo leer |
 | ¿La secuencia de configuración prepara la situación real? | Recorrido completo Android–testigo–actividad con una tarea concreta | Errores, dudas, retrocesos y puntos donde se pierde el modelo conceptual |
-| ¿El gráfico de puntos comunica transferencia? | Comparar versión con puntos, texto equivalente y versión sin puntos | Explicación espontánea de la relación; el gráfico no se aprueba por gusto |
-| ¿La señal y el error se distinguen? | Presentar estados activos y fallos en condiciones claras y oscuras | El ámbar se reconoce como señal o estado activo y el rosa rojizo únicamente como error, sin depender solo del color |
+| ¿Un recurso gráfico ayuda a explicar una relación? | Comparar una versión con el recurso, otra con texto equivalente y otra sin él | Explicación espontánea de la relación; el recurso no se aprueba por gusto |
+| ¿La información, la advertencia y el error se distinguen? | Presentar estados y fallos en temas claro y oscuro | Cada función se reconoce mediante lenguaje y estructura, sin depender solo del color |
 | ¿La paleta se mantiene legible en contexto? | Pruebas de contraste y percepción con fondos, tamaños, brillo y soportes reales | Valores documentados, fallos y ajustes por combinación, no solo por color aislado |
 | ¿El testigo se percibe y no interrumpe? | Prototipos de baja fidelidad en el lugar de uso, con variaciones de luz y distancia | Detección, interpretación, tiempo de respuesta y falsas alarmas |
 | ¿La forma del objeto puede producirse y mantenerse? | Revisión de materiales, montaje, energía, reparación, limpieza y costos | Restricciones y decisiones justificadas antes de cerrar la forma |
@@ -104,9 +104,9 @@ Estos criterios deben contrastarse con la versión vigente de las pautas de acce
 | Relacionar acción y consecuencia | Norman (2002) | Informar qué se configura y qué ocurrirá con el testigo antes de confirmar | El texto no compensa una lógica técnica confusa | Recorrido Android–objeto y análisis de errores |
 | Usar retroalimentación pertinente | Norman (2002) | Confirmar enlace, preparación y fallos sin simular el pulso físico | Más avisos pueden aumentar ruido y dependencia del teléfono | Prueba de comprensión de estados y recuperación |
 | Diseñar para el error y la reversibilidad | Norman (2002) | Permitir revisar o deshacer una configuración sin castigo ni evaluación | No todo fallo técnico puede revertirse desde la interfaz | Prueba de recuperación y revisión técnica |
-| Entender el color en contexto | Albers (2013) | Probar la paleta y la separación entre ámbar de señal y color de error en combinaciones reales | La percepción varía con soporte, iluminación y persona | Contraste, simulación y pruebas situadas |
+| Entender el color en contexto | Albers (2013) | Probar roles cromáticos y su separación en combinaciones reales | La percepción varía con soporte, iluminación y persona | Contraste, simulación y pruebas situadas |
 | Enseñar mediante comparación y experimento | Albers (2013) | Comparar variantes de fondo, señal y texto antes de cerrar el sistema | Un experimento visual no prueba preferencia de uso prolongado | Registro de resultados y prueba de comprensión |
-| Hacer que los signos reduzcan errores de lectura | Munari (1971) | Acompañar los puntos con una leyenda y conservar una jerarquía verbal | El significado depende de contexto y convenciones | Lectura editorial sin explicación oral |
+| Hacer que los signos reduzcan errores de lectura | Munari (1971) | Acompañar los gráficos con una leyenda y conservar una jerarquía verbal | El significado depende de contexto y convenciones | Lectura editorial sin explicación oral |
 | Relacionar forma, material y uso | Munari (1971) | Investigar instalación, señal, mantenimiento y transporte del testigo | Los ejemplos del libro no predicen el material adecuado | Prototipos y revisión de producción |
 | Diseñar la experiencia de extremo a extremo | Isaacson (2011) | Auditar la continuidad entre app, testigo y editorial | El caso descrito es particular y no prueba eficacia | Prueba de sistema completo con usuarios |
 | Resolver complejidad antes de exponerla | Isaacson (2011) | Reducir decisiones visibles solo donde la lógica ya esté clara | La reducción puede ocultar información necesaria | Comparación de alternativas y registro de omisiones |
@@ -158,3 +158,10 @@ La biblioteca sostiene una dirección clara, pero no una solución cerrada. El s
 - **Situación anterior:** la síntesis seguía describiendo como vigente la paleta oscura del 29 de agosto.
 - **Motivo:** mantener la traducción de las lecturas alineada con la autoridad visual del 7 de septiembre.
 - **Alcance:** Albers sustenta el método de comparación, no demuestra que la nueva paleta sea definitiva; aún debe probarse en contexto.
+
+### 2026-09-11 — Reinicio de aplicaciones visuales
+
+- **Cambio:** se retiraron paleta, tipografías, modo exclusivo y motivo gráfico de las decisiones vigentes; se conservaron los métodos de comparación, jerarquía y prueba.
+- **Situación anterior:** la síntesis aplicaba las lecturas a un sistema oscuro con valores y recursos formales específicos.
+- **Motivo:** volver a investigar la expresión desde la función sin perder los fundamentos bibliográficos.
+- **Asunto abierto:** comparar alternativas reales antes de convertir roles y criterios en especificaciones.

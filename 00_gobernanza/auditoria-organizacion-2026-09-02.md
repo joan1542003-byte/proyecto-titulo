@@ -28,7 +28,7 @@ Se revisaron:
 | Propuesta y estructura de interacción | [`05_propuesta_phygital/README.md`](../05_propuesta_phygital/README.md) | Vigente y en desarrollo |
 | Factibilidad y costos | [`06_desarrollo_y_factibilidad/README.md`](../06_desarrollo_y_factibilidad/README.md) | Vigente y provisional |
 | Validación | [`07_validacion/README.md`](../07_validacion/README.md) | Preparada; ejecución pendiente |
-| Sistema visual | [`10_recursos_visuales/08_direccion_visual_relevo/README.md`](../10_recursos_visuales/08_direccion_visual_relevo/README.md) | Vigente y exploratorio |
+| Investigación visual | [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md) | Reiniciada el 11 de septiembre; sin identidad cerrada |
 | Material superado | [`99_archivo/README.md`](../99_archivo/README.md) | Histórico |
 
 ## Resultados de la revisión
@@ -85,6 +85,12 @@ La organización no significa que el proyecto esté terminado: memoria, prototip
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Vigencia visual corregida
+
+- **Qué cambió:** la tabla remite al reinicio visual y fecha su nuevo estado.
+- **Cómo estaba antes:** declaraba vigente una dirección retirada.
+- **Por qué se decidió:** conservar la auditoría como antecedente sin entregar una ruta rota.
 
 ### 2026-09-02 — Auditoría inicial de organización
 

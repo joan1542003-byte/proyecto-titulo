@@ -25,14 +25,14 @@ Se creó una ruta histórica única con cuatro áreas y 97 archivos:
 | Memoria | v1–v3, módulos de reconstrucción, auditorías anteriores y dos DOCX | memoria v4 y sus controles editoriales activos |
 | Desarrollo físico | montajes B1, B2 y 12 V del 30 de agosto | prueba micro:bit, estudio del testigo compacto, ruta XIAO nRF52840 y puerta técnica de fase A |
 | Propuesta y wireframes | tablero del 26 de agosto, siete láminas iniciales y paquete del 1 de septiembre | tablero de 44 vistas, láminas 4K y entrega organizada del 2 de septiembre |
-| Sistema visual | sistema v3, tres exploraciones iniciales y nueve pantallas v1 descartadas | dirección de comunicación del 7 de septiembre; v4 permanece como referencia técnica anterior para las pantallas de esa etapa |
+| Sistema visual | sistema v3, tres exploraciones iniciales y nueve pantallas v1 descartadas | antecedente preservado por la etiqueta Git `pre-reinicio-visual-2026-09-11`; la investigación activa se consulta en `10_recursos_visuales/README.md` |
 
 El [índice de material antiguo](../99_archivo/antiguo/README.md) explica cada grupo y enlaza su reemplazo. Los README de las áreas activas también conservan acceso al proceso, pero ya no mezclan esos antecedentes con los documentos vigentes.
 
 ## Correcciones adicionales
 
 - `entrega-encargo-17.md` dejó de llamar vigente al tablero anterior y ahora remite a `wireframes-media-html`.
-- La dirección visual tiene una sola autoridad para piezas nuevas: `comunicacion-naming-y-paleta-2026-09-07.md`. El sistema v4 quedó rotulado como referencia técnica anterior, no como un segundo sistema activo.
+- La auditoría del 11 de septiembre sustituyó la autoridad visual registrada aquí. La única fuente activa es ahora [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md); paleta, tipografía, logotipo, forma y descriptor definitivo permanecen abiertos.
 - La maqueta editorial se reconstruyó desde la memoria v4. El HTML, el manifiesto y las 87 páginas PNG vuelven a coincidir.
 - Se añadió `verificar-enlaces.ps1`, una comprobación local basada en PowerShell estándar y sin dependencias nuevas.
 - Las rutas modificadas quedaron registradas dentro de sus Markdown y en la decisión D-050.
@@ -69,6 +69,12 @@ La limpieza comprueba estructura, navegación e integridad de archivos. No valid
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Autoridad visual actualizada
+
+- **Qué cambió:** se reemplazó la dirección del 7 de septiembre por la investigación visual reiniciada.
+- **Cómo estaba antes:** una dirección de comunicación y color gobernaba las piezas nuevas.
+- **Por qué se decidió:** evitar que esta auditoría conserve una autoridad incompatible con D-052.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

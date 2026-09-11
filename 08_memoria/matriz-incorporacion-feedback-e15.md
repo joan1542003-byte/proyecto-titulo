@@ -25,7 +25,7 @@ Las observaciones docentes orientan decisiones y tareas, pero no constituyen evi
 | E15-19 | Pendiente para la defensa | La memoria ya evita lenguaje de encargos, pero el guion oral y las diapositivas se desarrollan como medios distintos durante el cierre. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md). |
 | E15-20 | Resuelto para v4; control recurrente | La v4 fue auditada en estructura, fuentes y escritura. La revisión APA 7, editorial y de privacidad debe repetirse al incorporar resultados. | [Auditorías de memoria](README.md). |
 | E15-21 | Resuelto como sistema continuo | Cronología, decisiones y calendario están enlazados. Los próximos hitos se registran en la Issue #9 y en el plan de cierre. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md), [decisiones](../09_decisiones/registro-de-decisiones.md) e [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9). |
-| E15-22 | Parcial avanzado | Encargo 17, wireframes y sistema visual ya están desarrollados y documentados. Faltan aplicaciones finales, pruebas de legibilidad y registro definitivo del producto. | [Entrega Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) y [dirección visual](../10_recursos_visuales/08_direccion_visual_relevo/README.md). |
+| E15-22 | Parcial | Encargo 17 y los wireframes estructurales están documentados. La identidad anterior fue retirada: el nuevo estudio visual define criterios y alternativas, pero aún faltan prototipos comparables, pruebas de legibilidad y especificaciones. | [Entrega Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) e [investigación visual](../10_recursos_visuales/README.md). |
 
 ## Pendientes prioritarios
 
@@ -40,6 +40,12 @@ Las observaciones docentes orientan decisiones y tareas, pero no constituyen evi
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Estado de E15-22 corregido
+
+- **Qué cambió:** se separó el cierre estructural de wireframes del reinicio de la identidad visual.
+- **Cómo estaba antes:** el punto declaraba ambos desarrollados y documentados.
+- **Por qué se decidió:** no presentar una etapa de investigación como sistema visual terminado.
 
 ### 2026-08-30 — Reconciliación con memoria v4 y ruta de validación
 

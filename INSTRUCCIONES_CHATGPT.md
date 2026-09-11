@@ -25,7 +25,7 @@ El estado del proyecto cambia. No confíes en una tarea, formulación o priorida
 
 ## Alcance de la revisión documental del 9 de septiembre
 
-El autor pidió corregir textos, ordenar el repositorio y limpiar redundancias. Esta revisión no incluye desarrollar wireframes, producir visualidad ni regenerar exportaciones. Las piezas fechadas se conservan y sus documentos explican qué versión representan. La [auditoría textual](00_gobernanza/auditoria-textual-2026-09-09.md) registra lo corregido y sus límites. Una solicitud posterior del autor puede definir un nuevo alcance.
+La revisión textual del 9 de septiembre corrigió textos, ordenó el repositorio y limpió redundancias sin modificar wireframes ni exportaciones. El 11 de septiembre comenzó un nuevo alcance: retirar el sistema gráfico anterior e investigar nuevamente interfaz, testigo, marca, producto y memoria solo mediante documentación escrita. Las piezas previas se recuperan con la etiqueta Git `pre-reinicio-visual-2026-09-11`; no son una fuente activa.
 
 ## Contexto estable del proyecto
 
@@ -102,7 +102,7 @@ Al cambiar una respuesta, sincroniza su fuente responsable, índice, resumen afe
 - No uses expresiones como “según el taller” o “en el encargo” dentro del cuerpo definitivo de la memoria. Esa información puede conservarse en el archivo histórico o en la trazabilidad.
 - No mezcles observaciones docentes con evidencia empírica: el feedback orienta tareas y decisiones, pero no demuestra hechos.
 - Mantén un tono académico natural; no ocultes incertidumbre ni simules conclusiones.
-- La visualidad ya tiene una dirección documentada, pero no reemplaza la investigación ni la validación. Antes de producir nuevas piezas, consulta `10_recursos_visuales/README.md`, distingue el sistema vigente del archivo histórico y verifica qué soporte necesita realmente la tarea.
+- La visualidad se reinició el 11 de septiembre de 2026. Antes de proponer o producir piezas, consulta `10_recursos_visuales/README.md`: contiene criterios y alternativas escritas, no una identidad cerrada. No heredes paleta, tipografías, modo, motivos o forma del material histórico sin una comparación documentada.
 
 ## Uso de GitHub
 
@@ -149,6 +149,13 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Protocolo visual reiniciado
+
+- **Cambio:** las instrucciones dejan de presentar una dirección gráfica cerrada y exigen partir del nuevo estudio escrito.
+- **Versión anterior:** una conversación podía tratar el sistema del 7 de septiembre como autoridad para nuevas piezas.
+- **Motivo:** evitar que preferencias anteriores sustituyan la investigación, la accesibilidad y las pruebas.
+- **Alcance:** la estructura funcional del wireframe v1 continúa disponible como antecedente.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

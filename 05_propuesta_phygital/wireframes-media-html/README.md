@@ -4,13 +4,15 @@
 
 El tablero reúne los nueve wireframes de la ruta principal y 35 estados complementarios. Su interfaz de revisión separa tres capas: catálogo, wireframe y fundamento. La navegación, la explicación y la descarga permanecen fuera del área exportable para no confundirse con funciones de Relevo.
 
-La estructura, la cobertura y las medidas quedaron congeladas como wireframe v1 el 9 de septiembre. La base visual proviene del tablero construido el 2 de septiembre y su color de señal fue alineado con la [dirección actual de comunicación y color](../../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md).
+La estructura, la cobertura y las medidas quedaron congeladas como wireframe v1 el 9 de septiembre. Su apariencia corresponde a esa entrega y ya no gobierna la interfaz futura. La [investigación visual reiniciada](../../10_recursos_visuales/README.md) conservará el contenido y los estados útiles, pero comparará nuevamente jerarquía, color, tipografía y componentes.
 
 Cada wireframe usa una ventana representativa de Android de **412 × 915 dp** y se exporta a **824 × 1830 px**. Esta medida no se presenta como un promedio estadístico ni como un modelo de teléfono específico: es una base de trabajo contemporánea para revisar jerarquía, alcance táctil y distribución vertical. No se dibuja hardware, barra de estado ni navegación del sistema.
 
 El entorno de revisión puede conservar recursos auxiliares de marco y teclado para comprobar el comportamiento del tablero. Esos elementos pertenecen a la herramienta de revisión: no forman parte de Relevo, no aparecen en los PNG exportados y no agregan una decisión de plataforma al proyecto.
 
-## Criterios de representación
+## Criterios de representación de esta entrega
+
+Los valores siguientes permiten reconstruir el wireframe v1. No constituyen especificaciones vigentes del sistema visual.
 
 - Retícula de 8 dp y margen interior de 24 dp.
 - Controles representados con un mínimo de 48 dp.
@@ -19,7 +21,7 @@ El entorno de revisión puede conservar recursos auxiliares de marco y teclado p
 - El ámbar `#FFB000` se reserva para la señal situada; no identifica botones, errores ni decoración.
 - Sin sombras, degradados, texturas ni recursos que alteren la lectura estructural.
 
-Los 35 estados de cobertura se mantienen en baja fidelidad. Las nueve pantallas principales están en fidelidad media: muestran la jerarquía, la tipografía, el contraste y la distinción entre controles y contenido. Su estructura solo se reabre ante una prueba, un fallo de implementación o una contradicción verificable. Esta condición no convierte la interfaz en una propuesta validada ni en el diseño definitivo de Android.
+Los 35 estados de cobertura se mantienen en baja fidelidad. Las nueve pantallas principales registran una propuesta de fidelidad media. Su estructura solo se reabre ante una prueba, un fallo de implementación o una contradicción verificable; su apariencia será comparada nuevamente. Esta condición no convierte la interfaz en una propuesta validada ni en el diseño definitivo de Android.
 
 ## Uso
 
@@ -51,6 +53,12 @@ Si el navegador de Playwright no está instalado, la suite del runtime puede uti
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Apariencia separada de la estructura
+
+- **Qué cambió:** se mantuvo el wireframe v1 como cobertura funcional y se retiró su autoridad sobre color, tipografía y componentes futuros.
+- **Cómo estaba antes:** el tablero enlazaba una dirección visual cerrada el 7 de septiembre.
+- **Por qué se decidió:** permitir una nueva comparación visual sin perder los estados y recorridos ya documentados.
 
 ### 2026-09-09 — Línea base congelada
 

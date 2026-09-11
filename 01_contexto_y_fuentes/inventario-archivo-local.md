@@ -43,7 +43,7 @@ Las fechas de modificación pueden corresponder a copia o sincronización, no a 
 | Mercado | Existe un estudio exploratorio autónomo, fichas y registro de búsqueda con corte del 24 de agosto. No prueba novedad universal ni disposición de pago. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
 | Desarrollo y costos | B1 y B2 tienen esquemas revisables y desembolsos parciales; faltan inventario, revisión, compra, medición y costos de producción. | [Desarrollo y factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Validación | El Protocolo 01, consentimiento y fichas están preparados, pero no existen participantes ni resultados. | [Índice de validación](../07_validacion/README.md) |
-| Sistema visual | Existe una dirección documentada y un sistema oscuro v4 en desarrollo. Las exploraciones no fijan por sí solas la forma final del producto. | [Sistema visual v4](../10_recursos_visuales/08_direccion_visual_relevo/sistema-v4/README.md) |
+| Investigación visual | El apartado se reinició desde el problema y contiene criterios escritos para aplicación, testigo, marca, producto y memoria. No existe una identidad cerrada. | [Investigación visual](../10_recursos_visuales/README.md) |
 | Gobernanza | La ruta crítica se gestiona mediante hoja de ruta, plan de cierre e Issues #8–#10. | [Hoja de ruta](../00_gobernanza/hoja-de-ruta.md) |
 
 ## Carpeta Fin semestre 1
@@ -207,6 +207,12 @@ Estas decisiones explican la organización iniciada el 23 de agosto. No sustituy
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Estado visual actualizado
+
+- **Qué cambió:** el inventario reemplaza el sistema oscuro v4 por la investigación escrita reiniciada.
+- **Cómo estaba antes:** describía una dirección visual en desarrollo dentro de la carpeta activa.
+- **Por qué se decidió:** diferenciar antecedentes locales de la única fuente visual vigente.
 
 ### 2026-08-30 — Inventario fechado y reconciliado
 

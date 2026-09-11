@@ -93,7 +93,7 @@ Incluye bibliografía académica reciente, productos disponibles, aproximaciones
 
 La propuesta documentada deriva de requisitos de investigación e incluye valor, principios de interacción, relación física y digital, flujos, alcance, límites y alternativas descartadas. Sus beneficios esperados se mantienen como hipótesis.
 
-La [comunicación y paleta vigentes](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) gobiernan piezas nuevas. La investigación visual anterior conserva trazabilidad. Luz y sonido están seleccionados para prototipar; su percepción y parámetros, la forma industrial y los resultados de comprensión requieren pruebas.
+La [investigación visual](../10_recursos_visuales/README.md) define preguntas, criterios y alternativas para los soportes de Relevo. No fija todavía paleta, tipografía, logotipo, forma industrial ni parámetros perceptivos; esas decisiones requieren prototipos y pruebas. Luz y sonido continúan como canales previstos para el testigo.
 
 ### Fase 5 — Desarrollo y factibilidad
 
@@ -129,6 +129,12 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Ruta visual corregida
+
+- **Qué cambió:** la fase de propuesta dirige a la investigación visual reiniciada y distingue criterios de especificaciones cerradas.
+- **Cómo estaba antes:** una dirección de comunicación y color gobernaba las piezas nuevas.
+- **Por qué se decidió:** mantener una sola fuente activa y evitar decisiones por inercia.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

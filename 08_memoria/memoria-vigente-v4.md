@@ -620,13 +620,13 @@ La tabla sintetiza requisitos pendientes de operación. El autor coordina la inv
 
 ## Nombre y comunicación del propósito
 
-Relevo se conserva como nombre académico por su relación con el paso entre la actividad presente y una alternativa elegida. El descriptor «Una señal donde quieres empezar» explica el vínculo con el lugar. Son decisiones de comunicación: su comprensión necesita pruebas y la disponibilidad del nombre para un uso comercial requiere revisión específica.
+Relevo se utiliza como nombre académico provisional por su relación con el paso entre la actividad presente y una alternativa elegida. Antes de adoptarlo fuera de este contexto se deberá comprobar su comprensión y disponibilidad comercial. Para explicar el sistema se compararán tres descriptores; la alternativa inicial, «Una señal junto a tu primer paso», vincula la señal con un comienzo concreto sin prometer que la actividad ocurrirá.
 
 Los ejemplos deben mostrar un comienzo realizable: ponerse las zapatillas para hacer ejercicio o preparar la bolsa para una salida de buceo ya planificada. Son escenarios hipotéticos; recuperar tiempo no aporta por sí solo recursos, habilidades ni una actividad completada.
 
-La paleta gráfica utiliza carbón, papel cálido, grises y ámbar de señal. El ámbar diferencia provisionalmente una activación de un error, pero no se le atribuye un significado universal que ayude a encontrar el objeto. Encontrar el objeto, notar el pulso y recuperar la intención son comprobaciones distintas. La señal física de la prueba sigue siendo blanca cálida y difundida; la identidad no reemplaza el ensayo perceptivo.
+El sistema visual se organizará por funciones antes de fijar colores o recursos expresivos. La aplicación debe priorizar la intención, el primer paso y el estado del ciclo mediante componentes reconocibles, jerarquías breves y temas claro y oscuro acordes con la preferencia del sistema. El testigo debe distinguirse de su entorno y permitir reconocer sus estados sin depender exclusivamente del color. Encontrar el objeto, notar la señal y comprender su relación con la intención son comprobaciones distintas.
 
-La [dirección de comunicación](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md) registra estas decisiones; la [guía explicativa](../00_gobernanza/guia-comunicacion-relevo.md) distingue la promesa del producto de la evidencia disponible. La comunicación deberá revisarse si hace pensar que Relevo obliga a actuar o detecta un estado subjetivo.
+La memoria, la aplicación, el testigo y la comunicación deben reconocerse como partes de un mismo producto sin repetir una composición decorativa en todos los soportes. La [investigación visual](../10_recursos_visuales/README.md) reúne los criterios y alternativas; la [guía explicativa](../00_gobernanza/guia-comunicacion-relevo.md) distingue la promesa del producto de la evidencia disponible. La comunicación deberá revisarse si hace pensar que Relevo obliga a actuar o detecta un estado subjetivo.
 
 # 12. Factibilidad y límites
 
@@ -860,6 +860,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-09-11 — Nombre y criterios visuales abiertos a prueba
+
+- **Cambio:** se reemplazaron el descriptor, la paleta y las tipografías presentadas como vigentes por criterios funcionales para aplicación, testigo, marca y memoria.
+- **Versión anterior:** el capítulo fijaba carbón, papel cálido, grises y ámbar, y remitía a una dirección gráfica retirada.
+- **Motivo:** las decisiones visuales deben seguir a la comparación y a las pruebas de comprensión, legibilidad y percepción.
+- **Alcance:** el nombre Relevo continúa como denominación académica provisional; no se modifican el problema, el flujo ni la arquitectura técnica.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

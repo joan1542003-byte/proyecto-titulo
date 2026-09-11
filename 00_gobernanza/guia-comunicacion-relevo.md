@@ -325,7 +325,7 @@ Para una situación, no para una identidad fija: alguien tiene una intención al
 5. **La decisión final queda abierta.** No cerrar todas las escenas con una persona productiva o satisfecha después de obedecer.
 6. **La forma exploratoria se rotula.** Un render no debe hacer creer que existen medidas, materialidad o electrónica aprobadas.
 7. **La evidencia se distingue de la ilustración.** Una imagen generada explica o explora; no documenta uso real.
-8. **La terminología no reemplaza la escena.** La dirección vigente explica cercanía, brevedad, traslado y autonomía. `Transferencia situada` conserva valor como antecedente conceptual; D-046 gobierna las piezas nuevas.
+8. **La terminología no reemplaza la escena.** Cualquier concepto de diseño debe traducirse en una situación y una demostración concretas antes de llegar a una audiencia.
 9. **La tipografía expresiva no carga argumentos largos.** La explicación principal debe conservar legibilidad y jerarquía.
 10. **Cada soporte tiene un trabajo distinto.** La aplicación organiza, el objeto señala y la memoria explica; la comunicación debe preservar esa separación.
 
@@ -381,7 +381,7 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 - [GOV.UK — Identify user needs](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/plan-manage-content/identify-user-needs/): formular la necesidad desde la persona, la tarea y su razón, no desde una solución predeterminada.
 - [Office for National Statistics — Plain language](https://service-manual.ons.gov.uk/content/writing-for-users/plain-language): priorizar necesidades, lenguaje directo y una carga de información proporcionada.
 - [Nielsen Norman Group — Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/): presentar primero lo indispensable y revelar el detalle según la necesidad.
-- [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md), [propuesta phygital](../05_propuesta_phygital/README.md), [protocolo de asociación y comparación](../07_validacion/protocolo-01-asociacion-y-comparacion.md) y [comunicación, nombre y color](../10_recursos_visuales/comunicacion-naming-y-paleta-2026-09-07.md): fuentes internas que gobiernan la definición, los límites y el estado real de Relevo.
+- [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md), [recorridos situacionales](../03_usuarios/recorridos-situacionales.md), [propuesta phygital](../05_propuesta_phygital/README.md), [protocolo de asociación y comparación](../07_validacion/protocolo-01-asociacion-y-comparacion.md) e [investigación visual](../10_recursos_visuales/README.md): fuentes internas que gobiernan la definición, los límites y el estado real de Relevo.
 
 ---
 
@@ -406,6 +406,12 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Fuente visual actualizada
+
+- **Qué cambió:** la lista de fuentes internas dirige al nuevo estudio visual y se retiró una dirección gráfica anterior de las reglas vigentes.
+- **Cómo estaba antes:** enlazaba una paleta y un descriptor ya retirados.
+- **Por qué se decidió:** mantener la comunicación alineada con decisiones vigentes y pendientes reales.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

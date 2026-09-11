@@ -30,15 +30,15 @@ La sección sobre cantidad advierte que superficie, repetición y forma modifica
 
 ## Aporte para Relevo
 
-Albers ofrece una base directa para no tratar la paleta de Relevo como un conjunto de valores universales. El carbón, el papel cálido, los grises, el ámbar de señal y el color de error deben evaluarse en relación con su superficie, tamaño, tipografía, distancia, luz ambiental y soporte. Un acento que se percibe como señal en una gráfica editorial puede leerse de otra forma en una interfaz o en un objeto. La función cromática no puede cerrarse solo por el hexágono.
+Albers ofrece una base directa para no tratar la paleta de Relevo como un conjunto de valores universales. Fondo, superficie, texto, acción y estados deben evaluarse según su tamaño, tipografía, distancia, luz ambiental y soporte. Un acento que funciona en una gráfica editorial puede leerse de otra forma en una interfaz o en un objeto. La función cromática no puede cerrarse solo por el valor numérico.
 
-La aplicación Android debe probarse en modo oscuro y en diferentes niveles de brillo, densidades de pantalla y tamaños de texto. La dirección vigente utiliza ámbar `#FFB000` para la señal, la selección o un estado activo, y reserva `#E35D6A` para errores. Albers no justifica por sí mismo esa separación, pero permite exigir que ambas funciones conserven una diferencia perceptual sin hacer depender la comprensión únicamente del color. Los estados de conexión, batería, selección y error necesitan estructura, texto o iconos diferenciados.
+La aplicación Android debe probarse en temas claro y oscuro, diferentes niveles de brillo, densidades de pantalla y tamaños de texto. El estudio actual todavía no selecciona un color de acción, señal o error. Albers permite exigir que esas funciones conserven diferencias perceptuales, pero no autoriza una combinación particular. Los estados de conexión, batería, selección y error necesitan además estructura, texto o iconos diferenciados.
 
 En la editorial, sus ejercicios sustentan estudios de contraste y contexto: una misma muestra de color debe compararse en diferentes fondos, tamaños y proporciones. En el objeto, la señal debe probarse con el material, la luz y la distancia reales. La superficie difusa o el canal sensorial pueden cambiar la percepción del color; por ello, una visualización de pantalla no demuestra cómo se verá un pulso en el entorno.
 
 ## Qué no justifica
 
-Albers no determina la paleta de Relevo, no demuestra que el ámbar sea apropiado para una señal personal, no certifica accesibilidad y no reemplaza una evaluación de contraste. Sus ejercicios de papel no equivalen automáticamente a pantallas emisivas, tinta impresa, luz física o vibración. Tampoco justifica copiar sus composiciones ni convertir una matriz de puntos en una textura universal.
+Albers no determina la paleta de Relevo, no demuestra que un color sea apropiado para una señal personal, no certifica accesibilidad y no reemplaza una evaluación de contraste. Sus ejercicios de papel no equivalen automáticamente a pantallas emisivas, tinta impresa, luz física o vibración. Tampoco justifica copiar sus composiciones ni convertir un motivo en textura universal.
 
 Su afirmación de que la práctica debe preceder a la teoría debe entenderse como una metodología pedagógica de observación, no como una razón para eliminar la investigación bibliográfica. En Relevo, la teoría formula preguntas y la práctica permite verificar cómo se comportan los colores en el sistema real.
 
@@ -47,10 +47,10 @@ Su afirmación de que la práctica debe preceder a la teoría debe entenderse co
 | Aporte | Decisión provisional | Validación necesaria |
 | --- | --- | --- |
 | Relatividad | Definir roles cromáticos y no solo una lista de hexadecimales. | Comparar cada rol en Android, impresión y material físico. |
-| Contexto | Usar el blanco cálido y los grises según superficie, tamaño y jerarquía. | Pruebas de lectura y contraste en condiciones de luz variables. |
-| Acento | Separar el ámbar de señal y estado activo del color reservado a error. | Comprobar que ambas funciones se distingan; incluir alternativas no cromáticas. |
-| Puntos | Utilizar la matriz solo cuando codifique una relación informativa y acompañarla con texto equivalente. | Retirar la matriz de una versión de prueba y comparar comprensión. |
-| Proporción | Controlar cantidad y tamaño del color para que el acento no domine toda la pantalla. | Comparar variantes con distinta área y posición del rojo. |
+| Contexto | Comparar fondos y neutros según superficie, tamaño y jerarquía. | Pruebas de lectura y contraste en condiciones de luz variables. |
+| Acento | Separar acción, información, advertencia y error. | Comprobar que las funciones se distingan; incluir alternativas no cromáticas. |
+| Motivo | Utilizar un recurso gráfico solo cuando codifique una relación informativa y acompañarlo con texto equivalente. | Retirar el recurso de una versión y comparar comprensión. |
+| Proporción | Controlar cantidad y tamaño del color para que el acento no domine toda la pantalla. | Comparar variantes con distinta área y posición del acento. |
 | Variantes | Diseñar cambios estructurales, no solo cambios cosméticos. | Registrar qué relación visual cambia y qué versión comunica mejor. |
 | Material y luz | No trasladar directamente una muestra digital al testigo físico. | Pruebas con materiales, brillo, distancia, visión reducida y convivencia. |
 
@@ -75,3 +75,10 @@ La lectura sustenta un método de pruebas perceptuales y contextuales. Relevo pu
 - **Situación anterior:** el resumen todavía presentaba el rojo de la etapa matricial como decisión vigente.
 - **Motivo:** conservar la lectura de Albers como fundamento metodológico sin contradecir la autoridad cromática actual.
 - **Asunto abierto:** comprobar la distinción perceptual y semántica en pantalla, impresión y señal física.
+
+### 2026-09-11 — Paleta reabierta
+
+- **Cambio:** se retiraron los valores cromáticos anteriores y se reformuló su aplicación mediante roles y comparaciones en temas claro y oscuro.
+- **Situación anterior:** el resumen presentaba ámbar y rosa rojizo como separación operativa vigente.
+- **Motivo:** Albers fundamenta un método de observación contextual, no una selección cromática particular.
+- **Asunto abierto:** definir alternativas y probarlas en pantalla, impresión y luz física.
