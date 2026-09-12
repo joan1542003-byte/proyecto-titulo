@@ -530,7 +530,25 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límite:** el reinicio no invalida la memoria, el flujo, el wireframe v1 ni la arquitectura técnica. Tampoco autoriza diseñar piezas antes de realizar las comparaciones y pruebas definidas.
 - **Documentos asociados:** [investigación visual](../10_recursos_visuales/README.md), [direcciones y recomendación](../10_recursos_visuales/08_direcciones-y-recomendacion.md), [plan de pruebas](../10_recursos_visuales/09_plan-de-pruebas.md) y [registro del reinicio](../10_recursos_visuales/registro-del-reinicio.md).
 
+## D-058 — Probar un iTag comercial antes de recurrir a una placa
+
+- **Fecha:** 2026-09-11.
+- **Estado:** vigente como puerta de compra y ensayo; no como plataforma aprobada.
+- **Decisión:** comprar dos iTag BLE clásicos de vendedores distintos en Chile y examinar en cada unidad el servicio Immediate Alert, la reconexión, el sonido, la luz y el silenciamiento. Una muestra que supere la prueba podrá sustituir la primera comprobación con micro:bit; si ambas fallan, la ruta micro:bit permanece vigente como respaldo.
+- **Fundamento:** el servicio Bluetooth `0x1802/0x2A06` permite que una aplicación Android propia solicite una alerta sin conservar la aplicación del vendedor. Sin embargo, los iTag genéricos varían entre partidas y la especificación no obliga a producir luz, por lo que una publicación comercial no basta para aprobarlos.
+- **Alternativas descartadas:** SmartTag, Moto Tag, AirTag, UGREEN y Hoco por depender de ecosistemas cerrados; parlantes RGB como plataforma final porque la luz no suele aceptar órdenes independientes y la espera conectada no está documentada; elegir un solo clon por su fotografía.
+- **Consecuencia:** la siguiente compra estimada es de CLP 13.980 más envío para dos muestras. No se desarrolla integración definitiva hasta registrar servicios y comportamiento físico.
+- **Condición de revisión:** resultado de la prueba de aceptación, cambio de stock o aparición en Chile de un beacon compacto con zumbador, luz y SDK Android.
+- **Documento asociado:** [Búsqueda de productos terminados en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — D-058
+
+- **Cambio:** se registró una puerta con dos muestras iTag antes del banco micro:bit y se actualizó la segunda publicación después de comprobar una alternativa con mayor stock y relación directa con iTracing.
+- **Versión anterior:** D-047 situaba micro:bit como primera comprobación y no existía una búsqueda nacional de productos terminados controlables por una aplicación propia.
+- **Motivo:** reducir construcción, costo y mano de obra sin depender de una red de localización o afirmar capacidades no ensayadas.
+- **Resultado:** existe una compra recomendada y un criterio de aceptación; todavía no existe una plataforma física aprobada.
 
 ### 2026-09-11 — D-057 y vigencias visuales
 

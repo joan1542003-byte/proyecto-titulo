@@ -24,7 +24,9 @@ Una prueba con participantes necesita una variante previamente documentada y rev
 
 ## Puerta actual
 
-El [paquete micro:bit](prueba-microbit-ble/README.md) contiene un binario de mesa con matriz roja. Primero se comprueban enlace, tiempos, sonido y silencio local sin participantes. Para fase A se añade la salida cálida externa difundida y revisada. La [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) conserva los valores observados; este documento no afirma que ya existan mediciones.
+La primera puerta consiste en inspeccionar dos muestras iTag clásicas de partidas distintas conforme a la [búsqueda de productos terminados en Chile](busqueda-productos-terminados-chile-2026-09-11.md). Si una unidad permite activar el zumbador desde Android, reconecta y mantiene el reposo, puede reducir el trabajo del enlace sonoro. Su indicador luminoso no se considera equivalente a la luz de fase A hasta comprobar que la aplicación puede gobernarlo y que reproduce la secuencia requerida.
+
+Si las muestras no aprueban, el [paquete micro:bit](prueba-microbit-ble/README.md) permanece como banco de respaldo. Su matriz roja permite comprobar enlace, tiempos, sonido y silencio local sin participantes; para fase A necesita la salida cálida externa difundida y revisada. La [ficha técnica](../07_validacion/ficha-ensayo-tecnico-fase-a.md) conserva los valores observados; este documento no afirma que ya existan mediciones.
 
 La intensidad, el ritmo y el timbre final se decidirán por percepción y convivencia. La ausencia de resultados impide declarar que la combinación elegida sea superior o accesible para todas las personas. Seguimiento: Issues [#11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11), [#8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) y [#10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10), en ese orden de dependencia.
 
@@ -33,6 +35,13 @@ La intensidad, el ritmo y el timbre final se decidirán por percepción y conviv
 Este documento operacionaliza las decisiones D-045, D-048 y D-049 del [registro](../09_decisiones/registro-de-decisiones.md), los requisitos RU-08/RU-11 de la [matriz de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) y el [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md). La exploración de vibración es una propuesta de prueba, no un hallazgo empírico.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Puerta previa con producto terminado
+
+- **Cambio:** se añadió la inspección de dos iTag antes del banco micro:bit y se mantuvo la luz del producto como capacidad no comprobada.
+- **Versión anterior:** la puerta comenzaba directamente con micro:bit y una fuente cálida externa.
+- **Motivo:** probar primero una ruta compacta y económica sin rebajar la exigencia de luz, sonido, reconexión y silencio.
+- **Alcance:** no existe hardware ensayado; micro:bit continúa disponible como respaldo.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

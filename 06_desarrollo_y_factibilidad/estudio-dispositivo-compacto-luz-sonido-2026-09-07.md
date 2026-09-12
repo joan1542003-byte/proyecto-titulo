@@ -1,7 +1,9 @@
 # Estudio de un testigo compacto con luz y sonido
 
-**Fecha de corte:** 7 de septiembre de 2026  
-**Estado:** decisión de arquitectura para prototipado; no constituye un circuito aprobado ni una orden de compra.
+**Fecha de corte:** 7 de septiembre de 2026; ruta de prueba actualizada el 11 de septiembre de 2026
+**Estado:** arquitectura de integración posterior; antes se probarán dos productos terminados. No constituye un circuito aprobado ni una orden de compra de componentes.
+
+**Actualización de alcance:** la arquitectura XIAO sigue siendo la opción de integración si Relevo necesita un objeto propio, pero ya no es el primer paso. La [búsqueda de productos terminados en Chile](busqueda-productos-terminados-chile-2026-09-11.md) prioriza dos iTag clásicos para comprobar si el vínculo Android–objeto y el sonido pueden resolverse sin fabricar electrónica. La luz y el comportamiento completo continúan sujetos a ensayo.
 
 ## Pregunta de diseño
 
@@ -16,7 +18,7 @@ El objetivo no es fabricar un localizador. El parecido con esa categoría sirve 
 3. **Portabilidad:** el objeto debe cambiar de lugar sin instalación fija.
 4. **Conectividad local:** Android transmite pocos datos a corta distancia mediante Bluetooth de baja energía (BLE).
 5. **Construcción accesible:** piezas disponibles, pocas uniones y carcasa de dos partes; no una placa electrónica propia en la primera versión.
-6. **Mantenimiento comprensible:** carga por USB-C y estado de batería visible en la aplicación.
+6. **Mantenimiento comprensible:** pila reemplazable o carga por USB-C, con su estado o periodo de recambio explicado a la persona.
 7. **Seguridad:** batería protegida, volumen moderado, bordes redondeados y cierre que impida acceder a la electrónica durante el uso.
 8. **Honestidad:** tamaño, autonomía y fiabilidad se presentan como metas hasta medirlos en un prototipo.
 
@@ -145,7 +147,7 @@ No se publica un total artificial mientras batería, transductor, carcasa y env�
 
 ## Conclusión
 
-Relevo no debe intentar ser un AirTag artesanal. La ruta más proporcionada es un testigo de bolsillo algo mayor, basado en XIAO nRF52840, batería recargable, una luz, un sonido y un control local. Esta combinación reduce componentes y operaciones, conserva la relación phygital y deja la miniaturización industrial fuera del camino crítico. La placa propia solo cobra sentido si las pruebas demuestran primero que el traslado de la señal al lugar aporta valor.
+Relevo no debe intentar ser un AirTag artesanal. La ruta inmediata más proporcionada es comprobar dos iTag clásicos y conservar únicamente las capacidades que demuestren. Si ninguno ofrece el control y la estabilidad necesarios, o si la luz obliga a una integración propia, la opción siguiente es un testigo de bolsillo basado en XIAO nRF52840, batería recargable, una luz, un sonido y un control local. La placa propia solo cobra sentido si las pruebas justifican ese trabajo adicional.
 
 ## Fuentes
 
@@ -163,9 +165,16 @@ Relevo no debe intentar ser un AirTag artesanal. La ruta más proporcionada es u
 
 ## Referente y decisiones complementarias del feedback
 
-El localizador UGREEN mencionado por el autor se analiza en la [ficha FineTrack](../04_mercado_y_referentes/ugreen-localizador-como-referente.md). Informa portabilidad y fijación; no sustituye la ruta micro:bit/XIAO. Los criterios de forma y lugar se mantienen en [forma adaptable y ubicación](../05_propuesta_phygital/forma-adaptable-y-ubicacion.md), y la alternativa háptica en [luz, sonido y vibración](senal-luz-sonido-y-vibracion.md).
+El localizador UGREEN mencionado por el autor se analiza en la [ficha FineTrack](../04_mercado_y_referentes/ugreen-localizador-como-referente.md). Informa portabilidad y fijación, pero depende de una plataforma de localización y no sustituye la ruta iTag de prueba ni el respaldo micro:bit/XIAO. Los criterios de forma y lugar se mantienen en [forma adaptable y ubicación](../05_propuesta_phygital/forma-adaptable-y-ubicacion.md), y la alternativa háptica en [luz, sonido y vibración](senal-luz-sonido-y-vibracion.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Arquitectura posterior a la prueba comercial
+
+- **Cambio:** la XIAO dejó de presentarse como primer paso y quedó condicionada al resultado de dos iTag clásicos; también se admitió la pila reemplazable como mantenimiento válido.
+- **Versión anterior:** el documento recomendaba construir directamente un testigo recargable basado en XIAO nRF52840.
+- **Motivo:** reducir costo, mano de obra y fabricación antes de comprobar si un producto terminado puede resolver el vínculo Android–objeto y la señal sonora.
+- **Alcance:** no se afirma que los iTag cumplan luz, patrón o estabilidad. La arquitectura XIAO sigue vigente como integración posterior si las pruebas la hacen necesaria.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

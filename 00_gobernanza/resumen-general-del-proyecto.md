@@ -1,7 +1,7 @@
 ---
-id: ESTADO-RELEVO-2026-09-09
+id: ESTADO-RELEVO-2026-09-12
 titulo: "Resumen y estado del proyecto — Relevo"
-fecha_de_corte: 2026-09-09
+fecha_de_corte: 2026-09-12
 estado: "síntesis del estado de proyecto"
 ---
 
@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
 
-La fecha de corte es el 9 de septiembre de 2026. La memoria contiene 15.033 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
+La fecha de corte es el 12 de septiembre de 2026. La memoria contiene 15.033 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
 
 ## El objetivo del proyecto
 
@@ -46,7 +46,7 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 | Después del feedback | Se definieron aplicación, testigo, primer paso, lugar, señal, usuario principal y usuario límite. | El problema dejó de ser “usar mucho el celular” y pasó a ser una intención alternativa que pierde presencia. | [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
 | Encargo 16 y Encargo 17 | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño. Después se construyeron nueve wireframes y 35 estados complementarios. | Se hicieron visibles los estados normales, los errores, las salidas voluntarias y la relación entre app y objeto. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Cobertura de estados](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
 | Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
-| Estado actual — 11 de septiembre | El wireframe v1 está congelado como estructura, el programa de banco para micro:bit compila y la investigación visual se reinició desde la función. | El proyecto puede iniciar la navegación Android y preparar la primera comprobación física, mientras compara alternativas visuales antes de cerrar especificaciones. | [Cierre del wireframe v1](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) · [Investigación visual](../10_recursos_visuales/README.md) |
+| Estado actual — 12 de septiembre | El wireframe v1 está congelado como estructura, el programa de banco para micro:bit compila, la investigación visual se reinició desde la función y existe una compra nacional priorizada de dos iTag para evitar construir electrónica si no es necesario. | El siguiente paso físico es inspeccionar las dos unidades. micro:bit continúa preparado como respaldo y XIAO solo se integra si las pruebas justifican fabricar un objeto propio. | [Productos disponibles en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Investigación visual](../10_recursos_visuales/README.md) |
 
 ## Qué feedback aplicamos
 
@@ -177,7 +177,7 @@ Hasta ahora la implementación es principalmente estructural y preparatoria:
 
 El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió este recorrido en tres interacciones y nueve marcos principales. El [anexo de cobertura](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) lo amplió a 35 estados, incluyendo errores, permisos, salidas voluntarias y recuperación.
 
-La ruta física actual separa dos propósitos. Primero se instalará en una micro:bit V2 un programa ya compilado para comprobar Android → BLE, sonido, tiempos y silencio local. Su matriz roja se usa solo en el banco sin participantes; la prueba de asociación requiere añadir una luz blanca cálida externa y difundida. Después se integrará el testigo portátil con XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local. BleenyButton aporta un precedente abierto para estudiar batería, fijación y carcasa. Los montajes B1, B2 y 12 V se conservan como antecedentes de mesa, no como dirección principal. Todavía no se han comprado componentes, instalado el binario, construido el montaje ni ejecutado pruebas con participantes. Ver [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas existentes y modificables](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md), [testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) y [validación](../07_validacion/README.md).
+La ruta física actual comienza con dos iTag clásicos de vendedores distintos. Se inspeccionará si una aplicación Android propia puede conectarse, activar el zumbador, mantener la espera y silenciar cada unidad mediante el servicio Bluetooth correspondiente. Si una muestra supera esa puerta, se usará solo para las capacidades demostradas; el sonido no equivale a aprobar la luz ni el patrón completo. Si ambas fallan, se instalará en una micro:bit V2 el programa ya compilado para comprobar Android → BLE, sonido, tiempos y silencio local. Su matriz roja se limita al banco sin participantes y la fase A exige una luz blanca cálida externa. XIAO nRF52840 queda como integración posterior si la evidencia justifica fabricar un testigo propio. Todavía no se ha comprado ni ensayado hardware. Ver [productos terminados en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md), [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y [validación](../07_validacion/README.md).
 
 ## Costos estimados
 
@@ -185,14 +185,15 @@ Existen precios de referencia para comparar rutas, pero todavía no hay un presu
 
 | Alternativa | Costo preliminar | Qué incluye / qué falta | Enlace |
 |---|---:|---|---|
-| micro:bit V2 | **CLP 24.990** | Plataforma disponible para una prueba rápida. Faltan acceso o préstamo, alimentación portátil y funda de ensayo; no representa el producto final. | [Plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) |
+| Dos muestras iTag | **CLP 13.980 más envío** | Primera compra recomendada. Permite comparar partidas; faltan recepción, inspección GATT y pruebas de sonido, luz, espera, reconexión y silencio. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) |
+| micro:bit V2 | **CLP 24.990** | Respaldo disponible si ambos iTag fallan. Faltan acceso o préstamo, alimentación portátil y funda de ensayo; no representa el producto final. | [Plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) |
 | XIAO nRF52840 | **CLP 16.590 solo la placa** | Ruta de integración vigente. Faltan batería, luz, transductor, control, conexiones, carcasa, difusión, envío y revisión. | [Testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) |
 | Montaje provisional de 12 V | **CLP 28.130** | Referencia parcial. Excluye terminales y protección de potencia; queda como respaldo. | [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) |
 | B1: XIAO + anillo 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Faltan conversor lógico, conductores internos, cuerpo, difusor, envío y revisión. | [Lista B1](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 | B2: XIAO + luz cálida 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Faltan resistencia de estado, conductores, cuerpo, difusor, envío y revisión. | [Lista B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 | Núcleo común B1/B2 | **CLP 17.126** comprando todo; **CLP 10.440** reutilizando fuente, jack y cable USB-C | Incluye XIAO, pulsador, cable, interruptor, borneras, fuente, jack y cable de programación. Hay que confirmar qué piezas existen. | [Costos comunes](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 
-La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro ni un costo cerrado**. La micro:bit reduce trabajo de la primera prueba, pero no sustituye el prototipo integrado. La XIAO reduce tamaño y componentes, aunque su subtotal sigue incompleto. Ninguna compra debe decidirse solo por el precio de la placa.
+La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro ni un costo cerrado**. Las dos muestras iTag cuestan menos que una placa y podrían evitar parte de la construcción, pero solo una prueba física permitirá saberlo. micro:bit conserva una salida de respaldo y XIAO reduce tamaño y componentes en una integración propia, aunque su subtotal sigue incompleto.
 
 ## Qué ya está listo y qué falta
 
@@ -205,7 +206,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
 | Nombre provisional y nueva investigación visual escrita. | Probar descriptor, alternativas de interfaz y forma; luego especificar paleta, tipografía, logotipo, material, difusor y señal. | [Marca](../10_recursos_visuales/06_marca-y-lenguaje.md) · [Investigación visual](../10_recursos_visuales/README.md) |
-| Plataformas comparadas y programa micro:bit compilado; B1/B2 conservadas como antecedentes. | Conseguir la placa, instalar y medir el banco, revisar la luz cálida externa y completar la lista XIAO solo si la evidencia justifica continuar. | [Programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
+| Productos terminados y plataformas comparados; programa micro:bit compilado como respaldo. | Comprar dos iTag, inspeccionarlos y registrar resultados. Usar micro:bit solo si ambos fallan; completar la lista XIAO únicamente si la evidencia justifica una integración propia. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
 ## Próximos pasos e hitos
@@ -214,7 +215,7 @@ El [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) conserva el calenda
 
 | Hito | Estado o condición |
 | --- | --- |
-| Hasta el 12 de septiembre | Wireframe v1 cerrado el día 9. Falta ejecutar el banco micro:bit o registrar su bloqueo de acceso. |
+| Desde el 12 de septiembre | Comprar y examinar las dos muestras iTag. Si ninguna acepta control directo y estable, ejecutar el banco micro:bit preparado. |
 | 19 y 29 de septiembre | App base y señal manual; después, prueba interna y preparación de la corrección cruzada. |
 | 30 de septiembre | Corrección cruzada oficial. |
 | 7 y 17 de octubre | Cierre del piloto técnico; prueba con usuarios solo si se cumplen las puertas del protocolo. |
@@ -253,9 +254,16 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 
 ## Respuestas completas al feedback del 2 de septiembre
 
-La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. La aclaración de UGREEN permite estudiarlo como referente compacto sin asumir un modelo o plataforma de control. El siguiente ensayo sigue en la Issue #11.
+La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-12 — Primera puerta con productos terminados
+
+- **Qué cambió:** se incorporaron la compra de dos iTag, su costo, el protocolo de aceptación y la relación condicional con micro:bit y XIAO.
+- **Cómo estaba antes:** el resumen conducía directamente al banco micro:bit y a una integración posterior con XIAO.
+- **Por qué se decidió:** comprobar primero una alternativa compacta, disponible y económica puede reducir fabricación sin entregar el control a una aplicación de terceros.
+- **Límite:** ningún iTag ha sido comprado o inspeccionado; no se afirma compatibilidad, control luminoso ni aptitud para trabajar con participantes.
 
 ### 2026-09-11 — Estado visual reiniciado
 

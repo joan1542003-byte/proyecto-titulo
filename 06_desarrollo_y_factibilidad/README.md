@@ -29,8 +29,9 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
-- [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas, selecciona un módulo BLE compacto con batería recargable para el siguiente prototipo y explicita costos, riesgos, montaje y pruebas pendientes.
-- [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md): separa una prueba rápida con una plataforma ya construida de la integración final con XIAO; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
+- [Búsqueda de productos terminados disponibles en Chile](busqueda-productos-terminados-chile-2026-09-11.md): contrasta iTag y parlantes compactos con control desde una aplicación propia; recomienda comprar dos muestras iTag y someterlas a una prueba GATT antes de recurrir a una placa de desarrollo.
+- [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas; conserva XIAO como integración posterior si la prueba con productos terminados demuestra que hace falta construir un objeto propio.
+- [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md): sitúa dos iTag clásicos como primera puerta, micro:bit como respaldo y XIAO como posible integración posterior; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
 - [Prueba Android–BLE con micro:bit V2](prueba-microbit-ble/README.md): contiene el proyecto MakeCode, una compilación de mesa, el contrato de mensajes y la conexión mínima de una luz cálida externa anterior a participantes.
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Especificación y puerta técnica de fase A](../07_validacion/especificacion-materiales-fase-a.md): conecta la plataforma vigente con comprobaciones de BLE, luz, sonido, control y seguridad anteriores a participantes.
@@ -51,6 +52,20 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-12 — Ruta física sincronizada
+
+- **Cambio:** las descripciones vigentes distinguen la prueba inmediata con dos iTag, el respaldo micro:bit y la integración posterior con XIAO.
+- **Versión anterior:** el índice enlazaba la investigación iTag, pero todavía describía XIAO como siguiente prototipo y la comparación de plataformas no reflejaba su nueva primera puerta.
+- **Motivo:** impedir que una lectura breve conduzca a comprar una placa antes de comprobar la alternativa comercial.
+- **Alcance:** ningún dispositivo ha sido comprado o aprobado; la prueba de aceptación sigue siendo obligatoria.
+
+### 2026-09-11 — Productos terminados en Chile
+
+- **Cambio:** se añadió la búsqueda de rastreadores y parlantes disponibles en Chile, junto con el protocolo que debe superar un iTag antes de modificar la ruta física.
+- **Versión anterior:** el índice conducía directamente a micro:bit y XIAO, sin una puerta previa para comprobar un producto terminado con BLE estándar.
+- **Motivo:** priorizar una construcción simple y económica sin depender de ecosistemas cerrados ni asumir compatibilidad por semejanza formal.
+- **Alcance:** la ruta iTag es una compra de muestra condicionada; micro:bit permanece como respaldo hasta disponer de resultados físicos.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

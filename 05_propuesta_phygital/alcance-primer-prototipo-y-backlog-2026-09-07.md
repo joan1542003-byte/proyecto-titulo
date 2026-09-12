@@ -66,6 +66,7 @@ Excluir estas funciones evita desviar la prueba hacia gestión, vigilancia o per
 
 ### Siguiente — construir el ciclo base
 
+- comprar dos muestras iTag clásicas de partidas distintas y ejecutar la [prueba de aceptación GATT](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md#prueba-de-aceptación-al-recibir-los-itag);
 - implementar la navegación Android del recorrido imprescindible;
 - usar una condición local o simulada mientras se define la activación;
 - preparar una señal manual segura para el ensayo inicial;
@@ -76,7 +77,7 @@ Excluir estas funciones evita desviar la prueba hacia gestión, vigilancia o per
 
 - comparar el objeto situado con ubicación neutra y notificación;
 - decidir la condición y la modalidad de señal mediante evidencia;
-- usar BLE en el banco micro:bit conforme a la Issue #11; integrar después el enlace del testigo portátil cuando la evidencia y la revisión de arquitectura lo permitan;
+- si ninguna muestra iTag aprueba, usar BLE en el banco micro:bit conforme a la Issue #11; integrar después el enlace del testigo portátil cuando la evidencia y la revisión de arquitectura lo permitan;
 - añadir fallos técnicos reales de permisos, batería, conexión y segundo plano;
 - incorporar únicamente los estados complementarios que sigan siendo necesarios.
 
@@ -95,6 +96,7 @@ El wireframe v1 puede considerarse listo para construcción cuando:
 
 ## Pendientes que no deben ocultarse
 
+- No se ha comprado ni inspeccionado un iTag. La presencia del servicio `0x1802/0x2A06`, la reconexión y la respuesta luminosa deben registrarse por unidad.
 - Falta acceder a la micro:bit V2, instalar el programa compilado y comprobar en mesa la recepción BLE, el silencio local, la luz y el sonido.
 - La matriz roja de la placa sirve solo para comprobar transporte de mensajes; antes de involucrar participantes debe conectarse y revisar una salida de luz cálida externa.
 - La integración portátil con XIAO nRF52840 continúa después de esa prueba, no en paralelo.
@@ -111,6 +113,13 @@ Estos pendientes impiden llamar al prototipo producto validado, pero no impiden 
 El [plan por preguntas](../07_validacion/que-prototipar-y-como-validar-el-valor.md) distingue interacción, comportamiento y valor; [forma adaptable y ubicación](forma-adaptable-y-ubicacion.md) explica por qué un objeto puede cambiar de actividad entre ciclos sin atender muchas tareas simultáneamente. Estos criterios no reabren los nueve marcos congelados.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Producto terminado antes de la placa de desarrollo
+
+- **Qué cambió:** se añadió una prueba de dos iTag clásicos como siguiente puerta física y micro:bit pasó a operar como respaldo si las muestras no aprueban.
+- **Cómo estaba antes:** la secuencia comenzaba directamente con el banco micro:bit y una luz externa.
+- **Por qué se decidió:** la búsqueda chilena encontró una posibilidad más compacta y económica basada en un servicio BLE estándar, pero también variación suficiente entre clones para exigir ensayo antes de adoptar la plataforma.
+- **Alcance:** no cambia la combinación de luz y sonido ni acredita compatibilidad; el iTag solo avanza si supera la ficha y el protocolo de aceptación.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

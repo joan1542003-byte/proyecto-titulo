@@ -10,6 +10,8 @@
 
 Esta ficha registra el desempeño del material, no el de una persona. No contiene nombres, intenciones, preferencias ni observaciones de usuarios. Cada serie se completa con una única versión del montaje. Si se modifica un componente, el patrón o el código de control, debe abrirse una ficha nueva e identificar la versión anterior.
 
+Un iTag comercial se examina primero con la prueba de aceptación descrita en [Productos terminados disponibles en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md). Demostrar conexión y sonido no autoriza a completar esta ficha como si el objeto cumpliera el material de fase A: también debe satisfacer luz, patrón, espera, control local y los demás criterios siguientes.
+
 ## Identificación del ensayo
 
 | Campo | Registro |
@@ -63,11 +65,12 @@ La iluminación y el entorno sonoro de cada condición se fijan y registran ante
 - [ ] No existen conductores expuestos, aislación dañada, conexiones sueltas ni piezas deformadas.
 - [ ] El montaje parte apagado y el control físico devuelve el sistema a reposo.
 - [ ] La plataforma permanece en reposo al encenderse, enlazarse y reconectarse.
-- [ ] Android envía `activar` por BLE a tres metros sin acercarse al material.
+- [ ] Android envía la orden de activación por BLE a tres metros sin acercarse al material; se registra el comando propio o el valor GATT equivalente.
 - [ ] El control físico de silenciamiento funciona sin depender del enlace.
 - [ ] Los indicadores de alimentación o conexión ajenos a la señal están cubiertos, desactivados o fuera del campo visible, y su tratamiento quedó registrado.
 - [ ] La luz blanca cálida puede regularse al menos en tres niveles reproducibles.
 - [ ] Si se utiliza micro:bit V2, la fuente de fase A es un LED cálido externo revisado; la matriz roja integrada se limita al banco técnico sin participantes.
+- [ ] Si se utiliza un iTag, se registran el servicio, la característica, el valor escrito y la respuesta física de la unidad exacta; el nombre comercial no se acepta como evidencia de compatibilidad.
 - [ ] El tono puede regularse al menos en tres niveles reproducibles y no contiene voz.
 - [ ] El difusor evita una fuente puntual directa.
 - [ ] La cubierta no utiliza los LED para mostrar letras, números, menús ni instrucciones.
@@ -217,6 +220,13 @@ Cumplir esta ficha autoriza únicamente a solicitar revisión académica del mat
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Filtro previo para productos terminados
+
+- **Cambio:** se enlazó la prueba de aceptación de iTag y la orden BLE dejó de depender del nombre literal `activar`; la ficha exige registrar el valor GATT y la respuesta de la unidad exacta.
+- **Versión anterior:** el instrumento suponía una plataforma programable y podía hacer parecer que conexión y sonido bastaban para aprobar un producto comercial.
+- **Motivo:** permitir una comparación justa entre iTag y micro:bit sin rebajar los requisitos completos del material de fase A.
+- **Alcance:** la ficha sigue vacía. Ningún producto comercial ni montaje ha sido aprobado.
 
 ### 2026-09-08 — Control de luz e indicadores en micro:bit
 

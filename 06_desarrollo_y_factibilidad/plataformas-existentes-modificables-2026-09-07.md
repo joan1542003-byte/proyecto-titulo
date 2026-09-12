@@ -1,7 +1,9 @@
 # Plataformas físicas existentes y modificables
 
-**Fecha de corte:** 7 de septiembre de 2026  
+**Fecha de corte:** 7 de septiembre de 2026; ruta de compra actualizada el 11 de septiembre de 2026
 **Propósito:** reducir la fabricación necesaria para probar Relevo sin confundir una plataforma de desarrollo con el producto final.
+
+**Vigencia:** la búsqueda nacional posterior incorporó una puerta anterior a las placas: probar dos iTag clásicos, comprados a vendedores distintos, para saber si una aplicación Android propia puede gobernar su zumbador. Esta prueba no aprueba por anticipado su luz, estabilidad ni uso con participantes. La comparación completa y las publicaciones vigentes se encuentran en [Productos terminados disponibles en Chile](busqueda-productos-terminados-chile-2026-09-11.md).
 
 ## Pregunta
 
@@ -26,7 +28,8 @@ La última condición no prohíbe que una placa tenga LED. Relevo puede usar una
 
 | Plataforma | Ya resuelto | Trabajo adicional | Adecuación a Relevo | Dictamen |
 |---|---|---|---|---|
-| **BBC micro:bit V2** | BLE 5.0, matriz de 25 LED rojos, altavoz, botones, suspensión y programación documentada | Alimentación, cubierta y una luz cálida externa antes de trabajar con participantes; integración Android propia para el recorrido final | Muy buena para aislar BLE, tiempos, sonido y silencio local; la matriz integrada no reproduce la señal cromática definida para fase A | **Ruta inmediata de banco** |
+| **iTag BLE clásico, dos muestras** | Carcasa compacta, CR2032, zumbador y posible servicio estándar Immediate Alert | Inspeccionar GATT, reconexión, espera, control local y respuesta de cualquier LED; implementar la escritura desde Android | Es la única opción comercial local encontrada que podría evitar la construcción del enlace sonoro; sus clones varían y la luz no está garantizada | **Primera puerta de compra y ensayo** |
+| **BBC micro:bit V2** | BLE 5.0, matriz de 25 LED rojos, altavoz, botones, suspensión y programación documentada | Alimentación, cubierta y una luz cálida externa antes de trabajar con participantes; integración Android propia para el recorrido final | Muy buena para aislar BLE, tiempos, sonido y silencio local; la matriz integrada no reproduce la señal cromática definida para fase A | **Respaldo de banco si los iTag fallan** |
 | **Circuit Playground Bluefruit** | nRF52840, BLE, diez LED, altavoz de 7,5 mm, dos botones, interruptor, alimentación externa o LiPo y forma circular de 50,6 mm | Batería, sistema de carga externo o pilas y carcasa/difusor; comprobar disponibilidad | Muy buena para una maqueta portátil sin soldar: integra casi todo lo requerido y admite una carcasa circular | **Ruta preferente si se consigue** |
 | **BleenyButton sobre XIAO nRF52840** | Repositorio abierto con XIAO, batería LiPo de 170 mAh, pulsador, firmware BLE, archivos STL y carcasa atornillada | Reemplazar el propósito de botón por el comportamiento de Relevo y añadir luz controlada más un transductor sonoro | No es un producto terminado, pero aporta una receta mecánica y de alimentación reproducible para la integración final | **Antecedente constructivo prioritario** |
 | **M5Stack ATOM Echo** | Cuerpo comercial de 24 × 24 × 17 mm, BLE, LED RGB, altavoz, botón y orificio de fijación | Alimentación portátil, gestión de batería, firmware BLE de bajo consumo y control de volumen | Muy compacto, pero la necesidad de agregar energía reabre la dificultad que se busca evitar; su altavoz de 0,5 W requiere regular cuidadosamente la salida | **Referencia de escala, no ruta inicial** |
@@ -36,21 +39,29 @@ La última condición no prohíbe que una placa tenga LED. Relevo puede usar una
 ## Ruta recomendada por etapas
 
 ```text
-Prueba de conexión y comportamiento
-micro:bit V2 + portapilas + funda simple
+Dos iTag clásicos de partidas distintas
         │
-        ├─ banco sin participantes → matriz roja integrada
-        ├─ material de fase A → luz cálida externa revisada
+        ├─ si no aceptan control directo o no reconectan →
+        │  micro:bit V2 como respaldo de banco
         │
-        ├─ si se consigue la placa circular con batería →
-        │  Circuit Playground Bluefruit + LiPo + carcasa/difusor
-        │
+        └─ si aceptan la orden desde Android →
+           conservar la muestra apta para ensayar vínculo y sonido
+           ├─ si su luz también es gobernable y cumple el patrón → evaluar fase A
+           └─ si no → mantenerla como prueba sonora, no como material completo
+
+Después de comprobar la interacción
+        ├─ si se consigue Circuit Playground Bluefruit → maqueta portátil
         └─ si el aporte físico justifica una versión propia →
            XIAO nRF52840 + luz única + transductor + LiPo + carcasa
-           └─ montaje basado en el precedente BleenyButton
 ```
 
-### Etapa 1 — micro:bit V2
+### Etapa 1 — dos iTag clásicos
+
+El primer desembolso recomendado corresponde a dos unidades económicas de vendedores distintos. Los iTag clásicos suelen ofrecer el servicio Bluetooth Immediate Alert, que permite solicitar una alerta desde Android sin conservar la aplicación del vendedor. Sin embargo, el nombre comercial no identifica un circuito estable: la inspección física debe confirmar el servicio `0x1802`, la característica `0x2A06`, la respuesta a los valores `0x00`, `0x01` y `0x02`, la reconexión y el silenciamiento.
+
+Una unidad que solo emita sonido puede servir para desarrollar el vínculo Android–objeto y representar parcialmente el comportamiento. No puede aprobar el material de fase A si no produce la luz prevista, no ejecuta el patrón completo o se apaga durante la espera. La prueba de aceptación y las compras priorizadas están documentadas en la [búsqueda de productos terminados](busqueda-productos-terminados-chile-2026-09-11.md).
+
+### Etapa 2 — micro:bit V2, como respaldo
 
 Es la vía más rápida y disponible para evitar que Android, BLE, sonido y control local se transformen simultáneamente en un problema de electrónica. La placa mide aproximadamente 4 × 5 cm, tiene un altavoz y una matriz de 25 LED rojos, y MCI Electronics la lista disponible por CLP 24.990 al 7 de septiembre de 2026. El soporte oficial documenta Bluetooth 5.0 en V2, un perfil BLE propio, servicio UART y uso desde Android.
 
@@ -68,7 +79,7 @@ La matriz integrada permite revisar sin participantes la recepción del comando,
 
 El [paquete Android–BLE para micro:bit](prueba-microbit-ble/README.md) contiene el proyecto MakeCode, el binario de mesa, los parámetros de señal y el procedimiento de instalación. La compilación quedó comprobada; el comportamiento físico y la salida cálida continúan sin medir.
 
-### Etapa 2 — Circuit Playground Bluefruit, condicionada a disponibilidad
+### Etapa 3 — Circuit Playground Bluefruit, condicionada a disponibilidad
 
 Esta placa circular reúne el conjunto más cercano a Relevo ya integrado: Bluetooth de baja energía sobre nRF52840, altavoz amplificado de 7,5 mm, LED direccionables, dos botones e interruptor. Mide 50,6 mm de diámetro y pesa 8,9 g antes de sumar batería y carcasa. Puede alimentarse con USB, pilas AAA o una LiPo. La documentación revisada no confirma un cargador LiPo integrado, por lo que la carga no debe suponerse resuelta. Su diseño abierto, archivos de PCB y ejemplos oficiales de BLE permiten estudiarla y modificar su comportamiento sin ingeniería inversa.
 
@@ -76,7 +87,7 @@ La propuesta no consiste en exponer una placa educativa. Una carcasa de dos piez
 
 Al momento de esta revisión, la tienda oficial la declara agotada. Por eso no se recomienda comprarla ni diseñar alrededor de ella sin confirmar un distribuidor con stock, precio final y plazo de llegada.
 
-### Etapa 3 — XIAO nRF52840
+### Etapa 4 — XIAO nRF52840
 
 Si las pruebas muestran que el lugar aporta comprensión frente a una notificación, se justifica trasladar el comportamiento aprendido a una pieza más sobria. La XIAO mantiene BLE y carga de batería, pero obliga a resolver luz, sonido y carcasa. Su ventaja no es ser más rápida: permite quitar sensores, LEDs y controles que no forman parte de Relevo, bajar el volumen visual y lograr un objeto más cercano a la forma final.
 
@@ -112,12 +123,13 @@ Escala de 1 a 5, donde 5 reduce más el esfuerzo en la etapa indicada.
 
 ## Decisión de trabajo
 
-1. Conseguir prestado o acceder a un micro:bit V2 para instalar el programa y comprobar BLE, tiempos, sonido y silencio con la matriz roja, sin participantes.
-2. Añadir y revisar una luz blanca cálida externa antes de usar la plataforma como material de fase A; la matriz integrada no se considera equivalente.
-3. En paralelo, consultar disponibilidad real de Circuit Playground Bluefruit en un distribuidor. Solo después de confirmar precio, plazo y necesidad de la prueba se decidirá si vale la pena incorporarla.
-4. Usar BleenyButton como referencia concreta de carcasa, batería y fijación para la XIAO; no copiar su finalidad ni sus archivos sin revisar la licencia.
-5. No usar un smartwatch ni modificar un localizador comercial: ambos añaden pantalla, restricciones de firmware o ingeniería inversa sin responder mejor a la hipótesis.
-6. Mantener la XIAO nRF52840 como ruta de integración cuando ya existan medidas de luz, sonido, latencia y comprensión.
+1. Comprar las dos muestras iTag priorizadas y ejecutar la prueba de aceptación antes de desarrollar la integración definitiva.
+2. Si una muestra permite control directo, usarla solo para las capacidades que demuestre: vínculo y sonido, o material completo si también supera luz, patrón, espera y silenciamiento.
+3. Si ambas muestras fallan, conseguir prestado o acceder a un micro:bit V2 para comprobar BLE, tiempos, sonido y silencio con la matriz roja, sin participantes.
+4. Añadir y revisar una luz blanca cálida externa antes de usar micro:bit como material de fase A; la matriz integrada no se considera equivalente.
+5. Consultar Circuit Playground Bluefruit solo si su disponibilidad y el avance de las pruebas justifican otra compra.
+6. Mantener BleenyButton y XIAO nRF52840 como antecedentes de una integración posterior, no como obligación inmediata de fabricación.
+7. Descartar rastreadores sujetos a Find My, Find Hub o SmartThings, y los relojes cuya forma y controles no responden al uso situado.
 
 ## Prueba mínima con plataforma existente
 
@@ -147,6 +159,13 @@ El trabajo quedó trazado en la [Issue #11: Probar la señal situada con una pla
 - Micro:bit Educational Foundation. (2025). *Using the micro:bit Bluetooth Low Energy UART*. https://support.microbit.org/support/solutions/articles/19000062330-using-the-micro-bit-bluetooth-low-energy-uart-serial-over-bluetooth-
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-11 — Producto terminado antes de la placa
+
+- **Qué cambió:** se incorporó la prueba de dos iTag clásicos como primera puerta y micro:bit pasó a ser el respaldo de banco.
+- **Cómo era antes:** micro:bit era la primera plataforma prevista y los localizadores comerciales se descartaban como una sola categoría.
+- **Por qué:** la revisión técnica distinguió los rastreadores cerrados de los iTag que posiblemente exponen el servicio estándar Immediate Alert; comprobar dos unidades puede evitar fabricar el enlace sonoro.
+- **Límite:** ningún iTag ha sido inspeccionado. La luz, el patrón, el tiempo de espera, la reconexión y el silenciamiento continúan abiertos y deben superar la ficha técnica antes de trabajar con participantes.
 
 ### 2026-09-08 — Matriz roja separada de la luz cálida
 
