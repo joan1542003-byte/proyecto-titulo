@@ -22,7 +22,7 @@ Las pruebas visuales acompañan el desarrollo técnico. No deben retrasar la pue
 
 **Pregunta:** ¿La propuesta visual permite encontrar contenido, acción y salida?
 
-**Material:** dos variantes de las pantallas críticas; una basada en Herramienta serena y otra con mayor énfasis temporal.
+**Material:** dos variantes de las pantallas críticas; una basada en Presencia útil y otra de control que modifique una variable por vez, comenzando por el énfasis temporal.
 
 **Medidas:** éxito de tarea, errores, tiempo, retrocesos, interpretación de estados y preferencia razonada.
 
@@ -115,6 +115,13 @@ El sistema se considera cerrado cuando existe una única especificación vigente
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Dirección de prueba actualizada
+
+- **Qué cambió:** la prueba de jerarquía utiliza Presencia útil y una variante de control que modifica una sola variable.
+- **Cómo era antes:** comparaba Herramienta serena con una alternativa de mayor énfasis temporal sin precisar el control experimental.
+- **Por qué se decidió:** aislar el efecto de la jerarquía y evitar que dos sistemas completos impidan atribuir la diferencia observada.
+- **Límite:** la prueba continúa pendiente; no existen resultados ni preferencias confirmadas.
 
 ### 2026-09-11 — Creación del plan de pruebas
 

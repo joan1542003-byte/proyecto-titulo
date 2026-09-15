@@ -104,6 +104,8 @@ La combinación recomendada puede resumirse así:
 
 > una herramienta clara que se vuelve presente solo cuando la situación lo requiere.
 
+El 15 de septiembre esta recomendación se tradujo en la dirección provisional **Presencia útil**. Se mantienen la estructura sobria de Herramienta serena y la secuencia indispensable para comprender el ciclo; no se adopta un motivo permanente de transición. La especificación se encuentra en [Dirección visual provisional](10_direccion-visual-provisional.md).
+
 Esta dirección evita convertir la señal en decoración y permite que la identidad aparezca mediante cuatro constantes:
 
 1. lenguaje directo y no evaluativo;
@@ -131,7 +133,7 @@ Esta dirección evita convertir la señal en decoración y permite que la identi
 ### Marca
 
 - mantener un logotipo tipográfico como punto de partida;
-- probar `Una señal junto a tu primer paso` como descriptor;
+- probar `Una señal cerca de tu primer paso` frente a las demás alternativas de descriptor;
 - construir reconocimiento mediante voz, jerarquía y demostración;
 - aplazar símbolo independiente hasta comprobar su necesidad.
 
@@ -157,6 +159,13 @@ La recomendación debe revisarse si ocurre alguno de estos resultados:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Recomendación desarrollada
+
+- **Qué cambió:** la combinación recomendada se vinculó con Presencia útil y con su especificación provisional.
+- **Cómo era antes:** Herramienta serena permanecía como una dirección escrita, sin traducción formal concreta.
+- **Por qué se decidió:** dejar una sola continuidad entre investigación, decisión y prototipo.
+- **Límite:** Presencia útil continúa sujeta a comparación y no constituye una identidad validada.
 
 ### 2026-09-11 — Creación de direcciones y selección inicial
 

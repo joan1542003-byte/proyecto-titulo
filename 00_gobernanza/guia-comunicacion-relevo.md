@@ -295,7 +295,7 @@ Para una situación, no para una identidad fija: alguien tiene una intención al
 | --- | --- | --- |
 | Evidencia de investigación | `En algunas entrevistas aparecieron episodios donde otra intención competía con la continuidad digital.` | `Los jóvenes no pueden dejar el teléfono.` |
 | Decisión de diseño | `Relevo se estructura como una aplicación Android, un testigo situado y una señal breve.` | `Esta es la única solución posible.` |
-| Hipótesis | `Una señal junto al primer paso podría ayudar a volver a considerar la intención.` | `El objeto logra que las personas realicen la actividad.` |
+| Hipótesis | `Una señal cerca del primer paso podría ayudar a volver a considerar la intención.` | `El objeto logra que las personas realicen la actividad.` |
 | Comparación pendiente | `Se probará si el objeto situado aporta más que una notificación.` | `El objeto es mejor que las notificaciones.` |
 | Estado técnico | `La arquitectura y los estados están documentados; la integración sigue en desarrollo.` | `El sistema ya funciona completamente.` |
 | Forma | `La forma circular es una candidata de exploración.` | `El producto final es circular.` |
@@ -406,6 +406,13 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Hipótesis verbal sincronizada
+
+- **Cambio:** la formulación de la hipótesis utiliza “cerca del primer paso”.
+- **Versión anterior:** decía “junto al primer paso”, expresión que podía sugerir contacto o una posición única.
+- **Motivo:** mantener coherencia con el descriptor en prueba y describir proximidad sin cerrar la ubicación física.
+- **Alcance:** la frase sigue siendo una hipótesis; no acredita que la señal produzca una acción.
 
 ### 2026-09-11 — Fuente visual actualizada
 

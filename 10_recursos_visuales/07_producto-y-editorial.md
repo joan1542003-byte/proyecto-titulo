@@ -19,7 +19,7 @@ En esta etapa, Relevo necesita primero tokens semánticos escritos:
 - separación;
 - señal física.
 
-Los valores visuales se asignarán después de probar alternativas.
+La primera asignación de valores se documenta en el [sistema cromático y tipográfico provisional](11_sistema-cromatico-y-tipografico-provisional.md). Se utiliza para construir las alternativas de prueba y no como cierre previo a ellas.
 
 ## Reglas transversales
 
@@ -136,6 +136,13 @@ No se producirán colecciones de piezas para demostrar que el sistema es flexibl
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Tokens provisionales enlazados
+
+- **Qué cambió:** los roles semánticos se vincularon con su primera asignación cromática y tipográfica.
+- **Cómo era antes:** el documento indicaba que los valores se asignarían en una etapa posterior.
+- **Por qué se decidió:** ya existe una variante suficientemente definida para prototipar y comparar.
+- **Límite:** el sistema editorial y sus valores de impresión aún requieren una maqueta con la memoria real.
 
 ### 2026-09-11 — Creación del sistema entre soportes
 

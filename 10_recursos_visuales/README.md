@@ -1,8 +1,8 @@
 # Investigación visual de Relevo
 
-**Estado:** investigación y definición de criterios.
+**Estado:** investigación concluida y primera dirección visual provisional lista para prototipar.
 
-**Fecha de corte:** 11 de septiembre de 2026.
+**Fecha de corte:** 15 de septiembre de 2026.
 
 **Alcance:** marca, aplicación Android, testigo físico, comunicación de producto y memoria editorial.
 **Formato de esta etapa:** documentación escrita en Markdown. No contiene imágenes, maquetas ni código.
@@ -32,8 +32,11 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 7. [Sistema de producto y memoria editorial](07_producto-y-editorial.md)
 8. [Direcciones posibles y recomendación](08_direcciones-y-recomendacion.md)
 9. [Plan de pruebas y criterios de cierre](09_plan-de-pruebas.md)
-10. [Referencias](referencias.md)
-11. [Registro del reinicio visual](registro-del-reinicio.md)
+10. [Dirección visual provisional](10_direccion-visual-provisional.md)
+11. [Sistema cromático y tipográfico provisional](11_sistema-cromatico-y-tipografico-provisional.md)
+12. [Especificación provisional de interfaz](12_especificacion-ui-provisional.md)
+13. [Referencias](referencias.md)
+14. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 
@@ -44,7 +47,8 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 | Arquitectura de la aplicación | Estable como wireframe v1 | La estructura puede informar la nueva interfaz; su apariencia anterior no se considera vigente. |
 | Forma del testigo | Abierta | No se debe presentar una carcasa específica como producto resuelto. |
 | Luz y sonido | Son canales previstos, no parámetros cerrados | Intensidad, duración, patrón y convivencia requieren pruebas situadas. |
-| Paleta, tipografía, logotipo e iconografía | Reiniciados | Este estudio define criterios y alternativas; no hereda valores por costumbre. |
+| Paleta y tipografía | Seleccionadas de manera provisional | Source Sans 3 y una paleta neutra con acento verde turquesa permiten construir prototipos; falta validación situada. |
+| Logotipo e iconografía | Solución temporal | Se usa un logotipo tipográfico y un identificador reducido mientras se prueba el nombre y se determina si un símbolo aporta valor. |
 | Sistema editorial | Abierto | Debe construirse con texto real de la memoria y comprobar lectura, jerarquía y reproducción. |
 
 ## Regla de sobriedad
@@ -60,6 +64,13 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Paso desde investigación hacia prototipo visual
+
+- **Qué cambió:** se añadieron una dirección visual provisional, valores tipográficos y cromáticos concretos y una especificación inicial de interfaz para construir prototipos comparables.
+- **Cómo era antes:** el índice mantenía abiertas todas las decisiones formales después del reinicio del 11 de septiembre.
+- **Por qué se decidió:** el proyecto ya cuenta con criterios suficientes para adoptar hipótesis específicas sin presentarlas como resultados validados.
+- **Límite:** siguen abiertos el símbolo definitivo, la forma física, la señal y la aprobación con participantes.
 
 ### 2026-09-11 — Creación del nuevo índice visual
 

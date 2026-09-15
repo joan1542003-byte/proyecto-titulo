@@ -1,5 +1,7 @@
 # Criterios para la interfaz Android
 
+**Actualización del 15 de septiembre de 2026:** estos criterios siguen vigentes. Su primera traducción formal se encuentra en la [dirección visual](10_direccion-visual-provisional.md), el [sistema cromático y tipográfico](11_sistema-cromatico-y-tipografico-provisional.md) y la [especificación de interfaz](12_especificacion-ui-provisional.md).
+
 ## Función de la aplicación
 
 La aplicación no es el lugar donde ocurre la señal principal. Su tarea es ayudar a formular una intención, definir un primer paso, preparar una condición, vincular el testigo, comprobar que funciona y recuperar el sistema cuando algo falla.
@@ -97,13 +99,20 @@ Este texto separa hecho, recuperación y efecto sobre el contenido sin culpar a 
 
 ## Primera hipótesis visual para prototipar
 
-Una interfaz de baja ornamentación, basada en superficies neutras, una tipografía principal, componentes Android conocidos y un único acento funcional. La identidad se expresará principalmente mediante la voz, el ritmo de las pantallas y la manera de representar la relación entre intención, primer paso y testigo.
+Una interfaz de baja ornamentación, basada en superficies neutras, Source Sans 3, componentes Android conocidos y un único acento verde turquesa asignado por función. La identidad se expresará principalmente mediante la voz, el ritmo de las pantallas y la manera de representar la relación entre intención, primer paso y testigo. Los valores son provisionales y permiten construir material comparable; no equivalen a validación.
 
 La hipótesis se descarta si produce una aplicación genérica difícil de reconocer, si las personas confunden estados con acciones o si la austeridad obliga a leer explicaciones extensas.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Traducción de criterios a una hipótesis formal
+
+- **Qué cambió:** se enlazaron las especificaciones nuevas y se precisaron la familia tipográfica y el acento de la primera variante.
+- **Cómo era antes:** el documento recomendaba una familia y un acento, pero los mantenía sin valores concretos.
+- **Por qué se decidió:** evitar que la guía de interfaz contradiga el estado actual del sistema visual.
+- **Límite:** la selección todavía debe superar pruebas de uso, accesibilidad y reconocimiento.
 
 ### 2026-09-11 — Creación de criterios Android
 

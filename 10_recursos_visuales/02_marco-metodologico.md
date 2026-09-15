@@ -104,9 +104,30 @@ La señal se evaluará en el lugar, a diferentes distancias y con ruido e ilumin
 
 Antes de añadir un elemento se preguntará qué información, acción o estado deja de comprenderse si se elimina. Si nada se pierde, el elemento no entra a la versión de prueba. Esto no prohíbe la expresión de marca; obliga a situarla donde aporte reconocimiento sin competir con la tarea.
 
+## Control de sesgos
+
+No existe una decisión visual neutral. La edad registrada en las entrevistas describe la muestra, pero no permite inferir preferencias cromáticas, capacidad tecnológica o una forma única de atención. Costanza-Chock (2020) advierte que los supuestos universalistas pueden excluir experiencias que el equipo de diseño no comparte. Burr et al. (2020) identifican además autonomía, autocomprensión y manipulación como problemas éticos relevantes del bienestar digital. En Relevo, estos riesgos se controlarán mediante:
+
+- selección de participantes por situación de uso y no por estereotipos demográficos;
+- alternativas con el mismo contenido y calidad de ejecución;
+- rotación del orden en que se presentan;
+- tareas y preguntas de comprensión antes de preguntar por gusto;
+- registro de rechazo, silencio y cambio de idea como decisiones legítimas;
+- revisión con tamaño de texto aumentado, visión cromática alterada y canales sensoriales disponibles por separado;
+- separación entre la interpretación del diseñador y las palabras de cada participante.
+
+La norma ISO 9241-112:2025 considera la presentación visual, auditiva y táctil como parte de un mismo sistema de información. Esta perspectiva es pertinente para Relevo, pero no define de antemano qué combinación será adecuada: obliga a evaluar percepción y comprensión en contexto (International Organization for Standardization [ISO], 2025).
+
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Control explícito de sesgos
+
+- **Qué cambió:** se añadieron riesgos de universalización, autonomía y presentación multimodal, junto con medidas concretas para comparar propuestas.
+- **Cómo era antes:** el método centrado en las personas declaraba iteración y pruebas, pero no reunía un protocolo explícito para reducir sesgos de edad, preferencia y canal sensorial.
+- **Por qué se decidió:** impedir que una elección del diseñador se convierta en preferencia atribuida a los usuarios.
+- **Límite:** las medidas reducen sesgos previsibles; no garantizan neutralidad ni representatividad estadística.
 
 ### 2026-09-11 — Creación del marco metodológico
 

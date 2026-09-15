@@ -523,10 +523,10 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-057 — Reiniciar el sistema visual desde función, contexto y prueba
 
 - **Fecha:** 2026-09-11.
-- **Estado:** vigente para investigación y desarrollo visual.
+- **Estado:** vigente como reinicio metodológico; desarrollada por D-059.
 - **Decisión:** retirar de la rama activa las imágenes, tipografías, código y manuales del sistema gráfico anterior; conservarlos mediante una etiqueta Git y reemplazarlos por una investigación escrita sobre aplicación, testigo, marca, producto y memoria editorial.
 - **Fundamento:** la auditoría encontró varias direcciones incompatibles, sobreproducción de recursos y especificaciones presentadas con mayor certeza que su evidencia. Paleta, forma, tipografía y motivos se habían desarrollado antes de comprobar comprensión, percepción y producción.
-- **Consecuencia:** `10_recursos_visuales` contiene únicamente documentos Markdown. La dirección **Herramienta serena** se recomienda para prototipar, pero no existe identidad final. `Relevo` sigue como nombre académico provisional y **Una señal junto a tu primer paso** pasa a comparación como descriptor, no como cierre.
+- **Consecuencia en esa etapa:** `10_recursos_visuales` quedó limitado a documentos Markdown. **Herramienta serena** se utilizó como orientación inicial, mientras `Relevo` y **Una señal junto a tu primer paso** permanecieron como hipótesis. D-059 desarrolla esta base mediante una primera especificación sin convertirla en identidad final.
 - **Límite:** el reinicio no invalida la memoria, el flujo, el wireframe v1 ni la arquitectura técnica. Tampoco autoriza diseñar piezas antes de realizar las comparaciones y pruebas definidas.
 - **Documentos asociados:** [investigación visual](../10_recursos_visuales/README.md), [direcciones y recomendación](../10_recursos_visuales/08_direcciones-y-recomendacion.md), [plan de pruebas](../10_recursos_visuales/09_plan-de-pruebas.md) y [registro del reinicio](../10_recursos_visuales/registro-del-reinicio.md).
 
@@ -541,7 +541,25 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** resultado de la prueba de aceptación, cambio de stock o aparición en Chile de un beacon compacto con zumbador, luz y SDK Android.
 - **Documento asociado:** [Búsqueda de productos terminados en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md).
 
+## D-059 — Presencia útil como primera dirección visual para prototipar
+
+- **Fecha:** 2026-09-15.
+- **Estado:** provisional; desarrolla D-057 sin cerrar la validación.
+- **Decisión:** construir la primera ronda visual mediante una herramienta de baja ornamentación, un logotipo tipográfico temporal, Source Sans 3 y una base neutra con acento verde turquesa asignado por función. El color, el peso, la posición y el espacio concentrarán un único énfasis principal por pantalla o pieza.
+- **Fundamento:** Relevo debe explicar una intención, su primer paso y una señal situada sin parecer bloqueo, alarma, tratamiento o sistema de productividad. La alternativa permite usar patrones Android conocidos, mantener contraste WCAG 2.2 y reducir producción antes de saber si un símbolo o una gramática ornamental aportan reconocimiento.
+- **Alternativas consideradas:** Roboto como base nativa, Noto Sans por cobertura, Atkinson Hyperlegible Next por diferenciación de caracteres y paletas con azul o ámbar como acento. Se mantienen como controles de comparación; no se descartan por gusto.
+- **Consecuencia:** existen valores concretos para prototipar temas claro y oscuro y una escala tipográfica compartida con la memoria. No se adopta todavía un símbolo definitivo ni se iguala el color digital con la luz física.
+- **Condición de revisión:** pruebas de comprensión, jerarquía, contraste, texto aumentado, reconocimiento, impresión y significados atribuidos al color.
+- **Documentos asociados:** [dirección visual provisional](../10_recursos_visuales/10_direccion-visual-provisional.md), [sistema cromático y tipográfico](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [especificación de interfaz](../10_recursos_visuales/12_especificacion-ui-provisional.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — D-059
+
+- **Cambio:** se registró la primera dirección visual concreta posterior al reinicio.
+- **Versión anterior:** D-057 autorizaba investigar y comparar, pero mantenía abiertos tipografía, color y tratamiento de marca.
+- **Motivo:** permitir prototipos verificables sin confundir una hipótesis formal con una identidad final.
+- **Resultado:** la dirección puede aplicarse a pantallas y páginas de prueba; sigue sujeta a criterios explícitos de revisión.
 
 ### 2026-09-11 — D-058
 

@@ -4,7 +4,7 @@
 
 La investigación combina cuatro tipos de fuentes. Las normas y guías oficiales fijan requisitos de interacción, accesibilidad y percepción; los artículos académicos permiten formular hipótesis sobre simplicidad, significado formal, identidad y señales ambientales; las fuentes oficiales de productos sirven para comparar la categoría actual; los libros de diseño aportan fundamentos que siguen siendo pertinentes. Las páginas comerciales se usan para describir cómo cada servicio se presenta, no como evidencia de eficacia.
 
-La fecha de corte es el 11 de septiembre de 2026. Cuando una página cambia con frecuencia y no declara fecha de publicación, se utiliza `s. f.` y se indica la fecha de recuperación, de acuerdo con APA 7.
+La fecha de corte es el 15 de septiembre de 2026. Cuando una página cambia con frecuencia y no declara fecha de publicación, se utiliza `s. f.` y se indica la fecha de recuperación, de acuerdo con APA 7.
 
 ## Relación entre evidencia y decisión
 
@@ -24,6 +24,10 @@ La fecha de corte es el 11 de septiembre de 2026. Cuando una página cambia con 
 
 ## Referencias
 
+Adobe Fonts. (s. f.-a). *Source Sans 3* [Fuente tipográfica]. GitHub. Recuperado el 15 de septiembre de 2026, de https://github.com/adobe-fonts/source-sans
+
+Adobe Fonts. (s. f.-b). *Source Sans 3 Variable*. Recuperado el 15 de septiembre de 2026, de https://fonts.adobe.com/fonts/source-sans-3-variable
+
 Albers, J. (2013). *Interaction of color* (50th anniversary ed.). Yale University Press. (Trabajo original publicado en 1963).
 
 Android Developers. (s. f.-a). *Make apps more accessible*. Recuperado el 11 de septiembre de 2026, de https://developer.android.com/guide/topics/ui/accessibility/views/apps-views
@@ -34,11 +38,17 @@ Android Developers. (s. f.-c). *10 steps for translating designs to Android*. Re
 
 Android Developers. (s. f.-d). *Color*. Recuperado el 11 de septiembre de 2026, de https://developer.android.com/design/ui/mobile/guides/styles/color
 
+Android Developers. (s. f.-e). *Grids and units*. Recuperado el 15 de septiembre de 2026, de https://developer.android.com/design/ui/mobile/guides/layout-and-content/grids-and-units
+
 Brick LLC. (s. f.). *Brick: Take back your time*. Recuperado el 11 de septiembre de 2026, de https://getbrick.com/
+
+Burr, C., Taddeo, M., & Floridi, L. (2020). The ethics of digital well-being: A thematic review. *Science and Engineering Ethics, 26*(4), 2313–2343. https://doi.org/10.1007/s11948-020-00175-8
 
 Chen, C.-H., & Huang, M. (2021). The impact of notification modality and ambient sound on users’ mobile interaction. *Symmetry, 13*(3), 395. https://doi.org/10.3390/sym13030395
 
 Choi, J. H., & Lee, H.-J. (2012). Facets of simplicity for the smartphone interface: A structural model. *International Journal of Human-Computer Studies, 70*(2), 129–142. https://doi.org/10.1016/j.ijhcs.2011.09.002
+
+Costanza-Chock, S. (2020). *Design justice: Community-led practices to build the worlds we need*. The MIT Press. https://mitpress.mit.edu/9780262043458/design-justice
 
 Design Council. (s. f.). *The Double Diamond*. Recuperado el 11 de septiembre de 2026, de https://www.designcouncil.org.uk/resources/the-double-diamond/
 
@@ -61,6 +71,8 @@ International Organization for Standardization. (2019a). *ISO 9241-210:2019 Ergo
 International Organization for Standardization. (2019b). *ISO 24550:2019 Ergonomics—Accessible design—Indicator lights on consumer products*. https://www.iso.org/standard/72306.html
 
 International Organization for Standardization. (2020). *ISO 9241-110:2020 Ergonomics of human-system interaction—Part 110: Interaction principles*. https://www.iso.org/standard/75258.html
+
+International Organization for Standardization. (2025). *ISO 9241-112:2025 Ergonomics of human-system interaction—Part 112: Principles for the presentation of information*. https://www.iso.org/standard/87518.html
 
 Kapkın, E., & Joines, S. (2018). An investigation into the relationship between product form and perceived meanings. *International Journal of Industrial Ergonomics, 67*, 259–273. https://doi.org/10.1016/j.ergon.2018.05.009
 
@@ -93,6 +105,13 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Fuentes para la primera especificación provisional
+
+- **Qué cambió:** se añadieron las fuentes oficiales de Source Sans 3 y la retícula Android, junto con referencias sobre ética del bienestar digital, justicia de diseño y presentación multimodal.
+- **Cómo era antes:** la bibliografía justificaba criterios generales, pero no la familia tipográfica, las medidas adoptadas ni el nuevo control de sesgos.
+- **Por qué se decidió:** mantener trazabilidad entre cada valor provisional, su fuente técnica y los criterios éticos de la comparación.
+- **Límite:** las fuentes orientan el diseño y la evaluación; no demuestran por sí solas que la elección sea la mejor para las personas de Relevo.
 
 ### 2026-09-11 — Creación de la bibliografía visual
 

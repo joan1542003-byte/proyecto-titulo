@@ -2,7 +2,7 @@
 
 **Fecha de planificación:** 2 de septiembre de 2026
 
-**Última revisión de estado:** 9 de septiembre de 2026
+**Última revisión de estado:** 15 de septiembre de 2026
 
 **Cierre total interno:** 15 de noviembre de 2026
 
@@ -18,7 +18,7 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 ## Etapa actual
 
-Relevo se encuentra en una etapa de **transición desde el wireframe v1 hacia la construcción del prototipo**. El recorrido mínimo se congeló el 9 de septiembre y se conserva como base estructural. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. El 11 de septiembre se reinició la [investigación visual](../10_recursos_visuales/README.md): ya existen criterios y alternativas escritas, pero no una paleta, tipografía, logotipo ni forma visual definitiva. La memoria permanece estructuralmente avanzada.
+Relevo se encuentra en una etapa de **transición desde el wireframe v1 hacia la construcción del prototipo**. El recorrido mínimo se congeló el 9 de septiembre y se conserva como base estructural. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. Después del reinicio visual del 11 de septiembre, el proyecto ya cuenta con una [primera dirección especificada](../10_recursos_visuales/10_direccion-visual-provisional.md): Presencia útil, Source Sans 3 y una paleta neutra con acento verde turquesa. Son parámetros de prueba; el logotipo, el descriptor y la forma definitivos siguen abiertos. La memoria permanece estructuralmente avanzada.
 
 El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. El programa mínimo para micro:bit V2 ya compila y dispone de un archivo instalable. Todavía faltan acceso a la placa, instalación, conexión medida, incorporación de una luz blanca cálida externa, ensayo y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden cerrar el wireframe.
 
@@ -295,6 +295,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Estado visual sincronizado
+
+- **Cambio:** el plan incorpora la primera dirección visual especificada y actualiza su fecha de revisión.
+- **Versión anterior:** registraba criterios y alternativas, pero afirmaba que tipografía y paleta seguían completamente abiertas.
+- **Motivo:** mantener el calendario alineado con la decisión D-059 y evitar que una tarea futura repita la selección inicial.
+- **Alcance:** no se altera el calendario ni se declara validada la identidad.
 
 ### 2026-09-11 — Reinicio visual incorporado
 

@@ -620,11 +620,11 @@ La tabla sintetiza requisitos pendientes de operación. El autor coordina la inv
 
 ## Nombre y comunicación del propósito
 
-Relevo se utiliza como nombre académico provisional por su relación con el paso entre la actividad presente y una alternativa elegida. Antes de adoptarlo fuera de este contexto se deberá comprobar su comprensión y disponibilidad comercial. Para explicar el sistema se compararán tres descriptores; la alternativa inicial, «Una señal junto a tu primer paso», vincula la señal con un comienzo concreto sin prometer que la actividad ocurrirá.
+Relevo se utiliza como nombre académico provisional por su relación con el paso entre la actividad presente y una alternativa elegida. Antes de adoptarlo fuera de este contexto se deberá comprobar su comprensión y disponibilidad comercial. Para explicar el sistema se compararán tres descriptores; la alternativa inicial, «Una señal cerca de tu primer paso», relaciona la señal con un comienzo concreto sin prometer que la actividad ocurrirá ni exigir que el testigo esté en contacto con la acción.
 
 Los ejemplos deben mostrar un comienzo realizable: ponerse las zapatillas para hacer ejercicio o preparar la bolsa para una salida de buceo ya planificada. Son escenarios hipotéticos; recuperar tiempo no aporta por sí solo recursos, habilidades ni una actividad completada.
 
-El sistema visual se organizará por funciones antes de fijar colores o recursos expresivos. La aplicación debe priorizar la intención, el primer paso y el estado del ciclo mediante componentes reconocibles, jerarquías breves y temas claro y oscuro acordes con la preferencia del sistema. El testigo debe distinguirse de su entorno y permitir reconocer sus estados sin depender exclusivamente del color. Encontrar el objeto, notar la señal y comprender su relación con la intención son comprobaciones distintas.
+El sistema visual se organiza por funciones antes de incorporar recursos expresivos. La primera hipótesis, denominada Presencia útil, emplea Source Sans 3, temas claro y oscuro, fondos neutros y un acento verde turquesa reservado para acciones y estados relevantes. La aplicación debe priorizar la intención, el primer paso y el estado del ciclo mediante componentes reconocibles, jerarquías breves y un solo énfasis principal por pantalla. Estos parámetros permiten construir una comparación; no constituyen una identidad validada. El testigo debe distinguirse de su entorno y permitir reconocer sus estados sin depender exclusivamente del color. Encontrar el objeto, notar la señal y comprender su relación con la intención son comprobaciones distintas.
 
 La memoria, la aplicación, el testigo y la comunicación deben reconocerse como partes de un mismo producto sin repetir una composición decorativa en todos los soportes. La [investigación visual](../10_recursos_visuales/README.md) reúne los criterios y alternativas; la [guía explicativa](../00_gobernanza/guia-comunicacion-relevo.md) distingue la promesa del producto de la evidencia disponible. La comunicación deberá revisarse si hace pensar que Relevo obliga a actuar o detecta un estado subjetivo.
 
@@ -860,6 +860,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 2026-09-15 — Primera hipótesis visual especificada
+
+- **Cambio:** el capítulo registra Presencia útil, Source Sans 3, una paleta neutra con acento verde turquesa y el descriptor «Una señal cerca de tu primer paso».
+- **Versión anterior:** después del reinicio, la memoria solo declaraba criterios funcionales y mantenía tipografía y color sin una hipótesis concreta.
+- **Motivo:** permitir que la interfaz y la comunicación se comparen mediante prototipos verificables, sin presentar decisiones formales como resultados.
+- **Alcance:** no se cierra la identidad, el símbolo, la forma física ni el color de la señal; tampoco se añaden resultados de validación.
 
 ### 2026-09-11 — Nombre y criterios visuales abiertos a prueba
 

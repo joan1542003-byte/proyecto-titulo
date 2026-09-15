@@ -2,7 +2,7 @@
 
 ## Resultado y alcance
 
-La revisión corrigió estados desactualizados, redundancias, enlaces y explicaciones ambiguas. La memoria conserva **15.033 palabras de texto académico**, sus catorce capítulos, 42 subtítulos temáticos y 52 referencias. La bibliografía y el registro administrativo se excluyen del objetivo aproximado de 15.000 palabras.
+La revisión corrigió estados desactualizados, redundancias, enlaces y explicaciones ambiguas. En su corte del 9 de septiembre, la memoria tenía **15.033 palabras de texto académico**, catorce capítulos, 42 subtítulos temáticos y 52 referencias. El conteo vigente se consulta en la [auditoría de redacción](../08_memoria/auditoria-redaccion-v4-2026-08-26.md); la bibliografía y el registro administrativo se excluyen del objetivo aproximado de 15.000 palabras.
 
 Por instrucción del autor, este cierre se limita a documentación. No incorpora cambios en wireframes, imágenes, video, código ni herramientas de exportación. Las versiones visuales anteriores se identifican por su fecha y función; no se presentan como copias de la memoria actual.
 
@@ -61,7 +61,7 @@ La memoria mantiene su texto académico y sus parámetros experimentales; la ún
 | --- | --- |
 | Inventario | 1.215 archivos, incluidos 356 Markdown. |
 | Navegación | 1.218 enlaces locales y 126 anclas comprobados; ningún destino ausente. |
-| Memoria | 15.033 palabras académicas, 14 capítulos, 42 subtítulos y 52 referencias. |
+| Memoria en el corte auditado | 15.033 palabras académicas, 14 capítulos, 42 subtítulos y 52 referencias. El conteo posterior se mantiene en la auditoría de redacción. |
 | Citas del cuerpo académico | 84 instancias parentéticas conservadas; el texto anterior a la bibliografía no cambió. |
 | Feedback | 23 respuestas con sus documentos responsables conservadas. |
 | Registro de decisiones | D-001–D-056 ordenadas; las 46 entradas históricas anteriores se conservaron. |
@@ -72,6 +72,13 @@ La memoria mantiene su texto académico y sus parámetros experimentales; la ún
 La documentación del feedback conserva las 23 respuestas y sus fuentes responsables. Siguen pendientes el banco físico, la asociación con participantes, la comparación, la integración portátil y los datos complementarios todavía no aportados. Esos pendientes permanecen en sus documentos e Issues; esta limpieza no los convierte en resultados.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Corte histórico aclarado
+
+- **Cambio:** las cifras de 15.033 palabras se identifican como el estado comprobado el 9 de septiembre y se enlaza el control vigente.
+- **Versión anterior:** podían leerse como el conteo actual de la memoria.
+- **Motivo:** preservar el resultado de la auditoría fechada sin mantener un dato activo desactualizado.
+- **Alcance:** no se repite la auditoría textual completa ni se alteran sus hallazgos.
 
 ### 2026-09-09 — Creación del control textual
 

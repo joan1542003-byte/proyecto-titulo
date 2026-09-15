@@ -61,9 +61,9 @@ El descriptor debe explicar lo que hace Relevo sin presentar una metáfora como 
 
 ### Funcional
 
-**Una señal junto a tu primer paso.**
+**Una señal cerca de tu primer paso.**
 
-Ventaja: une señal y lugar con una expresión ya definida en el proyecto. Riesgo: necesita que `primer paso` se explique en el primer contacto.
+Ventaja: une señal, proximidad y primer paso sin exigir contacto físico con la actividad. Riesgo: necesita que `primer paso` se explique en el primer contacto.
 
 ### Situacional
 
@@ -77,7 +77,7 @@ Ventaja: plantea una escena reconocible. Riesgo: puede sonar a aplicación de re
 
 Ventaja: destaca propiedad y contexto. Riesgo: es más largo y menos directo sobre la señal.
 
-La alternativa recomendada para prototipar es **Una señal junto a tu primer paso**. Describe mecanismo y diferencia sin prometer que la actividad ocurrirá. No es definitiva.
+La alternativa recomendada para prototipar es **Una señal cerca de tu primer paso**. Describe el mecanismo y la relación espacial sin prometer que la actividad ocurrirá. La versión anterior con `junto a` se mantiene como control de comparación. Ninguna es definitiva.
 
 ## Arquitectura de nombres
 
@@ -142,6 +142,13 @@ Cada dirección de marca debe responder:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Segunda versión del descriptor funcional
+
+- **Qué cambió:** `Una señal junto a tu primer paso` pasó a `Una señal cerca de tu primer paso` como alternativa recomendada.
+- **Cómo era antes:** `junto a` podía sugerir que el testigo debía tocar el objeto o quedar en una única posición.
+- **Por qué se decidió:** `cerca de` conserva la relación situada y admite las distintas ubicaciones que el proyecto debe probar.
+- **Límite:** ambas formulaciones requieren comparación de comprensión y recuerdo.
 
 ### 2026-09-11 — Creación de estrategia verbal y de marca
 

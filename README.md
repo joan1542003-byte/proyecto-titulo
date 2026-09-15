@@ -3,7 +3,7 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
-**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto. La memoria tiene 15.033 palabras de texto académico, sin bibliografía ni registro administrativo.
+**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto. La memoria tiene 15.127 palabras de texto académico, sin bibliografía ni registro administrativo.
 
 **Revisión y limpieza de textos:** [Correcciones y comprobaciones del 9 de septiembre](00_gobernanza/auditoria-textual-2026-09-09.md). Estados, decisiones, enlaces y referencias reconciliados; las entregas antiguas conservan su fecha y sus límites.
 
@@ -43,7 +43,7 @@ Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pas
 
 Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
-La definición física más reciente se encuentra en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md). El nombre, el descriptor y la identidad están nuevamente en investigación; sus criterios y alternativas se consultan en [marca, nombre y lenguaje](10_recursos_visuales/06_marca-y-lenguaje.md). La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
+La definición física más reciente se encuentra en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md). El nombre, el descriptor y la identidad siguen en investigación; la [primera dirección visual especificada](10_recursos_visuales/10_direccion-visual-provisional.md) permite construir comparaciones sin cerrar esas decisiones. La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
 ## Estado actual
 
@@ -51,7 +51,7 @@ La definición física más reciente se encuentra en el [estudio del testigo com
 
 El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal están documentados en [`07_validacion`](07_validacion/README.md). El [programa Android–BLE para micro:bit V2](06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) ya compila y permite comprobar matriz, sonido y silencio local sin participantes. Como la matriz integrada es roja, la fase A exige añadir y revisar una luz blanca cálida externa antes de evaluar comprensión. Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como antecedentes de mesa. Antes de usar la señal con participantes faltan acceso a la placa, instalación, montaje cálido, ensayo técnico y revisión competente. La comparación posterior permanece bloqueada hasta disponer de una notificación Android equivalente. No existen resultados de validación.
 
-La [investigación visual reiniciada](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. En esta etapa no existe una paleta, tipografía, logotipo ni forma visual definitiva. Se recomienda prototipar una herramienta serena y de baja ornamentación, pero sus decisiones deben probarse en la aplicación, el testigo, la memoria y la comunicación del producto.
+La [investigación visual reiniciada](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. La primera dirección para prototipar se denomina **Presencia útil**: emplea Source Sans 3, una base neutra y un acento verde turquesa con función explícita. Es una hipótesis de diseño, no una identidad definitiva. El logotipo tipográfico es temporal, la forma física sigue abierta y cada decisión deberá comprobarse en la aplicación, el testigo, la memoria y la comunicación del producto.
 
 La base metodológica del corpus quedó consolidada:
 
@@ -119,6 +119,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Primera dirección visual especificada
+
+- **Cambio:** la entrada principal incorpora Presencia útil, Source Sans 3 y una paleta neutra con acento verde turquesa como hipótesis para prototipar.
+- **Versión anterior:** después del reinicio, tipografía y color permanecían completamente abiertos y Herramienta serena solo describía una orientación general.
+- **Motivo:** permitir comparaciones concretas y trazables sin presentar una preferencia estética como identidad final.
+- **Alcance:** no existen resultados de validación; el descriptor, el logotipo definitivo, la forma física y el color de la señal siguen abiertos. El conteo académico se actualizó de 15.033 a 15.127 palabras mediante el mismo método reproducible.
 
 ### 2026-09-11 — Reinicio de la investigación visual
 

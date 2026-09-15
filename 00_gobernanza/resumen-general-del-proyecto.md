@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
 
-La fecha de corte es el 12 de septiembre de 2026. La memoria contiene 15.033 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
+La fecha de corte es el 15 de septiembre de 2026. La memoria contiene 15.127 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
 
 ## El objetivo del proyecto
 
@@ -149,21 +149,21 @@ La arquitectura de nombres quedó así:
 
 Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
-El descriptor recomendado para prototipar es **“Una señal junto a tu primer paso”**. Une la señal con el lugar y no promete que la actividad ocurrirá. Se comparará con otras dos alternativas antes de cerrarlo. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md).
+El descriptor recomendado para prototipar es **“Una señal cerca de tu primer paso”**. Relaciona la señal con el lugar sin confundir proximidad con contacto físico ni prometer que la actividad ocurrirá. Se comparará con otras dos alternativas antes de cerrarlo. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md).
 
 ## Estado de la investigación visual
 
 El 11 de septiembre se retiró el sistema gráfico anterior y se reinició el estudio desde la función. La nueva pregunta es cómo comunicar una ayuda breve y voluntaria sin parecer un sistema de vigilancia, bloqueo o productividad obligatoria.
 
-- La aplicación conservará la arquitectura del wireframe v1, pero volverá a comparar jerarquía, componentes, color y tipografía.
+- La aplicación conservará la arquitectura del wireframe v1, pero comparará la jerarquía y los componentes de la primera dirección con alternativas de control.
 - Se diseñarán temas claro y oscuro siguiendo la preferencia del sistema; ninguno será la identidad exclusiva.
-- La paleta se organizará por funciones y todavía no tiene valores definitivos.
+- La primera paleta de prueba combina fondos neutros con verde turquesa. Sus valores están especificados, pero no son definitivos.
 - La señal física se estudiará como comportamiento perceptible; su color no tiene que copiar el acento de la aplicación.
 - El testigo comparará formas reales antes de cerrar carcasa, material o instalación.
 - La memoria priorizará lectura, evidencia y navegación, sin repetir un motivo decorativo en todas las páginas.
-- La marca comenzará con un logotipo tipográfico; un símbolo independiente solo se desarrollará si resuelve una necesidad de reconocimiento.
+- La marca comenzará con un logotipo tipográfico temporal en Source Sans 3; un símbolo independiente solo se desarrollará si resuelve una necesidad de reconocimiento.
 
-La dirección recomendada para prototipar se denomina **Herramienta serena**: baja ornamentación, lenguaje directo, jerarquías claras y un acento de uso limitado. No es todavía una identidad validada. Ver [investigación visual](../10_recursos_visuales/README.md), [alternativas y recomendación](../10_recursos_visuales/08_direcciones-y-recomendacion.md) y [referencias](../10_recursos_visuales/referencias.md).
+La primera dirección para prototipar se denomina **Presencia útil**. Se comporta como una herramienta personal que permanece en segundo plano y aparece con claridad cuando hace falta. Utiliza baja ornamentación, lenguaje directo, jerarquías claras y un solo énfasis principal por pantalla o pieza. No es una identidad validada. Ver [dirección provisional](../10_recursos_visuales/10_direccion-visual-provisional.md), [sistema cromático y tipográfico](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [especificación de interfaz](../10_recursos_visuales/12_especificacion-ui-provisional.md).
 
 ## Cómo se ha implementado hasta ahora
 
@@ -205,7 +205,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
-| Nombre provisional y nueva investigación visual escrita. | Probar descriptor, alternativas de interfaz y forma; luego especificar paleta, tipografía, logotipo, material, difusor y señal. | [Marca](../10_recursos_visuales/06_marca-y-lenguaje.md) · [Investigación visual](../10_recursos_visuales/README.md) |
+| Nombre provisional, investigación visual y primera dirección especificada. | Probar descriptor, jerarquía, tipografía, paleta y forma; ajustar la especificación y definir después logotipo, material, difusor y señal. | [Dirección visual](../10_recursos_visuales/10_direccion-visual-provisional.md) · [Sistema base](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) |
 | Productos terminados y plataformas comparados; programa micro:bit compilado como respaldo. | Comprar dos iTag, inspeccionarlos y registrar resultados. Usar micro:bit solo si ambos fallan; completar la lista XIAO únicamente si la evidencia justifica una integración propia. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
@@ -257,6 +257,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Primera dirección visual especificada
+
+- **Qué cambió:** el resumen incorpora Presencia útil, Source Sans 3, la paleta neutra con acento verde turquesa y el descriptor revisado.
+- **Cómo estaba antes:** registraba Herramienta serena como orientación general y mantenía color y tipografía completamente abiertos.
+- **Por qué se decidió:** una hipótesis concreta permite diseñar y comparar prototipos mediante criterios verificables, sin presentarla como identidad final.
+- **Límite:** no existen pruebas de comprensión, preferencia, impresión o percepción del color; el símbolo y la forma física permanecen abiertos. La modificación actualiza el conteo académico de 15.033 a 15.127 palabras.
 
 ### 2026-09-12 — Primera puerta con productos terminados
 
