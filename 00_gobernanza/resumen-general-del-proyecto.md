@@ -138,7 +138,7 @@ El rol del diseño quedó entendido como articular problema, evidencia, experien
 
 ## Naming y lenguaje
 
-**Relevo** se conserva como nombre académico provisional porque sugiere un cambio de turno sin obligar a abandonar el teléfono. Antes de usarlo comercialmente requiere búsqueda de marcas semejantes y una prueba de comprensión.
+**Relevo** se conserva como nombre académico provisional por su brevedad y pronunciación. Ya no se fuerza una interpretación literal del nombre: antes de usarlo comercialmente requiere búsqueda de marcas semejantes y pruebas de asociaciones, comprensión y recuerdo.
 
 La arquitectura de nombres quedó así:
 
@@ -149,7 +149,7 @@ La arquitectura de nombres quedó así:
 
 Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
-El descriptor recomendado para prototipar es **“Una señal donde quieres empezar”**. Utiliza lenguaje común, relaciona la señal con el lugar y no promete que la actividad ocurrirá. `Primer paso` se mantiene como término analítico; la interfaz pregunta `¿Cómo podrías empezar?`. Las formulaciones se compararán antes de cerrarlas. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [semántica y relato de marca](../10_recursos_visuales/13_semantica-y-relato-de-marca.md).
+No existe un descriptor definitivo. La primera explicación a comparar presenta a Relevo como un recordatorio físico preparado desde el teléfono y añade su diferencia situada y no coercitiva. `Primer paso` se mantiene como hipótesis transversal: debe aportar a la configuración, la ubicación y la recuperación; la interfaz compara formulaciones cotidianas como `¿Cómo podrías empezar?`. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [estrategia de marca desde el producto](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md).
 
 ## Estado de la investigación visual
 
@@ -157,7 +157,7 @@ El 11 de septiembre se retiró el sistema gráfico anterior y se reinició el es
 
 - La aplicación conservará la arquitectura del wireframe v1, pero comparará la jerarquía y los componentes de la primera dirección con alternativas de control.
 - Se diseñarán temas claro y oscuro siguiendo la preferencia del sistema; ninguno será la identidad exclusiva.
-- La primera paleta de prueba combina fondos neutros con verde turquesa. El acento funciona como color de presencia cuando una intención vuelve a ser relevante; no representa calma, éxito ni cumplimiento. Sus valores están especificados, pero no son definitivos.
+- La primera paleta de prueba combina fondos neutros con verde turquesa. El acento cumple una función de interfaz en esa variante; no es todavía color definitivo de marca ni posee un relato propio.
 - La señal física se estudiará como comportamiento perceptible; su color no tiene que copiar el acento de la aplicación.
 - El testigo comparará formas reales antes de cerrar carcasa, material o instalación.
 - La memoria priorizará lectura, evidencia y navegación, sin repetir un motivo decorativo en todas las páginas.
@@ -257,6 +257,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Estrategia de marca sincronizada
+
+- **Qué cambió:** el resumen separa la explicación del producto de un futuro descriptor, elimina la justificación literal del nombre y reabre color y tipografía de marca.
+- **Cómo era antes:** `Una señal donde quieres empezar` y el turquesa de presencia aparecían como recomendaciones vigentes.
+- **Por qué se decidió:** el posicionamiento y la experiencia deben preceder a la expresión verbal y visual.
+- **Límite:** las formulaciones y materiales actuales sirven para comparar; no han sido validados.
 
 ### 2026-09-15 — Relato de marca y lenguaje sincronizados
 

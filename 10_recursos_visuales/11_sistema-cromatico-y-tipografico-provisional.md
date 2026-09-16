@@ -1,6 +1,6 @@
 # Sistema cromático y tipográfico provisional
 
-**Estado:** valores para prototipos de interfaz, identidad y editorial. No constituyen todavía una especificación validada.
+**Estado:** valores de trabajo para prototipos de interfaz y editorial. No constituyen una identidad de marca ni una especificación validada.
 
 **Fecha:** 15 de septiembre de 2026.
 
@@ -82,15 +82,15 @@ La comparación considera función y riesgo, no personalidad supuestamente unive
 
 ## Paleta recomendada
 
-La primera dirección utiliza una base neutra ligeramente verdosa y un acento verde turquesa. La selección no afirma que ese matiz sea tranquilizador ni que posea un significado universal. Responde a condiciones funcionales —separación respecto de error y advertencia, contraste en ambos temas y visibilidad acotada— y a una hipótesis de marca: el sistema permanece neutral mientras está en segundo plano y el turquesa aparece cuando una intención preparada vuelve a estar presente.
+La primera dirección de interfaz utiliza una base neutra ligeramente verdosa y un acento verde turquesa. La selección no afirma que ese matiz sea tranquilizador ni que posea un significado universal. Responde a condiciones funcionales —separación respecto de error y advertencia, contraste en ambos temas y visibilidad acotada— y permite construir una variante comparable.
 
-Esta relación convierte al turquesa en **color de presencia**, no en color de éxito. Su significado depende del uso constante entre soportes y debe comprobarse dentro de piezas completas. La justificación estratégica se encuentra en [semántica y relato de marca](13_semantica-y-relato-de-marca.md).
+El turquesa no se considera color definitivo de Relevo ni recibe por ahora un significado narrativo. La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) establece que los candidatos cromáticos se compararán después de precisar posición, experiencia y diferencias de categoría.
 
 ### Cuatro funciones que no deben confundirse
 
 | Función | Uso del color | Restricción |
 | --- | --- | --- |
-| Marca | identificar a Relevo mediante un acento localizado | la marca debe reconocerse también en escala de grises |
+| Identificación provisional | ensayar reconocimiento mediante un acento localizado | no llamar activo distintivo al color antes de medir asociación y unicidad |
 | Interfaz | orientar una acción principal, selección o vínculo activo | no puede ser el único indicador de significado |
 | Estados | distinguir error, advertencia, desconexión o cierre | cada estado necesita texto y, cuando corresponda, icono o forma |
 | Señal física | ser percibida en un lugar y condición reales | se define mediante pruebas propias; no hereda automáticamente el turquesa |
@@ -105,7 +105,7 @@ Esta relación convierte al turquesa en **color de presencia**, no en color de �
 | Texto principal | `#171A18` | títulos y cuerpo |
 | Texto secundario | `#555B58` | apoyo y metadatos |
 | Contorno | `#707772` | límites y componentes esenciales |
-| Primario | `#006B5F` | color de presencia: acción principal, selección o vínculo activo |
+| Primario | `#006B5F` | acción principal, selección o vínculo activo en el prototipo |
 | Sobre primario | `#FFFFFF` | contenido sobre el primario |
 | Contenedor primario | `#B8EFE4` | énfasis extendido excepcional |
 | Sobre contenedor | `#003730` | contenido del contenedor primario |
@@ -120,7 +120,7 @@ Esta relación convierte al turquesa en **color de presencia**, no en color de �
 | Texto principal | `#F1F5F2` | títulos y cuerpo |
 | Texto secundario | `#B9C1BD` | apoyo y metadatos |
 | Contorno | `#89928C` | límites y componentes esenciales |
-| Primario | `#72DBC7` | color de presencia: acción principal, selección o vínculo activo |
+| Primario | `#72DBC7` | acción principal, selección o vínculo activo en el prototipo |
 | Sobre primario | `#00372F` | contenido sobre el primario |
 | Contenedor primario | `#004F46` | énfasis extendido excepcional |
 | Sobre contenedor | `#A9F2E3` | contenido del contenedor primario |
@@ -169,6 +169,13 @@ La tipografía debe cambiar si falla la lectura con tamaño aumentado, cursivas,
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Paleta separada de la identidad de marca
+
+- **Qué cambió:** el turquesa quedó como candidato funcional para prototipos y dejó de denominarse `color de presencia`.
+- **Cómo era antes:** el documento atribuía al acento una función narrativa transversal sin haber comparado alternativas ni medido reconocimiento.
+- **Por qué se decidió:** el color puede ejecutar una estrategia de marca, pero no sustituir la definición de posición, experiencia y diferencia.
+- **Límite:** los valores mantienen su utilidad técnica y su contraste calculado; no demuestran pertinencia o reconocimiento de marca.
 
 ### 2026-09-15 — El color se integra al relato de marca
 

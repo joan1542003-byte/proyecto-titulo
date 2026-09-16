@@ -620,13 +620,17 @@ La tabla sintetiza requisitos pendientes de operación. El autor coordina la inv
 
 ## Nombre y comunicación del propósito
 
-Relevo se utiliza como nombre académico provisional por su relación con un traspaso entre soportes: la persona formula una intención, la aplicación la conserva, el testigo la hace presente en el entorno y la decisión vuelve a la persona. La intención cambia de soporte sin cambiar de dueño. Antes de adoptar el nombre fuera de este contexto se deberá comprobar su comprensión y disponibilidad comercial.
+La estrategia de marca se desarrolla después de definir el producto y su posición. Un posicionamiento necesita aclarar el marco en que el público comprenderá la propuesta, los atributos que comparte con esa categoría y una diferencia que resulte pertinente y creíble (Keller et al., 2002). Relevo se presentará inicialmente como un recordatorio físico preparado desde el teléfono y se explicará de inmediato su diferencia: relaciona una actividad elegida con una señal ubicada en su contexto, sin bloquear ni evaluar la respuesta. Esta formulación es una hipótesis de comunicación y no un resultado.
 
-`Primer paso` se mantiene como concepto analítico para describir una acción breve, concreta y disponible que permite comenzar una actividad elegida. No aparece como expresión de los participantes P1–P8 y puede admitir interpretaciones diferentes sin una definición. Por eso, la interfaz preguntará «¿Cómo podrías empezar?» y mostrará «Cómo empezar» durante la revisión. Para explicar el sistema se compararán tres descriptores; la alternativa inicial, «Una señal donde quieres empezar», relaciona señal, intención y lugar mediante palabras comunes, sin prometer que la actividad ocurrirá.
+La posición se vuelve experiencia cuando orienta decisiones observables en cada punto de contacto, y no cuando permanece como una lista de atributos (Motta-Filho, 2021). Los rasgos formales pueden favorecer reconocimiento si traducen valores con consistencia, pero su interpretación depende del producto y del contexto (Karjalainen & Snelders, 2010).
+
+Relevo se conserva como nombre académico provisional. Es breve y pronunciable, pero también puede asociarse con deporte, turnos laborales, reemplazo de personas o logística. El nombre ya no se justifica mediante una supuesta transferencia de la intención entre soportes. Antes de adoptarlo fuera de este contexto se deberán comprobar sus asociaciones, recuerdo, pronunciación y disponibilidad comercial. Esta distinción evita confundir la identidad que el proyecto intenta construir con la imagen que las personas forman realmente (Aaker, 1996).
+
+`Primer paso` se mantiene como concepto analítico para describir una acción breve, concreta y disponible que permite comenzar una actividad elegida. No aparece como expresión de los participantes P1–P8 y puede admitir interpretaciones diferentes sin una definición. Tampoco se limita a una decisión de interfaz: es una hipótesis transversal que debe ayudar a formular la actividad, elegir dónde ubicar el objeto y reconstruir el sentido de la señal. La interfaz comparará formulaciones cotidianas como «¿Cómo podrías empezar?» con alternativas equivalentes. Si concretar el comienzo no mejora configuración, ubicación y recuperación, el concepto deberá simplificarse o retirarse.
 
 Los ejemplos deben mostrar un comienzo realizable: ponerse las zapatillas para hacer ejercicio o preparar la bolsa para una salida de buceo ya planificada. Son escenarios hipotéticos; recuperar tiempo no aporta por sí solo recursos, habilidades ni una actividad completada.
 
-El sistema visual se organiza por funciones antes de incorporar recursos expresivos. La primera hipótesis, denominada Presencia útil, emplea Source Sans 3, temas claro y oscuro, fondos neutros y un verde turquesa como color de presencia. La base neutra corresponde al sistema en segundo plano; el acento aparece cuando una intención preparada vuelve a ser relevante o existe una acción principal. No representa calma, bienestar, éxito ni cumplimiento. El significado cromático depende del contexto y del tipo de producto; una equivalencia universal entre matiz y emoción no basta para justificar la marca (Elliot & Maier, 2014; Kauppinen-Räisänen & Luomala, 2010). La aplicación debe priorizar la actividad, la forma de comenzar y el estado del ciclo mediante componentes reconocibles, jerarquías breves y un solo énfasis principal por pantalla. Estos parámetros permiten construir una comparación; no constituyen una identidad validada. El testigo debe distinguirse de su entorno y permitir reconocer sus estados sin depender exclusivamente del color. La señal física conserva pruebas cromáticas propias y no tiene que copiar el acento de marca. Encontrar el objeto, notar la señal y comprender su relación con la intención son comprobaciones distintas.
+El sistema visual se organiza por funciones antes de incorporar recursos expresivos. Source Sans 3, los temas claro y oscuro, los fondos neutros y el verde turquesa permanecen como materiales de una primera variante de prototipo, no como identidad definitiva. El significado cromático depende del contexto y del tipo de producto; una equivalencia universal entre matiz y emoción no basta para justificar la marca (Elliot & Maier, 2014; Kauppinen-Räisänen & Luomala, 2010). Tampoco basta con repetir un color para convertirlo en un activo distintivo: su asociación y unicidad deben medirse (Ward et al., 2020). La aplicación debe priorizar la actividad, la forma de comenzar y el estado del ciclo mediante componentes reconocibles, jerarquías breves y un solo énfasis principal por pantalla. El testigo debe distinguirse de su entorno y permitir reconocer sus estados sin depender exclusivamente del color. La señal física conserva pruebas propias. Encontrar el objeto, notar la señal y comprender su relación con la actividad son comprobaciones distintas.
 
 La memoria, la aplicación, el testigo y la comunicación deben reconocerse como partes de un mismo producto sin repetir una composición decorativa en todos los soportes. La [investigación visual](../10_recursos_visuales/README.md) reúne los criterios y alternativas; la [guía explicativa](../00_gobernanza/guia-comunicacion-relevo.md) distingue la promesa del producto de la evidencia disponible. La comunicación deberá revisarse si hace pensar que Relevo obliga a actuar o detecta un estado subjetivo.
 
@@ -755,6 +759,8 @@ Las pruebas deberán establecer si la señal recupera la intención, si el lugar
 
 # 14. Referencias
 
+Aaker, D. A. (1996). *Building strong brands*. Free Press.
+
 Apple. (s. f.). *Get started with Screen Time on iPhone*. Recuperado el 24 de agosto de 2026, de https://support.apple.com/en-ie/guide/iphone/iphb0c7313c9/ios
 
 Apple Developer. (s. f.-a). *Core Bluetooth*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/CoreBluetooth
@@ -805,7 +811,11 @@ Haliburton, L., Grüning, D. J., Riedel, F., Schmidt, A., & Terzimehić, N. (202
 
 Hermann, M., Mahler, T., de Melo, G., & Weber, M. (2007). The tangible reminder. En *Proceedings of the 3rd IET International Conference on Intelligent Environments* (pp. 144–151). Institution of Engineering and Technology. https://doi.org/10.1049/cp:20070359
 
+Karjalainen, T.-M., & Snelders, D. (2010). Designing visual recognition for the brand. *Journal of Product Innovation Management, 27*(1), 6–22. https://doi.org/10.1111/j.1540-5885.2009.00696.x
+
 Kauppinen-Räisänen, H., & Luomala, H. T. (2010). Exploring consumers’ product-specific colour meanings. *Qualitative Market Research: An International Journal, 13*(3), 287–308. https://doi.org/10.1108/13522751011053644
+
+Keller, K. L., Sternthal, B., & Tybout, A. M. (2002). Three questions you need to ask about your brand. *Harvard Business Review, 80*(9), 80–86. https://hbr.org/2002/09/three-questions-you-need-to-ask-about-your-brand
 
 Kidel Peña-Albert, A., Ingram, S., Khazaal, Y., Litrico, L., Farah, J. C., & Gillet, D. (2026). Restoring engagement in digital self-control tools using nudge reconfiguration prompts: Quasi-experimental study. *JMIR Formative Research, 10*, e85349. https://doi.org/10.2196/85349
 
@@ -833,6 +843,8 @@ Monge Roffarello, A., & De Russis, L. (2023). Achieving digital wellbeing throug
 
 Montag, C., Lachmann, B., Herrlich, M., & Zweig, K. (2019). Addictive features of social media/messenger platforms and freemium games against the background of psychological and economic theories. *International Journal of Environmental Research and Public Health, 16*(14), 2612. https://doi.org/10.3390/ijerph16142612
 
+Motta-Filho, M. A. (2021). Brand experience manual: Bridging the gap between brand strategy and customer experience. *Review of Managerial Science, 15*, 1173–1204. https://doi.org/10.1007/s11846-020-00399-9
+
 one sec. (s. f.). *Cut your screen time in half*. Recuperado el 24 de agosto de 2026, de https://one-sec.app/
 
 O’Rear, A. E., & Radvansky, G. A. (2019). Location-based prospective memory. *Quarterly Journal of Experimental Psychology, 72*(3), 491–507. https://doi.org/10.1177/1747021818758608
@@ -859,6 +871,8 @@ Tonietto, G. N., Malkoc, S. A., Reczek, R. W., & Norton, M. I. (2021). Viewing l
 
 Unpluq. (s. f.). *Unpluq: Stop scrolling. Reduce distractions. Reduce screentime*. Recuperado el 24 de agosto de 2026, de https://www.unpluq.com/
 
+Ward, E., Yang, S., Romaniuk, J., & Beal, V. (2020). Building a unique brand identity: Measuring the relative ownership potential of brand identity element types. *Journal of Brand Management, 27*, 393–407. https://doi.org/10.1057/s41262-020-00187-6
+
 Waggoner, J., Lucky, S., Redick, S., Rizki, A., & Yu, J. C. (2026). Going beyond digital libraries: A literature review of phygital user experience research methods. *International Journal on Digital Libraries, 27*(1), Artículo 1. https://doi.org/10.1007/s00799-025-00436-6
 
 World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Three flashes or below threshold*. Recuperado el 24 de agosto de 2026, de https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold
@@ -866,6 +880,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 15 de septiembre de 2026 — Estrategia de marca reconstruida
+
+- **Cambio:** el capítulo define primero el marco de referencia, la diferencia provisional y la conducta del producto; retira la frase sobre transferencia, reabre el color de marca y trata `primer paso` como hipótesis transversal.
+- **Versión anterior:** el nombre, el turquesa y el lenguaje se justificaban mediante la idea de que una intención cambiaba de soporte.
+- **Motivo:** esa explicación era abstracta y confundía arquitectura técnica, experiencia e identidad; la marca debe partir de una posición comprensible y verificable.
+- **Alcance:** se incorporan cinco referencias de marca y producto. No se acreditan comprensión, reconocimiento ni eficacia.
 
 ### 15 de septiembre de 2026 — Lenguaje y relato de marca
 

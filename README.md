@@ -51,7 +51,7 @@ La definición física más reciente se encuentra en el [estudio del testigo com
 
 El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal están documentados en [`07_validacion`](07_validacion/README.md). El [programa Android–BLE para micro:bit V2](06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) ya compila y permite comprobar matriz, sonido y silencio local sin participantes. Como la matriz integrada es roja, la fase A exige añadir y revisar una luz blanca cálida externa antes de evaluar comprensión. Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como antecedentes de mesa. Antes de usar la señal con participantes faltan acceso a la placa, instalación, montaje cálido, ensayo técnico y revisión competente. La comparación posterior permanece bloqueada hasta disponer de una notificación Android equivalente. No existen resultados de validación.
 
-La [investigación visual reiniciada](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. La primera dirección para prototipar se denomina **Presencia útil**: emplea Source Sans 3, una base neutra y verde turquesa como color de presencia cuando una intención vuelve a ser relevante. El relato plantea que una intención cambia de soporte sin cambiar de dueño. Es una hipótesis de marca y diseño, no una identidad definitiva. El logotipo tipográfico es temporal, la forma física sigue abierta y cada decisión deberá comprobarse en la aplicación, el testigo, la memoria y la comunicación del producto.
+La [investigación visual reiniciada](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. La [estrategia de marca](10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md) se construye desde la posición y la experiencia del producto: que algo que la persona quería hacer vuelva a estar presente mediante una señal situada y sin coerción. Source Sans 3, la base neutra y el verde turquesa permanecen como materiales para prototipos comparables; no son todavía la identidad definitiva. El logotipo tipográfico es temporal, la forma física sigue abierta y cada decisión deberá comprobarse en la aplicación, el testigo, la memoria y la comunicación del producto.
 
 La base metodológica del corpus quedó consolidada:
 
@@ -119,6 +119,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Síntesis de marca corregida
+
+- **Cambio:** la portada del repositorio reemplaza el relato de transferencia y el color de presencia por una estrategia basada en posición, experiencia y prueba.
+- **Versión anterior:** la síntesis presentaba el turquesa y una interpretación del nombre como fundamento provisional de marca.
+- **Motivo:** evitar que recursos expresivos anticipen una identidad que todavía no ha sido comparada.
+- **Alcance:** los materiales visuales actuales siguen disponibles para prototipos; no son una marca cerrada.
 
 ### 2026-09-15 — Lenguaje y relato de marca sincronizados
 

@@ -99,7 +99,7 @@ La pantalla más importante debe explicar el momento phygital sin competir con e
 6. acción principal coherente con la prueba;
 7. salida secundaria visible.
 
-El verde turquesa funciona como color de presencia: se utiliza en el vínculo activo o en una acción principal, no como ilustración de fondo ni como confirmación de cumplimiento. Si una persona no percibe el color, la jerarquía continúa siendo legible por texto, peso, posición y forma.
+En esta variante de prototipo, el verde turquesa se utiliza en el vínculo activo o en una acción principal, no como ilustración de fondo ni como confirmación de cumplimiento. No se presenta como color definitivo de marca. Si una persona no percibe el color, la jerarquía continúa siendo legible por texto, peso, posición y forma.
 
 ## Lenguaje de configuración
 
@@ -146,6 +146,13 @@ El color dinámico puede evaluarse más adelante. En el prototipo inicial se man
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Interfaz separada del cierre de marca
+
+- **Qué cambió:** el turquesa quedó limitado a esta variante de interfaz y `cómo podrías empezar` se mantiene como texto de prueba, no como expresión definitoria de Relevo.
+- **Cómo era antes:** la interfaz se presentaba como una manifestación directa de un relato de marca ya resuelto.
+- **Por qué se decidió:** el proyecto completo incluye producto, objeto, aplicación, comunicación y documentación; ninguna pantalla puede definir por sí sola la marca.
+- **Límite:** la especificación permite construir y comparar pantallas, pero no cierra identidad, significado cromático ni lenguaje final.
 
 ### 2026-09-15 — Lenguaje público y función de marca sincronizados
 

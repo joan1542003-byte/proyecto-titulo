@@ -35,11 +35,11 @@ Estos atributos no describen una emoción garantizada. Son criterios que pueden 
 
 ## Marca
 
-### Relato rector
+### Criterio rector
 
-La idea que vincula los soportes es **una intención cambia de soporte sin cambiar de dueño**. La aplicación recibe y organiza; el testigo lleva la señal al entorno; la decisión regresa a la persona. La continuidad de marca proviene de esa conducta, no de copiar la misma forma o el mismo color en cada soporte.
+La dirección debe hacer comprensible que algo que la persona quería hacer puede volver a estar presente sin que el sistema decida por ella. La continuidad entre aplicación, objeto y comunicación proviene primero de esa conducta: preparación voluntaria, señal breve, estado comprensible y salida disponible.
 
-La base neutra representa un sistema que permanece en segundo plano. El verde turquesa funciona provisionalmente como **color de presencia**: aparece cuando una intención preparada vuelve a ser relevante o una acción principal queda disponible. No representa calma, éxito ni cumplimiento. La relación completa se desarrolla en [semántica y relato de marca](13_semantica-y-relato-de-marca.md).
+La base neutra y el verde turquesa permanecen disponibles para construir prototipos comparables. El turquesa ya no se denomina `color de presencia` ni se presenta como color definitivo de marca. La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) exige comparar posición y experiencia antes de cerrar recursos expresivos.
 
 ### Logotipo inicial
 
@@ -51,13 +51,9 @@ La escritura en mayúsculas sostenidas se descarta para el uso habitual porque a
 
 En el prototipo, el icono de aplicación puede utilizar una `R` de la misma familia sobre el color principal. Es una solución temporal y reproducible. Un símbolo independiente solo se justifica si posteriormente mejora reconocimiento a tamaño pequeño y no se confunde con ubicación, bloqueo, alarma o reproducción de audio.
 
-### Descriptor
+### Explicación y descriptor
 
-La alternativa recomendada para la siguiente prueba es:
-
-> Una señal donde quieres empezar.
-
-La frase utiliza palabras comunes y evita introducir `primer paso` antes de definirlo. El descriptor no promete que la actividad se realizará. Debe compararse con las alternativas ya registradas antes de fijarse.
+Todavía no existe un descriptor recomendado. La primera prueba debe comprobar si una categoría familiar —`recordatorio físico preparado desde el teléfono`— ayuda a comprender el producto antes de comparar frases breves de marca. `Una señal donde quieres empezar` permanece como una alternativa del conjunto, no como decisión vigente.
 
 Para una primera explicación se utilizará una frase completa:
 
@@ -83,7 +79,7 @@ Se excluyen por ahora gradientes decorativos, tramas repetidas, alfabetos constr
 
 ### Aplicación Android
 
-La aplicación adopta componentes y comportamientos conocidos de Android. La identidad aparece en la voz, la familia tipográfica, el ritmo espacial y el color principal. Debe sentirse propia sin obligar a reaprender botones, campos, permisos o navegación.
+La aplicación adopta componentes y comportamientos conocidos de Android. La identidad puede aparecer en la voz, la familia tipográfica, el ritmo espacial y un sistema cromático todavía por decidir. Debe sentirse propia sin obligar a reaprender botones, campos, permisos o navegación.
 
 ### Testigo físico
 
@@ -120,6 +116,13 @@ La dirección avanza solo si una persona puede:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Fundamento de marca corregido
+
+- **Qué cambió:** se retiró el relato de transferencia y el turquesa volvió a ser un recurso de prototipo, no un significado de marca ya definido.
+- **Cómo era antes:** la dirección interpretaba el cambio de soporte como relato rector y llamaba `color de presencia` al acento.
+- **Por qué se decidió:** una identidad debe partir del posicionamiento y de la experiencia del producto, no de una explicación abstracta construida para justificar decisiones formales.
+- **Límite:** esta dirección sigue siendo útil para comparar interfaces, pero no representa una identidad de marca cerrada.
 
 ### 2026-09-15 — Dirección alineada con el relato de marca
 

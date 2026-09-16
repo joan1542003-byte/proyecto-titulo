@@ -99,13 +99,20 @@ Este texto separa hecho, recuperación y efecto sobre el contenido sin culpar a 
 
 ## Primera hipótesis visual para prototipar
 
-Una interfaz de baja ornamentación, basada en superficies neutras, Source Sans 3, componentes Android conocidos y un único acento verde turquesa que funciona como color de presencia. La identidad se expresará principalmente mediante la voz, el ritmo de las pantallas y la relación entre actividad, forma de comenzar y testigo. Los valores son provisionales y permiten construir material comparable; no equivalen a validación.
+Una interfaz de baja ornamentación, basada en superficies neutras, Source Sans 3, componentes Android conocidos y un único acento verde turquesa asignado a acciones o estados específicos. La identidad deberá evaluarse en la voz, el ritmo de las pantallas y la relación entre actividad, forma de comenzar y testigo. Los valores son provisionales y permiten construir material comparable; no equivalen a identidad ni validación.
 
 La hipótesis se descarta si produce una aplicación genérica difícil de reconocer, si las personas confunden estados con acciones o si la austeridad obliga a leer explicaciones extensas.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Variante de interfaz separada de la marca
+
+- **Qué cambió:** el turquesa dejó de recibir un significado narrativo y se limita a funciones observables dentro del prototipo.
+- **Cómo era antes:** se presentaba como `color de presencia` y como vínculo directo con el relato de marca.
+- **Por qué se decidió:** una interfaz es un punto de contacto del producto, no la totalidad de su marca.
+- **Límite:** los valores siguen disponibles para pruebas de uso y contraste; no cierran la identidad.
 
 ### 2026-09-15 — Lenguaje de tarea y color de presencia
 

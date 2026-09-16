@@ -18,13 +18,16 @@ La fecha de corte es el 15 de septiembre de 2026. Cuando una página cambia con 
 | Luz y sonido | ISO 24500, 24501, 24502 y 24550; Chen y Huang | Probar percepción, ambiente, intensidad y combinación de canales. |
 | Señal situada | Voit et al.; Lee et al. | Comparar soporte, presencia pasiva e intrusión sin extrapolar resultados. |
 | Simplicidad de interfaz | Choi y Lee; W3C | Reducir complejidad de tarea, información y composición. |
-| Coherencia de marca | Gregersen y Johansen; Karjalainen y Snelders; Motta-Filho; Ward et al. | Mantener una experiencia reconocible y vincular rasgos visuales con valores observables. |
+| Estrategia y posicionamiento | Aaker; Keller et al. | Separar identidad deseada de imagen percibida y definir marco, paridad y diferencia antes de diseñar expresiones. |
+| Experiencia y reconocimiento | Gregersen y Johansen; Karjalainen y Snelders; Motta-Filho; Ward et al. | Traducir la posición en conductas y rasgos observables, y medir reconocimiento antes de llamar distintivo a un elemento. |
 | Lenguaje público | Government Digital Service; Microsoft Research | Usar palabras reconocibles, comprobar su interpretación y separar vocabulario interno de tareas públicas. |
 | Acción concreta | Gollwitzer y Sheeran | Fundamentar la especificación de cómo comenzar sin asumir que `primer paso` es lenguaje de usuario. |
 | Producto y embalaje | Munari; Microsoft | Relacionar forma, producción, instrucciones y acceso físico. |
 | Categoría comercial | Google, one sec, Brick, Unpluq y Opal | Identificar convenciones de medición, pausa, bloqueo y llave física. |
 
 ## Referencias
+
+Aaker, D. A. (1996). *Building strong brands*. Free Press.
 
 Adobe Fonts. (s. f.-a). *Source Sans 3* [Fuente tipográfica]. GitHub. Recuperado el 15 de septiembre de 2026, de https://github.com/adobe-fonts/source-sans
 
@@ -90,6 +93,8 @@ Karjalainen, T.-M., & Snelders, D. (2010). Designing visual recognition for the 
 
 Kauppinen-Räisänen, H., & Luomala, H. T. (2010). Exploring consumers’ product-specific colour meanings. *Qualitative Market Research: An International Journal, 13*(3), 287–308. https://doi.org/10.1108/13522751011053644
 
+Keller, K. L., Sternthal, B., & Tybout, A. M. (2002). Three questions you need to ask about your brand. *Harvard Business Review, 80*(9), 80–86. https://hbr.org/2002/09/three-questions-you-need-to-ask-about-your-brand
+
 Labrecque, L. I., & Milne, G. R. (2012). Exciting red and competent blue: The importance of color in marketing. *Journal of the Academy of Marketing Science, 40*, 711–727. https://doi.org/10.1007/s11747-010-0245-y
 
 Lee, J. G. W., Lee, B., & Choe, E. K. (2023). Decorative, evocative, and uncanny: Reactions on ambient-to-disruptive health notifications via plant-mimicking shape-changing interfaces. In *Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems* (Article 320, pp. 1–16). Association for Computing Machinery. https://doi.org/10.1145/3544548.3581486
@@ -123,6 +128,13 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Fuentes de estrategia y posicionamiento
+
+- **Qué cambió:** se incorporaron Aaker y Keller et al. para separar identidad, imagen y posición antes de resolver lenguaje o apariencia.
+- **Cómo era antes:** las referencias respaldaban principalmente coherencia visual, experiencia, color y lenguaje.
+- **Por qué se decidió:** la marca necesita un marco estratégico previo a sus expresiones gráficas y verbales.
+- **Límite:** los modelos ordenan decisiones; no demuestran que la posición propuesta sea comprendida o relevante para las personas.
 
 ### 2026-09-15 — Fuentes de semántica, lenguaje y color de marca
 

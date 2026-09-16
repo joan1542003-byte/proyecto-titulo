@@ -2,15 +2,17 @@
 
 ## Qué debe hacer la marca
 
-La marca de Relevo debe permitir identificar el sistema, explicar su propósito y mantener una experiencia coherente entre la aplicación, el testigo, la documentación y la presentación pública. No debe compensar con personalidad gráfica una función difícil de entender.
+La marca de Relevo debe permitir identificar el sistema, explicar su propósito y mantener una experiencia coherente entre la aplicación, el testigo, la documentación y la presentación pública. No debe compensar con personalidad gráfica una función difícil de entender ni reducirse al logotipo, la interfaz o la paleta.
 
 La investigación sobre experiencia de marca advierte que la estrategia y los puntos de contacto suelen separarse. Un manual útil no se limita a colores y logotipos: traduce valores en decisiones observables dentro de la experiencia (Motta-Filho, 2021). En Relevo, la autonomía no puede aparecer solo como una palabra de presentación; debe verse en salidas claras, ausencia de castigo y control local del testigo.
 
-## Núcleo de marca propuesto
+La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) establece el orden vigente: producto, posición, experiencia, expresión y reconocimiento. Este documento desarrolla el nombre y el lenguaje dentro de ese marco.
 
-### Propósito
+## Base verbal de trabajo
 
-Ayudar a que una intención personal vuelva a estar disponible en el lugar donde puede comenzar.
+### Propósito provisional
+
+Hacer que algo que la persona quería hacer vuelva a estar presente cuando todavía puede decidir.
 
 ### Promesa prudente
 
@@ -79,9 +81,7 @@ Ventaja: plantea una escena reconocible. Riesgo: puede sonar a aplicación de re
 
 Ventaja: destaca propiedad y contexto. Riesgo: es más largo y menos directo sobre la señal.
 
-La alternativa recomendada para prototipar es **Una señal donde quieres empezar**. Describe la relación entre señal, intención y lugar sin prometer que la actividad ocurrirá. Las versiones con `primer paso` se conservan como antecedentes, no como formulación pública vigente. Ninguna es definitiva.
-
-La idea estratégica que articula nombre y comportamiento es **una intención cambia de soporte sin cambiar de dueño**. Explica el relevo entre persona, aplicación, testigo y entorno, al mismo tiempo que preserva la autonomía. Su desarrollo y sus límites están documentados en [semántica y relato de marca](13_semantica-y-relato-de-marca.md).
+Ninguna alternativa se considera recomendación definitiva. La comparación debe incluir además una explicación categorial directa —`recordatorio físico preparado desde el teléfono`— para saber si el descriptor aporta comprensión o solo añade una frase de marca. Las versiones con `primer paso` se conservan como antecedentes, no como formulación pública vigente.
 
 ## Arquitectura de nombres
 
@@ -116,7 +116,7 @@ La voz de Relevo es directa, cercana y no evaluativa. Nombra la situación antes
 
 ### Lenguaje de configuración
 
-`Primer paso` se define internamente como una acción breve, concreta y disponible que permite comenzar una actividad elegida. En la interfaz, esa definición se traduce en una pregunta comprensible:
+`Primer paso` se define internamente como una acción breve, concreta y disponible que permite comenzar una actividad elegida. Es una hipótesis transversal del producto: debe ayudar a configurar la actividad, elegir dónde ubicar el objeto y recuperar el sentido de la señal. Si no mejora esas relaciones, deberá simplificarse o retirarse. En la interfaz, su primera traducción a prueba utiliza una pregunta comprensible:
 
 | Función | Texto de interfaz |
 | --- | --- |
@@ -125,7 +125,7 @@ La voz de Relevo es directa, cercana y no evaluativa. Nombra la situación antes
 | Ayudar sin imponer | `Escribe una acción breve y concreta. Por ejemplo: ponerme las zapatillas.` |
 | Revisar la respuesta | `Cómo empezar` |
 
-Esta distinción permite conservar precisión académica sin exigir que una persona aprenda primero el vocabulario del proyecto.
+Esta distinción permite conservar precisión académica sin exigir que una persona aprenda primero el vocabulario del proyecto. Los textos de la tabla no se consideran definitivos hasta comprobarlos en tareas.
 
 ### Palabras que se evitan
 
@@ -159,6 +159,13 @@ Cada dirección de marca debe responder:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Marca reformulada desde el producto
+
+- **Qué cambió:** se retiró la frase sobre el cambio de soporte, el propósito se redactó desde la experiencia buscada y `primer paso` pasó a tratarse como hipótesis transversal del producto.
+- **Cómo era antes:** nombre, lenguaje y color se articulaban mediante una interpretación abstracta de `Relevo`, y el descriptor tenía una recomendación anticipada.
+- **Por qué se decidió:** la estrategia debe definir posición y experiencia antes de convertir una frase o un recurso visual en fundamento de marca.
+- **Límite:** nombre, descriptor y textos de configuración continúan pendientes de pruebas de comprensión, ajuste y recuerdo.
 
 ### 2026-09-15 — Separación entre lenguaje interno y lenguaje público
 

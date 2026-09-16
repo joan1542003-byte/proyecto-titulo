@@ -61,15 +61,19 @@ El orden recomendado para cualquier explicación es:
 
 ## Núcleo verbal
 
-**Titular recomendado, pendiente de prueba**
+La comunicación todavía no tiene un eslogan cerrado. Antes de elegirlo debe comprobarse que la audiencia entienda la categoría, el funcionamiento y la diferencia. D-061 reemplaza la recomendación anticipada de D-060.
 
-> **Una señal donde quieres empezar.**
+**Explicación principal para comparar**
 
-Este es el descriptor público vigente según D-046 y D-060. La frase anterior, «Que una intención vuelva a tener lugar», se conserva como antecedente expresivo y no gobierna piezas nuevas. El descriptor se acompaña de una bajada que explique actividad, forma de comenzar y decisión.
+> Relevo es un recordatorio físico que preparas desde el teléfono. Lo dejas cerca de una actividad que quieres tener presente y, cuando se cumple la condición que elegiste, emite una señal breve. Tú decides qué hacer después.
 
-**Bajada pública**
+Esta formulación empieza por una categoría familiar y luego muestra la relación particular entre actividad, objeto y lugar. Debe compararse con versiones que no utilicen `recordatorio`, porque la palabra podría reducir el proyecto a una alarma o sugerir un problema de memoria.
 
-> Relevo busca ayudar a volver a tener presente algo que querías hacer cuando el teléfono sigue ocupando tu atención. Lo preparas en la aplicación y una señal breve aparece junto al lugar donde puedes comenzar. Tú decides si actuar, continuar o cambiar de idea.
+**Núcleo interno de trabajo**
+
+> Que algo que querías hacer vuelva a estar presente.
+
+No es un titular obligatorio. Sirve para evaluar si el producto, su lenguaje y su comunicación sostienen el mismo propósito.
 
 **Descriptor técnico vigente**
 
@@ -79,7 +83,7 @@ El descriptor sirve para fichas, créditos y contextos académicos. No debería 
 
 **Explicación en 10 segundos**
 
-> Relevo busca volver a poner una intención en el lugar donde puede empezar. Una señal breve la hace presente fuera del teléfono y tú decides qué hacer.
+> Relevo te permite preparar desde el teléfono una señal física para algo que quieres hacer. Cuando el objeto avisa, tú decides si atenderlo o continuar.
 
 **Explicación en 30 segundos**
 
@@ -202,9 +206,9 @@ La respuesta honesta tiene dos partes:
 
 ### Una diapositiva
 
-- **Título:** `Una señal donde quieres empezar.`
+- **Título:** `Relevo`
 - **Imagen o diagrama:** una escena con la actividad digital en un plano y el primer paso en otro; el objeto solo aparece donde cumple una función.
-- **Bajada:** `Relevo emite una señal breve de luz y sonido junto al lugar donde puede comenzar una actividad elegida. La persona decide qué hacer.`
+- **Bajada:** `Un recordatorio físico preparado desde el teléfono para que algo que querías hacer vuelva a estar presente. La persona decide qué hacer.`
 - **Pie:** `Propuesta phygital en desarrollo. Su ventaja frente a una notificación todavía debe validarse.`
 
 ### Relato de cinco minutos
@@ -406,6 +410,13 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Comunicación alineada con D-061
+
+- **Cambio:** se retiró el descriptor recomendado y se incorporó una explicación categorial directa, seguida de una diferencia verificable.
+- **Versión anterior:** `Una señal donde quieres empezar` gobernaba la comunicación pública antes de probar su comprensión.
+- **Motivo:** una frase de marca no debe sustituir la explicación del producto ni adelantarse al posicionamiento.
+- **Alcance:** las formulaciones nuevas son materiales de comparación, no mensajes validados.
 
 ### 2026-09-15 — Lenguaje público y relato de marca
 

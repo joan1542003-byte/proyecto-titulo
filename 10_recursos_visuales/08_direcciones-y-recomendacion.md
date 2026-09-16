@@ -133,7 +133,7 @@ Esta dirección evita convertir la señal en decoración y permite que la identi
 ### Marca
 
 - mantener un logotipo tipográfico como punto de partida;
-- probar `Una señal donde quieres empezar` frente a las demás alternativas de descriptor;
+- comparar explicaciones de categoría y diferencia antes de seleccionar un descriptor;
 - construir reconocimiento mediante voz, jerarquía y demostración;
 - aplazar símbolo independiente hasta comprobar su necesidad.
 
@@ -159,6 +159,13 @@ La recomendación debe revisarse si ocurre alguno de estos resultados:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Recomendación visual separada de la marca definitiva
+
+- **Qué cambió:** la dirección conserva su utilidad para prototipar, pero deja de fijar un descriptor o un significado cromático de marca.
+- **Cómo era antes:** la recomendación priorizaba `Una señal donde quieres empezar` y articulaba la dirección desde una decisión verbal anticipada.
+- **Por qué se decidió:** el posicionamiento y la comprensión del producto deben resolverse antes de cerrar sus expresiones.
+- **Límite:** la dirección permite comparar composiciones e interfaz; no valida identidad ni reconocimiento.
 
 ### 2026-09-15 — Descriptor y relato sincronizados
 

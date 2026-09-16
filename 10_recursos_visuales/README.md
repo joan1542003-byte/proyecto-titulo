@@ -35,7 +35,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 10. [Dirección visual provisional](10_direccion-visual-provisional.md)
 11. [Sistema cromático y tipográfico provisional](11_sistema-cromatico-y-tipografico-provisional.md)
 12. [Especificación provisional de interfaz](12_especificacion-ui-provisional.md)
-13. [Semántica y relato de marca](13_semantica-y-relato-de-marca.md)
+13. [Estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md)
 14. [Referencias](referencias.md)
 15. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -44,11 +44,11 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 | Tema | Estado al 11 de septiembre | Consecuencia |
 | --- | --- | --- |
 | Nombre académico `Relevo` | Se conserva de manera provisional | Puede usarse en la memoria y el prototipo; falta despeje comercial y prueba de comprensión. |
-| Descriptor | `Una señal donde quieres empezar`, en prueba | Sustituye el uso público de `primer paso`; no se fija como frase definitiva hasta comprobar su comprensión. |
+| Posicionamiento y descriptor | Estrategia definida; expresiones en prueba | Primero se compara la explicación categorial y la diferencia; ningún descriptor está fijado. |
 | Arquitectura de la aplicación | Estable como wireframe v1 | La estructura puede informar la nueva interfaz; su apariencia anterior no se considera vigente. |
 | Forma del testigo | Abierta | No se debe presentar una carcasa específica como producto resuelto. |
 | Luz y sonido | Son canales previstos, no parámetros cerrados | Intensidad, duración, patrón y convivencia requieren pruebas situadas. |
-| Paleta y tipografía | Seleccionadas de manera provisional | Source Sans 3 y una paleta neutra con verde turquesa como color de presencia permiten construir prototipos; falta validar reconocimiento y significado de marca. |
+| Paleta y tipografía | Materiales de prototipo, no identidad cerrada | Source Sans 3 y la paleta existente permiten construir comparaciones; no son todavía tipografía ni colores definitivos de marca. |
 | Logotipo e iconografía | Solución temporal | Se usa un logotipo tipográfico y un identificador reducido mientras se prueba el nombre y se determina si un símbolo aporta valor. |
 | Sistema editorial | Abierto | Debe construirse con texto real de la memoria y comprobar lectura, jerarquía y reproducción. |
 
@@ -65,6 +65,13 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Estrategia de marca reconstruida
+
+- **Qué cambió:** el índice incorpora una estrategia basada en posición, experiencia y reconocimiento; el descriptor y el turquesa dejaron de presentarse como decisiones de marca recomendadas.
+- **Cómo era antes:** una frase sobre transferencia entre soportes conectaba nombre, lenguaje y color.
+- **Por qué se decidió:** esa frase describía la arquitectura de manera abstracta y no ofrecía una base suficiente para una marca de producto.
+- **Límite:** la carpeta contiene materiales utilizables para prototipos, pero la identidad final permanece abierta a comparación y prueba.
 
 ### 2026-09-15 — Lenguaje y relato de marca incorporados
 

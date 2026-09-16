@@ -78,7 +78,7 @@ Las pruebas visuales acompañan el desarrollo técnico. No deben retrasar la pue
 
 | Decisión | Evidencia de entrada | Prueba | Documento que se actualizará |
 | --- | --- | --- | --- |
-| Descriptor y lenguaje | Problema, corpus P1–P8, propuesta y análisis de categoría | Paráfrasis, tarea y recuerdo | `06_marca-y-lenguaje.md` y `13_semantica-y-relato-de-marca.md` |
+| Posicionamiento, descriptor y lenguaje | Problema, corpus P1–P8, propuesta y análisis de categoría | Clasificación, paráfrasis, tarea y recuerdo | `06_marca-y-lenguaje.md` y `13_estrategia-de-marca-desde-el-producto.md` |
 | Paleta de marca | Roles, accesibilidad, categoría y relato de marca | Contraste, asociaciones, reconocimiento sin color y percepción aplicada | `11_sistema-cromatico-y-tipografico-provisional.md` |
 | Tipografía Android | Lectura, español, plataforma | Texto ampliado + tareas | Futura especificación de interfaz |
 | Tipografía editorial | Lectura prolongada y APA 7 | Maqueta real | Futura especificación editorial |

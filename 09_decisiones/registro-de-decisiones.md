@@ -558,10 +558,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Decisión:** conservar `primer paso` como concepto analítico definido, pero utilizar `¿Cómo podrías empezar?` y `Cómo empezar` en la interfaz. El descriptor que pasa a prueba es `Una señal donde quieres empezar`. La identidad se articula mediante la idea `una intención cambia de soporte sin cambiar de dueño`; la base neutra representa el segundo plano y el verde turquesa funciona provisionalmente como color de presencia cuando una intención preparada vuelve a ser relevante.
 - **Fundamento:** `primer paso` no aparece en el corpus P1–P8 y admite interpretaciones diferentes sin explicación. El turquesa estaba justificado técnicamente, pero no como parte de una marca. La nueva decisión relaciona nombre, lenguaje, conducta y color sin atribuir al matiz calma, bienestar o eficacia universal.
 - **Consecuencia:** marca, aplicación, estados y señal física se documentan como capas relacionadas, pero no idénticas. La interfaz utiliza lenguaje de tarea; la memoria mantiene precisión conceptual; el color debe sostener jerarquía y reconocimiento sin ser el único portador de significado.
-- **Estado:** vigente como hipótesis estratégica para prototipar; requiere pruebas de comprensión, asociaciones cromáticas, reconocimiento sin color y disponibilidad comercial del nombre.
-- **Documentación:** [semántica y relato de marca](../10_recursos_visuales/13_semantica-y-relato-de-marca.md), [marca y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md), [sistema cromático](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [plan de pruebas](../10_recursos_visuales/09_plan-de-pruebas.md).
+- **Estado:** reemplazada por D-061. Se conserva para documentar el razonamiento descartado.
+- **Documentación:** [estrategia de marca desde el producto](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md), [marca y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md), [sistema cromático](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [plan de pruebas](../10_recursos_visuales/09_plan-de-pruebas.md).
+
+## D-061 — La estrategia de marca precede a su expresión visual
+
+- **Fecha:** 2026-09-15.
+- **Decisión:** desarrollar la marca en el orden producto, posición, experiencia, expresión y reconocimiento. El núcleo de trabajo es que algo que la persona quería hacer vuelva a estar presente. `Primer paso` se conserva como hipótesis transversal del producto, no como territorio de marca. `Relevo` permanece provisional y deja de justificarse mediante una transferencia entre soportes. El turquesa y Source Sans 3 continúan como materiales para prototipos, no como identidad definitiva.
+- **Fundamento:** una marca necesita definir el marco en que será comprendida, los aspectos que comparte con la categoría y una diferencia relevante antes de resolver relatos, descriptores o recursos formales. La conducta del producto debe expresar autonomía y claridad en cada punto de contacto; un color o una frase no pueden sustituir esa experiencia.
+- **Alternativa descartada:** construir un relato a partir del nombre y asignar después ese relato al color. Esta ruta producía una explicación abstracta y circular.
+- **Consecuencia:** la primera comunicación probará una categoría familiar —recordatorio físico preparado desde el teléfono— seguida de la diferencia situada y no coercitiva. Descriptores, color, símbolo, tipografía y sonido se compararán como candidatos.
+- **Condición de revisión:** pruebas de comprensión de categoría, relevancia de la diferencia, asociaciones del nombre, relación percibida y reconocimiento de elementos.
+- **Documentación:** [estrategia de marca desde el producto](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md), [marca y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [referencias visuales](../10_recursos_visuales/referencias.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — D-061
+
+- **Qué cambió:** D-060 quedó reemplazada y se registró una secuencia estratégica anterior al cierre visual.
+- **Cómo era antes:** la idea de transferencia entre soportes justificaba nombre, descriptor y turquesa.
+- **Por qué se decidió:** esa explicación no hacía comprensible el valor del producto y trataba recursos provisionales como consecuencias inevitables de la marca.
+- **Límite:** D-061 define qué comparar; no declara resueltos el nombre, el posicionamiento público ni la identidad.
 
 ### 2026-09-15 — D-060
 

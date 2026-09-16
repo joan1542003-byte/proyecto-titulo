@@ -70,7 +70,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
-- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) registra 15.274 en la versión actual.
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) registra 15.415 en la versión actual.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -84,6 +84,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-15 — Conteo posterior a la estrategia de marca
+
+- **Cambio:** la entrada registra 15.415 palabras académicas y 59 referencias.
+- **Versión anterior:** informaba 15.274 palabras y 54 referencias antes de reconstruir el posicionamiento y la experiencia de marca.
+- **Motivo:** conservar un control reproducible y sincronizado con la memoria vigente.
+- **Alcance:** no se incorporaron resultados; el cambio corresponde a fundamentación y corrección conceptual.
 
 ### 2026-09-15 — Conteo posterior a la revisión de marca
 

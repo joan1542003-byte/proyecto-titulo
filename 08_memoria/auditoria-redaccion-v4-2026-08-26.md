@@ -27,20 +27,20 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-**Objetivo del autor:** aproximadamente 15.000 palabras del texto académico, sin bibliografía. El segmento operativo elegido comprende preliminares y capítulos 1–13; el registro de cambios es documentación administrativa y también se excluye. La versión actual contiene **15.274 palabras** en ese segmento, frente a 17.920 de la revisión anterior: se redujeron 2.646 palabras.
+**Objetivo del autor:** aproximadamente 15.000 palabras del texto académico, sin bibliografía. El segmento operativo elegido comprende preliminares y capítulos 1–13; el registro de cambios es documentación administrativa y también se excluye. La versión actual contiene **15.415 palabras** en ese segmento, frente a 17.920 de la revisión anterior: se redujeron 2.505 palabras.
 
 El método se mantiene: separación por espacios en blanco del Markdown sin renderizar (`str.split` de Python). Incluye títulos, citas y texto de tablas; los símbolos de Markdown separados por espacios también pueden contarse como unidades. Por eso es un control editorial reproducible y aproximado, no una equivalencia exacta con el contador de Word.
 
 | Segmento | Delimitación | Palabras | Relación con el objetivo |
 | --- | --- | ---: | --- |
 | Preliminares | Inicio hasta antes de `# 1. Motivación personal` | 668 | Incluidos. |
-| Capítulos 1–13 | Desde `# 1. Motivación personal` hasta antes de `# 14. Referencias` | 14.606 | Incluidos. |
-| **Texto académico** | Inicio hasta antes de referencias | **15.274** | **Conteo utilizado para el límite aproximado.** |
-| Bibliografía | Desde referencias hasta antes de `## Registro de cambios` | 1.286 | Excluida. |
-| Registro administrativo | Desde `## Registro de cambios` hasta el final | 2.892 | Excluido. |
-| Archivo completo | Todo el Markdown | 19.452 | No equivale a la extensión académica. |
+| Capítulos 1–13 | Desde `# 1. Motivación personal` hasta antes de `# 14. Referencias` | 14.747 | Incluidos. |
+| **Texto académico** | Inicio hasta antes de referencias | **15.415** | **Conteo utilizado para el límite aproximado.** |
+| Bibliografía | Desde referencias hasta antes de `## Registro de cambios` | 1.395 | Excluida. |
+| Registro administrativo | Desde `## Registro de cambios` hasta el final | 3.000 | Excluido. |
+| Archivo completo | Todo el Markdown | 19.810 | No equivale a la extensión académica. |
 
-La [pauta institucional documentada](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md) recomienda 15.000–20.000 palabras y rechaza el relleno. Este control adopta la delimitación anterior para responder a la petición del autor. Los capítulos 1–13 por sí solos contienen 14.606; no se afirma que alcancen 15.000 si se excluyen también los preliminares. Antes de una entrega formal se deberá aplicar el criterio de cómputo que confirme la institución.
+La [pauta institucional documentada](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md) recomienda 15.000–20.000 palabras y rechaza el relleno. Este control adopta la delimitación anterior para responder a la petición del autor. Los capítulos 1–13 por sí solos contienen 14.747; no se afirma que alcancen 15.000 si se excluyen también los preliminares. Antes de una entrega formal se deberá aplicar el criterio de cómputo que confirme la institución.
 
 Para los límites por apartado se cuenta solo su prosa: se excluyen encabezados, palabras clave y el apartado siguiente. El resumen y el abstract mantienen correspondencia de contenido. La tabla usa ese criterio uniforme, que reemplaza los conteos aproximados previos.
 
@@ -111,6 +111,13 @@ La comprobación de navegación revisa rutas locales y los destinos de los nuevo
 ---
 
 ## Registro de cambios
+
+### 2026-09-15 — Conteo posterior a la reconstrucción de marca
+
+- **Cambio:** se actualizaron los conteos a 15.415 palabras académicas, 14.747 en capítulos 1–13 y 19.810 en el archivo completo.
+- **Versión anterior:** el control registraba 15.274, 14.606 y 19.452 palabras, respectivamente.
+- **Motivo:** el capítulo 11 reemplazó el relato abstracto por una estrategia de posicionamiento y experiencia, e incorporó cinco referencias.
+- **Alcance:** el método y las exclusiones no cambian; la revisión no añade resultados de validación.
 
 ### 2026-09-15 — Conteo posterior a la revisión de lenguaje y marca
 
