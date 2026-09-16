@@ -1,7 +1,7 @@
 # Auditoría de redacción y estructura — memoria v4
 
 **Fecha de creación:** 26 de agosto de 2026
-**Último control:** 15 de septiembre de 2026
+**Último control:** 16 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 
 ## Resultado
@@ -27,20 +27,20 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-**Objetivo del autor:** aproximadamente 15.000 palabras del texto académico, sin bibliografía. El segmento operativo elegido comprende preliminares y capítulos 1–13; el registro de cambios es documentación administrativa y también se excluye. La versión actual contiene **15.415 palabras** en ese segmento, frente a 17.920 de la revisión anterior: se redujeron 2.505 palabras.
+**Objetivo del autor:** aproximadamente 15.000 palabras del texto académico, sin bibliografía. El segmento operativo elegido comprende preliminares y capítulos 1–13; el registro de cambios es documentación administrativa y también se excluye. La versión actual contiene **15.480 palabras** en ese segmento, frente a 17.920 de la revisión anterior: se redujeron 2.440 palabras.
 
 El método se mantiene: separación por espacios en blanco del Markdown sin renderizar (`str.split` de Python). Incluye títulos, citas y texto de tablas; los símbolos de Markdown separados por espacios también pueden contarse como unidades. Por eso es un control editorial reproducible y aproximado, no una equivalencia exacta con el contador de Word.
 
 | Segmento | Delimitación | Palabras | Relación con el objetivo |
 | --- | --- | ---: | --- |
 | Preliminares | Inicio hasta antes de `# 1. Motivación personal` | 668 | Incluidos. |
-| Capítulos 1–13 | Desde `# 1. Motivación personal` hasta antes de `# 14. Referencias` | 14.747 | Incluidos. |
-| **Texto académico** | Inicio hasta antes de referencias | **15.415** | **Conteo utilizado para el límite aproximado.** |
+| Capítulos 1–13 | Desde `# 1. Motivación personal` hasta antes de `# 14. Referencias` | 14.812 | Incluidos. |
+| **Texto académico** | Inicio hasta antes de referencias | **15.480** | **Conteo utilizado para el límite aproximado.** |
 | Bibliografía | Desde referencias hasta antes de `## Registro de cambios` | 1.395 | Excluida. |
-| Registro administrativo | Desde `## Registro de cambios` hasta el final | 3.000 | Excluido. |
-| Archivo completo | Todo el Markdown | 19.810 | No equivale a la extensión académica. |
+| Registro administrativo | Desde `## Registro de cambios` hasta el final | 3.100 | Excluido. |
+| Archivo completo | Todo el Markdown | 19.975 | No equivale a la extensión académica. |
 
-La [pauta institucional documentada](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md) recomienda 15.000–20.000 palabras y rechaza el relleno. Este control adopta la delimitación anterior para responder a la petición del autor. Los capítulos 1–13 por sí solos contienen 14.747; no se afirma que alcancen 15.000 si se excluyen también los preliminares. Antes de una entrega formal se deberá aplicar el criterio de cómputo que confirme la institución.
+La [pauta institucional documentada](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md) recomienda 15.000–20.000 palabras y rechaza el relleno. Este control adopta la delimitación anterior para responder a la petición del autor. Los capítulos 1–13 por sí solos contienen 14.812; no se afirma que alcancen 15.000 si se excluyen también los preliminares. Antes de una entrega formal se deberá aplicar el criterio de cómputo que confirme la institución.
 
 Para los límites por apartado se cuenta solo su prosa: se excluyen encabezados, palabras clave y el apartado siguiente. El resumen y el abstract mantienen correspondencia de contenido. La tabla usa ese criterio uniforme, que reemplaza los conteos aproximados previos.
 
@@ -92,7 +92,7 @@ Se revisaron conectores y repeticiones después de agrupar los textos. Se explic
 
 ## Control de APA 7
 
-La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) registra 52 entradas. Se preserva la auditoría previa de 51 referencias y se verifica la nueva cita de Gibbons (2017) en [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte); esta actualización no repite la evaluación del contenido de todas las fuentes. Se corrigieron el orden de una cita parentética, dos posiciones alfabéticas y los sufijos de obras con la misma autoría y sin fecha. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
+La [matriz de correspondencia](matriz-citas-referencias-v4-2026-08-27.md) registra 59 entradas. Las incorporaciones más recientes fundamentan identidad, posicionamiento, experiencia y reconocimiento de marca. Esta actualización comprueba correspondencia formal y no repite la evaluación del contenido de todas las fuentes. Las afirmaciones comerciales continúan diferenciadas de la evidencia académica.
 
 ## Control de trazabilidad de criterios
 
@@ -100,7 +100,7 @@ La [matriz de trazabilidad](matriz-trazabilidad-criterios-v4-2026-08-27.md) rela
 
 ## Verificación editorial vigente
 
-Se comprobó que los catorce títulos de capítulo mantienen su orden, que no quedan subtítulos numéricos ni un tercer nivel en el cuerpo, y que las 52 entradas bibliográficas permanecen idénticas. Se conservaron las 84 citas entre paréntesis que contienen fecha, la pregunta de investigación, la hipótesis y los parámetros del protocolo. Los seis apartados con límites particulares cumplen sus rangos. Los registros históricos de los documentos modificados permanecen íntegros.
+Se comprobó que los catorce títulos de capítulo mantienen su orden, que no quedan subtítulos numéricos ni un tercer nivel en el cuerpo, y que las 59 entradas bibliográficas poseen correspondencia en la matriz. Se conservaron la pregunta de investigación, la hipótesis y los parámetros del protocolo. Los seis apartados con límites particulares cumplen sus rangos. Los registros históricos de los documentos modificados permanecen íntegros.
 
 La comprobación de navegación revisa rutas locales y los destinos de los nuevos enlaces a títulos de la memoria. La revisión de escritura comprueba conexiones y repeticiones; no constituye una prueba de comprensión con lectores externos.
 
@@ -111,6 +111,13 @@ La comprobación de navegación revisa rutas locales y los destinos de los nuevo
 ---
 
 ## Registro de cambios
+
+### 2026-09-16 — Conteo y correspondencia sincronizados
+
+- **Cambio:** el control registra 15.480 palabras académicas, 14.812 en capítulos 1–13, 19.975 en el archivo completo y 59 referencias.
+- **Versión anterior:** registraba 15.415, 14.747, 19.810 y una comprobación bibliográfica anterior al cierre de marca.
+- **Motivo:** sincronizar la auditoría con las decisiones incorporadas al capítulo 11 y con la matriz de correspondencia.
+- **Alcance:** no se añadieron resultados empíricos; cambió la fundamentación y la especificación del sistema de marca.
 
 ### 2026-09-15 — Conteo posterior a la reconstrucción de marca
 

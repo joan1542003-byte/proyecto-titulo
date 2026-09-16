@@ -138,32 +138,32 @@ El rol del diseño quedó entendido como articular problema, evidencia, experien
 
 ## Naming y lenguaje
 
-**Relevo** se conserva como nombre académico provisional por su brevedad y pronunciación. Ya no se fuerza una interpretación literal del nombre: antes de usarlo comercialmente requiere búsqueda de marcas semejantes y pruebas de asociaciones, comprensión y recuerdo.
+**Relevo** es el nombre definitivo del proyecto de título por su brevedad, pronunciación y capacidad de adquirir asociaciones mediante la experiencia. No se fuerza una interpretación literal del nombre. Una eventual comercialización requeriría una búsqueda jurídica separada.
 
 La arquitectura de nombres quedó así:
 
-- **aplicación Relevo:** configura y conserva la intención;
-- **testigo Relevo:** objeto que la mantiene presente sin fingir que es inteligente;
-- **ciclo:** unidad de uso desde el armado hasta el cierre;
+- **aplicación Relevo:** configura y conserva la actividad;
+- **dispositivo Relevo:** objeto que emite la señal; `testigo` se reserva para el desarrollo académico y técnico;
+- **recordatorio activo:** unidad pública de uso; `ciclo` se mantiene en la documentación técnica;
 - **señal:** manifestación breve de luz y sonido vinculada al lugar.
 
-Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
+En textos dirigidos al público se utiliza **dispositivo Relevo**, porque permite comprender el componente sin aprender terminología propia. **Testigo** conserva utilidad interna para describir que el objeto porta una señal preparada, pero se define antes de utilizarlo.
 
-No existe un descriptor definitivo. La primera explicación a comparar presenta a Relevo como un recordatorio físico preparado desde el teléfono y añade su diferencia situada y no coercitiva. `Primer paso` se mantiene como hipótesis transversal: debe aportar a la configuración, la ubicación y la recuperación; la interfaz compara formulaciones cotidianas como `¿Cómo podrías empezar?`. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [estrategia de marca desde el producto](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md).
+La frase de marca es **Hazle lugar a lo que quieres hacer.** El descriptor es **Un recordatorio físico preparado desde el teléfono.** La primera expresa la relación con la actividad y el lugar; el segundo aclara la categoría. `Primer paso` se mantiene como concepto analítico y la interfaz utiliza `¿Cómo podrías empezar?`. Ver [sistema de marca vigente](../10_recursos_visuales/14_sistema-de-marca-vigente.md), [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [estrategia de marca](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md).
 
-## Estado de la investigación visual
+## Sistema visual vigente
 
 El 11 de septiembre se retiró el sistema gráfico anterior y se reinició el estudio desde la función. La nueva pregunta es cómo comunicar una ayuda breve y voluntaria sin parecer un sistema de vigilancia, bloqueo o productividad obligatoria.
 
-- La aplicación conservará la arquitectura del wireframe v1, pero comparará la jerarquía y los componentes de la primera dirección con alternativas de control.
+- La aplicación conserva la arquitectura del wireframe v1 y aplica patrones Android reconocibles.
 - Se diseñarán temas claro y oscuro siguiendo la preferencia del sistema; ninguno será la identidad exclusiva.
-- La primera paleta de prueba combina fondos neutros con verde turquesa. El acento cumple una función de interfaz en esa variante; no es todavía color definitivo de marca ni posee un relato propio.
+- La paleta combina fondos neutros con verde Relevo `#006B5F`; `#72DBC7` conserva el acento en tema oscuro.
 - La señal física se estudiará como comportamiento perceptible; su color no tiene que copiar el acento de la aplicación.
 - El testigo comparará formas reales antes de cerrar carcasa, material o instalación.
 - La memoria priorizará lectura, evidencia y navegación, sin repetir un motivo decorativo en todas las páginas.
-- La marca comenzará con un logotipo tipográfico temporal en Source Sans 3; un símbolo independiente solo se desarrollará si resuelve una necesidad de reconocimiento.
+- La marca utiliza un logotipo tipográfico en Source Sans 3 y una `R` como identificador reducido. No necesita un símbolo adicional.
 
-La primera dirección para prototipar se denomina **Presencia útil**. Se comporta como una herramienta personal que permanece en segundo plano y aparece con claridad cuando hace falta. Utiliza baja ornamentación, lenguaje directo, jerarquías claras y un solo énfasis principal por pantalla o pieza. No es una identidad validada. Ver [dirección provisional](../10_recursos_visuales/10_direccion-visual-provisional.md), [sistema cromático y tipográfico](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [especificación de interfaz](../10_recursos_visuales/12_especificacion-ui-provisional.md).
+La dirección se rige por **un énfasis localizado**: baja ornamentación, lenguaje directo, jerarquías claras y un solo foco principal por pantalla o pieza. Es una identidad decidida para producir el proyecto, aunque su comprensión y desempeño deben comprobarse. Ver [sistema de marca vigente](../10_recursos_visuales/14_sistema-de-marca-vigente.md), [dirección visual](../10_recursos_visuales/10_direccion-visual-provisional.md), [sistema cromático y tipográfico](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [especificación de interfaz](../10_recursos_visuales/12_especificacion-ui-provisional.md).
 
 ## Cómo se ha implementado hasta ahora
 
@@ -205,7 +205,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
 | Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
-| Nombre provisional, investigación visual y primera dirección especificada. | Probar descriptor, jerarquía, tipografía, paleta y forma; ajustar la especificación y definir después logotipo, material, difusor y señal. | [Dirección visual](../10_recursos_visuales/10_direccion-visual-provisional.md) · [Sistema base](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) |
+| Nombre, mensaje y sistema visual cerrados para el proyecto. | Aplicarlos de forma consistente y comprobar comprensión, contraste y reproducción; ajustar solo ante un problema demostrado. | [Sistema de marca](../10_recursos_visuales/14_sistema-de-marca-vigente.md) |
 | Productos terminados y plataformas comparados; programa micro:bit compilado como respaldo. | Comprar dos iTag, inspeccionarlos y registrar resultados. Usar micro:bit solo si ambos fallan; completar la lista XIAO únicamente si la evidencia justifica una integración propia. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 | Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
@@ -229,7 +229,7 @@ La encuesta complementaria mantiene una fecha estimada y condicionada en su [fic
 
 ## Cierre
 
-Desde el examen, Relevo pasó de ser una idea difícil de leer a tener un problema acotado, usuarios situacionales, investigación trazable, estado del arte, propuesta phygital, flujos separados, nombre provisional, criterios visuales, costos preliminares y un plan de validación.
+Desde el examen, Relevo pasó de ser una idea difícil de leer a tener un problema acotado, usuarios situacionales, investigación trazable, estado del arte, propuesta phygital, flujos separados, identidad definida, costos preliminares y un plan de validación.
 
 La pregunta que queda es la más importante: **¿el testigo físico situado recupera una intención de una manera más clara o pertinente que una notificación digital, sin aumentar demasiado la carga, la intrusión o los problemas de accesibilidad?**
 
@@ -257,6 +257,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Identidad y comunicación cerradas
+
+- **Qué cambió:** el resumen fija nombre, frase, descriptor, arquitectura verbal, logotipo, tipografía, paleta y regla visual.
+- **Cómo era antes:** esos elementos permanecían como candidatos o recursos provisionales.
+- **Por qué se decidió:** la fase actual exige producir resultados coherentes en lugar de seguir acumulando alternativas.
+- **Límite:** las decisiones pueden corregirse ante evidencia concreta; no equivalen a resultados con usuarios ni a cierre técnico del dispositivo.
 
 ### 2026-09-15 — Estrategia de marca sincronizada
 

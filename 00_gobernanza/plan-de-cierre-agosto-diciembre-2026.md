@@ -2,7 +2,7 @@
 
 **Fecha de planificación:** 2 de septiembre de 2026
 
-**Última revisión de estado:** 15 de septiembre de 2026
+**Última revisión de estado:** 16 de septiembre de 2026
 
 **Cierre total interno:** 15 de noviembre de 2026
 
@@ -18,7 +18,7 @@ La meta es llegar al 31 de octubre con el proyecto prácticamente terminado y al
 
 ## Etapa actual
 
-Relevo se encuentra en una etapa de **transición desde el wireframe v1 hacia la construcción del prototipo**. El recorrido mínimo se congeló el 9 de septiembre y se conserva como base estructural. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. Después del reinicio visual del 11 de septiembre, el proyecto cuenta con una [primera dirección especificada](../10_recursos_visuales/10_direccion-visual-provisional.md) para producir comparaciones. Source Sans 3 y la paleta neutra con verde turquesa son materiales de prototipo, no identidad cerrada. La [estrategia de marca](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md) parte ahora del posicionamiento y de la experiencia del producto. El nombre, el descriptor, la tipografía, el color y la forma definitivos siguen abiertos. La memoria permanece estructuralmente avanzada.
+Relevo se encuentra en una etapa de **construcción y comprobación**. El recorrido mínimo se congeló el 9 de septiembre y se conserva como base estructural. La investigación permite sostener el problema, los usuarios, la oportunidad y la arquitectura phygital. El [sistema de marca vigente](../10_recursos_visuales/14_sistema-de-marca-vigente.md) cierra nombre, categoría, frase, descriptor, Source Sans 3, paleta verde-neutra, logotipo y regla de énfasis. La forma física y los parámetros de luz y sonido se deciden mediante construcción y prueba, no mediante nuevas exploraciones de identidad. La memoria permanece estructuralmente avanzada.
 
 El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. El programa mínimo para micro:bit V2 ya compila y dispone de un archivo instalable. Todavía faltan acceso a la placa, instalación, conexión medida, incorporación de una luz blanca cálida externa, ensayo y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden cerrar el wireframe.
 
@@ -34,7 +34,7 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Estado del arte y mercado | Avanzado con corte temporal | Corpus comparativo, mecanismos, límites y oportunidad de Relevo. | Vigilancia breve en octubre; no rehacer el estudio sin una razón concreta. |
 | Memoria | Avanzada, no final | Estructura v4, extensión, APA 7, trazabilidad y anexos preparados. | Incorporar decisiones, resultados, límites, factibilidad y evidencia final. |
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
-| Investigación visual | Criterios definidos | Estudio escrito de aplicación, testigo, marca, producto y memoria; tres direcciones comparables y una recomendación provisional. | Prototipar alternativas, probar comprensión y legibilidad, y solo entonces cerrar especificaciones. |
+| Sistema visual | Cerrado para producción | Nombre, mensaje, tipografía, paleta, logotipo y reglas por soporte documentados. | Aplicar el sistema y corregir solo problemas demostrados de comprensión, accesibilidad o reproducción. |
 | Prototipo Android | Preparado para construcción | Plataforma justificada, wireframe v1 congelado, recorrido mínimo y backlog definidos. | Construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
 | Testigo físico | Banco preparado, no ejecutado | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado y documentado. | Acceder a la placa, instalar, añadir la salida cálida, medir, revisar el montaje y completar después la integración portátil. |
 | Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Construir y revisar el prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
@@ -295,6 +295,13 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Paso a construcción y comprobación
+
+- **Qué cambió:** el plan deja de ubicar a Relevo entre wireframe y exploración visual; registra el cierre del sistema de marca y concentra el trabajo en construir, comprobar y documentar.
+- **Cómo era antes:** nombre, descriptor, tipografía y paleta seguían abiertos, y el área visual exigía comparar alternativas antes de cerrar.
+- **Por qué se decidió:** la etapa actual necesita resultados verificables y una dirección consistente.
+- **Límite:** forma, integración, señal y eficacia continúan sujetas a evidencia real.
 
 ### 2026-09-15 — Relato de marca incorporado al cierre
 

@@ -544,7 +544,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-059 — Presencia útil como primera dirección visual para prototipar
 
 - **Fecha:** 2026-09-15.
-- **Estado:** provisional; desarrolla D-057 sin cerrar la validación.
+- **Estado:** desarrollada y cerrada por D-062; se conserva como antecedente de la especificación.
 - **Decisión:** construir la primera ronda visual mediante una herramienta de baja ornamentación, un logotipo tipográfico temporal, Source Sans 3 y una base neutra con acento verde turquesa asignado por función. El color, el peso, la posición y el espacio concentrarán un único énfasis principal por pantalla o pieza.
 - **Fundamento:** Relevo debe explicar una intención, su primer paso y una señal situada sin parecer bloqueo, alarma, tratamiento o sistema de productividad. La alternativa permite usar patrones Android conocidos, mantener contraste WCAG 2.2 y reducir producción antes de saber si un símbolo o una gramática ornamental aportan reconocimiento.
 - **Alternativas consideradas:** Roboto como base nativa, Noto Sans por cobertura, Atkinson Hyperlegible Next por diferenciación de caracteres y paletas con azul o ámbar como acento. Se mantienen como controles de comparación; no se descartan por gusto.
@@ -564,6 +564,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-061 — La estrategia de marca precede a su expresión visual
 
 - **Fecha:** 2026-09-15.
+- **Estado:** vigente como fundamento metodológico; desarrollada por D-062.
 - **Decisión:** desarrollar la marca en el orden producto, posición, experiencia, expresión y reconocimiento. El núcleo de trabajo es que algo que la persona quería hacer vuelva a estar presente. `Primer paso` se conserva como hipótesis transversal del producto, no como territorio de marca. `Relevo` permanece provisional y deja de justificarse mediante una transferencia entre soportes. El turquesa y Source Sans 3 continúan como materiales para prototipos, no como identidad definitiva.
 - **Fundamento:** una marca necesita definir el marco en que será comprendida, los aspectos que comparte con la categoría y una diferencia relevante antes de resolver relatos, descriptores o recursos formales. La conducta del producto debe expresar autonomía y claridad en cada punto de contacto; un color o una frase no pueden sustituir esa experiencia.
 - **Alternativa descartada:** construir un relato a partir del nombre y asignar después ese relato al color. Esta ruta producía una explicación abstracta y circular.
@@ -571,7 +572,25 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** pruebas de comprensión de categoría, relevancia de la diferencia, asociaciones del nombre, relación percibida y reconocimiento de elementos.
 - **Documentación:** [estrategia de marca desde el producto](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md), [marca y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [referencias visuales](../10_recursos_visuales/referencias.md).
 
+## D-062 — Cerrar el sistema de marca para el proyecto de título
+
+- **Fecha:** 2026-09-16.
+- **Estado:** vigente; desarrolla D-061 y reemplaza el carácter provisional de D-059.
+- **Decisión:** adoptar `Relevo` como nombre del proyecto, la categoría `sistema phygital de recordatorio situado`, la frase `Hazle lugar a lo que quieres hacer`, el descriptor `Un recordatorio físico preparado desde el teléfono`, Source Sans 3, una paleta neutra con verde Relevo `#006B5F` y acento oscuro `#72DBC7`, un logotipo tipográfico y la regla gráfica de un énfasis localizado.
+- **Fundamento:** D-061 estableció una secuencia válida desde producto y posición hacia experiencia y expresión. La categoría y el descriptor aclaran qué es el producto; la frase relaciona actividad y lugar sin prometer cumplimiento; la tipografía y la paleta permiten aplicar una identidad legible y sobria en todos los soportes. Mantener alternativas abiertas ya no aporta información proporcional al costo de producirlas.
+- **Consecuencia:** aplicación, dispositivo, memoria y comunicación utilizan una sola arquitectura verbal y visual. `Primer paso`, `testigo` y `ciclo` se conservan en contextos académicos o técnicos; la comunicación pública utiliza `cómo empezar`, `dispositivo Relevo` y `recordatorio activo`.
+- **Condición de revisión:** solo evidencia concreta de confusión, inaccesibilidad, reproducción deficiente, incompatibilidad entre soportes o una restricción técnica. Una eventual comercialización exige despeje jurídico independiente.
+- **Límite:** cierra decisiones de diseño, no acredita reconocimiento, preferencia, comprensión, eficacia ni desempeño del producto.
+- **Documentación:** [sistema de marca vigente](../10_recursos_visuales/14_sistema-de-marca-vigente.md), [estrategia de marca](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md), [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — D-062
+
+- **Qué cambió:** se cerraron las decisiones de marca que D-059 y D-061 mantenían como materiales o expresiones provisionales.
+- **Cómo era antes:** el repositorio contaba con estrategia y alternativas suficientes, pero no con una autoridad ejecutable única.
+- **Por qué se decidió:** pasar de exploración a producción y evaluar una dirección consistente.
+- **Límite:** el cierre no se presenta como resultado con usuarios.
 
 ### 2026-09-15 — D-061
 

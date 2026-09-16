@@ -11,7 +11,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
-- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 52 entradas bibliográficas y correcciones APA aplicadas.
+- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 59 entradas bibliográficas y correcciones APA aplicadas.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
@@ -70,7 +70,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
-- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) registra 15.415 en la versión actual.
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) registra 15.480 en la versión actual.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -84,6 +84,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-16 — Conteo posterior al cierre de marca
+
+- **Cambio:** la entrada registra 15.480 palabras académicas y 59 referencias con correspondencia comprobada.
+- **Versión anterior:** informaba 15.415 palabras y enlazaba una matriz descrita como de 52 entradas.
+- **Motivo:** sincronizar el índice de la memoria con el capítulo 11 y sus controles activos.
+- **Alcance:** el texto incorpora decisiones de marca, no resultados con usuarios.
 
 ### 2026-09-15 — Conteo posterior a la estrategia de marca
 

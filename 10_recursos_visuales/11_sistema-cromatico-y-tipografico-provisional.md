@@ -1,8 +1,8 @@
-# Sistema cromático y tipográfico provisional
+# Sistema cromático y tipográfico de Relevo
 
-**Estado:** valores de trabajo para prototipos de interfaz y editorial. No constituyen una identidad de marca ni una especificación validada.
+**Estado:** especificación vigente para marca, interfaz y memoria editorial.
 
-**Fecha:** 15 de septiembre de 2026.
+**Fecha:** 16 de septiembre de 2026.
 
 ## Criterios de selección
 
@@ -74,7 +74,7 @@ La columna de lectura debe mantenerse aproximadamente entre 55 y 75 caracteres. 
 
 | Dirección | Ventaja funcional | Riesgo principal | Estado |
 | --- | --- | --- | --- |
-| Neutros + verde turquesa | se separa de error y advertencia; conserva contraste en ambos temas | puede acercarse a códigos genéricos de bienestar si se usa en exceso | recomendada para prototipar |
+| Neutros + verde turquesa | se separa de error y advertencia; conserva contraste en ambos temas | puede acercarse a códigos genéricos de bienestar si se usa en exceso | dirección adoptada con uso localizado |
 | Neutros + azul cobalto | alta disponibilidad digital y asociaciones conocidas de acción | puede parecer una aplicación tecnológica genérica o una extensión del sistema | control de comparación |
 | Neutros + ámbar | elevada visibilidad y relación posible con una señal luminosa | coincide con advertencia, puede sugerir urgencia y pierde contraste en tonos claros | no usar como primario antes de una prueba específica |
 
@@ -82,15 +82,15 @@ La comparación considera función y riesgo, no personalidad supuestamente unive
 
 ## Paleta recomendada
 
-La primera dirección de interfaz utiliza una base neutra ligeramente verdosa y un acento verde turquesa. La selección no afirma que ese matiz sea tranquilizador ni que posea un significado universal. Responde a condiciones funcionales —separación respecto de error y advertencia, contraste en ambos temas y visibilidad acotada— y permite construir una variante comparable.
+La identidad utiliza una base neutra ligeramente verdosa y un acento verde turquesa. La selección no afirma que ese matiz sea tranquilizador ni que posea un significado universal. Responde a condiciones funcionales —separación respecto de error y advertencia, contraste en ambos temas y visibilidad acotada— y adquiere reconocimiento mediante un uso consistente y localizado.
 
-El turquesa no se considera color definitivo de Relevo ni recibe por ahora un significado narrativo. La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) establece que los candidatos cromáticos se compararán después de precisar posición, experiencia y diferencias de categoría.
+El verde Relevo `#006B5F` es el color principal de marca en superficies claras; `#72DBC7` mantiene el acento en superficies oscuras. Su función narrativa no proviene del matiz aislado, sino de marcar el punto donde una actividad o una decisión vuelve a hacerse visible. El [sistema de marca vigente](14_sistema-de-marca-vigente.md) define los usos por soporte.
 
 ### Cuatro funciones que no deben confundirse
 
 | Función | Uso del color | Restricción |
 | --- | --- | --- |
-| Identificación provisional | ensayar reconocimiento mediante un acento localizado | no llamar activo distintivo al color antes de medir asociación y unicidad |
+| Identificación de marca | construir reconocimiento mediante un acento localizado | no saturar piezas ni depender solo del color para comunicar estados |
 | Interfaz | orientar una acción principal, selección o vínculo activo | no puede ser el único indicador de significado |
 | Estados | distinguir error, advertencia, desconexión o cierre | cada estado necesita texto y, cuando corresponda, icono o forma |
 | Señal física | ser percibida en un lugar y condición reales | se define mediante pruebas propias; no hereda automáticamente el turquesa |
@@ -169,6 +169,13 @@ La tipografía debe cambiar si falla la lectura con tamaño aumentado, cursivas,
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Sistema cromático y tipográfico adoptado
+
+- **Qué cambió:** Source Sans 3 y la paleta neutra con verde turquesa pasan de candidatos de prototipo a especificación vigente del proyecto.
+- **Cómo era antes:** los valores estaban disponibles para comparar, pero no identificaban oficialmente a Relevo.
+- **Por qué se decidió:** permiten producir una identidad consistente, legible y sobria sin confundir marca, error ni señal física.
+- **Límite:** contraste, reproducción e interpretación deben comprobarse en piezas reales; la luz del dispositivo se define por percepción y no hereda automáticamente el color de marca.
 
 ### 2026-09-15 — Paleta separada de la identidad de marca
 

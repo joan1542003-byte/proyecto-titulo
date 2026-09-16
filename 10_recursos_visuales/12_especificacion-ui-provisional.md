@@ -1,8 +1,8 @@
-# Especificación provisional de interfaz
+# Especificación de interfaz de Relevo
 
-**Estado:** base de diseño para las primeras pantallas de media y alta fidelidad.
+**Estado:** base vigente para diseñar e implementar la aplicación Android.
 
-**Fecha:** 15 de septiembre de 2026.
+**Fecha:** 16 de septiembre de 2026.
 
 ## Criterio general
 
@@ -99,7 +99,7 @@ La pantalla más importante debe explicar el momento phygital sin competir con e
 6. acción principal coherente con la prueba;
 7. salida secundaria visible.
 
-En esta variante de prototipo, el verde turquesa se utiliza en el vínculo activo o en una acción principal, no como ilustración de fondo ni como confirmación de cumplimiento. No se presenta como color definitivo de marca. Si una persona no percibe el color, la jerarquía continúa siendo legible por texto, peso, posición y forma.
+El verde Relevo se utiliza en el vínculo activo o en una acción principal, no como ilustración de fondo ni como confirmación de cumplimiento. Es el color de marca, pero no el único portador de significado. Si una persona no percibe el color, la jerarquía continúa siendo legible por texto, peso, posición y forma.
 
 ## Lenguaje de configuración
 
@@ -146,6 +146,13 @@ El color dinámico puede evaluarse más adelante. En el prototipo inicial se man
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Especificación adoptada
+
+- **Qué cambió:** la interfaz deja de tratar su tipografía, color y jerarquía como una variante provisional y adopta el sistema de marca vigente.
+- **Cómo era antes:** la especificación servía para construir una primera comparación visual.
+- **Por qué se decidió:** el proyecto necesita una base única para producir pantallas y comprobar tareas sin reabrir la identidad en cada iteración.
+- **Límite:** los flujos, permisos y estados técnicos pueden ajustarse con pruebas; la identidad solo se reabre ante un problema demostrado.
 
 ### 2026-09-15 — Interfaz separada del cierre de marca
 

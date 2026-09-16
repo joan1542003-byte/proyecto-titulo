@@ -97,15 +97,22 @@ Ejemplo de estado técnico:
 
 Este texto separa hecho, recuperación y efecto sobre el contenido sin culpar a la persona.
 
-## Primera hipótesis visual para prototipar
+## Dirección visual vigente
 
-Una interfaz de baja ornamentación, basada en superficies neutras, Source Sans 3, componentes Android conocidos y un único acento verde turquesa asignado a acciones o estados específicos. La identidad deberá evaluarse en la voz, el ritmo de las pantallas y la relación entre actividad, forma de comenzar y testigo. Los valores son provisionales y permiten construir material comparable; no equivalen a identidad ni validación.
+La interfaz utiliza baja ornamentación, superficies neutras, Source Sans 3, componentes Android conocidos y un único acento verde turquesa asignado a acciones o estados específicos. La identidad también se expresa en la voz, el ritmo de las pantallas y la relación entre actividad, forma de comenzar y dispositivo. Los valores pertenecen al sistema vigente; su adopción no equivale a una validación de uso.
 
-La hipótesis se descarta si produce una aplicación genérica difícil de reconocer, si las personas confunden estados con acciones o si la austeridad obliga a leer explicaciones extensas.
+La dirección se corrige si produce una aplicación genérica difícil de reconocer, si las personas confunden estados con acciones o si la austeridad obliga a leer explicaciones extensas.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Dirección de interfaz adoptada
+
+- **Qué cambió:** superficies neutras, Source Sans 3, patrones Android y acento localizado pasan a ser la base vigente de interfaz.
+- **Cómo era antes:** se describían como una primera hipótesis visual para comparar.
+- **Por qué se decidió:** construir pantallas coherentes y reservar la iteración para problemas observables de uso.
+- **Límite:** la adopción no acredita comprensión ni desempeño.
 
 ### 2026-09-15 — Variante de interfaz separada de la marca
 

@@ -19,7 +19,7 @@ En esta etapa, Relevo necesita primero tokens semánticos escritos:
 - separación;
 - señal física.
 
-La primera asignación de valores se documenta en el [sistema cromático y tipográfico provisional](11_sistema-cromatico-y-tipografico-provisional.md). Se utiliza para construir las alternativas de prueba y no como cierre previo a ellas.
+La asignación de valores se documenta en el [sistema cromático y tipográfico](11_sistema-cromatico-y-tipografico-provisional.md) y se cierra en el [sistema de marca vigente](14_sistema-de-marca-vigente.md). Las pruebas revisan su aplicación y accesibilidad; no mantienen abierta toda la identidad.
 
 ## Reglas transversales
 
@@ -136,6 +136,13 @@ No se producirán colecciones de piezas para demostrar que el sistema es flexibl
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Continuidad vinculada al sistema vigente
+
+- **Qué cambió:** los tokens tipográficos y cromáticos dejan de ser alternativas abiertas y se vinculan a la especificación oficial de marca.
+- **Cómo era antes:** servían solo para construir materiales comparables.
+- **Por qué se decidió:** asegurar continuidad real entre aplicación, dispositivo, memoria y comunicación.
+- **Límite:** cada soporte adapta el sistema a su función y no repite una plantilla visual.
 
 ### 2026-09-15 — Tokens provisionales enlazados
 

@@ -1,13 +1,13 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
-**Última comprobación:** 15 de septiembre de 2026
+**Última comprobación:** 16 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
 
-La memoria contiene 54 referencias. Las 52 entradas del control anterior se conservan. Esta revisión verifica la incorporación de Elliot y Maier (2014) y Kauppinen-Räisänen y Luomala (2010), citadas en el capítulo 11 para fundamentar que el significado cromático depende del contexto y del tipo de producto. No se utilizan como evidencia de que el turquesa produzca una emoción específica ni como validación de la marca.
+La memoria contiene 59 referencias. Las 54 entradas del control anterior se conservan. Esta revisión incorpora Aaker (1996), Karjalainen y Snelders (2010), Keller et al. (2002), Motta-Filho (2021) y Ward et al. (2020), utilizadas para fundamentar identidad, reconocimiento, posicionamiento y experiencia de marca. Elliot y Maier (2014) y Kauppinen-Räisänen y Luomala (2010) mantienen la cautela contextual sobre color. Ninguna de estas fuentes se presenta como validación de la marca de Relevo.
 
 La convención de autoría se mantiene según APA 7: `y` integra los apellidos en citas narrativas, mientras `&` se utiliza en citas parentéticas y antes del último autor en la lista de referencias. Esta diferencia es intencional y no constituye una inconsistencia de idioma.
 
@@ -15,6 +15,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 
 | Autor o entidad | Fecha usada | Cita en el cuerpo | Entrada en referencias | Estado |
 | --- | --- | --- | --- | --- |
+| Aaker | 1996 | Sí | Sí | Conforme |
 | Apple | s. f. | Sí | Sí | Conforme |
 | Apple Developer | s. f.-a | Sí | Sí | Conforme |
 | Apple Developer | s. f.-b | Sí | Sí | Conforme |
@@ -40,7 +41,9 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Grüning et al. | 2023 | Sí | Sí | Conforme |
 | Haliburton et al. | 2024 | Sí | Sí | Conforme |
 | Hermann et al. | 2007 | Sí | Sí | Conforme |
+| Karjalainen y Snelders | 2010 | Sí | Sí | Conforme |
 | Kauppinen-Räisänen y Luomala | 2010 | Sí | Sí | Conforme |
+| Keller et al. | 2002 | Sí | Sí | Conforme |
 | Kidel Peña-Albert et al. | 2026 | Sí | Sí | Conforme |
 | Kirsh | 1995 | Sí | Sí | Conforme |
 | Kitchen Safe | s. f. | Sí | Sí | Conforme |
@@ -54,6 +57,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Micro:bit Educational Foundation | s. f.-b | Sí | Sí | Conforme |
 | Monge Roffarello y De Russis | 2023 | Sí | Sí | Conforme |
 | Montag et al. | 2019 | Sí | Sí | Conforme |
+| Motta-Filho | 2021 | Sí | Sí | Conforme |
 | one sec | s. f. | Sí | Sí | Conforme |
 | O’Rear y Radvansky | 2019 | Sí | Sí | Conforme |
 | Radtke et al. | 2022 | Sí | Sí | Conforme |
@@ -67,6 +71,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Subsecretaría de Telecomunicaciones | 2026b | Sí | Sí | Conforme |
 | Tonietto et al. | 2021 | Sí | Sí | Conforme |
 | Unpluq | s. f. | Sí | Sí | Conforme |
+| Ward et al. | 2020 | Sí | Sí | Conforme |
 | Waggoner et al. | 2026 | Sí | Sí | Conforme |
 | World Wide Web Consortium | s. f. | Sí | Sí | Conforme |
 
@@ -85,6 +90,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Correspondencia de marca completada
+
+- **Cambio:** la matriz aumenta de 54 a 59 referencias e incorpora las cinco fuentes utilizadas por la estrategia de marca.
+- **Versión anterior:** la bibliografía ya contenía las fuentes, pero la matriz de correspondencia terminaba en 54 entradas.
+- **Motivo:** mantener el inventario de citas sincronizado con la memoria vigente.
+- **Alcance:** la correspondencia formal no valida la identidad ni sus efectos.
 
 ### 2026-09-15 — Correspondencia cromática incorporada
 

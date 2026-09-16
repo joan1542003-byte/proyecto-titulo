@@ -32,7 +32,7 @@ El [índice de material antiguo](../99_archivo/antiguo/README.md) explica cada g
 ## Correcciones adicionales
 
 - `entrega-encargo-17.md` dejó de llamar vigente al tablero anterior y ahora remite a `wireframes-media-html`.
-- La auditoría del 11 de septiembre sustituyó la autoridad visual registrada aquí. La única fuente activa es ahora [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md); paleta, tipografía, logotipo, forma y descriptor definitivo permanecen abiertos.
+- La auditoría del 11 de septiembre sustituyó la autoridad visual registrada aquí. Desde el 16 de septiembre, la fuente ejecutable es el [`sistema de marca vigente`](../10_recursos_visuales/14_sistema-de-marca-vigente.md): paleta, tipografía, logotipo y descriptor están cerrados para el proyecto; la forma y la señal física conservan pruebas propias.
 - La maqueta editorial se reconstruyó desde la memoria v4. El HTML, el manifiesto y las 87 páginas PNG vuelven a coincidir.
 - Se añadió `verificar-enlaces.ps1`, una comprobación local basada en PowerShell estándar y sin dependencias nuevas.
 - Las rutas modificadas quedaron registradas dentro de sus Markdown y en la decisión D-050.
@@ -69,6 +69,13 @@ La limpieza comprueba estructura, navegación e integridad de archivos. No valid
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Reemplazo visual actualizado
+
+- **Qué cambió:** la auditoría histórica enlaza la autoridad de marca cerrada y deja de declarar abiertas decisiones ya resueltas.
+- **Cómo era antes:** remitía solo al reinicio visual del 11 de septiembre.
+- **Por qué se decidió:** evitar que un control organizativo antiguo contradiga el estado vigente.
+- **Límite:** los conteos de archivos continúan correspondiendo al corte original del 8 de septiembre.
 
 ### 2026-09-11 — Autoridad visual actualizada
 

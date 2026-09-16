@@ -38,7 +38,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 | `07_validacion` | Preparada; ejecución pendiente | Protocolos, criterios de evaluación, instrumentos y puertas técnicas; todavía no hay resultados. |
 | `08_memoria` | Texto académico vigente | Memoria v4, anexos, matrices, controles editoriales y resumen del proyecto. |
 | `09_decisiones` | Registro vigente | Decisiones tomadas, razones, evidencia y consecuencias. |
-| `10_recursos_visuales` | Investigación reiniciada | Documentos Markdown sobre interfaz, testigo, marca, producto, memoria editorial, alternativas y pruebas. No contiene una identidad cerrada ni archivos de producción. |
+| `10_recursos_visuales` | Sistema de marca vigente | Investigación, decisiones y especificaciones Markdown para marca, interfaz, dispositivo, comunicación y memoria editorial. |
 | `99_archivo` | Histórico | Fuentes locales y [material antiguo o reemplazado](../99_archivo/antiguo/README.md), conservados por trazabilidad. |
 
 ## Fuentes de referencia actuales
@@ -48,7 +48,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La línea base para construir Android se consulta en [`cierre-wireframe-v1-2026-09-09.md`](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md); sus fuentes y exportaciones están en `05_propuesta_phygital/wireframes-media-html/`.
-- El estado visual vigente se consulta en [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md). Source Sans 3 y la paleta neutra con verde turquesa permiten construir una primera variante, pero no constituyen la identidad definitiva. La estrategia se desarrolla desde el producto y su posicionamiento; nombre, descriptor, tipografía, color, símbolo y forma siguen abiertos. La etapa anterior se recupera mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
+- El estado visual vigente se consulta en [`10_recursos_visuales/14_sistema-de-marca-vigente.md`](../10_recursos_visuales/14_sistema-de-marca-vigente.md). Nombre, categoría, frase, descriptor, Source Sans 3, paleta verde-neutra, logotipo tipográfico y regla de énfasis están cerrados para el proyecto. La forma física y los parámetros de la señal continúan sujetos a factibilidad y prueba. La etapa anterior se recupera mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
 - La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`; el código y el binario de la puerta inmediata están en `06_desarrollo_y_factibilidad/prueba-microbit-ble/`. La Issue #11 controla esa prueba y la #10 conserva la integración portátil.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde [`99_archivo/antiguo`](../99_archivo/antiguo/README.md).
 
@@ -79,6 +79,12 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Autoridad visual actualizada
+
+- **Qué cambió:** el índice dirige al sistema de marca vigente y distingue la identidad cerrada de las variables físicas que aún requieren comprobación.
+- **Cómo era antes:** describía toda la carpeta visual como investigación abierta y provisional.
+- **Por qué se decidió:** evitar que una lectura nueva reabra decisiones ya cerradas o consulte una especificación histórica como si fuera actual.
 
 ### 2026-09-15 — Estrategia de marca incorporada
 

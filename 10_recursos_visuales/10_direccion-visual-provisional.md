@@ -1,8 +1,8 @@
-# Dirección visual provisional de Relevo
+# Dirección visual de Relevo
 
-**Estado:** decisión provisional para prototipar y comparar.
+**Estado:** dirección vigente para producir el proyecto de título.
 
-**Fecha:** 15 de septiembre de 2026.
+**Fecha:** 16 de septiembre de 2026.
 
 ## Punto de partida
 
@@ -39,21 +39,21 @@ Estos atributos no describen una emoción garantizada. Son criterios que pueden 
 
 La dirección debe hacer comprensible que algo que la persona quería hacer puede volver a estar presente sin que el sistema decida por ella. La continuidad entre aplicación, objeto y comunicación proviene primero de esa conducta: preparación voluntaria, señal breve, estado comprensible y salida disponible.
 
-La base neutra y el verde turquesa permanecen disponibles para construir prototipos comparables. El turquesa ya no se denomina `color de presencia` ni se presenta como color definitivo de marca. La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) exige comparar posición y experiencia antes de cerrar recursos expresivos.
+La base neutra y el verde turquesa conforman el sistema vigente. El color identifica acciones y puntos relevantes mediante un énfasis localizado; no representa una emoción universal. La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) fundamenta el proceso y el [sistema de marca vigente](14_sistema-de-marca-vigente.md) fija su aplicación.
 
 ### Logotipo inicial
 
-Mientras el nombre no tenga despeje comercial, conviene utilizar un logotipo tipográfico sencillo: **Relevo**, con mayúscula inicial, compuesto en Source Sans 3 Semibold. No se modifica ninguna letra ni se añade un símbolo propietario en esta etapa. Así se puede evaluar el nombre sin confundir su comprensión con una pieza formal compleja.
+El logotipo vigente es tipográfico: **Relevo**, con mayúscula inicial, compuesto en Source Sans 3 Semibold. No se modifica ninguna letra ni se añade un símbolo propietario. La disponibilidad comercial del nombre se revisaría por separado si el proyecto avanzara hacia ese escenario.
 
 La escritura en mayúsculas sostenidas se descarta para el uso habitual porque aumenta la presencia visual y acerca la marca al tono de una instrucción. La forma `Relevo` convive mejor con frases y permite pronunciar el nombre como una palabra común.
 
 ### Identificador reducido
 
-En el prototipo, el icono de aplicación puede utilizar una `R` de la misma familia sobre el color principal. Es una solución temporal y reproducible. Un símbolo independiente solo se justifica si posteriormente mejora reconocimiento a tamaño pequeño y no se confunde con ubicación, bloqueo, alarma o reproducción de audio.
+El icono de aplicación utiliza una `R` de la misma familia sobre el color principal. Es una solución reproducible y suficiente. Un símbolo independiente solo se desarrollará si aparece una necesidad de reconocimiento que la inicial no resuelva.
 
 ### Explicación y descriptor
 
-Todavía no existe un descriptor recomendado. La primera prueba debe comprobar si una categoría familiar —`recordatorio físico preparado desde el teléfono`— ayuda a comprender el producto antes de comparar frases breves de marca. `Una señal donde quieres empezar` permanece como una alternativa del conjunto, no como decisión vigente.
+El descriptor vigente es **Un recordatorio físico preparado desde el teléfono.** La frase de marca es **Hazle lugar a lo que quieres hacer.** El descriptor explica la categoría; la frase expresa la relación con la actividad y el lugar. Ninguna de las dos sustituye la explicación completa del funcionamiento.
 
 Para una primera explicación se utilizará una frase completa:
 
@@ -79,7 +79,7 @@ Se excluyen por ahora gradientes decorativos, tramas repetidas, alfabetos constr
 
 ### Aplicación Android
 
-La aplicación adopta componentes y comportamientos conocidos de Android. La identidad puede aparecer en la voz, la familia tipográfica, el ritmo espacial y un sistema cromático todavía por decidir. Debe sentirse propia sin obligar a reaprender botones, campos, permisos o navegación.
+La aplicación adopta componentes y comportamientos conocidos de Android. La identidad aparece en la voz, Source Sans 3, el ritmo espacial y la paleta verde-neutra definida. Debe sentirse propia sin obligar a reaprender botones, campos, permisos o navegación.
 
 ### Testigo físico
 
@@ -104,18 +104,24 @@ La dirección avanza solo si una persona puede:
 - leer la interfaz con tema claro, oscuro y texto aumentado;
 - reconocer la aplicación sin que la identidad invada la tarea.
 
-## Qué todavía no queda cerrado
+## Qué todavía requiere desarrollo o comprobación
 
-- diseño definitivo del logotipo y del icono;
 - forma física del testigo;
 - color y comportamiento de la luz física;
-- descriptor final;
-- valores editoriales definitivos para impresión;
+- comprensión del descriptor en uso;
+- ajuste de valores editoriales en pruebas de impresión;
 - reconocimiento y atribuciones semánticas de la dirección.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Dirección visual adoptada
+
+- **Qué cambió:** la dirección deja de ser una variante provisional y pasa a gobernar el proyecto con nombre, descriptor, frase, logotipo, tipografía, paleta y regla de énfasis definidos.
+- **Cómo era antes:** los mismos recursos se trataban como materiales para comparar sin una elección final.
+- **Por qué se decidió:** la etapa actual exige producir resultados consistentes y reservar las pruebas para detectar problemas concretos, no para mantener todas las opciones abiertas.
+- **Límite:** forma, materiales y parámetros perceptivos del dispositivo continúan sujetos a factibilidad y prueba.
 
 ### 2026-09-15 — Fundamento de marca corregido
 

@@ -104,7 +104,7 @@ La combinación recomendada puede resumirse así:
 
 > una herramienta clara que se vuelve presente solo cuando la situación lo requiere.
 
-El 15 de septiembre esta recomendación se tradujo en la dirección provisional **Presencia útil**. Se mantienen la estructura sobria de Herramienta serena y la secuencia indispensable para comprender el ciclo; no se adopta un motivo permanente de transición. La especificación se encuentra en [Dirección visual provisional](10_direccion-visual-provisional.md).
+El 16 de septiembre esta exploración se resolvió mediante una dirección sobria y un sistema de marca único. Se mantienen la estructura clara de Herramienta serena y la secuencia indispensable para comprender el uso; no se adopta un motivo permanente de transición. La especificación se encuentra en la [dirección visual](10_direccion-visual-provisional.md) y el [sistema de marca vigente](14_sistema-de-marca-vigente.md).
 
 Esta dirección evita convertir la señal en decoración y permite que la identidad aparezca mediante cuatro constantes:
 
@@ -113,7 +113,7 @@ Esta dirección evita convertir la señal en decoración y permite que la identi
 3. color de baja extensión con función definida;
 4. relación visible entre primer paso, lugar y testigo.
 
-## Decisiones provisionales derivadas
+## Decisiones derivadas
 
 ### Aplicación
 
@@ -132,15 +132,15 @@ Esta dirección evita convertir la señal en decoración y permite que la identi
 
 ### Marca
 
-- mantener un logotipo tipográfico como punto de partida;
-- comparar explicaciones de categoría y diferencia antes de seleccionar un descriptor;
+- utilizar el logotipo tipográfico Relevo y la `R` como identificador reducido;
+- explicar la categoría mediante `Un recordatorio físico preparado desde el teléfono`;
 - construir reconocimiento mediante voz, jerarquía y demostración;
-- aplazar símbolo independiente hasta comprobar su necesidad.
+- no desarrollar un símbolo independiente sin una necesidad funcional.
 
 ### Memoria
 
 - priorizar texto real, figuras y tablas;
-- usar una retícula flexible de doce columnas como hipótesis;
+- usar una retícula flexible de doce columnas;
 - limitar el color a navegación y énfasis funcional;
 - variar páginas según contenido, no para exhibir recursos.
 
@@ -159,6 +159,13 @@ La recomendación debe revisarse si ocurre alguno de estos resultados:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Exploración resuelta
+
+- **Qué cambió:** la recomendación deja de terminar en decisiones provisionales y remite al sistema de marca vigente.
+- **Cómo era antes:** Herramienta serena y Presencia útil funcionaban como bases todavía abiertas.
+- **Por qué se decidió:** conservar la exploración como fundamento sin confundirla con el estado actual.
+- **Límite:** la forma y la señal física continúan sujetas a factibilidad y prueba.
 
 ### 2026-09-15 — Recomendación visual separada de la marca definitiva
 

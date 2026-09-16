@@ -1,15 +1,15 @@
 # Investigación visual de Relevo
 
-**Estado:** investigación concluida y primera dirección visual provisional lista para prototipar.
+**Estado:** investigación concluida y sistema de marca vigente cerrado para el proyecto de título.
 
-**Fecha de corte:** 15 de septiembre de 2026.
+**Fecha de corte:** 16 de septiembre de 2026.
 
 **Alcance:** marca, aplicación Android, testigo físico, comunicación de producto y memoria editorial.
 **Formato de esta etapa:** documentación escrita en Markdown. No contiene imágenes, maquetas ni código.
 
 ## Para qué existe esta carpeta
 
-Esta carpeta reúne la investigación que orientará el nuevo sistema visual de Relevo. No es una biblioteca de estilos ni un manual cerrado. Su función es establecer qué debe comunicar cada soporte, qué decisiones pueden adoptarse con la evidencia disponible y cuáles necesitan una prueba antes de convertirse en especificaciones.
+Esta carpeta reúne la investigación y las decisiones que gobiernan el sistema visual de Relevo. Los documentos 01–13 conservan el razonamiento, las alternativas y los criterios de evaluación. El documento 14 fija la dirección vigente para producir la aplicación, el dispositivo, la comunicación y la memoria editorial.
 
 Relevo es un sistema phygital compuesto por una aplicación Android y un testigo físico. La aplicación permite formular una intención, aclarar cómo podría comenzar y preparar un ciclo. La documentación denomina `primer paso` a esa acción breve y concreta; la interfaz utiliza una pregunta directa. El testigo se ubica cerca de aquello que facilita ese comienzo y, cuando corresponde, emite una señal breve de luz y sonido. La señal no bloquea el teléfono, no evalúa a la persona y no convierte la respuesta posterior en una medida de cumplimiento.
 
@@ -32,25 +32,26 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 7. [Sistema de producto y memoria editorial](07_producto-y-editorial.md)
 8. [Direcciones posibles y recomendación](08_direcciones-y-recomendacion.md)
 9. [Plan de pruebas y criterios de cierre](09_plan-de-pruebas.md)
-10. [Dirección visual provisional](10_direccion-visual-provisional.md)
-11. [Sistema cromático y tipográfico provisional](11_sistema-cromatico-y-tipografico-provisional.md)
-12. [Especificación provisional de interfaz](12_especificacion-ui-provisional.md)
+10. [Dirección visual de base](10_direccion-visual-provisional.md)
+11. [Sistema cromático y tipográfico](11_sistema-cromatico-y-tipografico-provisional.md)
+12. [Especificación de interfaz](12_especificacion-ui-provisional.md)
 13. [Estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md)
-14. [Referencias](referencias.md)
-15. [Registro del reinicio visual](registro-del-reinicio.md)
+14. [Sistema de marca vigente](14_sistema-de-marca-vigente.md)
+15. [Referencias](referencias.md)
+16. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 
-| Tema | Estado al 11 de septiembre | Consecuencia |
+| Tema | Estado al 16 de septiembre | Consecuencia |
 | --- | --- | --- |
-| Nombre académico `Relevo` | Se conserva de manera provisional | Puede usarse en la memoria y el prototipo; falta despeje comercial y prueba de comprensión. |
-| Posicionamiento y descriptor | Estrategia definida; expresiones en prueba | Primero se compara la explicación categorial y la diferencia; ningún descriptor está fijado. |
+| Nombre `Relevo` | Cerrado para el proyecto de título | Un uso comercial posterior requeriría despeje jurídico independiente. |
+| Posicionamiento, frase y descriptor | Cerrados como decisiones de diseño | Se aplican en todos los soportes; una prueba puede corregirlos si revela una confusión concreta. |
 | Arquitectura de la aplicación | Estable como wireframe v1 | La estructura puede informar la nueva interfaz; su apariencia anterior no se considera vigente. |
 | Forma del testigo | Abierta | No se debe presentar una carcasa específica como producto resuelto. |
 | Luz y sonido | Son canales previstos, no parámetros cerrados | Intensidad, duración, patrón y convivencia requieren pruebas situadas. |
-| Paleta y tipografía | Materiales de prototipo, no identidad cerrada | Source Sans 3 y la paleta existente permiten construir comparaciones; no son todavía tipografía ni colores definitivos de marca. |
-| Logotipo e iconografía | Solución temporal | Se usa un logotipo tipográfico y un identificador reducido mientras se prueba el nombre y se determina si un símbolo aporta valor. |
-| Sistema editorial | Abierto | Debe construirse con texto real de la memoria y comprobar lectura, jerarquía y reproducción. |
+| Paleta y tipografía | Cerradas para producción | Source Sans 3, verde Relevo y la base neutra conforman el sistema vigente. |
+| Logotipo e iconografía | Cerrados en su nivel necesario | Se usa logotipo tipográfico y una `R` reducida; no se desarrollará un símbolo adicional sin una necesidad funcional. |
+| Sistema editorial | Directrices cerradas; diagramación pendiente | Debe aplicarse al texto real mediante retícula horizontal de doce columnas. |
 
 ## Regla de sobriedad
 
@@ -58,13 +59,20 @@ Una decisión visual entra al sistema solo si cumple al menos una de estas funci
 
 ## Autoridad documental
 
-Los documentos de esta carpeta sustituyen la dirección visual anterior. Los wireframes existentes siguen siendo válidos para estudiar secuencia, contenido y estados, pero no fijan paleta, tipografía, estilo de componentes ni tratamiento gráfico definitivo. Cualquier futura especificación deberá enlazar su evidencia, su prueba y la decisión que reemplaza.
+El [sistema de marca vigente](14_sistema-de-marca-vigente.md) tiene prioridad ante cualquier contradicción de los documentos anteriores. Los wireframes existentes siguen siendo válidos para estudiar secuencia, contenido y estados, pero su apariencia no prevalece sobre esta dirección. Una corrección futura deberá identificar el problema, la evidencia y la decisión reemplazada.
 
 El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-2026-09-11`. Esa etiqueta sirve para reconstruir el proceso, no para justificar decisiones nuevas.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Sistema de marca cerrado
+
+- **Qué cambió:** se incorporó una autoridad única que fija nombre, categoría, frase, descriptor, arquitectura verbal, logotipo, tipografía, paleta y reglas por soporte.
+- **Cómo era antes:** la carpeta terminaba en alternativas y especificaciones presentadas como provisionales.
+- **Por qué se decidió:** el proyecto necesita producir resultados consistentes y no continuar abriendo decisiones ya suficientemente fundamentadas.
+- **Límite:** el cierre corresponde al diseño del proyecto de título; no reemplaza las pruebas de comprensión, accesibilidad o desempeño.
 
 ### 2026-09-15 — Estrategia de marca reconstruida
 

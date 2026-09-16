@@ -6,11 +6,11 @@ La marca de Relevo debe permitir identificar el sistema, explicar su propósito 
 
 La investigación sobre experiencia de marca advierte que la estrategia y los puntos de contacto suelen separarse. Un manual útil no se limita a colores y logotipos: traduce valores en decisiones observables dentro de la experiencia (Motta-Filho, 2021). En Relevo, la autonomía no puede aparecer solo como una palabra de presentación; debe verse en salidas claras, ausencia de castigo y control local del testigo.
 
-La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) establece el orden vigente: producto, posición, experiencia, expresión y reconocimiento. Este documento desarrolla el nombre y el lenguaje dentro de ese marco.
+La [estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md) establece el razonamiento y el [sistema de marca vigente](14_sistema-de-marca-vigente.md) fija las decisiones ejecutables. Este documento desarrolla su fundamento verbal.
 
 ## Base verbal de trabajo
 
-### Propósito provisional
+### Propósito
 
 Hacer que algo que la persona quería hacer vuelva a estar presente cuando todavía puede decidir.
 
@@ -47,9 +47,9 @@ Estos atributos se utilizarán como criterios de evaluación, no como adjetivos 
 
 ### Estado
 
-Se mantiene como nombre académico provisional. INAPI recomienda buscar expresiones idénticas y semejantes en las clases de productos y servicios pertinentes antes de solicitar una marca. Tener un dominio no otorga prioridad marcaria ni una marca asegura el dominio (Instituto Nacional de Propiedad Industrial [INAPI], s. f.).
+`Relevo` es el nombre definitivo del proyecto de título. La decisión permite construir reconocimiento de manera consistente durante su desarrollo. No acredita disponibilidad para una explotación comercial: INAPI recomienda buscar expresiones idénticas y semejantes en las clases de productos y servicios pertinentes antes de solicitar una marca. Tener un dominio no otorga prioridad marcaria ni una marca asegura el dominio (Instituto Nacional de Propiedad Industrial [INAPI], s. f.).
 
-Antes de una salida pública se necesita:
+Antes de una eventual salida comercial se necesita:
 
 1. búsqueda denominativa y fonética en INAPI;
 2. revisión de clases asociadas a software y dispositivos;
@@ -57,42 +57,30 @@ Antes de una salida pública se necesita:
 4. revisión de dominios y usuarios sociales;
 5. prueba de comprensión y recuerdo con personas.
 
-## Descriptor
+## Frase de marca y descriptor
 
-El descriptor debe explicar lo que hace Relevo sin presentar una metáfora como mecanismo. La revisión del corpus P1–P8 no encontró `primer paso` como expresión de las personas entrevistadas. El término se conserva en la investigación como definición analítica, pero no debe presentarse como lenguaje cotidiano sin explicación.
+La frase de marca vigente es **Hazle lugar a lo que quieres hacer.** Expresa la relación entre una actividad elegida, un lugar concreto y una decisión que permanece abierta. No promete que la actividad se realizará ni ordena abandonar el teléfono.
 
-Se evaluarán tres familias:
+El descriptor vigente es **Un recordatorio físico preparado desde el teléfono.** Su función es hacer comprensible la categoría cuando Relevo todavía no es conocido. Después se explica la diferencia: la señal aparece en el contexto de una actividad elegida y no bloquea ni evalúa a la persona.
 
-### Funcional
+La revisión del corpus P1–P8 no encontró `primer paso` como expresión de las personas entrevistadas. El término se conserva como concepto analítico, mientras la comunicación pública utiliza `cómo empezar`.
 
-**Una señal donde quieres empezar.**
+Las siguientes formulaciones quedan como antecedentes descartados:
 
-Ventaja: emplea palabras comunes y relaciona la señal con un lugar sin introducir terminología propia del proyecto. Riesgo: puede sugerir un punto exacto o un comienzo inmediato.
-
-### Situacional
-
-**Recuerda lo que querías empezar.**
-
-Ventaja: plantea una escena reconocible. Riesgo: puede sonar a aplicación de recordatorios y afirmar un efecto de memoria más amplio de lo demostrado.
-
-### Relacional
-
-**Tu intención, en el lugar donde comienza.**
-
-Ventaja: destaca propiedad y contexto. Riesgo: es más largo y menos directo sobre la señal.
-
-Ninguna alternativa se considera recomendación definitiva. La comparación debe incluir además una explicación categorial directa —`recordatorio físico preparado desde el teléfono`— para saber si el descriptor aporta comprensión o solo añade una frase de marca. Las versiones con `primer paso` se conservan como antecedentes, no como formulación pública vigente.
+- `Una señal donde quieres empezar`: explica la situación, pero no la categoría;
+- `Recuerda lo que querías empezar`: puede sugerir una eficacia sobre la memoria;
+- `Tu intención, en el lugar donde comienza`: es abstracta y menos directa.
 
 ## Arquitectura de nombres
 
 | Elemento | Nombre recomendado | Motivo |
 | --- | --- | --- |
-| Sistema completo | Relevo | Nombre académico y de marca provisional. |
+| Sistema completo | Relevo | Nombre definitivo del proyecto de título. |
 | Aplicación | Relevo | Evita crear una submarca innecesaria. |
-| Objeto | testigo | Expresa que porta una señal preparada; debe explicarse la primera vez. |
-| Unidad de configuración y uso | ciclo | Agrupa una intención, su primer paso, condición, lugar y vigencia. |
+| Objeto | dispositivo Relevo | Es comprensible sin vocabulario especializado. `Testigo` queda para uso académico y técnico después de definirlo. |
+| Unidad de configuración y uso | recordatorio activo | Explica que la actividad y su condición permanecen preparadas. `Ciclo` queda para documentación técnica. |
 | Acontecimiento físico | señal | Palabra común, breve y neutral. |
-| Acción de preparar el ciclo | armar | Indica que la persona deja el sistema listo; debe comprobarse en comprensión. |
+| Acción de preparar | activar | Indica que el recordatorio queda listo sin introducir una metáfora mecánica. |
 | Acción local | silenciar | Describe el efecto inmediato sin suponer cierre. |
 
 No se recomienda nombrar por separado el pulso de luz, el patrón de sonido ni cada estado. Un exceso de términos aumentaría aprendizaje sin aportar diferenciación.
@@ -125,7 +113,7 @@ La voz de Relevo es directa, cercana y no evaluativa. Nombra la situación antes
 | Ayudar sin imponer | `Escribe una acción breve y concreta. Por ejemplo: ponerme las zapatillas.` |
 | Revisar la respuesta | `Cómo empezar` |
 
-Esta distinción permite conservar precisión académica sin exigir que una persona aprenda primero el vocabulario del proyecto. Los textos de la tabla no se consideran definitivos hasta comprobarlos en tareas.
+Esta distinción permite conservar precisión académica sin exigir que una persona aprenda primero el vocabulario del proyecto. Los textos de la tabla son la base vigente y pueden ajustarse si una prueba de tarea revela un problema concreto de comprensión.
 
 ### Palabras que se evitan
 
@@ -140,7 +128,7 @@ Estas expresiones podrían aparecer al describir críticamente el mercado, pero 
 
 ## Sistema de identificación
 
-La identidad debe empezar por un logotipo tipográfico legible. Un símbolo separado solo se desarrollará si resuelve reconocimiento en el icono de la aplicación o en el objeto sin depender de texto. La investigación de Ward et al. (2020) muestra que logotipos y logotipos tipográficos pueden aportar diferenciación, pero no indica cuál forma corresponde a Relevo. La decisión debe considerar semejanza en la categoría, escalabilidad y prueba de reconocimiento.
+La identidad utiliza un logotipo tipográfico legible: **Relevo**, con mayúscula inicial, en Source Sans 3 Semibold. La versión reducida es una `R` de la misma familia. No se desarrollará un símbolo adicional mientras no resuelva una necesidad que el nombre o la inicial no puedan cubrir. La investigación de Ward et al. (2020) muestra que logotipos y logotipos tipográficos pueden aportar diferenciación, pero no obliga a complejizar la identificación.
 
 No se desarrollará una mascota, un alfabeto decorativo ni un patrón propietario en la primera fase. Esos recursos pueden aumentar volumen de marca sin aclarar el servicio.
 
@@ -159,6 +147,13 @@ Cada dirección de marca debe responder:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Arquitectura verbal cerrada
+
+- **Qué cambió:** `Relevo` pasa a ser el nombre definitivo del proyecto de título; se fijan la frase `Hazle lugar a lo que quieres hacer`, el descriptor funcional y los nombres públicos de los componentes.
+- **Cómo era antes:** nombre, frase, descriptor y varias etiquetas de interfaz permanecían como opciones de comparación.
+- **Por qué se decidió:** la producción necesita un lenguaje consistente; las alternativas ya cumplieron su función exploratoria.
+- **Límite:** el cierre no sustituye el despeje comercial ni las futuras pruebas de comprensión.
 
 ### 2026-09-15 — Marca reformulada desde el producto
 

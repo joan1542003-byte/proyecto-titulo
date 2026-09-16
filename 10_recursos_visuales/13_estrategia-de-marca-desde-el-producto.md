@@ -1,8 +1,8 @@
 # Estrategia de marca desde el producto
 
-**Estado:** base estratégica provisional. Ordena decisiones de producto, lenguaje y experiencia antes de cerrar una identidad visual.
+**Estado:** fundamento estratégico vigente, desarrollado por el [sistema de marca](14_sistema-de-marca-vigente.md).
 
-**Fecha de corte:** 15 de septiembre de 2026.
+**Fecha de corte:** 16 de septiembre de 2026.
 
 ## Por qué se revisó la marca
 
@@ -18,7 +18,7 @@ La revisión combina cinco aportes complementarios:
 2. **Identidad.** Aaker (1996) distingue la identidad que se desea construir de la imagen que las personas forman realmente. Por eso los atributos escritos en este documento son intenciones de diseño, no percepciones demostradas.
 3. **Experiencia.** Motta-Filho (2021) advierte que una estrategia de marca debe traducirse en interacciones observables. En Relevo, la autonomía no puede quedar en una declaración: debe aparecer en la posibilidad de ignorar, silenciar, editar y cerrar.
 4. **Expresión mediante el diseño.** Karjalainen y Snelders (2010) describen la transformación de valores de marca en rasgos reconocibles de los productos. La forma visual no copia palabras como `claro` o `respetuoso`; las convierte en decisiones comprobables.
-5. **Reconocimiento.** Un color, una forma o un sonido no son activos distintivos solo porque el proyecto los repita. Deben adquirir asociación con una marca y diferenciarse de otras; esa fuerza se evalúa mediante reconocimiento y unicidad (Ward et al., 2020). En esta etapa solo existen **elementos candidatos**.
+5. **Reconocimiento.** Un color, una forma o un sonido no son activos distintivos solo porque el proyecto los repita. Deben adquirir asociación con una marca y diferenciarse de otras; esa fuerza se evalúa mediante reconocimiento y unicidad (Ward et al., 2020). El proyecto adopta elementos concretos para poder construir y evaluar esa asociación.
 
 El método conserva el orden **producto → posición → experiencia → expresión → reconocimiento**. Si la posición cambia, la identidad debe revisarse; no se diseña una historia para defender recursos gráficos ya elegidos.
 
@@ -37,7 +37,7 @@ La marca debe poder explicar esta conducta antes de recurrir a una metáfora.
 
 ## Marco de referencia
 
-Relevo puede ser interpretado desde varias categorías. Ninguna debe adoptarse sin observar sus consecuencias.
+Relevo puede ser interpretado desde varias categorías. La comparación permitió adoptar `recordatorio físico` como puerta de entrada, manteniendo visibles sus límites.
 
 | Marco posible | Qué facilita | Qué podría hacer creer |
 | --- | --- | --- |
@@ -46,15 +46,15 @@ Relevo puede ser interpretado desde varias categorías. Ninguna debe adoptarse s
 | Dispositivo phygital | Describe la combinación de soportes. | Explica la tecnología, pero no el valor para la persona. |
 | Apoyo situado para una actividad | Destaca la relación entre una elección, un lugar y una señal. | Puede resultar abstracto si se presenta sin una escena concreta. |
 
-Para la primera comunicación se recomienda partir de una categoría familiar y añadir inmediatamente la diferencia:
+La comunicación parte de una categoría familiar y añade inmediatamente la diferencia:
 
 > Relevo es un recordatorio físico que preparas desde el teléfono. Lo dejas cerca de una actividad que quieres tener presente y, cuando se cumple la condición que elegiste, emite una señal breve. Tú decides qué hacer después.
 
-`Recordatorio físico` no constituye el nombre de una categoría definitiva. Es una puerta de entrada comprensible que debe compararse con otras formulaciones. `Phygital` se mantiene como definición académica y proyectual del medio, no como promesa dirigida al público.
+`Recordatorio físico` funciona como categoría pública de entrada, no como descripción exhaustiva. `Phygital` se mantiene como definición académica y proyectual del medio, no como promesa dirigida al público.
 
-## Posicionamiento de trabajo
+## Posicionamiento vigente
 
-| Componente | Definición provisional |
+| Componente | Definición vigente |
 | --- | --- |
 | Situación pertinente | Una persona quiere mantener disponible una actividad mientras continúa en una experiencia digital. |
 | Marco | Recordatorio personal y situado, compuesto por aplicación y objeto. |
@@ -117,7 +117,7 @@ Si no mejora estas tres relaciones, el concepto debe simplificarse o retirarse. 
 
 Un nombre identifica; no está obligado a explicar por sí solo el funcionamiento completo. La justificación anterior forzaba una cadena de traspasos para hacer que `Relevo` pareciera inevitable. Esa lectura deja de utilizarse como fundamento.
 
-El nombre conserva ventajas prácticas: es breve, pronunciable y admite asociaciones con cambio, continuidad o alternancia. También presenta riesgos: puede relacionarse con deporte, turnos laborales, reemplazo de personas o logística. Se mantiene como nombre académico provisional porque todavía no existe evidencia suficiente para conservarlo o cambiarlo.
+El nombre conserva ventajas prácticas: es breve, pronunciable y admite asociaciones con cambio, continuidad o alternancia. También presenta riesgos: puede relacionarse con deporte, turnos laborales, reemplazo de personas o logística. D-062 lo adopta como nombre definitivo del proyecto de título para construir una identidad consistente. Una eventual comercialización conserva la obligación de revisar disponibilidad jurídica.
 
 La evaluación debe separar cuatro preguntas:
 
@@ -163,9 +163,9 @@ El diseño editorial debe ordenar evidencia, decisiones y límites. Puede compar
 
 ## Qué ocurre con el color y la tipografía
 
-El verde turquesa deja de considerarse `color de presencia` o color definitivo de marca. Esa denominación atribuía un relato a una opción todavía no comparada. La paleta neutra y Source Sans 3 pueden seguir utilizándose como materiales de prototipo porque ofrecen contraste, repertorio y viabilidad, no porque ya expresen la identidad final.
+El sistema adopta Source Sans 3 y una paleta neutra con verde Relevo `#006B5F`; `#72DBC7` mantiene el acento en fondos oscuros. La selección se sostiene en contraste, repertorio, separación de estados y viabilidad de producción. El color no se denomina `color de presencia` ni recibe una emoción universal: adquiere significado mediante un uso localizado y consistente.
 
-La selección de identidad deberá comparar alternativas mediante cinco criterios:
+La aplicación de la identidad se revisará mediante cinco criterios:
 
 1. diferenciación respecto de productos de bloqueo, foco y bienestar digital;
 2. legibilidad y accesibilidad en pantalla, impresión y objeto;
@@ -173,9 +173,9 @@ La selección de identidad deberá comparar alternativas mediante cinco criterio
 4. coherencia con una relación clara, autónoma y discreta;
 5. reconocimiento de Relevo después de exposiciones repetidas.
 
-Un color nuevo no posee todavía fama ni unicidad. Se denominará **candidato cromático** hasta que una prueba permita observar asociaciones, confusiones y reconocimiento. La misma regla se aplica a símbolos, sonidos, patrones y formas.
+El color no se presenta como reconocido ni único antes de medirlo. Las pruebas podrán corregir su aplicación si revelan confusión, inaccesibilidad o una asociación incompatible. La señal física, el sonido y la forma se evalúan por separado porque cumplen funciones perceptivas y técnicas diferentes.
 
-## Pruebas necesarias antes de cerrar la marca
+## Comprobaciones posteriores a la decisión
 
 1. **Comprensión de categoría.** Mostrar distintas explicaciones breves y pedir qué creen que es, para qué sirve y qué hace el objeto.
 2. **Diferencia.** Comparar Relevo con una notificación y un bloqueador; comprobar si se entiende qué comparte y qué cambia.
@@ -190,10 +190,10 @@ Un color nuevo no posee todavía fama ni unicidad. Se denominará **candidato cr
 - El núcleo de trabajo es que algo que la persona quería hacer vuelva a estar presente.
 - Relevo se presenta inicialmente como un recordatorio físico preparado desde el teléfono, con la diferencia situada y no coercitiva explicada a continuación.
 - `Primer paso` permanece como hipótesis transversal de diseño, no como territorio de marca ni término público obligatorio.
-- `Relevo` continúa como nombre provisional; ya no se justifica mediante un supuesto traspaso entre soportes.
-- No existe todavía un color, símbolo, tipografía o sonido definitivo de marca.
+- `Relevo` es el nombre definitivo del proyecto de título; ya no se justifica mediante un supuesto traspaso entre soportes.
+- Source Sans 3, el verde Relevo y el logotipo tipográfico conforman la identidad vigente. El sonido y la forma física siguen sujetos a desarrollo funcional.
 
-## Preguntas abiertas
+## Preguntas de comprobación
 
 - ¿`recordatorio físico` facilita la comprensión o reduce demasiado el proyecto a una alarma?
 - ¿La diferencia situada resulta relevante frente a una notificación que ya muestra la actividad?
@@ -204,6 +204,13 @@ Un color nuevo no posee todavía fama ni unicidad. Se denominará **candidato cr
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Estrategia desarrollada por el sistema vigente
+
+- **Qué cambió:** las alternativas de nombre, tipografía y color se resolvieron mediante D-062; las pruebas pasan a verificar la decisión en lugar de mantenerla abierta.
+- **Cómo era antes:** este documento terminaba con identidad y nombre como candidatos.
+- **Por qué se decidió:** la investigación ya entregó criterios suficientes para producir una dirección coherente.
+- **Límite:** la adopción no acredita reconocimiento, preferencia ni comprensión con usuarios.
 
 ### 2026-09-15 — Reconstrucción de la estrategia de marca
 

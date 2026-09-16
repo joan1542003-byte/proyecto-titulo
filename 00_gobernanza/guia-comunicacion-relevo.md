@@ -1,8 +1,8 @@
 ---
 id: COMUNICACION-RELEVO-2026-09-04
 titulo: "Guía de comunicación y explicación de Relevo"
-fecha_de_corte: 2026-09-15
-estado: "criterio vigente de comunicación; comprensión pendiente de prueba"
+fecha_de_corte: 2026-09-16
+estado: "sistema verbal vigente; comprensión pendiente de prueba"
 ---
 
 # Guía de comunicación y explicación de Relevo
@@ -61,13 +61,23 @@ El orden recomendado para cualquier explicación es:
 
 ## Núcleo verbal
 
-La comunicación todavía no tiene un eslogan cerrado. Antes de elegirlo debe comprobarse que la audiencia entienda la categoría, el funcionamiento y la diferencia. D-061 reemplaza la recomendación anticipada de D-060.
+**Frase de marca**
 
-**Explicación principal para comparar**
+> Hazle lugar a lo que quieres hacer.
+
+La frase relaciona la actividad elegida con un lugar concreto y con la posibilidad de volver a considerarla. No promete que la persona actuará ni convierte el ocio digital en una falta.
+
+**Descriptor funcional**
+
+> Un recordatorio físico preparado desde el teléfono.
+
+El descriptor acompaña a Relevo cuando la audiencia todavía no conoce el producto. Después se explica su diferencia situada y no coercitiva.
+
+**Explicación principal**
 
 > Relevo es un recordatorio físico que preparas desde el teléfono. Lo dejas cerca de una actividad que quieres tener presente y, cuando se cumple la condición que elegiste, emite una señal breve. Tú decides qué hacer después.
 
-Esta formulación empieza por una categoría familiar y luego muestra la relación particular entre actividad, objeto y lugar. Debe compararse con versiones que no utilicen `recordatorio`, porque la palabra podría reducir el proyecto a una alarma o sugerir un problema de memoria.
+Esta formulación empieza por una categoría familiar y luego muestra la relación particular entre actividad, objeto y lugar. Si una prueba revela que `recordatorio` induce una confusión dominante, se revisará el descriptor; mientras tanto, esta es la formulación vigente.
 
 **Núcleo interno de trabajo**
 
@@ -75,11 +85,11 @@ Esta formulación empieza por una categoría familiar y luego muestra la relaci�
 
 No es un titular obligatorio. Sirve para evaluar si el producto, su lenguaje y su comunicación sostienen el mismo propósito.
 
-**Descriptor técnico vigente**
+**Definición académica**
 
 > **Sistema phygital para recuperar intenciones personales durante el ocio digital.**
 
-El descriptor sirve para fichas, créditos y contextos académicos. No debería ser la primera y única explicación para público general.
+Esta definición sirve para fichas, créditos y contextos académicos. No debería ser la primera y única explicación para público general.
 
 **Explicación en 10 segundos**
 
@@ -410,6 +420,13 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-16 — Núcleo verbal adoptado
+
+- **Cambio:** se fijan la frase `Hazle lugar a lo que quieres hacer`, el descriptor `Un recordatorio físico preparado desde el teléfono` y una explicación principal común.
+- **Versión anterior:** la guía mantenía el eslogan y el descriptor público abiertos a comparación.
+- **Motivo:** la comunicación necesita consistencia para producir resultados y ser evaluada como un sistema, no como una colección de alternativas.
+- **Alcance:** los mensajes son decisiones vigentes; su comprensión continúa pendiente de prueba real.
 
 ### 2026-09-15 — Comunicación alineada con D-061
 
