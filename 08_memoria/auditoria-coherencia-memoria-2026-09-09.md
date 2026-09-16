@@ -46,17 +46,24 @@ La referencia obligatoria es la [pauta institucional documentada](../01_contexto
 
 Como apoyo metodológico, el [Double Diamond de Design Council](https://www.designcouncil.org.uk/resources/the-double-diamond/) orienta la relación entre explorar, definir, desarrollar y probar. El [Service Standard de GDS](https://www.gov.uk/service-manual/service-standard) aporta preguntas sobre necesidades, continuidad de canales, accesibilidad, privacidad, medición y fiabilidad. Se adaptan como lentes de revisión: no son la rúbrica chilena ni certifican este producto.
 
-El apartado [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) incorpora la definición profesional de [service blueprint de Sarah Gibbons](https://www.nngroup.com/articles/service-blueprints-definition/) (2017) para relacionar experiencia visible y procesos de soporte. Es una fuente metodológica fundacional anterior a 2019, no evidencia empírica sobre Relevo. Se verificó su página el 9 de septiembre; su fecha original se conserva en la referencia APA. La bibliografía suma 52 entradas: las 51 existentes y esta incorporación.
+El apartado [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) incorpora la definición profesional de [service blueprint de Sarah Gibbons](https://www.nngroup.com/articles/service-blueprints-definition/) (2017) para relacionar experiencia visible y procesos de soporte. Es una fuente metodológica fundacional anterior a 2019, no evidencia empírica sobre Relevo. Se verificó su página el 9 de septiembre; su fecha original se conserva en la referencia APA. En ese corte, la bibliografía sumaba 52 entradas. El control vigente registra 54 después de incorporar dos fuentes para la cautela cromática del capítulo 11.
 
 ## Control de cierre documental
 
-La revisión de coherencia conservó entonces el contenido previo al capítulo 10 y añadió una fuente metodológica. La edición de lectura posterior reorganizó los apartados internos y sus transiciones, manteniendo los catorce capítulos y las 52 referencias. Las ubicaciones de esta auditoría ya remiten a los títulos actuales. Se sincronizan resumen, índices, citas, extensión e instrucciones. El [control editorial](auditoria-redaccion-v4-2026-08-26.md) registra el conteo actualizado y su método. Las versiones históricas y sus registros se preservan; no gobiernan el estado actual.
+La revisión de coherencia conservó entonces el contenido previo al capítulo 10 y añadió una fuente metodológica. La edición de lectura posterior reorganizó los apartados internos y sus transiciones, manteniendo los catorce capítulos. Las ubicaciones de esta auditoría ya remiten a los títulos actuales. Se sincronizan resumen, índices, citas, extensión e instrucciones. El [control editorial](auditoria-redaccion-v4-2026-08-26.md) registra el conteo actualizado y la [matriz de citas](matriz-citas-referencias-v4-2026-08-27.md) registra las 54 referencias vigentes. Las versiones históricas y sus registros se preservan; no gobiernan el estado actual.
 
 **Comprobaciones de la revisión previa ([dafd243](https://github.com/joan1542003-byte/proyecto-titulo/commit/dafd243)), conservadas como antecedente:** catorce títulos idénticos; preliminares y capítulos 1–9 sin cambios; 51 referencias preservadas y una añadida; registros históricos intactos en los archivos modificados; 585 enlaces locales válidos en documentos Markdown de primer nivel de las áreas; protocolo sin cambios. El cuerpo de capítulos 1–13 suma 17.337 palabras con el método declarado en el control editorial.
 
 La revisión no produce resultados de uso, medidas de hardware, registro comercial del nombre ni un costo final. No permite declarar que el proyecto cubre cualquier situación. Su resultado es una base consistente para probar y corregir lo que realmente falta.
 
 ## Registro de cambios
+
+### 2026-09-15 — Bibliografía vigente sincronizada
+
+- **Cambio:** la auditoría distingue el corte histórico de 52 referencias del estado vigente de 54 y enlaza la matriz actualizada.
+- **Versión anterior:** presentaba el total de 52 como si continuara gobernando el estado actual.
+- **Motivo:** la memoria incorporó dos fuentes sobre significado cromático contextual.
+- **Alcance:** no cambian la pregunta, el protocolo ni los resultados pendientes.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

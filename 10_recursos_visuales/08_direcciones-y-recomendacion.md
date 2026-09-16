@@ -133,7 +133,7 @@ Esta dirección evita convertir la señal en decoración y permite que la identi
 ### Marca
 
 - mantener un logotipo tipográfico como punto de partida;
-- probar `Una señal cerca de tu primer paso` frente a las demás alternativas de descriptor;
+- probar `Una señal donde quieres empezar` frente a las demás alternativas de descriptor;
 - construir reconocimiento mediante voz, jerarquía y demostración;
 - aplazar símbolo independiente hasta comprobar su necesidad.
 
@@ -159,6 +159,13 @@ La recomendación debe revisarse si ocurre alguno de estos resultados:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Descriptor y relato sincronizados
+
+- **Qué cambió:** la recomendación utiliza `Una señal donde quieres empezar` y remite al lenguaje público definido después de revisar el corpus.
+- **Cómo era antes:** mantenía `Una señal cerca de tu primer paso` como frase prioritaria.
+- **Por qué se decidió:** `primer paso` es un concepto analítico útil, pero no una expresión registrada en las entrevistas ni necesariamente autoexplicativa.
+- **Límite:** el nuevo descriptor continúa pendiente de prueba.
 
 ### 2026-09-15 — Recomendación desarrollada
 

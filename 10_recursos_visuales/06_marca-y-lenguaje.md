@@ -57,13 +57,15 @@ Antes de una salida pública se necesita:
 
 ## Descriptor
 
-El descriptor debe explicar lo que hace Relevo sin presentar una metáfora como mecanismo. Se evaluarán tres familias:
+El descriptor debe explicar lo que hace Relevo sin presentar una metáfora como mecanismo. La revisión del corpus P1–P8 no encontró `primer paso` como expresión de las personas entrevistadas. El término se conserva en la investigación como definición analítica, pero no debe presentarse como lenguaje cotidiano sin explicación.
+
+Se evaluarán tres familias:
 
 ### Funcional
 
-**Una señal cerca de tu primer paso.**
+**Una señal donde quieres empezar.**
 
-Ventaja: une señal, proximidad y primer paso sin exigir contacto físico con la actividad. Riesgo: necesita que `primer paso` se explique en el primer contacto.
+Ventaja: emplea palabras comunes y relaciona la señal con un lugar sin introducir terminología propia del proyecto. Riesgo: puede sugerir un punto exacto o un comienzo inmediato.
 
 ### Situacional
 
@@ -77,7 +79,9 @@ Ventaja: plantea una escena reconocible. Riesgo: puede sonar a aplicación de re
 
 Ventaja: destaca propiedad y contexto. Riesgo: es más largo y menos directo sobre la señal.
 
-La alternativa recomendada para prototipar es **Una señal cerca de tu primer paso**. Describe el mecanismo y la relación espacial sin prometer que la actividad ocurrirá. La versión anterior con `junto a` se mantiene como control de comparación. Ninguna es definitiva.
+La alternativa recomendada para prototipar es **Una señal donde quieres empezar**. Describe la relación entre señal, intención y lugar sin prometer que la actividad ocurrirá. Las versiones con `primer paso` se conservan como antecedentes, no como formulación pública vigente. Ninguna es definitiva.
+
+La idea estratégica que articula nombre y comportamiento es **una intención cambia de soporte sin cambiar de dueño**. Explica el relevo entre persona, aplicación, testigo y entorno, al mismo tiempo que preserva la autonomía. Su desarrollo y sus límites están documentados en [semántica y relato de marca](13_semantica-y-relato-de-marca.md).
 
 ## Arquitectura de nombres
 
@@ -109,6 +113,19 @@ La voz de Relevo es directa, cercana y no evaluativa. Nombra la situación antes
 | Fallo | Claro y útil | `El testigo perdió la conexión. Acércalo y vuelve a intentar.` |
 | Salida | Neutral | `El ciclo se cerró. La intención sigue guardada.` |
 | Comunicación pública | Honesto | `Prototipo en desarrollo. La señal y su forma están en prueba.` |
+
+### Lenguaje de configuración
+
+`Primer paso` se define internamente como una acción breve, concreta y disponible que permite comenzar una actividad elegida. En la interfaz, esa definición se traduce en una pregunta comprensible:
+
+| Función | Texto de interfaz |
+| --- | --- |
+| Registrar actividad | `¿Qué quieres hacer?` |
+| Concretar el comienzo | `¿Cómo podrías empezar?` |
+| Ayudar sin imponer | `Escribe una acción breve y concreta. Por ejemplo: ponerme las zapatillas.` |
+| Revisar la respuesta | `Cómo empezar` |
+
+Esta distinción permite conservar precisión académica sin exigir que una persona aprenda primero el vocabulario del proyecto.
 
 ### Palabras que se evitan
 
@@ -142,6 +159,13 @@ Cada dirección de marca debe responder:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Separación entre lenguaje interno y lenguaje público
+
+- **Qué cambió:** `primer paso` quedó como término analítico definido; la interfaz usa `¿Cómo podrías empezar?` y el descriptor recomendado pasó a `Una señal donde quieres empezar`.
+- **Cómo era antes:** el descriptor utilizaba `primer paso` como si fuera una expresión autoexplicativa y no existía un relato que relacionara el nombre con el comportamiento del sistema.
+- **Por qué se decidió:** la expresión no aparece en el corpus de entrevistas y puede tener interpretaciones distintas; el lenguaje público debe describir la tarea con palabras reconocibles.
+- **Límite:** las nuevas formulaciones necesitan pruebas de comprensión y recuerdo; no se presentan como validadas.
 
 ### 2026-09-15 — Segunda versión del descriptor funcional
 

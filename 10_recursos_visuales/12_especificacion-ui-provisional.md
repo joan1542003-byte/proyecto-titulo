@@ -71,16 +71,16 @@ La agrupación se resuelve primero con alineación y espacio. Una tarjeta se inc
 
 ### Iconos
 
-Se utilizan Material Symbols Outlined para acciones conocidas, con tamaño base de 24 dp, peso visual coherente y etiqueta cuando el significado no sea universal. Los conceptos propios —intención, primer paso, testigo y ciclo— no reciben un icono hasta comprobar que aporta más que la palabra.
+Se utilizan Material Symbols Outlined para acciones conocidas, con tamaño base de 24 dp, peso visual coherente y etiqueta cuando el significado no sea universal. Los conceptos propios —intención, forma de comenzar, testigo y ciclo— no reciben un icono hasta comprobar que aporta más que la palabra.
 
 ## Estados
 
 | Estado | Qué debe aparecer | Acción disponible |
 | --- | --- | --- |
 | Sin configurar | tarea pendiente expresada en lenguaje común | comenzar configuración |
-| Preparado | intención, primer paso, condición y testigo asociados | editar o desarmar |
+| Preparado | actividad, forma de comenzar, condición y testigo asociados | editar o desarmar |
 | Esperando | estado actual y próxima condición relevante | revisar o cerrar |
-| Señal activa | intención, primer paso, procedencia y estado del testigo | silenciar, cerrar o mantener |
+| Señal activa | actividad, forma de comenzar, procedencia y estado del testigo | silenciar, cerrar o mantener |
 | Conexión perdida | qué ocurrió y qué contenido permanece guardado | acercar y reintentar |
 | Permiso requerido | para qué se necesita y qué ocurre si se rechaza | conceder o continuar sin la función, si es posible |
 | Cerrado | confirmación neutral | volver al inicio o preparar otro ciclo |
@@ -93,13 +93,26 @@ La pantalla más importante debe explicar el momento phygital sin competir con e
 
 1. estado breve: `La señal está activa`;
 2. intención, en el mayor tamaño de texto;
-3. primer paso observable;
+3. forma concreta de comenzar;
 4. lugar declarado y nombre del testigo;
 5. explicación opcional de una línea;
 6. acción principal coherente con la prueba;
 7. salida secundaria visible.
 
-El acento verde turquesa se utiliza en el estado y en una acción principal, no como ilustración de fondo. Si una persona no percibe el color, la jerarquía continúa siendo legible por texto, peso, posición y forma.
+El verde turquesa funciona como color de presencia: se utiliza en el vínculo activo o en una acción principal, no como ilustración de fondo ni como confirmación de cumplimiento. Si una persona no percibe el color, la jerarquía continúa siendo legible por texto, peso, posición y forma.
+
+## Lenguaje de configuración
+
+La documentación puede utilizar `primer paso` como concepto analítico definido, pero la interfaz debe describir la tarea con preguntas directas:
+
+| Pantalla | Título o etiqueta |
+| --- | --- |
+| Actividad | `¿Qué quieres hacer?` |
+| Comienzo | `¿Cómo podrías empezar?` |
+| Ayuda del campo | `Escribe una acción breve y concreta. Por ejemplo: ponerme las zapatillas.` |
+| Revisión | `Cómo empezar` |
+
+No se utiliza `primer paso` como etiqueta aislada. La decisión evita exigir aprendizaje terminológico antes de configurar el sistema y debe comprobarse mediante paráfrasis y tareas.
 
 ## Forma, movimiento y profundidad
 
@@ -133,6 +146,13 @@ El color dinámico puede evaluarse más adelante. En el prototipo inicial se man
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Lenguaje público y función de marca sincronizados
+
+- **Qué cambió:** la interfaz pregunta `¿Cómo podrías empezar?`, muestra `Cómo empezar` en revisión y utiliza el turquesa como color de presencia, no de logro.
+- **Cómo era antes:** `primer paso` aparecía como etiqueta pública y el acento se describía solo como recurso funcional de estado o acción.
+- **Por qué se decidió:** la interfaz debe usar palabras reconocibles y expresar el relato de marca sin añadir decoración ni juicios sobre la conducta.
+- **Límite:** los textos y la jerarquía cromática permanecen sujetos a pruebas de comprensión, accesibilidad y uso.
 
 ### 2026-09-15 — Primera especificación de interfaz
 

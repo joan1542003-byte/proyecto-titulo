@@ -3,7 +3,7 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
-**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto. La memoria tiene 15.127 palabras de texto académico, sin bibliografía ni registro administrativo.
+**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto. La memoria tiene 15.274 palabras de texto académico, sin bibliografía ni registro administrativo.
 
 **Revisión y limpieza de textos:** [Correcciones y comprobaciones del 9 de septiembre](00_gobernanza/auditoria-textual-2026-09-09.md). Estados, decisiones, enlaces y referencias reconciliados; las entregas antiguas conservan su fecha y sus límites.
 
@@ -31,7 +31,7 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 
 A veces una persona sigue viendo contenido en el teléfono aunque antes quería leer, caminar, dibujar o comenzar otra actividad. No necesariamente olvidó esa intención: mientras la sesión continúa, esa posibilidad puede dejar de participar en la siguiente decisión.
 
-Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y su primer paso en una aplicación Android, y deja un objeto pequeño cerca del lugar donde puede comenzar. Si se cumple una condición configurada, el objeto emite una señal breve de luz y sonido. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea.
+Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y responde cómo podría comenzar en una aplicación Android, y deja un objeto pequeño en ese lugar. Si se cumple una condición configurada, el objeto emite una señal breve de luz y sonido. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea. La documentación llama `primer paso` a esa acción breve y concreta; la interfaz utiliza lenguaje cotidiano.
 
 En términos de diseño, Relevo es un sistema phygital: la aplicación organiza, el objeto señala, el lugar aporta significado y la persona conserva la decisión. No pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento.
 
@@ -51,7 +51,7 @@ La definición física más reciente se encuentra en el [estudio del testigo com
 
 El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal están documentados en [`07_validacion`](07_validacion/README.md). El [programa Android–BLE para micro:bit V2](06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) ya compila y permite comprobar matriz, sonido y silencio local sin participantes. Como la matriz integrada es roja, la fase A exige añadir y revisar una luz blanca cálida externa antes de evaluar comprensión. Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como antecedentes de mesa. Antes de usar la señal con participantes faltan acceso a la placa, instalación, montaje cálido, ensayo técnico y revisión competente. La comparación posterior permanece bloqueada hasta disponer de una notificación Android equivalente. No existen resultados de validación.
 
-La [investigación visual reiniciada](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. La primera dirección para prototipar se denomina **Presencia útil**: emplea Source Sans 3, una base neutra y un acento verde turquesa con función explícita. Es una hipótesis de diseño, no una identidad definitiva. El logotipo tipográfico es temporal, la forma física sigue abierta y cada decisión deberá comprobarse en la aplicación, el testigo, la memoria y la comunicación del producto.
+La [investigación visual reiniciada](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. La primera dirección para prototipar se denomina **Presencia útil**: emplea Source Sans 3, una base neutra y verde turquesa como color de presencia cuando una intención vuelve a ser relevante. El relato plantea que una intención cambia de soporte sin cambiar de dueño. Es una hipótesis de marca y diseño, no una identidad definitiva. El logotipo tipográfico es temporal, la forma física sigue abierta y cada decisión deberá comprobarse en la aplicación, el testigo, la memoria y la comunicación del producto.
 
 La base metodológica del corpus quedó consolidada:
 
@@ -119,6 +119,13 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Lenguaje y relato de marca sincronizados
+
+- **Cambio:** la síntesis diferencia el término analítico `primer paso` de la pregunta pública, e incorpora el color de presencia y el traspaso entre soportes como relato.
+- **Versión anterior:** la entrada utilizaba `primer paso` directamente y describía el turquesa solo como un acento funcional.
+- **Motivo:** hacer comprensible el producto sin jerga y conectar la identidad con su comportamiento real.
+- **Alcance:** nombre, descriptor y paleta continúan pendientes de prueba. El conteo académico vigente es de 15.274 palabras.
 
 ### 2026-09-15 — Primera dirección visual especificada
 

@@ -56,11 +56,13 @@ Las pruebas visuales acompañan el desarrollo técnico. No deben retrasar la pue
 
 ### Prueba 6: marca y descriptor
 
-**Pregunta:** ¿Qué entiende y recuerda una persona después de una exposición breve?
+**Pregunta:** ¿Qué entiende y recuerda una persona después de una exposición breve, y qué relación reconoce entre nombre, lenguaje y color?
 
-**Material:** nombre `Relevo`, tres descriptores y explicación de una situación. Las alternativas mantienen la misma calidad gráfica para no confundir lenguaje con acabado.
+**Material:** nombre `Relevo`, tres descriptores, explicación de una situación y aplicaciones equivalentes de la paleta. Las alternativas mantienen contenido, tipografía y calidad gráfica para no confundir lenguaje con acabado.
 
-**Cierre:** el descriptor elegido comunica señal, primer paso y autonomía sin sugerir bloqueo o eficacia garantizada. La disponibilidad comercial se trata por separado.
+**Procedimiento:** registrar asociaciones espontáneas del nombre y del color; pedir una paráfrasis del descriptor; comparar `primer paso`, `cómo empezar` y una pregunta directa en una tarea; retirar el color y revisar si la identidad se sostiene; preguntar dónde termina la intervención del sistema.
+
+**Cierre:** el descriptor elegido comunica señal, lugar y autonomía sin sugerir bloqueo o eficacia garantizada; el lenguaje permite ingresar una acción concreta sin explicación correctiva; el color orienta sin confundirse de forma reiterada con éxito, salud, sostenibilidad o urgencia. La disponibilidad comercial se trata por separado.
 
 ### Prueba 7: memoria editorial
 
@@ -76,8 +78,8 @@ Las pruebas visuales acompañan el desarrollo técnico. No deben retrasar la pue
 
 | Decisión | Evidencia de entrada | Prueba | Documento que se actualizará |
 | --- | --- | --- | --- |
-| Descriptor | Problema, propuesta y análisis de categoría | Recuerdo y comprensión | `06_marca-y-lenguaje.md` |
-| Paleta | Roles, accesibilidad y contexto | Contraste + percepción | Futura especificación cromática |
+| Descriptor y lenguaje | Problema, corpus P1–P8, propuesta y análisis de categoría | Paráfrasis, tarea y recuerdo | `06_marca-y-lenguaje.md` y `13_semantica-y-relato-de-marca.md` |
+| Paleta de marca | Roles, accesibilidad, categoría y relato de marca | Contraste, asociaciones, reconocimiento sin color y percepción aplicada | `11_sistema-cromatico-y-tipografico-provisional.md` |
 | Tipografía Android | Lectura, español, plataforma | Texto ampliado + tareas | Futura especificación de interfaz |
 | Tipografía editorial | Lectura prolongada y APA 7 | Maqueta real | Futura especificación editorial |
 | Forma del testigo | Uso, estabilidad, traslado | Modelos físicos | Futura especificación de producto |
@@ -115,6 +117,13 @@ El sistema se considera cerrado cuando existe una única especificación vigente
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Prueba de lenguaje y significado de marca ampliada
+
+- **Qué cambió:** la prueba de marca incorpora paráfrasis, lenguaje de configuración, asociaciones cromáticas y reconocimiento sin color.
+- **Cómo era antes:** se concentraba en recordar el nombre y elegir un descriptor, mientras la paleta se evaluaba principalmente por contraste y percepción.
+- **Por qué se decidió:** una identidad necesita comprobar significado y continuidad, no solo preferencia o funcionamiento técnico.
+- **Límite:** el documento define el procedimiento; no contiene resultados ni atribuye significados confirmados a las personas.
 
 ### 2026-09-15 — Dirección de prueba actualizada
 

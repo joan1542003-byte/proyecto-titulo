@@ -620,11 +620,13 @@ La tabla sintetiza requisitos pendientes de operación. El autor coordina la inv
 
 ## Nombre y comunicación del propósito
 
-Relevo se utiliza como nombre académico provisional por su relación con el paso entre la actividad presente y una alternativa elegida. Antes de adoptarlo fuera de este contexto se deberá comprobar su comprensión y disponibilidad comercial. Para explicar el sistema se compararán tres descriptores; la alternativa inicial, «Una señal cerca de tu primer paso», relaciona la señal con un comienzo concreto sin prometer que la actividad ocurrirá ni exigir que el testigo esté en contacto con la acción.
+Relevo se utiliza como nombre académico provisional por su relación con un traspaso entre soportes: la persona formula una intención, la aplicación la conserva, el testigo la hace presente en el entorno y la decisión vuelve a la persona. La intención cambia de soporte sin cambiar de dueño. Antes de adoptar el nombre fuera de este contexto se deberá comprobar su comprensión y disponibilidad comercial.
+
+`Primer paso` se mantiene como concepto analítico para describir una acción breve, concreta y disponible que permite comenzar una actividad elegida. No aparece como expresión de los participantes P1–P8 y puede admitir interpretaciones diferentes sin una definición. Por eso, la interfaz preguntará «¿Cómo podrías empezar?» y mostrará «Cómo empezar» durante la revisión. Para explicar el sistema se compararán tres descriptores; la alternativa inicial, «Una señal donde quieres empezar», relaciona señal, intención y lugar mediante palabras comunes, sin prometer que la actividad ocurrirá.
 
 Los ejemplos deben mostrar un comienzo realizable: ponerse las zapatillas para hacer ejercicio o preparar la bolsa para una salida de buceo ya planificada. Son escenarios hipotéticos; recuperar tiempo no aporta por sí solo recursos, habilidades ni una actividad completada.
 
-El sistema visual se organiza por funciones antes de incorporar recursos expresivos. La primera hipótesis, denominada Presencia útil, emplea Source Sans 3, temas claro y oscuro, fondos neutros y un acento verde turquesa reservado para acciones y estados relevantes. La aplicación debe priorizar la intención, el primer paso y el estado del ciclo mediante componentes reconocibles, jerarquías breves y un solo énfasis principal por pantalla. Estos parámetros permiten construir una comparación; no constituyen una identidad validada. El testigo debe distinguirse de su entorno y permitir reconocer sus estados sin depender exclusivamente del color. Encontrar el objeto, notar la señal y comprender su relación con la intención son comprobaciones distintas.
+El sistema visual se organiza por funciones antes de incorporar recursos expresivos. La primera hipótesis, denominada Presencia útil, emplea Source Sans 3, temas claro y oscuro, fondos neutros y un verde turquesa como color de presencia. La base neutra corresponde al sistema en segundo plano; el acento aparece cuando una intención preparada vuelve a ser relevante o existe una acción principal. No representa calma, bienestar, éxito ni cumplimiento. El significado cromático depende del contexto y del tipo de producto; una equivalencia universal entre matiz y emoción no basta para justificar la marca (Elliot & Maier, 2014; Kauppinen-Räisänen & Luomala, 2010). La aplicación debe priorizar la actividad, la forma de comenzar y el estado del ciclo mediante componentes reconocibles, jerarquías breves y un solo énfasis principal por pantalla. Estos parámetros permiten construir una comparación; no constituyen una identidad validada. El testigo debe distinguirse de su entorno y permitir reconocer sus estados sin depender exclusivamente del color. La señal física conserva pruebas cromáticas propias y no tiene que copiar el acento de marca. Encontrar el objeto, notar la señal y comprender su relación con la intención son comprobaciones distintas.
 
 La memoria, la aplicación, el testigo y la comunicación deben reconocerse como partes de un mismo producto sin repetir una composición decorativa en todos los soportes. La [investigación visual](../10_recursos_visuales/README.md) reúne los criterios y alternativas; la [guía explicativa](../00_gobernanza/guia-comunicacion-relevo.md) distingue la promesa del producto de la evidencia disponible. La comunicación deberá revisarse si hace pensar que Relevo obliga a actuar o detecta un estado subjetivo.
 
@@ -775,6 +777,8 @@ Chrome for Developers. (s. f.). *Communicating with Bluetooth devices over JavaS
 
 de Segovia Vicente, D., Van Gaeveren, K., Murphy, S. L., & Vanden Abeele, M. M. P. (2024). Does mindless scrolling hamper well-being? Combining ESM and log-data to examine the link between mindless scrolling, goal conflict, guilt, and daily well-being. *Journal of Computer-Mediated Communication, 29*(1), zmad056. https://doi.org/10.1093/jcmc/zmad056
 
+Elliot, A. J., & Maier, M. A. (2014). Color psychology: Effects of perceiving color on psychological functioning in humans. *Annual Review of Psychology, 65*, 95–120. https://doi.org/10.1146/annurev-psych-010213-115035
+
 Focusaur. (s. f.). *Focusaur: The phone-free focus device for deep work & habits*. Recuperado el 24 de agosto de 2026, de https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-habits
 
 Gibbons, S. (2017, 27 de agosto). *Service blueprints: Definition*. Nielsen Norman Group. https://www.nngroup.com/articles/service-blueprints-definition/
@@ -800,6 +804,8 @@ Grüning, D. J., Riedel, F., & Lorenz-Spreen, P. (2023). Directing smartphone us
 Haliburton, L., Grüning, D. J., Riedel, F., Schmidt, A., & Terzimehić, N. (2024). A longitudinal in-the-wild investigation of design frictions to prevent smartphone overuse. En *Proceedings of the CHI Conference on Human Factors in Computing Systems* (Artículo 243, pp. 1–16). Association for Computing Machinery. https://doi.org/10.1145/3613904.3642370
 
 Hermann, M., Mahler, T., de Melo, G., & Weber, M. (2007). The tangible reminder. En *Proceedings of the 3rd IET International Conference on Intelligent Environments* (pp. 144–151). Institution of Engineering and Technology. https://doi.org/10.1049/cp:20070359
+
+Kauppinen-Räisänen, H., & Luomala, H. T. (2010). Exploring consumers’ product-specific colour meanings. *Qualitative Market Research: An International Journal, 13*(3), 287–308. https://doi.org/10.1108/13522751011053644
 
 Kidel Peña-Albert, A., Ingram, S., Khazaal, Y., Litrico, L., Farah, J. C., & Gillet, D. (2026). Restoring engagement in digital self-control tools using nudge reconfiguration prompts: Quasi-experimental study. *JMIR Formative Research, 10*, e85349. https://doi.org/10.2196/85349
 
@@ -860,6 +866,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 15 de septiembre de 2026 — Lenguaje y relato de marca
+
+- **Cambio:** el capítulo 11 define el relato de transferencia entre soportes, conserva `primer paso` como concepto analítico, adopta `¿Cómo podrías empezar?` como texto de interfaz y explica el turquesa como color de presencia.
+- **Versión anterior:** el descriptor utilizaba `primer paso` como lenguaje público y la paleta se justificaba principalmente por funciones de interfaz.
+- **Motivo:** relacionar nombre, lenguaje y color con la conducta real del sistema, sin presentar vocabulario interno ni asociaciones cromáticas universales como evidencia de usuario.
+- **Alcance:** son hipótesis para prototipar y comparar; no modifican los resultados de investigación ni acreditan comprensión o reconocimiento.
 
 ### 2026-09-15 — Primera hipótesis visual especificada
 

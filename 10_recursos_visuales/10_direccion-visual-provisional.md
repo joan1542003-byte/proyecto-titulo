@@ -6,7 +6,7 @@
 
 ## Punto de partida
 
-La apariencia de Relevo no debe surgir de una marca admirada ni de asociaciones universales atribuidas a un color. Debe responder a lo que el sistema hace: ayudar a preparar una intención, situar una señal cerca de su primer paso y mantener abierta la decisión posterior.
+La apariencia de Relevo no debe surgir de una marca admirada ni de asociaciones universales atribuidas a un color. Debe responder a lo que el sistema hace: ayudar a preparar una intención, situar una señal donde esa actividad puede comenzar y mantener abierta la decisión posterior.
 
 No existe un diseño libre de sesgos. Para reducirlos, esta dirección separa primero los requisitos y después la forma. También evita suponer preferencias por edad, género o familiaridad tecnológica. Las propuestas se evaluarán con el mismo contenido, en distinto orden de presentación y mediante tareas de uso, preguntas de comprensión y pares semánticos.
 
@@ -35,6 +35,12 @@ Estos atributos no describen una emoción garantizada. Son criterios que pueden 
 
 ## Marca
 
+### Relato rector
+
+La idea que vincula los soportes es **una intención cambia de soporte sin cambiar de dueño**. La aplicación recibe y organiza; el testigo lleva la señal al entorno; la decisión regresa a la persona. La continuidad de marca proviene de esa conducta, no de copiar la misma forma o el mismo color en cada soporte.
+
+La base neutra representa un sistema que permanece en segundo plano. El verde turquesa funciona provisionalmente como **color de presencia**: aparece cuando una intención preparada vuelve a ser relevante o una acción principal queda disponible. No representa calma, éxito ni cumplimiento. La relación completa se desarrolla en [semántica y relato de marca](13_semantica-y-relato-de-marca.md).
+
 ### Logotipo inicial
 
 Mientras el nombre no tenga despeje comercial, conviene utilizar un logotipo tipográfico sencillo: **Relevo**, con mayúscula inicial, compuesto en Source Sans 3 Semibold. No se modifica ninguna letra ni se añade un símbolo propietario en esta etapa. Así se puede evaluar el nombre sin confundir su comprensión con una pieza formal compleja.
@@ -49,13 +55,13 @@ En el prototipo, el icono de aplicación puede utilizar una `R` de la misma fami
 
 La alternativa recomendada para la siguiente prueba es:
 
-> Una señal cerca de tu primer paso.
+> Una señal donde quieres empezar.
 
-La palabra `cerca` explica mejor la relación espacial que `junto a` cuando el testigo puede estar sobre una mesa, un estante o al lado de un objeto. El descriptor no promete que la actividad se realizará. Debe compararse con las alternativas ya registradas antes de fijarse.
+La frase utiliza palabras comunes y evita introducir `primer paso` antes de definirlo. El descriptor no promete que la actividad se realizará. Debe compararse con las alternativas ya registradas antes de fijarse.
 
 Para una primera explicación se utilizará una frase completa:
 
-> Con Relevo eliges algo que quieres hacer, dejas un pequeño dispositivo cerca del lugar donde puedes comenzar y programas una señal para recordártelo.
+> Con Relevo eliges algo que quieres hacer, indicas cómo podrías comenzar y dejas un pequeño dispositivo en ese lugar. Cuando se cumple la condición que elegiste, el dispositivo emite una señal y tú decides qué hacer.
 
 ## Lenguaje gráfico
 
@@ -96,7 +102,7 @@ Toda explicación comienza con una situación de uso y después muestra el siste
 La dirección avanza solo si una persona puede:
 
 - explicar para qué sirve Relevo después de una exposición breve;
-- distinguir intención, primer paso, condición, testigo y señal;
+- distinguir lo que quiere hacer, cómo podría comenzar, la condición, el testigo y la señal;
 - identificar acción principal, salida y estado sin depender del color;
 - describir el sistema como una ayuda voluntaria y no como un bloqueo;
 - leer la interfaz con tema claro, oscuro y texto aumentado;
@@ -114,6 +120,13 @@ La dirección avanza solo si una persona puede:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Dirección alineada con el relato de marca
+
+- **Qué cambió:** se incorporó la transferencia de una intención entre soportes como relato rector, el turquesa pasó a definirse como color de presencia y el descriptor utiliza lenguaje público directo.
+- **Cómo era antes:** la dirección justificaba un acento funcional y usaba `primer paso`, pero no explicaba por qué esas decisiones pertenecían a la marca Relevo.
+- **Por qué se decidió:** una dirección visual debe sostenerse en el comportamiento del producto y conservar sentido entre marca, interfaz, objeto y comunicación.
+- **Límite:** el relato y sus expresiones visuales son hipótesis sujetas a pruebas de comprensión y reconocimiento.
 
 ### 2026-09-15 — Primera dirección visual posterior al reinicio
 

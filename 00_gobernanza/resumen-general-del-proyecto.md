@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
 
-La fecha de corte es el 15 de septiembre de 2026. La memoria contiene 15.127 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
+La fecha de corte es el 15 de septiembre de 2026. La memoria contiene 15.274 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
 
 ## El objetivo del proyecto
 
@@ -149,7 +149,7 @@ La arquitectura de nombres quedó así:
 
 Se eligió **testigo** en vez de “dispositivo", “asistente” u “objeto inteligente” porque describe lo que hace sin cerrar todavía su forma ni sugerir vigilancia u obligación.
 
-El descriptor recomendado para prototipar es **“Una señal cerca de tu primer paso”**. Relaciona la señal con el lugar sin confundir proximidad con contacto físico ni prometer que la actividad ocurrirá. Se comparará con otras dos alternativas antes de cerrarlo. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md).
+El descriptor recomendado para prototipar es **“Una señal donde quieres empezar”**. Utiliza lenguaje común, relaciona la señal con el lugar y no promete que la actividad ocurrirá. `Primer paso` se mantiene como término analítico; la interfaz pregunta `¿Cómo podrías empezar?`. Las formulaciones se compararán antes de cerrarlas. Ver [marca, nombre y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md) y [semántica y relato de marca](../10_recursos_visuales/13_semantica-y-relato-de-marca.md).
 
 ## Estado de la investigación visual
 
@@ -157,7 +157,7 @@ El 11 de septiembre se retiró el sistema gráfico anterior y se reinició el es
 
 - La aplicación conservará la arquitectura del wireframe v1, pero comparará la jerarquía y los componentes de la primera dirección con alternativas de control.
 - Se diseñarán temas claro y oscuro siguiendo la preferencia del sistema; ninguno será la identidad exclusiva.
-- La primera paleta de prueba combina fondos neutros con verde turquesa. Sus valores están especificados, pero no son definitivos.
+- La primera paleta de prueba combina fondos neutros con verde turquesa. El acento funciona como color de presencia cuando una intención vuelve a ser relevante; no representa calma, éxito ni cumplimiento. Sus valores están especificados, pero no son definitivos.
 - La señal física se estudiará como comportamiento perceptible; su color no tiene que copiar el acento de la aplicación.
 - El testigo comparará formas reales antes de cerrar carcasa, material o instalación.
 - La memoria priorizará lectura, evidencia y navegación, sin repetir un motivo decorativo en todas las páginas.
@@ -257,6 +257,13 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Relato de marca y lenguaje sincronizados
+
+- **Qué cambió:** el resumen incorpora el descriptor `Una señal donde quieres empezar`, distingue el concepto interno del texto de interfaz y explica el verde turquesa como color de presencia.
+- **Cómo era antes:** comunicaba `primer paso` directamente y presentaba la paleta como una selección principalmente funcional.
+- **Por qué se decidió:** alinear marca, lenguaje, color y comportamiento en una misma hipótesis verificable.
+- **Límite:** nombre, descriptor y asociaciones cromáticas siguen pendientes de prueba; no se agregan resultados. El conteo académico se actualizó de 15.127 a 15.274 palabras.
 
 ### 2026-09-15 — Primera dirección visual especificada
 

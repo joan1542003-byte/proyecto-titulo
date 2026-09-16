@@ -552,7 +552,23 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** pruebas de comprensión, jerarquía, contraste, texto aumentado, reconocimiento, impresión y significados atribuidos al color.
 - **Documentos asociados:** [dirección visual provisional](../10_recursos_visuales/10_direccion-visual-provisional.md), [sistema cromático y tipográfico](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [especificación de interfaz](../10_recursos_visuales/12_especificacion-ui-provisional.md).
 
+## D-060 — Relato de marca y separación entre lenguaje interno y público
+
+- **Fecha:** 2026-09-15.
+- **Decisión:** conservar `primer paso` como concepto analítico definido, pero utilizar `¿Cómo podrías empezar?` y `Cómo empezar` en la interfaz. El descriptor que pasa a prueba es `Una señal donde quieres empezar`. La identidad se articula mediante la idea `una intención cambia de soporte sin cambiar de dueño`; la base neutra representa el segundo plano y el verde turquesa funciona provisionalmente como color de presencia cuando una intención preparada vuelve a ser relevante.
+- **Fundamento:** `primer paso` no aparece en el corpus P1–P8 y admite interpretaciones diferentes sin explicación. El turquesa estaba justificado técnicamente, pero no como parte de una marca. La nueva decisión relaciona nombre, lenguaje, conducta y color sin atribuir al matiz calma, bienestar o eficacia universal.
+- **Consecuencia:** marca, aplicación, estados y señal física se documentan como capas relacionadas, pero no idénticas. La interfaz utiliza lenguaje de tarea; la memoria mantiene precisión conceptual; el color debe sostener jerarquía y reconocimiento sin ser el único portador de significado.
+- **Estado:** vigente como hipótesis estratégica para prototipar; requiere pruebas de comprensión, asociaciones cromáticas, reconocimiento sin color y disponibilidad comercial del nombre.
+- **Documentación:** [semántica y relato de marca](../10_recursos_visuales/13_semantica-y-relato-de-marca.md), [marca y lenguaje](../10_recursos_visuales/06_marca-y-lenguaje.md), [sistema cromático](../10_recursos_visuales/11_sistema-cromatico-y-tipografico-provisional.md) y [plan de pruebas](../10_recursos_visuales/09_plan-de-pruebas.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — D-060
+
+- **Qué cambió:** se registró la separación entre concepto académico, lenguaje público y relato de marca, junto con la función del turquesa como color de presencia.
+- **Cómo era antes:** D-059 resolvía una primera especificación funcional, pero no justificaba por completo la identidad ni revisaba el origen de `primer paso`.
+- **Por qué se decidió:** evitar que una solución de interfaz se confunda con una estrategia de marca y que una expresión interna se presente como lenguaje validado de usuario.
+- **Límite:** la decisión define qué prototipar; no reemplaza las pruebas ni convierte el nombre o la paleta en definitivos.
 
 ### 2026-09-15 — D-059
 

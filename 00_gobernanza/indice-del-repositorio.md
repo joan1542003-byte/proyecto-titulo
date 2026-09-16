@@ -48,7 +48,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 - La explicación pública, oral o demostrativa debe mantener las capas y los límites de `00_gobernanza/guia-comunicacion-relevo.md`.
 - La entrega fechada del 2 de septiembre se revisa desde `00_admin/encargos/encargo-02-09-2026/README.md`.
 - La línea base para construir Android se consulta en [`cierre-wireframe-v1-2026-09-09.md`](../05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md); sus fuentes y exportaciones están en `05_propuesta_phygital/wireframes-media-html/`.
-- El estado visual vigente se consulta en [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md). Presencia útil, Source Sans 3 y la paleta neutra con acento verde turquesa constituyen la primera hipótesis especificada; el logotipo, la forma y el descriptor definitivos siguen abiertos. La etapa anterior se recupera mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
+- El estado visual vigente se consulta en [`10_recursos_visuales/README.md`](../10_recursos_visuales/README.md). Presencia útil, Source Sans 3, la paleta neutra con verde turquesa como color de presencia y el relato de transferencia entre soportes constituyen la primera hipótesis especificada; el logotipo, la forma y el descriptor definitivos siguen abiertos. La etapa anterior se recupera mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`.
 - La ruta física vigente se consulta en `06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md`; el código y el binario de la puerta inmediata están en `06_desarrollo_y_factibilidad/prueba-microbit-ble/`. La Issue #11 controla esa prueba y la #10 conserva la integración portátil.
 - Las versiones anteriores no se borran si permiten reconstruir una decisión; se consultan desde [`99_archivo/antiguo`](../99_archivo/antiguo/README.md).
 
@@ -79,6 +79,13 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Estrategia de marca incorporada
+
+- **Qué cambió:** el índice enlaza el relato vigente y precisa la función de marca del turquesa.
+- **Cómo era antes:** describía la paleta solo como una especificación visual provisional.
+- **Por qué se decidió:** permitir que cualquier lectura nueva encuentre la decisión semántica junto con sus parámetros formales.
+- **Límite:** las decisiones continúan pendientes de prueba.
 
 ### 2026-09-15 — Ruta visual provisional incorporada
 

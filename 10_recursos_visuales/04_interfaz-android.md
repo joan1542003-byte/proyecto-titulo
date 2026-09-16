@@ -4,7 +4,7 @@
 
 ## Función de la aplicación
 
-La aplicación no es el lugar donde ocurre la señal principal. Su tarea es ayudar a formular una intención, definir un primer paso, preparar una condición, vincular el testigo, comprobar que funciona y recuperar el sistema cuando algo falla.
+La aplicación no es el lugar donde ocurre la señal principal. Su tarea es ayudar a formular una intención, aclarar cómo podría comenzar, preparar una condición, vincular el testigo, comprobar que funciona y recuperar el sistema cuando algo falla.
 
 La nueva interfaz debe partir del contenido y del flujo ya documentados. Android recomienda usar patrones y controles conocidos para reducir aprendizaje, y después incorporar identidad mediante color, tipografía y forma. El sistema operativo también pide respetar preferencias de tema, tamaño de texto y accesibilidad (Android Developers, s. f.-b, s. f.-c).
 
@@ -12,7 +12,7 @@ La nueva interfaz debe partir del contenido y del flujo ya documentados. Android
 
 La persona necesita comprender seis relaciones:
 
-1. la intención y el primer paso pertenecen a la persona;
+1. la intención y la forma de comenzar pertenecen a la persona;
 2. la condición determina cuándo el sistema intenta enviar la orden;
 3. el testigo debe estar vinculado y disponible;
 4. el lugar es declarado por la persona, no detectado automáticamente;
@@ -25,12 +25,12 @@ La interfaz debe mostrar estas relaciones mediante orden, etiquetas y retroalime
 
 ### Un propósito principal por pantalla
 
-Las pantallas de configuración deben concentrarse en una decisión: formular, definir el primer paso, elegir condición, revisar, vincular o probar. Los estados técnicos pueden aparecer dentro de la tarea cuando son necesarios; no deben ocupar permanentemente el nivel principal.
+Las pantallas de configuración deben concentrarse en una decisión: formular, aclarar cómo comenzar, elegir condición, revisar, vincular o probar. Los estados técnicos pueden aparecer dentro de la tarea cuando son necesarios; no deben ocupar permanentemente el nivel principal.
 
 ### Jerarquía de cuatro capas
 
 1. **Contexto:** título que indica dónde está la persona y qué está haciendo.
-2. **Contenido principal:** intención, primer paso, condición o estado del ciclo.
+2. **Contenido principal:** actividad, forma de comenzar, condición o estado del ciclo.
 3. **Apoyo:** explicación breve, consecuencia o instrucción de recuperación.
 4. **Acciones:** una acción principal y las salidas secundarias pertinentes.
 
@@ -65,7 +65,7 @@ No se fija todavía un color de marca definitivo. El color de la luz física tam
 
 La primera alternativa debe usar una familia compatible con Android, con buena lectura en español y suficientes pesos. Una sola familia reduce carga de producción y evita que la diferenciación dependa de contrastes tipográficos innecesarios. La identidad puede construirse mediante proporción, espaciado y tono antes de introducir una segunda familia.
 
-El texto debe respetar el escalado configurado por la persona. Los títulos se escriben en estilo oración y las etiquetas deben seguir siendo comprensibles fuera de contexto. Los conceptos propios —intención, primer paso, testigo y ciclo— se mantienen estables.
+El texto debe respetar el escalado configurado por la persona. Los títulos se escriben en estilo oración y las etiquetas deben seguir siendo comprensibles fuera de contexto. `Primer paso` permanece como concepto analítico; la interfaz pregunta `¿Cómo podrías empezar?` y muestra `Cómo empezar`. Los términos `testigo`, `ciclo` y `armar` también deben comprobarse antes de tratarlos como lenguaje público definitivo.
 
 ## Accesibilidad mínima
 
@@ -99,13 +99,20 @@ Este texto separa hecho, recuperación y efecto sobre el contenido sin culpar a 
 
 ## Primera hipótesis visual para prototipar
 
-Una interfaz de baja ornamentación, basada en superficies neutras, Source Sans 3, componentes Android conocidos y un único acento verde turquesa asignado por función. La identidad se expresará principalmente mediante la voz, el ritmo de las pantallas y la manera de representar la relación entre intención, primer paso y testigo. Los valores son provisionales y permiten construir material comparable; no equivalen a validación.
+Una interfaz de baja ornamentación, basada en superficies neutras, Source Sans 3, componentes Android conocidos y un único acento verde turquesa que funciona como color de presencia. La identidad se expresará principalmente mediante la voz, el ritmo de las pantallas y la relación entre actividad, forma de comenzar y testigo. Los valores son provisionales y permiten construir material comparable; no equivalen a validación.
 
 La hipótesis se descarta si produce una aplicación genérica difícil de reconocer, si las personas confunden estados con acciones o si la austeridad obliga a leer explicaciones extensas.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Lenguaje de tarea y color de presencia
+
+- **Qué cambió:** se retiró `primer paso` como etiqueta autónoma de interfaz, se incorporó `¿Cómo podrías empezar?` y el turquesa se vinculó al relato de presencia.
+- **Cómo era antes:** el documento pedía mantener `primer paso` como término estable y describía el acento solo por su función digital.
+- **Por qué se decidió:** la interfaz debe utilizar palabras reconocibles y conectar la marca con una conducta observable sin convertirla en ornamentación.
+- **Límite:** los textos y las asociaciones cromáticas siguen pendientes de prueba.
 
 ### 2026-09-15 — Traducción de criterios a una hipótesis formal
 

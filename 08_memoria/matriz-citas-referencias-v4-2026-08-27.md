@@ -1,13 +1,13 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
-**Última comprobación:** 9 de septiembre de 2026
+**Última comprobación:** 15 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
 
-La memoria contiene 52 referencias. La auditoría anterior registró correspondencia para 51; esta revisión conserva esas entradas y verifica la incorporación de Gibbons (2017) y su cita en 11.11. La nueva fuente es una guía metodológica profesional, no evidencia empírica de eficacia. No se rehizo la evaluación de contenido de las 51 fuentes previas.
+La memoria contiene 54 referencias. Las 52 entradas del control anterior se conservan. Esta revisión verifica la incorporación de Elliot y Maier (2014) y Kauppinen-Räisänen y Luomala (2010), citadas en el capítulo 11 para fundamentar que el significado cromático depende del contexto y del tipo de producto. No se utilizan como evidencia de que el turquesa produzca una emoción específica ni como validación de la marca.
 
 La convención de autoría se mantiene según APA 7: `y` integra los apellidos en citas narrativas, mientras `&` se utiliza en citas parentéticas y antes del último autor en la lista de referencias. Esta diferencia es intencional y no constituye una inconsistencia de idioma.
 
@@ -26,6 +26,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Chiu y Gilbert | 2024 | Sí | Sí | Conforme |
 | Chrome for Developers | s. f. | Sí | Sí | Conforme |
 | de Segovia Vicente et al. | 2024 | Sí | Sí | Conforme |
+| Elliot y Maier | 2014 | Sí | Sí | Conforme |
 | Focusaur | s. f. | Sí | Sí | Conforme |
 | Gibbons | 2017 | Sí, [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) | Sí | Incorporación verificada el 9 de septiembre |
 | Gilbert et al. | 2023 | Sí | Sí | Conforme |
@@ -39,6 +40,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Grüning et al. | 2023 | Sí | Sí | Conforme |
 | Haliburton et al. | 2024 | Sí | Sí | Conforme |
 | Hermann et al. | 2007 | Sí | Sí | Conforme |
+| Kauppinen-Räisänen y Luomala | 2010 | Sí | Sí | Conforme |
 | Kidel Peña-Albert et al. | 2026 | Sí | Sí | Conforme |
 | Kirsh | 1995 | Sí | Sí | Conforme |
 | Kitchen Safe | s. f. | Sí | Sí | Conforme |
@@ -83,6 +85,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Correspondencia cromática incorporada
+
+- **Cambio:** la matriz aumenta de 52 a 54 referencias e incorpora las dos fuentes citadas en la fundamentación cromática del capítulo 11.
+- **Versión anterior:** el último control terminaba con la incorporación metodológica de Gibbons (2017).
+- **Motivo:** mantener correspondencia exacta después de desarrollar el relato de marca y evitar afirmaciones cromáticas sin fuente.
+- **Alcance:** las fuentes respaldan una cautela contextual; no validan la paleta ni atribuyen una respuesta emocional a las personas.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

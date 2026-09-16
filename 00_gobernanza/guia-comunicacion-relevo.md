@@ -1,7 +1,7 @@
 ---
 id: COMUNICACION-RELEVO-2026-09-04
 titulo: "Guía de comunicación y explicación de Relevo"
-fecha_de_corte: 2026-09-09
+fecha_de_corte: 2026-09-15
 estado: "criterio vigente de comunicación; comprensión pendiente de prueba"
 ---
 
@@ -18,7 +18,7 @@ La idea central de Relevo es esta:
 Al terminar una explicación breve, alguien debería poder responder cinco preguntas:
 
 1. **¿Qué situación aborda?** La persona quería hacer otra actividad y sabe cómo empezarla, pero esa posibilidad deja de participar en la decisión mientras continúa una sesión de ocio digital.
-2. **¿Qué propone?** Preparar la intención en una aplicación y recuperarla mediante una señal breve situada junto al primer paso de la actividad.
+2. **¿Qué propone?** Preparar una actividad y cómo podría comenzar en una aplicación, y recuperarla mediante una señal breve situada en ese lugar.
 3. **¿Qué hace cada componente?** La aplicación organiza; el objeto emite la señal; el lugar le da sentido; la persona decide.
 4. **¿Qué no hace?** No bloquea, no castiga, no evalúa cumplimiento y no interpreta toda permanencia en el teléfono como un problema.
 5. **¿Qué falta demostrar?** Si la señal situada se comprende y aporta más que una notificación digital sin introducir una carga o intrusión desproporcionada.
@@ -65,7 +65,7 @@ El orden recomendado para cualquier explicación es:
 
 > **Una señal donde quieres empezar.**
 
-Este es el descriptor público vigente según D-046. La frase anterior, «Que una intención vuelva a tener lugar», se conserva como antecedente expresivo y no gobierna piezas nuevas. El descriptor se acompaña de una bajada que explique intención, primer paso y decisión.
+Este es el descriptor público vigente según D-046 y D-060. La frase anterior, «Que una intención vuelva a tener lugar», se conserva como antecedente expresivo y no gobierna piezas nuevas. El descriptor se acompaña de una bajada que explique actividad, forma de comenzar y decisión.
 
 **Bajada pública**
 
@@ -83,7 +83,7 @@ El descriptor sirve para fichas, créditos y contextos académicos. No debería 
 
 **Explicación en 30 segundos**
 
-> A veces seguimos viendo contenido en el teléfono aunque antes queríamos leer, caminar o dibujar. No necesariamente olvidamos esa intención: simplemente deja de participar en la siguiente decisión. Con Relevo la persona registra la actividad y su primer paso en una aplicación, y sitúa un objeto junto al lugar donde puede comenzar. Si se cumple una condición configurada, el objeto emite una señal breve. No bloquea el teléfono ni comprueba si la actividad se realizó; vuelve a ofrecer la posibilidad.
+> A veces seguimos viendo contenido en el teléfono aunque antes queríamos leer, caminar o dibujar. No necesariamente olvidamos esa intención: simplemente deja de participar en la siguiente decisión. Con Relevo la persona registra la actividad y cómo podría comenzar en una aplicación, y sitúa un objeto en ese lugar. Si se cumple una condición configurada, el objeto emite una señal breve. No bloquea el teléfono ni comprueba si la actividad se realizó; vuelve a ofrecer la posibilidad.
 
 **Explicación en 90 segundos**
 
@@ -101,7 +101,7 @@ Cada capa responde una pregunta distinta. No conviene comprimirlas todas en una 
 | --- | --- | --- |
 | 1. Situación | ¿Cuándo tendría sentido? | Quería hacer algo, sabía cómo empezar, pero la sesión digital continuó y esa posibilidad perdió presencia. |
 | 2. Valor | ¿Qué busca aportar? | Volver a poner esa intención en consideración en un momento pertinente. |
-| 3. Experiencia | ¿Cómo se usa? | Se formula una intención, se define un primer paso, se sitúa una señal y se configura un ciclo. |
+| 3. Experiencia | ¿Cómo se usa? | Se registra una actividad, se aclara cómo podría comenzar, se sitúa una señal y se configura un ciclo. |
 | 4. Roles | ¿Para qué sirven la app y el objeto? | La aplicación organiza; el objeto señala; el lugar relaciona la señal con el comienzo. |
 | 5. Autonomía | ¿Me obliga? | No. Continuar, ignorar, silenciar, actuar o cambiar de idea son salidas legítimas. |
 | 6. Diferencia | ¿Por qué no basta el teléfono? | Relevo prueba si una señal fuera de la pantalla y junto al primer paso aporta una asociación más pertinente. |
@@ -406,6 +406,13 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Lenguaje público y relato de marca
+
+- **Cambio:** la explicación pública utiliza `cómo podría comenzar`, mantiene `primer paso` solo cuando se define el concepto académico y enlaza la estrategia de marca registrada en D-060.
+- **Versión anterior:** algunas explicaciones trataban `primer paso` como una expresión cotidiana y pedían una bajada que la volviera a explicar.
+- **Motivo:** el término no procede del corpus de entrevistas y puede entenderse de varias maneras; la comunicación debe permitir imaginar la tarea sin aprender jerga.
+- **Alcance:** la formulación sigue pendiente de prueba y no modifica la hipótesis académica ni los criterios del protocolo.
 
 ### 2026-09-15 — Hipótesis verbal sincronizada
 

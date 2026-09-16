@@ -11,7 +11,7 @@
 
 Esta carpeta reúne la investigación que orientará el nuevo sistema visual de Relevo. No es una biblioteca de estilos ni un manual cerrado. Su función es establecer qué debe comunicar cada soporte, qué decisiones pueden adoptarse con la evidencia disponible y cuáles necesitan una prueba antes de convertirse en especificaciones.
 
-Relevo es un sistema phygital compuesto por una aplicación Android y un testigo físico. La aplicación permite formular una intención, convertirla en un primer paso y preparar un ciclo. El testigo se ubica cerca de aquello que facilita ese comienzo y, cuando corresponde, emite una señal breve de luz y sonido. La señal no bloquea el teléfono, no evalúa a la persona y no convierte la respuesta posterior en una medida de cumplimiento.
+Relevo es un sistema phygital compuesto por una aplicación Android y un testigo físico. La aplicación permite formular una intención, aclarar cómo podría comenzar y preparar un ciclo. La documentación denomina `primer paso` a esa acción breve y concreta; la interfaz utiliza una pregunta directa. El testigo se ubica cerca de aquello que facilita ese comienzo y, cuando corresponde, emite una señal breve de luz y sonido. La señal no bloquea el teléfono, no evalúa a la persona y no convierte la respuesta posterior en una medida de cumplimiento.
 
 El desafío visual no consiste en hacer que todas las partes se vean iguales. Consiste en hacer reconocible una misma postura —claridad, autonomía, discreción y cuidado— mientras cada soporte cumple una función diferente:
 
@@ -35,19 +35,20 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 10. [Dirección visual provisional](10_direccion-visual-provisional.md)
 11. [Sistema cromático y tipográfico provisional](11_sistema-cromatico-y-tipografico-provisional.md)
 12. [Especificación provisional de interfaz](12_especificacion-ui-provisional.md)
-13. [Referencias](referencias.md)
-14. [Registro del reinicio visual](registro-del-reinicio.md)
+13. [Semántica y relato de marca](13_semantica-y-relato-de-marca.md)
+14. [Referencias](referencias.md)
+15. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 
 | Tema | Estado al 11 de septiembre | Consecuencia |
 | --- | --- | --- |
 | Nombre académico `Relevo` | Se conserva de manera provisional | Puede usarse en la memoria y el prototipo; falta despeje comercial y prueba de comprensión. |
-| Descriptor | En revisión | No se fija una frase definitiva hasta comparar alternativas con personas. |
+| Descriptor | `Una señal donde quieres empezar`, en prueba | Sustituye el uso público de `primer paso`; no se fija como frase definitiva hasta comprobar su comprensión. |
 | Arquitectura de la aplicación | Estable como wireframe v1 | La estructura puede informar la nueva interfaz; su apariencia anterior no se considera vigente. |
 | Forma del testigo | Abierta | No se debe presentar una carcasa específica como producto resuelto. |
 | Luz y sonido | Son canales previstos, no parámetros cerrados | Intensidad, duración, patrón y convivencia requieren pruebas situadas. |
-| Paleta y tipografía | Seleccionadas de manera provisional | Source Sans 3 y una paleta neutra con acento verde turquesa permiten construir prototipos; falta validación situada. |
+| Paleta y tipografía | Seleccionadas de manera provisional | Source Sans 3 y una paleta neutra con verde turquesa como color de presencia permiten construir prototipos; falta validar reconocimiento y significado de marca. |
 | Logotipo e iconografía | Solución temporal | Se usa un logotipo tipográfico y un identificador reducido mientras se prueba el nombre y se determina si un símbolo aporta valor. |
 | Sistema editorial | Abierto | Debe construirse con texto real de la memoria y comprobar lectura, jerarquía y reproducción. |
 
@@ -64,6 +65,13 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Lenguaje y relato de marca incorporados
+
+- **Qué cambió:** se añadió la estrategia semántica de marca, se separó el término analítico `primer paso` del lenguaje público y se asignó al turquesa una función narrativa comprobable.
+- **Cómo era antes:** el índice presentaba el descriptor y la paleta como decisiones principalmente funcionales de interfaz.
+- **Por qué se decidió:** nombre, lenguaje, color y comportamiento deben construir una misma identidad sin depender de asociaciones universales del color.
+- **Límite:** el descriptor, el nombre y el significado cromático continúan sujetos a pruebas con personas.
 
 ### 2026-09-15 — Paso desde investigación hacia prototipo visual
 

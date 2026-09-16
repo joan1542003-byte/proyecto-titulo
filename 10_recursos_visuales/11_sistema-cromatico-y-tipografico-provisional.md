@@ -82,7 +82,18 @@ La comparación considera función y riesgo, no personalidad supuestamente unive
 
 ## Paleta recomendada
 
-La primera dirección utiliza una base neutra ligeramente verdosa y un acento verde turquesa. La selección no afirma que ese matiz sea tranquilizador. Responde a tres condiciones funcionales: se distingue de error y advertencia, puede mantener contraste alto en temas claro y oscuro, y permite una presencia visible sin usar rojo como color de marca.
+La primera dirección utiliza una base neutra ligeramente verdosa y un acento verde turquesa. La selección no afirma que ese matiz sea tranquilizador ni que posea un significado universal. Responde a condiciones funcionales —separación respecto de error y advertencia, contraste en ambos temas y visibilidad acotada— y a una hipótesis de marca: el sistema permanece neutral mientras está en segundo plano y el turquesa aparece cuando una intención preparada vuelve a estar presente.
+
+Esta relación convierte al turquesa en **color de presencia**, no en color de éxito. Su significado depende del uso constante entre soportes y debe comprobarse dentro de piezas completas. La justificación estratégica se encuentra en [semántica y relato de marca](13_semantica-y-relato-de-marca.md).
+
+### Cuatro funciones que no deben confundirse
+
+| Función | Uso del color | Restricción |
+| --- | --- | --- |
+| Marca | identificar a Relevo mediante un acento localizado | la marca debe reconocerse también en escala de grises |
+| Interfaz | orientar una acción principal, selección o vínculo activo | no puede ser el único indicador de significado |
+| Estados | distinguir error, advertencia, desconexión o cierre | cada estado necesita texto y, cuando corresponda, icono o forma |
+| Señal física | ser percibida en un lugar y condición reales | se define mediante pruebas propias; no hereda automáticamente el turquesa |
 
 ### Tema claro
 
@@ -94,7 +105,7 @@ La primera dirección utiliza una base neutra ligeramente verdosa y un acento ve
 | Texto principal | `#171A18` | títulos y cuerpo |
 | Texto secundario | `#555B58` | apoyo y metadatos |
 | Contorno | `#707772` | límites y componentes esenciales |
-| Primario | `#006B5F` | acción principal, selección o estado destacado |
+| Primario | `#006B5F` | color de presencia: acción principal, selección o vínculo activo |
 | Sobre primario | `#FFFFFF` | contenido sobre el primario |
 | Contenedor primario | `#B8EFE4` | énfasis extendido excepcional |
 | Sobre contenedor | `#003730` | contenido del contenedor primario |
@@ -109,7 +120,7 @@ La primera dirección utiliza una base neutra ligeramente verdosa y un acento ve
 | Texto principal | `#F1F5F2` | títulos y cuerpo |
 | Texto secundario | `#B9C1BD` | apoyo y metadatos |
 | Contorno | `#89928C` | límites y componentes esenciales |
-| Primario | `#72DBC7` | acción principal, selección o estado destacado |
+| Primario | `#72DBC7` | color de presencia: acción principal, selección o vínculo activo |
 | Sobre primario | `#00372F` | contenido sobre el primario |
 | Contenedor primario | `#004F46` | énfasis extendido excepcional |
 | Sobre contenedor | `#A9F2E3` | contenido del contenedor primario |
@@ -158,6 +169,13 @@ La tipografía debe cambiar si falla la lectura con tamaño aumentado, cursivas,
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — El color se integra al relato de marca
+
+- **Qué cambió:** el verde turquesa se definió como color de presencia y se separaron sus funciones de marca, interfaz, estados y señal física.
+- **Cómo era antes:** la paleta se justificaba por contraste, visibilidad y separación de estados, sin explicar por qué ese comportamiento cromático debía identificar a Relevo.
+- **Por qué se decidió:** una paleta de marca necesita una lógica reconocible entre soportes, no solo valores técnicamente utilizables.
+- **Límite:** el significado del color se construye por uso y todavía debe probarse; no se atribuyen efectos emocionales universales al matiz.
 
 ### 2026-09-15 — Primera selección tipográfica y cromática
 

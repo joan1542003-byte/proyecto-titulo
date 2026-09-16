@@ -13,12 +13,14 @@ La fecha de corte es el 15 de septiembre de 2026. Cuando una página cambia con 
 | Proceso centrado en personas | ISO 9241-210; Design Council | Ordenar investigación, alternativas, pruebas e iteración. |
 | Interacción y recuperación | ISO 9241-110; Norman | Distinguir acciones, estados, consecuencias y salidas. |
 | Accesibilidad digital | WCAG 2.2; Android Developers | Contraste, tamaño táctil, foco, etiquetas y redundancia. |
-| Color | Albers; WCAG 2.2; Android Developers | Evaluar cada color en contexto y asignarlo por función. |
+| Color de marca | Albers; Elliot y Maier; Kauppinen-Räisänen y Luomala; Labrecque y Milne | Tratar el significado cromático como una hipótesis contextual y aplicarlo de forma consistente. |
 | Forma física | Hsu et al.; Kapkın y Joines | Comparar significados atribuidos a prototipos reales. |
 | Luz y sonido | ISO 24500, 24501, 24502 y 24550; Chen y Huang | Probar percepción, ambiente, intensidad y combinación de canales. |
 | Señal situada | Voit et al.; Lee et al. | Comparar soporte, presencia pasiva e intrusión sin extrapolar resultados. |
 | Simplicidad de interfaz | Choi y Lee; W3C | Reducir complejidad de tarea, información y composición. |
-| Coherencia de marca | Gregersen y Johansen; Motta-Filho; Ward et al. | Mantener una experiencia reconocible sin repetir una apariencia idéntica. |
+| Coherencia de marca | Gregersen y Johansen; Karjalainen y Snelders; Motta-Filho; Ward et al. | Mantener una experiencia reconocible y vincular rasgos visuales con valores observables. |
+| Lenguaje público | Government Digital Service; Microsoft Research | Usar palabras reconocibles, comprobar su interpretación y separar vocabulario interno de tareas públicas. |
+| Acción concreta | Gollwitzer y Sheeran | Fundamentar la especificación de cómo comenzar sin asumir que `primer paso` es lenguaje de usuario. |
 | Producto y embalaje | Munari; Microsoft | Relacionar forma, producción, instrucciones y acceso físico. |
 | Categoría comercial | Google, one sec, Brick, Unpluq y Opal | Identificar convenciones de medición, pausa, bloqueo y llave física. |
 
@@ -52,9 +54,17 @@ Costanza-Chock, S. (2020). *Design justice: Community-led practices to build the
 
 Design Council. (s. f.). *The Double Diamond*. Recuperado el 11 de septiembre de 2026, de https://www.designcouncil.org.uk/resources/the-double-diamond/
 
+Elliot, A. J., & Maier, M. A. (2014). Color psychology: Effects of perceiving color on psychological functioning in humans. *Annual Review of Psychology, 65*, 95–120. https://doi.org/10.1146/annurev-psych-010213-115035
+
+Gollwitzer, P. M., & Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. *Advances in Experimental Social Psychology, 38*, 69–119. https://doi.org/10.1016/S0065-2601(06)38002-1
+
 Google. (s. f.). *Digital Wellbeing*. Google Play. Recuperado el 11 de septiembre de 2026, de https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing
 
 Gregersen, M. K., & Johansen, T. S. (2018). Corporate visual identity: Exploring the dogma of consistency. *Corporate Communications: An International Journal, 23*(3), 342–356. https://doi.org/10.1108/CCIJ-10-2017-0088
+
+Government Digital Service. (2015, 1 de julio). *What does this mean? Tips for testing your words*. User Research in Government. https://userresearch.blog.gov.uk/2015/07/01/what-does-this-mean-tips-for-testing-your-words/
+
+Government Digital Service. (s. f.). *Writing for user interfaces*. GOV.UK Service Manual. Recuperado el 15 de septiembre de 2026, de https://www.gov.uk/service-manual/design/writing-for-user-interfaces
 
 Hsu, S. H., Chuang, M. C., & Chang, C. C. (2000). A semantic differential study of designers’ and users’ product form perception. *International Journal of Industrial Ergonomics, 25*(4), 375–391. https://doi.org/10.1016/S0169-8141(99)00026-8
 
@@ -76,9 +86,17 @@ International Organization for Standardization. (2025). *ISO 9241-112:2025 Ergon
 
 Kapkın, E., & Joines, S. (2018). An investigation into the relationship between product form and perceived meanings. *International Journal of Industrial Ergonomics, 67*, 259–273. https://doi.org/10.1016/j.ergon.2018.05.009
 
+Karjalainen, T.-M., & Snelders, D. (2010). Designing visual recognition for the brand. *Journal of Product Innovation Management, 27*(1), 6–22. https://doi.org/10.1111/j.1540-5885.2009.00696.x
+
+Kauppinen-Räisänen, H., & Luomala, H. T. (2010). Exploring consumers’ product-specific colour meanings. *Qualitative Market Research: An International Journal, 13*(3), 287–308. https://doi.org/10.1108/13522751011053644
+
+Labrecque, L. I., & Milne, G. R. (2012). Exciting red and competent blue: The importance of color in marketing. *Journal of the Academy of Marketing Science, 40*, 711–727. https://doi.org/10.1007/s11747-010-0245-y
+
 Lee, J. G. W., Lee, B., & Choe, E. K. (2023). Decorative, evocative, and uncanny: Reactions on ambient-to-disruptive health notifications via plant-mimicking shape-changing interfaces. In *Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems* (Article 320, pp. 1–16). Association for Computing Machinery. https://doi.org/10.1145/3544548.3581486
 
 Microsoft. (s. f.). *Creating accessible packaging: An inclusive design guide*. Recuperado el 11 de septiembre de 2026, de https://inclusive.microsoft.design/articles/creating-accessible-packaging
+
+Microsoft Research. (2025). *Stop making assumptions about language: How user research can support better language*. https://www.microsoft.com/en-us/research/articles/stop-making-assumptions-about-language-how-user-research-can-support-better-language/
 
 Motta-Filho, M. A. (2021). Brand experience manual: Bridging the gap between brand strategy and customer experience. *Review of Managerial Science, 15*, 1173–1204. https://doi.org/10.1007/s11846-020-00399-9
 
@@ -105,6 +123,13 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-15 — Fuentes de semántica, lenguaje y color de marca
+
+- **Qué cambió:** se incorporaron fuentes sobre significado cromático contextual, reconocimiento visual de marca, lenguaje de interfaz e intenciones de implementación.
+- **Cómo era antes:** la bibliografía respaldaba accesibilidad y funciones visuales, pero no la distinción entre lenguaje interno, relato de marca y significado aplicado del color.
+- **Por qué se decidió:** fundamentar la identidad desde comportamiento y contexto, evitando equivalencias universales entre matiz y emoción.
+- **Límite:** estas fuentes permiten formular y evaluar hipótesis; no validan por sí mismas el nombre, el descriptor ni la paleta de Relevo.
 
 ### 2026-09-15 — Fuentes para la primera especificación provisional
 
