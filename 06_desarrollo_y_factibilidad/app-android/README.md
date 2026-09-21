@@ -20,13 +20,13 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 
 1. escribir una actividad y una forma concreta de comenzar;
 2. elegir una aplicación instalada;
-3. definir 15 segundos, 1 minuto o 5 minutos de uso continuo;
+3. definir 15 segundos, 1 minuto o 5 minutos de uso acumulado;
 4. autorizar el acceso de uso exigido por Android;
 5. registrar un código seudónimo y aceptar el tratamiento local informado;
 6. situar y probar la señal;
 7. activar un monitoreo visible mediante una notificación persistente;
 8. emitir una sola señal cuando se cumple la condición;
-9. reiniciar el conteo si la persona sale de la aplicación elegida;
+9. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
 10. desactivar, silenciar y cerrar el ciclo.
 
 ## Límites
@@ -67,13 +67,19 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `data/ReminderStore.kt`: estado local del recordatorio;
 - `signal/SignalPlayer.kt`: sonido y vibración;
 - `ui/RelevoViewModel.kt`: coordinación;
-- `ui/RelevoApp.kt`: recorrido de nueve momentos.
+- `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
 
 ### 2026-09-21 — Condición automática por aplicación
 
-- **Cambio:** el temporizador pasivo fue reemplazado por la selección de una aplicación y la medición de uso continuo en primer plano.
+- **Cambio:** el temporizador pasivo fue reemplazado por la selección de una aplicación y la medición de uso acumulado en primer plano.
+
+### 2026-09-21 — Simplificación del recorrido
+
+- **Cambio:** nueve pantallas fueron reducidas a cuatro momentos y toda la configuración quedó reunida en una sola vista.
+- **Versión anterior:** el recorrido separaba formulación, condición, revisión, ubicación, prueba y activación.
+- **Motivo:** reducir carga, evitar repeticiones y hacer visible desde el inicio qué hace Relevo.
 - **Versión anterior:** la señal aparecía después de una espera, sin reconocer el uso de otras aplicaciones.
 - **Motivo:** hacer comprobable la relación central de Relevo entre el uso prolongado de una aplicación elegida y una señal situada.
 - **Privacidad:** se incorporaron consentimiento explícito, código seudónimo, notificación persistente y almacenamiento local limitado.

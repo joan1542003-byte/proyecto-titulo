@@ -80,7 +80,7 @@ class AppUsageMonitorService : Service() {
     lastQueryMillis = System.currentTimeMillis() - 60_000L
     monitorJob =
       scope.launch {
-        var consecutiveMillis = 0L
+        var accumulatedMillis = store.load().observedUsageSeconds * 1_000L
         var previousTick = System.currentTimeMillis()
         var wasTargetForeground = false
 
@@ -93,9 +93,7 @@ class AppUsageMonitorService : Service() {
           val targetForeground = currentForegroundPackage == reminder.targetPackage
 
           if (targetForeground) {
-            consecutiveMillis += (now - previousTick).coerceAtMost(2_000L)
-          } else {
-            consecutiveMillis = 0L
+            accumulatedMillis += (now - previousTick).coerceAtMost(2_000L)
           }
 
           if (targetForeground != wasTargetForeground) {
@@ -104,12 +102,12 @@ class AppUsageMonitorService : Service() {
               reminder.participantCode,
               if (targetForeground) "target_entered" else "target_left",
               reminder.targetPackage,
-              (consecutiveMillis / 1_000L).toInt(),
+              (accumulatedMillis / 1_000L).toInt(),
             )
             wasTargetForeground = targetForeground
           }
 
-          val observedSeconds = (consecutiveMillis / 1_000L).toInt()
+          val observedSeconds = (accumulatedMillis / 1_000L).toInt()
           if (observedSeconds != reminder.observedUsageSeconds) {
             store.save(reminder.copy(observedUsageSeconds = observedSeconds))
           }

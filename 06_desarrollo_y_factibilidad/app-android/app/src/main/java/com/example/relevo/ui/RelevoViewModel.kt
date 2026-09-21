@@ -43,6 +43,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   init {
     _installedApps.value = appsRepository.launcherApps()
+    if (_reminder.value.participantCode.isBlank()) {
+      updateValue(_reminder.value.copy(participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}"))
+    }
     startStateSync()
     if (_reminder.value.status == ReminderStatus.WAITING && UsageAccess.isGranted(application)) {
       ContextCompat.startForegroundService(
@@ -94,6 +97,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val next = _reminder.value.ready()
     updateValue(next)
     return next.status == ReminderStatus.READY
+  }
+
+  fun activate(): Boolean {
+    if (!markReady()) return false
+    return arm()
   }
 
   fun arm(): Boolean {
@@ -162,7 +170,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     signalPlayer.stop()
     store.clear()
-    _reminder.value = Reminder()
+    _reminder.value = Reminder(participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}")
     _remainingSeconds.value = 0
   }
 

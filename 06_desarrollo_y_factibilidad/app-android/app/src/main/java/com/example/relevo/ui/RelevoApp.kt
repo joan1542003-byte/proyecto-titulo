@@ -3,24 +3,26 @@ package com.example.relevo.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -44,418 +46,260 @@ import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.monitor.InstalledApp
 
-private enum class RelevoStep {
-  FORMULATE,
-  CONFIGURE,
-  REVIEW,
-  SITUATE,
-  TEST,
-  ARM,
-  WAIT,
-  SIGNAL,
-  CLOSE,
-}
+private enum class Screen { HOME, SETUP, ACTIVE, SIGNAL, DONE }
 
 @Composable
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val reminder by viewModel.reminder.collectAsState()
-  val remainingSeconds by viewModel.remainingSeconds.collectAsState()
-  val installedApps by viewModel.installedApps.collectAsState()
-  val usageAccessGranted by viewModel.usageAccessGranted.collectAsState()
-  var step by rememberSaveable { mutableStateOf(initialStep(reminder.status)) }
-  var showMissingData by rememberSaveable { mutableStateOf(false) }
-  var signalWasPerceived by rememberSaveable { mutableStateOf<Boolean?>(null) }
+  val remaining by viewModel.remainingSeconds.collectAsState()
+  val apps by viewModel.installedApps.collectAsState()
+  val usageAccess by viewModel.usageAccessGranted.collectAsState()
+  var screen by rememberSaveable { mutableStateOf(screenFor(reminder.status)) }
 
-  LaunchedEffect(reminder.status) {
-    step =
-      when (reminder.status) {
-        ReminderStatus.WAITING -> RelevoStep.WAIT
-        ReminderStatus.SIGNALLED -> RelevoStep.SIGNAL
-        ReminderStatus.SILENCED -> RelevoStep.CLOSE
-        else -> step
-      }
-  }
+  LaunchedEffect(reminder.status) { screen = screenFor(reminder.status, screen) }
 
-  RelevoScaffold(step = step, onBack = { step = previousStep(step) }) {
-    when (step) {
-      RelevoStep.FORMULATE ->
-        FormulateScreen(
-          reminder,
-          viewModel::updateActivity,
-          viewModel::updateHowToStart,
-        ) { step = RelevoStep.CONFIGURE }
-      RelevoStep.CONFIGURE ->
-        ConfigureScreen(
-          reminder, installedApps, usageAccessGranted,
-          viewModel::selectTargetApp, viewModel::updateRequiredUsage,
-          viewModel::updateParticipantCode, viewModel::updateConsent,
-          viewModel::openUsageAccessSettings, viewModel::refreshUsageAccess,
-        ) { step = RelevoStep.REVIEW }
-      RelevoStep.REVIEW ->
-        ReviewScreen(
-          reminder = reminder,
-          showMissingData = showMissingData,
-          onEdit = { step = RelevoStep.FORMULATE },
-          onContinue = {
-            showMissingData = !viewModel.markReady()
-            if (!showMissingData) step = RelevoStep.SITUATE
-          },
-        )
-      RelevoStep.SITUATE ->
-        SituateScreen(
-          reminder = reminder,
-          showMissingData = showMissingData,
-          onPlaceChange = viewModel::updatePlace,
-          onContinue = {
-            showMissingData = reminder.place.isBlank()
-            if (!showMissingData) step = RelevoStep.TEST
-          },
-        )
-      RelevoStep.TEST ->
-        TestSignalScreen(
-          reminder = reminder,
-          result = signalWasPerceived,
-          onPlay = viewModel::testSignal,
-          onStop = viewModel::stopTestSignal,
-          onResult = { signalWasPerceived = it },
-          onContinue = {
-            viewModel.stopTestSignal()
-            step = RelevoStep.ARM
-          },
-        )
-      RelevoStep.ARM ->
-        ArmScreen(
-          reminder = reminder,
-          onArm = { if (viewModel.arm()) step = RelevoStep.WAIT },
-          onExit = {
-            viewModel.close()
-            step = RelevoStep.CLOSE
-          },
-        )
-      RelevoStep.WAIT ->
-        WaitScreen(reminder, remainingSeconds) {
-          viewModel.disarm()
-          step = RelevoStep.CLOSE
-        }
-      RelevoStep.SIGNAL ->
-        SignalScreen(reminder) {
-          viewModel.silence()
-          step = RelevoStep.CLOSE
-        }
-      RelevoStep.CLOSE ->
-        CloseScreen(reminder, viewModel::close) {
-          viewModel.reset()
-          showMissingData = false
-          signalWasPerceived = null
-          step = RelevoStep.FORMULATE
-        }
-    }
-  }
-}
-
-@Composable
-private fun RelevoScaffold(step: RelevoStep, onBack: () -> Unit, content: @Composable () -> Unit) {
-  Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-    Column(
-      modifier = Modifier.fillMaxSize().safeDrawingPadding().padding(horizontal = 24.dp, vertical = 16.dp),
-    ) {
-      Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-        Text("RELEVO", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-        Spacer(Modifier.weight(1f))
-        Text(
-          "${step.ordinal + 1} / ${RelevoStep.entries.size}",
-          style = MaterialTheme.typography.labelMedium,
-          color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-      }
-      Spacer(Modifier.height(12.dp))
-      ProgressDots(step.ordinal)
-      if (step !in listOf(RelevoStep.FORMULATE, RelevoStep.WAIT, RelevoStep.SIGNAL, RelevoStep.CLOSE)) {
-        TextButton(onClick = onBack) { Text("Volver") }
-      } else {
-        Spacer(Modifier.height(16.dp))
-      }
-      Box(modifier = Modifier.weight(1f)) { content() }
-    }
-  }
-}
-
-@Composable
-private fun ProgressDots(active: Int) {
-  Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-    RelevoStep.entries.forEachIndexed { index, _ ->
-      Surface(
-        modifier = Modifier.size(if (index == active) 10.dp else 6.dp),
-        shape = CircleShape,
-        color = if (index <= active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant,
-        content = {},
+  Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
+    when (screen) {
+      Screen.HOME -> HomeScreen { screen = Screen.SETUP }
+      Screen.SETUP -> SetupScreen(
+        reminder = reminder,
+        apps = apps,
+        usageAccess = usageAccess,
+        onBack = { screen = Screen.HOME },
+        onActivity = viewModel::updateActivity,
+        onStart = viewModel::updateHowToStart,
+        onPlace = viewModel::updatePlace,
+        onApp = viewModel::selectTargetApp,
+        onDuration = viewModel::updateRequiredUsage,
+        onConsent = viewModel::updateConsent,
+        onPermission = viewModel::openUsageAccessSettings,
+        onRefresh = viewModel::refreshUsageAccess,
+        onTest = viewModel::testSignal,
+        onActivate = { if (viewModel.activate()) screen = Screen.ACTIVE },
       )
+      Screen.ACTIVE -> ActiveScreen(reminder, remaining) { viewModel.disarm(); screen = Screen.DONE }
+      Screen.SIGNAL -> SignalScreen(reminder) { viewModel.silence(); screen = Screen.DONE }
+      Screen.DONE -> DoneScreen(reminder) { viewModel.reset(); screen = Screen.HOME }
     }
   }
 }
 
 @Composable
-private fun ScreenBody(
-  eyebrow: String,
-  title: String,
-  description: String,
-  content: @Composable ColumnScope.() -> Unit,
-) {
-  Column(
-    modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
-    verticalArrangement = Arrangement.spacedBy(18.dp),
-  ) {
-    Text(eyebrow.uppercase(), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
-    Text(title, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.SemiBold)
-    Text(description, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    content()
-    Spacer(Modifier.height(8.dp))
+private fun Page(content: @Composable () -> Unit) {
+  Box(Modifier.fillMaxSize().safeDrawingPadding().padding(horizontal = 24.dp, vertical = 18.dp)) { content() }
+}
+
+@Composable
+private fun Brand() {
+  Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+    Surface(Modifier.size(12.dp), CircleShape, MaterialTheme.colorScheme.primary) {}
+    Text("RELEVO", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, letterSpacing = 2.sp)
   }
 }
 
 @Composable
-private fun FormulateScreen(
-  reminder: Reminder,
-  onActivityChange: (String) -> Unit,
-  onStartChange: (String) -> Unit,
-  onContinue: () -> Unit,
-) =
-  ScreenBody("Preparar", "¿Qué quieres hacer?", "Escribe una actividad y una forma concreta de comenzar.") {
-    OutlinedTextField(
-      value = reminder.activity,
-      onValueChange = onActivityChange,
-      label = { Text("Actividad") },
-      supportingText = { Text("Por ejemplo: salir a caminar") },
-      modifier = Modifier.fillMaxWidth(),
-      singleLine = true,
-    )
-    OutlinedTextField(
-      value = reminder.howToStart,
-      onValueChange = onStartChange,
-      label = { Text("Cómo podrías empezar") },
-      supportingText = { Text("Por ejemplo: ponerme las zapatillas") },
-      modifier = Modifier.fillMaxWidth(),
-      singleLine = true,
-    )
-    PrimaryButton(
-      "Continuar",
-      enabled = reminder.activity.isNotBlank() && reminder.howToStart.isNotBlank(),
-      onClick = onContinue,
-    )
-  }
-
-@Composable
-private fun ConfigureScreen(
-  reminder: Reminder,
-  installedApps: List<InstalledApp>,
-  usageAccessGranted: Boolean,
-  onAppSelected: (InstalledApp) -> Unit,
-  onDurationChange: (Int) -> Unit,
-  onParticipantCodeChange: (String) -> Unit,
-  onConsentChange: (Boolean) -> Unit,
-  onOpenUsageSettings: () -> Unit,
-  onRefreshPermission: () -> Unit,
-  onContinue: () -> Unit,
-) =
-  ScreenBody("Condición", "¿Qué uso activará la señal?", "Elige una aplicación y cuánto tiempo debe permanecer abierta de forma continua.") {
-    Text("Aplicación", fontWeight = FontWeight.Medium)
-    installedApps.forEach { app ->
-      if (app.packageName == reminder.targetPackage) {
-        Button(onClick = { onAppSelected(app) }, modifier = Modifier.fillMaxWidth()) { Text(app.label) }
-      } else {
-        OutlinedButton(onClick = { onAppSelected(app) }, modifier = Modifier.fillMaxWidth()) { Text(app.label) }
-      }
-    }
-    Text("Tiempo de uso continuo", fontWeight = FontWeight.Medium)
-    listOf(15 to "15 segundos", 60 to "1 minuto", 300 to "5 minutos").forEach { (seconds, label) ->
-      if (reminder.requiredUsageSeconds == seconds) {
-        Button(onClick = { onDurationChange(seconds) }, modifier = Modifier.fillMaxWidth()) { Text(label) }
-      } else {
-        OutlinedButton(onClick = { onDurationChange(seconds) }, modifier = Modifier.fillMaxWidth()) { Text(label) }
-      }
-    }
-    OutlinedTextField(
-      value = reminder.participantCode,
-      onValueChange = onParticipantCodeChange,
-      label = { Text("Código de participante") },
-      supportingText = { Text("Usa un código; no escribas el nombre de la persona.") },
-      modifier = Modifier.fillMaxWidth(),
-      singleLine = true,
-    )
-    Row(verticalAlignment = Alignment.Top) {
-      Checkbox(checked = reminder.consentAccepted, onCheckedChange = onConsentChange)
+private fun HomeScreen(onStart: () -> Unit) = Page {
+  Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
+    Brand()
+    Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
+      SignalGraphic()
+      Text("Vuelve a lo que querías hacer.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
       Text(
-        "Acepto guardar en este teléfono el código, la aplicación elegida y los momentos de entrada, salida y señal. No se guardan mensajes, contenido ni el historial general.",
-        style = MaterialTheme.typography.bodySmall,
-        modifier = Modifier.padding(top = 12.dp),
+        "Elige una aplicación. Cuando acumules el tiempo definido, Relevo emitirá una señal cerca de aquello que te ayuda a comenzar.",
+        style = MaterialTheme.typography.bodyLarge,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
       )
     }
-    if (usageAccessGranted) Text("Acceso de uso autorizado.", color = MaterialTheme.colorScheme.primary)
-    else {
-      ErrorText("Android necesita que autorices el acceso de uso para reconocer cuándo está abierta la aplicación elegida.")
-      OutlinedButton(onClick = onOpenUsageSettings, modifier = Modifier.fillMaxWidth()) { Text("Abrir ajustes de acceso") }
-      TextButton(onClick = onRefreshPermission, modifier = Modifier.fillMaxWidth()) { Text("Ya lo autoricé") }
-    }
-    PrimaryButton("Revisar", enabled = reminder.targetPackage.isNotBlank() && reminder.participantCode.isNotBlank() && reminder.consentAccepted && usageAccessGranted, onClick = onContinue)
-  }
-
-@Composable
-private fun ReviewScreen(
-  reminder: Reminder,
-  showMissingData: Boolean,
-  onEdit: () -> Unit,
-  onContinue: () -> Unit,
-) =
-  ScreenBody("Revisar", "Comprueba tu recordatorio", "Puedes volver y cambiar cualquier dato antes de situarlo.") {
-    SummaryCard("Actividad", reminder.activity)
-    SummaryCard("Cómo empezar", reminder.howToStart)
-    SummaryCard("Aplicación", reminder.targetAppLabel)
-    SummaryCard("Condición", "${formatDelay(reminder.requiredUsageSeconds)} de uso continuo")
-    if (showMissingData) ErrorText("Completa la actividad y la forma de comenzar antes de continuar.")
-    PrimaryButton("Continuar", onClick = onContinue)
-    TextButton(onClick = onEdit, modifier = Modifier.fillMaxWidth()) { Text("Editar") }
-  }
-
-@Composable
-private fun SituateScreen(
-  reminder: Reminder,
-  showMissingData: Boolean,
-  onPlaceChange: (String) -> Unit,
-  onContinue: () -> Unit,
-) =
-  ScreenBody("Situar", "¿Dónde quedará la señal?", "Deja el parlante u objeto cerca de algo que te ayude a comenzar.") {
-    OutlinedTextField(
-      value = reminder.place,
-      onValueChange = onPlaceChange,
-      label = { Text("Lugar") },
-      supportingText = { Text("Por ejemplo: junto a las zapatillas") },
-      modifier = Modifier.fillMaxWidth(),
-      singleLine = true,
-    )
-    if (showMissingData && reminder.place.isBlank()) ErrorText("Escribe un lugar para continuar.")
-    PrimaryButton("Probar la señal", enabled = reminder.place.isNotBlank(), onClick = onContinue)
-  }
-
-@Composable
-private fun TestSignalScreen(
-  reminder: Reminder,
-  result: Boolean?,
-  onPlay: () -> Unit,
-  onStop: () -> Unit,
-  onResult: (Boolean) -> Unit,
-  onContinue: () -> Unit,
-) =
-  ScreenBody("Probar", "Escucha la señal en ${reminder.place}", "Comprueba que se perciba sin interrumpir más de lo necesario.") {
-    SignalMark()
-    PrimaryButton("Emitir señal de prueba", onClick = onPlay)
-    OutlinedButton(onClick = onStop, modifier = Modifier.fillMaxWidth()) { Text("Detener") }
-    Text("¿La señal se percibe bien?", fontWeight = FontWeight.Medium)
-    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-      OutlinedButton(onClick = { onResult(false) }, modifier = Modifier.weight(1f)) { Text("Ajustar") }
-      Button(onClick = { onResult(true) }, modifier = Modifier.weight(1f)) { Text("Sí") }
-    }
-    if (result == false) ErrorText("Ajusta el volumen o cambia el lugar y vuelve a probar.")
-    PrimaryButton("Continuar", enabled = result == true, onClick = onContinue)
-  }
-
-@Composable
-private fun ArmScreen(reminder: Reminder, onArm: () -> Unit, onExit: () -> Unit) =
-  ScreenBody("Activar", "Todo está preparado", "La señal se emitirá cuando uses ${reminder.targetAppLabel} durante ${formatDelay(reminder.requiredUsageSeconds)} de forma continua.") {
-    SummaryCard(reminder.activity, reminder.howToStart)
-    SummaryCard("Lugar", reminder.place)
-    PrimaryButton("Activar recordatorio", onClick = onArm)
-    TextButton(onClick = onExit, modifier = Modifier.fillMaxWidth()) { Text("Salir sin activar") }
-  }
-
-@Composable
-private fun WaitScreen(reminder: Reminder, remainingSeconds: Int, onDisarm: () -> Unit) =
-  ScreenBody("Recordatorio activo", reminder.activity, "Relevo observa únicamente si ${reminder.targetAppLabel} está en primer plano. Si sales, el conteo vuelve a comenzar.") {
-    Text(
-      if (remainingSeconds > 0) formatCountdown(remainingSeconds) else "Señal preparada…",
-      fontSize = 44.sp,
-      fontWeight = FontWeight.Light,
-    )
-    SummaryCard("Cómo empezar", reminder.howToStart)
-    SummaryCard("Lugar", reminder.place)
-    Text("Puedes cambiar de idea. Desactivar no se considera un error.", style = MaterialTheme.typography.bodySmall)
-    OutlinedButton(onClick = onDisarm, modifier = Modifier.fillMaxWidth()) { Text("Desactivar") }
-  }
-
-@Composable
-private fun SignalScreen(reminder: Reminder, onSilence: () -> Unit) =
-  ScreenBody("Señal emitida", reminder.activity, "La señal está en ${reminder.place}. Tú decides qué hacer ahora.") {
-    SignalMark()
-    SummaryCard("Una forma de empezar", reminder.howToStart)
-    PrimaryButton("Silenciar y cerrar", onClick = onSilence)
-  }
-
-@Composable
-private fun CloseScreen(reminder: Reminder, onClose: () -> Unit, onNew: () -> Unit) =
-  ScreenBody("Cierre", "El recordatorio terminó", "Relevo no registra si hiciste la actividad. La decisión sigue siendo tuya.") {
-    LaunchedEffect(Unit) { onClose() }
-    if (reminder.activity.isNotBlank()) SummaryCard(reminder.activity, reminder.howToStart)
-    PrimaryButton("Preparar otro recordatorio", onClick = onNew)
-  }
-
-@Composable
-private fun SummaryCard(label: String, value: String) {
-  Card(
-    modifier = Modifier.fillMaxWidth(),
-    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
-    shape = RoundedCornerShape(16.dp),
-  ) {
-    Column(modifier = Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-      Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Text(value.ifBlank { "Sin completar" }, style = MaterialTheme.typography.titleMedium)
-    }
+    PrimaryButton("Crear un relevo", onStart)
   }
 }
 
 @Composable
-private fun SignalMark() {
-  Box(modifier = Modifier.fillMaxWidth().height(150.dp), contentAlignment = Alignment.Center) {
-    Surface(modifier = Modifier.size(112.dp), shape = CircleShape, color = MaterialTheme.colorScheme.primaryContainer) {
-      Box(contentAlignment = Alignment.Center) {
-        Surface(modifier = Modifier.size(28.dp), shape = CircleShape, color = MaterialTheme.colorScheme.primary, content = {})
+private fun SetupScreen(
+  reminder: Reminder,
+  apps: List<InstalledApp>,
+  usageAccess: Boolean,
+  onBack: () -> Unit,
+  onActivity: (String) -> Unit,
+  onStart: (String) -> Unit,
+  onPlace: (String) -> Unit,
+  onApp: (InstalledApp) -> Unit,
+  onDuration: (Int) -> Unit,
+  onConsent: (Boolean) -> Unit,
+  onPermission: () -> Unit,
+  onRefresh: () -> Unit,
+  onTest: () -> Unit,
+  onActivate: () -> Unit,
+) {
+  var chooseApp by rememberSaveable { mutableStateOf(false) }
+  var showTerms by rememberSaveable { mutableStateOf(false) }
+  if (chooseApp) AppPicker(apps, { chooseApp = false }) { onApp(it); chooseApp = false }
+  if (showTerms) TermsDialog({ showTerms = false }) { onConsent(true); showTerms = false }
+
+  Page {
+    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+      Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+        TextButton(onClick = onBack) { Text("Volver") }
+        Spacer(Modifier.weight(1f)); Brand()
       }
+      Text("Prepara tu señal", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+      Text("Todo se configura aquí. Después solo debes activar.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+
+      OutlinedTextField(reminder.activity, onActivity, label = { Text("Qué quieres hacer") }, placeholder = { Text("Salir a caminar") }, modifier = Modifier.fillMaxWidth(), singleLine = true)
+      OutlinedTextField(reminder.howToStart, onStart, label = { Text("Cómo puedes empezar") }, placeholder = { Text("Ponerme las zapatillas") }, modifier = Modifier.fillMaxWidth(), singleLine = true)
+      OutlinedTextField(reminder.place, onPlace, label = { Text("Dónde estará la señal") }, placeholder = { Text("Junto a las zapatillas") }, modifier = Modifier.fillMaxWidth(), singleLine = true)
+
+      Text("Aplicación que activa la señal", fontWeight = FontWeight.Medium)
+      OutlinedButton(onClick = { chooseApp = true }, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+        Text(reminder.targetAppLabel.ifBlank { "Elegir aplicación" })
+      }
+
+      Text("Avisarme al acumular", fontWeight = FontWeight.Medium)
+      Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        listOf(15 to "15 s", 60 to "1 min", 300 to "5 min").forEach { (seconds, label) ->
+          if (reminder.requiredUsageSeconds == seconds) Button({ onDuration(seconds) }, Modifier.weight(1f)) { Text(label) }
+          else OutlinedButton({ onDuration(seconds) }, Modifier.weight(1f)) { Text(label) }
+        }
+      }
+
+      PermissionCard(usageAccess, reminder.consentAccepted, { showTerms = true }, onPermission, onRefresh)
+      OutlinedButton(onClick = onTest, modifier = Modifier.fillMaxWidth()) { Text("Probar sonido") }
+      PrimaryButton(
+        "Activar relevo",
+        onActivate,
+        reminder.hasRequiredContent && usageAccess,
+      )
+      Spacer(Modifier.height(16.dp))
     }
   }
 }
 
 @Composable
-private fun PrimaryButton(label: String, enabled: Boolean = true, onClick: () -> Unit) {
-  Button(
-    onClick = onClick,
-    enabled = enabled,
-    modifier = Modifier.fillMaxWidth().height(54.dp),
-    shape = RoundedCornerShape(14.dp),
-    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
-  ) {
-    Text(label)
+private fun PermissionCard(
+  usageAccess: Boolean,
+  consent: Boolean,
+  onTerms: () -> Unit,
+  onPermission: () -> Unit,
+  onRefresh: () -> Unit,
+) {
+  Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant), shape = RoundedCornerShape(20.dp)) {
+    Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+      Text("Privacidad y permisos", fontWeight = FontWeight.SemiBold)
+      Text("Relevo registra tiempo acumulado y eventos de esta prueba. No lee contenidos ni mensajes.", style = MaterialTheme.typography.bodySmall)
+      TextButton(onClick = onTerms) { Text(if (consent) "Términos aceptados · Leer" else "Leer y aceptar términos") }
+      if (!consent) {
+        Text("Lee y acepta los términos antes de autorizar el acceso.", style = MaterialTheme.typography.bodySmall)
+      } else if (!usageAccess) {
+        OutlinedButton(onClick = onPermission, modifier = Modifier.fillMaxWidth()) { Text("Autorizar acceso de uso") }
+        TextButton(onClick = onRefresh, modifier = Modifier.fillMaxWidth()) { Text("Comprobar permiso") }
+      } else Text("Acceso de uso autorizado", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.labelLarge)
+    }
   }
 }
 
 @Composable
-private fun ErrorText(message: String) {
-  Text(message, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
+private fun ActiveScreen(reminder: Reminder, remaining: Int, onStop: () -> Unit) = Page {
+  Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
+    Brand()
+    Column(verticalArrangement = Arrangement.spacedBy(18.dp)) {
+      Text("Relevo activo", color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.SemiBold)
+      Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
+      Text("${formatTime(reminder.observedUsageSeconds)} acumulados en ${reminder.targetAppLabel}", style = MaterialTheme.typography.titleMedium)
+      Text("Faltan ${formatTime(remaining)}. Puedes salir y volver: el progreso se conserva.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Summary("La señal está", reminder.place)
+      Summary("Para comenzar", reminder.howToStart)
+    }
+    OutlinedButton(onClick = onStop, modifier = Modifier.fillMaxWidth().height(54.dp)) { Text("Desactivar") }
+  }
 }
 
-private fun initialStep(status: ReminderStatus): RelevoStep =
-  when (status) {
-    ReminderStatus.WAITING -> RelevoStep.WAIT
-    ReminderStatus.SIGNALLED -> RelevoStep.SIGNAL
-    ReminderStatus.SILENCED, ReminderStatus.CLOSED -> RelevoStep.CLOSE
-    else -> RelevoStep.FORMULATE
+@Composable
+private fun SignalScreen(reminder: Reminder, onClose: () -> Unit) = Page {
+  Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
+    Brand()
+    Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
+      SignalGraphic()
+      Text("Es momento de elegir.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
+      Text(reminder.activity, style = MaterialTheme.typography.headlineMedium)
+      Summary("Puedes empezar por", reminder.howToStart)
+      Text("La señal está en ${reminder.place}.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+    PrimaryButton("Silenciar", onClose)
   }
+}
 
-private fun previousStep(step: RelevoStep): RelevoStep =
-  if (step == RelevoStep.FORMULATE) step else RelevoStep.entries[step.ordinal - 1]
-
-private fun formatDelay(seconds: Int): String =
-  when {
-    seconds < 60 -> "$seconds segundos"
-    seconds % 60 == 0 -> "${seconds / 60} ${if (seconds == 60) "minuto" else "minutos"}"
-    else -> "$seconds segundos"
+@Composable
+private fun DoneScreen(reminder: Reminder, onNew: () -> Unit) = Page {
+  Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
+    Brand()
+    Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+      Text("Relevo finalizado", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+      Text("Usaste ${formatTime(reminder.observedUsageSeconds)} de ${reminder.targetAppLabel}. Relevo no evalúa si realizaste la actividad.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+    PrimaryButton("Crear otro relevo", onNew)
   }
+}
 
-private fun formatCountdown(seconds: Int): String = "%02d:%02d".format(seconds / 60, seconds % 60)
+@Composable
+private fun AppPicker(apps: List<InstalledApp>, onDismiss: () -> Unit, onSelect: (InstalledApp) -> Unit) {
+  AlertDialog(
+    onDismissRequest = onDismiss,
+    title = { Text("Elige una aplicación") },
+    text = { LazyColumn(Modifier.heightIn(max = 420.dp)) { items(apps) { app -> TextButton(onClick = { onSelect(app) }, modifier = Modifier.fillMaxWidth()) { Text(app.label, modifier = Modifier.fillMaxWidth()) } } } },
+    confirmButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } },
+  )
+}
+
+@Composable
+private fun TermsDialog(onDismiss: () -> Unit, onAccept: () -> Unit) {
+  AlertDialog(
+    onDismissRequest = onDismiss,
+    title = { Text("Uso de datos en la prueba") },
+    text = {
+      Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Text("Relevo guardará en este teléfono un código anónimo, la aplicación elegida, el tiempo acumulado y los momentos de activación, entrada, salida, señal y cierre.")
+        Text("No registra mensajes, imágenes, búsquedas, teclas ni contenido de pantalla. Los datos se usan para evaluar el funcionamiento del proyecto y puedes detener el registro al desactivar el relevo.")
+        Text("La sincronización remota solo se habilitará cuando exista una base protegida, un responsable y un procedimiento de eliminación.")
+      }
+    },
+    confirmButton = { Button(onClick = onAccept) { Text("Entiendo y acepto") } },
+    dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } },
+  )
+}
+
+@Composable
+private fun SignalGraphic() {
+  Box(Modifier.fillMaxWidth().height(150.dp), contentAlignment = Alignment.Center) {
+    Surface(Modifier.size(132.dp), CircleShape, MaterialTheme.colorScheme.primaryContainer) {
+      Box(contentAlignment = Alignment.Center) { Surface(Modifier.size(30.dp), CircleShape, MaterialTheme.colorScheme.primary) {} }
+    }
+  }
+}
+
+@Composable
+private fun Summary(label: String, value: String) {
+  Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant), shape = RoundedCornerShape(18.dp), modifier = Modifier.fillMaxWidth()) {
+    Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
+      Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text(value, style = MaterialTheme.typography.titleMedium)
+    }
+  }
+}
+
+@Composable
+private fun PrimaryButton(label: String, onClick: () -> Unit, enabled: Boolean = true) {
+  Button(onClick, Modifier.fillMaxWidth().height(56.dp), enabled, shape = RoundedCornerShape(18.dp), colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)) { Text(label, fontWeight = FontWeight.SemiBold) }
+}
+
+private fun screenFor(status: ReminderStatus, current: Screen = Screen.HOME): Screen = when (status) {
+  ReminderStatus.WAITING -> Screen.ACTIVE
+  ReminderStatus.SIGNALLED -> Screen.SIGNAL
+  ReminderStatus.SILENCED, ReminderStatus.CLOSED -> Screen.DONE
+  else -> current
+}
+
+private fun formatTime(seconds: Int): String = when {
+  seconds < 60 -> "$seconds s"
+  seconds % 60 == 0 -> "${seconds / 60} min"
+  else -> "${seconds / 60} min ${seconds % 60} s"
+}

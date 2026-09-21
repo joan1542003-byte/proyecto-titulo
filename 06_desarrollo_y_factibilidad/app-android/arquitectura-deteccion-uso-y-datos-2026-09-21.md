@@ -2,9 +2,9 @@
 
 ## Decisión implementada
 
-La persona elige una aplicación instalada y un intervalo. Mientras el recordatorio está activo, Relevo consulta los eventos de uso de Android una vez por segundo y comprueba si esa aplicación está en primer plano. La señal se emite al completar el intervalo de manera continua. Salir de la aplicación reinicia el conteo.
+La persona elige una aplicación instalada y un intervalo. Mientras el recordatorio está activo, Relevo consulta los eventos de uso de Android una vez por segundo y comprueba si esa aplicación está en primer plano. La señal se emite al completar el tiempo acumulado. Salir de la aplicación pausa el conteo; volver a ella lo retoma.
 
-Este criterio evita confundir tiempo transcurrido con uso efectivo. También acota la observación a una condición comprensible: aplicación elegida, primer plano y duración continua.
+Este criterio evita confundir tiempo transcurrido con uso efectivo. También acota la observación a una condición comprensible: aplicación elegida, primer plano y duración acumulada desde la activación.
 
 ## Qué observa y qué no
 
@@ -22,7 +22,7 @@ No se guarda contenido de pantalla, mensajes, teclas, búsquedas, fotografías, 
 
 ## Base de datos local
 
-Los eventos se guardan en `relevo_research.db`, tabla `events`, dentro del almacenamiento privado de la aplicación. Los campos son `session_id`, `participant_code`, `event_type`, `target_package`, `created_at` y `value_seconds`.
+Los eventos se guardan en `relevo_research.db`, tabla `events`, dentro del almacenamiento privado de la aplicación. Los campos son `session_id`, `participant_code`, `event_type`, `target_package`, `created_at`, `value_seconds` y `consent_version`.
 
 Esta base permite relacionar eventos de una misma sesión sin guardar nombres. Aún no es una base central: los datos no salen del teléfono ni se cruzan entre dispositivos.
 
@@ -34,7 +34,7 @@ Para el testeo inmediato, la opción local es suficiente y reduce exposición in
 
 ## Comprobación realizada
 
-En un emulador Android se configuró una aplicación objetivo con una condición de cinco segundos. Tras abrirla y mantenerla en primer plano, el registro pasó de `WAITING` a `SIGNALLED`, guardó cinco segundos observados y marcó una única emisión. La compilación y las pruebas unitarias terminaron correctamente.
+En un emulador Android se configuró una aplicación objetivo con una condición de cinco segundos. Se usó durante tres segundos, se abandonó y luego se volvió a abrir. El conteo conservó el progreso y, al completar cinco segundos acumulados, el registro pasó de `WAITING` a `SIGNALLED` y marcó una única emisión. La compilación y las pruebas unitarias terminaron correctamente.
 
 ## Referencias técnicas
 
