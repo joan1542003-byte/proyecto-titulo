@@ -9,6 +9,10 @@ transcripciones_identificables/
 tmp/
 .codex_tmp/
 **/node_modules/
+**/.gradle/
+**/build/
+**/local.properties
+**/.idea/
 ~$*
 .DS_Store
 Thumbs.db

@@ -29,6 +29,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Plan de desarrollo de la aplicación Android para prueba](plan-app-android-prueba-2026-09-22.md): fija el alcance ejecutable, la arquitectura, el recorrido, los criterios de aceptación y la entrega prevista para el 22 de septiembre de 2026.
 - [Búsqueda de productos terminados disponibles en Chile](busqueda-productos-terminados-chile-2026-09-11.md): contrasta iTag y parlantes compactos con control desde una aplicación propia; recomienda comprar dos muestras iTag y someterlas a una prueba GATT antes de recurrir a una placa de desarrollo.
 - [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas; conserva XIAO como integración posterior si la prueba con productos terminados demuestra que hace falta construir un objeto propio.
 - [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md): sitúa dos iTag clásicos como primera puerta, micro:bit como respaldo y XIAO como posible integración posterior; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
@@ -52,6 +53,13 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-21 — Plan de la primera aplicación Android
+
+- **Cambio:** se añadió el plan ejecutable para producir y verificar un APK de prueba el 22 de septiembre de 2026.
+- **Versión anterior:** el índice reunía decisiones de plataforma y desarrollo físico, pero no unía el recorrido de interfaz con una fecha, criterios de aceptación y entregables de software.
+- **Motivo:** iniciar la construcción con un alcance verificable y proteger la prueba de dependencias físicas todavía no comprobadas.
+- **Alcance:** el APK y sus resultados técnicos permanecen pendientes hasta completar compilación e instalación.
 
 ### 2026-09-12 — Ruta física sincronizada
 
