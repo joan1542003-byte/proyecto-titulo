@@ -20,6 +20,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -41,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
+import com.example.relevo.monitor.InstalledApp
 
 private enum class RelevoStep {
   FORMULATE,
@@ -58,6 +60,8 @@ private enum class RelevoStep {
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val reminder by viewModel.reminder.collectAsState()
   val remainingSeconds by viewModel.remainingSeconds.collectAsState()
+  val installedApps by viewModel.installedApps.collectAsState()
+  val usageAccessGranted by viewModel.usageAccessGranted.collectAsState()
   var step by rememberSaveable { mutableStateOf(initialStep(reminder.status)) }
   var showMissingData by rememberSaveable { mutableStateOf(false) }
   var signalWasPerceived by rememberSaveable { mutableStateOf<Boolean?>(null) }
@@ -81,7 +85,12 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
           viewModel::updateHowToStart,
         ) { step = RelevoStep.CONFIGURE }
       RelevoStep.CONFIGURE ->
-        ConfigureScreen(reminder, viewModel::updateDelay) { step = RelevoStep.REVIEW }
+        ConfigureScreen(
+          reminder, installedApps, usageAccessGranted,
+          viewModel::selectTargetApp, viewModel::updateRequiredUsage,
+          viewModel::updateParticipantCode, viewModel::updateConsent,
+          viewModel::openUsageAccessSettings, viewModel::refreshUsageAccess,
+        ) { step = RelevoStep.REVIEW }
       RelevoStep.REVIEW ->
         ReviewScreen(
           reminder = reminder,
@@ -236,20 +245,58 @@ private fun FormulateScreen(
   }
 
 @Composable
-private fun ConfigureScreen(reminder: Reminder, onDelayChange: (Int) -> Unit, onContinue: () -> Unit) =
-  ScreenBody("Condición de prueba", "¿Cuándo quieres recibir la señal?", "Para esta prueba, Relevo esperará el tiempo que elijas.") {
-    listOf(15 to "15 segundos", 60 to "1 minuto", 300 to "5 minutos").forEach { (seconds, label) ->
-      if (reminder.delaySeconds == seconds) {
-        Button(onClick = { onDelayChange(seconds) }, modifier = Modifier.fillMaxWidth()) { Text(label) }
+private fun ConfigureScreen(
+  reminder: Reminder,
+  installedApps: List<InstalledApp>,
+  usageAccessGranted: Boolean,
+  onAppSelected: (InstalledApp) -> Unit,
+  onDurationChange: (Int) -> Unit,
+  onParticipantCodeChange: (String) -> Unit,
+  onConsentChange: (Boolean) -> Unit,
+  onOpenUsageSettings: () -> Unit,
+  onRefreshPermission: () -> Unit,
+  onContinue: () -> Unit,
+) =
+  ScreenBody("Condición", "¿Qué uso activará la señal?", "Elige una aplicación y cuánto tiempo debe permanecer abierta de forma continua.") {
+    Text("Aplicación", fontWeight = FontWeight.Medium)
+    installedApps.forEach { app ->
+      if (app.packageName == reminder.targetPackage) {
+        Button(onClick = { onAppSelected(app) }, modifier = Modifier.fillMaxWidth()) { Text(app.label) }
       } else {
-        OutlinedButton(onClick = { onDelayChange(seconds) }, modifier = Modifier.fillMaxWidth()) { Text(label) }
+        OutlinedButton(onClick = { onAppSelected(app) }, modifier = Modifier.fillMaxWidth()) { Text(app.label) }
       }
     }
-    Text(
-      "La detección automática del uso de otras aplicaciones no forma parte de esta versión.",
-      style = MaterialTheme.typography.bodySmall,
+    Text("Tiempo de uso continuo", fontWeight = FontWeight.Medium)
+    listOf(15 to "15 segundos", 60 to "1 minuto", 300 to "5 minutos").forEach { (seconds, label) ->
+      if (reminder.requiredUsageSeconds == seconds) {
+        Button(onClick = { onDurationChange(seconds) }, modifier = Modifier.fillMaxWidth()) { Text(label) }
+      } else {
+        OutlinedButton(onClick = { onDurationChange(seconds) }, modifier = Modifier.fillMaxWidth()) { Text(label) }
+      }
+    }
+    OutlinedTextField(
+      value = reminder.participantCode,
+      onValueChange = onParticipantCodeChange,
+      label = { Text("Código de participante") },
+      supportingText = { Text("Usa un código; no escribas el nombre de la persona.") },
+      modifier = Modifier.fillMaxWidth(),
+      singleLine = true,
     )
-    PrimaryButton("Revisar", onClick = onContinue)
+    Row(verticalAlignment = Alignment.Top) {
+      Checkbox(checked = reminder.consentAccepted, onCheckedChange = onConsentChange)
+      Text(
+        "Acepto guardar en este teléfono el código, la aplicación elegida y los momentos de entrada, salida y señal. No se guardan mensajes, contenido ni el historial general.",
+        style = MaterialTheme.typography.bodySmall,
+        modifier = Modifier.padding(top = 12.dp),
+      )
+    }
+    if (usageAccessGranted) Text("Acceso de uso autorizado.", color = MaterialTheme.colorScheme.primary)
+    else {
+      ErrorText("Android necesita que autorices el acceso de uso para reconocer cuándo está abierta la aplicación elegida.")
+      OutlinedButton(onClick = onOpenUsageSettings, modifier = Modifier.fillMaxWidth()) { Text("Abrir ajustes de acceso") }
+      TextButton(onClick = onRefreshPermission, modifier = Modifier.fillMaxWidth()) { Text("Ya lo autoricé") }
+    }
+    PrimaryButton("Revisar", enabled = reminder.targetPackage.isNotBlank() && reminder.participantCode.isNotBlank() && reminder.consentAccepted && usageAccessGranted, onClick = onContinue)
   }
 
 @Composable
@@ -262,7 +309,8 @@ private fun ReviewScreen(
   ScreenBody("Revisar", "Comprueba tu recordatorio", "Puedes volver y cambiar cualquier dato antes de situarlo.") {
     SummaryCard("Actividad", reminder.activity)
     SummaryCard("Cómo empezar", reminder.howToStart)
-    SummaryCard("Espera", formatDelay(reminder.delaySeconds))
+    SummaryCard("Aplicación", reminder.targetAppLabel)
+    SummaryCard("Condición", "${formatDelay(reminder.requiredUsageSeconds)} de uso continuo")
     if (showMissingData) ErrorText("Completa la actividad y la forma de comenzar antes de continuar.")
     PrimaryButton("Continuar", onClick = onContinue)
     TextButton(onClick = onEdit, modifier = Modifier.fillMaxWidth()) { Text("Editar") }
@@ -312,7 +360,7 @@ private fun TestSignalScreen(
 
 @Composable
 private fun ArmScreen(reminder: Reminder, onArm: () -> Unit, onExit: () -> Unit) =
-  ScreenBody("Activar", "Todo está preparado", "La señal se emitirá una vez después de ${formatDelay(reminder.delaySeconds)}.") {
+  ScreenBody("Activar", "Todo está preparado", "La señal se emitirá cuando uses ${reminder.targetAppLabel} durante ${formatDelay(reminder.requiredUsageSeconds)} de forma continua.") {
     SummaryCard(reminder.activity, reminder.howToStart)
     SummaryCard("Lugar", reminder.place)
     PrimaryButton("Activar recordatorio", onClick = onArm)
@@ -321,9 +369,9 @@ private fun ArmScreen(reminder: Reminder, onArm: () -> Unit, onExit: () -> Unit)
 
 @Composable
 private fun WaitScreen(reminder: Reminder, remainingSeconds: Int, onDisarm: () -> Unit) =
-  ScreenBody("Recordatorio activo", reminder.activity, "La señal se emitirá en el lugar elegido cuando termine la espera.") {
+  ScreenBody("Recordatorio activo", reminder.activity, "Relevo observa únicamente si ${reminder.targetAppLabel} está en primer plano. Si sales, el conteo vuelve a comenzar.") {
     Text(
-      if (remainingSeconds > 0) formatCountdown(remainingSeconds) else "Preparando señal…",
+      if (remainingSeconds > 0) formatCountdown(remainingSeconds) else "Señal preparada…",
       fontSize = 44.sp,
       fontWeight = FontWeight.Light,
     )

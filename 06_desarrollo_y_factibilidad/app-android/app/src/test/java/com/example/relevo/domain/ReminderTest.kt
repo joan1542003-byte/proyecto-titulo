@@ -2,58 +2,53 @@ package com.example.relevo.domain
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
-import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class ReminderTest {
-  private val complete =
-    Reminder(activity = "Salir a caminar", howToStart = "Ponerme las zapatillas", place = "Dormitorio", delaySeconds = 60)
+  private val complete = Reminder(
+    activity = "Salir a caminar", howToStart = "Ponerme las zapatillas", place = "Dormitorio",
+    targetPackage = "com.example.video", targetAppLabel = "Video", requiredUsageSeconds = 60,
+    participantCode = "P01", consentAccepted = true,
+  )
 
-  @Test
-  fun incompleteReminderCannotBecomeReady() {
+  @Test fun incompleteReminderCannotBecomeReady() {
     assertEquals(ReminderStatus.DRAFT, Reminder(activity = "Caminar").ready().status)
   }
 
-  @Test
-  fun preparedReminderCanReachSituateBeforePlaceIsKnown() {
-    val prepared = Reminder(activity = "Caminar", howToStart = "Ponerme las zapatillas", delaySeconds = 15)
-
+  @Test fun preparedReminderCanReachSituateBeforePlaceIsKnown() {
+    val prepared = complete.copy(place = "")
     assertEquals(ReminderStatus.READY, prepared.ready().status)
     assertFalse(prepared.ready().hasRequiredContent)
   }
 
-  @Test
-  fun completeReminderCanBeArmed() {
-    val armed = complete.ready().arm(nowMillis = 1_000)
+  @Test fun consentAndTargetAppAreRequired() {
+    assertFalse(complete.copy(consentAccepted = false).hasPreparedContent)
+    assertFalse(complete.copy(targetPackage = "").hasPreparedContent)
+  }
 
+  @Test fun completeReminderCanBeArmed() {
+    val armed = complete.ready().arm("session-1")
     assertEquals(ReminderStatus.WAITING, armed.status)
-    assertEquals(61_000L, armed.scheduledAtMillis)
+    assertEquals("session-1", armed.sessionId)
+    assertEquals(0, armed.observedUsageSeconds)
   }
 
-  @Test
-  fun signalCanOnlyBeDeliveredOnce() {
-    val first = complete.ready().arm(0).deliverSignal()
-    val second = first.deliverSignal()
-
+  @Test fun signalCanOnlyBeDeliveredOnce() {
+    val first = complete.ready().arm("s").deliverSignal()
     assertTrue(first.signalDelivered)
-    assertEquals(first, second)
+    assertEquals(first, first.deliverSignal())
   }
 
-  @Test
-  fun disarmPreventsSignalAndClearsSchedule() {
-    val disarmed = complete.ready().arm(0).disarm()
-
+  @Test fun disarmPreventsSignal() {
+    val disarmed = complete.ready().arm("s").disarm()
     assertEquals(ReminderStatus.CLOSED, disarmed.status)
-    assertNull(disarmed.scheduledAtMillis)
     assertFalse(disarmed.deliverSignal().signalDelivered)
   }
 
-  @Test
-  fun closedReminderDoesNotRearmItself() {
-    val closed = complete.ready().arm(0).close()
-
+  @Test fun closedReminderDoesNotRearmItself() {
+    val closed = complete.ready().arm("s").close()
     assertEquals(ReminderStatus.CLOSED, closed.status)
-    assertEquals(closed, closed.arm(5_000))
+    assertEquals(closed, closed.arm("another"))
   }
 }

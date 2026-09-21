@@ -1,5 +1,7 @@
 # Ensayo técnico en emulador Android
 
+> **Registro histórico:** este ensayo corresponde a la versión con espera temporal. La comprobación vigente de detección automática está documentada en `arquitectura-deteccion-uso-y-datos-2026-09-21.md`.
+
 **Fecha:** 21 de septiembre de 2026  
 **Entorno:** teléfono virtual medio, Android 16, API 36  
 **Aplicación:** `cl.udp.relevo`, versión 1.0 de prueba  

@@ -42,12 +42,12 @@
 | Señal no percibida | elegir «Ajustar» | no permite activar hasta repetir y confirmar | Pendiente |
 | Desactivación voluntaria | desactivar durante la espera | cierra el ciclo y no emite después | Pendiente |
 | Cierre de la aplicación | cerrarla durante la espera y volver a abrir | recupera el recordatorio y recalcula el tiempo | Pendiente |
-| Señal activa | dejar vencer el temporizador | reproduce una señal y ofrece silencio | Pendiente |
+| Señal activa | mantener la aplicación elegida en primer plano durante el intervalo | reproduce una señal y ofrece silencio | Aprobado en emulador; pendiente en teléfono real |
 | Nuevo ciclo | cerrar y preparar otro | elimina el estado anterior y vuelve al comienzo | Pendiente |
 
 ## Prueba repetida
 
-Ejecutar tres ciclos consecutivos con espera de 15 segundos. Deben producir exactamente tres señales, una por ciclo. Una señal duplicada, tardía o posterior a una desactivación se considera un fallo crítico.
+Ejecutar tres ciclos consecutivos con una condición de 15 segundos de uso continuo. Deben producir exactamente tres señales, una por ciclo. Salir antes de completar el intervalo debe reiniciar el conteo. Una señal duplicada o posterior a una desactivación se considera un fallo crítico.
 
 ## Regla de decisión
 

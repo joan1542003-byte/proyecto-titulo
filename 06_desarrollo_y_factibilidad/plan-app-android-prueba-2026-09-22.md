@@ -1,5 +1,7 @@
 # Plan de desarrollo de la aplicación Android para prueba
 
+> **Plan superado parcialmente:** la espera temporal descrita aquí fue reemplazada por detección de uso continuo de la aplicación elegida. Consultar `app-android/README.md` para el estado implementado.
+
 **Fecha de planificación:** 21 de septiembre de 2026  
 **Hito ejecutable:** 22 de septiembre de 2026  
 **Estado:** APK compilado y recorrido principal aprobado en emulador; verificación en teléfono real pendiente

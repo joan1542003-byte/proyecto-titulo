@@ -1,70 +1,55 @@
 # Aplicación Android de Relevo
 
-Primera aplicación Android instalable para comprobar el recorrido de preparación, activación, señal y cierre de Relevo.
+Prototipo funcional para preparar una intención, elegir una aplicación y emitir una señal cuando esa aplicación permanece en primer plano durante el tiempo definido.
 
 ## Estado
 
-**Versión:** 1.0 de prueba  
-**Fecha:** 21 de septiembre de 2026  
-**Identificador:** `cl.udp.relevo`  
-**Android mínimo:** 8.0, API 26  
-**APK:** [relevo-prueba-2026-09-21.apk](releases/relevo-prueba-2026-09-21.apk)
+**Versión:** 1.1 de prueba
 
-La compilación y las pruebas unitarias terminaron correctamente. El APK aún debe instalarse y revisarse en el teléfono Android que se utilizará en la sesión.
+**Fecha:** 21 de septiembre de 2026
+
+**Identificador:** `cl.udp.relevo`
+
+**Android mínimo:** 8.0, API 26
+
+**APK vigente:** [relevo-uso-aplicaciones-2026-09-21.apk](releases/relevo-uso-aplicaciones-2026-09-21.apk)
+
+La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
 ## Qué permite hacer
 
-1. escribir una actividad;
-2. precisar una forma concreta de comenzar;
-3. elegir una espera de 15 segundos, 1 minuto o 5 minutos;
-4. revisar lo configurado;
-5. declarar el lugar donde quedará la señal;
-6. reproducir y detener una señal de prueba;
-7. confirmar que la señal fue percibida;
-8. activar y desactivar el recordatorio;
-9. recibir una sola señal al terminar la espera;
-10. silenciar y cerrar sin registrar cumplimiento;
-11. preparar un nuevo recordatorio;
-12. conservar el ciclo activo si la aplicación se cierra y vuelve a abrir.
+1. escribir una actividad y una forma concreta de comenzar;
+2. elegir una aplicación instalada;
+3. definir 15 segundos, 1 minuto o 5 minutos de uso continuo;
+4. autorizar el acceso de uso exigido por Android;
+5. registrar un código seudónimo y aceptar el tratamiento local informado;
+6. situar y probar la señal;
+7. activar un monitoreo visible mediante una notificación persistente;
+8. emitir una sola señal cuando se cumple la condición;
+9. reiniciar el conteo si la persona sale de la aplicación elegida;
+10. desactivar, silenciar y cerrar el ciclo.
 
-## Alcance de esta versión
+## Límites
 
-La aplicación prueba el recorrido y su comprensión. La condición es un temporizador local y la señal sale por el canal de audio de Android. Si el teléfono está conectado a un parlante Bluetooth, el sistema operativo puede dirigir allí el sonido.
+Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Los eventos de prueba permanecen en una base SQLite dentro del teléfono. No existe sincronización remota ni un repositorio central de participantes en esta versión.
 
-Esta versión no detecta el uso de otras aplicaciones, no controla un rastreador comercial, no utiliza cuentas ni internet y no demuestra todavía el funcionamiento del objeto físico final.
+La señal se reproduce mediante Android. Si el teléfono está conectado a un parlante Bluetooth, Android puede dirigir el audio al parlante. La integración directa con un objeto físico independiente sigue siendo una etapa posterior.
 
-## Instalación en el teléfono
+## Instalación y permiso
 
-### Opción directa
+1. instalar el APK;
+2. abrir Relevo;
+3. pulsar **Abrir ajustes de acceso** en la pantalla de condición;
+4. autorizar Relevo en **Acceso de uso**;
+5. regresar y pulsar **Ya lo autoricé**.
 
-1. copiar el APK al teléfono Android;
-2. abrirlo desde Descargas o Archivos;
-3. autorizar temporalmente la instalación desde esa fuente si Android lo solicita;
-4. instalar y abrir Relevo;
-5. devolver el permiso de instalación a su estado anterior después de completar la instalación.
+Android muestra una notificación mientras el recordatorio está activo. Esta visibilidad comunica que existe observación en curso y no debe eliminarse.
 
-### Opción mediante ADB
+## Datos de prueba
 
-Con depuración USB habilitada y el teléfono conectado:
+La estructura y sus límites están descritos en [detección de uso y datos](arquitectura-deteccion-uso-y-datos-2026-09-21.md). Para pruebas académicas se debe usar un código como `P01`; nunca el nombre de la persona. Antes de una base remota se deben aprobar responsable, plazo de conservación, acceso y procedimiento de eliminación.
 
-```powershell
-D:\AndroidSdk\platform-tools\adb.exe install -r releases\relevo-prueba-2026-09-21.apk
-```
-
-## Comprobación anterior a la sesión
-
-El [ensayo técnico en emulador](ensayo-emulador-2026-09-21.md) completó el recorrido y permitió corregir dos bloqueos de estado. Antes de utilizar otro equipo, seguir [la matriz de verificación](verificacion-previa-2026-09-22.md). La aplicación no debe utilizarse con participantes si no permite preparar, probar, activar, percibir, silenciar y cerrar el recordatorio en el teléfono elegido.
-
-## Compilación local
-
-Requisitos comprobados en este equipo:
-
-- Android Studio 2026.1.4.7;
-- JDK incluido con Android Studio;
-- Android SDK 36 y Build Tools 36;
-- Gradle Wrapper 9.1.0.
-
-Desde esta carpeta:
+## Compilación
 
 ```powershell
 $env:JAVA_HOME='C:\Program Files\Android\Android Studio\jbr'
@@ -73,32 +58,22 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 .\gradlew.bat :app:testDebugUnitTest :app:assembleDebug --no-configuration-cache
 ```
 
-`RELEVO_BUILD_DIR` evita bloqueos de archivos temporales causados por la sincronización de OneDrive. No modifica el código ni el contenido del APK.
-
 ## Estructura relevante
 
-- `domain/Reminder.kt`: estados y reglas del ciclo;
-- `data/ReminderStore.kt`: persistencia local;
-- `signal/SignalPlayer.kt`: sonido y vibración de prueba;
-- `ui/RelevoViewModel.kt`: temporizador y coordinación del estado;
-- `ui/RelevoApp.kt`: recorrido de nueve momentos;
-- `theme/`: colores y tema visual vigente;
-- `releases/`: APK identificable para instalación;
-- `verificacion-previa-2026-09-22.md`: control anterior a la sesión.
-
-## Integridad del APK
-
-SHA-256:
-
-```text
-15920D2301885DF322C6E28540575501CBE94FBD8FCF6FDE334586DD8F208B5F
-```
+- `domain/Reminder.kt`: estados y condiciones del ciclo;
+- `monitor/AppUsageMonitorService.kt`: observación visible del primer plano;
+- `monitor/UsageAccess.kt`: comprobación del permiso;
+- `data/ResearchLogStore.kt`: eventos seudónimos en SQLite;
+- `data/ReminderStore.kt`: estado local del recordatorio;
+- `signal/SignalPlayer.kt`: sonido y vibración;
+- `ui/RelevoViewModel.kt`: coordinación;
+- `ui/RelevoApp.kt`: recorrido de nueve momentos.
 
 ## Registro de cambios (disclaimer)
 
-### 2026-09-21 — Primera versión instalable
+### 2026-09-21 — Condición automática por aplicación
 
-- **Cambio:** se creó una aplicación Android nativa con nueve momentos, persistencia local, temporizador, señal, cierre y pruebas unitarias del ciclo.
-- **Versión anterior:** el repositorio disponía de wireframes y criterios de validación, pero no de una aplicación Android compilable.
-- **Motivo:** disponer de un material funcional para comprobar el recorrido antes de integrar la condición automática y el objeto físico definitivo.
-- **Alcance:** compilación y pruebas unitarias aprobadas; instalación, prueba en un teléfono real y resultados con participantes todavía pendientes.
+- **Cambio:** el temporizador pasivo fue reemplazado por la selección de una aplicación y la medición de uso continuo en primer plano.
+- **Versión anterior:** la señal aparecía después de una espera, sin reconocer el uso de otras aplicaciones.
+- **Motivo:** hacer comprobable la relación central de Relevo entre el uso prolongado de una aplicación elegida y una señal situada.
+- **Privacidad:** se incorporaron consentimiento explícito, código seudónimo, notificación persistente y almacenamiento local limitado.
