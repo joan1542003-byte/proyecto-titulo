@@ -2,6 +2,7 @@ package com.example.relevo.monitor
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.Service
 import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
@@ -9,12 +10,14 @@ import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
+import android.media.RingtoneManager
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.signal.SignalPlayer
+import com.example.relevo.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -123,6 +126,7 @@ class AppUsageMonitorService : Service() {
               observedSeconds,
             )
             signalPlayer.play()
+            showCompletionNotification(signalled.activity, signalled.howToStart)
             break
           }
 
@@ -159,11 +163,42 @@ class AppUsageMonitorService : Service() {
         description = "Informa cuándo Relevo observa la aplicación elegida."
       },
     )
+    manager.createNotificationChannel(
+      NotificationChannel(SIGNAL_CHANNEL_ID, "Señal de Relevo", NotificationManager.IMPORTANCE_HIGH).apply {
+        description = "Avisa cuando se cumple el tiempo acumulado."
+        setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM), null)
+        enableVibration(true)
+      },
+    )
+  }
+
+  private fun showCompletionNotification(activity: String, firstStep: String) {
+    val manager = getSystemService(NotificationManager::class.java) ?: return
+    val openApp = PendingIntent.getActivity(
+      this,
+      0,
+      Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP),
+      PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+    )
+    manager.notify(
+      SIGNAL_NOTIFICATION_ID,
+      NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
+        .setSmallIcon(android.R.drawable.ic_popup_reminder)
+        .setContentTitle(activity)
+        .setContentText("Puedes empezar por: $firstStep")
+        .setContentIntent(openApp)
+        .setAutoCancel(true)
+        .setPriority(NotificationCompat.PRIORITY_HIGH)
+        .setCategory(NotificationCompat.CATEGORY_ALARM)
+        .build(),
+    )
   }
 
   companion object {
     private const val CHANNEL_ID = "relevo_monitor"
     private const val NOTIFICATION_ID = 1101
+    private const val SIGNAL_NOTIFICATION_ID = 1102
+    private const val SIGNAL_CHANNEL_ID = "relevo_signal"
     private const val POLL_INTERVAL_MILLIS = 1_000L
   }
 }

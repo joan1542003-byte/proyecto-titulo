@@ -7,12 +7,16 @@ import androidx.lifecycle.viewModelScope
 import androidx.core.content.ContextCompat
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
+import com.example.relevo.data.HistoryEntry
+import com.example.relevo.data.HistoryStore
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.monitor.AppUsageMonitorService
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.monitor.InstalledAppsRepository
 import com.example.relevo.monitor.UsageAccess
+import com.example.relevo.monitor.AppUsageSummary
+import com.example.relevo.monitor.UsageSummaryRepository
 import com.example.relevo.signal.SignalPlayer
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -25,8 +29,10 @@ import java.util.UUID
 class RelevoViewModel(application: Application) : AndroidViewModel(application) {
   private val store = ReminderStore(application)
   private val researchLog = ResearchLogStore(application)
+  private val historyStore = HistoryStore(application)
   private val signalPlayer = SignalPlayer(application)
   private val appsRepository = InstalledAppsRepository(application)
+  private val usageSummaryRepository = UsageSummaryRepository(application)
   private val _reminder = MutableStateFlow(store.load())
   val reminder: StateFlow<Reminder> = _reminder.asStateFlow()
 
@@ -39,6 +45,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val _usageAccessGranted = MutableStateFlow(UsageAccess.isGranted(application))
   val usageAccessGranted: StateFlow<Boolean> = _usageAccessGranted.asStateFlow()
 
+  private val _history = MutableStateFlow(historyStore.load())
+  val history: StateFlow<List<HistoryEntry>> = _history.asStateFlow()
+
+  private val _todayUsage = MutableStateFlow<List<AppUsageSummary>>(emptyList())
+  val todayUsage: StateFlow<List<AppUsageSummary>> = _todayUsage.asStateFlow()
+
   private var stateSyncJob: Job? = null
 
   init {
@@ -47,6 +59,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       updateValue(_reminder.value.copy(participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}"))
     }
     startStateSync()
+    refreshDashboard()
     if (_reminder.value.status == ReminderStatus.WAITING && UsageAccess.isGranted(application)) {
       ContextCompat.startForegroundService(
         application,
@@ -76,6 +89,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun updateConsent(accepted: Boolean) =
     update { copy(consentAccepted = accepted, status = ReminderStatus.DRAFT) }
 
+  fun applyPreset(activity: String, firstStep: String, place: String) =
+    update { copy(activity = activity, howToStart = firstStep, place = place, status = ReminderStatus.DRAFT) }
+
   fun selectTargetApp(app: InstalledApp) =
     update {
       copy(
@@ -87,6 +103,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   fun refreshUsageAccess() {
     _usageAccessGranted.value = UsageAccess.isGranted(getApplication())
+    refreshDashboard()
+  }
+
+  fun refreshDashboard() {
+    _history.value = historyStore.load()
+    _todayUsage.value = usageSummaryRepository.today()
   }
 
   fun openUsageAccessSettings() {
@@ -127,6 +149,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     signalPlayer.stop()
     val current = _reminder.value
+    historyStore.add(current)
+    _history.value = historyStore.load()
     researchLog.record(
       current.sessionId,
       current.participantCode,
@@ -141,6 +165,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun silence() {
     signalPlayer.stop()
     val current = _reminder.value
+    historyStore.add(current)
+    _history.value = historyStore.load()
     researchLog.record(
       current.sessionId,
       current.participantCode,

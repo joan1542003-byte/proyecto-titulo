@@ -1,8 +1,23 @@
 # Verificación previa de la aplicación Android
 
-**Fecha prevista:** 22 de septiembre de 2026  
-**Versión:** `relevo-prueba-2026-09-21.apk`  
+**Fecha prevista:** 22 de septiembre de 2026
+
+**Versión:** `relevo-android-1.2-2026-09-22.apk`
+
 **Propósito:** impedir que un fallo de software se confunda con una dificultad de comprensión.
+
+## Verificación técnica completada
+
+- compilación de pruebas unitarias y APK: correcta;
+- instalación y apertura en emulador Android: correctas;
+- navegación entre Inicio y configuración: correcta;
+- Source Sans 3 cargada desde recursos locales: correcta;
+- conteo con Ajustes en primer plano durante dos segundos: correcto;
+- cambio automático de `WAITING` a `SIGNALLED`: correcto;
+- notificación final: recibida con actividad y forma de comenzar;
+- canal de alarma: creado con sonido del sistema y vibración.
+
+Las comprobaciones que siguen corresponden a la revisión manual previa en el teléfono y no se sustituyen con este ensayo técnico.
 
 ## Datos del ensayo
 

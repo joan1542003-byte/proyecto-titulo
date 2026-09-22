@@ -14,9 +14,9 @@ class SignalPlayer(private val context: Context) {
   fun play() {
     stop()
     toneGenerator = ToneGenerator(AudioManager.STREAM_ALARM, 65).also {
-      it.startTone(ToneGenerator.TONE_PROP_BEEP2, 1_200)
+      it.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 3_000)
     }
-    vibrator()?.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
+    vibrator()?.vibrate(VibrationEffect.createWaveform(longArrayOf(0, 220, 140, 220, 140, 500), -1))
   }
 
   fun stop() {

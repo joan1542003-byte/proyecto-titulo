@@ -37,8 +37,9 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 12. [Especificación de interfaz](12_especificacion-ui-provisional.md)
 13. [Estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md)
 14. [Sistema de marca vigente](14_sistema-de-marca-vigente.md)
-15. [Referencias](referencias.md)
-16. [Registro del reinicio visual](registro-del-reinicio.md)
+15. [Aplicación Android implementada](15_aplicacion-android-implementada.md)
+16. [Referencias](referencias.md)
+17. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 

@@ -1,36 +1,36 @@
 package com.example.relevo.theme
 
 import androidx.compose.material3.Typography
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import cl.udp.relevo.R
 
-// Set of Material typography styles to start with
+private val RelevoFontFamily =
+  FontFamily(
+    Font(R.font.source_sans_3_regular, FontWeight.Normal),
+    Font(R.font.source_sans_3_medium, FontWeight.Medium),
+    Font(R.font.source_sans_3_semibold, FontWeight.SemiBold),
+    Font(R.font.source_sans_3_bold, FontWeight.Bold),
+  )
+
+private val BaseTypography = Typography()
+
 val Typography =
   Typography(
-    bodyLarge =
-      TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp,
-      )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
+    displayLarge = BaseTypography.displayLarge.copy(fontFamily = RelevoFontFamily),
+    displayMedium = BaseTypography.displayMedium.copy(fontFamily = RelevoFontFamily),
+    displaySmall = BaseTypography.displaySmall.copy(fontFamily = RelevoFontFamily),
+    headlineLarge = BaseTypography.headlineLarge.copy(fontFamily = RelevoFontFamily),
+    headlineMedium = BaseTypography.headlineMedium.copy(fontFamily = RelevoFontFamily),
+    headlineSmall = BaseTypography.headlineSmall.copy(fontFamily = RelevoFontFamily),
+    titleLarge = BaseTypography.titleLarge.copy(fontFamily = RelevoFontFamily),
+    titleMedium = BaseTypography.titleMedium.copy(fontFamily = RelevoFontFamily),
+    titleSmall = BaseTypography.titleSmall.copy(fontFamily = RelevoFontFamily),
+    bodyLarge = BaseTypography.bodyLarge.copy(fontFamily = RelevoFontFamily),
+    bodyMedium = BaseTypography.bodyMedium.copy(fontFamily = RelevoFontFamily),
+    bodySmall = BaseTypography.bodySmall.copy(fontFamily = RelevoFontFamily),
+    labelLarge = BaseTypography.labelLarge.copy(fontFamily = RelevoFontFamily),
+    labelMedium = BaseTypography.labelMedium.copy(fontFamily = RelevoFontFamily),
+    labelSmall = BaseTypography.labelSmall.copy(fontFamily = RelevoFontFamily),
   )

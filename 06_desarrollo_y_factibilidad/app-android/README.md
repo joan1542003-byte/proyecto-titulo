@@ -4,15 +4,15 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.1 de prueba
+**Versión:** 1.2 de prueba
 
-**Fecha:** 21 de septiembre de 2026
+**Fecha:** 22 de septiembre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-uso-aplicaciones-2026-09-21.apk](releases/relevo-uso-aplicaciones-2026-09-21.apk)
+**APK vigente:** [relevo-android-1.2-2026-09-22.apk](releases/relevo-android-1.2-2026-09-22.apk)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -20,14 +20,17 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 
 1. escribir una actividad y una forma concreta de comenzar;
 2. elegir una aplicación instalada;
-3. definir 15 segundos, 1 minuto o 5 minutos de uso acumulado;
-4. autorizar el acceso de uso exigido por Android;
-5. registrar un código seudónimo y aceptar el tratamiento local informado;
-6. situar y probar la señal;
-7. activar un monitoreo visible mediante una notificación persistente;
-8. emitir una sola señal cuando se cumple la condición;
-9. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
-10. desactivar, silenciar y cerrar el ciclo.
+3. partir de un preestablecido o escribir una actividad propia;
+4. definir el tiempo acumulado entre 1 y 60 minutos mediante un deslizador, además de accesos rápidos y una prueba de 15 segundos;
+5. reconocer las aplicaciones por su icono real;
+6. consultar Inicio, Actividad y el historial de relevos;
+7. ver dónde quedó situada la última señal;
+8. autorizar el acceso de uso y las notificaciones exigidas por Android;
+9. registrar un código seudónimo y aceptar el tratamiento local informado;
+10. activar un monitoreo visible mediante una notificación persistente;
+11. emitir alarma, vibración y notificación cuando se cumple la condición;
+12. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
+13. desactivar, silenciar y cerrar el ciclo.
 
 ## Límites
 
@@ -70,6 +73,13 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Tablero, tiempos y retroalimentación
+
+- **Cambio:** se incorporaron navegación inferior, resumen diario, historial, ubicación de la señal, preestablecidos, iconos reales, deslizador de tiempo, transiciones, alarma y notificación final.
+- **Versión anterior:** la aplicación comenzaba directamente en una portada y la configuración solo ofrecía tres duraciones.
+- **Motivo:** hacer visible el estado del sistema, reducir escritura repetida y permitir configurar condiciones reales sin aumentar la cantidad de pantallas.
+- **Corrección técnica:** Android 13 o superior ahora solicita el permiso de notificaciones durante la ejecución.
 
 ### 2026-09-21 — Condición automática por aplicación
 

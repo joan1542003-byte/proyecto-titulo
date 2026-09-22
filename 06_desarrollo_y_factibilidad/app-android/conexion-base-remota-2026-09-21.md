@@ -12,12 +12,12 @@ Para finalizar la conexión se requieren:
 
 1. un proyecto Supabase bajo control del responsable de la investigación;
 2. `SUPABASE_URL`;
-3. `SUPABASE_ANON_KEY`, que es pública pero debe limitarse mediante políticas;
+3. una clave publicable, limitada mediante políticas; no se utiliza una clave secreta;
 4. una fecha de eliminación de los datos;
 5. un correo o medio de contacto para retirar el consentimiento;
 6. aprobación del texto definitivo de términos y condiciones.
 
-La aplicación debe conservar primero cada evento en SQLite. Cuando exista conexión, enviará una copia y marcará el evento como sincronizado. Así no se pierde una sesión por falta de internet. La app nunca debe incorporar la clave `service_role`, porque concede privilegios administrativos.
+La aplicación debe autenticar a cada instalación como usuario anónimo, conservar primero cada evento en SQLite y sincronizarlo cuando exista conexión. Así, cada inserción queda asociada a `auth.uid()` y no se pierde una sesión por falta de internet. La app nunca debe incorporar una clave secreta o `service_role`, porque eluden las políticas de acceso.
 
 ## Datos permitidos
 
