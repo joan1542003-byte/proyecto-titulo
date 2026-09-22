@@ -1,0 +1,6 @@
+# Android Studio completa sdk.dir automáticamente para cada computador.
+# sdk.dir=/Users/TU_USUARIO/Library/Android/sdk
+
+# Copia estas dos variables a local.properties para activar Supabase.
+SUPABASE_URL=https\://TU_PROYECTO.supabase.co
+SUPABASE_PUBLISHABLE_KEY=sb_publishable_REEMPLAZAR

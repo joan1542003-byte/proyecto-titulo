@@ -1,0 +1,6 @@
+/releases export-ignore
+/.gradle export-ignore
+/.kotlin export-ignore
+/build export-ignore
+/app/build export-ignore
+/local.properties export-ignore

@@ -14,6 +14,10 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **APK vigente:** [relevo-android-1.7-2026-09-22.apk](releases/relevo-android-1.7-2026-09-22.apk)
 
+**Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
+
+**Paquete portable:** `releases/relevo-android-studio-1.7-2026-09-22.zip`
+
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
 ## Qué permite hacer
@@ -60,6 +64,10 @@ La estructura y sus límites están descritos en [detección de uso y datos](arq
 
 ## Compilación
 
+En macOS se recomienda abrir directamente esta carpeta en Android Studio. La guía completa se encuentra en [ABRIR-EN-MAC.md](ABRIR-EN-MAC.md).
+
+Compilación desde Windows:
+
 ```powershell
 $env:JAVA_HOME='C:\Program Files\Android\Android Studio\jbr'
 $env:ANDROID_HOME='D:\AndroidSdk'
@@ -79,6 +87,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Proyecto portable para Android Studio
+
+- **Cambio:** se añadieron una guía específica para macOS, un ejemplo de configuración local y un paquete ZIP sin credenciales ni archivos de compilación.
+- **Versión anterior:** el código estaba completo en GitHub, pero la apertura y compilación solo estaban explicadas mediante rutas de Windows.
+- **Motivo:** permitir continuar el desarrollo desde Android Studio en macOS con la menor cantidad posible de pasos manuales.
 
 ### 2026-09-22 — Lenguaje directo, permisos y sincronización verificada
 
