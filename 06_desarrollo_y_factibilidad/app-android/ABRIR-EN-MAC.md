@@ -22,7 +22,7 @@ Este directorio es un proyecto completo de Android Studio. No es necesario copia
 
 ## Opción alternativa: paquete ZIP
 
-1. Descarga `relevo-android-studio-1.8-2026-09-22.zip` desde la carpeta `releases`.
+1. Descarga `relevo-android-studio-1.9-2026-09-22.zip` desde la carpeta `releases`.
 2. Descomprímelo.
 3. En Android Studio elige **Open** y selecciona la carpeta `Relevo-Android-Studio`.
 

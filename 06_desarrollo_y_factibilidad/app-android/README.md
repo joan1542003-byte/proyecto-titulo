@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.8 de prueba
+**Versión:** 1.9 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,11 +12,15 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.8-2026-09-22.apk](releases/relevo-android-1.8-2026-09-22.apk)
+**APK vigente:** [relevo-android-1.9-2026-09-22.apk](releases/relevo-android-1.9-2026-09-22.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-1.8-2026-09-22.zip`
+**Paquete portable:** `releases/relevo-android-studio-1.9-2026-09-22.zip`
+
+**Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
+
+**Capturas de revisión:** [interfaz 1.9](capturas/interfaz-1.9/README.md)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -87,6 +91,18 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Recorrido visual 1.9
+
+- **Cambio:** se reorganizaron Inicio, configuración, espera, señal y cierre con una jerarquía propia; Actividad y Relevos explican su estado vacío. La navegación conserva sus tres nombres visibles y la activación permanece al pie de la configuración.
+- **Versión anterior:** varias pantallas dependían de tarjetas equivalentes, la navegación ocultaba los nombres no seleccionados y era necesario desplazarse hasta el final para activar el relevo.
+- **Motivo:** reducir ambigüedad, hacer visible la acción principal y relacionar cada pantalla con una decisión concreta de la persona.
+- **Corrección:** el tutorial ya no promete luz en el prototipo actual, la prueba del parlante termina automáticamente después de unos segundos y el ícono de plantilla fue sustituido por la señal de Relevo.
+- **Versión anterior:** el tutorial atribuía luz al dispositivo y el sonido de prueba podía permanecer activo.
+- **Motivo:** que la interfaz describa lo que la versión funcional realmente hace.
+- **Corrección técnica:** la comprobación de Tiempo de uso emplea una API disponible desde Android 8, y el respaldo automático del almacenamiento local queda desactivado.
+- **Versión anterior:** la comprobación invocaba una API disponible solo desde Android 10, pese a declarar compatibilidad con Android 8; el sistema podía incluir datos locales en copias automáticas.
+- **Motivo:** respetar la compatibilidad declarada y reducir la exposición de registros de investigación.
 
 ### 2026-09-22 — Señal persistente dirigida a Bluetooth
 

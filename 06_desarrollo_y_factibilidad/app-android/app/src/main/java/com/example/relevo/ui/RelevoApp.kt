@@ -5,6 +5,7 @@ import android.Manifest
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,8 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
@@ -48,6 +51,8 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -99,11 +104,15 @@ import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.monitor.AppUsageSummary
 import cl.udp.relevo.R
+import com.example.relevo.theme.RelevoCoral
+import com.example.relevo.theme.RelevoGraphite
+import com.example.relevo.theme.RelevoTeal
 
 private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
 
 @Composable
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
+  val animationsEnabled = rememberAnimationsEnabled()
   val reminder by viewModel.reminder.collectAsState()
   val remaining by viewModel.remainingSeconds.collectAsState()
   val apps by viewModel.installedApps.collectAsState()
@@ -127,7 +136,10 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
     AnimatedContent(
       targetState = screen,
-      transitionSpec = { (fadeIn(tween(420)) + slideInHorizontally(tween(520)) { it / 8 }) togetherWith (fadeOut(tween(260)) + slideOutHorizontally(tween(420)) { -it / 10 }) },
+      transitionSpec = {
+        if (animationsEnabled) (fadeIn(tween(350)) + slideInHorizontally(tween(400)) { it / 10 }) togetherWith (fadeOut(tween(180)) + slideOutHorizontally(tween(300)) { -it / 12 })
+        else EnterTransition.None togetherWith ExitTransition.None
+      },
       label = "main_navigation",
     ) { currentScreen ->
     when (currentScreen) {
@@ -195,16 +207,19 @@ private fun HomeScreen(
   onRefresh: () -> Unit,
   onStart: () -> Unit,
 ) {
+  val animationsEnabled = rememberAnimationsEnabled()
   var tab by rememberSaveable { mutableStateOf(HomeTab.START) }
   LaunchedEffect(tab) { if (tab == HomeTab.ACTIVITY) onRefresh() }
   Column(Modifier.fillMaxSize().safeDrawingPadding()) {
-    Row(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 18.dp), verticalAlignment = Alignment.CenterVertically) {
-      Brand()
+    Row(Modifier.fillMaxWidth().padding(horizontal = 26.dp, vertical = 16.dp), verticalAlignment = Alignment.CenterVertically) {
+      Text("relevo", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, letterSpacing = (-.7).sp)
+      Spacer(Modifier.weight(1f))
+      Text("Tu espacio", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
     AnimatedContent(
       targetState = tab,
       modifier = Modifier.weight(1f),
-      transitionSpec = { fadeIn(tween(240)) togetherWith fadeOut(tween(180)) },
+      transitionSpec = { if (animationsEnabled) fadeIn(tween(220)) togetherWith fadeOut(tween(160)) else EnterTransition.None togetherWith ExitTransition.None },
       label = "home_tabs",
     ) { selected ->
       when (selected) {
@@ -225,9 +240,9 @@ private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
     Triple(HomeTab.HISTORY, Icons.Rounded.History, "Relevos"),
   )
   Surface(
-    modifier = Modifier.navigationBarsPadding().padding(horizontal = 18.dp, vertical = 10.dp).fillMaxWidth().border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .12f), RoundedCornerShape(28.dp)),
-    shape = RoundedCornerShape(28.dp),
-    color = MaterialTheme.colorScheme.surface.copy(alpha = .97f),
+    modifier = Modifier.navigationBarsPadding().padding(horizontal = 20.dp, vertical = 10.dp).fillMaxWidth().border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .12f), RoundedCornerShape(30.dp)),
+    shape = RoundedCornerShape(30.dp),
+    color = MaterialTheme.colorScheme.surface,
   ) {
     Row(Modifier.padding(6.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
       items.forEach { (tab, icon, label) ->
@@ -238,14 +253,13 @@ private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
           label = "tab_background",
         )
         Row(
-          Modifier.weight(1f).clip(RoundedCornerShape(22.dp)).background(background).clickable { onSelect(tab) }.padding(vertical = 12.dp),
+          Modifier.weight(1f).height(48.dp).clip(RoundedCornerShape(24.dp)).background(background).clickable { onSelect(tab) },
           horizontalArrangement = Arrangement.Center,
           verticalAlignment = Alignment.CenterVertically,
         ) {
-          Icon(icon, null, Modifier.size(20.dp), tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-          AnimatedContent(active, transitionSpec = { fadeIn(tween(240)) togetherWith fadeOut(tween(160)) }, label = "tab_label") { show ->
-            if (show) { Spacer(Modifier.width(7.dp)); Text(label, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.SemiBold) }
-          }
+          Icon(icon, null, Modifier.size(19.dp), tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+          Spacer(Modifier.width(5.dp))
+          Text(label, style = MaterialTheme.typography.labelSmall, fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium, color = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
         }
       }
     }
@@ -254,26 +268,20 @@ private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
 
 @Composable
 private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, onStart: () -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-    Text("Vuelve a hacer presente una actividad que elegiste.", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-    Text("Configura cuándo avisarte y deja la señal cerca de donde puedes comenzar.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 26.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+    Spacer(Modifier.height(4.dp))
+    Text("Lo que quieres hacer,\nmás cerca.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp, letterSpacing = (-1).sp)
+    Text("Elige una actividad. Relevo te avisará cuando se cumpla el tiempo que decidas pasar en otra app.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
     AnimatedGradientAction(onStart)
-    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-      MetricCard("Tiempo vinculado", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f))
-      MetricCard("Relevos", history.size.toString(), Icons.Rounded.History, Modifier.weight(1f))
-    }
-    Card(shape = RoundedCornerShape(22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant), elevation = CardDefaults.cardElevation(0.dp)) {
-      Row(Modifier.fillMaxWidth().padding(18.dp), verticalAlignment = Alignment.CenterVertically) {
-        Surface(Modifier.size(46.dp), CircleShape, MaterialTheme.colorScheme.primaryContainer) {
-          Icon(Icons.Rounded.LocationOn, null, Modifier.padding(11.dp), tint = MaterialTheme.colorScheme.primary)
-        }
-        Spacer(Modifier.width(14.dp))
-        Column { Text("Dónde está Relevo", fontWeight = FontWeight.SemiBold); Text(history.firstOrNull()?.place ?: "Sin ubicación activa", color = MaterialTheme.colorScheme.onSurfaceVariant) }
-      }
+    Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+      MetricCard("Hoy en apps elegidas", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f))
+      MetricCard("Relevos cerrados", history.size.toString(), Icons.Rounded.History, Modifier.weight(1f))
     }
     if (history.isNotEmpty()) {
-      Text("Último relevo", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+      Text("La última vez", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
       HistoryCard(history.first())
+    } else {
+      Text("Cuando termines un relevo, podrás volver a verlo aquí.", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)
     }
     Spacer(Modifier.height(8.dp))
   }
@@ -289,20 +297,32 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
     animationSpec = infiniteRepeatable(tween(4_000), RepeatMode.Reverse),
     label = "primary_gradient_shift",
   )
-  val endColor = lerp(Color(0xFF0B806F), Color(0xFF27A892), gradientShift)
+  val endColor = lerp(Color(0xFF096B60), Color(0xFF238A75), gradientShift)
   Surface(
     onClick = onClick,
-    modifier = Modifier.fillMaxWidth().height(76.dp),
-    shape = RoundedCornerShape(24.dp),
+    modifier = Modifier.fillMaxWidth().height(210.dp),
+    shape = RoundedCornerShape(30.dp),
     color = Color.Transparent,
   ) {
-    Row(
-      Modifier.fillMaxSize().background(Brush.horizontalGradient(listOf(MaterialTheme.colorScheme.primary, endColor))).padding(horizontal = 24.dp),
-      verticalAlignment = Alignment.CenterVertically,
-    ) {
-      Icon(Icons.Rounded.Add, null, tint = MaterialTheme.colorScheme.onPrimary)
-      Spacer(Modifier.width(12.dp))
-      Column { Text("Preparar un relevo", color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.SemiBold); Text("Actividad · aplicación · tiempo", color = MaterialTheme.colorScheme.onPrimary.copy(alpha = .78f), style = MaterialTheme.typography.bodySmall) }
+    Box(Modifier.fillMaxSize().background(Brush.linearGradient(listOf(RelevoTeal, endColor)))) {
+      Canvas(Modifier.fillMaxSize()) {
+        val center = Offset(size.width * .85f, size.height * .35f)
+        listOf(45f, 100f, 165f, 235f).forEach { radius ->
+          drawCircle(Color.White.copy(alpha = .16f), radius = radius, center = center, style = Stroke(width = 1.dp.toPx()))
+        }
+        drawCircle(RelevoCoral, radius = 14.dp.toPx(), center = center)
+      }
+      Column(Modifier.fillMaxSize().padding(23.dp), verticalArrangement = Arrangement.SpaceBetween) {
+        Text("UNA IDEA PARA HOY", color = Color.White.copy(alpha = .8f), style = MaterialTheme.typography.labelSmall, letterSpacing = 1.5.sp)
+        Column(verticalArrangement = Arrangement.spacedBy(9.dp)) {
+          Text("Prepara tu\nrelevo", color = Color.White, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold, lineHeight = 34.sp)
+          Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Elegir actividad", color = Color.White.copy(alpha = .9f), fontWeight = FontWeight.Medium)
+            Spacer(Modifier.width(8.dp))
+            Text("→", color = Color.White, style = MaterialTheme.typography.titleLarge)
+          }
+        }
+      }
     }
   }
 }
@@ -360,6 +380,7 @@ private fun OnboardingScreen(
   onRefreshUsage: () -> Unit,
   onComplete: () -> Unit,
 ) {
+  val animationsEnabled = rememberAnimationsEnabled()
   val context = LocalContext.current
   var notificationAccess by remember { mutableStateOf(hasNotificationPermission(context)) }
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
@@ -370,7 +391,7 @@ private fun OnboardingScreen(
     OnboardingPage(R.drawable.onboarding_activity, "Elige una actividad", "Escribe qué quieres hacer y una acción sencilla con la que puedas comenzar."),
     OnboardingPage(R.drawable.onboarding_condition, "Define cuándo avisarte", "Elige una aplicación y un tiempo. El conteo funciona solo mientras el relevo está activo."),
     OnboardingPage(R.drawable.onboarding_place, "Ubica el dispositivo", "Déjalo cerca de aquello que necesitas para comenzar: tus zapatillas, un libro o tus materiales."),
-    OnboardingPage(R.drawable.onboarding_signal, "Recibe el aviso", "Al cumplirse el tiempo, el dispositivo emite sonido y luz. Tú decides qué hacer después."),
+    OnboardingPage(R.drawable.onboarding_signal, "Recibe el aviso", "Al cumplirse el tiempo, Relevo reproduce un sonido en el parlante Bluetooth conectado. Tú decides qué hacer después."),
     OnboardingPage(R.drawable.onboarding_permissions, "Activa los permisos necesarios", "Relevo necesita ver cuánto tiempo usas la aplicación elegida y enviarte el aviso. No puede leer lo que haces dentro de ella.", permissions = true),
   ) }
   var page by rememberSaveable { mutableStateOf(0) }
@@ -386,7 +407,10 @@ private fun OnboardingScreen(
       Spacer(Modifier.height(22.dp))
       AnimatedContent(
         targetState = item,
-        transitionSpec = { (fadeIn(tween(420)) + slideInHorizontally(tween(520)) { it / 4 }) togetherWith (fadeOut(tween(220)) + slideOutHorizontally(tween(380)) { -it / 5 }) },
+        transitionSpec = {
+          if (animationsEnabled) (fadeIn(tween(350)) + slideInHorizontally(tween(400)) { it / 6 }) togetherWith (fadeOut(tween(180)) + slideOutHorizontally(tween(300)) { -it / 7 })
+          else EnterTransition.None togetherWith ExitTransition.None
+        },
         label = "onboarding_page",
       ) { current ->
         Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
@@ -442,10 +466,10 @@ private fun PermissionRow(title: String, description: String, granted: Boolean, 
 @Composable
 private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, onStart: () -> Unit) {
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-    Text("Aplicaciones vinculadas", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-    Text("Solo se muestra el tiempo de las aplicaciones que elegiste para activar una señal.", color = MaterialTheme.colorScheme.onSurfaceVariant)
-    if (!hasAccess) Summary("Permiso pendiente", "Autorízalo al crear tu primer relevo.")
-    else if (usage.isEmpty()) Summary("Sin datos vinculados", "Crea un relevo y elige una aplicación para comenzar a verla aquí.")
+    Text("Tu tiempo,\nen contexto.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
+    Text("Aquí aparece únicamente el uso de las apps que elegiste para un relevo.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+    if (!hasAccess) EmptyDashboard("Falta un permiso", "Al preparar tu primer relevo podrás autorizar Tiempo de uso.", onStart)
+    else if (usage.isEmpty()) EmptyDashboard("Todavía no hay tiempo que mostrar", "Cuando actives un relevo, verás aquí el tiempo acumulado en la app elegida.", onStart)
     else {
       val total = usage.sumOf { it.seconds }.coerceAtLeast(1)
       Card(shape = RoundedCornerShape(28.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer), elevation = CardDefaults.cardElevation(0.dp)) {
@@ -456,17 +480,17 @@ private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, 
         }
       }
       usage.forEach { item -> AppUsageCard(item, total) }
+      SecondaryButton("Nuevo relevo", onStart)
     }
-    SecondaryButton("Nuevo relevo", onStart)
   }
 }
 
 @Composable
 private fun HistoryDashboard(history: List<HistoryEntry>, onStart: () -> Unit) {
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
-    Text("Tus relevos", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-    Text("Actividades elegidas y señales que preparaste.", color = MaterialTheme.colorScheme.onSurfaceVariant)
-    if (history.isEmpty()) Summary("Aún no hay relevos", "Cuando cierres uno aparecerá aquí.")
+    Text("Tus relevos.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
+    Text("Tus actividades y el tiempo que dedicaste a las apps elegidas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+    if (history.isEmpty()) EmptyDashboard("Aún no hay relevos", "Los que cierres quedarán aquí para que puedas volver a mirarlos.", onStart)
     else {
       val counts = history.groupingBy { it.activity }.eachCount().entries.sortedByDescending { it.value }
       Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)) {
@@ -481,25 +505,42 @@ private fun HistoryDashboard(history: List<HistoryEntry>, onStart: () -> Unit) {
         }
       }
       history.forEach { HistoryCard(it) }
+      SecondaryButton("Crear relevo", onStart)
     }
-    SecondaryButton("Crear relevo", onStart)
   }
 }
 
 @Composable
+private fun EmptyDashboard(title: String, detail: String, onStart: () -> Unit) {
+  Spacer(Modifier.height(10.dp))
+  Box(Modifier.fillMaxWidth().height(180.dp).clip(RoundedCornerShape(30.dp)).background(MaterialTheme.colorScheme.primaryContainer)) {
+    Canvas(Modifier.fillMaxSize()) {
+      val center = Offset(size.width * .5f, size.height * .5f)
+      listOf(26f, 54f, 82f).forEach { radius ->
+        drawCircle(RelevoTeal.copy(alpha = .23f), radius.dp.toPx(), center, style = Stroke(1.dp.toPx()))
+      }
+      drawCircle(RelevoTeal, 8.dp.toPx(), center)
+    }
+  }
+  Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
+  Text(detail, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+  Spacer(Modifier.height(4.dp))
+  PrimaryButton("Preparar un relevo", onStart)
+}
+
+@Composable
 private fun MetricCard(label: String, value: String, icon: androidx.compose.ui.graphics.vector.ImageVector, modifier: Modifier = Modifier) {
-  Card(modifier.animateContentSize(), shape = RoundedCornerShape(22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant), elevation = CardDefaults.cardElevation(0.dp)) {
-    Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-      Icon(icon, null, tint = MaterialTheme.colorScheme.primary)
-      Text(value, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
-      Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+  Box(modifier.animateContentSize().clip(RoundedCornerShape(22.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .1f), RoundedCornerShape(22.dp))) {
+    Column(Modifier.padding(17.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+      Text(value, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.SemiBold, color = RelevoGraphite)
+      Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 17.sp)
     }
   }
 }
 
 @Composable
 private fun AppUsageCard(item: AppUsageSummary, totalSeconds: Int) {
-  Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant), elevation = CardDefaults.cardElevation(0.dp)) {
+  Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .1f), RoundedCornerShape(20.dp))) {
     Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
       AppIcon(item.packageName); Spacer(Modifier.width(14.dp))
       Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -517,7 +558,7 @@ private fun AppUsageCard(item: AppUsageSummary, totalSeconds: Int) {
 
 @Composable
 private fun HistoryCard(entry: HistoryEntry) {
-  Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant), elevation = CardDefaults.cardElevation(0.dp)) {
+  Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .1f), RoundedCornerShape(20.dp))) {
     Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
       AppIcon(entry.appPackage); Spacer(Modifier.width(14.dp))
       Column(Modifier.weight(1f)) { Text(entry.activity, fontWeight = FontWeight.SemiBold); Text("${entry.appLabel} · ${formatTime(entry.seconds)}", color = MaterialTheme.colorScheme.onSurfaceVariant) }
@@ -540,24 +581,27 @@ private fun SetupScreen(
   onPreset: (String, String, String) -> Unit,
   onPermission: () -> Unit,
   onRefresh: () -> Unit,
-  onTest: () -> Unit,
+  onTest: () -> Boolean,
   onActivate: () -> Unit,
 ) {
   var chooseApp by rememberSaveable { mutableStateOf(false) }
+  var testMessage by rememberSaveable { mutableStateOf<String?>(null) }
   if (chooseApp) {
     AppPicker(apps, { chooseApp = false }) { onApp(it); chooseApp = false }
     return
   }
 
   Page {
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+    Column(Modifier.fillMaxSize()) {
+    Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
         InlineAction("Volver", onBack)
       }
-      Text("Prepara tu señal", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-      Text("Todo se configura aquí. Después solo debes activar.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Prepara lo que\nquieres hacer.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
+      Text("Parte por algo concreto. Podrás cambiarlo antes de activar el aviso.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
 
-      Text("Empieza con una idea", fontWeight = FontWeight.Medium)
+      Spacer(Modifier.height(6.dp))
+      Text("Puedes partir por aquí", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
       LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         items(listOf(
           Triple("Caminar", "Ponerme las zapatillas", "Junto a las zapatillas"),
@@ -574,9 +618,12 @@ private fun SetupScreen(
 
       RelevoTextField("Qué quieres hacer", reminder.activity, "Salir a caminar", onActivity)
       RelevoTextField("Cómo puedes empezar", reminder.howToStart, "Ponerme las zapatillas", onStart)
-      RelevoTextField("Dónde estará la señal", reminder.place, "Junto a las zapatillas", onPlace)
+      RelevoTextField("Dónde pondrás el parlante", reminder.place, "Junto a las zapatillas", onPlace)
 
-      Text("Aplicación que activa la señal", fontWeight = FontWeight.Medium)
+      Spacer(Modifier.height(9.dp))
+      Text("¿Cuándo necesitas el aviso?", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+      Text("El tiempo se suma solo mientras uses la app elegida.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Aplicación", fontWeight = FontWeight.Medium)
       Row(
         Modifier.fillMaxWidth().height(60.dp).clip(RoundedCornerShape(20.dp))
           .background(MaterialTheme.colorScheme.surfaceVariant).clickable { chooseApp = true }.padding(horizontal = 16.dp),
@@ -586,7 +633,7 @@ private fun SetupScreen(
           AppIcon(reminder.targetPackage); Spacer(Modifier.width(10.dp))
         } else Icon(Icons.Rounded.Apps, null)
         Text(reminder.targetAppLabel.ifBlank { "Elegir aplicación" }, modifier = Modifier.padding(start = 8.dp).weight(1f))
-        Text("Cambiar", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.labelLarge)
+        Text(if (reminder.targetPackage.isBlank()) "Elegir" else "Cambiar", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.labelLarge)
       }
 
       Card(
@@ -622,14 +669,23 @@ private fun SetupScreen(
         Text("60 min", style = MaterialTheme.typography.labelSmall)
       }
 
-      PermissionCard(usageAccess, onPermission, onRefresh)
-      SecondaryButton("Probar sonido", onTest)
-      PrimaryButton(
-        "Activar relevo",
-        onActivate,
-        reminder.hasRequiredContent && usageAccess,
-      )
+      if (!usageAccess) PermissionCard(usageAccess, onPermission, onRefresh)
+      Text("El sonido sale por un parlante Bluetooth conectado. Si no lo hay, Relevo mostrará un aviso sin hacer sonar el teléfono.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 20.sp)
+      SecondaryButton("Probar parlante", { testMessage = if (onTest()) "Sonará durante unos segundos." else "No se encontró un parlante Bluetooth conectado." })
+      if (testMessage != null) Text(testMessage.orEmpty(), color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodySmall)
       Spacer(Modifier.height(16.dp))
+    }
+    Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background).padding(top = 10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+      val pending = when {
+        reminder.activity.isBlank() || reminder.howToStart.isBlank() -> "Elige una actividad y cómo empezar."
+        reminder.place.isBlank() -> "Indica dónde dejarás el parlante."
+        reminder.targetPackage.isBlank() -> "Elige la app que activará la señal."
+        !usageAccess -> "Autoriza Tiempo de uso para continuar."
+        else -> null
+      }
+      if (pending != null) Text(pending, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      PrimaryButton("Activar relevo", onActivate, reminder.hasRequiredContent && usageAccess)
+    }
     }
   }
 }
@@ -728,22 +784,25 @@ private fun ActiveScreen(reminder: Reminder, remaining: Int, onStop: () -> Unit)
     label = "usage_progress",
   )
   Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
-    Text("Señal activa", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Text("Relevo en espera", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
     Column(verticalArrangement = Arrangement.spacedBy(18.dp)) {
-      Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
-      Box(Modifier.fillMaxWidth().height(150.dp), contentAlignment = Alignment.Center) {
-        CircularProgressIndicator(progress = { progress }, modifier = Modifier.size(132.dp), strokeWidth = 10.dp, trackColor = MaterialTheme.colorScheme.surfaceVariant)
+      Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 41.sp)
+      Box(Modifier.fillMaxWidth().height(215.dp).clip(RoundedCornerShape(32.dp)).background(Brush.linearGradient(listOf(RelevoTeal, Color(0xFF0C635A)))), contentAlignment = Alignment.Center) {
+        Canvas(Modifier.fillMaxSize()) {
+          drawCircle(Color.White.copy(alpha = .13f), radius = size.minDimension * .42f, center = Offset(size.width * .5f, size.height * .5f), style = Stroke(1.dp.toPx()))
+        }
+        CircularProgressIndicator(progress = { progress }, modifier = Modifier.size(148.dp), strokeWidth = 7.dp, color = Color.White, trackColor = Color.White.copy(alpha = .18f))
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-          AppIcon(reminder.targetPackage)
-          Text(formatTime(reminder.observedUsageSeconds), fontWeight = FontWeight.SemiBold)
+          Text(formatTime(reminder.observedUsageSeconds), style = MaterialTheme.typography.headlineMedium, color = Color.White, fontWeight = FontWeight.SemiBold)
+          Text("de ${formatTime(reminder.requiredUsageSeconds)}", color = Color.White.copy(alpha = .75f))
         }
       }
-      Text("Acumulados en ${reminder.targetAppLabel}", style = MaterialTheme.typography.titleMedium)
-      Text("Faltan ${formatTime(remaining)}. Puedes salir y volver: el progreso se conserva.", color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Summary("La señal está", reminder.place)
-      Summary("Para comenzar", reminder.howToStart)
+      Row(verticalAlignment = Alignment.CenterVertically) { AppIcon(reminder.targetPackage); Spacer(Modifier.width(12.dp)); Text("El tiempo se suma en ${reminder.targetAppLabel}.", modifier = Modifier.weight(1f)) }
+      Text("Faltan ${formatTime(remaining)}. Si sales de la app elegida, el conteo se pausa.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 21.sp)
+      Summary("Parlante ubicado en", reminder.place)
+      Summary("Tu forma de empezar", reminder.howToStart)
     }
-    SecondaryButton("Desactivar", onStop)
+    SecondaryButton("Cancelar este relevo", onStop)
   }
 }
 
@@ -753,12 +812,12 @@ private fun SignalScreen(reminder: Reminder, onClose: () -> Unit) = Page {
     Spacer(Modifier.height(4.dp))
     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
       SignalGraphic()
-      Text("Es momento de elegir.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
-      Text(reminder.activity, style = MaterialTheme.typography.headlineMedium)
-      Summary("Puedes empezar por", reminder.howToStart)
-      Text("La señal está en ${reminder.place}.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Querías hacer esto.", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
+      Summary("Para empezar", reminder.howToStart)
+      Text("Dejaste el parlante en ${reminder.place}.", color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
-    PrimaryButton("Silenciar", onClose)
+    PrimaryButton("Silenciar y continuar", onClose)
   }
 }
 
@@ -768,13 +827,13 @@ private fun DoneScreen(reminder: Reminder, onHome: (String) -> Unit) = Page {
   Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
     Spacer(Modifier.height(4.dp))
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-      Text("Relevo finalizado", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-      Text("Usaste ${formatTime(reminder.observedUsageSeconds)} de ${reminder.targetAppLabel}. Relevo no evalúa si realizaste la actividad.", color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Text("¿Qué decidiste hacer?", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+      Text("¿Qué decidiste?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
+      Text("El relevo terminó después de ${formatTime(reminder.observedUsageSeconds)} en ${reminder.targetAppLabel}.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+      Text("Tu respuesta ayuda a entender si la señal resultó útil. No hay una respuesta correcta.", style = MaterialTheme.typography.bodyMedium)
       listOf("started" to "Comencé la actividad", "later" to "La dejé para después", "changed" to "Cambié de idea").forEach { option ->
         OutcomeChoice(option.second, outcome == option.first) { outcome = option.first }
       }
-      Text("Responder es opcional y ayuda a evaluar el sistema.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Responder es opcional.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
     PrimaryButton("Volver al inicio", { onHome(outcome ?: "not_answered") })
   }
@@ -829,9 +888,13 @@ private fun SignalGraphic() {
     animationSpec = infiniteRepeatable(tween(850), RepeatMode.Reverse),
     label = "signal_scale",
   )
-  Box(Modifier.fillMaxWidth().height(150.dp), contentAlignment = Alignment.Center) {
-    Surface(Modifier.size(132.dp).scale(pulse), CircleShape, MaterialTheme.colorScheme.primaryContainer) {
-      Box(contentAlignment = Alignment.Center) { Surface(Modifier.size(30.dp), CircleShape, MaterialTheme.colorScheme.primary) {} }
+  Box(Modifier.fillMaxWidth().height(220.dp).clip(RoundedCornerShape(32.dp)).background(Color(0xFFFFEAE3)), contentAlignment = Alignment.Center) {
+    Canvas(Modifier.fillMaxSize()) {
+      val center = Offset(size.width * .5f, size.height * .5f)
+      listOf(44f, 80f, 120f).forEach { radius ->
+        drawCircle(RelevoCoral.copy(alpha = .38f), radius = radius.dp.toPx() * pulse, center = center, style = Stroke(width = 1.dp.toPx()))
+      }
+      drawCircle(RelevoCoral, radius = 17.dp.toPx(), center = center)
     }
   }
 }
@@ -846,8 +909,8 @@ private fun rememberAnimationsEnabled(): Boolean {
 
 @Composable
 private fun Summary(label: String, value: String) {
-  Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant), shape = RoundedCornerShape(18.dp), modifier = Modifier.fillMaxWidth()) {
-    Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
+  Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .12f), RoundedCornerShape(18.dp))) {
+    Column(Modifier.padding(17.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
       Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
       Text(value, style = MaterialTheme.typography.titleMedium)
     }
@@ -869,11 +932,11 @@ private fun ActionButton(
 ) {
   Box(
     Modifier.fillMaxWidth().height(56.dp).clip(RoundedCornerShape(18.dp))
-      .background(if (enabled) background else background.copy(alpha = .22f))
+      .background(if (enabled) background else MaterialTheme.colorScheme.surfaceVariant)
       .clickable(enabled = enabled, onClick = onClick),
     contentAlignment = Alignment.Center,
   ) {
-    Text(label, color = if (enabled) foreground else foreground.copy(alpha = .5f), fontWeight = FontWeight.SemiBold)
+    Text(label, color = if (enabled) foreground else MaterialTheme.colorScheme.onSurfaceVariant, fontWeight = FontWeight.SemiBold)
   }
 }
 

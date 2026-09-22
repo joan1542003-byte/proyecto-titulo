@@ -157,7 +157,14 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     return next.status == ReminderStatus.WAITING
   }
 
-  fun testSignal() = signalPlayer.play()
+  fun testSignal(): Boolean {
+    val started = signalPlayer.play()
+    if (started) viewModelScope.launch {
+      delay(2_400)
+      signalPlayer.stop()
+    }
+    return started
+  }
 
   fun stopTestSignal() = signalPlayer.stop()
 
