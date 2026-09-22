@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.7 de prueba
+**Versión:** 1.8 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,11 +12,11 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.7-2026-09-22.apk](releases/relevo-android-1.7-2026-09-22.apk)
+**APK vigente:** [relevo-android-1.8-2026-09-22.apk](releases/relevo-android-1.8-2026-09-22.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-1.7-2026-09-22.zip`
+**Paquete portable:** `releases/relevo-android-studio-1.8-2026-09-22.zip`
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -32,7 +32,7 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 8. autorizar el acceso de uso y las notificaciones exigidas por Android;
 9. crear un identificador aleatorio que agrupa los datos sin solicitar nombre, correo ni teléfono;
 10. activar un monitoreo visible mediante una notificación persistente;
-11. emitir alarma, vibración y notificación cuando se cumple la condición;
+11. emitir una señal continua por un parlante Bluetooth multimedia conectado, además de vibración breve y notificación; si no existe esa salida, no reproducir sonido por el teléfono;
 12. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
 13. desactivar, silenciar y cerrar el ciclo.
 14. responder opcionalmente qué decidió hacer después de la señal;
@@ -45,7 +45,7 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 
 Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Sesiones y eventos se guardan primero en SQLite y luego se sincronizan con Supabase. La autenticación anónima, las tablas y las políticas RLS fueron comprobadas mediante una escritura y lectura reales; el registro de verificación se eliminó al terminar la prueba.
 
-La señal se reproduce mediante Android. Si el teléfono está conectado a un parlante Bluetooth, Android puede dirigir el audio al parlante. La integración directa con un objeto físico independiente sigue siendo una etapa posterior.
+La señal sonora se inicia solo cuando Android confirma que la ruta de reproducción del audio de Relevo es un parlante Bluetooth multimedia. Continúa mientras el ciclo siga en estado «señal emitida», incluso con la app fuera de pantalla, y cesa al silenciar o cerrar el ciclo. Si no hay una salida Bluetooth apta, se muestra el aviso sin emitir el tono por el teléfono. Si la conexión se pierde durante la reproducción, la app corta el tono. La selección de ruta de Android no demuestra por sí sola exclusividad absoluta en todos los modelos; se necesita una prueba en el teléfono y parlante concretos antes de afirmar ese comportamiento en la entrega.
 
 ## Instalación y permiso
 
@@ -87,6 +87,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Señal persistente dirigida a Bluetooth
+
+- **Cambio:** el tono deja de tener una duración fija y se mantiene hasta que la persona silencia o cierra el ciclo; la ruta se comprueba antes de emitirlo y durante la reproducción.
+- **Versión anterior:** sonaba durante tres segundos mediante la salida de alarma de Android, que podía reproducirse en el teléfono.
+- **Motivo:** sostener la señal en el objeto cercano sin hacer sonar el teléfono cuando no haya un parlante Bluetooth disponible. El comportamiento aún requiere verificación física en los dispositivos de prueba.
 
 ### 2026-09-22 — Proyecto portable para Android Studio
 

@@ -10,7 +10,6 @@ import android.content.Intent
 import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
-import android.media.RingtoneManager
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import com.example.relevo.data.ReminderStore
@@ -75,6 +74,7 @@ class AppUsageMonitorService : Service() {
 
   override fun onDestroy() {
     monitorJob?.cancel()
+    signalPlayer.stop()
     scope.cancel()
     super.onDestroy()
   }
@@ -128,8 +128,10 @@ class AppUsageMonitorService : Service() {
             )
             researchLog.markSignal(signalled.sessionId, observedSeconds)
             RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
-            signalPlayer.play()
-            showCompletionNotification(signalled.activity, signalled.howToStart)
+            val bluetoothAudio = signalPlayer.play()
+            showCompletionNotification(signalled.activity, signalled.howToStart, bluetoothAudio)
+            while (store.load().status == ReminderStatus.SIGNALLED) delay(250L)
+            signalPlayer.stop()
             break
           }
 
@@ -169,13 +171,13 @@ class AppUsageMonitorService : Service() {
     manager.createNotificationChannel(
       NotificationChannel(SIGNAL_CHANNEL_ID, "Señal de Relevo", NotificationManager.IMPORTANCE_HIGH).apply {
         description = "Avisa cuando se cumple el tiempo acumulado."
-        setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM), null)
+        setSound(null, null)
         enableVibration(true)
       },
     )
   }
 
-  private fun showCompletionNotification(activity: String, firstStep: String) {
+  private fun showCompletionNotification(activity: String, firstStep: String, bluetoothAudio: Boolean) {
     val manager = getSystemService(NotificationManager::class.java) ?: return
     val openApp = PendingIntent.getActivity(
       this,
@@ -188,9 +190,13 @@ class AppUsageMonitorService : Service() {
       NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
         .setSmallIcon(android.R.drawable.ic_popup_reminder)
         .setContentTitle(activity)
-        .setContentText("Puedes empezar por: $firstStep")
+        .setContentText(
+          if (bluetoothAudio) "La señal está sonando. Puedes empezar por: $firstStep"
+          else "No se encontró el parlante Bluetooth. Abre Relevo para revisar la señal.",
+        )
         .setContentIntent(openApp)
         .setAutoCancel(true)
+        .setSilent(true)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
         .setCategory(NotificationCompat.CATEGORY_ALARM)
         .build(),
@@ -201,7 +207,7 @@ class AppUsageMonitorService : Service() {
     private const val CHANNEL_ID = "relevo_monitor"
     private const val NOTIFICATION_ID = 1101
     private const val SIGNAL_NOTIFICATION_ID = 1102
-    private const val SIGNAL_CHANNEL_ID = "relevo_signal"
+    private const val SIGNAL_CHANNEL_ID = "relevo_signal_bluetooth_v2"
     private const val POLL_INTERVAL_MILLIS = 1_000L
   }
 }
