@@ -9,6 +9,7 @@ import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.HistoryStore
+import com.example.relevo.data.RemoteSync
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.monitor.AppUsageMonitorService
@@ -20,6 +21,7 @@ import com.example.relevo.monitor.UsageSummaryRepository
 import com.example.relevo.signal.SignalPlayer
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -29,6 +31,7 @@ import java.util.UUID
 class RelevoViewModel(application: Application) : AndroidViewModel(application) {
   private val store = ReminderStore(application)
   private val researchLog = ResearchLogStore(application)
+  private val remoteSync = RemoteSync(application, researchLog)
   private val historyStore = HistoryStore(application)
   private val signalPlayer = SignalPlayer(application)
   private val appsRepository = InstalledAppsRepository(application)
@@ -135,6 +138,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     updateValue(next)
     if (next.status == ReminderStatus.WAITING) {
       researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
+      researchLog.startSession(next)
+      syncRemote()
       ContextCompat.startForegroundService(
         getApplication(),
         Intent(getApplication(), AppUsageMonitorService::class.java),
@@ -194,6 +199,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _remainingSeconds.value = 0
   }
 
+  fun completeEvaluation(outcome: String) {
+    researchLog.completeSession(_reminder.value, outcome)
+    syncRemote()
+  }
+
   fun reset() {
     getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     signalPlayer.stop()
@@ -221,6 +231,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private fun updateValue(value: Reminder) {
     _reminder.value = value
     store.save(value)
+  }
+
+  private fun syncRemote() {
+    viewModelScope.launch(Dispatchers.IO) { remoteSync.syncPending() }
   }
 
   override fun onCleared() {

@@ -62,7 +62,7 @@ data class Reminder(
 
   fun disarm(): Reminder =
     if (status == ReminderStatus.WAITING) {
-      copy(status = ReminderStatus.CLOSED, observedUsageSeconds = 0)
+      copy(status = ReminderStatus.CLOSED)
     } else {
       this
     }

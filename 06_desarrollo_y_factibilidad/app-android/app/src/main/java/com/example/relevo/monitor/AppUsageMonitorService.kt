@@ -15,6 +15,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
+import com.example.relevo.data.RemoteSync
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.signal.SignalPlayer
 import com.example.relevo.MainActivity
@@ -125,6 +126,8 @@ class AppUsageMonitorService : Service() {
               signalled.targetPackage,
               observedSeconds,
             )
+            researchLog.markSignal(signalled.sessionId, observedSeconds)
+            RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
             signalPlayer.play()
             showCompletionNotification(signalled.activity, signalled.howToStart)
             break

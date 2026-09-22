@@ -41,8 +41,9 @@ class ReminderTest {
   }
 
   @Test fun disarmPreventsSignal() {
-    val disarmed = complete.ready().arm("s").disarm()
+    val disarmed = complete.ready().arm("s").copy(observedUsageSeconds = 23).disarm()
     assertEquals(ReminderStatus.CLOSED, disarmed.status)
+    assertEquals(23, disarmed.observedUsageSeconds)
     assertFalse(disarmed.deliverSignal().signalDelivered)
   }
 

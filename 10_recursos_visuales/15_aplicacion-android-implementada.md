@@ -48,6 +48,8 @@ Cuando se cumple el tiempo:
 
 El movimiento se usa para explicar cambios: transición entre vistas, actualización de tarjetas, progreso y pulso de la señal. No se anima texto, iconografía decorativa ni superficies sin cambio de estado. Así se mantiene el principio de un énfasis localizado.
 
+Las transiciones combinan desplazamientos breves y fundidos para conservar continuidad entre origen y destino. Un degradado de variación lenta se limita a la acción principal. Las tarjetas no proyectan sombra: se separan mediante superficie y espacio. La elevación queda reservada para la navegación flotante y la acción principal.
+
 ## Decisiones visuales
 
 - **Forma:** radios entre 10 y 30 dp distinguen campos, tarjetas y contenedores sin convertir cada elemento en una cápsula.
@@ -62,6 +64,8 @@ El movimiento se usa para explicar cambios: transición entre vistas, actualizac
 [Mobbin](https://mobbin.com/) se utilizó para revisar patrones presentes en productos publicados: tableros móviles, navegación inferior, selectores y recorridos de configuración. No se tomó una aplicación como modelo formal; se estudiaron regularidades de jerarquía y comportamiento.
 
 La implementación sigue convenciones de [Material Design 3 para Compose](https://developer.android.com/develop/ui/compose/designsystems/material3), especialmente en componentes, áreas táctiles, estados y navegación. Las decisiones de marca —paleta, tipografía, lenguaje y grado de énfasis— continúan gobernadas por el sistema visual de Relevo.
+
+La revisión de movimiento consideró las guías de [animación de Jetpack Compose](https://developer.android.com/develop/ui/compose/animation/introduction) y [Motion de Apple](https://developer.apple.com/design/human-interface-guidelines/motion): animar relaciones y cambios, evitar movimiento gratuito y conservar alternativas accesibles. Los Apple Design Awards se observaron como referencia de integración entre interacción, accesibilidad y acabado, no para reproducir una apariencia de iOS.
 
 ## Criterios de calidad
 

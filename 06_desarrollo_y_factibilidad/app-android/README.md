@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.3 de prueba
+**Versión:** 1.4 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,7 +12,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.3-2026-09-22.apk](releases/relevo-android-1.3-2026-09-22.apk)
+**APK vigente:** [relevo-android-1.4-2026-09-22.apk](releases/relevo-android-1.4-2026-09-22.apk)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -31,10 +31,13 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 11. emitir alarma, vibración y notificación cuando se cumple la condición;
 12. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
 13. desactivar, silenciar y cerrar el ciclo.
+14. responder opcionalmente qué decidió hacer después de la señal;
+15. contar cuántas veces se eligió cada actividad;
+16. conservar sesiones y eventos sin conexión y enviarlos a Supabase cuando la base está configurada.
 
 ## Límites
 
-Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Los eventos de prueba permanecen en una base SQLite dentro del teléfono. No existe sincronización remota ni un repositorio central de participantes en esta versión.
+Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Sesiones y eventos se guardan primero en SQLite. La sincronización remota solo se activa al proporcionar la URL y la clave publicable de un proyecto Supabase protegido; esas credenciales todavía no forman parte del repositorio.
 
 La señal se reproduce mediante Android. Si el teléfono está conectado a un parlante Bluetooth, Android puede dirigir el audio al parlante. La integración directa con un objeto físico independiente sigue siendo una etapa posterior.
 
@@ -73,6 +76,13 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Registro evaluativo y movimiento continuo
+
+- **Cambio:** se añadieron sesiones estructuradas, respuesta final opcional, recuento por actividad y cola de sincronización remota.
+- **Versión anterior:** solo se almacenaban eventos técnicos locales y el historial no sintetizaba actividades.
+- **Motivo:** evaluar elecciones y comportamiento del sistema sin afirmar acciones que la aplicación no puede observar.
+- **Cambio visual:** se retiraron sombras de tarjetas, se limitaron a elementos flotantes, se suavizaron transiciones y se incorporó un degradado lento en la acción principal.
 
 ### 2026-09-22 — Jerarquía visual y datos vinculados
 

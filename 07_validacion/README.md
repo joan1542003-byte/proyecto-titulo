@@ -19,6 +19,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
+- [Modelo de datos para evaluar la aplicación](modelo-datos-evaluacion-app-2026-09-22.md): define qué registra el prototipo Android, qué preguntas puede responder y qué inferencias quedan excluidas.
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
 - [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
@@ -63,6 +64,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-22 — Registro evaluativo de la aplicación
+
+- **Cambio:** se incorporó el modelo de sesiones y eventos del prototipo Android.
+- **Versión anterior:** validación describía la prueba física, pero no la información recopilada por la aplicación funcional.
+- **Motivo:** distinguir selección, funcionamiento técnico y conducta declarada antes de revisar resultados.
+- **Alcance:** la base remota todavía requiere configuración y comprobación con credenciales del proyecto.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 
