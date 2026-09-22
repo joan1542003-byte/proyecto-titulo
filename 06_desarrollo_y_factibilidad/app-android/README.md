@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.2 de prueba
+**Versión:** 1.3 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,7 +12,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.2-2026-09-22.apk](releases/relevo-android-1.2-2026-09-22.apk)
+**APK vigente:** [relevo-android-1.3-2026-09-22.apk](releases/relevo-android-1.3-2026-09-22.apk)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -73,6 +73,13 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Jerarquía visual y datos vinculados
+
+- **Cambio:** Inicio elimina saludos y estados genéricos, el tutorial concentra la explicación visual y Actividad muestra únicamente aplicaciones elegidas por la persona.
+- **Versión anterior:** la ilustración aparecía en Inicio y el resumen de uso incluía todas las aplicaciones registradas por Android.
+- **Motivo:** cada elemento debe comunicar una función del sistema y las métricas deben corresponder a decisiones tomadas dentro de Relevo.
+- **Cambio visual:** se incorporaron profundidad moderada, un degradado reservado para la acción principal, superficie translúcida elevada en navegación y un selector temporal con mayor jerarquía.
 
 ### 2026-09-22 — Tablero, tiempos y retroalimentación
 

@@ -16,6 +16,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateContentSize
@@ -34,6 +35,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -51,6 +55,8 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Slider
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.SliderDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Apps
@@ -86,7 +92,7 @@ import com.example.relevo.data.HistoryEntry
 import com.example.relevo.monitor.AppUsageSummary
 import cl.udp.relevo.R
 
-private enum class Screen { HOME, SETUP, ACTIVE, SIGNAL, DONE }
+private enum class Screen { HOME, TUTORIAL, SETUP, ACTIVE, SIGNAL, DONE }
 
 @Composable
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
@@ -103,7 +109,8 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
     AnimatedContent(targetState = screen, label = "main_navigation") { currentScreen ->
     when (currentScreen) {
-      Screen.HOME -> HomeScreen(history, todayUsage, usageAccess, viewModel::refreshDashboard) { screen = Screen.SETUP }
+      Screen.HOME -> HomeScreen(history, todayUsage, usageAccess, viewModel::refreshDashboard) { screen = Screen.TUTORIAL }
+      Screen.TUTORIAL -> TutorialScreen({ screen = Screen.HOME }) { screen = Screen.SETUP }
       Screen.SETUP -> SetupScreen(
         reminder = reminder,
         apps = apps,
@@ -156,13 +163,7 @@ private fun HomeScreen(
   LaunchedEffect(tab) { if (tab == HomeTab.ACTIVITY) onRefresh() }
   Column(Modifier.fillMaxSize().safeDrawingPadding()) {
     Row(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 18.dp), verticalAlignment = Alignment.CenterVertically) {
-      Brand(); Spacer(Modifier.weight(1f))
-      Surface(shape = RoundedCornerShape(16.dp), color = MaterialTheme.colorScheme.primaryContainer) {
-        Row(Modifier.padding(horizontal = 12.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-          Icon(Icons.Rounded.CheckCircle, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.primary)
-          Spacer(Modifier.width(6.dp)); Text("Listo", style = MaterialTheme.typography.labelMedium)
-        }
-      }
+      Brand()
     }
     AnimatedContent(targetState = tab, modifier = Modifier.weight(1f), label = "home_tabs") { selected ->
       when (selected) {
@@ -172,9 +173,9 @@ private fun HomeScreen(
       }
     }
     NavigationBar(
-      modifier = Modifier.navigationBarsPadding().padding(horizontal = 16.dp, vertical = 8.dp).clip(RoundedCornerShape(28.dp)),
-      containerColor = MaterialTheme.colorScheme.surfaceVariant,
-      tonalElevation = 0.dp,
+      modifier = Modifier.navigationBarsPadding().padding(horizontal = 16.dp, vertical = 8.dp).shadow(12.dp, RoundedCornerShape(30.dp)).clip(RoundedCornerShape(30.dp)),
+      containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.94f),
+      tonalElevation = 3.dp,
     ) {
       NavigationBarItem(tab == HomeTab.START, { tab = HomeTab.START }, { Icon(Icons.Rounded.Home, null) }, label = { Text("Inicio") })
       NavigationBarItem(tab == HomeTab.ACTIVITY, { tab = HomeTab.ACTIVITY }, { Icon(Icons.Rounded.Insights, null) }, label = { Text("Actividad") })
@@ -186,22 +187,28 @@ private fun HomeScreen(
 @Composable
 private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, onStart: () -> Unit) {
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-    Text("Hola.", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
-    Text("¿Qué quieres retomar hoy?", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-    Image(
-      painter = painterResource(R.drawable.relevo_tutorial),
-      contentDescription = "Elegir una aplicación, situar la señal y recibir el aviso",
-      contentScale = ContentScale.Crop,
-      modifier = Modifier.fillMaxWidth().height(144.dp).clip(RoundedCornerShape(28.dp)),
-    )
-    Button(onClick = onStart, modifier = Modifier.fillMaxWidth().height(64.dp), shape = RoundedCornerShape(22.dp)) {
-      Icon(Icons.Rounded.Add, null); Spacer(Modifier.width(8.dp)); Text("Crear un relevo", fontWeight = FontWeight.SemiBold)
+    Text("Vuelve a hacer presente una actividad que elegiste.", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+    Text("Configura cuándo avisarte y deja la señal cerca de donde puedes comenzar.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Surface(
+      onClick = onStart,
+      modifier = Modifier.fillMaxWidth().height(76.dp).shadow(8.dp, RoundedCornerShape(24.dp)),
+      shape = RoundedCornerShape(24.dp),
+      color = Color.Transparent,
+    ) {
+      Row(
+        Modifier.fillMaxSize().background(Brush.horizontalGradient(listOf(MaterialTheme.colorScheme.primary, Color(0xFF159C87)))).padding(horizontal = 24.dp),
+        verticalAlignment = Alignment.CenterVertically,
+      ) {
+        Icon(Icons.Rounded.Add, null, tint = MaterialTheme.colorScheme.onPrimary)
+        Spacer(Modifier.width(12.dp))
+        Column { Text("Preparar un relevo", color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.SemiBold); Text("Actividad · aplicación · tiempo", color = MaterialTheme.colorScheme.onPrimary.copy(alpha = .78f), style = MaterialTheme.typography.bodySmall) }
+      }
     }
     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-      MetricCard("Hoy en apps", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f))
+      MetricCard("Tiempo vinculado", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f))
       MetricCard("Relevos", history.size.toString(), Icons.Rounded.History, Modifier.weight(1f))
     }
-    Card(shape = RoundedCornerShape(22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
+    Card(shape = RoundedCornerShape(22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), elevation = CardDefaults.cardElevation(3.dp)) {
       Row(Modifier.fillMaxWidth().padding(18.dp), verticalAlignment = Alignment.CenterVertically) {
         Surface(Modifier.size(46.dp), CircleShape, MaterialTheme.colorScheme.primaryContainer) {
           Icon(Icons.Rounded.LocationOn, null, Modifier.padding(11.dp), tint = MaterialTheme.colorScheme.primary)
@@ -219,13 +226,57 @@ private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSumm
 }
 
 @Composable
+private fun TutorialScreen(onBack: () -> Unit, onContinue: () -> Unit) = Page {
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+      TextButton(onClick = onBack) { Text("Volver") }
+      Spacer(Modifier.weight(1f)); Brand()
+    }
+    Text("Así funciona Relevo", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+    Text("La señal se prepara en el teléfono y se sitúa cerca de donde puedes comenzar.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Image(
+      painter = painterResource(R.drawable.relevo_tutorial),
+      contentDescription = "Elegir una aplicación, situar la señal y recibir el aviso",
+      contentScale = ContentScale.Crop,
+      modifier = Modifier.fillMaxWidth().height(190.dp).shadow(5.dp, RoundedCornerShape(28.dp)).clip(RoundedCornerShape(28.dp)),
+    )
+    TutorialStep(Icons.Rounded.Apps, "1", "Elige una aplicación", "Relevo contará únicamente su uso mientras el recordatorio esté activo.")
+    TutorialStep(Icons.Rounded.LocationOn, "2", "Sitúa la señal", "Déjala cerca de aquello que facilita comenzar la actividad.")
+    TutorialStep(Icons.Rounded.NotificationsActive, "3", "Recibe un aviso", "Cuando se cumpla el tiempo, escucharás la señal y decidirás qué hacer.")
+    PrimaryButton("Configurar mi relevo", onContinue)
+    Spacer(Modifier.height(8.dp))
+  }
+}
+
+@Composable
+private fun TutorialStep(icon: androidx.compose.ui.graphics.vector.ImageVector, number: String, title: String, text: String) {
+  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
+    Surface(Modifier.size(48.dp), RoundedCornerShape(16.dp), MaterialTheme.colorScheme.primaryContainer) {
+      Box(contentAlignment = Alignment.Center) { Icon(icon, "Paso $number", tint = MaterialTheme.colorScheme.primary) }
+    }
+    Spacer(Modifier.width(14.dp))
+    Column(Modifier.weight(1f)) { Text(title, fontWeight = FontWeight.SemiBold); Text(text, color = MaterialTheme.colorScheme.onSurfaceVariant) }
+  }
+}
+
+@Composable
 private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, onStart: () -> Unit) {
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-    Text("Actividad de hoy", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-    Text("Tiempo en primer plano informado por Android.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Text("Aplicaciones vinculadas", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+    Text("Solo se muestra el tiempo de las aplicaciones que elegiste para activar una señal.", color = MaterialTheme.colorScheme.onSurfaceVariant)
     if (!hasAccess) Summary("Permiso pendiente", "Autorízalo al crear tu primer relevo.")
-    else if (usage.isEmpty()) Summary("Sin actividad", "Todavía no hay aplicaciones con tiempo registrado hoy.")
-    else usage.forEach { item -> AppUsageCard(item) }
+    else if (usage.isEmpty()) Summary("Sin datos vinculados", "Crea un relevo y elige una aplicación para comenzar a verla aquí.")
+    else {
+      val total = usage.sumOf { it.seconds }.coerceAtLeast(1)
+      Card(shape = RoundedCornerShape(28.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer), elevation = CardDefaults.cardElevation(4.dp)) {
+        Column(Modifier.fillMaxWidth().padding(22.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+          Text("Tiempo acumulado hoy", color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .72f))
+          Text(formatTime(total), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
+          Text("en ${usage.size} ${if (usage.size == 1) "aplicación vinculada" else "aplicaciones vinculadas"}", style = MaterialTheme.typography.bodySmall)
+        }
+      }
+      usage.forEach { item -> AppUsageCard(item, total) }
+    }
     OutlinedButton(onClick = onStart, modifier = Modifier.fillMaxWidth().height(56.dp), shape = RoundedCornerShape(18.dp)) {
       Icon(Icons.Rounded.Add, null); Spacer(Modifier.width(8.dp)); Text("Nuevo relevo")
     }
@@ -247,7 +298,7 @@ private fun HistoryDashboard(history: List<HistoryEntry>, onStart: () -> Unit) {
 
 @Composable
 private fun MetricCard(label: String, value: String, icon: androidx.compose.ui.graphics.vector.ImageVector, modifier: Modifier = Modifier) {
-  Card(modifier.animateContentSize(), shape = RoundedCornerShape(22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
+  Card(modifier.animateContentSize(), shape = RoundedCornerShape(22.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), elevation = CardDefaults.cardElevation(3.dp)) {
     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
       Icon(icon, null, tint = MaterialTheme.colorScheme.primary)
       Text(value, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
@@ -257,18 +308,26 @@ private fun MetricCard(label: String, value: String, icon: androidx.compose.ui.g
 }
 
 @Composable
-private fun AppUsageCard(item: AppUsageSummary) {
-  Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
+private fun AppUsageCard(item: AppUsageSummary, totalSeconds: Int) {
+  Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), elevation = CardDefaults.cardElevation(2.dp)) {
     Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
       AppIcon(item.packageName); Spacer(Modifier.width(14.dp))
-      Column(Modifier.weight(1f)) { Text(item.label, fontWeight = FontWeight.Medium); Text(formatTime(item.seconds), color = MaterialTheme.colorScheme.onSurfaceVariant) }
+      Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) { Text(item.label, fontWeight = FontWeight.Medium); Text(formatTime(item.seconds), color = MaterialTheme.colorScheme.onSurfaceVariant) }
+        LinearProgressIndicator(
+          progress = { item.seconds.toFloat() / totalSeconds.coerceAtLeast(1) },
+          modifier = Modifier.fillMaxWidth().height(7.dp).clip(CircleShape),
+          color = MaterialTheme.colorScheme.primary,
+          trackColor = MaterialTheme.colorScheme.surfaceVariant,
+        )
+      }
     }
   }
 }
 
 @Composable
 private fun HistoryCard(entry: HistoryEntry) {
-  Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)) {
+  Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), elevation = CardDefaults.cardElevation(2.dp)) {
     Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
       AppIcon(entry.appPackage); Spacer(Modifier.width(14.dp))
       Column(Modifier.weight(1f)) { Text(entry.activity, fontWeight = FontWeight.SemiBold); Text("${entry.appLabel} · ${formatTime(entry.seconds)}", color = MaterialTheme.colorScheme.onSurfaceVariant) }
@@ -337,7 +396,17 @@ private fun SetupScreen(
         Text(reminder.targetAppLabel.ifBlank { "Elegir aplicación" }, modifier = Modifier.padding(start = 8.dp))
       }
 
-      Text("Avisarme al acumular ${formatTime(reminder.requiredUsageSeconds)}", fontWeight = FontWeight.Medium)
+      Card(
+        shape = RoundedCornerShape(26.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+        elevation = CardDefaults.cardElevation(3.dp),
+      ) {
+        Column(Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+          Text("AVISARME AL ACUMULAR", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .68f), letterSpacing = 1.2.sp)
+          Text(formatTime(reminder.requiredUsageSeconds), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
+          Text("en ${reminder.targetAppLabel.ifBlank { "la aplicación elegida" }}", color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .72f))
+        }
+      }
       Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         listOf(15 to "Prueba", 300 to "5 min", 900 to "15 min").forEach { (seconds, label) ->
           if (reminder.requiredUsageSeconds == seconds) Button({ onDuration(seconds) }, Modifier.weight(1f)) { Text(label) }
@@ -348,7 +417,12 @@ private fun SetupScreen(
         value = (reminder.requiredUsageSeconds.coerceAtLeast(60) / 60f),
         onValueChange = { onDuration((it.toInt().coerceAtLeast(1)) * 60) },
         valueRange = 1f..60f,
-        steps = 58,
+        steps = 0,
+        colors = SliderDefaults.colors(
+          thumbColor = MaterialTheme.colorScheme.primary,
+          activeTrackColor = MaterialTheme.colorScheme.primary,
+          inactiveTrackColor = MaterialTheme.colorScheme.surfaceVariant,
+        ),
         modifier = Modifier.fillMaxWidth(),
       )
       Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {

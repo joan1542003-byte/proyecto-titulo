@@ -107,8 +107,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun refreshDashboard() {
-    _history.value = historyStore.load()
-    _todayUsage.value = usageSummaryRepository.today()
+    val history = historyStore.load()
+    val selectedPackages = (history.map { it.appPackage } + _reminder.value.targetPackage).filter { it.isNotBlank() }.toSet()
+    _history.value = history
+    _todayUsage.value = usageSummaryRepository.today().filter { it.packageName in selectedPackages }
   }
 
   fun openUsageAccessSettings() {

@@ -18,6 +18,8 @@ La pantalla inicial se organiza en tres destinos persistentes:
 
 La navegación inferior responde a destinos de igual nivel. `Crear un relevo` permanece como la única acción de mayor énfasis en Inicio. Esta jerarquía evita convertir todas las tarjetas en llamadas a la acción.
 
+Inicio no utiliza saludos ni estados generales como `listo`: presenta directamente el propósito, la acción disponible y datos vinculados al sistema. La explicación ilustrada se reserva para el tutorial, donde imagen, secuencia y texto se leen como una misma instrucción.
+
 ## Configuración en una sola vista
 
 La preparación reúne únicamente las decisiones necesarias:
@@ -51,7 +53,7 @@ El movimiento se usa para explicar cambios: transición entre vistas, actualizac
 - **Forma:** radios entre 10 y 30 dp distinguen campos, tarjetas y contenedores sin convertir cada elemento en una cápsula.
 - **Color:** el verde Relevo identifica selección, estado activo y acción principal. Las superficies secundarias permanecen neutras.
 - **Iconos:** Material Symbols se limita a acciones y destinos conocidos. Los iconos de aplicaciones provienen de Android.
-- **Profundidad:** la agrupación depende de espacio, color de superficie y jerarquía; no se utilizan sombras ornamentales.
+- **Profundidad:** sombras suaves distinguen acciones, tarjetas y navegación. La barra inferior utiliza una superficie translúcida elevada; no se fuerza un desenfoque si no existe contenido detrás que necesite separarse.
 - **Texto:** preguntas y verbos comunes reemplazan términos internos del proyecto.
 - **Ilustración:** la introducción muestra la secuencia elegir, situar y recibir la señal. No funciona como control y posee descripción accesible.
 
@@ -83,3 +85,9 @@ La interfaz se considera lista para una prueba funcional cuando:
 - **Cómo era antes:** la especificación describía principios y una secuencia de configuración, pero no registraba la aplicación implementada.
 - **Por qué se decidió:** mantener alineadas la documentación visual y la versión que se utilizará en pruebas.
 - **Límite:** la calidad de uso debe verificarse con personas; este documento registra decisiones e implementación, no resultados de validación.
+
+### 2026-09-22 — Segunda corrección visual
+
+- **Qué cambió:** se separó tutorial de Inicio, se jerarquizó la selección temporal y se restringieron las estadísticas a aplicaciones vinculadas.
+- **Cómo era antes:** la ilustración introductoria ocupaba la portada y Actividad resumía todo el uso informado por Android.
+- **Por qué se decidió:** aumentar especificidad, evitar contenido genérico y hacer que cada dato mostrado corresponda al funcionamiento de Relevo.
