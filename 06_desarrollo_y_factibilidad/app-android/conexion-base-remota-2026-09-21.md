@@ -22,7 +22,7 @@ La aplicación autentica cada instalación como usuario anónimo, conserva prime
 ## Datos permitidos
 
 - identificador aleatorio de sesión;
-- código seudónimo;
+- identificador aleatorio del participante, sin nombre, correo ni teléfono;
 - tipo de evento;
 - aplicación elegida;
 - segundos acumulados;
@@ -33,20 +33,22 @@ La aplicación autentica cada instalación como usuario anónimo, conserva prime
 
 No se enviarán nombres, correos, contenido de pantalla, mensajes, historial completo ni identificadores publicitarios.
 
-## Activación pendiente
+## Conexión comprobada
 
-1. habilitar `Allow anonymous sign-ins` en Supabase Auth;
-2. el esquema `base-remota-supabase.sql` ya fue aplicado como migración;
-3. añadir a `local.properties`:
+El 22 de septiembre de 2026 se comprobó el recorrido remoto completo:
+
+1. Supabase Auth creó un usuario anónimo;
+2. la clave publicable permitió insertar una sesión de verificación;
+3. la misma instalación pudo leer su propia fila bajo RLS;
+4. el registro de verificación fue eliminado;
+5. el asesor de seguridad no informó vulnerabilidades.
+
+La configuración local utiliza:
 
 ```properties
 SUPABASE_URL=https://TU-PROYECTO.supabase.co
 SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
 ```
-
-4. recompilar e instalar el APK;
-5. crear y cerrar un relevo de prueba;
-6. comprobar que `relevo_sessions` y `relevo_events` reciban filas asociadas al mismo `session_id`.
 
 La aplicación puede leer y actualizar únicamente sus propias sesiones, condición necesaria para repetir un envío sin duplicarlo. Los eventos son de solo inserción. La revisión consolidada utiliza un entorno administrativo protegido.
 
@@ -77,3 +79,10 @@ La aplicación puede leer y actualizar únicamente sus propias sesiones, condici
 - **Cambio:** se repitió una autenticación real contra el proyecto `Relevo` después de integrar la versión 1.6.
 - **Resultado:** el proyecto, la URL, la clave publicable, las tablas y RLS responden; Auth continúa devolviendo `anonymous_provider_disabled`.
 - **Decisión:** no se abrieron inserciones públicas ni se incorporó una clave privilegiada para evitar el control de acceso. La conexión quedará operativa inmediatamente después de activar el proveedor anónimo en el panel del proyecto.
+
+### 2026-09-22 — Conexión operativa
+
+- **Cambio:** se habilitó la autenticación anónima y se repitió la prueba con la misma ruta HTTPS que utiliza la aplicación.
+- **Resultado:** autenticación `200`, inserción `201`, lectura `200` y una fila visible únicamente para la instalación autenticada.
+- **Limpieza:** la sesión de verificación se eliminó; no quedó información de prueba en las tablas.
+- **Motivo:** distinguir una infraestructura configurada de una conexión realmente comprobada antes del testeo con participantes.

@@ -59,7 +59,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   init {
     _installedApps.value = appsRepository.launcherApps()
-    if (experiencePreferences.getBoolean("academic_consent_accepted", false) && !_reminder.value.consentAccepted) {
+    if (hasCurrentConsent() && !_reminder.value.consentAccepted) {
       updateValue(_reminder.value.copy(consentAccepted = true))
     }
     if (_reminder.value.participantCode.isBlank()) {
@@ -94,7 +94,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     update { copy(participantCode = value.trim().take(24), status = ReminderStatus.DRAFT) }
 
   fun updateConsent(accepted: Boolean) {
-    experiencePreferences.edit().putBoolean("academic_consent_accepted", accepted).apply()
+    experiencePreferences.edit()
+      .putBoolean("academic_consent_accepted", accepted)
+      .putString("academic_consent_version", if (accepted) ResearchLogStore.CONSENT_VERSION else null)
+      .apply()
     update { copy(consentAccepted = accepted, status = ReminderStatus.DRAFT) }
   }
 
@@ -216,10 +219,14 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     store.clear()
     _reminder.value = Reminder(
       participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}",
-      consentAccepted = experiencePreferences.getBoolean("academic_consent_accepted", false),
+      consentAccepted = hasCurrentConsent(),
     )
     _remainingSeconds.value = 0
   }
+
+  private fun hasCurrentConsent(): Boolean =
+    experiencePreferences.getBoolean("academic_consent_accepted", false) &&
+      experiencePreferences.getString("academic_consent_version", null) == ResearchLogStore.CONSENT_VERSION
 
   private fun startStateSync() {
     stateSyncJob?.cancel()

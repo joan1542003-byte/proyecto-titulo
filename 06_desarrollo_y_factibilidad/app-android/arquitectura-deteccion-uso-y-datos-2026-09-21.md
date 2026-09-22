@@ -12,7 +12,7 @@ Relevo utiliza `UsageStatsManager`, la interfaz oficial de Android para consulta
 
 Se conserva únicamente:
 
-- código seudónimo del participante;
+- identificador aleatorio del participante, sin nombre, correo ni teléfono;
 - paquete de la aplicación elegida;
 - entrada y salida de esa aplicación;
 - activación, desactivación, señal y cierre;

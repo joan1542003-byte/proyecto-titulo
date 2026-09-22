@@ -131,5 +131,5 @@ class ResearchLogStore(context: Context) :
   private fun android.database.Cursor.intOrNull(name: String) = getColumnIndexOrThrow(name).let { if (isNull(it)) null else getInt(it) }
   private fun android.database.Cursor.stringOrNull(name: String) = getColumnIndexOrThrow(name).let { if (isNull(it)) null else getString(it) }
 
-  companion object { const val CONSENT_VERSION = "2026-09-22-v2" }
+  companion object { const val CONSENT_VERSION = "2026-09-22-v3" }
 }

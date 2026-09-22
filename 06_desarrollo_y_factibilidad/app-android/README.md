@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.6 de prueba
+**Versión:** 1.7 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,7 +12,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.6-2026-09-22.apk](releases/relevo-android-1.6-2026-09-22.apk)
+**APK vigente:** [relevo-android-1.7-2026-09-22.apk](releases/relevo-android-1.7-2026-09-22.apk)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -26,7 +26,7 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 6. consultar Inicio, Actividad y el historial de relevos;
 7. ver dónde quedó situada la última señal;
 8. autorizar el acceso de uso y las notificaciones exigidas por Android;
-9. registrar un código seudónimo y aceptar el tratamiento local informado;
+9. crear un identificador aleatorio que agrupa los datos sin solicitar nombre, correo ni teléfono;
 10. activar un monitoreo visible mediante una notificación persistente;
 11. emitir alarma, vibración y notificación cuando se cumple la condición;
 12. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
@@ -35,11 +35,11 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 15. contar cuántas veces se eligió cada actividad;
 16. conservar sesiones y eventos sin conexión y enviarlos a Supabase cuando la base está configurada.
 17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
-18. enseñar el recorrido mediante cuatro escenas ilustradas: elegir, configurar, situar y decidir.
+18. enseñar el recorrido mediante cinco escenas ilustradas: elegir, configurar, situar, recibir el aviso y conceder los permisos necesarios.
 
 ## Límites
 
-Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Sesiones y eventos se guardan primero en SQLite. El proyecto remoto `Relevo`, sus tablas y sus políticas RLS ya están configurados. Falta habilitar el acceso anónimo en Supabase Auth; hasta entonces la cola conserva los registros localmente.
+Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Sesiones y eventos se guardan primero en SQLite y luego se sincronizan con Supabase. La autenticación anónima, las tablas y las políticas RLS fueron comprobadas mediante una escritura y lectura reales; el registro de verificación se eliminó al terminar la prueba.
 
 La señal se reproduce mediante Android. Si el teléfono está conectado a un parlante Bluetooth, Android puede dirigir el audio al parlante. La integración directa con un objeto físico independiente sigue siendo una etapa posterior.
 
@@ -47,9 +47,10 @@ La señal se reproduce mediante Android. Si el teléfono está conectado a un pa
 
 1. instalar el APK;
 2. abrir Relevo;
-3. pulsar **Abrir ajustes de acceso** en la pantalla de condición;
-4. autorizar Relevo en **Acceso de uso**;
-5. regresar y pulsar **Ya lo autoricé**.
+3. leer y aceptar el uso académico de los datos;
+4. recorrer el tutorial;
+5. autorizar **Tiempo de uso** en la última escena;
+6. autorizar notificaciones si se quiere recibir el aviso con otra aplicación abierta.
 
 Android muestra una notificación mientras el recordatorio está activo. Esta visibilidad comunica que existe observación en curso y no debe eliminarse.
 
@@ -79,6 +80,19 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-22 — Lenguaje directo, permisos y sincronización verificada
+
+- **Cambio:** el texto visible explica el identificador aleatorio sin recurrir al término técnico “código seudónimo”.
+- **Versión anterior:** el consentimiento empleaba un concepto que podía resultar ambiguo para una persona ajena a la investigación.
+- **Motivo:** informar con precisión qué dato se crea y qué información personal no se solicita.
+- **Cambio:** el tutorial elimina rótulos redundantes y agrega una escena final que explica y solicita Tiempo de uso y Notificaciones.
+- **Versión anterior:** los permisos aparecían más tarde y sin formar parte del aprendizaje inicial.
+- **Motivo:** explicar cada solicitud antes de abrir el ajuste del sistema y evitar permisos sin contexto.
+- **Cambio visual:** se retiró la marca repetida de las pantallas internas, los botones con apariencia predeterminada y el selector emergente de aplicaciones.
+- **Versión anterior:** la jerarquía dependía de títulos pequeños, mayúsculas y componentes reconocibles del sistema visual anterior.
+- **Motivo:** dejar que el contenido guíe la lectura y reservar la marca para el inicio.
+- **Verificación:** Supabase aceptó autenticación anónima, inserción y lectura bajo RLS. El registro técnico se eliminó después de comprobar el recorrido.
+
 ### 2026-09-22 — Consentimiento inicial y tutorial ilustrado
 
 - **Cambio:** el consentimiento académico aparece antes del tutorial, exige una aceptación explícita y persiste durante los usos siguientes.
@@ -91,7 +105,7 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 
 ### 2026-09-22 — Introducción progresiva y navegación propia
 
-- **Cambio:** el primer inicio presenta cuatro escenas breves y no vuelve a mostrarlas después de completarlas u omitirlas.
+- **Cambio:** el primer inicio presenta cinco escenas breves y no vuelve a mostrarlas después de completarlas.
 - **Versión anterior:** cada creación pasaba por una pantalla tutorial extensa.
 - **Motivo:** explicar una idea por vez y evitar instrucciones repetidas en usos posteriores.
 - **Cambio visual:** se sustituyó la barra inferior predeterminada, se eliminó la sombra del llamado principal y se ampliaron las transiciones entre estados.
@@ -130,4 +144,4 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - **Motivo:** reducir carga, evitar repeticiones y hacer visible desde el inicio qué hace Relevo.
 - **Versión anterior:** la señal aparecía después de una espera, sin reconocer el uso de otras aplicaciones.
 - **Motivo:** hacer comprobable la relación central de Relevo entre el uso prolongado de una aplicación elegida y una señal situada.
-- **Privacidad:** se incorporaron consentimiento explícito, código seudónimo, notificación persistente y almacenamiento local limitado.
+- **Privacidad:** se incorporaron consentimiento explícito, un identificador aleatorio no nominal, notificación persistente y almacenamiento local limitado.

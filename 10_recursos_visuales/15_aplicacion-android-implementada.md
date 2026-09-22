@@ -54,7 +54,7 @@ Las transiciones combinan desplazamientos breves y fundidos para conservar conti
 
 - **Forma:** radios entre 10 y 30 dp distinguen campos, tarjetas y contenedores sin convertir cada elemento en una cápsula.
 - **Color:** el verde Relevo identifica selección, estado activo y acción principal. Las superficies secundarias permanecen neutras.
-- **Iconos:** Material Symbols se limita a acciones y destinos conocidos. Los iconos de aplicaciones provienen de Android.
+- **Iconos:** se limitan a acciones y destinos conocidos; nunca reemplazan una etiqueta necesaria. Los iconos de aplicaciones provienen de Android.
 - **Profundidad:** cambios de tono, bordes de baja opacidad y superposición distinguen niveles. Las sombras se omiten cuando una superficie ya se diferencia por contraste o posición.
 - **Texto:** preguntas y verbos comunes reemplazan términos internos del proyecto.
 - **Ilustración:** la introducción muestra la secuencia elegir, situar y recibir la señal. No funciona como control y posee descripción accesible.
@@ -100,15 +100,24 @@ La interfaz se considera lista para una prueba funcional cuando:
 
 ### 2026-09-22 — Introducción y continuidad espacial
 
-- **Qué cambió:** el aprendizaje inicial se dividió en cuatro escenas visibles solo durante el primer inicio, y la barra inferior pasó a ser un componente propio.
+- **Qué cambió:** el aprendizaje inicial se dividió en cinco escenas visibles solo durante el primer inicio; la última explica y solicita los permisos necesarios. La barra inferior pasó a ser un componente propio.
 - **Cómo era antes:** una pantalla extensa reunía toda la explicación y la navegación utilizaba un componente visual predeterminado.
 - **Por qué se decidió:** disminuir carga de lectura, mantener una idea por pantalla y construir una identidad de interacción consistente sin perder reconocimiento.
 
 ### 2026-09-22 — Tutorial visual y consentimiento
 
-- **Qué cambió:** se incorporaron cuatro ilustraciones coordinadas que muestran una actividad elegida, la condición de uso, la ubicación del dispositivo y la respuesta a la señal.
+- **Qué cambió:** se incorporaron cinco ilustraciones coordinadas que muestran una actividad elegida, la condición de uso, la ubicación del dispositivo, la respuesta a la señal y los permisos necesarios.
 - **Cómo era antes:** cada escena dependía de un icono dentro de una superficie vacía.
 - **Por qué se decidió:** una instrucción visual debe mostrar la relación entre persona, teléfono, objeto y actividad, no limitarse a decorar el texto.
 - **Qué cambió:** el consentimiento utiliza una pantalla propia de alto contraste antes del tutorial; la decisión permanece separada del permiso de acceso de Android.
 - **Cómo era antes:** términos y permiso técnico aparecían juntos durante la configuración.
 - **Por qué se decidió:** distinguir consentimiento de autorización técnica y asegurar que no se cree una sesión antes de aceptar el uso académico de datos.
+
+### 2026-09-22 — Simplificación de la versión 1.7
+
+- **Qué cambió:** se retiraron rótulos numerados, mayúsculas decorativas y la firma repetida en las pantallas internas. Los botones, opciones y selector de aplicaciones pasaron a utilizar componentes propios de superficie y estado.
+- **Cómo era antes:** el tutorial añadía un subtítulo pequeño a cada título y varias vistas repetían la marca sin aportar orientación.
+- **Por qué se decidió:** priorizar contenido, lectura y estado sobre ornamentación; la identidad se expresa mediante ritmo, color, tipografía y comportamiento, no mediante repetición del nombre.
+- **Qué cambió:** el consentimiento explica el identificador aleatorio con lenguaje cotidiano y la escena final solicita Tiempo de uso y Notificaciones con una razón visible.
+- **Cómo era antes:** se usaba el término técnico “código seudónimo” y los permisos aparecían fuera del tutorial.
+- **Por qué se decidió:** una persona debe comprender qué acepta y por qué se abre un ajuste del sistema antes de tomar la decisión.
