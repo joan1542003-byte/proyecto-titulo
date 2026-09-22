@@ -2,15 +2,15 @@
 
 ## Estado
 
-La base local registra sesiones y eventos seudónimos junto con la versión del consentimiento. La aplicación incorpora una cola de sincronización para Supabase, pero permanece inactiva mientras `SUPABASE_URL` y `SUPABASE_PUBLISHABLE_KEY` no estén definidas en `local.properties`. No se deben incorporar credenciales privadas al repositorio.
+La base local registra sesiones y eventos seudónimos junto con la versión del consentimiento. El proyecto remoto `Relevo` está activo; el esquema, sus privilegios y las políticas RLS fueron desplegados el 22 de septiembre de 2026. La aplicación dispone localmente de la URL y la clave publicable. No se incorporan credenciales privadas al repositorio.
 
 ## Servicio propuesto
 
 Supabase permite usar PostgreSQL, políticas de acceso por fila y una API HTTPS sin añadir un SDK pesado a la aplicación. El esquema mínimo se encuentra en `base-remota-supabase.sql`.
 
-Para finalizar la conexión se requieren:
+La conexión requiere:
 
-1. un proyecto Supabase bajo control del responsable de la investigación;
+1. el proyecto Supabase `Relevo`, bajo control del responsable de la investigación;
 2. `SUPABASE_URL` en `local.properties`;
 3. `SUPABASE_PUBLISHABLE_KEY` en `local.properties`; no se utiliza una clave secreta;
 4. una fecha de eliminación de los datos;
@@ -33,10 +33,10 @@ La aplicación autentica cada instalación como usuario anónimo, conserva prime
 
 No se enviarán nombres, correos, contenido de pantalla, mensajes, historial completo ni identificadores publicitarios.
 
-## Activación
+## Activación pendiente
 
-1. ejecutar `base-remota-supabase.sql` en el editor SQL del proyecto;
-2. habilitar usuarios anónimos en Supabase Auth;
+1. habilitar `Allow anonymous sign-ins` en Supabase Auth;
+2. el esquema `base-remota-supabase.sql` ya fue aplicado como migración;
 3. añadir a `local.properties`:
 
 ```properties
@@ -63,4 +63,11 @@ La aplicación puede leer y actualizar únicamente sus propias sesiones, condici
 - **Cambio:** se incorporaron autenticación anónima, cola local, reintentos idempotentes y tablas separadas para sesiones y eventos.
 - **Versión anterior:** solo existían el esquema propuesto y el registro local de eventos.
 - **Motivo:** recopilar actividad seleccionada, condición, señal, tiempo observado y respuesta opcional sin depender de conectividad permanente.
-- **Límite:** falta incorporar las credenciales publicables del proyecto y ejecutar el esquema para comprobar el envío remoto real.
+- **Límite:** la prueba remota respondió `anonymous_provider_disabled`; falta activar el acceso anónimo antes de comprobar la escritura desde una instalación.
+
+### 2026-09-22 — Infraestructura remota desplegada
+
+- **Cambio:** se desplegaron las tablas, restricciones, índices, privilegios mínimos y políticas RLS en el proyecto remoto.
+- **Versión anterior:** el esquema existía únicamente como archivo local.
+- **Motivo:** asegurar que el testeo pueda consolidar datos reales sin exponer claves administrativas ni permitir lectura entre participantes.
+- **Verificación:** el asesor de seguridad no informó vulnerabilidades; se eliminó un índice duplicado señalado por el asesor de rendimiento.

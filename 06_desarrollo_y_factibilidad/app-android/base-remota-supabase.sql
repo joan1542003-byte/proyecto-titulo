@@ -34,7 +34,7 @@ create table if not exists public.relevo_events (
 alter table public.relevo_events add column if not exists client_event_id text;
 update public.relevo_events set client_event_id = 'legacy-' || id::text where client_event_id is null;
 alter table public.relevo_events alter column client_event_id set not null;
-create unique index if not exists relevo_events_client_event_idx on public.relevo_events (client_event_id);
+drop index if exists public.relevo_events_client_event_idx;
 
 create index if not exists relevo_sessions_user_started_idx on public.relevo_sessions (user_id, started_at desc);
 create index if not exists relevo_sessions_activity_idx on public.relevo_sessions (activity, started_at desc);

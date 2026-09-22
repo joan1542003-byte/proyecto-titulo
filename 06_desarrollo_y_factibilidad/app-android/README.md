@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.4 de prueba
+**Versión:** 1.5 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,7 +12,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.4-2026-09-22.apk](releases/relevo-android-1.4-2026-09-22.apk)
+**APK vigente:** [relevo-android-1.5-2026-09-22.apk](releases/relevo-android-1.5-2026-09-22.apk)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -37,7 +37,7 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 
 ## Límites
 
-Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Sesiones y eventos se guardan primero en SQLite. La sincronización remota solo se activa al proporcionar la URL y la clave publicable de un proyecto Supabase protegido; esas credenciales todavía no forman parte del repositorio.
+Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Sesiones y eventos se guardan primero en SQLite. El proyecto remoto `Relevo`, sus tablas y sus políticas RLS ya están configurados. Falta habilitar el acceso anónimo en Supabase Auth; hasta entonces la cola conserva los registros localmente.
 
 La señal se reproduce mediante Android. Si el teléfono está conectado a un parlante Bluetooth, Android puede dirigir el audio al parlante. La integración directa con un objeto físico independiente sigue siendo una etapa posterior.
 
@@ -76,6 +76,15 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Introducción progresiva y navegación propia
+
+- **Cambio:** el primer inicio presenta cuatro escenas breves y no vuelve a mostrarlas después de completarlas u omitirlas.
+- **Versión anterior:** cada creación pasaba por una pantalla tutorial extensa.
+- **Motivo:** explicar una idea por vez y evitar instrucciones repetidas en usos posteriores.
+- **Cambio visual:** se sustituyó la barra inferior predeterminada, se eliminó la sombra del llamado principal y se ampliaron las transiciones entre estados.
+- **Versión anterior:** la navegación y varias superficies conservaban una apariencia reconocible de Material Design.
+- **Motivo:** consolidar una experiencia propia de Relevo con profundidad contenida y continuidad espacial.
 
 ### 2026-09-22 — Registro evaluativo y movimiento continuo
 

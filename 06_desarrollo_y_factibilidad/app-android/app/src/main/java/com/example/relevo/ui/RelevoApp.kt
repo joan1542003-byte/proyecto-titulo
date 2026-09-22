@@ -1,6 +1,9 @@
 package com.example.relevo.ui
 
 import android.provider.Settings
+import android.Manifest
+import android.app.Activity
+import android.os.Build
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,6 +21,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
@@ -59,8 +63,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Slider
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
@@ -90,6 +92,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import android.content.pm.PackageManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -101,7 +106,7 @@ import com.example.relevo.data.HistoryEntry
 import com.example.relevo.monitor.AppUsageSummary
 import cl.udp.relevo.R
 
-private enum class Screen { HOME, TUTORIAL, SETUP, ACTIVE, SIGNAL, DONE }
+private enum class Screen { ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
 
 @Composable
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
@@ -111,19 +116,26 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val usageAccess by viewModel.usageAccessGranted.collectAsState()
   val history by viewModel.history.collectAsState()
   val todayUsage by viewModel.todayUsage.collectAsState()
-  var screen by rememberSaveable { mutableStateOf(screenFor(reminder.status)) }
+  val context = LocalContext.current
+  val introduction = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
+  var screen by rememberSaveable {
+    mutableStateOf(if (introduction.getBoolean("onboarding_complete", false)) screenFor(reminder.status) else Screen.ONBOARDING)
+  }
 
   LaunchedEffect(reminder.status) { screen = screenFor(reminder.status, screen) }
 
   Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
     AnimatedContent(
       targetState = screen,
-      transitionSpec = { (fadeIn(tween(280)) + slideInHorizontally(tween(320)) { it / 12 }) togetherWith (fadeOut(tween(180)) + slideOutHorizontally(tween(240)) { -it / 16 }) },
+      transitionSpec = { (fadeIn(tween(420)) + slideInHorizontally(tween(520)) { it / 8 }) togetherWith (fadeOut(tween(260)) + slideOutHorizontally(tween(420)) { -it / 10 }) },
       label = "main_navigation",
     ) { currentScreen ->
     when (currentScreen) {
-      Screen.HOME -> HomeScreen(history, todayUsage, usageAccess, viewModel::refreshDashboard) { screen = Screen.TUTORIAL }
-      Screen.TUTORIAL -> TutorialScreen({ screen = Screen.HOME }) { screen = Screen.SETUP }
+      Screen.ONBOARDING -> OnboardingScreen {
+        introduction.edit().putBoolean("onboarding_complete", true).apply()
+        screen = Screen.HOME
+      }
+      Screen.HOME -> HomeScreen(history, todayUsage, usageAccess, viewModel::refreshDashboard) { screen = Screen.SETUP }
       Screen.SETUP -> SetupScreen(
         reminder = reminder,
         apps = apps,
@@ -139,7 +151,10 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         onPermission = viewModel::openUsageAccessSettings,
         onRefresh = viewModel::refreshUsageAccess,
         onTest = viewModel::testSignal,
-        onActivate = { if (viewModel.activate()) screen = Screen.ACTIVE },
+        onActivate = {
+          requestNotificationPermissionIfNeeded(context)
+          if (viewModel.activate()) screen = Screen.ACTIVE
+        },
       )
       Screen.ACTIVE -> ActiveScreen(reminder, remaining) { viewModel.disarm(); screen = Screen.DONE }
       Screen.SIGNAL -> SignalScreen(reminder) { viewModel.silence(); screen = Screen.DONE }
@@ -190,14 +205,41 @@ private fun HomeScreen(
         HomeTab.HISTORY -> HistoryDashboard(history, onStart)
       }
     }
-    NavigationBar(
-      modifier = Modifier.navigationBarsPadding().padding(horizontal = 16.dp, vertical = 8.dp).shadow(3.dp, RoundedCornerShape(30.dp)).clip(RoundedCornerShape(30.dp)),
-      containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.94f),
-      tonalElevation = 3.dp,
-    ) {
-      NavigationBarItem(tab == HomeTab.START, { tab = HomeTab.START }, { Icon(Icons.Rounded.Home, null) }, label = { Text("Inicio") })
-      NavigationBarItem(tab == HomeTab.ACTIVITY, { tab = HomeTab.ACTIVITY }, { Icon(Icons.Rounded.Insights, null) }, label = { Text("Actividad") })
-      NavigationBarItem(tab == HomeTab.HISTORY, { tab = HomeTab.HISTORY }, { Icon(Icons.Rounded.History, null) }, label = { Text("Relevos") })
+    FloatingTabBar(tab) { tab = it }
+  }
+}
+
+@Composable
+private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
+  val items = listOf(
+    Triple(HomeTab.START, Icons.Rounded.Home, "Inicio"),
+    Triple(HomeTab.ACTIVITY, Icons.Rounded.Insights, "Actividad"),
+    Triple(HomeTab.HISTORY, Icons.Rounded.History, "Relevos"),
+  )
+  Surface(
+    modifier = Modifier.navigationBarsPadding().padding(horizontal = 18.dp, vertical = 10.dp).fillMaxWidth().border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .12f), RoundedCornerShape(28.dp)),
+    shape = RoundedCornerShape(28.dp),
+    color = MaterialTheme.colorScheme.surface.copy(alpha = .97f),
+  ) {
+    Row(Modifier.padding(6.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+      items.forEach { (tab, icon, label) ->
+        val active = tab == selected
+        val background by androidx.compose.animation.animateColorAsState(
+          if (active) MaterialTheme.colorScheme.primaryContainer else Color.Transparent,
+          animationSpec = tween(320),
+          label = "tab_background",
+        )
+        Row(
+          Modifier.weight(1f).clip(RoundedCornerShape(22.dp)).background(background).clickable { onSelect(tab) }.padding(vertical = 12.dp),
+          horizontalArrangement = Arrangement.Center,
+          verticalAlignment = Alignment.CenterVertically,
+        ) {
+          Icon(icon, null, Modifier.size(20.dp), tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+          AnimatedContent(active, transitionSpec = { fadeIn(tween(240)) togetherWith fadeOut(tween(160)) }, label = "tab_label") { show ->
+            if (show) { Spacer(Modifier.width(7.dp)); Text(label, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.SemiBold) }
+          }
+        }
+      }
     }
   }
 }
@@ -242,7 +284,7 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
   val endColor = lerp(Color(0xFF0B806F), Color(0xFF27A892), gradientShift)
   Surface(
     onClick = onClick,
-    modifier = Modifier.fillMaxWidth().height(76.dp).shadow(2.dp, RoundedCornerShape(24.dp)),
+    modifier = Modifier.fillMaxWidth().height(76.dp),
     shape = RoundedCornerShape(24.dp),
     color = Color.Transparent,
   ) {
@@ -257,37 +299,53 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
   }
 }
 
-@Composable
-private fun TutorialScreen(onBack: () -> Unit, onContinue: () -> Unit) = Page {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(20.dp)) {
-    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-      TextButton(onClick = onBack) { Text("Volver") }
-      Spacer(Modifier.weight(1f)); Brand()
-    }
-    Text("Así funciona Relevo", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-    Text("La señal se prepara en el teléfono y se sitúa cerca de donde puedes comenzar.", color = MaterialTheme.colorScheme.onSurfaceVariant)
-    Image(
-      painter = painterResource(R.drawable.relevo_tutorial),
-      contentDescription = "Elegir una aplicación, situar la señal y recibir el aviso",
-      contentScale = ContentScale.Crop,
-      modifier = Modifier.fillMaxWidth().height(190.dp).clip(RoundedCornerShape(28.dp)),
-    )
-    TutorialStep(Icons.Rounded.Apps, "1", "Elige una aplicación", "Relevo contará únicamente su uso mientras el recordatorio esté activo.")
-    TutorialStep(Icons.Rounded.LocationOn, "2", "Sitúa la señal", "Déjala cerca de aquello que facilita comenzar la actividad.")
-    TutorialStep(Icons.Rounded.NotificationsActive, "3", "Recibe un aviso", "Cuando se cumpla el tiempo, escucharás la señal y decidirás qué hacer.")
-    PrimaryButton("Configurar mi relevo", onContinue)
-    Spacer(Modifier.height(8.dp))
-  }
-}
+private data class OnboardingPage(val icon: androidx.compose.ui.graphics.vector.ImageVector, val eyebrow: String, val title: String, val text: String)
 
 @Composable
-private fun TutorialStep(icon: androidx.compose.ui.graphics.vector.ImageVector, number: String, title: String, text: String) {
-  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
-    Surface(Modifier.size(48.dp), RoundedCornerShape(16.dp), MaterialTheme.colorScheme.primaryContainer) {
-      Box(contentAlignment = Alignment.Center) { Icon(icon, "Paso $number", tint = MaterialTheme.colorScheme.primary) }
+private fun OnboardingScreen(onComplete: () -> Unit) {
+  val pages = remember { listOf(
+    OnboardingPage(Icons.Rounded.Add, "UNA DECISIÓN PREPARADA", "Haz visible lo que quieres hacer.", "Relevo relaciona una actividad, una aplicación y un lugar. Tú decides qué quieres retomar."),
+    OnboardingPage(Icons.Rounded.Apps, "EL MOMENTO", "Elige qué uso observar.", "Selecciona una aplicación y un tiempo acumulado. El conteo ocurre solo mientras el relevo está activo."),
+    OnboardingPage(Icons.Rounded.LocationOn, "EL LUGAR", "Sitúa la señal donde puedas comenzar.", "Deja el dispositivo junto a las zapatillas, el libro o aquello que facilite la actividad."),
+    OnboardingPage(Icons.Rounded.NotificationsActive, "LA SEÑAL", "Cuando llegue el momento, tú decides.", "Al cumplirse el tiempo escucharás el aviso. Relevo recuerda la actividad; no bloquea el teléfono ni actúa por ti."),
+  ) }
+  var page by rememberSaveable { mutableStateOf(0) }
+  val item = pages[page]
+  Box(
+    Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color(0xFFF8FBF9), Color(0xFFEAF8F4), Color(0xFFF7F8F6)))).safeDrawingPadding().padding(24.dp),
+  ) {
+    Column(Modifier.fillMaxSize()) {
+      Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+        Brand(); Spacer(Modifier.weight(1f)); Text("${page + 1} / ${pages.size}", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      }
+      Spacer(Modifier.weight(.55f))
+      AnimatedContent(
+        targetState = item,
+        transitionSpec = { (fadeIn(tween(420)) + slideInHorizontally(tween(520)) { it / 4 }) togetherWith (fadeOut(tween(220)) + slideOutHorizontally(tween(380)) { -it / 5 }) },
+        label = "onboarding_page",
+      ) { current ->
+        Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
+          Surface(Modifier.size(76.dp), RoundedCornerShape(25.dp), MaterialTheme.colorScheme.surface.copy(alpha = .88f)) {
+            Box(contentAlignment = Alignment.Center) { Icon(current.icon, null, Modifier.size(30.dp), tint = MaterialTheme.colorScheme.primary) }
+          }
+          Text(current.eyebrow, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary, letterSpacing = 1.5.sp, fontWeight = FontWeight.SemiBold)
+          Text(current.title, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
+          Text(current.text, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 25.sp)
+        }
+      }
+      Spacer(Modifier.weight(1f))
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(7.dp)) {
+        pages.indices.forEach { index ->
+          val width by androidx.compose.animation.core.animateDpAsState(if (index == page) 28.dp else 7.dp, tween(320), label = "page_indicator")
+          Box(Modifier.width(width).height(7.dp).clip(CircleShape).background(if (index == page) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline.copy(alpha = .22f)))
+        }
+      }
+      Spacer(Modifier.height(24.dp))
+      PrimaryButton(if (page == pages.lastIndex) "Entrar a Relevo" else "Continuar", onClick = {
+        if (page == pages.lastIndex) onComplete() else page += 1
+      })
+      if (page < pages.lastIndex) TextButton(onClick = onComplete, modifier = Modifier.align(Alignment.CenterHorizontally)) { Text("Omitir introducción") }
     }
-    Spacer(Modifier.width(14.dp))
-    Column(Modifier.weight(1f)) { Text(title, fontWeight = FontWeight.SemiBold); Text(text, color = MaterialTheme.colorScheme.onSurfaceVariant) }
   }
 }
 
@@ -682,4 +740,13 @@ private fun formatTime(seconds: Int): String = when {
   seconds < 60 -> "$seconds s"
   seconds % 60 == 0 -> "${seconds / 60} min"
   else -> "${seconds / 60} min ${seconds % 60} s"
+}
+
+private fun requestNotificationPermissionIfNeeded(context: android.content.Context) {
+  if (
+    Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+    ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+  ) {
+    (context as? Activity)?.let { ActivityCompat.requestPermissions(it, arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1001) }
+  }
 }

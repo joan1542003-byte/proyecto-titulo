@@ -55,7 +55,7 @@ Las transiciones combinan desplazamientos breves y fundidos para conservar conti
 - **Forma:** radios entre 10 y 30 dp distinguen campos, tarjetas y contenedores sin convertir cada elemento en una cápsula.
 - **Color:** el verde Relevo identifica selección, estado activo y acción principal. Las superficies secundarias permanecen neutras.
 - **Iconos:** Material Symbols se limita a acciones y destinos conocidos. Los iconos de aplicaciones provienen de Android.
-- **Profundidad:** sombras suaves distinguen acciones, tarjetas y navegación. La barra inferior utiliza una superficie translúcida elevada; no se fuerza un desenfoque si no existe contenido detrás que necesite separarse.
+- **Profundidad:** cambios de tono, bordes de baja opacidad y superposición distinguen niveles. Las sombras se omiten cuando una superficie ya se diferencia por contraste o posición.
 - **Texto:** preguntas y verbos comunes reemplazan términos internos del proyecto.
 - **Ilustración:** la introducción muestra la secuencia elegir, situar y recibir la señal. No funciona como control y posee descripción accesible.
 
@@ -63,7 +63,7 @@ Las transiciones combinan desplazamientos breves y fundidos para conservar conti
 
 [Mobbin](https://mobbin.com/) se utilizó para revisar patrones presentes en productos publicados: tableros móviles, navegación inferior, selectores y recorridos de configuración. No se tomó una aplicación como modelo formal; se estudiaron regularidades de jerarquía y comportamiento.
 
-La implementación sigue convenciones de [Material Design 3 para Compose](https://developer.android.com/develop/ui/compose/designsystems/material3), especialmente en componentes, áreas táctiles, estados y navegación. Las decisiones de marca —paleta, tipografía, lenguaje y grado de énfasis— continúan gobernadas por el sistema visual de Relevo.
+La aplicación utiliza Jetpack Compose como tecnología, pero no adopta Material Design como lenguaje visual. Navegación, superficies, proporciones y transiciones se definen para Relevo. Se conservan convenciones nativas cuando mejoran accesibilidad —áreas táctiles, contraste y respuesta al gesto— sin copiar la apariencia predeterminada del sistema.
 
 La revisión de movimiento consideró las guías de [animación de Jetpack Compose](https://developer.android.com/develop/ui/compose/animation/introduction) y [Motion de Apple](https://developer.apple.com/design/human-interface-guidelines/motion): animar relaciones y cambios, evitar movimiento gratuito y conservar alternativas accesibles. Los Apple Design Awards se observaron como referencia de integración entre interacción, accesibilidad y acabado, no para reproducir una apariencia de iOS.
 
@@ -95,3 +95,9 @@ La interfaz se considera lista para una prueba funcional cuando:
 - **Qué cambió:** se separó tutorial de Inicio, se jerarquizó la selección temporal y se restringieron las estadísticas a aplicaciones vinculadas.
 - **Cómo era antes:** la ilustración introductoria ocupaba la portada y Actividad resumía todo el uso informado por Android.
 - **Por qué se decidió:** aumentar especificidad, evitar contenido genérico y hacer que cada dato mostrado corresponda al funcionamiento de Relevo.
+
+### 2026-09-22 — Introducción y continuidad espacial
+
+- **Qué cambió:** el aprendizaje inicial se dividió en cuatro escenas visibles solo durante el primer inicio, y la barra inferior pasó a ser un componente propio.
+- **Cómo era antes:** una pantalla extensa reunía toda la explicación y la navegación utilizaba un componente visual predeterminado.
+- **Por qué se decidió:** disminuir carga de lectura, mantener una idea por pantalla y construir una identidad de interacción consistente sin perder reconocimiento.

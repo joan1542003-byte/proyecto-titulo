@@ -2,7 +2,7 @@
 
 **Fecha prevista:** 22 de septiembre de 2026
 
-**Versión:** `relevo-android-1.4-2026-09-22.apk`
+**Versión:** `relevo-android-1.5-2026-09-22.apk`
 
 **Propósito:** impedir que un fallo de software se confunda con una dificultad de comprensión.
 
