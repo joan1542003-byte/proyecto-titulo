@@ -44,6 +44,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.draw.shadow
@@ -106,7 +107,7 @@ import com.example.relevo.data.HistoryEntry
 import com.example.relevo.monitor.AppUsageSummary
 import cl.udp.relevo.R
 
-private enum class Screen { ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
+private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
 
 @Composable
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
@@ -119,7 +120,13 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val context = LocalContext.current
   val introduction = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   var screen by rememberSaveable {
-    mutableStateOf(if (introduction.getBoolean("onboarding_complete", false)) screenFor(reminder.status) else Screen.ONBOARDING)
+    mutableStateOf(
+      when {
+        !introduction.getBoolean("academic_consent_accepted", false) -> Screen.CONSENT
+        !introduction.getBoolean("onboarding_complete", false) -> Screen.ONBOARDING
+        else -> screenFor(reminder.status)
+      },
+    )
   }
 
   LaunchedEffect(reminder.status) { screen = screenFor(reminder.status, screen) }
@@ -131,6 +138,13 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
       label = "main_navigation",
     ) { currentScreen ->
     when (currentScreen) {
+      Screen.CONSENT -> ConsentScreen(
+        onAccept = {
+          viewModel.updateConsent(true)
+          screen = Screen.ONBOARDING
+        },
+        onDecline = { (context as? Activity)?.finishAndRemoveTask() },
+      )
       Screen.ONBOARDING -> OnboardingScreen {
         introduction.edit().putBoolean("onboarding_complete", true).apply()
         screen = Screen.HOME
@@ -146,7 +160,6 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         onPlace = viewModel::updatePlace,
         onApp = viewModel::selectTargetApp,
         onDuration = viewModel::updateRequiredUsage,
-        onConsent = viewModel::updateConsent,
         onPreset = viewModel::applyPreset,
         onPermission = viewModel::openUsageAccessSettings,
         onRefresh = viewModel::refreshUsageAccess,
@@ -299,15 +312,74 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
   }
 }
 
-private data class OnboardingPage(val icon: androidx.compose.ui.graphics.vector.ImageVector, val eyebrow: String, val title: String, val text: String)
+private data class OnboardingPage(val image: Int, val eyebrow: String, val title: String, val text: String)
+
+@Composable
+private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit) {
+  var checked by rememberSaveable { mutableStateOf(false) }
+  Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color(0xFF075F54), Color(0xFF0A8573)))).safeDrawingPadding()) {
+    Column(Modifier.fillMaxSize().padding(24.dp)) {
+      BrandLight()
+      Spacer(Modifier.height(34.dp))
+      Text("Antes de comenzar", style = MaterialTheme.typography.displaySmall, color = Color.White, fontWeight = FontWeight.SemiBold)
+      Text("Participación y uso académico de datos", style = MaterialTheme.typography.titleMedium, color = Color.White.copy(alpha = .76f))
+      Spacer(Modifier.height(24.dp))
+      Surface(Modifier.fillMaxWidth().weight(1f), RoundedCornerShape(30.dp), Color(0xFFF8FAF8)) {
+        Column(Modifier.verticalScroll(rememberScrollState()).padding(24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+          Text("Relevo es un prototipo de Proyecto de Título de Diseño de la Universidad Diego Portales. Los datos se utilizarán únicamente para evaluar su funcionamiento y la experiencia de uso.", lineHeight = 23.sp)
+          ConsentPoint("Qué se registra", "Código seudónimo, actividad elegida, aplicación seleccionada, tiempo acumulado y momentos de activación, señal y cierre.")
+          ConsentPoint("Qué no se registra", "Mensajes, imágenes, búsquedas, pulsaciones ni contenido de pantalla.")
+          ConsentPoint("Cómo se protege", "Los registros se guardan primero en el teléfono y se envían a una base protegida. Cada instalación solo puede acceder a sus propias sesiones.")
+          ConsentPoint("Tu decisión", "Participar es voluntario. Puedes detener un relevo en cualquier momento. Si no aceptas, la aplicación se cerrará y no recopilará datos.")
+        }
+      }
+      Spacer(Modifier.height(12.dp))
+      Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(Color.White.copy(alpha = .12f)).clickable { checked = !checked }.padding(14.dp),
+        verticalAlignment = Alignment.CenterVertically,
+      ) {
+        Surface(Modifier.size(26.dp), RoundedCornerShape(8.dp), if (checked) Color(0xFFFF8B72) else Color.Transparent, border = androidx.compose.foundation.BorderStroke(1.dp, Color.White.copy(alpha = .8f))) {
+          if (checked) Box(contentAlignment = Alignment.Center) { Icon(Icons.Rounded.CheckCircle, null, Modifier.size(18.dp), tint = Color.White) }
+        }
+        Spacer(Modifier.width(12.dp))
+        Text("He leído y acepto participar.", color = Color.White, fontWeight = FontWeight.Medium, modifier = Modifier.weight(1f))
+      }
+      Spacer(Modifier.height(10.dp))
+      Button(
+        onClick = onAccept,
+        enabled = checked,
+        modifier = Modifier.fillMaxWidth().height(56.dp),
+        shape = RoundedCornerShape(18.dp),
+        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF8B72), contentColor = Color(0xFF321C17), disabledContainerColor = Color.White.copy(alpha = .12f), disabledContentColor = Color.White.copy(alpha = .38f)),
+      ) { Text("Aceptar y continuar", fontWeight = FontWeight.SemiBold) }
+      TextButton(onClick = onDecline, modifier = Modifier.align(Alignment.CenterHorizontally)) { Text("No participar", color = Color.White) }
+    }
+  }
+}
+
+@Composable
+private fun BrandLight() {
+  Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+    Surface(Modifier.size(12.dp), CircleShape, Color(0xFFFF8B72)) {}
+    Text("RELEVO", style = MaterialTheme.typography.titleMedium, color = Color.White, fontWeight = FontWeight.Bold, letterSpacing = 2.sp)
+  }
+}
+
+@Composable
+private fun ConsentPoint(title: String, text: String) {
+  Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Text(title, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.primary)
+    Text(text, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 21.sp)
+  }
+}
 
 @Composable
 private fun OnboardingScreen(onComplete: () -> Unit) {
   val pages = remember { listOf(
-    OnboardingPage(Icons.Rounded.Add, "UNA DECISIÓN PREPARADA", "Haz visible lo que quieres hacer.", "Relevo relaciona una actividad, una aplicación y un lugar. Tú decides qué quieres retomar."),
-    OnboardingPage(Icons.Rounded.Apps, "EL MOMENTO", "Elige qué uso observar.", "Selecciona una aplicación y un tiempo acumulado. El conteo ocurre solo mientras el relevo está activo."),
-    OnboardingPage(Icons.Rounded.LocationOn, "EL LUGAR", "Sitúa la señal donde puedas comenzar.", "Deja el dispositivo junto a las zapatillas, el libro o aquello que facilite la actividad."),
-    OnboardingPage(Icons.Rounded.NotificationsActive, "LA SEÑAL", "Cuando llegue el momento, tú decides.", "Al cumplirse el tiempo escucharás el aviso. Relevo recuerda la actividad; no bloquea el teléfono ni actúa por ti."),
+    OnboardingPage(R.drawable.onboarding_activity, "1 · ELIGE", "Define qué quieres retomar.", "Selecciona una actividad y escribe una forma sencilla de comenzar."),
+    OnboardingPage(R.drawable.onboarding_condition, "2 · CONFIGURA", "Elige la aplicación y el tiempo.", "Relevo cuenta únicamente el uso acumulado de esa aplicación mientras la señal está activa."),
+    OnboardingPage(R.drawable.onboarding_place, "3 · SITÚA", "Deja la señal cerca de la actividad.", "Pon el dispositivo junto a las zapatillas, el libro o aquello que facilite comenzar."),
+    OnboardingPage(R.drawable.onboarding_signal, "4 · DECIDE", "Escucha la señal y elige qué hacer.", "Cuando se cumpla el tiempo recibirás el aviso. Relevo recuerda; la decisión sigue siendo tuya."),
   ) }
   var page by rememberSaveable { mutableStateOf(0) }
   val item = pages[page]
@@ -318,19 +390,22 @@ private fun OnboardingScreen(onComplete: () -> Unit) {
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
         Brand(); Spacer(Modifier.weight(1f)); Text("${page + 1} / ${pages.size}", color = MaterialTheme.colorScheme.onSurfaceVariant)
       }
-      Spacer(Modifier.weight(.55f))
+      Spacer(Modifier.height(22.dp))
       AnimatedContent(
         targetState = item,
         transitionSpec = { (fadeIn(tween(420)) + slideInHorizontally(tween(520)) { it / 4 }) togetherWith (fadeOut(tween(220)) + slideOutHorizontally(tween(380)) { -it / 5 }) },
         label = "onboarding_page",
       ) { current ->
-        Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-          Surface(Modifier.size(76.dp), RoundedCornerShape(25.dp), MaterialTheme.colorScheme.surface.copy(alpha = .88f)) {
-            Box(contentAlignment = Alignment.Center) { Icon(current.icon, null, Modifier.size(30.dp), tint = MaterialTheme.colorScheme.primary) }
-          }
+        Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
+          Image(
+            painter = painterResource(current.image),
+            contentDescription = current.title,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxWidth().height(250.dp).clip(RoundedCornerShape(30.dp)),
+          )
           Text(current.eyebrow, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary, letterSpacing = 1.5.sp, fontWeight = FontWeight.SemiBold)
-          Text(current.title, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
-          Text(current.text, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 25.sp)
+          Text(current.title, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold, lineHeight = 37.sp)
+          Text(current.text, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
         }
       }
       Spacer(Modifier.weight(1f))
@@ -344,7 +419,6 @@ private fun OnboardingScreen(onComplete: () -> Unit) {
       PrimaryButton(if (page == pages.lastIndex) "Entrar a Relevo" else "Continuar", onClick = {
         if (page == pages.lastIndex) onComplete() else page += 1
       })
-      if (page < pages.lastIndex) TextButton(onClick = onComplete, modifier = Modifier.align(Alignment.CenterHorizontally)) { Text("Omitir introducción") }
     }
   }
 }
@@ -451,7 +525,6 @@ private fun SetupScreen(
   onPlace: (String) -> Unit,
   onApp: (InstalledApp) -> Unit,
   onDuration: (Int) -> Unit,
-  onConsent: (Boolean) -> Unit,
   onPreset: (String, String, String) -> Unit,
   onPermission: () -> Unit,
   onRefresh: () -> Unit,
@@ -459,9 +532,7 @@ private fun SetupScreen(
   onActivate: () -> Unit,
 ) {
   var chooseApp by rememberSaveable { mutableStateOf(false) }
-  var showTerms by rememberSaveable { mutableStateOf(false) }
   if (chooseApp) AppPicker(apps, { chooseApp = false }) { onApp(it); chooseApp = false }
-  if (showTerms) TermsDialog({ showTerms = false }) { onConsent(true); showTerms = false }
 
   Page {
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
@@ -483,17 +554,13 @@ private fun SetupScreen(
           Triple("Cocinar", "Reunir los ingredientes", "En la cocina"),
           Triple("Ordenar", "Despejar una superficie", "En el espacio que quiero ordenar"),
         )) { preset ->
-          FilterChip(
-            selected = reminder.activity == preset.first,
-            onClick = { onPreset(preset.first, preset.second, preset.third) },
-            label = { Text(preset.first) },
-          )
+          PresetChip(preset.first, reminder.activity == preset.first) { onPreset(preset.first, preset.second, preset.third) }
         }
       }
 
-      OutlinedTextField(reminder.activity, onActivity, label = { Text("Qué quieres hacer") }, placeholder = { Text("Salir a caminar") }, modifier = Modifier.fillMaxWidth(), singleLine = true, shape = RoundedCornerShape(18.dp))
-      OutlinedTextField(reminder.howToStart, onStart, label = { Text("Cómo puedes empezar") }, placeholder = { Text("Ponerme las zapatillas") }, modifier = Modifier.fillMaxWidth(), singleLine = true, shape = RoundedCornerShape(18.dp))
-      OutlinedTextField(reminder.place, onPlace, label = { Text("Dónde estará la señal") }, placeholder = { Text("Junto a las zapatillas") }, modifier = Modifier.fillMaxWidth(), singleLine = true, shape = RoundedCornerShape(18.dp))
+      RelevoTextField("Qué quieres hacer", reminder.activity, "Salir a caminar", onActivity)
+      RelevoTextField("Cómo puedes empezar", reminder.howToStart, "Ponerme las zapatillas", onStart)
+      RelevoTextField("Dónde estará la señal", reminder.place, "Junto a las zapatillas", onPlace)
 
       Text("Aplicación que activa la señal", fontWeight = FontWeight.Medium)
       OutlinedButton(onClick = { chooseApp = true }, modifier = Modifier.fillMaxWidth().height(56.dp)) {
@@ -537,7 +604,7 @@ private fun SetupScreen(
         Text("60 min", style = MaterialTheme.typography.labelSmall)
       }
 
-      PermissionCard(usageAccess, reminder.consentAccepted, { showTerms = true }, onPermission, onRefresh)
+      PermissionCard(usageAccess, onPermission, onRefresh)
       OutlinedButton(onClick = onTest, modifier = Modifier.fillMaxWidth()) { Text("Probar sonido") }
       PrimaryButton(
         "Activar relevo",
@@ -550,10 +617,46 @@ private fun SetupScreen(
 }
 
 @Composable
+private fun PresetChip(label: String, selected: Boolean, onClick: () -> Unit) {
+  val color by androidx.compose.animation.animateColorAsState(
+    if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant,
+    tween(240),
+    label = "preset_color",
+  )
+  Surface(onClick = onClick, color = color, shape = RoundedCornerShape(18.dp)) {
+    Text(
+      label,
+      modifier = Modifier.padding(horizontal = 16.dp, vertical = 11.dp),
+      color = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface,
+      fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal,
+    )
+  }
+}
+
+@Composable
+private fun RelevoTextField(label: String, value: String, placeholder: String, onValueChange: (String) -> Unit) {
+  Column(verticalArrangement = Arrangement.spacedBy(7.dp)) {
+    Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    BasicTextField(
+      value = value,
+      onValueChange = onValueChange,
+      singleLine = true,
+      textStyle = MaterialTheme.typography.bodyLarge.copy(color = MaterialTheme.colorScheme.onSurface),
+      cursorBrush = androidx.compose.ui.graphics.SolidColor(MaterialTheme.colorScheme.primary),
+      modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(horizontal = 18.dp, vertical = 17.dp),
+      decorationBox = { inner ->
+        Box {
+          if (value.isBlank()) Text(placeholder, color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = .58f))
+          inner()
+        }
+      },
+    )
+  }
+}
+
+@Composable
 private fun PermissionCard(
   usageAccess: Boolean,
-  consent: Boolean,
-  onTerms: () -> Unit,
   onPermission: () -> Unit,
   onRefresh: () -> Unit,
 ) {
@@ -561,10 +664,7 @@ private fun PermissionCard(
     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
       Text("Privacidad y permisos", fontWeight = FontWeight.SemiBold)
       Text("Relevo registra tiempo acumulado y eventos de esta prueba. No lee contenidos ni mensajes.", style = MaterialTheme.typography.bodySmall)
-      TextButton(onClick = onTerms) { Text(if (consent) "Términos aceptados · Leer" else "Leer y aceptar términos") }
-      if (!consent) {
-        Text("Lee y acepta los términos antes de autorizar el acceso.", style = MaterialTheme.typography.bodySmall)
-      } else if (!usageAccess) {
+      if (!usageAccess) {
         OutlinedButton(onClick = onPermission, modifier = Modifier.fillMaxWidth()) { Text("Autorizar acceso de uso") }
         TextButton(onClick = onRefresh, modifier = Modifier.fillMaxWidth()) { Text("Comprobar permiso") }
       } else Text("Acceso de uso autorizado", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.labelLarge)
@@ -670,23 +770,6 @@ private fun AppIcon(packageName: String) {
       Icon(Icons.Rounded.Apps, null, Modifier.padding(9.dp), tint = MaterialTheme.colorScheme.primary)
     }
   }
-}
-
-@Composable
-private fun TermsDialog(onDismiss: () -> Unit, onAccept: () -> Unit) {
-  AlertDialog(
-    onDismissRequest = onDismiss,
-    title = { Text("Uso de datos en la prueba") },
-    text = {
-      Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text("Relevo guardará un código seudónimo, la actividad, cómo comenzar, el lugar declarado, la aplicación elegida, el tiempo acumulado y los momentos de activación, señal y cierre.")
-        Text("No registra mensajes, imágenes, búsquedas, teclas ni contenido de pantalla. Los datos se usan para evaluar el funcionamiento del proyecto y puedes detener el registro al desactivar el relevo.")
-        Text("Si la base protegida está configurada, estos datos se enviarán cifrados durante el tránsito y quedarán asociados únicamente al código seudónimo. La respuesta final sobre qué decidiste hacer es opcional.")
-      }
-    },
-    confirmButton = { Button(onClick = onAccept) { Text("Entiendo y acepto") } },
-    dismissButton = { TextButton(onClick = onDismiss) { Text("Cancelar") } },
-  )
 }
 
 @Composable

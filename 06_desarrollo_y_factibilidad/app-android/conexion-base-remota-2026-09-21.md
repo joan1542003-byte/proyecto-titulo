@@ -71,3 +71,9 @@ La aplicación puede leer y actualizar únicamente sus propias sesiones, condici
 - **Versión anterior:** el esquema existía únicamente como archivo local.
 - **Motivo:** asegurar que el testeo pueda consolidar datos reales sin exponer claves administrativas ni permitir lectura entre participantes.
 - **Verificación:** el asesor de seguridad no informó vulnerabilidades; se eliminó un índice duplicado señalado por el asesor de rendimiento.
+
+### 2026-09-22 — Segunda comprobación de conexión
+
+- **Cambio:** se repitió una autenticación real contra el proyecto `Relevo` después de integrar la versión 1.6.
+- **Resultado:** el proyecto, la URL, la clave publicable, las tablas y RLS responden; Auth continúa devolviendo `anonymous_provider_disabled`.
+- **Decisión:** no se abrieron inserciones públicas ni se incorporó una clave privilegiada para evitar el control de acceso. La conexión quedará operativa inmediatamente después de activar el proveedor anónimo en el panel del proyecto.

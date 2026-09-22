@@ -36,6 +36,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val signalPlayer = SignalPlayer(application)
   private val appsRepository = InstalledAppsRepository(application)
   private val usageSummaryRepository = UsageSummaryRepository(application)
+  private val experiencePreferences = application.getSharedPreferences("relevo_experience", Application.MODE_PRIVATE)
   private val _reminder = MutableStateFlow(store.load())
   val reminder: StateFlow<Reminder> = _reminder.asStateFlow()
 
@@ -58,6 +59,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   init {
     _installedApps.value = appsRepository.launcherApps()
+    if (experiencePreferences.getBoolean("academic_consent_accepted", false) && !_reminder.value.consentAccepted) {
+      updateValue(_reminder.value.copy(consentAccepted = true))
+    }
     if (_reminder.value.participantCode.isBlank()) {
       updateValue(_reminder.value.copy(participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}"))
     }
@@ -89,8 +93,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun updateParticipantCode(value: String) =
     update { copy(participantCode = value.trim().take(24), status = ReminderStatus.DRAFT) }
 
-  fun updateConsent(accepted: Boolean) =
+  fun updateConsent(accepted: Boolean) {
+    experiencePreferences.edit().putBoolean("academic_consent_accepted", accepted).apply()
     update { copy(consentAccepted = accepted, status = ReminderStatus.DRAFT) }
+  }
 
   fun applyPreset(activity: String, firstStep: String, place: String) =
     update { copy(activity = activity, howToStart = firstStep, place = place, status = ReminderStatus.DRAFT) }
@@ -208,7 +214,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     signalPlayer.stop()
     store.clear()
-    _reminder.value = Reminder(participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}")
+    _reminder.value = Reminder(
+      participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}",
+      consentAccepted = experiencePreferences.getBoolean("academic_consent_accepted", false),
+    )
     _remainingSeconds.value = 0
   }
 

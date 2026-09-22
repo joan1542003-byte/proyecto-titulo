@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.5 de prueba
+**Versión:** 1.6 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,7 +12,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.5-2026-09-22.apk](releases/relevo-android-1.5-2026-09-22.apk)
+**APK vigente:** [relevo-android-1.6-2026-09-22.apk](releases/relevo-android-1.6-2026-09-22.apk)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -34,6 +34,8 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 14. responder opcionalmente qué decidió hacer después de la señal;
 15. contar cuántas veces se eligió cada actividad;
 16. conservar sesiones y eventos sin conexión y enviarlos a Supabase cuando la base está configurada.
+17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
+18. enseñar el recorrido mediante cuatro escenas ilustradas: elegir, configurar, situar y decidir.
 
 ## Límites
 
@@ -76,6 +78,16 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Consentimiento inicial y tutorial ilustrado
+
+- **Cambio:** el consentimiento académico aparece antes del tutorial, exige una aceptación explícita y persiste durante los usos siguientes.
+- **Versión anterior:** los términos se aceptaban dentro de cada configuración y competían con el permiso técnico de Android.
+- **Motivo:** separar la decisión de participar de la autorización del sistema operativo y evitar cualquier registro previo al consentimiento.
+- **Cambio visual:** cada etapa del tutorial incorpora una ilustración propia y la configuración reemplaza campos y chips predeterminados por componentes de Relevo.
+- **Versión anterior:** el tutorial utilizaba iconos aislados y la configuración mantenía patrones visuales genéricos.
+- **Motivo:** enseñar acciones reales, mantener continuidad narrativa y elevar la identidad del producto.
+- **Alcance:** antes de una prueba formal todavía debe añadirse el contacto del responsable y aprobarse el texto definitivo de consentimiento.
 
 ### 2026-09-22 — Introducción progresiva y navegación propia
 

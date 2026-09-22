@@ -67,6 +67,8 @@ La aplicación utiliza Jetpack Compose como tecnología, pero no adopta Material
 
 La revisión de movimiento consideró las guías de [animación de Jetpack Compose](https://developer.android.com/develop/ui/compose/animation/introduction) y [Motion de Apple](https://developer.apple.com/design/human-interface-guidelines/motion): animar relaciones y cambios, evitar movimiento gratuito y conservar alternativas accesibles. Los Apple Design Awards se observaron como referencia de integración entre interacción, accesibilidad y acabado, no para reproducir una apariencia de iOS.
 
+La revisión de septiembre también consideró recorridos publicados recopilados por [Mobbin](https://mobbin.com/), los [Apple Design Awards 2025](https://developer.apple.com/design/awards/2025/) y la selección [Best of Google Play 2025](https://blog.google/products-and-platforms/platforms/google-play/best-apps-games-2025/). Se extrajeron tres regularidades aplicables: una idea principal por escena, ilustración coherente como apoyo instructivo y continuidad de movimiento entre estados. No se trasladaron composiciones ni identidades de productos específicos.
+
 ## Criterios de calidad
 
 La interfaz se considera lista para una prueba funcional cuando:
@@ -101,3 +103,12 @@ La interfaz se considera lista para una prueba funcional cuando:
 - **Qué cambió:** el aprendizaje inicial se dividió en cuatro escenas visibles solo durante el primer inicio, y la barra inferior pasó a ser un componente propio.
 - **Cómo era antes:** una pantalla extensa reunía toda la explicación y la navegación utilizaba un componente visual predeterminado.
 - **Por qué se decidió:** disminuir carga de lectura, mantener una idea por pantalla y construir una identidad de interacción consistente sin perder reconocimiento.
+
+### 2026-09-22 — Tutorial visual y consentimiento
+
+- **Qué cambió:** se incorporaron cuatro ilustraciones coordinadas que muestran una actividad elegida, la condición de uso, la ubicación del dispositivo y la respuesta a la señal.
+- **Cómo era antes:** cada escena dependía de un icono dentro de una superficie vacía.
+- **Por qué se decidió:** una instrucción visual debe mostrar la relación entre persona, teléfono, objeto y actividad, no limitarse a decorar el texto.
+- **Qué cambió:** el consentimiento utiliza una pantalla propia de alto contraste antes del tutorial; la decisión permanece separada del permiso de acceso de Android.
+- **Cómo era antes:** términos y permiso técnico aparecían juntos durante la configuración.
+- **Por qué se decidió:** distinguir consentimiento de autorización técnica y asegurar que no se cree una sesión antes de aceptar el uso académico de datos.
