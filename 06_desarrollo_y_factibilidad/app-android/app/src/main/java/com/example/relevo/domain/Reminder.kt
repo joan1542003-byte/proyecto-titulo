@@ -15,7 +15,7 @@ data class Reminder(
   val place: String = "",
   val targetPackage: String = "",
   val targetAppLabel: String = "",
-  val requiredUsageSeconds: Int = 60,
+  val requiredUsageSeconds: Int = 900,
   val observedUsageSeconds: Int = 0,
   val participantCode: String = "",
   val consentAccepted: Boolean = false,

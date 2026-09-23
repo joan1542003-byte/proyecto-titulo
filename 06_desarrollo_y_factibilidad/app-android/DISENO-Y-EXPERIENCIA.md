@@ -1,6 +1,6 @@
 # Diseño de la experiencia Android de Relevo
 
-**Estado:** versión 2.0, revisión visual y funcional del 22 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios.
+**Estado:** versión 2.1, revisión visual y funcional del 22 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios.
 
 ## Qué debe sentirse al usarla
 
@@ -17,11 +17,11 @@ La revisión de [Dribbble](https://dribbble.com/tags/best-app-design) sirvió co
 | Área | Decisión | Motivo y comprobación pendiente |
 | --- | --- | --- |
 | Inicio | Cuatro actividades reconocibles por imagen, una opción para escribir otra y datos de uso por debajo. | Los accesos rápidos reducen escritura sin obligar a aceptar una actividad predeterminada. Se debe comprobar si la fotografía facilita reconocer la acción o distrae. |
-| Configuración | Actividad y forma de empezar antes de app y tiempo; botón de activación fijo al pie que explica qué falta si está inactivo. | Primero se define qué quiere hacer la persona, luego cuándo necesita la señal. El botón permanece disponible al desplazarse sin tapar los campos. |
+| Configuración | Actividad seleccionada, app y tiempo aparecen primero; el inicio concreto y el lugar del parlante siguen editables más abajo. El botón de activación explica qué falta si está inactivo. | La persona decide primero qué hará y cuándo quiere el aviso; los detalles no compiten con esa elección, pero se pueden revisar antes de activar. |
 | Espera | Tiempo acumulado visible junto con la app elegida y el lugar del parlante. | Se distingue el avance de la actividad deseada; el conteo no se presenta como objetivo moral. |
 | Señal | La actividad ocupa la mayor jerarquía; el inicio concreto aparece inmediatamente debajo. | La persona puede reconocer lo que quería hacer sin descifrar una gráfica. |
 | Cierre | Pregunta neutral y respuesta opcional. | Evita interpretar la decisión de la persona como éxito o fracaso. |
-| Navegación | Inicio, Actividad y Relevos conservan icono y nombre en una barra flotante visible durante el recorrido principal. | La orientación no depende de recordar iconos. Si se visita otra sección con un relevo activo, aparece un acceso visible para regresar y silenciar la señal. |
+| Navegación | Inicio, Actividad y Relevos conservan icono y nombre en una barra flotante dentro de Inicio. La preparación, espera, señal y cierre tienen navegación contextual. | Las pestañas no compiten con la tarea de preparar o atender una señal. Si Inicio vuelve a mostrarse con una sesión activa, conserva un acceso explícito a ella. |
 | Historial | «Relevos exitosos» exige dos condiciones: señal emitida y respuesta «Comencé la actividad». | Un relevo cancelado o sin respuesta no prueba que la persona comenzó. Es un indicador autodeclarado, no una medición objetiva del comportamiento fuera del teléfono. |
 | Estados vacíos | Actividad y Relevos explican qué aparecerá allí y ofrecen preparar el primer relevo. | Evitan un contador sin contexto o datos inventados; la ilustración abstracta acompaña, pero el texto y el botón contienen la información y la acción. |
 | Movimiento | Transiciones breves entre estados; se omiten cuando Android desactiva las animaciones. | El movimiento aporta continuidad, pero no contiene información indispensable. |
@@ -55,6 +55,16 @@ Dribbble. (s. f.). *Best app design*. https://dribbble.com/tags/best-app-design
 r/iOSProgramming. (2025). *Can you recommend apps with great design?* [Foro de discusión]. Reddit. https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Preparación y movimiento 2.1
+
+- **Cambio:** la actividad seleccionada se muestra como resumen editable; los detalles se abren cuando la persona decide modificarlos. La app se busca por nombre y el tiempo combina opciones rápidas, ajuste de un minuto y deslizador.
+- **Antes:** la preparación mostraba todas las actividades y campos al mismo tiempo, incluso después de elegir una actividad sugerida.
+- **Motivo:** dar prioridad a las dos decisiones que activan el aviso —app y tiempo— sin perder la posibilidad de personalizar la actividad, el primer gesto y el lugar del parlante.
+- **Cambio:** la barra inferior se limita a Inicio; se mantienen transiciones breves y respuesta táctil al seleccionar una actividad.
+- **Antes:** la barra ocupaba espacio y seguía marcando «Inicio» durante la preparación.
+- **Motivo:** evitar una indicación de ubicación incorrecta y recuperar espacio para el contenido.
+- **Límite:** la barra es translúcida, pero todavía no aplica desenfoque real del fondo. La revisión se realizó en emulador; falta prueba de comprensión, TalkBack y dispositivo físico.
 
 ### 2026-09-22 — Actividades visuales y navegación 2.0
 

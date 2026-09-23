@@ -14,7 +14,7 @@ class ReminderStore(context: Context) {
       place = preferences.getString("place", "").orEmpty(),
       targetPackage = preferences.getString("target_package", "").orEmpty(),
       targetAppLabel = preferences.getString("target_app_label", "").orEmpty(),
-      requiredUsageSeconds = preferences.getInt("required_usage_seconds", 60),
+      requiredUsageSeconds = preferences.getInt("required_usage_seconds", 900),
       observedUsageSeconds = preferences.getInt("observed_usage_seconds", 0),
       participantCode = preferences.getString("participant_code", "").orEmpty(),
       consentAccepted = preferences.getBoolean("consent_accepted", false),

@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 2.0 de prueba
+**Versión:** 2.1 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,15 +12,15 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-2.0-2026-09-22.apk](releases/relevo-android-2.0-2026-09-22.apk)
+**APK vigente:** [relevo-android-2.1-2026-09-22.apk](releases/relevo-android-2.1-2026-09-22.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.0-2026-09-22.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.1-2026-09-22.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
-**Capturas de revisión:** [interfaz 2.0](capturas/interfaz-2.0/README.md)
+**Capturas de revisión:** [interfaz 2.1](capturas/interfaz-2.1/README.md)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -91,6 +91,13 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Preparación 2.1
+
+- **Cambio:** la actividad elegida queda resumida y editable, el selector de apps permite buscar por nombre y el tiempo se ajusta con accesos rápidos, botones o deslizador continuo; la barra inferior aparece solo en Inicio. En instalaciones nuevas, el tiempo inicial es de 15 minutos y puede modificarse.
+- **Antes:** todas las actividades y los campos estaban visibles después de elegir, y la barra seguía marcando Inicio durante la preparación.
+- **Motivo:** reducir pasos y ruido sin quitar control sobre el aviso. Los cambios de actividad, app y tiempo tienen transiciones breves, no animaciones decorativas continuas.
+- **Alcance:** compilación y revisión en emulador; aún no equivale a validación con usuarios ni a Liquid Glass nativo de iOS.
 
 ### 2026-09-22 — Interfaz 2.0
 
