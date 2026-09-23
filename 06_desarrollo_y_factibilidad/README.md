@@ -29,6 +29,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Compra económica de un objeto sonoro Wi-Fi](recomendacion-compra-sonido-wifi-chile-2026-09-23.md): compara costo puesto en Chile, discrepancias de publicaciones y requisitos antes de elegir Atom Echo u otra opción.
 - [Comparación BLE, Wi-Fi y Supabase para el objeto](comparacion-ble-wifi-supabase-dispositivo-2026-09-23.md): distingue orden local y remota, confirma que micro:bit no tiene Wi-Fi y evalúa latencia, conexión, seguridad y límites del test.
 - [Exploración de dispositivos sonoros comprables en Chile](exploracion-dispositivos-sonoros-chile-2026-09-23.md): compara kits y objetos programables, precio base, alimentación, alcance y trabajo de integración pendiente.
 - [Compra para el testeo sonoro en Chile](compra-para-testeo-audio-chile-2026-09-23.md): productos con precio y disponibilidad visibles, condición del teléfono y límites antes de comprar.
@@ -57,6 +58,13 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Recomendación de compra con costo real
+
+- **Cambio:** se añadió una comparación centrada en una sola compra económica, con impuestos estimados visibles y la inconsistencia de dos publicaciones internacionales.
+- **Antes:** el índice ofrecía alternativas técnicas y precios base, pero no una regla para evitar confundir precio del componente con costo entregado.
+- **Motivo:** cuidar el presupuesto del test y distinguir un objeto armado de un kit de mesa.
+- **Alcance:** investigación de fuentes comerciales y técnicas; sin compra, integración ni ensayo físico.
 
 ### 2026-09-23 — BLE frente a Wi-Fi y Supabase
 
