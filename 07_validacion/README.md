@@ -1,5 +1,7 @@
 # Validación
 
+**Paquete imprimible para la corrección del 23 de septiembre de 2026:** [documento Word](entrega-23-09-2026/relevo-paquete-testeo-23-09-2026.docx) y [versión editable en Markdown](entrega-23-09-2026/paquete-testeo-relevo.md). Reúne pauta del investigador, indicadores, consentimiento, dos copias de la hoja de evaluación de dos días y pendientes previos al uso con participantes. El consentimiento debe completar contacto y verificaciones de datos antes de entregarse.
+
 **Para la corrección del 23 de septiembre de 2026:** [pauta de testeo del prototipo Android 2.2](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). Estos documentos evalúan la aplicación actual junto con un parlante Bluetooth comprobado. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android 2.2. No se han realizado sesiones con participantes bajo la pauta nueva.
 
 
@@ -66,6 +68,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-22 — Paquete imprimible de la sesión de regreso
+
+- **Cambio:** se enlazaron el DOCX y su fuente Markdown, con pauta, consentimiento y dos hojas idénticas para participantes.
+- **Antes:** la pauta y la ficha estaban separadas y no había un paquete listo para revisar e imprimir.
+- **Motivo:** facilitar la corrección del 23 de septiembre sin confundir instrumentos preparados con pruebas realizadas.
+- **Alcance:** el consentimiento aún requiere completar contacto y verificar la gestión de datos y el equipo físico antes de reclutar.
 
 ### 2026-09-22 — Instrumentos para la corrección del prototipo actual
 
