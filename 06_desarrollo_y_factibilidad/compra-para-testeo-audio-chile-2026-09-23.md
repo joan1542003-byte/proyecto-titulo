@@ -2,6 +2,8 @@
 
 **Consulta:** 23 de septiembre de 2026. **Estado:** recomendación condicionada de compra; no se efectuó compra ni ensayo. **Necesidad:** objeto pequeño, ya fabricado, que permanezca callado durante el uso ordinario del teléfono y emita la señal de Relevo de forma sencilla para la persona. Los precios, stock y entrega cambian; confirmar en el carrito con la comuna de destino antes de pagar.
 
+**Ampliación del mismo día:** la [exploración de más dispositivos](exploracion-dispositivos-sonoros-chile-2026-09-23.md) incorpora micro:bit V2 GO de MCI con pilas y portapilas incluidos, M5Stack StickS3 con batería y altavoz, Atom Echo USB y un kit ESP32 con buzzer. Para una compra local de banco técnico portátil, el paquete GO de MCI es más completo que la placa suelta de Hubot descrita abajo. Esta nota conserva el análisis inicial y sus precios observados.
+
 ## Decisión de compra
 
 **Para el test de la app Android actual, comprar un parlante multimedia solo si el teléfono de prueba permite separar el sonido por aplicación y esa función se ha comprobado.** La opción concreta encontrada es [JBL Go 4 negro, vendido por Paris](https://www.paris.cl/parlante-bluetooth-go-4-negro-755804999.html): la página consultada hoy mostraba **$34.990 CLP**, botón de compra, Bluetooth, tamaño de 9,4 × 7,6 × 4,2 cm, cable USB-C y hasta siete horas de reproducción. Es un parlante terminado y compacto. La separación depende del teléfono, no del modelo JBL: un Android que lo seleccione como salida multimedia puede enviarle también YouTube e Instagram. En ciertos Galaxy, Samsung ofrece *Separate app sound* para elegir una app para el parlante y conservar el audio general en el teléfono ([guía de Samsung](https://www.samsung.com/uk/support/mobile-devices/useful-audio-settings-on-the-galaxy-phone-including-separate-app-sound/)). Hay que verificar en el modelo real que Relevo aparezca entre las apps seleccionables y que ambas rutas funcionen antes de compra o reclutamiento.
@@ -33,6 +35,13 @@ El [kit de inicio micro:bit de Hubot](https://hubot.cl/producto/kit-inicio-micro
 **Paso que falta para cerrar la compra:** conocer el modelo y versión Android del teléfono que usará Relevo. También hay que decidir si se evaluará la app actual con parlante multimedia o la asociación con un objeto BLE controlado; son pruebas distintas. La facilidad del usuario requiere observar la primera conexión y la reconexión, no solo que el investigador logre emparejar el dispositivo.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Ampliación de alternativas
+
+- **Cambio:** se enlazó la comparación de cinco productos y se señaló que el kit micro:bit GO de MCI incluye alimentación portátil, a diferencia de la placa suelta inicialmente investigada.
+- **Antes:** esta nota podía leerse como si solo existieran JBL y la placa suelta de Hubot.
+- **Motivo:** ofrecer una compra de prueba más completa y separar stock local de importación.
+- **Alcance y límites:** investigación documental; sin compra ni prueba física.
 
 ### 2026-09-23 — Compatibilidad Samsung por modelo
 
