@@ -32,6 +32,8 @@ La propuesta puede acompañar la repetición de una decisión, pero **recordar u
 
 **Tono de acompañamiento:** reconocer la agencia y un paso concreto sin convertir la respuesta en una nota. Por ejemplo: «Elegiste volver a caminar. ¿Sigue siendo tu plan para esta semana?» o «El aviso quedó silenciado. Puedes revisar cuándo quieres que aparezca». Las propuestas de «tres semanas de racha» y «usaste todo tu tiempo de Instagram» contradicen RU-13 y la memoria vigente: suponen cumplimiento, comparación o una cuota saludable que Relevo no puede justificar. Cualquier cambio en esa dirección exige una decisión explícita, una pregunta de investigación y contraste con personas; no queda aprobado por esta síntesis.
 
+**Recordatorio de continuidad propuesto:** si la persona acepta avisos de seguimiento, ofrecer una invitación ocasional a revisar un ciclo inactivo: «¿Siguen las zapatillas donde quieres empezar? Puedes cambiar el lugar o dejar Relevo apagado». Debe existir control de frecuencia y apagado, sin inferir que no abrir la app fue un fallo. Probar primero si ese aviso ayuda a recuperar contexto o añade intrusión; ninguna entrevista evaluó esta función.
+
 ## Criterios escritos para la experiencia actual
 
 Estas notas orientan una auditoría de la interfaz 2.3; no certifican defectos visuales sin inspección en teléfonos concretos.

@@ -17,7 +17,7 @@ Esta formulación se apoya en la [declaración histórica de IA de la memoria v1
 | Investigación y redacción | Los archivos históricos declaran apoyo en búsqueda dirigida, consistencia y corrección editorial. | La memoria vigente, perfiles situacionales y criterios deben conservar evidencia, procedencia y revisión del autor. | No hay registro exhaustivo de prompts y respuestas de todas las conversaciones. No cuantificar horas ahorradas ni atribuir mejoras causales sin datos. |
 | Revisión del 23 de septiembre | La petición del autor fue revisar el repositorio central y desarrollar únicamente la parte escrita de sus anotaciones. La IA ordenó notas, contrastó documentación y fuentes y redactó borradores. | Las anotaciones y el alcance son del autor; cualquier adopción en el producto o en la memoria queda sujeto a su revisión y a pruebas. | Esta iteración no implementa la app ni aporta resultados con participantes. |
 
-La mejora que puede sostenerse documentalmente es **mayor amplitud y velocidad de exploración de variantes y mayor capacidad de dejar rastros de descarte y corrección**. No puede afirmarse que la IA haya mejorado la calidad de uso de Relevo: esa afirmación exigiría un diseño comparativo y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
+Lo que puede sostenerse documentalmente es que la IA permitió **producir variantes y dejar rastros de descarte y corrección**. El repositorio no mide ahorro de tiempo ni permite afirmar que la IA mejoró la calidad de uso de Relevo: eso exigiría comparación y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
 
 ## Registro de prompts existentes
 
@@ -26,6 +26,8 @@ La mejora que puede sostenerse documentalmente es **mayor amplitud y velocidad d
 | [Estados 07–14](../05_propuesta_phygital/wireframes-referencia-4k/registro-laminas-07-14.md#prompt-base-común) | Base redactada en español, más instrucciones específicas por lámina; algunas solicitudes están resumidas. | Producir láminas trazables para Figma; B2a y B2b se corrigieron tras auditoría. | El registro documenta selección y descarte de salidas; no atribuir a IA la aprobación final. |
 | [Estados 15–24](../05_propuesta_phygital/wireframes-referencia-4k/registro-laminas-15-24.md#prompt-común) | Prompt base literal en inglés y especificaciones de C1, C2, D1 y D2. | Visualizar armado, espera, señal y respuestas; D1 recibió corrección focalizada. | La cobertura y las restricciones proceden de memoria y contrato visual; la generación ejecutó una propuesta. |
 | [Imágenes conceptuales históricas](../99_archivo/fuentes-locales/semestre-2/proceso/visualizacion-y-entrega/procedencia-imagenes-conceptuales.md#contenido-migrado) | Síntesis por imagen; no prompt literal íntegro. | Ilustrar contextos y arquitectura del Encargo 16. | No reutilizar forma, paleta o funciones antiguas como dirección actual sin contraste con el [sistema de marca vigente](../10_recursos_visuales/14_sistema-de-marca-vigente.md). |
+
+El prompt original de las siete fotografías de actividades predefinidas del prototipo Android 2.3 **no se localizó** en los documentos vigentes consultados. Su apariencia no permite reconstruirlo fielmente. Antes de generar nuevas imágenes, buscar el registro original fuera del repositorio o documentar la nueva instrucción como una iteración distinta, con su fecha, herramienta y resultado.
 
 ## Ficha obligatoria para futuras producciones con IA
 
