@@ -2,6 +2,8 @@
 
 **Revisión:** 23 de septiembre de 2026. Investigación documental y de mercado, sin compra ni prueba física. Precios en CLP observados sin ingresar una comuna ni llegar al pago; el total exigible puede cambiar.
 
+**Actualización sobre portabilidad:** si debe ser recargable y durar una jornada sin cable, esta recomendación de Atom Echo solo cubre el **núcleo de prueba**. Véase el [análisis de energía y autonomía](energia-autonomia-atom-echo-2026-09-23.md): una solución de 200 mAh exige modificar un pin y no permite prometer horas suficientes; el tamaño final debe incluir batería y cargador.
+
 ## Decisión para una sola unidad
 
 **Candidato de mejor relación entre formato, función y precio: M5Stack Atom Echo C008-C.** Integra carcasa, Wi-Fi de 2,4 GHz, BLE y altavoz en 24 × 24 × 17 mm. La [ficha oficial](https://docs.m5stack.com/en/atom/atomecho) permite programarlo para recibir una orden y reproducir un tono local. No incluye batería: requiere alimentación USB-C permanente o una batería externa USB. El altavoz pequeño sirve para una señal breve en una habitación; su volumen y agrado para participantes aún deben medirse.

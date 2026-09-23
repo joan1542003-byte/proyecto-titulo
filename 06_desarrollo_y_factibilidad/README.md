@@ -29,6 +29,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Energía, autonomía y viabilidad portátil del Atom Echo](energia-autonomia-atom-echo-2026-09-23.md): detalla alimentación USB, incompatibilidad directa de la base A151, cálculo ilustrativo de autonomía y límites para un producto final compacto.
 - [Compra económica de un objeto sonoro Wi-Fi](recomendacion-compra-sonido-wifi-chile-2026-09-23.md): compara costo puesto en Chile, discrepancias de publicaciones y requisitos antes de elegir Atom Echo u otra opción.
 - [Comparación BLE, Wi-Fi y Supabase para el objeto](comparacion-ble-wifi-supabase-dispositivo-2026-09-23.md): distingue orden local y remota, confirma que micro:bit no tiene Wi-Fi y evalúa latencia, conexión, seguridad y límites del test.
 - [Exploración de dispositivos sonoros comprables en Chile](exploracion-dispositivos-sonoros-chile-2026-09-23.md): compara kits y objetos programables, precio base, alimentación, alcance y trabajo de integración pendiente.
@@ -58,6 +59,13 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Energía y autonomía del Atom Echo
+
+- **Cambio:** se añadió el análisis de carga, bases oficiales, capacidad y volumen del conjunto completo.
+- **Antes:** el Atom Echo figuraba como candidato compacto sin detallar que la base A151 requiere cortar G33 y que 200 mAh no permiten prometer una jornada.
+- **Motivo:** responder si la compra sirve como objeto recargable de uso prolongado o como producto final.
+- **Alcance:** documentación técnica y cálculo ilustrativo; sin compra ni medición de autonomía.
 
 ### 2026-09-23 — Recomendación de compra con costo real
 
