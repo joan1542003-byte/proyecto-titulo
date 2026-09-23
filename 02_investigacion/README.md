@@ -8,6 +8,7 @@ Construir la base teórica y empírica que permita explicar por qué Relevo debe
 
 - `metodologia-usuarios.md`: protocolo de búsqueda, síntesis y fichas de fuentes utilizadas para escoger el método de análisis de usuarios.
 - [Síntesis de las anotaciones del 23 de septiembre](sintesis-anotaciones-2026-09-23.md): posición del proyecto, usuarios, continuidad, hábitos y criterios escritos para evaluar la interfaz; propuestas, no resultados.
+- [Hábitos, reconocimiento positivo, rachas y premios](habitos-reconocimiento-y-rachas-2026-09-23.md): revisión de estudios, límites de transferencia a Relevo y recomendación para discutir la memoria; no cambia el producto.
 
 ## Orden interno previsto
 
@@ -34,6 +35,13 @@ Las líneas son provisionales. No deben convertirse en capítulos hasta verifica
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Revisión de hábitos y motivación
+
+- **Cambio:** se enlazó la revisión específica de formación de hábitos, reconocimiento, rachas y premios.
+- **Antes:** estos temas figuraban solo de forma breve en la síntesis de anotaciones.
+- **Motivo:** mantener localizable la base teórica pedida por el autor y distinguir investigación de decisión de diseño.
+- **Alcance:** índice documental; no altera memoria, requisitos o prototipo.
 
 ### 2026-09-23 — Síntesis de anotaciones
 

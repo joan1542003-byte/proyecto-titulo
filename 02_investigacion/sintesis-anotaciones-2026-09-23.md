@@ -30,7 +30,7 @@ La propuesta puede acompañar la repetición de una decisión, pero **recordar u
 
 **Regreso tras días sin abrir la app:** mostrar el estado verificable del ciclo y una opción breve para revisar intención, condición y lugar. No suponer desinterés, no felicitar por una ausencia y no rearmar un ciclo vencido sin decisión explícita. La investigación sobre reconfiguración de nudges citada en la [memoria](../08_memoria/memoria-vigente-v4.md) apoya estudiar una invitación a revisar; no demuestra que una notificación insistente sea eficaz en Relevo.
 
-**Tono de acompañamiento:** reconocer la agencia y un paso concreto sin convertir la respuesta en una nota. Por ejemplo: «Elegiste volver a caminar. ¿Sigue siendo tu plan para esta semana?» o «El aviso quedó silenciado. Puedes revisar cuándo quieres que aparezca». Las propuestas de «tres semanas de racha» y «usaste todo tu tiempo de Instagram» contradicen RU-13 y la memoria vigente: suponen cumplimiento, comparación o una cuota saludable que Relevo no puede justificar. Cualquier cambio en esa dirección exige una decisión explícita, una pregunta de investigación y contraste con personas; no queda aprobado por esta síntesis.
+**Tono de acompañamiento:** reconocer la agencia y un paso concreto sin convertir la respuesta en una nota. Por ejemplo: «Elegiste volver a caminar. ¿Sigue siendo tu plan para esta semana?» o «El aviso quedó silenciado. Puedes revisar cuándo quieres que aparezca». La formulación vigente de RU-13 excluye rachas y recompensas, pero esa exclusión debe poder revisarse ante el feedback docente. «Tres semanas de racha» requeriría definir qué conducta se registra y cómo se conoce; «usaste todo tu tiempo de Instagram» supone una cuota saludable que Relevo no puede justificar. La [revisión específica de hábitos, reconocimiento y rachas](habitos-reconocimiento-y-rachas-2026-09-23.md) documenta evidencia a favor y en contra y propone estudiar primero apoyo positivo verificable. La decisión de modificar memoria y requisitos queda abierta.
 
 **Recordatorio de continuidad propuesto:** si la persona acepta avisos de seguimiento, ofrecer una invitación ocasional a revisar un ciclo inactivo: «¿Siguen las zapatillas donde quieres empezar? Puedes cambiar el lugar o dejar Relevo apagado». Debe existir control de frecuencia y apagado, sin inferir que no abrir la app fue un fallo. Probar primero si ese aviso ayuda a recuperar contexto o añade intrusión; ninguna entrevista evaluó esta función.
 
@@ -73,6 +73,13 @@ La guía de Android fija áreas táctiles mínimas de 48 dp y recomienda revisar
 - Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Matiz sobre rachas y reconocimiento
+
+- **Qué cambió:** se distinguió la exclusión vigente de rachas de su evaluación futura y se enlazó la revisión de estudios.
+- **Antes:** el apartado presentaba las rachas solo como contradicción con RU-13 y la memoria, sin desarrollar evidencia favorable y desfavorable.
+- **Por qué:** incorporar el feedback docente y evitar tratar una decisión de diseño revisable como conclusión científica.
+- **Alcance:** ajuste documental; memoria, requisitos y prototipo permanecen como estaban.
 
 ### 2026-09-23 — Creación
 
