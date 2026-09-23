@@ -8,6 +8,8 @@
 
 **Si el teléfono no tiene una separación por app comprobada, no comprar todavía un parlante Bluetooth multimedia como solución de ese requisito.** El código actual solo dirige la pista de Relevo; no controla las otras apps ([análisis de enrutamiento](enrutamiento-audio-parlante-exclusivo-2026-09-23.md)). El JBL sí podría servir para una demostración sonora menos exigente, pero no se debe presentar como objeto reservado para Relevo.
 
+La comprobación es necesaria incluso si el teléfono es Samsung y fue lanzado en los últimos seis años: el [análisis por manuales](enrutamiento-audio-parlante-exclusivo-2026-09-23.md#está-en-todos-los-samsung-lanzados-desde-septiembre-de-2020) registra un Galaxy A03 Core de 2021 cuyos manuales no documentan *Separate app sound*. La guía general de Samsung no es una lista de compatibilidad por modelo.
+
 ## Alternativa física sin compartir el audio multimedia
 
 La [BBC micro:bit V2.2 de Hubot](https://hubot.cl/producto/nueva-microbit-v2-0-sku-684/) figuraba hoy con **existencias y $26.900 CLP**. Es una placa ya fabricada con parlante integrado, botones, Bluetooth y LED rojos. La fundación micro:bit confirma el parlante integrado y el enlace Bluetooth; el [programa de mesa del repositorio](prueba-microbit-ble/README.md) ya recibe una orden `activar` por BLE para emitir sonido y admite silencio local ([características oficiales](https://www.microbit.org/get-started/features/overview/), [UART BLE oficial](https://support.microbit.org/support/solutions/articles/19000062330-using-the-micro-bit-bluetooth-low-energy-uart-serial-over-bluetooth-)). Se alimenta por USB o baterías; la tienda mostraba un [cable USB de datos compatible](https://hubot.cl/producto/cable-usb-a-microusb-30-cm-otg-sku-438f2/) a $1.390 CLP, pero hay que confirmar si ya se dispone de uno. La placa sola no incluye necesariamente alimentación portátil ni una cubierta.
@@ -31,6 +33,13 @@ El [kit de inicio micro:bit de Hubot](https://hubot.cl/producto/kit-inicio-micro
 **Paso que falta para cerrar la compra:** conocer el modelo y versión Android del teléfono que usará Relevo. También hay que decidir si se evaluará la app actual con parlante multimedia o la asociación con un objeto BLE controlado; son pruebas distintas. La facilidad del usuario requiere observar la primera conexión y la reconexión, no solo que el investigador logre emparejar el dispositivo.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Compatibilidad Samsung por modelo
+
+- **Cambio:** se precisó que «Samsung reciente» no basta como criterio de compra y se enlazó el contraste de manuales oficiales.
+- **Antes:** la recomendación exigía verificar el teléfono, pero no aportaba una excepción concreta dentro del período 2020–2026.
+- **Motivo:** impedir que se compre el parlante por una presunta compatibilidad universal.
+- **Alcance y límites:** evidencia documental; falta confirmar el teléfono real del test.
 
 ### 2026-09-23 — Aclaración de alimentación y autonomía de micro:bit
 

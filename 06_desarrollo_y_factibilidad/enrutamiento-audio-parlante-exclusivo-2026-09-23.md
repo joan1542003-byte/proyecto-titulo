@@ -24,6 +24,12 @@ El [prototipo Android vigente](app-android/README.md) ya busca una salida A2DP o
 
 Samsung [continúa explicando el ajuste en su soporte oficial consultado en septiembre de 2026](https://www.samsung.com/us/support/answer/ANS10002549/): *Ajustes → Sonidos y vibración → Sonido de aplicación independiente* (*Separate app sound*), elegir aplicación y dispositivo de audio Bluetooth. Su existencia actual en una guía no certifica disponibilidad en un modelo, región o versión específicos. Para Relevo, comprobar el menú en el Galaxy concreto, seleccionar Relevo como única app enviada al parlante y dejar la salida multimedia general en el teléfono; luego verificar con YouTube/Instagram y la señal real. La configuración solo separa rutas de audio cuando el dispositivo elegido difiere de la salida principal; no certifica que dos apps reproduzcan simultáneamente sin intervención del sistema de audio.
 
+### ¿Está en **todos** los Samsung lanzados desde septiembre de 2020?
+
+**No se puede afirmar eso y la evidencia oficial ofrece una excepción documental.** Se revisaron manuales del Galaxy **A03 Core** (lanzado en diciembre de 2021), una variante Android Go. Sus manuales oficiales para [Android 11](https://downloadcenter.samsung.com/content/UM/202111/20211123132843738/SM-A032F_UM_ASIA_RR_Eng_Rev.1.0_211117.pdf), [Android 12](https://downloadcenter.samsung.com/content/UM/202212/20221209134116129/SM-A032F_UM_ASIA_SS_Eng_Rev.1.0_221110.pdf) y [Android 13](https://downloadcenter.samsung.com/content/UM/202310/20231006114058019/SM-A032F_UM_ASIA_TT_Eng_Rev.1.0_230817.pdf) describen el menú **Sounds and vibration** pero no enumeran *Separate app sound* ni contienen una sección para configurarlo. El [lanzamiento oficial de Samsung](https://news.samsung.com/in/samsung-launches-galaxy-a03-core-in-india-will-strengthen-poweringdigitalindia-initiative) confirma fecha y plataforma Android Go. La [página de soporte de ese modelo](https://www.samsung.com/africa_en/support/model.SM-A032FZBAAFA/) enlaza una FAQ genérica sobre *Separate app sound*, pese a que sus manuales específicos no lo documentan; ese enlace no es una prueba de compatibilidad. La ausencia en tres manuales específicos impide dar este modelo por compatible; sin un A03 Core físico, tampoco se afirma que todas sus variantes de firmware carezcan del ajuste.
+
+La función sí figura expresamente en manuales oficiales de equipos posteriores, por ejemplo [Galaxy S23 FE, manual revisado en 2024](https://images.samsung.com/is/content/samsung/assets/fr/support/warranty/refurbished-devices-information-warranty/s23-fe-sm-s711b-um-eu-uu-eng-rev-1-1-240417.pdf) y [Galaxy Z Fold6, manual de 2024](https://images.samsung.com/is/content/samsung/assets/fr/support/warranty/refurbished-devices-information-warranty/z-fold-6-sm-f956b-ug-eu-uu-eng-rev-1-1-240814.pdf). Esos mismos manuales advierten que algunas funciones dependen del modelo. La página de soporte que Samsung mantiene en 2026 demuestra vigencia de la función en su catálogo, **no cobertura de todos los modelos fabricados entre 2020 y 2026**. Un inventario exhaustivo exigiría enumerar variantes regionales, firmware y versiones de cada equipo; no se ha hecho una verificación física de ese universo. Para la compra del parlante y la investigación de Relevo, el criterio operativo sigue siendo **modelo exacto y prueba real de rutas antes de usar el montaje**.
+
 ## Recomendación según el objetivo de la prueba
 
 Para una **demostración controlada de corto plazo**, un Galaxy compatible con *Separate app sound* puede permitir la escena deseada sin construir otro dispositivo; el investigador debe preparar y comprobar la configuración antes de la sesión. No conviene presentar ese recorrido como facilidad universal de Relevo.
@@ -51,10 +57,21 @@ No hay una prueba física registrada que confirme hoy la separación de audio. L
 - Samsung Newsroom. (2017, 17 de agosto). *All That You Need to Know About Galaxy S8’s Audio Features*. https://news.samsung.com/in/all-that-you-need-to-know-about-galaxy-s8s-audio-features
 - Samsung Newsroom. (2017, 29 de marzo). *Samsung presenta Samsung Galaxy S8: un smartphone sin límites*. https://news.samsung.com/es/samsung-presenta-samsung-galaxy-s8-un-smartphone-sin-limites
 - Samsung Support. (consulta: 2026-09-23). *Sounds, vibrations, and notifications on your Galaxy phone or tablet*. https://www.samsung.com/us/support/answer/ANS10002549/
+- Samsung Newsroom. (2021, 6 de diciembre). *Samsung Launches Galaxy A03 Core in India*. https://news.samsung.com/in/samsung-launches-galaxy-a03-core-in-india-will-strengthen-poweringdigitalindia-initiative
+- Samsung. (2021, 2022, 2023). *Galaxy A03 Core (SM-A032F), user manuals for Android 11–13*. https://www.samsung.com/africa_en/support/model.SM-A032FZBAAFA/
+- Samsung. (2024). *Galaxy S23 FE (SM-S711B), user manual*. https://images.samsung.com/is/content/samsung/assets/fr/support/warranty/refurbished-devices-information-warranty/s23-fe-sm-s711b-um-eu-uu-eng-rev-1-1-240417.pdf
+- Samsung. (2024). *Galaxy Z Fold6 (SM-F956B), user manual*. https://images.samsung.com/is/content/samsung/assets/fr/support/warranty/refurbished-devices-information-warranty/z-fold-6-sm-f956b-ug-eu-uu-eng-rev-1-1-240814.pdf
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Verificación de la afirmación «todos los Samsung de los últimos seis años»
+
+- **Cambio:** se compararon tres manuales oficiales del A03 Core de 2021 con manuales posteriores que sí documentan el ajuste y se explicitó que la guía general de 2026 no prueba cobertura universal.
+- **Antes:** constaba la advertencia de compatibilidad por modelo, pero no un contraejemplo documental dentro de 2020–2026.
+- **Motivo:** evitar que la recomendación de compra dependa de que cualquier Samsung reciente tenga la función.
+- **Alcance y límites:** revisión de documentos, no inventario exhaustivo de modelos, regiones y firmware ni ensayo físico de los teléfonos citados.
 
 ### 2026-09-23 — Fecha de origen y vigencia documentada de Samsung
 
