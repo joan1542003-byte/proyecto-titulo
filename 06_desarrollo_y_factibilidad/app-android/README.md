@@ -53,6 +53,8 @@ Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, im
 
 La señal sonora se inicia solo cuando Android confirma que la ruta de reproducción del audio de Relevo es un parlante Bluetooth multimedia. Continúa mientras el ciclo siga en estado «señal emitida», incluso con la app fuera de pantalla, y cesa al silenciar o cerrar el ciclo. Si no hay una salida Bluetooth apta, se muestra el aviso sin emitir el tono por el teléfono. Si la conexión se pierde durante la reproducción, la app corta el tono. La selección de ruta de Android no demuestra por sí sola exclusividad absoluta en todos los modelos; se necesita una prueba en el teléfono y parlante concretos antes de afirmar ese comportamiento en la entrega.
 
+La comprobación anterior se refiere **solo al tono de Relevo**: no impide que YouTube, Instagram u otra app envíen audio al mismo parlante multimedia. Las opciones para separar esos sonidos y la prueba necesaria están en el [análisis de enrutamiento](../enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
+
 ## Instalación y permiso
 
 1. instalar el APK;
@@ -93,6 +95,13 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Límite de separación de audio
+
+- **Cambio:** se aclaró que la ruta verificada por el código corresponde al tono de Relevo y se enlazó el análisis de otras apps.
+- **Antes:** el límite de exclusividad absoluta estaba indicado, pero no explicaba el caso de YouTube o Instagram.
+- **Motivo:** evitar presentar un parlante multimedia conectado como salida reservada para Relevo.
+- **Alcance:** documentación; sin cambio de código ni prueba física.
 
 ### 2026-09-23 — Preparación por etapas 2.3
 

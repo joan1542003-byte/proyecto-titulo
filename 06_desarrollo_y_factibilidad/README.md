@@ -29,6 +29,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Enrutamiento del audio a un parlante reservado para Relevo](enrutamiento-audio-parlante-exclusivo-2026-09-23.md): distingue la pista propia de la salida de otras apps y compara parlante multimedia, ajuste Samsung y orden BLE; sin ensayo físico todavía.
 - [Plan de desarrollo de la aplicación Android para prueba](plan-app-android-prueba-2026-09-22.md): fija el alcance ejecutable, la arquitectura, el recorrido, los criterios de aceptación y la entrega prevista para el 22 de septiembre de 2026.
 - [Búsqueda de productos terminados disponibles en Chile](busqueda-productos-terminados-chile-2026-09-11.md): contrasta iTag y parlantes compactos con control desde una aplicación propia; recomienda comprar dos muestras iTag y someterlas a una prueba GATT antes de recurrir a una placa de desarrollo.
 - [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas; conserva XIAO como integración posterior si la prueba con productos terminados demuestra que hace falta construir un objeto propio.
@@ -53,6 +54,13 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Enrutamiento exclusivo del sonido
+
+- **Cambio:** se enlazó el análisis de las condiciones necesarias para que solo Relevo emita una señal en el objeto.
+- **Antes:** el índice reunía rutas de desarrollo, pero no distinguía audio multimedia del teléfono y órdenes BLE de control.
+- **Motivo:** hacer localizable la respuesta técnica a la pregunta de uso planteada por el autor.
+- **Alcance:** documentación; ninguna app ni dispositivo fue modificado o probado.
 
 ### 2026-09-21 — Plan de la primera aplicación Android
 

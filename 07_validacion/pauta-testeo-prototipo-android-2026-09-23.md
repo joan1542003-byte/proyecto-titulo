@@ -33,7 +33,7 @@ La evaluación se organiza alrededor de personas, tareas y contexto de uso defin
 
 ## Condiciones que deben quedar resueltas antes de convocar
 
-1. Probar en el teléfono y parlante concretos: conexión, ruta exclusiva prevista para el audio de Relevo, emisión con la app fuera de pantalla, desconexión, silencio y ausencia de señal duplicada. Registrar versión del APK y modelo del parlante. Si falla, **no usar el intento como dato sobre la comprensión de la persona**.
+1. Probar en el teléfono y parlante concretos: conexión, ruta del tono de Relevo, ausencia de audio de otras apps en el parlante mientras suenan YouTube o Instagram en el teléfono, emisión con Relevo fuera de pantalla, desconexión, silencio y ausencia de señal duplicada. Registrar versión del APK, modelos, versión de Android y ajustes de audio. Si falla la separación requerida, **no presentarla como lograda ni usar el intento como dato sobre la comprensión de la persona**. Véase el [análisis de enrutamiento](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
 2. Confirmar el alcance real de la recopilación local y remota, quién accede, cuánto tiempo se conserva, cómo se retira el consentimiento y cómo se eliminan datos. El texto de consentimiento de la app debe coincidir con el documento entregado. Completar correo de contacto del responsable y obtener revisión docente antes de reclutar. El [consentimiento anterior](consentimiento-protocolo-01.md) describe otro montaje y no debe reutilizarse sin adaptación.
 3. Acordar si se registrarán notas solamente. No grabar pantalla, audio, aplicaciones ajenas ni conversaciones privadas por defecto. Cualquier grabación requiere consentimiento específico.
 4. Usar un identificador como `P01`; guardar por separado cualquier dato de contacto. No subir fichas identificables a este repositorio.
@@ -109,6 +109,13 @@ Organización Internacional de Normalización. (2019). *ISO 9241-210:2019. Ergon
 Sauro, J. (2010, 2 de marzo). *If you could only ask one question, use this one*. MeasuringU. https://measuringu.com/single-question/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Verificación de separación de audio
+
+- **Cambio:** la puerta técnica distingue la ruta del tono de Relevo del audio de otras apps y exige probar ambos con el montaje concreto.
+- **Antes:** «ruta exclusiva» podía interpretarse como garantizada por seleccionar el parlante para Relevo.
+- **Motivo:** el parlante multimedia conectado puede recibir audio general del teléfono; la experiencia solicitada requiere comprobación separada.
+- **Alcance:** corrección del instrumento; no se ha ejecutado la prueba ni modificado el prototipo.
 
 - **Cambio:** se creó una pauta para el prototipo Android 2.2 con parlante Bluetooth, indicadores observables, preguntas no inductivas y una ruta de decisión.
 - **Antes:** el Protocolo 01 describía una señal de luz y sonido activada manualmente con otro montaje; no cubría la detección acumulada ni la interfaz actual.
