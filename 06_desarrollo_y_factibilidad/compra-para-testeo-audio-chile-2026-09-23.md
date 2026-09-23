@@ -14,6 +14,10 @@ La [BBC micro:bit V2.2 de Hubot](https://hubot.cl/producto/nueva-microbit-v2-0-s
 
 Esta micro:bit permite una **prueba técnica/manual del objeto** sin que el contenido multimedia del teléfono suene en ella. **No funciona con el APK actual simplemente conectándola:** la app vigente busca una salida de audio A2DP o LE Audio, mientras el programa micro:bit espera una orden BLE. También falta resolver la luz blanca cálida difusa exigida por el protocolo con personas; la matriz de la placa es roja y se limita al banco de prueba. Por eso no es una compra «lista para usar» en el test integrado de la app sin trabajo adicional.
 
+**Energía y sonido de la micro:bit.** La V2/V2.2 incorpora un pequeño altavoz para tonos y melodías; no es un parlante Bluetooth multimedia al que Android envíe YouTube o Instagram. No tiene batería recargable incorporada: funciona por micro-USB o con un portapilas de **dos AAA** ([fundación micro:bit: alimentación](https://support.microbit.org/support/solutions/articles/19000013982-how-do-i-power-my-micro-bit-), [características V2](https://support.microbit.org/support/solutions/articles/19000119052)). El paquete oficial **Single** contiene solo placa y folleto: no incluye portapilas, pilas ni cable ([contenido oficial Single](https://microbit.org/buy/bbc-microbit-single/)). El paquete oficial **Go** sí incluye placa, cable, portapilas y dos AAA ([contenido oficial Go](https://microbit.org/buy/bbc-microbit-go/)). La ficha de la placa suelta de Hubot citada arriba no detalla el contenido de la caja; **no se puede afirmar que incluya pilas o portapilas** sin confirmarlo con la tienda. Para una sesión móvil, presupuestar ambos por separado si se compra esa ficha.
+
+La fundación no da una autonomía única para V2 con el programa de Relevo. La duración depende del tiempo de conexión inalámbrica, brillo de LED, frecuencia del sonido y accesorios; el uso de radio y LED aumenta el gasto ([consejos oficiales para prolongar la batería](https://support.microbit.org/support/solutions/articles/19000087231-prolonging-battery-life)). El dato de «300 mA» en especificaciones es capacidad máxima de alimentación, **no consumo continuo**; no sirve para calcular horas de uso de este montaje. Antes del test con personas, medir la autonomía del firmware y pilas elegidos durante una sesión completa más un margen para reconexiones. Para las pruebas de mesa se puede alimentar por micro-USB.
+
 El [kit de inicio micro:bit de Hubot](https://hubot.cl/producto/kit-inicio-microbit-v2-de-keyestudio-sku-752/) aparecía con existencias a $59.000 CLP e incluye cable, portapilas y muchos componentes de robótica. Para probar solo la señal sonora, la mayoría sobraría. El [portapilas individual compatible](https://hubot.cl/producto/porta-pilas-aaa-x-2-3v-compatible-microbit-sku-644h1/) aparecía **sin existencias** al abrir su ficha hoy, aunque la búsqueda lo mostraba disponible: se toma como válida la ficha abierta, no el resumen de búsqueda.
 
 ## Recomendación práctica según el teléfono
@@ -27,6 +31,13 @@ El [kit de inicio micro:bit de Hubot](https://hubot.cl/producto/kit-inicio-micro
 **Paso que falta para cerrar la compra:** conocer el modelo y versión Android del teléfono que usará Relevo. También hay que decidir si se evaluará la app actual con parlante multimedia o la asociación con un objeto BLE controlado; son pruebas distintas. La facilidad del usuario requiere observar la primera conexión y la reconexión, no solo que el investigador logre emparejar el dispositivo.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Aclaración de alimentación y autonomía de micro:bit
+
+- **Cambio:** se diferenciaron las cajas oficiales Single y Go, el contenido no confirmado de la ficha de Hubot, el altavoz integrado y la ausencia de una cifra de autonomía válida para el programa BLE propuesto.
+- **Antes:** «se alimenta por USB o baterías» no permitía estimar los componentes mínimos de compra y podía confundirse con una batería incorporada.
+- **Motivo:** evitar comprar una placa suelta sin alimentación portátil o prometer una duración que no se ha medido.
+- **Alcance y límites:** documentación del fabricante y del distribuidor; no se abrió el producto ni se midió el consumo.
 
 ### 2026-09-23 — Primera recomendación de compra
 

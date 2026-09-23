@@ -18,6 +18,12 @@ El [prototipo Android vigente](app-android/README.md) ya busca una salida A2DP o
 
 **Importante:** BLE como transporte de una orden corta no es lo mismo que un «parlante LE Audio». Un parlante LE Audio también es una salida multimedia y conserva el problema de separación si Android lo selecciona para el resto del teléfono ([tipos de dispositivos de audio Android](https://developer.android.com/reference/android/media/AudioDeviceInfo)).
 
+## Vigencia y versiones del ajuste Samsung
+
+*Separate app sound* **es una función real de Samsung**: el fabricante la presentó para Galaxy S8/S8+ en 2017 ([Samsung Newsroom, agosto de 2017](https://news.samsung.com/in/all-that-you-need-to-know-about-galaxy-s8s-audio-features)). Estos modelos salieron con **Android 7.0** ([ficha de lanzamiento Samsung](https://news.samsung.com/es/samsung-presenta-samsung-galaxy-s8-un-smartphone-sin-limites)). Esto establece que la función existía **al menos en esos modelos y esa generación de software**; no implica que todos los teléfonos con Android 7.0, ni todos los Samsung posteriores, la ofrezcan. Era anterior a la marca One UI, por lo que tampoco existe una «primera versión de One UI» aplicable a su origen.
+
+Samsung [continúa explicando el ajuste en su soporte oficial consultado en septiembre de 2026](https://www.samsung.com/us/support/answer/ANS10002549/): *Ajustes → Sonidos y vibración → Sonido de aplicación independiente* (*Separate app sound*), elegir aplicación y dispositivo de audio Bluetooth. Su existencia actual en una guía no certifica disponibilidad en un modelo, región o versión específicos. Para Relevo, comprobar el menú en el Galaxy concreto, seleccionar Relevo como única app enviada al parlante y dejar la salida multimedia general en el teléfono; luego verificar con YouTube/Instagram y la señal real. La configuración solo separa rutas de audio cuando el dispositivo elegido difiere de la salida principal; no certifica que dos apps reproduzcan simultáneamente sin intervención del sistema de audio.
+
 ## Recomendación según el objetivo de la prueba
 
 Para una **demostración controlada de corto plazo**, un Galaxy compatible con *Separate app sound* puede permitir la escena deseada sin construir otro dispositivo; el investigador debe preparar y comprobar la configuración antes de la sesión. No conviene presentar ese recorrido como facilidad universal de Relevo.
@@ -42,10 +48,20 @@ No hay una prueba física registrada que confirme hoy la separación de audio. L
 - Android Developers. (s. f.). *Companion device pairing*. https://developer.android.com/develop/connectivity/bluetooth/companion-device-pairing
 - Android Developers. (s. f.). *MediaRouter*. https://developer.android.com/reference/android/media/MediaRouter
 - Samsung. (2021, 25 de mayo). *Useful audio settings on the Galaxy phone including Separate app sound*. https://www.samsung.com/uk/support/mobile-devices/useful-audio-settings-on-the-galaxy-phone-including-separate-app-sound/
+- Samsung Newsroom. (2017, 17 de agosto). *All That You Need to Know About Galaxy S8’s Audio Features*. https://news.samsung.com/in/all-that-you-need-to-know-about-galaxy-s8s-audio-features
+- Samsung Newsroom. (2017, 29 de marzo). *Samsung presenta Samsung Galaxy S8: un smartphone sin límites*. https://news.samsung.com/es/samsung-presenta-samsung-galaxy-s8-un-smartphone-sin-limites
+- Samsung Support. (consulta: 2026-09-23). *Sounds, vibrations, and notifications on your Galaxy phone or tablet*. https://www.samsung.com/us/support/answer/ANS10002549/
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Fecha de origen y vigencia documentada de Samsung
+
+- **Cambio:** se añadieron fuentes primarias de 2017 y la guía de soporte vigente para precisar desde cuándo consta la función y qué no permite inferir sobre compatibilidad universal.
+- **Antes:** se citaba una guía de 2021 sin distinguir la fecha de origen ni el vínculo entre versión Android y modelo Galaxy.
+- **Motivo:** responder a la duda sobre si el ajuste existe todavía y desde qué versiones puede acreditarse.
+- **Alcance y límites:** evidencia documental; no se ha probado el modelo de teléfono del test.
 
 ### 2026-09-23 — Análisis inicial
 
