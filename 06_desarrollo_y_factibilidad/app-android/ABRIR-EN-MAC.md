@@ -22,9 +22,9 @@ Este directorio es un proyecto completo de Android Studio. No es necesario copia
 
 ## Opción alternativa: paquete ZIP
 
-1. Descarga `relevo-android-studio-1.9-2026-09-22.zip` desde la carpeta `releases`.
+1. Descarga `relevo-android-studio-2.0-2026-09-22.zip` desde la carpeta `releases`.
 2. Descomprímelo.
-3. En Android Studio elige **Open** y selecciona la carpeta `Relevo-Android-Studio`.
+3. En Android Studio elige **Open** y selecciona la carpeta `app-android`.
 
 ## Configuración local
 
@@ -56,6 +56,12 @@ El APK resultante queda en `app/build/outputs/apk/debug/app-debug.apk`.
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Paquete 2.0
+
+- **Cambio:** la guía apunta al paquete 2.0 y al nombre de carpeta real que contiene el ZIP actual.
+- **Antes:** se indicaba el paquete 1.9 y la carpeta `Relevo-Android-Studio`.
+- **Motivo:** evitar que la persona abra una versión anterior o busque una carpeta inexistente.
 
 ### 2026-09-22 — Preparación para macOS
 

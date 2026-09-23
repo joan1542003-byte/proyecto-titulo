@@ -216,6 +216,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun completeEvaluation(outcome: String) {
+    historyStore.markOutcome(_reminder.value.sessionId, outcome)
+    _history.value = historyStore.load()
     researchLog.completeSession(_reminder.value, outcome)
     syncRemote()
   }

@@ -73,6 +73,7 @@ import androidx.compose.material.icons.rounded.Insights
 import androidx.compose.material.icons.rounded.LocationOn
 import androidx.compose.material.icons.rounded.NotificationsActive
 import androidx.compose.material.icons.rounded.Timer
+import androidx.compose.material.icons.automirrored.rounded.ArrowForward
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -109,6 +110,17 @@ import com.example.relevo.theme.RelevoGraphite
 import com.example.relevo.theme.RelevoTeal
 
 private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
+private enum class HomeTab { START, ACTIVITY, HISTORY }
+private data class ActivityPreset(val activity: String, val start: String, val place: String, val image: Int)
+private val activityPresets = listOf(
+  ActivityPreset("Caminar", "Ponerme las zapatillas", "Junto a las zapatillas", R.drawable.activity_walk),
+  ActivityPreset("Entrenar", "Preparar una serie", "Junto a las pesas", R.drawable.activity_train),
+  ActivityPreset("Leer", "Abrir el libro", "Junto al libro", R.drawable.activity_read),
+  ActivityPreset("Estudiar", "Abrir mis apuntes", "Junto al escritorio", R.drawable.activity_study),
+  ActivityPreset("Dibujar", "Preparar el cuaderno", "Junto a mis materiales", R.drawable.activity_draw),
+  ActivityPreset("Cocinar", "Reunir los ingredientes", "En la cocina", R.drawable.activity_cook),
+  ActivityPreset("Ordenar", "Despejar una superficie", "En el espacio que quiero ordenar", R.drawable.activity_tidy),
+)
 
 @Composable
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
@@ -120,6 +132,7 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val history by viewModel.history.collectAsState()
   val todayUsage by viewModel.todayUsage.collectAsState()
   val context = LocalContext.current
+  var tab by rememberSaveable { mutableStateOf(HomeTab.START) }
   val introduction = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   var screen by rememberSaveable {
     mutableStateOf(
@@ -134,8 +147,10 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   LaunchedEffect(reminder.status) { screen = screenFor(reminder.status, screen) }
 
   Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
+    Column(Modifier.fillMaxSize()) {
     AnimatedContent(
       targetState = screen,
+      modifier = Modifier.weight(1f),
       transitionSpec = {
         if (animationsEnabled) (fadeIn(tween(350)) + slideInHorizontally(tween(400)) { it / 10 }) togetherWith (fadeOut(tween(180)) + slideOutHorizontally(tween(300)) { -it / 12 })
         else EnterTransition.None togetherWith ExitTransition.None
@@ -159,7 +174,16 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
           screen = Screen.HOME
         },
       )
-      Screen.HOME -> HomeScreen(history, todayUsage, usageAccess, viewModel::refreshDashboard) { screen = Screen.SETUP }
+      Screen.HOME -> HomeScreen(
+        history, todayUsage, usageAccess, tab, viewModel::refreshDashboard,
+        { screen = if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screenFor(reminder.status) else Screen.SETUP },
+        { preset ->
+          if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screen = screenFor(reminder.status)
+          else { viewModel.applyPreset(preset.activity, preset.start, preset.place); screen = Screen.SETUP }
+        },
+        { screen = screenFor(reminder.status, Screen.HOME) },
+        reminder.status,
+      )
       Screen.SETUP -> SetupScreen(
         reminder = reminder,
         apps = apps,
@@ -184,6 +208,17 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
       Screen.DONE -> DoneScreen(reminder) { outcome -> viewModel.completeEvaluation(outcome); viewModel.reset(); screen = Screen.HOME }
     }
     }
+    if (screen != Screen.CONSENT && screen != Screen.ONBOARDING) {
+      FloatingTabBar(tab) { selected ->
+        tab = selected
+        if (screen == Screen.DONE) {
+          viewModel.completeEvaluation("not_answered")
+          viewModel.reset()
+        }
+        screen = Screen.HOME
+      }
+    }
+    }
   }
 }
 
@@ -197,24 +232,36 @@ private fun Brand() {
   Text("Relevo", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
 }
 
-private enum class HomeTab { START, ACTIVITY, HISTORY }
-
 @Composable
 private fun HomeScreen(
   history: List<HistoryEntry>,
   usage: List<AppUsageSummary>,
   usageAccess: Boolean,
+  tab: HomeTab,
   onRefresh: () -> Unit,
   onStart: () -> Unit,
+  onPreset: (ActivityPreset) -> Unit,
+  onResume: () -> Unit,
+  status: ReminderStatus,
 ) {
   val animationsEnabled = rememberAnimationsEnabled()
-  var tab by rememberSaveable { mutableStateOf(HomeTab.START) }
   LaunchedEffect(tab) { if (tab == HomeTab.ACTIVITY) onRefresh() }
   Column(Modifier.fillMaxSize().safeDrawingPadding()) {
-    Row(Modifier.fillMaxWidth().padding(horizontal = 26.dp, vertical = 16.dp), verticalAlignment = Alignment.CenterVertically) {
+    Box(Modifier.fillMaxWidth().padding(horizontal = 26.dp, vertical = 14.dp), contentAlignment = Alignment.Center) {
       Text("relevo", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, letterSpacing = (-.7).sp)
-      Spacer(Modifier.weight(1f))
-      Text("Tu espacio", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+    if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED) {
+      Surface(
+        onClick = onResume,
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 6.dp),
+        shape = RoundedCornerShape(20.dp),
+        color = if (status == ReminderStatus.SIGNALLED) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.primaryContainer,
+      ) {
+        Row(Modifier.padding(15.dp), verticalAlignment = Alignment.CenterVertically) {
+          Text(if (status == ReminderStatus.SIGNALLED) "El parlante está sonando" else "Tienes un relevo activo", Modifier.weight(1f), fontWeight = FontWeight.SemiBold)
+          Icon(Icons.AutoMirrored.Rounded.ArrowForward, "Volver al relevo")
+        }
+      }
     }
     AnimatedContent(
       targetState = tab,
@@ -223,12 +270,11 @@ private fun HomeScreen(
       label = "home_tabs",
     ) { selected ->
       when (selected) {
-        HomeTab.START -> StartDashboard(history, usage, onStart)
+        HomeTab.START -> StartDashboard(history, usage, onStart, onPreset)
         HomeTab.ACTIVITY -> ActivityDashboard(usage, usageAccess, onStart)
         HomeTab.HISTORY -> HistoryDashboard(history, onStart)
       }
     }
-    FloatingTabBar(tab) { tab = it }
   }
 }
 
@@ -240,24 +286,28 @@ private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
     Triple(HomeTab.HISTORY, Icons.Rounded.History, "Relevos"),
   )
   Surface(
-    modifier = Modifier.navigationBarsPadding().padding(horizontal = 20.dp, vertical = 10.dp).fillMaxWidth().border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .12f), RoundedCornerShape(30.dp)),
-    shape = RoundedCornerShape(30.dp),
-    color = MaterialTheme.colorScheme.surface,
+    modifier = Modifier.navigationBarsPadding().padding(horizontal = 18.dp, vertical = 8.dp).fillMaxWidth()
+      .border(1.dp, Color.White.copy(alpha = .9f), RoundedCornerShape(32.dp)),
+    shape = RoundedCornerShape(32.dp),
+    color = Color(0xFFF1F6F3).copy(alpha = .92f),
+    shadowElevation = 10.dp,
   ) {
-    Row(Modifier.padding(6.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+    Row(Modifier.background(Brush.linearGradient(listOf(Color.White.copy(alpha = .45f), Color(0xFFDDECE8).copy(alpha = .25f)))).padding(5.dp), horizontalArrangement = Arrangement.spacedBy(3.dp)) {
       items.forEach { (tab, icon, label) ->
         val active = tab == selected
         val background by androidx.compose.animation.animateColorAsState(
-          if (active) MaterialTheme.colorScheme.primaryContainer else Color.Transparent,
+          if (active) Color.White.copy(alpha = .94f) else Color.Transparent,
           animationSpec = tween(320),
           label = "tab_background",
         )
         Row(
-          Modifier.weight(1f).height(48.dp).clip(RoundedCornerShape(24.dp)).background(background).clickable { onSelect(tab) },
+          Modifier.weight(1f).height(52.dp).clip(RoundedCornerShape(26.dp)).background(background)
+            .border(1.dp, if (active) Color.White else Color.Transparent, RoundedCornerShape(26.dp))
+            .clickable { onSelect(tab) },
           horizontalArrangement = Arrangement.Center,
           verticalAlignment = Alignment.CenterVertically,
         ) {
-          Icon(icon, null, Modifier.size(19.dp), tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+          Icon(icon, null, Modifier.size(20.dp), tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
           Spacer(Modifier.width(5.dp))
           Text(label, style = MaterialTheme.typography.labelSmall, fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium, color = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
         }
@@ -267,15 +317,24 @@ private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
 }
 
 @Composable
-private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, onStart: () -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 26.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, onStart: () -> Unit, onPreset: (ActivityPreset) -> Unit) {
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
     Spacer(Modifier.height(4.dp))
-    Text("Lo que quieres hacer,\nmás cerca.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp, letterSpacing = (-1).sp)
-    Text("Elige una actividad. Relevo te avisará cuando se cumpla el tiempo que decidas pasar en otra app.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
+    Text("¿Qué quieres hacer?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp, letterSpacing = (-1).sp)
+    Text("Elige una actividad y decide cuánto tiempo usarás otra app antes de recibir el aviso.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+      Text("Actividades", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+      InlineAction("Ver todas", onStart)
+    }
+    activityPresets.take(4).chunked(2).forEach { row ->
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        row.forEach { preset -> PresetCard(preset, false, Modifier.weight(1f)) { onPreset(preset) } }
+      }
+    }
     AnimatedGradientAction(onStart)
     Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-      MetricCard("Hoy en apps elegidas", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f))
-      MetricCard("Relevos cerrados", history.size.toString(), Icons.Rounded.History, Modifier.weight(1f))
+      MetricCard("Tiempo hoy en las apps que vinculaste", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f))
+      MetricCard("Relevos exitosos", history.count { it.signalDelivered && it.outcome == "started" }.toString(), Icons.Rounded.History, Modifier.weight(1f))
     }
     if (history.isNotEmpty()) {
       Text("La última vez", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
@@ -300,7 +359,7 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
   val endColor = lerp(Color(0xFF096B60), Color(0xFF238A75), gradientShift)
   Surface(
     onClick = onClick,
-    modifier = Modifier.fillMaxWidth().height(210.dp),
+    modifier = Modifier.fillMaxWidth().height(126.dp),
     shape = RoundedCornerShape(30.dp),
     color = Color.Transparent,
   ) {
@@ -313,14 +372,13 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
         drawCircle(RelevoCoral, radius = 14.dp.toPx(), center = center)
       }
       Column(Modifier.fillMaxSize().padding(23.dp), verticalArrangement = Arrangement.SpaceBetween) {
-        Text("UNA IDEA PARA HOY", color = Color.White.copy(alpha = .8f), style = MaterialTheme.typography.labelSmall, letterSpacing = 1.5.sp)
-        Column(verticalArrangement = Arrangement.spacedBy(9.dp)) {
-          Text("Prepara tu\nrelevo", color = Color.White, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold, lineHeight = 34.sp)
-          Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Elegir actividad", color = Color.White.copy(alpha = .9f), fontWeight = FontWeight.Medium)
-            Spacer(Modifier.width(8.dp))
-            Text("→", color = Color.White, style = MaterialTheme.typography.titleLarge)
+        Spacer(Modifier.height(1.dp))
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Bottom) {
+          Column(Modifier.weight(1f)) {
+            Text("Otra actividad", color = Color.White, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
+            Text("Escribe la tuya", color = Color.White.copy(alpha = .8f))
           }
+          Icon(Icons.AutoMirrored.Rounded.ArrowForward, null, tint = Color.White)
         }
       }
     }
@@ -489,7 +547,7 @@ private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, 
 private fun HistoryDashboard(history: List<HistoryEntry>, onStart: () -> Unit) {
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
     Text("Tus relevos.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
-    Text("Tus actividades y el tiempo que dedicaste a las apps elegidas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+    Text("Tus actividades y el tiempo que pasaste en las apps vinculadas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
     if (history.isEmpty()) EmptyDashboard("Aún no hay relevos", "Los que cierres quedarán aquí para que puedas volver a mirarlos.", onStart)
     else {
       val counts = history.groupingBy { it.activity }.eachCount().entries.sortedByDescending { it.value }
@@ -561,8 +619,20 @@ private fun HistoryCard(entry: HistoryEntry) {
   Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .1f), RoundedCornerShape(20.dp))) {
     Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
       AppIcon(entry.appPackage); Spacer(Modifier.width(14.dp))
-      Column(Modifier.weight(1f)) { Text(entry.activity, fontWeight = FontWeight.SemiBold); Text("${entry.appLabel} · ${formatTime(entry.seconds)}", color = MaterialTheme.colorScheme.onSurfaceVariant) }
-      Icon(Icons.Rounded.CheckCircle, null, tint = MaterialTheme.colorScheme.primary)
+      Column(Modifier.weight(1f)) {
+        Text(entry.activity, fontWeight = FontWeight.SemiBold)
+        Text("${entry.appLabel} · ${formatTime(entry.seconds)}", color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(
+          when {
+            entry.signalDelivered && entry.outcome == "started" -> "Actividad iniciada tras el aviso"
+            entry.signalDelivered -> "Aviso emitido"
+            else -> "Cerrado antes del aviso"
+          },
+          style = MaterialTheme.typography.bodySmall,
+          color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+      }
+      if (entry.signalDelivered && entry.outcome == "started") Icon(Icons.Rounded.CheckCircle, "Actividad iniciada tras la señal", tint = MaterialTheme.colorScheme.primary)
     }
   }
 }
@@ -602,17 +672,11 @@ private fun SetupScreen(
 
       Spacer(Modifier.height(6.dp))
       Text("Puedes partir por aquí", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-      LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        items(listOf(
-          Triple("Caminar", "Ponerme las zapatillas", "Junto a las zapatillas"),
-          Triple("Entrenar", "Preparar una serie", "Junto a las pesas"),
-          Triple("Leer", "Abrir el libro", "Junto al libro"),
-          Triple("Estudiar", "Abrir mis apuntes", "Junto al escritorio"),
-          Triple("Dibujar", "Preparar el cuaderno", "Junto a mis materiales"),
-          Triple("Cocinar", "Reunir los ingredientes", "En la cocina"),
-          Triple("Ordenar", "Despejar una superficie", "En el espacio que quiero ordenar"),
-        )) { preset ->
-          PresetChip(preset.first, reminder.activity == preset.first) { onPreset(preset.first, preset.second, preset.third) }
+      LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        items(activityPresets) { preset ->
+          PresetCard(preset, reminder.activity == preset.activity, Modifier.width(160.dp)) {
+            onPreset(preset.activity, preset.start, preset.place)
+          }
         }
       }
 
@@ -691,19 +755,18 @@ private fun SetupScreen(
 }
 
 @Composable
-private fun PresetChip(label: String, selected: Boolean, onClick: () -> Unit) {
-  val color by androidx.compose.animation.animateColorAsState(
-    if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant,
-    tween(240),
-    label = "preset_color",
-  )
-  Surface(onClick = onClick, color = color, shape = RoundedCornerShape(18.dp)) {
-    Text(
-      label,
-      modifier = Modifier.padding(horizontal = 16.dp, vertical = 11.dp),
-      color = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface,
-      fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal,
-    )
+private fun PresetCard(preset: ActivityPreset, selected: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+  Box(
+    modifier.height(158.dp).clip(RoundedCornerShape(24.dp))
+      .border(2.dp, if (selected) MaterialTheme.colorScheme.primary else Color(0xFFE1E5E1), RoundedCornerShape(24.dp))
+      .clickable(onClick = onClick),
+  ) {
+    Image(painterResource(preset.image), null, Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
+    Box(Modifier.fillMaxWidth().height(62.dp).background(Brush.verticalGradient(listOf(Color.White.copy(alpha = .9f), Color.White.copy(alpha = 0f)))))
+    Row(Modifier.fillMaxWidth().padding(15.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+      Text(preset.activity, fontWeight = FontWeight.SemiBold, color = RelevoGraphite)
+      Icon(Icons.AutoMirrored.Rounded.ArrowForward, null, Modifier.size(16.dp), tint = RelevoGraphite)
+    }
   }
 }
 

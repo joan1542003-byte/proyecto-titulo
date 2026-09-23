@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 1.9 de prueba
+**Versión:** 2.0 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,15 +12,15 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-1.9-2026-09-22.apk](releases/relevo-android-1.9-2026-09-22.apk)
+**APK vigente:** [relevo-android-2.0-2026-09-22.apk](releases/relevo-android-2.0-2026-09-22.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-1.9-2026-09-22.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.0-2026-09-22.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
-**Capturas de revisión:** [interfaz 1.9](capturas/interfaz-1.9/README.md)
+**Capturas de revisión:** [interfaz 2.0](capturas/interfaz-2.0/README.md)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -28,7 +28,7 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 
 1. escribir una actividad y una forma concreta de comenzar;
 2. elegir una aplicación instalada;
-3. partir de un preestablecido o escribir una actividad propia;
+3. partir de una de siete actividades ilustradas o escribir una actividad propia;
 4. definir el tiempo acumulado entre 1 y 60 minutos mediante un deslizador, además de accesos rápidos y una prueba de 15 segundos;
 5. reconocer las aplicaciones por su icono real;
 6. consultar Inicio, Actividad y el historial de relevos;
@@ -40,7 +40,7 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 12. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
 13. desactivar, silenciar y cerrar el ciclo.
 14. responder opcionalmente qué decidió hacer después de la señal;
-15. contar cuántas veces se eligió cada actividad;
+15. contar cuántas veces se eligió cada actividad y distinguir las señales seguidas de un inicio autodeclarado;
 16. conservar sesiones y eventos sin conexión y enviarlos a Supabase cuando la base está configurada.
 17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
 18. enseñar el recorrido mediante cinco escenas ilustradas: elegir, configurar, situar, recibir el aviso y conceder los permisos necesarios.
@@ -91,6 +91,15 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Interfaz 2.0
+
+- **Cambio:** se añadieron siete fotografías de actividad, tarjetas de acceso rápido, marca centrada y navegación flotante persistente en el recorrido principal. Los textos de Inicio se redujeron a instrucciones y datos útiles.
+- **Versión anterior:** preestablecidos de texto, «Tu espacio», «Una idea para hoy» y barra de navegación limitada a Inicio.
+- **Motivo:** facilitar la elección, hacer reconocibles las opciones y mantener accesible el regreso a una señal activa.
+- **Cambio de datos:** el historial conserva identificador de sesión, señal emitida y respuesta final; «Relevos exitosos» requiere señal emitida e inicio declarado por la persona.
+- **Versión anterior:** «Relevos cerrados» contaba también cancelaciones.
+- **Motivo:** evitar una afirmación de éxito que la aplicación no podía sostener.
 
 ### 2026-09-22 — Recorrido visual 1.9
 
