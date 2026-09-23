@@ -2,6 +2,8 @@
 
 Esta carpeta reúne **un documento Word por hoja A4** y su fuente editable en Markdown. La letra de lectura es Arial de 10,5 puntos; los títulos y casillas son mayores. No hay resultados de usuarios: se presenta un prototipo y un diseño de validación para corregir con el docente.
 
+**Descarga conjunta:** [ZIP con los ocho documentos Word](relevo-entrega-23-09-2026-word.zip).
+
 ## Qué llevar a la sesión
 
 | Requisito del encargo | Documento | Estado |
@@ -36,6 +38,7 @@ Organización Internacional de Normalización. (2019). *ISO 9241-210:2019. Ergon
 
 ## Registro de cambios y alcance
 
+- **Descarga conjunta (23-09-2026):** se añadió un ZIP con las ocho hojas Word, sin modificar su contenido, para facilitar la descarga en otro equipo.
 - **Qué se cambió:** se prepararon ocho hojas independientes en Word y Markdown, con mejor jerarquía, letra sans de 10,5 puntos, casillas grandes y versiones coherentes con Android 2.3.
 - **Cómo era antes:** un único Word mezclaba presentación, pauta, consentimiento y dos copias de un registro de dos días; seguía refiriéndose al APK 2.2.
 - **Por qué:** la corrección, el trabajo de quien investiga y la participación requieren documentos distintos y fáciles de encontrar.
