@@ -29,6 +29,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Compra para el testeo sonoro en Chile](compra-para-testeo-audio-chile-2026-09-23.md): productos con precio y disponibilidad visibles, condición del teléfono y límites antes de comprar.
 - [Enrutamiento del audio a un parlante reservado para Relevo](enrutamiento-audio-parlante-exclusivo-2026-09-23.md): distingue la pista propia de la salida de otras apps y compara parlante multimedia, ajuste Samsung y orden BLE; sin ensayo físico todavía.
 - [Plan de desarrollo de la aplicación Android para prueba](plan-app-android-prueba-2026-09-22.md): fija el alcance ejecutable, la arquitectura, el recorrido, los criterios de aceptación y la entrega prevista para el 22 de septiembre de 2026.
 - [Búsqueda de productos terminados disponibles en Chile](busqueda-productos-terminados-chile-2026-09-11.md): contrasta iTag y parlantes compactos con control desde una aplicación propia; recomienda comprar dos muestras iTag y someterlas a una prueba GATT antes de recurrir a una placa de desarrollo.
@@ -54,6 +55,13 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Compra condicionada para el testeo sonoro
+
+- **Cambio:** se enlazó la comparación de JBL Go 4 y micro:bit V2.2 con stock visible en Chile.
+- **Antes:** el índice explicaba arquitecturas y enrutamiento, pero no indicaba qué compra concreta depende del teléfono y del tipo de prueba.
+- **Motivo:** mantener trazable la recomendación económica sin confundir un parlante multimedia con un objeto BLE.
+- **Alcance:** documentación de mercado fechada; no se compró ni probó ningún producto.
 
 ### 2026-09-23 — Enrutamiento exclusivo del sonido
 
