@@ -56,6 +56,19 @@ r/iOSProgramming. (2025). *Can you recommend apps with great design?* [Foro de d
 
 ## Registro de cambios (disclaimer)
 
+### 2026-09-22 — Actividades personalizadas y desenfoque real 2.2
+
+- **Cambio:** una actividad puede conservar nombre, inicio, lugar, icono y color propios para reutilizarse. El color identifica la ficha elegida; el texto sigue transmitiendo la información principal.
+- **Antes:** solo se podía modificar el contenido de una preparación, sin guardar una identidad visual propia de la actividad.
+- **Motivo:** facilitar el reconocimiento de opciones frecuentes sin depender exclusivamente del color.
+- **Cambio:** el encabezado y la navegación de Inicio se superponen al contenido con desenfoque progresivo; las métricas laterales comparten altura.
+- **Antes:** las superficies eran translúcidas pero sin desenfoque real, y las métricas no compartían dimensión.
+- **Motivo:** mantener continuidad espacial, legibilidad y alineación. Se implementó con Haze 1.6.10, compatible con la configuración actual del proyecto; no reproduce literalmente los materiales de iOS.
+- **Cambio:** se retiró la pregunta duplicada del cierre. Tocar una respuesta registra la elección y vuelve a Inicio.
+- **Antes:** el cierre añadía una explicación y un paso más.
+- **Motivo:** respetar una decisión ya expresada. La opción de omitir permanece disponible.
+- **Pendiente de validación:** rendimiento del desenfoque en equipo físico, comprensión de las opciones de respuesta y navegación mediante lector de pantalla.
+
 ### 2026-09-22 — Preparación y movimiento 2.1
 
 - **Cambio:** la actividad seleccionada se muestra como resumen editable; los detalles se abren cuando la persona decide modificarlos. La app se busca por nombre y el tiempo combina opciones rápidas, ajuste de un minuto y deslizador.

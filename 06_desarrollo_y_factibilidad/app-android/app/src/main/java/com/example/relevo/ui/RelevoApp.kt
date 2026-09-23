@@ -22,6 +22,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.animation.AnimatedContent
@@ -76,6 +77,14 @@ import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Remove
 import androidx.compose.material.icons.rounded.Search
+import androidx.compose.material.icons.rounded.DirectionsWalk
+import androidx.compose.material.icons.rounded.FitnessCenter
+import androidx.compose.material.icons.rounded.MenuBook
+import androidx.compose.material.icons.rounded.Brush
+import androidx.compose.material.icons.rounded.MusicNote
+import androidx.compose.material.icons.rounded.SelfImprovement
+import androidx.compose.material.icons.rounded.Restaurant
+import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material.icons.rounded.Apps
 import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.History
@@ -96,6 +105,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.graphics.asImageBitmap
@@ -115,12 +127,19 @@ import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.data.HistoryEntry
+import com.example.relevo.data.CustomActivity
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.monitor.AppUsageSummary
 import cl.udp.relevo.R
 import com.example.relevo.theme.RelevoCoral
 import com.example.relevo.theme.RelevoGraphite
 import com.example.relevo.theme.RelevoTeal
+import java.util.UUID
+import dev.chrisbanes.haze.HazeProgressive
+import dev.chrisbanes.haze.hazeSource
+import dev.chrisbanes.haze.HazeState
+import dev.chrisbanes.haze.HazeStyle
+import dev.chrisbanes.haze.hazeEffect
 
 private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
 private enum class HomeTab { START, ACTIVITY, HISTORY }
@@ -134,6 +153,34 @@ private val activityPresets = listOf(
   ActivityPreset("Cocinar", "Reunir los ingredientes", "En la cocina", R.drawable.activity_cook),
   ActivityPreset("Ordenar", "Despejar una superficie", "En el espacio que quiero ordenar", R.drawable.activity_tidy),
 )
+private val customIcons = listOf("walk", "train", "read", "draw", "music", "pause", "cook", "star")
+private val customColors = listOf(
+  0xFFDDF4EC.toInt(), 0xFFE9E4F8.toInt(), 0xFFFFE8D9.toInt(),
+  0xFFDDEBF9.toInt(), 0xFFF8E3E6.toInt(), 0xFFF1F0D8.toInt(),
+)
+private val customColorNames = listOf("menta", "lila", "durazno", "azul", "rosa", "crema")
+
+private fun customIconLabel(key: String) = when (key) {
+  "walk" -> "caminar"
+  "train" -> "entrenar"
+  "read" -> "leer"
+  "draw" -> "dibujar"
+  "music" -> "música"
+  "pause" -> "pausa"
+  "cook" -> "cocinar"
+  else -> "estrella"
+}
+
+private fun customIcon(key: String) = when (key) {
+  "walk" -> Icons.Rounded.DirectionsWalk
+  "train" -> Icons.Rounded.FitnessCenter
+  "read" -> Icons.Rounded.MenuBook
+  "draw" -> Icons.Rounded.Brush
+  "music" -> Icons.Rounded.MusicNote
+  "pause" -> Icons.Rounded.SelfImprovement
+  "cook" -> Icons.Rounded.Restaurant
+  else -> Icons.Rounded.Star
+}
 
 @Composable
 fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
@@ -144,8 +191,10 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val usageAccess by viewModel.usageAccessGranted.collectAsState()
   val history by viewModel.history.collectAsState()
   val todayUsage by viewModel.todayUsage.collectAsState()
+  val customActivities by viewModel.customActivities.collectAsState()
   val context = LocalContext.current
   var tab by rememberSaveable { mutableStateOf(HomeTab.START) }
+  var createCustomRequested by rememberSaveable { mutableStateOf(false) }
   val introduction = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   var screen by rememberSaveable {
     mutableStateOf(
@@ -160,10 +209,9 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   LaunchedEffect(reminder.status) { screen = screenFor(reminder.status, screen) }
 
   Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
-    Column(Modifier.fillMaxSize()) {
     AnimatedContent(
       targetState = screen,
-      modifier = Modifier.weight(1f),
+      modifier = Modifier.fillMaxSize(),
       transitionSpec = {
         if (animationsEnabled) (fadeIn(tween(350)) + slideInHorizontally(tween(400)) { it / 10 }) togetherWith (fadeOut(tween(180)) + slideOutHorizontally(tween(300)) { -it / 12 })
         else EnterTransition.None togetherWith ExitTransition.None
@@ -188,26 +236,33 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         },
       )
       Screen.HOME -> HomeScreen(
-        history, todayUsage, usageAccess, tab, viewModel::refreshDashboard,
+        history, todayUsage, customActivities, usageAccess, tab, viewModel::refreshDashboard,
         { screen = if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screenFor(reminder.status) else Screen.SETUP },
         { preset ->
           if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screen = screenFor(reminder.status)
           else { viewModel.applyPreset(preset.activity, preset.start, preset.place); screen = Screen.SETUP }
         },
+        { custom -> viewModel.applyPreset(custom.name, custom.firstStep, custom.place); screen = Screen.SETUP },
+        { createCustomRequested = true; screen = Screen.SETUP },
         { screen = screenFor(reminder.status, Screen.HOME) },
         reminder.status,
+        { tab = it },
       )
       Screen.SETUP -> SetupScreen(
         reminder = reminder,
+        customActivities = customActivities,
+        startWithEditor = createCustomRequested,
         apps = apps,
         usageAccess = usageAccess,
-        onBack = { screen = Screen.HOME },
+        onBack = { createCustomRequested = false; screen = Screen.HOME },
         onActivity = viewModel::updateActivity,
         onStart = viewModel::updateHowToStart,
         onPlace = viewModel::updatePlace,
         onApp = viewModel::selectTargetApp,
         onDuration = viewModel::updateRequiredUsage,
         onPreset = viewModel::applyPreset,
+        onSaveCustom = { viewModel.saveCustomActivity(it); createCustomRequested = false },
+        onDeleteCustom = viewModel::deleteCustomActivity,
         onPermission = viewModel::openUsageAccessSettings,
         onRefresh = viewModel::refreshUsageAccess,
         onTest = viewModel::testSignal,
@@ -219,17 +274,6 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
       Screen.ACTIVE -> ActiveScreen(reminder, remaining) { viewModel.disarm(); screen = Screen.DONE }
       Screen.SIGNAL -> SignalScreen(reminder) { viewModel.silence(); screen = Screen.DONE }
       Screen.DONE -> DoneScreen(reminder) { outcome -> viewModel.completeEvaluation(outcome); viewModel.reset(); screen = Screen.HOME }
-    }
-    }
-    if (screen == Screen.HOME) {
-      FloatingTabBar(tab) { selected ->
-        tab = selected
-        if (screen == Screen.DONE) {
-          viewModel.completeEvaluation("not_answered")
-          viewModel.reset()
-        }
-        screen = Screen.HOME
-      }
     }
     }
   }
@@ -249,24 +293,51 @@ private fun Brand() {
 private fun HomeScreen(
   history: List<HistoryEntry>,
   usage: List<AppUsageSummary>,
+  customActivities: List<CustomActivity>,
   usageAccess: Boolean,
   tab: HomeTab,
   onRefresh: () -> Unit,
   onStart: () -> Unit,
   onPreset: (ActivityPreset) -> Unit,
+  onCustom: (CustomActivity) -> Unit,
+  onCreate: () -> Unit,
   onResume: () -> Unit,
   status: ReminderStatus,
+  onSelectTab: (HomeTab) -> Unit,
 ) {
   val animationsEnabled = rememberAnimationsEnabled()
+  val hazeState = remember { HazeState() }
   LaunchedEffect(tab) { if (tab == HomeTab.ACTIVITY) onRefresh() }
-  Column(Modifier.fillMaxSize().safeDrawingPadding()) {
-    Box(Modifier.fillMaxWidth().padding(horizontal = 26.dp, vertical = 14.dp), contentAlignment = Alignment.Center) {
-      Text("relevo", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, letterSpacing = (-.7).sp)
+  Box(Modifier.fillMaxSize()) {
+    AnimatedContent(
+      targetState = tab,
+      modifier = Modifier.fillMaxSize().hazeSource(hazeState),
+      transitionSpec = { if (animationsEnabled) fadeIn(tween(220)) togetherWith fadeOut(tween(160)) else EnterTransition.None togetherWith ExitTransition.None },
+      label = "home_tabs",
+    ) { selected ->
+      when (selected) {
+        HomeTab.START -> StartDashboard(history, usage, customActivities, onStart, onPreset, onCustom, onCreate)
+        HomeTab.ACTIVITY -> ActivityDashboard(usage, usageAccess, onStart)
+        HomeTab.HISTORY -> HistoryDashboard(history, onStart)
+      }
     }
+    Box(Modifier.align(Alignment.TopCenter).fillMaxWidth().height(104.dp)
+      .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8), tints = emptyList(), blurRadius = 20.dp)) {
+        progressive = HazeProgressive.verticalGradient(startIntensity = 1f, endIntensity = 0f)
+      }, contentAlignment = Alignment.TopCenter) {
+      Text("relevo", modifier = Modifier.statusBarsPadding().padding(top = 13.dp), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, letterSpacing = (-.7).sp)
+    }
+    Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().height(144.dp)
+      .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8), tints = emptyList(), blurRadius = 20.dp)) {
+        progressive = HazeProgressive.verticalGradient(startIntensity = 0f, endIntensity = 1f)
+      })
+    FloatingTabBar(tab, onSelectTab, Modifier.align(Alignment.BottomCenter).hazeEffect(
+      hazeState, style = HazeStyle(backgroundColor = Color.White, tints = emptyList(), blurRadius = 24.dp),
+    ))
     if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED) {
       Surface(
         onClick = onResume,
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 6.dp),
+        modifier = Modifier.align(Alignment.TopCenter).fillMaxWidth().padding(start = 24.dp, end = 24.dp, top = 104.dp),
         shape = RoundedCornerShape(20.dp),
         color = if (status == ReminderStatus.SIGNALLED) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.primaryContainer,
       ) {
@@ -276,34 +347,22 @@ private fun HomeScreen(
         }
       }
     }
-    AnimatedContent(
-      targetState = tab,
-      modifier = Modifier.weight(1f),
-      transitionSpec = { if (animationsEnabled) fadeIn(tween(220)) togetherWith fadeOut(tween(160)) else EnterTransition.None togetherWith ExitTransition.None },
-      label = "home_tabs",
-    ) { selected ->
-      when (selected) {
-        HomeTab.START -> StartDashboard(history, usage, onStart, onPreset)
-        HomeTab.ACTIVITY -> ActivityDashboard(usage, usageAccess, onStart)
-        HomeTab.HISTORY -> HistoryDashboard(history, onStart)
-      }
-    }
   }
 }
 
 @Composable
-private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
+private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit, modifier: Modifier = Modifier) {
   val items = listOf(
     Triple(HomeTab.START, Icons.Rounded.Home, "Inicio"),
     Triple(HomeTab.ACTIVITY, Icons.Rounded.Insights, "Actividad"),
     Triple(HomeTab.HISTORY, Icons.Rounded.History, "Relevos"),
   )
   Surface(
-    modifier = Modifier.navigationBarsPadding().padding(horizontal = 18.dp, vertical = 8.dp).fillMaxWidth()
+    modifier = modifier.navigationBarsPadding().padding(horizontal = 18.dp, vertical = 8.dp).fillMaxWidth()
       .border(1.dp, Color.White.copy(alpha = .9f), RoundedCornerShape(32.dp)),
     shape = RoundedCornerShape(32.dp),
-    color = Color(0xFFF1F6F3).copy(alpha = .92f),
-    shadowElevation = 10.dp,
+    color = Color(0xFFF1F6F3).copy(alpha = .68f),
+    shadowElevation = 5.dp,
   ) {
     Row(Modifier.background(Brush.linearGradient(listOf(Color.White.copy(alpha = .45f), Color(0xFFDDECE8).copy(alpha = .25f)))).padding(5.dp), horizontalArrangement = Arrangement.spacedBy(3.dp)) {
       items.forEach { (tab, icon, label) ->
@@ -330,8 +389,8 @@ private fun FloatingTabBar(selected: HomeTab, onSelect: (HomeTab) -> Unit) {
 }
 
 @Composable
-private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, onStart: () -> Unit, onPreset: (ActivityPreset) -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, customActivities: List<CustomActivity>, onStart: () -> Unit, onPreset: (ActivityPreset) -> Unit, onCustom: (CustomActivity) -> Unit, onCreate: () -> Unit) {
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 104.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
     Spacer(Modifier.height(4.dp))
     Text("¿Qué quieres hacer?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp, letterSpacing = (-1).sp)
     Text("Elige una actividad y decide cuánto tiempo usarás otra app antes de recibir el aviso.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
@@ -344,10 +403,16 @@ private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSumm
         row.forEach { preset -> PresetCard(preset, false, Modifier.weight(1f)) { onPreset(preset) } }
       }
     }
-    AnimatedGradientAction(onStart)
+    if (customActivities.isNotEmpty()) {
+      Text("Tus actividades", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+      LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        items(customActivities) { activity -> CustomActivityCard(activity, Modifier.width(200.dp)) { onCustom(activity) } }
+      }
+    }
+    AnimatedGradientAction(onCreate)
     Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-      MetricCard("Tiempo hoy en las apps que vinculaste", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f))
-      MetricCard("Relevos exitosos", history.count { it.signalDelivered && it.outcome == "started" }.toString(), Icons.Rounded.History, Modifier.weight(1f))
+      MetricCard("Tiempo hoy en las apps que vinculaste", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f).height(132.dp))
+      MetricCard("Relevos exitosos", history.count { it.signalDelivered && it.outcome == "started" }.toString(), Icons.Rounded.History, Modifier.weight(1f).height(132.dp))
     }
     if (history.isNotEmpty()) {
       Text("La última vez", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
@@ -536,7 +601,7 @@ private fun PermissionRow(title: String, description: String, granted: Boolean, 
 
 @Composable
 private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, onStart: () -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 104.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
     Text("Tu tiempo,\nen contexto.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
     Text("Aquí aparece únicamente el uso de las apps que elegiste para un relevo.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
     if (!hasAccess) EmptyDashboard("Falta un permiso", "Al preparar tu primer relevo podrás autorizar Tiempo de uso.", onStart)
@@ -558,7 +623,7 @@ private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, 
 
 @Composable
 private fun HistoryDashboard(history: List<HistoryEntry>, onStart: () -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 104.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
     Text("Tus relevos.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
     Text("Tus actividades y el tiempo que pasaste en las apps vinculadas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
     if (history.isEmpty()) EmptyDashboard("Aún no hay relevos", "Los que cierres quedarán aquí para que puedas volver a mirarlos.", onStart)
@@ -601,7 +666,7 @@ private fun EmptyDashboard(title: String, detail: String, onStart: () -> Unit) {
 
 @Composable
 private fun MetricCard(label: String, value: String, icon: androidx.compose.ui.graphics.vector.ImageVector, modifier: Modifier = Modifier) {
-  Box(modifier.animateContentSize().clip(RoundedCornerShape(22.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .1f), RoundedCornerShape(22.dp))) {
+  Box(modifier.clip(RoundedCornerShape(22.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .1f), RoundedCornerShape(22.dp))) {
     Column(Modifier.padding(17.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
       Text(value, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.SemiBold, color = RelevoGraphite)
       Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 17.sp)
@@ -654,6 +719,8 @@ private fun HistoryCard(entry: HistoryEntry) {
 @Composable
 private fun SetupScreen(
   reminder: Reminder,
+  customActivities: List<CustomActivity>,
+  startWithEditor: Boolean,
   apps: List<InstalledApp>,
   usageAccess: Boolean,
   onBack: () -> Unit,
@@ -663,6 +730,8 @@ private fun SetupScreen(
   onApp: (InstalledApp) -> Unit,
   onDuration: (Int) -> Unit,
   onPreset: (String, String, String) -> Unit,
+  onSaveCustom: (CustomActivity) -> Unit,
+  onDeleteCustom: (String) -> Unit,
   onPermission: () -> Unit,
   onRefresh: () -> Unit,
   onTest: () -> Boolean,
@@ -671,7 +740,31 @@ private fun SetupScreen(
   var chooseApp by rememberSaveable { mutableStateOf(false) }
   var choosingActivity by rememberSaveable { mutableStateOf(reminder.activity.isBlank()) }
   var editingDetails by rememberSaveable { mutableStateOf(reminder.activity.isBlank()) }
+  var editingCustom by rememberSaveable { mutableStateOf(startWithEditor) }
+  var editingCustomId by rememberSaveable { mutableStateOf<String?>(null) }
   var testMessage by rememberSaveable { mutableStateOf<String?>(null) }
+  if (editingCustom) {
+    CustomActivityEditor(
+      initial = customActivities.firstOrNull { it.id == editingCustomId },
+      existing = customActivities,
+      onCancel = { editingCustom = false },
+      onSave = {
+        onSaveCustom(it)
+        choosingActivity = false
+        editingDetails = false
+        editingCustom = false
+        editingCustomId = null
+      },
+      onDelete = { id ->
+        onDeleteCustom(id)
+        onActivity(""); onStart(""); onPlace("")
+        choosingActivity = true
+        editingCustom = false
+        editingCustomId = null
+      },
+    )
+    return
+  }
   if (chooseApp) {
     AppPicker(apps, { chooseApp = false }) { onApp(it); chooseApp = false }
     return
@@ -702,11 +795,19 @@ private fun SetupScreen(
               }
             }
           }
-          InlineAction("Escribir otra actividad", {
-            onActivity(""); onStart(""); onPlace("")
-            choosingActivity = false
-            editingDetails = true
-          })
+          if (customActivities.isNotEmpty()) {
+            Text("Tus actividades", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+            LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+              items(customActivities) { custom ->
+                CustomActivityCard(custom, Modifier.width(200.dp)) {
+                  onPreset(custom.name, custom.firstStep, custom.place)
+                  choosingActivity = false
+                  editingDetails = false
+                }
+              }
+            }
+          }
+          InlineAction("Crear una actividad", { editingCustomId = null; editingCustom = true })
         }
       }
 
@@ -717,9 +818,11 @@ private fun SetupScreen(
       ) {
         Column(Modifier.fillMaxWidth().animateContentSize(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
           val preset = activityPresets.firstOrNull { it.activity == reminder.activity }
+          val custom = customActivities.firstOrNull { it.name == reminder.activity }
           Surface(shape = RoundedCornerShape(26.dp), color = Color.White, border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .13f))) {
             Row(Modifier.fillMaxWidth().padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
               if (preset != null) Image(painterResource(preset.image), null, Modifier.size(74.dp).clip(RoundedCornerShape(18.dp)), contentScale = ContentScale.Crop)
+              else if (custom != null) CustomActivitySymbol(custom, Modifier.size(74.dp).clip(RoundedCornerShape(18.dp)))
               else Box(Modifier.size(74.dp).clip(RoundedCornerShape(18.dp)).background(MaterialTheme.colorScheme.primaryContainer), contentAlignment = Alignment.Center) {
                 Icon(Icons.Rounded.Edit, null, tint = MaterialTheme.colorScheme.primary)
               }
@@ -727,10 +830,14 @@ private fun SetupScreen(
                 Text(reminder.activity.ifBlank { "Tu actividad" }, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
                 Text("Lo que quieres comenzar", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
               }
-              InlineAction("Cambiar", { choosingActivity = true })
+              InlineAction(if (custom != null) "Editar" else "Cambiar", {
+                if (custom != null) { editingCustomId = custom.id; editingCustom = true }
+                else choosingActivity = true
+              })
             }
           }
-          if (editingDetails && preset == null) RelevoTextField("Actividad", reminder.activity, "Salir a caminar", onActivity)
+          if (editingDetails && preset == null && custom == null) RelevoTextField("Actividad", reminder.activity, "Salir a caminar", onActivity)
+          if (custom != null) InlineAction("Cambiar actividad", { choosingActivity = true })
         }
       }
 
@@ -900,6 +1007,91 @@ private fun PresetCard(preset: ActivityPreset, selected: Boolean, modifier: Modi
 }
 
 @Composable
+private fun CustomActivitySymbol(activity: CustomActivity, modifier: Modifier = Modifier) {
+  Box(modifier.background(Color(activity.color)), contentAlignment = Alignment.Center) {
+    Icon(customIcon(activity.icon), null, Modifier.size(34.dp), tint = RelevoGraphite)
+  }
+}
+
+@Composable
+private fun CustomActivityCard(activity: CustomActivity, modifier: Modifier = Modifier, onClick: () -> Unit) {
+  val interactions = remember { MutableInteractionSource() }
+  val pressed by interactions.collectIsPressedAsState()
+  val scale by animateFloatAsState(if (pressed && rememberAnimationsEnabled()) .965f else 1f, spring(), label = "custom_activity_press")
+  Box(modifier.height(158.dp).scale(scale).clip(RoundedCornerShape(24.dp))
+    .background(Color(activity.color)).clickable(interactionSource = interactions, indication = null, onClick = onClick)) {
+    Icon(customIcon(activity.icon), null, Modifier.align(Alignment.Center).size(64.dp), tint = RelevoGraphite.copy(alpha = .72f))
+    Row(Modifier.fillMaxWidth().padding(15.dp), horizontalArrangement = Arrangement.SpaceBetween) {
+      Text(activity.name, Modifier.weight(1f), fontWeight = FontWeight.SemiBold, color = RelevoGraphite, maxLines = 2, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+      Icon(Icons.AutoMirrored.Rounded.ArrowForward, null, Modifier.size(17.dp), tint = RelevoGraphite)
+    }
+  }
+}
+
+@Composable
+private fun CustomActivityEditor(
+  initial: CustomActivity?,
+  existing: List<CustomActivity>,
+  onCancel: () -> Unit,
+  onSave: (CustomActivity) -> Unit,
+  onDelete: (String) -> Unit,
+) = Page {
+  var name by rememberSaveable(initial?.id) { mutableStateOf(initial?.name.orEmpty()) }
+  var firstStep by rememberSaveable(initial?.id) { mutableStateOf(initial?.firstStep.orEmpty()) }
+  var place by rememberSaveable(initial?.id) { mutableStateOf(initial?.place.orEmpty()) }
+  var icon by rememberSaveable(initial?.id) { mutableStateOf(initial?.icon ?: customIcons.first()) }
+  var color by rememberSaveable(initial?.id) { mutableStateOf(initial?.color ?: customColors.first()) }
+  var confirmDelete by rememberSaveable(initial?.id) { mutableStateOf(false) }
+  val duplicate = activityPresets.any { it.activity.equals(name.trim(), ignoreCase = true) } ||
+    existing.any { it.id != initial?.id && it.name.equals(name.trim(), ignoreCase = true) }
+  val valid = name.trim().length in 2..60 && firstStep.isNotBlank() && place.isNotBlank() && !duplicate
+  Column(Modifier.fillMaxSize()) {
+    Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+      InlineAction("Volver", onCancel)
+      Text(if (initial == null) "Crea tu actividad" else "Edita tu actividad", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+      Text("Guarda una actividad para volver a elegirla en otro relevo.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      RelevoTextField("Nombre", name, "Por ejemplo, practicar guitarra", { name = it.take(60) })
+      if (duplicate) Text("Ese nombre ya está en uso.", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
+      RelevoTextField("¿Cómo empezarás?", firstStep, "Sacar la guitarra", { firstStep = it.take(120) })
+      RelevoTextField("Ubicación de Relevo", place, "Junto a la guitarra", { place = it.take(120) })
+      Text("Icono", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+      LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        items(customIcons) { option ->
+          val chosen = icon == option
+          Box(Modifier.size(58.dp).clip(RoundedCornerShape(18.dp))
+            .background(if (chosen) Color(color) else MaterialTheme.colorScheme.surfaceVariant)
+            .border(if (chosen) 2.dp else 1.dp, if (chosen) MaterialTheme.colorScheme.primary else Color.Transparent, RoundedCornerShape(18.dp))
+            .semantics { contentDescription = "Icono ${customIconLabel(option)}"; selected = chosen }
+            .clickable { icon = option }, contentAlignment = Alignment.Center) {
+            Icon(customIcon(option), null, Modifier.size(27.dp), tint = RelevoGraphite)
+          }
+        }
+      }
+      Text("Color de fondo", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+      LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        items(customColors) { option ->
+          Box(Modifier.size(52.dp).clip(CircleShape).background(Color(option))
+            .border(if (color == option) 3.dp else 1.dp, if (color == option) RelevoGraphite else Color.Black.copy(alpha = .1f), CircleShape)
+            .semantics { contentDescription = "Color ${customColorNames[customColors.indexOf(option)]}"; selected = color == option }
+            .clickable { color = option }, contentAlignment = Alignment.Center) {
+            if (color == option) Icon(Icons.Rounded.CheckCircle, null, Modifier.size(20.dp), tint = RelevoGraphite)
+          }
+        }
+      }
+      if (initial != null) {
+        InlineAction(if (confirmDelete) "Confirmar eliminación" else "Eliminar actividad", {
+          if (confirmDelete) onDelete(initial.id) else confirmDelete = true
+        })
+      }
+      Spacer(Modifier.height(8.dp))
+    }
+    PrimaryButton("Guardar actividad", {
+      onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), firstStep.trim(), place.trim(), icon, color))
+    }, valid)
+  }
+}
+
+@Composable
 private fun RelevoTextField(label: String, value: String, placeholder: String, onValueChange: (String) -> Unit) {
   Column(verticalArrangement = Arrangement.spacedBy(7.dp)) {
     Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -937,16 +1129,15 @@ private fun TimeChoice(label: String, selected: Boolean, modifier: Modifier = Mo
 }
 
 @Composable
-private fun OutcomeChoice(label: String, selected: Boolean, onClick: () -> Unit) {
+private fun OutcomeChoice(label: String, onClick: () -> Unit) {
   Row(
     Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp))
-      .background(if (selected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant)
-      .border(1.dp, if (selected) MaterialTheme.colorScheme.primary.copy(alpha = .28f) else Color.Transparent, RoundedCornerShape(20.dp))
+      .background(MaterialTheme.colorScheme.surfaceVariant)
       .clickable(onClick = onClick).padding(17.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     Text(label, Modifier.weight(1f), fontWeight = FontWeight.Medium)
-    if (selected) Icon(Icons.Rounded.CheckCircle, null, tint = MaterialTheme.colorScheme.primary)
+    Icon(Icons.AutoMirrored.Rounded.ArrowForward, null, tint = MaterialTheme.colorScheme.primary)
   }
 }
 
@@ -991,7 +1182,7 @@ private fun ActiveScreen(reminder: Reminder, remaining: Int, onStop: () -> Unit)
       }
       Row(verticalAlignment = Alignment.CenterVertically) { AppIcon(reminder.targetPackage); Spacer(Modifier.width(12.dp)); Text("El tiempo se suma en ${reminder.targetAppLabel}.", modifier = Modifier.weight(1f)) }
       Text("Faltan ${formatTime(remaining)}. Si sales de la app elegida, el conteo se pausa.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 21.sp)
-      Summary("Parlante ubicado en", reminder.place)
+      Summary("Ubicación de Relevo", reminder.place)
       Summary("Tu forma de empezar", reminder.howToStart)
     }
     SecondaryButton("Cancelar este relevo", onStop)
@@ -1007,7 +1198,7 @@ private fun SignalScreen(reminder: Reminder, onClose: () -> Unit) = Page {
       Text("Querías hacer esto.", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
       Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
       Summary("Para empezar", reminder.howToStart)
-      Text("Dejaste el parlante en ${reminder.place}.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Summary("Ubicación de Relevo", reminder.place)
     }
     PrimaryButton("Silenciar y continuar", onClose)
   }
@@ -1015,19 +1206,16 @@ private fun SignalScreen(reminder: Reminder, onClose: () -> Unit) = Page {
 
 @Composable
 private fun DoneScreen(reminder: Reminder, onHome: (String) -> Unit) = Page {
-  var outcome by rememberSaveable { mutableStateOf<String?>(null) }
   Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
     Spacer(Modifier.height(4.dp))
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
       Text("¿Qué decidiste?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
       Text("El relevo terminó después de ${formatTime(reminder.observedUsageSeconds)} en ${reminder.targetAppLabel}.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
-      Text("Tu respuesta ayuda a entender si la señal resultó útil. No hay una respuesta correcta.", style = MaterialTheme.typography.bodyMedium)
       listOf("started" to "Comencé la actividad", "later" to "La dejé para después", "changed" to "Cambié de idea").forEach { option ->
-        OutcomeChoice(option.second, outcome == option.first) { outcome = option.first }
+        OutcomeChoice(option.second) { onHome(option.first) }
       }
-      Text("Responder es opcional.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
-    PrimaryButton("Volver al inicio", { onHome(outcome ?: "not_answered") })
+    InlineAction("Omitir y volver al inicio", { onHome("not_answered") })
   }
 }
 

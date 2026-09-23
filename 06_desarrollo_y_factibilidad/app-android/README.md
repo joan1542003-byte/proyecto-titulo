@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 2.1 de prueba
+**Versión:** 2.2 de prueba
 
 **Fecha:** 22 de septiembre de 2026
 
@@ -12,15 +12,15 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 8.0, API 26
 
-**APK vigente:** [relevo-android-2.1-2026-09-22.apk](releases/relevo-android-2.1-2026-09-22.apk)
+**APK vigente:** [relevo-android-2.2-2026-09-22.apk](releases/relevo-android-2.2-2026-09-22.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.1-2026-09-22.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.2-2026-09-22.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
-**Capturas de revisión:** [interfaz 2.1](capturas/interfaz-2.1/README.md)
+**Capturas de revisión:** [interfaz 2.2](capturas/interfaz-2.2/README.md)
 
 La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
 
@@ -91,6 +91,19 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-22 — Actividades propias y continuidad visual 2.2
+
+- **Cambio:** las actividades propias se guardan en el teléfono con nombre, forma de empezar, ubicación, icono y color. Pueden volver a elegirse, editarse y eliminarse.
+- **Antes:** una actividad escrita durante la preparación no se conservaba como opción reutilizable.
+- **Motivo:** reducir la configuración repetida sin imponer las actividades sugeridas. Estos datos permanecen locales; no se incorporaron al registro remoto de sesiones.
+- **Cambio:** Inicio ocupa toda la pantalla, con contenido desplazable detrás del encabezado y la barra flotante y desenfoque progresivo en ambos extremos. Las dos tarjetas de métricas tienen la misma altura.
+- **Antes:** el encabezado y la barra se apoyaban en superficies opacas y las métricas tenían alturas diferentes.
+- **Motivo:** conservar la lectura y el acceso a la navegación sin interrumpir la continuidad del contenido.
+- **Cambio:** la espera y el aviso identifican la «Ubicación de Relevo». Al elegir una respuesta final, esta se registra y se vuelve a Inicio inmediatamente.
+- **Antes:** se hablaba de la ubicación del parlante y el cierre repetía la pregunta.
+- **Motivo:** nombrar el lugar de la señal con claridad y eliminar una confirmación innecesaria.
+- **Límite:** se verificaron compilación, pruebas, análisis estático y funcionamiento visual en emulador. El desenfoque y la lectura accesible aún requieren prueba en teléfonos físicos.
 
 ### 2026-09-22 — Preparación 2.1
 

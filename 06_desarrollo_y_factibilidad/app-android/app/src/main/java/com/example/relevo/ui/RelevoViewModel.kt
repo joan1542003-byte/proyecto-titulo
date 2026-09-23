@@ -9,6 +9,8 @@ import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.HistoryStore
+import com.example.relevo.data.CustomActivity
+import com.example.relevo.data.CustomActivityStore
 import com.example.relevo.data.RemoteSync
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
@@ -33,12 +35,16 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val researchLog = ResearchLogStore(application)
   private val remoteSync = RemoteSync(application, researchLog)
   private val historyStore = HistoryStore(application)
+  private val customActivityStore = CustomActivityStore(application)
   private val signalPlayer = SignalPlayer(application)
   private val appsRepository = InstalledAppsRepository(application)
   private val usageSummaryRepository = UsageSummaryRepository(application)
   private val experiencePreferences = application.getSharedPreferences("relevo_experience", Application.MODE_PRIVATE)
   private val _reminder = MutableStateFlow(store.load())
   val reminder: StateFlow<Reminder> = _reminder.asStateFlow()
+
+  private val _customActivities = MutableStateFlow(customActivityStore.load())
+  val customActivities: StateFlow<List<CustomActivity>> = _customActivities.asStateFlow()
 
   private val _remainingSeconds = MutableStateFlow(0)
   val remainingSeconds: StateFlow<Int> = _remainingSeconds.asStateFlow()
@@ -102,7 +108,20 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun applyPreset(activity: String, firstStep: String, place: String) =
-    update { copy(activity = activity, howToStart = firstStep, place = place, status = ReminderStatus.DRAFT) }
+    update {
+      copy(activity = activity, howToStart = firstStep, place = place,
+        requiredUsageSeconds = if (requiredUsageSeconds < 60) 900 else requiredUsageSeconds,
+        status = ReminderStatus.DRAFT)
+    }
+
+  fun saveCustomActivity(activity: CustomActivity) {
+    _customActivities.value = customActivityStore.upsert(activity)
+    applyPreset(activity.name, activity.firstStep, activity.place)
+  }
+
+  fun deleteCustomActivity(id: String) {
+    _customActivities.value = customActivityStore.delete(id)
+  }
 
   fun selectTargetApp(app: InstalledApp) =
     update {
