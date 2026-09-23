@@ -1,5 +1,7 @@
 # Validación
 
+**Para la corrección del 23 de septiembre de 2026:** [pauta de testeo del prototipo Android 2.2](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). Estos documentos evalúan la aplicación actual junto con un parlante Bluetooth comprobado. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android 2.2. No se han realizado sesiones con participantes bajo la pauta nueva.
+
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
 
@@ -27,7 +29,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 - [Especificación mínima de materiales](especificacion-materiales-fase-a.md): define qué debe comprobarse en la plataforma de ensayo antes de involucrar participantes.
 - [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar conexión, señal, controles, seguridad, incidentes y correcciones.
 
-## Ruta operativa vigente
+## Ruta prevista para el protocolo de luz y sonido
 
 1. Acceder a una micro:bit V2 e instalar el [programa Android–BLE compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md).
 2. Comprobar sin participantes el recorrido Android → Bluetooth de baja energía (BLE) → matriz roja y sonido, junto con la orden `activar`, la reconexión y el silenciamiento local. La matriz solo representa el canal luminoso en este banco técnico.
@@ -64,6 +66,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-22 — Instrumentos para la corrección del prototipo actual
+
+- **Cambio:** se añadieron accesos a la pauta e instrumento individual del APK 2.2 y se separaron de la ruta anterior de luz y sonido.
+- **Antes:** el índice presentaba el Protocolo 01 como única ruta de validación y podía confundirse con la app y el parlante actuales.
+- **Motivo:** mantener la evaluación vinculada al material realmente construido y distinguir lo preparado de lo ejecutado.
+- **Límite:** el ensayo físico, la revisión del consentimiento y la corrección docente continúan pendientes.
 
 ### 2026-09-22 — Registro evaluativo de la aplicación
 
