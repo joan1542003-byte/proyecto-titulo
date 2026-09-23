@@ -143,6 +143,7 @@ import dev.chrisbanes.haze.hazeEffect
 
 private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
 private enum class HomeTab { START, ACTIVITY, HISTORY }
+private enum class SetupStep { ACTIVITY, TIMING, PLACE, REVIEW }
 private data class ActivityPreset(val activity: String, val start: String, val place: String, val image: Int)
 private val activityPresets = listOf(
   ActivityPreset("Caminar", "Ponerme las zapatillas", "Junto a las zapatillas", R.drawable.activity_walk),
@@ -230,9 +231,9 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         usageAccess = usageAccess,
         onUsagePermission = viewModel::openUsageAccessSettings,
         onRefreshUsage = viewModel::refreshUsageAccess,
-        onComplete = {
+        onComplete = { configureFirst ->
           introduction.edit().putBoolean("onboarding_complete", true).apply()
-          screen = Screen.HOME
+          screen = if (configureFirst) Screen.SETUP else Screen.HOME
         },
       )
       Screen.HOME -> HomeScreen(
@@ -242,8 +243,14 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
           if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screen = screenFor(reminder.status)
           else { viewModel.applyPreset(preset.activity, preset.start, preset.place); screen = Screen.SETUP }
         },
-        { custom -> viewModel.applyPreset(custom.name, custom.firstStep, custom.place); screen = Screen.SETUP },
-        { createCustomRequested = true; screen = Screen.SETUP },
+        { custom ->
+          if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screen = screenFor(reminder.status)
+          else { viewModel.applyPreset(custom.name, custom.firstStep, custom.place); screen = Screen.SETUP }
+        },
+        {
+          if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screen = screenFor(reminder.status)
+          else { createCustomRequested = true; screen = Screen.SETUP }
+        },
         { screen = screenFor(reminder.status, Screen.HOME) },
         reminder.status,
         { tab = it },
@@ -321,18 +328,18 @@ private fun HomeScreen(
         HomeTab.HISTORY -> HistoryDashboard(history, onStart)
       }
     }
-    Box(Modifier.align(Alignment.TopCenter).fillMaxWidth().height(104.dp)
-      .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8), tints = emptyList(), blurRadius = 20.dp)) {
+    Box(Modifier.align(Alignment.TopCenter).fillMaxWidth().height(92.dp)
+      .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8).copy(alpha = .12f), tints = emptyList(), blurRadius = 14.dp)) {
         progressive = HazeProgressive.verticalGradient(startIntensity = 1f, endIntensity = 0f)
       }, contentAlignment = Alignment.TopCenter) {
       Text("relevo", modifier = Modifier.statusBarsPadding().padding(top = 13.dp), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, letterSpacing = (-.7).sp)
     }
-    Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().height(144.dp)
-      .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8), tints = emptyList(), blurRadius = 20.dp)) {
+    Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().height(128.dp)
+      .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8).copy(alpha = .12f), tints = emptyList(), blurRadius = 14.dp)) {
         progressive = HazeProgressive.verticalGradient(startIntensity = 0f, endIntensity = 1f)
       })
     FloatingTabBar(tab, onSelectTab, Modifier.align(Alignment.BottomCenter).hazeEffect(
-      hazeState, style = HazeStyle(backgroundColor = Color.White, tints = emptyList(), blurRadius = 24.dp),
+      hazeState, style = HazeStyle(backgroundColor = Color.White.copy(alpha = .22f), tints = emptyList(), blurRadius = 18.dp),
     ))
     if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED) {
       Surface(
@@ -463,7 +470,7 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
   }
 }
 
-private data class OnboardingPage(val image: Int, val title: String, val text: String, val permissions: Boolean = false)
+private data class OnboardingPage(val image: Int?, val title: String, val text: String, val permissions: Boolean = false)
 
 @Composable
 private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit) {
@@ -514,7 +521,7 @@ private fun OnboardingScreen(
   usageAccess: Boolean,
   onUsagePermission: () -> Unit,
   onRefreshUsage: () -> Unit,
-  onComplete: () -> Unit,
+  onComplete: (Boolean) -> Unit,
 ) {
   val animationsEnabled = rememberAnimationsEnabled()
   val context = LocalContext.current
@@ -524,11 +531,11 @@ private fun OnboardingScreen(
     notificationAccess = hasNotificationPermission(context)
   }
   val pages = remember { listOf(
-    OnboardingPage(R.drawable.onboarding_activity, "Elige una actividad", "Escribe qué quieres hacer y una acción sencilla con la que puedas comenzar."),
+    OnboardingPage(R.drawable.onboarding_activity, "Elige una actividad", "Puedes partir de una sugerencia o guardar una actividad propia con una forma sencilla de comenzar."),
     OnboardingPage(R.drawable.onboarding_condition, "Define cuándo avisarte", "Elige una aplicación y un tiempo. El conteo funciona solo mientras el relevo está activo."),
     OnboardingPage(R.drawable.onboarding_place, "Ubica el dispositivo", "Déjalo cerca de aquello que necesitas para comenzar: tus zapatillas, un libro o tus materiales."),
     OnboardingPage(R.drawable.onboarding_signal, "Recibe el aviso", "Al cumplirse el tiempo, Relevo reproduce un sonido en el parlante Bluetooth conectado. Tú decides qué hacer después."),
-    OnboardingPage(R.drawable.onboarding_permissions, "Activa los permisos necesarios", "Relevo necesita ver cuánto tiempo usas la aplicación elegida y enviarte el aviso. No puede leer lo que haces dentro de ella.", permissions = true),
+    OnboardingPage(null, "Activa los permisos necesarios", "Relevo necesita ver cuánto tiempo usas la aplicación elegida y enviarte el aviso. No puede leer lo que haces dentro de ella.", permissions = true),
   ) }
   var page by rememberSaveable { mutableStateOf(0) }
   val item = pages[page]
@@ -550,11 +557,12 @@ private fun OnboardingScreen(
         label = "onboarding_page",
       ) { current ->
         Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
-          Image(
+          if (current.image == null) PermissionIllustration()
+          else Image(
             painter = painterResource(current.image),
             contentDescription = current.title,
             contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxWidth().height(if (current.permissions) 210.dp else 250.dp).clip(RoundedCornerShape(30.dp)),
+            modifier = Modifier.fillMaxWidth().height(250.dp).clip(RoundedCornerShape(30.dp)),
           )
           Text(current.title, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold, lineHeight = 37.sp)
           Text(current.text, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
@@ -575,10 +583,35 @@ private fun OnboardingScreen(
       }
       Spacer(Modifier.height(24.dp))
       PrimaryButton(
-        if (page == pages.lastIndex) "Comenzar" else "Continuar",
-        onClick = { if (page == pages.lastIndex) onComplete() else page += 1 },
+        if (page == pages.lastIndex) "Preparar mi primer relevo" else "Continuar",
+        onClick = { if (page == pages.lastIndex) onComplete(true) else page += 1 },
         enabled = page != pages.lastIndex || usageAccess,
       )
+      if (page == pages.lastIndex) {
+        Spacer(Modifier.height(8.dp))
+        InlineAction("Ir al inicio", { onComplete(false) }, modifier = Modifier.align(Alignment.CenterHorizontally))
+      }
+    }
+  }
+}
+
+@Composable
+private fun PermissionIllustration() {
+  Box(
+    Modifier.fillMaxWidth().height(190.dp).clip(RoundedCornerShape(30.dp))
+      .background(Brush.linearGradient(listOf(Color(0xFFE6F4EF), Color(0xFFF8F4EC)))),
+    contentAlignment = Alignment.Center,
+  ) {
+    Column(Modifier.fillMaxWidth().padding(horizontal = 32.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+      listOf(Icons.Rounded.Timer to "Tiempo de uso", Icons.Rounded.NotificationsActive to "Notificaciones").forEach { (icon, label) ->
+        Surface(shape = RoundedCornerShape(20.dp), color = Color.White.copy(alpha = .88f)) {
+          Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Icon(icon, null, Modifier.size(22.dp), tint = RelevoTeal)
+            Spacer(Modifier.width(14.dp))
+            Text(label, Modifier.weight(1f), fontWeight = FontWeight.SemiBold)
+          }
+        }
+      }
     }
   }
 }
@@ -737,30 +770,29 @@ private fun SetupScreen(
   onTest: () -> Boolean,
   onActivate: () -> Unit,
 ) {
+  var step by rememberSaveable { mutableStateOf(if (reminder.activity.isBlank()) SetupStep.ACTIVITY else SetupStep.TIMING) }
   var chooseApp by rememberSaveable { mutableStateOf(false) }
-  var choosingActivity by rememberSaveable { mutableStateOf(reminder.activity.isBlank()) }
-  var editingDetails by rememberSaveable { mutableStateOf(reminder.activity.isBlank()) }
   var editingCustom by rememberSaveable { mutableStateOf(startWithEditor) }
   var editingCustomId by rememberSaveable { mutableStateOf<String?>(null) }
   var testMessage by rememberSaveable { mutableStateOf<String?>(null) }
+
   if (editingCustom) {
     CustomActivityEditor(
       initial = customActivities.firstOrNull { it.id == editingCustomId },
       existing = customActivities,
-      onCancel = { editingCustom = false },
+      onCancel = { editingCustom = false; editingCustomId = null },
       onSave = {
         onSaveCustom(it)
-        choosingActivity = false
-        editingDetails = false
         editingCustom = false
         editingCustomId = null
+        step = SetupStep.TIMING
       },
       onDelete = { id ->
         onDeleteCustom(id)
         onActivity(""); onStart(""); onPlace("")
-        choosingActivity = true
         editingCustom = false
         editingCustomId = null
+        step = SetupStep.ACTIVITY
       },
     )
     return
@@ -770,194 +802,157 @@ private fun SetupScreen(
     return
   }
 
+  val canContinue = when (step) {
+    SetupStep.ACTIVITY -> reminder.activity.isNotBlank()
+    SetupStep.TIMING -> reminder.targetPackage.isNotBlank() && usageAccess
+    SetupStep.PLACE -> reminder.howToStart.isNotBlank() && reminder.place.isNotBlank()
+    SetupStep.REVIEW -> reminder.hasRequiredContent && usageAccess
+  }
+  val title = when (step) {
+    SetupStep.ACTIVITY -> "¿Qué quieres hacer?"
+    SetupStep.TIMING -> "¿Cuándo quieres el aviso?"
+    SetupStep.PLACE -> "Sitúa tu relevo"
+    SetupStep.REVIEW -> "Revisa tu relevo"
+  }
   Page {
     Column(Modifier.fillMaxSize()) {
-    Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-      Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-        InlineAction("Volver", onBack)
-      }
-      Text("Prepara tu relevo", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-      Text("Elige una actividad, una app y cuándo recibir el aviso.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-
-      AnimatedVisibility(
-        visible = choosingActivity,
-        enter = expandVertically(tween(320)) + fadeIn(tween(260)),
-        exit = shrinkVertically(tween(250)) + fadeOut(tween(150)),
-      ) {
-        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-          Text("¿Qué quieres hacer?", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-          LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            items(activityPresets) { preset ->
-              PresetCard(preset, reminder.activity == preset.activity, Modifier.width(160.dp)) {
-                onPreset(preset.activity, preset.start, preset.place)
-                choosingActivity = false
-                editingDetails = false
-              }
-            }
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+        InlineAction("Volver", {
+          step = when (step) {
+            SetupStep.ACTIVITY -> { onBack(); SetupStep.ACTIVITY }
+            SetupStep.TIMING -> SetupStep.ACTIVITY
+            SetupStep.PLACE -> SetupStep.TIMING
+            SetupStep.REVIEW -> SetupStep.PLACE
           }
-          if (customActivities.isNotEmpty()) {
-            Text("Tus actividades", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-            LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-              items(customActivities) { custom ->
-                CustomActivityCard(custom, Modifier.width(200.dp)) {
-                  onPreset(custom.name, custom.firstStep, custom.place)
-                  choosingActivity = false
-                  editingDetails = false
+        })
+        Text("${step.ordinal + 1} de 4", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      }
+      Spacer(Modifier.height(14.dp))
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+        SetupStep.entries.forEach { part ->
+          val color = if (part.ordinal <= step.ordinal) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline.copy(alpha = .2f)
+          Box(Modifier.weight(1f).height(4.dp).clip(CircleShape).background(color))
+        }
+      }
+      Spacer(Modifier.height(24.dp))
+      Text(title, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold, lineHeight = 37.sp)
+      Spacer(Modifier.height(20.dp))
+      AnimatedContent(
+        targetState = step,
+        modifier = Modifier.weight(1f),
+        transitionSpec = {
+          (fadeIn(tween(260)) + slideInHorizontally(tween(320)) { it / 8 }) togetherWith
+            (fadeOut(tween(130)) + slideOutHorizontally(tween(220)) { -it / 10 })
+        },
+        label = "setup_steps",
+      ) { current ->
+        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+          when (current) {
+            SetupStep.ACTIVITY -> {
+              Text("Elige una opción o guarda una actividad propia.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+              LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                items(activityPresets) { preset ->
+                  PresetCard(preset, reminder.activity == preset.activity, Modifier.width(160.dp)) {
+                    onPreset(preset.activity, preset.start, preset.place)
+                    step = SetupStep.TIMING
+                  }
                 }
               }
+              if (customActivities.isNotEmpty()) {
+                Text("Tus actividades", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                  items(customActivities) { custom ->
+                    CustomActivityCard(custom, Modifier.width(200.dp)) {
+                      onPreset(custom.name, custom.firstStep, custom.place)
+                      step = SetupStep.TIMING
+                    }
+                  }
+                }
+              }
+              InlineAction("Crear una actividad", { editingCustomId = null; editingCustom = true })
             }
-          }
-          InlineAction("Crear una actividad", { editingCustomId = null; editingCustom = true })
-        }
-      }
-
-      AnimatedVisibility(
-        visible = !choosingActivity,
-        enter = expandVertically(tween(350)) + fadeIn(tween(300)),
-        exit = shrinkVertically(tween(230)) + fadeOut(tween(130)),
-      ) {
-        Column(Modifier.fillMaxWidth().animateContentSize(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-          val preset = activityPresets.firstOrNull { it.activity == reminder.activity }
-          val custom = customActivities.firstOrNull { it.name == reminder.activity }
-          Surface(shape = RoundedCornerShape(26.dp), color = Color.White, border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .13f))) {
-            Row(Modifier.fillMaxWidth().padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
-              if (preset != null) Image(painterResource(preset.image), null, Modifier.size(74.dp).clip(RoundedCornerShape(18.dp)), contentScale = ContentScale.Crop)
-              else if (custom != null) CustomActivitySymbol(custom, Modifier.size(74.dp).clip(RoundedCornerShape(18.dp)))
-              else Box(Modifier.size(74.dp).clip(RoundedCornerShape(18.dp)).background(MaterialTheme.colorScheme.primaryContainer), contentAlignment = Alignment.Center) {
-                Icon(Icons.Rounded.Edit, null, tint = MaterialTheme.colorScheme.primary)
+            SetupStep.TIMING -> {
+              Text("El tiempo se acumula solo mientras usas la aplicación que elijas.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+              Row(
+                Modifier.fillMaxWidth().height(60.dp).clip(RoundedCornerShape(20.dp))
+                  .background(MaterialTheme.colorScheme.surfaceVariant).clickable { chooseApp = true }.padding(horizontal = 16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+              ) {
+                if (reminder.targetPackage.isNotBlank()) { AppIcon(reminder.targetPackage); Spacer(Modifier.width(10.dp)) }
+                else Icon(Icons.Rounded.Apps, null)
+                Text(reminder.targetAppLabel.ifBlank { "Elegir una aplicación" }, Modifier.padding(start = 8.dp).weight(1f), fontWeight = FontWeight.Medium)
+                Text(if (reminder.targetPackage.isBlank()) "Elegir" else "Cambiar", color = MaterialTheme.colorScheme.primary)
               }
-              Column(Modifier.weight(1f).padding(start = 13.dp)) {
-                Text(reminder.activity.ifBlank { "Tu actividad" }, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                Text("Lo que quieres comenzar", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+              Surface(shape = RoundedCornerShape(28.dp), color = MaterialTheme.colorScheme.primaryContainer) {
+                Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(13.dp)) {
+                  Text("Avísame después de", color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .8f))
+                  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    RoundTimeButton(Icons.Rounded.Remove, "Restar un minuto", reminder.requiredUsageSeconds > 60) {
+                      onDuration((reminder.requiredUsageSeconds - 60).coerceAtLeast(60))
+                    }
+                    AnimatedContent(reminder.requiredUsageSeconds, modifier = Modifier.weight(1f), label = "duration_value") { seconds ->
+                      Text(formatTime(seconds), Modifier.fillMaxWidth(), style = MaterialTheme.typography.displaySmall,
+                        fontWeight = FontWeight.SemiBold, color = RelevoGraphite, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+                    }
+                    RoundTimeButton(Icons.Rounded.Add, "Sumar un minuto", reminder.requiredUsageSeconds < 3600) {
+                      onDuration((reminder.requiredUsageSeconds + 60).coerceAtMost(3600))
+                    }
+                  }
+                  Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf(300 to "5 min", 900 to "15 min", 1800 to "30 min").forEach { (seconds, label) ->
+                      TimeChoice(label, reminder.requiredUsageSeconds == seconds, Modifier.weight(1f)) { onDuration(seconds) }
+                    }
+                  }
+                  Slider(
+                    value = reminder.requiredUsageSeconds.coerceAtLeast(60) / 60f,
+                    onValueChange = { onDuration((it.toInt().coerceIn(1, 60)) * 60) },
+                    valueRange = 1f..60f,
+                    colors = SliderDefaults.colors(
+                      thumbColor = MaterialTheme.colorScheme.primary,
+                      activeTrackColor = MaterialTheme.colorScheme.primary,
+                      inactiveTrackColor = Color.White.copy(alpha = .85f),
+                    ),
+                  )
+                  Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                    Text("1 min", style = MaterialTheme.typography.labelSmall)
+                    Text("60 min", style = MaterialTheme.typography.labelSmall)
+                  }
+                }
               }
-              InlineAction(if (custom != null) "Editar" else "Cambiar", {
-                if (custom != null) { editingCustomId = custom.id; editingCustom = true }
-                else choosingActivity = true
+              if (!usageAccess) PermissionCard(usageAccess, onPermission, onRefresh)
+              InlineAction("Prueba de 15 s", { onDuration(15) })
+            }
+            SetupStep.PLACE -> {
+              Text("Piensa en una acción pequeña que te ayude a comenzar y deja el parlante cerca de ella.",
+                color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
+              RelevoTextField("¿Cómo empezarás?", reminder.howToStart, "Ponerme las zapatillas", onStart)
+              RelevoTextField("Ubicación de Relevo", reminder.place, "Junto a las zapatillas", onPlace)
+            }
+            SetupStep.REVIEW -> {
+              Text("Comprueba los datos antes de activar. Puedes volver a cualquier paso.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+              DetailRow("Actividad", reminder.activity) { step = SetupStep.ACTIVITY }
+              DetailRow("Aplicación", reminder.targetAppLabel) { step = SetupStep.TIMING }
+              DetailRow("Tiempo acumulado", formatTime(reminder.requiredUsageSeconds)) { step = SetupStep.TIMING }
+              DetailRow("Para empezar", reminder.howToStart) { step = SetupStep.PLACE }
+              DetailRow("Ubicación de Relevo", reminder.place) { step = SetupStep.PLACE }
+              Text("El sonido irá al parlante Bluetooth conectado. Sin él, recibirás solo el aviso visual.",
+                style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 20.sp)
+              InlineAction("Probar sonido", {
+                testMessage = if (onTest()) "El sonido sonará unos segundos." else "No se encontró un parlante Bluetooth conectado."
               })
+              if (testMessage != null) Text(testMessage.orEmpty(), color = MaterialTheme.colorScheme.primary)
             }
           }
-          if (editingDetails && preset == null && custom == null) RelevoTextField("Actividad", reminder.activity, "Salir a caminar", onActivity)
-          if (custom != null) InlineAction("Cambiar actividad", { choosingActivity = true })
+          Spacer(Modifier.height(12.dp))
         }
       }
-
-      Spacer(Modifier.height(2.dp))
-      Text("¿Cuándo quieres el aviso?", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
-      Text("El tiempo cuenta mientras usas la app elegida.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Row(
-        Modifier.fillMaxWidth().height(60.dp).clip(RoundedCornerShape(20.dp))
-          .background(MaterialTheme.colorScheme.surfaceVariant).clickable { chooseApp = true }.padding(horizontal = 16.dp),
-        verticalAlignment = Alignment.CenterVertically,
-      ) {
-        if (reminder.targetPackage.isNotBlank()) {
-          AppIcon(reminder.targetPackage); Spacer(Modifier.width(10.dp))
-        } else Icon(Icons.Rounded.Apps, null)
-        AnimatedContent(
-          targetState = reminder.targetAppLabel.ifBlank { "Elegir una app" },
-          modifier = Modifier.padding(start = 8.dp).weight(1f),
-          transitionSpec = { fadeIn(tween(220)) togetherWith fadeOut(tween(120)) },
-          label = "chosen_app",
-        ) { label -> Text(label, fontWeight = FontWeight.Medium) }
-        Text(if (reminder.targetPackage.isBlank()) "Elegir" else "Cambiar", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.labelLarge)
-      }
-
-      Surface(shape = RoundedCornerShape(28.dp), color = MaterialTheme.colorScheme.primaryContainer) {
-        Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(13.dp)) {
-          Text("Avísame después de", color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .8f))
-          Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            RoundTimeButton(Icons.Rounded.Remove, "Restar un minuto", reminder.requiredUsageSeconds > 60) {
-              onDuration((reminder.requiredUsageSeconds - 60).coerceAtLeast(60))
-            }
-            AnimatedContent(
-              targetState = reminder.requiredUsageSeconds,
-              modifier = Modifier.weight(1f),
-              transitionSpec = {
-                (fadeIn(tween(160)) + slideInVertically(tween(220)) { it / 3 }) togetherWith
-                  (fadeOut(tween(100)) + slideOutVertically(tween(160)) { -it / 3 })
-              },
-              label = "duration_value",
-            ) { seconds ->
-              Text(formatTime(seconds), modifier = Modifier.fillMaxWidth(), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, color = RelevoGraphite, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
-            }
-            RoundTimeButton(Icons.Rounded.Add, "Sumar un minuto", reminder.requiredUsageSeconds < 3600) {
-              onDuration((reminder.requiredUsageSeconds + 60).coerceAtMost(3600))
-            }
-          }
-          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            listOf(300 to "5 min", 900 to "15 min", 1800 to "30 min").forEach { (seconds, label) ->
-              TimeChoice(label, reminder.requiredUsageSeconds == seconds, Modifier.weight(1f)) { onDuration(seconds) }
-            }
-          }
-          Slider(
-            value = (reminder.requiredUsageSeconds.coerceAtLeast(60) / 60f),
-            onValueChange = { onDuration((it.toInt().coerceIn(1, 60)) * 60) },
-            valueRange = 1f..60f,
-            steps = 0,
-            colors = SliderDefaults.colors(
-              thumbColor = MaterialTheme.colorScheme.primary,
-              activeTrackColor = MaterialTheme.colorScheme.primary,
-              inactiveTrackColor = Color.White.copy(alpha = .85f),
-            ),
-            modifier = Modifier.fillMaxWidth(),
-            thumb = {
-              Box(Modifier.size(24.dp).clip(CircleShape).background(MaterialTheme.colorScheme.primary)
-                .border(4.dp, Color.White, CircleShape))
-            },
-            track = { sliderState ->
-              SliderDefaults.Track(
-                sliderState = sliderState,
-                colors = SliderDefaults.colors(
-                  activeTrackColor = MaterialTheme.colorScheme.primary,
-                  inactiveTrackColor = Color.White.copy(alpha = .85f),
-                ),
-                drawStopIndicator = null,
-                thumbTrackGapSize = 0.dp,
-              )
-            },
-          )
-          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Text("1 min", style = MaterialTheme.typography.labelSmall)
-            Text("60 min", style = MaterialTheme.typography.labelSmall)
-          }
-        }
-      }
-
-      Text("Detalles de tu actividad", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-      if (editingDetails) {
-        RelevoTextField("¿Cómo empezarás?", reminder.howToStart, "Ponerme las zapatillas", onStart)
-        RelevoTextField("¿Dónde estará el parlante?", reminder.place, "Junto a las zapatillas", onPlace)
-        if (reminder.activity.isNotBlank() && reminder.howToStart.isNotBlank() && reminder.place.isNotBlank()) {
-          InlineAction("Guardar detalles", { editingDetails = false })
-        }
-      } else {
-        DetailRow("Empezaré por", reminder.howToStart, { editingDetails = true })
-        DetailRow("Parlante en", reminder.place, { editingDetails = true })
-      }
-
-      if (!usageAccess) PermissionCard(usageAccess, onPermission, onRefresh)
-      Text("El sonido irá al parlante Bluetooth conectado. Sin parlante, recibirás solo el aviso visual.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 20.sp)
-      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        InlineAction("Probar sonido", { testMessage = if (onTest()) "Sonará durante unos segundos." else "No se encontró un parlante Bluetooth conectado." })
-        InlineAction("Prueba de 15 s", { onDuration(15) })
-      }
-      if (testMessage != null) Text(testMessage.orEmpty(), color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodySmall)
-      Spacer(Modifier.height(16.dp))
-    }
-    Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background).padding(top = 10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-      val pending = when {
-        reminder.activity.isBlank() || reminder.howToStart.isBlank() -> "Elige una actividad y cómo empezar."
-        reminder.place.isBlank() -> "Indica dónde dejarás el parlante."
-        reminder.targetPackage.isBlank() -> "Elige la app que activará la señal."
-        !usageAccess -> "Autoriza Tiempo de uso para continuar."
-        else -> null
-      }
-      if (pending != null) Text(pending, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      PrimaryButton("Activar relevo", onActivate, reminder.hasRequiredContent && usageAccess)
-    }
+      Spacer(Modifier.height(10.dp))
+      PrimaryButton(if (step == SetupStep.REVIEW) "Activar relevo" else "Continuar", {
+        if (step == SetupStep.REVIEW) onActivate() else step = SetupStep.entries[step.ordinal + 1]
+      }, canContinue)
     }
   }
 }
-
 @Composable
 private fun DetailRow(label: String, value: String, onEdit: () -> Unit) {
   Row(
@@ -1041,56 +1036,97 @@ private fun CustomActivityEditor(
   var place by rememberSaveable(initial?.id) { mutableStateOf(initial?.place.orEmpty()) }
   var icon by rememberSaveable(initial?.id) { mutableStateOf(initial?.icon ?: customIcons.first()) }
   var color by rememberSaveable(initial?.id) { mutableStateOf(initial?.color ?: customColors.first()) }
+  var page by rememberSaveable(initial?.id) { mutableStateOf(0) }
   var confirmDelete by rememberSaveable(initial?.id) { mutableStateOf(false) }
   val duplicate = activityPresets.any { it.activity.equals(name.trim(), ignoreCase = true) } ||
     existing.any { it.id != initial?.id && it.name.equals(name.trim(), ignoreCase = true) }
-  val valid = name.trim().length in 2..60 && firstStep.isNotBlank() && place.isNotBlank() && !duplicate
+  val nameValid = name.trim().length in 2..60 && !duplicate
+  val detailsValid = firstStep.isNotBlank() && place.isNotBlank()
+
   Column(Modifier.fillMaxSize()) {
-    Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-      InlineAction("Volver", onCancel)
-      Text(if (initial == null) "Crea tu actividad" else "Edita tu actividad", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-      Text("Guarda una actividad para volver a elegirla en otro relevo.", color = MaterialTheme.colorScheme.onSurfaceVariant)
-      RelevoTextField("Nombre", name, "Por ejemplo, practicar guitarra", { name = it.take(60) })
-      if (duplicate) Text("Ese nombre ya está en uso.", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
-      RelevoTextField("¿Cómo empezarás?", firstStep, "Sacar la guitarra", { firstStep = it.take(120) })
-      RelevoTextField("Ubicación de Relevo", place, "Junto a la guitarra", { place = it.take(120) })
-      Text("Icono", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-      LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-        items(customIcons) { option ->
-          val chosen = icon == option
-          Box(Modifier.size(58.dp).clip(RoundedCornerShape(18.dp))
-            .background(if (chosen) Color(color) else MaterialTheme.colorScheme.surfaceVariant)
-            .border(if (chosen) 2.dp else 1.dp, if (chosen) MaterialTheme.colorScheme.primary else Color.Transparent, RoundedCornerShape(18.dp))
-            .semantics { contentDescription = "Icono ${customIconLabel(option)}"; selected = chosen }
-            .clickable { icon = option }, contentAlignment = Alignment.Center) {
-            Icon(customIcon(option), null, Modifier.size(27.dp), tint = RelevoGraphite)
-          }
-        }
-      }
-      Text("Color de fondo", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-      LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-        items(customColors) { option ->
-          Box(Modifier.size(52.dp).clip(CircleShape).background(Color(option))
-            .border(if (color == option) 3.dp else 1.dp, if (color == option) RelevoGraphite else Color.Black.copy(alpha = .1f), CircleShape)
-            .semantics { contentDescription = "Color ${customColorNames[customColors.indexOf(option)]}"; selected = color == option }
-            .clickable { color = option }, contentAlignment = Alignment.Center) {
-            if (color == option) Icon(Icons.Rounded.CheckCircle, null, Modifier.size(20.dp), tint = RelevoGraphite)
-          }
-        }
-      }
-      if (initial != null) {
-        InlineAction(if (confirmDelete) "Confirmar eliminación" else "Eliminar actividad", {
-          if (confirmDelete) onDelete(initial.id) else confirmDelete = true
-        })
-      }
-      Spacer(Modifier.height(8.dp))
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+      InlineAction("Volver", { if (page == 0) onCancel() else page -= 1 })
+      Text("${page + 1} de 3", color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
-    PrimaryButton("Guardar actividad", {
-      onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), firstStep.trim(), place.trim(), icon, color))
-    }, valid)
+    Spacer(Modifier.height(14.dp))
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+      repeat(3) { index ->
+        Box(Modifier.weight(1f).height(4.dp).clip(CircleShape)
+          .background(if (index <= page) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline.copy(alpha = .2f)))
+      }
+    }
+    Spacer(Modifier.height(24.dp))
+    Text(when (page) {
+      0 -> if (initial == null) "Nombra tu actividad" else "Edita tu actividad"
+      1 -> "Hazla concreta"
+      else -> "Dale un aspecto propio"
+    }, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+    Spacer(Modifier.height(20.dp))
+    AnimatedContent(
+      targetState = page, modifier = Modifier.weight(1f),
+      transitionSpec = { (fadeIn(tween(250)) + slideInHorizontally(tween(280)) { it / 8 }) togetherWith fadeOut(tween(140)) },
+      label = "custom_activity_steps",
+    ) { current ->
+      Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+        when (current) {
+          0 -> {
+            Text("Usa un nombre que reconozcas de inmediato.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            RelevoTextField("Nombre", name, "Por ejemplo, practicar guitarra", { name = it.take(60) })
+            if (duplicate) Text("Ese nombre ya está en uso.", color = MaterialTheme.colorScheme.error)
+          }
+          1 -> {
+            Text("Elige una acción fácil de comenzar y dónde dejarás el parlante.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            RelevoTextField("¿Cómo empezarás?", firstStep, "Sacar la guitarra", { firstStep = it.take(120) })
+            RelevoTextField("Ubicación de Relevo", place, "Junto a la guitarra", { place = it.take(120) })
+          }
+          else -> {
+            Text("El icono y el color te ayudarán a reconocer esta actividad más adelante.",
+              color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Surface(shape = RoundedCornerShape(24.dp), color = Color(color)) {
+              Row(Modifier.fillMaxWidth().padding(22.dp), verticalAlignment = Alignment.CenterVertically) {
+                Icon(customIcon(icon), null, Modifier.size(38.dp), tint = RelevoGraphite)
+                Spacer(Modifier.width(14.dp))
+                Text(name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = RelevoGraphite)
+              }
+            }
+            Text("Icono", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+            LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+              items(customIcons) { option ->
+                val chosen = icon == option
+                Box(Modifier.size(58.dp).clip(RoundedCornerShape(18.dp))
+                  .background(if (chosen) Color(color) else MaterialTheme.colorScheme.surfaceVariant)
+                  .border(if (chosen) 2.dp else 1.dp, if (chosen) MaterialTheme.colorScheme.primary else Color.Transparent, RoundedCornerShape(18.dp))
+                  .semantics { contentDescription = "Icono ${customIconLabel(option)}"; selected = chosen }
+                  .clickable { icon = option }, contentAlignment = Alignment.Center) {
+                  Icon(customIcon(option), null, Modifier.size(27.dp), tint = RelevoGraphite)
+                }
+              }
+            }
+            Text("Color de fondo", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+            LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+              items(customColors) { option ->
+                Box(Modifier.size(52.dp).clip(CircleShape).background(Color(option))
+                  .border(if (color == option) 3.dp else 1.dp, if (color == option) RelevoGraphite else Color.Black.copy(alpha = .1f), CircleShape)
+                  .semantics { contentDescription = "Color ${customColorNames[customColors.indexOf(option)]}"; selected = color == option }
+                  .clickable { color = option }, contentAlignment = Alignment.Center) {
+                  if (color == option) Icon(Icons.Rounded.CheckCircle, null, Modifier.size(20.dp), tint = RelevoGraphite)
+                }
+              }
+            }
+            if (initial != null) InlineAction(if (confirmDelete) "Confirmar eliminación" else "Eliminar actividad", {
+              if (confirmDelete) onDelete(initial.id) else confirmDelete = true
+            })
+          }
+        }
+      }
+    }
+    Spacer(Modifier.height(10.dp))
+    PrimaryButton(if (page == 2) "Guardar actividad" else "Continuar", {
+      if (page < 2) page += 1
+      else onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), firstStep.trim(), place.trim(), icon, color))
+    }, when (page) { 0 -> nameValid; 1 -> detailsValid; else -> nameValid && detailsValid })
   }
 }
-
 @Composable
 private fun RelevoTextField(label: String, value: String, placeholder: String, onValueChange: (String) -> Unit) {
   Column(verticalArrangement = Arrangement.spacedBy(7.dp)) {

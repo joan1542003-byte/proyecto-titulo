@@ -2,7 +2,7 @@
 
 **Paquete imprimible para la corrección del 23 de septiembre de 2026:** [documento Word](entrega-23-09-2026/relevo-paquete-testeo-23-09-2026.docx) y [versión editable en Markdown](entrega-23-09-2026/paquete-testeo-relevo.md). Las páginas 1–2 son para quien dirige la prueba; la página 3 contiene el consentimiento; las páginas 4–5 son dos copias idénticas de la hoja de registro, una de repuesto. Antes de entregarlas hay que completar el contacto y verificar la gestión de datos y el conjunto físico.
 
-**Para la corrección del 23 de septiembre de 2026:** [pauta de testeo del prototipo Android 2.2](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). Estos documentos evalúan la aplicación actual junto con un parlante Bluetooth comprobado. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android 2.2. No se han realizado sesiones con participantes bajo la pauta nueva.
+**Instrumentos preparados para la corrección del 23 de septiembre:** [pauta de testeo del prototipo Android 2.2](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). La aplicación vigente es [2.3](../06_desarrollo_y_factibilidad/app-android/README.md): antes de emplear estos instrumentos con participantes hay que ajustar la observación de la preparación por etapas y comprobar el APK con el parlante concreto. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -68,6 +68,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Distinción entre instrumento 2.2 y aplicación 2.3
+
+- **Cambio:** el índice señala que la pauta y la ficha fueron redactadas para 2.2 y requieren revisión antes de usarlas con la preparación por etapas de 2.3.
+- **Antes:** describía esos documentos como instrumentos de la aplicación actual, sin advertir el cambio de versión.
+- **Motivo:** evitar que un protocolo fechado se aplique a una interfaz distinta sin actualizar las observaciones y la verificación física.
 
 ### 2026-09-23 — Reorganización del paquete de validación
 

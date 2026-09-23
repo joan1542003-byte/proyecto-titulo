@@ -4,19 +4,19 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 2.2 de prueba
+**Versión:** 2.3 de prueba
 
-**Fecha:** 22 de septiembre de 2026
+**Fecha:** 23 de septiembre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
-**Android mínimo:** 8.0, API 26
+**Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.2-2026-09-22.apk](releases/relevo-android-2.2-2026-09-22.apk)
+**APK vigente:** [relevo-android-2.3-2026-09-23.apk](releases/relevo-android-2.3-2026-09-23.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.2-2026-09-22.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.3-2026-09-23.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
@@ -43,7 +43,9 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 15. contar cuántas veces se eligió cada actividad y distinguir las señales seguidas de un inicio autodeclarado;
 16. conservar sesiones y eventos sin conexión y enviarlos a Supabase cuando la base está configurada.
 17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
-18. enseñar el recorrido mediante cinco escenas ilustradas: elegir, configurar, situar, recibir el aviso y conceder los permisos necesarios.
+18. enseñar el recorrido mediante cuatro escenas de objetos y una explicación visual de permisos, sin mostrar pantallas ficticias;
+19. preparar un relevo por etapas: actividad; aplicación y tiempo; inicio y ubicación; revisión y activación. Las actividades propias se crean en tres pasos y se pueden reutilizar;
+20. al terminar el tutorial, preparar opcionalmente el primer relevo o ir a Inicio.
 
 ## Límites
 
@@ -56,7 +58,7 @@ La señal sonora se inicia solo cuando Android confirma que la ruta de reproducc
 1. instalar el APK;
 2. abrir Relevo;
 3. leer y aceptar el uso académico de los datos;
-4. recorrer el tutorial;
+4. recorrer el tutorial y, si se desea, configurar el primer relevo desde allí;
 5. autorizar **Tiempo de uso** en la última escena;
 6. autorizar notificaciones si se quiere recibir el aviso con otra aplicación abierta.
 
@@ -88,9 +90,25 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `data/ReminderStore.kt`: estado local del recordatorio;
 - `signal/SignalPlayer.kt`: sonido y vibración;
 - `ui/RelevoViewModel.kt`: coordinación;
-- `ui/RelevoApp.kt`: recorrido reducido a inicio, configuración, estado activo y señal.
+- `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Preparación por etapas 2.3
+
+- **Cambio:** el alta de una actividad propia tiene tres pantallas y la preparación del relevo cuatro, con una revisión editable previa a la activación. El tutorial permite iniciar esa preparación o dejarla para más tarde.
+- **Antes:** todos los campos de preparación aparecían en una pantalla y el tutorial terminaba siempre en Inicio.
+- **Motivo:** reducir decisiones simultáneas y evitar activar una configuración sin revisarla. La separación es una hipótesis de usabilidad pendiente de testeo, no un resultado validado.
+- **Cambio:** las escenas del tutorial muestran objetos y situaciones, no una supuesta interfaz; los permisos se explican con componentes de la propia app. El desenfoque superior e inferior usa una intensidad gradual más suave.
+- **Antes:** algunas ilustraciones incluían pantallas ficticias y el desenfoque era más intenso.
+- **Motivo:** no confundir una representación conceptual con la interfaz real y preservar la legibilidad del contenido que se desplaza.
+- **Cambio:** el mínimo pasa de Android 8 (API 26) a Android 12 (API 31).
+- **Antes:** se anunciaba compatibilidad con sistemas antiguos que no forman parte del grupo de prueba prioritario.
+- **Motivo:** concentrar verificación y rendimiento visual en versiones recientes. El año de fabricación no determina por sí solo la versión de Android; se debe comprobar el teléfono concreto.
+- **Cambio:** si existe un relevo activo, las tarjetas de actividades propias y el acceso para crear otra actividad devuelven a la sesión en curso.
+- **Antes:** esos dos accesos podían abrir la preparación durante un ciclo activo.
+- **Motivo:** impedir que una interacción secundaria modifique los datos de una sesión que ya se está midiendo.
+- **Verificado:** compilación y pruebas unitarias. **Pendiente:** inspección visual en dispositivo físico, rendimiento del desenfoque, acceso con texto ampliado y recorrido completo con un parlante Bluetooth real.
 
 ### 2026-09-22 — Actividades propias y continuidad visual 2.2
 

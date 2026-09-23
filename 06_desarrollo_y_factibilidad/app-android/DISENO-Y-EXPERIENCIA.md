@@ -1,6 +1,6 @@
 # Diseño de la experiencia Android de Relevo
 
-**Estado:** versión 2.1, revisión visual y funcional del 22 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios.
+**Estado:** versión 2.3, revisión de diseño y compilación del 23 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios.
 
 ## Qué debe sentirse al usarla
 
@@ -10,14 +10,16 @@ Relevo acompaña una decisión personal; no califica el tiempo de pantalla ni ca
 
 Los Apple Design Awards de 2026 distinguen por separado interacción, inclusión, deleite y gráfica. *grug* fue reconocido por convertir una idea pequeña en un momento de reflexión; *Tide Guide*, por presentar datos temporales con claridad mediante una gráfica propia (Apple, 2026). No son modelos para copiar: en Relevo estas observaciones se traducen en un momento principal claramente identificable y en información de tiempo legible. La guía de movimiento de Apple (2025) recomienda que la animación explique cambios de estado sin demorar la tarea ni volverse un fin en sí misma. Android (s. f.) recomienda superficies táctiles de al menos 48 dp y comprobar la semántica de los elementos personalizados.
 
-La revisión de [Dribbble](https://dribbble.com/tags/best-app-design) sirvió como repertorio visual, no como prueba de usabilidad: allí predominan capturas aisladas que no muestran tareas completas. En el [intercambio de r/iOSProgramming](https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/) se mencionan, entre otras, Flighty y Mela por su claridad, y Wikipedia por sus transiciones discretas. Son opiniones de usuarios, no evaluaciones comparables. Lo aprovechable para Relevo es una hipótesis de diseño: dar presencia visual a la acción principal sin convertir toda la pantalla en espectáculo. La [guía de Apple sobre Liquid Glass](https://developer.apple.com/documentation/TechnologyOverviews/adopting-liquid-glass) sitúa la navegación en una capa diferenciada del contenido. En Android esta versión emplea una superficie translúcida con borde y selección nítida; no reproduce el material nativo de iOS ni afirma tener desenfoque de fondo real.
+La revisión de [Dribbble](https://dribbble.com/tags/best-app-design) sirvió como repertorio visual, no como prueba de usabilidad: allí predominan capturas aisladas que no muestran tareas completas. En el [intercambio de r/iOSProgramming](https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/) se mencionan, entre otras, Flighty y Mela por su claridad, y Wikipedia por sus transiciones discretas. Son opiniones de usuarios, no evaluaciones comparables. Lo aprovechable para Relevo es una hipótesis de diseño: dar presencia visual a la acción principal sin convertir toda la pantalla en espectáculo. La [guía de Apple sobre Liquid Glass](https://developer.apple.com/documentation/TechnologyOverviews/adopting-liquid-glass) sitúa la navegación en una capa diferenciada del contenido. En Android se usa un desenfoque gradual de Haze sobre el contenido: no equivale al material nativo de iOS.
 
 ## Decisiones aplicadas
 
 | Área | Decisión | Motivo y comprobación pendiente |
 | --- | --- | --- |
 | Inicio | Cuatro actividades reconocibles por imagen, una opción para escribir otra y datos de uso por debajo. | Los accesos rápidos reducen escritura sin obligar a aceptar una actividad predeterminada. Se debe comprobar si la fotografía facilita reconocer la acción o distrae. |
-| Configuración | Actividad seleccionada, app y tiempo aparecen primero; el inicio concreto y el lugar del parlante siguen editables más abajo. El botón de activación explica qué falta si está inactivo. | La persona decide primero qué hará y cuándo quiere el aviso; los detalles no compiten con esa elección, pero se pueden revisar antes de activar. |
+| Configuración | Cuatro pantallas: actividad; app y tiempo; acción inicial y ubicación; revisión con enlaces de edición. Solo la última permite activar. Una actividad propia se guarda en tres pasos: nombre, acción y lugar, aspecto. | Cada pantalla agrupa una decisión relacionada y conserva lo escrito al volver. La revisión reduce activaciones accidentales; falta comprobar con usuarios si los pasos resultan claros y no excesivos. |
+| Tutorial | Cuatro escenas de objetos sin pantallas de la app y una composición de los permisos reales; al terminar ofrece preparar el primer relevo o ir a Inicio. | La imagen contextualiza la acción sin aparentar una interfaz inexistente. La elección al final permite aprender haciendo, sin obligar a configurar de inmediato. Las escenas son conceptuales: no documentan el aspecto de un dispositivo definitivo. |
+| Desenfoque | Encabezado y pie usan Haze con intensidad de 100 % a 0 % en sentidos opuestos, radio de 14 dp y fondo con baja opacidad; la barra flotante se mantiene diferenciada. | El contenido debe seguir viéndose debajo sin una franja sólida. [La documentación de Haze](https://chrisbanes.github.io/haze/1.5.4/usage/) describe el gradiente progresivo y advierte sobre su costo; falta medir rendimiento y contraste en teléfonos reales. |
 | Espera | Tiempo acumulado visible junto con la app elegida y el lugar del parlante. | Se distingue el avance de la actividad deseada; el conteo no se presenta como objetivo moral. |
 | Señal | La actividad ocupa la mayor jerarquía; el inicio concreto aparece inmediatamente debajo. | La persona puede reconocer lo que quería hacer sin descifrar una gráfica. |
 | Cierre | Pregunta neutral y respuesta opcional. | Evita interpretar la decisión de la persona como éxito o fracaso. |
@@ -38,11 +40,13 @@ Las siete imágenes de actividad comparten una regla: un objeto asociado a la ac
 
 ## Verificación realizada y límites
 
-La versión 2.0 compiló y pasó las pruebas unitarias y el análisis estático. Se abrió en un emulador Android de 1080 × 2400 píxeles y se inspeccionaron Inicio y Preparación. Esto permite detectar desbordes y problemas evidentes de jerarquía, pero no demuestra comprensión real, accesibilidad completa ni calidad percibida. Antes de cerrar el diseño deben verificarse, con personas y dispositivos físicos, cinco tareas: comprender Relevo sin explicación externa, preparar un relevo, encontrar y probar el parlante, entender el conteo en espera y responder o saltar el cierre. También falta probar texto ampliado, TalkBack, pantallas pequeñas y la ruta real de audio Bluetooth.
+La versión 2.3 compiló y pasó las pruebas unitarias. Se abrió un emulador para revisar el nuevo recorrido, pero se cerró antes de poder inspeccionar sus pantallas: no se afirma una validación visual de esta versión. Antes de cerrar el diseño deben verificarse, con personas y dispositivos físicos, cinco tareas: comprender Relevo sin explicación externa, preparar un relevo por etapas, encontrar y probar el parlante, entender el conteo en espera y responder o saltar el cierre. También falta probar texto ampliado, TalkBack, pantallas pequeñas, rendimiento del desenfoque y la ruta real de audio Bluetooth. Se priorizan teléfonos con Android 12 o posterior; cuatro años de antigüedad del equipo no garantizan una versión específica del sistema.
 
 ## Referencias
 
 Android Developers. (s. f.). *API defaults*. https://developer.android.com/develop/ui/compose/accessibility/api-defaults
+
+Android Developers. (s. f.). *<uses-sdk>*. https://developer.android.com/guide/topics/manifest/uses-sdk-element
 
 Apple. (2026, 2 de junio). *Apple reveals winners of the 2026 Apple Design Awards*. https://www.apple.com/ie/newsroom/2026/06/apple-reveals-winners-of-the-2026-apple-design-awards/
 
@@ -52,9 +56,23 @@ Apple Developer. (2025). *Adopting Liquid Glass*. https://developer.apple.com/do
 
 Dribbble. (s. f.). *Best app design*. https://dribbble.com/tags/best-app-design
 
+Haze. (s. f.). *Progressive (aka gradient) blurs*. https://chrisbanes.github.io/haze/1.5.4/usage/
+
 r/iOSProgramming. (2025). *Can you recommend apps with great design?* [Foro de discusión]. Reddit. https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Recorrido, imágenes y compatibilidad 2.3
+
+- **Cambio:** se documentan las cuatro etapas de preparación, las tres de creación de actividades, el cierre opcional del tutorial y la revisión previa a activar.
+- **Antes:** la tabla describía una preparación concentrada en una sola vista y no explicaba la bifurcación del tutorial.
+- **Motivo:** hacer corresponder el criterio de diseño con la interfaz implementada y dejar explícito qué requiere testeo.
+- **Cambio:** se precisan el gradiente de desenfoque, el uso conceptual de las escenas y Android 12 como mínimo técnico.
+- **Antes:** el texto negaba el desenfoque real y seguía situado en 2.1, aunque el código ya contenía Haze desde 2.2; las imágenes antiguas mostraban pantallas que no representaban fielmente la app.
+- **Motivo:** corregir información desactualizada y separar las imágenes de apoyo de las evidencias del prototipo físico.
+- **Cambio:** se registra que el emulador no permitió completar la inspección visual de 2.3.
+- **Antes:** el apartado de verificación solo reflejaba una revisión anterior.
+- **Motivo:** no presentar compilación como prueba de calidad visual o de usabilidad.
 
 ### 2026-09-22 — Actividades personalizadas y desenfoque real 2.2
 
