@@ -9,6 +9,8 @@ El objeto debe estar callado hasta recibir una señal de Relevo. El uso de YouTu
 1. **Objeto programable que recibe un comando BLE o Wi-Fi y toca localmente un tono.** No se registra como salida multimedia general del teléfono. Requiere firmware del objeto y una futura integración de Relevo con el protocolo elegido; no basta emparejarlo con el APK actual.
 2. **Parlante Bluetooth A2DP convencional.** El APK actual puede intentar enviarle su propia pista, pero otras apps también pueden usarlo. Solo cumple la separación exigida si el teléfono y su configuración la hacen efectiva, por ejemplo en un Galaxy con *Separate app sound* comprobado; la [investigación de compatibilidad](enrutamiento-audio-parlante-exclusivo-2026-09-23.md) descarta suponerla para todos los Samsung.
 
+La [comparación de BLE, Wi-Fi y Supabase](comparacion-ble-wifi-supabase-dispositivo-2026-09-23.md) desarrolla cómo llegaría la orden al objeto y por qué elegir cada ruta.
+
 ## Opciones verificadas
 
 | Producto y ficha de compra | Precio y disponibilidad observados | Alimentación / tamaño / sonido | Cómo podría recibir la señal de Relevo | Trabajo y límite |

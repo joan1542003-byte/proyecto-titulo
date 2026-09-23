@@ -29,6 +29,8 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Comparación BLE, Wi-Fi y Supabase para el objeto](comparacion-ble-wifi-supabase-dispositivo-2026-09-23.md): distingue orden local y remota, confirma que micro:bit no tiene Wi-Fi y evalúa latencia, conexión, seguridad y límites del test.
+- [Exploración de dispositivos sonoros comprables en Chile](exploracion-dispositivos-sonoros-chile-2026-09-23.md): compara kits y objetos programables, precio base, alimentación, alcance y trabajo de integración pendiente.
 - [Compra para el testeo sonoro en Chile](compra-para-testeo-audio-chile-2026-09-23.md): productos con precio y disponibilidad visibles, condición del teléfono y límites antes de comprar.
 - [Enrutamiento del audio a un parlante reservado para Relevo](enrutamiento-audio-parlante-exclusivo-2026-09-23.md): distingue la pista propia de la salida de otras apps y compara parlante multimedia, ajuste Samsung y orden BLE; sin ensayo físico todavía.
 - [Plan de desarrollo de la aplicación Android para prueba](plan-app-android-prueba-2026-09-22.md): fija el alcance ejecutable, la arquitectura, el recorrido, los criterios de aceptación y la entrega prevista para el 22 de septiembre de 2026.
@@ -55,6 +57,13 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — BLE frente a Wi-Fi y Supabase
+
+- **Cambio:** se enlazó la comparación de comunicación local y remota para activar un objeto programable.
+- **Antes:** el índice reunía las opciones de compra, pero no respondía cómo podría llegar una orden desde Supabase a un dispositivo Wi-Fi.
+- **Motivo:** distinguir el funcionamiento actual de la app de una arquitectura remota futura y hacer explícitas sus dependencias.
+- **Alcance:** documentación y fuentes oficiales; sin cambios de software o base de datos.
 
 ### 2026-09-23 — Compra condicionada para el testeo sonoro
 
