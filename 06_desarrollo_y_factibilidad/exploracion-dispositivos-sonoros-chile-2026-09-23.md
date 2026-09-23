@@ -21,6 +21,26 @@ El objeto debe estar callado hasta recibir una señal de Relevo. El uso de YouTu
 
 **La tienda de MCI es stock local declarado.** Mouser Chile muestra precio en pesos y existencias para despacho, pero [sus condiciones internacionales](https://www.mouser.cl/) indican que aranceles, aduana e impuestos pueden cobrarse aparte; no se equipara esa disponibilidad con stock en Chile. Las publicaciones de Mercado Libre Internacional de StickS3/Atom Echo muestran oferta adicional, pero tampoco equivalen a inventario local ni garantizan plazo de entrega, por lo que no son la base de la recomendación.
 
+## ¿Puede micro:bit V2 GO permanecer conectado a Relevo?
+
+**Es viable como prototipo, no está garantizado al comprar el kit.** La placa V2 dispone de BLE y altavoz, y el paquete GO trae dos pilas AAA. El [programa de prueba del repositorio](prueba-microbit-ble/README.md) está compilado para recibir `activar` y reproducir un tono, pero sigue pendiente de ensayo en hardware. La app Android actual aún no envía esa orden BLE. Emparejar la placa con el teléfono no equivale a integrarla con Relevo ni garantiza que el enlace GATT permanezca activo.
+
+La [guía oficial de Android para BLE en segundo plano](https://developer.android.com/develop/connectivity/bluetooth/ble/background) indica que el sistema puede cerrar una conexión si mata el proceso y ofrece mecanismos para detectar presencia y reconectar. Para Relevo hay que decidir si mantener enlace durante el periodo de uso o conectar al dispararse el evento, y medir latencia y energía. En ambos casos se debe ensayar pantalla apagada, cambio a YouTube/Instagram, ahorro de batería, salida de alcance y reconexión. La facilidad para la persona depende del flujo de emparejamiento y recuperación que se diseñe después; no viene resuelta por el kit.
+
+### Pilas, autonomía y batería recargable
+
+El GO trae portapilas y [dos AAA](https://mcielectronics.cl/shop/product/bbc-microbit-v2-go-kit-de-inicio/); no tiene batería recargable interna ni circuito para cargar por su puerto micro-USB. La [Fundación micro:bit](https://support.microbit.org/support/solutions/articles/19000013982-how-do-i-power-my-micro-bit-) confirma la alimentación por dos AAA y advierte sobre el voltaje de baterías recargables. Las pilas sí se agotarán. No hay una duración oficial verificada para **este** firmware BLE, con estos intervalos de conexión, sonido y posible luz externa: citar horas de otro programa como autonomía de Relevo sería engañoso. La guía oficial indica que el uso de radio, LED y accesorios modifica el consumo; un nivel bajo de batería puede [afectar Bluetooth antes de apagar la placa](https://support.microbit.org/support/solutions/articles/19000157495-troubleshooting-connection-issues-in-the-machine-learning-tool).
+
+Para una primera prueba, usar AAA alcalinas nuevas y llevar otro par. Medir al menos una jornada completa con el patrón real de activaciones, la conexión elegida y el teléfono previsto; registrar hora de inicio, tensión o aviso de pila baja, desconexiones y momento de fallo. Para una prueba de varias jornadas, no fijar recambio ni prometer autonomía hasta medir. La V2 puede apagarse manteniendo pulsado el botón de encendido, pero [al hacerlo se detiene el programa](https://support.microbit.org/support/solutions/articles/19000120358-how-do-i-power-off-or-put-the-micro-bit-to-sleep-/1000), por lo que no recibirá avisos mientras esté apagada.
+
+Sí se puede diseñar una alimentación recargable **externa** con salida regulada dentro de las [especificaciones eléctricas oficiales](https://tech.microbit.org/hardware/powersupply/), con cargador/protección y conector apropiados. Eso añade componentes y validación eléctrica; una celda LiPo de 3,7 V nominales llega a unos 4,2 V cargada y no debe conectarse directamente a la entrada de batería de la placa, cuyo límite de operación es 3,6 V. La [guía de seguridad](https://microbit.org/get-started/user-guide/electrical-product-guidance/) aconseja usar las AAA previstas y desaconseja las recargables sin una solución comprobada. El micro-USB alimenta/programa la placa; **no carga las AAA ni convierte el GO en un dispositivo recargable**. Para el primer test, cambiar pilas es más simple que agregar electrónica de carga.
+
+### Alcance BLE
+
+La [ficha técnica oficial](https://tech.microbit.org/hardware/) publica antena, sensibilidad y potencia de transmisión, pero no una distancia garantizada de 10 m para micro:bit V2 con un teléfono específico. **Diez metros en línea de vista pueden ser plausibles; diez metros constantes a través de paredes no están acreditados.** La [ayuda oficial](https://support.microbit.org/support/solutions/articles/19000157495-troubleshooting-connection-issues-in-the-machine-learning-tool) recomienda acercar el dispositivo al resolver pérdidas de Bluetooth y advierte que la batería baja puede afectar el enlace. Para Relevo, tratar 2–5 m en la misma habitación como objetivo inicial de diseño, no como especificación certificada; ensayar a 1, 5 y 10 m y con una pared, anotando tasa de órdenes recibidas, latencia y recuperación. Si la sesión exige más de 10 m fiables, no decidirlo por la versión de Bluetooth: medir el montaje real o elegir otra arquitectura.
+
+**Juicio para Relevo:** micro:bit V2 GO es una compra razonable para demostrar la cadena teléfono → orden BLE → sonido local silencioso para otras apps. No es todavía el objeto ideal para entregar sin asistencia: faltan integración Android, ensayos de estabilidad/autonomía/alcance, carcasa y la luz cálida requerida por la propuesta de fase A.
+
 ## Opciones revisadas que no conviene usar como primera compra
 
 - **Sirena de alarma Wi-Fi Tuya/Smart Life:** existe una [ficha chilena de kit con sirena](https://www.solomon.cl/product/kit-sistema-de-alarma-inteligente-wifi-con-sirena-tuyasmart) a $59.990, pero declara hasta **120 dB**, un sonido de intrusión desproporcionado para una señal cómoda de hábito. La ficha no documenta una API local ni un tono suave seleccionable desde Relevo y muestra «Avísame cuando llegue», por lo que tampoco hay stock confirmado. No comprar para el test.
@@ -43,6 +63,13 @@ El objeto debe estar callado hasta recibir una señal de Relevo. El uso de YouTu
 - En micro:bit y M5Stack, diferenciar prueba de mesa del test integrado: **el APK actual no envía la orden de comando**.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Evaluación de conexión, energía y alcance del kit GO
+
+- **Cambio:** se precisó el estado de integración con Relevo, el riesgo de conexión en segundo plano, la ausencia de una autonomía demostrada para el firmware, los límites de alimentación recargable y la incertidumbre de los 10 m BLE.
+- **Antes:** la comparación recomendaba el kit GO para banco técnico portátil sin detallar estas condiciones de uso continuado.
+- **Motivo:** responder si la compra permite un enlace constante y si sirve como dispositivo de test con participantes.
+- **Alcance y límites:** análisis de documentación oficial y del repositorio; no se adquirió la placa ni se midieron horas de batería o metros de alcance.
 
 ### 2026-09-23 — Exploración inicial de compra
 
