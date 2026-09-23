@@ -23,6 +23,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
+- [Protección de datos del prototipo Android 2.3](privacidad-prototipo-android-2026-09-23.md): inventario comprobado de flujos, respuesta para la comisión y texto candidato; requiere completar responsable, retención y eliminación antes de participantes.
 - [Modelo de datos para evaluar la aplicación](modelo-datos-evaluacion-app-2026-09-22.md): define qué registra el prototipo Android, qué preguntas puede responder y qué inferencias quedan excluidas.
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
@@ -68,6 +69,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Revisión de privacidad
+
+- **Cambio:** se enlazó la auditoría documental del tratamiento de datos de la versión 2.3.
+- **Antes:** el consentimiento, el modelo de datos y el código remoto debían conciliarse por separado.
+- **Motivo:** hacer explícitas las promesas comprobadas y los campos pendientes antes de participantes.
+- **Alcance:** no se alteran instrumentos aprobados ni se declara lista la política.
 
 ### 2026-09-23 — Distinción entre instrumento 2.2 y aplicación 2.3
 

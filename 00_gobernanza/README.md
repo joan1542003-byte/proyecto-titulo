@@ -23,6 +23,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `hoja-de-ruta.md`: secuencia de trabajo y condiciones para avanzar.
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
+- [Trazabilidad del uso de IA](trazabilidad-uso-ia-2026-09-23.md): declaración candidata, registros de prompts existentes, distinción entre salida generada y decisión del autor, y ficha para futuras iteraciones.
 - `indice-del-repositorio.md`: orden de lectura, estado de cada carpeta y fuentes que deben tomarse como referencia.
 - `auditoria-organizacion-2026-09-02.md`: revisión global de estructura, duplicados, nombres, enlaces y archivos conservados.
 - GitHub Issues: tareas operativas, bloqueos y criterios de cierre.
@@ -44,6 +45,13 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Trazabilidad de IA
+
+- **Cambio:** se enlazó la reconstrucción parcial y el formato de registro de prompts.
+- **Antes:** la evidencia se encontraba distribuida entre imágenes, wireframes y memorias históricas.
+- **Motivo:** permitir explicar el proceso de diseño sin atribuir a la IA entrevistas, decisiones o validación.
+- **Alcance:** el registro es parcial y requiere contraste con cualquier prompt original que conserve el autor.
 
 
 ### 2026-09-09 — Limpieza y vigencia documental

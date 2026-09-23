@@ -7,6 +7,7 @@ Construir la base teórica y empírica que permita explicar por qué Relevo debe
 ## Documentos activos
 
 - `metodologia-usuarios.md`: protocolo de búsqueda, síntesis y fichas de fuentes utilizadas para escoger el método de análisis de usuarios.
+- [Síntesis de las anotaciones del 23 de septiembre](sintesis-anotaciones-2026-09-23.md): posición del proyecto, usuarios, continuidad, hábitos y criterios escritos para evaluar la interfaz; propuestas, no resultados.
 
 ## Orden interno previsto
 
@@ -33,6 +34,13 @@ Las líneas son provisionales. No deben convertirse en capítulos hasta verifica
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Síntesis de anotaciones
+
+- **Cambio:** se enlazó la respuesta investigada a las notas del autor.
+- **Antes:** la carpeta no ofrecía una síntesis de estas preguntas ni una ruta hacia los anexos de privacidad e IA.
+- **Motivo:** mantener localizable la investigación escrita sin convertir observaciones en cambios de producto.
+- **Alcance:** documentación; ninguna función ni prueba cambia.
 
 ### 2026-08-23 — Dossier metodológico de usuarios
 
