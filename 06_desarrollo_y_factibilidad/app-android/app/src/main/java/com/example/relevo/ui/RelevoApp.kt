@@ -419,7 +419,7 @@ private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSumm
     AnimatedGradientAction(onCreate)
     Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
       MetricCard("Tiempo hoy en las apps que vinculaste", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f).height(132.dp))
-      MetricCard("Relevos exitosos", history.count { it.signalDelivered && it.outcome == "started" }.toString(), Icons.Rounded.History, Modifier.weight(1f).height(132.dp))
+      MetricCard("Dijiste que empezaste", history.count { it.signalDelivered && it.outcome == "started" }.toString(), Icons.Rounded.History, Modifier.weight(1f).height(132.dp))
     }
     if (history.isNotEmpty()) {
       Text("La última vez", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)

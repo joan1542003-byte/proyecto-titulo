@@ -24,6 +24,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - [Trazabilidad del uso de IA](trazabilidad-uso-ia-2026-09-23.md): declaración candidata, registros de prompts existentes, distinción entre salida generada y decisión del autor, y ficha para futuras iteraciones.
+- [Aplicación del feedback docente del 23 de septiembre](aplicacion-feedback-docente-2026-09-23.md): cambios incorporados, opciones no adoptadas y condiciones antes de trabajar con participantes.
 - `indice-del-repositorio.md`: orden de lectura, estado de cada carpeta y fuentes que deben tomarse como referencia.
 - `auditoria-organizacion-2026-09-02.md`: revisión global de estructura, duplicados, nombres, enlaces y archivos conservados.
 - GitHub Issues: tareas operativas, bloqueos y criterios de cierre.
@@ -104,3 +105,9 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 - **Cambio:** se incorporó un registro específico para explicar la revisión del repositorio completo, el tratamiento de duplicados y los criterios de conservación.
 - **Versión anterior:** la gobernanza describía las reglas, pero no reunía en un documento único el resultado de la auditoría estructural.
 - **Motivo:** dejar evidencia de por qué se mantienen las copias funcionales y por qué solo se retiran redundancias comprobadas.
+
+### 2026-09-23 — Trazabilidad de decisiones del feedback
+
+- **Cambio:** se enlazó un registro que separa decisiones aplicadas, alternativas por estudiar y requisitos previos a la validación.
+- **Versión anterior:** el índice reunía la síntesis y la trazabilidad de IA, pero no mostraba en una sola entrada qué observaciones pasaron a la memoria o a los requisitos.
+- **Motivo:** hacer visible el alcance de los cambios sin presentar propuestas ni resultados pendientes como hechos concluidos.

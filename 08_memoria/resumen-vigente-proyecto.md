@@ -1,179 +1,27 @@
-# Resumen vigente de Relevo
+# Relevo en breve
 
-**Actualizado:** 11 de septiembre de 2026.
+**Actualizado:** 23 de septiembre de 2026. **Fuente académica:** [memoria vigente](memoria-vigente-v4.md).
 
 ## Qué es
 
-Relevo es un sistema phygital que busca ayudar a recuperar una intención personal cuando una sesión de ocio digital continúa y esa alternativa deja de orientar el siguiente paso. Una aplicación Android conserva la intención y configura el ciclo; un objeto situado cerca del comienzo de la actividad emite una señal breve. La persona decide si continúa, silencia la señal o inicia la alternativa.
+Relevo es un sistema phygital para que una persona vuelva a considerar una actividad que eligió mientras usa una aplicación de ocio digital. Prepara en Android la actividad, una forma concreta de empezarla y la condición para recibir un aviso. La propuesta final contempla un objeto situado cerca de esa actividad, capaz de emitir luz y sonido. La señal ofrece una ocasión de decidir; no bloquea el teléfono ni comprueba que la actividad se realizó.
 
-## Para quién y en qué situación
+## Qué existe hoy
 
-El usuario principal aparece en un episodio donde existe una alternativa elegida, se conoce cómo empezarla y, aun así, la actividad digital continúa. El usuario límite aparece cuando el ocio digital es significativo, reparador o coherente con la intención del momento; allí Relevo no debería intervenir. Una misma persona puede ocupar ambas situaciones.
+La [aplicación Android 2.4](../06_desarrollo_y_factibilidad/app-android/README.md) permite preparar un ciclo, acumular el tiempo de uso de la aplicación seleccionada y enviar un tono a un parlante Bluetooth multimedia compatible. El indicador «Dijiste que empezaste» cuenta respuestas de la persona, no acciones observadas. Hay un APK compilado y siete pruebas unitarias aprobadas. No se ha verificado el recorrido completo en un teléfono y parlante concretos ni se dispone aún del objeto final con luz y sonido. El parlante puede reproducir audio de otras aplicaciones: no es una salida exclusiva de Relevo.
 
-El hogar es el primer contexto de prueba, todavía como hipótesis y no como conclusión de las entrevistas.
+La memoria conserva los catorce capítulos del encargo, **14.997 palabras antes de referencias y registro de cambios** según `Measure-Object -Word`, y **64 referencias**. Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
 
-## Cómo funcionaría
+## Qué cambió y qué falta
 
-1. La persona registra una intención y responde cómo podría comenzarla; la documentación denomina `primer paso` a esa acción breve y concreta.
-2. Elige una condición observable de activación, todavía por definir mediante pruebas.
-3. Revisa el ciclo, sitúa y vincula el objeto, prueba la señal y confirma el armado físico previsto.
-4. Cuando se cumple la condición, el objeto emite una señal breve de luz y sonido.
-5. La persona puede continuar, silenciar la señal o iniciar la alternativa. Relevo no registra esa decisión como éxito o fracaso.
+El feedback del 23 de septiembre llevó a distinguir recordar una intención, empezar una actividad y formar un hábito. Se estudia la posibilidad de reconocer positivamente una elección, pero no se añadieron rachas ni premios. Se aclararon el almacenamiento local y la sincronización remota seudonimizada, junto con los límites del parlante actual. Las decisiones y alternativas están en el [registro de aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md).
 
-## Estado actual
+Antes de convocar participantes faltan una prueba física del audio y los fallos, revisión del consentimiento, contacto responsable y un procedimiento comprobado para localizar y eliminar datos locales y remotos. La [pauta](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) está lista para revisión, no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
 
-La memoria vigente es `memoria-vigente-v4.md`. Mantiene los catorce títulos y la progresión del cierre del primer semestre. La motivación y la introducción no adelantan la solución; Relevo aparece en la formulación, después del problema, sus tres aristas, el marco teórico, las entrevistas, el mercado y los criterios de diseño.
+## Registro de cambios (disclaimer)
 
-Los wireframes cubren nueve marcos principales y 35 estados complementarios. Su funcionamiento estructural, exportación y dimensiones fueron comprobados el 7 de septiembre, y el wireframe v1 quedó congelado el 9 de septiembre. El alcance del primer prototipo ya separa el recorrido imprescindible de los estados que pueden incorporarse después. Esa estructura constituye la base vigente; la puerta inmediata pasó al banco físico con micro:bit V2.
+### 2026-09-23 — Resumen sustituido por el estado vigente
 
-El control editorial del 16 de septiembre registra **15.480 palabras de texto académico**, incluyendo preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. Responde al objetivo aproximado de 15.000 solicitado por el autor. Los capítulos 1–13 suman 14.812; el archivo operativo completo contiene 19.975. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) declara el método y separa esos segmentos. La memoria conserva los catorce títulos. Permanecen abiertas la condición exacta de activación, la forma y materialidad finales, los costos definitivos y el aporte del objeto frente a una notificación. La dirección física acota las salidas a luz y sonido y selecciona una arquitectura portátil, pero todavía no está construida ni validada. La identidad del proyecto está definida y se aplica desde este corte.
-
-La fase documental de usuarios cuenta con análisis P1–P8, dos tipos situacionales, fichas trazables, recorridos actuales separados del escenario futuro y una matriz de catorce requisitos. Estos instrumentos no agregan resultados ni convierten U1 y U2 en identidades permanentes; preparan la validación y permiten revisar qué decisión responde a cada hallazgo.
-
-Existe además una encuesta con **70 participantes** pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria. Mientras no se documenten sus materiales y resultados, no forma parte de la evidencia vigente ni se mezcla con el corpus P1–P8. El seguimiento está en [Encuesta de 70 participantes — pendiente](../03_usuarios/encuesta-70-participantes-pendiente.md).
-
-## Qué cambió en esta actualización
-
-En relación con las 17.920 palabras registradas antes de la edición de cierre, el segmento académico se redujo en 2.440 palabras. La bibliografía contiene 59 entradas. El objetivo editorial continúa siendo aproximadamente 15.000 palabras antes de la bibliografía, excluyendo también el registro administrativo.
-
-La edición de lectura conserva los catorce capítulos y reúne los subapartados breves bajo títulos temáticos sin numeración secundaria. La formulación pasa de diez apartados a cuatro, el marco teórico elimina el tercer nivel y el método de entrevistas se lee sin la interrupción de la encuesta pendiente. Se mejoran transiciones, repeticiones y explicaciones de ciclo, armado y componentes. Las 59 referencias y el protocolo se conservan. El [control editorial](auditoria-redaccion-v4-2026-08-26.md) documenta la nueva organización y la extensión.
-
-La [auditoría de coherencia](auditoria-coherencia-memoria-2026-09-09.md) sincroniza el recorrido de nueve momentos, distingue las capacidades previstas del programa de banco compilado y conecta soporte, mantenimiento y retiro. El nombre y la comunicación tienen un apartado propio. La asociación se evalúa mediante cuatro componentes; comprender salidas se registra por separado. El control digital es un aviso genérico sin el texto de la intención: la comparación no demostrará superioridad frente a cualquier recordatorio.
-
-La factibilidad dejó de orientarse solo a un montaje luminoso de mesa. El programa para comprobar Android → BLE → luz, sonido y silencio local en micro:bit V2 ya compila. Su matriz roja se reserva al banco sin participantes; la prueba de asociación requiere una luz blanca cálida externa y difundida. El siguiente prototipo portátil se desarrollará con una XIAO nRF52840, batería recargable, una luz, un transductor sonoro y un control local, dentro de una envolvente objetivo de 42–48 mm por 12–16 mm. BleenyButton sirve como antecedente de batería, fijación y carcasa; no define la finalidad ni la interacción de Relevo. Los montajes anteriores continúan como recursos de prueba, no como forma integrada.
-
-En el ámbito de marca, Relevo es el nombre definitivo del proyecto de título. Se presenta mediante la frase `Hazle lugar a lo que quieres hacer` y, cuando necesita aclarar su categoría, mediante el descriptor `Un recordatorio físico preparado desde el teléfono`. `Primer paso` queda como concepto analítico; la comunicación pública utiliza `cómo empezar`. Source Sans 3, el verde Relevo `#006B5F`, el acento oscuro `#72DBC7` y una base neutra conforman el sistema vigente. El logotipo es tipográfico y la `R` funciona como identificador reducido. Estas decisiones cierran la identidad del proyecto sin presentar como validados sus efectos en las personas.
-
-La revisión final retiró pasajes que explicaban la organización del escrito en vez del problema, describió la pregunta adicional de las entrevistas sin nombrar una etapa histórica y corrigió los costos documentados. La estructura y la formulación se mantienen; la bibliografía contiene 59 referencias. Las incorporaciones más recientes fundamentan y cierran el sistema de marca. No se añadieron resultados empíricos ni se cerraron las variables técnicas y perceptivas que requieren prueba.
-
-La traducción de usuarios está consolidada en tres documentos autónomos: perfiles, recorridos y requisitos. Estos contenidos pueden auditarse como una cadena entre evidencia, necesidad, límite y prueba.
-
-El primer protocolo cuenta con seis participantes previstos, dos sesiones, intervalos, lugares comparables, notificación equivalente, contrabalanceo, consentimiento y fichas de registro. La señal provisional combina tres pulsos de luz y un tono breve. Antes de involucrar participantes, una plataforma existente debe superar comprobaciones de BLE, reconexión, latencia, patrón, controles, estabilidad y seguridad. B1, B2 y el montaje de 12 V quedan como antecedentes de mesa. La ruta integrada recomendada utiliza XIAO nRF52840, batería recargable, una luz y un transductor sonoro; su lista de materiales todavía no tiene un total porque faltan cotizaciones comparables de batería, carcasa y auxiliares.
-
-No hay evidencia de acceso a la plataforma, firmware ejecutado, conexión medida ni ficha técnica completada. La existencia de un binario compilado no modifica ese estado. Antes de reclutar deben resolverse esas acciones, incorporar el contacto del responsable al consentimiento y obtener revisión académica. La eliminación de fichas está fijada a más tardar para el 13 de enero de 2027. Ningún instrumento contiene resultados.
-
-Este archivo debe actualizarse cada vez que cambie la memoria vigente, indicando brevemente qué es Relevo, cómo funciona, qué cambió y qué permanece abierto.
-
-## Feedback y fuentes de detalle
-
-Las respuestas al feedback del 2 de septiembre están distribuidas por área y accesibles en la [matriz de cobertura](../01_contexto_y_fuentes/feedback-2026-09-02.md). Se precisaron los ejemplos de ejercicio/buceo, adaptabilidad y ubicación, UGREEN como referente, encontrabilidad, vibración y los tres tiempos de la experiencia. Ninguna respuesta acredita validación; el banco físico continúa pendiente. La memoria conserva su estructura y el protocolo sus parámetros.
-
-La revisión textual del 9 de septiembre corrigió el acceso a la documentación oficial de vinculación Android en la bibliografía. El cierre de marca del 16 de septiembre lleva el texto académico a 15.480 palabras, conserva 59 fuentes y mantiene el estado de validación descrito arriba.
-
-# Registro de cambios (disclaimer)
-
-**2026-09-16 — Sistema de marca adoptado.** Antes, nombre, descriptor, tipografía y paleta continuaban abiertos como materiales de comparación. Ahora se fijan Relevo, la frase `Hazle lugar a lo que quieres hacer`, el descriptor funcional, Source Sans 3, la paleta verde-neutra, el logotipo tipográfico y la regla de un énfasis localizado. Es un cierre de diseño para producir el proyecto, no un resultado de validación.
-
-**2026-09-15 — Estrategia de marca reconstruida.** Antes, el nombre, el descriptor y el turquesa se vinculaban mediante una explicación abstracta sobre transferencia entre soportes. Ahora la marca parte del producto, su marco de referencia, la diferencia provisional y la experiencia que debe sostener en aplicación, objeto y comunicación. `Primer paso` se trata como hipótesis transversal y los recursos visuales vuelven a ser candidatos. El conteo académico se actualizó a 15.415 palabras y la bibliografía a 59 referencias; no se añadieron resultados.
-
-**2026-09-15 — Relato de marca y lenguaje revisados.** Antes, el resumen utilizaba `primer paso` como texto público y describía el turquesa solo como acento funcional. Ahora distingue el concepto analítico de la pregunta `¿Cómo podrías empezar?`, registra el descriptor `Una señal donde quieres empezar` y define el color de presencia. Son hipótesis de diseño pendientes de prueba; no se añadieron resultados. El conteo académico se actualizó de 15.127 a 15.274 palabras y la bibliografía de 52 a 54 referencias.
-
-**2026-09-15 — Dirección visual provisional definida.** Antes, el resumen mantenía tipografía y color completamente abiertos después del reinicio. Ahora registra Presencia útil, Source Sans 3, una paleta neutra con acento verde turquesa y el descriptor revisado. Son parámetros para comparar prototipos, no resultados de validación; el logotipo definitivo y la forma física siguen abiertos. El conteo académico se sincronizó de 15.033 a 15.127 palabras.
-
-**2026-09-11 — Investigación visual reiniciada.** Antes, el resumen presentaba un descriptor y una paleta como dirección vigente. Ahora registra el retiro de esa etapa, mantiene el nombre como provisional y enlaza una dirección sobria para comparar mediante pruebas. La estructura del wireframe v1 y la arquitectura física no cambiaron.
-
-
-### 2026-09-09 — Limpieza y vigencia documental
-
-- **Cambio:** se sincronizó el resumen con la corrección de un enlace bibliográfico.
-- **Antes:** la bibliografía conservaba una ruta oficial incompleta.
-- **Motivo:** mantener trazabilidad entre memoria y resumen, sin alterar formulación ni resultados.
-- **Alcance:** Revisión documental; no añade resultados ni modifica el protocolo o los artefactos.
-
-### 2026-09-09 — Extensión aproximada de 15.000 palabras
-
-- **Cambio:** se sincronizó el objetivo y el conteo después de condensar la memoria.
-- **Versión anterior:** se informaban 17.920 palabras previas a la bibliografía, sin un objetivo editorial acotado a 15.000.
-- **Motivo:** aplicar el límite aproximado solicitado por el autor y conservar un criterio de conteo explícito.
-- **Alcance:** preliminares y capítulos 1–13; bibliografía y registro administrativo se cuentan aparte. No se añaden resultados ni cambian las pruebas.
-
-### 2026-09-09 — Jerarquía y lectura de la memoria
-
-- **Cambio:** se actualizó la referencia a la memoria después de agrupar apartados, mejorar transiciones y sustituir la numeración secundaria por títulos temáticos.
-- **Versión anterior:** conservaba ubicaciones o controles correspondientes a los subapartados numerados.
-- **Motivo:** mantener la trazabilidad sin obligar al lector a reconstruir la estructura anterior.
-- **Alcance:** revisión editorial; fuentes, protocolo y resultados pendientes se mantienen.
-
-### 2026-09-09 — Coherencia de la memoria
-
-- **Cambio:** se sincronizó este documento con la revisión de la memoria y su auditoría de cobertura.
-- **Versión anterior:** describía el estado previo a la reconciliación del recorrido, soporte y alcance comparativo.
-- **Motivo:** mantener una base académica consistente y pendientes localizables.
-- **Alcance:** documental; no incorpora resultados ni modifica el protocolo.
-
-### 2026-09-09 — Respuesta al feedback del 2 de septiembre
-
-- **Cambio:** Se enlazaron las respuestas y su estado sin atribuir resultados. Se sincronizaron fecha, cierre v1 y nivel de afirmación de la propuesta.
-- **Versión anterior:** había respuestas dispersas, índices incompletos o formulaciones sustituidas.
-- **Motivo:** mantener una respuesta localizable y coherente con las decisiones vigentes.
-- **Alcance:** actualización documental; no se añaden resultados ni se cambian los parámetros del protocolo.
-
-**2026-09-08 — Programa micro:bit y señal luminosa separados.** Antes, el resumen trataba la plataforma existente como una sola prueba y no advertía que su matriz integrada es roja. Ahora registra un programa compilado para el banco técnico, reserva la luz blanca cálida externa para el material con participantes y actualiza el control a 20.453 palabras totales, 16.359 en los capítulos 1–13 y 51 referencias. No existe instalación, medición ni resultado.
-
-**2026-09-08 — Validación y ruta física sincronizadas.** Antes, el resumen todavía vinculaba la puerta técnica a los montajes luminosos B1/B2. Ahora identifica la prueba previa con plataforma existente, incorpora luz y sonido al protocolo y separa los incidentes técnicos de las respuestas de participantes. El cambio evita que un problema de conexión se confunda con falta de comprensión; no existen resultados ni autorización para reclutar.
-
-**2026-09-07 — Arquitectura portátil y comunicación.** Antes, el resumen mantenía abiertos el canal de señal y la electrónica integrada, y presentaba los montajes B1/B2 como ruta principal. Ahora acota el testigo a luz y sonido, selecciona una candidata BLE recargable y registra el descriptor y la nueva paleta. Se mantienen pendientes construcción, costos, pruebas, comparación con notificación y despeje comercial del nombre.
-
-**2026-09-07 — Prueba separada de la integración.** Antes, la arquitectura portátil estaba definida, pero no se explicaba cómo comprobar el vínculo físico sin construirla de inmediato. Ahora se distingue una prueba con plataforma existente de la integración XIAO y se registra BleenyButton como antecedente constructivo. No se eligió un producto final ni se autorizó una compra.
-
-**2026-09-07 — Memoria y control APA sincronizados.** Antes, el capítulo de factibilidad, el conteo editorial y la matriz de referencias todavía correspondían a B1/B2. Ahora la memoria incorpora la ruta física vigente, registra 16.334 palabras en los capítulos 1–13 y comprueba 50 referencias. No se añadieron resultados de validación.
-
-**2026-09-07 — Paso a prototipado.** Antes, el resumen describía la arquitectura de interacción sin precisar qué parte debía construirse primero. Ahora registra la verificación de los wireframes y remite a un alcance inicial con backlog. No se añadieron resultados de validación ni se cerraron la condición, la señal o la integración técnica.
-
-**2026-09-02 — Encuesta complementaria registrada.** Se añadió una nota sobre una encuesta de 70 participantes pendiente de publicación e integración. No se incorporaron resultados ni se modificaron la formulación, los hallazgos P1–P8 o las decisiones del proyecto.
-
-**2026-08-31 — Revisión final textual y sincronización económica.** Antes, el resumen conservaba un conteo anterior y la memoria incluía metalenguaje, el nombre de una etapa histórica y un rango de costos que ya no representaba la comparación técnica activa. Ahora se registran 16.113 palabras en los capítulos 1–13, Q13 se explica como propuesta preliminar y la factibilidad distingue los desembolsos incompletos de B1, B2 y 12 V. No cambiaron la pregunta, la hipótesis ni el funcionamiento propuesto; siguen sin existir resultados de validación.
-
-**2026-08-30 — B2 especificada y costo corregido.** Antes, B2 aparecía a CLP 26.655 más partidas pendientes y sin una especificación eléctrica equivalente a B1. Ahora dispone de esquema revisable y su escenario con base incorpora resistencias y protección. Siguen pendientes inventario, revisión, compra y prueba comparativa.
-
-**2026-08-30 — Comparación B1/B2 anterior a la compra.** Antes, el resumen presentaba el montaje cableado de 12 V y CLP 28.130 como única arquitectura preparada. Ahora distingue dos variantes de 5 V, explicita que el ahorro no está demostrado y conserva 12 V como respaldo. La definición de Relevo y la memoria v4 no cambiaron; siguen pendientes revisión, compra, construcción y resultados.
-
-**2026-08-30 — Fecha máxima de eliminación.** Antes, el resumen mantenía contacto y fecha como campos administrativos abiertos. Ahora la eliminación de fichas está fijada para el 13 de enero de 2027; el correo del responsable y la revisión académica siguen pendientes. No se reclutaron participantes ni se generaron datos.
-
-**2026-08-30 — Preparación técnica de fase A.** Antes, el resumen mantenía el ensayo interno como pendiente y no permitía localizar la arquitectura elegida. Ahora registra el montaje cableado, el subtotal parcial y el firmware provisional, además de separar revisión, compra, compilación, construcción y ensayo. Terminales y protección continúan fuera del monto. La memoria v4 no fue modificada y no existen resultados técnicos ni con participantes.
-
-**2026-08-30 — Cierre provisional de la fase de usuarios.** Antes, la memoria contenía tipos, necesidades y recorridos narrativos, mientras los entregables autónomos permanecían incompletos o contradictorios entre la hoja de ruta y la Issue #2. Ahora existen perfiles situacionales, recorridos que separan evidencia e hipótesis y una matriz de catorce requisitos con prioridad, validación y límites. La memoria v4 no fue reescrita y la fase sigue abierta a nueva evidencia.
-
-**2026-08-27 — Parámetros e instrumentos del protocolo 01.** Antes, ocho decisiones de ejecución estaban abiertas. Ahora existe una configuración provisional y dos plantillas sin datos. La prueba sigue pendiente y la memoria no presenta resultados.
-
-**2026-08-27 — Reglas operativas de la primera prueba.** Antes, el plan declaraba variables sin umbrales previos. Ahora existe un protocolo formativo enlazado desde la memoria. No se añadieron resultados y la acción posterior al pulso no se utiliza como medida de éxito.
-
-**2026-08-27 — Selección de anexos.** Antes, la evidencia estaba ordenada por carpetas sin un paquete formal. Ahora cinco anexos cumplen funciones distintas y la documentación interna queda separada. La memoria conserva sus catorce capítulos y solo incorpora enlaces desde los apartados pertinentes.
-
-**2026-08-27 — Frontera entre datos y registros.** Antes, el producto rechazaba el historial de cumplimiento mientras el plan exigía registros de prueba, sin explicar la diferencia. Ahora se separan funciones operativas y documentación metodológica. No se añadieron mecanismos de vigilancia a Relevo.
-
-**2026-08-27 — Clasificación del cierre académico.** Antes, la propuesta de valor y el aporte del objeto podían leerse como resultados. Ahora las conclusiones distinguen evidencia, decisión e hipótesis. La dirección phygital no cambió y su aporte específico continúa sujeto a pruebas.
-
-**2026-08-27 — Trazabilidad de criterios.** Antes, el capítulo 9 declaraba una procedencia general y obligaba al lector a reconstruirla. Ahora cada criterio incorpora su fundamento próximo y una matriz separada conserva evidencia y límites. Relevo mantiene la misma definición y no se añadieron resultados de pruebas.
-
-**2026-08-27 — Cierre de extensión y APA.** Antes, la auditoría conservaba un conteo desactualizado y una revisión bibliográfica básica. Ahora registra segmentos reproducibles, una matriz de 49 referencias y cuatro correcciones APA. La definición de Relevo no cambió; se hicieron visibles los siguientes pendientes documentales y empíricos.
-
-**2026-08-26 — Accesibilidad conceptual.** Antes, varios métodos y componentes aparecían solo por su nombre técnico. Ahora la memoria explica su función en el mismo párrafo donde se introducen. La definición de Relevo y sus decisiones abiertas no cambiaron.
-
-**2026-08-26 — Orden narrativo de antecedentes y marco teórico.** Antes, algunos cierres teóricos adelantaban componentes de la propuesta. Ahora los capítulos 5 y 6 explican relaciones y abren preguntas antes de formular Relevo. Se conservaron los conceptos centrales y la definición vigente del proyecto no cambió.
-
-**2026-08-26 — Trazabilidad de mercado.** Antes, el capítulo 8 resumía el método sin enlazar el registro completo. Ahora permite consultar pregunta, términos, fuentes, criterios, corpus nuclear y límites, y declara los datos de búsqueda no preservados. No se añadieron referentes ni se transformó la exploración en revisión sistemática.
-
-**2026-08-26 — Trazabilidad P/Q.** Antes, el capítulo de usuarios identificaba participantes sin localizar siempre las preguntas que sostenían cada hallazgo. Ahora los apartados 7.3–7.5 remiten a segmentos P/Q del corpus y Q13 queda acotada al concepto histórico consultado. No se añadieron testimonios ni se presentaron paráfrasis como citas literales.
-
-**2026-08-26 — Conclusiones.** Antes, el capítulo 13 terminaba con una síntesis breve del funcionamiento. Ahora responde la pregunta de investigación, diferencia contribuciones documentadas de resultados pendientes y establece cuándo mantener o modificar la dirección física. Se conservaron los catorce capítulos y no se añadieron resultados de pruebas inexistentes.
-
-**2026-08-26 — Pregunta de investigación.** Antes, la relación investigada solo podía reconstruirse desde el problema, la hipótesis y los objetivos. Una primera corrección incluyó el medio phygital dentro de la pregunta; ahora la pregunta se concentra en el problema y reserva lo phygital para la respuesta proyectual. También se aclara que considerar una intención no equivale a realizarla, abandonar el teléfono ni reducir minutos de uso. El funcionamiento propuesto no cambió.
-
-**2026-08-26 — Sincronización con la memoria v4.** Antes, el resumen remitía a la v3, utilizaba una denominación compleja para el fenómeno y describía la validación mediante códigos internos. Ahora registra el orden de catorce capítulos, la aparición de Relevo en la formulación, el cumplimiento de extensión y los pendientes mediante lenguaje directo. El funcionamiento básico del sistema no cambió.
-
-**2026-08-24 — Creación.** Se creó este resumen para ofrecer una lectura breve y sincronizada con `memoria-vigente-v2.md`. No reemplaza la memoria ni agrega resultados. La descripción se basa en la formulación vigente; las decisiones técnicas y de interacción señaladas como abiertas no deben tratarse como especificaciones cerradas.
-
-**2026-08-24 — Definición positiva del objeto.** Se reemplazó una definición basada en una exclusión técnica por “testigo físico situado”. Ahora el objeto se define por su función: representar una intención activa y emitir un pulso ambiental desde un lugar significativo. La arquitectura visual y electrónica específica permanece abierta.
-
-**2026-08-24 — Síntesis de mercado.** Se añadió al resumen el resultado del estudio ampliado. Antes solo se informaba que el mercado estaba documentado; ahora se precisa que existen antecedentes parciales y que la diferencia de Relevo debe probarse comparativamente, sin afirmar novedad universal. La formulación y el funcionamiento del sistema no cambiaron.
-
-**2026-08-25 — Especialización de Relevo.** Se reemplazó el recuento acumulativo de cambios por una síntesis del nuevo eje argumental. Antes, el contraste con el mercado y la propuesta de valor aparecían como hallazgos relacionados pero separados; ahora se formula que Relevo se especializa provisionalmente en recuperar una intención propia en el lugar donde puede comenzar. No se modificaron el funcionamiento ni los pendientes de validación.
-
-**2026-08-25 — Plataforma inicial.** Se añadió al resumen la selección de Android y el descarte acotado de web e iPhone. Antes, Android figuraba como plataforma provisional sin una comparación explícita; ahora se define como único entorno del prototipo técnico integrado. Esta decisión no fija la activación ni excluye expansiones futuras.
-
-**2026-08-25 — Cierre editorial y arquitectura de interacción.** Se incorporaron tres interacciones, nueve marcos de síntesis y 35 estados como resultados de desarrollo estructural. Antes, el resumen informaba flujos y protocolos, pero no registraba la cobertura producida. El cambio permite comprender qué se diseñó sin confundir wireframes con validación; P0–P4, forma, canal, técnica y costos reales permanecen abiertos.
-
-**2026-08-25 — Revisión de fluidez y versión DOCX.** Se revisaron los apartados más densos y se generó un entregable editable para Google Docs. Antes, algunas secuencias repetían el sujeto o comprimían P0–P4 en frases aisladas; ahora explicitan la relación entre etapas y decisiones. La propuesta de Relevo, sus fuentes y sus pendientes no cambiaron.
-
-**2026-08-26 — Sincronización con la memoria v3.** Antes, este resumen describía la v2 y afirmaba que su estructura general se conservaba. Ahora registra el nuevo orden narrativo, la formulación desplazada al capítulo 10, las tres aristas explícitas, la normalización de conceptos y la única hipótesis central. El funcionamiento de Relevo no cambió y no se añadieron resultados de prototipo.
+- **Qué se cambió:** se sustituyó el resumen extenso por una lectura breve de qué es Relevo, qué funciona hoy, qué modificó el feedback y qué falta verificar.
+- **Cómo era antes:** el documento estaba actualizado al 11 de septiembre; indicaba 59 referencias, una extensión anterior y la ruta de micro:bit como siguiente paso inmediato. No reflejaba el APK Android 2.4 ni la auditoría de privacidad y audio.
+- **Por qué:** una entrada desactualizada podía confundir prototipo compilado, objeto previsto y resultados de validación. El detalle histórico permanece recuperable en Git y en los documentos enlazados.

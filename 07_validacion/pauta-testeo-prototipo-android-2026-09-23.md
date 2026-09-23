@@ -1,100 +1,146 @@
-# Relevo — pauta de testeo del prototipo integrado
+# Relevo — pauta de evaluación formativa del prototipo Android 2.4
 
-**Versión para corrección docente:** 23 de septiembre de 2026. **Estado:** instrumento diseñado; no contiene resultados ni autoriza por sí solo a reclutar. **Prototipo de referencia:** aplicación Android 2.2 y parlante Bluetooth multimedia pequeño, si supera la comprobación técnica previa.
+**Sesión de revisión docente:** 23 de septiembre de 2026. **Estado:** instrumento para revisión y ajuste; no contiene resultados ni autoriza por sí solo el reclutamiento. **Versión descrita:** APK Android 2.4, junto con el teléfono y el parlante Bluetooth concretos que se declaren antes de cada sesión.
 
-## Qué se presenta en la sesión de regreso
+## Propósito y alcance
 
-La entrega solicitada consta de un prototipo construido, indicadores preparados para revisión y una planificación individual. El [APK 2.2](../06_desarrollo_y_factibilidad/app-android/README.md) permite configurar una actividad, escoger la aplicación cuyo uso se acumula, definir un umbral y registrar el cierre declarado. Compilación y revisión en emulador no equivalen a un ensayo completo en teléfono y parlante físicos. Antes de mostrarlo como listo para testeo, deben comprobarse ambos en la configuración concreta que se utilizará.
+Esta pauta permite observar si una persona entiende y puede preparar un relevo, si la configuración se siente pertinente para una actividad que eligió, qué carga implica, qué control conserva y cómo interpreta el aviso. Separa la experiencia de uso de las fallas técnicas y de los datos que registra la aplicación.
 
-Esta pauta estudia **la comprensión del ciclo y el funcionamiento observable de la versión actual**. No reemplaza el [Protocolo 01](protocolo-01-asociacion-y-comparacion.md): aquel compara, en etapas posteriores, una señal situada de luz y sonido con otras condiciones y presupone un material distinto. Tampoco presenta el parlante comercial como forma final del producto.
+La evaluación no determina si la persona tiene un problema de uso digital, si debe dejar una aplicación ni si realizó efectivamente la actividad. La respuesta final de la app recoge lo que declara la persona; no verifica lo que hizo. Recordar una intención, comenzar una actividad, repetirla y formar un hábito son resultados distintos. La prueba tampoco compara todavía el lugar con una notificación ni evalúa la forma final del producto phygital.
 
-## Pregunta y objetivos
+## Prototipo y límites que se deben explicar
 
-**Pregunta:** ¿puede una persona preparar, recibir y cerrar un relevo sin ayuda, comprendiendo qué aplicación activa el aviso, dónde aparecerá la señal y que sigue siendo libre de decidir qué hacer?
+La versión 2.4 permite registrar una actividad y una manera concreta de comenzar, elegir una aplicación, definir un umbral, indicar una ubicación, revisar la configuración y activar el ciclo. La preparación está dividida en cuatro etapas; la creación de una actividad propia, en tres. La aplicación acumula el tiempo mientras la aplicación elegida está en primer plano y muestra una notificación persistente durante el monitoreo. El mínimo documentado es Android 12 (API 31). La compilación y las pruebas unitarias pasaron; la inspección visual en teléfono y el recorrido completo con un parlante real siguen pendientes. Véanse el [APK 2.4](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.4-2026-09-23.apk) y el [estado técnico de la versión](../06_desarrollo_y_factibilidad/app-android/README.md).
 
-1. Identificar dificultades de configuración, permisos y comprensión del tiempo acumulado.
-2. Verificar que el aviso se produce en la condición prevista y que la persona puede identificar y detener su fuente.
-3. Observar si la señal situada ayuda a recordar la actividad y cómo comenzar, sin abrir Relevo ni recibir pistas.
-4. Evaluar la carga de situar el parlante, la intrusión del sonido y el sentido de la respuesta final.
+El código solicita dirigir **el tono de Relevo** a una salida Bluetooth compatible y comprueba la ruta reportada por Android. Si no detecta esa salida, no reproduce el tono por el altavoz del teléfono; si se pierde la conexión durante el sonido, lo detiene. Esto aún debe comprobarse con los dispositivos concretos. Un parlante multimedia corriente puede convertirse en la salida de audio general del teléfono: la app no impide que YouTube, Instagram u otras aplicaciones suenen también por él. Android no garantiza que la ruta preferida sea la ruta efectiva. La función Samsung *Separate app sound* depende del modelo y no puede suponerse en otros teléfonos. Véase el [análisis de enrutamiento](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
 
-Se separan usabilidad, funcionamiento técnico, recuperación de la intención y decisión declarada. Una respuesta «Comencé la actividad» es un autorreporte, no una observación de cumplimiento. Ni una sesión breve ni el registro de la app demuestran disminución de uso digital, creación de hábitos o bienestar.
+Por lo tanto, no presentar como comprobadas la exclusividad del parlante, la conexión persistente, la percepción del sonido fuera de la app ni la ausencia de interferencias. El prototipo Android 2.4 descrito aquí no aporta una luz física; no evaluar ni prometer esa salida en esta sesión.
 
-## Fundamento metodológico
+## Pregunta de evaluación
 
-La evaluación se organiza alrededor de personas, tareas y contexto de uso definidos, y documenta decisiones para iterar el diseño, de acuerdo con la orientación del diseño centrado en las personas de ISO 9241-210 (Organización Internacional de Normalización [ISO], 2019). La usabilidad se observará mediante logro de tareas, dificultades y percepción de facilidad en un contexto especificado; estos aspectos no se reducen a una valoración estética (ISO, 2018). Los escenarios describen metas cotidianas sin nombrar los controles de la interfaz para evitar inducir una solución (Nielsen Norman Group, 2014, 2019). Tras las tareas principales se aplicará una pregunta breve de facilidad en una escala de siete puntos; el valor se interpretará junto con la observación, no como prueba estadística en una muestra pequeña (Sauro, 2010).
+¿Cómo comprende y experimenta una persona la preparación y recepción de un relevo asociado a una actividad elegida, y qué relación observa entre la aplicación, el tiempo configurado, el lugar y la señal sonora?
 
-## Participantes y contexto propuestos para la corrección
+La pregunta se divide en cuatro focos:
 
-- **Muestra formativa propuesta:** cinco o seis personas adultas, inicialmente dentro del rango de 18 a 30 años usado para el reclutamiento previo, que utilicen ocio digital y puedan describir una actividad que a veces quieren comenzar. No deben ser las ocho personas de las entrevistas para la primera ronda si es posible, pues ya conocen el tema.
-- **Reclutamiento:** por referencias. Amistades pueden participar si la invitación deja claro que negarse o retirarse no afecta la relación, estudios ni trabajo. Registrar vínculo y posible sesgo; no describir la muestra como representativa.
-- **Lugar:** ambiente doméstico o una disposición comparable donde la persona pueda ubicar el parlante cerca de un material asociado a su actividad. Una sala de clase sirve para detectar fallos de interfaz, pero no basta para concluir que el lugar aporta valor cotidiano.
-- **Duración estimada:** 35–45 minutos por persona. Primero realizar una sesión piloto para ajustar comprensión, tiempos y ficha; no mezclarla con el conjunto analizado si cambia el procedimiento.
-- **Teléfono:** Android compatible con la app. Registrar modelo, versión del sistema y si es equipo propio o prestado. No pedir la contraseña ni revisar contenidos de otras apps.
+1. **Pertinencia:** ¿la actividad y la forma de comenzar tienen sentido para la persona y su situación cotidiana?
+2. **Comprensión:** ¿puede explicar qué observa Relevo, cuándo espera el aviso y qué significa la ubicación elegida?
+3. **Carga:** ¿qué esfuerzo, tiempo, dudas o pasos de vuelta requiere preparar y usar el sistema?
+4. **Control:** ¿puede revisar sus decisiones, detener o silenciar el aviso y decidir qué hacer sin sentirse obligada?
 
-## Condiciones que deben quedar resueltas antes de convocar
+## Criterio metodológico
 
-1. Probar en el teléfono y parlante concretos: conexión, ruta del tono de Relevo, ausencia de audio de otras apps en el parlante mientras suenan YouTube o Instagram en el teléfono, emisión con Relevo fuera de pantalla, desconexión, silencio y ausencia de señal duplicada. Registrar versión del APK, modelos, versión de Android y ajustes de audio. Si falla la separación requerida, **no presentarla como lograda ni usar el intento como dato sobre la comprensión de la persona**. Véase el [análisis de enrutamiento](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
-2. Confirmar el alcance real de la recopilación local y remota, quién accede, cuánto tiempo se conserva, cómo se retira el consentimiento y cómo se eliminan datos. El texto de consentimiento de la app debe coincidir con el documento entregado. Completar correo de contacto del responsable y obtener revisión docente antes de reclutar. El [consentimiento anterior](consentimiento-protocolo-01.md) describe otro montaje y no debe reutilizarse sin adaptación.
-3. Acordar si se registrarán notas solamente. No grabar pantalla, audio, aplicaciones ajenas ni conversaciones privadas por defecto. Cualquier grabación requiere consentimiento específico.
-4. Usar un identificador como `P01`; guardar por separado cualquier dato de contacto. No subir fichas identificables a este repositorio.
-5. Acordar el modo de terminar la prueba si el sonido incomoda, el permiso no se concede, el parlante falla o la persona quiere retirarse.
+La pauta parte de tareas y contextos de uso definidos y registra qué ocurre para orientar cambios de diseño, de acuerdo con el diseño centrado en las personas (Organización Internacional de Normalización [ISO], 2019). La observación considera logro de tareas, dificultades y percepción de facilidad en el contexto especificado; no reduce la usabilidad a una impresión estética (ISO, 2018). Las instrucciones describen metas cotidianas, sin indicar qué control tocar, para reducir la inducción de respuestas (Nielsen Norman Group, 2014, 2019). Una escala breve de facilidad se interpreta junto con las observaciones y comentarios, no como evidencia estadística de una muestra pequeña (Sauro, 2010).
+
+## Participantes y condiciones de aplicación
+
+- **Muestra formativa propuesta:** cinco o seis personas adultas, dentro del rango de 18 a 30 años usado en el reclutamiento previo, que utilicen ocio digital y puedan escoger una actividad propia. Es una muestra exploratoria por conveniencia; no es representativa. Amistades pueden participar si la invitación deja claro que aceptar, rechazar o retirarse no afecta su relación, estudios ni trabajo. Registrar el vínculo y considerarlo al interpretar las respuestas.
+- **Contexto:** un espacio donde la persona pueda decidir si el parlante cabe y dónde tendría sentido situarlo. Una sala de clase sirve para detectar problemas de interfaz, pero no demuestra por sí sola el valor del lugar en una situación cotidiana.
+- **Duración estimada:** 35–45 minutos por sesión. Primero realizar un piloto del procedimiento; si se modifica la pauta después del piloto, registrar el cambio y no mezclar sus observaciones con las sesiones que sigan la versión revisada.
+- **Teléfono:** Android 12 o posterior compatible con la app. Registrar modelo, versión de Android, si es propio o prestado, modelo de parlante y ajustes relevantes de audio. No pedir contraseña ni revisar contenidos ajenos a la tarea.
+- **Datos de identidad:** asignar un código como `P01`; mantener los consentimientos firmados y cualquier dato de contacto separados de las fichas. No subir información identificable al repositorio.
+
+## Puerta ética y de privacidad antes de convocar
+
+La auditoría de privacidad de la versión 2.3, cuyo flujo de datos permanece en 2.4, describe almacenamiento local en una base de datos del teléfono y sincronización a Supabase, el servicio remoto de datos del proyecto, si la app tiene configurada su dirección y clave publicable. Los registros pueden incluir actividad, forma de comenzar, lugar declarado, aplicación elegida, umbral, tiempos, eventos y respuesta final opcional. El identificador aleatorio no vuelve anónimos esos registros: son seudonimizados, es decir, se asocian a un código en vez del nombre, pero podrían relacionarse con una persona. La ruta completa de eliminación —incluidos la base local, el historial, las credenciales, el servidor y los respaldos aplicables— no está verificada. Véase [protección de datos del prototipo](privacidad-prototipo-android-2026-09-23.md).
+
+Antes de reclutar, la persona responsable debe:
+
+1. comprobar si la versión instalada guardará datos solo localmente o también los sincronizará con Supabase; explicar a cada participante la condición real, quién tendrá acceso y qué datos se recogen;
+2. completar un contacto operativo, el plazo de conservación y un procedimiento comprobado para retirar el consentimiento y solicitar eliminación; el repositorio indica que esta gestión todavía necesita verificación;
+3. conciliar el consentimiento de la app con la hoja entregada y obtener la revisión docente/institucional que corresponda;
+4. explicar por separado el consentimiento académico y los permisos de Android. El acceso a datos de uso es necesario para probar el conteo real; el permiso de notificaciones habilita avisos del sistema. No presionar a la persona para concederlos;
+5. registrar solo notas de la tarea por defecto. No grabar pantalla, audio, notificaciones, conversaciones ni otras aplicaciones. Cualquier grabación requeriría consentimiento específico y revisión previa.
+
+Si no se puede explicar la ruta efectiva de los datos, el contacto o el retiro/eliminación, no iniciar una sesión con participantes. Si alguien no acepta participar o no concede un permiso, detener la actividad que dependa de él, agradecer y no tratarlo como un error de la persona.
+
+## Comprobación técnica previa, sin participante
+
+Registrar fecha, versión exacta del APK, teléfono, sistema Android, parlante, método de conexión y configuración de Supabase. Probar antes de convocar:
+
+- conexión, desconexión y reconexión del parlante;
+- señal de Relevo con la app visible y fuera de pantalla;
+- ruta que Android informa para el tono, y que el teléfono no emita el tono cuando no haya una salida admitida;
+- posibilidad de silenciar y cerrar el ciclo, y corte del sonido si se pierde la conexión;
+- reproducción de un audio de control de otra aplicación en el mismo teléfono: comprobar si también sale por el parlante. Registrar el resultado sin prometer separación;
+- funcionamiento del permiso de acceso de uso y, si se probará el aviso fuera de pantalla, de las notificaciones.
+
+La conexión normal de un parlante Bluetooth multimedia no reserva el dispositivo para Relevo. Si el audio de control de otra app sale por el parlante, anotar el hecho y explicar la limitación. Si la sesión busca evaluar únicamente la comprensión de Relevo, puede continuar solo si el sonido no crea un riesgo o una confusión; no usarla para afirmar que existe una salida exclusiva. Si falla la señal prevista, clasificar la observación como incidencia técnica, no como falta de comprensión.
 
 ## Guion de la sesión
 
-**Apertura, 5 minutos.** Explicar: «Estamos probando Relevo, no tus capacidades. Puedes pensar en voz alta si te acomoda, omitir preguntas o detenerte. Puedes elegir una actividad cotidiana que no sea privada». Confirmar consentimiento y permisos antes de recoger datos. Preguntar: «¿Hay alguna actividad que quisieras retomar en un momento en que sueles seguir usando otra app?». Registrar las palabras de la persona, sin sustituirlas por categorías del investigador.
+### Apertura y elección de una situación — 5 minutos
 
-**Tarea 1 — Preparar, 8–10 minutos.** «Imagina que hoy te gustaría hacer esa actividad, pero sabes que podrías seguir usando una app de tu teléfono. Deja preparado Relevo para que te avise después de un tiempo que tú elijas». No mencionar dónde están el selector, el deslizador ni el botón. Observar si comprende qué app cuenta, que el tiempo es acumulado, qué actividad queda registrada y qué espera del parlante. Solo dar ayuda si no puede avanzar, registrando cuándo y qué se dijo.
+Leer: «Estamos evaluando el prototipo, no tus capacidades. Puedes omitir cualquier pregunta o detenerte cuando quieras. No hay una acción correcta que tengas que demostrar. Elige una actividad cotidiana que de verdad te interese; no tiene que ser productiva ni tienes que contar algo privado».
 
-**Tarea 2 — Situar y activar, 5 minutos.** «Deja el parlante en un lugar que tenga sentido para comenzar lo que elegiste y pon el sistema en marcha». Pedir una explicación breve, antes de que ocurra el aviso: «¿Qué esperas que pase y dónde?». Registrar si la relación entre actividad y lugar fue elegida por la persona o sugerida por el investigador. Comprobar que el sonido de prueba y el silencio sean entendibles; no exigir que la persona mantenga el parlante conectado contra su voluntad.
+Preguntar: «¿Hay algo que te gustaría hacer en una situación en que a veces sigues usando otra aplicación?». Registrar la actividad en las palabras de la persona. No ofrecer caminar, leer u otros ejemplos salvo que pida ayuda para entender la pregunta. Anotar si la actividad es pertinente para ella hoy, si la considera posible y qué contexto desea compartir; no juzgar la elección.
 
-**Tarea 3 — Esperar y recibir, 8–12 minutos.** La persona utiliza la app que eligió con un umbral breve acordado para la prueba; registrar por separado el tiempo configurado y el tiempo real. No interrumpir al llegar la señal. Observar percepción, fuente identificada, eventual consulta al teléfono y acción para detenerla. Después preguntar, sin nombrar la actividad: «¿Qué te recordó el aviso?» y «¿Cómo pensabas empezar?». Si la señal no llega o aparece por una falla técnica, marcar el intento como inválido, explicar el incidente y repetir solo si la persona acepta.
+### Tarea 1 — Preparar el relevo — 8–10 minutos
 
-**Tarea 4 — Cerrar, 3–5 minutos.** «Termina este relevo como te resulte adecuado y vuelve al inicio». Observar si entiende las opciones de respuesta y que puede omitirla. No pedirle que afirme haber realizado una actividad que no realizó.
+Indicar: «Deja preparado Relevo para esa actividad y decide tú cómo tendría sentido que te avisara». No señalar controles ni sugerir app, tiempo o ubicación. Observar la preparación por etapas, el uso de atrás/revisión y cualquier duda. Si la persona se detiene, esperar; ofrecer ayuda solo cuando la solicite o no pueda continuar y anotar literalmente qué ayuda se dio.
 
-**Conversación final, 8 minutos.** Utilizar las preguntas de la ficha. Cerrar agradeciendo, aclarando cómo solicitar el retiro de sus datos y sin sugerir que hubo una respuesta correcta.
+Al terminar, preguntar: «Cuéntame con tus palabras qué dejaste configurado y qué esperas que ocurra». Comprobar comprensión de: actividad y comienzo elegidos; aplicación que se observa; condición temporal configurada; ubicación declarada; canal de aviso. No corregir durante la tarea salvo que exista un riesgo o una decisión de privacidad incomprendida. Registrar primero la interpretación espontánea y luego aclarar los hechos necesarios para continuar.
 
-## Indicadores propuestos para revisión docente
+### Tarea 2 — Situar y activar — 5 minutos
 
-| Indicador | Definición y registro | Para qué decisión sirve |
-| --- | --- | --- |
-| Configuración autónoma | Tarea 1 completada sin ayuda / con ayuda / no completada; anotar dónde ocurrió la dificultad. | Simplificar selección de app, umbral, actividad o permisos. |
-| Comprensión de la condición | Antes del aviso, explica cuál app suma tiempo y qué sucede al salir de ella; correcto / parcial / incorrecto. | Corregir lenguaje y retroalimentación del conteo. |
-| Situación deliberada | Elige un lugar y explica su relación con la actividad sin que se le proponga uno; sí / no / no evaluable. | Revisar la relación entre señal y comienzo. |
-| Fiabilidad técnica | Activación única y oportuna, audio en parlante, silencio y estado visible; registrar cada componente y fallos. | Separar fallas de implementación de problemas de experiencia. |
-| Percepción y atribución | Detecta el aviso y reconoce de dónde viene; sí / no / dudoso en cada parte. | Ajustar canal, volumen o explicación. |
-| Recuperación sin pistas | Nombra actividad y forma de empezar sin abrir Relevo; ambas / una / ninguna; registrar si consultó el teléfono. | Evaluar la asociación entre señal, intención y lugar. |
-| Control y autonomía | Puede detener el aviso y comprende que actuar, aplazar o cambiar de idea son opciones; sí / parcial / no. | Revisar cierre, tono y control. |
-| Carga e intrusión | Valoración de 1 a 7 y razón concreta; registrar contexto y molestias. | Ajustar preparación, duración, volumen y momento. |
-| Facilidad percibida | Tras tareas 1 y 4: «¿Qué tan fácil o difícil fue hacer esto?» 1 = muy difícil; 7 = muy fácil. | Priorizar fricciones junto con la observación. |
+Indicar: «Ubica el parlante donde te parezca que podría ayudarte a empezar y activa el relevo si todavía te hace sentido». Observar el tiempo y esfuerzo de ubicar/conectar el parlante, el espacio disponible, si la ubicación la elige la persona y si la relación con la actividad le resulta clara. Preguntar antes de que llegue la señal: «¿Qué esperas que pase, dónde y por qué?». No proponer una ubicación.
 
-Los criterios de avance son **provisionales y formativos**, no umbrales estadísticos: mantener lo que no produzca errores críticos ni confusiones repetidas; modificar si dos o más personas tropiezan en el mismo punto o interpretan mal la condición; detener la configuración ensayada ante un problema de privacidad, imposibilidad de silenciar, señal persistente fuera del contexto acordado o fallo técnico reiterado. La corrección docente debe aprobar o ajustar esta regla antes de la primera sesión analizada. No se compensan fallos críticos con una puntuación promedio alta.
+### Tarea 3 — Esperar y recibir el aviso — 8–12 minutos
 
-## Preguntas finales, en este orden
+La persona usa la aplicación que eligió con un umbral breve acordado y registrado. La duración configurada y la duración real de la tarea son datos distintos. Si se usa el modo de comprobación de 15 segundos documentado en la app, etiquetar la sesión como demostración técnica breve: no permite concluir que la experiencia del umbral habitual o de una sesión cotidiana funciona igual.
 
-1. «¿Qué entendiste que hizo Relevo desde que lo activaste hasta que sonó?» — reconstrucción del mecanismo; no sugerir la respuesta.
-2. «¿Qué te recordó la señal y qué papel tuvo el lugar donde estaba el parlante?» — distinguir contenido de la intención y aporte del lugar.
-3. «¿Hubo algún momento en que el aviso sobrara o interrumpiera algo que sí querías hacer?» — detectar condiciones de no intervención.
-4. «¿Qué parte te costó más o te hizo dudar?» — ubicar fricción concreta.
-5. «Si pudieras cambiar una cosa antes de volver a usarlo, ¿cuál sería?» — priorizar una modificación, no pedir elogios generales.
+No anunciar cuándo debe sonar. Registrar si la persona percibe el aviso, qué cree que lo emitió, si mira el teléfono y qué decide hacer. No pedirle que empiece la actividad como prueba de éxito. Después de registrar la primera respuesta espontánea, preguntar: «¿Qué te hizo pensar el aviso?», «¿Qué actividad habías pensado hacer y por dónde podrías empezar?» y «¿Qué decidiste hacer después?». Anotar si la actividad y el comienzo surgieron espontáneamente o después de la pregunta. Si no suena, suena por otra salida o la conexión falla, detener la interpretación de experiencia, registrar la incidencia y ofrecer repetir solo si la persona quiere.
 
-La pregunta sobre el lugar no constituye comparación causal: para afirmar que el lugar aporta más que una notificación u otra ubicación se necesita la fase comparativa del Protocolo 01 o un nuevo diseño equivalente.
+### Tarea 4 — Controlar y cerrar — 3–5 minutos
 
-## Registro y análisis
+Indicar: «Haz con el aviso lo que te parezca adecuado y termina el relevo cuando quieras». Observar si encuentra el control real para silenciar o cerrar, si sabe revisar o cambiar una elección disponible y si entiende que puede seguir, posponer o cambiar de idea. No dar por hecho una función de pausa manual, eliminación de datos o desconexión selectiva si no está presente y verificada. No insistir si la persona no quiere continuar.
 
-Usar una [ficha por sesión](ficha-testeo-prototipo-android-2026-09-23.md). Separar cuatro columnas al analizar: observación directa, respuesta de la persona, evento registrado por la app e interpretación del investigador. Una señal emitida en el registro no prueba que fue percibida; una declaración de inicio no prueba conducta sostenida. Señalar la versión del prototipo y cualquier cambio de guion. Resumir por indicador cuántas personas tuvieron cada dificultad y acompañarlo de ejemplos codificados; no inferir porcentajes poblacionales.
+### Conversación final — 8 minutos
 
-## Plan individual que conviene llevar mañana
+Hacer las preguntas del apartado siguiente. Mantener preguntas neutrales; no explicar la intención del diseño antes de recoger la interpretación de la persona. Agradecer la participación y recordar el canal de contacto y retiro que se haya informado en el consentimiento.
 
-| Plazo | Objetivo verificable | Dependencia |
-| --- | --- | --- |
-| Antes de la corrección | Mostrar APK 2.2, parlante previsto y una demostración técnica breve; llevar esta pauta y una ficha en blanco. | Probar teléfono y parlante juntos; declarar cualquier fallo. |
-| Después de la corrección | Ajustar indicadores, consentimiento, retención de datos y guion; registrar cambios aprobados. | Observaciones docentes y responsable de datos. |
-| Finales de septiembre / inicio de octubre | Ejecutar piloto y luego primera ronda formativa; sintetizar problemas y decisiones. | Condiciones éticas y técnicas resueltas. |
-| Octubre | Iterar app y soporte físico; si procede, comparar valor del lugar y soporte. | Evidencia de la primera ronda; protocolo comparativo revisado. |
-| Hasta 31 de octubre | Tener producto casi terminado y registro de cambios verificable. | Pruebas e iteraciones. |
-| Hasta 15 de noviembre | Cerrar producto, evidencia y contenidos de memoria. | Ensayos finales y revisión editorial. |
+## Indicadores para observar
 
-Esta tabla orienta el [plan individual](../00_gobernanza/hoja-de-ruta.md); las fechas institucionales vigentes están en el [calendario oficial](../00_gobernanza/calendario-oficial-segundo-semestre-2026.md). La corrección puede modificar alcance y secuencia, pero no convertir en resultados las pruebas aún no realizadas.
+| Indicador | Registro | Decisión que puede orientar |
+|---|---|---|
+| Pertinencia de la intención | La persona explica por qué esa actividad le importa en esa situación; pertinente para ella / parcialmente / no pertinente / prefiere no decirlo. Conservar sus palabras y no inferir motivación. | Si la preparación representa una intención propia o empuja a elegir una actividad que no corresponde. |
+| Comprensión del funcionamiento | Después de configurar, explica qué aplicación se observa, cómo se acumula el tiempo y qué espera que active el aviso; adecuada / parcial / errónea / no evaluable. | Revisar el lenguaje, la condición y la confirmación de la configuración. |
+| Comprensión de la señal y el lugar | Explica de dónde espera el sonido, qué le recuerda y por qué situó allí el parlante; registrar por separado lo previsto y lo realmente observado. | Revisar la relación entre actividad, ubicación y señal, sin atribuir un efecto causal al lugar. |
+| Recuperación de la intención | Tras la señal, nombra la actividad y cómo podría empezar; registrar ambas / solo una / ninguna, y si lo dijo espontáneamente o tras la pregunta neutral. No equiparar recuerdo o declaración con haber realizado la actividad. | Evaluar si el aviso devuelve a la conversación una intención concreta y qué papel cumple la ubicación. |
+| Carga de preparación | Tiempo por etapa, retrocesos, errores, solicitudes de ayuda y dificultad percibida de 1 (muy baja) a 7 (muy alta); anotar el punto concreto de fricción. | Simplificar el paso que produjo carga, no eliminar control sin evidencia. |
+| Control percibido y observable | Revisa/corrige antes de activar; encuentra silencio/cierre; entiende que puede no seguir la sugerencia. Marcar observado / con ayuda / no observado / no evaluable. | Corregir etiquetas, ubicación de controles y explicación de opciones. |
+| Privacidad comprendida | En sus palabras, identifica para qué se solicita acceso de uso, qué información se registra y si la configuración de esta sesión la envía a un servidor. No evaluar si “acepta” como indicador de comprensión. | Hacer más clara la información y comprobar coherencia entre consentimiento y configuración efectiva. |
+| Percepción y atribución | Detecta el aviso: sí / no / dudoso; atribuye la fuente correctamente: sí / no / dudoso; describe molestias o sorpresa con sus palabras. | Distinguir reconocimiento de fallas de ruta, volumen o conexión. |
+| Facilidad y pertinencia global | «¿Qué tan fácil o difícil fue preparar y cerrar el relevo?» 1 = muy difícil; 7 = muy fácil. Añadir «¿qué hizo que eligieras ese número?». | Priorizar cambios junto a evidencia observada; no interpretar un promedio aislado como éxito. |
+| Incidencias técnicas | Registrar componente, hora y estado: permiso, monitoreo, notificación, parlante, ruta, señal, silencio, cierre, sincronización declarada. | Separar fallas del prototipo de problemas de comprensión y decidir si el intento sirve para analizar cada pregunta. |
+
+No sumar los indicadores en una calificación única. El éxito de una tarea no compensa un problema crítico de consentimiento, control o sonido. Los criterios de avance son provisionales y deben recibir corrección docente; con una muestra formativa no se infiere prevalencia poblacional.
+
+## Preguntas de cierre
+
+1. **Pertinencia:** «¿En qué situación real, si alguna, te serviría preparar algo así? ¿Qué parte no encaja con tu forma de hacer las cosas?»
+2. **Comprensión:** «Explícame qué estaba observando Relevo y qué tenía que ocurrir para que apareciera el aviso». No completar su respuesta.
+3. **Carga:** «¿Qué parte te pidió más esfuerzo o te hizo dudar? ¿Hubo algún paso que te pareciera innecesario?»
+4. **Control:** «¿En algún momento sentiste que tenías menos control del que querías? ¿Qué opción te habría ayudado, si es que faltó alguna?» Registrar la experiencia, sin prometer nuevas funciones.
+5. **Señal y ubicación:** «¿Qué te recordó el sonido? ¿La ubicación influyó en lo que pensaste o hiciste, o no tuvo importancia?» La respuesta no demuestra que el lugar causara la decisión.
+6. **Reconocimiento y rachas, exploratorio:** primero preguntar «Después de usar Relevo, ¿qué información o devolución te habría resultado útil, si alguna?». Si la persona no lo menciona, presentar como idea no implementada: «La versión que probaste no incluye rachas ni reconocimientos. ¿Te serviría que una versión futura mostrara algún registro de continuidad, como una racha —una secuencia de ocasiones consecutivas—, te sería indiferente o preferirías que no apareciera? ¿Por qué?». Registrar utilidad, indiferencia, presión o rechazo en sus términos. No mostrar un diseño, no atribuir la idea a una función actual ni tratar la respuesta como decisión de producto.
+
+## Registro e interpretación
+
+Usar una ficha por sesión. Mantener separadas cuatro capas: **observación directa** (lo que hizo), **respuesta textual** (lo que dijo), **evento registrado por la app** y **interpretación del investigador**. Anotar ayuda entregada, cambios de guion, configuración local/remota y fallos. Una señal registrada no demuestra que se percibió; una elección declarada no demuestra conducta sostenida; abrir o completar una racha no demuestra hábito.
+
+Clasificar por indicador cuántas sesiones muestran cada tipo de dificultad, y acompañar el conteo con ejemplos identificados mediante códigos. Un intento con falla del parlante puede informar sobre conexión y carga, pero no sobre reconocimiento del sonido. Una tarea completada con ayuda no se registra como autónoma. No convertir percepciones ni autoinformes en efectos causales.
+
+## Secuencia posterior a la sesión de revisión del 23-09
+
+| Momento | Trabajo | Condición para avanzar |
+|---|---|---|
+| Corrección docente, 23-09-2026 | Revisar pertinencia de las tareas, indicadores, reglas de registro y alcance declarado de la versión 2.4. | Registrar qué observaciones se aceptan, se ajustan o quedan abiertas. |
+| Antes de invitar participantes | Resolver contacto, consentimiento, configuración efectiva de datos, retención y eliminación; probar la ruta de audio con el equipo exacto. | No iniciar reclutamiento mientras la información entregada o la prueba técnica no sean suficientes. |
+| Piloto | Aplicar el procedimiento, registrar duración y ayudas y revisar comprensión de las preguntas. | Si se cambia el instrumento, documentar la versión y separar el piloto del análisis posterior. |
+| Septiembre–octubre de 2026 | Ejecutar una ronda formativa, corregir problemas y documentar decisiones. Considerar una comparación del lugar solo con protocolo revisado. | No atribuir a la ubicación un efecto que no se comparó. |
+| Hasta el 31 de octubre / 15 de noviembre | Cerrar progresivamente producto, evidencia y contenidos de memoria según la hoja de ruta vigente. | Ajustar el alcance a pruebas y dependencias realmente resueltas. |
+
+La planificación general se consulta en la [hoja de ruta](../00_gobernanza/hoja-de-ruta.md) y el [calendario oficial del segundo semestre](../00_gobernanza/calendario-oficial-segundo-semestre-2026.md). Las fechas no convierten pruebas pendientes en resultados.
 
 ## Referencias (APA 7)
 
@@ -110,13 +156,29 @@ Sauro, J. (2010, 2 de marzo). *If you could only ask one question, use this one*
 
 ## Registro de cambios (disclaimer)
 
-### 2026-09-23 — Verificación de separación de audio
+### 2026-09-23 — Sincronización con el APK 2.4
 
-- **Cambio:** la puerta técnica distingue la ruta del tono de Relevo del audio de otras apps y exige probar ambos con el montaje concreto.
-- **Antes:** «ruta exclusiva» podía interpretarse como garantizada por seleccionar el parlante para Relevo.
-- **Motivo:** el parlante multimedia conectado puede recibir audio general del teléfono; la experiencia solicitada requiere comprobación separada.
-- **Alcance:** corrección del instrumento; no se ha ejecutado la prueba ni modificado el prototipo.
+- **Qué cambió:** la versión descrita y el enlace de descarga se actualizaron a 2.4.
+- **Cómo era antes:** la pauta nombraba el APK 2.3, anterior al cambio del indicador de inicio autodeclarado.
+- **Por qué:** usar el mismo instrumento y la misma versión de aplicación durante la revisión; los flujos y límites de privacidad de 2.3 siguen vigentes en 2.4.
 
-- **Cambio:** se creó una pauta para el prototipo Android 2.2 con parlante Bluetooth, indicadores observables, preguntas no inductivas y una ruta de decisión.
-- **Antes:** el Protocolo 01 describía una señal de luz y sonido activada manualmente con otro montaje; no cubría la detección acumulada ni la interfaz actual.
-- **Motivo:** presentar mañana un instrumento coherente con lo que efectivamente existe, sin atribuirle resultados ni abandonar la futura comparación phygital.
+### 2026-09-23 — Aplicación del feedback docente y actualización a la versión 2.3
+
+- **Qué cambió:** se reemplazaron las referencias al APK 2.2 y a «mañana» por el APK 2.3 y la sesión del 23-09; se reorganizaron la pregunta de evaluación, tareas, indicadores y preguntas para observar pertinencia, comprensión, carga y control. Se añadieron condiciones explícitas de privacidad y consentimiento según los flujos documentados, límites reales del enrutamiento Bluetooth y una pregunta hipotética sobre reconocimiento/rachas.
+- **Cómo era antes:** la pauta presentaba la versión 2.2, pedía demostrar una ruta de parlante sin distinguir plenamente el audio de Relevo del audio de otras apps, y dejaba poco operacionalizados la privacidad, la carga y el control. El feedback sobre reconocimiento podía leerse como solicitud de función.
+- **Por qué se tomó esta decisión:** alinear el instrumento con la versión existente, separar experiencia de uso de fallas técnicas, informar con precisión los datos y las limitaciones, y recoger la opinión sobre rachas sin tratarlas como función incorporada ni decisión aprobada.
+- **Alcance y límites:** solo se actualizó esta pauta. No se modificó la app, el consentimiento, la configuración de Supabase ni otros documentos; no se realizaron pruebas físicas ni sesiones con participantes. La eliminación integral de datos y la separación del audio de otras aplicaciones permanecen sin verificación.
+
+### 2026-09-23 — Corrección inicial del límite de audio
+
+- **Qué cambió:** la puerta técnica distinguió la ruta del tono de Relevo del audio de otras aplicaciones.
+- **Cómo era antes:** «ruta exclusiva» podía interpretarse como garantizada al conectar un parlante.
+- **Por qué se tomó esta decisión:** el parlante multimedia puede recibir audio general y la app no controla otras aplicaciones.
+- **Alcance:** documentación; sin ensayo físico.
+
+### 2026-09-23 — Creación de la pauta
+
+- **Qué cambió:** se redactó una pauta inicial para evaluar la app Android y un parlante Bluetooth.
+- **Cómo era antes:** el Protocolo 01 trataba una activación manual con otra configuración y no cubría la condición de uso acumulado de la aplicación.
+- **Por qué se tomó esta decisión:** distinguir la evaluación del prototipo Android de la comparación phygital futura.
+- **Alcance:** instrumento diseñado; no contiene resultados ni autoriza por sí solo a reclutar.

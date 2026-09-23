@@ -11,11 +11,11 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
-- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia completa de las 59 entradas bibliográficas y correcciones APA aplicadas.
+- [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia de las 64 entradas bibliográficas, actualizada tras el feedback del 23 de septiembre.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
-- [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve de qué es, cómo funciona, qué cambió y qué permanece abierto.
+- [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve actualizada al 23 de septiembre sobre la propuesta, el APK 2.4, los cambios y los pendientes.
 
 ## Antecedentes y documentos históricos
 
@@ -322,3 +322,15 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 - **Cambio:** se actualizaron los enlaces a las seis auditorías con nombres temáticos y se retiraron del índice las referencias a nombres de preparación.
 - **Cómo estaba antes:** algunos nombres de archivo identificaban su origen operativo y no el contenido que el lector debía encontrar.
 - **Motivo:** ordenar la carpeta de memoria por función documental y mejorar la navegación, sin eliminar informes históricos ni alterar su contenido.
+
+### 2026-09-23 — Actualización de memoria y referencias
+
+- **Cambio:** se indicó que la memoria vigente incorpora el análisis de hábitos, reconocimiento positivo, datos de investigación y ruta de audio; la matriz se actualizó de 59 a 64 referencias.
+- **Versión anterior:** el índice mantenía el recuento del 16 de septiembre y no distinguía las nuevas fuentes.
+- **Motivo:** preservar una entrada fiable a la memoria después de aplicar el feedback docente.
+
+### 2026-09-23 — Resumen vigente sincronizado
+
+- **Cambio:** el índice señala la actualización del resumen breve con el estado del APK 2.4 y el feedback del día.
+- **Versión anterior:** la descripción no indicaba fecha y el resumen enlazado seguía centrado en el estado del 11 de septiembre.
+- **Motivo:** ofrecer una entrada rápida y actual sin confundir prototipo compilado con objeto final o prueba con personas.

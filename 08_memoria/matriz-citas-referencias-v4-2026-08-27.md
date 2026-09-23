@@ -1,13 +1,13 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
-**Última comprobación:** 16 de septiembre de 2026
+**Última comprobación:** 23 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
 ## Resultado
 
-La memoria contiene 59 referencias. Las 54 entradas del control anterior se conservan. Esta revisión incorpora Aaker (1996), Karjalainen y Snelders (2010), Keller et al. (2002), Motta-Filho (2021) y Ward et al. (2020), utilizadas para fundamentar identidad, reconocimiento, posicionamiento y experiencia de marca. Elliot y Maier (2014) y Kauppinen-Räisänen y Luomala (2010) mantienen la cautela contextual sobre color. Ninguna de estas fuentes se presenta como validación de la marca de Relevo.
+La memoria contiene 64 referencias. Se conservan las 59 del control del 16 de septiembre y se incorporan Android Developers (s. f.), Gardner et al. (2012), Lally et al. (2010), Silverman y Barasch (2023) y Smit et al. (2019). Respaldan límites de la ruta de audio, la diferencia entre hábito y frecuencia, el efecto de las rachas sobre la participación y el valor de ofrecer elección en comunicación digital. Ninguna de ellas valida Relevo.
 
 La convención de autoría se mantiene según APA 7: `y` integra los apellidos en citas narrativas, mientras `&` se utiliza en citas parentéticas y antes del último autor en la lista de referencias. Esta diferencia es intencional y no constituye una inconsistencia de idioma.
 
@@ -16,6 +16,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Autor o entidad | Fecha usada | Cita en el cuerpo | Entrada en referencias | Estado |
 | --- | --- | --- | --- | --- |
 | Aaker | 1996 | Sí | Sí | Conforme |
+| Android Developers | s. f. | Sí | Sí | Conforme; límite de la ruta de audio |
 | Apple | s. f. | Sí | Sí | Conforme |
 | Apple Developer | s. f.-a | Sí | Sí | Conforme |
 | Apple Developer | s. f.-b | Sí | Sí | Conforme |
@@ -29,6 +30,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | de Segovia Vicente et al. | 2024 | Sí | Sí | Conforme |
 | Elliot y Maier | 2014 | Sí | Sí | Conforme |
 | Focusaur | s. f. | Sí | Sí | Conforme |
+| Gardner et al. | 2012 | Sí | Sí | Conforme; automaticidad y piloto |
 | Gibbons | 2017 | Sí, [Continuidad de la experiencia y soporte](memoria-vigente-v4.md#continuidad-de-la-experiencia-y-soporte) | Sí | Incorporación verificada el 9 de septiembre |
 | Gilbert et al. | 2023 | Sí | Sí | Conforme |
 | Goldsmith | 2021 | Sí | Sí | Conforme |
@@ -47,6 +49,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Kidel Peña-Albert et al. | 2026 | Sí | Sí | Conforme |
 | Kirsh | 1995 | Sí | Sí | Conforme |
 | Kitchen Safe | s. f. | Sí | Sí | Conforme |
+| Lally et al. | 2010 | Sí | Sí | Conforme; formación de hábitos |
 | Lukoff et al. | 2018 | Sí | Sí | Conforme |
 | Lyngs et al. | 2019 | Sí | Sí | Conforme |
 | McDaniel y Einstein | 2000 | Sí | Sí | Conforme |
@@ -65,6 +68,8 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Sanders | 2026 | Sí | Sí | Conforme |
 | Screenless | s. f. | Sí | Sí | Conforme |
 | Seeed Studio | 2026 | Sí | Sí | Conforme |
+| Silverman y Barasch | 2023 | Sí | Sí | Conforme; efecto de rachas |
+| Smit et al. | 2019 | Sí | Sí | Conforme; elección y lenguaje |
 | Sohn et al. | 2005 | Sí | Sí | Conforme |
 | Stapley et al. | 2022 | Sí | Sí | Conforme |
 | Subsecretaría de Telecomunicaciones | 2026a | Sí | Sí | Conforme |
@@ -90,6 +95,13 @@ Este control verifica correspondencia y consistencia formal interna. No reemplaz
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Correspondencia tras el feedback docente
+
+- **Cambio:** se añadieron cinco entradas y sus citas verificadas en el cuerpo; el total pasó de 59 a 64 referencias.
+- **Versión anterior:** la matriz cubría el sistema de marca hasta el 16 de septiembre, pero no las nuevas fuentes sobre hábitos, rachas, elección y audio.
+- **Motivo:** mantener una correspondencia explícita entre cada nueva afirmación académica y su referencia APA 7.
+- **Alcance:** auditoría formal de citas y lista; no verifica la eficacia de Relevo ni la ruta de audio en un equipo físico.
 
 ### 2026-09-16 — Correspondencia de marca completada
 

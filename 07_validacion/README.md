@@ -2,7 +2,7 @@
 
 **Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Cubre prototipo, indicadores, pauta, consentimiento, registros de ambos días, plan individual y pendientes. El paquete único anterior se conserva en el archivo histórico. Antes de entregar material a participantes hay que completar el contacto y verificar la gestión de datos y el conjunto físico.
 
-**Instrumentos preparados para la corrección del 23 de septiembre:** [pauta de testeo del prototipo Android 2.2](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). La aplicación vigente es [2.3](../06_desarrollo_y_factibilidad/app-android/README.md): antes de emplear estos instrumentos con participantes hay que ajustar la observación de la preparación por etapas y comprobar el APK con el parlante concreto. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
+**Instrumentos preparados para revisión:** [pauta del prototipo Android 2.4](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). Antes de emplearlos con participantes hay que completar consentimiento y contacto, comprobar la gestión y eliminación de datos, y probar el [APK vigente](../06_desarrollo_y_factibilidad/app-android/README.md) con el teléfono y parlante concretos. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -23,7 +23,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
-- [Protección de datos del prototipo Android 2.3](privacidad-prototipo-android-2026-09-23.md): inventario comprobado de flujos, respuesta para la comisión y texto candidato; requiere completar responsable, retención y eliminación antes de participantes.
+- [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario comprobado en 2.3 y vigente en 2.4, respuesta para la comisión y texto candidato; requiere completar responsable, retención y eliminación antes de participantes.
 - [Modelo de datos para evaluar la aplicación](modelo-datos-evaluacion-app-2026-09-22.md): define qué registra el prototipo Android, qué preguntas puede responder y qué inferencias quedan excluidas.
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
@@ -69,6 +69,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Instrumentos sincronizados con Android 2.4
+
+- **Cambio:** el índice enlaza la pauta y ficha actualizadas para la versión 2.4 y recuerda las condiciones previas al reclutamiento.
+- **Antes:** presentaba la pauta como versión 2.2 y la app como 2.3, aunque ambas ya habían sido revisadas.
+- **Motivo:** evitar aplicar un instrumento desactualizado o confundir documentación lista para revisión con autorización para testear.
 
 ### 2026-09-23 — Revisión de privacidad
 

@@ -22,7 +22,7 @@ Este directorio es un proyecto completo de Android Studio. No es necesario copia
 
 ## Opción alternativa: paquete ZIP
 
-1. Descarga `relevo-android-studio-2.3-2026-09-23.zip` desde la carpeta `releases`.
+1. Descarga `relevo-android-studio-2.4-2026-09-23.zip` desde la carpeta `releases`.
 2. Descomprímelo.
 3. En Android Studio elige **Open** y selecciona la carpeta `app-android`.
 
@@ -56,6 +56,12 @@ El APK resultante queda en `app/build/outputs/apk/debug/app-debug.apk`.
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Paquete 2.4
+
+- **Cambio:** la guía apunta al paquete fuente 2.4, que incluye el rótulo de Inicio actualizado.
+- **Antes:** señalaba el paquete 2.3.
+- **Motivo:** permitir abrir en Android Studio el mismo código que genera el APK vigente.
 
 ### 2026-09-23 — Paquete 2.3
 

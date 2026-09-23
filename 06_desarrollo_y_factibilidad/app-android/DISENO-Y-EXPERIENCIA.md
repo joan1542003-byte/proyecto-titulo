@@ -1,6 +1,6 @@
 # Diseño de la experiencia Android de Relevo
 
-**Estado:** versión 2.3, revisión de diseño y compilación del 23 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios.
+**Estado:** versión 2.4, revisión de diseño y compilación del 23 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios.
 
 ## Qué debe sentirse al usarla
 
@@ -24,7 +24,7 @@ La revisión de [Dribbble](https://dribbble.com/tags/best-app-design) sirvió co
 | Señal | La actividad ocupa la mayor jerarquía; el inicio concreto aparece inmediatamente debajo. | La persona puede reconocer lo que quería hacer sin descifrar una gráfica. |
 | Cierre | Pregunta neutral y respuesta opcional. | Evita interpretar la decisión de la persona como éxito o fracaso. |
 | Navegación | Inicio, Actividad y Relevos conservan icono y nombre en una barra flotante dentro de Inicio. La preparación, espera, señal y cierre tienen navegación contextual. | Las pestañas no compiten con la tarea de preparar o atender una señal. Si Inicio vuelve a mostrarse con una sesión activa, conserva un acceso explícito a ella. |
-| Historial | «Relevos exitosos» exige dos condiciones: señal emitida y respuesta «Comencé la actividad». | Un relevo cancelado o sin respuesta no prueba que la persona comenzó. Es un indicador autodeclarado, no una medición objetiva del comportamiento fuera del teléfono. |
+| Inicio | «Dijiste que empezaste» cuenta sesiones con señal emitida y respuesta «Comencé la actividad». | El rótulo identifica una respuesta voluntaria; Relevo no observa si la actividad se realizó. El criterio y el número contado no cambian. |
 | Estados vacíos | Actividad y Relevos explican qué aparecerá allí y ofrecen preparar el primer relevo. | Evitan un contador sin contexto o datos inventados; la ilustración abstracta acompaña, pero el texto y el botón contienen la información y la acción. |
 | Movimiento | Transiciones breves entre estados; se omiten cuando Android desactiva las animaciones. | El movimiento aporta continuidad, pero no contiene información indispensable. |
 | Sonido | La prueba del parlante dura unos segundos y comunica si no hay una salida Bluetooth confirmada. | Una prueba no debe quedar sonando indefinidamente; el resultado debe ser visible además de audible. |
@@ -61,6 +61,13 @@ Haze. (s. f.). *Progressive (aka gradient) blurs*. https://chrisbanes.github.io/
 r/iOSProgramming. (2025). *Can you recommend apps with great design?* [Foro de discusión]. Reddit. https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Indicador de Inicio 2.4
+
+- **Cambio:** el recuento de respuestas «Comencé la actividad» pasa a llamarse «Dijiste que empezaste».
+- **Antes:** «Relevos exitosos» podía leerse como una actividad observada o un resultado comprobado.
+- **Motivo:** comunicar que el dato proviene de lo que la persona reporta después de la señal.
+- **Alcance:** ajuste de lenguaje y versión; no se modifica la lógica de conteo ni se declara validación con usuarios.
 
 ### 2026-09-23 — Recorrido, imágenes y compatibilidad 2.3
 

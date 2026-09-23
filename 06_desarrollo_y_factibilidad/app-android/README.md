@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 2.3 de prueba
+**Versión:** 2.4 de prueba
 
 **Fecha:** 23 de septiembre de 2026
 
@@ -12,11 +12,11 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.3-2026-09-23.apk](releases/relevo-android-2.3-2026-09-23.apk)
+**APK vigente:** [relevo-android-2.4-2026-09-23.apk](releases/relevo-android-2.4-2026-09-23.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.3-2026-09-23.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.4-2026-09-23.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
@@ -95,6 +95,13 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Indicador de inicio autodeclarado 2.4
+
+- **Cambio:** Inicio muestra «Dijiste que empezaste» para el recuento de sesiones con señal emitida y respuesta «Comencé la actividad».
+- **Antes:** el indicador se llamaba «Relevos exitosos», aunque Relevo no observa si la actividad efectivamente se realizó.
+- **Motivo:** describir el dato como lo que es: una respuesta voluntaria de la persona, no una comprobación de éxito.
+- **Alcance:** cambia el rótulo; el criterio y el valor del recuento permanecen iguales. No añade funciones ni implica resultados observados.
 
 ### 2026-09-23 — Límite de separación de audio
 

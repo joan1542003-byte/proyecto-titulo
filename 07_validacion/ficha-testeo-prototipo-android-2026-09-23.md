@@ -1,6 +1,6 @@
 # Relevo — ficha de observación individual
 
-**Uso:** duplicar una copia por persona. Completar durante y después de la sesión. Esta plantilla no contiene resultados. Leer antes la [pauta y sus condiciones previas](pauta-testeo-prototipo-android-2026-09-23.md).
+**Uso:** duplicar una copia por persona. Completar durante y después de la sesión con el APK Android 2.4. Esta plantilla no contiene resultados. Leer antes la [pauta y sus condiciones previas](pauta-testeo-prototipo-android-2026-09-23.md).
 
 ## Identificación y condiciones
 
@@ -96,6 +96,12 @@
 - **Cambio concreto propuesto, responsable y fecha:**
 
 ## Registro de cambios (disclaimer)
+
+- **Cambio:** la ficha se vinculó explícitamente con la pauta y el APK Android 2.4; la respuesta final se conserva como autorreporte.
+- **Antes:** el encabezado no indicaba versión y el registro de creación nombraba el APK 2.2.
+- **Motivo:** asegurar que la ficha en blanco corresponda a la aplicación actual sin alterar indicadores ni inventar resultados.
+
+### Creación original
 
 - **Cambio:** se creó una ficha para registrar la prueba del APK 2.2 y el parlante en una sesión codificada.
 - **Antes:** la ficha disponible correspondía al Protocolo 01 y a un montaje físico diferente.
