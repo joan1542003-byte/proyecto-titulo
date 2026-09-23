@@ -1,6 +1,6 @@
 # Validación
 
-**Paquete imprimible para la corrección del 23 de septiembre de 2026:** [documento Word](entrega-23-09-2026/relevo-paquete-testeo-23-09-2026.docx) y [versión editable en Markdown](entrega-23-09-2026/paquete-testeo-relevo.md). Reúne pauta del investigador, indicadores, consentimiento, dos copias de la hoja de evaluación de dos días y pendientes previos al uso con participantes. El consentimiento debe completar contacto y verificaciones de datos antes de entregarse.
+**Paquete imprimible para la corrección del 23 de septiembre de 2026:** [documento Word](entrega-23-09-2026/relevo-paquete-testeo-23-09-2026.docx) y [versión editable en Markdown](entrega-23-09-2026/paquete-testeo-relevo.md). Las páginas 1–2 son para quien dirige la prueba; la página 3 contiene el consentimiento; las páginas 4–5 son dos copias idénticas de la hoja de registro, una de repuesto. Antes de entregarlas hay que completar el contacto y verificar la gestión de datos y el conjunto físico.
 
 **Para la corrección del 23 de septiembre de 2026:** [pauta de testeo del prototipo Android 2.2](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). Estos documentos evalúan la aplicación actual junto con un parlante Bluetooth comprobado. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android 2.2. No se han realizado sesiones con participantes bajo la pauta nueva.
 
@@ -68,6 +68,13 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Reorganización del paquete de validación
+
+- **Cambio:** se rehizo la jerarquía del DOCX, se separaron las instrucciones por destinatario y se ampliaron los campos de respuesta. La fuente Markdown refleja el mismo contenido y registra las diferencias con la versión anterior.
+- **Antes:** el paquete combinaba pauta, indicadores y formularios con párrafos y campos difíciles de recorrer.
+- **Motivo:** permitir una lectura rápida durante la corrección y una hoja de uso legible para cada participante.
+- **Alcance:** mejora de presentación e instrumentos; no se añaden resultados ni se levantan los pendientes técnicos y de consentimiento.
 
 ### 2026-09-22 — Paquete imprimible de la sesión de regreso
 
