@@ -9,9 +9,17 @@ La versión vigente de trabajo es **2.5**, compilada el 23 de septiembre de 2026
 
 **SHA-256 del APK 2.5:** `39F82AFE36A88A068903181795565BBC51C0EDAD14C9FE3A57F04F740B008083`.
 
+**SHA-256 del ZIP 2.5:** `85B242775EDB761113B2836252D155132B0068B55476B600F980E02D5D102398`. Se generó desde el código confirmado en `b656221`; se excluyeron los APK anteriores, capturas, compilados y configuración local.
+
 El código compila y pasó siete pruebas unitarias. Se inspeccionaron consentimiento y tutorial en emulador, pero el recorrido completo y la salida de audio todavía deben comprobarse en el teléfono y parlante concretos. El [consentimiento](../../../07_validacion/consentimiento-android-vigente-2026-09-23.md) y la [pauta](../../../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) siguen en revisión: el APK no debe entregarse a participantes hasta comprobar la eliminación local y remota y resolver la corrección académica.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Paquete portable comprobado
+
+- **Qué cambió:** se añadió la huella del ZIP y se documentó su origen y exclusiones.
+- **Cómo era antes:** el índice anunciaba el paquete, pero aún no tenía una huella para comparar la descarga.
+- **Por qué:** permitir verificar integridad y no confundir el proyecto fuente con archivos locales o versiones anteriores.
 
 ### 2026-09-23 — Índice de entregables
 
