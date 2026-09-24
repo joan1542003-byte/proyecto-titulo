@@ -3,7 +3,9 @@
 Este directorio define cómo se investiga, documenta, decide y revisa el proyecto de título. Sus reglas prevalecen sobre los borradores históricos cuando existe una contradicción de método o de nomenclatura.
 
 
-**Consulta del feedback:** [Cobertura del feedback y respuestas por área](../01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
+**Feedback más reciente:** [aplicación de anotaciones del 23 de septiembre](aplicacion-feedback-docente-2026-09-23.md) y [auditoría Android 2.6](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md). La validación con participantes sigue pendiente.
+
+**Migración a Claude:** usa [`INICIO-CLAUDE.md`](INICIO-CLAUDE.md) y el [traspaso integral del proyecto](traspaso-a-claude-2026-09-24.md). El archivo raíz `CLAUDE.md` aplica estas reglas cuando Claude Code abre el repositorio.
 
 ## Función
 
@@ -25,6 +27,8 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - [Trazabilidad del uso de IA](trazabilidad-uso-ia-2026-09-23.md): declaración candidata, registros de prompts existentes, distinción entre salida generada y decisión del autor, y ficha para futuras iteraciones.
 - [Aplicación del feedback docente del 23 de septiembre](aplicacion-feedback-docente-2026-09-23.md): cambios incorporados, opciones no adoptadas y condiciones antes de trabajar con participantes.
+- [Traspaso a Claude](traspaso-a-claude-2026-09-24.md): contexto, evidencia, estado del producto, mapa documental, riesgos y prioridades.
+- [Inicio rápido para Claude](INICIO-CLAUDE.md): instrucción inicial para comenzar sin reconstruir conversaciones.
 - `indice-del-repositorio.md`: orden de lectura, estado de cada carpeta y fuentes que deben tomarse como referencia.
 - `auditoria-organizacion-2026-09-02.md`: revisión global de estructura, duplicados, nombres, enlaces y archivos conservados.
 - GitHub Issues: tareas operativas, bloqueos y criterios de cierre.
@@ -111,3 +115,9 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 - **Cambio:** se enlazó un registro que separa decisiones aplicadas, alternativas por estudiar y requisitos previos a la validación.
 - **Versión anterior:** el índice reunía la síntesis y la trazabilidad de IA, pero no mostraba en una sola entrada qué observaciones pasaron a la memoria o a los requisitos.
 - **Motivo:** hacer visible el alcance de los cambios sin presentar propuestas ni resultados pendientes como hechos concluidos.
+
+### 2026-09-24 — Continuidad en Claude
+
+- **Qué cambió:** se enlazaron desde la gobernanza las instrucciones para Claude y el traspaso integral con fecha de corte.
+- **Cómo estaba antes:** las referencias de feedback y continuidad se centraban en documentos anteriores al Android 2.6.
+- **Por qué:** orientar la próxima conversación al estado actual del repositorio y sus pruebas todavía pendientes.

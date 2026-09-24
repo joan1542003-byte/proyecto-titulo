@@ -1,6 +1,6 @@
 # Relevo en breve
 
-**Actualizado:** 23 de septiembre de 2026. **Fuente académica:** [memoria vigente](memoria-vigente-v4.md).
+**Actualizado:** 24 de septiembre de 2026. **Fuente académica:** [memoria vigente](memoria-vigente-v4.md).
 
 ## Qué es
 
@@ -8,17 +8,23 @@ Relevo es un sistema phygital para que una persona vuelva a considerar una activ
 
 ## Qué existe hoy
 
-La [aplicación Android 2.4](../06_desarrollo_y_factibilidad/app-android/README.md) permite preparar un ciclo, acumular el tiempo de uso de la aplicación seleccionada y enviar un tono a un parlante Bluetooth multimedia compatible. El indicador «Dijiste que empezaste» cuenta respuestas de la persona, no acciones observadas. Hay un APK compilado y siete pruebas unitarias aprobadas. No se ha verificado el recorrido completo en un teléfono y parlante concretos ni se dispone aún del objeto final con luz y sonido. El parlante puede reproducir audio de otras aplicaciones: no es una salida exclusiva de Relevo.
+La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) permite preparar un ciclo, sumar el uso de varias aplicaciones seleccionadas hasta un solo límite y elegir entre un parlante Bluetooth multimedia o el teléfono como salida de prueba. El indicador de inicio es una respuesta autodeclarada, no una conducta observada. El APK compila y diez pruebas unitarias pasan. Se inspeccionaron pantallas en emulador, pero no se ha verificado el recorrido completo, la reproducción en un parlante físico, la sincronización de eventos ni el borrado remoto y local extremo a extremo. El parlante puede reproducir audio de otras aplicaciones y no es un testigo exclusivo de Relevo.
 
-La memoria conserva los catorce capítulos del encargo, **14.997 palabras antes de referencias y registro de cambios** según `Measure-Object -Word`, y **64 referencias**. Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
+La memoria conserva la estructura de catorce capítulos. Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
 
 ## Qué cambió y qué falta
 
-El feedback del 23 de septiembre llevó a distinguir recordar una intención, empezar una actividad y formar un hábito. Se estudia la posibilidad de reconocer positivamente una elección, pero no se añadieron rachas ni premios. Se aclararon el almacenamiento local y la sincronización remota seudonimizada, junto con los límites del parlante actual. Las decisiones y alternativas están en el [registro de aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md).
+El feedback del 23 de septiembre llevó a distinguir recordar una intención, empezar una actividad y formar un hábito. No se añadieron rachas ni premios. La revisión de Android 2.6 aclaró el consentimiento, el registro seudónimo, la selección de salida y los límites del parlante. Las decisiones y alternativas están en el [registro de aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y en la [auditoría específica de Android](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
-Antes de convocar participantes faltan una prueba física del audio y los fallos, revisión del consentimiento, contacto responsable y un procedimiento comprobado para localizar y eliminar datos locales y remotos. La [pauta](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) está lista para revisión, no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
+Antes de convocar participantes faltan pruebas en teléfono y parlante reales, revisión académica del consentimiento y comprobación del envío y eliminación de datos locales y remotos. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) requiere sincronización con Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-24 — Resumen sincronizado con Android 2.6
+
+- **Qué se cambió:** se actualizó el estado de la app, el número de pruebas, el alcance de la ruta de audio y los límites de privacidad y validación; se señaló que la pauta necesita revisión contra 2.6. Se retiraron las cifras de extensión y referencias porque no eran necesarias para este resumen y podían quedar obsoletas.
+- **Cómo estaba antes:** describía Android 2.4, una sola aplicación seleccionada y siete pruebas.
+- **Por qué:** evitar que la síntesis ejecutiva contradiga el APK vigente o presente como realizadas pruebas todavía pendientes.
 
 ### 2026-09-23 — Resumen sustituido por el estado vigente
 

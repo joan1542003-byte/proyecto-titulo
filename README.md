@@ -3,13 +3,13 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
-**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente. La [edición de lectura](08_memoria/auditoria-redaccion-v4-2026-08-26.md) reúne apartados breves y mejora la continuidad del texto. La memoria tiene 15.274 palabras de texto académico, sin bibliografía ni registro administrativo.
+**Base académica:** [memoria vigente v4](08_memoria/memoria-vigente-v4.md), con revisión de coherencia y edición de lectura en los documentos enlazados desde `08_memoria/README.md`. La síntesis y el prototipo se actualizaron después; la memoria requiere integrar evidencia nueva cuando exista.
 
 **Revisión y limpieza de textos:** [Correcciones y comprobaciones del 9 de septiembre](00_gobernanza/auditoria-textual-2026-09-09.md). Estados, decisiones, enlaces y referencias reconciliados; las entregas antiguas conservan su fecha y sus límites.
 
-**Consulta del feedback:** [Respuestas al feedback del 2 de septiembre](01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
+**Feedback más reciente:** [aplicación de anotaciones del 23 de septiembre](00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y [auditoría en Android 2.6](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md). La comprensión y el comportamiento siguen sin validación con participantes.
 
-**Visibilidad comprobada el 9 de septiembre de 2026:** público, según la API de GitHub. La documentación no modifica esa configuración; los datos identificables siguen excluidos.
+**Visibilidad registrada el 9 de septiembre de 2026:** pública según la API de GitHub de esa fecha. Vuelve a comprobarla antes de subir información nueva; los datos identificables de participantes deben mantenerse fuera del repositorio.
 
 ## Propósito del repositorio
 
@@ -45,35 +45,23 @@ Para explicarlo a público general, comisiones, posibles usuarios o equipos de d
 
 La definición física más reciente se encuentra en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md). El [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) cierra nombre, categoría, frase, descriptor, tipografía, paleta y reglas por soporte. La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
-## Estado actual
+## Estado actual — 24 de septiembre de 2026
 
-**Línea activa: [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8).**
+La aplicación Android vigente es **Relevo 2.6**, prototipo de depuración para Android 12 o posterior. Permite elegir varias aplicaciones cuyos tiempos se suman en un límite, preparar actividades, elegir la salida de sonido y probarla, consultar historial y gestionar consentimiento y eliminación. Compila y pasó diez pruebas unitarias; se revisaron algunas pantallas en emulador. Aún no se ha comprobado el ciclo completo, audio Bluetooth con hardware real, sincronización de eventos ni borrado extremo a extremo. No hay resultados de validación con participantes. Consulta el [README de Android](06_desarrollo_y_factibilidad/app-android/README.md) y la [auditoría del feedback docente](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
-El procedimiento, el consentimiento, la ficha de registro y los requisitos mínimos de la señal están documentados en [`07_validacion`](07_validacion/README.md). El [programa Android–BLE para micro:bit V2](06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md) ya compila y permite comprobar matriz, sonido y silencio local sin participantes. Como la matriz integrada es roja, la fase A exige añadir y revisar una luz blanca cálida externa antes de evaluar comprensión. Para el prototipo integrado se recomienda una XIAO nRF52840, batería recargable, una luz, un transductor sonoro pequeño y un control local. Los montajes B1/B2 con ESP32-C3 y el respaldo de 12 V permanecen como antecedentes de mesa. Antes de usar la señal con participantes faltan acceso a la placa, instalación, montaje cálido, ensayo técnico y revisión competente. La comparación posterior permanece bloqueada hasta disponer de una notificación Android equivalente. No existen resultados de validación.
+El proyecto sigue siendo **phygital**: la app organiza la intención y el testigo físico propuesto devuelve una señal en el lugar asociado a la actividad. El parlante Bluetooth actual es una salida de prueba, no el objeto final de Relevo. El valor diferencial —que una señal física y situada aporte más que una notificación— sigue pendiente de evaluación.
 
-La [investigación visual](10_recursos_visuales/README.md) parte de claridad, autonomía, discreción y cuidado, sin heredar una apariencia por costumbre. Relevo utiliza la frase `Hazle lugar a lo que quieres hacer`, el descriptor `Un recordatorio físico preparado desde el teléfono`, Source Sans 3 y una paleta neutra con verde Relevo. El logotipo tipográfico, la `R` reducida y la regla de un énfasis localizado gobiernan la aplicación, el dispositivo, la memoria y la comunicación. La forma física y los parámetros de luz y sonido continúan sujetos a factibilidad y prueba.
+La fuente académica vigente es la [memoria v4](08_memoria/memoria-vigente-v4.md), avanzada pero no final. La [investigación visual escrita](10_recursos_visuales/README.md) y el [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) orientan su desarrollo; la forma del objeto y sus parámetros de luz y sonido requieren pruebas. La [síntesis vigente del proyecto](08_memoria/resumen-vigente-proyecto.md) registra qué existe y qué falta sin atribuir resultados.
 
-La base metodológica del corpus quedó consolidada:
+La investigación de usuarios se basa en ocho entrevistas presenciales realizadas en Santiago el 11 y 12 de junio de 2026, con personas de 19 a 27 años, reclutadas por referencias y con consentimiento oral. El análisis es cualitativo exploratorio, no representativo. La encuesta separada de 70 personas sigue pendiente de revisar y no integra todavía la evidencia vigente.
 
-- se realizaron ocho entrevistas semiestructuradas, habladas y presenciales en Santiago los días 11 y 12 de junio de 2026;
-- las personas fueron reclutadas mediante referencias de la red personal; el criterio de convocatoria fue de 18 a 30 años y el rango observado fue de 19 a 27 años;
-- se obtuvo consentimiento informado oral;
-- todas las preguntas y repreguntas fueron realizadas por el investigador;
-- el documento digital anonimizado constituye el corpus operativo del análisis;
-- P6 tiene 27 años;
-- la duración individual de las entrevistas no quedó registrada.
+Las prioridades inmediatas son alinear instrumentos y gobernanza con Android 2.6, comprobar el consentimiento y la eliminación de datos, ensayar el prototipo en un teléfono y parlante reales, y resolver la ruta de construcción física. El plan de cierre conserva como metas el 31 de octubre para el producto casi terminado, el 15 de noviembre para el cierre interno, el 2 de diciembre para la memoria y el 14–18 de diciembre para el examen; verificar su vigencia en el plan y en las Issues.
 
-Existe además una [encuesta complementaria con 70 participantes](03_usuarios/encuesta-70-participantes-pendiente.md), pendiente de publicación, revisión metodológica e integración al repositorio y a la memoria. No forma parte todavía de la evidencia vigente ni del corpus P1–P8.
-
-El criterio común de selección confirmado para P1–P8 es la edad; no se utilizará la condición de estudiante como rasgo común. Los perfiles se mantienen como fichas basadas en evidencia, sin nombres, imágenes o biografías inventadas.
-
-La [Issue #6](https://github.com/joan1542003-byte/proyecto-titulo/issues/6) reúne los [wireframes estructurales del Encargo 17](05_propuesta_phygital/entrega-encargo-17.md). Su [versión v1 quedó congelada](05_propuesta_phygital/cierre-wireframe-v1-2026-09-09.md) el 9 de septiembre como base para construir la navegación Android. La [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8) concentra el siguiente trabajo empírico. La migración selectiva reactivada el 8 de septiembre separó las fuentes activas del [material antiguo y reemplazado](99_archivo/antiguo/README.md), sin eliminar la trazabilidad. La base académica activa es la [memoria v4](08_memoria/memoria-vigente-v4.md), respaldada por su [auditoría de redacción y estructura](08_memoria/auditoria-redaccion-v4-2026-08-26.md).
-
-El [plan de cierre agosto–diciembre de 2026](00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) sitúa al proyecto en la transición desde definición documentada hacia prototipado y validación. El hito de wireframes se cerró el 9 de septiembre; el [alcance del primer prototipo y su backlog](05_propuesta_phygital/alcance-primer-prototipo-y-backlog-2026-09-07.md) evita confundir los 35 estados documentados con lo que debe construirse primero. La [Issue #9](https://github.com/joan1542003-byte/proyecto-titulo/issues/9) controla los hitos, la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) controla la primera comprobación física y la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior. El producto debe quedar prácticamente terminado el 31 de octubre y el proyecto completo el 15 de noviembre. La memoria se entrega oficialmente el 2 de diciembre y el examen se realiza entre el 14 y el 18; el periodo intermedio se reserva para estudiar, ensayar y resolver correcciones menores.
+Para migrar el trabajo a Claude, abre el repositorio con `CLAUDE.md` disponible y sigue [`00_gobernanza/INICIO-CLAUDE.md`](00_gobernanza/INICIO-CLAUDE.md) y el [traspaso completo](00_gobernanza/traspaso-a-claude-2026-09-24.md). El estado de GitHub Issues debe consultarse directamente; no se verificó al preparar este corte.
 
 ## Inicio para nuevas conversaciones
 
-Antes de trabajar con ChatGPT o Codex, conecta GitHub y usa [Instrucciones maestras para conversaciones](INSTRUCCIONES_CHATGPT.md). Ese documento define el protocolo de lectura del repositorio, el contexto estable, las reglas de investigación y escritura, y el registro de resultados.
+Para ChatGPT o Codex, usa [Instrucciones maestras para conversaciones](INSTRUCCIONES_CHATGPT.md). Para Claude, el archivo raíz [`CLAUDE.md`](CLAUDE.md) remite a las [instrucciones de inicio](00_gobernanza/INICIO-CLAUDE.md) y al traspaso completo del proyecto.
 
 Para ubicar rápidamente cada área, consulta el [índice operativo del repositorio](00_gobernanza/indice-del-repositorio.md).
 
@@ -119,6 +107,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-24 — Actualización para migración a Claude
+
+- **Qué cambió:** se reemplazó el estado principal que seguía describiendo el banco micro:bit y la planificación de Android previa, por el estado comprobado de Android 2.6; se añadieron enlaces directos al paquete de traspaso.
+- **Cómo estaba antes:** la síntesis mezclaba documentación de septiembre temprano con el prototipo actual y podía hacer creer que la primera etapa activa seguía siendo una versión anterior del banco físico.
+- **Por qué:** ofrecer una puerta de entrada coherente con el commit vigente y preparar la continuidad del proyecto en Claude sin borrar los antecedentes.
 
 ### 2026-09-16 — Sistema de marca cerrado
 
