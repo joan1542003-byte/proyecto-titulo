@@ -4,7 +4,7 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 ## Estado
 
-**Versión:** 2.4 de prueba
+**Versión:** 2.5 de prueba
 
 **Fecha:** 23 de septiembre de 2026
 
@@ -12,28 +12,28 @@ Prototipo funcional para preparar una intención, elegir una aplicación y emiti
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.4-2026-09-23.apk](releases/relevo-android-2.4-2026-09-23.apk)
+**APK vigente:** [relevo-android-2.5-2026-09-23.apk](releases/relevo-android-2.5-2026-09-23.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.4-2026-09-23.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.5-2026-09-23.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
 **Capturas de revisión:** [interfaz 2.2](capturas/interfaz-2.2/README.md)
 
-La aplicación compila, sus pruebas unitarias pasan y la condición automática fue comprobada en Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambia a señal emitida.
+La versión 2.5 compila y sus siete pruebas unitarias pasan. La condición automática se comprobó en una iteración anterior de Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambió a señal emitida. El ciclo completo de 2.5 aún debe repetirse con el teléfono y parlante de la prueba.
 
 ## Qué permite hacer
 
 1. escribir una actividad y una forma concreta de comenzar;
 2. elegir una aplicación instalada;
 3. partir de una de siete actividades ilustradas o escribir una actividad propia;
-4. definir el tiempo acumulado entre 1 y 60 minutos mediante un deslizador, además de accesos rápidos y una prueba de 15 segundos;
+4. definir el tiempo acumulado entre 1 minuto y 6 horas mediante un deslizador, ajustes y accesos rápidos, además de una prueba de 15 segundos;
 5. reconocer las aplicaciones por su icono real;
 6. consultar Inicio, Actividad y el historial de relevos;
 7. ver dónde quedó situada la última señal;
-8. autorizar el acceso de uso y las notificaciones exigidas por Android;
+8. autorizar el acceso a Tiempo de uso; las notificaciones se solicitan por separado y son opcionales;
 9. crear un identificador aleatorio que agrupa los datos sin solicitar nombre, correo ni teléfono;
 10. activar un monitoreo visible mediante una notificación persistente;
 11. emitir una señal continua por un parlante Bluetooth multimedia conectado, además de vibración breve y notificación; si no existe esa salida, no reproducir sonido por el teléfono;
@@ -45,7 +45,9 @@ La aplicación compila, sus pruebas unitarias pasan y la condición automática 
 17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
 18. enseñar el recorrido mediante cuatro escenas de objetos y una explicación visual de permisos, sin mostrar pantallas ficticias;
 19. preparar un relevo por etapas: actividad; aplicación y tiempo; inicio y ubicación; revisión y activación. Las actividades propias se crean en tres pasos y se pueden reutilizar;
-20. al terminar el tutorial, preparar opcionalmente el primer relevo o ir a Inicio.
+20. al terminar el tutorial, preparar opcionalmente el primer relevo o ir a Inicio, siempre que se haya concedido Tiempo de uso;
+21. volver un paso con el gesto de Android durante el tutorial y la preparación; consultar en Historial un código de participación estable entre ciclos;
+22. ver una confirmación breve cuando la persona declara que comenzó su actividad, sin presentar la declaración como una comprobación de Relevo.
 
 ## Límites
 
@@ -95,6 +97,13 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Revisión de interfaz y consentimiento 2.5
+
+- **Cambio:** se fijaron las acciones del tutorial, se hizo necesario el permiso de Tiempo de uso para terminarlo, se añadió el regreso por gesto en los pasos, se reforzó la legibilidad de la navegación, se reemplazaron barras separadas por un progreso continuo y se amplió el tiempo hasta seis horas. Historial distingue las respuestas autodeclaradas y muestra el código estable de participación; Inicio confirma sin calificar como éxito la respuesta «Comencé». El consentimiento incluye correo, fecha y ruta de datos, y cambió de versión para solicitar una nueva aceptación.
+- **Antes:** se podía ir a Inicio sin el permiso imprescindible, el código cambiaba al cerrar cada relevo, el tiempo terminaba en 60 minutos y el consentimiento anterior seguía aceptado después de cambiar su contenido.
+- **Motivo:** dar control real sobre la secuencia y permitir localizar registros de una persona sin inferir su conducta fuera de la app.
+- **Verificación:** compilación Android y siete pruebas unitarias aprobadas; tutorial y consentimiento inspeccionados en emulador. El emulador se cerró antes de completar la inspección de Inicio e Historial. No hay aún prueba de audio con equipo físico ni procedimiento de eliminación local y remota demostrado; por ello el APK no está habilitado para participantes.
 
 ### 2026-09-23 — Indicador de inicio autodeclarado 2.4
 

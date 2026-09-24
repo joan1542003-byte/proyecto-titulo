@@ -1,6 +1,6 @@
 # Diseño de la experiencia Android de Relevo
 
-**Estado:** versión 2.4, revisión de diseño y compilación del 23 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios.
+**Estado:** versión 2.5, revisión de diseño y compilación del 23 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios. Véanse también los [criterios de revisión de interfaz](criterios-revision-interfaz-2026-09-23.md).
 
 ## Qué debe sentirse al usarla
 
@@ -17,14 +17,16 @@ La revisión de [Dribbble](https://dribbble.com/tags/best-app-design) sirvió co
 | Área | Decisión | Motivo y comprobación pendiente |
 | --- | --- | --- |
 | Inicio | Cuatro actividades reconocibles por imagen, una opción para escribir otra y datos de uso por debajo. | Los accesos rápidos reducen escritura sin obligar a aceptar una actividad predeterminada. Se debe comprobar si la fotografía facilita reconocer la acción o distrae. |
-| Configuración | Cuatro pantallas: actividad; app y tiempo; acción inicial y ubicación; revisión con enlaces de edición. Solo la última permite activar. Una actividad propia se guarda en tres pasos: nombre, acción y lugar, aspecto. | Cada pantalla agrupa una decisión relacionada y conserva lo escrito al volver. La revisión reduce activaciones accidentales; falta comprobar con usuarios si los pasos resultan claros y no excesivos. |
-| Tutorial | Cuatro escenas de objetos sin pantallas de la app y una composición de los permisos reales; al terminar ofrece preparar el primer relevo o ir a Inicio. | La imagen contextualiza la acción sin aparentar una interfaz inexistente. La elección al final permite aprender haciendo, sin obligar a configurar de inmediato. Las escenas son conceptuales: no documentan el aspecto de un dispositivo definitivo. |
+| Configuración | Cuatro pantallas: actividad; app y tiempo; acción inicial y ubicación; revisión con enlaces de edición. Solo la última permite activar. Una actividad propia se guarda en tres pasos: nombre, acción y lugar, aspecto. El gesto atrás y el enlace visible retroceden un paso; el tiempo puede ajustarse entre 1 minuto y 6 horas. | Cada pantalla agrupa una decisión relacionada y conserva lo escrito al volver. La revisión reduce activaciones accidentales; falta comprobar con usuarios si los pasos resultan claros y no excesivos. |
+| Tutorial | Cuatro escenas de objetos sin pantallas de la app y una composición de los permisos reales; al terminar ofrece preparar el primer relevo o ir a Inicio, pero requiere conceder Tiempo de uso. | La imagen contextualiza la acción sin aparentar una interfaz inexistente. La elección al final permite aprender haciendo; el permiso necesario no puede saltarse. Las escenas son conceptuales: no documentan el aspecto de un dispositivo definitivo. |
 | Desenfoque | Encabezado y pie usan Haze con intensidad de 100 % a 0 % en sentidos opuestos, radio de 14 dp y fondo con baja opacidad; la barra flotante se mantiene diferenciada. | El contenido debe seguir viéndose debajo sin una franja sólida. [La documentación de Haze](https://chrisbanes.github.io/haze/1.5.4/usage/) describe el gradiente progresivo y advierte sobre su costo; falta medir rendimiento y contraste en teléfonos reales. |
 | Espera | Tiempo acumulado visible junto con la app elegida y el lugar del parlante. | Se distingue el avance de la actividad deseada; el conteo no se presenta como objetivo moral. |
 | Señal | La actividad ocupa la mayor jerarquía; el inicio concreto aparece inmediatamente debajo. | La persona puede reconocer lo que quería hacer sin descifrar una gráfica. |
 | Cierre | Pregunta neutral y respuesta opcional. | Evita interpretar la decisión de la persona como éxito o fracaso. |
 | Navegación | Inicio, Actividad y Relevos conservan icono y nombre en una barra flotante dentro de Inicio. La preparación, espera, señal y cierre tienen navegación contextual. | Las pestañas no compiten con la tarea de preparar o atender una señal. Si Inicio vuelve a mostrarse con una sesión activa, conserva un acceso explícito a ella. |
 | Inicio | «Dijiste que empezaste» cuenta sesiones con señal emitida y respuesta «Comencé la actividad». | El rótulo identifica una respuesta voluntaria; Relevo no observa si la actividad se realizó. El criterio y el número contado no cambian. |
+| Reconocimiento | Si la persona indica que comenzó, Inicio reconoce esa declaración una vez y permite cerrar el mensaje. Las demás respuestas no reciben reproche ni se convierten en racha. | Se refuerza una respuesta voluntaria sin afirmar que Relevo observó la actividad. Debe preguntarse si el tono resulta oportuno, neutro y comprensible. |
+| Datos | El consentimiento actualizado se presenta de nuevo tras la actualización; Historial muestra el código de participación y el correo de contacto. | Una persona debe poder identificar los registros asociados a su solicitud. Mostrar el código no verifica aún que el borrado local y remoto funcione. |
 | Estados vacíos | Actividad y Relevos explican qué aparecerá allí y ofrecen preparar el primer relevo. | Evitan un contador sin contexto o datos inventados; la ilustración abstracta acompaña, pero el texto y el botón contienen la información y la acción. |
 | Movimiento | Transiciones breves entre estados; se omiten cuando Android desactiva las animaciones. | El movimiento aporta continuidad, pero no contiene información indispensable. |
 | Sonido | La prueba del parlante dura unos segundos y comunica si no hay una salida Bluetooth confirmada. | Una prueba no debe quedar sonando indefinidamente; el resultado debe ser visible además de audible. |
@@ -40,7 +42,7 @@ Las siete imágenes de actividad comparten una regla: un objeto asociado a la ac
 
 ## Verificación realizada y límites
 
-La versión 2.3 compiló y pasó las pruebas unitarias. Se abrió un emulador para revisar el nuevo recorrido, pero se cerró antes de poder inspeccionar sus pantallas: no se afirma una validación visual de esta versión. Antes de cerrar el diseño deben verificarse, con personas y dispositivos físicos, cinco tareas: comprender Relevo sin explicación externa, preparar un relevo por etapas, encontrar y probar el parlante, entender el conteo en espera y responder o saltar el cierre. También falta probar texto ampliado, TalkBack, pantallas pequeñas, rendimiento del desenfoque y la ruta real de audio Bluetooth. Se priorizan teléfonos con Android 12 o posterior; cuatro años de antigüedad del equipo no garantizan una versión específica del sistema.
+La versión 2.5 compiló y pasó siete pruebas unitarias. En un emulador se inspeccionaron las pantallas de consentimiento y tutorial, incluida la escena de permisos; el emulador terminó antes de revisar Inicio, Historial y el ciclo completo. Eso no es una validación visual completa ni una prueba con personas. Antes de cerrar el diseño deben verificarse, con personas y dispositivos físicos, cinco tareas: comprender Relevo sin explicación externa, preparar un relevo por etapas, encontrar y probar el parlante, entender el conteo en espera y responder o saltar el cierre. También falta probar texto ampliado, TalkBack, pantallas pequeñas, rendimiento del desenfoque y la ruta real de audio Bluetooth. Se priorizan teléfonos con Android 12 o posterior; cuatro años de antigüedad del equipo no garantizan una versión específica del sistema.
 
 ## Referencias
 
@@ -61,6 +63,12 @@ Haze. (s. f.). *Progressive (aka gradient) blurs*. https://chrisbanes.github.io/
 r/iOSProgramming. (2025). *Can you recommend apps with great design?* [Foro de discusión]. Reddit. https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Aplicación 2.5
+
+- **Cambio:** se añadieron los criterios de regreso por pasos, permiso indispensable, tiempo hasta seis horas, reconocimiento sin juicio y acceso al código de participación; se precisó el alcance de la inspección visual real.
+- **Antes:** el texto describía 2.4, no distinguía el permiso obligatorio del opcional ni registraba el código estable o la nueva respuesta de Inicio.
+- **Motivo:** que la justificación de interfaz corresponda al comportamiento implementado y no confunda la revisión en emulador con la validación de uso.
 
 ### 2026-09-23 — Indicador de Inicio 2.4
 

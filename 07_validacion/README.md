@@ -1,8 +1,8 @@
 # Validación
 
-**Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Cubre prototipo, indicadores, pauta, consentimiento, registros de ambos días, plan individual y pendientes. El paquete único anterior se conserva en el archivo histórico. Antes de entregar material a participantes hay que completar el contacto y verificar la gestión de datos y el conjunto físico.
+**Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Es una copia fechada para revisión, no el consentimiento vigente: conserva un contacto en blanco y un plazo anterior. El paquete único previo permanece en el archivo histórico.
 
-**Instrumentos preparados para revisión:** [pauta del prototipo Android 2.4](pauta-testeo-prototipo-android-2026-09-23.md) y [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md). Antes de emplearlos con participantes hay que completar consentimiento y contacto, comprobar la gestión y eliminación de datos, y probar el [APK vigente](../06_desarrollo_y_factibilidad/app-android/README.md) con el teléfono y parlante concretos. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
+**Instrumentos preparados para revisión:** [pauta del prototipo Android 2.5](pauta-testeo-prototipo-android-2026-09-23.md), [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md) y [borrador de consentimiento Android](consentimiento-android-vigente-2026-09-23.md). El contacto y el plazo ya están indicados, pero antes de emplearlos con participantes hay que comprobar la gestión y eliminación de datos y probar el [APK vigente](../06_desarrollo_y_factibilidad/app-android/README.md) con el teléfono y parlante concretos. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -23,7 +23,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
-- [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario comprobado en 2.3 y vigente en 2.4, respuesta para la comisión y texto candidato; requiere completar responsable, retención y eliminación antes de participantes.
+- [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario comprobado en 2.3 y vigente en 2.4, respuesta para la comisión y texto candidato; el correo y la fecha límite ya están indicados, pero falta verificar la eliminación y el canal de contacto antes de participantes.
 - [Modelo de datos para evaluar la aplicación](modelo-datos-evaluacion-app-2026-09-22.md): define qué registra el prototipo Android, qué preguntas puede responder y qué inferencias quedan excluidas.
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
@@ -38,7 +38,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 2. Comprobar sin participantes el recorrido Android → Bluetooth de baja energía (BLE) → matriz roja y sonido, junto con la orden `activar`, la reconexión y el silenciamiento local. La matriz solo representa el canal luminoso en este banco técnico.
 3. Conectar y revisar una luz blanca cálida externa, preparar una cubierta neutra y comprobar que los indicadores de placa no compiten con la señal. Este material, no la matriz roja, corresponde a la fase A.
 4. Ejecutar la [ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md). Una falla de conexión o material impide usar la sesión para evaluar comprensión; debe registrarse, corregirse y repetirse. Este trabajo está controlado por la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) y descrito en el [estudio de plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
-5. Completar el correo de contacto, someter protocolo, consentimiento y materiales a revisión académica y resolver las observaciones antes de reclutar.
+5. Incorporar el correo confirmado al consentimiento del Protocolo 01, comprobar que el canal funciona, someter protocolo y materiales a revisión académica y resolver las observaciones antes de reclutar.
 6. Aplicar la fase A. Solo si supera sus reglas de decisión se habilita la comparación de la fase B.
 7. Integrar después un testigo portátil basado en XIAO nRF52840, si la evidencia justifica continuar. Esta etapa corresponde a la [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10), no a la puerta técnica inmediata.
 
@@ -69,6 +69,24 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-23 — Instrumentos 2.5
+
+- **Cambio:** el índice apunta a la pauta sincronizada con Android 2.5.
+- **Antes:** indicaba la versión 2.4.
+- **Motivo:** evitar la revisión de una versión anterior sin presentar el paquete Word fechado como consentimiento vigente.
+
+### 2026-09-23 — Estado del contacto confirmado
+
+- **Cambio:** se distinguió el correo ya confirmado del trabajo todavía pendiente de verificar su funcionamiento y el borrado de registros; se señaló que el consentimiento del Protocolo 01 aún debe incorporarlo.
+- **Antes:** el índice volvía a pedir que se completara el correo para Android, aunque el borrador actual ya lo contiene.
+- **Motivo:** evitar una tarea duplicada sin dar por aprobados los procedimientos de privacidad.
+
+### 2026-09-23 — Consentimiento Android diferenciado del paquete fechado
+
+- **Cambio:** se enlazó un borrador actualizado con contacto y plazo confirmados para Android, y el paquete Word del día quedó señalado como copia previa para revisión.
+- **Antes:** el índice podía llevar a utilizar una hoja con contacto vacío y fecha de conservación anterior.
+- **Motivo:** no aplicar a participantes un consentimiento que contradiga los datos confirmados después de producir el paquete.
 
 ### 2026-09-23 — Instrumentos sincronizados con Android 2.4
 

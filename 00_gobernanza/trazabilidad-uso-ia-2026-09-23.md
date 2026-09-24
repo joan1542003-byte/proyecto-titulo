@@ -15,7 +15,8 @@ Esta formulación se apoya en la [declaración histórica de IA de la memoria v1
 | Imágenes conceptuales del 17 de agosto | Generación de siete visualizaciones para explicar objeto, contexto y flujos; el archivo histórico conserva propósito y síntesis de prompt por imagen. | El autor las incorporó como apoyo de comunicación y las distinguió de mapas vectoriales y prototipo construido. | No hay en esa ficha un prompt literal por cada imagen ni pruebas con personas. |
 | Referencias visuales de estados 07–14 y 15–24 | Prompt base, restricciones, copias específicas y variantes raster para discutir y reconstruir en Figma. | Se descartaron salidas con forma inconsistente o conectores fuera de marco; se corrigió un botón que decía «Desarmar» antes de armar. | Son referencias de baja/media fidelidad, no interfaz final ni validación. |
 | Investigación y redacción | Los archivos históricos declaran apoyo en búsqueda dirigida, consistencia y corrección editorial. | La memoria vigente, perfiles situacionales y criterios deben conservar evidencia, procedencia y revisión del autor. | No hay registro exhaustivo de prompts y respuestas de todas las conversaciones. No cuantificar horas ahorradas ni atribuir mejoras causales sin datos. |
-| Revisión del 23 de septiembre | La petición del autor fue revisar el repositorio central y desarrollar únicamente la parte escrita de sus anotaciones. La IA ordenó notas, contrastó documentación y fuentes y redactó borradores. | Las anotaciones y el alcance son del autor; cualquier adopción en el producto o en la memoria queda sujeto a su revisión y a pruebas. | Esta iteración no implementa la app ni aporta resultados con participantes. |
+| Revisión documental del 23 de septiembre | La petición inicial fue revisar el repositorio y desarrollar la parte escrita de las anotaciones. La IA ordenó notas, contrastó documentación y fuentes y redactó borradores. | Las anotaciones y el alcance son del autor; la primera iteración no implementó la app. | Ningún texto de esa fase aporta resultados con participantes. |
+| Revisión de Android 2.5 del 23 de septiembre | El autor pidió aplicar el feedback a la app, con reconocimiento positivo sin culpa. Un agente revisó el repositorio y modificó tutorial, navegación, progreso y mensaje de Inicio; el agente principal auditó el código, corrigió la continuidad del código de participación, el consentimiento, el tiempo máximo y la documentación. | El autor fijó el criterio de tono y el correo y plazo de datos; las correcciones se seleccionaron por relación con el flujo real, no por aceptación automática de todas las notas. | La compilación y un recorrido parcial en emulador no sustituyen pruebas con personas, audio físico ni verificación de borrado. |
 
 Lo que puede sostenerse documentalmente es que la IA permitió **producir variantes y dejar rastros de descarte y corrección**. El repositorio no mide ahorro de tiempo ni permite afirmar que la IA mejoró la calidad de uso de Relevo: eso exigiría comparación y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
 
@@ -53,10 +54,25 @@ No introducir transcripciones identificables de P1–P8, hojas firmadas, claves 
 
 - **Entrada del autor:** lista de anotaciones del 23 de septiembre y corrección posterior que fijó `proyecto-titulo` de GitHub como único repositorio de contexto.
 - **Contexto consultado:** `README.md`, directrices, memoria v4, perfiles P1–P8, requisitos, estado de Android 2.3, consentimiento, datos, diseño y registros de prompts. También se contrastaron fuentes primarias de ley, plataforma y estudios de hábitos.
-- **Resultado:** [síntesis de las anotaciones](../02_investigacion/sintesis-anotaciones-2026-09-23.md), [auditoría de privacidad](../07_validacion/privacidad-prototipo-android-2026-09-23.md) y esta trazabilidad.
+- **Resultado de la primera revisión:** [síntesis de las anotaciones](../02_investigacion/sintesis-anotaciones-2026-09-23.md), [auditoría de privacidad](../07_validacion/privacidad-prototipo-android-2026-09-23.md) y esta trazabilidad.
 - **Decisión no atribuida a la herramienta:** adoptar rachas, ampliar el piloto o cambiar la arquitectura del producto; esas opciones permanecen abiertas o incompatibles con criterios vigentes.
 
+## Registro de la iteración Android 2.5
+
+- **Pedido literal del autor:** «Este es el feedback de hoy, aplícalo a la app. [...] rachas quizás no pero sí felicitar al usuario, sin sentir culpa». La lista completa se consultó en el texto pegado en la conversación; su contenido se ordenó en la [síntesis de feedback](../02_investigacion/sintesis-anotaciones-2026-09-23.md).
+- **Contexto entregado al agente:** repositorio, notas docentes y archivos de la app. La primera instrucción operativa se conserva solo como síntesis en este registro: corregir el regreso por pasos, tutorial, permiso, legibilidad, navegación y reconocimiento ligado a la respuesta voluntaria; no añadir perfiles, rachas ni datos nuevos. No se presenta como prompt literal íntegro.
+- **Corrección literal enviada durante la revisión:** «Revisé el diff preliminar: en FloatingTabBar cambiaste Row a Column pero quedó `verticalAlignment = Alignment.CenterVertically` (parámetro de Row), probablemente no compila; corrígelo en tu build. También verifica que el gesto atrás no cierre la actividad desde página 0 de tutorial y que la confirmación de consentimiento muestre correo/fecha completos. Gracias».
+- **Resultado comprobable:** [interfaz y lógica en Android 2.5](../06_desarrollo_y_factibilidad/app-android/README.md). Pasaron siete pruebas unitarias y la compilación; se inspeccionaron consentimiento y tutorial en emulador. El agente principal detectó y corrigió un código de participación que cambiaba al cerrar cada ciclo y un permiso que podía omitirse desde el tutorial.
+- **Decisiones del autor:** reconocer sin culpa una respuesta voluntaria; no convertirla en éxito observado ni usar rachas. El autor confirmó `joan1542003@gmail.com` y el 30 de diciembre de 2026 como datos para el borrador de privacidad.
+- **Lo que no se afirma:** que la IA probó la experiencia de uso, que la actividad ocurrió realmente, que el borrado remoto funciona o que la ruta de audio fue comprobada con el equipo final.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Implementación Android 2.5
+
+- **Qué cambió:** se separó la revisión documental de la iteración de código, se registró un prompt de corrección literal y se atribuyeron decisiones y verificaciones.
+- **Antes:** el documento decía que la tarea del día no modificaba la app, porque describía únicamente la primera revisión escrita.
+- **Por qué:** dejar una historia verificable del proceso sin atribuir al autor o a la herramienta trabajo que no hicieron ni inventar prompts perdidos.
 
 ### 2026-09-23 — Creación
 

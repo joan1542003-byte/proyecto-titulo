@@ -65,11 +65,17 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   init {
     _installedApps.value = appsRepository.launcherApps()
-    if (hasCurrentConsent() && !_reminder.value.consentAccepted) {
-      updateValue(_reminder.value.copy(consentAccepted = true))
+    val participantCode = experiencePreferences.getString("participant_code", null)
+      ?: _reminder.value.participantCode.ifBlank { "P-${UUID.randomUUID().toString().take(8).uppercase()}" }
+    experiencePreferences.edit().putString("participant_code", participantCode).apply()
+    if (_reminder.value.participantCode != participantCode) {
+      updateValue(_reminder.value.copy(participantCode = participantCode))
     }
-    if (_reminder.value.participantCode.isBlank()) {
-      updateValue(_reminder.value.copy(participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}"))
+    if (!hasCurrentConsent()) {
+      application.stopService(Intent(application, AppUsageMonitorService::class.java))
+      updateValue(_reminder.value.copy(consentAccepted = false, status = ReminderStatus.DRAFT))
+    } else if (!_reminder.value.consentAccepted) {
+      updateValue(_reminder.value.copy(consentAccepted = true))
     }
     startStateSync()
     refreshDashboard()
@@ -96,8 +102,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun updateRequiredUsage(seconds: Int) =
     update { copy(requiredUsageSeconds = seconds.coerceAtLeast(1), status = ReminderStatus.DRAFT) }
 
-  fun updateParticipantCode(value: String) =
-    update { copy(participantCode = value.trim().take(24), status = ReminderStatus.DRAFT) }
+  fun updateParticipantCode(value: String) {
+    val code = value.trim().take(24)
+    experiencePreferences.edit().putString("participant_code", code).apply()
+    update { copy(participantCode = code, status = ReminderStatus.DRAFT) }
+  }
 
   fun updateConsent(accepted: Boolean) {
     experiencePreferences.edit()
@@ -160,6 +169,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun arm(): Boolean {
+    if (!hasCurrentConsent()) return false
     refreshUsageAccess()
     if (!_usageAccessGranted.value) return false
     val next = _reminder.value.arm(UUID.randomUUID().toString())
@@ -246,9 +256,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     signalPlayer.stop()
     store.clear()
     _reminder.value = Reminder(
-      participantCode = "P-${UUID.randomUUID().toString().take(8).uppercase()}",
+      participantCode = experiencePreferences.getString("participant_code", null).orEmpty(),
       consentAccepted = hasCurrentConsent(),
     )
+    store.save(_reminder.value)
     _remainingSeconds.value = 0
   }
 

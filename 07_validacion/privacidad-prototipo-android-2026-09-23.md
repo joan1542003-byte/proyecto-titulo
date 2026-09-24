@@ -1,10 +1,10 @@
-# Protección de datos y aviso de privacidad del prototipo Android 2.3
+# Protección de datos y aviso de privacidad del prototipo Android 2.5
 
-**Estado:** auditoría documental y borrador para revisión académica y jurídica antes de pruebas con participantes. **Corte:** 23 de septiembre de 2026, `main` en `fe416ca`. Este documento describe el prototipo del repositorio; no equivale a una política publicada ni acredita que todas sus promesas se ejecuten.
+**Estado:** auditoría documental y borrador para revisión académica y jurídica antes de pruebas con participantes. **Corte:** 23 de septiembre de 2026; el esquema remoto documentado en 2.3 permanece en 2.5. Este documento describe el prototipo del repositorio; no equivale a una política publicada ni acredita que todas sus promesas se ejecuten. **Contacto confirmado por el autor:** joan1542003@gmail.com. **Límite propuesto de conservación:** 30 de diciembre de 2026, sujeto a comprobar la eliminación completa.
 
 ## Respuesta breve para la comisión
 
-«Relevo solicita acceso a datos de uso de Android para contar el tiempo de la aplicación que la persona eligió. No necesita leer mensajes ni contenido de pantalla. En el prototipo de investigación se guardan localmente la intención, el comienzo, el lugar declarado, la app elegida, el umbral y eventos técnicos de la sesión. Si la base remota está configurada, una copia se envía a Supabase asociada a un identificador aleatorio. Por eso hablamos de datos seudonimizados, no anónimos: la actividad, los horarios y el código pueden permitir relacionar registros con una persona. El consentimiento académico se presenta antes del permiso del sistema. Antes de usarlo con participantes debemos completar contacto responsable, plazo y eliminación local/remota, y comprobar la salida Bluetooth y el flujo de retiro. No presentaremos resultados ni protección efectiva que no hayamos verificado».
+«Relevo solicita acceso a datos de uso de Android para contar el tiempo de la aplicación que la persona eligió. No necesita leer mensajes ni contenido de pantalla. En el prototipo de investigación se guardan localmente la intención, el comienzo, el lugar declarado, la app elegida, el umbral y eventos técnicos de la sesión. Si la base remota está configurada, una copia se envía a Supabase asociada a un identificador aleatorio. Por eso hablamos de datos seudonimizados, no anónimos: la actividad, los horarios y el código pueden permitir relacionar registros con una persona. El consentimiento académico se presenta antes del permiso del sistema. El contacto del responsable es joan1542003@gmail.com y el plazo propuesto de eliminación es el 30 de diciembre de 2026. Antes de usarlo con participantes debemos comprobar la eliminación local y remota, la salida Bluetooth y el flujo de retiro. No presentaremos resultados ni protección efectiva que no hayamos verificado».
 
 ## Inventario comprobado en el repositorio
 
@@ -14,10 +14,10 @@
 | Configuración e historial | [ReminderStore](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/data/ReminderStore.kt), [HistoryStore](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/data/HistoryStore.kt), [CustomActivityStore](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/data/CustomActivityStore.kt) | Actividad, comienzo, lugar declarado, app, tiempo, estado e historial local. El historial se limita a 30 entradas, pero eso no borra las filas de investigación. |
 | Registro de investigación | [ResearchLogStore](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/data/ResearchLogStore.kt) | Sesiones y eventos en SQLite, con código de participante, identificadores, tiempos y respuesta final opcional. |
 | Sincronización | [RemoteSync](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/data/RemoteSync.kt) | Si URL y clave publicable están configuradas, envía sesiones y eventos por HTTPS a Supabase, con reintento de pendientes. No debe afirmarse «solo local» para esa configuración. |
-| Consentimiento y borrado | [pantalla de consentimiento](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/ui/RelevoApp.kt) y [ViewModel](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/ui/RelevoViewModel.kt) | La aceptación académica se versiona. `reset()` borra la configuración activa, pero no se observó en esa ruta eliminación integral de historial, SQLite, credenciales y filas remotas; no anunciar «borrar todos mis datos» como función existente. |
+| Consentimiento y borrado | [pantalla de consentimiento](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/ui/RelevoApp.kt) y [ViewModel](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/ui/RelevoViewModel.kt) | La aceptación académica se versiona y se vuelve a solicitar al cambiar su texto. El código de participación se conserva entre ciclos y se ve en Historial. `reset()` borra la configuración activa, pero no elimina historial, SQLite, credenciales ni filas remotas; no anunciar «borrar todos mis datos» como función existente. |
 | Respaldo del sistema | [Manifest](../06_desarrollo_y_factibilidad/app-android/app/src/main/AndroidManifest.xml) | `allowBackup=false` está declarado. Debe verificarse el comportamiento real en los dispositivos del piloto. |
 
-Un identificador aleatorio o autenticación anónima de Supabase no anonimiza por sí mismos una serie de actividades, lugares declarados y marcas temporales. El código entregado para solicitar eliminación también crea un vínculo operativo. Se recomienda hablar de **seudonimización** y limitar el acceso a la tabla de correspondencia y a las hojas firmadas. La política de acceso por fila indicada en la [documentación remota](../06_desarrollo_y_factibilidad/app-android/conexion-base-remota-2026-09-21.md) fue probada técnicamente, pero RLS no define por sí sola retención, copias de seguridad ni retiro del consentimiento.
+Un identificador aleatorio o autenticación anónima de Supabase no anonimiza por sí mismos una serie de actividades, lugares declarados y marcas temporales. El código entregado para solicitar eliminación también crea un vínculo operativo. Se recomienda hablar de **seudonimización** y limitar el acceso a la tabla de correspondencia y a las hojas firmadas. La política de acceso por fila indicada en la [documentación remota](../06_desarrollo_y_factibilidad/app-android/conexion-base-remota-2026-09-21.md) fue probada técnicamente, pero RLS no define por sí sola retención, copias de seguridad ni retiro del consentimiento. El código estable de 2.5 rige los ciclos nuevos; instalaciones de prueba anteriores pudieron generar códigos distintos y no deben identificarse solo por el código que hoy se ve en Historial.
 
 ## Marco normativo y criterio aplicado
 
@@ -39,9 +39,9 @@ El texto debe adaptarse a la configuración efectivamente instalada. No debe dej
 
 ## Campos pendientes antes de publicar una política o reclutar
 
-1. Identidad y correo operativo del responsable, institución y canal para ejercer derechos; el [consentimiento imprimible](entrega-23-09-2026/fuentes-md/04-consentimiento.md) aún tiene el contacto en blanco.
+1. El correo confirmado, joan1542003@gmail.com, ya figura en el borrador de consentimiento Android; comprobar que el canal reciba solicitudes antes de testear. El paquete imprimible fechado antes de esta corrección conserva el contacto en blanco y no debe entregarse sin actualizarlo.
 2. Confirmar región de alojamiento de Supabase, quién administra el proyecto, quién puede exportar datos, respaldos y acceso de proveedores. No prometer residencia en Chile sin verificarla.
-3. Fijar plazo de eliminación de cada soporte. El consentimiento propone **13 de enero de 2027**; comprobar que la eliminación abarque teléfono, SQLite, historial, credenciales, servidor y respaldos aplicables, y que pueda buscarse por el código entregado.
+3. Aplicar el plazo propuesto por el autor, **30 de diciembre de 2026**, a cada soporte y comprobar que la eliminación abarque teléfono, SQLite, historial, credenciales, servidor y respaldos aplicables, y que pueda buscarse por el código entregado. El plazo anterior de 13 de enero de 2027 en documentos fechados no gobierna este prototipo Android.
 4. Probar retiro de consentimiento y eliminación con una sesión ficticia de extremo a extremo. Distinguir detener el relevo, revocar el permiso y pedir borrado de registros ya recogidos.
 5. Revisar el texto de consentimiento en la app y las hojas para que enumeren los mismos campos; hoy la pantalla resumida omite comienzo, lugar declarado, app/paquete y respuesta final que sí aparecen en la base.
 6. Confirmar si el estudio utilizará exclusivamente adultos. Si cambia la muestra, revisar consentimiento y datos con el marco aplicable.
@@ -55,6 +55,20 @@ El texto debe adaptarse a la configuración efectivamente instalada. No debe dej
 - Google. (s. f.). *Manifest.permission*. Android Developers. https://developer.android.com/reference/android/Manifest.permission#PACKAGE_USAGE_STATS
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Código estable y consentimiento 2.5
+
+- **Qué cambió:** se actualizó el alcance técnico a 2.5: nueva versión de consentimiento y un código visible y persistente entre relevos.
+- **Cómo era antes:** el código cambiaba al cerrar cada ciclo y la auditoría describía la versión 2.4.
+- **Por qué:** facilitar la localización de registros y evitar que una aceptación anterior cubra un texto distinto.
+- **Límite:** sigue sin demostrarse la eliminación de los registros locales y remotos ni la gestión de respaldos.
+
+### 2026-09-23 — Contacto, plazo y versión actual
+
+- **Qué cambió:** se incorporaron el correo confirmado y la fecha máxima propuesta por el autor, y se indicó que el flujo auditado en Android 2.3 continúa en 2.4.
+- **Cómo era antes:** contacto y plazo figuraban como pendientes; se citaba el 13 de enero de 2027 del paquete anterior.
+- **Por qué:** permitir una explicación concreta ante la comisión sin aparentar que ya existe una ruta comprobada de borrado local y remoto.
+- **Límite:** no habilita reclutamiento; hay que verificar el canal, la eliminación y la revisión académica.
 
 ### 2026-09-23 — Creación
 

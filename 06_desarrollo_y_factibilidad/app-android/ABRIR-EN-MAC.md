@@ -22,7 +22,7 @@ Este directorio es un proyecto completo de Android Studio. No es necesario copia
 
 ## Opción alternativa: paquete ZIP
 
-1. Descarga `relevo-android-studio-2.4-2026-09-23.zip` desde la carpeta `releases`.
+1. Descarga `relevo-android-studio-2.5-2026-09-23.zip` desde la carpeta `releases`.
 2. Descomprímelo.
 3. En Android Studio elige **Open** y selecciona la carpeta `app-android`.
 
@@ -37,7 +37,7 @@ Sin estas dos variables la aplicación compila y funciona localmente, pero conse
 1. Conecta un teléfono Android mediante USB o crea un emulador.
 2. Selecciona el módulo `app`.
 3. Pulsa **Run**.
-4. En el primer inicio, acepta el uso académico, completa el tutorial y concede Tiempo de uso. Las notificaciones son recomendadas. Puedes configurar el primer relevo desde el tutorial o ir al inicio. Se requiere Android 12 o posterior.
+4. En el primer inicio, acepta el uso académico, completa el tutorial y concede Tiempo de uso. Las notificaciones son opcionales. Puedes configurar el primer relevo desde el tutorial o ir al inicio una vez concedido Tiempo de uso. Se requiere Android 12 o posterior.
 
 Si macOS impide ejecutar Gradle desde Terminal, abre una terminal en esta carpeta y ejecuta una sola vez:
 
@@ -56,6 +56,12 @@ El APK resultante queda en `app/build/outputs/apk/debug/app-debug.apk`.
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Paquete 2.5
+
+- **Cambio:** la guía apunta al paquete 2.5 y aclara qué permiso es necesario para terminar el tutorial.
+- **Antes:** enlazaba el paquete 2.4 y llamaba recomendadas a las notificaciones sin separar su carácter opcional del acceso imprescindible a Tiempo de uso.
+- **Motivo:** abrir el código vigente y explicar la primera configuración sin inducir permisos adicionales.
 
 ### 2026-09-23 — Paquete 2.4
 

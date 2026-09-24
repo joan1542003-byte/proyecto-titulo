@@ -45,7 +45,7 @@ class AppUsageMonitorService : Service() {
 
   override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
     val reminder = store.load()
-    if (reminder.status != ReminderStatus.WAITING || !UsageAccess.isGranted(this)) {
+    if (reminder.status != ReminderStatus.WAITING || !UsageAccess.isGranted(this) || !hasCurrentConsent()) {
       stopSelf()
       return START_NOT_STICKY
     }
@@ -90,7 +90,7 @@ class AppUsageMonitorService : Service() {
 
         while (true) {
           val reminder = store.load()
-          if (reminder.status != ReminderStatus.WAITING) break
+          if (reminder.status != ReminderStatus.WAITING || !hasCurrentConsent()) break
 
           val now = System.currentTimeMillis()
           updateForegroundPackage(now)
@@ -160,6 +160,12 @@ class AppUsageMonitorService : Service() {
     }
     lastQueryMillis = nowMillis
   }
+
+  private fun hasCurrentConsent(): Boolean =
+    getSharedPreferences("relevo_experience", MODE_PRIVATE).let { preferences ->
+      preferences.getBoolean("academic_consent_accepted", false) &&
+        preferences.getString("academic_consent_version", null) == ResearchLogStore.CONSENT_VERSION
+    }
 
   private fun createNotificationChannel() {
     val manager = getSystemService(NotificationManager::class.java) ?: return

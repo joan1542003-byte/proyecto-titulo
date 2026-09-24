@@ -1,6 +1,6 @@
-# Relevo — pauta de evaluación formativa del prototipo Android 2.4
+# Relevo — pauta de evaluación formativa del prototipo Android 2.5
 
-**Sesión de revisión docente:** 23 de septiembre de 2026. **Estado:** instrumento para revisión y ajuste; no contiene resultados ni autoriza por sí solo el reclutamiento. **Versión descrita:** APK Android 2.4, junto con el teléfono y el parlante Bluetooth concretos que se declaren antes de cada sesión.
+**Sesión de revisión docente:** 23 de septiembre de 2026. **Estado:** instrumento para revisión y ajuste; no contiene resultados ni autoriza por sí solo el reclutamiento. **Versión descrita:** APK Android 2.5, junto con el teléfono y el parlante Bluetooth concretos que se declaren antes de cada sesión.
 
 ## Propósito y alcance
 
@@ -10,11 +10,11 @@ La evaluación no determina si la persona tiene un problema de uso digital, si d
 
 ## Prototipo y límites que se deben explicar
 
-La versión 2.4 permite registrar una actividad y una manera concreta de comenzar, elegir una aplicación, definir un umbral, indicar una ubicación, revisar la configuración y activar el ciclo. La preparación está dividida en cuatro etapas; la creación de una actividad propia, en tres. La aplicación acumula el tiempo mientras la aplicación elegida está en primer plano y muestra una notificación persistente durante el monitoreo. El mínimo documentado es Android 12 (API 31). La compilación y las pruebas unitarias pasaron; la inspección visual en teléfono y el recorrido completo con un parlante real siguen pendientes. Véanse el [APK 2.4](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.4-2026-09-23.apk) y el [estado técnico de la versión](../06_desarrollo_y_factibilidad/app-android/README.md).
+La versión 2.5 permite registrar una actividad y una manera concreta de comenzar, elegir una aplicación, definir un umbral de 1 minuto a 6 horas, indicar una ubicación, revisar la configuración y activar el ciclo. La preparación está dividida en cuatro etapas; la creación de una actividad propia, en tres. La aplicación acumula el tiempo mientras la aplicación elegida está en primer plano y muestra una notificación persistente durante el monitoreo. El mínimo documentado es Android 12 (API 31). La compilación y las pruebas unitarias pasaron; la inspección visual completa en teléfono y el recorrido con un parlante real siguen pendientes. Véanse el [APK 2.5](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.5-2026-09-23.apk) y el [estado técnico de la versión](../06_desarrollo_y_factibilidad/app-android/README.md).
 
 El código solicita dirigir **el tono de Relevo** a una salida Bluetooth compatible y comprueba la ruta reportada por Android. Si no detecta esa salida, no reproduce el tono por el altavoz del teléfono; si se pierde la conexión durante el sonido, lo detiene. Esto aún debe comprobarse con los dispositivos concretos. Un parlante multimedia corriente puede convertirse en la salida de audio general del teléfono: la app no impide que YouTube, Instagram u otras aplicaciones suenen también por él. Android no garantiza que la ruta preferida sea la ruta efectiva. La función Samsung *Separate app sound* depende del modelo y no puede suponerse en otros teléfonos. Véase el [análisis de enrutamiento](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
 
-Por lo tanto, no presentar como comprobadas la exclusividad del parlante, la conexión persistente, la percepción del sonido fuera de la app ni la ausencia de interferencias. El prototipo Android 2.4 descrito aquí no aporta una luz física; no evaluar ni prometer esa salida en esta sesión.
+Por lo tanto, no presentar como comprobadas la exclusividad del parlante, la conexión persistente, la percepción del sonido fuera de la app ni la ausencia de interferencias. El prototipo Android 2.5 descrito aquí no aporta una luz física; no evaluar ni prometer esa salida en esta sesión.
 
 ## Pregunta de evaluación
 
@@ -41,12 +41,12 @@ La pauta parte de tareas y contextos de uso definidos y registra qué ocurre par
 
 ## Puerta ética y de privacidad antes de convocar
 
-La auditoría de privacidad de la versión 2.3, cuyo flujo de datos permanece en 2.4, describe almacenamiento local en una base de datos del teléfono y sincronización a Supabase, el servicio remoto de datos del proyecto, si la app tiene configurada su dirección y clave publicable. Los registros pueden incluir actividad, forma de comenzar, lugar declarado, aplicación elegida, umbral, tiempos, eventos y respuesta final opcional. El identificador aleatorio no vuelve anónimos esos registros: son seudonimizados, es decir, se asocian a un código en vez del nombre, pero podrían relacionarse con una persona. La ruta completa de eliminación —incluidos la base local, el historial, las credenciales, el servidor y los respaldos aplicables— no está verificada. Véase [protección de datos del prototipo](privacidad-prototipo-android-2026-09-23.md).
+La auditoría de privacidad iniciada en la versión 2.3, cuyo esquema remoto permanece en 2.5, describe almacenamiento local en una base de datos del teléfono y sincronización a Supabase, el servicio remoto de datos del proyecto, si la app tiene configurada su dirección y clave publicable. Los registros pueden incluir actividad, forma de comenzar, lugar declarado, aplicación elegida, umbral, tiempos, eventos y respuesta final opcional. El identificador aleatorio no vuelve anónimos esos registros: son seudonimizados, es decir, se asocian a un código en vez del nombre, pero podrían relacionarse con una persona. La ruta completa de eliminación —incluidos la base local, el historial, las credenciales, el servidor y los respaldos aplicables— no está verificada. Véase [protección de datos del prototipo](privacidad-prototipo-android-2026-09-23.md).
 
 Antes de reclutar, la persona responsable debe:
 
 1. comprobar si la versión instalada guardará datos solo localmente o también los sincronizará con Supabase; explicar a cada participante la condición real, quién tendrá acceso y qué datos se recogen;
-2. completar un contacto operativo, el plazo de conservación y un procedimiento comprobado para retirar el consentimiento y solicitar eliminación; el repositorio indica que esta gestión todavía necesita verificación;
+2. comprobar que joan1542003@gmail.com reciba solicitudes, incorporar el límite del 30 de diciembre de 2026 a todos los materiales vigentes y demostrar un procedimiento para retirar el consentimiento y solicitar eliminación; esta gestión todavía necesita verificación;
 3. conciliar el consentimiento de la app con la hoja entregada y obtener la revisión docente/institucional que corresponda;
 4. explicar por separado el consentimiento académico y los permisos de Android. El acceso a datos de uso es necesario para probar el conteo real; el permiso de notificaciones habilita avisos del sistema. No presionar a la persona para concederlos;
 5. registrar solo notas de la tarea por defecto. No grabar pantalla, audio, notificaciones, conversaciones ni otras aplicaciones. Cualquier grabación requeriría consentimiento específico y revisión previa.
@@ -134,7 +134,7 @@ Clasificar por indicador cuántas sesiones muestran cada tipo de dificultad, y a
 
 | Momento | Trabajo | Condición para avanzar |
 |---|---|---|
-| Corrección docente, 23-09-2026 | Revisar pertinencia de las tareas, indicadores, reglas de registro y alcance declarado de la versión 2.4. | Registrar qué observaciones se aceptan, se ajustan o quedan abiertas. |
+| Corrección docente, 23-09-2026 | Revisar pertinencia de las tareas, indicadores, reglas de registro y alcance declarado de la versión 2.5. | Registrar qué observaciones se aceptan, se ajustan o quedan abiertas. |
 | Antes de invitar participantes | Resolver contacto, consentimiento, configuración efectiva de datos, retención y eliminación; probar la ruta de audio con el equipo exacto. | No iniciar reclutamiento mientras la información entregada o la prueba técnica no sean suficientes. |
 | Piloto | Aplicar el procedimiento, registrar duración y ayudas y revisar comprensión de las preguntas. | Si se cambia el instrumento, documentar la versión y separar el piloto del análisis posterior. |
 | Septiembre–octubre de 2026 | Ejecutar una ronda formativa, corregir problemas y documentar decisiones. Considerar una comparación del lugar solo con protocolo revisado. | No atribuir a la ubicación un efecto que no se comparó. |
@@ -155,6 +155,18 @@ Organización Internacional de Normalización. (2019). *ISO 9241-210:2019. Ergon
 Sauro, J. (2010, 2 de marzo). *If you could only ask one question, use this one*. MeasuringU. https://measuringu.com/single-question/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-23 — Sincronización con Android 2.5
+
+- **Qué cambió:** se actualizó la versión y el enlace del APK, y se indicó el nuevo máximo de tiempo. La descripción de privacidad conserva explícita la eliminación no verificada.
+- **Cómo era antes:** la pauta describía 2.4 y un máximo de 60 minutos.
+- **Por qué:** evitar que se revise una configuración distinta de la que se entregará.
+
+### 2026-09-23 — Contacto y fecha confirmados
+
+- **Qué cambió:** la puerta de privacidad nombra el correo confirmado y la fecha límite indicada por el autor; mantiene pendiente verificar el canal y la eliminación real.
+- **Cómo era antes:** pedía completar contacto y plazo sin reconocer que ambos datos ya se habían entregado.
+- **Por qué:** preparar una revisión con datos coherentes sin presentar como comprobado el retiro de información.
 
 ### 2026-09-23 — Sincronización con el APK 2.4
 
