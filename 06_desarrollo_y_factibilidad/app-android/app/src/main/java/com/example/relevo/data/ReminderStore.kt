@@ -3,6 +3,10 @@ package com.example.relevo.data
 import android.content.Context
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
+import com.example.relevo.domain.SignalRoute
+import com.example.relevo.domain.TrackedApp
+import org.json.JSONArray
+import org.json.JSONObject
 
 class ReminderStore(context: Context) {
   private val preferences = context.getSharedPreferences("relevo_reminder", Context.MODE_PRIVATE)
@@ -25,6 +29,11 @@ class ReminderStore(context: Context) {
           }
           .getOrDefault(ReminderStatus.DRAFT),
       signalDelivered = preferences.getBoolean("signal_delivered", false),
+      signalRoute = runCatching { SignalRoute.valueOf(preferences.getString("signal_route", SignalRoute.BLUETOOTH.name).orEmpty()) }.getOrDefault(SignalRoute.BLUETOOTH),
+      targetApps = runCatching {
+        val array = JSONArray(preferences.getString("target_apps", "[]"))
+        List(array.length()) { index -> array.getJSONObject(index).let { TrackedApp(it.getString("package"), it.getString("label")) } }
+      }.getOrDefault(emptyList()),
     )
 
   fun save(reminder: Reminder) {
@@ -42,6 +51,8 @@ class ReminderStore(context: Context) {
       .putString("session_id", reminder.sessionId)
       .putString("status", reminder.status.name)
       .putBoolean("signal_delivered", reminder.signalDelivered)
+      .putString("signal_route", reminder.signalRoute.name)
+      .putString("target_apps", JSONArray().apply { reminder.selectedApps.forEach { app -> put(JSONObject().put("package", app.packageName).put("label", app.label)) } }.toString())
       .apply()
   }
 

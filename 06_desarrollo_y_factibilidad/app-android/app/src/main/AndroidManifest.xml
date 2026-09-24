@@ -38,7 +38,7 @@
             android:foregroundServiceType="specialUse">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="Observa exclusivamente la aplicación elegida mientras un recordatorio está activo." />
+                android:value="Cuenta el tiempo en las aplicaciones elegidas mientras un relevo está activo." />
         </service>
     </application>
 

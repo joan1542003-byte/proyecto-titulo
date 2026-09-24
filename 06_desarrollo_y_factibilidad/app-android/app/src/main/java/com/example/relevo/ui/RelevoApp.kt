@@ -19,6 +19,8 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.width
@@ -96,6 +98,7 @@ import androidx.compose.material.icons.rounded.Insights
 import androidx.compose.material.icons.rounded.LocationOn
 import androidx.compose.material.icons.rounded.NotificationsActive
 import androidx.compose.material.icons.rounded.Timer
+import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.automirrored.rounded.ArrowForward
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -121,6 +124,10 @@ import android.content.pm.PackageManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.semantics.ProgressBarRangeInfo
+import androidx.compose.ui.semantics.progressBarRangeInfo
+import androidx.compose.ui.semantics.setProgress
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -128,6 +135,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
+import com.example.relevo.domain.SignalRoute
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.CustomActivity
@@ -144,7 +152,7 @@ import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.HazeStyle
 import dev.chrisbanes.haze.hazeEffect
 
-private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE }
+private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE, PRIVACY }
 private enum class HomeTab { START, ACTIVITY, HISTORY }
 private enum class SetupStep { ACTIVITY, TIMING, PLACE, REVIEW }
 private data class ActivityPreset(val activity: String, val start: String, val place: String, val image: Int)
@@ -156,6 +164,8 @@ private val activityPresets = listOf(
   ActivityPreset("Dibujar", "Preparar el cuaderno", "Junto a mis materiales", R.drawable.activity_draw),
   ActivityPreset("Cocinar", "Reunir los ingredientes", "En la cocina", R.drawable.activity_cook),
   ActivityPreset("Ordenar", "Despejar una superficie", "En el espacio que quiero ordenar", R.drawable.activity_tidy),
+  ActivityPreset("Pasear al perro", "Tomar la correa", "Junto a la correa", R.drawable.activity_dog_walk),
+  ActivityPreset("Manualidades", "Preparar los materiales", "En la mesa de trabajo", R.drawable.activity_crafts),
 )
 private val customIcons = listOf("walk", "train", "read", "draw", "music", "pause", "cook", "star")
 private val customColors = listOf(
@@ -196,6 +206,7 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val history by viewModel.history.collectAsState()
   val todayUsage by viewModel.todayUsage.collectAsState()
   val customActivities by viewModel.customActivities.collectAsState()
+  val deletionStatus by viewModel.deletionStatus.collectAsState()
   val context = LocalContext.current
   var tab by rememberSaveable { mutableStateOf(HomeTab.START) }
   var createCustomRequested by rememberSaveable { mutableStateOf(false) }
@@ -230,6 +241,9 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
           screen = Screen.ONBOARDING
         },
         onDecline = { (context as? Activity)?.finishAndRemoveTask() },
+        onPrivacy = { screen = Screen.PRIVACY },
+        remoteConfigured = viewModel.remoteConfigured,
+        deletionPending = viewModel.deletionPending,
       )
       Screen.ONBOARDING -> OnboardingScreen(
         usageAccess = usageAccess,
@@ -264,6 +278,7 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         { tab = it },
         showStartAcknowledgement,
         { showStartAcknowledgement = false },
+        { screen = Screen.PRIVACY },
       )
       Screen.SETUP -> SetupScreen(
         reminder = reminder,
@@ -277,6 +292,7 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         onPlace = viewModel::updatePlace,
         onApp = viewModel::selectTargetApp,
         onDuration = viewModel::updateRequiredUsage,
+        onSignalRoute = viewModel::updateSignalRoute,
         onPreset = viewModel::applyPreset,
         onSaveCustom = { viewModel.saveCustomActivity(it); createCustomRequested = false },
         onDeleteCustom = viewModel::deleteCustomActivity,
@@ -296,6 +312,8 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         viewModel.reset()
         screen = Screen.HOME
       }
+      Screen.PRIVACY -> PrivacyScreen(deletionStatus, { screen = if (reminder.consentAccepted) Screen.HOME else Screen.CONSENT },
+        viewModel::deleteResearchData, { screen = Screen.CONSENT }, if (reminder.consentAccepted) "Volver al inicio" else "Volver al consentimiento", viewModel.remoteConfigured)
     }
     }
   }
@@ -329,6 +347,7 @@ private fun HomeScreen(
   onSelectTab: (HomeTab) -> Unit,
   showStartAcknowledgement: Boolean,
   onDismissAcknowledgement: () -> Unit,
+  onPrivacy: () -> Unit,
 ) {
   val animationsEnabled = rememberAnimationsEnabled()
   val hazeState = remember { HazeState() }
@@ -350,15 +369,15 @@ private fun HomeScreen(
       .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8).copy(alpha = .12f), tints = emptyList(), blurRadius = 14.dp)) {
         progressive = HazeProgressive.verticalGradient(startIntensity = 1f, endIntensity = 0f)
       }, contentAlignment = Alignment.TopCenter) {
-      Text("relevo", modifier = Modifier.statusBarsPadding().padding(top = 13.dp), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, letterSpacing = (-.7).sp)
+      Text("Relevo", modifier = Modifier.statusBarsPadding().padding(top = 13.dp), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold, letterSpacing = (-.7).sp)
     }
-    Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().height(96.dp)
-      .hazeEffect(hazeState, style = HazeStyle(backgroundColor = Color(0xFFF8FAF8).copy(alpha = .07f), tints = emptyList(), blurRadius = 12.dp)) {
-        progressive = HazeProgressive.verticalGradient(startIntensity = 0f, endIntensity = 1f)
-      })
-    FloatingTabBar(tab, onSelectTab, Modifier.align(Alignment.BottomCenter).hazeEffect(
-      hazeState, style = HazeStyle(backgroundColor = Color.White.copy(alpha = .22f), tints = emptyList(), blurRadius = 18.dp),
-    ))
+    Box(Modifier.align(Alignment.TopEnd).statusBarsPadding().padding(top = 9.dp, end = 18.dp).size(48.dp)
+      .clip(CircleShape).clickable(onClick = onPrivacy), contentAlignment = Alignment.Center) {
+      Icon(Icons.Rounded.Info, "Privacidad y datos", Modifier.size(21.dp), tint = MaterialTheme.colorScheme.onSurface)
+    }
+    Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().height(136.dp)
+      .background(Brush.verticalGradient(listOf(Color.Transparent, Color(0xFFF7F8F6).copy(alpha = .94f)))))
+    FloatingTabBar(tab, onSelectTab, Modifier.align(Alignment.BottomCenter))
     if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED) {
       Surface(
         onClick = onResume,
@@ -367,7 +386,7 @@ private fun HomeScreen(
         color = if (status == ReminderStatus.SIGNALLED) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.primaryContainer,
       ) {
         Row(Modifier.padding(15.dp), verticalAlignment = Alignment.CenterVertically) {
-          Text(if (status == ReminderStatus.SIGNALLED) "El parlante está sonando" else "Tienes un relevo activo", Modifier.weight(1f), fontWeight = FontWeight.SemiBold)
+          Text(if (status == ReminderStatus.SIGNALLED) "Revisa la señal" else "Tienes un relevo activo", Modifier.weight(1f), fontWeight = FontWeight.SemiBold)
           Icon(Icons.AutoMirrored.Rounded.ArrowForward, "Volver al relevo")
         }
       }
@@ -384,12 +403,12 @@ private fun FloatingTabBar(currentTab: HomeTab, onSelect: (HomeTab) -> Unit, mod
   )
   Surface(
     modifier = modifier.navigationBarsPadding().padding(horizontal = 18.dp, vertical = 8.dp).fillMaxWidth()
-      .border(1.dp, Color.White.copy(alpha = .9f), RoundedCornerShape(32.dp)),
+      .border(1.dp, Color(0xFFDCE6E2), RoundedCornerShape(32.dp)),
     shape = RoundedCornerShape(32.dp),
-    color = Color(0xFFF1F6F3).copy(alpha = .68f),
-    shadowElevation = 5.dp,
+    color = Color(0xFFF8FAF9),
+    shadowElevation = 2.dp,
   ) {
-    Row(Modifier.background(Brush.linearGradient(listOf(Color.White.copy(alpha = .45f), Color(0xFFDDECE8).copy(alpha = .25f)))).padding(5.dp), horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+    Row(Modifier.padding(5.dp), horizontalArrangement = Arrangement.spacedBy(3.dp)) {
       items.forEach { (tab, icon, label) ->
         val active = tab == currentTab
         val background by androidx.compose.animation.animateColorAsState(
@@ -416,8 +435,22 @@ private fun FloatingTabBar(currentTab: HomeTab, onSelect: (HomeTab) -> Unit, mod
 
 @Composable
 private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, customActivities: List<CustomActivity>, onStart: () -> Unit, onPreset: (ActivityPreset) -> Unit, onCustom: (CustomActivity) -> Unit, onCreate: () -> Unit, showStartAcknowledgement: Boolean, onDismissAcknowledgement: () -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 104.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+  val last = history.firstOrNull()
+  val daysAway = last?.let { java.time.temporal.ChronoUnit.DAYS.between(
+    java.time.Instant.ofEpochMilli(it.completedAt).atZone(java.time.ZoneId.systemDefault()).toLocalDate(),
+    java.time.LocalDate.now(),
+  ) } ?: 0L
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 84.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
     Spacer(Modifier.height(4.dp))
+    if (daysAway >= 2) {
+      Surface(shape = RoundedCornerShape(26.dp), color = Color(0xFFE7F2EE)) {
+        Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+          Text("Puedes retomarlo cuando quieras", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+          Text("La última vez preparaste un relevo para ${last?.activity}. Puedes volver a elegirlo o hacer algo distinto.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+          InlineAction("Preparar un relevo", onStart)
+        }
+      }
+    }
     AnimatedVisibility(showStartAcknowledgement, enter = expandVertically(tween(280)) + fadeIn(tween(220)), exit = shrinkVertically(tween(180)) + fadeOut(tween(150))) {
       Surface(shape = RoundedCornerShape(22.dp), color = MaterialTheme.colorScheme.primaryContainer) {
         Column(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 15.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
@@ -427,8 +460,8 @@ private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSumm
         }
       }
     }
-    Text("¿Qué quieres hacer?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp, letterSpacing = (-1).sp)
-    Text("Elige una actividad y decide cuánto tiempo usarás otra app antes de recibir el aviso.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
+    Text("¿Qué te gustaría hacer?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp, letterSpacing = (-1).sp)
+    Text("Elige una actividad. Relevo te avisará cuando se cumpla el tiempo que definas en las apps elegidas.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
       Text("Actividades", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
       InlineAction("Ver todas", onStart)
@@ -445,15 +478,20 @@ private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSumm
       }
     }
     AnimatedGradientAction(onCreate)
-    Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-      MetricCard("Tiempo hoy en las apps que vinculaste", formatTime(usage.sumOf { it.seconds }), Icons.Rounded.Timer, Modifier.weight(1f).height(132.dp))
-      MetricCard("Dijiste que empezaste", history.count { it.signalDelivered && it.outcome == "started" }.toString(), Icons.Rounded.History, Modifier.weight(1f).height(132.dp))
+    if (usage.isNotEmpty()) {
+      Surface(shape = RoundedCornerShape(24.dp), color = Color(0xFFEFF2EF)) {
+        Row(Modifier.fillMaxWidth().padding(18.dp), verticalAlignment = Alignment.CenterVertically) {
+          Column(Modifier.weight(1f)) {
+            Text("Tiempo hoy en las apps que elegiste", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text("Solo muestra las apps de tus relevos", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+          }
+          Text(formatTime(usage.sumOf { it.seconds }), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+        }
+      }
     }
     if (history.isNotEmpty()) {
       Text("La última vez", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
       HistoryCard(history.first())
-    } else {
-      Text("Cuando termines un relevo, podrás volver a verlo aquí.", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium)
     }
     Spacer(Modifier.height(8.dp))
   }
@@ -461,29 +499,13 @@ private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSumm
 
 @Composable
 private fun AnimatedGradientAction(onClick: () -> Unit) {
-  val animationsEnabled = rememberAnimationsEnabled()
-  val transition = rememberInfiniteTransition(label = "primary_gradient")
-  val gradientShift by transition.animateFloat(
-    initialValue = 0f,
-    targetValue = if (animationsEnabled) 1f else 0f,
-    animationSpec = infiniteRepeatable(tween(4_000), RepeatMode.Reverse),
-    label = "primary_gradient_shift",
-  )
-  val endColor = lerp(Color(0xFF096B60), Color(0xFF238A75), gradientShift)
   Surface(
     onClick = onClick,
     modifier = Modifier.fillMaxWidth().height(126.dp),
     shape = RoundedCornerShape(30.dp),
     color = Color.Transparent,
   ) {
-    Box(Modifier.fillMaxSize().background(Brush.linearGradient(listOf(RelevoTeal, endColor)))) {
-      Canvas(Modifier.fillMaxSize()) {
-        val center = Offset(size.width * .85f, size.height * .35f)
-        listOf(45f, 100f, 165f, 235f).forEach { radius ->
-          drawCircle(Color.White.copy(alpha = .16f), radius = radius, center = center, style = Stroke(width = 1.dp.toPx()))
-        }
-        drawCircle(RelevoCoral, radius = 14.dp.toPx(), center = center)
-      }
+    Box(Modifier.fillMaxSize().background(RelevoTeal)) {
       Column(Modifier.fillMaxSize().padding(23.dp), verticalArrangement = Arrangement.SpaceBetween) {
         Spacer(Modifier.height(1.dp))
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Bottom) {
@@ -501,7 +523,7 @@ private fun AnimatedGradientAction(onClick: () -> Unit) {
 private data class OnboardingPage(val image: Int?, val title: String, val text: String, val permissions: Boolean = false)
 
 @Composable
-private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit) {
+private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit, onPrivacy: () -> Unit, remoteConfigured: Boolean, deletionPending: Boolean) {
   var checked by rememberSaveable { mutableStateOf(false) }
   Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color(0xFF075F54), Color(0xFF0A8573)))).safeDrawingPadding()) {
     Column(Modifier.fillMaxSize().padding(24.dp)) {
@@ -512,10 +534,11 @@ private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit) {
       Surface(Modifier.fillMaxWidth().weight(1f), RoundedCornerShape(30.dp), Color(0xFFF8FAF8)) {
         Column(Modifier.verticalScroll(rememberScrollState()).padding(24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
           Text("Relevo es un prototipo de Proyecto de Título de Diseño de la Universidad Diego Portales. Los datos se usarán para evaluar su funcionamiento y la experiencia de uso.", lineHeight = 23.sp)
-          ConsentPoint("Plazo y contacto", "El plazo máximo propuesto de conservación vence el 30 de diciembre de 2026 y se confirmará antes del testeo. Puedes solicitar retirar tu participación o pedir la eliminación de tus datos en joan1542003@gmail.com. La app no tiene un borrado integral; el procedimiento se verificará antes de iniciar las pruebas. Participar es voluntario y puedes detener un relevo cuando quieras.")
-          ConsentPoint("Qué datos registra", "La actividad elegida, cómo quieres empezar, el lugar que indicas, la aplicación seleccionada y su identificador interno, el tiempo definido y las horas y eventos de inicio, uso, aviso y cierre. Tu respuesta final es opcional.")
-          ConsentPoint("Dónde se guardan", "En esta versión configurada, los datos se guardan en el teléfono y se envían a Supabase, la base remota del estudio.")
-          ConsentPoint("Qué no se consulta", "El permiso da acceso técnico a estadísticas de uso. Relevo está diseñado para contar la aplicación elegida; no lee mensajes, fotos, búsquedas ni contenido de pantalla.")
+          ConsentPoint("Plazo y contacto", "Los datos se conservarán como máximo hasta el 30 de diciembre de 2026. Puedes retirar tu participación o pedir que se eliminen escribiendo a joan1542003@gmail.com. También puedes solicitar el borrado desde Privacidad y datos. Participar es voluntario y puedes detener un relevo cuando quieras.")
+          ConsentPoint("Qué datos registra", "La actividad elegida, cómo quieres empezar, el lugar que indicas, las apps seleccionadas y sus identificadores internos, el tiempo definido y las horas y eventos de inicio, uso, aviso y cierre. Tu respuesta final es opcional.")
+          ConsentPoint("Dónde se guardan", if (remoteConfigured) "Los datos se guardan en el teléfono y la app intenta enviarlos a Supabase, la base remota del estudio. Si falla el envío, quedan pendientes en este teléfono."
+            else "Esta instalación no tiene configurada la base remota: los datos quedan solo en este teléfono. No la uses para un estudio que exija sincronización.")
+          ConsentPoint("Qué no se consulta", "El permiso da acceso técnico a estadísticas de uso. Relevo cuenta únicamente las apps que eliges; no lee mensajes, fotos, búsquedas ni contenido de pantalla.")
           ConsentPoint("Cómo se identifican", "Relevo crea un código aleatorio, un seudónimo, y no pide tu nombre, correo ni teléfono para funcionar. Los datos son seudonimizados, no anónimos: horarios y detalles podrían relacionarlos contigo.")
         }
       }
@@ -531,7 +554,9 @@ private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit) {
         Text("He leído y acepto participar.", color = Color.White, fontWeight = FontWeight.Medium, modifier = Modifier.weight(1f))
       }
       Spacer(Modifier.height(10.dp))
-      ActionButton("Aceptar y continuar", onAccept, checked, Color(0xFFFF8B72), Color(0xFF321C17))
+      if (deletionPending) Text("Hay una solicitud de eliminación pendiente. Entra en Privacidad y datos para reintentarla o pedir ayuda; el registro sigue detenido.", color = Color.White, lineHeight = 20.sp)
+      ActionButton("Aceptar y continuar", onAccept, checked && !deletionPending, Color(0xFFFF8B72), Color(0xFF321C17))
+      InlineAction("Privacidad y datos", onPrivacy, Color.White, Modifier.align(Alignment.CenterHorizontally))
       InlineAction("No participar", onDecline, Color.White, Modifier.align(Alignment.CenterHorizontally))
     }
   }
@@ -542,6 +567,41 @@ private fun ConsentPoint(title: String, text: String) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
     Text(title, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.primary)
     Text(text, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 21.sp)
+  }
+}
+
+@Composable
+private fun PrivacyScreen(status: String?, onBack: () -> Unit, onDelete: () -> Unit, onRestart: () -> Unit, returnLabel: String, remoteConfigured: Boolean) = Page {
+  var confirmDeletion by rememberSaveable { mutableStateOf(false) }
+  val deleted = status?.startsWith("Datos eliminados") == true
+  BackHandler(onBack = onBack)
+  Column(Modifier.fillMaxSize()) {
+    InlineAction(returnLabel, onBack)
+    Spacer(Modifier.height(20.dp))
+    Text("Privacidad y datos", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+    Spacer(Modifier.height(16.dp))
+    Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(17.dp)) {
+      Text("Relevo es un prototipo académico. Puedes detener un recordatorio cuando quieras y solicitar que se eliminen los datos de la prueba.", lineHeight = 23.sp)
+      ConsentPoint("Qué guarda", "La actividad, cómo querías empezar, el lugar, las apps elegidas, el tiempo contado y tu respuesta opcional al terminar. También registra los momentos en que se inicia, se usa alguna de esas apps y se emite el aviso.")
+      ConsentPoint("Dónde", if (remoteConfigured) "Los datos se guardan en este teléfono y se intentan enviar a la base del estudio. Se asocian a un código aleatorio, no a tu nombre."
+        else "Esta instalación no tiene configurada una base remota; los registros quedan en este teléfono.")
+      ConsentPoint("Hasta cuándo", "Como máximo hasta el 30 de diciembre de 2026. Para consultar o solicitar la eliminación, escribe a joan1542003@gmail.com.")
+      ConsentPoint("Tiempo de uso", "Android permite consultar estadísticas de otras aplicaciones, pero Relevo cuenta únicamente las que elegiste. No lee mensajes, fotos ni el contenido de pantalla.")
+      if (!deleted) {
+        Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceVariant) {
+          Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Text("Eliminar mis datos", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+            Text(if (remoteConfigured) "Se borrarán tus relevos, actividades guardadas y registros del estudio. Primero se confirma el borrado de la base remota; si falla, se detiene el registro y conservamos lo local para reintentar."
+              else "Se borrarán los relevos, actividades y registros guardados en este teléfono. Si esta instalación se conectó antes a la base del estudio, se requerirá conexión para confirmar también ese borrado.", lineHeight = 21.sp)
+            InlineAction(if (confirmDeletion) "Cancelar" else "Solicitar eliminación", { confirmDeletion = !confirmDeletion })
+            if (confirmDeletion) SecondaryButton("Confirmar eliminación", { confirmDeletion = false; onDelete() })
+          }
+        }
+      }
+      if (status != null) Text(status, color = if (deleted) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 21.sp)
+      Spacer(Modifier.height(8.dp))
+    }
+    if (deleted) PrimaryButton("Volver a comenzar", onRestart) else SecondaryButton(returnLabel, onBack)
   }
 }
 
@@ -561,10 +621,10 @@ private fun OnboardingScreen(
   }
   val pages = remember { listOf(
     OnboardingPage(R.drawable.onboarding_activity, "Elige una actividad", "Puedes partir de una sugerencia o guardar una actividad propia con una forma sencilla de comenzar."),
-    OnboardingPage(R.drawable.onboarding_condition, "Define cuándo avisarte", "Elige una aplicación y un tiempo. El conteo funciona solo mientras el relevo está activo."),
+    OnboardingPage(R.drawable.onboarding_condition, "Define cuándo avisarte", "Elige una o varias apps y un tiempo total. El conteo solo avanza mientras Relevo está activo y usas una de esas apps."),
     OnboardingPage(R.drawable.onboarding_place, "Ubica el dispositivo", "Déjalo cerca de aquello que necesitas para comenzar: tus zapatillas, un libro o tus materiales."),
-    OnboardingPage(R.drawable.onboarding_signal, "Recibe el aviso", "Al cumplirse el tiempo, Relevo reproduce un sonido en el parlante Bluetooth conectado. Tú decides qué hacer después."),
-    OnboardingPage(null, "Autoriza Tiempo de uso", "Relevo necesita contar el tiempo de la aplicación que elegiste para activar el aviso. No lee lo que haces dentro de ella. Las notificaciones ayudan a mostrar el aviso cuando usas otra app y son opcionales.", permissions = true),
+    OnboardingPage(R.drawable.onboarding_signal, "Recibe el aviso", "Al cumplirse el tiempo, suena el parlante Bluetooth. Si no tienes uno, puedes elegir que suene el teléfono. Tú decides qué hacer después."),
+    OnboardingPage(null, "Autoriza Tiempo de uso", "Relevo necesita contar el tiempo de las apps que elijas para activar el aviso. No lee lo que haces dentro de ellas. Las notificaciones muestran el aviso mientras usas otra app y son opcionales.", permissions = true),
   ) }
   var page by rememberSaveable { mutableStateOf(0) }
   BackHandler { if (page > 0) page -= 1 }
@@ -591,7 +651,8 @@ private fun OnboardingScreen(
       )
       Spacer(Modifier.height(14.dp))
       BoxWithConstraints(Modifier.weight(1f).fillMaxWidth()) {
-        val illustrationHeight = (maxHeight * .58f).coerceIn(240.dp, 400.dp)
+        val illustrationHeight = if (item.permissions) (maxHeight * .38f).coerceIn(180.dp, 270.dp)
+          else (maxHeight * .67f).coerceIn(260.dp, 460.dp)
         AnimatedContent(
           targetState = item,
           modifier = Modifier.fillMaxSize(),
@@ -609,10 +670,13 @@ private fun OnboardingScreen(
               contentScale = ContentScale.Crop,
               modifier = Modifier.fillMaxWidth().height(illustrationHeight).clip(RoundedCornerShape(30.dp)),
             )
-            Text(current.title, style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold, lineHeight = 37.sp)
-            Text(current.text, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
+            Text(current.title, Modifier.fillMaxWidth(), style = MaterialTheme.typography.headlineLarge,
+              fontWeight = FontWeight.SemiBold, lineHeight = 37.sp, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+            Text(current.text, Modifier.fillMaxWidth(), style = MaterialTheme.typography.bodyLarge,
+              color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 24.sp,
+              textAlign = androidx.compose.ui.text.style.TextAlign.Center)
             if (current.permissions) {
-              PermissionRow("Tiempo de uso", "Permite contar cuánto tiempo usas la aplicación que elegiste.", usageAccess) { onUsagePermission() }
+              PermissionRow("Tiempo de uso", "Permite contar cuánto tiempo usas las apps elegidas.", usageAccess) { onUsagePermission() }
               PermissionRow("Notificaciones", "Muestran el aviso aunque otra aplicación esté abierta. Puedes continuar sin activarlas.", notificationAccess) {
                 requestNotificationPermissionIfNeeded(context)
               }
@@ -638,7 +702,7 @@ private fun OnboardingScreen(
       Box(Modifier.fillMaxWidth().height(40.dp), contentAlignment = Alignment.Center) {
         if (page == pages.lastIndex && usageAccess) {
           InlineAction("Ir al inicio", { onComplete(false) }, modifier = Modifier.align(Alignment.Center))
-        }
+        } else if (page > 0) InlineAction("Volver al paso anterior", { page -= 1 })
       }
     }
   }
@@ -683,7 +747,7 @@ private fun PermissionRow(title: String, description: String, granted: Boolean, 
 
 @Composable
 private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, onStart: () -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 104.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 84.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
     Text("Tu tiempo,\nen contexto.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
     Text("Aquí aparece únicamente el uso de las apps que elegiste para un relevo.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
     if (!hasAccess) EmptyDashboard("Falta un permiso", "Al preparar tu primer relevo podrás autorizar Tiempo de uso.", onStart)
@@ -705,7 +769,7 @@ private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, 
 
 @Composable
 private fun HistoryDashboard(history: List<HistoryEntry>, participantCode: String, onStart: () -> Unit) {
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 104.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 84.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
     Text("Tus relevos.", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
     Text("Tus actividades y el tiempo que pasaste en las apps vinculadas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
     if (history.isEmpty()) EmptyDashboard("Aún no hay relevos", "Los que cierres quedarán aquí para que puedas volver a mirarlos.", onStart)
@@ -819,6 +883,7 @@ private fun SetupScreen(
   onPlace: (String) -> Unit,
   onApp: (InstalledApp) -> Unit,
   onDuration: (Int) -> Unit,
+  onSignalRoute: (SignalRoute) -> Unit,
   onPreset: (String, String, String) -> Unit,
   onSaveCustom: (CustomActivity) -> Unit,
   onDeleteCustom: (String) -> Unit,
@@ -891,13 +956,13 @@ private fun SetupScreen(
     return
   }
   if (chooseApp) {
-    AppPicker(apps, { chooseApp = false }) { onApp(it); chooseApp = false }
+    AppPicker(apps, reminder.selectedApps.map { it.packageName }.toSet(), { chooseApp = false }, onApp)
     return
   }
 
   val canContinue = when (step) {
     SetupStep.ACTIVITY -> reminder.activity.isNotBlank()
-    SetupStep.TIMING -> reminder.targetPackage.isNotBlank() && usageAccess
+    SetupStep.TIMING -> reminder.selectedApps.isNotEmpty() && usageAccess
     SetupStep.PLACE -> reminder.howToStart.isNotBlank() && reminder.place.isNotBlank()
     SetupStep.REVIEW -> reminder.hasRequiredContent && usageAccess
   }
@@ -964,16 +1029,16 @@ private fun SetupScreen(
               InlineAction("Crear una actividad", { editingCustomId = null; editingCustom = true })
             }
             SetupStep.TIMING -> {
-              Text("El tiempo se acumula solo mientras usas la aplicación que elijas.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+              Text("El tiempo se suma mientras usas cualquiera de las apps que elijas. Todas comparten el mismo límite.", color = MaterialTheme.colorScheme.onSurfaceVariant)
               Row(
                 Modifier.fillMaxWidth().height(60.dp).clip(RoundedCornerShape(20.dp))
                   .background(MaterialTheme.colorScheme.surfaceVariant).clickable { chooseApp = true }.padding(horizontal = 16.dp),
                 verticalAlignment = Alignment.CenterVertically,
               ) {
-                if (reminder.targetPackage.isNotBlank()) { AppIcon(reminder.targetPackage); Spacer(Modifier.width(10.dp)) }
+                if (reminder.selectedApps.isNotEmpty()) { AppIcon(reminder.selectedApps.first().packageName); Spacer(Modifier.width(10.dp)) }
                 else Icon(Icons.Rounded.Apps, null)
-                Text(reminder.targetAppLabel.ifBlank { "Elegir una aplicación" }, Modifier.padding(start = 8.dp).weight(1f), fontWeight = FontWeight.Medium)
-                Text(if (reminder.targetPackage.isBlank()) "Elegir" else "Cambiar", color = MaterialTheme.colorScheme.primary)
+                Text(if (reminder.selectedApps.isEmpty()) "Elegir apps" else reminder.selectedApps.joinToString(", ") { it.label }, Modifier.padding(start = 8.dp).weight(1f), fontWeight = FontWeight.Medium, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+                Text(if (reminder.selectedApps.isEmpty()) "Elegir" else "Editar", color = MaterialTheme.colorScheme.primary)
               }
               Surface(shape = RoundedCornerShape(28.dp), color = MaterialTheme.colorScheme.primaryContainer) {
                 Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(13.dp)) {
@@ -997,19 +1062,7 @@ private fun SetupScreen(
                       TimeChoice(label, reminder.requiredUsageSeconds == seconds, Modifier.weight(1f)) { onDuration(seconds) }
                     }
                   }
-                  Slider(
-                    value = reminder.requiredUsageSeconds.coerceIn(60, 21600) / 60f,
-                    onValueChange = {
-                      val minutes = it.toInt().coerceIn(1, 360)
-                      onDuration((if (minutes <= 60) minutes else (minutes / 5) * 5) * 60)
-                    },
-                    valueRange = 1f..360f,
-                    colors = SliderDefaults.colors(
-                      thumbColor = MaterialTheme.colorScheme.primary,
-                      activeTrackColor = MaterialTheme.colorScheme.primary,
-                      inactiveTrackColor = Color.White.copy(alpha = .85f),
-                    ),
-                  )
+                  TimeSlider(reminder.requiredUsageSeconds, onDuration)
                   Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                     Text("1 min", style = MaterialTheme.typography.labelSmall)
                     Text("6 h", style = MaterialTheme.typography.labelSmall)
@@ -1020,24 +1073,29 @@ private fun SetupScreen(
               InlineAction("Prueba de 15 s", { onDuration(15) })
             }
             SetupStep.PLACE -> {
-              Text("Piensa en una acción pequeña que te ayude a comenzar y deja el parlante cerca de ella.",
+              Text("Piensa en una acción sencilla que te ayude a comenzar y deja Relevo cerca de ella.",
                 color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
               RelevoTextField("¿Cómo empezarás?", reminder.howToStart, "Ponerme las zapatillas", onStart)
               RelevoTextField("Ubicación de Relevo", reminder.place, "Junto a las zapatillas", onPlace)
+              Text("¿Dónde sonará la señal?", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+              SignalRouteChoice("En el parlante", "Déjalo cerca de la actividad. Debe estar conectado por Bluetooth.", reminder.signalRoute == SignalRoute.BLUETOOTH) { onSignalRoute(SignalRoute.BLUETOOTH) }
+              SignalRouteChoice("En este teléfono", "Alternativa para probar Relevo sin parlante. La señal no estará en el lugar de la actividad.", reminder.signalRoute == SignalRoute.PHONE) { onSignalRoute(SignalRoute.PHONE) }
             }
             SetupStep.REVIEW -> {
               Text("Comprueba los datos antes de activar. Puedes volver a cualquier paso.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+              SecondaryButton("Probar sonido", {
+                testMessage = if (onTest()) "Señal en reproducción durante unos segundos." else "No se pudo reproducir la señal en la salida elegida."
+              })
+              if (testMessage != null) Text(testMessage.orEmpty(), color = MaterialTheme.colorScheme.primary)
               DetailRow("Actividad", reminder.activity) { step = SetupStep.ACTIVITY }
-              DetailRow("Aplicación", reminder.targetAppLabel) { step = SetupStep.TIMING }
+              DetailRow("Apps", reminder.selectedApps.joinToString(", ") { it.label }) { step = SetupStep.TIMING }
               DetailRow("Tiempo acumulado", formatTime(reminder.requiredUsageSeconds)) { step = SetupStep.TIMING }
               DetailRow("Para empezar", reminder.howToStart) { step = SetupStep.PLACE }
               DetailRow("Ubicación de Relevo", reminder.place) { step = SetupStep.PLACE }
-              Text("El sonido irá al parlante Bluetooth conectado. Sin él, recibirás solo el aviso visual.",
+              DetailRow("Sonido", if (reminder.signalRoute == SignalRoute.BLUETOOTH) "Parlante Bluetooth" else "Este teléfono") { step = SetupStep.PLACE }
+              Text(if (reminder.signalRoute == SignalRoute.BLUETOOTH) "Si el parlante se desconecta, recibirás una notificación, pero no se reproducirá el sonido en el teléfono."
+                else "El sonido se reproducirá en el altavoz del teléfono. Comprueba el volumen antes de activar.",
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 20.sp)
-              InlineAction("Probar sonido", {
-                testMessage = if (onTest()) "El sonido sonará unos segundos." else "No se encontró un parlante Bluetooth conectado."
-              })
-              if (testMessage != null) Text(testMessage.orEmpty(), color = MaterialTheme.colorScheme.primary)
             }
           }
           Spacer(Modifier.height(12.dp))
@@ -1047,6 +1105,22 @@ private fun SetupScreen(
       PrimaryButton(if (step == SetupStep.REVIEW) "Activar relevo" else "Continuar", {
         if (step == SetupStep.REVIEW) onActivate() else step = SetupStep.entries[step.ordinal + 1]
       }, canContinue)
+    }
+  }
+}
+@Composable
+private fun SignalRouteChoice(title: String, description: String, selected: Boolean, onClick: () -> Unit) {
+  Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(21.dp))
+    .background(if (selected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant)
+    .border(1.dp, if (selected) MaterialTheme.colorScheme.primary else Color.Transparent, RoundedCornerShape(21.dp))
+    .clickable(onClick = onClick).padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+      Text(title, fontWeight = FontWeight.SemiBold)
+      Text(description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 19.sp)
+    }
+    Spacer(Modifier.width(12.dp))
+    Box(Modifier.size(24.dp).clip(CircleShape).border(2.dp, MaterialTheme.colorScheme.primary, CircleShape), contentAlignment = Alignment.Center) {
+      if (selected) Box(Modifier.size(12.dp).background(MaterialTheme.colorScheme.primary, CircleShape))
     }
   }
 }
@@ -1277,6 +1351,42 @@ private fun TimeChoice(label: String, selected: Boolean, modifier: Modifier = Mo
 }
 
 @Composable
+private fun TimeSlider(seconds: Int, onSecondsChange: (Int) -> Unit) {
+  BoxWithConstraints(Modifier.fillMaxWidth()) {
+    val widthPx = with(androidx.compose.ui.platform.LocalDensity.current) { maxWidth.toPx() }
+    fun secondsAt(x: Float): Int {
+      val minutes = (1 + (x / widthPx).coerceIn(0f, 1f) * 359).toInt()
+      return (if (minutes <= 60) minutes else (minutes / 5) * 5) * 60
+    }
+    Canvas(
+      Modifier.fillMaxWidth().height(58.dp)
+        .semantics {
+          contentDescription = "Ajustar tiempo del aviso"
+          progressBarRangeInfo = ProgressBarRangeInfo(seconds.coerceIn(60, 21600) / 60f, 1f..360f)
+          setProgress { requested -> onSecondsChange(secondsAt((requested - 1f) / 359f * widthPx)); true }
+        }
+        .pointerInput(widthPx) { detectTapGestures { onSecondsChange(secondsAt(it.x)) } }
+        .pointerInput(widthPx) { detectDragGestures { change, _ ->
+          onSecondsChange(secondsAt(change.position.x)); change.consume()
+        } },
+    ) {
+      val radius = 10.dp.toPx()
+      val left = radius
+      val trackWidth = size.width - radius * 2
+      val middle = size.height / 2
+      val fraction = ((seconds.coerceIn(60, 21600) / 60f) - 1f) / 359f
+      val markerX = left + trackWidth * fraction
+      drawRoundRect(Color.White.copy(alpha = .9f), Offset(left, middle - 3.dp.toPx()),
+        androidx.compose.ui.geometry.Size(trackWidth, 6.dp.toPx()), androidx.compose.ui.geometry.CornerRadius(3.dp.toPx()))
+      if (markerX > left) drawRoundRect(RelevoTeal, Offset(left, middle - 3.dp.toPx()),
+        androidx.compose.ui.geometry.Size(markerX - left, 6.dp.toPx()), androidx.compose.ui.geometry.CornerRadius(3.dp.toPx()))
+      drawCircle(Color.White, radius = 12.dp.toPx(), center = Offset(markerX, middle))
+      drawCircle(RelevoTeal, radius = 7.dp.toPx(), center = Offset(markerX, middle))
+    }
+  }
+}
+
+@Composable
 private fun OutcomeChoice(label: String, onClick: () -> Unit) {
   Row(
     Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp))
@@ -1315,25 +1425,39 @@ private fun ActiveScreen(reminder: Reminder, remaining: Int, onStop: () -> Unit)
     label = "usage_progress",
   )
   Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
-    Text("Relevo en espera", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    Column(verticalArrangement = Arrangement.spacedBy(18.dp)) {
-      Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 41.sp)
-      Box(Modifier.fillMaxWidth().height(215.dp).clip(RoundedCornerShape(32.dp)).background(Brush.linearGradient(listOf(RelevoTeal, Color(0xFF0C635A)))), contentAlignment = Alignment.Center) {
-        Canvas(Modifier.fillMaxSize()) {
-          drawCircle(Color.White.copy(alpha = .13f), radius = size.minDimension * .42f, center = Offset(size.width * .5f, size.height * .5f), style = Stroke(1.dp.toPx()))
-        }
-        CircularProgressIndicator(progress = { progress }, modifier = Modifier.size(148.dp), strokeWidth = 7.dp, color = Color.White, trackColor = Color.White.copy(alpha = .18f))
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-          Text(formatTime(reminder.observedUsageSeconds), style = MaterialTheme.typography.headlineMedium, color = Color.White, fontWeight = FontWeight.SemiBold)
-          Text("de ${formatTime(reminder.requiredUsageSeconds)}", color = Color.White.copy(alpha = .75f))
+    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+      Brand()
+      Text("Recordatorio activo", color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+    Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+      Text(reminder.activity, Modifier.fillMaxWidth(), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold,
+        lineHeight = 42.sp, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+      Surface(shape = RoundedCornerShape(30.dp), color = Color(0xFF123F38)) {
+        Column(Modifier.fillMaxWidth().padding(24.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+          Text("Tiempo en las apps elegidas", color = Color.White.copy(alpha = .78f), style = MaterialTheme.typography.bodyLarge)
+          AnimatedContent(reminder.observedUsageSeconds, label = "usage_seconds") { seconds ->
+            Text(formatTime(seconds), style = MaterialTheme.typography.displayMedium, fontWeight = FontWeight.SemiBold, color = Color.White)
+          }
+          LinearProgressIndicator(progress = { progress }, modifier = Modifier.fillMaxWidth().height(8.dp).clip(CircleShape),
+            color = Color(0xFF85DECB), trackColor = Color.White.copy(alpha = .2f))
+          Text("${formatTime(remaining)} para el aviso · ${formatTime(reminder.requiredUsageSeconds)} en total",
+            color = Color.White.copy(alpha = .88f), style = MaterialTheme.typography.bodyMedium)
         }
       }
-      Row(verticalAlignment = Alignment.CenterVertically) { AppIcon(reminder.targetPackage); Spacer(Modifier.width(12.dp)); Text("El tiempo se suma en ${reminder.targetAppLabel}.", modifier = Modifier.weight(1f)) }
-      Text("Faltan ${formatTime(remaining)}. Si sales de la app elegida, el conteo se pausa.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 21.sp)
-      Summary("Ubicación de Relevo", reminder.place)
-      Summary("Tu forma de empezar", reminder.howToStart)
+      Row(verticalAlignment = Alignment.CenterVertically) {
+        AppIcon(reminder.selectedApps.first().packageName); Spacer(Modifier.width(12.dp))
+        Text("${reminder.selectedApps.joinToString(", ") { it.label }}. El conteo se pausa fuera de estas apps.", modifier = Modifier.weight(1f), lineHeight = 22.sp)
+      }
+      Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceVariant) {
+        Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+          Summary("Cómo empezar", reminder.howToStart)
+          Summary("Ubicación de Relevo", reminder.place)
+          Text(if (reminder.signalRoute == SignalRoute.PHONE) "El aviso sonará en este teléfono."
+            else "El aviso sonará en el parlante Bluetooth conectado.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+      }
     }
-    SecondaryButton("Cancelar este relevo", onStop)
+    SecondaryButton("Desactivar recordatorio", onStop)
   }
 }
 
@@ -1342,13 +1466,17 @@ private fun SignalScreen(reminder: Reminder, onClose: () -> Unit) = Page {
   Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
     Spacer(Modifier.height(4.dp))
     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-      SignalGraphic()
-      Text("Querías hacer esto.", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      if (reminder.signalDelivered) SignalGraphic()
+      else Surface(shape = RoundedCornerShape(26.dp), color = MaterialTheme.colorScheme.secondaryContainer) {
+        Text("Se cumplió el tiempo, pero no pudimos reproducir el sonido en ${if (reminder.signalRoute == SignalRoute.BLUETOOTH) "el parlante" else "este teléfono"}. Comprueba la conexión o el volumen antes del próximo relevo.",
+          Modifier.fillMaxWidth().padding(20.dp), lineHeight = 23.sp)
+      }
+      Text(if (reminder.signalDelivered) "Es momento de volver a elegir" else "Tu actividad sigue aquí", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
       Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
       Summary("Para empezar", reminder.howToStart)
       Summary("Ubicación de Relevo", reminder.place)
     }
-    PrimaryButton("Silenciar y continuar", onClose)
+    PrimaryButton(if (reminder.signalDelivered) "Silenciar y continuar" else "Cerrar recordatorio", onClose)
   }
 }
 
@@ -1358,7 +1486,7 @@ private fun DoneScreen(reminder: Reminder, onHome: (String) -> Unit) = Page {
     Spacer(Modifier.height(4.dp))
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
       Text("¿Qué decidiste?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
-      Text("El relevo terminó después de ${formatTime(reminder.observedUsageSeconds)} en ${reminder.targetAppLabel}.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+      Text("El relevo terminó después de ${formatTime(reminder.observedUsageSeconds)} en las apps elegidas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
       listOf("started" to "Comencé la actividad", "later" to "La dejé para después", "changed" to "Cambié de idea").forEach { option ->
         OutcomeChoice(option.second) { onHome(option.first) }
       }
@@ -1368,15 +1496,15 @@ private fun DoneScreen(reminder: Reminder, onHome: (String) -> Unit) = Page {
 }
 
 @Composable
-private fun AppPicker(apps: List<InstalledApp>, onDismiss: () -> Unit, onSelect: (InstalledApp) -> Unit) {
+private fun AppPicker(apps: List<InstalledApp>, selectedPackages: Set<String>, onDismiss: () -> Unit, onToggle: (InstalledApp) -> Unit) {
   var search by rememberSaveable { mutableStateOf("") }
   BackHandler(onBack = onDismiss)
   val visibleApps = remember(apps, search) { apps.filter { it.label.contains(search.trim(), ignoreCase = true) } }
   Page {
     Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(16.dp)) {
       InlineAction("Volver", onDismiss)
-      Text("Elige una aplicación", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
-      Text("El conteo se aplicará únicamente a la aplicación que selecciones.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Elige las apps", style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.SemiBold)
+      Text("El tiempo de estas apps se suma hasta llegar al límite que definiste.", color = MaterialTheme.colorScheme.onSurfaceVariant)
       Row(
         Modifier.fillMaxWidth().height(56.dp).clip(RoundedCornerShape(20.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(horizontal = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -1398,15 +1526,17 @@ private fun AppPicker(apps: List<InstalledApp>, onDismiss: () -> Unit, onSelect:
         items(visibleApps) { app ->
           Row(
             Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(MaterialTheme.colorScheme.surfaceVariant)
-              .clickable { onSelect(app) }.padding(14.dp),
+              .clickable { onToggle(app) }.padding(14.dp),
             verticalAlignment = Alignment.CenterVertically,
           ) {
             AppIcon(app.packageName)
             Spacer(Modifier.width(12.dp))
-            Text(app.label, fontWeight = FontWeight.Medium)
+            Text(app.label, Modifier.weight(1f), fontWeight = FontWeight.Medium)
+            if (app.packageName in selectedPackages) Icon(Icons.Rounded.CheckCircle, "Seleccionada", tint = MaterialTheme.colorScheme.primary)
           }
         }
       }
+      PrimaryButton("Guardar ${selectedPackages.size} ${if (selectedPackages.size == 1) "app" else "apps"}", onDismiss, selectedPackages.isNotEmpty())
     }
   }
 }

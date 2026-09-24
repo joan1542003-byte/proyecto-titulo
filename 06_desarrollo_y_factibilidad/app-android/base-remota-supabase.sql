@@ -8,6 +8,7 @@ create table if not exists public.relevo_sessions (
   place text not null check (char_length(place) between 1 and 160),
   target_package text not null,
   target_app_label text not null,
+  target_apps jsonb not null default '[]'::jsonb,
   threshold_seconds integer not null check (threshold_seconds between 1 and 21600),
   started_at timestamptz not null,
   signal_at timestamptz,
@@ -23,7 +24,7 @@ create table if not exists public.relevo_events (
   client_event_id text not null unique,
   session_id uuid not null,
   participant_code text not null check (char_length(participant_code) between 3 and 24),
-  event_type text not null check (event_type in ('armed', 'target_entered', 'target_left', 'signal_emitted', 'disarmed', 'silenced', 'closed')),
+  event_type text not null check (event_type in ('armed', 'target_entered', 'target_left', 'signal_emitted', 'signal_failed', 'disarmed', 'silenced', 'closed')),
   target_package text not null,
   value_seconds integer check (value_seconds is null or value_seconds >= 0),
   consent_version text not null,
@@ -31,9 +32,12 @@ create table if not exists public.relevo_events (
 );
 
 -- Compatibilidad si el esquema anterior ya fue ejecutado.
+alter table public.relevo_sessions add column if not exists target_apps jsonb not null default '[]'::jsonb;
 alter table public.relevo_events add column if not exists client_event_id text;
 update public.relevo_events set client_event_id = 'legacy-' || id::text where client_event_id is null;
 alter table public.relevo_events alter column client_event_id set not null;
+alter table public.relevo_events drop constraint if exists relevo_events_event_type_check;
+alter table public.relevo_events add constraint relevo_events_event_type_check check (event_type in ('armed', 'target_entered', 'target_left', 'signal_emitted', 'signal_failed', 'disarmed', 'silenced', 'closed'));
 drop index if exists public.relevo_events_client_event_idx;
 
 create index if not exists relevo_sessions_user_started_idx on public.relevo_sessions (user_id, started_at desc);
@@ -46,8 +50,8 @@ alter table public.relevo_events enable row level security;
 
 revoke all on table public.relevo_sessions from anon, authenticated;
 revoke all on table public.relevo_events from anon, authenticated;
-grant select, insert, update on table public.relevo_sessions to authenticated;
-grant insert on table public.relevo_events to authenticated;
+grant select, insert, update, delete on table public.relevo_sessions to authenticated;
+grant select, insert, delete on table public.relevo_events to authenticated;
 grant usage, select on sequence public.relevo_events_id_seq to authenticated;
 
 drop policy if exists "participants insert own sessions" on public.relevo_sessions;
@@ -70,6 +74,18 @@ for insert
 to authenticated
 with check ((select auth.uid()) = user_id);
 
--- La aplicación solo puede leer y actualizar sus propias sesiones para permitir
--- reintentos idempotentes. Los eventos son de solo inserción. La revisión
--- académica se realiza desde un entorno administrativo protegido.
+drop policy if exists "participants read own events" on public.relevo_events;
+create policy "participants read own events" on public.relevo_events for select to authenticated
+using ((select auth.uid()) = user_id);
+
+drop policy if exists "participants delete own events" on public.relevo_events;
+create policy "participants delete own events" on public.relevo_events for delete to authenticated
+using ((select auth.uid()) = user_id);
+
+drop policy if exists "participants delete own sessions" on public.relevo_sessions;
+create policy "participants delete own sessions" on public.relevo_sessions for delete to authenticated
+using ((select auth.uid()) = user_id);
+
+-- La aplicación puede leer, registrar y eliminar únicamente sus propias filas.
+-- Los eventos se insertan una vez y se pueden borrar a solicitud de la persona.
+-- La revisión académica se realiza desde un entorno administrativo protegido.

@@ -16,6 +16,7 @@ import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RemoteSync
 import com.example.relevo.domain.ReminderStatus
+import com.example.relevo.domain.SignalRoute
 import com.example.relevo.signal.SignalPlayer
 import com.example.relevo.MainActivity
 import kotlinx.coroutines.CoroutineScope
@@ -53,7 +54,7 @@ class AppUsageMonitorService : Service() {
     val notification =
       NotificationCompat.Builder(this, CHANNEL_ID)
         .setSmallIcon(android.R.drawable.ic_popup_reminder)
-        .setContentTitle("Relevo está observando ${reminder.targetAppLabel}")
+        .setContentTitle("Relevo está contando el tiempo en las apps elegidas")
         .setContentText("El registro se detiene al desactivar el recordatorio.")
         .setOngoing(true)
         .setSilent(true)
@@ -87,6 +88,7 @@ class AppUsageMonitorService : Service() {
         var accumulatedMillis = store.load().observedUsageSeconds * 1_000L
         var previousTick = System.currentTimeMillis()
         var wasTargetForeground = false
+        var lastTargetPackage = store.load().targetPackage
 
         while (true) {
           val reminder = store.load()
@@ -94,18 +96,19 @@ class AppUsageMonitorService : Service() {
 
           val now = System.currentTimeMillis()
           updateForegroundPackage(now)
-          val targetForeground = currentForegroundPackage == reminder.targetPackage
+          val targetForeground = reminder.tracks(currentForegroundPackage)
 
           if (targetForeground) {
             accumulatedMillis += (now - previousTick).coerceAtMost(2_000L)
           }
 
           if (targetForeground != wasTargetForeground) {
+            if (targetForeground) lastTargetPackage = currentForegroundPackage.orEmpty()
             researchLog.record(
               reminder.sessionId,
               reminder.participantCode,
               if (targetForeground) "target_entered" else "target_left",
-              reminder.targetPackage,
+              lastTargetPackage,
               (accumulatedMillis / 1_000L).toInt(),
             )
             wasTargetForeground = targetForeground
@@ -117,19 +120,19 @@ class AppUsageMonitorService : Service() {
           }
 
           if (observedSeconds >= reminder.requiredUsageSeconds) {
-            val signalled = reminder.copy(observedUsageSeconds = observedSeconds).deliverSignal()
+            val audible = signalPlayer.play(reminder.signalRoute)
+            val signalled = reminder.copy(observedUsageSeconds = observedSeconds).deliverSignal(audible)
             store.save(signalled)
             researchLog.record(
               signalled.sessionId,
               signalled.participantCode,
-              "signal_emitted",
+              if (audible) "signal_emitted" else "signal_failed",
               signalled.targetPackage,
               observedSeconds,
             )
-            researchLog.markSignal(signalled.sessionId, observedSeconds)
+            if (audible) researchLog.markSignal(signalled.sessionId, observedSeconds)
             RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
-            val bluetoothAudio = signalPlayer.play()
-            showCompletionNotification(signalled.activity, signalled.howToStart, bluetoothAudio)
+            showCompletionNotification(signalled.activity, signalled.howToStart, audible, signalled.signalRoute)
             while (store.load().status == ReminderStatus.SIGNALLED) delay(250L)
             signalPlayer.stop()
             break
@@ -183,7 +186,7 @@ class AppUsageMonitorService : Service() {
     )
   }
 
-  private fun showCompletionNotification(activity: String, firstStep: String, bluetoothAudio: Boolean) {
+  private fun showCompletionNotification(activity: String, firstStep: String, audible: Boolean, route: SignalRoute) {
     val manager = getSystemService(NotificationManager::class.java) ?: return
     val openApp = PendingIntent.getActivity(
       this,
@@ -197,8 +200,9 @@ class AppUsageMonitorService : Service() {
         .setSmallIcon(android.R.drawable.ic_popup_reminder)
         .setContentTitle(activity)
         .setContentText(
-          if (bluetoothAudio) "La señal está sonando. Puedes empezar por: $firstStep"
-          else "No se encontró el parlante Bluetooth. Abre Relevo para revisar la señal.",
+          if (audible) "La señal está sonando. Puedes empezar por: $firstStep"
+          else if (route == SignalRoute.BLUETOOTH) "No se encontró el parlante Bluetooth. Abre Relevo para revisar la señal."
+          else "No se pudo reproducir el sonido en el teléfono. Abre Relevo para revisar la señal.",
         )
         .setContentIntent(openApp)
         .setAutoCancel(true)

@@ -34,17 +34,39 @@ class ReminderTest {
     assertEquals(0, armed.observedUsageSeconds)
   }
 
+  @Test fun multipleSelectedAppsShareOneReminder() {
+    val multi = complete.copy(
+      targetApps = listOf(TrackedApp("com.example.video", "Video"), TrackedApp("com.example.social", "Social")),
+    )
+    assertEquals(2, multi.selectedApps.size)
+    assertTrue(multi.tracks("com.example.social"))
+    assertFalse(multi.tracks("com.example.mail"))
+    assertEquals(ReminderStatus.WAITING, multi.ready().arm("multi").status)
+  }
+
+  @Test fun noSelectedAppsCannotBeArmed() {
+    val empty = complete.copy(targetPackage = "", targetAppLabel = "", targetApps = emptyList())
+    assertFalse(empty.hasPreparedContent)
+    assertEquals(ReminderStatus.DRAFT, empty.ready().status)
+  }
+
   @Test fun signalCanOnlyBeDeliveredOnce() {
-    val first = complete.ready().arm("s").deliverSignal()
+    val first = complete.ready().arm("s").deliverSignal(true)
     assertTrue(first.signalDelivered)
-    assertEquals(first, first.deliverSignal())
+    assertEquals(first, first.deliverSignal(true))
+  }
+
+  @Test fun unavailableAudioIsNotReportedAsDeliveredSignal() {
+    val result = complete.ready().arm("s").deliverSignal(false)
+    assertEquals(ReminderStatus.SIGNALLED, result.status)
+    assertFalse(result.signalDelivered)
   }
 
   @Test fun disarmPreventsSignal() {
     val disarmed = complete.ready().arm("s").copy(observedUsageSeconds = 23).disarm()
     assertEquals(ReminderStatus.CLOSED, disarmed.status)
     assertEquals(23, disarmed.observedUsageSeconds)
-    assertFalse(disarmed.deliverSignal().signalDelivered)
+    assertFalse(disarmed.deliverSignal(true).signalDelivered)
   }
 
   @Test fun closedReminderDoesNotRearmItself() {

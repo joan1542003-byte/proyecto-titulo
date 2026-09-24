@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
+import com.example.relevo.domain.SignalRoute
 import kotlin.concurrent.thread
 import kotlin.math.PI
 import kotlin.math.max
@@ -20,12 +21,15 @@ class SignalPlayer(private val context: Context) {
   private var audioTrack: AudioTrack? = null
   private var audioThread: Thread? = null
 
-  /** Reproduce de forma continua solo si existe una salida Bluetooth multimedia. */
-  fun play(): Boolean {
+  /** Dirige el tono a la salida que la persona eligió, sin redirigirlo silenciosamente. */
+  fun play(route: SignalRoute = SignalRoute.BLUETOOTH): Boolean {
     stop()
     val audioManager = context.getSystemService(AudioManager::class.java) ?: return false
-    val bluetoothOutput =
-      audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS).firstOrNull(::isBluetoothMediaOutput)
+    val chosenOutput =
+      audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS).firstOrNull { device ->
+        if (route == SignalRoute.BLUETOOTH) isBluetoothMediaOutput(device)
+        else device.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
+      }
         ?: run {
           vibrateOnce()
           return false
@@ -58,7 +62,7 @@ class SignalPlayer(private val context: Context) {
         .setTransferMode(AudioTrack.MODE_STREAM)
         .build()
 
-    if (!track.setPreferredDevice(bluetoothOutput)) {
+    if (!track.setPreferredDevice(chosenOutput)) {
       track.release()
       vibrateOnce()
       return false
@@ -68,10 +72,10 @@ class SignalPlayer(private val context: Context) {
     val silence = ShortArray(2_048)
     repeat(10) {
       track.write(silence, 0, silence.size, AudioTrack.WRITE_BLOCKING)
-      if (track.routedDevice?.id == bluetoothOutput.id) {
+      if (track.routedDevice?.id == chosenOutput.id) {
         audioTrack = track
         playing = true
-        startTone(track, bluetoothOutput.id, sampleRate)
+        startTone(track, chosenOutput.id, sampleRate)
         vibrateOnce()
         return true
       }
@@ -83,7 +87,7 @@ class SignalPlayer(private val context: Context) {
 
   private fun startTone(track: AudioTrack, outputId: Int, sampleRate: Int) {
     audioThread =
-      thread(name = "relevo-bluetooth-signal", isDaemon = true) {
+      thread(name = "relevo-signal", isDaemon = true) {
         val samples = ShortArray(2_048)
         var sampleIndex = 0L
         while (playing) {

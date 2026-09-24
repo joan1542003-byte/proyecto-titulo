@@ -1,10 +1,10 @@
 # Consentimiento para evaluar el prototipo Android de Relevo
 
-**Borrador para revisión docente, alineado con Android 2.5. No entregar a participantes hasta comprobar eliminación local y remota, correo de contacto, equipo y versión del APK.** Responsable: Johan Yantén, Proyecto de Título de Diseño, Universidad Diego Portales. Contacto para preguntas, retiro o solicitud de eliminación: **joan1542003@gmail.com**.
+**Borrador para revisión docente, alineado con Android 2.6. No entregar a participantes hasta comprobar eliminación local y remota, envío de eventos, salida de audio y versión del APK.** Responsable: Johan Yantén, Proyecto de Título de Diseño, Universidad Diego Portales. Contacto para preguntas, retiro o solicitud de eliminación: **joan1542003@gmail.com**.
 
 ## En qué consiste
 
-Se me invita a probar durante dos días una aplicación Android y un parlante Bluetooth. Elegiré una actividad que me gustaría considerar, cómo podría empezar, una aplicación cuyo tiempo de uso se contará mientras Relevo esté activo y un lugar para el parlante. Cuando se cumpla el tiempo que configuré, el sistema intentará emitir un aviso. Podrán pedirme respuestas breves y una conversación al terminar. El parlante es material de prueba; no representa el objeto final.
+Se me invita a probar durante dos días una aplicación Android y un parlante Bluetooth. Elegiré una actividad que me gustaría considerar, cómo podría empezar, una o varias aplicaciones cuyo tiempo de uso se sumará mientras Relevo esté activo y un lugar para el parlante. Al cumplirse el límite que configuré, el sistema intentará emitir un aviso. Si no tengo parlante, puedo elegir el altavoz del teléfono; en ese caso la señal no quedará junto a la actividad. Podrán pedirme respuestas breves y una conversación al terminar. El parlante es material de prueba; no representa el objeto final.
 
 ## Mi decisión
 
@@ -12,11 +12,11 @@ Participar es voluntario. Puedo omitir preguntas, silenciar el aviso, retirar el
 
 ## Datos y permisos
 
-La aplicación solicita acceso de Android a estadísticas de uso para contar la aplicación elegida. Ese permiso técnico puede permitir consultar uso de otras aplicaciones; el prototipo está diseñado para contabilizar solo la seleccionada mientras el ciclo está activo. Las notificaciones son un permiso separado. Ningún permiso del sistema sustituye esta decisión de participar.
+La aplicación solicita acceso de Android a estadísticas de uso para contar las aplicaciones elegidas. Ese permiso técnico puede permitir consultar uso de otras aplicaciones; el prototipo está diseñado para contabilizar solo las seleccionadas mientras el ciclo está activo. Las notificaciones son un permiso separado. Ningún permiso del sistema sustituye esta decisión de participar.
 
-El teléfono conserva un código aleatorio, la actividad, cómo quiero empezar, el lugar que declaro, la aplicación elegida, el tiempo configurado y acumulado, los momentos de activación y aviso, y mi respuesta final si decido darla. En la versión configurada para el estudio, estos registros también se envían a una base de datos Supabase. El código reemplaza mi nombre en esos registros, pero no los vuelve anónimos: la combinación de actividades, lugares y horarios podría identificarme. La hoja firmada se guardará separada de los registros. No se recopilan mensajes, fotografías, búsquedas ni contenido de pantalla.
+El teléfono conserva un código aleatorio, la actividad, cómo quiero empezar, el lugar que declaro, las aplicaciones elegidas, el tiempo configurado y acumulado, los momentos de activación y aviso, y mi respuesta final si decido darla. La app intenta enviar estos registros a una base de datos Supabase; si no hay conexión, quedan pendientes en el teléfono. El código reemplaza mi nombre en esos registros, pero no los vuelve anónimos: la combinación de actividades, lugares y horarios podría identificarme. La hoja firmada se guardará separada de los registros. No se recopilan mensajes, fotografías, búsquedas ni contenido de pantalla.
 
-Puedo pedir la eliminación de mis registros al correo indicado, entregando el código de participación que aparece en Historial. El plazo máximo propuesto para eliminarlos es el **30 de diciembre de 2026**. Antes de iniciar el estudio, el responsable debe comprobar que puede localizar y borrar los datos del teléfono y de Supabase, incluidos los registros pendientes de sincronización, y explicar qué ocurre con los respaldos. Los resultados académicos se presentarán sin mi nombre.
+Puedo pedir la eliminación de mis registros al correo indicado, entregando el código de participación que aparece en Relevos, o solicitarla desde Privacidad y datos en la app. El plazo máximo propuesto para eliminarlos es el **30 de diciembre de 2026**. La solicitud desde la app detiene el conteo inmediatamente. Si el borrado remoto falla, mantiene los registros locales para poder reintentar y muestra el problema; no reanuda el monitoreo. Antes de iniciar el estudio, el responsable debe comprobar que puede localizar y borrar los datos del teléfono y de Supabase, incluidos los pendientes de sincronización, y explicar qué ocurre con los respaldos. Los resultados académicos se presentarán sin mi nombre.
 
 ## Aceptación
 
@@ -29,6 +29,12 @@ Nombre y firma de participante: ____________________________________________
 Firma del responsable: _____________________________________________________
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-24 — Contenido de la versión 2.6
+
+- **Qué cambió:** la hoja describe varias apps con límite común, la alternativa de sonido en el teléfono, los registros pendientes y la ruta de eliminación desde la app.
+- **Cómo era antes:** se refería a 2.5, una sola app, un parlante obligatorio y solo una petición por correo.
+- **Por qué:** la persona debe conocer exactamente lo que hará el prototipo y cómo tratará sus datos antes de aceptar.
 
 ### 2026-09-23 — Código localizable
 

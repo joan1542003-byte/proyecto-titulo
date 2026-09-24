@@ -4,12 +4,14 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import org.json.JSONArray
+import org.json.JSONObject
 
 data class PendingEvent(val id: Long, val sessionId: String, val participantCode: String, val type: String, val targetPackage: String, val seconds: Int?, val createdAt: Long, val consentVersion: String)
-data class PendingSession(val sessionId: String, val participantCode: String, val activity: String, val firstStep: String, val place: String, val targetPackage: String, val targetAppLabel: String, val thresholdSeconds: Int, val startedAt: Long, val signalAt: Long?, val closedAt: Long?, val observedSeconds: Int, val outcome: String?, val consentVersion: String)
+data class PendingSession(val sessionId: String, val participantCode: String, val activity: String, val firstStep: String, val place: String, val targetPackage: String, val targetAppLabel: String, val thresholdSeconds: Int, val startedAt: Long, val signalAt: Long?, val closedAt: Long?, val observedSeconds: Int, val outcome: String?, val consentVersion: String, val targetAppsJson: String)
 
 class ResearchLogStore(context: Context) :
-  SQLiteOpenHelper(context, "relevo_research.db", null, 3) {
+  SQLiteOpenHelper(context, "relevo_research.db", null, 4) {
 
   override fun onCreate(db: SQLiteDatabase) {
     db.execSQL(
@@ -38,6 +40,7 @@ class ResearchLogStore(context: Context) :
       db.execSQL("ALTER TABLE events ADD COLUMN synced INTEGER NOT NULL DEFAULT 0")
       createSessionsTable(db)
     }
+    if (oldVersion == 3) db.execSQL("ALTER TABLE sessions ADD COLUMN target_apps TEXT NOT NULL DEFAULT '[]'")
   }
 
   private fun createSessionsTable(db: SQLiteDatabase) = db.execSQL(
@@ -50,6 +53,7 @@ class ResearchLogStore(context: Context) :
       place TEXT NOT NULL,
       target_package TEXT NOT NULL,
       target_app_label TEXT NOT NULL,
+      target_apps TEXT NOT NULL DEFAULT '[]',
       threshold_seconds INTEGER NOT NULL,
       started_at INTEGER NOT NULL,
       signal_at INTEGER,
@@ -68,6 +72,7 @@ class ResearchLogStore(context: Context) :
       put("session_id", reminder.sessionId); put("participant_code", reminder.participantCode)
       put("activity", reminder.activity); put("first_step", reminder.howToStart); put("place", reminder.place)
       put("target_package", reminder.targetPackage); put("target_app_label", reminder.targetAppLabel)
+      put("target_apps", JSONArray().apply { reminder.selectedApps.forEach { app -> put(JSONObject().put("package", app.packageName).put("label", app.label)) } }.toString())
       put("threshold_seconds", reminder.requiredUsageSeconds); put("started_at", System.currentTimeMillis())
       put("consent_version", CONSENT_VERSION); put("synced", 0)
     }, SQLiteDatabase.CONFLICT_REPLACE)
@@ -116,7 +121,7 @@ class ResearchLogStore(context: Context) :
       cursor.getString(cursor.getColumnIndexOrThrow("session_id")), cursor.getString(cursor.getColumnIndexOrThrow("participant_code")),
       cursor.getString(cursor.getColumnIndexOrThrow("activity")), cursor.getString(cursor.getColumnIndexOrThrow("first_step")), cursor.getString(cursor.getColumnIndexOrThrow("place")),
       cursor.getString(cursor.getColumnIndexOrThrow("target_package")), cursor.getString(cursor.getColumnIndexOrThrow("target_app_label")), cursor.getInt(cursor.getColumnIndexOrThrow("threshold_seconds")),
-      cursor.getLong(cursor.getColumnIndexOrThrow("started_at")), cursor.longOrNull("signal_at"), cursor.longOrNull("closed_at"), cursor.getInt(cursor.getColumnIndexOrThrow("observed_seconds")), cursor.stringOrNull("outcome"), cursor.getString(cursor.getColumnIndexOrThrow("consent_version")),
+      cursor.getLong(cursor.getColumnIndexOrThrow("started_at")), cursor.longOrNull("signal_at"), cursor.longOrNull("closed_at"), cursor.getInt(cursor.getColumnIndexOrThrow("observed_seconds")), cursor.stringOrNull("outcome"), cursor.getString(cursor.getColumnIndexOrThrow("consent_version")), cursor.getString(cursor.getColumnIndexOrThrow("target_apps")),
     )) }
   }
 
@@ -127,9 +132,15 @@ class ResearchLogStore(context: Context) :
   fun markSessionSynced(id: String) { writableDatabase.execSQL("UPDATE sessions SET synced = 1 WHERE session_id = ?", arrayOf(id)) }
   fun markEventSynced(id: Long) { writableDatabase.execSQL("UPDATE events SET synced = 1 WHERE id = ?", arrayOf(id)) }
 
+  fun clearAll() { writableDatabase.run { delete("events", null, null); delete("sessions", null, null) } }
+
+  fun hasRecords(): Boolean = readableDatabase.rawQuery(
+    "SELECT (SELECT COUNT(*) FROM events) + (SELECT COUNT(*) FROM sessions)", null,
+  ).use { cursor -> cursor.moveToFirst() && cursor.getInt(0) > 0 }
+
   private fun android.database.Cursor.longOrNull(name: String) = getColumnIndexOrThrow(name).let { if (isNull(it)) null else getLong(it) }
   private fun android.database.Cursor.intOrNull(name: String) = getColumnIndexOrThrow(name).let { if (isNull(it)) null else getInt(it) }
   private fun android.database.Cursor.stringOrNull(name: String) = getColumnIndexOrThrow(name).let { if (isNull(it)) null else getString(it) }
 
-  companion object { const val CONSENT_VERSION = "2026-09-23-v4" }
+  companion object { const val CONSENT_VERSION = "2026-09-23-v5" }
 }

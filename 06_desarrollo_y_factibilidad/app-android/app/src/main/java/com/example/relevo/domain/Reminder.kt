@@ -9,6 +9,9 @@ enum class ReminderStatus {
   CLOSED,
 }
 
+enum class SignalRoute { BLUETOOTH, PHONE }
+data class TrackedApp(val packageName: String, val label: String)
+
 data class Reminder(
   val activity: String = "",
   val howToStart: String = "",
@@ -22,13 +25,20 @@ data class Reminder(
   val sessionId: String = "",
   val status: ReminderStatus = ReminderStatus.DRAFT,
   val signalDelivered: Boolean = false,
+  val signalRoute: SignalRoute = SignalRoute.BLUETOOTH,
+  val targetApps: List<TrackedApp> = emptyList(),
 ) {
+  val selectedApps: List<TrackedApp>
+    get() = targetApps.ifEmpty { if (targetPackage.isNotBlank()) listOf(TrackedApp(targetPackage, targetAppLabel)) else emptyList() }
+
+  fun tracks(packageName: String?): Boolean = selectedApps.any { it.packageName == packageName }
+
   val hasPreparedContent: Boolean
     get() =
       activity.isNotBlank() &&
         howToStart.isNotBlank() &&
-        targetPackage.isNotBlank() &&
-        targetAppLabel.isNotBlank() &&
+        selectedApps.isNotEmpty() &&
+        selectedApps.all { it.packageName.isNotBlank() && it.label.isNotBlank() } &&
         requiredUsageSeconds > 0 &&
         participantCode.isNotBlank() &&
         consentAccepted
@@ -50,9 +60,9 @@ data class Reminder(
       this
     }
 
-  fun deliverSignal(): Reminder =
-    if (status == ReminderStatus.WAITING && !signalDelivered) {
-      copy(status = ReminderStatus.SIGNALLED, signalDelivered = true)
+  fun deliverSignal(audible: Boolean): Reminder =
+    if (status == ReminderStatus.WAITING) {
+      copy(status = ReminderStatus.SIGNALLED, signalDelivered = audible)
     } else {
       this
     }

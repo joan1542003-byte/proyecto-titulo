@@ -14,6 +14,7 @@ import com.example.relevo.data.CustomActivityStore
 import com.example.relevo.data.RemoteSync
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
+import com.example.relevo.domain.SignalRoute
 import com.example.relevo.monitor.AppUsageMonitorService
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.monitor.InstalledAppsRepository
@@ -34,6 +35,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val store = ReminderStore(application)
   private val researchLog = ResearchLogStore(application)
   private val remoteSync = RemoteSync(application, researchLog)
+  val remoteConfigured: Boolean get() = remoteSync.configured
+  val deletionPending: Boolean get() = remoteSync.deletionPending
   private val historyStore = HistoryStore(application)
   private val customActivityStore = CustomActivityStore(application)
   private val signalPlayer = SignalPlayer(application)
@@ -61,24 +64,26 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val _todayUsage = MutableStateFlow<List<AppUsageSummary>>(emptyList())
   val todayUsage: StateFlow<List<AppUsageSummary>> = _todayUsage.asStateFlow()
 
+  private val _deletionStatus = MutableStateFlow<String?>(null)
+  val deletionStatus: StateFlow<String?> = _deletionStatus.asStateFlow()
+  private var deletingData = false
+
   private var stateSyncJob: Job? = null
 
   init {
     _installedApps.value = appsRepository.launcherApps()
-    val participantCode = experiencePreferences.getString("participant_code", null)
-      ?: _reminder.value.participantCode.ifBlank { "P-${UUID.randomUUID().toString().take(8).uppercase()}" }
-    experiencePreferences.edit().putString("participant_code", participantCode).apply()
-    if (_reminder.value.participantCode != participantCode) {
-      updateValue(_reminder.value.copy(participantCode = participantCode))
-    }
     if (!hasCurrentConsent()) {
       application.stopService(Intent(application, AppUsageMonitorService::class.java))
-      updateValue(_reminder.value.copy(consentAccepted = false, status = ReminderStatus.DRAFT))
-    } else if (!_reminder.value.consentAccepted) {
-      updateValue(_reminder.value.copy(consentAccepted = true))
+      updateValue(_reminder.value.copy(participantCode = "", consentAccepted = false, status = ReminderStatus.DRAFT))
+    } else {
+      val participantCode = experiencePreferences.getString("participant_code", null)
+        ?: _reminder.value.participantCode.ifBlank { "P-${UUID.randomUUID().toString().take(8).uppercase()}" }
+      experiencePreferences.edit().putString("participant_code", participantCode).apply()
+      if (_reminder.value.participantCode != participantCode || !_reminder.value.consentAccepted)
+        updateValue(_reminder.value.copy(participantCode = participantCode, consentAccepted = true))
     }
     startStateSync()
-    refreshDashboard()
+    if (hasCurrentConsent()) refreshDashboard()
     if (_reminder.value.status == ReminderStatus.WAITING && UsageAccess.isGranted(application)) {
       ContextCompat.startForegroundService(
         application,
@@ -102,6 +107,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun updateRequiredUsage(seconds: Int) =
     update { copy(requiredUsageSeconds = seconds.coerceAtLeast(1), status = ReminderStatus.DRAFT) }
 
+  fun updateSignalRoute(route: SignalRoute) = update { copy(signalRoute = route, status = ReminderStatus.DRAFT) }
+
   fun updateParticipantCode(value: String) {
     val code = value.trim().take(24)
     experiencePreferences.edit().putString("participant_code", code).apply()
@@ -109,11 +116,17 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun updateConsent(accepted: Boolean) {
+    if (accepted && remoteSync.deletionPending) return
+    if (accepted) _deletionStatus.value = null
+    val participantCode = if (accepted) experiencePreferences.getString("participant_code", null)
+      ?: "P-${UUID.randomUUID().toString().take(8).uppercase()}" else ""
     experiencePreferences.edit()
       .putBoolean("academic_consent_accepted", accepted)
       .putString("academic_consent_version", if (accepted) ResearchLogStore.CONSENT_VERSION else null)
+      .putString("participant_code", if (accepted) participantCode else null)
       .apply()
-    update { copy(consentAccepted = accepted, status = ReminderStatus.DRAFT) }
+    update { copy(participantCode = participantCode, consentAccepted = accepted, status = ReminderStatus.DRAFT) }
+    if (accepted) refreshDashboard()
   }
 
   fun applyPreset(activity: String, firstStep: String, place: String) =
@@ -134,9 +147,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   fun selectTargetApp(app: InstalledApp) =
     update {
+      val current = selectedApps.toMutableList()
+      val existing = current.indexOfFirst { it.packageName == app.packageName }
+      if (existing >= 0) current.removeAt(existing) else current.add(com.example.relevo.domain.TrackedApp(app.packageName, app.label))
       copy(
-        targetPackage = app.packageName,
-        targetAppLabel = app.label,
+        targetPackage = current.firstOrNull()?.packageName.orEmpty(),
+        targetAppLabel = current.firstOrNull()?.label.orEmpty(),
+        targetApps = current,
         status = ReminderStatus.DRAFT,
       )
     }
@@ -148,7 +165,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   fun refreshDashboard() {
     val history = historyStore.load()
-    val selectedPackages = (history.map { it.appPackage } + _reminder.value.targetPackage).filter { it.isNotBlank() }.toSet()
+    val selectedPackages = (history.flatMap { it.appPackages } + _reminder.value.selectedApps.map { it.packageName }).filter { it.isNotBlank() }.toSet()
     _history.value = history
     _todayUsage.value = usageSummaryRepository.today().filter { it.packageName in selectedPackages }
   }
@@ -187,7 +204,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun testSignal(): Boolean {
-    val started = signalPlayer.play()
+    val started = signalPlayer.play(_reminder.value.signalRoute)
     if (started) viewModelScope.launch {
       delay(2_400)
       signalPlayer.stop()
@@ -263,6 +280,40 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _remainingSeconds.value = 0
   }
 
+  fun deleteResearchData() {
+    if (deletingData) return
+    deletingData = true
+    _deletionStatus.value = "Eliminando datos…"
+    remoteSync.beginDeletion()
+    getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+    signalPlayer.stop()
+    experiencePreferences.edit().putBoolean("academic_consent_accepted", false).remove("academic_consent_version").apply()
+    updateValue(_reminder.value.copy(consentAccepted = false, status = ReminderStatus.DRAFT))
+    viewModelScope.launch(Dispatchers.IO) {
+      val deleted = remoteSync.deleteOwnResearchData()
+      if (deleted) {
+        researchLog.clearAll()
+        historyStore.clear()
+        customActivityStore.clear()
+        store.clear()
+        remoteSync.clearCredentials()
+        experiencePreferences.edit().clear().apply()
+        val code = "P-${UUID.randomUUID().toString().take(8).uppercase()}"
+        experiencePreferences.edit().putString("participant_code", code).apply()
+        val fresh = Reminder(participantCode = code)
+        store.save(fresh)
+        _reminder.value = fresh
+        _history.value = emptyList()
+        _customActivities.value = emptyList()
+        _todayUsage.value = emptyList()
+        _deletionStatus.value = "Datos eliminados. Si quieres volver a usar Relevo, tendrás que aceptar de nuevo las condiciones."
+      } else {
+        _deletionStatus.value = "Se detuvo el registro, pero no pudimos confirmar la eliminación. Tus datos siguen en el teléfono. Puedes reintentar o escribir a joan1542003@gmail.com."
+      }
+      deletingData = false
+    }
+  }
+
   private fun hasCurrentConsent(): Boolean =
     experiencePreferences.getBoolean("academic_consent_accepted", false) &&
       experiencePreferences.getString("academic_consent_version", null) == ResearchLogStore.CONSENT_VERSION
@@ -289,6 +340,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   private fun syncRemote() {
+    if (deletingData) return
     viewModelScope.launch(Dispatchers.IO) { remoteSync.syncPending() }
   }
 

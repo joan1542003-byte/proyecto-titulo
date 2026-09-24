@@ -15,6 +15,7 @@ data class HistoryEntry(
   val sessionId: String = "",
   val outcome: String = "",
   val signalDelivered: Boolean = false,
+  val appPackages: List<String> = listOf(appPackage),
 )
 
 class HistoryStore(context: Context) {
@@ -34,13 +35,14 @@ class HistoryStore(context: Context) {
         sessionId = item.optString("session_id", ""),
         outcome = item.optString("outcome", ""),
         signalDelivered = item.optBoolean("signal_delivered", false),
+        appPackages = item.optJSONArray("app_packages")?.let { array -> List(array.length()) { array.getString(it) } } ?: listOf(item.getString("app_package")),
       )
     }
   }.getOrDefault(emptyList())
 
   fun add(reminder: Reminder) {
     if (reminder.activity.isBlank() || reminder.observedUsageSeconds <= 0) return
-    val updated = (listOf(HistoryEntry(reminder.activity, reminder.targetAppLabel, reminder.targetPackage, reminder.place, reminder.observedUsageSeconds, System.currentTimeMillis(), reminder.sessionId, signalDelivered = reminder.signalDelivered)) + load()).take(30)
+    val updated = (listOf(HistoryEntry(reminder.activity, reminder.selectedApps.joinToString(", ") { it.label }, reminder.targetPackage, reminder.place, reminder.observedUsageSeconds, System.currentTimeMillis(), reminder.sessionId, signalDelivered = reminder.signalDelivered, appPackages = reminder.selectedApps.map { it.packageName })) + load()).take(200)
     save(updated)
   }
 
@@ -48,6 +50,8 @@ class HistoryStore(context: Context) {
     if (sessionId.isBlank()) return
     save(load().map { if (it.sessionId == sessionId) it.copy(outcome = outcome) else it })
   }
+
+  fun clear() { preferences.edit().clear().apply() }
 
   private fun save(updated: List<HistoryEntry>) {
     val array = JSONArray()
@@ -62,6 +66,7 @@ class HistoryStore(context: Context) {
         put("session_id", entry.sessionId)
         put("outcome", entry.outcome)
         put("signal_delivered", entry.signalDelivered)
+        put("app_packages", JSONArray(entry.appPackages))
       })
     }
     preferences.edit().putString("entries", array.toString()).apply()

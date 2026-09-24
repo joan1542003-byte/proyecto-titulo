@@ -1,6 +1,6 @@
 # Movimiento y personalización en Relevo Android
 
-**Revisión documental:** 22 de septiembre de 2026. **Alcance:** versión Android 2.0 y referentes web; no incluye pruebas nuevas con personas ni cambios de implementación.
+**Revisión documental histórica:** 22 de septiembre de 2026. **Alcance:** versión Android 2.0 y referentes web; no incluye pruebas nuevas con personas ni cambios de implementación. Para decisiones implementadas en 2.6, consultar [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) y [revisión del feedback](revision-feedback-2026-09-23.md). Las menciones a una sola app o al parlante como única salida describen esa versión anterior, no el estado actual.
 
 ## Lo que muestran los referentes
 
@@ -40,7 +40,13 @@ Evitar: movimiento perpetuo en controles secundarios; señal visual que exija mi
 
 Los [controles de accesibilidad de Compose](https://developer.android.com/develop/ui/compose/accessibility/testing) pueden detectar algunos problemas de contraste, tamaño táctil y recorrido, pero no reemplazan la prueba manual. Ninguna de las pruebas de esta sección se realizó para este documento. La revisión en emulador y las pruebas unitarias de la versión 2.0 constan en la documentación de la app; no validan estas decisiones de movimiento o personalización con usuarios.
 
-## Registro de cambios
+## Registro de cambios (disclaimer)
+
+### 2026-09-24 — Aclaración de vigencia
+
+- **Cambio:** se marca este análisis como antecedente de Android 2.0 y se enlazan las decisiones 2.6.
+- **Antes:** podía leerse como especificación actual pese a los cambios posteriores.
+- **Motivo:** conservar el razonamiento sin confundirlo con el funcionamiento vigente.
 
 ### 2026-09-22 — Creación
 

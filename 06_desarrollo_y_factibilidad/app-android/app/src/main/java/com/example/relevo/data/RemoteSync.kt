@@ -3,6 +3,7 @@ package com.example.relevo.data
 import android.content.Context
 import cl.udp.relevo.BuildConfig
 import org.json.JSONObject
+import org.json.JSONArray
 import java.net.HttpURLConnection
 import java.net.URL
 import java.time.Instant
@@ -13,9 +14,12 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
   private val apiKey = BuildConfig.SUPABASE_PUBLISHABLE_KEY
 
   val configured: Boolean get() = baseUrl.isNotBlank() && apiKey.isNotBlank()
+  val deletionPending: Boolean get() = preferences.getBoolean("deleting", false)
 
-  fun syncPending(): Boolean {
+  fun syncPending(): Boolean = synchronized(LOCK) {
+    if (preferences.getBoolean("deleting", false)) return false
     if (!configured) return false
+    preferences.edit().putBoolean("ever_configured", true).apply()
     val token = accessToken() ?: return false
     store.pendingSessions().forEach { session ->
       if (!post("relevo_sessions?on_conflict=session_id", session.toJson(), token, upsert = true)) return false
@@ -27,6 +31,43 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     }
     return true
   }
+
+  /** Borra únicamente las filas visibles para la sesión anónima autenticada. */
+  fun beginDeletion() { preferences.edit().putBoolean("deleting", true).commit() }
+
+  fun deleteOwnResearchData(): Boolean {
+    beginDeletion()
+    return synchronized(LOCK) { deleteOwnResearchDataLocked() }
+  }
+
+  private fun deleteOwnResearchDataLocked(): Boolean {
+    if (!store.hasRecords() && preferences.getString("access_token", null) == null &&
+      preferences.getString("refresh_token", null) == null && !preferences.getBoolean("ever_configured", false)) return true
+    if (!configured) return !preferences.getBoolean("ever_configured", false)
+    val token = accessToken() ?: return false
+    val user = runCatching {
+      val response = connection("/auth/v1/user", token).apply { requestMethod = "GET"; doOutput = false }
+      if (response.responseCode !in 200..299) return false
+      JSONObject(response.inputStream.bufferedReader().use { it.readText() }).getString("id")
+    }.getOrNull() ?: return false
+    if (!user.matches(Regex("[0-9a-fA-F-]{36}"))) return false
+    if (!delete("/rest/v1/relevo_events?user_id=eq.$user", token)) return false
+    if (!delete("/rest/v1/relevo_sessions?user_id=eq.$user", token)) return false
+    return noRows("/rest/v1/relevo_events?select=id&user_id=eq.$user&limit=1", token) &&
+      noRows("/rest/v1/relevo_sessions?select=session_id&user_id=eq.$user&limit=1", token)
+  }
+
+  fun clearCredentials() { preferences.edit().clear().apply() }
+
+  private fun delete(path: String, token: String): Boolean = runCatching {
+    val response = connection(path, token).apply { requestMethod = "DELETE"; doOutput = false }
+    response.responseCode in 200..299
+  }.getOrDefault(false)
+
+  private fun noRows(path: String, token: String): Boolean = runCatching {
+    val response = connection(path, token).apply { requestMethod = "GET"; doOutput = false }
+    response.responseCode in 200..299 && JSONArray(response.inputStream.bufferedReader().use { it.readText() }).length() == 0
+  }.getOrDefault(false)
 
   private fun accessToken(): String? {
     val cached = preferences.getString("access_token", null)
@@ -68,6 +109,7 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
   private fun PendingSession.toJson() = JSONObject()
     .put("session_id", sessionId).put("participant_code", participantCode).put("activity", activity)
     .put("first_step", firstStep).put("place", place).put("target_package", targetPackage).put("target_app_label", targetAppLabel)
+    .put("target_apps", JSONArray(targetAppsJson))
     .put("threshold_seconds", thresholdSeconds).put("started_at", startedAt.iso()).put("signal_at", signalAt?.iso())
     .put("closed_at", closedAt?.iso()).put("observed_seconds", observedSeconds).put("outcome", outcome).put("consent_version", consentVersion)
 
@@ -77,4 +119,6 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     .put("created_at", createdAt.iso()).put("consent_version", consentVersion)
 
   private fun Long.iso() = Instant.ofEpochMilli(this).toString()
+
+  private companion object { val LOCK = Any() }
 }

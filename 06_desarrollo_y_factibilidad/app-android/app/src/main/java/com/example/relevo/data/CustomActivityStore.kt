@@ -44,6 +44,8 @@ class CustomActivityStore(context: Context) {
     return updated
   }
 
+  fun clear() { preferences.edit().clear().apply() }
+
   private fun save(activities: List<CustomActivity>) {
     val array = JSONArray()
     activities.forEach { activity ->

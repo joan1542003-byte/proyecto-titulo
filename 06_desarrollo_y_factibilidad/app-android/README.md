@@ -1,34 +1,34 @@
 # Aplicación Android de Relevo
 
-Prototipo funcional para preparar una intención, elegir una aplicación y emitir una señal cuando esa aplicación permanece en primer plano durante el tiempo definido.
+Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo uso se quiere contar y emitir una señal al completar un límite acumulado. La señal puede sonar en un parlante Bluetooth situado cerca de la actividad o, como alternativa de prueba, en el teléfono.
 
 ## Estado
 
-**Versión:** 2.5 de prueba
+**Versión:** 2.6 de prueba
 
-**Fecha:** 23 de septiembre de 2026
+**Fecha:** 24 de septiembre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.5-2026-09-23.apk](releases/relevo-android-2.5-2026-09-23.apk)
+**APK vigente:** [relevo-android-2.6-2026-09-24.apk](releases/relevo-android-2.6-2026-09-24.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.5-2026-09-23.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.6-2026-09-24.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
-**Capturas de revisión:** [interfaz 2.2](capturas/interfaz-2.2/README.md)
+**Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
-La versión 2.5 compila y sus siete pruebas unitarias pasan. La condición automática se comprobó en una iteración anterior de Android: al mantener la aplicación elegida en primer plano durante el tiempo configurado, el recordatorio cambió a señal emitida. El ciclo completo de 2.5 aún debe repetirse con el teléfono y parlante de la prueba.
+La versión 2.6 compila y sus pruebas unitarias pasan. Se inspeccionaron en emulador consentimiento, tutorial, Inicio y preparación con dos aplicaciones. El ciclo completo, la reproducción en un parlante real, la eliminación remota y el envío de eventos aún no se han verificado de extremo a extremo. No es una aplicación validada con participantes.
 
 ## Qué permite hacer
 
 1. escribir una actividad y una forma concreta de comenzar;
-2. elegir una aplicación instalada;
-3. partir de una de siete actividades ilustradas o escribir una actividad propia;
+2. elegir una o varias aplicaciones instaladas; sus tiempos de uso se suman hasta un único límite;
+3. partir de actividades ilustradas o escribir una actividad propia;
 4. definir el tiempo acumulado entre 1 minuto y 6 horas mediante un deslizador, ajustes y accesos rápidos, además de una prueba de 15 segundos;
 5. reconocer las aplicaciones por su icono real;
 6. consultar Inicio, Actividad y el historial de relevos;
@@ -36,24 +36,26 @@ La versión 2.5 compila y sus siete pruebas unitarias pasan. La condición autom
 8. autorizar el acceso a Tiempo de uso; las notificaciones se solicitan por separado y son opcionales;
 9. crear un identificador aleatorio que agrupa los datos sin solicitar nombre, correo ni teléfono;
 10. activar un monitoreo visible mediante una notificación persistente;
-11. emitir una señal continua por un parlante Bluetooth multimedia conectado, además de vibración breve y notificación; si no existe esa salida, no reproducir sonido por el teléfono;
+11. elegir expresamente si la señal suena en un parlante Bluetooth multimedia o en el altavoz del teléfono, además de vibración breve y notificación; nunca cambiar de salida sin informarlo;
 12. pausar el conteo si la persona sale de la aplicación y retomarlo cuando vuelve;
 13. desactivar, silenciar y cerrar el ciclo.
 14. responder opcionalmente qué decidió hacer después de la señal;
 15. contar cuántas veces se eligió cada actividad y distinguir las señales seguidas de un inicio autodeclarado;
-16. conservar sesiones y eventos sin conexión y enviarlos a Supabase cuando la base está configurada.
+16. conservar sesiones y eventos sin conexión e intentar enviarlos a Supabase cuando la base está configurada;
 17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
 18. enseñar el recorrido mediante cuatro escenas de objetos y una explicación visual de permisos, sin mostrar pantallas ficticias;
 19. preparar un relevo por etapas: actividad; aplicación y tiempo; inicio y ubicación; revisión y activación. Las actividades propias se crean en tres pasos y se pueden reutilizar;
 20. al terminar el tutorial, preparar opcionalmente el primer relevo o ir a Inicio, siempre que se haya concedido Tiempo de uso;
 21. volver un paso con el gesto de Android durante el tutorial y la preparación; consultar en Historial un código de participación estable entre ciclos;
-22. ver una confirmación breve cuando la persona declara que comenzó su actividad, sin presentar la declaración como una comprobación de Relevo.
+22. ver una confirmación breve cuando la persona declara que comenzó su actividad, sin presentar la declaración como una comprobación de Relevo;
+23. probar el sonido antes de activar, conocer explícitamente si la salida elegida falló y consultar una pantalla de privacidad para solicitar la eliminación de los registros locales y remotos;
+24. encontrar de nuevo la actividad anterior al abrir la app después de varios días, sin imponer una racha ni atribuirle resultados no observados.
 
 ## Límites
 
-Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Sesiones y eventos se guardan primero en SQLite y luego se sincronizan con Supabase. La autenticación anónima, las tablas y las políticas RLS fueron comprobadas mediante una escritura y lectura reales; el registro de verificación se eliminó al terminar la prueba.
+Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Solo suma el tiempo de las aplicaciones elegidas mientras el relevo está activo. Sesiones y eventos se guardan primero en SQLite y la app intenta sincronizarlos con Supabase. La base tiene políticas que limitan el acceso de cada participante a sus filas; una comprobación reciente encontró sesiones remotas, pero ningún evento remoto, por lo que esa sincronización aún requiere una prueba completa antes de usarla en el estudio.
 
-La señal sonora se inicia solo cuando Android confirma que la ruta de reproducción del audio de Relevo es un parlante Bluetooth multimedia. Continúa mientras el ciclo siga en estado «señal emitida», incluso con la app fuera de pantalla, y cesa al silenciar o cerrar el ciclo. Si no hay una salida Bluetooth apta, se muestra el aviso sin emitir el tono por el teléfono. Si la conexión se pierde durante la reproducción, la app corta el tono. La selección de ruta de Android no demuestra por sí sola exclusividad absoluta en todos los modelos; se necesita una prueba en el teléfono y parlante concretos antes de afirmar ese comportamiento en la entrega.
+La señal sonora comprueba que Android haya dirigido el audio a la salida elegida. Continúa mientras el ciclo siga en estado de señal, incluso con la app fuera de pantalla, y cesa al silenciar o cerrar. Si la ruta no está disponible, se informa el fallo y no se marca la señal como audible. La alternativa en el teléfono permite probar la interacción, pero no sustituye la situación phygital: el aviso ya no está junto a la actividad. La selección de ruta de Android no demuestra exclusividad absoluta en todos los modelos; se necesita probar el teléfono y parlante concretos.
 
 La comprobación anterior se refiere **solo al tono de Relevo**: no impide que YouTube, Instagram u otra app envíen audio al mismo parlante multimedia. Las opciones para separar esos sonidos y la prueba necesaria están en el [análisis de enrutamiento](../enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
 
@@ -70,7 +72,7 @@ Android muestra una notificación mientras el recordatorio está activo. Esta vi
 
 ## Datos de prueba
 
-La estructura y sus límites están descritos en [detección de uso y datos](arquitectura-deteccion-uso-y-datos-2026-09-21.md). Para pruebas académicas se debe usar un código como `P01`; nunca el nombre de la persona. Antes de una base remota se deben aprobar responsable, plazo de conservación, acceso y procedimiento de eliminación.
+La estructura y sus límites están descritos en [detección de uso y datos](arquitectura-deteccion-uso-y-datos-2026-09-21.md). La app usa un código aleatorio; no solicita el nombre de la persona. El consentimiento indica finalidad académica, correo responsable y plazo máximo de conservación hasta el 30 de diciembre de 2026. Antes de entregar el APK a participantes debe probarse la eliminación solicitada desde la app, incluida la respuesta sin conexión.
 
 ## Compilación
 
@@ -97,6 +99,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-24 — Revisión funcional 2.6
+
+- **Cambio:** el índice apunta a 2.6; documenta aplicaciones múltiples con un límite común, selección explícita de salida de sonido, prueba previa, fallos visibles, privacidad y las comprobaciones realizadas.
+- **Antes:** describía 2.5 como una sola aplicación y solo una salida Bluetooth, sin distinguir la existencia de sesiones remotas de la ausencia de eventos.
+- **Motivo:** hacer coincidir la documentación con el código y no atribuirle al prototipo validaciones que aún no tiene.
 
 ### 2026-09-23 — Revisión de interfaz y consentimiento 2.5
 

@@ -2,9 +2,9 @@
 
 ## Decisión implementada
 
-La persona elige una aplicación instalada y un intervalo. Mientras el recordatorio está activo, Relevo consulta los eventos de uso de Android una vez por segundo y comprueba si esa aplicación está en primer plano. La señal se emite al completar el tiempo acumulado. Salir de la aplicación pausa el conteo; volver a ella lo retoma.
+La persona elige una o varias aplicaciones instaladas y un límite común. Mientras el relevo está activo, la app consulta los eventos de uso de Android una vez por segundo y comprueba si alguna de las seleccionadas está en primer plano. El tiempo se suma entre ellas; salir de todas pausa el conteo. Al completar el límite, Relevo intenta emitir la señal en la salida de sonido elegida.
 
-Este criterio evita confundir tiempo transcurrido con uso efectivo. También acota la observación a una condición comprensible: aplicación elegida, primer plano y duración acumulada desde la activación.
+Este criterio evita confundir tiempo transcurrido con uso efectivo. También acota la observación a una condición comprensible: aplicaciones elegidas, primer plano y duración acumulada desde la activación. No se establecen límites distintos por app.
 
 ## Qué observa y qué no
 
@@ -13,28 +13,28 @@ Relevo utiliza `UsageStatsManager`, la interfaz oficial de Android para consulta
 Se conserva únicamente:
 
 - identificador aleatorio del participante, sin nombre, correo ni teléfono;
-- paquete de la aplicación elegida;
-- entrada y salida de esa aplicación;
+- paquetes de las aplicaciones elegidas en cada sesión;
+- entrada y salida de las aplicaciones elegidas;
 - activación, desactivación, señal y cierre;
 - fecha, hora y segundos observados.
 
-No se guarda contenido de pantalla, mensajes, teclas, búsquedas, fotografías, contactos ni historial general. El sistema recibe eventos del dispositivo para identificar el primer plano, pero solo compara y registra la aplicación seleccionada.
+No se guarda contenido de pantalla, mensajes, teclas, búsquedas, fotografías, contactos ni historial general. El sistema recibe eventos del dispositivo para identificar el primer plano, pero solo compara y registra las aplicaciones seleccionadas. La vista «Actividad» muestra el uso de hoy de esas apps; ese total diario no es el tiempo del relevo activo.
 
 ## Base de datos local
 
-Los eventos se guardan en `relevo_research.db`, tabla `events`, dentro del almacenamiento privado de la aplicación. Los campos son `session_id`, `participant_code`, `event_type`, `target_package`, `created_at`, `value_seconds` y `consent_version`.
+Los eventos se guardan en `relevo_research.db`, tabla `events`, dentro del almacenamiento privado de la aplicación. Los campos son `session_id`, `participant_code`, `event_type`, `target_package`, `created_at`, `value_seconds` y `consent_version`. La tabla `sessions` guarda además la actividad, el inicio propuesto, la ubicación, el conjunto de apps elegidas, el límite, las fechas y la respuesta final opcional. Si no suena la ruta seleccionada se registra `signal_failed`, no `signal_emitted`.
 
-Esta base permite relacionar eventos de una misma sesión sin guardar nombres. Aún no es una base central: los datos no salen del teléfono ni se cruzan entre dispositivos.
+La base local permite relacionar eventos de una misma sesión sin guardar nombres. La app intenta sincronizar sus registros con Supabase mediante autenticación anónima cuando la compilación tiene configurada la conexión; los registros pendientes permanecen en el dispositivo si el envío falla. Las políticas de la base permiten a cada identidad leer y borrar solo sus propias filas. Solicitar el borrado desde Privacidad y datos revoca la participación y detiene el monitoreo de inmediato. Luego elimina las filas remotas y confirma que no queden; solo entonces borra las locales y las credenciales. Si falla el borrado remoto, conserva los datos locales para reintentar, sin reactivar el conteo. En una instalación que nunca se conectó a la base, permite el borrado local. Esta ruta aún requiere prueba completa antes de usarla con participantes.
 
-## Condiciones para una base remota
+## Condiciones para usar la base remota en el estudio
 
-Una base remota solo debe incorporarse después de definir por escrito: responsable de los datos; finalidad y variables mínimas; plazo de conservación; personas con acceso; cifrado; forma de retirar el consentimiento y eliminar una sesión; y separación entre códigos y datos identificadores.
+El consentimiento vigente indica finalidad académica, datos recogidos, correo de contacto y conservación máxima hasta el 30 de diciembre de 2026. La sincronización remota ya forma parte del prototipo; no debe confundirse con una validación completa del tratamiento de datos. Antes de distribuirlo a participantes hay que comprobar en un entorno controlado la escritura de sesiones y eventos, el reintento sin conexión y la eliminación por la misma identidad anónima. También debe definirse el acceso de revisión académica y el procedimiento manual de respuesta a solicitudes por correo.
 
-Para el testeo inmediato, la opción local es suficiente y reduce exposición innecesaria. Un servicio remoto no mejora la experiencia central de Relevo; solo facilita consolidar resultados, por lo que debe justificarse por la investigación y no por comodidad técnica.
+La base remota no mejora por sí sola la experiencia de Relevo: facilita consolidar datos de la investigación. Por ello se almacenan variables mínimas y el consentimiento se solicita antes de cualquier registro.
 
 ## Comprobación realizada
 
-En un emulador Android se configuró una aplicación objetivo con una condición de cinco segundos. Se usó durante tres segundos, se abandonó y luego se volvió a abrir. El conteo conservó el progreso y, al completar cinco segundos acumulados, el registro pasó de `WAITING` a `SIGNALLED` y marcó una única emisión. La compilación y las pruebas unitarias terminaron correctamente.
+Una iteración anterior comprobó en emulador que el tiempo de una aplicación se acumulaba tras salir y volver. En la versión 2.6 se inspeccionó la selección de dos apps, se ejecutaron las pruebas unitarias y se compiló el APK. Esa inspección no demuestra todavía que la suma funcione durante un ciclo real ni que Supabase reciba todos los eventos. En la base remota se observaron cuatro sesiones y ningún evento; la ruta de envío se corrigió para usar `client_event_id` como clave de conflicto, pero queda pendiente una verificación aislada, sin mezclar datos de prueba con participantes.
 
 ## Referencias técnicas
 
@@ -47,6 +47,12 @@ Android Developers. (s. f.). *Declare foreground services and request permission
 Android Developers. (s. f.). *Minimize your permission requests*. https://developer.android.com/privacy-and-security/minimize-permission-requests
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-24 — Selección múltiple y base remota
+
+- **Cambio:** se describe el límite común para varias apps, los datos realmente recogidos, la sincronización remota, el borrado solicitado —que detiene el monitoreo inmediatamente— y el estado de verificación.
+- **Antes:** el texto afirmaba que solo podía elegirse una app y que los datos nunca salían del teléfono, lo cual ya no corresponde al prototipo.
+- **Motivo:** evitar una descripción académica falsa del comportamiento y hacer explícito lo que falta probar.
 
 ### 2026-09-21 — Documento inicial
 
