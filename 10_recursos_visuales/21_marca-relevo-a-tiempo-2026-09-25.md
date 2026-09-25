@@ -50,9 +50,9 @@ Esta versión parte de tres condiciones:
 | Qué es | Un recordatorio físico que preparas desde el teléfono. |
 | Para qué | Para acordarte de lo que querías hacer mientras todavía puedes hacerlo. |
 | Cómo | Escribes la actividad y cómo empieza, dejas el objeto ahí y eliges después de cuánto uso del teléfono quieres que suene. |
-| Qué no hace | No bloquea el teléfono, no cuenta rachas y no te dice qué hacer. |
+| Qué lo distingue | El aviso no llega al teléfono: suena en el lugar donde empieza lo que querías hacer. |
 | Firma | **Lo que querías hacer, a tiempo.** |
-| Principio | **Tú decides.** Puedes empezar o seguir en lo que estabas; las dos cosas valen. |
+| Principio | **Tú decides.** Puedes empezar o seguir en lo que estabas. |
 
 La firma usa dos palabras de la memoria:
 
@@ -152,7 +152,16 @@ Las fotos de la lámina son de muestra (CC0); la identidad final necesita una se
 | ¿Qué quieres hacer hoy? | Llevas 40 minutos en Instagram. |
 | Leer, a tiempo. | ¡Recupera tu tiempo! |
 | Sonó junto al libro. ¿Qué decidiste? | Vas 3 días seguidos. ¡No pierdas la racha! |
-| Seguiste en lo que estabas. También vale. | Desconéctate para ser tu mejor versión. |
+| La dejaste para después. | Desconéctate para ser tu mejor versión. |
+
+### Se nota, no se dice
+
+Que Relevo no presiona es parte de la marca, pero no se anuncia. Frases como «sin culpa», «no te juzgamos» o «no insistimos» nombran justo lo que quieren evitar. La posición de una marca se vuelve experiencia en decisiones observables en cada punto de contacto, no en una lista de atributos (Motta-Filho, 2021). Se nota así:
+
+- el aviso suena una vez y termina solo;
+- las respuestas tienen el mismo tamaño, color y lugar;
+- no hay rachas, puntajes ni recordatorios de lo que no se hizo;
+- el tono es el mismo si la persona empieza o si sigue en lo que estaba.
 
 ## 10. Aplicaciones de la lámina
 
@@ -217,6 +226,8 @@ Mollerup, P. (2013). *Marks of excellence: The development and taxonomy of trade
 
 Montag, C., Lachmann, B., Herrlich, M., & Zweig, K. (2019). Addictive features of social media/messenger platforms and freemium games against the background of psychological and economic theories. *International Journal of Environmental Research and Public Health, 16*(14), 2612. https://doi.org/10.3390/ijerph16142612
 
+Motta-Filho, M. A. (2021). Brand experience manual: Bridging the gap between brand strategy and customer experience. *Review of Managerial Science, 15*(5), 1173–1204. https://doi.org/10.1007/s11846-020-00399-9
+
 Norman, D. A. (2002). *The design of everyday things*. Basic Books.
 
 Post, R. A. G., Blijlevens, J., & Hekkert, P. (2016). «To preserve unity while almost allowing for chaos»: Testing the aesthetic principle of unity-in-variety in product design. *Acta Psychologica, 163*, 142–152. https://doi.org/10.1016/j.actpsy.2015.11.013
@@ -236,6 +247,12 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Se nota, no se dice
+
+- **Qué cambió:** se retiraron las frases que anunciaban que Relevo no presiona («no insiste ni te reprocha nada», «las dos cosas valen», «también vale», «no te dice qué hacer»). Se añadió la regla «se nota, no se dice», con las conductas que muestran ese carácter. «Qué no hace» pasó a «Qué lo distingue».
+- **Cómo estaba antes:** el relato, la voz y la tabla de estrategia decían explícitamente que Relevo no insiste ni reprocha.
+- **Por qué:** el autor pidió que ese rasgo fuera parte de la marca sin mencionarse.
 
 ### 2026-09-25 — Creación
 

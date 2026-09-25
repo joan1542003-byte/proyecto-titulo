@@ -772,11 +772,14 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - reconocimiento del ícono;
   - legibilidad en la app con las tareas de la pauta 2.6.
 - **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; frase de marca del capítulo 11 de la memoria; guía de comunicación; documento 14; sesión fotográfica.
+- **Actualización del mismo día:** a pedido del autor, que Relevo no presiona se muestra en conductas (una sola señal, respuestas con el mismo peso, sin rachas) y no se anuncia en los textos. Antes, el relato y la voz decían «Relevo no insiste ni te reprocha nada».
 - **Documentación:** [marca «Lo que querías hacer, a tiempo»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
 
 ## Registro de cambios (disclaimer)
 
 ### 2026-09-25 — D-073
+
+- **Actualización del mismo día:** se añadió a D-073 la regla «se nota, no se dice». Antes, el relato decía que Relevo no insiste ni reprocha; el autor pidió que eso no se mencionara.
 
 - **Qué cambió:** se registró la propuesta D-073 y D-072 se marcó como reemplazada.
 - **Cómo era antes:** D-072 proponía «Antes de que sea después» con Radio Canada.
