@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
 
-La fecha de corte es el 25 de septiembre de 2026. La memoria contiene unas 15.100 palabras de texto académico, sin bibliografía ni registro de cambios, y sus 64 referencias fueron verificadas ese día ([revisión integral](../08_memoria/revision-integral-fuentes-y-redaccion-2026-09-25.md)). Para una lectura más breve del estado, véase el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
+La fecha de corte es el 25 de septiembre de 2026. La memoria contiene unas 15.700 palabras de texto académico, sin bibliografía ni registro de cambios, y sus 64 referencias fueron verificadas ese día ([revisión integral](../08_memoria/revision-integral-fuentes-y-redaccion-2026-09-25.md)). Para una lectura más breve del estado, véase el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
 
 ## El objetivo del proyecto
 
@@ -19,7 +19,7 @@ La propuesta combina:
 
 - una [aplicación Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md), donde la persona escribe su intención, define un primer paso y configura una condición;
 - un [testigo físico situado](../05_propuesta_phygital/README.md), ubicado cerca del comienzo de la actividad elegida (por ejemplo, salir a caminar; el objeto se deja cerca de unas zapatillas);
-- un [pulso ambiental breve](../07_validacion/protocolo-01-asociacion-y-comparacion.md), que vuelve a hacer visible esa intención en el espacio físico.
+- un [pulso ambiental](../07_validacion/protocolo-02-prueba-21-dias.md), una señal sonora de unos 30 segundos que vuelve a hacer presente esa intención en el espacio físico.
 
 La persona sigue teniendo la última palabra: puede continuar con el ocio digital, ignorar la señal, silenciarla, cambiar de idea o iniciar la alternativa. Relevo no bloquea aplicaciones, no entrega puntos, no crea rachas y no registra si la actividad se realizó.
 
@@ -130,9 +130,9 @@ El mercado ya tiene medidores, bloqueadores, pausas, objetos de foco y recordato
 | **Trabajar con una situación, no con un usuario fijo** | La misma persona puede querer una señal en un momento y no quererla en otro. | [Perfiles situacionales](../03_usuarios/perfiles-situacionales.md) |
 | **Un ciclo con una intención, un primer paso y un pulso** | Mantiene la experiencia entendible y evita convertir Relevo en una agenda o app general de productividad. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
 | **Android como primera plataforma** | Permite concentrar el esfuerzo en una sola arquitectura con notificación local, actividad autorizada y posible Bluetooth Low Energy. Web e iPhone quedan fuera por ahora para no duplicar el desarrollo. | [Decisión de plataforma Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) |
-| **Dejar abierta la condición de activación** | Continuidad, acumulación y horario tienen implicancias distintas de privacidad, significado y factibilidad. Primero hay que probarlas. | [Hoja de ruta](hoja-de-ruta.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| **Dejar abierta la condición de activación** | Continuidad, acumulación y horario tienen implicancias distintas de privacidad, significado y factibilidad. Primero hay que probarlas. | [Hoja de ruta](hoja-de-ruta.md) · [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
 | **No bloquear ni gamificar** | La propuesta busca devolver una opción, no medir rendimiento ni imponer una conducta. | [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) |
-| **Comparar objeto situado, objeto neutro y notificación** | Es la manera más clara de separar el valor del objeto del valor de su ubicación y del aviso digital. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| **Comparar objeto situado, objeto neutro y notificación** | Es la manera más clara de separar el valor del objeto del valor de su ubicación y del aviso digital. | [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
 | **Diseñar con producción y costos en mente** | La forma final no puede definirse solo por apariencia; debe poder construirse, mantenerse y explicarse. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 
 El rol del diseño quedó entendido como articular problema, evidencia, experiencia, lenguaje, objeto y sistema. La electrónica, la fabricación, el mantenimiento y los costos son restricciones y colaboraciones que deben hacerse visibles; diseñar la experiencia no significa que toda la producción ya esté resuelta.
@@ -173,12 +173,12 @@ El recorrido de diseño completo tiene cinco momentos:
 1. **Formular:** escribir una intención, un primer paso y una condición provisional.
 2. **Situar:** relacionar el testigo con el lugar donde comienza la actividad.
 3. **Probar y armar:** comprobar el pulso y activar el ciclo de forma explícita.
-4. **Esperar y señalar:** emitir un pulso breve cuando corresponde.
+4. **Esperar y señalar:** emitir un pulso de unos 30 segundos, que se detiene solo, cuando corresponde.
 5. **Decidir y cerrar:** continuar, ignorar, silenciar, iniciar, desarmar o dejar vencer el ciclo.
 
 El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió este recorrido en tres interacciones y nueve marcos principales. El [anexo de cobertura](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) lo amplió a 35 estados, incluyendo errores, permisos, salidas voluntarias y recuperación.
 
-La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) implementa formular, configurar, revisar, esperar, recibir y cerrar: suma el tiempo de una o varias apps elegidas hasta un límite, muestra una notificación persistente y reproduce un tono en un parlante Bluetooth o en el teléfono. Compila y pasa diez pruebas unitarias; no se ha probado el ciclo completo en equipos reales. El parlante es una salida provisional: no emite luz, no está reservado para Relevo y puede sonar con otras apps. El testigo propio sigue abierto. Se estudiaron iTag, micro:bit V2, Atom Echo y XIAO nRF52840, pero no se ha comprado ni ensayado ningún hardware. El programa de micro:bit compila y serviría para una prueba manual de luz y sonido, pero no funciona con el APK actual, que envía audio y no órdenes BLE. Ver [productos terminados en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md), [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y [validación](../07_validacion/README.md).
+La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) implementa formular, configurar, revisar, esperar, recibir y cerrar: suma el tiempo de una o varias apps elegidas hasta un límite, muestra una notificación persistente y reproduce un tono en un parlante Bluetooth o en el teléfono. Compila y pasa diez pruebas unitarias; no se ha probado el ciclo completo en equipos reales. El parlante es una salida provisional: no emite luz, no está reservado para Relevo y puede sonar con otras apps. El testigo propio sigue abierto. Se estudiaron iTag, micro:bit V2, Atom Echo y XIAO nRF52840, pero no se ha comprado ni ensayado ningún hardware. El programa de micro:bit compila y serviría para una prueba manual de la orden y el sonido, con sus luces cubiertas, pero no funciona con el APK actual, que envía audio y no órdenes BLE. Ver [productos terminados en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md), [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y [validación](../07_validacion/README.md).
 
 ## Costos estimados
 
@@ -204,7 +204,7 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Entrevistas analizadas, perfiles, recorridos y requisitos. | Ejecutar una nueva prueba con participantes; todavía no hay resultados. | [Matriz de evidencia](../03_usuarios/matriz-evidencia-p1-p8.md) |
 | Encuesta complementaria de 70 participantes registrada como fuente pendiente. | Publicar sus materiales, revisar la metodología y decidir si complementa o modifica la memoria. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) |
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
-| Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
 | Wireframes: nueve marcos principales y 35 estados complementarios. Aplicación Android 2.6 compilada, con permisos, notificación persistente, salida de sonido elegible, consentimiento y solicitud de eliminación. | Probar el ciclo completo en un teléfono y un parlante reales, verificar el envío y la eliminación de datos, e implementar el vínculo con un testigo propio. | [App Android](../06_desarrollo_y_factibilidad/app-android/README.md) · [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
 | Nombre, mensaje y sistema visual cerrados para el proyecto. | Aplicarlos de forma consistente y comprobar comprensión, contraste y reproducción; ajustar solo ante un problema demostrado. | [Sistema de marca](../10_recursos_visuales/14_sistema-de-marca-vigente.md) |
 | Productos terminados y plataformas comparados; programa micro:bit compilado. | Decidir qué objeto se usará para la señal física, comprarlo y ensayarlo; completar la lista XIAO únicamente si la evidencia justifica una integración propia. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
@@ -255,9 +255,15 @@ Eso todavía no lo pueden responder la memoria, el wireframe ni la app por sí s
 
 ## Respuestas completas al feedback del 2 de septiembre
 
-La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
+La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. La prueba de aceptación de dos iTag, prevista antes del banco de la Issue #11, no se realizó; la prueba vigente es la de 21 días con un parlante comercial ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Coherencia con la memoria revisada
+
+- **Qué cambió:** la extensión pasa a unas 15.700 palabras; el pulso se describe como señal sonora de unos 30 segundos; tres enlaces remiten al protocolo 02; el programa de micro:bit ya no se describe como prueba de luz, y la prueba de dos iTag se registra como no realizada.
+- **Cómo estaba antes:** decía unas 15.100 palabras, llamaba «breve» al pulso, enlazaba el protocolo 01 para la comparación vigente, describía una prueba manual de luz y sonido y anunciaba la prueba de dos iTag como próxima.
+- **Por qué:** la revisión completa de la memoria dejó una señal solo sonora de unos 30 segundos y una prueba de 21 días; este resumen no debe contradecirla.
 
 ### 2026-09-25 — Sin luz y prueba de 21 días
 

@@ -148,8 +148,8 @@ Primera aparición: **explicación cotidiana + término**. Después puede usarse
 1. Una persona quiere leer antes de terminar la tarde, pero abre una plataforma de videos y la sesión continúa.
 2. Antes, registró `leer mi novela` y convirtió esa intención en un primer paso: `sentarme y abrir el libro`.
 3. Dejó el testigo junto al libro, no al lado del teléfono.
-4. Si se cumple la condición que configuró, el testigo emite un pulso breve.
-5. Al ver la señal junto al libro, la persona puede reconocer tanto la intención como la forma de comenzar.
+4. Si se cumple la condición que configuró, el testigo suena unos 30 segundos y se detiene solo.
+5. Al oír la señal junto al libro, la persona puede reconocer tanto la intención como la forma de comenzar.
 6. Puede abrir el libro, seguir viendo videos, silenciar la señal o decidir que ya no quiere leer. Relevo no registra ninguna de esas respuestas como éxito o fracaso.
 
 Este ejemplo comunica las cuatro relaciones esenciales: una intención propia, un primer paso concreto, un lugar significativo y una decisión abierta.
@@ -405,7 +405,7 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 
 ### Descripción del proyecto
 
-Relevo es un sistema phygital que busca recordarte una actividad que elegiste y cómo comenzarla. Registras una intención y un primer paso en una aplicación Android, y sitúas un pequeño objeto junto a ese comienzo. Cuando se cumple una condición que configuraste, el objeto emite una señal sonora breve. Puedes empezar, continuar con el teléfono o silenciar la señal.
+Relevo es un sistema phygital que busca recordarte una actividad que elegiste y cómo comenzarla. Registras una intención y un primer paso en una aplicación Android, y sitúas un pequeño objeto junto a ese comienzo. Cuando se cumple una condición que configuraste, el objeto emite una señal sonora de unos 30 segundos. Puedes empezar, continuar con el teléfono o silenciar la señal.
 
 ### Cómo se comunica la transición
 
@@ -422,6 +422,12 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Señal de unos 30 segundos en los ejemplos
+
+- **Qué cambió:** el ejemplo de lectura dice que el testigo suena unos 30 segundos y que la persona oye la señal; la descripción breve usa la misma duración.
+- **Cómo estaba antes:** el ejemplo hablaba de un «pulso breve» y de «ver» la señal, y la descripción breve de una «señal sonora breve».
+- **Por qué:** la señal es solo sonora y dura unos 30 segundos (D-070 y D-078), como dice la memoria revisada.
 
 ### 2026-09-25 — Sin luz y prueba de 21 días
 

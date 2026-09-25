@@ -31,7 +31,7 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 
 A veces una persona sigue viendo contenido en el teléfono aunque antes quería leer, caminar, dibujar o comenzar otra actividad. No necesariamente olvidó esa intención: mientras la sesión continúa, esa posibilidad puede dejar de participar en la siguiente decisión.
 
-Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y responde cómo podría comenzar en una aplicación Android, y deja un objeto pequeño en ese lugar. Si se cumple una condición configurada, el objeto emite una señal sonora breve, de unos 30 segundos. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea. La documentación llama `primer paso` a esa acción breve y concreta; la interfaz utiliza lenguaje cotidiano.
+Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y responde cómo podría comenzar en una aplicación Android, y deja un objeto pequeño en ese lugar. Si se cumple una condición configurada, el objeto emite una señal sonora que dura unos 30 segundos y se detiene sola. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea. La documentación llama `primer paso` a esa acción breve y concreta; la interfaz utiliza lenguaje cotidiano.
 
 En términos de diseño, Relevo es un sistema phygital: la aplicación organiza, el objeto señala, el lugar aporta significado y la persona conserva la decisión. No pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento.
 
@@ -107,6 +107,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Revisión completa de la memoria
+
+- **Qué cambió:** la descripción dice que la señal dura unos 30 segundos y se detiene sola, sin llamarla «breve».
+- **Cómo estaba antes:** «una señal sonora breve, de unos 30 segundos».
+- **Por qué:** la memoria revisada describe el pulso como más prolongado que una notificación y más breve que una alarma; «breve» sin contexto podía confundirse con un aviso de un segundo.
 
 ### 2026-09-25 — Sin luz y prueba de 21 días
 

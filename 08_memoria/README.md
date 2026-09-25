@@ -72,7 +72,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
-- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de incorporar la señal solo sonora y la prueba de 21 días, tiene 15.567 palabras según `wc -w`, y los seis apartados con límite propio cumplen su rango; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de la revisión completa de redacción, tiene 15.697 palabras según el método del control de extensión, y los seis apartados con límite propio cumplen su rango; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -86,6 +86,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Revisión completa de redacción
+
+- **Cambio:** el control de extensión registra 15.697 palabras; se nombra el método del control en lugar de `wc -w`.
+- **Versión anterior:** 15.567, atribuidas a `wc -w`, aunque el control usa `str.split` de Python y ambos métodos difieren en unas pocas palabras.
+- **Motivo:** la revisión completa de la memoria precisó fuentes, retiró restos de la señal luminosa y alineó el capítulo 13 con el protocolo 02.
 
 ### 2026-09-25 — Señal sonora y prueba de 21 días
 
