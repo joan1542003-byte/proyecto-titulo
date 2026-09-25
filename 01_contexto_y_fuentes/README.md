@@ -5,6 +5,8 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 
 **Consulta del feedback:** [Feedback del 2 de septiembre: fuente, respuestas y pendientes](feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
+**Anotaciones de la última clase:** [texto original y estado frente a la app 2.6](anotaciones-clase-originales-2026-09-23.md), con las decisiones que siguen pendientes.
+
 ## Documentos
 
 - [Inventario de fuentes](inventario-de-fuentes.md): identifica cada fuente, su función, nivel y relación con otras versiones.
@@ -48,6 +50,12 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Anotaciones de clase
+
+- **Qué cambió:** se enlazó el texto original de las anotaciones de la última clase y su estado.
+- **Cómo estaba antes:** solo existían la síntesis y la aplicación de esas notas.
+- **Por qué:** el autor pidió guardarlas para un trabajo posterior.
 
 ### 2026-09-25 — Biblioteca sin copias protegidas
 

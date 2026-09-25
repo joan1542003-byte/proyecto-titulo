@@ -72,7 +72,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
-- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de la revisión página por página, tiene 15.443 palabras según `wc -w`, y los seis apartados con límite propio cumplen su rango; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de la revisión página por página, tiene 15.438 palabras según `wc -w`, y los seis apartados con límite propio cumplen su rango; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -86,6 +86,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Aparición progresiva del proyecto
+
+- **Cambio:** el control de extensión registra 15.438 palabras.
+- **Versión anterior:** 15.443.
+- **Motivo:** se retiraron de los capítulos 2, 6 y 7 menciones anticipadas de Relevo.
 
 ### 2026-09-25 — Revisión página por página
 

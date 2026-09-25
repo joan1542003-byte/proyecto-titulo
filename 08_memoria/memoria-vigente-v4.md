@@ -85,7 +85,7 @@ La **memoria prospectiva** ayuda a precisar esa diferencia. Designa la capacidad
 
 Esta investigación pregunta cómo puede el Diseño apoyar la recuperación oportuna de una intención personal durante una sesión de ocio digital, sin prohibir la actividad actual ni imponer una jerarquía entre formas de descanso. Para responder, estudia la experiencia subjetiva del ocio, las decisiones de interfaz que sostienen la continuidad, el papel del contexto y las formas en que las personas delegan el recuerdo en objetos, notas o alarmas, además de las soluciones que ya existen y lo que dejan abierto.
 
-La memoria sigue ese recorrido. Los capítulos 3 a 6 plantean el problema, lo justifican y lo sitúan en la investigación existente; el capítulo 7 presenta las entrevistas, y el 8, las herramientas disponibles. De esa investigación se derivan los criterios de diseño del capítulo 9, que orientan la formulación de Relevo —una aplicación Android y un objeto que se deja junto al comienzo de la actividad elegida— y su desarrollo, factibilidad y plan de validación en los capítulos 10 a 13.
+La memoria sigue ese recorrido. Los capítulos 3 a 6 plantean el problema, lo justifican y lo sitúan en la investigación existente; el capítulo 7 presenta las entrevistas, y el 8, las herramientas disponibles. De esa investigación se derivan los criterios de diseño del capítulo 9, y solo a partir de ellos se formulan la propuesta, su desarrollo, su factibilidad y su plan de validación en los capítulos 10 a 13.
 
 # 3. Planteamiento del problema
 
@@ -177,7 +177,7 @@ Una interfaz define acciones, esfuerzos y puntos de cierre. El desplazamiento in
 
 Algunas interfaces introducen **fricción**, es decir, un esfuerzo adicional como esperar, confirmar o desplazarse. La fricción puede abrir una ocasión de reconsiderar, pero si es excesiva frustra o dificulta actividades legítimas. Las demoras estudiadas por Grüning et al. (2023) y Haliburton et al. (2024) abren una elección, aunque se concentran en la acción digital presente: dificultar la continuidad puede producir una pausa sin que la persona recuerde qué otra cosa quería hacer. Sigue abierta la pregunta por una ayuda que devuelva esa alternativa sin restringir el acceso.
 
-La autonomía depende de comprender la intervención y poder aceptarla, ajustarla o rechazarla. Una ayuda persistente o difícil de detener puede presionar aunque no bloquee el teléfono, y un tono amable no reemplaza la posibilidad real de elegir. En un experimento con 526 personas sobre una intervención digital para aumentar el consumo de verduras, ofrecer opciones mejoró la evaluación de la intervención, mientras que cambiar solo el lenguaje no produjo diferencias significativas (Smit et al., 2019). El estudio no evalúa Relevo, pero distingue una salida real de una frase que solo suena alentadora.
+La autonomía depende de comprender la intervención y poder aceptarla, ajustarla o rechazarla. Una ayuda persistente o difícil de detener puede presionar aunque no bloquee el teléfono, y un tono amable no reemplaza la posibilidad real de elegir. En un experimento con 526 personas sobre una intervención digital para aumentar el consumo de verduras, ofrecer opciones mejoró la evaluación de la intervención, mientras que cambiar solo el lenguaje no produjo diferencias significativas (Smit et al., 2019). El estudio no trata del ocio digital, pero distingue una salida real de una frase que solo suena alentadora.
 
 Si no existe una intención alternativa, la duración o la aplicación no justifican por sí solas una interrupción, y seguir después de recordar una intención también puede ser válido. Un sistema puede registrar tiempo, aplicación activa, horario o conexión, pero esos datos no revelan aburrimiento, culpa o satisfacción; interpretarlos como estados subjetivos llevaría a intervenciones injustificadas.
 
@@ -193,7 +193,7 @@ Kirsh (1995) explica que la forma de disponer los objetos puede simplificar la e
 
 El espacio introduce a la vez límites de percepción, privacidad y convivencia. Los objetos pueden moverse o quedar cubiertos, y una señal puede molestar a otros. Situar una interacción exige estudiar las condiciones de cada hogar y permitir cambiar la asociación.
 
-La **interacción tangible** incorpora objetos físicos a la representación o manipulación de información; su significado puede depender de la ubicación, la presencia, el peso y el movimiento, además del tacto. Una experiencia **phygital** integra componentes físicos y digitales con funciones complementarias. Añadir un objeto a una aplicación no basta: la relación debe aportar a la experiencia y evaluarse como un conjunto. *The Tangible Reminder* (Hermann et al., 2007) muestra cómo una instalación física puede comunicar compromisos en el entorno; a la vez, todo objeto de este tipo introduce exigencias de energía, mantenimiento, costo y aprendizaje. Waggoner et al. (2026), en una revisión sobre investigación de experiencia de usuario en contextos *phygital*, concluyen que los métodos establecidos deben adaptarse para estudiar la relación entre lo físico y lo digital. Para este proyecto, eso significa evaluar la aplicación y el objeto como un solo sistema y comprobar si la capa física aporta valor frente a una solución exclusivamente digital.
+La **interacción tangible** incorpora objetos físicos a la representación o manipulación de información; su significado puede depender de la ubicación, la presencia, el peso y el movimiento, además del tacto. Una experiencia **phygital** integra componentes físicos y digitales con funciones complementarias. Añadir un objeto a una aplicación no basta: la relación debe aportar a la experiencia y evaluarse como un conjunto. *The Tangible Reminder* (Hermann et al., 2007) muestra cómo una instalación física puede comunicar compromisos en el entorno; a la vez, todo objeto de este tipo introduce exigencias de energía, mantenimiento, costo y aprendizaje. Waggoner et al. (2026), en una revisión sobre investigación de experiencia de usuario en contextos *phygital*, concluyen que los métodos establecidos deben adaptarse para estudiar la relación entre lo físico y lo digital. Para una propuesta de este tipo, eso significa evaluar sus componentes físicos y digitales como un solo sistema y comprobar si la capa física aporta valor frente a una solución exclusivamente digital.
 
 ## Conclusiones del marco teórico
 
@@ -248,7 +248,7 @@ Los contraejemplos cumplen una función central. Dentro del corpus muestran que 
 
 Las entrevistas indagaron también cómo las personas intentaban modificar sus sesiones. Mencionaron alejar el teléfono, cargarlo en otro lugar, silenciarlo, activar el modo no molestar o, en un caso, desinstalar temporalmente una aplicación (P1–P5 y P7–P8, Q12). Son estrategias declaradas, no observadas ni comparadas, pero muestran que la distancia, el lugar y el silencio ya forman parte del repertorio cotidiano de varios participantes. También revelan su límite: alejar el teléfono reduce su disponibilidad, pero no siempre evita el retorno ni recuerda qué actividad se quería comenzar.
 
-Ante la idea anterior del proyecto, varias personas pidieron señales calmadas, discretas o visuales (P3–P5 y P7–P8, Q13), y una rechazó expresamente las notas o comparaciones entre días (P7, Q13). Esa idea registraba un descanso ya realizado en lugar de recordar una intención durante la sesión, y la pregunta presentó un concepto, no una experiencia de uso. Por eso estas reacciones solo orientan criterios generales de tono y discreción; no validan Relevo ni definen su forma.
+Ante la idea anterior del proyecto, varias personas pidieron señales calmadas, discretas o visuales (P3–P5 y P7–P8, Q13), y una rechazó expresamente las notas o comparaciones entre días (P7, Q13). Esa idea registraba un descanso ya realizado en lugar de recordar una intención durante la sesión, y la pregunta presentó un concepto, no una experiencia de uso. Por eso estas reacciones solo orientan criterios generales de tono y discreción; no validan una propuesta ni definen su forma.
 
 ## Dos situaciones de usuario
 
@@ -802,6 +802,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 25 de septiembre de 2026 — El proyecto aparece de a poco
+
+- **Cambio:** el párrafo de orientación de la introducción ya no nombra ni describe Relevo; dice que la propuesta se formula a partir de los criterios. En los capítulos 6 y 7 se quitaron menciones anticipadas: «El estudio no evalúa Relevo» pasa a «El estudio no trata del ocio digital», «la aplicación y el objeto» pasa a «sus componentes físicos y digitales» y «no validan Relevo» pasa a «no validan una propuesta».
+- **Versión anterior:** la revisión página por página había agregado a la introducción una descripción de Relevo, y dos menciones anteriores nombraban el proyecto antes del capítulo 10.
+- **Motivo:** el autor recordó que en la memoria el proyecto aparece de manera progresiva, después del problema, la investigación y los criterios. El resumen y el *abstract* sí lo nombran, porque resumen todo el documento.
+- **Alcance:** la introducción queda en 645 palabras, dentro de su rango, y el segmento previo a referencias en 15.438.
 
 ### 25 de septiembre de 2026 — Revisión página por página
 

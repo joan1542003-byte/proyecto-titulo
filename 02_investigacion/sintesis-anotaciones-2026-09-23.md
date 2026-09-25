@@ -1,6 +1,6 @@
 # Anotaciones del 23 de septiembre: fundamento, respuesta escrita y límites
 
-**Estado:** síntesis de investigación y criterios para revisión. No representa funciones implementadas ni resultados con personas. **Fuente de entrada:** notas entregadas por el autor el 23 de septiembre de 2026. **Base consultada:** revisión `fe416ca` de `main`, entrevistas P1–P8, memoria v4, sistema de marca vigente y prototipo Android 2.3.
+**Estado:** síntesis de investigación y criterios para revisión. No representa funciones implementadas ni resultados con personas. **Fuente de entrada:** notas entregadas por el autor el 23 de septiembre de 2026. El texto original y su estado frente a la app 2.6 están en [anotaciones de clase](../01_contexto_y_fuentes/anotaciones-clase-originales-2026-09-23.md). **Base consultada:** revisión `fe416ca` de `main`, entrevistas P1–P8, memoria v4, sistema de marca vigente y prototipo Android 2.3.
 
 ## Qué está confirmado y qué permanece abierto
 
@@ -73,6 +73,12 @@ La guía de Android fija áreas táctiles mínimas de 48 dp y recomienda revisar
 - Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Enlace al texto original
+
+- **Qué cambió:** la procedencia enlaza el texto original de las notas.
+- **Antes:** el texto original no estaba en el repositorio.
+- **Por qué:** conservar la fuente junto a su análisis.
 
 ### 2026-09-23 — Matiz sobre rachas y reconocimiento
 
