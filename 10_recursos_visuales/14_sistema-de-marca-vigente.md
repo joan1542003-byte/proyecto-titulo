@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** el [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) propone una identidad nueva a partir de la investigación: idea «una coma, no un punto final», relato en tres actos, logotipo «relevo,» con coma propia, Radio Canada como tipografía del sistema, tinta y papel con azul de lápiz pasta y tratamiento de imagen propio. Está registrada como [D-069](../09_decisiones/registro-de-decisiones.md) y reemplaza a D-067 y D-068. Mientras el autor no la apruebe, este documento sigue vigente.
+> **Revisión en curso (25 de septiembre de 2026):** la propuesta [«Suena donde empieza»](19_marca-suena-donde-empieza-2026-09-25.md) ([D-071](../09_decisiones/registro-de-decisiones.md)) reemplaza a las anteriores (D-067, D-068 y D-069). Parte de la decisión del autor de no usar luz por ahora (D-070): la señal es un sonido que sale del lugar de la actividad. Propone una firma sonora propia, el logotipo «relevo» en Radio Canada, la etiqueta de lugar como recurso gráfico y tinta y papel con azul pasta. Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan suspendidas por D-070.
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso de D-070 y D-071
+
+- **Qué cambió:** el aviso remite a la propuesta D-071 y suspende las menciones a la luz por D-070.
+- **Cómo estaba antes:** el aviso remitía al documento 18 y a D-069.
+- **Por qué:** el autor rechazó la coma y decidió no usar luz por ahora.
 
 ### 2026-09-25 — Aviso actualizado
 

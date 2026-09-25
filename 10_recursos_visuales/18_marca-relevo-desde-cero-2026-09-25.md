@@ -1,7 +1,7 @@
 # Marca Relevo desde cero
 
 **Fecha:** 25 de septiembre de 2026.
-**Estado:** propuesta registrada como D-069, pendiente de decisión del autor. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062).
+**Estado:** antecedente. El autor consideró la coma un cliché y el relato genérico, y decidió que Relevo no usará luz por ahora (D-070). La propuesta vigente es [«Suena donde empieza»](19_marca-suena-donde-empieza-2026-09-25.md) (D-071). Las menciones de luz de este documento y de su lámina quedan como historia.
 **Reemplaza a:** las propuestas D-067 ([exploración 16](16_exploracion-visual-2026-09-25.md)) y D-068 ([documento 17](17_identidad-visual-segunda-propuesta-2026-09-25.md)), que se conservan como antecedentes.
 **Materiales:**
 - [Lámina](marca-desde-cero/lamina-marca-desde-cero-2026-09-25.html).
@@ -438,6 +438,12 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Pasa a antecedente
+
+- **Qué cambió:** el estado remite a D-071 y a D-070.
+- **Cómo estaba antes:** era la propuesta D-069, pendiente de decisión.
+- **Por qué:** el autor rechazó la coma y pidió sacar la luz de todos los medios.
 
 ### 2026-09-25 — Relato, fundamentos y tipografía de texto
 

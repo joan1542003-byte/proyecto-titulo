@@ -1,6 +1,6 @@
 # Marca Relevo desde cero: materiales
 
-**Estado:** propuesta D-069, pendiente de decisión del autor. El fundamento está en el [documento 18](../18_marca-relevo-desde-cero-2026-09-25.md).
+**Estado:** antecedente (D-069, reemplazada por [D-071](../19_marca-suena-donde-empieza-2026-09-25.md)). La lámina y las rutas usan luz, que el autor decidió no usar por ahora (D-070); se conservan como historia. La receta de imagen sigue en uso. El fundamento está en el [documento 18](../18_marca-relevo-desde-cero-2026-09-25.md).
 
 ## Contenido
 
@@ -36,6 +36,12 @@ Las personas que aparecen en `tratada-75` y `evitar-05` no son participantes del
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Pasa a antecedente
+
+- **Qué cambió:** el estado indica que estos materiales son antecedente.
+- **Cómo estaba antes:** eran la propuesta D-069 pendiente.
+- **Por qué:** el autor rechazó la coma y la luz; la propuesta vigente es D-071.
 
 ### 2026-09-25 — Rutas desde el nombre
 

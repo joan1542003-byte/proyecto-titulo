@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con un [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-069](../09_decisiones/registro-de-decisiones.md)). Su idea es «una coma, no un punto final»: un relato en tres actos, logotipo «relevo,» con coma propia, Radio Canada como tipografía del sistema, tinta y papel con un azul de lápiz pasta y un tratamiento de imagen con receta propia; cada decisión de logotipo y color cita su fundamento. Reemplaza a las propuestas «punto y pulso» (D-067) y «un lugar que se enciende» (D-068), que se conservan como antecedentes.
+**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Suena donde empieza»](19_marca-suena-donde-empieza-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-071](../09_decisiones/registro-de-decisiones.md)). Relevo no usará luz por ahora (D-070): la señal es un sonido que sale del lugar de la actividad, y la marca se construye sobre ese hecho con un relato en cinco momentos, una firma sonora propia, el logotipo «relevo» en Radio Canada, la etiqueta de lugar como recurso gráfico y tinta y papel con azul pasta. Reemplaza a «punto y pulso» (D-067), «un lugar que se enciende» (D-068) y «una coma para volver a elegir» (D-069), que se conservan como antecedentes.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -40,7 +40,8 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 15. [Aplicación Android implementada](15_aplicacion-android-implementada.md)
 16. [Exploración visual: punto, pulso y lugar](16_exploracion-visual-2026-09-25.md) y su [lámina](lamina-exploracion-visual-2026-09-25.html) (antecedente)
 17. [Identidad visual: segunda propuesta](17_identidad-visual-segunda-propuesta-2026-09-25.md), su [lámina](lamina-identidad-relevo-2026-09-25.html) y los [archivos del logotipo](marca-segunda-propuesta/) (antecedente)
-18. [Marca Relevo desde cero](18_marca-relevo-desde-cero-2026-09-25.md) y sus [materiales](marca-desde-cero/README.md): lámina, logotipo, fotos y receta de imagen
+18. [Marca Relevo desde cero](18_marca-relevo-desde-cero-2026-09-25.md) y sus [materiales](marca-desde-cero/README.md): lámina, logotipo, fotos y receta de imagen (antecedente)
+19. [Suena donde empieza](19_marca-suena-donde-empieza-2026-09-25.md) y sus [materiales](marca-suena-donde-empieza/README.md): lámina, firma sonora, logotipo y fotos
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -70,6 +71,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Documento 19
+
+- **Qué cambió:** se añadieron el documento 19 y la carpeta `marca-suena-donde-empieza/`; el estado describe D-070 y D-071, y el documento 18 pasa a antecedente.
+- **Cómo estaba antes:** el estado describía la propuesta D-069, con coma y luz.
+- **Por qué:** el autor rechazó la coma y decidió no usar luz por ahora.
 
 ### 2026-09-25 — Relato y fundamentos
 

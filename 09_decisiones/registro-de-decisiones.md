@@ -660,7 +660,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-069 — Relevo, una coma para volver a elegir (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-067 y D-068.
+- **Estado:** reemplazada el mismo día por D-071 a pedido del autor, que consideró la coma un cliché y el relato genérico; se conserva como antecedente. Reemplazaba a D-067 y D-068.
 - **Decisión propuesta:**
   - *Idea y verbal*: idea de marca «una coma, no un punto final»; frase «Una coma para volver a elegir»; descriptor «Un recordatorio físico que preparas desde tu teléfono»; uso del significado del nombre («Todo relevo empieza con una pausa»).
   - *Logotipo*: «relevo,» con letras de Atkinson Hyperlegible Next y una coma propia de cabeza circular (el objeto) en azul pasta `#2A4BD7`; monograma «r,».
@@ -683,7 +683,50 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Implementación pendiente si se aprueba:** fuentes, paleta, aviso nocturno e ícono de la app; tipografía y portada de la memoria; sesión fotográfica propia; patrón de luz en la micro:bit.
 - **Documentación:** [marca desde cero](../10_recursos_visuales/18_marca-relevo-desde-cero-2026-09-25.md) y [materiales](../10_recursos_visuales/marca-desde-cero/README.md).
 
+## D-070 — Señal sonora, sin luz por ahora
+
+- **Fecha:** 2026-09-25.
+- **Estado:** vigente para la marca; su alcance sobre el objeto y la memoria está pendiente.
+- **Decisión:** Relevo no usará luz por ahora. La señal del objeto es un sonido, como en la app 2.6, y ningún medio de marca muestra luz, brillos ni ventanas encendidas.
+- **Fundamento:** decisión del autor del 25 de septiembre. La app 2.6 ya emite solo sonido, por el parlante Bluetooth elegido o por el teléfono.
+- **Pendiente:** la memoria describe una señal de luz y sonido (capítulos 1, 10, 11 y 13, y el glosario) y la primera prueba de asociación usa una luz blanca cálida. Si la decisión se extiende al proyecto, esos capítulos, la prueba y los documentos del objeto deben revisarse juntos.
+- **Condición de revisión:** evidencia de que el sonido no basta para notar la señal o excluye a personas con baja audición (véase la sección de accesibilidad de la memoria).
+- **Documentación:** [marca «Suena donde empieza»](../10_recursos_visuales/19_marca-suena-donde-empieza-2026-09-25.md).
+
+## D-071 — Suena donde empieza (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-069.
+- **Decisión propuesta:**
+  - *Idea y verbal*: idea de marca «No falta voluntad. Falta lugar»; firma «Suena donde empieza»; descriptor «Un recordatorio que preparas en el teléfono y suena en el lugar de tu actividad»; relato en cinco momentos con final abierto.
+  - *Nombre*: las acepciones de «relevar» como resaltar y como liberar de un peso, sin metáforas de carrera ni de turno.
+  - *Firma sonora*: dos notas de timbre de madera en descenso (587 → 440 Hz), una vez, 2,2 s, con ataque de banda ancha.
+  - *Logotipo*: «relevo» en minúsculas con Radio Canada 650, sin símbolo gráfico; ícono «r».
+  - *Recurso gráfico*: la etiqueta de lugar (anillo, línea y texto con lugar, actividad, primer paso y condición).
+  - *Color*: tinta, papel, grafito, niebla, noche y azul pasta como único acento; sin luz.
+  - *Tipografía*: Radio Canada en tres anchos.
+- **Fundamento:**
+  - *Relato*: Escalas (2004), Green y Brock (2000), Woodside et al. (2008); autonomía y ocio sin culpa (Smit et al., 2019; Tonietto et al., 2021).
+  - *Idea*: McDaniel y Einstein (2000), Gollwitzer y Sheeran (2006), Montag et al. (2019), Risko y Gilbert (2016) y Stothart et al. (2015).
+  - *Sonido*: urgencia percibida (Edworthy et al., 1991; Hellier et al., 1993), localización (Middlebrooks & Green, 1991) y logos sonoros (Krishnan et al., 2012).
+  - *Gráfica*: Ward et al. (2020), Xu et al. (2017), Barthes (1977), Kress y van Leeuwen (2021).
+  - *Contrastes*: tinta sobre papel 16,12:1; azul pasta con papel 6,18:1; azul claro sobre noche 8,04:1.
+- **Alternativas:** D-069 (la coma); rutas desde el nombre (pasar el testigo, volver a levantar, zona de relevo), que dependían de la luz o de metáforas de carrera; D-062.
+- **Condición de revisión:**
+  - si la firma se oye, se ubica y no suena urgente en hogares reales;
+  - si la etiqueta de lugar se entiende sin explicación;
+  - reconocimiento del ícono;
+  - lectura del relato por personas que no conocen el proyecto.
+- **Implementación pendiente si se aprueba:** campo de lugar en la app; firma sonora en lugar del tono actual, decidido antes del testeo 2.6; fuentes, paleta e ícono; reescritura del documento 14; sesión fotográfica propia.
+- **Documentación:** [marca «Suena donde empieza»](../10_recursos_visuales/19_marca-suena-donde-empieza-2026-09-25.md) y [materiales](../10_recursos_visuales/marca-suena-donde-empieza/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-070 y D-071
+
+- **Qué cambió:** se registraron la decisión del autor de no usar luz por ahora (D-070) y la propuesta «Suena donde empieza» (D-071); D-069 se marcó como reemplazada.
+- **Cómo era antes:** D-069 («una coma para volver a elegir», con luz cálida en el objeto) era la propuesta pendiente.
+- **Por qué se decidió:** el autor consideró la coma un cliché, pidió un relato que no suene genérico y decidió sacar la luz de todos los medios; la aprobación de D-071 sigue siendo suya.
 
 ### 2026-09-25 — D-069 propuesta
 
