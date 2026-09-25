@@ -625,10 +625,10 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 
 - **Fecha:** 2026-09-25.
 - **Estado:** propuesta pendiente de aprobación del autor; mientras tanto rige D-062.
-- **Decisión propuesta:** añadir al logotipo un símbolo de punto (el objeto), línea (el lugar) y arcos (la señal); reservar el coral `#F47F68` para el punto y el momento del aviso, con `#C4492F` para texto sobre fondo claro; unificar el verde en `#006B5F` también en la app.
-- **Fundamento:** el sistema de D-062 era poco reconocible y la app 2.6 ya usa un coral y un ícono de punto con anillos que la marca no recogía. El coral de la app tiene 2,44:1 sobre el fondo claro y no cumple el 3:1 exigido para componentes gráficos.
-- **Alternativas:** mantener la dirección tipográfica de D-062; dirección «lugar reservado» con corchete, serif y neutros cálidos.
-- **Condición de revisión:** pruebas de lectura del símbolo (confusión con Wi-Fi), tono del coral (invitación frente a alarma), reconocimiento del ícono y contraste en el teléfono de prueba.
+- **Decisión propuesta:** añadir al logotipo un símbolo de punto (el objeto), línea (el lugar) y arcos (la señal) con dos estados: en reposo, punto del color del texto y sin arcos; en aviso, «el punto se enciende» en ámbar `#FFAD58` y aparecen los arcos. El ámbar reproduce en pantalla la luz blanca cálida de 2700 K del objeto; `#9C5A0F` se usa para texto e íconos de aviso sobre fondo claro. Reemplazar el coral de la app por ese ámbar y unificar el verde en `#006B5F`.
+- **Fundamento:** el sistema de D-062 era poco reconocible y la app 2.6 ya usa un coral y un ícono de punto con anillos que la marca no recogía. Una auditoría de ocho referentes mostró cuatro códigos que Relevo debe evitar (medición, control, juego y bienestar calmo) y ninguno que represente un lugar o una señal única. El coral tiene 2,44:1 sobre el fondo claro, está cerca del rojo que la literatura asocia a evitación en contextos de logro (Elliot et al., 2007; Mehta & Zhu, 2009) y se distingue menos del verde en la simulación de daltonismo (ΔE 28 y 51 frente a 58 y 72 del ámbar). El ámbar tiene 9,50:1 con grafito y 3,48:1 sobre el verde, pero solo 1,73:1 sobre fondo claro; por eso el punto va en grafito en reposo y sobre fondos claros.
+- **Alternativas:** mantener la dirección tipográfica de D-062; conservar el coral de la app; otros nueve símbolos evaluados en la exploración (entre ellos punto sobre línea, halo y corchete con punto).
+- **Condición de revisión:** pruebas de lectura del símbolo (confusión con Wi-Fi), tono de la señal, ámbar frente a coral (invitación frente a alarma), reconocimiento del ícono y contraste en el teléfono de prueba.
 - **Documentación:** [exploración visual](../10_recursos_visuales/16_exploracion-visual-2026-09-25.md) y [lámina](../10_recursos_visuales/lamina-exploracion-visual-2026-09-25.html).
 
 ## Registro de cambios (disclaimer)
@@ -638,6 +638,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Qué cambió:** se registró la propuesta de identidad «punto y pulso».
 - **Cómo era antes:** D-062 cerraba la marca sin símbolo ni color de señal.
 - **Por qué se decidió:** la nueva exploración visual pedida por el autor recomienda ajustar la marca; se registra como propuesta porque la aprobación le corresponde al autor.
+- **Actualización del mismo día:** la exploración se rehízo con método y fuentes; la propuesta cambió el coral `#F47F68` / `#C4492F` por el ámbar `#FFAD58` / `#9C5A0F` y añadió la regla de dos estados del símbolo. Antes, D-067 reservaba el coral para la señal sin fundamentar el color.
 
 ### 2026-09-25 — D-063 a D-066
 

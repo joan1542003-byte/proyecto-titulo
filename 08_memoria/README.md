@@ -71,7 +71,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
-- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de la revisión editorial según la pauta UDP, tiene 14.804 palabras según `wc -w`; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de la revisión editorial según la pauta UDP y de la revisión de lectura para quien no conoce el proyecto, tiene 15.072 palabras según `wc -w`; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -85,6 +85,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Revisión de lectura
+
+- **Cambio:** el control de extensión registra 15.072 palabras después de explicar códigos, términos y placas electrónicas y de nombrar los criterios con palabras.
+- **Versión anterior:** registraba 14.804 palabras.
+- **Motivo:** mantener sincronizado el índice con la memoria.
 
 ### 2026-09-25 — Revisión editorial según la pauta UDP
 

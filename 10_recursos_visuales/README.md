@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, reabierto parcialmente por una [nueva exploración visual](16_exploracion-visual-2026-09-25.md) del 25 de septiembre que recomienda la dirección «punto y pulso». La adopción queda pendiente de la decisión del autor.
+**Estado:** sistema de marca vigente del 16 de septiembre, reabierto parcialmente por una [nueva exploración visual](16_exploracion-visual-2026-09-25.md) del 25 de septiembre que recomienda la dirección «punto y pulso»: un símbolo de dos estados cuyo punto se enciende en ámbar, el color en pantalla de la luz del objeto. La adopción queda pendiente de la decisión del autor ([D-067](../09_decisiones/registro-de-decisiones.md)).
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -68,6 +68,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Exploración visual fundamentada
+
+- **Qué cambió:** el estado de la carpeta resume la propuesta rehecha (símbolo de dos estados y ámbar de señal) y enlaza D-067; el documento 16 y su lámina se reescribieron con método, auditoría de referentes, candidatos puntuados, contraste y simulación de daltonismo.
+- **Cómo era antes:** la entrada anterior del mismo día describía tres direcciones y una recomendación basada en el coral de la app.
+- **Por qué:** el autor pidió una exploración adecuada y fundamentada.
 
 ### 2026-09-25 — Nueva exploración visual
 

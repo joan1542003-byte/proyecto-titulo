@@ -9,7 +9,7 @@ Esta matriz permite comprobar cómo los criterios del capítulo 9 se desprenden 
 
 ## Correspondencia
 
-C1–C8 identifican los ocho criterios para seguimiento; no son números de apartado. En la memoria se desarrollan en tres bloques: intención y comienzo (C1–C2), activación y autonomía (C3–C5), y carga, convivencia y aporte físico (C6–C8).
+C1–C8 identifican los ocho criterios para seguimiento; no son números de apartado. En la memoria no se usa la letra: C1 corresponde a «Criterio 1», C2 a «Criterio 2» y así sucesivamente. En la memoria se desarrollan en tres bloques: intención y comienzo (C1–C2), activación y autonomía (C3–C5), y carga, convivencia y aporte físico (C6–C8).
 
 | Criterio | Evidencia principal | Aporte al criterio | Límite vigente |
 | --- | --- | --- | --- |
@@ -31,6 +31,12 @@ La matriz también permite distinguir niveles de certeza. La literatura y las en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Equivalencia con la memoria
+
+- **Qué cambió:** se indicó que C1–C8 equivalen a «Criterio 1» a «Criterio 8» en la memoria.
+- **Cómo estaba antes:** la matriz usaba los códigos C1–C8 y la memoria también los usaba sin explicarlos.
+- **Por qué:** el autor señaló que la letra C no se entendía; la memoria ahora nombra los criterios con palabras y la matriz conserva los códigos para seguimiento interno.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

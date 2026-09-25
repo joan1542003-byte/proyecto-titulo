@@ -4,13 +4,13 @@
 
 ## Qué es
 
-Relevo es un sistema phygital para que una persona vuelva a considerar una actividad que eligió mientras usa una aplicación de ocio digital. Prepara en Android la actividad, una forma concreta de empezarla y la condición para recibir un aviso. La propuesta final contempla un objeto situado cerca de esa actividad, capaz de emitir luz y sonido. La señal ofrece una ocasión de decidir; no bloquea el teléfono ni comprueba que la actividad se realizó.
+Relevo es un sistema *phygital* —con un componente físico y uno digital que cumplen funciones relacionadas— para que una persona vuelva a considerar una actividad que eligió mientras usa una aplicación de ocio digital. Prepara en Android la actividad, una forma concreta de empezarla y la condición para recibir un aviso. La propuesta final contempla un objeto situado cerca de esa actividad, capaz de emitir luz y sonido. La señal ofrece una ocasión de decidir; no bloquea el teléfono ni comprueba que la actividad se realizó.
 
 ## Qué existe hoy
 
-La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) permite preparar un ciclo, sumar el uso de varias aplicaciones seleccionadas hasta un solo límite y elegir entre un parlante Bluetooth multimedia o el teléfono como salida de prueba. El indicador de inicio es una respuesta autodeclarada, no una conducta observada. El APK compila y diez pruebas unitarias pasan. Se inspeccionaron pantallas en emulador, pero no se ha verificado el recorrido completo, la reproducción en un parlante físico, la sincronización de eventos ni el borrado remoto y local extremo a extremo. El parlante puede reproducir audio de otras aplicaciones y no es un testigo exclusivo de Relevo.
+La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) permite preparar un recordatorio, sumar el uso de varias aplicaciones seleccionadas hasta un solo límite y elegir entre un parlante Bluetooth multimedia o el teléfono como salida de prueba. El indicador de inicio es una respuesta autodeclarada, no una conducta observada. El APK compila y diez pruebas unitarias pasan. Se inspeccionaron pantallas en emulador, pero no se ha verificado el recorrido completo, la reproducción en un parlante físico, la sincronización de eventos ni el borrado remoto y local extremo a extremo. El parlante puede reproducir audio de otras aplicaciones y no es un testigo exclusivo de Relevo.
 
-La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se verificaron sus 64 referencias: todas existen, y se corrigieron datos bibliográficos, paráfrasis de entrevistas y la descripción del prototipo ([revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md)). El mismo día se revisó su redacción según la pauta de presentación de la UDP, y una [nueva exploración visual](../10_recursos_visuales/16_exploracion-visual-2026-09-25.md) propone completar la marca con un símbolo de punto y pulso, pendiente de aprobación. Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
+La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se verificaron sus 64 referencias: todas existen, y se corrigieron datos bibliográficos, paráfrasis de entrevistas y la descripción del prototipo ([revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md)). El mismo día se revisó su redacción según la pauta de presentación de la UDP, y se revisó para que la entienda quien no conoce el proyecto: los criterios se nombran con palabras y se explican los códigos de participantes y preguntas. Una [exploración visual fundamentada](../10_recursos_visuales/16_exploracion-visual-2026-09-25.md) propone completar la marca con un símbolo de punto y pulso cuyo punto se enciende en ámbar, el color en pantalla de la luz del objeto, pendiente de aprobación ([D-067](../09_decisiones/registro-de-decisiones.md)). Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
 
 ## Qué cambió y qué falta
 
@@ -19,6 +19,12 @@ El feedback del 23 de septiembre llevó a distinguir recordar una intención, em
 Antes de convocar participantes faltan pruebas en teléfono y parlante reales, revisión académica del consentimiento y comprobación del envío y eliminación de datos locales y remotos. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) ya describe Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Lectura de la memoria y propuesta visual
+
+- **Qué cambió:** se define *phygital* al primer uso, «ciclo» pasa a «recordatorio», y se resumen la revisión de lectura de la memoria y la propuesta visual con ámbar de señal.
+- **Cómo estaba antes:** el resumen usaba *phygital* y «ciclo» sin explicarlos y describía la exploración visual sin su color.
+- **Por qué:** mantener el resumen sincronizado con la memoria y con D-067.
 
 ### 2026-09-25 — Memoria revisada y exploración visual
 

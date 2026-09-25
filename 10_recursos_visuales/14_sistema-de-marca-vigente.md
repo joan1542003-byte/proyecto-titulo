@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** la [exploración 16](16_exploracion-visual-2026-09-25.md) propone añadir un símbolo de punto y pulso, un coral reservado a la señal con variantes accesibles y unificar el verde de la app en `#006B5F`. Mientras el autor no la apruebe, este documento sigue vigente.
+> **Revisión en curso (25 de septiembre de 2026):** la [exploración 16](16_exploracion-visual-2026-09-25.md) propone añadir un símbolo de punto y pulso con dos estados (en reposo, punto apagado; en aviso, el punto se enciende en ámbar `#FFAD58`, el color en pantalla de la luz de 2700 K del objeto), reemplazar el coral de la app y unificar su verde en `#006B5F`. Está registrada como [D-067](../09_decisiones/registro-de-decisiones.md). Mientras el autor no la apruebe, este documento sigue vigente.
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso actualizado a la exploración fundamentada
+
+- **Qué cambió:** el aviso describe ahora la propuesta de dos estados y el ámbar de señal, y enlaza D-067.
+- **Cómo estaba antes:** el aviso mencionaba un coral reservado a la señal.
+- **Por qué:** la exploración 16 se rehízo con método y fuentes, y reemplazó el coral por el ámbar derivado de la luz del objeto.
 
 ### 2026-09-25 — Aviso de revisión
 
