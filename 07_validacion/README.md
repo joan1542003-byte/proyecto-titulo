@@ -2,7 +2,7 @@
 
 **Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Es una copia fechada para revisión, no el consentimiento vigente: conserva un contacto en blanco y un plazo anterior. El paquete único previo permanece en el archivo histórico.
 
-**Instrumentos preparados para revisión:** [pauta del prototipo Android 2.5](pauta-testeo-prototipo-android-2026-09-23.md), [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md) y [borrador de consentimiento Android](consentimiento-android-vigente-2026-09-23.md). El contacto y el plazo ya están indicados, pero antes de emplearlos con participantes hay que comprobar la gestión y eliminación de datos y probar el [APK vigente](../06_desarrollo_y_factibilidad/app-android/README.md) con el teléfono y parlante concretos. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
+**Instrumentos preparados para revisión:** [pauta del prototipo Android 2.6](pauta-testeo-prototipo-android-2026-09-23.md), [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md) y [borrador de consentimiento Android](consentimiento-android-vigente-2026-09-23.md). El contacto y el plazo ya están indicados, pero antes de emplearlos con participantes hay que comprobar la gestión y eliminación de datos y probar el [APK vigente](../06_desarrollo_y_factibilidad/app-android/README.md) con el teléfono y parlante concretos. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -12,6 +12,8 @@
 Comprobar por separado las hipótesis de Relevo y usar los resultados para mantener, modificar o abandonar decisiones.
 
 ## Orden de pruebas vigente
+
+Hay dos líneas complementarias. La primera evalúa el prototipo Android 2.6 con un parlante Bluetooth: comprobación técnica sin participantes (conteo con varias apps, salida de sonido, silencio, envío y eliminación de datos) y, si se supera junto con la revisión del consentimiento, una evaluación formativa de preparación, comprensión, carga y control con la [pauta Android](pauta-testeo-prototipo-android-2026-09-23.md). La segunda es la secuencia del objeto con luz y sonido, que se describe a continuación:
 
 1. **Banco técnico:** Android–BLE, patrón, sonido, reconexión y silencio local sin participantes.
 2. **Material de fase A:** salida blanca cálida difundida, estabilidad y revisión del conjunto.
@@ -23,7 +25,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
-- [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario comprobado en 2.3 y vigente en 2.4, respuesta para la comisión y texto candidato; el correo y la fecha límite ya están indicados, pero falta verificar la eliminación y el canal de contacto antes de participantes.
+- [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario iniciado en 2.3 y conciliado con 2.6, respuesta para la comisión y texto candidato; el correo y la fecha límite ya están indicados, pero falta verificar la eliminación y el canal de contacto antes de participantes.
 - [Modelo de datos para evaluar la aplicación](modelo-datos-evaluacion-app-2026-09-22.md): define qué registra el prototipo Android, qué preguntas puede responder y qué inferencias quedan excluidas.
 - [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
 - [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
@@ -69,6 +71,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Instrumentos 2.6 y dos líneas de prueba
+
+- **Cambio:** el índice apunta a la pauta y la ficha sincronizadas con Android 2.6, describe la auditoría de privacidad conciliada con 2.6 y distingue la línea de evaluación del prototipo Android de la secuencia del objeto con luz y sonido.
+- **Antes:** nombraba la pauta 2.5 y una auditoría «vigente en 2.4», y el orden de pruebas no mencionaba el prototipo Android.
+- **Motivo:** que el índice corresponda a los instrumentos que se aplicarían y a la memoria vigente.
 
 ### 2026-09-23 — Instrumentos 2.5
 

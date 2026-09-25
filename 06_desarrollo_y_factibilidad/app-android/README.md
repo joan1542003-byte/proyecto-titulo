@@ -22,6 +22,8 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
+**Licencias de recursos de terceros:** [fuente Source Sans 3 y procedencia de imágenes](licencias/README.md).
+
 La versión 2.6 compila y sus pruebas unitarias pasan. Se inspeccionaron en emulador consentimiento, tutorial, Inicio y preparación con dos aplicaciones. El ciclo completo, la reproducción en un parlante real, la eliminación remota y el envío de eventos aún no se han verificado de extremo a extremo. No es una aplicación validada con participantes.
 
 ## Qué permite hacer
@@ -99,6 +101,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Licencia de la fuente
+
+- **Cambio:** se enlazó el registro de licencias, con el aviso de la SIL Open Font License de Source Sans 3.
+- **Antes:** la fuente se distribuía dentro del proyecto sin su aviso de licencia.
+- **Motivo:** cumplir las condiciones de redistribución de la fuente en un repositorio público.
 
 ### 2026-09-24 — Revisión funcional 2.6
 

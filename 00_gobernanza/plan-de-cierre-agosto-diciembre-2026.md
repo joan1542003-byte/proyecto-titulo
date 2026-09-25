@@ -2,7 +2,7 @@
 
 **Fecha de planificación:** 2 de septiembre de 2026
 
-**Última revisión de estado:** 16 de septiembre de 2026
+**Última revisión de estado:** 25 de septiembre de 2026
 
 **Cierre total interno:** 15 de noviembre de 2026
 
@@ -22,6 +22,8 @@ Relevo se encuentra en una etapa de **construcción y comprobación**. El recorr
 
 El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. El programa mínimo para micro:bit V2 ya compila y dispone de un archivo instalable. Todavía faltan acceso a la placa, instalación, conexión medida, incorporación de una luz blanca cálida externa, ensayo y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden cerrar el wireframe.
 
+Entre el 21 y el 24 de septiembre se construyó la [aplicación Android](../06_desarrollo_y_factibilidad/app-android/README.md) hasta la versión 2.6, con varias apps bajo un límite común, salida de sonido elegible, consentimiento y solicitud de eliminación. Compila y pasa sus pruebas unitarias, pero aún no se ha probado en un teléfono y un parlante reales ni con personas. El hito del 19 de septiembre (app base y señal manual) se cumplió con retraso en la parte de la app; la señal física propia sigue pendiente.
+
 Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La prioridad es convertir las hipótesis más importantes en prototipos, pruebas y decisiones.
 
 ## Estado por área
@@ -35,9 +37,9 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Memoria | Avanzada, no final | Estructura v4, extensión, APA 7, trazabilidad y anexos preparados. | Incorporar decisiones, resultados, límites, factibilidad y evidencia final. |
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Cerrado para producción | Nombre, mensaje, tipografía, paleta, logotipo y reglas por soporte documentados. | Aplicar el sistema y corregir solo problemas demostrados de comprensión, accesibilidad o reproducción. |
-| Prototipo Android | Preparado para construcción | Plataforma justificada, wireframe v1 congelado, recorrido mínimo y backlog definidos. | Construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
+| Prototipo Android | Construido, sin probar en equipos reales | Versión 2.6: preparación por etapas, varias apps con un límite común, notificación persistente, salida por parlante o teléfono, consentimiento, historial y solicitud de eliminación; compila y pasa diez pruebas unitarias. | Probar el ciclo completo en teléfono y parlante reales, verificar el envío y la eliminación de datos, y añadir el vínculo con un testigo propio. |
 | Testigo físico | Banco preparado, no ejecutado | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado y documentado. | Acceder a la placa, instalar, añadir la salida cálida, medir, revisar el montaje y completar después la integración portátil. |
-| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Construir y revisar el prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
+| Validación | Preparada, no ejecutada | Protocolo inicial, pauta y ficha para Android 2.6, consentimientos y criterios previos documentados. | Completar la comprobación técnica del prototipo y la eliminación de datos; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Verificar la arquitectura candidata, medir consumo y cerrar protección, conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
 
@@ -295,6 +297,12 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado posterior a Android 2.6
+
+- **Qué cambió:** la etapa actual y el estado por área incorporan la aplicación Android 2.6 y los instrumentos de validación sincronizados.
+- **Cómo estaba antes:** la última revisión era del 16 de septiembre y describía el prototipo Android como «preparado para construcción».
+- **Por qué:** el plan debe reflejar lo realizado para priorizar bien las semanas restantes. Las fechas del calendario no cambian.
 
 ### 2026-09-16 — Paso a construcción y comprobación
 

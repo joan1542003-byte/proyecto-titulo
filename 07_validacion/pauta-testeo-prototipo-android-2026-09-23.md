@@ -1,6 +1,6 @@
-# Relevo — pauta de evaluación formativa del prototipo Android 2.5
+# Relevo — pauta de evaluación formativa del prototipo Android 2.6
 
-**Sesión de revisión docente:** 23 de septiembre de 2026. **Estado:** instrumento para revisión y ajuste; no contiene resultados ni autoriza por sí solo el reclutamiento. **Versión descrita:** APK Android 2.5, junto con el teléfono y el parlante Bluetooth concretos que se declaren antes de cada sesión.
+**Sesión de revisión docente:** 23 de septiembre de 2026. **Estado:** instrumento para revisión y ajuste; no contiene resultados ni autoriza por sí solo el reclutamiento. **Versión descrita:** APK Android 2.6 (actualizada el 25 de septiembre de 2026), junto con el teléfono y el parlante Bluetooth concretos que se declaren antes de cada sesión.
 
 ## Propósito y alcance
 
@@ -10,11 +10,11 @@ La evaluación no determina si la persona tiene un problema de uso digital, si d
 
 ## Prototipo y límites que se deben explicar
 
-La versión 2.5 permite registrar una actividad y una manera concreta de comenzar, elegir una aplicación, definir un umbral de 1 minuto a 6 horas, indicar una ubicación, revisar la configuración y activar el ciclo. La preparación está dividida en cuatro etapas; la creación de una actividad propia, en tres. La aplicación acumula el tiempo mientras la aplicación elegida está en primer plano y muestra una notificación persistente durante el monitoreo. El mínimo documentado es Android 12 (API 31). La compilación y las pruebas unitarias pasaron; la inspección visual completa en teléfono y el recorrido con un parlante real siguen pendientes. Véanse el [APK 2.5](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.5-2026-09-23.apk) y el [estado técnico de la versión](../06_desarrollo_y_factibilidad/app-android/README.md).
+La versión 2.6 permite registrar una actividad y una manera concreta de comenzar, elegir **una o varias aplicaciones** cuyo tiempo en primer plano se suma hasta un único umbral de 1 minuto a 6 horas, indicar una ubicación, elegir la salida del sonido, probarla, revisar la configuración y activar el ciclo. La preparación está dividida en cuatro etapas; la creación de una actividad propia, en tres. Antes del tutorial, la app pide aceptar el uso académico de los datos. Durante el monitoreo muestra una notificación persistente y pausa el conteo cuando la persona sale de las aplicaciones elegidas, para retomarlo al volver. El mínimo documentado es Android 12 (API 31). La compilación y diez pruebas unitarias pasaron, y en emulador se revisaron consentimiento, tutorial, Inicio y preparación con dos aplicaciones; el recorrido completo en un teléfono real, la reproducción en un parlante real, el envío de eventos y la eliminación de datos siguen pendientes. Véanse el [APK 2.6](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.6-2026-09-24.apk) y el [estado técnico de la versión](../06_desarrollo_y_factibilidad/app-android/README.md).
 
-El código solicita dirigir **el tono de Relevo** a una salida Bluetooth compatible y comprueba la ruta reportada por Android. Si no detecta esa salida, no reproduce el tono por el altavoz del teléfono; si se pierde la conexión durante el sonido, lo detiene. Esto aún debe comprobarse con los dispositivos concretos. Un parlante multimedia corriente puede convertirse en la salida de audio general del teléfono: la app no impide que YouTube, Instagram u otras aplicaciones suenen también por él. Android no garantiza que la ruta preferida sea la ruta efectiva. La función Samsung *Separate app sound* depende del modelo y no puede suponerse en otros teléfonos. Véase el [análisis de enrutamiento](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
+La persona elige expresamente si el tono suena en un **parlante Bluetooth multimedia** o en el **altavoz del teléfono**, y puede probarlo antes de activar. Con el parlante, el código solicita dirigir **el tono de Relevo** a esa salida y comprueba la ruta que informa Android; si la salida elegida no está disponible, informa el fallo y no cambia de salida sin avisar. El tono continúa mientras el ciclo esté en estado de señal, también con la app fuera de pantalla, y se detiene al silenciar o cerrar. Todo esto debe comprobarse con los dispositivos concretos. Un parlante multimedia corriente puede convertirse en la salida de audio general del teléfono: la app no impide que YouTube, Instagram u otras aplicaciones suenen también por él. Android no garantiza que la ruta preferida sea la ruta efectiva. La función Samsung *Separate app sound* depende del modelo y no puede suponerse en otros teléfonos. Véase el [análisis de enrutamiento](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
 
-Por lo tanto, no presentar como comprobadas la exclusividad del parlante, la conexión persistente, la percepción del sonido fuera de la app ni la ausencia de interferencias. El prototipo Android 2.5 descrito aquí no aporta una luz física; no evaluar ni prometer esa salida en esta sesión.
+Por lo tanto, no presentar como comprobadas la exclusividad del parlante, la conexión persistente, la percepción del sonido fuera de la app ni la ausencia de interferencias. El prototipo Android 2.6 no aporta una luz física; no evaluar ni prometer esa salida en esta sesión. Si una sesión usa el altavoz del teléfono, registrarla como variante sin objeto situado: sirve para revisar preparación y control, pero no para evaluar el aporte del lugar.
 
 ## Pregunta de evaluación
 
@@ -41,7 +41,7 @@ La pauta parte de tareas y contextos de uso definidos y registra qué ocurre par
 
 ## Puerta ética y de privacidad antes de convocar
 
-La auditoría de privacidad iniciada en la versión 2.3, cuyo esquema remoto permanece en 2.5, describe almacenamiento local en una base de datos del teléfono y sincronización a Supabase, el servicio remoto de datos del proyecto, si la app tiene configurada su dirección y clave publicable. Los registros pueden incluir actividad, forma de comenzar, lugar declarado, aplicación elegida, umbral, tiempos, eventos y respuesta final opcional. El identificador aleatorio no vuelve anónimos esos registros: son seudonimizados, es decir, se asocian a un código en vez del nombre, pero podrían relacionarse con una persona. La ruta completa de eliminación —incluidos la base local, el historial, las credenciales, el servidor y los respaldos aplicables— no está verificada. Véase [protección de datos del prototipo](privacidad-prototipo-android-2026-09-23.md).
+La auditoría de privacidad iniciada en la versión 2.3, cuyo esquema remoto permanece en 2.6, describe almacenamiento local en una base de datos del teléfono y sincronización a Supabase, el servicio remoto de datos del proyecto, si la app tiene configurada su dirección y clave publicable. Los registros pueden incluir actividad, forma de comenzar, lugar declarado, aplicaciones elegidas, umbral, tiempos, eventos y respuesta final opcional. El identificador aleatorio no vuelve anónimos esos registros: son seudonimizados, es decir, se asocian a un código en vez del nombre, pero podrían relacionarse con una persona. La ruta completa de eliminación —incluidos la base local, el historial, las credenciales, el servidor y los respaldos aplicables— no está verificada. Véase [protección de datos del prototipo](privacidad-prototipo-android-2026-09-23.md).
 
 Antes de reclutar, la persona responsable debe:
 
@@ -59,10 +59,12 @@ Registrar fecha, versión exacta del APK, teléfono, sistema Android, parlante, 
 
 - conexión, desconexión y reconexión del parlante;
 - señal de Relevo con la app visible y fuera de pantalla;
-- ruta que Android informa para el tono, y que el teléfono no emita el tono cuando no haya una salida admitida;
+- prueba de sonido previa con cada salida, ruta que Android informa para el tono y aviso visible cuando la salida elegida no está disponible;
 - posibilidad de silenciar y cerrar el ciclo, y corte del sonido si se pierde la conexión;
 - reproducción de un audio de control de otra aplicación en el mismo teléfono: comprobar si también sale por el parlante. Registrar el resultado sin prometer separación;
-- funcionamiento del permiso de acceso de uso y, si se probará el aviso fuera de pantalla, de las notificaciones.
+- funcionamiento del permiso de acceso de uso y, si se probará el aviso fuera de pantalla, de las notificaciones;
+- conteo acumulado con dos aplicaciones usadas de forma alternada, pausa al salir de ellas y reanudación;
+- solicitud de eliminación desde Privacidad y datos, con y sin conexión, y comprobación de que los registros desaparecen del teléfono y de la base remota.
 
 La conexión normal de un parlante Bluetooth multimedia no reserva el dispositivo para Relevo. Si el audio de control de otra app sale por el parlante, anotar el hecho y explicar la limitación. Si la sesión busca evaluar únicamente la comprensión de Relevo, puede continuar solo si el sonido no crea un riesgo o una confusión; no usarla para afirmar que existe una salida exclusiva. Si falla la señal prevista, clasificar la observación como incidencia técnica, no como falta de comprensión.
 
@@ -78,21 +80,21 @@ Preguntar: «¿Hay algo que te gustaría hacer en una situación en que a veces 
 
 Indicar: «Deja preparado Relevo para esa actividad y decide tú cómo tendría sentido que te avisara». No señalar controles ni sugerir app, tiempo o ubicación. Observar la preparación por etapas, el uso de atrás/revisión y cualquier duda. Si la persona se detiene, esperar; ofrecer ayuda solo cuando la solicite o no pueda continuar y anotar literalmente qué ayuda se dio.
 
-Al terminar, preguntar: «Cuéntame con tus palabras qué dejaste configurado y qué esperas que ocurra». Comprobar comprensión de: actividad y comienzo elegidos; aplicación que se observa; condición temporal configurada; ubicación declarada; canal de aviso. No corregir durante la tarea salvo que exista un riesgo o una decisión de privacidad incomprendida. Registrar primero la interpretación espontánea y luego aclarar los hechos necesarios para continuar.
+Al terminar, preguntar: «Cuéntame con tus palabras qué dejaste configurado y qué esperas que ocurra». Comprobar comprensión de: actividad y comienzo elegidos; aplicaciones que se observan y que su tiempo se suma; condición temporal configurada; ubicación declarada; canal de aviso. No corregir durante la tarea salvo que exista un riesgo o una decisión de privacidad incomprendida. Registrar primero la interpretación espontánea y luego aclarar los hechos necesarios para continuar.
 
 ### Tarea 2 — Situar y activar — 5 minutos
 
-Indicar: «Ubica el parlante donde te parezca que podría ayudarte a empezar y activa el relevo si todavía te hace sentido». Observar el tiempo y esfuerzo de ubicar/conectar el parlante, el espacio disponible, si la ubicación la elige la persona y si la relación con la actividad le resulta clara. Preguntar antes de que llegue la señal: «¿Qué esperas que pase, dónde y por qué?». No proponer una ubicación.
+Indicar: «Ubica el parlante donde te parezca que podría ayudarte a empezar, prueba el sonido si quieres y activa el relevo si todavía te hace sentido». Observar el tiempo y esfuerzo de ubicar/conectar el parlante, el espacio disponible, si la ubicación la elige la persona y si la relación con la actividad le resulta clara. Preguntar antes de que llegue la señal: «¿Qué esperas que pase, dónde y por qué?». No proponer una ubicación.
 
 ### Tarea 3 — Esperar y recibir el aviso — 8–12 minutos
 
-La persona usa la aplicación que eligió con un umbral breve acordado y registrado. La duración configurada y la duración real de la tarea son datos distintos. Si se usa el modo de comprobación de 15 segundos documentado en la app, etiquetar la sesión como demostración técnica breve: no permite concluir que la experiencia del umbral habitual o de una sesión cotidiana funciona igual.
+La persona usa una de las aplicaciones que eligió con un umbral breve acordado y registrado. La duración configurada y la duración real de la tarea son datos distintos. Si se usa el modo de comprobación de 15 segundos documentado en la app, etiquetar la sesión como demostración técnica breve: no permite concluir que la experiencia del umbral habitual o de una sesión cotidiana funciona igual.
 
 No anunciar cuándo debe sonar. Registrar si la persona percibe el aviso, qué cree que lo emitió, si mira el teléfono y qué decide hacer. No pedirle que empiece la actividad como prueba de éxito. Después de registrar la primera respuesta espontánea, preguntar: «¿Qué te hizo pensar el aviso?», «¿Qué actividad habías pensado hacer y por dónde podrías empezar?» y «¿Qué decidiste hacer después?». Anotar si la actividad y el comienzo surgieron espontáneamente o después de la pregunta. Si no suena, suena por otra salida o la conexión falla, detener la interpretación de experiencia, registrar la incidencia y ofrecer repetir solo si la persona quiere.
 
 ### Tarea 4 — Controlar y cerrar — 3–5 minutos
 
-Indicar: «Haz con el aviso lo que te parezca adecuado y termina el relevo cuando quieras». Observar si encuentra el control real para silenciar o cerrar, si sabe revisar o cambiar una elección disponible y si entiende que puede seguir, posponer o cambiar de idea. No dar por hecho una función de pausa manual, eliminación de datos o desconexión selectiva si no está presente y verificada. No insistir si la persona no quiere continuar.
+Indicar: «Haz con el aviso lo que te parezca adecuado y termina el relevo cuando quieras». Observar si encuentra el control real para silenciar o cerrar, si sabe revisar o cambiar una elección disponible y si entiende que puede seguir, posponer o cambiar de idea. No dar por hecho una función de pausa manual o desconexión selectiva que no exista. La solicitud de eliminación existe en Privacidad y datos, pero solo puede ofrecerse como vía de retiro si superó la comprobación técnica previa. No insistir si la persona no quiere continuar.
 
 ### Conversación final — 8 minutos
 
@@ -134,7 +136,7 @@ Clasificar por indicador cuántas sesiones muestran cada tipo de dificultad, y a
 
 | Momento | Trabajo | Condición para avanzar |
 |---|---|---|
-| Corrección docente, 23-09-2026 | Revisar pertinencia de las tareas, indicadores, reglas de registro y alcance declarado de la versión 2.5. | Registrar qué observaciones se aceptan, se ajustan o quedan abiertas. |
+| Corrección docente, 23-09-2026 | Revisar pertinencia de las tareas, indicadores, reglas de registro y alcance declarado de la versión evaluada (2.5 en la sesión docente; 2.6 desde el 24 de septiembre). | Registrar qué observaciones se aceptan, se ajustan o quedan abiertas. |
 | Antes de invitar participantes | Resolver contacto, consentimiento, configuración efectiva de datos, retención y eliminación; probar la ruta de audio con el equipo exacto. | No iniciar reclutamiento mientras la información entregada o la prueba técnica no sean suficientes. |
 | Piloto | Aplicar el procedimiento, registrar duración y ayudas y revisar comprensión de las preguntas. | Si se cambia el instrumento, documentar la versión y separar el piloto del análisis posterior. |
 | Septiembre–octubre de 2026 | Ejecutar una ronda formativa, corregir problemas y documentar decisiones. Considerar una comparación del lugar solo con protocolo revisado. | No atribuir a la ubicación un efecto que no se comparó. |
@@ -155,6 +157,12 @@ Organización Internacional de Normalización. (2019). *ISO 9241-210:2019. Ergon
 Sauro, J. (2010, 2 de marzo). *If you could only ask one question, use this one*. MeasuringU. https://measuringu.com/single-question/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sincronización con Android 2.6
+
+- **Qué cambió:** la pauta describe el APK 2.6: varias aplicaciones con un solo umbral, elección y prueba de la salida de sonido (parlante o teléfono), consentimiento previo, pausa del conteo al salir de las apps elegidas y solicitud de eliminación. La comprobación técnica previa incluye el conteo con dos apps y la eliminación con y sin conexión.
+- **Cómo era antes:** describía 2.5, con una sola aplicación, solo salida Bluetooth y la eliminación como función no presente.
+- **Por qué:** el instrumento debe corresponder a la versión que se instalará; la sesión docente del 23 de septiembre se conserva como antecedente en la tabla de revisión.
 
 ### 2026-09-23 — Sincronización con Android 2.5
 
