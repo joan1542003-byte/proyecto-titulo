@@ -4,237 +4,216 @@
 
 ## Memoria de Proyecto de Título
 
-- **Disciplina:** Diseño
-- **Institución:** Universidad Diego Portales
 - **Estudiante:** Johan Yantén
-- **Año académico:** 2026
+- **Nota de título:** Memoria para optar al título profesional de la carrera de Diseño *(confirmar la denominación oficial y la mención)*
+- **Profesor o profesora guía:** *(por completar)*
+- **Unidad académica:** Facultad de Arquitectura, Arte y Diseño, Escuela de Diseño, Universidad Diego Portales
+- **Lugar y fecha:** Santiago, Chile, 2026
 
 ## Resumen
 
-El ocio digital ocupa un lugar habitual en la vida cotidiana. Conversar, jugar, mirar videos o recorrer redes sociales pueden ser formas legítimas de descanso y entretención. Sin embargo, algunas sesiones se prolongan sin que la persona vuelva a decidir si quiere continuar. En esos momentos, una actividad que también deseaba realizar puede dejar de estar presente justo cuando todavía era posible comenzarla. El problema no radica en el teléfono ni en una cantidad universal de minutos, sino en la dificultad de recuperar una intención propia dentro de una interacción que ofrece contenido de manera continua.
+Algunas sesiones de ocio digital se prolongan sin que la persona vuelva a decidir si quiere continuar. En esos momentos, otra actividad que también deseaba realizar puede dejar de estar presente justo cuando todavía era posible comenzarla. Este proyecto tiene como objetivo diseñar y evaluar formativamente un sistema phygital que ayude a recuperar esa intención sin bloquear el teléfono ni calificar la decisión posterior.
 
-La investigación reúne bibliografía sobre ocio, conflicto entre metas, bienestar digital, recuerdo de acciones futuras y uso de objetos físicos para interactuar con información. También considera ocho entrevistas semiestructuradas realizadas a personas de 19 a 27 años y un análisis de herramientas que miden, interrumpen o bloquean el uso del teléfono. Los antecedentes muestran que las experiencias digitales no pueden juzgarse solo por su duración y que las respuestas existentes se concentran, principalmente, en limitar la actividad presente. A partir de esta revisión se distinguen dos situaciones de uso: aquella en que una intención alternativa pierde presencia y aquella en que la actividad digital conserva sentido, por lo que interrumpirla sería improcedente.
+La investigación combinó una revisión bibliográfica sobre ocio, conflicto entre metas, bienestar digital, memoria prospectiva e interacción tangible; ocho entrevistas semiestructuradas con personas de 19 a 27 años, analizadas con el método Framework; y una comparación de herramientas que miden, pausan, bloquean o alejan el teléfono. Los resultados muestran que la duración no basta para juzgar una sesión, que las herramientas existentes actúan sobre todo sobre la actividad presente y que conviene distinguir dos situaciones: una en que la intención alternativa pierde presencia y otra en que el ocio digital conserva sentido y no debe interrumpirse. De ello se derivan ocho criterios de diseño.
 
-Relevo propone un sistema phygital: integra una aplicación Android y un objeto físico situado cerca del primer paso de una actividad elegida. Cuando se cumple una condición configurada por la persona, el objeto emite una señal ambiental breve. Su propósito es hacer nuevamente perceptible la intención, sin bloquear el teléfono ni decidir qué debe ocurrir después. Un prototipo Android ya permite preparar ese ciclo y emitir un aviso sonoro, pero todavía no se ha probado con personas. La propuesta se entiende como una hipótesis de diseño que deberá comprobar su aporte frente al aviso digital definido para la prueba.
+Relevo responde con una aplicación Android y un objeto situado junto al primer paso de la actividad elegida, que emite una señal breve de luz y sonido cuando se cumple una condición configurada. El proyecto cuenta con un prototipo Android funcional que prepara el ciclo y emite un aviso sonoro, y con un protocolo para comparar la señal situada con una notificación digital. El aporte del objeto físico sigue siendo una hipótesis que esas pruebas deberán confirmar o descartar.
 
 **Palabras clave:** ocio digital, memoria prospectiva, autonomía, diseño phygital.
 
 ## Abstract
 
-Digital leisure has become part of everyday life. Talking to others, playing games, watching videos, or browsing social media can be legitimate forms of rest and entertainment. Nevertheless, some sessions continue without the person making a renewed decision to remain engaged. At such moments, another activity they intended to pursue may no longer come to mind while there is still time to begin it. The issue does not lie in the phone itself or in a universal amount of time, but in the difficulty of recovering a personal intention within an interaction that continuously offers more content.
+Some digital leisure sessions continue without the person deciding again whether to go on. At such moments, another activity they also wanted to do may fade from view precisely when it could still begin. This project aims to design and formatively evaluate a phygital system that helps people recover that intention without blocking the phone or judging what they decide next.
 
-This study draws on literature about leisure experience, goal conflict, prospective memory, digital wellbeing, and tangible interaction. It also considers eight semi-structured interviews with people aged 19 to 27 and an analysis of tools that measure, interrupt, or block phone use. The evidence suggests that digital experiences cannot be assessed through duration alone and that existing responses largely focus on restricting the current activity. Two use situations emerge from the analysis: one in which an alternative intention loses salience, and another in which the digital activity remains meaningful and should not be interrupted.
+The research combined a literature review on leisure, goal conflict, digital wellbeing, prospective memory and tangible interaction; eight semi-structured interviews with people aged 19 to 27, analysed with the Framework method; and a comparison of tools that measure, pause, block or distance the phone. The results show that duration alone cannot establish the value of a session, that existing tools mostly act on the current activity, and that two situations should be distinguished: one in which the alternative intention loses salience and another in which digital leisure remains meaningful and should not be interrupted. Eight design criteria follow from these findings.
 
-Relevo is formulated as a phygital system: it combines an Android application with a physical object placed near the first step of a chosen activity. When a user-defined condition is met, the object emits a brief ambient signal. Its purpose is to make the intention perceptible again without blocking the phone or deciding what should happen next. An Android prototype can already prepare this cycle and play a sound cue, but it has not yet been tested with people. The proposal is presented as a design hypothesis whose contribution must be assessed against the digital notice defined for the test.
+Relevo responds with an Android application and an object placed next to the first step of the chosen activity, which emits a brief light and sound cue when a user-defined condition is met. The project has a working Android prototype that prepares the cycle and plays a sound cue, and a protocol to compare the situated cue with a digital notification. The contribution of the physical object remains a hypothesis that these tests must confirm or reject.
 
 **Keywords:** digital leisure, prospective memory, autonomy, phygital design.
 
 ## Índice
 
-1. Motivación personal.
-2. Introducción.
-3. Planteamiento del problema.
-4. Justificación.
-5. Antecedentes y estado de la cuestión.
-6. Marco teórico por ámbitos.
-7. Usuario, contexto y hallazgos de entrevistas.
-8. Estado del arte y referentes.
-9. Criterios de diseño.
-10. Formulación.
-11. Bajada proyectual.
-12. Factibilidad y límites.
-13. Plan de desarrollo y validación.
-14. Referencias.
+1. Motivación personal
+2. Introducción
+3. Planteamiento del problema
+4. Justificación
+5. Antecedentes y estado de la cuestión
+6. Marco teórico por ámbitos
+7. Usuario, contexto y hallazgos de entrevistas
+8. Estado del arte y referentes
+9. Criterios de diseño
+10. Formulación
+11. Bajada proyectual
+12. Factibilidad y límites
+13. Plan de desarrollo y validación
+14. Referencias
+
+Glosario
+
+### Índice de tablas
+
+- Tabla 1. Participantes y función analítica de cada entrevista
+- Tabla 2. Familias de herramientas y sus límites frente al problema
+- Tabla 3. Actores y responsabilidades
+- Tabla 4. Estados del ciclo y salidas disponibles
+- Tabla 5. Soporte requerido en cada momento de la experiencia
+
+### Índice de figuras
+
+- Figura 1. Relación entre intención, lugar, condición y decisión
 
 # 1. Motivación personal
 
-Me ocurre con frecuencia abrir una aplicación para descansar unos minutos y permanecer en ella más tiempo del que imaginaba. Al cerrarla, descubro que otras actividades que también quería realizar —dibujar, leer, caminar o preparar algo con calma— dejaron de estar presentes durante ese intervalo. No siempre decido abandonarlas; simplemente dejan de participar en lo que hago.
+Me ocurre con frecuencia abrir una aplicación para descansar unos minutos y quedarme en ella más tiempo del que imaginaba. Al cerrarla, descubro que otras cosas que también quería hacer —dibujar, leer, caminar o cocinar con calma— dejaron de estar presentes en ese intervalo. No decidí abandonarlas; simplemente dejaron de participar en lo que hacía.
 
-Esta experiencia no me lleva a pensar que todo uso del teléfono sea negativo. Muchas veces encuentro allí entretención, conversación, información o un descanso que valoro. Lo que me inquieta es la diferencia entre elegir continuar y darme cuenta, después, de que no volví a considerar mis otras intenciones.
+No pienso que todo uso del teléfono sea negativo. Muchas veces encuentro en él entretención, conversación, información o un descanso que valoro. Lo que me inquieta es la diferencia entre elegir seguir y darme cuenta, después, de que no volví a considerar lo demás.
 
-Me interesa observar ese momento sin convertirlo en un juicio sobre disciplina o productividad. Quiero comprender por qué una intención personal puede perder presencia, qué condiciones favorecen esa situación y de qué manera el Diseño puede ayudar a que vuelva a ser considerada. La pregunta nace de una experiencia cercana, pero también de la necesidad de respetar que descansar, cambiar de actividad o seguir frente al teléfono pueden ser decisiones igualmente válidas.
+Me interesa estudiar ese momento sin convertirlo en un juicio sobre disciplina o productividad: por qué una intención personal pierde presencia, qué condiciones lo favorecen y cómo el Diseño podría ayudar a que vuelva a ser considerada. La pregunta nace de una experiencia propia, pero parte de un límite claro: descansar, cambiar de actividad o seguir frente al teléfono pueden ser decisiones igualmente válidas.
 
 # 2. Introducción
 
-Los teléfonos inteligentes reúnen comunicación, información, trabajo y entretenimiento en un mismo dispositivo. Su incorporación a la vida cotidiana ha cambiado la forma de organizar el tiempo y también la manera de descansar. Una persona puede conversar con amistades, escuchar música, jugar, mirar una serie o recorrer una red social sin cambiar de soporte. Esta diversidad impide tratar el uso del teléfono como una experiencia única y vuelve insuficiente cualquier evaluación basada solamente en la duración.
+Los teléfonos inteligentes reúnen comunicación, información, trabajo y entretenimiento en un mismo dispositivo. Han cambiado la forma de organizar el tiempo y también la de descansar: una persona puede conversar, escuchar música, jugar, mirar una serie o recorrer una red social sin cambiar de soporte. Esa diversidad impide tratar el uso del teléfono como una experiencia única y vuelve insuficiente cualquier evaluación basada solo en la duración.
 
-El ocio digital se entiende aquí como el conjunto de actividades mediadas por dispositivos que una persona realiza en su tiempo disponible con fines de descanso, entretención, curiosidad o vínculo social. No se opone necesariamente a otras formas de ocio ni debe justificarse por su utilidad. Una sesión extensa puede ser satisfactoria y coherente con lo que alguien desea hacer. Del mismo modo, una sesión breve puede sentirse inoportuna si desplaza una actividad que la persona consideraba importante. La diferencia depende del propósito, el contexto y la valoración de quien vive la experiencia (Lukoff et al., 2018; Meier & Reinecke, 2021).
+Aquí se entiende por **ocio digital** el conjunto de actividades mediadas por dispositivos que una persona realiza en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros. No se opone a otras formas de ocio ni necesita justificarse por su utilidad. Una sesión extensa puede ser satisfactoria y coherente con lo que alguien desea; una breve puede sentirse inoportuna si desplaza algo que la persona consideraba importante. La diferencia depende del propósito, el contexto y la valoración de quien vive la experiencia (Lukoff et al., 2018; Meier & Reinecke, 2021).
 
-Dentro de ese marco aparece una situación específica. Al comenzar una actividad digital, la persona puede tener presente otra intención: salir a caminar, leer, dibujar, ordenar un espacio, dormir o conversar con alguien. Aun así, la sesión continúa y esa alternativa deja de orientar el siguiente paso. Cuando vuelve a recordarla, la ocasión puede haber cambiado o el tiempo disponible puede ser menor. No se trata necesariamente de olvidar por completo ni de perder el control. Se trata de que una intención propia no estuvo disponible en el momento en que podía influir en la decisión.
+Dentro de ese marco aparece una situación específica. Al comenzar una actividad digital, la persona puede tener presente otra intención: salir a caminar, leer, dibujar, ordenar su pieza, dormir o llamar a alguien. Aun así, la sesión continúa y esa alternativa deja de orientar el paso siguiente. Cuando vuelve a recordarla, la ocasión puede haber cambiado o quedar menos tiempo. No se trata de olvidar por completo ni de perder el control, sino de que una intención propia no estuvo disponible cuando podía influir en la decisión.
 
-Algunas interfaces favorecen la continuidad. El **desplazamiento infinito** es un patrón que carga contenido nuevo a medida que la persona avanza, sin presentar un final de página claramente marcado. La reproducción automática y las recomendaciones encadenadas cumplen una función semejante: el siguiente contenido aparece sin exigir una elección nueva. Estas características no determinan por sí solas la conducta, pero reducen los puntos de cierre y mantienen disponible la acción actual (de Segovia Vicente et al., 2024; Montag et al., 2019).
+Algunas interfaces favorecen esa continuidad. El **desplazamiento infinito** carga contenido nuevo a medida que la persona avanza, sin un final de página reconocible; la reproducción automática y las recomendaciones encadenadas hacen algo parecido, porque el siguiente contenido aparece sin exigir una elección nueva. Estos patrones no determinan la conducta, pero reducen los puntos de cierre y mantienen disponible la acción actual (de Segovia Vicente et al., 2024; Montag et al., 2019).
 
-Las herramientas revisadas frente a esta situación miden el tiempo, fijan límites, bloquean aplicaciones o introducen pausas antes de abrirlas (Apple, s. f.; Google, s. f.-c; Lyngs et al., 2019). Tales recursos pueden ser útiles cuando alguien quiere reducir una conducta concreta. Sin embargo, detener la actividad presente no basta para recuperar aquello que se quería hacer. Un bloqueo puede cerrar una aplicación y, al mismo tiempo, dejar ausente la intención alternativa. También puede interrumpir una conversación o un descanso que la persona sí desea mantener. Por eso resulta necesario distinguir entre impedir una acción y volver perceptible otra posibilidad.
+Las herramientas que abordan esta situación miden el tiempo, fijan límites, bloquean aplicaciones o introducen pausas antes de abrirlas (Apple, s. f.; Google, s. f.-c; Lyngs et al., 2019). Son útiles cuando alguien quiere reducir una conducta concreta, pero detener la actividad presente no devuelve aquello que se quería hacer: un bloqueo puede cerrar una aplicación y dejar igualmente ausente la otra intención, o interrumpir una conversación o un descanso que la persona sí quería mantener. Impedir una acción y volver perceptible otra posibilidad son, por tanto, dos cosas distintas.
 
-La memoria prospectiva permite precisar esta diferencia. El concepto se refiere a la capacidad de recordar una acción que se quiere realizar en el futuro cuando aparece una ocasión adecuada (McDaniel & Einstein, 2000). Recordar al final del día que se quería leer no equivale a recuperar esa intención cuando todavía existía la oportunidad de abrir el libro. Desde esta perspectiva, el problema no consiste en almacenar una meta, sino en encontrar una señal pertinente que ayude a traerla de vuelta al presente.
+La **memoria prospectiva** ayuda a precisar esa diferencia. Designa la capacidad de recordar una acción que se quiere realizar en el futuro cuando aparece la ocasión adecuada (McDaniel & Einstein, 2000). Recordar al final del día que se quería leer no equivale a recuperar esa intención cuando todavía era posible abrir el libro. El problema, entonces, no es almacenar una meta, sino encontrar una señal pertinente que la traiga de vuelta a tiempo.
 
-Esta investigación pregunta cómo puede el Diseño apoyar la recuperación oportuna de una intención personal durante una sesión de ocio digital, sin prohibir la actividad actual ni imponer una jerarquía entre formas de descanso. Para responder, es necesario estudiar la experiencia subjetiva del ocio, las decisiones de interfaz que sostienen la continuidad, el papel del contexto y las formas en que las personas delegan parte del recuerdo en objetos, notas o alarmas. También es indispensable conocer qué soluciones existen, qué problemas resuelven y qué aspectos dejan abiertos.
+Esta investigación pregunta cómo puede el Diseño apoyar la recuperación oportuna de una intención personal durante una sesión de ocio digital, sin prohibir la actividad actual ni imponer una jerarquía entre formas de descanso. Para responder, estudia la experiencia subjetiva del ocio, las decisiones de interfaz que sostienen la continuidad, el papel del contexto y las formas en que las personas delegan el recuerdo en objetos, notas o alarmas, además de las soluciones que ya existen y lo que dejan abierto.
 
 # 3. Planteamiento del problema
 
-En 2025, el 96,6 % de los hogares chilenos declaró contar con acceso propio y pagado a internet. Entre los hogares conectados, el teléfono inteligente fue el dispositivo de acceso más extendido, con una presencia declarada de 99,1 % (Subsecretaría de Telecomunicaciones, 2025). Estas cifras describen un entorno ampliamente conectado, pero no permiten determinar el valor de una experiencia digital. Para comprender la situación estudiada importa observar la relación entre la actividad presente, otras intenciones y el momento de elegir.
-
-El problema se organiza en tres aristas. Cada una examina una parte de la situación y evita atribuirla a una causa única.
+En 2025, el 96,6 % de los hogares chilenos declaró contar con acceso propio y pagado a internet, y entre los hogares conectados el teléfono inteligente fue el dispositivo de acceso más extendido, con una presencia de 99,1 % (Subsecretaría de Telecomunicaciones, 2025). Estas cifras describen un entorno ampliamente conectado, pero no dicen nada sobre el valor de cada experiencia digital. Para comprender la situación estudiada importa la relación entre la actividad presente, otras intenciones y el momento de elegir. El problema se organiza en tres aristas que evitan atribuirlo a una causa única.
 
 ## Arista experiencial y cognitiva
 
-Una persona puede iniciar una actividad digital con un propósito claro y, mientras la realiza, mantener otras intenciones para ese mismo periodo. El conflicto aparece cuando la sesión se prolonga y alguna de esas alternativas deja de orientar la acción inmediata. Recordarla más tarde demuestra que no desapareció necesariamente de la memoria, pero también que no fue recuperada cuando podía participar en la decisión.
+Una persona puede iniciar una actividad digital con un propósito claro y mantener, al mismo tiempo, otras intenciones para ese periodo. El conflicto aparece cuando la sesión se prolonga y alguna de esas alternativas deja de orientar la acción inmediata. Recordarla más tarde muestra que no desapareció de la memoria, pero también que no se recuperó cuando podía participar en la decisión.
 
-De Segovia Vicente et al. (2024) estudiaron el desplazamiento digital percibido como carente de propósito en 1.315 personas adultas, combinando evaluaciones breves repetidas durante el día con registros del teléfono. Cuanto más se prolongaba ese desplazamiento, más culpa reportaban las personas; el conflicto con otras metas explicaba parte de esa relación. El estudio no demuestra causalidad ni permite considerar perjudicial toda sesión extensa. Sí muestra que la relación con otras intenciones influye en la experiencia.
+De Segovia Vicente et al. (2024) estudiaron el desplazamiento digital percibido como carente de propósito en 1.315 personas adultas, combinando evaluaciones breves repetidas durante el día con registros del teléfono. Cuanto más se prolongaba ese desplazamiento, más culpa reportaban, y el conflicto con otras metas explicaba parte de esa relación. El estudio no establece causalidad ni convierte en perjudicial toda sesión extensa, pero indica que la relación con otras intenciones influye en cómo se vive la experiencia.
 
-La dificultad, entonces, no se define como un daño a la memoria ni como una incapacidad permanente. Se presenta en momentos concretos, cuando una intención deja de estar disponible para orientar el siguiente paso. Esta precisión permite estudiar el fenómeno sin diagnosticar a la persona y sin suponer que necesita dejar el teléfono cada vez que lo utiliza.
+La dificultad no se define, por tanto, como un daño a la memoria ni como una incapacidad permanente. Aparece en momentos concretos, cuando una intención deja de estar disponible para orientar el paso siguiente, lo que permite estudiarla sin diagnosticar a la persona ni suponer que necesita dejar el teléfono cada vez que lo usa.
 
 ## Arista tecnológica
 
-Las sesiones digitales ocurren dentro de interfaces diseñadas. El desplazamiento infinito, la reproducción automática y las recomendaciones consecutivas reducen los momentos en que hace falta decidir si se quiere continuar. A diferencia de una página, un capítulo o una pieza con término reconocible, estos patrones mantienen abierta la secuencia y ofrecen una acción siguiente con muy poco esfuerzo (Montag et al., 2019).
+Las sesiones digitales ocurren dentro de interfaces diseñadas. A diferencia de una página, un capítulo o una pieza con término reconocible, el desplazamiento infinito, la reproducción automática y las recomendaciones consecutivas mantienen abierta la secuencia y ofrecen la acción siguiente con muy poco esfuerzo (Montag et al., 2019). Así se reducen los momentos en que hace falta decidir si se quiere continuar.
 
-El propósito, el estado de ánimo, el contexto y los hábitos también influyen. Sin embargo, explicar la experiencia únicamente como falta de disciplina omite que el diseño organiza cierres, transiciones y oportunidades de elección. Pedir confirmación, introducir una pausa o continuar sin interrupciones modifica las condiciones en que la persona decide.
-
-Las herramientas de bienestar digital también son decisiones de diseño. Medir, bloquear o retrasar una apertura se concentra en la conducta presente; cuando otra intención ha perdido presencia, impedir el acceso no garantiza recordarla ni facilita comenzarla.
+El propósito, el estado de ánimo, el contexto y los hábitos también influyen. Pero explicar la experiencia solo como falta de disciplina omite que el diseño organiza cierres, transiciones y oportunidades de elección: pedir confirmación, introducir una pausa o continuar sin interrupciones cambia las condiciones en que la persona decide. Las herramientas de bienestar digital son también decisiones de diseño, y la mayoría actúa sobre la conducta presente. Cuando otra intención ha perdido presencia, impedir el acceso no garantiza recordarla ni facilita comenzarla.
 
 ## Arista evaluativa
 
-El ocio no se valora únicamente por su duración o contenido. También intervienen las expectativas con que una persona interpreta ese tiempo. Tonietto et al. (2021) observaron que considerar el ocio como improductivo o desperdiciado disminuía su disfrute, especialmente cuando la actividad se realizaba como un fin en sí mismo. Aunque el estudio no se refiere exclusivamente al teléfono, permite comprender por qué una intervención basada en culpa o rendimiento podría empeorar la experiencia que intenta apoyar.
+El ocio no se valora solo por su duración o contenido; también influyen las expectativas con que se interpreta ese tiempo. Tonietto et al. (2021) observaron que considerar el ocio como improductivo disminuía su disfrute, sobre todo cuando la actividad se realizaba como un fin en sí mismo. Aunque el estudio no trata específicamente del teléfono, explica por qué una intervención basada en culpa o rendimiento podría empeorar la experiencia que pretende apoyar.
 
-Dos sesiones semejantes pueden adquirir sentidos distintos. Una conversación extensa puede conservar valor afectivo; el mismo tiempo frente a una secuencia de contenidos puede sentirse incongruente con una intención previa. La diferencia no surge de una jerarquía universal entre actividades, sino de la relación que cada persona reconoce entre lo que hace y lo que quería hacer (de Segovia Vicente et al., 2024; Meier & Reinecke, 2021).
+Dos sesiones parecidas pueden tener sentidos distintos: una conversación extensa puede conservar valor afectivo y el mismo tiempo frente a una secuencia de contenidos puede sentirse incongruente con una intención previa. La diferencia no surge de una jerarquía universal entre actividades, sino de la relación que cada persona reconoce entre lo que hace y lo que quería hacer (de Segovia Vicente et al., 2024; Meier & Reinecke, 2021). Por eso el problema no se resuelve imponiendo productividad. Recuperar una intención significa devolverla a la decisión, no transformarla en obligación.
 
-Por ello, el problema no puede resolverse imponiendo productividad. Cualquier respuesta debe respetar la posibilidad de continuar cuando esa sea todavía la elección. Recuperar una intención significa devolverla a la decisión, no transformarla en obligación.
-
-El problema puede sintetizarse así: durante algunos episodios de ocio digital, una actividad continúa mientras otra intención valorada deja de estar presente en el momento de elegir qué hacer a continuación. El desafío de Diseño consiste en apoyar la recuperación de esa intención sin bloquear la actividad actual, decidir por la persona ni intervenir cuando el ocio digital conserva sentido.
+En síntesis, durante algunos episodios de ocio digital una actividad continúa mientras otra intención valorada deja de estar presente en el momento de elegir qué hacer. El desafío de Diseño consiste en apoyar la recuperación de esa intención sin bloquear la actividad actual, sin decidir por la persona y sin intervenir cuando el ocio digital conserva sentido.
 
 # 4. Justificación
 
-Abordar esta situación resulta relevante porque el teléfono participa de forma constante en la vida cotidiana y reúne actividades que no pueden evaluarse mediante una regla única. Las mediciones de tiempo ofrecen información útil, pero no explican si una sesión respondió al propósito de la persona ni si otra intención dejó de estar disponible. Una respuesta más precisa debe reconocer tanto el derecho a cambiar de actividad como el derecho a continuar con un descanso elegido.
+El tema es relevante porque el teléfono participa de forma constante en la vida cotidiana y reúne actividades que no pueden evaluarse con una regla única. Las mediciones de tiempo informan cuánto se usó, pero no si una sesión respondió al propósito de la persona ni si otra intención dejó de estar disponible. Una respuesta más precisa debe reconocer tanto el derecho a cambiar de actividad como el derecho a seguir en un descanso elegido.
 
-La pregunta también tiene importancia preventiva. Cuando las únicas alternativas son bloquear, contabilizar o comparar, una herramienta de apoyo puede convertirse en una nueva fuente de presión. Fijar una intención no debería crear una deuda frente al sistema. Ignorar una señal, cambiar de idea o permanecer en la actividad digital son resultados posibles y legítimos. Este criterio permite abordar la autonomía mediante decisiones concretas y evita confundir ayuda con obediencia.
+La pregunta tiene además un valor preventivo. Cuando las únicas alternativas son bloquear, contabilizar o comparar, una herramienta de apoyo puede convertirse en una nueva fuente de presión. Fijar una intención no debería crear una deuda con el sistema: ignorar una señal, cambiar de idea o permanecer en la actividad digital son resultados legítimos. Este criterio traduce la autonomía en decisiones de diseño concretas y evita confundir ayuda con obediencia.
 
-Desde el Diseño, el problema involucra variables propias de la disciplina: continuidad, cierre, momento, canal, jerarquía, legibilidad, fricción y control. La psicología aporta conceptos para comprender el recuerdo de acciones futuras y el conflicto entre metas; la ingeniería permite ejecutar condiciones y comunicaciones técnicas. El aporte del Diseño consiste en articular esos conocimientos en una experiencia clara, situada y respetuosa de quien la utiliza.
+El problema involucra variables propias del Diseño: continuidad, cierre, momento, canal, jerarquía, legibilidad, fricción y control. La psicología aporta conceptos para entender el recuerdo de acciones futuras y el conflicto entre metas, y la ingeniería hace posible ejecutar condiciones y comunicaciones técnicas; al Diseño le corresponde articular ambos conocimientos en una experiencia clara, situada y respetuosa de quien la usa.
 
-La pertinencia disciplinar también se relaciona con la posibilidad de distribuir una interacción entre componentes físicos y digitales. Un recordatorio situado en el entorno podría recuperar una intención fuera del mismo flujo que concentra la atención. Sin embargo, esa posibilidad no debe aceptarse de antemano. La presencia de un objeto solo se justifica si su ubicación y su forma de señalización aportan algo que una notificación convencional no consigue con igual claridad y menor esfuerzo.
+La pertinencia disciplinar se relaciona también con la posibilidad de distribuir una interacción entre componentes físicos y digitales. Un recordatorio situado en el entorno podría devolver una intención fuera del mismo flujo que concentra la atención. Esa posibilidad no se acepta de antemano: la presencia de un objeto solo se justifica si su ubicación y su señal aportan algo que una notificación convencional no logra con igual claridad y menor esfuerzo. Comprobarlo es parte del aporte de este proyecto.
 
 # 5. Antecedentes y estado de la cuestión
 
 ## De la duración al sentido de la experiencia
 
-Las herramientas nativas muestran minutos diarios, aperturas y aplicaciones consultadas (Apple, s. f.; Google, s. f.-c). Permiten reconocer patrones y establecer límites, pero no explican el propósito ni el significado de cada sesión.
+Las herramientas nativas de los teléfonos muestran minutos diarios, aperturas y aplicaciones consultadas (Apple, s. f.; Google, s. f.-c). Ayudan a reconocer patrones y fijar límites, pero no informan sobre el propósito ni el significado de cada sesión.
 
-Lukoff et al. (2018) estudiaron la diferencia entre usos del teléfono percibidos como significativos y carentes de sentido. La valoración dependía del propósito, la actividad y la autonomía experimentada. Usos de duración semejante podían producir experiencias distintas, lo que cuestiona que una cifra aislada represente la calidad del ocio digital.
-
-Meier y Reinecke (2021) llegaron a una conclusión compatible al revisar investigaciones sobre comunicación mediada, redes sociales y salud mental. Los efectos no siguen una dirección única: varían según las características de la persona, la forma de uso y el contexto. Por su parte, Radtke et al. (2022) examinaron intervenciones de desconexión digital y encontraron resultados positivos, nulos y negativos. En conjunto, estos antecedentes desaconsejan tratar la reducción del uso como una solución universal.
-
-El estudio de De Segovia Vicente et al. (2024), descrito en el planteamiento del problema, orienta el análisis hacia la relación entre actividad e intención y no solo hacia la duración.
+Lukoff et al. (2018) estudiaron qué hace que el uso del teléfono se perciba como significativo o carente de sentido. La valoración dependía del propósito, la actividad y la autonomía experimentada, de modo que usos de duración semejante producían experiencias distintas. Meier y Reinecke (2021) llegaron a una conclusión compatible al revisar la investigación sobre comunicación mediada, redes sociales y salud mental: los efectos no siguen una dirección única y varían según la persona, la forma de uso y el contexto. Radtke et al. (2022), por su parte, revisaron intervenciones de desconexión digital y encontraron resultados positivos, nulos y negativos. En conjunto, estos antecedentes desaconsejan tratar la reducción del uso como una solución universal y orientan el análisis, como el estudio de De Segovia Vicente et al. (2024) descrito en el planteamiento, hacia la relación entre actividad e intención.
 
 ## Pausas, límites y separación del teléfono
 
-Las herramientas de autocontrol digital utilizan bloqueos, temporizadores, eliminación de estímulos, demoras y mensajes de reconsideración. Lyngs et al. (2019) revisaron 367 aplicaciones y extensiones de navegador: predominaban los obstáculos a la conducta no deseada y una proporción menor apoyaba directamente la actividad alternativa.
+Las herramientas de autocontrol digital recurren a bloqueos, temporizadores, eliminación de estímulos, demoras y mensajes de reconsideración. Lyngs et al. (2019) analizaron 367 aplicaciones y extensiones de navegador: predominaban los obstáculos a la conducta no deseada y solo una proporción menor apoyaba directamente la actividad alternativa.
 
-Biedermann et al. (2021) analizaron 28 intervenciones y encontraron resultados variables, limitados por muestras pequeñas, periodos breves y métodos diferentes; las que solo buscaban aumentar la conciencia del uso fueron las menos eficaces. Monge Roffarello y De Russis (2023) revisaron 43 estudios sobre herramientas de autocontrol digital; la mediana de duración fue de 21 días y solo cinco superaban los dos meses. En los siete estudios que permitieron estimarlo, el efecto sobre el tiempo dedicado a las fuentes de distracción fue pequeño a medio, pero la revisión no identificó un mecanismo superior ni equiparó menos tiempo con mayor bienestar.
+La evidencia sobre su eficacia es heterogénea. Biedermann et al. (2021) revisaron 28 intervenciones y encontraron resultados variables, limitados por muestras pequeñas, periodos breves y métodos diferentes; las que solo buscaban aumentar la conciencia del uso fueron las menos eficaces. Monge Roffarello y De Russis (2023) revisaron 43 estudios: la mediana de duración fue de 21 días y solo cinco superaron los dos meses. En los siete estudios que permitieron estimarlo, el efecto sobre el tiempo dedicado a las fuentes de distracción fue pequeño a medio, sin que se identificara un mecanismo superior ni se pudiera equiparar menos tiempo con más bienestar.
 
-Una línea distinta introduce una pausa antes de abrir o continuar en una aplicación. Grüning et al. (2023) estudiaron one sec, que demora la apertura y pide reconsiderar la acción. En su experimento, la opción explícita de desistir tuvo más efecto que el mensaje de reflexión, que no resultó eficaz por sí solo. Haliburton et al. (2024) examinaron las mismas fricciones en 1.039 personas durante un promedio de 13 semanas. Ambos trabajos muestran que una interrupción breve puede modificar recorridos y que el efecto depende del uso sostenido y del esfuerzo requerido.
+Otra línea introduce una pausa antes de abrir o continuar en una aplicación. Grüning et al. (2023) estudiaron one sec, que demora la apertura y pide reconsiderar la acción; en su experimento, la opción explícita de desistir tuvo más efecto que el mensaje de reflexión, que por sí solo no fue eficaz. Haliburton et al. (2024) observaron las mismas fricciones en 1.039 personas durante un promedio de 13 semanas. Ambos trabajos muestran que una interrupción breve puede modificar recorridos y que su efecto depende del uso sostenido y del esfuerzo requerido. Aun así, una pausa puede abrir una decisión sin recuperar la intención alternativa: cerrar una aplicación ante una barrera no prueba que la persona haya recordado lo que quería hacer. Interrupción y recuerdo deben evaluarse por separado.
 
-Una pausa puede abrir una decisión sin recuperar la intención alternativa. Cerrar una aplicación ante una barrera no demuestra que la persona haya recordado lo que quería hacer. La interrupción y el recuerdo deben evaluarse por separado.
-
-La intervención también puede trasladarse al espacio: alejar el teléfono, guardarlo o condicionar su acceso a una llave física aumenta el esfuerzo de retorno. Estas estrategias apoyan una restricción elegida, pero no indican qué actividad se quería comenzar. La distancia física es una estrategia posible, no una respuesta completa al problema.
+La intervención también puede trasladarse al espacio. Alejar el teléfono, guardarlo o condicionar su acceso a una llave física aumenta el esfuerzo de volver a él y apoya una restricción elegida, pero no indica qué actividad se quería comenzar. La distancia es una estrategia posible, no una respuesta completa.
 
 ## Recordar mediante señales y recursos externos
 
-Las personas utilizan agendas, notas, alarmas y objetos para recordar acciones futuras. Esta práctica se conoce como **descarga cognitiva**: parte de la información que debería mantenerse o recuperarse se deposita en un recurso externo (Risko & Gilbert, 2016). Cuando aquello que se externaliza es una acción futura, también puede hablarse de descarga de intenciones (Gilbert et al., 2023).
+Las personas usan agendas, notas, alarmas y objetos para recordar acciones futuras. Esta práctica se conoce como **descarga cognitiva**: parte de la información que habría que mantener o recuperar se deposita en un recurso externo (Risko & Gilbert, 2016). Cuando lo que se externaliza es una acción futura, se habla de descarga de intenciones (Gilbert et al., 2023). Preparar un recordatorio exige formular la intención, elegir una señal y reconocerla después, y ese costo pesa: en dos experimentos, Chiu y Gilbert (2024) observaron que las personas usaban menos los recordatorios cuando prepararlos exigía más esfuerzo físico.
 
-Preparar un recordatorio exige formular la intención, elegir una señal y reconocerla después. En dos experimentos, Chiu y Gilbert (2024) observaron que las personas usaban menos los recordatorios cuando prepararlos exigía más esfuerzo físico: el costo de configurar una ayuda influye en que se utilice.
+Los recordatorios basados en ubicación exploran el vínculo entre intención y contexto. Place-Its asociaba mensajes a lugares en teléfonos móviles (Sohn et al., 2005), y O’Rear y Radvansky (2019) mostraron, en un entorno virtual, que el lugar puede favorecer el recuerdo de una acción futura. El contexto colabora con la recuperación, aunque la proximidad no asegura que la acción se realice.
 
-Los recordatorios basados en ubicación exploran el vínculo entre intención y contexto. Place-Its permitió asociar mensajes a lugares en teléfonos móviles (Sohn et al., 2005), mientras O’Rear y Radvansky (2019) mostraron, en un entorno virtual, que el lugar puede favorecer el recuerdo de una acción futura. Los hallazgos muestran que el contexto puede colaborar con la recuperación, aunque la proximidad no garantiza que la acción se realice.
-
-En el campo de la **interacción tangible**, que incorpora objetos físicos a la manera de representar o manipular información, *The Tangible Reminder* vinculó objetos cotidianos con información de citas y señales ambientales (Hermann et al., 2007). Mostró que un recordatorio puede distribuirse entre información digital, presencia física y entorno, aunque su propósito era comunicar compromisos temporales y no responde directamente a sesiones de ocio digital ni a intenciones que la persona puede decidir no ejecutar.
+En el campo de la **interacción tangible**, que incorpora objetos físicos a la forma de representar o manipular información, *The Tangible Reminder* vinculó objetos cotidianos con información de citas y señales ambientales (Hermann et al., 2007). Mostró que un recordatorio puede distribuirse entre información digital, presencia física y entorno, aunque su propósito era comunicar compromisos temporales y no responde a sesiones de ocio digital ni a intenciones que la persona puede decidir no ejecutar.
 
 ## Alcance de los antecedentes
 
-Las métricas describen el uso; los bloqueos modifican el acceso; las pausas permiten reconsiderar; y los recordatorios apoyan el recuerdo. Ninguno garantiza por sí solo que una intención alternativa vuelva a orientar la decisión. La cuestión pendiente es bajo qué condiciones una intención propia puede volver a estar disponible mientras la sesión continúa. La revisión no determina el soporte ni el momento más adecuado, y tampoco permite suponer que una respuesta física sea superior a una digital.
+Las métricas describen el uso; los bloqueos modifican el acceso; las pausas abren una reconsideración; y los recordatorios apoyan el recuerdo. Ninguno asegura por sí solo que una intención alternativa vuelva a orientar la decisión. Queda abierta la pregunta de bajo qué condiciones una intención propia puede volver a estar disponible mientras la sesión continúa. La revisión no determina el soporte ni el momento más adecuados, ni permite suponer que una respuesta física sea superior a una digital.
 
-La revisión es exploratoria. Se priorizaron publicaciones desde 2019 y se mantuvieron antecedentes anteriores cuando resultaban necesarios para definir memoria prospectiva, interacción tangible o uso del espacio. No se realizó una revisión sistemática ni un estudio de patentes. Por ello, los vacíos identificados delimitan una oportunidad de investigación y no demuestran la inexistencia universal de soluciones semejantes.
+La revisión es exploratoria. Se priorizaron publicaciones desde 2019 y se mantuvieron antecedentes anteriores cuando eran necesarios para definir memoria prospectiva, interacción tangible o uso del espacio. No se realizó una revisión sistemática ni un estudio de patentes, de modo que los vacíos identificados delimitan una oportunidad de investigación y no prueban que no existan soluciones semejantes.
 
 # 6. Marco teórico por ámbitos
 
-El marco teórico relaciona tres ámbitos: la experiencia subjetiva del ocio digital, las interfaces que organizan su continuidad y los recursos materiales que apoyan el recuerdo. Su intersección permite estudiar cuándo una intención deja de orientar la decisión y qué condiciones debería respetar una ayuda.
+El marco teórico relaciona tres ámbitos: la experiencia subjetiva del ocio digital, las interfaces que organizan su continuidad y los recursos materiales que apoyan el recuerdo. Su intersección sirve para estudiar cuándo una intención deja de orientar la decisión y qué condiciones debería respetar una ayuda.
 
 ## Experiencia subjetiva del ocio digital
 
 El ocio puede ofrecer descanso, disfrute, aprendizaje y vínculo social. Como se vio en la arista evaluativa, juzgarlo como improductivo reduce su disfrute (Tonietto et al., 2021), lo que cuestiona las intervenciones que convierten todo tiempo disponible en una obligación productiva.
 
-La valoración digital depende de la relación entre propósito y experiencia. Lukoff et al. (2018) encontraron usos del teléfono percibidos como significativos y otros como carentes de sentido. Una misma aplicación puede sostener una conversación importante o una secuencia rutinaria; su categoría no determina esa diferencia.
+La valoración de lo digital depende de la relación entre propósito y experiencia. Una misma aplicación puede sostener una conversación importante o una secuencia rutinaria; su categoría no define esa diferencia (Lukoff et al., 2018). Meier y Reinecke (2021) proponen atender a quién usa la tecnología, qué hace y en qué contexto, en lugar de inferir bienestar o malestar desde una categoría general como el tiempo de pantalla. Para esta investigación, la unidad relevante es el **episodio**: una situación concreta con un inicio, una actividad, un propósito, otras intenciones posibles y una valoración posterior.
 
-Meier y Reinecke (2021) proponen atender a quién usa la tecnología, qué hace y en qué contexto. Este enfoque evita inferir bienestar o malestar desde una categoría general como tiempo de pantalla. Para la presente investigación, la unidad relevante es el episodio: una situación concreta con un inicio, una actividad, un propósito, otras intenciones posibles y una valoración posterior.
+Una **meta** es un resultado que orienta la acción, y varias metas pueden competir por tiempo, atención o recursos. El **conflicto entre metas** aparece cuando una actividad dificulta otra también valorada; describe una tensión entre posibilidades sin establecer cuál debería prevalecer. En el estudio de De Segovia Vicente et al. (2024), este conflicto explicaba parte de la culpa asociada al desplazamiento prolongado, lo que vincula el malestar con la distancia respecto de otras intenciones y no con la duración.
 
-Una **meta** es un resultado que orienta la acción. Varias metas pueden competir por tiempo, atención o recursos. El **conflicto entre metas** aparece cuando una actividad dificulta otra también valorada; describe una tensión entre posibilidades, sin establecer cuál debería prevalecer. En el estudio de De Segovia Vicente et al. (2024), este conflicto explicaba parte de la culpa asociada al desplazamiento prolongado, lo que vincula el malestar con la distancia respecto de otras intenciones y no con toda sesión extensa.
+La culpa, sin embargo, no sirve como indicador automático. Puede surgir de expectativas sociales que desvalorizan el descanso incluso cuando la actividad fue elegida (Tonietto et al., 2021), y diseñar desde ella arriesga reforzar una norma externa. Es más preciso preguntar si existía otra intención y si la persona quería mantenerla disponible.
 
-La culpa tampoco debe utilizarse como indicador automático. Puede aparecer por expectativas sociales que desvalorizan el descanso, incluso cuando la actividad fue elegida (Tonietto et al., 2021). Diseñar desde la culpa correría el riesgo de reforzar una norma externa. Resulta más preciso preguntar si existía otra intención y si la persona quería mantenerla disponible.
-
-La relación entre metas cambia durante una sesión: una elección inicial deliberada no implica que cada momento posterior responda a una nueva decisión. Una **decisión renovada** ocurre al volver a considerar si se desea continuar, cambiar o detenerse. Puede surgir ante el final de un contenido, una pausa o una señal del entorno. Sin cierres claros, la sesión puede prolongarse sin que las alternativas vuelvan a compararse. La decisión inicial puede seguir siendo válida aunque resulte útil reconsiderarla. Esta distinción describe la continuidad sin asumir pérdida de conciencia o de control.
+La relación entre metas cambia durante una sesión: una elección inicial deliberada no implica que cada momento posterior responda a una nueva decisión. Una **decisión renovada** ocurre al volver a considerar si se desea continuar, cambiar o detenerse, y puede surgir ante el final de un contenido, una pausa o una señal del entorno. Sin cierres claros, la sesión puede prolongarse sin que las alternativas vuelvan a compararse. La decisión inicial puede seguir siendo válida aunque convenga reconsiderarla; la distinción describe la continuidad sin suponer pérdida de conciencia o de control.
 
 ## Arquitecturas de atención y bienestar digital
 
-Una interfaz define acciones, esfuerzo y puntos de cierre. El desplazamiento infinito, la reproducción automática y las recomendaciones encadenadas ofrecen el siguiente contenido sin exigir una búsqueda o confirmación nueva (Montag et al., 2019).
+Una interfaz define acciones, esfuerzos y puntos de cierre. El desplazamiento infinito, la reproducción automática y las recomendaciones encadenadas ofrecen el siguiente contenido sin exigir una búsqueda o confirmación nueva (Montag et al., 2019). Estas decisiones forman una **arquitectura de atención**: un conjunto de elementos que orienta lo que se percibe y cómo avanza la interacción. Las personas conservan su capacidad de elegir, pero seguir con un gesto mínimo exige menos preparación que levantarse, reunir materiales o cambiar de espacio. Esta asimetría ayuda a comparar comienzos: seguir viendo contenido y salir a caminar pueden ser igualmente valorados, aunque sus primeros pasos exijan esfuerzos distintos.
 
-Estas decisiones forman una **arquitectura de atención**: elementos que orientan lo percibido y el avance de la interacción. Las personas conservan capacidad de elección, pero continuar con un gesto mínimo exige menos preparación que levantarse, reunir materiales o cambiar de espacio. Esta asimetría permite comparar los comienzos: seguir viendo contenido y salir a caminar pueden ser actividades igualmente valoradas, aunque sus primeros pasos requieran esfuerzos distintos.
+Algunas interfaces introducen **fricción**, es decir, un esfuerzo adicional como esperar, confirmar o desplazarse. La fricción puede abrir una ocasión de reconsiderar, pero si es excesiva frustra o dificulta actividades legítimas. Las demoras estudiadas por Grüning et al. (2023) y Haliburton et al. (2024) abren una elección, aunque se concentran en la acción digital presente: dificultar la continuidad puede producir una pausa sin que la persona recuerde qué otra cosa quería hacer. Sigue abierta la pregunta por una ayuda que devuelva esa alternativa sin restringir el acceso.
 
-Algunas interfaces introducen **fricción**, un esfuerzo adicional como esperar, confirmar o desplazarse. Puede abrir una ocasión de reconsideración, pero, si resulta excesiva, también puede frustrar o dificultar una actividad legítima.
+La autonomía depende de comprender la intervención y poder aceptarla, ajustarla o rechazarla. Una ayuda persistente o difícil de detener puede presionar aunque no bloquee el teléfono, y un tono amable no reemplaza la posibilidad real de elegir. En un experimento de comunicación digital sobre alimentación, ofrecer opciones mejoró la evaluación de la intervención, mientras que cambiar solo el lenguaje no produjo diferencias significativas (Smit et al., 2019). El estudio no evalúa Relevo, pero distingue una salida real de una frase que solo suena alentadora.
 
-Las demoras estudiadas por Grüning et al. (2023) y Haliburton et al. (2024) abren una elección, aunque se concentran en la acción digital presente. La fricción no equivale a recuperar una intención. Dificultar la continuidad puede provocar una pausa sin recordar qué otra actividad se quería hacer. Sigue abierta la pregunta por una ayuda que devuelva esa alternativa sin restringir el acceso.
+Si no existe una intención alternativa, la duración o la aplicación no justifican por sí solas una interrupción, y seguir después de recordar una intención también puede ser válido. Un sistema puede registrar tiempo, aplicación activa, horario o conexión, pero esos datos no revelan aburrimiento, culpa o satisfacción; interpretarlos como estados subjetivos llevaría a intervenciones injustificadas.
 
-La autonomía depende de comprender la intervención y poder aceptarla, ajustarla o rechazarla. Una ayuda persistente o difícil de detener puede ejercer presión aunque no bloquee el teléfono.
-
-El tono amable no reemplaza esa capacidad de elección. En un experimento de comunicación digital sobre alimentación, ofrecer opciones mejoró la evaluación de la intervención, mientras que modificar solo el lenguaje no produjo diferencias significativas en los resultados medidos (Smit et al., 2019). El estudio no evalúa Relevo, pero ayuda a distinguir una salida real de una frase que simplemente suena alentadora.
-
-Si no existe una intención alternativa, la duración o la aplicación no justifican por sí solas una interrupción, y continuar después de recordar una intención también puede ser válido. Un sistema puede registrar tiempo, aplicación activa, horario o conexión, pero esos datos no revelan aburrimiento, culpa o satisfacción; interpretarlos como estados subjetivos podría producir intervenciones injustificadas.
-
-Las **intenciones de implementación** relacionan una situación anticipada con una respuesta: si ocurre una condición, entonces se realiza una acción (Gollwitzer & Sheeran, 2006). El vínculo se establece de antemano; observar el evento no demuestra que el momento sea problemático.
-
-Recordar una intención, iniciar una actividad y adquirir un hábito tampoco son el mismo resultado. La formación de hábitos supone que una conducta se vuelva más automática en un contexto recurrente; medir su frecuencia o registrar una señal no basta para demostrarlo (Gardner et al., 2012; Lally et al., 2010). Las rachas pueden favorecer la continuidad de una conducta registrada, pero también convertir su mantenimiento en una meta propia (Silverman & Barasch, 2023). Estos hallazgos justifican estudiar cómo se acompaña una decisión, no atribuirle a un aviso la creación de hábitos.
+Las **intenciones de implementación** vinculan una situación anticipada con una respuesta: si ocurre cierta condición, entonces se realiza una acción (Gollwitzer & Sheeran, 2006). El vínculo se establece de antemano, de modo que observar el evento no prueba que el momento sea problemático. Recordar una intención, iniciar una actividad y adquirir un hábito son, además, resultados distintos. Formar un hábito supone que una conducta se vuelva más automática en un contexto recurrente, y medir su frecuencia o registrar una señal no basta para demostrarlo (Gardner et al., 2012; Lally et al., 2010). Las rachas pueden favorecer la continuidad de una conducta registrada, pero también convertir su mantenimiento en una meta en sí misma (Silverman & Barasch, 2023). Por eso el proyecto estudia cómo acompañar una decisión y no atribuye a un aviso la creación de hábitos.
 
 ## Mediación material de información personal
 
-La memoria prospectiva, definida en la introducción, se diferencia de recuperar acontecimientos pasados porque su valor depende del momento: la intención debe volver cuando todavía es posible actuar (McDaniel & Einstein, 2000). Una intención puede recuperarse ante una hora o un evento. Las alarmas señalan un momento; las claves contextuales, como lugares u objetos, relacionan la situación con la acción. La persona debe percibir y comprender la señal antes de decidir qué hacer. Percibir una señal, identificar su origen, recordar una actividad y decidir iniciarla son resultados distintos. Esta separación permite localizar dónde falla una ayuda sin exigir que su recepción termine en acción.
+La memoria prospectiva, definida en la introducción, se distingue del recuerdo de acontecimientos pasados porque su valor depende del momento: la intención debe volver cuando todavía es posible actuar (McDaniel & Einstein, 2000). Una intención puede recuperarse ante una hora o un evento. Las alarmas señalan un momento; las claves contextuales, como lugares u objetos, relacionan la situación con la acción. En ambos casos la persona debe percibir y comprender la señal antes de decidir qué hacer. Percibir una señal, identificar su origen, recordar una actividad y decidir iniciarla son resultados distintos, y separarlos permite localizar dónde falla una ayuda sin exigir que su recepción termine en acción.
 
-Una nota, un libro dispuesto sobre la mesa o una alarma conservan información fuera de la memoria activa; son formas de descarga cognitiva y, cuando guardan una acción futura, de descarga de intenciones (Gilbert et al., 2023; Risko & Gilbert, 2016). Externalizar reduce la necesidad de mantener una meta presente, pero exige configurar una señal y encontrarla a tiempo. Chiu y Gilbert (2024) muestran que el esfuerzo físico de preparación modifica esa decisión; cada paso adicional requiere justificación. Una señal puede funcionar sin contener toda la información si su relación con la intención se comprende. Cuando resulta ambigua, obliga a consultar otra fuente. El contenido necesario depende del contexto y requiere evaluación.
+Una nota, un libro dispuesto sobre la mesa o una alarma conservan información fuera de la memoria activa; son formas de descarga cognitiva y, cuando guardan una acción futura, de descarga de intenciones (Gilbert et al., 2023; Risko & Gilbert, 2016). Externalizar reduce la necesidad de mantener una meta presente, pero obliga a configurar una señal y a encontrarla a tiempo, y cada paso de preparación tiene un costo que debe justificarse (Chiu & Gilbert, 2024). Una señal no necesita contener toda la información si su relación con la intención se comprende; si es ambigua, obliga a consultar otra fuente.
 
-Kirsh (1995) explica que organizar el espacio reduce demandas cognitivas y hace perceptibles ciertas relaciones. Preparar ingredientes o dejar un objeto junto a la puerta permite que el entorno apoye la comprensión y el inicio de una acción.
+Kirsh (1995) explica que organizar el espacio reduce demandas cognitivas y hace perceptibles ciertas relaciones: preparar los ingredientes o dejar un objeto junto a la puerta permite que el entorno apoye la comprensión y el inicio de una acción. El lugar puede favorecer el recuerdo, aunque la proximidad no asegura actuar (O’Rear & Radvansky, 2019; Sohn et al., 2005); importan su significado personal y la posibilidad de percibir la señal entre otras actividades. Una meta amplia también debe distinguirse de su comienzo: hacer ejercicio puede empezar al preparar las zapatillas y dibujar, al disponer los materiales. Esta distinción abre la pregunta por la distancia entre recordar y reconocer una acción posible.
 
-El lugar puede favorecer el recuerdo, aunque la proximidad no asegura actuar (O’Rear & Radvansky, 2019; Sohn et al., 2005). Importan su significado personal y la posibilidad de percibir la señal entre otras actividades.
+El espacio introduce a la vez límites de percepción, privacidad y convivencia. Los objetos pueden moverse o quedar cubiertos, y una señal puede molestar a otros. Situar una interacción exige estudiar las condiciones de cada hogar y permitir cambiar la asociación.
 
-Una meta amplia también debe distinguirse de su comienzo: hacer ejercicio puede iniciar al preparar las zapatillas; dibujar, al disponer materiales. Esto permite estudiar la distancia entre recordar y reconocer una acción posible sin definir todavía la intervención.
-
-El espacio introduce límites de percepción, privacidad y convivencia. Los objetos pueden moverse o quedar cubiertos; una señal puede molestar. Situar una interacción exige estudiar las condiciones de cada hogar y permitir cambiar la asociación.
-
-La **interacción tangible** incorpora objetos físicos a la representación o manipulación de información. Su significado puede depender de la ubicación, la presencia, el peso y el movimiento, además del tacto.
-
-Una experiencia **phygital** integra componentes físicos y digitales con funciones complementarias. Añadir un objeto a una aplicación no basta: la relación debe aportar a la experiencia y evaluarse como un conjunto.
-
-*The Tangible Reminder* (Hermann et al., 2007) muestra cómo el entorno puede comunicar un compromiso, pero también las exigencias de energía, mantenimiento, costo y aprendizaje que introduce el objeto.
-
-Waggoner et al. (2026) señalan que las experiencias phygital requieren métodos capaces de observar la relación entre canales, lugares y momentos. Evaluar solo la aplicación o solo el objeto fragmentaría el sistema. También resulta necesario comprobar si la capa física aporta valor frente a una solución exclusivamente digital.
+La **interacción tangible** incorpora objetos físicos a la representación o manipulación de información; su significado puede depender de la ubicación, la presencia, el peso y el movimiento, además del tacto. Una experiencia **phygital** integra componentes físicos y digitales con funciones complementarias. Añadir un objeto a una aplicación no basta: la relación debe aportar a la experiencia y evaluarse como un conjunto. *The Tangible Reminder* (Hermann et al., 2007) muestra cómo el entorno puede comunicar un compromiso, pero también las exigencias de energía, mantenimiento, costo y aprendizaje que el objeto introduce. Waggoner et al. (2026) señalan que estas experiencias requieren métodos capaces de observar la relación entre canales, lugares y momentos: evaluar solo la aplicación o solo el objeto fragmentaría el sistema, y es necesario comprobar si la capa física aporta valor frente a una solución exclusivamente digital.
 
 ## Conclusiones del marco teórico
 
-Los tres ámbitos explican una misma tensión: una sesión puede conservar valor y, a la vez, coincidir con otra intención que pierde presencia. La interfaz sostiene la continuidad, la memoria prospectiva distingue recordar después de recordar a tiempo, y el espacio puede apoyar la recuperación. Esta relación deja preguntas para usuarios y referentes: cómo se recupera una intención, qué eventos pueden vincularse con ella y qué papel cumplen contexto, autonomía y esfuerzo. La teoría orienta esas preguntas sin determinar una solución; las entrevistas permiten contrastar episodios de conflicto con usos elegidos y con las estrategias existentes.
+Los tres ámbitos explican una misma tensión: una sesión puede conservar valor y, a la vez, coincidir con otra intención que pierde presencia. La interfaz sostiene la continuidad, la memoria prospectiva distingue recordar después de recordar a tiempo y el espacio puede apoyar la recuperación. De esta relación surgen las preguntas que orientan el trabajo con usuarios y referentes: cómo se recupera una intención, qué eventos pueden vincularse con ella y qué papel cumplen el contexto, la autonomía y el esfuerzo. La teoría orienta esas preguntas sin determinar una solución; las entrevistas permiten contrastar episodios de conflicto con usos elegidos y con las estrategias que las personas ya utilizan.
 
 # 7. Usuario, contexto y hallazgos de entrevistas
 
 ## Método, participantes y alcance del estudio
 
-Se realizó un estudio cualitativo exploratorio para comprender relatos y reconocer patrones iniciales, sin buscar una representación estadística de la población. El estudio abordó experiencias de ocio digital, momentos de continuidad, intenciones alternativas, formas de cierre y estrategias utilizadas frente al teléfono. El formato semiestructurado permitió mantener una pauta común y profundizar en situaciones particulares mediante repreguntas.
+Se realizó un estudio cualitativo exploratorio, es decir, orientado a comprender relatos y reconocer patrones iniciales, sin buscar representatividad estadística. Las entrevistas abordaron experiencias de ocio digital, momentos de continuidad, intenciones alternativas, formas de cierre y estrategias frente al teléfono. El formato semiestructurado mantuvo una pauta común y permitió profundizar en situaciones particulares mediante repreguntas.
 
-Participaron ocho personas de 19 a 27 años. Las entrevistas fueron habladas y presenciales, y se realizaron en Santiago los días 11 y 12 de junio de 2026. El reclutamiento se efectuó mediante contactos proporcionados por personas cercanas al investigador. La edad, dentro de un rango de convocatoria de 18 a 30 años, fue el único criterio común confirmado. En consecuencia, el lugar y el rango etario describen el levantamiento, pero no permiten generalizar los resultados a todos los adultos jóvenes.
+Participaron ocho personas de 19 a 27 años. Las entrevistas fueron presenciales y se realizaron en Santiago el 11 y el 12 de junio de 2026. El reclutamiento se hizo mediante contactos de personas cercanas al investigador, y el único criterio común confirmado fue la edad, dentro de un rango de convocatoria de 18 a 30 años. El lugar y el rango etario describen el levantamiento, pero no permiten generalizar los resultados a todos los adultos jóvenes.
 
-La pauta avanzó desde las actividades de tiempo libre hacia el relato de una sesión reciente, su propósito, continuidad, percepción temporal, valoración y cierre. Dos preguntas adicionales, formuladas al final, abordaron las estrategias para descansar sin el teléfono y la reacción ante una idea anterior del proyecto: depositar el teléfono en un objeto que luego devolvía una señal de ese descanso. Sus respuestas se anotaron en el momento y se integraron después al corpus; esas notas originales ya no están disponibles. Se obtuvo consentimiento informado oral para la participación y el uso académico anonimizado del material.
+La pauta avanzó desde las actividades de tiempo libre hacia el relato de una sesión reciente: su propósito, continuidad, percepción del tiempo, valoración y cierre. Al final se formularon dos preguntas adicionales, una sobre estrategias para descansar sin el teléfono y otra sobre una idea anterior del proyecto: depositar el teléfono en un objeto que luego devolvía una señal de ese descanso. Las respuestas a estas dos preguntas se anotaron en el momento y se integraron después al corpus; esas notas originales ya no están disponibles. Se obtuvo consentimiento informado oral para participar y para el uso académico anonimizado del material.
 
-Las conversaciones fueron transcritas y regularizadas para facilitar su lectura. El corpus se organizó con códigos P1–P8 y Q1–Q13. La unidad principal fue el episodio: una situación relatada en relación con actividad, intención, continuidad, recuerdo, valoración o estrategia. El método Framework organizó temas y casos en una matriz común, manteniendo el vínculo con cada entrevista (Goldsmith, 2021). A partir de semejanzas y contrastes se construyeron tipos ideales revisables: modelos analíticos que reúnen rasgos recurrentes sin convertirlos en perfiles permanentes de los participantes (Stapley et al., 2022).
+Las conversaciones se transcribieron y regularizaron para facilitar su lectura, y el corpus se organizó con los códigos P1–P8 para participantes y Q1–Q13 para preguntas. La unidad de análisis fue el episodio: una situación relatada en relación con actividad, intención, continuidad, recuerdo, valoración o estrategia. El método Framework organizó temas y casos en una matriz común sin perder el vínculo con cada entrevista (Goldsmith, 2021). A partir de semejanzas y contrastes se construyeron **tipos ideales**, modelos analíticos que reúnen rasgos recurrentes sin convertirlos en perfiles permanentes de los participantes (Stapley et al., 2022). Combinaciones como «P2, Q3–Q7» localizan las respuestas que sostienen cada paráfrasis; no son citas textuales, sino una forma de contrastar la interpretación con el corpus anonimizado, que se reúne junto con el instrumento y los documentos de análisis en el [índice de anexos](anexos/README.md).
 
-Las combinaciones de participante y pregunta —por ejemplo, P2, Q3–Q7— localizan las respuestas que sostienen una paráfrasis. No son citas textuales; permiten contrastar la interpretación con el corpus anonimizado.
+El estudio tiene límites que condicionan su lectura. La interpretación la realizó el investigador sin un segundo codificador; la duración de cada entrevista no quedó registrada; y no se observaron directamente las conductas ni los espacios domésticos. Los hallazgos permiten reconocer patrones y contraejemplos dentro del corpus, no estimar frecuencia, causalidad, eficacia o disposición de pago.
 
-El [índice de anexos](anexos/README.md) reúne el instrumento aplicado, el corpus anonimizado y los documentos de análisis que respaldan este capítulo. También declara los límites de conservación y uso de cada material.
+*Tabla 1*
 
-La interpretación fue realizada por el investigador y no contó con un segundo codificador. La duración individual de las entrevistas no quedó registrada. Tampoco se observaron directamente las conductas ni los espacios domésticos. Los hallazgos permiten reconocer patrones y contraejemplos dentro del corpus, pero no estimar frecuencia, causalidad, eficacia o disposición de pago.
-
-La siguiente tabla resume la función analítica de cada participante. No establece diagnósticos ni perfiles permanentes.
+*Participantes y función analítica de cada entrevista*
 
 | Código | Edad | Aporte principal al análisis |
 | --- | ---: | --- |
@@ -247,124 +226,90 @@ La siguiente tabla resume la función analítica de cada participante. No establ
 | P7 | 21 | Actividad elegida sin reconocimiento de un problema. |
 | P8 | 19 | Variación entre rutina digital y descanso aceptado. |
 
-Una misma persona relató actividades dirigidas y otras que continuaban sin una decisión renovada. La aplicación, duración o edad no bastaron para identificar el problema: importó su relación con otra intención.
+*Nota.* La tabla resume la función analítica de cada caso; no establece diagnósticos ni perfiles permanentes.
 
-El autor informó además una encuesta a 70 participantes, cuyos materiales, procedencia, consentimiento, anonimización y análisis todavía no están documentados. Se mantiene fuera de la evidencia vigente hasta revisar esos antecedentes. La [ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) registra su incorporación pendiente.
+El autor informó además una encuesta a 70 participantes cuyos materiales, procedencia, consentimiento, anonimización y análisis todavía no están documentados. Queda fuera de la evidencia de esta memoria hasta revisar esos antecedentes; su [ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) registra la incorporación pendiente.
 
 ## Hallazgos, contrastes y estrategias cotidianas
 
-P2 relató que abrió Instagram al acostarse para mirar memes. Reconoció el sueño y, aun así, continuó usando el teléfono. Recordaba la sesión con claridad, pero dudó de que hubiera sido un descanso, precisamente porque siguió en el teléfono con sueño. El episodio no indica que hubiera olvidado lo ocurrido. Muestra una tensión entre una intención alternativa —dormir— y la continuidad de la actividad (P2, Q3–Q7).
+P2 relató que abrió Instagram al acostarse para mirar memes. Reconoció que tenía sueño y aun así siguió usando el teléfono. Recordaba la sesión con claridad, pero dudó de que hubiera sido un descanso precisamente por haber seguido con sueño. El episodio no muestra un olvido, sino una tensión entre una intención alternativa —dormir— y la continuidad de la actividad (P2, Q3–Q7).
 
-P3 describió videos humorísticos en Instagram como una forma de pasar el tiempo. Relató una pérdida de noción temporal y reconoció otras actividades que habría preferido realizar. Al mismo tiempo, consideró que la sesión había funcionado como una pausa frente a sus responsabilidades. Esta ambivalencia es importante: una actividad puede ofrecer descanso y competir con otra intención sin volverse, por ello, incorrecta (P3, Q3–Q8).
+P3 describió una sesión de videos humorísticos en Instagram como una forma de matar el tiempo: perdió la noción de su duración y reconoció que tenía cosas mejores que hacer. Al mismo tiempo, consideró que la sesión le sirvió como pausa frente a sus responsabilidades. Esta ambivalencia es importante: una actividad puede ofrecer descanso y competir con otra intención sin volverse, por ello, incorrecta (P3, Q3–Q8).
 
-P5 mencionó entretenimiento inmediato y aburrimiento posterior. También habló de estrategias que no siempre evitaban volver al teléfono. Su relato ayuda a diferenciar una valoración negativa después de la sesión de una intención alternativa ya formulada. No toda insatisfacción posterior indica que existía una actividad concreta que pudiera recuperarse durante el episodio (P5, Q3–Q10 y Q12).
+P5 habló de un entretenimiento inmediato seguido de aburrimiento y de estrategias que no siempre evitaban volver al teléfono. Su relato ayuda a diferenciar una valoración negativa posterior de una intención alternativa ya formulada: no toda insatisfacción indica que existiera una actividad concreta que recuperar durante el episodio (P5, Q3–Q10 y Q12). P1 y P4, por su parte, distinguieron momentos de uso dirigido de otros más rutinarios, lo que impide tratar a una persona como usuaria permanente del problema: la pertinencia cambia con la actividad y el contexto (P1, Q3–Q5, Q8 y Q12; P4, Q3–Q8 y Q12).
 
-P1 y P4 mostraron variaciones semejantes. Ambos distinguieron momentos de uso dirigido de otros más rutinarios. Estos relatos impiden tratar a una persona como un usuario permanente del problema. La pertinencia cambia según la actividad y el contexto (P1, Q3–Q5, Q8 y Q12; P4, Q3–Q8 y Q12).
+Estos casos contrastan con experiencias que conservaron sentido durante toda la sesión. P6 relató una videollamada de varias horas que valoró por su contenido y por el vínculo con una amiga (P6, Q3–Q9). P7 describió un pódcast elegido mientras comía, sin reconocer nada que debiera corregir (P7, Q3–Q10). P4 diferenció el sudoku, que le exigía concentración, de otras actividades digitales menos dirigidas (P4, Q3–Q8), y P8 mostró que una rutina difícil de describir puede coincidir con un descanso aceptable (P8, Q3–Q10).
 
-Los casos anteriores contrastan con experiencias que conservaron sentido durante toda la sesión. P6 relató una videollamada extensa que valoró por su contenido y por el vínculo con otra persona (P6, Q3–Q9). P7 describió un pódcast elegido mientras comía y no reconoció una obligación que exigiera corregir la experiencia (P7, Q3–Q10). P4 diferenció el sudoku focalizado de actividades digitales menos dirigidas (P4, Q3–Q8). P8 mostró que una rutina difícil de describir puede coincidir con un descanso que se considera aceptable (P8, Q3–Q10).
+Los contraejemplos cumplen una función central. Dentro del corpus muestran que ni la duración, ni la presencia del teléfono, ni la categoría de aplicación bastan para decidir una intervención, y de ellos se deriva un riesgo de diseño: una señal activada solo por tiempo podría interrumpir una conversación importante, una actividad concentrada o una pausa deliberada. La ausencia de una intención alternativa también es significativa. Si la persona no ha formulado otra actividad que quiera mantener disponible, el sistema no tiene nada legítimo que recordar, y permanecer inactivo no es una falla sino una forma de respetar el propósito actual.
 
-Estos contraejemplos cumplen una función central. Dentro del corpus muestran que ni la duración, ni la presencia del teléfono, ni una categoría de aplicación bastan por sí solas para decidir una intervención. De ellos se deriva un riesgo de diseño: una señal activada únicamente por tiempo podría interrumpir una conversación importante, una actividad concentrada o una pausa deliberada.
+Las entrevistas indagaron también cómo las personas intentaban modificar sus sesiones. Mencionaron alejar el teléfono, cargarlo en otro lugar, silenciarlo, activar el modo no molestar o, en un caso, desinstalar temporalmente una aplicación (P1–P5 y P7–P8, Q12). Son estrategias declaradas, no observadas ni comparadas, pero muestran que la distancia, el lugar y el silencio ya forman parte del repertorio cotidiano de varios participantes. También revelan su límite: alejar el teléfono reduce su disponibilidad, pero no siempre evita el retorno ni recuerda qué actividad se quería comenzar.
 
-La ausencia de una intención alternativa también resulta significativa para la propuesta. Si la persona no ha formulado otra actividad que quiera mantener disponible, el sistema carece de contenido legítimo para recordar. Permanecer inactivo no constituye una falla, sino una forma de respetar el propósito actual.
-
-Además de valorar las sesiones, las entrevistas indagaron cómo las personas intentaban modificarlas. Ante la pregunta por formas de descansar o separarse del teléfono, las personas mencionaron alejarlo, cargarlo en otro lugar, silenciarlo, activar modos de no molestar o, en un caso, desinstalar temporalmente una aplicación (P1–P5 y P7–P8, Q12). Estas estrategias fueron declaradas, pero no observadas ni comparadas. Su aporte consiste en mostrar que la distancia, el lugar y el silencio ya forman parte del repertorio cotidiano de algunos participantes.
-
-También revelan una dificultad. Alejar el teléfono puede disminuir su disponibilidad, aunque no siempre evita el retorno ni recuerda qué actividad se quería comenzar. El espacio aparece como un recurso posible, pero su eficacia no puede darse por supuesta.
-
-Ante la idea anterior, varias personas pidieron señales calmadas, discretas o visuales (P3–P5 y P7–P8, Q13), y una rechazó expresamente las notas o comparaciones entre días (P7, Q13). Esa idea registraba un descanso ya realizado, no recordaba una intención durante la sesión; además, la pregunta presentó un concepto y no una experiencia de uso. Por eso estas reacciones solo orientan criterios generales de tono y discreción; no validan Relevo ni permiten cerrar su forma.
+Ante la idea anterior del proyecto, varias personas pidieron señales calmadas, discretas o visuales (P3–P5 y P7–P8, Q13), y una rechazó expresamente las notas o comparaciones entre días (P7, Q13). Esa idea registraba un descanso ya realizado en lugar de recordar una intención durante la sesión, y la pregunta presentó un concepto, no una experiencia de uso. Por eso estas reacciones solo orientan criterios generales de tono y discreción; no validan Relevo ni definen su forma.
 
 ## Dos situaciones de usuario
 
-Los hallazgos permiten distinguir dos tipos situacionales. No representan identidades cerradas ni segmentos comerciales; una misma persona puede pasar de uno a otro según la actividad.
+Los hallazgos permiten distinguir dos tipos situacionales. No son identidades ni segmentos comerciales: una misma persona puede pasar de uno a otro según la actividad.
 
-El **usuario principal** aparece cuando la sesión continúa sin una decisión renovada reconocible y otra intención propia deja de orientar el siguiente paso. P2 y P3 ilustran con mayor claridad esta situación; P5 presenta un caso menos definido.
+El **usuario principal** aparece cuando la sesión continúa sin una decisión renovada reconocible y otra intención propia deja de orientar el paso siguiente. P2 y P3 ilustran con mayor claridad esta situación; P5 presenta un caso menos definido. Su necesidad no es abandonar el teléfono, sino volver a considerar una alternativa propia en un momento oportuno. Para traducirla en diseño, la intención debe vincularse con un comienzo concreto: dormir puede empezar al dejar el teléfono y preparar el espacio; caminar, al ponerse las zapatillas; leer, al abrir el libro. Sus principales dificultades son la continuidad difícil de cerrar, la pérdida de presencia de otra actividad y el regreso al teléfono después de haber intentado alejarlo, a lo que se suma una tensión: recibir ayuda sin sentir que una herramienta convierte la intención en obligación.
 
-Su necesidad no es abandonar siempre el teléfono. Necesita volver a considerar una alternativa propia en un momento oportuno. Para que esa necesidad pueda traducirse en diseño, la intención debe vincularse con un comienzo concreto: dormir puede iniciar al dejar el teléfono y preparar el espacio; caminar, al ponerse las zapatillas; leer, al abrir el libro.
-
-Sus principales puntos de dolor son la continuidad difícil de cerrar, la pérdida de presencia de otra actividad y el retorno al teléfono después de haber intentado alejarlo. A ello se suma una tensión: recibir ayuda sin sentir que una herramienta transforma la intención en obligación.
-
-En cambio, el **usuario límite** aparece cuando la actividad digital es elegida, significativa, relacional, concentrada o reparadora, o cuando no existe una intención alternativa que requiera apoyo. P6 y P7 ofrecen los contrastes más claros; P4 y P8 muestran que la posición puede cambiar dentro de una misma persona.
-
-Su necesidad principal es conservar autonomía. Una intervención equivocada puede convertir una actividad legítima en un problema, exponer una intención privada o interrumpir a otras personas. Para este usuario, la posibilidad de no activar, ignorar o detener la señal tiene tanta importancia como la capacidad de recibirla.
+El **usuario límite** aparece cuando la actividad digital es elegida, significativa, relacional, concentrada o reparadora, o cuando no existe una intención alternativa que apoyar. P6 y P7 ofrecen los contrastes más claros; P4 y P8 muestran que la posición puede cambiar dentro de una misma persona. Su necesidad principal es conservar la autonomía. Una intervención equivocada puede convertir una actividad legítima en un problema, exponer una intención privada o interrumpir a otras personas; para este usuario, poder no activar, ignorar o detener la señal importa tanto como poder recibirla.
 
 ## Recorridos, contexto y necesidades de diseño
 
-El recorrido principal comienza con una sesión elegida o tolerada como descanso. La sucesión de contenidos sostiene la actividad mientras una intención alternativa no logra orientar el cambio. Después, la persona puede valorar el episodio con ambivalencia e intentar alejar o silenciar el teléfono.
+El recorrido del usuario principal comienza con una sesión elegida o tolerada como descanso. La sucesión de contenidos sostiene la actividad mientras una intención alternativa no logra orientar el cambio, y después la persona valora el episodio con ambivalencia o intenta alejar o silenciar el teléfono. El recorrido del usuario límite es distinto: la actividad se elige con un propósito y conserva valor durante la sesión; puede ser extensa, pero no entra en conflicto con otra intención reconocida, y termina sin necesidad de corrección. Cualquier ayuda debe permitir que este segundo recorrido continúe sin interrupciones injustificadas.
 
-El recorrido del usuario límite es diferente. La actividad se elige con un propósito y conserva valor durante la sesión. Puede ser extensa, pero no entra en conflicto con otra intención reconocida. El cierre ocurre sin necesidad de corrección. Cualquier ayuda debe permitir que este recorrido continúe sin interrupciones injustificadas.
+El hogar aparece como primer contexto pertinente, porque varias de las intenciones y estrategias relatadas dependen de objetos, superficies y distancias. Leer, dibujar, cocinar, dormir o salir a caminar suelen comenzar con acciones materiales reconocibles, y cargar el teléfono en otro lugar o dejarlo lejos ya forma parte de las prácticas mencionadas. Esta elección es todavía una hipótesis: las entrevistas no incluyeron observaciones de viviendas, convivencia, ruido, iluminación, privacidad o movilidad de objetos. Un elemento visible puede ser desplazado, una luz puede pasar inadvertida y un sonido puede molestar o revelar información personal, de modo que las condiciones del espacio deberán estudiarse antes de suponer que una solución sirve en todos los hogares.
 
-Al relacionar estos recorridos con las estrategias declaradas, el hogar se considera un primer contexto pertinente porque varias intenciones y estrategias relatadas dependen de objetos, superficies y distancias. Leer, dibujar, cocinar, dormir o salir a caminar suelen comenzar mediante acciones materiales reconocibles. Además, cargar el teléfono en otro lugar o dejarlo lejos ya forma parte de las prácticas mencionadas.
-
-Esta elección sigue siendo una hipótesis. Las entrevistas no incluyeron observaciones sistemáticas de viviendas, convivencia, ruido, iluminación, privacidad o movilidad de objetos. Un elemento visible puede ser desplazado; una luz puede pasar inadvertida; un sonido puede molestar o revelar información personal. Las condiciones del espacio deberán estudiarse antes de afirmar que una misma solución funciona en todos los hogares.
-
-Ambos recorridos exigen conservar la autoridad de la persona para interpretar el momento. De ellos se desprenden requisitos comunes: intención explícita, configuración voluntaria, posibilidad de cambio, señal discreta, salida inmediata y ausencia de sanciones. Las entrevistas no definen la forma de una solución; precisan el momento que debe abordarse y las situaciones donde intervenir sería un error, sin convertir a los participantes en validadores de una propuesta que no probaron.
+Ambos recorridos exigen que la persona conserve la autoridad para interpretar el momento. De ellos se desprenden requisitos comunes: intención explícita, configuración voluntaria, posibilidad de cambio, señal discreta, salida inmediata y ausencia de sanciones. Las entrevistas no definen la forma de la solución; precisan el momento que debe abordarse y las situaciones en que intervenir sería un error, sin convertir a los participantes en validadores de una propuesta que no probaron.
 
 # 8. Estado del arte y referentes
 
 ## Método y criterios de comparación
 
-El estado del arte compara investigaciones, servicios y productos por su mecanismo, valor, evidencia y límites frente al problema estudiado.
+El estado del arte compara investigaciones, servicios y productos según su mecanismo, valor, evidencia y límites frente al problema estudiado. La búsqueda se cerró el 24 de agosto de 2026 e incluyó artículos académicos, documentación oficial, sitios de productos y fichas técnicas. El [registro metodológico](../04_mercado_y_referentes/registro-busqueda-2026-08-24.md) conserva la pregunta, las familias de términos, los tipos de fuente, los criterios de inclusión y exclusión, nueve referentes nucleares y los límites del levantamiento. Como no se preservó un historial literal de consultas ni conteos de resultados, la búsqueda puede repetirse de forma equivalente, pero no se presenta como revisión sistemática.
 
-La búsqueda se cerró el 24 de agosto de 2026. Se consultaron artículos académicos, documentación oficial, sitios de productos y fichas técnicas. El [registro metodológico](../04_mercado_y_referentes/registro-busqueda-2026-08-24.md) conserva la pregunta, las familias de términos, los tipos de fuente, los criterios de inclusión y exclusión, nueve referentes nucleares y los límites del levantamiento. No se preservó un historial literal de consultas, buscadores ni conteos completos de resultados; por ello, permite repetir una exploración equivalente, pero no se presenta como revisión sistemática.
+Las fuentes comerciales describen funciones, compatibilidad y modelo de negocio; no demuestran eficacia. La revisión se limita al corpus consultado y no es un estudio de patentes, participación de mercado o disponibilidad en Chile. Las seis familias en que se agrupan los referentes son una clasificación analítica para esta comparación, no una taxonomía universal. Cada referente se examinó con seis preguntas:
 
-Las fuentes comerciales describen funciones, compatibilidad y modelo de valor; no demuestran eficacia independiente. La revisión se limita al corpus consultado y no constituye un estudio de patentes, participación de mercado o disponibilidad en Chile.
-
-Las seis familias del capítulo agrupan mecanismos para esta comparación; no constituyen una taxonomía universal ni categorías propias de las marcas.
-
-Para ordenar la comparación se utilizaron seis preguntas:
-
-1. ¿Qué problema declara abordar la propuesta?
+1. ¿Qué problema declara abordar?
 2. ¿Qué mecanismo utiliza: medición, pausa, bloqueo, distancia, recordatorio o recompensa?
 3. ¿Dónde ocurre la interacción principal?
-4. ¿Qué debe hacer la persona para configurarla y mantenerla?
+4. ¿Qué debe hacer la persona para configurarlo y mantenerlo?
 5. ¿Cómo conserva o limita su autonomía?
 6. ¿Qué evidencia existe sobre sus resultados?
 
 ## Herramientas digitales de medición y pausa
 
-Apple Screen Time y Google Digital Wellbeing ofrecen mediciones, límites por aplicación, periodos de descanso y controles de notificaciones (Apple, s. f.; Google, s. f.-c). Su disponibilidad reduce costos y aprendizaje, y permite reconocer patrones sin adquirir otro dispositivo.
+Apple Screen Time y Google Digital Wellbeing ofrecen mediciones, límites por aplicación, periodos de descanso y control de notificaciones (Apple, s. f.; Google, s. f.-c). Vienen incluidas en el teléfono, lo que reduce costos y aprendizaje. Registran minutos, aperturas, horarios y aplicaciones, y pueden apoyar la reducción de un uso específico, pero no distinguen si una sesión corresponde a conversación, descanso, información o contenido sin propósito renovado.
 
-Estas herramientas registran minutos, aperturas, horarios y aplicaciones. Pueden apoyar la reducción de un uso específico, pero no distinguen si una sesión responde a conversación, descanso, información o contenido sin un propósito renovado.
+Pause Point, anunciado por Google en 2026, lleva la reconsideración al sistema operativo: al abrir una aplicación marcada como distractora, introduce una pausa de diez segundos que ofrece respirar, fijar un temporizador o elegir otra actividad, y para desactivarlo hay que reiniciar el teléfono (Sanders, 2026). El anuncio no precisa en qué versiones y dispositivos estará disponible. Es el ejemplo más reciente del corpus de una pausa integrada que combina demora y precompromiso. Estas herramientas nativas son accesibles, pero expresan el significado dentro del teléfono, mediante tiempo o restricciones, y no asocian una intención con su comienzo en el entorno.
 
-Pause Point, anunciado por Google en 2026, lleva la reconsideración al propio sistema operativo: al abrir una aplicación elegida como distractora, introduce una pausa de diez segundos que ofrece respirar, fijar un temporizador o elegir otra actividad, y para desactivarlo es necesario reiniciar el teléfono (Sanders, 2026). El anuncio no precisa en qué versiones y dispositivos estará disponible, por lo que no se trata como una capacidad universal. Dentro del corpus revisado, es el ejemplo más reciente de una pausa integrada que combina demora y precompromiso.
-
-Estas herramientas nativas ofrecen una base accesible, pero expresan el significado dentro del teléfono mediante tiempo o restricciones y no asocian una intención con su comienzo en el entorno.
-
-Las aplicaciones de pausa llevan esa reconsideración al momento de apertura. one sec introduce una demora antes de abrir determinadas aplicaciones, pide reconsiderar la acción y permite continuar tras la pausa (one sec, s. f.). Su mecanismo ha sido estudiado tanto en condiciones experimentales como durante periodos prolongados (Grüning et al., 2023; Haliburton et al., 2024). La evidencia sugiere que una pausa puede disminuir aperturas automáticas y cambiar parte del recorrido. No demuestra que todas las personas mantengan el uso de la herramienta ni que reducir aperturas mejore por sí solo el bienestar.
-
-Su límite para esta investigación es que la decisión permanece en la pantalla: no conserva necesariamente otra actividad ni la relaciona con el lugar donde puede comenzar. Las funciones declaradas de respiración, preguntas y mensajes tampoco permiten anticipar la permanencia del uso ni la posible omisión de avisos repetidos. Quedan pendientes la duración del efecto, la transferencia hacia otra actividad y el esfuerzo de mantener la herramienta.
+Las aplicaciones de pausa trasladan la reconsideración al momento de apertura. one sec introduce una demora antes de abrir aplicaciones elegidas, pide reconsiderar la acción y permite continuar tras la pausa (one sec, s. f.). Su mecanismo se ha estudiado en condiciones experimentales y en uso prolongado (Grüning et al., 2023; Haliburton et al., 2024), con evidencia de que una pausa puede disminuir aperturas automáticas y cambiar parte del recorrido. Esa evidencia no demuestra que todas las personas mantengan la herramienta ni que reducir aperturas mejore por sí solo el bienestar. Para esta investigación, su límite es que la decisión permanece en la pantalla: no conserva otra actividad ni la relaciona con el lugar donde puede comenzar. Quedan pendientes la duración del efecto, la transferencia hacia otra actividad y el esfuerzo de mantener la herramienta.
 
 ## Objetos que restringen o alejan el teléfono
 
-Brick vincula una aplicación con un dispositivo físico utilizado para activar o revertir modos de bloqueo. Al momento de la consulta, la marca declaraba compatibilidad con Android 12 o posterior e iOS 17 o posterior, y mostraba un precio de USD 59 (Brick LLC, s. f.-a). Su propuesta de valor combina distancia y **precompromiso**, es decir, una decisión previa que restringe deliberadamente las opciones disponibles durante una situación: para recuperar el acceso es necesario volver al objeto.
+Brick vincula una aplicación con un dispositivo físico que activa o revierte modos de bloqueo. Al momento de la consulta declaraba compatibilidad con Android 12 o posterior e iOS 17 o posterior, con un precio de USD 59 (Brick LLC, s. f.-a). Su propuesta combina distancia y **precompromiso**, una decisión previa que restringe deliberadamente las opciones futuras: para recuperar el acceso hay que volver al objeto. Brick Zone extiende esa lógica a un espacio declarado mediante Bluetooth, por USD 99 en la tienda estadounidense consultada (Brick LLC, s. f.-b). Unpluq usa una etiqueta de comunicación de campo cercano —NFC, tecnología que intercambia datos a muy corta distancia— junto con horarios, barreras, estadísticas y un modelo de suscripción (Unpluq, s. f.). Screenless Breaker ofrece una llave NFC para reabrir aplicaciones bloqueadas, aunque su sitio entregaba información contradictoria sobre precio y compatibilidad con Android (Screenless, s. f.).
 
-Unpluq utiliza una etiqueta con comunicación de campo cercano —NFC, tecnología que intercambia datos a muy corta distancia— junto con horarios, barreras y estadísticas. Su modelo incluye una suscripción (Unpluq, s. f.). Screenless Breaker ofrece una llave NFC que permite reabrir aplicaciones bloqueadas (Screenless, s. f.). Su sitio entregaba información contradictoria tanto en precio como en compatibilidad: una tabla mencionaba iOS y Android, mientras la sección de preguntas frecuentes limitaba la compatibilidad actual a iOS y iPadOS y presentaba Android como una versión planificada. Brick Zone amplía la lógica hacia un espacio declarado mediante Bluetooth y mostraba un precio de USD 99 en la tienda estadounidense consultada (Brick LLC, s. f.-b).
+En estos productos el objeto físico aumenta el esfuerzo de revertir una restricción y hace visible el compromiso, pero añade costos de compra, compatibilidad y aprendizaje, puede ser desproporcionado frente a una actividad legítima y no recupera por sí mismo una intención alternativa. Su oferta comercial tampoco prueba demanda, adopción ni disposición de pago.
 
-En estos productos, el componente físico aumenta el esfuerzo de revertir una restricción y hace visible el compromiso, pero añade costos de compra, compatibilidad y aprendizaje, puede resultar desproporcionado ante una actividad digital legítima y no recupera por sí mismo una intención alternativa. Su oferta comercial tampoco demuestra demanda, adopción ni disposición de pago.
-
-Una restricción semejante puede lograrse sin conexión con el sistema operativo. kSafe es un contenedor con cierre temporizado que puede utilizarse para guardar el teléfono u otros objetos (Kitchen Safe, s. f.). Se incorpora como antecedente de mecanismo, sin confirmar su distribución en Chile. No depende del sistema operativo ni de permisos, pero su simplicidad se acompaña de una restricción fuerte: revertir la decisión antes del tiempo fijado es difícil sin dañar el contenedor, y una llamada importante o un uso legítimo posterior quedan sometidos a la misma barrera.
-
-Alejar o silenciar el teléfono, estrategias mencionadas en las entrevistas, introduce una restricción más reversible y sin compra adicional. Sin embargo, tampoco conserva información sobre la actividad alternativa.
+Una restricción semejante puede lograrse sin conexión con el sistema operativo. kSafe es un contenedor con cierre temporizado para guardar el teléfono u otros objetos (Kitchen Safe, s. f.); se incluye como antecedente de mecanismo, sin confirmar su distribución en Chile. Su simplicidad técnica se acompaña de una restricción fuerte: revertir la decisión antes del plazo es difícil sin dañar el contenedor, y una llamada importante queda sometida a la misma barrera. Alejar o silenciar el teléfono, estrategias mencionadas en las entrevistas, ofrece una restricción más reversible y sin costo, pero tampoco conserva información sobre la actividad alternativa.
 
 ## Objetos de foco y recordatorios situados
 
-Focusaur declara un dispositivo físico acompañado de una aplicación, etiquetas NFC, sonidos y funciones de hábito. Su comunicación comercial combina foco, constancia y recompensa, y mostraba en la tienda estadounidense un precio promocional de USD 129 frente a un valor de referencia de USD 169 en la fecha de consulta (Focusaur, s. f.). La oferta permite observar una variante en que el objeto deja de ser una simple llave y participa de un ritual de inicio.
+Focusaur combina un dispositivo físico con una aplicación, etiquetas NFC, sonidos y funciones de hábito, y su comunicación comercial mezcla foco, constancia y recompensa. En la fecha de consulta mostraba un precio promocional de USD 129 frente a un valor de referencia de USD 169 en su tienda estadounidense, que despacha solo a Estados Unidos (Focusaur, s. f.); no se comprobó disponibilidad en Chile. El caso muestra una variante en que el objeto deja de ser una llave y participa de un ritual de inicio. Esta familia pone en valor el ritual y el lugar, pero sus estadísticas, recompensas o mecanismos de juego pueden desplazar el propósito personal hacia el cumplimiento frente al sistema, y su orientación a la productividad limita su adecuación al ocio y a intenciones que pueden cambiar.
 
-La política de despacho consultada limita la tienda principal a Estados Unidos y remite a una tienda separada para Europa; no se comprobó disponibilidad en Chile, por lo que su precio no permite comparar costos locales. Esta familia muestra el valor del ritual y del lugar, pero sus estadísticas, recompensas o mecanismos de juego pueden desplazar el propósito personal hacia el cumplimiento frente al sistema, y su orientación a productividad limita su adecuación al ocio y a intenciones que pueden cambiar.
-
-Otro uso del objeto consiste en recordar una acción sin administrar el acceso al teléfono. *The Tangible Reminder*, aunque anterior al periodo priorizado, sigue siendo el referente más claro de integración entre información digital, objeto y entorno (Hermann et al., 2007). Sin embargo, las citas que comunicaba tienen horarios y contenidos estables, mientras una intención durante el ocio puede cambiar de prioridad sin que ello implique incumplimiento. Los recordatorios basados en lugar, como Place-Its, presentan la señal donde puede resultar significativa (Sohn et al., 2005), pero una ubicación detectada técnicamente no equivale a una relación personal con el espacio ni garantiza ejecutar una intención.
+Otro uso del objeto consiste en recordar una acción sin administrar el acceso al teléfono. *The Tangible Reminder*, aunque anterior al periodo priorizado, sigue siendo el referente más claro de integración entre información digital, objeto y entorno (Hermann et al., 2007). Las citas que comunicaba, sin embargo, tienen horarios y contenidos estables, mientras que una intención durante el ocio puede cambiar de prioridad sin que eso sea un incumplimiento. Los recordatorios basados en lugar, como Place-Its, presentan la señal donde puede ser significativa (Sohn et al., 2005), pero una ubicación detectada técnicamente no equivale a una relación personal con el espacio.
 
 ## Comparación de aportes y límites
 
-Cada mecanismo responde a un propósito: observar patrones, abrir una pausa, sostener una restricción, dificultar el retorno o recordar mediante el entorno. Los límites aparecen al confundirlos: medir no explica el significado, bloquear no recupera una alternativa y recordar no garantiza actuar. La incorporación de un objeto también debe justificar sus costos y mantenimiento.
+Cada mecanismo responde a un propósito: observar patrones, abrir una pausa, sostener una restricción, dificultar el retorno o recordar mediante el entorno. Los límites aparecen al confundirlos: medir no explica el significado, bloquear no recupera una alternativa y recordar no garantiza actuar. La incorporación de un objeto debe justificar además sus costos y su mantenimiento.
 
-La evidencia académica sobre autocontrol digital continúa siendo heterogénea. Los periodos de estudio suelen ser breves y las métricas más frecuentes son tiempo, aperturas o permanencia (Biedermann et al., 2021; Monge Roffarello & De Russis, 2023). Falta conocer mejor la autonomía, la comprensión del mecanismo y el abandono a largo plazo.
+La evidencia académica sobre autocontrol digital sigue siendo heterogénea: los estudios suelen ser breves y medir tiempo, aperturas o permanencia (Biedermann et al., 2021; Monge Roffarello & De Russis, 2023), y se sabe poco sobre autonomía, comprensión del mecanismo y abandono a largo plazo. Una tendencia reciente es permitir que las reglas se revisen. Peña-Albert et al. (2026) invitaron a reconfigurar sus avisos a personas que los habían desactivado en una herramienta de autocontrol digital, y 63 de 138 aceptaron. El resultado no prueba una eficacia general, pero indica que una regla puede perder pertinencia y que ajustarla forma parte de la experiencia.
 
-Una tendencia reciente consiste en permitir que las reglas se revisen. Peña-Albert et al. (2026) invitaron a reconfigurar sus avisos a personas que los habían desactivado en una herramienta de autocontrol digital. De 138 personas del grupo experimental, 63 aceptaron la propuesta. El resultado no demuestra eficacia general, pero indica que una regla puede perder pertinencia y que su ajuste forma parte de la experiencia.
+El corpus muestra dos direcciones: simplificar el apoyo dentro del sistema operativo o añadir presencia física para reforzar un compromiso o una relación con el lugar. La Tabla 2 resume los mecanismos y sus límites frente al problema estudiado.
 
-El corpus muestra dos direcciones: simplificar el apoyo dentro del sistema operativo o añadir presencia física para reforzar un compromiso o una relación con el lugar. Esta diferencia requiere comparar directamente las alternativas.
+*Tabla 2*
 
-La tabla reúne los mecanismos anteriores y sus límites frente al problema estudiado.
+*Familias de herramientas y sus límites frente al problema*
 
 | Familia | Mecanismo principal | Referentes | Fortaleza | Límite frente al problema estudiado |
 | --- | --- | --- | --- | --- |
@@ -373,75 +318,67 @@ La tabla reúne los mecanismos anteriores y sus límites frente al problema estu
 | Bloqueo | Restringir el acceso mediante una regla. | Brick, Unpluq, Screenless Breaker. | Sostiene un precompromiso difícil de eludir. | Se concentra en impedir la actividad presente. |
 | Separación | Alejar o encerrar el dispositivo. | kSafe, estrategias cotidianas. | Reduce la disponibilidad física del teléfono. | No conserva qué otra actividad se quería comenzar. |
 | Objeto de foco | Vincular lugar, hábito y compromiso. | Focusaur, Brick Zone. | Hace visible un estado y puede formar un ritual. | Tiende hacia productividad, control o recompensa. |
-| Recordatorio tangible | Asociar información con objetos o lugares. | *The Tangible Reminder*, Place-Its. | Lleva una clave al contexto de la acción. | No aborda directamente el ocio digital ni la decisión de continuar. |
+| Recordatorio tangible | Asociar información con objetos o lugares. | *The Tangible Reminder*, Place-Its. | Lleva una clave al contexto de la acción. | No aborda el ocio digital ni la decisión de continuar. |
+
+*Nota.* Clasificación analítica elaborada para esta investigación a partir de las fuentes citadas en el capítulo.
 
 ## Oportunidad y exigencia de comparación
 
-El corpus revisado no mostró una evaluación independiente que reúna seis elementos: una intención formulada por la persona, un primer paso concreto, una condición digital comprensible, una señal física situada, la posibilidad legítima de continuar y una comparación con una notificación equivalente. Esta ausencia se limita a las fuentes consultadas y no constituye una afirmación de novedad universal.
+En el corpus revisado no apareció una evaluación independiente que reuniera seis elementos: una intención formulada por la persona, un primer paso concreto, una condición digital comprensible, una señal física situada, la posibilidad legítima de continuar y una comparación con una notificación equivalente. Esta ausencia se limita a las fuentes consultadas y no es una afirmación de novedad universal.
 
-La oportunidad es apoyar el paso entre recordar una intención y reconocer dónde comenzar. Su valor dependería de relacionar intención, señal y lugar fuera del teléfono, sin aumentar la dificultad de acceso.
-
-Esta dirección también contiene su principal exigencia crítica. Si una notificación digital ofrece el mismo apoyo con menor carga, el componente físico no se justifica. El aporte debe comprobarse mediante una comparación y no mediante la novedad aparente del objeto.
+La oportunidad consiste en apoyar el tránsito entre recordar una intención y reconocer dónde comenzarla, relacionando intención, señal y lugar fuera del teléfono sin aumentar la dificultad de acceso. Esta dirección contiene también su principal exigencia crítica: si una notificación digital ofrece el mismo apoyo con menor carga, el componente físico no se justifica. El aporte debe probarse mediante comparación, no suponerse por la novedad aparente del objeto.
 
 # 9. Criterios de diseño
 
-Los criterios traducen la investigación en condiciones para formular y evaluar la propuesta. Se agrupan según tres responsabilidades: conservar una intención comprensible, respetar la decisión de la persona y justificar el esfuerzo que introduce el sistema.
+Los criterios traducen la investigación en condiciones para formular y evaluar la propuesta. Son ocho y se agrupan según tres responsabilidades: conservar una intención comprensible, respetar la decisión de la persona y justificar el esfuerzo que introduce el sistema.
 
 ## Intención propia y comienzo concreto
 
-La intervención debe conservar una actividad elegida por la persona. No puede deducirla desde el tiempo de uso, la aplicación abierta o una categoría de productividad, porque experiencias de duración semejante pueden adquirir sentidos distintos según el propósito y el contexto (Lukoff et al., 2018; Meier & Reinecke, 2021). Los contrastes entre P2–P3 y P6–P8 refuerzan esta diferencia dentro de las entrevistas. Sin una intención formulada, no existe contenido legítimo que recuperar.
+**C1. Partir de una intención propia.** La intervención debe conservar una actividad elegida por la persona y no deducirla desde el tiempo de uso, la aplicación abierta o una categoría de productividad, porque experiencias de duración semejante adquieren sentidos distintos según el propósito y el contexto (Lukoff et al., 2018; Meier & Reinecke, 2021). Los contrastes entre P2–P3 y P6–P8 muestran esa diferencia dentro de las entrevistas. Sin una intención formulada no hay contenido legítimo que recuperar.
 
-Conservar la intención también exige aclarar cómo podría comenzar, porque una meta amplia puede dejar ese paso sin definir. Las intenciones de implementación muestran que vincular una situación con una respuesta prevista puede favorecer el paso desde una meta hacia la acción (Gollwitzer & Sheeran, 2006). Por ello, cada intención debe expresarse mediante una acción concreta y próxima. El primer paso no obliga a completar la actividad; solo reduce la distancia entre recordarla e iniciarla.
+**C2. Relacionar la intención con un primer paso.** Una meta amplia puede dejar sin definir cómo empezar. Las intenciones de implementación muestran que vincular una situación con una respuesta prevista facilita pasar de la meta a la acción (Gollwitzer & Sheeran, 2006). Por eso cada intención se expresa mediante una acción concreta y próxima, que no obliga a completar la actividad: solo acorta la distancia entre recordarla e iniciarla.
 
 ## Activación comprensible y decisión autónoma
 
-La activación debe depender de un evento que la persona pueda entender y modificar. Android puede registrar tiempo, horario o continuidad de uso con autorización, pero esos datos no revelan por sí solos aburrimiento, culpa o satisfacción (Google, s. f.-d). La diferencia entre episodios relatados por una misma persona confirma que una condición técnica no equivale al sentido de la experiencia. Tiempo, continuidad de uso u horario son condiciones posibles, pero su significado debe explicarse y probarse.
+**C3. Usar una condición comprensible.** La activación debe depender de un evento que la persona pueda entender y modificar. Android puede registrar tiempo, horario o continuidad de uso con autorización, pero esos datos no revelan aburrimiento, culpa o satisfacción (Google, s. f.-d), y la variación entre episodios de una misma persona confirma que una condición técnica no equivale al sentido de la experiencia. Cualquiera de esas condiciones debe explicarse y probarse.
 
-Una vez activada, la señal debe devolver la intención al presente sin bloquear el teléfono. Las intervenciones restrictivas pueden sostener un compromiso, pero también interferir con usos legítimos, mientras una pausa breve conserva la posibilidad de continuar (Grüning et al., 2023; Radtke et al., 2022). Ignorar la señal, detenerla, cambiar la intención o permanecer en la actividad digital son respuestas válidas. El sistema puede reconocer una elección que conoce, como haber preparado una actividad o declarar que se comenzó, pero no felicitar por una acción que no observó ni convertir la respuesta posterior en una nota de cumplimiento. El prototipo muestra una confirmación breve ante esa declaración; las pruebas deberán comparar si ayuda o resulta presionante. Puntajes, rachas y premios quedan fuera del prototipo inicial.
+**C4. Abrir una elección, no imponer una conducta.** Una vez activada, la señal devuelve la intención al presente sin bloquear el teléfono. Las intervenciones restrictivas pueden sostener un compromiso, pero también interferir con usos legítimos, mientras que una pausa breve conserva la posibilidad de continuar (Grüning et al., 2023; Radtke et al., 2022). Ignorar la señal, detenerla, cambiar la intención o permanecer en la actividad digital son respuestas válidas. El sistema puede reconocer una elección que conoce —haber preparado una actividad o declarar que se comenzó—, pero no felicitar por una acción que no observó ni convertir la respuesta en una nota de cumplimiento. El prototipo muestra una confirmación breve ante esa declaración, y las pruebas deberán establecer si ayuda o presiona. Puntajes, rachas y premios quedan fuera.
 
-La misma autonomía exige reconocer cuándo la ayuda no es pertinente. Una actividad digital elegida, relacional, concentrada o reparadora no requiere corrección. P6 y P7 relataron experiencias extensas o focalizadas que conservaron sentido, mientras P4 y P8 mostraron que la pertinencia puede cambiar dentro de una misma persona. La propuesta debe permanecer inactiva cuando no exista una intención alternativa y permitir que una regla pierda vigencia sin convertirlo en un error.
+**C5. Reconocer cuándo no intervenir.** Una actividad digital elegida, relacional, concentrada o reparadora no requiere corrección. P6 y P7 relataron experiencias extensas o focalizadas que conservaron sentido, y P4 y P8 mostraron que la pertinencia cambia dentro de una misma persona. La propuesta debe permanecer inactiva cuando no exista una intención alternativa y permitir que una regla pierda vigencia sin tratarlo como un error.
 
 ## Carga de uso, convivencia y aporte físico
 
-Configurar el ciclo, vincular y cargar el objeto, situarlo y prepararlo para otro uso agregan esfuerzo. Chiu y Gilbert (2024) observaron que aumentar el esfuerzo físico necesario para preparar un recordatorio reduce su uso. Los objetos revisados también incorporan costos de compatibilidad, mantenimiento y aprendizaje. Cada paso debe aportar a la comprensión o al funcionamiento; si la carga supera el beneficio, la propuesta deberá simplificarse.
+**C6. Mantener una carga proporcional.** Configurar el ciclo, vincular y cargar el objeto, situarlo y prepararlo de nuevo agregan esfuerzo, y más esfuerzo de preparación reduce el uso de un recordatorio (Chiu & Gilbert, 2024). Los objetos revisados suman además costos de compatibilidad, mantenimiento y aprendizaje. Cada paso debe aportar a la comprensión o al funcionamiento; si la carga supera el beneficio, la propuesta debe simplificarse.
 
-Además de limitar el esfuerzo de uso, el sistema debe proteger la información personal y cuidar sus efectos en el espacio compartido. Las preferencias por señales discretas aparecieron en P3–P5 y P7–P8, y el rechazo a comparaciones entre días en P7, aunque fueron respuestas ante un concepto anterior y no una validación formal. Una señal situada no debe exponer su contenido ni molestar a quienes comparten el espacio. La intensidad, el canal, la duración y la ubicación deberán ajustarse al contexto mediante pruebas.
+**C7. Proteger la privacidad y la convivencia.** Una señal situada no debe exponer su contenido ni molestar a quienes comparten el espacio. Las preferencias por señales discretas (P3–P5 y P7–P8) y el rechazo a comparaciones entre días (P7) apuntan en esa dirección, aunque respondían a un concepto anterior. Intensidad, canal, duración y ubicación deben ajustarse a cada contexto mediante pruebas.
 
-Estas exigencias hacen necesario justificar el objeto por la ayuda que ofrece. Los recordatorios tangibles y basados en ubicación muestran que el entorno puede participar en la recuperación de una acción futura, pero no garantizan que la persona comprenda la señal ni que actúe (Hermann et al., 2007; O’Rear & Radvansky, 2019). Debe aportar una asociación con el lugar o una forma de recuperación que una notificación no produzca de igual manera. La comparación entre ambas alternativas será una condición central de evaluación.
+**C8. Demostrar el valor de la capa física.** El objeto se justifica por la ayuda que ofrece. Los recordatorios tangibles y basados en ubicación muestran que el entorno puede participar en la recuperación de una acción futura, pero no aseguran que la persona comprenda la señal ni que actúe (Hermann et al., 2007; O’Rear & Radvansky, 2019). El objeto debe aportar una asociación con el lugar que una notificación no produzca de igual manera, y comparar ambas alternativas es una condición central de la evaluación.
 
 # 10. Formulación
 
 ## Problema de diseño y pregunta de investigación
 
-Como mostró el estado del arte, medir, pausar o restringir la actividad presente no devuelve necesariamente una intención alternativa ni indica dónde puede comenzar. El problema de diseño consiste en hacer nuevamente perceptible una intención formulada por la persona, sin bloquear el teléfono, evaluar su conducta o intervenir cuando la actividad digital conserva sentido.
-
-La propuesta se dirige a quien ya eligió una actividad y sabe cómo comenzarla, pero necesita mantenerla disponible durante ciertos episodios de ocio digital. Es una necesidad situacional, no una característica permanente ni una consecuencia de la edad.
+El estado del arte mostró que medir, pausar o restringir la actividad presente no devuelve necesariamente una intención alternativa ni indica dónde comenzarla. El problema de diseño consiste en hacer de nuevo perceptible una intención formulada por la persona, sin bloquear el teléfono, evaluar su conducta ni intervenir cuando la actividad digital conserva sentido. La propuesta se dirige a quien ya eligió una actividad y sabe cómo comenzarla, pero necesita mantenerla disponible durante ciertos episodios de ocio digital: una necesidad situacional, no un rasgo permanente ni una consecuencia de la edad.
 
 > ¿Qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?
 
-Volver a considerar una actividad significa reconocer la intención y recordar cómo comenzarla. La investigación debe distinguir ese resultado de abandonar el teléfono, completar la actividad o reducir el tiempo de uso. Esta distinción permite evaluar una ayuda sin exigir que la persona siga su señal.
+Volver a considerar una actividad significa reconocer la intención y recordar cómo comenzarla. La investigación distingue ese resultado de abandonar el teléfono, completar la actividad o reducir el tiempo de uso, de modo que una ayuda pueda evaluarse sin exigir que la persona siga su señal.
 
 ## Definición y alcance de Relevo
 
-Relevo es un sistema phygital compuesto por una aplicación Android y un objeto de señal situado junto al primer paso de una actividad elegida. La aplicación permite registrar la intención, definir cómo comienza y configurar una condición de activación. Cuando esa condición se cumple, el objeto emite un pulso ambiental breve. La persona puede considerar la intención, continuar con la actividad digital o detener la señal.
+Relevo es un sistema phygital compuesto por una aplicación Android y un objeto de señal situado junto al primer paso de una actividad elegida. La aplicación registra la intención, define cómo comienza y configura una condición de activación. Cuando esa condición se cumple, el objeto emite un pulso ambiental breve, y la persona puede considerar la intención, seguir con la actividad digital o detener la señal.
 
-El **pulso ambiental** es una señal física de corta duración que busca llamar la atención sin entregar una instrucción. Su significado proviene de la asociación creada previamente entre intención, objeto y lugar. La señal no informa que la persona ha fallado ni indica qué debe hacer; solo vuelve perceptible la actividad que decidió mantener disponible.
+El **pulso ambiental** es una señal física de corta duración que busca llamar la atención sin dar una instrucción. Su significado proviene de la asociación creada antes entre intención, objeto y lugar: no informa que la persona falló ni indica qué debe hacer, solo vuelve perceptible la actividad que decidió mantener disponible. Situar la señal cerca del comienzo busca que la persona reconozca, en el mismo lugar, la actividad que quería hacer y la posibilidad de iniciarla. Esa relación con el entorno es el aporte que el objeto deberá demostrar.
 
-Situar la señal cerca del comienzo busca que la persona reconozca, en el mismo lugar, tanto la actividad que quería hacer como la posibilidad de iniciarla. Esta relación con el entorno constituye el aporte que deberá demostrar el objeto.
-
-El alcance inicial considera una persona, una intención activa, un primer paso, una o varias aplicaciones cuyo uso se suma bajo un mismo límite, una condición observable, un objeto y un lugar doméstico elegido manualmente. El sistema no infiere estados emocionales, no determina si una sesión es adecuada y no observa si la persona cumple la actividad. El prototipo no incorpora puntajes, rachas ni premios. Estas opciones podrían estudiarse en otra etapa, pero no se justificarían por sí solas como formación de hábitos ni permitirían calificar la decisión de la persona.
-
-Android será la plataforma del primer prototipo integrado. El objeto emitirá luz y sonido; su forma definitiva, intensidad, duración, autonomía energética, materiales, precio y adopción sostenida deberán definirse mediante desarrollo y pruebas. La propuesta mantiene su carácter phygital, pero la configuración del componente físico puede cambiar si la evidencia muestra que otra relación objetual responde mejor al problema.
+El alcance inicial considera una persona, una intención activa, un primer paso, una o varias aplicaciones cuyo uso se suma bajo un mismo límite, una condición observable, un objeto y un lugar doméstico elegido manualmente. El sistema no infiere estados emocionales, no juzga si una sesión es adecuada y no observa si la persona realiza la actividad. Android es la plataforma del primer prototipo integrado. El objeto emitirá luz y sonido; su forma, intensidad, duración, autonomía energética, materiales, precio y uso sostenido se definirán mediante desarrollo y pruebas. La propuesta mantiene su carácter phygital, pero el componente físico puede cambiar si la evidencia muestra que otra relación con los objetos responde mejor al problema.
 
 ## Hipótesis y objetivos
 
 > Si una persona registra una intención y su primer paso, sitúa una señal física junto a ese comienzo y la recibe cuando se cumple una condición configurada, entonces la intención podría volver a estar disponible para decidir, sin bloquear la actividad digital ni imponer su ejecución.
 
-La hipótesis exige evaluar asociación, aporte del lugar, autonomía y funcionamiento. Se debilita si la persona necesita consultar el teléfono para comprender la señal, si el soporte o la ubicación no aportan una diferencia, o si su carga supera el beneficio.
+La hipótesis se evalúa en cuatro dimensiones: asociación, aporte del lugar, autonomía y funcionamiento. Se debilita si la persona necesita consultar el teléfono para comprender la señal, si el soporte o la ubicación no marcan una diferencia o si la carga supera el beneficio.
 
-El **objetivo general** es diseñar y evaluar formativamente un sistema phygital que apoye la recuperación situada de una intención personal durante episodios de ocio digital, mediante una señal asociada al primer paso de la actividad, sin bloquear ni calificar la decisión posterior. La evaluación formativa utiliza pruebas sucesivas para identificar dificultades y orientar mejoras del diseño.
-
-Este objetivo se desarrolla mediante cuatro **objetivos específicos**:
+El **objetivo general** es diseñar y evaluar formativamente un sistema phygital que apoye la recuperación situada de una intención personal durante episodios de ocio digital, mediante una señal asociada al primer paso de la actividad y sin bloquear ni calificar la decisión posterior. La evaluación formativa usa pruebas sucesivas para identificar dificultades y orientar mejoras del diseño. Los **objetivos específicos** son:
 
 1. Caracterizar la relación entre ocio digital, continuidad, intención alternativa y contexto mediante revisión bibliográfica, entrevistas y análisis de referentes.
 2. Traducir los hallazgos en una experiencia phygital que articule configuración digital, señal física, lugar y control de la persona.
@@ -450,7 +387,11 @@ Este objetivo se desarrolla mediante cuatro **objetivos específicos**:
 
 ## Actores y responsabilidades
 
-La experiencia depende de quien configura el ciclo y también de las personas que comparten el espacio o participan en el desarrollo. La tabla identifica funciones necesarias; no representa un equipo contratado ni acuerdos de fabricación ya establecidos.
+La experiencia depende de quien configura el ciclo, de quienes comparten el espacio y de quienes participan en el desarrollo. La Tabla 3 identifica funciones necesarias; no describe un equipo contratado ni acuerdos de fabricación.
+
+*Tabla 3*
+
+*Actores y responsabilidades*
 
 | Actor | Relación con Relevo | Necesidad o responsabilidad principal |
 | --- | --- | --- |
@@ -459,7 +400,7 @@ La experiencia depende de quien configura el ciclo y también de las personas qu
 | Convivientes | Comparten el espacio donde puede aparecer la señal. | Discreción y ausencia de molestias. |
 | Diseñador | Articula investigación, experiencia, forma y evaluación. | Mantener coherencia entre problema y decisiones. |
 | Desarrollo Android | Implementa permisos, condición, estados y comunicación. | Funcionamiento comprensible y recuperación de fallos. |
-| Desarrollo electrónico | Resuelve energía, enlace y componentes que producen luz y sonido. | Fiabilidad, seguridad y mantenimiento. |
+| Desarrollo electrónico | Resuelve energía, enlace y componentes de luz y sonido. | Fiabilidad, seguridad y mantenimiento. |
 | Fabricación y proveedores | Producen carcasa, circuito y ensamblaje. | Costos, trazabilidad y reparación. |
 | Especialistas en accesibilidad | Revisan canales, controles y barreras de uso. | Evitar exclusiones y promesas no comprobadas. |
 
@@ -467,9 +408,15 @@ La experiencia depende de quien configura el ciclo y también de las personas qu
 
 ## Aplicación, testigo y relación con el lugar
 
-Relevo distribuye funciones entre una aplicación, que conserva la información y configura la condición; un objeto, que hace visible que existe una intención activa y emite la señal; y el entorno, que relaciona esa señal con una acción posible. La persona reúne esas partes mediante una asociación que ella misma decide:
+Relevo distribuye funciones entre una aplicación, que conserva la información y configura la condición; un objeto, que hace visible que existe una intención activa y emite la señal; y el entorno, que relaciona esa señal con una acción posible. La persona reúne esas partes mediante una asociación que ella misma decide (Figura 1).
+
+*Figura 1*
+
+*Relación entre intención, lugar, condición y decisión*
 
 > intención personal → primer paso → lugar elegido → condición configurada → pulso ambiental → decisión de la persona
+
+*Nota.* Elaboración propia. La secuencia termina en una decisión abierta, no en una acción obligatoria.
 
 La aplicación permite nombrar una actividad en lenguaje cotidiano y convertirla en un primer paso concreto; para una intención amplia como hacer ejercicio, solicita un comienzo —ponerse las zapatillas— y un lugar elegido manualmente, sin intentar detectarlo. También configura y explica la condición de activación, vincula el objeto y muestra los estados técnicos necesarios para modificar o detener el ciclo. La preparación debe ser breve.
 
@@ -513,7 +460,11 @@ La integración deberá resolver identificación del ciclo, órdenes duplicadas 
 
 Si se revoca un permiso, se pierde conexión o falta batería, la aplicación debe informar y permitir desarmar. Lo mismo ocurre si se limita la ejecución en segundo plano, es decir, mientras la aplicación no está visible. No debe aparentar que evaluó una condición cuando no pudo hacerlo.
 
-Los estados siguientes permiten identificar qué puede ocurrir durante el recorrido y cómo salir de cada situación.
+La Tabla 4 resume qué puede ocurrir durante el recorrido y cómo salir de cada situación.
+
+*Tabla 4*
+
+*Estados del ciclo y salidas disponibles*
 
 | Estado | Qué ocurre | Salida disponible |
 | --- | --- | --- |
@@ -526,7 +477,7 @@ Los estados siguientes permiten identificar qué puede ocurrir durante el recorr
 | Fallo técnico | La condición o el enlace no pueden ejecutarse. | Recuperar, revisar o desarmar. |
 | Ciclo cerrado | La señal terminó o la regla venció. | Rearmar, cambiar intención o eliminar. |
 
-La cobertura completa del recorrido y sus estados alternativos se conserva en el [índice de anexos](anexos/README.md). Estos documentos permiten revisar la estructura, pero no constituyen resultados de uso.
+*Nota.* Estados del recorrido previsto con el testigo. La cobertura completa, con 35 estados alternativos, está en el [índice de anexos](anexos/README.md) y describe la estructura, no resultados de uso.
 
 ## Autonomía, privacidad y accesibilidad
 
@@ -540,7 +491,11 @@ Las Pautas de Accesibilidad para el Contenido Web ofrecen un criterio preventivo
 
 ## Continuidad de la experiencia y soporte
 
-Un mapa de servicio, o *service blueprint*, relaciona acciones de la persona, puntos de contacto y procesos internos (Gibbons, 2017). Permite revisar qué soporte exige cada momento de Relevo, desde la preparación hasta su retiro.
+Un mapa de servicio, o *service blueprint*, relaciona las acciones de la persona con los puntos de contacto y los procesos internos que las sostienen (Gibbons, 2017). La Tabla 5 lo aplica para revisar qué soporte exige cada momento de Relevo, desde la preparación hasta el retiro.
+
+*Tabla 5*
+
+*Soporte requerido en cada momento de la experiencia*
 
 | Momento previsto | Qué necesita la persona | Soporte que debe estar resuelto | Estado |
 | --- | --- | --- | --- |
@@ -619,55 +574,39 @@ El alcance no incluye adicción, tratamiento clínico, control parental, vigilan
 
 # 13. Plan de desarrollo y validación
 
-Antes de trabajar con participantes se comprobarán enlace, patrón, control local y materiales. Esto permite distinguir un fallo técnico de una dificultad de comprensión. El desarrollo avanzará desde la asociación básica hacia un prototipo integrado y su uso cotidiano.
+El desarrollo avanza desde la asociación básica entre intención, señal y lugar hacia un prototipo integrado y su uso cotidiano. En cada etapa aumenta la **fidelidad** del prototipo, es decir, su semejanza con el uso previsto, y cada especificación se mantiene como candidata hasta contrastarla. Antes de trabajar con participantes se comprueban enlace, patrón, control local y materiales, para no confundir un fallo técnico con una dificultad de comprensión. Privacidad, accesibilidad y seguridad se revisan en todas las etapas.
 
-Las pruebas aumentarán la fidelidad del prototipo, su semejanza con el uso previsto. Cada especificación seguirá siendo candidata hasta contrastarla. Privacidad, accesibilidad y seguridad se revisarán durante todas las etapas.
-
-En paralelo, el prototipo Android se comprobará primero en un teléfono y un parlante concretos: conteo de varias aplicaciones, notificación, salida del sonido, silencio, desconexión, envío de registros y eliminación de datos. Solo si esa revisión técnica y la del consentimiento resultan satisfactorias, una evaluación formativa con cinco o seis personas observará si comprenden la preparación, qué carga les supone y si conservan el control. Esa evaluación no compara el lugar con una notificación ni evalúa la forma final del objeto.
+En paralelo, el prototipo Android se comprobará en un teléfono y un parlante concretos: conteo de varias aplicaciones, notificación, salida del sonido, silencio, desconexión, envío de registros y eliminación de datos. Solo si esa revisión técnica y la del consentimiento son satisfactorias, una evaluación formativa con cinco o seis personas observará si comprenden la preparación, qué carga les supone y si conservan el control. Esa evaluación no compara el lugar con una notificación ni evalúa la forma final del objeto.
 
 ## Asociación y comparación con alternativas
 
-La primera prueba utilizará una señal física real, activada manualmente desde Android, con luz blanca cálida externa revisada. La persona formulará intención y primer paso, elegirá el lugar y recibirá el pulso durante otra actividad. Se observará si recupera la intención sin consultar el teléfono.
+La primera prueba de asociación usará una señal física real, activada manualmente desde Android, con una luz blanca cálida externa ya revisada. La persona formulará una intención y su primer paso, elegirá el lugar y recibirá el pulso mientras realiza otra actividad. En este ensayo la señal se enviará ocho minutos después de la configuración y el patrón durará tres segundos; ambos son parámetros de la prueba, no el momento ideal de intervención, y la condición de activación sigue abierta.
 
-En este ensayo, la señal se enviará ocho minutos después de la configuración y el patrón durará tres segundos. Ambos son parámetros de la prueba: no definen el momento ideal de intervención ni demuestran detección de una intención ausente. La condición de activación sigue pendiente.
+El registro distinguirá cuatro momentos: percepción de la señal, atribución al sistema, recuperación de la intención e identificación del primer paso. Por separado se comprobará si la persona entiende que puede ignorar, silenciar o seguir la señal; iniciar la actividad no será requisito. Si el significado no puede reconstruirse o las salidas no se comprenden, la configuración se reformulará antes de avanzar.
 
-El registro distinguirá cuatro momentos: percepción de la señal, atribución al sistema, recuperación de la intención e identificación del primer paso. Por separado, se comprobará si la persona entiende que puede ignorar, silenciar o seguir la señal. Iniciar la actividad no será requisito. Si el significado no puede reconstruirse o las salidas no se comprenden, la configuración deberá reformularse antes de avanzar.
-
-Si la asociación se sostiene, la segunda etapa comparará tres condiciones: objeto junto al primer paso, el mismo objeto en un lugar neutro y una notificación local Android. Cada persona prepara una intención distinta en cada condición, con relevancia y claridad semejantes según su valoración. Los órdenes se distribuyen entre las seis secuencias posibles para reducir el efecto de practicar antes con una alternativa. El intervalo se mantiene equivalente; la diferencia entre intenciones se conserva como límite.
-
-El control digital dice «Relevo · Tu intención está disponible», sin mostrar intención ni primer paso. La comparación se limita a ese aviso genérico: no permite afirmar superioridad frente a recordatorios que expliciten el contenido. Sostener esa afirmación exigiría otra prueba previamente definida.
-
-Se compararán comprensión, consulta del teléfono, carga, intrusión y control. Si el aviso ofrece el mismo apoyo con menor esfuerzo, se reconsiderará la configuración física.
+Si la asociación se sostiene, una segunda etapa comparará tres condiciones: el objeto junto al primer paso, el mismo objeto en un lugar neutro y una notificación local de Android. Cada persona prepara una intención distinta para cada condición, de relevancia y claridad semejantes según su propia valoración, y el orden se distribuye entre las seis secuencias posibles para reducir el efecto de practicar antes con una alternativa. El intervalo es equivalente en las tres condiciones; la diferencia entre intenciones se declara como límite. La notificación dice «Relevo · Tu intención está disponible», sin mostrar la intención ni el primer paso, de modo que la comparación se limita a ese aviso genérico y no permite afirmar superioridad frente a recordatorios que expliciten el contenido. Se compararán comprensión, consulta del teléfono, carga, intrusión y control; si el aviso ofrece el mismo apoyo con menos esfuerzo, se reconsiderará la configuración física.
 
 ## Forma, integración y piloto doméstico
 
-Una vez sostenida la asociación, se compararán formas y comportamientos para la luz y el sonido. Intensidad, duración, ritmo y separación entre ambos se probarán sobre superficies y distancias reales. También se evaluará el control para silenciar, la estabilidad del objeto y su lectura como parte del entorno.
+Una vez sostenida la asociación, se compararán formas y comportamientos de luz y sonido: intensidad, duración, ritmo y separación entre ambos canales, sobre superficies y distancias reales. También se evaluarán el control para silenciar, la estabilidad del objeto y su lectura como parte del entorno, y la selección considerará percepción, privacidad, convivencia, accesibilidad y consumo.
 
-La selección considerará percepción, privacidad, convivencia, accesibilidad y consumo mediante pruebas situadas.
-
-Con esos parámetros, la etapa de integración incorpora aplicación Android, condición observable, comunicación Bluetooth, vencimiento y estados de error. Se probarán permisos, pantalla bloqueada, cambio de aplicación, pérdida de conexión, batería baja, reinicio y comandos tardíos.
-
-Solo después de resolver las etapas anteriores se realizará un piloto doméstico de duración acotada. El protocolo definirá número de participantes, días de uso, criterios de inclusión, consentimiento, registros y forma de retiro. Se observarán armado, reubicación, pérdida, carga, convivencia, abandono y posible pérdida de atención a la señal con la repetición. Un ensayo de dos días puede mostrar dificultades de uso; no demuestra formación de hábitos. Un seguimiento más largo necesitaría otro protocolo y una medida de automaticidad adecuada a la actividad estudiada (Gardner et al., 2012).
+Con esos parámetros, la integración incorporará aplicación Android, condición observable, comunicación Bluetooth, vencimiento y estados de error, y se probarán permisos, pantalla bloqueada, cambio de aplicación, pérdida de conexión, batería baja, reinicio y órdenes tardías. Solo después se realizará un piloto doméstico de duración acotada, cuyo protocolo definirá participantes, días de uso, criterios de inclusión, consentimiento, registros y forma de retiro. Se observarán armado, reubicación, pérdida, carga, convivencia, abandono y posible habituación a la señal. Un piloto de dos días puede mostrar dificultades de uso, pero no la formación de un hábito; para eso haría falta un seguimiento más largo y una medida de automaticidad adecuada a la actividad (Gardner et al., 2012).
 
 ## Registro de evidencia y criterios de decisión
 
-Cada ficha registrará fecha, versión, pregunta, participantes codificados, contexto, materiales, procedimiento, evidencia, interpretación, límites y decisión, y distinguirá lo observado de lo inferido: mirar el objeto no demuestra comprenderlo. Se combinarán observación, preguntas abiertas, reconstrucción del significado y registro de errores; los cuestionarios breves sobre carga o intrusión no sustituirán el relato, y se conservarán contraejemplos y razones de abandono.
+Cada ficha registrará fecha, versión, pregunta, participantes codificados, contexto, materiales, procedimiento, evidencia, interpretación, límites y decisión, y distinguirá lo observado de lo inferido: mirar el objeto no equivale a comprenderlo. Se combinarán observación, preguntas abiertas, reconstrucción del significado y registro de errores; los cuestionarios breves sobre carga o intrusión complementarán el relato sin reemplazarlo, y se conservarán contraejemplos y razones de abandono. Los registros requieren consentimiento y se guardan bajo códigos seudónimos. El historial visible en la aplicación y los datos para evaluar el prototipo se explican por separado, porque ninguno prueba que la actividad elegida haya ocurrido, y antes de iniciar un estudio debe ser posible localizar y eliminar lo registrado en el teléfono y en la base remota.
 
-Los registros de investigación requieren consentimiento y se conservarán bajo códigos seudónimos según cada protocolo. El historial visible en la aplicación y los datos usados para evaluar el prototipo deben explicarse por separado: ninguno prueba que la actividad elegida ocurrió. Antes de iniciar un estudio debe poder localizarse y eliminarse lo registrado en el teléfono y en la base remota, si se utiliza.
+La propuesta se mantiene cuando la señal se relaciona con la intención, el lugar aporta una diferencia, la salida es clara y la ejecución técnica es proporcional. Se modifica cuando falla una capa específica, como la intensidad, el vínculo, la forma o la explicación. La configuración física probada se detiene cuando no aporta lo suficiente frente al control o produce intrusión, sensación de vigilancia o una carga que no puede corregirse; ese resultado obliga a reformular la relación phygital, no demuestra que toda alternativa física carezca de valor.
 
-La propuesta se mantiene cuando la señal puede relacionarse con la intención, el lugar aporta una diferencia, la salida es clara y la ejecución técnica resulta proporcional. Se modifica cuando falla una capa específica, como intensidad, vínculo, forma o explicación. Se detiene la configuración física probada cuando no ofrece un aporte suficiente frente al control utilizado o produce intrusión, vigilancia o una carga excesiva que no puede corregirse. Ese resultado exige reformular la relación phygital; no demuestra que toda alternativa física carezca de valor.
-
-El [primer protocolo](../07_validacion/protocolo-01-asociacion-y-comparacion.md) considera completa la asociación cuando la persona percibe la señal, la atribuye al ciclo y recupera la intención y el primer paso sin consultar el teléfono ni recibir pistas. La comprensión de las salidas se registra por separado: reconocer al menos dos opciones sin considerar obligatoria una de ellas es una condición de autonomía para avanzar, no un quinto componente de la asociación. En una muestra formativa de seis personas, se avanzará con al menos cinco asociaciones completas; con tres o cuatro se modificará la capa donde aparece el fallo; y con dos o menos, después de una iteración correctiva, se detendrá la configuración probada.
-
-La comparación posterior mantendrá la configuración situada si iguala o supera al aviso sin contenido específico en asociación, supera el lugar neutro para una mayoría simple y no introduce carga o intrusión recurrentes. Este criterio conserva el alcance limitado del control digital utilizado. Un fallo crítico de autonomía, privacidad, seguridad o accesibilidad impedirá avanzar aunque se alcance el porcentaje previsto. Estos umbrales organizan una decisión formativa y no estiman eficacia poblacional.
+El [primer protocolo](../07_validacion/protocolo-01-asociacion-y-comparacion.md) considera completa la asociación cuando la persona percibe la señal, la atribuye al ciclo y recupera la intención y el primer paso sin consultar el teléfono ni recibir pistas. La comprensión de las salidas se registra aparte: reconocer al menos dos opciones sin considerar obligatoria ninguna es una condición de autonomía para avanzar, no un quinto componente de la asociación. Con una muestra formativa de seis personas, se avanzará con al menos cinco asociaciones completas; con tres o cuatro se modificará la capa donde aparece el fallo; y con dos o menos, tras una iteración correctiva, se detendrá la configuración probada. La comparación posterior mantendrá la configuración situada si iguala o supera al aviso genérico en asociación, supera al lugar neutro en una mayoría simple y no introduce carga o intrusión recurrentes. Un fallo crítico de autonomía, privacidad, seguridad o accesibilidad impedirá avanzar aunque se alcance ese umbral. Estos umbrales organizan una decisión formativa; no estiman eficacia en la población.
 
 ## Conclusiones y alcance de la contribución
 
-La investigación permite proponer condiciones para recuperar una intención durante el ocio digital: debe provenir de la persona, tener un comienzo reconocible y conservar la posibilidad de ignorar la ayuda. Las experiencias digitales que mantienen sentido delimitan cuándo no corresponde intervenir. Estas condiciones orientan la respuesta, pero todavía no demuestran su eficacia. Las entrevistas documentan tensiones, usos significativos y estrategias para separarse del teléfono; usuario principal y usuario límite describen situaciones variables, no grupos estables ni definidos por la edad.
+La pregunta de investigación puede responderse, por ahora, en el plano de las condiciones. La revisión bibliográfica, las entrevistas y el estado del arte coinciden en que una ayuda para volver a considerar una actividad elegida debería partir de una intención formulada por la propia persona, vincularla con un comienzo reconocible, activarse con una condición comprensible y dejar abierta la posibilidad de ignorarla. Las entrevistas agregan un límite decisivo: cuando el ocio digital conserva sentido o no existe otra intención, lo pertinente es no intervenir. Estas condiciones, reunidas en ocho criterios, son el principal resultado de la investigación.
 
-Medir, pausar, bloquear, separar y recordar cumplen funciones diferentes. Relevo propone articular intención, primer paso, señal y lugar: la aplicación conserva la información y el objeto la relaciona con el entorno. Esa es la propuesta de valor pendiente de comparación con un aviso digital. El aporte alcanzado consiste en delimitar el problema, fundamentar criterios, distinguir situaciones de usuario, diseñar una arquitectura de uso y evaluación y construir un prototipo Android que ejecuta la preparación, el conteo y un aviso sonoro. El recorrido y el prototipo permiten examinar decisiones y fallos previstos, pero no acreditan comprensión, eficacia o preferencia.
+La hipótesis, en cambio, sigue sin contrastarse. Todavía no hay evidencia de que una señal física situada junto al primer paso devuelva la intención mejor que una notificación, ni de que el lugar aporte significado. Lo alcanzado es la delimitación del problema, la distinción entre un usuario principal y un usuario límite como situaciones y no como grupos, la fundamentación de los criterios, una arquitectura de uso y evaluación, y un prototipo Android que ejecuta la preparación, el conteo y un aviso sonoro. El aporte disciplinar consiste en haber traducido una tensión cotidiana en decisiones de diseño verificables —qué se recuerda, cuándo, dónde y con qué salida— sin reducirla a una cuestión de disciplina o tiempo de pantalla.
 
-Las pruebas deberán establecer si la señal recupera la intención, si el lugar aporta significado y si el soporte físico justifica su carga. También quedan abiertas activación, percepción, convivencia, accesibilidad, integración, producción y costos. La asociación se comprobará antes de compararla con el aviso y la ubicación neutra. Si la configuración física no aporta una diferencia o exige demasiado esfuerzo, deberá reformularse la relación phygital. La continuidad del proyecto dependerá de esa evidencia.
+El estudio tiene límites que condicionan estas conclusiones: una muestra cualitativa de ocho personas reclutadas por cercanía, sin segundo codificador ni observación de viviendas; una revisión de mercado exploratoria con corte en agosto de 2026; y un prototipo que todavía usa un parlante comercial en lugar del testigo. Por eso se recomienda seguir el orden previsto: verificar primero el prototipo y la gestión de datos, comprobar después la asociación con un objeto real y solo entonces compararlo con el aviso y con la ubicación neutra. Si la configuración física no marca una diferencia o exige demasiado esfuerzo, la relación phygital deberá reformularse. La continuidad del proyecto depende de esa evidencia.
 
 # 14. Referencias
 
@@ -798,6 +737,51 @@ Ward, E., Yang, S., Romaniuk, J., & Beal, V. (2020). Building a unique brand ide
 Waggoner, J., Lucky, S., Redick, S., Rizki, A., & Yu, J. C. (2026). Going beyond digital libraries: A literature review of phygital user experience research methods. *International Journal on Digital Libraries, 27*(1), Artículo 1. https://doi.org/10.1007/s00799-025-00436-6
 
 World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Three flashes or below threshold*. Recuperado el 24 de agosto de 2026, de https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold
+
+
+# Glosario
+
+**Arquitectura de atención.** Conjunto de decisiones de interfaz que orientan lo que se percibe y cómo avanza la interacción, como el desplazamiento infinito o la reproducción automática.
+
+**Armar y desarmar.** Confirmar que el sistema está preparado para emitir la señal durante un ciclo, o retirar esa autorización.
+
+**Bluetooth de baja energía (BLE).** Comunicación inalámbrica de corto alcance y bajo consumo con la que la aplicación enviaría órdenes al testigo.
+
+**Ciclo.** Periodo durante el cual una intención y su regla de activación permanecen vigentes.
+
+**Conflicto entre metas.** Tensión que aparece cuando una actividad dificulta otra también valorada, sin establecer cuál debe prevalecer.
+
+**Decisión renovada.** Momento en que la persona vuelve a considerar si desea continuar, cambiar o detenerse.
+
+**Descarga cognitiva.** Uso de un recurso externo, como una nota o una alarma, para conservar información que habría que mantener en la memoria; cuando se trata de una acción futura, descarga de intenciones.
+
+**Episodio.** Unidad de análisis de las entrevistas: una situación concreta con un inicio, una actividad, un propósito, otras intenciones posibles y una valoración posterior.
+
+**Fidelidad.** Grado de semejanza de un prototipo con el uso previsto.
+
+**Fricción.** Esfuerzo adicional introducido en una interfaz, como esperar o confirmar, que puede abrir una reconsideración.
+
+**Intención de implementación.** Plan que vincula una situación anticipada con una respuesta: «si ocurre X, haré Y».
+
+**Interacción tangible.** Campo que incorpora objetos físicos a la representación o manipulación de información.
+
+**Memoria prospectiva.** Capacidad de recordar una acción que se quiere realizar en el futuro cuando aparece la ocasión adecuada.
+
+**Ocio digital.** Actividades mediadas por dispositivos que una persona realiza en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros.
+
+**Phygital.** Experiencia que integra componentes físicos y digitales con funciones complementarias, evaluados como un solo sistema.
+
+**Precompromiso.** Decisión previa que restringe deliberadamente las opciones futuras, como bloquear aplicaciones hasta volver a un objeto.
+
+**Primer paso.** Acción breve, concreta y disponible con la que puede comenzar una actividad elegida; en la interfaz se pregunta «¿Cómo podrías empezar?».
+
+**Pulso ambiental.** Señal física breve de luz y sonido que llama la atención sin dar una instrucción.
+
+**Testigo.** Nombre técnico del objeto físico de Relevo, que se sitúa junto al primer paso y emite el pulso.
+
+**Tipo ideal.** Modelo analítico que reúne rasgos recurrentes de varios casos sin convertirlos en perfiles permanentes.
+
+**Usuario principal y usuario límite.** Situaciones de uso, no identidades: en la primera, una intención alternativa pierde presencia; en la segunda, el ocio digital conserva sentido y no corresponde intervenir.
 
 ---
 
