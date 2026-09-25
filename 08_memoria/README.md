@@ -10,7 +10,8 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
-- [Revisión integral de fuentes, corpus y redacción](revision-integral-fuentes-y-redaccion-2026-09-25.md): verificación de las 64 referencias, contraste con P1–P8 y Android 2.6, correcciones aplicadas y problemas pendientes al 25 de septiembre.
+- [Revisión integral de fuentes, corpus y redacción](revision-integral-fuentes-y-redaccion-2026-09-25.md): verificación de las 64 referencias, contraste con P1–P8 y Android 2.6, revisión página por página, correcciones aplicadas y problemas pendientes al 25 de septiembre.
+- [Guion de la corrección cruzada del 30 de septiembre](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md): presentación de unos 6 minutos basada en la memoria, con texto en pantalla y texto hablado.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia de las 64 entradas bibliográficas, actualizada tras el feedback del 23 de septiembre.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
@@ -71,7 +72,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
-- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de la revisión editorial según la pauta UDP y de la revisión de lectura para quien no conoce el proyecto, tiene 15.072 palabras según `wc -w`; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de la revisión página por página, tiene 15.443 palabras según `wc -w`, y los seis apartados con límite propio cumplen su rango; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -85,6 +86,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Revisión página por página
+
+- **Cambio:** el control de extensión registra 15.443 palabras; se enlaza el guion de la corrección cruzada.
+- **Versión anterior:** registraba 15.072 palabras, sin advertir que la introducción y la justificación habían quedado bajo sus mínimos.
+- **Motivo:** mantener sincronizado el índice con la memoria y con el material para el 30 de septiembre.
 
 ### 2026-09-25 — Revisión de lectura
 

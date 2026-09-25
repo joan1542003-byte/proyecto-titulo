@@ -89,6 +89,24 @@ A pedido del autor se hizo una segunda pasada editorial. Como las memorias de ot
 
 Además se reescribieron los capítulos 1–10 y 13 para reducir repeticiones y unir párrafos fragmentados, se numeraron los criterios C1–C8, se titularon las tablas y la figura según APA 7 y se añadió un glosario. No cambiaron datos, fuentes, pregunta, hipótesis ni umbrales.
 
+## Tercera revisión: página por página
+
+El autor pidió revisar cada página para que la memoria esté bien escrita, se entienda con facilidad y no invente nada. Se leyó el texto completo y se contrastó con los resúmenes oficiales de las fuentes, con el código y la documentación de Android 2.6 y con el archivo del proyecto.
+
+| Hallazgo | Evidencia | Corrección |
+| --- | --- | --- |
+| Biedermann et al. (2021) no dicen que las intervenciones de conciencia sean «las menos eficaces». | Resumen en Crossref: «barely effective»; baja confianza por muestras pequeñas, estudios breves y contextos poco claros. | «apenas tuvieron efecto»; se corrigen los límites citados. |
+| Lukoff et al. (2018) no comparan usos de igual duración. | Resumen: el uso habitual para pasar el tiempo, el entretenimiento y las redes sociales pasivas se asocian con menos sentido; hay «micro escapes» valorados. | Se describe el hallazgo real en los capítulos 5, 6 y 9. |
+| Meier y Reinecke (2021) no proponen mirar «quién, qué y contexto». | Resumen: 34 revisiones; asociación negativa pequeña, con efectos que dependen de los indicadores. | Se describe el hallazgo real en los capítulos 5 y 6. |
+| Waggoner et al. (2026) no piden comparar el objeto con una notificación. | Resumen: los métodos de UX deben adaptarse a contextos *phygital*. | La comparación se presenta como inferencia del proyecto. |
+| El capítulo 12 afirmaba prototipos armados con componentes sueltos. | La [lista de materiales B1–B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) registra que el montaje de 12 V no se compró ni se construyó. | Se habla de montajes de mesa estudiados que no se construyeron. |
+| El resumen llamaba «funcional» al prototipo. | La app compila y pasa pruebas, pero el recorrido no se ha probado en un teléfono real. | Se declara que falta esa prueba. |
+| La memoria no decía que el tono de la app sigue hasta silenciarlo. | `SignalPlayer.kt` reproduce el tono hasta que el estado deja de ser «señal» y hace vibrar el teléfono una vez; el README de la app lo documenta. | El capítulo 11 y la tabla 5 lo declaran como diferencia con el pulso breve previsto. |
+| El glosario y el capítulo 11 citaban «¿Cómo podrías empezar?» como texto de la app. | La app 2.6 pregunta «¿Cómo empezarás?». | Se corrige y la otra fórmula queda como alternativa por comparar. |
+| La introducción y la justificación estaban bajo su extensión mínima. | 574 y 297 palabras frente a mínimos de 600 y 300. | Un párrafo de orientación y el aporte esperado las dejan en 656 y 328. |
+
+También se precisaron Kirsh (1995), *The Tangible Reminder* y Smit et al. (2019), se explicaron términos al primer uso y se corrigieron el orden de dos referencias y dos entradas del glosario. El detalle está en el registro de cambios de la [memoria](memoria-vigente-v4.md). La extensión queda en 15.443 palabras.
+
 ## Problemas pendientes y su estado
 
 1. **Libros completos con derechos de autor en un repositorio público.** Resuelto en la rama el mismo día: se retiraron los PDF de Norman, Isaacson, Albers y Munari, porque ninguno tiene una edición gratuita legal; se conservan los resúmenes propios (D-066). Los archivos siguen en el historial de Git; eliminarlos por completo exige reescribir el historial de `main`.
@@ -97,8 +115,17 @@ Además se reescribieron los capítulos 1–10 y 13 para reducir repeticiones y 
 4. **Recursos de terceros sin procedencia.** Los marcos de iPhone y Pixel del tablero de wireframes y la fotografía de la referencia visual 03 no tienen origen registrado; se documentó el problema en sus README.
 5. **Precios y disponibilidad comercial.** Los precios citados en el capítulo 8 son observaciones de agosto de 2026. Coinciden con los sitios actuales en los casos de Brick y Focusaur, pero no se pueden verificar hacia atrás.
 6. **Similitud textual.** Si la institución exige un informe de similitud (por ejemplo, Turnitin), debe ejecutarse sobre la versión final diagramada.
+7. **Luz y sonido.** El autor decidió no usar luz por ahora (D-070), el feedback del 2 de septiembre pidió luz y sonido (F02-17), y la memoria sigue describiendo ambos. Falta decidir si D-070 alcanza al objeto y a la memoria.
+8. **Frase de marca.** El capítulo 11 conserva la frase vigente de D-062; si se aprueba D-073, debe reemplazarse.
+9. **Denominación del título y palabras clave.** La portada sigue pidiendo confirmar la denominación oficial y la mención. La pauta de la Biblioteca pide destacar de 2 a 3 términos en el resumen; la memoria, como sus versiones anteriores, usa cuatro palabras clave.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Tercera revisión
+
+- **Qué cambió:** se añadió la revisión página por página, con sus nueve hallazgos, y tres pendientes: luz y sonido, frase de marca, y denominación del título con palabras clave.
+- **Cómo estaba antes:** el informe cubría la verificación de fuentes y la revisión según la pauta UDP; varias paráfrasis se habían dado por conformes sin contrastarlas con el resumen de la fuente.
+- **Por qué:** el autor pidió revisar cada página para que la memoria no invente nada ni tenga errores.
 
 ### 2026-09-25 — Profesores guía
 

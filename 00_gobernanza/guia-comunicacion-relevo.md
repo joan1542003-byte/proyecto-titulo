@@ -231,6 +231,8 @@ La respuesta honesta tiene dos partes:
 6. **Diferencia — 30 s.** No mide, bloquea, puntúa ni promete productividad; investiga una asociación situada.
 7. **Estado y prueba — 40 s.** Declarar qué está diseñado, qué falta implementar y qué comparación puede sostener o refutar el objeto.
 
+El [guion de la corrección cruzada del 30 de septiembre](guion-presentacion-correccion-cruzada-2026-09-30.md) desarrolla este relato en 11 diapositivas.
+
 ### Demostración del prototipo
 
 La demostración debe narrar una experiencia, no una sucesión de pantallas:
@@ -420,6 +422,12 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Enlace al guion del 30 de septiembre
+
+- **Qué cambió:** el relato de cinco minutos enlaza el guion por diapositiva de la corrección cruzada.
+- **Cómo estaba antes:** el relato se describía por temas, sin un guion para esa fecha.
+- **Por qué:** el autor pidió el texto de la presentación.
 
 ### 2026-09-16 — Núcleo verbal adoptado
 
