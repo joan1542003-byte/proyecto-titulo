@@ -1,6 +1,6 @@
 # Qué prototipar y cómo validar el valor
 
-**Estado:** plan operativo que reúne la documentación vigente; ejecución pendiente.
+**Estado:** plan operativo del 9 de septiembre; desde el 25 de septiembre de 2026 lo actualiza el [protocolo 02](protocolo-02-prueba-21-dias.md), sin luz (D-070) y con una prueba de 21 días que responde la hipótesis (D-079). Las menciones a luz y a la fase A son antecedentes.
 **Pregunta:** ¿qué material permite probar la experiencia y qué conclusión autoriza cada prototipo?
 
 ## Respuesta breve
@@ -57,6 +57,12 @@ Recordar, elegir actuar, iniciar, completar y sostener una actividad son resulta
 El calendario acompaña esas dependencias; una fecha cumplida no sustituye un criterio de entrada. No existen resultados en este documento.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Relación con el protocolo 02
+
+- **Qué cambió:** el estado remite al protocolo 02.
+- **Cómo estaba antes:** era el plan operativo vigente.
+- **Por qué:** D-070 ampliada y D-079.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

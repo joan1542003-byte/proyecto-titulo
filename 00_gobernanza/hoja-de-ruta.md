@@ -97,17 +97,17 @@ La [investigación visual](../10_recursos_visuales/README.md) define preguntas, 
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado al 25 de septiembre:** la aplicación Android 2.6 compila y pasa diez pruebas unitarias; falta probarla en un teléfono y un parlante reales y verificar el envío y la eliminación de datos. El parlante es una salida provisional, no el testigo. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, luz, sonido y silencio local está compilado; faltan acceso a la placa, instalación, luz cálida externa, mediciones y revisión del montaje. No se ha comprado hardware.
+**Estado al 25 de septiembre:** la aplicación Android 2.6 compila y pasa diez pruebas unitarias; falta probarla en un teléfono y un parlante reales y verificar el envío y la eliminación de datos. El parlante es una salida provisional, no el testigo. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, sonido y silencio local está compilado, pero ya no condiciona la prueba: el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) usa la app y un parlante Bluetooth, sin luz (D-070 y D-079). No se ha comprado hardware.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La primera prueba posible es la del prototipo Android con la [pauta 2.6](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md), después de una comprobación técnica sin participantes y de la revisión del consentimiento. La primera puerta física está en la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): instalar el [paquete micro:bit compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), comprobar el banco BLE y preparar después la salida cálida de fase A. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior con XIAO nRF52840. El protocolo, el consentimiento y los instrumentos están preparados, pero no se puede comenzar con participantes hasta verificar un comportamiento seguro y repetible; la comparación posterior depende además de una notificación Android equivalente.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La primera prueba posible es la del prototipo Android con la [pauta 2.6](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md), después de una comprobación técnica sin participantes y de la revisión del consentimiento. La primera puerta física está en la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): instalar el [paquete micro:bit compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), comprobar el banco BLE; la salida cálida de fase A quedó descartada por D-070. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior con XIAO nRF52840. El protocolo, el consentimiento y los instrumentos están preparados, pero no se puede comenzar con participantes hasta verificar un comportamiento seguro y repetible; la comparación posterior depende además de una notificación Android equivalente.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
-Siguiente puerta de avance: conseguir acceso a una micro:bit V2, instalar `relevo-prueba-mesa-v0.1.hex` y ejecutar el banco sin participantes. La comprobación debe registrar conexión y reconexión, latencia, patrón rojo de referencia, sonido, silencio local y fallos observados. Después se conecta una luz blanca cálida externa revisada y se repiten las series materiales de fase A. Ninguna de estas acciones habilita por sí sola el reclutamiento ni una afirmación de eficacia.
+Siguiente puerta de avance: implementar la app 2.7 que exige el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) (señal de 30 segundos, condición por semana, preguntas integradas), probarla en un teléfono y un parlante reales y revisar el consentimiento de 21 días. La micro:bit queda para un eventual testigo propio. Ninguna de estas acciones habilita por sí sola el reclutamiento ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
@@ -129,6 +129,12 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** el estado y la siguiente puerta remiten a la app 2.7 y al protocolo 02.
+- **Cómo estaba antes:** la siguiente puerta era el banco micro:bit con luz cálida.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-25 — Estado posterior a Android 2.6
 

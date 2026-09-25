@@ -1,6 +1,6 @@
 # Flujos y wireframes escritos: perfil, ruta, regreso y prueba de 21 días
 
-**Estado:** diseño escrito para trabajar más adelante, cuando el autor lo pida. No cambia todavía la app 2.6, la memoria, el consentimiento ni el protocolo.
+**Estado:** diseño escrito para trabajar cuando el autor lo pida. La prueba de 21 días, la señal de 30 segundos y la ausencia de luz ya están en la memoria, el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) y el consentimiento (D-070, D-078 y D-079). Perfil, ruta y regreso siguen sin implementar. Si se programan antes de la prueba, deben estar iguales en las tres semanas y no cambiar durante ella.
 **Origen:** respuesta del autor del 25 de septiembre a las [anotaciones de clase](../01_contexto_y_fuentes/anotaciones-clase-originales-2026-09-23.md); decisiones D-074 a D-077 del [registro](../09_decisiones/registro-de-decisiones.md).
 **Base:** app Android 2.6, [kit de diseño D-073](../10_recursos_visuales/marca-a-tiempo/kit-relevo-2026-09-25.html), [revisión sobre hábitos y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md) y entrevistas P1–P8.
 
@@ -9,11 +9,11 @@
 | Tema | Decisión | Qué queda por hacer |
 | --- | --- | --- |
 | Hábito y refuerzo | No hacerlo como se planteó en clase (rachas, felicitar por usar menos una app, cuotas de uso), sino por un camino que acompañe sin caer en las malas prácticas que describe la memoria. | Implementar la sección 4 y probarla. |
-| Regreso tras varios días | Debe existir algo que motive, que sea buena práctica y no un patrón oscuro. | Flujo F4. |
+| Regreso tras varios días | Debe existir algo que motive, que sea buena práctica y no un patrón oscuro. | La app 2.6 ya muestra una tarjeta; el flujo F4 la amplía. |
 | Perfil | Debe existir: nombre, una imagen que represente a la persona e intereses. Los intereses ayudan a construir una ruta de actividades. | Pantallas P1 a P3 y R1 a R3. |
 | Privacidad y bienvenida | Más breves y claras. Los datos se borran cuando la persona lo pide y, como máximo, el 30 de diciembre de 2026. | Textos de la sección 7. |
 | Botones | Deben tener verbo. | Lista de la sección 7. |
-| Prueba | El consentimiento pasará a 21 días. La evaluación se integra en la app de forma natural y aporta datos ricos a la prueba. | Sección 5; actualizar consentimiento, protocolo, pauta y memoria. |
+| Prueba | 21 días, con la evaluación integrada en la app; la prueba responde también la hipótesis (D-079). | Hecho en el protocolo 02, el consentimiento y la memoria; falta la app 2.7. |
 | Teléfono real | La prueba en un teléfono real será pronto. | Usar la pauta 2.6 antes de implementar lo nuevo. |
 | «Quien no deja el objeto junto a las zapatillas no es el usuario» | Afirmarlo es demasiado; hay que reformularlo o rechazarlo. | Opciones en la sección 8. |
 
@@ -199,7 +199,7 @@ Está en: la mesa del living
 [Silenciar y continuar]
 ```
 
-- **Duración del tono (propuesta):** en 2.6 el tono suena hasta silenciarlo. El autor pide algo más que una notificación y menos que una alarma. Se propone la firma sonora de Relevo (2,2 s) tres veces, con pausas de unos 2 s y la primera más suave, en total unos 10 a 12 segundos; después se detiene. Los 3 segundos del protocolo estaban pensados para pulsos de luz y no bastan para una señal solo sonora (D-070). Antes de probar con personas se comparan internamente dos duraciones, unos 10 y unos 30 segundos, en otra pieza y con ruido de fondo. La pantalla y la notificación quedan visibles en silencio hasta que la persona responde. La app registra, solo para la investigación, si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto tiempo siguió en las apps elegidas después de la señal. Ese tiempo no se muestra como «tiempo excedido». Si la prueba muestra muchas señales que nadie notó, se evalúa como variante una única repetición suave.
+- **Duración del tono (D-078):** la señal suena unos 30 segundos y se detiene sola, más que una notificación y menos que una alarma. Usa la firma sonora de Relevo (2,2 s) repetida con pausas y con un comienzo más suave. La pantalla y la notificación quedan visibles en silencio hasta que la persona responde. Solo para la investigación, la app registra si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto siguió en las apps elegidas; ese tiempo no se muestra como «tiempo excedido».
 
 ### B5 ¿Qué decidiste?
 
@@ -209,8 +209,9 @@ Está en: la mesa del living
 [La dejé para después]
 [Cambié de idea]
 *[Omitir]*
-— si participa en la prueba, debajo y con un toque:
-¿Cómo se sintió el aviso?   (Útil)  (Neutro)  (Molesto)
+— si participa en la prueba, antes y con un toque cada una:
+¿Supiste qué querías hacer antes de mirar el teléfono?  (Sí) (A medias) (No)
+¿Recordaste cómo empezar?  (Sí) (No)
 ```
 
 - **Reconocimiento:**
@@ -221,7 +222,7 @@ Está en: la mesa del living
 
 ### V1 Regreso en Inicio
 
-Se muestra la primera vez que la persona abre la app después de tres días o más sin abrirla.
+Amplía la tarjeta que ya tiene la app 2.6: dos días o más después del último relevo, Inicio muestra «Puedes retomarlo cuando quieras» con la última actividad. La propuesta mantiene ese umbral de dos días y agrega el nombre, las opciones y el caso del relevo vencido.
 
 ```
 Hola de nuevo, [nombre].
@@ -281,21 +282,18 @@ Tu nombre y tu imagen se quedan en el teléfono.
 *[Leer la política completa]*
 ```
 
-### T1 Pregunta del día (prueba de 21 días)
+### T1 Preguntas de la prueba de 21 días
 
-Es una tarjeta en Inicio, no una notificación: una pregunta por día como máximo, que se puede omitir y nunca bloquea el uso.
+Siguen el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md). Nunca bloquean el uso y todas se pueden omitir.
 
-| Día | Pregunta | Formato |
+| Momento | Preguntas | Formato |
 | --- | --- | --- |
-| 1 | ¿Qué te gustaría recuperar con Relevo? | Intereses del perfil y texto opcional |
-| 1 y 21 | Cuatro frases sobre la actividad elegida («La hago sin pensarlo», etc.) | Escala de 1 a 5 |
-| 3 | ¿Te costó preparar el relevo? | 1 a 5 |
-| 7 | ¿El aviso te ayudó a recordar lo que querías? | Sí / A veces / No |
-| 10 | ¿Dónde dejaste el parlante o el objeto? ¿Lo cambiaste? | Opciones y texto |
-| 14 | ¿Algo te molestó? | Texto opcional |
-| 21 | Ver T2 | — |
+| Tras cada señal | ¿Supiste qué querías hacer antes de mirar el teléfono? · ¿Recordaste cómo empezar? · ¿Qué decidiste? | Un toque cada una (B5) |
+| Inicio de cada semana | Instrucción de la condición: dónde dejar el parlante o que el aviso sonará en el teléfono | Tarjeta en Inicio |
+| Fin de cada semana (días 7, 14 y 21) | ¿Cuánto costó preparar? · ¿Cuánto molestó la señal? · ¿Cuánto se relacionaba con el lugar? · Comentario | Escala de 1 a 5 y texto opcional |
+| Día 21 | Ver T2 | — |
 
-- **Cuatro frases:** son las del índice breve de automaticidad (Gardner et al., 2012). Compararlas entre el día 1 y el 21 puede mostrar un cambio, pero 21 días no bastan para afirmar un hábito (Lally et al., 2010).
+La prueba no mide hábitos: 21 días no bastan para afirmarlos (Lally et al., 2010).
 
 ### T2 Cierre del día 21
 
@@ -322,10 +320,10 @@ Cinco preguntas breves (2 minutos)
 | F1 Primera vez | A1 → A2 → A3 → P1 → P2 → P3 → R1 → B2 → B3. Nombre, imagen e intereses se pueden saltar. |
 | F2 Preparar desde la ruta | B1 → B2.1 con el paso ya elegido → B2.2 a B2.6 → B3. |
 | F3 Recibir y decidir | B3 → B4 → B5 → R3 (a la tercera vez) → B1. |
-| F4 Regreso tras días | Abrir la app tras 3 días o más → V1 → B2 o Inicio. Con aviso activo: V2 → B2. |
+| F4 Regreso tras días | Abrir la app dos días o más después del último relevo → V1 → B2 o Inicio. Con aviso activo: V2 → B2. |
 | F5 Editar perfil y ruta | S1 → P1, P2 o P3 → R1 → R2. |
 | F6 Borrar datos | S1 → S3 → **[Borrar mis datos]** → confirmación → A1. |
-| F7 Prueba de 21 días | A2 → T1 los días 1, 3, 7, 10 y 14 → T2 el día 21. |
+| F7 Prueba de 21 días | Sesión inicial (A1 a A3, B2 y señal observada) → tres semanas con una condición cada una → B5 tras cada señal → tarjeta semanal → T2 el día 21. |
 | F8 Fallo | B4 no suena → E1 → B2.5. Permiso retirado → E2 → A3. |
 
 ## 6. Variantes por tipo de usuario y preferencias
@@ -392,20 +390,17 @@ El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La
 | Prueba | Qué responde | Qué no responde |
 | --- | --- | --- |
 | Teléfono real | Si la app funciona: conteo, sonido, silencio, permisos, envío y borrado de datos. | Nada sobre personas. |
-| 21 días con la app | Si las personas entienden la preparación, qué carga les supone, si conservan el control, si la señal se nota y se entiende en casa, y si la usan de forma sostenida o la abandonan. | Si el lugar aporta más que una notificación, ni si se formó un hábito. |
-| Asociación y comparación (protocolo 01) | La hipótesis: si la señal devuelve la intención y el primer paso sin mirar el teléfono, y si junto al primer paso funciona mejor que en un lugar neutro o que una notificación. | Eficacia en la población. |
+| 21 días en casa ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)) | La hipótesis: en la sesión inicial, si la señal devuelve la intención y el primer paso sin mirar el teléfono; en las tres semanas, si junto al primer paso ayuda más que en un lugar neutro o que el aviso en el teléfono. Además, comprensión, carga, control, molestias y abandono. | Si la actividad se realizó, si se formó un hábito y la eficacia en la población. |
 
 ## 9. Qué cambiará cuando se implemente
 
 - **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono.
 - **Consentimiento:** 21 días, preguntas integradas y nombre local; se mantiene el 30 de diciembre de 2026 como plazo de eliminación.
 - **Protocolo y pauta:** prueba de 21 días, preguntas por día, variante de constancia elegida.
-- **Memoria:** capítulos 10 y 13 (dos días pasan a 21, evaluación integrada) y criterio 4 (reconocimiento y ruta), manteniendo que 21 días no demuestran un hábito.
+- **Memoria:** la prueba de 21 días ya está en los capítulos 10 y 13; queda por decidir si el criterio 4 menciona el reconocimiento y la ruta.
 - **Kit:** pantallas de perfil, ruta y regreso con el sistema D-073.
 
 ## Referencias
-
-Gardner, B., Abraham, C., Lally, P., & de Bruijn, G.-J. (2012). Towards parsimony in habit measurement: Testing the convergent and predictive validity of an automaticity subscale of the Self-Report Habit Index. *International Journal of Behavioral Nutrition and Physical Activity, 9*, Artículo 102. https://doi.org/10.1186/1479-5868-9-102
 
 Gray, C. M., Kou, Y., Battles, B., Hoggatt, J., & Toombs, A. L. (2018). The dark (patterns) side of UX design. En *Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems* (pp. 1–14). Association for Computing Machinery. https://doi.org/10.1145/3173574.3174108
 
@@ -420,6 +415,18 @@ Silverman, J., & Barasch, A. (2023). On or off track: How (broken) streaks affec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Regreso existente en 2.6
+
+- **Qué cambió:** V1 y F4 parten de la tarjeta de regreso que ya tiene la app 2.6 (dos días).
+- **Cómo estaba antes:** proponían un regreso nuevo a los tres días, como si no existiera.
+- **Por qué:** corregir un error frente al código de la app.
+
+### 2026-09-25 — Alineado con el protocolo 02
+
+- **Qué cambió:** el estado, B5, T1, F7 y el tono siguen el protocolo 02 y D-078 (30 segundos). Se retiraron las cuatro frases de automaticidad de los días 1 y 21.
+- **Cómo estaba antes:** las preguntas eran una por día, incluían una medida de automaticidad y el tono proponía 10 a 12 segundos.
+- **Por qué:** el autor fijó 30 segundos, pidió que la prueba responda la hipótesis y aclaró que el hábito no es tema de la memoria.
 
 ### 2026-09-25 — Duración del tono
 

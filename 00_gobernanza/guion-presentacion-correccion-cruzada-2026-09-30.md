@@ -124,7 +124,7 @@
 
 **Se dice**
 
-> Hoy existe la aplicación Android, versión 2.6. Hace la preparación: actividad, comienzo, lugar, aplicaciones y tiempo. Al cumplirse el tiempo, reproduce un tono en un parlante Bluetooth o en el teléfono, que sigue hasta que la persona lo silencia; el objeto, en cambio, daría una señal breve. Después pregunta, si la persona quiere, qué decidió, sin calificarlo. Compila y pasa sus pruebas automáticas, pero todavía no la he probado completa en un teléfono real. El parlante reemplaza por ahora al objeto; no es el objeto final, porque también puede reproducir el audio de otras aplicaciones.
+> Hoy existe la aplicación Android, versión 2.6. Hace la preparación: actividad, comienzo, lugar, aplicaciones y tiempo. Al cumplirse el tiempo, reproduce un tono en un parlante Bluetooth o en el teléfono, que sigue hasta que la persona lo silencia; la próxima versión lo limitará a unos 30 segundos. Después pregunta, si la persona quiere, qué decidió, sin calificarlo. Compila y pasa sus pruebas automáticas, pero todavía no la he probado completa en un teléfono real. El parlante reemplaza por ahora al objeto; no es el objeto final, porque también puede reproducir el audio de otras aplicaciones.
 
 ### Demostración opcional · 45 s
 
@@ -141,25 +141,25 @@ Hazla solo si ya la probaste en ese teléfono y con ese parlante; si no, muestra
 **En pantalla**
 
 1. La app en un teléfono y un parlante reales.
-2. Evaluación con 5 o 6 personas, durante dos días.
-3. Asociación: señal real a los 8 minutos, de 3 segundos. ¿Reconoce qué quería hacer y cómo empezar sin mirar el teléfono? Se avanza con 5 de 6.
-4. Comparación: objeto junto al primer paso, el mismo objeto en un lugar neutro y una notificación.
+2. Día 0, en casa: suena a los 8 minutos. ¿Recuerda qué quería hacer y cómo empezar sin mirar el teléfono? Se sigue con 5 de 6 personas.
+3. Tres semanas, una condición por semana: parlante junto al primer paso, parlante en un lugar neutro y aviso en el teléfono.
+4. Tras cada señal, una pregunta de un toque.
 
 **Se dice**
 
-> Que el objeto aporte algo todavía es una hipótesis. Primero probaré la app en un teléfono y un parlante reales. Después, cinco o seis personas la usarán dos días, para ver si entienden la preparación y conservan el control. Luego viene la prueba central: una señal real de tres segundos, ocho minutos después de preparar. ¿La persona reconoce qué quería hacer y cómo empezar sin mirar el teléfono? Con seis personas, sigo si lo logran al menos cinco. Al final comparo el objeto junto al primer paso, el mismo objeto en un lugar neutro y una notificación. Si la notificación ayuda igual con menos esfuerzo, el objeto no se justifica y el diseño cambia.
+> Que el objeto aporte algo todavía es una hipótesis, y la prueba está hecha para responderla. Primero probaré la app en un teléfono y un parlante reales. Después, seis personas la usarán 21 días en su casa. El primer día la preparo con ellas y observo si, cuando suena, recuerdan qué querían hacer y cómo empezar sin mirar el teléfono. Luego, cada semana cambia una cosa: el parlante junto al primer paso, el parlante en un lugar neutro o el aviso en el teléfono. Después de cada señal, la app pregunta con un toque si supieron qué querían hacer. Si el teléfono ayuda igual con menos esfuerzo, el objeto no se justifica y el diseño cambia.
 
 ## 10. Hecho y próximo · plantilla «Sección» con línea de tiempo · 15 s
 
 **En pantalla**
 
 - *Hecho:* junio, 8 entrevistas · julio, se elige Relevo · agosto, estado del arte y protocolo de pruebas · septiembre, wireframes y app 2.6.
-- *Próximo:* 1 al 7 de octubre, piloto técnico · 8 al 17 de octubre, pruebas con personas · fin de octubre, objeto integrado · 1 al 8 de noviembre, validación final.
+- *Próximo:* 1 al 7 de octubre, prueba técnica · 8 de octubre a 1 de noviembre, prueba de 21 días · 1 al 8 de noviembre, análisis.
 - 25 de noviembre, Pase de Examen · 2 de diciembre, entrega de memoria · 14 al 18 de diciembre, examen.
 
 **Se dice**
 
-> Esto es lo hecho y lo que sigue. En octubre, el piloto técnico y las pruebas con personas; a fin de mes, el objeto integrado, y en noviembre, la validación final antes del Pase de Examen.
+> Esto es lo hecho y lo que sigue. En octubre, la prueba técnica y la prueba de 21 días; en noviembre, el análisis antes del Pase de Examen.
 
 ## 11. Cierre y preguntas · plantilla «Cierre» · 15 s
 
@@ -168,13 +168,13 @@ Hazla solo si ya la probaste en ese teléfono y con ese parlante; si no, muestra
 - Relevo
 - Preguntas para la comisión:
   1. ¿Basta comparar con una notificación para justificar el objeto?
-  2. ¿La primera prueba del objeto debe incluir luz o basta el sonido?
+  2. ¿Qué debería observar la prueba de 21 días que hoy no está considerando?
 
 **Se dice**
 
 > Relevo no decide por nadie: busca que lo que querías hacer vuelva a tiempo a la decisión. Les dejo dos preguntas en las que me ayudaría su opinión. Gracias.
 
-*Nota para el autor:* la segunda pregunta existe porque decidiste no usar luz por ahora (D-070), mientras que el feedback del 2 de septiembre pidió luz y sonido (F02-17) y la memoria todavía describe ambos. Quítala si ya resolviste ese punto.
+*Nota para el autor:* si la comisión pregunta por la luz que pidió el feedback del 2 de septiembre (F02-17), la respuesta está en «¿Por qué no hay luz?», abajo.
 
 ## Preguntas probables
 
@@ -182,11 +182,11 @@ Hazla solo si ya la probaste en ese teléfono y con ese parlante; si no, muestra
 | --- | --- |
 | ¿Por qué no basta una notificación? | Todavía no lo sé; por eso la comparo. Si la notificación ayuda igual con menos esfuerzo, el objeto no se justifica. |
 | ¿Por qué Android? | Permite, con autorización, leer el tiempo de uso de otras aplicaciones y comunicarse con un objeto cercano por Bluetooth de baja energía. Un sitio web no puede observar de forma confiable el uso de otras aplicaciones, e iPhone exige permisos y procesos propios de Apple; hacer ambos sistemas duplicaría el trabajo antes de probar la idea central. |
-| ¿Qué pasa si ignoro la señal? | No hay rachas, puntajes ni reproches. El objeto previsto da una señal breve; en la app actual, en cambio, el tono sigue hasta que la persona lo silencia. |
+| ¿Qué pasa si ignoro la señal? | Suena unos 30 segundos y se detiene sola; no hay rachas, puntajes ni reproches. La app 2.6 todavía suena hasta que la persona la silencia; la próxima versión lo corrige. |
 | ¿Detecta que estoy distraído? | No. Solo cuenta el tiempo de las aplicaciones elegidas; no sabe cómo te sientes. |
 | ¿Cuánto cuesta? | Aún no está calculado. Solo hay precios de placas: la XIAO nRF52840 costaba CLP 16.590 el 7 de septiembre, sin batería, carcasa ni el resto de los componentes. |
 | ¿Por qué el hogar? | Varias actividades y estrategias relatadas dependen de objetos y distancias de la casa. Es una hipótesis: no se observaron viviendas. |
-| ¿Luz o sonido? | La app actual usa sonido. La modalidad del objeto se decidirá con pruebas de percepción, molestia y accesibilidad; ningún canal sirve por sí solo para todas las personas. |
+| ¿Por qué no hay luz? | No es factible en el tiempo disponible, y la prueba necesita una señal que funcione ya. El sonido dura unos 30 segundos y se detiene solo. Es un límite declarado: algunas personas entrevistadas pidieron señales visuales, y el sonido puede excluir a personas con baja audición. |
 
 ## Referencias
 
@@ -203,6 +203,12 @@ Tonietto, G. N., Malkoc, S. A., Reczek, R. W., & Norton, M. I. (2021). Viewing l
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Prueba de 21 días y sin luz
+
+- **Qué cambió:** las diapositivas 8 a 11 describen la prueba de 21 días del protocolo 02, el calendario nuevo y la señal de 30 segundos; la pregunta sobre la luz se reemplazó por una respuesta en las preguntas probables.
+- **Cómo estaba antes:** describían una evaluación de dos días, una asociación de tres segundos con luz y una pregunta a la comisión sobre la luz.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-25 — Creación
 

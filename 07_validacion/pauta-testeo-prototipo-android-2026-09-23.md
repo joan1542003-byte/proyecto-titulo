@@ -1,6 +1,6 @@
 # Relevo — pauta de evaluación formativa del prototipo Android 2.6
 
-**Sesión de revisión docente:** 23 de septiembre de 2026. **Estado:** instrumento para revisión y ajuste; no contiene resultados ni autoriza por sí solo el reclutamiento. **Versión descrita:** APK Android 2.6 (actualizada el 25 de septiembre de 2026), junto con el teléfono y el parlante Bluetooth concretos que se declaren antes de cada sesión.
+**Uso desde el 25 de septiembre de 2026:** prueba técnica previa y guía de tareas de la sesión inicial del [protocolo 02](protocolo-02-prueba-21-dias.md); describe la app 2.6, por lo que la señal de 30 segundos y las preguntas integradas se comprueban con la 2.7. **Sesión de revisión docente:** 23 de septiembre de 2026. **Estado:** instrumento para revisión y ajuste; no contiene resultados ni autoriza por sí solo el reclutamiento. **Versión descrita:** APK Android 2.6 (actualizada el 25 de septiembre de 2026), junto con el teléfono y el parlante Bluetooth concretos que se declaren antes de cada sesión.
 
 ## Propósito y alcance
 
@@ -157,6 +157,12 @@ Organización Internacional de Normalización. (2019). *ISO 9241-210:2019. Ergon
 Sauro, J. (2010, 2 de marzo). *If you could only ask one question, use this one*. MeasuringU. https://measuringu.com/single-question/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Uso en el protocolo 02
+
+- **Qué cambió:** el encabezado indica que la pauta sirve para la prueba técnica y la sesión inicial del protocolo 02.
+- **Cómo estaba antes:** era la pauta de una evaluación formativa separada.
+- **Por qué:** D-079.
 
 ### 2026-09-25 — Sincronización con Android 2.6
 

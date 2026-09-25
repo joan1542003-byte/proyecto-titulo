@@ -130,7 +130,7 @@ Los términos especializados deben aparecer después de su explicación cotidian
 | Algo que la persona decidió que quería hacer. | **Intención personal** | Una actividad elegida; no una meta inferida por el sistema. |
 | La acción pequeña que permite empezar. | **Primer paso** | Un comienzo concreto y reconocible, como abrir el libro o ponerse las zapatillas. No exige completar la actividad. |
 | Una regla que la persona entiende y configura. | **Condición observable** | Un evento técnico posible, como continuidad, acumulación o una franja horaria. La variante final sigue abierta. |
-| Una señal breve que aparece cerca del comienzo. | **Pulso ambiental** | Una señal física sin texto. Luz y sonido están seleccionados; intensidad, duración y percepción deben probarse. |
+| Una señal breve que aparece cerca del comienzo. | **Pulso ambiental** | Una señal física sin texto: un sonido de unos 30 segundos que se detiene solo (D-070 y D-078); intensidad y percepción deben probarse. |
 | El objeto que lleva la señal al lugar. | **Testigo físico situado** | Representa que existe un ciclo activo y emite el pulso; no vigila ni decide. Su forma final no está cerrada. |
 | Una experiencia repartida entre app, objeto y entorno. | **Sistema phygital** | Lo digital configura y conserva información; lo físico y el lugar participan funcionalmente en la experiencia. |
 | Volver a pensar en lo que se quería hacer. | **Recuperar una intención** | Hacerla nuevamente disponible para decidir. No implica diagnosticar olvido ni obligar a actuar. |
@@ -299,7 +299,7 @@ No. Relevo no evalúa la acción posterior. Su alcance termina al volver a hacer
 
 ### ¿La forma circular es definitiva?
 
-No. Es una hipótesis de exploración. Forma, material y medidas dependen de pruebas físicas y de convivencia. Luz y sonido están seleccionados para prototipar; sus parámetros y el comportamiento final siguen sujetos a comprobación.
+No. Es una hipótesis de exploración. Forma, material y medidas dependen de pruebas físicas y de convivencia. El sonido está seleccionado para prototipar, sin luz; sus parámetros y el comportamiento final siguen sujetos a comprobación.
 
 ### ¿Para quién es?
 
@@ -405,7 +405,7 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 
 ### Descripción del proyecto
 
-Relevo es un sistema phygital que busca recordarte una actividad que elegiste y cómo comenzarla. Registras una intención y un primer paso en una aplicación Android, y sitúas un pequeño objeto junto a ese comienzo. Cuando se cumple una condición que configuraste, el objeto emite una señal breve de luz y sonido. Puedes empezar, continuar con el teléfono o silenciar la señal.
+Relevo es un sistema phygital que busca recordarte una actividad que elegiste y cómo comenzarla. Registras una intención y un primer paso en una aplicación Android, y sitúas un pequeño objeto junto a ese comienzo. Cuando se cumple una condición que configuraste, el objeto emite una señal sonora breve. Puedes empezar, continuar con el teléfono o silenciar la señal.
 
 ### Cómo se comunica la transición
 
@@ -422,6 +422,12 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** la guía describe una señal solo sonora.
+- **Cómo estaba antes:** decía que luz y sonido estaban seleccionados.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-25 — Enlace al guion del 30 de septiembre
 

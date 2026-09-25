@@ -31,7 +31,7 @@ Este repositorio es la fuente central de trazabilidad del proyecto. Ordena y rel
 
 A veces una persona sigue viendo contenido en el teléfono aunque antes quería leer, caminar, dibujar o comenzar otra actividad. No necesariamente olvidó esa intención: mientras la sesión continúa, esa posibilidad puede dejar de participar en la siguiente decisión.
 
-Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y responde cómo podría comenzar en una aplicación Android, y deja un objeto pequeño en ese lugar. Si se cumple una condición configurada, el objeto emite una señal breve de luz y sonido. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea. La documentación llama `primer paso` a esa acción breve y concreta; la interfaz utiliza lenguaje cotidiano.
+Relevo busca que esa intención vuelva a estar presente. La persona registra la actividad y responde cómo podría comenzar en una aplicación Android, y deja un objeto pequeño en ese lugar. Si se cumple una condición configurada, el objeto emite una señal sonora breve, de unos 30 segundos. La persona puede iniciar la actividad, seguir con el teléfono, silenciar la señal o cambiar de idea. La documentación llama `primer paso` a esa acción breve y concreta; la interfaz utiliza lenguaje cotidiano.
 
 En términos de diseño, Relevo es un sistema phygital: la aplicación organiza, el objeto señala, el lugar aporta significado y la persona conserva la decisión. No pretende prohibir aplicaciones, reducir el tiempo de pantalla como fin en sí mismo ni evaluar el comportamiento.
 
@@ -43,7 +43,7 @@ Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pas
 
 Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
-La definición física más reciente se encuentra en el [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md). El [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) cierra nombre, categoría, frase, descriptor, tipografía, paleta y reglas por soporte. La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
+El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) es la definición física más reciente, anterior a la decisión de no usar luz (D-070). El [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) cierra nombre, categoría, frase, descriptor, tipografía, paleta y reglas por soporte. La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
 ## Estado actual — 24 de septiembre de 2026
 
@@ -51,7 +51,7 @@ La aplicación Android vigente es **Relevo 2.6**, prototipo de depuración para 
 
 El proyecto sigue siendo **phygital**: la app organiza la intención y el testigo físico propuesto devuelve una señal en el lugar asociado a la actividad. El parlante Bluetooth actual es una salida de prueba, no el objeto final de Relevo. El valor diferencial —que una señal física y situada aporte más que una notificación— sigue pendiente de evaluación.
 
-La fuente académica vigente es la [memoria v4](08_memoria/memoria-vigente-v4.md), avanzada pero no final. La [investigación visual escrita](10_recursos_visuales/README.md) y el [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) orientan su desarrollo; la forma del objeto y sus parámetros de luz y sonido requieren pruebas. La [síntesis vigente del proyecto](08_memoria/resumen-vigente-proyecto.md) registra qué existe y qué falta sin atribuir resultados.
+La fuente académica vigente es la [memoria v4](08_memoria/memoria-vigente-v4.md), avanzada pero no final. La [investigación visual escrita](10_recursos_visuales/README.md) y el [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) orientan su desarrollo; la forma del objeto y los parámetros de su señal sonora requieren pruebas. La prueba vigente es el [protocolo 02](07_validacion/protocolo-02-prueba-21-dias.md): 21 días en casa, que responden la hipótesis y las preguntas de uso. La [síntesis vigente del proyecto](08_memoria/resumen-vigente-proyecto.md) registra qué existe y qué falta sin atribuir resultados.
 
 La investigación de usuarios se basa en ocho entrevistas presenciales realizadas en Santiago el 11 y 12 de junio de 2026, con personas de 19 a 27 años, reclutadas por referencias y con consentimiento oral. El análisis es cualitativo exploratorio, no representativo. La encuesta separada de 70 personas sigue pendiente de revisar y no integra todavía la evidencia vigente.
 
@@ -107,6 +107,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** la síntesis describe una señal solo sonora y enlaza el protocolo 02.
+- **Cómo estaba antes:** describía una señal de luz y sonido.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-24 — Actualización para migración a Claude
 

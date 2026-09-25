@@ -3,6 +3,8 @@
 
 **Consulta del feedback:** [Luz, sonido y evaluación condicionada de vibración](senal-luz-sonido-y-vibracion.md). Respuesta documental disponible; validación empírica pendiente.
 
+**Desde el 25 de septiembre de 2026:** la señal es solo sonora, de unos 30 segundos (D-070 y D-078), y la prueba usa la app y un parlante Bluetooth ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)). Los estudios de luz, la micro:bit y la fase A se conservan como antecedentes o para un eventual testigo propio.
+
 ## Propósito
 
 Documentar la capa de desarrollo que puede no aparecer completa en la memoria, pero que determina si Relevo puede producirse, probarse y sostenerse.
@@ -60,6 +62,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** el índice indica la señal solo sonora y la prueba vigente.
+- **Cómo estaba antes:** presentaba la luz y la fase A como ruta vigente.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-25 — Aplicación Android en el índice vigente
 

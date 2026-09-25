@@ -1,6 +1,6 @@
 # Especificación mínima de materiales — fase A
 
-**Estado:** preparada documentalmente; implementación y ensayo técnico pendientes
+**Estado:** antecedente desde el 25 de septiembre de 2026. La prueba vigente ([protocolo 02](protocolo-02-prueba-21-dias.md)) usa la app Android y un parlante Bluetooth, sin luz (D-070). Esta especificación se conserva para un eventual testigo propio.
 **Propósito:** comprobar que la señal situada puede ejecutarse de manera estable y controlable antes de evaluar su comprensión con participantes
 
 ## Principio de construcción
@@ -119,3 +119,13 @@ Cumplir esta especificación solo demuestra que el material puede ejecutar el en
 - **Versión anterior:** el ensayo interno indicaba construir un objeto simple, pero no establecía cuándo era suficientemente estable y seguro para una sesión.
 - **Motivo:** separar fallos del material de fallos de asociación antes de involucrar participantes.
 - **Alcance en esa versión:** la especificación no diseñaba la forma final, no integraba Android o Bluetooth y no registraba resultados técnicos. La integración de prueba se incorporó el 7 de septiembre.
+
+---
+
+## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado frente al protocolo 02
+
+- **Qué cambió:** el estado indica su relación con el protocolo 02 y la decisión de no usar luz.
+- **Cómo estaba antes:** era parte del plan vigente.
+- **Por qué:** D-070 ampliada y D-079.

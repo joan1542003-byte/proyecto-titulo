@@ -1,5 +1,7 @@
 # Traspaso de Relevo a Claude
 
+> **Actualización del 25 de septiembre de 2026:** después de este corte, el autor decidió que el objeto no tendrá luz (D-070 ampliada), que la señal durará unos 30 segundos (D-078) y que la prueba con participantes será de 21 días en casa y responderá también la hipótesis ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md), D-075 y D-079). También registró decisiones sobre perfil, ruta, privacidad y refuerzo (D-074 a D-077). Consulta el [registro de decisiones](../09_decisiones/registro-de-decisiones.md) antes de usar lo que esta guía dice sobre luz, fase A o una prueba de dos días.
+
 **Corte documental:** 24 de septiembre de 2026.
 **Repositorio:** [`joan1542003-byte/proyecto-titulo`](https://github.com/joan1542003-byte/proyecto-titulo).
 **Rama:** `main`. **Commit comprobado:** `ad12e100506d024f4043b38d3153a5a18403e4c5` (`Android 2.6: seleccion multiple, audio y privacidad`).
@@ -139,6 +141,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso de actualización
+
+- **Qué cambió:** se añadió un aviso con las decisiones posteriores al corte.
+- **Cómo estaba antes:** la guía describía luz, fase A y prueba de dos días sin aviso.
+- **Por qué:** es el documento de entrada y no debe mezclar el estado del 24 con decisiones nuevas.
 
 ### 2026-09-25 — Actualización posterior al corte
 

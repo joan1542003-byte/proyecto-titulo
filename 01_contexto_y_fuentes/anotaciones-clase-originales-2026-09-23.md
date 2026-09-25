@@ -28,7 +28,7 @@ Estado: **hecho** (implementado o documentado), **parcial**, **pendiente** o **d
 | Anotación | Estado | Evidencia o próximo paso |
 | --- | --- | --- |
 | Una lámina sobre la app que dé contexto a la persona. | Parcial | El tutorial explica el uso; el [guion del 30 de septiembre](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md) tiene la diapositiva «Cómo funciona». |
-| Qué pasa si la persona olvida la app y la abre días después. | Pendiente | La app 2.6 no tiene un estado para el regreso. La síntesis propone un texto: «Tu relevo anterior ya no está activo. Revisa si esta actividad, este lugar y este tiempo todavía te sirven». |
+| Qué pasa si la persona olvida la app y la abre días después. | Parcial (2.6) | Dos días o más después del último relevo, Inicio muestra «Puedes retomarlo cuando quieras» con la última actividad y un acceso para prepararla, sin avisos. Falta el caso de un relevo que venció sin sonar y un aviso opcional; ver V1 y V2 del [diseño escrito](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md). |
 
 ### Pantallas, texto e imagen
 
@@ -93,7 +93,7 @@ Estado: **hecho** (implementado o documentado), **parcial**, **pendiente** o **d
 1. **Hábito y refuerzo:** la clase pide ayudar a crear hábitos, felicitar y mostrar rachas o desafíos; la memoria sostiene lo contrario, con respaldo en fuentes y entrevistas. Hay que decidir si se mantiene esa postura y se argumenta ante la comisión, o si se cambia la formulación del proyecto.
 2. **Duración de las pruebas:** dos días o un piloto de 21 días como observación de continuidad, con otro consentimiento.
 3. **Perfil de usuario:** si se implementa y qué datos recoge.
-4. **Regreso tras días sin uso:** si se programa ahora o después de la prueba.
+4. **Regreso tras días sin uso:** la app 2.6 ya tiene una tarjeta; falta decidir si se amplía ahora o después de la prueba.
 
 ## Respuesta del autor (25 de septiembre)
 
@@ -182,6 +182,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How ar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Corrección sobre el regreso
+
+- **Qué cambió:** el regreso tras días figura como parcial: la app 2.6 ya muestra una tarjeta después de dos días.
+- **Cómo estaba antes:** decía, por error, que la app no tenía nada para ese caso.
+- **Por qué:** el código (`StartDashboard`) y los [criterios de revisión de interfaz](../06_desarrollo_y_factibilidad/app-android/criterios-revision-interfaz-2026-09-23.md) muestran la tarjeta.
 
 ### 2026-09-25 — Respuesta del autor
 

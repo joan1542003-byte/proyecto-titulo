@@ -1,6 +1,6 @@
 # Señal física: luz, sonido y evaluación de vibración
 
-**Estado:** luz y sonido seleccionados para la prueba; parámetros perceptivos sin validar. Vibración como alternativa condicionada, no componente requerido del primer montaje.
+**Estado:** desde el 25 de septiembre de 2026 la señal es solo sonora, de unos 30 segundos (D-070 y D-078); la luz se descartó por tiempo. Lo que sigue sobre luz se conserva como antecedente. Vibración como alternativa condicionada, no componente requerido.
 
 ## Respuesta al feedback
 
@@ -35,6 +35,12 @@ La intensidad, el ritmo y el timbre final se decidirán por percepción y conviv
 Este documento operacionaliza las decisiones D-045, D-048 y D-049 del [registro](../09_decisiones/registro-de-decisiones.md), los requisitos RU-08/RU-11 de la [matriz de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) y el [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md). La exploración de vibración es una propuesta de prueba, no un hallazgo empírico.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** el estado indica que la señal es solo sonora.
+- **Cómo estaba antes:** luz y sonido estaban seleccionados.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-11 — Puerta previa con producto terminado
 

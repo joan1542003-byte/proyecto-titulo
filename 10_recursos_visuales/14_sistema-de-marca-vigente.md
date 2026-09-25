@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) ([D-073](../09_decisiones/registro-de-decisiones.md)) reemplaza a las anteriores. Propone el renglón con dos voces, el logotipo «relevo» en Schibsted Grotesk y una paleta de tinta, papel y azul pasta sin luz. Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan suspendidas por D-070.
+> **Revisión en curso (25 de septiembre de 2026):** la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) ([D-073](../09_decisiones/registro-de-decisiones.md)) reemplaza a las anteriores. Propone el renglón con dos voces, el logotipo «relevo» en Schibsted Grotesk y una paleta de tinta, papel y azul pasta sin luz. Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan sin efecto: D-070 se amplió al objeto, que emite solo un sonido de unos 30 segundos (D-078).
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** el aviso indica que las menciones a la luz quedan sin efecto.
+- **Cómo estaba antes:** estaban suspendidas mientras se decidía el alcance de D-070.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
 
 ### 2026-09-25 — Firma del autor
 

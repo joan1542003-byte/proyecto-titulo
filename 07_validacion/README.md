@@ -2,7 +2,7 @@
 
 **Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Es una copia fechada para revisión, no el consentimiento vigente: conserva un contacto en blanco y un plazo anterior. El paquete único previo permanece en el archivo histórico.
 
-**Instrumentos preparados para revisión:** [pauta del prototipo Android 2.6](pauta-testeo-prototipo-android-2026-09-23.md), [ficha individual en blanco](ficha-testeo-prototipo-android-2026-09-23.md) y [borrador de consentimiento Android](consentimiento-android-vigente-2026-09-23.md). El contacto y el plazo ya están indicados, pero antes de emplearlos con participantes hay que comprobar la gestión y eliminación de datos y probar el [APK vigente](../06_desarrollo_y_factibilidad/app-android/README.md) con el teléfono y parlante concretos. El Protocolo 01 de luz y sonido con activación manual sigue siendo una comparación futura; sus condiciones materiales y su consentimiento no describen automáticamente el prototipo Android actual. No se han realizado sesiones con participantes bajo esta pauta.
+**Prueba vigente:** [protocolo 02: prueba de 21 días en casa](protocolo-02-prueba-21-dias.md), que responde la hipótesis y las preguntas de uso con una sesión inicial observada y tres semanas con una condición cada una (D-079). Usa la app Android 2.7 que el protocolo especifica y un parlante Bluetooth, sin luz (D-070), con una señal de unos 30 segundos (D-078). Instrumentos: [consentimiento de 21 días](consentimiento-android-vigente-2026-09-23.md), [pauta Android](pauta-testeo-prototipo-android-2026-09-23.md) para la prueba técnica previa y [ficha de la sesión inicial](ficha-registro-protocolo-01.md). No se han realizado sesiones con participantes.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -13,28 +13,28 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Orden de pruebas vigente
 
-Hay dos líneas complementarias. La primera evalúa el prototipo Android 2.6 con un parlante Bluetooth: comprobación técnica sin participantes (conteo con varias apps, salida de sonido, silencio, envío y eliminación de datos) y, si se supera junto con la revisión del consentimiento, una evaluación formativa de preparación, comprensión, carga y control con la [pauta Android](pauta-testeo-prototipo-android-2026-09-23.md). La segunda es la secuencia del objeto con luz y sonido, que se describe a continuación:
-
-1. **Banco técnico:** Android–BLE, patrón, sonido, reconexión y silencio local sin participantes.
-2. **Material de fase A:** salida blanca cálida difundida, estabilidad y revisión del conjunto.
-3. **Asociación y comprensión:** percepción, atribución, intención y primer paso; autonomía por separado.
-4. **Comparación de soporte y lugar:** objeto situado, mismo objeto neutro y notificación Android equivalente, solo si fase A permite avanzar.
-5. **Modalidades y forma:** ajustar parámetros y comparar variantes justificadas; vibración solo ante una pregunta concreta de percepción o acceso.
-6. **Integración:** condición, Android, electrónica portátil y comportamiento ante fallos.
-7. **Uso doméstico:** piloto posterior para estudiar carga y habituación; sin resultados todavía.
+1. **Prueba técnica** sin participantes: conteo con varias apps, señal de 30 segundos, silencio, desconexión, permiso, envío y borrado de datos, con el teléfono y el parlante que se usarán.
+2. **Revisión** del consentimiento y del protocolo con el profesor.
+3. **Sesión inicial** (día 0): asociación observada y comprobación de autonomía.
+4. **Tres semanas en casa:** parlante junto al primer paso, parlante en un lugar neutro y aviso en el teléfono, en orden contrabalanceado, con preguntas de un toque tras cada señal.
+5. **Cierre** (día 21): preguntas finales y entrevista.
+6. **Testigo propio:** integración con una placa solo si los resultados justifican el objeto; ver [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10).
 
 ## Protocolos planificados
 
 - [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario iniciado en 2.3 y conciliado con 2.6, respuesta para la comisión y texto candidato; el correo y la fecha límite ya están indicados, pero falta verificar la eliminación y el canal de contacto antes de participantes.
 - [Modelo de datos para evaluar la aplicación](modelo-datos-evaluacion-app-2026-09-22.md): define qué registra el prototipo Android, qué preguntas puede responder y qué inferencias quedan excluidas.
-- [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): operacionaliza las dos primeras comparaciones y fija reglas de avance, modificación y detención. Todavía no ha sido ejecutado.
-- [Consentimiento informado](consentimiento-protocolo-01.md): borrador con fecha máxima de eliminación fijada; correo del responsable y revisión académica pendientes.
+- [Protocolo 02 — Prueba de 21 días en casa](protocolo-02-prueba-21-dias.md): estudio vigente; responde asociación, lugar, autonomía, uso y carga.
+- [Protocolo 01 — Asociación entre intención, señal y lugar](protocolo-01-asociacion-y-comparacion.md): antecedente con luz y sonido, reemplazado por el protocolo 02; sus condiciones y reglas se conservan en él.
+- [Consentimiento del protocolo 01](consentimiento-protocolo-01.md): antecedente.
 - [Ficha de registro](ficha-registro-protocolo-01.md): plantilla que separa observación, interpretación, límites y decisión.
 - [Ensayo interno documental](ensayo-interno-protocolo-01-2026-08-27.md): revisión sin participantes de tiempos, contradicciones y dependencias del procedimiento.
-- [Especificación mínima de materiales](especificacion-materiales-fase-a.md): define qué debe comprobarse en la plataforma de ensayo antes de involucrar participantes.
-- [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): plantilla sin datos para registrar conexión, señal, controles, seguridad, incidentes y correcciones.
+- [Especificación mínima de materiales](especificacion-materiales-fase-a.md): antecedente de la fase A con luz; se conserva para un eventual testigo propio.
+- [Ficha de ensayo técnico](ficha-ensayo-tecnico-fase-a.md): antecedente de la fase A con luz.
 
-## Ruta prevista para el protocolo de luz y sonido
+## Ruta anterior del protocolo de luz y sonido (antecedente)
+
+Desde el 25 de septiembre de 2026 esta ruta no rige: el autor decidió no usar luz (D-070) y reunir asociación y comparación en el protocolo 02 (D-079). Se conserva como registro y como base para un eventual testigo propio.
 
 1. Acceder a una micro:bit V2 e instalar el [programa Android–BLE compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md).
 2. Comprobar sin participantes el recorrido Android → Bluetooth de baja energía (BLE) → matriz roja y sonido, junto con la orden `activar`, la reconexión y el silenciamiento local. La matriz solo representa el canal luminoso en este banco técnico.
@@ -71,6 +71,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Protocolo 02
+
+- **Qué cambió:** el índice presenta el protocolo 02 como prueba vigente, un nuevo orden de pruebas y los documentos del protocolo 01 como antecedentes.
+- **Cómo estaba antes:** convivían una evaluación de la app de dos días y una secuencia futura con luz y sonido.
+- **Por qué:** D-070 ampliada, D-078 y D-079.
 
 ### 2026-09-25 — Instrumentos 2.6 y dos líneas de prueba
 

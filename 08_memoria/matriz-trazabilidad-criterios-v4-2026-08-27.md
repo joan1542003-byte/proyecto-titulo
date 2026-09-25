@@ -26,11 +26,17 @@ C1–C8 identifican los ocho criterios para seguimiento; no son números de apar
 
 Los ocho criterios cumplen funciones diferentes. Los criterios C1, C4 y C5 protegen el sentido del proyecto y la autonomía. Los criterios C2 y C3 organizan la relación entre intención, comienzo y activación. Los criterios C6 y C7 limitan la carga y los efectos sobre el entorno. El criterio C8 establece la prueba que decidirá si la dimensión física tiene valor suficiente para justificar su complejidad.
 
-La matriz también permite distinguir niveles de certeza. La literatura y las entrevistas sostienen la pertinencia de los criterios como condiciones de diseño. No demuestran la forma del objeto, los parámetros de luz y sonido seleccionados para prueba, la condición de activación ni la eficacia de la propuesta completa.
+La matriz también permite distinguir niveles de certeza. La literatura y las entrevistas sostienen la pertinencia de los criterios como condiciones de diseño. No demuestran la forma del objeto, los parámetros de la señal sonora seleccionada para la prueba, la condición de activación ni la eficacia de la propuesta completa.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** la matriz habla de la señal sonora.
+- **Cómo estaba antes:** hablaba de parámetros de luz y sonido.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
 
 ### 2026-09-25 — Equivalencia con la memoria
 

@@ -686,10 +686,11 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-070 — Señal sonora, sin luz por ahora
 
 - **Fecha:** 2026-09-25.
-- **Estado:** vigente para la marca; su alcance sobre el objeto y la memoria está pendiente.
+- **Estado:** vigente para la marca, el objeto, la memoria y las pruebas (ampliada por el autor el mismo día).
 - **Decisión:** Relevo no usará luz por ahora. La señal del objeto es un sonido, como en la app 2.6, y ningún medio de marca muestra luz, brillos ni ventanas encendidas.
 - **Fundamento:** decisión del autor del 25 de septiembre. La app 2.6 ya emite solo sonido, por el parlante Bluetooth elegido o por el teléfono.
-- **Pendiente:** la memoria describe una señal de luz y sonido (capítulos 1, 10, 11 y 13, y el glosario) y la primera prueba de asociación usa una luz blanca cálida. Si la decisión se extiende al proyecto, esos capítulos, la prueba y los documentos del objeto deben revisarse juntos.
+- **Ampliación del mismo día:** el autor extendió la decisión al objeto y a la memoria porque la luz no es factible en el tiempo disponible. La memoria, el protocolo de prueba, el consentimiento y los documentos vigentes del objeto se actualizaron para describir una señal solo sonora. Los estudios fechados que evaluaron luz se conservan como antecedentes. En las entrevistas, algunas personas pidieron señales visuales (P3–P5, P7 y P8, Q13); esa preferencia queda como límite declarado.
+- **Antes:** la memoria describía una señal de luz y sonido, y el protocolo 01 usaba una luz blanca cálida.
 - **Condición de revisión:** evidencia de que el sonido no basta para notar la señal o excluye a personas con baja audición (véase la sección de accesibilidad de la memoria).
 - **Documentación:** [marca «Suena donde empieza»](../10_recursos_visuales/19_marca-suena-donde-empieza-2026-09-25.md).
 
@@ -799,8 +800,8 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-075 — Prueba de 21 días con evaluación integrada
 
 - **Fecha:** 2026-09-25.
-- **Estado:** decisión del autor; consentimiento, protocolo, pauta y memoria por actualizar cuando lo pida.
-- **Decisión:** la prueba con participantes dura 21 días. Las preguntas se integran en la app: una por día como máximo, de un toque, que se pueden omitir, más un cierre el día 21.
+- **Estado:** decisión del autor; desarrollada en D-079 y en el protocolo 02.
+- **Decisión:** la prueba con participantes dura 21 días. Las preguntas se integran en la app: de un toque, que se pueden omitir, tras cada señal y al cierre de cada semana, más un cierre el día 21.
 - **Límite:** 21 días permiten observar continuidad, carga y habituación a la señal; no bastan para afirmar que se formó un hábito (Lally et al., 2010).
 - **Antes:** el consentimiento vigente es por dos días.
 - **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
@@ -822,7 +823,32 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Conservación:** los datos se borran cuando la persona lo pide y, como máximo, el 30 de diciembre de 2026, como en el consentimiento vigente (confirmado por el autor el mismo día).
 - **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
 
+## D-078 — Señal sonora de unos 30 segundos
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; implementación pendiente en la app.
+- **Decisión:** la señal suena unos 30 segundos y se detiene sola. Usa la firma sonora de Relevo, repetida con pausas y con un comienzo más suave. Después, la pantalla y la notificación quedan visibles en silencio hasta que la persona responde.
+- **Fundamento:** debe ser más que una notificación y menos que una alarma. Una señal que no se detiene contradice el «término sin insistencia» de la memoria (capítulo 11); una de 3 segundos, pensada para pulsos de luz, no se escucharía sin luz (D-070).
+- **Registro:** solo para la investigación, la app anota si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto siguió en las apps elegidas. Ese tiempo no se muestra como «tiempo excedido».
+- **Antes:** la app 2.6 suena hasta que la persona silencia el tono.
+- **Condición de revisión:** que la prueba muestre señales que nadie notó o que molesten a quienes comparten el espacio.
+
+## D-079 — La prueba de 21 días también responde la hipótesis
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; protocolo escrito, no ejecutado.
+- **Decisión:** la prueba de 21 días reemplaza a las etapas separadas del protocolo 01. Empieza con una sesión presencial que observa la asociación (percepción, atribución, recuperación de la intención y del primer paso). Sigue con tres semanas en casa, una condición por semana en orden contrabalanceado: parlante junto al primer paso, parlante en un lugar neutro y aviso en el teléfono. Tras cada señal, la app pregunta con un toque si la persona supo qué quería hacer y cómo empezar antes de mirar el teléfono.
+- **Fundamento:** el autor pidió que la prueba sirva también para la hipótesis, porque el tiempo no alcanza para estudios separados. Tres semanas permiten comparar las tres condiciones de la memoria (capítulo 13) dentro de la misma persona.
+- **Límites:** la asociación en casa es autoinformada; las intenciones cambian entre semanas; el parlante comercial reemplaza al testigo; 21 días no bastan para afirmar un hábito.
+- **Documentación:** [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-070 ampliada, D-078 y D-079
+
+- **Qué cambió:** D-070 se extiende al objeto, la memoria y las pruebas; se registran la señal de unos 30 segundos (D-078) y la prueba de 21 días que responde la hipótesis (D-079); D-075 se ajusta a esa prueba.
+- **Cómo era antes:** D-070 solo regía la marca; la prueba de 21 días medía uso, y la hipótesis quedaba para el protocolo 01.
+- **Por qué:** el autor decidió que la luz no es factible por tiempo, eligió 30 segundos para el tono y pidió que la prueba responda también la hipótesis.
 
 ### 2026-09-25 — D-074 a D-077
 

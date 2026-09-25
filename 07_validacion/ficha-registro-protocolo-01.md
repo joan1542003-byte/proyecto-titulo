@@ -1,6 +1,6 @@
 # Ficha de registro — Protocolo 01
 
-**Estado:** plantilla sin datos
+**Estado:** plantilla sin datos. Desde el 25 de septiembre de 2026 se usa para la sesión inicial del [protocolo 02](protocolo-02-prueba-21-dias.md): valen la identificación, la cadena de asociación y la comprobación de autonomía; los campos de luz y de fase B no aplican.
 
 ## Identificación de la sesión
 
@@ -106,6 +106,12 @@ Indicar qué no permite afirmar esta sesión.
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado frente al protocolo 02
+
+- **Qué cambió:** el estado indica su relación con el protocolo 02 y la decisión de no usar luz.
+- **Cómo estaba antes:** era parte del plan vigente.
+- **Por qué:** D-070 ampliada y D-079.
 
 ### 2026-09-08 — Separación de incidentes técnicos y respuestas de usuario
 

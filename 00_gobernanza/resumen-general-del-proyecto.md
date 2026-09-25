@@ -58,7 +58,7 @@ El feedback de la comisión no se pegó literalmente en la memoria. Se convirti�
 | “No se entiende bien qué es el objeto” | Ahora se explica el sistema completo: aplicación, testigo, lugar, condición y pulso. | Una persona debe entender la experiencia antes de entrar en la parte técnica. | [Propuesta phygital](../05_propuesta_phygital/README.md) |
 | “El contexto y el usuario son muy amplios” | Se definieron un usuario principal y un usuario límite. El hogar quedó como contexto inicial de prueba, no como verdad definitiva. | La misma persona puede querer una señal en una situación y no quererla en otra. | [Perfiles](../03_usuarios/perfiles-situacionales.md) · [Recorridos](../03_usuarios/recorridos-situacionales.md) |
 | “Hay que separar los flujos” | Se separaron el recorrido de la persona, el funcionamiento del sistema y el proceso de diseño. | Así se pueden detectar fallos de comprensión sin confundirlos con fallos de programación. | [Cobertura de interacciones](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
-| “Hay que justificar la luz, el sonido o la vibración” | Se seleccionaron luz y sonido para el prototipo; vibración queda como alternativa condicionada. | Todavía no sabemos qué señal se percibe bien sin volverse una alarma o una molestia. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| “Hay que justificar la luz, el sonido o la vibración” | Se eligió una señal solo sonora de unos 30 segundos (D-070 y D-078): la luz no es factible en el tiempo disponible; la vibración queda como alternativa condicionada. | Todavía no sabemos si el sonido se percibe bien sin volverse una alarma o una molestia, ni si excluye a personas con baja audición. | [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
 | “Hay que demostrar el valor del objeto” | Se agregó una comparación entre objeto situado, objeto en un lugar neutro y notificación digital. | Permite saber si el valor está en el objeto, en el lugar o simplemente en recibir un aviso. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | “No conviertan esto en algo punitivo” | Se descartaron bloqueos, rankings, rachas, premios y evaluación de cumplimiento. | La intención es devolver una opción, no transformar la actividad en una obligación. | [Requisitos de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) |
 | “Faltan plataforma, costos y rol del diseñador” | Android quedó como plataforma inicial; se documentaron materiales, costos, producción y responsabilidades del diseño. | Acotar el desarrollo permite comprobar primero el valor de la experiencia. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
@@ -146,7 +146,7 @@ La arquitectura de nombres quedó así:
 - **aplicación Relevo:** configura y conserva la actividad;
 - **dispositivo Relevo:** objeto que emite la señal; `testigo` se reserva para el desarrollo académico y técnico;
 - **recordatorio activo:** unidad pública de uso; `ciclo` se mantiene en la documentación técnica;
-- **señal:** manifestación breve de luz y sonido vinculada al lugar.
+- **señal:** sonido breve, de unos 30 segundos, vinculado al lugar.
 
 En textos dirigidos al público se utiliza **dispositivo Relevo**, porque permite comprender el componente sin aprender terminología propia. **Testigo** conserva utilidad interna para describir que el objeto porta una señal preparada, pero se define antes de utilizarlo.
 
@@ -188,7 +188,7 @@ Existen precios de referencia para comparar rutas, pero todavía no hay un presu
 |---|---:|---|---|
 | Dos muestras iTag | **CLP 13.980 más envío** | Recomendada el 11 de septiembre; no se compró. Permitía comparar partidas; faltan recepción, inspección GATT y pruebas de sonido, luz, espera, reconexión y silencio. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) |
 | micro:bit V2 | **CLP 24.990** | Respaldo disponible si ambos iTag fallan. Faltan acceso o préstamo, alimentación portátil y funda de ensayo; no representa el producto final. | [Plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) |
-| XIAO nRF52840 | **CLP 16.590 solo la placa** | Ruta de integración vigente. Faltan batería, luz, transductor, control, conexiones, carcasa, difusión, envío y revisión. | [Testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) |
+| XIAO nRF52840 | **CLP 16.590 solo la placa** | Ruta de integración vigente. Faltan batería, transductor, control, conexiones, carcasa, envío y revisión. | [Testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) |
 | Montaje provisional de 12 V | **CLP 28.130** | Referencia parcial. Excluye terminales y protección de potencia; queda como respaldo. | [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) |
 | B1: XIAO + anillo 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Faltan conversor lógico, conductores internos, cuerpo, difusor, envío y revisión. | [Lista B1](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 | B2: XIAO + luz cálida 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Faltan resistencia de estado, conductores, cuerpo, difusor, envío y revisión. | [Lista B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
@@ -258,6 +258,12 @@ Eso todavía no lo pueden responder la memoria, el wireframe ni la app por sí s
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** la respuesta al feedback sobre modalidad, el glosario y la fila de la XIAO describen una señal solo sonora y remiten al protocolo 02.
+- **Cómo estaba antes:** describían luz y sonido y remitían al protocolo 01.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-25 — Estado posterior a Android 2.6
 

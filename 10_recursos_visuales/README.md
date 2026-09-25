@@ -55,7 +55,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 | Posicionamiento, frase y descriptor | Cerrados como decisiones de diseño | Se aplican en todos los soportes; una prueba puede corregirlos si revela una confusión concreta. |
 | Arquitectura de la aplicación | Estable como wireframe v1 | La estructura puede informar la nueva interfaz; su apariencia anterior no se considera vigente. |
 | Forma del testigo | Abierta | No se debe presentar una carcasa específica como producto resuelto. |
-| Luz y sonido | Son canales previstos, no parámetros cerrados | Intensidad, duración, patrón y convivencia requieren pruebas situadas. |
+| Sonido | Único canal del objeto por ahora (D-070); unos 30 segundos (D-078) | Intensidad, patrón y convivencia requieren pruebas situadas. |
 | Paleta y tipografía | Cerradas para producción | Source Sans 3, verde Relevo y la base neutra conforman el sistema vigente. |
 | Logotipo e iconografía | Cerrados en su nivel necesario | Se usa logotipo tipográfico y una `R` reducida; no se desarrollará un símbolo adicional sin una necesidad funcional. |
 | Sistema editorial | Directrices cerradas; diagramación pendiente | Debe aplicarse al texto real mediante retícula horizontal de doce columnas. |
@@ -73,6 +73,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** la tabla indica que el sonido es el único canal.
+- **Cómo estaba antes:** decía que luz y sonido eran canales previstos.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
 
 ### 2026-09-25 — Firma del autor
 
