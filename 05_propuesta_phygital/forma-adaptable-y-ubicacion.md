@@ -1,6 +1,6 @@
 # Forma adaptable y ubicación del objeto
 
-**Estado:** criterios de diseño vigentes; forma, fijaciones y desempeño pendientes de prueba.
+**Estado:** criterios de diseño vigentes; forma, fijaciones y desempeño pendientes de prueba. Desde el 25 de septiembre de 2026 el objeto no tiene luz (D-070): las menciones a su orientación o bloqueo no aplican.
 **Preguntas:** ¿cómo responde un objeto a muchas actividades?, ¿qué alternativas tiene?, ¿cómo se diseña esa adaptabilidad?, ¿dónde vive?
 
 ## Respuesta
@@ -50,6 +50,12 @@ Faltan pruebas, medidas y una comparación registrada. No se afirma que una mism
 Design Council. (s. f.). *The Double Diamond*. Recuperado el 9 de septiembre de 2026, de https://www.designcouncil.org.uk/resources/the-double-diamond/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** el estado indica que el objeto no tiene luz.
+- **Cómo estaba antes:** la tabla consideraba la orientación de la luz.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

@@ -1,6 +1,6 @@
 # Cabos sueltos priorizados antes del siguiente cierre de la memoria
 
-**Última reconciliación:** 9 de septiembre de 2026
+**Última reconciliación:** 9 de septiembre de 2026. **Nota del 25 de septiembre:** los cabos sobre luz, micro:bit y fase A quedaron superados por D-070 (sin luz) y por el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md); se conservan como registro.
 
 ## Dictamen
 
@@ -101,6 +101,12 @@ La [Issue #4](https://github.com/joan1542003-byte/proyecto-titulo/issues/4) perm
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** se añadió una nota que marca como superados los cabos sobre luz y fase A.
+- **Cómo estaba antes:** presentaba esos cabos como pendientes.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

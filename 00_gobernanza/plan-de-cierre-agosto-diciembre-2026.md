@@ -2,7 +2,7 @@
 
 **Fecha de planificación:** 2 de septiembre de 2026
 
-**Última revisión de estado:** 16 de septiembre de 2026
+**Última revisión de estado:** 25 de septiembre de 2026
 
 **Cierre total interno:** 15 de noviembre de 2026
 
@@ -22,6 +22,8 @@ Relevo se encuentra en una etapa de **construcción y comprobación**. El recorr
 
 El hito del 5 de septiembre quedó documentalmente resuelto con retraso el 7 de septiembre. La ruta física también fue corregida: la primera comprobación utilizará una plataforma ya fabricada y la integración portátil posterior se desarrollará con XIAO nRF52840. El programa mínimo para micro:bit V2 ya compila y dispone de un archivo instalable. Todavía faltan acceso a la placa, instalación, conexión medida, incorporación de una luz blanca cálida externa, ensayo y revisión electrónica. Estas tareas condicionan una señal segura, aunque no impiden cerrar el wireframe.
 
+Entre el 21 y el 24 de septiembre se construyó la [aplicación Android](../06_desarrollo_y_factibilidad/app-android/README.md) hasta la versión 2.6, con varias apps bajo un límite común, salida de sonido elegible, consentimiento y solicitud de eliminación. Compila y pasa sus pruebas unitarias, pero aún no se ha probado en un teléfono y un parlante reales ni con personas. El hito del 19 de septiembre (app base y señal manual) se cumplió con retraso en la parte de la app; la señal física propia sigue pendiente.
+
 Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La prioridad es convertir las hipótesis más importantes en prototipos, pruebas y decisiones.
 
 ## Estado por área
@@ -35,9 +37,9 @@ Por lo tanto, el proyecto no está en una etapa de expansión conceptual. La pri
 | Memoria | Avanzada, no final | Estructura v4, extensión, APA 7, trazabilidad y anexos preparados. | Incorporar decisiones, resultados, límites, factibilidad y evidencia final. |
 | Arquitectura phygital | Definida como hipótesis | Aplicación Android, testigo situado, flujo principal y 35 estados. | Comprobar asociación, soporte físico, condición de activación y fallos. |
 | Sistema visual | Cerrado para producción | Nombre, mensaje, tipografía, paleta, logotipo y reglas por soporte documentados. | Aplicar el sistema y corregir solo problemas demostrados de comprensión, accesibilidad o reproducción. |
-| Prototipo Android | Preparado para construcción | Plataforma justificada, wireframe v1 congelado, recorrido mínimo y backlog definidos. | Construir la navegación base, implementar la condición provisional, la notificación local y los estados de recuperación. |
-| Testigo físico | Banco preparado, no ejecutado | Función, requisitos, salidas de luz y sonido, plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado y documentado. | Acceder a la placa, instalar, añadir la salida cálida, medir, revisar el montaje y completar después la integración portátil. |
-| Validación | Preparada, no ejecutada | Protocolo inicial, consentimiento, ficha y criterios previos documentados. | Construir y revisar el prototipo, completar el ensayo técnico; luego cerrar consentimiento, reclutar, ejecutar, analizar e iterar. |
+| Prototipo Android | Construido, sin probar en equipos reales | Versión 2.6: preparación por etapas, varias apps con un límite común, notificación persistente, salida por parlante o teléfono, consentimiento, historial y solicitud de eliminación; compila y pasa diez pruebas unitarias. | Probar el ciclo completo en teléfono y parlante reales, verificar el envío y la eliminación de datos, y añadir el vínculo con un testigo propio. |
+| Testigo físico | Reemplazado en la prueba por un parlante Bluetooth | Función, requisitos, señal solo sonora (D-070), plataforma de ensayo y arquitectura XIAO nRF52840 diferenciadas; programa micro:bit compilado. | Integrar un testigo propio solo si la prueba de 21 días justifica el objeto. |
+| Validación | Preparada, no ejecutada | [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) de 21 días, consentimiento, pauta y ficha documentados. | Implementar la app 2.7, completar la comprobación técnica y la eliminación de datos; luego revisar el consentimiento, reclutar, ejecutar, analizar e iterar. |
 | Producción y costos | Provisional | Reglas de factibilidad, compra escalonada y desembolsos comparables con proveedores y fecha de corte. | Verificar la arquitectura candidata, medir consumo y cerrar protección, conexiones, cuerpo, difusor, trabajo, tiempos y costo del prototipo integrado. |
 | Entrega final | Pendiente | Arquitectura de memoria y selección preliminar de anexos. | Producto documentado, fotografías, resultados, versión final, presentación y respaldo. |
 
@@ -95,7 +97,7 @@ Las fechas institucionales se encuentran consolidadas en el [calendario oficial 
 - crear la navegación Android y las pantallas prioritarias con componentes funcionales;
 - implementar el recorrido mínimo: intención, primer paso, condición provisional, prueba, armado, desarme y recuperación;
 - usar una condición local o simulada para probar el flujo sin depender todavía de toda la electrónica;
-- ejecutar la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11) con una plataforma existente y comprobar conexión, luz, sonido y silencio local;
+- implementar la app 2.7 del [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) y comprobar con teléfono y parlante reales el conteo, la señal de 30 segundos y el silencio local;
 - preparar una lista de fallos que deben probarse antes de invitar participantes.
 
 **Criterio de salida:** una persona puede recorrer la app sin explicación del autor y la señal manual puede activarse de forma segura y repetible.
@@ -129,13 +131,13 @@ Presentar el avance según el [calendario oficial](calendario-oficial-segundo-se
 
 **Criterio de salida:** no quedan fallos críticos sin resolver y la prueba con usuarios tiene una versión concreta del prototipo, una tarea clara y un criterio de observación.
 
-### 8–17 de octubre — Prueba con usuarios y análisis inicial
+### 8 de octubre a 1 de noviembre — Prueba de 21 días con usuarios
 
 **Objetivo:** obtener evidencia sobre comprensión, asociación, carga e interpretación antes del cierre del producto.
 
-- ejecutar la prueba con los participantes definidos en el protocolo y con consentimiento;
-- observar si el testigo situado ayuda a recuperar una intención y cómo se relaciona con el lugar;
-- comparar con una notificación u otra condición solo si la app y el protocolo están técnicamente preparados;
+- realizar las sesiones iniciales entre el 8 y el 10 de octubre y seguir las tres semanas del [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md);
+- observar si la señal situada ayuda a recuperar una intención y cómo se relaciona con el lugar;
+- comparar, una semana cada una, el parlante junto al primer paso, el parlante en un lugar neutro y el aviso en el teléfono;
 - registrar percepción, recuerdo, primer paso, consulta del teléfono, confusiones, molestia y autonomía;
 - analizar los hallazgos a medida que se producen y anotar cambios necesarios sin alterar el objetivo de la prueba.
 
@@ -145,24 +147,24 @@ Presentar el avance según el [calendario oficial](calendario-oficial-segundo-se
 
 Reservar este periodo para las [Pruebas Solemnes](calendario-oficial-segundo-semestre-2026.md). No abrir nuevas líneas de investigación ni cambios estructurales; solo mantener comprobaciones indispensables y respaldar el avance.
 
-### 24–31 de octubre — Integración y producto prácticamente terminado
+### 24–31 de octubre — Producto y documentación mientras corre la prueba
 
-**Objetivo:** convertir los hallazgos en una versión integrada, presentable y documentada.
+**Objetivo:** avanzar en lo que no depende de los resultados, mientras termina la prueba de 21 días.
 
-- cerrar el análisis de usuarios y decidir lugar, modalidad, notificación y límites de la propuesta;
-- integrar Android y el testigo con la arquitectura más acotada que sea estable;
+- registrar incidencias de la prueba sin cambiar la app de los participantes, salvo un fallo crítico;
+- preparar el testigo propio solo si los resultados parciales lo justifican (condicional);
 - ajustar interfaz, señal y comportamiento técnico a partir de problemas observados;
 - cerrar forma, dimensiones, montaje, acceso a componentes y aplicaciones del sistema visual;
 - completar materiales, costos, proveedores, tiempos de fabricación y registro fotográfico/audiovisual.
 
 **Criterio de salida del 31 de octubre:** el producto funciona de inicio a cierre, las decisiones están justificadas por evidencia o restricciones explícitas y no quedan funciones esenciales por inventar.
 
-### 1–8 de noviembre — Validación final acotada y congelamiento
+### 1–8 de noviembre — Análisis de la prueba y congelamiento
 
-**Objetivo:** comprobar la versión integrada y cerrar decisiones.
+**Objetivo:** responder la hipótesis con los resultados de la prueba de 21 días y cerrar decisiones.
 
-- ejecutar una prueba final de comprensión, uso y recuperación;
-- realizar, si es viable, un piloto doméstico breve para observar habituación y emplazamiento;
+- analizar la asociación observada, la comparación de las tres semanas, la autonomía y la carga con las reglas del protocolo 02;
+- decidir lugar, soporte y límites de la propuesta;
 - analizar resultados sin convertir la acción posterior a la señal en éxito o fracaso;
 - corregir únicamente problemas que afecten comprensión, seguridad, accesibilidad o funcionamiento;
 - congelar alcance, interacción, forma, sistema visual y arquitectura técnica.
@@ -232,10 +234,10 @@ Presentar y defender Relevo dentro del periodo oficial asignado por la Escuela. 
 | 29 de septiembre | Prueba interna cerrada | Fallos críticos registrados/corregidos y material listo para la corrección. |
 | 30 de septiembre | Corrección cruzada oficial | Avance presentado y observaciones traducidas en tareas o decisiones. |
 | 7 de octubre | Piloto técnico y protocolo cerrados | App, señal, consentimiento, criterios y reclutamiento preparados. |
-| 17 de octubre | Ventana de prueba con usuarios cerrada | Sesiones realizadas o incidencias documentadas; análisis inicial en curso. |
+| 1 de noviembre | Prueba de 21 días terminada | Tres semanas completas o incidencias documentadas; análisis en curso. |
 | 19–23 de octubre | Pruebas Solemnes oficiales | Ruta crítica protegida y alcance secundario suspendido. |
-| 31 de octubre | Proyecto prácticamente terminado | Integración estable, forma definida, costos y registro documentados. |
-| 8 de noviembre | Diseño y alcance congelados | Validación integrada analizada; solo quedan correcciones de cierre. |
+| 31 de octubre | App y documentación listas para el análisis | Incidencias de la prueba registradas; testigo propio solo si se justifica. |
+| 8 de noviembre | Diseño y alcance congelados | Prueba de 21 días analizada; solo quedan correcciones de cierre. |
 | 15 de noviembre | Proyecto 100 % cerrado | Producto, memoria, anexos y presentación completos. |
 | 25 de noviembre | Pase de Examen | Antecedentes entregados y observaciones clasificadas. |
 | 2 de diciembre | Entrega de memoria | Memoria definitiva entregada y respaldada. |
@@ -295,6 +297,18 @@ Este plan se revisará cada domingo o después de un hito. Un cambio de fechas d
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** el plan de octubre sigue el protocolo 02: app 2.7, sesiones iniciales del 8 al 10 de octubre y tres semanas hasta el 1 de noviembre; el testigo propio pasa a ser condicional.
+- **Cómo estaba antes:** la prueba con usuarios era del 8 al 17 de octubre y el banco físico incluía luz.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
+
+### 2026-09-25 — Estado posterior a Android 2.6
+
+- **Qué cambió:** la etapa actual y el estado por área incorporan la aplicación Android 2.6 y los instrumentos de validación sincronizados.
+- **Cómo estaba antes:** la última revisión era del 16 de septiembre y describía el prototipo Android como «preparado para construcción».
+- **Por qué:** el plan debe reflejar lo realizado para priorizar bien las semanas restantes. Las fechas del calendario no cambian.
 
 ### 2026-09-16 — Paso a construcción y comprobación
 

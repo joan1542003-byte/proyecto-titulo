@@ -52,7 +52,18 @@ Si el navegador de Playwright no está instalado, la suite del runtime puede uti
 
 ---
 
+## Recursos de terceros
+
+- **IBM Plex Sans y Mono** (`public/fonts/`): SIL Open Font License; sus avisos de licencia acompañan a los archivos.
+- **Marcos de iPhone y Pixel y teclados** (`public/assets/iphone/`, `public/assets/android/Pixel10.png`, `public/assets/android/Keyboard.png`): imágenes fotorrealistas de dispositivos cuya procedencia no está registrada. Si provienen de los recursos de diseño de Apple o Google, sus licencias permiten usarlas para crear maquetas, pero no necesariamente redistribuir los archivos en un repositorio público. Mientras no se documente su origen y licencia, conviene reemplazarlas por un marco genérico dibujado para el proyecto. Las exportaciones ya generadas son maquetas del proyecto y no redistribuyen los archivos originales.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Procedencia de recursos de terceros
+
+- **Qué cambió:** se registraron las licencias de las fuentes y el origen no documentado de los marcos de dispositivo.
+- **Cómo estaba antes:** el README no indicaba de dónde provenían esos recursos ni bajo qué condiciones podían redistribuirse.
+- **Por qué:** el repositorio es público y el autor pidió asegurar que el uso de material ajeno sea legal.
 
 ### 2026-09-11 — Apariencia separada de la estructura
 

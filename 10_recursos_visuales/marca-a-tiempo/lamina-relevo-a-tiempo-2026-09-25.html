@@ -1,0 +1,779 @@
+<title>Manual de marca Relevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#17181C;--papel:#F2F2EF;--grafito:#5B5F68;--niebla:#E3E4E6;--azul:#2A4BD7;--noche:#111215;--azulc:#8CA6FF;
+  --bg:var(--papel);--fg:var(--tinta);--muted:var(--grafito);--panel:var(--niebla);--line:#C9CBCF;--you:var(--azul);
+  --sans:'Schibsted Grotesk',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111215;--fg:#E9EAEC;--muted:#9BA0A9;--panel:#1C1E23;--line:#30333A;--you:#8CA6FF}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111215;--fg:#E9EAEC;--muted:#9BA0A9;--panel:#1C1E23;--line:#30333A;--you:#8CA6FF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.55;font-kerning:normal;text-rendering:optimizeLegibility}
+main,header{overflow-x:clip}
+.w{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+h1,h2,h3,h4{margin:0;font-weight:650;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,56px)}
+h3{font-size:20px;letter-spacing:-.01em;line-height:1.25}
+p{margin:0;text-wrap:pretty}
+.muted{color:var(--muted)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:clamp(19px,1.7vw,22px);line-height:1.5;max-width:36rem}
+.body{max-width:38rem}
+.body>*+*{margin-top:.9em}
+a{color:var(--you);text-underline-offset:.18em}
+:focus-visible{outline:2px solid var(--you);outline-offset:3px}
+.you{color:var(--you)}
+.cite{color:var(--muted)}
+section{padding-block:clamp(72px,10vw,136px)}
+section+section{border-top:1px solid var(--line)}
+.head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px);max-width:48rem}
+
+/* renglón: línea impresa (tinta) y lo escrito por la persona (azul) */
+.campo{display:inline-block;white-space:nowrap;color:var(--you);border-bottom:.055em solid currentColor;border-bottom-color:var(--fg);line-height:1;padding-bottom:.06em;min-width:4.2em}
+.campo.vacio{min-width:5.4em}
+.campo.guia{color:inherit}
+
+/* portada */
+.cover{padding-block:clamp(28px,4vw,40px) clamp(64px,9vw,120px)}
+.bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:clamp(56px,10vw,128px)}
+.bar .eyebrow{letter-spacing:.04em}
+.wm{display:block;height:auto}
+.cover .wm{color:var(--fg)}
+.cover .wm{width:min(100%,760px)}
+.firma{font-size:clamp(34px,7.4vw,96px);font-weight:650;letter-spacing:-.03em;line-height:1.02;margin-top:clamp(40px,6vw,72px)}
+.firma .campo{min-width:4.4em}
+.firma .rot{display:inline-block;transition:opacity .45s ease}
+.cover .lead{margin-top:28px}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;margin-top:40px}
+@media (max-width:760px){.cover-grid{grid-template-columns:1fr}}
+.play{display:inline-flex;align-items:center;gap:12px;font:inherit;font-size:15px;font-weight:600;color:var(--fg);background:none;border:1.5px solid var(--fg);border-radius:999px;padding:9px 18px 9px 10px;cursor:pointer}
+.play i{width:28px;height:28px;border-radius:50%;background:var(--fg);display:grid;place-items:center}
+.play i svg{width:10px;height:10px;fill:var(--bg);margin-left:2px}
+.play:hover{background:var(--panel)}
+.play small{font-weight:400;color:var(--muted);font-size:14px}
+
+/* 20 segundos */
+.veinte{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+@media (max-width:900px){.veinte{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.veinte{grid-template-columns:1fr}}
+.veinte div{border-top:2px solid var(--fg);padding-top:14px;display:grid;gap:8px;align-content:start}
+.veinte p{font-size:18px;line-height:1.4}
+
+/* relato */
+.relato{display:grid;gap:clamp(28px,4vw,48px)}
+.beat{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:12px clamp(24px,5vw,72px);align-items:baseline}
+@media (max-width:760px){.beat{grid-template-columns:1fr}}
+.beat h3{font-size:clamp(28px,3.4vw,42px);letter-spacing:-.02em;line-height:1.08}
+.beat p{font-size:18px;line-height:1.5;max-width:32rem}
+
+/* línea de tiempo */
+.tl{background:var(--panel);padding:clamp(20px,3vw,32px);overflow-x:auto}
+.tl svg{display:block;width:100%;min-width:540px;height:auto}
+.tl text{font-family:var(--sans);fill:var(--fg)}
+.tl .m{fill:var(--muted)}
+.tl .y{fill:var(--you)}
+
+/* dos columnas generales */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+
+/* renglón: demostración */
+.demo{background:var(--panel);padding:clamp(24px,4vw,48px);display:grid;gap:28px}
+.demo .big{font-size:clamp(26px,3.8vw,46px);font-weight:650;letter-spacing:-.02em;line-height:1.12}
+.demo .cap{font-size:14px;color:var(--muted)}
+.voces{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.voces div{padding:18px;border:1px solid var(--line);display:grid;gap:6px}
+.voces b{font-size:22px;font-weight:650;letter-spacing:-.01em}
+
+/* tablas */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15.5px;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:14px 18px 14px 0;border-top:1px solid var(--line)}
+th{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:2px solid var(--fg)}
+td:first-child{font-weight:600;width:24%}
+.num{font-variant-numeric:tabular-nums}
+
+/* logotipo */
+.logo-hero{background:#F2F2EF;color:#17181C;padding:clamp(40px,8vw,112px) clamp(24px,6vw,96px);border:1px solid var(--line);position:relative}
+.logo-hero .wm{width:100%}
+.logo-hero .guide{position:absolute;left:0;right:0;border-top:1px dashed #9aa0a9}
+.logo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+@media (max-width:760px){.logo-grid{grid-template-columns:1fr}}
+.logo-grid>div{min-height:180px;display:grid;place-items:center;padding:28px;overflow:hidden}
+.logo-grid .wm{width:min(100%,260px)}
+.t-papel{background:#F2F2EF;color:#17181C;border:1px solid var(--line)}
+.t-tinta{background:#17181C;color:#F2F2EF}
+.t-azul{background:#2A4BD7;color:#F2F2EF}
+.icons{display:flex;gap:20px;align-items:end;flex-wrap:wrap;margin-top:16px}
+.icons svg{display:block}
+.icons figure{margin:0;display:grid;gap:8px;justify-items:start}
+.icons figcaption{font-size:13px;color:var(--muted)}
+
+/* tipografía */
+.specimen{font-size:clamp(64px,12vw,168px);font-weight:650;letter-spacing:-.035em;line-height:.95}
+.escala{display:grid;gap:0;margin-top:40px}
+.escala div{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:8px 28px;padding-block:18px;border-top:1px solid var(--line);align-items:baseline}
+@media (max-width:640px){.escala div{grid-template-columns:1fr}}
+.escala .spec{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* color */
+.pal{display:grid;grid-template-columns:2fr 2fr 1fr 1fr;gap:12px}
+@media (max-width:760px){.pal{grid-template-columns:1fr 1fr}}
+.pal div{min-height:190px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;line-height:1.35}
+.pal b{font-size:18px;font-weight:650}
+.pal code{font-family:var(--sans);font-variant-numeric:tabular-nums}
+.pal2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+@media (max-width:760px){.pal2{grid-template-columns:1fr 1fr}}
+.pal2 div{min-height:110px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;font-size:13.5px}
+.pal2 b{font-size:15px;font-weight:650}
+
+/* fotos */
+.fotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.fotos{grid-template-columns:1fr}}
+.fotos figure{margin:0}
+.fotos img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.fotos figcaption{margin-top:12px;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.reglas{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.reglas li{padding-left:26px;position:relative}
+.reglas li::before{content:"";position:absolute;left:0;top:.95em;width:14px;border-top:2px solid var(--fg)}
+
+/* voz */
+.voz{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px)}
+@media (max-width:760px){.voz{grid-template-columns:1fr}}
+.voz ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:0}
+.voz li{padding-block:14px;border-top:1px solid var(--line);font-size:19px;letter-spacing:-.005em}
+.voz .no li{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+
+/* aplicaciones */
+.posters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.posters{grid-template-columns:1fr;max-width:420px}}
+.poster{aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;container-type:inline-size}
+.poster .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.poster .txt{position:relative;padding:7cqw;display:flex;flex-direction:column;justify-content:space-between;height:100%}
+.poster .t{font-size:11.5cqw;font-weight:650;letter-spacing:-.03em;line-height:1.02}
+.poster .foot{display:flex;justify-content:space-between;align-items:end;gap:12px}
+.poster .foot .wm{width:28cqw}
+.poster .foot small{font-size:3.1cqw;line-height:1.3;max-width:48cqw;text-align:right}
+.p-papel{background:#F2F2EF;color:#17181C}
+.p-papel .campo{color:#2A4BD7;border-bottom-color:#17181C}
+.p-tinta{background:#17181C;color:#F2F2EF}
+.p-tinta .campo{color:#8CA6FF;border-bottom-color:#F2F2EF}
+.p-foto{color:#F2F2EF;background:#17181C}
+.p-foto .campo{color:#F2F2EF;border-bottom-color:#F2F2EF}
+.p-foto .txt{background:linear-gradient(180deg,rgba(17,18,21,.55),rgba(17,18,21,0) 42%,rgba(17,18,21,0) 70%,rgba(17,18,21,.5))}
+
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+@media (max-width:900px){.phones{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
+.tel{background:#0B0C0E;border-radius:40px;padding:9px;width:100%;max-width:320px;margin:0 auto}
+.scr{background:#F2F2EF;color:#17181C;border-radius:32px;min-height:600px;padding:18px 20px 22px;display:flex;flex-direction:column;gap:16px;font-size:14.5px;line-height:1.4}
+.scr .sb{display:flex;justify-content:space-between;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.scr .top{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.scr .top .wm{width:66px}
+.scr .top span{font-size:12.5px;color:#5B5F68}
+.scr h4{font-size:30px;font-weight:650;letter-spacing:-.025em;line-height:1.05}
+.scr .q{display:grid;gap:6px}
+.scr .q label{font-size:12.5px;color:#5B5F68;font-weight:500}
+.scr .q .campo{font-size:19px;font-weight:500;letter-spacing:-.005em;min-width:100%;color:#2A4BD7;border-bottom:1.5px solid #17181C;padding-bottom:6px}
+.scr .grow{flex:1}
+.scr .btn{border-radius:12px;padding:13px 16px;font-weight:600;text-align:center;border:1.5px solid #17181C}
+.scr .btn.pri{background:#17181C;color:#F2F2EF}
+.scr .meta{display:grid;gap:0}
+.scr .meta div{display:grid;grid-template-columns:auto 1fr;gap:12px;padding-block:10px;border-top:1px solid #C9CBCF}
+.scr .meta span{color:#5B5F68}
+.scr .meta b{font-weight:500;text-align:right}
+.scr .note{font-size:13px;color:#5B5F68}
+.phones figcaption,.fis figcaption{font-size:14.5px;color:var(--muted);margin-top:14px;max-width:320px;margin-inline:auto}
+
+.fis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+@media (max-width:900px){.fis{grid-template-columns:1fr}}
+.fis figure{margin:0}
+.fis .stage{background:var(--panel);aspect-ratio:1/1;display:grid;place-items:center;padding:8%;overflow:hidden}
+.card{background:#F2F2EF;color:#17181C;width:84%;aspect-ratio:85/54;padding:6%;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 1px 2px rgba(0,0,0,.08),0 12px 28px -12px rgba(0,0,0,.22);container-type:inline-size}
+.card .t{font-size:9.5cqw;font-weight:650;letter-spacing:-.02em;line-height:1.05}
+.card .campo{color:#2A4BD7;border-bottom-color:#17181C;min-width:6.4em}
+.card .wm{width:26cqw}
+.box{width:78%;aspect-ratio:1/1;background:#17181C;color:#F2F2EF;padding:8%;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 2px 4px rgba(0,0,0,.1),0 22px 40px -18px rgba(0,0,0,.45);container-type:inline-size}
+.box .t{font-size:10cqw;font-weight:650;letter-spacing:-.025em;line-height:1.05}
+.box .campo{color:#8CA6FF;border-bottom-color:#F2F2EF;min-width:5.4em}
+.box .wm{width:34cqw}
+.box small{font-size:3.6cqw;opacity:.8}
+.cover-m{width:70%;aspect-ratio:1/1.414;background:#F2F2EF;color:#17181C;padding:8%;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 1px 2px rgba(0,0,0,.08),0 18px 36px -16px rgba(0,0,0,.3);container-type:inline-size}
+.cover-m .wm{width:56cqw}
+.cover-m .t{font-size:6.2cqw;font-weight:600;letter-spacing:-.01em;line-height:1.15;margin-top:6cqw}
+.cover-m .campo{min-width:4.2em}
+.cover-m small{font-size:3.4cqw;line-height:1.4;color:#5B5F68}
+
+.slide{background:#17181C;color:#F2F2EF;aspect-ratio:16/9;padding:5%;display:flex;flex-direction:column;justify-content:space-between;container-type:inline-size;margin-top:16px}
+.slide .wm{width:22cqw}
+.slide .t{font-size:6.4cqw;font-weight:650;letter-spacing:-.03em;line-height:1.02}
+.slide .campo{color:#8CA6FF;border-bottom-color:#F2F2EF;min-width:4.6em}
+.slide small{font-size:1.5cqw;opacity:.8}
+
+/* sonido */
+.son{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+@media (max-width:760px){.son{grid-template-columns:1fr}}
+
+.refs{display:grid;gap:10px;font-size:14.5px;line-height:1.5;max-width:56rem}
+.refs p{padding-left:2em;text-indent:-2em}
+footer{border-top:1px solid var(--line);padding-block:32px 56px;font-size:14px;color:var(--muted)}
+
+/* índice */
+.indice{display:flex;flex-wrap:wrap;gap:8px 20px;padding-block:20px;border-block:1px solid var(--line);font-size:14.5px}
+.indice a{color:var(--fg);text-decoration:none}
+.indice a:hover{color:var(--you);text-decoration:underline}
+/* usos incorrectos */
+.mal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
+@media (max-width:760px){.mal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mal figure{margin:0}
+.mal .st{aspect-ratio:3/2;display:grid;place-items:center;background:#F2F2EF;border:1px solid var(--line);overflow:hidden;position:relative;color:#17181C}
+.mal .st svg.wm{width:62%}
+.mal .st::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1px),#B3261E calc(50% - 1px),#B3261E calc(50% + 1px),transparent calc(50% + 1px))}
+.mal figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+/* escalas de color */
+.escala-c{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));margin-top:12px}
+.escala-c.az{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:760px){.escala-c{grid-template-columns:repeat(4,minmax(0,1fr))}.escala-c.az{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.escala-c div{min-height:96px;padding:10px;font-size:12px;line-height:1.3;display:flex;flex-direction:column;justify-content:flex-end}
+.escala-c b{font-weight:650;font-size:13px}
+.prop{display:flex;height:44px;margin-top:12px;border:1px solid var(--line)}
+.prop div{display:flex;align-items:center;padding-inline:10px;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden}
+/* formas y fondos */
+.cards4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.cards4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cards4{grid-template-columns:1fr}}
+.cards4 figure{margin:0;display:grid;gap:12px;align-content:start}
+.cards4 .st{aspect-ratio:1/1;background:var(--panel);display:grid;place-items:center;overflow:hidden}
+.cards4 .st svg{width:70%;height:auto}
+.cards4 h3{font-size:18px}
+.cards4 p{font-size:15px;color:var(--muted);line-height:1.45}
+.fondo{aspect-ratio:4/5;padding:9%;display:flex;flex-direction:column;justify-content:space-between;container-type:inline-size;overflow:hidden}
+.fondo .t{color:inherit;font-size:12cqw;font-weight:650;letter-spacing:-.025em;line-height:1.02}
+.fondo .wm{width:34cqw}
+.fondo small{font-size:4.2cqw;opacity:.85}
+.no-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.no-list span{border:1px solid var(--line);padding:5px 10px;font-size:14px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--muted)}
+/* iconos */
+.iconos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media (max-width:900px){.iconos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:480px){.iconos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.iconos figure{margin:0;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:14px;align-content:start}
+.iconos svg{width:36px;height:36px;stroke:var(--fg)}
+.iconos figcaption{font-size:13.5px;line-height:1.3}
+.anat-ic{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px 40px;align-items:center;margin-top:40px}
+@media (max-width:640px){.anat-ic{grid-template-columns:1fr}}
+.anat-ic .big{background:var(--panel);padding:16px}
+.anat-ic .big svg{display:block;width:216px;height:216px}
+/* tono */
+.dims{display:grid;gap:18px;max-width:44rem}
+.dim{display:grid;grid-template-columns:7rem minmax(0,1fr) 7rem;gap:12px;align-items:center;font-size:14.5px}
+.dim span:last-child{text-align:right}
+.dim .track{height:2px;background:var(--line);position:relative}
+.dim .track i{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:var(--fg);transform:translate(-50%,-50%)}
+.dim p{grid-column:1/-1;color:var(--muted);font-size:14.5px;margin-top:-4px}
+@media (max-width:560px){.dim{grid-template-columns:5.5rem minmax(0,1fr) 5.5rem}}
+.vocab{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:640px){.vocab{grid-template-columns:1fr}}
+.vocab .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.vocab .chips span{padding:6px 12px;background:var(--panel);font-size:15px}
+.vocab .no .chips span{background:none;border:1px solid var(--line);color:var(--muted);text-decoration:line-through}
+/* retícula */
+.ret{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.ret{grid-template-columns:1fr}}
+.ret figure{margin:0;display:grid;gap:12px;align-content:start}
+.ret .st{background:var(--panel);display:grid;place-items:center;padding:24px}
+.ret svg{width:100%;max-width:260px;height:auto}
+.ret p{font-size:15px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.firma .rot{transition:none}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="wm"><path d="M145 0V-1080H408V-840L397 -870Q448 -989 541.5 -1047.5Q635 -1106 743 -1106Q774 -1106 805.0 -1101.0Q836 -1096 866 -1084L844 -848Q780 -866 722 -866Q675 -866 622.5 -850.0Q570 -834 523.5 -791.5Q477 -749 447.5 -671.0Q418 -593 418 -471V0Z"/><path d="M1461 26Q1303 26 1179.5 -43.5Q1056 -113 984.5 -240.0Q913 -367 913 -541Q913 -714 983.0 -840.5Q1053 -967 1176.0 -1036.5Q1299 -1106 1458 -1106Q1547 -1106 1637.5 -1078.5Q1728 -1051 1803.5 -982.5Q1879 -914 1925.5 -793.0Q1972 -672 1972 -484H1088V-647H1729L1695 -592Q1687 -707 1653.5 -777.0Q1620 -847 1567.5 -878.5Q1515 -910 1451 -910Q1368 -910 1312.5 -864.0Q1257 -818 1228.5 -735.0Q1200 -652 1200 -539Q1200 -371 1264.5 -275.0Q1329 -179 1459 -179Q1546 -179 1607.5 -223.5Q1669 -268 1701 -357L1950 -291Q1912 -183 1837.5 -112.5Q1763 -42 1665.5 -8.0Q1568 26 1461 26Z"/><path d="M2394 0Q2284 0 2223.0 -55.5Q2162 -111 2162 -212V-1500H2435V-259Q2435 -225 2444.5 -214.0Q2454 -203 2485 -203H2572V0Z"/><path d="M3216 26Q3058 26 2934.5 -43.5Q2811 -113 2739.5 -240.0Q2668 -367 2668 -541Q2668 -714 2738.0 -840.5Q2808 -967 2931.0 -1036.5Q3054 -1106 3213 -1106Q3302 -1106 3392.5 -1078.5Q3483 -1051 3558.5 -982.5Q3634 -914 3680.5 -793.0Q3727 -672 3727 -484H2843V-647H3484L3450 -592Q3442 -707 3408.5 -777.0Q3375 -847 3322.5 -878.5Q3270 -910 3206 -910Q3123 -910 3067.5 -864.0Q3012 -818 2983.5 -735.0Q2955 -652 2955 -539Q2955 -371 3019.5 -275.0Q3084 -179 3214 -179Q3301 -179 3362.5 -223.5Q3424 -268 3456 -357L3705 -291Q3667 -183 3592.5 -112.5Q3518 -42 3420.5 -8.0Q3323 26 3216 26Z"/><path d="M4184 0 3775 -1080H4080L4362 -189H4333L4614 -1080H4918L4511 0Z"/><path d="M5510 26Q5349 26 5226.5 -46.0Q5104 -118 5035.0 -245.5Q4966 -373 4966 -540Q4966 -707 5035.0 -834.5Q5104 -962 5226.5 -1034.0Q5349 -1106 5510 -1106Q5672 -1106 5794.5 -1034.0Q5917 -962 5986.0 -835.0Q6055 -708 6055 -540Q6055 -373 5986.5 -245.5Q5918 -118 5794.5 -46.0Q5671 26 5510 26ZM5511 -178Q5630 -178 5699.0 -275.5Q5768 -373 5768 -540Q5768 -708 5699.0 -805.0Q5630 -902 5511 -902Q5391 -902 5322.0 -805.0Q5253 -708 5253 -540Q5253 -372 5322.0 -275.0Q5391 -178 5511 -178Z"/></g></defs></svg>
+
+<header class="w cover">
+  <div class="bar">
+    <span class="eyebrow">Manual de marca · propuesta D-073</span>
+    <span class="eyebrow">Proyecto de Título · Diseño UDP · 2026</span>
+  </div>
+  <svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg>
+  <p class="firma" aria-label="Vuelve a lo que querías hacer.">Vuelve a <span class="campo"><span class="rot" id="rot">leer</span></span>.</p>
+  <div class="cover-grid">
+    <p class="lead">Relevo es un recordatorio físico que preparas desde el teléfono. Escribes lo que quieres hacer; cuando llega el momento que elegiste, te lo recuerda en el lugar donde empieza. Tú decides si vas.</p>
+    <button class="play" id="play" type="button"><i><svg viewBox="0 0 10 12"><path d="M0 0L10 6L0 12Z"/></svg></i>Escuchar el aviso <small>2 s</small></button>
+  </div>
+</header>
+
+<nav class="w" aria-label="Índice"><div class="indice"><a href="#veinte">En veinte segundos</a><a href="#relato">Relato</a><a href="#idea">Idea</a><a href="#renglon">Renglón</a><a href="#logotipo">Logotipo</a><a href="#tipografia">Tipografía</a><a href="#color">Color</a><a href="#formas">Formas</a><a href="#fondos">Fondos</a><a href="#texturas">Texturas</a><a href="#iconos">Iconos</a><a href="#fotografia">Fotografía</a><a href="#tono">Tono</a><a href="#reticula">Retícula y movimiento</a><a href="#aplicaciones">Aplicaciones</a><a href="#sonido">Sonido</a><a href="#referencias">Referencias</a></div></nav>
+
+<main>
+<section class="w" id="veinte">
+  <div class="head"><span class="eyebrow">Relevo en veinte segundos</span><h2>Vuelve a lo que querías hacer.</h2></div>
+  <div class="veinte">
+    <div><h3>Qué es</h3><p>Un recordatorio físico que preparas desde el teléfono.</p></div>
+    <div><h3>Para qué</h3><p>Para acordarte de lo que querías hacer mientras todavía puedes hacerlo.</p></div>
+    <div><h3>Cómo</h3><p>Escribes la actividad y cómo empieza, dejas el objeto ahí y eliges después de cuánto uso del teléfono quieres que suene.</p></div>
+    <div><h3>Qué lo distingue</h3><p>El aviso no llega al teléfono: suena en el lugar donde empieza lo que querías hacer.</p></div>
+  </div>
+</section>
+
+<section class="w" id="relato">
+  <div class="head"><span class="eyebrow">El relato</span><h2>Cuatro frases que cualquiera entiende.</h2></div>
+  <div class="relato">
+    <div class="beat"><h3>Casi siempre nos acordamos después.</h3><p>Abres una app para descansar un rato y, al cerrarla, aparece lo que querías hacer: leer, dibujar, salir a caminar. Ya es tarde, o ya no dan ganas.</p></div>
+    <div class="beat"><h3>No es que no quisieras.</h3><p>Mientras un video sigue al otro, no llega ningún momento para preguntarte si quieres seguir. La intención sigue ahí, pero no aparece cuando podría servir.</p></div>
+    <div class="beat"><h3>Relevo te lo recuerda mientras todavía puedes.</h3><p>Escribes qué quieres hacer y cómo empieza, y dejas el objeto en ese lugar. Cuando se cumple el tiempo que elegiste en el teléfono, suena ahí.</p></div>
+    <div class="beat"><h3 class="you">Tú decides.</h3><p>Puedes empezar o seguir en lo que estabas.</p></div>
+  </div>
+</section>
+
+<section class="w" id="idea">
+  <div class="two">
+    <div class="body">
+      <span class="eyebrow">La idea</span>
+      <h2>Acordarse cuando todavía se puede.</h2>
+      <p>La psicología llama <b>memoria prospectiva</b> a recordar algo que uno quería hacer en el momento en que se puede hacer (McDaniel &amp; Einstein, 2000). Acordarse a las once de la noche de que querías leer sirve de poco; acordarse a las nueve, con el libro cerca, sí.</p>
+      <p>Las redes con desplazamiento infinito no tienen puntos de cierre, así que no llega el momento de decidir (Montag et al., 2019). Relevo crea ese momento, en el lugar donde empieza la actividad, y deja la decisión a la persona.</p>
+    </div>
+    <div class="tl" role="img" aria-label="Ejemplo: a las 20:10 la persona abre una app queriendo leer; a las 20:50 Relevo le recuerda leer, cuando todavía puede; a las 23:00 cierra la app y se acuerda, cuando ya es tarde.">
+      <svg viewBox="0 0 700 250" aria-hidden="true">
+        <rect x="30" y="112" width="440" height="26" fill="var(--you)" opacity=".14"/>
+        <rect x="470" y="112" width="200" height="26" fill="var(--line)"/>
+        <line x1="30" y1="125" x2="670" y2="125" stroke="var(--fg)" stroke-width="1.5"/>
+        <text x="30" y="96" font-size="13" font-weight="600" letter-spacing=".06em">TODAVÍA SE PUEDE</text>
+        <text x="482" y="96" font-size="13" font-weight="600" letter-spacing=".06em" class="m">TARDE</text>
+        <circle cx="70" cy="125" r="5" fill="var(--fg)"/>
+        <text x="70" y="168" font-size="15" font-weight="600" text-anchor="middle">20:10</text>
+        <text x="70" y="189" font-size="13.5" class="m" text-anchor="middle">Abre una app.</text>
+        <text x="70" y="207" font-size="13.5" class="m" text-anchor="middle">Quería leer.</text>
+        <circle cx="270" cy="125" r="9" fill="var(--bg)" stroke="var(--you)" stroke-width="2.5"/><circle cx="270" cy="125" r="3.2" fill="var(--you)"/>
+        <text x="270" y="168" font-size="15" font-weight="650" text-anchor="middle" class="y">20:50 · Relevo</text>
+        <text x="270" y="189" font-size="13.5" class="m" text-anchor="middle">Suena junto al libro.</text>
+        <text x="270" y="207" font-size="13.5" class="m" text-anchor="middle">Decide: va o sigue.</text>
+        <circle cx="580" cy="125" r="5" fill="var(--muted)"/>
+        <text x="580" y="168" font-size="15" font-weight="600" text-anchor="middle" class="m">23:00</text>
+        <text x="580" y="189" font-size="13.5" class="m" text-anchor="middle">Cierra la app</text>
+        <text x="580" y="207" font-size="13.5" class="m" text-anchor="middle">y se acuerda.</text>
+        <text x="30" y="242" font-size="12" class="m">Ejemplo ilustrativo; no son datos de participantes.</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="w" id="renglon">
+  <div class="head"><span class="eyebrow">Recurso central</span><h2>El renglón y las dos voces.</h2>
+    <p class="lead">La marca tiene una frase fija y un espacio que llena cada persona. La línea es la del formulario; lo que va encima lo escribe quien usa Relevo, en el azul de un lápiz pasta.</p></div>
+  <div class="two">
+    <div class="demo">
+      <p class="big">Vuelve a <span class="campo vacio">&nbsp;</span>.</p>
+      <p class="big">Vuelve a <span class="campo">dibujar</span>.</p>
+      <p class="big">Vuelve a <span class="campo">cocinar con calma</span>.</p>
+      <p class="cap">La estructura no cambia; la actividad sí.</p>
+    </div>
+    <div class="body">
+      <h3>Por qué funciona</h3>
+      <p><b>«Volver a» dice dos cosas.</b> En español significa regresar a algo y también hacerlo otra vez. Las dos describen Relevo: lo que querías hacer no desapareció, y la actividad puede empezar de nuevo.</p>
+      <p><b>Se entiende sin explicación.</b> Un renglón es una clave visible: dice «aquí escribes tú» (Norman, 2002). La frase dice qué hace Relevo con lo que escribiste.</p>
+      <p><b>Pone a la persona en el centro.</b> La marca nunca dice qué actividad es buena; la escribe cada quien. Las marcas que la gente conecta con su propia historia generan un vínculo más fuerte (Escalas, 2004).</p>
+      <p><b>Unidad en la variedad.</b> Una estructura fija con contenido que cambia es uno de los principios con más evidencia sobre lo que resulta bello en diseño (Post et al., 2016; Hekkert, 2006).</p>
+      <p><b>Es lo mismo en la app.</b> El campo donde se escribe la actividad es ese renglón. Marca e interfaz usan una sola forma.</p>
+      <div class="voces">
+        <div><b>Tinta</b><span class="muted">La voz de Relevo: lo impreso, lo que no cambia.</span></div>
+        <div><b class="you">Azul pasta</b><span class="muted">La voz de la persona: lo que escribió ella.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w" id="logotipo">
+  <div class="head"><span class="eyebrow">Logotipo</span><h2>Una palabra bien dibujada.</h2>
+    <p class="lead">«relevo» en minúsculas, dibujado sobre Schibsted Grotesk en peso 650 con el espaciado cerrado a mano. No lleva símbolo: la idea vive en la frase y en el renglón.</p></div>
+  <div class="logo-hero"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo, logotipo principal"><use href="#wm" fill="currentColor"/></svg></div>
+  <div class="logo-grid">
+    <div class="t-tinta"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo sobre tinta"><use href="#wm" fill="currentColor"/></svg></div>
+    <div class="t-azul"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo sobre azul"><use href="#wm" fill="currentColor"/></svg></div>
+    <div class="t-papel"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo sobre papel"><use href="#wm" fill="currentColor"/></svg></div>
+  </div>
+  <div class="icons">
+    <figure><svg width="112" height="112" viewBox="0 0 512 512" role="img" aria-label="Ícono de la app"><rect width="512" height="512" rx="114" fill="#17181C"/><path fill="#F2F2EF" d="M165.8611111111111 409.6111111111111V109.61111111111109H238.91666666666666V176.27777777777774L235.8611111111111 167.9444444444444Q250.02777777777777 134.88888888888886 276.0 118.63888888888886Q301.9722222222222 102.38888888888886 331.9722222222222 102.38888888888886Q340.5833333333333 102.38888888888886 349.19444444444446 103.77777777777774Q357.80555555555554 105.16666666666663 366.1388888888889 108.49999999999994L360.02777777777777 174.05555555555551Q342.25 169.05555555555551 326.1388888888889 169.05555555555551Q313.0833333333333 169.05555555555551 298.5 173.49999999999994Q283.91666666666663 177.9444444444444 271.0 189.74999999999994Q258.0833333333333 201.55555555555551 249.88888888888886 223.22222222222217Q241.69444444444443 244.88888888888886 241.69444444444443 278.7777777777777V409.6111111111111Z"/></svg><figcaption>Ícono de la app</figcaption></figure>
+    <figure><svg width="64" height="64" viewBox="0 0 512 512" role="img" aria-label="Ícono a 64 px"><rect width="512" height="512" rx="114" fill="#17181C"/><path fill="#F2F2EF" d="M165.8611111111111 409.6111111111111V109.61111111111109H238.91666666666666V176.27777777777774L235.8611111111111 167.9444444444444Q250.02777777777777 134.88888888888886 276.0 118.63888888888886Q301.9722222222222 102.38888888888886 331.9722222222222 102.38888888888886Q340.5833333333333 102.38888888888886 349.19444444444446 103.77777777777774Q357.80555555555554 105.16666666666663 366.1388888888889 108.49999999999994L360.02777777777777 174.05555555555551Q342.25 169.05555555555551 326.1388888888889 169.05555555555551Q313.0833333333333 169.05555555555551 298.5 173.49999999999994Q283.91666666666663 177.9444444444444 271.0 189.74999999999994Q258.0833333333333 201.55555555555551 249.88888888888886 223.22222222222217Q241.69444444444443 244.88888888888886 241.69444444444443 278.7777777777777V409.6111111111111Z"/></svg><figcaption>64 px</figcaption></figure>
+    <figure><svg width="32" height="32" viewBox="0 0 512 512" role="img" aria-label="Ícono a 32 px"><rect width="512" height="512" rx="114" fill="#17181C"/><path fill="#F2F2EF" d="M165.8611111111111 409.6111111111111V109.61111111111109H238.91666666666666V176.27777777777774L235.8611111111111 167.9444444444444Q250.02777777777777 134.88888888888886 276.0 118.63888888888886Q301.9722222222222 102.38888888888886 331.9722222222222 102.38888888888886Q340.5833333333333 102.38888888888886 349.19444444444446 103.77777777777774Q357.80555555555554 105.16666666666663 366.1388888888889 108.49999999999994L360.02777777777777 174.05555555555551Q342.25 169.05555555555551 326.1388888888889 169.05555555555551Q313.0833333333333 169.05555555555551 298.5 173.49999999999994Q283.91666666666663 177.9444444444444 271.0 189.74999999999994Q258.0833333333333 201.55555555555551 249.88888888888886 223.22222222222217Q241.69444444444443 244.88888888888886 241.69444444444443 278.7777777777777V409.6111111111111Z"/></svg><figcaption>32 px</figcaption></figure>
+  </div>
+  <div class="tbl" style="margin-top:40px"><table>
+    <thead><tr><th>Decisión</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td>Solo logotipo</td><td>El logotipo es el elemento de identidad más propio de una marca, y el color el menos (Ward et al., 2020). Un símbolo abstracto habría que explicarlo; la frase no.</td></tr>
+      <tr><td>Minúsculas</td><td>Se perciben más cercanas; las mayúsculas, más autoritarias (Xu et al., 2017). Relevo no da órdenes.</td></tr>
+      <tr><td>La «l» con cola</td><td>Es el rasgo propio de la palabra: termina en curva, como un trazo a mano, y la distingue de las grotescas geométricas que hoy uniforman las marcas (D&amp;AD, s. f.).</td></tr>
+      <tr><td>Espaciado −25/2048</td><td>A tamaño de título el espaciado de texto se ve abierto; cerrarlo une la palabra en una sola forma (Mollerup, 2013).</td></tr>
+      <tr><td>Área de respeto y tamaño mínimo</td><td>Alrededor, al menos la altura de la «e». En pantalla, no menos de 64 px de ancho; en papel, 18 mm.</td></tr>
+    </tbody></table></div>
+
+  <h3 style="margin-top:48px">Usos incorrectos</h3>
+  <div class="mal">
+    <figure><div class="st"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo" style="transform:scaleX(1.35)"><use href="#wm" fill="currentColor"/></svg></div><figcaption>No deformar.</figcaption></figure>
+    <figure><div class="st"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo con contorno"><use href="#wm" fill="none" stroke="#17181C" stroke-width="30"/></svg></div><figcaption>No usar en contorno.</figcaption></figure>
+    <figure><div class="st" style="filter:drop-shadow(8px 10px 6px rgba(0,0,0,.35))"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg></div><figcaption>No agregar sombras ni efectos.</figcaption></figure>
+    <figure><div class="st"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#B3261E"/></svg></div><figcaption>No usar otros colores.</figcaption></figure>
+    <figure><div class="st" style="background:#2A4BD7"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg></div><figcaption>No usar tinta sobre azul.</figcaption></figure>
+    <figure><div class="st"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo" style="transform:rotate(-8deg)"><use href="#wm" fill="currentColor"/></svg></div><figcaption>No rotar.</figcaption></figure>
+    <figure><div class="st" style="background:url(imagenes/tratada-83.jpg) center/cover"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#F2F2EF"/></svg></div><figcaption>No poner sobre fotos con detalle.</figcaption></figure>
+    <figure><div class="st"><span style="font-size:clamp(28px,4vw,44px);font-weight:650;letter-spacing:-.02em">Relevo</span></div><figcaption>No reescribir en mayúscula inicial ni con otra letra.</figcaption></figure>
+  </div>
+</section>
+
+<section class="w" id="tipografia">
+  <div class="head"><span class="eyebrow">Tipografía</span><h2>Schibsted Grotesk, en todo.</h2>
+    <p class="lead">Una grotesca pensada para pantallas que toma rasgos de la prensa impresa. Relevo también está entre una pantalla y un objeto.</p></div>
+  <p class="specimen">Aa Ññ 0 ¿?</p>
+  <div class="two" style="margin-top:32px">
+    <div class="body">
+      <p>La diseñó Henrik Kongsvoll en Bakken &amp; Bæck para el grupo de medios Schibsted en 2022, y se publicó con licencia SIL Open Font en 2023 (Google Fonts, s. f.). Tiene pesos de 400 a 900 con cursivas, cero sin raya, signos de apertura españoles y comillas latinas bien resueltos.</p>
+    </div>
+    <div class="body">
+      <p>Se eligió después de comparar 38 familias libres en tres usos: la palabra «relevo», la frase de marca y un párrafo de interfaz. Las grotescas geométricas se descartaron por parecerse a todas las marcas tecnológicas; las de rasgos muy marcados, porque cansan en la app.</p>
+    </div>
+  </div>
+  <div class="escala">
+    <div><span class="spec">Titular · 650 · −2 %</span><span style="font-size:clamp(32px,4.4vw,52px);font-weight:650;letter-spacing:-.02em;line-height:1.05">Vuelve a leer.</span></div>
+    <div><span class="spec">Subtítulo · 600 · 22 px</span><span style="font-size:22px;font-weight:600;letter-spacing:-.01em">¿Qué quieres hacer hoy?</span></div>
+    <div><span class="spec">Texto · 400 · 17 px / 1,55</span><span style="max-width:36rem">Escribe la actividad y cómo empieza. Relevo sonará en el lugar que elijas después de 40 minutos en las apps elegidas.</span></div>
+    <div><span class="spec">Nota · 500 · 13 px · mayúsculas +6 %</span><span class="eyebrow" style="color:var(--fg)">Mesa del comedor · 20:50</span></div>
+  </div>
+</section>
+
+<section class="w" id="color">
+  <div class="head"><span class="eyebrow">Color</span><h2>Tinta, papel y el azul de quien escribe.</h2>
+    <p class="lead">El color tiene una función antes que un significado: separa lo que dice Relevo de lo que dijo la persona. No hay luz, brillos ni degradados.</p></div>
+  <div class="pal">
+    <div style="background:#17181C;color:#F2F2EF"><b>Tinta</b><span><code>#17181C</code><br>Texto y acciones. 15,82:1 sobre papel.</span></div>
+    <div style="background:#F2F2EF;color:#17181C;border:1px solid var(--line)"><b>Papel</b><span><code>#F2F2EF</code><br>Fondo. Neutro, sin tono crema.</span></div>
+    <div style="background:#2A4BD7;color:#F2F2EF"><b>Azul pasta</b><span><code>#2A4BD7</code><br>Lo que escribe la persona. 6,07:1.</span></div>
+    <div style="background:#5B5F68;color:#F2F2EF"><b>Grafito</b><span><code>#5B5F68</code><br>Texto secundario. 5,71:1.</span></div>
+  </div>
+  <div class="pal2">
+    <div style="background:#E3E4E6;color:#17181C"><b>Niebla</b><code>#E3E4E6</code></div>
+    <div style="background:#111215;color:#E9EAEC"><b>Noche</b><code>#111215 · tema oscuro</code></div>
+    <div style="background:#8CA6FF;color:#111215"><b>Azul claro</b><code>#8CA6FF · 8,04:1 en noche</code></div>
+    <div style="background:#B3261E;color:#F2F2EF"><b>Error</b><code>#B3261E · solo errores</code></div>
+  </div>
+  <div class="two" style="margin-top:40px">
+    <div class="body"><p>El azul se distingue del rojo de error, que en contextos de logro se asocia a evitar el fracaso (Elliot et al., 2007), y de los verdes, naranjos y morados que dominan el bienestar digital (Headspace, Daylight, Calm). Se asocia a competencia y confianza (Labrecque &amp; Milne, 2012), pero aquí se usa porque es el color con que se completa un formulario a mano.</p></div>
+    <div class="body"><p>Todos los pares de texto superan 4,5:1, el mínimo de las pautas de accesibilidad web (World Wide Web Consortium, 2023). La distinción entre voces nunca depende solo del color: lo de la persona siempre va sobre el renglón.</p></div>
+  </div>
+
+  <h3 style="margin-top:48px">Escalas</h3>
+  <div class="escala-c">
+    <div style="background:#F2F2EF;color:#17181C;border:1px solid var(--line)"><b>Papel</b>#F2F2EF</div>
+    <div style="background:#E3E4E6;color:#17181C"><b>Niebla</b>#E3E4E6</div>
+    <div style="background:#C9CBCF;color:#17181C"><b>Línea</b>#C9CBCF</div>
+    <div style="background:#9BA0A9;color:#17181C"><b>Gris</b>#9BA0A9<br>no para texto</div>
+    <div style="background:#5B5F68;color:#F2F2EF"><b>Grafito</b>#5B5F68</div>
+    <div style="background:#33363D;color:#F2F2EF"><b>Pizarra</b>#33363D</div>
+    <div style="background:#17181C;color:#F2F2EF"><b>Tinta</b>#17181C</div>
+    <div style="background:#111215;color:#E9EAEC"><b>Noche</b>#111215</div>
+  </div>
+  <div class="escala-c az">
+    <div style="background:#EEF1FD;color:#17181C"><b>Azul 50</b>#EEF1FD · selección</div>
+    <div style="background:#DCE3FB;color:#17181C"><b>Azul 100</b>#DCE3FB · foco suave</div>
+    <div style="background:#8CA6FF;color:#111215"><b>Azul claro</b>#8CA6FF · tema oscuro</div>
+    <div style="background:#2A4BD7;color:#F2F2EF"><b>Azul pasta</b>#2A4BD7 · lo escrito</div>
+    <div style="background:#1E36A0;color:#F2F2EF"><b>Azul 700</b>#1E36A0 · presionado, 8,96:1</div>
+  </div>
+  <h3 style="margin-top:40px">Proporción en una pieza</h3>
+  <div class="prop" role="img" aria-label="Papel 70 %, tinta 20 %, grises 5 a 8 %, azul pasta 2 a 5 %"><div style="flex:70;background:#F2F2EF;color:#17181C">Papel 70 %</div><div style="flex:20;background:#17181C;color:#F2F2EF">Tinta 20 %</div><div style="flex:6;background:#9BA0A9;color:#17181C"></div><div style="flex:4;background:#2A4BD7;color:#F2F2EF"></div></div>
+  <p class="muted" style="font-size:14.5px;margin-top:10px">Grises entre 5 y 8 %; azul pasta entre 2 y 5 %, solo donde escribió la persona o en el foco de un control. El gris #9BA0A9 no se usa para texto (2,34:1). En impresión se usan dos tintas, negro y azul; su equivalencia Pantone se fija con una prueba de impresión.</p>
+</section>
+
+
+<section class="w" id="formas">
+  <div class="head"><span class="eyebrow">Formas</span><h2>El renglón, la ficha y el margen.</h2>
+    <p class="lead">Relevo toma sus formas del papel con que la gente anota lo que quiere hacer: una línea para escribir, una ficha y un margen. Nada más.</p></div>
+  <div class="cards4">
+    <figure><div class="st"><svg viewBox="0 0 200 200" aria-hidden="true"><text x="30" y="112" font-family="var(--sans)" font-size="34" font-weight="600" fill="var(--you)">leer</text><line x1="30" y1="124" x2="170" y2="124" stroke="var(--fg)" stroke-width="3"/></svg></div><h3>Renglón</h3><p>La forma de la marca. Una línea recta con el grosor de un trazo de la letra, bajo lo que escribe la persona.</p></figure>
+    <figure><div class="st"><svg viewBox="0 0 200 200" aria-hidden="true"><rect x="25" y="55" width="150" height="95" fill="var(--bg)" stroke="var(--fg)" stroke-width="2"/><line x1="45" y1="110" x2="130" y2="110" stroke="var(--fg)" stroke-width="2"/></svg></div><h3>Ficha</h3><p>Rectángulo recto. La tarjeta del objeto mide 85,6 × 54 mm, como una tarjeta de identidad; afiches y fotos, 4:5.</p></figure>
+    <figure><div class="st"><svg viewBox="0 0 200 200" aria-hidden="true"><rect x="30" y="25" width="140" height="150" fill="var(--bg)"/><line x1="62" y1="25" x2="62" y2="175" stroke="var(--you)" stroke-width="1.5"/><g stroke="var(--line)" stroke-width="1.5"><line x1="30" y1="60" x2="170" y2="60"/><line x1="30" y1="85" x2="170" y2="85"/><line x1="30" y1="110" x2="170" y2="110"/><line x1="30" y1="135" x2="170" y2="135"/></g></svg></div><h3>Margen</h3><p>Todo se alinea a la izquierda, con un margen amplio como el de un cuaderno. Nada va centrado, salvo el ícono.</p></figure>
+    <figure><div class="st"><svg viewBox="0 0 200 200" aria-hidden="true"><rect x="30" y="60" width="140" height="44" rx="12" fill="var(--fg)"/><text x="100" y="88" text-anchor="middle" font-family="var(--sans)" font-size="15" font-weight="600" fill="var(--bg)">Preparar relevo</text><rect x="30" y="118" width="140" height="44" rx="0" fill="none" stroke="var(--fg)" stroke-width="2"/><text x="100" y="146" text-anchor="middle" font-family="var(--sans)" font-size="13" fill="var(--fg)">impreso · 0</text></svg></div><h3>Esquinas</h3><p>0 en impresos. 12 dp en botones y campos de la app, 20 dp en paneles. Nunca botones en forma de píldora.</p></figure>
+  </div>
+  <div class="no-list" aria-label="Formas que no se usan"><span>círculos decorativos</span><span>manchas y formas orgánicas</span><span>ondas de sonido</span><span>3D y relieves</span><span>íconos gigantes como ilustración</span></div>
+</section>
+
+<section class="w" id="fondos">
+  <div class="head"><span class="eyebrow">Fondos</span><h2>Cuatro fondos, uno por pieza.</h2>
+    <p class="lead">El fondo cambia según cuánto texto hay que leer. Un solo fondo por pieza, sin patrones, degradados, desenfoques ni efecto de vidrio.</p></div>
+  <div class="cards4">
+    <figure><div class="fondo" style="background:#F2F2EF;color:#17181C;border:1px solid var(--line)"><p class="t">Vuelve a <span class="campo">leer</span>.</p><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg></div><h3>Papel</h3><p>El fondo general: app, memoria, textos largos.</p></figure>
+    <figure><div class="fondo" style="background:#17181C;color:#F2F2EF"><p class="t" >Vuelve a <span class="campo" style="color:#8CA6FF;border-bottom-color:#F2F2EF">dibujar</span>.</p><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#F2F2EF"/></svg></div><h3>Tinta</h3><p>Afiches, caja, examen y tema oscuro.</p></figure>
+    <figure><div class="fondo" style="background:#2A4BD7;color:#F2F2EF"><p class="t">Vuelve a lo que querías hacer.</p><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#F2F2EF"/></svg></div><h3>Azul pasta</h3><p>Solo piezas cortas, de ocho palabras o menos. Nunca en pantallas de la app.</p></figure>
+    <figure><div class="fondo" style="padding:0;background:#F2F2EF;color:#17181C"><img src="imagenes/tratada-11.jpg" alt="" style="width:100%;height:62%;object-fit:cover;display:block"><div style="padding:8%;display:flex;flex-direction:column;justify-content:space-between;flex:1"><p class="t" style="font-size:9cqw">Vuelve a <span class="campo">leer</span>.</p><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg></div></div><h3>Fotografía</h3><p>El texto va fuera de la foto, sobre papel. Sin velos ni degradados encima de la imagen.</p></figure>
+  </div>
+</section>
+
+<section class="w" id="texturas">
+  <div class="head"><span class="eyebrow">Texturas y materiales</span><h2>Sin texturas simuladas. La textura es real.</h2>
+    <p class="lead">En pantalla, Relevo es plano. La textura aparece donde existe de verdad: en el papel, en el objeto, en la foto y en la letra de quien escribe.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Soporte</th><th>Decisión</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td>Pantalla</td><td>Colores planos. Sin grano, papel falso, ruido ni sombras decorativas.</td><td>La app se lee en segundos y en cualquier luz. El grano y la fotocopia son tendencia en 2026 (It's Nice That, 2026); imitarlos envejece rápido.</td></tr>
+      <tr><td>Fotografía</td><td>El grano natural de la foto; la receta del proyecto añade como máximo un 2 %.</td><td>Unifica fotos de distintas cámaras sin disfrazarlas.</td></tr>
+      <tr><td>Impresos</td><td>Papel no estucado, sin brillo, a dos tintas: negro y azul pasta. Gramajes por definir con la imprenta.</td><td>El papel mate se parece a una libreta, se puede escribir encima con lápiz pasta y no refleja.</td></tr>
+      <tr><td>Objeto</td><td>Superficie mate en tinta o papel. La forma sigue abierta.</td><td>El producto y la marca se reconocen juntos cuando repiten los mismos rasgos (Karjalainen &amp; Snelders, 2010).</td></tr>
+      <tr><td>La mano</td><td>La tarjeta del objeto se escribe a mano con lápiz pasta azul.</td><td>Es la única textura gráfica de la marca, y es de la persona. Toma la vuelta a lo hecho a mano de 2026 en su forma honesta (Creative Bloq, 2026).</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="w" id="iconos">
+  <div class="head"><span class="eyebrow">Iconos</span><h2>Iconos propios, siempre con palabra.</h2>
+    <p class="lead">Un juego de 97 iconos para la app, el objeto y las presentaciones, con actividades, perfil y opinión, dibujado con los criterios que Apple pide para los iconos de interfaz. Aquí van 18; el juego completo, con pesos, retícula y tamaños, está en el <a href="https://claude.ai/artifact/8AAR3Fg4TxnXoqP6mn6QaL">kit de diseño</a>.</p></div>
+  <div class="iconos"><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M3.5 20.5H20.5"/><path d="M5 17V14.4L14.6 4.8A1.9 1.9 0 0 1 17.3 4.8L17.7 5.2A1.9 1.9 0 0 1 17.7 7.9L8.1 17.5H5.5A.5.5 0 0 1 5 17Z"/><path d="M13 6.4L16.1 9.5"/></svg><figcaption>Actividad</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M3.5 19.5H8.5V14H14V8.5H20.5"/></svg><figcaption>Cómo empieza</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M12 20.5C12 20.5 5.75 14.6 5.75 9.75A6.25 6.25 0 0 1 18.25 9.75C18.25 14.6 12 20.5 12 20.5Z"/><circle cx="12" cy="9.75" r="2.25"/></svg><figcaption>Lugar</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><circle cx="12" cy="13.25" r="7.75"/><path d="M12 13.25V9.25"/><path d="M9.75 2.75H14.25"/><path d="M12 2.75V5.5"/></svg><figcaption>Después de cuánto uso</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg><figcaption>Apps elegidas</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><rect x="6" y="2.75" width="12" height="18.5" rx="3"/><circle cx="12" cy="14.5" r="3.25"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/></svg><figcaption>Parlante</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><rect x="6.5" y="2.75" width="11" height="18.5" rx="3"/><path d="M10.5 18H13.5"/></svg><figcaption>Este teléfono</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><ellipse cx="12" cy="8.75" rx="8" ry="3"/><path d="M4 8.75V15.25C4 16.9 7.6 18.25 12 18.25C16.4 18.25 20 16.9 20 15.25V8.75"/><circle cx="12" cy="8.75" r="1" fill="currentColor" stroke="none"/></svg><figcaption>Objeto</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M3.5 9.5H6.75L11.5 5.5V18.5L6.75 14.5H3.5Z"/><path d="M15 9.25A4 4 0 0 1 15 14.75"/><path d="M17.75 6.5A8 8 0 0 1 17.75 17.5"/></svg><figcaption>Probar sonido</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M4.75 12.75L9.75 17.5L19.25 6.75"/></svg><figcaption>Comencé</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M6.5 4.75A1.75 1.75 0 0 1 8.25 3H15.75A1.75 1.75 0 0 1 17.5 4.75V20.5L12 16.5L6.5 20.5Z"/></svg><figcaption>La dejé para después</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M4 8.5H19"/><path d="M15.5 5L19 8.5L15.5 12"/><path d="M20 15.5H5"/><path d="M8.5 12L5 15.5L8.5 19"/></svg><figcaption>Cambié de idea</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M5 19V16.4L14.6 6.8A1.9 1.9 0 0 1 17.3 6.8L17.2 6.7A1.9 1.9 0 0 1 17.2 9.4L7.6 19H5Z"/><path d="M13 8.4L15.6 11"/></svg><figcaption>Editar</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><path d="M3.5 7H20.5M3.5 17H20.5"/><circle cx="9" cy="7" r="2.5" fill="var(--bg,#F2F2EF)"/><circle cx="15" cy="17" r="2.5" fill="var(--bg,#F2F2EF)"/></svg><figcaption>Ajustes</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><rect x="4.75" y="10.25" width="14.5" height="10.5" rx="2.5"/><path d="M8.25 10.25V7.75A3.75 3.75 0 0 1 15.75 7.75V10.25"/></svg><figcaption>Privacidad</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><rect x="9" y="2.75" width="6" height="3.5" rx="1.25" fill="var(--bg,#F2F2EF)"/><path d="M8.5 11H15.5M8.5 15H13"/></svg><figcaption>Datos del estudio</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><circle cx="12" cy="12" r="8.75"/><path d="M12 11V16.5"/><circle cx="12" cy="7.75" r="1" fill="currentColor" stroke="none"/></svg><figcaption>Información</figcaption></figure><figure><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg)"><circle cx="12" cy="12" r="8.75"/><path d="M12 7.25V13"/><circle cx="12" cy="16.25" r="1" fill="currentColor" stroke="none"/></svg><figcaption>Error</figcaption></figure></div>
+  <div class="anat-ic">
+    <div class="big"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><g stroke="var(--line)" stroke-width=".05"><line x1="0" y1="0" x2="0" y2="24"/><line x1="0" y1="0" x2="24" y2="0"/><line x1="2" y1="0" x2="2" y2="24"/><line x1="0" y1="2" x2="24" y2="2"/><line x1="4" y1="0" x2="4" y2="24"/><line x1="0" y1="4" x2="24" y2="4"/><line x1="6" y1="0" x2="6" y2="24"/><line x1="0" y1="6" x2="24" y2="6"/><line x1="8" y1="0" x2="8" y2="24"/><line x1="0" y1="8" x2="24" y2="8"/><line x1="10" y1="0" x2="10" y2="24"/><line x1="0" y1="10" x2="24" y2="10"/><line x1="12" y1="0" x2="12" y2="24"/><line x1="0" y1="12" x2="24" y2="12"/><line x1="14" y1="0" x2="14" y2="24"/><line x1="0" y1="14" x2="24" y2="14"/><line x1="16" y1="0" x2="16" y2="24"/><line x1="0" y1="16" x2="24" y2="16"/><line x1="18" y1="0" x2="18" y2="24"/><line x1="0" y1="18" x2="24" y2="18"/><line x1="20" y1="0" x2="20" y2="24"/><line x1="0" y1="20" x2="24" y2="20"/><line x1="22" y1="0" x2="22" y2="24"/><line x1="0" y1="22" x2="24" y2="22"/><line x1="24" y1="0" x2="24" y2="24"/><line x1="0" y1="24" x2="24" y2="24"/></g><rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--you)" stroke-width=".08" stroke-dasharray=".4 .3"/><g stroke="var(--fg)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none" style="color:var(--fg)"><rect x="6" y="2.75" width="12" height="18.5" rx="3"/><circle cx="12" cy="14.5" r="3.25"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/></g></svg></div>
+    <ul class="reglas">
+      <li>Retícula de 24 × 24 con área viva de 20 y cuatro formas base. Extremos y uniones redondeados; sin relleno, salvo puntos y estados.</li>
+      <li>Tres pesos que igualan el grosor del texto: 1,5 con texto 400, 1,8 con 500 y 2,1 con 600, medidos sobre Schibsted Grotesk.</li>
+      <li>Metáforas concretas: un marcador para «después», un parlante, una escalera para el primer paso. Los iconos concretos se reconocen antes (McDougall et al., 2000).</li>
+      <li>Siempre con palabra al lado: la etiqueta ayuda a aprender y recordar la función (Wiedenbeck, 1999).</li>
+      <li>Nunca campanas, escudos, corazones, hojas ni cerebros: son códigos de alarma o de bienestar.</li>
+      <li>El área táctil mide al menos 48 × 48 dp, aunque el icono dibujado sea de 24 (Android Developers, s. f.).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="w" id="fotografia">
+  <div class="head"><span class="eyebrow">Fotografía</span><h2>El comienzo, no el resultado.</h2>
+    <p class="lead">Se fotografía lo que está esperando: el libro con el marcador, las acuarelas sin abrir, el cuaderno. Luz natural, encuadre cercano, nada de personas mirando el teléfono.</p></div>
+  <div class="fotos">
+    <figure><img src="imagenes/tratada-11.jpg" alt="Libro abierto sobre una mesa." width="640" height="800" loading="lazy"><figcaption>Vuelve a <span class="campo">leer</span>.</figcaption></figure>
+    <figure><img src="imagenes/tratada-83.jpg" alt="Caja de acuarelas, pinceles y una croquera sobre una mesa de madera." width="640" height="800" loading="lazy"><figcaption>Vuelve a <span class="campo">pintar</span>.</figcaption></figure>
+    <figure><img src="imagenes/tratada-22.jpg" alt="Mano escribiendo en una libreta junto a una taza." width="640" height="800" loading="lazy"><figcaption>Vuelve a <span class="campo">escribir</span>.</figcaption></figure>
+  </div>
+  <div class="two" style="margin-top:40px">
+    <ul class="reglas">
+      <li>La actividad por empezar, con su primer paso a la vista.</li>
+      <li>Luz del día creíble; color corregido con la receta del proyecto.</li>
+      <li>Manos sí, rostros rara vez. Nunca una persona «transformada».</li>
+    </ul>
+    <p class="muted" style="font-size:14.5px">Fotos de muestra con licencia CC0. La identidad final necesita una sesión propia en hogares reales, con consentimiento.</p>
+  </div>
+</section>
+
+<section class="w" id="tono">
+  <div class="head"><span class="eyebrow">Tono de comunicación</span><h2>Habla de lo que querías hacer, no de lo que estás haciendo.</h2>
+    <p class="lead">Cercano y claro, sin apuro y sin fiesta. El mismo tono en la app, en el objeto, en la comunicación y en la memoria, con más o menos formalidad según el lugar.</p></div>
+  <div class="two">
+    <div class="dims" role="img" aria-label="Posición del tono en las cuatro dimensiones de Moran: más casual que formal, serio, respetuoso y sobrio.">
+      <div class="dim"><span>Formal</span><div class="track"><i style="left:66%"></i></div><span>Casual</span><p>Tutea y habla como una persona, sin jerga ni diminutivos.</p></div>
+      <div class="dim"><span>Serio</span><div class="track"><i style="left:18%"></i></div><span>Divertido</span><p>Sin chistes: el tiempo y las ganas de la persona no son material de humor.</p></div>
+      <div class="dim"><span>Respetuoso</span><div class="track"><i style="left:6%"></i></div><span>Irreverente</span><p>Nunca se burla del teléfono ni de quien lo usa.</p></div>
+      <div class="dim"><span>Sobrio</span><div class="track"><i style="left:14%"></i></div><span>Entusiasta</span><p>No celebra ni exclama. Informa y pregunta.</p></div>
+    </div>
+    <div class="body">
+      <p>El tono se define con las cuatro dimensiones de Moran (2016). En sus pruebas, cambiar el tono cambió cuán amistosa y formal se percibía una marca.</p>
+      <ul class="reglas">
+        <li>Tú, presente y frases de doce palabras o menos en la app.</li>
+        <li>Verbos concretos: abrir, sacar, escribir. No mejorar, optimizar ni desconectar.</li>
+        <li>Sin signos de exclamación ni emojis.</li>
+        <li>Pregunta cuando la persona decide («¿Qué decidiste?»).</li>
+        <li>Nombra actividades; los minutos aparecen solo en la condición que eligió la persona.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="vocab" style="margin-top:56px">
+    <div><h3>Palabras de Relevo</h3><div class="chips"><span>actividad</span><span>empezar</span><span>volver</span><span>lugar</span><span>sonar</span><span>decidir</span><span>preparar</span><span>después</span></div></div>
+    <div class="no"><h3>Palabras que no usa</h3><div class="chips"><span>productividad</span><span>hábito</span><span>racha</span><span>meta</span><span>desconexión</span><span>detox</span><span>adicción</span><span>control</span><span>recupera tu tiempo</span><span>mejor versión</span></div></div>
+  </div>
+  <div class="voz" style="margin-top:56px">
+    <div><h3>Así</h3><ul>
+      <li>¿Qué quieres hacer hoy?</li>
+      <li>Vuelve a leer.</li>
+      <li>Sonó junto al libro. ¿Qué decidiste?</li>
+      <li>La dejaste para después.</li>
+    </ul></div>
+    <div class="no"><h3>Así no</h3><ul>
+      <li>Llevas 40 minutos en Instagram.</li>
+      <li>¡Recupera tu tiempo!</li>
+      <li>Vas 3 días seguidos. ¡No pierdas la racha!</li>
+      <li>Desconéctate para ser tu mejor versión.</li>
+    </ul></div>
+  </div>
+  <h3 style="margin-top:56px">En cada momento de la app</h3>
+  <div class="tbl" style="margin-top:12px"><table>
+    <thead><tr><th>Momento</th><th>Texto</th><th>Por qué así</th></tr></thead>
+    <tbody>
+      <tr><td>Inicio vacío</td><td>Todavía no hay nada preparado. ¿Qué quieres hacer hoy?</td><td>Invita sin prometer resultados.</td></tr>
+      <tr><td>Permiso de uso</td><td>Para saber cuándo sonar, Relevo necesita ver cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.</td><td>Dice qué se mide y qué no.</td></tr>
+      <tr><td>Preparar</td><td>¿Qué quieres hacer? · ¿Cómo empezarás? · ¿Dónde sonará?</td><td>Preguntas, en el orden en que la persona lo piensa.</td></tr>
+      <tr><td>Probar sonido</td><td>Así va a sonar. ¿Lo escuchaste?</td><td>Comprueba antes de confiar.</td></tr>
+      <tr><td>Esperando</td><td>Vuelve a leer. Sonará junto al sillón después de 40 min en las apps elegidas.</td><td>La firma con las palabras de la persona.</td></tr>
+      <tr><td>Aviso en el teléfono</td><td>Leer · Abrir el libro en el marcador</td><td>Repite lo que escribió la persona, sin agregar nada.</td></tr>
+      <tr><td>Respuesta</td><td>¿Qué decidiste? · Comencé la actividad · La dejé para después · Cambié de idea</td><td>Las respuestas de la app 2.6, con el mismo peso.</td></tr>
+      <tr><td>Error</td><td>No sonó en el parlante. Revisa que esté encendido o elige el teléfono.</td><td>Dice qué pasó y qué hacer, sin disculpas largas.</td></tr>
+    </tbody></table></div>
+  <p class="muted" style="font-size:14.5px;margin-top:10px">Ejemplos de redacción. Los textos de la app 2.6 se ajustarían si se aprueba la propuesta.</p>
+  <div class="two" style="margin-top:clamp(48px,6vw,72px)">
+    <div class="body">
+      <h3>Se nota, no se dice</h3>
+      <p>Que Relevo no presiona es parte de la marca, pero no se anuncia. Frases como «sin culpa», «no te juzgamos» o «no insistimos» nombran justo lo que quieren evitar. El carácter de una marca se vuelve experiencia en las decisiones que se ven en cada contacto, no en una lista de atributos (Motta-Filho, 2021).</p>
+    </div>
+    <ul class="reglas">
+      <li>El aviso suena una vez y termina solo.</li>
+      <li>Las respuestas tienen el mismo tamaño, color y lugar.</li>
+      <li>No hay rachas, puntajes ni recordatorios de lo que no se hizo.</li>
+      <li>El tono es el mismo si la persona empieza o si sigue en lo que estaba.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="w" id="reticula">
+  <div class="head"><span class="eyebrow">Retícula y movimiento</span><h2>Margen amplio, texto a la izquierda, casi sin animación.</h2></div>
+  <div class="ret">
+    <figure><div class="st"><svg viewBox="0 0 180 320" aria-hidden="true"><rect x="0" y="0" width="180" height="320" rx="22" fill="var(--bg)" stroke="var(--line)"/><g fill="var(--you)" opacity=".12"><rect x="0" y="0" width="14" height="320"/><rect x="166" y="0" width="14" height="320"/></g><rect x="14" y="40" width="110" height="14" fill="var(--fg)"/><rect x="14" y="80" width="152" height="1.5" fill="var(--fg)"/><rect x="14" y="110" width="152" height="1.5" fill="var(--fg)"/><rect x="14" y="140" width="152" height="1.5" fill="var(--fg)"/><rect x="14" y="270" width="152" height="34" rx="9" fill="var(--fg)"/></svg></div><h3>App</h3><p>Base de 4 dp y márgenes de 20 dp. Texto de contenido de 17 sp o más. Áreas táctiles de 48 dp o más. Una acción principal por pantalla, abajo.</p></figure>
+    <figure><div class="st"><svg viewBox="0 0 200 250" aria-hidden="true"><rect x="0" y="0" width="200" height="250" fill="var(--bg)" stroke="var(--line)"/><g fill="var(--you)" opacity=".12"><rect x="0" y="0" width="14" height="250"/><rect x="186" y="0" width="14" height="250"/><rect x="0" y="0" width="200" height="14"/><rect x="0" y="236" width="200" height="14"/></g><g stroke="var(--you)" stroke-width=".6" stroke-dasharray="2 2"><line x1="57" y1="14" x2="57" y2="236"/><line x1="100" y1="14" x2="100" y2="236"/><line x1="143" y1="14" x2="143" y2="236"/></g><rect x="14" y="26" width="120" height="16" fill="var(--fg)"/><rect x="14" y="48" width="90" height="16" fill="var(--fg)"/><rect x="14" y="212" width="46" height="12" fill="var(--fg)"/></svg></div><h3>Afiche 4:5</h3><p>Margen del 7 % del ancho y cuatro columnas. La frase arriba a la izquierda y el logotipo abajo a la izquierda. Nada entre medio.</p></figure>
+    <figure><div class="st"><svg viewBox="0 0 260 120" aria-hidden="true"><text x="10" y="58" font-family="var(--sans)" font-size="26" font-weight="650" fill="var(--fg)">Vuelve a</text><text x="128" y="58" font-family="var(--sans)" font-size="26" font-weight="650" fill="var(--you)">leer<animate attributeName="opacity" values="0;1;1" keyTimes="0;.3;1" dur="3s" repeatCount="indefinite"/></text><line x1="128" y1="66" x2="230" y2="66" stroke="var(--fg)" stroke-width="2"/><text x="10" y="104" font-family="var(--sans)" font-size="12" fill="var(--muted)">aparece en 450 ms, sin rebote</text></svg></div><h3>Movimiento</h3><p>La única animación de marca es escribir: lo de la persona aparece sobre el renglón. Transiciones de 200 a 250 ms, sin rebotes, confeti ni vibraciones de premio. Si el teléfono pide reducir el movimiento, no hay animación (World Wide Web Consortium, 2023).</p></figure>
+  </div>
+</section>
+
+<section class="w" id="aplicaciones">
+  <div class="head"><span class="eyebrow">Aplicaciones</span><h2>Una sola forma, del afiche al objeto.</h2></div>
+  <div class="posters">
+    <div class="poster p-papel" style="justify-content:flex-start"><img src="imagenes/tratada-11.jpg" alt="" width="640" height="800" style="width:100%;height:58%;object-fit:cover;display:block"><div class="txt" style="height:auto;flex:1"><p class="t">Vuelve a<br><span class="campo">leer</span>.</p><div class="foot"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><small>Un recordatorio físico que preparas desde el teléfono.</small></div></div></div>
+    <div class="poster p-papel"><div class="txt"><p class="t">Vuelve a<br><span class="campo">dibujar</span>.</p><div class="foot"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><small>Tú escribes qué. Relevo te lo recuerda cuándo.</small></div></div></div>
+    <div class="poster p-tinta"><div class="txt"><p class="t">Vuelve a<br><span class="campo vacio">&nbsp;</span>.</p><div class="foot"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><small>Vuelve a lo que querías hacer.</small></div></div></div>
+  </div>
+
+  <div class="phones" style="margin-top:56px">
+    <figure style="margin:0"><div class="tel"><div class="scr">
+      <div class="sb"><span>20:08</span><span>100 %</span></div>
+      <div class="top"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span>Nuevo relevo</span></div>
+      <h4>¿Qué quieres hacer hoy?</h4>
+      <div class="q"><label>Actividad</label><span class="campo">Leer</span></div>
+      <div class="q"><label>¿Cómo empezarás?</label><span class="campo">Abrir el libro en el marcador</span></div>
+      <div class="q"><label>Después de cuánto uso</label><span class="campo" style="color:#17181C">40 min en las apps elegidas</span></div>
+      <div class="q"><label>¿Dónde sonará?</label><span class="campo" style="color:#17181C">Parlante junto al sillón</span></div>
+      <div class="grow"></div>
+      <div class="btn pri">Preparar relevo</div>
+    </div></div><figcaption>Preparar. Los campos son el renglón: en azul lo que escribió la persona, en tinta lo que eligió de una lista.</figcaption></figure>
+    <figure style="margin:0"><div class="tel"><div class="scr">
+      <div class="sb"><span>20:09</span><span>100 %</span></div>
+      <div class="top"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span>Preparado</span></div>
+      <h4 style="font-size:40px;margin-top:12px">Vuelve a<br><span class="campo" style="min-width:0;font-size:inherit">leer</span>.</h4>
+      <div class="meta">
+        <div><span>Cómo empieza</span><b>Abrir el libro en el marcador</b></div>
+        <div><span>Suena después de</span><b>40 min en las apps elegidas</b></div>
+        <div><span>Suena en</span><b>Parlante junto al sillón</b></div>
+      </div>
+      <div class="grow"></div>
+      <p class="note">Puedes cambiarlo o cancelarlo cuando quieras.</p>
+      <div class="btn">Cancelar relevo</div>
+    </div></div><figcaption>Esperar. La frase de marca aparece con las palabras de la persona.</figcaption></figure>
+    <figure style="margin:0"><div class="tel"><div class="scr">
+      <div class="sb"><span>20:50</span><span>98 %</span></div>
+      <div class="top"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span>Sonó junto al sillón</span></div>
+      <h4>¿Qué decidiste?</h4>
+      <p class="note">El relevo terminó después de 40 min en las apps elegidas.</p>
+      <div class="grow"></div>
+      <div class="btn">Comencé la actividad</div>
+      <div class="btn">La dejé para después</div>
+      <div class="btn">Cambié de idea</div>
+      <p class="note" style="text-align:center">Omitir y volver al inicio</p>
+    </div></div><figcaption>Responder. Las tres respuestas de la app 2.6 pesan lo mismo.</figcaption></figure>
+  </div>
+
+  <div class="fis" style="margin-top:56px">
+    <figure><div class="stage"><div class="card"><p class="t">Vuelve a<br><span class="campo">leer</span>.</p><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg></div></div><figcaption>Tarjeta del objeto. Se escribe a mano con lápiz pasta y se deja junto a él. La forma del objeto sigue abierta.</figcaption></figure>
+    <figure><div class="stage"><div class="box"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><p class="t">Vuelve a<br><span class="campo vacio">&nbsp;</span>.</p><small>Un recordatorio físico que preparas desde el teléfono.</small></div></div><figcaption>Caja. La tapa deja el renglón en blanco.</figcaption></figure>
+    <figure><div class="stage"><div class="cover-m"><div><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><p class="t">Vuelve a <span class="campo guia">lo que querías hacer</span>.</p></div><small>Memoria de Proyecto de Título<br>Escuela de Diseño UDP · 2026<br>Profesores guía: Sergio Majluf y Simón Gallardo</small></div></div><figcaption>Portada de la memoria.</figcaption></figure>
+  </div>
+  <div class="slide"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><p class="t">Vuelve a<br><span class="campo guia">lo que querías hacer</span>.</p><small>Examen de título · Escuela de Diseño UDP · 2026</small></div>
+  <p class="muted" style="font-size:14.5px;margin-top:12px">Primera diapositiva del examen.</p>
+</section>
+
+<section class="w" id="sonido">
+  <div class="son">
+    <div class="body"><span class="eyebrow">Sonido</span><h2 style="margin-top:14px">El aviso: dos notas, una vez.</h2>
+      <p>Relevo no usa luz por ahora (D-070). El aviso es un sonido corto, grave y descendente, que no se repite. Se diseñó para no sonar urgente (Edworthy et al., 1991; Hellier et al., 1993) y para que se sepa de dónde viene (Middlebrooks &amp; Green, 1991). Es parte del producto, no el centro de la marca.</p></div>
+    <button class="play" id="play2" type="button"><i><svg viewBox="0 0 10 12"><path d="M0 0L10 6L0 12Z"/></svg></i>Escuchar <small>2 s</small></button>
+  </div>
+</section>
+
+<section class="w" id="generica">
+  <div class="head"><span class="eyebrow">Por qué no es genérica</span><h2>Lo que se tomó y lo que no del diseño reciente.</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Tendencia o riesgo</th><th>Decisión en Relevo</th></tr></thead>
+    <tbody>
+      <tr><td>Marcas que se parecen entre sí (<i>blanding</i>)</td><td>La crítica apunta a las grotescas geométricas intercambiables (D&amp;AD, s. f.). Relevo usa una grotesca con rasgos propios, pero su diferencia está en la frase y el renglón, que ninguna otra marca puede usar con sentido.</td></tr>
+      <tr><td>Diseño generado sin decisiones (<i>AI slop</i>)</td><td>Se evitan los degradados morados, las tarjetas redondeadas en fila y las tipografías por defecto. Cada pieza sale de una regla escrita y fundamentada.</td></tr>
+      <tr><td>Vuelta a lo hecho a mano (2026)</td><td>Se toma en su versión más honesta: la tarjeta del objeto se escribe a mano. No se imitan fotocopias ni texturas.</td></tr>
+      <tr><td>Logotipos fluidos, tipografías mezcladas</td><td>No se adoptan. Relevo necesita calma y lectura rápida; su expresión está en lo que escribe cada persona.</td></tr>
+      <tr><td>Códigos del bienestar digital</td><td>Sin hojas, olas, anillos de progreso ni la palabra «calma». El ejemplo más cercano, Daylight, construye su identidad con el recorrido del sol y el naranjo; Relevo, con un formulario y un lápiz pasta.</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="w" id="estado">
+  <div class="head"><span class="eyebrow">Qué cambia y qué falta</span><h2>Estado de la propuesta.</h2></div>
+  <div class="two">
+    <ul class="reglas">
+      <li>La firma «Vuelve a lo que querías hacer» la eligió el autor. Reemplaza a «Lo que querías hacer, a tiempo», a «Antes de que sea después» (D-072) y a los centros anteriores: la coma y el sonido del lugar.</li>
+      <li>Conserva la decisión de no usar luz (D-070), la paleta tinta, papel y azul pasta, y la firma sonora.</li>
+      <li>Cambia la tipografía de Radio Canada a Schibsted Grotesk.</li>
+    </ul>
+    <ul class="reglas">
+      <li>Tu decisión sobre D-073.</li>
+      <li>Si se aprueba: aplicar tema, fuentes e ícono a la app; cambiar la frase de marca del capítulo 11 de la memoria; reescribir la guía de comunicación y el documento 14.</li>
+      <li>Comprobar con personas que no conocen el proyecto que la frase y el renglón se entienden solos.</li>
+      <li>Revisar las actividades que cambian de sentido con «vuelve a» («vuelve a caminar», «vuelve a dormir») y decidir cómo las muestra la app.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="w" id="referencias">
+  <div class="head"><span class="eyebrow">Referencias</span></div>
+  <div class="refs">
+    <p>Android Developers. (s. f.). <i>Make apps more accessible</i>. Recuperado el 25 de septiembre de 2026 de https://developer.android.com/guide/topics/ui/accessibility/apps</p>
+    <p>Creative Bloq. (2026). <i>Texture, warmth and tactile rebellion: The big graphic design trends for 2026</i>. Recuperado el 25 de septiembre de 2026 de https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026</p>
+    <p>D&amp;AD. (s. f.). <i>Beyond the sans serif: How type can move on from «blanding»</i>. Recuperado el 25 de septiembre de 2026 de https://www.dandad.org/insights/features/beyond-sans-serif-how-type-can-move-blanding-awards-insights</p>
+    <p>Edworthy, J., Loxley, S., &amp; Dennis, I. (1991). Improving auditory warning design: Relationship between warning sound parameters and perceived urgency. <i>Human Factors, 33</i>(2), 205–231. https://doi.org/10.1177/001872089103300206</p>
+    <p>Elliot, A. J., Maier, M. A., Moller, A. C., Friedman, R., &amp; Meinhardt, J. (2007). Color and psychological functioning: The effect of red on performance attainment. <i>Journal of Experimental Psychology: General, 136</i>(1), 154–168. https://doi.org/10.1037/0096-3445.136.1.154</p>
+    <p>Escalas, J. E. (2004). Narrative processing: Building consumer connections to brands. <i>Journal of Consumer Psychology, 14</i>(1–2), 168–180. https://doi.org/10.1207/s15327663jcp1401&amp;2_19</p>
+    <p>Google Fonts. (s. f.). <i>Schibsted Grotesk</i>. Recuperado el 25 de septiembre de 2026 de https://fonts.google.com/specimen/Schibsted+Grotesk</p>
+    <p>Hekkert, P. (2006). Design aesthetics: Principles of pleasure in design. <i>Psychology Science, 48</i>(2), 157–172.</p>
+    <p>Hellier, E. J., Edworthy, J., &amp; Dennis, I. (1993). Improving auditory warning design: Quantifying and predicting the effects of different warning parameters on perceived urgency. <i>Human Factors, 35</i>(4), 693–706. https://doi.org/10.1177/001872089303500408</p>
+    <p>It's Nice That. (2026). <i>The graphic trends you'll want to bookmark for 2026</i>. Recuperado el 25 de septiembre de 2026 de https://www.itsnicethat.com/features/forward-thinking-graphic-trends-2026-graphic-design-120126</p>
+    <p>Karjalainen, T.-M., &amp; Snelders, D. (2010). Designing visual recognition for the brand. <i>Journal of Product Innovation Management, 27</i>(1), 6–22. https://doi.org/10.1111/j.1540-5885.2009.00696.x</p>
+    <p>Labrecque, L. I., &amp; Milne, G. R. (2012). Exciting red and competent blue: The importance of color in marketing. <i>Journal of the Academy of Marketing Science, 40</i>(5), 711–727. https://doi.org/10.1007/s11747-010-0245-y</p>
+    <p>McDaniel, M. A., &amp; Einstein, G. O. (2000). Strategic and automatic processes in prospective memory retrieval: A multiprocess framework. <i>Applied Cognitive Psychology, 14</i>(7), S127–S144. https://doi.org/10.1002/acp.775</p>
+    <p>McDougall, S. J. P., de Bruijn, O., &amp; Curry, M. B. (2000). Exploring the effects of icon characteristics on user performance: The role of icon concreteness, complexity, and distinctiveness. <i>Journal of Experimental Psychology: Applied, 6</i>(4), 291–306. https://doi.org/10.1037/1076-898X.6.4.291</p>
+    <p>Middlebrooks, J. C., &amp; Green, D. M. (1991). Sound localization by human listeners. <i>Annual Review of Psychology, 42</i>, 135–159. https://doi.org/10.1146/annurev.ps.42.020191.001031</p>
+    <p>Mollerup, P. (2013). <i>Marks of excellence: The development and taxonomy of trademarks</i> (ed. rev. y ampl.). Phaidon.</p>
+    <p>Montag, C., Lachmann, B., Herrlich, M., &amp; Zweig, K. (2019). Addictive features of social media/messenger platforms and freemium games against the background of psychological and economic theories. <i>International Journal of Environmental Research and Public Health, 16</i>(14), 2612. https://doi.org/10.3390/ijerph16142612</p>
+    <p>Moran, K. (2016). <i>The four dimensions of tone of voice</i>. Nielsen Norman Group. https://www.nngroup.com/articles/tone-of-voice-dimensions/</p>
+    <p>Motta-Filho, M. A. (2021). Brand experience manual: Bridging the gap between brand strategy and customer experience. <i>Review of Managerial Science, 15</i>(5), 1173–1204. https://doi.org/10.1007/s11846-020-00399-9</p>
+    <p>Norman, D. A. (2002). <i>The design of everyday things</i>. Basic Books.</p>
+    <p>Post, R. A. G., Blijlevens, J., &amp; Hekkert, P. (2016). «To preserve unity while almost allowing for chaos»: Testing the aesthetic principle of unity-in-variety in product design. <i>Acta Psychologica, 163</i>, 142–152. https://doi.org/10.1016/j.actpsy.2015.11.013</p>
+    <p>Ward, E., Yang, S., Romaniuk, J., &amp; Beal, V. (2020). Building a unique brand identity: Measuring the relative ownership potential of brand identity element types. <i>Journal of Brand Management, 27</i>(4), 393–407. https://doi.org/10.1057/s41262-020-00187-6</p>
+    <p>Wiedenbeck, S. (1999). The use of icons and labels in an end user application program: An empirical study of learning and retention. <i>Behaviour &amp; Information Technology, 18</i>(2), 68–82. https://doi.org/10.1080/014492999119129</p>
+    <p>World Wide Web Consortium. (2023). <i>Web Content Accessibility Guidelines (WCAG) 2.2</i>. https://www.w3.org/TR/WCAG22/</p>
+    <p>Xu, X., Chen, R., &amp; Liu, M. W. (2017). The effects of uppercase and lowercase wordmarks on brand perceptions. <i>Marketing Letters, 28</i>(3), 449–460. https://doi.org/10.1007/s11002-016-9415-0</p>
+  </div>
+</section>
+</main>
+<footer><div class="w">Relevo · Proyecto de Título · Escuela de Diseño UDP · Manual de marca, propuesta D-073, pendiente de decisión del autor.</div></footer>
+
+<script>
+(function(){
+  var words=['leer','dibujar','pintar','cocinar','escribir'];
+  var el=document.getElementById('rot'),i=0,still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(el&&!still){setInterval(function(){el.style.opacity=0;setTimeout(function(){i=(i+1)%words.length;el.textContent=words[i];el.style.opacity=1},450)},2800)}
+  var ctx,buf;
+  function synth(c){var sr=c.sampleRate,n=Math.floor(2.2*sr),b=c.createBuffer(1,n,sr),d=b.getChannelData(0),notas=[[0,587.33,1],[0.46,440,0.92]],par=[[1,1,0.95],[3.9,0.3,0.22],[9.2,0.1,0.07]],mx=0,i,t,s,a;
+    notas.forEach(function(nt){var i0=Math.floor(nt[0]*sr);for(i=i0;i<n;i++){t=(i-i0)/sr;s=0;par.forEach(function(p){s+=p[1]*Math.sin(2*Math.PI*nt[1]*p[0]*t)*Math.exp(-t/p[2])});a=Math.min(1,t/0.004);s*=0.5-0.5*Math.cos(Math.PI*a);d[i]+=nt[2]*s}});
+    for(i=0;i<n;i++)mx=Math.max(mx,Math.abs(d[i]));for(i=0;i<n;i++)d[i]=d[i]/mx*0.7;return b}
+  function sonar(){var s=ctx.createBufferSource();s.buffer=buf;s.connect(ctx.destination);s.start()}
+  function play(){try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)()}catch(e){return}
+    if(ctx.state==='suspended')ctx.resume();if(buf){sonar();return}
+    fetch('sonido/firma-relevo.wav').then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(a){return ctx.decodeAudioData(a)}).catch(function(){return synth(ctx)}).then(function(b){buf=b;sonar()})}
+  ['play','play2'].forEach(function(id){var b=document.getElementById(id);if(b)b.addEventListener('click',play)});
+})();
+</script>

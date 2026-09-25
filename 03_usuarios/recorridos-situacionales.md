@@ -93,7 +93,7 @@ La siguiente secuencia no proviene de una prueba con participantes. Traduce la m
 - que una persona iniciará el primer paso después del pulso;
 - que U1 y U2 serán comprendidos por futuros participantes;
 - que el lugar aporta más que una notificación;
-- que luz y sonido, seleccionados para prototipar, ya tengan parámetros finales o eficacia demostrada; vibración es una alternativa condicionada;
+- que la señal sonora, elegida sin luz (D-070), ya tenga parámetros finales o eficacia demostrada; vibración es una alternativa condicionada;
 - que la condición de activación, la forma, la electrónica o la autonomía están cerradas;
 - que ignorar una señal representa fracaso o que comenzar la actividad representa éxito;
 - que los recorridos describen a todas las personas de 18 a 30 años.
@@ -111,12 +111,18 @@ La preparación y la recepción ocurren en momentos distintos. En la primera, la
 | Preparar | Expresa intención, primer paso y vigencia. | Android conserva el ciclo. | Comprensión y carga de configuración. |
 | Situar y probar | Elige lugar, prueba percepción y silencio; confirma armado. | El objeto queda asociado al comienzo. | Relación explicable y control comprensible. |
 | Esperar | Continúa una actividad digital. | Se evalúa solo la condición autorizada; en el ensayo el investigador controla la activación. | Expectativa temporal y fallos técnicos. |
-| Recibir y recordar | Percibe el pulso y puede recuperar intención y primer paso. | Luz y sonido aparecen en el lugar. | Los cuatro momentos de asociación del protocolo. |
+| Recibir y recordar | Percibe el pulso y puede recuperar intención y primer paso. | El sonido aparece en el lugar. | Los cuatro momentos de asociación del protocolo. |
 | Decidir y cerrar | Inicia, continúa, silencia o cambia de idea. | Finaliza el ciclo sin puntuar cumplimiento. | Autonomía y claridad de las salidas. |
 
 Es una síntesis de la hipótesis futura ya descrita, no un recorrido observado. Los ejemplos de ejercicio y buceo se mantienen en la [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md); la ubicación y los casos que no funcionan, en [forma adaptable y ubicación](../05_propuesta_phygital/forma-adaptable-y-ubicacion.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** los recorridos describen una señal solo sonora.
+- **Cómo estaba antes:** describían luz y sonido.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

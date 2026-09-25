@@ -1,7 +1,7 @@
 # Matriz de correspondencia entre citas y referencias — memoria v4
 
 **Fecha de control:** 27 de agosto de 2026
-**Última comprobación:** 23 de septiembre de 2026
+**Última comprobación:** 25 de septiembre de 2026
 **Documento revisado:** `memoria-vigente-v4.md`
 **Alcance:** cuerpo académico anterior al capítulo 14 y lista completa de referencias.
 
@@ -21,7 +21,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Apple Developer | s. f.-a | Sí | Sí | Conforme |
 | Apple Developer | s. f.-b | Sí | Sí | Conforme |
 | Apple Developer | s. f.-c | Sí | Sí | Conforme |
-| Asterics Foundation | s. f. | Sí | Sí | Conforme |
+| AsTeRICS Foundation | s. f. | Sí | Sí | Conforme |
 | Biedermann et al. | 2021 | Sí | Sí | Conforme |
 | Brick LLC | s. f.-a | Sí | Sí | Conforme |
 | Brick LLC | s. f.-b | Sí | Sí | Conforme |
@@ -39,19 +39,18 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Google | s. f.-b | Sí | Sí | Conforme |
 | Google | s. f.-c | Sí | Sí | Conforme |
 | Google | s. f.-d | Sí | Sí | Conforme |
-| Google Play | s. f. | Sí | Sí | Conforme |
+| Google Play | s. f. | Sí | Sí | Dirección y título sustituidos el 25 de septiembre |
 | Grüning et al. | 2023 | Sí | Sí | Conforme |
-| Haliburton et al. | 2024 | Sí | Sí | Conforme |
+| Haliburton et al. | 2024 | Sí | Sí | Número de artículo no verificable retirado |
 | Hermann et al. | 2007 | Sí | Sí | Conforme |
 | Karjalainen y Snelders | 2010 | Sí | Sí | Conforme |
 | Kauppinen-Räisänen y Luomala | 2010 | Sí | Sí | Conforme |
 | Keller et al. | 2002 | Sí | Sí | Conforme |
-| Kidel Peña-Albert et al. | 2026 | Sí | Sí | Conforme |
 | Kirsh | 1995 | Sí | Sí | Conforme |
-| Kitchen Safe | s. f. | Sí | Sí | Conforme |
+| Kitchen Safe | s. f. | Sí | Sí | Dirección sustituida el 25 de septiembre |
 | Lally et al. | 2010 | Sí | Sí | Conforme; formación de hábitos |
 | Lukoff et al. | 2018 | Sí | Sí | Conforme |
-| Lyngs et al. | 2019 | Sí | Sí | Conforme |
+| Lyngs et al. | 2019 | Sí | Sí | Número de artículo corregido (131) |
 | McDaniel y Einstein | 2000 | Sí | Sí | Conforme |
 | MCI Electronics | s. f. | Sí | Sí | Conforme |
 | MechatronicStore | s. f. | Sí | Sí | Conforme |
@@ -63,6 +62,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Motta-Filho | 2021 | Sí | Sí | Conforme |
 | one sec | s. f. | Sí | Sí | Conforme |
 | O’Rear y Radvansky | 2019 | Sí | Sí | Conforme |
+| Peña-Albert et al. | 2026 | Sí | Sí | Corregido el 25 de septiembre: el nombre de pila es Awen Kidel |
 | Radtke et al. | 2022 | Sí | Sí | Conforme |
 | Risko y Gilbert | 2016 | Sí | Sí | Conforme |
 | Sanders | 2026 | Sí | Sí | Conforme |
@@ -72,8 +72,8 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Smit et al. | 2019 | Sí | Sí | Conforme; elección y lenguaje |
 | Sohn et al. | 2005 | Sí | Sí | Conforme |
 | Stapley et al. | 2022 | Sí | Sí | Conforme |
-| Subsecretaría de Telecomunicaciones | 2026a | Sí | Sí | Conforme |
-| Subsecretaría de Telecomunicaciones | 2026b | Sí | Sí | Conforme |
+| Subsecretaría de Telecomunicaciones | 2025 | Sí | Sí | Corregido el 25 de septiembre: fecha del informe |
+| Subsecretaría de Telecomunicaciones | 2026 | Sí | Sí | Conforme; sin sufijo desde el 25 de septiembre |
 | Tonietto et al. | 2021 | Sí | Sí | Conforme |
 | Unpluq | s. f. | Sí | Sí | Conforme |
 | Ward et al. | 2020 | Sí | Sí | Conforme |
@@ -88,13 +88,28 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 4. Las obras de la Subsecretaría de Telecomunicaciones se reasignaron como 2026a para *Equipos de alcance reducido* y 2026b para el *Informe final*, junto con sus citas respectivas.
 5. Las páginas *Bluetooth* y *Hardware* de Micro:bit Educational Foundation se distinguen como s. f.-a y s. f.-b según el orden alfabético de sus títulos.
 
+6. El 25 de septiembre, la [revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md) comprobó cada referencia frente a Crossref, los textos oficiales y los sitios citados, y corrigió los datos señalados en la tabla.
+
 ## Límites y mantenimiento
 
-Este control verifica correspondencia y consistencia formal interna. No reemplaza la evaluación del contenido de cada fuente ni una revisión editorial final del documento diagramado. La matriz deberá reabrirse si se agrega, elimina o sustituye una cita o referencia.
+Este control verifica correspondencia y consistencia formal interna; desde el 25 de septiembre también registra la verificación externa de cada fuente. No reemplaza una revisión editorial final del documento diagramado. La matriz deberá reabrirse si se agrega, elimina o sustituye una cita o referencia.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Segunda verificación y formato APA
+
+- **Cambio:** la fila del repositorio BleenyButton usa el nombre de su autor, «AsTeRICS Foundation». La correspondencia se volvió a comprobar: 64 referencias, todas citadas, y ninguna cita sin referencia.
+- **Cómo estaba antes:** «Asterics Foundation».
+- **Por qué:** así escribe su nombre la fundación en su sitio y en GitHub; la memoria se corrigió en la misma revisión.
+
+### 2026-09-25 — Verificación externa de las fuentes
+
+- **Cambio:** se registraron las correcciones de Peña-Albert et al., Lyngs et al., Haliburton et al., Google Play, Kitchen Safe y la Subsecretaría de Telecomunicaciones (2025 y 2026, sin sufijos). El total sigue en 64 referencias.
+- **Versión anterior:** la matriz declaraba conformes esas entradas porque solo verificaba la correspondencia entre cita y lista, no los datos de cada fuente frente a su registro oficial.
+- **Motivo:** comprobar que todas las fuentes existen y están citadas con datos correctos.
+- **Alcance:** control bibliográfico; no valida Relevo.
 
 ### 2026-09-23 — Correspondencia tras el feedback docente
 

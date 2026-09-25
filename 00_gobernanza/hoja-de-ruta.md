@@ -2,7 +2,7 @@
 
 ## Estado general
 
-Relevo cuenta con una memoria integral en Markdown, auditada según los títulos, la secuencia y los límites del examen. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión. La línea sustantiva activa es la [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
+Relevo cuenta con una memoria integral en Markdown, auditada según los títulos, la secuencia y los límites del examen. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión. Desde el 21 de septiembre existe además una [aplicación Android](../06_desarrollo_y_factibilidad/app-android/README.md), hoy en la versión 2.6, que prepara el ciclo y emite un tono por un parlante Bluetooth o por el teléfono. La línea sustantiva activa es comprobar ese prototipo en equipos reales y, después, la [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
 
 El calendario de término se encuentra en el [plan de cierre de agosto a diciembre de 2026](plan-de-cierre-agosto-diciembre-2026.md) y sus fechas institucionales se respaldan en el [calendario oficial del segundo semestre de 2026](calendario-oficial-segundo-semestre-2026.md). El producto debe estar prácticamente terminado el 31 de octubre y completamente cerrado el 15 de noviembre. El Pase de Examen se entrega el 25 de noviembre, la memoria el 2 de diciembre y los exámenes de Proyecto de Título se realizan entre el 14 y el 18 de diciembre.
 
@@ -97,21 +97,21 @@ La [investigación visual](../10_recursos_visuales/README.md) define preguntas, 
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado:** arquitectura portátil seleccionada como candidata y prueba temprana separada de la integración. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, luz, sonido y silencio local está compilado; faltan acceso a la placa, instalación, luz cálida externa, mediciones y revisión del montaje.
+**Estado al 25 de septiembre:** la aplicación Android 2.6 compila y pasa diez pruebas unitarias; falta probarla en un teléfono y un parlante reales y verificar el envío y la eliminación de datos. El parlante es una salida provisional, no el testigo. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, sonido y silencio local está compilado, pero ya no condiciona la prueba: el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) usa la app y un parlante Bluetooth, sin luz (D-070 y D-079). No se ha comprado hardware.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
 ### Fase 6 — Prototipado y evaluación
 
-**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La primera puerta física está en la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): instalar el [paquete micro:bit compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), comprobar el banco BLE y preparar después la salida cálida de fase A. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior con XIAO nRF52840. El protocolo, el consentimiento y los instrumentos están preparados, pero no se puede comenzar con participantes hasta verificar un comportamiento seguro y repetible; la comparación posterior depende además de una notificación Android equivalente.
+**Estado:** línea sustantiva activa en la [Issue #8](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La primera prueba posible es la del prototipo Android con la [pauta 2.6](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md), después de una comprobación técnica sin participantes y de la revisión del consentimiento. La primera puerta física está en la [Issue #11](https://github.com/joan1542003-byte/proyecto-titulo/issues/11): instalar el [paquete micro:bit compilado](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), comprobar el banco BLE; la salida cálida de fase A quedó descartada por D-070. La [Issue #10](https://github.com/joan1542003-byte/proyecto-titulo/issues/10) conserva la integración portátil posterior con XIAO nRF52840. El protocolo, el consentimiento y los instrumentos están preparados, pero no se puede comenzar con participantes hasta verificar un comportamiento seguro y repetible; la comparación posterior depende además de una notificación Android equivalente.
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
-Siguiente puerta de avance: conseguir acceso a una micro:bit V2, instalar `relevo-prueba-mesa-v0.1.hex` y ejecutar el banco sin participantes. La comprobación debe registrar conexión y reconexión, latencia, patrón rojo de referencia, sonido, silencio local y fallos observados. Después se conecta una luz blanca cálida externa revisada y se repiten las series materiales de fase A. Ninguna de estas acciones habilita por sí sola el reclutamiento ni una afirmación de eficacia.
+Siguiente puerta de avance: implementar la app 2.7 que exige el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) (señal de 30 segundos, condición por semana, preguntas integradas), probarla en un teléfono y un parlante reales y revisar el consentimiento de 21 días. La micro:bit queda para un eventual testigo propio. Ninguna de estas acciones habilita por sí sola el reclutamiento ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
-**Estado:** memoria v4 activa y auditada; reabrir después de cada resultado ejecutado.
+**Estado:** memoria v4 activa, auditada y con sus 64 fuentes verificadas el 25 de septiembre; reabrir después de cada resultado ejecutado.
 
 La memoria integrará solo argumentos respaldados por el proceso. Se revisarán coherencia narrativa, trazabilidad, lenguaje académico, APA 7, definiciones, redundancias y correspondencia entre problema, usuarios, propuesta y validación.
 
@@ -129,6 +129,18 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** el estado y la siguiente puerta remiten a la app 2.7 y al protocolo 02.
+- **Cómo estaba antes:** la siguiente puerta era el banco micro:bit con luz cálida.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
+
+### 2026-09-25 — Estado posterior a Android 2.6
+
+- **Qué cambió:** el estado general y las fases 5–7 incorporan la aplicación Android 2.6, su evaluación como primera prueba posible y la verificación de fuentes de la memoria.
+- **Cómo estaba antes:** la hoja de ruta, actualizada al 11 de septiembre, no mencionaba la aplicación construida y presentaba el banco micro:bit como única puerta física inmediata.
+- **Por qué:** reflejar el trabajo realizado entre el 21 y el 25 de septiembre sin presentar pruebas pendientes como ejecutadas.
 
 ### 2026-09-11 — Ruta visual corregida
 

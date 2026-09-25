@@ -1,7 +1,9 @@
 # Prueba Android–BLE con micro:bit V2
 
 **Estado:** fuente compilada; instalación y ensayo en una placa real pendientes
-**Función:** comprobar el recorrido Android → Bluetooth de baja energía (BLE) → luz y sonido → silencio local antes de involucrar participantes
+**Función:** comprobar el recorrido Android → Bluetooth de baja energía (BLE) → luz y sonido → silencio local antes de involucrar participantes.
+
+**Estado desde el 25 de septiembre de 2026:** ya no condiciona la prueba con participantes, que usa la app y un parlante Bluetooth sin luz ([protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md); D-070 y D-079). Se conserva para un eventual testigo propio; la parte de luz es antecedente.
 
 ## Qué resuelve este paquete
 
@@ -113,6 +115,12 @@ El paquete no queda validado por existir o compilar. Se considera técnicamente 
 - Microsoft. (s. f.). *Stop all sounds*. Microsoft MakeCode. https://makecode.microbit.org/reference/music/stop-all-sounds
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** el encabezado indica que el banco ya no condiciona la prueba.
+- **Cómo estaba antes:** era la primera puerta física antes de participantes.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
 
 ### 2026-09-08 — Creación del paquete mínimo
 
