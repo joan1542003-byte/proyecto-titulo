@@ -663,8 +663,9 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-067 y D-068.
 - **Decisión propuesta:**
   - *Idea y verbal*: idea de marca «una coma, no un punto final»; frase «Una coma para volver a elegir»; descriptor «Un recordatorio físico que preparas desde tu teléfono»; uso del significado del nombre («Todo relevo empieza con una pausa»).
-  - *Logotipo*: «relevo,» en Atkinson Hyperlegible Next, con la coma en azul pasta `#2A4BD7`, y monograma «r,».
-  - *Tipografía*: Atkinson Hyperlegible Next y Mono, sin serifas y con tres voces (sistema, persona y máquina).
+  - *Logotipo*: «relevo,» con letras de Atkinson Hyperlegible Next y una coma propia de cabeza circular (el objeto) en azul pasta `#2A4BD7`; monograma «r,».
+  - *Tipografía*: Radio Canada para títulos, texto e interfaz (cero sin raya, «I» con remates), sin serifas y con tres voces (sistema, persona y máquina).
+  - *Relato*: tres actos (la frase larga, la coma, dos finales), la persona como protagonista y la firma gráfica «la frase sin puntos».
   - *Color*: tinta `#16181D`, papel `#F4F4F1`, grafito, niebla, noche y azul claro; luz cálida solo en el objeto.
   - *Imagen*: tratamiento con principios, receta de corrección y lista de tomas.
   - *Objeto*: el objeto como punto de la coma, con disco y coma como formas a comparar.
@@ -685,6 +686,8 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## Registro de cambios (disclaimer)
 
 ### 2026-09-25 — D-069 propuesta
+
+- **Actualización del mismo día:** D-069 incorpora el relato y la coma dibujada, fundamenta cada decisión de logotipo y color, y cambia la tipografía del sistema a Radio Canada porque el autor rechazó los ceros con raya de Atkinson. Antes, la tipografía era Atkinson Hyperlegible Next y Mono.
 
 - **Qué cambió:** se registró el estudio de marca desde cero y D-068 se marcó como reemplazada.
 - **Cómo era antes:** D-068 («un lugar que se enciende», con serif) era la propuesta pendiente.

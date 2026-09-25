@@ -6,12 +6,12 @@
 
 | Archivo o carpeta | Qué es |
 | --- | --- |
-| `lamina-marca-desde-cero-2026-09-25.html` | Lámina visual del estudio. Carga las tipografías desde Google Fonts y las fotos desde `imagenes/`. |
+| `lamina-marca-desde-cero-2026-09-25.html` | Lámina visual del estudio: abre con el relato y termina con referencias. Carga Radio Canada desde Google Fonts y las fotos desde `imagenes/`. |
 | `logotipo/` | Logotipo «relevo,» en versión principal, sobre azul y noche; monograma «r,»; ícono de 512 px; la coma sola. SVG editables. |
 | `imagenes/` | Fotos de muestra con la receta de corrección (`tratada-*`), un original para comparar (`original-52`) y dos ejemplos de lo que se evita (`evitar-*`). |
 | `receta-imagen.py` | Guion que aplica la receta de corrección: `python3 receta-imagen.py entrada.jpg salida.jpg 4:5 0.5`. Requiere Pillow y NumPy. |
 
-El logotipo se dibujó con los contornos de Atkinson Hyperlegible Next (Braille Institute), distribuida con la SIL Open Font License, que permite usarlos en logotipos. Los SVG no incluyen la fuente.
+El logotipo se dibujó con los contornos de Atkinson Hyperlegible Next (Braille Institute), distribuida con la SIL Open Font License, que permite usarlos en logotipos; la coma es un dibujo propio, con cabeza circular de la mitad de la altura de x. Los SVG no incluyen la fuente. La lámina usa Radio Canada (OFL) desde Google Fonts.
 
 ## Créditos y licencias de las fotos
 
@@ -35,6 +35,12 @@ Las personas que aparecen en `tratada-75` y `evitar-05` no son participantes del
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Coma propia y Radio Canada
+
+- **Qué cambió:** los SVG usan la coma dibujada; la guía menciona Radio Canada.
+- **Cómo estaba antes:** la coma era la de la fuente y la lámina usaba Atkinson para todo.
+- **Por qué:** D-069 se actualizó a pedido del autor.
 
 ### 2026-09-25 — Creación
 

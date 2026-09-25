@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** el [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) propone una identidad nueva a partir de la investigación: idea «una coma, no un punto final», logotipo «relevo,» en Atkinson Hyperlegible, tinta y papel con azul de lápiz pasta y tratamiento de imagen propio. Está registrada como [D-069](../09_decisiones/registro-de-decisiones.md) y reemplaza a D-067 y D-068. Mientras el autor no la apruebe, este documento sigue vigente.
+> **Revisión en curso (25 de septiembre de 2026):** el [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) propone una identidad nueva a partir de la investigación: idea «una coma, no un punto final», relato en tres actos, logotipo «relevo,» con coma propia, Radio Canada como tipografía del sistema, tinta y papel con azul de lápiz pasta y tratamiento de imagen propio. Está registrada como [D-069](../09_decisiones/registro-de-decisiones.md) y reemplaza a D-067 y D-068. Mientras el autor no la apruebe, este documento sigue vigente.
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso actualizado
+
+- **Qué cambió:** el aviso describe el relato, la coma propia y Radio Canada.
+- **Cómo estaba antes:** mencionaba Atkinson Hyperlegible para todo.
+- **Por qué:** D-069 se actualizó a pedido del autor.
 
 ### 2026-09-25 — Aviso sobre el estudio desde cero
 

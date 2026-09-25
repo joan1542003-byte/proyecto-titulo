@@ -53,6 +53,12 @@ El autor pidió un estudio de marca desde cero: cómo debe ser Relevo como marca
 | Chang et al. (2015) | La luz rica en azules por la noche retrasa el sueño: la luz del objeto debe ser cálida. |
 | Elliot et al. (2007) | El rojo se asocia con evitación en tareas de logro. |
 | Real Academia Española y ASALE (2010) | La coma marca pausas breves dentro de un enunciado que continúa. |
+| Escalas (2004); Woodside et al. (2008); Green y Brock (2000) | Relato: vínculo con la propia identidad, marcas como utilería de historias personales, transporte narrativo. |
+| Xu et al. (2017) | Minúsculas y mayúsculas: cercanía frente a autoridad. |
+| Ward et al. (2020) | Qué elementos de identidad pueden ser propios: logotipos sí, color con dificultad. |
+| Labrecque y Milne (2012); Mehta y Zhu (2009); Elliot y Maier (2014) | Significado del azul y dependencia del contexto. |
+| Karjalainen y Snelders (2010); Jiang et al. (2016); Bajaj y Bond (2018) | Rasgos compartidos entre producto y marca, forma circular y asimetría. |
+| Machado et al. (2009) | Simulación de daltonismo para comprobar la paleta. |
 
 ## 5. Categoría
 
@@ -88,7 +94,42 @@ Relevo ocupa el cuadrante vacío: actúa sobre la intención, el lugar y el mome
 | Los fallos se explican | «El objeto no responde. Revisa que esté cerca y encendido.» | «Ups, algo salió mal» |
 | Sin premios ni cuentas | «Recordatorio activo hasta las 23:00.» | «¡Llevas 5 días seguidos!» |
 
-## 7. Territorios
+## 7. El relato
+
+Una marca se entiende cuando se puede contar. Tres hallazgos sostienen el relato de Relevo:
+
+- procesar un anuncio como relato se asoció con una mayor conexión entre la marca y la propia identidad (Escalas, 2004);
+- las personas guardan y recuperan información como historias y usan las marcas como utilería de sus propios relatos (Woodside et al., 2008);
+- cuanto más se sumerge alguien en una historia, más influye esta en sus creencias (Green & Brock, 2000).
+
+**Reglas para contar Relevo:**
+
+1. La persona es la protagonista y Relevo, la utilería: nunca se presenta como héroe.
+2. Escenas reconocibles, tomadas de los episodios de la memoria: la cama a la hora de dormir, los videos para «matar el tiempo», el libro que espera en la mesa.
+3. Dos finales válidos: seguir en el teléfono y cambiar de actividad terminan igual de bien (usuario límite).
+4. Sin moraleja: juzgar el ocio reduce su disfrute (Tonietto et al., 2021).
+
+**Tres actos, tres momentos del producto:**
+
+| Acto | Momento | Qué pasa |
+| --- | --- | --- |
+| 1. La frase larga | preparar y esperar | Una sesión sin puntos de cierre (Montag et al., 2019); antes, la persona dejó el libro en la mesa y preparó Relevo. |
+| 2. La coma | aviso | El objeto se enciende junto al libro: una pausa breve donde podría empezar la actividad. |
+| 3. Dos finales | decidir | La persona sigue o cambia; la historia termina en una decisión renovada. |
+
+**Guion gráfico:**
+
+1. Deja el libro en la mesa y prepara Relevo.
+2. Abre el teléfono para descansar.
+3. La frase se alarga sin puntos.
+4. El objeto se enciende junto al libro.
+5. Hay dos finales: 5A, sigue viendo; 5B, empieza a leer. Ambos son válidos.
+
+**La historia en una frase:** Relevo es la coma en la frase larga de una tarde con el teléfono: no la termina, te deja elegir cómo sigue.
+
+**Apertura de la lámina:** el relato se escribe como una frase sin puntuación que termina en la coma azul y en la pregunta «¿sigues, o lees un rato?».
+
+## 8. Territorios
 
 | Criterio | A. La coma | B. El turno | C. El lugar preparado |
 | --- | --- | --- | --- |
@@ -105,43 +146,47 @@ Relevo ocupa el cuadrante vacío: actúa sobre la intención, el lugar y el mome
 
 La evaluación es experta, no una medición con personas.
 
-## 8. Logotipo
+## 9. Logotipo
 
-- **Forma:** «relevo,» en minúsculas, como una palabra en medio de una frase, seguida de una coma en azul pasta. No hay símbolo aparte: la marca es un signo que todos saben leer (Mollerup, 2013).
-- **Construcción:** Atkinson Hyperlegible Next, peso 650, interletra −1 % y kerning de la fuente; coma de la misma fuente ampliada 1,35 veces. La «l» con cola es propia de la fuente hiperlegible y le da carácter al nombre.
-- **Versiones:** principal (tinta y coma azul), sobre campo azul (todo blanco) y noche (coma azul claro).
-- **Monograma:** «r,», para el ícono de la app y el avatar.
-- **La coma sola:** elemento gráfico, nunca reemplazo del logotipo.
-- **Resguardo y tamaños mínimos:** resguardo igual a la altura de la coma; logotipo desde 88 px o 22 mm y monograma desde 16 px.
-- **Usos incorrectos:** quitar la coma, cambiar el azul (el rojo suena a alarma), usar mayúsculas o punto final, o deformar.
+- **Forma:** «relevo,» en minúsculas, como una palabra en medio de una frase, seguida de una coma propia en azul pasta.
+- **Construcción:** letras de Atkinson Hyperlegible Next, peso 650, interletra −1 % y kerning de la fuente.
+- **Coma dibujada:** cabeza circular de la mitad de la altura de x (Ø 248 sobre 1000 por eme) y cola curva.
 
-## 9. Tipografía
-
-Se compararon 24 familias sin serifa con licencia abierta, con el nombre, una frase real de la app y los pares que más se confunden (I l 1, 0 O, rn m). Se eligió **Atkinson Hyperlegible**, del Braille Institute. Fue diseñada para personas con baja visión, con letras inequívocas, contraformas abiertas y pares distintos (Braille Institute, s. f.).
-
-La elección se justifica por tres razones:
-
-- responde a la investigación sobre letras mal reconocidas (Beier & Larson, 2010);
-- responde a la exigencia de accesibilidad de la memoria;
-- a gran tamaño tiene carácter propio.
-
-Next (2025) tiene siete pesos con cursivas y Mono (2025) es su versión monoespaciada; ambas tienen licencia OFL.
-
-| Voz | Estilo | Uso |
+| Decisión | Fundamento | Fuente |
 | --- | --- | --- |
-| El sistema | Next, tinta | títulos, instrucciones, botones, logotipo |
-| La persona | Next, azul | la actividad y el comienzo que escribió la persona; citas de P1–P8 en la memoria |
-| La máquina | Mono, grafito | estados técnicos: condición, minutos, conexión, batería |
+| Solo logotipo, sin símbolo aparte | Los logotipos y personajes tienen el mayor potencial de ser propios; el color, el menor. Una marca nueva no necesita otro signo que aprender. | Ward et al. (2020); Mollerup (2013) |
+| Minúsculas | Los logotipos en minúsculas se perciben más cercanos; los de mayúsculas, más autoritarios. Relevo recuerda, no manda. | Xu et al. (2017) |
+| Coma, no punto | La coma marca una pausa breve dentro de un enunciado que sigue; el punto lo cierra. Relevo devuelve una pausa sin terminar la sesión. | RAE y ASALE (2010); Montag et al. (2019) |
+| Coma dibujada, no la de la fuente | La cabeza es un círculo exacto, el objeto visto desde arriba: repetir un rasgo entre producto y marca construye reconocimiento. El círculo aporta suavidad frente a las rectas de las letras. | Karjalainen y Snelders (2010); Jiang et al. (2016) |
+| Letras de Atkinson Hyperlegible | El nombre aparece en íconos y notificaciones pequeñas; las letras diferenciadas, como la «l» con cola, se reconocen mejor. | Beier y Larson (2010); Braille Institute (s. f.) |
+| Peso 650 | Presencia sin pesadez; el peso es una de las dimensiones que definen la impresión de una tipografía. | Henderson et al. (2004) |
+| Asimetría solo en la coma | La asimetría se asocia con excitación: la coma aporta un único gesto de movimiento y el resto del sistema es sereno. | Bajaj y Bond (2018) |
 
-Escala: portada 72/700/−3,5 %; título 32/700/−2 %; texto 17/400; memoria 10 pt/400 con interlínea 1,5; estado en Mono 12/400. El cero con barra es un rasgo de legibilidad de la familia.
+- **Versiones:** principal (tinta y coma azul), sobre campo azul (todo blanco) y noche (coma azul claro).
+- **Monograma:** «r,», para ícono y avatar.
+- **La coma sola:** elemento gráfico, nunca reemplazo del logotipo.
+- **Resguardo y tamaños mínimos:** resguardo igual al diámetro de la cabeza de la coma; logotipo desde 88 px o 22 mm y monograma desde 16 px.
+- **Usos incorrectos:** quitar la coma, cambiar el azul, usar mayúsculas o punto final, o deformar.
 
-Se descartaron las demás por tres motivos:
+## 10. Tipografía
 
-- Inter y Geist son la voz habitual de las herramientas digitales;
-- las redondeadas pertenecen al código de bienestar calmo;
-- Source Sans 3 es sólida, pero no distingue.
+Se separan dos funciones. El **logotipo** se dibujó con letras de Atkinson Hyperlegible Next (Braille Institute), cuyas letras se reconocen mejor en tamaños pequeños. El **sistema** —títulos, texto continuo, interfaz y datos— usa **Radio Canada**, una humanista creada en 2017 por Charles Daoud para la radiotelevisión pública de Canadá, pensada para el texto continuo y la accesibilidad digital (Google Fonts, s. f.). Tiene licencia OFL, ejes de peso y ancho, y cursivas.
 
-## 10. Color
+| Decisión | Fundamento | Fuente |
+| --- | --- | --- |
+| Texto en Radio Canada, no en Atkinson | Atkinson traza el cero con barra, útil en códigos pero llamativo en texto continuo: la memoria tiene 705 cifras y 129 ceros antes de las referencias. Radio Canada mantiene la «I» con remates, que la distingue de la «l», con un cero limpio. | Beier y Larson (2010); Google Fonts (s. f.) |
+| Una familia en dos anchos | Títulos al 88 % de ancho, más compactos y con carácter; texto al 100 %. Menos familias, más coherencia entre app, memoria y comunicación. | Henderson et al. (2004); Wheeler (2017) |
+| Tres voces sin tres familias | El sistema en tinta; lo que escribió la persona, en azul; los estados técnicos, en versalitas grises con cifras tabulares. | Norman (2002); memoria, cap. 11 |
+
+Escala:
+
+- portada: 72 px, peso 700, ancho 88 %;
+- título: 32 px, peso 700, ancho 88 %;
+- texto: 17 px, peso 400, interlínea 1,55;
+- memoria: 10 pt, peso 400, interlínea 1,5;
+- estados: 12 px, peso 500, en versalitas con cifras tabulares.
+
+## 11. Color
 
 | Nombre | Valor | Uso |
 | --- | --- | --- |
@@ -155,9 +200,16 @@ Se descartaron las demás por tres motivos:
 | Luz | cercana a 2700 K | solo la luz física del objeto |
 | Error | `#B3261E` | fallos técnicos, siempre con texto |
 
-El azul del lápiz pasta es el color con que se anota algo para uno mismo. Marca lo que escribió la persona y su pausa dentro de la continuidad. Se usa como acento y como campo solo en piezas de marca.
-
-La luz del objeto es cálida, no azul, porque la luz rica en azules de noche retrasa el sueño (Chang et al., 2015), y P2 relató una sesión a la hora de dormir.
+| Color | Fundamento | Fuente |
+| --- | --- | --- |
+| Azul pasta | Es el color de la nota escrita para uno mismo; las intenciones se descargan en notas y objetos. El azul se asoció con competencia en la personalidad de marca y con motivación de acercamiento, frente al rojo, asociado con evitación. Como el significado del color depende del contexto, se usa siempre para lo mismo: la voz de la persona. | Risko y Gilbert (2016); Labrecque y Milne (2012); Mehta y Zhu (2009); Elliot et al. (2007); Elliot y Maier (2014) |
+| El azul nunca va solo | El color es el elemento que más cuesta hacer propio porque la categoría lo comparte; el azul pertenece a Relevo junto con la coma. | Ward et al. (2020) |
+| Tinta y papel neutros | Un fondo crema entibiaría el azul y uno blanco puro lo endurecería; el papel neutro lo deja leerse tal cual. La tinta tiene un leve sesgo azul. | Albers (2013); World Wide Web Consortium (2023) |
+| Grafito para la máquina | Menos prominencia para lo que importa menos: los estados técnicos no compiten con la intención. | Kress y van Leeuwen (2021) |
+| Luz cálida solo en el objeto | La luz rica en azules por la noche retrasó el sueño y suprimió la melatonina; la señal puede ocurrir de noche y P2 contó una sesión a la hora de dormir. | Chang et al. (2015) |
+| Aviso en pantalla oscura | Menos luz emitida en el momento de la señal; el cambio de fondo distingue el aviso sin depender del color. | Chang et al. (2015); Norman (2002) |
+| Sin rojo, salvo errores | El rojo se asocia con evitación en tareas de logro. | Elliot et al. (2007) |
+| Legible con daltonismo | En la simulación, el azul sigue separado de la tinta (ΔE 81 en deuteranopía, 77 en protanopía), del grafito (72 y 66) y del rojo de error (122 y 101). | Machado et al. (2009) |
 
 | Combinación | Contraste |
 | --- | --- |
@@ -167,7 +219,7 @@ La luz del objeto es cálida, no azul, porque la luz rica en azules de noche ret
 | Azul claro sobre noche | 8,04:1 |
 | Blanco sobre azul pasta | 6,53:1 |
 
-## 11. Tratamiento de imagen
+## 12. Tratamiento de imagen
 
 **Principios:**
 
@@ -207,7 +259,7 @@ La receta está implementada en un guion reproducible y aplicada a las fotos de 
 7. Dormitorio de noche: velador, libro y objeto con luz cálida.
 8. Detalle: una mano presiona el objeto para silenciarlo.
 
-## 12. Composición y movimiento
+## 13. Composición y movimiento
 
 - **Composición:**
   - Donde hay una coma hay espacio: la frase se corta y deja un blanco antes de la segunda parte.
@@ -222,7 +274,31 @@ La receta está implementada en un guion reproducible y aplicada a las fotos de 
   - los fallos los explica la app.
 - **Sonido:** dos notas breves y descendentes, a calibrar en el banco técnico.
 
-## 13. Aplicaciones
+## 14. La firma: la frase sin puntos
+
+El recurso gráfico propio de Relevo es texto corrido en grafito, sin puntuación, como una sesión sin puntos de cierre (Montag et al., 2019). En algún lugar aparece una sola coma azul y después hay aire. Funciona como un programa (Gerstner, 2007): cambia el texto y se mantiene la regla.
+
+**Reglas:**
+
+- la frase siempre en minúsculas y en grafito, en un solo cuerpo;
+- una coma azul por pieza;
+- después de la coma, un tercio libre o una frase breve en tinta.
+
+Se usa en afiches, portadillas de capítulo, la pantalla de carga y el interior de la caja.
+
+## 15. Por qué no es una marca genérica
+
+| Lo genérico | Relevo | Por qué |
+| --- | --- | --- |
+| Nombre con un punto final de color | Una coma propia, dibujada a partir del objeto | El punto cierra y la coma deja seguir: el signo dice lo que hace el producto. |
+| Un color como identidad | El azul solo existe junto con la coma y la voz de la persona | El color es el elemento menos propio (Ward et al., 2020). |
+| Sans neutra de producto digital | Letras hiperlegibles en el logotipo y una humanista de texto continuo | Elegidas por legibilidad y por el ámbito del proyecto. |
+| Fotos de banco con personas felices | Manos, materiales preparados y luz de casa, con receta propia | Imágenes que ofrecen en vez de interpelar (Kress & van Leeuwen, 2021). |
+| Promesa de productividad o «desintoxicación» | Una frase que admite dos finales | Juzgar el ocio reduce su disfrute (Tonietto et al., 2021). |
+| Patrones y degradados decorativos | La frase sin puntos, que dibuja el problema | Nace de la investigación (Montag et al., 2019). |
+| Mascota o tono entusiasta | Voz directa y tranquila; la persona es la protagonista | Las marcas son utilería de las historias de la gente (Woodside et al., 2008). |
+
+## 16. Aplicaciones
 
 - **Objeto:**
   - *Forma*: el cuerpo redondo es el punto de la coma y lleva la luz. Se proponen dos formas para comparar: disco de 44 × 14 mm, que no depende de la orientación, y coma, cuya cola apunta al comienzo de la actividad como clave visible (Norman, 2002).
@@ -231,15 +307,15 @@ La receta está implementada en un guion reproducible y aplicada a las fotos de 
   - *Medidas*: dentro de la envolvente de la memoria (42–48 × 12–16 mm).
 - **App:**
   - *Ícono*: «r,» sobre azul.
-  - *Pantallas*: papel en reposo y noche en el aviso. La actividad aparece en la voz de la persona (azul), los estados en Mono y las acciones en tinta. El aviso dice «Querías leer,» y ofrece dos salidas de igual peso.
+  - *Pantallas*: papel en reposo y noche en el aviso. La actividad aparece en la voz de la persona (azul), los estados en versalitas grises y las acciones en tinta. El aviso dice «Querías leer,» y ofrece dos salidas de igual peso.
 - **Comunicación:**
   - *Mensajes*: siguen el esquema «[esto], o [aquello]»: «Un video más, o a dibujar.», «Un capítulo más, o a dormir.», «Seguir aquí, o la guitarra.». También se usa la línea «Todo relevo empieza con una pausa.».
   - *Caja*: cartón con una tinta azul y un troquel circular que deja ver el objeto (el punto); la cola de la coma está impresa.
 - **Proyecto:**
-  - *Memoria*: cuerpo en Next de 10 pt; tablas, códigos y datos en Mono; citas de participantes en azul. Portada en campo azul con la coma a gran escala.
+  - *Memoria*: cuerpo en Radio Canada de 10 pt; títulos al 88 % de ancho; tablas y códigos en versalitas con cifras tabulares; citas de participantes en azul. Portada en campo azul con la coma a gran escala.
   - *Examen*: presentación en noche.
 
-## 14. Qué hay que probar
+## 17. Qué hay que probar
 
 1. **Coma:** mostrar el logotipo y dos mensajes sin explicación. Se espera «pausa» o «seguir»; es un fallo si predomina «apóstrofo» o «error de tipeo».
 2. **Juicio:** preguntar si alguna mitad de los mensajes «[esto], o [aquello]» parece la correcta.
@@ -254,23 +330,24 @@ La receta está implementada en un guion reproducible y aplicada a las fotos de 
 - las asociaciones de color y forma provienen de estudios en otros contextos;
 - nada de esto mide el efecto de Relevo.
 
-## 15. Qué cambia respecto de las propuestas anteriores
+## 18. Qué cambia respecto de las propuestas anteriores
 
 | Elemento | Antes (D-062, D-067, D-068) | Ahora |
 | --- | --- | --- |
 | Punto de partida | documentos de marca previos | investigación de la memoria |
 | Idea | hacer lugar / un lugar que se enciende | una coma: pausa sin punto final |
-| Logotipo | Relevo tipográfico; luego R encendida | «relevo,» en Atkinson Hyperlegible |
-| Tipografía | Source Sans 3; luego Instrument Sans y Newsreader | Atkinson Hyperlegible Next y Mono, sin serifas |
+| Logotipo | Relevo tipográfico; luego R encendida | «relevo,» con letras de Atkinson Hyperlegible y una coma propia |
+| Relato | sin relato | tres actos y dos finales válidos |
+| Tipografía | Source Sans 3; luego Instrument Sans y Newsreader; luego Atkinson en todo | Radio Canada en el sistema, Atkinson solo en el logotipo, sin serifas ni ceros con raya |
 | Color | verde; luego crema, tinta y ámbar | papel neutro, tinta y azul pasta; luz cálida solo en el objeto |
 | Imagen | sin receta | principios, receta de corrección y lista de tomas |
 | Nombre | se evitaba su significado | se usa: todo relevo empieza con una pausa |
 
-## 16. Si se aprueba
+## 19. Si se aprueba
 
 1. Registrar D-069 como vigente y reescribir el [sistema de marca](14_sistema-de-marca-vigente.md).
 2. Aplicarla en la app:
-   - incorporar Atkinson Hyperlegible Next y Mono;
+   - incorporar Radio Canada;
    - aplicar la paleta, con acciones en tinta y la voz de la persona en azul;
    - diseñar el aviso nocturno;
    - crear el ícono adaptativo «r,».
@@ -282,6 +359,8 @@ La receta está implementada en un guion reproducible y aplicada a las fotos de 
 
 Albers, J. (2013). *Interaction of color* (4.ª ed.). Yale University Press.
 
+Bajaj, A., & Bond, S. D. (2018). Beyond beauty: Design symmetry and brand personality. *Journal of Consumer Psychology, 28*(1), 77–98. https://doi.org/10.1002/jcpy.1009
+
 Beier, S., & Larson, K. (2010). Design improvements for frequently misrecognized letters. *Information Design Journal, 18*(2), 118–137. https://doi.org/10.1075/idj.18.2.03bei
 
 Braille Institute. (s. f.). *Atkinson Hyperlegible font*. Recuperado el 25 de septiembre de 2026, de https://www.brailleinstitute.org/freefont/
@@ -290,7 +369,17 @@ Chang, A.-M., Aeschbach, D., Duffy, J. F., & Czeisler, C. A. (2015). Evening use
 
 de Segovia Vicente, D., Van Gaeveren, K., Murphy, S. L., & Vanden Abeele, M. M. P. (2024). Does mindless scrolling hamper well-being? Combining ESM and log-data to examine the link between mindless scrolling, goal conflict, guilt, and daily well-being. *Journal of Computer-Mediated Communication, 29*(1), zmad056. https://doi.org/10.1093/jcmc/zmad056
 
+Elliot, A. J., & Maier, M. A. (2014). Color psychology: Effects of perceiving color on psychological functioning in humans. *Annual Review of Psychology, 65*, 95–120. https://doi.org/10.1146/annurev-psych-010213-115035
+
 Elliot, A. J., Maier, M. A., Moller, A. C., Friedman, R., & Meinhardt, J. (2007). Color and psychological functioning: The effect of red on performance attainment. *Journal of Experimental Psychology: General, 136*(1), 154–168. https://doi.org/10.1037/0096-3445.136.1.154
+
+Escalas, J. E. (2004). Narrative processing: Building consumer connections to brands. *Journal of Consumer Psychology, 14*(1–2), 168–180. https://doi.org/10.1207/s15327663jcp1401&2_19
+
+Gerstner, K. (2007). *Designing programmes*. Lars Müller Publishers. (Obra original publicada en 1964)
+
+Google Fonts. (s. f.). *Radio Canada*. Recuperado el 25 de septiembre de 2026, de https://fonts.google.com/specimen/Radio+Canada
+
+Green, M. C., & Brock, T. C. (2000). The role of transportation in the persuasiveness of public narratives. *Journal of Personality and Social Psychology, 79*(5), 701–721. https://doi.org/10.1037/0022-3514.79.5.701
 
 Harrison, C., Horstman, J., Hsieh, G., & Hudson, S. (2012). Unlocking the expressivity of point lights. En *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems* (pp. 1683–1692). Association for Computing Machinery. https://doi.org/10.1145/2207676.2208296
 
@@ -298,7 +387,11 @@ Henderson, P. W., Giese, J. L., & Cote, J. A. (2004). Impression management usin
 
 Isaacson, W. (2011). *Steve Jobs*. Simon & Schuster.
 
+Jiang, Y., Gorn, G. J., Galli, M., & Chattopadhyay, A. (2016). Does your company have the right logo? How and why circular- and angular-logo shapes influence brand attribute judgments. *Journal of Consumer Research, 42*(5), 709–726. https://doi.org/10.1093/jcr/ucv049
+
 Kapferer, J.-N. (2012). *The new strategic brand management: Advanced insights and strategic thinking* (5.ª ed.). Kogan Page.
+
+Karjalainen, T.-M., & Snelders, D. (2010). Designing visual recognition for the brand. *Journal of Product Innovation Management, 27*(1), 6–22. https://doi.org/10.1111/j.1540-5885.2009.00696.x
 
 Keller, K. L., Heckler, S. E., & Houston, M. J. (1998). The effects of brand name suggestiveness on advertising recall. *Journal of Marketing, 62*(1), 48–57. https://doi.org/10.1177/002224299806200105
 
@@ -306,9 +399,15 @@ Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1�
 
 Kress, G., & van Leeuwen, T. (2021). *Reading images: The grammar of visual design* (3.ª ed.). Routledge. https://doi.org/10.4324/9781003099857
 
+Labrecque, L. I., & Milne, G. R. (2012). Exciting red and competent blue: The importance of color in marketing. *Journal of the Academy of Marketing Science, 40*(5), 711–727. https://doi.org/10.1007/s11747-010-0245-y
+
 Lyngs, U., Lukoff, K., Slovak, P., Binns, R., Slack, A., Inzlicht, M., Van Kleek, M., & Shadbolt, N. (2019). Self-control in cyberspace: Applying dual systems theory to a review of digital self-control tools. En *Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems* (Artículo 131, pp. 1–18). Association for Computing Machinery. https://doi.org/10.1145/3290605.3300361
 
+Machado, G. M., Oliveira, M. M., & Fernandes, L. A. F. (2009). A physiologically-based model for simulation of color vision deficiency. *IEEE Transactions on Visualization and Computer Graphics, 15*(6), 1291–1298. https://doi.org/10.1109/TVCG.2009.113
+
 McDaniel, M. A., & Einstein, G. O. (2000). Strategic and automatic processes in prospective memory retrieval: A multiprocess framework. *Applied Cognitive Psychology, 14*(7), S127–S144. https://doi.org/10.1002/acp.775
+
+Mehta, R., & Zhu, R. (2009). Blue or red? Exploring the effect of color on cognitive task performances. *Science, 323*(5918), 1226–1229. https://doi.org/10.1126/science.1169144
 
 Mollerup, P. (2013). *Marks of excellence: The development and taxonomy of trademarks* (ed. rev. y ampl.). Phaidon.
 
@@ -326,11 +425,34 @@ Smit, E. S., Zeidler, C., Resnicow, K., & de Vries, H. (2019). Identifying the m
 
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W., & Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, 104198. https://doi.org/10.1016/j.jesp.2021.104198
 
+Ward, E., Yang, S., Romaniuk, J., & Beal, V. (2020). Building a unique brand identity: Measuring the relative ownership potential of brand identity element types. *Journal of Brand Management, 27*(4), 393–407. https://doi.org/10.1057/s41262-020-00187-6
+
 Wheeler, A. (2017). *Designing brand identity: An essential guide for the whole branding team* (5.ª ed.). Wiley.
+
+Woodside, A. G., Sood, S., & Miller, K. E. (2008). When consumers and brands talk: Storytelling theory and research in psychology and marketing. *Psychology & Marketing, 25*(2), 97–145. https://doi.org/10.1002/mar.20203
+
+World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
+
+Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wordmarks on brand perceptions. *Marketing Letters, 28*(3), 449–460. https://doi.org/10.1007/s11002-016-9415-0
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Relato, fundamentos y tipografía de texto
+
+- **Qué cambió:**
+  - se añadió el relato: teoría, reglas, tres actos, guion gráfico con dos finales y la historia en una frase;
+  - cada decisión de logotipo y de color tiene su fundamento y su fuente;
+  - la coma del logotipo se dibujó con cabeza circular (el objeto) en lugar de usar la de la fuente;
+  - el sistema tipográfico pasa a Radio Canada, y Atkinson queda solo en el logotipo;
+  - se añadieron la firma gráfica «la frase sin puntos», la comparación con lo genérico, la simulación de daltonismo y 15 referencias verificadas.
+- **Cómo estaba antes:**
+  - no había relato;
+  - varias decisiones se justificaban sin cita;
+  - la coma era la de la fuente;
+  - Atkinson Hyperlegible Next y Mono se usaban en todo, con ceros con raya.
+- **Por qué:** el autor pidió que el relato fuera central, que la marca no pareciera genérica, que cada decisión de logotipo y color estuviera fundamentada y que el texto continuo no usara ceros con raya.
 
 ### 2026-09-25 — Estudio de marca desde cero
 

@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con un [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-069](../09_decisiones/registro-de-decisiones.md)). Su idea es «una coma, no un punto final»: logotipo «relevo,» en Atkinson Hyperlegible, tinta y papel con un azul de lápiz pasta, tres voces tipográficas sin serifas y un tratamiento de imagen con receta propia. Reemplaza a las propuestas «punto y pulso» (D-067) y «un lugar que se enciende» (D-068), que se conservan como antecedentes.
+**Estado:** sistema de marca vigente del 16 de septiembre, con un [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-069](../09_decisiones/registro-de-decisiones.md)). Su idea es «una coma, no un punto final»: un relato en tres actos, logotipo «relevo,» con coma propia, Radio Canada como tipografía del sistema, tinta y papel con un azul de lápiz pasta y un tratamiento de imagen con receta propia; cada decisión de logotipo y color cita su fundamento. Reemplaza a las propuestas «punto y pulso» (D-067) y «un lugar que se enciende» (D-068), que se conservan como antecedentes.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -70,6 +70,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Relato y fundamentos
+
+- **Qué cambió:** el estado menciona el relato, la coma propia y Radio Canada.
+- **Cómo era antes:** decía que el logotipo y el texto usaban Atkinson Hyperlegible.
+- **Por qué:** el autor pidió relato, fundamentos por decisión y otra tipografía de texto.
 
 ### 2026-09-25 — Estudio desde cero
 
