@@ -41,7 +41,7 @@ El esquema está en [`base-remota-supabase.sql`](base-remota-supabase.sql). Las 
    - ¿Qué cambiarías?
    - ¿Dónde quedó el parlante la mayor parte del tiempo?
 
-   A ellas se suma la invitación a la conversación de 15 minutos. Son una propuesta.
+   Son una propuesta. La pregunta sobre aceptar la conversación de 15 minutos se retiró a pedido del autor: la entrevista la acuerda el investigador. La prueba se hace por ahora con una persona (D-081).
 2. **Escalas semanales.** Se anclan en «1 · nada» y «5 · mucho». El protocolo fija la escala, pero no sus extremos.
 3. **Orden de las tarjetas.** La tarjeta de cierre del día 21 aparece después de las semanales pendientes.
 4. **Sesión inicial.** El día 0 no tiene condición y la persona elige la salida. El protocolo pide dejar el parlante junto al primer paso.

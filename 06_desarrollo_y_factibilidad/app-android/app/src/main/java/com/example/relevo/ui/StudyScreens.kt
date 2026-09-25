@@ -258,7 +258,6 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
   var bothered by rememberSaveable { mutableStateOf("") }
   var change by rememberSaveable { mutableStateOf("") }
   var speakerPlace by rememberSaveable { mutableStateOf("") }
-  var conversation by rememberSaveable { mutableStateOf<String?>(null) }
   BackHandler(onBack = onLater)
   Column(Modifier.fillMaxSize()) {
     InlineAction("Responder después", onLater)
@@ -280,9 +279,6 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
       Question("3. ¿Qué te molestó?") { MultilineField(bothered, "Escribe aquí") { bothered = it } }
       Question("4. ¿Qué cambiarías?") { MultilineField(change, "Escribe aquí") { change = it } }
       Question("5. ¿Dónde quedó el parlante la mayor parte del tiempo?") { MultilineField(speakerPlace, "Por ejemplo: junto a la puerta") { speakerPlace = it } }
-      Question("¿Aceptas una conversación de 15 minutos?") {
-        ChoiceRow(listOf("si" to "Sí", "no" to "No"), conversation) { conversation = it }
-      }
       Spacer(Modifier.height(4.dp))
     }
     PrimaryButton("Enviar las respuestas", {
@@ -292,7 +288,6 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
         "que_molesto" to bothered,
         "que_cambiaria" to change,
         "lugar_parlante" to speakerPlace,
-        "acepta_conversacion" to conversation.orEmpty(),
       ))
     })
   }

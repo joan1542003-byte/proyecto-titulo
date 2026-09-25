@@ -7,9 +7,9 @@ La versión vigente de trabajo es **2.7**, compilada el 25 de septiembre de 2026
 | [APK 2.7](relevo-android-2.7-2026-09-25.apk) | Instalación interna en un teléfono con Android 12 o posterior. Incluye URL y clave **publicable** de Supabase; es un APK de depuración, no una publicación de tienda. |
 | [Proyecto 2.7 para Android Studio](relevo-android-studio-2.7-2026-09-25.zip) | Abrir y continuar el desarrollo en Windows o macOS. No incluye `local.properties`: para sincronizar en otra máquina hay que configurar URL y clave publicable siguiendo `local.properties.example`. |
 
-**SHA-256 del APK 2.7:** `41749D58F292EDDEAC03ED68255C019787CF057CD39155907744E779A78C0944`.
+**SHA-256 del APK 2.7:** `95965E024596BC45F5F8BCF79D7536336791B88D6B5D19211AD7E9D53A1712C8`.
 
-**SHA-256 del ZIP 2.7:** `3B349734D60AF57F514F0AD8D6C7707B416502A0F8E5F1C150E57E6ED73A310E`. Contiene los archivos fuente, la documentación y las capturas de `app-android`; se excluyeron compilados, cachés, `releases` y `local.properties`.
+**SHA-256 del ZIP 2.7:** `618120BAE7B9D26B76BC9DF6B50C4764CB932949AA20CF250073A5CF7B9C57F0`. Contiene los archivos fuente, la documentación y las capturas de `app-android`; se excluyeron compilados, cachés, `releases` y `local.properties`.
 
 El código compila y pasó 34 pruebas unitarias. En emulador, con datos ficticios, se recorrieron la sesión inicial, una semana en condición «teléfono», las preguntas tras la señal, las tarjetas semanales y el cierre del día 21, y los registros llegaron a Supabase ([detalle](../version-2.7-prueba-21-dias-2026-09-25.md)). Faltan el teléfono de la prueba, el parlante Bluetooth y el borrado sin conexión. El [consentimiento](../../../07_validacion/consentimiento-android-vigente-2026-09-23.md) y la [pauta](../../../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) siguen en revisión: el APK no debe entregarse a participantes antes de esas comprobaciones.
 

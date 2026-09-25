@@ -853,13 +853,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - *Salida*: durante la prueba, la condición fija dónde suena la señal. El día 0 no tiene condición y la persona elige la salida.
   - *Condición por relevo*: cada relevo conserva la condición con que se activó, aunque la señal llegue al día siguiente.
   - *Respuestas*: las tarjetas semanales y el cierre se guardan en la tabla `relevo_answers`. Las escalas van de «1 · nada» a «5 · mucho».
-  - *Cierre del día 21*: cinco preguntas derivadas del diseño escrito T2 y de los temas de la entrevista del protocolo 02, más la invitación a la conversación. Aparece después de las tarjetas semanales pendientes.
+  - *Cierre del día 21*: cinco preguntas derivadas del diseño escrito T2 y de los temas de la entrevista del protocolo 02. Aparece después de las tarjetas semanales pendientes. La pregunta sobre aceptar una conversación de 15 minutos se retiró el mismo día a pedido del autor: la entrevista la acuerda el investigador.
 - **Fundamento:** el protocolo 02 pide la condición «asignada por código» y la usa como variable de comparación. Si la persona pudiera cambiar la salida, la condición dejaría de serlo. T2 y el protocolo no fijan el texto completo del cierre.
 - **Alternativas:** derivar la secuencia del código aleatorio (no garantiza usar las seis secuencias con seis personas); dejar la salida libre y registrar la elección (pierde el diseño de medidas repetidas).
 - **Condición de revisión:** revisión del autor y del profesor antes de la prueba técnica; confusión observada en la sesión inicial.
 - **Documentación:** [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y [modelo de datos](../07_validacion/modelo-datos-evaluacion-app-2026-09-22.md).
 
+## D-081 — Por ahora, la prueba de 21 días se hace con una persona
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; vigente.
+- **Decisión:** la prueba del protocolo 02 se hace, por ahora, con una persona, a la que se asigna una de las seis secuencias. El diseño para seis personas se conserva por si la prueba se amplía.
+- **Consecuencia:** las reglas de decisión con umbrales («cinco de seis») no se aplican. El resultado describe un caso: si la persona completó la asociación en la sesión inicial y cómo respondió en cada condición. No permite comparar entre personas, generalizar ni estimar eficacia.
+- **Condición de revisión:** ampliación de la prueba o nueva indicación docente.
+- **Documentación:** [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-081 y ajuste de D-080
+
+- **Qué cambió:** se registró la prueba con una persona (D-081). El cierre del día 21 de D-080 ya no incluye la pregunta sobre la conversación de 15 minutos.
+- **Cómo era antes:** el protocolo 02 preveía seis personas, y la app preguntaba si la persona aceptaba la conversación.
+- **Por qué:** decisiones del autor del 25 de septiembre.
 
 ### 2026-09-25 — Implementación en Android 2.7 y D-080
 

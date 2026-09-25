@@ -12,7 +12,7 @@ Capturas de un emulador Android 16 de 1080 × 2400 píxeles, tomadas el 25 de se
 | [Inicio en la semana 2](06-inicio-semana-2.png) | Instrucción de la condición «teléfono» y tarjeta de cierre de la semana 1. |
 | [Salida fijada por la condición](07-salida-fijada-por-condicion.png) | Durante la prueba, la persona no cambia dónde suena. |
 | [Cierre de semana](08-cierre-de-semana.png) | Tres escalas de 1 a 5 y comentario opcional. |
-| [Cierre del día 21](09-cierre-dia-21.png) | Cinco preguntas propuestas (D-080) e invitación a la conversación. |
+| [Cierre del día 21](09-cierre-dia-21.png) | Primeras preguntas del cierre propuesto (D-080). |
 
 ## Registro de cambios (disclaimer)
 

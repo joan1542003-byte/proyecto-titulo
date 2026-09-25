@@ -20,7 +20,7 @@ La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a co
 
 ## Participantes
 
-- Seis personas de 18 a 30 años que no participaron en las entrevistas P1–P8, con un teléfono Android 12 o posterior.
+- **Por ahora, una persona** (decisión del autor del 25 de septiembre de 2026, D-081) de 18 a 30 años que no participó en las entrevistas P1–P8, con un teléfono Android 12 o posterior. Se le asigna una de las seis secuencias. El diseño para seis personas se conserva por si la prueba se amplía.
 - Cada una debe poder nombrar una actividad que a veces pierde frente al teléfono y un primer paso concreto.
 - Reclutamiento por referencias, voluntario y sin pago.
 - Cada persona usa un parlante Bluetooth propio o prestado por el proyecto. El parlante reemplaza al testigo, que no estará construido a tiempo; no es el objeto final.
@@ -94,9 +94,11 @@ Una **asociación completa** exige los cuatro momentos sin consultar el teléfon
 - cuánto se relacionaba la señal con el lugar;
 - un comentario opcional.
 
-**Día 21:** cinco preguntas de cierre y una entrevista de 15 minutos, presencial o por llamada, sobre qué condición ayudó más y por qué, qué molestó, dónde estuvo el parlante y qué cambiaría.
+**Día 21:** cinco preguntas de cierre y una entrevista de 15 minutos, presencial o por llamada, sobre qué condición ayudó más y por qué, qué molestó, dónde estuvo el parlante y qué cambiaría. La entrevista la acuerda el investigador directamente; la app no pregunta por ella (decisión del autor del 25 de septiembre).
 
 ## Reglas de decisión
+
+**Con una persona (D-081):** los umbrales siguientes, pensados para seis, no se aplican. Se describe si esa persona completó la asociación en la sesión inicial y cómo respondió en cada condición. Sirve para orientar el diseño; no permite comparar entre personas ni estimar eficacia. Las reglas se conservan para una ampliación.
 
 **Sesión inicial (asociación observada):**
 
@@ -131,7 +133,7 @@ Una falla de conexión, del parlante o de la app no cuenta como respuesta de la 
 - **Intenciones distintas:** cambian entre semanas y su dificultad no es idéntica.
 - **Orden y habituación:** el contrabalanceo reparte el efecto de practicar primero, pero la persona puede acostumbrarse a la señal.
 - **Parlante comercial:** no está reservado para Relevo y puede reproducir el audio de otras apps.
-- **Muestra:** seis personas reclutadas por cercanía.
+- **Muestra:** por ahora, una persona reclutada por cercanía. Los resultados describen un caso.
 
 ## Datos y conservación
 
@@ -157,6 +159,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How ar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Una persona y sin pregunta de entrevista en la app
+
+- **Qué cambió:** la prueba se hace por ahora con una persona (D-081). Las reglas de decisión para seis quedan en reserva. La app ya no pregunta por la conversación final, que acuerda el investigador.
+- **Cómo estaba antes:** seis personas, con umbrales de cinco de seis, y una pregunta de la app sobre la conversación de 15 minutos.
+- **Por qué:** decisión del autor del 25 de septiembre.
 
 ### 2026-09-25 — Estado de la app 2.7
 
