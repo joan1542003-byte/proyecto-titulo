@@ -119,6 +119,15 @@ No hace falta volver a leer cada archivo antiguo en cada tarea. Los README de ca
 
 Estas prioridades son un diagnóstico al corte, no afirmación de que se hayan realizado nuevas pruebas. El autor puede cambiar el orden.
 
+## Actualización del 25 de septiembre de 2026
+
+Estos cambios se hicieron después del corte y están en la rama `claude/wizardly-ptolemy-5u3fl6` ([PR joan1542003-byte/proyecto-titulo#12](https://github.com/joan1542003-byte/proyecto-titulo/pull/12)):
+
+- **Memoria:** se verificaron las 64 referencias contra Crossref, los textos oficiales y los sitios citados; se corrigieron datos bibliográficos, paráfrasis de P2 y Q13 y la descripción de Android 2.6. Detalle en la [revisión integral](../08_memoria/revision-integral-fuentes-y-redaccion-2026-09-25.md).
+- **Prioridad 1 resuelta en lo documental:** la pauta, la ficha, el modelo de datos y el índice de validación ya describen 2.6. El resumen general, la hoja de ruta y el plan de cierre tienen corte al 25 de septiembre.
+- **Derechos de autor:** se retiraron los PDF completos de Norman, Albers, Munari e Isaacson, que no tienen edición gratuita legal; siguen en el historial de Git. Se creó un registro de licencias de la app (la de Source Sans 3 ya estaba incluida). Los marcos de iPhone y Pixel de los wireframes y la fotografía de una referencia visual tienen origen no registrado.
+- **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
+
 ## Seguridad, privacidad y GitHub
 
 El README informó que el repositorio fue público al 9 de septiembre de 2026; esa visibilidad debe verificarse antes de cargar material nuevo. No subir notas personales, consentimientos firmados, nombres, contactos de participantes, registros brutos identificables ni archivos locales que no estén preparados para difusión. Mantener solo corpus anonimizado autorizado. No guardar credenciales, `.env`, `local.properties`, claves privadas o copias de bases de datos. El archivo `local.properties.example` es una plantilla, no una credencial.
@@ -130,6 +139,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Actualización posterior al corte
+
+- **Qué se añadió:** una sección con la verificación de la memoria, la sincronización documental con Android 2.6 y el retiro de libros protegidos.
+- **Cómo estaba antes:** el traspaso solo describía el estado al 24 de septiembre.
+- **Por qué:** es la entrada obligatoria para nuevas sesiones; debe indicar qué prioridades ya se atendieron sin reescribir el corte original.
 
 ### 2026-09-24 — Documento de traspaso creado
 

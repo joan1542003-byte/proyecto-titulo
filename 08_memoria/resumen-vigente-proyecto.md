@@ -16,9 +16,15 @@ La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se 
 
 El feedback del 23 de septiembre llevó a distinguir recordar una intención, empezar una actividad y formar un hábito. No se añadieron rachas ni premios. La revisión de Android 2.6 aclaró el consentimiento, el registro seudónimo, la selección de salida y los límites del parlante. Las decisiones y alternativas están en el [registro de aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y en la [auditoría específica de Android](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
-Antes de convocar participantes faltan pruebas en teléfono y parlante reales, revisión académica del consentimiento y comprobación del envío y eliminación de datos locales y remotos. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) requiere sincronización con Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
+Antes de convocar participantes faltan pruebas en teléfono y parlante reales, revisión académica del consentimiento y comprobación del envío y eliminación de datos locales y remotos. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) ya describe Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Documentos operativos sincronizados
+
+- **Qué se cambió:** se indicó que la pauta de testeo ya está sincronizada con Android 2.6.
+- **Cómo estaba antes:** decía que la pauta requería sincronización con 2.6.
+- **Por qué:** la pauta, la ficha y el modelo de datos se actualizaron el mismo día; la memoria solo cambió su tabla de soporte.
 
 ### 2026-09-25 — Revisión integral de la memoria
 

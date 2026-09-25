@@ -102,11 +102,11 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 
 ## Registro de cambios (disclaimer)
 
-### 2026-09-25 — Licencia de la fuente
+### 2026-09-25 — Registro de licencias
 
-- **Cambio:** se enlazó el registro de licencias, con el aviso de la SIL Open Font License de Source Sans 3.
-- **Antes:** la fuente se distribuía dentro del proyecto sin su aviso de licencia.
-- **Motivo:** cumplir las condiciones de redistribución de la fuente en un repositorio público.
+- **Cambio:** se enlazó un registro que reúne la licencia de Source Sans 3 (ya incluida en `app/licenses/`) y la procedencia de las imágenes.
+- **Antes:** la licencia estaba presente, pero no había un índice visible desde este README.
+- **Motivo:** facilitar la comprobación del uso legal de material ajeno en un repositorio público.
 
 ### 2026-09-24 — Revisión funcional 2.6
 

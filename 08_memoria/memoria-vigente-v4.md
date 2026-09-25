@@ -544,11 +544,11 @@ Un mapa de servicio, o *service blueprint*, relaciona acciones de la persona, pu
 
 | Momento previsto | Qué necesita la persona | Soporte que debe estar resuelto | Estado |
 | --- | --- | --- | --- |
-| Conocer y aceptar | Entender propósito, límites y condiciones de participación. | Explicación consistente y, en la investigación, consentimiento revisado. | Comunicación documentada; revisión y contacto del responsable pendientes. |
-| Preparar | Registrar intención, configurar y verificar objeto y lugar. | Material comprobado, enlace disponible y explicación de permisos. | Recorrido diseñado; ejecución sin demostrar. |
-| Recibir y cerrar | Percibir la señal y conservar una salida local. | Patrón reproducible y término sin insistencia. | Programa compilado; medición pendiente. |
+| Conocer y aceptar | Entender propósito, límites y condiciones de participación. | Explicación consistente y, en la investigación, consentimiento revisado. | Consentimiento en la app con responsable, contacto y plazo; revisión académica pendiente. |
+| Preparar | Registrar intención, configurar y verificar objeto y lugar. | Material comprobado, enlace disponible y explicación de permisos. | Preparación y permisos implementados en la app; objeto y enlace sin construir. |
+| Recibir y cerrar | Percibir la señal y conservar una salida local. | Patrón reproducible y término sin insistencia. | Tono y silencio implementados con parlante o teléfono; prueba en equipos reales pendiente. |
 | Recuperar un fallo | Saber si el ciclo sigue activo y poder detenerlo. | Separación entre incidente técnico y respuesta de usuario; procedimiento para restablecer el sistema. | Casos identificados; recuperación integrada pendiente. |
-| Mantener o retirar | Cargar, reubicar, reparar o dejar de usar el sistema. | Componentes accesibles y procedimientos para desvincular y eliminar datos; retorno del material si fue prestado. | Criterios definidos; procedimiento operativo y responsables por confirmar. |
+| Mantener o retirar | Cargar, reubicar, reparar o dejar de usar el sistema. | Componentes accesibles y procedimientos para desvincular y eliminar datos; retorno del material si fue prestado. | Solicitud de eliminación implementada en la app, sin comprobar; mantenimiento del objeto por definir. |
 
 ## Nombre y comunicación del propósito
 
@@ -802,6 +802,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 25 de septiembre de 2026 — Estado del soporte actualizado
+
+- **Cambio:** la tabla de continuidad de la experiencia (capítulo 11) indica lo que ya implementa la app 2.6: consentimiento con responsable, contacto y plazo; preparación y permisos; tono y silencio; y solicitud de eliminación, todavía sin comprobar.
+- **Versión anterior:** la tabla describía el contacto del responsable como pendiente y la preparación como solo diseñada, estado anterior a la app.
+- **Motivo:** alinear la memoria con los documentos operativos actualizados el mismo día, sin presentar implementación como validación.
+- **Alcance:** no se añadieron resultados; la extensión se mantiene en torno a 15.100 palabras.
 
 ### 25 de septiembre de 2026 — Verificación de fuentes, corpus y prototipo; revisión de redacción
 

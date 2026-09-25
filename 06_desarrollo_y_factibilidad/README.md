@@ -29,6 +29,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.6](app-android/README.md): prototipo ejecutable vigente. Permite preparar un relevo con una o varias apps bajo un límite común y emitir un tono por un parlante Bluetooth o por el teléfono. Compila y pasa sus pruebas unitarias; falta probarlo en equipos reales. Incluye su [registro de licencias](app-android/licencias/README.md).
 - [Energía, autonomía y viabilidad portátil del Atom Echo](energia-autonomia-atom-echo-2026-09-23.md): detalla alimentación USB, incompatibilidad directa de la base A151, cálculo ilustrativo de autonomía y límites para un producto final compacto.
 - [Compra económica de un objeto sonoro Wi-Fi](recomendacion-compra-sonido-wifi-chile-2026-09-23.md): compara costo puesto en Chile, discrepancias de publicaciones y requisitos antes de elegir Atom Echo u otra opción.
 - [Comparación BLE, Wi-Fi y Supabase para el objeto](comparacion-ble-wifi-supabase-dispositivo-2026-09-23.md): distingue orden local y remota, confirma que micro:bit no tiene Wi-Fi y evalúa latencia, conexión, seguridad y límites del test.
@@ -36,9 +37,9 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 - [Compra para el testeo sonoro en Chile](compra-para-testeo-audio-chile-2026-09-23.md): productos con precio y disponibilidad visibles, condición del teléfono y límites antes de comprar.
 - [Enrutamiento del audio a un parlante reservado para Relevo](enrutamiento-audio-parlante-exclusivo-2026-09-23.md): distingue la pista propia de la salida de otras apps y compara parlante multimedia, ajuste Samsung y orden BLE; sin ensayo físico todavía.
 - [Plan de desarrollo de la aplicación Android para prueba](plan-app-android-prueba-2026-09-22.md): fija el alcance ejecutable, la arquitectura, el recorrido, los criterios de aceptación y la entrega prevista para el 22 de septiembre de 2026.
-- [Búsqueda de productos terminados disponibles en Chile](busqueda-productos-terminados-chile-2026-09-11.md): contrasta iTag y parlantes compactos con control desde una aplicación propia; recomienda comprar dos muestras iTag y someterlas a una prueba GATT antes de recurrir a una placa de desarrollo.
+- [Búsqueda de productos terminados disponibles en Chile](busqueda-productos-terminados-chile-2026-09-11.md) (antecedente del 11 de septiembre; los iTag no se compraron): contrasta iTag y parlantes compactos con control desde una aplicación propia; recomienda comprar dos muestras iTag y someterlas a una prueba GATT antes de recurrir a una placa de desarrollo.
 - [Estudio de un testigo compacto con luz y sonido](estudio-dispositivo-compacto-luz-sonido-2026-09-07.md): compara referentes comerciales y cuatro arquitecturas; conserva XIAO como integración posterior si la prueba con productos terminados demuestra que hace falta construir un objeto propio.
-- [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md): sitúa dos iTag clásicos como primera puerta, micro:bit como respaldo y XIAO como posible integración posterior; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
+- [Plataformas físicas existentes y modificables](plataformas-existentes-modificables-2026-09-07.md) (antecedente del 7 de septiembre): sitúa dos iTag clásicos como primera puerta, micro:bit como respaldo y XIAO como posible integración posterior; incorpora BleenyButton como antecedente abierto de carcasa, batería y montaje.
 - [Prueba Android–BLE con micro:bit V2](prueba-microbit-ble/README.md): contiene el proyecto MakeCode, una compilación de mesa, el contrato de mensajes y la conexión mínima de una luz cálida externa anterior a participantes.
 - [Decisión de plataforma inicial: Android](decision-plataforma-android.md): comparación técnica y metodológica con web e iPhone, fuentes oficiales, límites y consecuencias para el prototipo.
 - [Especificación y puerta técnica de fase A](../07_validacion/especificacion-materiales-fase-a.md): conecta la plataforma vigente con comprobaciones de BLE, luz, sonido, control y seguridad anteriores a participantes.
@@ -59,6 +60,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Aplicación Android en el índice vigente
+
+- **Cambio:** la documentación vigente comienza con la aplicación Android 2.6 y su registro de licencias; las búsquedas de iTag y plataformas quedan marcadas como antecedentes.
+- **Versión anterior:** el índice no enlazaba la app construida y presentaba dos iTag como primera puerta física, aunque nunca se compraron.
+- **Motivo:** que la entrada del área corresponda al prototipo que existe.
 
 ### 2026-09-23 — Energía y autonomía del Atom Echo
 

@@ -83,15 +83,22 @@ No se añadió ningún resultado con personas, porque no existe.
 - La extensión pasó de 14.990 a 15.111 palabras según `wc -w` sobre preliminares y capítulos 1–13; se mantiene cerca del objetivo de 15.000.
 - Se conservan los catorce títulos de capítulo, los subtítulos existentes, el orden, la pregunta, la hipótesis, los objetivos y los umbrales del protocolo.
 
-## Problemas que no se resolvieron en esta revisión
+## Problemas pendientes y su estado
 
-1. **Libros completos con derechos de autor en un repositorio público.** `01_contexto_y_fuentes/biblioteca_diseno/originales/` contiene PDFs completos de Norman, Isaacson, Albers y Munari. El repositorio es público en GitHub. No se borraron, porque la decisión corresponde al autor y los archivos también permanecen en el historial de Git. Se recomienda retirarlos de la rama y del historial, o hacer privado el repositorio, y conservar solo los resúmenes propios con su referencia.
-2. **Correo personal en documentos públicos.** La pauta y otros documentos de validación incluyen el correo del autor. Si es el contacto oficial del estudio, conviene confirmarlo con el responsable académico; si no, sustituirlo por un canal institucional.
-3. **Registro de decisiones atrasado.** La última decisión registrada es D-062 (16 de septiembre). Las decisiones de Android 2.3–2.6 (varias aplicaciones, salida de audio, reconocimiento positivo, consentimiento) no tienen una entrada propia.
-4. **Precios y disponibilidad comercial.** Los precios citados en el capítulo 8 son observaciones de agosto de 2026. Coinciden con los sitios actuales en los casos de Brick y Focusaur, pero no se pueden verificar hacia atrás.
-5. **Similitud textual.** Si la institución exige un informe de similitud (por ejemplo, Turnitin), debe ejecutarse sobre la versión final diagramada.
+1. **Libros completos con derechos de autor en un repositorio público.** Resuelto en la rama el mismo día: se retiraron los PDF de Norman, Isaacson, Albers y Munari, porque ninguno tiene una edición gratuita legal; se conservan los resúmenes propios (D-066). Los archivos siguen en el historial de Git; eliminarlos por completo exige reescribir el historial de `main`.
+2. **Correo en documentos públicos.** El autor confirmó que su correo es el contacto correcto del estudio. No requiere cambios.
+3. **Registro de decisiones atrasado.** Resuelto: se añadieron D-063 a D-066 y se marcó D-058 (iTag) como no ejecutada.
+4. **Recursos de terceros sin procedencia.** Los marcos de iPhone y Pixel del tablero de wireframes y la fotografía de la referencia visual 03 no tienen origen registrado; se documentó el problema en sus README.
+5. **Precios y disponibilidad comercial.** Los precios citados en el capítulo 8 son observaciones de agosto de 2026. Coinciden con los sitios actuales en los casos de Brick y Focusaur, pero no se pueden verificar hacia atrás.
+6. **Similitud textual.** Si la institución exige un informe de similitud (por ejemplo, Turnitin), debe ejecutarse sobre la versión final diagramada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado de los pendientes
+
+- **Qué cambió:** la lista de problemas indica cuáles se resolvieron (libros retirados, registro de decisiones) y cuáles siguen abiertos; el correo se retiró como problema por confirmación del autor. La memoria quedó en 15.137 palabras tras actualizar la tabla de soporte del capítulo 11.
+- **Cómo estaba antes:** los cinco problemas aparecían sin resolver.
+- **Por qué:** el autor pidió retirar los libros sin licencia gratuita y actualizar los documentos obsoletos.
 
 ### 2026-09-25 — Creación
 

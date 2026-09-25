@@ -533,7 +533,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-058 — Probar un iTag comercial antes de recurrir a una placa
 
 - **Fecha:** 2026-09-11.
-- **Estado:** vigente como puerta de compra y ensayo; no como plataforma aprobada.
+- **Estado:** no ejecutada; los iTag no se compraron. Desde el 22 de septiembre la prueba inmediata pasó al prototipo Android con parlante Bluetooth (D-063). Se conserva como alternativa para el testigo.
 - **Decisión:** comprar dos iTag BLE clásicos de vendedores distintos en Chile y examinar en cada unidad el servicio Immediate Alert, la reconexión, el sonido, la luz y el silenciamiento. Una muestra que supere la prueba podrá sustituir la primera comprobación con micro:bit; si ambas fallan, la ruta micro:bit permanece vigente como respaldo.
 - **Fundamento:** el servicio Bluetooth `0x1802/0x2A06` permite que una aplicación Android propia solicite una alerta sin conservar la aplicación del vendedor. Sin embargo, los iTag genéricos varían entre partidas y la especificación no obliga a producir luz, por lo que una publicación comercial no basta para aprobarlos.
 - **Alternativas descartadas:** SmartTag, Moto Tag, AirTag, UGREEN y Hoco por depender de ecosistemas cerrados; parlantes RGB como plataforma final porque la luz no suele aceptar órdenes independientes y la espera conectada no está documentada; elegir un solo clon por su fotografía.
@@ -583,7 +583,51 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límite:** cierra decisiones de diseño, no acredita reconocimiento, preferencia, comprensión, eficacia ni desempeño del producto.
 - **Documentación:** [sistema de marca vigente](../10_recursos_visuales/14_sistema-de-marca-vigente.md), [estrategia de marca](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md), [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md).
 
+## D-063 — Prototipo Android con salida de sonido provisional
+
+- **Fecha:** 2026-09-22; actualizada el 2026-09-24 (versión 2.6).
+- **Estado:** vigente como prototipo de interacción; no define el testigo.
+- **Decisión:** construir primero una aplicación Android funcional que prepare el ciclo, cuente el uso autorizado y emita un tono. Mientras no exista un objeto controlable desde la app, la señal sale por un parlante Bluetooth multimedia o por el altavoz del teléfono, a elección explícita de la persona y sin cambiar de salida sin avisar.
+- **Fundamento:** ningún objeto propio ni comercial estaba disponible para recibir órdenes de la app; probar la preparación, la espera, la recepción y el control no requería esperar al hardware. El plan del 22 de septiembre registra el riesgo y la respuesta: usar salida Android o parlante como material de ensayo y declarar el límite.
+- **Límite:** el parlante no emite luz, no está reservado para Relevo y puede reproducir audio de otras apps; la salida por teléfono no es una experiencia phygital. Ninguna de las dos acredita el aporte del objeto situado.
+- **Condición de revisión:** disponer de un testigo que reciba órdenes BLE (micro:bit, iTag, XIAO u otro) y superar su banco técnico.
+- **Documentación:** [plan de la app](../06_desarrollo_y_factibilidad/plan-app-android-prueba-2026-09-22.md), [README de Android](../06_desarrollo_y_factibilidad/app-android/README.md) y [enrutamiento de audio](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
+
+## D-064 — Varias aplicaciones bajo un límite común
+
+- **Fecha:** 2026-09-24 (Android 2.6).
+- **Estado:** vigente en el prototipo; su pertinencia debe probarse.
+- **Decisión:** permitir que un relevo observe una o varias aplicaciones y sume su tiempo en primer plano hasta un único umbral, configurable entre 1 minuto y 6 horas.
+- **Fundamento:** el feedback del 23 de septiembre pidió considerar varias apps; una misma intención puede verse desplazada por distintas aplicaciones. La síntesis del feedback advertía que esto cambia atribución, conteo y carga, por lo que la pauta 2.6 incluye comprobar el conteo con dos apps.
+- **Límite:** el tiempo acumulado sigue siendo una condición provisional; no revela el sentido de la sesión ni reemplaza la comparación con continuidad de uso u horario.
+- **Condición de revisión:** confusión sobre qué se cuenta, carga de configuración o resultados de la comparación de condiciones.
+- **Documentación:** [revisión del feedback en la app](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md) y [pauta 2.6](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md).
+
+## D-065 — Reconocer la respuesta declarada, sin rachas ni premios
+
+- **Fecha:** 2026-09-23.
+- **Estado:** vigente.
+- **Decisión:** la app muestra una confirmación breve cuando la persona declara «Comencé la actividad» y cuenta esas respuestas como autodeclaradas («Dijiste que empezaste»). No se incorporan puntajes, rachas ni premios, y las demás respuestas no reciben reproche.
+- **Fundamento:** el feedback docente pidió considerar reconocimiento positivo; Relevo no observa si la actividad ocurrió y una racha podría convertirse en una meta distinta (Silverman & Barasch, 2023).
+- **Condición de revisión:** evidencia de que la confirmación presiona o, al contrario, de que un seguimiento voluntario aporta valor sin afectar la autonomía.
+- **Documentación:** [aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y [hábitos, reconocimiento y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md).
+
+## D-066 — Sin copias de obras protegidas en el repositorio público
+
+- **Fecha:** 2026-09-25.
+- **Estado:** vigente.
+- **Decisión:** retirar del repositorio los PDF completos de libros protegidos por derechos de autor y conservar solo resúmenes propios con su referencia. Todo recurso ajeno (fuentes, imágenes, marcos de dispositivo) debe tener licencia o procedencia registrada.
+- **Fundamento:** el repositorio es público (D-001). Las obras de Norman, Albers, Munari e Isaacson no tienen edición gratuita que autorice su redistribución.
+- **Pendiente:** los PDF siguen en el historial de Git; los marcos de iPhone y Pixel de los wireframes y la fotografía de la referencia visual 03 no tienen origen registrado.
+- **Documentación:** [biblioteca de diseño](../01_contexto_y_fuentes/biblioteca_diseno/README.md) y [licencias de la app](../06_desarrollo_y_factibilidad/app-android/licencias/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-063 a D-066
+
+- **Qué cambió:** se registraron el prototipo Android con salida provisional, las varias aplicaciones bajo un límite, el reconocimiento autodeclarado y el retiro de obras protegidas; D-058 se marcó como no ejecutada.
+- **Cómo era antes:** el registro terminaba en D-062 (16 de septiembre) y D-058 seguía presentando la compra de iTag como puerta vigente.
+- **Por qué se decidió:** esas decisiones ya estaban aplicadas en la app y en los documentos, pero no tenían una entrada que explicara fundamento, límite y condición de revisión.
 
 ### 2026-09-16 — D-062
 
