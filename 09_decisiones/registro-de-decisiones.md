@@ -696,7 +696,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-071 — Suena donde empieza (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-069.
+- **Estado:** su centro (el sonido que sale del lugar) fue reemplazado el mismo día por D-072, porque el autor observó que se centraba en el objeto y no en lo que Relevo es. D-072 conserva su logotipo, color, tipografía, etiqueta de lugar y firma sonora. Reemplazaba a D-069.
 - **Decisión propuesta:**
   - *Idea y verbal*: idea de marca «No falta voluntad. Falta lugar»; firma «Suena donde empieza»; descriptor «Un recordatorio que preparas en el teléfono y suena en el lugar de tu actividad»; relato en cinco momentos con final abierto.
   - *Nombre*: las acepciones de «relevar» como resaltar y como liberar de un peso, sin metáforas de carrera ni de turno.
@@ -720,7 +720,39 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Implementación pendiente si se aprueba:** campo de lugar en la app; firma sonora en lugar del tono actual, decidido antes del testeo 2.6; fuentes, paleta e ícono; reescritura del documento 14; sesión fotográfica propia.
 - **Documentación:** [marca «Suena donde empieza»](../10_recursos_visuales/19_marca-suena-donde-empieza-2026-09-25.md) y [materiales](../10_recursos_visuales/marca-suena-donde-empieza/README.md).
 
+## D-072 — Antes de que sea después (plataforma de marca, propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062.
+- **Decisión propuesta:**
+  - *Qué es Relevo*: trata de lo que la persona quería hacer y del momento en que todavía puede participar en su decisión; el objeto, el sonido y la app son el medio.
+  - *Verdad de partida*: «Nos damos cuenta después».
+  - *Idea*: «Del después al todavía».
+  - *Postura*: «Seguir también es elegir».
+  - *Firma*: «Antes de que sea después»; se mantiene el descriptor «Un recordatorio físico que preparas desde el teléfono».
+  - *Relato*: cuatro momentos (después, por qué, Relevo, todavía); el objeto aparece en una sola frase.
+  - *Recurso*: frases que empiezan por «todavía» y nombran una actividad concreta.
+  - *Se mantiene de D-071*: logotipo, color, tipografía, etiqueta de lugar y firma sonora.
+- **Fundamento:**
+  - *Verdad de partida*: capítulos 1, 3 y 7 de la memoria; Montag et al. (2019) y de Segovia Vicente et al. (2024).
+  - *Idea*: memoria prospectiva (McDaniel & Einstein, 2000).
+  - *Postura*: Tonietto et al. (2021), Smit et al. (2019) y el usuario límite.
+  - *Método*: posicionamiento de Keller et al. (2002) e identidad de Kapferer (2012).
+- **Alternativas:** D-071 (sonido del lugar como centro), D-069 (la coma), la frase vigente «Hazle lugar a lo que quieres hacer» (D-062) y «Todavía estás a tiempo» como firma (se usa en el relato, pero es común en promociones).
+- **Condición de revisión:**
+  - comprensión de la firma sin explicación;
+  - que «seguir también es elegir» no se lea como permiso para no usar Relevo, ni como ironía;
+  - coherencia con la app en la pauta 2.6.
+- **Implementación pendiente si se aprueba:** guía de comunicación, documento 14 y la frase de marca del capítulo 11 de la memoria.
+- **Documentación:** [plataforma de marca](../10_recursos_visuales/20_plataforma-antes-de-que-sea-despues-2026-09-25.md) y [lámina](../10_recursos_visuales/marca-antes-de-que-sea-despues/lamina-antes-de-que-sea-despues-2026-09-25.html).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-072
+
+- **Qué cambió:** se registró la plataforma «Antes de que sea después» (D-072) y se marcó el centro de D-071 como reemplazado.
+- **Cómo era antes:** D-071 ponía en el centro el sonido que sale del lugar de la actividad.
+- **Por qué se decidió:** el autor observó que las propuestas se centraban en el objeto, su sonido y su luz, y no en lo que Relevo es; la aprobación sigue siendo suya.
 
 ### 2026-09-25 — D-070 y D-071
 

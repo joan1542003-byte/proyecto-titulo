@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** la propuesta [«Suena donde empieza»](19_marca-suena-donde-empieza-2026-09-25.md) ([D-071](../09_decisiones/registro-de-decisiones.md)) reemplaza a las anteriores (D-067, D-068 y D-069). Parte de la decisión del autor de no usar luz por ahora (D-070): la señal es un sonido que sale del lugar de la actividad. Propone una firma sonora propia, el logotipo «relevo» en Radio Canada, la etiqueta de lugar como recurso gráfico y tinta y papel con azul pasta. Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan suspendidas por D-070.
+> **Revisión en curso (25 de septiembre de 2026):** la [plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) ([D-072](../09_decisiones/registro-de-decisiones.md)) propone centrar la marca en lo que Relevo hace: que lo que la persona quería hacer vuelva mientras todavía puede hacerlo, con la decisión abierta. Conserva las piezas visuales de la [propuesta D-071](19_marca-suena-donde-empieza-2026-09-25.md) (logotipo «relevo» en Radio Canada, paleta sin luz, etiqueta de lugar y firma sonora). Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan suspendidas por D-070.
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso de D-072
+
+- **Qué cambió:** el aviso remite a la plataforma D-072.
+- **Cómo estaba antes:** remitía a D-071.
+- **Por qué:** el autor pidió que la marca hablara de lo que Relevo es y no del objeto.
 
 ### 2026-09-25 — Aviso de D-070 y D-071
 
