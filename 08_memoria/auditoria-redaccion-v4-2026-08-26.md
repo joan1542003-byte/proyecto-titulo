@@ -27,32 +27,32 @@ La memoria v4 recupera la progresión narrativa del cierre del primer semestre y
 
 ## Control de extensión
 
-**Objetivo del autor:** aproximadamente 15.000 palabras del texto académico, sin bibliografía. El segmento operativo elegido comprende preliminares y capítulos 1–13; el registro de cambios es documentación administrativa y también se excluye. La versión del 25 de septiembre, después de la revisión completa de redacción, contiene **15.697 palabras** en ese segmento. La reducción inicial de la v4 llevó el texto de 17.920 a 15.480 palabras.
+**Objetivo del autor:** aproximadamente 15.000 palabras del texto académico, sin bibliografía. El segmento operativo elegido comprende preliminares y capítulos 1–13; el registro de cambios es documentación administrativa y también se excluye. La versión del 25 de septiembre, después de verificar fuentes y simplificar el lenguaje, contiene **16.174 palabras** en ese segmento. Supera el objetivo aproximado del autor porque se explicaron términos para la comisión, y sigue dentro del rango institucional de 15.000 a 20.000. La reducción inicial de la v4 llevó el texto de 17.920 a 15.480 palabras.
 
 El método se mantiene: separación por espacios en blanco del Markdown sin renderizar (`str.split` de Python). Incluye títulos, citas y texto de tablas; los símbolos de Markdown separados por espacios también pueden contarse como unidades. Por eso es un control editorial reproducible y aproximado, no una equivalencia exacta con el contador de Word.
 
 | Segmento | Delimitación | Palabras | Relación con el objetivo |
 | --- | --- | ---: | --- |
-| Preliminares | Inicio hasta antes de `# 1. Motivación personal` | 784 | Incluidos. |
-| Capítulos 1–13 | Desde `# 1. Motivación personal` hasta antes de `# 14. Referencias` | 14.913 | Incluidos. |
-| **Texto académico** | Inicio hasta antes de referencias | **15.697** | **Conteo utilizado para el límite aproximado.** |
-| Bibliografía | Desde referencias hasta antes de `# Glosario` | 1.538 | Excluida. |
-| Glosario | Desde `# Glosario` hasta antes de `## Registro de cambios` | 590 | Excluido. |
-| Registro administrativo | Desde `## Registro de cambios` hasta el final | 5.887 | Excluido. |
-| Archivo completo | Todo el Markdown | 23.712 | No equivale a la extensión académica. |
+| Preliminares | Inicio hasta antes de `# 1. Motivación personal` | 808 | Incluidos. |
+| Capítulos 1–13 | Desde `# 1. Motivación personal` hasta antes de `# 14. Referencias` | 15.366 | Incluidos. |
+| **Texto académico** | Inicio hasta antes de referencias | **16.174** | **Conteo utilizado para el límite aproximado.** |
+| Bibliografía | Desde referencias hasta antes de `# Glosario` | 1.535 | Excluida. |
+| Glosario | Desde `# Glosario` hasta antes de `## Registro de cambios` | 600 | Excluido. |
+| Registro administrativo | Desde `## Registro de cambios` hasta el final | 6.447 | Excluido. |
+| Archivo completo | Todo el Markdown | 24.756 | No equivale a la extensión académica. |
 
-La [pauta institucional documentada](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md) recomienda 15.000–20.000 palabras y rechaza el relleno. Este control adopta la delimitación anterior para responder a la petición del autor. Los capítulos 1–13 por sí solos contienen 14.913; no se afirma que alcancen 15.000 si se excluyen también los preliminares. Antes de una entrega formal se deberá aplicar el criterio de cómputo que confirme la institución.
+La [pauta institucional documentada](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md) recomienda 15.000–20.000 palabras y rechaza el relleno. Este control adopta la delimitación anterior para responder a la petición del autor. Los capítulos 1–13 por sí solos contienen 15.366; no se afirma que alcancen 15.000 si se excluyen también los preliminares. Antes de una entrega formal se deberá aplicar el criterio de cómputo que confirme la institución.
 
 Para los límites por apartado se cuenta solo su prosa: se excluyen encabezados, palabras clave y el apartado siguiente. El resumen y el abstract mantienen correspondencia de contenido. La tabla usa ese criterio uniforme, que reemplaza los conteos aproximados previos.
 
 | Apartado con límite explícito | Palabras de prosa | Rango requerido | Resultado |
 | --- | ---: | ---: | --- |
-| Resumen | 286 | 200–300 | Cumple. |
-| Abstract | 277 | 200–300 | Cumple. |
+| Resumen | 298 | 200–300 | Cumple. |
+| Abstract | 289 | 200–300 | Cumple. |
 | Motivación personal | 163 | 100–300 | Cumple. |
-| Introducción | 646 | 600–1.200 | Cumple. |
-| Planteamiento del problema | 655 | 400–800 | Cumple. |
-| Justificación | 330 | 300–600 | Cumple. |
+| Introducción | 648 | 600–1.200 | Cumple. |
+| Planteamiento del problema | 679 | 400–800 | Cumple. |
+| Justificación | 329 | 300–600 | Cumple. |
 
 El recorte concentra las explicaciones repetidas entre antecedentes, marco teórico, referentes y propuesta. Conserva íntegros los preliminares y los capítulos 1–4, las tablas, la bibliografía, la pregunta de investigación, la hipótesis y los umbrales de decisión. Los ejemplos y definiciones restantes sostienen la comprensión del argumento.
 
@@ -112,6 +112,12 @@ La comprobación de navegación revisa rutas locales y los destinos de los nuevo
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Conteo tras verificar fuentes y simplificar el lenguaje
+
+- **Cambio:** 16.174 palabras académicas, 15.366 en capítulos 1–13, resumen de 298, *abstract* de 289, introducción de 648, planteamiento de 679 y justificación de 329. Se declara que el total supera el objetivo aproximado de 15.000 y sigue dentro del rango institucional.
+- **Versión anterior:** 15.697, 14.913, 286, 277, 646, 655 y 330.
+- **Motivo:** se explicaron términos técnicos para que la comisión entienda el texto y se precisaron fuentes. El resumen queda a dos palabras de su máximo; cualquier agregado futuro debe compensarse.
 
 ### 2026-09-25 — Conteo tras la revisión completa de redacción
 

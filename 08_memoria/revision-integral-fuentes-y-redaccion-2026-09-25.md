@@ -107,6 +107,30 @@ El autor pidió revisar cada página para que la memoria esté bien escrita, se 
 
 También se precisaron Kirsh (1995), *The Tangible Reminder* y Smit et al. (2019), se explicaron términos al primer uso y se corrigieron el orden de dos referencias y dos entradas del glosario. El detalle está en el registro de cambios de la [memoria](memoria-vigente-v4.md). La extensión queda en 15.443 palabras.
 
+## Cuarta revisión: fuentes, APA 7 y lenguaje claro
+
+El autor pidió comprobar otra vez que las fuentes y las citas sean reales y correctas, que el APA 7 esté bien aplicado y que la comisión entienda todo sin términos complejos.
+
+**Método.** Se consultaron de nuevo en Crossref los 33 DOI y se compararon autores, año, título, revista, volumen, número y páginas. Se abrieron las 31 direcciones web y se comparó el título de cada página. Las cifras atribuidas se contrastaron con los resúmenes oficiales (Crossref y OpenAlex) o con el texto completo de acceso abierto: Lyngs et al. (2019) en arXiv, Tonietto et al. (2021) en la versión de los autores y el informe de Subtel en su PDF oficial. Un script comprobó que cada cita tenga su referencia con el mismo año y que las 64 referencias estén citadas.
+
+| Hallazgo | Evidencia | Corrección |
+| --- | --- | --- |
+| La dirección de Apple llevaba a la página de horarios de Tiempo de uso, no a la página citada. | La página `iphb0c7313c9` se titula *Set Screen Time Schedules and Time Allowances*; la guía general es `iphbfa595995`, hoy titulada *Set up Screen Time for yourself on iPhone*. | Dirección, título y fecha de consulta actualizados. |
+| Lyngs et al. (2019) se describían con proporciones vagas. | Texto completo: 74 % de las herramientas bloqueaba o quitaba distracciones y 35 % ayudaba a avanzar hacia una meta. | «Tres de cada cuatro» y «alrededor de un tercio». |
+| Pause Point «ofrecía elegir otra actividad». | El anuncio sugiere respirar, fijar un temporizador, mirar fotos o pasar a otra aplicación, como un audiolibro. | Se describe con esas opciones. |
+| *The Tangible Reminder* se describía para «citas y plazos». | El resumen habla de citas y avisos de eventos próximos. | Se retira «plazos». |
+| Lally et al. (2010) se citaba con «automaticidad» sin explicar. | Mediana de 66 días y rango de 18 a 254 días para alcanzar el 95 % del nivel máximo de automatismo. | Se explica en palabras simples con el rango. |
+| Autor del repositorio BleenyButton. | GitHub y el sitio de la fundación usan «AsTeRICS Foundation». | Se corrige el nombre. |
+| Keller et al. (2002). | PubMed registra las páginas 80–86 y 125. | Se añade la página 125. |
+| Monge Roffarello y De Russis (2023). | ACM registra el artículo 53. APA 7 usa el número de artículo en lugar del rango de páginas. | Se retira «1–66». |
+| Sohn et al. (2005). | APA 7 no pide la serie editorial en capítulos de libros. | Se retira «Lecture Notes in Computer Science, Vol. 3660». |
+| Seeed Studio (2026). | La página indica su última actualización el 16 de septiembre de 2026. | Se agrega la fecha completa. |
+| Tablas y figura. | APA 7 pone el número en negrita y el título en cursiva. | Se aplican las negritas. |
+
+Todas las demás referencias coinciden con sus fuentes. Las cifras citadas (1.315 personas, 34 revisiones, 28 intervenciones, 1.039 usuarios, 526 participantes, 63 de 138, 96,6 % y 99,1 %) aparecen en las fuentes. La convención `y` en citas narrativas y `&` en citas entre paréntesis y en la lista se mantiene según APA 7.
+
+**Lenguaje.** Se revisó el texto completo para un lector sin formación en psicología, informática o investigación. Se reemplazaron o explicaron, entre otros, «heterogénea», «corpus», «inferir», «representatividad estadística», «causalidad», «precompromiso» (que aparecía antes de su definición), «fricción» (que aparecía en la justificación antes de definirse), «automaticidad», «habituación», «seudónimos», «compila», «emulador», «iteración correctiva», «intrusión», «capa» y «trazabilidad». La extensión sube a 16.174 palabras, dentro del rango institucional.
+
 ## Problemas pendientes y su estado
 
 1. **Libros completos con derechos de autor en un repositorio público.** Resuelto en la rama el mismo día: se retiraron los PDF de Norman, Isaacson, Albers y Munari, porque ninguno tiene una edición gratuita legal; se conservan los resúmenes propios (D-066). Los archivos siguen en el historial de Git; eliminarlos por completo exige reescribir el historial de `main`.
@@ -115,11 +139,17 @@ También se precisaron Kirsh (1995), *The Tangible Reminder* y Smit et al. (2019
 4. **Recursos de terceros sin procedencia.** Los marcos de iPhone y Pixel del tablero de wireframes y la fotografía de la referencia visual 03 no tienen origen registrado; se documentó el problema en sus README.
 5. **Precios y disponibilidad comercial.** Los precios citados en el capítulo 8 son observaciones de agosto de 2026. Coinciden con los sitios actuales en los casos de Brick y Focusaur, pero no se pueden verificar hacia atrás.
 6. **Similitud textual.** Si la institución exige un informe de similitud (por ejemplo, Turnitin), debe ejecutarse sobre la versión final diagramada.
-7. **Luz y sonido.** El autor decidió no usar luz por ahora (D-070), el feedback del 2 de septiembre pidió luz y sonido (F02-17), y la memoria sigue describiendo ambos. Falta decidir si D-070 alcanza al objeto y a la memoria.
+7. **Luz y sonido.** Resuelto: el autor decidió que el objeto emita solo sonido (D-070 ampliada y D-078), y la memoria lo describe así. Como el feedback del 2 de septiembre pidió luz y sonido (F02-17) y algunas personas entrevistadas pidieron señales visuales, la memoria lo declara como límite.
 8. **Frase de marca.** El capítulo 11 conserva la frase vigente de D-062; si se aprueba D-073, debe reemplazarse.
 9. **Denominación del título y palabras clave.** La portada sigue pidiendo confirmar la denominación oficial y la mención. La pauta de la Biblioteca pide destacar de 2 a 3 términos en el resumen; la memoria, como sus versiones anteriores, usa cuatro palabras clave.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Cuarta revisión
+
+- **Qué cambió:** se agregó la cuarta revisión, con fuentes vueltas a verificar, correcciones de APA 7 y lenguaje claro. El pendiente sobre luz y sonido pasa a resuelto.
+- **Cómo estaba antes:** el documento terminaba en la tercera revisión y decía que la memoria seguía describiendo luz y sonido.
+- **Por qué:** el autor pidió comprobar fuentes, citas y APA 7, y que la comisión entienda el texto; la memoria ya describe una señal solo sonora.
 
 ### 2026-09-25 — Tercera revisión
 

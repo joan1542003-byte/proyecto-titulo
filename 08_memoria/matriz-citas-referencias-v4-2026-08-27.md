@@ -21,7 +21,7 @@ La convención de autoría se mantiene según APA 7: `y` integra los apellidos e
 | Apple Developer | s. f.-a | Sí | Sí | Conforme |
 | Apple Developer | s. f.-b | Sí | Sí | Conforme |
 | Apple Developer | s. f.-c | Sí | Sí | Conforme |
-| Asterics Foundation | s. f. | Sí | Sí | Conforme |
+| AsTeRICS Foundation | s. f. | Sí | Sí | Conforme |
 | Biedermann et al. | 2021 | Sí | Sí | Conforme |
 | Brick LLC | s. f.-a | Sí | Sí | Conforme |
 | Brick LLC | s. f.-b | Sí | Sí | Conforme |
@@ -97,6 +97,12 @@ Este control verifica correspondencia y consistencia formal interna; desde el 25
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Segunda verificación y formato APA
+
+- **Cambio:** la fila del repositorio BleenyButton usa el nombre de su autor, «AsTeRICS Foundation». La correspondencia se volvió a comprobar: 64 referencias, todas citadas, y ninguna cita sin referencia.
+- **Cómo estaba antes:** «Asterics Foundation».
+- **Por qué:** así escribe su nombre la fundación en su sitio y en GitHub; la memoria se corrigió en la misma revisión.
 
 ### 2026-09-25 — Verificación externa de las fuentes
 

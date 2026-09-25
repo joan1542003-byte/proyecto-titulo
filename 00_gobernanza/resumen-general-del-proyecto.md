@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
 
-La fecha de corte es el 25 de septiembre de 2026. La memoria contiene unas 15.700 palabras de texto académico, sin bibliografía ni registro de cambios, y sus 64 referencias fueron verificadas ese día ([revisión integral](../08_memoria/revision-integral-fuentes-y-redaccion-2026-09-25.md)). Para una lectura más breve del estado, véase el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
+La fecha de corte es el 25 de septiembre de 2026. La memoria contiene unas 16.200 palabras de texto académico, sin bibliografía ni registro de cambios, y sus 64 referencias fueron verificadas ese día ([revisión integral](../08_memoria/revision-integral-fuentes-y-redaccion-2026-09-25.md)). Para una lectura más breve del estado, véase el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
 
 ## El objetivo del proyecto
 
@@ -258,6 +258,12 @@ Eso todavía no lo pueden responder la memoria, el wireframe ni la app por sí s
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. La prueba de aceptación de dos iTag, prevista antes del banco de la Issue #11, no se realizó; la prueba vigente es la de 21 días con un parlante comercial ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Extensión tras simplificar el lenguaje
+
+- **Qué cambió:** la extensión pasa a unas 16.200 palabras.
+- **Cómo estaba antes:** unas 15.700.
+- **Por qué:** la memoria explicó términos técnicos para la comisión.
 
 ### 2026-09-25 — Coherencia con la memoria revisada
 
