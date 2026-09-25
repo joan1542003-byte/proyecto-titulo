@@ -723,7 +723,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-072 — Antes de que sea después (plataforma de marca, propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062.
+- **Estado:** reemplazada el mismo día por D-073, porque el autor consideró que «Antes de que sea después» puede sonar confuso para la comisión. D-073 conserva su centro: lo que la persona quería hacer y el momento en que todavía puede hacerlo.
 - **Decisión propuesta:**
   - *Qué es Relevo*: trata de lo que la persona quería hacer y del momento en que todavía puede participar en su decisión; el objeto, el sonido y la app son el medio.
   - *Verdad de partida*: «Nos damos cuenta después».
@@ -746,7 +746,41 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Implementación pendiente si se aprueba:** guía de comunicación, documento 14 y la frase de marca del capítulo 11 de la memoria.
 - **Documentación:** [plataforma de marca](../10_recursos_visuales/20_plataforma-antes-de-que-sea-despues-2026-09-25.md) y [lámina](../10_recursos_visuales/marca-antes-de-que-sea-despues/lamina-antes-de-que-sea-despues-2026-09-25.html).
 
+## D-073 — Lo que querías hacer, a tiempo (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072.
+- **Decisión propuesta:**
+  - *Verbal*: firma «Lo que querías hacer, a tiempo»; principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
+  - *Recurso central*: el renglón («\_\_\_\_, a tiempo.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
+  - *Logotipo*: «relevo» en minúsculas, dibujado con Schibsted Grotesk 650; ícono «r».
+  - *Tipografía*: Schibsted Grotesk en todos los usos (reemplaza a Radio Canada).
+  - *Color*: tinta `#17181C`, papel `#F2F2EF`, azul pasta `#2A4BD7`, grafito, niebla, noche, azul claro y error; sin luz (D-070).
+  - *Fotografía*: el comienzo de la actividad, no el resultado.
+  - *Sonido*: firma sonora de D-071.
+- **Fundamento:**
+  - *Idea*: memoria prospectiva (McDaniel & Einstein, 2000), puntos de cierre (Montag et al., 2019), usuario límite y ocio sin culpa (Tonietto et al., 2021).
+  - *Renglón*: claves visibles (Norman, 2002), conexión con la propia historia (Escalas, 2004) y unidad en la variedad (Hekkert, 2006; Post et al., 2016).
+  - *Claridad y belleza*: fluidez de procesamiento (Reber et al., 2004) y MAYA (Hekkert et al., 2003).
+  - *Logotipo y color*: Ward et al. (2020), Xu et al. (2017), Elliot et al. (2007) y Labrecque y Milne (2012).
+  - *Diseño reciente*: crítica al *blanding* (D&AD) y tendencias de 2026 (It's Nice That; Creative Bloq). Se comparó con Headspace, Daylight y Light Phone.
+  - *Tipografía*: comparación de 38 familias libres.
+- **Alternativas:** D-072 («Antes de que sea después»), D-071, D-069, D-062; firmas «Todavía estás a tiempo» y «Acuérdate a tiempo» (esta última descartada por sonar a reproche); tipografías Radio Canada, Libre Franklin, Instrument Sans, Familjen Grotesk y Host Grotesk.
+- **Condición de revisión:**
+  - comprensión de la firma y del renglón sin explicación;
+  - que el azul no se lea como enlace;
+  - reconocimiento del ícono;
+  - legibilidad en la app con las tareas de la pauta 2.6.
+- **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; frase de marca del capítulo 11 de la memoria; guía de comunicación; documento 14; sesión fotográfica.
+- **Documentación:** [marca «Lo que querías hacer, a tiempo»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-073
+
+- **Qué cambió:** se registró la propuesta D-073 y D-072 se marcó como reemplazada.
+- **Cómo era antes:** D-072 proponía «Antes de que sea después» con Radio Canada.
+- **Por qué se decidió:** el autor consideró que esa firma podía confundir a la comisión y pidió una marca clara, hermosa y basada en el estudio del diseño reciente; la aprobación sigue siendo suya.
 
 ### 2026-09-25 — D-072
 

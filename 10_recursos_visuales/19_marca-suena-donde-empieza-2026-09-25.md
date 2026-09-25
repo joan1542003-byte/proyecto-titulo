@@ -1,6 +1,6 @@
 # Marca Relevo: «Suena donde empieza»
 
-**Estado:** su centro fue reemplazado por la [plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) (D-072), porque el autor observó que se centraba en el objeto y no en lo que Relevo es. Siguen propuestos, dentro de D-072, el logotipo, el color, la tipografía, la etiqueta de lugar y la firma sonora de este documento. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062). Reemplaza al [estudio desde cero](18_marca-relevo-desde-cero-2026-09-25.md) (D-069), que se conserva como antecedente.
+**Estado:** antecedente. El autor observó que se centraba en el objeto y no en lo que Relevo es; primero la reemplazó la [plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) (D-072) y luego [«Lo que querías hacer, a tiempo»](21_marca-relevo-a-tiempo-2026-09-25.md) (D-073). D-073 conserva la paleta y la firma sonora de este documento, y cambia el logotipo y la tipografía. Mientras no se apruebe una propuesta, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062).
 
 **Materiales:**
 
@@ -194,6 +194,12 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Referencia a D-073
+
+- **Qué cambió:** el estado indica que D-073 conserva la paleta y la firma sonora.
+- **Cómo estaba antes:** remitía solo a D-072.
+- **Por qué:** D-073 reemplazó a D-072.
 
 ### 2026-09-25 — Centro reemplazado por D-072
 

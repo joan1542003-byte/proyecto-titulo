@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** la [plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) ([D-072](../09_decisiones/registro-de-decisiones.md)) propone centrar la marca en lo que Relevo hace: que lo que la persona quería hacer vuelva mientras todavía puede hacerlo, con la decisión abierta. Conserva las piezas visuales de la [propuesta D-071](19_marca-suena-donde-empieza-2026-09-25.md) (logotipo «relevo» en Radio Canada, paleta sin luz, etiqueta de lugar y firma sonora). Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan suspendidas por D-070.
+> **Revisión en curso (25 de septiembre de 2026):** la propuesta [«Lo que querías hacer, a tiempo»](21_marca-relevo-a-tiempo-2026-09-25.md) ([D-073](../09_decisiones/registro-de-decisiones.md)) reemplaza a las anteriores. Propone el renglón con dos voces, el logotipo «relevo» en Schibsted Grotesk y una paleta de tinta, papel y azul pasta sin luz. Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan suspendidas por D-070.
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso de D-073
+
+- **Qué cambió:** el aviso remite a D-073.
+- **Cómo estaba antes:** remitía a D-072.
+- **Por qué:** D-073 reemplazó a D-072.
 
 ### 2026-09-25 — Aviso de D-072
 

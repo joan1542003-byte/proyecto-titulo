@@ -1,6 +1,6 @@
 # Plataforma de marca: «Antes de que sea después»
 
-**Estado:** propuesta registrada como D-072, pendiente de decisión del autor. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062). Reemplaza el centro de la [propuesta D-071](19_marca-suena-donde-empieza-2026-09-25.md) y conserva de ella el logotipo, el color, la tipografía, la etiqueta de lugar y la firma sonora.
+**Estado:** antecedente. El autor consideró que la firma puede sonar confusa para la comisión; la reemplaza [«Lo que querías hacer, a tiempo»](21_marca-relevo-a-tiempo-2026-09-25.md) (D-073), que conserva su centro. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062). Reemplaza el centro de la [propuesta D-071](19_marca-suena-donde-empieza-2026-09-25.md) y conserva de ella el logotipo, el color, la tipografía, la etiqueta de lugar y la firma sonora.
 
 **Lámina:** [lamina-antes-de-que-sea-despues-2026-09-25.html](marca-antes-de-que-sea-despues/lamina-antes-de-que-sea-despues-2026-09-25.html).
 
@@ -129,6 +129,12 @@ Woodside, A. G., Sood, S., & Miller, K. E. (2008). When consumers and brands tal
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Pasa a antecedente
+
+- **Qué cambió:** el estado remite a D-073.
+- **Cómo estaba antes:** era la propuesta D-072 pendiente.
+- **Por qué:** el autor pidió una firma más fácil de entender.
 
 ### 2026-09-25 — Creación
 
