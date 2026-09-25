@@ -26,8 +26,6 @@ import java.time.LocalDate
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.monitor.InstalledAppsRepository
 import com.example.relevo.monitor.UsageAccess
-import com.example.relevo.monitor.AppUsageSummary
-import com.example.relevo.monitor.UsageSummaryRepository
 import com.example.relevo.signal.SignalPlayer
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -48,7 +46,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val customActivityStore = CustomActivityStore(application)
   private val signalPlayer = SignalPlayer(application)
   private val appsRepository = InstalledAppsRepository(application)
-  private val usageSummaryRepository = UsageSummaryRepository(application)
   private val experiencePreferences = application.getSharedPreferences("relevo_experience", Application.MODE_PRIVATE)
   private val _reminder = MutableStateFlow(store.load())
   val reminder: StateFlow<Reminder> = _reminder.asStateFlow()
@@ -68,8 +65,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val _history = MutableStateFlow(historyStore.load())
   val history: StateFlow<List<HistoryEntry>> = _history.asStateFlow()
 
-  private val _todayUsage = MutableStateFlow<List<AppUsageSummary>>(emptyList())
-  val todayUsage: StateFlow<List<AppUsageSummary>> = _todayUsage.asStateFlow()
 
   private val _deletionStatus = MutableStateFlow<String?>(null)
   val deletionStatus: StateFlow<String?> = _deletionStatus.asStateFlow()
@@ -320,9 +315,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   fun refreshDashboard() {
     val history = historyStore.load()
-    val selectedPackages = (history.flatMap { it.appPackages } + _reminder.value.selectedApps.map { it.packageName }).filter { it.isNotBlank() }.toSet()
     _history.value = history
-    _todayUsage.value = usageSummaryRepository.today().filter { it.packageName in selectedPackages }
   }
 
   fun openUsageAccessSettings() {
@@ -490,7 +483,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         _reminder.value = fresh
         _history.value = emptyList()
         _customActivities.value = emptyList()
-        _todayUsage.value = emptyList()
         _deletionStatus.value = "Datos eliminados. Si quieres volver a usar Relevo, tendrás que aceptar de nuevo las condiciones."
       } else {
         _deletionStatus.value = "Se detuvo el registro, pero no pudimos confirmar la eliminación. Tus datos siguen en el teléfono. Puedes reintentar o escribir a joan1542003@gmail.com."

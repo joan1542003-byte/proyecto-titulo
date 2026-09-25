@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Noche de la marca D-073 en tema oscuro. -->
+    <style name="Theme.Relevo" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#111215</item>
+        <item name="android:windowSplashScreenBackground">#111215</item>
+    </style>
+</resources>
