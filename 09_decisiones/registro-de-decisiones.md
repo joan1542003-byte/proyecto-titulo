@@ -773,11 +773,21 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - legibilidad en la app con las tareas de la pauta 2.6.
 - **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; frase de marca del capítulo 11 de la memoria; guía de comunicación; documento 14; sesión fotográfica.
 - **Actualización del mismo día:** a pedido del autor, que Relevo no presiona se muestra en conductas (una sola señal, respuestas con el mismo peso, sin rachas) y no se anuncia en los textos. Antes, el relato y la voz decían «Relevo no insiste ni te reprocha nada».
+- **Sistema completo (mismo día):** a pedido del autor se añadieron:
+  - tono de comunicación, definido con las cuatro dimensiones de Moran (2016);
+  - 18 iconos propios (McDougall et al., 2000; Wiedenbeck, 1999);
+  - escalas y proporción de color;
+  - formas: renglón, ficha, margen, y esquinas de 12 dp sin píldoras;
+  - fondos: papel, tinta, azul y fotografía sin velo;
+  - texturas: sin texturas simuladas; la textura es real;
+  - retícula, movimiento y usos incorrectos del logotipo.
 - **Documentación:** [marca «Vuelve a lo que querías hacer»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
 
 ## Registro de cambios (disclaimer)
 
 ### 2026-09-25 — D-073
+
+- **Actualización del mismo día:** D-073 incorpora el sistema completo (tono, iconos, color extendido, formas, fondos, texturas, retícula y movimiento). Antes, D-073 no definía esos componentes.
 
 - **Actualización del mismo día:** la firma pasó a «Vuelve a lo que querías hacer», propuesta por el autor. Antes era «Lo que querías hacer, a tiempo», que no lo convenció.
 

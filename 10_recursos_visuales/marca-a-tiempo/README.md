@@ -6,6 +6,7 @@
 | --- | --- |
 | `lamina-relevo-a-tiempo-2026-09-25.html` | Manual de marca. Carga Schibsted Grotesk desde Google Fonts, las fotos desde `imagenes/` y el aviso desde `sonido/`. |
 | `logotipo/` | Logotipo «relevo» en tinta, papel y azul pasta; ícono «r» sobre tinta y sobre azul (512 px). SVG editables. |
+| `iconos/` | Juego de 18 iconos en SVG (retícula de 24, trazo de 1,75), con su nombre como título accesible. |
 | `imagenes/` | Tres fotos de muestra con la receta de corrección del proyecto. |
 | `sonido/firma-relevo.wav` | Copia de la firma sonora de D-071, generada con `../marca-suena-donde-empieza/sonido/firma-sonora.py`. |
 
@@ -26,6 +27,12 @@ Las actividades y horarios de la lámina son ejemplos, no datos de participantes
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Iconos y sistema completo
+
+- **Qué cambió:** se añadió la carpeta `iconos/`, y el manual incorpora formas, fondos, texturas, iconos, tono, retícula, movimiento y usos incorrectos.
+- **Cómo estaba antes:** no había iconos propios y el manual no definía esos componentes.
+- **Por qué:** el autor pidió desarrollar la marca en su totalidad.
 
 ### 2026-09-25 — Firma del autor
 

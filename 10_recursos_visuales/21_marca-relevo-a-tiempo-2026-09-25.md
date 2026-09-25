@@ -104,6 +104,8 @@ La marca tiene una frase fija y un espacio que llena cada persona: «Vuelve a \_
 | Área de respeto y tamaño mínimo | Al menos la altura de la «e» alrededor. No menos de 64 px de ancho en pantalla ni de 18 mm en papel. |
 | Ícono | «r» en papel sobre tinta, con variante sobre azul. Falta comprobar que se reconozca entre otros íconos. |
 
+**Usos incorrectos:** deformar, usar en contorno, agregar sombras o efectos, usar otros colores, poner tinta sobre azul, rotar, poner sobre fotos con detalle o reescribir con mayúscula inicial o con otra letra.
+
 ## 6. Tipografía
 
 **Schibsted Grotesk** en todos los usos:
@@ -138,7 +140,66 @@ Se eligió después de comparar 38 familias libres en tres usos: la palabra «re
 - **Accesibilidad:** todos los pares de texto superan 4,5:1 (World Wide Web Consortium, 2023).
 - **Sin luz:** no hay luz, brillos ni degradados (D-070).
 
-## 8. Fotografía
+### Escalas y proporción
+
+- **Neutros:** papel `#F2F2EF`, niebla `#E3E4E6`, línea `#C9CBCF`, gris `#9BA0A9`, grafito `#5B5F68`, pizarra `#33363D`, tinta `#17181C` y noche `#111215`. El gris tiene 2,34:1 sobre papel y no se usa para texto.
+- **Azules:** azul 50 `#EEF1FD` (selección), azul 100 `#DCE3FB` (foco suave), azul claro `#8CA6FF` (tema oscuro), azul pasta `#2A4BD7` (lo escrito) y azul 700 `#1E36A0` (presionado, 8,96:1).
+- **Proporción en una pieza:** papel 70 %, tinta 20 %, grises entre 5 y 8 %, azul entre 2 y 5 %. El azul se usa solo donde escribió la persona o en el foco de un control.
+- **Impresión:** dos tintas, negro y azul. La equivalencia Pantone se fija con una prueba de impresión.
+
+## 8. Formas
+
+Relevo toma sus formas del papel con que la gente anota lo que quiere hacer.
+
+| Forma | Regla |
+| --- | --- |
+| Renglón | La forma de la marca: una línea recta con el grosor de un trazo de la letra, bajo lo que escribe la persona. |
+| Ficha | Rectángulo recto. La tarjeta del objeto mide 85,6 × 54 mm, el formato de una tarjeta de identidad; afiches y fotos, 4:5. |
+| Margen | Todo se alinea a la izquierda, con un margen amplio como el de un cuaderno. Nada va centrado, salvo el ícono. |
+| Esquinas | 0 en impresos; 12 dp en botones y campos de la app; 20 dp en paneles. Nunca botones en forma de píldora. |
+
+**No se usan:** círculos decorativos, manchas u otras formas orgánicas, ondas de sonido, 3D ni iconos gigantes como ilustración.
+
+## 9. Fondos
+
+Un solo fondo por pieza, sin patrones, degradados, desenfoques ni efecto de vidrio.
+
+| Fondo | Uso |
+| --- | --- |
+| Papel | Fondo general: app, memoria y textos largos. |
+| Tinta | Afiches, caja, examen y tema oscuro. |
+| Azul pasta | Solo piezas cortas, de ocho palabras o menos. Nunca en pantallas de la app. |
+| Fotografía | El texto va fuera de la foto, sobre papel. Sin velos ni degradados encima de la imagen. |
+
+## 10. Texturas y materiales
+
+Sin texturas simuladas: la textura es real.
+
+| Soporte | Decisión | Por qué |
+| --- | --- | --- |
+| Pantalla | Colores planos. Sin grano, papel falso, ruido ni sombras decorativas. | La app se lee en segundos y con cualquier luz. El grano y la fotocopia son tendencia en 2026 (It's Nice That, 2026); imitarlos envejece rápido. |
+| Fotografía | El grano natural de la foto; la receta añade como máximo un 2 %. | Unifica fotos de distintas cámaras sin disfrazarlas. |
+| Impresos | Papel no estucado, sin brillo, a dos tintas. Gramajes por definir con la imprenta. | Se parece a una libreta, se puede escribir encima con lápiz pasta y no refleja. |
+| Objeto | Superficie mate en tinta o papel. La forma sigue abierta. | El producto y la marca se reconocen juntos cuando repiten los mismos rasgos (Karjalainen & Snelders, 2010). |
+| La mano | La tarjeta del objeto se escribe a mano con lápiz pasta azul. | Es la única textura gráfica de la marca, y es de la persona. Toma la vuelta a lo hecho a mano de 2026 en su forma honesta (Creative Bloq, 2026). |
+
+## 11. Iconos
+
+Juego propio de 18 iconos en la [carpeta `iconos/`](marca-a-tiempo/iconos/):
+
+- actividad, cómo empieza, lugar, después de cuánto uso, apps elegidas, dónde suena y probar sonido;
+- editar, cancelar, comencé, la dejé para después y cambié de idea;
+- ajustes, privacidad, conexión, batería del objeto, información y error.
+
+**Reglas:**
+
+- **Dibujo:** retícula de 24 × 24 con 2 de margen; trazo de 1,75 con terminaciones rectas, como Schibsted Grotesk; sin relleno, salvo para marcar un estado.
+- **Metáforas concretas y de la casa:** una mesa para el lugar, un parlante, una escalera para el primer paso. Los iconos concretos se reconocen antes (McDougall et al., 2000).
+- **Siempre con palabra al lado:** la etiqueta ayuda a aprender y recordar la función (Wiedenbeck, 1999).
+- **Nunca** campanas, escudos, corazones, hojas ni cerebros: son códigos de alarma o de bienestar.
+- **Área táctil:** al menos 48 × 48 dp (Android Developers, s. f.).
+
+## 12. Fotografía
 
 Se fotografía el comienzo, no el resultado: lo que está esperando, con su primer paso a la vista.
 
@@ -148,7 +209,41 @@ Se fotografía el comienzo, no el resultado: lo que está esperando, con su prim
 
 Las fotos de la lámina son de muestra (CC0); la identidad final necesita una sesión propia en hogares reales, con consentimiento.
 
-## 9. Voz
+## 13. Tono de comunicación
+
+Cercano y claro, sin apuro y sin fiesta. Se define con las cuatro dimensiones de Moran (2016), cuyas pruebas mostraron que el tono cambia cuán amistosa y formal se percibe una marca.
+
+| Dimensión | Posición | En la práctica |
+| --- | --- | --- |
+| Formal ↔ casual | Más casual | Tutea y habla como una persona, sin jerga ni diminutivos. |
+| Serio ↔ divertido | Serio | Sin chistes: el tiempo y las ganas de la persona no son material de humor. |
+| Respetuoso ↔ irreverente | Respetuoso | Nunca se burla del teléfono ni de quien lo usa. |
+| Sobrio ↔ entusiasta | Sobrio | No celebra ni exclama; informa y pregunta. |
+
+**Reglas:**
+
+- tú, presente y frases de doce palabras o menos en la app;
+- verbos concretos (abrir, sacar, escribir), no «mejorar», «optimizar» ni «desconectar»;
+- sin signos de exclamación ni emojis;
+- preguntas cuando la persona decide;
+- nombrar actividades; los minutos aparecen solo en la condición que eligió la persona.
+
+- **Palabras de Relevo:** actividad, empezar, volver, lugar, sonar, decidir, preparar, después.
+- **Palabras que no usa:** productividad, hábito, racha, meta, desconexión, detox, adicción, control, «recupera tu tiempo», «mejor versión».
+
+**Textos por momento (ejemplos de redacción):**
+
+| Momento | Texto |
+| --- | --- |
+| Inicio vacío | Todavía no hay nada preparado. ¿Qué quieres hacer hoy? |
+| Permiso de uso | Para saber cuándo sonar, Relevo necesita ver cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas. |
+| Preparar | ¿Qué quieres hacer? · ¿Cómo empezarás? · ¿Dónde sonará? |
+| Probar sonido | Así va a sonar. ¿Lo escuchaste? |
+| Esperando | Vuelve a leer. Sonará junto al sillón después de 40 min en las apps elegidas. |
+| Aviso en el teléfono | Leer · Abrir el libro en el marcador |
+| Respuesta | ¿Qué decidiste? · Comencé la actividad · La dejé para después · Cambié de idea |
+| Error | No sonó en el parlante. Revisa que esté encendido o elige el teléfono. |
+
 
 | Así | Así no |
 | --- | --- |
@@ -166,7 +261,17 @@ Que Relevo no presiona es parte de la marca, pero no se anuncia. Frases como «s
 - no hay rachas, puntajes ni recordatorios de lo que no se hizo;
 - el tono es el mismo si la persona empieza o si sigue en lo que estaba.
 
-## 10. Aplicaciones de la lámina
+## 14. Retícula y movimiento
+
+- **App:** base de 4 dp, márgenes de 20 dp, texto de contenido de 17 sp o más y áreas táctiles de 48 dp o más. Una acción principal por pantalla, abajo.
+- **Afiche 4:5:** margen del 7 % del ancho y cuatro columnas. La frase va arriba a la izquierda y el logotipo abajo a la izquierda.
+- **Memoria y examen:** según la pauta UDP, con el mismo margen izquierdo amplio.
+- **Movimiento:**
+  - la única animación de marca es escribir: lo de la persona aparece sobre el renglón, en 450 ms;
+  - las transiciones duran de 200 a 250 ms, sin rebotes, confeti ni vibraciones de premio;
+  - si el teléfono pide reducir el movimiento, no hay animación (World Wide Web Consortium, 2023).
+
+## 15. Aplicaciones de la lámina
 
 - **Afiches (tres):**
   - con foto: «Vuelve a leer.»;
@@ -186,11 +291,11 @@ Que Relevo no presiona es parte de la marca, pero no se anuncia. Frases como «s
 
   La forma del objeto sigue abierta.
 
-## 11. Sonido
+## 16. Sonido
 
 Relevo no usa luz por ahora (D-070). El aviso es la [firma sonora de D-071](19_marca-suena-donde-empieza-2026-09-25.md): dos notas descendentes, una vez, pensadas para no sonar urgentes y para dejar saber de dónde vienen. Es parte del producto, no el centro de la marca.
 
-## 12. Pendiente
+## 17. Pendiente
 
 - Decisión del autor sobre D-073.
 - Si se aprueba:
@@ -203,6 +308,8 @@ Relevo no usa luz por ahora (D-070). El aviso es la [firma sonora de D-071](19_m
 - Definir el alcance de D-070 sobre la memoria y el objeto.
 
 ## Referencias
+
+Android Developers. (s. f.). *Make apps more accessible*. Recuperado el 25 de septiembre de 2026 de https://developer.android.com/guide/topics/ui/accessibility/apps
 
 Creative Bloq. (2026). *Texture, warmth and tactile rebellion: The big graphic design trends for 2026*. Recuperado el 25 de septiembre de 2026 de https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026
 
@@ -222,13 +329,19 @@ It's Nice That. (2024). *Headspace overhauls visual identity to become mental he
 
 It's Nice That. (2026). *The graphic trends you'll want to bookmark for 2026*. Recuperado el 25 de septiembre de 2026 de https://www.itsnicethat.com/features/forward-thinking-graphic-trends-2026-graphic-design-120126
 
+Karjalainen, T.-M., & Snelders, D. (2010). Designing visual recognition for the brand. *Journal of Product Innovation Management, 27*(1), 6–22. https://doi.org/10.1111/j.1540-5885.2009.00696.x
+
 Labrecque, L. I., & Milne, G. R. (2012). Exciting red and competent blue: The importance of color in marketing. *Journal of the Academy of Marketing Science, 40*(5), 711–727. https://doi.org/10.1007/s11747-010-0245-y
 
 McDaniel, M. A., & Einstein, G. O. (2000). Strategic and automatic processes in prospective memory retrieval: A multiprocess framework. *Applied Cognitive Psychology, 14*(7), S127–S144. https://doi.org/10.1002/acp.775
 
+McDougall, S. J. P., de Bruijn, O., & Curry, M. B. (2000). Exploring the effects of icon characteristics on user performance: The role of icon concreteness, complexity, and distinctiveness. *Journal of Experimental Psychology: Applied, 6*(4), 291–306. https://doi.org/10.1037/1076-898X.6.4.291
+
 Mollerup, P. (2013). *Marks of excellence: The development and taxonomy of trademarks* (ed. rev. y ampl.). Phaidon.
 
 Montag, C., Lachmann, B., Herrlich, M., & Zweig, K. (2019). Addictive features of social media/messenger platforms and freemium games against the background of psychological and economic theories. *International Journal of Environmental Research and Public Health, 16*(14), 2612. https://doi.org/10.3390/ijerph16142612
+
+Moran, K. (2016). *The four dimensions of tone of voice*. Nielsen Norman Group. https://www.nngroup.com/articles/tone-of-voice-dimensions/
 
 Motta-Filho, M. A. (2021). Brand experience manual: Bridging the gap between brand strategy and customer experience. *Review of Managerial Science, 15*(5), 1173–1204. https://doi.org/10.1007/s11846-020-00399-9
 
@@ -244,6 +357,8 @@ Tonietto, G. N., Malkoc, S. A., Reczek, R. W., & Norton, M. I. (2021). Viewing l
 
 Ward, E., Yang, S., Romaniuk, J., & Beal, V. (2020). Building a unique brand identity: Measuring the relative ownership potential of brand identity element types. *Journal of Brand Management, 27*(4), 393–407. https://doi.org/10.1057/s41262-020-00187-6
 
+Wiedenbeck, S. (1999). The use of icons and labels in an end user application program: An empirical study of learning and retention. *Behaviour & Information Technology, 18*(2), 68–82. https://doi.org/10.1080/014492999119129
+
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wordmarks on brand perceptions. *Marketing Letters, 28*(3), 449–460. https://doi.org/10.1007/s11002-016-9415-0
@@ -251,6 +366,15 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sistema completo
+
+- **Qué cambió:**
+  - se desarrollaron tono de comunicación, iconos (18, con archivos SVG), escalas y proporción de color, formas, fondos, texturas y materiales, retícula y movimiento, y usos incorrectos del logotipo;
+  - el afiche con foto dejó de usar velo;
+  - los botones de la app pasaron de píldora a esquinas de 12 dp.
+- **Cómo estaba antes:** el manual definía logotipo, tipografía, color base, fotografía y voz, pero no iconos, formas, fondos ni texturas.
+- **Por qué:** el autor pidió desarrollar la marca en su totalidad.
 
 ### 2026-09-25 — Firma del autor: «Vuelve a lo que querías hacer»
 
