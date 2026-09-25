@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Lo que querías hacer, a tiempo»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes.
+**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -43,7 +43,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 18. [Marca Relevo desde cero](18_marca-relevo-desde-cero-2026-09-25.md) y sus [materiales](marca-desde-cero/README.md): lámina, logotipo, fotos y receta de imagen (antecedente)
 19. [Suena donde empieza](19_marca-suena-donde-empieza-2026-09-25.md) y sus [materiales](marca-suena-donde-empieza/README.md): lámina, firma sonora, logotipo y fotos (piezas visuales vigentes dentro de D-072)
 20. [Plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) y su [lámina](marca-antes-de-que-sea-despues/README.md) (antecedente)
-21. [Lo que querías hacer, a tiempo](21_marca-relevo-a-tiempo-2026-09-25.md) y su [manual](marca-a-tiempo/README.md)
+21. [Vuelve a lo que querías hacer](21_marca-relevo-a-tiempo-2026-09-25.md) y su [manual](marca-a-tiempo/README.md)
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -73,6 +73,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Firma del autor
+
+- **Qué cambió:** la propuesta D-073 se nombra por su nueva firma, «Vuelve a lo que querías hacer».
+- **Cómo estaba antes:** se nombraba «Lo que querías hacer, a tiempo».
+- **Por qué:** el autor cambió la firma.
 
 ### 2026-09-25 — Documento 21
 

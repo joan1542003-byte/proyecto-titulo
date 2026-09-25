@@ -1,6 +1,6 @@
 # Plataforma de marca: «Antes de que sea después»
 
-**Estado:** antecedente. El autor consideró que la firma puede sonar confusa para la comisión; la reemplaza [«Lo que querías hacer, a tiempo»](21_marca-relevo-a-tiempo-2026-09-25.md) (D-073), que conserva su centro. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062). Reemplaza el centro de la [propuesta D-071](19_marca-suena-donde-empieza-2026-09-25.md) y conserva de ella el logotipo, el color, la tipografía, la etiqueta de lugar y la firma sonora.
+**Estado:** antecedente. El autor consideró que la firma puede sonar confusa para la comisión; la reemplaza [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) (D-073), que conserva su centro. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062). Reemplaza el centro de la [propuesta D-071](19_marca-suena-donde-empieza-2026-09-25.md) y conserva de ella el logotipo, el color, la tipografía, la etiqueta de lugar y la firma sonora.
 
 **Lámina:** [lamina-antes-de-que-sea-despues-2026-09-25.html](marca-antes-de-que-sea-despues/lamina-antes-de-que-sea-despues-2026-09-25.html).
 

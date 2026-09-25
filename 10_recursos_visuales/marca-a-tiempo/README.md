@@ -1,4 +1,4 @@
-# Marca «Lo que querías hacer, a tiempo»: materiales
+# Marca «Vuelve a lo que querías hacer»: materiales
 
 **Estado:** propuesta D-073, pendiente de decisión del autor. El fundamento está en el [documento 21](../21_marca-relevo-a-tiempo-2026-09-25.md).
 
@@ -26,6 +26,12 @@ Las actividades y horarios de la lámina son ejemplos, no datos de participantes
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Firma del autor
+
+- **Qué cambió:** el título y el manual usan la firma «Vuelve a lo que querías hacer». La carpeta conserva su nombre para no romper enlaces.
+- **Cómo estaba antes:** la firma era «Lo que querías hacer, a tiempo».
+- **Por qué:** el autor cambió la firma.
 
 ### 2026-09-25 — Creación
 

@@ -1,4 +1,4 @@
-# Marca Relevo: «Lo que querías hacer, a tiempo»
+# Marca Relevo: «Vuelve a lo que querías hacer»
 
 **Estado:** propuesta registrada como D-073, pendiente de decisión del autor. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062). Reemplaza a D-072 y, dentro de ella, a los centros de D-069 y D-071. Mantiene la decisión de no usar luz (D-070), la paleta y la firma sonora.
 
@@ -51,13 +51,16 @@ Esta versión parte de tres condiciones:
 | Para qué | Para acordarte de lo que querías hacer mientras todavía puedes hacerlo. |
 | Cómo | Escribes la actividad y cómo empieza, dejas el objeto ahí y eliges después de cuánto uso del teléfono quieres que suene. |
 | Qué lo distingue | El aviso no llega al teléfono: suena en el lugar donde empieza lo que querías hacer. |
-| Firma | **Lo que querías hacer, a tiempo.** |
+| Firma | **Vuelve a lo que querías hacer.** (elegida por el autor) |
 | Principio | **Tú decides.** Puedes empezar o seguir en lo que estabas. |
 
-La firma usa dos palabras de la memoria:
+La firma la propuso el autor. Funciona por tres razones:
 
+- **«Volver a» dice dos cosas.** En español significa regresar a algo y también hacerlo otra vez. Las dos describen Relevo: la intención no desapareció (capítulo 3) y la actividad puede empezar de nuevo.
 - **«Querías».** La intención es previa y es de la persona (capítulos 1 y 7).
-- **«A tiempo».** Es lo que distingue a la memoria prospectiva: recordar en el momento en que todavía se puede actuar (McDaniel & Einstein, 2000; capítulo 2).
+- **Encaja con el renglón.** «Vuelve a \_\_\_\_.» se completa con un verbo: «Vuelve a leer.», «Vuelve a dibujar.».
+
+El momento oportuno, que la memoria prospectiva distingue de recordar después (McDaniel & Einstein, 2000), queda en el relato y no en la firma.
 
 «Tú decides» lleva a la marca el usuario límite (capítulo 7) y el ocio sin culpa (Tonietto et al., 2021).
 
@@ -65,12 +68,12 @@ La firma usa dos palabras de la memoria:
 
 1. **Casi siempre nos acordamos después.** Abres una app para descansar un rato y, al cerrarla, aparece lo que querías hacer.
 2. **No es que no quisieras.** Mientras un video sigue al otro, no llega ningún momento para preguntarte si quieres seguir (Montag et al., 2019).
-3. **Relevo te lo recuerda a tiempo.** Escribes qué quieres hacer y cómo empieza, y dejas el objeto en ese lugar. Cuando se cumple el tiempo que elegiste, suena ahí.
+3. **Relevo te lo recuerda mientras todavía puedes.** Escribes qué quieres hacer y cómo empieza, y dejas el objeto en ese lugar. Cuando se cumple el tiempo que elegiste, suena ahí.
 4. **Tú decides.** Puedes empezar o seguir en lo que estabas.
 
 ## 4. Recurso central: el renglón y las dos voces
 
-La marca tiene una frase fija y un espacio que llena cada persona: «\_\_\_\_\_\_\_\_, a tiempo.».
+La marca tiene una frase fija y un espacio que llena cada persona: «Vuelve a \_\_\_\_\_\_\_\_.».
 
 - **La línea** es la de un formulario, impresa en tinta.
 - **Lo que va encima** lo escribe quien usa Relevo, en azul pasta.
@@ -150,7 +153,7 @@ Las fotos de la lámina son de muestra (CC0); la identidad final necesita una se
 | Así | Así no |
 | --- | --- |
 | ¿Qué quieres hacer hoy? | Llevas 40 minutos en Instagram. |
-| Leer, a tiempo. | ¡Recupera tu tiempo! |
+| Vuelve a leer. | ¡Recupera tu tiempo! |
 | Sonó junto al libro. ¿Qué decidiste? | Vas 3 días seguidos. ¡No pierdas la racha! |
 | La dejaste para después. | Desconéctate para ser tu mejor versión. |
 
@@ -166,8 +169,8 @@ Que Relevo no presiona es parte de la marca, pero no se anuncia. Frases como «s
 ## 10. Aplicaciones de la lámina
 
 - **Afiches (tres):**
-  - con foto: «Leer, a tiempo.»;
-  - sobre papel: «Salir a caminar, a tiempo.»;
+  - con foto: «Vuelve a leer.»;
+  - sobre papel: «Vuelve a dibujar.»;
   - sobre tinta: el renglón vacío.
 - **App (tres pantallas):**
   - *Preparar:* los campos son renglones;
@@ -196,6 +199,7 @@ Relevo no usa luz por ahora (D-070). El aviso es la [firma sonora de D-071](19_m
   - reescribir la guía de comunicación y el documento 14;
   - actualizar el resumen breve.
 - Comprobar con personas que no conocen el proyecto que la frase y el renglón se entienden solos.
+- Revisar las actividades que cambian de sentido con «vuelve a» («vuelve a caminar», «vuelve a dormir») y decidir cómo las muestra la app.
 - Definir el alcance de D-070 sobre la memoria y el objeto.
 
 ## Referencias
@@ -247,6 +251,12 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Firma del autor: «Vuelve a lo que querías hacer»
+
+- **Qué cambió:** la firma pasó a «Vuelve a lo que querías hacer», elegida por el autor. El renglón se escribe «Vuelve a \_\_\_\_.» y los ejemplos, afiches, pantallas y piezas se ajustaron.
+- **Cómo estaba antes:** la firma era «Lo que querías hacer, a tiempo» y el renglón, «\_\_\_\_, a tiempo.».
+- **Por qué:** al autor no lo convenció «a tiempo»; entre las alternativas presentadas, propuso su propia frase.
 
 ### 2026-09-25 — Se nota, no se dice
 

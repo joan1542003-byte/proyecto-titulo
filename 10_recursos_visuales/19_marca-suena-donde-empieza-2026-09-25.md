@@ -1,6 +1,6 @@
 # Marca Relevo: «Suena donde empieza»
 
-**Estado:** antecedente. El autor observó que se centraba en el objeto y no en lo que Relevo es; primero la reemplazó la [plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) (D-072) y luego [«Lo que querías hacer, a tiempo»](21_marca-relevo-a-tiempo-2026-09-25.md) (D-073). D-073 conserva la paleta y la firma sonora de este documento, y cambia el logotipo y la tipografía. Mientras no se apruebe una propuesta, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062).
+**Estado:** antecedente. El autor observó que se centraba en el objeto y no en lo que Relevo es; primero la reemplazó la [plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) (D-072) y luego [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) (D-073). D-073 conserva la paleta y la firma sonora de este documento, y cambia el logotipo y la tipografía. Mientras no se apruebe una propuesta, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062).
 
 **Materiales:**
 

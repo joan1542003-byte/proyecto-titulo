@@ -746,13 +746,13 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Implementación pendiente si se aprueba:** guía de comunicación, documento 14 y la frase de marca del capítulo 11 de la memoria.
 - **Documentación:** [plataforma de marca](../10_recursos_visuales/20_plataforma-antes-de-que-sea-despues-2026-09-25.md) y [lámina](../10_recursos_visuales/marca-antes-de-que-sea-despues/lamina-antes-de-que-sea-despues-2026-09-25.html).
 
-## D-073 — Lo que querías hacer, a tiempo (propuesta)
+## D-073 — Vuelve a lo que querías hacer (propuesta)
 
 - **Fecha:** 2026-09-25.
 - **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072.
 - **Decisión propuesta:**
-  - *Verbal*: firma «Lo que querías hacer, a tiempo»; principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
-  - *Recurso central*: el renglón («\_\_\_\_, a tiempo.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
+  - *Verbal*: firma «Vuelve a lo que querías hacer», elegida por el autor (antes, «Lo que querías hacer, a tiempo»); principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
+  - *Recurso central*: el renglón («Vuelve a \_\_\_\_.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
   - *Logotipo*: «relevo» en minúsculas, dibujado con Schibsted Grotesk 650; ícono «r».
   - *Tipografía*: Schibsted Grotesk en todos los usos (reemplaza a Radio Canada).
   - *Color*: tinta `#17181C`, papel `#F2F2EF`, azul pasta `#2A4BD7`, grafito, niebla, noche, azul claro y error; sin luz (D-070).
@@ -773,11 +773,13 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - legibilidad en la app con las tareas de la pauta 2.6.
 - **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; frase de marca del capítulo 11 de la memoria; guía de comunicación; documento 14; sesión fotográfica.
 - **Actualización del mismo día:** a pedido del autor, que Relevo no presiona se muestra en conductas (una sola señal, respuestas con el mismo peso, sin rachas) y no se anuncia en los textos. Antes, el relato y la voz decían «Relevo no insiste ni te reprocha nada».
-- **Documentación:** [marca «Lo que querías hacer, a tiempo»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
+- **Documentación:** [marca «Vuelve a lo que querías hacer»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
 
 ## Registro de cambios (disclaimer)
 
 ### 2026-09-25 — D-073
+
+- **Actualización del mismo día:** la firma pasó a «Vuelve a lo que querías hacer», propuesta por el autor. Antes era «Lo que querías hacer, a tiempo», que no lo convenció.
 
 - **Actualización del mismo día:** se añadió a D-073 la regla «se nota, no se dice». Antes, el relato decía que Relevo no insiste ni reprocha; el autor pidió que eso no se mencionara.
 
