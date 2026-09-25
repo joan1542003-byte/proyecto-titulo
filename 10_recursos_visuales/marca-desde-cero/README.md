@@ -7,6 +7,7 @@
 | Archivo o carpeta | Qué es |
 | --- | --- |
 | `lamina-marca-desde-cero-2026-09-25.html` | Lámina visual del estudio: abre con el relato y termina con referencias. Carga Radio Canada desde Google Fonts y las fotos desde `imagenes/`. |
+| `rutas-desde-el-nombre-2026-09-25.html` | Bocetos de tres rutas que nacen del significado de «relevo» (A: pasar el testigo; B: volver a levantar; C: la zona de relevo), para que el autor elija cuál desarrollar. |
 | `logotipo/` | Logotipo «relevo,» en versión principal, sobre azul y noche; monograma «r,»; ícono de 512 px; la coma sola. SVG editables. |
 | `imagenes/` | Fotos de muestra con la receta de corrección (`tratada-*`), un original para comparar (`original-52`) y dos ejemplos de lo que se evita (`evitar-*`). |
 | `receta-imagen.py` | Guion que aplica la receta de corrección: `python3 receta-imagen.py entrada.jpg salida.jpg 4:5 0.5`. Requiere Pillow y NumPy. |
@@ -35,6 +36,12 @@ Las personas que aparecen en `tratada-75` y `evitar-05` no son participantes del
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Rutas desde el nombre
+
+- **Qué cambió:** se añadieron bocetos de tres rutas que nacen del significado del nombre.
+- **Cómo estaba antes:** la coma era la idea central, sin alternativas vinculadas al nombre.
+- **Por qué:** el autor consideró que la coma era un cliché y no se sentía «relevo»; se le presentan rutas para elegir antes de desarrollar una.
 
 ### 2026-09-25 — Coma propia y Radio Canada
 
