@@ -787,7 +787,47 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - un kit con componentes, dieciséis pantallas de la app y diez plantillas de presentación.
 - **Documentación:** [marca «Vuelve a lo que querías hacer»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
 
+## D-074 — Acompañar la continuidad sin patrones oscuros
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; diseño escrito, implementación pendiente.
+- **Decisión:** no adoptar el refuerzo tal como se planteó en clase (rachas, felicitar por usar menos una app, cuotas de uso). Acompañar la continuidad con reconocimiento de hechos conocidos, una ruta de actividades elegida por la persona, un regreso amable tras varios días y resúmenes opcionales. La «constancia elegida» (frecuencia que fija la persona, sin pérdida) se prueba como variante.
+- **Fundamento:** memoria (capítulos 6 y 9), [revisión sobre hábitos y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md), apoyo a la autonomía (Ryan & Deci, 2000) y patrones oscuros (Gray et al., 2018; Mathur et al., 2019).
+- **Condición de revisión:** que la prueba muestre presión, intrusión o falta de utilidad.
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
+## D-075 — Prueba de 21 días con evaluación integrada
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; consentimiento, protocolo, pauta y memoria por actualizar cuando lo pida.
+- **Decisión:** la prueba con participantes dura 21 días. Las preguntas se integran en la app: una por día como máximo, de un toque, que se pueden omitir, más un cierre el día 21.
+- **Límite:** 21 días permiten observar continuidad, carga y habituación a la señal; no bastan para afirmar que se formó un hábito (Lally et al., 2010).
+- **Antes:** el consentimiento vigente es por dos días.
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
+## D-076 — Perfil con intereses y ruta de actividades
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; diseño escrito, implementación pendiente.
+- **Decisión:** la app tiene perfil con nombre, una imagen prehecha e intereses. Los intereses proponen una ruta de pasos editables por actividad. El nombre y la imagen no salen del teléfono.
+- **Límite:** los intereses no son perfiles fijos de personas; las entrevistas respaldan actividades concretas, no tipos de usuario.
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
+## D-077 — Privacidad y bienvenida breves; botones con verbo
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; textos propuestos, implementación pendiente.
+- **Decisión:** la bienvenida y la política de privacidad se acortan; los datos se borran cuando la persona lo pide; las acciones llevan verbo y los destinos de navegación, sustantivo.
+- **Pendiente:** el consentimiento fija un plazo máximo de conservación (30 de diciembre de 2026). Conservar datos sin plazo debe revisarse con el profesor.
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-074 a D-077
+
+- **Qué cambió:** se registraron cuatro decisiones del autor sobre continuidad, prueba de 21 días, perfil y ruta, y textos breves.
+- **Cómo era antes:** las anotaciones de clase estaban analizadas, pero sin decisión del autor.
+- **Por qué:** el autor respondió a las anotaciones el 25 de septiembre y pidió anotarlas para trabajarlas después.
 
 ### 2026-09-25 — D-073
 

@@ -36,6 +36,7 @@ Si una función puede resolverse de igual manera mediante una notificación conv
 - [Memoria vigente v4](../08_memoria/memoria-vigente-v4.md)
 - [Alcance del primer prototipo y backlog](alcance-primer-prototipo-y-backlog-2026-09-07.md)
 - [Cierre del wireframe v1](cierre-wireframe-v1-2026-09-09.md)
+- [Flujos y wireframes escritos: perfil, ruta, regreso y prueba de 21 días](flujos-y-wireframes-escritos-2026-09-25.md): diseño por escrito para trabajar después (D-074 a D-077).
 - [Aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md): implementación vigente del recorrido. Amplía el wireframe v1 en algunos puntos (varias apps bajo un límite común, elección de salida de sonido) y todavía no incluye el vínculo con un testigo propio.
 
 ## Material histórico y de apoyo
@@ -50,6 +51,12 @@ La formulación vigente es una hipótesis. El ciclo estructural quedó represent
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Flujos y wireframes escritos
+
+- **Qué cambió:** se enlazó el diseño escrito de perfil, ruta, regreso y prueba de 21 días.
+- **Cómo estaba antes:** no existía.
+- **Por qué:** decisiones del autor del 25 de septiembre.
 
 ### 2026-09-25 — Enlace a la implementación
 

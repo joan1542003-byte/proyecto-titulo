@@ -95,6 +95,18 @@ Estado: **hecho** (implementado o documentado), **parcial**, **pendiente** o **d
 3. **Perfil de usuario:** si se implementa y qué datos recoge.
 4. **Regreso tras días sin uso:** si se programa ahora o después de la prueba.
 
+## Respuesta del autor (25 de septiembre)
+
+- **Hábito y refuerzo:** no como se planteó en clase, pero sí por un camino sin malas prácticas (D-074).
+- **Regreso tras varios días:** debe existir algo que motive sin ser un patrón oscuro (D-074).
+- **Perfil:** debe existir, con nombre, imagen e intereses que construyan una ruta de actividades (D-076).
+- **Privacidad y bienvenida:** más breves y claras; los datos se borran solo si la persona lo pide (D-077).
+- **Botones:** con verbo (D-077).
+- **Prueba:** 21 días, con la evaluación integrada en la app (D-075). La prueba en teléfono real será pronto.
+- **«No es el usuario»:** hay que reformularlo o rechazarlo; las opciones están en el diseño escrito.
+
+El diseño de pantallas y flujos está en [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
 ## Texto original
 
 Se transcribe sin cambios, salvo los escapes de Markdown del archivo convertido.
@@ -170,6 +182,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How ar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Respuesta del autor
+
+- **Qué cambió:** se añadió la respuesta del autor y el enlace al diseño escrito.
+- **Cómo estaba antes:** las decisiones figuraban como pendientes.
+- **Por qué:** el autor aclaró los puntos para trabajarlos después.
 
 ### 2026-09-25 — Creación
 
