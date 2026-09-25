@@ -6,7 +6,7 @@
 
 - **Estudiante:** Johan Yantén
 - **Nota de título:** Memoria para optar al título profesional de la carrera de Diseño *(confirmar la denominación oficial y la mención)*
-- **Profesor o profesora guía:** *(por completar)*
+- **Profesores guía:** Sergio Majluf y Simón Gallardo
 - **Unidad académica:** Facultad de Arquitectura, Arte y Diseño, Escuela de Diseño, Universidad Diego Portales
 - **Lugar y fecha:** Santiago, Chile, 2026
 
@@ -786,6 +786,12 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 25 de septiembre de 2026 — Profesores guía en la portada
+
+- **Cambio:** la portada nombra a los profesores guía, Sergio Majluf y Simón Gallardo.
+- **Versión anterior:** el campo decía «por completar».
+- **Motivo:** el autor indicó que los nombres constaban en versiones anteriores; se tomaron de la memoria de cierre del primer semestre y de las memorias del segundo semestre del archivo, que coinciden. La denominación oficial del título sigue pendiente de confirmar.
 
 ### 25 de septiembre de 2026 — Lectura para quien no conoce el proyecto
 

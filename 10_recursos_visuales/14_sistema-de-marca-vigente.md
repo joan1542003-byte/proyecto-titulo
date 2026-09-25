@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** la [exploración 16](16_exploracion-visual-2026-09-25.md) propone añadir un símbolo de punto y pulso con dos estados (en reposo, punto apagado; en aviso, el punto se enciende en ámbar `#FFAD58`, el color en pantalla de la luz de 2700 K del objeto), reemplazar el coral de la app y unificar su verde en `#006B5F`. Está registrada como [D-067](../09_decisiones/registro-de-decisiones.md). Mientras el autor no la apruebe, este documento sigue vigente.
+> **Revisión en curso (25 de septiembre de 2026):** la [segunda propuesta de identidad](17_identidad-visual-segunda-propuesta-2026-09-25.md) propone mantener la estrategia y cambiar la expresión: un logotipo en Instrument Sans con la contraforma de la R encendida, una paleta de tinta, papel y piedra con la luz como único color, Newsreader para la voz de la persona y la retirada del verde. Está registrada como [D-068](../09_decisiones/registro-de-decisiones.md) y reemplaza a la propuesta «punto y pulso» (D-067). Mientras el autor no la apruebe, este documento sigue vigente.
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso sobre la segunda propuesta
+
+- **Qué cambió:** el aviso remite al documento 17 y a D-068.
+- **Cómo estaba antes:** remitía a la propuesta «punto y pulso» con ámbar (D-067).
+- **Por qué:** el autor pidió rehacer la identidad; la nueva propuesta reemplaza a la anterior.
 
 ### 2026-09-25 — Aviso actualizado a la exploración fundamentada
 

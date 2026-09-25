@@ -1,11 +1,11 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, reabierto parcialmente por una [nueva exploración visual](16_exploracion-visual-2026-09-25.md) del 25 de septiembre que recomienda la dirección «punto y pulso»: un símbolo de dos estados cuyo punto se enciende en ámbar, el color en pantalla de la luz del objeto. La adopción queda pendiente de la decisión del autor ([D-067](../09_decisiones/registro-de-decisiones.md)).
+**Estado:** sistema de marca vigente del 16 de septiembre, con una [segunda propuesta de identidad](17_identidad-visual-segunda-propuesta-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-068](../09_decisiones/registro-de-decisiones.md)). Su concepto es «un lugar que se enciende»: el logotipo en Instrument Sans lleva la contraforma de la R encendida como una ventana, la luz es el único color y la tipografía tiene dos voces. Reemplaza a la propuesta «punto y pulso» (exploración 16, D-067), que se conserva como antecedente.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
 **Alcance:** marca, aplicación Android, testigo físico, comunicación de producto y memoria editorial.
-**Formato:** documentación en Markdown y, desde el 25 de septiembre, una [lámina visual en HTML](lamina-exploracion-visual-2026-09-25.html) con dibujos vectoriales propios.
+**Formato:** documentación en Markdown; desde el 25 de septiembre, láminas visuales en HTML con dibujos vectoriales propios ([segunda propuesta](lamina-identidad-relevo-2026-09-25.html) y [exploración anterior](lamina-exploracion-visual-2026-09-25.html)) y [archivos SVG del logotipo propuesto](marca-segunda-propuesta/).
 
 ## Para qué existe esta carpeta
 
@@ -38,9 +38,10 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 13. [Estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md)
 14. [Sistema de marca vigente](14_sistema-de-marca-vigente.md)
 15. [Aplicación Android implementada](15_aplicacion-android-implementada.md)
-16. [Exploración visual: punto, pulso y lugar](16_exploracion-visual-2026-09-25.md) y su [lámina](lamina-exploracion-visual-2026-09-25.html)
-17. [Referencias](referencias.md)
-18. [Registro del reinicio visual](registro-del-reinicio.md)
+16. [Exploración visual: punto, pulso y lugar](16_exploracion-visual-2026-09-25.md) y su [lámina](lamina-exploracion-visual-2026-09-25.html) (antecedente)
+17. [Identidad visual: segunda propuesta](17_identidad-visual-segunda-propuesta-2026-09-25.md), su [lámina](lamina-identidad-relevo-2026-09-25.html) y los [archivos del logotipo](marca-segunda-propuesta/)
+18. [Referencias](referencias.md)
+19. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 
@@ -68,6 +69,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Segunda propuesta de identidad
+
+- **Qué cambió:** se añadieron el documento 17, su lámina y la carpeta `marca-segunda-propuesta/` con el logotipo en SVG. El estado de la carpeta describe la nueva propuesta (D-068), y la exploración 16 pasa a ser antecedente.
+- **Cómo era antes:** el estado describía «punto y pulso» con ámbar de señal (D-067) como propuesta vigente.
+- **Por qué:** el autor pidió rehacer la identidad con un estándar de diseño gráfico más alto, fundado en lecturas de diseño y branding y en referentes de marca.
 
 ### 2026-09-25 — Exploración visual fundamentada
 

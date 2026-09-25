@@ -1,7 +1,7 @@
 # Exploración visual de Relevo
 
 **Fecha:** 25 de septiembre de 2026.
-**Estado:** exploración fundamentada con recomendación. Reabre parcialmente el [sistema de marca vigente](14_sistema-de-marca-vigente.md) y queda pendiente de aprobación del autor (propuesta D-067).
+**Estado:** antecedente. Su recomendación («punto y pulso», D-067) fue reemplazada el mismo día por la [segunda propuesta de identidad](17_identidad-visual-segunda-propuesta-2026-09-25.md) (D-068), a pedido del autor. Se conservan la auditoría de categoría, la derivación del color de 2700 K y el método.
 **Lámina:** [`lamina-exploracion-visual-2026-09-25.html`](lamina-exploracion-visual-2026-09-25.html), con los candidatos dibujados, la paleta, las simulaciones y las aplicaciones.
 
 ## 1. Pregunta y alcance
@@ -198,6 +198,12 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 1.4.3: Cont
 Sitios consultados para la auditoría (25 de septiembre de 2026): one-sec.app, getbrick.com, unpluq.com, screenlessapp.com, thekitchensafe.com y focusaur.com.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Pasa a antecedente
+
+- **Qué cambió:** el estado indica que la recomendación fue reemplazada por el documento 17 (D-068).
+- **Cómo estaba antes:** el documento se presentaba como la propuesta pendiente de aprobación.
+- **Por qué:** el autor consideró que «punto y pulso» no alcanzaba el estándar de diseño buscado y pidió rehacerla.
 
 ### 2026-09-25 — Exploración fundamentada
 

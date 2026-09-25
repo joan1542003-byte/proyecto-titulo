@@ -624,14 +624,46 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-067 — Punto y pulso como identidad de Relevo (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de aprobación del autor; mientras tanto rige D-062.
+- **Estado:** reemplazada el mismo día por D-068 a pedido del autor; se conserva como antecedente.
 - **Decisión propuesta:** añadir al logotipo un símbolo de punto (el objeto), línea (el lugar) y arcos (la señal) con dos estados: en reposo, punto del color del texto y sin arcos; en aviso, «el punto se enciende» en ámbar `#FFAD58` y aparecen los arcos. El ámbar reproduce en pantalla la luz blanca cálida de 2700 K del objeto; `#9C5A0F` se usa para texto e íconos de aviso sobre fondo claro. Reemplazar el coral de la app por ese ámbar y unificar el verde en `#006B5F`.
 - **Fundamento:** el sistema de D-062 era poco reconocible y la app 2.6 ya usa un coral y un ícono de punto con anillos que la marca no recogía. Una auditoría de ocho referentes mostró cuatro códigos que Relevo debe evitar (medición, control, juego y bienestar calmo) y ninguno que represente un lugar o una señal única. El coral tiene 2,44:1 sobre el fondo claro, está cerca del rojo que la literatura asocia a evitación en contextos de logro (Elliot et al., 2007; Mehta & Zhu, 2009) y se distingue menos del verde en la simulación de daltonismo (ΔE 28 y 51 frente a 58 y 72 del ámbar). El ámbar tiene 9,50:1 con grafito y 3,48:1 sobre el verde, pero solo 1,73:1 sobre fondo claro; por eso el punto va en grafito en reposo y sobre fondos claros.
 - **Alternativas:** mantener la dirección tipográfica de D-062; conservar el coral de la app; otros nueve símbolos evaluados en la exploración (entre ellos punto sobre línea, halo y corchete con punto).
 - **Condición de revisión:** pruebas de lectura del símbolo (confusión con Wi-Fi), tono de la señal, ámbar frente a coral (invitación frente a alarma), reconocimiento del ícono y contraste en el teléfono de prueba.
 - **Documentación:** [exploración visual](../10_recursos_visuales/16_exploracion-visual-2026-09-25.md) y [lámina](../10_recursos_visuales/lamina-exploracion-visual-2026-09-25.html).
 
+## D-068 — Un lugar que se enciende (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** propuesta pendiente de aprobación del autor; mientras tanto rige D-062. Reemplaza a D-067.
+- **Decisión propuesta:**
+  - mantener la estrategia de marca y cambiar su expresión;
+  - logotipo «Relevo» dibujado sobre Instrument Sans, cuya contraforma de la R se enciende como una ventana solo sobre fondo oscuro y en momentos de señal;
+  - monograma R como ícono;
+  - paleta de tinta `#1B1A17`, papel `#F5F2EB`, lino, piedra, carbón y ceniza, con la luz (`#FFF6E6` → `#FFD9A0` → `#FFAD58`) como único color;
+  - retirar el verde `#006B5F` y poner las acciones en tinta;
+  - Instrument Sans como voz del sistema y Newsreader como voz de la persona y de la memoria;
+  - luz del objeto con inicio nítido, sostén sin parpadeo, apagado lento y reposo apagado.
+- **Fundamento:**
+  - *Por qué se rehízo*: el autor consideró que «punto y pulso» no alcanzaba el estándar de diseño gráfico buscado; sus arcos describían la transmisión y no el propósito, y dos acentos competían.
+  - *Base de la nueva propuesta*: se apoya en lecturas sobre vacío y comunicación (Hara), tecnología calma (Weiser y Brown), acento único (Rams, ET66), reconocimiento producto-marca (Karjalainen y Snelders; Luffarelli et al.), forma y tipografía (Jiang et al.; Bajaj y Bond; Hagtvedt; Henderson et al.) y comportamiento de luces puntuales (Harrison et al.).
+  - *Contrastes*: tinta sobre papel 15,57:1; piedra sobre lino 5,10:1; luz media sobre tinta 13,00:1.
+- **Alternativas:** mantener D-062; «punto y pulso» (D-067); rutas A (la o como objeto), C (sombra y luz) y D (espacio en blanco), evaluadas en el documento 17. A y D se conservan como ícono del dispositivo y recurso de campaña.
+- **Condición de revisión:**
+  - lectura de la R encendida sin contexto;
+  - inicio de la luz en el banco técnico;
+  - distinción de las dos voces;
+  - hallazgo de acciones sin verde con las tareas de la pauta de testeo;
+  - reconocimiento del ícono.
+- **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; tipografía y portada de la memoria; patrón de luz de la micro:bit.
+- **Documentación:** [identidad visual, segunda propuesta](../10_recursos_visuales/17_identidad-visual-segunda-propuesta-2026-09-25.md), [lámina](../10_recursos_visuales/lamina-identidad-relevo-2026-09-25.html) y [archivos del logotipo](../10_recursos_visuales/marca-segunda-propuesta/).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-068 propuesta
+
+- **Qué cambió:** se registró la segunda propuesta de identidad y D-067 se marcó como reemplazada.
+- **Cómo era antes:** D-067 («punto y pulso» con ámbar) era la propuesta pendiente.
+- **Por qué se decidió:** el autor pidió rehacer la identidad con un estándar de diseño más alto; la aprobación sigue siendo suya.
 
 ### 2026-09-25 — D-067 propuesta
 

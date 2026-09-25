@@ -85,7 +85,7 @@ No se añadió ningún resultado con personas, porque no existe.
 
 ## Segunda revisión: redacción y pauta UDP
 
-A pedido del autor se hizo una segunda pasada editorial. Como las memorias de otros estudiantes no se guardan en el repositorio, se tomaron como referencia la [pauta oficial de presentación de memorias de la UDP](https://bibliotecas.udp.cl/wp-content/uploads/2020/04/tesis_pauta_udp_2020.pdf) y las versiones anteriores de la propia memoria. La pauta exige en la portada nota de título, profesor guía, facultad, escuela, lugar y fecha; un resumen con objetivo, metodología, procedimientos y resultados, y dos o tres palabras clave; índice de tablas e ilustraciones; y conclusiones que juzguen la hipótesis y declaren alcances y limitaciones. Todo eso se incorporó; el profesor guía y la denominación exacta del título quedan por completar.
+A pedido del autor se hizo una segunda pasada editorial. Como las memorias de otros estudiantes no se guardan en el repositorio, se tomaron como referencia la [pauta oficial de presentación de memorias de la UDP](https://bibliotecas.udp.cl/wp-content/uploads/2020/04/tesis_pauta_udp_2020.pdf) y las versiones anteriores de la propia memoria. La pauta exige en la portada nota de título, profesor guía, facultad, escuela, lugar y fecha; un resumen con objetivo, metodología, procedimientos y resultados, y dos o tres palabras clave; índice de tablas e ilustraciones; y conclusiones que juzguen la hipótesis y declaren alcances y limitaciones. Todo eso se incorporó. Los profesores guía, Sergio Majluf y Simón Gallardo, se tomaron de las versiones anteriores de la memoria; la denominación exacta del título queda por confirmar.
 
 Además se reescribieron los capítulos 1–10 y 13 para reducir repeticiones y unir párrafos fragmentados, se numeraron los criterios C1–C8, se titularon las tablas y la figura según APA 7 y se añadió un glosario. No cambiaron datos, fuentes, pregunta, hipótesis ni umbrales.
 
@@ -99,6 +99,12 @@ Además se reescribieron los capítulos 1–10 y 13 para reducir repeticiones y 
 6. **Similitud textual.** Si la institución exige un informe de similitud (por ejemplo, Turnitin), debe ejecutarse sobre la versión final diagramada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Profesores guía
+
+- **Qué cambió:** se indica que los profesores guía ya figuran en la portada.
+- **Cómo estaba antes:** el profesor guía aparecía como pendiente.
+- **Por qué:** el autor señaló que los nombres constaban en versiones anteriores de la memoria.
 
 ### 2026-09-25 — Estado de los pendientes
 
