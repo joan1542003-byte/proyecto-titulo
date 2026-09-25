@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con una [segunda propuesta de identidad](17_identidad-visual-segunda-propuesta-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-068](../09_decisiones/registro-de-decisiones.md)). Su concepto es «un lugar que se enciende»: el logotipo en Instrument Sans lleva la contraforma de la R encendida como una ventana, la luz es el único color y la tipografía tiene dos voces. Reemplaza a la propuesta «punto y pulso» (exploración 16, D-067), que se conserva como antecedente.
+**Estado:** sistema de marca vigente del 16 de septiembre, con un [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-069](../09_decisiones/registro-de-decisiones.md)). Su idea es «una coma, no un punto final»: logotipo «relevo,» en Atkinson Hyperlegible, tinta y papel con un azul de lápiz pasta, tres voces tipográficas sin serifas y un tratamiento de imagen con receta propia. Reemplaza a las propuestas «punto y pulso» (D-067) y «un lugar que se enciende» (D-068), que se conservan como antecedentes.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -39,9 +39,10 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 14. [Sistema de marca vigente](14_sistema-de-marca-vigente.md)
 15. [Aplicación Android implementada](15_aplicacion-android-implementada.md)
 16. [Exploración visual: punto, pulso y lugar](16_exploracion-visual-2026-09-25.md) y su [lámina](lamina-exploracion-visual-2026-09-25.html) (antecedente)
-17. [Identidad visual: segunda propuesta](17_identidad-visual-segunda-propuesta-2026-09-25.md), su [lámina](lamina-identidad-relevo-2026-09-25.html) y los [archivos del logotipo](marca-segunda-propuesta/)
-18. [Referencias](referencias.md)
-19. [Registro del reinicio visual](registro-del-reinicio.md)
+17. [Identidad visual: segunda propuesta](17_identidad-visual-segunda-propuesta-2026-09-25.md), su [lámina](lamina-identidad-relevo-2026-09-25.html) y los [archivos del logotipo](marca-segunda-propuesta/) (antecedente)
+18. [Marca Relevo desde cero](18_marca-relevo-desde-cero-2026-09-25.md) y sus [materiales](marca-desde-cero/README.md): lámina, logotipo, fotos y receta de imagen
+19. [Referencias](referencias.md)
+20. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 
@@ -69,6 +70,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estudio desde cero
+
+- **Qué cambió:** se añadieron el documento 18 y la carpeta `marca-desde-cero/`; el estado describe la propuesta D-069 y el documento 17 pasa a antecedente.
+- **Cómo era antes:** el estado describía la segunda propuesta (D-068), con serif.
+- **Por qué:** el autor pidió un estudio de marca desde cero, sin serifas, fundado en su investigación.
 
 ### 2026-09-25 — Segunda propuesta de identidad
 

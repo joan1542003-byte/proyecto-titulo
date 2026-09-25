@@ -10,7 +10,7 @@ Relevo es un sistema *phygital* —con un componente físico y uno digital que c
 
 La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) permite preparar un recordatorio, sumar el uso de varias aplicaciones seleccionadas hasta un solo límite y elegir entre un parlante Bluetooth multimedia o el teléfono como salida de prueba. El indicador de inicio es una respuesta autodeclarada, no una conducta observada. El APK compila y diez pruebas unitarias pasan. Se inspeccionaron pantallas en emulador, pero no se ha verificado el recorrido completo, la reproducción en un parlante físico, la sincronización de eventos ni el borrado remoto y local extremo a extremo. El parlante puede reproducir audio de otras aplicaciones y no es un testigo exclusivo de Relevo.
 
-La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se verificaron sus 64 referencias: todas existen, y se corrigieron datos bibliográficos, paráfrasis de entrevistas y la descripción del prototipo ([revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md)). El mismo día se revisó su redacción según la pauta de presentación de la UDP, y se revisó para que la entienda quien no conoce el proyecto: los criterios se nombran con palabras y se explican los códigos de participantes y preguntas. Una [segunda propuesta de identidad](../10_recursos_visuales/17_identidad-visual-segunda-propuesta-2026-09-25.md), pendiente de aprobación ([D-068](../09_decisiones/registro-de-decisiones.md)), propone un logotipo cuya R tiene la contraforma encendida como una ventana, una paleta de tinta y papel con la luz del objeto como único color y dos voces tipográficas; reemplaza a la propuesta «punto y pulso». Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
+La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se verificaron sus 64 referencias: todas existen, y se corrigieron datos bibliográficos, paráfrasis de entrevistas y la descripción del prototipo ([revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md)). El mismo día se revisó su redacción según la pauta de presentación de la UDP, y se revisó para que la entienda quien no conoce el proyecto: los criterios se nombran con palabras y se explican los códigos de participantes y preguntas. Un [estudio de marca desde cero](../10_recursos_visuales/18_marca-relevo-desde-cero-2026-09-25.md), pendiente de decisión ([D-069](../09_decisiones/registro-de-decisiones.md)), propone la idea «una coma, no un punto final», el logotipo «relevo,» en Atkinson Hyperlegible, un azul de lápiz pasta para la voz de la persona y un tratamiento de imagen propio; reemplaza a las propuestas anteriores. Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
 
 ## Qué cambió y qué falta
 
@@ -19,6 +19,12 @@ El feedback del 23 de septiembre llevó a distinguir recordar una intención, em
 Antes de convocar participantes faltan pruebas en teléfono y parlante reales, revisión académica del consentimiento y comprobación del envío y eliminación de datos locales y remotos. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) ya describe Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estudio de marca desde cero
+
+- **Qué cambió:** el resumen describe la propuesta D-069.
+- **Cómo estaba antes:** describía la segunda propuesta (D-068).
+- **Por qué:** el autor pidió rehacer la marca desde cero.
 
 ### 2026-09-25 — Segunda propuesta de identidad
 

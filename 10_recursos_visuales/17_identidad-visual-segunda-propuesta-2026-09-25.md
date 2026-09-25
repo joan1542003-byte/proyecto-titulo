@@ -1,7 +1,7 @@
 # Identidad visual de Relevo: segunda propuesta
 
 **Fecha:** 25 de septiembre de 2026.
-**Estado:** propuesta registrada como D-068, pendiente de aprobación del autor. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062).
+**Estado:** antecedente. El autor rechazó la serif y pidió un estudio desde cero; lo reemplaza el [documento 18](18_marca-relevo-desde-cero-2026-09-25.md) (D-069).
 **Reemplaza a:** la propuesta «punto y pulso» de la [exploración 16](16_exploracion-visual-2026-09-25.md) (D-067), que se conserva como antecedente.
 **Lámina:** [lamina-identidad-relevo-2026-09-25.html](lamina-identidad-relevo-2026-09-25.html).
 **Archivos de marca:** [marca-segunda-propuesta/](marca-segunda-propuesta/) (logotipo en reposo y encendido, monograma, ícono y ventana en SVG).
@@ -239,6 +239,12 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Pasa a antecedente
+
+- **Qué cambió:** el estado remite al documento 18.
+- **Cómo estaba antes:** se presentaba como propuesta pendiente (D-068).
+- **Por qué:** el autor consideró que la serif no ayudaba y que la propuesta dependía de documentos anteriores.
 
 ### 2026-09-25 — Segunda propuesta de identidad
 

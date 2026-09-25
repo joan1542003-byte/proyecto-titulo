@@ -6,7 +6,7 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
-> **Revisión en curso (25 de septiembre de 2026):** la [segunda propuesta de identidad](17_identidad-visual-segunda-propuesta-2026-09-25.md) propone mantener la estrategia y cambiar la expresión: un logotipo en Instrument Sans con la contraforma de la R encendida, una paleta de tinta, papel y piedra con la luz como único color, Newsreader para la voz de la persona y la retirada del verde. Está registrada como [D-068](../09_decisiones/registro-de-decisiones.md) y reemplaza a la propuesta «punto y pulso» (D-067). Mientras el autor no la apruebe, este documento sigue vigente.
+> **Revisión en curso (25 de septiembre de 2026):** el [estudio de marca desde cero](18_marca-relevo-desde-cero-2026-09-25.md) propone una identidad nueva a partir de la investigación: idea «una coma, no un punto final», logotipo «relevo,» en Atkinson Hyperlegible, tinta y papel con azul de lápiz pasta y tratamiento de imagen propio. Está registrada como [D-069](../09_decisiones/registro-de-decisiones.md) y reemplaza a D-067 y D-068. Mientras el autor no la apruebe, este documento sigue vigente.
 
 ## Qué se cierra en este documento
 
@@ -224,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso sobre el estudio desde cero
+
+- **Qué cambió:** el aviso remite al documento 18 y a D-069.
+- **Cómo estaba antes:** remitía a la segunda propuesta (D-068).
+- **Por qué:** el autor pidió un estudio desde cero.
 
 ### 2026-09-25 — Aviso sobre la segunda propuesta
 

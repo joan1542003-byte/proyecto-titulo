@@ -634,7 +634,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-068 — Un lugar que se enciende (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de aprobación del autor; mientras tanto rige D-062. Reemplaza a D-067.
+- **Estado:** reemplazada el mismo día por D-069 a pedido del autor, que rechazó la serif y pidió un estudio desde cero; se conserva como antecedente.
 - **Decisión propuesta:**
   - mantener la estrategia de marca y cambiar su expresión;
   - logotipo «Relevo» dibujado sobre Instrument Sans, cuya contraforma de la R se enciende como una ventana solo sobre fondo oscuro y en momentos de señal;
@@ -657,7 +657,38 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; tipografía y portada de la memoria; patrón de luz de la micro:bit.
 - **Documentación:** [identidad visual, segunda propuesta](../10_recursos_visuales/17_identidad-visual-segunda-propuesta-2026-09-25.md), [lámina](../10_recursos_visuales/lamina-identidad-relevo-2026-09-25.html) y [archivos del logotipo](../10_recursos_visuales/marca-segunda-propuesta/).
 
+## D-069 — Relevo, una coma para volver a elegir (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-067 y D-068.
+- **Decisión propuesta:**
+  - *Idea y verbal*: idea de marca «una coma, no un punto final»; frase «Una coma para volver a elegir»; descriptor «Un recordatorio físico que preparas desde tu teléfono»; uso del significado del nombre («Todo relevo empieza con una pausa»).
+  - *Logotipo*: «relevo,» en Atkinson Hyperlegible Next, con la coma en azul pasta `#2A4BD7`, y monograma «r,».
+  - *Tipografía*: Atkinson Hyperlegible Next y Mono, sin serifas y con tres voces (sistema, persona y máquina).
+  - *Color*: tinta `#16181D`, papel `#F4F4F1`, grafito, niebla, noche y azul claro; luz cálida solo en el objeto.
+  - *Imagen*: tratamiento con principios, receta de corrección y lista de tomas.
+  - *Objeto*: el objeto como punto de la coma, con disco y coma como formas a comparar.
+- **Fundamento:**
+  - *Base de la memoria*: puntos de cierre (Montag et al.), decisión renovada, ocio sin culpa (Tonietto et al.), usuario límite, memoria prospectiva, espacio (Kirsh), autonomía (Smit et al.) y discreción pedida en Q13; también Norman, Albers, Munari e Isaacson.
+  - *Teoría añadida*: Kapferer, Wheeler, Keller et al., Mollerup, Kress y van Leeuwen, Beier y Larson, Harrison et al. y Chang et al.
+  - *Contrastes*: tinta sobre papel 16,12:1; azul pasta sobre papel 6,18:1.
+- **Alternativas:** territorios «El turno» (descartado porque «te toca» suena a obligación) y «El lugar preparado» (se parece al estilo de vida y es débil en pantalla); D-062, D-067 y D-068.
+- **Condición de revisión:**
+  - lectura de la coma sin explicación;
+  - mensajes «[esto], o [aquello]» sin sesgo;
+  - distinción de las tres voces;
+  - legibilidad con las tareas de la pauta de testeo;
+  - forma del objeto, disco frente a coma.
+- **Implementación pendiente si se aprueba:** fuentes, paleta, aviso nocturno e ícono de la app; tipografía y portada de la memoria; sesión fotográfica propia; patrón de luz en la micro:bit.
+- **Documentación:** [marca desde cero](../10_recursos_visuales/18_marca-relevo-desde-cero-2026-09-25.md) y [materiales](../10_recursos_visuales/marca-desde-cero/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-069 propuesta
+
+- **Qué cambió:** se registró el estudio de marca desde cero y D-068 se marcó como reemplazada.
+- **Cómo era antes:** D-068 («un lugar que se enciende», con serif) era la propuesta pendiente.
+- **Por qué se decidió:** el autor rechazó la serif, consideró que la propuesta dependía de documentos anteriores y pidió un estudio desde cero; la decisión sigue siendo suya.
 
 ### 2026-09-25 — D-068 propuesta
 
