@@ -18,7 +18,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 5. [Auditoría integral del 8 de septiembre](auditoria-integridad-2026-09-08.md): comprobaciones, correcciones, fuentes vigentes y pendientes reales.
 6. [Auditoría de organización del 2 de septiembre](auditoria-organizacion-2026-09-02.md): antecedente estructural y criterio de conservación.
 7. [Memoria vigente](../08_memoria/memoria-vigente-v4.md): texto académico que organiza el proyecto en su estado actual.
-8. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo.
+8. [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md): síntesis breve para recuperar rápidamente qué es Relevo. La [revisión integral del 25 de septiembre](../08_memoria/revision-integral-fuentes-y-redaccion-2026-09-25.md) registra la verificación de las fuentes de la memoria.
 9. Las áreas de contexto, investigación, usuarios, mercado, propuesta, factibilidad y validación, en ese orden.
 10. [Investigación visual](../10_recursos_visuales/README.md): problema visual, referentes, criterios por soporte, alternativas y plan de pruebas.
 11. [Encargos fechados](../00_admin/encargos/README.md): entregas organizadas para revisión.
@@ -81,6 +81,12 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Revisión integral de la memoria enlazada
+
+- **Qué cambió:** el orden de lectura enlaza la verificación de fuentes, corpus y redacción de la memoria.
+- **Cómo estaba antes:** el índice no remitía a ningún control externo de las referencias.
+- **Por qué se decidió:** permitir que una nueva sesión compruebe qué fuentes fueron verificadas y qué problemas siguen abiertos.
 
 ### 2026-09-24 — Entrada para continuidad en Claude
 

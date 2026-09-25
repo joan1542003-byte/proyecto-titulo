@@ -1,6 +1,6 @@
 # Relevo en breve
 
-**Actualizado:** 24 de septiembre de 2026. **Fuente académica:** [memoria vigente](memoria-vigente-v4.md).
+**Actualizado:** 25 de septiembre de 2026. **Fuente académica:** [memoria vigente](memoria-vigente-v4.md).
 
 ## Qué es
 
@@ -10,7 +10,7 @@ Relevo es un sistema phygital para que una persona vuelva a considerar una activ
 
 La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) permite preparar un ciclo, sumar el uso de varias aplicaciones seleccionadas hasta un solo límite y elegir entre un parlante Bluetooth multimedia o el teléfono como salida de prueba. El indicador de inicio es una respuesta autodeclarada, no una conducta observada. El APK compila y diez pruebas unitarias pasan. Se inspeccionaron pantallas en emulador, pero no se ha verificado el recorrido completo, la reproducción en un parlante físico, la sincronización de eventos ni el borrado remoto y local extremo a extremo. El parlante puede reproducir audio de otras aplicaciones y no es un testigo exclusivo de Relevo.
 
-La memoria conserva la estructura de catorce capítulos. Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
+La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se verificaron sus 64 referencias: todas existen, y se corrigieron datos bibliográficos, paráfrasis de entrevistas y la descripción del prototipo ([revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md)). Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta de 70 participantes sigue fuera de la evidencia vigente mientras falten sus materiales y análisis.
 
 ## Qué cambió y qué falta
 
@@ -19,6 +19,12 @@ El feedback del 23 de septiembre llevó a distinguir recordar una intención, em
 Antes de convocar participantes faltan pruebas en teléfono y parlante reales, revisión académica del consentimiento y comprobación del envío y eliminación de datos locales y remotos. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) requiere sincronización con Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Revisión integral de la memoria
+
+- **Qué se cambió:** se añadió que las 64 referencias fueron verificadas y que la memoria ya describe Android 2.6, con enlace al informe de revisión.
+- **Cómo estaba antes:** el resumen reflejaba Android 2.6, pero la memoria enlazada aún describía una sola aplicación y no se había comprobado cada fuente frente a su registro oficial.
+- **Por qué:** mantener sincronizados el resumen y la memoria después de cada cambio.
 
 ### 2026-09-24 — Resumen sincronizado con Android 2.6
 
