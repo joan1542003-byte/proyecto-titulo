@@ -199,7 +199,7 @@ Está en: la mesa del living
 [Silenciar y continuar]
 ```
 
-- **Duración del tono (propuesta):** en 2.6 el tono suena hasta silenciarlo. Se propone un patrón breve, de unos 3 segundos como en el protocolo, que suena una vez. La pantalla y la notificación quedan visibles en silencio hasta que la persona responde. La app registra, solo para la investigación, si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto tiempo siguió en las apps elegidas después de la señal. Ese tiempo no se muestra como «tiempo excedido». Si la prueba muestra muchas señales que nadie notó, se evalúa como variante una única repetición suave.
+- **Duración del tono (propuesta):** en 2.6 el tono suena hasta silenciarlo. El autor pide algo más que una notificación y menos que una alarma. Se propone la firma sonora de Relevo (2,2 s) tres veces, con pausas de unos 2 s y la primera más suave, en total unos 10 a 12 segundos; después se detiene. Los 3 segundos del protocolo estaban pensados para pulsos de luz y no bastan para una señal solo sonora (D-070). Antes de probar con personas se comparan internamente dos duraciones, unos 10 y unos 30 segundos, en otra pieza y con ruido de fondo. La pantalla y la notificación quedan visibles en silencio hasta que la persona responde. La app registra, solo para la investigación, si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto tiempo siguió en las apps elegidas después de la señal. Ese tiempo no se muestra como «tiempo excedido». Si la prueba muestra muchas señales que nadie notó, se evalúa como variante una única repetición suave.
 
 ### B5 ¿Qué decidiste?
 
@@ -420,6 +420,12 @@ Silverman, J., & Barasch, A. (2023). On or off track: How (broken) streaks affec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Duración del tono
+
+- **Qué cambió:** la propuesta pasa de un patrón de 3 segundos a la firma sonora repetida tres veces, unos 10 a 12 segundos.
+- **Cómo estaba antes:** proponía 3 segundos, tomados del protocolo pensado para luz.
+- **Por qué:** el autor observó que 3 segundos de sonido no se escucharían; debe ser más que una notificación y menos que una alarma.
 
 ### 2026-09-25 — Respuestas del autor
 
