@@ -11,7 +11,7 @@
 | Hábito y refuerzo | No hacerlo como se planteó en clase (rachas, felicitar por usar menos una app, cuotas de uso), sino por un camino que acompañe sin caer en las malas prácticas que describe la memoria. | Implementar la sección 4 y probarla. |
 | Regreso tras varios días | Debe existir algo que motive, que sea buena práctica y no un patrón oscuro. | Flujo F4. |
 | Perfil | Debe existir: nombre, una imagen que represente a la persona e intereses. Los intereses ayudan a construir una ruta de actividades. | Pantallas P1 a P3 y R1 a R3. |
-| Privacidad y bienvenida | Más breves y claras. Los datos se borran solo si la persona lo pide. | Textos de la sección 6; revisar el plazo de conservación con el profesor. |
+| Privacidad y bienvenida | Más breves y claras. Los datos se borran cuando la persona lo pide y, como máximo, el 30 de diciembre de 2026. | Textos de la sección 7. |
 | Botones | Deben tener verbo. | Lista de la sección 7. |
 | Prueba | El consentimiento pasará a 21 días. La evaluación se integra en la app de forma natural y aporta datos ricos a la prueba. | Sección 5; actualizar consentimiento, protocolo, pauta y memoria. |
 | Teléfono real | La prueba en un teléfono real será pronto. | Usar la pauta 2.6 antes de implementar lo nuevo. |
@@ -199,7 +199,7 @@ Está en: la mesa del living
 [Silenciar y continuar]
 ```
 
-- **Pendiente técnico:** en 2.6 el tono sigue hasta silenciarlo. Se propone detenerlo solo tras unos segundos (por ejemplo 30), acorde con el pulso breve de la memoria. Se decide con la prueba en teléfono real.
+- **Duración del tono (propuesta):** en 2.6 el tono suena hasta silenciarlo. Se propone un patrón breve, de unos 3 segundos como en el protocolo, que suena una vez. La pantalla y la notificación quedan visibles en silencio hasta que la persona responde. La app registra, solo para la investigación, si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto tiempo siguió en las apps elegidas después de la señal. Ese tiempo no se muestra como «tiempo excedido». Si la prueba muestra muchas señales que nadie notó, se evalúa como variante una única repetición suave.
 
 ### B5 ¿Qué decidiste?
 
@@ -364,9 +364,9 @@ Son ejemplos editables, tomados de actividades mencionadas en las entrevistas y 
 
 **Bienvenida (A1), 27 palabras:** «Anota algo que quieres hacer. Relevo te lo recuerda mientras todavía puedes hacerlo. Tú decides qué hacer después».
 
-**Privacidad breve (A2 y S3), 60 palabras:** «Guardamos lo que preparas, cuándo suena el aviso y lo que respondes, con un código en vez de tu nombre. No leemos lo que haces dentro de otras apps. Tu nombre y tu imagen se quedan en el teléfono. Puedes descargar o borrar tus datos cuando quieras desde Perfil. Si no los borras, los usaremos solo para este proyecto».
+**Privacidad breve (A2 y S3), 60 palabras:** «Guardamos lo que preparas, cuándo suena el aviso y lo que respondes, con un código en vez de tu nombre. No leemos lo que haces dentro de otras apps. Tu nombre y tu imagen se quedan en el teléfono. Puedes descargar o borrar tus datos cuando quieras desde Perfil. Si no los borras antes, los eliminamos el 30 de diciembre de 2026».
 
-**Conservación de los datos:** el autor quiere borrar los datos solo si la persona lo pide. El consentimiento vigente fija un plazo máximo, el 30 de diciembre de 2026. Conservar datos sin plazo exige revisarlo con el profesor, porque una investigación suele declarar cuánto tiempo guarda los datos y qué hace después, por ejemplo anonimizarlos.
+**Conservación de los datos:** decidido por el autor el 25 de septiembre: los datos se borran cuando la persona lo pide y, como máximo, el 30 de diciembre de 2026, como dice el consentimiento vigente. La política breve debe decirlo: «Si no los borras antes, los eliminamos el 30 de diciembre de 2026».
 
 **Botones con verbo:** sí, las acciones llevan verbo; los destinos de navegación y los títulos de sección se nombran con sustantivos (Inicio, Ruta, Perfil, Privacidad y datos).
 
@@ -381,14 +381,24 @@ Son ejemplos editables, tomados de actividades mencionadas en las entrevistas y 
 
 | Opción | Redacción | Efecto |
 | --- | --- | --- |
-| Reformular (recomendada) | «Relevo está pensado para quien está dispuesto a preparar el comienzo de su actividad. Si esa preparación resulta demasiado costosa, es un hallazgo sobre el diseño, no sobre la persona». | Mantiene el foco sin excluir a nadie; convierte el rechazo en dato de la prueba. |
+| Reformular (adoptada por el autor) | «Relevo está pensado para quien está dispuesto a preparar el comienzo de su actividad. Si esa preparación resulta demasiado costosa, es un hallazgo sobre el diseño, no sobre la persona». | Mantiene el foco sin excluir a nadie; convierte el rechazo en dato de la prueba. |
 | Rechazar | No se usa la frase. | Evita el problema, pero pierde una condición útil del usuario principal. |
 | Mantener | «Quien no prepara el lugar no es el usuario». | Protege la hipótesis de que el lugar importa, pero impide ver si la preparación pesa demasiado. |
+
+## 8 b. Qué responde cada prueba
+
+El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La memoria pregunta: **¿qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?** Su hipótesis es que, si la persona registra una intención y su primer paso, sitúa una señal física junto a ese comienzo y la recibe cuando se cumple una condición configurada, esa intención podría volver a estar disponible para decidir, sin bloquear la actividad digital ni imponer su ejecución.
+
+| Prueba | Qué responde | Qué no responde |
+| --- | --- | --- |
+| Teléfono real | Si la app funciona: conteo, sonido, silencio, permisos, envío y borrado de datos. | Nada sobre personas. |
+| 21 días con la app | Si las personas entienden la preparación, qué carga les supone, si conservan el control, si la señal se nota y se entiende en casa, y si la usan de forma sostenida o la abandonan. | Si el lugar aporta más que una notificación, ni si se formó un hábito. |
+| Asociación y comparación (protocolo 01) | La hipótesis: si la señal devuelve la intención y el primer paso sin mirar el teléfono, y si junto al primer paso funciona mejor que en un lugar neutro o que una notificación. | Eficacia en la población. |
 
 ## 9. Qué cambiará cuando se implemente
 
 - **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono.
-- **Consentimiento:** 21 días, preguntas integradas, nombre local, conservación de datos.
+- **Consentimiento:** 21 días, preguntas integradas y nombre local; se mantiene el 30 de diciembre de 2026 como plazo de eliminación.
 - **Protocolo y pauta:** prueba de 21 días, preguntas por día, variante de constancia elegida.
 - **Memoria:** capítulos 10 y 13 (dos días pasan a 21, evaluación integrada) y criterio 4 (reconocimiento y ruta), manteniendo que 21 días no demuestran un hábito.
 - **Kit:** pantallas de perfil, ruta y regreso con el sistema D-073.
@@ -410,6 +420,12 @@ Silverman, J., & Barasch, A. (2023). On or off track: How (broken) streaks affec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Respuestas del autor
+
+- **Qué cambió:** plazo de datos al 30 de diciembre de 2026; reformulación de la frase sobre el usuario adoptada; propuesta de duración del tono; nueva sección sobre qué responde cada prueba.
+- **Cómo estaba antes:** esos puntos figuraban como pendientes o recomendaciones.
+- **Por qué:** el autor respondió el mismo día.
 
 ### 2026-09-25 — Creación
 

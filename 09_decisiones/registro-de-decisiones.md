@@ -811,6 +811,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Estado:** decisión del autor; diseño escrito, implementación pendiente.
 - **Decisión:** la app tiene perfil con nombre, una imagen prehecha e intereses. Los intereses proponen una ruta de pasos editables por actividad. El nombre y la imagen no salen del teléfono.
 - **Límite:** los intereses no son perfiles fijos de personas; las entrevistas respaldan actividades concretas, no tipos de usuario.
+- **Usuario:** se adopta la reformulación «Relevo está pensado para quien está dispuesto a preparar el comienzo de su actividad; si esa preparación resulta demasiado costosa, es un hallazgo sobre el diseño, no sobre la persona». Reemplaza la anotación de clase «quien no lo deja junto a las zapatillas no es el usuario».
 - **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
 
 ## D-077 — Privacidad y bienvenida breves; botones con verbo
@@ -818,7 +819,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Fecha:** 2026-09-25.
 - **Estado:** decisión del autor; textos propuestos, implementación pendiente.
 - **Decisión:** la bienvenida y la política de privacidad se acortan; los datos se borran cuando la persona lo pide; las acciones llevan verbo y los destinos de navegación, sustantivo.
-- **Pendiente:** el consentimiento fija un plazo máximo de conservación (30 de diciembre de 2026). Conservar datos sin plazo debe revisarse con el profesor.
+- **Conservación:** los datos se borran cuando la persona lo pide y, como máximo, el 30 de diciembre de 2026, como en el consentimiento vigente (confirmado por el autor el mismo día).
 - **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
 
 ## Registro de cambios (disclaimer)
