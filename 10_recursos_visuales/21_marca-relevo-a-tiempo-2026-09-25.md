@@ -185,13 +185,24 @@ Sin texturas simuladas: la textura es real.
 
 ## 11. Iconos
 
-Juego propio de 40 iconos en la [carpeta `iconos/`](marca-a-tiempo/iconos/). Aparecen completos en el [kit de diseño](marca-a-tiempo/kit-relevo-2026-09-25.html), organizados en cinco grupos:
+Juego propio de 97 iconos en la [carpeta `iconos/`](marca-a-tiempo/iconos/). Aparecen completos en el [kit de diseño](marca-a-tiempo/kit-relevo-2026-09-25.html), organizados en nueve grupos:
 
-- **Relevo:** actividad, cómo empieza, lugar, después de cuánto uso, apps elegidas, parlante, este teléfono, objeto, probar sonido, silenciar, conexión y batería del objeto.
-- **Respuestas:** comencé, la dejé para después y cambié de idea.
-- **Navegación y acciones:** inicio, relevos, agregar, editar, borrar, cerrar, volver, siguiente, más opciones, buscar, ajustes y ayuda.
-- **Estados y sistema:** esperando, privacidad, permiso, datos del estudio, información y error.
-- **Presentación y memoria:** investigación, entrevistas, hipótesis y prueba, validación, decisión, sistema phygital y tiempo.
+- **Relevo (13):** actividad, cómo empieza, lugar, después de cuánto uso, apps elegidas, parlante, este teléfono, objeto, probar sonido, silenciar, conexión, batería del objeto y avisos del teléfono.
+- **Actividades (21):** leer, escribir, dibujar, pintar, tocar un instrumento, escuchar música, caminar, andar en bicicleta, hacer ejercicio, estirar, cocinar, cuidar las plantas, dormir, llamar a alguien, escribirle a alguien, ordenar, estudiar, fotografiar, hacer manualidades, jugar un juego de mesa y salir.
+- **Respuestas (3):** comencé, la dejé para después y cambié de idea.
+- **Persona y cuenta (10):** persona, perfil, código de participante, consentimiento, exportar o compartir, descargar, cerrar sesión, tema claro u oscuro, tamaño del texto y accesibilidad.
+- **Opinión y ayuda (7):** estrella vacía, media y llena, comentario, reportar un problema, enviar y ayuda.
+- **Navegación y acciones (19):** inicio, relevos, menú, agregar, editar, copiar, borrar, cerrar, volver, siguiente, expandir, contraer, más opciones, buscar, filtrar, ajustes, abrir fuera de la app, mostrar y ocultar.
+- **Tiempo y reproducción (6):** tiempo, calendario, historial, reproducir, pausar y detener.
+- **Estados y sistema (12):** esperando, listo, información, advertencia, error, reintentar, sincronizar datos, sin conexión, privacidad, acceso abierto, permiso y datos del estudio.
+- **Presentación y memoria (6):** investigación, entrevistas, hipótesis y prueba, validación, decisión y sistema phygital.
+
+**Reglas de uso de los grupos nuevos:**
+
+- **Actividades:** son ideas para sugerir al preparar un relevo. La persona siempre puede escribir la suya.
+- **Estrellas:** sirven solo para opinar sobre la app o la prueba. Nunca califican a la persona ni lo que hizo, ni se acumulan como premio, en coherencia con D-065.
+- **Reportar un problema:** usa un insecto, el código habitual para un error de software. No se usa para errores de la persona.
+- **Recortes:** los recortes (el punto de «avisos», las perillas de «ajustes») usan el color del fondo, así el icono funciona en tema claro y oscuro.
 
 **Criterios.** Siguen lo que Apple pide para los iconos de interfaz (Apple, s. f.):
 
@@ -221,12 +232,14 @@ Juego propio de 40 iconos en la [carpeta `iconos/`](marca-a-tiempo/iconos/). Apa
 - Nunca campanas, escudos, corazones, hojas ni cerebros.
 - El área táctil es de al menos 48 × 48 dp (Android Developers, s. f.).
 
-**Revisión del dibujo.** En la primera versión, «Objeto» se leía como una burbuja de chat, «Lugar» como un taburete, «Hipótesis» como una llave y «Después» era igual a «Tiempo». Se redibujaron así:
+**Revisión del dibujo.** En la primera versión, «Objeto» se leía como una burbuja de chat, «Tocar un instrumento» como una pala, «Estirar» como un interruptor, «Lugar» como un taburete, «Hipótesis» como una llave y «Después» era igual a «Tiempo». Se redibujaron así:
 
 - «Objeto» es un disco;
 - «Lugar» es un marcador de ubicación;
 - «Hipótesis y prueba» es un matraz;
-- «Después» es un marcador de página.
+- «Después» es un marcador de página;
+- «Tocar un instrumento» es una guitarra de frente;
+- «Estirar» es una figura con los brazos arriba.
 
 ## 11 b. Kit de diseño: app y presentación
 
@@ -236,11 +249,12 @@ El [kit de diseño](marca-a-tiempo/kit-relevo-2026-09-25.html) reúne las piezas
   - botones de 48 dp de alto y esquinas de 12;
   - el campo renglón, con sus estados de reposo, foco y ejemplo;
   - filas de lista, selección, estado y aviso de error.
-- **Doce pantallas:**
+- **Dieciséis pantallas:**
   - bienvenida y permiso de uso;
-  - inicio vacío, preparar, apps y tiempo, y dónde suena con prueba de sonido;
+  - inicio vacío, ideas de actividades, preparar, apps y tiempo, y dónde suena con prueba de sonido;
   - esperando y aviso en la pantalla de bloqueo;
   - ¿qué decidiste?, ajustes y error;
+  - perfil (código de participante, consentimiento, exportar y borrar datos), opinión sobre la app con estrellas y reportar un problema;
   - esperando, en tema oscuro.
 
   Son una propuesta visual sobre las funciones de la app 2.6 más el campo de lugar propuesto. Las apps de la lista aparecen sin logo porque sus marcas son de terceros.
@@ -421,6 +435,14 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — 97 iconos y cuatro pantallas nuevas
+
+- **Qué cambió:**
+  - los iconos pasaron de 40 a 97, con grupos nuevos de actividades, persona y cuenta, opinión y ayuda, y tiempo y reproducción, y reglas de uso para estrellas y reportes;
+  - el kit suma las pantallas de ideas de actividades, perfil, opinión y reporte de problemas.
+- **Cómo estaba antes:** 40 iconos y doce pantallas.
+- **Por qué:** el autor pidió iconos completos para toda la app, incluidas actividades, perfil, calificaciones y reportes de errores.
 
 ### 2026-09-25 — Iconos v2 y kit de diseño
 
