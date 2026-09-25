@@ -129,6 +129,14 @@ Estos cambios se hicieron después del corte y están en la rama `claude/wizardl
 - **Prioridad 1 resuelta en lo documental:** la pauta, la ficha, el modelo de datos y el índice de validación ya describen 2.6. El resumen general, la hoja de ruta y el plan de cierre tienen corte al 25 de septiembre.
 - **Derechos de autor:** se retiraron los PDF completos de Norman, Albers, Munari e Isaacson, que no tienen edición gratuita legal; siguen en el historial de Git. Se creó un registro de licencias de la app (la de Source Sans 3 ya estaba incluida). Los marcos de iPhone y Pixel de los wireframes y la fotografía de una referencia visual tienen origen no registrado.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
+- **Android 2.7 (rama `android-2.7`, sobre la anterior):** la app que pide el protocolo 02 incluye:
+  - señal de 30 segundos que termina sola;
+  - condición de la semana;
+  - notificación genérica en la condición «teléfono»;
+  - preguntas tras cada señal, tarjetas semanales y cierre del día 21;
+  - registro de respuesta y uso alrededor de la señal.
+
+  También explica y corrige por qué la base tenía 0 eventos. Se verificó en emulador con datos ficticios; faltan el teléfono real, el parlante y el borrado sin conexión. Detalle en [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y D-080.
 
 ## Seguridad, privacidad y GitHub
 
@@ -141,6 +149,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Android 2.7
+
+- **Qué cambió:** la actualización del 25 de septiembre registra la app 2.7 del protocolo 02 y su verificación en emulador.
+- **Cómo estaba antes:** la app 2.7 figuraba como requisito futuro.
+- **Por qué:** la próxima sesión debe partir del estado real de la app.
 
 ### 2026-09-25 — Aviso de actualización
 

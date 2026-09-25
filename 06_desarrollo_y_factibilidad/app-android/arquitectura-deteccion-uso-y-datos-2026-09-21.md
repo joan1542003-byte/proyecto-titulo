@@ -22,7 +22,7 @@ No se guarda contenido de pantalla, mensajes, teclas, búsquedas, fotografías, 
 
 ## Base de datos local
 
-Los eventos se guardan en `relevo_research.db`, tabla `events`, dentro del almacenamiento privado de la aplicación. Los campos son `session_id`, `participant_code`, `event_type`, `target_package`, `created_at`, `value_seconds` y `consent_version`. La tabla `sessions` guarda además la actividad, el inicio propuesto, la ubicación, el conjunto de apps elegidas, el límite, las fechas y la respuesta final opcional. Si no suena la ruta seleccionada se registra `signal_failed`, no `signal_emitted`.
+Los eventos se guardan en `relevo_research.db`, tabla `events`, dentro del almacenamiento privado de la aplicación. Los campos son `session_id`, `participant_code`, `event_type`, `target_package`, `created_at`, `value_seconds` y `consent_version`. La tabla `sessions` guarda además la actividad, el inicio propuesto, la ubicación, el conjunto de apps elegidas, el límite, las fechas y la respuesta final opcional. Si no suena la ruta seleccionada se registra `signal_failed`, no `signal_emitted`. Desde 2.7 también se registran `signal_ended` (la señal de 30 segundos terminó sola), `signal_interrupted` (se perdió la salida), `responded` (primera acción después del fin), `monitor_paused` (falta Tiempo de uso) y `monitor_resumed` (el conteo se retomó). La tabla `answers` guarda las respuestas semanales y del cierre de la prueba de 21 días; el detalle está en el [modelo de datos](../../07_validacion/modelo-datos-evaluacion-app-2026-09-22.md).
 
 La base local permite relacionar eventos de una misma sesión sin guardar nombres. La app intenta sincronizar sus registros con Supabase mediante autenticación anónima cuando la compilación tiene configurada la conexión; los registros pendientes permanecen en el dispositivo si el envío falla. Las políticas de la base permiten a cada identidad leer y borrar solo sus propias filas. Solicitar el borrado desde Privacidad y datos revoca la participación y detiene el monitoreo de inmediato. Luego elimina las filas remotas y confirma que no queden; solo entonces borra las locales y las credenciales. Si falla el borrado remoto, conserva los datos locales para reintentar, sin reactivar el conteo. En una instalación que nunca se conectó a la base, permite el borrado local. Esta ruta aún requiere prueba completa antes de usarla con participantes.
 
@@ -47,6 +47,12 @@ Android Developers. (s. f.). *Declare foreground services and request permission
 Android Developers. (s. f.). *Minimize your permission requests*. https://developer.android.com/privacy-and-security/minimize-permission-requests
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Eventos y respuestas de 2.7
+
+- **Qué cambió:** se añadieron los eventos de fin de la señal, de interrupción del conteo y la tabla de respuestas.
+- **Cómo estaba antes:** los eventos terminaban en `closed` y no había respuestas de la prueba de 21 días.
+- **Por qué:** el protocolo 02 pide registrar cómo termina la señal y las preguntas de la prueba.
 
 ### 2026-09-24 — Selección múltiple y base remota
 

@@ -74,4 +74,24 @@ class ReminderTest {
     assertEquals(ReminderStatus.CLOSED, closed.status)
     assertEquals(closed, closed.arm("another"))
   }
+
+  @Test fun signalRecordsItsMomentAndEndsWithoutClosingTheCycle() {
+    val signalled = complete.ready().arm("s").deliverSignal(true, at = 1_000L)
+    assertEquals(1_000L, signalled.signalAt)
+    assertFalse(signalled.signalEnded)
+    val ended = signalled.endSignal()
+    assertEquals(ReminderStatus.SIGNALLED, ended.status)
+    assertEquals(true, ended.signalEnded)
+  }
+
+  @Test fun inaudibleSignalCountsAsAlreadyEnded() {
+    assertEquals(true, complete.ready().arm("s").deliverSignal(false).signalEnded)
+  }
+
+  @Test fun rearmingClearsThePreviousSignal() {
+    val previous = complete.ready().arm("s").deliverSignal(true, at = 5L).endSignal().copy(status = ReminderStatus.READY)
+    val rearmed = previous.arm("next")
+    assertEquals(0L, rearmed.signalAt)
+    assertFalse(rearmed.signalEnded)
+  }
 }

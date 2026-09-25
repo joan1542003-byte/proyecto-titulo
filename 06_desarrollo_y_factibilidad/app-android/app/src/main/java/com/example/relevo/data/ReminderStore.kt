@@ -8,8 +8,14 @@ import com.example.relevo.domain.TrackedApp
 import org.json.JSONArray
 import org.json.JSONObject
 
-class ReminderStore(context: Context) {
-  private val preferences = context.getSharedPreferences("relevo_reminder", Context.MODE_PRIVATE)
+/** Guarda el relevo en curso. Con otro nombre, guarda la última configuración usada para poder repetirla. */
+class ReminderStore(context: Context, name: String = CURRENT) {
+  private val preferences = context.getSharedPreferences(name, Context.MODE_PRIVATE)
+
+  companion object {
+    const val CURRENT = "relevo_reminder"
+    const val LAST_CONFIGURATION = "relevo_last_reminder"
+  }
 
   fun load(): Reminder =
     Reminder(
@@ -34,6 +40,10 @@ class ReminderStore(context: Context) {
         val array = JSONArray(preferences.getString("target_apps", "[]"))
         List(array.length()) { index -> array.getJSONObject(index).let { TrackedApp(it.getString("package"), it.getString("label")) } }
       }.getOrDefault(emptyList()),
+      studyCondition = preferences.getString("study_condition", "").orEmpty(),
+      studyDay = preferences.getInt("study_day", -1),
+      signalAt = preferences.getLong("signal_at", 0L),
+      signalEnded = preferences.getBoolean("signal_ended", false),
     )
 
   fun save(reminder: Reminder) {
@@ -53,6 +63,10 @@ class ReminderStore(context: Context) {
       .putBoolean("signal_delivered", reminder.signalDelivered)
       .putString("signal_route", reminder.signalRoute.name)
       .putString("target_apps", JSONArray().apply { reminder.selectedApps.forEach { app -> put(JSONObject().put("package", app.packageName).put("label", app.label)) } }.toString())
+      .putString("study_condition", reminder.studyCondition)
+      .putInt("study_day", reminder.studyDay)
+      .putLong("signal_at", reminder.signalAt)
+      .putBoolean("signal_ended", reminder.signalEnded)
       .apply()
   }
 

@@ -2,7 +2,7 @@
 
 Este documento indica dónde comenzar, qué archivo funciona como referencia vigente y cómo distinguir el desarrollo actual del material histórico. Su propósito es evitar que una versión anterior oriente una decisión nueva por accidente.
 
-**Para migrar a Claude:** abre [`CLAUDE.md`](../CLAUDE.md), usa las [instrucciones de inicio](INICIO-CLAUDE.md) y el [traspaso completo con corte al 24 de septiembre](traspaso-a-claude-2026-09-24.md). La aplicación vigente es Android 2.6; el estado de Issues debe confirmarse directamente en GitHub.
+**Para migrar a Claude:** abre [`CLAUDE.md`](../CLAUDE.md), usa las [instrucciones de inicio](INICIO-CLAUDE.md) y el [traspaso completo con corte al 24 de septiembre](traspaso-a-claude-2026-09-24.md). La aplicación vigente es Android 2.7 ([cambios y verificación](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md)); el estado de Issues debe confirmarse directamente en GitHub.
 
 
 **Base académica actualizada:** [Coherencia de la memoria y pendientes por área](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente.
@@ -81,6 +81,12 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Android 2.7
+
+- **Qué cambió:** la entrada señala Android 2.7 y enlaza su documento de cambios y verificación.
+- **Cómo estaba antes:** indicaba Android 2.6.
+- **Por qué:** mantener el índice alineado con la versión vigente.
 
 ### 2026-09-25 — Revisión integral de la memoria enlazada
 

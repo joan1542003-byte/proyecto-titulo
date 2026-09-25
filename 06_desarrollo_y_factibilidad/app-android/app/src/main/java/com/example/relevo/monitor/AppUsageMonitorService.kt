@@ -15,8 +15,11 @@ import androidx.core.app.ServiceCompat
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RemoteSync
+import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.domain.SignalRoute
+import com.example.relevo.domain.StudyCondition
+import kotlinx.coroutines.CompletableDeferred
 import com.example.relevo.signal.SignalPlayer
 import com.example.relevo.MainActivity
 import kotlinx.coroutines.CoroutineScope
@@ -33,7 +36,6 @@ class AppUsageMonitorService : Service() {
   private lateinit var researchLog: ResearchLogStore
   private lateinit var signalPlayer: SignalPlayer
   private var monitorJob: Job? = null
-  private var currentForegroundPackage: String? = null
   private var lastQueryMillis: Long = 0L
 
   override fun onCreate() {
@@ -41,127 +43,191 @@ class AppUsageMonitorService : Service() {
     store = ReminderStore(this)
     researchLog = ResearchLogStore(this)
     signalPlayer = SignalPlayer(this)
-    createNotificationChannel()
+    createNotificationChannels()
   }
 
   override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+    // Android exige mostrar la notificación de primer plano antes de detenerse, incluso si no se va a contar.
+    startInForeground()
     val reminder = store.load()
-    if (reminder.status != ReminderStatus.WAITING || !UsageAccess.isGranted(this) || !hasCurrentConsent()) {
-      stopSelf()
+    if (reminder.status != ReminderStatus.WAITING || !hasCurrentConsent()) {
+      stopMonitoring()
       return START_NOT_STICKY
     }
-
-    val notification =
-      NotificationCompat.Builder(this, CHANNEL_ID)
-        .setSmallIcon(android.R.drawable.ic_popup_reminder)
-        .setContentTitle("Relevo está contando el tiempo en las apps elegidas")
-        .setContentText("El registro se detiene al desactivar el recordatorio.")
-        .setOngoing(true)
-        .setSilent(true)
-        .build()
-
-    val serviceType =
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-        ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
-      } else {
-        0
-      }
-    ServiceCompat.startForeground(this, NOTIFICATION_ID, notification, serviceType)
+    // Sin intent: Android recreó el servicio tras detenerlo. ACTION_RESTORE: reinicio del teléfono o actualización.
+    val restored = intent == null || intent.action == ACTION_RESTORE
+    if (!UsageAccess.isGranted(this)) {
+      pauseForMissingAccess(reminder.sessionId, reminder.participantCode, reminder.targetPackage, reminder.observedUsageSeconds)
+      return START_NOT_STICKY
+    }
+    if (restored) {
+      researchLog.record(reminder.sessionId, reminder.participantCode, "monitor_resumed", reminder.targetPackage, reminder.observedUsageSeconds)
+    }
+    getSystemService(NotificationManager::class.java)?.cancel(STATUS_NOTIFICATION_ID)
     startMonitoring()
-    return START_NOT_STICKY
+    return START_STICKY
   }
 
   override fun onBind(intent: Intent?): IBinder? = null
 
   override fun onDestroy() {
+    isCounting = false
     monitorJob?.cancel()
     signalPlayer.stop()
     scope.cancel()
     super.onDestroy()
   }
 
+  private fun startInForeground() {
+    val notification =
+      NotificationCompat.Builder(this, CHANNEL_ID)
+        .setSmallIcon(android.R.drawable.ic_popup_reminder)
+        .setContentTitle("Relevo está contando el tiempo en las apps elegidas")
+        .setContentText("El registro se detiene al desactivar el recordatorio.")
+        .setContentIntent(openAppIntent())
+        .setOngoing(true)
+        .setSilent(true)
+        .build()
+    val serviceType =
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE else 0
+    ServiceCompat.startForeground(this, NOTIFICATION_ID, notification, serviceType)
+  }
+
+  private fun stopMonitoring() {
+    isCounting = false
+    ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE)
+    stopSelf()
+  }
+
   private fun startMonitoring() {
     monitorJob?.cancel()
-    lastQueryMillis = System.currentTimeMillis() - 60_000L
+    isCounting = true
+    val startedAt = System.currentTimeMillis()
+    // Se revisa un periodo previo para saber qué app estaba abierta al empezar o al retomar.
+    lastQueryMillis = startedAt - LOOKBACK_MILLIS
+    val tracker = ForegroundTracker(startedAt).apply { accumulatedMillis = store.load().observedUsageSeconds * 1_000L }
     monitorJob =
       scope.launch {
-        var accumulatedMillis = store.load().observedUsageSeconds * 1_000L
-        var previousTick = System.currentTimeMillis()
         var wasTargetForeground = false
         var lastTargetPackage = store.load().targetPackage
+        var ticks = 0L
 
         while (true) {
           val reminder = store.load()
           if (reminder.status != ReminderStatus.WAITING || !hasCurrentConsent()) break
 
-          val now = System.currentTimeMillis()
-          updateForegroundPackage(now)
-          val targetForeground = reminder.tracks(currentForegroundPackage)
-
-          if (targetForeground) {
-            accumulatedMillis += (now - previousTick).coerceAtMost(2_000L)
+          ticks += 1
+          if (ticks % ACCESS_CHECK_TICKS == 0L && !UsageAccess.isGranted(this@AppUsageMonitorService)) {
+            pauseForMissingAccess(reminder.sessionId, reminder.participantCode, lastTargetPackage, reminder.observedUsageSeconds)
+            return@launch
+          }
+          if (ticks % SYNC_TICKS == 0L) launch(Dispatchers.IO) {
+            UsageAfterSignal.update(this@AppUsageMonitorService, researchLog)
+            RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
           }
 
-          if (targetForeground != wasTargetForeground) {
-            if (targetForeground) lastTargetPackage = currentForegroundPackage.orEmpty()
-            researchLog.record(
-              reminder.sessionId,
-              reminder.participantCode,
-              if (targetForeground) "target_entered" else "target_left",
-              lastTargetPackage,
-              (accumulatedMillis / 1_000L).toInt(),
-            )
+          val now = System.currentTimeMillis()
+          readUsageEvents(now, tracker)
+          val targetForeground = tracker.tick(now, reminder::tracks)
+
+          if (targetForeground != wasTargetForeground || (targetForeground && tracker.currentPackage != lastTargetPackage)) {
+            val entered = targetForeground
+            // Pasar de una app elegida a otra también queda registrado como salida y entrada.
+            if (wasTargetForeground) researchLog.record(reminder.sessionId, reminder.participantCode, "target_left", lastTargetPackage, (tracker.accumulatedMillis / 1_000L).toInt())
+            if (entered) {
+              lastTargetPackage = tracker.currentPackage.orEmpty()
+              researchLog.record(reminder.sessionId, reminder.participantCode, "target_entered", lastTargetPackage, (tracker.accumulatedMillis / 1_000L).toInt())
+            }
             wasTargetForeground = targetForeground
           }
 
-          val observedSeconds = (accumulatedMillis / 1_000L).toInt()
+          val observedSeconds = (tracker.accumulatedMillis / 1_000L).toInt()
           if (observedSeconds != reminder.observedUsageSeconds) {
             store.save(reminder.copy(observedUsageSeconds = observedSeconds))
           }
 
           if (observedSeconds >= reminder.requiredUsageSeconds) {
-            val audible = signalPlayer.play(reminder.signalRoute)
-            val signalled = reminder.copy(observedUsageSeconds = observedSeconds).deliverSignal(audible)
-            store.save(signalled)
-            researchLog.record(
-              signalled.sessionId,
-              signalled.participantCode,
-              if (audible) "signal_emitted" else "signal_failed",
-              signalled.targetPackage,
-              observedSeconds,
-            )
-            if (audible) researchLog.markSignal(signalled.sessionId, observedSeconds)
-            RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
-            showCompletionNotification(signalled.activity, signalled.howToStart, audible, signalled.signalRoute)
-            while (store.load().status == ReminderStatus.SIGNALLED) delay(250L)
-            signalPlayer.stop()
+            deliverSignal(reminder.copy(observedUsageSeconds = observedSeconds))
             break
           }
 
-          previousTick = now
           delay(POLL_INTERVAL_MILLIS)
         }
-        ServiceCompat.stopForeground(this@AppUsageMonitorService, ServiceCompat.STOP_FOREGROUND_REMOVE)
-        stopSelf()
+        stopMonitoring()
       }
   }
 
-  private fun updateForegroundPackage(nowMillis: Long) {
+  /**
+   * Emite la señal de D-078: unos 30 segundos que terminan solos. Después, la pantalla y la
+   * notificación quedan visibles en silencio hasta que la persona responde.
+   */
+  private suspend fun deliverSignal(reminder: Reminder) {
+    val signalAt = System.currentTimeMillis()
+    val tracked = reminder.selectedApps.map { it.packageName }.toSet()
+    val usageBefore = UsageWindow.trackedSeconds(this, signalAt - UsageWindow.WINDOW_MILLIS, signalAt, tracked)
+    val ending = CompletableDeferred<SignalPlayer.Ending>()
+    val audible = signalPlayer.play(reminder.signalRoute, SignalPlayer.Pattern.SIGNAL) { ending.complete(it) }
+    val signalled = reminder.deliverSignal(audible, signalAt)
+    store.save(signalled)
+    researchLog.record(signalled.sessionId, signalled.participantCode, if (audible) "signal_emitted" else "signal_failed", signalled.targetPackage, signalled.observedUsageSeconds)
+    if (audible) researchLog.markSignal(signalled.sessionId, signalled.observedUsageSeconds, signalAt, usageBefore)
+    scope.launch(Dispatchers.IO) { RemoteSync(this@AppUsageMonitorService, researchLog).syncPending() }
+    showCompletionNotification(signalled, audible)
+    if (!audible) return
+
+    // Espera a que la persona responda o a que el sonido termine.
+    while (store.load().status == ReminderStatus.SIGNALLED && !ending.isCompleted) delay(250L)
+    if (ending.isCompleted && store.load().status == ReminderStatus.SIGNALLED) {
+      val seconds = ((System.currentTimeMillis() - signalAt) / 1_000L).toInt()
+      when (ending.await()) {
+        SignalPlayer.Ending.COMPLETED -> {
+          researchLog.record(signalled.sessionId, signalled.participantCode, "signal_ended", signalled.targetPackage, seconds)
+          researchLog.markSignalEnd(signalled.sessionId, "auto")
+        }
+        SignalPlayer.Ending.ROUTE_LOST -> {
+          researchLog.record(signalled.sessionId, signalled.participantCode, "signal_interrupted", signalled.targetPackage, seconds)
+          researchLog.markSignalEnd(signalled.sessionId, "interrupted")
+        }
+        SignalPlayer.Ending.STOPPED -> Unit
+      }
+      store.save(store.load().endSignal())
+    }
+    signalPlayer.stop()
+  }
+
+  private fun readUsageEvents(nowMillis: Long, tracker: ForegroundTracker) {
     val usageStats = getSystemService(UsageStatsManager::class.java) ?: return
     val events = usageStats.queryEvents(lastQueryMillis, nowMillis)
     val event = UsageEvents.Event()
     while (events.hasNextEvent()) {
       events.getNextEvent(event)
       when (event.eventType) {
-        UsageEvents.Event.ACTIVITY_RESUMED,
-        UsageEvents.Event.MOVE_TO_FOREGROUND -> currentForegroundPackage = event.packageName
-        UsageEvents.Event.ACTIVITY_PAUSED,
-        UsageEvents.Event.MOVE_TO_BACKGROUND -> {
-          if (currentForegroundPackage == event.packageName) currentForegroundPackage = null
-        }
+        UsageEvents.Event.ACTIVITY_RESUMED -> tracker.onEvent(ForegroundTracker.Kind.RESUMED, event.packageName)
+        UsageEvents.Event.ACTIVITY_PAUSED -> tracker.onEvent(ForegroundTracker.Kind.PAUSED, event.packageName)
+        UsageEvents.Event.SCREEN_NON_INTERACTIVE -> tracker.onEvent(ForegroundTracker.Kind.SCREEN_OFF, null)
       }
     }
     lastQueryMillis = nowMillis
+  }
+
+  /**
+   * Sin acceso a Tiempo de uso no se puede contar. El relevo sigue activo, pero el conteo se detiene
+   * y la persona recibe un aviso visible para reactivarlo o desactivarlo.
+   */
+  private fun pauseForMissingAccess(sessionId: String, participantCode: String, targetPackage: String, observedSeconds: Int) {
+    researchLog.record(sessionId, participantCode, "monitor_paused", targetPackage, observedSeconds)
+    getSystemService(NotificationManager::class.java)?.notify(
+      STATUS_NOTIFICATION_ID,
+      NotificationCompat.Builder(this, STATUS_CHANNEL_ID)
+        .setSmallIcon(android.R.drawable.ic_popup_reminder)
+        .setContentTitle("Relevo dejó de contar")
+        .setContentText("Falta el acceso a Tiempo de uso. Abre Relevo para autorizarlo o desactivar el recordatorio.")
+        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el acceso a Tiempo de uso. Abre Relevo para autorizarlo o desactivar el recordatorio."))
+        .setContentIntent(openAppIntent())
+        .setAutoCancel(true)
+        .build(),
+    )
+    stopMonitoring()
   }
 
   private fun hasCurrentConsent(): Boolean =
@@ -170,7 +236,14 @@ class AppUsageMonitorService : Service() {
         preferences.getString("academic_consent_version", null) == ResearchLogStore.CONSENT_VERSION
     }
 
-  private fun createNotificationChannel() {
+  private fun openAppIntent(): PendingIntent = PendingIntent.getActivity(
+    this,
+    0,
+    Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP),
+    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+  )
+
+  private fun createNotificationChannels() {
     val manager = getSystemService(NotificationManager::class.java) ?: return
     manager.createNotificationChannel(
       NotificationChannel(CHANNEL_ID, "Recordatorio activo", NotificationManager.IMPORTANCE_LOW).apply {
@@ -184,27 +257,41 @@ class AppUsageMonitorService : Service() {
         enableVibration(true)
       },
     )
+    manager.createNotificationChannel(
+      NotificationChannel(STATUS_CHANNEL_ID, "Estado del relevo", NotificationManager.IMPORTANCE_DEFAULT).apply {
+        description = "Avisa si Relevo dejó de contar, por ejemplo al retirar un permiso."
+        setSound(null, null)
+      },
+    )
   }
 
-  private fun showCompletionNotification(activity: String, firstStep: String, audible: Boolean, route: SignalRoute) {
+  /**
+   * La notificación de la señal. En la condición «teléfono» es genérica y no muestra la intención
+   * hasta abrir la app (protocolo 02). En la pantalla de bloqueo, siempre se ve la versión genérica.
+   */
+  private fun showCompletionNotification(reminder: Reminder, audible: Boolean) {
     val manager = getSystemService(NotificationManager::class.java) ?: return
-    val openApp = PendingIntent.getActivity(
-      this,
-      0,
-      Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP),
-      PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
-    )
+    val generic = reminder.studyCondition == StudyCondition.PHONE.code.toString()
+    val publicVersion = NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
+      .setSmallIcon(android.R.drawable.ic_popup_reminder)
+      .setContentTitle("Relevo")
+      .setContentText(GENERIC_SIGNAL_TEXT)
+      .build()
+    val text = when {
+      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No se encontró el parlante Bluetooth. Abre Relevo para revisar la señal."
+      !audible -> "No se pudo reproducir el sonido en el teléfono. Abre Relevo para revisar la señal."
+      generic -> GENERIC_SIGNAL_TEXT
+      else -> "Es momento de volver a elegir. Puedes empezar por: ${reminder.howToStart}"
+    }
     manager.notify(
       SIGNAL_NOTIFICATION_ID,
       NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
         .setSmallIcon(android.R.drawable.ic_popup_reminder)
-        .setContentTitle(activity)
-        .setContentText(
-          if (audible) "La señal está sonando. Puedes empezar por: $firstStep"
-          else if (route == SignalRoute.BLUETOOTH) "No se encontró el parlante Bluetooth. Abre Relevo para revisar la señal."
-          else "No se pudo reproducir el sonido en el teléfono. Abre Relevo para revisar la señal.",
-        )
-        .setContentIntent(openApp)
+        .setContentTitle(if (generic && audible) "Relevo" else reminder.activity)
+        .setContentText(text)
+        .setContentIntent(openAppIntent())
+        .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
+        .setPublicVersion(publicVersion)
         .setAutoCancel(true)
         .setSilent(true)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -214,10 +301,26 @@ class AppUsageMonitorService : Service() {
   }
 
   companion object {
+    const val ACTION_RESTORE = "cl.udp.relevo.action.RESTORE_MONITOR"
+    const val GENERIC_SIGNAL_TEXT = "Tu intención está disponible"
+
+    /** Retira la notificación de la señal cuando la persona ya respondió en la app. */
+    fun cancelSignalNotification(context: android.content.Context) {
+      context.getSystemService(NotificationManager::class.java)?.cancel(SIGNAL_NOTIFICATION_ID)
+    }
+
+    /** Indica si el conteo está en marcha en este proceso; evita reiniciarlo cada vez que se abre la app. */
+    @Volatile var isCounting = false
+      private set
     private const val CHANNEL_ID = "relevo_monitor"
     private const val NOTIFICATION_ID = 1101
     private const val SIGNAL_NOTIFICATION_ID = 1102
+    private const val STATUS_NOTIFICATION_ID = 1103
     private const val SIGNAL_CHANNEL_ID = "relevo_signal_bluetooth_v2"
+    private const val STATUS_CHANNEL_ID = "relevo_status"
     private const val POLL_INTERVAL_MILLIS = 1_000L
+    private const val LOOKBACK_MILLIS = 15 * 60_000L
+    private const val ACCESS_CHECK_TICKS = 30L
+    private const val SYNC_TICKS = 15 * 60L
   }
 }

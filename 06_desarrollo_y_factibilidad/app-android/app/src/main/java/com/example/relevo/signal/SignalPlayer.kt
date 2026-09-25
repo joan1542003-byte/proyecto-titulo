@@ -12,17 +12,28 @@ import android.os.Vibrator
 import android.os.VibratorManager
 import com.example.relevo.domain.SignalRoute
 import kotlin.concurrent.thread
-import kotlin.math.PI
 import kotlin.math.max
-import kotlin.math.sin
+import kotlin.math.min
 
 class SignalPlayer(private val context: Context) {
+  /** SIGNAL: señal de unos 30 s que termina sola (D-078). TEST: una firma para probar el sonido. */
+  enum class Pattern { SIGNAL, TEST }
+
+  /** Cómo terminó la reproducción. */
+  enum class Ending { COMPLETED, ROUTE_LOST, STOPPED }
+
   @Volatile private var playing = false
+  @Volatile var isPlaying = false
+    private set
   private var audioTrack: AudioTrack? = null
   private var audioThread: Thread? = null
 
-  /** Dirige el tono a la salida que la persona eligió, sin redirigirlo silenciosamente. */
-  fun play(route: SignalRoute = SignalRoute.BLUETOOTH): Boolean {
+  /**
+   * Dirige la señal a la salida que la persona eligió, sin redirigirla silenciosamente. Devuelve
+   * false si esa salida no está disponible. [onEnded] se llama una vez, desde otro hilo, cuando la
+   * señal termina sola, cuando se pierde la salida o cuando se detiene con [stop].
+   */
+  fun play(route: SignalRoute = SignalRoute.BLUETOOTH, pattern: Pattern = Pattern.SIGNAL, onEnded: ((Ending) -> Unit)? = null): Boolean {
     stop()
     val audioManager = context.getSystemService(AudioManager::class.java) ?: return false
     val chosenOutput =
@@ -35,12 +46,8 @@ class SignalPlayer(private val context: Context) {
           return false
         }
 
-    val sampleRate = 44_100
-    val minimumBuffer = AudioTrack.getMinBufferSize(
-      sampleRate,
-      AudioFormat.CHANNEL_OUT_MONO,
-      AudioFormat.ENCODING_PCM_16BIT,
-    )
+    val sampleRate = FirmaSonora.SAMPLE_RATE
+    val minimumBuffer = AudioTrack.getMinBufferSize(sampleRate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT)
     if (minimumBuffer <= 0) return false
 
     val track =
@@ -75,7 +82,9 @@ class SignalPlayer(private val context: Context) {
       if (track.routedDevice?.id == chosenOutput.id) {
         audioTrack = track
         playing = true
-        startTone(track, chosenOutput.id, sampleRate)
+        isPlaying = true
+        val pcm = if (pattern == Pattern.SIGNAL) FirmaSonora.signal() else FirmaSonora.test()
+        startPlayback(track, chosenOutput.id, pcm, onEnded)
         vibrateOnce()
         return true
       }
@@ -85,27 +94,26 @@ class SignalPlayer(private val context: Context) {
     return false
   }
 
-  private fun startTone(track: AudioTrack, outputId: Int, sampleRate: Int) {
+  private fun startPlayback(track: AudioTrack, outputId: Int, pcm: ShortArray, onEnded: ((Ending) -> Unit)?) {
     audioThread =
       thread(name = "relevo-signal", isDaemon = true) {
-        val samples = ShortArray(2_048)
-        var sampleIndex = 0L
-        while (playing) {
-          if (track.routedDevice?.id != outputId) {
-            playing = false
-            break
-          }
-          for (index in samples.indices) {
-            val frequency = if ((sampleIndex % sampleRate) < sampleRate / 2) 660.0 else 784.0
-            val phase = 2.0 * PI * frequency * sampleIndex / sampleRate
-            samples[index] = (sin(phase) * Short.MAX_VALUE * 0.18).toInt().toShort()
-            sampleIndex += 1
-          }
-          if (track.write(samples, 0, samples.size, AudioTrack.WRITE_BLOCKING) < 0) {
-            playing = false
-            break
-          }
+        var ending = Ending.COMPLETED
+        var position = 0
+        while (position < pcm.size) {
+          if (!playing) { ending = Ending.STOPPED; break }
+          if (track.routedDevice?.id != outputId) { ending = Ending.ROUTE_LOST; break }
+          val count = min(CHUNK, pcm.size - position)
+          val written = track.write(pcm, position, count, AudioTrack.WRITE_BLOCKING)
+          if (written < 0) { ending = Ending.ROUTE_LOST; break }
+          position += written
         }
+        // Deja sonar lo que queda en el búfer antes de cerrar.
+        if (ending == Ending.COMPLETED) runCatching { Thread.sleep(250) }
+        // Solo stop() apaga `playing`: si ocurrió, la señal se detuvo por decisión de la persona.
+        if (!playing) ending = Ending.STOPPED
+        playing = false
+        isPlaying = false
+        onEnded?.invoke(ending)
       }
   }
 
@@ -113,7 +121,7 @@ class SignalPlayer(private val context: Context) {
     playing = false
     audioThread?.let { worker ->
       worker.interrupt()
-      runCatching { worker.join(300L) }
+      runCatching { worker.join(400L) }
     }
     audioThread = null
     audioTrack?.let { track ->
@@ -123,6 +131,7 @@ class SignalPlayer(private val context: Context) {
       track.release()
     }
     audioTrack = null
+    isPlaying = false
     vibrator()?.cancel()
   }
 
@@ -141,4 +150,6 @@ class SignalPlayer(private val context: Context) {
     } else {
       context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
     }
+
+  private companion object { const val CHUNK = 2_048 }
 }

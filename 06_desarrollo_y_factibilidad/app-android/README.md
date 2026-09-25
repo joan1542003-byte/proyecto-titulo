@@ -4,19 +4,19 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.6 de prueba
+**Versión:** 2.7 de prueba
 
-**Fecha:** 24 de septiembre de 2026
+**Fecha:** 25 de septiembre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.6-2026-09-24.apk](releases/relevo-android-2.6-2026-09-24.apk)
+**APK vigente:** [relevo-android-2.7-2026-09-25.apk](releases/relevo-android-2.7-2026-09-25.apk)
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.6-2026-09-24.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.7-2026-09-25.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
 
@@ -24,9 +24,9 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Licencias de recursos de terceros:** [fuente Source Sans 3 y procedencia de imágenes](licencias/README.md).
 
-**Próxima versión:** la 2.7 que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md): señal de unos 30 segundos que se detiene sola (D-078), condición de la semana, aviso genérico en la condición «teléfono», preguntas de un toque y registro de respuesta y uso alrededor de la señal.
+**Versión 2.7:** incorpora lo que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md) y corrige el envío de eventos. Cambios, causa del problema de eventos y verificación en [Android 2.7](version-2.7-prueba-21-dias-2026-09-25.md).
 
-La versión 2.6 compila y sus pruebas unitarias pasan. Se inspeccionaron en emulador consentimiento, tutorial, Inicio y preparación con dos aplicaciones. El ciclo completo, la reproducción en un parlante real, la eliminación remota y el envío de eventos aún no se han verificado de extremo a extremo. No es una aplicación validada con participantes.
+La versión 2.7 compila y sus 34 pruebas unitarias pasan. En un emulador Android 16 se recorrieron, con datos ficticios, la sesión inicial, una semana en condición «teléfono», las preguntas tras la señal, las tarjetas semanales y el cierre del día 21; los registros llegaron a Supabase. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
 
 ## Qué permite hacer
 
@@ -53,13 +53,20 @@ La versión 2.6 compila y sus pruebas unitarias pasan. Se inspeccionaron en emul
 21. volver un paso con el gesto de Android durante el tutorial y la preparación; consultar en Historial un código de participación estable entre ciclos;
 22. ver una confirmación breve cuando la persona declara que comenzó su actividad, sin presentar la declaración como una comprobación de Relevo;
 23. probar el sonido antes de activar, conocer explícitamente si la salida elegida falló y consultar una pantalla de privacidad para solicitar la eliminación de los registros locales y remotos;
-24. encontrar de nuevo la actividad anterior al abrir la app después de varios días, sin imponer una racha ni atribuirle resultados no observados.
+24. encontrar de nuevo la actividad anterior al abrir la app dos días o más después del último relevo («Hola de nuevo»), sin decir cuántos días pasaron ni imponer una racha;
+25. escuchar una señal de unos 30 segundos hecha con la firma sonora de Relevo, que empieza suave y se detiene sola (D-078); después, la pantalla y la notificación quedan en silencio hasta que la persona responde;
+26. seguir la prueba de 21 días del protocolo 02: el investigador asigna en la sesión inicial una de las seis secuencias; cada semana la app indica la condición (parlante junto al comienzo, parlante en un lugar neutro o aviso en el teléfono) y fija dónde suena;
+27. en la condición «teléfono», recibir una notificación genérica («Tu intención está disponible»); en la pantalla de bloqueo, la notificación nunca muestra la intención;
+28. responder tras cada señal, con un toque y pudiendo omitir, si supo qué quería hacer antes de mirar el teléfono y si recordó cómo empezar; responder la tarjeta de cierre de cada semana y el cierre del día 21;
+29. registrar para la investigación si la señal se silenció o terminó sola, cuánto tardó la respuesta y el uso de las apps elegidas 10 minutos antes y después de la señal, sin mostrarlo como tiempo excedido;
+30. repetir el último relevo desde Inicio, retomar el conteo tras reiniciar el teléfono o actualizar la app, ver un aviso si se retira Tiempo de uso y permitir opcionalmente que Relevo funcione sin la restricción de batería;
+31. consultar en Privacidad y datos el estado del envío (pendientes, último envío y rechazos) y el día de la prueba.
 
 ## Límites
 
-Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Solo suma el tiempo de las aplicaciones elegidas mientras el relevo está activo. Sesiones y eventos se guardan primero en SQLite y la app intenta sincronizarlos con Supabase. La base tiene políticas que limitan el acceso de cada participante a sus filas; una comprobación reciente encontró sesiones remotas, pero ningún evento remoto, por lo que esa sincronización aún requiere una prueba completa antes de usarla en el estudio.
+Relevo reconoce qué aplicación está en primer plano, pero no lee mensajes, imágenes, búsquedas ni contenidos. Solo suma el tiempo de las aplicaciones elegidas mientras el relevo está activo. Sesiones, eventos y respuestas se guardan primero en SQLite y la app intenta sincronizarlos con Supabase. La base tiene políticas que limitan el acceso de cada participante a sus filas. Hasta el 24 de septiembre ningún evento llegaba porque la base no permitía leer la columna usada para evitar duplicados; desde 2.7, un registro rechazado ya no detiene el envío de los demás ([detalle](version-2.7-prueba-21-dias-2026-09-25.md)).
 
-La señal sonora comprueba que Android haya dirigido el audio a la salida elegida. Continúa mientras el ciclo siga en estado de señal, incluso con la app fuera de pantalla, y cesa al silenciar o cerrar. Si la ruta no está disponible, se informa el fallo y no se marca la señal como audible. La alternativa en el teléfono permite probar la interacción, pero no sustituye la situación phygital: el aviso ya no está junto a la actividad. La selección de ruta de Android no demuestra exclusividad absoluta en todos los modelos; se necesita probar el teléfono y parlante concretos.
+La señal sonora comprueba que Android haya dirigido el audio a la salida elegida. Suena unos 30 segundos, incluso con la app fuera de pantalla, y cesa antes si la persona la silencia. Si la ruta no está disponible, se informa el fallo y no se marca la señal como audible. La alternativa en el teléfono permite probar la interacción, pero no sustituye la situación phygital: el aviso ya no está junto a la actividad. La selección de ruta de Android no demuestra exclusividad absoluta en todos los modelos; se necesita probar el teléfono y parlante concretos.
 
 La comprobación anterior se refiere **solo al tono de Relevo**: no impide que YouTube, Instagram u otra app envíen audio al mismo parlante multimedia. Las opciones para separar esos sonidos y la prueba necesaria están en el [análisis de enrutamiento](../enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
 
@@ -67,16 +74,17 @@ La comprobación anterior se refiere **solo al tono de Relevo**: no impide que Y
 
 1. instalar el APK;
 2. abrir Relevo;
-3. leer y aceptar el uso académico de los datos;
+3. leer y aceptar la participación en la prueba de 21 días;
 4. recorrer el tutorial y, si se desea, configurar el primer relevo desde allí;
 5. autorizar **Tiempo de uso** en la última escena;
-6. autorizar notificaciones si se quiere recibir el aviso con otra aplicación abierta.
+6. autorizar notificaciones si se quiere recibir el aviso con otra aplicación abierta;
+7. en la sesión inicial, el investigador abre **Privacidad y datos → Configurar la prueba**, elige la secuencia asignada a la persona y pulsa **Empezar la prueba hoy** (día 0).
 
 Android muestra una notificación mientras el recordatorio está activo. Esta visibilidad comunica que existe observación en curso y no debe eliminarse.
 
 ## Datos de prueba
 
-La estructura y sus límites están descritos en [detección de uso y datos](arquitectura-deteccion-uso-y-datos-2026-09-21.md). La app usa un código aleatorio; no solicita el nombre de la persona. El consentimiento indica finalidad académica, correo responsable y plazo máximo de conservación hasta el 30 de diciembre de 2026. Antes de entregar el APK a participantes debe probarse la eliminación solicitada desde la app, incluida la respuesta sin conexión.
+La estructura y sus límites están descritos en [detección de uso y datos](arquitectura-deteccion-uso-y-datos-2026-09-21.md) y, para la prueba de 21 días, en el [modelo de datos](../../07_validacion/modelo-datos-evaluacion-app-2026-09-22.md). La app usa un código aleatorio; no solicita el nombre de la persona. El consentimiento indica finalidad académica, correo responsable y plazo máximo de conservación hasta el 30 de diciembre de 2026. Antes de entregar el APK a participantes debe probarse la eliminación solicitada desde la app, incluida la respuesta sin conexión.
 
 ## Compilación
 
@@ -94,15 +102,27 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 ## Estructura relevante
 
 - `domain/Reminder.kt`: estados y condiciones del ciclo;
-- `monitor/AppUsageMonitorService.kt`: observación visible del primer plano;
-- `monitor/UsageAccess.kt`: comprobación del permiso;
-- `data/ResearchLogStore.kt`: eventos seudónimos en SQLite;
-- `data/ReminderStore.kt`: estado local del recordatorio;
-- `signal/SignalPlayer.kt`: sonido y vibración;
+- `domain/Study.kt`: plan de la prueba de 21 días, semanas y condiciones;
+- `monitor/AppUsageMonitorService.kt`: observación visible del primer plano y emisión de la señal;
+- `monitor/ForegroundTracker.kt` y `monitor/UsageWindow.kt`: suma del tiempo en las apps elegidas y uso alrededor de la señal;
+- `monitor/RestoreMonitorReceiver.kt`: reanudación tras reiniciar o actualizar;
+- `monitor/UsageAccess.kt` y `monitor/BackgroundAccess.kt`: permiso de Tiempo de uso y restricción de batería;
+- `data/ResearchLogStore.kt`: sesiones, eventos y respuestas seudónimos en SQLite;
+- `data/RemoteSync.kt`: envío a Supabase, rechazos, borrado y estado del envío;
+- `data/StudyStore.kt` y `data/ReminderStore.kt`: estado local de la prueba y del recordatorio;
+- `signal/FirmaSonora.kt` y `signal/SignalPlayer.kt`: firma sonora, señal de 30 segundos, prueba de sonido y vibración;
 - `ui/RelevoViewModel.kt`: coordinación;
-- `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
+- `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal;
+- `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Versión 2.7 para la prueba de 21 días
+
+- **Cambio:** señal de unos 30 segundos con la firma sonora (D-078); condición de la semana asignada por secuencia y que fija la salida; notificación genérica en la condición «teléfono» y versión pública sin la intención; preguntas de un toque tras cada señal, tarjetas semanales y cierre del día 21; registro de silencio o fin automático, tiempo de respuesta y uso de las apps elegidas 10 minutos antes y después de la señal. También: envío que no se bloquea por un registro rechazado, reanudación tras reiniciar, aviso si se retira el permiso, repetición del último relevo, regreso según el diseño escrito (V1), consentimiento de 21 días y botones con verbo (D-077).
+- **Antes:** la señal sonaba hasta que la persona la silenciaba; la app no conocía la prueba de 21 días; la base tenía 0 eventos por una causa no diagnosticada.
+- **Motivo:** el protocolo 02 exige la versión 2.7 antes de la prueba técnica (D-075, D-078 y D-079).
+- **Verificación:** compilación, 34 pruebas unitarias y recorrido con datos ficticios en emulador, con registros comprobados en Supabase. **Pendiente:** teléfono real, parlante Bluetooth y borrado sin conexión.
 
 ### 2026-09-25 — Próxima versión 2.7
 

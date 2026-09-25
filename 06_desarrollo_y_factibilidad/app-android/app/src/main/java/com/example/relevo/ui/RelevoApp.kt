@@ -136,10 +136,12 @@ import androidx.lifecycle.compose.LifecycleEventEffect
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.domain.SignalRoute
+import com.example.relevo.domain.StudyCondition
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.CustomActivity
 import com.example.relevo.data.ResearchLogStore
+import com.example.relevo.data.SyncStatus
 import com.example.relevo.monitor.AppUsageSummary
 import cl.udp.relevo.R
 import com.example.relevo.theme.RelevoCoral
@@ -152,7 +154,7 @@ import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.HazeStyle
 import dev.chrisbanes.haze.hazeEffect
 
-private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE, PRIVACY }
+private enum class Screen { CONSENT, ONBOARDING, HOME, SETUP, ACTIVE, SIGNAL, DONE, PRIVACY, STUDY, WEEK, CLOSING }
 private enum class HomeTab { START, ACTIVITY, HISTORY }
 private enum class SetupStep { ACTIVITY, TIMING, PLACE, REVIEW }
 private data class ActivityPreset(val activity: String, val start: String, val place: String, val image: Int)
@@ -207,10 +209,17 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
   val todayUsage by viewModel.todayUsage.collectAsState()
   val customActivities by viewModel.customActivities.collectAsState()
   val deletionStatus by viewModel.deletionStatus.collectAsState()
+  val lastReminder by viewModel.lastReminder.collectAsState()
+  val backgroundUnrestricted by viewModel.backgroundUnrestricted.collectAsState()
+  val syncStatus by viewModel.syncStatus.collectAsState()
+  val study by viewModel.study.collectAsState()
+  val returnDismissedFor by viewModel.returnDismissedFor.collectAsState()
   val context = LocalContext.current
+  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { viewModel.onAppResumed() }
   var tab by rememberSaveable { mutableStateOf(HomeTab.START) }
   var createCustomRequested by rememberSaveable { mutableStateOf(false) }
-  var showStartAcknowledgement by rememberSaveable { mutableStateOf(false) }
+  // Reconocimiento breve de la respuesta declarada (B5); ninguna respuesta recibe reproche.
+  var acknowledgement by rememberSaveable { mutableStateOf<String?>(null) }
   val introduction = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   var screen by rememberSaveable {
     mutableStateOf(
@@ -276,9 +285,21 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         { screen = screenFor(reminder.status, Screen.HOME) },
         reminder.status,
         { tab = it },
-        showStartAcknowledgement,
-        { showStartAcknowledgement = false },
+        acknowledgement,
+        { acknowledgement = null },
         { screen = Screen.PRIVACY },
+        lastReminder,
+        {
+          if (reminder.status == ReminderStatus.WAITING || reminder.status == ReminderStatus.SIGNALLED) screen = screenFor(reminder.status)
+          else if (viewModel.repeatLast()) screen = Screen.SETUP
+          else screen = Screen.SETUP
+        },
+        study,
+        viewModel::dismissInstruction,
+        { screen = Screen.WEEK },
+        { screen = Screen.CLOSING },
+        returnDismissedFor,
+        viewModel::dismissReturn,
       )
       Screen.SETUP -> SetupScreen(
         reminder = reminder,
@@ -299,28 +320,45 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
         onPermission = viewModel::openUsageAccessSettings,
         onRefresh = viewModel::refreshUsageAccess,
         onTest = viewModel::testSignal,
+        backgroundUnrestricted = backgroundUnrestricted,
+        onBackground = viewModel::requestBackgroundAccess,
+        studyCondition = study.condition,
         onActivate = {
           requestNotificationPermissionIfNeeded(context)
           if (viewModel.activate()) screen = Screen.ACTIVE
         },
       )
-      Screen.ACTIVE -> ActiveScreen(reminder, remaining) { viewModel.disarm(); screen = Screen.DONE }
-      Screen.SIGNAL -> SignalScreen(reminder) { viewModel.silence(); screen = Screen.DONE }
-      Screen.DONE -> DoneScreen(reminder) { outcome ->
-        viewModel.completeEvaluation(outcome)
-        showStartAcknowledgement = outcome == "started"
+      Screen.ACTIVE -> ActiveScreen(reminder, remaining, usageAccess, viewModel::openUsageAccessSettings, backgroundUnrestricted,
+        viewModel::requestBackgroundAccess) { viewModel.disarm(); screen = Screen.DONE }
+      Screen.SIGNAL -> SignalScreen(reminder, onTestSound = viewModel::testSignal) { viewModel.silence(); screen = Screen.DONE }
+      Screen.DONE -> DoneScreen(reminder, askSignalQuestions = study.active && reminder.signalDelivered) { outcome, knew, recalled ->
+        viewModel.completeEvaluation(outcome, knew, recalled)
+        acknowledgement = acknowledgementFor(outcome)
         viewModel.reset()
         screen = Screen.HOME
       }
       Screen.PRIVACY -> PrivacyScreen(deletionStatus, { screen = if (reminder.consentAccepted) Screen.HOME else Screen.CONSENT },
-        viewModel::deleteResearchData, { screen = Screen.CONSENT }, if (reminder.consentAccepted) "Volver al inicio" else "Volver al consentimiento", viewModel.remoteConfigured)
+        viewModel::deleteResearchData, { screen = Screen.CONSENT }, if (reminder.consentAccepted) "Volver al inicio" else "Volver al consentimiento", viewModel.remoteConfigured,
+        syncStatus, study, onStudy = { screen = Screen.STUDY }, showStudyAccess = reminder.consentAccepted)
+      Screen.STUDY -> StudyScreen(study, reminder.participantCode, viewModel::startStudy, viewModel::endStudy) { screen = Screen.PRIVACY }
+      Screen.WEEK -> {
+        val week = study.pendingWeek
+        if (week == null) LaunchedEffect(Unit) { screen = Screen.HOME }
+        else WeekReviewScreen(week, study.plan?.conditionOfWeek(week),
+          onSubmit = { preparation, annoyance, place, comment -> viewModel.submitWeek(week, preparation, annoyance, place, comment); screen = Screen.HOME },
+          onLater = { screen = Screen.HOME })
+      }
+      Screen.CLOSING -> ClosingScreen(
+        onSubmit = { answers -> viewModel.submitClosing(answers); screen = Screen.HOME },
+        onLater = { screen = Screen.HOME },
+      )
     }
     }
   }
 }
 
 @Composable
-private fun Page(content: @Composable () -> Unit) {
+internal fun Page(content: @Composable () -> Unit) {
   Box(Modifier.fillMaxSize().safeDrawingPadding().padding(horizontal = 24.dp, vertical = 18.dp)) { content() }
 }
 
@@ -345,9 +383,17 @@ private fun HomeScreen(
   onResume: () -> Unit,
   status: ReminderStatus,
   onSelectTab: (HomeTab) -> Unit,
-  showStartAcknowledgement: Boolean,
+  acknowledgement: String?,
   onDismissAcknowledgement: () -> Unit,
   onPrivacy: () -> Unit,
+  lastReminder: Reminder?,
+  onRepeat: () -> Unit,
+  study: StudyState,
+  onDismissInstruction: (Int) -> Unit,
+  onWeekReview: () -> Unit,
+  onClosing: () -> Unit,
+  returnDismissedFor: Long,
+  onDismissReturn: (Long) -> Unit,
 ) {
   val animationsEnabled = rememberAnimationsEnabled()
   val hazeState = remember { HazeState() }
@@ -360,7 +406,8 @@ private fun HomeScreen(
       label = "home_tabs",
     ) { selected ->
       when (selected) {
-        HomeTab.START -> StartDashboard(history, usage, customActivities, onStart, onPreset, onCustom, onCreate, showStartAcknowledgement, onDismissAcknowledgement)
+        HomeTab.START -> StartDashboard(history, usage, customActivities, onStart, onPreset, onCustom, onCreate, acknowledgement, onDismissAcknowledgement,
+          lastReminder, onRepeat, study, onDismissInstruction, onWeekReview, onClosing, returnDismissedFor, onDismissReturn)
         HomeTab.ACTIVITY -> ActivityDashboard(usage, usageAccess, onStart)
         HomeTab.HISTORY -> HistoryDashboard(history, participantCode, onStart)
       }
@@ -434,37 +481,61 @@ private fun FloatingTabBar(currentTab: HomeTab, onSelect: (HomeTab) -> Unit, mod
 }
 
 @Composable
-private fun StartDashboard(history: List<HistoryEntry>, usage: List<AppUsageSummary>, customActivities: List<CustomActivity>, onStart: () -> Unit, onPreset: (ActivityPreset) -> Unit, onCustom: (CustomActivity) -> Unit, onCreate: () -> Unit, showStartAcknowledgement: Boolean, onDismissAcknowledgement: () -> Unit) {
+private fun StartDashboard(
+  history: List<HistoryEntry>, usage: List<AppUsageSummary>, customActivities: List<CustomActivity>, onStart: () -> Unit, onPreset: (ActivityPreset) -> Unit,
+  onCustom: (CustomActivity) -> Unit, onCreate: () -> Unit, acknowledgement: String?, onDismissAcknowledgement: () -> Unit,
+  lastReminder: Reminder?, onRepeat: () -> Unit, study: StudyState, onDismissInstruction: (Int) -> Unit, onWeekReview: () -> Unit,
+  onClosing: () -> Unit, returnDismissedFor: Long, onDismissReturn: (Long) -> Unit,
+) {
+  // V1: dos días o más después del último relevo. No se dice cuántos días pasaron ni se sugiere una falta.
   val last = history.firstOrNull()
-  val daysAway = last?.let { java.time.temporal.ChronoUnit.DAYS.between(
+  val daysSinceLast = last?.let { java.time.temporal.ChronoUnit.DAYS.between(
     java.time.Instant.ofEpochMilli(it.completedAt).atZone(java.time.ZoneId.systemDefault()).toLocalDate(),
     java.time.LocalDate.now(),
   ) } ?: 0L
+  val returning = last != null && daysSinceLast >= 2 && returnDismissedFor != last.completedAt
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(top = 84.dp, bottom = 144.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
     Spacer(Modifier.height(4.dp))
-    if (daysAway >= 2) {
+    StudyCards(study, onDismissInstruction, onWeekReview, onClosing)
+    if (returning && last != null) {
       Surface(shape = RoundedCornerShape(26.dp), color = Color(0xFFE7F2EE)) {
         Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-          Text("Puedes retomarlo cuando quieras", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
-          Text("La última vez preparaste un relevo para ${last?.activity}. Puedes volver a elegirlo o hacer algo distinto.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
-          InlineAction("Preparar un relevo", onStart)
+          Text("Hola de nuevo.", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
+          Text("La última vez preparaste: ${last.activity}. ¿Sigue siendo lo que quieres?", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+          PrimaryButton("Preparar de nuevo", onRepeat)
+          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            InlineAction("Elegir otra actividad", onStart)
+            InlineAction("Ahora no", { onDismissReturn(last.completedAt) })
+          }
         }
       }
     }
-    AnimatedVisibility(showStartAcknowledgement, enter = expandVertically(tween(280)) + fadeIn(tween(220)), exit = shrinkVertically(tween(180)) + fadeOut(tween(150))) {
+    AnimatedVisibility(acknowledgement != null, enter = expandVertically(tween(280)) + fadeIn(tween(220)), exit = shrinkVertically(tween(180)) + fadeOut(tween(150))) {
       Surface(shape = RoundedCornerShape(22.dp), color = MaterialTheme.colorScheme.primaryContainer) {
         Column(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 15.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-          Text("¡Qué bueno que empezaste!", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onPrimaryContainer)
-          Text("Dejamos registrada tu respuesta, tal como nos la contaste.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
+          Text(acknowledgement.orEmpty(), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onPrimaryContainer)
           InlineAction("Cerrar", onDismissAcknowledgement, modifier = Modifier.align(Alignment.End))
         }
       }
     }
     Text("¿Qué te gustaría hacer?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp, letterSpacing = (-1).sp)
     Text("Elige una actividad. Relevo te avisará cuando se cumpla el tiempo que definas en las apps elegidas.", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
+    if (lastReminder != null && !returning) {
+      Surface(onClick = onRepeat, shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.primaryContainer) {
+        Row(Modifier.fillMaxWidth().padding(18.dp), verticalAlignment = Alignment.CenterVertically) {
+          Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+            Text("Repetir el último relevo", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimaryContainer)
+            Text(lastReminder.activity, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onPrimaryContainer)
+            Text("${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatTime(lastReminder.requiredUsageSeconds)}",
+              style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onPrimaryContainer)
+          }
+          Icon(Icons.AutoMirrored.Rounded.ArrowForward, "Revisar y activar", tint = MaterialTheme.colorScheme.onPrimaryContainer)
+        }
+      }
+    }
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
       Text("Actividades", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
-      InlineAction("Ver todas", onStart)
+      InlineAction("Ver todas las actividades", onStart)
     }
     activityPresets.take(4).chunked(2).forEach { row ->
       Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -528,18 +599,22 @@ private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit, onPrivacy
   Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color(0xFF075F54), Color(0xFF0A8573)))).safeDrawingPadding()) {
     Column(Modifier.fillMaxSize().padding(24.dp)) {
       Spacer(Modifier.height(18.dp))
-      Text("Antes de comenzar", style = MaterialTheme.typography.displaySmall, color = Color.White, fontWeight = FontWeight.SemiBold)
-      Text("Uso académico de los datos", style = MaterialTheme.typography.titleMedium, color = Color.White.copy(alpha = .76f))
-      Spacer(Modifier.height(24.dp))
+      Text("Participar en la prueba", style = MaterialTheme.typography.displaySmall, color = Color.White, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
+      Text("Proyecto de Título de Diseño, Universidad Diego Portales", style = MaterialTheme.typography.titleSmall, color = Color.White.copy(alpha = .76f))
+      Spacer(Modifier.height(20.dp))
       Surface(Modifier.fillMaxWidth().weight(1f), RoundedCornerShape(30.dp), Color(0xFFF8FAF8)) {
         Column(Modifier.verticalScroll(rememberScrollState()).padding(24.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-          Text("Relevo es un prototipo de Proyecto de Título de Diseño de la Universidad Diego Portales. Los datos se usarán para evaluar su funcionamiento y la experiencia de uso.", lineHeight = 23.sp)
-          ConsentPoint("Plazo y contacto", "Los datos se conservarán como máximo hasta el 30 de diciembre de 2026. Puedes retirar tu participación o pedir que se eliminen escribiendo a joan1542003@gmail.com. También puedes solicitar el borrado desde Privacidad y datos. Participar es voluntario y puedes detener un relevo cuando quieras.")
-          ConsentPoint("Qué datos registra", "La actividad elegida, cómo quieres empezar, el lugar que indicas, las apps seleccionadas y sus identificadores internos, el tiempo definido y las horas y eventos de inicio, uso, aviso y cierre. Tu respuesta final es opcional.")
-          ConsentPoint("Dónde se guardan", if (remoteConfigured) "Los datos se guardan en el teléfono y la app intenta enviarlos a Supabase, la base remota del estudio. Si falla el envío, quedan pendientes en este teléfono."
+          // Versión breve (A2) y, debajo, el detalle de la hoja de consentimiento de 21 días.
+          Text("Durante 21 días usarás Relevo y responderás preguntas breves. Guardamos lo que preparas y lo que respondes, con un código en vez de tu nombre. Puedes pedir que borremos todo cuando quieras.",
+            style = MaterialTheme.typography.titleMedium, lineHeight = 25.sp)
+          ConsentPoint("En qué consiste", "La prueba comienza con una sesión de unos 45 minutos con el investigador. Después, cada semana la app te pedirá dejar el parlante en un lugar distinto o usar el teléfono como aviso. Al cumplirse el límite que configures, sonará una señal de unos 30 segundos que se detiene sola. Tras cada señal y al final de cada semana, la app te hará preguntas de un toque que puedes omitir. Al terminar, se te invitará a una conversación de unos 15 minutos. El parlante es material de prueba; no es el objeto final.")
+          ConsentPoint("Tu decisión", "Participar es voluntario. Puedes omitir preguntas, silenciar el aviso, retirar el permiso de Android o terminar la prueba sin explicar por qué. La actividad que elijas no será juzgada. El sonido puede molestar a otras personas; puedes detenerlo y comunicarlo.")
+          ConsentPoint("Qué datos se guardan", "Un código aleatorio, la actividad, cómo quieres empezar, el lugar que indicas, las apps elegidas, el tiempo configurado y acumulado, los momentos de activación, aviso y respuesta, si silenciaste la señal, el uso de las apps elegidas en los 10 minutos anteriores y posteriores a la señal, y las respuestas que decidas dar.")
+          ConsentPoint("Dónde se guardan", if (remoteConfigured) "En el teléfono, y la app intenta enviarlos a Supabase, la base de datos del estudio. Si no hay conexión, quedan pendientes en el teléfono."
             else "Esta instalación no tiene configurada la base remota: los datos quedan solo en este teléfono. No la uses para un estudio que exija sincronización.")
-          ConsentPoint("Qué no se consulta", "El permiso da acceso técnico a estadísticas de uso. Relevo cuenta únicamente las apps que eliges; no lee mensajes, fotos, búsquedas ni contenido de pantalla.")
-          ConsentPoint("Cómo se identifican", "Relevo crea un código aleatorio, un seudónimo, y no pide tu nombre, correo ni teléfono para funcionar. Los datos son seudonimizados, no anónimos: horarios y detalles podrían relacionarlos contigo.")
+          ConsentPoint("Qué no se consulta", "El permiso de Tiempo de uso podría permitir consultar el uso de otras apps; Relevo cuenta solo las que eliges, mientras el relevo está activo. No lee mensajes, fotos, búsquedas ni contenido de pantalla.")
+          ConsentPoint("Cómo se identifican", "El código reemplaza tu nombre, pero no vuelve anónimos los datos: la combinación de actividades, lugares y horarios podría identificarte.")
+          ConsentPoint("Plazo y contacto", "Puedes pedir la eliminación desde Privacidad y datos o escribiendo a joan1542003@gmail.com con el código que aparece en Relevos. Si no la pides antes, los registros se eliminan, como máximo, el 30 de diciembre de 2026.")
         }
       }
       Spacer(Modifier.height(12.dp))
@@ -551,11 +626,11 @@ private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit, onPrivacy
           if (checked) Box(contentAlignment = Alignment.Center) { Icon(Icons.Rounded.CheckCircle, null, Modifier.size(18.dp), tint = Color.White) }
         }
         Spacer(Modifier.width(12.dp))
-        Text("He leído y acepto participar.", color = Color.White, fontWeight = FontWeight.Medium, modifier = Modifier.weight(1f))
+        Text("He leído y acepto participar durante 21 días.", color = Color.White, fontWeight = FontWeight.Medium, modifier = Modifier.weight(1f))
       }
       Spacer(Modifier.height(10.dp))
       if (deletionPending) Text("Hay una solicitud de eliminación pendiente. Entra en Privacidad y datos para reintentarla o pedir ayuda; el registro sigue detenido.", color = Color.White, lineHeight = 20.sp)
-      ActionButton("Aceptar y continuar", onAccept, checked && !deletionPending, Color(0xFFFF8B72), Color(0xFF321C17))
+      ActionButton("Aceptar y seguir", onAccept, checked && !deletionPending, Color(0xFFFF8B72), Color(0xFF321C17))
       InlineAction("Privacidad y datos", onPrivacy, Color.White, Modifier.align(Alignment.CenterHorizontally))
       InlineAction("No participar", onDecline, Color.White, Modifier.align(Alignment.CenterHorizontally))
     }
@@ -563,7 +638,7 @@ private fun ConsentScreen(onAccept: () -> Unit, onDecline: () -> Unit, onPrivacy
 }
 
 @Composable
-private fun ConsentPoint(title: String, text: String) {
+internal fun ConsentPoint(title: String, text: String) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
     Text(title, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.primary)
     Text(text, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 21.sp)
@@ -571,7 +646,10 @@ private fun ConsentPoint(title: String, text: String) {
 }
 
 @Composable
-private fun PrivacyScreen(status: String?, onBack: () -> Unit, onDelete: () -> Unit, onRestart: () -> Unit, returnLabel: String, remoteConfigured: Boolean) = Page {
+private fun PrivacyScreen(
+  status: String?, onBack: () -> Unit, onDelete: () -> Unit, onRestart: () -> Unit, returnLabel: String, remoteConfigured: Boolean,
+  syncStatus: SyncStatus, study: StudyState, onStudy: () -> Unit, showStudyAccess: Boolean,
+) = Page {
   var confirmDeletion by rememberSaveable { mutableStateOf(false) }
   val deleted = status?.startsWith("Datos eliminados") == true
   BackHandler(onBack = onBack)
@@ -587,6 +665,24 @@ private fun PrivacyScreen(status: String?, onBack: () -> Unit, onDelete: () -> U
         else "Esta instalación no tiene configurada una base remota; los registros quedan en este teléfono.")
       ConsentPoint("Hasta cuándo", "Como máximo hasta el 30 de diciembre de 2026. Para consultar o solicitar la eliminación, escribe a joan1542003@gmail.com.")
       ConsentPoint("Tiempo de uso", "Android permite consultar estadísticas de otras aplicaciones, pero Relevo cuenta únicamente las que elegiste. No lee mensajes, fotos ni el contenido de pantalla.")
+      if (remoteConfigured && !deleted) ConsentPoint("Estado del envío", syncStatusText(syncStatus))
+      if (showStudyAccess && !deleted) {
+        Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceVariant) {
+          Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Text("Prueba de 21 días", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+            Text(
+              when {
+                study.plan == null -> "Sin configurar. El investigador la configura en la sesión inicial."
+                study.finished -> "Terminada."
+                study.day == 0 -> "Sesión inicial (día 0)."
+                else -> "Día ${study.day} de 21 · ${study.condition?.let(::conditionName)}."
+              },
+              lineHeight = 21.sp,
+            )
+            InlineAction(if (study.plan == null) "Configurar la prueba" else "Ver la prueba", onStudy)
+          }
+        }
+      }
       if (!deleted) {
         Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceVariant) {
           Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -620,10 +716,10 @@ private fun OnboardingScreen(
     notificationAccess = hasNotificationPermission(context)
   }
   val pages = remember { listOf(
-    OnboardingPage(R.drawable.onboarding_activity, "Elige una actividad", "Puedes partir de una sugerencia o guardar una actividad propia con una forma sencilla de comenzar."),
+    OnboardingPage(R.drawable.onboarding_activity, "Elige una actividad", "Relevo no bloquea apps ni califica tu tiempo de pantalla: te recuerda algo que tú quieres hacer. Parte de una sugerencia o guarda una actividad propia con una forma sencilla de comenzar."),
     OnboardingPage(R.drawable.onboarding_condition, "Define cuándo avisarte", "Elige una o varias apps y un tiempo total. El conteo solo avanza mientras Relevo está activo y usas una de esas apps."),
     OnboardingPage(R.drawable.onboarding_place, "Ubica el dispositivo", "Déjalo cerca de aquello que necesitas para comenzar: tus zapatillas, un libro o tus materiales."),
-    OnboardingPage(R.drawable.onboarding_signal, "Recibe el aviso", "Al cumplirse el tiempo, suena el parlante Bluetooth. Si no tienes uno, puedes elegir que suene el teléfono. Tú decides qué hacer después."),
+    OnboardingPage(R.drawable.onboarding_signal, "Recibe el aviso", "Al cumplirse el tiempo, el parlante Bluetooth suena unos 30 segundos y se detiene solo. Si no tienes uno, puede sonar el teléfono. Tú decides qué hacer después."),
     OnboardingPage(null, "Autoriza Tiempo de uso", "Relevo necesita contar el tiempo de las apps que elijas para activar el aviso. No lee lo que haces dentro de ellas. Las notificaciones muestran el aviso mientras usas otra app y son opcionales.", permissions = true),
   ) }
   var page by rememberSaveable { mutableStateOf(0) }
@@ -762,7 +858,7 @@ private fun ActivityDashboard(usage: List<AppUsageSummary>, hasAccess: Boolean, 
         }
       }
       usage.forEach { item -> AppUsageCard(item, total) }
-      SecondaryButton("Nuevo relevo", onStart)
+      SecondaryButton("Preparar otro relevo", onStart)
     }
   }
 }
@@ -787,7 +883,7 @@ private fun HistoryDashboard(history: List<HistoryEntry>, participantCode: Strin
         }
       }
       history.forEach { HistoryCard(it) }
-      SecondaryButton("Crear relevo", onStart)
+      SecondaryButton("Crear un relevo", onStart)
     }
     Surface(shape = RoundedCornerShape(22.dp), color = MaterialTheme.colorScheme.surface) {
       Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
@@ -890,9 +986,22 @@ private fun SetupScreen(
   onPermission: () -> Unit,
   onRefresh: () -> Unit,
   onTest: () -> Boolean,
+  backgroundUnrestricted: Boolean,
+  onBackground: () -> Unit,
+  studyCondition: StudyCondition?,
   onActivate: () -> Unit,
 ) {
-  var step by rememberSaveable { mutableStateOf(if (reminder.activity.isBlank()) SetupStep.ACTIVITY else SetupStep.TIMING) }
+  val placeLabel = when (studyCondition) {
+    null -> "Ubicación de Relevo"
+    StudyCondition.PHONE -> "¿Dónde está lo que necesitas para empezar?"
+    else -> "¿Dónde dejaste el parlante?"
+  }
+  // Un relevo repetido llega completo y abre directamente en la revisión.
+  var step by rememberSaveable { mutableStateOf(when {
+    reminder.activity.isBlank() -> SetupStep.ACTIVITY
+    reminder.hasRequiredContent -> SetupStep.REVIEW
+    else -> SetupStep.TIMING
+  }) }
   var chooseApp by rememberSaveable { mutableStateOf(false) }
   var editingCustom by rememberSaveable { mutableStateOf(startWithEditor) }
   var editingCustomId by rememberSaveable { mutableStateOf<String?>(null) }
@@ -1070,20 +1179,35 @@ private fun SetupScreen(
                 }
               }
               if (!usageAccess) PermissionCard(usageAccess, onPermission, onRefresh)
-              InlineAction("Prueba de 15 s", { onDuration(15) })
+              InlineAction("Probar 15 segundos", { onDuration(15) })
             }
             SetupStep.PLACE -> {
-              Text("Piensa en una acción sencilla que te ayude a comenzar y deja Relevo cerca de ella.",
-                color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp)
+              Text(
+                when (studyCondition) {
+                  null -> "Piensa en una acción sencilla que te ayude a comenzar y deja Relevo cerca de ella."
+                  StudyCondition.PHONE -> "Piensa en una acción sencilla que te ayude a comenzar."
+                  else -> "Piensa en una acción sencilla que te ayude a comenzar. ${conditionInstruction(studyCondition)}"
+                },
+                color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 23.sp,
+              )
               RelevoTextField("¿Cómo empezarás?", reminder.howToStart, "Ponerme las zapatillas", onStart)
-              RelevoTextField("Ubicación de Relevo", reminder.place, "Junto a las zapatillas", onPlace)
+              RelevoTextField(placeLabel, reminder.place, if (studyCondition == StudyCondition.NEUTRAL) "En la repisa del living" else "Junto a las zapatillas", onPlace)
               Text("¿Dónde sonará la señal?", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-              SignalRouteChoice("En el parlante", "Déjalo cerca de la actividad. Debe estar conectado por Bluetooth.", reminder.signalRoute == SignalRoute.BLUETOOTH) { onSignalRoute(SignalRoute.BLUETOOTH) }
-              SignalRouteChoice("En este teléfono", "Alternativa para probar Relevo sin parlante. La señal no estará en el lugar de la actividad.", reminder.signalRoute == SignalRoute.PHONE) { onSignalRoute(SignalRoute.PHONE) }
+              if (studyCondition != null) {
+                // Durante la prueba, la condición de la semana decide la salida (protocolo 02).
+                SignalRouteChoice(
+                  if (studyCondition.route == SignalRoute.PHONE) "En este teléfono" else "En el parlante",
+                  "Lo decide la condición de esta semana: ${conditionName(studyCondition).lowercase()}.",
+                  true,
+                ) {}
+              } else {
+                SignalRouteChoice("En el parlante", "Déjalo cerca de la actividad. Debe estar conectado por Bluetooth.", reminder.signalRoute == SignalRoute.BLUETOOTH) { onSignalRoute(SignalRoute.BLUETOOTH) }
+                SignalRouteChoice("En este teléfono", "Alternativa para probar Relevo sin parlante. La señal no estará en el lugar de la actividad.", reminder.signalRoute == SignalRoute.PHONE) { onSignalRoute(SignalRoute.PHONE) }
+              }
             }
             SetupStep.REVIEW -> {
               Text("Comprueba los datos antes de activar. Puedes volver a cualquier paso.", color = MaterialTheme.colorScheme.onSurfaceVariant)
-              SecondaryButton("Probar sonido", {
+              SecondaryButton("Probar el sonido", {
                 testMessage = if (onTest()) "Señal en reproducción durante unos segundos." else "No se pudo reproducir la señal en la salida elegida."
               })
               if (testMessage != null) Text(testMessage.orEmpty(), color = MaterialTheme.colorScheme.primary)
@@ -1091,18 +1215,19 @@ private fun SetupScreen(
               DetailRow("Apps", reminder.selectedApps.joinToString(", ") { it.label }) { step = SetupStep.TIMING }
               DetailRow("Tiempo acumulado", formatTime(reminder.requiredUsageSeconds)) { step = SetupStep.TIMING }
               DetailRow("Para empezar", reminder.howToStart) { step = SetupStep.PLACE }
-              DetailRow("Ubicación de Relevo", reminder.place) { step = SetupStep.PLACE }
+              DetailRow(placeLabel, reminder.place) { step = SetupStep.PLACE }
               DetailRow("Sonido", if (reminder.signalRoute == SignalRoute.BLUETOOTH) "Parlante Bluetooth" else "Este teléfono") { step = SetupStep.PLACE }
-              Text(if (reminder.signalRoute == SignalRoute.BLUETOOTH) "Si el parlante se desconecta, recibirás una notificación, pero no se reproducirá el sonido en el teléfono."
+              Text(if (reminder.signalRoute == SignalRoute.BLUETOOTH) "Si el parlante se desconecta, recibirás una notificación, pero no se reproducirá el sonido en el teléfono. Muchos parlantes se apagan solos después de un rato sin sonido: si el tuyo lo hace, el aviso no sonará."
                 else "El sonido se reproducirá en el altavoz del teléfono. Comprueba el volumen antes de activar.",
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 20.sp)
+              if (!backgroundUnrestricted) BackgroundAccessNote(onBackground)
             }
           }
           Spacer(Modifier.height(12.dp))
         }
       }
       Spacer(Modifier.height(10.dp))
-      PrimaryButton(if (step == SetupStep.REVIEW) "Activar relevo" else "Continuar", {
+      PrimaryButton(if (step == SetupStep.REVIEW) "Activar el relevo" else "Seguir", {
         if (step == SetupStep.REVIEW) onActivate() else step = SetupStep.entries[step.ordinal + 1]
       }, canContinue)
     }
@@ -1307,14 +1432,14 @@ private fun CustomActivityEditor(
       }
     }
     Spacer(Modifier.height(10.dp))
-    PrimaryButton(if (page == 2) "Guardar actividad" else "Continuar", {
+    PrimaryButton(if (page == 2) "Guardar la actividad" else "Seguir", {
       if (page < 2) onPageChange(page + 1)
       else onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), firstStep.trim(), place.trim(), icon, color))
     }, when (page) { 0 -> nameValid; 1 -> detailsValid; else -> nameValid && detailsValid })
   }
 }
 @Composable
-private fun RelevoTextField(label: String, value: String, placeholder: String, onValueChange: (String) -> Unit) {
+internal fun RelevoTextField(label: String, value: String, placeholder: String, onValueChange: (String) -> Unit) {
   Column(verticalArrangement = Arrangement.spacedBy(7.dp)) {
     Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
     BasicTextField(
@@ -1410,7 +1535,7 @@ private fun PermissionCard(
       Text("Privacidad y permisos", fontWeight = FontWeight.SemiBold)
       Text("Relevo registra tiempo acumulado y eventos de esta prueba. No lee contenidos ni mensajes.", style = MaterialTheme.typography.bodySmall)
       if (!usageAccess) {
-        SecondaryButton("Autorizar tiempo de uso", onPermission)
+        SecondaryButton("Abrir ajustes de Android", onPermission)
         InlineAction("Comprobar permiso", onRefresh, modifier = Modifier.align(Alignment.CenterHorizontally))
       } else Text("Acceso de uso autorizado", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.labelLarge)
     }
@@ -1418,7 +1543,27 @@ private fun PermissionCard(
 }
 
 @Composable
-private fun ActiveScreen(reminder: Reminder, remaining: Int, onStop: () -> Unit) = Page {
+private fun BackgroundAccessNote(onAllow: () -> Unit) {
+  Surface(shape = RoundedCornerShape(20.dp), color = MaterialTheme.colorScheme.surfaceVariant) {
+    Column(Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+      Text("Funcionamiento en segundo plano", fontWeight = FontWeight.SemiBold)
+      Text("Algunos teléfonos detienen apps para ahorrar batería. Si quieres usar Relevo durante varios días, permite que funcione sin esa restricción. Es opcional.",
+        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 20.sp)
+      InlineAction("Permitir", onAllow)
+    }
+  }
+}
+
+@Composable
+private fun ActiveScreen(
+  reminder: Reminder,
+  remaining: Int,
+  usageAccess: Boolean,
+  onUsagePermission: () -> Unit,
+  backgroundUnrestricted: Boolean,
+  onBackground: () -> Unit,
+  onStop: () -> Unit,
+) = Page {
   val progress by animateFloatAsState(
     targetValue = (reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)).coerceIn(0f, 1f),
     animationSpec = spring(),
@@ -1427,11 +1572,22 @@ private fun ActiveScreen(reminder: Reminder, remaining: Int, onStop: () -> Unit)
   Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
       Brand()
-      Text("Recordatorio activo", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Tu relevo está activo", color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
-    Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(18.dp)) {
+    // El contenido se desplaza y el botón para desactivar queda siempre visible, aunque aparezcan avisos.
+    Column(Modifier.fillMaxWidth().weight(1f, fill = false).padding(vertical = 12.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(18.dp)) {
       Text(reminder.activity, Modifier.fillMaxWidth(), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold,
         lineHeight = 42.sp, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+      if (!usageAccess) {
+        Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.secondaryContainer) {
+          Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text("El conteo está en pausa", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+            Text("Relevo ya no tiene acceso a Tiempo de uso, así que no puede sumar el tiempo ni avisarte. Autorízalo para seguir, o desactiva el recordatorio.",
+              lineHeight = 21.sp)
+            InlineAction("Abrir ajustes de Android", onUsagePermission)
+          }
+        }
+      }
       Surface(shape = RoundedCornerShape(30.dp), color = Color(0xFF123F38)) {
         Column(Modifier.fillMaxWidth().padding(24.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
           Text("Tiempo en las apps elegidas", color = Color.White.copy(alpha = .78f), style = MaterialTheme.typography.bodyLarge)
@@ -1450,48 +1606,82 @@ private fun ActiveScreen(reminder: Reminder, remaining: Int, onStop: () -> Unit)
       }
       Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceVariant) {
         Column(Modifier.fillMaxWidth().padding(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-          Summary("Cómo empezar", reminder.howToStart)
-          Summary("Ubicación de Relevo", reminder.place)
+          Summary("Empiezas", reminder.howToStart)
+          Summary("Está en", reminder.place)
           Text(if (reminder.signalRoute == SignalRoute.PHONE) "El aviso sonará en este teléfono."
             else "El aviso sonará en el parlante Bluetooth conectado.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+          StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ')?.let { condition ->
+            Text("Prueba: ${conditionName(condition).lowercase()}.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+          }
         }
       }
+      if (!backgroundUnrestricted) BackgroundAccessNote(onBackground)
     }
-    SecondaryButton("Desactivar recordatorio", onStop)
+    SecondaryButton("Desactivar el relevo", onStop)
   }
 }
 
+/**
+ * B4. Mientras suena, la acción es silenciar. La señal termina sola a los 30 s (D-078) y la pantalla
+ * queda en silencio hasta que la persona responde.
+ */
 @Composable
-private fun SignalScreen(reminder: Reminder, onClose: () -> Unit) = Page {
+private fun SignalScreen(reminder: Reminder, onTestSound: () -> Boolean, onClose: () -> Unit) = Page {
+  var testMessage by rememberSaveable { mutableStateOf<String?>(null) }
+  val sounding = reminder.signalDelivered && !reminder.signalEnded
   Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
     Spacer(Modifier.height(4.dp))
-    Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-      if (reminder.signalDelivered) SignalGraphic()
+    Column(Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+      if (reminder.signalDelivered) SignalGraphic(sounding)
       else Surface(shape = RoundedCornerShape(26.dp), color = MaterialTheme.colorScheme.secondaryContainer) {
-        Text("Se cumplió el tiempo, pero no pudimos reproducir el sonido en ${if (reminder.signalRoute == SignalRoute.BLUETOOTH) "el parlante" else "este teléfono"}. Comprueba la conexión o el volumen antes del próximo relevo.",
-          Modifier.fillMaxWidth().padding(20.dp), lineHeight = 23.sp)
+        Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+          Text("Se cumplió el tiempo, pero no pudimos reproducir el sonido en ${if (reminder.signalRoute == SignalRoute.BLUETOOTH) "el parlante" else "este teléfono"}. Revisa la conexión o el volumen.",
+            lineHeight = 23.sp)
+          InlineAction("Probar el sonido", { testMessage = if (onTestSound()) "Suena la firma de Relevo." else "Todavía no se puede reproducir." })
+          testMessage?.let { Text(it, color = MaterialTheme.colorScheme.primary) }
+        }
       }
       Text(if (reminder.signalDelivered) "Es momento de volver a elegir" else "Tu actividad sigue aquí", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
       Text(reminder.activity, style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold, lineHeight = 42.sp)
-      Summary("Para empezar", reminder.howToStart)
-      Summary("Ubicación de Relevo", reminder.place)
+      Summary("Empiezas", reminder.howToStart)
+      Summary("Está en", reminder.place)
+      if (reminder.signalDelivered && reminder.signalEnded) {
+        Text("La señal ya terminó.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+      }
     }
-    PrimaryButton(if (reminder.signalDelivered) "Silenciar y continuar" else "Cerrar recordatorio", onClose)
+    Spacer(Modifier.height(12.dp))
+    PrimaryButton(if (sounding) "Silenciar y continuar" else "Continuar", onClose)
   }
 }
 
+/**
+ * B5. Durante la prueba, antes de «¿Qué decidiste?» se hacen dos preguntas de un toque sobre la
+ * señal (protocolo 02). Todas se pueden omitir y ninguna respuesta recibe reproche.
+ */
 @Composable
-private fun DoneScreen(reminder: Reminder, onHome: (String) -> Unit) = Page {
-  Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
-    Spacer(Modifier.height(4.dp))
-    Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-      Text("¿Qué decidiste?", style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
-      Text("El relevo terminó después de ${formatTime(reminder.observedUsageSeconds)} en las apps elegidas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+private fun DoneScreen(reminder: Reminder, askSignalQuestions: Boolean, onHome: (String, String?, String?) -> Unit) = Page {
+  var knewIntention by rememberSaveable { mutableStateOf<String?>(null) }
+  var recalledFirstStep by rememberSaveable { mutableStateOf<String?>(null) }
+  fun finish(outcome: String) = onHome(outcome, knewIntention.takeIf { askSignalQuestions }, recalledFirstStep.takeIf { askSignalQuestions })
+  Column(Modifier.fillMaxSize()) {
+    Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+      Spacer(Modifier.height(4.dp))
+      if (askSignalQuestions) {
+        Text("Cuando sonó, ¿supiste qué querías hacer antes de mirar el teléfono?", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold, lineHeight = 28.sp)
+        ChoiceRow(listOf("yes" to "Sí", "partly" to "A medias", "no" to "No"), knewIntention) { knewIntention = it }
+        Text("¿Recordaste cómo empezar?", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold, lineHeight = 28.sp)
+        ChoiceRow(listOf("yes" to "Sí", "no" to "No"), recalledFirstStep) { recalledFirstStep = it }
+        Spacer(Modifier.height(4.dp))
+      }
+      Text("¿Qué decidiste?", style = if (askSignalQuestions) MaterialTheme.typography.titleLarge else MaterialTheme.typography.displaySmall, fontWeight = FontWeight.SemiBold)
+      if (!askSignalQuestions) {
+        Text("El relevo terminó después de ${formatTime(reminder.observedUsageSeconds)} en las apps elegidas.", color = MaterialTheme.colorScheme.onSurfaceVariant, lineHeight = 22.sp)
+      }
       listOf("started" to "Comencé la actividad", "later" to "La dejé para después", "changed" to "Cambié de idea").forEach { option ->
-        OutcomeChoice(option.second) { onHome(option.first) }
+        OutcomeChoice(option.second) { finish(option.first) }
       }
     }
-    InlineAction("Omitir y volver al inicio", { onHome("not_answered") })
+    InlineAction("Omitir", { finish("not_answered") })
   }
 }
 
@@ -1557,12 +1747,13 @@ private fun AppIcon(packageName: String) {
 }
 
 @Composable
-private fun SignalGraphic() {
+private fun SignalGraphic(sounding: Boolean = true) {
   val animationsEnabled = rememberAnimationsEnabled()
   val transition = rememberInfiniteTransition(label = "signal_pulse")
+  // El pulso acompaña al sonido; cuando la señal terminó, el gráfico queda quieto.
   val pulse by transition.animateFloat(
     initialValue = 0.88f,
-    targetValue = if (animationsEnabled) 1f else 0.88f,
+    targetValue = if (animationsEnabled && sounding) 1f else 0.88f,
     animationSpec = infiniteRepeatable(tween(850), RepeatMode.Reverse),
     label = "signal_scale",
   )
@@ -1580,13 +1771,15 @@ private fun SignalGraphic() {
 @Composable
 private fun rememberAnimationsEnabled(): Boolean {
   val context = LocalContext.current
-  return remember {
-    Settings.Global.getFloat(context.contentResolver, Settings.Global.ANIMATOR_DURATION_SCALE, 1f) > 0f
-  }
+  fun read() = Settings.Global.getFloat(context.contentResolver, Settings.Global.ANIMATOR_DURATION_SCALE, 1f) > 0f
+  var enabled by remember { mutableStateOf(read()) }
+  // Se vuelve a leer al regresar a la app: la persona puede haber cambiado el ajuste de animaciones de Android.
+  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { enabled = read() }
+  return enabled
 }
 
 @Composable
-private fun Summary(label: String, value: String) {
+internal fun Summary(label: String, value: String) {
   Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(Color.White).border(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = .12f), RoundedCornerShape(18.dp))) {
     Column(Modifier.padding(17.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
       Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -1596,7 +1789,7 @@ private fun Summary(label: String, value: String) {
 }
 
 @Composable
-private fun PrimaryButton(label: String, onClick: () -> Unit, enabled: Boolean = true) {
+internal fun PrimaryButton(label: String, onClick: () -> Unit, enabled: Boolean = true) {
   ActionButton(label, onClick, enabled, MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.onPrimary)
 }
 
@@ -1623,7 +1816,7 @@ private fun ActionButton(
 }
 
 @Composable
-private fun SecondaryButton(label: String, onClick: () -> Unit) {
+internal fun SecondaryButton(label: String, onClick: () -> Unit) {
   Box(
     Modifier.fillMaxWidth().height(54.dp).clip(RoundedCornerShape(18.dp))
       .background(MaterialTheme.colorScheme.surfaceVariant)
@@ -1634,7 +1827,7 @@ private fun SecondaryButton(label: String, onClick: () -> Unit) {
 }
 
 @Composable
-private fun InlineAction(label: String, onClick: () -> Unit, color: Color = MaterialTheme.colorScheme.primary, modifier: Modifier = Modifier) {
+internal fun InlineAction(label: String, onClick: () -> Unit, color: Color = MaterialTheme.colorScheme.primary, modifier: Modifier = Modifier) {
   Text(
     label,
     color = color,
@@ -1650,7 +1843,17 @@ private fun screenFor(status: ReminderStatus, current: Screen = Screen.HOME): Sc
   else -> current
 }
 
-private fun formatTime(seconds: Int): String = when {
+private fun syncStatusText(status: SyncStatus): String = buildString {
+  append(if (status.pending == 0) "No hay registros pendientes de envío." else "${status.pending} registros esperan conexión para enviarse.")
+  if (status.lastSuccessAt > 0L) {
+    val time = java.time.Instant.ofEpochMilli(status.lastSuccessAt).atZone(java.time.ZoneId.systemDefault())
+    append(" Último envío: ${time.format(java.time.format.DateTimeFormatter.ofPattern("d/M HH:mm"))}.")
+  }
+  if (status.rejected > 0) append(" La base no aceptó ${status.rejected} registros; se conservan en el teléfono.")
+  status.lastError?.let { append(" Último aviso técnico: $it") }
+}
+
+internal fun formatTime(seconds: Int): String = when {
   seconds < 60 -> "$seconds s"
   seconds >= 3600 && seconds % 3600 == 0 -> "${seconds / 3600} h"
   seconds >= 3600 -> "${seconds / 3600} h ${(seconds % 3600) / 60} min"

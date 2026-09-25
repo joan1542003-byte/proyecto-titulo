@@ -29,7 +29,26 @@ La memoria y las entrevistas fundamentan una intervención voluntaria, sin culpa
 | Solicitar y confirmar el borrado de los registros locales y remotos. | Privacidad y datos ofrece solicitud y confirmación. La petición revoca consentimiento y detiene el monitoreo; la sincronización queda bloqueada hasta completar el borrado. El código intenta borrar primero las filas remotas y después las locales ([pantalla](app/src/main/java/com/example/relevo/ui/RelevoApp.kt), [flujo](app/src/main/java/com/example/relevo/ui/RelevoViewModel.kt), [`RemoteSync.kt`](app/src/main/java/com/example/relevo/data/RemoteSync.kt)). | **Flujo programado; borrado extremo a extremo pendiente.** | Ante fallo remoto se conservan los datos locales para reintentar, pero el conteo no se reactiva. Una instalación que nunca tuvo conexión remota puede borrar los datos locales. Falta demostrar cada variante y definir el tratamiento de respaldos. |
 | Documentar prompts, contexto, resultado y decisiones humanas en el uso de IA. | Existe una [trazabilidad de uso](../../00_gobernanza/trazabilidad-uso-ia-2026-09-23.md) y un [registro de las dos imágenes nuevas](assets-explorados/README.md). | **Parcial y separado del flujo de la app.** | Los encargos nuevos se registraron en síntesis, no como transcripción literal. No se localizaron los prompts originales de las siete fotografías anteriores; no deben reconstruirse como si fueran exactos. |
 
+## Actualización con Android 2.7
+
+La matriz describe 2.6. En [2.7](version-2.7-prueba-21-dias-2026-09-25.md) cambiaron estas filas:
+
+- **Varias aplicaciones:** la suma alternada tiene pruebas unitarias y se comprobó en emulador. Falta el teléfono real.
+- **Movimiento:** el ajuste de animaciones de Android se vuelve a leer al regresar a la app, y el pulso de la señal se detiene cuando el sonido termina.
+- **Responder al aviso sin culpa:** según el diseño escrito (B5), «Comencé» recibe «Gracias por contarlo», «Después» recibe «Queda guardado» y «Cambié de idea» recibe «Está bien». Omitir no muestra mensaje.
+- **Evaluación breve:** durante la prueba de 21 días hay dos preguntas de un toque tras cada señal, tarjetas semanales y un cierre del día 21. Todo se puede omitir.
+- **Recordar al volver:** «Hola de nuevo» aparece dos días o más después del último relevo, no dice cuántos días pasaron y se puede cerrar con «Ahora no». No se envía ninguna notificación de regreso.
+- **Consentimiento y borrado:** el texto de la app sigue la hoja de 21 días y el borrado incluye las respuestas. Falta el borrado sin conexión.
+
+Perfil y ruta siguen sin implementar (D-076).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Actualización 2.7
+
+- **Qué cambió:** se añadió qué filas de la matriz modificó Android 2.7.
+- **Cómo estaba antes:** la matriz solo describía 2.6.
+- **Por qué:** mantener la trazabilidad entre el feedback y el código sin reescribir la auditoría original.
 
 ### 2026-09-24 — Documento nuevo
 

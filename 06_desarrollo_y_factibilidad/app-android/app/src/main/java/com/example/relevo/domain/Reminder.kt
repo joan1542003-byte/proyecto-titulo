@@ -27,6 +27,14 @@ data class Reminder(
   val signalDelivered: Boolean = false,
   val signalRoute: SignalRoute = SignalRoute.BLUETOOTH,
   val targetApps: List<TrackedApp> = emptyList(),
+  /** Condición de la prueba de 21 días en que se activó (A, B o C); vacío fuera de la prueba o el día 0. */
+  val studyCondition: String = "",
+  /** Día de la prueba en que se activó (0 a 21); −1 fuera de la prueba. */
+  val studyDay: Int = -1,
+  /** Momento en que se emitió la señal. */
+  val signalAt: Long = 0L,
+  /** La señal ya no suena: terminó sola a los 30 s, se perdió la salida o no pudo reproducirse. */
+  val signalEnded: Boolean = false,
 ) {
   val selectedApps: List<TrackedApp>
     get() = targetApps.ifEmpty { if (targetPackage.isNotBlank()) listOf(TrackedApp(targetPackage, targetAppLabel)) else emptyList() }
@@ -55,17 +63,22 @@ data class Reminder(
         sessionId = newSessionId,
         observedUsageSeconds = 0,
         signalDelivered = false,
+        signalAt = 0L,
+        signalEnded = false,
       )
     } else {
       this
     }
 
-  fun deliverSignal(audible: Boolean): Reminder =
+  fun deliverSignal(audible: Boolean, at: Long = System.currentTimeMillis()): Reminder =
     if (status == ReminderStatus.WAITING) {
-      copy(status = ReminderStatus.SIGNALLED, signalDelivered = audible)
+      copy(status = ReminderStatus.SIGNALLED, signalDelivered = audible, signalAt = at, signalEnded = !audible)
     } else {
       this
     }
+
+  /** La señal dejó de sonar sin que la persona la silenciara; la pantalla sigue esperando su respuesta. */
+  fun endSignal(): Reminder = if (status == ReminderStatus.SIGNALLED) copy(signalEnded = true) else this
 
   fun silence(): Reminder =
     if (status == ReminderStatus.SIGNALLED) copy(status = ReminderStatus.SILENCED) else this

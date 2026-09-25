@@ -35,6 +35,8 @@ La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a co
 4. las preguntas tras cada señal y las tarjetas semanales;
 5. el registro de tiempo de respuesta, de silencio manual o automático y del uso de las apps elegidas en los 10 minutos anteriores y posteriores a la señal.
 
+**Estado al 25 de septiembre:** los cinco puntos están implementados en [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y se comprobaron en emulador con datos ficticios. La secuencia se asigna en la sesión inicial desde **Privacidad y datos → Configurar la prueba**. El texto del cierre del día 21 y los extremos de las escalas son una propuesta pendiente de revisión (D-080). Falta la prueba técnica en el teléfono y el parlante que se usarán.
+
 **Además:**
 
 - el [consentimiento](consentimiento-android-vigente-2026-09-23.md) de 21 días;
@@ -155,6 +157,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How ar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado de la app 2.7
+
+- **Qué cambió:** se añadió el estado de implementación de los cinco puntos que el protocolo pide a la app.
+- **Cómo estaba antes:** la app 2.7 figuraba como requisito sin implementar.
+- **Por qué:** la prueba técnica del 1 al 7 de octubre debe partir de lo que la app hace realmente.
 
 ### 2026-09-25 — Creación
 

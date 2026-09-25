@@ -50,9 +50,22 @@ SUPABASE_URL=https://TU-PROYECTO.supabase.co
 SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
 ```
 
-La aplicación puede leer y actualizar únicamente sus propias sesiones, condición necesaria para repetir un envío sin duplicarlo. Los eventos son de solo inserción. La revisión consolidada utiliza un entorno administrativo protegido.
+La aplicación puede leer, actualizar y borrar únicamente sus propias sesiones; actualizar permite repetir un envío sin duplicarlo. Los eventos y las respuestas se insertan una vez y no se actualizan, pero cada instalación puede leer y borrar los suyos. La lectura no es opcional: sin ella, PostgreSQL rechaza las inserciones con `on_conflict` que usa la app. La revisión consolidada utiliza un entorno administrativo protegido.
+
+## Estado comprobado el 24 y 25 de septiembre de 2026
+
+- **Región y políticas.** Una consulta de solo lectura confirmó que el proyecto está en `ca-central-1` (Canadá) y que las políticas coinciden con [`base-remota-supabase.sql`](base-remota-supabase.sql).
+- **Eventos.** La base tenía 4 sesiones técnicas del 22 y 23 de septiembre y **ningún evento**. La causa fue la falta del permiso de lectura sobre `relevo_events`, que se concedió el 24 de septiembre, y que la app dejaba de enviar en el primer rechazo.
+- **Migraciones.** `relevo_monitor_interruption_events` (24 de septiembre) y `relevo_prueba_21_dias` (25 de septiembre) añadieron tipos de evento, columnas de la prueba de 21 días y la tabla `relevo_answers`.
+- **Verificación con Android 2.7.** En emulador, con datos ficticios, llegaron sesiones, eventos y respuestas, y el borrado desde la app los eliminó ([detalle](version-2.7-prueba-21-dias-2026-09-25.md)).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Eventos, respuestas y Android 2.7
+
+- **Qué cambió:** se corrigieron los permisos descritos, se añadieron la causa de la falta de eventos, las dos migraciones y la verificación con la versión 2.7.
+- **Cómo estaba antes:** los eventos figuraban como de solo inserción, sin permiso de lectura, y el documento no registraba que la base tenía 0 eventos.
+- **Por qué:** el documento debe coincidir con la base desplegada y explicar por qué la lectura es necesaria.
 
 ### 2026-09-21 — Preparación del backend
 

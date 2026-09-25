@@ -394,7 +394,7 @@ El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La
 
 ## 9. Qué cambiará cuando se implemente
 
-- **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono.
+- **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono. *Actualización del 25 de septiembre:* [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) implementa B4 con la señal de 30 segundos, B5 con las preguntas de la prueba y los reconocimientos, T1, T2 (texto pendiente de revisión, D-080), V1 sin el nombre, E1, E2, los botones con verbo y el consentimiento de 21 días. Siguen pendientes A1, la opción de no participar de A2, P1 a P3, R1 a R3, V2, S1 y S2.
 - **Consentimiento:** 21 días, preguntas integradas y nombre local; se mantiene el 30 de diciembre de 2026 como plazo de eliminación.
 - **Protocolo y pauta:** prueba de 21 días, preguntas por día, variante de constancia elegida.
 - **Memoria:** la prueba de 21 días ya está en los capítulos 10 y 13; queda por decidir si el criterio 4 menciona el reconocimiento y la ruta.
@@ -415,6 +415,12 @@ Silverman, J., & Barasch, A. (2023). On or off track: How (broken) streaks affec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado en Android 2.7
+
+- **Qué cambió:** la sección 9 indica qué pantallas y textos implementa la app 2.7 y cuáles siguen pendientes.
+- **Cómo estaba antes:** todo el diseño figuraba sin implementar.
+- **Por qué:** evitar que el diseño escrito se lea como pendiente cuando la app ya lo aplica, o como hecho cuando no lo está.
 
 ### 2026-09-25 — Regreso existente en 2.6
 

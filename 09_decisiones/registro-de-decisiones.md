@@ -826,12 +826,13 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-078 — Señal sonora de unos 30 segundos
 
 - **Fecha:** 2026-09-25.
-- **Estado:** decisión del autor; implementación pendiente en la app.
+- **Estado:** decisión del autor; implementada en Android 2.7 y comprobada solo en emulador.
 - **Decisión:** la señal suena unos 30 segundos y se detiene sola. Usa la firma sonora de Relevo, repetida con pausas y con un comienzo más suave. Después, la pantalla y la notificación quedan visibles en silencio hasta que la persona responde.
 - **Fundamento:** debe ser más que una notificación y menos que una alarma. Una señal que no se detiene contradice el «término sin insistencia» de la memoria (capítulo 11); una de 3 segundos, pensada para pulsos de luz, no se escucharía sin luz (D-070).
 - **Registro:** solo para la investigación, la app anota si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto siguió en las apps elegidas. Ese tiempo no se muestra como «tiempo excedido».
 - **Antes:** la app 2.6 suena hasta que la persona silencia el tono.
 - **Condición de revisión:** que la prueba muestre señales que nadie notó o que molesten a quienes comparten el espacio.
+- **Implementación (2026-09-25, Android 2.7):** siete repeticiones de la firma cada 4,4 s; las tres primeras al 40 %, 60 % y 80 % del volumen; termina a los 28,6 s. Se comprobó en emulador; falta oírla en el teléfono y el parlante de la prueba. Detalle en [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md).
 
 ## D-079 — La prueba de 21 días también responde la hipótesis
 
@@ -841,8 +842,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Fundamento:** el autor pidió que la prueba sirva también para la hipótesis, porque el tiempo no alcanza para estudios separados. Tres semanas permiten comparar las tres condiciones de la memoria (capítulo 13) dentro de la misma persona.
 - **Límites:** la asociación en casa es autoinformada; las intenciones cambian entre semanas; el parlante comercial reemplaza al testigo; 21 días no bastan para afirmar un hábito.
 - **Documentación:** [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md).
+- **Implementación (2026-09-25, Android 2.7):** la app tiene la condición de la semana, la notificación genérica de la condición «teléfono», las preguntas tras cada señal, las tarjetas semanales y el cierre del día 21. Se comprobaron en emulador con datos ficticios (véase D-080).
+
+## D-080 — Cómo registra Android 2.7 la prueba de 21 días (propuesta de implementación)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** implementado en Android 2.7; pendiente de revisión del autor.
+- **Decisión:**
+  - *Asignación*: el investigador asigna la secuencia de condiciones en la sesión inicial, desde Privacidad y datos. Ese día es el día 0; los días 1–7, 8–14 y 15–21 usan la condición de la secuencia.
+  - *Salida*: durante la prueba, la condición fija dónde suena la señal. El día 0 no tiene condición y la persona elige la salida.
+  - *Condición por relevo*: cada relevo conserva la condición con que se activó, aunque la señal llegue al día siguiente.
+  - *Respuestas*: las tarjetas semanales y el cierre se guardan en la tabla `relevo_answers`. Las escalas van de «1 · nada» a «5 · mucho».
+  - *Cierre del día 21*: cinco preguntas derivadas del diseño escrito T2 y de los temas de la entrevista del protocolo 02, más la invitación a la conversación. Aparece después de las tarjetas semanales pendientes.
+- **Fundamento:** el protocolo 02 pide la condición «asignada por código» y la usa como variable de comparación. Si la persona pudiera cambiar la salida, la condición dejaría de serlo. T2 y el protocolo no fijan el texto completo del cierre.
+- **Alternativas:** derivar la secuencia del código aleatorio (no garantiza usar las seis secuencias con seis personas); dejar la salida libre y registrar la elección (pierde el diseño de medidas repetidas).
+- **Condición de revisión:** revisión del autor y del profesor antes de la prueba técnica; confusión observada en la sesión inicial.
+- **Documentación:** [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y [modelo de datos](../07_validacion/modelo-datos-evaluacion-app-2026-09-22.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Implementación en Android 2.7 y D-080
+
+- **Qué cambió:** D-078 y D-079 registran su implementación en Android 2.7. D-080 reúne las decisiones de implementación que el autor debe revisar: asignación de la secuencia, salida fija por condición, tabla de respuestas y cierre del día 21.
+- **Cómo era antes:** D-078 figuraba con implementación pendiente, y el protocolo no definía cómo se asigna la condición en la app ni el texto completo del cierre.
+- **Por qué:** que las decisiones tomadas al programar queden visibles y revisables antes de la prueba técnica.
 
 ### 2026-09-25 — D-070 ampliada, D-078 y D-079
 
