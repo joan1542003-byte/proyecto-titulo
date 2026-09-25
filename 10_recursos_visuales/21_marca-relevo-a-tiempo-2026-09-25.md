@@ -185,19 +185,68 @@ Sin texturas simuladas: la textura es real.
 
 ## 11. Iconos
 
-Juego propio de 18 iconos en la [carpeta `iconos/`](marca-a-tiempo/iconos/):
+Juego propio de 40 iconos en la [carpeta `iconos/`](marca-a-tiempo/iconos/). Aparecen completos en el [kit de diseño](marca-a-tiempo/kit-relevo-2026-09-25.html), organizados en cinco grupos:
 
-- actividad, cómo empieza, lugar, después de cuánto uso, apps elegidas, dónde suena y probar sonido;
-- editar, cancelar, comencé, la dejé para después y cambié de idea;
-- ajustes, privacidad, conexión, batería del objeto, información y error.
+- **Relevo:** actividad, cómo empieza, lugar, después de cuánto uso, apps elegidas, parlante, este teléfono, objeto, probar sonido, silenciar, conexión y batería del objeto.
+- **Respuestas:** comencé, la dejé para después y cambié de idea.
+- **Navegación y acciones:** inicio, relevos, agregar, editar, borrar, cerrar, volver, siguiente, más opciones, buscar, ajustes y ayuda.
+- **Estados y sistema:** esperando, privacidad, permiso, datos del estudio, información y error.
+- **Presentación y memoria:** investigación, entrevistas, hipótesis y prueba, validación, decisión, sistema phygital y tiempo.
 
-**Reglas:**
+**Criterios.** Siguen lo que Apple pide para los iconos de interfaz (Apple, s. f.):
 
-- **Dibujo:** retícula de 24 × 24 con 2 de margen; trazo de 1,75 con terminaciones rectas, como Schibsted Grotesk; sin relleno, salvo para marcar un estado.
-- **Metáforas concretas y de la casa:** una mesa para el lugar, un parlante, una escalera para el primer paso. Los iconos concretos se reconocen antes (McDougall et al., 2000).
-- **Siempre con palabra al lado:** la etiqueta ayuda a aprender y recordar la función (Wiedenbeck, 1999).
-- **Nunca** campanas, escudos, corazones, hojas ni cerebros: son códigos de alarma o de bienestar.
-- **Área táctil:** al menos 48 × 48 dp (Android Developers, s. f.).
+- formas simples, con el mismo tamaño, grosor, nivel de detalle y perspectiva en todos;
+- centrado óptico: los iconos asimétricos se corren hasta que se ven centrados;
+- el mismo peso que el texto que acompañan.
+
+**Construcción:**
+
+- **Retícula:** 24 × 24 con área viva de 20 y cuatro formas base, para que todos se vean del mismo tamaño (Google, s. f.): un círculo de 20, un cuadrado de 17, un rectángulo vertical de 12 × 19 y uno horizontal de 19 × 12.
+- **Trazo:** extremos y uniones redondeados, esquinas de radio 2 a 3 y un espacio mínimo de 1,5 entre partes. Sin relleno, salvo puntos y estados.
+- **Tres pesos,** medidos sobre el trazo vertical de Schibsted Grotesk en texto de 17 px:
+  - Regular: trazo de 1,5, con texto 400;
+  - Medio: trazo de 1,8, con texto 500;
+  - Semibold: trazo de 2,1, con texto 600.
+- **Tamaños:**
+  - 16 px con trazo de 1,9;
+  - 20 px con trazo de 1,8;
+  - 24 px con trazo de 1,75;
+  - 32 px con trazo de 1,6;
+  - 48 px con trazo de 1,5.
+
+**Uso:**
+
+- Metáforas concretas: un marcador para «después», un parlante, una escalera para el primer paso. Los iconos concretos se reconocen antes (McDougall et al., 2000).
+- Siempre con palabra al lado, porque la etiqueta ayuda a aprender y recordar la función (Wiedenbeck, 1999).
+- Nunca campanas, escudos, corazones, hojas ni cerebros.
+- El área táctil es de al menos 48 × 48 dp (Android Developers, s. f.).
+
+**Revisión del dibujo.** En la primera versión, «Objeto» se leía como una burbuja de chat, «Lugar» como un taburete, «Hipótesis» como una llave y «Después» era igual a «Tiempo». Se redibujaron así:
+
+- «Objeto» es un disco;
+- «Lugar» es un marcador de ubicación;
+- «Hipótesis y prueba» es un matraz;
+- «Después» es un marcador de página.
+
+## 11 b. Kit de diseño: app y presentación
+
+El [kit de diseño](marca-a-tiempo/kit-relevo-2026-09-25.html) reúne las piezas para producir:
+
+- **Componentes de la app:**
+  - botones de 48 dp de alto y esquinas de 12;
+  - el campo renglón, con sus estados de reposo, foco y ejemplo;
+  - filas de lista, selección, estado y aviso de error.
+- **Doce pantallas:**
+  - bienvenida y permiso de uso;
+  - inicio vacío, preparar, apps y tiempo, y dónde suena con prueba de sonido;
+  - esperando y aviso en la pantalla de bloqueo;
+  - ¿qué decidiste?, ajustes y error;
+  - esperando, en tema oscuro.
+
+  Son una propuesta visual sobre las funciones de la app 2.6 más el campo de lugar propuesto. Las apps de la lista aparecen sin logo porque sus marcas son de terceros.
+- **Diez plantillas de presentación en 16:9:** portada, sección, idea en una frase, paráfrasis de entrevista, dato, cómo funciona, comparación, plan de validación, imagen y frase, y cierre.
+  - La plantilla de entrevista muestra una paráfrasis de P2, rotulada como tal, y no una cita textual.
+  - La cifra de la plantilla «Dato» es la del capítulo 3 de la memoria (Subsecretaría de Telecomunicaciones, 2025).
 
 ## 12. Fotografía
 
@@ -309,6 +358,8 @@ Relevo no usa luz por ahora (D-070). El aviso es la [firma sonora de D-071](19_m
 
 ## Referencias
 
+Apple. (s. f.). *Icons*. Human Interface Guidelines. Recuperado el 25 de septiembre de 2026 de https://developer.apple.com/design/human-interface-guidelines/icons
+
 Android Developers. (s. f.). *Make apps more accessible*. Recuperado el 25 de septiembre de 2026 de https://developer.android.com/guide/topics/ui/accessibility/apps
 
 Creative Bloq. (2026). *Texture, warmth and tactile rebellion: The big graphic design trends for 2026*. Recuperado el 25 de septiembre de 2026 de https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026
@@ -320,6 +371,8 @@ Elliot, A. J., Maier, M. A., Moller, A. C., Friedman, R., & Meinhardt, J. (2007)
 Escalas, J. E. (2004). Narrative processing: Building consumer connections to brands. *Journal of Consumer Psychology, 14*(1–2), 168–180. https://doi.org/10.1207/s15327663jcp1401&2_19
 
 Google Fonts. (s. f.). *Schibsted Grotesk*. Recuperado el 25 de septiembre de 2026 de https://fonts.google.com/specimen/Schibsted+Grotesk
+
+Google. (s. f.). *System icons*. Material Design. Recuperado el 25 de septiembre de 2026 de https://m2.material.io/design/iconography/system-icons.html
 
 Hekkert, P. (2006). Design aesthetics: Principles of pleasure in design. *Psychology Science, 48*(2), 157–172.
 
@@ -351,6 +404,8 @@ Post, R. A. G., Blijlevens, J., & Hekkert, P. (2016). «To preserve unity while 
 
 Reber, R., Schwarz, N., & Winkielman, P. (2004). Processing fluency and aesthetic pleasure: Is beauty in the perceiver's processing experience? *Personality and Social Psychology Review, 8*(4), 364–382. https://doi.org/10.1207/s15327957pspr0804_3
 
+Subsecretaría de Telecomunicaciones. (2025). *Informe final: Estudio duodécima encuesta sobre acceso, usos y usuarios de internet en Chile*. Ministerio de Transportes y Telecomunicaciones, Gobierno de Chile. https://www.subtel.gob.cl/wp-content/uploads/2026/02/Informe-Final-Acceso-y-Uso-Internet-2025_03.pdf
+
 The Office of Ordinary Things. (s. f.). *Daylight*. Recuperado el 25 de septiembre de 2026 de https://ot.studio/work/daylight
 
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W., & Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, 104198. https://doi.org/10.1016/j.jesp.2021.104198
@@ -366,6 +421,14 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Iconos v2 y kit de diseño
+
+- **Qué cambió:**
+  - los iconos se redibujaron y pasaron de 18 a 40, con extremos redondeados, retícula con formas base y tres pesos medidos sobre el trazo de Schibsted Grotesk;
+  - se añadió el kit de diseño, con componentes, doce pantallas de la app y diez plantillas de presentación.
+- **Cómo estaba antes:** 18 iconos con extremos rectos y un solo trazo; no había pantallas completas ni plantillas de presentación.
+- **Por qué:** el autor pidió iconos de nivel Apple y más piezas para la app y las presentaciones.
 
 ### 2026-09-25 — Sistema completo
 

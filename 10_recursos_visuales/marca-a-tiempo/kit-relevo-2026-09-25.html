@@ -1,0 +1,545 @@
+<title>Kit de diseño Relevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#17181C;--papel:#F2F2EF;--grafito:#5B5F68;--niebla:#E3E4E6;--azul:#2A4BD7;--noche:#111215;--azulc:#8CA6FF;
+  --bg:var(--papel);--fg:var(--tinta);--muted:var(--grafito);--panel:var(--niebla);--line:#C9CBCF;--you:var(--azul);
+  --sans:'Schibsted Grotesk',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111215;--fg:#E9EAEC;--muted:#9BA0A9;--panel:#1C1E23;--line:#30333A;--you:#8CA6FF}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111215;--fg:#E9EAEC;--muted:#9BA0A9;--panel:#1C1E23;--line:#30333A;--you:#8CA6FF}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.55;font-kerning:normal;text-rendering:optimizeLegibility}
+main,header{overflow-x:clip}
+.w{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+h1,h2,h3,h4{margin:0;font-weight:650;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,56px)}
+h3{font-size:20px;letter-spacing:-.01em;line-height:1.25}
+p{margin:0;text-wrap:pretty}
+.muted{color:var(--muted)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:clamp(19px,1.7vw,22px);line-height:1.5;max-width:36rem}
+.body{max-width:38rem}
+.body>*+*{margin-top:.9em}
+a{color:var(--you);text-underline-offset:.18em}
+:focus-visible{outline:2px solid var(--you);outline-offset:3px}
+.you{color:var(--you)}
+.cite{color:var(--muted)}
+section{padding-block:clamp(72px,10vw,136px)}
+section+section{border-top:1px solid var(--line)}
+.head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px);max-width:48rem}
+
+/* renglón: línea impresa (tinta) y lo escrito por la persona (azul) */
+.campo{display:inline-block;white-space:nowrap;color:var(--you);border-bottom:.055em solid currentColor;border-bottom-color:var(--fg);line-height:1;padding-bottom:.06em;min-width:4.2em}
+.campo.vacio{min-width:5.4em}
+.campo.guia{color:inherit}
+
+/* portada */
+.cover{padding-block:clamp(28px,4vw,40px) clamp(64px,9vw,120px)}
+.bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:clamp(56px,10vw,128px)}
+.bar .eyebrow{letter-spacing:.04em}
+.wm{display:block;height:auto}
+.cover .wm{color:var(--fg)}
+.cover .wm{width:min(100%,760px)}
+.firma{font-size:clamp(34px,7.4vw,96px);font-weight:650;letter-spacing:-.03em;line-height:1.02;margin-top:clamp(40px,6vw,72px)}
+.firma .campo{min-width:4.4em}
+.firma .rot{display:inline-block;transition:opacity .45s ease}
+.cover .lead{margin-top:28px}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;margin-top:40px}
+@media (max-width:760px){.cover-grid{grid-template-columns:1fr}}
+.play{display:inline-flex;align-items:center;gap:12px;font:inherit;font-size:15px;font-weight:600;color:var(--fg);background:none;border:1.5px solid var(--fg);border-radius:999px;padding:9px 18px 9px 10px;cursor:pointer}
+.play i{width:28px;height:28px;border-radius:50%;background:var(--fg);display:grid;place-items:center}
+.play i svg{width:10px;height:10px;fill:var(--bg);margin-left:2px}
+.play:hover{background:var(--panel)}
+.play small{font-weight:400;color:var(--muted);font-size:14px}
+
+/* 20 segundos */
+.veinte{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+@media (max-width:900px){.veinte{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.veinte{grid-template-columns:1fr}}
+.veinte div{border-top:2px solid var(--fg);padding-top:14px;display:grid;gap:8px;align-content:start}
+.veinte p{font-size:18px;line-height:1.4}
+
+/* relato */
+.relato{display:grid;gap:clamp(28px,4vw,48px)}
+.beat{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:12px clamp(24px,5vw,72px);align-items:baseline}
+@media (max-width:760px){.beat{grid-template-columns:1fr}}
+.beat h3{font-size:clamp(28px,3.4vw,42px);letter-spacing:-.02em;line-height:1.08}
+.beat p{font-size:18px;line-height:1.5;max-width:32rem}
+
+/* línea de tiempo */
+.tl{background:var(--panel);padding:clamp(20px,3vw,32px);overflow-x:auto}
+.tl svg{display:block;width:100%;min-width:540px;height:auto}
+.tl text{font-family:var(--sans);fill:var(--fg)}
+.tl .m{fill:var(--muted)}
+.tl .y{fill:var(--you)}
+
+/* dos columnas generales */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+
+/* renglón: demostración */
+.demo{background:var(--panel);padding:clamp(24px,4vw,48px);display:grid;gap:28px}
+.demo .big{font-size:clamp(26px,3.8vw,46px);font-weight:650;letter-spacing:-.02em;line-height:1.12}
+.demo .cap{font-size:14px;color:var(--muted)}
+.voces{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.voces div{padding:18px;border:1px solid var(--line);display:grid;gap:6px}
+.voces b{font-size:22px;font-weight:650;letter-spacing:-.01em}
+
+/* tablas */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15.5px;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:14px 18px 14px 0;border-top:1px solid var(--line)}
+th{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:2px solid var(--fg)}
+td:first-child{font-weight:600;width:24%}
+.num{font-variant-numeric:tabular-nums}
+
+/* logotipo */
+.logo-hero{background:#F2F2EF;color:#17181C;padding:clamp(40px,8vw,112px) clamp(24px,6vw,96px);border:1px solid var(--line);position:relative}
+.logo-hero .wm{width:100%}
+.logo-hero .guide{position:absolute;left:0;right:0;border-top:1px dashed #9aa0a9}
+.logo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+@media (max-width:760px){.logo-grid{grid-template-columns:1fr}}
+.logo-grid>div{min-height:180px;display:grid;place-items:center;padding:28px;overflow:hidden}
+.logo-grid .wm{width:min(100%,260px)}
+.t-papel{background:#F2F2EF;color:#17181C;border:1px solid var(--line)}
+.t-tinta{background:#17181C;color:#F2F2EF}
+.t-azul{background:#2A4BD7;color:#F2F2EF}
+.icons{display:flex;gap:20px;align-items:end;flex-wrap:wrap;margin-top:16px}
+.icons svg{display:block}
+.icons figure{margin:0;display:grid;gap:8px;justify-items:start}
+.icons figcaption{font-size:13px;color:var(--muted)}
+
+/* tipografía */
+.specimen{font-size:clamp(64px,12vw,168px);font-weight:650;letter-spacing:-.035em;line-height:.95}
+.escala{display:grid;gap:0;margin-top:40px}
+.escala div{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:8px 28px;padding-block:18px;border-top:1px solid var(--line);align-items:baseline}
+@media (max-width:640px){.escala div{grid-template-columns:1fr}}
+.escala .spec{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* color */
+.pal{display:grid;grid-template-columns:2fr 2fr 1fr 1fr;gap:12px}
+@media (max-width:760px){.pal{grid-template-columns:1fr 1fr}}
+.pal div{min-height:190px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;line-height:1.35}
+.pal b{font-size:18px;font-weight:650}
+.pal code{font-family:var(--sans);font-variant-numeric:tabular-nums}
+.pal2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+@media (max-width:760px){.pal2{grid-template-columns:1fr 1fr}}
+.pal2 div{min-height:110px;padding:14px;display:flex;flex-direction:column;justify-content:space-between;font-size:13.5px}
+.pal2 b{font-size:15px;font-weight:650}
+
+/* fotos */
+.fotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.fotos{grid-template-columns:1fr}}
+.fotos figure{margin:0}
+.fotos img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.fotos figcaption{margin-top:12px;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.reglas{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.reglas li{padding-left:26px;position:relative}
+.reglas li::before{content:"";position:absolute;left:0;top:.95em;width:14px;border-top:2px solid var(--fg)}
+
+/* voz */
+.voz{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px)}
+@media (max-width:760px){.voz{grid-template-columns:1fr}}
+.voz ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:0}
+.voz li{padding-block:14px;border-top:1px solid var(--line);font-size:19px;letter-spacing:-.005em}
+.voz .no li{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+
+/* aplicaciones */
+.posters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.posters{grid-template-columns:1fr;max-width:420px}}
+.poster{aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;container-type:inline-size}
+.poster .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.poster .txt{position:relative;padding:7cqw;display:flex;flex-direction:column;justify-content:space-between;height:100%}
+.poster .t{font-size:11.5cqw;font-weight:650;letter-spacing:-.03em;line-height:1.02}
+.poster .foot{display:flex;justify-content:space-between;align-items:end;gap:12px}
+.poster .foot .wm{width:28cqw}
+.poster .foot small{font-size:3.1cqw;line-height:1.3;max-width:48cqw;text-align:right}
+.p-papel{background:#F2F2EF;color:#17181C}
+.p-papel .campo{color:#2A4BD7;border-bottom-color:#17181C}
+.p-tinta{background:#17181C;color:#F2F2EF}
+.p-tinta .campo{color:#8CA6FF;border-bottom-color:#F2F2EF}
+.p-foto{color:#F2F2EF;background:#17181C}
+.p-foto .campo{color:#F2F2EF;border-bottom-color:#F2F2EF}
+.p-foto .txt{background:linear-gradient(180deg,rgba(17,18,21,.55),rgba(17,18,21,0) 42%,rgba(17,18,21,0) 70%,rgba(17,18,21,.5))}
+
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+@media (max-width:900px){.phones{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
+.tel{background:#0B0C0E;border-radius:40px;padding:9px;width:100%;max-width:320px;margin:0 auto}
+.scr{background:#F2F2EF;color:#17181C;border-radius:32px;min-height:600px;padding:18px 20px 22px;display:flex;flex-direction:column;gap:16px;font-size:14.5px;line-height:1.4}
+.scr .sb{display:flex;justify-content:space-between;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.scr .top{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+.scr .top .wm{width:66px}
+.scr .top span{font-size:12.5px;color:#5B5F68}
+.scr h4{font-size:30px;font-weight:650;letter-spacing:-.025em;line-height:1.05}
+.scr .q{display:grid;gap:6px}
+.scr .q label{font-size:12.5px;color:#5B5F68;font-weight:500}
+.scr .q .campo{font-size:19px;font-weight:500;letter-spacing:-.005em;min-width:100%;color:#2A4BD7;border-bottom:1.5px solid #17181C;padding-bottom:6px}
+.scr .grow{flex:1}
+.scr .btn{border-radius:12px;padding:13px 16px;font-weight:600;text-align:center;border:1.5px solid #17181C}
+.scr .btn.pri{background:#17181C;color:#F2F2EF}
+.scr .meta{display:grid;gap:0}
+.scr .meta div{display:grid;grid-template-columns:auto 1fr;gap:12px;padding-block:10px;border-top:1px solid #C9CBCF}
+.scr .meta span{color:#5B5F68}
+.scr .meta b{font-weight:500;text-align:right}
+.scr .note{font-size:13px;color:#5B5F68}
+.phones figcaption,.fis figcaption{font-size:14.5px;color:var(--muted);margin-top:14px;max-width:320px;margin-inline:auto}
+
+.fis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+@media (max-width:900px){.fis{grid-template-columns:1fr}}
+.fis figure{margin:0}
+.fis .stage{background:var(--panel);aspect-ratio:1/1;display:grid;place-items:center;padding:8%;overflow:hidden}
+.card{background:#F2F2EF;color:#17181C;width:84%;aspect-ratio:85/54;padding:6%;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 1px 2px rgba(0,0,0,.08),0 12px 28px -12px rgba(0,0,0,.22);container-type:inline-size}
+.card .t{font-size:9.5cqw;font-weight:650;letter-spacing:-.02em;line-height:1.05}
+.card .campo{color:#2A4BD7;border-bottom-color:#17181C;min-width:6.4em}
+.card .wm{width:26cqw}
+.box{width:78%;aspect-ratio:1/1;background:#17181C;color:#F2F2EF;padding:8%;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 2px 4px rgba(0,0,0,.1),0 22px 40px -18px rgba(0,0,0,.45);container-type:inline-size}
+.box .t{font-size:10cqw;font-weight:650;letter-spacing:-.025em;line-height:1.05}
+.box .campo{color:#8CA6FF;border-bottom-color:#F2F2EF;min-width:5.4em}
+.box .wm{width:34cqw}
+.box small{font-size:3.6cqw;opacity:.8}
+.cover-m{width:70%;aspect-ratio:1/1.414;background:#F2F2EF;color:#17181C;padding:8%;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 1px 2px rgba(0,0,0,.08),0 18px 36px -16px rgba(0,0,0,.3);container-type:inline-size}
+.cover-m .wm{width:56cqw}
+.cover-m .t{font-size:6.2cqw;font-weight:600;letter-spacing:-.01em;line-height:1.15;margin-top:6cqw}
+.cover-m .campo{min-width:4.2em}
+.cover-m small{font-size:3.4cqw;line-height:1.4;color:#5B5F68}
+
+.slide{background:#17181C;color:#F2F2EF;aspect-ratio:16/9;padding:5%;display:flex;flex-direction:column;justify-content:space-between;container-type:inline-size;margin-top:16px}
+.slide .wm{width:22cqw}
+.slide .t{font-size:6.4cqw;font-weight:650;letter-spacing:-.03em;line-height:1.02}
+.slide .campo{color:#8CA6FF;border-bottom-color:#F2F2EF;min-width:4.6em}
+.slide small{font-size:1.5cqw;opacity:.8}
+
+/* sonido */
+.son{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+@media (max-width:760px){.son{grid-template-columns:1fr}}
+
+.refs{display:grid;gap:10px;font-size:14.5px;line-height:1.5;max-width:56rem}
+.refs p{padding-left:2em;text-indent:-2em}
+footer{border-top:1px solid var(--line);padding-block:32px 56px;font-size:14px;color:var(--muted)}
+
+/* índice */
+.indice{display:flex;flex-wrap:wrap;gap:8px 20px;padding-block:20px;border-block:1px solid var(--line);font-size:14.5px}
+.indice a{color:var(--fg);text-decoration:none}
+.indice a:hover{color:var(--you);text-decoration:underline}
+/* usos incorrectos */
+.mal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
+@media (max-width:760px){.mal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mal figure{margin:0}
+.mal .st{aspect-ratio:3/2;display:grid;place-items:center;background:#F2F2EF;border:1px solid var(--line);overflow:hidden;position:relative;color:#17181C}
+.mal .st svg.wm{width:62%}
+.mal .st::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1px),#B3261E calc(50% - 1px),#B3261E calc(50% + 1px),transparent calc(50% + 1px))}
+.mal figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+/* escalas de color */
+.escala-c{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));margin-top:12px}
+.escala-c.az{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:760px){.escala-c{grid-template-columns:repeat(4,minmax(0,1fr))}.escala-c.az{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.escala-c div{min-height:96px;padding:10px;font-size:12px;line-height:1.3;display:flex;flex-direction:column;justify-content:flex-end}
+.escala-c b{font-weight:650;font-size:13px}
+.prop{display:flex;height:44px;margin-top:12px;border:1px solid var(--line)}
+.prop div{display:flex;align-items:center;padding-inline:10px;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden}
+/* formas y fondos */
+.cards4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.cards4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cards4{grid-template-columns:1fr}}
+.cards4 figure{margin:0;display:grid;gap:12px;align-content:start}
+.cards4 .st{aspect-ratio:1/1;background:var(--panel);display:grid;place-items:center;overflow:hidden}
+.cards4 .st svg{width:70%;height:auto}
+.cards4 h3{font-size:18px}
+.cards4 p{font-size:15px;color:var(--muted);line-height:1.45}
+.fondo{aspect-ratio:4/5;padding:9%;display:flex;flex-direction:column;justify-content:space-between;container-type:inline-size;overflow:hidden}
+.fondo .t{color:inherit;font-size:12cqw;font-weight:650;letter-spacing:-.025em;line-height:1.02}
+.fondo .wm{width:34cqw}
+.fondo small{font-size:4.2cqw;opacity:.85}
+.no-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.no-list span{border:1px solid var(--line);padding:5px 10px;font-size:14px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--muted)}
+/* iconos */
+.iconos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media (max-width:900px){.iconos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:480px){.iconos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.iconos figure{margin:0;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:14px;align-content:start}
+.iconos svg{width:36px;height:36px;stroke:var(--fg)}
+.iconos figcaption{font-size:13.5px;line-height:1.3}
+.anat-ic{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px 40px;align-items:center;margin-top:40px}
+@media (max-width:640px){.anat-ic{grid-template-columns:1fr}}
+.anat-ic .big{background:var(--panel);padding:16px}
+.anat-ic .big svg{display:block;width:216px;height:216px}
+/* tono */
+.dims{display:grid;gap:18px;max-width:44rem}
+.dim{display:grid;grid-template-columns:7rem minmax(0,1fr) 7rem;gap:12px;align-items:center;font-size:14.5px}
+.dim span:last-child{text-align:right}
+.dim .track{height:2px;background:var(--line);position:relative}
+.dim .track i{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:var(--fg);transform:translate(-50%,-50%)}
+.dim p{grid-column:1/-1;color:var(--muted);font-size:14.5px;margin-top:-4px}
+@media (max-width:560px){.dim{grid-template-columns:5.5rem minmax(0,1fr) 5.5rem}}
+.vocab{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:640px){.vocab{grid-template-columns:1fr}}
+.vocab .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.vocab .chips span{padding:6px 12px;background:var(--panel);font-size:15px}
+.vocab .no .chips span{background:none;border:1px solid var(--line);color:var(--muted);text-decoration:line-through}
+/* retícula */
+.ret{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.ret{grid-template-columns:1fr}}
+.ret figure{margin:0;display:grid;gap:12px;align-content:start}
+.ret .st{background:var(--panel);display:grid;place-items:center;padding:24px}
+.ret svg{width:100%;max-width:260px;height:auto}
+.ret p{font-size:15px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.firma .rot{transition:none}}
+
+/* kit */
+.ic{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:var(--sw,1.75);stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.kit-top{padding-block:clamp(28px,4vw,40px) clamp(40px,6vw,72px)}
+.kit-top .wm{width:min(100%,360px);color:var(--fg)}
+.kit-top h1{font-size:clamp(44px,7vw,88px);letter-spacing:-.03em;line-height:1;margin-top:40px}
+.kit-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.kit-nav a{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--fg);border-radius:12px;padding:9px 14px;color:var(--fg);text-decoration:none;font-weight:600;font-size:15px}
+.kit-nav a:hover{background:var(--panel)}
+.princ{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.princ{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.princ{grid-template-columns:1fr}}
+.princ div{border-top:2px solid var(--fg);padding-top:14px;display:grid;gap:8px;align-content:start}
+.princ p{font-size:15px;color:var(--muted);line-height:1.45}
+.pesos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+@media (max-width:760px){.pesos{grid-template-columns:1fr}}
+.pesos div{background:var(--panel);padding:20px;display:grid;gap:14px}
+.pesos .fila{display:flex;align-items:center;gap:10px;font-size:17px}
+.pesos .fila .ic{width:24px;height:24px}
+.pesos small{color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums}
+.keyl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px 48px;align-items:center;margin-top:48px}
+@media (max-width:720px){.keyl{grid-template-columns:1fr}}
+.keyl .pl{background:var(--panel);padding:16px}
+.keyl .pl svg{display:block;width:264px;height:264px;max-width:100%}
+.tamanos{display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-top:8px}
+.tamanos figure{margin:0;display:grid;gap:8px;justify-items:start}
+.tamanos figcaption{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;margin:48px 0 16px;align-items:center}
+.ctrl span{font-size:14px;color:var(--muted);margin-right:6px}
+.ctrl button{font:inherit;font-size:14.5px;font-weight:600;border:1.5px solid var(--fg);background:none;color:var(--fg);border-radius:12px;padding:7px 12px;cursor:pointer}
+.ctrl button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.grupo h3{margin:36px 0 12px;font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.set{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media (max-width:900px){.set{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.set{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.set figure{margin:0;padding:20px 16px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:16px;align-content:start}
+.set .ic{width:32px;height:32px}
+.set figcaption{font-size:13.5px;line-height:1.3}
+.set code{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:2px}
+
+/* componentes de app */
+.comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.comp{grid-template-columns:1fr}}
+.comp>div{background:var(--panel);padding:22px;display:grid;gap:14px;align-content:start}
+.comp h3{font-size:15px}
+.ui{--bg:#F2F2EF;color:#17181C;background:#F2F2EF;font-size:15px;line-height:1.35}
+.b{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;padding:0 14px;font-weight:600;font-size:15px;border:1.5px solid #17181C;background:none;color:#17181C}
+.b.pri{background:#17181C;color:#F2F2EF}
+.b.txt{border-color:transparent;min-height:40px}
+.b.dis{border-color:#C9CBCF;color:#9BA0A9}
+.f{display:grid;gap:6px}
+.f label{font-size:13px;color:#5B5F68;font-weight:500}
+.f .v{font-size:18px;font-weight:500;color:#2A4BD7;border-bottom:1.5px solid #17181C;padding-bottom:7px;min-height:32px}
+.f .v.ph{color:#5B5F68;font-weight:400}
+.f .v.foco{border-bottom:2px solid #2A4BD7}
+.lst{display:grid}
+.lst .r{display:flex;align-items:center;gap:14px;min-height:52px;border-top:1px solid #C9CBCF}
+.lst .r:last-child{border-bottom:1px solid #C9CBCF}
+.lst .r .t{flex:1}
+.lst .r .t small{display:block;color:#5B5F68;font-size:13px}
+.lst .r .ic{--sw:1.5}
+.chk{width:22px;height:22px;border:1.75px solid #17181C;border-radius:6px;display:grid;place-items:center;flex:none}
+.chk.on{background:#17181C}
+.chk.on .ic{width:16px;height:16px;color:#F2F2EF;--sw:2.2}
+.rad{width:22px;height:22px;border:1.75px solid #17181C;border-radius:50%;flex:none;display:grid;place-items:center}
+.rad.on::after{content:"";width:12px;height:12px;border-radius:50%;background:#17181C}
+.banner{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1.5px solid #B3261E;border-radius:12px;color:#17181C}
+.banner .ic{color:#B3261E;--sw:1.75}
+.banner p{font-size:14.5px}
+.estado{display:inline-flex;align-items:center;gap:8px;background:#E3E4E6;border-radius:8px;padding:6px 10px;font-size:13.5px;font-weight:600}
+.estado .ic{width:16px;height:16px;--sw:1.9}
+
+/* pantallas */
+.tels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 20px;align-items:start}
+@media (max-width:1100px){.tels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){.tels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.tels{grid-template-columns:1fr;max-width:320px;margin-inline:auto}}
+.tels figure{margin:0}
+.tels figcaption{font-size:14px;color:var(--muted);margin-top:12px}
+.tels figcaption b{color:var(--fg);font-weight:600;display:block}
+.tel2{background:#0B0C0E;border-radius:38px;padding:8px;max-width:300px;margin:0 auto}
+.sc{border-radius:31px;min-height:590px;padding:14px 18px 18px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.sc .sb{display:flex;justify-content:space-between;font-size:11.5px;font-weight:600;font-variant-numeric:tabular-nums;padding:0 4px}
+.sc .ab{display:flex;align-items:center;justify-content:space-between;min-height:40px}
+.sc .ab .wm{width:62px}
+.sc .ab .ic{width:22px;height:22px;--sw:1.6}
+.sc h4{font-size:27px;line-height:1.08;font-weight:650;letter-spacing:-.025em}
+.sc .lead2{font-size:15px;color:#5B5F68;line-height:1.4}
+.sc .grow{flex:1}
+.sc .pasos{display:grid;gap:14px}
+.sc .pasos div{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.sc .pasos .ic{--sw:1.6;margin-top:-1px}
+.sc .firma2{font-size:34px;font-weight:650;letter-spacing:-.03em;line-height:1.02}
+.sc .firma2 .campo{color:#2A4BD7;border-bottom-color:#17181C;min-width:0}
+.sc .kv{display:grid}
+.sc .kv div{display:flex;gap:12px;align-items:center;padding-block:11px;border-top:1px solid #C9CBCF;font-size:14.5px}
+.sc .kv div .ic{--sw:1.5;color:#5B5F68}
+.sc .kv span{flex:1;color:#5B5F68}
+.sc .kv b{font-weight:500;text-align:right}
+.sc .big-ic{width:44px;height:44px;--sw:1.5}
+.sc .search{display:flex;align-items:center;gap:10px;background:#E3E4E6;border-radius:12px;padding:10px 12px;color:#5B5F68}
+.sc .search .ic{width:18px;height:18px;--sw:1.8}
+.sc .app{width:30px;height:30px;border-radius:8px;flex:none}
+.sc .step{display:flex;align-items:center;justify-content:space-between;border:1.5px solid #17181C;border-radius:12px;padding:6px 8px 6px 14px;font-weight:600}
+.sc .step span{display:flex;gap:4px}
+.sc .step i{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:#E3E4E6;font-style:normal;font-size:18px}
+.lock{background:#1C1F26;color:#F2F2EF}
+.lock .hora{font-size:64px;font-weight:600;letter-spacing:-.03em;text-align:center;margin-top:28px;line-height:1}
+.lock .fecha{text-align:center;font-size:14px;opacity:.8;margin-top:-6px}
+.noti{background:#F2F2EF;color:#17181C;border-radius:18px;padding:12px 14px;display:grid;gap:4px;margin-top:40px}
+.noti .h{display:flex;align-items:center;gap:8px;font-size:12px;color:#5B5F68}
+.noti .h .ico{width:18px;height:18px;border-radius:5px;background:#17181C;display:grid;place-items:center}
+.noti .h .ico svg{width:12px;height:12px}
+.noti b{font-size:15.5px}
+.noti p{font-size:14px}
+.oscuro{--bg:#111215;background:#111215;color:#E9EAEC}
+.oscuro .lead2,.oscuro .kv span,.oscuro .kv div .ic{color:#9BA0A9}
+.oscuro .kv div{border-top-color:#30333A}
+.oscuro .firma2 .campo{color:#8CA6FF;border-bottom-color:#E9EAEC}
+.oscuro .b{border-color:#E9EAEC;color:#E9EAEC}
+.oscuro .estado{background:#1C1E23}
+
+/* diapositivas */
+.slides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.slides{grid-template-columns:1fr}}
+.slides figure{margin:0}
+.slides figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.sl{aspect-ratio:16/9;container-type:inline-size;padding:5.5cqw;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;border:1px solid var(--line)}
+.sl.pap{background:#F2F2EF;color:#17181C}
+.sl.tin{background:#17181C;color:#F2F2EF;border-color:#17181C}
+.sl.azu{background:#2A4BD7;color:#F2F2EF;border-color:#2A4BD7}
+.sl .pie{display:flex;justify-content:space-between;align-items:flex-end;font-size:1.6cqw;opacity:.75;font-variant-numeric:tabular-nums}
+.sl .pie .wm{width:9cqw;opacity:1}
+.sl .h1{font-size:7cqw;font-weight:650;letter-spacing:-.03em;line-height:1}
+.sl .h2{font-size:4.6cqw;font-weight:650;letter-spacing:-.025em;line-height:1.05}
+.sl .p{font-size:2.1cqw;line-height:1.4;max-width:60cqw}
+.sl .eb{font-size:1.5cqw;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.sl .campo{border-bottom-color:currentColor}
+.sl.pap .campo{color:#2A4BD7;border-bottom-color:#17181C}
+.sl.tin .campo{color:#8CA6FF;border-bottom-color:#F2F2EF}
+.sl .cifra{font-size:15cqw;font-weight:650;letter-spacing:-.04em;line-height:.9}
+.sl .ics{display:flex;align-items:center;gap:2.2cqw}
+.sl .ics .n{display:grid;gap:1cqw;justify-items:start;font-size:1.8cqw;max-width:17cqw}
+.sl .ics .ic{width:5cqw;height:5cqw;--sw:1.5}
+.sl .ics .ar{width:3cqw;height:3cqw;opacity:.5}
+.sl table{min-width:0;font-size:1.9cqw}
+.sl th,.sl td{padding:1cqw 1.6cqw 1cqw 0;border-top-color:rgba(23,24,28,.2)}
+.sl th{font-size:1.3cqw;border-top:.25cqw solid #17181C;color:#5B5F68}
+.sl .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw}
+.sl .cols div{border-top:.25cqw solid currentColor;padding-top:1.4cqw;display:grid;gap:.8cqw;align-content:start}
+.sl .cols b{font-size:1.4cqw;font-weight:600;opacity:.7}
+.sl .cols p{font-size:1.9cqw;line-height:1.3}
+.sl .cols .ic{width:3.6cqw;height:3.6cqw;--sw:1.5}
+.sl .foto{position:absolute;right:0;top:0;bottom:0;width:44%;object-fit:cover;height:100%}
+.nota{font-size:14.5px;color:var(--muted);max-width:52rem;margin-top:16px}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="wm"><path d="M145 0V-1080H408V-840L397 -870Q448 -989 541.5 -1047.5Q635 -1106 743 -1106Q774 -1106 805.0 -1101.0Q836 -1096 866 -1084L844 -848Q780 -866 722 -866Q675 -866 622.5 -850.0Q570 -834 523.5 -791.5Q477 -749 447.5 -671.0Q418 -593 418 -471V0Z"/><path d="M1461 26Q1303 26 1179.5 -43.5Q1056 -113 984.5 -240.0Q913 -367 913 -541Q913 -714 983.0 -840.5Q1053 -967 1176.0 -1036.5Q1299 -1106 1458 -1106Q1547 -1106 1637.5 -1078.5Q1728 -1051 1803.5 -982.5Q1879 -914 1925.5 -793.0Q1972 -672 1972 -484H1088V-647H1729L1695 -592Q1687 -707 1653.5 -777.0Q1620 -847 1567.5 -878.5Q1515 -910 1451 -910Q1368 -910 1312.5 -864.0Q1257 -818 1228.5 -735.0Q1200 -652 1200 -539Q1200 -371 1264.5 -275.0Q1329 -179 1459 -179Q1546 -179 1607.5 -223.5Q1669 -268 1701 -357L1950 -291Q1912 -183 1837.5 -112.5Q1763 -42 1665.5 -8.0Q1568 26 1461 26Z"/><path d="M2394 0Q2284 0 2223.0 -55.5Q2162 -111 2162 -212V-1500H2435V-259Q2435 -225 2444.5 -214.0Q2454 -203 2485 -203H2572V0Z"/><path d="M3216 26Q3058 26 2934.5 -43.5Q2811 -113 2739.5 -240.0Q2668 -367 2668 -541Q2668 -714 2738.0 -840.5Q2808 -967 2931.0 -1036.5Q3054 -1106 3213 -1106Q3302 -1106 3392.5 -1078.5Q3483 -1051 3558.5 -982.5Q3634 -914 3680.5 -793.0Q3727 -672 3727 -484H2843V-647H3484L3450 -592Q3442 -707 3408.5 -777.0Q3375 -847 3322.5 -878.5Q3270 -910 3206 -910Q3123 -910 3067.5 -864.0Q3012 -818 2983.5 -735.0Q2955 -652 2955 -539Q2955 -371 3019.5 -275.0Q3084 -179 3214 -179Q3301 -179 3362.5 -223.5Q3424 -268 3456 -357L3705 -291Q3667 -183 3592.5 -112.5Q3518 -42 3420.5 -8.0Q3323 26 3216 26Z"/><path d="M4184 0 3775 -1080H4080L4362 -189H4333L4614 -1080H4918L4511 0Z"/><path d="M5510 26Q5349 26 5226.5 -46.0Q5104 -118 5035.0 -245.5Q4966 -373 4966 -540Q4966 -707 5035.0 -834.5Q5104 -962 5226.5 -1034.0Q5349 -1106 5510 -1106Q5672 -1106 5794.5 -1034.0Q5917 -962 5986.0 -835.0Q6055 -708 6055 -540Q6055 -373 5986.5 -245.5Q5918 -118 5794.5 -46.0Q5671 26 5510 26ZM5511 -178Q5630 -178 5699.0 -275.5Q5768 -373 5768 -540Q5768 -708 5699.0 -805.0Q5630 -902 5511 -902Q5391 -902 5322.0 -805.0Q5253 -708 5253 -540Q5253 -372 5322.0 -275.0Q5391 -178 5511 -178Z"/></g></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-actividad" viewBox="0 0 24 24"><path d="M3.5 20.5H20.5"/><path d="M5 17V14.4L14.6 4.8A1.9 1.9 0 0 1 17.3 4.8L17.7 5.2A1.9 1.9 0 0 1 17.7 7.9L8.1 17.5H5.5A.5.5 0 0 1 5 17Z"/><path d="M13 6.4L16.1 9.5"/></symbol><symbol id="i-primer-paso" viewBox="0 0 24 24"><path d="M3.5 19.5H8.5V14H14V8.5H20.5"/></symbol><symbol id="i-lugar" viewBox="0 0 24 24"><path d="M12 20.5C12 20.5 5.75 14.6 5.75 9.75A6.25 6.25 0 0 1 18.25 9.75C18.25 14.6 12 20.5 12 20.5Z"/><circle cx="12" cy="9.75" r="2.25"/></symbol><symbol id="i-uso" viewBox="0 0 24 24"><circle cx="12" cy="13.25" r="7.75"/><path d="M12 13.25V9.25"/><path d="M9.75 2.75H14.25"/><path d="M12 2.75V5.5"/></symbol><symbol id="i-apps" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></symbol><symbol id="i-parlante" viewBox="0 0 24 24"><rect x="6" y="2.75" width="12" height="18.5" rx="3"/><circle cx="12" cy="14.5" r="3.25"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/></symbol><symbol id="i-telefono" viewBox="0 0 24 24"><rect x="6.5" y="2.75" width="11" height="18.5" rx="3"/><path d="M10.5 18H13.5"/></symbol><symbol id="i-objeto" viewBox="0 0 24 24"><ellipse cx="12" cy="8.75" rx="8" ry="3"/><path d="M4 8.75V15.25C4 16.9 7.6 18.25 12 18.25C16.4 18.25 20 16.9 20 15.25V8.75"/><circle cx="12" cy="8.75" r="1" fill="currentColor" stroke="none"/></symbol><symbol id="i-probar" viewBox="0 0 24 24"><path d="M3.5 9.5H6.75L11.5 5.5V18.5L6.75 14.5H3.5Z"/><path d="M15 9.25A4 4 0 0 1 15 14.75"/><path d="M17.75 6.5A8 8 0 0 1 17.75 17.5"/></symbol><symbol id="i-silenciar" viewBox="0 0 24 24"><path d="M3.5 9.5H6.75L11.5 5.5V18.5L6.75 14.5H3.5Z"/><path d="M15.5 9.5L20.5 14.5M20.5 9.5L15.5 14.5"/></symbol><symbol id="i-conexion" viewBox="0 0 24 24"><path d="M10 14L14 10"/><path d="M8.5 11L6.6 12.9A3.35 3.35 0 0 0 11.1 17.4L13 15.5"/><path d="M11 8.5L12.9 6.6A3.35 3.35 0 0 1 17.4 11.1L15.5 13"/></symbol><symbol id="i-bateria" viewBox="0 0 24 24"><rect x="2.75" y="7.25" width="16.5" height="9.5" rx="2.75"/><path d="M21.25 10.5V13.5"/><rect x="5.25" y="9.75" width="6.5" height="4.5" rx="1" fill="currentColor" stroke="none"/></symbol><symbol id="i-comence" viewBox="0 0 24 24"><path d="M4.75 12.75L9.75 17.5L19.25 6.75"/></symbol><symbol id="i-despues" viewBox="0 0 24 24"><path d="M6.5 4.75A1.75 1.75 0 0 1 8.25 3H15.75A1.75 1.75 0 0 1 17.5 4.75V20.5L12 16.5L6.5 20.5Z"/></symbol><symbol id="i-cambie" viewBox="0 0 24 24"><path d="M4 8.5H19"/><path d="M15.5 5L19 8.5L15.5 12"/><path d="M20 15.5H5"/><path d="M8.5 12L5 15.5L8.5 19"/></symbol><symbol id="i-inicio" viewBox="0 0 24 24"><path d="M4 10.5L12 3.75L20 10.5V19.25A1.75 1.75 0 0 1 18.25 21H5.75A1.75 1.75 0 0 1 4 19.25Z"/><path d="M9.75 21V15.25H14.25V21"/></symbol><symbol id="i-relevos" viewBox="0 0 24 24"><path d="M9 6.5H20.5M9 12H20.5M9 17.5H20.5"/><circle cx="4.75" cy="6.5" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.75" cy="12" r="1.25" fill="currentColor" stroke="none"/><circle cx="4.75" cy="17.5" r="1.25" fill="currentColor" stroke="none"/></symbol><symbol id="i-agregar" viewBox="0 0 24 24"><path d="M12 4.5V19.5M4.5 12H19.5"/></symbol><symbol id="i-editar" viewBox="0 0 24 24"><path d="M5 19V16.4L14.6 6.8A1.9 1.9 0 0 1 17.3 6.8L17.2 6.7A1.9 1.9 0 0 1 17.2 9.4L7.6 19H5Z"/><path d="M13 8.4L15.6 11"/></symbol><symbol id="i-borrar" viewBox="0 0 24 24"><path d="M4 6.5H20"/><path d="M9.5 6.5V4.25H14.5V6.5"/><path d="M6.25 6.5L7.1 19.4A1.75 1.75 0 0 0 8.85 21H15.15A1.75 1.75 0 0 0 16.9 19.4L17.75 6.5"/><path d="M10.25 10.5V16.75M13.75 10.5V16.75"/></symbol><symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M6 6L18 18M18 6L6 18"/></symbol><symbol id="i-volver" viewBox="0 0 24 24"><path d="M15 4.75L7.75 12L15 19.25"/></symbol><symbol id="i-siguiente" viewBox="0 0 24 24"><path d="M9 4.75L16.25 12L9 19.25"/></symbol><symbol id="i-mas" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="18.5" cy="12" r="1.5" fill="currentColor" stroke="none"/></symbol><symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.75"/><path d="M15.5 15.5L20.5 20.5"/></symbol><symbol id="i-ajustes" viewBox="0 0 24 24"><path d="M3.5 7H20.5M3.5 17H20.5"/><circle cx="9" cy="7" r="2.5" fill="var(--bg,#F2F2EF)"/><circle cx="15" cy="17" r="2.5" fill="var(--bg,#F2F2EF)"/></symbol><symbol id="i-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.75"/><path d="M9.6 9.6A2.5 2.5 0 1 1 13.3 11.8C12.5 12.3 12 12.9 12 13.75"/><circle cx="12" cy="16.9" r="1" fill="currentColor" stroke="none"/></symbol><symbol id="i-esperando" viewBox="0 0 24 24"><path d="M7 3.25H17M7 20.75H17"/><path d="M8.5 3.25V6.2L12 12L15.5 6.2V3.25"/><path d="M8.5 20.75V17.8L12 12L15.5 17.8V20.75"/></symbol><symbol id="i-privacidad" viewBox="0 0 24 24"><rect x="4.75" y="10.25" width="14.5" height="10.5" rx="2.5"/><path d="M8.25 10.25V7.75A3.75 3.75 0 0 1 15.75 7.75V10.25"/></symbol><symbol id="i-permiso" viewBox="0 0 24 24"><circle cx="7.75" cy="12" r="4"/><path d="M11.75 12H20.5V15"/><path d="M17 12V14.5"/></symbol><symbol id="i-datos" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><rect x="9" y="2.75" width="6" height="3.5" rx="1.25" fill="var(--bg,#F2F2EF)"/><path d="M8.5 11H15.5M8.5 15H13"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.75"/><path d="M12 11V16.5"/><circle cx="12" cy="7.75" r="1" fill="currentColor" stroke="none"/></symbol><symbol id="i-error" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.75"/><path d="M12 7.25V13"/><circle cx="12" cy="16.25" r="1" fill="currentColor" stroke="none"/></symbol><symbol id="i-investigacion" viewBox="0 0 24 24"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z"/><path d="M12 6.25V20"/></symbol><symbol id="i-entrevistas" viewBox="0 0 24 24"><path d="M3.5 4.75H14V12.25H8.5L5.5 14.75V12.25H3.5Z"/><path d="M17 9H20.5V16.5H18.75V19L15.75 16.5H10V15"/></symbol><symbol id="i-hipotesis" viewBox="0 0 24 24"><path d="M9.5 3.25H14.5"/><path d="M10.5 3.25V9.25L5.4 18.2A1.75 1.75 0 0 0 6.9 20.75H17.1A1.75 1.75 0 0 0 18.6 18.2L13.5 9.25V3.25"/><path d="M7.75 15H16.25"/></symbol><symbol id="i-validacion" viewBox="0 0 24 24"><rect x="4.25" y="3.25" width="15.5" height="17.5" rx="2.5"/><path d="M7.75 8.75L9.1 10L11.25 7.5M13.25 8.75H16.5M7.75 14.75L9.1 16L11.25 13.5M13.25 14.75H16.5"/></symbol><symbol id="i-decision" viewBox="0 0 24 24"><path d="M12 20.75V13"/><path d="M12 13L6.25 7.25M12 13L17.75 7.25"/><path d="M6 11V7H10M18 11V7H14"/></symbol><symbol id="i-sistema" viewBox="0 0 24 24"><rect x="3" y="3.75" width="8" height="16.5" rx="2.25"/><rect x="15" y="10.5" width="6" height="9.75" rx="2"/><path d="M12.5 15.25H13.5"/></symbol><symbol id="i-tiempo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.75"/><path d="M12 6.75V12H16"/></symbol></defs></svg>
+<header class="w kit-top">
+  <svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg>
+  <h1>Kit de diseño</h1>
+  <p class="lead" style="margin-top:20px">Las piezas para construir Relevo: 40 iconos propios, los componentes y pantallas de la app, y las plantillas de presentación. Todo sale del <a href="https://claude.ai/artifact/2tyq4veDxhr6JRrfJznBkj">manual de marca</a>.</p>
+  <nav class="kit-nav" aria-label="Secciones"><a href="#iconos"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apps"/></svg>Iconos</a><a href="#app"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg>App</a><a href="#presentacion"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sistema"/></svg>Presentación</a></nav>
+</header>
+<main>
+<section class="w" id="iconos">
+  <div class="head"><span class="eyebrow">Iconos</span><h2>Cuarenta iconos, dibujados como la letra.</h2>
+    <p class="lead">Se dibujaron con los criterios que Apple pide para los iconos de interfaz: formas simples, el mismo tamaño, grosor y nivel de detalle en todos, centrado a ojo y el grosor del texto que acompañan (Apple, s. f.).</p></div>
+  <div class="princ">
+    <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-actividad"/></svg><h3>Mismo grosor que el texto</h3><p>El trazo sale de medir Schibsted Grotesk: el trazo vertical de la letra mide 1,5 px en texto de 17 px a peso 400, 1,8 a peso 500 y 2,1 a peso 600.</p></div>
+    <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apps"/></svg><h3>Retícula de 24</h3><p>Área viva de 20 × 20 y cuatro formas base (círculo, cuadrado, vertical y horizontal) para que todos se vean del mismo tamaño (Google, s. f.).</p></div>
+    <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-comence"/></svg><h3>Extremos redondos</h3><p>Extremos y uniones redondeados, esquinas de radio 2 a 3 y un espacio mínimo de 1,5 entre partes. Se leen bien incluso a 16 px.</p></div>
+    <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ayuda"/></svg><h3>Siempre con palabra</h3><p>El icono acompaña a una palabra, no la reemplaza (Wiedenbeck, 1999). Las metáforas son concretas y de la casa (McDougall et al., 2000).</p></div>
+  </div>
+  <div class="pesos">
+<div><div class="fila" style="--sw:1.5;font-weight:400"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg>Probar sonido</div><div class="fila" style="--sw:1.5;font-weight:400"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg>Parlante junto al sillón</div><small>Regular · trazo 1,5 · con texto 400</small></div>
+<div><div class="fila" style="--sw:1.8;font-weight:500"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg>Probar sonido</div><div class="fila" style="--sw:1.8;font-weight:500"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg>Parlante junto al sillón</div><small>Medio · trazo 1,8 · con texto 500</small></div>
+<div><div class="fila" style="--sw:2.1;font-weight:600"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg>Probar sonido</div><div class="fila" style="--sw:2.1;font-weight:600"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg>Parlante junto al sillón</div><small>Semibold · trazo 2,1 · con texto 600</small></div>
+</div>
+  <div class="keyl">
+    <div class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="var(--bg)"/><line x1="0" y1="0" x2="0" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="0" x2="24" y2="0" stroke="var(--line)" stroke-width=".04"/><line x1="1" y1="0" x2="1" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="1" x2="24" y2="1" stroke="var(--line)" stroke-width=".04"/><line x1="2" y1="0" x2="2" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="2" x2="24" y2="2" stroke="var(--line)" stroke-width=".04"/><line x1="3" y1="0" x2="3" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="3" x2="24" y2="3" stroke="var(--line)" stroke-width=".04"/><line x1="4" y1="0" x2="4" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="4" x2="24" y2="4" stroke="var(--line)" stroke-width=".04"/><line x1="5" y1="0" x2="5" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="5" x2="24" y2="5" stroke="var(--line)" stroke-width=".04"/><line x1="6" y1="0" x2="6" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="6" x2="24" y2="6" stroke="var(--line)" stroke-width=".04"/><line x1="7" y1="0" x2="7" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="7" x2="24" y2="7" stroke="var(--line)" stroke-width=".04"/><line x1="8" y1="0" x2="8" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="8" x2="24" y2="8" stroke="var(--line)" stroke-width=".04"/><line x1="9" y1="0" x2="9" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="9" x2="24" y2="9" stroke="var(--line)" stroke-width=".04"/><line x1="10" y1="0" x2="10" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="10" x2="24" y2="10" stroke="var(--line)" stroke-width=".04"/><line x1="11" y1="0" x2="11" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="11" x2="24" y2="11" stroke="var(--line)" stroke-width=".04"/><line x1="12" y1="0" x2="12" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="12" x2="24" y2="12" stroke="var(--line)" stroke-width=".04"/><line x1="13" y1="0" x2="13" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="13" x2="24" y2="13" stroke="var(--line)" stroke-width=".04"/><line x1="14" y1="0" x2="14" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="14" x2="24" y2="14" stroke="var(--line)" stroke-width=".04"/><line x1="15" y1="0" x2="15" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="15" x2="24" y2="15" stroke="var(--line)" stroke-width=".04"/><line x1="16" y1="0" x2="16" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="16" x2="24" y2="16" stroke="var(--line)" stroke-width=".04"/><line x1="17" y1="0" x2="17" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="17" x2="24" y2="17" stroke="var(--line)" stroke-width=".04"/><line x1="18" y1="0" x2="18" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="18" x2="24" y2="18" stroke="var(--line)" stroke-width=".04"/><line x1="19" y1="0" x2="19" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="19" x2="24" y2="19" stroke="var(--line)" stroke-width=".04"/><line x1="20" y1="0" x2="20" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="20" x2="24" y2="20" stroke="var(--line)" stroke-width=".04"/><line x1="21" y1="0" x2="21" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="21" x2="24" y2="21" stroke="var(--line)" stroke-width=".04"/><line x1="22" y1="0" x2="22" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="22" x2="24" y2="22" stroke="var(--line)" stroke-width=".04"/><line x1="23" y1="0" x2="23" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="23" x2="24" y2="23" stroke="var(--line)" stroke-width=".04"/><line x1="24" y1="0" x2="24" y2="24" stroke="var(--line)" stroke-width=".04"/><line x1="0" y1="24" x2="24" y2="24" stroke="var(--line)" stroke-width=".04"/><rect x="2" y="2" width="20" height="20" fill="none" stroke="var(--you)" stroke-width=".07" stroke-dasharray=".35 .25"/><circle cx="12" cy="12" r="10" fill="none" stroke="#B3261E" stroke-width=".05" opacity=".7"/><rect x="3.5" y="3.5" width="17" height="17" rx="2" fill="none" stroke="#B3261E" stroke-width=".05" opacity=".7"/><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="#B3261E" stroke-width=".05" opacity=".7"/><rect x="2.5" y="6" width="19" height="12" rx="2.5" fill="none" stroke="#B3261E" stroke-width=".05" opacity=".7"/><g fill="none" stroke="var(--fg)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:var(--fg)"><rect x="6" y="2.75" width="12" height="18.5" rx="3"/><circle cx="12" cy="14.5" r="3.25"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/></g></svg></div>
+    <div class="body"><h3>Retícula de construcción</h3>
+      <p>Cuadrícula de 24 con área viva punteada en azul. En rojo, las formas base: un círculo de 20, un cuadrado de 17, un rectángulo vertical de 12 × 19 y uno horizontal de 19 × 12. El parlante usa el rectángulo vertical.</p>
+      <p>Los iconos asimétricos, como «probar sonido», se corren a ojo hasta que se ven centrados, aunque la geometría diga otra cosa.</p>
+      <div class="tamanos"><figure><svg class="ic" viewBox="0 0 24 24" style="width:16px;height:16px;--sw:1.9"><use href="#i-lugar"/></svg><figcaption>16 px · 1,9</figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" style="width:20px;height:20px;--sw:1.8"><use href="#i-lugar"/></svg><figcaption>20 px · 1,8</figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" style="width:24px;height:24px;--sw:1.75"><use href="#i-lugar"/></svg><figcaption>24 px · 1,75</figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" style="width:32px;height:32px;--sw:1.6"><use href="#i-lugar"/></svg><figcaption>32 px · 1,6</figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" style="width:48px;height:48px;--sw:1.5"><use href="#i-lugar"/></svg><figcaption>48 px · 1,5</figcaption></figure></div>
+      <p class="muted" style="font-size:14px">En tamaños chicos el trazo sube un poco para que no se pierda; en grandes, baja.</p>
+    </div>
+  </div>
+  <div class="ctrl" role="group" aria-label="Peso de los iconos"><span>Peso:</span><button type="button" data-sw="1.5">Regular</button><button type="button" data-sw="1.8" aria-pressed="true">Medio</button><button type="button" data-sw="2.1">Semibold</button></div>
+  <div id="sets" style="--sw:1.8"><div class="grupo"><h3>Relevo</h3><div class="set"><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-actividad"/></svg><figcaption>Actividad<code>actividad.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-primer-paso"/></svg><figcaption>Cómo empieza<code>primer-paso.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lugar"/></svg><figcaption>Lugar<code>lugar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-uso"/></svg><figcaption>Después de cuánto uso<code>uso.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apps"/></svg><figcaption>Apps elegidas<code>apps.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg><figcaption>Parlante<code>parlante.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><figcaption>Este teléfono<code>telefono.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-objeto"/></svg><figcaption>Objeto<code>objeto.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg><figcaption>Probar sonido<code>probar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-silenciar"/></svg><figcaption>Silenciar<code>silenciar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-conexion"/></svg><figcaption>Conexión<code>conexion.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bateria"/></svg><figcaption>Batería del objeto<code>bateria.svg</code></figcaption></figure></div></div><div class="grupo"><h3>Respuestas</h3><div class="set"><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-comence"/></svg><figcaption>Comencé<code>comence.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-despues"/></svg><figcaption>La dejé para después<code>despues.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cambie"/></svg><figcaption>Cambié de idea<code>cambie.svg</code></figcaption></figure></div></div><div class="grupo"><h3>Navegación y acciones</h3><div class="set"><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-inicio"/></svg><figcaption>Inicio<code>inicio.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-relevos"/></svg><figcaption>Relevos<code>relevos.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-agregar"/></svg><figcaption>Agregar<code>agregar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-editar"/></svg><figcaption>Editar<code>editar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-borrar"/></svg><figcaption>Borrar<code>borrar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cerrar"/></svg><figcaption>Cerrar<code>cerrar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volver"/></svg><figcaption>Volver<code>volver.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg><figcaption>Siguiente<code>siguiente.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mas"/></svg><figcaption>Más opciones<code>mas.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-buscar"/></svg><figcaption>Buscar<code>buscar.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ajustes"/></svg><figcaption>Ajustes<code>ajustes.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ayuda"/></svg><figcaption>Ayuda<code>ayuda.svg</code></figcaption></figure></div></div><div class="grupo"><h3>Estados y sistema</h3><div class="set"><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-esperando"/></svg><figcaption>Esperando<code>esperando.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-privacidad"/></svg><figcaption>Privacidad<code>privacidad.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-permiso"/></svg><figcaption>Permiso<code>permiso.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-datos"/></svg><figcaption>Datos del estudio<code>datos.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-info"/></svg><figcaption>Información<code>info.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-error"/></svg><figcaption>Error<code>error.svg</code></figcaption></figure></div></div><div class="grupo"><h3>Presentación y memoria</h3><div class="set"><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-investigacion"/></svg><figcaption>Investigación<code>investigacion.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-entrevistas"/></svg><figcaption>Entrevistas<code>entrevistas.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-hipotesis"/></svg><figcaption>Hipótesis y prueba<code>hipotesis.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-validacion"/></svg><figcaption>Validación<code>validacion.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-decision"/></svg><figcaption>Decisión<code>decision.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sistema"/></svg><figcaption>Sistema phygital<code>sistema.svg</code></figcaption></figure><figure><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tiempo"/></svg><figcaption>Tiempo<code>tiempo.svg</code></figcaption></figure></div></div></div>
+  <p class="nota">Cada icono está en la carpeta <code>iconos/</code> como SVG de 24 × 24, con su nombre como título accesible. En la app se exportan como vectores de Android (VectorDrawable) con el trazo del peso que corresponda.</p>
+</section>
+
+<section class="w" id="app">
+  <div class="head"><span class="eyebrow">App</span><h2>Componentes y doce pantallas.</h2>
+    <p class="lead">El recorrido completo, desde la bienvenida hasta la respuesta, con los componentes y los iconos del kit. Los textos son ejemplos de redacción; las funciones son las de la app 2.6 más el campo de lugar propuesto.</p></div>
+  <div class="comp">
+<div class="ui"><h3>Botones</h3><div class="b pri">Preparar relevo</div><div class="b"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg>Probar sonido</div><div class="b txt">Ahora no</div><div class="b dis">No disponible</div><p style="font-size:13px;color:#5B5F68">Alto mínimo 48 dp, esquinas de 12 dp. Una acción principal por pantalla.</p></div>
+<div class="ui"><h3>Campo (renglón)</h3><div class="f"><label>Actividad</label><div class="v">leer</div></div><div class="f"><label>¿Cómo empezarás?</label><div class="v foco">Abrir el libro</div></div><div class="f"><label>Con ejemplo</label><div class="v ph">Sacar la guitarra</div></div><p style="font-size:13px;color:#5B5F68">Reposo: línea de tinta. Foco: línea azul de 2 dp. Ejemplo: grafito.</p></div>
+<div class="ui"><h3>Filas, estado y aviso</h3><div class="lst"><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg><span class="t">Parlante<small>Conectado</small></span><span class="rad on"></span></div><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><span class="t">Este teléfono</span><span class="rad"></span></div></div><span class="estado"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-esperando"/></svg>Esperando</span><div class="banner"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-error"/></svg><p>No sonó en el parlante.</p></div></div>
+</div>
+  <div class="tels" style="margin-top:48px"><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span style="font-size:13px;color:#5B5F68"></span><span></span></div><div class="grow"></div><h4 style="font-size:34px">Vuelve a lo que querías hacer.</h4>
+<div class="pasos"><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-actividad"/></svg><span>Escribes algo que quieras hacer y cómo empieza.</span></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lugar"/></svg><span>Dejas el objeto donde empieza.</span></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg><span>Suena ahí después del tiempo que elijas en el teléfono.</span></div></div>
+<div class="b pri" style="margin-top:6px">Empezar</div></div></div><figcaption><b>Bienvenida</b>La firma y los tres pasos, con los iconos del juego.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volver"/></svg><span style="font-size:13px;color:#5B5F68">1 de 3</span><span></span></div><div><svg class="ic big-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-permiso"/></svg></div><h4>Para saber cuándo sonar</h4>
+<p class="lead2">Relevo necesita ver cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.</p><div class="grow"></div>
+<div class="b pri">Dar permiso</div><div class="b txt">Ahora no</div></div></div><figcaption><b>Permiso de uso</b>Dice qué se mide y qué no, antes de pedirlo.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span style="font-size:13px;color:#5B5F68"></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ajustes"/></svg></div><div class="grow"></div><p class="lead2">Todavía no hay nada preparado.</p><h4>¿Qué quieres hacer hoy?</h4><div class="grow"></div><div class="b pri"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-agregar"/></svg>Preparar un relevo</div></div></div><figcaption><b>Inicio vacío</b>Invita sin prometer resultados.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volver"/></svg><span style="font-size:13px;color:#5B5F68">Nuevo relevo</span><span></span></div><h4>¿Qué quieres hacer?</h4>
+<div class="f"><label>Actividad</label><div class="v">leer</div></div>
+<div class="f"><label>¿Cómo empezarás?</label><div class="v foco">Abrir el libro en el marcador</div></div>
+<div class="f"><label>Ejemplo</label><div class="v ph">Sacar la guitarra del estuche</div></div><div class="grow"></div><div class="b pri">Continuar</div></div></div><figcaption><b>Preparar</b>Los campos son el renglón; el azul es lo que escribió la persona.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volver"/></svg><span style="font-size:13px;color:#5B5F68">Nuevo relevo</span><span></span></div><h4>¿Después de cuánto uso?</h4>
+<div class="search"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-buscar"/></svg><span>Buscar apps</span></div>
+<div class="lst"><div class="r"><span class="app" style="background:#C9CBCF"></span><span class="t">Instagram</span><span class="chk on"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-comence"/></svg></span></div><div class="r"><span class="app" style="background:#C9CBCF"></span><span class="t">YouTube</span><span class="chk on"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-comence"/></svg></span></div><div class="r"><span class="app" style="background:#C9CBCF"></span><span class="t">TikTok</span><span class="chk"></span></div></div>
+<div class="step"><span style="font-weight:600">40 min</span><span><i>−</i><i>+</i></span></div><div class="grow"></div><div class="b pri">Continuar</div></div></div><figcaption><b>Apps y tiempo</b>Lista con búsqueda y un paso de tiempo claro.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volver"/></svg><span style="font-size:13px;color:#5B5F68">Nuevo relevo</span><span></span></div><h4>¿Dónde sonará?</h4>
+<div class="lst"><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg><span class="t">Parlante junto al sillón<small>Conectado</small></span><span class="rad on"></span></div><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><span class="t">Este teléfono<small>Para comparar</small></span><span class="rad"></span></div></div>
+<div class="b"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg>Probar sonido</div><p class="lead2" style="font-size:13.5px">Así va a sonar. ¿Lo escuchaste?</p><div class="grow"></div><div class="b pri">Preparar relevo</div></div></div><figcaption><b>Dónde suena</b>Elegir la salida y probarla antes de confiar.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span style="font-size:13px;color:#5B5F68"></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ajustes"/></svg></div><span class="estado"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-esperando"/></svg>Esperando</span><p class="firma2">Vuelve a<br><span class="campo">leer</span>.</p>
+<div class="kv"><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-primer-paso"/></svg><span>Cómo empieza</span><b>Abrir el libro</b></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-uso"/></svg><span>Suena después de</span><b>40 min</b></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg><span>Suena en</span><b>Junto al sillón</b></div></div><div class="grow"></div>
+<div class="b"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-editar"/></svg>Cambiar</div><div class="b txt">Cancelar relevo</div></div></div><figcaption><b>Esperando</b>La firma con las palabras de la persona. Sin cuenta regresiva.</figcaption></figure><figure><div class="tel2"><div class="sc lock"><div class="sb"><span>20:50</span><span>5G · 100 %</span></div><div class="hora">20:50</div><div class="fecha">jueves 24 de septiembre</div>
+<div class="noti"><div class="h"><span class="ico"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#F2F2EF"/></svg></span>relevo · ahora</div><b>Leer</b><p>Abrir el libro en el marcador</p></div><div class="grow"></div></div></div><figcaption><b>Aviso en la pantalla de bloqueo</b>Repite lo que escribió la persona, sin agregar nada.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:51</span><span>5G · 100 %</span></div><div class="ab"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span style="font-size:13px;color:#5B5F68"></span><span></span></div><p class="lead2">Sonó junto al sillón.</p><h4>¿Qué decidiste?</h4><div class="grow"></div>
+<div class="b" style="justify-content:flex-start"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-comence"/></svg>Comencé la actividad</div><div class="b" style="justify-content:flex-start"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-despues"/></svg>La dejé para después</div><div class="b" style="justify-content:flex-start"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cambie"/></svg>Cambié de idea</div><div class="b txt">Omitir</div></div></div><figcaption><b>¿Qué decidiste?</b>Las tres respuestas de la app 2.6, con el mismo peso.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-volver"/></svg><span style="font-size:13px;color:#5B5F68">Ajustes</span><span></span></div><h4>Ajustes</h4><div class="lst">
+<div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg><span class="t">Dónde suena</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg></div><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-apps"/></svg><span class="t">Apps elegidas</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg></div><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-objeto"/></svg><span class="t">Objeto<small>Conectado · batería 80 %</small></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg></div><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-datos"/></svg><span class="t">Datos del estudio</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg></div><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-privacidad"/></svg><span class="t">Privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg></div><div class="r"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ayuda"/></svg><span class="t">Ayuda</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg></div></div></div></div><figcaption><b>Ajustes</b>Filas con icono, texto y destino.</figcaption></figure><figure><div class="tel2"><div class="sc ui"><div class="sb"><span>20:08</span><span>5G · 100 %</span></div><div class="ab"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#17181C"/></svg><span style="font-size:13px;color:#5B5F68"></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ajustes"/></svg></div><div class="banner"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-error"/></svg><p><b>No sonó en el parlante.</b><br>Revisa que esté encendido o elige el teléfono.</p></div>
+<p class="firma2" style="font-size:28px">Vuelve a<br><span class="campo">leer</span>.</p><div class="grow"></div><div class="b pri"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg>Probar otra vez</div><div class="b"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg>Sonar en el teléfono</div></div></div><figcaption><b>Error</b>Dice qué pasó y qué hacer.</figcaption></figure><figure><div class="tel2"><div class="sc oscuro"><div class="sb"><span>21:40</span><span>5G · 100 %</span></div><div class="ab"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#E9EAEC"/></svg><span style="font-size:13px;color:#5B5F68"></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ajustes"/></svg></div><span class="estado"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-esperando"/></svg>Esperando</span><p class="firma2">Vuelve a<br><span class="campo">leer</span>.</p>
+<div class="kv"><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-primer-paso"/></svg><span>Cómo empieza</span><b>Abrir el libro</b></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-uso"/></svg><span>Suena después de</span><b>40 min</b></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-parlante"/></svg><span>Suena en</span><b>Junto al sillón</b></div></div><div class="grow"></div>
+<div class="b"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-editar"/></svg>Cambiar</div></div></div><figcaption><b>Esperando, tema oscuro</b>Mismos componentes; el azul claro marca lo escrito.</figcaption></figure></div>
+  <p class="nota">Las apps de la lista aparecen sin ícono a propósito: sus logos son de terceros. Las pantallas son una propuesta visual; la navegación y los permisos reales se ajustan a Android y a la pauta de testeo 2.6.</p>
+</section>
+
+<section class="w" id="presentacion">
+  <div class="head"><span class="eyebrow">Presentación</span><h2>Diez plantillas para el examen y otras presentaciones.</h2>
+    <p class="lead">Formato 16:9, una idea por diapositiva, texto a la izquierda y número abajo. Los contenidos vienen de la memoria; las entrevistas se muestran como paráfrasis, nunca como citas inventadas.</p></div>
+  <div class="slides"><figure><div class="sl tin"><span class="eb">Examen de título · Escuela de Diseño UDP · 2026</span><div><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo" style="width:34cqw;display:block;color:#F2F2EF"><use href="#wm" fill="currentColor"/></svg><p class="h2" style="margin-top:3cqw">Vuelve a <span class="campo guia" style="color:inherit">lo que querías hacer</span>.</p></div><p class="p" style="font-size:1.7cqw;opacity:.8">Profesores guía: Sergio Majluf y Simón Gallardo</p></div><figcaption>Portada</figcaption></figure><figure><div class="sl pap"><span class="eb">Parte 1</span><p class="cifra">El problema</p><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 01</span></div></div><figcaption>Sección</figcaption></figure><figure><div class="sl pap"><span class="eb">Planteamiento</span><p class="h1" style="max-width:80cqw">Casi siempre nos acordamos después.</p><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 02</span></div></div><figcaption>Idea en una frase</figcaption></figure><figure><div class="sl pap"><span class="eb">Entrevistas · capítulo 7</span><div><p class="h2" style="max-width:78cqw">Abrió Instagram al acostarse para mirar memes. Tenía sueño y siguió.</p><p class="p" style="margin-top:2cqw;opacity:.7">P2 · paráfrasis, no cita textual</p></div><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 03</span></div></div><figcaption>Paráfrasis de entrevista</figcaption></figure><figure><div class="sl pap"><span class="eb">Contexto</span><div><p class="cifra">96,6 %</p><p class="p" style="margin-top:1.5cqw">de los hogares chilenos declaró acceso propio y pagado a internet en 2025 (Subsecretaría de Telecomunicaciones, 2025).</p></div><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 04</span></div></div><figcaption>Dato</figcaption></figure><figure><div class="sl pap"><span class="eb">Propuesta</span><div class="ics"><div class="n"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-actividad"/></svg><span>Escribes qué quieres hacer y cómo empieza.</span></div><svg class="ic ar" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg><div class="n"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lugar"/></svg><span>Dejas el objeto donde empieza.</span></div><svg class="ic ar" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg><div class="n"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-uso"/></svg><span>Eliges después de cuánto uso del teléfono.</span></div><svg class="ic ar" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg><div class="n"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-probar"/></svg><span>Suena ahí.</span></div><svg class="ic ar" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-siguiente"/></svg><div class="n"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-decision"/></svg><span>Tú decides.</span></div></div><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 05</span></div></div><figcaption>Cómo funciona</figcaption></figure><figure><div class="sl pap"><span class="eb">Estado del arte</span><div class="tbl"><table><thead><tr><th>El rubro suele</th><th>Relevo</th></tr></thead><tbody><tr><td>Medir el tiempo de pantalla</td><td>Nombra lo que querías hacer</td></tr><tr><td>Bloquear aplicaciones</td><td>Deja el teléfono como está</td></tr><tr><td>Avisar en el teléfono</td><td>Suena en el lugar de la actividad</td></tr></tbody></table></div><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 06</span></div></div><figcaption>Comparación</figcaption></figure><figure><div class="sl pap"><span class="eb">Validación · capítulo 13</span><div class="cols"><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-objeto"/></svg><b>1</b><p>Asociación entre señal, lugar e intención</p></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><b>2</b><p>Comparación con una notificación</p></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lugar"/></svg><b>3</b><p>Forma e integración en la casa</p></div><div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-inicio"/></svg><b>4</b><p>Piloto doméstico</p></div></div><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 07</span></div></div><figcaption>Plan de validación</figcaption></figure><figure><div class="sl pap"><img class="foto" src="imagenes/tratada-11.jpg" alt=""><div style="max-width:48cqw"><span class="eb">Aplicación</span></div><p class="h1" style="max-width:48cqw">Vuelve a<br><span class="campo">leer</span>.</p><div class="pie" style="max-width:50cqw"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="currentColor"/></svg><span>Proyecto de Título · Diseño UDP · 08</span></div></div><figcaption>Imagen y frase</figcaption></figure><figure><div class="sl azu"><span class="eb">Relevo</span><p class="h1">Vuelve a lo que querías hacer.</p><div class="pie"><svg class="wm" viewBox="145 -1500 5910 1526" role="img" aria-label="relevo"><use href="#wm" fill="#F2F2EF"/></svg><span>Gracias</span></div></div><figcaption>Cierre</figcaption></figure></div>
+  <p class="nota">Reglas: una idea por diapositiva y un solo fondo; el azul solo en la portada, el cierre o una frase corta; nada de viñetas largas. La cifra de la plantilla «Dato» y la paráfrasis de P2 son las de la memoria (capítulos 3 y 7).</p>
+</section>
+
+<section class="w" id="referencias">
+  <div class="head"><span class="eyebrow">Referencias</span></div>
+  <div class="refs">
+    <p>Apple. (s. f.). <i>Icons</i>. Human Interface Guidelines. Recuperado el 25 de septiembre de 2026 de https://developer.apple.com/design/human-interface-guidelines/icons</p>
+    <p>Google. (s. f.). <i>System icons</i>. Material Design. Recuperado el 25 de septiembre de 2026 de https://m2.material.io/design/iconography/system-icons.html</p>
+    <p>McDougall, S. J. P., de Bruijn, O., &amp; Curry, M. B. (2000). Exploring the effects of icon characteristics on user performance: The role of icon concreteness, complexity, and distinctiveness. <i>Journal of Experimental Psychology: Applied, 6</i>(4), 291–306. https://doi.org/10.1037/1076-898X.6.4.291</p>
+    <p>Subsecretaría de Telecomunicaciones. (2025). <i>Informe final: Estudio duodécima encuesta sobre acceso, usos y usuarios de internet en Chile</i>. Ministerio de Transportes y Telecomunicaciones, Gobierno de Chile. https://www.subtel.gob.cl/wp-content/uploads/2026/02/Informe-Final-Acceso-y-Uso-Internet-2025_03.pdf</p>
+    <p>Wiedenbeck, S. (1999). The use of icons and labels in an end user application program: An empirical study of learning and retention. <i>Behaviour &amp; Information Technology, 18</i>(2), 68–82. https://doi.org/10.1080/014492999119129</p>
+  </div>
+</section>
+</main>
+<footer><div class="w">Relevo · Kit de diseño · propuesta D-073, pendiente de decisión del autor.</div></footer>
+<script>
+(function(){
+  var box=document.getElementById('sets');
+  document.querySelectorAll('.ctrl button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.ctrl button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');box.style.setProperty('--sw',b.dataset.sw);
+    });
+  });
+})();
+</script>

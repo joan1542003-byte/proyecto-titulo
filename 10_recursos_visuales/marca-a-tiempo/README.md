@@ -6,7 +6,8 @@
 | --- | --- |
 | `lamina-relevo-a-tiempo-2026-09-25.html` | Manual de marca. Carga Schibsted Grotesk desde Google Fonts, las fotos desde `imagenes/` y el aviso desde `sonido/`. |
 | `logotipo/` | Logotipo «relevo» en tinta, papel y azul pasta; ícono «r» sobre tinta y sobre azul (512 px). SVG editables. |
-| `iconos/` | Juego de 18 iconos en SVG (retícula de 24, trazo de 1,75), con su nombre como título accesible. |
+| `kit-relevo-2026-09-25.html` | Kit de diseño: 40 iconos con sus pesos y retícula, componentes y doce pantallas de la app, y diez plantillas de presentación. |
+| `iconos/` | 40 iconos en SVG (retícula de 24, trazo de 1,75, extremos redondeados), con su nombre como título accesible. |
 | `imagenes/` | Tres fotos de muestra con la receta de corrección del proyecto. |
 | `sonido/firma-relevo.wav` | Copia de la firma sonora de D-071, generada con `../marca-suena-donde-empieza/sonido/firma-sonora.py`. |
 
@@ -27,6 +28,12 @@ Las actividades y horarios de la lámina son ejemplos, no datos de participantes
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Kit de diseño e iconos v2
+
+- **Qué cambió:** se añadió el kit de diseño, y la carpeta `iconos/` se reemplazó por el juego v2 de 40 iconos.
+- **Cómo estaba antes:** `iconos/` tenía 18 iconos de la primera versión, con extremos rectos. Los archivos `salida.svg` y `cancelar.svg` pasaron a llamarse `parlante.svg` y `cerrar.svg`.
+- **Por qué:** el autor pidió iconos de mejor nivel y piezas para la app y las presentaciones.
 
 ### 2026-09-25 — Iconos y sistema completo
 

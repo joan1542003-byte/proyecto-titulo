@@ -781,11 +781,16 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - fondos: papel, tinta, azul y fotografía sin velo;
   - texturas: sin texturas simuladas; la textura es real;
   - retícula, movimiento y usos incorrectos del logotipo.
+- **Iconos v2 y kit (mismo día):**
+  - 40 iconos con extremos redondeados, retícula con formas base y tres pesos medidos sobre Schibsted Grotesk, según los criterios de Apple (s. f.) para iconos de interfaz;
+  - un kit con componentes, doce pantallas de la app y diez plantillas de presentación.
 - **Documentación:** [marca «Vuelve a lo que querías hacer»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
 
 ## Registro de cambios (disclaimer)
 
 ### 2026-09-25 — D-073
+
+- **Actualización del mismo día:** iconos v2 (40) y kit de diseño con pantallas de la app y plantillas de presentación. Antes había 18 iconos y ninguna plantilla.
 
 - **Actualización del mismo día:** D-073 incorpora el sistema completo (tono, iconos, color extendido, formas, fondos, texturas, retícula y movimiento). Antes, D-073 no definía esos componentes.
 
