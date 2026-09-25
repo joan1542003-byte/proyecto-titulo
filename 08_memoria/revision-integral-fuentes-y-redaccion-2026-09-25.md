@@ -83,6 +83,12 @@ No se añadió ningún resultado con personas, porque no existe.
 - La extensión pasó de 14.990 a 15.111 palabras según `wc -w` sobre preliminares y capítulos 1–13; se mantiene cerca del objetivo de 15.000.
 - Se conservan los catorce títulos de capítulo, los subtítulos existentes, el orden, la pregunta, la hipótesis, los objetivos y los umbrales del protocolo.
 
+## Segunda revisión: redacción y pauta UDP
+
+A pedido del autor se hizo una segunda pasada editorial. Como las memorias de otros estudiantes no se guardan en el repositorio, se tomaron como referencia la [pauta oficial de presentación de memorias de la UDP](https://bibliotecas.udp.cl/wp-content/uploads/2020/04/tesis_pauta_udp_2020.pdf) y las versiones anteriores de la propia memoria. La pauta exige en la portada nota de título, profesor guía, facultad, escuela, lugar y fecha; un resumen con objetivo, metodología, procedimientos y resultados, y dos o tres palabras clave; índice de tablas e ilustraciones; y conclusiones que juzguen la hipótesis y declaren alcances y limitaciones. Todo eso se incorporó; el profesor guía y la denominación exacta del título quedan por completar.
+
+Además se reescribieron los capítulos 1–10 y 13 para reducir repeticiones y unir párrafos fragmentados, se numeraron los criterios C1–C8, se titularon las tablas y la figura según APA 7 y se añadió un glosario. No cambiaron datos, fuentes, pregunta, hipótesis ni umbrales.
+
 ## Problemas pendientes y su estado
 
 1. **Libros completos con derechos de autor en un repositorio público.** Resuelto en la rama el mismo día: se retiraron los PDF de Norman, Isaacson, Albers y Munari, porque ninguno tiene una edición gratuita legal; se conservan los resúmenes propios (D-066). Los archivos siguen en el historial de Git; eliminarlos por completo exige reescribir el historial de `main`.

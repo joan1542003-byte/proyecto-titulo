@@ -1,0 +1,431 @@
+<title>Relevo: punto y pulso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<style>
+:root{
+  --bg:#F7F8F6; --surface:#EEF2EF; --card:#FFFFFF; --ink:#171A18; --muted:#555B58; --line:#D9E0DC;
+  --green:#006B5F; --green-soft:#DCEFEA; --coral:#F47F68; --coral-deep:#C4492F; --coral-soft:#FFE5DE;
+  --on-green:#FFFFFF; --stroke:#171A18;
+  --sans:"Source Sans 3", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#101513; --surface:#18201D; --card:#1D2623; --ink:#EEF2EF; --muted:#A9B3AE; --line:#2C3833;
+    --green:#72DBC7; --green-soft:#16332D; --coral:#F47F68; --coral-deep:#F47F68; --coral-soft:#3A221C;
+    --on-green:#0E1B18; --stroke:#EEF2EF;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101513; --surface:#18201D; --card:#1D2623; --ink:#EEF2EF; --muted:#A9B3AE; --line:#2C3833;
+  --green:#72DBC7; --green-soft:#16332D; --coral:#F47F68; --coral-deep:#F47F68; --coral-soft:#3A221C;
+  --on-green:#0E1B18; --stroke:#EEF2EF;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;padding-inline:clamp(16px,4vw,48px);padding-block:0 64px}
+.wrap{max-width:1120px;margin-inline:auto;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:clamp(26px,3.2vw,34px);font-weight:600;letter-spacing:-.01em}
+h3{font-size:20px;font-weight:600}
+p{margin:0;max-width:66ch}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:16px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:56px 8px}
+.hero .lockup{display:flex;align-items:center;gap:18px}
+.hero .lockup svg{width:clamp(64px,9vw,104px);height:auto}
+.hero .word{font-size:clamp(56px,9vw,112px);font-weight:600;letter-spacing:-.025em;line-height:1}
+.hero .tag{font-size:clamp(22px,2.6vw,28px);font-weight:500;margin-top:20px}
+.hero .desc{color:var(--muted);margin-top:8px}
+.hero-card{background:var(--surface);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.hero-card ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+
+/* Pulse animation */
+.arc{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .anim1{animation:arc 3s ease-out infinite}
+  .anim2{animation:arc 3s ease-out .5s infinite}
+}
+@keyframes arc{0%{opacity:0}15%{opacity:1}70%{opacity:1}100%{opacity:0}}
+
+/* Directions */
+.dirs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dir{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.dir.rec{border:2px solid var(--green)}
+.badge{display:inline-flex;align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--green-soft);color:var(--green)}
+.spec{border-radius:16px;padding:22px;min-height:132px;display:flex;align-items:center;justify-content:center}
+.spec.a{background:#F7F8F6}
+.spec.b{background:#F7F8F6}
+.spec.c{background:#EFE8DC}
+.swatches{display:flex;gap:6px}
+.swatches span{flex:1;height:28px;border-radius:8px;border:1px solid rgba(0,0,0,.08)}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:14px}
+.pc b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.pc ul{margin:0;padding-left:18px}
+
+/* Recommended system */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:var(--surface);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.sizes{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap}
+.sizes figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.appicon{border-radius:22%;background:#006B5F;display:grid;place-items:center}
+.palette{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.chip{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.chip .sw{height:72px}
+.chip .meta{padding:10px 12px;font-size:13px;display:flex;flex-direction:column;gap:2px}
+.chip .meta strong{font-size:14px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ok{color:var(--green);font-weight:600}
+.no{color:var(--coral-deep);font-weight:600}
+.typescale{display:flex;flex-direction:column;gap:10px}
+.typescale div{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.typescale span.lab{width:120px;flex:none;font-size:13px;color:var(--muted)}
+
+/* Phones */
+.phones{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.phone{width:280px;max-width:100%;aspect-ratio:9/19;border-radius:40px;background:#0E1311;padding:10px;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.screen{width:100%;height:100%;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;padding:22px 18px 16px;gap:12px;font-family:var(--sans)}
+.s-light{background:#F7F8F6;color:#171A18}
+.s-signal{background:#FFF3EF;color:#171A18}
+.s-top{display:flex;justify-content:center;align-items:center;gap:6px;font-weight:600;font-size:15px}
+.s-h{font-size:24px;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+.s-p{font-size:13px;color:#555B58;line-height:1.4}
+.s-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.s-card{border-radius:16px;background:#EEF2EF;height:74px;padding:10px;font-size:13px;font-weight:600;position:relative}
+.s-card i{position:absolute;right:10px;bottom:10px;width:22px;height:8px;border-radius:4px;background:#D2DAD5}
+.s-cta{margin-top:auto;border-radius:18px;background:#006B5F;color:#fff;padding:14px;font-weight:600;font-size:15px}
+.s-cta small{display:block;font-weight:400;opacity:.85;font-size:12px}
+.s-status{display:flex;align-items:center;gap:8px;background:#fff;border-radius:14px;padding:10px;font-size:12px;border:1px solid #D9E0DC}
+.s-status b{font-weight:600}
+.s-nav{display:flex;justify-content:space-around;border-radius:18px;background:#fff;border:1px solid #D9E0DC;padding:8px;font-size:11px;color:#555B58}
+.s-nav span:first-child{color:#006B5F;font-weight:600}
+.s-mark{display:flex;justify-content:center;padding-top:18px}
+.s-act{font-size:30px;font-weight:600;letter-spacing:-.01em;text-align:center}
+.s-first{font-size:14px;text-align:center;color:#555B58}
+.s-btn{border-radius:16px;padding:12px;text-align:center;font-weight:600;font-size:14px}
+.s-btn.pri{background:#171A18;color:#fff}
+.s-btn.sec{background:#fff;border:1px solid #D9E0DC;color:#171A18}
+.s-note{font-size:11px;color:#C4492F;text-align:center;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+/* Object & memoir & poster */
+.objects{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.objects svg{width:100%;height:auto;max-width:100%}
+.spread{display:grid;grid-template-columns:1fr 1fr;background:#FBFBF9;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);color:#171A18;overflow:hidden}
+.page{padding:28px 26px;min-height:320px;display:flex;flex-direction:column;gap:10px;font-size:11px;line-height:1.5}
+.page+.page{border-left:1px solid #E3E7E4}
+.page .run{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#555B58;display:flex;justify-content:space-between}
+.page h4{font-size:20px;font-weight:600;margin:6px 0 0;letter-spacing:-.01em}
+.page .lines{display:flex;flex-direction:column;gap:6px}
+.page .lines i{display:block;height:5px;border-radius:3px;background:#DCE1DE}
+.page .fig{font-size:9px;color:#555B58}
+.poster{border-radius:24px;overflow:hidden;background:#EFEDE6;color:#171A18;display:grid;grid-template-columns:1fr 1fr;min-height:320px}
+.poster .txt{padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.poster .big{font-size:clamp(28px,3.6vw,40px);font-weight:600;line-height:1.08;letter-spacing:-.015em}
+.poster > svg{width:100%;height:100%;display:block}
+
+.tests{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;counter-reset:t}
+.tests div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.tests div::before{counter-increment:t;content:"Prueba " counter(t);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+footer{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px}
+
+@media (max-width:900px){
+  .hero,.grid2,.objects{grid-template-columns:1fr}
+  .dirs{grid-template-columns:1fr}
+  .palette{grid-template-columns:repeat(2,1fr)}
+  .tests{grid-template-columns:1fr}
+  .spread,.poster{grid-template-columns:1fr}
+  .page+.page{border-left:none;border-top:1px solid #E3E7E4}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="rv-rest" viewBox="0 0 48 48">
+      <circle cx="17" cy="27" r="7.5" fill="#F47F68"/>
+      <rect x="7" y="38" width="20" height="3" rx="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="rv-pulse" viewBox="0 0 48 48">
+      <circle cx="17" cy="27" r="7.5" fill="#F47F68"/>
+      <path d="M29 19.5 A12.5 12.5 0 0 1 29 34.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M34.5 15 A19 19 0 0 1 34.5 39" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <rect x="7" y="38" width="20" height="3" rx="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="rv-pulse-anim" viewBox="0 0 48 48">
+      <circle cx="17" cy="27" r="7.5" fill="#F47F68"/>
+      <path class="anim1" d="M29 19.5 A12.5 12.5 0 0 1 29 34.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path class="anim2" d="M34.5 15 A19 19 0 0 1 34.5 39" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <rect x="7" y="38" width="20" height="3" rx="1.5" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Exploración visual · 25 de septiembre de 2026</div>
+    <div class="lockup" style="margin-top:18px;color:var(--ink)">
+      <svg class="pulsing" viewBox="0 0 48 48" role="img" aria-label="Símbolo de Relevo: un punto sobre una línea con arcos de pulso"><use href="#rv-pulse-anim"/></svg>
+      <span class="word">Relevo</span>
+    </div>
+    <p class="tag">Hazle lugar a lo que quieres hacer.</p>
+    <p class="desc">Un recordatorio físico preparado desde el teléfono. El punto es el objeto; la línea, el lugar donde lo dejas; los arcos, la señal breve que aparece cuando se cumple lo que configuraste.</p>
+  </div>
+  <aside class="hero-card">
+    <h3>Por qué se rehízo</h3>
+    <ul>
+      <li>El logotipo solo tipográfico era claro pero genérico: no se distinguía ni explicaba el mecanismo.</li>
+      <li>La app 2.6 ya usa otro verde (<code>#087A69</code>), un coral para la señal y un ícono de punto con anillos que la marca no recogía.</li>
+      <li>Ese coral (<code>#F47F68</code>) tiene 2,44:1 sobre el fondo claro: no alcanza el 3:1 que piden las pautas W3C para elementos de interfaz.</li>
+    </ul>
+  </aside>
+</header>
+
+<section class="stack">
+  <div class="eyebrow">Tres direcciones</div>
+  <h2>Lo que cambia entre ellas es el recurso que se reconoce</h2>
+  <p class="muted">Las tres conservan el nombre, la frase, el descriptor y Source Sans 3. Las muestras usan fondos fijos para verse igual en tema claro y oscuro.</p>
+  <div class="dirs">
+    <article class="dir">
+      <h3>A. Tipográfica serena</h3>
+      <div class="spec a" aria-label="Muestra de la dirección A">
+        <span style="font-family:var(--sans);font-weight:600;font-size:40px;color:#171A18;letter-spacing:-.02em">Relevo</span>
+      </div>
+      <div class="swatches" aria-hidden="true"><span style="background:#F7F8F6"></span><span style="background:#171A18"></span><span style="background:#006B5F"></span><span style="background:#EEF2EF"></span></div>
+      <p class="small">El sistema cerrado el 16 de septiembre: nombre bien compuesto, base neutra y un verde localizado.</p>
+      <div class="pc"><div><b>A favor</b><ul><li>Mínimo costo</li><li>Máxima legibilidad</li></ul></div><div><b>En contra</b><ul><li>Genérica</li><li>No explica la señal</li><li>No ordena el coral de la app</li></ul></div></div>
+    </article>
+
+    <article class="dir rec">
+      <span class="badge">Recomendada</span>
+      <h3>B. Punto y pulso</h3>
+      <div class="spec b" aria-label="Muestra de la dirección B">
+        <span style="display:flex;align-items:center;gap:10px;color:#171A18">
+          <svg viewBox="0 0 48 48" width="52" height="52" aria-hidden="true"><use href="#rv-pulse"/></svg>
+          <span style="font-family:var(--sans);font-weight:600;font-size:40px;letter-spacing:-.02em">Relevo</span>
+        </span>
+      </div>
+      <div class="swatches" aria-hidden="true"><span style="background:#F7F8F6"></span><span style="background:#171A18"></span><span style="background:#006B5F"></span><span style="background:#F47F68"></span><span style="background:#C4492F"></span></div>
+      <p class="small">El símbolo dibuja el objeto, el lugar y la señal. Verde para preparar; coral solo para el momento del aviso.</p>
+      <div class="pc"><div><b>A favor</b><ul><li>Explica el mecanismo</li><li>Formaliza la app actual</li><li>Legible a 24 dp</li></ul></div><div><b>En contra</b><ul><li>Puede leerse como Wi-Fi</li><li>El coral, si abunda, parece alerta</li></ul></div></div>
+    </article>
+
+    <article class="dir">
+      <h3>C. Lugar reservado</h3>
+      <div class="spec c" aria-label="Muestra de la dirección C">
+        <span style="display:flex;align-items:center;gap:12px;color:#2F3B2F">
+          <svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><path d="M14 8H8v32h6M34 8h6v32h-6" fill="none" stroke="#2F3B2F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="5" fill="#B9854A"/></svg>
+          <span style="font-family:var(--serif);font-weight:600;font-size:38px">Relevo</span>
+        </span>
+      </div>
+      <div class="swatches" aria-hidden="true"><span style="background:#EFE8DC"></span><span style="background:#2F3B2F"></span><span style="background:#B9854A"></span><span style="background:#D8CFC0"></span></div>
+      <p class="small">Parte de «Hazle lugar»: un corchete que reserva un espacio. Serif editorial y neutros cálidos.</p>
+      <div class="pc"><div><b>A favor</b><ul><li>Cálida, doméstica</li><li>Conecta con la frase</li></ul></div><div><b>En contra</b><ul><li>Estética de bienestar genérica</li><li>No se lee a tamaño pequeño</li><li>Segunda familia</li></ul></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Dirección recomendada</div>
+  <h2>Punto y pulso: un símbolo para dos estados</h2>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Reposo y aviso se distinguen por forma</h3>
+      <div class="sizes" style="color:var(--ink)">
+        <figure><svg viewBox="0 0 48 48" width="96" height="96" aria-label="Símbolo en reposo"><use href="#rv-rest"/></svg>Reposo: punto sobre la línea</figure>
+        <figure><svg class="pulsing" viewBox="0 0 48 48" width="96" height="96" aria-label="Símbolo con señal"><use href="#rv-pulse-anim"/></svg>Aviso: aparecen los arcos</figure>
+      </div>
+      <p class="small muted">Los arcos aparecen en tres segundos y se detienen, igual que el patrón de prueba de tres pulsos. Con movimiento reducido se muestran fijos. El estado siempre se nombra también con texto.</p>
+    </div>
+    <div class="panel">
+      <h3>Tamaños mínimos</h3>
+      <div class="sizes">
+        <figure><div class="appicon" style="width:72px;height:72px;color:#fff"><svg viewBox="0 0 48 48" width="52" height="52" aria-hidden="true"><use href="#rv-pulse"/></svg></div>Ícono de app, 48 dp</figure>
+        <figure><div style="width:36px;height:36px;display:grid;place-items:center;color:var(--ink)"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><circle cx="17" cy="27" r="7.5" fill="currentColor"/><path d="M29 19.5 A12.5 12.5 0 0 1 29 34.5" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="7" y="38" width="20" height="3.5" rx="1.75" fill="currentColor"/></svg></div>Notificación, 24 dp monocromo</figure>
+        <figure><div style="width:36px;height:36px;display:grid;place-items:center"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="4" fill="#F47F68"/><circle cx="10" cy="10" r="8.5" fill="none" stroke="var(--line)" stroke-width="1"/></svg></div>Marca en el objeto, 8 mm</figure>
+      </div>
+      <p class="small muted">A 24 dp se conserva un solo arco. En el objeto basta el punto coral grabado en el borde: indica dónde mirar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Color</div>
+  <h2>Verde para preparar, coral para el momento</h2>
+  <p class="muted">Se unifica el verde en <code>#006B5F</code>, que ya era el documentado y contrasta más que el de la app. El coral queda para el punto del símbolo y el aviso; como texto sobre claro se usa la versión profunda.</p>
+  <div class="palette">
+    <div class="chip"><div class="sw" style="background:#006B5F"></div><div class="meta"><strong>Verde Relevo</strong><code>#006B5F</code><span class="muted">Acciones, selección, navegación</span></div></div>
+    <div class="chip"><div class="sw" style="background:#F47F68"></div><div class="meta"><strong>Coral de señal</strong><code>#F47F68</code><span class="muted">Punto del símbolo, aviso, rellenos</span></div></div>
+    <div class="chip"><div class="sw" style="background:#C4492F"></div><div class="meta"><strong>Coral profundo</strong><code>#C4492F</code><span class="muted">Texto o ícono de aviso sobre claro</span></div></div>
+    <div class="chip"><div class="sw" style="background:#171A18"></div><div class="meta"><strong>Grafito</strong><code>#171A18</code><span class="muted">Texto y logotipo</span></div></div>
+    <div class="chip"><div class="sw" style="background:#F7F8F6"></div><div class="meta"><strong>Blanco cálido</strong><code>#F7F8F6</code><span class="muted">Fondo claro y editorial</span></div></div>
+    <div class="chip"><div class="sw" style="background:#EEF2EF"></div><div class="meta"><strong>Superficie</strong><code>#EEF2EF</code><span class="muted">Agrupaciones</span></div></div>
+    <div class="chip"><div class="sw" style="background:#555B58"></div><div class="meta"><strong>Gris medio</strong><code>#555B58</code><span class="muted">Texto secundario</span></div></div>
+    <div class="chip"><div class="sw" style="background:#72DBC7"></div><div class="meta"><strong>Verde claro</strong><code>#72DBC7</code><span class="muted">Acento en tema oscuro</span></div></div>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Combinación</th><th>Contraste</th><th>Uso permitido</th></tr></thead>
+      <tbody>
+        <tr><td>Grafito sobre blanco cálido</td><td>16,46:1</td><td class="ok">Texto de cualquier tamaño</td></tr>
+        <tr><td>Verde <code>#006B5F</code> sobre blanco cálido</td><td>6,03:1</td><td class="ok">Texto y acciones</td></tr>
+        <tr><td>Verde de la app <code>#087A69</code> sobre blanco cálido</td><td>4,93:1</td><td>Texto AA, con menos margen</td></tr>
+        <tr><td>Coral <code>#F47F68</code> sobre blanco cálido</td><td>2,44:1</td><td class="no">Solo decorativo; nunca texto ni único indicador</td></tr>
+        <tr><td>Grafito sobre coral <code>#F47F68</code></td><td>6,75:1</td><td class="ok">Botón o franja de aviso con texto oscuro</td></tr>
+        <tr><td>Coral profundo <code>#C4492F</code> sobre blanco cálido</td><td>4,54:1</td><td class="ok">Texto e íconos de aviso</td></tr>
+        <tr><td>Verde claro <code>#72DBC7</code> sobre fondo oscuro</td><td>11,13:1</td><td class="ok">Acciones en tema oscuro</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small muted">Contraste calculado con la fórmula de luminancia relativa de las pautas W3C. Umbrales: 4,5:1 para texto normal y 3:1 para componentes gráficos.</p>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Tipografía</div>
+  <h2>Una sola familia, Source Sans 3</h2>
+  <div class="typescale">
+    <div><span class="lab">Título 32/600</span><span style="font-size:32px;font-weight:600;letter-spacing:-.01em">¿Qué te gustaría hacer?</span></div>
+    <div><span class="lab">Actividad 24/600</span><span style="font-size:24px;font-weight:600">Leer</span></div>
+    <div><span class="lab">Cuerpo 17/400</span><span>Empieza por abrir el libro que dejaste en la mesa.</span></div>
+    <div><span class="lab">Etiqueta 14/500</span><span style="font-size:14px;font-weight:500">Recordatorio activo · 2 apps · 45 min</span></div>
+  </div>
+  <p class="small muted">Se descarta sumar una serif: una segunda familia no resolvía ningún problema de lectura y aumentaba el costo de aplicación en la app y el objeto.</p>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Aplicación Android</div>
+  <h2>El coral aparece solo cuando hay aviso</h2>
+  <div class="phones">
+    <div class="phone" role="img" aria-label="Pantalla de inicio con recordatorio activo">
+      <div class="screen s-light">
+        <div class="s-top"><svg viewBox="0 0 48 48" width="20" height="20" style="color:#171A18" aria-hidden="true"><use href="#rv-rest"/></svg>Relevo</div>
+        <div class="s-h">¿Qué te gustaría hacer?</div>
+        <div class="s-p">Elige una actividad. Relevo te avisará cuando se cumpla el tiempo que definas en las apps elegidas.</div>
+        <div class="s-status"><svg viewBox="0 0 48 48" width="22" height="22" style="color:#171A18" aria-hidden="true"><use href="#rv-rest"/></svg><div><b>Recordatorio activo</b><br>Leer · 32 de 45 min</div></div>
+        <div class="s-cards"><div class="s-card">Caminar<i></i></div><div class="s-card">Leer<i></i></div><div class="s-card">Dibujar<i></i></div><div class="s-card">Cocinar<i></i></div></div>
+        <div class="s-cta">Otra actividad<small>Escribe la tuya</small></div>
+        <div class="s-nav"><span>Inicio</span><span>Actividad</span><span>Relevos</span></div>
+      </div>
+    </div>
+    <div class="phone" role="img" aria-label="Pantalla de aviso con el símbolo en estado de pulso">
+      <div class="screen s-signal">
+        <div class="s-note">Aviso emitido</div>
+        <div class="s-mark"><svg class="pulsing" viewBox="0 0 48 48" width="120" height="120" style="color:#171A18" aria-hidden="true"><use href="#rv-pulse-anim"/></svg></div>
+        <div class="s-first">Querías hacer</div>
+        <div class="s-act">Leer</div>
+        <div class="s-first">Puedes empezar abriendo el libro que dejaste en la mesa.</div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px">
+          <div class="s-btn pri">Silenciar el aviso</div>
+          <div class="s-btn sec">Seguir como estoy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="small muted" style="text-align:center;margin-inline:auto">Dibujos esquemáticos a partir de la app 2.6. El texto del aviso nombra la actividad y el comienzo; ninguna opción se presenta como la correcta.</p>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Objeto</div>
+  <h2>Un disco de 44 mm junto a la actividad</h2>
+  <div class="objects">
+    <svg viewBox="0 0 420 260" role="img" aria-label="Vista superior y lateral del objeto con cotas">
+      <rect x="0" y="0" width="420" height="260" rx="18" fill="#F7F8F6"/>
+      <circle cx="120" cy="118" r="80" fill="#E3E6E2" stroke="#BFC7C2" stroke-width="2"/>
+      <circle cx="120" cy="118" r="58" fill="#FBFBF7"/>
+      <circle cx="120" cy="118" r="58" fill="none" stroke="#E8DCC4" stroke-width="10" opacity=".7"/>
+      <circle cx="186" cy="84" r="6" fill="#F47F68"/>
+      <line x1="40" y1="214" x2="200" y2="214" stroke="#555B58" stroke-width="1.5"/>
+      <line x1="40" y1="206" x2="40" y2="222" stroke="#555B58" stroke-width="1.5"/>
+      <line x1="200" y1="206" x2="200" y2="222" stroke="#555B58" stroke-width="1.5"/>
+      <text x="120" y="240" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="14" fill="#171A18">44 mm</text>
+      <rect x="260" y="104" width="130" height="36" rx="16" fill="#E3E6E2" stroke="#BFC7C2" stroke-width="2"/>
+      <rect x="272" y="100" width="106" height="8" rx="4" fill="#FBFBF7" stroke="#E8DCC4" stroke-width="2"/>
+      <line x1="404" y1="104" x2="404" y2="140" stroke="#555B58" stroke-width="1.5"/>
+      <text x="398" y="164" text-anchor="end" font-family="Source Sans 3, sans-serif" font-size="14" fill="#171A18">14 mm</text>
+      <text x="120" y="28" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" fill="#555B58">Vista superior</text>
+      <text x="325" y="80" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" fill="#555B58">Vista lateral</text>
+    </svg>
+    <div class="stack">
+      <p>Cuerpo neutro y cálido, difusor claro en la cara superior y un punto coral grabado en el borde que indica dónde mirar. La luz de la señal sigue siendo <strong>blanca cálida</strong>, como en el protocolo de prueba: el coral marca el objeto, no colorea el aviso.</p>
+      <p class="muted small">Medidas dentro de la envolvente objetivo de la memoria (42–48 mm de diámetro, 12–16 mm de grosor). La forma circular se compara todavía con un rectángulo redondeado de igual volumen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Memoria y comunicación</div>
+  <h2>El símbolo aparece donde explica el ciclo</h2>
+  <div class="spread" role="img" aria-label="Doble página de la memoria con un diagrama del ciclo">
+    <div class="page">
+      <div class="run"><span>Relevo · Memoria de Proyecto de Título</span><span>84</span></div>
+      <h4>11. Bajada proyectual</h4>
+      <div class="lines"><i style="width:96%"></i><i style="width:100%"></i><i style="width:92%"></i><i style="width:98%"></i><i style="width:64%"></i></div>
+      <div class="lines" style="margin-top:6px"><i style="width:100%"></i><i style="width:94%"></i><i style="width:97%"></i><i style="width:80%"></i></div>
+      <div class="lines" style="margin-top:6px"><i style="width:99%"></i><i style="width:91%"></i><i style="width:70%"></i></div>
+    </div>
+    <div class="page">
+      <div class="run"><span>Figura 1</span><span>85</span></div>
+      <svg viewBox="0 0 350 120" style="width:100%;height:auto" aria-hidden="true">
+        <g font-family="Source Sans 3, sans-serif" font-size="10" fill="#171A18">
+          <g transform="translate(6,30)"><svg viewBox="0 0 48 48" width="40" height="40" style="color:#171A18"><use href="#rv-rest"/></svg><text x="20" y="58" text-anchor="middle">Preparar</text></g>
+          <line x1="58" y1="50" x2="104" y2="50" stroke="#006B5F" stroke-width="2"/>
+          <g transform="translate(108,30)"><svg viewBox="0 0 48 48" width="40" height="40" style="color:#171A18"><use href="#rv-rest"/></svg><text x="20" y="58" text-anchor="middle">Esperar</text></g>
+          <line x1="160" y1="50" x2="206" y2="50" stroke="#006B5F" stroke-width="2"/>
+          <g transform="translate(210,30)"><svg viewBox="0 0 48 48" width="40" height="40" style="color:#171A18"><use href="#rv-pulse"/></svg><text x="20" y="58" text-anchor="middle" fill="#C4492F">Aviso</text></g>
+          <line x1="262" y1="50" x2="300" y2="50" stroke="#006B5F" stroke-width="2"/>
+          <text x="304" y="54">Decidir</text>
+        </g>
+      </svg>
+      <div class="fig"><em>Relación entre intención, lugar, condición y decisión.</em> El coral marca solo el momento del aviso.</div>
+      <div class="lines" style="margin-top:6px"><i style="width:98%"></i><i style="width:94%"></i><i style="width:60%"></i></div>
+    </div>
+  </div>
+
+  <div class="poster" role="img" aria-label="Pieza de comunicación con la frase de marca junto a un libro y el objeto">
+    <div class="txt">
+      <span style="display:flex;align-items:center;gap:8px;font-weight:600;font-size:18px"><svg viewBox="0 0 48 48" width="28" height="28" style="color:#171A18" aria-hidden="true"><use href="#rv-rest"/></svg>Relevo</span>
+      <div class="big">Hazle lugar a lo que quieres hacer.</div>
+      <span style="font-size:15px;color:#555B58">Un recordatorio físico preparado desde el teléfono.</span>
+    </div>
+    <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="400" height="320" fill="#E6E2D8"/>
+      <rect x="0" y="230" width="400" height="90" fill="#D9D3C5"/>
+      <g transform="translate(70,150) rotate(-6)">
+        <rect x="0" y="0" width="190" height="96" rx="6" fill="#2F5A52"/>
+        <rect x="8" y="-8" width="86" height="96" rx="4" fill="#F4F1EA"/>
+        <rect x="98" y="-8" width="86" height="96" rx="4" fill="#F7F4EE"/>
+        <g fill="#D7D2C6"><rect x="18" y="8" width="64" height="4" rx="2"/><rect x="18" y="20" width="58" height="4" rx="2"/><rect x="18" y="32" width="62" height="4" rx="2"/><rect x="108" y="8" width="64" height="4" rx="2"/><rect x="108" y="20" width="60" height="4" rx="2"/></g>
+      </g>
+      <ellipse cx="310" cy="236" rx="46" ry="12" fill="#C9C2B3" opacity=".6"/>
+      <rect x="264" y="206" width="92" height="28" rx="14" fill="#E3E6E2" stroke="#BFC7C2"/>
+      <ellipse cx="310" cy="208" rx="40" ry="9" fill="#FBFBF7"/>
+      <circle cx="350" cy="219" r="3.5" fill="#F47F68"/>
+    </svg>
+  </div>
+  <p class="small muted">Ilustraciones vectoriales hechas para esta lámina. Las fotografías reales seguirían la regla de la dirección C: objetos de la actividad sobre fondo claro, luz natural y el objeto a escala real.</p>
+</section>
+
+<section class="stack">
+  <div class="eyebrow">Antes de cerrarla</div>
+  <h2>Qué hay que comprobar con personas</h2>
+  <div class="tests">
+    <div><strong>Lectura del símbolo</strong><span class="small">¿Se asocia con «algo que avisa junto a un lugar» o se confunde con Wi-Fi o transmisión?</span></div>
+    <div><strong>Tono del coral</strong><span class="small">¿Se percibe como invitación y no como alarma?</span></div>
+    <div><strong>Reconocimiento del ícono</strong><span class="small">¿Se encuentra entre otras apps, a tamaño real, en el teléfono de prueba?</span></div>
+    <div><strong>Contraste real</strong><span class="small">¿Se sostienen los contrastes calculados con brillo bajo y en tema oscuro?</span></div>
+  </div>
+</section>
+
+<footer>Exploración del proyecto de título Relevo, Escuela de Diseño UDP. Documento de respaldo: <code>10_recursos_visuales/16_exploracion-visual-2026-09-25.md</code>. Es una propuesta de diseño pendiente de decisión del autor y de pruebas; no es un resultado con usuarios.</footer>
+
+</div>

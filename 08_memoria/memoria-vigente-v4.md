@@ -787,6 +787,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 
 ## Registro de cambios
 
+### 25 de septiembre de 2026 — Revisión editorial según la pauta UDP
+
+- **Cambio:** los preliminares siguen la [pauta de presentación de memorias de la UDP](https://bibliotecas.udp.cl/wp-content/uploads/2020/04/tesis_pauta_udp_2020.pdf): portada con nota de título, unidad académica, lugar y fecha (profesor guía y denominación del título por completar); resumen y *abstract* con objetivo, metodología y resultados; índice de tablas y de figuras. Las cinco tablas y la figura tienen número y título según APA 7. Los ocho criterios del capítulo 9 se nombran C1–C8, como en la matriz de trazabilidad. Se añadió un glosario después de las referencias. Las conclusiones responden la pregunta, declaran que la hipótesis sigue sin contrastarse, enumeran límites y recomiendan un orden de trabajo. Se reescribieron los capítulos 1–10 y 13 para reducir repeticiones («permite» pasó de 48 a 31 usos y las negaciones defensivas de unas 40 a 12) y unir párrafos fragmentados. El segmento previo a referencias queda en 14.804 palabras.
+- **Versión anterior:** la portada no tenía los datos que exige la pauta; el resumen no explicitaba objetivo ni resultados; las tablas no tenían título; el capítulo 9 hablaba de criterios sin numerarlos y las conclusiones no juzgaban la hipótesis.
+- **Motivo:** el autor pidió perfeccionar y redactar mejor la memoria comparándola con otras. Como las memorias de otros estudiantes no se guardan en el repositorio, se usaron como referencia la pauta oficial de la UDP y las versiones anteriores de la propia memoria.
+- **Alcance:** no cambian los datos, las fuentes, la pregunta, la hipótesis, los objetivos ni los umbrales. No se añadieron resultados.
+
 ### 25 de septiembre de 2026 — Estado del soporte actualizado
 
 - **Cambio:** la tabla de continuidad de la experiencia (capítulo 11) indica lo que ya implementa la app 2.6: consentimiento con responsable, contacto y plazo; preparación y permisos; tono y silencio; y solicitud de eliminación, todavía sin comprobar.

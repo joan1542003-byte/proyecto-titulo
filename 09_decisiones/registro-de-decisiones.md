@@ -621,7 +621,23 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Pendiente:** los PDF siguen en el historial de Git; los marcos de iPhone y Pixel de los wireframes y la fotografía de la referencia visual 03 no tienen origen registrado.
 - **Documentación:** [biblioteca de diseño](../01_contexto_y_fuentes/biblioteca_diseno/README.md) y [licencias de la app](../06_desarrollo_y_factibilidad/app-android/licencias/README.md).
 
+## D-067 — Punto y pulso como identidad de Relevo (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** propuesta pendiente de aprobación del autor; mientras tanto rige D-062.
+- **Decisión propuesta:** añadir al logotipo un símbolo de punto (el objeto), línea (el lugar) y arcos (la señal); reservar el coral `#F47F68` para el punto y el momento del aviso, con `#C4492F` para texto sobre fondo claro; unificar el verde en `#006B5F` también en la app.
+- **Fundamento:** el sistema de D-062 era poco reconocible y la app 2.6 ya usa un coral y un ícono de punto con anillos que la marca no recogía. El coral de la app tiene 2,44:1 sobre el fondo claro y no cumple el 3:1 exigido para componentes gráficos.
+- **Alternativas:** mantener la dirección tipográfica de D-062; dirección «lugar reservado» con corchete, serif y neutros cálidos.
+- **Condición de revisión:** pruebas de lectura del símbolo (confusión con Wi-Fi), tono del coral (invitación frente a alarma), reconocimiento del ícono y contraste en el teléfono de prueba.
+- **Documentación:** [exploración visual](../10_recursos_visuales/16_exploracion-visual-2026-09-25.md) y [lámina](../10_recursos_visuales/lamina-exploracion-visual-2026-09-25.html).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-067 propuesta
+
+- **Qué cambió:** se registró la propuesta de identidad «punto y pulso».
+- **Cómo era antes:** D-062 cerraba la marca sin símbolo ni color de señal.
+- **Por qué se decidió:** la nueva exploración visual pedida por el autor recomienda ajustar la marca; se registra como propuesta porque la aprobación le corresponde al autor.
 
 ### 2026-09-25 — D-063 a D-066
 

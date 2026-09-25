@@ -6,6 +6,8 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
+> **Revisión en curso (25 de septiembre de 2026):** la [exploración 16](16_exploracion-visual-2026-09-25.md) propone añadir un símbolo de punto y pulso, un coral reservado a la señal con variantes accesibles y unificar el verde de la app en `#006B5F`. Mientras el autor no la apruebe, este documento sigue vigente.
+
 ## Qué se cierra en este documento
 
 Este documento convierte la investigación de marca en una dirección ejecutable. Las decisiones se consideran vigentes y deben aplicarse de manera consistente. Solo se revisarán si una prueba demuestra un problema concreto de comprensión, accesibilidad, producción o reconocimiento.
@@ -222,6 +224,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso de revisión
+
+- **Qué cambió:** se añadió un aviso que remite a la exploración 16.
+- **Cómo estaba antes:** el documento se presentaba como cerrado sin indicar que la app ya usaba otro verde, un coral y un ícono propio.
+- **Por qué:** evitar que se aplique un sistema que la app ya contradice sin saber que hay una propuesta de ajuste.
 
 ### 2026-09-16 — Cierre del sistema de marca
 

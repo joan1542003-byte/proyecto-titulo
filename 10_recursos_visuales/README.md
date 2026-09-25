@@ -1,11 +1,11 @@
 # Investigación visual de Relevo
 
-**Estado:** investigación concluida y sistema de marca vigente cerrado para el proyecto de título.
+**Estado:** sistema de marca vigente del 16 de septiembre, reabierto parcialmente por una [nueva exploración visual](16_exploracion-visual-2026-09-25.md) del 25 de septiembre que recomienda la dirección «punto y pulso». La adopción queda pendiente de la decisión del autor.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
 **Alcance:** marca, aplicación Android, testigo físico, comunicación de producto y memoria editorial.
-**Formato de esta etapa:** documentación escrita en Markdown. No contiene imágenes, maquetas ni código.
+**Formato:** documentación en Markdown y, desde el 25 de septiembre, una [lámina visual en HTML](lamina-exploracion-visual-2026-09-25.html) con dibujos vectoriales propios.
 
 ## Para qué existe esta carpeta
 
@@ -38,8 +38,9 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 13. [Estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md)
 14. [Sistema de marca vigente](14_sistema-de-marca-vigente.md)
 15. [Aplicación Android implementada](15_aplicacion-android-implementada.md)
-16. [Referencias](referencias.md)
-17. [Registro del reinicio visual](registro-del-reinicio.md)
+16. [Exploración visual: punto, pulso y lugar](16_exploracion-visual-2026-09-25.md) y su [lámina](lamina-exploracion-visual-2026-09-25.html)
+17. [Referencias](referencias.md)
+18. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 
@@ -67,6 +68,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Nueva exploración visual
+
+- **Qué cambió:** se añadieron el documento 16 y una lámina HTML con tres direcciones dibujadas y una recomendación; el estado de la carpeta indica que el sistema del 16 de septiembre está parcialmente reabierto.
+- **Cómo era antes:** la carpeta declaraba la investigación concluida y solo contenía texto.
+- **Por qué:** el autor pidió rehacer la exploración visual de la marca; la app había incorporado un coral y un ícono que el sistema no recogía, y ese coral no cumple el contraste mínimo como elemento de interfaz.
 
 ### 2026-09-16 — Sistema de marca cerrado
 
