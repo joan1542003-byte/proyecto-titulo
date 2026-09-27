@@ -27,6 +27,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - [Trazabilidad del uso de IA](trazabilidad-uso-ia-2026-09-23.md): declaración candidata, registros de prompts existentes, distinción entre salida generada y decisión del autor, y ficha para futuras iteraciones.
+- [Dirección del autor y referencias aportadas](direccion-del-autor-y-referencias-2026-09-27.md): criterios, evolución visual, recomendaciones como Laws of UX y correcciones a las herramientas; incluye un [anexo de mensajes originales de Claude y fuentes de Codex](fuentes-direccion-del-autor-2026-09-27.md).
 - [Aplicación del feedback docente del 23 de septiembre](aplicacion-feedback-docente-2026-09-23.md): cambios incorporados, opciones no adoptadas y condiciones antes de trabajar con participantes.
 - [Traspaso a Claude](traspaso-a-claude-2026-09-24.md): contexto, evidencia, estado del producto, mapa documental, riesgos y prioridades.
 - [Inicio rápido para Claude](INICIO-CLAUDE.md): instrucción inicial para comenzar sin reconstruir conversaciones.
@@ -51,6 +52,12 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Dirección del autor y fuentes de conversación
+
+- **Qué cambió:** se enlazó la recopilación de recomendaciones, referencias y correcciones del autor y su anexo de fuentes.
+- **Cómo estaba antes:** el índice solo remitía a la trazabilidad de tareas con IA; no había un acceso específico al aporte del autor ni a la lista de referencias recuperada de Claude.
+- **Por qué:** facilitar el estudio del proceso de diseño y su eventual explicación en la defensa, sin modificar la memoria ni el producto.
 
 ### 2026-09-25 — Guion de presentación
 
