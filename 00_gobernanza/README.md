@@ -28,6 +28,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - [Trazabilidad del uso de IA](trazabilidad-uso-ia-2026-09-23.md): declaración candidata, registros de prompts existentes, distinción entre salida generada y decisión del autor, y ficha para futuras iteraciones.
 - [Dirección del autor y referencias aportadas](direccion-del-autor-y-referencias-2026-09-27.md): criterios, evolución visual, recomendaciones como Laws of UX y correcciones a las herramientas; incluye un [anexo de mensajes originales de Claude y fuentes de Codex](fuentes-direccion-del-autor-2026-09-27.md).
+- [Reflexión sobre diseñar Relevo con IA](reflexion-diseno-con-ia-relevo-2026-09-27.md): borrador para el autor y sus profesores, con tres casos documentados, discusión de los wireframes, aportes, límites y referencias; pendiente de revisión personal antes de incorporarlo a la memoria.
 - [Aplicación del feedback docente del 23 de septiembre](aplicacion-feedback-docente-2026-09-23.md): cambios incorporados, opciones no adoptadas y condiciones antes de trabajar con participantes.
 - [Traspaso a Claude](traspaso-a-claude-2026-09-24.md): contexto, evidencia, estado del producto, mapa documental, riesgos y prioridades.
 - [Inicio rápido para Claude](INICIO-CLAUDE.md): instrucción inicial para comenzar sin reconstruir conversaciones.
@@ -52,6 +53,12 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Reflexión sobre el proceso con IA
+
+- **Qué cambió:** se enlazó el borrador de reflexión basado en las orientaciones UDP y los registros de Relevo.
+- **Cómo estaba antes:** estaban enlazadas la trazabilidad y la recopilación de recomendaciones, pero no un análisis continuo del proceso.
+- **Por qué:** permitir su revisión con el autor y los profesores antes de decidir una eventual incorporación a la memoria.
 
 ### 2026-09-27 — Dirección del autor y fuentes de conversación
 
