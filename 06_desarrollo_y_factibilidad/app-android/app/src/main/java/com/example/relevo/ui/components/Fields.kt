@@ -89,7 +89,7 @@ fun RenglonField(
   }
 }
 
-/** Buscador sobre niebla, como el de las listas de iOS. */
+/** Buscador sobre niebla, como el de las listas de iOS: con lupa y un botón para borrar lo escrito. */
 @Composable
 fun SearchField(value: String, onValueChange: (String) -> Unit, placeholder: String, modifier: Modifier = Modifier) {
   val colors = Relevo.colors
@@ -114,6 +114,7 @@ fun SearchField(value: String, onValueChange: (String) -> Unit, placeholder: Str
         }
       },
     )
+    if (value.isNotEmpty()) IconAction(KitIcon.CERRAR, "Borrar la búsqueda", { onValueChange("") })
   }
 }
 
@@ -122,7 +123,15 @@ fun SearchField(value: String, onValueChange: (String) -> Unit, placeholder: Str
  * en 450 ms, la única animación de marca; sin animación si Android la desactiva.
  */
 @Composable
-fun Signature(words: String, modifier: Modifier = Modifier, style: TextStyle = Relevo.type.signature, animate: Boolean = true, prefix: String = "Vuelve a ") {
+fun Signature(
+  words: String,
+  modifier: Modifier = Modifier,
+  style: TextStyle = Relevo.type.signature,
+  animate: Boolean = true,
+  prefix: String = "Vuelve a ",
+  /** Lo que escribió la persona va en azul; la firma de la marca, en tinta. */
+  phraseColor: Color = Relevo.colors.voice,
+) {
   val colors = Relevo.colors
   val reduce = rememberReduceMotion()
   val phrase = words.trim().trimEnd('.').replaceFirstChar { it.lowercase() }
@@ -134,7 +143,7 @@ fun Signature(words: String, modifier: Modifier = Modifier, style: TextStyle = R
   var layout by remember { mutableStateOf<TextLayoutResult?>(null) }
   val text = buildAnnotatedString {
     withStyle(SpanStyle(color = colors.ink)) { append(prefix) }
-    withStyle(SpanStyle(color = colors.voice)) { append(phrase.take(visible)) }
+    withStyle(SpanStyle(color = phraseColor)) { append(phrase.take(visible)) }
     withStyle(SpanStyle(color = Color.Transparent)) { append(phrase.drop(visible)) }
     withStyle(SpanStyle(color = colors.ink)) { append(".") }
   }

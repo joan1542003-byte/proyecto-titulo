@@ -24,6 +24,8 @@ data class RelevoColors(
   val line: Color,
   /** Gris: deshabilitado; no se usa para texto. */
   val gray: Color,
+  /** Pizarra: tinta presionada y fondos de tinta secundarios. */
+  val slate: Color,
   /** La voz de la persona: lo que escribe sobre el renglón. */
   val voice: Color,
   /** Azul muy suave para una selección. */
@@ -41,6 +43,7 @@ internal val LightColors = RelevoColors(
   mist = Color(0xFFE3E4E6),
   line = Color(0xFFC9CBCF),
   gray = Color(0xFF9BA0A9),
+  slate = Color(0xFF33363D),
   voice = Color(0xFF2A4BD7),
   voiceSoft = Color(0xFFEEF1FD),
   error = Color(0xFFB3261E),
@@ -56,6 +59,7 @@ internal val DarkColors = RelevoColors(
   mist = Color(0xFF1C1E23),
   line = Color(0xFF30333A),
   gray = Color(0xFF5B5F68),
+  slate = Color(0xFFC9CBCF),
   voice = Color(0xFF8CA6FF),
   voiceSoft = Color(0xFF1C2238),
   error = Color(0xFFF2B8B5),

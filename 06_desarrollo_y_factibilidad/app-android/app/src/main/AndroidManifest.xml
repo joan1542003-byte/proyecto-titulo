@@ -25,10 +25,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:windowSoftInputMode="adjustResize"
+        android:enableOnBackInvokedCallback="true"
         android:theme="@style/Theme.Relevo">
         <activity
             android:name="com.example.relevo.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -42,6 +44,9 @@
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="Cuenta el tiempo en las aplicaciones elegidas mientras un relevo está activo." />
         </service>
+        <receiver
+            android:name="com.example.relevo.monitor.ReturnNoticeReceiver"
+            android:exported="false" />
         <receiver
             android:name="com.example.relevo.monitor.RestoreMonitorReceiver"
             android:exported="false">

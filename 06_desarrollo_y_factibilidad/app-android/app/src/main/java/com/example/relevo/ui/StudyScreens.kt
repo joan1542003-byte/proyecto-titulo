@@ -3,6 +3,9 @@ package com.example.relevo.ui
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Text
@@ -17,6 +20,7 @@ import com.example.relevo.domain.StudyCondition
 import com.example.relevo.domain.StudyPlan
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.ButtonKind
+import com.example.relevo.ui.components.IconTile
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
@@ -34,34 +38,26 @@ import com.example.relevo.ui.components.SegmentedControl
 @Composable
 internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, onWeekReview: () -> Unit, onClosing: () -> Unit) {
   if (!study.active && !study.finished) return
+  val week = study.instructionWeek
+  val condition = study.condition
+  val closing = study.pendingWeek == null && study.closingPending
+  if (!study.initialSession && (week == null || condition == null) && study.pendingWeek == null && !closing) return
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
     if (study.initialSession) {
-      Panel {
-        Text("Sesión inicial de la prueba", style = Relevo.type.headline, color = Relevo.colors.ink)
-        Text("Hoy preparas Relevo junto al investigador. Deja el parlante junto a lo que necesitas para empezar.", style = Relevo.type.subhead, color = Relevo.colors.ink)
-      }
+      StudyCard(KitIcon.VALIDACION, "PRUEBA · DÍA 0", "Sesión inicial", "Hoy preparas Relevo junto al investigador. Deja el parlante junto a lo que necesitas para empezar.")
     }
-    val week = study.instructionWeek
-    val condition = study.condition
     if (week != null && condition != null) {
-      Panel {
-        Text("Semana $week de 3 · ${conditionName(condition)}", style = Relevo.type.headline, color = Relevo.colors.ink)
-        Text(conditionInstruction(condition), style = Relevo.type.subhead, color = Relevo.colors.ink)
-        conditionDetail(condition)?.let { Text(it, style = Relevo.type.footnote, color = Relevo.colors.graphite) }
-        PlainAction("Cerrar", { onDismissInstruction(week) }, color = Relevo.colors.graphite)
+      StudyCard(conditionIcon(condition), "SEMANA $week DE 3", conditionName(condition), conditionInstruction(condition), conditionDetail(condition)) {
+        PlainAction("Entendido", { onDismissInstruction(week) }, icon = KitIcon.LISTO)
       }
     }
     study.pendingWeek?.let { pending ->
-      Panel {
-        Text("Cierre de la semana $pending", style = Relevo.type.headline, color = Relevo.colors.ink)
-        Text("Tres preguntas breves. Puedes omitirlas.", style = Relevo.type.subhead, color = Relevo.colors.ink)
+      StudyCard(KitIcon.CALENDARIO, "PRUEBA", "Cierre de la semana $pending", "Tres preguntas breves. Puedes omitirlas.") {
         PlainAction("Responder", onWeekReview, icon = KitIcon.SIGUIENTE)
       }
     }
-    if (study.pendingWeek == null && study.closingPending) {
-      Panel {
-        Text("Terminaste la prueba. Gracias.", style = Relevo.type.headline, color = Relevo.colors.ink)
-        Text("Cinco preguntas breves, unos 2 minutos.", style = Relevo.type.subhead, color = Relevo.colors.ink)
+    if (closing) {
+      StudyCard(KitIcon.LISTO, "DÍA 21", "Terminaste la prueba. Gracias.", "Cinco preguntas breves, unos 2 minutos.") {
         PlainAction("Responder", onClosing, icon = KitIcon.SIGUIENTE)
       }
     }
@@ -69,18 +65,36 @@ internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, 
   SectionGap()
 }
 
+/** Tarjeta de la prueba: rótulo, icono del kit, título y qué hacer. */
+@Composable
+private fun StudyCard(icon: KitIcon, label: String, title: String, text: String, detail: String? = null, action: (@Composable () -> Unit)? = null) {
+  Panel {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+      IconTile(icon)
+      Spacer(Modifier.width(12.dp))
+      Text(label, style = Relevo.type.label, color = Relevo.colors.graphite)
+    }
+    Text(title, style = Relevo.type.headline, color = Relevo.colors.ink)
+    Text(text, style = Relevo.type.subhead, color = Relevo.colors.ink)
+    detail?.let { Text(it, style = Relevo.type.footnote, color = Relevo.colors.graphite) }
+    action?.invoke()
+  }
+}
+
 /** Configuración de la prueba, para el investigador en la sesión inicial. */
 @Composable
-internal fun StudyScreen(study: StudyState, participantCode: String, onStart: (String) -> Unit, onEnd: () -> Unit, onBack: () -> Unit) {
+internal fun StudyScreen(study: StudyState, participantCode: String, participating: Boolean, onStart: (String) -> Unit, onEnd: () -> Unit, onBack: () -> Unit) {
   var sequence by rememberSaveable { mutableStateOf<String?>(null) }
   var confirmEnd by rememberSaveable { mutableStateOf(false) }
   BackHandler(onBack = onBack)
   val plan = study.plan
   RelevoScreen(
     title = "Prueba de 21 días", onBack = onBack,
-    bottom = if (plan == null) ({ RelevoButton("Empezar la prueba hoy", { sequence?.let(onStart) }, enabled = sequence != null) }) else null,
+    bottom = if (plan == null && participating) ({ RelevoButton("Empezar la prueba hoy", { sequence?.let(onStart) }, enabled = sequence != null) }) else null,
   ) {
-    if (plan == null) {
+    if (!participating) {
+      Text("Para configurar la prueba, primero hay que aceptar participar en Privacidad y datos.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    } else if (plan == null) {
       Text("Para el investigador, en la sesión inicial. Elige la secuencia asignada; hoy será el día 0.", style = Relevo.type.body, color = Relevo.colors.graphite)
       SectionGap()
       ListSection(title = "Condiciones") {

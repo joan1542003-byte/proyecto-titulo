@@ -47,6 +47,18 @@ El texto debe adaptarse a la configuración efectivamente instalada. No debe dej
 6. Confirmar si el estudio utilizará exclusivamente adultos. Si cambia la muestra, revisar consentimiento y datos con el marco aplicable.
 7. Restringir ejemplos de actividades y lugares que revelen datos sensibles innecesarios; ofrecer formulaciones generales y permitir no responder a la evaluación final.
 
+## Cambios de Android 2.8 que esta auditoría aún no incorpora
+
+La auditoría tiene corte al 24 de septiembre (2.6). La versión 2.8 del 26 de septiembre ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)) cambia estos puntos, que deben revisarse antes de usarla con participantes:
+
+1. **Perfil local.** La app pide, de forma opcional, un nombre, una imagen prehecha e intereses, y guarda una ruta de actividades. Quedan solo en el teléfono (`ProfileStore`, `RouteStore` y `SettingsStore`). El texto candidato de arriba dice «No se solicita tu nombre dentro de la app»: habría que decir que el nombre es opcional y no sale del teléfono.
+2. **Uso sin participar.** Quien elige «No participar» usa la app sin registro de investigación: no se guardan sesiones, eventos ni respuestas y no se crea la sesión anónima de Supabase. Se comprobó en emulador.
+3. **Descarga de datos.** «Descargar mis datos» crea un archivo JSON donde la persona elige, con perfil, ruta, actividades propias, relevos y registro del estudio. Una vez fuera de la app, ese archivo queda bajo su control, incluso si lo guarda en una nube.
+4. **Respuestas opcionales nuevas,** solo para quien participa: opinión sobre la app (estrellas y comentario), reporte de problemas con un registro técnico que se adjunta solo si la persona lo marca, y «¿Qué te ayudó?» en «Tu semana». Se guardan en `relevo_answers` con las mismas políticas y el mismo borrado.
+5. **Aviso de regreso.** Es opcional y está apagado por defecto. En la pantalla de bloqueo solo muestra un texto genérico, sin la actividad.
+6. **Código de participación.** Ya no está en Relevos: se ve en Perfil → Privacidad y datos y en Prueba de 21 días.
+7. **Borrado.** Además de lo anterior, borra perfil, ruta y ajustes y cancela el aviso de regreso. El borrado sin conexión sigue sin probarse.
+
 ## Referencias
 
 - Biblioteca del Congreso Nacional de Chile. (1999). *Ley N.º 19.628 sobre protección de la vida privada*. https://www.bcn.cl/leychile/Navegar?idNorma=141599
@@ -55,6 +67,12 @@ El texto debe adaptarse a la configuración efectivamente instalada. No debe dej
 - Google. (s. f.). *Manifest.permission*. Android Developers. https://developer.android.com/reference/android/Manifest.permission#PACKAGE_USAGE_STATS
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Cambios de Android 2.8
+
+- **Qué cambió:** se añadió una sección con los siete cambios de la 2.8 que afectan datos y privacidad: perfil local, uso sin participar, descarga de datos, respuestas opcionales nuevas, aviso de regreso, ubicación del código y alcance del borrado.
+- **Cómo estaba antes:** la auditoría describía la 2.6 y decía que la app no pedía el nombre.
+- **Por qué:** que la revisión académica y jurídica parta del estado real de la app sin reescribir una auditoría con fecha de corte.
 
 ### 2026-09-24 — Conciliación con Android 2.6
 

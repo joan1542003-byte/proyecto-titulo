@@ -1,6 +1,6 @@
 # Modelo de datos para evaluar la aplicación Relevo
 
-**Estado:** vigente para el prototipo Android 2.7 y la prueba de 21 días del [protocolo 02](protocolo-02-prueba-21-dias.md) (revisado el 25 de septiembre de 2026 contra `base-remota-supabase.sql`).
+**Estado:** vigente para los prototipos Android 2.7 y 2.8 y la prueba de 21 días del [protocolo 02](protocolo-02-prueba-21-dias.md) (revisado el 25 de septiembre de 2026 contra `base-remota-supabase.sql`; claves de 2.8 añadidas el 26 de septiembre).
 
 **Fecha:** 22 de septiembre de 2026.
 
@@ -34,7 +34,9 @@ La unidad principal es una **sesión de Relevo**: comienza cuando la persona act
 
 La respuesta final ofrece cuatro estados: comenzó la actividad, la dejó para después, cambió de idea o prefirió no responder. Las preguntas tras la señal y las respuestas semanales se pueden omitir; un valor vacío significa que no se respondieron.
 
-Las claves de `relevo_answers` son: `prueba_inicio` y `prueba_fin` (secuencia y fechas); `semanaN_costo_preparar`, `semanaN_molestia_senal` y `semanaN_relacion_lugar` (1 a 5); `semanaN_comentario` o `semanaN_omitida`, y las del cierre con prefijo `cierre_`.
+Las claves de `relevo_answers` son: `prueba_inicio` y `prueba_fin` (secuencia y fechas); `semanaN_costo_preparar`, `semanaN_molestia_senal` y `semanaN_relacion_lugar` (1 a 5); `semanaN_comentario` o `semanaN_omitida`, y las del cierre con prefijo `cierre_`. Desde Android 2.8 se suman, todas opcionales: `opinion_estrellas` (1 a 5, sobre la app, no sobre la persona) y `opinion_comentario`; `reporte_problema` y `reporte_registro` (registro técnico que la persona decide adjuntar: versión, permisos, estado y envío, sin contenido de otras apps), y `tu_semana_ayudo` (texto libre de «Tu semana»). Sirven para mejorar la app y no forman parte de las medidas del protocolo 02.
+
+En 2.8, quien elige «No participar» usa la app sin que se registre nada de esto: no hay sesiones, eventos ni respuestas, ni sesión anónima en Supabase. El nombre, la imagen, los intereses y la ruta del perfil quedan solo en el teléfono. Si la persona prepara un relevo desde un paso de la ruta, la sesión registra la actividad, el primer paso y el lugar como en cualquier relevo.
 
 ## Preguntas que puede responder
 
@@ -110,6 +112,12 @@ La frecuencia de una actividad describe elecciones dentro de Relevo. Para afirma
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Android 2.8
+
+- **Qué cambió:** se añadieron cinco claves opcionales de `relevo_answers` (opinión, reporte con registro técnico y «Tu semana») y cómo se comporta el uso sin participar y el perfil local.
+- **Cómo estaba antes:** el modelo describía solo la 2.7.
+- **Por qué:** la 2.8 envía esas respuestas cuando la persona participa, y el modelo debe coincidir con lo que llega a la base.
 
 ### 2026-09-25 — Android 2.7 y protocolo 02
 

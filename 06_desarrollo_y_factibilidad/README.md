@@ -31,7 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
-- [Aplicación Android 2.6](app-android/README.md): prototipo ejecutable vigente. Permite preparar un relevo con una o varias apps bajo un límite común y emitir un tono por un parlante Bluetooth o por el teléfono. Compila y pasa sus pruebas unitarias; falta probarlo en equipos reales. Incluye su [registro de licencias](app-android/licencias/README.md).
+- [Aplicación Android 2.8](app-android/README.md): prototipo ejecutable más reciente, con el sistema de marca D-073, perfil, ruta de actividades y aviso de regreso opcional ([detalle](app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). Permite preparar un relevo con una o varias apps bajo un límite común y emitir una señal de unos 30 segundos por un parlante Bluetooth o por el teléfono. La 2.7 es la versión que especifica el protocolo 02; el autor decide cuál se usa en la prueba. Compila y pasa sus pruebas unitarias; falta probarlo en equipos reales. Incluye su [registro de licencias](app-android/licencias/README.md).
 - [Energía, autonomía y viabilidad portátil del Atom Echo](energia-autonomia-atom-echo-2026-09-23.md): detalla alimentación USB, incompatibilidad directa de la base A151, cálculo ilustrativo de autonomía y límites para un producto final compacto.
 - [Compra económica de un objeto sonoro Wi-Fi](recomendacion-compra-sonido-wifi-chile-2026-09-23.md): compara costo puesto en Chile, discrepancias de publicaciones y requisitos antes de elegir Atom Echo u otra opción.
 - [Comparación BLE, Wi-Fi y Supabase para el objeto](comparacion-ble-wifi-supabase-dispositivo-2026-09-23.md): distingue orden local y remota, confirma que micro:bit no tiene Wi-Fi y evalúa latencia, conexión, seguridad y límites del test.
@@ -62,6 +62,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-26 — Android 2.8
+
+- **Qué cambió:** la entrada de la app señala la versión 2.8, con el sistema de marca D-073, perfil y ruta, y aclara que la 2.7 es la del protocolo 02.
+- **Cómo estaba antes:** describía Android 2.6 como prototipo vigente.
+- **Por qué:** el índice debe coincidir con la app compilada el 26 de septiembre.
 
 ### 2026-09-25 — Sin luz y prueba de 21 días
 

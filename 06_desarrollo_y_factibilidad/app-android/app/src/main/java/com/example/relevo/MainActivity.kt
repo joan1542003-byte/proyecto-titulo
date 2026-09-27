@@ -1,22 +1,36 @@
 package com.example.relevo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
-import com.example.relevo.theme.RelevoTheme
+import com.example.relevo.monitor.ReturnNotice
+import kotlinx.coroutines.flow.MutableStateFlow
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
     enableEdgeToEdge()
-    setContent {
-      RelevoTheme { Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) { MainNavigation() } }
+    LaunchRequests.handle(intent)
+    setContent { MainNavigation() }
+  }
+
+  override fun onNewIntent(intent: Intent) {
+    super.onNewIntent(intent)
+    setIntent(intent)
+    LaunchRequests.handle(intent)
+  }
+}
+
+/** Pedidos que llegan desde fuera de la app, como «Preparar» en el aviso de regreso (V2). */
+object LaunchRequests {
+  val prepareLast = MutableStateFlow(false)
+
+  fun handle(intent: Intent?) {
+    if (intent?.getBooleanExtra(ReturnNotice.EXTRA_PREPARE, false) == true) {
+      intent.removeExtra(ReturnNotice.EXTRA_PREPARE)
+      prepareLast.value = true
     }
   }
 }

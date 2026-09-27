@@ -4,11 +4,34 @@ La aplicación Android incluye recursos que no fueron creados para el proyecto. 
 
 | Recurso | Ubicación | Autor | Licencia | Condición |
 | --- | --- | --- | --- | --- |
-| Source Sans 3, cuatro pesos | `app/src/main/res/font/` | Adobe | SIL Open Font License 1.1 | Se puede usar, incluir en la app y redistribuir si se acompaña de este aviso de licencia y no se vende la fuente por separado. El texto completo ya acompañaba a la app en [`app/licenses/SOURCE_SANS_LICENSE.md`](../app/licenses/SOURCE_SANS_LICENSE.md) y coincide con el del [repositorio oficial de Adobe](https://github.com/adobe-fonts/source-sans). |
+| Schibsted Grotesk, fuente variable (desde 2.8) | `app/src/main/res/font/schibsted_grotesk.ttf` | The Schibsted-Grotesk Project Authors | SIL Open Font License 1.1 | Se puede usar, incluir en la app y redistribuir si se acompaña del aviso de licencia y no se vende la fuente por separado. El texto completo está en [`app/licenses/SCHIBSTED_GROTESK_LICENSE.md`](../app/licenses/SCHIBSTED_GROTESK_LICENSE.md) y proviene del [repositorio oficial](https://github.com/schibsted/schibsted-grotesk). |
+| Seis fotografías (desde 2.8) | `app/src/main/res/drawable-nodpi/`, ver la tabla siguiente | Ver la tabla siguiente | CC0 1.0, dedicación al dominio público | Se pueden usar, modificar y redistribuir sin pedir permiso ni atribuir. Los créditos se dan por transparencia. |
+| Source Sans 3, cuatro pesos (hasta 2.7) | Ya no está en la app | Adobe | SIL Open Font License 1.1 | Antecedente. Su aviso se conserva en [`app/licenses/SOURCE_SANS_LICENSE.md`](../app/licenses/SOURCE_SANS_LICENSE.md) porque los APK anteriores la incluyen. |
 
-Las fotografías de actividades (`app/src/main/res/drawable-nodpi/`) no son obras de terceros: se generaron con IA para el proyecto. Su procedencia se registra en [assets-explorados](../assets-explorados/README.md) y en la [trazabilidad del uso de IA](../../../00_gobernanza/trazabilidad-uso-ia-2026-09-23.md). Deben presentarse como imágenes generadas, no como fotografías documentales.
+## Fotografías CC0
+
+Se obtuvieron mediante Openverse el 25 de septiembre de 2026 para el [estudio de marca](../../../10_recursos_visuales/marca-desde-cero/README.md), que ya las había tratado con la receta de imagen de D-073. La app usa esas versiones tratadas.
+
+| Archivo en la app | Título original | Autor | Sitio | Enlace |
+| --- | --- | --- | --- | --- |
+| `foto_libro.jpg` | Open book and a cup of tea | freestocks.org | Flickr | https://www.flickr.com/photos/135396164@N05/29364151550 |
+| `foto_escribir.jpg` | Writing Drawing | Green Chameleon | StockSnap | https://stocksnap.io/photo/writing-drawing-8Y0EDX4VP9 |
+| `foto_aprender.jpg` | Student School | Tamarcus Brown | StockSnap | https://stocksnap.io/photo/student-school-KBTSP7FFIY |
+| `foto_guitarra.jpg` | Ibanez guitar | freestocks.org | Flickr | https://www.flickr.com/photos/135396164@N05/22366640582 |
+| `foto_pan.jpg` | Homemade Bread | Matt Bango | StockSnap | https://stocksnap.io/photo/homemade-bread-F2ICILB1GL |
+| `foto_pintar.jpg` | Still Items | Tim Arterbury | StockSnap | https://stocksnap.io/photo/still-items-ATTVTHA1AW |
+
+## Fotografías generadas con IA
+
+Las otras quince fotografías de `drawable-nodpi` no son obras de terceros: salen de doce imágenes generadas con IA para el proyecto entre las versiones 2.3 y 2.6; tres de ellas se usan en dos encuadres. Hasta 2.7 se usaban como PNG; esos originales se conservan en [`assets-explorados/fotos-app-hasta-2.7`](../assets-explorados/fotos-app-hasta-2.7). En 2.8 se recortaron y trataron con la receta de imagen de D-073. Su procedencia se registra en [assets-explorados](../assets-explorados/README.md) y en la [trazabilidad del uso de IA](../../../00_gobernanza/trazabilidad-uso-ia-2026-09-23.md). Deben presentarse como imágenes generadas, no como fotografías documentales.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Versión 2.8
+
+- **Qué cambió:** Schibsted Grotesk pasa a ser la fuente de la app; se registran las seis fotografías CC0 con sus créditos y el tratamiento de las quince generadas con IA. Source Sans 3 queda como antecedente.
+- **Cómo estaba antes:** el registro solo nombraba Source Sans 3 y decía que todas las fotografías se habían generado con IA.
+- **Por qué:** la versión 2.8 cambió la fuente e incorporó fotografías de terceros; el repositorio y el APK son públicos.
 
 ### 2026-09-25 — Creación
 

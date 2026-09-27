@@ -12,6 +12,8 @@ import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
+import cl.udp.relevo.R
+import com.example.relevo.data.Participation
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RemoteSync
@@ -81,7 +83,7 @@ class AppUsageMonitorService : Service() {
   private fun startInForeground() {
     val notification =
       NotificationCompat.Builder(this, CHANNEL_ID)
-        .setSmallIcon(android.R.drawable.ic_popup_reminder)
+        .setSmallIcon(R.drawable.ic_stat_relevo)
         .setContentTitle("Relevo está contando el tiempo en las apps elegidas")
         .setContentText("El registro se detiene al desactivar el recordatorio.")
         .setContentIntent(openAppIntent())
@@ -219,7 +221,7 @@ class AppUsageMonitorService : Service() {
     getSystemService(NotificationManager::class.java)?.notify(
       STATUS_NOTIFICATION_ID,
       NotificationCompat.Builder(this, STATUS_CHANNEL_ID)
-        .setSmallIcon(android.R.drawable.ic_popup_reminder)
+        .setSmallIcon(R.drawable.ic_stat_relevo)
         .setContentTitle("Relevo dejó de contar")
         .setContentText("Falta el acceso a Tiempo de uso. Abre Relevo para autorizarlo o desactivar el recordatorio.")
         .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el acceso a Tiempo de uso. Abre Relevo para autorizarlo o desactivar el recordatorio."))
@@ -230,11 +232,8 @@ class AppUsageMonitorService : Service() {
     stopMonitoring()
   }
 
-  private fun hasCurrentConsent(): Boolean =
-    getSharedPreferences("relevo_experience", MODE_PRIVATE).let { preferences ->
-      preferences.getBoolean("academic_consent_accepted", false) &&
-        preferences.getString("academic_consent_version", null) == ResearchLogStore.CONSENT_VERSION
-    }
+  /** Cuenta si la persona participa o eligió usar Relevo sin participar; el registro decide aparte si guarda. */
+  private fun hasCurrentConsent(): Boolean = Participation.canUse(this)
 
   private fun openAppIntent(): PendingIntent = PendingIntent.getActivity(
     this,
@@ -273,7 +272,7 @@ class AppUsageMonitorService : Service() {
     val manager = getSystemService(NotificationManager::class.java) ?: return
     val generic = reminder.studyCondition == StudyCondition.PHONE.code.toString()
     val publicVersion = NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
-      .setSmallIcon(android.R.drawable.ic_popup_reminder)
+      .setSmallIcon(R.drawable.ic_stat_relevo)
       .setContentTitle("Relevo")
       .setContentText(GENERIC_SIGNAL_TEXT)
       .build()
@@ -286,7 +285,7 @@ class AppUsageMonitorService : Service() {
     manager.notify(
       SIGNAL_NOTIFICATION_ID,
       NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
-        .setSmallIcon(android.R.drawable.ic_popup_reminder)
+        .setSmallIcon(R.drawable.ic_stat_relevo)
         .setContentTitle(if (generic && audible) "Relevo" else reminder.activity)
         .setContentText(text)
         .setContentIntent(openAppIntent())

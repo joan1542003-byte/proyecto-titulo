@@ -47,7 +47,7 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 ## Estado actual — 24 de septiembre de 2026
 
-La aplicación Android vigente es **Relevo 2.6**, prototipo de depuración para Android 12 o posterior. Permite elegir varias aplicaciones cuyos tiempos se suman en un límite, preparar actividades, elegir la salida de sonido y probarla, consultar historial y gestionar consentimiento y eliminación. Compila y pasó diez pruebas unitarias; se revisaron algunas pantallas en emulador. Aún no se ha comprobado el ciclo completo, audio Bluetooth con hardware real, sincronización de eventos ni borrado extremo a extremo. No hay resultados de validación con participantes. Consulta el [README de Android](06_desarrollo_y_factibilidad/app-android/README.md) y la [auditoría del feedback docente](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
+La aplicación Android más reciente es **Relevo 2.8** (26 de septiembre), prototipo de depuración para Android 12 o posterior. Aplica el sistema de marca D-073 con fotografías y suma perfil, ruta de actividades, aviso de regreso opcional y uso sin participar. Conserva lo que la 2.7 implementó para la prueba de 21 días del protocolo 02: señal de unos 30 segundos, condición por semana y preguntas integradas. Compila y pasa 47 pruebas unitarias; en emulador, con datos ficticios, se recorrió el ciclo completo y los registros llegaron a Supabase. Falta probarla en un teléfono y un parlante reales y comprobar el borrado sin conexión. No hay resultados de validación con participantes. Consulta el [README de Android](06_desarrollo_y_factibilidad/app-android/README.md), [Android 2.8](06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md), [Android 2.7](06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y la [auditoría del feedback docente](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
 El proyecto sigue siendo **phygital**: la app organiza la intención y el testigo físico propuesto devuelve una señal en el lugar asociado a la actividad. El parlante Bluetooth actual es una salida de prueba, no el objeto final de Relevo. El valor diferencial —que una señal física y situada aporte más que una notificación— sigue pendiente de evaluación.
 
@@ -55,7 +55,7 @@ La fuente académica vigente es la [memoria v4](08_memoria/memoria-vigente-v4.md
 
 La investigación de usuarios se basa en ocho entrevistas presenciales realizadas en Santiago el 11 y 12 de junio de 2026, con personas de 19 a 27 años, reclutadas por referencias y con consentimiento oral. El análisis es cualitativo exploratorio, no representativo. La encuesta separada de 70 personas sigue pendiente de revisar y no integra todavía la evidencia vigente.
 
-Las prioridades inmediatas son alinear instrumentos y gobernanza con Android 2.6, comprobar el consentimiento y la eliminación de datos, ensayar el prototipo en un teléfono y parlante reales, y resolver la ruta de construcción física. El plan de cierre conserva como metas el 31 de octubre para el producto casi terminado, el 15 de noviembre para el cierre interno, el 2 de diciembre para la memoria y el 14–18 de diciembre para el examen; verificar su vigencia en el plan y en las Issues.
+Las prioridades inmediatas son elegir la versión de la app para la prueba de 21 días (2.7 o 2.8), ensayarla en un teléfono y un parlante reales, revisar el consentimiento y comprobar la eliminación de datos sin conexión, y resolver la ruta de construcción física. El plan de cierre conserva como metas el 31 de octubre para el producto casi terminado, el 15 de noviembre para el cierre interno, el 2 de diciembre para la memoria y el 14–18 de diciembre para el examen; verificar su vigencia en el plan y en las Issues.
 
 Para migrar el trabajo a Claude, abre el repositorio con `CLAUDE.md` disponible y sigue [`00_gobernanza/INICIO-CLAUDE.md`](00_gobernanza/INICIO-CLAUDE.md) y el [traspaso completo](00_gobernanza/traspaso-a-claude-2026-09-24.md). El estado de GitHub Issues debe consultarse directamente; no se verificó al preparar este corte.
 
@@ -107,6 +107,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Android 2.8
+
+- **Qué cambió:** el estado de la app describe la 2.8 y lo que conserva de la 2.7; las prioridades pasan a elegir la versión para la prueba y probarla en equipos reales.
+- **Cómo estaba antes:** describía Android 2.6, con diez pruebas unitarias, y pedía alinear los instrumentos con esa versión.
+- **Por qué:** la portada debe coincidir con la app compilada el 26 de septiembre.
 
 ### 2026-09-25 — Revisión completa de la memoria
 

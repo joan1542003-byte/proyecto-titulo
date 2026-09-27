@@ -27,6 +27,11 @@ data class UsageAfterRequest(val sessionId: String, val signalAt: Long, val pack
 class ResearchLogStore(context: Context) :
   SQLiteOpenHelper(context, "relevo_research.db", null, 5) {
 
+  private val appContext = context.applicationContext
+
+  /** Sin participar (A2) no se registra nada del estudio: la app funciona igual, solo en el teléfono. */
+  private fun recording(): Boolean = Participation.participating(appContext)
+
   override fun onCreate(db: SQLiteDatabase) {
     db.execSQL(
       """
@@ -101,7 +106,7 @@ class ResearchLogStore(context: Context) :
   )
 
   fun startSession(reminder: com.example.relevo.domain.Reminder) {
-    if (reminder.sessionId.isBlank()) return
+    if (reminder.sessionId.isBlank() || !recording()) return
     writableDatabase.insertWithOnConflict("sessions", null, ContentValues().apply {
       put("session_id", reminder.sessionId); put("participant_code", reminder.participantCode)
       put("activity", reminder.activity); put("first_step", reminder.howToStart); put("place", reminder.place)
@@ -178,7 +183,7 @@ class ResearchLogStore(context: Context) :
     targetPackage: String,
     valueSeconds: Int? = null,
   ) {
-    if (sessionId.isBlank() || participantCode.isBlank()) return
+    if (sessionId.isBlank() || participantCode.isBlank() || !recording()) return
     writableDatabase.insert(
       "events",
       null,
@@ -196,7 +201,7 @@ class ResearchLogStore(context: Context) :
   }
 
   fun recordAnswer(participantCode: String, question: String, answer: String, sessionId: String? = null) {
-    if (participantCode.isBlank()) return
+    if (participantCode.isBlank() || !recording()) return
     writableDatabase.insert("answers", null, ContentValues().apply {
       put("participant_code", participantCode); sessionId?.let { put("session_id", it) }
       put("question", question.take(40)); put("answer", answer.take(600))
@@ -236,6 +241,25 @@ class ResearchLogStore(context: Context) :
     "SELECT (SELECT COUNT(*) FROM events WHERE synced = ?) + (SELECT COUNT(*) FROM sessions WHERE synced = ?) + (SELECT COUNT(*) FROM answers WHERE synced = ?)",
     arrayOf(state.toString(), state.toString(), state.toString()),
   ).use { cursor -> if (cursor.moveToFirst()) cursor.getInt(0) else 0 }
+
+  /** Todo lo registrado en el teléfono, para «Descargar mis datos». */
+  fun exportJson(): JSONObject = JSONObject().apply {
+    listOf("sessions" to "started_at", "events" to "created_at", "answers" to "created_at").forEach { (table, order) ->
+      put(table, readableDatabase.query(table, null, null, null, null, null, order).use { cursor ->
+        JSONArray().apply {
+          while (cursor.moveToNext()) put(JSONObject().apply {
+            cursor.columnNames.forEachIndexed { index, name ->
+              when {
+                cursor.isNull(index) -> put(name, JSONObject.NULL)
+                cursor.getType(index) == Cursor.FIELD_TYPE_INTEGER -> put(name, cursor.getLong(index))
+                else -> put(name, cursor.getString(index))
+              }
+            }
+          })
+        }
+      })
+    }
+  }
 
   fun clearAll() { writableDatabase.run { delete("events", null, null); delete("sessions", null, null); delete("answers", null, null) } }
 

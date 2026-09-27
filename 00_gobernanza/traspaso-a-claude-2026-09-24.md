@@ -138,6 +138,14 @@ Estos cambios se hicieron después del corte y están en la rama `claude/wizardl
 
   También explica y corrige por qué la base tenía 0 eventos. Se verificó en emulador con datos ficticios; faltan el teléfono real, el parlante y el borrado sin conexión. Detalle en [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y D-080.
 
+## Actualización del 26 de septiembre de 2026
+
+En la rama `android-2.7`, a pedido del autor:
+
+- **Android 2.8:** aplica el sistema de marca D-073 con fotografías tratadas, suma perfil, ruta de actividades, aviso de regreso opcional, apariencia y uso sin participar, y completa las pantallas del diseño escrito. La lógica de la prueba de 21 días no cambia. Compila y pasan 47 pruebas unitarias; se recorrió en emulador con datos ficticios. Detalle en [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) y D-082.
+- **Decisión pendiente del autor:** usar 2.8 o 2.7 en la prueba de 21 días; D-073 sigue siendo una propuesta para la marca completa.
+- **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
+
 ## Seguridad, privacidad y GitHub
 
 El README informó que el repositorio fue público al 9 de septiembre de 2026; esa visibilidad debe verificarse antes de cargar material nuevo. No subir notas personales, consentimientos firmados, nombres, contactos de participantes, registros brutos identificables ni archivos locales que no estén preparados para difusión. Mantener solo corpus anonimizado autorizado. No guardar credenciales, `.env`, `local.properties`, claves privadas o copias de bases de datos. El archivo `local.properties.example` es una plantilla, no una credencial.
@@ -149,6 +157,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Android 2.8
+
+- **Qué cambió:** se añadió la actualización del 26 de septiembre con la app 2.8 y la decisión pendiente entre 2.8 y 2.7.
+- **Cómo estaba antes:** el traspaso llegaba hasta Android 2.7.
+- **Por qué:** la próxima sesión debe partir del estado real de la app.
 
 ### 2026-09-25 — Android 2.7
 

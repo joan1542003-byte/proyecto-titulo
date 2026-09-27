@@ -35,6 +35,8 @@ data class Reminder(
   val signalAt: Long = 0L,
   /** La señal ya no suena: terminó sola a los 30 s, se perdió la salida o no pudo reproducirse. */
   val signalEnded: Boolean = false,
+  /** Se usa sin participar en la prueba (A2): funciona igual, sin código ni registro del estudio. */
+  val localOnly: Boolean = false,
 ) {
   val selectedApps: List<TrackedApp>
     get() = targetApps.ifEmpty { if (targetPackage.isNotBlank()) listOf(TrackedApp(targetPackage, targetAppLabel)) else emptyList() }
@@ -48,8 +50,7 @@ data class Reminder(
         selectedApps.isNotEmpty() &&
         selectedApps.all { it.packageName.isNotBlank() && it.label.isNotBlank() } &&
         requiredUsageSeconds > 0 &&
-        participantCode.isNotBlank() &&
-        consentAccepted
+        ((participantCode.isNotBlank() && consentAccepted) || localOnly)
 
   val hasRequiredContent: Boolean
     get() = hasPreparedContent && place.isNotBlank()

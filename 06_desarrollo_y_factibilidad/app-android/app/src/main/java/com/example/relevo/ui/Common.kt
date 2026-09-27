@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.asImageBitmap
@@ -21,55 +22,134 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.example.relevo.data.CustomActivity
+import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.SyncStatus
+import com.example.relevo.domain.RouteTrack
 import com.example.relevo.domain.StudyCondition
 import com.example.relevo.ui.components.KitIcon
+import com.example.relevo.ui.components.Photo
+import com.example.relevo.ui.components.Picture
+import java.text.Normalizer
+import java.time.DayOfWeek
 import java.time.Instant
+import java.time.LocalDate
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+import java.time.temporal.TemporalAdjusters
 import java.util.Locale
 
+private val spanish: Locale = Locale.forLanguageTag("es")
+
 /** Idea de actividad: un atajo editable, nunca una categoría cerrada. El nombre completa «Vuelve a ___.». */
-data class ActivityIdea(val activity: String, val start: String, val place: String, val icon: KitIcon)
+data class ActivityIdea(val activity: String, val start: String, val place: String, val icon: KitIcon, val photo: Photo? = null) {
+  val picture: Picture get() = photo?.let { Picture.OfPhoto(it) } ?: Picture.OfIcon(icon)
+}
 
 internal val activityIdeas = listOf(
-  ActivityIdea("Leer", "Abrir el libro", "Junto al libro", KitIcon.LEER),
-  ActivityIdea("Caminar", "Ponerme las zapatillas", "Junto a las zapatillas", KitIcon.CAMINAR),
-  ActivityIdea("Hacer ejercicio", "Preparar una serie", "Junto a las pesas", KitIcon.EJERCICIO),
-  ActivityIdea("Estudiar", "Abrir mis apuntes", "En el escritorio", KitIcon.ESTUDIAR),
-  ActivityIdea("Dibujar", "Sacar el cuaderno y un lápiz", "En el escritorio", KitIcon.DIBUJAR),
-  ActivityIdea("Tocar un instrumento", "Sacar la guitarra del estuche", "Junto a la guitarra", KitIcon.GUITARRA),
-  ActivityIdea("Cocinar", "Reunir los ingredientes", "En la cocina", KitIcon.COCINAR),
-  ActivityIdea("Ordenar", "Despejar una superficie", "En el lugar que quiero ordenar", KitIcon.ORDENAR),
+  ActivityIdea("Leer", "Abrir el libro", "Junto al libro", KitIcon.LEER, Photo.LEER),
+  ActivityIdea("Caminar", "Ponerme las zapatillas", "Junto a las zapatillas", KitIcon.CAMINAR, Photo.CAMINAR),
+  ActivityIdea("Hacer ejercicio", "Preparar una serie", "Junto a las pesas", KitIcon.EJERCICIO, Photo.EJERCICIO),
+  ActivityIdea("Estudiar", "Abrir mis apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR),
+  ActivityIdea("Dibujar", "Sacar el cuaderno y un lápiz", "En el escritorio", KitIcon.DIBUJAR, Photo.DIBUJAR),
+  ActivityIdea("Tocar un instrumento", "Sacar la guitarra del estuche", "Junto a la guitarra", KitIcon.GUITARRA, Photo.GUITARRA),
+  ActivityIdea("Cocinar", "Reunir los ingredientes", "En la cocina", KitIcon.COCINAR, Photo.COCINAR),
+  ActivityIdea("Escribir", "Abrir el cuaderno", "En el escritorio", KitIcon.ESCRIBIR, Photo.ESCRIBIR),
+  ActivityIdea("Ordenar", "Despejar una superficie", "En el lugar que quiero ordenar", KitIcon.ORDENAR, Photo.ORDENAR),
+  ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la correa", KitIcon.SALIR, Photo.PERRO),
+  ActivityIdea("Hacer manualidades", "Preparar los materiales", "En la mesa de trabajo", KitIcon.MANUALIDADES, Photo.MANUALIDADES),
+  ActivityIdea("Pintar", "Preparar las acuarelas", "En la mesa", KitIcon.PINTAR, Photo.PINTAR),
   ActivityIdea("Cuidar las plantas", "Llenar la regadera", "Junto a las plantas", KitIcon.PLANTAS),
-  ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la correa", KitIcon.SALIR),
-  ActivityIdea("Hacer manualidades", "Preparar los materiales", "En la mesa de trabajo", KitIcon.MANUALIDADES),
   ActivityIdea("Dormir", "Dejar el teléfono cargando lejos", "En el velador", KitIcon.DORMIR),
 )
 
-/** Iconos de las actividades propias guardadas antes de 2.8, con sus claves antiguas. */
-internal fun customIconOf(key: String): KitIcon = when (key) {
-  "walk" -> KitIcon.CAMINAR
-  "train" -> KitIcon.EJERCICIO
-  "read" -> KitIcon.LEER
-  "draw" -> KitIcon.DIBUJAR
-  "music" -> KitIcon.MUSICA
-  "cook" -> KitIcon.COCINAR
-  "pause", "star" -> KitIcon.ACTIVIDAD
-  else -> runCatching { KitIcon.valueOf(key) }.getOrDefault(KitIcon.ACTIVIDAD)
+/** Fotos e iconos de los intereses de P3 y de sus rutas. */
+internal fun interestPhoto(id: String): Photo? = when (id) {
+  "mover" -> Photo.SALIDA
+  "leer" -> Photo.LIBRO
+  "crear" -> Photo.PINTAR
+  "cuidar" -> Photo.PAN
+  "aprender" -> Photo.APRENDER
+  else -> null
 }
 
-internal fun iconForActivity(name: String, custom: List<CustomActivity>): KitIcon =
-  activityIdeas.firstOrNull { it.activity.equals(name, ignoreCase = true) }?.icon
-    ?: custom.firstOrNull { it.name.equals(name, ignoreCase = true) }?.let { customIconOf(it.icon) }
+internal fun interestIcon(id: String): KitIcon = when (id) {
+  "mover" -> KitIcon.CAMINAR
+  "leer" -> KitIcon.LEER
+  "crear" -> KitIcon.DIBUJAR
+  "cuidar" -> KitIcon.PLANTAS
+  "aprender" -> KitIcon.ESTUDIAR
+  else -> KitIcon.ACTIVIDAD
+}
+
+private fun plain(text: String): String =
+  Normalizer.normalize(text.lowercase(spanish), Normalizer.Form.NFD).replace(Regex("\\p{Mn}+"), "")
+
+/** Palabras que sugieren una foto y un icono cuando la persona escribe su propia actividad. */
+private val keywords: List<Triple<List<String>, Photo?, KitIcon>> = listOf(
+  Triple(listOf("perro", "correa"), Photo.PERRO, KitIcon.SALIR),
+  Triple(listOf("camin", "trot", "corr", "zapatill", "pasear"), Photo.CAMINAR, KitIcon.CAMINAR),
+  Triple(listOf("bici"), null, KitIcon.BICICLETA),
+  Triple(listOf("estir", "yoga"), null, KitIcon.ESTIRAR),
+  Triple(listOf("ejercicio", "entren", "pesas", "gimnasio", "serie"), Photo.EJERCICIO, KitIcon.EJERCICIO),
+  Triple(listOf("leer", "libro", "capitulo", "pagina", "lectura", "genero"), Photo.LEER, KitIcon.LEER),
+  Triple(listOf("dibuj", "boceto"), Photo.DIBUJAR, KitIcon.DIBUJAR),
+  Triple(listOf("pint", "acuarel", "tecnica"), Photo.PINTAR, KitIcon.PINTAR),
+  Triple(listOf("guitarra", "instrumento", "tocar", "piano", "ukelele"), Photo.GUITARRA, KitIcon.GUITARRA),
+  Triple(listOf("musica", "cantar"), null, KitIcon.MUSICA),
+  Triple(listOf("cocin", "ingrediente", "receta", "hornear", "pan"), Photo.COCINAR, KitIcon.COCINAR),
+  Triple(listOf("orden", "cajon", "limpi", "doblar"), Photo.ORDENAR, KitIcon.ORDENAR),
+  Triple(listOf("planta", "regar", "regadera", "jardin"), null, KitIcon.PLANTAS),
+  Triple(listOf("dormir", "acostar", "descansar"), null, KitIcon.DORMIR),
+  Triple(listOf("escrib", "diario", "carta"), Photo.ESCRIBIR, KitIcon.ESCRIBIR),
+  Triple(listOf("llamar"), null, KitIcon.LLAMAR),
+  Triple(listOf("estudi", "apunte", "leccion", "practic", "aprend", "repasar"), Photo.ESTUDIAR, KitIcon.ESTUDIAR),
+  Triple(listOf("manualidad", "tejer", "coser", "armar"), Photo.MANUALIDADES, KitIcon.MANUALIDADES),
+  Triple(listOf("foto"), null, KitIcon.FOTOGRAFIA),
+  Triple(listOf("juego de mesa", "ajedrez"), null, KitIcon.JUEGO_DE_MESA),
+)
+
+/**
+ * Imagen de una actividad: la de la idea, la que eligió la persona para su actividad propia o una
+ * que sugieren sus palabras. Si ninguna calza, el icono de actividad.
+ */
+internal fun pictureForActivity(name: String, custom: List<CustomActivity>, routes: List<RouteTrack> = emptyList()): Picture {
+  val trimmed = name.trim()
+  activityIdeas.firstOrNull { it.activity.equals(trimmed, ignoreCase = true) }?.let { return it.picture }
+  custom.firstOrNull { it.name.equals(trimmed, ignoreCase = true) }?.let { activity -> Picture.parse(activity.icon)?.let { return it } }
+  // Un paso de la ruta lleva la foto de su interés, la misma que en Inicio y en Ruta.
+  routes.firstOrNull { track -> track.steps.any { it.activity.equals(trimmed, ignoreCase = true) } }
+    ?.let { track -> interestPhoto(track.interest) }?.let { return Picture.OfPhoto(it) }
+  val words = plain(trimmed)
+  keywords.firstOrNull { (keys, _, _) -> keys.any { words.contains(it) } }?.let { (_, photo, icon) ->
+    return photo?.let { Picture.OfPhoto(it) } ?: Picture.OfIcon(icon)
+  }
+  return Picture.OfIcon(KitIcon.ACTIVIDAD)
+}
+
+/** Rutas de la persona, para que cada pantalla muestre la misma foto de un paso. */
+internal val LocalRoutes = staticCompositionLocalOf<List<RouteTrack>> { emptyList() }
+
+@Composable
+internal fun activityPicture(name: String, custom: List<CustomActivity>): Picture = pictureForActivity(name, custom, LocalRoutes.current)
+
+internal fun iconForActivity(name: String, custom: List<CustomActivity>): KitIcon {
+  val trimmed = name.trim()
+  activityIdeas.firstOrNull { it.activity.equals(trimmed, ignoreCase = true) }?.let { return it.icon }
+  val words = plain(trimmed)
+  return keywords.firstOrNull { (keys, _, _) -> keys.any { words.contains(it) } }?.third
+    ?: (custom.firstOrNull { it.name.equals(trimmed, ignoreCase = true) }?.let { (Picture.parse(it.icon) as? Picture.OfIcon)?.icon })
     ?: KitIcon.ACTIVIDAD
+}
+
+/** Clave estable para que la foto de una actividad viaje entre pantallas. */
+internal fun photoKey(source: String, name: String) = "$source:${name.trim().lowercase(spanish)}"
 
 /** «Junto a las zapatillas» → «junto a las zapatillas»; un lugar sin preposición va entre comillas. */
 internal fun placePhrase(place: String): String {
   val trimmed = place.trim().trimEnd('.')
   if (trimmed.isEmpty()) return "donde lo dejaste"
-  val lower = trimmed.replaceFirstChar { it.lowercase(Locale.forLanguageTag("es")) }
-  val prepositions = listOf("junto", "en ", "sobre", "al ", "a ", "cerca", "bajo", "dentro", "frente", "detrás", "encima", "debajo", "entre")
+  val lower = trimmed.replaceFirstChar { it.lowercase(spanish) }
+  val prepositions = listOf("junto", "en ", "sobre", "al ", "a ", "cerca", "bajo", "dentro", "frente", "detrás", "encima", "debajo", "entre", "donde")
   return if (prepositions.any { lower.startsWith(it) }) lower else "en «$trimmed»"
 }
 
@@ -80,7 +160,7 @@ internal fun AppIcon(packageName: String, size: Dp = 32.dp) {
   val bitmap = remember(packageName) {
     runCatching { context.packageManager.getApplicationIcon(packageName).toBitmap(96, 96).asImageBitmap() }.getOrNull()
   }
-  if (bitmap != null) Image(bitmap, contentDescription = null, modifier = Modifier.size(size).clip(RoundedCornerShape(8.dp)))
+  if (bitmap != null) Image(bitmap, contentDescription = null, modifier = Modifier.size(size).clip(RoundedCornerShape(size * 0.25f)))
 }
 
 internal fun hasNotificationPermission(context: Context): Boolean =
@@ -104,10 +184,14 @@ internal fun syncStatusText(status: SyncStatus): String = buildString {
   status.lastError?.let { append(" Aviso técnico: $it") }
 }
 
-private val momentFormat = DateTimeFormatter.ofPattern("d MMM, HH:mm", Locale.forLanguageTag("es"))
+private val momentFormat = DateTimeFormatter.ofPattern("d MMM, HH:mm", spanish)
+private val todayFormat = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM", spanish)
 
 internal fun formatMoment(epochMillis: Long): String =
   Instant.ofEpochMilli(epochMillis).atZone(ZoneId.systemDefault()).format(momentFormat)
+
+/** «jueves 25 de septiembre», para el encabezado de Inicio. */
+internal fun todayLabel(today: LocalDate = LocalDate.now()): String = today.format(todayFormat)
 
 internal fun outcomeLabel(outcome: String): String? = when (outcome) {
   "started" -> "Dijiste que empezaste"
@@ -116,12 +200,31 @@ internal fun outcomeLabel(outcome: String): String? = when (outcome) {
   else -> null
 }
 
+internal fun outcomeIcon(outcome: String): KitIcon = when (outcome) {
+  "started" -> KitIcon.COMENCE
+  "later" -> KitIcon.DESPUES
+  "changed" -> KitIcon.CAMBIE
+  else -> KitIcon.HISTORIAL
+}
+
 /** Reconocimiento breve tras la respuesta (B5). Las tres pesan lo mismo; omitir no recibe mensaje. */
 internal fun acknowledgementFor(outcome: String): String? = when (outcome) {
   "started" -> "Gracias por contarlo."
   "later" -> "Queda guardado. Puedes prepararlo cuando quieras."
   "changed" -> "Está bien. Puedes elegir otra actividad cuando quieras."
   else -> null
+}
+
+/**
+ * «Tu semana» (S1): solo hechos de esta semana, de lunes a hoy. Sin metas ni comparación con
+ * semanas anteriores.
+ */
+internal data class WeekFacts(val prepared: Int, val started: Int)
+
+internal fun weekFacts(history: List<HistoryEntry>, today: LocalDate = LocalDate.now()): WeekFacts {
+  val monday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
+  val thisWeek = history.filter { !Instant.ofEpochMilli(it.completedAt).atZone(ZoneId.systemDefault()).toLocalDate().isBefore(monday) }
+  return WeekFacts(prepared = thisWeek.size, started = thisWeek.count { it.outcome == "started" })
 }
 
 internal fun conditionName(condition: StudyCondition): String = when (condition) {
@@ -141,4 +244,10 @@ internal fun conditionDetail(condition: StudyCondition): String? = when (conditi
   StudyCondition.NEUTRAL -> "Un lugar visible, a más de un metro de lo que necesitas para empezar y fuera de tu camino."
   StudyCondition.PHONE -> "No necesitas el parlante. La notificación dirá solo «Tu intención está disponible»."
   StudyCondition.SITUATED -> null
+}
+
+internal fun conditionIcon(condition: StudyCondition): KitIcon = when (condition) {
+  StudyCondition.SITUATED -> KitIcon.LUGAR
+  StudyCondition.NEUTRAL -> KitIcon.PARLANTE
+  StudyCondition.PHONE -> KitIcon.TELEFONO
 }

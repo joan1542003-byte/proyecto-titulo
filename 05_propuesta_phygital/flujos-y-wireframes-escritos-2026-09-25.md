@@ -1,6 +1,6 @@
 # Flujos y wireframes escritos: perfil, ruta, regreso y prueba de 21 días
 
-**Estado:** diseño escrito para trabajar cuando el autor lo pida. La prueba de 21 días, la señal de 30 segundos y la ausencia de luz ya están en la memoria, el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) y el consentimiento (D-070, D-078 y D-079). Perfil, ruta y regreso siguen sin implementar. Si se programan antes de la prueba, deben estar iguales en las tres semanas y no cambiar durante ella.
+**Estado:** diseño escrito para trabajar cuando el autor lo pida. La prueba de 21 días, la señal de 30 segundos y la ausencia de luz ya están en la memoria, el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) y el consentimiento (D-070, D-078 y D-079). Perfil, ruta y regreso están implementados en [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) (26 de septiembre), sin probar con personas. Si la prueba usa esa versión, deben estar iguales en las tres semanas y no cambiar durante ella.
 **Origen:** respuesta del autor del 25 de septiembre a las [anotaciones de clase](../01_contexto_y_fuentes/anotaciones-clase-originales-2026-09-23.md); decisiones D-074 a D-077 del [registro](../09_decisiones/registro-de-decisiones.md).
 **Base:** app Android 2.6, [kit de diseño D-073](../10_recursos_visuales/marca-a-tiempo/kit-relevo-2026-09-25.html), [revisión sobre hábitos y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md) y entrevistas P1–P8.
 
@@ -394,11 +394,11 @@ El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La
 
 ## 9. Qué cambiará cuando se implemente
 
-- **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono. *Actualización del 25 de septiembre:* [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) implementa B4 con la señal de 30 segundos, B5 con las preguntas de la prueba y los reconocimientos, T1, T2 (texto pendiente de revisión, D-080), V1 sin el nombre, E1, E2, los botones con verbo y el consentimiento de 21 días. Siguen pendientes A1, la opción de no participar de A2, P1 a P3, R1 a R3, V2, S1 y S2.
+- **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono. *Actualización del 25 de septiembre:* [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) implementa B4 con la señal de 30 segundos, B5 con las preguntas de la prueba y los reconocimientos, T1, T2 (texto pendiente de revisión, D-080), V1 sin el nombre, E1, E2, los botones con verbo y el consentimiento de 21 días. Siguen pendientes A1, la opción de no participar de A2, P1 a P3, R1 a R3, V2, S1 y S2. *Actualización del 26 de septiembre:* [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) implementa todas esas pantallas con el sistema D-073. Se aparta del diseño escrito en dos puntos, registrados en D-082: P2 ofrece fotos además de iconos, y la oferta R3 no se repite si la persona decide quedarse en el paso. «No participar» sigue A2: la app funciona igual y no registra ni envía datos de investigación. Falta el caso de V1 «Tu relevo anterior terminó sin sonar».
 - **Consentimiento:** 21 días, preguntas integradas y nombre local; se mantiene el 30 de diciembre de 2026 como plazo de eliminación.
 - **Protocolo y pauta:** prueba de 21 días, preguntas por día, variante de constancia elegida.
 - **Memoria:** la prueba de 21 días ya está en los capítulos 10 y 13; queda por decidir si el criterio 4 menciona el reconocimiento y la ruta.
-- **Kit:** pantallas de perfil, ruta y regreso con el sistema D-073.
+- **Kit:** pantallas de perfil, ruta y regreso con el sistema D-073. En la app ya existen (2.8); el kit aún no las incluye.
 
 ## Referencias
 
@@ -415,6 +415,12 @@ Silverman, J., & Barasch, A. (2023). On or off track: How (broken) streaks affec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Estado en Android 2.8
+
+- **Qué cambió:** el estado y la sección 9 indican que Android 2.8 implementa A1, A2 con «No participar», P1 a P3, R1 a R3, V2, S1 y S2, y dónde se aparta del diseño (D-082).
+- **Cómo estaba antes:** esas pantallas figuraban como pendientes.
+- **Por qué:** el autor pidió completar las pantallas que faltaban al rediseñar la app con D-073.
 
 ### 2026-09-25 — Estado en Android 2.7
 

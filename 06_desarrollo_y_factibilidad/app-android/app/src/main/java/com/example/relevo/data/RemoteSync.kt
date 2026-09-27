@@ -19,6 +19,7 @@ data class SyncStatus(
 )
 
 class RemoteSync(context: Context, private val store: ResearchLogStore) {
+  private val appContext = context.applicationContext
   private val preferences = context.getSharedPreferences("relevo_remote", Context.MODE_PRIVATE)
   private val baseUrl = BuildConfig.SUPABASE_URL.trimEnd('/')
   private val apiKey = BuildConfig.SUPABASE_PUBLISHABLE_KEY
@@ -41,6 +42,8 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
    */
   fun syncPending(): Boolean = synchronized(LOCK) {
     if (preferences.getBoolean("deleting", false)) return false
+    // Sin participar no se abre una sesión anónima con la base (A2).
+    if (!Participation.participating(appContext)) return false
     if (!configured) return false
     preferences.edit().putBoolean("ever_configured", true).apply()
     var token = accessToken(allowNewUser = true) ?: return fail("No se pudo abrir la sesión con la base remota.")

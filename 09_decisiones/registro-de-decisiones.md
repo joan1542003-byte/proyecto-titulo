@@ -750,7 +750,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-073 — Vuelve a lo que querías hacer (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072. A pedido del autor, la app la aplica desde Android 2.8 (26 de septiembre).
 - **Decisión propuesta:**
   - *Verbal*: firma «Vuelve a lo que querías hacer», elegida por el autor (antes, «Lo que querías hacer, a tiempo»); principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
   - *Recurso central*: el renglón («Vuelve a \_\_\_\_.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
@@ -786,12 +786,13 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - 97 iconos (antes 40) en nueve grupos, con actividades, perfil, opinión y ayuda; las estrellas solo sirven para opinar sobre la app, nunca para calificar a la persona;
   - todos con extremos redondeados, retícula con formas base y tres pesos medidos sobre Schibsted Grotesk, según los criterios de Apple (s. f.) para iconos de interfaz;
   - un kit con componentes, dieciséis pantallas de la app y diez plantillas de presentación.
+- **Aplicación en la app (2026-09-26):** el autor pidió ajustar la app a estas directrices y mejorar su diseño. Android 2.8 usa Schibsted Grotesk, el color, las formas, los iconos, el renglón con dos voces, el movimiento y la fotografía tratada con la receta. La firma en la memoria, la guía de comunicación y la sesión fotográfica siguen pendientes de su decisión. Detalle en [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md).
 - **Documentación:** [marca «Vuelve a lo que querías hacer»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
 
 ## D-074 — Acompañar la continuidad sin patrones oscuros
 
 - **Fecha:** 2026-09-25.
-- **Estado:** decisión del autor; diseño escrito, implementación pendiente.
+- **Estado:** decisión del autor; implementada en Android 2.8 (reconocimiento, ruta, regreso V1 y V2, «Tu semana» y constancia elegida), sin probar con personas.
 - **Decisión:** no adoptar el refuerzo tal como se planteó en clase (rachas, felicitar por usar menos una app, cuotas de uso). Acompañar la continuidad con reconocimiento de hechos conocidos, una ruta de actividades elegida por la persona, un regreso amable tras varios días y resúmenes opcionales. La «constancia elegida» (frecuencia que fija la persona, sin pérdida) se prueba como variante.
 - **Fundamento:** memoria (capítulos 6 y 9), [revisión sobre hábitos y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md), apoyo a la autonomía (Ryan & Deci, 2000) y patrones oscuros (Gray et al., 2018; Mathur et al., 2019).
 - **Condición de revisión:** que la prueba muestre presión, intrusión o falta de utilidad.
@@ -809,7 +810,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-076 — Perfil con intereses y ruta de actividades
 
 - **Fecha:** 2026-09-25.
-- **Estado:** decisión del autor; diseño escrito, implementación pendiente.
+- **Estado:** decisión del autor; implementada en Android 2.8, sin probar con personas (detalles en D-082).
 - **Decisión:** la app tiene perfil con nombre, una imagen prehecha e intereses. Los intereses proponen una ruta de pasos editables por actividad. El nombre y la imagen no salen del teléfono.
 - **Límite:** los intereses no son perfiles fijos de personas; las entrevistas respaldan actividades concretas, no tipos de usuario.
 - **Usuario:** se adopta la reformulación «Relevo está pensado para quien está dispuesto a preparar el comienzo de su actividad; si esa preparación resulta demasiado costosa, es un hallazgo sobre el diseño, no sobre la persona». Reemplaza la anotación de clase «quien no lo deja junto a las zapatillas no es el usuario».
@@ -818,7 +819,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-077 — Privacidad y bienvenida breves; botones con verbo
 
 - **Fecha:** 2026-09-25.
-- **Estado:** decisión del autor; textos propuestos, implementación pendiente.
+- **Estado:** decisión del autor; botones con verbo desde Android 2.7; bienvenida y participación breves desde 2.8.
 - **Decisión:** la bienvenida y la política de privacidad se acortan; los datos se borran cuando la persona lo pide; las acciones llevan verbo y los destinos de navegación, sustantivo.
 - **Conservación:** los datos se borran cuando la persona lo pide y, como máximo, el 30 de diciembre de 2026, como en el consentimiento vigente (confirmado por el autor el mismo día).
 - **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
@@ -868,7 +869,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** ampliación de la prueba o nueva indicación docente.
 - **Documentación:** [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md).
 
+## D-082 — Cómo implementa Android 2.8 el perfil, la ruta y el regreso (propuesta de implementación)
+
+- **Fecha:** 2026-09-26.
+- **Estado:** implementado en Android 2.8; pendiente de revisión del autor.
+- **Decisión:**
+  - *No participar*: la app se puede usar sin participar en la prueba. Funciona igual, pero no registra ni envía datos de investigación; la persona puede sumarse después desde Privacidad y datos.
+  - *Imagen del perfil*: además de 12 iconos del kit, 16 fotos de la app. No se suben fotos propias.
+  - *Siguiente paso (R3)*: se ofrece a la tercera respuesta «Comencé» en el mismo paso. Si la persona elige quedarse, no se vuelve a ofrecer para ese paso.
+  - *Aviso de regreso (V2)*: Android revisa una vez al día y avisa si pasaron siete días sin abrir la app y desde el último aviso. La notificación es silenciosa y en la pantalla de bloqueo no muestra la actividad. «Preparar» abre la preparación con el último relevo o desde el comienzo.
+  - *Respuestas opcionales*: la opinión sobre la app, los reportes de problemas y «¿Qué te ayudó?» se guardan en `relevo_answers`, solo para quien participa.
+  - *Fotografías*: 15 a partir de las imágenes generadas con IA, tratadas con la receta de D-073, y 6 con licencia CC0. Todas son provisionales hasta la sesión propia.
+  - *Apariencia*: tema claro, oscuro o del sistema, y texto grande.
+- **Fundamento:** el autor pidió aplicar D-073, recuperar las fotografías, permitir más personalización y completar las pantallas del diseño escrito (D-074, D-076 y D-077), que no fijaba estos detalles.
+- **Alternativas:** solo iconos en P2, como en el diseño escrito; ofrecer R3 cada vez que se cumpla el umbral; V2 a una hora fija, que exigiría el permiso de alarmas exactas.
+- **Condición de revisión:** revisión del autor. Si la prueba usa 2.8, perfil, ruta y avisos no deben cambiar durante las tres semanas.
+- **Documentación:** [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Android 2.8 y D-082
+
+- **Qué cambió:** D-073 registra que la app la aplica a pedido del autor; D-074, D-076 y D-077 pasan a implementadas; se registra D-082 con las decisiones de implementación de la 2.8 que el autor debe revisar.
+- **Cómo estaba antes:** D-073 no se aplicaba en la app, y D-074, D-076 y D-077 figuraban con implementación pendiente.
+- **Por qué:** el autor pidió ajustar la app a las directrices nuevas, recuperar las fotografías y completar las pantallas del diseño escrito.
 
 ### 2026-09-25 — D-081 y ajuste de D-080
 

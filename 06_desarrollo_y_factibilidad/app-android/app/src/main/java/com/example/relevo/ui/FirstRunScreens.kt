@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -25,64 +27,82 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import com.example.relevo.theme.Relevo
+import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.CheckMark
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Notice
+import com.example.relevo.ui.components.Photo
+import com.example.relevo.ui.components.PhotoImage
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.RelevoScreen
+import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.SectionGap
+import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StatusChip
 import com.example.relevo.ui.components.Wordmark
+import com.example.relevo.ui.components.appear
 
-/** A1. La firma y los tres pasos, con los iconos del kit. No pide datos. */
+/**
+ * A1. La foto del comienzo (zapatillas y el parlante junto a la puerta), la firma que se escribe sola
+ * y tres pasos con los iconos del kit. No pide datos.
+ */
 @Composable
 internal fun WelcomeScreen(onStart: () -> Unit) {
   RelevoScreen(
-    leading = { Wordmark(height = 24.dp) },
+    leading = { Wordmark(height = 22.dp) },
     bottom = { RelevoButton("Empezar", onStart) },
   ) {
-    Spacer(Modifier.heightIn(min = 36.dp))
-    Text("Vuelve a lo que querías hacer.", style = Relevo.type.largeTitle.copy(fontSize = Relevo.type.signature.fontSize, lineHeight = Relevo.type.signature.lineHeight), color = Relevo.colors.ink)
-    Spacer(Modifier.heightIn(min = 16.dp))
-    Text("Anota algo que quieres hacer. Relevo te lo recuerda mientras todavía puedes hacerlo.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(4.dp))
+    PhotoImage(Photo.PUERTA, Modifier.fillMaxWidth().aspectRatio(1.05f).clip(Relevo.panelShape).appear(0), describe = true)
+    Spacer(Modifier.height(24.dp))
+    Signature("lo que querías hacer", phraseColor = Relevo.colors.ink)
+    Spacer(Modifier.height(14.dp))
+    Text("Anota algo que quieres hacer. Relevo te lo recuerda mientras todavía puedes hacerlo. Tú decides qué hacer después.",
+      style = Relevo.type.body, color = Relevo.colors.graphite, modifier = Modifier.appear(2))
     SectionGap()
-    listOf(
-      KitIcon.ACTIVIDAD to "Escribes qué quieres hacer y cómo empieza.",
-      KitIcon.LUGAR to "Dejas el parlante donde empieza.",
-      KitIcon.PROBAR to "Suena ahí después del tiempo que elijas en el teléfono.",
-      KitIcon.DECISION to "Tú decides qué hacer después.",
-    ).forEach { (icon, text) ->
-      Row(Modifier.fillMaxWidth().padding(vertical = 10.dp), verticalAlignment = Alignment.Top) {
-        RelevoIcon(icon, size = 28.dp)
-        Spacer(Modifier.width(16.dp))
-        Text(text, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
+    Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
+      listOf(
+        KitIcon.ACTIVIDAD to "Escribes algo que quieras hacer y cómo empieza.",
+        KitIcon.LUGAR to "Dejas el objeto donde empieza.",
+        KitIcon.PROBAR to "Suena ahí después del tiempo que elijas en el teléfono.",
+      ).forEachIndexed { index, (icon, text) ->
+        Row(Modifier.fillMaxWidth().appear(3 + index), verticalAlignment = Alignment.CenterVertically) {
+          RelevoIcon(icon, size = 28.dp)
+          Spacer(Modifier.width(16.dp))
+          Text(text, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
+        }
       }
     }
   }
 }
 
-/** A2. Versión breve arriba y, a pedido, el detalle de la hoja de consentimiento de 21 días. */
+/**
+ * A2. Versión breve arriba y, a pedido, el detalle de la hoja de consentimiento de 21 días. «No
+ * participar» no cierra la app: se puede usar igual, solo en el teléfono.
+ */
 @Composable
 internal fun ConsentScreen(
   remoteConfigured: Boolean,
   deletionPending: Boolean,
   onAccept: () -> Unit,
-  onDecline: () -> Unit,
+  onUseLocally: () -> Unit,
   onPrivacy: () -> Unit,
 ) {
   var checked by rememberSaveable { mutableStateOf(false) }
   var details by rememberSaveable { mutableStateOf(false) }
+  var declining by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(
     title = "Participar en la prueba",
     bottom = {
@@ -96,7 +116,7 @@ internal fun ConsentScreen(
         Text("He leído y acepto participar durante 21 días.", style = Relevo.type.subhead, color = Relevo.colors.ink)
       }
       RelevoButton("Aceptar y seguir", onAccept, enabled = checked && !deletionPending)
-      PlainAction("No participar", onDecline, color = Relevo.colors.graphite)
+      PlainAction("No participar", { declining = true }, color = Relevo.colors.graphite)
     },
   ) {
     Text(
@@ -105,7 +125,7 @@ internal fun ConsentScreen(
     )
     Spacer(Modifier.heightIn(min = 12.dp))
     PlainAction(if (details) "Ocultar los detalles" else "Leer los detalles", { details = !details }, icon = if (details) KitIcon.CONTRAER else KitIcon.EXPANDIR)
-    AnimatedVisibility(details, enter = expandVertically(Motion.standard()) + fadeIn(Motion.standard()), exit = shrinkVertically(Motion.standard()) + fadeOut(Motion.standard(Motion.SHORT))) {
+    AnimatedVisibility(details, enter = expandVertically(Motion.smooth()) + fadeIn(Motion.standard()), exit = shrinkVertically(Motion.smooth()) + fadeOut(Motion.standard(Motion.SHORT))) {
       Column { ConsentSections(remoteConfigured) }
     }
     if (deletionPending) {
@@ -113,6 +133,18 @@ internal fun ConsentScreen(
       Notice("Hay una solicitud de eliminación pendiente. El registro sigue detenido.", icon = KitIcon.ADVERTENCIA) {
         PlainAction("Abrir Privacidad y datos", onPrivacy)
       }
+    }
+  }
+  if (declining) {
+    RelevoSheet(onDismiss = { declining = false }, scrollable = false) {
+      Text("Usar Relevo sin participar", style = Relevo.type.title2, color = Relevo.colors.ink)
+      Spacer(Modifier.height(8.dp))
+      Text("La app funciona igual. No se guarda nada para el estudio y nada sale del teléfono. Puedes sumarte a la prueba después, desde Privacidad y datos.",
+        style = Relevo.type.body, color = Relevo.colors.graphite)
+      Spacer(Modifier.height(20.dp))
+      RelevoButton("Usar sin participar", { declining = false; onUseLocally() }, kind = ButtonKind.Secondary)
+      Spacer(Modifier.height(4.dp))
+      PlainAction("Volver", { declining = false })
     }
   }
 }
@@ -158,7 +190,7 @@ internal fun PermissionScreen(
   usageAccess: Boolean,
   onOpenUsageSettings: () -> Unit,
   onRefresh: () -> Unit,
-  onContinue: (configureFirst: Boolean) -> Unit,
+  onContinue: () -> Unit,
 ) {
   val context = LocalContext.current
   var notifications by remember { mutableStateOf(hasNotificationPermission(context)) }
@@ -167,16 +199,13 @@ internal fun PermissionScreen(
     onRefresh()
     notifications = hasNotificationPermission(context)
   }
-  LaunchedEffect(usageAccess) { if (usageAccess && waitingForSettings) onContinue(true) }
+  LaunchedEffect(usageAccess) { if (usageAccess && waitingForSettings) onContinue() }
   RelevoScreen(
     title = "Para saber cuándo sonar",
+    header = { PhotoImage(Photo.TIEMPO, Modifier.fillMaxWidth().aspectRatio(1.5f).clip(Relevo.panelShape).appear(0), wide = true, describe = true) },
     bottom = {
-      if (usageAccess) {
-        RelevoButton("Preparar mi primer relevo", { onContinue(true) })
-        PlainAction("Ir al inicio", { onContinue(false) }, color = Relevo.colors.graphite)
-      } else {
-        RelevoButton("Abrir ajustes de Android", { waitingForSettings = true; onOpenUsageSettings() })
-      }
+      if (usageAccess) RelevoButton("Seguir", onContinue)
+      else RelevoButton("Abrir ajustes de Android", { waitingForSettings = true; onOpenUsageSettings() })
     },
   ) {
     Text("Relevo necesita ver cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.", style = Relevo.type.body, color = Relevo.colors.ink)
@@ -185,12 +214,12 @@ internal fun PermissionScreen(
       ListRow(
         "Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Necesario para contar el tiempo.",
         onClick = if (usageAccess) null else ({ waitingForSettings = true; onOpenUsageSettings() }),
-        trailing = { StatusChip(if (usageAccess) KitIcon.LISTO else KitIcon.ADVERTENCIA, if (usageAccess) "Permitido" else "Falta") },
+        trailing = { StatusChip(if (usageAccess) KitIcon.LISTO else KitIcon.ADVERTENCIA, if (usageAccess) "Permitido" else "Falta", onPanel = true) },
       )
       ListRow(
         "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Opcional. Muestran el aviso con otra app abierta.",
         onClick = if (notifications) null else ({ requestNotificationPermission(context) }),
-        trailing = { StatusChip(if (notifications) KitIcon.LISTO else KitIcon.AGREGAR, if (notifications) "Permitidas" else "Activar") },
+        trailing = { StatusChip(if (notifications) KitIcon.LISTO else KitIcon.AGREGAR, if (notifications) "Permitidas" else "Activar", onPanel = true) },
       )
     }
   }

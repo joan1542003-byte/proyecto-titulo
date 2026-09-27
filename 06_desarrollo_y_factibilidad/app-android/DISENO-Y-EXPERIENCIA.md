@@ -1,6 +1,6 @@
 # Diseño de la experiencia Android de Relevo
 
-**Estado:** versión 2.6, revisión de diseño y compilación del 24 de septiembre de 2026. Es una dirección implementada, no una validación con usuarios. Véanse también los [criterios de revisión de interfaz](criterios-revision-interfaz-2026-09-23.md) y la [revisión del feedback](revision-feedback-2026-09-23.md).
+**Estado:** describe las versiones 2.1 a 2.7; la última revisión es del 24 de septiembre de 2026 (2.6). Es una dirección implementada, no una validación con usuarios. **Desde la versión 2.8 rige el sistema de marca D-073:** Schibsted Grotesk, tinta, papel y azul pasta, superficies planas sin desenfoque ni degradados y fotografía tratada. La tipografía, los colores y el desenfoque descritos aquí son antecedentes; el estado actual está en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md). Véanse también los [criterios de revisión de interfaz](criterios-revision-interfaz-2026-09-23.md) y la [revisión del feedback](revision-feedback-2026-09-23.md).
 
 ## Qué debe sentirse al usarla
 
@@ -63,6 +63,12 @@ Haze. (s. f.). *Progressive (aka gradient) blurs*. https://chrisbanes.github.io/
 r/iOSProgramming. (2025). *Can you recommend apps with great design?* [Foro de discusión]. Reddit. https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Reemplazado en parte por D-073 (2.8)
+
+- **Cambio:** el estado indica que desde 2.8 rige el sistema de marca D-073 y remite al documento de esa versión.
+- **Antes:** el documento se presentaba como la dirección vigente, con Source Sans 3, verde y coral, y desenfoque de Haze.
+- **Motivo:** evitar que se lean como actuales la tipografía, los colores y el desenfoque que la 2.8 reemplazó.
 
 ### 2026-09-24 — Revisión 2.6
 

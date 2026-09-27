@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes.
+**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app Android 2.8 ya aplica este sistema, con fotografías tratadas con su receta ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)).
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -73,6 +73,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — D-073 en la app
+
+- **Qué cambió:** el estado dice que la app Android 2.8 aplica el sistema «Vuelve a lo que querías hacer», a pedido del autor.
+- **Cómo estaba antes:** el sistema solo existía en el manual y el kit.
+- **Por qué:** el autor pidió ajustar la app a las directrices nuevas.
 
 ### 2026-09-25 — Sin luz
 

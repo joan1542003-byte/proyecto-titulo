@@ -1,7 +1,13 @@
 package com.example.relevo.ui.components
 
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -37,7 +43,6 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -49,8 +54,8 @@ import kotlinx.coroutines.delay
 enum class ButtonKind { Primary, Secondary, Destructive }
 
 /**
- * Botón del kit: 52 dp de alto, esquinas de 12, una acción principal por pantalla. Al presionar
- * se atenúa, como en iOS; no hay ondas ni rebotes.
+ * Botón del kit: 52 dp de alto, esquinas de 12, una acción principal por pantalla. Al presionar se
+ * hunde un poco y se oscurece, sin ondas ni rebotes; la acción principal se confirma con un toque háptico.
  */
 @Composable
 fun RelevoButton(
@@ -62,6 +67,7 @@ fun RelevoButton(
   icon: KitIcon? = null,
 ) {
   val colors = Relevo.colors
+  val haptics = LocalHapticFeedback.current
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
   val (container, content, border) = when {
@@ -71,19 +77,22 @@ fun RelevoButton(
     else -> Triple(Color.Transparent, colors.ink, colors.ink)
   }
   val background by animateColorAsState(
-    if (pressed && enabled) (if (kind == ButtonKind.Primary) container.copy(alpha = .82f) else colors.mist) else container,
+    if (pressed && enabled) (if (kind == ButtonKind.Primary) colors.slate else colors.mist) else container,
     Motion.standard(120), label = "button_background",
   )
   Row(
-    modifier.fillMaxWidth().heightIn(min = 52.dp).clip(Relevo.controlShape).background(background)
+    modifier.fillMaxWidth().heightIn(min = 52.dp).pressScale(interaction, 0.98f).clip(Relevo.controlShape).background(background)
       .border(BorderStroke(1.5.dp, border), Relevo.controlShape)
-      .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onClick)
+      .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button) {
+        if (kind == ButtonKind.Primary) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
+        onClick()
+      }
       .padding(horizontal = 16.dp),
     horizontalArrangement = Arrangement.Center,
     verticalAlignment = Alignment.CenterVertically,
   ) {
     if (icon != null) {
-      RelevoIcon(icon, size = 20.dp, tint = content, background = if (kind == ButtonKind.Primary && enabled) colors.ink else colors.paper)
+      RelevoIcon(icon, size = 20.dp, tint = content, background = if (kind == ButtonKind.Primary && enabled) background else colors.paper)
       Spacer(Modifier.width(10.dp))
     }
     Text(label, style = Relevo.type.button, color = content, textAlign = TextAlign.Center)
@@ -108,7 +117,7 @@ fun PlainAction(
       .padding(horizontal = 2.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
-    val tint = if (!enabled) Relevo.colors.gray else color.copy(alpha = if (pressed) .55f else 1f)
+    val tint = if (!enabled) Relevo.colors.gray else color.copy(alpha = if (pressed) .5f else 1f)
     if (icon != null) {
       RelevoIcon(icon, size = 20.dp, tint = tint)
       Spacer(Modifier.width(8.dp))
@@ -117,9 +126,22 @@ fun PlainAction(
   }
 }
 
+/** Botón de icono para la barra superior: 48 dp de área, icono de 24 y nombre accesible. */
+@Composable
+fun IconAction(icon: KitIcon, description: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+  val interaction = remember { MutableInteractionSource() }
+  val pressed by interaction.collectIsPressedAsState()
+  Box(
+    modifier.size(48.dp).clip(Relevo.controlShape)
+      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
+      .semantics { contentDescription = description },
+    contentAlignment = Alignment.Center,
+  ) { RelevoIcon(icon, tint = Relevo.colors.ink.copy(alpha = if (pressed) .5f else 1f)) }
+}
+
 /**
- * Control segmentado, como el de iOS pero con esquinas de 12. El segmento elegido va en tinta.
- * Tocar el elegido lo desmarca cuando la pregunta se puede omitir.
+ * Control segmentado, como el de iOS pero con esquinas de 12. El segmento elegido va en tinta y se
+ * desliza sin rebote. Tocar el elegido lo desmarca cuando la pregunta se puede omitir.
  */
 @Composable
 fun SegmentedControl(
@@ -128,13 +150,15 @@ fun SegmentedControl(
   onSelect: (String?) -> Unit,
   modifier: Modifier = Modifier,
   allowDeselect: Boolean = true,
+  /** Sobre un panel de niebla, la pista va en papel para que se vea. */
+  trackColor: Color = Relevo.colors.mist,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
   val index = options.indexOfFirst { it.first == selected }
-  BoxWithConstraints(modifier.fillMaxWidth().height(48.dp).clip(Relevo.controlShape).background(colors.mist).padding(3.dp)) {
+  BoxWithConstraints(modifier.fillMaxWidth().height(48.dp).clip(Relevo.controlShape).background(trackColor).padding(3.dp)) {
     val segment = maxWidth / options.size
-    val offset by animateDpAsState(segment * index.coerceAtLeast(0), Motion.standard(Motion.SHORT), label = "segment_offset")
+    val offset by animateDpAsState(segment * index.coerceAtLeast(0), Motion.smooth(), label = "segment_offset")
     if (index >= 0) {
       Box(Modifier.offset(x = offset).width(segment).fillMaxHeight().clip(RoundedCornerShape(10.dp)).background(colors.ink))
     }
@@ -170,7 +194,32 @@ fun ScaleControl(value: Int?, onChange: (Int?) -> Unit, low: String = "Nada", hi
   }
 }
 
-/** Selector de tiempo con − y +. Mantener presionado repite el paso. */
+/**
+ * Estrellas para opinar sobre la app o la prueba. Nunca califican a la persona ni lo que hizo (D-073).
+ * Tocar la estrella elegida la quita.
+ */
+@Composable
+fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
+  val haptics = LocalHapticFeedback.current
+  Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+    (1..5).forEach { star ->
+      val filled = (value ?: 0) >= star
+      Box(
+        Modifier.size(52.dp).clip(Relevo.controlShape)
+          .clickable(indication = null, interactionSource = remember { MutableInteractionSource() }, role = Role.RadioButton) {
+            haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
+            onChange(if (value == star) null else star)
+          }
+          .semantics { contentDescription = "$star de 5"; selected = value == star },
+        contentAlignment = Alignment.Center,
+      ) {
+        RelevoIcon(if (filled) KitIcon.ESTRELLA_LLENA else KitIcon.ESTRELLA, size = 32.dp, tint = if (filled) Relevo.colors.ink else Relevo.colors.graphite)
+      }
+    }
+  }
+}
+
+/** Selector de tiempo con − y +: la cifra cambia deslizándose. Mantener presionado repite el paso. */
 @Composable
 fun DurationStepper(seconds: Int, onChange: (Int) -> Unit, label: String) {
   val colors = Relevo.colors
@@ -185,12 +234,32 @@ fun DurationStepper(seconds: Int, onChange: (Int) -> Unit, label: String) {
   fun increase(current: Int) = (current + step(current)).coerceAtMost(6 * 60 * 60)
   Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
     Column(Modifier.weight(1f)) {
-      Text(formatDuration(seconds), style = Relevo.type.title, color = colors.ink)
+      AnimatedContent(
+        targetState = seconds,
+        transitionSpec = {
+          val up = targetState > initialState
+          (slideInVertically(Motion.smooth()) { if (up) it / 2 else -it / 2 } + fadeIn(Motion.standard(Motion.SHORT))) togetherWith
+            (slideOutVertically(Motion.smooth()) { if (up) -it / 2 else it / 2 } + fadeOut(Motion.standard(120)))
+        },
+        label = "duration",
+      ) { value -> Text(formatDuration(value), style = Relevo.type.largeTitle, color = colors.ink) }
       Text(label, style = Relevo.type.footnote, color = colors.graphite)
     }
     RepeatButton("Restar tiempo", "−", enabled = seconds > 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(decrease(seconds)) }
     Spacer(Modifier.width(10.dp))
     RepeatButton("Sumar tiempo", "+", enabled = seconds < 6 * 60 * 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(increase(seconds)) }
+  }
+}
+
+/** Cantidad con − y +, para la constancia elegida. */
+@Composable
+fun CountStepper(value: Int, onChange: (Int) -> Unit, range: IntRange, label: String) {
+  val haptics = LocalHapticFeedback.current
+  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+    Text(label, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
+    RepeatButton("Restar", "−", enabled = value > range.first) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((value - 1).coerceIn(range)) }
+    Spacer(Modifier.width(10.dp))
+    RepeatButton("Sumar", "+", enabled = value < range.last) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((value + 1).coerceIn(range)) }
   }
 }
 
@@ -205,7 +274,7 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
     while (true) { onStep(); delay(110) }
   }
   Box(
-    Modifier.size(52.dp).clip(Relevo.controlShape).background(if (pressed) colors.mist else Color.Transparent)
+    Modifier.size(52.dp).pressScale(interaction, 0.94f).clip(Relevo.controlShape).background(if (pressed) colors.mist else Color.Transparent)
       .border(1.5.dp, if (enabled) colors.ink else colors.line, Relevo.controlShape)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onStep)
       .semantics { contentDescription = description },
@@ -219,12 +288,13 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
 @Composable
 fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null) {
   val colors = Relevo.colors
+  val interaction = remember { MutableInteractionSource() }
   val background by animateColorAsState(if (selected) colors.ink else Color.Transparent, Motion.standard(Motion.SHORT), label = "chip")
   val content = if (selected) colors.onInk else colors.ink
   Row(
-    modifier.heightIn(min = 44.dp).clip(RoundedCornerShape(10.dp)).background(background)
+    modifier.heightIn(min = 44.dp).pressScale(interaction, 0.96f).clip(RoundedCornerShape(10.dp)).background(background)
       .border(1.5.dp, if (selected) colors.ink else colors.line, RoundedCornerShape(10.dp))
-      .clickable(role = Role.Button, onClick = onClick).semantics { this.selected = selected }
+      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick).semantics { this.selected = selected }
       .padding(horizontal = 12.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
@@ -240,9 +310,9 @@ fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier:
 @Composable
 fun CheckMark(checked: Boolean) {
   val colors = Relevo.colors
+  val fill by animateColorAsState(if (checked) colors.ink else Color.Transparent, Motion.standard(Motion.SHORT), label = "check")
   Box(
-    Modifier.size(22.dp).clip(RoundedCornerShape(6.dp)).background(if (checked) colors.ink else Color.Transparent)
-      .border(1.75.dp, colors.ink, RoundedCornerShape(6.dp)),
+    Modifier.size(22.dp).clip(RoundedCornerShape(6.dp)).background(fill).border(1.75.dp, colors.ink, RoundedCornerShape(6.dp)),
     contentAlignment = Alignment.Center,
   ) {
     if (checked) RelevoIcon(KitIcon.COMENCE, size = 16.dp, tint = colors.onInk, background = colors.ink)

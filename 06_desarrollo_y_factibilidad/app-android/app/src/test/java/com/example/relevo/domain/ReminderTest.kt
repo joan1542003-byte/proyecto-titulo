@@ -27,6 +27,12 @@ class ReminderTest {
     assertFalse(complete.copy(targetPackage = "").hasPreparedContent)
   }
 
+  @Test fun withoutParticipatingTheReminderStillWorksWithoutCode() {
+    val local = complete.copy(participantCode = "", consentAccepted = false, localOnly = true)
+    assertTrue(local.hasPreparedContent)
+    assertEquals(ReminderStatus.WAITING, local.ready().arm("local").status)
+  }
+
   @Test fun completeReminderCanBeArmed() {
     val armed = complete.ready().arm("session-1")
     assertEquals(ReminderStatus.WAITING, armed.status)

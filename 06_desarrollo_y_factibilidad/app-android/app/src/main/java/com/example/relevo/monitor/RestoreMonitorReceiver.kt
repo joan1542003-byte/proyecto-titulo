@@ -5,12 +5,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat
 import com.example.relevo.data.ReminderStore
+import com.example.relevo.data.SettingsStore
 import com.example.relevo.domain.ReminderStatus
 
-/** Retoma un relevo activo después de reiniciar el teléfono o actualizar la app. */
+/** Retoma un relevo activo y el aviso de regreso elegido después de reiniciar el teléfono o actualizar la app. */
 class RestoreMonitorReceiver : BroadcastReceiver() {
   override fun onReceive(context: Context, intent: Intent) {
     if (intent.action != Intent.ACTION_BOOT_COMPLETED && intent.action != Intent.ACTION_MY_PACKAGE_REPLACED) return
+    if (SettingsStore(context).load().returnNotice) ReturnNotice.schedule(context)
     if (ReminderStore(context).load().status != ReminderStatus.WAITING) return
     runCatching {
       ContextCompat.startForegroundService(

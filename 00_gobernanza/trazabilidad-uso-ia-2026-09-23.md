@@ -17,6 +17,7 @@ Esta formulación se apoya en la [declaración histórica de IA de la memoria v1
 | Investigación y redacción | Los archivos históricos declaran apoyo en búsqueda dirigida, consistencia y corrección editorial. | La memoria vigente, perfiles situacionales y criterios deben conservar evidencia, procedencia y revisión del autor. | No hay registro exhaustivo de prompts y respuestas de todas las conversaciones. No cuantificar horas ahorradas ni atribuir mejoras causales sin datos. |
 | Revisión documental del 23 de septiembre | La petición inicial fue revisar el repositorio y desarrollar la parte escrita de las anotaciones. La IA ordenó notas, contrastó documentación y fuentes y redactó borradores. | Las anotaciones y el alcance son del autor; la primera iteración no implementó la app. | Ningún texto de esa fase aporta resultados con participantes. |
 | Revisión de Android 2.5 del 23 de septiembre | El autor pidió aplicar el feedback a la app, con reconocimiento positivo sin culpa. Un agente revisó el repositorio y modificó tutorial, navegación, progreso y mensaje de Inicio; el agente principal auditó el código, corrigió la continuidad del código de participación, el consentimiento, el tiempo máximo y la documentación. | El autor fijó el criterio de tono y el correo y plazo de datos; las correcciones se seleccionaron por relación con el flujo real, no por aceptación automática de todas las notas. | La compilación y un recorrido parcial en emulador no sustituyen pruebas con personas, audio físico ni verificación de borrado. |
+| Android 2.8 del 25 y 26 de septiembre | Claude Code programó el rediseño con D-073, el perfil, la ruta y el regreso; trató con la receta de D-073 las fotografías generadas antes y seis CC0; compiló, probó en emulador con datos ficticios y documentó. No generó imágenes nuevas. | El autor rechazó una primera versión sin fotos y fijó el objetivo: D-073, fotografías, más personalización y las pantallas que faltaban. Las decisiones de detalle quedan en D-082 para su revisión. | Compilación, 47 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
 
 Lo que puede sostenerse documentalmente es que la IA permitió **producir variantes y dejar rastros de descarte y corrección**. El repositorio no mide ahorro de tiempo ni permite afirmar que la IA mejoró la calidad de uso de Relevo: eso exigiría comparación y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
 
@@ -66,7 +67,22 @@ No introducir transcripciones identificables de P1–P8, hojas firmadas, claves 
 - **Decisiones del autor:** reconocer sin culpa una respuesta voluntaria; no convertirla en éxito observado ni usar rachas. El autor confirmó `joan1542003@gmail.com` y el 30 de diciembre de 2026 como datos para el borrador de privacidad.
 - **Lo que no se afirma:** que la IA probó la experiencia de uso, que la actividad ocurrió realmente, que el borrado remoto funciona o que la ruta de audio fue comprobada con el equipo final.
 
+## Registro de la iteración Android 2.8
+
+- **Fecha y herramienta:** 25 y 26 de septiembre de 2026; Claude Code con el modelo Claude Opus 5.5.
+- **Pedidos literales del autor:** «quitaria la de agendar una reunion/entrevista. [...] el diseño es muy mejorable, quiero algo al nivel swift ui. ademas, hay nuevas diretrices de diseño, leelas»; después de ver una primera versión sin fotografías: «visualkmente era mejor antes, tenia imagenes, era mejor diseñado ,estilo ios16 / 26. Tenia imagenes, era mas personalizable, faltaban mas pantallas. por favor hazlo bien»; y por último: «debes ajustarlo al nuevo directrices de diseño que hicimos, lee le reposotorio. [...] debe estar a lla altura de las mejores aplicaicones del mercado. bue ndiseñlo, interacciones, animaciones.»
+- **Contexto usado:** el repositorio (D-073 y su kit, el diseño escrito de flujos, el protocolo 02 y la app 2.7). No se entregaron datos de participantes.
+- **Qué hizo la herramienta:** programó la app 2.8 (tema, componentes, navegación y animaciones; pantallas de perfil, ruta, regreso y ajustes; uso sin participar y descarga de datos), trató las imágenes existentes con la receta de D-073, escribió pruebas unitarias, recorrió la app en un emulador con datos ficticios, borró de Supabase las sesiones de prueba y redactó la documentación.
+- **Decisiones del autor:** aplicar D-073 a la app, recuperar las fotografías, permitir más personalización, completar las pantallas y retirar la pregunta sobre la entrevista. Las decisiones de detalle que tomó la herramienta están en D-082, pendientes de su revisión.
+- **Lo que no se afirma:** que la app funcione en el teléfono y el parlante de la prueba, ni que la nueva interfaz se entienda mejor o se prefiera: no hubo pruebas con personas.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Iteración Android 2.8
+
+- **Qué cambió:** se añadieron una fila y un registro de la iteración Android 2.8, con los pedidos literales del autor, lo que hizo la herramienta y lo que no se afirma.
+- **Antes:** el registro llegaba hasta la iteración Android 2.5.
+- **Por qué:** mantener trazable qué parte del trabajo hizo la IA y qué decidió el autor.
 
 ### 2026-09-23 — Implementación Android 2.5
 

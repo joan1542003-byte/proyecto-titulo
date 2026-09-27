@@ -37,9 +37,11 @@ fun RelevoIcon(
   tint: Color = Relevo.colors.ink,
   background: Color = Relevo.colors.paper,
   contentDescription: String? = null,
+  /** Peso del kit: 1,5 regular, 1,8 medio, 2,1 semibold. Sin valor, el trazo sigue al tamaño. */
+  strokeWidth: Float? = null,
 ) {
   val paths = remember(icon) { icon.shapes.map { PathParser().parsePathString(it.pathData).toPath() } }
-  val stroke = when {
+  val stroke = strokeWidth ?: when {
     size <= 16.dp -> 1.9f
     size <= 20.dp -> 1.8f
     size <= 24.dp -> 1.75f

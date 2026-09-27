@@ -4,29 +4,31 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.7 de prueba
+**Versión:** 2.8 de prueba
 
-**Fecha:** 25 de septiembre de 2026
+**Fecha:** 26 de septiembre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.7-2026-09-25.apk](releases/relevo-android-2.7-2026-09-25.apk)
+**APK vigente:** [relevo-android-2.8-2026-09-26.apk](releases/relevo-android-2.8-2026-09-26.apk). El de 2.7 se conserva: el autor debe decidir cuál se usa en la prueba de 21 días.
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.7-2026-09-25.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.8-2026-09-26.zip`
 
-**Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md)
+**Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7) y el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md).
 
 **Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
-**Licencias de recursos de terceros:** [fuente Source Sans 3 y procedencia de imágenes](licencias/README.md).
+**Licencias de recursos de terceros:** [fuente Schibsted Grotesk y procedencia de las fotografías](licencias/README.md).
+
+**Versión 2.8:** aplica el sistema de marca D-073 con fotografías, suma perfil, ruta de actividades, aviso de regreso opcional, apariencia y uso sin participar, y completa las pantallas del diseño escrito. Conserva sin cambios la lógica de la prueba de 21 días. Detalle, verificación y pendientes en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md).
 
 **Versión 2.7:** incorpora lo que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md) y corrige el envío de eventos. Cambios, causa del problema de eventos y verificación en [Android 2.7](version-2.7-prueba-21-dias-2026-09-25.md).
 
-La versión 2.7 compila y sus 34 pruebas unitarias pasan. En un emulador Android 16 se recorrieron, con datos ficticios, la sesión inicial, una semana en condición «teléfono», las preguntas tras la señal, las tarjetas semanales y el cierre del día 21; los registros llegaron a Supabase. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
+La versión 2.8 compila y sus 47 pruebas unitarias pasan. En un emulador Android 16 se recorrieron, con datos ficticios, la primera vez con y sin participar, el perfil, la ruta y su siguiente paso, un ciclo completo con registros en Supabase, el aviso de regreso y el tema oscuro. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
 
 ## Qué permite hacer
 
@@ -35,7 +37,7 @@ La versión 2.7 compila y sus 34 pruebas unitarias pasan. En un emulador Android
 3. partir de actividades ilustradas o escribir una actividad propia;
 4. definir el tiempo acumulado entre 1 minuto y 6 horas mediante un deslizador, ajustes y accesos rápidos, además de una prueba de 15 segundos;
 5. reconocer las aplicaciones por su icono real;
-6. consultar Inicio, Actividad y el historial de relevos;
+6. moverse entre Inicio, Ruta y Perfil y consultar el historial de relevos, agrupado por día;
 7. ver dónde quedó situada la última señal;
 8. autorizar el acceso a Tiempo de uso; las notificaciones se solicitan por separado y son opcionales;
 9. crear un identificador aleatorio que agrupa los datos sin solicitar nombre, correo ni teléfono;
@@ -47,10 +49,10 @@ La versión 2.7 compila y sus 34 pruebas unitarias pasan. En un emulador Android
 15. contar cuántas veces se eligió cada actividad y distinguir las señales seguidas de un inicio autodeclarado;
 16. conservar sesiones y eventos sin conexión e intentar enviarlos a Supabase cuando la base está configurada;
 17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
-18. enseñar el recorrido mediante cuatro escenas de objetos y una explicación visual de permisos, sin mostrar pantallas ficticias;
+18. empezar con una bienvenida breve, la decisión de participar en la prueba y el permiso de Tiempo de uso, sin tutorial de varias páginas (A1 a A3 desde 2.8);
 19. preparar un relevo por etapas: actividad; aplicación y tiempo; inicio y ubicación; revisión y activación. Las actividades propias se crean en tres pasos y se pueden reutilizar;
-20. al terminar el tutorial, preparar opcionalmente el primer relevo o ir a Inicio, siempre que se haya concedido Tiempo de uso;
-21. volver un paso con el gesto de Android durante el tutorial y la preparación; consultar en Historial un código de participación estable entre ciclos;
+20. después del permiso, escribir un nombre, elegir una imagen e intereses, o saltar cada paso; los intereses arman una ruta de actividades;
+21. volver con el gesto de Android en todas las pantallas; consultar en Privacidad y datos un código de participación estable entre ciclos;
 22. ver una confirmación breve cuando la persona declara que comenzó su actividad, sin presentar la declaración como una comprobación de Relevo;
 23. probar el sonido antes de activar, conocer explícitamente si la salida elegida falló y consultar una pantalla de privacidad para solicitar la eliminación de los registros locales y remotos;
 24. encontrar de nuevo la actividad anterior al abrir la app dos días o más después del último relevo («Hola de nuevo»), sin decir cuántos días pasaron ni imponer una racha;
@@ -60,7 +62,12 @@ La versión 2.7 compila y sus 34 pruebas unitarias pasan. En un emulador Android
 28. responder tras cada señal, con un toque y pudiendo omitir, si supo qué quería hacer antes de mirar el teléfono y si recordó cómo empezar; responder la tarjeta de cierre de cada semana y el cierre del día 21;
 29. registrar para la investigación si la señal se silenció o terminó sola, cuánto tardó la respuesta y el uso de las apps elegidas 10 minutos antes y después de la señal, sin mostrarlo como tiempo excedido;
 30. repetir el último relevo desde Inicio, retomar el conteo tras reiniciar el teléfono o actualizar la app, ver un aviso si se retira Tiempo de uso y permitir opcionalmente que Relevo funcione sin la restricción de batería;
-31. consultar en Privacidad y datos el estado del envío (pendientes, último envío y rechazos) y el día de la prueba.
+31. consultar en Privacidad y datos el estado del envío (pendientes, último envío y rechazos) y el día de la prueba;
+32. seguir una ruta de pasos editables por interés; tras tres respuestas «Comencé» en el mismo paso, la app ofrece probar el siguiente, sin obligar;
+33. activar, si se quiere, un aviso de regreso semanal, el resumen «Tu semana», la constancia elegida y los mensajes de reconocimiento;
+34. elegir tema claro, oscuro o del sistema y texto grande;
+35. usar la app sin participar en la prueba: funciona igual, pero no registra ni envía datos de investigación;
+36. descargar en un archivo todo lo guardado en el teléfono y, si participa, opinar sobre la app o reportar un problema.
 
 ## Límites
 
@@ -74,17 +81,17 @@ La comprobación anterior se refiere **solo al tono de Relevo**: no impide que Y
 
 1. instalar el APK;
 2. abrir Relevo;
-3. leer y aceptar la participación en la prueba de 21 días;
-4. recorrer el tutorial y, si se desea, configurar el primer relevo desde allí;
-5. autorizar **Tiempo de uso** en la última escena;
+3. leer y aceptar la participación en la prueba de 21 días, o elegir usar la app sin participar;
+4. autorizar **Tiempo de uso**;
+5. escribir el nombre, elegir una imagen e intereses, o saltar esos pasos;
 6. autorizar notificaciones si se quiere recibir el aviso con otra aplicación abierta;
-7. en la sesión inicial, el investigador abre **Privacidad y datos → Configurar la prueba**, elige la secuencia asignada a la persona y pulsa **Empezar la prueba hoy** (día 0).
+7. en la sesión inicial, el investigador abre **Perfil → Prueba de 21 días**, elige la secuencia asignada a la persona y pulsa **Empezar la prueba hoy** (día 0).
 
 Android muestra una notificación mientras el recordatorio está activo. Esta visibilidad comunica que existe observación en curso y no debe eliminarse.
 
 ## Datos de prueba
 
-La estructura y sus límites están descritos en [detección de uso y datos](arquitectura-deteccion-uso-y-datos-2026-09-21.md) y, para la prueba de 21 días, en el [modelo de datos](../../07_validacion/modelo-datos-evaluacion-app-2026-09-22.md). La app usa un código aleatorio; no solicita el nombre de la persona. El consentimiento indica finalidad académica, correo responsable y plazo máximo de conservación hasta el 30 de diciembre de 2026. Antes de entregar el APK a participantes debe probarse la eliminación solicitada desde la app, incluida la respuesta sin conexión.
+La estructura y sus límites están descritos en [detección de uso y datos](arquitectura-deteccion-uso-y-datos-2026-09-21.md) y, para la prueba de 21 días, en el [modelo de datos](../../07_validacion/modelo-datos-evaluacion-app-2026-09-22.md). La app usa un código aleatorio. El nombre del perfil es opcional y, como la imagen, los intereses y la ruta, no sale del teléfono. El consentimiento indica finalidad académica, correo responsable y plazo máximo de conservación hasta el 30 de diciembre de 2026. Antes de entregar el APK a participantes debe probarse la eliminación solicitada desde la app, incluida la respuesta sin conexión.
 
 ## Compilación
 
@@ -111,11 +118,22 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `data/RemoteSync.kt`: envío a Supabase, rechazos, borrado y estado del envío;
 - `data/StudyStore.kt` y `data/ReminderStore.kt`: estado local de la prueba y del recordatorio;
 - `signal/FirmaSonora.kt` y `signal/SignalPlayer.kt`: firma sonora, señal de 30 segundos, prueba de sonido y vibración;
+- `domain/Route.kt`, `data/RouteStore.kt` y `data/ProfileStore.kt`: ruta de actividades, oferta del siguiente paso y perfil local;
+- `data/SettingsStore.kt`, `data/Participation.kt` y `monitor/ReturnNotice.kt`: ajustes, uso sin participar y aviso de regreso;
 - `ui/RelevoViewModel.kt`: coordinación;
-- `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal;
+- `ui/RelevoApp.kt`: navegación, transiciones y gesto de volver;
+- `ui/FirstRunScreens.kt`, `ui/ProfileScreens.kt`, `ui/RouteScreens.kt`, `ui/HomeScreen.kt`, `ui/PrepareScreen.kt`, `ui/SignalScreens.kt` y `ui/SettingsScreens.kt`: pantallas;
+- `ui/components/` y `theme/`: componentes, iconos, fotos, movimiento y el sistema D-073;
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-26 — Versión 2.8: sistema de marca D-073, perfil y ruta
+
+- **Cambio:** el estado apunta a 2.8. La lista de funciones reemplaza el tutorial por A1 a A3 y el perfil, mueve el código de participación a Privacidad y datos, y suma ruta, avisos opcionales, apariencia, uso sin participar, descarga de datos, opinión y reportes. La instalación y la estructura describen las pantallas y archivos nuevos. La fuente pasa a Schibsted Grotesk.
+- **Antes:** describía la 2.7, con tutorial de cuatro escenas, Source Sans 3 y el código en Historial.
+- **Motivo:** el autor pidió aplicar D-073, recuperar las fotografías y completar las pantallas del diseño escrito ([detalle](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)).
+- **Verificación:** compilación, 47 pruebas unitarias y recorrido en emulador con datos ficticios. **Pendiente:** decisión del autor entre 2.8 y 2.7 para la prueba, teléfono real, parlante y borrado sin conexión.
 
 ### 2026-09-25 — Versión 2.7 para la prueba de 21 días
 

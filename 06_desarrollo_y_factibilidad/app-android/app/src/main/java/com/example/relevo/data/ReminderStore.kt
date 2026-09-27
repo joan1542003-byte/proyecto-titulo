@@ -44,6 +44,7 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       studyDay = preferences.getInt("study_day", -1),
       signalAt = preferences.getLong("signal_at", 0L),
       signalEnded = preferences.getBoolean("signal_ended", false),
+      localOnly = preferences.getBoolean("local_only", false),
     )
 
   fun save(reminder: Reminder) {
@@ -67,6 +68,7 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       .putInt("study_day", reminder.studyDay)
       .putLong("signal_at", reminder.signalAt)
       .putBoolean("signal_ended", reminder.signalEnded)
+      .putBoolean("local_only", reminder.localOnly)
       .apply()
   }
 
