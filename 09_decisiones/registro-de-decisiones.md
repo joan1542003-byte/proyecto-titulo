@@ -750,7 +750,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-073 — Vuelve a lo que querías hacer (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072. A pedido del autor, la app la aplica desde Android 2.8 (26 de septiembre), con los cambios de D-083 desde 2.9.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072. A pedido del autor, la app la aplica desde Android 2.8 (26 de septiembre), con los cambios de D-083 desde 2.9 y de D-084 desde 2.10.
 - **Decisión propuesta:**
   - *Verbal*: firma «Vuelve a lo que querías hacer», elegida por el autor (antes, «Lo que querías hacer, a tiempo»); principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
   - *Recurso central*: el renglón («Vuelve a \_\_\_\_.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
@@ -874,7 +874,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Fecha:** 2026-09-26.
 - **Estado:** implementado en Android 2.8; pendiente de revisión del autor.
 - **Decisión:**
-  - *No participar*: la app se puede usar sin participar en la prueba. Funciona igual, pero no registra ni envía datos de investigación; la persona puede sumarse después desde Privacidad y datos.
+  - *No participar*: la app se puede usar sin participar en la prueba. Funciona igual, pero no registra ni envía datos de investigación; la persona puede sumarse después desde Privacidad y datos. *Reemplazado por D-084:* desde 2.10, para usar la app hay que participar.
   - *Imagen del perfil*: además de 12 iconos del kit, 16 fotos de la app. No se suben fotos propias. *Reemplazado por D-083:* desde 2.9, solo emoji.
   - *Siguiente paso (R3)*: se ofrece a la tercera respuesta «Comencé» en el mismo paso. Si la persona elige quedarse, no se vuelve a ofrecer para ese paso.
   - *Aviso de regreso (V2)*: Android revisa una vez al día y avisa si pasaron siete días sin abrir la app y desde el último aviso. La notificación es silenciosa y en la pantalla de bloqueo no muestra la actividad. «Preparar» abre la preparación con el último relevo o desde el comienzo.
@@ -901,7 +901,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** legibilidad y fluidez en el teléfono de la prueba; si el manual D-073 se aprueba sin estos cambios, conciliarlos.
 - **Documentación:** [Android 2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md).
 
+## D-084 — Esta versión se usa dentro de la prueba, con textos claros y texto según la foto
+
+- **Fecha:** 2026-09-27.
+- **Estado:** decisión del autor; implementada en Android 2.10, sin probar con personas.
+- **Decisión:**
+  - *Participación*: para usar la app hay que aceptar participar en la prueba de 21 días. Se quitan «No participar» y el uso sin participar de D-082. Dejar la prueba es borrar los datos desde Privacidad y datos.
+  - *Textos*: frases en lugar de rótulos sueltos («Empieza por ponerte las zapatillas, junto a la puerta.»), un vocabulario fijo («Para empezar», «Dónde empiezas», «paso» solo para la ruta) y acciones que dicen qué pasa («Pasar a este paso»).
+  - *Tipografía*: ningún texto en mayúsculas sostenidas ni con letras espaciadas; los rótulos se escriben como una frase.
+  - *Desenfoque*: los bordes de desplazamiento se alejan del centro de la pantalla y los botones de vidrio desenfocan menos.
+  - *Tono*: el texto y el vidrio sobre una foto toman el tono de la foto: claros sobre fotos oscuras y oscuros sobre fotos claras.
+  - *Perfil*: 84 emoji en cinco grupos.
+  - *Ruta y actividades*: el paso actual va en grande, con «Ahora»; cada paso y cada actividad abren una hoja con su acción principal; «Tus actividades» dice para qué sirve.
+- **Relación con D-073:** en la app, reemplaza las «notas en mayúsculas con +6 %» del manual. Se mantienen la fuente, la paleta y el renglón con dos voces.
+- **Fundamento:** pedido del autor del 27 de septiembre, tras revisar la 2.9. Para el tono se usaron la luminancia relativa y el contraste de WCAG 2.2 (World Wide Web Consortium, 2023); Apple (2025) aplica el mismo principio en Liquid Glass.
+- **Ética:** el consentimiento no cambia y sigue diciendo que participar es voluntario. Quien no acepta no usa la app y no se guarda nada suyo; quien participa puede dejar la prueba y borrar sus datos cuando quiera.
+- **Condición de revisión:** que el profesor guía confirme que exigir la participación es compatible con el consentimiento; legibilidad en el teléfono de la prueba; si se decide usar la app fuera de la prueba, volver a D-082.
+- **Documentación:** [Android 2.10](../06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — D-084
+
+- **Qué cambió:** se registró D-084 (participación obligatoria, textos claros, sin mayúsculas, menos desenfoque, texto según la foto, más emoji y rediseño de la ruta y las actividades) y se anotó en D-073 y D-082 lo que reemplaza.
+- **Cómo estaba antes:** D-082 permitía usar la app sin participar y D-073 pedía notas en mayúsculas.
+- **Por qué:** pedido del autor del 27 de septiembre.
 
 ### 2026-09-27 — D-083
 

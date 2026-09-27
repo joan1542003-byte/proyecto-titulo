@@ -4,7 +4,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.9 de prueba
+**Versión:** 2.10 de prueba
 
 **Fecha:** 27 de septiembre de 2026
 
@@ -12,17 +12,19 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.9-2026-09-27.apk](releases/relevo-android-2.9-2026-09-27.apk). Los de 2.8 y 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
+**APK vigente:** [relevo-android-2.10-2026-09-27.apk](releases/relevo-android-2.10-2026-09-27.apk). Los de 2.9, 2.8 y 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.9-2026-09-27.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.10-2026-09-27.zip`
 
-**Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7), el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) y el vidrio, las formas y los emoji de D-083 en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md).
+**Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7), el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) el vidrio, las formas y los emoji de D-083 en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md) y los textos, el tono de las fotos y la participación de D-084 en [Android 2.10](version-2.10-participacion-y-claridad-2026-09-27.md).
 
 **Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
 **Licencias de recursos de terceros:** [fuente Schibsted Grotesk, fotografías y emoji Noto 3D](licencias/README.md).
+
+**Versión 2.10:** a pedido del autor, exige participar en la prueba para usar la app (sin «No participar»), cambia los rótulos por frases claras («Empieza por ponerte las zapatillas, junto a la puerta.»), quita las mayúsculas sostenidas, aleja el desenfoque del centro y lo reduce en los botones, pone el texto en blanco o en tinta según el tono de cada foto, amplía el perfil a 84 emoji y rediseña «Tu ruta» y «Tus actividades». No cambian la lógica de la prueba ni los datos. Detalle, verificación y pendientes en [Android 2.10](version-2.10-participacion-y-claridad-2026-09-27.md).
 
 **Versión 2.9:** a pedido del autor, lleva la interfaz al estilo de iOS 26: pantalla completa, vidrio con desenfoque sutil en la capa de navegación, cápsulas y esquinas amplias en lugar de bloques, emoji 3D de Google en el perfil y textos más naturales, sin avisos de privacidad repetidos. No cambia la lógica ni los datos. Detalle, verificación y pendientes en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md).
 
@@ -30,7 +32,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Versión 2.7:** incorpora lo que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md) y corrige el envío de eventos. Cambios, causa del problema de eventos y verificación en [Android 2.7](version-2.7-prueba-21-dias-2026-09-25.md).
 
-La versión 2.9 compila y sus 50 pruebas unitarias pasan. En un emulador Android 16 se recorrieron, con datos ficticios, la primera vez, el perfil con emoji, la ruta, la preparación, un ciclo completo con la señal y la respuesta, las hojas de vidrio y el tema oscuro. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
+La versión 2.10 compila y sus 58 pruebas unitarias pasan. En un emulador Android 16, sin red y con datos ficticios, se recorrieron la primera vez, la ruta, las actividades, la preparación, un ciclo completo con la señal y la respuesta sobre una foto oscura y el tema oscuro. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
 
 ## Qué permite hacer
 
@@ -59,17 +61,18 @@ La versión 2.9 compila y sus 50 pruebas unitarias pasan. En un emulador Android
 23. probar el sonido antes de activar, conocer explícitamente si la salida elegida falló y consultar una pantalla de privacidad para solicitar la eliminación de los registros locales y remotos;
 24. encontrar de nuevo la actividad anterior al abrir la app dos días o más después del último relevo («Hola de nuevo»), sin decir cuántos días pasaron ni imponer una racha;
 25. escuchar una señal de unos 30 segundos hecha con la firma sonora de Relevo, que empieza suave y se detiene sola (D-078); después, la pantalla y la notificación quedan en silencio hasta que la persona responde;
-26. seguir la prueba de 21 días del protocolo 02: el investigador asigna en la sesión inicial una de las seis secuencias; cada semana la app indica la condición (parlante junto al comienzo, parlante en un lugar neutro o aviso en el teléfono) y fija dónde suena;
+26. seguir la prueba de 21 días del protocolo 02: el investigador asigna en la sesión inicial una de las seis secuencias; cada semana la app indica la condición (parlante donde empiezas, parlante en otro lugar o aviso en el teléfono) y fija dónde suena;
 27. en la condición «teléfono», recibir una notificación genérica («Tu intención está disponible»); en la pantalla de bloqueo, la notificación nunca muestra la intención;
 28. responder tras cada señal, con un toque y pudiendo omitir, si supo qué quería hacer antes de mirar el teléfono y si recordó cómo empezar; responder la tarjeta de cierre de cada semana y el cierre del día 21;
 29. registrar para la investigación si la señal se silenció o terminó sola, cuánto tardó la respuesta y el uso de las apps elegidas 10 minutos antes y después de la señal, sin mostrarlo como tiempo excedido;
 30. repetir el último relevo desde Inicio, retomar el conteo tras reiniciar el teléfono o actualizar la app, ver un aviso si se retira Tiempo de uso y permitir opcionalmente que Relevo funcione sin la restricción de batería;
 31. consultar en Privacidad y datos el estado del envío (pendientes, último envío y rechazos) y el día de la prueba;
 32. seguir una ruta de pasos editables por interés; tras tres respuestas «Comencé» en el mismo paso, la app ofrece probar el siguiente, sin obligar;
-33. activar, si se quiere, un aviso de regreso semanal, el resumen «Tu semana», la constancia elegida y los mensajes de reconocimiento;
+33. activar, si se quiere, el aviso semanal, el resumen semanal, las veces por semana y el mensaje después de responder;
 34. elegir tema claro, oscuro o del sistema y texto grande;
-35. usar la app sin participar en la prueba: funciona igual, pero no registra ni envía datos de investigación;
-36. descargar en un archivo todo lo guardado en el teléfono y, si participa, opinar sobre la app o reportar un problema.
+35. dejar la prueba cuando se quiera: «Borrar mis datos», en Privacidad y datos, borra todo, también en la base; desde 2.10 no hay uso sin participar;
+36. descargar en un archivo todo lo guardado en el teléfono, opinar sobre la app o reportar un problema;
+37. leer el texto sobre las fotos en blanco o en tinta según el tono de cada foto, y elegir entre 84 emoji para el perfil.
 
 ## Límites
 
@@ -83,9 +86,9 @@ La comprobación anterior se refiere **solo al tono de Relevo**: no impide que Y
 
 1. instalar el APK;
 2. abrir Relevo;
-3. leer y aceptar la participación en la prueba de 21 días, o elegir usar la app sin participar;
+3. leer y aceptar la participación en la prueba de 21 días; desde 2.10, sin aceptarla no se puede usar la app;
 4. autorizar **Tiempo de uso**;
-5. escribir el nombre, elegir una imagen e intereses, o saltar esos pasos;
+5. escribir el nombre, elegir un emoji e intereses, o saltar esos pasos;
 6. autorizar notificaciones si se quiere recibir el aviso con otra aplicación abierta;
 7. en la sesión inicial, el investigador abre **Perfil → Prueba de 21 días**, elige la secuencia asignada a la persona y pulsa **Empezar la prueba hoy** (día 0).
 
@@ -121,14 +124,20 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `data/StudyStore.kt` y `data/ReminderStore.kt`: estado local de la prueba y del recordatorio;
 - `signal/FirmaSonora.kt` y `signal/SignalPlayer.kt`: firma sonora, señal de 30 segundos, prueba de sonido y vibración;
 - `domain/Route.kt`, `data/RouteStore.kt` y `data/ProfileStore.kt`: ruta de actividades, oferta del siguiente paso y perfil local;
-- `data/SettingsStore.kt`, `data/Participation.kt` y `monitor/ReturnNotice.kt`: ajustes, uso sin participar y aviso de regreso;
+- `data/SettingsStore.kt`, `data/Participation.kt` y `monitor/ReturnNotice.kt`: ajustes, participación y aviso semanal;
 - `ui/RelevoViewModel.kt`: coordinación;
 - `ui/RelevoApp.kt`: navegación, transiciones y gesto de volver;
 - `ui/FirstRunScreens.kt`, `ui/ProfileScreens.kt`, `ui/RouteScreens.kt`, `ui/HomeScreen.kt`, `ui/PrepareScreen.kt`, `ui/SignalScreens.kt` y `ui/SettingsScreens.kt`: pantallas;
-- `ui/components/` y `theme/`: componentes, iconos, fotos, movimiento y el sistema D-073;
+- `ui/components/` y `theme/`: componentes, iconos, fotos, emoji, vidrio, tono de las fotos (`Tone.kt`), movimiento y el sistema D-073;
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Versión 2.10: participación, textos claros y tono de las fotos
+
+- **Qué cambió:** el estado apunta a 2.10 y resume lo que cambia; la lista de funciones y la instalación dicen que ya no hay uso sin participar y usan los nombres nuevos de los ajustes y las condiciones.
+- **Cómo estaba antes:** describía la 2.9, con uso sin participar.
+- **Por qué:** pedido del autor del 27 de septiembre (D-084).
 
 ### 2026-09-27 — Versión 2.9: vidrio, formas redondeadas y emoji
 

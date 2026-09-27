@@ -97,11 +97,15 @@ import java.util.UUID
 private enum class PrepareStep(val title: String) {
   ACTIVITY("¿Qué quieres hacer?"),
   START("¿Cómo empiezas?"),
-  PLACE("¿Dónde lo dejas?"),
-  USAGE("¿Cuándo suena?"),
-  SOUND("¿Dónde suena?"),
+  PLACE("¿Dónde empiezas?"),
+  USAGE("¿Cuándo te avisa?"),
+  SOUND("¿Cómo te avisa?"),
   REVIEW("Todo listo"),
 }
+
+/** En la semana del parlante en otro lugar, el lugar que se anota es el del parlante, no el del comienzo. */
+private fun PrepareStep.titleFor(condition: StudyCondition?): String =
+  if (this == PrepareStep.PLACE && condition == StudyCondition.NEUTRAL) "¿Dónde dejas el parlante?" else title
 
 internal class PrepareActions(
   val onActivity: (String) -> Unit,
@@ -167,7 +171,7 @@ internal fun PrepareScreen(
   val picture = activityPicture(reminder.activity, customActivities)
 
   RelevoScreen(
-    title = step.title,
+    title = step.titleFor(studyCondition),
     onBack = { back() },
     closeIcon = step == PrepareStep.ACTIVITY,
     backLabel = if (step == PrepareStep.ACTIVITY) "Cerrar" else "Volver",
@@ -205,7 +209,7 @@ internal fun PrepareScreen(
           PrepareStep.START -> {
             Text("Lo primero que harías, en pocas palabras.", style = Relevo.type.body, color = Relevo.colors.graphite)
             SectionGap()
-            RenglonField("Primer paso", reminder.howToStart, actions.onStart, placeholder = "Ej.: sacar la guitarra del estuche", imeAction = ImeAction.Next, onImeAction = { if (canContinue) go(PrepareStep.PLACE) })
+            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "Ej.: sacar la guitarra del estuche", imeAction = ImeAction.Next, onImeAction = { if (canContinue) go(PrepareStep.PLACE) })
           }
           PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) go(PrepareStep.USAGE) })
           PrepareStep.USAGE -> UsageStep(reminder, usageAccess, actions, onPick = { picking = true })
@@ -216,11 +220,11 @@ internal fun PrepareScreen(
             }
             SectionGap()
             ListSection {
-              FactRow(KitIcon.PRIMER_PASO, "Cómo empieza", reminder.howToStart) { go(PrepareStep.START) }
-              FactRow(KitIcon.LUGAR, "Lugar", reminder.place) { go(PrepareStep.PLACE) }
-              FactRow(KitIcon.APPS, "Apps", reminder.selectedApps.joinToString(", ") { it.label }, valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(KitIcon.USO, "Suena después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(if (reminder.signalRoute == SignalRoute.PHONE) KitIcon.TELEFONO else KitIcon.PARLANTE, "Suena en",
+              FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { go(PrepareStep.START) }
+              FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Parlante" else "Dónde empiezas", reminder.place) { go(PrepareStep.PLACE) }
+              FactRow(KitIcon.APPS, "Apps que cuentan", reminder.selectedApps.joinToString(", ") { it.label }, valueIsVoice = false) { go(PrepareStep.USAGE) }
+              FactRow(KitIcon.USO, "Te avisa después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { go(PrepareStep.USAGE) }
+              FactRow(if (reminder.signalRoute == SignalRoute.PHONE) KitIcon.TELEFONO else KitIcon.PARLANTE, "Te avisa",
                 if (reminder.signalRoute == SignalRoute.PHONE) "El teléfono" else "El parlante", valueIsVoice = false) { go(PrepareStep.SOUND) }
             }
             if (!isKnown && reminder.activity.isNotBlank()) {
@@ -232,13 +236,13 @@ internal fun PrepareScreen(
               ) {
                 CheckMark(saveActivity)
                 Spacer(Modifier.width(12.dp))
-                Text("Guardar «${reminder.activity.trim()}» en tus actividades", style = Relevo.type.subhead, color = Relevo.colors.ink)
+                Text("Guardar en tus actividades para la próxima vez", style = Relevo.type.subhead, color = Relevo.colors.ink)
               }
             }
             if (!backgroundUnrestricted) {
               SectionGap()
-              Notice("Para que el conteo siga varios días, deja que Relevo funcione sin restricción de batería.", title = "Batería", icon = KitIcon.BATERIA) {
-                PlainAction("Permitir", actions.onBackground)
+              Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
+                PlainAction("Quitar la restricción", actions.onBackground)
               }
             }
           }
@@ -295,7 +299,7 @@ private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivi
 
 @Composable
 private fun GroupLabel(text: String) {
-  Text(text.uppercase(), style = Relevo.type.label, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 12.dp))
+  Text(text, style = Relevo.type.section, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 12.dp))
 }
 
 private class Tile(val label: String, val picture: Picture, val selected: Boolean, val onClick: () -> Unit)
@@ -312,7 +316,7 @@ private fun TileGrid(tiles: List<Tile>) {
   }
 }
 
-/** Paso 3: dónde se deja el parlante. La foto muestra la idea: el objeto junto a lo que se necesita para empezar. */
+/** Paso 3: dónde empieza la actividad, que es donde se deja el parlante. La foto muestra la idea. */
 @Composable
 private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actions: PrepareActions, onNext: () -> Unit) {
   Row(verticalAlignment = Alignment.CenterVertically) {
@@ -323,7 +327,7 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
     Column(Modifier.weight(1f)) {
       Text(
         when (studyCondition) {
-          null -> "Deja el parlante junto a lo que necesitas para empezar."
+          null -> "Deja el parlante ahí, junto a lo que necesitas para empezar."
           StudyCondition.PHONE -> "${conditionInstruction(studyCondition)} Anota dónde está lo que necesitas para empezar."
           else -> conditionInstruction(studyCondition)
         },
@@ -335,9 +339,8 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   SectionGap()
   RenglonField(
     when (studyCondition) {
-      StudyCondition.PHONE -> "Lo que necesitas está"
-      StudyCondition.NEUTRAL -> "El parlante está"
-      else -> "Lugar"
+      StudyCondition.NEUTRAL -> "Dónde está el parlante"
+      else -> "Dónde empiezas"
     },
     reminder.place, actions.onPlace,
     placeholder = if (studyCondition == StudyCondition.NEUTRAL) "Ej.: en la repisa del living" else "Ej.: junto a las zapatillas",
@@ -348,22 +351,22 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: PrepareActions, onPick: () -> Unit) {
-  Text("Suena cuando sumes este tiempo en las apps que elijas.", style = Relevo.type.body, color = Relevo.colors.graphite)
+  Text("Te avisa cuando sumes este tiempo en las apps que elijas.", style = Relevo.type.body, color = Relevo.colors.graphite)
   if (!usageAccess) {
     SectionGap()
-    Notice("Android pide el permiso de Tiempo de uso para contar.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
-      PlainAction("Abrir ajustes", actions.onUsageSettings)
+    Notice("Relevo necesita el permiso de Tiempo de uso para contar.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
+      PlainAction("Dar el permiso", actions.onUsageSettings)
     }
   }
   SectionGap()
-  ListSection(title = "Apps") {
+  ListSection(title = "Apps que cuentan") {
     reminder.selectedApps.forEach { app ->
       ListRow(app.label, leading = { AppIcon(app.packageName, 32.dp) }, leadingWidth = 32.dp)
     }
     ListRow(if (reminder.selectedApps.isEmpty()) "Elegir apps" else "Cambiar apps", icon = if (reminder.selectedApps.isEmpty()) KitIcon.AGREGAR else KitIcon.EDITAR, chevron = true, onClick = onPick)
   }
   SectionGap()
-  DurationStepper(reminder.requiredUsageSeconds, actions.onDuration, "en las apps elegidas")
+  DurationStepper(reminder.requiredUsageSeconds, actions.onDuration, "en esas apps")
   Spacer(Modifier.height(16.dp))
   FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
     listOf(15 * 60, 30 * 60, 60 * 60, 2 * 60 * 60).forEach { seconds ->
@@ -382,14 +385,14 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { speakerConnected = bluetoothSpeakerConnected(context) }
   Text(
     if (studyCondition != null) "Esta semana lo decide la prueba: ${conditionName(studyCondition).lowercase()}."
-    else "Puedes probarlo antes de activar.",
+    else "Prueba cómo suena antes de activarlo.",
     style = Relevo.type.body, color = Relevo.colors.graphite,
   )
   SectionGap()
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
     SoundOption(KitIcon.PARLANTE, "El parlante", if (speakerConnected) "Conectado por Bluetooth" else "Sin parlante conectado",
       selected = reminder.signalRoute == SignalRoute.BLUETOOTH, enabled = studyCondition == null) { actions.onRoute(SignalRoute.BLUETOOTH) }
-    SoundOption(KitIcon.TELEFONO, "El teléfono", "No suena donde empieza la actividad",
+    SoundOption(KitIcon.TELEFONO, "El teléfono", "Suena donde esté el teléfono",
       selected = reminder.signalRoute == SignalRoute.PHONE, enabled = studyCondition == null) { actions.onRoute(SignalRoute.PHONE) }
   }
   SectionGap()
@@ -403,7 +406,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   }
   if (reminder.signalRoute == SignalRoute.BLUETOOTH) {
     Spacer(Modifier.height(8.dp))
-    Text("Si tu parlante se apaga solo, la señal no sonará.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+    Text("Si tu parlante se apaga solo, no sonará.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
   }
 }
 

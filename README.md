@@ -47,7 +47,7 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 ## Estado actual — 24 de septiembre de 2026
 
-La aplicación Android más reciente es **Relevo 2.9** (27 de septiembre), prototipo de depuración para Android 12 o posterior. Al estilo de iOS 26, usa pantalla completa, vidrio con desenfoque sutil, cápsulas y emoji en el perfil (D-083). Mantiene lo que agregó la 2.8: el sistema de marca D-073 con fotografías, el perfil, la ruta de actividades, el aviso de regreso opcional y el uso sin participar. Conserva lo que la 2.7 implementó para la prueba de 21 días del protocolo 02: señal de unos 30 segundos, condición por semana y preguntas integradas. Compila y pasa 50 pruebas unitarias; en emulador, con datos ficticios, se recorrió el ciclo completo y los registros llegaron a Supabase. Falta probarla en un teléfono y un parlante reales y comprobar el borrado sin conexión. No hay resultados de validación con participantes. Consulta el [README de Android](06_desarrollo_y_factibilidad/app-android/README.md), [Android 2.9](06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md), [Android 2.8](06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md), [Android 2.7](06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y la [auditoría del feedback docente](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
+La aplicación Android más reciente es **Relevo 2.10** (27 de septiembre), prototipo de depuración para Android 12 o posterior. Para usarla hay que participar en la prueba; usa textos más claros, sin mayúsculas, y pone el texto de las fotos en blanco o en tinta según su tono (D-084). Mantiene el estilo de iOS 26 de la 2.9, con vidrio y emoji (D-083), y lo que agregó la 2.8: el sistema de marca D-073 con fotografías, el perfil, la ruta de actividades y el aviso de regreso opcional. Conserva lo que la 2.7 implementó para la prueba de 21 días del protocolo 02: señal de unos 30 segundos, condición por semana y preguntas integradas. Compila y pasa 58 pruebas unitarias; en emulador, con datos ficticios y sin red, se recorrió el ciclo completo. En versiones anteriores se comprobó que los registros llegan a Supabase. Falta probarla en un teléfono y un parlante reales y comprobar el borrado sin conexión. No hay resultados de validación con participantes. Consulta el [README de Android](06_desarrollo_y_factibilidad/app-android/README.md), [Android 2.10](06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md), [Android 2.9](06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md), [Android 2.8](06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md), [Android 2.7](06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y la [auditoría del feedback docente](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
 El proyecto sigue siendo **phygital**: la app organiza la intención y el testigo físico propuesto devuelve una señal en el lugar asociado a la actividad. El parlante Bluetooth actual es una salida de prueba, no el objeto final de Relevo. El valor diferencial —que una señal física y situada aporte más que una notificación— sigue pendiente de evaluación.
 
@@ -55,7 +55,7 @@ La fuente académica vigente es la [memoria v4](08_memoria/memoria-vigente-v4.md
 
 La investigación de usuarios se basa en ocho entrevistas presenciales realizadas en Santiago el 11 y 12 de junio de 2026, con personas de 19 a 27 años, reclutadas por referencias y con consentimiento oral. El análisis es cualitativo exploratorio, no representativo. La encuesta separada de 70 personas sigue pendiente de revisar y no integra todavía la evidencia vigente.
 
-Las prioridades inmediatas son elegir la versión de la app para la prueba de 21 días (2.7, 2.8 o 2.9), ensayarla en un teléfono y un parlante reales, revisar el consentimiento y comprobar la eliminación de datos sin conexión, y resolver la ruta de construcción física. El plan de cierre conserva como metas el 31 de octubre para el producto casi terminado, el 15 de noviembre para el cierre interno, el 2 de diciembre para la memoria y el 14–18 de diciembre para el examen; verificar su vigencia en el plan y en las Issues.
+Las prioridades inmediatas son elegir la versión de la app para la prueba de 21 días (2.7, 2.8, 2.9 o 2.10), ensayarla en un teléfono y un parlante reales, revisar el consentimiento y comprobar la eliminación de datos sin conexión, y resolver la ruta de construcción física. El plan de cierre conserva como metas el 31 de octubre para el producto casi terminado, el 15 de noviembre para el cierre interno, el 2 de diciembre para la memoria y el 14–18 de diciembre para el examen; verificar su vigencia en el plan y en las Issues.
 
 Para migrar el trabajo a Claude, abre el repositorio con `CLAUDE.md` disponible y sigue [`00_gobernanza/INICIO-CLAUDE.md`](00_gobernanza/INICIO-CLAUDE.md) y el [traspaso completo](00_gobernanza/traspaso-a-claude-2026-09-24.md). El estado de GitHub Issues debe consultarse directamente; no se verificó al preparar este corte.
 
@@ -107,6 +107,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Android 2.10
+
+- **Qué cambió:** el estado de la app describe la 2.10.
+- **Cómo estaba antes:** describía la 2.9, con uso sin participar.
+- **Por qué:** la portada debe coincidir con la app compilada el 27 de septiembre.
 
 ### 2026-09-27 — Android 2.9
 

@@ -54,7 +54,7 @@ fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifie
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
   val reduce = rememberReduceMotion()
-  BoxWithConstraints(modifier.fillMaxWidth().height(TabBarHeight).glass(Relevo.controlShape).padding(5.dp)) {
+  BoxWithConstraints(modifier.fillMaxWidth().height(TabBarHeight).glass(Relevo.controlShape, blur = BarBlur).padding(5.dp)) {
     val segment = maxWidth / items.size
     val offset by animateDpAsState(segment * selected, if (reduce) snap() else Motion.smooth(stiffness = 420f), label = "tab_indicator")
     Box(

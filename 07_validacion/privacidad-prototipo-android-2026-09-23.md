@@ -52,7 +52,7 @@ El texto debe adaptarse a la configuración efectivamente instalada. No debe dej
 La auditoría tiene corte al 24 de septiembre (2.6). La versión 2.8 del 26 de septiembre ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)) cambia estos puntos, que deben revisarse antes de usarla con participantes:
 
 1. **Perfil local.** La app pide, de forma opcional, un nombre, una imagen prehecha e intereses, y guarda una ruta de actividades. Quedan solo en el teléfono (`ProfileStore`, `RouteStore` y `SettingsStore`). El texto candidato de arriba dice «No se solicita tu nombre dentro de la app»: habría que decir que el nombre es opcional y no sale del teléfono.
-2. **Uso sin participar.** Quien elige «No participar» usa la app sin registro de investigación: no se guardan sesiones, eventos ni respuestas y no se crea la sesión anónima de Supabase. Se comprobó en emulador.
+2. **Uso sin participar.** Quien elige «No participar» usa la app sin registro de investigación: no se guardan sesiones, eventos ni respuestas y no se crea la sesión anónima de Supabase. Se comprobó en emulador. *Desde la 2.10 (D-084) este uso no existe: para usar la app hay que aceptar participar.*
 3. **Descarga de datos.** «Descargar mis datos» crea un archivo JSON donde la persona elige, con perfil, ruta, actividades propias, relevos y registro del estudio. Una vez fuera de la app, ese archivo queda bajo su control, incluso si lo guarda en una nube.
 4. **Respuestas opcionales nuevas,** solo para quien participa: opinión sobre la app (estrellas y comentario), reporte de problemas con un registro técnico que se adjunta solo si la persona lo marca, y «¿Qué te ayudó?» en «Tu semana». Se guardan en `relevo_answers` con las mismas políticas y el mismo borrado.
 5. **Aviso de regreso.** Es opcional y está apagado por defecto. En la pantalla de bloqueo solo muestra un texto genérico, sin la actividad.
@@ -60,6 +60,8 @@ La auditoría tiene corte al 24 de septiembre (2.6). La versión 2.8 del 26 de s
 7. **Borrado.** Además de lo anterior, borra perfil, ruta y ajustes y cancela el aviso de regreso. El borrado sin conexión sigue sin probarse.
 
 En la versión 2.9 (27 de septiembre) la imagen del perfil es un emoji, y sigue sin salir del teléfono. No cambia qué se guarda ni qué se envía.
+
+En la versión 2.10 (27 de septiembre) usar la app exige el consentimiento vigente. Quien había usado la app sin participar conserva en el teléfono su perfil, su ruta y sus actividades, pero no registra nada hasta aceptar; lo anterior no se envía. «Borrar mis datos» avisa que también se deja la prueba. No cambia qué se guarda ni qué se envía. Las pruebas en emulador se hicieron sin red.
 
 ## Referencias
 
@@ -69,6 +71,12 @@ En la versión 2.9 (27 de septiembre) la imagen del perfil es un emoji, y sigue 
 - Google. (s. f.). *Manifest.permission*. Android Developers. https://developer.android.com/reference/android/Manifest.permission#PACKAGE_USAGE_STATS
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Android 2.10
+
+- **Qué cambió:** se anotó que desde 2.10 no hay uso sin participar y qué pasa con quien lo usaba.
+- **Cómo estaba antes:** la sección llegaba hasta la 2.9.
+- **Por qué:** la participación obligatoria cambia quién puede usar la app (D-084).
 
 ### 2026-09-27 — Android 2.9
 

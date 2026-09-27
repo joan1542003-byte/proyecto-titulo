@@ -36,7 +36,7 @@ La respuesta final ofrece cuatro estados: comenzó la actividad, la dejó para d
 
 Las claves de `relevo_answers` son: `prueba_inicio` y `prueba_fin` (secuencia y fechas); `semanaN_costo_preparar`, `semanaN_molestia_senal` y `semanaN_relacion_lugar` (1 a 5); `semanaN_comentario` o `semanaN_omitida`, y las del cierre con prefijo `cierre_`. Desde Android 2.8 se suman, todas opcionales: `opinion_estrellas` (1 a 5, sobre la app, no sobre la persona) y `opinion_comentario`; `reporte_problema` y `reporte_registro` (registro técnico que la persona decide adjuntar: versión, permisos, estado y envío, sin contenido de otras apps), y `tu_semana_ayudo` (texto libre de «Tu semana»). Sirven para mejorar la app y no forman parte de las medidas del protocolo 02.
 
-En 2.8, quien elige «No participar» usa la app sin que se registre nada de esto: no hay sesiones, eventos ni respuestas, ni sesión anónima en Supabase. El nombre, la imagen, los intereses y la ruta del perfil quedan solo en el teléfono. Si la persona prepara un relevo desde un paso de la ruta, la sesión registra la actividad, el primer paso y el lugar como en cualquier relevo.
+En 2.8 y 2.9, quien elige «No participar» usa la app sin que se registre nada de esto: no hay sesiones, eventos ni respuestas, ni sesión anónima en Supabase. Desde 2.10 (D-084) ese uso no existe: sin el consentimiento vigente no se puede preparar un relevo. El nombre, la imagen, los intereses y la ruta del perfil quedan solo en el teléfono. Si la persona prepara un relevo desde un paso de la ruta, la sesión registra la actividad, el primer paso y el lugar como en cualquier relevo.
 
 ## Preguntas que puede responder
 
@@ -112,6 +112,12 @@ La frecuencia de una actividad describe elecciones dentro de Relevo. Para afirma
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Android 2.10
+
+- **Qué cambió:** se anotó que desde 2.10 no hay uso sin participar.
+- **Cómo estaba antes:** describía el uso sin participar de 2.8 como vigente.
+- **Por qué:** decisión del autor D-084.
 
 ### 2026-09-26 — Android 2.8
 

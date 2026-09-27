@@ -47,14 +47,14 @@ data class ActivityIdea(val activity: String, val start: String, val place: Stri
 
 internal val activityIdeas = listOf(
   ActivityIdea("Leer", "Abrir el libro", "Junto al libro", KitIcon.LEER, Photo.LEER),
-  ActivityIdea("Caminar", "Ponerme las zapatillas", "Junto a las zapatillas", KitIcon.CAMINAR, Photo.CAMINAR),
+  ActivityIdea("Caminar", "Ponerte las zapatillas", "Junto a las zapatillas", KitIcon.CAMINAR, Photo.CAMINAR),
   ActivityIdea("Hacer ejercicio", "Preparar una serie", "Junto a las pesas", KitIcon.EJERCICIO, Photo.EJERCICIO),
-  ActivityIdea("Estudiar", "Abrir mis apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR),
+  ActivityIdea("Estudiar", "Abrir tus apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR),
   ActivityIdea("Dibujar", "Sacar el cuaderno y un lápiz", "En el escritorio", KitIcon.DIBUJAR, Photo.DIBUJAR),
   ActivityIdea("Tocar un instrumento", "Sacar la guitarra del estuche", "Junto a la guitarra", KitIcon.GUITARRA, Photo.GUITARRA),
   ActivityIdea("Cocinar", "Reunir los ingredientes", "En la cocina", KitIcon.COCINAR, Photo.COCINAR),
   ActivityIdea("Escribir", "Abrir el cuaderno", "En el escritorio", KitIcon.ESCRIBIR, Photo.ESCRIBIR),
-  ActivityIdea("Ordenar", "Despejar una superficie", "En el lugar que quiero ordenar", KitIcon.ORDENAR, Photo.ORDENAR),
+  ActivityIdea("Ordenar", "Despejar una superficie", "Donde quieres ordenar", KitIcon.ORDENAR, Photo.ORDENAR),
   ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la correa", KitIcon.SALIR, Photo.PERRO),
   ActivityIdea("Hacer manualidades", "Preparar los materiales", "En la mesa de trabajo", KitIcon.MANUALIDADES, Photo.MANUALIDADES),
   ActivityIdea("Pintar", "Preparar las acuarelas", "En la mesa", KitIcon.PINTAR, Photo.PINTAR),
@@ -144,6 +144,21 @@ internal fun iconForActivity(name: String, custom: List<CustomActivity>): KitIco
 /** Clave estable para que la foto de una actividad viaje entre pantallas. */
 internal fun photoKey(source: String, name: String) = "$source:${name.trim().lowercase(spanish)}"
 
+/**
+ * Une el primer paso y el lugar en una frase (D-084): «Empieza por ponerte las zapatillas, junto a
+ * la puerta.». Reemplaza los rótulos «Empiezas» y «Lugar», que se entendían mal. Sin datos, null.
+ */
+internal fun startSentence(firstStep: String, place: String): String? {
+  val first = firstStep.trim().trimEnd('.')
+  val where = place.trim().trimEnd('.').takeIf { it.isNotEmpty() }?.let(::placePhrase)
+  return when {
+    first.isNotEmpty() && where != null -> "Empieza por ${first.replaceFirstChar { it.lowercase(spanish) }}, $where."
+    first.isNotEmpty() -> "Empieza por ${first.replaceFirstChar { it.lowercase(spanish) }}."
+    where != null -> "Empieza $where."
+    else -> null
+  }
+}
+
 /** «Junto a las zapatillas» → «junto a las zapatillas»; un lugar sin preposición va entre comillas. */
 internal fun placePhrase(place: String): String {
   val trimmed = place.trim().trimEnd('.')
@@ -178,10 +193,10 @@ internal fun bluetoothSpeakerConnected(context: Context): Boolean =
     ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP || it.type == AudioDeviceInfo.TYPE_BLE_SPEAKER } == true
 
 internal fun syncStatusText(status: SyncStatus): String = buildString {
-  append(if (status.pending == 0) "No hay registros pendientes." else "${status.pending} registros esperan conexión.")
+  append(when (status.pending) { 0 -> "Todo está enviado."; 1 -> "1 dato espera conexión."; else -> "${status.pending} datos esperan conexión." })
   if (status.lastSuccessAt > 0L) append(" Último envío: ${formatMoment(status.lastSuccessAt)}.")
-  if (status.rejected > 0) append(" La base no aceptó ${status.rejected}; se guardan en el teléfono.")
-  status.lastError?.let { append(" Aviso técnico: $it") }
+  if (status.rejected > 0) append(" ${status.rejected} no se aceptaron y quedan en el teléfono.")
+  status.lastError?.let { append(" Detalle técnico: $it") }
 }
 
 private val momentFormat = DateTimeFormatter.ofPattern("d MMM, HH:mm", spanish)
@@ -190,8 +205,8 @@ private val todayFormat = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM", spanis
 internal fun formatMoment(epochMillis: Long): String =
   Instant.ofEpochMilli(epochMillis).atZone(ZoneId.systemDefault()).format(momentFormat)
 
-/** «jueves 25 de septiembre», para el encabezado de Inicio. */
-internal fun todayLabel(today: LocalDate = LocalDate.now()): String = today.format(todayFormat)
+/** «Jueves 25 de septiembre», para el encabezado de Inicio y los días de «Tus relevos». */
+internal fun todayLabel(today: LocalDate = LocalDate.now()): String = today.format(todayFormat).replaceFirstChar { it.titlecase(spanish) }
 
 internal fun outcomeLabel(outcome: String): String? = when (outcome) {
   "started" -> "Dijiste que empezaste"
@@ -227,9 +242,10 @@ internal fun weekFacts(history: List<HistoryEntry>, today: LocalDate = LocalDate
   return WeekFacts(prepared = thisWeek.size, started = thisWeek.count { it.outcome == "started" })
 }
 
+/** Nombre de la condición para la persona, en palabras de todos los días (D-084). */
 internal fun conditionName(condition: StudyCondition): String = when (condition) {
-  StudyCondition.SITUATED -> "Parlante junto al comienzo"
-  StudyCondition.NEUTRAL -> "Parlante en un lugar neutro"
+  StudyCondition.SITUATED -> "Parlante donde empiezas"
+  StudyCondition.NEUTRAL -> "Parlante en otro lugar"
   StudyCondition.PHONE -> "Aviso en el teléfono"
 }
 

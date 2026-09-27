@@ -70,7 +70,7 @@ Puedes pedir que borremos todo cuando quieras.
 *[No participar]*
 ```
 
-- **Estados:** si la persona no participa, la app funciona igual pero no envía datos.
+- **Estados:** si la persona no participa, la app funciona igual pero no envía datos. *Desde Android 2.10 (D-084) no hay «No participar»: para usar la app hay que aceptar.*
 
 ### A3 Permiso de tiempo de uso
 
@@ -394,7 +394,7 @@ El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La
 
 ## 9. Qué cambiará cuando se implemente
 
-- **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono. *Actualización del 25 de septiembre:* [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) implementa B4 con la señal de 30 segundos, B5 con las preguntas de la prueba y los reconocimientos, T1, T2 (texto pendiente de revisión, D-080), V1 sin el nombre, E1, E2, los botones con verbo y el consentimiento de 21 días. Siguen pendientes A1, la opción de no participar de A2, P1 a P3, R1 a R3, V2, S1 y S2. *Actualización del 26 de septiembre:* [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) implementa todas esas pantallas con el sistema D-073. Se aparta del diseño escrito en dos puntos, registrados en D-082: P2 ofrece fotos además de iconos, y la oferta R3 no se repite si la persona decide quedarse en el paso. «No participar» sigue A2: la app funciona igual y no registra ni envía datos de investigación. Falta el caso de V1 «Tu relevo anterior terminó sin sonar». *Actualización del 27 de septiembre:* [Android 2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md) vuelve al criterio original de P2 con emoji 3D en lugar de iconos del kit, sin fotos (D-083), y acorta los textos de las pantallas.
+- **App:** A1, A2, P1 a P3, R1 a R3, V1, V2, S2, T1, T2, textos y botones; límite de duración del tono. *Actualización del 25 de septiembre:* [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) implementa B4 con la señal de 30 segundos, B5 con las preguntas de la prueba y los reconocimientos, T1, T2 (texto pendiente de revisión, D-080), V1 sin el nombre, E1, E2, los botones con verbo y el consentimiento de 21 días. Siguen pendientes A1, la opción de no participar de A2, P1 a P3, R1 a R3, V2, S1 y S2. *Actualización del 26 de septiembre:* [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) implementa todas esas pantallas con el sistema D-073. Se aparta del diseño escrito en dos puntos, registrados en D-082: P2 ofrece fotos además de iconos, y la oferta R3 no se repite si la persona decide quedarse en el paso. «No participar» sigue A2: la app funciona igual y no registra ni envía datos de investigación. Falta el caso de V1 «Tu relevo anterior terminó sin sonar». *Actualización del 27 de septiembre:* [Android 2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md) vuelve al criterio original de P2 con emoji 3D en lugar de iconos del kit, sin fotos (D-083), y acorta los textos de las pantallas. *Actualización del 27 de septiembre, tarde:* [Android 2.10](../06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md) quita «No participar» de A2, cambia en R1 y B4 los rótulos «Empiezas» y «Lugar» por una frase («Empieza por…, junto a…») y «Estás aquí» por «Ahora», y pone el paso actual en grande en R1 (D-084).
 - **Consentimiento:** 21 días, preguntas integradas y nombre local; se mantiene el 30 de diciembre de 2026 como plazo de eliminación.
 - **Protocolo y pauta:** prueba de 21 días, preguntas por día, variante de constancia elegida.
 - **Memoria:** la prueba de 21 días ya está en los capítulos 10 y 13; queda por decidir si el criterio 4 menciona el reconocimiento y la ruta.
@@ -415,6 +415,12 @@ Silverman, J., & Barasch, A. (2023). On or off track: How (broken) streaks affec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Estado en Android 2.10
+
+- **Qué cambió:** A2 y la sección 9 indican que la 2.10 no tiene «No participar» y que R1 y B4 usan frases en lugar de rótulos.
+- **Cómo estaba antes:** describía la 2.9, con «No participar».
+- **Por qué:** pedido del autor (D-084).
 
 ### 2026-09-27 — Estado en Android 2.9
 

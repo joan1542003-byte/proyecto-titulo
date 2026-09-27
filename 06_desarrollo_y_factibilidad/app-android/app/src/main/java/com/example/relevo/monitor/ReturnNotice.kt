@@ -62,8 +62,8 @@ object ReturnNotice {
     val manager = context.getSystemService(NotificationManager::class.java) ?: return
     if (!manager.areNotificationsEnabled()) return
     manager.createNotificationChannel(
-      NotificationChannel(CHANNEL_ID, "Aviso de regreso", NotificationManager.IMPORTANCE_LOW).apply {
-        description = "Como máximo una vez por semana, si no abriste Relevo. Se apaga en Avisos y resúmenes."
+      NotificationChannel(CHANNEL_ID, "Aviso semanal", NotificationManager.IMPORTANCE_LOW).apply {
+        description = "Una vez por semana como máximo, si no abriste Relevo. Se apaga en Perfil, en Avisos y resúmenes."
       },
     )
     val activity = ReminderStore(context, ReminderStore.LAST_CONFIGURATION).load().activity.trim().trimEnd('.')

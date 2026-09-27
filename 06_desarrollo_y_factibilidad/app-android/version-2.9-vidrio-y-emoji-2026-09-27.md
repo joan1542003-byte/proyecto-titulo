@@ -3,6 +3,8 @@
 **Fecha:** 27 de septiembre de 2026. **Versión:** 2.9 (`versionCode 21`). **Rama:** `android-2.7`. **Consentimiento en la app:** `2026-09-25-v6`, sin cambios.
 **Base:** [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md). La 2.9 cambia el aspecto, la interacción y los textos; la lógica de la prueba de 21 días, los datos y las pantallas siguen siendo los de la 2.8. **Decisión:** D-083 del [registro](../../09_decisiones/registro-de-decisiones.md).
 
+**Actualización:** la [2.10](version-2.10-participacion-y-claridad-2026-09-27.md) exige participar en la prueba, cambia los textos, quita las mayúsculas, reduce el desenfoque, adapta el texto a cada foto y amplía los emoji (D-084). El vidrio, las formas y la técnica descritos aquí siguen vigentes.
+
 Las comprobaciones se hicieron en un emulador Android 16 (API 36) con datos ficticios, que después se borraron. No sustituyen la prueba en el teléfono y el parlante reales ni una prueba con personas.
 
 ## Qué pidió el autor
@@ -117,6 +119,12 @@ googlefonts. (2026). *noto-emoji* [Repositorio de código]. GitHub. https://gith
 Yablonski, J. (s. f.). *Laws of UX*. https://lawsofux.com/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Remisión a 2.10
+
+- **Qué cambió:** se añadió una nota que remite a la 2.10.
+- **Cómo estaba antes:** no se indicaba que existía una versión posterior.
+- **Por qué:** que quien lea la 2.9 sepa qué cambió después.
 
 ### 2026-09-27 — Documento nuevo
 

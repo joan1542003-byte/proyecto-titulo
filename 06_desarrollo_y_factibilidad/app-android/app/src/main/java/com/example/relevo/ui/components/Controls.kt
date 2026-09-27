@@ -88,7 +88,7 @@ fun RelevoButton(
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
   val (container, content) = when {
-    !enabled -> colors.mist.copy(alpha = .7f) to colors.gray
+    !enabled -> colors.mist to colors.gray
     kind == ButtonKind.Primary -> colors.ink to colors.onInk
     kind == ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .16f else .09f) to colors.error
     else -> colors.mist to colors.ink

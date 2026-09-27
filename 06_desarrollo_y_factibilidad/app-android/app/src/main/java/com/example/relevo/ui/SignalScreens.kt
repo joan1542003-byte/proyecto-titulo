@@ -32,11 +32,10 @@ import androidx.compose.ui.unit.dp
 import com.example.relevo.data.CustomActivity
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.SignalRoute
+import com.example.relevo.domain.StudyCondition
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.ButtonKind
-import com.example.relevo.ui.components.FactRow
 import com.example.relevo.ui.components.KitIcon
-import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.PictureContent
 import com.example.relevo.ui.components.PlainAction
@@ -65,9 +64,11 @@ internal fun SignalScreen(
 ) {
   val sounding = reminder.signalDelivered && !reminder.signalEnded
   var tested by rememberSaveable { mutableStateOf<Boolean?>(null) }
+  val picture = activityPicture(reminder.activity, customActivities)
   RelevoScreen(
-    hero = { PictureContent(activityPicture(reminder.activity, customActivities), Modifier.fillMaxSize(), iconSize = 64.dp, wide = true) },
+    hero = { PictureContent(picture, Modifier.fillMaxSize(), iconSize = 64.dp, wide = true) },
     heroHeight = 320.dp,
+    heroPicture = picture,
     bottom = { RelevoButton(if (sounding) "Silenciar y continuar" else "Continuar", onContinue, icon = if (sounding) KitIcon.SILENCIAR else null) },
   ) {
     Spacer(Modifier.height(22.dp))
@@ -75,17 +76,18 @@ internal fun SignalScreen(
       when {
         !reminder.signalDelivered -> StatusChip(KitIcon.ERROR, "No sonó")
         sounding -> SoundingChip(reminder.signalRoute == SignalRoute.PHONE)
-        else -> StatusChip(KitIcon.LISTO, "La señal terminó")
+        else -> StatusChip(KitIcon.LISTO, "Ya dejó de sonar")
       }
     }
     Spacer(Modifier.height(18.dp))
     Text("Es momento de volver a elegir", style = Relevo.type.title2, color = Relevo.colors.graphite, modifier = Modifier.appear(1))
     Spacer(Modifier.height(10.dp))
     Signature(reminder.activity)
-    SectionGap()
-    ListSection(modifier = Modifier.appear(2)) {
-      FactRow(KitIcon.PRIMER_PASO, "Empiezas", reminder.howToStart)
-      FactRow(KitIcon.LUGAR, "Está", placePhrase(reminder.place).replaceFirstChar { it.uppercase() })
+    // Una frase en vez de rótulos: cómo empezar y dónde (D-084). En la semana del parlante en otro lugar, el lugar no es el del comienzo.
+    val neutral = StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ') == StudyCondition.NEUTRAL
+    startSentence(reminder.howToStart, if (neutral) "" else reminder.place)?.let {
+      Spacer(Modifier.height(14.dp))
+      Text(it, style = Relevo.type.title2.copy(fontWeight = FontWeight.Normal), color = Relevo.colors.ink, modifier = Modifier.appear(2))
     }
     if (!reminder.signalDelivered) {
       SectionGap()

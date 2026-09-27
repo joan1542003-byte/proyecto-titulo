@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)).
+**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)).
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -73,6 +73,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — D-084 en la app
+
+- **Qué cambió:** el estado indica que la 2.10 escribe los rótulos sin mayúsculas, a diferencia de las notas del manual.
+- **Cómo estaba antes:** solo mencionaba la 2.8 y la 2.9.
+- **Por qué:** pedido del autor del 27 de septiembre.
 
 ### 2026-09-27 — D-083 en la app
 

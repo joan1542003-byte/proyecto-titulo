@@ -2,6 +2,7 @@ package com.example.relevo.ui.components
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class EmojiTest {
@@ -15,6 +16,11 @@ class EmojiTest {
     assertEquals(Emoji.ZAPATILLA, Emoji.forProfile("foto:CAMINAR"))
     assertEquals(Emoji.AUDIFONOS, Emoji.forProfile("icono:MUSICA"))
     assertEquals(Emoji.PLANTA, Emoji.forProfile("icono:PLANTAS"))
+  }
+
+  @Test fun thereAre84EmojiInFiveGroups() {
+    assertEquals(84, Emoji.entries.size)
+    EmojiGroup.entries.forEach { group -> assertTrue(Emoji.entries.any { it.group == group }) }
   }
 
   @Test fun withoutAnImageThereIsNoEmoji() {

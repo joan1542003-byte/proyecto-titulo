@@ -53,8 +53,8 @@ import org.json.JSONObject
 import java.time.LocalDate
 import java.util.UUID
 
-/** Cómo usa la persona la app: participa en la prueba, la usa solo en el teléfono o aún no decide. */
-enum class ParticipationMode { STUDY, LOCAL, NONE }
+/** Si la persona participa en la prueba o todavía no acepta. Desde 2.10 no hay uso sin participar (D-084). */
+enum class ParticipationMode { STUDY, NONE }
 
 /** R3: la persona dijo varias veces que empezó el mismo paso; se le ofrece el siguiente, sin afirmar un hábito. */
 data class RouteSuggestion(val interest: String, val current: RouteStep, val next: RouteStep, val starts: Int)
@@ -140,13 +140,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   init {
     _installedApps.value = appsRepository.launcherApps()
+    Participation.clearLegacyLocalMode(application)
     when (currentParticipation()) {
       ParticipationMode.NONE -> {
         application.stopService(Intent(application, AppUsageMonitorService::class.java))
         updateValue(_reminder.value.copy(participantCode = "", consentAccepted = false, localOnly = false, status = ReminderStatus.DRAFT))
       }
-      ParticipationMode.LOCAL -> if (!_reminder.value.localOnly || _reminder.value.participantCode.isNotBlank())
-        updateValue(_reminder.value.copy(participantCode = "", consentAccepted = false, localOnly = true))
       ParticipationMode.STUDY -> {
         val participantCode = experiencePreferences.getString("participant_code", null)
           ?: _reminder.value.participantCode.ifBlank { "P-${UUID.randomUUID().toString().take(8).uppercase()}" }
@@ -160,11 +159,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     onAppResumed()
   }
 
-  private fun currentParticipation(): ParticipationMode = when {
-    Participation.participating(getApplication()) -> ParticipationMode.STUDY
-    Participation.localMode(getApplication()) -> ParticipationMode.LOCAL
-    else -> ParticipationMode.NONE
-  }
+  private fun currentParticipation(): ParticipationMode =
+    if (Participation.participating(getApplication())) ParticipationMode.STUDY else ParticipationMode.NONE
 
   /** Al volver a la app: comprueba permisos, retoma un conteo interrumpido y reintenta el envío pendiente. */
   fun onAppResumed() {
@@ -291,7 +287,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       targetAppLabel = apps.first().label,
       participantCode = _reminder.value.participantCode,
       consentAccepted = hasCurrentConsent(),
-      localOnly = Participation.localMode(getApplication()),
+      localOnly = false,
       sessionId = "",
       observedUsageSeconds = 0,
       signalDelivered = false,
@@ -334,23 +330,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       .putString("academic_consent_version", if (accepted) ResearchLogStore.CONSENT_VERSION else null)
       .putString("participant_code", if (accepted) participantCode else null)
       .apply()
-    if (accepted) Participation.setLocalMode(getApplication(), false)
     _participation.value = currentParticipation()
     update { copy(participantCode = participantCode, consentAccepted = accepted, localOnly = false, status = ReminderStatus.DRAFT) }
     if (accepted) refreshDashboard()
-  }
-
-  /** A2 «No participar»: la app funciona igual, pero no registra datos del estudio ni los envía. */
-  fun useWithoutParticipating() {
-    experiencePreferences.edit()
-      .putBoolean("academic_consent_accepted", false)
-      .remove("academic_consent_version")
-      .remove("participant_code")
-      .apply()
-    Participation.setLocalMode(getApplication(), true)
-    _participation.value = currentParticipation()
-    update { copy(participantCode = "", consentAccepted = false, localOnly = true, status = ReminderStatus.DRAFT) }
-    refreshDashboard()
   }
 
   fun applyPreset(activity: String, firstStep: String, place: String) {
@@ -521,7 +503,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _reminder.value = Reminder(
       participantCode = experiencePreferences.getString("participant_code", null).orEmpty(),
       consentAccepted = hasCurrentConsent(),
-      localOnly = Participation.localMode(getApplication()),
+      localOnly = false,
     )
     store.save(_reminder.value)
     _remainingSeconds.value = 0
@@ -697,7 +679,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun deleteResearchData() {
     if (deletingData) return
     deletingData = true
-    _deletionStatus.value = "Eliminando datos…"
+    _deletionStatus.value = "Borrando tus datos…"
     remoteSync.beginDeletion()
     getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     signalPlayer.stop()
@@ -732,9 +714,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         _routes.value = emptyList()
         _settings.value = Settings()
         _participation.value = ParticipationMode.NONE
-        _deletionStatus.value = "Datos eliminados. Si quieres volver a usar Relevo, tendrás que aceptar de nuevo las condiciones."
+        _deletionStatus.value = DELETED_MESSAGE
       } else {
-        _deletionStatus.value = "Se detuvo el registro, pero no pudimos confirmar la eliminación. Tus datos siguen en el teléfono. Puedes reintentar o escribir a joan1542003@gmail.com."
+        _deletionStatus.value = "Relevo dejó de registrar, pero no pudimos confirmar el borrado. Tus datos siguen en el teléfono. Inténtalo de nuevo o escribe a joan1542003@gmail.com."
       }
       deletingData = false
     }
@@ -779,6 +761,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     signalPlayer.stop()
     stateSyncJob?.cancel()
     super.onCleared()
+  }
+
+  companion object {
+    /** Mensaje tras borrar los datos; también marca que la persona dejó la prueba. */
+    const val DELETED_MESSAGE = "Tus datos se borraron y dejaste la prueba. Para volver a usar Relevo, tendrás que aceptar participar de nuevo."
   }
 }
 

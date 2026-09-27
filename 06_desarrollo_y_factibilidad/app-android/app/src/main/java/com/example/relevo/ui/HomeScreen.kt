@@ -58,6 +58,7 @@ import com.example.relevo.ui.components.Avatar
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.Carousel
 import com.example.relevo.ui.components.CheckMark
+import com.example.relevo.ui.components.ControlBlur
 import com.example.relevo.ui.components.FactRow
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
@@ -113,6 +114,9 @@ internal class HomeActions(
 )
 
 internal const val ACTIVE_PHOTO = "activo"
+
+/** Aviso de batería: qué hacer y para qué, en una frase. */
+internal const val BATTERY_TEXT = "Para que Relevo siga contando aunque pasen días, quítale la restricción de batería."
 
 /**
  * B1: Inicio. Saluda por el nombre y muestra, en una foto grande, lo más próximo: el relevo activo,
@@ -177,14 +181,14 @@ internal fun HomeTab(
           ActiveCard(reminder, customActivities, usageAccess, actions.onOpenActive)
           if (!usageAccess) {
             Spacer(Modifier.height(12.dp))
-            Notice("Se retiró el permiso de Tiempo de uso.", title = "El conteo está en pausa", icon = KitIcon.ADVERTENCIA) {
-              PlainAction("Abrir ajustes", actions.onUsageSettings)
+            Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar el tiempo", icon = KitIcon.ADVERTENCIA) {
+              PlainAction("Dar el permiso", actions.onUsageSettings)
             }
           }
           if (!backgroundUnrestricted) {
             Spacer(Modifier.height(12.dp))
-            Notice("Para que el conteo siga varios días, deja que Relevo funcione sin restricción de batería.", title = "Batería", icon = KitIcon.BATERIA) {
-              PlainAction("Permitir", actions.onBackground)
+            Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
+              PlainAction("Quitar la restricción", actions.onBackground)
             }
           }
         }
@@ -193,7 +197,7 @@ internal fun HomeTab(
         else -> PhotoHero(Picture.OfPhoto(Photo.SALIDA), aspect = 1.1f, wide = true, onClick = actions.onPrepare, clickLabel = "Preparar un relevo") {
           Text("¿Tienes algo en mente?", style = Relevo.type.title2, color = Relevo.colors.ink)
           Spacer(Modifier.height(4.dp))
-          Text("Prepara un relevo cuando quieras.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+          Text("Anótalo y Relevo te avisa cuando lleves un rato en el teléfono.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
         }
       }
     }
@@ -211,7 +215,10 @@ internal fun HomeTab(
       SectionHeader("Tus actividades", Modifier.appear(3))
       Spacer(Modifier.height(4.dp))
       if (customActivities.isEmpty()) {
-        RelevoButton("Crear una actividad", actions.onNewActivity, kind = ButtonKind.Secondary, compact = true, icon = KitIcon.AGREGAR, modifier = Modifier.appear(4))
+        Column(Modifier.appear(4), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+          Text("Guarda lo que haces seguido y prepáralo en un toque.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+          RelevoButton("Crear una actividad", actions.onNewActivity, kind = ButtonKind.Secondary, compact = true, icon = KitIcon.AGREGAR)
+        }
       } else {
         Carousel(Modifier.appear(4)) {
           items(customActivities, key = { it.id }) { custom ->
@@ -246,7 +253,7 @@ internal fun HomeTab(
 private fun AvatarButton(profile: Profile, onClick: () -> Unit) {
   val interaction = remember { MutableInteractionSource() }
   Box(
-    Modifier.size(44.dp).pressScale(interaction, 0.92f).glass(CircleShape)
+    Modifier.size(44.dp).pressScale(interaction, 0.92f).glass(CircleShape, blur = ControlBlur)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
       .semantics { contentDescription = "Perfil" },
     contentAlignment = Alignment.Center,
@@ -296,7 +303,7 @@ private fun ActiveCard(reminder: Reminder, customActivities: List<CustomActivity
     activityPicture(reminder.activity, customActivities), aspect = 0.92f, sharedKey = ACTIVE_PHOTO,
     onClick = onOpen, clickLabel = "Ver mi relevo",
   ) {
-    StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Esperando" else "En pausa", onPanel = true)
+    StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Contando" else "En pausa", onPanel = true)
     Spacer(Modifier.height(12.dp))
     Signature(reminder.activity, style = Relevo.type.title, animate = false)
     Spacer(Modifier.height(6.dp))
@@ -328,7 +335,7 @@ private fun ReturnCard(last: HistoryEntry, lastReminder: Reminder?, customActivi
     activityPicture(last.activity, customActivities), aspect = 0.95f,
     sharedKey = lastReminder?.let { photoKey("regreso", it.activity) },
   ) {
-    Text("LA ÚLTIMA VEZ", style = Relevo.type.label, color = Relevo.colors.graphite)
+    Text("La última vez", style = Relevo.type.label, color = Relevo.colors.graphite)
     Spacer(Modifier.height(4.dp))
     Text(last.activity, style = Relevo.type.title, color = Relevo.colors.voice)
     Spacer(Modifier.height(4.dp))
@@ -350,15 +357,14 @@ private fun NextStepCard(track: RouteTrack, actions: HomeActions) {
     activityPicture(step.activity, emptyList()), aspect = 0.9f, sharedKey = key,
     onClick = { actions.onRouteStep(track.interest, step.id, key) }, clickLabel = "Preparar un relevo con este paso",
   ) {
-    Text("TU RUTA · ${track.title.uppercase()}", style = Relevo.type.label, color = Relevo.colors.graphite)
+    Text("Tu ruta · ${track.title}", style = Relevo.type.label, color = Relevo.colors.graphite)
     Spacer(Modifier.height(6.dp))
     Row(verticalAlignment = Alignment.Bottom) {
       Column(Modifier.weight(1f)) {
         Text(step.activity, style = Relevo.type.title, color = Relevo.colors.ink)
-        val detail = listOf(step.firstStep, step.place).filter { it.isNotBlank() }.joinToString(" · ")
-        if (detail.isNotBlank()) {
+        startSentence(step.firstStep, step.place)?.let {
           Spacer(Modifier.height(4.dp))
-          Text(detail, style = Relevo.type.subhead, color = Relevo.colors.graphite)
+          Text(it, style = Relevo.type.subhead, color = Relevo.colors.graphite)
         }
       }
       Spacer(Modifier.width(12.dp))
@@ -409,10 +415,11 @@ internal fun ActiveScreen(
       PictureContent(activityPicture(reminder.activity, customActivities), Modifier.fillMaxSize().sharedPhoto(ACTIVE_PHOTO), iconSize = 64.dp, wide = true)
     },
     heroHeight = 300.dp,
+    heroPicture = activityPicture(reminder.activity, customActivities),
     bottom = { RelevoButton("Desactivar el relevo", { confirming = true }, kind = ButtonKind.Secondary) },
   ) {
     Spacer(Modifier.height(24.dp))
-    StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Esperando" else "En pausa")
+    StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Contando" else "En pausa")
     Spacer(Modifier.height(16.dp))
     Signature(reminder.activity)
     Spacer(Modifier.height(12.dp))
@@ -426,30 +433,30 @@ internal fun ActiveScreen(
     }
     if (!usageAccess) {
       SectionGap()
-      Notice("Se retiró el permiso de Tiempo de uso.", title = "El conteo está en pausa", icon = KitIcon.ADVERTENCIA) {
-        PlainAction("Abrir ajustes", onUsageSettings)
+      Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar el tiempo", icon = KitIcon.ADVERTENCIA) {
+        PlainAction("Dar el permiso", onUsageSettings)
       }
     }
     SectionGap()
     ListSection {
-      FactRow(KitIcon.PRIMER_PASO, "Cómo empieza", reminder.howToStart)
-      if (reminder.signalRoute == SignalRoute.PHONE) FactRow(KitIcon.LUGAR, "Lo que necesitas", reminder.place)
-      else FactRow(KitIcon.PARLANTE, "Suena en", reminder.place)
+      FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart)
+      if (reminder.signalRoute == SignalRoute.PHONE) FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
+      else FactRow(KitIcon.PARLANTE, "Parlante", reminder.place)
       ListRow(
-        "Apps", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite,
+        "Apps que cuentan", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite,
         trailing = {
           Row(horizontalArrangement = Arrangement.spacedBy((-6).dp)) { reminder.selectedApps.take(4).forEach { AppIcon(it.packageName, 28.dp) } }
         },
         value = reminder.selectedApps.joinToString(", ") { it.label },
       )
       StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ')?.let { condition ->
-        ListRow("Prueba", icon = conditionIcon(condition), titleColor = Relevo.colors.graphite, value = conditionName(condition))
+        ListRow("Esta semana", icon = conditionIcon(condition), titleColor = Relevo.colors.graphite, value = conditionName(condition))
       }
     }
     if (!backgroundUnrestricted) {
       SectionGap()
-      Notice("Para que el conteo siga varios días, deja que Relevo funcione sin restricción de batería.", title = "Batería", icon = KitIcon.BATERIA) {
-        PlainAction("Permitir", onBackground)
+      Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
+        PlainAction("Quitar la restricción", onBackground)
       }
     }
   }
@@ -457,11 +464,11 @@ internal fun ActiveScreen(
     RelevoSheet(onDismiss = { confirming = false }, scrollable = false) {
       Text("¿Desactivar el relevo?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Deja de contar y no sonará. Después puedes contar qué decidiste.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Dejará de contar el tiempo y no sonará. Después podrás decir qué decidiste.", style = Relevo.type.body, color = Relevo.colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Desactivar", { confirming = false; onDisarm() }, kind = ButtonKind.Destructive)
       Spacer(Modifier.height(8.dp))
-      RelevoButton("Seguir esperando", { confirming = false }, kind = ButtonKind.Secondary)
+      RelevoButton("Mantenerlo", { confirming = false }, kind = ButtonKind.Secondary)
     }
   }
 }

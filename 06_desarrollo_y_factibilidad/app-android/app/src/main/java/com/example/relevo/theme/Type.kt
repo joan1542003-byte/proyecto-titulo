@@ -35,8 +35,9 @@ val FontWeight.Companion.Title: FontWeight get() = FontWeight(650)
 
 /**
  * Escala tipográfica. Toma la jerarquía de las apps de iOS (título grande, título, encabezado,
- * texto, nota) con las reglas del manual: titulares en 650 con −2 %, texto de 17 con interlineado
- * amplio y notas en mayúsculas con +6 %.
+ * texto, nota) con las reglas del manual: titulares en 650 con −2 % y texto de 17 con interlineado
+ * amplio. Nada va en mayúsculas sostenidas ni con letras espaciadas (D-084): los rótulos se
+ * escriben como una frase.
  */
 @Immutable
 data class RelevoType(
@@ -49,8 +50,10 @@ data class RelevoType(
   val subhead: TextStyle,
   val footnote: TextStyle,
   val caption: TextStyle,
-  /** Nota del manual: 500, 13, mayúsculas con +6 %. Para rótulos de sección. */
+  /** Rótulo breve sobre un título: «Ahora», «La última vez». */
   val label: TextStyle,
+  /** Título de un grupo de filas: «Ajustes», «Pasos». */
+  val section: TextStyle,
   /** Lo que escribió la persona sobre el renglón. */
   val voice: TextStyle,
   /** La firma «Vuelve a ___.» con las palabras de la persona. */
@@ -79,7 +82,8 @@ internal val DefaultType = RelevoType(
   subhead = style(15, 21, FontWeight.Normal),
   footnote = style(13, 18, FontWeight.Normal),
   caption = style(12, 16, FontWeight.Normal),
-  label = style(13, 18, FontWeight.Medium, 0.06),
+  label = style(14, 18, FontWeight.SemiBold),
+  section = style(15, 20, FontWeight.SemiBold),
   voice = style(20, 26, FontWeight.Medium, -0.005),
   signature = style(36, 40, FontWeight.Title, -0.03),
   button = style(17, 22, FontWeight.SemiBold),

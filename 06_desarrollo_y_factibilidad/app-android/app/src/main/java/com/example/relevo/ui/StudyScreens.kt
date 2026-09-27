@@ -49,20 +49,20 @@ internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, 
   if (!study.initialSession && (week == null || condition == null) && study.pendingWeek == null && !closing) return
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
     if (study.initialSession) {
-      StudyCard(KitIcon.VALIDACION, "PRUEBA · DÍA 0", "Sesión inicial", "Hoy preparas Relevo junto al investigador. Deja el parlante junto a lo que necesitas para empezar.")
+      StudyCard(KitIcon.VALIDACION, "Prueba · día 0", "Sesión inicial", "Hoy preparas Relevo junto al investigador. Deja el parlante junto a lo que necesitas para empezar.")
     }
     if (week != null && condition != null) {
-      StudyCard(conditionIcon(condition), "SEMANA $week DE 3", conditionName(condition), conditionInstruction(condition), conditionDetail(condition)) {
+      StudyCard(conditionIcon(condition), "Semana $week de 3", conditionName(condition), conditionInstruction(condition), conditionDetail(condition)) {
         PlainAction("Entendido", { onDismissInstruction(week) }, icon = KitIcon.LISTO)
       }
     }
     study.pendingWeek?.let { pending ->
-      StudyCard(KitIcon.CALENDARIO, "PRUEBA", "Cierre de la semana $pending", "Tres preguntas breves. Puedes omitirlas.") {
+      StudyCard(KitIcon.CALENDARIO, "Prueba", "Cierre de la semana $pending", "Tres preguntas breves. Puedes omitirlas.") {
         PlainAction("Responder", onWeekReview, icon = KitIcon.SIGUIENTE)
       }
     }
     if (closing) {
-      StudyCard(KitIcon.LISTO, "DÍA 21", "Terminaste la prueba. Gracias.", "Cinco preguntas breves, unos 2 minutos.") {
+      StudyCard(KitIcon.LISTO, "Día 21", "Terminaste la prueba. Gracias.", "Cinco preguntas breves, unos 2 minutos.") {
         PlainAction("Responder", onClosing, icon = KitIcon.SIGUIENTE)
       }
     }
@@ -100,7 +100,7 @@ internal fun StudyScreen(study: StudyState, participantCode: String, participati
     bottom = if (plan == null && participating) ({ RelevoButton("Empezar la prueba hoy", { sequence?.let(onStart) }, enabled = sequence != null) }) else null,
   ) {
     if (!participating) {
-      Text("Para configurar la prueba, primero hay que aceptar participar en Privacidad y datos.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Para configurar la prueba, primero hay que aceptar participar.", style = Relevo.type.body, color = Relevo.colors.graphite)
     } else if (plan == null) {
       Text("Para el investigador, en la sesión inicial. Elige la secuencia asignada; hoy será el día 0.", style = Relevo.type.body, color = Relevo.colors.graphite)
       SectionGap()

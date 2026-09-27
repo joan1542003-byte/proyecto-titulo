@@ -84,8 +84,8 @@ class AppUsageMonitorService : Service() {
     val notification =
       NotificationCompat.Builder(this, CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle("Relevo está contando el tiempo en las apps elegidas")
-        .setContentText("El registro se detiene al desactivar el recordatorio.")
+        .setContentTitle("Relevo está contando tu tiempo en las apps que elegiste")
+        .setContentText("Deja de contar cuando desactivas el relevo.")
         .setContentIntent(openAppIntent())
         .setOngoing(true)
         .setSilent(true)
@@ -223,8 +223,8 @@ class AppUsageMonitorService : Service() {
       NotificationCompat.Builder(this, STATUS_CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
         .setContentTitle("Relevo dejó de contar")
-        .setContentText("Falta el acceso a Tiempo de uso. Abre Relevo para autorizarlo o desactivar el recordatorio.")
-        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el acceso a Tiempo de uso. Abre Relevo para autorizarlo o desactivar el recordatorio."))
+        .setContentText("Falta el permiso de Tiempo de uso. Abre Relevo para darlo o desactivar el relevo.")
+        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Abre Relevo para darlo o desactivar el relevo."))
         .setContentIntent(openAppIntent())
         .setAutoCancel(true)
         .build(),
@@ -245,13 +245,13 @@ class AppUsageMonitorService : Service() {
   private fun createNotificationChannels() {
     val manager = getSystemService(NotificationManager::class.java) ?: return
     manager.createNotificationChannel(
-      NotificationChannel(CHANNEL_ID, "Recordatorio activo", NotificationManager.IMPORTANCE_LOW).apply {
-        description = "Informa cuándo Relevo observa la aplicación elegida."
+      NotificationChannel(CHANNEL_ID, "Relevo activo", NotificationManager.IMPORTANCE_LOW).apply {
+        description = "Muestra que Relevo está contando el tiempo en las apps que elegiste."
       },
     )
     manager.createNotificationChannel(
       NotificationChannel(SIGNAL_CHANNEL_ID, "Señal de Relevo", NotificationManager.IMPORTANCE_HIGH).apply {
-        description = "Avisa cuando se cumple el tiempo acumulado."
+        description = "Suena cuando sumas el tiempo que elegiste."
         setSound(null, null)
         enableVibration(true)
       },
@@ -277,10 +277,11 @@ class AppUsageMonitorService : Service() {
       .setContentText(GENERIC_SIGNAL_TEXT)
       .build()
     val text = when {
-      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No se encontró el parlante Bluetooth. Abre Relevo para revisar la señal."
-      !audible -> "No se pudo reproducir el sonido en el teléfono. Abre Relevo para revisar la señal."
+      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No se encontró el parlante. Abre Relevo para revisarlo."
+      !audible -> "No sonó en el teléfono. Abre Relevo para revisarlo."
       generic -> GENERIC_SIGNAL_TEXT
-      else -> "Es momento de volver a elegir. Puedes empezar por: ${reminder.howToStart}"
+      reminder.howToStart.isBlank() -> "Es momento de volver a elegir."
+      else -> "Es momento de volver a elegir. Empieza por ${reminder.howToStart.trim().trimEnd('.').replaceFirstChar { it.lowercase() }}."
     }
     manager.notify(
       SIGNAL_NOTIFICATION_ID,

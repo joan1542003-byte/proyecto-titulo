@@ -14,6 +14,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -49,6 +51,7 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.layout.positionInRoot
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.ProgressBarRangeInfo
 import androidx.compose.ui.semantics.contentDescription
@@ -59,6 +62,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.relevo.theme.LocalRelevoColors
 import com.example.relevo.theme.Relevo
 import dev.chrisbanes.haze.rememberHazeState
 import dev.chrisbanes.haze.hazeSource
@@ -80,8 +84,11 @@ private val HeroShape = RoundedCornerShape(bottomStart = 34.dp, bottomEnd = 34.d
  * - arriba y abajo, el contenido se desenfoca y se funde con el papel al pasar bajo las barras;
  * - los botones de la barra son redondos y de vidrio; el título grande sube a la barra al desplazar;
  * - una acción principal flotante abajo, en cápsula, al alcance del pulgar.
- * Con [hero], una foto llega hasta el borde superior, bajo la barra de estado.
+ * Con [hero], una foto llega hasta el borde superior, bajo la barra de estado. Si se indica
+ * [heroPicture], los botones de la barra y los iconos de la barra de estado toman el tono de esa foto
+ * mientras está debajo: claros sobre fotos oscuras y oscuros sobre fotos claras (D-084).
  */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun RelevoScreen(
   modifier: Modifier = Modifier,
@@ -99,6 +106,8 @@ fun RelevoScreen(
   scrollState: ScrollState = rememberScrollState(),
   hero: (@Composable BoxScope.() -> Unit)? = null,
   heroHeight: Dp = 0.dp,
+  heroPicture: Picture? = null,
+  heroWide: Boolean = true,
   header: (@Composable ColumnScope.() -> Unit)? = null,
   titleTrailing: (@Composable () -> Unit)? = null,
   bottom: (@Composable ColumnScope.() -> Unit)? = null,
@@ -113,13 +122,27 @@ fun RelevoScreen(
   val window = with(density) { 40.dp.toPx() }
   // 0 con el título grande a la vista; 1 cuando ya pasó bajo la barra.
   val collapse = if (title == null) 0f else ((scrollState.value - (titleBottom - window)) / window).coerceIn(0f, 1f)
-  // El borde superior aparece solo cuando hay contenido pasando bajo la barra, como en iOS.
-  val topAlpha by animateFloatAsState(if (scrollState.value > 0) 1f else 0f, Motion.standard(Motion.SHORT), label = "top_edge")
   val lift = with(density) { 6.dp.toPx() }
+  val imeVisible = WindowInsets.isImeVisible
   val statusTop = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+  // Tono de la foto bajo la barra: se mide la franja de la barra de estado y los botones.
+  val heroFrame = heroHeight + statusTop
+  val screenWidth = LocalConfiguration.current.screenWidthDp.dp
+  val heroDark = if (hero != null && heroFrame > 0.dp) {
+    rememberPhotoDark(heroPicture, heroWide, screenWidth / heroFrame, 0f, ((statusTop + BarHeight) / heroFrame).coerceIn(0.05f, 1f))
+  } else null
+  val heroUnderBar = hero != null && scrollState.value < with(density) { (heroHeight - BarHeight).toPx() }
+  val barColors = if (heroUnderBar) paletteOver(heroDark) else colors
+  if (hero != null) StatusBarTone(darkBackground = barColors.isDark)
+  // El borde superior aparece solo cuando pasa contenido bajo la barra, como en iOS; sobre la foto, no.
+  val topAlpha by animateFloatAsState(if (scrollState.value > 0 && !heroUnderBar) 1f else 0f, Motion.standard(Motion.SHORT), label = "top_edge")
 
   Box(modifier.fillMaxSize().background(colors.paper).imePadding()) {
-    Column(Modifier.fillMaxSize().hazeSource(haze).verticalScroll(scrollState)) {
+    Column(
+      Modifier.fillMaxSize()
+        .padding(bottom = if (imeVisible && bottom != null) with(density) { bottomHeight.toDp() } else 0.dp)
+        .hazeSource(haze).verticalScroll(scrollState),
+    ) {
       if (hero != null) Box(Modifier.fillMaxWidth().height(heroHeight + statusTop).clip(HeroShape)) { hero() }
       else Spacer(Modifier.statusBarsPadding().height(BarHeight))
       Column(Modifier.fillMaxWidth().padding(horizontal = Relevo.margin)) {
@@ -134,7 +157,7 @@ fun RelevoScreen(
             verticalAlignment = Alignment.Bottom,
           ) {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-              if (eyebrow != null) Text(eyebrow.uppercase(), style = Relevo.type.label, color = colors.graphite)
+              if (eyebrow != null) Text(eyebrow, style = Relevo.type.label, color = colors.graphite)
               Text(title, style = Relevo.type.largeTitle, color = colors.ink, modifier = Modifier.semantics { heading() }.graphicsLayer { alpha = 1f - collapse * .7f })
               if (subtitle != null) Text(subtitle, style = Relevo.type.body, color = colors.graphite)
             }
@@ -148,14 +171,14 @@ fun RelevoScreen(
       }
     }
 
-    // Borde superior: el contenido se funde bajo la barra.
+    // Borde superior: el contenido se funde bajo la barra, en una franja que termina poco después de ella.
     Column(Modifier.fillMaxWidth().edgeBlur(haze, fromTop = true, alpha = topAlpha)) {
       Spacer(Modifier.statusBarsPadding())
-      Spacer(Modifier.height(BarHeight + 26.dp))
+      Spacer(Modifier.height(BarHeight + 12.dp))
     }
 
     // Barra: botones de vidrio y el título, que aparece al desplazar.
-    CompositionLocalProvider(LocalGlassSource provides haze) {
+    CompositionLocalProvider(LocalGlassSource provides haze, LocalRelevoColors provides barColors) {
     Row(
       Modifier.fillMaxWidth().statusBarsPadding().height(BarHeight).padding(horizontal = 12.dp),
       verticalAlignment = Alignment.CenterVertically,

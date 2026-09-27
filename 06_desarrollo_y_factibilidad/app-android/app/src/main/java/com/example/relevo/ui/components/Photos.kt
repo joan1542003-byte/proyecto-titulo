@@ -35,9 +35,11 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -50,8 +52,9 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
@@ -60,11 +63,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import cl.udp.relevo.R
+import com.example.relevo.theme.LocalRelevoColors
 import com.example.relevo.theme.Relevo
 import dev.chrisbanes.haze.hazeSource
 import dev.chrisbanes.haze.rememberHazeState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlin.math.roundToInt
 
 /**
  * Fotos de la app. Muestran el comienzo, no el resultado: lo que espera, con su primer paso a la
@@ -94,35 +99,106 @@ enum class Photo(@param:DrawableRes val res: Int, val description: String, @para
   val key: String get() = "foto:$name"
 }
 
+/** Grupos del selector de emoji, en el orden de los teclados. */
+enum class EmojiGroup(val label: String) {
+  CARAS("Caras"), ANIMALES("Animales"), NATURALEZA("Naturaleza"), COMIDA("Comida"), ACTIVIDADES("Actividades"),
+}
+
 /**
- * Emoji 3D de Google (Noto 3D, licencia SIL OFL 1.1) para la imagen del perfil (D-083): objetos de
- * actividades, animales y naturaleza. Se muestran en círculos; no se suben fotos propias.
+ * Emoji 3D de Google (Noto 3D, licencia SIL OFL 1.1) para la imagen del perfil (D-083): caras,
+ * animales, naturaleza, comida y actividades (84 desde 2.10, D-084). Se muestran en círculos; no se
+ * suben fotos propias.
  */
-enum class Emoji(val code: String, @param:DrawableRes val res: Int, val description: String) {
-  ZAPATILLA("1f45f", R.drawable.emoji_1f45f, "Zapatilla"),
-  LIBROS("1f4da", R.drawable.emoji_1f4da, "Libros"),
-  GUITARRA("1f3b8", R.drawable.emoji_1f3b8, "Guitarra"),
-  PALETA("1f3a8", R.drawable.emoji_1f3a8, "Paleta de pintura"),
-  PLANTA("1fab4", R.drawable.emoji_1fab4, "Planta"),
-  SARTEN("1f373", R.drawable.emoji_1f373, "Sartén con un huevo"),
-  LANA("1f9f6", R.drawable.emoji_1f9f6, "Ovillo de lana"),
-  BICICLETA("1f6b2", R.drawable.emoji_1f6b2, "Bicicleta"),
-  CAMARA("1f4f7", R.drawable.emoji_1f4f7, "Cámara"),
-  AUDIFONOS("1f3a7", R.drawable.emoji_1f3a7, "Audífonos"),
-  LAPIZ("270f", R.drawable.emoji_270f, "Lápiz"),
-  PIEZA("1f9e9", R.drawable.emoji_1f9e9, "Pieza de rompecabezas"),
-  PIANO("1f3b9", R.drawable.emoji_1f3b9, "Teclado de piano"),
-  PELOTA("26bd", R.drawable.emoji_26bd, "Pelota"),
-  CAFE("2615", R.drawable.emoji_2615, "Taza de café"),
-  PAN("1f35e", R.drawable.emoji_1f35e, "Pan"),
-  PERRO("1f436", R.drawable.emoji_1f436, "Perro"),
-  GATO("1f431", R.drawable.emoji_1f431, "Gato"),
-  ZORRO("1f98a", R.drawable.emoji_1f98a, "Zorro"),
-  TORTUGA("1f422", R.drawable.emoji_1f422, "Tortuga"),
-  GIRASOL("1f33b", R.drawable.emoji_1f33b, "Girasol"),
-  OLA("1f30a", R.drawable.emoji_1f30a, "Ola"),
-  LUNA("1f319", R.drawable.emoji_1f319, "Luna"),
-  SOL("2600", R.drawable.emoji_2600, "Sol");
+enum class Emoji(val code: String, @param:DrawableRes val res: Int, val description: String, val group: EmojiGroup) {
+  // Caras
+  SONRISA("1f60a", R.drawable.emoji_1f60a, "Cara sonriente", EmojiGroup.CARAS),
+  CONTENTA("1f642", R.drawable.emoji_1f642, "Cara contenta", EmojiGroup.CARAS),
+  LENTES_DE_SOL("1f60e", R.drawable.emoji_1f60e, "Cara con lentes de sol", EmojiGroup.CARAS),
+  ABRAZO("1f917", R.drawable.emoji_1f917, "Cara que abraza", EmojiGroup.CARAS),
+  ESTRELLAS("1f929", R.drawable.emoji_1f929, "Cara con ojos de estrella", EmojiGroup.CARAS),
+  CORAZONES("1f970", R.drawable.emoji_1f970, "Cara con corazones", EmojiGroup.CARAS),
+  FIESTA("1f973", R.drawable.emoji_1f973, "Cara de fiesta", EmojiGroup.CARAS),
+  PENSATIVA("1f914", R.drawable.emoji_1f914, "Cara pensativa", EmojiGroup.CARAS),
+  DORMIDA("1f634", R.drawable.emoji_1f634, "Cara dormida", EmojiGroup.CARAS),
+  VAQUERO("1f920", R.drawable.emoji_1f920, "Cara con sombrero de vaquero", EmojiGroup.CARAS),
+  ROBOT("1f916", R.drawable.emoji_1f916, "Robot", EmojiGroup.CARAS),
+  FANTASMA("1f47b", R.drawable.emoji_1f47b, "Fantasma", EmojiGroup.CARAS),
+  // Animales
+  PERRO("1f436", R.drawable.emoji_1f436, "Perro", EmojiGroup.ANIMALES),
+  GATO("1f431", R.drawable.emoji_1f431, "Gato", EmojiGroup.ANIMALES),
+  ZORRO("1f98a", R.drawable.emoji_1f98a, "Zorro", EmojiGroup.ANIMALES),
+  TORTUGA("1f422", R.drawable.emoji_1f422, "Tortuga", EmojiGroup.ANIMALES),
+  CONEJO("1f430", R.drawable.emoji_1f430, "Conejo", EmojiGroup.ANIMALES),
+  OSO("1f43b", R.drawable.emoji_1f43b, "Oso", EmojiGroup.ANIMALES),
+  PANDA("1f43c", R.drawable.emoji_1f43c, "Panda", EmojiGroup.ANIMALES),
+  KOALA("1f428", R.drawable.emoji_1f428, "Koala", EmojiGroup.ANIMALES),
+  TIGRE("1f42f", R.drawable.emoji_1f42f, "Tigre", EmojiGroup.ANIMALES),
+  LEON("1f981", R.drawable.emoji_1f981, "León", EmojiGroup.ANIMALES),
+  RANA("1f438", R.drawable.emoji_1f438, "Rana", EmojiGroup.ANIMALES),
+  PINGUINO("1f427", R.drawable.emoji_1f427, "Pingüino", EmojiGroup.ANIMALES),
+  BUHO("1f989", R.drawable.emoji_1f989, "Búho", EmojiGroup.ANIMALES),
+  ABEJA("1f41d", R.drawable.emoji_1f41d, "Abeja", EmojiGroup.ANIMALES),
+  MARIPOSA("1f98b", R.drawable.emoji_1f98b, "Mariposa", EmojiGroup.ANIMALES),
+  PULPO("1f419", R.drawable.emoji_1f419, "Pulpo", EmojiGroup.ANIMALES),
+  BALLENA("1f433", R.drawable.emoji_1f433, "Ballena", EmojiGroup.ANIMALES),
+  UNICORNIO("1f984", R.drawable.emoji_1f984, "Unicornio", EmojiGroup.ANIMALES),
+  PEREZOSO("1f9a5", R.drawable.emoji_1f9a5, "Perezoso", EmojiGroup.ANIMALES),
+  DINOSAURIO("1f996", R.drawable.emoji_1f996, "Dinosaurio", EmojiGroup.ANIMALES),
+  // Naturaleza
+  PLANTA("1fab4", R.drawable.emoji_1fab4, "Planta", EmojiGroup.NATURALEZA),
+  GIRASOL("1f33b", R.drawable.emoji_1f33b, "Girasol", EmojiGroup.NATURALEZA),
+  OLA("1f30a", R.drawable.emoji_1f30a, "Ola", EmojiGroup.NATURALEZA),
+  LUNA("1f319", R.drawable.emoji_1f319, "Luna", EmojiGroup.NATURALEZA),
+  SOL("2600", R.drawable.emoji_2600, "Sol", EmojiGroup.NATURALEZA),
+  ARCOIRIS("1f308", R.drawable.emoji_1f308, "Arcoíris", EmojiGroup.NATURALEZA),
+  ESTRELLA("2b50", R.drawable.emoji_2b50, "Estrella", EmojiGroup.NATURALEZA),
+  NUBE("2601", R.drawable.emoji_2601, "Nube", EmojiGroup.NATURALEZA),
+  COPO("2744", R.drawable.emoji_2744, "Copo de nieve", EmojiGroup.NATURALEZA),
+  FUEGO("1f525", R.drawable.emoji_1f525, "Fuego", EmojiGroup.NATURALEZA),
+  CACTUS("1f335", R.drawable.emoji_1f335, "Cactus", EmojiGroup.NATURALEZA),
+  ARBOL("1f333", R.drawable.emoji_1f333, "Árbol", EmojiGroup.NATURALEZA),
+  TREBOL("1f340", R.drawable.emoji_1f340, "Trébol de cuatro hojas", EmojiGroup.NATURALEZA),
+  TULIPAN("1f337", R.drawable.emoji_1f337, "Tulipán", EmojiGroup.NATURALEZA),
+  HONGO("1f344", R.drawable.emoji_1f344, "Hongo", EmojiGroup.NATURALEZA),
+  MONTANA("1f3d4", R.drawable.emoji_1f3d4, "Montaña nevada", EmojiGroup.NATURALEZA),
+  PLANETA("1fa90", R.drawable.emoji_1fa90, "Planeta con anillo", EmojiGroup.NATURALEZA),
+  // Comida
+  CAFE("2615", R.drawable.emoji_2615, "Taza de café", EmojiGroup.COMIDA),
+  PAN("1f35e", R.drawable.emoji_1f35e, "Pan", EmojiGroup.COMIDA),
+  SARTEN("1f373", R.drawable.emoji_1f373, "Sartén con un huevo", EmojiGroup.COMIDA),
+  PALTA("1f951", R.drawable.emoji_1f951, "Palta", EmojiGroup.COMIDA),
+  FRUTILLA("1f353", R.drawable.emoji_1f353, "Frutilla", EmojiGroup.COMIDA),
+  SANDIA("1f349", R.drawable.emoji_1f349, "Sandía", EmojiGroup.COMIDA),
+  LIMON("1f34b", R.drawable.emoji_1f34b, "Limón", EmojiGroup.COMIDA),
+  PIZZA("1f355", R.drawable.emoji_1f355, "Pizza", EmojiGroup.COMIDA),
+  DONA("1f369", R.drawable.emoji_1f369, "Dona", EmojiGroup.COMIDA),
+  HELADO("1f366", R.drawable.emoji_1f366, "Helado", EmojiGroup.COMIDA),
+  TE_DE_BURBUJAS("1f9cb", R.drawable.emoji_1f9cb, "Té de burbujas", EmojiGroup.COMIDA),
+  // Actividades
+  ZAPATILLA("1f45f", R.drawable.emoji_1f45f, "Zapatilla", EmojiGroup.ACTIVIDADES),
+  LIBROS("1f4da", R.drawable.emoji_1f4da, "Libros", EmojiGroup.ACTIVIDADES),
+  GUITARRA("1f3b8", R.drawable.emoji_1f3b8, "Guitarra", EmojiGroup.ACTIVIDADES),
+  PALETA("1f3a8", R.drawable.emoji_1f3a8, "Paleta de pintura", EmojiGroup.ACTIVIDADES),
+  LANA("1f9f6", R.drawable.emoji_1f9f6, "Ovillo de lana", EmojiGroup.ACTIVIDADES),
+  BICICLETA("1f6b2", R.drawable.emoji_1f6b2, "Bicicleta", EmojiGroup.ACTIVIDADES),
+  CAMARA("1f4f7", R.drawable.emoji_1f4f7, "Cámara", EmojiGroup.ACTIVIDADES),
+  AUDIFONOS("1f3a7", R.drawable.emoji_1f3a7, "Audífonos", EmojiGroup.ACTIVIDADES),
+  LAPIZ("270f", R.drawable.emoji_270f, "Lápiz", EmojiGroup.ACTIVIDADES),
+  PIEZA("1f9e9", R.drawable.emoji_1f9e9, "Pieza de rompecabezas", EmojiGroup.ACTIVIDADES),
+  PIANO("1f3b9", R.drawable.emoji_1f3b9, "Teclado de piano", EmojiGroup.ACTIVIDADES),
+  PELOTA("26bd", R.drawable.emoji_26bd, "Pelota", EmojiGroup.ACTIVIDADES),
+  BASQUETBOL("1f3c0", R.drawable.emoji_1f3c0, "Pelota de básquetbol", EmojiGroup.ACTIVIDADES),
+  TENIS("1f3be", R.drawable.emoji_1f3be, "Raqueta de tenis", EmojiGroup.ACTIVIDADES),
+  SKATE("1f6f9", R.drawable.emoji_1f6f9, "Skate", EmojiGroup.ACTIVIDADES),
+  DADO("1f3b2", R.drawable.emoji_1f3b2, "Dado", EmojiGroup.ACTIVIDADES),
+  AJEDREZ("265f", R.drawable.emoji_265f, "Peón de ajedrez", EmojiGroup.ACTIVIDADES),
+  CONTROL("1f3ae", R.drawable.emoji_1f3ae, "Control de videojuegos", EmojiGroup.ACTIVIDADES),
+  VOLANTIN("1fa81", R.drawable.emoji_1fa81, "Volantín", EmojiGroup.ACTIVIDADES),
+  MICROFONO("1f3a4", R.drawable.emoji_1f3a4, "Micrófono", EmojiGroup.ACTIVIDADES),
+  VIOLIN("1f3bb", R.drawable.emoji_1f3bb, "Violín", EmojiGroup.ACTIVIDADES),
+  TELESCOPIO("1f52d", R.drawable.emoji_1f52d, "Telescopio", EmojiGroup.ACTIVIDADES),
+  CARPA("26fa", R.drawable.emoji_26fa, "Carpa", EmojiGroup.ACTIVIDADES),
+  COHETE("1f680", R.drawable.emoji_1f680, "Cohete", EmojiGroup.ACTIVIDADES);
 
   val key: String get() = "emoji:$code"
 
@@ -151,14 +227,35 @@ enum class Emoji(val code: String, @param:DrawableRes val res: Int, val descript
   }
 }
 
-/** Emoji 3D del perfil. */
+/** Emoji ya decodificados; los del selector, a la mitad de resolución. */
+private object EmojiCache {
+  private val cache = object : LruCache<Int, ImageBitmap>(16 * 1024 * 1024) {
+    override fun sizeOf(key: Int, value: ImageBitmap): Int = value.width * value.height * 4
+  }
+  fun get(key: Int): ImageBitmap? = cache.get(key)
+  fun put(key: Int, value: ImageBitmap) { cache.put(key, value) }
+}
+
+/**
+ * Emoji 3D del perfil. Se decodifica fuera del hilo principal, para que el selector con 84 emoji se
+ * abra sin tirones; [small] los carga a 128 px, suficiente para las fichas.
+ */
 @Composable
-fun EmojiImage(emoji: Emoji, modifier: Modifier = Modifier, describe: Boolean = false) {
-  Image(
-    painter = painterResource(emoji.res),
-    contentDescription = if (describe) emoji.description else null,
-    modifier = modifier,
-  )
+fun EmojiImage(emoji: Emoji, modifier: Modifier = Modifier, describe: Boolean = false, small: Boolean = false) {
+  val key = emoji.res * 2 + if (small) 1 else 0
+  val context = LocalContext.current
+  var bitmap by remember(key) { mutableStateOf(EmojiCache.get(key)) }
+  LaunchedEffect(key) {
+    if (bitmap == null) {
+      bitmap = withContext(Dispatchers.IO) {
+        val options = BitmapFactory.Options().apply { inSampleSize = if (small) 2 else 1 }
+        runCatching { BitmapFactory.decodeResource(context.resources, emoji.res, options)?.asImageBitmap() }.getOrNull()?.also { EmojiCache.put(key, it) }
+      }
+    }
+  }
+  Box(modifier.then(if (describe) Modifier.semantics { contentDescription = emoji.description } else Modifier)) {
+    bitmap?.let { Image(it, contentDescription = null, contentScale = ContentScale.Fit, modifier = Modifier.fillMaxSize()) }
+  }
 }
 
 /** Imagen elegida por la persona para su perfil o una actividad: una foto o un icono del kit. */
@@ -356,7 +453,9 @@ fun Avatar(image: String, name: String, size: Dp, modifier: Modifier = Modifier,
 
 /**
  * Foto grande con una banda de vidrio abajo: la foto sigue a la vista y el texto se lee sobre un
- * desenfoque que crece hacia el borde, sin velos opacos (D-083). Toda la ficha se puede tocar.
+ * desenfoque que crece hacia el borde, sin velos opacos (D-083). El texto y el vidrio toman el tono
+ * de la foto que queda debajo: tinta sobre fotos claras y blanco sobre fotos oscuras (D-084). Toda
+ * la ficha se puede tocar.
  */
 @Composable
 fun PhotoHero(
@@ -371,12 +470,24 @@ fun PhotoHero(
 ) {
   val interaction = remember { MutableInteractionSource() }
   val haze = rememberHazeState()
+  val density = LocalDensity.current
+  var frame by remember { mutableIntStateOf(0) }
+  var bandHeight by remember { mutableIntStateOf(0) }
+  // El texto empieza 48 dp bajo el borde de la banda: se mide esa zona de la foto, redondeada al 5 %.
+  val textTop = if (frame > 0 && bandHeight > 0) ((frame - bandHeight + with(density) { 48.dp.toPx() }) / frame).coerceIn(0f, 0.9f) else 0.6f
+  val dark = rememberPhotoDark(picture, wide, aspect, (textTop * 20).roundToInt() / 20f, 1f)
   Box(
-    modifier.fillMaxWidth().aspectRatio(aspect).pressScale(interaction, 0.985f).clip(Relevo.panelShape)
+    modifier.fillMaxWidth().aspectRatio(aspect).onSizeChanged { frame = it.height }.pressScale(interaction, 0.985f).clip(Relevo.panelShape)
       .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = clickLabel, onClick = onClick) else Modifier),
   ) {
     PictureContent(picture, Modifier.matchParentSize().hazeSource(haze).sharedPhoto(sharedKey), wide = wide, iconSize = 56.dp)
-    Column(Modifier.align(Alignment.BottomStart).fillMaxWidth().photoBand(haze).padding(start = 20.dp, end = 20.dp, top = 48.dp, bottom = 20.dp), content = band)
+    CompositionLocalProvider(LocalRelevoColors provides paletteOver(dark)) {
+      Column(
+        Modifier.align(Alignment.BottomStart).fillMaxWidth().onSizeChanged { bandHeight = it.height }.photoBand(haze)
+          .padding(start = 20.dp, end = 20.dp, top = 48.dp, bottom = 20.dp),
+        content = band,
+      )
+    }
   }
 }
 
@@ -393,7 +504,7 @@ fun EmojiTile(emoji: Emoji, selected: Boolean, onClick: () -> Unit, modifier: Mo
     contentAlignment = Alignment.Center,
   ) {
     Box(Modifier.fillMaxSize().padding(inset).clip(CircleShape).background(colors.mist), contentAlignment = Alignment.Center) {
-      EmojiImage(emoji, Modifier.fillMaxSize(0.64f))
+      EmojiImage(emoji, Modifier.fillMaxSize(0.64f), small = true)
     }
     if (selected) Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, CircleShape))
   }

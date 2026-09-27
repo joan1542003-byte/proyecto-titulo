@@ -97,7 +97,7 @@ La [investigación visual](../10_recursos_visuales/README.md) define preguntas, 
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado al 26 de septiembre:** la aplicación Android 2.7 implementa lo que exige el protocolo 02, la 2.8 agrega el sistema de marca D-073, perfil, ruta y aviso de regreso, y la 2.9 (27 de septiembre) el vidrio, las formas redondeadas y los emoji de D-083. Compilan, pasan sus pruebas unitarias (34, 47 y 50) y se recorrieron en emulador con datos ficticios; falta probarlas en un teléfono y un parlante reales y verificar el borrado sin conexión. El parlante es una salida provisional, no el testigo. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, sonido y silencio local está compilado, pero ya no condiciona la prueba: el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) usa la app y un parlante Bluetooth, sin luz (D-070 y D-079). No se ha comprado hardware.
+**Estado al 26 de septiembre:** la aplicación Android 2.7 implementa lo que exige el protocolo 02, la 2.8 agrega el sistema de marca D-073, perfil, ruta y aviso de regreso, la 2.9 (27 de septiembre) el vidrio, las formas redondeadas y los emoji de D-083, y la 2.10, del mismo día, exige participar y aclara los textos (D-084). Compilan, pasan sus pruebas unitarias (34, 47, 50 y 58) y se recorrieron en emulador con datos ficticios; falta probarlas en un teléfono y un parlante reales y verificar el borrado sin conexión. El parlante es una salida provisional, no el testigo. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, sonido y silencio local está compilado, pero ya no condiciona la prueba: el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) usa la app y un parlante Bluetooth, sin luz (D-070 y D-079). No se ha comprado hardware.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
@@ -107,7 +107,7 @@ Incluye arquitectura técnica, producción, materiales, componentes, costos, man
 
 Cada prototipo deberá responder una pregunta. Los protocolos, resultados, contradicciones y cambios de dirección quedarán documentados antes de iterar.
 
-Siguiente puerta de avance: elegir la versión de la app para el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) (2.7, 2.8 o 2.9), probarla en un teléfono y un parlante reales y revisar el consentimiento de 21 días. La micro:bit queda para un eventual testigo propio. Ninguna de estas acciones habilita por sí sola el reclutamiento ni una afirmación de eficacia.
+Siguiente puerta de avance: elegir la versión de la app para el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) (2.7, 2.8, 2.9 o 2.10), probarla en un teléfono y un parlante reales y revisar el consentimiento de 21 días. La micro:bit queda para un eventual testigo propio. Ninguna de estas acciones habilita por sí sola el reclutamiento ni una afirmación de eficacia.
 
 ### Fase 7 — Escritura y cierre de memoria
 
@@ -129,6 +129,12 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Android 2.10
+
+- **Qué cambió:** el estado registra la app 2.10.
+- **Cómo estaba antes:** llegaba hasta la 2.9.
+- **Por qué:** mantener la hoja de ruta al día con la app.
 
 ### 2026-09-27 — Android 2.9
 

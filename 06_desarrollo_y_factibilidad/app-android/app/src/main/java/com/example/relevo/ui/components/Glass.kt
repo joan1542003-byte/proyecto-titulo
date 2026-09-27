@@ -1,6 +1,5 @@
 package com.example.relevo.ui.components
 
-import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.Easing
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -44,6 +43,12 @@ import dev.chrisbanes.haze.hazeEffect
  */
 val LocalGlassSource = compositionLocalOf<HazeState?> { null }
 
+/** Desenfoque de los botones de vidrio: más leve que el de las hojas, para que se vea el fondo (D-084). */
+val ControlBlur = 12.dp
+
+/** Desenfoque de la barra de pestañas. */
+val BarBlur = 16.dp
+
 /** Desenfoque sutil y tinte translúcido; el ruido se deja en cero para que no parezca empañado. */
 @Composable
 fun glassStyle(tint: Color = Relevo.colors.glass, blur: Dp = 24.dp): HazeStyle = HazeStyle(
@@ -60,20 +65,22 @@ fun Modifier.glass(
   state: HazeState? = LocalGlassSource.current,
   tint: Color = Relevo.colors.glass,
   edge: Boolean = true,
+  blur: Dp = 24.dp,
 ): Modifier {
   val colors = Relevo.colors
   val clipped = this.clip(shape)
-  val surface = if (state != null) clipped.hazeEffect(state, glassStyle(tint)) else clipped.background(colors.card.copy(alpha = .96f))
+  val surface = if (state != null) clipped.hazeEffect(state, glassStyle(tint, blur)) else clipped.background(colors.card.copy(alpha = .96f))
   return if (edge) surface.border(0.75.dp, colors.glassEdge, shape) else surface
 }
 
-private val EdgeEasing = CubicBezierEasing(0.4f, 0f, 0.6f, 1f)
+/**
+ * Arriba, el desenfoque es completo bajo la barra y se desvanece en la mitad inferior de la franja,
+ * que termina poco después de la barra (D-084: lejos del centro de la pantalla).
+ */
+private val TopEdgeEasing = Easing { t -> ((t - 0.5f) / 0.5f).coerceIn(0f, 1f) }
 
-/** Arriba, el desenfoque es completo bajo la barra y se desvanece en el último tramo. */
-private val TopEdgeEasing = Easing { t -> ((t - 0.58f) / 0.42f).coerceIn(0f, 1f) }
-
-/** Abajo, se completa enseguida detrás de los botones. */
-private val BottomEdgeEasing = Easing { t -> (t / 0.32f).coerceIn(0f, 1f) }
+/** Abajo, empieza a la altura del botón y se completa detrás de su mitad inferior y de las pestañas. */
+private val BottomEdgeEasing = Easing { t -> ((t - 0.2f) / 0.5f).coerceIn(0f, 1f) }
 
 /**
  * Borde de desplazamiento, como en iOS 26: el contenido se desenfoca y se funde con el papel al pasar
@@ -82,7 +89,7 @@ private val BottomEdgeEasing = Easing { t -> (t / 0.32f).coerceIn(0f, 1f) }
 @Composable
 fun Modifier.edgeBlur(state: HazeState?, fromTop: Boolean, alpha: Float = 1f): Modifier {
   if (state == null) return this
-  val style = glassStyle(Relevo.colors.paper.copy(alpha = if (Relevo.colors.isDark) .84f else .80f), blur = 22.dp)
+  val style = glassStyle(Relevo.colors.paper.copy(alpha = if (Relevo.colors.isDark) .82f else .76f), blur = 18.dp)
   return this.hazeEffect(state, style) {
     this.alpha = alpha
     progressive = HazeProgressive.verticalGradient(
@@ -95,12 +102,13 @@ fun Modifier.edgeBlur(state: HazeState?, fromTop: Boolean, alpha: Float = 1f): M
 
 /**
  * Banda de vidrio sobre la parte baja de una foto: empieza transparente y termina desenfocada, para
- * que el texto se lea sin velos opacos.
+ * que el texto se lea sin velos opacos. Toma el tono de la paleta vigente: clara sobre fotos claras y
+ * oscura sobre fotos oscuras (ver [PhotoTone]).
  */
 @Composable
 fun Modifier.photoBand(state: HazeState): Modifier {
   val colors = Relevo.colors
-  val style = glassStyle(colors.paper.copy(alpha = if (colors.isDark) .7f else .64f), blur = 26.dp)
+  val style = glassStyle(colors.paper.copy(alpha = if (colors.isDark) .62f else .66f), blur = 26.dp)
   return this.hazeEffect(state, style) {
     progressive = HazeProgressive.verticalGradient(easing = BandEasing, startIntensity = 0f, endIntensity = 1f)
   }
@@ -115,7 +123,7 @@ fun GlassIconButton(icon: KitIcon, description: String, onClick: () -> Unit, mod
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
   Box(
-    modifier.size(size).pressScale(interaction, 0.92f).glass(CircleShape)
+    modifier.size(size).pressScale(interaction, 0.92f).glass(CircleShape, blur = ControlBlur)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
       .semantics { contentDescription = description },
     contentAlignment = Alignment.Center,
@@ -130,7 +138,7 @@ fun GlassTextButton(label: String, onClick: () -> Unit, modifier: Modifier = Mod
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
   Row(
-    modifier.heightIn(min = 44.dp).pressScale(interaction, 0.95f).glass(Relevo.controlShape)
+    modifier.heightIn(min = 44.dp).pressScale(interaction, 0.95f).glass(Relevo.controlShape, blur = ControlBlur)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
       .padding(horizontal = 16.dp),
     verticalAlignment = Alignment.CenterVertically,

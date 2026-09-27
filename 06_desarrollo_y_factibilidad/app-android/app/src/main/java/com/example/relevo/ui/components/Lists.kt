@@ -47,7 +47,7 @@ import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 
 /**
- * Sección agrupada, como las de iOS 26: rótulo en mayúsculas pequeñas, tarjeta clara con esquinas
+ * Sección agrupada, como las de iOS 26: título breve escrito como frase, tarjeta clara con esquinas
  * amplias y filas separadas por una línea fina que empieza después del icono.
  */
 @Composable
@@ -59,7 +59,7 @@ fun ListSection(
 ) {
   Column(modifier.fillMaxWidth()) {
     if (title != null) {
-      Text(title.uppercase(), style = Relevo.type.label, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 8.dp).semantics { heading() })
+      Text(title, style = Relevo.type.section, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 8.dp).semantics { heading() })
     }
     Column(
       Modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.card)

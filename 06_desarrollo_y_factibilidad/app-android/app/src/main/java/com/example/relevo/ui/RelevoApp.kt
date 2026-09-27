@@ -53,7 +53,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.relevo.LaunchRequests
-import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.ThemeMode
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.theme.Relevo
@@ -148,9 +147,9 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     else -> listOf(Route.TABS)
   }
   fun afterOnboarding(): List<Route> = if (!profile.setupSeen) listOf(Route.PROFILE_SETUP) else routeForStatus(reminder.status)
+  // Sin el consentimiento vigente no se usa la app (D-084): la primera vez, bienvenida; después, el consentimiento.
   fun initialStack(): List<Route> = when {
-    participation == ParticipationMode.NONE && preferences.getString("academic_consent_version", null) != ResearchLogStore.CONSENT_VERSION ->
-      if (onboardingComplete()) listOf(Route.CONSENT) else listOf(Route.WELCOME)
+    participation == ParticipationMode.NONE -> if (onboardingComplete()) listOf(Route.CONSENT) else listOf(Route.WELCOME)
     !onboardingComplete() -> listOf(Route.PERMISSION)
     else -> afterOnboarding()
   }
@@ -265,7 +264,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   remoteConfigured = viewModel.remoteConfigured,
                   deletionPending = viewModel.deletionPending,
                   onAccept = { viewModel.updateConsent(true); if (onboardingComplete()) replace(afterOnboarding()) else push(Route.PERMISSION) },
-                  onUseLocally = { viewModel.useWithoutParticipating(); if (onboardingComplete()) replace(afterOnboarding()) else push(Route.PERMISSION) },
                   onPrivacy = { push(Route.PRIVACY) },
                 )
                 Route.PERMISSION -> PermissionScreen(
@@ -378,7 +376,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   },
                   onBack = { pop() },
                 )
-                Route.NOTICES -> NoticesScreen(settings, participation, onChange = viewModel::updateSettings, onBack = { pop() })
+                Route.NOTICES -> NoticesScreen(settings, onChange = viewModel::updateSettings, onBack = { pop() })
                 Route.APPEARANCE -> AppearanceScreen(settings, onChange = viewModel::updateSettings, onBack = { pop() })
                 Route.PERMISSIONS -> PermissionsScreen(usageAccess, backgroundUnrestricted, viewModel::openUsageAccessSettings, viewModel::requestBackgroundAccess, onBack = { pop() })
                 Route.HISTORY -> HistoryScreen(history, customActivities, onBack = { pop() })
@@ -386,6 +384,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   customActivities,
                   onOpen = { id -> editingActivityId = id; push(Route.ACTIVITY_EDIT) },
                   onNew = { editingActivityId = null; push(Route.ACTIVITY_EDIT) },
+                  onPrepare = { custom -> homeActions.onCustom(custom, com.example.relevo.ui.photoKey("propia", custom.id)) },
                   onBack = { pop() },
                 )
                 Route.ACTIVITY_EDIT -> ActivityEditScreen(
@@ -403,7 +402,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   deletionStatus = deletionStatus,
                   onBack = { pop() },
                   onConsent = { push(Route.CONSENT_DETAILS) },
-                  onParticipate = { replace(listOf(Route.CONSENT)) },
                   onExport = viewModel::exportData,
                   onDelete = viewModel::deleteResearchData,
                   onRestart = { tab = Tab.HOME; replace(listOf(Route.WELCOME)) },
