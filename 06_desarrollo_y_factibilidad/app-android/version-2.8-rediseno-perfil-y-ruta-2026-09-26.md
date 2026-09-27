@@ -3,6 +3,8 @@
 **Fecha:** 26 de septiembre de 2026. **Versión:** 2.8 (`versionCode 20`). **Rama:** `android-2.7`. **Consentimiento en la app:** `2026-09-25-v6`, el mismo de 2.7; quien ya lo aceptó no tiene que aceptarlo de nuevo.
 **Fuentes:** [marca «Vuelve a lo que querías hacer»](../../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y su [kit](../../10_recursos_visuales/marca-a-tiempo/kit-relevo-2026-09-25.html) (D-073), [flujos y wireframes escritos](../../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md) (D-074, D-076 y D-077) y [Android 2.7](version-2.7-prueba-21-dias-2026-09-25.md), cuya lógica de la prueba de 21 días se conserva sin cambios.
 
+**Actualización:** la [2.9](version-2.9-vidrio-y-emoji-2026-09-27.md) cambia el aspecto, los textos y la imagen del perfil (D-083). La lógica, los datos y las pantallas descritos aquí siguen vigentes.
+
 Las comprobaciones se hicieron en un emulador Android 16 (API 36) con datos ficticios, que después se borraron. No sustituyen la prueba en el teléfono y el parlante reales ni una prueba con personas.
 
 ## Qué pidió el autor
@@ -106,6 +108,12 @@ La base remota conserva 6 sesiones y 4 eventos del 22 al 25 de septiembre, anter
 - Lo pendiente de 2.7 sigue igual: parlante Bluetooth, borrado sin conexión y caducidad de la sesión anónima.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Remisión a 2.9
+
+- **Qué cambió:** se añadió una nota que remite a la 2.9.
+- **Cómo estaba antes:** no se indicaba que existía una versión posterior.
+- **Por qué:** que quien lea la 2.8 sepa qué cambió después.
 
 ### 2026-09-26 — Documento nuevo
 

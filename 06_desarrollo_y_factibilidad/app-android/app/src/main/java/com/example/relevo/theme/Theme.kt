@@ -22,9 +22,14 @@ object Relevo {
 
   /** Margen de pantalla del manual: 20 dp, como el de un cuaderno. */
   val margin = 20.dp
-  /** Esquinas: 12 dp en botones y campos; 20 dp en paneles y fotos. Nunca píldoras. */
-  val controlShape = RoundedCornerShape(12.dp)
-  val panelShape = RoundedCornerShape(20.dp)
+  /**
+   * Formas (D-083): botones, controles y etiquetas en cápsula; tarjetas y fotos con esquinas amplias;
+   * hojas flotantes aún más redondeadas, concéntricas con las del teléfono. Nada de bloques cuadrados.
+   */
+  val controlShape = RoundedCornerShape(percent = 50)
+  val panelShape = RoundedCornerShape(28.dp)
+  val tileShape = RoundedCornerShape(22.dp)
+  val sheetShape = RoundedCornerShape(34.dp)
 }
 
 /**
@@ -38,16 +43,16 @@ fun RelevoTheme(darkTheme: Boolean = isSystemInDarkTheme(), largeText: Boolean =
     darkColorScheme(
       primary = colors.ink, onPrimary = colors.onInk, secondary = colors.voice,
       background = colors.paper, onBackground = colors.ink, surface = colors.paper, onSurface = colors.ink,
-      surfaceVariant = colors.mist, onSurfaceVariant = colors.graphite, surfaceContainerLow = colors.paper,
-      surfaceContainer = colors.paper, surfaceContainerHigh = colors.mist,
+      surfaceVariant = colors.mist, onSurfaceVariant = colors.graphite, surfaceContainerLow = colors.card,
+      surfaceContainer = colors.card, surfaceContainerHigh = colors.card,
       outline = colors.line, outlineVariant = colors.line, error = colors.error,
     )
   } else {
     lightColorScheme(
       primary = colors.ink, onPrimary = colors.onInk, secondary = colors.voice,
       background = colors.paper, onBackground = colors.ink, surface = colors.paper, onSurface = colors.ink,
-      surfaceVariant = colors.mist, onSurfaceVariant = colors.graphite, surfaceContainerLow = colors.paper,
-      surfaceContainer = colors.paper, surfaceContainerHigh = colors.mist,
+      surfaceVariant = colors.mist, onSurfaceVariant = colors.graphite, surfaceContainerLow = colors.card,
+      surfaceContainer = colors.card, surfaceContainerHigh = colors.card,
       outline = colors.line, outlineVariant = colors.line, error = colors.error,
     )
   }
@@ -58,7 +63,7 @@ fun RelevoTheme(darkTheme: Boolean = isSystemInDarkTheme(), largeText: Boolean =
       colorScheme = scheme,
       typography = MaterialTypography,
       shapes = Shapes(
-        extraSmall = RoundedCornerShape(8.dp),
+        extraSmall = RoundedCornerShape(12.dp),
         small = Relevo.controlShape,
         medium = Relevo.controlShape,
         large = Relevo.panelShape,

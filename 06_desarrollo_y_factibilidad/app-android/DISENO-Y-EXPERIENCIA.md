@@ -1,6 +1,6 @@
 # Diseño de la experiencia Android de Relevo
 
-**Estado:** describe las versiones 2.1 a 2.7; la última revisión es del 24 de septiembre de 2026 (2.6). Es una dirección implementada, no una validación con usuarios. **Desde la versión 2.8 rige el sistema de marca D-073:** Schibsted Grotesk, tinta, papel y azul pasta, superficies planas sin desenfoque ni degradados y fotografía tratada. La tipografía, los colores y el desenfoque descritos aquí son antecedentes; el estado actual está en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md). Véanse también los [criterios de revisión de interfaz](criterios-revision-interfaz-2026-09-23.md) y la [revisión del feedback](revision-feedback-2026-09-23.md).
+**Estado:** describe las versiones 2.1 a 2.7; la última revisión es del 24 de septiembre de 2026 (2.6). Es una dirección implementada, no una validación con usuarios. **Desde la versión 2.8 rige el sistema de marca D-073:** Schibsted Grotesk, tinta, papel y azul pasta, superficies planas sin desenfoque ni degradados y fotografía tratada. La tipografía, los colores y el desenfoque descritos aquí son antecedentes; el estado actual está en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) y, con vidrio y formas redondeadas desde 2.9, en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md). Véanse también los [criterios de revisión de interfaz](criterios-revision-interfaz-2026-09-23.md) y la [revisión del feedback](revision-feedback-2026-09-23.md).
 
 ## Qué debe sentirse al usarla
 
@@ -63,6 +63,12 @@ Haze. (s. f.). *Progressive (aka gradient) blurs*. https://chrisbanes.github.io/
 r/iOSProgramming. (2025). *Can you recommend apps with great design?* [Foro de discusión]. Reddit. https://www.reddit.com/r/iOSProgramming/comments/1obpqg8/can_you_recommend_apps_with_great_design/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Vidrio desde 2.9
+
+- **Qué cambió:** el estado remite también a la 2.9, que vuelve a usar desenfoque, ahora en la capa de navegación (D-083).
+- **Cómo estaba antes:** remitía solo a la 2.8, que había quitado el desenfoque.
+- **Por qué:** evitar que se lea como vigente la regla «sin desenfoque».
 
 ### 2026-09-26 — Reemplazado en parte por D-073 (2.8)
 

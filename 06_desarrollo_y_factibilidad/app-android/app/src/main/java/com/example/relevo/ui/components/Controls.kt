@@ -1,14 +1,20 @@
 package com.example.relevo.ui.components
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibilityScope
+import androidx.compose.animation.EnterExitState
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
-import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -29,7 +35,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -37,8 +42,17 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.BlurredEdgeTreatment
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.PathMeasure
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.Role
@@ -47,6 +61,7 @@ import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 import kotlinx.coroutines.delay
@@ -54,8 +69,9 @@ import kotlinx.coroutines.delay
 enum class ButtonKind { Primary, Secondary, Destructive }
 
 /**
- * Botón del kit: 52 dp de alto, esquinas de 12, una acción principal por pantalla. Al presionar se
- * hunde un poco y se oscurece, sin ondas ni rebotes; la acción principal se confirma con un toque háptico.
+ * Botón en cápsula (D-083): 56 dp de alto y ancho completo, o compacto dentro de una tarjeta. El
+ * principal va en tinta; el secundario, en un relleno suave, sin bordes. Al presionar se hunde un
+ * poco, sin ondas ni rebotes; la acción principal se confirma con un toque háptico.
  */
 @Composable
 fun RelevoButton(
@@ -65,41 +81,46 @@ fun RelevoButton(
   kind: ButtonKind = ButtonKind.Primary,
   enabled: Boolean = true,
   icon: KitIcon? = null,
+  compact: Boolean = false,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
-  val (container, content, border) = when {
-    !enabled -> Triple(Color.Transparent, colors.gray, colors.line)
-    kind == ButtonKind.Primary -> Triple(colors.ink, colors.onInk, colors.ink)
-    kind == ButtonKind.Destructive -> Triple(Color.Transparent, colors.error, colors.error)
-    else -> Triple(Color.Transparent, colors.ink, colors.ink)
+  val (container, content) = when {
+    !enabled -> colors.mist.copy(alpha = .7f) to colors.gray
+    kind == ButtonKind.Primary -> colors.ink to colors.onInk
+    kind == ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .16f else .09f) to colors.error
+    else -> colors.mist to colors.ink
   }
-  val background by animateColorAsState(
-    if (pressed && enabled) (if (kind == ButtonKind.Primary) colors.slate else colors.mist) else container,
-    Motion.standard(120), label = "button_background",
-  )
+  val pressedColor = when (kind) {
+    ButtonKind.Primary -> colors.slate
+    ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .24f else .15f)
+    ButtonKind.Secondary -> colors.line
+  }
+  val background by animateColorAsState(if (pressed && enabled) pressedColor else container, Motion.standard(120), label = "button_background")
   Row(
-    modifier.fillMaxWidth().heightIn(min = 52.dp).pressScale(interaction, 0.98f).clip(Relevo.controlShape).background(background)
-      .border(BorderStroke(1.5.dp, border), Relevo.controlShape)
+    modifier.then(if (compact) Modifier else Modifier.fillMaxWidth())
+      .heightIn(min = if (compact) 40.dp else 56.dp)
+      .pressScale(interaction, if (compact) 0.95f else 0.97f)
+      .clip(Relevo.controlShape).background(background)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button) {
         if (kind == ButtonKind.Primary) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
         onClick()
       }
-      .padding(horizontal = 16.dp),
+      .padding(horizontal = if (compact) 16.dp else 22.dp),
     horizontalArrangement = Arrangement.Center,
     verticalAlignment = Alignment.CenterVertically,
   ) {
     if (icon != null) {
-      RelevoIcon(icon, size = 20.dp, tint = content, background = if (kind == ButtonKind.Primary && enabled) background else colors.paper)
-      Spacer(Modifier.width(10.dp))
+      RelevoIcon(icon, size = if (compact) 18.dp else 20.dp, tint = content, background = background, strokeWidth = 2f)
+      Spacer(Modifier.width(if (compact) 6.dp else 10.dp))
     }
-    Text(label, style = Relevo.type.button, color = content, textAlign = TextAlign.Center)
+    Text(label, style = if (compact) Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold) else Relevo.type.button, color = content, textAlign = TextAlign.Center, maxLines = 2)
   }
 }
 
-/** Acción de texto en tinta, con área táctil de 48 dp. */
+/** Acción de texto, con área táctil de 48 dp. */
 @Composable
 fun PlainAction(
   label: String,
@@ -114,34 +135,36 @@ fun PlainAction(
   Row(
     modifier.heightIn(min = 48.dp).clip(Relevo.controlShape)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onClick)
-      .padding(horizontal = 2.dp),
+      .padding(horizontal = 4.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     val tint = if (!enabled) Relevo.colors.gray else color.copy(alpha = if (pressed) .5f else 1f)
     if (icon != null) {
-      RelevoIcon(icon, size = 20.dp, tint = tint)
+      RelevoIcon(icon, size = 20.dp, tint = tint, background = Color.Transparent)
       Spacer(Modifier.width(8.dp))
     }
     Text(label, style = Relevo.type.headline, color = tint)
   }
 }
 
-/** Botón de icono para la barra superior: 48 dp de área, icono de 24 y nombre accesible. */
+/** Botón redondo de icono: 44 dp y nombre accesible. */
 @Composable
-fun IconAction(icon: KitIcon, description: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun IconAction(icon: KitIcon, description: String, onClick: () -> Unit, modifier: Modifier = Modifier, filled: Boolean = false) {
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
+  val colors = Relevo.colors
   Box(
-    modifier.size(48.dp).clip(Relevo.controlShape)
+    modifier.size(44.dp).pressScale(interaction, 0.92f).clip(CircleShape)
+      .background(if (filled || pressed) colors.mist else Color.Transparent)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
       .semantics { contentDescription = description },
     contentAlignment = Alignment.Center,
-  ) { RelevoIcon(icon, tint = Relevo.colors.ink.copy(alpha = if (pressed) .5f else 1f)) }
+  ) { RelevoIcon(icon, size = 20.dp, tint = colors.ink, background = Color.Transparent) }
 }
 
 /**
- * Control segmentado, como el de iOS pero con esquinas de 12. El segmento elegido va en tinta y se
- * desliza sin rebote. Tocar el elegido lo desmarca cuando la pregunta se puede omitir.
+ * Control segmentado de iOS: una pista en cápsula y una cápsula clara que se desliza hasta la opción
+ * elegida. Tocar la elegida la desmarca cuando la pregunta se puede omitir.
  */
 @Composable
 fun SegmentedControl(
@@ -150,24 +173,27 @@ fun SegmentedControl(
   onSelect: (String?) -> Unit,
   modifier: Modifier = Modifier,
   allowDeselect: Boolean = true,
-  /** Sobre un panel de niebla, la pista va en papel para que se vea. */
   trackColor: Color = Relevo.colors.mist,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
+  val reduce = rememberReduceMotion()
   val index = options.indexOfFirst { it.first == selected }
-  BoxWithConstraints(modifier.fillMaxWidth().height(48.dp).clip(Relevo.controlShape).background(trackColor).padding(3.dp)) {
+  BoxWithConstraints(modifier.fillMaxWidth().height(44.dp).clip(Relevo.controlShape).background(trackColor).padding(3.dp)) {
     val segment = maxWidth / options.size
-    val offset by animateDpAsState(segment * index.coerceAtLeast(0), Motion.smooth(), label = "segment_offset")
-    if (index >= 0) {
-      Box(Modifier.offset(x = offset).width(segment).fillMaxHeight().clip(RoundedCornerShape(10.dp)).background(colors.ink))
-    }
+    val offset by animateDpAsState(segment * index.coerceAtLeast(0), if (reduce) snap() else Motion.smooth(), label = "segment_offset")
+    val thumbAlpha by animateFloatAsState(if (index >= 0) 1f else 0f, Motion.standard(Motion.SHORT), label = "segment_thumb")
+    Box(
+      Modifier.offset(x = offset).width(segment).fillMaxHeight().graphicsLayer { alpha = thumbAlpha }
+        .shadow(if (colors.isDark) 0.dp else 3.dp, Relevo.controlShape, ambientColor = Color.Black.copy(alpha = .06f), spotColor = Color.Black.copy(alpha = .12f))
+        .clip(Relevo.controlShape).background(if (colors.isDark) Color(0xFF3A3C42) else colors.card),
+    )
     Row(Modifier.fillMaxWidth().fillMaxHeight()) {
       options.forEachIndexed { i, (value, label) ->
         val active = i == index
-        val textColor by animateColorAsState(if (active) colors.onInk else colors.ink, Motion.standard(Motion.SHORT), label = "segment_text")
+        val textColor by animateColorAsState(if (active) colors.ink else colors.graphite, Motion.standard(Motion.SHORT), label = "segment_text")
         Box(
-          Modifier.weight(1f).fillMaxHeight().clip(RoundedCornerShape(10.dp))
+          Modifier.weight(1f).fillMaxHeight().clip(Relevo.controlShape)
             .clickable(indication = null, interactionSource = remember { MutableInteractionSource() }, role = Role.RadioButton) {
               haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
               onSelect(if (active && allowDeselect) null else value)
@@ -175,7 +201,7 @@ fun SegmentedControl(
             .semantics { this.selected = active },
           contentAlignment = Alignment.Center,
         ) {
-          Text(label, style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold), color = textColor, maxLines = 1)
+          Text(label, style = Relevo.type.subhead.copy(fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium), color = textColor, maxLines = 1)
         }
       }
     }
@@ -187,7 +213,7 @@ fun SegmentedControl(
 fun ScaleControl(value: Int?, onChange: (Int?) -> Unit, low: String = "Nada", high: String = "Mucho") {
   Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
     SegmentedControl((1..5).map { it.toString() to it.toString() }, value?.toString(), { onChange(it?.toInt()) })
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+    Row(Modifier.fillMaxWidth().padding(horizontal = 6.dp), horizontalArrangement = Arrangement.SpaceBetween) {
       Text("1 · $low", style = Relevo.type.footnote, color = Relevo.colors.graphite)
       Text("5 · $high", style = Relevo.type.footnote, color = Relevo.colors.graphite)
     }
@@ -201,11 +227,12 @@ fun ScaleControl(value: Int?, onChange: (Int?) -> Unit, low: String = "Nada", hi
 @Composable
 fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
   val haptics = LocalHapticFeedback.current
-  Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+  Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
     (1..5).forEach { star ->
       val filled = (value ?: 0) >= star
+      val scale by animateFloatAsState(if (filled) 1f else .9f, Motion.smooth(stiffness = 700f), label = "star")
       Box(
-        Modifier.size(52.dp).clip(Relevo.controlShape)
+        Modifier.size(54.dp).clip(CircleShape)
           .clickable(indication = null, interactionSource = remember { MutableInteractionSource() }, role = Role.RadioButton) {
             haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
             onChange(if (value == star) null else star)
@@ -213,7 +240,10 @@ fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
           .semantics { contentDescription = "$star de 5"; selected = value == star },
         contentAlignment = Alignment.Center,
       ) {
-        RelevoIcon(if (filled) KitIcon.ESTRELLA_LLENA else KitIcon.ESTRELLA, size = 32.dp, tint = if (filled) Relevo.colors.ink else Relevo.colors.graphite)
+        RelevoIcon(
+          if (filled) KitIcon.ESTRELLA_LLENA else KitIcon.ESTRELLA, size = 34.dp, tint = if (filled) Relevo.colors.ink else Relevo.colors.gray,
+          background = Color.Transparent, modifier = Modifier.graphicsLayer { scaleX = scale; scaleY = scale },
+        )
       }
     }
   }
@@ -242,7 +272,7 @@ fun DurationStepper(seconds: Int, onChange: (Int) -> Unit, label: String) {
             (slideOutVertically(Motion.smooth()) { if (up) -it / 2 else it / 2 } + fadeOut(Motion.standard(120)))
         },
         label = "duration",
-      ) { value -> Text(formatDuration(value), style = Relevo.type.largeTitle, color = colors.ink) }
+      ) { value -> Text(formatDuration(value), style = Relevo.type.largeTitle, color = colors.ink, modifier = Modifier.enterBlur(this)) }
       Text(label, style = Relevo.type.footnote, color = colors.graphite)
     }
     RepeatButton("Restar tiempo", "−", enabled = seconds > 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(decrease(seconds)) }
@@ -274,8 +304,7 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
     while (true) { onStep(); delay(110) }
   }
   Box(
-    Modifier.size(52.dp).pressScale(interaction, 0.94f).clip(Relevo.controlShape).background(if (pressed) colors.mist else Color.Transparent)
-      .border(1.5.dp, if (enabled) colors.ink else colors.line, Relevo.controlShape)
+    Modifier.size(52.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.line else colors.mist)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onStep)
       .semantics { contentDescription = description },
     contentAlignment = Alignment.Center,
@@ -284,48 +313,77 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
   }
 }
 
-/** Opción rápida, como una etiqueta: esquinas de 10 y borde de 1,5. */
+/** Opción rápida en cápsula: relleno suave; la elegida, en tinta. */
 @Composable
 fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
-  val background by animateColorAsState(if (selected) colors.ink else Color.Transparent, Motion.standard(Motion.SHORT), label = "chip")
-  val content = if (selected) colors.onInk else colors.ink
+  val background by animateColorAsState(if (selected) colors.ink else colors.mist, Motion.standard(Motion.SHORT), label = "chip")
+  val content by animateColorAsState(if (selected) colors.onInk else colors.ink, Motion.standard(Motion.SHORT), label = "chip_text")
   Row(
-    modifier.heightIn(min = 44.dp).pressScale(interaction, 0.96f).clip(RoundedCornerShape(10.dp)).background(background)
-      .border(1.5.dp, if (selected) colors.ink else colors.line, RoundedCornerShape(10.dp))
+    modifier.heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick).semantics { this.selected = selected }
-      .padding(horizontal = 12.dp),
+      .padding(horizontal = 16.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     if (icon != null) {
-      RelevoIcon(icon, size = 20.dp, tint = content, background = if (selected) colors.ink else colors.paper)
+      RelevoIcon(icon, size = 18.dp, tint = content, background = background)
       Spacer(Modifier.width(8.dp))
     }
-    Text(label, style = Relevo.type.subhead.copy(fontWeight = FontWeight.Medium), color = content, maxLines = 1)
+    Text(label, style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold), color = content, maxLines = 1)
   }
 }
 
-/** Casilla del kit: 22 dp, esquinas de 6. */
+/** Marca de selección redonda: el círculo se llena de tinta y la marca se dibuja con el trazo. */
 @Composable
-fun CheckMark(checked: Boolean) {
+fun CheckMark(checked: Boolean, size: Dp = 24.dp) {
   val colors = Relevo.colors
-  val fill by animateColorAsState(if (checked) colors.ink else Color.Transparent, Motion.standard(Motion.SHORT), label = "check")
+  val reduce = rememberReduceMotion()
+  val fill by animateColorAsState(if (checked) colors.ink else Color.Transparent, Motion.standard(Motion.SHORT), label = "check_fill")
+  val draw by animateFloatAsState(
+    if (checked) 1f else 0f,
+    if (reduce) snap() else tween(260, delayMillis = if (checked) 60 else 0, easing = Motion.Easing),
+    label = "check_draw",
+  )
   Box(
-    Modifier.size(22.dp).clip(RoundedCornerShape(6.dp)).background(fill).border(1.75.dp, colors.ink, RoundedCornerShape(6.dp)),
+    Modifier.size(size).clip(CircleShape).background(fill).border(1.75.dp, if (checked) colors.ink else colors.gray, CircleShape),
     contentAlignment = Alignment.Center,
   ) {
-    if (checked) RelevoIcon(KitIcon.COMENCE, size = 16.dp, tint = colors.onInk, background = colors.ink)
+    Canvas(Modifier.size(size * 0.6f)) {
+      if (draw <= 0f) return@Canvas
+      val w = this.size.width
+      val h = this.size.height
+      val path = Path().apply {
+        moveTo(w * 0.12f, h * 0.52f)
+        lineTo(w * 0.40f, h * 0.78f)
+        lineTo(w * 0.88f, h * 0.24f)
+      }
+      val measure = PathMeasure().apply { setPath(path, false) }
+      val partial = Path()
+      measure.getSegment(0f, measure.length * draw, partial, true)
+      drawPath(partial, colors.onInk, style = Stroke(width = 2.2.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round))
+    }
   }
 }
 
-/** Opción única del kit: círculo de 22 dp con punto de 12. */
+/** Opción única: anillo con un punto que crece al elegirla. */
 @Composable
 fun RadioMark(selected: Boolean) {
   val colors = Relevo.colors
-  Box(Modifier.size(22.dp).border(1.75.dp, colors.ink, CircleShape), contentAlignment = Alignment.Center) {
-    if (selected) Box(Modifier.size(12.dp).clip(CircleShape).background(colors.ink))
+  val dot by animateDpAsState(if (selected) 10.dp else 0.dp, Motion.smooth(stiffness = 700f), label = "radio_dot")
+  Box(Modifier.size(24.dp).border(if (selected) 2.dp else 1.75.dp, if (selected) colors.ink else colors.gray, CircleShape), contentAlignment = Alignment.Center) {
+    Box(Modifier.size(dot).clip(CircleShape).background(colors.ink))
   }
+}
+
+/** Las cifras y los textos que cambian entran con un leve desenfoque («number pop-in», transitions.dev). */
+@Composable
+fun Modifier.enterBlur(scope: AnimatedVisibilityScope): Modifier {
+  if (rememberReduceMotion()) return this
+  val radius by scope.transition.animateFloat(transitionSpec = { tween(220, easing = Motion.Easing) }, label = "enter_blur") { state ->
+    if (state == EnterExitState.Visible) 0f else 8f
+  }
+  return if (radius <= 0.1f) this else this.blur(radius.dp, BlurredEdgeTreatment.Unbounded)
 }
 
 internal fun formatDuration(seconds: Int): String = when {

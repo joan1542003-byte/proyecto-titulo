@@ -1,6 +1,8 @@
 package com.example.relevo.ui
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -11,7 +13,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -27,7 +29,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -45,7 +47,6 @@ import com.example.relevo.ui.components.Photo
 import com.example.relevo.ui.components.PhotoImage
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.RelevoButton
-import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.SectionGap
@@ -53,44 +54,37 @@ import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StatusChip
 import com.example.relevo.ui.components.Wordmark
 import com.example.relevo.ui.components.appear
+import com.example.relevo.ui.components.rememberReduceMotion
 
 /**
- * A1. La foto del comienzo (zapatillas y el parlante junto a la puerta), la firma que se escribe sola
- * y tres pasos con los iconos del kit. No pide datos.
+ * A1. La foto del comienzo (zapatillas y el parlante junto a la puerta) llega al borde superior y se
+ * acerca despacio; la firma se escribe sola. No pide datos ni explica de más.
  */
 @Composable
 internal fun WelcomeScreen(onStart: () -> Unit) {
+  val reduce = rememberReduceMotion()
+  val zoom = remember { Animatable(if (reduce) 1f else 1.08f) }
+  LaunchedEffect(Unit) { zoom.animateTo(1f, tween(1600, easing = Motion.Easing)) }
   RelevoScreen(
-    leading = { Wordmark(height = 22.dp) },
+    hero = {
+      PhotoImage(Photo.PUERTA, Modifier.fillMaxSize().graphicsLayer { scaleX = zoom.value; scaleY = zoom.value }, describe = true)
+    },
+    heroHeight = 400.dp,
     bottom = { RelevoButton("Empezar", onStart) },
   ) {
-    Spacer(Modifier.height(4.dp))
-    PhotoImage(Photo.PUERTA, Modifier.fillMaxWidth().aspectRatio(1.05f).clip(Relevo.panelShape).appear(0), describe = true)
-    Spacer(Modifier.height(24.dp))
+    Spacer(Modifier.height(26.dp))
+    Wordmark(height = 22.dp, modifier = Modifier.appear(0))
+    Spacer(Modifier.height(22.dp))
     Signature("lo que querías hacer", phraseColor = Relevo.colors.ink)
     Spacer(Modifier.height(14.dp))
-    Text("Anota algo que quieres hacer. Relevo te lo recuerda mientras todavía puedes hacerlo. Tú decides qué hacer después.",
+    Text("Anota algo que quieres hacer. Relevo te lo recuerda mientras todavía puedes hacerlo.",
       style = Relevo.type.body, color = Relevo.colors.graphite, modifier = Modifier.appear(2))
-    SectionGap()
-    Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
-      listOf(
-        KitIcon.ACTIVIDAD to "Escribes algo que quieras hacer y cómo empieza.",
-        KitIcon.LUGAR to "Dejas el objeto donde empieza.",
-        KitIcon.PROBAR to "Suena ahí después del tiempo que elijas en el teléfono.",
-      ).forEachIndexed { index, (icon, text) ->
-        Row(Modifier.fillMaxWidth().appear(3 + index), verticalAlignment = Alignment.CenterVertically) {
-          RelevoIcon(icon, size = 28.dp)
-          Spacer(Modifier.width(16.dp))
-          Text(text, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
-        }
-      }
-    }
   }
 }
 
 /**
  * A2. Versión breve arriba y, a pedido, el detalle de la hoja de consentimiento de 21 días. «No
- * participar» no cierra la app: se puede usar igual, solo en el teléfono.
+ * participar» no cierra la app: se puede usar igual, sin registro para el estudio.
  */
 @Composable
 internal fun ConsentScreen(
@@ -104,10 +98,10 @@ internal fun ConsentScreen(
   var details by rememberSaveable { mutableStateOf(false) }
   var declining by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(
-    title = "Participar en la prueba",
+    title = "¿Quieres participar en la prueba?",
     bottom = {
       Row(
-        Modifier.fillMaxWidth().heightIn(min = 52.dp)
+        Modifier.fillMaxWidth().heightIn(min = 48.dp)
           .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Checkbox) { checked = !checked },
         verticalAlignment = Alignment.CenterVertically,
       ) {
@@ -120,17 +114,17 @@ internal fun ConsentScreen(
     },
   ) {
     Text(
-      "Durante 21 días usarás Relevo y responderás preguntas breves. Guardamos lo que preparas y lo que respondes, con un código en vez de tu nombre. Puedes pedir que borremos todo cuando quieras.",
+      "Durante 21 días usarás Relevo y responderás preguntas breves. Guardamos lo que preparas y lo que respondes con un código, no con tu nombre. Puedes pedir que lo borremos cuando quieras.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
-    Spacer(Modifier.heightIn(min = 12.dp))
+    Spacer(Modifier.height(12.dp))
     PlainAction(if (details) "Ocultar los detalles" else "Leer los detalles", { details = !details }, icon = if (details) KitIcon.CONTRAER else KitIcon.EXPANDIR)
     AnimatedVisibility(details, enter = expandVertically(Motion.smooth()) + fadeIn(Motion.standard()), exit = shrinkVertically(Motion.smooth()) + fadeOut(Motion.standard(Motion.SHORT))) {
       Column { ConsentSections(remoteConfigured) }
     }
     if (deletionPending) {
       SectionGap()
-      Notice("Hay una solicitud de eliminación pendiente. El registro sigue detenido.", icon = KitIcon.ADVERTENCIA) {
+      Notice("Hay una solicitud de borrado pendiente. El registro sigue detenido.", icon = KitIcon.ADVERTENCIA) {
         PlainAction("Abrir Privacidad y datos", onPrivacy)
       }
     }
@@ -139,12 +133,12 @@ internal fun ConsentScreen(
     RelevoSheet(onDismiss = { declining = false }, scrollable = false) {
       Text("Usar Relevo sin participar", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("La app funciona igual. No se guarda nada para el estudio y nada sale del teléfono. Puedes sumarte a la prueba después, desde Privacidad y datos.",
+      Text("Funciona igual, pero no se guarda nada para el estudio. Puedes sumarte después desde Perfil.",
         style = Relevo.type.body, color = Relevo.colors.graphite)
-      Spacer(Modifier.height(20.dp))
-      RelevoButton("Usar sin participar", { declining = false; onUseLocally() }, kind = ButtonKind.Secondary)
-      Spacer(Modifier.height(4.dp))
-      PlainAction("Volver", { declining = false })
+      Spacer(Modifier.height(22.dp))
+      RelevoButton("Usar sin participar", { declining = false; onUseLocally() })
+      Spacer(Modifier.height(8.dp))
+      RelevoButton("Volver", { declining = false }, kind = ButtonKind.Secondary)
     }
   }
 }
@@ -176,7 +170,7 @@ private fun ConsentPart(title: String, text: String) {
 @Composable
 internal fun ConsentDetailsScreen(remoteConfigured: Boolean, onBack: () -> Unit) {
   RelevoScreen(title = "Consentimiento", onBack = onBack) {
-    Text("Aceptaste participar en la prueba de 21 días con este texto.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    Text("Aceptaste participar con este texto.", style = Relevo.type.body, color = Relevo.colors.graphite)
     ConsentSections(remoteConfigured)
   }
 }
@@ -202,24 +196,25 @@ internal fun PermissionScreen(
   LaunchedEffect(usageAccess) { if (usageAccess && waitingForSettings) onContinue() }
   RelevoScreen(
     title = "Para saber cuándo sonar",
-    header = { PhotoImage(Photo.TIEMPO, Modifier.fillMaxWidth().aspectRatio(1.5f).clip(Relevo.panelShape).appear(0), wide = true, describe = true) },
+    hero = { PhotoImage(Photo.TIEMPO, Modifier.fillMaxSize(), wide = true, describe = true) },
+    heroHeight = 260.dp,
     bottom = {
       if (usageAccess) RelevoButton("Seguir", onContinue)
-      else RelevoButton("Abrir ajustes de Android", { waitingForSettings = true; onOpenUsageSettings() })
+      else RelevoButton("Abrir ajustes", { waitingForSettings = true; onOpenUsageSettings() })
     },
   ) {
-    Text("Relevo necesita ver cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.", style = Relevo.type.body, color = Relevo.colors.ink)
+    Text("Relevo necesita saber cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.", style = Relevo.type.body, color = Relevo.colors.ink)
     SectionGap()
-    ListSection(title = "Permisos") {
+    ListSection {
       ListRow(
-        "Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Necesario para contar el tiempo.",
+        "Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Necesario para contar.",
         onClick = if (usageAccess) null else ({ waitingForSettings = true; onOpenUsageSettings() }),
-        trailing = { StatusChip(if (usageAccess) KitIcon.LISTO else KitIcon.ADVERTENCIA, if (usageAccess) "Permitido" else "Falta", onPanel = true) },
+        trailing = { StatusChip(if (usageAccess) KitIcon.LISTO else KitIcon.ADVERTENCIA, if (usageAccess) "Listo" else "Falta", onPanel = true) },
       )
       ListRow(
-        "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Opcional. Muestran el aviso con otra app abierta.",
+        "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Opcional. Avisan aunque uses otra app.",
         onClick = if (notifications) null else ({ requestNotificationPermission(context) }),
-        trailing = { StatusChip(if (notifications) KitIcon.LISTO else KitIcon.AGREGAR, if (notifications) "Permitidas" else "Activar", onPanel = true) },
+        trailing = { StatusChip(if (notifications) KitIcon.LISTO else KitIcon.AGREGAR, if (notifications) "Listo" else "Activar", onPanel = true) },
       )
     }
   }

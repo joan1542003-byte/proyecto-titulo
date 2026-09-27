@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -46,8 +47,8 @@ import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 
 /**
- * Sección agrupada, como las de iOS, con las formas del manual: rótulo en mayúsculas pequeñas, panel
- * de niebla con esquinas de 20 y filas separadas por una línea fina que empieza después del icono.
+ * Sección agrupada, como las de iOS 26: rótulo en mayúsculas pequeñas, tarjeta clara con esquinas
+ * amplias y filas separadas por una línea fina que empieza después del icono.
  */
 @Composable
 fun ListSection(
@@ -61,7 +62,7 @@ fun ListSection(
       Text(title.uppercase(), style = Relevo.type.label, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 8.dp).semantics { heading() })
     }
     Column(
-      Modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.mist)
+      Modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.card)
         // Cada fila dibuja su línea arriba; se recorta la de la primera para que solo haya líneas entre filas.
         .layout { measurable, constraints ->
           val cut = 1.dp.roundToPx()
@@ -76,11 +77,11 @@ fun ListSection(
   }
 }
 
-/** Icono de fila sobre una ficha de papel, como los ajustes de iOS pero sin color. */
+/** Icono de fila: el trazo del kit, sin baldosa (nada de bloques cuadrados, D-083). */
 @Composable
 fun IconTile(icon: KitIcon, tint: Color = Relevo.colors.ink) {
-  Box(Modifier.size(30.dp).clip(RoundedCornerShape(8.dp)).background(Relevo.colors.paper), contentAlignment = Alignment.Center) {
-    RelevoIcon(icon, size = 20.dp, tint = tint, background = Relevo.colors.paper)
+  Box(Modifier.size(30.dp), contentAlignment = Alignment.Center) {
+    RelevoIcon(icon, size = 22.dp, tint = tint, background = Relevo.colors.card)
   }
 }
 
@@ -107,12 +108,12 @@ fun ListRow(
   val pressed by interaction.collectIsPressedAsState()
   val background by animateColorAsState(if (pressed) colors.line.copy(alpha = .55f) else Color.Transparent, Motion.standard(90), label = "row")
   val hasLeading = leading != null || icon != null
-  val inset = if (hasLeading) 16.dp + leadingWidth + 14.dp else 16.dp
+  val inset = if (hasLeading) 18.dp + leadingWidth + 14.dp else 18.dp
   Row(
-    modifier.fillMaxWidth().heightIn(min = 52.dp).background(background)
+    modifier.fillMaxWidth().heightIn(min = 54.dp).background(background)
       .drawBehind { if (divider) drawLine(colors.line, Offset(inset.toPx(), 0f), Offset(size.width, 0f), strokeWidth = 1.dp.toPx()) }
       .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick) else Modifier)
-      .padding(start = 16.dp, end = 14.dp, top = 11.dp, bottom = 11.dp),
+      .padding(start = 18.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     when {
@@ -138,7 +139,7 @@ fun ListRow(
       },
     )
     if (trailing != null) { Spacer(Modifier.width(12.dp)); trailing() }
-    if (chevron) { Spacer(Modifier.width(6.dp)); RelevoIcon(KitIcon.SIGUIENTE, size = 18.dp, tint = colors.graphite, background = colors.mist) }
+    if (chevron) { Spacer(Modifier.width(6.dp)); RelevoIcon(KitIcon.SIGUIENTE, size = 16.dp, tint = colors.gray, background = colors.card, strokeWidth = 2.2f) }
   }
 }
 
@@ -180,7 +181,7 @@ fun FactRow(icon: KitIcon, label: String, value: String, valueIsVoice: Boolean =
 
 enum class Tone { Info, Error }
 
-/** Aviso del kit: dice qué pasó y qué hacer. El de error lleva borde rojo; nunca se usa para errores de la persona. */
+/** Aviso: dice qué pasó y qué hacer. El de error va en un tinte rojo suave; nunca se usa para errores de la persona. */
 @Composable
 fun Notice(
   text: String,
@@ -192,14 +193,15 @@ fun Notice(
 ) {
   val colors = Relevo.colors
   val error = tone == Tone.Error
+  val background = if (error) colors.error.copy(alpha = if (colors.isDark) .14f else .07f) else colors.card
   Row(
-    modifier.fillMaxWidth().clip(Relevo.panelShape).background(colors.mist)
-      .then(if (error) Modifier.border(BorderStroke(1.5.dp, colors.error), Relevo.panelShape) else Modifier)
-      .padding(16.dp),
+    modifier.fillMaxWidth().clip(Relevo.panelShape).background(background).padding(18.dp),
     verticalAlignment = Alignment.Top,
   ) {
-    RelevoIcon(if (error) KitIcon.ERROR else icon, tint = if (error) colors.error else colors.ink, background = colors.mist)
-    Spacer(Modifier.width(12.dp))
+    Box(Modifier.size(36.dp).clip(CircleShape).background(if (error) colors.error.copy(alpha = .12f) else colors.mist), contentAlignment = Alignment.Center) {
+      RelevoIcon(if (error) KitIcon.ERROR else icon, size = 20.dp, tint = if (error) colors.error else colors.ink, background = Color.Transparent)
+    }
+    Spacer(Modifier.width(14.dp))
     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
       if (title != null) Text(title, style = Relevo.type.headline, color = colors.ink)
       Text(text, style = Relevo.type.subhead, color = if (title != null) colors.graphite else colors.ink)
@@ -208,13 +210,13 @@ fun Notice(
   }
 }
 
-/** Estado breve: «Esperando», «Suena en el parlante». Sobre un panel, va en papel. */
+/** Estado breve en cápsula: «Esperando», «Suena en el parlante». Sobre una tarjeta, va en papel. */
 @Composable
 fun StatusChip(icon: KitIcon, text: String, modifier: Modifier = Modifier, onPanel: Boolean = false) {
   val colors = Relevo.colors
   val background = if (onPanel) colors.paper else colors.mist
   Row(
-    modifier.background(background, RoundedCornerShape(8.dp)).padding(horizontal = 10.dp, vertical = 6.dp),
+    modifier.background(background, Relevo.controlShape).padding(horizontal = 12.dp, vertical = 7.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     RelevoIcon(icon, size = 16.dp, tint = colors.ink, background = background)
@@ -223,10 +225,10 @@ fun StatusChip(icon: KitIcon, text: String, modifier: Modifier = Modifier, onPan
   }
 }
 
-/** Panel de niebla con esquinas de 20. */
+/** Tarjeta clara con esquinas amplias. */
 @Composable
-fun Panel(modifier: Modifier = Modifier, padding: Dp = 18.dp, content: @Composable ColumnScope.() -> Unit) {
-  Column(modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.mist).padding(padding), verticalArrangement = Arrangement.spacedBy(8.dp), content = content)
+fun Panel(modifier: Modifier = Modifier, padding: Dp = 20.dp, content: @Composable ColumnScope.() -> Unit) {
+  Column(modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.card).padding(padding), verticalArrangement = Arrangement.spacedBy(8.dp), content = content)
 }
 
 /** Título de una sección con una acción opcional a la derecha: «Ideas · Ver todas». */

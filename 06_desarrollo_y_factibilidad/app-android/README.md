@@ -4,31 +4,33 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.8 de prueba
+**Versión:** 2.9 de prueba
 
-**Fecha:** 26 de septiembre de 2026
+**Fecha:** 27 de septiembre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.8-2026-09-26.apk](releases/relevo-android-2.8-2026-09-26.apk). El de 2.7 se conserva: el autor debe decidir cuál se usa en la prueba de 21 días.
+**APK vigente:** [relevo-android-2.9-2026-09-27.apk](releases/relevo-android-2.9-2026-09-27.apk). Los de 2.8 y 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.8-2026-09-26.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.9-2026-09-27.zip`
 
-**Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7) y el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md).
+**Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7), el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) y el vidrio, las formas y los emoji de D-083 en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md).
 
 **Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
-**Licencias de recursos de terceros:** [fuente Schibsted Grotesk y procedencia de las fotografías](licencias/README.md).
+**Licencias de recursos de terceros:** [fuente Schibsted Grotesk, fotografías y emoji Noto 3D](licencias/README.md).
+
+**Versión 2.9:** a pedido del autor, lleva la interfaz al estilo de iOS 26: pantalla completa, vidrio con desenfoque sutil en la capa de navegación, cápsulas y esquinas amplias en lugar de bloques, emoji 3D de Google en el perfil y textos más naturales, sin avisos de privacidad repetidos. No cambia la lógica ni los datos. Detalle, verificación y pendientes en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md).
 
 **Versión 2.8:** aplica el sistema de marca D-073 con fotografías, suma perfil, ruta de actividades, aviso de regreso opcional, apariencia y uso sin participar, y completa las pantallas del diseño escrito. Conserva sin cambios la lógica de la prueba de 21 días. Detalle, verificación y pendientes en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md).
 
 **Versión 2.7:** incorpora lo que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md) y corrige el envío de eventos. Cambios, causa del problema de eventos y verificación en [Android 2.7](version-2.7-prueba-21-dias-2026-09-25.md).
 
-La versión 2.8 compila y sus 47 pruebas unitarias pasan. En un emulador Android 16 se recorrieron, con datos ficticios, la primera vez con y sin participar, el perfil, la ruta y su siguiente paso, un ciclo completo con registros en Supabase, el aviso de regreso y el tema oscuro. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
+La versión 2.9 compila y sus 50 pruebas unitarias pasan. En un emulador Android 16 se recorrieron, con datos ficticios, la primera vez, el perfil con emoji, la ruta, la preparación, un ciclo completo con la señal y la respuesta, las hojas de vidrio y el tema oscuro. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
 
 ## Qué permite hacer
 
@@ -51,7 +53,7 @@ La versión 2.8 compila y sus 47 pruebas unitarias pasan. En un emulador Android
 17. solicitar una sola vez el consentimiento para uso académico antes de mostrar el tutorial o iniciar cualquier registro;
 18. empezar con una bienvenida breve, la decisión de participar en la prueba y el permiso de Tiempo de uso, sin tutorial de varias páginas (A1 a A3 desde 2.8);
 19. preparar un relevo por etapas: actividad; aplicación y tiempo; inicio y ubicación; revisión y activación. Las actividades propias se crean en tres pasos y se pueden reutilizar;
-20. después del permiso, escribir un nombre, elegir una imagen e intereses, o saltar cada paso; los intereses arman una ruta de actividades;
+20. después del permiso, escribir un nombre, elegir un emoji e intereses, o saltar cada paso; los intereses arman una ruta de actividades;
 21. volver con el gesto de Android en todas las pantallas; consultar en Privacidad y datos un código de participación estable entre ciclos;
 22. ver una confirmación breve cuando la persona declara que comenzó su actividad, sin presentar la declaración como una comprobación de Relevo;
 23. probar el sonido antes de activar, conocer explícitamente si la salida elegida falló y consultar una pantalla de privacidad para solicitar la eliminación de los registros locales y remotos;
@@ -127,6 +129,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Versión 2.9: vidrio, formas redondeadas y emoji
+
+- **Qué cambió:** el estado apunta a 2.9 y resume lo que cambia: vidrio en la capa de navegación, pantalla completa, cápsulas, emoji en el perfil y textos más breves.
+- **Cómo estaba antes:** describía la 2.8, con superficies planas y fotos en el perfil.
+- **Por qué:** pedido del autor del 26 de septiembre (D-083).
 
 ### 2026-09-26 — Versión 2.8: sistema de marca D-073, perfil y ruta
 

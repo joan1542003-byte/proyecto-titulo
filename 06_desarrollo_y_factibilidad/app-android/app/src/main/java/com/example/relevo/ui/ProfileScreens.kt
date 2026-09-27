@@ -22,7 +22,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,7 +35,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import cl.udp.relevo.BuildConfig
 import com.example.relevo.data.HistoryEntry
@@ -46,6 +48,10 @@ import com.example.relevo.domain.Interests
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.Avatar
+import com.example.relevo.ui.components.ButtonKind
+import com.example.relevo.ui.components.Emoji
+import com.example.relevo.ui.components.EmojiTile
+import com.example.relevo.ui.components.GlassTextButton
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
@@ -62,7 +68,6 @@ import com.example.relevo.ui.components.RenglonArea
 import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.appear
-import com.example.relevo.ui.components.key
 import com.example.relevo.ui.components.pressScale
 import com.example.relevo.ui.components.rememberReduceMotion
 
@@ -81,21 +86,15 @@ internal class ProfileActions(
   val onOpenRoute: () -> Unit,
 )
 
-/** Fotos que se pueden elegir como imagen del perfil o de una actividad. No se suben fotos propias. */
+/** Fotos que se pueden elegir como imagen de una actividad propia. No se suben fotos propias. */
 internal val choosablePhotos = listOf(
   Photo.CAMINAR, Photo.SALIDA, Photo.LEER, Photo.LIBRO, Photo.ESCRIBIR, Photo.ESTUDIAR, Photo.APRENDER, Photo.DIBUJAR,
   Photo.PINTAR, Photo.MANUALIDADES, Photo.GUITARRA, Photo.COCINAR, Photo.PAN, Photo.ORDENAR, Photo.PERRO, Photo.EJERCICIO,
 )
 
-/** Iconos del kit para la imagen (P2): zapatilla, libro, lápiz, guitarra, olla, planta… */
-internal val choosableIcons = listOf(
-  KitIcon.CAMINAR, KitIcon.LEER, KitIcon.ESCRIBIR, KitIcon.DIBUJAR, KitIcon.GUITARRA, KitIcon.MUSICA,
-  KitIcon.COCINAR, KitIcon.PLANTAS, KitIcon.BICICLETA, KitIcon.ESTIRAR, KitIcon.FOTOGRAFIA, KitIcon.JUEGO_DE_MESA,
-)
-
 /**
- * S1: el perfil. La imagen, el nombre y los intereses; «Tu semana» si la persona lo activó, con
- * hechos y sin metas; y los ajustes, la prueba y la ayuda en secciones.
+ * S1: el perfil. El emoji y el nombre al centro, «Tu semana» si la persona lo activó (hechos, sin
+ * metas) y las secciones de relevos, ajustes, estudio y ayuda.
  */
 @Composable
 internal fun ProfileTab(
@@ -114,8 +113,8 @@ internal fun ProfileTab(
   LaunchedEffect(reselect) { if (reselect != firstReselect) scroll.animateScrollTo(0) else firstReselect = reselect }
   var noting by rememberSaveable { mutableStateOf(false) }
   val participating = participation == ParticipationMode.STUDY
-  RelevoScreen(title = "Perfil", scrollState = scroll, insetBottom = false) {
-    ProfileCard(profile, routes, actions.onEdit, Modifier.appear(0))
+  RelevoScreen(scrollState = scroll) {
+    ProfileHeader(profile, routes, actions.onEdit, Modifier.appear(0))
     if (settings.weeklySummary) {
       SectionGap()
       WeekSummary(history, settings, participating, onTell = { noting = true }, modifier = Modifier.appear(1))
@@ -150,38 +149,43 @@ internal fun ProfileTab(
     if (participating) {
       SectionGap()
       ListSection(title = "Ayuda", modifier = Modifier.appear(5)) {
-        ListRow("¿Cómo te resultó usar Relevo?", icon = KitIcon.ESTRELLA, chevron = true, onClick = actions.onFeedback)
+        ListRow("Tu opinión", icon = KitIcon.ESTRELLA, chevron = true, onClick = actions.onFeedback)
         ListRow("Reportar un problema", icon = KitIcon.PROBLEMA, chevron = true, onClick = actions.onReport)
       }
     }
-    Spacer(Modifier.height(16.dp))
-    Text("Relevo ${BuildConfig.VERSION_NAME} · Proyecto de Título de Diseño, Universidad Diego Portales.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(20.dp))
+    Text(
+      "Relevo ${BuildConfig.VERSION_NAME} · Proyecto de Título de Diseño, Universidad Diego Portales",
+      style = Relevo.type.footnote, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(),
+    )
   }
   if (noting) WeekNoteSheet(onDismiss = { noting = false }, onSend = { actions.onWeekNote(it); noting = false })
 }
 
+/** Encabezado del perfil al centro, como en los ajustes de iOS. Tocarlo abre la edición. */
 @Composable
-private fun ProfileCard(profile: Profile, routes: List<RouteTrack>, onEdit: () -> Unit, modifier: Modifier = Modifier) {
+private fun ProfileHeader(profile: Profile, routes: List<RouteTrack>, onEdit: () -> Unit, modifier: Modifier = Modifier) {
   val interaction = remember { MutableInteractionSource() }
   val interests = routes.joinToString(" · ") { it.title }
-  Row(
-    modifier.fillMaxWidth().pressScale(interaction, 0.985f).clickableRow(interaction, onEdit)
-      .padding(vertical = 4.dp),
-    verticalAlignment = Alignment.CenterVertically,
+  Column(
+    modifier.fillMaxWidth().padding(top = 12.dp),
+    horizontalAlignment = Alignment.CenterHorizontally,
   ) {
-    Avatar(profile.image, profile.name, 72.dp)
-    Spacer(Modifier.width(16.dp))
-    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-      Text(profile.name.ifBlank { "Tu perfil" }, style = Relevo.type.title2, color = Relevo.colors.ink)
-      Text(interests.ifBlank { "Agrega tu nombre, una imagen e intereses" }, style = Relevo.type.subhead, color = Relevo.colors.graphite, maxLines = 2)
-      Text("Editar el perfil", style = Relevo.type.subhead.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = Relevo.colors.ink)
+    Box(
+      Modifier.pressScale(interaction, 0.95f)
+        .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onEdit)
+        .semantics { contentDescription = "Editar el perfil" },
+    ) { Avatar(profile.image, profile.name, 104.dp) }
+    Spacer(Modifier.height(14.dp))
+    Text(profile.name.ifBlank { "Tu perfil" }, style = Relevo.type.title, color = Relevo.colors.ink, textAlign = TextAlign.Center)
+    if (interests.isNotBlank()) {
+      Spacer(Modifier.height(4.dp))
+      Text(interests, style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center)
     }
+    Spacer(Modifier.height(14.dp))
+    RelevoButton("Editar", onEdit, kind = ButtonKind.Secondary, compact = true)
   }
 }
-
-@Composable
-private fun Modifier.clickableRow(interaction: MutableInteractionSource, onClick: () -> Unit): Modifier =
-  this.then(Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick))
 
 /** «Tu semana»: solo hechos, sin metas ni comparación con semanas anteriores. Se apaga en Avisos y resúmenes. */
 @Composable
@@ -205,7 +209,7 @@ private fun WeekSummary(history: List<HistoryEntry>, settings: Settings, canTell
     if (settings.constancy > 0 && !settings.constancyPaused) {
       Text("Elegiste hacerlo ${settings.constancy} ${if (settings.constancy == 1) "vez" else "veces"} por semana.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     }
-    if (canTell && facts.prepared > 0) PlainAction("¿Qué te ayudó? Contar", onTell, icon = KitIcon.COMENTARIO)
+    if (canTell && facts.prepared > 0) PlainAction("¿Qué te ayudó?", onTell, icon = KitIcon.COMENTARIO)
   }
 }
 
@@ -213,18 +217,15 @@ private fun WeekSummary(history: List<HistoryEntry>, settings: Settings, canTell
 private fun WeekNoteSheet(onDismiss: () -> Unit, onSend: (String) -> Unit) {
   var text by rememberSaveable { mutableStateOf("") }
   RelevoSheet(onDismiss = onDismiss, title = "¿Qué te ayudó?") {
-    Text("Es opcional y queda con tus respuestas de la prueba.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Text("Queda con tus respuestas de la prueba.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(16.dp))
     RenglonArea("Tu respuesta", text, { text = it }, "Escribe aquí")
-    Spacer(Modifier.height(20.dp))
+    Spacer(Modifier.height(22.dp))
     RelevoButton("Enviar", { onSend(text) }, enabled = text.isNotBlank())
   }
 }
 
-/**
- * P1 a P3 en tres pasos, que se pueden saltar. El nombre y la imagen se quedan en el teléfono; los
- * intereses arman la ruta sugerida (R1).
- */
+/** P1 a P3 en tres pasos, que se pueden saltar. Los intereses arman la ruta sugerida (R1). */
 @Composable
 internal fun ProfileSetupScreen(
   profile: Profile,
@@ -243,11 +244,11 @@ internal fun ProfileSetupScreen(
   fun go(to: Int) { forward = to > step; step = to }
   BackHandler(enabled = step > 0) { go(step - 1) }
   RelevoScreen(
-    title = when (step) { 0 -> "¿Cómo te llamamos?"; 1 -> "Elige una imagen"; else -> "¿Qué te gustaría hacer más seguido?" },
+    title = when (step) { 0 -> "¿Cómo te llamas?"; 1 -> "Elige tu ícono"; else -> "¿Qué te gustaría hacer más seguido?" },
     onBack = if (step > 0) ({ go(step - 1) }) else null,
     step = "${step + 1} de 3",
     progress = (step + 1) / 3f,
-    trailing = { PlainAction("Saltar", { if (step < 2) go(step + 1) else onFinish(false) }, color = Relevo.colors.graphite) },
+    trailing = { GlassTextButton("Saltar", { if (step < 2) go(step + 1) else onFinish(false) }, color = Relevo.colors.graphite) },
     bottom = {
       when (step) {
         0 -> RelevoButton("Seguir", { onName(name.trim()); go(1) }, enabled = name.isNotBlank())
@@ -268,23 +269,18 @@ internal fun ProfileSetupScreen(
       Column(Modifier.fillMaxWidth()) {
         when (current) {
           0 -> {
-            Avatar(image, name, 88.dp)
+            Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Avatar(image, name, 104.dp) }
             SectionGap()
-            RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Como quieras que te diga Relevo", imeAction = ImeAction.Next, onImeAction = { if (name.isNotBlank()) { onName(name.trim()); go(1) } })
-            Spacer(Modifier.height(12.dp))
-            Text("Solo lo verás tú. No sale del teléfono.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+            RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Como quieras que te diga Relevo", imeAction = ImeAction.Next,
+              onImeAction = { if (name.isNotBlank()) { onName(name.trim()); go(1) } })
           }
           1 -> {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-              Avatar(image, name, 88.dp)
-              Spacer(Modifier.width(16.dp))
-              Text("Una imagen que te represente. No se suben fotos: así no se guardan rostros.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.weight(1f))
-            }
+            Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Avatar(image, name, 104.dp) }
             SectionGap()
-            ImageGrid(image) { image = it }
+            EmojiGrid(image) { image = it }
           }
           else -> {
-            Text("Elige una o varias. Puedes cambiarlas cuando quieras.", style = Relevo.type.body, color = Relevo.colors.graphite)
+            Text("Elige una o varias.", style = Relevo.type.body, color = Relevo.colors.graphite)
             SectionGap()
             InterestGrid(interests, other, onToggle = { id -> interests = if (id in interests) interests - id else interests + id }, onOther = { other = it })
           }
@@ -294,31 +290,17 @@ internal fun ProfileSetupScreen(
   }
 }
 
-/** Cuadrícula de fotos e iconos para la imagen del perfil. */
+/** Emoji 3D en círculos, cuatro por fila. */
 @Composable
-internal fun ImageGrid(selected: String, onSelect: (String) -> Unit) {
-  Text("FOTOS", style = Relevo.type.label, color = Relevo.colors.graphite)
-  Spacer(Modifier.height(10.dp))
-  choosablePhotos.chunked(4).forEach { row ->
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-      row.forEach { photo ->
-        PictureTile(Picture.OfPhoto(photo), selected == photo.key, { onSelect(photo.key) }, Modifier.weight(1f), description = photo.description, aspect = 1f)
+internal fun EmojiGrid(selected: String, onSelect: (String) -> Unit) {
+  val chosen = Emoji.forProfile(selected)
+  Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+    Emoji.entries.chunked(4).forEach { row ->
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        row.forEach { emoji -> EmojiTile(emoji, chosen == emoji, { onSelect(emoji.key) }, Modifier.weight(1f)) }
+        repeat(4 - row.size) { Spacer(Modifier.weight(1f)) }
       }
-      repeat(4 - row.size) { Spacer(Modifier.weight(1f)) }
     }
-    Spacer(Modifier.height(10.dp))
-  }
-  Spacer(Modifier.height(16.dp))
-  Text("ICONOS", style = Relevo.type.label, color = Relevo.colors.graphite)
-  Spacer(Modifier.height(10.dp))
-  choosableIcons.chunked(4).forEach { row ->
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-      row.forEach { icon ->
-        PictureTile(Picture.OfIcon(icon), selected == icon.key, { onSelect(icon.key) }, Modifier.weight(1f), description = icon.label, aspect = 1f)
-      }
-      repeat(4 - row.size) { Spacer(Modifier.weight(1f)) }
-    }
-    Spacer(Modifier.height(10.dp))
   }
 }
 
@@ -330,7 +312,7 @@ internal fun InterestGrid(selected: List<String>, other: String, onToggle: (Stri
   options.chunked(2).forEach { row ->
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
       row.forEach { (id, label, picture) ->
-        PictureTile(picture, id in selected, { onToggle(id) }, Modifier.weight(1f), label = label, aspect = 1.25f, shape = Relevo.panelShape, prominent = true)
+        PictureTile(picture, id in selected, { onToggle(id) }, Modifier.weight(1f), label = label, aspect = 1.2f, cornerRadius = 26.dp, prominent = true)
       }
       if (row.size == 1) Spacer(Modifier.weight(1f))
     }
@@ -338,12 +320,12 @@ internal fun InterestGrid(selected: List<String>, other: String, onToggle: (Stri
   }
   AnimatedVisibility(Interests.OTHER in selected, enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut()) {
     Column(Modifier.padding(top = 6.dp)) {
-      RenglonField("¿Cuál?", other, { onOther(it.take(40)) }, placeholder = "Ejemplo: tejer")
+      RenglonField("¿Cuál?", other, { onOther(it.take(40)) }, placeholder = "Ej.: tejer")
     }
   }
 }
 
-/** Editar el perfil: nombre, imagen (en una hoja) e intereses. Cambiar intereses conserva las rutas ya editadas. */
+/** Editar el perfil: el emoji (en una hoja), el nombre y los intereses. Cambiar intereses conserva las rutas ya editadas. */
 @Composable
 internal fun ProfileEditScreen(profile: Profile, onSave: (String, String, List<String>, String) -> Unit, onBack: () -> Unit) {
   var name by rememberSaveable { mutableStateOf(profile.name) }
@@ -353,35 +335,29 @@ internal fun ProfileEditScreen(profile: Profile, onSave: (String, String, List<S
   var picking by rememberSaveable { mutableStateOf(false) }
   val changed = name != profile.name || image != profile.image || interests != profile.interests || other != profile.otherInterest
   RelevoScreen(
-    title = "Editar el perfil",
+    title = "Tu perfil",
     onBack = onBack, backLabel = "Cancelar",
     bottom = { RelevoButton("Guardar", { onSave(name.trim(), image, interests, other.trim()) }, enabled = changed && (Interests.OTHER !in interests || other.isNotBlank())) },
   ) {
     val interaction = remember { MutableInteractionSource() }
-    Row(
-      Modifier.fillMaxWidth().clickable(interactionSource = interaction, indication = null, role = Role.Button) { picking = true },
-      verticalAlignment = Alignment.CenterVertically,
-    ) {
-      Box(Modifier.pressScale(interaction)) { Avatar(image, name, 88.dp) }
-      Spacer(Modifier.width(16.dp))
-      Column(Modifier.weight(1f)) {
-        Text("Imagen", style = Relevo.type.headline, color = Relevo.colors.ink)
-        Text("Cambiar la imagen", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-      }
+    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+      Box(
+        Modifier.pressScale(interaction, 0.95f).clickable(interactionSource = interaction, indication = null, role = Role.Button) { picking = true }
+          .semantics { contentDescription = "Cambiar el ícono" },
+      ) { Avatar(image, name, 104.dp) }
+      Spacer(Modifier.height(10.dp))
+      PlainAction("Cambiar el ícono", { picking = true })
     }
     SectionGap()
     RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Como quieras que te diga Relevo")
-    Spacer(Modifier.height(8.dp))
-    Text("Solo lo verás tú. No sale del teléfono.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
     SectionGap()
-    Text("INTERESES", style = Relevo.type.label, color = Relevo.colors.graphite)
-    Spacer(Modifier.height(12.dp))
+    Text("INTERESES", style = Relevo.type.label, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 12.dp))
     InterestGrid(interests, other, onToggle = { id -> interests = if (id in interests) interests - id else interests + id }, onOther = { other = it })
   }
   if (picking) {
-    RelevoSheet(onDismiss = { picking = false }, title = "Imagen", done = "Listo") {
-      Spacer(Modifier.height(8.dp))
-      ImageGrid(image) { image = it }
+    RelevoSheet(onDismiss = { picking = false }, title = "Tu ícono", done = "Listo") {
+      Spacer(Modifier.height(4.dp))
+      EmojiGrid(image) { image = it }
     }
   }
 }

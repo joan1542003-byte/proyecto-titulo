@@ -2,7 +2,7 @@
 
 **Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Es una copia fechada para revisión, no el consentimiento vigente: conserva un contacto en blanco y un plazo anterior. El paquete único previo permanece en el archivo histórico.
 
-**Prueba vigente:** [protocolo 02: prueba de 21 días en casa](protocolo-02-prueba-21-dias.md), que responde la hipótesis y las preguntas de uso con una sesión inicial observada y tres semanas con una condición cada una (D-079). Usa la app Android 2.7 que el protocolo especifica y un parlante Bluetooth, sin luz (D-070), con una señal de unos 30 segundos (D-078). La [2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) conserva la lógica de la prueba y agrega el sistema D-073, perfil y ruta; el autor decide cuál usar. Instrumentos: [consentimiento de 21 días](consentimiento-android-vigente-2026-09-23.md), [pauta Android](pauta-testeo-prototipo-android-2026-09-23.md) para la prueba técnica previa y [ficha de la sesión inicial](ficha-registro-protocolo-01.md). No se han realizado sesiones con participantes.
+**Prueba vigente:** [protocolo 02: prueba de 21 días en casa](protocolo-02-prueba-21-dias.md), que responde la hipótesis y las preguntas de uso con una sesión inicial observada y tres semanas con una condición cada una (D-079). Usa la app Android 2.7 que el protocolo especifica y un parlante Bluetooth, sin luz (D-070), con una señal de unos 30 segundos (D-078). La [2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) y la [2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md) conservan la lógica de la prueba; agregan el sistema D-073, perfil y ruta, y en 2.9 el vidrio y los emoji. El autor decide cuál usar. Instrumentos: [consentimiento de 21 días](consentimiento-android-vigente-2026-09-23.md), [pauta Android](pauta-testeo-prototipo-android-2026-09-23.md) para la prueba técnica previa y [ficha de la sesión inicial](ficha-registro-protocolo-01.md). No se han realizado sesiones con participantes.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -71,6 +71,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-09-27 — Android 2.9
+
+- **Qué cambió:** se menciona la 2.9 junto a la 2.8.
+- **Cómo estaba antes:** solo se nombraban la 2.7 y la 2.8.
+- **Por qué:** la 2.9 cambia lo que verá la persona en la prueba.
 
 ### 2026-09-26 — Android 2.8
 

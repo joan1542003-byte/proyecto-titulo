@@ -146,6 +146,11 @@ En la rama `android-2.7`, a pedido del autor:
 - **Decisión pendiente del autor:** usar 2.8 o 2.7 en la prueba de 21 días; D-073 sigue siendo una propuesta para la marca completa.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
 
+## Actualización del 27 de septiembre de 2026
+
+- **Android 2.9:** a pedido del autor, la interfaz pasa al estilo de iOS 26 (D-083): pantalla completa, vidrio con desenfoque sutil en la navegación, cápsulas y esquinas amplias, emoji 3D de Google en el perfil y textos más naturales. No cambia la lógica ni los datos. Compila y pasan 50 pruebas unitarias; se recorrió en emulador con datos ficticios. Detalle en [Android 2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md).
+- **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
+
 ## Seguridad, privacidad y GitHub
 
 El README informó que el repositorio fue público al 9 de septiembre de 2026; esa visibilidad debe verificarse antes de cargar material nuevo. No subir notas personales, consentimientos firmados, nombres, contactos de participantes, registros brutos identificables ni archivos locales que no estén preparados para difusión. Mantener solo corpus anonimizado autorizado. No guardar credenciales, `.env`, `local.properties`, claves privadas o copias de bases de datos. El archivo `local.properties.example` es una plantilla, no una credencial.
@@ -157,6 +162,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Android 2.9
+
+- **Qué cambió:** se añadió la actualización del 27 de septiembre con la app 2.9.
+- **Cómo estaba antes:** el traspaso llegaba hasta Android 2.8.
+- **Por qué:** la próxima sesión debe partir del estado real de la app.
 
 ### 2026-09-26 — Android 2.8
 

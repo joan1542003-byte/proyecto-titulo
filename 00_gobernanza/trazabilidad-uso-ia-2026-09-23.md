@@ -18,6 +18,7 @@ Esta formulación se apoya en la [declaración histórica de IA de la memoria v1
 | Revisión documental del 23 de septiembre | La petición inicial fue revisar el repositorio y desarrollar la parte escrita de las anotaciones. La IA ordenó notas, contrastó documentación y fuentes y redactó borradores. | Las anotaciones y el alcance son del autor; la primera iteración no implementó la app. | Ningún texto de esa fase aporta resultados con participantes. |
 | Revisión de Android 2.5 del 23 de septiembre | El autor pidió aplicar el feedback a la app, con reconocimiento positivo sin culpa. Un agente revisó el repositorio y modificó tutorial, navegación, progreso y mensaje de Inicio; el agente principal auditó el código, corrigió la continuidad del código de participación, el consentimiento, el tiempo máximo y la documentación. | El autor fijó el criterio de tono y el correo y plazo de datos; las correcciones se seleccionaron por relación con el flujo real, no por aceptación automática de todas las notas. | La compilación y un recorrido parcial en emulador no sustituyen pruebas con personas, audio físico ni verificación de borrado. |
 | Android 2.8 del 25 y 26 de septiembre | Claude Code programó el rediseño con D-073, el perfil, la ruta y el regreso; trató con la receta de D-073 las fotografías generadas antes y seis CC0; compiló, probó en emulador con datos ficticios y documentó. No generó imágenes nuevas. | El autor rechazó una primera versión sin fotos y fijó el objetivo: D-073, fotografías, más personalización y las pantallas que faltaban. Las decisiones de detalle quedan en D-082 para su revisión. | Compilación, 47 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
+| Android 2.9 del 27 de septiembre | Claude Code revisó referentes (pautas de Liquid Glass de Apple, Laws of UX, transitions.dev) y la disponibilidad y licencia de los emoji Noto 3D de Google; programó el vidrio, las formas en cápsula, las hojas flotantes, el selector de emoji y los textos nuevos; probó en emulador y documentó. Los emoji son de Google, no se generaron. | El autor fijó el objetivo: pantalla completa, desenfoques sutiles sin brillo, bordes redondeados, solo iconos o emoji en el perfil, textos naturales y sin avisos de privacidad repetidos. Registrado como D-083. | Compilación, 50 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
 
 Lo que puede sostenerse documentalmente es que la IA permitió **producir variantes y dejar rastros de descarte y corrección**. El repositorio no mide ahorro de tiempo ni permite afirmar que la IA mejoró la calidad de uso de Relevo: eso exigiría comparación y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
 
@@ -76,7 +77,22 @@ No introducir transcripciones identificables de P1–P8, hojas firmadas, claves 
 - **Decisiones del autor:** aplicar D-073 a la app, recuperar las fotografías, permitir más personalización, completar las pantallas y retirar la pregunta sobre la entrevista. Las decisiones de detalle que tomó la herramienta están en D-082, pendientes de su revisión.
 - **Lo que no se afirma:** que la app funcione en el teléfono y el parlante de la prueba, ni que la nueva interfaz se entienda mejor o se prefiera: no hubo pruebas con personas.
 
+## Registro de la iteración Android 2.9
+
+- **Fecha y herramienta:** 26 y 27 de septiembre de 2026; Claude Code con el modelo Claude Opus 5.5.
+- **Pedido literal del autor (fragmentos):** «"Solo lo ves tu, no sale del telefono" no creo necesari oestar diciendole constantemente al usaurio que su info es privada [...] el diseño es mejorahble, aun mas moderno, con blur, pantalla completa. Bordes redondeados, algo al estilo de iOS 26 sin recurrir a "brillo" sino a esas trasnaprencias hermosas y con desenfoques sutiles. Las fotos del eprfil del usaurio deberian ser solo iconos, puedes crear iconos, o emojis (google lanzo recientemente emojsi en3d que podrian servirnos) [...] Debe estar perfectamente diseñado, ser hermoso, pero facil de usar, sin sobrediseñar ni sobre explicar. perfecciona la interfaz de cada pantalla. y nada de bloques cuadrados.»
+- **Fuentes consultadas por la herramienta:** Laws of UX, transitions.dev y React Bits, que el autor recomendó; videos y resúmenes de Liquid Glass de Apple; el blog de Google y el repositorio googlefonts/noto-emoji, para confirmar la publicación de los emoji 3D y su licencia.
+- **Qué hizo la herramienta:** programó el vidrio de la capa de navegación con Haze, el marco de pantalla a sangre, la barra de pestañas flotante, las hojas de vidrio, los controles en cápsula, las marcas redondas, el catálogo de 24 emoji con equivalencias para las imágenes antiguas y los textos nuevos; escribió una prueba unitaria; recorrió la app en emulador, respaldando y restaurando los datos de prueba del autor; borró de Supabase la sesión de prueba, y documentó la versión.
+- **Decisiones del autor:** las de D-083. La selección concreta de emoji y los textos nuevos son propuestas de la herramienta, pendientes de su revisión.
+- **Lo que no se afirma:** que la nueva interfaz se entienda mejor o se prefiera, ni que el desenfoque sea fluido en el teléfono de la prueba.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Iteración Android 2.9
+
+- **Qué cambió:** se añadieron una fila y un registro de la iteración Android 2.9, con el pedido literal del autor, las fuentes consultadas, lo que hizo la herramienta y lo que no se afirma.
+- **Antes:** el registro llegaba hasta la iteración Android 2.8.
+- **Por qué:** mantener trazable qué hizo la IA y qué decidió el autor.
 
 ### 2026-09-26 — Iteración Android 2.8
 

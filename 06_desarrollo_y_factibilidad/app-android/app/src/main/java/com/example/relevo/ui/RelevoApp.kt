@@ -27,6 +27,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -41,7 +43,11 @@ import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import dev.chrisbanes.haze.hazeSource
+import dev.chrisbanes.haze.rememberHazeState
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
@@ -56,7 +62,13 @@ import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.LocalNavScope
 import com.example.relevo.ui.components.LocalSharedScope
 import com.example.relevo.ui.components.Motion
+import com.example.relevo.ui.components.LocalDockInset
+import com.example.relevo.ui.components.LocalGlassSource
+import com.example.relevo.ui.components.LocalSheetHost
+import com.example.relevo.ui.components.SheetHost
+import com.example.relevo.ui.components.SheetHostState
 import com.example.relevo.ui.components.TabBar
+import com.example.relevo.ui.components.TabBarHeight
 import com.example.relevo.ui.components.TabItem
 import com.example.relevo.ui.components.rememberReduceMotion
 import kotlinx.coroutines.CancellationException
@@ -233,8 +245,11 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     onDismissReturn = viewModel::dismissReturn,
   )
 
-  CompositionLocalProvider(LocalRoutes provides routes) {
+  val rootHaze = rememberHazeState()
+  val sheets = remember { SheetHostState() }
+  CompositionLocalProvider(LocalRoutes provides routes, LocalSheetHost provides sheets) {
   Box(Modifier.fillMaxSize().background(Relevo.colors.paper)) {
+    Box(Modifier.fillMaxSize().hazeSource(rootHaze)) {
     SharedTransitionLayout {
       val transition = rememberTransition(transitionState, label = "navigation")
       transition.AnimatedContent(
@@ -412,6 +427,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
       }
     }
 
+    }
+
     // Hojas que pueden aparecer sobre Inicio después de responder.
     if (current == Route.TABS) {
       routeSuggestion?.let { suggestion ->
@@ -419,6 +436,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
       }
       if (askTurnOffReturn) TurnOffReturnSheet(onAnswer = viewModel::answerTurnOffReturn)
     }
+    // Las hojas van sobre todo y desenfocan la app que queda detrás.
+    SheetHost(sheets, rootHaze)
   }
   }
 
@@ -426,22 +445,33 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   BackHandler(enabled = current == Route.TABS && tab != Tab.HOME) { tab = Tab.HOME }
 }
 
-/** Contenedor de las pestañas: cada una conserva su desplazamiento; tocar la elegida sube al comienzo. */
+/**
+ * Contenedor de las pestañas: el contenido ocupa toda la pantalla y pasa bajo la barra de pestañas,
+ * que flota en vidrio. Cada pestaña conserva su desplazamiento; tocar la elegida sube al comienzo.
+ */
 @Composable
 private fun TabsHost(tab: Tab, reselect: Int, onTab: (Tab) -> Unit, content: @Composable (Tab) -> Unit) {
   val holder = rememberSaveableStateHolder()
   val reduce = rememberReduceMotion()
-  Column(Modifier.fillMaxSize()) {
-    Box(Modifier.weight(1f).fillMaxWidth()) {
-      AnimatedContent(
-        targetState = tab,
-        transitionSpec = { if (reduce) EnterTransition.None togetherWith ExitTransition.None else fadeIn(Motion.standard(160)) togetherWith fadeOut(Motion.standard(120)) },
-        label = "tabs",
-      ) { selected ->
-        holder.SaveableStateProvider(selected.name) { content(selected) }
+  val tabHaze = rememberHazeState()
+  Box(Modifier.fillMaxSize()) {
+    Box(Modifier.fillMaxSize().hazeSource(tabHaze)) {
+      CompositionLocalProvider(LocalDockInset provides TabBarHeight + 12.dp) {
+        AnimatedContent(
+          targetState = tab,
+          transitionSpec = { if (reduce) EnterTransition.None togetherWith ExitTransition.None else fadeIn(Motion.standard(180)) togetherWith fadeOut(Motion.standard(120)) },
+          label = "tabs",
+        ) { selected ->
+          holder.SaveableStateProvider(selected.name) { content(selected) }
+        }
       }
     }
-    TabBar(Tab.entries.map { TabItem(it.label, it.icon) }, Tab.entries.indexOf(tab), { onTab(Tab.entries[it]) })
+    CompositionLocalProvider(LocalGlassSource provides tabHaze) {
+      TabBar(
+        Tab.entries.map { TabItem(it.label, it.icon) }, Tab.entries.indexOf(tab), { onTab(Tab.entries[it]) },
+        Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(start = 22.dp, end = 22.dp, bottom = 12.dp),
+      )
+    }
   }
 }
 

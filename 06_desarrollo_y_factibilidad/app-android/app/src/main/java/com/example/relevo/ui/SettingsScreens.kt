@@ -12,13 +12,13 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -70,14 +70,14 @@ import java.time.LocalDate
 import java.time.ZoneId
 import java.util.UUID
 
-/** Una opción de ajuste: qué es, para qué sirve y sus valores en un control segmentado. */
+/** Una opción de ajuste: qué es, en una línea, y sus valores en un control segmentado. */
 @Composable
 private fun SettingPanel(title: String, detail: String, options: List<Pair<String, String>>, selected: String, onSelect: (String) -> Unit, extra: (@Composable () -> Unit)? = null) {
   Panel {
     Text(title, style = Relevo.type.headline, color = Relevo.colors.ink)
     Text(detail, style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    Spacer(Modifier.height(4.dp))
-    SegmentedControl(options, selected, { it?.let(onSelect) }, allowDeselect = false, trackColor = Relevo.colors.paper)
+    Spacer(Modifier.height(6.dp))
+    SegmentedControl(options, selected, { it?.let(onSelect) }, allowDeselect = false)
     extra?.invoke()
   }
 }
@@ -88,14 +88,14 @@ internal fun NoticesScreen(settings: Settings, participation: ParticipationMode,
   val context = LocalContext.current
   RelevoScreen(title = "Avisos y resúmenes", onBack = onBack, backLabel = "Perfil") {
     SettingPanel(
-      "Resumen «Tu semana»", "Lo que preparaste esta semana, en tu perfil.",
+      "Resumen «Tu semana»", "Lo que preparaste en la semana, en tu perfil.",
       listOf("no" to "No", "si" to "Sí"), if (settings.weeklySummary) "si" else "no",
       { value -> onChange { copy(weeklySummary = value == "si") } },
     )
     Spacer(Modifier.height(14.dp))
     SettingPanel(
-      "Aviso de regreso", "Como máximo una vez por semana y solo si no abriste Relevo.",
-      listOf("nunca" to "Nunca", "semanal" to "Una vez por semana"), if (settings.returnNotice) "semanal" else "nunca",
+      "Aviso de regreso", "Una vez por semana, solo si no abres Relevo.",
+      listOf("nunca" to "Nunca", "semanal" to "Semanal"), if (settings.returnNotice) "semanal" else "nunca",
       { value ->
         if (value == "semanal") requestNotificationPermission(context)
         onChange { copy(returnNotice = value == "semanal") }
@@ -103,26 +103,26 @@ internal fun NoticesScreen(settings: Settings, participation: ParticipationMode,
     )
     Spacer(Modifier.height(14.dp))
     SettingPanel(
-      "Después de responder", "Un mensaje breve o solo registrar tu respuesta.",
-      listOf("con" to "Con mensajes", "solo" to "Solo registrar"), if (settings.acknowledgements) "con" else "solo",
+      "Mensaje al responder", "Unas palabras después de contar qué decidiste.",
+      listOf("solo" to "No", "con" to "Sí"), if (settings.acknowledgements) "con" else "solo",
       { value -> onChange { copy(acknowledgements = value == "con") } },
     )
     Spacer(Modifier.height(14.dp))
     SettingPanel(
-      "Constancia elegida", "Tú fijas cuántas veces por semana quieres hacerlo. Aparece en «Tu semana».",
+      "Constancia elegida", "Cuántas veces por semana quieres hacerlo. Aparece en «Tu semana».",
       listOf("no" to "Apagada", "si" to "Elegir"), if (settings.constancy > 0) "si" else "no",
       { value -> onChange { copy(constancy = if (value == "si") constancy.coerceAtLeast(3) else 0, constancyPaused = false) } },
     ) {
       if (settings.constancy > 0) {
-        Spacer(Modifier.height(6.dp))
-        CountStepper(settings.constancy, { value -> onChange { copy(constancy = value) } }, 1..7, "Quiero hacerlo ${settings.constancy} ${if (settings.constancy == 1) "vez" else "veces"} por semana")
-        PlainAction(if (settings.constancyPaused) "Retomar la constancia" else "Pausar la constancia", { onChange { copy(constancyPaused = !constancyPaused) } },
+        Spacer(Modifier.height(8.dp))
+        CountStepper(settings.constancy, { value -> onChange { copy(constancy = value) } }, 1..7, "${settings.constancy} ${if (settings.constancy == 1) "vez" else "veces"} por semana")
+        PlainAction(if (settings.constancyPaused) "Retomar" else "Pausar", { onChange { copy(constancyPaused = !constancyPaused) } },
           icon = if (settings.constancyPaused) KitIcon.REPRODUCIR else KitIcon.PAUSAR)
       }
     }
     if (participation == ParticipationMode.STUDY) {
       Spacer(Modifier.height(10.dp))
-      Text("La constancia elegida es una variante que se compara en la prueba.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+      Text("La constancia elegida es una variante que se compara en la prueba.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
     }
   }
 }
@@ -132,7 +132,6 @@ internal fun NoticesScreen(settings: Settings, participation: ParticipationMode,
 internal fun AppearanceScreen(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onBack: () -> Unit) {
   RelevoScreen(title = "Apariencia", onBack = onBack, backLabel = "Perfil") {
     Panel {
-      Text("VISTA PREVIA", style = Relevo.type.label, color = Relevo.colors.graphite)
       Signature("leer", style = Relevo.type.title, animate = false)
       Text("Sonará junto al sillón después de 40 min.", style = Relevo.type.body, color = Relevo.colors.graphite)
     }
@@ -144,12 +143,10 @@ internal fun AppearanceScreen(settings: Settings, onChange: (Settings.() -> Sett
     )
     Spacer(Modifier.height(14.dp))
     SettingPanel(
-      "Tamaño del texto", "Se suma al tamaño que eliges en Android.",
+      "Tamaño del texto", "Se suma al que eliges en Android.",
       listOf("normal" to "Estándar", "grande" to "Grande"), if (settings.largeText) "grande" else "normal",
       { value -> onChange { copy(largeText = value == "grande") } },
     )
-    Spacer(Modifier.height(10.dp))
-    Text("Si en Android quitas las animaciones, Relevo tampoco las usa.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
   }
 }
 
@@ -160,11 +157,11 @@ internal fun PermissionsScreen(usageAccess: Boolean, backgroundUnrestricted: Boo
   var notifications by remember { mutableStateOf(hasNotificationPermission(context)) }
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { notifications = hasNotificationPermission(context) }
   RelevoScreen(title = "Permisos", onBack = onBack, backLabel = "Perfil") {
-    ListSection(footer = "Tiempo de uso es necesario para contar. Las notificaciones y el funcionamiento sin restricción de batería son opcionales.") {
+    ListSection(footer = "Tiempo de uso es necesario para contar. Lo demás es opcional.") {
       ListRow("Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Cuenta el tiempo en las apps elegidas.", value = if (usageAccess) "Permitido" else "Falta", chevron = true, onClick = onUsageSettings)
-      ListRow("Notificaciones", icon = KitIcon.AVISOS, subtitle = "Muestran el aviso con otra app abierta.", value = if (notifications) "Permitidas" else "Desactivadas",
+      ListRow("Notificaciones", icon = KitIcon.AVISOS, subtitle = "Avisan aunque uses otra app.", value = if (notifications) "Permitidas" else "Apagadas",
         chevron = !notifications, onClick = if (notifications) null else ({ requestNotificationPermission(context) }))
-      ListRow("Segundo plano", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga el conteo.", value = if (backgroundUnrestricted) "Sin restricción" else "Con restricción",
+      ListRow("Batería", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga el conteo.", value = if (backgroundUnrestricted) "Sin restricción" else "Con restricción",
         chevron = !backgroundUnrestricted, onClick = if (backgroundUnrestricted) null else onBackground)
     }
   }
@@ -175,7 +172,7 @@ internal fun PermissionsScreen(usageAccess: Boolean, backgroundUnrestricted: Boo
 internal fun HistoryScreen(history: List<HistoryEntry>, customActivities: List<CustomActivity>, onBack: () -> Unit) {
   RelevoScreen(title = "Tus relevos", onBack = onBack, backLabel = "Perfil") {
     if (history.isEmpty()) {
-      Text("Los relevos que termines aparecerán aquí.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Aquí verás los relevos que termines.", style = Relevo.type.body, color = Relevo.colors.graphite)
       return@RelevoScreen
     }
     val today = LocalDate.now()
@@ -190,9 +187,9 @@ internal fun HistoryScreen(history: List<HistoryEntry>, customActivities: List<C
           ListRow(
             entry.activity,
             subtitle = listOfNotNull(entry.appLabel.takeIf { it.isNotBlank() }, formatDuration(entry.seconds), outcomeLabel(entry.outcome) ?: if (entry.signalDelivered) "Sonó" else "Terminó antes de sonar").joinToString(" · "),
-            leading = { PictureContent(activityPicture(entry.activity, customActivities), Modifier.size(36.dp, 45.dp).clip(RoundedCornerShape(8.dp)), iconSize = 20.dp) },
-            leadingWidth = 36.dp,
-            trailing = { RelevoIcon(outcomeIcon(entry.outcome), size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.mist) },
+            leading = { PictureContent(activityPicture(entry.activity, customActivities), Modifier.size(44.dp).clip(CircleShape), iconSize = 20.dp) },
+            leadingWidth = 44.dp,
+            trailing = { RelevoIcon(outcomeIcon(entry.outcome), size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) },
           )
         }
       }
@@ -201,23 +198,23 @@ internal fun HistoryScreen(history: List<HistoryEntry>, customActivities: List<C
   }
 }
 
-/** Actividades propias guardadas en el teléfono. No se envían a la base. */
+/** Actividades propias guardadas en el teléfono. */
 @Composable
 internal fun ActivitiesScreen(customActivities: List<CustomActivity>, onOpen: (String) -> Unit, onNew: () -> Unit, onBack: () -> Unit) {
-  RelevoScreen(title = "Tus actividades", subtitle = "Se guardan solo en este teléfono.", onBack = onBack, backLabel = "Perfil") {
+  RelevoScreen(title = "Tus actividades", onBack = onBack, backLabel = "Perfil") {
     ListSection {
       ListRow("Nueva actividad", icon = KitIcon.AGREGAR, chevron = true, onClick = onNew)
       customActivities.forEach { activity ->
         ListRow(
           activity.name, subtitle = activity.firstStep.takeIf { it.isNotBlank() },
-          leading = { PictureContent(Picture.parse(activity.icon) ?: pictureForActivity(activity.name, emptyList()), Modifier.size(36.dp, 45.dp).clip(RoundedCornerShape(8.dp)), iconSize = 20.dp) },
-          leadingWidth = 36.dp, chevron = true, onClick = { onOpen(activity.id) },
+          leading = { PictureContent(Picture.parse(activity.icon) ?: pictureForActivity(activity.name, emptyList()), Modifier.size(44.dp).clip(CircleShape), iconSize = 20.dp) },
+          leadingWidth = 44.dp, chevron = true, onClick = { onOpen(activity.id) },
         )
       }
     }
     if (customActivities.isEmpty()) {
       Spacer(Modifier.height(12.dp))
-      Text("Crea una actividad con su primer paso, su lugar y una imagen. Aparecerá en Inicio.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Crea una actividad con su primer paso y su lugar. Aparecerá en Inicio.", style = Relevo.type.body, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
     }
   }
 }
@@ -242,32 +239,31 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
   val picture = Picture.parse(image) ?: pictureForActivity(name, emptyList())
   RelevoScreen(
     title = if (initial == null) "Nueva actividad" else "Editar la actividad",
-    onBack = onBack, backLabel = "Cancelar",
+    onBack = onBack, closeIcon = initial == null, backLabel = "Cancelar",
     bottom = {
-      RelevoButton("Guardar la actividad", {
+      RelevoButton("Guardar", {
         onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), first.trim(), place.trim(), image.ifBlank { (picture as? Picture.OfPhoto)?.photo?.key ?: (picture as Picture.OfIcon).icon.key }, 0))
       }, enabled = valid)
     },
   ) {
-    Row(verticalAlignment = Alignment.Bottom) {
-      PictureContent(picture, Modifier.width(96.dp).aspectRatio(0.8f).clip(Relevo.panelShape), iconSize = 36.dp)
+    Row(verticalAlignment = Alignment.CenterVertically) {
+      PictureContent(picture, Modifier.size(88.dp).clip(CircleShape), iconSize = 36.dp)
       Spacer(Modifier.width(16.dp))
       if (name.isNotBlank()) Signature(name, style = Relevo.type.title2, animate = false, modifier = Modifier.weight(1f))
       else Text("Vuelve a ___.", style = Relevo.type.title2, color = Relevo.colors.graphite, modifier = Modifier.weight(1f))
     }
     SectionGap()
-    RenglonField("Actividad", name, { name = it.take(60) }, placeholder = "Ejemplo: practicar guitarra")
-    if (duplicate) { Spacer(Modifier.height(6.dp)); Text("Ya hay una actividad con ese nombre.", style = Relevo.type.footnote, color = Relevo.colors.error) }
+    RenglonField("Actividad", name, { name = it.take(60) }, placeholder = "Ej.: practicar guitarra")
+    if (duplicate) { Spacer(Modifier.height(6.dp)); Text("Ya tienes una actividad con ese nombre.", style = Relevo.type.footnote, color = Relevo.colors.error) }
     Spacer(Modifier.height(20.dp))
-    RenglonField("¿Cómo empezarás?", first, { first = it.take(120) }, placeholder = "Ejemplo: sacar la guitarra del estuche")
+    RenglonField("¿Cómo empiezas?", first, { first = it.take(120) }, placeholder = "Ej.: sacar la guitarra del estuche")
     Spacer(Modifier.height(20.dp))
-    RenglonField("Lugar", place, { place = it.take(120) }, placeholder = "Ejemplo: junto a la guitarra")
+    RenglonField("Lugar", place, { place = it.take(120) }, placeholder = "Ej.: junto a la guitarra")
     SectionGap()
-    Text("IMAGEN", style = Relevo.type.label, color = Relevo.colors.graphite)
-    Spacer(Modifier.height(10.dp))
+    Text("IMAGEN", style = Relevo.type.label, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 12.dp))
     choosablePhotos.chunked(4).forEach { row ->
       Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-        row.forEach { photo -> PictureTile(Picture.OfPhoto(photo), image == photo.key, { image = photo.key }, Modifier.weight(1f), description = photo.description) }
+        row.forEach { photo -> PictureTile(Picture.OfPhoto(photo), image == photo.key, { image = photo.key }, Modifier.weight(1f), description = photo.description, cornerRadius = 18.dp) }
         repeat(4 - row.size) { Spacer(Modifier.weight(1f)) }
       }
       Spacer(Modifier.height(10.dp))
@@ -275,32 +271,32 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
     Spacer(Modifier.height(6.dp))
     activityIcons.chunked(6).forEach { row ->
       Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        row.forEach { icon -> PictureTile(Picture.OfIcon(icon), image == icon.key, { image = icon.key }, Modifier.weight(1f), description = icon.label, aspect = 1f) }
+        row.forEach { icon -> PictureTile(Picture.OfIcon(icon), image == icon.key, { image = icon.key }, Modifier.weight(1f), description = icon.label, aspect = 1f, cornerRadius = 100.dp) }
         repeat(6 - row.size) { Spacer(Modifier.weight(1f)) }
       }
       Spacer(Modifier.height(8.dp))
     }
     if (initial != null) {
       SectionGap()
-      PlainAction("Borrar la actividad", { confirmDelete = true }, color = Relevo.colors.error, icon = KitIcon.BORRAR)
+      RelevoButton("Borrar la actividad", { confirmDelete = true }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
     }
   }
   if (confirmDelete && initial != null) {
     RelevoSheet(onDismiss = { confirmDelete = false }, scrollable = false) {
       Text("¿Borrar «${initial.name}»?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Se borra de tus actividades. Los relevos que ya hiciste se mantienen.", style = Relevo.type.body, color = Relevo.colors.graphite)
-      Spacer(Modifier.height(20.dp))
-      RelevoButton("Borrar la actividad", { confirmDelete = false; onDelete(initial.id) }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
-      Spacer(Modifier.height(4.dp))
-      PlainAction("Cancelar", { confirmDelete = false })
+      Text("Se quita de tus actividades. Los relevos que ya hiciste se mantienen.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Spacer(Modifier.height(22.dp))
+      RelevoButton("Borrar", { confirmDelete = false; onDelete(initial.id) }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
+      Spacer(Modifier.height(8.dp))
+      RelevoButton("Cancelar", { confirmDelete = false }, kind = ButtonKind.Secondary)
     }
   }
 }
 
 /**
  * S3: privacidad breve, código, estado del envío, descarga de los datos y borrado en un paso.
- * Sin participar, explica que nada sale del teléfono y ofrece participar.
+ * Sin participar, dice que lo preparado queda en el teléfono y ofrece participar.
  */
 @Composable
 internal fun PrivacyScreen(
@@ -330,8 +326,8 @@ internal fun PrivacyScreen(
     bottom = if (deleted) ({ RelevoButton("Volver a comenzar", onRestart) }) else null,
   ) {
     Text(
-      if (participating) "Guardamos lo que preparas, cuándo suena el aviso y lo que respondes, con un código en vez de tu nombre. No leemos lo que haces dentro de otras apps. Tu nombre y tu imagen se quedan en el teléfono. Puedes descargar o borrar tus datos cuando quieras. Si no los borras antes, los eliminamos el 30 de diciembre de 2026."
-      else "No participas en la prueba. Lo que preparas se queda en este teléfono y no se envía a ninguna parte.",
+      if (participating) "Guardamos lo que preparas, cuándo suena el aviso y lo que respondes, con un código en vez de tu nombre. No vemos lo que haces dentro de otras apps. Si no borras tus datos antes, los eliminamos el 30 de diciembre de 2026."
+      else "No participas en la prueba. Lo que preparas queda en este teléfono.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
     SectionGap()
@@ -340,7 +336,7 @@ internal fun PrivacyScreen(
         ListSection {
           ListRow("Código de participación", icon = KitIcon.CODIGO, value = participantCode.ifBlank { "Sin código" },
             onClick = if (participantCode.isBlank()) null else ({ copy(context, participantCode); copied = true }),
-            trailing = { if (participantCode.isNotBlank()) RelevoIcon(if (copied) KitIcon.LISTO else KitIcon.COPIAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.mist) })
+            trailing = { if (participantCode.isNotBlank()) RelevoIcon(if (copied) KitIcon.LISTO else KitIcon.COPIAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) })
           ListRow("Consentimiento", icon = KitIcon.CONSENTIMIENTO, value = "Aceptado", chevron = true, onClick = onConsent)
           if (remoteConfigured) ListRow("Envío de datos", icon = KitIcon.SINCRONIZAR, subtitle = syncStatusText(syncStatus))
         }
@@ -350,15 +346,15 @@ internal fun PrivacyScreen(
         }
       }
       SectionGap()
-      ListSection(footer = if (participating && remoteConfigured) "Primero se confirma el borrado en la base del estudio. Si falla, el registro se detiene y lo del teléfono se guarda para reintentar." else null) {
+      ListSection(footer = if (participating && remoteConfigured) "Primero se borra en la base del estudio. Si falla, el registro se detiene y lo del teléfono se guarda para reintentar." else null) {
         ListRow("Descargar mis datos", icon = KitIcon.DESCARGAR, subtitle = "Un archivo con todo lo guardado en el teléfono.", chevron = true,
           onClick = { exporter.launch("relevo-mis-datos-${LocalDate.now()}.json") })
         ListRow(if (participating) "Borrar mis datos" else "Borrar los datos del teléfono", icon = KitIcon.BORRAR, iconTint = Relevo.colors.error, titleColor = Relevo.colors.error, onClick = { confirming = true })
       }
-      exportMessage?.let { Spacer(Modifier.height(12.dp)); Text(it, style = Relevo.type.subhead, color = Relevo.colors.ink) }
+      exportMessage?.let { Spacer(Modifier.height(12.dp)); Text(it, style = Relevo.type.subhead, color = Relevo.colors.ink, modifier = Modifier.padding(horizontal = 4.dp)) }
       if (participating) {
         Spacer(Modifier.height(12.dp))
-        Text("Para consultar o pedir el borrado por correo: joan1542003@gmail.com, con tu código.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+        Text("Para consultar o pedir el borrado por correo: joan1542003@gmail.com, con tu código.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
       }
     }
     if (deletionStatus != null) {
@@ -371,10 +367,10 @@ internal fun PrivacyScreen(
       Text("¿Borrar tus datos?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
       Text("Se borran tus relevos, actividades, perfil, ruta, respuestas y registros del estudio. El conteo se detiene.", style = Relevo.type.body, color = Relevo.colors.graphite)
-      Spacer(Modifier.height(20.dp))
+      Spacer(Modifier.height(22.dp))
       RelevoButton("Borrar mis datos", { confirming = false; onDelete() }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
-      Spacer(Modifier.height(4.dp))
-      PlainAction("Cancelar", { confirming = false })
+      Spacer(Modifier.height(8.dp))
+      RelevoButton("Cancelar", { confirming = false }, kind = ButtonKind.Secondary)
     }
   }
 }
@@ -389,17 +385,13 @@ internal fun FeedbackScreen(onSend: (Int?, String) -> Unit, onBack: () -> Unit) 
   var stars by rememberSaveable { mutableStateOf<Int?>(null) }
   var comment by rememberSaveable { mutableStateOf("") }
   RelevoScreen(
-    title = "¿Cómo te resultó usar Relevo?",
-    subtitle = "Tu opinión ayuda a mejorar la app. Puedes omitirla.",
-    onBack = onBack, backLabel = "Cancelar",
-    bottom = {
-      RelevoButton("Enviar", { onSend(stars, comment) }, enabled = stars != null || comment.isNotBlank(), icon = KitIcon.ENVIAR)
-      PlainAction("Omitir", onBack, color = Relevo.colors.graphite)
-    },
+    title = "¿Cómo te resultó Relevo?",
+    onBack = onBack, closeIcon = true, backLabel = "Cerrar",
+    bottom = { RelevoButton("Enviar", { onSend(stars, comment) }, enabled = stars != null || comment.isNotBlank(), icon = KitIcon.ENVIAR) },
   ) {
     StarRating(stars) { stars = it }
     SectionGap()
-    RenglonArea("Comentario (opcional)", comment, { comment = it }, "¿Qué cambiarías?")
+    RenglonArea("Comentario", comment, { comment = it }, "¿Qué cambiarías?")
   }
 }
 
@@ -410,13 +402,13 @@ internal fun ReportScreen(onSend: (String, Boolean) -> Unit, onBack: () -> Unit)
   var attach by rememberSaveable { mutableStateOf(true) }
   RelevoScreen(
     title = "Reportar un problema",
-    onBack = onBack, backLabel = "Cancelar",
-    bottom = { RelevoButton("Enviar reporte", { onSend(text, attach) }, enabled = text.isNotBlank(), icon = KitIcon.ENVIAR) },
+    onBack = onBack, closeIcon = true, backLabel = "Cerrar",
+    bottom = { RelevoButton("Enviar", { onSend(text, attach) }, enabled = text.isNotBlank(), icon = KitIcon.ENVIAR) },
   ) {
-    RenglonArea("¿Qué pasó?", text, { text = it }, "Ejemplo: no sonó en el parlante después de 40 min")
+    RenglonArea("¿Qué pasó?", text, { text = it }, "Ej.: no sonó en el parlante")
     SectionGap()
     Row(
-      Modifier.fillMaxWidth().heightIn(min = 52.dp)
+      Modifier.fillMaxWidth().heightIn(min = 52.dp).padding(horizontal = 4.dp)
         .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Checkbox) { attach = !attach },
       verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -424,8 +416,9 @@ internal fun ReportScreen(onSend: (String, Boolean) -> Unit, onBack: () -> Unit)
       Spacer(Modifier.width(12.dp))
       Column {
         Text("Adjuntar registro técnico", style = Relevo.type.body, color = Relevo.colors.ink)
-        Text("Versión, permisos y envío. Sin contenido de tus apps.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+        Text("Versión, permisos y envío. Nada de tus apps.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
       }
     }
   }
 }
+

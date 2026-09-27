@@ -59,6 +59,8 @@ La auditoría tiene corte al 24 de septiembre (2.6). La versión 2.8 del 26 de s
 6. **Código de participación.** Ya no está en Relevos: se ve en Perfil → Privacidad y datos y en Prueba de 21 días.
 7. **Borrado.** Además de lo anterior, borra perfil, ruta y ajustes y cancela el aviso de regreso. El borrado sin conexión sigue sin probarse.
 
+En la versión 2.9 (27 de septiembre) la imagen del perfil es un emoji, y sigue sin salir del teléfono. No cambia qué se guarda ni qué se envía.
+
 ## Referencias
 
 - Biblioteca del Congreso Nacional de Chile. (1999). *Ley N.º 19.628 sobre protección de la vida privada*. https://www.bcn.cl/leychile/Navegar?idNorma=141599
@@ -67,6 +69,12 @@ La auditoría tiene corte al 24 de septiembre (2.6). La versión 2.8 del 26 de s
 - Google. (s. f.). *Manifest.permission*. Android Developers. https://developer.android.com/reference/android/Manifest.permission#PACKAGE_USAGE_STATS
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Android 2.9
+
+- **Qué cambió:** se añadió que en 2.9 la imagen del perfil es un emoji y que no cambian los datos.
+- **Cómo estaba antes:** la sección llegaba hasta la 2.8.
+- **Por qué:** mantener la auditoría al día sin reescribirla.
 
 ### 2026-09-26 — Cambios de Android 2.8
 

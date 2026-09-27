@@ -5,6 +5,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
 import androidx.compose.animation.shrinkVertically
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
@@ -18,6 +19,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -25,7 +27,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -40,6 +42,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.relevo.data.CustomActivity
@@ -54,6 +57,7 @@ import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.Avatar
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.Carousel
+import com.example.relevo.ui.components.CheckMark
 import com.example.relevo.ui.components.FactRow
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
@@ -61,8 +65,9 @@ import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.Panel
+import com.example.relevo.ui.components.Photo
 import com.example.relevo.ui.components.PhotoCard
-import com.example.relevo.ui.components.PhotoImage
+import com.example.relevo.ui.components.PhotoHero
 import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.PictureContent
 import com.example.relevo.ui.components.PlainAction
@@ -77,7 +82,9 @@ import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StatusChip
 import com.example.relevo.ui.components.Wordmark
 import com.example.relevo.ui.components.appear
+import com.example.relevo.ui.components.enterBlur
 import com.example.relevo.ui.components.formatDuration
+import com.example.relevo.ui.components.glass
 import com.example.relevo.ui.components.pressScale
 import com.example.relevo.ui.components.sharedPhoto
 import kotlinx.coroutines.delay
@@ -108,8 +115,9 @@ internal class HomeActions(
 internal const val ACTIVE_PHOTO = "activo"
 
 /**
- * B1: Inicio. Saluda por el nombre, muestra el relevo activo, el regreso tras varios días (V1) o el
- * siguiente paso de la ruta, y ofrece ideas con foto. La acción principal está siempre abajo.
+ * B1: Inicio. Saluda por el nombre y muestra, en una foto grande, lo más próximo: el relevo activo,
+ * el regreso tras varios días (V1) o el paso actual de la ruta. Debajo, ideas con foto. La acción
+ * principal flota abajo, sobre la barra de pestañas.
  */
 @Composable
 internal fun HomeTab(
@@ -150,16 +158,9 @@ internal fun HomeTab(
   RelevoScreen(
     title = title,
     eyebrow = todayLabel(),
-    leading = { Wordmark(height = 22.dp) },
-    trailing = {
-      Box(
-        Modifier.padding(end = 4.dp).size(48.dp).clip(RoundedCornerShape(12.dp))
-          .clickable(role = Role.Button, onClick = actions.onProfile).semantics { contentDescription = "Perfil" },
-        contentAlignment = Alignment.Center,
-      ) { Avatar(profile.image, profile.name, 34.dp) }
-    },
+    leading = { Wordmark(height = 20.dp) },
+    trailing = { AvatarButton(profile, actions.onProfile) },
     scrollState = scroll,
-    insetBottom = false,
     bottom = {
       when {
         active -> RelevoButton("Ver mi relevo", actions.onOpenActive, icon = KitIcon.ESPERANDO)
@@ -169,25 +170,32 @@ internal fun HomeTab(
     },
   ) {
     StudyCards(study, actions.onDismissInstruction, actions.onWeekReview, actions.onClosing)
-    AcknowledgementBanner(acknowledgement, changedRouteInterest, actions.onDismissAcknowledgement, onChangeRoute)
-    when {
-      active -> Column(Modifier.appear(0)) {
-        ActiveCard(reminder, customActivities, usageAccess, actions.onOpenActive)
-        if (!usageAccess) {
-          Spacer(Modifier.height(12.dp))
-          Notice("Relevo dejó de contar porque se retiró el permiso de Tiempo de uso.", title = "El conteo está en pausa", icon = KitIcon.ADVERTENCIA) {
-            PlainAction("Abrir ajustes de Android", actions.onUsageSettings)
+    AcknowledgementToast(acknowledgement, changedRouteInterest, actions.onDismissAcknowledgement, onChangeRoute)
+    Box(Modifier.appear(0)) {
+      when {
+        active -> Column {
+          ActiveCard(reminder, customActivities, usageAccess, actions.onOpenActive)
+          if (!usageAccess) {
+            Spacer(Modifier.height(12.dp))
+            Notice("Se retiró el permiso de Tiempo de uso.", title = "El conteo está en pausa", icon = KitIcon.ADVERTENCIA) {
+              PlainAction("Abrir ajustes", actions.onUsageSettings)
+            }
+          }
+          if (!backgroundUnrestricted) {
+            Spacer(Modifier.height(12.dp))
+            Notice("Para que el conteo siga varios días, deja que Relevo funcione sin restricción de batería.", title = "Batería", icon = KitIcon.BATERIA) {
+              PlainAction("Permitir", actions.onBackground)
+            }
           }
         }
-        if (!backgroundUnrestricted) {
-          Spacer(Modifier.height(12.dp))
-          Notice("Algunos teléfonos detienen apps para ahorrar batería. Para usar Relevo varios días, permite que funcione sin esa restricción.",
-            title = "Funcionamiento en segundo plano", icon = KitIcon.BATERIA) { PlainAction("Permitir", actions.onBackground) }
+        returning -> ReturnCard(last, lastReminder, customActivities, actions)
+        nextTrack != null -> NextStepCard(nextTrack, actions)
+        else -> PhotoHero(Picture.OfPhoto(Photo.SALIDA), aspect = 1.1f, wide = true, onClick = actions.onPrepare, clickLabel = "Preparar un relevo") {
+          Text("¿Tienes algo en mente?", style = Relevo.type.title2, color = Relevo.colors.ink)
+          Spacer(Modifier.height(4.dp))
+          Text("Prepara un relevo cuando quieras.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
         }
       }
-      returning -> Column(Modifier.appear(0)) { ReturnCard(last, lastReminder, customActivities, actions) }
-      nextTrack != null -> Column(Modifier.appear(0)) { NextStepCard(nextTrack, actions) }
-      else -> Text("¿Tienes algo en mente? Puedes preparar un relevo cuando quieras.", style = Relevo.type.body, color = Relevo.colors.graphite, modifier = Modifier.appear(0))
     }
     if (!active) {
       SectionGap()
@@ -200,13 +208,11 @@ internal fun HomeTab(
         }
       }
       SectionGap()
+      SectionHeader("Tus actividades", Modifier.appear(3))
+      Spacer(Modifier.height(4.dp))
       if (customActivities.isEmpty()) {
-        ListSection(modifier = Modifier.appear(3)) {
-          ListRow("Crear una actividad propia", icon = KitIcon.AGREGAR, subtitle = "Con su primer paso, su lugar y una imagen.", chevron = true, onClick = actions.onNewActivity)
-        }
+        RelevoButton("Crear una actividad", actions.onNewActivity, kind = ButtonKind.Secondary, compact = true, icon = KitIcon.AGREGAR, modifier = Modifier.appear(4))
       } else {
-        SectionHeader("Tus actividades", Modifier.appear(3))
-        Spacer(Modifier.height(4.dp))
         Carousel(Modifier.appear(4)) {
           items(customActivities, key = { it.id }) { custom ->
             val key = photoKey("propia", custom.id)
@@ -224,9 +230,9 @@ internal fun HomeTab(
             lastReminder.activity,
             subtitle = "${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatDuration(lastReminder.requiredUsageSeconds)}",
             leading = {
-              PictureContent(activityPicture(lastReminder.activity, customActivities), Modifier.size(40.dp, 50.dp).sharedPhoto(key).clip(RoundedCornerShape(8.dp)), iconSize = 22.dp)
+              PictureContent(activityPicture(lastReminder.activity, customActivities), Modifier.size(44.dp).sharedPhoto(key).clip(CircleShape), iconSize = 20.dp)
             },
-            leadingWidth = 40.dp,
+            leadingWidth = 44.dp,
             chevron = true, onClick = { actions.onRepeat(key) },
           )
         }
@@ -235,25 +241,43 @@ internal fun HomeTab(
   }
 }
 
-/** Reconocimiento breve después de responder; se va solo. «Cambié de idea» puede llevar a cambiar la ruta. */
+/** La imagen de la persona en un círculo de vidrio, arriba a la derecha; lleva a Perfil. */
 @Composable
-private fun AcknowledgementBanner(text: String?, changedRouteInterest: String?, onDismiss: () -> Unit, onChangeRoute: (String) -> Unit) {
+private fun AvatarButton(profile: Profile, onClick: () -> Unit) {
+  val interaction = remember { MutableInteractionSource() }
+  Box(
+    Modifier.size(44.dp).pressScale(interaction, 0.92f).glass(CircleShape)
+      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
+      .semantics { contentDescription = "Perfil" },
+    contentAlignment = Alignment.Center,
+  ) { Avatar(profile.image, profile.name, 40.dp, background = androidx.compose.ui.graphics.Color.Transparent) }
+}
+
+/**
+ * Reconocimiento breve después de responder: sube con un leve desenfoque, la marca se dibuja y se va
+ * solo. «Cambié de idea» puede llevar a cambiar la actividad de la ruta.
+ */
+@Composable
+private fun AcknowledgementToast(text: String?, changedRouteInterest: String?, onDismiss: () -> Unit, onChangeRoute: (String) -> Unit) {
   LaunchedEffect(text, changedRouteInterest) {
     if (text != null && changedRouteInterest == null) { delay(6_000); onDismiss() }
   }
-  AnimatedVisibility(text != null, enter = expandVertically(Motion.smooth()) + fadeIn(Motion.standard()), exit = shrinkVertically(Motion.smooth()) + fadeOut(Motion.standard(Motion.SHORT))) {
-    Column {
-      Panel {
+  AnimatedVisibility(
+    text != null,
+    enter = expandVertically(Motion.smooth()) + fadeIn(Motion.standard()) + scaleIn(Motion.smooth(), initialScale = .94f),
+    exit = shrinkVertically(Motion.smooth()) + fadeOut(Motion.standard(Motion.SHORT)),
+  ) {
+    Column(Modifier.enterBlur(this)) {
+      Panel(padding = 18.dp) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-          RelevoIcon(KitIcon.LISTO, background = Relevo.colors.mist)
-          Spacer(Modifier.width(12.dp))
+          CheckMark(true, size = 28.dp)
+          Spacer(Modifier.width(14.dp))
           Text(text.orEmpty(), style = Relevo.type.headline, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
         }
         if (changedRouteInterest != null) {
           Text("¿Quieres cambiar la actividad de tu ruta?", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-          Row {
-            PlainAction("Cambiar la actividad", { onChangeRoute(changedRouteInterest) }, icon = KitIcon.EDITAR)
-            Spacer(Modifier.weight(1f))
+          Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+            RelevoButton("Cambiar la actividad", { onChangeRoute(changedRouteInterest) }, kind = ButtonKind.Secondary, compact = true)
             PlainAction("Ahora no", onDismiss, color = Relevo.colors.graphite)
           }
         }
@@ -263,99 +287,82 @@ private fun AcknowledgementBanner(text: String?, changedRouteInterest: String?, 
   }
 }
 
-/** B3 en Inicio: la foto, la firma con las palabras de la persona y el tiempo contado como un renglón que se llena. */
+/** B3 en Inicio: la foto, la firma con las palabras de la persona y el tiempo contado. */
 @Composable
 private fun ActiveCard(reminder: Reminder, customActivities: List<CustomActivity>, usageAccess: Boolean, onOpen: () -> Unit) {
-  val interaction = remember { MutableInteractionSource() }
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
-  Column(
-    Modifier.fillMaxWidth().pressScale(interaction, 0.985f).clip(Relevo.panelShape).background(Relevo.colors.mist)
-      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Ver mi relevo", onClick = onOpen)
-      .padding(16.dp),
+  val where = if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else placePhrase(reminder.place)
+  PhotoHero(
+    activityPicture(reminder.activity, customActivities), aspect = 0.92f, sharedKey = ACTIVE_PHOTO,
+    onClick = onOpen, clickLabel = "Ver mi relevo",
   ) {
-    Row(verticalAlignment = Alignment.Top) {
-      PictureContent(
-        activityPicture(reminder.activity, customActivities),
-        Modifier.width(84.dp).aspectRatio(0.8f).sharedPhoto(ACTIVE_PHOTO).clip(RoundedCornerShape(12.dp)), iconSize = 30.dp,
-      )
-      Spacer(Modifier.width(16.dp))
-      Column(Modifier.weight(1f)) {
-        StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Esperando" else "En pausa", onPanel = true)
-        Spacer(Modifier.height(10.dp))
-        Signature(reminder.activity, style = Relevo.type.title2, animate = false)
-        Spacer(Modifier.height(6.dp))
-        val where = if (reminder.signalRoute == SignalRoute.PHONE) "en este teléfono" else placePhrase(reminder.place)
-        Text("Sonará $where después de ${formatDuration(reminder.requiredUsageSeconds)}.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-      }
-    }
-    Spacer(Modifier.height(16.dp))
-    ProgressLine(progress, height = 4.dp, trackColor = Relevo.colors.line)
+    StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Esperando" else "En pausa", onPanel = true)
+    Spacer(Modifier.height(12.dp))
+    Signature(reminder.activity, style = Relevo.type.title, animate = false)
+    Spacer(Modifier.height(6.dp))
+    Text("Sonará $where.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(14.dp))
+    ProgressLine(progress, trackColor = Relevo.colors.ink.copy(alpha = .12f))
     Spacer(Modifier.height(8.dp))
     Row(verticalAlignment = Alignment.CenterVertically) {
       CountedTime(reminder.observedUsageSeconds)
-      Text(" de ${formatDuration(reminder.requiredUsageSeconds)} en las apps elegidas", style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 1, overflow = TextOverflow.Ellipsis)
+      Text(" de ${formatDuration(reminder.requiredUsageSeconds)}", style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
   }
 }
 
-/** El tiempo contado cambia deslizándose hacia arriba, como un contador. */
+/** El tiempo contado cambia deslizándose hacia arriba y se enfoca al llegar, como un contador. */
 @Composable
 private fun CountedTime(seconds: Int) {
   AnimatedContent(
     targetState = formatDuration(seconds),
     transitionSpec = { (slideInVertically(Motion.smooth()) { it } + fadeIn(Motion.standard(160))) togetherWith (slideOutVertically(Motion.smooth()) { -it } + fadeOut(Motion.standard(120))) },
     label = "counted",
-  ) { text -> Text(text, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = Relevo.colors.ink) }
+  ) { text -> Text(text, style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = Relevo.colors.ink, modifier = Modifier.enterBlur(this)) }
 }
 
 /** V1: «Hola de nuevo». Las opciones pesan lo mismo; «Ahora no» la oculta hasta el próximo regreso. */
 @Composable
 private fun ReturnCard(last: HistoryEntry, lastReminder: Reminder?, customActivities: List<CustomActivity>, actions: HomeActions) {
-  Panel(padding = 16.dp) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-      PictureContent(
-        activityPicture(last.activity, customActivities),
-        Modifier.width(64.dp).aspectRatio(0.8f).sharedPhoto(if (lastReminder != null) photoKey("regreso", lastReminder.activity) else null).clip(RoundedCornerShape(10.dp)),
-        iconSize = 26.dp,
-      )
-      Spacer(Modifier.width(14.dp))
-      Column(Modifier.weight(1f)) {
-        Text("La última vez preparaste", style = Relevo.type.footnote, color = Relevo.colors.graphite)
-        Text(last.activity, style = Relevo.type.headline, color = Relevo.colors.voice)
-      }
-    }
-    Text("¿Sigue siendo lo que quieres?", style = Relevo.type.body, color = Relevo.colors.ink)
-    Row {
-      PlainAction("Elegir otra actividad", actions.onPrepare, icon = KitIcon.ACTIVIDAD)
-      Spacer(Modifier.weight(1f))
+  PhotoHero(
+    activityPicture(last.activity, customActivities), aspect = 0.95f,
+    sharedKey = lastReminder?.let { photoKey("regreso", it.activity) },
+  ) {
+    Text("LA ÚLTIMA VEZ", style = Relevo.type.label, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(4.dp))
+    Text(last.activity, style = Relevo.type.title, color = Relevo.colors.voice)
+    Spacer(Modifier.height(4.dp))
+    Text("¿Sigue siendo lo que quieres?", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(14.dp))
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+      RelevoButton("Elegir otra", actions.onPrepare, kind = ButtonKind.Secondary, compact = true)
       PlainAction("Ahora no", { actions.onDismissReturn(last.completedAt) }, color = Relevo.colors.graphite)
     }
   }
 }
 
-/** El paso actual de la ruta, con su foto y su primer paso. Tocarlo prepara un relevo con ese paso. */
+/** El paso actual de la ruta, en grande. Tocarlo prepara un relevo con ese paso. */
 @Composable
 private fun NextStepCard(track: RouteTrack, actions: HomeActions) {
   val step = track.currentStep ?: return
   val key = photoKey("ruta", step.id)
-  val interaction = remember { MutableInteractionSource() }
-  Column(
-    Modifier.fillMaxWidth().pressScale(interaction, 0.985f)
-      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Preparar un relevo con este paso") {
-        actions.onRouteStep(track.interest, step.id, key)
-      },
+  PhotoHero(
+    activityPicture(step.activity, emptyList()), aspect = 0.9f, sharedKey = key,
+    onClick = { actions.onRouteStep(track.interest, step.id, key) }, clickLabel = "Preparar un relevo con este paso",
   ) {
-    PictureContent(activityPicture(step.activity, emptyList()), Modifier.fillMaxWidth().aspectRatio(1.5f).sharedPhoto(key).clip(Relevo.panelShape), iconSize = 44.dp, wide = true)
-    Spacer(Modifier.height(14.dp))
     Text("TU RUTA · ${track.title.uppercase()}", style = Relevo.type.label, color = Relevo.colors.graphite)
     Spacer(Modifier.height(6.dp))
-    Text(step.activity, style = Relevo.type.title2, color = Relevo.colors.ink)
-    Spacer(Modifier.height(4.dp))
-    Text(listOf(step.firstStep, step.place).filter { it.isNotBlank() }.joinToString(" · "), style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    Row(Modifier.fillMaxWidth().padding(top = 4.dp)) {
-      PlainAction("Preparar con este paso", { actions.onRouteStep(track.interest, step.id, key) })
-      Spacer(Modifier.weight(1f))
-      PlainAction("Ver la ruta", { actions.onOpenRoute(track.interest) }, color = Relevo.colors.graphite)
+    Row(verticalAlignment = Alignment.Bottom) {
+      Column(Modifier.weight(1f)) {
+        Text(step.activity, style = Relevo.type.title, color = Relevo.colors.ink)
+        val detail = listOf(step.firstStep, step.place).filter { it.isNotBlank() }.joinToString(" · ")
+        if (detail.isNotBlank()) {
+          Spacer(Modifier.height(4.dp))
+          Text(detail, style = Relevo.type.subhead, color = Relevo.colors.graphite)
+        }
+      }
+      Spacer(Modifier.width(12.dp))
+      RelevoButton("Preparar", { actions.onRouteStep(track.interest, step.id, key) }, compact = true)
     }
   }
 }
@@ -367,20 +374,19 @@ private fun NewActivityCard(onClick: () -> Unit) {
   Column(
     Modifier.width(152.dp).pressScale(interaction).clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick),
   ) {
-    Box(
-      Modifier.fillMaxWidth().aspectRatio(0.8f).clip(Relevo.panelShape).background(Relevo.colors.mist),
-      contentAlignment = Alignment.Center,
-    ) { RelevoIcon(KitIcon.AGREGAR, size = 40.dp, background = Relevo.colors.mist) }
+    Box(Modifier.fillMaxWidth().aspectRatio(0.8f), contentAlignment = Alignment.Center) {
+      Box(Modifier.size(64.dp).clip(CircleShape).background(Relevo.colors.mist), contentAlignment = Alignment.Center) {
+        RelevoIcon(KitIcon.AGREGAR, size = 26.dp, background = Relevo.colors.mist, strokeWidth = 2f)
+      }
+    }
     Spacer(Modifier.height(10.dp))
     Text("Nueva actividad", style = Relevo.type.headline, color = Relevo.colors.ink)
-    Spacer(Modifier.height(2.dp))
-    Text("Escribe la tuya", style = Relevo.type.footnote, color = Relevo.colors.graphite)
   }
 }
 
 /**
- * B3: «Tu relevo». La foto, la firma, el tiempo contado y lo que se preparó. Desactivar pide
- * confirmación en una hoja, para no hacerlo sin querer.
+ * B3: «Tu relevo». La foto llega al borde superior; debajo, la firma, el tiempo contado y lo que se
+ * preparó. Desactivar pide confirmación en una hoja, para no hacerlo sin querer.
  */
 @Composable
 internal fun ActiveScreen(
@@ -396,34 +402,32 @@ internal fun ActiveScreen(
 ) {
   var confirming by rememberSaveable { mutableStateOf(false) }
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
+  val where = if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else placePhrase(reminder.place)
   RelevoScreen(
-    title = "Tu relevo",
     onBack = onBack, backLabel = "Inicio",
-    header = {
-      PictureContent(
-        activityPicture(reminder.activity, customActivities),
-        Modifier.fillMaxWidth(0.62f).aspectRatio(0.8f).sharedPhoto(ACTIVE_PHOTO).clip(Relevo.panelShape), iconSize = 56.dp,
-      )
+    hero = {
+      PictureContent(activityPicture(reminder.activity, customActivities), Modifier.fillMaxSize().sharedPhoto(ACTIVE_PHOTO), iconSize = 64.dp, wide = true)
     },
+    heroHeight = 300.dp,
     bottom = { RelevoButton("Desactivar el relevo", { confirming = true }, kind = ButtonKind.Secondary) },
   ) {
+    Spacer(Modifier.height(24.dp))
     StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Esperando" else "En pausa")
     Spacer(Modifier.height(16.dp))
     Signature(reminder.activity)
     Spacer(Modifier.height(12.dp))
-    val where = if (reminder.signalRoute == SignalRoute.PHONE) "en este teléfono" else placePhrase(reminder.place)
-    Text("Sonará $where después de ${formatDuration(reminder.requiredUsageSeconds)} en las apps elegidas.", style = Relevo.type.body, color = Relevo.colors.graphite)
-    Spacer(Modifier.height(20.dp))
-    ProgressLine(progress, height = 4.dp)
+    Text("Sonará $where después de ${formatDuration(reminder.requiredUsageSeconds)} en las apps que elegiste.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(22.dp))
+    ProgressLine(progress)
     Spacer(Modifier.height(8.dp))
     Row {
       CountedTime(reminder.observedUsageSeconds)
-      Text(" de ${formatDuration(reminder.requiredUsageSeconds)} contados", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+      Text(" de ${formatDuration(reminder.requiredUsageSeconds)}", style = Relevo.type.footnote, color = Relevo.colors.graphite)
     }
     if (!usageAccess) {
       SectionGap()
-      Notice("Relevo dejó de contar porque se retiró el permiso de Tiempo de uso.", title = "El conteo está en pausa", icon = KitIcon.ADVERTENCIA) {
-        PlainAction("Abrir ajustes de Android", onUsageSettings)
+      Notice("Se retiró el permiso de Tiempo de uso.", title = "El conteo está en pausa", icon = KitIcon.ADVERTENCIA) {
+        PlainAction("Abrir ajustes", onUsageSettings)
       }
     }
     SectionGap()
@@ -444,19 +448,20 @@ internal fun ActiveScreen(
     }
     if (!backgroundUnrestricted) {
       SectionGap()
-      Notice("Algunos teléfonos detienen apps para ahorrar batería. Para usar Relevo varios días, permite que funcione sin esa restricción.",
-        title = "Funcionamiento en segundo plano", icon = KitIcon.BATERIA) { PlainAction("Permitir", onBackground) }
+      Notice("Para que el conteo siga varios días, deja que Relevo funcione sin restricción de batería.", title = "Batería", icon = KitIcon.BATERIA) {
+        PlainAction("Permitir", onBackground)
+      }
     }
   }
   if (confirming) {
     RelevoSheet(onDismiss = { confirming = false }, scrollable = false) {
       Text("¿Desactivar el relevo?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("El conteo se detiene y no sonará. Después puedes contar qué decidiste.", style = Relevo.type.body, color = Relevo.colors.graphite)
-      Spacer(Modifier.height(20.dp))
+      Text("Deja de contar y no sonará. Después puedes contar qué decidiste.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Spacer(Modifier.height(22.dp))
       RelevoButton("Desactivar", { confirming = false; onDisarm() }, kind = ButtonKind.Destructive)
-      Spacer(Modifier.height(4.dp))
-      PlainAction("Seguir esperando", { confirming = false })
+      Spacer(Modifier.height(8.dp))
+      RelevoButton("Seguir esperando", { confirming = false }, kind = ButtonKind.Secondary)
     }
   }
 }

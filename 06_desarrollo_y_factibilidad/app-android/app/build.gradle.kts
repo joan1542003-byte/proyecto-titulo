@@ -16,8 +16,8 @@ android {
         applicationId = "cl.udp.relevo"
         minSdk = 31
         targetSdk = 36
-        versionCode = 20
-        versionName = "2.8"
+        versionCode = 21
+        versionName = "2.9"
         buildConfigField("String", "SUPABASE_URL", "\"${localProperties.getProperty("SUPABASE_URL", "")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${localProperties.getProperty("SUPABASE_PUBLISHABLE_KEY", "")}\"")
     }
@@ -68,6 +68,8 @@ dependencies {
   implementation(libs.androidx.compose.ui)
   implementation(libs.androidx.compose.ui.tooling.preview)
   implementation(libs.androidx.compose.material3)
+  // Vidrio de la capa de navegación: desenfoque real con RenderEffect (Android 12+), D-083.
+  implementation("dev.chrisbanes.haze:haze:1.6.10")
   // Tooling
   debugImplementation(libs.androidx.compose.ui.tooling)
   // Instrumented tests

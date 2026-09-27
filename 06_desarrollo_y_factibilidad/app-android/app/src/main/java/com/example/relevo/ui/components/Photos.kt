@@ -7,7 +7,13 @@ import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.togetherWith
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,6 +22,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,6 +31,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,12 +44,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
@@ -51,6 +61,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import cl.udp.relevo.R
 import com.example.relevo.theme.Relevo
+import dev.chrisbanes.haze.hazeSource
+import dev.chrisbanes.haze.rememberHazeState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -80,6 +92,73 @@ enum class Photo(@param:DrawableRes val res: Int, val description: String, @para
   TIEMPO(R.drawable.foto_tiempo, "Un teléfono boca abajo junto a un reloj de tiempo", R.drawable.foto_tiempo_ancha);
 
   val key: String get() = "foto:$name"
+}
+
+/**
+ * Emoji 3D de Google (Noto 3D, licencia SIL OFL 1.1) para la imagen del perfil (D-083): objetos de
+ * actividades, animales y naturaleza. Se muestran en círculos; no se suben fotos propias.
+ */
+enum class Emoji(val code: String, @param:DrawableRes val res: Int, val description: String) {
+  ZAPATILLA("1f45f", R.drawable.emoji_1f45f, "Zapatilla"),
+  LIBROS("1f4da", R.drawable.emoji_1f4da, "Libros"),
+  GUITARRA("1f3b8", R.drawable.emoji_1f3b8, "Guitarra"),
+  PALETA("1f3a8", R.drawable.emoji_1f3a8, "Paleta de pintura"),
+  PLANTA("1fab4", R.drawable.emoji_1fab4, "Planta"),
+  SARTEN("1f373", R.drawable.emoji_1f373, "Sartén con un huevo"),
+  LANA("1f9f6", R.drawable.emoji_1f9f6, "Ovillo de lana"),
+  BICICLETA("1f6b2", R.drawable.emoji_1f6b2, "Bicicleta"),
+  CAMARA("1f4f7", R.drawable.emoji_1f4f7, "Cámara"),
+  AUDIFONOS("1f3a7", R.drawable.emoji_1f3a7, "Audífonos"),
+  LAPIZ("270f", R.drawable.emoji_270f, "Lápiz"),
+  PIEZA("1f9e9", R.drawable.emoji_1f9e9, "Pieza de rompecabezas"),
+  PIANO("1f3b9", R.drawable.emoji_1f3b9, "Teclado de piano"),
+  PELOTA("26bd", R.drawable.emoji_26bd, "Pelota"),
+  CAFE("2615", R.drawable.emoji_2615, "Taza de café"),
+  PAN("1f35e", R.drawable.emoji_1f35e, "Pan"),
+  PERRO("1f436", R.drawable.emoji_1f436, "Perro"),
+  GATO("1f431", R.drawable.emoji_1f431, "Gato"),
+  ZORRO("1f98a", R.drawable.emoji_1f98a, "Zorro"),
+  TORTUGA("1f422", R.drawable.emoji_1f422, "Tortuga"),
+  GIRASOL("1f33b", R.drawable.emoji_1f33b, "Girasol"),
+  OLA("1f30a", R.drawable.emoji_1f30a, "Ola"),
+  LUNA("1f319", R.drawable.emoji_1f319, "Luna"),
+  SOL("2600", R.drawable.emoji_2600, "Sol");
+
+  val key: String get() = "emoji:$code"
+
+  companion object {
+    fun fromKey(key: String?): Emoji? = key?.takeIf { it.startsWith("emoji:") }?.substringAfter(':')?.let { code -> entries.firstOrNull { it.code == code } }
+
+    /** Quien eligió una foto o un icono antes de 2.9 ve el emoji más cercano. */
+    fun forProfile(key: String?): Emoji? = fromKey(key) ?: when (key?.substringAfter(':')) {
+      "CAMINAR", "SALIDA", "SALIR" -> ZAPATILLA
+      "LEER", "LIBRO" -> LIBROS
+      "ESCRIBIR", "ESTUDIAR", "APRENDER" -> LAPIZ
+      "DIBUJAR", "PINTAR" -> PALETA
+      "MANUALIDADES" -> LANA
+      "GUITARRA" -> GUITARRA
+      "MUSICA" -> AUDIFONOS
+      "COCINAR" -> SARTEN
+      "PAN" -> PAN
+      "ORDENAR", "PLANTAS" -> PLANTA
+      "PERRO" -> PERRO
+      "EJERCICIO", "ESTIRAR" -> PELOTA
+      "BICICLETA" -> BICICLETA
+      "FOTOGRAFIA" -> CAMARA
+      "JUEGO_DE_MESA" -> PIEZA
+      else -> null
+    }
+  }
+}
+
+/** Emoji 3D del perfil. */
+@Composable
+fun EmojiImage(emoji: Emoji, modifier: Modifier = Modifier, describe: Boolean = false) {
+  Image(
+    painter = painterResource(emoji.res),
+    contentDescription = if (describe) emoji.description else null,
+    modifier = modifier,
+  )
 }
 
 /** Imagen elegida por la persona para su perfil o una actividad: una foto o un icono del kit. */
@@ -201,7 +280,7 @@ fun PhotoCard(
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = title, onClick = onClick),
   ) {
     PictureContent(
-      picture, Modifier.fillMaxWidth().aspectRatio(0.8f).sharedPhoto(sharedKey).clip(Relevo.panelShape),
+      picture, Modifier.fillMaxWidth().aspectRatio(0.8f).sharedPhoto(sharedKey).clip(Relevo.tileShape),
       fallback = fallback, iconSize = 40.dp,
     )
     Spacer(Modifier.height(10.dp))
@@ -213,7 +292,10 @@ fun PhotoCard(
   }
 }
 
-/** Ficha elegible en una cuadrícula: la elegida lleva un borde de tinta y la marca de listo. */
+/**
+ * Ficha elegible en una cuadrícula. La elegida se encoge un poco dentro de un anillo de tinta
+ * concéntrico, como el selector de fondos de iOS, y muestra una marca redonda.
+ */
 @Composable
 fun PictureTile(
   picture: Picture?,
@@ -223,25 +305,23 @@ fun PictureTile(
   label: String? = null,
   description: String = label.orEmpty(),
   aspect: Float = 0.8f,
-  shape: Shape = Relevo.controlShape,
+  cornerRadius: Dp = 22.dp,
   /** Rótulo destacado, para opciones grandes como los intereses. */
   prominent: Boolean = false,
 ) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
+  val inset by animateDpAsState(if (selected) 5.dp else 0.dp, Motion.smooth(stiffness = 600f), label = "tile_inset")
   Column(
     modifier.pressScale(interaction)
       .clickable(interactionSource = interaction, indication = null, role = Role.RadioButton, onClick = onClick)
       .semantics { this.selected = selected; contentDescription = description },
   ) {
     Box(Modifier.fillMaxWidth().aspectRatio(aspect)) {
-      PictureContent(picture, Modifier.fillMaxSize().clip(shape), size = PhotoSize.Thumb, iconSize = 30.dp)
+      PictureContent(picture, Modifier.fillMaxSize().padding(inset).clip(RoundedCornerShape(cornerRadius - inset)), size = PhotoSize.Thumb, iconSize = 30.dp)
       if (selected) {
-        Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, shape))
-        Box(
-          Modifier.align(Alignment.TopEnd).padding(6.dp).size(24.dp).background(colors.ink, RoundedCornerShape(7.dp)),
-          contentAlignment = Alignment.Center,
-        ) { RelevoIcon(KitIcon.COMENCE, size = 16.dp, tint = colors.onInk, background = colors.ink) }
+        Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, RoundedCornerShape(cornerRadius)))
+        Box(Modifier.align(Alignment.TopEnd).padding(10.dp)) { CheckMark(true, size = 22.dp) }
       }
     }
     if (label != null) {
@@ -252,29 +332,69 @@ fun PictureTile(
 }
 
 /**
- * Imagen de la persona: una foto o un icono que eligió (P2), en una ficha con esquinas de 20.
- * Sin imagen, muestra la inicial de su nombre o el icono de perfil.
+ * Imagen de la persona: el emoji que eligió (P2), en un círculo. Sin emoji, la inicial de su nombre
+ * o el icono de perfil. Al cambiar, el nuevo aparece con una leve escala.
  */
 @Composable
-fun Avatar(image: String, name: String, size: Dp, modifier: Modifier = Modifier) {
-  androidx.compose.animation.Crossfade(targetState = image to name.trim().firstOrNull()?.uppercaseChar(), animationSpec = Motion.standard(), label = "avatar", modifier = modifier) { (shown, _) ->
-    AvatarContent(shown, name, size)
+fun Avatar(image: String, name: String, size: Dp, modifier: Modifier = Modifier, background: Color = Relevo.colors.mist) {
+  val emoji = Emoji.forProfile(image)
+  AnimatedContent(
+    targetState = emoji to name.trim().firstOrNull()?.uppercaseChar(),
+    transitionSpec = { (fadeIn(Motion.standard()) + scaleIn(Motion.smooth(), initialScale = .8f)) togetherWith fadeOut(Motion.standard(120)) },
+    label = "avatar",
+    modifier = modifier,
+  ) { (shown, initial) ->
+    Box(Modifier.size(size).clip(CircleShape).background(background), contentAlignment = Alignment.Center) {
+      when {
+        shown != null -> EmojiImage(shown, Modifier.size(size * 0.66f))
+        initial != null -> Text(initial.toString(), style = Relevo.type.title.copy(fontSize = Relevo.type.title.fontSize * (size.value / 72f)), color = Relevo.colors.ink)
+        else -> RelevoIcon(KitIcon.PERFIL, size = size * 0.46f, background = background)
+      }
+    }
   }
 }
 
+/**
+ * Foto grande con una banda de vidrio abajo: la foto sigue a la vista y el texto se lee sobre un
+ * desenfoque que crece hacia el borde, sin velos opacos (D-083). Toda la ficha se puede tocar.
+ */
 @Composable
-private fun AvatarContent(image: String, name: String, size: Dp, modifier: Modifier = Modifier) {
+fun PhotoHero(
+  picture: Picture,
+  modifier: Modifier = Modifier,
+  aspect: Float = 0.9f,
+  wide: Boolean = false,
+  sharedKey: String? = null,
+  onClick: (() -> Unit)? = null,
+  clickLabel: String? = null,
+  band: @Composable ColumnScope.() -> Unit,
+) {
+  val interaction = remember { MutableInteractionSource() }
+  val haze = rememberHazeState()
+  Box(
+    modifier.fillMaxWidth().aspectRatio(aspect).pressScale(interaction, 0.985f).clip(Relevo.panelShape)
+      .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = clickLabel, onClick = onClick) else Modifier),
+  ) {
+    PictureContent(picture, Modifier.matchParentSize().hazeSource(haze).sharedPhoto(sharedKey), wide = wide, iconSize = 56.dp)
+    Column(Modifier.align(Alignment.BottomStart).fillMaxWidth().photoBand(haze).padding(start = 20.dp, end = 20.dp, top = 48.dp, bottom = 20.dp), content = band)
+  }
+}
+
+/** Emoji elegible en un círculo; el elegido se encoge dentro de un anillo de tinta. */
+@Composable
+fun EmojiTile(emoji: Emoji, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier) {
   val colors = Relevo.colors
-  val shape = RoundedCornerShape(size * 0.28f)
-  when (val picture = Picture.parse(image)) {
-    is Picture.OfPhoto -> PhotoImage(picture.photo, modifier.size(size).clip(shape), size = PhotoSize.Thumb)
-    is Picture.OfIcon -> Box(modifier.size(size).clip(shape).background(colors.mist), contentAlignment = Alignment.Center) {
-      RelevoIcon(picture.icon, size = size * 0.5f, background = colors.mist)
+  val interaction = remember { MutableInteractionSource() }
+  val inset by animateDpAsState(if (selected) 5.dp else 0.dp, Motion.smooth(stiffness = 600f), label = "emoji_inset")
+  Box(
+    modifier.aspectRatio(1f).pressScale(interaction, 0.92f)
+      .clickable(interactionSource = interaction, indication = null, role = Role.RadioButton, onClick = onClick)
+      .semantics { this.selected = selected; contentDescription = emoji.description },
+    contentAlignment = Alignment.Center,
+  ) {
+    Box(Modifier.fillMaxSize().padding(inset).clip(CircleShape).background(colors.mist), contentAlignment = Alignment.Center) {
+      EmojiImage(emoji, Modifier.fillMaxSize(0.64f))
     }
-    null -> Box(modifier.size(size).clip(shape).background(colors.mist), contentAlignment = Alignment.Center) {
-      val initial = name.trim().firstOrNull()?.uppercaseChar()
-      if (initial != null) Text(initial.toString(), style = Relevo.type.title.copy(fontSize = Relevo.type.title.fontSize * (size.value / 72f)), color = colors.ink)
-      else RelevoIcon(KitIcon.PERFIL, size = size * 0.5f, background = colors.mist)
-    }
+    if (selected) Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, CircleShape))
   }
 }

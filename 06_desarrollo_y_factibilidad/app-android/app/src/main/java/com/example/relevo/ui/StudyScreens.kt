@@ -9,7 +9,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.draw.clip
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -20,7 +25,7 @@ import com.example.relevo.domain.StudyCondition
 import com.example.relevo.domain.StudyPlan
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.ButtonKind
-import com.example.relevo.ui.components.IconTile
+import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
@@ -70,7 +75,9 @@ internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, 
 private fun StudyCard(icon: KitIcon, label: String, title: String, text: String, detail: String? = null, action: (@Composable () -> Unit)? = null) {
   Panel {
     Row(verticalAlignment = Alignment.CenterVertically) {
-      IconTile(icon)
+      Box(Modifier.size(36.dp).clip(CircleShape).background(Relevo.colors.mist), contentAlignment = Alignment.Center) {
+        RelevoIcon(icon, size = 20.dp, background = Relevo.colors.mist)
+      }
       Spacer(Modifier.width(12.dp))
       Text(label, style = Relevo.type.label, color = Relevo.colors.graphite)
     }
@@ -145,7 +152,7 @@ internal fun WeekReviewScreen(week: Int, condition: StudyCondition?, onSubmit: (
   RelevoScreen(
     title = "Cierre de la semana $week",
     subtitle = condition?.let(::conditionName),
-    onBack = onLater, backLabel = "Después",
+    onBack = onLater, closeIcon = true, backLabel = "Después",
     bottom = {
       RelevoButton("Enviar las respuestas", { onSubmit(preparation, annoyance, place, comment) })
       PlainAction("Omitir esta semana", { onSubmit(null, null, null, "") }, color = Relevo.colors.graphite)
@@ -176,7 +183,7 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
   RelevoScreen(
     title = "Terminaste la prueba",
     subtitle = "Gracias. Cinco preguntas breves; todas se pueden omitir.",
-    onBack = onLater, backLabel = "Después",
+    onBack = onLater, closeIcon = true, backLabel = "Después",
     bottom = {
       RelevoButton("Enviar las respuestas", {
         onSubmit(mapOf(

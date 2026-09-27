@@ -750,7 +750,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-073 — Vuelve a lo que querías hacer (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072. A pedido del autor, la app la aplica desde Android 2.8 (26 de septiembre).
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072. A pedido del autor, la app la aplica desde Android 2.8 (26 de septiembre), con los cambios de D-083 desde 2.9.
 - **Decisión propuesta:**
   - *Verbal*: firma «Vuelve a lo que querías hacer», elegida por el autor (antes, «Lo que querías hacer, a tiempo»); principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
   - *Recurso central*: el renglón («Vuelve a \_\_\_\_.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
@@ -875,7 +875,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Estado:** implementado en Android 2.8; pendiente de revisión del autor.
 - **Decisión:**
   - *No participar*: la app se puede usar sin participar en la prueba. Funciona igual, pero no registra ni envía datos de investigación; la persona puede sumarse después desde Privacidad y datos.
-  - *Imagen del perfil*: además de 12 iconos del kit, 16 fotos de la app. No se suben fotos propias.
+  - *Imagen del perfil*: además de 12 iconos del kit, 16 fotos de la app. No se suben fotos propias. *Reemplazado por D-083:* desde 2.9, solo emoji.
   - *Siguiente paso (R3)*: se ofrece a la tercera respuesta «Comencé» en el mismo paso. Si la persona elige quedarse, no se vuelve a ofrecer para ese paso.
   - *Aviso de regreso (V2)*: Android revisa una vez al día y avisa si pasaron siete días sin abrir la app y desde el último aviso. La notificación es silenciosa y en la pantalla de bloqueo no muestra la actividad. «Preparar» abre la preparación con el último relevo o desde el comienzo.
   - *Respuestas opcionales*: la opinión sobre la app, los reportes de problemas y «¿Qué te ayudó?» se guardan en `relevo_answers`, solo para quien participa.
@@ -886,7 +886,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** revisión del autor. Si la prueba usa 2.8, perfil, ruta y avisos no deben cambiar durante las tres semanas.
 - **Documentación:** [Android 2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md).
 
+## D-083 — La app usa vidrio, formas redondeadas y emoji (iOS 26)
+
+- **Fecha:** 2026-09-27.
+- **Estado:** decisión del autor; implementada en Android 2.9, sin probar con personas.
+- **Decisión:**
+  - *Vidrio*: la capa de navegación lleva transparencias con desenfoque sutil y sin brillos: barras, botones flotantes, pestañas y hojas. El contenido se desenfoca al pasar bajo las barras, y sobre las fotos grandes el texto va en una banda de vidrio.
+  - *Pantalla completa*: el contenido y algunas fotos llegan a los bordes.
+  - *Formas*: botones, controles y etiquetas en cápsula; tarjetas y hojas con esquinas amplias; nada de bloques cuadrados.
+  - *Perfil*: la imagen es un emoji 3D de Google; no se ofrecen fotos.
+  - *Textos*: más naturales y breves. La privacidad se explica en el consentimiento y en Privacidad y datos, sin repetirla en cada pantalla.
+- **Relación con D-073:** en la app, reemplaza las reglas «sin vidrio, desenfoque ni velos», «nunca píldoras» y «texto fuera de la foto». Se mantienen la tipografía, la paleta, el renglón con dos voces, los iconos y la fotografía del comienzo.
+- **Fundamento:** el autor pidió un diseño al estilo de iOS 26, hermoso y fácil, sin sobrediseñar ni sobreexplicar. Se siguieron las pautas de Liquid Glass de Apple (2025): vidrio solo en la navegación, controles en cápsula y borde de desplazamiento. También se aplicaron las leyes de Jakob, Fitts y Hick y el umbral de Doherty (Yablonski, s. f.).
+- **Condición de revisión:** legibilidad y fluidez en el teléfono de la prueba; si el manual D-073 se aprueba sin estos cambios, conciliarlos.
+- **Documentación:** [Android 2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — D-083
+
+- **Qué cambió:** se registró D-083 (vidrio, formas redondeadas, emoji y textos naturales en la app) y se anotó en D-073 y D-082 lo que reemplaza.
+- **Cómo estaba antes:** D-073 prohibía vidrio, desenfoque y píldoras, y D-082 ofrecía fotos en el perfil.
+- **Por qué:** pedido del autor del 26 de septiembre.
 
 ### 2026-09-26 — Android 2.8 y D-082
 
