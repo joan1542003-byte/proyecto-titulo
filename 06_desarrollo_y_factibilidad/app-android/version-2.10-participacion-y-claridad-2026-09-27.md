@@ -98,6 +98,7 @@ Las capturas están en [capturas/interfaz-2.10](capturas/interfaz-2.10/README.md
 - **Manual de marca:** D-084 quita en la app las «notas en mayúsculas» de D-073, como D-083 quitó la regla sin vidrio. Si el autor quiere coherencia, el manual y el kit deben actualizarse; para eso se propuso el 27 de septiembre el [sistema de marca 2.0 en Figma](../../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md) (D-085).
 - **En el teléfono real:** que el desenfoque se vea fluido, que el tono elegido funcione con las fotos definitivas, TalkBack y texto grande.
 - **Textos:** revisión del autor de los textos nuevos.
+- **Defecto visual:** al responder «¿Qué decidiste?», mientras la pantalla se va, se ve por unos 0,2 segundos un encabezado vacío («Desactivaste el relevo. Vuelve a .»). Se vio en el emulador al grabar el [GIF de la app](capturas/como-funciona-2.10/README.md), después de desactivar un relevo y preparar otro; no afecta los datos.
 - Lo pendiente de 2.8 y 2.9 sigue igual: parlante, borrado sin conexión y fotografía propia.
 
 ## Referencias
@@ -111,6 +112,12 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 Yablonski, J. (s. f.). *Laws of UX*. https://lawsofux.com/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Defecto visual al responder
+
+- **Qué cambió:** se registró como pendiente un encabezado vacío que aparece por un instante al salir de «¿Qué decidiste?».
+- **Cómo estaba antes:** no estaba registrado.
+- **Por qué:** se vio al grabar el GIF de la app para la presentación.
 
 ### 2026-09-27 — Marca 2.0
 

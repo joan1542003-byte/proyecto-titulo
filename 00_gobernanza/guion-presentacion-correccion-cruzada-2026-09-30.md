@@ -19,7 +19,7 @@
 | Diapositiva 6 | Está desordenada y es poco clara; hay que añadir las encuestas de Google. | La diapositiva 7 queda en tres partes: método, dos situaciones con dos casos cada una y lo que ya hacen las personas. La encuesta aparece como pendiente, porque sin su formulario ni sus respuestas no se pueden mostrar resultados. |
 | Diapositiva 7 | Hacer una comparación en dos ejes. | La diapositiva 8 es un mapa: sobre qué actúa cada herramienta y dónde ocurre. |
 | Diapositiva 8 | Explicar brevemente el porqué de cada criterio; todavía no aparece el marco teórico. | La diapositiva 9 da el porqué de cada criterio, y la nueva diapositiva 6 presenta el marco teórico. |
-| Diapositiva 9 | Grabar un GIF de la app funcionando. | La diapositiva 10 incluye el guion del GIF, pantalla por pantalla. La grabación está pendiente. |
+| Diapositiva 9 | Grabar un GIF de la app funcionando. | La diapositiva 10 lleva el [GIF grabado en la app 2.10](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md). |
 | Diapositiva 10 | Hacerla más clara y ordenada, con un tono natural. | La diapositiva 11 cuenta la prueba en tres momentos. Además se corrigió un dato: por ahora la prueba es con una persona (D-081), no con seis. |
 | Diapositiva 11 | Revisar la carta Gantt y explicar qué pasa en cada fecha, por ejemplo qué es la prueba técnica. | La diapositiva 12 explica cada etapa. |
 | Diapositiva 12 | Falta marco teórico y conviene anticipar las preguntas para no dejar vacíos. | Nueva diapositiva 6, porqués en los criterios y preguntas probables ampliadas. |
@@ -185,26 +185,26 @@ Tres ámbitos de la teoría:
 4. Al cumplirse, suena unos 30 segundos donde empiezas.
 5. Decides: empezar, seguir en el teléfono o cambiar de idea.
 
-- Al lado, el GIF de la app.
+- Al lado, el GIF de la app: [relevo-como-funciona.gif](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/relevo-como-funciona.gif).
 
-**GIF (pendiente de grabar).** Unos 20 segundos en bucle, grabados en el emulador con la app 2.10, datos ficticios y sin red; sin nombres ni códigos de participación.
+**GIF.** Unos 35 segundos en bucle (432 × 960 px, 4,6 MB), grabados el 27 de septiembre en el emulador con la app 2.10, datos ficticios y sin red; no aparece ningún nombre ni código de participación. También hay una versión en video (MP4, 1,5 MB). Detalle y forma de grabación en su [README](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md).
 
-| Orden | Pantalla | Qué se ve | Segundos |
-| --- | --- | --- | --- |
-| 1 | Nueva actividad | «Leer», «Para empezar: abrir el libro en el marcador» y «Dónde empiezas: junto al sillón» | 4 |
-| 2 | ¿Cuándo te avisa? | Las apps que cuentan y el tiempo | 3 |
-| 3 | ¿Cómo te avisa? | Parlante o teléfono | 2 |
-| 4 | Tu relevo | El relevo contando | 3 |
-| 5 | Señal | «Empieza por abrir el libro en el marcador, junto al sillón.» | 4 |
-| 6 | ¿Qué decidiste? | Tres respuestas del mismo peso | 3 |
+| Segundos | Pantalla | Qué se ve |
+| --- | --- | --- |
+| 0–3 | Inicio | «Tu ruta · Leer» |
+| 3–10 | Los tres primeros pasos | «Leer 10 páginas», «Abrir el libro» y «En el velador» |
+| 10–20 | ¿Cuándo te avisa? y ¿Cómo te avisa? | YouTube, 15 minutos y el teléfono |
+| 20–26 | Todo listo e Inicio | Se activa y queda «Contando» |
+| 26–29 | Señal | «Vuelve a leer 10 páginas. Empieza por abrir el libro, en el velador.» |
+| 29–35 | ¿Qué decidiste? e Inicio | «Comencé la actividad» y «Gracias por contarlo.» |
 
-En el emulador la señal sale por el teléfono; el GIF muestra la pantalla, no el parlante.
+En el emulador no hay parlante, así que el aviso suena en el teléfono; conviene decirlo al presentar.
 
 **Se dice**
 
 > Así se usa. Escribo qué quiero hacer y cómo empiezo: leer, abrir el libro en el marcador. Dejo el objeto junto al libro, no junto al teléfono. Elijo qué apps cuentan y después de cuánto tiempo, y sigo usando el teléfono como siempre. Cuando se cumple el tiempo, suena unos 30 segundos junto al libro. La hipótesis es que ahí se recuerdan dos cosas a la vez: qué quería hacer y cómo empezar. Después decido: abrir el libro, seguir en el teléfono o cambiar de idea. Relevo no bloquea nada y no comprueba si leí.
 >
-> Lo que ven es la app Android que existe hoy, la versión 2.10. La recorrí completa en un emulador, pero todavía no en un teléfono y un parlante reales. Por ahora, un parlante Bluetooth hace de objeto; no es el objeto final.
+> Lo que ven es la app Android que existe hoy, la versión 2.10. La recorrí completa en un emulador, pero todavía no en un teléfono y un parlante reales; por eso, en la animación, el aviso suena en el teléfono. Por ahora, un parlante Bluetooth hace de objeto; no es el objeto final.
 >
 > ¿Por qué un objeto? Porque la sesión sigue en el teléfono; la señal sale de la pantalla y aparece donde empieza la actividad. ¿Y por qué la casa? Varias actividades y estrategias que me contaron dependen de objetos y distancias de la casa. También es una hipótesis: no observé viviendas.
 
@@ -331,6 +331,12 @@ Las fuentes de los productos del mapa (Screen Time, Bienestar digital, one sec, 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — GIF grabado
+
+- **Qué cambió:** la diapositiva 10 enlaza el GIF grabado en la app 2.10, con su contenido real por segundos, y el texto hablado explica por qué en la animación suena el teléfono.
+- **Cómo estaba antes:** el GIF era un guion pendiente, con pantallas y textos previstos que no coincidían con lo grabado.
+- **Por qué:** el autor pidió grabar el GIF.
 
 ### 2026-09-27 — Anotaciones del autor en Figma
 
