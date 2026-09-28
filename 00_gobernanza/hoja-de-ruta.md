@@ -97,7 +97,7 @@ La [investigación visual](../10_recursos_visuales/README.md) define preguntas, 
 
 ### Fase 5 — Desarrollo y factibilidad
 
-**Estado al 26 de septiembre:** la aplicación Android 2.7 implementa lo que exige el protocolo 02, la 2.8 agrega el sistema de marca D-073, perfil, ruta y aviso de regreso, la 2.9 (27 de septiembre) el vidrio, las formas redondeadas y los emoji de D-083, y la 2.10, del mismo día, exige participar y aclara los textos (D-084). Compilan, pasan sus pruebas unitarias (34, 47, 50 y 58) y se recorrieron en emulador con datos ficticios; falta probarlas en un teléfono y un parlante reales y verificar el borrado sin conexión. El parlante es una salida provisional, no el testigo. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, sonido y silencio local está compilado, pero ya no condiciona la prueba: el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) usa la app y un parlante Bluetooth, sin luz (D-070 y D-079). No se ha comprado hardware.
+**Estado al 26 de septiembre:** la aplicación Android 2.7 implementa lo que exige el protocolo 02, la 2.8 agrega el sistema de marca D-073, perfil, ruta y aviso de regreso, la 2.9 (27 de septiembre) el vidrio, las formas redondeadas y los emoji de D-083, y la 2.10, del mismo día, exige participar y aclara los textos (D-084). Compilan, pasan sus pruebas unitarias (34, 47, 50 y 58) y se recorrieron en emulador con datos ficticios; falta probarlas en un teléfono y un parlante reales y verificar el borrado sin conexión. El parlante es una salida provisional, no el testigo. La XIAO nRF52840 orienta el testigo compacto. El programa micro:bit para comprobar Android, BLE, sonido y silencio local está compilado, pero ya no condiciona la prueba: el [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) usa la app y un parlante Bluetooth, sin luz (D-070 y D-079). No se ha comprado hardware. La marca tiene una propuesta 2.0 en Figma que reúne D-073 con los cambios de la app ([D-085](../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md)), pendiente de aprobación del autor.
 
 Incluye arquitectura técnica, producción, materiales, componentes, costos, mantenimiento, privacidad, riesgos, escenarios de fabricación y factibilidad académica.
 
@@ -129,6 +129,12 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Marca 2.0 en Figma
+
+- **Qué cambió:** el estado menciona la propuesta de sistema de marca 2.0 en Figma (D-085).
+- **Cómo estaba antes:** no mencionaba el trabajo de marca posterior a D-084.
+- **Por qué:** el autor pidió desarrollar la marca en Figma el 27 de septiembre.
 
 ### 2026-09-27 — Android 2.10
 

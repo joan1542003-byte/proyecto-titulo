@@ -2,6 +2,8 @@
 
 **Estado:** propuesta registrada como D-073, pendiente de decisión del autor. Mientras no se apruebe, rige el [sistema de marca vigente](14_sistema-de-marca-vigente.md) (D-062). Reemplaza a D-072 y, dentro de ella, a los centros de D-069 y D-071. Mantiene la decisión de no usar luz (D-070), la paleta y la firma sonora.
 
+**Actualización propuesta (27 de septiembre):** el [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) (D-085) reúne esta marca con los cambios de la app 2.9 y 2.10: vidrio, cápsulas, texto sobre fotos, frases sin mayúsculas y emoji. Este documento se conserva como antecedente de esa propuesta.
+
 **Materiales:**
 
 - [Manual de marca (lámina)](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
@@ -435,6 +437,12 @@ Xu, X., Chen, R., & Liu, M. W. (2017). The effects of uppercase and lowercase wo
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Enlace al sistema 2.0
+
+- **Qué cambió:** se añadió al comienzo un enlace al sistema de marca 2.0 en Figma (D-085).
+- **Cómo estaba antes:** el documento no indicaba que la app había cambiado algunas de sus reglas ni que existía una actualización propuesta.
+- **Por qué:** el autor pidió actualizar la marca acorde al diseño nuevo de la app.
 
 ### 2026-09-25 — 97 iconos y cuatro pantallas nuevas
 

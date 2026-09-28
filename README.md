@@ -49,6 +49,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 La aplicación Android más reciente es **Relevo 2.10** (27 de septiembre), prototipo de depuración para Android 12 o posterior. Para usarla hay que participar en la prueba; usa textos más claros, sin mayúsculas, y pone el texto de las fotos en blanco o en tinta según su tono (D-084). Mantiene el estilo de iOS 26 de la 2.9, con vidrio y emoji (D-083), y lo que agregó la 2.8: el sistema de marca D-073 con fotografías, el perfil, la ruta de actividades y el aviso de regreso opcional. Conserva lo que la 2.7 implementó para la prueba de 21 días del protocolo 02: señal de unos 30 segundos, condición por semana y preguntas integradas. Compila y pasa 58 pruebas unitarias; en emulador, con datos ficticios y sin red, se recorrió el ciclo completo. En versiones anteriores se comprobó que los registros llegan a Supabase. Falta probarla en un teléfono y un parlante reales y comprobar el borrado sin conexión. No hay resultados de validación con participantes. Consulta el [README de Android](06_desarrollo_y_factibilidad/app-android/README.md), [Android 2.10](06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md), [Android 2.9](06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md), [Android 2.8](06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md), [Android 2.7](06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y la [auditoría del feedback docente](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
+La marca tiene una **propuesta 2.0** en Figma (27 de septiembre, D-085): reúne «Vuelve a lo que querías hacer» (D-073) con el vidrio, las cápsulas, los emoji, el texto según la foto y las frases claras de la app, e incluye variables, 97 iconos, componentes, imágenes y aplicaciones. Está pendiente de aprobación del autor. Consulta el [sistema de marca 2.0](10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md).
+
 El proyecto sigue siendo **phygital**: la app organiza la intención y el testigo físico propuesto devuelve una señal en el lugar asociado a la actividad. El parlante Bluetooth actual es una salida de prueba, no el objeto final de Relevo. El valor diferencial —que una señal física y situada aporte más que una notificación— sigue pendiente de evaluación.
 
 La fuente académica vigente es la [memoria v4](08_memoria/memoria-vigente-v4.md), avanzada pero no final. La [investigación visual escrita](10_recursos_visuales/README.md) y el [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) orientan su desarrollo; la forma del objeto y los parámetros de su señal sonora requieren pruebas. La prueba vigente es el [protocolo 02](07_validacion/protocolo-02-prueba-21-dias.md): 21 días en casa, que responden la hipótesis y las preguntas de uso. La [síntesis vigente del proyecto](08_memoria/resumen-vigente-proyecto.md) registra qué existe y qué falta sin atribuir resultados.
@@ -107,6 +109,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Marca 2.0 en Figma
+
+- **Qué cambió:** el estado actual menciona la propuesta de sistema de marca 2.0 en Figma (D-085).
+- **Cómo estaba antes:** solo describía la app 2.10.
+- **Por qué:** el autor pidió desarrollar la marca en Figma acorde al diseño nuevo de la app.
 
 ### 2026-09-27 — Android 2.10
 

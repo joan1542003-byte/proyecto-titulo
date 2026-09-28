@@ -20,6 +20,7 @@ Esta formulación se apoya en la [declaración histórica de IA de la memoria v1
 | Android 2.8 del 25 y 26 de septiembre | Claude Code programó el rediseño con D-073, el perfil, la ruta y el regreso; trató con la receta de D-073 las fotografías generadas antes y seis CC0; compiló, probó en emulador con datos ficticios y documentó. No generó imágenes nuevas. | El autor rechazó una primera versión sin fotos y fijó el objetivo: D-073, fotografías, más personalización y las pantallas que faltaban. Las decisiones de detalle quedan en D-082 para su revisión. | Compilación, 47 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
 | Android 2.9 del 27 de septiembre | Claude Code revisó referentes (pautas de Liquid Glass de Apple, Laws of UX, transitions.dev) y la disponibilidad y licencia de los emoji Noto 3D de Google; programó el vidrio, las formas en cápsula, las hojas flotantes, el selector de emoji y los textos nuevos; probó en emulador y documentó. Los emoji son de Google, no se generaron. | El autor fijó el objetivo: pantalla completa, desenfoques sutiles sin brillo, bordes redondeados, solo iconos o emoji en el perfil, textos naturales y sin avisos de privacidad repetidos. Registrado como D-083. | Compilación, 50 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
 | Android 2.10 del 27 de septiembre | Claude Code reescribió los textos de todas las pantallas, quitó el uso sin participar, programó el tono del texto según cada foto con la luminancia de WCAG 2.2, sumó 60 emoji de Google, rediseñó «Tu ruta» y «Tus actividades», probó en emulador sin red y documentó. Los emoji son de Google, no se generaron. | El autor pidió participación obligatoria, textos claros, ninguna mayúscula sostenida, menos desenfoque, texto según la foto, más emoji y una ruta y unas actividades más claras. Registrado como D-084. | Compilación, 58 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
+| Marca 2.0 en Figma del 27 de septiembre | Claude Code, con el conector oficial de Figma, construyó el archivo: variables, estilos, 97 iconos y 18 componentes a partir del código de 2.10 y de D-073; subió desde el repositorio emoji, imágenes y capturas; calculó el tono de las imágenes; compuso las páginas, afiches y diapositivas, y documentó. No generó imágenes. | El autor pidió llevar el diseño nuevo de la app a la marca en Figma, con vidrio líquido, iconos, emoji y tratamiento de imagen. Registrado como propuesta D-085, pendiente de su aprobación. | Revisión visual con capturas del archivo; sin revisión del autor ni pruebas con personas. |
 
 Lo que puede sostenerse documentalmente es que la IA permitió **producir variantes y dejar rastros de descarte y corrección**. El repositorio no mide ahorro de tiempo ni permite afirmar que la IA mejoró la calidad de uso de Relevo: eso exigiría comparación y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
 
@@ -96,7 +97,22 @@ No introducir transcripciones identificables de P1–P8, hojas firmadas, claves 
 - **Decisiones del autor:** las de D-084. La elección concreta de los emoji, el umbral del tono y los textos nuevos son propuestas de la herramienta, pendientes de su revisión.
 - **Lo que no se afirma:** que los textos nuevos se entiendan mejor, que el tono elegido sea siempre el más legible ni que exigir la participación esté aprobado desde el punto de vista ético.
 
+## Registro del sistema de marca 2.0 en Figma
+
+- **Fecha y herramienta:** 27 de septiembre de 2026; Claude Code con el modelo Claude Opus 5.5 y el conector oficial de Figma, con la cuenta del autor.
+- **Pedido literal del autor:** «y si usas mcp cpn figma, para ayudarme en el proyecto de Relevo Diseño de marca La idea es desarrollarlo lo mejor posible, considerando todo, actualizandolo para que tambien sea acorde al diseño nuevo de la app. Me encnataria usar el vidrio liqduifo, o cosas asi, ya sabes, creo que podemos hacer un buen diseño. Iocnos, emojis, tratameint ode iamgne, etc.»
+- **Fuentes usadas:** el código de Android 2.10 (tema, vidrio, tono y componentes), el manual D-073, los iconos y el logotipo en SVG, la receta de imagen, las capturas de 2.10 y los registros de licencias. No se consultaron fuentes externas nuevas.
+- **Qué hizo la herramienta:** creó el archivo en el equipo de Figma del autor; definió variables y estilos; convirtió los 97 iconos y el logotipo en componentes; subió 84 emoji, 24 imágenes y 33 capturas; calculó con la fórmula de la app el tono de las 21 imágenes; diseñó los componentes, las once páginas, los afiches, las diapositivas, la tarjeta del objeto y la propuesta de ícono de vidrio; revisó cada página con capturas, corrigió errores de composición y el origen declarado de las imágenes, exportó doce vistas y documentó.
+- **Decisiones del autor:** pedir el sistema en Figma y sus temas (vidrio líquido, iconos, emoji, tratamiento de imagen). Las decisiones de detalle (niveles de vidrio de marca, reglas nuevas, composición de las piezas, ícono de vidrio) son propuestas de la herramienta en D-085, pendientes de su revisión.
+- **Lo que no se afirma:** que el sistema esté aprobado, que el ícono de vidrio se reconozca ni que las piezas se entiendan mejor que las de D-073.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Sistema de marca 2.0 en Figma
+
+- **Qué cambió:** se añadieron una fila y un registro del trabajo de marca en Figma, con el pedido literal del autor, las fuentes, lo que hizo la herramienta y lo que no se afirma.
+- **Cómo estaba antes:** el registro llegaba hasta la iteración Android 2.10.
+- **Por qué:** mantener trazable qué hizo la IA y qué decidió el autor.
 
 ### 2026-09-27 — Iteración Android 2.10
 

@@ -95,7 +95,7 @@ Las capturas están en [capturas/interfaz-2.10](capturas/interfaz-2.10/README.md
 
 - **Decisión del autor:** qué versión usar en la prueba de 21 días. La 2.10 conserva la lógica y los datos de 2.7, 2.8 y 2.9, pero ya no permite usar la app sin participar.
 - **Revisión ética:** conviene que el profesor guía confirme que exigir la participación para usar esta versión es compatible con el consentimiento, que la declara voluntaria.
-- **Manual de marca:** D-084 quita en la app las «notas en mayúsculas» de D-073, como D-083 quitó la regla sin vidrio. Si el autor quiere coherencia, el manual y el kit deben actualizarse.
+- **Manual de marca:** D-084 quita en la app las «notas en mayúsculas» de D-073, como D-083 quitó la regla sin vidrio. Si el autor quiere coherencia, el manual y el kit deben actualizarse; para eso se propuso el 27 de septiembre el [sistema de marca 2.0 en Figma](../../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md) (D-085).
 - **En el teléfono real:** que el desenfoque se vea fluido, que el tono elegido funcione con las fotos definitivas, TalkBack y texto grande.
 - **Textos:** revisión del autor de los textos nuevos.
 - Lo pendiente de 2.8 y 2.9 sigue igual: parlante, borrado sin conexión y fotografía propia.
@@ -111,6 +111,12 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
 Yablonski, J. (s. f.). *Laws of UX*. https://lawsofux.com/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Marca 2.0
+
+- **Qué cambió:** el pendiente del manual de marca enlaza el sistema de marca 2.0 en Figma (D-085).
+- **Cómo estaba antes:** decía solo que el manual y el kit debían actualizarse.
+- **Por qué:** el autor pidió esa actualización el mismo día.
 
 ### 2026-09-27 — Documento nuevo
 

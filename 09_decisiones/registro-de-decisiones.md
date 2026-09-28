@@ -750,7 +750,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-073 — Vuelve a lo que querías hacer (propuesta)
 
 - **Fecha:** 2026-09-25.
-- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072. A pedido del autor, la app la aplica desde Android 2.8 (26 de septiembre), con los cambios de D-083 desde 2.9 y de D-084 desde 2.10.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072. A pedido del autor, la app la aplica desde Android 2.8 (26 de septiembre), con los cambios de D-083 desde 2.9 y de D-084 desde 2.10. El sistema de marca 2.0 en Figma (D-085, propuesta) reúne esos cambios.
 - **Decisión propuesta:**
   - *Verbal*: firma «Vuelve a lo que querías hacer», elegida por el autor (antes, «Lo que querías hacer, a tiempo»); principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
   - *Recurso central*: el renglón («Vuelve a \_\_\_\_.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
@@ -919,7 +919,32 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** que el profesor guía confirme que exigir la participación es compatible con el consentimiento; legibilidad en el teléfono de la prueba; si se decide usar la app fuera de la prueba, volver a D-082.
 - **Documentación:** [Android 2.10](../06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md).
 
+## D-085 — Sistema de marca 2.0 en Figma (propuesta)
+
+- **Fecha:** 2026-09-27.
+- **Estado:** propuesta pendiente de aprobación del autor. No cambia la app.
+- **Decisión propuesta:** reunir la marca D-073 con los cambios de D-083 y D-084 en un sistema 2.0 construido en Figma:
+  - *Fundamentos*: variables de color con modos claro y oscuro, forma, espacio y vidrio tomadas del código de Android 2.10, y los estilos de texto de la app;
+  - *Vidrio*: solo en la capa de navegación, en cinco niveles de desenfoque (12 a 26), sin brillo; el vidrio líquido de Figma, con refracción, solo en piezas de marca y con la luz al mínimo;
+  - *Formas*: cápsulas, círculos, paneles de 28 y hojas de 34 en pantalla; esquinas rectas en papel impreso;
+  - *Imagen*: el texto puede ir sobre una foto grande en una banda de vidrio que toma el tono de la foto (luminancia bajo 0,19: texto blanco);
+  - *Texto*: sin mayúsculas sostenidas; frases en vez de rótulos y el vocabulario fijo de 2.10;
+  - *Emoji*: 84 emoji 3D solo como imagen del perfil;
+  - *Piezas*: 97 iconos y 18 componentes con variantes, las capturas de 2.10, afiches, diapositivas y la tarjeta del objeto;
+  - *Ícono*: una propuesta de «r» de vidrio, no aplicada.
+- **Relación con D-073:** mantiene la firma, el renglón con dos voces, el logotipo, Schibsted Grotesk, la paleta, los iconos, la fotografía del comienzo, el tono y la firma sonora. Reemplaza las reglas de formas, fondos sin vidrio, texto fuera de la foto, notas en mayúsculas y ausencia de emoji.
+- **Fundamento:** pedido del autor del 27 de septiembre de desarrollar la marca en Figma acorde al diseño nuevo de la app. Se usan las mismas fuentes que D-073, D-083 (pautas de Liquid Glass de Apple, 2025) y D-084 (WCAG 2.2).
+- **Alternativas:** mantener D-073 sin cambios y dejar las diferencias solo en la app; actualizar el manual HTML en vez de trabajar en Figma.
+- **Condición de revisión:** aprobación del autor; comprensión de la firma y del renglón por personas que no conocen el proyecto; legibilidad del vidrio en el teléfono de la prueba; reconocimiento del ícono de vidrio antes de usarlo.
+- **Documentación:** [sistema de marca 2.0](../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md), [vistas](../10_recursos_visuales/marca-2.0/README.md) y [archivo de Figma](https://www.figma.com/design/AUHfsQ6LMMOw7VS07l5ZIz).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — D-085
+
+- **Qué cambió:** se registró D-085, la propuesta de sistema de marca 2.0 en Figma, y se anotó en D-073.
+- **Cómo estaba antes:** D-083 y D-084 cambiaban reglas de D-073 solo dentro de la app.
+- **Por qué:** pedido del autor del 27 de septiembre.
 
 ### 2026-09-27 — D-084
 

@@ -150,6 +150,7 @@ En la rama `android-2.7`, a pedido del autor:
 
 - **Android 2.9:** a pedido del autor, la interfaz pasa al estilo de iOS 26 (D-083): pantalla completa, vidrio con desenfoque sutil en la navegación, cápsulas y esquinas amplias, emoji 3D de Google en el perfil y textos más naturales. No cambia la lógica ni los datos. Compila y pasan 50 pruebas unitarias; se recorrió en emulador con datos ficticios. Detalle en [Android 2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md).
 - **Android 2.10:** a pedido del autor (D-084), usar la app exige participar en la prueba, los rótulos pasan a frases claras y sin mayúsculas, el desenfoque se aleja del centro y baja en los botones, el texto sobre las fotos toma el tono de cada foto, el perfil ofrece 84 emoji y se rediseñan «Tu ruta» y «Tus actividades». Compila y pasan 58 pruebas unitarias; se recorrió en emulador sin red y con datos ficticios. Detalle en [Android 2.10](../06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md).
+- **Marca 2.0 en Figma:** a pedido del autor, un [sistema de marca 2.0](../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md) reúne D-073 con el vidrio, las cápsulas, el texto según la foto, las frases sin mayúsculas y los emoji de la app, con variables, 97 iconos, componentes, imágenes y aplicaciones. Es una propuesta (D-085) pendiente de aprobación; el archivo está en el equipo de Figma del autor y sus vistas, en el repositorio.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
 
 ## Seguridad, privacidad y GitHub
@@ -163,6 +164,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Marca 2.0 en Figma
+
+- **Qué cambió:** se añadió el sistema de marca 2.0 en Figma (D-085) al estado.
+- **Cómo estaba antes:** el estado terminaba en Android 2.10.
+- **Por qué:** pedido del autor del 27 de septiembre.
 
 ### 2026-09-27 — Android 2.10
 
