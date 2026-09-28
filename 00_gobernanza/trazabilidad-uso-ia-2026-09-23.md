@@ -21,6 +21,7 @@ Esta formulación se apoya en la [declaración histórica de IA de la memoria v1
 | Android 2.9 del 27 de septiembre | Claude Code revisó referentes (pautas de Liquid Glass de Apple, Laws of UX, transitions.dev) y la disponibilidad y licencia de los emoji Noto 3D de Google; programó el vidrio, las formas en cápsula, las hojas flotantes, el selector de emoji y los textos nuevos; probó en emulador y documentó. Los emoji son de Google, no se generaron. | El autor fijó el objetivo: pantalla completa, desenfoques sutiles sin brillo, bordes redondeados, solo iconos o emoji en el perfil, textos naturales y sin avisos de privacidad repetidos. Registrado como D-083. | Compilación, 50 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
 | Android 2.10 del 27 de septiembre | Claude Code reescribió los textos de todas las pantallas, quitó el uso sin participar, programó el tono del texto según cada foto con la luminancia de WCAG 2.2, sumó 60 emoji de Google, rediseñó «Tu ruta» y «Tus actividades», probó en emulador sin red y documentó. Los emoji son de Google, no se generaron. | El autor pidió participación obligatoria, textos claros, ninguna mayúscula sostenida, menos desenfoque, texto según la foto, más emoji y una ruta y unas actividades más claras. Registrado como D-084. | Compilación, 58 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
 | Marca 2.0 en Figma del 27 de septiembre | Claude Code, con el conector oficial de Figma, construyó el archivo: variables, estilos, 97 iconos y 18 componentes a partir del código de 2.10 y de D-073; subió desde el repositorio emoji, imágenes y capturas; calculó el tono de las imágenes; compuso las páginas, afiches y diapositivas, y documentó. No generó imágenes. | El autor pidió llevar el diseño nuevo de la app a la marca en Figma, con vidrio líquido, iconos, emoji y tratamiento de imagen. Registrado como propuesta D-085, pendiente de su aprobación. | Revisión visual con capturas del archivo; sin revisión del autor ni pruebas con personas. |
+| Guion de la corrección cruzada del 27 de septiembre | Claude Code leyó en Figma las anotaciones que el autor dejó en cada diapositiva y reescribió el guion: dato que introduce el problema, marco teórico, mapa de referentes en dos ejes, porqué de cada criterio, guion del GIF de la app, prueba contada en tres momentos, carta Gantt explicada y más preguntas probables. Corrigió datos vencidos (seis personas y app 2.6). | El autor revisó su presentación en Figma y anotó qué cambiar en cada diapositiva. Las frases, los datos elegidos y la diapositiva nueva de marco teórico son propuestas de la herramienta, pendientes de su revisión. | Sin ensayo ni revisión del autor. La encuesta de Google Forms no se incorporó porque sus materiales no están en el repositorio. |
 
 Lo que puede sostenerse documentalmente es que la IA permitió **producir variantes y dejar rastros de descarte y corrección**. El repositorio no mide ahorro de tiempo ni permite afirmar que la IA mejoró la calidad de uso de Relevo: eso exigiría comparación y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
 
@@ -107,6 +108,12 @@ No introducir transcripciones identificables de P1–P8, hojas firmadas, claves 
 - **Lo que no se afirma:** que el sistema esté aprobado, que el ícono de vidrio se reconozca ni que las piezas se entiendan mejor que las de D-073.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Guion de la corrección cruzada
+
+- **Qué cambió:** se añadió una fila sobre la reescritura del guion a partir de las anotaciones del autor en Figma.
+- **Cómo estaba antes:** la tabla no registraba el guion.
+- **Por qué:** mantener trazable qué hizo la IA y qué decidió el autor.
 
 ### 2026-09-27 — Sistema de marca 2.0 en Figma
 

@@ -11,7 +11,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión integral de fuentes, corpus y redacción](revision-integral-fuentes-y-redaccion-2026-09-25.md): verificación de las 64 referencias, contraste con P1–P8 y Android 2.6, revisión página por página, correcciones aplicadas y problemas pendientes al 25 de septiembre.
-- [Guion de la corrección cruzada del 30 de septiembre](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md): presentación de unos 6 minutos basada en la memoria, con texto en pantalla y texto hablado.
+- [Guion de la corrección cruzada del 30 de septiembre](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md): presentación de unos 7 minutos basada en la memoria y el protocolo 02, con texto en pantalla, texto hablado y preguntas probables.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia de las 64 entradas bibliográficas, actualizada tras el feedback del 23 de septiembre.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
@@ -86,6 +86,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-27 — Guion de la corrección cruzada
+
+- **Qué cambió:** la entrada del guion indica unos 7 minutos y sus fuentes.
+- **Cómo estaba antes:** decía unos 6 minutos, basada solo en la memoria.
+- **Por qué:** el autor dejó anotaciones en el archivo de diapositivas de Figma y pidió actualizar el guion.
 
 ### 2026-09-25 — Fuentes, APA 7 y lenguaje claro
 

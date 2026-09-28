@@ -231,7 +231,7 @@ La respuesta honesta tiene dos partes:
 6. **Diferencia — 30 s.** No mide, bloquea, puntúa ni promete productividad; investiga una asociación situada.
 7. **Estado y prueba — 40 s.** Declarar qué está diseñado, qué falta implementar y qué comparación puede sostener o refutar el objeto.
 
-El [guion de la corrección cruzada del 30 de septiembre](guion-presentacion-correccion-cruzada-2026-09-30.md) desarrolla este relato en 11 diapositivas.
+El [guion de la corrección cruzada del 30 de septiembre](guion-presentacion-correccion-cruzada-2026-09-30.md) desarrolla este relato en 13 diapositivas.
 
 ### Demostración del prototipo
 
@@ -422,6 +422,12 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Guion de 13 diapositivas
+
+- **Qué cambió:** el enlace al guion indica 13 diapositivas.
+- **Cómo estaba antes:** decía 11.
+- **Por qué:** el autor dejó anotaciones en el archivo de diapositivas de Figma y pidió actualizar el guion.
 
 ### 2026-09-25 — Señal de unos 30 segundos en los ejemplos
 

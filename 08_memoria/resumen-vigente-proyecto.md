@@ -14,13 +14,19 @@ La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se 
 
 ## Qué cambió y qué falta
 
-Para la corrección cruzada del 30 de septiembre hay un [guion de presentación](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md) de unos 6 minutos, basado solo en la memoria.
+Para la corrección cruzada del 30 de septiembre hay un [guion de presentación](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md) de unos 7 minutos, basado en la memoria, el protocolo 02 y el plan de cierre.
 
 El feedback del 23 de septiembre llevó a distinguir recordar una intención, empezar una actividad y formar un hábito. No se añadieron rachas ni premios. La revisión de Android 2.6 aclaró el consentimiento, el registro seudónimo, la selección de salida y los límites del parlante. Las decisiones y alternativas están en el [registro de aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y en la [auditoría específica de Android](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
 La prueba con participantes será de 21 días en casa y responderá también la hipótesis ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)). Antes de convocar faltan la app 2.7 que ese protocolo requiere, pruebas en teléfono y parlante reales, revisión académica del consentimiento y comprobación del envío y eliminación de datos locales y remotos. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) ya describe Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Guion de la corrección cruzada
+
+- **Qué cambió:** la mención del guion indica unos 7 minutos y sus fuentes.
+- **Cómo estaba antes:** decía unos 6 minutos, basado solo en la memoria.
+- **Por qué:** el autor dejó anotaciones en el archivo de diapositivas de Figma y pidió actualizar el guion.
 
 ### 2026-09-25 — Fuentes, APA 7 y lenguaje claro
 

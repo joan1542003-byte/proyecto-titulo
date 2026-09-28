@@ -22,7 +22,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 
 - `directrices-de-trabajo.md`: mandato integral de investigación, desarrollo, escritura, trazabilidad y colaboración.
 - `guia-comunicacion-relevo.md`: arquitectura de mensaje, explicaciones por duración, ejemplos de uso, preguntas frecuentes y control de afirmaciones.
-- [Guion de la corrección cruzada del 30 de septiembre](guion-presentacion-correccion-cruzada-2026-09-30.md): 11 diapositivas con texto en pantalla, texto hablado, tiempos, demostración opcional y preguntas para la comisión.
+- [Guion de la corrección cruzada del 30 de septiembre](guion-presentacion-correccion-cruzada-2026-09-30.md): 13 diapositivas con texto en pantalla, texto hablado, tiempos, marco teórico, guion del GIF de la app, demostración opcional y preguntas para la comisión; versión 2, con las anotaciones del autor en Figma.
 - `hoja-de-ruta.md`: secuencia de trabajo y condiciones para avanzar.
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
@@ -53,6 +53,12 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-27 — Guion de la corrección cruzada, versión 2
+
+- **Qué cambió:** la entrada del guion describe sus 13 diapositivas.
+- **Cómo estaba antes:** decía 11 diapositivas.
+- **Por qué:** el autor dejó anotaciones en el archivo de diapositivas de Figma y pidió actualizar el guion.
 
 ### 2026-09-27 — Reflexión sobre el proceso con IA
 
