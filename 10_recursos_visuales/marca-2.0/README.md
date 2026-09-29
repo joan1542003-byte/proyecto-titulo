@@ -17,11 +17,17 @@ Imágenes exportadas el 27 de septiembre de 2026 del archivo [Relevo · Sistema 
 | [09-pantallas.jpg](vistas/09-pantallas.jpg) | Las 33 capturas de Android 2.10 |
 | [10-aplicaciones.jpg](vistas/10-aplicaciones.jpg) | Afiches, diapositivas y tarjeta del objeto |
 
-**Video:** [Relevo en 15 segundos](video/README.md), una animación en español que explica qué es Relevo con esta marca.
+**Video:** [Relevo en 30 segundos](video/README.md), una animación en español que explica qué es Relevo con esta marca.
 
 **Imágenes dentro de las vistas:** 15 de las 21 imágenes de la app se generaron con IA y son provisionales; las demás fotografías son CC0. Los emoji son de Google (Noto 3D, SIL OFL 1.1). Procedencia en las [licencias de la app](../../06_desarrollo_y_factibilidad/app-android/licencias/README.md) y en los [créditos de las muestras](../marca-a-tiempo/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Video de 30 segundos
+
+- **Qué cambió:** el enlace apunta a la versión de 30 segundos.
+- **Cómo estaba antes:** apuntaba a la de 15 segundos, que se conserva.
+- **Por qué:** pedido del autor.
 
 ### 2026-09-28 — Video de 15 segundos
 

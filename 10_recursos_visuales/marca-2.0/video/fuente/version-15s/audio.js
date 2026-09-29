@@ -1,6 +1,6 @@
 // Banda sonora sintetizada para el video de 15 s, con la firma sonora de Relevo a los 8,45 s.
 const fs = require('fs');
-const SR = 48000, DUR = 30, N = SR * DUR;
+const SR = 48000, DUR = 15, N = SR * DUR;
 const L = new Float32Array(N), R = new Float32Array(N);
 let seed = 7; const rnd = () => ((seed = (seed * 1103515245 + 12345) >>> 0) / 4294967296) * 2 - 1;
 const put = (i, v, pan = 0) => { if (i < 0 || i >= N) return; L[i] += v * Math.min(1, 1 - pan); R[i] += v * Math.min(1, 1 + pan); };
@@ -43,51 +43,48 @@ function pad(t0, dur, freqs, vol, att = .8, rel = 1.2) {
 }
 
 // ---- Escena 1: scroll que se acelera ----
-for (let t = .05; t < 5.8;) { const x = t / 5.7; click(t, .04 + .07 * x, 2600 + 1800 * x, Math.sin(t * 11) * .4); t += .2 - .17 * Math.pow(Math.min(1, x), 1.3); }
-tone(0, 6.1, 45, 100, .2, { att: 3, dec: 99, harm: [1, .3] });
-noise(3.4, 2.9, .07, { f0: 200, f1: 3000, q: .5, env: x => x * x });
-kick(4.45, .35); tone(4.45, 1.6, 110, 110, .08, { dec: .6, harm: [1, .5, .2] });
-whoosh(6.25, .9, .5);
+for (let t = .05; t < 2.6;) { const x = t / 2.5; click(t, .05 + .07 * x, 2600 + 1800 * x, Math.sin(t * 11) * .4); t += .19 - .155 * Math.pow(Math.min(1, x), 1.4); }
+tone(0, 2.7, 48, 96, .22, { att: 1.8, dec: 99, harm: [1, .3] });
+noise(.3, 2.4, .06, { f0: 200, f1: 2400, q: .5, env: x => x * x });
+whoosh(2.95, .9, .5);
 // ---- Escena 2: el renglón ----
-kick(6.62, .7);
-pad(6.6, 4.7, [349.2, 440, 523.3, 659.3], .15, .7, 1);
-for (let k = 0; k < 7; k++) click(6.35 + k * .05, .03, 5000, -.5 + k * .15);
-[[7.0, 523.3], [8.1, 659.3], [9.2, 784]].forEach(([t, f], i) => { pluck(t, f, .26, [-.3, 0, .3][i]); blip(t + .12, 900 + i * 150, .12, .4); });
-pluck(9.75, 392, .12, -.2);
-for (let t = 7.0; t < 24.5; t += .5) { if (t > 17.85 && t < 18.95) continue; kick(t, .26); click(t + .25, .032, 7000, .2); }
-whoosh(11.45, .6, .35);
+kick(3.22, .7);
+pad(3.2, 2.8, [349.2, 440, 523.3, 659.3], .16, .6, .8);
+[[3.62, 523.3], [4.42, 659.3], [5.2, 784]].forEach(([t, f], i) => { pluck(t, f, .26, [-.3, 0, .3][i]); blip(t + .12, 900 + i * 150, .12, .4); });
+for (let k = 0; k < 7; k++) click(3.05 + k * .05, .03, 5000, -.5 + k * .15);
+// Pulso de fondo a 120 BPM, con silencio mientras suena la firma
+for (let t = 3.7; t < 12.0; t += .5) { if (t > 8.35 && t < 9.35) continue; kick(t, .28); click(t + .25, .035, 7000, .2); }
+whoosh(5.95, .6, .35);
 // ---- Escena 3: cómo funciona ----
-kick(11.7, .45); blip(11.72, 600, .1);
-[['Leer 10 páginas', 12.15, 12.95], ['Abrir el libro', 13.0, 13.4], ['En el velador', 13.4, 13.7]].forEach(([s, a, b]) => { for (let i = 1; i <= s.length; i++) click(a + (b - a) * i / s.length, .07, 4200 + (i % 3) * 400, .1); });
-whoosh(14.1, .5, .32, false);
-[.3636, .7273, .9091, 1].forEach((x, i) => tone(14.35 + .65 * x, .25, 110, 60, [.45, .22, .12, .06][i], { dec: .07 }));
-blip(14.85, 820, .14, -.3); blip(16.55, 980, .14, .3);
-for (let t = 16.85; t < 17.9; t += .13 - (t - 16.85) * .05) click(t, .05, 6000, .3);
+kick(6.08, .45); blip(6.1, 600, .1);
+const typed = [['Leer 10 páginas', 6.35, 6.78], ['Abrir el libro', 6.78, 7.0], ['En el velador', 6.98, 7.14]];
+typed.forEach(([s, a, b]) => { for (let i = 1; i <= s.length; i++) click(a + (b - a) * i / s.length, .07, 4200 + (i % 3) * 400, .1); });
+whoosh(7.35, .5, .32, false);
+[.3636, .7273, .9091, 1].forEach((x, i) => tone(7.55 + .65 * x, .25, 110, 60, [.45, .22, .12, .06][i], { dec: .07 }));
+blip(7.97, 820, .14, -.3); blip(8.38, 980, .14, .3);
+tone(8.28, .2, 600, 1400, .06, { dec: .12 });
 // Firma sonora de Relevo
 const wav = fs.readFileSync('a/firma-relevo.wav');
 let off = 12; while (wav.toString('ascii', off, off + 4) !== 'data') off += 8 + wav.readUInt32LE(off + 4);
 const dlen = wav.readUInt32LE(off + 4), data = off + 8, srcN = dlen / 2;
-const s0 = Math.floor(17.95 * SR);
+const s0 = Math.floor(8.45 * SR);
 for (let i = 0; s0 + i < N; i++) { const pos = i * 44100 / SR, j = Math.floor(pos); if (j + 1 >= srcN) break; const fr = pos - j; const v = (wav.readInt16LE(data + j * 2) * (1 - fr) + wav.readInt16LE(data + j * 2 + 2) * fr) / 32768; put(s0 + i, v * .95, 0); }
 // ---- Escena 4: la decisión ----
-whoosh(19.55, .8, .4); kick(19.6, .5);
-pad(20.35, 4.2, [293.7, 369.99, 440, 554.4], .11, .5, .8);
-[21.1, 21.24, 21.38].forEach((t, i) => pluck(t, [587.3, 740, 880][i], .18, [-.35, 0, .35][i]));
-whoosh(24.75, .5, .3, false);
-// ---- Escena 4b: el sistema ----
-[24.9, 25.45, 26.0].forEach((t, i) => { kick(t, .4); pluck(t + .05, [523.3, 659.3, 784][i], .2, [-.3, 0, .3][i]); blip(t + .02, 700 + i * 120, .08, -.2); });
+whoosh(9.6, .8, .4); kick(9.62, .5);
+pad(10.2, 1.9, [293.7, 369.99, 440, 554.4], .12, .4, .6);
+[10.75, 10.88, 11.01].forEach((t, i) => pluck(t, [587.3, 740, 880][i], .18, [-.35, 0, .35][i]));
 // ---- Escena 5: logotipo ----
-noise(26.3, 1.1, .12, { f0: 300, f1: 7000, q: .4, env: x => x * x * x });
-tone(26.5, .95, 60, 240, .12, { att: .9, dec: 99 });
-whoosh(27.35, .6, .45);
-kick(27.62, .85); tone(27.62, 1.4, 55, 40, .35, { dec: .5 });
-pad(27.62, 2.38, [261.6, 329.6, 392, 493.9, 587.3], .2, .25, 1.3);
-[1046.5, 1318.5, 1568, 2093, 1568, 2637].forEach((f, i) => pluck(28.15 + i * .065, f, .09, -.5 + i * .2));
-for (let i = 0; i < 6; i++) blip(28.72 + i * .09, 700 + i * 90, .09, i % 2 ? .45 : -.45);
-pluck(28.55, 523.3, .1);
+noise(11.4, 1.0, .12, { f0: 300, f1: 7000, q: .4, env: x => x * x * x });
+tone(11.6, .85, 60, 240, .12, { att: .8, dec: 99 });
+whoosh(12.3, .6, .45);
+kick(12.45, .85); tone(12.45, 1.4, 55, 40, .35, { dec: .5 });
+pad(12.45, 2.55, [261.6, 329.6, 392, 493.9, 587.3], .2, .25, 1.4);
+[1046.5, 1318.5, 1568, 2093, 1568, 2637].forEach((f, i) => pluck(12.95 + i * .065, f, .09, -.5 + i * .2));
+for (let i = 0; i < 6; i++) blip(13.47 + i * .09, 700 + i * 90, .09, i % 2 ? .45 : -.45);
+pluck(13.3, 523.3, .1); pluck(13.75, 659.3, .08);
 
 // Suavizado final, normalización y escritura
-for (let i = Math.floor(29.2 * SR); i < N; i++) { const g = 1 - (i / SR - 29.2) / .8; L[i] *= g; R[i] *= g; }
+for (let i = Math.floor(14.3 * SR); i < N; i++) { const g = 1 - (i / SR - 14.3) / .7; L[i] *= g; R[i] *= g; }
 let peak = 0; for (let i = 0; i < N; i++) peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
 const gain = .89 / peak;
 const buf = Buffer.alloc(44 + N * 4);
