@@ -17,6 +17,7 @@ import com.example.relevo.data.Participation
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RemoteSync
+import com.example.relevo.data.ResearchBackup
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.domain.SignalRoute
@@ -173,7 +174,10 @@ class AppUsageMonitorService : Service() {
     store.save(signalled)
     researchLog.record(signalled.sessionId, signalled.participantCode, if (audible) "signal_emitted" else "signal_failed", signalled.targetPackage, signalled.observedUsageSeconds)
     if (audible) researchLog.markSignal(signalled.sessionId, signalled.observedUsageSeconds, signalAt, usageBefore)
-    scope.launch(Dispatchers.IO) { RemoteSync(this@AppUsageMonitorService, researchLog).syncPending() }
+    scope.launch(Dispatchers.IO) {
+      RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
+      ResearchBackup.write(this@AppUsageMonitorService, researchLog, signalled.participantCode)
+    }
     showCompletionNotification(signalled, audible)
     if (!audible) return
 

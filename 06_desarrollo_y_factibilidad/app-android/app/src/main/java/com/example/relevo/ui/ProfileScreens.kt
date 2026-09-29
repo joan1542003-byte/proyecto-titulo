@@ -86,6 +86,7 @@ internal class ProfileActions(
   val onReport: () -> Unit,
   val onWeekNote: (String) -> Unit,
   val onOpenRoute: () -> Unit,
+  val onHowItWorks: () -> Unit,
 )
 
 /** Fotos que se pueden elegir como imagen de una actividad propia. No se suben fotos propias. */
@@ -147,6 +148,7 @@ internal fun ProfileTab(
     }
     SectionGap()
     ListSection(title = "Ayuda", modifier = Modifier.appear(5)) {
+      ListRow("Cómo funciona Relevo", icon = KitIcon.AYUDA, chevron = true, onClick = actions.onHowItWorks)
       ListRow("Tu opinión", icon = KitIcon.ESTRELLA, chevron = true, onClick = actions.onFeedback)
       ListRow("Reportar un problema", icon = KitIcon.PROBLEMA, chevron = true, onClick = actions.onReport)
     }

@@ -387,6 +387,7 @@ internal fun PrivacyScreen(
             trailing = { if (participantCode.isNotBlank()) RelevoIcon(if (copied) KitIcon.LISTO else KitIcon.COPIAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) })
           ListRow("Consentimiento", icon = KitIcon.CONSENTIMIENTO, value = "Aceptado", chevron = true, onClick = onConsent)
           if (remoteConfigured) ListRow("Envío de datos", icon = KitIcon.SINCRONIZAR, subtitle = syncStatusText(syncStatus))
+          ListRow("Copia en el teléfono", icon = KitIcon.DATOS, subtitle = backupStatusText(syncStatus))
         }
         SectionGap()
       }
@@ -410,7 +411,7 @@ internal fun PrivacyScreen(
     RelevoSheet(onDismiss = { confirming = false }, scrollable = false) {
       Text("¿Borrar tus datos?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base de la prueba. Dejas de participar y Relevo deja de contar.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base de la prueba y la copia de Documentos/Relevo. Dejas de participar y Relevo deja de contar.", style = Relevo.type.body, color = Relevo.colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Borrar mis datos", { confirming = false; onDelete() }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
       Spacer(Modifier.height(8.dp))

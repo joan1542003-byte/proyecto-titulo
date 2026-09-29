@@ -16,6 +16,8 @@ data class SyncStatus(
   val rejected: Int,
   val lastSuccessAt: Long,
   val lastError: String?,
+  /** Última copia en Documentos/Relevo (0 si aún no hay). */
+  val backupAt: Long = 0L,
 )
 
 class RemoteSync(context: Context, private val store: ResearchLogStore) {
@@ -33,6 +35,7 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     rejected = store.countBySyncState(ResearchLogStore.REJECTED),
     lastSuccessAt = preferences.getLong("last_success_at", 0L),
     lastError = preferences.getString("last_error", null),
+    backupAt = ResearchBackup.lastWrittenAt(appContext),
   )
 
   /**
@@ -221,6 +224,7 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     .put("knew_intention", knewIntention ?: JSONObject.NULL).put("recalled_first_step", recalledFirstStep ?: JSONObject.NULL)
     .put("signal_end", signalEnd ?: JSONObject.NULL).put("response_seconds", responseSeconds ?: JSONObject.NULL)
     .put("usage_before_seconds", usageBeforeSeconds ?: JSONObject.NULL).put("usage_after_seconds", usageAfterSeconds ?: JSONObject.NULL)
+    .put("signal_route", signalRoute ?: JSONObject.NULL).put("app_version", appVersion ?: JSONObject.NULL)
 
   private fun PendingAnswer.toJson() = JSONObject()
     .put("client_answer_id", "$participantCode-a$id").put("participant_code", participantCode)

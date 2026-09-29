@@ -156,6 +156,7 @@ En la rama `android-2.7`, a pedido del autor:
 ## Actualización del 28 de septiembre de 2026
 
 - **Presentación del 30 de septiembre:** el [guion](guion-presentacion-correccion-cruzada-2026-09-30.md) pasó a 13 diapositivas según las anotaciones del autor en Figma. También hay un [GIF de la app 2.10](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md) grabado en emulador y un [video de 30 segundos](../10_recursos_visuales/marca-2.0/video/README.md) que explica Relevo con la marca 2.0. Falta pasarlos a las diapositivas de Figma y ensayar.
+- **Android 2.11 (D-086):** para el primer testeo real, la app explica su uso la primera vez con el video en vertical y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7. En Supabase hay vistas de análisis en el esquema `analisis`. Se comprobó en emulador con conexión; faltan el teléfono y el parlante reales ([detalle y pasos](../06_desarrollo_y_factibilidad/app-android/version-2.11-primer-testeo-2026-09-28.md)).
 - **Resumen:** la [bitácora del trabajo con IA](bitacora-trabajo-con-ia-2026-09-26-28.md) reúne lo hecho del 26 al 28 de septiembre, las decisiones, el uso de la IA y los pendientes.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
 
@@ -173,7 +174,7 @@ Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia
 
 ### 2026-09-28 — Actualización del 28 de septiembre
 
-- **Qué cambió:** se añadió una actualización con el guion, el GIF, el video y la bitácora del trabajo con IA.
+- **Qué cambió:** se añadió una actualización con el guion, el GIF, el video, la bitácora del trabajo con IA y Android 2.11.
 - **Cómo estaba antes:** la última actualización era la del 27 de septiembre.
 - **Por qué:** mantener el traspaso al día, a pedido del autor.
 

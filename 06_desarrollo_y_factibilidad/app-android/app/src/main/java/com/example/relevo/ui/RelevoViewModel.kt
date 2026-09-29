@@ -17,6 +17,7 @@ import com.example.relevo.data.Profile
 import com.example.relevo.data.ProfileStore
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.RemoteSync
+import com.example.relevo.data.ResearchBackup
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RouteStore
 import com.example.relevo.data.Settings
@@ -332,7 +333,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       .apply()
     _participation.value = currentParticipation()
     update { copy(participantCode = participantCode, consentAccepted = accepted, localOnly = false, status = ReminderStatus.DRAFT) }
-    if (accepted) refreshDashboard()
+    if (accepted) {
+      refreshDashboard()
+      // Envía lo pendiente y actualiza la copia en el teléfono sin esperar a que la app vuelva a abrirse.
+      syncRemote()
+    }
   }
 
   fun applyPreset(activity: String, firstStep: String, place: String) {
@@ -688,6 +693,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     viewModelScope.launch(Dispatchers.IO) {
       val deleted = remoteSync.deleteOwnResearchData()
       if (deleted) {
+        ResearchBackup.delete(getApplication())
         researchLog.clearAll()
         historyStore.clear()
         customActivityStore.clear()
@@ -749,6 +755,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (deletingData) return
     viewModelScope.launch(Dispatchers.IO) {
       remoteSync.syncPending()
+      // La copia en el teléfono se escribe siempre, haya o no conexión.
+      ResearchBackup.write(getApplication(), researchLog, _reminder.value.participantCode)
       refreshSyncStatus()
     }
   }

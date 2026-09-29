@@ -16,6 +16,7 @@ data class PendingSession(
   val closedAt: Long?, val observedSeconds: Int, val outcome: String?, val consentVersion: String, val targetAppsJson: String,
   val studyCondition: String?, val studyDay: Int?, val knewIntention: String?, val recalledFirstStep: String?,
   val signalEnd: String?, val responseSeconds: Int?, val usageBeforeSeconds: Int?, val usageAfterSeconds: Int?,
+  val signalRoute: String?, val appVersion: String?,
 )
 
 /** Respuesta de una tarjeta semanal o del cierre del día 21. */
@@ -25,7 +26,7 @@ data class PendingAnswer(val id: Long, val participantCode: String, val sessionI
 data class UsageAfterRequest(val sessionId: String, val signalAt: Long, val packages: Set<String>)
 
 class ResearchLogStore(context: Context) :
-  SQLiteOpenHelper(context, "relevo_research.db", null, 5) {
+  SQLiteOpenHelper(context, "relevo_research.db", null, 6) {
 
   private val appContext = context.applicationContext
 
@@ -64,6 +65,7 @@ class ResearchLogStore(context: Context) :
     if (oldVersion == 3) db.execSQL("ALTER TABLE sessions ADD COLUMN target_apps TEXT NOT NULL DEFAULT '[]'")
     if (oldVersion in 3..4) STUDY_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
     if (oldVersion < 5) createAnswersTable(db)
+    if (oldVersion in 3..5) ROUTE_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
   }
 
   private fun createSessionsTable(db: SQLiteDatabase) = db.execSQL(
@@ -85,7 +87,7 @@ class ResearchLogStore(context: Context) :
       outcome TEXT,
       consent_version TEXT NOT NULL,
       synced INTEGER NOT NULL DEFAULT 0,
-      ${STUDY_COLUMNS.joinToString(",\n      ") { (name, type) -> "$name $type" }}
+      ${(STUDY_COLUMNS + ROUTE_COLUMNS).joinToString(",\n      ") { (name, type) -> "$name $type" }}
     )
     """.trimIndent(),
   )
@@ -116,6 +118,8 @@ class ResearchLogStore(context: Context) :
       put("consent_version", CONSENT_VERSION); put("synced", PENDING)
       if (reminder.studyCondition.isNotBlank()) put("study_condition", reminder.studyCondition)
       if (reminder.studyDay >= 0) put("study_day", reminder.studyDay)
+      put("signal_route", if (reminder.signalRoute == com.example.relevo.domain.SignalRoute.PHONE) "phone" else "bluetooth")
+      put("app_version", cl.udp.relevo.BuildConfig.VERSION_NAME)
     }, SQLiteDatabase.CONFLICT_REPLACE)
   }
 
@@ -217,6 +221,7 @@ class ResearchLogStore(context: Context) :
       cursor.string("consent_version"), cursor.string("target_apps"),
       cursor.stringOrNull("study_condition"), cursor.intOrNull("study_day"), cursor.stringOrNull("knew_intention"), cursor.stringOrNull("recalled_first_step"),
       cursor.stringOrNull("signal_end"), cursor.intOrNull("response_seconds"), cursor.intOrNull("usage_before_seconds"), cursor.intOrNull("usage_after_seconds"),
+      cursor.stringOrNull("signal_route"), cursor.stringOrNull("app_version"),
     )) }
   }
 
@@ -276,7 +281,7 @@ class ResearchLogStore(context: Context) :
 
   companion object {
     /** Consentimiento de la prueba de 21 días (protocolo 02). Cambiarlo pide aceptar de nuevo. */
-    const val CONSENT_VERSION = "2026-09-25-v6"
+    const val CONSENT_VERSION = "2026-09-28-v7"
     const val PENDING = 0
     const val SYNCED = 1
     const val REJECTED = 2
@@ -291,6 +296,12 @@ class ResearchLogStore(context: Context) :
       "response_seconds" to "INTEGER",
       "usage_before_seconds" to "INTEGER",
       "usage_after_seconds" to "INTEGER",
+    )
+
+    /** Salida del sonido de cada relevo y versión de la app (versión 6 de la base local, Android 2.11). */
+    private val ROUTE_COLUMNS = listOf(
+      "signal_route" to "TEXT",
+      "app_version" to "TEXT",
     )
   }
 }

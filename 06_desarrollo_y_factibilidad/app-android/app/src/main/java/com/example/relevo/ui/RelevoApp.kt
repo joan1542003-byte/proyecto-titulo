@@ -74,7 +74,7 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.launch
 
 internal enum class Route {
-  WELCOME, CONSENT, PERMISSION, PROFILE_SETUP,
+  WELCOME, HOW_IT_WORKS, CONSENT, PERMISSION, PROFILE_SETUP,
   TABS, PREPARE, ACTIVE, SIGNAL, DECIDE,
   ROUTE_EDIT, PROFILE_EDIT, NOTICES, APPEARANCE, PERMISSIONS, HISTORY, ACTIVITIES, ACTIVITY_EDIT,
   PRIVACY, CONSENT_DETAILS, STUDY, WEEK, CLOSING, FEEDBACK, REPORT,
@@ -164,6 +164,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   var routeEditInterest by rememberSaveable { mutableStateOf("") }
   var editingActivityId by rememberSaveable { mutableStateOf<String?>(null) }
   var routeInterest by rememberSaveable { mutableStateOf<String?>(null) }
+  /** «Cómo funciona» se abre la primera vez, antes del consentimiento, o desde el perfil. */
+  var howFromProfile by rememberSaveable { mutableStateOf(false) }
   val holder = rememberSaveableStateHolder()
   val discarded = remember { mutableStateListOf<Route>() }
   val current = stack.last()
@@ -259,7 +261,9 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
           holder.SaveableStateProvider(route.name) {
             Box(Modifier.fillMaxSize().background(Relevo.colors.paper)) {
               when (route) {
-                Route.WELCOME -> WelcomeScreen(onStart = { push(Route.CONSENT) })
+                Route.WELCOME -> WelcomeScreen(onStart = { howFromProfile = false; push(Route.HOW_IT_WORKS) })
+                Route.HOW_IT_WORKS -> if (howFromProfile) HowItWorksScreen(onContinue = { pop() }, continueLabel = "Entendido", onBack = { pop() })
+                  else HowItWorksScreen(onContinue = { push(Route.CONSENT) }, onBack = { pop() })
                 Route.CONSENT -> ConsentScreen(
                   remoteConfigured = viewModel.remoteConfigured,
                   deletionPending = viewModel.deletionPending,
@@ -319,6 +323,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                         onPrivacy = { push(Route.PRIVACY) },
                         onFeedback = { push(Route.FEEDBACK) },
                         onReport = { push(Route.REPORT) },
+                        onHowItWorks = { howFromProfile = true; push(Route.HOW_IT_WORKS) },
                         onWeekNote = viewModel::submitWeekNote,
                         onOpenRoute = { tab = Tab.ROUTE },
                       ),

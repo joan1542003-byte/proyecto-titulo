@@ -131,3 +131,51 @@ using ((select auth.uid()) = user_id);
 -- La aplicación puede leer, registrar y eliminar únicamente sus propias filas.
 -- Los eventos se insertan una vez y se pueden borrar a solicitud de la persona.
 -- La revisión académica se realiza desde un entorno administrativo protegido.
+
+-- Android 2.11 (28 de septiembre de 2026): salida real del sonido y versión de la app en cada relevo.
+alter table public.relevo_sessions
+  add column if not exists signal_route text check (signal_route is null or signal_route in ('bluetooth', 'phone')),
+  add column if not exists app_version text check (app_version is null or char_length(app_version) <= 20);
+
+-- Vistas de análisis para el investigador (panel de Supabase). El esquema no se expone por la API
+-- y las vistas usan los permisos de quien consulta.
+create schema if not exists analisis;
+revoke all on schema analisis from public, anon, authenticated;
+
+create or replace view analisis.relevos with (security_invoker = true) as
+select
+  s.participant_code, s.session_id, s.study_day, s.study_condition, s.signal_route, s.app_version,
+  s.activity, s.first_step, s.place, s.target_app_label, jsonb_array_length(s.target_apps) as apps_elegidas,
+  round(s.threshold_seconds / 60.0, 1) as minutos_configurados,
+  (s.started_at at time zone 'America/Santiago') as activado,
+  (s.signal_at at time zone 'America/Santiago') as sono,
+  (s.closed_at at time zone 'America/Santiago') as respondido,
+  s.signal_at is not null as hubo_senal, s.signal_end, s.response_seconds, s.outcome,
+  s.knew_intention, s.recalled_first_step, s.usage_before_seconds, s.usage_after_seconds
+from public.relevo_sessions s;
+
+create or replace view analisis.resumen_por_condicion with (security_invoker = true) as
+select
+  participant_code,
+  coalesce(study_condition, 'fuera de la prueba') as condicion,
+  count(*) as relevos,
+  count(*) filter (where signal_at is not null) as con_senal,
+  count(*) filter (where outcome = 'started') as comenzo,
+  count(*) filter (where outcome = 'later') as despues,
+  count(*) filter (where outcome = 'changed') as cambio_de_idea,
+  count(*) filter (where knew_intention = 'yes') as supo_que_hacer,
+  count(*) filter (where knew_intention = 'partly') as supo_a_medias,
+  count(*) filter (where knew_intention = 'no') as no_supo,
+  count(*) filter (where recalled_first_step = 'yes') as recordo_primer_paso,
+  percentile_cont(0.5) within group (order by response_seconds) as mediana_segundos_respuesta,
+  round(avg(usage_before_seconds)) as uso_10_min_antes_promedio,
+  round(avg(usage_after_seconds)) as uso_10_min_despues_promedio
+from public.relevo_sessions
+group by participant_code, coalesce(study_condition, 'fuera de la prueba');
+
+create or replace view analisis.respuestas with (security_invoker = true) as
+select participant_code, question as pregunta, answer as respuesta,
+  (created_at at time zone 'America/Santiago') as respondida, session_id
+from public.relevo_answers;
+
+revoke all on all tables in schema analisis from public, anon, authenticated;

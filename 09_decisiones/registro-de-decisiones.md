@@ -938,7 +938,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** aprobación del autor; comprensión de la firma y del renglón por personas que no conocen el proyecto; legibilidad del vidrio en el teléfono de la prueba; reconocimiento del ícono de vidrio antes de usarlo.
 - **Documentación:** [sistema de marca 2.0](../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md), [vistas](../10_recursos_visuales/marca-2.0/README.md) y [archivo de Figma](https://www.figma.com/design/AUHfsQ6LMMOw7VS07l5ZIz).
 
+## D-086 — Explicación inicial y datos guardados en la base y en el teléfono
+
+- **Fecha:** 2026-09-28.
+- **Estado:** decisión del autor; implementada en Android 2.11, comprobada en emulador, sin probar en el teléfono de la prueba ni con personas.
+- **Decisión:**
+  - *Primera vez*: la app explica cómo usarla antes del consentimiento, con el video de Relevo en vertical y cinco pasos; la explicación se puede volver a abrir desde el perfil.
+  - *Datos*: todo lo que registra la prueba se guarda en Supabase y, además, en una copia en la carpeta Documentos/Relevo del teléfono (JSON y dos tablas CSV), sin el nombre del perfil. Cada relevo guarda la salida real del sonido y la versión de la app. La copia se borra con «Borrar mis datos».
+  - *Salida*: se mantienen el parlante y el teléfono, con la salida fijada por la condición de cada semana.
+- **Decisiones de la herramienta, pendientes de revisión del autor:** el texto de los cinco pasos, que el video empiece sin sonido, el formato y el nombre de los archivos de la copia, las vistas de análisis en Supabase y el paso del consentimiento a la versión v7.
+- **Fundamento:** pedido del autor del 28 de septiembre para dejar la app lista para el primer testeo real. En la revisión se encontró que las respuestas nunca habían llegado a Supabase y que los datos pendientes existían en un solo lugar.
+- **Alternativas:** explicar la app solo en la sesión inicial con el investigador; exportar los datos a mano con «Descargar mis datos»; activar la copia de seguridad de Android, que no permite al investigador leer los archivos.
+- **Condición de revisión:** que las personas entiendan cómo usar la app sin ayuda; que la copia y el envío funcionen en el teléfono de la prueba; revisión docente del consentimiento v7.
+- **Documentación:** [Android 2.11](../06_desarrollo_y_factibilidad/app-android/version-2.11-primer-testeo-2026-09-28.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — D-086
+
+- **Qué cambió:** se registró D-086: explicación inicial con video y datos guardados en Supabase y en una copia en el teléfono.
+- **Cómo estaba antes:** la app no explicaba su uso la primera vez y los datos pendientes solo estaban en la base interna de la app.
+- **Por qué:** pedido del autor del 28 de septiembre.
 
 ### 2026-09-27 — D-085
 

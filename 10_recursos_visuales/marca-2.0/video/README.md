@@ -5,8 +5,9 @@ Video de animación que presenta qué es Relevo, en español, con el lenguaje de
 | Archivo | Formato |
 | --- | --- |
 | [relevo-30s.mp4](relevo-30s.mp4) | Versión vigente. 1920 × 1080, 60 cuadros por segundo, H.264 con audio AAC; 30 s y 10,4 MB |
+| [relevo-30s-vertical.mp4](relevo-30s-vertical.mp4) | La misma pieza en vertical, 1080 × 1920, 60 cuadros por segundo; 30 s y 8,7 MB. En la app 2.11 va una versión de 720 × 1280 y 30 cuadros por segundo (2 MB) en la pantalla «Cómo funciona» |
 | [relevo-15s.mp4](relevo-15s.mp4) | Primera versión, de 15 s (6,9 MB). Se conserva como antecedente |
-| [fuente/](fuente/) | La escena en HTML (`index.html`), el renderizador (`render.js`) y la banda sonora (`audio.js`) de la versión de 30 s; las de 15 s están en `fuente/version-15s/` |
+| [fuente/](fuente/) | La escena en HTML (`index.html`), el renderizador (`render.js`) y la banda sonora (`audio.js`) de la versión de 30 s; las de 15 s están en `fuente/version-15s/`, y la versión vertical (`vertical.html`, el script que la deriva de `index.html` y el renderizador con tamaño configurable) en `fuente/version-vertical/` |
 
 ## Guion
 
@@ -26,6 +27,10 @@ Video de animación que presenta qué es Relevo, en español, con el lenguaje de
 - **Recursos:** Schibsted Grotesk (SIL OFL); seis fotografías CC0 de la app (libro, guitarra, pintar, pan, escribir y aprender), sin imágenes generadas con IA; emoji Noto 3D de Google (SIL OFL); iconos y logotipo propios. Créditos en las [licencias de la app](../../../06_desarrollo_y_factibilidad/app-android/licencias/README.md).
 - **Para regenerar:** copia en una carpeta `a/` las fotos, emoji, iconos, la fuente `sg.ttf` y la firma sonora que carga `index.html`; instala `puppeteer-core`; ejecuta `node render.js all 30` y `node audio.js`, y une el resultado con ffmpeg (`-framerate 60 -i frames/f%04d.jpg -i banda.wav`).
 
+## Versión vertical
+
+Mismo guion, tiempos y sonido. Cambia la composición: el teléfono del comienzo va arriba y el texto debajo; «Vuelve a» y la actividad van en dos líneas; la foto del libro ocupa el centro y, en la decisión, la pantalla de la señal queda arriba y las tres respuestas abajo; las tres frases del sistema y los emoji del cierre se reparten a lo alto. Para regenerarla: `node vert-edits.js` sobre una copia de `index.html` llamada `vertical.html`, y `PAGE=vertical.html W=1080 H=1920 OUT=framesv node renderv.js all 30`.
+
 ## Límites
 
 - La pantalla de la señal es una recreación animada de la app 2.10, no una captura. El GIF grabado en la app está en [capturas/como-funciona-2.10](../../../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md).
@@ -33,6 +38,12 @@ Video de animación que presenta qué es Relevo, en español, con el lenguaje de
 - Usa la marca 2.0, que todavía es una propuesta (D-085).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Versión vertical
+
+- **Qué cambió:** se añadió la versión vertical de 30 segundos, sus fuentes y la explicación de su composición.
+- **Cómo estaba antes:** el video solo existía en horizontal.
+- **Por qué:** el autor pidió incluir el video en la app, ajustado a vertical.
 
 ### 2026-09-28 — Versión de 30 segundos
 

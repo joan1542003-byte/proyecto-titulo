@@ -13,6 +13,7 @@
 | 27 sep. | Desarrollar la marca en Figma acorde a la app nueva, con vidrio líquido, iconos, emoji y tratamiento de imagen. | [Sistema de marca 2.0](../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md), con [vistas](../10_recursos_visuales/marca-2.0/README.md) | `cfa4179` | D-085 (propuesta) |
 | 27 sep. | Leer las anotaciones que dejó en las diapositivas de Figma y actualizar el texto de la presentación. | [Guion de la corrección cruzada, versión 2](guion-presentacion-correccion-cruzada-2026-09-30.md) | `8cc73d9` | — |
 | 27 sep. | Grabar un GIF de la app funcionando. | [GIF de la app 2.10](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md) | `9794456` | — |
+| 28 sep. | Revisar la app y dejarla lista para el primer testeo real: explicar su uso la primera vez, incluir el video en vertical y guardar todo en la base de datos y en el teléfono. | [Android 2.11](../06_desarrollo_y_factibilidad/app-android/version-2.11-primer-testeo-2026-09-28.md) | «Android 2.11: primer testeo» | D-086 |
 | 28 sep. | Un video de animación de 15 segundos que muestre qué es Relevo, en español; después, alargarlo a 30 segundos sin textos que no aporten. | [Relevo en 30 segundos](../10_recursos_visuales/marca-2.0/video/README.md) | `7a052ef` y `6be9b37` | — |
 
 ## 2. Decisiones
@@ -20,6 +21,7 @@
 - **D-083 y D-084** son decisiones del autor, ya implementadas en la app y sin probar con personas. Las elecciones de detalle (qué emoji, el umbral de tono de 0,19, los textos nuevos) las propuso la herramienta y están pendientes de revisión.
 - **D-085**, el sistema de marca 2.0, es una propuesta: el autor pidió el trabajo, pero no ha aprobado el resultado como manual vigente. Reúne D-073 con los cambios de D-083 y D-084.
 - **El guion, el GIF y el video** no crean decisiones nuevas: aplican decisiones vigentes a piezas de presentación. En el guion se corrigieron dos datos vencidos: la prueba es por ahora con una persona (D-081) y la app vigente es la 2.10.
+- **D-086** (Android 2.11) es decisión del autor: explicar la app la primera vez y guardar los datos en Supabase y en el teléfono. El texto de los pasos, el formato de la copia y las vistas de análisis los propuso la herramienta.
 - **Queda sin decidir:**
   - qué versión de la app (2.7 a 2.10) se usa en la prueba de 21 días;
   - si el profesor guía confirma que exigir la participación es compatible con el consentimiento;
@@ -47,6 +49,7 @@ Los pedidos literales, las fuentes consultadas y lo que no se afirma de cada tra
 - **Figma:** cada página se revisó con capturas y se corrigieron los errores encontrados. Las piezas con vidrio líquido nativo se ven casi planas en las capturas exportadas; hay que revisarlas en el editor.
 - **Guion:** los enlaces del repositorio se revisaron (0 rotos). El guion no se ha ensayado.
 - **GIF y video:** se revisaron cuadro a cuadro antes de entregarlos.
+- **Android 2.11:** en emulador y con conexión se comprobó que sesiones, eventos y respuestas llegan a Supabase (las respuestas nunca habían llegado antes), que la copia en el teléfono se escribe con y sin conexión y que el borrado alcanza a ambas. Falta el teléfono y el parlante de la prueba.
 
 ## 5. Correcciones hechas en el camino
 
@@ -73,6 +76,12 @@ Los pedidos literales, las fuentes consultadas y lo que no se afirma de cada tra
 - **Pruebas reales:** la app en el teléfono y el parlante de la prueba, el borrado sin conexión, TalkBack y texto grande, y el defecto visual al responder.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Android 2.11
+
+- **Qué cambió:** se sumaron el pedido y el resultado de Android 2.11, D-086 y sus comprobaciones.
+- **Cómo estaba antes:** la bitácora terminaba con el video de 30 segundos.
+- **Por qué:** registrar el trabajo del mismo día pedido por el autor.
 
 ### 2026-09-28 — Creación
 

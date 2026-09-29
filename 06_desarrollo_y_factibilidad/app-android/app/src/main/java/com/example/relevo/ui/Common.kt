@@ -199,6 +199,9 @@ internal fun syncStatusText(status: SyncStatus): String = buildString {
   status.lastError?.let { append(" Detalle técnico: $it") }
 }
 
+internal fun backupStatusText(status: SyncStatus): String =
+  if (status.backupAt > 0L) "En Documentos/Relevo. Última copia: ${formatMoment(status.backupAt)}." else "Se crea en Documentos/Relevo con el primer relevo."
+
 private val momentFormat = DateTimeFormatter.ofPattern("d MMM, HH:mm", spanish)
 private val todayFormat = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM", spanish)
 

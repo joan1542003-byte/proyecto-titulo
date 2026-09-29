@@ -1,16 +1,24 @@
 # Entregables de Android
 
-La versión más reciente es **2.10**, compilada el 27 de septiembre de 2026. Para usarla hay que participar en la prueba (ya no existe «No participar»); cambia los rótulos por frases claras y sin mayúsculas, aleja el desenfoque del centro, pone el texto de las fotos en blanco o en tinta según su tono, ofrece 84 emoji y rediseña «Tu ruta» y «Tus actividades» (D-084). No cambia la lógica de la prueba ni los datos ([detalle](../version-2.10-participacion-y-claridad-2026-09-27.md)). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
+La versión más reciente es **2.11**, compilada el 28 de septiembre de 2026 para el primer testeo real (D-086). La primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7 ([detalle y pasos para el testeo](../version-2.11-primer-testeo-2026-09-28.md)). La **2.10** exige participar y aclara los textos (D-084). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
 
 | Archivo | Uso |
 | --- | --- |
+| [APK 2.11](relevo-android-2.11-2026-09-28.apk) | Instalación en el teléfono de la prueba (Android 12 o posterior). Incluye URL y clave **publicable** de Supabase; es un APK de depuración, no una publicación de tienda. Se instala sobre versiones anteriores; como el consentimiento cambió a v7, hay que aceptarlo de nuevo. |
+| [Proyecto 2.11 para Android Studio](relevo-android-studio-2.11-2026-09-28.zip) | Abrir y continuar el desarrollo. Sin `local.properties`, `capturas/` ni `assets-explorados/`. |
 | [APK 2.10](relevo-android-2.10-2026-09-27.apk) | Instalación interna en un teléfono con Android 12 o posterior. Incluye URL y clave **publicable** de Supabase; es un APK de depuración, no una publicación de tienda. Se instala sobre la 2.9, la 2.8 o la 2.7 sin pedir de nuevo el consentimiento a quien ya participa; quien usaba la app sin participar debe aceptarlo para seguir. |
 | [Proyecto 2.10 para Android Studio](relevo-android-studio-2.10-2026-09-27.zip) | Abrir y continuar el desarrollo en Windows o macOS. No incluye `local.properties`: para sincronizar en otra máquina hay que configurar URL y clave publicable siguiendo `local.properties.example`. |
 | [APK 2.9](relevo-android-2.9-2026-09-27.apk) y [proyecto 2.9](relevo-android-studio-2.9-2026-09-27.zip) | Vidrio, formas redondeadas y emoji (D-083), con uso sin participar. |
 | [APK 2.8](relevo-android-2.8-2026-09-26.apk) y [proyecto 2.8](relevo-android-studio-2.8-2026-09-26.zip) | Perfil, ruta y aviso de regreso con el sistema D-073, sin vidrio. |
 | [APK 2.7](relevo-android-2.7-2026-09-25.apk) y [proyecto 2.7](relevo-android-studio-2.7-2026-09-25.zip) | La versión del protocolo 02, sin perfil ni ruta. |
 
-**SHA-256 del APK 2.10:** `47D6690AB0E056AE06D8E73330A18C1F7D98D6F6CC56DF67CB57AF79DE3CF289` (39,3 MB).
+**SHA-256 del APK 2.11:** `5E74A5A888C4C65EE4B08DE6442A5DFD929BEAD20BDA8543B7005B909934D59E` (39,4 MB).
+
+**SHA-256 del ZIP 2.11:** `27EF64E06880BEC04290F20312040D13BF54F9EA4046EF4B9D919BA6AD43B340` (9 MB, 226 archivos, con el video de 2 MB). No se volvió a comprobar que el proyecto del ZIP compile por sí solo.
+
+El APK 2.11 salió de una compilación limpia y pasó 58 pruebas unitarias. En emulador y con conexión se comprobaron la primera vez, el inicio de la prueba, dos relevos completos por el teléfono, el envío a Supabase de sesiones, eventos y respuestas, la copia en el teléfono, el borrado de ambas y el funcionamiento sin conexión. Falta probarla en el teléfono y con el parlante de la prueba.
+
+**Antecedente 2.10:** APK `47D6690AB0E056AE06D8E73330A18C1F7D98D6F6CC56DF67CB57AF79DE3CF289` (39,3 MB).
 
 **SHA-256 del ZIP 2.10:** `2A75F5CF9D59EA0445FF16D6487A7F2CC36C55D490A5574D95229C327BE4E062` (7,4 MB). Contiene los archivos fuente y la documentación de `app-android` (222 archivos); se excluyeron compilados, cachés, `releases` y `local.properties`. Desde 2.10 también quedan fuera `capturas/` y `assets-explorados/`, que siguen en el repositorio: con ellas, el ZIP de 2.9 pesaba 61 MB y GitHub advirtió que superaba los 50 MB recomendados. Se comprobó que el proyecto del ZIP compila por sí solo.
 
@@ -25,6 +33,12 @@ El APK 2.10 salió de una compilación limpia y el código pasó 58 pruebas unit
 **Antecedente 2.6:** APK `8AA57837E74DC1B30711E9D52A1859365F0CAB6F702E811354C42831D1CEC3B3`; ZIP `85A573FA9A7F31B385B6680955093AA1434658D7223E22F373E404C10AEBB420`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Entrega Android 2.11
+
+- **Qué cambió:** el índice señala el APK y el proyecto 2.11, con sus huellas y lo comprobado; la 2.10 queda como antecedente.
+- **Cómo era antes:** apuntaba a 2.10 como versión más reciente.
+- **Por qué:** el autor pidió dejar la app lista para el primer testeo real (D-086).
 
 ### 2026-09-27 — Entrega Android 2.10
 

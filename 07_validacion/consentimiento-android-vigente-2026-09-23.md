@@ -14,7 +14,7 @@ Participar es voluntario. Puedo omitir preguntas, silenciar el aviso, retirar el
 
 La aplicación solicita acceso de Android a estadísticas de uso para contar las aplicaciones elegidas. Ese permiso técnico puede permitir consultar uso de otras aplicaciones; el prototipo está diseñado para contabilizar solo las seleccionadas mientras el ciclo está activo. Las notificaciones son un permiso separado. Ningún permiso del sistema sustituye esta decisión de participar.
 
-El teléfono conserva un código aleatorio, la actividad, cómo quiero empezar, el lugar que declaro, las aplicaciones elegidas, el tiempo configurado y acumulado, los momentos de activación, aviso y respuesta, si silencié la señal, el uso de las aplicaciones elegidas en los minutos anteriores y posteriores a la señal, y las respuestas que decida dar. Mi nombre, si lo escribo en el perfil, queda solo en el teléfono. La app intenta enviar estos registros a una base de datos Supabase; si no hay conexión, quedan pendientes en el teléfono. El código reemplaza mi nombre en esos registros, pero no los vuelve anónimos: la combinación de actividades, lugares y horarios podría identificarme. La hoja firmada se guardará separada de los registros. No se recopilan mensajes, fotografías, búsquedas ni contenido de pantalla.
+El teléfono conserva un código aleatorio, la actividad, cómo quiero empezar, el lugar que declaro, las aplicaciones elegidas, el tiempo configurado y acumulado, los momentos de activación, aviso y respuesta, si silencié la señal, el uso de las aplicaciones elegidas en los minutos anteriores y posteriores a la señal, y las respuestas que decida dar. Mi nombre, si lo escribo en el perfil, queda solo en el teléfono. La app intenta enviar estos registros a una base de datos Supabase; si no hay conexión, quedan pendientes en el teléfono. Además, la app guarda una copia de estos registros, sin mi nombre, en la carpeta Documentos/Relevo del teléfono, para que el responsable pueda recuperar los resultados si falla el envío; esa copia se borra cuando pido la eliminación desde la app. El código reemplaza mi nombre en esos registros, pero no los vuelve anónimos: la combinación de actividades, lugares y horarios podría identificarme. La hoja firmada se guardará separada de los registros. No se recopilan mensajes, fotografías, búsquedas ni contenido de pantalla.
 
 Puedo pedir la eliminación de mis registros al correo indicado, entregando el código de participación que aparece en Relevos, o solicitarla desde Privacidad y datos en la app. Si no pido antes su eliminación, se eliminarán, como máximo, el **30 de diciembre de 2026**; después solo quedarán resultados agregados sin vínculo conmigo. La solicitud desde la app detiene el conteo inmediatamente. Si el borrado remoto falla, mantiene los registros locales para poder reintentar y muestra el problema; no reanuda el monitoreo. Antes de iniciar el estudio, el responsable debe comprobar que puede localizar y borrar los datos del teléfono y de Supabase, incluidos los pendientes de sincronización, y explicar qué ocurre con los respaldos. Los resultados académicos se presentarán sin mi nombre.
 
@@ -29,6 +29,12 @@ Nombre y firma de participante: ____________________________________________
 Firma del responsable: _____________________________________________________
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Copia en el teléfono (versión v7 en la app)
+
+- **Qué cambió:** la hoja dice que la app guarda una copia de los registros, sin el nombre, en Documentos/Relevo, y que se borra al pedir la eliminación desde la app. En Android 2.11 el consentimiento pasa a la versión `2026-09-28-v7`.
+- **Cómo estaba antes:** los registros quedaban solo en la base interna de la app y en Supabase.
+- **Por qué:** el autor pidió que todo quede guardado en la base de datos y también en el teléfono, para tener copia de los resultados.
 
 ### 2026-09-25 — Prueba de 21 días
 
