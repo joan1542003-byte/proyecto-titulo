@@ -7,7 +7,7 @@
 
 ## Qué responde
 
-La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Si se diseña un sistema phygital que vincula una actividad que la persona quiere realizar con el lugar donde esa actividad comienza, entonces la recordará a tiempo durante el ocio digital, porque el entorno actúa como señal de recuerdo fuera de la pantalla.». Esta prueba responde:
+La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Esta prueba responde:
 
 | Pregunta | Cómo se responde |
 | --- | --- |
@@ -31,7 +31,7 @@ La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a co
 
 1. la señal de D-078: unos 30 segundos, que se detiene sola;
 2. la condición de la semana, asignada por código, con la instrucción de dónde dejar el parlante;
-3. en la condición «teléfono», el mismo sonido por el altavoz del teléfono y una notificación genérica, «Relevo · Tu intención está disponible», que no muestra la intención ni el primer paso hasta abrirla;
+3. en la condición «teléfono», el mismo sonido por el altavoz del teléfono y una notificación genérica, «Relevo · Es momento de volver a elegir» (texto de la app desde la versión 2.12), que no muestra la intención ni el primer paso hasta abrirla;
 4. las preguntas tras cada señal y las tarjetas semanales;
 5. el registro de tiempo de respuesta, de silencio manual o automático y del uso de las apps elegidas en los 10 minutos anteriores y posteriores a la señal.
 
@@ -162,9 +162,9 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How ar
 
 ### 2026-09-29 — Hipótesis nueva
 
-- **Qué cambió:** «Qué responde» cita la hipótesis nueva de la memoria. Las preguntas, las condiciones y las reglas de decisión no cambian.
-- **Cómo estaba antes:** el protocolo solo citaba la pregunta de la memoria.
-- **Por qué:** el autor simplificó la hipótesis (D-091).
+- **Qué cambió:** «Qué responde» cita la hipótesis nueva de la memoria. La notificación genérica de la condición «teléfono» usa el texto de la app, «Relevo · Es momento de volver a elegir». Las preguntas, las condiciones y las reglas de decisión no cambian.
+- **Cómo estaba antes:** el protocolo solo citaba la pregunta de la memoria, y la notificación decía «Relevo · Tu intención está disponible», texto que la app cambió en la versión 2.12.
+- **Por qué:** el autor simplificó la hipótesis (D-091) y pidió dejar la memoria y sus documentos sin errores.
 
 ### 2026-09-25 — Una persona y sin pregunta de entrevista en la app
 

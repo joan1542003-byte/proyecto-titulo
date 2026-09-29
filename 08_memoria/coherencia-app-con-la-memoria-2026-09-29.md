@@ -33,15 +33,21 @@
 
 ## 4. Qué hay que actualizar en la memoria
 
-Esto no se ha hecho; requiere cuidar los límites de palabras de la memoria.
+Los puntos 1, 2, 3 y 5 se aplicaron el 29 de septiembre de 2026, dentro de los límites de palabras de la memoria. El punto 4 sigue pendiente.
 
-1. **Sección 11, «Autonomía, privacidad y accesibilidad»:** el nombre guardado aparte con el código, la copia en Documentos/Relevo, el registro del uso de la app, la reacción y la opinión rápida.
-2. **Sección 11, «Preparación, señal y cierre del ciclo»:** el párrafo del prototipo aún dice que el tono sigue hasta silenciarlo y que «la versión siguiente lo limitará a unos treinta segundos»; eso ya existe desde la 2.7. También falta la guía de la primera vez.
-3. **Tabla 5:** «Conocer y aceptar» (guía y consentimiento v9) y «Recibir y cerrar» (señal de 30 s, preguntas y reacción).
-4. **Sección 13, «Registro de evidencia»:** qué datos del registro de uso se analizarán.
-5. **Protocolo 02:** texto de la notificación genérica.
+1. **Hecho. Sección 11, «Autonomía, privacidad y accesibilidad»:** el nombre guardado aparte con el código, la copia en el teléfono, el registro del uso de la app, las respuestas y las opiniones.
+2. **Hecho. Sección 11, «Preparación, señal y cierre del ciclo»:** tono de unos treinta segundos que se detiene solo, preguntas de un toque y guía de la primera vez.
+3. **Hecho. Tabla 5:** «Conocer y aceptar» (guía y consentimiento), «Recibir y cerrar» (señal de 30 s y preguntas) y «Mantener o retirar» (eliminación comprobada en emulador).
+4. **Pendiente. Sección 13, «Registro de evidencia»:** qué datos del registro de uso se analizarán.
+5. **Hecho. Protocolo 02 y capítulo 13:** texto de la notificación genérica, «Relevo · Es momento de volver a elegir».
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Actualizaciones aplicadas a la memoria
+
+- **Qué cambió:** la sección 4 marca como hechos los puntos 1, 2, 3 y 5.
+- **Cómo estaba antes:** los cinco puntos estaban pendientes.
+- **Por qué:** el autor pidió revisar la memoria completa y dejarla sin errores.
 
 ### 2026-09-29 — Android 2.14
 
