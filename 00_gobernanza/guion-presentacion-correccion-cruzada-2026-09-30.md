@@ -202,7 +202,7 @@ En el emulador no hay parlante, así que el aviso suena en el teléfono; convien
 
 **Se dice**
 
-> Así se usa. Escribo qué quiero hacer y cómo empiezo: leer, abrir el libro en el marcador. Dejo el objeto junto al libro, no junto al teléfono. Elijo qué apps cuentan y después de cuánto tiempo, y sigo usando el teléfono como siempre. Cuando se cumple el tiempo, suena unos 30 segundos junto al libro. La hipótesis es que, si lo que quiero hacer queda ligado al lugar donde empieza, lo recuerdo a tiempo, porque ese lugar me lo recuerda fuera de la pantalla. Después decido: abrir el libro, seguir en el teléfono o cambiar de idea. Relevo no bloquea nada y no comprueba si leí.
+> Así se usa. Escribo qué quiero hacer y cómo empiezo: leer, abrir el libro en el marcador. Dejo el objeto junto al libro, no junto al teléfono. Elijo qué apps cuentan y después de cuánto tiempo, y sigo usando el teléfono como siempre. Cuando se cumple el tiempo, suena unos 30 segundos junto al libro. La hipótesis es que, si lo que quiero hacer queda vinculado al lugar donde empieza, lo recordaré a tiempo, porque ese lugar me lo trae de vuelta fuera de la pantalla. Después decido: abrir el libro, seguir en el teléfono o cambiar de idea. Relevo no bloquea nada y no comprueba si leí.
 >
 > Lo que ven es la app Android que existe hoy, la versión 2.10. La recorrí completa en un emulador, pero todavía no en un teléfono y un parlante reales; por eso, en la animación, el aviso suena en el teléfono. Por ahora, un parlante Bluetooth hace de objeto; no es el objeto final.
 >

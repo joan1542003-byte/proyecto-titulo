@@ -378,7 +378,7 @@ El alcance inicial considera una persona, una intención activa, un primer paso,
 
 ## Hipótesis y objetivos
 
-> Si se diseña un sistema phygital que liga lo que una persona quiere hacer al lugar donde empieza, entonces lo recuerda a tiempo durante el ocio digital, porque ese lugar le recuerda la actividad fuera de la pantalla.
+> Si se diseña un sistema phygital que vincula lo que una persona quiere hacer con el lugar donde empieza, entonces lo recordará a tiempo durante el ocio digital, porque ese lugar se lo trae de vuelta fuera de la pantalla.
 
 La hipótesis enuncia el principio en que se basa el sistema, no su funcionamiento. Proviene de dos ideas del marco teórico: la dificultad está en recordar a tiempo (McDaniel & Einstein, 2000), cuando otra intención deja de orientar la decisión (de Segovia Vicente et al., 2024), y el lugar donde empieza una actividad puede ayudar a recordarla (Kirsh, 1995; O’Rear & Radvansky, 2019). Relevo aplica ese principio con un aviso sonoro junto al primer paso, y el protocolo 02 lo compara con el mismo aviso en otro lugar y con una notificación en el teléfono (objetivo 3). El efecto se observa en la sesión inicial y en la pregunta que sigue a cada señal. Recordar no obliga a hacer: la persona sigue eligiendo si empieza. La hipótesis se evalúa en cuatro dimensiones: asociación entre señal e intención, aporte del lugar, autonomía y funcionamiento. Se debilita si la persona necesita consultar el teléfono para comprender la señal, si el soporte o la ubicación no marcan una diferencia o si la carga supera el beneficio.
 
