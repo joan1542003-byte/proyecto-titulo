@@ -27,6 +27,7 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
 - [Trazabilidad del uso de IA](trazabilidad-uso-ia-2026-09-23.md): declaración candidata, registros de prompts existentes, distinción entre salida generada y decisión del autor, y ficha para futuras iteraciones.
+- [Bitácora del trabajo con IA del 26 al 28 de septiembre](bitacora-trabajo-con-ia-2026-09-26-28.md): qué se pidió y se hizo (Android 2.9 y 2.10, marca 2.0, guion, GIF y video), decisiones, cómo se usó la IA, qué se comprobó y pendientes.
 - [Dirección del autor y referencias aportadas](direccion-del-autor-y-referencias-2026-09-27.md): criterios, evolución visual, recomendaciones como Laws of UX y correcciones a las herramientas; incluye un [anexo de mensajes originales de Claude y fuentes de Codex](fuentes-direccion-del-autor-2026-09-27.md).
 - [Reflexión sobre diseñar Relevo con IA](reflexion-diseno-con-ia-relevo-2026-09-27.md): borrador para el autor y sus profesores, con tres casos documentados, discusión de los wireframes, aportes, límites y referencias; pendiente de revisión personal antes de incorporarlo a la memoria.
 - [Aplicación del feedback docente del 23 de septiembre](aplicacion-feedback-docente-2026-09-23.md): cambios incorporados, opciones no adoptadas y condiciones antes de trabajar con participantes.
@@ -53,6 +54,12 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Bitácora del trabajo con IA
+
+- **Qué cambió:** se enlazó la bitácora del 26 al 28 de septiembre.
+- **Cómo estaba antes:** esos trabajos solo estaban en sus documentos propios.
+- **Por qué:** el autor pidió documentar todo lo hecho y cómo se usó la IA.
 
 ### 2026-09-27 — Guion de la corrección cruzada, versión 2
 

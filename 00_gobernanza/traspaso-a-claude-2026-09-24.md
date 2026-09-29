@@ -153,6 +153,12 @@ En la rama `android-2.7`, a pedido del autor:
 - **Marca 2.0 en Figma:** a pedido del autor, un [sistema de marca 2.0](../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md) reúne D-073 con el vidrio, las cápsulas, el texto según la foto, las frases sin mayúsculas y los emoji de la app, con variables, 97 iconos, componentes, imágenes y aplicaciones. Es una propuesta (D-085) pendiente de aprobación; el archivo está en el equipo de Figma del autor y sus vistas, en el repositorio.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
 
+## Actualización del 28 de septiembre de 2026
+
+- **Presentación del 30 de septiembre:** el [guion](guion-presentacion-correccion-cruzada-2026-09-30.md) pasó a 13 diapositivas según las anotaciones del autor en Figma. También hay un [GIF de la app 2.10](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md) grabado en emulador y un [video de 30 segundos](../10_recursos_visuales/marca-2.0/video/README.md) que explica Relevo con la marca 2.0. Falta pasarlos a las diapositivas de Figma y ensayar.
+- **Resumen:** la [bitácora del trabajo con IA](bitacora-trabajo-con-ia-2026-09-26-28.md) reúne lo hecho del 26 al 28 de septiembre, las decisiones, el uso de la IA y los pendientes.
+- **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
+
 ## Seguridad, privacidad y GitHub
 
 El README informó que el repositorio fue público al 9 de septiembre de 2026; esa visibilidad debe verificarse antes de cargar material nuevo. No subir notas personales, consentimientos firmados, nombres, contactos de participantes, registros brutos identificables ni archivos locales que no estén preparados para difusión. Mantener solo corpus anonimizado autorizado. No guardar credenciales, `.env`, `local.properties`, claves privadas o copias de bases de datos. El archivo `local.properties.example` es una plantilla, no una credencial.
@@ -164,6 +170,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Actualización del 28 de septiembre
+
+- **Qué cambió:** se añadió una actualización con el guion, el GIF, el video y la bitácora del trabajo con IA.
+- **Cómo estaba antes:** la última actualización era la del 27 de septiembre.
+- **Por qué:** mantener el traspaso al día, a pedido del autor.
 
 ### 2026-09-27 — Marca 2.0 en Figma
 

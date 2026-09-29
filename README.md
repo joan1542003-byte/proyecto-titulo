@@ -51,6 +51,8 @@ La aplicación Android más reciente es **Relevo 2.10** (27 de septiembre), prot
 
 La marca tiene una **propuesta 2.0** en Figma (27 de septiembre, D-085): reúne «Vuelve a lo que querías hacer» (D-073) con el vidrio, las cápsulas, los emoji, el texto según la foto y las frases claras de la app, e incluye variables, 97 iconos, componentes, imágenes y aplicaciones. Está pendiente de aprobación del autor. Consulta el [sistema de marca 2.0](10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md).
 
+Para la corrección cruzada del 30 de septiembre hay un [guion de 13 diapositivas](00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md), un [GIF de la app 2.10](06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md) y un [video de 30 segundos](10_recursos_visuales/marca-2.0/video/README.md). Lo hecho con IA del 26 al 28 de septiembre, con sus decisiones y pendientes, está en la [bitácora del trabajo con IA](00_gobernanza/bitacora-trabajo-con-ia-2026-09-26-28.md).
+
 El proyecto sigue siendo **phygital**: la app organiza la intención y el testigo físico propuesto devuelve una señal en el lugar asociado a la actividad. El parlante Bluetooth actual es una salida de prueba, no el objeto final de Relevo. El valor diferencial —que una señal física y situada aporte más que una notificación— sigue pendiente de evaluación.
 
 La fuente académica vigente es la [memoria v4](08_memoria/memoria-vigente-v4.md), avanzada pero no final. La [investigación visual escrita](10_recursos_visuales/README.md) y el [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) orientan su desarrollo; la forma del objeto y los parámetros de su señal sonora requieren pruebas. La prueba vigente es el [protocolo 02](07_validacion/protocolo-02-prueba-21-dias.md): 21 días en casa, que responden la hipótesis y las preguntas de uso. La [síntesis vigente del proyecto](08_memoria/resumen-vigente-proyecto.md) registra qué existe y qué falta sin atribuir resultados.
@@ -109,6 +111,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Presentación y bitácora
+
+- **Qué cambió:** se enlazaron el guion, el GIF, el video de 30 segundos y la bitácora del trabajo con IA.
+- **Cómo estaba antes:** el estado actual no mencionaba estas piezas.
+- **Por qué:** el autor pidió documentar todo lo hecho.
 
 ### 2026-09-27 — Marca 2.0 en Figma
 

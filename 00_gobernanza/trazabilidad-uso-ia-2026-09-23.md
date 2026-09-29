@@ -22,6 +22,8 @@ Esta formulación se apoya en la [declaración histórica de IA de la memoria v1
 | Android 2.10 del 27 de septiembre | Claude Code reescribió los textos de todas las pantallas, quitó el uso sin participar, programó el tono del texto según cada foto con la luminancia de WCAG 2.2, sumó 60 emoji de Google, rediseñó «Tu ruta» y «Tus actividades», probó en emulador sin red y documentó. Los emoji son de Google, no se generaron. | El autor pidió participación obligatoria, textos claros, ninguna mayúscula sostenida, menos desenfoque, texto según la foto, más emoji y una ruta y unas actividades más claras. Registrado como D-084. | Compilación, 58 pruebas unitarias y recorrido en emulador; sin teléfono real ni personas. |
 | Marca 2.0 en Figma del 27 de septiembre | Claude Code, con el conector oficial de Figma, construyó el archivo: variables, estilos, 97 iconos y 18 componentes a partir del código de 2.10 y de D-073; subió desde el repositorio emoji, imágenes y capturas; calculó el tono de las imágenes; compuso las páginas, afiches y diapositivas, y documentó. No generó imágenes. | El autor pidió llevar el diseño nuevo de la app a la marca en Figma, con vidrio líquido, iconos, emoji y tratamiento de imagen. Registrado como propuesta D-085, pendiente de su aprobación. | Revisión visual con capturas del archivo; sin revisión del autor ni pruebas con personas. |
 | Guion de la corrección cruzada del 27 de septiembre | Claude Code leyó en Figma las anotaciones que el autor dejó en cada diapositiva y reescribió el guion: dato que introduce el problema, marco teórico, mapa de referentes en dos ejes, porqué de cada criterio, guion del GIF de la app, prueba contada en tres momentos, carta Gantt explicada y más preguntas probables. Corrigió datos vencidos (seis personas y app 2.6). | El autor revisó su presentación en Figma y anotó qué cambiar en cada diapositiva. Las frases, los datos elegidos y la diapositiva nueva de marco teórico son propuestas de la herramienta, pendientes de su revisión. | Sin ensayo ni revisión del autor. La encuesta de Google Forms no se incorporó porque sus materiales no están en el repositorio. |
+| GIF de la app 2.10 del 27 de septiembre | Claude Code respaldó los datos del autor en el emulador, preparó sin red un relevo ficticio («Leer 10 páginas»), grabó la pantalla con adb, unió dos tomas con ffmpeg, restauró los datos y documentó. | El autor pidió el GIF para la diapositiva «Cómo funciona». | Es una recreación en emulador: la señal viene de un relevo de prueba de 15 s y suena en el teléfono porque no hay parlante. |
+| Video «Relevo en 30 segundos» del 28 de septiembre | Claude Code escribió el guion visual, animó la pieza en HTML con la marca 2.0, la renderizó cuadro a cuadro con Chrome sin ventana y sintetizó la banda sonora por código, con la firma sonora de D-071; después la alargó a 30 s. Solo usa fotos CC0, no imágenes generadas. | El autor pidió el video de 15 s en español, lo aprobó y pidió alargarlo a 30 s sin textos que no aporten, como «Proyecto de título». | La pantalla de la señal es una recreación animada; «1:47 h» es un ejemplo; nadie fuera del autor lo ha visto. |
 
 Lo que puede sostenerse documentalmente es que la IA permitió **producir variantes y dejar rastros de descarte y corrección**. El repositorio no mide ahorro de tiempo ni permite afirmar que la IA mejoró la calidad de uso de Relevo: eso exigiría comparación y observación con personas. La responsabilidad académica tampoco se transfiere a la herramienta por haber escrito un borrador.
 
@@ -107,7 +109,22 @@ No introducir transcripciones identificables de P1–P8, hojas firmadas, claves 
 - **Decisiones del autor:** pedir el sistema en Figma y sus temas (vidrio líquido, iconos, emoji, tratamiento de imagen). Las decisiones de detalle (niveles de vidrio de marca, reglas nuevas, composición de las piezas, ícono de vidrio) son propuestas de la herramienta en D-085, pendientes de su revisión.
 - **Lo que no se afirma:** que el sistema esté aprobado, que el ícono de vidrio se reconozca ni que las piezas se entiendan mejor que las de D-073.
 
+## Registro del guion, el GIF y el video
+
+- **Fechas y herramienta:** 27 y 28 de septiembre de 2026; Claude Code con el modelo Claude Opus 5.5. Para el guion se usó el conector de Figma solo para leer; para el GIF, el emulador Android, adb y ffmpeg; para el video, HTML, Chrome sin ventana, Node.js y ffmpeg.
+- **Pedidos literales del autor:** para el guion, «basicamente deje anotaciones en cada slide, relacioandas a la paresentaicon del miercoles [...] necesitro que leas esas naotaciones ay ctualices el contenido del .md que tien eel texto de las slides»; para el GIF, «grava el gif»; para el video, «make a dynamic 15-second motion graphics video [...] the v ideo shows what is relevo, in spanish.» y luego «hazla de 30 segundos. esta muy buena, evita poner textos que no aporten como "Proyectro de titulo"».
+- **Fuentes usadas:** las anotaciones del autor en la presentación de Figma, la memoria y los documentos vigentes del repositorio, la app 2.10 y la marca 2.0. No se consultaron fuentes externas nuevas.
+- **Qué hizo la herramienta:** reescribió el guion en 13 diapositivas con instrucciones para Figma; grabó y montó el GIF sin red y sin datos personales, restaurando después los datos del emulador; diseñó, animó y sonorizó el video y lo documentó con su guion por segundos y sus fuentes.
+- **Decisiones del autor:** qué cambiar en cada diapositiva, pedir el GIF y el video, aprobar la primera versión del video y quitar los textos de relleno. Las frases, el orden de las escenas, la música y el ritmo son propuestas de la herramienta.
+- **Lo que no se afirma:** que la presentación esté ensayada, que el GIF muestre una señal real del objeto ni que el video se entienda sin explicación; ninguna pieza se ha mostrado a otras personas.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Guion, GIF y video
+
+- **Qué cambió:** se añadieron filas para el GIF y el video y un registro común del guion, el GIF y el video, con los pedidos literales del autor.
+- **Cómo estaba antes:** la tabla tenía la fila del guion, pero no había registro de este ni filas para el GIF y el video.
+- **Por qué:** el autor pidió documentar todo lo hecho y cómo se usó la IA.
 
 ### 2026-09-27 — Guion de la corrección cruzada
 

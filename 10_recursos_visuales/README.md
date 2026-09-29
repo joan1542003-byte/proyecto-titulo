@@ -44,7 +44,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 19. [Suena donde empieza](19_marca-suena-donde-empieza-2026-09-25.md) y sus [materiales](marca-suena-donde-empieza/README.md): lámina, firma sonora, logotipo y fotos (piezas visuales vigentes dentro de D-072)
 20. [Plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) y su [lámina](marca-antes-de-que-sea-despues/README.md) (antecedente)
 21. [Vuelve a lo que querías hacer](21_marca-relevo-a-tiempo-2026-09-25.md) y su [manual](marca-a-tiempo/README.md)
-22. [Sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) y sus [vistas](marca-2.0/README.md) (propuesta D-085)
+22. [Sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) y sus [vistas](marca-2.0/README.md) (propuesta D-085), con el [video de 30 segundos](marca-2.0/video/README.md)
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -74,6 +74,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-28 — Video de 30 segundos
+
+- **Qué cambió:** el índice enlaza el video de animación de la marca 2.0.
+- **Cómo estaba antes:** solo enlazaba el documento y las vistas.
+- **Por qué:** el autor pidió documentar todo lo hecho.
 
 ### 2026-09-27 — Sistema de marca 2.0
 
