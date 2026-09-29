@@ -242,7 +242,8 @@ internal fun ProfileSetupScreen(
     onBack = if (step > 0) ({ go(step - 1) }) else null,
     step = "${step + 1} de 3",
     progress = (step + 1) / 3f,
-    trailing = { GlassTextButton("Saltar", { if (step < 2) go(step + 1) else onFinish(false) }, color = Relevo.colors.graphite) },
+    // El nombre es obligatorio desde 2.13 (D-089); el emoji y los intereses se pueden saltar.
+    trailing = if (step > 0) ({ GlassTextButton("Saltar", { if (step < 2) go(step + 1) else onFinish(false) }, color = Relevo.colors.graphite) }) else null,
     bottom = {
       when (step) {
         0 -> RelevoButton("Seguir", { onName(name.trim()); go(1) }, enabled = name.isNotBlank())
@@ -265,8 +266,10 @@ internal fun ProfileSetupScreen(
           0 -> {
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Avatar(image, name, 104.dp) }
             SectionGap()
-            RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Como quieras que te diga Relevo", imeAction = ImeAction.Next,
+            RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Tu nombre o como te dicen", imeAction = ImeAction.Next,
               onImeAction = { if (name.isNotBlank()) { onName(name.trim()); go(1) } })
+            Spacer(Modifier.height(10.dp))
+            Text("Lo guardamos junto a tu código, aparte de lo que haces en Relevo.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
           }
           1 -> {
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { Avatar(image, name, 104.dp) }
@@ -307,7 +310,7 @@ internal fun EmojiGrid(selected: String, onSelect: (String) -> Unit) {
 /** P3: intereses con foto, en dos columnas; «Otra» abre un renglón para escribirla. */
 @Composable
 internal fun InterestGrid(selected: List<String>, other: String, onToggle: (String) -> Unit, onOther: (String) -> Unit) {
-  val options = Interests.all.map { Triple(it.id, it.label, interestPhoto(it.id)?.let { photo -> Picture.OfPhoto(photo) } as Picture?) } +
+  val options = Interests.all.map { Triple(it.id, it.label, (interestPhoto(it.id)?.let { photo -> Picture.OfPhoto(photo) } ?: Picture.OfIcon(interestIcon(it.id))) as Picture?) } +
     Triple(Interests.OTHER, "Otra", Picture.OfIcon(KitIcon.AGREGAR))
   options.chunked(2).forEach { row ->
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {

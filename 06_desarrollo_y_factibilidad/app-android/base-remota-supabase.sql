@@ -247,3 +247,38 @@ from public.relevo_app_events
 group by participant_code;
 
 revoke all on all tables in schema analisis from public, anon, authenticated;
+
+-- Android 2.13 (29 de septiembre de 2026, D-089): el nombre se guarda aparte, solo con el código.
+create table if not exists public.relevo_participants (
+  user_id uuid primary key default auth.uid() references auth.users(id) on delete cascade,
+  participant_code text not null check (char_length(participant_code) between 3 and 24),
+  name text not null check (char_length(name) between 1 and 60),
+  consent_version text not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+create index if not exists relevo_participants_code_idx on public.relevo_participants (participant_code);
+
+alter table public.relevo_participants enable row level security;
+revoke all on table public.relevo_participants from anon, authenticated;
+grant select, insert, update, delete on table public.relevo_participants to authenticated;
+
+drop policy if exists "participants insert own profile" on public.relevo_participants;
+create policy "participants insert own profile" on public.relevo_participants for insert to authenticated
+with check ((select auth.uid()) = user_id);
+drop policy if exists "participants read own profile" on public.relevo_participants;
+create policy "participants read own profile" on public.relevo_participants for select to authenticated
+using ((select auth.uid()) = user_id);
+drop policy if exists "participants update own profile" on public.relevo_participants;
+create policy "participants update own profile" on public.relevo_participants for update to authenticated
+using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
+drop policy if exists "participants delete own profile" on public.relevo_participants;
+create policy "participants delete own profile" on public.relevo_participants for delete to authenticated
+using ((select auth.uid()) = user_id);
+
+-- Vista para el investigador: nombre y código. Las demás vistas de análisis no incluyen el nombre.
+create or replace view analisis.participantes with (security_invoker = true) as
+select participant_code, name as nombre, consent_version, (created_at at time zone 'America/Santiago') as registro,
+  (updated_at at time zone 'America/Santiago') as actualizado
+from public.relevo_participants;
+revoke all on all tables in schema analisis from public, anon, authenticated;

@@ -1,6 +1,29 @@
 package com.example.relevo.ui
 
 import android.graphics.SurfaceTexture
+import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.text.font.FontWeight
+import com.example.relevo.ui.components.ButtonKind
+import com.example.relevo.ui.components.GlassTextButton
+import com.example.relevo.ui.components.Motion
+import com.example.relevo.ui.components.Photo
+import com.example.relevo.ui.components.PhotoImage
+import com.example.relevo.ui.components.ProgressLine
+import com.example.relevo.ui.components.RelevoIcon
+import com.example.relevo.ui.components.Signature
+import com.example.relevo.ui.components.StatusChip
 import android.media.MediaPlayer
 import android.view.Surface
 import android.view.TextureView
@@ -47,21 +70,16 @@ import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.rememberReduceMotion
 
-/** Un paso de «Cómo funciona»: qué hace la persona y qué pasa. */
-private data class HowStep(val title: String, val text: String)
-
-private val howSteps = listOf(
-  HowStep("Elige qué quieres hacer", "Por ejemplo, leer 10 páginas. Anota el primer paso, como abrir el libro, y dónde lo haces."),
-  HowStep("Elige las apps y el tiempo", "Por ejemplo, 15 minutos en Instagram. Relevo solo cuenta el tiempo en esas apps; no ve lo que haces en ellas."),
-  HowStep("Deja el parlante donde empiezas", "Encendido y conectado al teléfono, junto a lo que necesitas para empezar. Algunas semanas la app te pedirá dejarlo en otro lugar o usar el teléfono."),
-  HowStep("Cuando suene, tú decides", "Suena unos 30 segundos y se detiene solo. Puedes empezar, dejarlo para después o cambiar de idea. Ninguna respuesta es mejor que otra."),
-  HowStep("Responde con un toque", "Después de cada aviso y al final de cada semana hay preguntas breves. Puedes omitirlas."),
-)
+/** Una pantalla de la guía: un título, un ejemplo que se ve como en la app y una explicación corta. */
+private class GuidePage(val key: String, val title: String, val text: String, val example: @Composable () -> Unit)
 
 /**
- * Explica cómo usar Relevo antes del consentimiento y, después, desde el perfil. Arriba, el video
- * vertical de 30 segundos (sin voz, empieza en silencio); abajo, los cinco pasos con las palabras
- * de la app. En la prueba, el objeto del video es un parlante Bluetooth.
+ * Guía de la primera vez (D-088): antes del consentimiento explica, una por una, las partes de un
+ * relevo con un ejemplo de cada pantalla. La memoria pide explicar la condición «con ejemplos»
+ * (sección 11) y que la persona entienda el propósito antes de aceptar (tabla 5), sin cargar la
+ * preparación (criterio 6): cada pantalla es corta y la guía se puede saltar. La primera vez termina
+ * preguntando por el aviso semanal, sin respuesta marcada (configuración voluntaria). Desde el perfil
+ * se abre igual, sin esa pregunta.
  */
 @Composable
 internal fun HowItWorksScreen(
@@ -70,34 +88,152 @@ internal fun HowItWorksScreen(
   onBack: (() -> Unit)? = null,
   /** Registro de uso: segundos vistos, si llegó al final y si activó el sonido. */
   onVideo: (seconds: Int, completed: Boolean, soundOn: Boolean) -> Unit = { _, _, _ -> },
+  /** Solo la primera vez: la respuesta al aviso semanal. */
+  onReturnNotice: ((Boolean) -> Unit)? = null,
+  /** Registro de uso: la pantalla de la guía que se muestra. */
+  onPage: (String) -> Unit = {},
 ) {
-  RelevoScreen(
-    title = "Cómo funciona",
-    onBack = onBack,
-    bottom = { RelevoButton(continueLabel, onContinue) },
-  ) {
-    IntroVideo(Modifier.fillMaxWidth(.62f).align(Alignment.CenterHorizontally), onVideo)
-    SectionGap()
-    Panel {
-      howSteps.forEachIndexed { index, step ->
-        Row(verticalAlignment = Alignment.Top) {
-          Box(Modifier.size(32.dp).clip(CircleShape).background(Relevo.colors.ink), contentAlignment = Alignment.Center) {
-            Text("${index + 1}", style = Relevo.type.label, color = Relevo.colors.onInk)
-          }
-          Spacer(Modifier.width(14.dp))
-          Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-            Text(step.title, style = Relevo.type.headline, color = Relevo.colors.ink)
-            Text(step.text, style = Relevo.type.subhead, color = Relevo.colors.graphite)
+  val pages = buildList {
+    add(GuidePage("video", "Qué es Relevo", "Relevo te ayuda a volver a algo que quieres hacer cuando llevas un rato en el teléfono. Te mostramos cómo, en pasos cortos.") {
+      IntroVideo(Modifier.fillMaxWidth(.56f), onVideo)
+    })
+    add(GuidePage("actividad", "1. Anota qué quieres hacer", "Algo tuyo, que quieras hacer hoy o esta semana: leer, dormir a tiempo, pasear al perro.") {
+      GuidePanel {
+        PhotoImage(Photo.LEER, Modifier.fillMaxWidth().height(150.dp).clip(RoundedCornerShape(20.dp)))
+        Spacer(Modifier.height(14.dp))
+        Signature("leer", animate = false)
+      }
+    })
+    add(GuidePage("primer_paso", "2. Elige cómo empiezas", "Lo primero que harías, bien concreto y pequeño. Mientras más pequeño, menos cuesta empezar.") {
+      GuidePanel {
+        Signature("leer", animate = false, style = Relevo.type.title2)
+        Spacer(Modifier.height(8.dp))
+        Text("Empieza por abrir el libro, en el velador.", style = Relevo.type.title2.copy(fontWeight = FontWeight.Normal), color = Relevo.colors.ink)
+      }
+    })
+    add(GuidePage("lugar", "3. Deja el parlante donde empiezas", "Encendido y conectado al teléfono, junto a lo que usas para empezar. Algunas semanas te pediremos dejarlo en otro lugar o que suene en el teléfono.") {
+      GuidePanel { PhotoImage(Photo.PUERTA, Modifier.fillMaxWidth().height(190.dp).clip(RoundedCornerShape(20.dp)), describe = true) }
+    })
+    add(GuidePage("cuando", "4. Elige cuándo te avisa", "Eliges las apps donde se te pasa el tiempo y cuánto rato. Cuando sumas ese tiempo, suena. Relevo solo cuenta el tiempo; no ve lo que haces.") {
+      GuidePanel {
+        StatusChip(KitIcon.APPS, "Instagram y TikTok")
+        Spacer(Modifier.height(14.dp))
+        ProgressLine(.6f)
+        Spacer(Modifier.height(8.dp))
+        Text("18 min de 30 min", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+      }
+    })
+    add(GuidePage("aviso", "5. Cuando suena", "Suena unos 30 segundos y para solo. No te obliga a nada: te recuerda lo que querías hacer. Si estás bien donde estás, sigue.") {
+      GuidePanel {
+        StatusChip(KitIcon.PARLANTE, "Suena en el parlante")
+        Spacer(Modifier.height(12.dp))
+        Text("Es momento de volver a elegir", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+        Signature("leer", animate = false, style = Relevo.type.title2)
+      }
+    })
+    add(GuidePage("decides", "6. Tú decides", "Después nos cuentas qué hiciste y cómo te cayó el aviso. Empezar, dejarlo para después o cambiar de idea valen lo mismo.") {
+      GuidePanel {
+        listOf(KitIcon.COMENCE to "Comencé la actividad", KitIcon.DESPUES to "La dejé para después", KitIcon.CAMBIE to "Cambié de idea").forEach { (icon, label) ->
+          Row(Modifier.fillMaxWidth().padding(vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
+            RelevoIcon(icon, size = 20.dp, background = Relevo.colors.card)
+            Spacer(Modifier.width(12.dp))
+            Text(label, style = Relevo.type.headline, color = Relevo.colors.ink)
           }
         }
-        if (index < howSteps.lastIndex) Spacer(Modifier.height(18.dp))
+        Spacer(Modifier.height(10.dp))
+        FacePicker(feelingFaces, null, {}, size = 32.dp)
+      }
+    })
+    add(GuidePage("ruta", "7. Ideas, ruta y actividades", "Si no sabes qué anotar, en Inicio hay ideas y en Ruta tienes pasos pequeños para lo que te gustaría hacer más seguido. Lo que haces seguido lo guardas en «Tus actividades».") {
+      GuidePanel {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+          RelevoIcon(KitIcon.PRIMER_PASO, size = 22.dp, background = Relevo.colors.card)
+          Spacer(Modifier.width(12.dp))
+          Column { Text("Tu ruta · Leer", style = Relevo.type.headline, color = Relevo.colors.ink); Text("Paso 1: leer 10 páginas", style = Relevo.type.subhead, color = Relevo.colors.graphite) }
+        }
+        Spacer(Modifier.height(14.dp))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+          RelevoIcon(KitIcon.ACTIVIDAD, size = 22.dp, background = Relevo.colors.card)
+          Spacer(Modifier.width(12.dp))
+          Column { Text("Tus actividades", style = Relevo.type.headline, color = Relevo.colors.ink); Text("Listas para preparar en un toque", style = Relevo.type.subhead, color = Relevo.colors.graphite) }
+        }
+      }
+    })
+    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Lo puedes cambiar cuando quieras en Perfil.") {
+      GuidePanel {
+        StatusChip(KitIcon.AVISOS, "Relevo")
+        Spacer(Modifier.height(10.dp))
+        Text("¿Quieres preparar un relevo esta semana?", style = Relevo.type.headline, color = Relevo.colors.ink)
+      }
+    })
+  }
+  var index by rememberSaveable { mutableIntStateOf(0) }
+  var forward by remember { mutableStateOf(true) }
+  val reduce = rememberReduceMotion()
+  val page = pages[index.coerceIn(0, pages.lastIndex)]
+  val last = index >= pages.lastIndex
+  fun go(to: Int) { forward = to > index; index = to.coerceIn(0, pages.lastIndex) }
+  LaunchedEffect(page.key) { onPage(page.key) }
+  BackHandler(enabled = index > 0) { go(index - 1) }
+  RelevoScreen(
+    title = page.title,
+    onBack = if (index > 0) ({ go(index - 1) }) else onBack,
+    step = "${index + 1} de ${pages.size}",
+    progress = (index + 1f) / pages.size,
+    trailing = if (!last) ({ GlassTextButton("Saltar", { go(pages.lastIndex) }, color = Relevo.colors.graphite) }) else null,
+    bottom = {
+      when {
+        !last -> RelevoButton("Seguir", { go(index + 1) })
+        onReturnNotice != null -> {
+          RelevoButton("Sí, avísame", { onReturnNotice(true); onContinue() })
+          RelevoButton("No, gracias", { onReturnNotice(false); onContinue() }, kind = ButtonKind.Secondary)
+        }
+        else -> RelevoButton(continueLabel, onContinue)
+      }
+    },
+  ) {
+    AnimatedContent(
+      targetState = index,
+      transitionSpec = {
+        if (reduce) EnterTransition.None togetherWith ExitTransition.None
+        else if (forward) (slideInHorizontally(Motion.smooth()) { it / 4 } + fadeIn(Motion.standard())) togetherWith (slideOutHorizontally(Motion.smooth()) { -it / 4 } + fadeOut(Motion.standard(Motion.SHORT)))
+        else (slideInHorizontally(Motion.smooth()) { -it / 4 } + fadeIn(Motion.standard())) togetherWith (slideOutHorizontally(Motion.smooth()) { it / 4 } + fadeOut(Motion.standard(Motion.SHORT)))
+      },
+      label = "guide",
+    ) { current ->
+      val shown = pages[current.coerceIn(0, pages.lastIndex)]
+      Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+        shown.example()
+        SectionGap()
+        Text(shown.text, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.fillMaxWidth())
+        if (shown.key == "video") {
+          Spacer(Modifier.height(10.dp))
+          Text("Por ahora, lo que suena es un parlante Bluetooth.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.fillMaxWidth())
+        }
       }
     }
-    Spacer(Modifier.height(14.dp))
-    Text(
-      "Por ahora, lo que suena es un parlante Bluetooth. Lo que preparas y respondes se guarda con un código, no con tu nombre.",
-      style = Relevo.type.footnote, color = Relevo.colors.graphite,
-    )
+  }
+}
+
+/** Marco de los ejemplos de la guía. */
+@Composable
+private fun GuidePanel(content: @Composable ColumnScope.() -> Unit) {
+  Panel(Modifier.fillMaxWidth()) { content() }
+}
+
+/**
+ * Nota de la guía dentro de una pantalla real (preparar, señal, respuesta), solo hasta completar el
+ * primer relevo. Dice qué hacer en esa pantalla y para qué, en una o dos frases.
+ */
+@Composable
+internal fun GuideTip(text: String, modifier: Modifier = Modifier) {
+  Row(
+    modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Relevo.colors.voiceSoft).padding(horizontal = 16.dp, vertical = 12.dp),
+    verticalAlignment = Alignment.Top,
+  ) {
+    RelevoIcon(KitIcon.AYUDA, size = 20.dp, tint = Relevo.colors.voice, background = Relevo.colors.voiceSoft)
+    Spacer(Modifier.width(10.dp))
+    Text(text, style = Relevo.type.subhead, color = Relevo.colors.ink)
   }
 }
 

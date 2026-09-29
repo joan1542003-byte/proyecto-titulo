@@ -320,7 +320,7 @@ class ResearchLogStore(context: Context) :
 
   companion object {
     /** Consentimiento de la prueba de 21 días (protocolo 02). Cambiarlo pide aceptar de nuevo. */
-    const val CONSENT_VERSION = "2026-09-29-v8"
+    const val CONSENT_VERSION = "2026-09-29-v9"
     const val PENDING = 0
     const val SYNCED = 1
     const val REJECTED = 2

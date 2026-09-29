@@ -61,6 +61,7 @@ internal fun SignalScreen(
   studyActive: Boolean,
   onTestSound: (SignalRoute?) -> Boolean,
   onContinue: () -> Unit,
+  guided: Boolean = false,
 ) {
   val sounding = reminder.signalDelivered && !reminder.signalEnded
   var tested by rememberSaveable { mutableStateOf<Boolean?>(null) }
@@ -72,6 +73,10 @@ internal fun SignalScreen(
     bottom = { RelevoButton(if (sounding) "Silenciar y continuar" else "Continuar", onContinue, icon = if (sounding) KitIcon.SILENCIAR else null) },
   ) {
     Spacer(Modifier.height(22.dp))
+    if (guided) {
+      GuideTip("Así suena Relevo. Toca «Silenciar y continuar» y después cuéntanos qué hiciste.")
+      Spacer(Modifier.height(16.dp))
+    }
     Box(Modifier.appear(0)) {
       when {
         !reminder.signalDelivered -> StatusChip(KitIcon.ERROR, "No sonó")
@@ -125,7 +130,7 @@ private fun SoundingChip(phone: Boolean) {
  * configurada la prueba. Las tres respuestas tienen el mismo tamaño, color y lugar; todo se puede saltar.
  */
 @Composable
-internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, onAnswer: (String, String?, String?, String?) -> Unit) {
+internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, guided: Boolean = false, onAnswer: (String, String?, String?, String?) -> Unit) {
   var knew by rememberSaveable { mutableStateOf<String?>(null) }
   var recalled by rememberSaveable { mutableStateOf<String?>(null) }
   var feeling by rememberSaveable { mutableStateOf<String?>(null) }
@@ -134,6 +139,10 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
     bottom = { PlainAction("Saltar", { finish("not_answered") }, color = Relevo.colors.graphite) },
   ) {
     Spacer(Modifier.height(8.dp))
+    if (guided) {
+      GuideTip("Responde lo que pasó de verdad. No hay respuestas buenas ni malas; todas nos ayudan a mejorar Relevo.")
+      Spacer(Modifier.height(16.dp))
+    }
     Row(verticalAlignment = Alignment.CenterVertically) {
       PictureContent(activityPicture(reminder.activity, customActivities), Modifier.size(64.dp).clip(CircleShape), iconSize = 26.dp)
       Spacer(Modifier.width(16.dp))

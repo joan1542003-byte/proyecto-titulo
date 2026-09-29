@@ -139,6 +139,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { viewModel.onAppResumed() }
   LifecycleEventEffect(Lifecycle.Event.ON_PAUSE) { viewModel.onAppPaused() }
   val quickFeedbackDue by viewModel.quickFeedbackDue.collectAsState()
+  val guide by viewModel.guide.collectAsState()
 
   val preferences = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   fun onboardingComplete() = preferences.getBoolean("onboarding_complete", false)
@@ -271,7 +272,11 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
               when (route) {
                 Route.WELCOME -> WelcomeScreen(onStart = { howFromProfile = false; push(Route.HOW_IT_WORKS) })
                 Route.HOW_IT_WORKS -> if (howFromProfile) HowItWorksScreen(onContinue = { pop() }, continueLabel = "Entendido", onBack = { pop() }, onVideo = viewModel::onTutorialVideo)
-                  else HowItWorksScreen(onContinue = { push(Route.CONSENT) }, onBack = { pop() }, onVideo = viewModel::onTutorialVideo)
+                  else HowItWorksScreen(
+                    onContinue = { push(Route.CONSENT) }, onBack = { pop() }, onVideo = viewModel::onTutorialVideo,
+                    onReturnNotice = viewModel::chooseReturnNotice,
+                    onPage = { viewModel.logScreen("guia_$it") },
+                  )
                 Route.CONSENT -> ConsentScreen(
                   remoteConfigured = viewModel.remoteConfigured,
                   deletionPending = viewModel.deletionPending,
@@ -308,6 +313,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                       study = study, usageAccess = usageAccess, backgroundUnrestricted = backgroundUnrestricted, profile = profile,
                       routes = routes, acknowledgement = acknowledgement, returnDismissedFor = returnDismissedFor,
                       quickFeedbackDue = quickFeedbackDue, onQuickFeedback = viewModel::submitQuickFeedback, onFeedback = { push(Route.FEEDBACK) },
+                      guided = guide.prepare,
                       changedRouteInterest = changedRouteInterest, reselect = reselect, actions = homeActions,
                       onChangeRoute = { interest -> viewModel.clearChangedRoute(); acknowledgement = null; routeEditInterest = interest; push(Route.ROUTE_EDIT) },
                     )
@@ -343,7 +349,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 }
                 Route.PREPARE -> PrepareScreen(
                   reminder = reminder, apps = apps, customActivities = customActivities, routes = routes, usageAccess = usageAccess,
-                  backgroundUnrestricted = backgroundUnrestricted, studyCondition = study.condition, photoKey = photoKey,
+                  backgroundUnrestricted = backgroundUnrestricted, studyCondition = study.condition, photoKey = photoKey, guided = guide.prepare,
                   actions = PrepareActions(
                     onActivity = viewModel::updateActivity,
                     onStart = viewModel::updateHowToStart,
@@ -369,10 +375,10 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   onUsageSettings = viewModel::openUsageAccessSettings, onBackground = viewModel::requestBackgroundAccess,
                 )
                 Route.SIGNAL -> SignalScreen(
-                  reminder = reminder, customActivities = customActivities, studyActive = study.condition != null,
+                  reminder = reminder, customActivities = customActivities, studyActive = study.condition != null, guided = guide.signal,
                   onTestSound = { viewModel.testSignal(it) }, onContinue = viewModel::silence,
                 )
-                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered) { outcome, knew, recalled, feeling ->
+                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered, guided = guide.decide) { outcome, knew, recalled, feeling ->
                   viewModel.completeEvaluation(outcome, knew, recalled, feeling)
                   acknowledgement = if (settings.acknowledgements) acknowledgementFor(outcome) else null
                   viewModel.reset()

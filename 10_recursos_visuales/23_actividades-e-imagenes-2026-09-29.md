@@ -10,6 +10,8 @@ En las entrevistas P1 a P8 aparecen, entre otras, dormir, leer, escribir, hacer 
 
 Todas comparten dos reglas: se pueden empezar en menos de un minuto y el primer paso se puede ver en una foto.
 
+**Origen.** Salen de las entrevistas (corpus, Q1, Q2 y Q12): dormir (P2, P3, P8), leer (P6, P8), manga (P1), hacer ejercicio y entrenar (P1, P3), salir en bicicleta (P7), pasear al perro (P1, P4), dibujar, pintar y manualidades (P2), maquetas y sudoku (P6), cocinar (P1), ordenar la pieza (P5), meditar (P3), tareas (P8), comer con la familia (P6) y fútbol (P7). Son **propuestas sin base en las entrevistas**: trotar, yoga, gimnasio, teclado, tejer, tomar fotos, idioma, proyecto propio, lavar la ropa, cuidar las plantas, preparar la comida de mañana, juego de mesa y escribirle a alguien. Desde Android 2.13 (D-088), la app solo usa las primeras en sus ideas e intereses.
+
 ## Las actividades
 
 «Nombre» es lo que se lee en la app; «Para empezar» y «Dónde», lo que la app propone y la persona puede cambiar. «Archivo» es el nombre sugerido para la imagen.
@@ -101,6 +103,12 @@ Ejemplo para «Andar en bicicleta»: `[A bicycle leaning against a hallway wall,
 4. Avisar para sumarlas a «Ideas» en la app, con su texto y su foto.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Origen de cada actividad
+
+- **Qué cambió:** se indica qué actividades salen de las entrevistas, con su código de participante, y cuáles son propuestas.
+- **Cómo estaba antes:** la lista no separaba ambas.
+- **Por qué:** el autor pidió actividades concretas inspiradas en las entrevistas.
 
 ### 2026-09-29 — Creación
 

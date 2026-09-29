@@ -17,6 +17,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
+- [Coherencia de la app con la memoria](coherencia-app-con-la-memoria-2026-09-29.md): contradicciones, cambios fundamentados y actualizaciones pendientes de la memoria tras Android 2.11 a 2.13.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve actualizada al 25 de septiembre sobre la propuesta, el APK 2.6, los cambios y los pendientes.
 
 ## Antecedentes y documentos históricos
@@ -86,6 +87,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-29 — Coherencia de la app con la memoria
+
+- **Qué cambió:** se enlazó la revisión que contrasta Android 2.11 a 2.13 con la memoria.
+- **Cómo estaba antes:** no había un contraste de la app reciente con la memoria.
+- **Por qué:** el autor pidió saber qué se contradice y qué se fundamenta.
 
 ### 2026-09-27 — Guion de la corrección cruzada
 

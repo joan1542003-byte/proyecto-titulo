@@ -49,32 +49,83 @@ data class Interest(val id: String, val label: String, val suggestions: List<Tri
 object Interests {
   const val OTHER = "otra"
 
-  /** Rutas sugeridas del diseño escrito (sección 6): ejemplos editables de las entrevistas y la memoria. */
+  /**
+   * Intereses concretos, tomados de lo que contaron P1–P8 sobre su tiempo libre y sus estrategias
+   * (corpus, Q1, Q2 y Q12). Desde 2.13 (D-088) reemplazan a los cinco intereses amplios de 2.8, que
+   * el autor encontró ambiguos. Cada ruta propone tres pasos pequeños y editables (R1–R2).
+   */
   val all = listOf(
-    Interest("mover", "Moverme", listOf(
-      Triple("Salir a caminar 15 minutos", "Ponerte las zapatillas", "Junto a la puerta"),
-      Triple("Caminar 30 minutos", "Ponerte las zapatillas", "Junto a la puerta"),
-      Triple("Trotar un tramo", "Ponerte las zapatillas", "Junto a la puerta"),
+    // P2, Q3–Q7; P3 y P8, Q2: dormir aparece como intención y como descanso.
+    Interest("dormir", "Dormir a tiempo", listOf(
+      Triple("Acostarte sin el teléfono", "Dejar el teléfono cargando lejos de la cama", "Junto al cargador"),
+      Triple("Leer un rato antes de dormir", "Dejar el libro en el velador", "En el velador"),
+      Triple("Acostarte a la misma hora", "Apagar la luz grande", "En tu pieza"),
     )),
+    // P6 y P8, Q1–Q2 y Q12; P1, Q12 (manga).
     Interest("leer", "Leer", listOf(
       Triple("Leer 10 páginas", "Abrir el libro", "En el velador"),
+      Triple("Leer un capítulo de manga", "Sacar el tomo del estante", "Junto al estante"),
       Triple("Leer un capítulo", "Abrir el libro en el marcador", "En el velador"),
-      Triple("Probar un género nuevo", "Elegir un libro distinto", "En el velador"),
     )),
-    Interest("crear", "Crear con las manos", listOf(
+    // P1, Q2 y Q12; P3, Q1 y Q12 (artes marciales).
+    Interest("ejercicio", "Hacer ejercicio", listOf(
+      Triple("Hacer una serie corta", "Ponerte ropa cómoda", "En tu pieza"),
+      Triple("Entrenar 20 minutos", "Estirar la colchoneta", "En el living"),
+      Triple("Ir a entrenar", "Preparar el bolso", "Junto a la puerta"),
+    )),
+    // P7, Q1 y Q12.
+    Interest("bici", "Salir en bicicleta", listOf(
+      Triple("Dar una vuelta corta", "Sacar la bici", "Junto a la puerta"),
+      Triple("Andar 30 minutos", "Inflar las ruedas", "Junto a la bici"),
+      Triple("Ir en bici a algún lugar", "Ponerte el casco", "Junto a la puerta"),
+    )),
+    // P1, Q1; P4, Q2 y Q12.
+    Interest("perro", "Pasear o jugar con tu perro", listOf(
+      Triple("Salir 10 minutos con el perro", "Tomar la correa", "Junto a la puerta"),
+      Triple("Jugar con el perro", "Sacar su pelota", "Donde está su pelota"),
+      Triple("Salir con el perro sin el teléfono", "Dejar el teléfono en casa", "Junto a la puerta"),
+    )),
+    // P2, Q12.
+    Interest("dibujar", "Dibujar o pintar", listOf(
       Triple("Dibujar 10 minutos", "Sacar el cuaderno y un lápiz", "En el escritorio"),
-      Triple("Terminar un boceto", "Abrir el cuaderno en el boceto", "En el escritorio"),
-      Triple("Probar otra técnica", "Preparar los materiales nuevos", "En el escritorio"),
+      Triple("Pintar", "Preparar las acuarelas", "En la mesa"),
+      Triple("Terminar un dibujo", "Abrir el cuaderno en ese dibujo", "En el escritorio"),
     )),
-    Interest("cuidar", "Cuidar la casa y a mí", listOf(
-      Triple("Ordenar un cajón", "Vaciar el cajón sobre la mesa", "Junto al cajón"),
+    // P2, Q12 (manualidades); P6, Q2 y Q12 (maquetas).
+    Interest("manualidades", "Manualidades o maquetas", listOf(
+      Triple("Avanzar 15 minutos", "Sacar los materiales", "En la mesa de trabajo"),
+      Triple("Armar una parte de la maqueta", "Abrir la caja de la maqueta", "En la mesa"),
+      Triple("Terminar lo que empezaste", "Dejar la pieza a la vista", "En la mesa"),
+    )),
+    // P1, Q2 y Q12.
+    Interest("cocinar", "Cocinar", listOf(
       Triple("Cocinar algo simple", "Reunir los ingredientes", "En la cocina"),
-      Triple("Acostarte sin el teléfono", "Dejar el teléfono cargando lejos", "En el velador"),
+      Triple("Probar una receta nueva", "Dejar la receta a la vista", "En la cocina"),
+      Triple("Preparar la comida de mañana", "Sacar los táper", "En la cocina"),
     )),
-    Interest("aprender", "Aprender algo", listOf(
-      Triple("Practicar 10 minutos", "Abrir el cuaderno o el instrumento", "Donde estudias"),
-      Triple("Tomar una lección", "Abrir la lección", "Donde estudias"),
-      Triple("Contarle a alguien lo que aprendiste", "Escribirle a alguien", "Donde estudias"),
+    // P5, Q2 y Q12.
+    Interest("ordenar", "Ordenar tu pieza", listOf(
+      Triple("Ordenar un cajón", "Vaciar el cajón sobre la cama", "Junto al cajón"),
+      Triple("Hacer la cama", "Estirar las sábanas", "En tu pieza"),
+      Triple("Ordenar la ropa", "Juntar la ropa en el canasto", "Junto al canasto"),
+    )),
+    // P3, Q2 y Q12.
+    Interest("meditar", "Meditar", listOf(
+      Triple("Respirar 5 minutos", "Sentarte en el cojín", "En tu pieza"),
+      Triple("Meditar 10 minutos", "Apagar la luz grande", "En tu pieza"),
+      Triple("Estirar antes de dormir", "Desenrollar la colchoneta", "Junto a la cama"),
+    )),
+    // P8, Q12 (tareas).
+    Interest("estudiar", "Estudiar o hacer tareas", listOf(
+      Triple("Estudiar 20 minutos", "Abrir tus apuntes", "En el escritorio"),
+      Triple("Hacer una tarea", "Abrir el cuaderno en la tarea", "En el escritorio"),
+      Triple("Repasar para una prueba", "Sacar tus resúmenes", "En el escritorio"),
+    )),
+    // P2, Q2 (pareja); P6, Q1 (cenar con su familia); P7, Q2 (fútbol).
+    Interest("compartir", "Compartir con alguien", listOf(
+      Triple("Comer sin el teléfono", "Poner la mesa", "En el comedor"),
+      Triple("Jugar un juego de mesa", "Sacar la caja", "En la mesa"),
+      Triple("Juntarte a jugar a la pelota", "Preparar las zapatillas", "Junto a la puerta"),
     )),
   )
 

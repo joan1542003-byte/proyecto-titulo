@@ -104,6 +104,17 @@ private enum class PrepareStep(val title: String) {
   REVIEW("Todo listo"),
 }
 
+/** Nota de la guía para cada paso del primer relevo. */
+private fun guideTipFor(step: PrepareStep, condition: StudyCondition?): String = when (step) {
+  PrepareStep.ACTIVITY -> "Escribe algo que quieras hacer o toca una idea. Mientras más concreto, mejor: «leer 10 páginas» en vez de «leer más»."
+  PrepareStep.START -> "Anota lo primero que harías, algo que tome segundos: abrir el libro, ponerte las zapatillas."
+  PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja el parlante en otro lugar de tu casa y anota dónde."
+    else "Anota dónde empiezas. Ahí vas a dejar el parlante, para que suene junto a lo que usas."
+  PrepareStep.USAGE -> "Elige las apps donde se te pasa el tiempo y cuánto rato. Cuando sumes ese tiempo, suena. Para probar ahora, toca «Probar con 15 segundos»."
+  PrepareStep.SOUND -> "Toca «Probar el sonido» para escuchar cómo suena. Si no se oye, revisa que el parlante esté encendido y conectado."
+  PrepareStep.REVIEW -> "Revisa que todo esté bien y toca «Activar el relevo». Puedes desactivarlo cuando quieras."
+}
+
 /** En la semana del parlante en otro lugar, el lugar que se anota es el del parlante, no el del comienzo. */
 private fun PrepareStep.titleFor(condition: StudyCondition?): String =
   if (this == PrepareStep.PLACE && condition == StudyCondition.NEUTRAL) "¿Dónde dejas el parlante?" else title
@@ -143,6 +154,8 @@ internal fun PrepareScreen(
   studyCondition: StudyCondition?,
   photoKey: String?,
   actions: PrepareActions,
+  /** Guía del primer relevo (D-088): una nota por paso que dice qué hacer y para qué. */
+  guided: Boolean = false,
 ) {
   // Se abre en el primer dato que falta: una idea elegida ya trae actividad, comienzo y lugar.
   var step by rememberSaveable {
@@ -198,6 +211,10 @@ internal fun PrepareScreen(
       }
     },
   ) {
+    if (guided) {
+      GuideTip(guideTipFor(step, studyCondition))
+      Spacer(Modifier.height(16.dp))
+    }
     AnimatedContent(
       targetState = step,
       transitionSpec = {

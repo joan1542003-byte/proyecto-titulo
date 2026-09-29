@@ -46,26 +46,34 @@ data class ActivityIdea(val activity: String, val start: String, val place: Stri
 }
 
 internal val activityIdeas = listOf(
-  ActivityIdea("Leer", "Abrir el libro", "Junto al libro", KitIcon.LEER, Photo.LEER),
-  ActivityIdea("Caminar", "Ponerte las zapatillas", "Junto a las zapatillas", KitIcon.CAMINAR, Photo.CAMINAR),
-  ActivityIdea("Hacer ejercicio", "Preparar una serie", "Junto a las pesas", KitIcon.EJERCICIO, Photo.EJERCICIO),
-  ActivityIdea("Estudiar", "Abrir tus apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR),
-  ActivityIdea("Dibujar", "Sacar el cuaderno y un lápiz", "En el escritorio", KitIcon.DIBUJAR, Photo.DIBUJAR),
-  ActivityIdea("Tocar un instrumento", "Sacar la guitarra del estuche", "Junto a la guitarra", KitIcon.GUITARRA, Photo.GUITARRA),
-  ActivityIdea("Cocinar", "Reunir los ingredientes", "En la cocina", KitIcon.COCINAR, Photo.COCINAR),
-  ActivityIdea("Escribir", "Abrir el cuaderno", "En el escritorio", KitIcon.ESCRIBIR, Photo.ESCRIBIR),
-  ActivityIdea("Ordenar", "Despejar una superficie", "Donde quieres ordenar", KitIcon.ORDENAR, Photo.ORDENAR),
-  ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la correa", KitIcon.SALIR, Photo.PERRO),
-  ActivityIdea("Hacer manualidades", "Preparar los materiales", "En la mesa de trabajo", KitIcon.MANUALIDADES, Photo.MANUALIDADES),
-  ActivityIdea("Pintar", "Preparar las acuarelas", "En la mesa", KitIcon.PINTAR, Photo.PINTAR),
-  ActivityIdea("Cuidar las plantas", "Llenar la regadera", "Junto a las plantas", KitIcon.PLANTAS),
-  ActivityIdea("Dormir", "Dejar el teléfono cargando lejos", "En el velador", KitIcon.DORMIR),
+  // Desde 2.13 (D-088), solo actividades que aparecen en las entrevistas P1–P8 (corpus, Q1, Q2 y Q12).
+  ActivityIdea("Leer", "Abrir el libro", "En el velador", KitIcon.LEER, Photo.LEER), // P6, P8
+  ActivityIdea("Dormir a tiempo", "Dejar el teléfono cargando lejos", "Junto al cargador", KitIcon.DORMIR), // P2, P3, P8
+  ActivityIdea("Hacer ejercicio", "Ponerte ropa cómoda", "En tu pieza", KitIcon.EJERCICIO, Photo.EJERCICIO), // P1, P3
+  ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la puerta", KitIcon.SALIR, Photo.PERRO), // P1, P4
+  ActivityIdea("Dibujar", "Sacar el cuaderno y un lápiz", "En el escritorio", KitIcon.DIBUJAR, Photo.DIBUJAR), // P2
+  ActivityIdea("Pintar", "Preparar las acuarelas", "En la mesa", KitIcon.PINTAR, Photo.PINTAR), // P2
+  ActivityIdea("Cocinar", "Reunir los ingredientes", "En la cocina", KitIcon.COCINAR, Photo.COCINAR), // P1
+  ActivityIdea("Estudiar", "Abrir tus apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR), // P8
+  ActivityIdea("Ordenar tu pieza", "Despejar una superficie", "En tu pieza", KitIcon.ORDENAR, Photo.ORDENAR), // P5
+  ActivityIdea("Hacer manualidades", "Preparar los materiales", "En la mesa de trabajo", KitIcon.MANUALIDADES, Photo.MANUALIDADES), // P2
+  ActivityIdea("Armar una maqueta", "Abrir la caja de la maqueta", "En la mesa", KitIcon.MANUALIDADES), // P6
+  ActivityIdea("Salir en bicicleta", "Sacar la bici", "Junto a la puerta", KitIcon.BICICLETA), // P7
+  ActivityIdea("Meditar", "Sentarte en el cojín", "En tu pieza", KitIcon.ESTIRAR), // P3
+  ActivityIdea("Leer manga", "Sacar el tomo del estante", "Junto al estante", KitIcon.LEER, Photo.LIBRO), // P1
 )
 
-/** Fotos e iconos de los intereses de P3 y de sus rutas. */
+/** Fotos e iconos de los intereses de P3 y de sus rutas (intereses concretos desde 2.13, D-088). */
 internal fun interestPhoto(id: String): Photo? = when (id) {
-  "mover" -> Photo.SALIDA
   "leer" -> Photo.LIBRO
+  "ejercicio" -> Photo.EJERCICIO
+  "mover" -> Photo.SALIDA
+  "perro" -> Photo.PERRO
+  "dibujar" -> Photo.DIBUJAR
+  "manualidades" -> Photo.MANUALIDADES
+  "cocinar" -> Photo.COCINAR
+  "ordenar" -> Photo.ORDENAR
+  "estudiar" -> Photo.ESTUDIAR
   "crear" -> Photo.PINTAR
   "cuidar" -> Photo.PAN
   "aprender" -> Photo.APRENDER
@@ -73,11 +81,19 @@ internal fun interestPhoto(id: String): Photo? = when (id) {
 }
 
 internal fun interestIcon(id: String): KitIcon = when (id) {
-  "mover" -> KitIcon.CAMINAR
+  "dormir" -> KitIcon.DORMIR
   "leer" -> KitIcon.LEER
-  "crear" -> KitIcon.DIBUJAR
+  "ejercicio" -> KitIcon.EJERCICIO
+  "bici" -> KitIcon.BICICLETA
+  "perro", "mover" -> KitIcon.CAMINAR
+  "dibujar", "crear" -> KitIcon.DIBUJAR
+  "manualidades" -> KitIcon.MANUALIDADES
+  "cocinar" -> KitIcon.COCINAR
+  "ordenar" -> KitIcon.ORDENAR
+  "meditar" -> KitIcon.ESTIRAR
+  "estudiar", "aprender" -> KitIcon.ESTUDIAR
+  "compartir" -> KitIcon.JUEGO_DE_MESA
   "cuidar" -> KitIcon.PLANTAS
-  "aprender" -> KitIcon.ESTUDIAR
   else -> KitIcon.ACTIVIDAD
 }
 

@@ -970,7 +970,38 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** que las personas digan que la app se entiende sin ayuda; revisión ética del registro de uso; que el volumen de datos no afecte la batería ni el envío.
 - **Documentación:** [Android 2.12](../06_desarrollo_y_factibilidad/app-android/version-2.12-mas-simple-y-mas-datos-2026-09-29.md).
 
+## D-088 — Guía de la primera vez, intereses de las entrevistas y resumen del relevo activo
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor; implementada en Android 2.13, comprobada en emulador, sin probar con personas.
+- **Decisión:**
+  - *Guía*: la primera vez, antes del consentimiento, nueve pantallas cortas explican cada parte de un relevo con un ejemplo; en el primer relevo, cada pantalla muestra una nota que dice qué hacer. Se puede saltar.
+  - *Intereses*: doce actividades concretas de las entrevistas P1–P8 reemplazan los cinco intereses amplios de D-076; las ideas de Inicio también salen de las entrevistas.
+  - *Resumen*: Inicio muestra lo preparado y lo que falta mientras hay un relevo activo.
+  - *Aviso semanal*: vuelve a empezar apagado; la guía pregunta Sí o No, sin respuesta marcada. Corrige D-087, que lo dejaba encendido y contradecía la «configuración voluntaria» de la memoria.
+- **Fundamento:** memoria, sección 7 (actividades concretas y su comienzo), sección 11 (explicar la condición con ejemplos), tabla 5 (entender el propósito; saber que el ciclo sigue activo) y D-076 («las entrevistas respaldan actividades concretas»). Ver la [revisión de coherencia](../08_memoria/coherencia-app-con-la-memoria-2026-09-29.md).
+- **Decisiones de la herramienta, pendientes de revisión del autor:** los textos de la guía y de las notas, los pasos de cada ruta y qué datos resume Inicio.
+- **Tensión:** la guía agrega carga a la primera vez (criterio 6); se contuvo con pantallas cortas y la opción de saltar.
+- **Documentación:** [Android 2.13](../06_desarrollo_y_factibilidad/app-android/version-2.13-guia-intereses-y-nombre-2026-09-29.md).
+
+## D-089 — El nombre se guarda aparte, solo con el código
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor; implementada en Android 2.13.
+- **Decisión:** el nombre es obligatorio al registrarse y se guarda en Supabase en una tabla aparte (`relevo_participants`), solo junto al código. Las tablas de relevos, respuestas y uso siguen sin nombre. Se borra con «Borrar mis datos».
+- **Reemplaza:** la parte de D-076 que decía que el nombre no sale del teléfono.
+- **Contradicción con la memoria:** la sección 11 dice que el código «separa el registro del nombre». La separación en tablas distintas reduce el riesgo, pero hay que actualizar la memoria, el consentimiento (ya en v9) y la ficha de privacidad, y pedir la revisión ética antes de la prueba. La Ley 21.719 rige desde el 1 de diciembre de 2026.
+- **Fundamento:** el autor quiere tener el registro de cada participante en la base.
+- **Alternativas:** dejar el nombre solo en el teléfono y unirlo al código con la hoja de consentimiento firmada (lo que decía D-076); guardarlo junto a cada registro.
+- **Documentación:** [Android 2.13](../06_desarrollo_y_factibilidad/app-android/version-2.13-guia-intereses-y-nombre-2026-09-29.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — D-088 y D-089
+
+- **Qué cambió:** se registraron D-088 (guía, intereses de las entrevistas, resumen del relevo activo, aviso semanal preguntado) y D-089 (nombre guardado aparte).
+- **Cómo estaba antes:** D-076 decía que el nombre no sale del teléfono, los intereses eran amplios y D-087 dejaba el aviso semanal encendido.
+- **Por qué:** pedidos del autor del 29 de septiembre.
 
 ### 2026-09-29 — D-087
 

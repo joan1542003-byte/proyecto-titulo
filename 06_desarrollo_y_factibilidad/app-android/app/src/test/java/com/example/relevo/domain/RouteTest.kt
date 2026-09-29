@@ -9,13 +9,13 @@ import org.junit.Test
 class RouteTest {
   private var counter = 0
   private fun id() = "s${counter++}"
-  private val track = Interests.suggestedTrack("mover") { id() }
+  private val track = Interests.suggestedTrack("ejercicio") { id() }
 
   @Test fun suggestedTrackStartsOnTheFirstStep() {
-    assertEquals("Moverme", track.title)
+    assertEquals("Hacer ejercicio", track.title)
     assertEquals(3, track.steps.size)
-    assertEquals("Salir a caminar 15 minutos", track.currentStep?.activity)
-    assertEquals("Caminar 30 minutos", track.nextStep?.activity)
+    assertEquals("Hacer una serie corta", track.currentStep?.activity)
+    assertEquals("Entrenar 20 minutos", track.nextStep?.activity)
   }
 
   @Test fun advanceStopsAtTheLastStep() {
@@ -48,7 +48,7 @@ class RouteTest {
 
   @Test fun reconcileKeepsEditedTracksAndAddsNewOnes() {
     val edited = track.moveTo(2)
-    val result = Interests.reconcile(listOf(edited), listOf("mover", "leer"), "", ::id)
+    val result = Interests.reconcile(listOf(edited), listOf("ejercicio", "leer"), "", ::id)
     assertEquals(2, result.size)
     assertEquals(2, result.first().currentIndex)
     assertEquals("Leer", result[1].title)

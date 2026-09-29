@@ -139,12 +139,26 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   private var stateSyncJob: Job? = null
 
+  // Guía de la primera vez (D-088): notas en preparar, señal y respuesta hasta completar el primer relevo.
+  private fun loadGuide() = GuideState(
+    prepare = !experiencePreferences.getBoolean("guide_prepare_done", false),
+    signal = !experiencePreferences.getBoolean("guide_signal_done", false),
+    decide = !experiencePreferences.getBoolean("guide_decide_done", false),
+  )
+  private val _guide = MutableStateFlow(loadGuide())
+  val guide: StateFlow<GuideState> = _guide.asStateFlow()
+  private fun markGuide(key: String) {
+    if (experiencePreferences.getBoolean(key, false)) return
+    experiencePreferences.edit().putBoolean(key, true).apply()
+    _guide.value = loadGuide()
+  }
+
   // Estado del registro de uso: se declara antes de init, que ya lo usa.
   private var resumedAt = 0L
   private var lastScreen: String? = null
   private var lastPrepareStep: String? = null
-  /** Lo que se vio de «Cómo funciona» antes de aceptar: se registra al aceptar. */
-  private var pendingTutorial: String? = null
+  /** Usos de la guía antes de aceptar: se registran al aceptar. */
+  private val beforeConsent = mutableListOf<Pair<String, String>>()
   private val _quickFeedbackDue = MutableStateFlow(false)
   val quickFeedbackDue: StateFlow<Boolean> = _quickFeedbackDue.asStateFlow()
 
@@ -174,8 +188,17 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   // ---- Registro del uso de la app (desde 2.12) ----
 
-  /** Guarda un uso de la app con el código de la persona. Sin consentimiento vigente no se guarda nada. */
-  private fun log(event: String, detail: String? = null) = researchLog.logApp(_reminder.value.participantCode, event, detail)
+  /**
+   * Guarda un uso de la app con el código de la persona. Antes de aceptar, lo que pasa en la guía queda
+   * en memoria y se guarda recién al aceptar, marcado como anterior; si la persona no acepta, se pierde.
+   */
+  private fun log(event: String, detail: String? = null) {
+    if (!hasCurrentConsent()) {
+      if (beforeConsent.size < 80) beforeConsent += event to listOfNotNull(detail, "antes_de_aceptar").joinToString(";")
+      return
+    }
+    researchLog.logApp(_reminder.value.participantCode, event, detail)
+  }
 
 
   fun onAppPaused() {
@@ -200,7 +223,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Cuánto se vio del video de «Cómo funciona». Antes de aceptar se guarda en memoria. */
   fun onTutorialVideo(seconds: Int, completed: Boolean, soundOn: Boolean) {
     val detail = "segundos=$seconds;completo=${if (completed) "si" else "no"};sonido=${if (soundOn) "si" else "no"}"
-    if (hasCurrentConsent()) log("video_como_funciona", detail) else pendingTutorial = detail
+    log("video_como_funciona", detail)
   }
 
   /** Permisos que tiene Relevo; se registra cuando cambian. */
@@ -415,7 +438,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     update { copy(participantCode = participantCode, consentAccepted = accepted, localOnly = false, status = ReminderStatus.DRAFT) }
     if (accepted) {
       log("consentimiento_aceptado", ResearchLogStore.CONSENT_VERSION)
-      pendingTutorial?.let { log("video_como_funciona", it); pendingTutorial = null }
+      if (_profile.value.name.isNotBlank()) remoteSync.markNamePending()
+      beforeConsent.forEach { (event, detail) -> researchLog.logApp(participantCode, event, detail) }
+      beforeConsent.clear()
       resumedAt = System.currentTimeMillis()
       logPermissions()
       if (_settings.value.returnNotice) ReturnNotice.schedule(getApplication())
@@ -498,6 +523,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val next = prepared.arm(UUID.randomUUID().toString())
     updateValue(next)
     if (next.status == ReminderStatus.WAITING) {
+      markGuide("guide_prepare_done")
       researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
       researchLog.startSession(next)
       syncRemote()
@@ -542,6 +568,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
    * había terminado, solo registra la respuesta. En ambos casos guarda cuánto tardó en responder.
    */
   fun silence() {
+    markGuide("guide_signal_done")
     signalPlayer.stop()
     AppUsageMonitorService.cancelSignalNotification(getApplication())
     val current = _reminder.value
@@ -563,6 +590,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     AppUsageMonitorService.cancelSignalNotification(getApplication())
     historyStore.markOutcome(_reminder.value.sessionId, outcome)
     _history.value = historyStore.load()
+    markGuide("guide_decide_done")
     researchLog.completeSession(_reminder.value, outcome, knewIntention, recalledFirstStep, feeling)
     syncRemote()
     refreshQuickFeedback()
@@ -612,6 +640,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val next = previous.transform()
     if (next.image != previous.image) log("perfil_imagen", next.image)
     if (next.name.isBlank() != previous.name.isBlank()) log("perfil_nombre", if (next.name.isBlank()) "sin_nombre" else "con_nombre")
+    // D-089: el nombre se envía aparte, solo con el código.
+    if (next.name.trim() != previous.name.trim() && next.name.isNotBlank()) { remoteSync.markNamePending(); syncRemote() }
     profileStore.save(next)
     _profile.value = next
   }
@@ -680,6 +710,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         ReturnNotice.schedule(getApplication())
       } else ReturnNotice.cancel(getApplication())
     }
+  }
+
+  /** Respuesta de la guía sobre el aviso semanal (D-088): se registra aunque coincida con el valor por defecto. */
+  fun chooseReturnNotice(yes: Boolean) {
+    log("aviso_semanal_elegido", if (yes) "si" else "no")
+    updateSettings { copy(returnNotice = yes) }
   }
 
   fun answerTurnOffReturn(turnOff: Boolean) {
@@ -877,6 +913,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val QUICK_FEEDBACK_AT = listOf(3, 10)
   }
 }
+
+/** Qué notas de la guía siguen visibles: se ocultan después del primer relevo. */
+data class GuideState(val prepare: Boolean = false, val signal: Boolean = false, val decide: Boolean = false)
 
 /** Estado de la prueba de 21 días que necesita la interfaz. */
 data class StudyState(

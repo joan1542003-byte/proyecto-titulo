@@ -5,8 +5,9 @@ import android.content.Context
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
 /**
- * Preferencias de S2 y de apariencia. Desde 2.12 (D-087) la app empieza en modo claro y con los avisos
- * y el resumen semanal encendidos; la persona puede apagarlos en Perfil. Se guardan solo en el teléfono.
+ * Preferencias de S2 y de apariencia. Desde 2.12 (D-087) la app empieza en modo claro y con el resumen
+ * semanal encendido. Desde 2.13 (D-088) el aviso semanal vuelve a empezar apagado y la guía de la primera
+ * vez pregunta Sí o No, sin respuesta marcada: la memoria pide configuración voluntaria (secciones 7 y 11).
  */
 data class Settings(
   val theme: ThemeMode = ThemeMode.LIGHT,
@@ -14,7 +15,7 @@ data class Settings(
   /** Resumen «Tu semana» en el perfil. */
   val weeklySummary: Boolean = true,
   /** Aviso de regreso (V2): como máximo una vez por semana. */
-  val returnNotice: Boolean = true,
+  val returnNotice: Boolean = false,
   /** Mensajes breves después de responder; si se apaga, solo se registra. */
   val acknowledgements: Boolean = true,
   /** Constancia elegida: veces por semana que fija la persona; 0 es apagada. Variante de la prueba. */
@@ -29,7 +30,7 @@ class SettingsStore(context: Context) {
     theme = runCatching { ThemeMode.valueOf(preferences.getString("theme", ThemeMode.LIGHT.name).orEmpty()) }.getOrDefault(ThemeMode.LIGHT),
     largeText = preferences.getBoolean("large_text", false),
     weeklySummary = preferences.getBoolean("weekly_summary", true),
-    returnNotice = preferences.getBoolean("return_notice", true),
+    returnNotice = preferences.getBoolean("return_notice", false),
     acknowledgements = preferences.getBoolean("acknowledgements", true),
     constancy = preferences.getInt("constancy", 0).coerceIn(0, 7),
     constancyPaused = preferences.getBoolean("constancy_paused", false),

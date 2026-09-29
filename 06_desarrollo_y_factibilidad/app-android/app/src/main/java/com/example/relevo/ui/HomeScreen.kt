@@ -143,6 +143,7 @@ internal fun HomeTab(
   quickFeedbackDue: Boolean = false,
   onQuickFeedback: (Int?) -> Unit = {},
   onFeedback: () -> Unit = {},
+  guided: Boolean = false,
 ) {
   val scroll = rememberScrollState()
   var firstReselect by remember { mutableStateOf(reselect) }
@@ -177,6 +178,10 @@ internal fun HomeTab(
     },
   ) {
     StudyCards(study, actions.onDismissInstruction, actions.onWeekReview, actions.onClosing, firstRelevoDone = history.isNotEmpty())
+    if (guided && !active && history.isEmpty()) {
+      GuideTip("Empieza aquí: toca «Preparar un relevo». Te acompañamos paso a paso.")
+      SectionGap()
+    }
     if (quickFeedbackDue && !active) {
       QuickFeedbackCard(onQuickFeedback, { onQuickFeedback(null); onFeedback() })
       SectionGap()
@@ -186,6 +191,8 @@ internal fun HomeTab(
       when {
         active -> Column {
           ActiveCard(reminder, customActivities, usageAccess, actions.onOpenActive)
+          Spacer(Modifier.height(12.dp))
+          ActiveSummary(reminder, actions.onOpenActive)
           if (!usageAccess) {
             Spacer(Modifier.height(12.dp))
             Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar el tiempo", icon = KitIcon.ADVERTENCIA) {
@@ -322,6 +329,28 @@ private fun ActiveCard(reminder: Reminder, customActivities: List<CustomActivity
       CountedTime(reminder.observedUsageSeconds)
       Text(" de ${formatDuration(reminder.requiredUsageSeconds)}", style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
+  }
+}
+
+/**
+ * Resumen del relevo activo en Inicio (D-088): lo que la persona preparó, cuánto falta, dónde suena y
+ * la salida. Apoya la memoria prospectiva —la intención y su comienzo siguen a la vista mientras el
+ * ciclo está vigente— y la tabla 5 de la memoria: saber que el ciclo sigue activo y poder detenerlo.
+ * No muestra rachas ni comparaciones entre días (criterios 4 y 7).
+ */
+@Composable
+private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
+  val remaining = (reminder.requiredUsageSeconds - reminder.observedUsageSeconds).coerceAtLeast(0)
+  ListSection(title = "Tu relevo") {
+    FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart)
+    if (reminder.signalRoute == SignalRoute.PHONE) FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
+    else FactRow(KitIcon.PARLANTE, "El parlante está", reminder.place)
+    ListRow("Apps que cuentan", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite, value = reminder.selectedApps.joinToString(", ") { it.label })
+    ListRow("Falta", icon = KitIcon.TIEMPO, titleColor = Relevo.colors.graphite, value = "${formatDuration(remaining)} en esas apps")
+    StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ')?.let { condition ->
+      ListRow("Esta semana", icon = conditionIcon(condition), titleColor = Relevo.colors.graphite, value = conditionName(condition))
+    }
+    ListRow("Ver o desactivar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
   }
 }
 

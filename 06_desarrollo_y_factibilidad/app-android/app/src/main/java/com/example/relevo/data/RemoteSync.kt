@@ -60,6 +60,22 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
       return post(path, body, token, upsert)
     }
 
+    // D-089: el nombre va aparte, solo con el código, en relevo_participants.
+    if (preferences.getBoolean("name_pending", false)) {
+      val name = ProfileStore(appContext).load().name.trim()
+      val code = Participation.code(appContext)
+      if (name.isNotBlank() && code.isNotBlank()) {
+        val body = JSONObject().put("participant_code", code).put("name", name.take(60)).put("consent_version", ResearchLogStore.CONSENT_VERSION)
+          .put("updated_at", Instant.now().toString())
+        val result = send("relevo_participants?on_conflict=user_id", body.toString(), upsert = true)
+        when {
+          result.ok -> preferences.edit().putBoolean("name_pending", false).apply()
+          result.permanent -> { preferences.edit().putBoolean("name_pending", false).apply(); rejectedNow++; remember(result, "nombre") }
+          else -> return fail(result, "nombre")
+        }
+      } else preferences.edit().putBoolean("name_pending", false).apply()
+    }
+
     for (session in store.pendingSessions()) {
       val result = send("relevo_sessions?on_conflict=session_id", session.toJson().toString(), upsert = true)
       when {
@@ -117,6 +133,9 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     return true
   }
 
+  /** El nombre cambió: se enviará en el próximo envío. */
+  fun markNamePending() { preferences.edit().putBoolean("name_pending", true).apply() }
+
   /** Borra únicamente las filas visibles para la sesión anónima autenticada. */
   fun beginDeletion() { preferences.edit().putBoolean("deleting", true).commit() }
 
@@ -137,11 +156,13 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
       JSONObject(response.inputStream.bufferedReader().use { it.readText() }).getString("id")
     }.getOrNull() ?: return false
     if (!user.matches(Regex("[0-9a-fA-F-]{36}"))) return false
+    if (!delete("/rest/v1/relevo_participants?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_app_events?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_answers?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_events?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_sessions?user_id=eq.$user", token)) return false
-    return noRows("/rest/v1/relevo_app_events?select=id&user_id=eq.$user&limit=1", token) &&
+    return noRows("/rest/v1/relevo_participants?select=user_id&user_id=eq.$user&limit=1", token) &&
+      noRows("/rest/v1/relevo_app_events?select=id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_answers?select=id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_events?select=id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_sessions?select=session_id&user_id=eq.$user&limit=1", token)

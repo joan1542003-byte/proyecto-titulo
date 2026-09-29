@@ -374,7 +374,7 @@ internal fun PrivacyScreen(
     bottom = if (deleted) ({ RelevoButton("Volver a comenzar", onRestart) }) else null,
   ) {
     Text(
-      "Guardamos lo que haces en Relevo con un código, no con tu nombre. No vemos lo que haces dentro de otras apps. Si no borras tus datos antes, los borramos el 30 de diciembre de 2026.",
+      "Guardamos lo que haces en Relevo con un código; tu nombre se guarda aparte, solo con ese código. No vemos lo que haces dentro de otras apps. Si no borras tus datos antes, los borramos el 30 de diciembre de 2026.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
     SectionGap()
