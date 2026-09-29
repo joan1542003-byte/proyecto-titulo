@@ -17,7 +17,7 @@
 | --- | --- |
 | **Intereses y rutas concretos** (2.13): dormir a tiempo, leer, hacer ejercicio, salir en bicicleta, pasear al perro, dibujar o pintar, manualidades o maquetas, cocinar, ordenar la pieza, meditar, estudiar, compartir con alguien. | Sección 7: los hallazgos se basan en episodios y actividades concretas («dormir puede empezar al dejar el teléfono…; caminar, al ponerse las zapatillas; leer, al abrir el libro»). D-076: «las entrevistas respaldan actividades concretas, no tipos de usuario». Cada interés cita en el código las respuestas de P1–P8 que lo sostienen (Q1, Q2 y Q12). |
 | **Ideas de Inicio solo de las entrevistas** (2.13). | Criterio 1: partir de una intención propia; sección 7: el hogar como contexto de actividades materiales. Se quitaron «Tocar un instrumento», «Cuidar las plantas» y «Escribir», que no aparecen como actividades en el corpus. |
-| **Guía de la primera vez** (2.13): pantallas cortas con ejemplos y notas en el primer relevo. | Tabla 5: «Conocer y aceptar: entender propósito, límites»; sección 11: la condición «debe explicarse con ejemplos». |
+| **Guía de la primera vez** (2.13, rehecha en 2.14): pocas pantallas de contexto —el problema y las tres partes del sistema— y el primer relevo hecho con la persona, con notas en cada paso. | Tabla 5: «Conocer y aceptar: entender propósito, límites»; sección 3, el problema; sección 11: la condición «debe explicarse con ejemplos»; criterio 6: en 2.14 la explicación se reduce y se aprende haciendo el primer relevo. |
 | **Resumen del relevo activo en Inicio** (2.13). | Sección 6, memoria prospectiva: la intención debe estar disponible a tiempo; tabla 5: «Recuperar un fallo: saber si el ciclo sigue activo y poder detenerlo»; criterio 4: salida siempre disponible. Muestra lo preparado y lo que falta, sin rachas ni comparaciones (criterios 4 y 7). |
 | **Preguntas tras cada aviso, siempre** (2.12). | Sección 6: percibir la señal, recordar la intención y decidir son resultados distintos que conviene separar; objetivo específico 4. |
 | **Reacción con caras tras el aviso** (2.12). | Criterio 7: la señal no debe molestar; objetivo 4: evaluar percepción y convivencia. Evalúa el aviso, no a la persona. |
@@ -27,7 +27,7 @@
 
 ## 3. Tensiones que conviene vigilar
 
-- **Carga de la guía (criterio 6).** La guía suma pantallas a la primera vez. Se contuvo con pantallas cortas, «Saltar» y notas que desaparecen después del primer relevo. La prueba debe mostrar si ayuda o si pesa.
+- **Carga de la guía (criterio 6).** En 2.14 la guía bajó a tres pantallas de contexto y el resto se aprende haciendo el primer relevo, que igual hay que preparar. La prueba debe mostrar si ayuda o si pesa.
 - **Más datos y minimización.** El registro de uso sirve al objetivo 4, pero amplía lo que se guarda. Conviene decidir en el análisis qué datos se usan de verdad y declararlo.
 - **«Que no se sienta como un testeo».** La app lo logra en el uso diario, pero el consentimiento, la sesión inicial y la entrevista final siguen siendo parte de un estudio. La memoria no permite ocultarlo.
 
@@ -42,6 +42,12 @@ Esto no se ha hecho; requiere cuidar los límites de palabras de la memoria.
 5. **Protocolo 02:** texto de la notificación genérica.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Android 2.14
+
+- **Qué cambió:** la guía se describe como en 2.14: contexto breve y primer relevo acompañado.
+- **Cómo estaba antes:** describía las nueve pantallas de la 2.13.
+- **Por qué:** el autor pidió una guía con contexto que deje hacer el primer relevo.
 
 ### 2026-09-29 — Creación
 

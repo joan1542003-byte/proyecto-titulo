@@ -17,6 +17,7 @@ Antes de responder o editar, lee [`00_gobernanza/traspaso-a-claude-2026-09-24.md
 - Al final de cada Markdown nuevo o modificado añade un registro de cambios que indique qué cambió, cómo estaba antes y por qué.
 - Si se cambia el texto académico, conserva los títulos, el orden progresivo y los límites de palabras exigidos por la memoria vigente; después actualiza el resumen breve y comprueba APA 7 y coherencia.
 - Verifica cambios en proporción al riesgo. Para Android, compila y ejecuta pruebas; para privacidad o Supabase, inspecciona permisos, políticas, datos y flujos de borrado. No declares cerrada una prueba que no se ejecutó.
+- Registra cada pedido, cambio u orden del autor en [`00_gobernanza/registro-de-pedidos-a-la-ia.md`](00_gobernanza/registro-de-pedidos-a-la-ia.md) el mismo día, con su tipo, su resultado y la decisión asociada.
 - Antes de terminar una tarea, actualiza los índices y documentos de estado afectados. Resume con enlaces a los artefactos y declara lo pendiente sin exagerarlo.
 
 ## Entrada
@@ -24,6 +25,12 @@ Antes de responder o editar, lee [`00_gobernanza/traspaso-a-claude-2026-09-24.md
 El documento de traspaso incluye un prompt breve para iniciar el trabajo y las lecturas prioritarias. La rama principal actual al 24 de septiembre de 2026 es `main`; el estado de Issues debe consultarse en GitHub porque no se verificó en este entorno.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Registro de pedidos
+
+- **Qué cambió:** se añadió la regla de registrar cada pedido del autor en el registro de pedidos a la IA.
+- **Cómo estaba antes:** los pedidos se anotaban en la trazabilidad solo al cerrar cada iteración.
+- **Por qué:** el autor pidió una auditoría de cómo usa la IA.
 
 ### 2026-09-24 — Instrucciones de repositorio para Claude
 

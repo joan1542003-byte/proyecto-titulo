@@ -4,7 +4,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.13 de prueba
+**Versión:** 2.14 de prueba, para el testeo real
 
 **Fecha:** 29 de septiembre de 2026
 
@@ -12,17 +12,19 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.13-2026-09-29.apk](releases/relevo-android-2.13-2026-09-29.apk). Los de 2.12 a 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
+**APK vigente:** [relevo-android-2.14-2026-09-29.apk](releases/relevo-android-2.14-2026-09-29.apk). Los de 2.13 a 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.13-2026-09-29.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.14-2026-09-29.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7), el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) el vidrio, las formas y los emoji de D-083 en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md) y los textos, el tono de las fotos y la participación de D-084 en [Android 2.10](version-2.10-participacion-y-claridad-2026-09-27.md).
 
 **Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
 **Licencias de recursos de terceros:** [fuente Schibsted Grotesk, fotografías y emoji Noto 3D](licencias/README.md).
+
+**Versión 2.14:** a pedido del autor (D-090), la guía da contexto en tres pantallas y acompaña el primer relevo real, con el primer paso de la ruta elegida como ejemplo; el video se ve más grande, las frases poco naturales se reescribieron y se corrigió el encabezado vacío al responder ([detalle](version-2.14-guia-y-primer-relevo-2026-09-29.md)).
 
 **Versión 2.13:** a pedido del autor (D-088 y D-089), explica cada parte la primera vez con una guía de nueve pantallas y notas en el primer relevo, cambia los intereses amplios por doce actividades de las entrevistas, guarda el nombre aparte con el código, muestra un resumen del relevo activo en Inicio, pregunta por el aviso semanal y corrige el audio del video ([detalle](version-2.13-guia-intereses-y-nombre-2026-09-29.md); [coherencia con la memoria](../../08_memoria/coherencia-app-con-la-memoria-2026-09-29.md)).
 
@@ -138,6 +140,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Versión 2.14: guía y primer relevo
+
+- **Qué cambió:** el estado apunta a la 2.14, para el testeo real.
+- **Cómo estaba antes:** apuntaba a la 2.13.
+- **Por qué:** pedido del autor (D-090).
 
 ### 2026-09-29 — Versión 2.13: guía, intereses y nombre
 

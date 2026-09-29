@@ -354,6 +354,27 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
   }
 }
 
+/**
+ * Después de activar el primer relevo (D-090): qué pasa ahora, con los datos que la persona eligió.
+ * Cierra la guía del primer relevo.
+ */
+@Composable
+internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
+  val where = if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else "en el parlante, ${placePhrase(reminder.place)}"
+  RelevoSheet(onDismiss = onDismiss, scrollable = false) {
+    Text("Tu primer relevo está activo", style = Relevo.type.title2, color = Relevo.colors.ink)
+    Spacer(Modifier.height(10.dp))
+    Text(
+      "Usa el teléfono como siempre. Cuando sumes ${formatDuration(reminder.requiredUsageSeconds)} en ${reminder.selectedApps.joinToString(", ") { it.label }}, sonará $where.",
+      style = Relevo.type.body, color = Relevo.colors.ink,
+    )
+    Spacer(Modifier.height(8.dp))
+    Text("Cuando suene, la app te dirá qué hacer. Puedes ver o desactivar el relevo en Inicio.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(22.dp))
+    RelevoButton("Entendido", onDismiss)
+  }
+}
+
 /** El tiempo contado cambia deslizándose hacia arriba y se enfoca al llegar, como un contador. */
 @Composable
 private fun CountedTime(seconds: Int) {

@@ -1,9 +1,11 @@
 # Entregables de Android
 
-La versión más reciente es **2.13**, compilada el 29 de septiembre de 2026 (D-088 y D-089): guía de la primera vez, intereses de las entrevistas, nombre guardado aparte, resumen del relevo activo y audio del video corregido; el consentimiento pasa a v9 ([detalle](../version-2.13-guia-intereses-y-nombre-2026-09-29.md)). La **2.12** (D-087) es más simple para la persona, con avisos encendidos, código de 4 caracteres, modo claro, registro del uso de la app y opiniones con caras; el consentimiento pasa a v8 ([detalle](../version-2.12-mas-simple-y-mas-datos-2026-09-29.md)). La **2.11** la preparó para el primer testeo real (D-086). La primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7 ([detalle y pasos para el testeo](../version-2.11-primer-testeo-2026-09-28.md)). La **2.10** exige participar y aclara los textos (D-084). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
+La versión más reciente es **2.14**, compilada el 29 de septiembre de 2026 para el testeo real (D-090): guía con contexto, primer relevo acompañado y el defecto de la 2.10 corregido ([detalle](../version-2.14-guia-y-primer-relevo-2026-09-29.md)). La **2.13** (D-088 y D-089) trajo guía de la primera vez, intereses de las entrevistas, nombre guardado aparte, resumen del relevo activo y audio del video corregido; el consentimiento pasa a v9 ([detalle](../version-2.13-guia-intereses-y-nombre-2026-09-29.md)). La **2.12** (D-087) es más simple para la persona, con avisos encendidos, código de 4 caracteres, modo claro, registro del uso de la app y opiniones con caras; el consentimiento pasa a v8 ([detalle](../version-2.12-mas-simple-y-mas-datos-2026-09-29.md)). La **2.11** la preparó para el primer testeo real (D-086). La primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7 ([detalle y pasos para el testeo](../version-2.11-primer-testeo-2026-09-28.md)). La **2.10** exige participar y aclara los textos (D-084). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
 
 | Archivo | Uso |
 | --- | --- |
+| [APK 2.14](relevo-android-2.14-2026-09-29.apk) | **Para el testeo real.** Android 12 o posterior. Incluye URL y clave **publicable** de Supabase; es un APK de depuración. Consentimiento v9. |
+| [Proyecto 2.14 para Android Studio](relevo-android-studio-2.14-2026-09-29.zip) | Abrir y continuar el desarrollo. Sin `local.properties`, `capturas/` ni `assets-explorados/`. |
 | [APK 2.13](relevo-android-2.13-2026-09-29.apk) | Instalación en el teléfono de la prueba (Android 12 o posterior). Incluye URL y clave **publicable** de Supabase; es un APK de depuración. Se instala sobre versiones anteriores; como el consentimiento cambió a v9, hay que aceptarlo de nuevo. |
 | [Proyecto 2.13 para Android Studio](relevo-android-studio-2.13-2026-09-29.zip) | Abrir y continuar el desarrollo. Sin `local.properties`, `capturas/` ni `assets-explorados/`. |
 | [APK 2.12](relevo-android-2.12-2026-09-29.apk) | Instalación en el teléfono de la prueba (Android 12 o posterior). Incluye URL y clave **publicable** de Supabase; es un APK de depuración. Se instala sobre versiones anteriores; como el consentimiento cambió a v8, hay que aceptarlo de nuevo. |
@@ -16,7 +18,13 @@ La versión más reciente es **2.13**, compilada el 29 de septiembre de 2026 (D-
 | [APK 2.8](relevo-android-2.8-2026-09-26.apk) y [proyecto 2.8](relevo-android-studio-2.8-2026-09-26.zip) | Perfil, ruta y aviso de regreso con el sistema D-073, sin vidrio. |
 | [APK 2.7](relevo-android-2.7-2026-09-25.apk) y [proyecto 2.7](relevo-android-studio-2.7-2026-09-25.zip) | La versión del protocolo 02, sin perfil ni ruta. |
 
-**SHA-256 del APK 2.13:** `8A6DBF572BEB1A5C28607118ABAE5518AE7050DAA8FC1BB5E1CA310ECDA38A9B` (39,9 MB).
+**SHA-256 del APK 2.14:** `26C84509B24A896453DA79F4BE42D02A9F837A1D599B3AA5948018A29EE9206B` (39,9 MB).
+
+**SHA-256 del ZIP 2.14:** `E4714455A59772964413F7922CBA1D22F8DCE5CC240C9FD507427C5655FAB6C0` (9,3 MB, 235 archivos). No se comprobó que el proyecto del ZIP compile por sí solo.
+
+El APK 2.14 salió de una compilación limpia y pasó 61 pruebas unitarias. En emulador y con conexión se comprobaron la guía, el primer relevo acompañado, la salida de la respuesta y el borrado. Falta probarla en el teléfono y con el parlante de la prueba.
+
+**Antecedente 2.13:** SHA-256 del APK `8A6DBF572BEB1A5C28607118ABAE5518AE7050DAA8FC1BB5E1CA310ECDA38A9B` (39,9 MB).
 
 **SHA-256 del ZIP 2.13:** `92FAA3E654402550C48C49959D4DDD6E1C7494E83420FBA20C81CC4E159E6C40` (9,3 MB, 234 archivos). No se comprobó que el proyecto del ZIP compile por sí solo.
 
@@ -49,6 +57,12 @@ El APK 2.10 salió de una compilación limpia y el código pasó 58 pruebas unit
 **Antecedente 2.6:** APK `8AA57837E74DC1B30711E9D52A1859365F0CAB6F702E811354C42831D1CEC3B3`; ZIP `85A573FA9A7F31B385B6680955093AA1434658D7223E22F373E404C10AEBB420`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Entrega Android 2.14
+
+- **Qué cambió:** el índice señala el APK y el proyecto 2.14 como los del testeo real; la 2.13 queda como antecedente.
+- **Cómo era antes:** apuntaba a 2.13.
+- **Por qué:** pedido del autor (D-090).
 
 ### 2026-09-29 — Entrega Android 2.13
 

@@ -995,7 +995,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas:** dejar el nombre solo en el teléfono y unirlo al código con la hoja de consentimiento firmada (lo que decía D-076); guardarlo junto a cada registro.
 - **Documentación:** [Android 2.13](../06_desarrollo_y_factibilidad/app-android/version-2.13-guia-intereses-y-nombre-2026-09-29.md).
 
+## D-090 — La guía da contexto y acompaña el primer relevo
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor; implementada en Android 2.14, comprobada en emulador, sin probar con personas.
+- **Decisión:** la guía de la primera vez tiene pocas pantallas de contexto (qué es Relevo, qué problema aborda y cómo funcionan la app, el parlante y la persona) y termina haciendo el primer relevo real con la persona, con el primer paso de su ruta como ejemplo y notas en cada paso. Reemplaza las nueve pantallas explicativas de D-088.
+- **Fundamento:** tabla 5 de la memoria (entender el propósito antes de aceptar), sección 3 (el problema), criterio 1 (intención propia) y criterio 6 (carga proporcional: se aprende haciendo lo que igual hay que hacer).
+- **Decisiones de la herramienta, pendientes de revisión del autor:** los textos de la guía y de las notas, la foto de contexto y el aviso tras activar el primer relevo.
+- **Documentación:** [Android 2.14](../06_desarrollo_y_factibilidad/app-android/version-2.14-guia-y-primer-relevo-2026-09-29.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — D-090
+
+- **Qué cambió:** se registró D-090: guía con contexto y primer relevo acompañado.
+- **Cómo estaba antes:** D-088 explicaba cada parte en nueve pantallas antes del consentimiento.
+- **Por qué:** pedido del autor.
 
 ### 2026-09-29 — D-088 y D-089
 

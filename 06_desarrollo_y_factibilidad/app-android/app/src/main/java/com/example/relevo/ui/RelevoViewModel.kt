@@ -147,6 +147,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   )
   private val _guide = MutableStateFlow(loadGuide())
   val guide: StateFlow<GuideState> = _guide.asStateFlow()
+  /** El primer relevo se acaba de activar: Inicio explica qué pasa ahora (D-090). */
+  private val _firstActivated = MutableStateFlow(false)
+  val firstActivated: StateFlow<Boolean> = _firstActivated.asStateFlow()
+  fun dismissFirstActivated() { _firstActivated.value = false }
+
   private fun markGuide(key: String) {
     if (experiencePreferences.getBoolean(key, false)) return
     experiencePreferences.edit().putBoolean(key, true).apply()
@@ -523,6 +528,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val next = prepared.arm(UUID.randomUUID().toString())
     updateValue(next)
     if (next.status == ReminderStatus.WAITING) {
+      if (_guide.value.prepare) _firstActivated.value = true
       markGuide("guide_prepare_done")
       researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
       researchLog.startSession(next)

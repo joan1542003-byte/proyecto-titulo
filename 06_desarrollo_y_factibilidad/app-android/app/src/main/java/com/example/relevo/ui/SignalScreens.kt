@@ -21,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -134,28 +135,36 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
   var knew by rememberSaveable { mutableStateOf<String?>(null) }
   var recalled by rememberSaveable { mutableStateOf<String?>(null) }
   var feeling by rememberSaveable { mutableStateOf<String?>(null) }
-  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { askSignalQuestions }, recalled.takeIf { askSignalQuestions }, feeling.takeIf { askSignalQuestions })
+  // Al responder, el relevo se reinicia mientras la pantalla todavía sale; se sigue mostrando el último
+  // relevo con actividad para no dejar ver «Vuelve a .» vacío (defecto de 2.10).
+  val lastShown = remember { arrayOf(reminder) }
+  val lastFlags = remember { booleanArrayOf(askSignalQuestions, guided) }
+  if (reminder.activity.isNotBlank()) { lastShown[0] = reminder; lastFlags[0] = askSignalQuestions; lastFlags[1] = guided }
+  val shownReminder = lastShown[0]
+  val ask = lastFlags[0]
+  val showTip = lastFlags[1]
+  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { ask }, recalled.takeIf { ask }, feeling.takeIf { ask })
   RelevoScreen(
     bottom = { PlainAction("Saltar", { finish("not_answered") }, color = Relevo.colors.graphite) },
   ) {
     Spacer(Modifier.height(8.dp))
-    if (guided) {
+    if (showTip) {
       GuideTip("Responde lo que pasó de verdad. No hay respuestas buenas ni malas; todas nos ayudan a mejorar Relevo.")
       Spacer(Modifier.height(16.dp))
     }
     Row(verticalAlignment = Alignment.CenterVertically) {
-      PictureContent(activityPicture(reminder.activity, customActivities), Modifier.size(64.dp).clip(CircleShape), iconSize = 26.dp)
+      PictureContent(activityPicture(shownReminder.activity, customActivities), Modifier.size(64.dp).clip(CircleShape), iconSize = 26.dp)
       Spacer(Modifier.width(16.dp))
       Column(Modifier.weight(1f)) {
         Text(
-          if (reminder.signalAt > 0L) "Sonó ${if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else placePhrase(reminder.place)}."
+          if (shownReminder.signalAt > 0L) "Sonó ${if (shownReminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else placePhrase(shownReminder.place)}."
           else "Desactivaste el relevo.",
           style = Relevo.type.subhead, color = Relevo.colors.graphite,
         )
-        Signature(reminder.activity, style = Relevo.type.headline.copy(fontSize = Relevo.type.title2.fontSize, lineHeight = Relevo.type.title2.lineHeight), animate = false)
+        Signature(shownReminder.activity, style = Relevo.type.headline.copy(fontSize = Relevo.type.title2.fontSize, lineHeight = Relevo.type.title2.lineHeight), animate = false)
       }
     }
-    if (askSignalQuestions) {
+    if (ask) {
       SectionGap()
       Question("¿Cómo te cayó el aviso?") {
         FacePicker(feelingFaces, feeling, { feeling = it })

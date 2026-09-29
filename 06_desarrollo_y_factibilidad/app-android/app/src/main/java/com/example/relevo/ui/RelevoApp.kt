@@ -58,6 +58,8 @@ import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.theme.Relevo
 import com.example.relevo.theme.RelevoTheme
 import com.example.relevo.ui.components.KitIcon
+import com.example.relevo.ui.components.Photo
+import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.LocalNavScope
 import com.example.relevo.ui.components.LocalSharedScope
 import com.example.relevo.ui.components.Motion
@@ -74,7 +76,7 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.launch
 
 internal enum class Route {
-  WELCOME, HOW_IT_WORKS, CONSENT, PERMISSION, PROFILE_SETUP,
+  WELCOME, HOW_IT_WORKS, CONSENT, PERMISSION, PROFILE_SETUP, FIRST_RELEVO,
   TABS, PREPARE, ACTIVE, SIGNAL, DECIDE,
   ROUTE_EDIT, PROFILE_EDIT, NOTICES, APPEARANCE, PERMISSIONS, HISTORY, ACTIVITIES, ACTIVITY_EDIT,
   PRIVACY, CONSENT_DETAILS, STUDY, WEEK, CLOSING, FEEDBACK, REPORT,
@@ -88,7 +90,7 @@ internal enum class Tab(val label: String, val icon: KitIcon) {
 
 /** Pantallas que dependen del estado del relevo y no se abandonan con el gesto de volver. */
 private val stateScreens = setOf(Route.SIGNAL, Route.DECIDE)
-private val firstRun = setOf(Route.WELCOME, Route.CONSENT, Route.PERMISSION, Route.PROFILE_SETUP)
+private val firstRun = setOf(Route.WELCOME, Route.CONSENT, Route.PERMISSION, Route.PROFILE_SETUP, Route.FIRST_RELEVO)
 /** Se presentan como hoja completa: suben desde abajo, como las pantallas de creación de iOS. */
 private val modalRoutes = setOf(Route.PREPARE, Route.ACTIVITY_EDIT, Route.FEEDBACK, Route.REPORT, Route.WEEK, Route.CLOSING, Route.PROFILE_EDIT)
 /** Manejan su propio «volver» porque tienen pasos internos. */
@@ -140,6 +142,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   LifecycleEventEffect(Lifecycle.Event.ON_PAUSE) { viewModel.onAppPaused() }
   val quickFeedbackDue by viewModel.quickFeedbackDue.collectAsState()
   val guide by viewModel.guide.collectAsState()
+  val firstActivated by viewModel.firstActivated.collectAsState()
 
   val preferences = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   fun onboardingComplete() = preferences.getBoolean("onboarding_complete", false)
@@ -298,10 +301,32 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   onInterests = viewModel::setInterests,
                   onFinish = { showRoute ->
                     viewModel.completeProfileSetup()
-                    tab = if (showRoute) Tab.ROUTE else Tab.HOME
-                    replace(routeForStatus(reminder.status))
+                    // D-090: si todavía no hay un relevo, la guía sigue con el primer relevo.
+                    if (guide.prepare && reminder.status != ReminderStatus.WAITING) replace(listOf(Route.FIRST_RELEVO))
+                    else {
+                      tab = if (showRoute) Tab.ROUTE else Tab.HOME
+                      replace(routeForStatus(reminder.status))
+                    }
                   },
                 )
+                Route.FIRST_RELEVO -> {
+                  val track = routes.firstOrNull { it.currentStep != null }
+                  val step = track?.currentStep
+                  FirstRelevoScreen(
+                    name = profile.name,
+                    suggestion = step?.activity,
+                    routeTitle = track?.title,
+                    picture = track?.let { interestPhoto(it.interest)?.let { photo -> Picture.OfPhoto(photo) } ?: Picture.OfIcon(interestIcon(it.interest)) } ?: Picture.OfPhoto(Photo.PUERTA),
+                    onStart = {
+                      if (track != null && step != null) viewModel.prepareFromStep(track.interest, step.id)
+                      viewModel.onPrepareOpened("primer_relevo")
+                      tab = Tab.HOME
+                      photoKey = null
+                      replace(listOf(Route.TABS, Route.PREPARE))
+                    },
+                    onLater = { viewModel.logScreen("primer_relevo_despues"); tab = Tab.HOME; replace(listOf(Route.TABS)) },
+                  )
+                }
                 Route.TABS -> TabsHost(
                   tab = tab,
                   reselect = reselect,
@@ -456,6 +481,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
         NextStepSheet(suggestion, onAccept = viewModel::acceptNextStep, onStay = viewModel::declineNextStep, onDismiss = viewModel::dismissNextStep)
       }
       if (askTurnOffReturn) TurnOffReturnSheet(onAnswer = viewModel::answerTurnOffReturn)
+      if (firstActivated && reminder.status == ReminderStatus.WAITING) FirstRelevoActiveSheet(reminder, onDismiss = viewModel::dismissFirstActivated)
     }
     // Las hojas van sobre todo y desenfocan la app que queda detrás.
     SheetHost(sheets, rootHaze)

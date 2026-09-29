@@ -105,13 +105,15 @@ private enum class PrepareStep(val title: String) {
 }
 
 /** Nota de la guía para cada paso del primer relevo. */
-private fun guideTipFor(step: PrepareStep, condition: StudyCondition?): String = when (step) {
-  PrepareStep.ACTIVITY -> "Escribe algo que quieras hacer o toca una idea. Mientras más concreto, mejor: «leer 10 páginas» en vez de «leer más»."
-  PrepareStep.START -> "Anota lo primero que harías, algo que tome segundos: abrir el libro, ponerte las zapatillas."
+private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder: Reminder): String = when (step) {
+  PrepareStep.ACTIVITY -> if (reminder.activity.isNotBlank()) "Te propusimos «${reminder.activity.trim()}». Puedes dejarla o escribir otra cosa que quieras hacer."
+    else "Escribe algo que quieras hacer o toca una idea. Mientras más concreto, mejor: «leer 10 páginas» en vez de «leer más»."
+  PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "El primer paso es «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta empezar."
+    else "Anota lo primero que harías, algo que tome segundos: abrir el libro, ponerte las zapatillas."
   PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja el parlante en otro lugar de tu casa y anota dónde."
-    else "Anota dónde empiezas. Ahí vas a dejar el parlante, para que suene junto a lo que usas."
-  PrepareStep.USAGE -> "Elige las apps donde se te pasa el tiempo y cuánto rato. Cuando sumes ese tiempo, suena. Para probar ahora, toca «Probar con 15 segundos»."
-  PrepareStep.SOUND -> "Toca «Probar el sonido» para escuchar cómo suena. Si no se oye, revisa que el parlante esté encendido y conectado."
+    else "Si suena junto a lo que usas para empezar, te cuesta menos ponerte en marcha."
+  PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
+  PrepareStep.SOUND -> "Así sabrás cómo suena cuando llegue el momento. Si no se oye, revisa que el parlante esté encendido y conectado."
   PrepareStep.REVIEW -> "Revisa que todo esté bien y toca «Activar el relevo». Puedes desactivarlo cuando quieras."
 }
 
@@ -161,6 +163,8 @@ internal fun PrepareScreen(
   var step by rememberSaveable {
     mutableStateOf(
       when {
+        // En el primer relevo guiado se recorren todos los pasos, aunque vengan completos desde la ruta.
+        guided -> PrepareStep.ACTIVITY
         reminder.hasRequiredContent -> PrepareStep.REVIEW
         reminder.activity.isNotBlank() && reminder.howToStart.isNotBlank() && reminder.place.isNotBlank() -> PrepareStep.USAGE
         else -> PrepareStep.ACTIVITY
@@ -212,7 +216,7 @@ internal fun PrepareScreen(
     },
   ) {
     if (guided) {
-      GuideTip(guideTipFor(step, studyCondition))
+      GuideTip(guideTipFor(step, studyCondition, reminder))
       Spacer(Modifier.height(16.dp))
     }
     AnimatedContent(
