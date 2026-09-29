@@ -64,13 +64,19 @@ private val howSteps = listOf(
  * de la app. En la prueba, el objeto del video es un parlante Bluetooth.
  */
 @Composable
-internal fun HowItWorksScreen(onContinue: () -> Unit, continueLabel: String = "Seguir", onBack: (() -> Unit)? = null) {
+internal fun HowItWorksScreen(
+  onContinue: () -> Unit,
+  continueLabel: String = "Seguir",
+  onBack: (() -> Unit)? = null,
+  /** Registro de uso: segundos vistos, si llegó al final y si activó el sonido. */
+  onVideo: (seconds: Int, completed: Boolean, soundOn: Boolean) -> Unit = { _, _, _ -> },
+) {
   RelevoScreen(
     title = "Cómo funciona",
     onBack = onBack,
     bottom = { RelevoButton(continueLabel, onContinue) },
   ) {
-    IntroVideo(Modifier.fillMaxWidth(.62f).align(Alignment.CenterHorizontally))
+    IntroVideo(Modifier.fillMaxWidth(.62f).align(Alignment.CenterHorizontally), onVideo)
     SectionGap()
     Panel {
       howSteps.forEachIndexed { index, step ->
@@ -89,7 +95,7 @@ internal fun HowItWorksScreen(onContinue: () -> Unit, continueLabel: String = "S
     }
     Spacer(Modifier.height(14.dp))
     Text(
-      "En esta prueba, el objeto que suena es un parlante Bluetooth. Lo que preparas y respondes se guarda en el teléfono y en la base del estudio, con un código en vez de tu nombre.",
+      "Por ahora, lo que suena es un parlante Bluetooth. Lo que preparas y respondes se guarda con un código, no con tu nombre.",
       style = Relevo.type.footnote, color = Relevo.colors.graphite,
     )
   }
@@ -101,18 +107,28 @@ internal fun HowItWorksScreen(onContinue: () -> Unit, continueLabel: String = "S
  * o lo retoma; al terminar, se puede ver de nuevo.
  */
 @Composable
-private fun IntroVideo(modifier: Modifier = Modifier) {
+private fun IntroVideo(modifier: Modifier = Modifier, onVideo: (Int, Boolean, Boolean) -> Unit = { _, _, _ -> }) {
   val reduce = rememberReduceMotion()
   var player by remember { mutableStateOf<MediaPlayer?>(null) }
   var playing by remember { mutableStateOf(false) }
   var ended by remember { mutableStateOf(false) }
   var muted by remember { mutableStateOf(true) }
+  var watchedMs by remember { mutableStateOf(0) }
+  var completedOnce by remember { mutableStateOf(false) }
+  var soundOnce by remember { mutableStateOf(false) }
+  fun track(mp: MediaPlayer?) { mp?.let { runCatching { watchedMs = maxOf(watchedMs, it.currentPosition) } } }
 
   fun play() { player?.let { if (ended) it.seekTo(0); it.start(); playing = true; ended = false } }
-  fun pause() { player?.pause(); playing = false }
+  fun pause() { track(player); player?.pause(); playing = false }
 
   LifecycleEventEffect(Lifecycle.Event.ON_PAUSE) { pause() }
-  DisposableEffect(Unit) { onDispose { player?.release(); player = null } }
+  DisposableEffect(Unit) {
+    onDispose {
+      track(player)
+      onVideo(watchedMs / 1000, completedOnce, soundOnce)
+      player?.release(); player = null
+    }
+  }
 
   Box(
     modifier
@@ -130,13 +146,13 @@ private fun IntroVideo(modifier: Modifier = Modifier) {
               val created = MediaPlayer.create(context, R.raw.relevo_como_funciona) ?: return
               created.setSurface(Surface(texture))
               created.setVolume(if (muted) 0f else 1f, if (muted) 0f else 1f)
-              created.setOnCompletionListener { playing = false; ended = true }
+              created.setOnCompletionListener { mp -> watchedMs = maxOf(watchedMs, mp.duration); completedOnce = true; playing = false; ended = true }
               player = created
               if (!reduce) { created.start(); playing = true } else created.seekTo(1)
             }
             override fun onSurfaceTextureSizeChanged(texture: SurfaceTexture, width: Int, height: Int) = Unit
             override fun onSurfaceTextureDestroyed(texture: SurfaceTexture): Boolean {
-              player?.release(); player = null; playing = false
+              track(player); player?.release(); player = null; playing = false
               return true
             }
             override fun onSurfaceTextureUpdated(texture: SurfaceTexture) = Unit
@@ -149,7 +165,7 @@ private fun IntroVideo(modifier: Modifier = Modifier) {
       IconAction(
         if (muted) KitIcon.SILENCIAR else KitIcon.PARLANTE,
         if (muted) "Activar el sonido" else "Quitar el sonido",
-        { muted = !muted; player?.setVolume(if (muted) 0f else 1f, if (muted) 0f else 1f) },
+        { muted = !muted; if (!muted) soundOnce = true; player?.setVolume(if (muted) 0f else 1f, if (muted) 0f else 1f) },
         filled = true,
       )
       IconAction(

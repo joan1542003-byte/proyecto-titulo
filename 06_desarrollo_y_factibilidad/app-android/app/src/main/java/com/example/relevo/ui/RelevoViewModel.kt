@@ -139,6 +139,15 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   private var stateSyncJob: Job? = null
 
+  // Estado del registro de uso: se declara antes de init, que ya lo usa.
+  private var resumedAt = 0L
+  private var lastScreen: String? = null
+  private var lastPrepareStep: String? = null
+  /** Lo que se vio de «Cómo funciona» antes de aceptar: se registra al aceptar. */
+  private var pendingTutorial: String? = null
+  private val _quickFeedbackDue = MutableStateFlow(false)
+  val quickFeedbackDue: StateFlow<Boolean> = _quickFeedbackDue.asStateFlow()
+
   init {
     _installedApps.value = appsRepository.launcherApps()
     Participation.clearLegacyLocalMode(application)
@@ -149,15 +158,79 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       }
       ParticipationMode.STUDY -> {
         val participantCode = experiencePreferences.getString("participant_code", null)
-          ?: _reminder.value.participantCode.ifBlank { "P-${UUID.randomUUID().toString().take(8).uppercase()}" }
+          ?: _reminder.value.participantCode.ifBlank { Participation.newCode() }
         experiencePreferences.edit().putString("participant_code", participantCode).apply()
         if (_reminder.value.participantCode != participantCode || !_reminder.value.consentAccepted || _reminder.value.localOnly)
           updateValue(_reminder.value.copy(participantCode = participantCode, consentAccepted = true, localOnly = false))
       }
     }
     startStateSync()
-    if (Participation.canUse(application)) refreshDashboard()
+    if (Participation.canUse(application)) {
+      refreshDashboard()
+      if (_settings.value.returnNotice) ReturnNotice.schedule(application)
+    }
     onAppResumed()
+  }
+
+  // ---- Registro del uso de la app (desde 2.12) ----
+
+  /** Guarda un uso de la app con el código de la persona. Sin consentimiento vigente no se guarda nada. */
+  private fun log(event: String, detail: String? = null) = researchLog.logApp(_reminder.value.participantCode, event, detail)
+
+
+  fun onAppPaused() {
+    if (resumedAt > 0L) log("app_cerrada", "segundos=${((System.currentTimeMillis() - resumedAt) / 1000L).coerceAtLeast(0)}")
+    resumedAt = 0L
+    lastScreen = null
+    // Lo registrado se envía al salir de la app, sin esperar a la próxima vez.
+    if (hasCurrentConsent()) syncRemote()
+  }
+
+  /** Pantalla que la persona tiene delante. Solo se guarda cuando cambia. */
+  fun logScreen(screen: String) {
+    if (screen == lastScreen) return
+    lastScreen = screen
+    log("pantalla", screen)
+  }
+
+  fun onPrepareOpened(source: String) { lastPrepareStep = null; log("preparar_abierto", source) }
+  fun onPrepareStep(step: String) { lastPrepareStep = step; log("preparar_paso", step) }
+  fun onPrepareClosed() { log("preparar_cerrado", "paso=${lastPrepareStep.orEmpty()}") }
+
+  /** Cuánto se vio del video de «Cómo funciona». Antes de aceptar se guarda en memoria. */
+  fun onTutorialVideo(seconds: Int, completed: Boolean, soundOn: Boolean) {
+    val detail = "segundos=$seconds;completo=${if (completed) "si" else "no"};sonido=${if (soundOn) "si" else "no"}"
+    if (hasCurrentConsent()) log("video_como_funciona", detail) else pendingTutorial = detail
+  }
+
+  /** Permisos que tiene Relevo; se registra cuando cambian. */
+  private fun logPermissions() {
+    val context = getApplication<Application>()
+    val snapshot = listOf(
+      "tiempo_de_uso=${if (_usageAccessGranted.value) "si" else "no"}",
+      "notificaciones=${if (androidx.core.app.NotificationManagerCompat.from(context).areNotificationsEnabled()) "si" else "no"}",
+      "bateria=${if (_backgroundUnrestricted.value) "sin_restriccion" else "con_restriccion"}",
+    ).joinToString(";")
+    if (experiencePreferences.getString("last_permissions", null) == snapshot) return
+    experiencePreferences.edit().putString("last_permissions", snapshot).apply()
+    log("permisos", snapshot)
+  }
+
+  // ---- Opinión rápida: después del tercer y del décimo relevo, una pregunta de un toque ----
+
+
+  private fun refreshQuickFeedback() {
+    val done = _history.value.count { it.outcome.isNotBlank() }
+    _quickFeedbackDue.value = hasCurrentConsent() && QUICK_FEEDBACK_AT.any { done >= it && !experiencePreferences.getBoolean("quick_feedback_$it", false) }
+  }
+
+  /** [value] de 1 a 5, o null si la persona la cerró sin responder. */
+  fun submitQuickFeedback(value: Int?) {
+    val done = _history.value.count { it.outcome.isNotBlank() }
+    experiencePreferences.edit().apply { QUICK_FEEDBACK_AT.filter { done >= it }.forEach { putBoolean("quick_feedback_$it", true) } }.apply()
+    if (value != null) researchLog.recordAnswer(_reminder.value.participantCode, "opinion_rapida", value.toString()) else log("opinion_rapida_cerrada")
+    _quickFeedbackDue.value = false
+    syncRemote()
   }
 
   private fun currentParticipation(): ParticipationMode =
@@ -168,6 +241,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _usageAccessGranted.value = UsageAccess.isGranted(getApplication())
     _backgroundUnrestricted.value = BackgroundAccess.isUnrestricted(getApplication())
     _participation.value = currentParticipation()
+    if (resumedAt == 0L) { resumedAt = System.currentTimeMillis(); log("app_abierta") }
+    logPermissions()
+    refreshQuickFeedback()
     settingsStore.lastOpenedAt = System.currentTimeMillis()
     ReturnNotice.dismiss(getApplication())
     if (settingsStore.returnNotNow >= 2 && !settingsStore.turnOffAsked && _settings.value.returnNotice) _askTurnOffReturn.value = true
@@ -236,6 +312,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun dismissInstruction(week: Int) {
+    log("semana_instruccion_vista", "semana=$week")
     studyStore.markInstructionSeen(week)
     refreshStudy()
   }
@@ -265,6 +342,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun dismissReturn(lastCompletedAt: Long) {
+    log("tarjeta_regreso_ahora_no")
     experiencePreferences.edit().putLong("return_dismissed_for", lastCompletedAt).apply()
     _returnDismissedFor.value = lastCompletedAt
   }
@@ -278,6 +356,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Carga la última configuración usada para revisarla y activarla de nuevo. No la activa por sí sola. */
   fun repeatLast(): Boolean {
     val last = _lastReminder.value ?: return false
+    log("repetir_ultimo", last.activity)
     val installed = _installedApps.value.map { it.packageName }.toSet()
     val apps = last.selectedApps.filter { it.packageName in installed }
     if (apps.isEmpty()) return false
@@ -318,6 +397,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Durante la prueba, la condición de la semana decide dónde suena; la persona no la cambia. */
   fun updateSignalRoute(route: SignalRoute) {
     if (_study.value.condition != null) return
+    log("salida_elegida", route.name.lowercase())
     update { copy(signalRoute = route, status = ReminderStatus.DRAFT) }
   }
 
@@ -325,7 +405,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (accepted && remoteSync.deletionPending) return
     if (accepted) _deletionStatus.value = null
     val participantCode = if (accepted) experiencePreferences.getString("participant_code", null)
-      ?: "P-${UUID.randomUUID().toString().take(8).uppercase()}" else ""
+      ?: Participation.newCode() else ""
     experiencePreferences.edit()
       .putBoolean("academic_consent_accepted", accepted)
       .putString("academic_consent_version", if (accepted) ResearchLogStore.CONSENT_VERSION else null)
@@ -334,6 +414,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _participation.value = currentParticipation()
     update { copy(participantCode = participantCode, consentAccepted = accepted, localOnly = false, status = ReminderStatus.DRAFT) }
     if (accepted) {
+      log("consentimiento_aceptado", ResearchLogStore.CONSENT_VERSION)
+      pendingTutorial?.let { log("video_como_funciona", it); pendingTutorial = null }
+      resumedAt = System.currentTimeMillis()
+      logPermissions()
+      if (_settings.value.returnNotice) ReturnNotice.schedule(getApplication())
       refreshDashboard()
       // Envía lo pendiente y actualiza la copia en el teléfono sin esperar a que la app vuelva a abrirse.
       syncRemote()
@@ -341,6 +426,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun applyPreset(activity: String, firstStep: String, place: String) {
+    log("actividad_elegida", activity)
     routeStore.setPreparedStep(null)
     update {
       copy(activity = activity, howToStart = firstStep, place = place,
@@ -350,11 +436,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun saveCustomActivity(activity: CustomActivity, apply: Boolean = true) {
+    log("actividad_propia_guardada", "${activity.name};${activity.firstStep};${activity.place}")
     _customActivities.value = customActivityStore.upsert(activity)
     if (apply) applyPreset(activity.name, activity.firstStep, activity.place)
   }
 
   fun deleteCustomActivity(id: String) {
+    log("actividad_propia_borrada", _customActivities.value.firstOrNull { it.id == id }?.name)
     _customActivities.value = customActivityStore.delete(id)
   }
 
@@ -424,6 +512,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Prueba de sonido: una firma, que termina sola. [route] permite probar otra salida (E1). */
   fun testSignal(route: SignalRoute? = null): Boolean {
     val started = signalPlayer.play(route ?: _reminder.value.signalRoute, SignalPlayer.Pattern.TEST)
+    log("prueba_de_sonido", "salida=${(route ?: _reminder.value.signalRoute).name.lowercase()};sono=${if (started) "si" else "no"}")
     if (started) viewModelScope.launch {
       delay(3_000)
       signalPlayer.stop()
@@ -470,12 +559,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
    * toque (protocolo 02); null significa que no se respondieron. Si el relevo vino de la ruta, la
    * respuesta puede ofrecer el siguiente paso (R3) o cambiar la actividad.
    */
-  fun completeEvaluation(outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null) {
+  fun completeEvaluation(outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null, feeling: String? = null) {
     AppUsageMonitorService.cancelSignalNotification(getApplication())
     historyStore.markOutcome(_reminder.value.sessionId, outcome)
     _history.value = historyStore.load()
-    researchLog.completeSession(_reminder.value, outcome, knewIntention, recalledFirstStep)
+    researchLog.completeSession(_reminder.value, outcome, knewIntention, recalledFirstStep, feeling)
     syncRemote()
+    refreshQuickFeedback()
     val stepId = routeStore.preparedStep() ?: return
     val track = _routes.value.firstOrNull { track -> track.steps.any { it.id == stepId } } ?: return
     val step = track.steps.first { it.id == stepId }
@@ -518,20 +608,25 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   // ---- Perfil (P1–P3) y ruta (R1–R3): solo en el teléfono ----
 
   fun updateProfile(transform: Profile.() -> Profile) {
-    val next = _profile.value.transform()
+    val previous = _profile.value
+    val next = previous.transform()
+    if (next.image != previous.image) log("perfil_imagen", next.image)
+    if (next.name.isBlank() != previous.name.isBlank()) log("perfil_nombre", if (next.name.isBlank()) "sin_nombre" else "con_nombre")
     profileStore.save(next)
     _profile.value = next
   }
 
   /** P3: guarda los intereses y ajusta las rutas, sin tocar las que la persona ya editó. */
   fun setInterests(interests: List<String>, other: String) {
+    log("intereses", (interests + other.trim()).filter { it.isNotBlank() }.joinToString(";"))
     updateProfile { copy(interests = interests, otherInterest = other) }
     saveRoutes(Interests.reconcile(_routes.value, interests, other) { UUID.randomUUID().toString() })
   }
 
-  fun completeProfileSetup() = updateProfile { copy(setupSeen = true) }
+  fun completeProfileSetup() { log("perfil_listo"); updateProfile { copy(setupSeen = true) } }
 
   fun saveTrack(track: RouteTrack) {
+    log("ruta_guardada", "interes=${track.interest};pasos=${track.steps.size};actual=${track.currentIndex + 1}")
     val tracks = _routes.value
     saveRoutes(if (tracks.any { it.interest == track.interest }) tracks.map { if (it.interest == track.interest) track else it } else tracks + track)
   }
@@ -550,12 +645,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   fun acceptNextStep() {
     val suggestion = _routeSuggestion.value ?: return
+    log("ruta_siguiente_paso", "acepto;${suggestion.next.activity}")
     _routes.value.firstOrNull { it.interest == suggestion.interest }?.let { saveTrack(it.advance()) }
     _routeSuggestion.value = null
   }
 
   fun declineNextStep() {
-    _routeSuggestion.value?.let { routeStore.decline(it.current.id) }
+    _routeSuggestion.value?.let { log("ruta_siguiente_paso", "sigo_en_este;${it.current.activity}"); routeStore.decline(it.current.id) }
     _routeSuggestion.value = null
   }
 
@@ -574,6 +670,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun updateSettings(transform: Settings.() -> Settings) {
     val previous = _settings.value
     val next = previous.transform()
+    if (next != previous) log("ajuste", next.toString().substringAfter('(').removeSuffix(")"))
     settingsStore.save(next)
     _settings.value = next
     if (next.returnNotice != previous.returnNotice) {
@@ -586,6 +683,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun answerTurnOffReturn(turnOff: Boolean) {
+    log("aviso_semanal_apagar", if (turnOff) "si" else "no")
     settingsStore.turnOffAsked = true
     settingsStore.returnNotNow = 0
     _askTurnOffReturn.value = false
@@ -709,7 +807,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         _returnDismissedFor.value = 0L
         remoteSync.clearCredentials()
         experiencePreferences.edit().clear().apply()
-        val code = "P-${UUID.randomUUID().toString().take(8).uppercase()}"
+        val code = Participation.newCode()
         experiencePreferences.edit().putString("participant_code", code).apply()
         val fresh = Reminder(participantCode = code)
         store.save(fresh)
@@ -722,7 +820,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         _participation.value = ParticipationMode.NONE
         _deletionStatus.value = DELETED_MESSAGE
       } else {
-        _deletionStatus.value = "Relevo dejó de registrar, pero no pudimos confirmar el borrado. Tus datos siguen en el teléfono. Inténtalo de nuevo o escribe a joan1542003@gmail.com."
+        _deletionStatus.value = "Relevo dejó de guardar datos, pero no pudimos confirmar el borrado. Tus datos siguen en el teléfono. Inténtalo de nuevo o escribe a joan1542003@gmail.com."
       }
       deletingData = false
     }
@@ -773,7 +871,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   companion object {
     /** Mensaje tras borrar los datos; también marca que la persona dejó la prueba. */
-    const val DELETED_MESSAGE = "Tus datos se borraron y dejaste la prueba. Para volver a usar Relevo, tendrás que aceptar participar de nuevo."
+    const val DELETED_MESSAGE = "Tus datos se borraron y saliste del proyecto. Si quieres volver, tendrás que aceptar de nuevo."
+
+    /** Relevos respondidos tras los que se pide una opinión rápida. */
+    val QUICK_FEEDBACK_AT = listOf(3, 10)
   }
 }
 

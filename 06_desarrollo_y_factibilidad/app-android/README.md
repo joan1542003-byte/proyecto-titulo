@@ -4,25 +4,27 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.11 de prueba
+**Versión:** 2.12 de prueba
 
-**Fecha:** 28 de septiembre de 2026
+**Fecha:** 29 de septiembre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.11-2026-09-28.apk](releases/relevo-android-2.11-2026-09-28.apk). Los de 2.10 a 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
+**APK vigente:** [relevo-android-2.12-2026-09-29.apk](releases/relevo-android-2.12-2026-09-29.apk). Los de 2.11 a 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.11-2026-09-28.zip`
+**Paquete portable:** `releases/relevo-android-studio-2.12-2026-09-29.zip`
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7), el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) el vidrio, las formas y los emoji de D-083 en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md) y los textos, el tono de las fotos y la participación de D-084 en [Android 2.10](version-2.10-participacion-y-claridad-2026-09-27.md).
 
 **Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
 **Licencias de recursos de terceros:** [fuente Schibsted Grotesk, fotografías y emoji Noto 3D](licencias/README.md).
+
+**Versión 2.12:** a pedido del autor (D-087), deja de hablar de «prueba» en el uso diario, simplifica los textos, pide solo el permiso de notificaciones y enciende los avisos, usa un código de 4 caracteres, parte en modo claro, registra cómo se usa la app y pide opiniones con caras. La configuración de las tres semanas se abre manteniendo presionado el texto de la versión en el perfil ([detalle](version-2.12-mas-simple-y-mas-datos-2026-09-29.md)).
 
 **Versión 2.11:** a pedido del autor (D-086), la primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono, con la salida real del sonido y la versión de la app; el consentimiento pasa a v7. Se comprobó con conexión que sesiones, eventos y respuestas llegan a Supabase y que el borrado alcanza a las dos copias ([detalle y pasos para el primer testeo](version-2.11-primer-testeo-2026-09-28.md)).
 
@@ -134,6 +136,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Versión 2.12: más simple y más datos
+
+- **Qué cambió:** el estado apunta a la 2.12.
+- **Cómo estaba antes:** apuntaba a la 2.11.
+- **Por qué:** pedido del autor (D-087).
 
 ### 2026-09-28 — Versión 2.11: primer testeo
 

@@ -99,7 +99,7 @@ internal fun ConsentScreen(
   var checked by rememberSaveable { mutableStateOf(false) }
   var details by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(
-    title = "La prueba de 21 días",
+    title = "Antes de empezar",
     bottom = {
       Row(
         Modifier.fillMaxWidth().heightIn(min = 48.dp)
@@ -108,23 +108,23 @@ internal fun ConsentScreen(
       ) {
         CheckMark(checked)
         Spacer(Modifier.width(12.dp))
-        Text("He leído y acepto participar durante 21 días.", style = Relevo.type.subhead, color = Relevo.colors.ink)
+        Text("Acepto participar durante 21 días.", style = Relevo.type.subhead, color = Relevo.colors.ink)
       }
-      RelevoButton("Aceptar y seguir", onAccept, enabled = checked && !deletionPending)
+      RelevoButton("Aceptar y empezar", onAccept, enabled = checked && !deletionPending)
     },
   ) {
     Text(
-      "Relevo es parte de un proyecto de título. Durante 21 días lo usarás y responderás preguntas breves. Guardamos lo que preparas y lo que respondes con un código, no con tu nombre. Puedes dejar la prueba y pedir que borremos tus datos cuando quieras.",
+      "Relevo es parte de un proyecto de título de Diseño. Por 21 días lo usas como quieras y, de vez en cuando, te hacemos preguntas cortas. Guardamos lo que haces en Relevo con un código, no con tu nombre. Puedes salir y borrar tus datos cuando quieras.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
     Spacer(Modifier.height(12.dp))
-    PlainAction(if (details) "Ocultar los detalles" else "Leer los detalles", { details = !details }, icon = if (details) KitIcon.CONTRAER else KitIcon.EXPANDIR)
+    PlainAction(if (details) "Ocultar" else "Leer más", { details = !details }, icon = if (details) KitIcon.CONTRAER else KitIcon.EXPANDIR)
     AnimatedVisibility(details, enter = expandVertically(Motion.smooth()) + fadeIn(Motion.standard()), exit = shrinkVertically(Motion.smooth()) + fadeOut(Motion.standard(Motion.SHORT))) {
       Column { ConsentSections(remoteConfigured) }
     }
     if (deletionPending) {
       SectionGap()
-      Notice("Hay un borrado de datos pendiente. Mientras tanto, Relevo no registra nada.", icon = KitIcon.ADVERTENCIA) {
+      Notice("Todavía estamos borrando tus datos. Mientras tanto, Relevo no guarda nada.", icon = KitIcon.ADVERTENCIA) {
         PlainAction("Abrir Privacidad y datos", onPrivacy)
       }
     }
@@ -135,14 +135,14 @@ internal fun ConsentScreen(
 @Composable
 internal fun ConsentSections(remoteConfigured: Boolean) {
   Column(Modifier.padding(top = 8.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-    ConsentPart("En qué consiste", "La prueba empieza con una sesión de unos 45 minutos con el investigador. Cada semana la app te pedirá dejar el parlante en un lugar distinto o usar el teléfono como aviso. Al cumplirse el límite que configures, sonará una señal de unos 30 segundos que se detiene sola. Tras cada señal y al final de cada semana habrá preguntas de un toque que puedes omitir. Al terminar, se te invitará a una conversación de unos 15 minutos. El parlante es material de prueba; no es el objeto final.")
-    ConsentPart("Tu decisión", "Participar es voluntario. Puedes omitir preguntas, silenciar el aviso, retirar el permiso de Android o terminar la prueba sin explicar por qué. La actividad que elijas no será juzgada. El sonido puede molestar a otras personas; puedes detenerlo y comunicarlo.")
-    ConsentPart("Qué se guarda", "Un código aleatorio, la actividad, cómo quieres empezar, el lugar que indicas, las apps elegidas, el tiempo configurado y acumulado, los momentos de activación, aviso y respuesta, si silenciaste la señal, el uso de las apps elegidas en los 10 minutos anteriores y posteriores a la señal, y las respuestas que decidas dar.")
-    ConsentPart("Dónde se guarda", if (remoteConfigured) "En el teléfono, y la app intenta enviarlo a Supabase, la base de datos del estudio. Si no hay conexión, queda pendiente en el teléfono. Además, una copia sin tu nombre queda en la carpeta Documentos/Relevo del teléfono, para no perder resultados si falla el envío; se borra cuando pides borrar tus datos."
+    ConsentPart("Cómo es", "Empieza con un encuentro de unos 45 minutos para dejar todo listo. Algunas semanas la app te pedirá dejar el parlante en otro lugar o usar el teléfono. Cuando se cumple el tiempo que elegiste, suena unos 30 segundos y para solo. Después de cada aviso y al final de cada semana hay preguntas de un toque; puedes saltarlas. Al final te invitamos a conversar unos 15 minutos. El parlante es provisorio; no es el objeto final.")
+    ConsentPart("Tú decides", "Participar es voluntario. Puedes saltar preguntas, silenciar el aviso, quitar los permisos o salir cuando quieras, sin dar explicaciones. Nadie va a juzgar lo que elijas hacer. El sonido puede molestar a otras personas; puedes detenerlo y contárnoslo.")
+    ConsentPart("Qué guardamos", "Un código al azar; lo que preparas (actividad, cómo empiezas, dónde, apps y tiempo); cuándo lo activas, cuándo suena y qué respondes; cuánto usaste las apps elegidas 10 minutos antes y después del aviso; y cómo usas Relevo: cuándo lo abres y por cuánto tiempo, qué pantallas ves, cuánto del video ves, tus intereses, tus actividades y los ajustes que cambias. Tu nombre, si lo escribes, queda solo en el teléfono.")
+    ConsentPart("Dónde se guarda", if (remoteConfigured) "En el teléfono y en la base de datos del proyecto (Supabase). Si no hay internet, se envía después. También queda una copia sin tu nombre en la carpeta Documentos/Relevo del teléfono; se borra si borras tus datos."
       else "Esta instalación no tiene configurada la base remota: todo queda en este teléfono.")
-    ConsentPart("Qué no se consulta", "El permiso de Tiempo de uso podría permitir ver el uso de otras apps; Relevo cuenta solo las que eliges, mientras el relevo está activo. No lee mensajes, fotos, búsquedas ni lo que hay en la pantalla.")
-    ConsentPart("Cómo se identifica", "El código reemplaza tu nombre, pero no vuelve anónimos los datos: la combinación de actividades, lugares y horarios podría identificarte.")
-    ConsentPart("Plazo y contacto", "Puedes pedir la eliminación desde Privacidad y datos o escribiendo a joan1542003@gmail.com con tu código. Si no la pides antes, los registros se eliminan, como máximo, el 30 de diciembre de 2026.")
+    ConsentPart("Qué no vemos", "El permiso de Tiempo de uso podría mostrar el uso de otras apps; Relevo solo cuenta las que eliges, mientras el relevo está activo. No lee mensajes, fotos, búsquedas ni lo que hay en tu pantalla.")
+    ConsentPart("Tu código", "El código reemplaza tu nombre, pero no vuelve anónimos los datos: juntando actividades, lugares y horarios, alguien podría reconocerte.")
+    ConsentPart("Hasta cuándo", "Puedes borrar tus datos desde Perfil, en Tus datos, o escribiendo a joan1542003@gmail.com con tu código. Si no lo haces antes, los borramos a más tardar el 30 de diciembre de 2026.")
   }
 }
 
@@ -157,7 +157,7 @@ private fun ConsentPart(title: String, text: String) {
 /** Consentimiento completo, de solo lectura, desde Privacidad y datos. */
 @Composable
 internal fun ConsentDetailsScreen(remoteConfigured: Boolean, onBack: () -> Unit) {
-  RelevoScreen(title = "Consentimiento", onBack = onBack) {
+  RelevoScreen(title = "Lo que aceptaste", onBack = onBack) {
     Text("Aceptaste participar con este texto.", style = Relevo.type.body, color = Relevo.colors.graphite)
     ConsentSections(remoteConfigured)
   }
@@ -165,7 +165,8 @@ internal fun ConsentDetailsScreen(remoteConfigured: Boolean, onBack: () -> Unit)
 
 /**
  * A3. El permiso de Tiempo de uso es necesario para avanzar; al volver con el permiso activo, la
- * app sigue sola. Las notificaciones son opcionales.
+ * app sigue sola. Desde 2.12 (D-087) la app pide las notificaciones apenas se abre esta pantalla,
+ * para que queden encendidas, y ofrece quitar la restricción de batería.
  */
 @Composable
 internal fun PermissionScreen(
@@ -173,10 +174,13 @@ internal fun PermissionScreen(
   onOpenUsageSettings: () -> Unit,
   onRefresh: () -> Unit,
   onContinue: () -> Unit,
+  backgroundUnrestricted: Boolean = true,
+  onBattery: () -> Unit = {},
 ) {
   val context = LocalContext.current
   var notifications by remember { mutableStateOf(hasNotificationPermission(context)) }
   var waitingForSettings by remember { mutableStateOf(false) }
+  LaunchedEffect(Unit) { if (!notifications) requestNotificationPermission(context) }
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
     onRefresh()
     notifications = hasNotificationPermission(context)
@@ -192,7 +196,7 @@ internal fun PermissionScreen(
       else RelevoButton("Dar el permiso", { waitingForSettings = true; onOpenUsageSettings() })
     },
   ) {
-    Text("Relevo necesita saber cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.", style = Relevo.type.body, color = Relevo.colors.ink)
+    Text("Para avisarte, Relevo necesita saber cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.", style = Relevo.type.body, color = Relevo.colors.ink)
     SectionGap()
     ListSection {
       ListRow(
@@ -201,9 +205,14 @@ internal fun PermissionScreen(
         trailing = { StatusChip(if (usageAccess) KitIcon.LISTO else KitIcon.ADVERTENCIA, if (usageAccess) "Listo" else "Falta", onPanel = true) },
       )
       ListRow(
-        "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Opcional. Para avisarte aunque estés en otra app.",
+        "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app.",
         onClick = if (notifications) null else ({ requestNotificationPermission(context) }),
         trailing = { StatusChip(if (notifications) KitIcon.LISTO else KitIcon.AGREGAR, if (notifications) "Listo" else "Activar", onPanel = true) },
+      )
+      ListRow(
+        "Batería", icon = KitIcon.BATERIA, subtitle = "Para que Relevo siga funcionando aunque pasen días.",
+        onClick = if (backgroundUnrestricted) null else onBattery,
+        trailing = { StatusChip(if (backgroundUnrestricted) KitIcon.LISTO else KitIcon.AGREGAR, if (backgroundUnrestricted) "Listo" else "Activar", onPanel = true) },
       )
     }
   }

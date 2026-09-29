@@ -95,6 +95,22 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
       }
     }
 
+    for (chunk in store.pendingAppEvents().chunked(EVENT_BATCH)) {
+      val batch = send(APP_EVENTS_PATH, JSONArray().apply { chunk.forEach { put(it.toJson()) } }.toString(), upsert = false)
+      when {
+        batch.ok -> chunk.forEach { store.markAppEventSynced(it.id) }
+        batch.permanent -> for (event in chunk) {
+          val single = send(APP_EVENTS_PATH, JSONArray().put(event.toJson()).toString(), upsert = false)
+          when {
+            single.ok -> store.markAppEventSynced(event.id)
+            single.permanent -> { store.markAppEventRejected(event.id); rejectedNow++; remember(single, "uso") }
+            else -> return fail(single, "uso")
+          }
+        }
+        else -> return fail(batch, "uso")
+      }
+    }
+
     val editor = preferences.edit().putLong("last_success_at", System.currentTimeMillis())
     if (rejectedNow == 0) editor.remove("last_error")
     editor.apply()
@@ -121,10 +137,12 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
       JSONObject(response.inputStream.bufferedReader().use { it.readText() }).getString("id")
     }.getOrNull() ?: return false
     if (!user.matches(Regex("[0-9a-fA-F-]{36}"))) return false
+    if (!delete("/rest/v1/relevo_app_events?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_answers?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_events?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_sessions?user_id=eq.$user", token)) return false
-    return noRows("/rest/v1/relevo_answers?select=id&user_id=eq.$user&limit=1", token) &&
+    return noRows("/rest/v1/relevo_app_events?select=id&user_id=eq.$user&limit=1", token) &&
+      noRows("/rest/v1/relevo_answers?select=id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_events?select=id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_sessions?select=session_id&user_id=eq.$user&limit=1", token)
   }
@@ -225,6 +243,7 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     .put("signal_end", signalEnd ?: JSONObject.NULL).put("response_seconds", responseSeconds ?: JSONObject.NULL)
     .put("usage_before_seconds", usageBeforeSeconds ?: JSONObject.NULL).put("usage_after_seconds", usageAfterSeconds ?: JSONObject.NULL)
     .put("signal_route", signalRoute ?: JSONObject.NULL).put("app_version", appVersion ?: JSONObject.NULL)
+    .put("signal_feeling", signalFeeling ?: JSONObject.NULL)
 
   private fun PendingAnswer.toJson() = JSONObject()
     .put("client_answer_id", "$participantCode-a$id").put("participant_code", participantCode)
@@ -236,6 +255,11 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     .put("client_event_id", "$sessionId-$id").put("session_id", sessionId).put("participant_code", participantCode)
     .put("event_type", type).put("target_package", targetPackage).put("value_seconds", seconds ?: JSONObject.NULL)
     .put("created_at", createdAt.iso()).put("consent_version", consentVersion)
+
+  private fun PendingAppEvent.toJson() = JSONObject()
+    .put("client_event_id", "$participantCode-u$id").put("participant_code", participantCode)
+    .put("event", event).put("detail", detail ?: JSONObject.NULL)
+    .put("created_at", createdAt.iso()).put("app_version", appVersion).put("consent_version", consentVersion)
 
   private fun Long.iso() = Instant.ofEpochMilli(this).toString()
 
@@ -251,5 +275,6 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     const val EVENT_BATCH = 50
     const val EVENTS_PATH = "relevo_events?on_conflict=client_event_id"
     const val ANSWERS_PATH = "relevo_answers?on_conflict=client_answer_id"
+    const val APP_EVENTS_PATH = "relevo_app_events?on_conflict=client_event_id"
   }
 }

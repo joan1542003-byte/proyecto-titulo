@@ -13,8 +13,8 @@ import java.time.OffsetDateTime
 /**
  * Copia del registro del estudio en la carpeta Documentos/Relevo del teléfono (Android 2.11). Se
  * actualiza sola cada vez que la app intenta enviar datos, aunque no haya conexión, y queda aunque
- * se desinstale la app, para que el investigador pueda recuperar los resultados. Son tres archivos
- * por código de participación: el registro completo en JSON y dos tablas CSV (relevos y respuestas)
+ * se desinstale la app, para que el investigador pueda recuperar los resultados. Son cuatro archivos
+ * por código de participación: el registro completo en JSON y tres tablas CSV (relevos, respuestas y uso)
  * que se abren en una planilla. No incluye el nombre ni la imagen del perfil. Borrar los datos desde
  * Privacidad y datos también borra estos archivos.
  */
@@ -39,6 +39,7 @@ object ResearchBackup {
       save(context, "$base.json", "application/json", json.toString(2))
       save(context, "$base-relevos.csv", "text/csv", csv(log.getJSONArray("sessions")))
       save(context, "$base-respuestas.csv", "text/csv", csv(log.getJSONArray("answers")))
+      save(context, "$base-uso.csv", "text/csv", csv(log.getJSONArray("app_events")))
       preferences(context).edit().putLong("last_at", System.currentTimeMillis()).apply()
       true
     }.getOrElse { Log.w(TAG, "No se pudo escribir la copia: ${it.javaClass.simpleName}"); false }

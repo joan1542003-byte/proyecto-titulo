@@ -952,7 +952,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Condición de revisión:** que las personas entiendan cómo usar la app sin ayuda; que la copia y el envío funcionen en el teléfono de la prueba; revisión docente del consentimiento v7.
 - **Documentación:** [Android 2.11](../06_desarrollo_y_factibilidad/app-android/version-2.11-primer-testeo-2026-09-28.md).
 
+## D-087 — Una app que no se sienta como un testeo, con más datos y opiniones de un toque
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor; implementada en Android 2.12, comprobada en emulador, sin probar en el teléfono de la prueba ni con personas.
+- **Decisión:**
+  - *Lenguaje*: las pantallas de uso diario no hablan de «prueba», «investigador», «sesión inicial» ni «condición»; los textos usan palabras simples. La configuración de las tres semanas queda oculta para la persona (se abre manteniendo presionado el texto de la versión en el perfil).
+  - *Avisos*: la app pide sola el permiso de notificaciones; el aviso y el resumen semanal empiezan encendidos.
+  - *Código*: 4 caracteres fáciles de dictar.
+  - *Tema*: modo claro por defecto.
+  - *Datos*: se registra cómo se usa la app, además de los relevos y las respuestas, y se envía también al salir de la app.
+  - *Opinión*: una reacción con tres caras tras cada aviso y una opinión rápida con cinco caras después del tercer y del décimo relevo; las preguntas tras el aviso se hacen siempre que suena.
+- **Decisiones de la herramienta, pendientes de revisión del autor:** los textos nuevos, qué usos se registran y con qué nombre, el momento de la opinión rápida (relevos 3 y 10), las caras elegidas, el alfabeto del código y la forma de abrir la configuración oculta.
+- **Límite ético:** el consentimiento sigue diciendo con claridad que Relevo es parte de un proyecto de título, qué se guarda y cómo salir. Evitar la palabra «prueba» en el uso diario no oculta la participación. Como se guardan más datos, el consentimiento pasa a v8 y necesita la revisión del profesor guía.
+- **Fundamento:** pedido del autor de la noche del 28 de septiembre de que la app sea lo más fácil posible, no se sienta como un testeo y registre la mayor cantidad de datos.
+- **Alternativas:** mantener el lenguaje de prueba; registrar solo los relevos; pedir las opiniones solo en la entrevista final.
+- **Condición de revisión:** que las personas digan que la app se entiende sin ayuda; revisión ética del registro de uso; que el volumen de datos no afecte la batería ni el envío.
+- **Documentación:** [Android 2.12](../06_desarrollo_y_factibilidad/app-android/version-2.12-mas-simple-y-mas-datos-2026-09-29.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — D-087
+
+- **Qué cambió:** se registró D-087: lenguaje sin «prueba», avisos encendidos, código corto, modo claro, registro del uso y opiniones de un toque.
+- **Cómo estaba antes:** la 2.11 hablaba de prueba, dejaba apagados los avisos opcionales, usaba códigos largos y no registraba el uso de la app.
+- **Por qué:** pedido del autor.
 
 ### 2026-09-28 — D-086
 

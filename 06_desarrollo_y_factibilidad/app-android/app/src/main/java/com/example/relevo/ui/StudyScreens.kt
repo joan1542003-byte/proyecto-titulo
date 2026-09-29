@@ -41,28 +41,29 @@ import com.example.relevo.ui.components.SegmentedControl
 
 /** Tarjetas de la prueba de 21 días en Inicio: sesión inicial, condición de la semana y cierres. */
 @Composable
-internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, onWeekReview: () -> Unit, onClosing: () -> Unit) {
+internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, onWeekReview: () -> Unit, onClosing: () -> Unit, firstRelevoDone: Boolean = false) {
   if (!study.active && !study.finished) return
   val week = study.instructionWeek
   val condition = study.condition
   val closing = study.pendingWeek == null && study.closingPending
-  if (!study.initialSession && (week == null || condition == null) && study.pendingWeek == null && !closing) return
+  val firstCard = study.initialSession && !firstRelevoDone
+  if (!firstCard && (week == null || condition == null) && study.pendingWeek == null && !closing) return
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-    if (study.initialSession) {
-      StudyCard(KitIcon.VALIDACION, "Prueba · día 0", "Sesión inicial", "Hoy preparas Relevo junto al investigador. Deja el parlante junto a lo que necesitas para empezar.")
+    if (firstCard) {
+      StudyCard(KitIcon.VALIDACION, "Hoy", "Tu primer relevo", "Prepáralo con calma. Deja el parlante junto a lo que usas para empezar.")
     }
     if (week != null && condition != null) {
-      StudyCard(conditionIcon(condition), "Semana $week de 3", conditionName(condition), conditionInstruction(condition), conditionDetail(condition)) {
+      StudyCard(conditionIcon(condition), "Esta semana", conditionName(condition), conditionInstruction(condition), conditionDetail(condition)) {
         PlainAction("Entendido", { onDismissInstruction(week) }, icon = KitIcon.LISTO)
       }
     }
     study.pendingWeek?.let { pending ->
-      StudyCard(KitIcon.CALENDARIO, "Prueba", "Cierre de la semana $pending", "Tres preguntas breves. Puedes omitirlas.") {
+      StudyCard(KitIcon.CALENDARIO, "Tu semana", "¿Cómo te fue esta semana?", "Tres preguntas de un toque.") {
         PlainAction("Responder", onWeekReview, icon = KitIcon.SIGUIENTE)
       }
     }
     if (closing) {
-      StudyCard(KitIcon.LISTO, "Día 21", "Terminaste la prueba. Gracias.", "Cinco preguntas breves, unos 2 minutos.") {
+      StudyCard(KitIcon.LISTO, "Día 21", "¡Llegaste al día 21! Gracias.", "Cinco preguntas cortas, unos 2 minutos.") {
         PlainAction("Responder", onClosing, icon = KitIcon.SIGUIENTE)
       }
     }
@@ -150,21 +151,21 @@ internal fun WeekReviewScreen(week: Int, condition: StudyCondition?, onSubmit: (
   var comment by rememberSaveable { mutableStateOf("") }
   BackHandler(onBack = onLater)
   RelevoScreen(
-    title = "Cierre de la semana $week",
+    title = "¿Cómo te fue esta semana?",
     subtitle = condition?.let(::conditionName),
     onBack = onLater, closeIcon = true, backLabel = "Después",
     bottom = {
-      RelevoButton("Enviar las respuestas", { onSubmit(preparation, annoyance, place, comment) })
-      PlainAction("Omitir esta semana", { onSubmit(null, null, null, "") }, color = Relevo.colors.graphite)
+      RelevoButton("Enviar", { onSubmit(preparation, annoyance, place, comment) })
+      PlainAction("Saltar", { onSubmit(null, null, null, "") }, color = Relevo.colors.graphite)
     },
   ) {
-    Question("¿Cuánto te costó preparar Relevo esta semana?") { ScaleControl(preparation, { preparation = it }) }
+    Question("¿Te costó preparar Relevo?") { ScaleControl(preparation, { preparation = it }) }
     SectionGap()
-    Question("¿Cuánto te molestó la señal?") { ScaleControl(annoyance, { annoyance = it }) }
+    Question("¿Te molestó el sonido?") { ScaleControl(annoyance, { annoyance = it }) }
     SectionGap()
-    Question("¿Cuánto se relacionaba la señal con el lugar?") { ScaleControl(place, { place = it }) }
+    Question("¿El sonido tenía que ver con el lugar donde sonó?") { ScaleControl(place, { place = it }) }
     SectionGap()
-    RenglonArea("Comentario (opcional)", comment, { comment = it }, "Escribe aquí")
+    RenglonArea("¿Algo más que quieras contarnos?", comment, { comment = it }, "Escribe aquí, si quieres")
   }
 }
 
@@ -181,11 +182,11 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
   var speakerPlace by rememberSaveable { mutableStateOf("") }
   BackHandler(onBack = onLater)
   RelevoScreen(
-    title = "Terminaste la prueba",
-    subtitle = "Gracias. Cinco preguntas breves; todas se pueden omitir.",
+    title = "¡Terminaste los 21 días!",
+    subtitle = "Gracias. Cinco preguntas cortas; puedes saltar las que quieras.",
     onBack = onLater, closeIcon = true, backLabel = "Después",
     bottom = {
-      RelevoButton("Enviar las respuestas", {
+      RelevoButton("Enviar", {
         onSubmit(mapOf(
           "seguiria_usando" to continueUsing.orEmpty(),
           "semana_que_ayudo" to helpedMost.orEmpty(),

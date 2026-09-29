@@ -14,6 +14,7 @@
 | 27 sep. | Leer las anotaciones que dejó en las diapositivas de Figma y actualizar el texto de la presentación. | [Guion de la corrección cruzada, versión 2](guion-presentacion-correccion-cruzada-2026-09-30.md) | `8cc73d9` | — |
 | 27 sep. | Grabar un GIF de la app funcionando. | [GIF de la app 2.10](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/README.md) | `9794456` | — |
 | 28 sep. | Revisar la app y dejarla lista para el primer testeo real: explicar su uso la primera vez, incluir el video en vertical y guardar todo en la base de datos y en el teléfono. | [Android 2.11](../06_desarrollo_y_factibilidad/app-android/version-2.11-primer-testeo-2026-09-28.md) | «Android 2.11: primer testeo» | D-086 |
+| 28–29 sep. | App más simple, que no se sienta como un testeo, con más datos, notificaciones y modo claro por defecto, código simple y actividades para generar imágenes. | [Android 2.12](../06_desarrollo_y_factibilidad/app-android/version-2.12-mas-simple-y-mas-datos-2026-09-29.md) y [actividades](../10_recursos_visuales/23_actividades-e-imagenes-2026-09-29.md) | «Android 2.12: más simple y más datos» | D-087 |
 | 28 sep. | Un video de animación de 15 segundos que muestre qué es Relevo, en español; después, alargarlo a 30 segundos sin textos que no aporten. | [Relevo en 30 segundos](../10_recursos_visuales/marca-2.0/video/README.md) | `7a052ef` y `6be9b37` | — |
 
 ## 2. Decisiones
@@ -22,6 +23,7 @@
 - **D-085**, el sistema de marca 2.0, es una propuesta: el autor pidió el trabajo, pero no ha aprobado el resultado como manual vigente. Reúne D-073 con los cambios de D-083 y D-084.
 - **El guion, el GIF y el video** no crean decisiones nuevas: aplican decisiones vigentes a piezas de presentación. En el guion se corrigieron dos datos vencidos: la prueba es por ahora con una persona (D-081) y la app vigente es la 2.10.
 - **D-086** (Android 2.11) es decisión del autor: explicar la app la primera vez y guardar los datos en Supabase y en el teléfono. El texto de los pasos, el formato de la copia y las vistas de análisis los propuso la herramienta.
+- **D-087** (Android 2.12) es decisión del autor: lenguaje sin «prueba», avisos encendidos, código corto, modo claro, más datos y opiniones con caras. Los textos, los usos registrados y las actividades sumadas los propuso la herramienta.
 - **Queda sin decidir:**
   - qué versión de la app (2.7 a 2.10) se usa en la prueba de 21 días;
   - si el profesor guía confirma que exigir la participación es compatible con el consentimiento;
@@ -76,6 +78,12 @@ Los pedidos literales, las fuentes consultadas y lo que no se afirma de cada tra
 - **Pruebas reales:** la app en el teléfono y el parlante de la prueba, el borrado sin conexión, TalkBack y texto grande, y el defecto visual al responder.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Android 2.12
+
+- **Qué cambió:** se sumaron el pedido y el resultado de Android 2.12, la lista de actividades y D-087.
+- **Cómo estaba antes:** la bitácora terminaba con Android 2.11.
+- **Por qué:** registrar el trabajo pedido por el autor.
 
 ### 2026-09-28 — Android 2.11
 

@@ -1,9 +1,11 @@
 # Entregables de Android
 
-La versión más reciente es **2.11**, compilada el 28 de septiembre de 2026 para el primer testeo real (D-086). La primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7 ([detalle y pasos para el testeo](../version-2.11-primer-testeo-2026-09-28.md)). La **2.10** exige participar y aclara los textos (D-084). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
+La versión más reciente es **2.12**, compilada el 29 de septiembre de 2026 (D-087): más simple para la persona, con avisos encendidos, código de 4 caracteres, modo claro, registro del uso de la app y opiniones con caras; el consentimiento pasa a v8 ([detalle](../version-2.12-mas-simple-y-mas-datos-2026-09-29.md)). La **2.11** la preparó para el primer testeo real (D-086). La primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7 ([detalle y pasos para el testeo](../version-2.11-primer-testeo-2026-09-28.md)). La **2.10** exige participar y aclara los textos (D-084). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
 
 | Archivo | Uso |
 | --- | --- |
+| [APK 2.12](relevo-android-2.12-2026-09-29.apk) | Instalación en el teléfono de la prueba (Android 12 o posterior). Incluye URL y clave **publicable** de Supabase; es un APK de depuración. Se instala sobre versiones anteriores; como el consentimiento cambió a v8, hay que aceptarlo de nuevo. |
+| [Proyecto 2.12 para Android Studio](relevo-android-studio-2.12-2026-09-29.zip) | Abrir y continuar el desarrollo. Sin `local.properties`, `capturas/` ni `assets-explorados/`. |
 | [APK 2.11](relevo-android-2.11-2026-09-28.apk) | Instalación en el teléfono de la prueba (Android 12 o posterior). Incluye URL y clave **publicable** de Supabase; es un APK de depuración, no una publicación de tienda. Se instala sobre versiones anteriores; como el consentimiento cambió a v7, hay que aceptarlo de nuevo. |
 | [Proyecto 2.11 para Android Studio](relevo-android-studio-2.11-2026-09-28.zip) | Abrir y continuar el desarrollo. Sin `local.properties`, `capturas/` ni `assets-explorados/`. |
 | [APK 2.10](relevo-android-2.10-2026-09-27.apk) | Instalación interna en un teléfono con Android 12 o posterior. Incluye URL y clave **publicable** de Supabase; es un APK de depuración, no una publicación de tienda. Se instala sobre la 2.9, la 2.8 o la 2.7 sin pedir de nuevo el consentimiento a quien ya participa; quien usaba la app sin participar debe aceptarlo para seguir. |
@@ -12,7 +14,13 @@ La versión más reciente es **2.11**, compilada el 28 de septiembre de 2026 par
 | [APK 2.8](relevo-android-2.8-2026-09-26.apk) y [proyecto 2.8](relevo-android-studio-2.8-2026-09-26.zip) | Perfil, ruta y aviso de regreso con el sistema D-073, sin vidrio. |
 | [APK 2.7](relevo-android-2.7-2026-09-25.apk) y [proyecto 2.7](relevo-android-studio-2.7-2026-09-25.zip) | La versión del protocolo 02, sin perfil ni ruta. |
 
-**SHA-256 del APK 2.11:** `5E74A5A888C4C65EE4B08DE6442A5DFD929BEAD20BDA8543B7005B909934D59E` (39,4 MB).
+**SHA-256 del APK 2.12:** `220920C0B2618029EB23B9D27DBC176A15D511667EB3B838221E8832E52761B4` (39,7 MB).
+
+**SHA-256 del ZIP 2.12:** `EE9C39DC14674ECFE97629CB2CB85FB3C96C5B3A70FA0DC9E940E8828ADF1D08` (9,2 MB, 233 archivos). No se comprobó que el proyecto del ZIP compile por sí solo.
+
+El APK 2.12 salió de una compilación limpia y pasó 61 pruebas unitarias. En emulador y con conexión se comprobaron la primera vez con los textos nuevos, el pedido automático de notificaciones, el código corto, la configuración oculta, tres relevos con reacción, la opinión rápida, el registro del uso en Supabase y el borrado de todo. Falta probarla en el teléfono y con el parlante de la prueba.
+
+**Antecedente 2.11:** SHA-256 del APK `5E74A5A888C4C65EE4B08DE6442A5DFD929BEAD20BDA8543B7005B909934D59E` (39,4 MB).
 
 **SHA-256 del ZIP 2.11:** `27EF64E06880BEC04290F20312040D13BF54F9EA4046EF4B9D919BA6AD43B340` (9 MB, 226 archivos, con el video de 2 MB). No se volvió a comprobar que el proyecto del ZIP compile por sí solo.
 
@@ -33,6 +41,12 @@ El APK 2.10 salió de una compilación limpia y el código pasó 58 pruebas unit
 **Antecedente 2.6:** APK `8AA57837E74DC1B30711E9D52A1859365F0CAB6F702E811354C42831D1CEC3B3`; ZIP `85A573FA9A7F31B385B6680955093AA1434658D7223E22F373E404C10AEBB420`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Entrega Android 2.12
+
+- **Qué cambió:** el índice señala el APK y el proyecto 2.12, con sus huellas y lo comprobado; la 2.11 queda como antecedente.
+- **Cómo era antes:** apuntaba a 2.11 como versión más reciente.
+- **Por qué:** pedido del autor (D-087).
 
 ### 2026-09-28 — Entrega Android 2.11
 

@@ -140,6 +140,9 @@ internal fun HomeTab(
   reselect: Int,
   actions: HomeActions,
   onChangeRoute: (String) -> Unit,
+  quickFeedbackDue: Boolean = false,
+  onQuickFeedback: (Int?) -> Unit = {},
+  onFeedback: () -> Unit = {},
 ) {
   val scroll = rememberScrollState()
   var firstReselect by remember { mutableStateOf(reselect) }
@@ -173,7 +176,11 @@ internal fun HomeTab(
       }
     },
   ) {
-    StudyCards(study, actions.onDismissInstruction, actions.onWeekReview, actions.onClosing)
+    StudyCards(study, actions.onDismissInstruction, actions.onWeekReview, actions.onClosing, firstRelevoDone = history.isNotEmpty())
+    if (quickFeedbackDue && !active) {
+      QuickFeedbackCard(onQuickFeedback, { onQuickFeedback(null); onFeedback() })
+      SectionGap()
+    }
     AcknowledgementToast(acknowledgement, changedRouteInterest, actions.onDismissAcknowledgement, onChangeRoute)
     Box(Modifier.appear(0)) {
       when {

@@ -179,3 +179,71 @@ select participant_code, question as pregunta, answer as respuesta,
 from public.relevo_answers;
 
 revoke all on all tables in schema analisis from public, anon, authenticated;
+
+-- Android 2.12 (29 de septiembre de 2026): cómo le cayó el aviso a la persona y registro del uso de la app.
+alter table public.relevo_sessions
+  add column if not exists signal_feeling text check (signal_feeling is null or signal_feeling in ('good', 'neutral', 'bad'));
+
+create table if not exists public.relevo_app_events (
+  id bigint generated always as identity primary key,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  client_event_id text not null unique,
+  participant_code text not null check (char_length(participant_code) between 3 and 24),
+  event text not null check (char_length(event) between 1 and 40),
+  detail text check (detail is null or char_length(detail) <= 600),
+  app_version text check (app_version is null or char_length(app_version) <= 20),
+  consent_version text not null,
+  created_at timestamptz not null default now()
+);
+create index if not exists relevo_app_events_user_created_idx on public.relevo_app_events (user_id, created_at desc);
+create index if not exists relevo_app_events_code_created_idx on public.relevo_app_events (participant_code, created_at);
+
+alter table public.relevo_app_events enable row level security;
+revoke all on table public.relevo_app_events from anon, authenticated;
+grant select, insert, delete on table public.relevo_app_events to authenticated;
+grant usage, select on sequence public.relevo_app_events_id_seq to authenticated;
+
+drop policy if exists "participants insert own app events" on public.relevo_app_events;
+create policy "participants insert own app events" on public.relevo_app_events for insert to authenticated
+with check ((select auth.uid()) = user_id);
+drop policy if exists "participants read own app events" on public.relevo_app_events;
+create policy "participants read own app events" on public.relevo_app_events for select to authenticated
+using ((select auth.uid()) = user_id);
+drop policy if exists "participants delete own app events" on public.relevo_app_events;
+create policy "participants delete own app events" on public.relevo_app_events for delete to authenticated
+using ((select auth.uid()) = user_id);
+
+-- analisis.relevos suma signal_feeling al final (se recrea con la misma definición de 2.11 más esa columna).
+create or replace view analisis.relevos with (security_invoker = true) as
+select
+  s.participant_code, s.session_id, s.study_day, s.study_condition, s.signal_route, s.app_version,
+  s.activity, s.first_step, s.place, s.target_app_label, jsonb_array_length(s.target_apps) as apps_elegidas,
+  round(s.threshold_seconds / 60.0, 1) as minutos_configurados,
+  (s.started_at at time zone 'America/Santiago') as activado,
+  (s.signal_at at time zone 'America/Santiago') as sono,
+  (s.closed_at at time zone 'America/Santiago') as respondido,
+  s.signal_at is not null as hubo_senal, s.signal_end, s.response_seconds, s.outcome,
+  s.knew_intention, s.recalled_first_step, s.usage_before_seconds, s.usage_after_seconds,
+  s.signal_feeling
+from public.relevo_sessions s;
+
+create or replace view analisis.uso with (security_invoker = true) as
+select participant_code, event as evento, detail as detalle, app_version,
+  (created_at at time zone 'America/Santiago') as momento
+from public.relevo_app_events;
+
+create or replace view analisis.resumen_de_uso with (security_invoker = true) as
+select
+  participant_code,
+  min(created_at at time zone 'America/Santiago') as primer_uso,
+  max(created_at at time zone 'America/Santiago') as ultimo_uso,
+  count(distinct (created_at at time zone 'America/Santiago')::date) as dias_con_uso,
+  count(*) filter (where event = 'app_abierta') as aperturas,
+  round(coalesce(sum(case when event = 'app_cerrada' and detail ~ '^segundos=[0-9]+$' then substring(detail from 10)::int end), 0) / 60.0, 1) as minutos_en_la_app,
+  count(*) filter (where event = 'pantalla') as pantallas_vistas,
+  count(*) filter (where event = 'preparar_abierto') as preparaciones_abiertas,
+  count(*) filter (where event = 'preparar_cerrado') as preparaciones_sin_activar
+from public.relevo_app_events
+group by participant_code;
+
+revoke all on all tables in schema analisis from public, anon, authenticated;

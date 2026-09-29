@@ -123,7 +123,6 @@ internal fun NoticesScreen(settings: Settings, onChange: (Settings.() -> Setting
       }
     }
     Spacer(Modifier.height(10.dp))
-    Text("La prueba compara cómo se usa Relevo con y sin «Veces por semana».", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
   }
 }
 
@@ -371,35 +370,35 @@ internal fun PrivacyScreen(
     if (uri != null) onExport(uri) { ok -> exportMessage = if (ok) "Tus datos quedaron en el archivo que elegiste." else "No se pudo guardar el archivo. Prueba otra vez." }
   }
   RelevoScreen(
-    title = "Privacidad y datos", onBack = onBack,
+    title = "Tus datos", onBack = onBack,
     bottom = if (deleted) ({ RelevoButton("Volver a comenzar", onRestart) }) else null,
   ) {
     Text(
-      "Guardamos lo que preparas, cuándo suena el aviso y lo que respondes, con un código en vez de tu nombre. No vemos lo que haces dentro de otras apps. Si no borras tus datos antes, los eliminamos el 30 de diciembre de 2026.",
+      "Guardamos lo que haces en Relevo con un código, no con tu nombre. No vemos lo que haces dentro de otras apps. Si no borras tus datos antes, los borramos el 30 de diciembre de 2026.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
     SectionGap()
     if (!deleted) {
       if (participating) {
         ListSection {
-          ListRow("Código de participación", icon = KitIcon.CODIGO, value = participantCode.ifBlank { "Sin código" },
+          ListRow("Tu código", icon = KitIcon.CODIGO, value = participantCode.ifBlank { "Sin código" },
             onClick = if (participantCode.isBlank()) null else ({ copy(context, participantCode); copied = true }),
             trailing = { if (participantCode.isNotBlank()) RelevoIcon(if (copied) KitIcon.LISTO else KitIcon.COPIAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) })
-          ListRow("Consentimiento", icon = KitIcon.CONSENTIMIENTO, value = "Aceptado", chevron = true, onClick = onConsent)
-          if (remoteConfigured) ListRow("Envío de datos", icon = KitIcon.SINCRONIZAR, subtitle = syncStatusText(syncStatus))
+          ListRow("Lo que aceptaste", icon = KitIcon.CONSENTIMIENTO, chevron = true, onClick = onConsent)
+          if (remoteConfigured) ListRow("Datos enviados", icon = KitIcon.SINCRONIZAR, subtitle = syncStatusText(syncStatus))
           ListRow("Copia en el teléfono", icon = KitIcon.DATOS, subtitle = backupStatusText(syncStatus))
         }
         SectionGap()
       }
-      ListSection(footer = if (remoteConfigured) "Primero se borra en la base de la prueba. Si falla, Relevo deja de registrar y guarda lo del teléfono para intentarlo de nuevo." else null) {
+      ListSection(footer = if (remoteConfigured) "Primero se borra en la base del proyecto. Si no se puede, Relevo deja de guardar datos y conserva lo del teléfono para intentarlo otra vez." else null) {
         ListRow("Descargar mis datos", icon = KitIcon.DESCARGAR, subtitle = "Un archivo con todo lo guardado en el teléfono.", chevron = true,
           onClick = { exporter.launch("relevo-mis-datos-${LocalDate.now()}.json") })
-        ListRow("Borrar mis datos", icon = KitIcon.BORRAR, subtitle = "También dejas la prueba.", iconTint = Relevo.colors.error, titleColor = Relevo.colors.error, onClick = { confirming = true })
+        ListRow("Borrar mis datos", icon = KitIcon.BORRAR, subtitle = "También sales del proyecto.", iconTint = Relevo.colors.error, titleColor = Relevo.colors.error, onClick = { confirming = true })
       }
       exportMessage?.let { Spacer(Modifier.height(12.dp)); Text(it, style = Relevo.type.subhead, color = Relevo.colors.ink, modifier = Modifier.padding(horizontal = 4.dp)) }
       if (participating) {
         Spacer(Modifier.height(12.dp))
-        Text("Para consultar o pedir el borrado por correo: joan1542003@gmail.com, con tu código.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+        Text("¿Dudas, o prefieres pedir el borrado por correo? Escribe a joan1542003@gmail.com con tu código.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
       }
     }
     if (deletionStatus != null) {
@@ -411,7 +410,7 @@ internal fun PrivacyScreen(
     RelevoSheet(onDismiss = { confirming = false }, scrollable = false) {
       Text("¿Borrar tus datos?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base de la prueba y la copia de Documentos/Relevo. Dejas de participar y Relevo deja de contar.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar.", style = Relevo.type.body, color = Relevo.colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Borrar mis datos", { confirming = false; onDelete() }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
       Spacer(Modifier.height(8.dp))

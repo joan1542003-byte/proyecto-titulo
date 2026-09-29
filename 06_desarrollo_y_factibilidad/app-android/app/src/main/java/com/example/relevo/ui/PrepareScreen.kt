@@ -35,6 +35,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -122,6 +123,8 @@ internal class PrepareActions(
   val onSaveCustom: (CustomActivity) -> Unit,
   val onActivate: () -> Unit,
   val onClose: () -> Unit,
+  /** Registro de uso: el paso que se muestra. */
+  val onStepShown: (String) -> Unit = {},
 )
 
 /**
@@ -157,6 +160,7 @@ internal fun PrepareScreen(
   val reduce = rememberReduceMotion()
   fun go(to: PrepareStep) { forward = to.ordinal > step.ordinal; step = to }
   fun back() = if (step == PrepareStep.ACTIVITY) actions.onClose() else go(PrepareStep.entries[step.ordinal - 1])
+  LaunchedEffect(step) { actions.onStepShown(step.name.lowercase()) }
   BackHandler(enabled = !picking) { back() }
 
   val canContinue = when (step) {
@@ -384,8 +388,12 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   var tested by rememberSaveable { mutableIntStateOf(0) } // 0 sin probar, 1 sonó, 2 falló
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { speakerConnected = bluetoothSpeakerConnected(context) }
   Text(
-    if (studyCondition != null) "Esta semana lo decide la prueba: ${conditionName(studyCondition).lowercase()}."
-    else "Prueba cómo suena antes de activarlo.",
+    when (studyCondition) {
+      null -> "Prueba cómo suena antes de activarlo."
+      StudyCondition.PHONE -> "Esta semana suena en el teléfono."
+      StudyCondition.SITUATED -> "Esta semana suena en el parlante, junto a lo que usas para empezar."
+      StudyCondition.NEUTRAL -> "Esta semana suena en el parlante, en otro lugar de tu casa."
+    },
     style = Relevo.type.body, color = Relevo.colors.graphite,
   )
   SectionGap()

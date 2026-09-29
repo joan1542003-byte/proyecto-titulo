@@ -193,7 +193,7 @@ internal fun bluetoothSpeakerConnected(context: Context): Boolean =
     ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP || it.type == AudioDeviceInfo.TYPE_BLE_SPEAKER } == true
 
 internal fun syncStatusText(status: SyncStatus): String = buildString {
-  append(when (status.pending) { 0 -> "Todo está enviado."; 1 -> "1 dato espera conexión."; else -> "${status.pending} datos esperan conexión." })
+  append(if (status.pending == 0) "Todo está enviado." else "Algunos datos se enviarán cuando haya internet.")
   if (status.lastSuccessAt > 0L) append(" Último envío: ${formatMoment(status.lastSuccessAt)}.")
   if (status.rejected > 0) append(" ${status.rejected} no se aceptaron y quedan en el teléfono.")
   status.lastError?.let { append(" Detalle técnico: $it") }
@@ -261,7 +261,7 @@ internal fun conditionInstruction(condition: StudyCondition): String = when (con
 
 internal fun conditionDetail(condition: StudyCondition): String? = when (condition) {
   StudyCondition.NEUTRAL -> "Un lugar visible, a más de un metro de lo que necesitas para empezar y fuera de tu camino."
-  StudyCondition.PHONE -> "No necesitas el parlante. La notificación dirá solo «Tu intención está disponible»."
+  StudyCondition.PHONE -> "No necesitas el parlante. La notificación solo dirá «Es momento de volver a elegir»."
   StudyCondition.SITUATED -> null
 }
 

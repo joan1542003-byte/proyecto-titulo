@@ -16,17 +16,20 @@ data class PendingSession(
   val closedAt: Long?, val observedSeconds: Int, val outcome: String?, val consentVersion: String, val targetAppsJson: String,
   val studyCondition: String?, val studyDay: Int?, val knewIntention: String?, val recalledFirstStep: String?,
   val signalEnd: String?, val responseSeconds: Int?, val usageBeforeSeconds: Int?, val usageAfterSeconds: Int?,
-  val signalRoute: String?, val appVersion: String?,
+  val signalRoute: String?, val appVersion: String?, val signalFeeling: String?,
 )
 
 /** Respuesta de una tarjeta semanal o del cierre del día 21. */
 data class PendingAnswer(val id: Long, val participantCode: String, val sessionId: String?, val question: String, val answer: String, val createdAt: Long, val consentVersion: String)
 
+/** Uso de la app: qué se abre, qué se elige y qué se cambia (desde 2.12). */
+data class PendingAppEvent(val id: Long, val participantCode: String, val event: String, val detail: String?, val createdAt: Long, val appVersion: String, val consentVersion: String)
+
 /** Sesión que ya tiene señal y a la que le falta calcular el uso de los 10 minutos posteriores. */
 data class UsageAfterRequest(val sessionId: String, val signalAt: Long, val packages: Set<String>)
 
 class ResearchLogStore(context: Context) :
-  SQLiteOpenHelper(context, "relevo_research.db", null, 6) {
+  SQLiteOpenHelper(context, "relevo_research.db", null, 7) {
 
   private val appContext = context.applicationContext
 
@@ -51,6 +54,7 @@ class ResearchLogStore(context: Context) :
     )
     createSessionsTable(db)
     createAnswersTable(db)
+    createAppEventsTable(db)
   }
 
   override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -66,6 +70,8 @@ class ResearchLogStore(context: Context) :
     if (oldVersion in 3..4) STUDY_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
     if (oldVersion < 5) createAnswersTable(db)
     if (oldVersion in 3..5) ROUTE_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
+    if (oldVersion in 3..6) FEELING_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
+    if (oldVersion < 7) createAppEventsTable(db)
   }
 
   private fun createSessionsTable(db: SQLiteDatabase) = db.execSQL(
@@ -87,7 +93,7 @@ class ResearchLogStore(context: Context) :
       outcome TEXT,
       consent_version TEXT NOT NULL,
       synced INTEGER NOT NULL DEFAULT 0,
-      ${(STUDY_COLUMNS + ROUTE_COLUMNS).joinToString(",\n      ") { (name, type) -> "$name $type" }}
+      ${(STUDY_COLUMNS + ROUTE_COLUMNS + FEELING_COLUMNS).joinToString(",\n      ") { (name, type) -> "$name $type" }}
     )
     """.trimIndent(),
   )
@@ -106,6 +112,38 @@ class ResearchLogStore(context: Context) :
     )
     """.trimIndent(),
   )
+
+  private fun createAppEventsTable(db: SQLiteDatabase) = db.execSQL(
+    """
+    CREATE TABLE IF NOT EXISTS app_events (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      participant_code TEXT NOT NULL,
+      event TEXT NOT NULL,
+      detail TEXT,
+      created_at INTEGER NOT NULL,
+      app_version TEXT NOT NULL,
+      consent_version TEXT NOT NULL,
+      synced INTEGER NOT NULL DEFAULT 0
+    )
+    """.trimIndent(),
+  )
+
+  /** Registra un uso de la app. Sin el consentimiento vigente no se guarda nada. */
+  fun logApp(participantCode: String, event: String, detail: String? = null) {
+    if (participantCode.isBlank() || !recording()) return
+    writableDatabase.insert("app_events", null, ContentValues().apply {
+      put("participant_code", participantCode); put("event", event.take(40)); detail?.let { put("detail", it.take(600)) }
+      put("created_at", System.currentTimeMillis()); put("app_version", cl.udp.relevo.BuildConfig.VERSION_NAME)
+      put("consent_version", CONSENT_VERSION); put("synced", PENDING)
+    })
+  }
+
+  fun pendingAppEvents(): List<PendingAppEvent> = readableDatabase.query("app_events", null, "synced = $PENDING", null, null, null, "created_at").use { cursor ->
+    buildList { while (cursor.moveToNext()) add(PendingAppEvent(cursor.long("id"), cursor.string("participant_code"), cursor.string("event"), cursor.stringOrNull("detail"), cursor.long("created_at"), cursor.string("app_version"), cursor.string("consent_version"))) }
+  }
+
+  fun markAppEventSynced(id: Long) { writableDatabase.execSQL("UPDATE app_events SET synced = $SYNCED WHERE id = ?", arrayOf(id)) }
+  fun markAppEventRejected(id: Long) { writableDatabase.execSQL("UPDATE app_events SET synced = $REJECTED WHERE id = ?", arrayOf(id)) }
 
   fun startSession(reminder: com.example.relevo.domain.Reminder) {
     if (reminder.sessionId.isBlank() || !recording()) return
@@ -127,13 +165,14 @@ class ResearchLogStore(context: Context) :
    * Cierra la sesión con la respuesta de la persona. Las dos preguntas de la prueba son opcionales:
    * null significa que no se hicieron o que se omitieron.
    */
-  fun completeSession(reminder: com.example.relevo.domain.Reminder, outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null) {
+  fun completeSession(reminder: com.example.relevo.domain.Reminder, outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null, feeling: String? = null) {
     if (reminder.sessionId.isBlank()) return
     writableDatabase.update("sessions", ContentValues().apply {
       put("closed_at", System.currentTimeMillis()); put("observed_seconds", reminder.observedUsageSeconds)
       put("outcome", outcome); put("synced", PENDING)
       knewIntention?.let { put("knew_intention", it) }
       recalledFirstStep?.let { put("recalled_first_step", it) }
+      feeling?.let { put("signal_feeling", it) }
     }, "session_id = ?", arrayOf(reminder.sessionId))
   }
 
@@ -221,7 +260,7 @@ class ResearchLogStore(context: Context) :
       cursor.string("consent_version"), cursor.string("target_apps"),
       cursor.stringOrNull("study_condition"), cursor.intOrNull("study_day"), cursor.stringOrNull("knew_intention"), cursor.stringOrNull("recalled_first_step"),
       cursor.stringOrNull("signal_end"), cursor.intOrNull("response_seconds"), cursor.intOrNull("usage_before_seconds"), cursor.intOrNull("usage_after_seconds"),
-      cursor.stringOrNull("signal_route"), cursor.stringOrNull("app_version"),
+      cursor.stringOrNull("signal_route"), cursor.stringOrNull("app_version"), cursor.stringOrNull("signal_feeling"),
     )) }
   }
 
@@ -243,13 +282,13 @@ class ResearchLogStore(context: Context) :
   fun markAnswerRejected(id: Long) { writableDatabase.execSQL("UPDATE answers SET synced = $REJECTED WHERE id = ?", arrayOf(id)) }
 
   fun countBySyncState(state: Int): Int = readableDatabase.rawQuery(
-    "SELECT (SELECT COUNT(*) FROM events WHERE synced = ?) + (SELECT COUNT(*) FROM sessions WHERE synced = ?) + (SELECT COUNT(*) FROM answers WHERE synced = ?)",
-    arrayOf(state.toString(), state.toString(), state.toString()),
+    "SELECT (SELECT COUNT(*) FROM events WHERE synced = ?) + (SELECT COUNT(*) FROM sessions WHERE synced = ?) + (SELECT COUNT(*) FROM answers WHERE synced = ?) + (SELECT COUNT(*) FROM app_events WHERE synced = ?)",
+    arrayOf(state.toString(), state.toString(), state.toString(), state.toString()),
   ).use { cursor -> if (cursor.moveToFirst()) cursor.getInt(0) else 0 }
 
   /** Todo lo registrado en el teléfono, para «Descargar mis datos». */
   fun exportJson(): JSONObject = JSONObject().apply {
-    listOf("sessions" to "started_at", "events" to "created_at", "answers" to "created_at").forEach { (table, order) ->
+    listOf("sessions" to "started_at", "events" to "created_at", "answers" to "created_at", "app_events" to "created_at").forEach { (table, order) ->
       put(table, readableDatabase.query(table, null, null, null, null, null, order).use { cursor ->
         JSONArray().apply {
           while (cursor.moveToNext()) put(JSONObject().apply {
@@ -266,10 +305,10 @@ class ResearchLogStore(context: Context) :
     }
   }
 
-  fun clearAll() { writableDatabase.run { delete("events", null, null); delete("sessions", null, null); delete("answers", null, null) } }
+  fun clearAll() { writableDatabase.run { delete("events", null, null); delete("sessions", null, null); delete("answers", null, null); delete("app_events", null, null) } }
 
   fun hasRecords(): Boolean = readableDatabase.rawQuery(
-    "SELECT (SELECT COUNT(*) FROM events) + (SELECT COUNT(*) FROM sessions) + (SELECT COUNT(*) FROM answers)", null,
+    "SELECT (SELECT COUNT(*) FROM events) + (SELECT COUNT(*) FROM sessions) + (SELECT COUNT(*) FROM answers) + (SELECT COUNT(*) FROM app_events)", null,
   ).use { cursor -> cursor.moveToFirst() && cursor.getInt(0) > 0 }
 
   private fun Cursor.string(name: String): String = getString(getColumnIndexOrThrow(name))
@@ -281,7 +320,7 @@ class ResearchLogStore(context: Context) :
 
   companion object {
     /** Consentimiento de la prueba de 21 días (protocolo 02). Cambiarlo pide aceptar de nuevo. */
-    const val CONSENT_VERSION = "2026-09-28-v7"
+    const val CONSENT_VERSION = "2026-09-29-v8"
     const val PENDING = 0
     const val SYNCED = 1
     const val REJECTED = 2
@@ -303,5 +342,8 @@ class ResearchLogStore(context: Context) :
       "signal_route" to "TEXT",
       "app_version" to "TEXT",
     )
+
+    /** Cómo le cayó el aviso a la persona: good, neutral o bad (versión 7 de la base local, Android 2.12). */
+    private val FEELING_COLUMNS = listOf("signal_feeling" to "TEXT")
   }
 }

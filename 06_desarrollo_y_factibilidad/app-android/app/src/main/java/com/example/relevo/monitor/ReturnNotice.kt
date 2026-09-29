@@ -12,6 +12,7 @@ import cl.udp.relevo.R
 import com.example.relevo.MainActivity
 import com.example.relevo.data.Participation
 import com.example.relevo.data.ReminderStore
+import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.SettingsStore
 import com.example.relevo.domain.ReminderStatus
 import java.util.Locale
@@ -101,6 +102,7 @@ object ReturnNotice {
         .build(),
     )
     settings.lastReturnNoticeAt = now
+    ResearchLogStore(context).logApp(Participation.code(context), "aviso_semanal_enviado", if (activity.isBlank()) "sin_actividad" else activity)
   }
 
   private fun checkIntent(context: Context): PendingIntent = PendingIntent.getBroadcast(
@@ -115,6 +117,7 @@ class ReturnNoticeReceiver : BroadcastReceiver() {
       ReturnNotice.ACTION_CHECK -> ReturnNotice.check(context)
       ReturnNotice.ACTION_NOT_NOW -> {
         SettingsStore(context).run { returnNotNow += 1 }
+        ResearchLogStore(context).logApp(Participation.code(context), "aviso_semanal_ahora_no")
         ReturnNotice.dismiss(context)
       }
     }

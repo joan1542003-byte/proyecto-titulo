@@ -306,7 +306,7 @@ class AppUsageMonitorService : Service() {
 
   companion object {
     const val ACTION_RESTORE = "cl.udp.relevo.action.RESTORE_MONITOR"
-    const val GENERIC_SIGNAL_TEXT = "Tu intención está disponible"
+    const val GENERIC_SIGNAL_TEXT = "Es momento de volver a elegir"
 
     /** Retira la notificación de la señal cuando la persona ya respondió en la app. */
     fun cancelSignalNotification(context: android.content.Context) {

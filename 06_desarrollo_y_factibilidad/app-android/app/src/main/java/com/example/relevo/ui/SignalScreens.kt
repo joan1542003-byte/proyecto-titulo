@@ -120,16 +120,18 @@ private fun SoundingChip(phone: Boolean) {
 }
 
 /**
- * B5. Durante la prueba, antes de «¿Qué decidiste?», dos preguntas de un toque sobre la señal
- * (protocolo 02). Las tres respuestas tienen el mismo tamaño, color y lugar; todo se puede omitir.
+ * B5. Si sonó, antes de «¿Qué decidiste?» van dos preguntas de un toque (protocolo 02) y, desde 2.12,
+ * cómo le cayó el aviso, con tres caras. Desde 2.12 se preguntan siempre que suena, esté o no
+ * configurada la prueba. Las tres respuestas tienen el mismo tamaño, color y lugar; todo se puede saltar.
  */
 @Composable
-internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, onAnswer: (String, String?, String?) -> Unit) {
+internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, onAnswer: (String, String?, String?, String?) -> Unit) {
   var knew by rememberSaveable { mutableStateOf<String?>(null) }
   var recalled by rememberSaveable { mutableStateOf<String?>(null) }
-  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { askSignalQuestions }, recalled.takeIf { askSignalQuestions })
+  var feeling by rememberSaveable { mutableStateOf<String?>(null) }
+  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { askSignalQuestions }, recalled.takeIf { askSignalQuestions }, feeling.takeIf { askSignalQuestions })
   RelevoScreen(
-    bottom = { PlainAction("Omitir", { finish("not_answered") }, color = Relevo.colors.graphite) },
+    bottom = { PlainAction("Saltar", { finish("not_answered") }, color = Relevo.colors.graphite) },
   ) {
     Spacer(Modifier.height(8.dp))
     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -146,7 +148,11 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
     }
     if (askSignalQuestions) {
       SectionGap()
-      Question("Cuando sonó, ¿supiste qué querías hacer antes de mirar el teléfono?") {
+      Question("¿Cómo te cayó el aviso?") {
+        FacePicker(feelingFaces, feeling, { feeling = it })
+      }
+      SectionGap()
+      Question("Cuando sonó, ¿supiste qué querías hacer sin mirar el teléfono?") {
         SegmentedControl(listOf("yes" to "Sí", "partly" to "A medias", "no" to "No"), knew, { knew = it })
       }
       SectionGap()

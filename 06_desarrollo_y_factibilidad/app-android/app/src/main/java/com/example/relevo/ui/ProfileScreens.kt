@@ -14,6 +14,7 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,6 +35,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
@@ -134,17 +136,8 @@ internal fun ProfileTab(
       ListRow("Permisos", icon = KitIcon.PERMISO, chevron = true, onClick = actions.onPermissions)
     }
     SectionGap()
-    ListSection(title = "Prueba y datos", modifier = Modifier.appear(4)) {
-      ListRow(
-        "Prueba de 21 días", icon = KitIcon.VALIDACION, chevron = true, onClick = actions.onStudy,
-        value = when {
-          study.plan == null -> "Por empezar"
-          study.finished -> "Terminada"
-          study.day == 0 -> "Sesión inicial"
-          else -> "Día ${study.day} de 21"
-        },
-      )
-      ListRow("Privacidad y datos", icon = KitIcon.PRIVACIDAD, chevron = true, onClick = actions.onPrivacy)
+    ListSection(title = "Privacidad", modifier = Modifier.appear(4)) {
+      ListRow("Tus datos", icon = KitIcon.PRIVACIDAD, chevron = true, onClick = actions.onPrivacy)
     }
     SectionGap()
     ListSection(title = "Ayuda", modifier = Modifier.appear(5)) {
@@ -155,7 +148,9 @@ internal fun ProfileTab(
     Spacer(Modifier.height(20.dp))
     Text(
       "Relevo ${BuildConfig.VERSION_NAME} · Proyecto de Título de Diseño, Universidad Diego Portales",
-      style = Relevo.type.footnote, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(),
+      style = Relevo.type.footnote, color = Relevo.colors.graphite, textAlign = TextAlign.Center,
+      // Mantener presionado abre la configuración de las tres semanas, solo para el investigador (D-087).
+      modifier = Modifier.fillMaxWidth().pointerInput(Unit) { detectTapGestures(onLongPress = { actions.onStudy() }) },
     )
   }
   if (noting) WeekNoteSheet(onDismiss = { noting = false }, onSend = { actions.onWeekNote(it); noting = false })
@@ -216,7 +211,7 @@ private fun WeekSummary(history: List<HistoryEntry>, settings: Settings, canTell
 private fun WeekNoteSheet(onDismiss: () -> Unit, onSend: (String) -> Unit) {
   var text by rememberSaveable { mutableStateOf("") }
   RelevoSheet(onDismiss = onDismiss, title = "¿Qué te ayudó?") {
-    Text("Se guarda con tus respuestas de la prueba.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Text("Nos ayuda a mejorar Relevo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(16.dp))
     RenglonArea("Tu respuesta", text, { text = it }, "Escribe aquí")
     Spacer(Modifier.height(22.dp))

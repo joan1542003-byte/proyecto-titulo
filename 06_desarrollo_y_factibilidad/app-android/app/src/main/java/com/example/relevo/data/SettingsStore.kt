@@ -5,16 +5,16 @@ import android.content.Context
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
 /**
- * Preferencias de S2 y de apariencia. Todo lo opcional empieza apagado: la persona elige qué recibir
- * (diseño escrito, principio 2). Se guardan solo en el teléfono.
+ * Preferencias de S2 y de apariencia. Desde 2.12 (D-087) la app empieza en modo claro y con los avisos
+ * y el resumen semanal encendidos; la persona puede apagarlos en Perfil. Se guardan solo en el teléfono.
  */
 data class Settings(
-  val theme: ThemeMode = ThemeMode.SYSTEM,
+  val theme: ThemeMode = ThemeMode.LIGHT,
   val largeText: Boolean = false,
   /** Resumen «Tu semana» en el perfil. */
-  val weeklySummary: Boolean = false,
+  val weeklySummary: Boolean = true,
   /** Aviso de regreso (V2): como máximo una vez por semana. */
-  val returnNotice: Boolean = false,
+  val returnNotice: Boolean = true,
   /** Mensajes breves después de responder; si se apaga, solo se registra. */
   val acknowledgements: Boolean = true,
   /** Constancia elegida: veces por semana que fija la persona; 0 es apagada. Variante de la prueba. */
@@ -26,10 +26,10 @@ class SettingsStore(context: Context) {
   private val preferences = context.getSharedPreferences("relevo_settings", Context.MODE_PRIVATE)
 
   fun load(): Settings = Settings(
-    theme = runCatching { ThemeMode.valueOf(preferences.getString("theme", ThemeMode.SYSTEM.name).orEmpty()) }.getOrDefault(ThemeMode.SYSTEM),
+    theme = runCatching { ThemeMode.valueOf(preferences.getString("theme", ThemeMode.LIGHT.name).orEmpty()) }.getOrDefault(ThemeMode.LIGHT),
     largeText = preferences.getBoolean("large_text", false),
-    weeklySummary = preferences.getBoolean("weekly_summary", false),
-    returnNotice = preferences.getBoolean("return_notice", false),
+    weeklySummary = preferences.getBoolean("weekly_summary", true),
+    returnNotice = preferences.getBoolean("return_notice", true),
     acknowledgements = preferences.getBoolean("acknowledgements", true),
     constancy = preferences.getInt("constancy", 0).coerceIn(0, 7),
     constancyPaused = preferences.getBoolean("constancy_paused", false),
