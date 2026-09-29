@@ -37,6 +37,7 @@
 | 29 sep. | Corrección y encargo | Reescribir las frases poco naturales, agrandar el video, rehacer la guía con contexto para que acompañe también el primer relevo, dejar la app lista para el testeo real y registrar cada pedido a la IA. | [Android 2.14](../06_desarrollo_y_factibilidad/app-android/version-2.14-guia-y-primer-relevo-2026-09-29.md) y este registro | D-090 |
 | 29 sep. | Consulta | Revisar el encargo escrito para diseñar en Figma las diapositivas de la corrección cruzada, antes de ejecutarlo. | Revisión en la conversación: los datos teóricos coinciden con la memoria; la diapositiva 10 describe la app 2.6 y la 11 una prueba con seis personas, lo que choca con D-081; el conector de Figma necesita volver a autorizarse | — |
 | 29 sep. | Encargo | Diseñar en Figma las diapositivas de la corrección cruzada según el encargo, con dos variantes por diapositiva, conservando la 2, 3 y 4 y usando los datos más recientes. | 18 diapositivas nuevas en las secciones «Variantes A» y «Variantes B» de la presentación, con notas del orador; la 10 muestra la app 2.14 y la 11, la prueba con una persona (D-081) | — |
+| 29 sep. | Corrección | Rehacer las diapositivas con el estilo de diseño del autor, usar la hipótesis literal de la memoria y ordenar mejor la información, con textos más claros y concisos y sin elementos innecesarios. | Las 18 diapositivas rehechas con fondo blanco, Inter y el subrayado azul del autor; pregunta, hipótesis y objetivo general copiados de la memoria v4; se quitaron ilustraciones, tarjetas y pies sobrantes | — |
 
 ## Lo que muestra el registro
 
@@ -47,6 +48,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Corrección de las diapositivas
+
+- **Qué cambió:** se registró la corrección de estilo y contenido de las diapositivas en Figma.
+- **Cómo estaba antes:** el registro terminaba en el encargo de las diapositivas.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-09-29 — Encargo de diapositivas
 
