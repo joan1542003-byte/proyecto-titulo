@@ -202,7 +202,7 @@ En el emulador no hay parlante, así que el aviso suena en el teléfono; convien
 
 **Se dice**
 
-> Así se usa. Escribo qué quiero hacer y cómo empiezo: leer, abrir el libro en el marcador. Dejo el objeto junto al libro, no junto al teléfono. Elijo qué apps cuentan y después de cuánto tiempo, y sigo usando el teléfono como siempre. Cuando se cumple el tiempo, suena unos 30 segundos junto al libro. La hipótesis es que ahí se recuerdan dos cosas a la vez: qué quería hacer y cómo empezar. Después decido: abrir el libro, seguir en el teléfono o cambiar de idea. Relevo no bloquea nada y no comprueba si leí.
+> Así se usa. Escribo qué quiero hacer y cómo empiezo: leer, abrir el libro en el marcador. Dejo el objeto junto al libro, no junto al teléfono. Elijo qué apps cuentan y después de cuánto tiempo, y sigo usando el teléfono como siempre. Cuando se cumple el tiempo, suena unos 30 segundos junto al libro. La hipótesis es simple: muchas veces no dejamos de hacer lo que queríamos por falta de ganas, sino porque no lo recordamos a tiempo; un aviso donde empieza la actividad puede ayudar a recordarlo mientras todavía se puede elegir. Después decido: abrir el libro, seguir en el teléfono o cambiar de idea. Relevo no bloquea nada y no comprueba si leí.
 >
 > Lo que ven es la app Android que existe hoy, la versión 2.10. La recorrí completa en un emulador, pero todavía no en un teléfono y un parlante reales; por eso, en la animación, el aviso suena en el teléfono. Por ahora, un parlante Bluetooth hace de objeto; no es el objeto final.
 >
@@ -331,6 +331,12 @@ Las fuentes de los productos del mapa (Screen Time, Bienestar digital, one sec, 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Hipótesis nueva
+
+- **Qué cambió:** la diapositiva 10 dice la hipótesis nueva de la memoria.
+- **Cómo estaba antes:** decía que junto al objeto se recuerdan dos cosas a la vez: qué se quería hacer y cómo empezar.
+- **Por qué:** el autor simplificó la hipótesis (D-091).
 
 ### 2026-09-27 — GIF grabado
 

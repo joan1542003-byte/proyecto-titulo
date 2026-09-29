@@ -1004,7 +1004,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Decisiones de la herramienta, pendientes de revisión del autor:** los textos de la guía y de las notas, la foto de contexto y el aviso tras activar el primer relevo.
 - **Documentación:** [Android 2.14](../06_desarrollo_y_factibilidad/app-android/version-2.14-guia-y-primer-relevo-2026-09-29.md).
 
+## D-091 — Una hipótesis simple, basada en recordar a tiempo
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor; vigente en la memoria (capítulo 10). Hipótesis sin contrastar.
+- **Decisión:** la hipótesis pasa a ser: «Muchas veces no se deja de hacer lo que se quería por falta de ganas, sino porque no se recuerda a tiempo. Un aviso en el lugar donde empieza esa actividad puede ayudar a recordarla mientras todavía se puede elegir». Reemplaza la formulación «Si una persona registra una intención y su primer paso…», que describía los pasos de la app y su resultado.
+- **Fundamento:** la primera frase recoge el problema de los capítulos 3 y 6: memoria prospectiva (McDaniel & Einstein, 2000) y conflicto entre metas (de Segovia Vicente et al., 2024). La segunda recoge la mediación del lugar (Kirsh, 1995; O’Rear & Radvansky, 2019) y es lo que compara el protocolo 02 (objetivo 3). El autor eligió esta opción entre tres; las otras eran una sola frase centrada en el lugar y una forma «si… entonces» simplificada.
+- **Sin cambios:** pregunta, objetivos, criterios, las cuatro dimensiones de evaluación y el protocolo 02.
+- **Documentación:** [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 10.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — D-091
+
+- **Qué cambió:** se registró D-091: hipótesis nueva, más simple.
+- **Cómo estaba antes:** la hipótesis vigente era la formulación «Si una persona registra una intención y su primer paso…».
+- **Por qué:** pedido del autor.
 
 ### 2026-09-29 — D-090
 

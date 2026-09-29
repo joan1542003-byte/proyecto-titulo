@@ -7,7 +7,7 @@
 
 ## Qué responde
 
-La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Esta prueba responde:
+La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Muchas veces no se deja de hacer lo que se quería por falta de ganas, sino porque no se recuerda a tiempo. Un aviso en el lugar donde empieza esa actividad puede ayudar a recordarla mientras todavía se puede elegir». Esta prueba responde:
 
 | Pregunta | Cómo se responde |
 | --- | --- |
@@ -159,6 +159,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How ar
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Hipótesis nueva
+
+- **Qué cambió:** «Qué responde» cita la hipótesis nueva de la memoria. Las preguntas, las condiciones y las reglas de decisión no cambian.
+- **Cómo estaba antes:** el protocolo solo citaba la pregunta de la memoria.
+- **Por qué:** el autor simplificó la hipótesis (D-091).
 
 ### 2026-09-25 — Una persona y sin pregunta de entrevista en la app
 

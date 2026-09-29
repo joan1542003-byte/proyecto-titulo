@@ -38,6 +38,8 @@
 | 29 sep. | Consulta | Revisar el encargo escrito para diseñar en Figma las diapositivas de la corrección cruzada, antes de ejecutarlo. | Revisión en la conversación: los datos teóricos coinciden con la memoria; la diapositiva 10 describe la app 2.6 y la 11 una prueba con seis personas, lo que choca con D-081; el conector de Figma necesita volver a autorizarse | — |
 | 29 sep. | Encargo | Diseñar en Figma las diapositivas de la corrección cruzada según el encargo, con dos variantes por diapositiva, conservando la 2, 3 y 4 y usando los datos más recientes. | 18 diapositivas nuevas en las secciones «Variantes A» y «Variantes B» de la presentación, con notas del orador; la 10 muestra la app 2.14 y la 11, la prueba con una persona (D-081) | — |
 | 29 sep. | Corrección | Rehacer las diapositivas con el estilo de diseño del autor, usar la hipótesis literal de la memoria y ordenar mejor la información, con textos más claros y concisos y sin elementos innecesarios. | Las 18 diapositivas rehechas con fondo blanco, Inter y el subrayado azul del autor; pregunta, hipótesis y objetivo general copiados de la memoria v4; se quitaron ilustraciones, tarjetas y pies sobrantes | — |
+| 29 sep. | Consulta y encargo | Replantear la hipótesis, porque es compleja y difícil de entender: debe expresar aquello en que se basa la app, no su resultado. Estudiar la documentación, proponer opciones y, una vez elegida, actualizarla en todo el proyecto. | Tres opciones de hipótesis fundamentadas en el marco teórico y comprobables con el protocolo 02 | — |
+| 29 sep. | Decisión | Adoptar la hipótesis de dos frases: la premisa (no se recuerda a tiempo) y lo que se pone a prueba (un aviso en el lugar donde empieza la actividad), y actualizarla en todo el proyecto. | Hipótesis cambiada en la memoria, el protocolo 02, los flujos, la guía de comunicación, el guion y las diapositivas 8A y 8B | D-091 |
 
 ## Lo que muestra el registro
 
@@ -48,6 +50,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Hipótesis
+
+- **Qué cambió:** se registraron el pedido de una hipótesis más simple y la elección del autor (D-091).
+- **Cómo estaba antes:** el registro terminaba en la corrección de las diapositivas.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-09-29 — Corrección de las diapositivas
 

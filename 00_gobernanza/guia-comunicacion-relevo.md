@@ -311,7 +311,7 @@ Para una situación, no para una identidad fija: alguien tiene una intención al
 | --- | --- | --- |
 | Evidencia de investigación | `En algunas entrevistas aparecieron episodios donde otra intención competía con la continuidad digital.` | `Los jóvenes no pueden dejar el teléfono.` |
 | Decisión de diseño | `Relevo se estructura como una aplicación Android, un testigo situado y una señal breve.` | `Esta es la única solución posible.` |
-| Hipótesis | `Una señal cerca del primer paso podría ayudar a volver a considerar la intención.` | `El objeto logra que las personas realicen la actividad.` |
+| Hipótesis | `Un aviso en el lugar donde empieza una actividad puede ayudar a recordarla a tiempo.` | `El objeto logra que las personas realicen la actividad.` |
 | Comparación pendiente | `Se probará si el objeto situado aporta más que una notificación.` | `El objeto es mejor que las notificaciones.` |
 | Estado técnico | `La arquitectura y los estados están documentados; la integración sigue en desarrollo.` | `El sistema ya funciona completamente.` |
 | Forma | `La forma circular es una candidata de exploración.` | `El producto final es circular.` |
@@ -422,6 +422,12 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Hipótesis nueva
+
+- **Qué cambió:** la formulación permitida de la hipótesis sigue la hipótesis nueva de la memoria.
+- **Cómo estaba antes:** «Una señal cerca del primer paso podría ayudar a volver a considerar la intención».
+- **Por qué:** el autor simplificó la hipótesis (D-091).
 
 ### 2026-09-27 — Guion de 13 diapositivas
 

@@ -385,7 +385,7 @@ Son ejemplos editables, tomados de actividades mencionadas en las entrevistas y 
 
 ## 8 b. Qué responde cada prueba
 
-El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La memoria pregunta: **¿qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?** Su hipótesis es que, si la persona registra una intención y su primer paso, sitúa una señal física junto a ese comienzo y la recibe cuando se cumple una condición configurada, esa intención podría volver a estar disponible para decidir, sin bloquear la actividad digital ni imponer su ejecución.
+El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La memoria pregunta: **¿qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?** Su hipótesis (D-091) es: «Muchas veces no se deja de hacer lo que se quería por falta de ganas, sino porque no se recuerda a tiempo. Un aviso en el lugar donde empieza esa actividad puede ayudar a recordarla mientras todavía se puede elegir».
 
 | Prueba | Qué responde | Qué no responde |
 | --- | --- | --- |
@@ -415,6 +415,12 @@ Silverman, J., & Barasch, A. (2023). On or off track: How (broken) streaks affec
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Hipótesis nueva
+
+- **Qué cambió:** la sección 8 b cita la hipótesis nueva de la memoria.
+- **Cómo estaba antes:** parafraseaba la formulación «si la persona registra una intención y su primer paso…».
+- **Por qué:** el autor simplificó la hipótesis (D-091).
 
 ### 2026-09-27 — Estado en Android 2.10
 
