@@ -7,7 +7,7 @@
 
 ## Qué responde
 
-La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Muchas veces no se deja de hacer lo que se quería por falta de ganas, sino porque no se recuerda a tiempo. Un aviso en el lugar donde empieza esa actividad puede ayudar a recordarla mientras todavía se puede elegir». Esta prueba responde:
+La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Si durante una sesión en el teléfono suena una señal junto al primer paso de una actividad que la persona eligió, entonces recordará esa actividad a tiempo para decidir si empezarla, mejor que con una notificación en el teléfono.�. Esta prueba responde:
 
 | Pregunta | Cómo se responde |
 | --- | --- |

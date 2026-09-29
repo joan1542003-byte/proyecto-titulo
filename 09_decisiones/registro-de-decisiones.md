@@ -1008,8 +1008,9 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 
 - **Fecha:** 2026-09-29.
 - **Estado:** decisión del autor; vigente en la memoria (capítulo 10). Hipótesis sin contrastar.
-- **Decisión:** la hipótesis pasa a ser: «Muchas veces no se deja de hacer lo que se quería por falta de ganas, sino porque no se recuerda a tiempo. Un aviso en el lugar donde empieza esa actividad puede ayudar a recordarla mientras todavía se puede elegir». Reemplaza la formulación «Si una persona registra una intención y su primer paso…», que describía los pasos de la app y su resultado.
-- **Fundamento:** la primera frase recoge el problema de los capítulos 3 y 6: memoria prospectiva (McDaniel & Einstein, 2000) y conflicto entre metas (de Segovia Vicente et al., 2024). La segunda recoge la mediación del lugar (Kirsh, 1995; O’Rear & Radvansky, 2019) y es lo que compara el protocolo 02 (objetivo 3). El autor eligió esta opción entre tres; las otras eran una sola frase centrada en el lugar y una forma «si… entonces» simplificada.
+- **Decisión:** la hipótesis pasa a ser: «Si durante una sesión en el teléfono suena una señal junto al primer paso de una actividad que la persona eligió, entonces recordará esa actividad a tiempo para decidir si empezarla, mejor que con una notificación en el teléfono». Reemplaza la formulación «Si una persona registra una intención y su primer paso…», que describía los pasos de la app y su resultado.
+- **Fundamento:** conserva la forma «si…, entonces…» de las hipótesis anteriores del proyecto, con una condición, un efecto y una comparación que el protocolo 02 puede observar (objetivo 3). Se basa en la memoria prospectiva (McDaniel & Einstein, 2000), el conflicto entre metas (de Segovia Vicente et al., 2024) y la mediación del lugar (Kirsh, 1995; O’Rear & Radvansky, 2019).
+- **Proceso:** el mismo día el autor eligió primero una versión en dos frases («Muchas veces no se deja de hacer lo que se quería por falta de ganas…»); luego la descartó porque no tenía forma de hipótesis y eligió esta entre tres formulaciones «si…, entonces…».
 - **Sin cambios:** pregunta, objetivos, criterios, las cuatro dimensiones de evaluación y el protocolo 02.
 - **Documentación:** [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 10.
 
