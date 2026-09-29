@@ -7,7 +7,7 @@
 
 ## Qué responde
 
-La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Si se diseña un sistema phygital que vincula lo que una persona quiere hacer con el lugar donde empieza, entonces lo recordará a tiempo durante el ocio digital, porque ese lugar se lo trae de vuelta fuera de la pantalla.». Esta prueba responde:
+La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Si se diseña un sistema phygital que vincula una actividad que la persona quiere realizar con el lugar donde esa actividad comienza, entonces la recordará a tiempo durante el ocio digital, porque el entorno actúa como señal de recuerdo fuera de la pantalla.». Esta prueba responde:
 
 | Pregunta | Cómo se responde |
 | --- | --- |

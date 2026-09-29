@@ -46,6 +46,7 @@
 | 29 sep. | Corrección | Simplificar la hipótesis para que cualquier persona la entienda, manteniendo «phygital» y los requisitos del seminario, sin explicar de más. | Hipótesis reescrita con palabras de uso diario en la memoria, el protocolo 02, los flujos, la guía, el guion y las diapositivas 8A y 8B | D-091 |
 | 29 sep. | Consulta, corrección y decisión | Pedir que se le corrija si la hipótesis explica de más, compararla con las de sus compañeros usando el feedback del pase y del examen de julio, y que responda a lo teórico y no a lo que hace el proyecto, porque el sistema phygital se basa en la hipótesis. | Comparación con seis hipótesis y su evaluación: la de Relevo narraba el funcionamiento del producto. El autor eligió una versión teórica de 38 palabras, actualizada en todo el proyecto | D-091 |
 | 29 sep. | Corrección y decisión | Mejorar la redacción de la hipótesis y elegir entre opciones. | Cuatro redacciones con distinto tono; el autor eligió la fluida («vincula… lo recordará a tiempo… se lo trae de vuelta»), actualizada en todo el proyecto | D-091 |
+| 29 sep. | Corrección y decisión | Señalar que «el lugar donde empieza» no dice qué empieza y que «se lo trae de vuelta» suena informal, y preguntar si el «porque» es necesario. | Explicación: la cátedra pide el mecanismo, dentro de la hipótesis o justo después. El autor eligió mantenerlo en registro formal: «…con el lugar donde esa actividad comienza… porque el entorno actúa como señal de recuerdo fuera de la pantalla» | D-091 |
 
 ## Lo que muestra el registro
 

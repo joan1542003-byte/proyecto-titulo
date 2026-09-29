@@ -311,7 +311,7 @@ Para una situación, no para una identidad fija: alguien tiene una intención al
 | --- | --- | --- |
 | Evidencia de investigación | `En algunas entrevistas aparecieron episodios donde otra intención competía con la continuidad digital.` | `Los jóvenes no pueden dejar el teléfono.` |
 | Decisión de diseño | `Relevo se estructura como una aplicación Android, un testigo situado y una señal breve.` | `Esta es la única solución posible.` |
-| Hipótesis | `Si lo que la persona quiere hacer queda vinculado al lugar donde empieza, lo recordará a tiempo, porque ese lugar se lo trae de vuelta fuera de la pantalla.` | `El objeto logra que las personas realicen la actividad.` |
+| Hipótesis | `Si una actividad queda vinculada al lugar donde comienza, la persona la recordará a tiempo, porque el entorno actúa como señal de recuerdo fuera de la pantalla.` | `El objeto logra que las personas realicen la actividad.` |
 | Comparación pendiente | `Se probará si el objeto situado aporta más que una notificación.` | `El objeto es mejor que las notificaciones.` |
 | Estado técnico | `La arquitectura y los estados están documentados; la integración sigue en desarrollo.` | `El sistema ya funciona completamente.` |
 | Forma | `La forma circular es una candidata de exploración.` | `El producto final es circular.` |
