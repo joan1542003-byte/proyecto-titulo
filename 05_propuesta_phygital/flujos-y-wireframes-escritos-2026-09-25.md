@@ -385,7 +385,7 @@ Son ejemplos editables, tomados de actividades mencionadas en las entrevistas y 
 
 ## 8 b. Qué responde cada prueba
 
-El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La memoria pregunta: **¿qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?** Su hipótesis (D-091) es: «Si durante una sesión en el teléfono suena una señal junto al primer paso de una actividad que la persona eligió, entonces recordará esa actividad a tiempo para decidir si empezarla, mejor que con una notificación en el teléfono.�.
+El hábito no es el centro de la memoria ni algo que la prueba pueda afirmar. La memoria pregunta: **¿qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?** Su hipótesis (D-091) es: «Si se diseña un sistema phygital que hace sonar una señal junto al primer paso de una actividad elegida durante una sesión de ocio digital, entonces la persona recuerda esa actividad a tiempo para decidir si empezarla más veces que con una notificación en el teléfono, porque el lugar donde empieza la actividad funciona como recordatorio fuera de la pantalla que sostiene la sesión.�.
 
 | Prueba | Qué responde | Qué no responde |
 | --- | --- | --- |

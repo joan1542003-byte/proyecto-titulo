@@ -378,9 +378,9 @@ El alcance inicial considera una persona, una intención activa, un primer paso,
 
 ## Hipótesis y objetivos
 
-> Si durante una sesión en el teléfono suena una señal junto al primer paso de una actividad que la persona eligió, entonces recordará esa actividad a tiempo para decidir si empezarla, mejor que con una notificación en el teléfono.
+> Si se diseña un sistema phygital que hace sonar una señal junto al primer paso de una actividad elegida durante una sesión de ocio digital, entonces la persona recuerda esa actividad a tiempo para decidir si empezarla más veces que con una notificación en el teléfono, porque el lugar donde empieza la actividad funciona como recordatorio fuera de la pantalla que sostiene la sesión.
 
-La hipótesis se basa en dos ideas del marco teórico: la dificultad está en recordar a tiempo (McDaniel & Einstein, 2000), cuando otra intención deja de orientar la decisión (de Segovia Vicente et al., 2024), y el lugar donde empieza una actividad puede ayudar a recordarla (Kirsh, 1995; O’Rear & Radvansky, 2019). Recordar no obliga a hacer: la persona sigue eligiendo si empieza. La hipótesis se evalúa en cuatro dimensiones: asociación entre señal e intención, aporte del lugar, autonomía y funcionamiento. Se debilita si la persona necesita consultar el teléfono para comprender la señal, si el soporte o la ubicación no marcan una diferencia o si la carga supera el beneficio.
+La hipótesis reúne lo que se diseña (una señal junto al primer paso), el efecto esperado (recordar a tiempo para decidir), la comparación (una notificación) y el mecanismo (el lugar como recordatorio fuera de la pantalla). Se basa en dos ideas del marco teórico: la dificultad está en recordar a tiempo (McDaniel & Einstein, 2000), cuando otra intención deja de orientar la decisión (de Segovia Vicente et al., 2024), y el lugar donde empieza una actividad puede ayudar a recordarla (Kirsh, 1995; O’Rear & Radvansky, 2019). El efecto se observa en la sesión inicial y en la pregunta que sigue a cada señal durante las semanas del protocolo 02. Recordar no obliga a hacer: la persona sigue eligiendo si empieza. La hipótesis se evalúa en cuatro dimensiones: asociación entre señal e intención, aporte del lugar, autonomía y funcionamiento. Se debilita si la persona necesita consultar el teléfono para comprender la señal, si el soporte o la ubicación no marcan una diferencia o si la carga supera el beneficio.
 
 El **objetivo general** es diseñar y evaluar formativamente un sistema phygital que ayude a recuperar una intención personal durante episodios de ocio digital, mediante una señal ubicada junto al primer paso de la actividad y sin bloquear ni juzgar la decisión posterior. La evaluación formativa usa pruebas sucesivas para identificar dificultades y orientar mejoras del diseño. Los **objetivos específicos** son:
 
@@ -807,10 +807,10 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 
 ### 29 de septiembre de 2026 — Hipótesis más simple
 
-- **Cambio:** la hipótesis del capítulo 10 se reescribió en forma «si…, entonces…» y con palabras simples: la condición (una señal junto al primer paso durante una sesión en el teléfono), el efecto esperado (recordar la actividad a tiempo para decidir) y la comparación (una notificación en el teléfono). Un párrafo nuevo la vincula con el marco teórico. Ese mismo día se probó una versión en dos frases, que el autor descartó porque no tenía forma de hipótesis.
+- **Cambio:** la hipótesis del capítulo 10 se reescribió con la estructura que piden los encargos 06, 10, 12 y 14 del seminario: afirmativa, en una frase, «si se diseña…, entonces…, porque…», con un solo efecto, una comparación y un mecanismo. Un párrafo nuevo nombra sus partes, la vincula con el marco teórico y dice dónde se observa el efecto. Ese mismo día se probaron dos versiones previas (una en dos frases y otra sin diseño ni mecanismo), que el autor descartó.
 - **Versión anterior:** «Si una persona registra una intención y su primer paso, sitúa una señal física junto a ese comienzo y la recibe cuando se cumple una condición configurada, entonces la intención podría volver a estar disponible para decidir, sin bloquear la actividad digital ni imponer su ejecución».
 - **Motivo:** el autor la consideró compleja y difícil de entender, y pidió que expresara aquello en que se basa la app y no su resultado (D-091).
-- **Alcance:** se conservan títulos, pregunta, objetivos, criterios, umbrales y las cuatro dimensiones de evaluación. No se añadieron fuentes: las citadas ya estaban en el capítulo 6. La extensión sube unas 50 palabras.
+- **Alcance:** se conservan títulos, pregunta, objetivos, criterios, umbrales y las cuatro dimensiones de evaluación. No se añadieron fuentes: las citadas ya estaban en el capítulo 6. La extensión sube unas 110 palabras.
 
 ### 25 de septiembre de 2026 — Fuentes verificadas, APA 7 y lenguaje claro
 

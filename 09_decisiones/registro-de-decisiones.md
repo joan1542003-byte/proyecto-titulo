@@ -1004,13 +1004,13 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Decisiones de la herramienta, pendientes de revisión del autor:** los textos de la guía y de las notas, la foto de contexto y el aviso tras activar el primer relevo.
 - **Documentación:** [Android 2.14](../06_desarrollo_y_factibilidad/app-android/version-2.14-guia-y-primer-relevo-2026-09-29.md).
 
-## D-091 — Una hipótesis simple, basada en recordar a tiempo
+## D-091 — Una hipótesis simple, con la estructura que pide el seminario
 
 - **Fecha:** 2026-09-29.
 - **Estado:** decisión del autor; vigente en la memoria (capítulo 10). Hipótesis sin contrastar.
-- **Decisión:** la hipótesis pasa a ser: «Si durante una sesión en el teléfono suena una señal junto al primer paso de una actividad que la persona eligió, entonces recordará esa actividad a tiempo para decidir si empezarla, mejor que con una notificación en el teléfono». Reemplaza la formulación «Si una persona registra una intención y su primer paso…», que describía los pasos de la app y su resultado.
-- **Fundamento:** conserva la forma «si…, entonces…» de las hipótesis anteriores del proyecto, con una condición, un efecto y una comparación que el protocolo 02 puede observar (objetivo 3). Se basa en la memoria prospectiva (McDaniel & Einstein, 2000), el conflicto entre metas (de Segovia Vicente et al., 2024) y la mediación del lugar (Kirsh, 1995; O’Rear & Radvansky, 2019).
-- **Proceso:** el mismo día el autor eligió primero una versión en dos frases («Muchas veces no se deja de hacer lo que se quería por falta de ganas…»); luego la descartó porque no tenía forma de hipótesis y eligió esta entre tres formulaciones «si…, entonces…».
+- **Decisión:** la hipótesis pasa a ser: «Si se diseña un sistema phygital que hace sonar una señal junto al primer paso de una actividad elegida durante una sesión de ocio digital, entonces la persona recuerda esa actividad a tiempo para decidir si empezarla más veces que con una notificación en el teléfono, porque el lugar donde empieza la actividad funciona como recordatorio fuera de la pantalla que sostiene la sesión». Reemplaza la formulación «Si una persona registra una intención y su primer paso…», que describía los pasos de la app y su resultado.
+- **Fundamento:** cumple lo que los encargos del seminario exigen a una hipótesis: forma afirmativa en una frase, sin «podría» ni «será posible» (encargos 10 y 14); nombrar lo que se diseña, «si se diseña…» (encargos 06 y 12); cadena condición → efecto → mecanismo, «porque…» (encargo 06); un solo efecto con un punto de comparación (encargos 06 y 14). El mecanismo expresa aquello en que se basa Relevo: la memoria prospectiva (McDaniel & Einstein, 2000), el conflicto entre metas (de Segovia Vicente et al., 2024) y la mediación del lugar (Kirsh, 1995; O’Rear & Radvansky, 2019). El efecto se observa en la sesión inicial y en la pregunta tras cada señal del protocolo 02, no solo por autorreporte, como pidió el feedback del encargo 06.
+- **Proceso:** el mismo día el autor descartó dos versiones: una en dos frases («Muchas veces no se deja de hacer lo que se quería por falta de ganas…»), porque no tenía forma de hipótesis, y otra «si…, entonces…» sin diseño ni mecanismo. Para la versión final se revisaron las hipótesis de las presentaciones del examen de julio de 2026 y los encargos 06, 07, 10, 12 y 14.
 - **Sin cambios:** pregunta, objetivos, criterios, las cuatro dimensiones de evaluación y el protocolo 02.
 - **Documentación:** [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 10.
 

@@ -42,6 +42,7 @@
 | 29 sep. | Decisión | Adoptar la hipótesis de dos frases: la premisa (no se recuerda a tiempo) y lo que se pone a prueba (un aviso en el lugar donde empieza la actividad), y actualizarla en todo el proyecto. | Hipótesis cambiada en la memoria, el protocolo 02, los flujos, la guía de comunicación, el guion y las diapositivas 8A y 8B | D-091 |
 | 29 sep. | Corrección | Señalar que la versión adoptada no es una hipótesis y pedir que se revisen las anteriores del proyecto. | Revisión de las hipótesis anteriores, todas con forma «si…, entonces…», y tres formulaciones nuevas con esa forma | — |
 | 29 sep. | Decisión | Adoptar la hipótesis «Si durante una sesión en el teléfono suena una señal junto al primer paso…, entonces recordará esa actividad a tiempo para decidir si empezarla, mejor que con una notificación en el teléfono». | Hipótesis reemplazada en la memoria, el protocolo 02, los flujos, la guía de comunicación, el guion y las diapositivas 8A y 8B | D-091, corregida |
+| 29 sep. | Consulta y decisión | Revisar las hipótesis de las presentaciones del examen de julio y los encargos del seminario que explican cómo debe ser una hipótesis. Elegir entre tres formulaciones que cumplen esas reglas. | Reglas de la cátedra reunidas (afirmativa, «si se diseña…, entonces…, porque…», un efecto con comparación, sin «podría»); hipótesis final actualizada en todo el proyecto | D-091, versión final |
 
 ## Lo que muestra el registro
 
