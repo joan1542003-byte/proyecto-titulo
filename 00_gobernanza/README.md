@@ -22,6 +22,8 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 
 - `directrices-de-trabajo.md`: mandato integral de investigación, desarrollo, escritura, trazabilidad y colaboración.
 - `guia-comunicacion-relevo.md`: arquitectura de mensaje, explicaciones por duración, ejemplos de uso, preguntas frecuentes y control de afirmaciones.
+- [Guion de la corrección cruzada del 30 de septiembre](guion-presentacion-correccion-cruzada-2026-09-30.md): 11 diapositivas con texto en pantalla, texto hablado, tiempos, demostración opcional y preguntas para la comisión.
+- [Variantes de diapositivas para la corrección cruzada](variantes-diapositivas-correccion-cruzada-2026-09-30.md): 12 diapositivas con dos opciones cada una (texto o esquema), para 6 a 7 minutos; mantiene sin cambios las diapositivas 2 a 4 del Figma.
 - `hoja-de-ruta.md`: secuencia de trabajo y condiciones para avanzar.
 - `plan-de-cierre-agosto-diciembre-2026.md`: estado actual, ruta crítica, calendario, hitos y criterios de cierre hasta la entrega.
 - `criterios-de-calidad.md`: estándares de evidencia, escritura, APA 7, privacidad y control de cambios.
@@ -50,6 +52,18 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Variantes de diapositivas
+
+- **Qué cambió:** se enlazó el documento con dos variantes por diapositiva para la corrección cruzada.
+- **Cómo estaba antes:** solo existía el guion de una versión.
+- **Por qué:** el autor pidió opciones por diapositiva y el Figma no pudo editarse desde la sesión.
+
+### 2026-09-25 — Guion de presentación
+
+- **Qué cambió:** se enlazó el guion de la corrección cruzada del 30 de septiembre.
+- **Cómo estaba antes:** el índice solo remitía a la guía de comunicación, que no tenía un guion por diapositiva para esa fecha.
+- **Por qué:** el autor pidió el texto de una presentación corta basada en presentaciones y encargos anteriores.
 
 ### 2026-09-23 — Trazabilidad de IA
 

@@ -1,11 +1,11 @@
 # Investigación visual de Relevo
 
-**Estado:** investigación concluida y sistema de marca vigente cerrado para el proyecto de título.
+**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
 **Alcance:** marca, aplicación Android, testigo físico, comunicación de producto y memoria editorial.
-**Formato de esta etapa:** documentación escrita en Markdown. No contiene imágenes, maquetas ni código.
+**Formato:** documentación en Markdown; desde el 25 de septiembre, láminas visuales en HTML con dibujos vectoriales propios ([segunda propuesta](lamina-identidad-relevo-2026-09-25.html) y [exploración anterior](lamina-exploracion-visual-2026-09-25.html)) y [archivos SVG del logotipo propuesto](marca-segunda-propuesta/).
 
 ## Para qué existe esta carpeta
 
@@ -38,8 +38,14 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 13. [Estrategia de marca desde el producto](13_estrategia-de-marca-desde-el-producto.md)
 14. [Sistema de marca vigente](14_sistema-de-marca-vigente.md)
 15. [Aplicación Android implementada](15_aplicacion-android-implementada.md)
-16. [Referencias](referencias.md)
-17. [Registro del reinicio visual](registro-del-reinicio.md)
+16. [Exploración visual: punto, pulso y lugar](16_exploracion-visual-2026-09-25.md) y su [lámina](lamina-exploracion-visual-2026-09-25.html) (antecedente)
+17. [Identidad visual: segunda propuesta](17_identidad-visual-segunda-propuesta-2026-09-25.md), su [lámina](lamina-identidad-relevo-2026-09-25.html) y los [archivos del logotipo](marca-segunda-propuesta/) (antecedente)
+18. [Marca Relevo desde cero](18_marca-relevo-desde-cero-2026-09-25.md) y sus [materiales](marca-desde-cero/README.md): lámina, logotipo, fotos y receta de imagen (antecedente)
+19. [Suena donde empieza](19_marca-suena-donde-empieza-2026-09-25.md) y sus [materiales](marca-suena-donde-empieza/README.md): lámina, firma sonora, logotipo y fotos (piezas visuales vigentes dentro de D-072)
+20. [Plataforma «Antes de que sea después»](20_plataforma-antes-de-que-sea-despues-2026-09-25.md) y su [lámina](marca-antes-de-que-sea-despues/README.md) (antecedente)
+21. [Vuelve a lo que querías hacer](21_marca-relevo-a-tiempo-2026-09-25.md) y su [manual](marca-a-tiempo/README.md)
+19. [Referencias](referencias.md)
+20. [Registro del reinicio visual](registro-del-reinicio.md)
 
 ## Qué está decidido y qué permanece abierto
 
@@ -49,7 +55,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 | Posicionamiento, frase y descriptor | Cerrados como decisiones de diseño | Se aplican en todos los soportes; una prueba puede corregirlos si revela una confusión concreta. |
 | Arquitectura de la aplicación | Estable como wireframe v1 | La estructura puede informar la nueva interfaz; su apariencia anterior no se considera vigente. |
 | Forma del testigo | Abierta | No se debe presentar una carcasa específica como producto resuelto. |
-| Luz y sonido | Son canales previstos, no parámetros cerrados | Intensidad, duración, patrón y convivencia requieren pruebas situadas. |
+| Sonido | Único canal del objeto por ahora (D-070); unos 30 segundos (D-078) | Intensidad, patrón y convivencia requieren pruebas situadas. |
 | Paleta y tipografía | Cerradas para producción | Source Sans 3, verde Relevo y la base neutra conforman el sistema vigente. |
 | Logotipo e iconografía | Cerrados en su nivel necesario | Se usa logotipo tipográfico y una `R` reducida; no se desarrollará un símbolo adicional sin una necesidad funcional. |
 | Sistema editorial | Directrices cerradas; diagramación pendiente | Debe aplicarse al texto real mediante retícula horizontal de doce columnas. |
@@ -67,6 +73,66 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** la tabla indica que el sonido es el único canal.
+- **Cómo estaba antes:** decía que luz y sonido eran canales previstos.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
+
+### 2026-09-25 — Firma del autor
+
+- **Qué cambió:** la propuesta D-073 se nombra por su nueva firma, «Vuelve a lo que querías hacer».
+- **Cómo estaba antes:** se nombraba «Lo que querías hacer, a tiempo».
+- **Por qué:** el autor cambió la firma.
+
+### 2026-09-25 — Documento 21
+
+- **Qué cambió:** se añadió la propuesta D-073 y su manual; el estado la describe.
+- **Cómo estaba antes:** el estado describía D-072.
+- **Por qué:** el autor pidió una marca clara para la comisión, hermosa y basada en el estudio del diseño reciente.
+
+### 2026-09-25 — Documento 20
+
+- **Qué cambió:** se añadió la plataforma de marca D-072; el estado la describe.
+- **Cómo estaba antes:** el estado describía D-071, centrada en el sonido que sale del lugar.
+- **Por qué:** el autor pidió que la marca hablara de lo que Relevo es y no del objeto.
+
+### 2026-09-25 — Documento 19
+
+- **Qué cambió:** se añadieron el documento 19 y la carpeta `marca-suena-donde-empieza/`; el estado describe D-070 y D-071, y el documento 18 pasa a antecedente.
+- **Cómo estaba antes:** el estado describía la propuesta D-069, con coma y luz.
+- **Por qué:** el autor rechazó la coma y decidió no usar luz por ahora.
+
+### 2026-09-25 — Relato y fundamentos
+
+- **Qué cambió:** el estado menciona el relato, la coma propia y Radio Canada.
+- **Cómo era antes:** decía que el logotipo y el texto usaban Atkinson Hyperlegible.
+- **Por qué:** el autor pidió relato, fundamentos por decisión y otra tipografía de texto.
+
+### 2026-09-25 — Estudio desde cero
+
+- **Qué cambió:** se añadieron el documento 18 y la carpeta `marca-desde-cero/`; el estado describe la propuesta D-069 y el documento 17 pasa a antecedente.
+- **Cómo era antes:** el estado describía la segunda propuesta (D-068), con serif.
+- **Por qué:** el autor pidió un estudio de marca desde cero, sin serifas, fundado en su investigación.
+
+### 2026-09-25 — Segunda propuesta de identidad
+
+- **Qué cambió:** se añadieron el documento 17, su lámina y la carpeta `marca-segunda-propuesta/` con el logotipo en SVG. El estado de la carpeta describe la nueva propuesta (D-068), y la exploración 16 pasa a ser antecedente.
+- **Cómo era antes:** el estado describía «punto y pulso» con ámbar de señal (D-067) como propuesta vigente.
+- **Por qué:** el autor pidió rehacer la identidad con un estándar de diseño gráfico más alto, fundado en lecturas de diseño y branding y en referentes de marca.
+
+### 2026-09-25 — Exploración visual fundamentada
+
+- **Qué cambió:** el estado de la carpeta resume la propuesta rehecha (símbolo de dos estados y ámbar de señal) y enlaza D-067; el documento 16 y su lámina se reescribieron con método, auditoría de referentes, candidatos puntuados, contraste y simulación de daltonismo.
+- **Cómo era antes:** la entrada anterior del mismo día describía tres direcciones y una recomendación basada en el coral de la app.
+- **Por qué:** el autor pidió una exploración adecuada y fundamentada.
+
+### 2026-09-25 — Nueva exploración visual
+
+- **Qué cambió:** se añadieron el documento 16 y una lámina HTML con tres direcciones dibujadas y una recomendación; el estado de la carpeta indica que el sistema del 16 de septiembre está parcialmente reabierto.
+- **Cómo era antes:** la carpeta declaraba la investigación concluida y solo contenía texto.
+- **Por qué:** el autor pidió rehacer la exploración visual de la marca; la app había incorporado un coral y un ícono que el sistema no recogía, y ese coral no cumple el contraste mínimo como elemento de interfaz.
 
 ### 2026-09-16 — Sistema de marca cerrado
 

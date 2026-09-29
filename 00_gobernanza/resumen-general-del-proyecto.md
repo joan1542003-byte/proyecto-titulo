@@ -1,7 +1,7 @@
 ---
-id: ESTADO-RELEVO-2026-09-12
+id: ESTADO-RELEVO-2026-09-25
 titulo: "Resumen y estado del proyecto — Relevo"
-fecha_de_corte: 2026-09-12
+fecha_de_corte: 2026-09-25
 estado: "síntesis del estado de proyecto"
 ---
 
@@ -9,7 +9,7 @@ estado: "síntesis del estado de proyecto"
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
 
-La fecha de corte es el 15 de septiembre de 2026. La memoria contiene 15.274 palabras de texto académico, excluyendo bibliografía e historial administrativo. El [control editorial](../08_memoria/auditoria-redaccion-v4-2026-08-26.md) explica el conteo; las maquetas anteriores no representan automáticamente esa versión.
+La fecha de corte es el 25 de septiembre de 2026. La memoria contiene unas 16.200 palabras de texto académico, sin bibliografía ni registro de cambios, y sus 64 referencias fueron verificadas ese día ([revisión integral](../08_memoria/revision-integral-fuentes-y-redaccion-2026-09-25.md)). Para una lectura más breve del estado, véase el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md).
 
 ## El objetivo del proyecto
 
@@ -19,7 +19,7 @@ La propuesta combina:
 
 - una [aplicación Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md), donde la persona escribe su intención, define un primer paso y configura una condición;
 - un [testigo físico situado](../05_propuesta_phygital/README.md), ubicado cerca del comienzo de la actividad elegida (por ejemplo, salir a caminar; el objeto se deja cerca de unas zapatillas);
-- un [pulso ambiental breve](../07_validacion/protocolo-01-asociacion-y-comparacion.md), que vuelve a hacer visible esa intención en el espacio físico.
+- un [pulso ambiental](../07_validacion/protocolo-02-prueba-21-dias.md), una señal sonora de unos 30 segundos que vuelve a hacer presente esa intención en el espacio físico.
 
 La persona sigue teniendo la última palabra: puede continuar con el ocio digital, ignorar la señal, silenciarla, cambiar de idea o iniciar la alternativa. Relevo no bloquea aplicaciones, no entrega puntos, no crea rachas y no registra si la actividad se realizó.
 
@@ -46,7 +46,8 @@ La [memoria v4](../08_memoria/memoria-vigente-v4.md), los [perfiles situacionale
 | Después del feedback | Se definieron aplicación, testigo, primer paso, lugar, señal, usuario principal y usuario límite. | El problema dejó de ser “usar mucho el celular” y pasó a ser una intención alternativa que pierde presencia. | [Matriz de incorporación del feedback](../08_memoria/matriz-incorporacion-feedback-e15.md) |
 | Encargo 16 y Encargo 17 | Se separaron recorrido de usuario, flujo del sistema y flujo de diseño. Después se construyeron nueve wireframes y 35 estados complementarios. | Se hicieron visibles los estados normales, los errores, las salidas voluntarias y la relación entre app y objeto. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) · [Cobertura de estados](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
 | Memoria v4 — 26 a 31 de agosto | La memoria reordenó la historia: problema, antecedentes, teoría, usuarios, referentes, criterios, formulación, propuesta, factibilidad y validación. | La solución aparece después de explicar el problema y no al revés. También se corrigieron redacción, APA 7 y trazabilidad. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) · [Revisión final](../08_memoria/revision-final-textual-2026-08-31.md) |
-| Estado actual — 12 de septiembre | El wireframe v1 está congelado como estructura, el programa de banco para micro:bit compila, la investigación visual se reinició desde la función y existe una compra nacional priorizada de dos iTag para evitar construir electrónica si no es necesario. | El siguiente paso físico es inspeccionar las dos unidades. micro:bit continúa preparado como respaldo y XIAO solo se integra si las pruebas justifican fabricar un objeto propio. | [Productos disponibles en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Investigación visual](../10_recursos_visuales/README.md) |
+| 12 de septiembre | El wireframe v1 quedó congelado como estructura, el programa de banco para micro:bit compiló, la investigación visual se reinició desde la función y se priorizó comprar dos iTag. | Se buscaba evitar construir electrónica si un producto terminado bastaba. Los iTag no llegaron a comprarse. | [Productos disponibles en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) |
+| 21 al 24 de septiembre | Se construyó la aplicación Android hasta la versión 2.6: varias apps con un límite común, salida por parlante Bluetooth o teléfono, consentimiento, historial y solicitud de eliminación. El feedback docente del 23 de septiembre separó recordar, empezar y formar hábitos. | Por primera vez existe un prototipo ejecutable. Todavía no se ha probado en un teléfono y un parlante reales ni con personas, y el parlante no es el testigo final. | [App Android](../06_desarrollo_y_factibilidad/app-android/README.md) · [Feedback aplicado](aplicacion-feedback-docente-2026-09-23.md) |
 
 ## Qué feedback aplicamos
 
@@ -57,7 +58,7 @@ El feedback de la comisión no se pegó literalmente en la memoria. Se convirti�
 | “No se entiende bien qué es el objeto” | Ahora se explica el sistema completo: aplicación, testigo, lugar, condición y pulso. | Una persona debe entender la experiencia antes de entrar en la parte técnica. | [Propuesta phygital](../05_propuesta_phygital/README.md) |
 | “El contexto y el usuario son muy amplios” | Se definieron un usuario principal y un usuario límite. El hogar quedó como contexto inicial de prueba, no como verdad definitiva. | La misma persona puede querer una señal en una situación y no quererla en otra. | [Perfiles](../03_usuarios/perfiles-situacionales.md) · [Recorridos](../03_usuarios/recorridos-situacionales.md) |
 | “Hay que separar los flujos” | Se separaron el recorrido de la persona, el funcionamiento del sistema y el proceso de diseño. | Así se pueden detectar fallos de comprensión sin confundirlos con fallos de programación. | [Cobertura de interacciones](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) |
-| “Hay que justificar la luz, el sonido o la vibración” | Se seleccionaron luz y sonido para el prototipo; vibración queda como alternativa condicionada. | Todavía no sabemos qué señal se percibe bien sin volverse una alarma o una molestia. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| “Hay que justificar la luz, el sonido o la vibración” | Se eligió una señal solo sonora de unos 30 segundos (D-070 y D-078): la luz no es factible en el tiempo disponible; la vibración queda como alternativa condicionada. | Todavía no sabemos si el sonido se percibe bien sin volverse una alarma o una molestia, ni si excluye a personas con baja audición. | [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
 | “Hay que demostrar el valor del objeto” | Se agregó una comparación entre objeto situado, objeto en un lugar neutro y notificación digital. | Permite saber si el valor está en el objeto, en el lugar o simplemente en recibir un aviso. | [Estudio de mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
 | “No conviertan esto en algo punitivo” | Se descartaron bloqueos, rankings, rachas, premios y evaluación de cumplimiento. | La intención es devolver una opción, no transformar la actividad en una obligación. | [Requisitos de usuarios](../03_usuarios/matriz-requisitos-de-usuarios.md) |
 | “Faltan plataforma, costos y rol del diseñador” | Android quedó como plataforma inicial; se documentaron materiales, costos, producción y responsabilidades del diseño. | Acotar el desarrollo permite comprobar primero el valor de la experiencia. | [Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
@@ -129,9 +130,9 @@ El mercado ya tiene medidores, bloqueadores, pausas, objetos de foco y recordato
 | **Trabajar con una situación, no con un usuario fijo** | La misma persona puede querer una señal en un momento y no quererla en otro. | [Perfiles situacionales](../03_usuarios/perfiles-situacionales.md) |
 | **Un ciclo con una intención, un primer paso y un pulso** | Mantiene la experiencia entendible y evita convertir Relevo en una agenda o app general de productividad. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
 | **Android como primera plataforma** | Permite concentrar el esfuerzo en una sola arquitectura con notificación local, actividad autorizada y posible Bluetooth Low Energy. Web e iPhone quedan fuera por ahora para no duplicar el desarrollo. | [Decisión de plataforma Android](../06_desarrollo_y_factibilidad/decision-plataforma-android.md) |
-| **Dejar abierta la condición de activación** | Continuidad, acumulación y horario tienen implicancias distintas de privacidad, significado y factibilidad. Primero hay que probarlas. | [Hoja de ruta](hoja-de-ruta.md) · [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| **Dejar abierta la condición de activación** | Continuidad, acumulación y horario tienen implicancias distintas de privacidad, significado y factibilidad. Primero hay que probarlas. | [Hoja de ruta](hoja-de-ruta.md) · [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
 | **No bloquear ni gamificar** | La propuesta busca devolver una opción, no medir rendimiento ni imponer una conducta. | [Matriz de requisitos](../03_usuarios/matriz-requisitos-de-usuarios.md) |
-| **Comparar objeto situado, objeto neutro y notificación** | Es la manera más clara de separar el valor del objeto del valor de su ubicación y del aviso digital. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
+| **Comparar objeto situado, objeto neutro y notificación** | Es la manera más clara de separar el valor del objeto del valor de su ubicación y del aviso digital. | [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
 | **Diseñar con producción y costos en mente** | La forma final no puede definirse solo por apariencia; debe poder construirse, mantenerse y explicarse. | [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
 
 El rol del diseño quedó entendido como articular problema, evidencia, experiencia, lenguaje, objeto y sistema. La electrónica, la fabricación, el mantenimiento y los costos son restricciones y colaboraciones que deben hacerse visibles; diseñar la experiencia no significa que toda la producción ya esté resuelta.
@@ -145,7 +146,7 @@ La arquitectura de nombres quedó así:
 - **aplicación Relevo:** configura y conserva la actividad;
 - **dispositivo Relevo:** objeto que emite la señal; `testigo` se reserva para el desarrollo académico y técnico;
 - **recordatorio activo:** unidad pública de uso; `ciclo` se mantiene en la documentación técnica;
-- **señal:** manifestación breve de luz y sonido vinculada al lugar.
+- **señal:** sonido breve, de unos 30 segundos, vinculado al lugar.
 
 En textos dirigidos al público se utiliza **dispositivo Relevo**, porque permite comprender el componente sin aprender terminología propia. **Testigo** conserva utilidad interna para describir que el objeto porta una señal preparada, pero se define antes de utilizarlo.
 
@@ -167,33 +168,33 @@ La dirección se rige por **un énfasis localizado**: baja ornamentación, lengu
 
 ## Cómo se ha implementado hasta ahora
 
-Hasta ahora la implementación es principalmente estructural y preparatoria:
+El recorrido de diseño completo tiene cinco momentos:
 
 1. **Formular:** escribir una intención, un primer paso y una condición provisional.
 2. **Situar:** relacionar el testigo con el lugar donde comienza la actividad.
 3. **Probar y armar:** comprobar el pulso y activar el ciclo de forma explícita.
-4. **Esperar y señalar:** emitir un pulso breve cuando corresponde.
+4. **Esperar y señalar:** emitir un pulso de unos 30 segundos, que se detiene solo, cuando corresponde.
 5. **Decidir y cerrar:** continuar, ignorar, silenciar, iniciar, desarmar o dejar vencer el ciclo.
 
 El [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) convirtió este recorrido en tres interacciones y nueve marcos principales. El [anexo de cobertura](../05_propuesta_phygital/anexo-cobertura-interacciones-encargo-17.md) lo amplió a 35 estados, incluyendo errores, permisos, salidas voluntarias y recuperación.
 
-La ruta física actual comienza con dos iTag clásicos de vendedores distintos. Se inspeccionará si una aplicación Android propia puede conectarse, activar el zumbador, mantener la espera y silenciar cada unidad mediante el servicio Bluetooth correspondiente. Si una muestra supera esa puerta, se usará solo para las capacidades demostradas; el sonido no equivale a aprobar la luz ni el patrón completo. Si ambas fallan, se instalará en una micro:bit V2 el programa ya compilado para comprobar Android → BLE, sonido, tiempos y silencio local. Su matriz roja se limita al banco sin participantes y la fase A exige una luz blanca cálida externa. XIAO nRF52840 queda como integración posterior si la evidencia justifica fabricar un testigo propio. Todavía no se ha comprado ni ensayado hardware. Ver [productos terminados en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md), [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y [validación](../07_validacion/README.md).
+La [aplicación Android 2.6](../06_desarrollo_y_factibilidad/app-android/README.md) implementa formular, configurar, revisar, esperar, recibir y cerrar: suma el tiempo de una o varias apps elegidas hasta un límite, muestra una notificación persistente y reproduce un tono en un parlante Bluetooth o en el teléfono. Compila y pasa diez pruebas unitarias; no se ha probado el ciclo completo en equipos reales. El parlante es una salida provisional: no emite luz, no está reservado para Relevo y puede sonar con otras apps. El testigo propio sigue abierto. Se estudiaron iTag, micro:bit V2, Atom Echo y XIAO nRF52840, pero no se ha comprado ni ensayado ningún hardware. El programa de micro:bit compila y serviría para una prueba manual de la orden y el sonido, con sus luces cubiertas, pero no funciona con el APK actual, que envía audio y no órdenes BLE. Ver [productos terminados en Chile](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md), [programa micro:bit](../06_desarrollo_y_factibilidad/prueba-microbit-ble/README.md), [plataformas físicas](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) y [validación](../07_validacion/README.md).
 
 ## Costos estimados
 
-Existen precios de referencia para comparar rutas, pero todavía no hay un presupuesto completo del testigo portátil. Los valores de B1, B2 y 12 V fueron observados el 30 de agosto; los de las plataformas compactas, el 7 de septiembre de 2026. No corresponden al costo final de producción ni al precio de venta.
+Existen precios de referencia para comparar rutas, pero todavía no hay un presupuesto completo del testigo portátil. Las opciones sonoras revisadas el 23 de septiembre, como un parlante JBL Go 4 o una micro:bit con portapilas, están en la [compra para el testeo sonoro](../06_desarrollo_y_factibilidad/compra-para-testeo-audio-chile-2026-09-23.md); ninguna se ha comprado. Los valores de B1, B2 y 12 V fueron observados el 30 de agosto; los de las plataformas compactas, el 7 de septiembre de 2026. No corresponden al costo final de producción ni al precio de venta.
 
 | Alternativa | Costo preliminar | Qué incluye / qué falta | Enlace |
 |---|---:|---|---|
-| Dos muestras iTag | **CLP 13.980 más envío** | Primera compra recomendada. Permite comparar partidas; faltan recepción, inspección GATT y pruebas de sonido, luz, espera, reconexión y silencio. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) |
+| Dos muestras iTag | **CLP 13.980 más envío** | Recomendada el 11 de septiembre; no se compró. Permitía comparar partidas; faltan recepción, inspección GATT y pruebas de sonido, luz, espera, reconexión y silencio. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) |
 | micro:bit V2 | **CLP 24.990** | Respaldo disponible si ambos iTag fallan. Faltan acceso o préstamo, alimentación portátil y funda de ensayo; no representa el producto final. | [Plataformas existentes](../06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md) |
-| XIAO nRF52840 | **CLP 16.590 solo la placa** | Ruta de integración vigente. Faltan batería, luz, transductor, control, conexiones, carcasa, difusión, envío y revisión. | [Testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) |
+| XIAO nRF52840 | **CLP 16.590 solo la placa** | Ruta de integración vigente. Faltan batería, transductor, control, conexiones, carcasa, envío y revisión. | [Testigo compacto](../06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) |
 | Montaje provisional de 12 V | **CLP 28.130** | Referencia parcial. Excluye terminales y protección de potencia; queda como respaldo. | [Alternativas físicas](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/alternativas-arquitectura-fisica.md) |
 | B1: XIAO + anillo 5 V | **CLP 22.383 + conversor lógico** sin base; **CLP 28.073 + conversor lógico** con base comparable | Faltan conversor lógico, conductores internos, cuerpo, difusor, envío y revisión. | [Lista B1](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 | B2: XIAO + luz cálida 5 V | **CLP 23.591 + resistencia de estado y conductores** sin base; **CLP 29.281 + esas partidas** con base comparable | Faltan resistencia de estado, conductores, cuerpo, difusor, envío y revisión. | [Lista B2](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 | Núcleo común B1/B2 | **CLP 17.126** comprando todo; **CLP 10.440** reutilizando fuente, jack y cable USB-C | Incluye XIAO, pulsador, cable, interruptor, borneras, fuente, jack y cable de programación. Hay que confirmar qué piezas existen. | [Costos comunes](../99_archivo/antiguo/desarrollo-fisico/antecedentes-mesa-2026-08-30/lista-materiales-b1-b2.md) |
 
-La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro ni un costo cerrado**. Las dos muestras iTag cuestan menos que una placa y podrían evitar parte de la construcción, pero solo una prueba física permitirá saberlo. micro:bit conserva una salida de respaldo y XIAO reduce tamaño y componentes en una integración propia, aunque su subtotal sigue incompleto.
+La conclusión económica por ahora es simple: **no se puede declarar todavía un ahorro ni un costo cerrado**. Un producto terminado podría evitar parte de la construcción, pero solo una prueba física permitirá saberlo. XIAO reduce tamaño y componentes en una integración propia, aunque su subtotal sigue incompleto.
 
 ## Qué ya está listo y qué falta
 
@@ -203,11 +204,11 @@ La conclusión económica por ahora es simple: **no se puede declarar todavía u
 | Entrevistas analizadas, perfiles, recorridos y requisitos. | Ejecutar una nueva prueba con participantes; todavía no hay resultados. | [Matriz de evidencia](../03_usuarios/matriz-evidencia-p1-p8.md) |
 | Encuesta complementaria de 70 participantes registrada como fuente pendiente. | Publicar sus materiales, revisar la metodología y decidir si complementa o modifica la memoria. | [Ficha de seguimiento](../03_usuarios/encuesta-70-participantes-pendiente.md) |
 | Marco teórico, referentes y mercado organizados. | Hacer solo una vigilancia breve si aparece información nueva relevante. | [Mercado](../04_mercado_y_referentes/estudio-mercado-relevo-2026-08-24.md) |
-| Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 01](../07_validacion/protocolo-01-asociacion-y-comparacion.md) |
-| Wireframes: nueve marcos principales y 35 estados complementarios. | Implementar Android, permisos, segundo plano, vínculo y recuperación. | [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
+| Aplicación, testigo, lugar, señal y flujos definidos como hipótesis. | Comprobar si el objeto aporta más que una notificación. | [Protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) |
+| Wireframes: nueve marcos principales y 35 estados complementarios. Aplicación Android 2.6 compilada, con permisos, notificación persistente, salida de sonido elegible, consentimiento y solicitud de eliminación. | Probar el ciclo completo en un teléfono y un parlante reales, verificar el envío y la eliminación de datos, e implementar el vínculo con un testigo propio. | [App Android](../06_desarrollo_y_factibilidad/app-android/README.md) · [Encargo 17](../05_propuesta_phygital/entrega-encargo-17.md) |
 | Nombre, mensaje y sistema visual cerrados para el proyecto. | Aplicarlos de forma consistente y comprobar comprensión, contraste y reproducción; ajustar solo ante un problema demostrado. | [Sistema de marca](../10_recursos_visuales/14_sistema-de-marca-vigente.md) |
-| Productos terminados y plataformas comparados; programa micro:bit compilado como respaldo. | Comprar dos iTag, inspeccionarlos y registrar resultados. Usar micro:bit solo si ambos fallan; completar la lista XIAO únicamente si la evidencia justifica una integración propia. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
-| Memoria v4 ordenada y auditada. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
+| Productos terminados y plataformas comparados; programa micro:bit compilado. | Decidir qué objeto se usará para la señal física, comprarlo y ensayarlo; completar la lista XIAO únicamente si la evidencia justifica una integración propia. | [Búsqueda nacional](../06_desarrollo_y_factibilidad/busqueda-productos-terminados-chile-2026-09-11.md) · [Factibilidad](../06_desarrollo_y_factibilidad/README.md) |
+| Memoria v4 ordenada, auditada y con fuentes verificadas. | Incorporar los resultados reales y preparar la presentación oral. | [Memoria v4](../08_memoria/memoria-vigente-v4.md) |
 
 ## Próximos pasos e hitos
 
@@ -215,8 +216,8 @@ El [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md) conserva el calenda
 
 | Hito | Estado o condición |
 | --- | --- |
-| Desde el 12 de septiembre | Comprar y examinar las dos muestras iTag. Si ninguna acepta control directo y estable, ejecutar el banco micro:bit preparado. |
-| 19 y 29 de septiembre | App base y señal manual; después, prueba interna y preparación de la corrección cruzada. |
+| 21 al 24 de septiembre | App Android hasta la versión 2.6. Cumplido. |
+| 29 de septiembre | Prueba interna de la app y la señal en teléfono y parlante reales, incluida la eliminación de datos, antes de la corrección cruzada. Pendiente. |
 | 30 de septiembre | Corrección cruzada oficial. |
 | 7 y 17 de octubre | Cierre del piloto técnico; prueba con usuarios solo si se cumplen las puertas del protocolo. |
 | 19–23 de octubre | Semana oficial de Pruebas Solemnes. |
@@ -229,11 +230,11 @@ La encuesta complementaria mantiene una fecha estimada y condicionada en su [fic
 
 ## Cierre
 
-Desde el examen, Relevo pasó de ser una idea difícil de leer a tener un problema acotado, usuarios situacionales, investigación trazable, estado del arte, propuesta phygital, flujos separados, identidad definida, costos preliminares y un plan de validación.
+Desde el examen, Relevo pasó de ser una idea difícil de leer a tener un problema acotado, usuarios situacionales, investigación trazable, estado del arte, propuesta phygital, flujos separados, identidad definida, costos preliminares, un plan de validación y un prototipo Android ejecutable.
 
 La pregunta que queda es la más importante: **¿el testigo físico situado recupera una intención de una manera más clara o pertinente que una notificación digital, sin aumentar demasiado la carga, la intrusión o los problemas de accesibilidad?**
 
-Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que responder el prototipo y las pruebas.
+Eso todavía no lo pueden responder la memoria, el wireframe ni la app por sí sola. Lo tienen que responder el prototipo y las pruebas.
 
 ## Documentos principales
 
@@ -254,9 +255,33 @@ Eso todavía no lo puede responder la memoria ni el wireframe. Lo tienen que res
 
 ## Respuestas completas al feedback del 2 de septiembre
 
-La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. Antes del banco registrado en la Issue #11 se ejecutará la prueba de aceptación de dos iTag.
+La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. La prueba de aceptación de dos iTag, prevista antes del banco de la Issue #11, no se realizó; la prueba vigente es la de 21 días con un parlante comercial ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Extensión tras simplificar el lenguaje
+
+- **Qué cambió:** la extensión pasa a unas 16.200 palabras.
+- **Cómo estaba antes:** unas 15.700.
+- **Por qué:** la memoria explicó términos técnicos para la comisión.
+
+### 2026-09-25 — Coherencia con la memoria revisada
+
+- **Qué cambió:** la extensión pasa a unas 15.700 palabras; el pulso se describe como señal sonora de unos 30 segundos; tres enlaces remiten al protocolo 02; el programa de micro:bit ya no se describe como prueba de luz, y la prueba de dos iTag se registra como no realizada.
+- **Cómo estaba antes:** decía unas 15.100 palabras, llamaba «breve» al pulso, enlazaba el protocolo 01 para la comparación vigente, describía una prueba manual de luz y sonido y anunciaba la prueba de dos iTag como próxima.
+- **Por qué:** la revisión completa de la memoria dejó una señal solo sonora de unos 30 segundos y una prueba de 21 días; este resumen no debe contradecirla.
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** la respuesta al feedback sobre modalidad, el glosario y la fila de la XIAO describen una señal solo sonora y remiten al protocolo 02.
+- **Cómo estaba antes:** describían luz y sonido y remitían al protocolo 01.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
+
+### 2026-09-25 — Estado posterior a Android 2.6
+
+- **Qué cambió:** la fecha de corte pasa al 25 de septiembre; se incorporaron la app Android 2.6, el feedback del 23 de septiembre y la verificación de fuentes de la memoria. La ruta física deja de describirse como compra de iTag, que no se realizó, y los próximos pasos se actualizaron.
+- **Cómo estaba antes:** el resumen tenía corte al 12 de septiembre, presentaba la compra de dos iTag como paso inmediato y no mencionaba la aplicación construida.
+- **Por qué:** era la síntesis general del proyecto y describía un estado superado.
 
 ### 2026-09-16 — Identidad y comunicación cerradas
 

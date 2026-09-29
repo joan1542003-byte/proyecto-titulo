@@ -9,7 +9,7 @@ Esta matriz permite comprobar cómo los criterios del capítulo 9 se desprenden 
 
 ## Correspondencia
 
-C1–C8 identifican los ocho criterios para seguimiento; no son números de apartado. En la memoria se desarrollan en tres bloques: intención y comienzo (C1–C2), activación y autonomía (C3–C5), y carga, convivencia y aporte físico (C6–C8).
+C1–C8 identifican los ocho criterios para seguimiento; no son números de apartado. En la memoria no se usa la letra: C1 corresponde a «Criterio 1», C2 a «Criterio 2» y así sucesivamente. En la memoria se desarrollan en tres bloques: intención y comienzo (C1–C2), activación y autonomía (C3–C5), y carga, convivencia y aporte físico (C6–C8).
 
 | Criterio | Evidencia principal | Aporte al criterio | Límite vigente |
 | --- | --- | --- | --- |
@@ -26,11 +26,23 @@ C1–C8 identifican los ocho criterios para seguimiento; no son números de apar
 
 Los ocho criterios cumplen funciones diferentes. Los criterios C1, C4 y C5 protegen el sentido del proyecto y la autonomía. Los criterios C2 y C3 organizan la relación entre intención, comienzo y activación. Los criterios C6 y C7 limitan la carga y los efectos sobre el entorno. El criterio C8 establece la prueba que decidirá si la dimensión física tiene valor suficiente para justificar su complejidad.
 
-La matriz también permite distinguir niveles de certeza. La literatura y las entrevistas sostienen la pertinencia de los criterios como condiciones de diseño. No demuestran la forma del objeto, los parámetros de luz y sonido seleccionados para prueba, la condición de activación ni la eficacia de la propuesta completa.
+La matriz también permite distinguir niveles de certeza. La literatura y las entrevistas sostienen la pertinencia de los criterios como condiciones de diseño. No demuestran la forma del objeto, los parámetros de la señal sonora seleccionada para la prueba, la condición de activación ni la eficacia de la propuesta completa.
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** la matriz habla de la señal sonora.
+- **Cómo estaba antes:** hablaba de parámetros de luz y sonido.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
+
+### 2026-09-25 — Equivalencia con la memoria
+
+- **Qué cambió:** se indicó que C1–C8 equivalen a «Criterio 1» a «Criterio 8» en la memoria.
+- **Cómo estaba antes:** la matriz usaba los códigos C1–C8 y la memoria también los usaba sin explicarlos.
+- **Por qué:** el autor señaló que la letra C no se entendía; la memoria ahora nombra los criterios con palabras y la matriz conserva los códigos para seguimiento interno.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

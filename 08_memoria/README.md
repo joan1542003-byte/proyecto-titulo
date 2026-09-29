@@ -10,12 +10,14 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
+- [Revisión integral de fuentes, corpus y redacción](revision-integral-fuentes-y-redaccion-2026-09-25.md): verificación de las 64 referencias, contraste con P1–P8 y Android 2.6, revisión página por página, correcciones aplicadas y problemas pendientes al 25 de septiembre.
+- [Guion de la corrección cruzada del 30 de septiembre](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md): presentación de unos 6 minutos basada en la memoria, con texto en pantalla y texto hablado.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia de las 64 entradas bibliográficas, actualizada tras el feedback del 23 de septiembre.
 - [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
 - [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
-- [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve actualizada al 23 de septiembre sobre la propuesta, el APK 2.4, los cambios y los pendientes.
+- [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve actualizada al 25 de septiembre sobre la propuesta, el APK 2.6, los cambios y los pendientes.
 
 ## Antecedentes y documentos históricos
 
@@ -70,7 +72,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Controles editoriales
 
-- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. El [control de extensión](auditoria-redaccion-v4-2026-08-26.md) registra 15.480 en la versión actual.
+- Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de verificar fuentes y simplificar el lenguaje, tiene 16.174 palabras según el método del control de extensión, dentro del rango institucional de 15.000 a 20.000, y los seis apartados con límite propio cumplen su rango; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
 - APA 7 en español.
 - Ninguna referencia a encargos o instrucciones docentes dentro del cuerpo.
 - Conceptos especializados explicados al aparecer.
@@ -84,6 +86,55 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-09-25 — Fuentes, APA 7 y lenguaje claro
+
+- **Cambio:** el control de extensión registra 16.174 palabras.
+- **Versión anterior:** 15.697.
+- **Motivo:** se explicaron términos técnicos para la comisión y se corrigieron detalles de referencias; la [revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md) documenta la cuarta revisión.
+
+### 2026-09-25 — Revisión completa de redacción
+
+- **Cambio:** el control de extensión registra 15.697 palabras; se nombra el método del control en lugar de `wc -w`.
+- **Versión anterior:** 15.567, atribuidas a `wc -w`, aunque el control usa `str.split` de Python y ambos métodos difieren en unas pocas palabras.
+- **Motivo:** la revisión completa de la memoria precisó fuentes, retiró restos de la señal luminosa y alineó el capítulo 13 con el protocolo 02.
+
+### 2026-09-25 — Señal sonora y prueba de 21 días
+
+- **Cambio:** el control de extensión registra 15.567 palabras.
+- **Versión anterior:** 15.438.
+- **Motivo:** la memoria incorporó D-070 ampliada, D-078 y D-079.
+
+### 2026-09-25 — Aparición progresiva del proyecto
+
+- **Cambio:** el control de extensión registra 15.438 palabras.
+- **Versión anterior:** 15.443.
+- **Motivo:** se retiraron de los capítulos 2, 6 y 7 menciones anticipadas de Relevo.
+
+### 2026-09-25 — Revisión página por página
+
+- **Cambio:** el control de extensión registra 15.443 palabras; se enlaza el guion de la corrección cruzada.
+- **Versión anterior:** registraba 15.072 palabras, sin advertir que la introducción y la justificación habían quedado bajo sus mínimos.
+- **Motivo:** mantener sincronizado el índice con la memoria y con el material para el 30 de septiembre.
+
+### 2026-09-25 — Revisión de lectura
+
+- **Cambio:** el control de extensión registra 15.072 palabras después de explicar códigos, términos y placas electrónicas y de nombrar los criterios con palabras.
+- **Versión anterior:** registraba 14.804 palabras.
+- **Motivo:** mantener sincronizado el índice con la memoria.
+
+### 2026-09-25 — Revisión editorial según la pauta UDP
+
+- **Cambio:** el control de extensión registra 14.804 palabras tras reescribir los capítulos 1–10 y 13, añadir títulos APA a tablas y figura, un glosario y preliminares según la pauta de la UDP.
+- **Versión anterior:** registraba 15.137 palabras.
+- **Motivo:** mantener sincronizado el índice con la memoria.
+
+### 2026-09-25 — Revisión integral enlazada
+
+- **Cambio:** se enlazó la revisión integral de fuentes, corpus y redacción; el control de extensión registra 15.137 palabras y el resumen se describe con Android 2.6.
+- **Versión anterior:** el índice informaba 15.480 palabras (cifra del 16 de septiembre, ya superada por el ajuste del 23 de septiembre) y describía el resumen con el APK 2.4.
+- **Motivo:** mantener una entrada fiable a la memoria después de verificar sus 64 referencias y alinearla con el prototipo vigente.
+- **Alcance:** revisión documental; no se añadieron resultados con participantes.
 
 ### 2026-09-16 — Conteo posterior al cierre de marca
 

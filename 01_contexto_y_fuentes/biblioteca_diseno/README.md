@@ -16,19 +16,18 @@ La biblioteca cumple dos funciones. Primero, conserva una lectura trazable de lo
 | `resumen-munari-diseno-como-arte.md` | Síntesis aplicada de comunicación visual, función, método, materialidad y experimentación. |
 | `resumen-isaacson-steve-jobs.md` | Lectura histórica y biográfica de procesos de integración, simplificación y desarrollo de productos. |
 | `sintesis-aplicada-sistema-visual-relevo.md` | Traducción crítica de las cuatro obras al sistema visual y phygital vigente. |
-| `originales/` | Copias canónicas de los PDF aportados, sin alteraciones. |
 
-## Procedencia de los archivos
+## Procedencia y derechos de autor
 
-Los PDF fueron incorporados al repositorio privado en `originales/`. La lectura se realizó sobre esos archivos locales, no sobre resúmenes externos. La extracción textual se hizo de forma temporal, página por página, y se registró fuera de la biblioteca como apoyo de auditoría. No se incorporaron audios, datos personales ni material identificable.
+La lectura se realizó sobre copias PDF aportadas por el autor, no sobre resúmenes externos. Las cuatro obras siguen protegidas por derechos de autor y se venden comercialmente: *The Design of Everyday Things* (Basic Books), *Interaction of Color* (Yale University Press), *Design as Art* (Penguin Modern Classics) y *Steve Jobs* (traducción española). No existe una edición gratuita y legal que permita redistribuirlas; las copias que circulan en internet provienen de sitios no autorizados o del préstamo controlado de Internet Archive, que no autoriza su redifusión.
 
-Las copias se conservan para consulta académica interna del proyecto. Su presencia en un repositorio privado no modifica los derechos de autor ni autoriza su redistribución pública. Los resúmenes son paráfrasis críticas y no reemplazan las obras originales.
+Por esa razón, el 25 de septiembre de 2026 se retiraron los PDF del repositorio, que es público. La biblioteca conserva solo los resúmenes, que son paráfrasis críticas sin citas textuales extensas y que remiten a cada obra. Para volver a consultar un libro debe usarse un ejemplar comprado, uno de biblioteca o el préstamo digital de la universidad. Los hashes del inventario permiten identificar las copias leídas sin distribuirlas.
 
 ## Inventario bibliográfico y estado de lectura
 
-Los hashes corresponden a la copia canónica actualmente almacenada. La columna de edición solo se completa cuando el propio archivo permite confirmarla.
+Los hashes corresponden a la copia leída, retirada del repositorio el 25 de septiembre de 2026. La columna de edición solo se completa cuando el propio archivo permite confirmarla.
 
-| Obra | Autor | Año / edición identificable | Páginas del PDF | Tamaño | SHA-256 | Estado de lectura |
+| Obra | Autor | Año / edición identificable | Páginas del PDF leído | Tamaño | SHA-256 | Estado de lectura |
 | --- | --- | --- | ---: | ---: | --- | --- |
 | *The Design of Everyday Things* | Don Norman | La portada interior no permite confirmar todos los datos; incluye una “Preface to the 2002 Edition”. Se registra provisionalmente como edición de 2002. | 270 | 3.140.257 bytes | `85E2F248ED85EB8B4271E181F38602239A66FE1611ADE7E187357AD467C5C232` | Completa para el archivo suministrado: prefacios, siete capítulos, notas, lecturas sugeridas, referencias e índice. |
 | *Interaction of Color* | Josef Albers | 2013, cuarta edición; “50th Anniversary Edition”; Yale University Press. ISBN visible: 978-0-300-17935-4. | 210 | 8.762.475 bytes | `101A484101845275AD81AF045F8B344DC930B4251029493F5B18C7F7563450C8` | Completa para el archivo suministrado: introducción, capítulos I–XXVI y placas con comentarios. |
@@ -48,6 +47,13 @@ Las referencias APA 7 de cada obra son provisionales cuando falta editorial, ISB
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Retiro de los PDF protegidos
+
+- **Cambio:** se eliminaron los cuatro PDF de `originales/` y se reemplazó la sección de procedencia por una explicación de derechos de autor y de cómo consultar las obras legalmente.
+- **Situación anterior:** el documento suponía un repositorio privado, pero el repositorio es público en GitHub; los PDF completos quedaban disponibles para cualquier persona.
+- **Motivo:** ninguna de las cuatro obras tiene una edición gratuita y legal que permita redistribuirla. Los resúmenes, que son paráfrasis con referencia, se conservan.
+- **Pendiente:** los PDF siguen en el historial de Git (commit `d404a46` y anteriores). Retirarlos por completo exige reescribir el historial de `main`, decisión que corresponde al autor.
 
 ### 2026-08-29 — Creación de la biblioteca
 

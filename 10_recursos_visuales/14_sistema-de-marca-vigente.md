@@ -6,6 +6,8 @@
 
 **Alcance:** producto, aplicación Android, dispositivo físico, comunicación y memoria editorial.
 
+> **Revisión en curso (25 de septiembre de 2026):** la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) ([D-073](../09_decisiones/registro-de-decisiones.md)) reemplaza a las anteriores. Propone el renglón con dos voces, el logotipo «relevo» en Schibsted Grotesk y una paleta de tinta, papel y azul pasta sin luz. Mientras el autor no la apruebe, este documento sigue vigente, pero sus menciones a la luz del dispositivo quedan sin efecto: D-070 se amplió al objeto, que emite solo un sonido de unos 30 segundos (D-078).
+
 ## Qué se cierra en este documento
 
 Este documento convierte la investigación de marca en una dirección ejecutable. Las decisiones se consideran vigentes y deben aplicarse de manera consistente. Solo se revisarán si una prueba demuestra un problema concreto de comprensión, accesibilidad, producción o reconocimiento.
@@ -222,6 +224,66 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** el aviso indica que las menciones a la luz quedan sin efecto.
+- **Cómo estaba antes:** estaban suspendidas mientras se decidía el alcance de D-070.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
+
+### 2026-09-25 — Firma del autor
+
+- **Qué cambió:** el aviso nombra la propuesta D-073 por su nueva firma.
+- **Cómo estaba antes:** la nombraba «Lo que querías hacer, a tiempo».
+- **Por qué:** el autor cambió la firma.
+
+### 2026-09-25 — Aviso de D-073
+
+- **Qué cambió:** el aviso remite a D-073.
+- **Cómo estaba antes:** remitía a D-072.
+- **Por qué:** D-073 reemplazó a D-072.
+
+### 2026-09-25 — Aviso de D-072
+
+- **Qué cambió:** el aviso remite a la plataforma D-072.
+- **Cómo estaba antes:** remitía a D-071.
+- **Por qué:** el autor pidió que la marca hablara de lo que Relevo es y no del objeto.
+
+### 2026-09-25 — Aviso de D-070 y D-071
+
+- **Qué cambió:** el aviso remite a la propuesta D-071 y suspende las menciones a la luz por D-070.
+- **Cómo estaba antes:** el aviso remitía al documento 18 y a D-069.
+- **Por qué:** el autor rechazó la coma y decidió no usar luz por ahora.
+
+### 2026-09-25 — Aviso actualizado
+
+- **Qué cambió:** el aviso describe el relato, la coma propia y Radio Canada.
+- **Cómo estaba antes:** mencionaba Atkinson Hyperlegible para todo.
+- **Por qué:** D-069 se actualizó a pedido del autor.
+
+### 2026-09-25 — Aviso sobre el estudio desde cero
+
+- **Qué cambió:** el aviso remite al documento 18 y a D-069.
+- **Cómo estaba antes:** remitía a la segunda propuesta (D-068).
+- **Por qué:** el autor pidió un estudio desde cero.
+
+### 2026-09-25 — Aviso sobre la segunda propuesta
+
+- **Qué cambió:** el aviso remite al documento 17 y a D-068.
+- **Cómo estaba antes:** remitía a la propuesta «punto y pulso» con ámbar (D-067).
+- **Por qué:** el autor pidió rehacer la identidad; la nueva propuesta reemplaza a la anterior.
+
+### 2026-09-25 — Aviso actualizado a la exploración fundamentada
+
+- **Qué cambió:** el aviso describe ahora la propuesta de dos estados y el ámbar de señal, y enlaza D-067.
+- **Cómo estaba antes:** el aviso mencionaba un coral reservado a la señal.
+- **Por qué:** la exploración 16 se rehízo con método y fuentes, y reemplazó el coral por el ámbar derivado de la luz del objeto.
+
+### 2026-09-25 — Aviso de revisión
+
+- **Qué cambió:** se añadió un aviso que remite a la exploración 16.
+- **Cómo estaba antes:** el documento se presentaba como cerrado sin indicar que la app ya usaba otro verde, un coral y un ícono propio.
+- **Por qué:** evitar que se aplique un sistema que la app ya contradice sin saber que hay una propuesta de ajuste.
 
 ### 2026-09-16 — Cierre del sistema de marca
 

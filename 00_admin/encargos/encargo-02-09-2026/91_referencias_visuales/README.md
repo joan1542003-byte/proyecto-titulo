@@ -14,7 +14,7 @@ Ensaya una apertura oscura donde las aristas convergen visualmente. Aporta una f
 
 ### 03. Usuario y contexto
 
-Prueba la combinación entre hallazgos, citas breves y fotografía monocromática. La imagen funciona como referencia de composición; no debe presentarse como registro documental de las entrevistas.
+Prueba la combinación entre hallazgos, citas breves y fotografía monocromática. La imagen funciona como referencia de composición; no debe presentarse como registro documental de las entrevistas. El origen de la fotografía del andén no está registrado: si fue generada con IA debe declararse así, y si proviene de un banco de imágenes o de otra persona se necesita su licencia antes de cualquier uso público.
 
 ### 04. Cartel “Señal, no alarma”
 
@@ -27,6 +27,12 @@ Se copiaron únicamente piezas con valor compositivo o metodológico para la ent
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Procedencia de la fotografía
+
+- **Qué cambió:** se advirtió que el origen de la fotografía de la pieza 03 no está documentado.
+- **Cómo estaba antes:** se aclaraba que no era un registro de entrevistas, pero no su procedencia ni licencia.
+- **Por qué:** asegurar que ninguna imagen ajena se use sin licencia en la memoria o en presentaciones.
 
 ### 2026-09-11 — Ubicación del respaldo corregida
 

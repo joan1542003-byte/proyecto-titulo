@@ -1,5 +1,7 @@
 # Aplicación del feedback docente del 23 de septiembre de 2026
 
+> **Actualización del 25 de septiembre de 2026:** el seguimiento de 21 días, antes no incorporado, fue adoptado por el autor como prueba principal (D-075 y D-079, [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)), y el refuerzo se orienta sin rachas ni patrones oscuros (D-074). Lo que sigue describe el estado del 23 de septiembre.
+
 **Fuente de trabajo:** [síntesis de las anotaciones](../02_investigacion/sintesis-anotaciones-2026-09-23.md), [revisión sobre hábitos y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md), [auditoría de privacidad](../07_validacion/privacidad-prototipo-android-2026-09-23.md) y [estudio de la ruta de audio](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md). Este registro distingue cambios realizados, decisiones pospuestas y comprobaciones necesarias. Una anotación de clase no equivale a un resultado de prueba.
 
 ## Cambios incorporados
@@ -34,6 +36,12 @@
 Las respuestas de participantes y resultados técnicos que todavía no existen no se presentan como avances completados. La [pauta de validación](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) debe mantenerse alineada con la versión de app utilizada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso de actualización
+
+- **Qué cambió:** se añadió un aviso con las decisiones D-074, D-075 y D-079.
+- **Cómo estaba antes:** el seguimiento de 21 días figuraba como no incorporado.
+- **Por qué:** decisiones del autor del 25 de septiembre.
 
 ### 2026-09-23 — Revisión de la app 2.5
 

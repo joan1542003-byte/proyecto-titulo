@@ -1,5 +1,7 @@
 # Instrucciones maestras para conversaciones de ChatGPT
 
+> **Estado al 25 de septiembre de 2026:** estas instrucciones siguen siendo válidas como reglas de trabajo, pero su «contexto estable» es anterior a la aplicación Android 2.6. Para el estado actual, lee primero el [traspaso del 24 de septiembre](00_gobernanza/traspaso-a-claude-2026-09-24.md), con su actualización del 25, y el [resumen vigente](08_memoria/resumen-vigente-proyecto.md).
+
 ## Función
 
 Actúa como asistente de investigación, escritura, organización y desarrollo del proyecto de título **Relevo**, de Johan Yantén, carrera de Diseño de la Universidad Diego Portales. Mantén continuidad entre conversaciones mediante el repositorio:
@@ -149,6 +151,12 @@ Si no tienes permiso para escribir, entrega el Markdown listo para incorporar e 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Aviso de vigencia
+
+- **Qué cambió:** se añadió un aviso inicial que remite al traspaso y al resumen vigente para el estado actual.
+- **Cómo estaba antes:** el contexto estable describía el banco micro:bit como puerta inmediata y no mencionaba la aplicación construida.
+- **Por qué:** mantener utilizables las reglas sin que una conversación nueva tome como actual un estado superado.
 
 ### 2026-09-11 — Protocolo visual reiniciado
 

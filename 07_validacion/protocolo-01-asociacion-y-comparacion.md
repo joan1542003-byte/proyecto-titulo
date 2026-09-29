@@ -1,6 +1,6 @@
 # Protocolo 01 — Asociación entre intención, señal y lugar
 
-**Estado:** planificado, no ejecutado
+**Estado:** antecedente desde el 25 de septiembre de 2026. Lo reemplaza el [protocolo 02](protocolo-02-prueba-21-dias.md), que conserva su cadena de asociación, sus condiciones y sus reglas en una prueba de 21 días sin luz (D-070 y D-079). Se conserva sin cambios de contenido.
 **Fecha de preparación:** 27 de agosto de 2026
 **Etapas relacionadas:** 13.1 y 13.2 de la memoria v4
 
@@ -150,6 +150,12 @@ International Organization for Standardization. (2023). *Systems and software en
 La guía [qué prototipar y cómo validar el valor](que-prototipar-y-como-validar-el-valor.md) explica materiales, comportamiento y la diferencia entre intervalo experimental y umbral del producto. Este protocolo conserva autoridad sobre muestra, tiempos, señal, variantes, registro y reglas de decisión. La documentación del feedback no cambia esos parámetros ni añade resultados.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado frente al protocolo 02
+
+- **Qué cambió:** el estado indica su relación con el protocolo 02 y la decisión de no usar luz.
+- **Cómo estaba antes:** era parte del plan vigente.
+- **Por qué:** D-070 ampliada y D-079.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

@@ -2,7 +2,7 @@
 
 ## Método
 
-La revisión se hizo sobre las cuatro copias locales de `originales/`. Primero se comprobó el número de páginas, los metadatos disponibles y el hash SHA-256. Después se extrajo el texto de cada página con `pypdf` 6.10.0 y se guardó temporalmente un archivo de texto por página. Esto permitió recorrer el contenido completo por rangos, localizar capítulos y volver a las páginas donde aparecía cada concepto.
+La revisión se hizo sobre cuatro copias PDF aportadas por el autor, que estuvieron en `originales/` hasta el 25 de septiembre de 2026 y se retiraron por derechos de autor (véase el [README](README.md)). Primero se comprobó el número de páginas, los metadatos disponibles y el hash SHA-256. Después se extrajo el texto de cada página con `pypdf` 6.10.0 y se guardó temporalmente un archivo de texto por página. Esto permitió recorrer el contenido completo por rangos, localizar capítulos y volver a las páginas donde aparecía cada concepto.
 
 La extracción no utilizó OCR. En consecuencia, el texto depende de la capa textual que traía cada PDF. Se observaron palabras partidas, caracteres mal reconocidos, numeración deformada y páginas compuestas principalmente por imágenes. Cuando la ausencia de texto podía ocultar una lámina, se hizo una comprobación visual mediante renderizado de página. La extracción temporal no forma parte de la biblioteca académica y no reemplaza la consulta del PDF original.
 
@@ -75,6 +75,12 @@ Los resúmenes deben mencionar capítulo o rango de páginas cuando el dato sea 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — PDF retirados
+
+- **Cambio:** el método indica que las copias leídas se retiraron del repositorio.
+- **Situación anterior:** remitía a `originales/` como si los PDF siguieran disponibles.
+- **Motivo:** las obras están protegidas por derechos de autor y el repositorio es público; el registro de lectura sigue siendo válido como constancia de lo revisado.
 
 ### 2026-08-29 — Creación del registro de lectura
 

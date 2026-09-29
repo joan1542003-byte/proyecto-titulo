@@ -2,11 +2,11 @@
 
 **Estado:** dirección vigente de la interfaz funcional.
 
-**Fecha:** 22 de septiembre de 2026.
+**Fecha:** 22 de septiembre de 2026; actualizado a Android 2.6 el 25 de septiembre.
 
 ## Objetivo
 
-La aplicación permite preparar y activar un recordatorio Relevo, observar cuánto tiempo se acumula en una aplicación elegida y recibir una señal cuando se alcanza el límite. La interfaz no intenta retener a la persona: concentra la configuración en una vista, mantiene visible el estado y permite salir, desactivar o silenciar.
+La aplicación permite preparar y activar un recordatorio Relevo, observar cuánto tiempo se acumula en una o varias aplicaciones elegidas y recibir una señal cuando se alcanza el límite común. La interfaz no intenta retener a la persona: concentra la configuración en una vista, mantiene visible el estado y permite salir, desactivar o silenciar.
 
 ## Arquitectura
 
@@ -20,24 +20,24 @@ La navegación inferior responde a destinos de igual nivel. `Crear un relevo` pe
 
 Inicio no utiliza saludos ni estados generales como `listo`: presenta directamente el propósito, la acción disponible y datos vinculados al sistema. La explicación ilustrada se reserva para el tutorial, donde imagen, secuencia y texto se leen como una misma instrucción.
 
-## Configuración en una sola vista
+## Configuración
 
-La preparación reúne únicamente las decisiones necesarias:
+La preparación reúne únicamente las decisiones necesarias, distribuidas en cuatro etapas desde la versión 2.3:
 
 1. actividad que la persona quiere retomar;
 2. forma concreta de comenzar;
 3. lugar donde se situará la señal;
-4. aplicación cuyo uso activa el conteo;
-5. tiempo acumulado;
+4. aplicaciones cuyo uso suma al conteo;
+5. tiempo acumulado y salida del sonido (parlante Bluetooth o teléfono), con prueba previa;
 6. consentimiento y permiso de Android.
 
-Tres preestablecidos —caminar, entrenar y leer— completan actividad, comienzo y lugar. Son atajos editables, no categorías cerradas. El tiempo combina valores rápidos con un deslizador de 1 a 60 minutos; la opción de 15 segundos se reserva para comprobar el prototipo.
+En 2.6 hay nueve actividades ilustradas (entre ellas caminar, entrenar, leer, estudiar, pasear al perro y manualidades) que completan actividad, comienzo y lugar; son atajos editables, no categorías cerradas. La preparación se divide en cuatro etapas con revisión final. El tiempo va de 1 minuto a 6 horas con deslizador y valores rápidos; la opción de 15 segundos se reserva para comprobar el prototipo.
 
 El selector utiliza el nombre y el icono instalado de cada aplicación. Esto reduce errores de reconocimiento y evita inventar una iconografía paralela para servicios que ya poseen una identidad conocida.
 
 ## Estados y retroalimentación
 
-Al activar un relevo, Android mantiene una notificación visible. La vista activa muestra la aplicación seleccionada, el tiempo acumulado y un progreso circular que cambia de forma continua, pero no compite con la información principal.
+Al activar un relevo, Android mantiene una notificación visible. La vista activa muestra las aplicaciones seleccionadas, el tiempo acumulado y un progreso circular que cambia de forma continua, pero no compite con la información principal.
 
 Cuando se cumple el tiempo:
 
@@ -84,6 +84,12 @@ La interfaz se considera lista para una prueba funcional cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sincronización con Android 2.6
+
+- **Qué cambió:** el documento describe varias aplicaciones con un límite común, la salida de sonido elegible, las nueve actividades ilustradas, la preparación en cuatro etapas y el rango de 1 minuto a 6 horas.
+- **Cómo era antes:** describía la versión del 22 de septiembre: una aplicación, tres preestablecidos, configuración en una vista y límite de 60 minutos.
+- **Por qué:** la documentación visual debe corresponder a la app vigente. Los colores implementados se discuten en la [exploración 16](16_exploracion-visual-2026-09-25.md).
 
 ### 2026-09-22 — Documentación de la interfaz funcional
 

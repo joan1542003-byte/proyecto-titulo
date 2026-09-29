@@ -1,6 +1,6 @@
 # Modelo de datos para evaluar la aplicación Relevo
 
-**Estado:** vigente para el prototipo Android 1.4.
+**Estado:** vigente para el prototipo Android 2.6 (revisado el 25 de septiembre de 2026 contra `base-remota-supabase.sql`).
 
 **Fecha:** 22 de septiembre de 2026.
 
@@ -10,7 +10,7 @@ El registro permite estudiar si la condición técnica funciona, qué configurac
 
 ## Unidad de análisis
 
-La unidad principal es una **sesión de Relevo**: comienza cuando la persona activa un recordatorio y termina cuando lo cierra. Una instalación recibe un usuario anónimo de Supabase y cada sesión conserva un identificador aleatorio independiente.
+La unidad principal es una **sesión de Relevo**: comienza cuando la persona activa un recordatorio y termina cuando lo cierra. Una instalación recibe un usuario anónimo de Supabase y un código de participación estable entre ciclos; cada sesión conserva además un identificador aleatorio y la versión del consentimiento aceptado. Los datos se guardan primero en el teléfono y se envían a dos tablas: `relevo_sessions`, una fila por sesión, y `relevo_events`, una fila por evento técnico.
 
 ## Datos registrados
 
@@ -19,11 +19,13 @@ La unidad principal es una **sesión de Relevo**: comienza cuando la persona act
 | actividad | reconocer qué quiso retomar la persona | que realizó la actividad |
 | cómo comenzar | analizar el grado de concreción de la preparación | que ese comienzo fue eficaz |
 | lugar declarado | estudiar dónde se sitúa la señal | ubicación GPS o presencia física efectiva |
-| aplicación elegida | identificar qué uso activa la condición | contenido observado dentro de la aplicación |
+| aplicaciones elegidas | identificar qué usos suman tiempo para la condición (una o varias, bajo un mismo umbral) | contenido observado dentro de las aplicaciones |
 | umbral | conocer el tiempo configurado | tiempo recomendado o saludable |
 | tiempo observado | comprobar el conteo acumulado | atención, intención o efecto psicológico |
 | señal emitida | verificar que se cumplió la condición técnica | que la señal fue vista u oída |
 | respuesta final | conocer qué decisión declara la persona | comprobación externa de la conducta |
+| eventos técnicos | reconstruir activación, entrada y salida de las apps elegidas, señal emitida o fallida, silencio, desactivación y cierre | percepción de la señal o decisión de la persona |
+| código de participación y versión del consentimiento | localizar y eliminar los registros de una persona y saber qué texto aceptó | identidad de la persona |
 
 La respuesta final ofrece cuatro estados: comenzó la actividad, la dejó para después, cambió de idea o prefirió no responder.
 
@@ -32,10 +34,10 @@ La respuesta final ofrece cuatro estados: comenzó la actividad, la dejó para d
 1. ¿Cuántos relevos se activaron y cuántos alcanzaron la señal?
 2. ¿Qué actividades fueron elegidas con mayor frecuencia?
 3. ¿Cuántas veces se eligió `Caminar`?
-4. ¿Qué aplicaciones se asociaron a cada actividad?
+4. ¿Qué aplicaciones, solas o combinadas, se asociaron a cada actividad?
 5. ¿Qué umbrales configuraron las personas?
 6. ¿Qué decisión declararon después de recibir la señal?
-7. ¿Dónde se interrumpió el recorrido técnico?
+7. ¿Dónde se interrumpió el recorrido técnico? ¿Cuántas señales fallaron por la salida de audio?
 
 ## Consultas de revisión
 
@@ -70,13 +72,13 @@ from public.relevo_sessions;
 
 - no se registran nombres, correos, mensajes, imágenes, teclas ni contenido de pantalla;
 - la instalación se autentica como usuario anónimo;
-- cada cliente puede insertar y actualizar únicamente sus propias sesiones;
-- los eventos técnicos son de solo inserción;
+- las políticas de seguridad por fila permiten a cada instalación leer, insertar, actualizar y eliminar solo sus propias sesiones, e insertar, leer y eliminar solo sus propios eventos;
+- los eventos no se modifican después de registrarse, pero pueden eliminarse a solicitud de la persona;
 - la clave secreta o `service_role` nunca se incluye en la aplicación;
 - el registro se conserva localmente cuando no existe conexión y se reintenta después;
 - la respuesta final es opcional.
 
-La base remota debe definir responsable, fecha de eliminación, mecanismo para retirar consentimiento y acceso administrativo antes de una prueba con participantes.
+El consentimiento de la app indica responsable, correo de contacto y plazo máximo de conservación hasta el 30 de diciembre de 2026, y la app ofrece solicitar la eliminación local y remota. Antes de una prueba con participantes falta comprobar de extremo a extremo el envío de eventos (en la revisión del 24 de septiembre la base tenía sesiones y ningún evento), la eliminación con y sin conexión, y quién tiene acceso administrativo.
 
 ## Interpretación
 
@@ -85,6 +87,12 @@ La frecuencia de una actividad describe elecciones dentro de Relevo. Para afirma
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sincronización con Android 2.6
+
+- **Qué cambió:** el modelo describe varias aplicaciones por sesión, el código de participación estable, la versión del consentimiento, la tabla de eventos, las políticas que permiten eliminar las propias filas y el estado real de envío y eliminación.
+- **Cómo estaba antes:** se declaraba vigente para el prototipo Android 1.4, con una sola aplicación, eventos de solo inserción y sin mecanismo de retiro.
+- **Por qué:** el documento debe corresponder al esquema que usa la versión instalada.
 
 ### 2026-09-22 — Modelo creado
 

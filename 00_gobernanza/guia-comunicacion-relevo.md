@@ -130,7 +130,7 @@ Los términos especializados deben aparecer después de su explicación cotidian
 | Algo que la persona decidió que quería hacer. | **Intención personal** | Una actividad elegida; no una meta inferida por el sistema. |
 | La acción pequeña que permite empezar. | **Primer paso** | Un comienzo concreto y reconocible, como abrir el libro o ponerse las zapatillas. No exige completar la actividad. |
 | Una regla que la persona entiende y configura. | **Condición observable** | Un evento técnico posible, como continuidad, acumulación o una franja horaria. La variante final sigue abierta. |
-| Una señal breve que aparece cerca del comienzo. | **Pulso ambiental** | Una señal física sin texto. Luz y sonido están seleccionados; intensidad, duración y percepción deben probarse. |
+| Una señal breve que aparece cerca del comienzo. | **Pulso ambiental** | Una señal física sin texto: un sonido de unos 30 segundos que se detiene solo (D-070 y D-078); intensidad y percepción deben probarse. |
 | El objeto que lleva la señal al lugar. | **Testigo físico situado** | Representa que existe un ciclo activo y emite el pulso; no vigila ni decide. Su forma final no está cerrada. |
 | Una experiencia repartida entre app, objeto y entorno. | **Sistema phygital** | Lo digital configura y conserva información; lo físico y el lugar participan funcionalmente en la experiencia. |
 | Volver a pensar en lo que se quería hacer. | **Recuperar una intención** | Hacerla nuevamente disponible para decidir. No implica diagnosticar olvido ni obligar a actuar. |
@@ -148,8 +148,8 @@ Primera aparición: **explicación cotidiana + término**. Después puede usarse
 1. Una persona quiere leer antes de terminar la tarde, pero abre una plataforma de videos y la sesión continúa.
 2. Antes, registró `leer mi novela` y convirtió esa intención en un primer paso: `sentarme y abrir el libro`.
 3. Dejó el testigo junto al libro, no al lado del teléfono.
-4. Si se cumple la condición que configuró, el testigo emite un pulso breve.
-5. Al ver la señal junto al libro, la persona puede reconocer tanto la intención como la forma de comenzar.
+4. Si se cumple la condición que configuró, el testigo suena unos 30 segundos y se detiene solo.
+5. Al oír la señal junto al libro, la persona puede reconocer tanto la intención como la forma de comenzar.
 6. Puede abrir el libro, seguir viendo videos, silenciar la señal o decidir que ya no quiere leer. Relevo no registra ninguna de esas respuestas como éxito o fracaso.
 
 Este ejemplo comunica las cuatro relaciones esenciales: una intención propia, un primer paso concreto, un lugar significativo y una decisión abierta.
@@ -231,6 +231,8 @@ La respuesta honesta tiene dos partes:
 6. **Diferencia — 30 s.** No mide, bloquea, puntúa ni promete productividad; investiga una asociación situada.
 7. **Estado y prueba — 40 s.** Declarar qué está diseñado, qué falta implementar y qué comparación puede sostener o refutar el objeto.
 
+El [guion de la corrección cruzada del 30 de septiembre](guion-presentacion-correccion-cruzada-2026-09-30.md) desarrolla este relato en 11 diapositivas.
+
 ### Demostración del prototipo
 
 La demostración debe narrar una experiencia, no una sucesión de pantallas:
@@ -297,7 +299,7 @@ No. Relevo no evalúa la acción posterior. Su alcance termina al volver a hacer
 
 ### ¿La forma circular es definitiva?
 
-No. Es una hipótesis de exploración. Forma, material y medidas dependen de pruebas físicas y de convivencia. Luz y sonido están seleccionados para prototipar; sus parámetros y el comportamiento final siguen sujetos a comprobación.
+No. Es una hipótesis de exploración. Forma, material y medidas dependen de pruebas físicas y de convivencia. El sonido está seleccionado para prototipar, sin luz; sus parámetros y el comportamiento final siguen sujetos a comprobación.
 
 ### ¿Para quién es?
 
@@ -403,7 +405,7 @@ La prueba es satisfactoria cuando la audiencia reconstruye la situación, la rel
 
 ### Descripción del proyecto
 
-Relevo es un sistema phygital que busca recordarte una actividad que elegiste y cómo comenzarla. Registras una intención y un primer paso en una aplicación Android, y sitúas un pequeño objeto junto a ese comienzo. Cuando se cumple una condición que configuraste, el objeto emite una señal breve de luz y sonido. Puedes empezar, continuar con el teléfono o silenciar la señal.
+Relevo es un sistema phygital que busca recordarte una actividad que elegiste y cómo comenzarla. Registras una intención y un primer paso en una aplicación Android, y sitúas un pequeño objeto junto a ese comienzo. Cuando se cumple una condición que configuraste, el objeto emite una señal sonora de unos 30 segundos. Puedes empezar, continuar con el teléfono o silenciar la señal.
 
 ### Cómo se comunica la transición
 
@@ -420,6 +422,24 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Señal de unos 30 segundos en los ejemplos
+
+- **Qué cambió:** el ejemplo de lectura dice que el testigo suena unos 30 segundos y que la persona oye la señal; la descripción breve usa la misma duración.
+- **Cómo estaba antes:** el ejemplo hablaba de un «pulso breve» y de «ver» la señal, y la descripción breve de una «señal sonora breve».
+- **Por qué:** la señal es solo sonora y dura unos 30 segundos (D-070 y D-078), como dice la memoria revisada.
+
+### 2026-09-25 — Sin luz y prueba de 21 días
+
+- **Qué cambió:** la guía describe una señal solo sonora.
+- **Cómo estaba antes:** decía que luz y sonido estaban seleccionados.
+- **Por qué:** decisiones del autor D-070 (ampliada), D-078 y D-079.
+
+### 2026-09-25 — Enlace al guion del 30 de septiembre
+
+- **Qué cambió:** el relato de cinco minutos enlaza el guion por diapositiva de la corrección cruzada.
+- **Cómo estaba antes:** el relato se describía por temas, sin un guion para esa fecha.
+- **Por qué:** el autor pidió el texto de la presentación.
 
 ### 2026-09-16 — Núcleo verbal adoptado
 

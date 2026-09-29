@@ -1,0 +1,699 @@
+<title>Relevo: un lugar que se enciende</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Segunda propuesta de identidad visual de Relevo: concepto, logotipo, color, tipografía, luz, objeto, aplicación y proyecto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#1B1A17;--papel:#F5F2EB;--lino:#E8E3D8;--piedra:#625D55;--ceniza:#A39E94;--carbon:#2A2824;
+  --luz1:#FFF6E6;--luz2:#FFD9A0;--luz3:#FFBE70;--k27:#FFAD58;--error:#B3261E;
+  --bg:var(--papel);--fg:var(--tinta);--muted:var(--piedra);--surface:var(--lino);--rule:rgba(27,26,23,.18);
+  --night:#1B1A17;--night-fg:#F5F2EB;--night-muted:#A39E94;--night-rule:rgba(245,242,235,.16);
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141311;--fg:#F5F2EB;--muted:#A39E94;--surface:#22201D;--rule:rgba(245,242,235,.16);--night:#0E0D0C;color-scheme:dark;}}
+:root[data-theme="dark"]{--bg:#141311;--fg:#F5F2EB;--muted:#A39E94;--surface:#22201D;--rule:rgba(245,242,235,.16);--night:#0E0D0C;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.55;font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+section{padding:96px 0 0}
+.sec-head{align-items:baseline;margin-bottom:40px}
+.num{grid-column:1/3;font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:12px;border-top:1px solid var(--fg)}
+.sec-head h2{grid-column:3/13;margin:0;font-size:clamp(30px,4.2vw,54px);font-weight:560;letter-spacing:-.028em;line-height:1.04;padding-top:8px;border-top:1px solid var(--fg)}
+.body{grid-column:3/13}
+.col-a{grid-column:3/8}.col-b{grid-column:8/13}
+p{margin:0 0 1em;max-width:62ch}
+.lede{font-family:var(--serif);font-size:clamp(21px,2.2vw,27px);line-height:1.36;font-weight:380;max-width:34ch;letter-spacing:-.005em}
+.label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.small{font-size:14px;line-height:1.5}
+.muted{color:var(--muted)}
+.serif{font-family:var(--serif)}
+.it{font-family:var(--serif);font-style:italic}
+.rule{border-top:1px solid var(--rule)}
+cite{font-style:normal;color:var(--muted)}
+svg{display:block}
+.hero,.states .box,.logo-stage,.concept,.stage{overflow:hidden}
+main,header{overflow-x:clip}
+/* night blocks */
+.night{background:var(--night);color:var(--night-fg);--muted:var(--night-muted);--rule:var(--night-rule)}
+/* hero */
+.hero{padding:0}
+.hero .inner{min-height:92vh;display:flex;flex-direction:column;justify-content:space-between;padding-top:32px;padding-bottom:40px}
+.hero-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.hero-mark{width:min(880px,100%);margin:10vh 0 6vh;overflow:visible}
+.hero .claim{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.4vw,44px);line-height:1.15;font-weight:350;letter-spacing:-.01em;max-width:18ch;margin:0}
+.hero-foot{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:end;margin-top:48px}
+.hero-foot .claim{grid-column:1/8}
+.hero-foot .note{grid-column:9/13;font-size:14px;color:var(--night-muted)}
+/* critique */
+.crit{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.crit li{padding:18px 0 22px;border-top:1px solid var(--rule)}
+.crit b{display:block;font-weight:600;margin-bottom:4px}
+/* readings */
+.reads{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.read{padding:22px 0 26px;border-top:1px solid var(--rule)}
+.read .idea{font-family:var(--serif);font-size:21px;line-height:1.32;margin-bottom:10px}
+.read .then{font-size:15px;display:flex;gap:10px}
+.read .then::before{content:"→";color:var(--muted)}
+.read cite{display:block;font-size:13px;margin-top:10px}
+/* referents */
+.refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 24px}
+.ref figure{margin:0}
+.ref svg{width:100%;height:auto;border-radius:4px}
+.ref h3{font-size:17px;margin:14px 0 2px;font-weight:600;letter-spacing:-.01em}
+.ref .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+.ref dl{margin:0;font-size:14px;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}
+.ref dt{color:var(--muted)}.ref dd{margin:0}
+/* concept */
+.concept{padding:120px 0 110px;margin-top:96px}
+.concept .big{font-family:var(--serif);font-weight:330;font-size:clamp(48px,8vw,112px);line-height:.98;letter-spacing:-.03em;margin:0 0 40px;grid-column:1/13}
+.concept .big em{font-style:italic}
+.principles{grid-column:1/13;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:56px}
+.principles div{border-top:1px solid var(--rule);padding-top:16px}
+.principles b{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.principles .n{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;display:block;margin-bottom:28px}
+/* routes */
+.routes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.route .stage{aspect-ratio:1/1;display:grid;place-items:center;border-radius:4px;overflow:hidden}
+.route h3{font-size:17px;font-weight:600;margin:14px 0 4px}
+.route p{font-size:14px;color:var(--muted);margin:0 0 8px}
+.route .verdict{font-size:13px;font-weight:600}
+.route.pick .stage{outline:2px solid var(--fg);outline-offset:4px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--fg)}
+td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td.dots{letter-spacing:.18em;white-space:nowrap}
+.tablewrap{overflow-x:auto;margin-top:40px}
+/* logo */
+.logo-stage{padding:64px 48px;border-radius:4px;background:var(--surface);position:relative}
+.logo-stage.dark{background:var(--night)}
+.states{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.states figure{margin:0}
+.states .box{border-radius:4px;padding:48px 36px;display:grid;place-items:center;min-height:220px}
+figcaption{font-size:13px;color:var(--muted);margin-top:10px;max-width:60ch}
+.sizes{display:flex;gap:40px;align-items:flex-end;flex-wrap:wrap;margin-top:32px}
+.sizes figure{margin:0}
+.donts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:40px}
+.donts figure{margin:0}
+.donts .box{border-radius:4px;display:grid;place-items:center;aspect-ratio:3/2;background:var(--surface);position:relative;overflow:hidden}
+.donts .box::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1px),var(--error) calc(50% - 1px),var(--error) calc(50% + 1px),transparent calc(50% + 1px));opacity:.7}
+/* color */
+.swatches{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-radius:4px;overflow:hidden}
+.sw{min-height:220px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;font-size:13px;line-height:1.35}
+.sw b{font-size:15px;font-weight:600;display:block}
+.sw code{font-family:var(--sans);font-variant-numeric:tabular-nums;opacity:.8}
+.lightbar{margin-top:24px;border-radius:4px;height:150px;background:linear-gradient(90deg,#FFF6E6 0%,#FFD9A0 30%,#FFAD58 56%,#7A4A1E 80%,#1B1A17 100%);display:flex;align-items:flex-end;justify-content:space-between;padding:14px;color:#1B1A17;font-size:13px}
+.lightbar span{background:rgba(255,246,230,.8);padding:3px 8px;border-radius:2px}
+.albers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
+.albers figure{margin:0}
+.albers .sq{aspect-ratio:1/1;border-radius:4px;display:grid;place-items:center}
+/* type */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.voice{border-top:1px solid var(--fg);padding-top:16px}
+.voice .aa{font-size:clamp(96px,12vw,168px);line-height:1;letter-spacing:-.04em;margin:18px 0 20px}
+.voice .who{font-size:14px;color:var(--muted)}
+.scale td:first-child{white-space:nowrap;color:var(--muted);font-size:13px;width:150px}
+.demo{margin-top:48px;display:grid;grid-template-columns:5fr 7fr;gap:24px;align-items:stretch}
+.demo .card{background:var(--surface);border-radius:4px;padding:28px}
+/* composition */
+.comps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.comps figure{margin:0}
+/* light timeline */
+.timeline{width:100%;height:auto}
+/* object */
+.obj{display:grid;grid-template-columns:7fr 5fr;gap:24px;align-items:start}
+.cmf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.cmf figure{margin:0}
+/* app */
+.appgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.phone{border-radius:36px;padding:10px;background:#0E0D0C;max-width:300px;margin:0 auto;box-shadow:0 1px 0 rgba(0,0,0,.05)}
+.screen{border-radius:28px;overflow:hidden;aspect-ratio:9/19.5;display:flex;flex-direction:column;font-size:13px;line-height:1.4}
+.s-light{background:#F5F2EB;color:#1B1A17}
+.s-dark{background:#141311;color:#F5F2EB}
+.sbar{display:flex;justify-content:space-between;padding:12px 20px 0;font-size:11px;font-weight:600;font-variant-numeric:tabular-nums}
+.scont{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.btn{display:block;text-align:center;border-radius:999px;padding:12px 10px;font-weight:600;font-size:13px}
+.btn.fill{background:#1B1A17;color:#F5F2EB}
+.btn.line{border:1.5px solid currentColor}
+.list div{padding:11px 0;border-bottom:1px solid rgba(27,26,23,.14);display:flex;justify-content:space-between;align-items:baseline}
+.icons{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;margin-bottom:48px}
+.icons figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.notif{background:#FFFFFF;color:#1B1A17;border-radius:18px;padding:12px 16px;display:flex;gap:12px;align-items:center;width:320px;max-width:100%;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+/* comms */
+.posters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.poster{aspect-ratio:2/3;border-radius:2px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.poster .line1{font-size:clamp(22px,2.4vw,32px);font-weight:560;letter-spacing:-.025em;line-height:1.05}
+.poster .line2{font-family:var(--serif);font-style:italic;font-size:clamp(34px,3.8vw,52px);line-height:1;letter-spacing:-.02em;font-weight:350}
+.poster .foot{display:flex;justify-content:space-between;align-items:flex-end;font-size:11px}
+/* project */
+.proj{display:grid;grid-template-columns:4fr 8fr;gap:24px;align-items:start}
+.cover{aspect-ratio:1/1.414;background:#1B1A17;color:#F5F2EB;border-radius:2px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.spread{aspect-ratio:2.828/1;background:#fff;border-radius:2px;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 1px 3px rgba(0,0,0,.1);color:#1B1A17}
+.page{padding:7% 8%;position:relative;font-size:8px}
+.page+.page{border-left:1px solid #e6e1d6}
+.slide{aspect-ratio:16/9;background:#1B1A17;color:#F5F2EB;border-radius:2px;padding:4%;display:flex;flex-direction:column;justify-content:space-between;margin-top:24px;position:relative;overflow:hidden}
+/* tests */
+.tests{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.tests div{border-top:1px solid var(--rule);padding:18px 0 22px}
+.tests b{display:block;margin-bottom:4px}
+.refs-list p{font-size:14px;padding-left:2em;text-indent:-2em;max-width:none;margin-bottom:.7em}
+footer{margin-top:96px;padding:28px 0 48px;border-top:1px solid var(--fg);font-size:13px;color:var(--muted)}
+/* motion */
+@media (prefers-reduced-motion:no-preference){
+  .glow-anim{animation:signal 9s ease-out infinite}
+  @keyframes signal{0%,8%{opacity:0}10%{opacity:1}14%{opacity:1}24%{opacity:.62}70%{opacity:.62}86%,100%{opacity:0}}
+}
+/* responsive */
+@media (max-width:980px){
+  .num{grid-column:1/13;border-top:0;padding-top:0;margin-bottom:6px}
+  .sec-head h2,.body,.col-a,.col-b{grid-column:1/13}
+  .principles,.routes,.donts{grid-template-columns:1fr 1fr}
+  .refs,.appgrid,.posters,.comps{grid-template-columns:1fr 1fr}
+  .swatches{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .obj,.proj,.demo{grid-template-columns:1fr}
+  .hero-foot .claim,.hero-foot .note{grid-column:1/13}
+  .hero-foot .note{margin-top:24px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  section{padding-top:72px}
+  .crit,.reads,.voices,.tests,.states,.albers{grid-template-columns:1fr}
+  .principles,.routes,.refs,.appgrid,.posters,.comps,.donts{grid-template-columns:1fr}
+  .swatches{grid-template-columns:1fr 1fr}
+  .logo-stage{padding:36px 20px}
+  .concept{padding:80px 0}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="gWin" cx=".42" cy=".5" r=".72"><stop offset="0" stop-color="#FFF7EA"/><stop offset=".62" stop-color="#FFD9A0"/><stop offset="1" stop-color="#FFBE70"/></radialGradient>
+    <radialGradient id="gHalo"><stop offset="0" stop-color="#FFB45E" stop-opacity=".34"/><stop offset=".45" stop-color="#FFB45E" stop-opacity=".10"/><stop offset="1" stop-color="#FFB45E" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gDisc" cx=".5" cy=".46" r=".6"><stop offset="0" stop-color="#FFF8EE"/><stop offset=".6" stop-color="#FFE2B6"/><stop offset="1" stop-color="#FFC983"/></radialGradient>
+    <radialGradient id="gPool"><stop offset="0" stop-color="#FFBE70" stop-opacity=".55"/><stop offset=".5" stop-color="#FFBE70" stop-opacity=".16"/><stop offset="1" stop-color="#FFBE70" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gShadow"><stop offset="0" stop-color="#1B1A17" stop-opacity=".28"/><stop offset="1" stop-color="#1B1A17" stop-opacity="0"/></radialGradient>
+    <symbol id="wm" viewBox="0 0 3040 770"><g transform="translate(-40 745)"><path d="M65 0V-720H361Q438 -720 494.0 -694.0Q550 -668 580.5 -622.0Q611 -576 611 -513Q611 -451 580.5 -404.5Q550 -358 494.0 -332.0Q438 -306 361 -306H158V-400H357Q424 -400 459.0 -430.0Q494 -460 494 -513Q494 -566 459.5 -594.5Q425 -623 357 -623H185V0Z M478 0 145 -366H284L647 0Z M919 10Q839 10 779.5 -24.0Q720 -58 686.5 -118.0Q653 -178 653 -256Q653 -334 686.5 -393.5Q720 -453 779.5 -486.5Q839 -520 917 -520Q992 -520 1047.5 -488.5Q1103 -457 1133.5 -400.5Q1164 -344 1164 -267Q1164 -254 1163.0 -242.5Q1162 -231 1160 -220H728V-304H1073L1047 -277Q1047 -353 1012.5 -392.0Q978 -431 916 -431Q849 -431 810.0 -385.0Q771 -339 771 -255Q771 -171 810.0 -125.0Q849 -79 920 -79Q962 -79 993.5 -95.5Q1025 -112 1039 -145H1150Q1125 -73 1065.5 -31.5Q1006 10 919 10Z M1254 0V-720H1372V0Z M1728 10Q1648 10 1588.5 -24.0Q1529 -58 1495.5 -118.0Q1462 -178 1462 -256Q1462 -334 1495.5 -393.5Q1529 -453 1588.5 -486.5Q1648 -520 1726 -520Q1801 -520 1856.5 -488.5Q1912 -457 1942.5 -400.5Q1973 -344 1973 -267Q1973 -254 1972.0 -242.5Q1971 -231 1969 -220H1537V-304H1882L1856 -277Q1856 -353 1821.5 -392.0Q1787 -431 1725 -431Q1658 -431 1619.0 -385.0Q1580 -339 1580 -255Q1580 -171 1619.0 -125.0Q1658 -79 1729 -79Q1771 -79 1802.5 -95.5Q1834 -112 1848 -145H1959Q1934 -73 1874.5 -31.5Q1815 10 1728 10Z M2193 0 1987 -510H2113L2279 -43H2219L2384 -510H2506L2301 0Z M2788 10Q2709 10 2648.5 -24.0Q2588 -58 2554.0 -118.5Q2520 -179 2520 -257Q2520 -335 2554.0 -394.0Q2588 -453 2648.5 -486.5Q2709 -520 2788 -520Q2869 -520 2929.5 -486.5Q2990 -453 3023.0 -394.0Q3056 -335 3056 -257Q3056 -179 3022.5 -118.5Q2989 -58 2929.0 -24.0Q2869 10 2788 10ZM2788 -85Q2831 -85 2864.0 -106.5Q2897 -128 2916.0 -166.5Q2935 -205 2935 -258Q2935 -336 2894.0 -380.5Q2853 -425 2788 -425Q2725 -425 2683.5 -380.0Q2642 -335 2642 -258Q2642 -205 2661.0 -166.5Q2680 -128 2713.0 -106.5Q2746 -85 2788 -85Z"/></g></symbol>
+    <symbol id="wm-win" viewBox="0 0 3040 770"><g transform="translate(-40 745)"><path d="M185 -623 H357 Q425 -623 459.5 -594.5 Q494 -566 494 -513 Q494 -460 459 -430 Q424 -400 357 -400 H185 Z" fill="url(#gWin)"/></g></symbol>
+    <symbol id="wm-halo" viewBox="0 0 3040 770" overflow="visible"><circle cx="300" cy="233" r="620" fill="url(#gHalo)"/></symbol>
+    <symbol id="r" viewBox="0 0 712 800"><g transform="translate(0 760)"><path d="M65 0V-720H361Q438 -720 494.0 -694.0Q550 -668 580.5 -622.0Q611 -576 611 -513Q611 -451 580.5 -404.5Q550 -358 494.0 -332.0Q438 -306 361 -306H158V-400H357Q424 -400 459.0 -430.0Q494 -460 494 -513Q494 -566 459.5 -594.5Q425 -623 357 -623H185V0Z M478 0 145 -366H284L647 0Z"/></g></symbol>
+    <symbol id="r-win" viewBox="0 0 712 800"><g transform="translate(0 760)"><path d="M185 -623 H357 Q425 -623 459.5 -594.5 Q494 -566 494 -513 Q494 -460 459 -430 Q424 -400 357 -400 H185 Z" fill="url(#gWin)"/></g></symbol>
+    <symbol id="r-halo" viewBox="0 0 712 800" overflow="visible"><circle cx="340" cy="248" r="560" fill="url(#gHalo)"/></symbol>
+    <symbol id="r-counter" viewBox="0 0 712 800"><g transform="translate(0 760)"><path d="M185 -623 H357 Q425 -623 459.5 -594.5 Q494 -566 494 -513 Q494 -460 459 -430 Q424 -400 357 -400 H185 Z"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- HERO -->
+<header class="night hero">
+  <div class="wrap inner">
+    <div class="hero-top">
+      <span class="label">Relevo · identidad visual</span>
+      <span class="label">Segunda propuesta · 25 de septiembre de 2026</span>
+    </div>
+    <svg class="hero-mark" viewBox="0 0 3040 770" role="img" aria-label="Logotipo Relevo con la contraforma de la R encendida">
+      <use href="#wm-halo" class="glow-anim"/>
+      <use href="#wm-win" class="glow-anim"/>
+      <use href="#wm" fill="#F5F2EB"/>
+    </svg>
+    <div class="hero-foot">
+      <p class="claim">Hazle lugar a lo que quieres hacer.</p>
+      <p class="note">Propuesta de diseño para la decisión del autor. Reemplaza a «punto y pulso». Ninguna afirmación de esta lámina es un resultado con usuarios.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 01 -->
+<section>
+  <div class="grid sec-head"><div class="num">01</div><h2>«Punto y pulso» explicaba la técnica, no a Relevo</h2></div>
+  <div class="grid"><div class="body">
+    <p class="lede">La primera propuesta resolvía un problema real —que la marca tuviera una señal— con recursos de categoría. Se revisó con la mirada de un sistema de identidad y no de un ícono.</p>
+    <ul class="crit">
+      <li><b>Dibujaba la transmisión.</b>Los arcos son el código de Wi-Fi, sonido y conectividad: muestran cómo viaja la señal, no para qué existe.</li>
+      <li><b>Era un signo más que aprender.</b>Una figura separada del nombre suma memoria a una marca que nadie conoce todavía.</li>
+      <li><b>Tenía dos acentos.</b>El verde de la app y el ámbar se disputaban la atención, y ninguno correspondía a la luz del objeto.</li>
+      <li><b>Se leía como plantilla.</b>Círculo plano naranja, tarjetas redondeadas y una sola familia sin trabajo tipográfico: correcto, pero intercambiable.</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="grid sec-head"><div class="num">02</div><h2>Lecturas que ordenan las decisiones</h2></div>
+  <div class="grid"><div class="body">
+    <div class="reads">
+      <div class="read"><div class="idea">El vacío no es ausencia: es capacidad de recibir. Muji comunica con horizontes vacíos que cada persona completa.</div><div class="then">La marca deja lugar; la persona lo llena con su actividad.</div><cite>Hara (2007); People’s Graphic Design Archive (s. f.)</cite></div>
+      <div class="read"><div class="idea">La tecnología calma mueve información entre la periferia y el centro de la atención, y la devuelve a la periferia.</div><div class="then">Relevo vive en la periferia. Solo la señal ocupa el centro, una vez.</div><cite>Weiser y Brown (1997)</cite></div>
+      <div class="read"><div class="idea">El buen diseño es discreto y es tan poco diseño como sea posible. En la calculadora ET66, un único botón amarillo marca la función más usada.</div><div class="then">Un solo acento, reservado para el momento que importa.</div><cite>Vitsœ (s. f.); Victoria and Albert Museum (s. f.)</cite></div>
+      <div class="read"><div class="idea">Los rasgos repetidos entre producto y marca construyen reconocimiento, y los logotipos que describen lo que la marca ofrece favorecen a las marcas poco conocidas porque se procesan con facilidad.</div><div class="then">La marca toma su rasgo del objeto: la luz cálida.</div><cite>Karjalainen y Snelders (2010); Luffarelli et al. (2019)</cite></div>
+      <div class="read"><div class="idea">Las formas circulares activan asociaciones de suavidad y las angulares, de dureza. La asimetría se asocia con excitación.</div><div class="then">Letras rectas y precisas; una luz de contorno curvo; un símbolo sereno.</div><cite>Jiang et al. (2016); Bajaj y Bond (2018)</cite></div>
+      <div class="read"><div class="idea">Recortar partes de un logotipo tipográfico aumenta la percepción de innovación, pero reduce la de confianza.</div><div class="then">El nombre se mantiene completo. La luz se suma; no recorta.</div><cite>Hagtvedt (2011)</cite></div>
+      <div class="read"><div class="idea">Las impresiones que produce una tipografía dependen de dimensiones de diseño —elaboración, armonía, naturalidad, adorno, peso y compresión— y obligan a elegir entre ellas.</div><div class="then">Dos familias con funciones distintas, en vez de una que lo haga todo.</div><cite>Henderson et al. (2004)</cite></div>
+      <div class="read"><div class="idea">En 265 participantes, los destellos breves e intensos se leyeron como notificación; los pulsos lentos, como poca energía. Ningún patrón comunicó bien «no puede conectarse».</div><div class="then">Aviso con inicio nítido, reposo apagado; los fallos los explica la app.</div><cite>Harrison et al. (2012)</cite></div>
+      <div class="read"><div class="idea">La retícula ordena el contenido para leerlo con objetividad; un programa de diseño define reglas que producen soluciones, no piezas sueltas.</div><div class="then">El sistema se escribe como reglas: dónde aparece la luz, qué voz usa cada texto, cuánto espacio queda libre.</div><cite>Müller-Brockmann (1982); Gerstner (2007)</cite></div>
+      <div class="read"><div class="idea">Un color cambia según lo que lo rodea; se estudia comparándolo en contexto, no como un valor aislado.</div><div class="then">La luz se prueba sobre papel, lino y tinta antes de fijar dónde se usa.</div><cite>Albers (2013)</cite></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="grid sec-head"><div class="num">03</div><h2>Marcas donde la conducta es la identidad</h2></div>
+  <div class="grid"><div class="body">
+    <p>Se eligieron fuera de la categoría de bienestar digital, que ya se auditó en la primera propuesta. Los dibujos son esquemas propios, no reproducciones.</p>
+    <div class="refs">
+      <article class="ref"><figure>
+        <svg viewBox="0 0 300 200" role="img" aria-label="Esquema de teclado con una sola tecla amarilla"><rect width="300" height="200" fill="#2A2824"/>
+          <g fill="#3E3A35"><rect x="76" y="20" width="148" height="26" rx="2" fill="#141311"/><circle cx="88" cy="64" r="9"/><circle cx="129" cy="64" r="9"/><circle cx="170" cy="64" r="9"/><circle cx="211" cy="64" r="9"/><circle cx="88" cy="88" r="9"/><circle cx="129" cy="88" r="9"/><circle cx="170" cy="88" r="9"/><circle cx="211" cy="88" r="9"/><circle cx="88" cy="112" r="9"/><circle cx="129" cy="112" r="9"/><circle cx="170" cy="112" r="9"/><circle cx="211" cy="112" r="9"/><circle cx="88" cy="136" r="9"/><circle cx="129" cy="136" r="9"/><circle cx="170" cy="136" r="9"/><circle cx="211" cy="136" r="9"/><circle cx="88" cy="160" r="9"/><circle cx="129" cy="160" r="9"/><circle cx="170" cy="160" r="9"/></g><circle cx="211" cy="160" r="9" fill="#E7B53B"/></svg></figure>
+        <h3>Braun ET66</h3><div class="meta">Dieter Rams y Dietrich Lubs, 1987</div>
+        <dl><dt>Tomar</dt><dd>Un solo acento cálido con una función precisa.</dd><dt>Evitar</dt><dd>Citar el estilo Braun como nostalgia.</dd></dl></article>
+      <article class="ref"><figure>
+        <svg viewBox="0 0 300 200" role="img" aria-label="Esquema de horizonte vacío con un nombre pequeño en la esquina"><rect width="300" height="200" fill="#E8E3D8"/><rect y="118" width="300" height="82" fill="#D6CFC1"/><line x1="0" y1="118" x2="300" y2="118" stroke="#B9B1A2"/><rect x="258" y="20" width="24" height="6" fill="#8C1D18"/></svg></figure>
+        <h3>Muji, «Horizon»</h3><div class="meta">Kenya Hara, 2003</div>
+        <dl><dt>Tomar</dt><dd>El vacío como invitación; el nombre pequeño y fijo.</dd><dt>Evitar</dt><dd>Omitir la explicación: Relevo es nuevo y debe decir qué hace.</dd></dl></article>
+      <article class="ref"><figure>
+        <svg viewBox="0 0 300 200" role="img" aria-label="Esquema de reloj de estación con segundero de disco rojo"><rect width="300" height="200" fill="#F5F2EB"/><circle cx="150" cy="100" r="78" fill="#fff" stroke="#1B1A17" stroke-width="3"/><line x1="150.0" y1="30.0" x2="150.0" y2="40.0" stroke="#1B1A17" stroke-width="5"/><line x1="185.0" y1="39.4" x2="180.0" y2="48.0" stroke="#1B1A17" stroke-width="5"/><line x1="210.6" y1="65.0" x2="202.0" y2="70.0" stroke="#1B1A17" stroke-width="5"/><line x1="220.0" y1="100.0" x2="210.0" y2="100.0" stroke="#1B1A17" stroke-width="5"/><line x1="210.6" y1="135.0" x2="202.0" y2="130.0" stroke="#1B1A17" stroke-width="5"/><line x1="185.0" y1="160.6" x2="180.0" y2="152.0" stroke="#1B1A17" stroke-width="5"/><line x1="150.0" y1="170.0" x2="150.0" y2="160.0" stroke="#1B1A17" stroke-width="5"/><line x1="115.0" y1="160.6" x2="120.0" y2="152.0" stroke="#1B1A17" stroke-width="5"/><line x1="89.4" y1="135.0" x2="98.0" y2="130.0" stroke="#1B1A17" stroke-width="5"/><line x1="80.0" y1="100.0" x2="90.0" y2="100.0" stroke="#1B1A17" stroke-width="5"/><line x1="89.4" y1="65.0" x2="98.0" y2="70.0" stroke="#1B1A17" stroke-width="5"/><line x1="115.0" y1="39.4" x2="120.0" y2="48.0" stroke="#1B1A17" stroke-width="5"/><line x1="150" y1="100" x2="150" y2="42" stroke="#1B1A17" stroke-width="7"/><line x1="150" y1="100" x2="196" y2="100" stroke="#1B1A17" stroke-width="7"/><line x1="150" y1="112" x2="112" y2="60" stroke="#C8201E" stroke-width="2.4"/><circle cx="119" cy="70" r="9" fill="#C8201E"/></svg></figure>
+        <h3>Reloj de estación suizo</h3><div class="meta">Hans Hilfiker, 1944; segundero rojo, 1953</div>
+        <dl><dt>Tomar</dt><dd>Una señal de uso real —la paleta del jefe de estación— convertida en forma.</dd><dt>Evitar</dt><dd>El rojo, que se asocia con evitación en tareas de logro (Elliot et al., 2007).</dd></dl></article>
+      <article class="ref"><figure>
+        <svg viewBox="0 0 300 200" role="img" aria-label="Esquema de palabra que se repite como ondas"><rect width="300" height="200" fill="#1B1A17"/><g fill="none" stroke="#F5F2EB"><rect x="104" y="82" width="92" height="36" rx="10" stroke-opacity="0.75" stroke-width="1.5"/><rect x="90" y="72" width="120" height="56" rx="16" stroke-opacity="0.60" stroke-width="1.5"/><rect x="76" y="62" width="148" height="76" rx="22" stroke-opacity="0.45" stroke-width="1.5"/><rect x="62" y="52" width="176" height="96" rx="28" stroke-opacity="0.30" stroke-width="1.5"/><rect x="48" y="42" width="204" height="116" rx="34" stroke-opacity="0.15" stroke-width="1.5"/></g><rect x="118" y="92" width="64" height="16" fill="#F5F2EB"/></svg></figure>
+        <h3>Sonos</h3><div class="meta">Bruce Mau Design</div>
+        <dl><dt>Tomar</dt><dd>La identidad se comporta como el producto: parece emitir sonido al moverse.</dd><dt>Evitar</dt><dd>Movimiento constante; Relevo se mueve una vez.</dd></dl></article>
+      <article class="ref"><figure>
+        <svg viewBox="0 0 300 200" role="img" aria-label="Esquema de dorso de teléfono con franjas de luz"><rect width="300" height="200" fill="#E8E3D8"/><rect x="104" y="18" width="92" height="164" rx="14" fill="#2A2824"/><g fill="none" stroke="#FFF6E6" stroke-width="4" stroke-linecap="round"><path d="M128 60 a22 22 0 0 1 44 0"/><line x1="150" y1="102" x2="150" y2="140"/><path d="M122 164 h14"/></g></svg></figure>
+        <h3>Nothing, Glyph Interface</h3><div class="meta">Luces en el dorso del teléfono</div>
+        <dl><dt>Tomar</dt><dd>La luz como lenguaje de estados, visible con el teléfono boca abajo.</dd><dt>Evitar</dt><dd>Patrones decorativos que compiten por la atención.</dd></dl></article>
+      <article class="ref"><figure>
+        <svg viewBox="0 0 300 200" role="img" aria-label="Esquema de disco pequeño junto a llaves"><rect width="300" height="200" fill="#F5F2EB"/><ellipse cx="150" cy="140" rx="46" ry="8" fill="url(#gShadow)"/><circle cx="150" cy="100" r="40" fill="#fff" stroke="#D6CFC1"/><circle cx="150" cy="100" r="27" fill="none" stroke="#E8E3D8" stroke-width="2"/></svg></figure>
+        <h3>Apple AirTag</h3><div class="meta">Disco de 31,9 × 8 mm</div>
+        <dl><dt>Tomar</dt><dd>Un objeto de escala de moneda que se deja en cualquier parte y se entiende sin instrucciones.</dd><dt>Evitar</dt><dd>El rastreo: Relevo no localiza, se ubica.</dd></dl></article>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<!-- 04 CONCEPT -->
+<section class="night concept">
+  <div class="wrap grid">
+    <div class="label" style="grid-column:1/13;margin-bottom:28px">04 · Concepto</div>
+    <p class="big">Un lugar que<br><em>se enciende.</em></p>
+    <div style="grid-column:3/10"><p class="lede" style="max-width:40ch">Relevo guarda un lugar para lo que la persona quiere hacer. Ese lugar espera en silencio y, cuando se cumple lo que ella configuró, se enciende una vez. La identidad repite esa conducta: casi todo es tinta y papel; la luz aparece solo cuando hay aviso.</p></div>
+    <div class="principles">
+      <div><span class="n">1</span><b>Hacer lugar</b>Cada pieza reserva un campo libre. El contenido principal es lo que la persona eligió hacer.</div>
+      <div><span class="n">2</span><b>La luz es el único color</b>Tinta, papel y piedra el resto del tiempo. La luz cálida aparece con la señal y sobre fondo oscuro, como en la realidad.</div>
+      <div><span class="n">3</span><b>Dos voces</b>El sistema habla en Instrument Sans. Lo que escribe la persona aparece en Newsreader cursiva.</div>
+      <div><span class="n">4</span><b>Estado antes que adorno</b>Cada cambio visual corresponde a un estado del producto: reposo, aviso o fallo.</div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+<!-- 05 -->
+<section>
+  <div class="grid sec-head"><div class="num">05</div><h2>Cuatro rutas para el símbolo</h2></div>
+  <div class="grid"><div class="body">
+    <p>Todas parten del concepto. Se dibujaron con las letras reales de la tipografía y se compararon en tamaño grande, a 24 dp y sobre fondo claro y oscuro.</p>
+    <div class="routes">
+      <article class="route"><div class="stage" style="background:#1B1A17">
+        <svg viewBox="0 0 100 100" width="62%" role="img" aria-label="Ruta A: disco con ventana de luz visto desde arriba"><circle cx="50" cy="50" r="48" fill="url(#gHalo)"/><circle cx="50" cy="50" r="31" fill="#34312C"/><circle cx="50" cy="50" r="18.6" fill="url(#gDisc)"/></svg></div>
+        <h3>A · La o es el objeto</h3><p>El objeto visto desde arriba, con la proporción de la o del nombre.</p><p class="verdict">Queda como ícono del dispositivo en la app. Solo, se confunde con un botón de encendido.</p></article>
+      <article class="route pick"><div class="stage" style="background:#1B1A17">
+        <svg viewBox="0 0 712 800" width="46%" role="img" aria-label="Ruta B: R con la contraforma encendida" style="overflow:visible"><use href="#r-halo"/><use href="#r-win"/><use href="#r" fill="#F5F2EB"/></svg></div>
+        <h3>B · La R encendida</h3><p>La contraforma de la R —el espacio cerrado de la letra— es un lugar; con aviso, se enciende como una ventana.</p><p class="verdict">Elegida.</p></article>
+      <article class="route"><div class="stage" style="background:#E8E3D8">
+        <svg viewBox="0 0 100 100" width="70%" role="img" aria-label="Ruta C: objeto sobre una superficie con sombra"><ellipse cx="50" cy="66" rx="34" ry="7" fill="url(#gShadow)"/><rect x="26" y="46" width="48" height="16" rx="8" fill="#1B1A17"/><rect x="31" y="44.5" width="38" height="3" rx="1.5" fill="#CFC8BB"/></svg></div>
+        <h3>C · Sombra y luz</h3><p>El objeto proyecta sombra en reposo y luz con aviso.</p><p class="verdict">Descartada: a 24 dp se pierde y recuerda a una lámpara.</p></article>
+      <article class="route"><div class="stage" style="background:#E8E3D8;padding:12%">
+        <div style="font-weight:600;font-size:clamp(17px,1.6vw,22px);letter-spacing:-.02em;line-height:1.15;width:100%">Hazle lugar a <span class="it" style="font-weight:400;border-bottom:2px solid #1B1A17;padding:0 .3em">______</span></div></div>
+        <h3>D · El espacio en blanco</h3><p>La frase de marca con un espacio que llena la actividad de cada persona.</p><p class="verdict">No es un símbolo; se conserva como recurso de comunicación.</p></article>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Criterio</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+      <tbody>
+        <tr><td>Expresa «hacer lugar» y la señal</td><td class="dots">●●○</td><td class="dots">●●●</td><td class="dots">●●○</td><td class="dots">●●●</td></tr>
+        <tr><td>Se distingue en la categoría</td><td class="dots">●○○</td><td class="dots">●●●</td><td class="dots">●●○</td><td class="dots">●●○</td></tr>
+        <tr><td>Continúa la R de D-062</td><td class="dots">○○○</td><td class="dots">●●●</td><td class="dots">○○○</td><td class="dots">○○○</td></tr>
+        <tr><td>Legible a 24 dp</td><td class="dots">●●●</td><td class="dots">●●○</td><td class="dots">●○○</td><td class="dots">—</td></tr>
+        <tr><td>Riesgo de lectura errónea</td><td>botón de encendido, luna</td><td>una R genérica si no se enciende</td><td>lámpara, sombrero</td><td>formulario</td></tr>
+      </tbody></table></div>
+    <p class="small muted" style="margin-top:12px">● = evaluación experta del autor de la lámina, no medición con personas.</p>
+  </div></div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="grid sec-head"><div class="num">06</div><h2>El nombre, con una ventana encendida</h2></div>
+  <div class="grid"><div class="body">
+    <div class="logo-stage">
+      <svg viewBox="-60 -960 3900 1180" role="img" aria-label="Construcción del logotipo" style="width:100%;overflow:visible;color:var(--fg)">
+        <g stroke="currentColor" stroke-width="3" opacity=".35" fill="none">
+          <line x1="-60" y1="0" x2="3140" y2="0"/><line x1="-60" y1="-510" x2="3140" y2="-510"/><line x1="-60" y1="-720" x2="3140" y2="-720"/>
+        </g>
+        <use href="#wm" x="40" y="-745" width="3040" height="770" fill="currentColor"/>
+        <rect x="185" y="-623" width="309" height="223" fill="none" stroke="currentColor" stroke-width="9" stroke-dasharray="24 14" opacity=".75"/>
+        <g font-family="Instrument Sans, sans-serif" font-size="46" fill="currentColor" opacity=".7">
+          <text x="3180" y="-705">mayúscula 720</text>
+          <text x="3180" y="-495">altura de x 510</text>
+          <text x="3180" y="15">línea base 0</text>
+          <text x="185" y="-820">ventana: contraforma de la R, 309 × 223</text>
+          <line x1="340" y1="-800" x2="340" y2="-640" stroke="currentColor" stroke-width="3"/>
+          <text x="40" y="150">Instrument Sans, peso 560, ancho 100, interletra −0,8 % y kerning propio de la fuente. Unidades: 1000 por eme.</text>
+        </g>
+      </svg>
+    </div>
+    <div class="states">
+      <figure><div class="box" style="background:var(--surface)"><svg viewBox="0 0 3040 770" width="78%" role="img" aria-label="Logotipo en reposo" style="color:var(--fg)"><use href="#wm" fill="currentColor"/></svg></div>
+        <figcaption><b>Reposo.</b> Versión principal para todo uso sobre fondos claros: papel, pantallas claras, impresos y el objeto.</figcaption></figure>
+      <figure><div class="box" style="background:#1B1A17"><svg viewBox="0 0 3040 770" width="78%" role="img" aria-label="Logotipo con la ventana encendida" style="overflow:visible"><use href="#wm-halo"/><use href="#wm-win"/><use href="#wm" fill="#F5F2EB"/></svg></div>
+        <figcaption><b>Encendido.</b> Solo sobre tinta o fotografías oscuras, y en los momentos de señal: aviso, portada, cierre de un video.</figcaption></figure>
+    </div>
+    <div class="sizes">
+      <figure><svg viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Monograma R encendido"><rect width="100" height="100" rx="22" fill="#1B1A17"/><svg x="24" y="21" width="52" height="58" viewBox="0 0 712 800" overflow="visible"><use href="#r-halo"/><use href="#r-win"/><use href="#r" fill="#F5F2EB"/></svg></svg><figcaption>Monograma: ícono y avatar</figcaption></figure>
+      <figure><svg viewBox="0 0 3040 770" width="80" style="color:var(--fg)" role="img" aria-label="Logotipo a tamaño mínimo"><use href="#wm" fill="currentColor"/></svg><figcaption>Mínimo: 80 px o 20 mm de ancho</figcaption></figure>
+      <figure><svg viewBox="0 0 712 800" width="18" style="color:var(--fg)" role="img" aria-label="Monograma a tamaño mínimo"><use href="#r" fill="currentColor"/></svg><figcaption>Monograma mínimo: 16 px</figcaption></figure>
+      <figure style="max-width:320px"><figcaption style="margin:0">Resguardo: alrededor del logotipo queda libre al menos la altura de la ventana (223 unidades, casi un tercio de la mayúscula).</figcaption></figure>
+    </div>
+    <div class="donts">
+      <figure><div class="box"><svg viewBox="-300 -1000 3640 1270" width="80%" style="overflow:visible"><use href="#wm-win" x="40" y="-745" width="3040" height="770"/><use href="#wm" x="40" y="-745" width="3040" height="770" fill="#1B1A17"/></svg></div><figcaption>No encender sobre fondo claro: la luz se pierde y parece una mancha.</figcaption></figure>
+      <figure><div class="box"><svg viewBox="0 0 3040 770" width="80%"><use href="#wm" fill="#006B5F"/></svg></div><figcaption>No colorear el nombre. El único color es la luz.</figcaption></figure>
+      <figure><div class="box"><svg viewBox="0 0 3040 770" preserveAspectRatio="none" style="width:92%;height:24px"><use href="#wm" fill="#1B1A17"/></svg></div><figcaption>No deformar ni contornear.</figcaption></figure>
+      <figure><div class="box"><svg viewBox="0 0 3040 770" width="80%"><defs><clipPath id="cut"><rect x="0" y="0" width="3040" height="440"/></clipPath></defs><use href="#wm" fill="#1B1A17" clip-path="url(#cut)"/></svg></div><figcaption>No recortar letras: reduce la confianza (Hagtvedt, 2011).</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="grid sec-head"><div class="num">07</div><h2>La luz es el único color</h2></div>
+  <div class="grid"><div class="body">
+    <p class="lede">La paleta es la de una casa por la tarde: papel, lino, piedra y tinta. El color no se aplica: aparece cuando el objeto se enciende.</p>
+    <div class="swatches" style="margin-top:32px">
+      <div class="sw" style="background:#1B1A17;color:#F5F2EB"><b>Tinta</b><code>#1B1A17</code>Texto, logotipo, acciones y fondo de noche</div>
+      <div class="sw" style="background:#2A2824;color:#F5F2EB"><b>Carbón</b><code>#2A2824</code>Superficies sobre tinta</div>
+      <div class="sw" style="background:#625D55;color:#F5F2EB"><b>Piedra</b><code>#625D55</code>Texto secundario</div>
+      <div class="sw" style="background:#A39E94;color:#1B1A17"><b>Ceniza</b><code>#A39E94</code>Texto secundario sobre tinta</div>
+      <div class="sw" style="background:#E8E3D8;color:#1B1A17"><b>Lino</b><code>#E8E3D8</code>Superficies y agrupaciones</div>
+      <div class="sw" style="background:#F5F2EB;color:#1B1A17;box-shadow:inset 0 0 0 1px rgba(27,26,23,.12)"><b>Papel</b><code>#F5F2EB</code>Fondo principal</div>
+    </div>
+    <div class="lightbar"><span>Luz alta #FFF6E6</span><span>Luz media #FFD9A0</span><span>Luz 2700 K #FFAD58</span><span style="background:none;color:#F5F2EB">sobre tinta</span></div>
+    <p class="small muted" style="margin-top:10px">La luz es un degradado, no un tono plano: va del blanco cálido al color en pantalla de una fuente de 2700 K, calculado en la primera propuesta con la aproximación de Krystek (1985).</p>
+
+    <h3 style="margin:56px 0 4px;font-size:19px;font-weight:600">La misma luz en tres fondos</h3>
+    <p class="small muted">Estudio de interacción al modo de Albers (2013): el mismo disco sobre papel, lino y tinta.</p>
+    <div class="albers">
+      <figure><div class="sq" style="background:#F5F2EB;box-shadow:inset 0 0 0 1px rgba(27,26,23,.1)"><svg viewBox="0 0 100 100" width="70%"><circle cx="50" cy="50" r="46" fill="url(#gHalo)"/><circle cx="50" cy="50" r="20" fill="url(#gDisc)"/></svg></div><figcaption>Papel · 1,20:1. La luz desaparece.</figcaption></figure>
+      <figure><div class="sq" style="background:#E8E3D8"><svg viewBox="0 0 100 100" width="70%"><circle cx="50" cy="50" r="46" fill="url(#gHalo)"/><circle cx="50" cy="50" r="20" fill="url(#gDisc)"/></svg></div><figcaption>Lino · se ve, pero como una mancha.</figcaption></figure>
+      <figure><div class="sq" style="background:#1B1A17"><svg viewBox="0 0 100 100" width="70%"><circle cx="50" cy="50" r="46" fill="url(#gHalo)"/><circle cx="50" cy="50" r="20" fill="url(#gDisc)"/></svg></div><figcaption>Tinta · 13,0:1. Se enciende.</figcaption></figure>
+    </div>
+    <p style="margin-top:24px">De ahí la regla: <b>la luz solo aparece sobre fondo oscuro</b>. En la app, el aviso cambia a pantalla oscura; el cambio de fondo ya es parte de la señal.</p>
+
+    <div class="tablewrap"><table>
+      <thead><tr><th>Combinación</th><th style="text-align:right">Contraste</th><th>Uso</th></tr></thead>
+      <tbody>
+        <tr><td>Tinta sobre papel</td><td style="text-align:right">15,57:1</td><td>Texto, logotipo y acciones</td></tr>
+        <tr><td>Tinta sobre lino</td><td style="text-align:right">13,60:1</td><td>Texto sobre superficies</td></tr>
+        <tr><td>Piedra sobre papel · sobre lino</td><td style="text-align:right">5,84 · 5,10:1</td><td>Texto secundario</td></tr>
+        <tr><td>Ceniza sobre tinta · sobre carbón</td><td style="text-align:right">6,53 · 5,52:1</td><td>Texto secundario en tema oscuro</td></tr>
+        <tr><td>Papel sobre carbón</td><td style="text-align:right">13,16:1</td><td>Texto sobre superficies oscuras</td></tr>
+        <tr><td>Luz media sobre tinta</td><td style="text-align:right">13,00:1</td><td>Luz, ventana y texto destacado en el aviso</td></tr>
+        <tr><td>Luz media sobre papel</td><td style="text-align:right">1,20:1</td><td>Nunca</td></tr>
+        <tr><td>Error <code>#B3261E</code> sobre papel</td><td style="text-align:right">5,85:1</td><td>Fallos técnicos, siempre con texto</td></tr>
+      </tbody></table></div>
+    <p class="small muted" style="margin-top:12px">Umbrales WCAG: 4,5:1 para texto y 3:1 para componentes gráficos. El verde <code>#006B5F</code> de D-062 se retira de la marca: dos acentos dividían la atención y el verde no tiene correlato en el objeto. Las acciones pasan a tinta.</p>
+  </div></div>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="grid sec-head"><div class="num">08</div><h2>Dos voces</h2></div>
+  <div class="grid"><div class="body">
+    <div class="voices">
+      <div class="voice"><div class="label">El sistema</div><div class="aa" style="font-weight:560">Aa</div><p><b>Instrument Sans.</b> Grotesca de Rodrigo Fuenzalida, diseñador radicado en Santiago, y Jordan Egstad, con ejes de peso y ancho y licencia abierta OFL (Google Fonts, s. f.-a). Precisa sin ser fría; más carácter que Source Sans 3 en tamaños grandes.</p><p class="who">Logotipo, interfaz, títulos, etiquetas, instrucciones y datos.</p></div>
+      <div class="voice"><div class="label">La persona</div><div class="aa it" style="font-weight:350">Aa</div><p><b>Newsreader.</b> Serif de Production Type para lectura en pantalla, con eje de tamaño óptico y licencia OFL (Google Fonts, s. f.-b). Su cursiva distingue lo que escribió la persona de lo que dice el sistema.</p><p class="who">Actividades escritas por la persona, citas de entrevistas y cuerpo de la memoria.</p></div>
+    </div>
+    <div class="demo">
+      <div class="card">
+        <div class="label" style="margin-bottom:14px">Tu actividad</div>
+        <div class="it" style="font-size:44px;line-height:1;letter-spacing:-.02em;margin-bottom:14px">Leer</div>
+        <div class="serif" style="font-size:18px;line-height:1.35;margin-bottom:22px">Abrir el libro que dejé en la mesa.</div>
+        <div style="font-size:14px;border-top:1px solid rgba(27,26,23,.18);padding-top:12px;display:flex;justify-content:space-between"><span>Cuando sumes 45 min en 2 apps</span><span class="muted">Editar</span></div>
+      </div>
+      <div class="tablewrap" style="margin-top:0"><table class="scale">
+        <tbody>
+          <tr><td>Portada 64 / 560</td><td style="font-size:40px;font-weight:560;letter-spacing:-.03em;line-height:1.05">Relevo</td></tr>
+          <tr><td>Título 32 / 560</td><td style="font-size:26px;font-weight:560;letter-spacing:-.02em">¿Qué te gustaría hacer?</td></tr>
+          <tr><td>Actividad 40 / Newsreader cursiva</td><td class="it" style="font-size:30px">Salir a correr</td></tr>
+          <tr><td>Texto 17 / 400</td><td>Relevo avisará cuando se cumpla lo que configuraste.</td></tr>
+          <tr><td>Etiqueta 12 / 600</td><td class="label">Recordatorio activo</td></tr>
+          <tr><td>Memoria 10,5 pt / Newsreader</td><td class="serif">Algunas sesiones de ocio digital se prolongan sin que la persona vuelva a decidir.</td></tr>
+        </tbody></table></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="grid sec-head"><div class="num">09</div><h2>Hacer lugar: la composición</h2></div>
+  <div class="grid"><div class="body">
+    <p>Tres reglas, aplicables a cualquier formato: al menos un tercio de la pieza queda libre; el logotipo se ancla a un margen y nunca ocupa el centro de lo que no trata sobre él; hay un solo elemento principal, que casi siempre es la actividad.</p>
+    <div class="comps">
+      <figure><svg viewBox="0 0 200 300" role="img" aria-label="Esquema de afiche"><rect width="200" height="300" style="fill:var(--surface)"/><rect x="14" y="14" width="172" height="150" fill="none" style="stroke:var(--muted)" stroke-dasharray="4 4"/><text x="100" y="94" text-anchor="middle" font-size="10" style="fill:var(--muted)" font-family="Instrument Sans">campo libre</text><rect x="14" y="200" width="120" height="12" style="fill:var(--fg)"/><rect x="14" y="220" width="90" height="22" style="fill:var(--fg)" opacity=".85"/><rect x="146" y="276" width="40" height="10" style="fill:var(--fg)"/></svg><figcaption>Afiche: campo libre arriba, actividad abajo, logotipo en la esquina.</figcaption></figure>
+      <figure><svg viewBox="0 0 200 300" role="img" aria-label="Esquema de pantalla"><rect width="200" height="300" rx="16" style="fill:var(--surface)"/><rect x="16" y="30" width="60" height="8" style="fill:var(--fg)"/><rect x="16" y="96" width="120" height="26" style="fill:var(--fg)" opacity=".85"/><rect x="16" y="130" width="150" height="8" style="fill:var(--muted)"/><rect x="16" y="144" width="110" height="8" style="fill:var(--muted)"/><rect x="16" y="254" width="168" height="28" rx="14" style="fill:var(--fg)"/><rect x="16" y="166" width="168" height="76" fill="none" style="stroke:var(--muted)" stroke-dasharray="4 4"/></svg><figcaption>Pantalla: la actividad arriba, una acción abajo y aire entre ambas.</figcaption></figure>
+      <figure><svg viewBox="0 0 200 300" role="img" aria-label="Esquema de página de memoria"><rect width="200" height="300" style="fill:var(--surface)"/><rect x="16" y="24" width="40" height="30" style="fill:var(--fg)"/><g style="fill:var(--muted)"><rect x="16" y="70" width="124" height="3"/><rect x="16" y="78" width="124" height="3"/><rect x="16" y="86" width="124" height="3"/><rect x="16" y="94" width="124" height="3"/><rect x="16" y="102" width="90" height="3"/><rect x="16" y="110" width="124" height="3"/><rect x="16" y="118" width="124" height="3"/><rect x="16" y="126" width="124" height="3"/><rect x="16" y="134" width="124" height="3"/><rect x="16" y="142" width="124" height="3"/><rect x="16" y="150" width="90" height="3"/><rect x="16" y="158" width="124" height="3"/><rect x="16" y="166" width="124" height="3"/><rect x="16" y="174" width="124" height="3"/><rect x="16" y="182" width="124" height="3"/><rect x="16" y="190" width="124" height="3"/><rect x="16" y="198" width="90" height="3"/><rect x="16" y="206" width="124" height="3"/><rect x="16" y="214" width="124" height="3"/><rect x="16" y="222" width="124" height="3"/><rect x="16" y="230" width="124" height="3"/><rect x="16" y="238" width="124" height="3"/><rect x="16" y="246" width="90" height="3"/><rect x="16" y="254" width="124" height="3"/><rect x="16" y="262" width="124" height="3"/><rect x="16" y="270" width="124" height="3"/><rect x="16" y="278" width="124" height="3"/></g><rect x="150" y="80" width="36" height="40" fill="none" style="stroke:var(--muted)" stroke-dasharray="3 3"/><text x="168" y="134" text-anchor="middle" font-size="7" style="fill:var(--muted)" font-family="Instrument Sans">notas</text></svg><figcaption>Memoria: retícula de 12 columnas, columna de notas y márgenes amplios.</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- 10 -->
+<section>
+  <div class="grid sec-head"><div class="num">10</div><h2>Cómo se enciende la luz</h2></div>
+  <div class="grid"><div class="body">
+    <p>La conducta de la luz es parte de la marca. Estos valores son iniciales: se calibrarán en el banco técnico con la micro:bit y después con el objeto.</p>
+    <div class="night" style="border-radius:4px;padding:28px 24px 18px;margin-top:24px">
+      <svg class="timeline" viewBox="0 0 900 300" role="img" aria-label="Intensidad de la luz en el tiempo: inicio nítido, luz sostenida y apagado lento">
+        <defs><linearGradient id="gTl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFBE70"/><stop offset="1" stop-color="#FFD9A0"/></linearGradient></defs>
+        <g stroke="rgba(245,242,235,.16)"><line x1="60" y1="40" x2="880" y2="40"/><line x1="60" y1="130" x2="880" y2="130"/><line x1="60" y1="240" x2="880" y2="240"/></g>
+        <g font-family="Instrument Sans" font-size="13" fill="#A39E94"><text x="50" y="44" text-anchor="end">100 %</text><text x="50" y="134" text-anchor="end">60 %</text><text x="50" y="244" text-anchor="end">0</text>
+          <text x="60" y="270">0 s</text><text x="120" y="270">1</text><text x="190" y="270">2</text><text x="445" y="270" text-anchor="middle">hasta 30 s o hasta que se silencie</text><text x="860" y="270" text-anchor="middle">+4 s</text></g>
+        <path d="M60 240 L64 240 L78 40 L110 40 L170 130 L720 130 L860 240 L880 240" fill="none" stroke="url(#gTl)" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M60 240 L64 240 L78 40 L110 40 L170 130 L720 130 L860 240 Z" fill="#FFBE70" opacity=".12"/>
+        <g font-family="Instrument Sans" font-size="14" fill="#F5F2EB"><text x="92" y="28">inicio nítido</text><text x="320" y="118">luz sostenida, sin parpadeo</text><text x="806" y="160">apagado lento</text></g>
+      </svg>
+    </div>
+    <div class="reads" style="margin-top:24px">
+      <div class="read"><div class="idea" style="font-size:19px">Inicio nítido</div>Un ascenso de 0,2 s hasta el máximo se lee como aviso; los destellos breves e intensos fueron los más reconocidos como notificación (Harrison et al., 2012). Ocurre una sola vez, junto con un tono breve.</div>
+      <div class="read"><div class="idea" style="font-size:19px">Sostenida, sin repetir</div>Después baja al 60 % y se mantiene. No parpadea: un destello único queda lejos del límite de tres destellos por segundo de las pautas de accesibilidad.</div>
+      <div class="read"><div class="idea" style="font-size:19px">Reposo apagado</div>Sin «respiración»: los pulsos lentos se interpretaron como poca energía o suspensión (Harrison et al., 2012), y el objeto parecería sin batería.</div>
+      <div class="read"><div class="idea" style="font-size:19px">Fallos en la app</div>Ningún patrón de luz comunicó bien un fallo de conexión. El objeto no intenta explicarlo; la app lo dice con palabras.</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 11 -->
+<section>
+  <div class="grid sec-head"><div class="num">11</div><h2>El objeto es la luz; la marca va debajo</h2></div>
+  <div class="grid"><div class="body">
+    <div class="obj">
+      <div class="night" style="border-radius:4px;overflow:hidden">
+        <svg viewBox="0 0 700 440" role="img" aria-label="Escena cenital: libro abierto, teléfono boca abajo y el objeto encendido sobre una mesa">
+          <rect width="700" height="440" fill="#23211E"/>
+          <ellipse cx="470" cy="330" rx="250" ry="200" fill="url(#gPool)" class="glow-anim"/>
+          <g transform="rotate(-6 250 220)"><rect x="110" y="120" width="300" height="200" rx="3" fill="#E8E3D8"/><line x1="260" y1="120" x2="260" y2="320" stroke="#CFC8BB" stroke-width="2"/>
+            <g stroke="#B9B1A2" stroke-width="3" stroke-linecap="round"><line x1="128" y1="146" x2="248" y2="146"/><line x1="128" y1="160" x2="248" y2="160"/><line x1="128" y1="174" x2="248" y2="174"/><line x1="128" y1="188" x2="248" y2="188"/><line x1="128" y1="202" x2="248" y2="202"/><line x1="128" y1="216" x2="248" y2="216"/><line x1="128" y1="230" x2="248" y2="230"/><line x1="128" y1="244" x2="248" y2="244"/><line x1="128" y1="258" x2="248" y2="258"/><line x1="128" y1="272" x2="248" y2="272"/><line x1="128" y1="286" x2="248" y2="286"/><line x1="128" y1="300" x2="248" y2="300"/><line x1="276" y1="146" x2="396" y2="146"/><line x1="276" y1="160" x2="396" y2="160"/><line x1="276" y1="174" x2="396" y2="174"/><line x1="276" y1="188" x2="396" y2="188"/><line x1="276" y1="202" x2="396" y2="202"/><line x1="276" y1="216" x2="396" y2="216"/><line x1="276" y1="230" x2="396" y2="230"/><line x1="276" y1="244" x2="396" y2="244"/><line x1="276" y1="258" x2="396" y2="258"/><line x1="276" y1="272" x2="396" y2="272"/><line x1="276" y1="286" x2="396" y2="286"/><line x1="276" y1="300" x2="396" y2="300"/></g></g>
+          <rect x="560" y="60" width="80" height="160" rx="14" fill="#0E0D0C" transform="rotate(12 600 140)"/>
+          <circle cx="470" cy="330" r="44" fill="#3A3732"/>
+          <circle cx="470" cy="330" r="30" fill="url(#gDisc)" class="glow-anim"/>
+        </svg>
+      </div>
+      <div>
+        <svg viewBox="0 0 480 300" role="img" aria-label="Vistas del objeto: superior y lateral con medidas" style="width:100%;color:var(--fg)">
+          <g font-family="Instrument Sans" font-size="13" fill="currentColor">
+            <circle cx="110" cy="120" r="88" style="fill:var(--surface)" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="110" cy="120" r="60" fill="none" stroke="currentColor" stroke-dasharray="4 4"/>
+            <text x="110" y="124" text-anchor="middle" style="fill:var(--muted)">difusor</text>
+            <line x1="22" y1="230" x2="198" y2="230" stroke="currentColor"/><line x1="22" y1="224" x2="22" y2="236" stroke="currentColor"/><line x1="198" y1="224" x2="198" y2="236" stroke="currentColor"/>
+            <text x="110" y="252" text-anchor="middle">44 mm</text>
+            <rect x="250" y="92" width="176" height="56" rx="26" style="fill:var(--surface)" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="274" y="88" width="128" height="8" rx="4" fill="currentColor" opacity=".25"/>
+            <line x1="436" y1="92" x2="436" y2="148" stroke="currentColor"/><text x="436" y="170" text-anchor="middle">14 mm</text>
+            <text x="338" y="200" text-anchor="middle" style="fill:var(--muted)">base: R grabada y</text><text x="338" y="216" text-anchor="middle" style="fill:var(--muted)">«presiona para silenciar»</text>
+          </g>
+        </svg>
+        <p class="small">La cara superior lleva un difusor circular amplio, rodeado por el borde del cuerpo: la luz ocupa el centro como un lugar, no como un piloto. La marca no compite con la luz; la R y la instrucción van grabadas en la base. Medidas dentro de la envolvente de la memoria (42–48 × 12–16 mm), sujetas a las pruebas de señal y autonomía.</p>
+      </div>
+    </div>
+    <div class="cmf">
+      <figure><svg viewBox="0 0 200 120"><rect width="200" height="120" style="fill:var(--surface)"/><rect x="40" y="46" width="120" height="36" rx="18" fill="#1B1A17"/><rect x="56" y="43" width="88" height="6" rx="3" fill="#E8E3D8"/></svg><figcaption><b>Tinta mate.</b> Para mesas claras y escritorios.</figcaption></figure>
+      <figure><svg viewBox="0 0 200 120"><rect width="200" height="120" fill="#2A2824"/><rect x="40" y="46" width="120" height="36" rx="18" fill="#E8E3D8"/><rect x="56" y="43" width="88" height="6" rx="3" fill="#FFF6E6"/></svg><figcaption><b>Lino mate.</b> Para maderas oscuras y repisas.</figcaption></figure>
+      <figure><svg viewBox="0 0 200 120"><rect width="200" height="120" style="fill:var(--surface)"/><circle cx="100" cy="60" r="40" fill="#1B1A17"/><circle cx="100" cy="60" r="27" fill="#EDE9E1"/></svg><figcaption><b>Difusor opalino.</b> Blanco apagado en reposo; no revela el color de la luz.</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- 12 -->
+<section>
+  <div class="grid sec-head"><div class="num">12</div><h2>La aplicación: papel en reposo, noche en el aviso</h2></div>
+  <div class="grid"><div class="body">
+    <div class="icons">
+      <figure><svg viewBox="0 0 100 100" width="84" height="84" role="img" aria-label="Ícono de la aplicación"><rect width="100" height="100" rx="22" fill="#1B1A17"/><svg x="24" y="21" width="52" height="58" viewBox="0 0 712 800" overflow="visible"><use href="#r-halo"/><use href="#r-win"/><use href="#r" fill="#F5F2EB"/></svg></svg>Ícono</figure>
+      <figure><svg viewBox="0 0 100 100" width="84" height="84" role="img" aria-label="Ícono temático monocromo"><circle cx="50" cy="50" r="50" fill="#DCD6CA"/><svg x="29" y="26" width="42" height="48" viewBox="0 0 712 800"><use href="#r" fill="#2A2824"/></svg></svg>Ícono temático</figure>
+      <figure><svg viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="Ícono de notificación" style="color:var(--fg)"><svg x="4" y="3" width="16" height="18" viewBox="0 0 712 800"><use href="#r" fill="currentColor"/></svg></svg>Notificación</figure>
+      <figure><svg viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="Ícono del dispositivo" style="color:var(--fg)"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="currentColor"/></svg>Dispositivo (ruta A)</figure>
+      <div class="notif"><svg viewBox="0 0 712 800" width="16" height="18"><use href="#r" fill="#1B1A17"/></svg><div><b style="font-size:13px">Relevo · Recordatorio activo</b><div style="font-size:12px;color:#625D55"><span class="it">Leer</span> · 32 de 45 min</div></div></div>
+    </div>
+    <div class="appgrid">
+      <div class="phone"><div class="screen s-light">
+        <div class="sbar"><span>20:14</span><span>●●●</span></div>
+        <div class="scont">
+          <svg viewBox="0 0 3040 770" width="64" style="margin-bottom:34px"><use href="#wm" fill="#1B1A17"/></svg>
+          <div style="font-size:24px;font-weight:560;letter-spacing:-.02em;line-height:1.1;margin-bottom:22px">¿Qué te gustaría hacer?</div>
+          <div class="list serif" style="font-size:17px">
+            <div><span class="it">Leer</span><span style="font-family:var(--sans);font-size:11px;color:#625D55">propuesta</span></div>
+            <div><span class="it">Dibujar</span></div><div><span class="it">Salir a caminar</span></div><div><span class="it">Cocinar algo nuevo</span></div>
+          </div>
+          <div style="flex:1"></div>
+          <span class="btn fill">Escribir otra actividad</span>
+        </div></div></div>
+      <div class="phone"><div class="screen s-light">
+        <div class="sbar"><span>20:31</span><span>●●●</span></div>
+        <div class="scont">
+          <div class="label" style="color:#625D55;margin-bottom:26px">Recordatorio activo</div>
+          <div class="it" style="font-size:46px;line-height:1;letter-spacing:-.02em;margin-bottom:10px">Leer</div>
+          <div class="serif" style="font-size:16px;margin-bottom:30px">Abrir el libro que dejé en la mesa.</div>
+          <div style="border-top:1px solid rgba(27,26,23,.16)"></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(27,26,23,.16)"><span style="color:#625D55">Condición</span><span>45 min en 2 apps</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(27,26,23,.16)"><span style="color:#625D55">Llevas</span><span>32 min</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(27,26,23,.16);align-items:center"><span style="color:#625D55">Señal</span><span style="display:flex;gap:6px;align-items:center"><svg viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="9" fill="none" stroke="#1B1A17" stroke-width="2"/><circle cx="12" cy="12" r="4.5" fill="#1B1A17"/></svg>Mesa del living</span></div>
+          <div style="flex:1"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><span class="btn line">Pausar</span><span class="btn line">Editar</span></div>
+        </div></div></div>
+      <div class="phone"><div class="screen s-dark" style="position:relative">
+        <svg viewBox="0 0 300 300" style="position:absolute;top:-80px;left:-30px;width:130%;pointer-events:none" aria-hidden="true"><circle cx="150" cy="150" r="150" fill="url(#gHalo)" class="glow-anim"/></svg>
+        <div class="sbar" style="position:relative"><span>20:44</span><span>●●●</span></div>
+        <div class="scont" style="position:relative">
+          <svg viewBox="0 0 712 800" width="34" style="margin:26px 0 40px;overflow:visible"><use href="#r-halo" class="glow-anim"/><use href="#r-win"/><use href="#r" fill="#F5F2EB"/></svg>
+          <div style="color:#A39E94;margin-bottom:6px">Querías hacer</div>
+          <div class="it" style="font-size:54px;line-height:1;letter-spacing:-.02em;color:#FFD9A0;margin-bottom:14px">Leer</div>
+          <div class="serif" style="font-size:17px;line-height:1.35">Puedes empezar abriendo el libro que dejaste en la mesa.</div>
+          <div style="flex:1"></div>
+          <div style="display:grid;gap:8px"><span class="btn line">Silenciar</span><span class="btn line">Seguir como estoy</span></div>
+          <div style="text-align:center;font-size:11px;color:#A39E94;margin-top:10px">Las dos opciones son válidas.</div>
+        </div></div></div>
+    </div>
+    <p class="small muted" style="margin-top:20px">Esquemas basados en la app 2.6. Las acciones son de tinta; en el aviso, las dos salidas tienen el mismo peso. La actividad aparece en la voz de la persona (Newsreader cursiva). El ícono del dispositivo reutiliza la ruta A.</p>
+  </div></div>
+</section>
+
+<!-- 13 -->
+<section>
+  <div class="grid sec-head"><div class="num">13</div><h2>Comunicación: «Hazle lugar a…»</h2></div>
+  <div class="grid"><div class="body">
+    <p>La frase de marca se completa con actividades reales. El espacio en blanco de la ruta D se vuelve el sistema de campaña: cambia la actividad, se mantienen la composición y la voz.</p>
+    <div class="posters">
+      <div class="poster" style="background:#F5F2EB;color:#1B1A17;box-shadow:inset 0 0 0 1px rgba(27,26,23,.1)"><span class="label" style="color:#625D55">Recordatorio físico preparado desde el teléfono</span><div><div class="line1">Hazle lugar a</div><div class="line2">leer.</div></div><div class="foot"><span style="color:#625D55">relevo · titulación Diseño UDP</span><svg viewBox="0 0 3040 770" width="64"><use href="#wm" fill="#1B1A17"/></svg></div></div>
+      <div class="poster" style="background:#E8E3D8;color:#1B1A17"><span class="label" style="color:#625D55">Recordatorio físico preparado desde el teléfono</span><div><div class="line1">Hazle lugar a</div><div class="line2">la guitarra.</div></div><div class="foot"><span style="color:#625D55">relevo · titulación Diseño UDP</span><svg viewBox="0 0 3040 770" width="64"><use href="#wm" fill="#1B1A17"/></svg></div></div>
+      <div class="poster" style="background:#1B1A17;color:#F5F2EB"><svg viewBox="0 0 200 200" style="position:absolute;top:-18%;left:-20%;width:140%" aria-hidden="true"><circle cx="100" cy="100" r="100" fill="url(#gHalo)"/><circle cx="100" cy="100" r="15" fill="url(#gDisc)"/></svg><span class="label" style="color:#A39E94;position:relative">Recordatorio físico preparado desde el teléfono</span><div style="position:relative"><div class="line1">Hazle lugar a</div><div class="line2" style="color:#FFD9A0">salir a correr.</div></div><div class="foot" style="position:relative"><span style="color:#A39E94">relevo · titulación Diseño UDP</span><svg viewBox="0 0 3040 770" width="64" style="overflow:visible"><use href="#wm-win"/><use href="#wm" fill="#F5F2EB"/></svg></div></div>
+    </div>
+    <div class="obj" style="margin-top:40px;align-items:center">
+      <svg viewBox="0 0 600 340" role="img" aria-label="Caja del producto vista desde arriba, con ventana troquelada en forma de la contraforma de la R" style="width:100%">
+        <rect width="600" height="340" style="fill:var(--surface)"/>
+        <rect x="150" y="40" width="300" height="260" fill="#CFC8BB"/>
+        <rect x="150" y="40" width="300" height="260" fill="none" stroke="#B9B1A2"/>
+        <svg x="235" y="80" width="130" height="146" viewBox="0 0 712 800"><use href="#r" fill="#1B1A17"/><use href="#r-counter" fill="#F5F2EB" stroke="#9E978A" stroke-width="10"/></svg>
+        <text x="170" y="280" font-family="Instrument Sans" font-size="12" fill="#1B1A17">Relevo · Recordatorio físico preparado desde el teléfono</text>
+        <text x="430" y="280" text-anchor="end" font-family="Instrument Sans" font-size="12" fill="#625D55"> </text>
+      </svg>
+      <div><p><b>Caja.</b> Cartón gris sin blanquear y una sola tinta. La R se imprime grande; su contraforma es un troquel que deja ver el difusor del objeto: la ventana de la marca es, literalmente, el objeto.</p><p class="small muted">En el lateral: qué incluye, qué necesita para funcionar y qué no hace, como exige la estrategia.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 14 -->
+<section>
+  <div class="grid sec-head"><div class="num">14</div><h2>El proyecto con la misma voz</h2></div>
+  <div class="grid"><div class="body">
+    <div class="proj">
+      <div class="cover">
+        <svg viewBox="0 0 3040 770" width="42%"><use href="#wm" fill="#F5F2EB"/></svg>
+        <svg viewBox="0 0 712 800" style="position:absolute;right:-8%;bottom:14%;width:74%;overflow:visible" aria-hidden="true"><use href="#r-halo"/><use href="#r-win"/><use href="#r" fill="#2A2824"/></svg>
+        <div style="position:relative"><div class="serif" style="font-size:clamp(14px,1.5vw,19px);line-height:1.2;max-width:15ch;margin-bottom:14px">Sistema <i>phygital</i> para recuperar intenciones personales durante el ocio digital</div>
+          <div style="font-size:9px;color:#A39E94;line-height:1.4">Memoria de Proyecto de Título · Escuela de Diseño UDP · 2026</div></div>
+      </div>
+      <div>
+        <div class="spread">
+          <div class="page"><div style="font-size:40px;font-weight:560;letter-spacing:-.04em;line-height:1">11</div><div style="font-size:13px;font-weight:600;margin:6px 0 14px">Bajada proyectual</div>
+            <div class="serif" style="font-size:7.5px;line-height:1.55;color:#2A2824">Relevo distribuye funciones entre una aplicación, que conserva la información y configura la condición; un objeto, que hace visible que existe una intención activa y emite la señal; y el entorno, que relaciona esa señal con una acción posible.</div>
+            <div class="it" style="font-size:9px;border-left:1.5px solid #1B1A17;padding-left:8px;margin:12px 0;color:#1B1A17">Las citas de entrevistas van en cursiva, con su código.</div>
+            <div style="height:4px;background:#E8E3D8;margin:4px 0;width:92%"></div><div style="height:4px;background:#E8E3D8;margin:4px 0;width:86%"></div><div style="height:4px;background:#E8E3D8;margin:4px 0;width:90%"></div><div style="height:4px;background:#E8E3D8;margin:4px 0;width:60%"></div></div>
+          <div class="page"><div style="font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:#625D55;margin-bottom:10px">Figura 1</div>
+            <svg viewBox="0 0 300 90" style="width:100%"><g font-family="Instrument Sans" font-size="10" fill="#1B1A17" text-anchor="middle"><circle cx="30" cy="36" r="6" fill="none" stroke="#1B1A17" stroke-width="1.5"/><text x="30" y="62">Preparar</text><line x1="44" y1="36" x2="100" y2="36" stroke="#1B1A17"/><circle cx="114" cy="36" r="6" fill="none" stroke="#1B1A17" stroke-width="1.5"/><text x="114" y="62">Esperar</text><line x1="128" y1="36" x2="184" y2="36" stroke="#1B1A17"/><rect x="186" y="18" width="36" height="36" fill="#1B1A17"/><circle cx="204" cy="36" r="7" fill="url(#gDisc)"/><text x="204" y="70">Aviso</text><line x1="226" y1="36" x2="258" y2="36" stroke="#1B1A17" stroke-dasharray="2 2"/><text x="276" y="40">Decidir</text></g></svg>
+            <div class="it" style="font-size:7px;color:#625D55;margin-top:8px">Relación entre intención, lugar, condición y decisión. La luz aparece solo en el aviso.</div></div>
+        </div>
+        <div class="slide">
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:#A39E94;position:relative"><span>Examen de título · 2026</span><span>07 / 24</span></div>
+          <svg viewBox="0 0 200 200" style="position:absolute;right:-6%;top:-30%;width:60%" aria-hidden="true"><circle cx="100" cy="100" r="100" fill="url(#gHalo)"/><circle cx="100" cy="100" r="14" fill="url(#gDisc)"/></svg>
+          <div class="serif" style="font-size:clamp(18px,2.6vw,34px);line-height:1.1;max-width:18ch;position:relative;font-weight:350">Una actividad elegida, un lugar y una señal que ocurre <i>una vez</i>.</div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;position:relative"><span style="font-size:10px;color:#A39E94">Fuente: memoria, capítulo 11</span><svg viewBox="0 0 3040 770" width="60"><use href="#wm" fill="#F5F2EB"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:16px">La memoria usa Newsreader para el cuerpo y las citas, e Instrument Sans para títulos, tablas y figuras; la luz aparece en una sola figura y en la portada. Las citas de P1–P8 van en cursiva, la voz de las personas.</p>
+  </div></div>
+</section>
+
+<!-- 15 -->
+<section>
+  <div class="grid sec-head"><div class="num">15</div><h2>Qué hay que probar antes de cerrarla</h2></div>
+  <div class="grid"><div class="body">
+    <div class="tests">
+      <div><b>Lectura de la R encendida</b>Mostrarla sin contexto. Se espera que evoque luz, casa o presencia; es un fallo si predomina «batería» o «R de otra marca».</div>
+      <div><b>Inicio de la luz</b>En el banco técnico, comparar el inicio nítido con uno suave: ¿se percibe como aviso o como alarma?</div>
+      <div><b>Dos voces</b>¿Las personas distinguen lo que escribieron de lo que dice la app, sin explicación?</div>
+      <div><b>Acciones sin verde</b>Con las mismas tareas de la pauta de testeo, comprobar que las acciones en tinta se encuentran igual de rápido.</div>
+      <div><b>Reconocimiento del ícono</b>Encontrarlo entre otras aplicaciones, a tamaño real y en el teléfono de prueba.</div>
+      <div><b>Límites</b>Las asociaciones de forma y color vienen de estudios en otros contextos; la evaluación de rutas es experta; nada de esto mide el efecto de Relevo.</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- refs -->
+<section>
+  <div class="grid sec-head"><div class="num">—</div><h2>Referencias</h2></div>
+  <div class="grid"><div class="body refs-list">
+    <p>Albers, J. (2013). <i>Interaction of color</i> (4.ª ed.). Yale University Press.</p>
+    <p>Apple. (s. f.). <i>AirTag: Tech specs</i>. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-us/111847</p>
+    <p>Bajaj, A., &amp; Bond, S. D. (2018). Beyond beauty: Design symmetry and brand personality. <i>Journal of Consumer Psychology, 28</i>(1), 77–98. https://doi.org/10.1002/jcpy.1009</p>
+    <p>Bruce Mau Design. (s. f.). <i>Sonos</i>. Recuperado el 25 de septiembre de 2026, de https://brucemaudesign.com/work/sonos</p>
+    <p>Elliot, A. J., Maier, M. A., Moller, A. C., Friedman, R., &amp; Meinhardt, J. (2007). Color and psychological functioning: The effect of red on performance attainment. <i>Journal of Experimental Psychology: General, 136</i>(1), 154–168. https://doi.org/10.1037/0096-3445.136.1.154</p>
+    <p>Gerstner, K. (2007). <i>Designing programmes</i>. Lars Müller Publishers. (Obra original publicada en 1964)</p>
+    <p>Google Fonts. (s. f.-a). <i>Instrument Sans</i>. Recuperado el 25 de septiembre de 2026, de https://fonts.google.com/specimen/Instrument+Sans</p>
+    <p>Google Fonts. (s. f.-b). <i>Newsreader</i>. Recuperado el 25 de septiembre de 2026, de https://fonts.google.com/specimen/Newsreader</p>
+    <p>Hagtvedt, H. (2011). The impact of incomplete typeface logos on perceptions of the firm. <i>Journal of Marketing, 75</i>(4), 86–93. https://doi.org/10.1509/jmkg.75.4.86</p>
+    <p>Hara, K. (2007). <i>Designing design</i>. Lars Müller Publishers.</p>
+    <p>Harrison, C., Horstman, J., Hsieh, G., &amp; Hudson, S. (2012). Unlocking the expressivity of point lights. En <i>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</i> (pp. 1683–1692). Association for Computing Machinery. https://doi.org/10.1145/2207676.2208296</p>
+    <p>Henderson, P. W., Giese, J. L., &amp; Cote, J. A. (2004). Impression management using typeface design. <i>Journal of Marketing, 68</i>(4), 60–72. https://doi.org/10.1509/jmkg.68.4.60.42736</p>
+    <p>Jiang, Y., Gorn, G. J., Galli, M., &amp; Chattopadhyay, A. (2016). Does your company have the right logo? How and why circular- and angular-logo shapes influence brand attribute judgments. <i>Journal of Consumer Research, 42</i>(5), 709–726. https://doi.org/10.1093/jcr/ucv049</p>
+    <p>Karjalainen, T.-M., &amp; Snelders, D. (2010). Designing visual recognition for the brand. <i>Journal of Product Innovation Management, 27</i>(1), 6–22. https://doi.org/10.1111/j.1540-5885.2009.00696.x</p>
+    <p>Krystek, M. (1985). An algorithm to calculate correlated colour temperature. <i>Color Research &amp; Application, 10</i>(1), 38–40. https://doi.org/10.1002/col.5080100109</p>
+    <p>Luffarelli, J., Mukesh, M., &amp; Mahmood, A. (2019). Let the logo do the talking: The influence of logo descriptiveness on brand equity. <i>Journal of Marketing Research, 56</i>(5), 862–878. https://doi.org/10.1177/0022243719845000</p>
+    <p>Müller-Brockmann, J. (1982). <i>Sistemas de retículas: Un manual para diseñadores gráficos</i>. Gustavo Gili.</p>
+    <p>Museo Nacional Suizo. (2022, septiembre). <i>The iconic Swiss station clock</i>. https://blog.nationalmuseum.ch/en/2022/09/the-iconic-swiss-station-clock/</p>
+    <p>Nothing Technology. (s. f.). <i>What is the Glyph Interface?</i> Recuperado el 25 de septiembre de 2026, de https://support.nothing.tech/hc/en-us/articles/16770135458193-What-is-the-Glyph-Interface</p>
+    <p>People’s Graphic Design Archive. (s. f.). <i>MUJI advertisement: Horizon</i>. Recuperado el 25 de septiembre de 2026, de https://peoplesgdarchive.org/item/13478/muji-advertisement-horizon</p>
+    <p>Victoria and Albert Museum. (s. f.). <i>ET66 calculator</i>. Recuperado el 25 de septiembre de 2026, de https://collections.vam.ac.uk/item/O1360553/et66-calculator-et66-calculator-dieter-rams/</p>
+    <p>Vitsœ. (s. f.). <i>Good design</i>. Recuperado el 25 de septiembre de 2026, de https://www.vitsoe.com/us/about/good-design</p>
+    <p>Weiser, M., &amp; Brown, J. S. (1997). The coming age of calm technology. En P. J. Denning &amp; R. M. Metcalfe (Eds.), <i>Beyond calculation: The next fifty years of computing</i> (pp. 75–85). Springer. https://doi.org/10.1007/978-1-4612-0685-9_6</p>
+    <p>World Wide Web Consortium. (2023). <i>Web Content Accessibility Guidelines (WCAG) 2.2</i>. https://www.w3.org/TR/WCAG22/</p>
+  </div></div>
+</section>
+
+<footer>Proyecto de Título Relevo, Escuela de Diseño UDP. Documento completo: <code>10_recursos_visuales/17_identidad-visual-segunda-propuesta-2026-09-25.md</code>. Propuesta registrada como D-068, pendiente de aprobación del autor. Tipografías Instrument Sans y Newsreader bajo licencia SIL Open Font License; logotipo dibujado a partir de Instrument Sans.</footer>
+</main>

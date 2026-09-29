@@ -22,6 +22,10 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Cobertura de la corrección:** [revisión del 23 de septiembre](revision-feedback-2026-09-23.md).
 
+**Licencias de recursos de terceros:** [fuente Source Sans 3 y procedencia de imágenes](licencias/README.md).
+
+**Próxima versión:** la 2.7 que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md): señal de unos 30 segundos que se detiene sola (D-078), condición de la semana, aviso genérico en la condición «teléfono», preguntas de un toque y registro de respuesta y uso alrededor de la señal.
+
 La versión 2.6 compila y sus pruebas unitarias pasan. Se inspeccionaron en emulador consentimiento, tutorial, Inicio y preparación con dos aplicaciones. El ciclo completo, la reproducción en un parlante real, la eliminación remota y el envío de eventos aún no se han verificado de extremo a extremo. No es una aplicación validada con participantes.
 
 ## Qué permite hacer
@@ -99,6 +103,18 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: tutorial, preparación por etapas, revisión, estado activo y señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Próxima versión 2.7
+
+- **Qué cambió:** se enumeran los cambios que requiere el protocolo 02.
+- **Antes:** no había una versión siguiente definida.
+- **Por qué:** D-078 y D-079.
+
+### 2026-09-25 — Registro de licencias
+
+- **Cambio:** se enlazó un registro que reúne la licencia de Source Sans 3 (ya incluida en `app/licenses/`) y la procedencia de las imágenes.
+- **Antes:** la licencia estaba presente, pero no había un índice visible desde este README.
+- **Motivo:** facilitar la comprobación del uso legal de material ajeno en un repositorio público.
 
 ### 2026-09-24 — Revisión funcional 2.6
 

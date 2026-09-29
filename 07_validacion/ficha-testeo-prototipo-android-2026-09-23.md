@@ -1,6 +1,6 @@
 # Relevo — ficha de observación individual
 
-**Uso:** duplicar una copia por persona. Completar durante y después de la sesión con el APK Android 2.5. Esta plantilla no contiene resultados. Leer antes la [pauta y sus condiciones previas](pauta-testeo-prototipo-android-2026-09-23.md).
+**Uso:** duplicar una copia por persona. Completar durante y después de la sesión con el APK Android 2.6. Esta plantilla no contiene resultados. Leer antes la [pauta y sus condiciones previas](pauta-testeo-prototipo-android-2026-09-23.md).
 
 ## Identificación y condiciones
 
@@ -12,18 +12,18 @@
 | Edad dentro del criterio acordado, sin fecha de nacimiento | |
 | Android: modelo y versión | |
 | APK / versión | |
-| Parlante: modelo y ubicación | |
+| Salida de sonido elegida (parlante o teléfono); modelo y ubicación del parlante | |
 | Sesión piloto o sesión analizada | |
 | Consentimiento revisado y aceptado antes de abrir la app | Sí / No |
 | Permiso de notas; grabación adicional, si correspondiera | |
 
-**Verificación previa:** conexión Bluetooth ___ / prueba de audio ___ / silencio ___ / app fuera de pantalla ___ / pérdida de conexión ___ / responsable y plazo de datos informados ___. Si una comprobación crítica falla, detener o limitar la sesión a una revisión de interfaz, sin registrar recuperación de señal como resultado válido.
+**Verificación previa:** conexión Bluetooth ___ / prueba de audio ___ / conteo con dos apps ___ / eliminación de datos ___ / silencio ___ / app fuera de pantalla ___ / pérdida de conexión ___ / responsable y plazo de datos informados ___. Si una comprobación crítica falla, detener o limitar la sesión a una revisión de interfaz, sin registrar recuperación de señal como resultado válido.
 
 ## Situación elegida por la persona
 
 - Actividad, con sus palabras:
 - Cómo pensó comenzar:
-- App que eligió observar:
+- Apps que eligió observar:
 - Umbral configurado:
 - Lugar elegido para el parlante y por qué:
 - Configuración sugerida por el investigador, si la hubo:
@@ -34,18 +34,18 @@
 
 | Tarea | Resultado | Observación directa: acciones, dudas, consultas | Ayuda dada y momento | Facilidad 1–7 |
 | --- | --- | --- | --- | --- |
-| 1. Preparar actividad, app y tiempo | S / A / N / NE | | | |
+| 1. Preparar actividad, apps y tiempo | S / A / N / NE | | | |
 | 2. Situar parlante y activar | S / A / N / NE | | | — |
 | 3. Recibir e interpretar aviso | S / A / N / NE | | | — |
 | 4. Detener señal, responder u omitir y volver | S / A / N / NE | | | |
 
 | Indicador | Registro |
 | --- | --- |
-| Antes del aviso explica qué app cuenta | Sí / Parcial / No / NE; palabras exactas: |
+| Antes del aviso explica qué apps cuentan y que su tiempo se suma | Sí / Parcial / No / NE; palabras exactas: |
 | Entiende que el tiempo es acumulado | Sí / Parcial / No / NE; palabras exactas: |
 | Elige lugar sin sugerencia | Sí / No / NE; relación explicada: |
 | Señal emitida una vez en la condición prevista | Sí / No / NE; hora y evidencia: |
-| Sonido solo en parlante durante este intento | Sí / No / NE; observación: |
+| Sonido en la salida elegida durante este intento | Sí / No / NE; observación: |
 | Detecta la señal | Sí / No / Dudoso / NE; evidencia: |
 | Reconoce que proviene de Relevo | Sí / No / Dudoso / NE; evidencia: |
 | Recupera la actividad sin teléfono ni pistas | Sí / Parcial / No / NE; palabras: |
@@ -96,6 +96,12 @@
 - **Cambio concreto propuesto, responsable y fecha:**
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Versión 2.6
+
+- **Cambio:** el encabezado identifica el APK 2.6; la ficha registra varias apps, la salida elegida y las comprobaciones de conteo acumulado y eliminación.
+- **Antes:** indicaba 2.5, una sola app y el parlante como única salida.
+- **Motivo:** mantener la ficha alineada con la versión instalada y con la pauta.
 
 ### 2026-09-23 — Versión 2.5
 

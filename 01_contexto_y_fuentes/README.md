@@ -5,11 +5,13 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 
 **Consulta del feedback:** [Feedback del 2 de septiembre: fuente, respuestas y pendientes](feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
+**Anotaciones de la última clase:** [texto original y estado frente a la app 2.6](anotaciones-clase-originales-2026-09-23.md), con las decisiones que siguen pendientes.
+
 ## Documentos
 
 - [Inventario de fuentes](inventario-de-fuentes.md): identifica cada fuente, su función, nivel y relación con otras versiones.
 - [Inventario del archivo local](inventario-archivo-local.md): fotografía archivística con corte del 23 de agosto y tabla de reconciliación con el estado vigente.
-- [Biblioteca de diseño](biblioteca_diseno/README.md): conserva cuatro obras aportadas para consulta académica interna, documenta su cobertura y reúne resúmenes críticos aplicados a Relevo.
+- [Biblioteca de diseño](biblioteca_diseno/README.md): documenta la lectura de cuatro obras de diseño y reúne resúmenes críticos aplicados a Relevo. Los PDF se retiraron el 25 de septiembre de 2026 por derechos de autor.
 - [Declaración de procedencia de entrevistas](declaracion-procedencia-entrevistas.md): fija las condiciones confirmadas del levantamiento.
 - [Auditoría metodológica](auditoria-metodologica.md): determina qué puede afirmarse y con qué cautelas.
 - [Auditoría de integridad del corpus](auditoria-integridad-corpus-entrevistas.md): comprueba cobertura, discrepancias y regla de consolidación.
@@ -48,6 +50,18 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Anotaciones de clase
+
+- **Qué cambió:** se enlazó el texto original de las anotaciones de la última clase y su estado.
+- **Cómo estaba antes:** solo existían la síntesis y la aplicación de esas notas.
+- **Por qué:** el autor pidió guardarlas para un trabajo posterior.
+
+### 2026-09-25 — Biblioteca sin copias protegidas
+
+- **Qué cambió:** la descripción de la biblioteca indica que ya no contiene los PDF de los libros.
+- **Cómo estaba antes:** decía que conservaba las cuatro obras para consulta interna.
+- **Por qué:** el repositorio es público y las obras no tienen una edición gratuita que autorice su redistribución.
 
 ### 2026-09-09 — Respuesta al feedback del 2 de septiembre
 

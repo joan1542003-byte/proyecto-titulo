@@ -1,5 +1,7 @@
 # Criterios para el testigo físico y su señal
 
+**Estado desde el 25 de septiembre de 2026:** el testigo emite solo sonido, unos 30 segundos (D-070 y D-078). Los criterios de luz se conservan como antecedente para una etapa posterior; los de rol, forma, control, sonido y privacidad siguen vigentes.
+
 ## Rol del testigo
 
 El testigo materializa una relación preparada en la aplicación. Se ubica cerca del primer paso y emite una señal breve de luz y sonido. No contiene la intención, no la muestra, no detecta por sí mismo lo que la persona siente y no decide si debe comenzar una actividad.
@@ -106,6 +108,12 @@ Cerrar estos puntos mediante una representación visual produciría una falsa se
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Sin luz
+
+- **Qué cambió:** se añadió un estado que deja la luz como antecedente.
+- **Cómo estaba antes:** el documento combinaba luz y sonido.
+- **Por qué:** D-070 ampliada al objeto y a la memoria, y D-078.
 
 ### 2026-09-11 — Creación de criterios físicos
 

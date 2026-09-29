@@ -533,7 +533,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-058 — Probar un iTag comercial antes de recurrir a una placa
 
 - **Fecha:** 2026-09-11.
-- **Estado:** vigente como puerta de compra y ensayo; no como plataforma aprobada.
+- **Estado:** no ejecutada; los iTag no se compraron. Desde el 22 de septiembre la prueba inmediata pasó al prototipo Android con parlante Bluetooth (D-063). Se conserva como alternativa para el testigo.
 - **Decisión:** comprar dos iTag BLE clásicos de vendedores distintos en Chile y examinar en cada unidad el servicio Immediate Alert, la reconexión, el sonido, la luz y el silenciamiento. Una muestra que supere la prueba podrá sustituir la primera comprobación con micro:bit; si ambas fallan, la ruta micro:bit permanece vigente como respaldo.
 - **Fundamento:** el servicio Bluetooth `0x1802/0x2A06` permite que una aplicación Android propia solicite una alerta sin conservar la aplicación del vendedor. Sin embargo, los iTag genéricos varían entre partidas y la especificación no obliga a producir luz, por lo que una publicación comercial no basta para aprobarlos.
 - **Alternativas descartadas:** SmartTag, Moto Tag, AirTag, UGREEN y Hoco por depender de ecosistemas cerrados; parlantes RGB como plataforma final porque la luz no suele aceptar órdenes independientes y la espera conectada no está documentada; elegir un solo clon por su fotografía.
@@ -583,7 +583,331 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límite:** cierra decisiones de diseño, no acredita reconocimiento, preferencia, comprensión, eficacia ni desempeño del producto.
 - **Documentación:** [sistema de marca vigente](../10_recursos_visuales/14_sistema-de-marca-vigente.md), [estrategia de marca](../10_recursos_visuales/13_estrategia-de-marca-desde-el-producto.md), [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md).
 
+## D-063 — Prototipo Android con salida de sonido provisional
+
+- **Fecha:** 2026-09-22; actualizada el 2026-09-24 (versión 2.6).
+- **Estado:** vigente como prototipo de interacción; no define el testigo.
+- **Decisión:** construir primero una aplicación Android funcional que prepare el ciclo, cuente el uso autorizado y emita un tono. Mientras no exista un objeto controlable desde la app, la señal sale por un parlante Bluetooth multimedia o por el altavoz del teléfono, a elección explícita de la persona y sin cambiar de salida sin avisar.
+- **Fundamento:** ningún objeto propio ni comercial estaba disponible para recibir órdenes de la app; probar la preparación, la espera, la recepción y el control no requería esperar al hardware. El plan del 22 de septiembre registra el riesgo y la respuesta: usar salida Android o parlante como material de ensayo y declarar el límite.
+- **Límite:** el parlante no emite luz, no está reservado para Relevo y puede reproducir audio de otras apps; la salida por teléfono no es una experiencia phygital. Ninguna de las dos acredita el aporte del objeto situado.
+- **Condición de revisión:** disponer de un testigo que reciba órdenes BLE (micro:bit, iTag, XIAO u otro) y superar su banco técnico.
+- **Documentación:** [plan de la app](../06_desarrollo_y_factibilidad/plan-app-android-prueba-2026-09-22.md), [README de Android](../06_desarrollo_y_factibilidad/app-android/README.md) y [enrutamiento de audio](../06_desarrollo_y_factibilidad/enrutamiento-audio-parlante-exclusivo-2026-09-23.md).
+
+## D-064 — Varias aplicaciones bajo un límite común
+
+- **Fecha:** 2026-09-24 (Android 2.6).
+- **Estado:** vigente en el prototipo; su pertinencia debe probarse.
+- **Decisión:** permitir que un relevo observe una o varias aplicaciones y sume su tiempo en primer plano hasta un único umbral, configurable entre 1 minuto y 6 horas.
+- **Fundamento:** el feedback del 23 de septiembre pidió considerar varias apps; una misma intención puede verse desplazada por distintas aplicaciones. La síntesis del feedback advertía que esto cambia atribución, conteo y carga, por lo que la pauta 2.6 incluye comprobar el conteo con dos apps.
+- **Límite:** el tiempo acumulado sigue siendo una condición provisional; no revela el sentido de la sesión ni reemplaza la comparación con continuidad de uso u horario.
+- **Condición de revisión:** confusión sobre qué se cuenta, carga de configuración o resultados de la comparación de condiciones.
+- **Documentación:** [revisión del feedback en la app](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md) y [pauta 2.6](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md).
+
+## D-065 — Reconocer la respuesta declarada, sin rachas ni premios
+
+- **Fecha:** 2026-09-23.
+- **Estado:** vigente.
+- **Decisión:** la app muestra una confirmación breve cuando la persona declara «Comencé la actividad» y cuenta esas respuestas como autodeclaradas («Dijiste que empezaste»). No se incorporan puntajes, rachas ni premios, y las demás respuestas no reciben reproche.
+- **Fundamento:** el feedback docente pidió considerar reconocimiento positivo; Relevo no observa si la actividad ocurrió y una racha podría convertirse en una meta distinta (Silverman & Barasch, 2023).
+- **Condición de revisión:** evidencia de que la confirmación presiona o, al contrario, de que un seguimiento voluntario aporta valor sin afectar la autonomía.
+- **Documentación:** [aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y [hábitos, reconocimiento y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md).
+
+## D-066 — Sin copias de obras protegidas en el repositorio público
+
+- **Fecha:** 2026-09-25.
+- **Estado:** vigente.
+- **Decisión:** retirar del repositorio los PDF completos de libros protegidos por derechos de autor y conservar solo resúmenes propios con su referencia. Todo recurso ajeno (fuentes, imágenes, marcos de dispositivo) debe tener licencia o procedencia registrada.
+- **Fundamento:** el repositorio es público (D-001). Las obras de Norman, Albers, Munari e Isaacson no tienen edición gratuita que autorice su redistribución.
+- **Pendiente:** los PDF siguen en el historial de Git; los marcos de iPhone y Pixel de los wireframes y la fotografía de la referencia visual 03 no tienen origen registrado.
+- **Documentación:** [biblioteca de diseño](../01_contexto_y_fuentes/biblioteca_diseno/README.md) y [licencias de la app](../06_desarrollo_y_factibilidad/app-android/licencias/README.md).
+
+## D-067 — Punto y pulso como identidad de Relevo (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** reemplazada el mismo día por D-068 a pedido del autor; se conserva como antecedente.
+- **Decisión propuesta:** añadir al logotipo un símbolo de punto (el objeto), línea (el lugar) y arcos (la señal) con dos estados: en reposo, punto del color del texto y sin arcos; en aviso, «el punto se enciende» en ámbar `#FFAD58` y aparecen los arcos. El ámbar reproduce en pantalla la luz blanca cálida de 2700 K del objeto; `#9C5A0F` se usa para texto e íconos de aviso sobre fondo claro. Reemplazar el coral de la app por ese ámbar y unificar el verde en `#006B5F`.
+- **Fundamento:** el sistema de D-062 era poco reconocible y la app 2.6 ya usa un coral y un ícono de punto con anillos que la marca no recogía. Una auditoría de ocho referentes mostró cuatro códigos que Relevo debe evitar (medición, control, juego y bienestar calmo) y ninguno que represente un lugar o una señal única. El coral tiene 2,44:1 sobre el fondo claro, está cerca del rojo que la literatura asocia a evitación en contextos de logro (Elliot et al., 2007; Mehta & Zhu, 2009) y se distingue menos del verde en la simulación de daltonismo (ΔE 28 y 51 frente a 58 y 72 del ámbar). El ámbar tiene 9,50:1 con grafito y 3,48:1 sobre el verde, pero solo 1,73:1 sobre fondo claro; por eso el punto va en grafito en reposo y sobre fondos claros.
+- **Alternativas:** mantener la dirección tipográfica de D-062; conservar el coral de la app; otros nueve símbolos evaluados en la exploración (entre ellos punto sobre línea, halo y corchete con punto).
+- **Condición de revisión:** pruebas de lectura del símbolo (confusión con Wi-Fi), tono de la señal, ámbar frente a coral (invitación frente a alarma), reconocimiento del ícono y contraste en el teléfono de prueba.
+- **Documentación:** [exploración visual](../10_recursos_visuales/16_exploracion-visual-2026-09-25.md) y [lámina](../10_recursos_visuales/lamina-exploracion-visual-2026-09-25.html).
+
+## D-068 — Un lugar que se enciende (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** reemplazada el mismo día por D-069 a pedido del autor, que rechazó la serif y pidió un estudio desde cero; se conserva como antecedente.
+- **Decisión propuesta:**
+  - mantener la estrategia de marca y cambiar su expresión;
+  - logotipo «Relevo» dibujado sobre Instrument Sans, cuya contraforma de la R se enciende como una ventana solo sobre fondo oscuro y en momentos de señal;
+  - monograma R como ícono;
+  - paleta de tinta `#1B1A17`, papel `#F5F2EB`, lino, piedra, carbón y ceniza, con la luz (`#FFF6E6` → `#FFD9A0` → `#FFAD58`) como único color;
+  - retirar el verde `#006B5F` y poner las acciones en tinta;
+  - Instrument Sans como voz del sistema y Newsreader como voz de la persona y de la memoria;
+  - luz del objeto con inicio nítido, sostén sin parpadeo, apagado lento y reposo apagado.
+- **Fundamento:**
+  - *Por qué se rehízo*: el autor consideró que «punto y pulso» no alcanzaba el estándar de diseño gráfico buscado; sus arcos describían la transmisión y no el propósito, y dos acentos competían.
+  - *Base de la nueva propuesta*: se apoya en lecturas sobre vacío y comunicación (Hara), tecnología calma (Weiser y Brown), acento único (Rams, ET66), reconocimiento producto-marca (Karjalainen y Snelders; Luffarelli et al.), forma y tipografía (Jiang et al.; Bajaj y Bond; Hagtvedt; Henderson et al.) y comportamiento de luces puntuales (Harrison et al.).
+  - *Contrastes*: tinta sobre papel 15,57:1; piedra sobre lino 5,10:1; luz media sobre tinta 13,00:1.
+- **Alternativas:** mantener D-062; «punto y pulso» (D-067); rutas A (la o como objeto), C (sombra y luz) y D (espacio en blanco), evaluadas en el documento 17. A y D se conservan como ícono del dispositivo y recurso de campaña.
+- **Condición de revisión:**
+  - lectura de la R encendida sin contexto;
+  - inicio de la luz en el banco técnico;
+  - distinción de las dos voces;
+  - hallazgo de acciones sin verde con las tareas de la pauta de testeo;
+  - reconocimiento del ícono.
+- **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; tipografía y portada de la memoria; patrón de luz de la micro:bit.
+- **Documentación:** [identidad visual, segunda propuesta](../10_recursos_visuales/17_identidad-visual-segunda-propuesta-2026-09-25.md), [lámina](../10_recursos_visuales/lamina-identidad-relevo-2026-09-25.html) y [archivos del logotipo](../10_recursos_visuales/marca-segunda-propuesta/).
+
+## D-069 — Relevo, una coma para volver a elegir (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** reemplazada el mismo día por D-071 a pedido del autor, que consideró la coma un cliché y el relato genérico; se conserva como antecedente. Reemplazaba a D-067 y D-068.
+- **Decisión propuesta:**
+  - *Idea y verbal*: idea de marca «una coma, no un punto final»; frase «Una coma para volver a elegir»; descriptor «Un recordatorio físico que preparas desde tu teléfono»; uso del significado del nombre («Todo relevo empieza con una pausa»).
+  - *Logotipo*: «relevo,» con letras de Atkinson Hyperlegible Next y una coma propia de cabeza circular (el objeto) en azul pasta `#2A4BD7`; monograma «r,».
+  - *Tipografía*: Radio Canada para títulos, texto e interfaz (cero sin raya, «I» con remates), sin serifas y con tres voces (sistema, persona y máquina).
+  - *Relato*: tres actos (la frase larga, la coma, dos finales), la persona como protagonista y la firma gráfica «la frase sin puntos».
+  - *Color*: tinta `#16181D`, papel `#F4F4F1`, grafito, niebla, noche y azul claro; luz cálida solo en el objeto.
+  - *Imagen*: tratamiento con principios, receta de corrección y lista de tomas.
+  - *Objeto*: el objeto como punto de la coma, con disco y coma como formas a comparar.
+- **Fundamento:**
+  - *Base de la memoria*: puntos de cierre (Montag et al.), decisión renovada, ocio sin culpa (Tonietto et al.), usuario límite, memoria prospectiva, espacio (Kirsh), autonomía (Smit et al.) y discreción pedida en Q13; también Norman, Albers, Munari e Isaacson.
+  - *Teoría añadida*: Kapferer, Wheeler, Keller et al., Mollerup, Kress y van Leeuwen, Beier y Larson, Harrison et al. y Chang et al.
+  - *Contrastes*: tinta sobre papel 16,12:1; azul pasta sobre papel 6,18:1.
+- **Alternativas:** territorios «El turno» (descartado porque «te toca» suena a obligación) y «El lugar preparado» (se parece al estilo de vida y es débil en pantalla); D-062, D-067 y D-068.
+- **Condición de revisión:**
+  - lectura de la coma sin explicación;
+  - mensajes «[esto], o [aquello]» sin sesgo;
+  - distinción de las tres voces;
+  - legibilidad con las tareas de la pauta de testeo;
+  - forma del objeto, disco frente a coma.
+- **Implementación pendiente si se aprueba:** fuentes, paleta, aviso nocturno e ícono de la app; tipografía y portada de la memoria; sesión fotográfica propia; patrón de luz en la micro:bit.
+- **Documentación:** [marca desde cero](../10_recursos_visuales/18_marca-relevo-desde-cero-2026-09-25.md) y [materiales](../10_recursos_visuales/marca-desde-cero/README.md).
+
+## D-070 — Señal sonora, sin luz por ahora
+
+- **Fecha:** 2026-09-25.
+- **Estado:** vigente para la marca, el objeto, la memoria y las pruebas (ampliada por el autor el mismo día).
+- **Decisión:** Relevo no usará luz por ahora. La señal del objeto es un sonido, como en la app 2.6, y ningún medio de marca muestra luz, brillos ni ventanas encendidas.
+- **Fundamento:** decisión del autor del 25 de septiembre. La app 2.6 ya emite solo sonido, por el parlante Bluetooth elegido o por el teléfono.
+- **Ampliación del mismo día:** el autor extendió la decisión al objeto y a la memoria porque la luz no es factible en el tiempo disponible. La memoria, el protocolo de prueba, el consentimiento y los documentos vigentes del objeto se actualizaron para describir una señal solo sonora. Los estudios fechados que evaluaron luz se conservan como antecedentes. En las entrevistas, algunas personas pidieron señales visuales (P3–P5, P7 y P8, Q13); esa preferencia queda como límite declarado.
+- **Antes:** la memoria describía una señal de luz y sonido, y el protocolo 01 usaba una luz blanca cálida.
+- **Condición de revisión:** evidencia de que el sonido no basta para notar la señal o excluye a personas con baja audición (véase la sección de accesibilidad de la memoria).
+- **Documentación:** [marca «Suena donde empieza»](../10_recursos_visuales/19_marca-suena-donde-empieza-2026-09-25.md).
+
+## D-071 — Suena donde empieza (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** su centro (el sonido que sale del lugar) fue reemplazado el mismo día por D-072, porque el autor observó que se centraba en el objeto y no en lo que Relevo es. D-072 conserva su logotipo, color, tipografía, etiqueta de lugar y firma sonora. Reemplazaba a D-069.
+- **Decisión propuesta:**
+  - *Idea y verbal*: idea de marca «No falta voluntad. Falta lugar»; firma «Suena donde empieza»; descriptor «Un recordatorio que preparas en el teléfono y suena en el lugar de tu actividad»; relato en cinco momentos con final abierto.
+  - *Nombre*: las acepciones de «relevar» como resaltar y como liberar de un peso, sin metáforas de carrera ni de turno.
+  - *Firma sonora*: dos notas de timbre de madera en descenso (587 → 440 Hz), una vez, 2,2 s, con ataque de banda ancha.
+  - *Logotipo*: «relevo» en minúsculas con Radio Canada 650, sin símbolo gráfico; ícono «r».
+  - *Recurso gráfico*: la etiqueta de lugar (anillo, línea y texto con lugar, actividad, primer paso y condición).
+  - *Color*: tinta, papel, grafito, niebla, noche y azul pasta como único acento; sin luz.
+  - *Tipografía*: Radio Canada en tres anchos.
+- **Fundamento:**
+  - *Relato*: Escalas (2004), Green y Brock (2000), Woodside et al. (2008); autonomía y ocio sin culpa (Smit et al., 2019; Tonietto et al., 2021).
+  - *Idea*: McDaniel y Einstein (2000), Gollwitzer y Sheeran (2006), Montag et al. (2019), Risko y Gilbert (2016) y Stothart et al. (2015).
+  - *Sonido*: urgencia percibida (Edworthy et al., 1991; Hellier et al., 1993), localización (Middlebrooks & Green, 1991) y logos sonoros (Krishnan et al., 2012).
+  - *Gráfica*: Ward et al. (2020), Xu et al. (2017), Barthes (1977), Kress y van Leeuwen (2021).
+  - *Contrastes*: tinta sobre papel 16,12:1; azul pasta con papel 6,18:1; azul claro sobre noche 8,04:1.
+- **Alternativas:** D-069 (la coma); rutas desde el nombre (pasar el testigo, volver a levantar, zona de relevo), que dependían de la luz o de metáforas de carrera; D-062.
+- **Condición de revisión:**
+  - si la firma se oye, se ubica y no suena urgente en hogares reales;
+  - si la etiqueta de lugar se entiende sin explicación;
+  - reconocimiento del ícono;
+  - lectura del relato por personas que no conocen el proyecto.
+- **Implementación pendiente si se aprueba:** campo de lugar en la app; firma sonora en lugar del tono actual, decidido antes del testeo 2.6; fuentes, paleta e ícono; reescritura del documento 14; sesión fotográfica propia.
+- **Documentación:** [marca «Suena donde empieza»](../10_recursos_visuales/19_marca-suena-donde-empieza-2026-09-25.md) y [materiales](../10_recursos_visuales/marca-suena-donde-empieza/README.md).
+
+## D-072 — Antes de que sea después (plataforma de marca, propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** reemplazada el mismo día por D-073, porque el autor consideró que «Antes de que sea después» puede sonar confuso para la comisión. D-073 conserva su centro: lo que la persona quería hacer y el momento en que todavía puede hacerlo.
+- **Decisión propuesta:**
+  - *Qué es Relevo*: trata de lo que la persona quería hacer y del momento en que todavía puede participar en su decisión; el objeto, el sonido y la app son el medio.
+  - *Verdad de partida*: «Nos damos cuenta después».
+  - *Idea*: «Del después al todavía».
+  - *Postura*: «Seguir también es elegir».
+  - *Firma*: «Antes de que sea después»; se mantiene el descriptor «Un recordatorio físico que preparas desde el teléfono».
+  - *Relato*: cuatro momentos (después, por qué, Relevo, todavía); el objeto aparece en una sola frase.
+  - *Recurso*: frases que empiezan por «todavía» y nombran una actividad concreta.
+  - *Se mantiene de D-071*: logotipo, color, tipografía, etiqueta de lugar y firma sonora.
+- **Fundamento:**
+  - *Verdad de partida*: capítulos 1, 3 y 7 de la memoria; Montag et al. (2019) y de Segovia Vicente et al. (2024).
+  - *Idea*: memoria prospectiva (McDaniel & Einstein, 2000).
+  - *Postura*: Tonietto et al. (2021), Smit et al. (2019) y el usuario límite.
+  - *Método*: posicionamiento de Keller et al. (2002) e identidad de Kapferer (2012).
+- **Alternativas:** D-071 (sonido del lugar como centro), D-069 (la coma), la frase vigente «Hazle lugar a lo que quieres hacer» (D-062) y «Todavía estás a tiempo» como firma (se usa en el relato, pero es común en promociones).
+- **Condición de revisión:**
+  - comprensión de la firma sin explicación;
+  - que «seguir también es elegir» no se lea como permiso para no usar Relevo, ni como ironía;
+  - coherencia con la app en la pauta 2.6.
+- **Implementación pendiente si se aprueba:** guía de comunicación, documento 14 y la frase de marca del capítulo 11 de la memoria.
+- **Documentación:** [plataforma de marca](../10_recursos_visuales/20_plataforma-antes-de-que-sea-despues-2026-09-25.md) y [lámina](../10_recursos_visuales/marca-antes-de-que-sea-despues/lamina-antes-de-que-sea-despues-2026-09-25.html).
+
+## D-073 — Vuelve a lo que querías hacer (propuesta)
+
+- **Fecha:** 2026-09-25.
+- **Estado:** propuesta pendiente de decisión del autor; mientras tanto rige D-062. Reemplaza a D-072.
+- **Decisión propuesta:**
+  - *Verbal*: firma «Vuelve a lo que querías hacer», elegida por el autor (antes, «Lo que querías hacer, a tiempo»); principio «Tú decides»; descriptor «Un recordatorio físico que preparas desde el teléfono»; relato en cuatro frases.
+  - *Recurso central*: el renglón («Vuelve a \_\_\_\_.») y dos voces, tinta para Relevo y azul pasta para lo que escribe la persona; el campo de la app es ese renglón.
+  - *Logotipo*: «relevo» en minúsculas, dibujado con Schibsted Grotesk 650; ícono «r».
+  - *Tipografía*: Schibsted Grotesk en todos los usos (reemplaza a Radio Canada).
+  - *Color*: tinta `#17181C`, papel `#F2F2EF`, azul pasta `#2A4BD7`, grafito, niebla, noche, azul claro y error; sin luz (D-070).
+  - *Fotografía*: el comienzo de la actividad, no el resultado.
+  - *Sonido*: firma sonora de D-071.
+- **Fundamento:**
+  - *Idea*: memoria prospectiva (McDaniel & Einstein, 2000), puntos de cierre (Montag et al., 2019), usuario límite y ocio sin culpa (Tonietto et al., 2021).
+  - *Renglón*: claves visibles (Norman, 2002), conexión con la propia historia (Escalas, 2004) y unidad en la variedad (Hekkert, 2006; Post et al., 2016).
+  - *Claridad y belleza*: fluidez de procesamiento (Reber et al., 2004) y MAYA (Hekkert et al., 2003).
+  - *Logotipo y color*: Ward et al. (2020), Xu et al. (2017), Elliot et al. (2007) y Labrecque y Milne (2012).
+  - *Diseño reciente*: crítica al *blanding* (D&AD) y tendencias de 2026 (It's Nice That; Creative Bloq). Se comparó con Headspace, Daylight y Light Phone.
+  - *Tipografía*: comparación de 38 familias libres.
+- **Alternativas:** D-072 («Antes de que sea después»), D-071, D-069, D-062; firmas «Todavía estás a tiempo» y «Acuérdate a tiempo» (esta última descartada por sonar a reproche); tipografías Radio Canada, Libre Franklin, Instrument Sans, Familjen Grotesk y Host Grotesk.
+- **Condición de revisión:**
+  - comprensión de la firma y del renglón sin explicación;
+  - que el azul no se lea como enlace;
+  - reconocimiento del ícono;
+  - legibilidad en la app con las tareas de la pauta 2.6.
+- **Implementación pendiente si se aprueba:** tema, fuentes e ícono de la app; frase de marca del capítulo 11 de la memoria; guía de comunicación; documento 14; sesión fotográfica.
+- **Actualización del mismo día:** a pedido del autor, que Relevo no presiona se muestra en conductas (una sola señal, respuestas con el mismo peso, sin rachas) y no se anuncia en los textos. Antes, el relato y la voz decían «Relevo no insiste ni te reprocha nada».
+- **Sistema completo (mismo día):** a pedido del autor se añadieron:
+  - tono de comunicación, definido con las cuatro dimensiones de Moran (2016);
+  - 18 iconos propios (McDougall et al., 2000; Wiedenbeck, 1999);
+  - escalas y proporción de color;
+  - formas: renglón, ficha, margen, y esquinas de 12 dp sin píldoras;
+  - fondos: papel, tinta, azul y fotografía sin velo;
+  - texturas: sin texturas simuladas; la textura es real;
+  - retícula, movimiento y usos incorrectos del logotipo.
+- **Iconos v2 y kit (mismo día):**
+  - 97 iconos (antes 40) en nueve grupos, con actividades, perfil, opinión y ayuda; las estrellas solo sirven para opinar sobre la app, nunca para calificar a la persona;
+  - todos con extremos redondeados, retícula con formas base y tres pesos medidos sobre Schibsted Grotesk, según los criterios de Apple (s. f.) para iconos de interfaz;
+  - un kit con componentes, dieciséis pantallas de la app y diez plantillas de presentación.
+- **Documentación:** [marca «Vuelve a lo que querías hacer»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md) y [manual](../10_recursos_visuales/marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html).
+
+## D-074 — Acompañar la continuidad sin patrones oscuros
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; diseño escrito, implementación pendiente.
+- **Decisión:** no adoptar el refuerzo tal como se planteó en clase (rachas, felicitar por usar menos una app, cuotas de uso). Acompañar la continuidad con reconocimiento de hechos conocidos, una ruta de actividades elegida por la persona, un regreso amable tras varios días y resúmenes opcionales. La «constancia elegida» (frecuencia que fija la persona, sin pérdida) se prueba como variante.
+- **Fundamento:** memoria (capítulos 6 y 9), [revisión sobre hábitos y rachas](../02_investigacion/habitos-reconocimiento-y-rachas-2026-09-23.md), apoyo a la autonomía (Ryan & Deci, 2000) y patrones oscuros (Gray et al., 2018; Mathur et al., 2019).
+- **Condición de revisión:** que la prueba muestre presión, intrusión o falta de utilidad.
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
+## D-075 — Prueba de 21 días con evaluación integrada
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; desarrollada en D-079 y en el protocolo 02.
+- **Decisión:** la prueba con participantes dura 21 días. Las preguntas se integran en la app: de un toque, que se pueden omitir, tras cada señal y al cierre de cada semana, más un cierre el día 21.
+- **Límite:** 21 días permiten observar continuidad, carga y habituación a la señal; no bastan para afirmar que se formó un hábito (Lally et al., 2010).
+- **Antes:** el consentimiento vigente es por dos días.
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
+## D-076 — Perfil con intereses y ruta de actividades
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; diseño escrito, implementación pendiente.
+- **Decisión:** la app tiene perfil con nombre, una imagen prehecha e intereses. Los intereses proponen una ruta de pasos editables por actividad. El nombre y la imagen no salen del teléfono.
+- **Límite:** los intereses no son perfiles fijos de personas; las entrevistas respaldan actividades concretas, no tipos de usuario.
+- **Usuario:** se adopta la reformulación «Relevo está pensado para quien está dispuesto a preparar el comienzo de su actividad; si esa preparación resulta demasiado costosa, es un hallazgo sobre el diseño, no sobre la persona». Reemplaza la anotación de clase «quien no lo deja junto a las zapatillas no es el usuario».
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
+## D-077 — Privacidad y bienvenida breves; botones con verbo
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; textos propuestos, implementación pendiente.
+- **Decisión:** la bienvenida y la política de privacidad se acortan; los datos se borran cuando la persona lo pide; las acciones llevan verbo y los destinos de navegación, sustantivo.
+- **Conservación:** los datos se borran cuando la persona lo pide y, como máximo, el 30 de diciembre de 2026, como en el consentimiento vigente (confirmado por el autor el mismo día).
+- **Documentación:** [flujos y wireframes escritos](../05_propuesta_phygital/flujos-y-wireframes-escritos-2026-09-25.md).
+
+## D-078 — Señal sonora de unos 30 segundos
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; implementación pendiente en la app.
+- **Decisión:** la señal suena unos 30 segundos y se detiene sola. Usa la firma sonora de Relevo, repetida con pausas y con un comienzo más suave. Después, la pantalla y la notificación quedan visibles en silencio hasta que la persona responde.
+- **Fundamento:** debe ser más que una notificación y menos que una alarma. Una señal que no se detiene contradice el «término sin insistencia» de la memoria (capítulo 11); una de 3 segundos, pensada para pulsos de luz, no se escucharía sin luz (D-070).
+- **Registro:** solo para la investigación, la app anota si la persona silenció la señal o esta terminó sola, cuánto tardó en responder y cuánto siguió en las apps elegidas. Ese tiempo no se muestra como «tiempo excedido».
+- **Antes:** la app 2.6 suena hasta que la persona silencia el tono.
+- **Condición de revisión:** que la prueba muestre señales que nadie notó o que molesten a quienes comparten el espacio.
+
+## D-079 — La prueba de 21 días también responde la hipótesis
+
+- **Fecha:** 2026-09-25.
+- **Estado:** decisión del autor; protocolo escrito, no ejecutado.
+- **Decisión:** la prueba de 21 días reemplaza a las etapas separadas del protocolo 01. Empieza con una sesión presencial que observa la asociación (percepción, atribución, recuperación de la intención y del primer paso). Sigue con tres semanas en casa, una condición por semana en orden contrabalanceado: parlante junto al primer paso, parlante en un lugar neutro y aviso en el teléfono. Tras cada señal, la app pregunta con un toque si la persona supo qué quería hacer y cómo empezar antes de mirar el teléfono.
+- **Fundamento:** el autor pidió que la prueba sirva también para la hipótesis, porque el tiempo no alcanza para estudios separados. Tres semanas permiten comparar las tres condiciones de la memoria (capítulo 13) dentro de la misma persona.
+- **Límites:** la asociación en casa es autoinformada; las intenciones cambian entre semanas; el parlante comercial reemplaza al testigo; 21 días no bastan para afirmar un hábito.
+- **Documentación:** [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — D-070 ampliada, D-078 y D-079
+
+- **Qué cambió:** D-070 se extiende al objeto, la memoria y las pruebas; se registran la señal de unos 30 segundos (D-078) y la prueba de 21 días que responde la hipótesis (D-079); D-075 se ajusta a esa prueba.
+- **Cómo era antes:** D-070 solo regía la marca; la prueba de 21 días medía uso, y la hipótesis quedaba para el protocolo 01.
+- **Por qué:** el autor decidió que la luz no es factible por tiempo, eligió 30 segundos para el tono y pidió que la prueba responda también la hipótesis.
+
+### 2026-09-25 — D-074 a D-077
+
+- **Qué cambió:** se registraron cuatro decisiones del autor sobre continuidad, prueba de 21 días, perfil y ruta, y textos breves.
+- **Cómo era antes:** las anotaciones de clase estaban analizadas, pero sin decisión del autor.
+- **Por qué:** el autor respondió a las anotaciones el 25 de septiembre y pidió anotarlas para trabajarlas después.
+
+### 2026-09-25 — D-073
+
+- **Actualización del mismo día:** iconos v2 (40) y kit de diseño con pantallas de la app y plantillas de presentación. Antes había 18 iconos y ninguna plantilla.
+
+- **Actualización del mismo día:** D-073 incorpora el sistema completo (tono, iconos, color extendido, formas, fondos, texturas, retícula y movimiento). Antes, D-073 no definía esos componentes.
+
+- **Actualización del mismo día:** la firma pasó a «Vuelve a lo que querías hacer», propuesta por el autor. Antes era «Lo que querías hacer, a tiempo», que no lo convenció.
+
+- **Actualización del mismo día:** se añadió a D-073 la regla «se nota, no se dice». Antes, el relato decía que Relevo no insiste ni reprocha; el autor pidió que eso no se mencionara.
+
+- **Qué cambió:** se registró la propuesta D-073 y D-072 se marcó como reemplazada.
+- **Cómo era antes:** D-072 proponía «Antes de que sea después» con Radio Canada.
+- **Por qué se decidió:** el autor consideró que esa firma podía confundir a la comisión y pidió una marca clara, hermosa y basada en el estudio del diseño reciente; la aprobación sigue siendo suya.
+
+### 2026-09-25 — D-072
+
+- **Qué cambió:** se registró la plataforma «Antes de que sea después» (D-072) y se marcó el centro de D-071 como reemplazado.
+- **Cómo era antes:** D-071 ponía en el centro el sonido que sale del lugar de la actividad.
+- **Por qué se decidió:** el autor observó que las propuestas se centraban en el objeto, su sonido y su luz, y no en lo que Relevo es; la aprobación sigue siendo suya.
+
+### 2026-09-25 — D-070 y D-071
+
+- **Qué cambió:** se registraron la decisión del autor de no usar luz por ahora (D-070) y la propuesta «Suena donde empieza» (D-071); D-069 se marcó como reemplazada.
+- **Cómo era antes:** D-069 («una coma para volver a elegir», con luz cálida en el objeto) era la propuesta pendiente.
+- **Por qué se decidió:** el autor consideró la coma un cliché, pidió un relato que no suene genérico y decidió sacar la luz de todos los medios; la aprobación de D-071 sigue siendo suya.
+
+### 2026-09-25 — D-069 propuesta
+
+- **Actualización del mismo día:** D-069 incorpora el relato y la coma dibujada, fundamenta cada decisión de logotipo y color, y cambia la tipografía del sistema a Radio Canada porque el autor rechazó los ceros con raya de Atkinson. Antes, la tipografía era Atkinson Hyperlegible Next y Mono.
+
+- **Qué cambió:** se registró el estudio de marca desde cero y D-068 se marcó como reemplazada.
+- **Cómo era antes:** D-068 («un lugar que se enciende», con serif) era la propuesta pendiente.
+- **Por qué se decidió:** el autor rechazó la serif, consideró que la propuesta dependía de documentos anteriores y pidió un estudio desde cero; la decisión sigue siendo suya.
+
+### 2026-09-25 — D-068 propuesta
+
+- **Qué cambió:** se registró la segunda propuesta de identidad y D-067 se marcó como reemplazada.
+- **Cómo era antes:** D-067 («punto y pulso» con ámbar) era la propuesta pendiente.
+- **Por qué se decidió:** el autor pidió rehacer la identidad con un estándar de diseño más alto; la aprobación sigue siendo suya.
+
+### 2026-09-25 — D-067 propuesta
+
+- **Qué cambió:** se registró la propuesta de identidad «punto y pulso».
+- **Cómo era antes:** D-062 cerraba la marca sin símbolo ni color de señal.
+- **Por qué se decidió:** la nueva exploración visual pedida por el autor recomienda ajustar la marca; se registra como propuesta porque la aprobación le corresponde al autor.
+- **Actualización del mismo día:** la exploración se rehízo con método y fuentes; la propuesta cambió el coral `#F47F68` / `#C4492F` por el ámbar `#FFAD58` / `#9C5A0F` y añadió la regla de dos estados del símbolo. Antes, D-067 reservaba el coral para la señal sin fundamentar el color.
+
+### 2026-09-25 — D-063 a D-066
+
+- **Qué cambió:** se registraron el prototipo Android con salida provisional, las varias aplicaciones bajo un límite, el reconocimiento autodeclarado y el retiro de obras protegidas; D-058 se marcó como no ejecutada.
+- **Cómo era antes:** el registro terminaba en D-062 (16 de septiembre) y D-058 seguía presentando la compra de iTag como puerta vigente.
+- **Por qué se decidió:** esas decisiones ya estaban aplicadas en la app y en los documentos, pero no tenían una entrada que explicara fundamento, límite y condición de revisión.
 
 ### 2026-09-16 — D-062
 

@@ -1,6 +1,6 @@
 # Ficha de ensayo técnico — material de fase A
 
-**Estado:** plantilla sin ejecutar
+**Estado:** plantilla sin ejecutar; antecedente desde el 25 de septiembre de 2026. La comprobación técnica vigente usa la [pauta Android](pauta-testeo-prototipo-android-2026-09-23.md) antes del [protocolo 02](protocolo-02-prueba-21-dias.md). Las filas de luz no aplican (D-070).
 
 **Uso:** comprobar conexión, estabilidad, repetibilidad, control y seguridad antes de trabajar con participantes
 
@@ -220,6 +220,12 @@ Cumplir esta ficha autoriza únicamente a solicitar revisión académica del mat
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-25 — Estado frente al protocolo 02
+
+- **Qué cambió:** el estado indica su relación con el protocolo 02 y la decisión de no usar luz.
+- **Cómo estaba antes:** era parte del plan vigente.
+- **Por qué:** D-070 ampliada y D-079.
 
 ### 2026-09-11 — Filtro previo para productos terminados
 
