@@ -63,6 +63,9 @@
 | 29 sep. | Corrección y decisión | Cuestionar si los títulos del Venn eran los reales y pedir contrastarlos con la memoria y con presentaciones anteriores. | Se comprobó que eran versiones acortadas. El autor eligió los títulos exactos del capítulo 6 de la memoria para los círculos y las diapositivas de cada ámbito, y las intersecciones de su examen de julio tal cual: «Interfaz que interrumpe el propósito», «Lo físico como apoyo a la reflexión» y «El dispositivo también ocupa atención» | — |
 | 29 sep. | Corrección y decisión | Pedir títulos más fáciles de entender para los ámbitos, en especial «Mediación material de información personal» y «Experiencia subjetiva del ocio digital», recordando que la comisión dijo que se podían cambiar. | Se encontró el respaldo en el feedback del examen de julio. El autor eligió nombres cortos para los tres ámbitos: «La experiencia del ocio digital», «El diseño de la atención» y «Recordar con objetos y lugares», aplicados en la memoria, los documentos que los enlazan y la presentación | D-094 |
 | 29 sep. | Encargo | Subir todo a GitHub, documentar el estado del proyecto y explicar cómo se hizo la presentación. | [Estado y proceso de la presentación](../10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md) con las 15 diapositivas exportadas; [bitácora del 29 de septiembre](bitacora-trabajo-con-ia-2026-09-29.md); estado actualizado en el README y en el traspaso | — |
+| 29 sep. | Encargo | Enviar el trabajo a `main`. | `main` avanzó hasta el último commit de `android-2.7`, sin conflictos; ambas ramas quedan iguales en GitHub | — |
+| 29 sep. | Encargo | Adjuntar el GIF de la app hecho antes. | Se envió el [GIF «Cómo funciona»](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/relevo-como-funciona.gif) de la app 2.10 | — |
+| 29 sep. | Corrección | Reescribir la diapositiva «Siguiente paso», que no le convence: mostrar lo que sigue en las próximas semanas y meses, bien explicado y con sentido. | Diapositiva 14, «Probar antes de decidir.»: cuatro etapas (preparar, probar, decidir y defender) con las fechas del plan de cierre, qué se hace y para qué. La versión anterior quedó en el respaldo como R10 | — |
 
 ## Lo que muestra el registro
 
@@ -73,6 +76,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Rama principal, GIF y diapositiva 14
+
+- **Qué cambió:** se registraron los pedidos de enviar el trabajo a `main`, adjuntar el GIF y rehacer la diapositiva «Siguiente paso».
+- **Cómo estaba antes:** el registro terminaba en el pedido de documentar el estado y la presentación.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-09-29 — Objetos que suenan, correcciones de la presentación y estado
 

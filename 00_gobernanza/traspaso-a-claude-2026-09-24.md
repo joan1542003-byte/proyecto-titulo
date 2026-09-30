@@ -171,6 +171,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Presentación:** [archivo en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8) de 15 diapositivas y respaldo; [estado y cómo se hizo](../10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md). El autor comenta dejando notas «*Claude…» dentro de los textos.
 - **Objetos que suenan (D-093):** Android 2.15 con la salida experimental «El reloj», sin probar con hardware; el llavero iTag clásico se puede controlar con el servicio Bluetooth estándar de alerta inmediata ([estudio](../06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md)).
 - **Resumen del día:** [bitácora del 29 de septiembre](bitacora-trabajo-con-ia-2026-09-29.md).
+- **Rama:** `main` avanzó hasta `android-2.7`, sin conflictos. Desde el 29 de septiembre, ambas tienen el mismo trabajo.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
 
 ## Seguridad, privacidad y GitHub
@@ -184,6 +185,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Rama principal
+
+- **Qué cambió:** la actualización del 29 de septiembre indica que `main` quedó igual a `android-2.7`.
+- **Cómo estaba antes:** el trabajo desde la app 2.7 estaba solo en `android-2.7`.
+- **Por qué:** el autor pidió enviar el trabajo a `main`.
 
 ### 2026-09-29 — Actualización del 29 de septiembre
 

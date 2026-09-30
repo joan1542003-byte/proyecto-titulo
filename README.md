@@ -53,6 +53,7 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 - **Memoria:** incorpora el marco multiproceso, las citas en APA 7 en español, títulos simples para los tres ámbitos (D-094) y una encuesta de 53 respuestas como evidencia complementaria (D-092).
 - **Presentación del 30 de septiembre:** [archivo en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8) con 15 diapositivas para 5 minutos, más un respaldo ([estado y cómo se hizo](10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md)).
 - **App:** la 2.14 es la del testeo real. La 2.15 agrega, sin probar con hardware, una salida experimental para usar un reloj como objeto; el llavero iTag es la alternativa barata estudiada (D-093; [objetos que suenan](06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md)).
+- **Rama:** desde el 29 de septiembre, `main` contiene todo el trabajo de `android-2.7`.
 
 **Antes del 29 de septiembre:**
 
@@ -120,6 +121,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Rama principal
+
+- **Qué cambió:** el estado actual indica que `main` contiene todo el trabajo de `android-2.7`.
+- **Cómo estaba antes:** `main` llegaba hasta la app 2.6 y el traspaso a Claude.
+- **Por qué:** el autor pidió enviar el trabajo a `main`.
 
 ### 2026-09-29 — Estado del 29 de septiembre
 

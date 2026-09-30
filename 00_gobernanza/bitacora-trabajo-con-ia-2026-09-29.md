@@ -2,7 +2,7 @@
 
 **Estado:** registro de lo hecho con Claude Code el 29 de septiembre de 2026, a pedido del autor. Continúa la [bitácora del 26 al 28 de septiembre](bitacora-trabajo-con-ia-2026-09-26-28.md). Enlaza los documentos de cada trabajo; no los reemplaza. Cada pedido del autor está en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
 
-**Rama:** todo está en `android-2.7` y subido a GitHub. No se fusionó con `main`.
+**Rama:** el trabajo se hizo en `android-2.7`. El 29 de septiembre, a pedido del autor, `main` avanzó hasta el mismo commit, sin conflictos. Todo está en GitHub.
 
 ## 1. Qué se hizo
 
@@ -13,7 +13,7 @@
 | Hipótesis | Ocho versiones, trabajadas con el autor, hasta la final: «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Se contrastó con los encargos del seminario y con el feedback del pase y del examen de julio. | D-091 |
 | Memoria | Marco multiproceso de McDaniel y Einstein (2000) en el capítulo 6. Capítulos 11 y 13 al día con la app 2.14 y la prueba con una persona. Citas en APA 7 en español. Revisión completa del texto. | D-091 |
 | Encuesta | [53 respuestas analizadas](../03_usuarios/encuesta-53-respuestas-2026-09.md) e incorporadas como evidencia complementaria, con sus límites. | D-092 |
-| Presentación | [Archivo nuevo en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8), simplificado para 5 minutos y corregido con las notas del autor ([estado y cómo se hizo](../10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md)). | — |
+| Presentación | [Archivo nuevo en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8), simplificado para 5 minutos y corregido con las notas del autor; la diapositiva 14 muestra lo que sigue hasta el examen ([estado y cómo se hizo](../10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md)). | — |
 | Objetos que suenan | [Estudio de opciones baratas](../06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md) y [Android 2.15](../06_desarrollo_y_factibilidad/app-android/version-2.15-reloj-como-llamada-2026-09-29.md) con la salida experimental «El reloj». | D-093 |
 | Marco teórico | Títulos simples para los tres ámbitos: «La experiencia del ocio digital», «El diseño de la atención» y «Recordar con objetos y lugares». | D-094 |
 
@@ -37,6 +37,12 @@
 - Revisión ética del consentimiento v9 y prueba técnica en el teléfono y el parlante reales antes del 8 de octubre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Rama principal y diapositiva 14
+
+- **Qué cambió:** la bitácora registra que `main` quedó igual a `android-2.7` y que la diapositiva 14 muestra lo que sigue hasta el examen.
+- **Cómo estaba antes:** decía que el trabajo no se había fusionado con `main`.
+- **Por qué:** el autor pidió enviar el trabajo a `main` y rehacer la diapositiva.
 
 ### 2026-09-29 — Creación
 
