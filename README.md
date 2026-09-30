@@ -45,7 +45,13 @@ Para explicarlo a público general, comisiones, posibles usuarios o equipos de d
 
 El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) es la definición física más reciente, anterior a la decisión de no usar luz (D-070). El [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) cierra nombre, categoría, frase, descriptor, tipografía, paleta y reglas por soporte. La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
-## Estado actual — 29 de septiembre de 2026
+## Estado actual — 30 de septiembre de 2026
+
+**Resumen del 30 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-30.md)):
+
+- **App 2.16:** activación automática opcional, también en el testeo (D-095), y mensajes del proyecto que llegan como notificación (D-096). Consentimiento v10. Probada en emulador; falta el teléfono real ([detalle](06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md)).
+- **Panel del testeo:** página privada en claude.ai con participantes, respuestas, actividad y envío de notificaciones ([cómo funciona](06_desarrollo_y_factibilidad/panel-admin/README.md)).
+- **Presentación:** la diapositiva 14 muestra en una carta Gantt lo que sigue hasta el examen.
 
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
@@ -121,6 +127,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Estado del 30 de septiembre
+
+- **Qué cambió:** el estado actual resume la app 2.16, el panel del testeo y la carta Gantt de la presentación, y enlaza la bitácora del día.
+- **Cómo estaba antes:** el estado tenía fecha del 29 de septiembre.
+- **Por qué:** pedidos del autor del 30 de septiembre (D-095 y D-096).
 
 ### 2026-09-29 — Rama principal
 

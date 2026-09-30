@@ -144,6 +144,8 @@ internal fun HomeTab(
   onQuickFeedback: (Int?) -> Unit = {},
   onFeedback: () -> Unit = {},
   guided: Boolean = false,
+  autoMode: Boolean = false,
+  onAutoModeOff: () -> Unit = {},
 ) {
   val scroll = rememberScrollState()
   var firstReselect by remember { mutableStateOf(reselect) }
@@ -184,6 +186,14 @@ internal fun HomeTab(
     }
     if (quickFeedbackDue && !active) {
       QuickFeedbackCard(onQuickFeedback, { onQuickFeedback(null); onFeedback() })
+      SectionGap()
+    }
+    // D-095: con la activación automática, Inicio recuerda qué se activará y cómo apagarla.
+    if (autoMode && !active && lastReminder != null) {
+      Notice(
+        "Cuando abras ${lastReminder.selectedApps.joinToString(" o ") { it.label }}, Relevo empieza a contar para «${lastReminder.activity}».",
+        title = "Se activa solo", icon = KitIcon.ESPERANDO,
+      ) { PlainAction("Apagar", onAutoModeOff) }
       SectionGap()
     }
     AcknowledgementToast(acknowledgement, changedRouteInterest, actions.onDismissAcknowledgement, onChangeRoute)
@@ -350,6 +360,7 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
     StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ')?.let { condition ->
       ListRow("Esta semana", icon = conditionIcon(condition), titleColor = Relevo.colors.graphite, value = conditionName(condition))
     }
+    if (reminder.autoActivated) ListRow("Cómo empezó", icon = KitIcon.ESPERANDO, titleColor = Relevo.colors.graphite, value = "Se activó solo")
     ListRow("Ver o desactivar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
   }
 }

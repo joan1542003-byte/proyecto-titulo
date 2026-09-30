@@ -1,0 +1,585 @@
+<title>Panel de Relevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: panel de operación — resumen arriba, participantes y envío al centro, respuestas y actividad abajo. */
+:root {
+  --bg: #f4f4f7;
+  --surface: #ffffff;
+  --ink: #17171f;
+  --muted: #5e5f6d;
+  --line: #e2e2ea;
+  --accent: #3d38f5;
+  --accent-soft: #ecebff;
+  --ok: #17804a;
+  --ok-soft: #e3f4ea;
+  --warn: #9a5b00;
+  --warn-soft: #fbf0dc;
+  --bad: #b83232;
+  --bad-soft: #fbe6e6;
+  --idle-soft: #eeeef2;
+  --font-ui: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e0e13; --surface: #17171f; --ink: #ececf3; --muted: #a2a3b3; --line: #2b2b37;
+    --accent: #8f8cff; --accent-soft: #24234b; --ok: #52c787; --ok-soft: #133224; --warn: #e3a943; --warn-soft: #34270f;
+    --bad: #f07b7b; --bad-soft: #3a1717; --idle-soft: #22222c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e0e13; --surface: #17171f; --ink: #ececf3; --muted: #a2a3b3; --line: #2b2b37;
+  --accent: #8f8cff; --accent-soft: #24234b; --ok: #52c787; --ok-soft: #133224; --warn: #e3a943; --warn-soft: #34270f;
+  --bad: #f07b7b; --bad-soft: #3a1717; --idle-soft: #22222c; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.45; padding: 20px 16px 40px; }
+.wrap { max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 17px; font-weight: 700; }
+.muted { color: var(--muted); }
+.mono, time, .num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; justify-content: space-between; }
+.brand { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.brand p { margin: 0; color: var(--muted); font-size: 14px; }
+.live { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); flex: none; }
+.dot.on { background: var(--ok); box-shadow: 0 0 0 4px var(--ok-soft); }
+.dot.err { background: var(--bad); box-shadow: 0 0 0 4px var(--bad-soft); }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 7px 14px; font-weight: 600; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:disabled { opacity: .45; cursor: default; }
+
+.banner { border-radius: var(--radius); padding: 14px 16px; background: var(--warn-soft); color: var(--ink); border: 1px solid var(--line); }
+.banner.error { background: var(--bad-soft); }
+.banner strong { display: block; margin-bottom: 2px; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.kpi { background: var(--surface); border-radius: var(--radius); padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; border: 1px solid var(--line); }
+.kpi .value { font-family: var(--font-data); font-size: 28px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.kpi .label { color: var(--muted); font-size: 14px; }
+.kpi.highlight { border-color: var(--accent); }
+
+.grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.col { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+@media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--line); padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.card-head .muted { font-size: 13px; }
+.scroll { overflow-x: auto; margin: 0 -4px; padding: 0 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.nowrap { white-space: nowrap; }
+.empty { color: var(--muted); padding: 10px 2px; }
+
+.pill { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 600; white-space: nowrap; background: var(--idle-soft); color: var(--muted); }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill.counting { background: var(--ok-soft); color: var(--ok); }
+.pill.awaiting { background: var(--warn-soft); color: var(--warn); }
+.pill.paused { background: var(--bad-soft); color: var(--bad); }
+.pill.auto { background: var(--accent-soft); color: var(--accent); }
+.tag { font-family: var(--font-data); font-size: 12px; background: var(--idle-soft); border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+
+form { display: flex; flex-direction: column; gap: 10px; }
+label { font-weight: 600; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+label .hint { font-weight: 400; color: var(--muted); font-size: 13px; }
+input[type=text], select, textarea { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; background: var(--bg); }
+textarea { min-height: 96px; resize: vertical; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.confirm { background: var(--accent-soft); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.toast { border-radius: 10px; padding: 8px 12px; background: var(--ok-soft); color: var(--ok); font-weight: 600; }
+.toast.error { background: var(--bad-soft); color: var(--bad); }
+.msg { border-top: 1px solid var(--line); padding-top: 10px; display: flex; flex-direction: column; gap: 3px; }
+.msg:first-child { border-top: 0; padding-top: 0; }
+.msg .meta { font-size: 13px; color: var(--muted); }
+
+.cond { display: flex; flex-direction: column; gap: 6px; padding: 10px 0; border-top: 1px solid var(--line); }
+.cond:first-of-type { border-top: 0; }
+.bar { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--idle-soft); }
+.bar span { display: block; height: 100%; }
+.bar .yes { background: var(--ok); }
+.bar .part { background: var(--warn); }
+.bar .no { background: var(--bad); }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+
+.feed { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.feed li { display: grid; grid-template-columns: 74px 70px minmax(0, 1fr); gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.feed li:last-child { border-bottom: 0; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--muted); font-family: var(--font-data); font-size: 10px; }
+footer { color: var(--muted); font-size: 13px; }
+@media (prefers-reduced-motion: no-preference) { .dot.on { transition: box-shadow .3s; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Relevo · panel del testeo</h1>
+      <p>Participantes, respuestas y actividad desde Supabase. Se actualiza cada 30 segundos.</p>
+    </div>
+    <div class="live">
+      <span class="dot" id="live-dot" aria-hidden="true"></span>
+      <span id="live-text" class="muted">Conectando…</span>
+      <button class="btn" id="refresh" type="button">Actualizar</button>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <section class="kpis" aria-label="Resumen">
+    <div class="kpi"><span class="value" id="k-participants">–</span><span class="label">Participantes</span></div>
+    <div class="kpi"><span class="value" id="k-online">–</span><span class="label">Con actividad en 15 min</span></div>
+    <div class="kpi highlight"><span class="value" id="k-counting">–</span><span class="label">Contando ahora</span></div>
+    <div class="kpi"><span class="value" id="k-awaiting">–</span><span class="label">Esperan responder</span></div>
+    <div class="kpi"><span class="value" id="k-today">–</span><span class="label">Relevos hoy</span></div>
+    <div class="kpi"><span class="value" id="k-answered">–</span><span class="label">Respondidos / señales</span></div>
+    <div class="kpi"><span class="value" id="k-auto">–</span><span class="label">Se activaron solos</span></div>
+  </section>
+
+  <div class="grid">
+    <div class="col">
+      <section class="card" aria-labelledby="h-participants">
+        <div class="card-head"><h2 id="h-participants">Participantes</h2><span class="muted">Estado según lo último que envió cada teléfono</span></div>
+        <div class="scroll"><table>
+          <thead><tr><th>Código</th><th>Nombre</th><th>Estado</th><th>Condición</th><th>Relevos</th><th>Automático</th><th>App</th><th>Última actividad</th></tr></thead>
+          <tbody id="t-participants"><tr><td colspan="8" class="empty">Cargando participantes…</td></tr></tbody>
+        </table></div>
+      </section>
+
+      <section class="card" aria-labelledby="h-responses">
+        <div class="card-head"><h2 id="h-responses">Respuestas a la señal</h2><span class="muted">Los 30 relevos más recientes</span></div>
+        <div class="scroll"><table>
+          <thead><tr><th>Inicio</th><th>Código</th><th>Actividad</th><th>Cómo empezó</th><th>Condición · salida</th><th>¿Supo qué hacer?</th><th>¿Recordó cómo empezar?</th><th>Decidió</th><th>Aviso</th><th>Respondió en</th></tr></thead>
+          <tbody id="t-sessions"><tr><td colspan="10" class="empty">Cargando relevos…</td></tr></tbody>
+        </table></div>
+      </section>
+
+      <section class="card" aria-labelledby="h-answers">
+        <div class="card-head"><h2 id="h-answers">Otras respuestas</h2><span class="muted">Tarjetas semanales, cierre del día 21, opiniones y reportes</span></div>
+        <div class="scroll"><table>
+          <thead><tr><th>Fecha</th><th>Código</th><th>Pregunta</th><th>Respuesta</th></tr></thead>
+          <tbody id="t-answers"><tr><td colspan="4" class="empty">Cargando respuestas…</td></tr></tbody>
+        </table></div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="card" aria-labelledby="h-send">
+        <div class="card-head"><h2 id="h-send">Enviar una notificación</h2></div>
+        <form id="send-form" novalidate>
+          <label for="f-target">Para
+            <select id="f-target"></select>
+          </label>
+          <label for="f-title">Título <span class="hint" id="c-title">0 de 60</span>
+            <input type="text" id="f-title" maxlength="60" placeholder="Por ejemplo: Semana 2">
+          </label>
+          <label for="f-body">Mensaje <span class="hint" id="c-body">0 de 400</span>
+            <textarea id="f-body" maxlength="400" placeholder="Por ejemplo: Esta semana deja el parlante en otro lugar de la casa."></textarea>
+          </label>
+          <div class="row"><button class="btn primary" type="submit" id="f-send" disabled>Revisar y enviar</button></div>
+          <div class="confirm" id="f-confirm" hidden>
+            <span id="f-confirm-text"></span>
+            <div class="row">
+              <button class="btn primary" type="button" id="f-confirm-yes">Enviar ahora</button>
+              <button class="btn" type="button" id="f-confirm-no">Cancelar</button>
+            </div>
+          </div>
+          <div id="f-result" hidden></div>
+          <p class="muted" style="margin:0;font-size:13px">Llega como notificación de Relevo en 1 a 15 minutos, según si la app está contando o en segundo plano. No escribas datos personales.</p>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="h-messages">
+        <div class="card-head"><h2 id="h-messages">Mensajes enviados</h2></div>
+        <div id="l-messages"><p class="empty">Cargando mensajes…</p></div>
+      </section>
+
+      <section class="card" aria-labelledby="h-conditions">
+        <div class="card-head"><h2 id="h-conditions">Por condición</h2><span class="muted">¿Supo qué quería hacer al sonar?</span></div>
+        <div id="l-conditions"><p class="empty">Cargando…</p></div>
+        <div class="legend"><span><i style="background:var(--ok)"></i>Sí</span><span><i style="background:var(--warn)"></i>A medias</span><span><i style="background:var(--bad)"></i>No</span></div>
+      </section>
+
+      <section class="card chart" aria-labelledby="h-daily">
+        <div class="card-head"><h2 id="h-daily">Relevos por día</h2><span class="muted">Últimos 21 días</span></div>
+        <div id="c-daily"><p class="empty">Cargando…</p></div>
+      </section>
+
+      <section class="card" aria-labelledby="h-feed">
+        <div class="card-head"><h2 id="h-feed">Actividad</h2><span class="muted">Lo último que llegó</span></div>
+        <ul class="feed" id="l-feed"><li><span class="empty">Cargando…</span></li></ul>
+      </section>
+    </div>
+  </div>
+
+  <footer>Los teléfonos envían datos al activar un relevo, cuando suena, al cerrar la app y cada 15 minutos mientras cuentan. Horas de Chile continental.</footer>
+</div>
+
+<script>
+(function () {
+  const PROJECT = 'rwzslwtxabmfofqppgwu';
+  const SERVER = 'Supabase';
+  const TOOL = 'execute_sql';
+  const TZ = 'America/Santiago';
+  const REFRESH_MS = 30000;
+
+  const SNAPSHOT_SQL = `
+with ev as (
+  select participant_code, created_at from public.relevo_app_events
+  union all select participant_code, created_at from public.relevo_events
+),
+codes as (select participant_code, max(created_at) as last_seen from ev group by participant_code),
+ls as (
+  select distinct on (participant_code) participant_code, study_condition, study_day, signal_route, activation, signal_at, outcome, closed_at, started_at
+  from public.relevo_sessions order by participant_code, started_at desc
+),
+le as (select distinct on (participant_code) participant_code, event_type, created_at from public.relevo_events order by participant_code, created_at desc),
+au as (select distinct on (participant_code) participant_code, detail from public.relevo_app_events where event = 'activacion_automatica' order by participant_code, created_at desc),
+ver as (select distinct on (participant_code) participant_code, app_version, user_id from public.relevo_app_events order by participant_code, created_at desc),
+nm as (select distinct on (participant_code) participant_code, name from public.relevo_participants order by participant_code, updated_at desc),
+ct as (
+  select participant_code, count(*) as relevos, count(outcome) as respondidos, count(signal_at) as senales, count(*) filter (where activation = 'auto') as automaticos
+  from public.relevo_sessions group by participant_code
+)
+select json_build_object(
+  'participants', coalesce((select json_agg(json_build_object(
+      'code', c.participant_code, 'name', nm.name, 'version', ver.app_version, 'user_id', ver.user_id, 'last_seen', c.last_seen,
+      'last_event', le.event_type, 'condition', ls.study_condition, 'day', ls.study_day, 'route', ls.signal_route,
+      'last_signal_at', ls.signal_at, 'last_outcome', ls.outcome, 'auto', au.detail,
+      'relevos', coalesce(ct.relevos, 0), 'respondidos', coalesce(ct.respondidos, 0), 'senales', coalesce(ct.senales, 0), 'automaticos', coalesce(ct.automaticos, 0)
+    ) order by c.last_seen desc)
+    from codes c left join nm using (participant_code) left join ver using (participant_code) left join le using (participant_code)
+    left join ls using (participant_code) left join au using (participant_code) left join ct using (participant_code)), '[]'::json),
+  'totals', json_build_object(
+    'relevos_hoy', (select count(*) from public.relevo_sessions where started_at >= (date_trunc('day', now() at time zone 'America/Santiago') at time zone 'America/Santiago')),
+    'senales', (select count(*) from public.relevo_sessions where signal_at is not null),
+    'respondidos', (select count(*) from public.relevo_sessions where outcome is not null),
+    'automaticos', (select count(*) from public.relevo_sessions where activation = 'auto')
+  ),
+  'sessions', coalesce((select json_agg(s) from (
+    select participant_code as code, activity, started_at, signal_at, outcome, knew_intention, recalled_first_step, signal_feeling,
+      response_seconds, study_condition, study_day, signal_route, activation
+    from public.relevo_sessions order by started_at desc limit 30) s), '[]'::json),
+  'answers', coalesce((select json_agg(a) from (
+    select participant_code as code, question, answer, created_at from public.relevo_answers order by created_at desc limit 30) a), '[]'::json),
+  'conditions', coalesce((select json_agg(y) from (
+    select study_condition as condition, count(*) as relevos, count(signal_at) as senales,
+      count(*) filter (where knew_intention = 'yes') as si, count(*) filter (where knew_intention = 'partly') as medias, count(*) filter (where knew_intention = 'no') as no,
+      count(*) filter (where recalled_first_step = 'yes') as recordo, count(*) filter (where outcome = 'started') as comenzo
+    from public.relevo_sessions where study_condition is not null group by study_condition order by study_condition) y), '[]'::json),
+  'daily', coalesce((select json_agg(d order by d.day) from (
+    select (started_at at time zone 'America/Santiago')::date as day, count(*) as relevos, count(signal_at) as senales
+    from public.relevo_sessions where started_at > now() - interval '21 days' group by 1) d), '[]'::json),
+  'feed', coalesce((select json_agg(f) from (
+    select * from (
+      select participant_code as code, event_type as what, created_at from public.relevo_events
+      union all select participant_code, event, created_at from public.relevo_app_events where event not in ('pantalla', 'preparar_paso', 'permisos')
+    ) z order by created_at desc limit 40) f), '[]'::json),
+  'messages', coalesce((select json_agg(m) from (
+    select msg.id, msg.created_at, msg.target_code, msg.title, msg.body,
+      (select count(*) from public.relevo_message_receipts r where r.message_id = msg.id and r.delivered_at is not null) as entregados,
+      (select count(*) from public.relevo_message_receipts r where r.message_id = msg.id and r.opened_at is not null) as abiertos
+    from public.relevo_messages msg order by msg.created_at desc limit 15) m), '[]'::json)
+) as snapshot;`;
+
+  const CONDITIONS = { A: 'Junto al primer paso', B: 'Otro lugar de la casa', C: 'En el teléfono' };
+  const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj' };
+  const OUTCOMES = { started: 'Comenzó', later: 'Lo dejó para después', changed: 'Cambió de idea', not_answered: 'Sin respuesta' };
+  const KNEW = { yes: 'Sí', partly: 'A medias', no: 'No' };
+  const FEELING = { good: 'Bien', neutral: 'Normal', bad: 'Mal' };
+  const EVENTS = {
+    armed: 'Activó un relevo', target_entered: 'Entró a una app elegida', target_left: 'Salió de una app elegida',
+    signal_emitted: 'Sonó la señal', signal_failed: 'La señal no sonó', signal_ended: 'La señal terminó sola',
+    signal_interrupted: 'Se cortó la señal', disarmed: 'Desactivó el relevo', silenced: 'Silenció la señal',
+    responded: 'Respondió', closed: 'Cerró el relevo', monitor_paused: 'Se pausó el conteo', monitor_resumed: 'Se retomó el conteo',
+    app_abierta: 'Abrió la app', app_cerrada: 'Cerró la app', consentimiento_aceptado: 'Aceptó el consentimiento',
+    relevo_automatico: 'Se activó solo', activacion_automatica: 'Cambió la activación automática',
+    mensaje_recibido: 'Recibió un mensaje', mensaje_abierto: 'Abrió un mensaje', mensaje_sin_notificaciones: 'Recibió un mensaje sin notificaciones',
+    preparar_abierto: 'Empezó a preparar', preparar_cerrado: 'Cerró la preparación', actividad_elegida: 'Eligió una actividad',
+    prueba_de_sonido: 'Probó el sonido', video_como_funciona: 'Vio el video', aviso_semanal_enviado: 'Recibió el aviso semanal'
+  };
+  const COUNTING = ['armed', 'target_entered', 'target_left', 'monitor_resumed'];
+
+  const $ = (id) => document.getElementById(id);
+  let mcp = null, data = null, lastOk = 0, busy = false, lastError = null;
+
+  const fmtDate = new Intl.DateTimeFormat('es-CL', { timeZone: TZ, day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  const fmtDay = new Intl.DateTimeFormat('es-CL', { timeZone: TZ, day: 'numeric', month: 'numeric' });
+  const when = (iso) => { if (!iso) return '—'; const d = new Date(iso); return isNaN(d) ? '—' : fmtDate.format(d); };
+  function ago(iso) {
+    if (!iso) return '—';
+    const s = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 1000));
+    if (s < 60) return 'hace ' + s + ' s';
+    const m = Math.round(s / 60); if (m < 60) return 'hace ' + m + ' min';
+    const h = Math.round(m / 60); if (h < 36) return 'hace ' + h + ' h';
+    return when(iso);
+  }
+  function el(tag, props, children) {
+    const n = document.createElement(tag);
+    if (props) for (const k in props) { if (k === 'text') n.textContent = props[k]; else if (k === 'class') n.className = props[k]; else n.setAttribute(k, props[k]); }
+    (children || []).forEach((c) => n.append(c instanceof Node ? c : document.createTextNode(c == null ? '' : String(c))));
+    return n;
+  }
+  const td = (text, cls) => el('td', { class: cls || '', text: text == null || text === '' ? '—' : String(text) });
+  function emptyRow(tbody, cols, text) { tbody.replaceChildren(el('tr', null, [el('td', { colspan: String(cols), class: 'empty', text })])); }
+
+  function autoOn(p) { return typeof p.auto === 'string' && p.auto.startsWith('si'); }
+  function stateOf(p) {
+    const e = p.last_event;
+    if (p.last_signal_at && !p.last_outcome && e !== 'disarmed' && e !== 'closed') return { key: 'awaiting', label: 'Espera responder' };
+    if (COUNTING.includes(e)) return { key: 'counting', label: 'Contando' };
+    if (e === 'monitor_paused') return { key: 'paused', label: 'En pausa' };
+    if (autoOn(p)) return { key: 'auto', label: 'Se activará solo' };
+    return { key: 'idle', label: p.relevos ? 'Sin relevo activo' : 'Sin relevos' };
+  }
+  function prettyQuestion(q) {
+    let m = /^semana(\d)_(.+)$/.exec(q);
+    const names = { costo_preparar: 'costo de preparar (1–5)', molestia_senal: 'molestia de la señal (1–5)', relacion_lugar: 'relación con el lugar (1–5)', comentario: 'comentario', omitida: 'omitida' };
+    if (m) return 'Semana ' + m[1] + ' · ' + (names[m[2]] || m[2].replace(/_/g, ' '));
+    if (q.startsWith('cierre_')) return 'Cierre · ' + q.slice(7).replace(/_/g, ' ');
+    const map = { opinion_rapida: 'Opinión rápida (1–5)', opinion_estrellas: 'Estrellas a la app', opinion_comentario: 'Comentario sobre la app',
+      reporte_problema: 'Reporte de problema', reporte_registro: 'Registro técnico', prueba_inicio: 'Inicio de la prueba', prueba_fin: 'Fin de la prueba', tu_semana_ayudo: 'Tu semana: qué ayudó' };
+    return map[q] || q.replace(/_/g, ' ');
+  }
+
+  // ---- Lectura del resultado de execute_sql: el JSON va entre marcas de datos no confiables ----
+  function rowsFrom(res) {
+    let p = res && res.payload;
+    let text = typeof p === 'string' ? p : (p && typeof p.result === 'string' ? p.result : null);
+    if (text == null && res && Array.isArray(res.content)) text = res.content.map((c) => c.text || '').join('');
+    if (text == null) throw { code: 'parse', message: 'Respuesta vacía de Supabase.' };
+    if (text.trim().startsWith('{')) { try { const o = JSON.parse(text); if (typeof o.result === 'string') text = o.result; } catch (e) {} }
+    const open = text.indexOf('<untrusted-data-');
+    if (open >= 0) { const start = text.indexOf('>', open) + 1; const end = text.indexOf('</untrusted-data-', start); text = text.slice(start, end > 0 ? end : undefined); }
+    const a = text.indexOf('['), b = text.lastIndexOf(']');
+    if (a < 0 || b < a) throw { code: 'parse', message: 'No se pudo leer la respuesta de Supabase.' };
+    return JSON.parse(text.slice(a, b + 1));
+  }
+  async function runSql(query) {
+    const res = await mcp.callTool(SERVER, TOOL, { project_id: PROJECT, query }, { cache: false });
+    return rowsFrom(res);
+  }
+  const sqlText = (s) => "'" + String(s).replace(/\u0000/g, '').replace(/'/g, "''") + "'";
+
+  function explain(err) {
+    const code = err && err.code;
+    switch (code) {
+      case 'needs_reauth': return ['La conexión con Supabase venció', 'Vuelve a conectarla en claude.ai, en Ajustes › Conectores, y recarga la página.'];
+      case 'server_not_connected': return ['Falta el conector de Supabase', 'Agrégalo en claude.ai, en Ajustes › Conectores, con la cuenta del proyecto Relevo.'];
+      case 'selection_required': return ['Hay más de una conexión de Supabase', 'Elige cuál usar en el aviso de claude.ai y recarga la página.'];
+      case 'not_in_manifest': return ['La página no tiene permiso para leer Supabase', 'Recárgala y permite el acceso cuando claude.ai lo pregunte.'];
+      case 'blocked_by_policy': case 'approval_required': return ['Tu organización no permite esta consulta', 'Pide que se habilite el conector de Supabase para esta página.'];
+      case 'server_unavailable': return ['Supabase no respondió', 'Se vuelve a intentar en la próxima actualización.'];
+      case 'tool_error': return ['La consulta falló', (err.message || '').slice(0, 240)];
+      default: return ['No se pudo actualizar', (err && err.message ? err.message : 'Error desconocido') + (code ? ' (' + code + ')' : '')];
+    }
+  }
+  function setLive(state) {
+    const dot = $('live-dot'), text = $('live-text');
+    dot.className = 'dot' + (state === 'ok' ? ' on' : state === 'error' ? ' err' : '');
+    if (state === 'loading' && !lastOk) text.textContent = 'Cargando…';
+  }
+  function tickLive() {
+    if (!lastOk) return;
+    const s = Math.round((Date.now() - lastOk) / 1000);
+    $('live-text').textContent = (lastError ? 'Sin conexión · ' : 'En vivo · ') + 'actualizado hace ' + (s < 60 ? s + ' s' : Math.round(s / 60) + ' min');
+  }
+  function showBanner(title, text, isError) {
+    const b = $('banner');
+    b.className = 'banner' + (isError ? ' error' : '');
+    b.replaceChildren(el('strong', { text: title }), el('span', { text }));
+    b.hidden = false;
+  }
+
+  async function refresh() {
+    if (!mcp || busy) return;
+    busy = true; setLive('loading');
+    try {
+      const rows = await runSql(SNAPSHOT_SQL);
+      let snap = rows[0] && rows[0].snapshot;
+      if (typeof snap === 'string') snap = JSON.parse(snap);
+      data = snap; lastOk = Date.now(); lastError = null;
+      $('banner').hidden = true;
+      render(); setLive('ok'); tickLive();
+    } catch (err) {
+      lastError = err; setLive('error');
+      const [t, d] = explain(err);
+      showBanner(t, d + (data ? ' Se muestran los últimos datos.' : ''), true);
+      if (err && err.retryable && !refresh.retried) { refresh.retried = true; setTimeout(() => { busy = false; refresh(); }, 2000 + Math.random() * 2000); return; }
+    } finally { refresh.retried = false; busy = false; }
+  }
+
+  // ---- Dibujo ----
+  function render() {
+    const P = data.participants || [], T = data.totals || {};
+    const states = P.map(stateOf);
+    $('k-participants').textContent = P.length;
+    $('k-online').textContent = P.filter((p) => p.last_seen && Date.now() - new Date(p.last_seen) < 15 * 60000).length;
+    $('k-counting').textContent = states.filter((s) => s.key === 'counting').length;
+    $('k-awaiting').textContent = states.filter((s) => s.key === 'awaiting').length;
+    $('k-today').textContent = T.relevos_hoy ?? 0;
+    $('k-answered').textContent = (T.respondidos ?? 0) + ' / ' + (T.senales ?? 0);
+    $('k-auto').textContent = T.automaticos ?? 0;
+    renderParticipants(P, states); renderTargets(P); renderSessions(data.sessions || []); renderAnswers(data.answers || []);
+    renderMessages(data.messages || []); renderConditions(data.conditions || []); renderDaily(data.daily || []); renderFeed(data.feed || []);
+  }
+  function renderParticipants(P, states) {
+    const tb = $('t-participants');
+    if (!P.length) return emptyRow(tb, 8, 'Todavía no hay participantes. Aparecen cuando un teléfono acepta el consentimiento y envía sus primeros datos.');
+    tb.replaceChildren(...P.map((p, i) => {
+      const s = states[i];
+      const cond = p.condition ? p.condition + ' · ' + (CONDITIONS[p.condition] || '') + (p.day != null ? ' · día ' + p.day : '') : 'Fuera de la prueba';
+      return el('tr', null, [
+        el('td', null, [el('span', { class: 'tag', text: p.code })]), td(p.name),
+        el('td', null, [el('span', { class: 'pill ' + s.key, text: s.label })]), td(cond),
+        td(p.respondidos + ' de ' + p.relevos + ' respondidos', 'nowrap'), td(autoOn(p) ? 'Encendida' : 'Apagada'),
+        td(p.version, 'mono nowrap'), td(ago(p.last_seen), 'nowrap')
+      ]);
+    }));
+  }
+  function renderTargets(P) {
+    const sel = $('f-target'), keep = sel.value;
+    const opts = [el('option', { value: 'all', text: 'Todos los participantes (' + P.filter((p) => p.user_id).length + ')' })];
+    P.filter((p) => p.user_id).forEach((p) => opts.push(el('option', { value: p.code, text: p.code + (p.name ? ' · ' + p.name : '') })));
+    sel.replaceChildren(...opts);
+    if ([...sel.options].some((o) => o.value === keep)) sel.value = keep;
+  }
+  function renderSessions(S) {
+    const tb = $('t-sessions');
+    if (!S.length) return emptyRow(tb, 10, 'Todavía no hay relevos.');
+    tb.replaceChildren(...S.map((s) => el('tr', null, [
+      td(when(s.started_at), 'nowrap'), el('td', null, [el('span', { class: 'tag', text: s.code })]), td(s.activity),
+      td(s.activation === 'auto' ? 'Solo' : 'A mano'),
+      td((s.study_condition ? s.study_condition + ' · ' : '') + (ROUTES[s.signal_route] || '—'), 'nowrap'),
+      td(s.signal_at ? (KNEW[s.knew_intention] || 'Sin responder') : 'No sonó aún'), td(s.signal_at ? (KNEW[s.recalled_first_step] || '—') : '—'),
+      td(OUTCOMES[s.outcome] || '—'), td(FEELING[s.signal_feeling] || '—'), td(s.response_seconds != null ? s.response_seconds + ' s' : '—', 'mono nowrap')
+    ])));
+  }
+  function renderAnswers(A) {
+    const tb = $('t-answers');
+    if (!A.length) return emptyRow(tb, 4, 'Todavía no hay respuestas.');
+    tb.replaceChildren(...A.map((a) => el('tr', null, [
+      td(when(a.created_at), 'nowrap'), el('td', null, [el('span', { class: 'tag', text: a.code })]), td(prettyQuestion(a.question)),
+      td(String(a.answer || '').slice(0, 280))
+    ])));
+  }
+  function renderMessages(M) {
+    const box = $('l-messages');
+    if (!M.length) { box.replaceChildren(el('p', { class: 'empty', text: 'Todavía no envías mensajes.' })); return; }
+    box.replaceChildren(...M.map((m) => el('div', { class: 'msg' }, [
+      el('strong', { text: m.title }), el('span', { text: m.body }),
+      el('span', { class: 'meta', text: 'Para ' + (m.target_code || 'todos') + ' · ' + when(m.created_at) + ' · llegó a ' + m.entregados + ' · abierto por ' + m.abiertos })
+    ])));
+  }
+  function renderConditions(C) {
+    const box = $('l-conditions');
+    if (!C.length) { box.replaceChildren(el('p', { class: 'empty', text: 'Aparece cuando empiece el testeo de 21 días.' })); return; }
+    box.replaceChildren(...C.map((c) => {
+      const total = Math.max(1, c.si + c.medias + c.no);
+      const seg = (cls, n) => { const s = el('span', { class: cls, title: n + ' de ' + total }); s.style.width = (100 * n / total) + '%'; return s; };
+      return el('div', { class: 'cond' }, [
+        el('div', { class: 'card-head' }, [el('strong', { text: c.condition + ' · ' + (CONDITIONS[c.condition] || '') }), el('span', { class: 'muted', text: c.senales + ' señales de ' + c.relevos + ' relevos' })]),
+        el('div', { class: 'bar', role: 'img', 'aria-label': 'Sí ' + c.si + ', a medias ' + c.medias + ', no ' + c.no }, [seg('yes', c.si), seg('part', c.medias), seg('no', c.no)]),
+        el('span', { class: 'muted', text: 'Recordó cómo empezar: ' + c.recordo + ' · Comenzó la actividad: ' + c.comenzo })
+      ]);
+    }));
+  }
+  function renderDaily(D) {
+    const box = $('c-daily');
+    const days = []; const today = new Date();
+    for (let i = 20; i >= 0; i--) { const d = new Date(today.getTime() - i * 86400000); days.push(new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(d)); }
+    const byDay = Object.fromEntries(D.map((d) => [String(d.day).slice(0, 10), d]));
+    const values = days.map((k) => byDay[k] || { relevos: 0, senales: 0 });
+    const max = Math.max(1, ...values.map((v) => v.relevos));
+    const W = 320, H = 130, L = 22, B = 18, bw = (W - L) / days.length;
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg'); svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', 'Relevos por día en los últimos 21 días; máximo ' + max);
+    const add = (name, attrs, text) => { const n = document.createElementNS(ns, name); for (const k in attrs) n.setAttribute(k, attrs[k]); if (text != null) n.textContent = text; svg.append(n); return n; };
+    [0, max].forEach((v) => { const y = H - B - (H - B - 8) * v / max; add('line', { x1: L, x2: W, y1: y, y2: y, stroke: 'var(--line)', 'stroke-width': 1 }); add('text', { x: L - 4, y: y + 3, 'text-anchor': 'end' }, v); });
+    values.forEach((v, i) => {
+      const x = L + i * bw + 1.5, h = (H - B - 8) * v.relevos / max, hs = (H - B - 8) * v.senales / max;
+      add('rect', { x, y: H - B - h, width: Math.max(1, bw - 3), height: h, fill: 'var(--accent-soft)', rx: 2 });
+      add('rect', { x, y: H - B - hs, width: Math.max(1, bw - 3), height: hs, fill: 'var(--accent)', rx: 2 });
+      if (i % 5 === 0 || i === values.length - 1) add('text', { x: x + bw / 2 - 1.5, y: H - 4, 'text-anchor': 'middle' }, fmtDay.format(new Date(days[i] + 'T12:00:00')));
+    });
+    box.replaceChildren(svg, el('div', { class: 'legend' }, [el('span', null, [el('i', { style: 'background:var(--accent-soft)' }), 'Relevos']), el('span', null, [el('i', { style: 'background:var(--accent)' }), 'Con señal'])]));
+  }
+  function renderFeed(F) {
+    const ul = $('l-feed');
+    if (!F.length) { ul.replaceChildren(el('li', null, [el('span', { class: 'empty', text: 'Sin actividad todavía.' })])); return; }
+    ul.replaceChildren(...F.map((f) => el('li', null, [el('time', { text: ago(f.created_at).replace('hace ', '') }), el('span', { class: 'tag', text: f.code }), el('span', { text: EVENTS[f.what] || String(f.what).replace(/_/g, ' ') })])));
+  }
+
+  // ---- Envío de notificaciones ----
+  const title = $('f-title'), body = $('f-body'), send = $('f-send');
+  function updateCounts() {
+    $('c-title').textContent = title.value.length + ' de 60'; $('c-body').textContent = body.value.length + ' de 400';
+    send.disabled = !mcp || !title.value.trim() || !body.value.trim();
+  }
+  title.addEventListener('input', updateCounts); body.addEventListener('input', updateCounts);
+  function result(text, isError) { const r = $('f-result'); r.className = 'toast' + (isError ? ' error' : ''); r.textContent = text; r.hidden = false; }
+  $('send-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (send.disabled) return;
+    const target = $('f-target').value;
+    const n = (data && data.participants || []).filter((p) => p.user_id).length;
+    $('f-confirm-text').textContent = target === 'all'
+      ? '¿Enviar «' + title.value.trim() + '» a todos los participantes (' + n + ')? Les llegará como notificación.'
+      : '¿Enviar «' + title.value.trim() + '» a ' + target + '? Le llegará como notificación.';
+    $('f-confirm').hidden = false; $('f-result').hidden = true;
+  });
+  $('f-confirm-no').addEventListener('click', () => { $('f-confirm').hidden = true; });
+  $('f-confirm-yes').addEventListener('click', async () => {
+    const yes = $('f-confirm-yes'); yes.disabled = true;
+    const target = $('f-target').value;
+    const p = (data && data.participants || []).find((x) => x.code === target);
+    const uuid = p && /^[0-9a-f-]{36}$/i.test(p.user_id || '') ? p.user_id : null;
+    if (target !== 'all' && !uuid) { result('No se encontró el teléfono de ese participante.', true); yes.disabled = false; return; }
+    const q = 'insert into public.relevo_messages (target_user_id, target_code, title, body) values (' +
+      (uuid ? sqlText(uuid) + '::uuid' : 'null') + ', ' + (uuid ? sqlText(target) : 'null') + ', ' +
+      sqlText(title.value.trim().slice(0, 60)) + ', ' + sqlText(body.value.trim().slice(0, 400)) + ') returning id;';
+    try {
+      await runSql(q);
+      $('f-confirm').hidden = true; title.value = ''; body.value = ''; updateCounts();
+      result('Enviado. Llega en 1 a 15 minutos.');
+      refresh();
+    } catch (err) {
+      const ambiguous = err && (err.code === 'server_unavailable' || err.code === 'upstream_error');
+      result(ambiguous ? 'No sabemos si se envió. Revisa «Mensajes enviados» antes de intentarlo de nuevo.' : explain(err).join('. '), true);
+      $('f-confirm').hidden = true;
+      refresh();
+    } finally { yes.disabled = false; }
+  });
+
+  // ---- Arranque ----
+  $('refresh').addEventListener('click', () => refresh());
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && Date.now() - lastOk > REFRESH_MS) refresh(); });
+  setInterval(() => { if (document.visibilityState === 'visible') refresh(); }, REFRESH_MS);
+  setInterval(tickLive, 1000);
+  updateCounts();
+
+  const use = window.claude && typeof window.claude.use === 'function' ? window.claude.use('mcp') : Promise.resolve(null);
+  use.then((ns) => {
+    mcp = ns;
+    if (!mcp) {
+      $('live-text').textContent = 'Sin conexión';
+      showBanner('Esta página necesita tu conexión de Supabase', 'Ábrela desde claude.ai con el conector de Supabase conectado. Los datos no se guardan en la página: se leen en vivo cada vez.', false);
+      return;
+    }
+    updateCounts(); refresh();
+  }).catch(() => { $('live-text').textContent = 'Sin conexión'; });
+})();
+</script>

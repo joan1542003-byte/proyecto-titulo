@@ -69,6 +69,8 @@
 | 29 sep. | Corrección | Ordenar y desglosar mejor la diapositiva 14 con el formato de la carta Gantt del respaldo, que el autor hizo visible como referencia. | Diapositiva 14 rehecha como carta Gantt desde hoy hasta el examen: 13 tareas con sus fechas, agrupadas en preparar, probar, decidir y defender, con el para qué de cada etapa. La carta Gantt de referencia volvió a omitirse al presentar | — |
 | 30 sep. | Corrección | Cambiar los textos de la carta Gantt: «Probar» es en realidad el testeo de 21 días con el usuario; mostrar qué más se hará en ese tiempo y los detalles de cada tarea, no solo el hecho; «Lugar y objeto decididos» no dice nada. | Título «Primero el testeo, después el diseño final.»; etapas «Preparación», «Testeo de 21 días», «Análisis» y «Entrega y examen»; una línea de detalle por tarea; seguimiento y objeto en paralelo al testeo; semana de Pruebas Solemnes marcada; hito «Diseño final: qué objeto suena y dónde se deja» | — |
 | 30 sep. | Información y corrección | Informar que esta semana compra los materiales del testeo. Pedir los textos en tercera persona («el usuario elige…»), cambiar «pruebo el reloj y el llavero» por «Testeo de objeto físico; forma, materiales y costos» y quitar «reviso el consentimiento». | Diapositiva 14 con la compra de materiales (30 de septiembre al 4 de octubre), textos en tercera persona, el objeto con las palabras del autor y sin la revisión del consentimiento | — |
+| 30 sep. | Consulta y encargo | Preguntar si Relevo podría activarse siempre solo al usar las apps y pedir agregarlo; pedir un panel de administración en un sitio (GitHub Pages u otro) con respuestas, usuarios activos, estadísticas en tiempo real y envío de notificaciones. | Tres preguntas antes de construir: cómo activarse solo, cómo enviar notificaciones y dónde publicar el panel | — |
+| 30 sep. | Decisión | Activación automática opcional, también en el testeo; notificaciones con el Supabase del proyecto, enviadas desde su computador; panel como página privada en claude.ai. | [Android 2.16](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md) con activación automática, mensajes y consentimiento v10; tablas de mensajes en Supabase; [panel privado](../06_desarrollo_y_factibilidad/panel-admin/README.md). Probado en emulador: se activa solo, suena, llega el mensaje y se registran su llegada y su apertura | D-095 y D-096 |
 
 ## Lo que muestra el registro
 
@@ -79,6 +81,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Activación automática y panel
+
+- **Qué cambió:** se registraron el pedido de activación automática y del panel con notificaciones, y las decisiones del autor (D-095 y D-096).
+- **Cómo estaba antes:** el registro terminaba en la diapositiva 14 en tercera persona.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-09-30 — Textos de la carta Gantt
 

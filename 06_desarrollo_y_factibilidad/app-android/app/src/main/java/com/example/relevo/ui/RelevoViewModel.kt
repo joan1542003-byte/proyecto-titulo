@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import cl.udp.relevo.BuildConfig
+import com.example.relevo.data.AutoModeStore
 import com.example.relevo.data.CustomActivity
 import com.example.relevo.data.CustomActivityStore
 import com.example.relevo.data.HistoryEntry
@@ -24,6 +25,7 @@ import com.example.relevo.data.Settings
 import com.example.relevo.data.SettingsStore
 import com.example.relevo.data.StudyStore
 import com.example.relevo.data.SyncStatus
+import com.example.relevo.domain.AutoMode
 import com.example.relevo.domain.Interests
 import com.example.relevo.domain.NextStepRule
 import com.example.relevo.domain.Reminder
@@ -37,6 +39,7 @@ import com.example.relevo.monitor.AppUsageMonitorService
 import com.example.relevo.monitor.BackgroundAccess
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.monitor.InstalledAppsRepository
+import com.example.relevo.monitor.ProjectMessages
 import com.example.relevo.monitor.ReturnNotice
 import com.example.relevo.monitor.UsageAccess
 import com.example.relevo.monitor.UsageAfterSignal
@@ -71,6 +74,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val profileStore = ProfileStore(application)
   private val routeStore = RouteStore(application)
   private val settingsStore = SettingsStore(application)
+  private val autoModeStore = AutoModeStore(application)
   private val signalPlayer = SignalPlayer(application)
   private val appsRepository = InstalledAppsRepository(application)
   private val experiencePreferences = application.getSharedPreferences("relevo_experience", Application.MODE_PRIVATE)
@@ -125,6 +129,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   private val _settings = MutableStateFlow(settingsStore.load())
   val settings: StateFlow<Settings> = _settings.asStateFlow()
+
+  /** Activación automática encendida (D-095). */
+  private val _autoMode = MutableStateFlow(autoModeStore.enabled)
+  val autoMode: StateFlow<Boolean> = _autoMode.asStateFlow()
 
   private val _routeSuggestion = MutableStateFlow<RouteSuggestion?>(null)
   val routeSuggestion: StateFlow<RouteSuggestion?> = _routeSuggestion.asStateFlow()
@@ -187,6 +195,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (Participation.canUse(application)) {
       refreshDashboard()
       if (_settings.value.returnNotice) ReturnNotice.schedule(application)
+      ProjectMessages.schedule(application)
     }
     onAppResumed()
   }
@@ -287,13 +296,45 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (current.status == ReminderStatus.SIGNALLED && !current.signalEnded && !AppUsageMonitorService.isCounting) {
       updateValue(current.endSignal())
     }
+    if (current.status != ReminderStatus.WAITING) startWatchingIfNeeded()
     if (hasCurrentConsent()) {
       viewModelScope.launch(Dispatchers.IO) {
         UsageAfterSignal.update(getApplication(), researchLog)
         syncRemote()
+        ProjectMessages.check(getApplication())
       }
     } else refreshSyncStatus()
   }
+
+  // ---- Activación automática (D-095) ----
+
+  /**
+   * Enciende o apaga la activación automática. Usa el último relevo: sin uno completo que repetir, no se
+   * enciende y devuelve false. Al encenderla, Relevo espera en segundo plano a que se abra una de sus apps.
+   */
+  fun setAutoMode(enabled: Boolean): Boolean {
+    val last = _lastReminder.value
+    if (enabled && !AutoMode.usable(last)) return false
+    autoModeStore.enabled = enabled
+    _autoMode.value = enabled
+    log("activacion_automatica", if (enabled) "si;${last?.activity.orEmpty()};${last?.selectedApps?.joinToString(",") { it.label }.orEmpty()}" else "no")
+    if (enabled) startWatchingIfNeeded()
+    else if (_reminder.value.status != ReminderStatus.WAITING) {
+      getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+    }
+    return true
+  }
+
+  /** Con la activación automática encendida, el servicio espera en segundo plano si no está contando ni esperando. */
+  private fun startWatchingIfNeeded() {
+    val app = getApplication<Application>()
+    if (!autoModeStore.enabled || !Participation.canUse(app) || !UsageAccess.isGranted(app)) return
+    if (AppUsageMonitorService.isCounting || AppUsageMonitorService.isWatching) return
+    runCatching { ContextCompat.startForegroundService(app, Intent(app, AppUsageMonitorService::class.java)) }
+  }
+
+  /** Terminó un relevo: el siguiente automático espera la pausa desde ahora. */
+  private fun markRelevoClosed() { autoModeStore.lastClosedAt = System.currentTimeMillis() }
 
   // ---- Prueba de 21 días (protocolo 02) ----
 
@@ -396,6 +437,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       participantCode = _reminder.value.participantCode,
       consentAccepted = hasCurrentConsent(),
       localOnly = false,
+      autoActivated = false,
       sessionId = "",
       observedUsageSeconds = 0,
       signalDelivered = false,
@@ -443,6 +485,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     update { copy(participantCode = participantCode, consentAccepted = accepted, localOnly = false, status = ReminderStatus.DRAFT) }
     if (accepted) {
       log("consentimiento_aceptado", ResearchLogStore.CONSENT_VERSION)
+      ProjectMessages.schedule(getApplication())
       if (_profile.value.name.isNotBlank()) remoteSync.markNamePending()
       beforeConsent.forEach { (event, detail) -> researchLog.logApp(participantCode, event, detail) }
       beforeConsent.clear()
@@ -524,6 +567,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       signalRoute = study.condition?.routeFor(_reminder.value.signalRoute) ?: _reminder.value.signalRoute,
       studyCondition = study.condition?.code?.toString().orEmpty(),
       studyDay = if (study.active) study.day else -1,
+      autoActivated = false,
     )
     val next = prepared.arm(UUID.randomUUID().toString())
     updateValue(next)
@@ -553,7 +597,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun disarm() {
-    getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+    // Con la activación automática, el servicio no se detiene: al ver el relevo desactivado vuelve a esperar.
+    if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+    markRelevoClosed()
     signalPlayer.stop()
     val current = _reminder.value
     historyStore.add(current)
@@ -594,6 +640,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
    */
   fun completeEvaluation(outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null, feeling: String? = null) {
     AppUsageMonitorService.cancelSignalNotification(getApplication())
+    markRelevoClosed()
     historyStore.markOutcome(_reminder.value.sessionId, outcome)
     _history.value = historyStore.load()
     markGuide("guide_decide_done")
@@ -617,12 +664,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun reset() {
-    getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+    if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+    if (_reminder.value.sessionId.isNotBlank()) markRelevoClosed()
     signalPlayer.stop()
     _reminder.value.takeIf { it.activity.isNotBlank() && it.selectedApps.isNotEmpty() }?.let { finished ->
       val configuration = finished.copy(
         sessionId = "", observedUsageSeconds = 0, signalDelivered = false, status = ReminderStatus.DRAFT,
-        signalAt = 0L, signalEnded = false, studyCondition = "", studyDay = -1,
+        signalAt = 0L, signalEnded = false, studyCondition = "", studyDay = -1, autoActivated = false,
       )
       lastStore.save(configuration)
       _lastReminder.value = configuration
@@ -637,6 +685,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     store.save(_reminder.value)
     _remainingSeconds.value = 0
     refreshStudy()
+    startWatchingIfNeeded()
   }
 
   // ---- Perfil (P1–P3) y ruta (R1–R3): solo en el teléfono ----
@@ -840,6 +889,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         profileStore.clear()
         routeStore.clear()
         ReturnNotice.cancel(getApplication())
+        ProjectMessages.clear(getApplication())
+        autoModeStore.clear()
+        _autoMode.value = false
         settingsStore.clear()
         store.clear()
         lastStore.clear()

@@ -174,6 +174,14 @@ En la rama `android-2.7`, a pedido del autor:
 - **Rama:** `main` avanzó hasta `android-2.7`, sin conflictos. Desde el 29 de septiembre, ambas tienen el mismo trabajo.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
 
+## Actualización del 30 de septiembre de 2026
+
+- **Android 2.16 (D-095 y D-096):** activación automática opcional, también en el testeo, y mensajes del proyecto que llegan como notificación. Consentimiento v10. Probada en emulador; falta el teléfono real ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md)).
+- **Panel privado:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), en claude.ai. Lee Supabase con el conector del autor y envía mensajes ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). Para cambiarlo hay que volver a publicarlo en la misma dirección.
+- **Supabase:** migración `relevo_auto_activation_and_messages`, con la columna `activation` y las tablas `relevo_messages` y `relevo_message_receipts`, con RLS.
+- **Presentación:** la diapositiva 14 es una carta Gantt de lo que sigue, en tercera persona ([documento 24](../10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md)).
+- **Resumen del día:** [bitácora del 30 de septiembre](bitacora-trabajo-con-ia-2026-09-30.md).
+
 ## Seguridad, privacidad y GitHub
 
 El README informó que el repositorio fue público al 9 de septiembre de 2026; esa visibilidad debe verificarse antes de cargar material nuevo. No subir notas personales, consentimientos firmados, nombres, contactos de participantes, registros brutos identificables ni archivos locales que no estén preparados para difusión. Mantener solo corpus anonimizado autorizado. No guardar credenciales, `.env`, `local.properties`, claves privadas o copias de bases de datos. El archivo `local.properties.example` es una plantilla, no una credencial.
@@ -185,6 +193,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Actualización del 30 de septiembre
+
+- **Qué cambió:** se añadieron Android 2.16, el panel privado, la migración de Supabase y la carta Gantt de la presentación.
+- **Cómo estaba antes:** la última actualización era la del 29 de septiembre.
+- **Por qué:** pedidos del autor del 30 de septiembre (D-095 y D-096).
 
 ### 2026-09-29 — Rama principal
 

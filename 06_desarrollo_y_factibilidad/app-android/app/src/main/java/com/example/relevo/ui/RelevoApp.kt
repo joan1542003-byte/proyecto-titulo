@@ -134,6 +134,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   val routeSuggestion by viewModel.routeSuggestion.collectAsState()
   val changedRouteInterest by viewModel.changedRouteInterest.collectAsState()
   val askTurnOffReturn by viewModel.askTurnOffReturn.collectAsState()
+  val autoMode by viewModel.autoMode.collectAsState()
   val prepareRequest by LaunchRequests.prepareLast.collectAsState()
   val context = LocalContext.current
   val reduce = rememberReduceMotion()
@@ -339,6 +340,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                       routes = routes, acknowledgement = acknowledgement, returnDismissedFor = returnDismissedFor,
                       quickFeedbackDue = quickFeedbackDue, onQuickFeedback = viewModel::submitQuickFeedback, onFeedback = { push(Route.FEEDBACK) },
                       guided = guide.prepare,
+                      autoMode = autoMode, onAutoModeOff = { viewModel.setAutoMode(false) },
                       changedRouteInterest = changedRouteInterest, reselect = reselect, actions = homeActions,
                       onChangeRoute = { interest -> viewModel.clearChangedRoute(); acknowledgement = null; routeEditInterest = interest; push(Route.ROUTE_EDIT) },
                     )
@@ -424,7 +426,10 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   },
                   onBack = { pop() },
                 )
-                Route.NOTICES -> NoticesScreen(settings, onChange = viewModel::updateSettings, onBack = { pop() })
+                Route.NOTICES -> NoticesScreen(
+                  settings, onChange = viewModel::updateSettings, onBack = { pop() },
+                  autoMode = autoMode, lastReminder = lastReminder, onAutoMode = viewModel::setAutoMode,
+                )
                 Route.APPEARANCE -> AppearanceScreen(settings, onChange = viewModel::updateSettings, onBack = { pop() })
                 Route.PERMISSIONS -> PermissionsScreen(usageAccess, backgroundUnrestricted, viewModel::openUsageAccessSettings, viewModel::requestBackgroundAccess, onBack = { pop() })
                 Route.HISTORY -> HistoryScreen(history, customActivities, onBack = { pop() })

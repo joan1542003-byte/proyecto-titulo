@@ -45,6 +45,7 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       signalAt = preferences.getLong("signal_at", 0L),
       signalEnded = preferences.getBoolean("signal_ended", false),
       localOnly = preferences.getBoolean("local_only", false),
+      autoActivated = preferences.getBoolean("auto_activated", false),
     )
 
   fun save(reminder: Reminder) {
@@ -69,6 +70,7 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       .putLong("signal_at", reminder.signalAt)
       .putBoolean("signal_ended", reminder.signalEnded)
       .putBoolean("local_only", reminder.localOnly)
+      .putBoolean("auto_activated", reminder.autoActivated)
       .apply()
   }
 

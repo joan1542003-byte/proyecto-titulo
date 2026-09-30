@@ -287,3 +287,58 @@ revoke all on all tables in schema analisis from public, anon, authenticated;
 alter table public.relevo_sessions drop constraint if exists relevo_sessions_signal_route_check;
 alter table public.relevo_sessions add constraint relevo_sessions_signal_route_check
   check (signal_route is null or signal_route in ('bluetooth', 'phone', 'watch'));
+
+-- 2026-09-30 · Relevo 2.16 (D-095): cada relevo registra si se activó a mano o solo.
+alter table public.relevo_sessions add column if not exists activation text not null default 'manual';
+alter table public.relevo_sessions drop constraint if exists relevo_sessions_activation_check;
+alter table public.relevo_sessions add constraint relevo_sessions_activation_check check (activation in ('manual', 'auto'));
+
+-- 2026-09-30 · Relevo 2.16 (D-096): mensajes del investigador, enviados desde el panel privado.
+-- target_user_id nulo: para todos. Cada teléfono lee solo los generales y los suyos.
+create table if not exists public.relevo_messages (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  target_user_id uuid references auth.users(id) on delete cascade,
+  target_code text check (target_code is null or char_length(target_code) between 3 and 24),
+  title text not null check (char_length(title) between 1 and 60),
+  body text not null check (char_length(body) between 1 and 400)
+);
+alter table public.relevo_messages enable row level security;
+revoke all on public.relevo_messages from anon, authenticated;
+grant select, delete on public.relevo_messages to authenticated;
+grant all on public.relevo_messages to service_role;
+drop policy if exists "participants read own or general messages" on public.relevo_messages;
+create policy "participants read own or general messages" on public.relevo_messages
+  for select to authenticated using (target_user_id is null or target_user_id = (select auth.uid()));
+drop policy if exists "participants delete own messages" on public.relevo_messages;
+create policy "participants delete own messages" on public.relevo_messages
+  for delete to authenticated using (target_user_id = (select auth.uid()));
+create index if not exists relevo_messages_created_at_idx on public.relevo_messages (created_at);
+create index if not exists relevo_messages_target_user_id_idx on public.relevo_messages (target_user_id);
+
+-- Cuándo llegó y cuándo se abrió cada mensaje en cada teléfono.
+create table if not exists public.relevo_message_receipts (
+  message_id uuid not null references public.relevo_messages(id) on delete cascade,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  participant_code text not null check (char_length(participant_code) between 3 and 24),
+  delivered_at timestamptz,
+  opened_at timestamptz,
+  primary key (message_id, user_id)
+);
+alter table public.relevo_message_receipts enable row level security;
+revoke all on public.relevo_message_receipts from anon, authenticated;
+grant select, insert, update, delete on public.relevo_message_receipts to authenticated;
+grant all on public.relevo_message_receipts to service_role;
+drop policy if exists "participants read own receipts" on public.relevo_message_receipts;
+create policy "participants read own receipts" on public.relevo_message_receipts
+  for select to authenticated using ((select auth.uid()) = user_id);
+drop policy if exists "participants insert own receipts" on public.relevo_message_receipts;
+create policy "participants insert own receipts" on public.relevo_message_receipts
+  for insert to authenticated with check ((select auth.uid()) = user_id);
+drop policy if exists "participants update own receipts" on public.relevo_message_receipts;
+create policy "participants update own receipts" on public.relevo_message_receipts
+  for update to authenticated using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
+drop policy if exists "participants delete own receipts" on public.relevo_message_receipts;
+create policy "participants delete own receipts" on public.relevo_message_receipts
+  for delete to authenticated using ((select auth.uid()) = user_id);
+create index if not exists relevo_message_receipts_user_id_idx on public.relevo_message_receipts (user_id);

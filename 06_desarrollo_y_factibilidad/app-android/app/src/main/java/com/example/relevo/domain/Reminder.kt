@@ -41,6 +41,8 @@ data class Reminder(
   val signalEnded: Boolean = false,
   /** Se usa sin participar en la prueba (A2): funciona igual, sin código ni registro del estudio. */
   val localOnly: Boolean = false,
+  /** Se activó solo al abrir una app elegida (activación automática, D-095). */
+  val autoActivated: Boolean = false,
 ) {
   val selectedApps: List<TrackedApp>
     get() = targetApps.ifEmpty { if (targetPackage.isNotBlank()) listOf(TrackedApp(targetPackage, targetAppLabel)) else emptyList() }

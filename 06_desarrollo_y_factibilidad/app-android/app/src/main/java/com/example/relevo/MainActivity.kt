@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.example.relevo.monitor.ProjectMessages
 import com.example.relevo.monitor.ReturnNotice
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -13,6 +14,7 @@ class MainActivity : ComponentActivity() {
     super.onCreate(savedInstanceState)
     enableEdgeToEdge()
     LaunchRequests.handle(intent)
+    messageOpened(intent)
     setContent { MainNavigation() }
   }
 
@@ -20,6 +22,15 @@ class MainActivity : ComponentActivity() {
     super.onNewIntent(intent)
     setIntent(intent)
     LaunchRequests.handle(intent)
+    messageOpened(intent)
+  }
+
+  /** Se abrió la app desde un mensaje del proyecto (D-096): queda registrado cuándo. */
+  private fun messageOpened(intent: Intent?) {
+    val id = intent?.getStringExtra(ProjectMessages.EXTRA_MESSAGE_ID) ?: return
+    intent.removeExtra(ProjectMessages.EXTRA_MESSAGE_ID)
+    val context = applicationContext
+    Thread { runCatching { ProjectMessages.opened(context, id) } }.start()
   }
 }
 

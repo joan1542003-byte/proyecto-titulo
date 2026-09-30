@@ -44,8 +44,13 @@
             android:foregroundServiceType="specialUse">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="Cuenta el tiempo en las aplicaciones elegidas mientras un relevo está activo." />
+                android:value="Cuenta el tiempo en las aplicaciones elegidas mientras un relevo está activo y, si la persona enciende la activación automática, detecta cuándo abre esas aplicaciones para empezar a contar." />
         </service>
+        <!-- Mensajes del proyecto (D-096): revisión periódica con conexión. -->
+        <service
+            android:name="com.example.relevo.monitor.MessageCheckJob"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
         <receiver
             android:name="com.example.relevo.monitor.ReturnNoticeReceiver"
             android:exported="false" />

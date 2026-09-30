@@ -37,9 +37,14 @@ La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a co
 
 **Estado al 25 de septiembre:** los cinco puntos están implementados en [Android 2.7](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md) y se comprobaron en emulador con datos ficticios. La secuencia se asigna en la sesión inicial desde **Privacidad y datos → Configurar la prueba**. El texto del cierre del día 21 y los extremos de las escalas son una propuesta pendiente de revisión (D-080). Falta la prueba técnica en el teléfono y el parlante que se usarán.
 
+**Desde la 2.16 (30 de septiembre):**
+
+- **Activación automática (D-095):** es opcional y empieza apagada. Si la persona la enciende, Relevo repite solo su último relevo cada vez que abre una de sus apps, con la condición de la semana, y espera 30 minutos después de cada relevo. Cada relevo registra si se activó a mano o solo; el análisis describe ambos por separado, porque en el automático la actividad no se eligió en ese momento.
+- **Mensajes del investigador (D-096):** se envían desde el panel privado y llegan como notificación. Se usan para coordinar (agendar, recordar la tarjeta semanal, resolver un problema técnico), no para recordar la actividad ni anunciar la señal. Cada mensaje, su hora de llegada y su hora de apertura quedan registrados y se consideran en el análisis.
+
 **Además:**
 
-- el [consentimiento](consentimiento-android-vigente-2026-09-23.md) de 21 días;
+- el [consentimiento](consentimiento-android-vigente-2026-09-23.md) de 21 días (v10 desde la 2.16);
 - la [ficha de registro](ficha-registro-protocolo-01.md) de la sesión inicial, adaptada.
 
 ## Procedimiento
@@ -137,7 +142,7 @@ Una falla de conexión, del parlante o de la app no cuenta como respuesta de la 
 
 ## Datos y conservación
 
-La app registra, con un código, la actividad, el primer paso, el lugar declarado, las apps elegidas, los tiempos, los momentos de señal y respuesta, las respuestas a las preguntas y el uso de las apps elegidas alrededor de la señal. No registra el contenido de otras apps, mensajes ni fotos. El nombre del perfil queda en el teléfono.
+La app registra, con un código, la actividad, el primer paso, el lugar declarado, las apps elegidas, los tiempos, los momentos de señal y respuesta, las respuestas a las preguntas y el uso de las apps elegidas alrededor de la señal. No registra el contenido de otras apps, mensajes ni fotos. El nombre del perfil queda en el teléfono. Desde la 2.16 también registra si cada relevo se activó a mano o solo, y cuándo llegó y se abrió cada mensaje del investigador; con la activación automática encendida, la app revisa qué app está abierta, solo su nombre, sin guardarlo.
 
 La persona puede pedir el borrado en cualquier momento, y todos los registros se eliminan, como máximo, el 30 de diciembre de 2026. Después solo quedan resultados agregados, sin vínculo con la persona.
 
@@ -154,11 +159,17 @@ Si la prueba técnica se atrasa, se corre todo el calendario y se registra el ca
 
 ## Referencias
 
-Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., & Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
+Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Activación automática y mensajes
+
+- **Qué cambió:** Materiales y Datos suman la activación automática opcional (D-095) y los mensajes del investigador (D-096), con reglas para usarlos sin alterar la prueba. La referencia usa «y» en vez de «&» (APA 7 en español).
+- **Cómo estaba antes:** cada relevo se activaba a mano y no había mensajes.
+- **Por qué:** el autor pidió ambas funciones, también durante el testeo.
 
 ### 2026-09-29 — Hipótesis nueva
 

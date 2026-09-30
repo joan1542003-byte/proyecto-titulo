@@ -13,15 +13,21 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import cl.udp.relevo.R
+import com.example.relevo.data.AutoModeStore
 import com.example.relevo.data.Participation
 import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RemoteSync
 import com.example.relevo.data.ResearchBackup
+import com.example.relevo.data.StudyStore
+import com.example.relevo.domain.AutoMode
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.domain.SignalRoute
 import com.example.relevo.domain.StudyCondition
+import com.example.relevo.domain.StudyPlan
+import java.time.LocalDate
+import java.util.UUID
 import kotlinx.coroutines.CompletableDeferred
 import com.example.relevo.signal.SignalPlayer
 import com.example.relevo.MainActivity
@@ -38,6 +44,8 @@ class AppUsageMonitorService : Service() {
   private lateinit var store: ReminderStore
   private lateinit var researchLog: ResearchLogStore
   private lateinit var signalPlayer: SignalPlayer
+  private lateinit var autoMode: AutoModeStore
+  private lateinit var lastConfiguration: ReminderStore
   private var monitorJob: Job? = null
   private var lastQueryMillis: Long = 0L
 
@@ -46,14 +54,26 @@ class AppUsageMonitorService : Service() {
     store = ReminderStore(this)
     researchLog = ResearchLogStore(this)
     signalPlayer = SignalPlayer(this)
+    autoMode = AutoModeStore(this)
+    lastConfiguration = ReminderStore(this, ReminderStore.LAST_CONFIGURATION)
     createNotificationChannels()
   }
 
   override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-    // Android exige mostrar la notificación de primer plano antes de detenerse, incluso si no se va a contar.
-    startInForeground()
     val reminder = store.load()
-    if (reminder.status != ReminderStatus.WAITING || !hasCurrentConsent()) {
+    val counting = reminder.status == ReminderStatus.WAITING
+    // Android exige mostrar la notificación de primer plano antes de detenerse, incluso si no se va a contar.
+    startInForeground(counting)
+    if (!hasCurrentConsent()) {
+      stopMonitoring()
+      return START_NOT_STICKY
+    }
+    if (!counting) {
+      // Activación automática (D-095): espera a que se abra una app del último relevo.
+      if (autoMode.enabled && UsageAccess.isGranted(this)) {
+        if (!isWatching) startWatching()
+        return START_STICKY
+      }
       stopMonitoring()
       return START_NOT_STICKY
     }
@@ -75,18 +95,20 @@ class AppUsageMonitorService : Service() {
 
   override fun onDestroy() {
     isCounting = false
+    isWatching = false
     monitorJob?.cancel()
     signalPlayer.stop()
     scope.cancel()
     super.onDestroy()
   }
 
-  private fun startInForeground() {
+  /** [counting]: hay un relevo contando. Si no, Relevo espera para activarse solo (D-095). */
+  private fun startInForeground(counting: Boolean = true) {
     val notification =
       NotificationCompat.Builder(this, CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle("Relevo está contando tu tiempo en las apps que elegiste")
-        .setContentText("Deja de contar cuando desactivas el relevo.")
+        .setContentTitle(if (counting) "Relevo está contando tu tiempo en las apps que elegiste" else "Relevo se activará solo")
+        .setContentText(if (counting) "Deja de contar cuando desactivas el relevo." else "Empieza a contar cuando abras las apps de tu último relevo.")
         .setContentIntent(openAppIntent())
         .setOngoing(true)
         .setSilent(true)
@@ -98,12 +120,14 @@ class AppUsageMonitorService : Service() {
 
   private fun stopMonitoring() {
     isCounting = false
+    isWatching = false
     ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE)
     stopSelf()
   }
 
   private fun startMonitoring() {
     monitorJob?.cancel()
+    isWatching = false
     isCounting = true
     val startedAt = System.currentTimeMillis()
     // Se revisa un periodo previo para saber qué app estaba abierta al empezar o al retomar.
@@ -128,6 +152,7 @@ class AppUsageMonitorService : Service() {
             UsageAfterSignal.update(this@AppUsageMonitorService, researchLog)
             RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
           }
+          if (ticks % MESSAGE_TICKS == 0L) launch(Dispatchers.IO) { ProjectMessages.check(this@AppUsageMonitorService) }
 
           val now = System.currentTimeMillis()
           readUsageEvents(now, tracker)
@@ -156,8 +181,70 @@ class AppUsageMonitorService : Service() {
 
           delay(POLL_INTERVAL_MILLIS)
         }
+        // Con la activación automática, al terminar un relevo vuelve a esperar en vez de detenerse.
+        if (autoMode.enabled && hasCurrentConsent()) startWatching() else stopMonitoring()
+      }
+  }
+
+  /**
+   * Activación automática (D-095): mira qué app está en primer plano, solo su nombre, y activa el último
+   * relevo cuando se abre una de sus apps, si no hay otro en curso y ya pasó la pausa desde el anterior.
+   */
+  private fun startWatching() {
+    monitorJob?.cancel()
+    isCounting = false
+    isWatching = true
+    startInForeground(counting = false)
+    val startedAt = System.currentTimeMillis()
+    lastQueryMillis = startedAt - LOOKBACK_MILLIS
+    val tracker = ForegroundTracker(startedAt)
+    monitorJob =
+      scope.launch {
+        var ticks = 0L
+        while (true) {
+          if (!autoMode.enabled || !hasCurrentConsent()) break
+          val current = store.load()
+          if (current.status == ReminderStatus.WAITING) {
+            // Se activó un relevo a mano mientras Relevo esperaba: pasa a contarlo.
+            isWatching = false
+            startInForeground(counting = true)
+            startMonitoring()
+            return@launch
+          }
+          ticks += 1
+          if (ticks % WATCH_ACCESS_TICKS == 0L && !UsageAccess.isGranted(this@AppUsageMonitorService)) break
+          if (ticks % WATCH_MESSAGE_TICKS == 0L) launch(Dispatchers.IO) { ProjectMessages.check(this@AppUsageMonitorService) }
+          val now = System.currentTimeMillis()
+          readUsageEvents(now, tracker)
+          tracker.tick(now) { false }
+          val last = lastConfiguration.load()
+          if (AutoMode.shouldArm(true, current.status, last, tracker.currentPackage, now, autoMode.lastClosedAt) && armAutomatically(last)) {
+            isWatching = false
+            startInForeground(counting = true)
+            startMonitoring()
+            return@launch
+          }
+          delay(WATCH_INTERVAL_MILLIS)
+        }
+        isWatching = false
         stopMonitoring()
       }
+  }
+
+  /** Activa el último relevo con el día y la condición de hoy, igual que al activarlo a mano. */
+  private fun armAutomatically(last: Reminder): Boolean {
+    val code = Participation.code(this).ifBlank { return false }
+    val plan = StudyStore(this).plan()
+    val today = LocalDate.now()
+    val day = plan?.day(today)?.takeIf { it in 0..StudyPlan.LAST_DAY } ?: -1
+    val next = AutoMode.fromLast(last, code, plan?.condition(today), day, UUID.randomUUID().toString())
+    if (next.status != ReminderStatus.WAITING) return false
+    store.save(next)
+    researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
+    researchLog.startSession(next)
+    researchLog.logApp(code, "relevo_automatico", next.activity)
+    scope.launch(Dispatchers.IO) { RemoteSync(this@AppUsageMonitorService, researchLog).syncPending() }
+    return true
   }
 
   /**
@@ -250,7 +337,7 @@ class AppUsageMonitorService : Service() {
     val manager = getSystemService(NotificationManager::class.java) ?: return
     manager.createNotificationChannel(
       NotificationChannel(CHANNEL_ID, "Relevo activo", NotificationManager.IMPORTANCE_LOW).apply {
-        description = "Muestra que Relevo está contando el tiempo en las apps que elegiste."
+        description = "Muestra que Relevo está contando el tiempo en las apps que elegiste o esperando para activarse solo."
       },
     )
     manager.createNotificationChannel(
@@ -317,6 +404,10 @@ class AppUsageMonitorService : Service() {
     /** Indica si el conteo está en marcha en este proceso; evita reiniciarlo cada vez que se abre la app. */
     @Volatile var isCounting = false
       private set
+
+    /** Indica si Relevo está esperando para activarse solo (D-095). */
+    @Volatile var isWatching = false
+      private set
     private const val CHANNEL_ID = "relevo_monitor"
     private const val NOTIFICATION_ID = 1101
     private const val SIGNAL_NOTIFICATION_ID = 1102
@@ -327,5 +418,11 @@ class AppUsageMonitorService : Service() {
     private const val LOOKBACK_MILLIS = 15 * 60_000L
     private const val ACCESS_CHECK_TICKS = 30L
     private const val SYNC_TICKS = 15 * 60L
+    /** Mensajes del proyecto: cada minuto mientras cuenta. */
+    private const val MESSAGE_TICKS = 60L
+    /** Mientras espera para activarse solo, revisa cada 3 segundos; los permisos y mensajes, cada minuto. */
+    private const val WATCH_INTERVAL_MILLIS = 3_000L
+    private const val WATCH_ACCESS_TICKS = 20L
+    private const val WATCH_MESSAGE_TICKS = 20L
   }
 }

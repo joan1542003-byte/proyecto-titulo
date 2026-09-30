@@ -17,6 +17,8 @@ data class PendingSession(
   val studyCondition: String?, val studyDay: Int?, val knewIntention: String?, val recalledFirstStep: String?,
   val signalEnd: String?, val responseSeconds: Int?, val usageBeforeSeconds: Int?, val usageAfterSeconds: Int?,
   val signalRoute: String?, val appVersion: String?, val signalFeeling: String?,
+  /** «manual» o «auto» (D-095). */
+  val activation: String?,
 )
 
 /** Respuesta de una tarjeta semanal o del cierre del día 21. */
@@ -29,7 +31,7 @@ data class PendingAppEvent(val id: Long, val participantCode: String, val event:
 data class UsageAfterRequest(val sessionId: String, val signalAt: Long, val packages: Set<String>)
 
 class ResearchLogStore(context: Context) :
-  SQLiteOpenHelper(context, "relevo_research.db", null, 7) {
+  SQLiteOpenHelper(context, "relevo_research.db", null, 8) {
 
   private val appContext = context.applicationContext
 
@@ -72,6 +74,7 @@ class ResearchLogStore(context: Context) :
     if (oldVersion in 3..5) ROUTE_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
     if (oldVersion in 3..6) FEELING_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
     if (oldVersion < 7) createAppEventsTable(db)
+    if (oldVersion in 3..7) ACTIVATION_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
   }
 
   private fun createSessionsTable(db: SQLiteDatabase) = db.execSQL(
@@ -93,7 +96,7 @@ class ResearchLogStore(context: Context) :
       outcome TEXT,
       consent_version TEXT NOT NULL,
       synced INTEGER NOT NULL DEFAULT 0,
-      ${(STUDY_COLUMNS + ROUTE_COLUMNS + FEELING_COLUMNS).joinToString(",\n      ") { (name, type) -> "$name $type" }}
+      ${(STUDY_COLUMNS + ROUTE_COLUMNS + FEELING_COLUMNS + ACTIVATION_COLUMNS).joinToString(",\n      ") { (name, type) -> "$name $type" }}
     )
     """.trimIndent(),
   )
@@ -162,6 +165,7 @@ class ResearchLogStore(context: Context) :
         com.example.relevo.domain.SignalRoute.BLUETOOTH -> "bluetooth"
       })
       put("app_version", cl.udp.relevo.BuildConfig.VERSION_NAME)
+      put("activation", if (reminder.autoActivated) "auto" else "manual")
     }, SQLiteDatabase.CONFLICT_REPLACE)
   }
 
@@ -265,6 +269,7 @@ class ResearchLogStore(context: Context) :
       cursor.stringOrNull("study_condition"), cursor.intOrNull("study_day"), cursor.stringOrNull("knew_intention"), cursor.stringOrNull("recalled_first_step"),
       cursor.stringOrNull("signal_end"), cursor.intOrNull("response_seconds"), cursor.intOrNull("usage_before_seconds"), cursor.intOrNull("usage_after_seconds"),
       cursor.stringOrNull("signal_route"), cursor.stringOrNull("app_version"), cursor.stringOrNull("signal_feeling"),
+      cursor.stringOrNull("activation"),
     )) }
   }
 
@@ -324,7 +329,7 @@ class ResearchLogStore(context: Context) :
 
   companion object {
     /** Consentimiento de la prueba de 21 días (protocolo 02). Cambiarlo pide aceptar de nuevo. */
-    const val CONSENT_VERSION = "2026-09-29-v9"
+    const val CONSENT_VERSION = "2026-09-30-v10"
     const val PENDING = 0
     const val SYNCED = 1
     const val REJECTED = 2
@@ -349,5 +354,8 @@ class ResearchLogStore(context: Context) :
 
     /** Cómo le cayó el aviso a la persona: good, neutral o bad (versión 7 de la base local, Android 2.12). */
     private val FEELING_COLUMNS = listOf("signal_feeling" to "TEXT")
+
+    /** Si el relevo se activó a mano o solo (versión 8 de la base local, Android 2.16, D-095). */
+    private val ACTIVATION_COLUMNS = listOf("activation" to "TEXT")
   }
 }

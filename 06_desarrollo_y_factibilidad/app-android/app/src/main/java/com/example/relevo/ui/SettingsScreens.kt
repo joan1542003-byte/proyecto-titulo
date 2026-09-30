@@ -41,6 +41,7 @@ import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.Settings
 import com.example.relevo.data.SyncStatus
 import com.example.relevo.data.ThemeMode
+import com.example.relevo.domain.Reminder
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.CheckMark
@@ -86,9 +87,39 @@ private fun SettingPanel(title: String, detail: String, options: List<Pair<Strin
 
 /** S2: avisos y resúmenes. Todo lo opcional empieza apagado y se apaga con un toque. */
 @Composable
-internal fun NoticesScreen(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onBack: () -> Unit) {
+internal fun NoticesScreen(
+  settings: Settings,
+  onChange: (Settings.() -> Settings) -> Unit,
+  onBack: () -> Unit,
+  autoMode: Boolean = false,
+  lastReminder: Reminder? = null,
+  onAutoMode: (Boolean) -> Boolean = { false },
+) {
   val context = LocalContext.current
+  var autoUnavailable by remember { mutableStateOf(false) }
   RelevoScreen(title = "Avisos y resúmenes", onBack = onBack, backLabel = "Perfil") {
+    // D-095: repite el último relevo cada vez que se abre una de sus apps.
+    SettingPanel(
+      "Activación automática", "Cuando abras las apps de tu último relevo, Relevo empieza a contar solo.",
+      listOf("no" to "No", "si" to "Sí"), if (autoMode) "si" else "no",
+      { value -> autoUnavailable = !onAutoMode(value == "si") },
+    ) {
+      if (autoMode && lastReminder != null) {
+        Spacer(Modifier.height(4.dp))
+        Text(
+          "${lastReminder.activity} · ${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatDuration(lastReminder.requiredUsageSeconds)}",
+          style = Relevo.type.subhead, color = Relevo.colors.voice,
+        )
+      }
+      if (autoUnavailable && !autoMode) {
+        Text("Primero prepara y termina un relevo: la activación automática repite ese.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+      }
+      Text(
+        "Mientras esté encendida, Relevo mira qué app tienes abierta —solo su nombre— para saber cuándo empezar. Después de cada relevo espera 30 minutos antes de activarse otra vez.",
+        style = Relevo.type.footnote, color = Relevo.colors.graphite,
+      )
+    }
+    Spacer(Modifier.height(14.dp))
     SettingPanel(
       "Resumen semanal", "Lo que preparaste esta semana, en tu perfil.",
       listOf("no" to "No", "si" to "Sí"), if (settings.weeklySummary) "si" else "no",

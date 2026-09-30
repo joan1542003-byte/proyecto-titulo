@@ -7,6 +7,7 @@ import org.json.JSONObject
 import org.json.JSONArray
 import java.net.HttpURLConnection
 import java.net.URL
+import java.net.URLEncoder
 import java.time.Instant
 
 /** Estado del envío que se muestra en Privacidad y datos para comprobar el piloto. */
@@ -136,6 +137,38 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
   /** El nombre cambió: se enviará en el próximo envío. */
   fun markNamePending() { preferences.edit().putBoolean("name_pending", true).apply() }
 
+  /** Mensaje del investigador, enviado desde el panel (D-096). */
+  data class Message(val id: String, val title: String, val body: String, val createdAt: String)
+
+  /**
+   * Mensajes generales y propios posteriores a [since] (fecha ISO 8601), del más antiguo al más nuevo.
+   * La base solo entrega esos dos tipos a cada teléfono. null si no se pudo consultar.
+   */
+  fun fetchMessages(since: String): List<Message>? = synchronized(LOCK) {
+    if (preferences.getBoolean("deleting", false) || !Participation.participating(appContext) || !configured) return null
+    val token = accessToken(allowNewUser = true) ?: return null
+    runCatching {
+      val after = URLEncoder.encode(since, "UTF-8")
+      val response = connection("/rest/v1/relevo_messages?select=id,title,body,created_at&created_at=gt.$after&order=created_at.asc&limit=20", token)
+        .apply { requestMethod = "GET"; doOutput = false }
+      if (response.responseCode !in 200..299) return null
+      val array = JSONArray(response.inputStream.bufferedReader().use { it.readText() })
+      List(array.length()) { index -> array.getJSONObject(index).let { Message(it.getString("id"), it.getString("title"), it.getString("body"), it.getString("created_at")) } }
+        .filter { it.id.matches(UUID_PATTERN) }
+    }.getOrNull()
+  }
+
+  /** Registra que el mensaje llegó al teléfono y, si ya se abrió, cuándo. */
+  fun sendReceipt(messageId: String, deliveredAt: Long, openedAt: Long?): Boolean = synchronized(LOCK) {
+    if (!messageId.matches(UUID_PATTERN)) return false
+    if (preferences.getBoolean("deleting", false) || !Participation.participating(appContext) || !configured) return false
+    val code = Participation.code(appContext).ifBlank { return false }
+    val token = accessToken(allowNewUser = false) ?: return false
+    val body = JSONObject().put("message_id", messageId).put("participant_code", code)
+      .put("delivered_at", deliveredAt.iso()).put("opened_at", openedAt?.iso() ?: JSONObject.NULL)
+    post("relevo_message_receipts?on_conflict=message_id,user_id", body.toString(), token, upsert = true).ok
+  }
+
   /** Borra únicamente las filas visibles para la sesión anónima autenticada. */
   fun beginDeletion() { preferences.edit().putBoolean("deleting", true).commit() }
 
@@ -157,11 +190,15 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     }.getOrNull() ?: return false
     if (!user.matches(Regex("[0-9a-fA-F-]{36}"))) return false
     if (!delete("/rest/v1/relevo_participants?user_id=eq.$user", token)) return false
+    if (!delete("/rest/v1/relevo_message_receipts?user_id=eq.$user", token)) return false
+    if (!delete("/rest/v1/relevo_messages?target_user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_app_events?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_answers?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_events?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_sessions?user_id=eq.$user", token)) return false
     return noRows("/rest/v1/relevo_participants?select=user_id&user_id=eq.$user&limit=1", token) &&
+      noRows("/rest/v1/relevo_message_receipts?select=message_id&user_id=eq.$user&limit=1", token) &&
+      noRows("/rest/v1/relevo_messages?select=id&target_user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_app_events?select=id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_answers?select=id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_events?select=id&user_id=eq.$user&limit=1", token) &&
@@ -265,6 +302,7 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     .put("usage_before_seconds", usageBeforeSeconds ?: JSONObject.NULL).put("usage_after_seconds", usageAfterSeconds ?: JSONObject.NULL)
     .put("signal_route", signalRoute ?: JSONObject.NULL).put("app_version", appVersion ?: JSONObject.NULL)
     .put("signal_feeling", signalFeeling ?: JSONObject.NULL)
+    .put("activation", activation ?: "manual")
 
   private fun PendingAnswer.toJson() = JSONObject()
     .put("client_answer_id", "$participantCode-a$id").put("participant_code", participantCode)
@@ -297,5 +335,6 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     const val EVENTS_PATH = "relevo_events?on_conflict=client_event_id"
     const val ANSWERS_PATH = "relevo_answers?on_conflict=client_answer_id"
     const val APP_EVENTS_PATH = "relevo_app_events?on_conflict=client_event_id"
+    val UUID_PATTERN = Regex("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")
   }
 }

@@ -1042,7 +1042,32 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas:** preguntas («Cómo se vive el ocio digital…», como en el guion v2) o cambiar solo dos títulos. El autor eligió nombres cortos para los tres.
 - **Documentación:** [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 6.
 
+## D-095 — Activación automática opcional, también durante el testeo
+
+- **Fecha:** 2026-09-30.
+- **Estado:** decisión del autor; implementada en Android 2.16 y probada en emulador. Sin probar en un teléfono real ni con personas.
+- **Decisión:** la persona puede encender la «Activación automática» en Perfil, en Avisos y resúmenes. Con ella, Relevo repite solo el último relevo cada vez que se abre una de sus apps: la misma actividad, el primer paso, el lugar, las apps y el tiempo. Durante el testeo usa la condición de la semana, igual que un relevo activado a mano. Después de cada relevo espera 30 minutos antes de activarse otra vez. Empieza apagada, Inicio la muestra y se apaga con un toque. Cada relevo registra si se activó a mano o solo (`activation`).
+- **Fundamento:** el autor pidió que Relevo se pueda activar siempre al usar las apps y eligió permitirlo también en el testeo. Mantiene lo que la hipótesis pone a prueba: una señal asociada a la actividad y al lugar donde empieza. Lo que cambia es el esfuerzo de preparar, que el testeo ya mide en la tarjeta semanal.
+- **Riesgos:** la actividad deja de elegirse en el momento y puede quedar vieja; puede haber más señales y acostumbramiento; mientras está encendida, la app revisa qué app está abierta (solo su nombre). Por eso empieza apagada, se registra por relevo para analizar aparte y el consentimiento pasa a v10.
+- **Alternativas:** solo fuera del testeo (recomendada antes de decidir) o siempre automática, sin preparar nada, que se descartó porque rompe la elección deliberada de la actividad.
+- **Documentación:** [Android 2.16](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md) y [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md).
+
+## D-096 — Panel privado y mensajes del investigador
+
+- **Fecha:** 2026-09-30.
+- **Estado:** decisión del autor; implementada (tablas en Supabase, Android 2.16 y panel en claude.ai) y probada en emulador.
+- **Decisión:** el investigador ve participantes, respuestas y actividad en un [panel privado](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM) que lee Supabase con su propia conexión de claude.ai, y desde ahí envía mensajes que llegan como notificación de Relevo. Los mensajes quedan en `relevo_messages`; cada teléfono lee solo los generales y los suyos; `relevo_message_receipts` guarda cuándo llegó y cuándo se abrió cada uno.
+- **Fundamento:** el autor pidió un panel con respuestas, usuarios activos y estadísticas en tiempo real, y enviar notificaciones desde su computador usando el Supabase del proyecto. La página privada evita contraseñas y claves en el código; los mensajes por revisión periódica evitan crear una cuenta de Firebase.
+- **Límites:** no es instantáneo. El mensaje llega en cerca de un minuto si Relevo está contando o esperando, y en hasta 15 minutos en segundo plano, o más si Android ahorra batería. Los datos del panel llegan cuando los teléfonos los envían. Durante el testeo, cada mensaje es una intervención: conviene usarlos para coordinar y no para recordar la actividad; quedan registrados para el análisis.
+- **Documentación:** [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) y [Android 2.16](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — D-095 y D-096
+
+- **Qué cambió:** se registraron D-095 (activación automática opcional, también en el testeo) y D-096 (panel privado y mensajes del investigador).
+- **Cómo estaba antes:** cada relevo se preparaba y activaba a mano, y no había panel ni mensajes.
+- **Por qué:** pedido del autor.
 
 ### 2026-09-29 — D-094
 
