@@ -1033,7 +1033,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativa estudiada:** un llavero iTag de unos CLP 7.000, que Relevo puede hacer sonar mediante el servicio Bluetooth estándar de alerta inmediata, verificado en el código de una app de código abierto. Queda pendiente de compra y prueba.
 - **Documentación:** [Android 2.15](../06_desarrollo_y_factibilidad/app-android/version-2.15-reloj-como-llamada-2026-09-29.md) y [objetos que Relevo puede hacer sonar](../06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md).
 
+## D-094 — Títulos de los ámbitos del marco teórico en palabras simples
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor; aplicada en la memoria (capítulo 6) y en la presentación.
+- **Decisión:** los ámbitos se llaman «La experiencia del ocio digital», «El diseño de la atención» y «Recordar con objetos y lugares». Reemplazan a «Experiencia subjetiva del ocio digital», «Arquitecturas de atención y bienestar digital» y «Mediación material de información personal».
+- **Fundamento:** en el examen de julio, la comisión anotó que no se entendía qué era una «mediación» y advirtió un vocabulario ambiguo o demasiado teórico (feedback E15). Los títulos nuevos dicen lo mismo con palabras de uso diario; el contenido de cada ámbito no cambia y «arquitectura de atención» se conserva como concepto definido en el texto.
+- **Alternativas:** preguntas («Cómo se vive el ocio digital…», como en el guion v2) o cambiar solo dos títulos. El autor eligió nombres cortos para los tres.
+- **Documentación:** [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 6.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — D-094
+
+- **Qué cambió:** se registró D-094: títulos simples para los tres ámbitos del marco teórico.
+- **Cómo estaba antes:** los ámbitos tenían títulos técnicos.
+- **Por qué:** pedido del autor, apoyado en el feedback del examen de julio.
 
 ### 2026-09-29 — D-093
 

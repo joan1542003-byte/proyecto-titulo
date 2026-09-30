@@ -27,7 +27,7 @@ La frase vigente de marca es **«Hazle lugar a lo que quieres hacer»** y el des
 
 El relato no debe adelantarse a la investigación: en la memoria se avanza del problema y sus aristas hacia justificación, antecedentes, teoría, usuarios, estado del arte, criterios y propuesta. La formulación del producto no debe abrir el texto antes de que el lector entienda por qué existe.
 
-La memoria organiza el problema en tres aristas conectadas: **experiencial y cognitiva** (una intención alternativa puede no orientar la decisión inmediata), **tecnológica** (las interfaces y sus secuencias afectan cierres y oportunidades de elección) y **evaluativa** (el sentido del ocio no puede deducirse de su duración). Su marco teórico desarrolla experiencia subjetiva del ocio digital, arquitecturas de atención/bienestar digital y mediación material de información personal. Estas distinciones evitan reducir el tema a «falta de disciplina» o a un supuesto daño general del teléfono.
+La memoria organiza el problema en tres aristas conectadas: **experiencial y cognitiva** (una intención alternativa puede no orientar la decisión inmediata), **tecnológica** (las interfaces y sus secuencias afectan cierres y oportunidades de elección) y **evaluativa** (el sentido del ocio no puede deducirse de su duración). Su marco teórico desarrolla la experiencia del ocio digital, el diseño de la atención y el recuerdo con objetos y lugares. Estas distinciones evitan reducir el tema a «falta de disciplina» o a un supuesto daño general del teléfono.
 
 ## Evidencia y alcance
 
@@ -175,6 +175,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Títulos de los ámbitos
+
+- **Qué cambió:** los enlaces y menciones a los ámbitos del capítulo 6 usan los títulos nuevos: «La experiencia del ocio digital», «El diseño de la atención» y «Recordar con objetos y lugares».
+- **Cómo estaba antes:** «Experiencia subjetiva del ocio digital», «Arquitecturas de atención y bienestar digital» y «Mediación material de información personal».
+- **Por qué:** el autor simplificó los títulos tras el feedback del examen de julio (D-094); los enlaces antiguos quedaban rotos.
 
 ### 2026-09-28 — Actualización del 28 de septiembre
 

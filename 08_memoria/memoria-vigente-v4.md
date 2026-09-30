@@ -159,7 +159,7 @@ La revisión es exploratoria: busca orientar el proyecto, no reunir toda la lite
 
 El marco teórico relaciona tres ámbitos: cómo vive cada persona el ocio digital, las interfaces que organizan su continuidad y los objetos y recursos que apoyan el recuerdo. Al cruzarlos se puede estudiar cuándo una intención deja de orientar la decisión y qué condiciones debería respetar una ayuda.
 
-## Experiencia subjetiva del ocio digital
+## La experiencia del ocio digital
 
 El ocio puede ofrecer descanso, disfrute, aprendizaje y vínculo social. Como se vio en la arista evaluativa, verlo como una pérdida de tiempo reduce su disfrute (Tonietto et al., 2021), lo que cuestiona las intervenciones que convierten todo tiempo disponible en una obligación productiva.
 
@@ -171,7 +171,7 @@ La culpa, sin embargo, no sirve como indicador automático. Puede surgir de expe
 
 La relación entre metas puede cambiar durante una sesión: una elección inicial deliberada no implica que cada momento posterior responda a una nueva decisión. Una **decisión renovada** ocurre al volver a considerar si se desea continuar, cambiar o detenerse, y puede surgir ante el final de un contenido, una pausa o una señal del entorno. Sin cierres claros, la sesión puede prolongarse sin que las alternativas vuelvan a compararse. La decisión inicial puede seguir siendo válida aunque convenga reconsiderarla; la distinción describe la continuidad sin suponer pérdida de conciencia o de control.
 
-## Arquitecturas de atención y bienestar digital
+## El diseño de la atención
 
 Una interfaz define acciones, esfuerzos y puntos de cierre. El desplazamiento infinito, la reproducción automática y las recomendaciones encadenadas ofrecen el siguiente contenido sin exigir una búsqueda o confirmación nueva (Montag et al., 2019). Estas decisiones forman una **arquitectura de atención**: un conjunto de elementos que orienta lo que se percibe y cómo avanza la interacción. Las personas conservan su capacidad de elegir, pero seguir con un gesto mínimo exige menos preparación que levantarse, reunir materiales o cambiar de espacio. Esta diferencia de esfuerzo ayuda a comparar comienzos: seguir viendo contenido y salir a caminar pueden ser igualmente valorados, aunque sus primeros pasos exijan esfuerzos distintos.
 
@@ -183,7 +183,7 @@ Si no existe una intención alternativa, la duración o la aplicación no justif
 
 Las **intenciones de implementación** vinculan una situación anticipada con una respuesta: si ocurre cierta condición, entonces se realiza una acción (Gollwitzer y Sheeran, 2006). Como el vínculo se fija de antemano, que el evento ocurra solo indica que llegó la situación prevista, no que el momento sea problemático. Recordar una intención, iniciar una actividad y adquirir un hábito son, además, resultados distintos. Formar un hábito supone que una conducta se vuelva más automática en un contexto recurrente, y medir su frecuencia o registrar una señal no basta para demostrarlo (Gardner et al., 2012; Lally et al., 2010). Las rachas —contar los días seguidos en que se cumplió una conducta— pueden favorecer la continuidad de una conducta registrada, pero también convertir su mantenimiento en una meta en sí misma (Silverman y Barasch, 2023). Por eso el proyecto estudia cómo acompañar una decisión y no atribuye a un aviso la creación de hábitos.
 
-## Mediación material de información personal
+## Recordar con objetos y lugares
 
 La memoria prospectiva, definida en la introducción, se distingue del recuerdo de acontecimientos pasados porque su valor depende del momento: la intención debe volver cuando todavía es posible actuar (McDaniel y Einstein, 2000). Una intención puede recuperarse al llegar una hora o al ocurrir un evento. Las alarmas marcan un momento; las señales del entorno, como lugares u objetos, relacionan la situación con la acción. En ambos casos la persona debe percibir y comprender la señal antes de decidir qué hacer. Percibir una señal, identificar su origen, recordar una actividad y decidir iniciarla son resultados distintos, y separarlos permite saber en qué paso falla una ayuda sin exigir que la persona termine actuando.
 
@@ -810,6 +810,13 @@ World Wide Web Consortium. (s. f.). *Understanding success criterion 2.3.1: Thre
 ---
 
 ## Registro de cambios
+
+### 29 de septiembre de 2026 — Títulos de los ámbitos en palabras simples
+
+- **Cambio:** los tres subtítulos del capítulo 6 pasan a «La experiencia del ocio digital», «El diseño de la atención» y «Recordar con objetos y lugares». El contenido de cada ámbito no cambia; el término «arquitectura de atención» se mantiene como concepto dentro del texto y en el glosario.
+- **Versión anterior:** «Experiencia subjetiva del ocio digital», «Arquitecturas de atención y bienestar digital» y «Mediación material de información personal».
+- **Motivo:** en el examen de julio, la comisión anotó que no se entendía qué era una «mediación» y que el vocabulario era ambiguo o demasiado teórico (feedback E15). El autor pidió nombres más fáciles de entender y eligió estos (D-094).
+- **Alcance:** cambian solo los tres subtítulos; se conservan el orden, los capítulos y la extensión. Se actualizaron los enlaces que apuntaban a esos subtítulos.
 
 ### 29 de septiembre de 2026 — Encuesta de 53 respuestas
 

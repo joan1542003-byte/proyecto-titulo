@@ -35,7 +35,7 @@ La carpeta `Encargos` contiene 18 archivos DOCX y ningún PDF. Las referencias s
 |---|---|---|---|---|
 | Portada, bajada, autoría e índice numerado | E12, §1; memoria histórica E12 archivada | Vigente como estructura mínima | Preliminares | Cumple; verificar los datos finales antes de una futura diagramación. |
 | Motivación personal diferenciada del problema | E11, §1; E12, §2; memoria histórica E12, §1 | Vigente | Cap. 1 | Cumple; se limita a la experiencia personal presente. |
-| Tres ámbitos teóricos y síntesis de intersección | E02–E04, E10; E12, §3; memoria histórica E12, §5 | Vigente | Cap. 6, [Experiencia subjetiva del ocio digital](../08_memoria/memoria-vigente-v4.md#experiencia-subjetiva-del-ocio-digital) y [Arquitecturas de atención y bienestar digital](../08_memoria/memoria-vigente-v4.md#arquitecturas-de-atención-y-bienestar-digital) y [Mediación material de información personal](../08_memoria/memoria-vigente-v4.md#mediación-material-de-información-personal) y [Conclusiones del marco teórico](../08_memoria/memoria-vigente-v4.md#conclusiones-del-marco-teórico) | Cumple; conservar las definiciones al ingresar cada concepto. |
+| Tres ámbitos teóricos y síntesis de intersección | E02–E04, E10; E12, §3; memoria histórica E12, §5 | Vigente | Cap. 6, [La experiencia del ocio digital](../08_memoria/memoria-vigente-v4.md#la-experiencia-del-ocio-digital) y [El diseño de la atención](../08_memoria/memoria-vigente-v4.md#el-diseño-de-la-atención) y [Recordar con objetos y lugares](../08_memoria/memoria-vigente-v4.md#recordar-con-objetos-y-lugares) y [Conclusiones del marco teórico](../08_memoria/memoria-vigente-v4.md#conclusiones-del-marco-teórico) | Cumple; conservar las definiciones al ingresar cada concepto. |
 | Planteamiento del problema, aristas y justificación | E04–E05; E12, §4 | Vigente | Caps. 3 y 4 | Cumple; las tres aristas son visibles y respetan la extensión solicitada. |
 | Estado del arte, referentes y benchmark crítico | E02–E05; E10; E12, §3 y §6 | Vigente | Caps. 5 y 8 | Cumple; se comparan mecanismos, evidencia, fortalezas y límites. |
 | POV, árbol de problemas y formulación centrada en usuario | E05–E06; E07 | Superado como formato literal, vigente como función | [Problema de diseño y pregunta de investigación](../08_memoria/memoria-vigente-v4.md#problema-de-diseño-y-pregunta-de-investigación) y [Definición y alcance de Relevo](../08_memoria/memoria-vigente-v4.md#definición-y-alcance-de-relevo) | Cumple mediante problema de diseño, punto de vista, pregunta y oportunidad. |
@@ -92,6 +92,12 @@ Este orden solo debe modificarse si una exigencia institucional posterior o un p
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Títulos de los ámbitos
+
+- **Qué cambió:** los enlaces y menciones a los ámbitos del capítulo 6 usan los títulos nuevos: «La experiencia del ocio digital», «El diseño de la atención» y «Recordar con objetos y lugares».
+- **Cómo estaba antes:** «Experiencia subjetiva del ocio digital», «Arquitecturas de atención y bienestar digital» y «Mediación material de información personal».
+- **Por qué:** el autor simplificó los títulos tras el feedback del examen de julio (D-094); los enlaces antiguos quedaban rotos.
 
 ### 2026-09-09 — Jerarquía y lectura de la memoria
 

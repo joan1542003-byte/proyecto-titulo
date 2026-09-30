@@ -15,7 +15,7 @@ C1–C8 identifican los ocho criterios para seguimiento; no son números de apar
 | --- | --- | --- | --- |
 | C1 Partir de una intención propia | Lukoff et al. (2018); Meier y Reinecke (2021); contrastes P2–P3 y P6–P8. | La duración o la aplicación no bastan para valorar una sesión; importan propósito, contexto y presencia de otra intención. | No se ha probado todavía cómo formular una intención de manera comprensible dentro de Relevo. |
 | C2 Relacionar la intención con un primer paso | Gollwitzer y Sheeran (2006); teoría de memoria prospectiva; necesidades del usuario principal. | Una respuesta concreta vinculada a una situación reduce la distancia entre una meta amplia y el comienzo de la acción. | Falta comparar distintas formas de redactar y reconocer el primer paso. |
-| C3 Utilizar una condición comprensible | Ámbito [Arquitecturas de atención y bienestar digital](memoria-vigente-v4.md#arquitecturas-de-atención-y-bienestar-digital); Gollwitzer y Sheeran (2006); variación de episodios dentro del corpus. | Un evento observable puede activar una regla, pero no permite inferir el estado subjetivo de la persona. | La condición inicial sigue abierta entre tiempo, horario y continuidad de uso. |
+| C3 Utilizar una condición comprensible | Ámbito [El diseño de la atención](memoria-vigente-v4.md#el-diseño-de-la-atención); Gollwitzer y Sheeran (2006); variación de episodios dentro del corpus. | Un evento observable puede activar una regla, pero no permite inferir el estado subjetivo de la persona. | La condición inicial sigue abierta entre tiempo, horario y continuidad de uso. |
 | C4 Abrir una elección, no imponer una conducta | Grüning et al. (2023); Radtke et al. (2022); límites de bloqueadores y objetos de precompromiso. | Una intervención puede abrir una reconsideración sin convertir la continuidad digital en incumplimiento. | Falta comprobar si la señal se percibe como apoyo, presión o interrupción. |
 | C5 Reconocer cuándo no intervenir | Contraejemplos P4, P6, P7 y P8; Lukoff et al. (2018); Tonietto et al. (2021). | El ocio digital puede ser significativo, concentrado o reparador; la duración no justifica por sí sola una intervención. | Relevo no puede detectar automáticamente el sentido de una sesión; depende de una regla configurada y reversible. |
 | C6 Mantener una carga proporcional | Chiu y Gilbert (2024); costos y exigencias observados en Brick, Unpluq, Screenless y Focusaur. | El esfuerzo de configurar y mantener un recordatorio afecta su adopción y puede superar su beneficio. | La carga real de Relevo no se conoce hasta probar configuración, emparejamiento, ubicación y rearmado. |
@@ -31,6 +31,12 @@ La matriz también permite distinguir niveles de certeza. La literatura y las en
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Títulos de los ámbitos
+
+- **Qué cambió:** los enlaces y menciones a los ámbitos del capítulo 6 usan los títulos nuevos: «La experiencia del ocio digital», «El diseño de la atención» y «Recordar con objetos y lugares».
+- **Cómo estaba antes:** «Experiencia subjetiva del ocio digital», «Arquitecturas de atención y bienestar digital» y «Mediación material de información personal».
+- **Por qué:** el autor simplificó los títulos tras el feedback del examen de julio (D-094); los enlaces antiguos quedaban rotos.
 
 ### 2026-09-25 — Sin luz
 
