@@ -4,7 +4,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.14 de prueba, para el testeo real. La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
+**Versión:** 2.14 de prueba, para el testeo real. La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
 
 **Fecha:** 29 de septiembre de 2026
 
@@ -140,6 +140,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Versión 2.17: mensajes al instante
+
+- **Qué cambió:** el estado menciona la 2.17, con mensajes al instante por Realtime.
+- **Cómo estaba antes:** la versión más reciente era la 2.16.
+- **Por qué:** el autor preguntó si la notificación podía llegar al instante.
 
 ### 2026-09-30 — Versión 2.16: activación automática y mensajes
 

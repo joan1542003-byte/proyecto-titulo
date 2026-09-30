@@ -34,16 +34,23 @@ object ProjectMessages {
   private const val PERIOD_MILLIS = 15 * 60_000L
   private const val KEEP_IDS = 100
 
-  /** Busca mensajes nuevos y los muestra. Se llama fuera del hilo principal. */
-  fun check(context: Context) {
+  private val LOCK = Any()
+
+  /**
+   * Busca mensajes nuevos y los muestra. Se llama fuera del hilo principal. [force]: llegó un aviso de
+   * Realtime y se busca aunque la última revisión sea reciente.
+   */
+  fun check(context: Context, force: Boolean = false) {
+    synchronized(LOCK) { checkLocked(context, force) }
+  }
+
+  private fun checkLocked(context: Context, force: Boolean) {
     val app = context.applicationContext
     if (!Participation.participating(app)) return
     val preferences = app.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE)
     val now = System.currentTimeMillis()
-    synchronized(this) {
-      if (now - preferences.getLong("last_check_at", 0L) < MIN_INTERVAL_MILLIS) return
-      preferences.edit().putLong("last_check_at", now).apply()
-    }
+    if (!force && now - preferences.getLong("last_check_at", 0L) < MIN_INTERVAL_MILLIS) return
+    preferences.edit().putLong("last_check_at", now).apply()
     // Desde la primera revisión: los mensajes anteriores a la instalación no llegan.
     val since = preferences.getString("since", null) ?: Instant.ofEpochMilli(now).toString().also { preferences.edit().putString("since", it).apply() }
     val log = ResearchLogStore(app)

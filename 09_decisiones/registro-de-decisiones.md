@@ -1058,10 +1058,16 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Estado:** decisión del autor; implementada (tablas en Supabase, Android 2.16 y panel en claude.ai) y probada en emulador.
 - **Decisión:** el investigador ve participantes, respuestas y actividad en un [panel privado](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM) que lee Supabase con su propia conexión de claude.ai, y desde ahí envía mensajes que llegan como notificación de Relevo. Los mensajes quedan en `relevo_messages`; cada teléfono lee solo los generales y los suyos; `relevo_message_receipts` guarda cuándo llegó y cuándo se abrió cada uno.
 - **Fundamento:** el autor pidió un panel con respuestas, usuarios activos y estadísticas en tiempo real, y enviar notificaciones desde su computador usando el Supabase del proyecto. La página privada evita contraseñas y claves en el código; los mensajes por revisión periódica evitan crear una cuenta de Firebase.
-- **Límites:** no es instantáneo. El mensaje llega en cerca de un minuto si Relevo está contando o esperando, y en hasta 15 minutos en segundo plano, o más si Android ahorra batería. Los datos del panel llegan cuando los teléfonos los envían. Durante el testeo, cada mensaje es una intervención: conviene usarlos para coordinar y no para recordar la actividad; quedan registrados para el análisis.
+- **Límites:** desde la 2.17, el mensaje llega al instante (0,8 s en emulador) si Relevo está contando o tiene la activación automática encendida, gracias a una conexión Realtime con Supabase. Si no, llega al abrir la app o en hasta 15 minutos, o más si Android ahorra batería. Para que llegue siempre al instante haría falta Firebase Cloud Messaging. Los datos del panel llegan cuando los teléfonos los envían. Durante el testeo, cada mensaje es una intervención: conviene usarlos para coordinar y no para recordar la actividad; quedan registrados para el análisis.
 - **Documentación:** [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) y [Android 2.16](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — D-096: mensajes al instante
+
+- **Qué cambió:** los límites de D-096 dicen que, desde la 2.17, el mensaje llega al instante mientras Relevo cuenta o espera.
+- **Cómo estaba antes:** decían que el mensaje tardaba cerca de un minuto con el servicio activo.
+- **Por qué:** el autor preguntó si la notificación podía llegar al instante.
 
 ### 2026-09-30 — D-095 y D-096
 

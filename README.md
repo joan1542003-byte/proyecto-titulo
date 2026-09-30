@@ -50,7 +50,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 **Resumen del 30 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-30.md)):
 
 - **App 2.16:** activación automática opcional, también en el testeo (D-095), y mensajes del proyecto que llegan como notificación (D-096). Consentimiento v10. Probada en emulador; falta el teléfono real ([detalle](06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md)).
-- **Panel del testeo:** página privada en claude.ai con participantes, respuestas, actividad y envío de notificaciones ([cómo funciona](06_desarrollo_y_factibilidad/panel-admin/README.md)).
+- **App 2.17:** los mensajes llegan al instante mientras Relevo cuenta o espera (0,8 s en emulador; [detalle](06_desarrollo_y_factibilidad/app-android/version-2.17-mensajes-al-instante-2026-09-30.md)).
+- **Panel del testeo:** página privada en claude.ai con el diseño de la app y cuatro pestañas: Ahora, Participantes, Respuestas y Mensajes. Envía notificaciones ([cómo funciona](06_desarrollo_y_factibilidad/panel-admin/README.md)).
 - **Presentación:** la diapositiva 14 muestra en una carta Gantt lo que sigue hasta el examen.
 
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
@@ -130,7 +131,7 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 
 ### 2026-09-30 — Estado del 30 de septiembre
 
-- **Qué cambió:** el estado actual resume la app 2.16, el panel del testeo y la carta Gantt de la presentación, y enlaza la bitácora del día.
+- **Qué cambió:** el estado actual resume las apps 2.16 y 2.17, el panel del testeo con el diseño de la app y la carta Gantt de la presentación, y enlaza la bitácora del día.
 - **Cómo estaba antes:** el estado tenía fecha del 29 de septiembre.
 - **Por qué:** pedidos del autor del 30 de septiembre (D-095 y D-096).
 

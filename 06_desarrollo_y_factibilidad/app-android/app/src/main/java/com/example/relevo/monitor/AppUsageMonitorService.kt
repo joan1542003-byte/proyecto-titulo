@@ -46,6 +46,8 @@ class AppUsageMonitorService : Service() {
   private lateinit var signalPlayer: SignalPlayer
   private lateinit var autoMode: AutoModeStore
   private lateinit var lastConfiguration: ReminderStore
+  /** Mensajes del proyecto al instante mientras el servicio está activo (D-096). */
+  private lateinit var messageStream: MessageStream
   private var monitorJob: Job? = null
   private var lastQueryMillis: Long = 0L
 
@@ -56,6 +58,7 @@ class AppUsageMonitorService : Service() {
     signalPlayer = SignalPlayer(this)
     autoMode = AutoModeStore(this)
     lastConfiguration = ReminderStore(this, ReminderStore.LAST_CONFIGURATION)
+    messageStream = MessageStream(this, scope)
     createNotificationChannels()
   }
 
@@ -96,6 +99,7 @@ class AppUsageMonitorService : Service() {
   override fun onDestroy() {
     isCounting = false
     isWatching = false
+    messageStream.stop()
     monitorJob?.cancel()
     signalPlayer.stop()
     scope.cancel()
@@ -121,6 +125,7 @@ class AppUsageMonitorService : Service() {
   private fun stopMonitoring() {
     isCounting = false
     isWatching = false
+    messageStream.stop()
     ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE)
     stopSelf()
   }
@@ -129,6 +134,7 @@ class AppUsageMonitorService : Service() {
     monitorJob?.cancel()
     isWatching = false
     isCounting = true
+    messageStream.start()
     val startedAt = System.currentTimeMillis()
     // Se revisa un periodo previo para saber qué app estaba abierta al empezar o al retomar.
     lastQueryMillis = startedAt - LOOKBACK_MILLIS
@@ -194,6 +200,7 @@ class AppUsageMonitorService : Service() {
     monitorJob?.cancel()
     isCounting = false
     isWatching = true
+    messageStream.start()
     startInForeground(counting = false)
     val startedAt = System.currentTimeMillis()
     lastQueryMillis = startedAt - LOOKBACK_MILLIS

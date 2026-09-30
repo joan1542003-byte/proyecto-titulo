@@ -71,6 +71,7 @@
 | 30 sep. | Información y corrección | Informar que esta semana compra los materiales del testeo. Pedir los textos en tercera persona («el usuario elige…»), cambiar «pruebo el reloj y el llavero» por «Testeo de objeto físico; forma, materiales y costos» y quitar «reviso el consentimiento». | Diapositiva 14 con la compra de materiales (30 de septiembre al 4 de octubre), textos en tercera persona, el objeto con las palabras del autor y sin la revisión del consentimiento | — |
 | 30 sep. | Consulta y encargo | Preguntar si Relevo podría activarse siempre solo al usar las apps y pedir agregarlo; pedir un panel de administración en un sitio (GitHub Pages u otro) con respuestas, usuarios activos, estadísticas en tiempo real y envío de notificaciones. | Tres preguntas antes de construir: cómo activarse solo, cómo enviar notificaciones y dónde publicar el panel | — |
 | 30 sep. | Decisión | Activación automática opcional, también en el testeo; notificaciones con el Supabase del proyecto, enviadas desde su computador; panel como página privada en claude.ai. | [Android 2.16](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md) con activación automática, mensajes y consentimiento v10; tablas de mensajes en Supabase; [panel privado](../06_desarrollo_y_factibilidad/panel-admin/README.md). Probado en emulador: se activa solo, suena, llega el mensaje y se registran su llegada y su apertura | D-095 y D-096 |
+| 30 sep. | Corrección y consulta | Ordenar mejor el panel y diseñarlo como la app de Relevo; preguntar si la notificación puede llegar al instante. | Panel rediseñado con los colores, la fuente, las tarjetas y las cápsulas de la app, en cuatro pestañas y con una hoja por persona. [Android 2.17](../06_desarrollo_y_factibilidad/app-android/version-2.17-mensajes-al-instante-2026-09-30.md): el mensaje llega al instante mientras Relevo cuenta o espera (0,8 s en emulador); para que llegue siempre al instante haría falta Firebase | D-096 |
 
 ## Lo que muestra el registro
 
@@ -84,7 +85,7 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 ### 2026-09-30 — Activación automática y panel
 
-- **Qué cambió:** se registraron el pedido de activación automática y del panel con notificaciones, y las decisiones del autor (D-095 y D-096).
+- **Qué cambió:** se registraron el pedido de activación automática y del panel con notificaciones, las decisiones del autor (D-095 y D-096), y el rediseño del panel con los mensajes al instante.
 - **Cómo estaba antes:** el registro terminaba en la diapositiva 14 en tercera persona.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día.
 

@@ -342,3 +342,7 @@ drop policy if exists "participants delete own receipts" on public.relevo_messag
 create policy "participants delete own receipts" on public.relevo_message_receipts
   for delete to authenticated using ((select auth.uid()) = user_id);
 create index if not exists relevo_message_receipts_user_id_idx on public.relevo_message_receipts (user_id);
+
+-- 2026-09-30 · Relevo 2.17 (D-096): mensajes al instante. Los teléfonos escuchan las inserciones por Realtime
+-- mientras Relevo cuenta o espera; Realtime respeta RLS, así que cada teléfono solo recibe avisos de sus mensajes y de los generales.
+alter publication supabase_realtime add table public.relevo_messages;

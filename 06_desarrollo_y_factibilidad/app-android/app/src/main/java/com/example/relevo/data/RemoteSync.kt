@@ -158,6 +158,15 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     }.getOrNull()
   }
 
+  /** Dirección de Realtime de Supabase para escuchar mensajes nuevos al instante (D-096). Usa la clave publicable. */
+  val realtimeUrl: String get() = baseUrl.replaceFirst("https://", "wss://") + "/realtime/v1/websocket?apikey=$apiKey&vsn=1.0.0"
+
+  /** Token de la sesión anónima para escuchar mensajes; null sin participar, sin configurar o sin conexión. */
+  fun liveAccessToken(): String? = synchronized(LOCK) {
+    if (preferences.getBoolean("deleting", false) || !Participation.participating(appContext) || !configured) return null
+    accessToken(allowNewUser = true)
+  }
+
   /** Registra que el mensaje llegó al teléfono y, si ya se abrió, cuándo. */
   fun sendReceipt(messageId: String, deliveredAt: Long, openedAt: Long?): Boolean = synchronized(LOCK) {
     if (!messageId.matches(UUID_PATTERN)) return false

@@ -16,8 +16,8 @@ android {
         applicationId = "cl.udp.relevo"
         minSdk = 31
         targetSdk = 36
-        versionCode = 28
-        versionName = "2.16"
+        versionCode = 29
+        versionName = "2.17"
         buildConfigField("String", "SUPABASE_URL", "\"${localProperties.getProperty("SUPABASE_URL", "")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${localProperties.getProperty("SUPABASE_PUBLISHABLE_KEY", "")}\"")
     }
@@ -70,6 +70,8 @@ dependencies {
   implementation(libs.androidx.compose.material3)
   // Vidrio de la capa de navegación: desenfoque real con RenderEffect (Android 12+), D-083.
   implementation("dev.chrisbanes.haze:haze:1.6.10")
+  // Mensajes del proyecto al instante: conexión Realtime de Supabase por WebSocket (D-096).
+  implementation("com.squareup.okhttp3:okhttp:4.12.0")
   // Tooling
   debugImplementation(libs.androidx.compose.ui.tooling)
   // Instrumented tests
