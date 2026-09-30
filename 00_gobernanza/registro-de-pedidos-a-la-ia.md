@@ -68,6 +68,7 @@
 | 29 sep. | Corrección | Reescribir la diapositiva «Siguiente paso», que no le convence: mostrar lo que sigue en las próximas semanas y meses, bien explicado y con sentido. | Diapositiva 14, «Probar antes de decidir.»: cuatro etapas (preparar, probar, decidir y defender) con las fechas del plan de cierre, qué se hace y para qué. La versión anterior quedó en el respaldo como R10 | — |
 | 29 sep. | Corrección | Ordenar y desglosar mejor la diapositiva 14 con el formato de la carta Gantt del respaldo, que el autor hizo visible como referencia. | Diapositiva 14 rehecha como carta Gantt desde hoy hasta el examen: 13 tareas con sus fechas, agrupadas en preparar, probar, decidir y defender, con el para qué de cada etapa. La carta Gantt de referencia volvió a omitirse al presentar | — |
 | 30 sep. | Corrección | Cambiar los textos de la carta Gantt: «Probar» es en realidad el testeo de 21 días con el usuario; mostrar qué más se hará en ese tiempo y los detalles de cada tarea, no solo el hecho; «Lugar y objeto decididos» no dice nada. | Título «Primero el testeo, después el diseño final.»; etapas «Preparación», «Testeo de 21 días», «Análisis» y «Entrega y examen»; una línea de detalle por tarea; seguimiento y objeto en paralelo al testeo; semana de Pruebas Solemnes marcada; hito «Diseño final: qué objeto suena y dónde se deja» | — |
+| 30 sep. | Información y corrección | Informar que esta semana compra los materiales del testeo. Pedir los textos en tercera persona («el usuario elige…»), cambiar «pruebo el reloj y el llavero» por «Testeo de objeto físico; forma, materiales y costos» y quitar «reviso el consentimiento». | Diapositiva 14 con la compra de materiales (30 de septiembre al 4 de octubre), textos en tercera persona, el objeto con las palabras del autor y sin la revisión del consentimiento | — |
 
 ## Lo que muestra el registro
 
@@ -81,7 +82,7 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 ### 2026-09-30 — Textos de la carta Gantt
 
-- **Qué cambió:** se registró la corrección de los textos y los detalles de la diapositiva 14.
+- **Qué cambió:** se registraron la corrección de los textos y los detalles de la diapositiva 14, el paso a tercera persona y la compra de materiales de esta semana.
 - **Cómo estaba antes:** el registro terminaba en la carta Gantt del 29 de septiembre.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
