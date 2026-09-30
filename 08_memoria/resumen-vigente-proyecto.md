@@ -16,7 +16,7 @@ La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se 
 
 ## Qué cambió y qué falta
 
-Para la corrección cruzada del 30 de septiembre hay un [guion de presentación](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md) de unos 7 minutos, basado en la memoria, el protocolo 02 y el plan de cierre, y una [presentación completa en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8) de 18 diapositivas con diagramas, gráficos de la encuesta y notas del orador.
+Para la corrección cruzada del 30 de septiembre hay un [guion de presentación](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md) de unos 7 minutos, basado en la memoria, el protocolo 02 y el plan de cierre, y una [presentación en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8) de 14 diapositivas para 5 minutos, con una sección de respaldo y notas del orador.
 
 El feedback del 23 de septiembre llevó a distinguir recordar una intención, empezar una actividad y formar un hábito. No se añadieron rachas ni premios. La revisión de Android 2.6 aclaró el consentimiento, el registro seudónimo, la selección de salida y los límites del parlante. Las decisiones y alternativas están en el [registro de aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y en la [auditoría específica de Android](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
 
