@@ -51,6 +51,8 @@
 | 29 sep. | Consulta | Preguntar si el marco teórico exige que la señal esté en un lugar, por qué no podría funcionar solo en la app o en ambos, y revisar el marco y los referentes antes de decidir. | Revisión en la conversación de los capítulos 5 a 9 de la memoria: el marco respalda con firmeza recordar a tiempo mediante una señal, con menos fuerza el lugar, y no respalda que lo físico supere a lo digital; eso es lo que compara el protocolo 02 | — |
 | 29 sep. | Consulta | Pedir una recomendación sobre la dirección: el autor considera que la hipótesis funciona y que la memoria puede quedar como está mientras el marco teórico siga justificando el objeto físico. | Recomendación en la conversación: adoptar la hipótesis con el «porque» de la memoria prospectiva y reforzar el capítulo 6 con el marco multiproceso de McDaniel y Einstein (2000), fuente ya citada, que explica por qué una señal saliente y asociada a la acción sirve cuando la persona está absorta | Aprobada: D-091 |
 | 29 sep. | Encargo | Aplicar la hipótesis y el marco multiproceso, leer la memoria completa, revisar que las citas estén en APA 7 en español y dejarla sin errores. | Memoria actualizada: marco multiproceso en el capítulo 6 y el glosario, hipótesis final en el capítulo 10, estado del prototipo 2.14 en el capítulo 11 y la Tabla 5, prueba con una persona y texto de notificación en el capítulo 13, «&» reemplazado por «y» y «Artículo» en los números de artículo. Se actualizaron el protocolo 02, D-091, la guía, el guion, los flujos, la coherencia con la memoria y las diapositivas 8A y 8B | D-091 |
+| 29 sep. | Encargo | Crear en Figma un archivo nuevo con la presentación más completa posible, no solo texto (por ejemplo, un diagrama de Venn para el marco teórico), tomando ideas de las presentaciones de otros estudiantes; y usar la encuesta a usuarios en la memoria. | Presentación nueva de 18 diapositivas con el estilo del autor: árbol de problemas, Venn del marco teórico, diagrama del marco multiproceso, gráficos de la encuesta, mapa de referentes, criterios, hipótesis y objetivos, sistema, capturas de la app, línea de la prueba, carta Gantt y referencias, con notas del orador. Encuesta analizada e incorporada a la memoria | D-092 |
+| 29 sep. | Decisión | Confirmar que las 53 respuestas de la encuesta son reales pero editadas, y que el formulario informaba el uso académico anónimo. | La encuesta se usa con recuentos y categorías, sin citas; su origen y límites quedan declarados | D-092 |
 
 ## Lo que muestra el registro
 
@@ -61,6 +63,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Presentación completa y encuesta
+
+- **Qué cambió:** se registraron el encargo de la presentación completa en un archivo nuevo de Figma, el uso de la encuesta y la confirmación de su origen (D-092).
+- **Cómo estaba antes:** el registro terminaba en la revisión completa de la memoria.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-09-29 — Hipótesis
 

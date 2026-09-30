@@ -1,5 +1,7 @@
 # Guion de presentación: corrección cruzada del 30 de septiembre
 
+> **Actualización del 29 de septiembre de 2026:** hay una [presentación completa nueva en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8) de 18 diapositivas: escena, cifras de la encuesta, árbol de problemas, Venn del marco teórico, marco multiproceso, entrevistas, dos diapositivas de la encuesta, mapa de referentes, criterios, hipótesis y objetivos, funcionamiento, capturas de la app, prueba de 21 días, carta Gantt, cierre y referencias. Cada diapositiva tiene sus notas del orador. Este guion sigue valiendo para el relato; los datos de la encuesta están en el [análisis de la encuesta](../03_usuarios/encuesta-53-respuestas-2026-09.md) (D-092).
+
 **Estado:** versión 2, reescrita el 27 de septiembre de 2026 con las anotaciones que el autor dejó en el [archivo de diapositivas de Figma](https://www.figma.com/slides/mfGkrpiK5KmV8C8GN89QUU). Los datos vienen de la [memoria vigente](../08_memoria/memoria-vigente-v4.md), del [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) y del [plan de cierre](plan-de-cierre-agosto-diciembre-2026.md). Los ejemplos inventados se rotulan como tales.
 
 **Duración:** unos 7 minutos en 13 diapositivas. Si hay menos tiempo (unos 4 minutos), usa las diapositivas 1, 2, 5, 9, 10, 11 y 13.
@@ -331,6 +333,12 @@ Las fuentes de los productos del mapa (Screen Time, Bienestar digital, one sec, 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Presentación completa en Figma
+
+- **Qué cambió:** se añadió al inicio el enlace a la presentación completa de 18 diapositivas y al análisis de la encuesta.
+- **Cómo estaba antes:** el guion solo remitía al archivo de diapositivas del 27 de septiembre.
+- **Por qué:** el autor pidió una presentación lo más completa posible, con diagramas, en un archivo nuevo.
 
 ### 2026-09-29 — Hipótesis nueva
 

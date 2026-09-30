@@ -7,6 +7,8 @@ estado: "pendiente de publicación, revisión e integración"
 
 # Encuesta de 70 participantes — pendiente de publicación
 
+> **Actualización del 29 de septiembre de 2026:** el autor entregó un archivo de Google Forms con **53 respuestas**, que se analizó e incorporó a la memoria como evidencia complementaria ([encuesta de 53 respuestas](encuesta-53-respuestas-2026-09.md), D-092). Ese archivo describe una versión posterior del proyecto (con parlante), así que no está documentado si corresponde a la encuesta de 70 participantes registrada aquí. Esta ficha se conserva como antecedente.
+
 ## Estado
 
 El proyecto cuenta con una encuesta realizada a **70 participantes** que todavía está pendiente de publicarse y de integrarse al repositorio y a la memoria.
@@ -30,6 +32,12 @@ Hasta que la encuesta se publique y revise, la evidencia disponible para la form
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Encuesta de 53 respuestas
+
+- **Cambio:** se añadió una nota que enlaza la encuesta de 53 respuestas incorporada a la memoria.
+- **Cómo estaba antes:** la ficha solo registraba una encuesta de 70 participantes pendiente.
+- **Motivo:** el autor entregó el archivo de respuestas; la diferencia entre 70 y 53 queda declarada.
 
 ### 2026-09-02 — Registro de encuesta pendiente
 

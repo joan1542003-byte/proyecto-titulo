@@ -1014,7 +1014,23 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Sin cambios:** pregunta, objetivos, criterios, las cuatro dimensiones de evaluación y el protocolo 02.
 - **Documentación:** [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 10.
 
+## D-092 — La encuesta de 53 respuestas entra a la memoria como evidencia complementaria
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor; aplicada en la memoria (capítulos 7, 9 y 13, resumen y *abstract*). Codificación pendiente de revisión por el autor.
+- **Decisión:** usar la encuesta en línea de 53 respuestas (S01–S53) como evidencia complementaria de las entrevistas P1–P8, sin mezclarla con ese corpus y sin tratarla como validación de la hipótesis.
+- **Fundamento:** el autor confirmó que las respuestas son reales, que se editaron antes de exportarlas y que el formulario informaba el propósito académico y el uso anónimo. Con esos datos se cumple lo mínimo que exigía la ficha anterior (origen, consentimiento y forma de análisis), declarando lo que falta: fecha, convocatoria y texto del formulario.
+- **Condiciones de uso:** recuentos y categorías, sin citas textuales; muestra no representativa; opiniones sobre la propuesta como preferencias sin uso; el archivo con las respuestas queda fuera del repositorio.
+- **Consecuencias:** respalda el hogar como contexto y el primer paso concreto; muestra que un conteo de tiempo puede sonar durante un uso útil; y abre una tensión con el pulso de unos 30 segundos (D-078), porque 41 de 53 personas preferirían 15 segundos o menos. La duración no cambia por ahora; la prueba de 21 días registrará si molesta o si pasa inadvertida.
+- **Documentación:** [análisis de la encuesta](../03_usuarios/encuesta-53-respuestas-2026-09.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 7.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — D-092
+
+- **Qué cambió:** se registró D-092: la encuesta de 53 respuestas entra a la memoria como evidencia complementaria.
+- **Cómo estaba antes:** la encuesta estaba fuera de la evidencia por falta de documentación.
+- **Por qué:** el autor entregó las respuestas, confirmó su origen y consentimiento, y pidió aplicarlas a la memoria.
 
 ### 2026-09-29 — D-091
 
