@@ -24,7 +24,7 @@
 | 11 | Hipótesis y objetivos | La hipótesis literal de la memoria (D-091) y los cuatro objetivos en palabras simples. | Capítulo 10. |
 | 12 | Relevo | Qué es y tres pasos. | Capítulos 10 y 11. |
 | 13 | La app | Cuatro capturas del producto: elegir qué hacer, decir dónde empieza, el relevo que cuenta y el aviso. | Capturas de Android 2.10 y 2.13. |
-| 14 | Lo que sigue | «Probar antes de decidir.» Cuatro etapas hasta el examen, cada una con sus fechas, qué se hace y para qué: preparar, probar, decidir y defender. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) y [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md). |
+| 14 | Lo que sigue | «Probar antes de decidir.» Carta Gantt desde hoy hasta el examen, con el formato de la del respaldo: 13 tareas con sus fechas, agrupadas en cuatro etapas (preparar, probar, decidir y defender), cada una con su para qué. | [Plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026.md) y [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md). |
 | 15 | Cierre | «Que lo que querías hacer vuelva a tiempo.» y tres preguntas a la comisión sobre los puntos débiles. | — |
 
 **Respaldo (se omite al presentar):** árbol de problemas, marco multiproceso, entrevistas, dos diapositivas de gráficos de la encuesta, criterios de diseño, versiones detalladas de hipótesis, funcionamiento y prueba, qué se registra en la prueba (la diapositiva 14 anterior), carta Gantt y referencias en APA 7. Sirven para responder preguntas.
@@ -44,7 +44,7 @@
 4. **Notas del autor.** El autor dejó comentarios dentro de los textos («*Claude por favor reescribe…»). Se reescribieron los puntos de los ámbitos 2 y 3, el glosario (con fuentes), los objetivos, los pasos de Relevo y las preguntas a la comisión. «Siguiente paso» sumó qué se registra en la prueba, y el mapa de referentes volvió al flujo principal.
 5. **Venn.** Se recuperaron las intersecciones. Tras contrastar con la memoria y con el examen de julio, los círculos usan los títulos simples del capítulo 6 (D-094) y las intersecciones son las del autor: «Interfaz que interrumpe el propósito», «Lo físico como apoyo a la reflexión» y «El dispositivo también ocupa atención».
 6. **Cambios a mano del autor, que se conservan:** «sumido en el teléfono» en el ámbito 3, «Relevo: app» en la diapositiva 13, la leyenda «Cuenta el tiempo mientras usas tus apps» y el logo de la Facultad.
-7. **Lo que sigue.** El autor pidió reemplazar «Siguiente paso», que explicaba la prueba, por lo que sigue en las próximas semanas y meses, bien explicado y con sentido. La diapositiva 14 muestra cuatro etapas con las fechas del plan de cierre y el para qué de cada una. La versión anterior quedó en el respaldo como R10.
+7. **Lo que sigue.** El autor pidió reemplazar «Siguiente paso», que explicaba la prueba, por lo que sigue en las próximas semanas y meses, bien explicado y con sentido. La diapositiva 14 muestra cuatro etapas con las fechas del plan de cierre y el para qué de cada una. La versión anterior quedó en el respaldo como R10. Después, el autor hizo visible la carta Gantt del respaldo (R11) y pidió la diapositiva 14 bien ordenada y desglosada con ese formato: ahora es una carta Gantt de lo que sigue, con una fila por tarea y la línea «Hoy». La R11 volvió a omitirse al presentar.
 
 **Herramientas.** La presentación se construyó con Claude Code mediante el conector de Figma: guiones de la API de complementos de Figma para crear formas, textos, diagramas, notas del orador y secciones, y para marcar el respaldo como omitido. Las capturas de la app se subieron desde el repositorio. Cada tanda se revisó con imágenes y con un control de que ningún elemento saliera de los márgenes.
 
@@ -55,6 +55,12 @@
 - Si se adopta el reloj o el llavero como objeto (D-093), la diapositiva 12 y el cierre deben decir cuál.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Diapositiva 14 como carta Gantt
+
+- **Qué cambió:** la diapositiva 14 pasó a ser una carta Gantt de lo que sigue, con el formato de la R11: 13 tareas con fechas en cuatro etapas. Se actualizaron su imagen, la hoja de contacto, la tabla y el proceso.
+- **Cómo estaba antes:** mostraba las cuatro etapas en columnas de texto.
+- **Por qué:** el autor pidió ordenarla y desglosarla con el formato de la carta Gantt del respaldo.
 
 ### 2026-09-29 — Diapositiva 14: lo que sigue
 

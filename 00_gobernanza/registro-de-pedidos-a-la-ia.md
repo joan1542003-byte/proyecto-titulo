@@ -66,6 +66,7 @@
 | 29 sep. | Encargo | Enviar el trabajo a `main`. | `main` avanzó hasta el último commit de `android-2.7`, sin conflictos; ambas ramas quedan iguales en GitHub | — |
 | 29 sep. | Encargo | Adjuntar el GIF de la app hecho antes. | Se envió el [GIF «Cómo funciona»](../06_desarrollo_y_factibilidad/app-android/capturas/como-funciona-2.10/relevo-como-funciona.gif) de la app 2.10 | — |
 | 29 sep. | Corrección | Reescribir la diapositiva «Siguiente paso», que no le convence: mostrar lo que sigue en las próximas semanas y meses, bien explicado y con sentido. | Diapositiva 14, «Probar antes de decidir.»: cuatro etapas (preparar, probar, decidir y defender) con las fechas del plan de cierre, qué se hace y para qué. La versión anterior quedó en el respaldo como R10 | — |
+| 29 sep. | Corrección | Ordenar y desglosar mejor la diapositiva 14 con el formato de la carta Gantt del respaldo, que el autor hizo visible como referencia. | Diapositiva 14 rehecha como carta Gantt desde hoy hasta el examen: 13 tareas con sus fechas, agrupadas en preparar, probar, decidir y defender, con el para qué de cada etapa. La carta Gantt de referencia volvió a omitirse al presentar | — |
 
 ## Lo que muestra el registro
 
@@ -79,7 +80,7 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 ### 2026-09-29 — Rama principal, GIF y diapositiva 14
 
-- **Qué cambió:** se registraron los pedidos de enviar el trabajo a `main`, adjuntar el GIF y rehacer la diapositiva «Siguiente paso».
+- **Qué cambió:** se registraron los pedidos de enviar el trabajo a `main`, adjuntar el GIF y rehacer la diapositiva «Siguiente paso», primero en columnas y después como carta Gantt.
 - **Cómo estaba antes:** el registro terminaba en el pedido de documentar el estado y la presentación.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
