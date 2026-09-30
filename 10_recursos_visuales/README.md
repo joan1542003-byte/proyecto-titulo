@@ -46,6 +46,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 21. [Vuelve a lo que querías hacer](21_marca-relevo-a-tiempo-2026-09-25.md) y su [manual](marca-a-tiempo/README.md)
 22. [Sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) y sus [vistas](marca-2.0/README.md) (propuesta D-085), con el [video de 30 segundos](marca-2.0/video/README.md)
 23. [Actividades predefinidas e imágenes por generar](23_actividades-e-imagenes-2026-09-29.md): 31 actividades para personas de 18 a 30 años, 18 imágenes nuevas y la plantilla de prompt
+24. [Presentación de la corrección cruzada del 30 de septiembre](24_presentacion-correccion-cruzada-2026-09-30.md): estado, estructura, reglas de diseño y cómo se hizo en Figma, con las [15 diapositivas exportadas](presentacion-correccion-cruzada-2026-09-30/)
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -75,6 +76,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Presentación de la corrección cruzada
+
+- **Qué cambió:** el índice suma el documento 24, con el estado y el proceso de la presentación en Figma y sus 15 diapositivas exportadas.
+- **Cómo estaba antes:** el índice terminaba en el documento 23.
+- **Por qué:** el autor pidió documentar cómo se hizo la presentación.
 
 ### 2026-09-29 — Actividades e imágenes
 

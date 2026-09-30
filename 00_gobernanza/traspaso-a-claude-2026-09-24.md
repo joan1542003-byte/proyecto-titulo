@@ -164,6 +164,15 @@ En la rama `android-2.7`, a pedido del autor:
 - **Resumen:** la [bitácora del trabajo con IA](bitacora-trabajo-con-ia-2026-09-26-28.md) reúne lo hecho del 26 al 28 de septiembre, las decisiones, el uso de la IA y los pendientes.
 - **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
 
+## Actualización del 29 de septiembre de 2026
+
+- **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Su «porque» viene del marco multiproceso (McDaniel y Einstein, 2000), que la memoria incorpora en el capítulo 6. Las reglas de la cátedra para hipótesis están en los encargos 06, 10, 12 y 14.
+- **Memoria:** citas en APA 7 en español («y», no «&»); capítulos 11 y 13 al día con la app 2.14 y la prueba con una persona; títulos simples de los ámbitos (D-094); encuesta de 53 respuestas como evidencia complementaria (D-092), usada solo con recuentos y sin subir el archivo de respuestas.
+- **Presentación:** [archivo en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8) de 15 diapositivas y respaldo; [estado y cómo se hizo](../10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md). El autor comenta dejando notas «*Claude…» dentro de los textos.
+- **Objetos que suenan (D-093):** Android 2.15 con la salida experimental «El reloj», sin probar con hardware; el llavero iTag clásico se puede controlar con el servicio Bluetooth estándar de alerta inmediata ([estudio](../06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md)).
+- **Resumen del día:** [bitácora del 29 de septiembre](bitacora-trabajo-con-ia-2026-09-29.md).
+- **Sin cambios:** no se hicieron pruebas con personas ni con equipos reales.
+
 ## Seguridad, privacidad y GitHub
 
 El README informó que el repositorio fue público al 9 de septiembre de 2026; esa visibilidad debe verificarse antes de cargar material nuevo. No subir notas personales, consentimientos firmados, nombres, contactos de participantes, registros brutos identificables ni archivos locales que no estén preparados para difusión. Mantener solo corpus anonimizado autorizado. No guardar credenciales, `.env`, `local.properties`, claves privadas o copias de bases de datos. El archivo `local.properties.example` es una plantilla, no una credencial.
@@ -175,6 +184,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Actualización del 29 de septiembre
+
+- **Qué cambió:** se añadió la actualización del 29 de septiembre: hipótesis final, memoria, presentación, objetos que suenan y bitácora del día.
+- **Cómo estaba antes:** la última actualización era la del 28 de septiembre.
+- **Por qué:** el autor pidió documentar el estado.
 
 ### 2026-09-29 — Títulos de los ámbitos
 
