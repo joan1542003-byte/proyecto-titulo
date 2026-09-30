@@ -316,7 +316,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val state = computeStudyState()
     _study.value = state
     val current = _reminder.value
-    val route = state.condition?.route
+    val route = state.condition?.routeFor(current.signalRoute)
     if (route != null && current.signalRoute != route && current.status != ReminderStatus.WAITING && current.status != ReminderStatus.SIGNALLED) {
       updateValue(current.copy(signalRoute = route))
     }
@@ -521,7 +521,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     // Cada relevo queda asociado al día y a la condición en que se activó.
     val study = _study.value
     val prepared = _reminder.value.copy(
-      signalRoute = study.condition?.route ?: _reminder.value.signalRoute,
+      signalRoute = study.condition?.routeFor(_reminder.value.signalRoute) ?: _reminder.value.signalRoute,
       studyCondition = study.condition?.code?.toString().orEmpty(),
       studyDay = if (study.active) study.day else -1,
     )

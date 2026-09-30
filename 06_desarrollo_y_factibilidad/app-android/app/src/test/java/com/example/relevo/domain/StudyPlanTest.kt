@@ -29,6 +29,18 @@ class StudyPlanTest {
   }
 
   @Test
+  fun objectWeeksKeepTheWatchAndPhoneWeekUsesThePhone() {
+    // A y B piden el objeto: si la persona usa el reloj, se mantiene; si no, suena el parlante.
+    assertEquals(SignalRoute.WATCH, StudyCondition.SITUATED.routeFor(SignalRoute.WATCH))
+    assertEquals(SignalRoute.WATCH, StudyCondition.NEUTRAL.routeFor(SignalRoute.WATCH))
+    assertEquals(SignalRoute.BLUETOOTH, StudyCondition.SITUATED.routeFor(SignalRoute.PHONE))
+    assertEquals(SignalRoute.BLUETOOTH, StudyCondition.NEUTRAL.routeFor(SignalRoute.BLUETOOTH))
+    // C siempre suena en el teléfono.
+    assertEquals(SignalRoute.PHONE, StudyCondition.PHONE.routeFor(SignalRoute.WATCH))
+    assertEquals(SignalRoute.PHONE, StudyCondition.PHONE.routeFor(SignalRoute.BLUETOOTH))
+  }
+
+  @Test
   fun studyEndsAfterDayTwentyOne() {
     assertFalse(plan.isFinished(day0.plusDays(21)))
     assertTrue(plan.isFinished(day0.plusDays(22)))

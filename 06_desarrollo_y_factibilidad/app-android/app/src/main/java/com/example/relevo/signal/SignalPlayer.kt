@@ -27,6 +27,8 @@ class SignalPlayer(private val context: Context) {
     private set
   private var audioTrack: AudioTrack? = null
   private var audioThread: Thread? = null
+  /** La señal abrió el canal de llamada (salida WATCH) y hay que cerrarlo al terminar. */
+  @Volatile private var usingCallRoute = false
 
   /**
    * Dirige la señal a la salida que la persona eligió, sin redirigirla silenciosamente. Devuelve
@@ -36,26 +38,42 @@ class SignalPlayer(private val context: Context) {
   fun play(route: SignalRoute = SignalRoute.BLUETOOTH, pattern: Pattern = Pattern.SIGNAL, onEnded: ((Ending) -> Unit)? = null): Boolean {
     stop()
     val audioManager = context.getSystemService(AudioManager::class.java) ?: return false
+    val callRoute = route == SignalRoute.WATCH
     val chosenOutput =
-      audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS).firstOrNull { device ->
+      (if (callRoute) callDevice(audioManager)
+      else audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS).firstOrNull { device ->
         if (route == SignalRoute.BLUETOOTH) isBluetoothMediaOutput(device)
         else device.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER
-      }
+      })
         ?: run {
           vibrateOnce()
           return false
         }
 
+    // El reloj recibe el tono como audio de llamada: se abre el canal de comunicación hacia él.
+    if (callRoute) {
+      audioManager.mode = AudioManager.MODE_IN_COMMUNICATION
+      usingCallRoute = true
+      if (!audioManager.setCommunicationDevice(chosenOutput)) {
+        releaseCallRoute(audioManager)
+        vibrateOnce()
+        return false
+      }
+    }
+
     val sampleRate = FirmaSonora.SAMPLE_RATE
     val minimumBuffer = AudioTrack.getMinBufferSize(sampleRate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT)
-    if (minimumBuffer <= 0) return false
+    if (minimumBuffer <= 0) {
+      releaseCallRoute(audioManager)
+      return false
+    }
 
     val track =
       AudioTrack.Builder()
         .setAudioAttributes(
           AudioAttributes.Builder()
-            .setUsage(AudioAttributes.USAGE_MEDIA)
-            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .setUsage(if (callRoute) AudioAttributes.USAGE_VOICE_COMMUNICATION else AudioAttributes.USAGE_MEDIA)
+            .setContentType(if (callRoute) AudioAttributes.CONTENT_TYPE_SPEECH else AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .build(),
         )
         .setAudioFormat(
@@ -69,7 +87,8 @@ class SignalPlayer(private val context: Context) {
         .setTransferMode(AudioTrack.MODE_STREAM)
         .build()
 
-    if (!track.setPreferredDevice(chosenOutput)) {
+    // En el canal de llamada la ruta la fija el equipo de comunicación; la preferencia es solo una ayuda.
+    if (!track.setPreferredDevice(chosenOutput) && !callRoute) {
       track.release()
       vibrateOnce()
       return false
@@ -77,31 +96,54 @@ class SignalPlayer(private val context: Context) {
 
     track.play()
     val silence = ShortArray(2_048)
-    repeat(10) {
+    // El canal de llamada tarda más en abrirse (hasta unos 4 s) que un parlante multimedia.
+    repeat(if (callRoute) 90 else 10) {
       track.write(silence, 0, silence.size, AudioTrack.WRITE_BLOCKING)
-      if (track.routedDevice?.id == chosenOutput.id) {
+      if (sameOutput(track.routedDevice, chosenOutput)) {
         audioTrack = track
         playing = true
         isPlaying = true
         val pcm = if (pattern == Pattern.SIGNAL) FirmaSonora.signal() else FirmaSonora.test()
-        startPlayback(track, chosenOutput.id, pcm, onEnded)
+        startPlayback(track, chosenOutput, callRoute, pcm, onEnded)
         vibrateOnce()
         return true
       }
     }
     track.stop()
     track.release()
+    releaseCallRoute(audioManager)
     return false
   }
 
-  private fun startPlayback(track: AudioTrack, outputId: Int, pcm: ShortArray, onEnded: ((Ending) -> Unit)?) {
+  /** Equipos conectados que pueden recibir audio de llamada, como un reloj que contesta llamadas. */
+  private fun callDevice(audioManager: AudioManager): AudioDeviceInfo? =
+    audioManager.availableCommunicationDevices.firstOrNull {
+      it.type == AudioDeviceInfo.TYPE_BLUETOOTH_SCO || it.type == AudioDeviceInfo.TYPE_BLE_HEADSET
+    }
+
+  private fun sameOutput(routed: AudioDeviceInfo?, chosen: AudioDeviceInfo): Boolean =
+    routed != null && (routed.id == chosen.id || (routed.type == chosen.type && routed.address == chosen.address))
+
+  /** Devuelve el audio del teléfono a su estado normal si la señal usó el canal de llamada. */
+  private fun releaseCallRoute(audioManager: AudioManager? = context.getSystemService(AudioManager::class.java)) {
+    if (!usingCallRoute) return
+    usingCallRoute = false
+    audioManager ?: return
+    runCatching { audioManager.clearCommunicationDevice() }
+    runCatching { audioManager.mode = AudioManager.MODE_NORMAL }
+  }
+
+  private fun startPlayback(track: AudioTrack, output: AudioDeviceInfo, callRoute: Boolean, pcm: ShortArray, onEnded: ((Ending) -> Unit)?) {
     audioThread =
       thread(name = "relevo-signal", isDaemon = true) {
         var ending = Ending.COMPLETED
         var position = 0
         while (position < pcm.size) {
           if (!playing) { ending = Ending.STOPPED; break }
-          if (track.routedDevice?.id != outputId) { ending = Ending.ROUTE_LOST; break }
+          val routed = track.routedDevice
+          // En el canal de llamada la ruta puede quedar un instante sin informar; solo cuenta un cambio real.
+          val lost = if (callRoute) routed != null && !sameOutput(routed, output) else !sameOutput(routed, output)
+          if (lost) { ending = Ending.ROUTE_LOST; break }
           val count = min(CHUNK, pcm.size - position)
           val written = track.write(pcm, position, count, AudioTrack.WRITE_BLOCKING)
           if (written < 0) { ending = Ending.ROUTE_LOST; break }
@@ -113,6 +155,7 @@ class SignalPlayer(private val context: Context) {
         if (!playing) ending = Ending.STOPPED
         playing = false
         isPlaying = false
+        releaseCallRoute()
         onEnded?.invoke(ending)
       }
   }
@@ -132,6 +175,7 @@ class SignalPlayer(private val context: Context) {
     }
     audioTrack = null
     isPlaying = false
+    releaseCallRoute()
     vibrator()?.cancel()
   }
 

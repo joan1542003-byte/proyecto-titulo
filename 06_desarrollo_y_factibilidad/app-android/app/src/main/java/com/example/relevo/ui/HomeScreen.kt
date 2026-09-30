@@ -360,7 +360,11 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
  */
 @Composable
 internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
-  val where = if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else "en el parlante, ${placePhrase(reminder.place)}"
+  val where = when (reminder.signalRoute) {
+    SignalRoute.PHONE -> "en el teléfono"
+    SignalRoute.WATCH -> "en el reloj, ${placePhrase(reminder.place)}"
+    SignalRoute.BLUETOOTH -> "en el parlante, ${placePhrase(reminder.place)}"
+  }
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
     Text("Tu primer relevo está activo", style = Relevo.type.title2, color = Relevo.colors.ink)
     Spacer(Modifier.height(10.dp))

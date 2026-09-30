@@ -282,3 +282,8 @@ select participant_code, name as nombre, consent_version, (created_at at time zo
   (updated_at at time zone 'America/Santiago') as actualizado
 from public.relevo_participants;
 revoke all on all tables in schema analisis from public, anon, authenticated;
+
+-- 2026-09-29 · Relevo 2.15 (D-093): la señal puede sonar en un reloj como audio de llamada.
+alter table public.relevo_sessions drop constraint if exists relevo_sessions_signal_route_check;
+alter table public.relevo_sessions add constraint relevo_sessions_signal_route_check
+  check (signal_route is null or signal_route in ('bluetooth', 'phone', 'watch'));

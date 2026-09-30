@@ -249,8 +249,7 @@ internal fun PrepareScreen(
               FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Parlante" else "Dónde empiezas", reminder.place) { go(PrepareStep.PLACE) }
               FactRow(KitIcon.APPS, "Apps que cuentan", reminder.selectedApps.joinToString(", ") { it.label }, valueIsVoice = false) { go(PrepareStep.USAGE) }
               FactRow(KitIcon.USO, "Te avisa después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(if (reminder.signalRoute == SignalRoute.PHONE) KitIcon.TELEFONO else KitIcon.PARLANTE, "Te avisa",
-                if (reminder.signalRoute == SignalRoute.PHONE) "El teléfono" else "El parlante", valueIsVoice = false) { go(PrepareStep.SOUND) }
+              FactRow(routeIcon(reminder.signalRoute), "Te avisa", routeName(reminder.signalRoute), valueIsVoice = false) { go(PrepareStep.SOUND) }
             }
             if (!isKnown && reminder.activity.isNotBlank()) {
               Spacer(Modifier.height(10.dp))
@@ -406,8 +405,14 @@ private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: Prepare
 private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, actions: PrepareActions) {
   val context = LocalContext.current
   var speakerConnected by remember { mutableStateOf(bluetoothSpeakerConnected(context)) }
+  var watchConnected by remember { mutableStateOf(callDeviceConnected(context)) }
   var tested by rememberSaveable { mutableIntStateOf(0) } // 0 sin probar, 1 sonó, 2 falló
-  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { speakerConnected = bluetoothSpeakerConnected(context) }
+  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
+    speakerConnected = bluetoothSpeakerConnected(context)
+    watchConnected = callDeviceConnected(context)
+  }
+  // En las semanas A y B se elige el objeto (parlante o reloj); en la C suena en el teléfono.
+  val objectChoice = studyCondition == null || studyCondition != StudyCondition.PHONE
   Text(
     when (studyCondition) {
       null -> "Prueba cómo suena antes de activarlo."
@@ -420,7 +425,9 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   SectionGap()
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
     SoundOption(KitIcon.PARLANTE, "El parlante", if (speakerConnected) "Conectado por Bluetooth" else "Sin parlante conectado",
-      selected = reminder.signalRoute == SignalRoute.BLUETOOTH, enabled = studyCondition == null) { actions.onRoute(SignalRoute.BLUETOOTH) }
+      selected = reminder.signalRoute == SignalRoute.BLUETOOTH, enabled = objectChoice) { actions.onRoute(SignalRoute.BLUETOOTH) }
+    SoundOption(KitIcon.TIEMPO, "El reloj", if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas",
+      selected = reminder.signalRoute == SignalRoute.WATCH, enabled = objectChoice) { actions.onRoute(SignalRoute.WATCH) }
     SoundOption(KitIcon.TELEFONO, "El teléfono", "Suena donde esté el teléfono",
       selected = reminder.signalRoute == SignalRoute.PHONE, enabled = studyCondition == null) { actions.onRoute(SignalRoute.PHONE) }
   }
@@ -430,12 +437,16 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   AnimatedVisibility(tested != 0, enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut()) {
     when (tested) {
       1 -> Text("Así va a sonar.", style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.padding(horizontal = 4.dp))
-      else -> Notice(if (reminder.signalRoute == SignalRoute.BLUETOOTH) "No sonó en el parlante. Revisa que esté encendido y conectado." else "No sonó en el teléfono. Revisa el volumen.", tone = Tone.Error)
+      else -> Notice(routeFailure(reminder.signalRoute), tone = Tone.Error)
     }
   }
   if (reminder.signalRoute == SignalRoute.BLUETOOTH) {
     Spacer(Modifier.height(8.dp))
     Text("Si tu parlante se apaga solo, no sonará.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+  }
+  if (reminder.signalRoute == SignalRoute.WATCH) {
+    Spacer(Modifier.height(8.dp))
+    Text("Deja el reloj donde empiezas, con las llamadas por Bluetooth activadas.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
   }
 }
 

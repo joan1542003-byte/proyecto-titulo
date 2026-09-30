@@ -156,7 +156,11 @@ class ResearchLogStore(context: Context) :
       put("consent_version", CONSENT_VERSION); put("synced", PENDING)
       if (reminder.studyCondition.isNotBlank()) put("study_condition", reminder.studyCondition)
       if (reminder.studyDay >= 0) put("study_day", reminder.studyDay)
-      put("signal_route", if (reminder.signalRoute == com.example.relevo.domain.SignalRoute.PHONE) "phone" else "bluetooth")
+      put("signal_route", when (reminder.signalRoute) {
+        com.example.relevo.domain.SignalRoute.PHONE -> "phone"
+        com.example.relevo.domain.SignalRoute.WATCH -> "watch"
+        com.example.relevo.domain.SignalRoute.BLUETOOTH -> "bluetooth"
+      })
       put("app_version", cl.udp.relevo.BuildConfig.VERSION_NAME)
     }, SQLiteDatabase.CONFLICT_REPLACE)
   }

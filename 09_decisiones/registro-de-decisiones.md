@@ -1024,7 +1024,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Consecuencias:** respalda el hogar como contexto y el primer paso concreto; muestra que un conteo de tiempo puede sonar durante un uso útil; y abre una tensión con el pulso de unos 30 segundos (D-078), porque 41 de 53 personas preferirían 15 segundos o menos. La duración no cambia por ahora; la prueba de 21 días registrará si molesta o si pasa inadvertida.
 - **Documentación:** [análisis de la encuesta](../03_usuarios/encuesta-53-respuestas-2026-09.md) y [memoria v4](../08_memoria/memoria-vigente-v4.md), capítulo 7.
 
+## D-093 — Probar un reloj que contesta llamadas como objeto que suena
+
+- **Fecha:** 2026-09-29.
+- **Estado:** decisión del autor de probarlo; implementada en Android 2.15 como salida experimental y **sin probar con el reloj**. No cambia el protocolo 02 mientras el autor no decida usar el reloj en la prueba.
+- **Decisión:** agregar la salida «El reloj». Relevo envía el tono como audio de llamada a un reloj conectado por Bluetooth, sin permisos del fabricante. El reloj se deja donde empieza la actividad, como el parlante. En las semanas A y B de la prueba, si la persona usa el reloj, se mantiene; la semana C sigue en el teléfono.
+- **Fundamento:** el autor quiere aprovechar la forma de su Huawei Watch Fit 5, ya fabricada, con altavoz, batería y un tamaño que cabe junto al libro. La alternativa oficial de Huawei (Wear Engine) exige semanas de aprobación y no asegura el uso del altavoz. Un reloj situado sigue poniendo a prueba la misma hipótesis: una señal asociada al lugar donde empieza la actividad.
+- **Alternativa estudiada:** un llavero iTag de unos CLP 7.000, que Relevo puede hacer sonar mediante el servicio Bluetooth estándar de alerta inmediata, verificado en el código de una app de código abierto. Queda pendiente de compra y prueba.
+- **Documentación:** [Android 2.15](../06_desarrollo_y_factibilidad/app-android/version-2.15-reloj-como-llamada-2026-09-29.md) y [objetos que Relevo puede hacer sonar](../06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — D-093
+
+- **Qué cambió:** se registró D-093: el reloj que contesta llamadas como objeto que suena, con la salida experimental de Android 2.15.
+- **Cómo estaba antes:** solo había dos salidas, el parlante y el teléfono.
+- **Por qué:** el autor pidió probar su reloj como objeto con sonido de llamada.
 
 ### 2026-09-29 — D-092
 

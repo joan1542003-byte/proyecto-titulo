@@ -25,6 +25,7 @@ import com.example.relevo.data.CustomActivity
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.SyncStatus
 import com.example.relevo.domain.RouteTrack
+import com.example.relevo.domain.SignalRoute
 import com.example.relevo.domain.StudyCondition
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.Photo
@@ -207,6 +208,29 @@ internal fun requestNotificationPermission(context: Context) {
 internal fun bluetoothSpeakerConnected(context: Context): Boolean =
   context.getSystemService(AudioManager::class.java)?.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
     ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP || it.type == AudioDeviceInfo.TYPE_BLE_SPEAKER } == true
+
+internal fun routeName(route: SignalRoute): String = when (route) {
+  SignalRoute.BLUETOOTH -> "El parlante"
+  SignalRoute.WATCH -> "El reloj"
+  SignalRoute.PHONE -> "El teléfono"
+}
+
+internal fun routeIcon(route: SignalRoute): KitIcon = when (route) {
+  SignalRoute.BLUETOOTH -> KitIcon.PARLANTE
+  SignalRoute.WATCH -> KitIcon.TIEMPO
+  SignalRoute.PHONE -> KitIcon.TELEFONO
+}
+
+internal fun routeFailure(route: SignalRoute): String = when (route) {
+  SignalRoute.BLUETOOTH -> "No sonó en el parlante. Revisa que esté encendido y conectado."
+  SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado y con las llamadas por Bluetooth activadas."
+  SignalRoute.PHONE -> "No sonó en el teléfono. Revisa el volumen."
+}
+
+/** Hay un reloj u otro equipo conectado que puede recibir audio de llamada (D-093). */
+internal fun callDeviceConnected(context: Context): Boolean =
+  context.getSystemService(AudioManager::class.java)?.availableCommunicationDevices
+    ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_SCO || it.type == AudioDeviceInfo.TYPE_BLE_HEADSET } == true
 
 internal fun syncStatusText(status: SyncStatus): String = buildString {
   append(if (status.pending == 0) "Todo está enviado." else "Algunos datos se enviarán cuando haya internet.")

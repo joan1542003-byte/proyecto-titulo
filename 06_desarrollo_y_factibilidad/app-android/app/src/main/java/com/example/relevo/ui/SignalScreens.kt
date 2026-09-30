@@ -98,11 +98,15 @@ internal fun SignalScreen(
     if (!reminder.signalDelivered) {
       SectionGap()
       Notice(
-        if (reminder.signalRoute == SignalRoute.BLUETOOTH) "No sonó en el parlante. Revisa que esté encendido o elige el teléfono." else "No sonó en el teléfono. Revisa el volumen.",
+        when (reminder.signalRoute) {
+          SignalRoute.BLUETOOTH -> "No sonó en el parlante. Revisa que esté encendido o elige el teléfono."
+          SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado o elige el teléfono."
+          SignalRoute.PHONE -> "No sonó en el teléfono. Revisa el volumen."
+        },
         title = "Se cumplió el tiempo", tone = Tone.Error,
       ) {
         PlainAction("Probar otra vez", { tested = onTestSound(null) }, icon = KitIcon.PROBAR)
-        if (!studyActive && reminder.signalRoute == SignalRoute.BLUETOOTH) PlainAction("Sonar en el teléfono", { tested = onTestSound(SignalRoute.PHONE) }, icon = KitIcon.TELEFONO)
+        if (!studyActive && reminder.signalRoute != SignalRoute.PHONE) PlainAction("Sonar en el teléfono", { tested = onTestSound(SignalRoute.PHONE) }, icon = KitIcon.TELEFONO)
         tested?.let { Text(if (it) "Ahora sonó." else "Todavía no suena.", style = Relevo.type.subhead, color = Relevo.colors.graphite) }
       }
     }

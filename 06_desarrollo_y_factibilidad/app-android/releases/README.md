@@ -1,6 +1,6 @@
 # Entregables de Android
 
-La versión más reciente es **2.14**, compilada el 29 de septiembre de 2026 para el testeo real (D-090): guía con contexto, primer relevo acompañado y el defecto de la 2.10 corregido ([detalle](../version-2.14-guia-y-primer-relevo-2026-09-29.md)). La **2.13** (D-088 y D-089) trajo guía de la primera vez, intereses de las entrevistas, nombre guardado aparte, resumen del relevo activo y audio del video corregido; el consentimiento pasa a v9 ([detalle](../version-2.13-guia-intereses-y-nombre-2026-09-29.md)). La **2.12** (D-087) es más simple para la persona, con avisos encendidos, código de 4 caracteres, modo claro, registro del uso de la app y opiniones con caras; el consentimiento pasa a v8 ([detalle](../version-2.12-mas-simple-y-mas-datos-2026-09-29.md)). La **2.11** la preparó para el primer testeo real (D-086). La primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7 ([detalle y pasos para el testeo](../version-2.11-primer-testeo-2026-09-28.md)). La **2.10** exige participar y aclara los textos (D-084). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
+La versión más reciente es **2.15**, compilada el 29 de septiembre de 2026: agrega la salida experimental «El reloj», que envía el tono como audio de llamada a un reloj dejado donde empieza la actividad (D-093; [detalle](../version-2.15-reloj-como-llamada-2026-09-29.md)). Compiló y pasó 62 pruebas unitarias; **no se ha probado con un reloj real**. SHA-256 del [APK 2.15](relevo-android-2.15-2026-09-29.apk): `B60CD554A431DA4C98D13395A23F8CDB599A8D1C6AEFE5BF4E2BDF1F90C15C2A` (41,8 MB). No se generó el ZIP para Android Studio de esta versión. La **2.14**, compilada el mismo día para el testeo real (D-090), trajo guía con contexto, primer relevo acompañado y el defecto de la 2.10 corregido ([detalle](../version-2.14-guia-y-primer-relevo-2026-09-29.md)). La **2.13** (D-088 y D-089) trajo guía de la primera vez, intereses de las entrevistas, nombre guardado aparte, resumen del relevo activo y audio del video corregido; el consentimiento pasa a v9 ([detalle](../version-2.13-guia-intereses-y-nombre-2026-09-29.md)). La **2.12** (D-087) es más simple para la persona, con avisos encendidos, código de 4 caracteres, modo claro, registro del uso de la app y opiniones con caras; el consentimiento pasa a v8 ([detalle](../version-2.12-mas-simple-y-mas-datos-2026-09-29.md)). La **2.11** la preparó para el primer testeo real (D-086). La primera vez explica cómo usar la app con el video de Relevo en vertical y cinco pasos, y guarda cada dato en Supabase y en una copia en Documentos/Relevo del teléfono; el consentimiento pasa a v7 ([detalle y pasos para el testeo](../version-2.11-primer-testeo-2026-09-28.md)). La **2.10** exige participar y aclara los textos (D-084). La **2.7** es la versión que especifica el [protocolo 02](../../../07_validacion/protocolo-02-prueba-21-dias.md); el autor debe decidir cuál se usa en la prueba. Los archivos con números anteriores se conservan como antecedentes; no deben mezclarse con la pauta de evaluación actual.
 
 | Archivo | Uso |
 | --- | --- |
@@ -57,6 +57,12 @@ El APK 2.10 salió de una compilación limpia y el código pasó 58 pruebas unit
 **Antecedente 2.6:** APK `8AA57837E74DC1B30711E9D52A1859365F0CAB6F702E811354C42831D1CEC3B3`; ZIP `85A573FA9A7F31B385B6680955093AA1434658D7223E22F373E404C10AEBB420`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Android 2.15 experimental
+
+- **Qué cambió:** se agregó el APK 2.15, con la salida experimental «El reloj», su hash y su estado de prueba.
+- **Cómo era antes:** la versión más reciente era la 2.14.
+- **Por qué:** el autor pidió probar su reloj como objeto que suena (D-093).
 
 ### 2026-09-29 — Entrega Android 2.14
 

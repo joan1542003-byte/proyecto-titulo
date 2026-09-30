@@ -4,7 +4,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.14 de prueba, para el testeo real
+**Versión:** 2.14 de prueba, para el testeo real. La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
 
 **Fecha:** 29 de septiembre de 2026
 
@@ -140,6 +140,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-29 — Versión 2.15 experimental: el reloj
+
+- **Qué cambió:** el estado menciona la 2.15, que agrega la salida «El reloj».
+- **Cómo estaba antes:** solo describía la 2.14.
+- **Por qué:** el autor pidió probar su reloj como objeto que suena (D-093).
 
 ### 2026-09-29 — Versión 2.14: guía y primer relevo
 

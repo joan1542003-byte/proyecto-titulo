@@ -9,7 +9,11 @@ enum class ReminderStatus {
   CLOSED,
 }
 
-enum class SignalRoute { BLUETOOTH, PHONE }
+/**
+ * Por dónde suena la señal. BLUETOOTH: parlante multimedia. PHONE: altavoz del teléfono.
+ * WATCH: reloj u otro equipo que contesta llamadas; el tono viaja como audio de llamada (D-093, experimental).
+ */
+enum class SignalRoute { BLUETOOTH, PHONE, WATCH }
 data class TrackedApp(val packageName: String, val label: String)
 
 data class Reminder(
