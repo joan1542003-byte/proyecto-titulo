@@ -49,6 +49,7 @@ import com.example.relevo.data.CustomActivity
 import com.example.relevo.domain.RouteStep
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.theme.Relevo
+import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.Carousel
 import com.example.relevo.ui.components.IconAction
@@ -275,7 +276,7 @@ internal fun RouteEditScreen(track: RouteTrack, customActivities: List<CustomAct
     title = draft.title,
     subtitle = "Toca un paso para cambiarlo. Con los tres puntos, puedes moverlo o borrarlo.",
     onBack = onBack, backLabel = "Cancelar",
-    bottom = { RelevoButton("Guardar", { onSave(draft) }, enabled = draft != track) },
+    bottom = { GuardedButton("Guardar", { onSave(draft) }, missing = if (draft == track) "No hay cambios que guardar." else null) },
   ) {
     if (draft.steps.isNotEmpty()) {
       ListSection {
@@ -342,7 +343,8 @@ private fun StepEditorSheet(step: RouteStep, isNew: Boolean, onDismiss: () -> Un
     Spacer(Modifier.height(20.dp))
     RenglonField("Dónde empiezas", place, { place = it }, placeholder = "Ej.: junto a la puerta")
     Spacer(Modifier.height(24.dp))
-    RelevoButton("Guardar el paso", { onSave(step.copy(activity = activity.trim(), firstStep = first.trim(), place = place.trim())) }, enabled = activity.isNotBlank())
+    GuardedButton("Guardar el paso", { onSave(step.copy(activity = activity.trim(), firstStep = first.trim(), place = place.trim())) },
+      missing = if (activity.isBlank()) "Escribe la actividad del paso." else null)
   }
 }
 

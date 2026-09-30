@@ -4,7 +4,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.14 de prueba, para el testeo real. La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
+**Versión:** 2.14 de prueba, para el testeo real. La **2.18** registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío; el consentimiento pasa a v11 ([detalle](version-2.18-registro-completo-y-avisos-2026-09-30.md), D-097). La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
 
 **Fecha:** 29 de septiembre de 2026
 
@@ -125,6 +125,7 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `domain/Study.kt`: plan de la prueba de 21 días, semanas y condiciones;
 - `monitor/AppUsageMonitorService.kt`: observación visible del primer plano y emisión de la señal;
 - `monitor/ForegroundTracker.kt` y `monitor/UsageWindow.kt`: suma del tiempo en las apps elegidas y uso alrededor de la señal;
+- `monitor/DailyUsage.kt` y `data/StateSnapshot.kt`: uso diario de las apps elegidas y tiempo total de pantalla, y estado del teléfono para el panel (D-097);
 - `monitor/RestoreMonitorReceiver.kt`: reanudación tras reiniciar o actualizar;
 - `monitor/UsageAccess.kt` y `monitor/BackgroundAccess.kt`: permiso de Tiempo de uso y restricción de batería;
 - `data/ResearchLogStore.kt`: sesiones, eventos y respuestas seudónimos en SQLite;
@@ -140,6 +141,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Versión 2.18: registro completo y avisos
+
+- **Qué cambió:** el estado menciona la 2.18 y el mapa del código suma `DailyUsage` y `StateSnapshot`.
+- **Cómo estaba antes:** la versión más reciente era la 2.17.
+- **Por qué:** pedido del autor (D-097).
 
 ### 2026-09-30 — Versión 2.17: mensajes al instante
 

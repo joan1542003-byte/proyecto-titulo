@@ -1,9 +1,15 @@
 package com.example.relevo.ui.components
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.AnimatedVisibilityScope
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.shrinkVertically
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.animation.EnterExitState
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.animateFloatAsState
@@ -40,6 +46,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.BlurredEdgeTreatment
@@ -65,6 +72,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 enum class ButtonKind { Primary, Secondary, Destructive }
 
@@ -82,13 +90,15 @@ fun RelevoButton(
   enabled: Boolean = true,
   icon: KitIcon? = null,
   compact: Boolean = false,
+  /** Se ve apagado pero responde: lo usa [GuardedButton] para decir qué falta. */
+  muted: Boolean = false,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
   val (container, content) = when {
-    !enabled -> colors.mist to colors.gray
+    !enabled || muted -> colors.mist to colors.gray
     kind == ButtonKind.Primary -> colors.ink to colors.onInk
     kind == ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .16f else .09f) to colors.error
     else -> colors.mist to colors.ink
@@ -105,7 +115,7 @@ fun RelevoButton(
       .pressScale(interaction, if (compact) 0.95f else 0.97f)
       .clip(Relevo.controlShape).background(background)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button) {
-        if (kind == ButtonKind.Primary) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
+        if (kind == ButtonKind.Primary && !muted) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
         onClick()
       }
       .padding(horizontal = if (compact) 16.dp else 22.dp),
@@ -117,6 +127,59 @@ fun RelevoButton(
       Spacer(Modifier.width(if (compact) 6.dp else 10.dp))
     }
     Text(label, style = if (compact) Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold) else Relevo.type.button, color = content, textAlign = TextAlign.Center, maxLines = 2)
+  }
+}
+
+/**
+ * Botón que dice qué falta (2.18). Si [missing] no es null, se ve apagado pero responde: al tocarlo
+ * muestra encima qué falta completar y vibra, en vez de no hacer nada. El aviso es neutro: no se
+ * pinta de rojo, porque no es un error de la persona. [onMissing] permite registrar qué faltó.
+ */
+@Composable
+fun GuardedButton(
+  label: String,
+  onClick: () -> Unit,
+  missing: String?,
+  modifier: Modifier = Modifier,
+  kind: ButtonKind = ButtonKind.Primary,
+  icon: KitIcon? = null,
+  onMissing: (String) -> Unit = {},
+) {
+  val haptics = LocalHapticFeedback.current
+  val scope = rememberCoroutineScope()
+  val bump = remember { Animatable(1f) }
+  var shown by remember { mutableStateOf<String?>(null) }
+  // Al completar lo que faltaba, el aviso se va; si falta otra cosa, se actualiza.
+  LaunchedEffect(missing) { shown = if (missing == null) null else shown?.let { missing } }
+  Column(modifier.fillMaxWidth()) {
+    AnimatedVisibility(visible = shown != null, enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut()) {
+      MissingHint(shown.orEmpty(), Modifier.padding(bottom = 10.dp).graphicsLayer { scaleX = bump.value; scaleY = bump.value })
+    }
+    RelevoButton(label, {
+      if (missing != null) {
+        // Si el aviso ya estaba a la vista, crece un instante para que se note.
+        val again = shown == missing
+        shown = missing
+        haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+        if (again) scope.launch { bump.animateTo(1.04f, tween(110)); bump.animateTo(1f, tween(170)) }
+        onMissing(missing)
+      } else onClick()
+    }, kind = kind, icon = icon, muted = missing != null)
+  }
+}
+
+/** Qué falta completar, en una cápsula clara con el icono de información. */
+@Composable
+fun MissingHint(text: String, modifier: Modifier = Modifier) {
+  val colors = Relevo.colors
+  Row(
+    modifier.fillMaxWidth().clip(Relevo.controlShape).background(colors.card).padding(horizontal = 18.dp, vertical = 12.dp)
+      .semantics { contentDescription = text },
+    verticalAlignment = Alignment.CenterVertically,
+  ) {
+    RelevoIcon(KitIcon.INFO, size = 18.dp, tint = colors.ink, background = colors.card, strokeWidth = 2f)
+    Spacer(Modifier.width(10.dp))
+    Text(text, style = Relevo.type.subhead, color = colors.ink)
   }
 }
 

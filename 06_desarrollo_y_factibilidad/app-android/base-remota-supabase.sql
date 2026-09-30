@@ -346,3 +346,68 @@ create index if not exists relevo_message_receipts_user_id_idx on public.relevo_
 -- 2026-09-30 · Relevo 2.17 (D-096): mensajes al instante. Los teléfonos escuchan las inserciones por Realtime
 -- mientras Relevo cuenta o espera; Realtime respeta RLS, así que cada teléfono solo recibe avisos de sus mensajes y de los generales.
 alter publication supabase_realtime add table public.relevo_messages;
+
+-- 2026-09-30 · Relevo 2.18 (D-097): registro completo. Migración `relevo_state_usage_and_deleted`.
+-- Un relevo activo se puede eliminar; queda registrado como 'deleted'.
+alter table public.relevo_sessions drop constraint if exists relevo_sessions_outcome_check;
+alter table public.relevo_sessions add constraint relevo_sessions_outcome_check
+  check (outcome is null or outcome in ('started', 'later', 'changed', 'not_answered', 'deleted'));
+
+-- Estado de cada teléfono (perfil sin nombre, ruta, actividades, ajustes, permisos, equipo,
+-- último relevo, relevo en curso, prueba y apps elegidas alguna vez). Una fila por sesión anónima.
+create table if not exists public.relevo_participant_state (
+  user_id uuid primary key default auth.uid() references auth.users(id) on delete cascade,
+  participant_code text not null check (char_length(participant_code) between 3 and 24),
+  app_version text check (app_version is null or char_length(app_version) <= 20),
+  consent_version text not null,
+  state jsonb not null default '{}'::jsonb,
+  updated_at timestamptz not null default now()
+);
+alter table public.relevo_participant_state enable row level security;
+revoke all on public.relevo_participant_state from anon, authenticated;
+grant select, insert, update, delete on public.relevo_participant_state to authenticated;
+grant all on public.relevo_participant_state to service_role;
+drop policy if exists "participants read own state" on public.relevo_participant_state;
+create policy "participants read own state" on public.relevo_participant_state
+  for select to authenticated using ((select auth.uid()) = user_id);
+drop policy if exists "participants insert own state" on public.relevo_participant_state;
+create policy "participants insert own state" on public.relevo_participant_state
+  for insert to authenticated with check ((select auth.uid()) = user_id);
+drop policy if exists "participants update own state" on public.relevo_participant_state;
+create policy "participants update own state" on public.relevo_participant_state
+  for update to authenticated using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
+drop policy if exists "participants delete own state" on public.relevo_participant_state;
+create policy "participants delete own state" on public.relevo_participant_state
+  for delete to authenticated using ((select auth.uid()) = user_id);
+create index if not exists relevo_participant_state_code_idx on public.relevo_participant_state (participant_code);
+
+-- Uso diario de las apps elegidas alguna vez y tiempo total de pantalla ('_total'), sin nombres de otras apps.
+create table if not exists public.relevo_daily_usage (
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  participant_code text not null check (char_length(participant_code) between 3 and 24),
+  day date not null,
+  package text not null check (char_length(package) between 1 and 200),
+  label text check (label is null or char_length(label) <= 120),
+  seconds integer not null check (seconds between 0 and 86400),
+  opens integer not null default 0 check (opens >= 0),
+  consent_version text not null,
+  updated_at timestamptz not null default now(),
+  primary key (user_id, day, package)
+);
+alter table public.relevo_daily_usage enable row level security;
+revoke all on public.relevo_daily_usage from anon, authenticated;
+grant select, insert, update, delete on public.relevo_daily_usage to authenticated;
+grant all on public.relevo_daily_usage to service_role;
+drop policy if exists "participants read own usage" on public.relevo_daily_usage;
+create policy "participants read own usage" on public.relevo_daily_usage
+  for select to authenticated using ((select auth.uid()) = user_id);
+drop policy if exists "participants insert own usage" on public.relevo_daily_usage;
+create policy "participants insert own usage" on public.relevo_daily_usage
+  for insert to authenticated with check ((select auth.uid()) = user_id);
+drop policy if exists "participants update own usage" on public.relevo_daily_usage;
+create policy "participants update own usage" on public.relevo_daily_usage
+  for update to authenticated using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
+drop policy if exists "participants delete own usage" on public.relevo_daily_usage;
+create policy "participants delete own usage" on public.relevo_daily_usage
+  for delete to authenticated using ((select auth.uid()) = user_id);
+create index if not exists relevo_daily_usage_code_day_idx on public.relevo_daily_usage (participant_code, day);

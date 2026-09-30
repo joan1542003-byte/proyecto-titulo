@@ -1061,7 +1061,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** desde la 2.17, el mensaje llega al instante (0,8 s en emulador) si Relevo está contando o tiene la activación automática encendida, gracias a una conexión Realtime con Supabase. Si no, llega al abrir la app o en hasta 15 minutos, o más si Android ahorra batería. Para que llegue siempre al instante haría falta Firebase Cloud Messaging. Los datos del panel llegan cuando los teléfonos los envían. Durante el testeo, cada mensaje es una intervención: conviene usarlos para coordinar y no para recordar la actividad; quedan registrados para el análisis.
 - **Documentación:** [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) y [Android 2.16](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md).
 
+## D-097 — Registro completo de cada participante, relevos que se pueden eliminar y avisos de campos faltantes
+
+- **Fecha:** 2026-09-30.
+- **Estado:** pedido del autor; implementado en Android 2.18 y en el panel, y probado en emulador. Sin probar en un teléfono real ni con personas. El consentimiento pasa a v11 y falta revisarlo con el profesor.
+- **Decisión:**
+  - **Uso diario:** la app guarda y envía, cada 30 minutos como máximo, el tiempo y las aperturas de cada app elegida alguna vez en Relevo y el tiempo total de pantalla del día, desde 7 días antes de aceptar. De las demás apps solo suma el tiempo al total; no guarda sus nombres. Tabla `relevo_daily_usage`.
+  - **Estado del teléfono:** perfil sin el nombre (imagen e intereses), ruta, actividades propias, ajustes, activación automática, permisos, fabricante, modelo y versión de Android, relevo en curso, último relevo, datos de la prueba y apps elegidas alguna vez. Tabla `relevo_participant_state`, una fila por teléfono, que se envía solo cuando cambia.
+  - **Eliminar un relevo activo:** «Eliminar este relevo» deja de contar, no suena y no queda en la lista de relevos. En la base queda con `outcome = 'deleted'`.
+  - **Campos faltantes:** si falta algo al tocar «Seguir», «Guardar» o «Aceptar», el aviso aparece encima del botón y el teléfono vibra. Si se vuelve a tocar, el aviso crece un instante. Se registra qué faltó (`falta_completar`), una vez cada 10 segundos.
+  - **Panel:** muestra el uso diario, las apps, la configuración y lo que conviene revisar de cada persona. Además trae 12 mensajes listos para coordinar y descarga en JSON todos los datos de una persona.
+- **Fundamento:** el autor pidió registrar todo lo del usuario (apps elegidas, uso y configuración) y tenerlo almacenado, poder eliminar un relevo activo y que la app avise cuando falta un campo. El uso diario, con una semana previa, permite comparar el uso de las apps elegidas antes y durante la prueba; hasta la 2.17 solo se registraba alrededor de cada señal.
+- **Riesgos y límites:**
+  - Hay más datos personales que antes: el tiempo total de pantalla por día y el modelo del teléfono. Por eso el consentimiento pasa a v11 y el borrado incluye las tablas nuevas.
+  - El tiempo se calcula con los eventos de Android y puede diferir de Bienestar digital. En el emulador la pantalla no se apaga y el total se infla.
+  - Los relevos eliminados no se cuentan en el panel, pero quedan para el análisis, por ejemplo para ver activaciones automáticas por error.
+- **Alternativas:** guardar solo el uso alrededor de cada señal (lo que había) o el uso de todas las apps con su nombre. Esta última se descartó porque expone apps que no tienen que ver con Relevo.
+- **Documentación:** [Android 2.18](../06_desarrollo_y_factibilidad/app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md), [consentimiento](../07_validacion/consentimiento-android-vigente-2026-09-23.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — D-097
+
+- **Qué cambió:** se registró D-097: uso diario y estado de cada teléfono, relevos activos que se pueden eliminar, avisos de campos faltantes y panel con mensajes listos.
+- **Cómo estaba antes:** el uso de las apps se registraba solo alrededor de cada señal, un relevo activo solo se podía desactivar y el botón «Seguir» no decía qué faltaba.
+- **Por qué:** pedido del autor.
 
 ### 2026-09-30 — D-096: mensajes al instante
 

@@ -393,6 +393,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     onActivate = { requestNotificationPermission(context); if (viewModel.activate()) { tab = Tab.HOME; replace(listOf(Route.TABS), isBack = true) } },
                     onClose = { viewModel.onPrepareClosed(); pop() },
                     onStepShown = viewModel::onPrepareStep,
+                    onMissing = viewModel::onMissingField,
                   ),
                 )
                 Route.ACTIVE -> ActiveScreen(
@@ -400,6 +401,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   backgroundUnrestricted = backgroundUnrestricted, photoKey = photoKey,
                   onBack = { pop() }, onDisarm = viewModel::disarm,
                   onUsageSettings = viewModel::openUsageAccessSettings, onBackground = viewModel::requestBackgroundAccess,
+                  onDelete = viewModel::deleteActive,
                 )
                 Route.SIGNAL -> SignalScreen(
                   reminder = reminder, customActivities = customActivities, studyActive = study.condition != null, guided = guide.signal,

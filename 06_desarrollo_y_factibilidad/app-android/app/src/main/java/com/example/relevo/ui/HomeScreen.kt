@@ -361,7 +361,7 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
       ListRow("Esta semana", icon = conditionIcon(condition), titleColor = Relevo.colors.graphite, value = conditionName(condition))
     }
     if (reminder.autoActivated) ListRow("Cómo empezó", icon = KitIcon.ESPERANDO, titleColor = Relevo.colors.graphite, value = "Se activó solo")
-    ListRow("Ver o desactivar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
+    ListRow("Ver, desactivar o eliminar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
   }
 }
 
@@ -477,8 +477,10 @@ internal fun ActiveScreen(
   onDisarm: () -> Unit,
   onUsageSettings: () -> Unit,
   onBackground: () -> Unit,
+  onDelete: () -> Unit = {},
 ) {
   var confirming by rememberSaveable { mutableStateOf(false) }
+  var confirmingDelete by rememberSaveable { mutableStateOf(false) }
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
   val where = if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else placePhrase(reminder.place)
   RelevoScreen(
@@ -530,6 +532,20 @@ internal fun ActiveScreen(
       Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
         PlainAction("Quitar la restricción", onBackground)
       }
+    }
+    // 2.18: eliminar un relevo activado por error, sin preguntas ni guardarlo en tus relevos.
+    SectionGap()
+    PlainAction("Eliminar este relevo", { confirmingDelete = true }, color = Relevo.colors.error, icon = KitIcon.BORRAR)
+  }
+  if (confirmingDelete) {
+    RelevoSheet(onDismiss = { confirmingDelete = false }, scrollable = false) {
+      Text("¿Eliminar este relevo?", style = Relevo.type.title2, color = Relevo.colors.ink)
+      Spacer(Modifier.height(8.dp))
+      Text("Deja de contar, no sonará y no queda en tus relevos. Sirve si lo activaste por error.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Spacer(Modifier.height(22.dp))
+      RelevoButton("Eliminar", { confirmingDelete = false; onDelete() }, kind = ButtonKind.Destructive)
+      Spacer(Modifier.height(8.dp))
+      RelevoButton("Mantenerlo", { confirmingDelete = false }, kind = ButtonKind.Secondary)
     }
   }
   if (confirming) {

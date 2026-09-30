@@ -40,11 +40,18 @@ La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a co
 **Desde la 2.16 (30 de septiembre):**
 
 - **Activación automática (D-095):** es opcional y empieza apagada. Si la persona la enciende, Relevo repite solo su último relevo cada vez que abre una de sus apps, con la condición de la semana, y espera 30 minutos después de cada relevo. Cada relevo registra si se activó a mano o solo; el análisis describe ambos por separado, porque en el automático la actividad no se eligió en ese momento.
-- **Mensajes del investigador (D-096):** se envían desde el panel privado y llegan como notificación. Se usan para coordinar (agendar, recordar la tarjeta semanal, resolver un problema técnico), no para recordar la actividad ni anunciar la señal. Cada mensaje, su hora de llegada y su hora de apertura quedan registrados y se consideran en el análisis.
+- **Mensajes del investigador (D-096):** se envían desde el panel privado y llegan como notificación. Se usan para coordinar (agendar, recordar la tarjeta semanal, resolver un problema técnico), no para recordar la actividad ni anunciar la señal. Cada mensaje, su hora de llegada y su hora de apertura quedan registrados y se consideran en el análisis. El panel trae 12 mensajes listos que cumplen esta regla.
+
+**Desde la 2.18 (30 de septiembre, D-097):**
+
+- **Uso diario:** la app registra cada día el tiempo y las aperturas de las apps elegidas alguna vez y el tiempo total de pantalla, desde 7 días antes de aceptar. Esa semana previa sirve como línea base para comparar el uso de las apps elegidas antes y durante la prueba.
+- **Estado del teléfono:** permisos, modelo, versión de Android, ajustes, ruta, actividades y relevo en curso, para detectar a tiempo un permiso perdido o una batería restringida.
+- **Eliminar un relevo activo:** si la persona lo activó por error, puede eliminarlo; queda registrado como eliminado y no cuenta como respuesta a una señal.
+- **Campos faltantes:** la app dice qué falta al tocar «Seguir» y registra en qué paso ocurrió.
 
 **Además:**
 
-- el [consentimiento](consentimiento-android-vigente-2026-09-23.md) de 21 días (v10 desde la 2.16);
+- el [consentimiento](consentimiento-android-vigente-2026-09-23.md) de 21 días (v11 desde la 2.18);
 - la [ficha de registro](ficha-registro-protocolo-01.md) de la sesión inicial, adaptada.
 
 ## Procedimiento
@@ -142,7 +149,7 @@ Una falla de conexión, del parlante o de la app no cuenta como respuesta de la 
 
 ## Datos y conservación
 
-La app registra, con un código, la actividad, el primer paso, el lugar declarado, las apps elegidas, los tiempos, los momentos de señal y respuesta, las respuestas a las preguntas y el uso de las apps elegidas alrededor de la señal. No registra el contenido de otras apps, mensajes ni fotos. El nombre del perfil queda en el teléfono. Desde la 2.16 también registra si cada relevo se activó a mano o solo, y cuándo llegó y se abrió cada mensaje del investigador; con la activación automática encendida, la app revisa qué app está abierta, solo su nombre, sin guardarlo.
+La app registra, con un código, la actividad, el primer paso, el lugar declarado, las apps elegidas, los tiempos, los momentos de señal y respuesta, las respuestas a las preguntas y el uso de las apps elegidas alrededor de la señal. No registra el contenido de otras apps, mensajes ni fotos. El nombre del perfil queda en el teléfono. Desde la 2.16 también registra si cada relevo se activó a mano o solo, y cuándo llegó y se abrió cada mensaje del investigador; con la activación automática encendida, la app revisa qué app está abierta, solo su nombre, sin guardarlo. Desde la 2.18 registra además el uso diario de las apps elegidas alguna vez, el tiempo total de pantalla por día (sin el nombre de las demás apps), el estado del teléfono y los relevos eliminados.
 
 La persona puede pedir el borrado en cualquier momento, y todos los registros se eliminan, como máximo, el 30 de diciembre de 2026. Después solo quedan resultados agregados, sin vínculo con la persona.
 
@@ -164,6 +171,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Registro completo (Android 2.18)
+
+- **Qué cambió:** Materiales suma lo que registra la 2.18 (uso diario con una semana previa como línea base, estado del teléfono, relevos eliminados y campos faltantes) y el consentimiento v11. Datos y conservación lo incluye. Los mensajes del panel traen textos listos que cumplen la regla de coordinar sin recordar la actividad.
+- **Cómo estaba antes:** el uso de las apps se registraba solo alrededor de cada señal y el consentimiento era v10.
+- **Por qué:** el autor pidió registrar todo lo de cada participante y tener mensajes listos (D-097).
 
 ### 2026-09-30 — Activación automática y mensajes
 

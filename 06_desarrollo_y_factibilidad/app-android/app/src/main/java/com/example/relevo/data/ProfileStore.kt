@@ -3,8 +3,8 @@ package com.example.relevo.data
 import android.content.Context
 
 /**
- * Perfil de P1 a P3. Nombre, imagen e intereses se quedan en el teléfono: no se envían a la base de
- * la prueba ni se registran en los datos del estudio.
+ * Perfil de P1 a P3. El nombre se envía aparte, solo con el código (D-089). La imagen y los intereses
+ * van en el estado del teléfono (D-097), sin el nombre.
  */
 data class Profile(
   val name: String = "",

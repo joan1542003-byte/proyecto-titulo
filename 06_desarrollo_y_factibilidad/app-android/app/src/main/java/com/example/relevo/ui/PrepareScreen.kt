@@ -65,6 +65,7 @@ import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.CheckMark
 import com.example.relevo.ui.components.DurationStepper
 import com.example.relevo.ui.components.FactRow
+import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
@@ -138,7 +139,31 @@ internal class PrepareActions(
   val onClose: () -> Unit,
   /** Registro de uso: el paso que se muestra. */
   val onStepShown: (String) -> Unit = {},
+  /** Registro de uso: la persona tocó «Seguir» con algo sin completar (paso, qué faltaba). */
+  val onMissing: (String, String) -> Unit = { _, _ -> },
 )
+
+/** Qué falta para seguir en cada paso; null si está completo. Se muestra al tocar «Seguir» (2.18). */
+private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boolean, condition: StudyCondition?): String? = when (step) {
+  PrepareStep.ACTIVITY -> if (reminder.activity.isBlank()) "Escribe qué quieres hacer o toca una idea." else null
+  PrepareStep.START -> if (reminder.howToStart.isBlank()) "Escribe cómo empiezas: lo primero que harías." else null
+  PrepareStep.PLACE -> if (reminder.place.isNotBlank()) null
+    else if (condition == StudyCondition.NEUTRAL) "Escribe dónde dejas el parlante." else "Escribe dónde empiezas."
+  PrepareStep.USAGE -> when {
+    !usageAccess -> "Falta el permiso de Tiempo de uso. Tócalo arriba para darlo."
+    reminder.selectedApps.isEmpty() -> "Elige al menos una app que cuente."
+    else -> null
+  }
+  PrepareStep.SOUND -> null
+  PrepareStep.REVIEW -> when {
+    !usageAccess -> "Falta el permiso de Tiempo de uso."
+    reminder.activity.isBlank() -> "Falta qué quieres hacer."
+    reminder.howToStart.isBlank() -> "Falta cómo empiezas."
+    reminder.place.isBlank() -> "Falta dónde empiezas."
+    reminder.selectedApps.isEmpty() -> "Faltan las apps que cuentan."
+    else -> null
+  }
+}
 
 /**
  * B2: seis pasos con avance continuo. «Seguir» ocupa siempre el mismo lugar y volver con el gesto
@@ -180,14 +205,8 @@ internal fun PrepareScreen(
   LaunchedEffect(step) { actions.onStepShown(step.name.lowercase()) }
   BackHandler(enabled = !picking) { back() }
 
-  val canContinue = when (step) {
-    PrepareStep.ACTIVITY -> reminder.activity.isNotBlank()
-    PrepareStep.START -> reminder.howToStart.isNotBlank()
-    PrepareStep.PLACE -> reminder.place.isNotBlank()
-    PrepareStep.USAGE -> reminder.selectedApps.isNotEmpty() && usageAccess
-    PrepareStep.SOUND -> true
-    PrepareStep.REVIEW -> reminder.hasRequiredContent && usageAccess
-  }
+  val missing = missingFor(step, reminder, usageAccess, studyCondition)
+  val canContinue = missing == null
   val isKnown = activityIdeas.any { it.activity.equals(reminder.activity.trim(), true) } || customActivities.any { it.name.equals(reminder.activity.trim(), true) }
   val picture = activityPicture(reminder.activity, customActivities)
 
@@ -202,16 +221,17 @@ internal fun PrepareScreen(
       ActivityHeader(reminder.activity, picture, photoKey) { go(PrepareStep.ACTIVITY) }
     }) else null,
     bottom = {
+      val onMissing: (String) -> Unit = { actions.onMissing(step.name.lowercase(), it) }
       if (step == PrepareStep.REVIEW) {
-        RelevoButton("Activar el relevo", {
+        GuardedButton("Activar el relevo", {
           if (saveActivity && !isKnown) {
             val image = (picture as? Picture.OfPhoto)?.photo?.key ?: (picture as? Picture.OfIcon)?.icon?.key ?: KitIcon.ACTIVIDAD.key
             actions.onSaveCustom(CustomActivity(UUID.randomUUID().toString(), reminder.activity.trim(), reminder.howToStart.trim(), reminder.place.trim(), image, 0))
           }
           actions.onActivate()
-        }, enabled = canContinue)
+        }, missing = missing, onMissing = onMissing)
       } else {
-        RelevoButton("Seguir", { go(PrepareStep.entries[step.ordinal + 1]) }, enabled = canContinue)
+        GuardedButton("Seguir", { go(PrepareStep.entries[step.ordinal + 1]) }, missing = missing, onMissing = onMissing)
       }
     },
   ) {

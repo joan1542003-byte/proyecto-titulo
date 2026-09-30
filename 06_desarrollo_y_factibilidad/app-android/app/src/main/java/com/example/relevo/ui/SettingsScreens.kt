@@ -43,6 +43,7 @@ import com.example.relevo.data.SyncStatus
 import com.example.relevo.data.ThemeMode
 import com.example.relevo.domain.Reminder
 import com.example.relevo.theme.Relevo
+import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.CheckMark
 import com.example.relevo.ui.components.CountStepper
@@ -313,9 +314,16 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
     title = if (initial == null) "Nueva actividad" else "Editar la actividad",
     onBack = onBack, closeIcon = initial == null, backLabel = "Cancelar",
     bottom = {
-      RelevoButton("Guardar", {
+      GuardedButton("Guardar", {
         onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), first.trim(), place.trim(), image.ifBlank { (picture as? Picture.OfPhoto)?.photo?.key ?: (picture as Picture.OfIcon).icon.key }, 0))
-      }, enabled = valid)
+      }, missing = when {
+        name.trim().length < 2 -> "Escribe el nombre de la actividad."
+        name.trim().length > 60 -> "El nombre es muy largo: usa hasta 60 caracteres."
+        duplicate -> "Ya existe una actividad con ese nombre."
+        first.isBlank() -> "Escribe cómo empiezas."
+        place.isBlank() -> "Escribe dónde empiezas."
+        else -> null
+      })
     },
   ) {
     val interaction = remember { MutableInteractionSource() }
@@ -462,7 +470,7 @@ internal fun FeedbackScreen(onSend: (Int?, String) -> Unit, onBack: () -> Unit) 
   RelevoScreen(
     title = "¿Cómo te resultó Relevo?",
     onBack = onBack, closeIcon = true, backLabel = "Cerrar",
-    bottom = { RelevoButton("Enviar", { onSend(stars, comment) }, enabled = stars != null || comment.isNotBlank(), icon = KitIcon.ENVIAR) },
+    bottom = { GuardedButton("Enviar", { onSend(stars, comment) }, missing = if (stars == null && comment.isBlank()) "Elige las estrellas o escribe un comentario." else null, icon = KitIcon.ENVIAR) },
   ) {
     StarRating(stars) { stars = it }
     SectionGap()
@@ -478,7 +486,7 @@ internal fun ReportScreen(onSend: (String, Boolean) -> Unit, onBack: () -> Unit)
   RelevoScreen(
     title = "Reportar un problema",
     onBack = onBack, closeIcon = true, backLabel = "Cerrar",
-    bottom = { RelevoButton("Enviar", { onSend(text, attach) }, enabled = text.isNotBlank(), icon = KitIcon.ENVIAR) },
+    bottom = { GuardedButton("Enviar", { onSend(text, attach) }, missing = if (text.isBlank()) "Escribe qué pasó." else null, icon = KitIcon.ENVIAR) },
   ) {
     RenglonArea("¿Qué pasó?", text, { text = it }, "Ej.: no sonó en el parlante")
     SectionGap()

@@ -50,6 +50,7 @@ import com.example.relevo.data.Settings
 import com.example.relevo.domain.Interests
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.theme.Relevo
+import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.Avatar
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.Emoji
@@ -215,7 +216,7 @@ private fun WeekNoteSheet(onDismiss: () -> Unit, onSend: (String) -> Unit) {
     Spacer(Modifier.height(16.dp))
     RenglonArea("Tu respuesta", text, { text = it }, "Escribe aquí")
     Spacer(Modifier.height(22.dp))
-    RelevoButton("Enviar", { onSend(text) }, enabled = text.isNotBlank())
+    GuardedButton("Enviar", { onSend(text) }, missing = if (text.isBlank()) "Escribe qué te ayudó." else null)
   }
 }
 
@@ -246,9 +247,13 @@ internal fun ProfileSetupScreen(
     trailing = if (step > 0) ({ GlassTextButton("Saltar", { if (step < 2) go(step + 1) else onFinish(false) }, color = Relevo.colors.graphite) }) else null,
     bottom = {
       when (step) {
-        0 -> RelevoButton("Seguir", { onName(name.trim()); go(1) }, enabled = name.isNotBlank())
-        1 -> RelevoButton("Seguir", { onImage(image); go(2) }, enabled = image.isNotBlank())
-        else -> RelevoButton("Armar mi ruta", { onInterests(interests, other); onFinish(true) }, enabled = interests.isNotEmpty() && (Interests.OTHER !in interests || other.isNotBlank()))
+        0 -> GuardedButton("Seguir", { onName(name.trim()); go(1) }, missing = if (name.isBlank()) "Escribe tu nombre." else null)
+        1 -> GuardedButton("Seguir", { onImage(image); go(2) }, missing = if (image.isBlank()) "Elige un emoji o toca «Saltar»." else null)
+        else -> GuardedButton("Armar mi ruta", { onInterests(interests, other); onFinish(true) }, missing = when {
+          interests.isEmpty() -> "Elige al menos un interés o toca «Saltar»."
+          Interests.OTHER in interests && other.isBlank() -> "Escribe cuál es tu otro interés."
+          else -> null
+        })
       }
     },
   ) {
@@ -340,7 +345,14 @@ internal fun ProfileEditScreen(profile: Profile, onSave: (String, String, List<S
   RelevoScreen(
     title = "Tu perfil",
     onBack = onBack, backLabel = "Cancelar",
-    bottom = { RelevoButton("Guardar", { onSave(name.trim(), image, interests, other.trim()) }, enabled = changed && (Interests.OTHER !in interests || other.isNotBlank())) },
+    bottom = {
+      GuardedButton("Guardar", { onSave(name.trim(), image, interests, other.trim()) }, missing = when {
+        name.isBlank() -> "Escribe tu nombre."
+        Interests.OTHER in interests && other.isBlank() -> "Escribe cuál es tu otro interés."
+        !changed -> "No hay cambios que guardar."
+        else -> null
+      })
+    },
   ) {
     val interaction = remember { MutableInteractionSource() }
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {

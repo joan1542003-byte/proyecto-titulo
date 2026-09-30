@@ -178,8 +178,9 @@ En la rama `android-2.7`, a pedido del autor:
 
 - **Android 2.16 (D-095 y D-096):** activación automática opcional, también en el testeo, y mensajes del proyecto que llegan como notificación. Consentimiento v10. Probada en emulador; falta el teléfono real ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md)).
 - **Android 2.17:** los mensajes llegan al instante mientras Relevo cuenta o espera, por Realtime ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.17-mensajes-al-instante-2026-09-30.md)). Para que lleguen siempre al instante haría falta Firebase Cloud Messaging.
-- **Panel privado:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), en claude.ai, con el diseño de la app y cuatro pestañas. Lee Supabase con el conector del autor y envía mensajes ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). Para cambiarlo hay que volver a publicarlo en la misma dirección.
-- **Supabase:** migraciones `relevo_auto_activation_and_messages` (columna `activation` y tablas `relevo_messages` y `relevo_message_receipts`, con RLS) y `relevo_messages_realtime`.
+- **Android 2.18 (D-097):** uso diario de las apps elegidas y tiempo total de pantalla desde 7 días antes de aceptar, estado del teléfono, «Eliminar este relevo» y avisos de campos faltantes. Consentimiento v11, pendiente de revisión docente. Probada en emulador, incluido el borrado de las tablas nuevas ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md)).
+- **Panel privado:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), en claude.ai, con el diseño de la app y cuatro pestañas. Lee Supabase con el conector del autor, envía mensajes (con 12 mensajes listos), muestra el uso y la configuración de cada persona y descarga sus datos ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). Para cambiarlo hay que volver a publicarlo en la misma dirección; declara los permisos `mcp` (Supabase, `execute_sql`) y `downloads`.
+- **Supabase:** migraciones `relevo_auto_activation_and_messages` (columna `activation` y tablas `relevo_messages` y `relevo_message_receipts`, con RLS), `relevo_messages_realtime` y `relevo_state_usage_and_deleted` (tablas `relevo_participant_state` y `relevo_daily_usage`, con RLS, y el resultado `deleted`).
 - **Presentación:** la diapositiva 14 es una carta Gantt de lo que sigue, en tercera persona ([documento 24](../10_recursos_visuales/24_presentacion-correccion-cruzada-2026-09-30.md)).
 - **Resumen del día:** [bitácora del 30 de septiembre](bitacora-trabajo-con-ia-2026-09-30.md).
 
@@ -194,6 +195,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Android 2.18 y panel v3
+
+- **Qué cambió:** la actualización del 30 de septiembre suma Android 2.18, el panel con mensajes listos y la migración `relevo_state_usage_and_deleted`.
+- **Cómo estaba antes:** llegaba hasta la 2.17 y el panel rediseñado.
+- **Por qué:** pedido del autor (D-097).
 
 ### 2026-09-30 — Actualización del 30 de septiembre
 

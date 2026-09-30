@@ -27,11 +27,14 @@ data class PendingAnswer(val id: Long, val participantCode: String, val sessionI
 /** Uso de la app: qué se abre, qué se elige y qué se cambia (desde 2.12). */
 data class PendingAppEvent(val id: Long, val participantCode: String, val event: String, val detail: String?, val createdAt: Long, val appVersion: String, val consentVersion: String)
 
+/** Uso de un día de una app elegida, o el total de pantalla (`_total`), pendiente de enviar (D-097). */
+data class PendingDailyUsage(val day: String, val packageName: String, val label: String?, val seconds: Int, val opens: Int)
+
 /** Sesión que ya tiene señal y a la que le falta calcular el uso de los 10 minutos posteriores. */
 data class UsageAfterRequest(val sessionId: String, val signalAt: Long, val packages: Set<String>)
 
 class ResearchLogStore(context: Context) :
-  SQLiteOpenHelper(context, "relevo_research.db", null, 8) {
+  SQLiteOpenHelper(context, "relevo_research.db", null, 9) {
 
   private val appContext = context.applicationContext
 
@@ -57,6 +60,7 @@ class ResearchLogStore(context: Context) :
     createSessionsTable(db)
     createAnswersTable(db)
     createAppEventsTable(db)
+    createDailyUsageTable(db)
   }
 
   override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -75,6 +79,60 @@ class ResearchLogStore(context: Context) :
     if (oldVersion in 3..6) FEELING_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
     if (oldVersion < 7) createAppEventsTable(db)
     if (oldVersion in 3..7) ACTIVATION_COLUMNS.forEach { (name, type) -> db.execSQL("ALTER TABLE sessions ADD COLUMN $name $type") }
+    if (oldVersion < 9) createDailyUsageTable(db)
+  }
+
+  /** Uso diario de las apps elegidas y total de pantalla (versión 9 de la base local, Android 2.18, D-097). */
+  private fun createDailyUsageTable(db: SQLiteDatabase) = db.execSQL(
+    """
+    CREATE TABLE IF NOT EXISTS daily_usage (
+      day TEXT NOT NULL,
+      package TEXT NOT NULL,
+      label TEXT,
+      seconds INTEGER NOT NULL,
+      opens INTEGER NOT NULL DEFAULT 0,
+      updated_at INTEGER NOT NULL,
+      consent_version TEXT NOT NULL,
+      synced INTEGER NOT NULL DEFAULT 0,
+      PRIMARY KEY (day, package)
+    )
+    """.trimIndent(),
+  )
+
+  /** Guarda el uso de un día; si cambió respecto de lo guardado, queda pendiente de enviar. */
+  fun saveDailyUsage(day: String, packageName: String, label: String?, seconds: Int, opens: Int) {
+    if (!recording()) return
+    val db = writableDatabase
+    val same = db.rawQuery("SELECT 1 FROM daily_usage WHERE day = ? AND package = ? AND seconds = ? AND opens = ?", arrayOf(day, packageName, seconds.toString(), opens.toString())).use { it.moveToFirst() }
+    if (same) return
+    db.insertWithOnConflict("daily_usage", null, ContentValues().apply {
+      put("day", day); put("package", packageName); label?.let { put("label", it.take(120)) }
+      put("seconds", seconds.coerceIn(0, 86_400)); put("opens", opens.coerceAtLeast(0))
+      put("updated_at", System.currentTimeMillis()); put("consent_version", CONSENT_VERSION); put("synced", PENDING)
+    }, SQLiteDatabase.CONFLICT_REPLACE)
+  }
+
+  fun pendingDailyUsage(): List<PendingDailyUsage> = readableDatabase.query("daily_usage", null, "synced = $PENDING", null, null, null, "day").use { cursor ->
+    buildList { while (cursor.moveToNext()) add(PendingDailyUsage(cursor.string("day"), cursor.string("package"), cursor.stringOrNull("label"), cursor.int("seconds"), cursor.int("opens"))) }
+  }
+
+  fun markDailyUsageSynced(rows: List<PendingDailyUsage>, state: Int = SYNCED) {
+    val db = writableDatabase
+    rows.forEach { db.execSQL("UPDATE daily_usage SET synced = $state WHERE day = ? AND package = ?", arrayOf(it.day, it.packageName)) }
+  }
+
+  /** Apps elegidas alguna vez en un relevo (paquete y nombre), para el uso diario y el estado (D-097). */
+  fun selectedAppsEver(): Map<String, String> = readableDatabase.query("sessions", arrayOf("target_apps", "target_package", "target_app_label"), null, null, null, null, "started_at").use { cursor ->
+    val apps = LinkedHashMap<String, String>()
+    while (cursor.moveToNext()) {
+      runCatching {
+        val array = JSONArray(cursor.getString(0))
+        for (index in 0 until array.length()) array.getJSONObject(index).let { apps[it.getString("package")] = it.getString("label") }
+      }
+      val pkg = cursor.getString(1).orEmpty()
+      if (pkg.isNotBlank() && pkg !in apps) apps[pkg] = cursor.getString(2).orEmpty()
+    }
+    apps
   }
 
   private fun createSessionsTable(db: SQLiteDatabase) = db.execSQL(
@@ -291,13 +349,13 @@ class ResearchLogStore(context: Context) :
   fun markAnswerRejected(id: Long) { writableDatabase.execSQL("UPDATE answers SET synced = $REJECTED WHERE id = ?", arrayOf(id)) }
 
   fun countBySyncState(state: Int): Int = readableDatabase.rawQuery(
-    "SELECT (SELECT COUNT(*) FROM events WHERE synced = ?) + (SELECT COUNT(*) FROM sessions WHERE synced = ?) + (SELECT COUNT(*) FROM answers WHERE synced = ?) + (SELECT COUNT(*) FROM app_events WHERE synced = ?)",
-    arrayOf(state.toString(), state.toString(), state.toString(), state.toString()),
+    "SELECT (SELECT COUNT(*) FROM events WHERE synced = ?) + (SELECT COUNT(*) FROM sessions WHERE synced = ?) + (SELECT COUNT(*) FROM answers WHERE synced = ?) + (SELECT COUNT(*) FROM app_events WHERE synced = ?) + (SELECT COUNT(*) FROM daily_usage WHERE synced = ?)",
+    arrayOf(state.toString(), state.toString(), state.toString(), state.toString(), state.toString()),
   ).use { cursor -> if (cursor.moveToFirst()) cursor.getInt(0) else 0 }
 
   /** Todo lo registrado en el teléfono, para «Descargar mis datos». */
   fun exportJson(): JSONObject = JSONObject().apply {
-    listOf("sessions" to "started_at", "events" to "created_at", "answers" to "created_at", "app_events" to "created_at").forEach { (table, order) ->
+    listOf("sessions" to "started_at", "events" to "created_at", "answers" to "created_at", "app_events" to "created_at", "daily_usage" to "day").forEach { (table, order) ->
       put(table, readableDatabase.query(table, null, null, null, null, null, order).use { cursor ->
         JSONArray().apply {
           while (cursor.moveToNext()) put(JSONObject().apply {
@@ -314,10 +372,10 @@ class ResearchLogStore(context: Context) :
     }
   }
 
-  fun clearAll() { writableDatabase.run { delete("events", null, null); delete("sessions", null, null); delete("answers", null, null); delete("app_events", null, null) } }
+  fun clearAll() { writableDatabase.run { delete("events", null, null); delete("sessions", null, null); delete("answers", null, null); delete("app_events", null, null); delete("daily_usage", null, null) } }
 
   fun hasRecords(): Boolean = readableDatabase.rawQuery(
-    "SELECT (SELECT COUNT(*) FROM events) + (SELECT COUNT(*) FROM sessions) + (SELECT COUNT(*) FROM answers) + (SELECT COUNT(*) FROM app_events)", null,
+    "SELECT (SELECT COUNT(*) FROM events) + (SELECT COUNT(*) FROM sessions) + (SELECT COUNT(*) FROM answers) + (SELECT COUNT(*) FROM app_events) + (SELECT COUNT(*) FROM daily_usage)", null,
   ).use { cursor -> cursor.moveToFirst() && cursor.getInt(0) > 0 }
 
   private fun Cursor.string(name: String): String = getString(getColumnIndexOrThrow(name))
@@ -329,7 +387,7 @@ class ResearchLogStore(context: Context) :
 
   companion object {
     /** Consentimiento de la prueba de 21 días (protocolo 02). Cambiarlo pide aceptar de nuevo. */
-    const val CONSENT_VERSION = "2026-09-30-v10"
+    const val CONSENT_VERSION = "2026-09-30-v11"
     const val PENDING = 0
     const val SYNCED = 1
     const val REJECTED = 2

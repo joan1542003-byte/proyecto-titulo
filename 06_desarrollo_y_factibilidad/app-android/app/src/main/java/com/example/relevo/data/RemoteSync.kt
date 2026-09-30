@@ -9,6 +9,8 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
 import java.time.Instant
+import java.time.LocalDate
+import com.example.relevo.monitor.DailyUsage
 
 /** Estado del envío que se muestra en Privacidad y datos para comprobar el piloto. */
 data class SyncStatus(
@@ -128,10 +130,65 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
       }
     }
 
+    // D-097: estado del teléfono y uso diario, como mucho cada 30 minutos.
+    val now = System.currentTimeMillis()
+    val code = Participation.code(appContext)
+    if (code.isNotBlank() && now - preferences.getLong("state_usage_at", 0L) >= STATE_USAGE_INTERVAL_MILLIS) {
+      refreshDailyUsage()
+      val state = StateSnapshot.build(appContext, store)
+      val hash = state.toString().hashCode()
+      if (hash != preferences.getInt("state_hash", 0)) {
+        val body = JSONObject().put("participant_code", code).put("app_version", BuildConfig.VERSION_NAME)
+          .put("consent_version", ResearchLogStore.CONSENT_VERSION).put("state", state).put("updated_at", Instant.now().toString())
+        val result = send(STATE_PATH, body.toString(), upsert = true)
+        when {
+          result.ok -> preferences.edit().putInt("state_hash", hash).apply()
+          result.permanent -> { rejectedNow++; remember(result, "estado") }
+          else -> return fail(result, "estado")
+        }
+      }
+      preferences.edit().putLong("state_usage_at", now).apply()
+    }
+    if (code.isNotBlank()) for (chunk in store.pendingDailyUsage().chunked(EVENT_BATCH)) {
+      val batch = send(DAILY_USAGE_PATH, JSONArray().apply { chunk.forEach { put(it.toJson(code)) } }.toString(), upsert = true)
+      when {
+        batch.ok -> store.markDailyUsageSynced(chunk)
+        batch.permanent -> { store.markDailyUsageSynced(chunk, ResearchLogStore.REJECTED); rejectedNow++; remember(batch, "uso diario") }
+        else -> return fail(batch, "uso diario")
+      }
+    }
+
     val editor = preferences.edit().putLong("last_success_at", System.currentTimeMillis())
     if (rejectedNow == 0) editor.remove("last_error")
     editor.apply()
     return true
+  }
+
+  /**
+   * Calcula el uso diario desde siete días antes de aceptar (línea base) hasta hoy y lo guarda en el
+   * teléfono; lo que cambió queda pendiente de enviar. Cada vez se recalculan el último día completo
+   * y el de hoy, por si llegaron eventos tarde. Sin el permiso de Tiempo de uso no hace nada.
+   */
+  private fun refreshDailyUsage() {
+    val today = LocalDate.now().toEpochDay()
+    val first = if (preferences.contains("usage_first_day")) preferences.getLong("usage_first_day", today)
+      else (today - BASELINE_DAYS).also { preferences.edit().putLong("usage_first_day", it).apply() }
+    val doneUntil = preferences.getLong("usage_complete_until", first - 1)
+    val apps = StateSnapshot.selectedApps(appContext, store)
+    var day = maxOf(first, doneUntil, today - MAX_DAYS_PER_RUN)
+    while (day <= today) {
+      val date = LocalDate.ofEpochDay(day)
+      val usage = DailyUsage.collect(appContext, date) ?: return
+      val key = date.toString()
+      store.saveDailyUsage(key, DailyUsage.TOTAL, "Tiempo de pantalla", usage.totalSeconds.toInt(), usage.totalOpens)
+      apps.forEach { (pkg, label) ->
+        val seconds = usage.seconds[pkg]?.toInt() ?: 0
+        val opens = usage.opens[pkg] ?: 0
+        if (seconds > 0 || opens > 0) store.saveDailyUsage(key, pkg, label, seconds, opens)
+      }
+      day++
+    }
+    preferences.edit().putLong("usage_complete_until", today - 1).apply()
   }
 
   /** El nombre cambió: se enviará en el próximo envío. */
@@ -199,6 +256,8 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     }.getOrNull() ?: return false
     if (!user.matches(Regex("[0-9a-fA-F-]{36}"))) return false
     if (!delete("/rest/v1/relevo_participants?user_id=eq.$user", token)) return false
+    if (!delete("/rest/v1/relevo_daily_usage?user_id=eq.$user", token)) return false
+    if (!delete("/rest/v1/relevo_participant_state?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_message_receipts?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_messages?target_user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_app_events?user_id=eq.$user", token)) return false
@@ -206,6 +265,8 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     if (!delete("/rest/v1/relevo_events?user_id=eq.$user", token)) return false
     if (!delete("/rest/v1/relevo_sessions?user_id=eq.$user", token)) return false
     return noRows("/rest/v1/relevo_participants?select=user_id&user_id=eq.$user&limit=1", token) &&
+      noRows("/rest/v1/relevo_daily_usage?select=day&user_id=eq.$user&limit=1", token) &&
+      noRows("/rest/v1/relevo_participant_state?select=user_id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_message_receipts?select=message_id&user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_messages?select=id&target_user_id=eq.$user&limit=1", token) &&
       noRows("/rest/v1/relevo_app_events?select=id&user_id=eq.$user&limit=1", token) &&
@@ -324,6 +385,10 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     .put("event_type", type).put("target_package", targetPackage).put("value_seconds", seconds ?: JSONObject.NULL)
     .put("created_at", createdAt.iso()).put("consent_version", consentVersion)
 
+  private fun PendingDailyUsage.toJson(code: String) = JSONObject()
+    .put("participant_code", code).put("day", day).put("package", packageName).put("label", label ?: JSONObject.NULL)
+    .put("seconds", seconds).put("opens", opens).put("consent_version", ResearchLogStore.CONSENT_VERSION).put("updated_at", Instant.now().toString())
+
   private fun PendingAppEvent.toJson() = JSONObject()
     .put("client_event_id", "$participantCode-u$id").put("participant_code", participantCode)
     .put("event", event).put("detail", detail ?: JSONObject.NULL)
@@ -344,6 +409,12 @@ class RemoteSync(context: Context, private val store: ResearchLogStore) {
     const val EVENTS_PATH = "relevo_events?on_conflict=client_event_id"
     const val ANSWERS_PATH = "relevo_answers?on_conflict=client_answer_id"
     const val APP_EVENTS_PATH = "relevo_app_events?on_conflict=client_event_id"
+    const val STATE_PATH = "relevo_participant_state?on_conflict=user_id"
+    const val DAILY_USAGE_PATH = "relevo_daily_usage?on_conflict=user_id,day,package"
+    const val STATE_USAGE_INTERVAL_MILLIS = 30 * 60_000L
+    /** Días anteriores a aceptar que se guardan como línea base del uso (D-097). */
+    const val BASELINE_DAYS = 7L
+    const val MAX_DAYS_PER_RUN = 14L
     val UUID_PATTERN = Regex("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")
   }
 }

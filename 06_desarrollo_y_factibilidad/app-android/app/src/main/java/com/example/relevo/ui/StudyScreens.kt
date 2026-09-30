@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.example.relevo.domain.StudyCondition
 import com.example.relevo.domain.StudyPlan
 import com.example.relevo.theme.Relevo
+import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.KitIcon
@@ -98,7 +99,7 @@ internal fun StudyScreen(study: StudyState, participantCode: String, participati
   val plan = study.plan
   RelevoScreen(
     title = "Prueba de 21 días", onBack = onBack,
-    bottom = if (plan == null && participating) ({ RelevoButton("Empezar la prueba hoy", { sequence?.let(onStart) }, enabled = sequence != null) }) else null,
+    bottom = if (plan == null && participating) ({ GuardedButton("Empezar la prueba hoy", { sequence?.let(onStart) }, missing = if (sequence == null) "Elige una secuencia." else null) }) else null,
   ) {
     if (!participating) {
       Text("Para configurar la prueba, primero hay que aceptar participar.", style = Relevo.type.body, color = Relevo.colors.graphite)

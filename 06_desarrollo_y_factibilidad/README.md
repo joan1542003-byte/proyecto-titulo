@@ -31,9 +31,10 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.18](app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md): registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío (D-097). Consentimiento v11. Probada en emulador, falta el teléfono real.
 - [Aplicación Android 2.17](app-android/version-2.17-mensajes-al-instante-2026-09-30.md): los mensajes del proyecto llegan al instante mientras Relevo cuenta o espera.
 - [Aplicación Android 2.16](app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md): suma la activación automática opcional (D-095) y los mensajes del proyecto (D-096); la 2.14 sigue siendo la probada para el testeo real ([estado de la app](app-android/README.md)). Probada en emulador, falta el teléfono real.
-- [Panel del testeo](panel-admin/README.md): página privada en claude.ai que lee Supabase en vivo, muestra participantes, respuestas y actividad, y envía notificaciones a la app (D-096).
+- [Panel del testeo](panel-admin/README.md): página privada en claude.ai que lee Supabase en vivo. Muestra participantes, respuestas, actividad, uso diario y configuración de cada persona; envía notificaciones con mensajes listos y descarga los datos de cada persona (D-096 y D-097).
 - [Objetos que Relevo puede hacer sonar](objetos-que-suenan-2026-09-29.md): el llavero iTag, el reloj que contesta llamadas y otras opciones baratas en Chile (D-093).
 - [Aplicación Android 2.10](app-android/README.md) (antecedente): prototipo ejecutable de ese momento, que exige participar en la prueba, usa textos más claros y pone el texto de las fotos según su tono ([detalle](app-android/version-2.10-participacion-y-claridad-2026-09-27.md)), sobre el vidrio, las formas redondeadas y los emoji de la 2.9 ([detalle](app-android/version-2.9-vidrio-y-emoji-2026-09-27.md)) y el sistema de marca D-073, el perfil, la ruta de actividades y el aviso de regreso de la 2.8 ([detalle](app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). Permite preparar un relevo con una o varias apps bajo un límite común y emitir una señal de unos 30 segundos por un parlante Bluetooth o por el teléfono. La 2.7 es la versión que especifica el protocolo 02; el autor decide cuál se usa en la prueba. Compila y pasa sus pruebas unitarias; falta probarlo en equipos reales. Incluye su [registro de licencias](app-android/licencias/README.md).
 - [Energía, autonomía y viabilidad portátil del Atom Echo](energia-autonomia-atom-echo-2026-09-23.md): detalla alimentación USB, incompatibilidad directa de la base A151, cálculo ilustrativo de autonomía y límites para un producto final compacto.
@@ -66,6 +67,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-09-30 — Android 2.18 y panel v3
+
+- **Qué cambió:** la documentación vigente enlaza la 2.18 y describe el panel con uso diario, configuración, mensajes listos y descarga de datos.
+- **Cómo estaba antes:** la versión más reciente era la 2.17 y el panel mostraba relevos y respuestas.
+- **Por qué:** pedido del autor (D-097).
 
 ### 2026-09-30 — Android 2.17
 

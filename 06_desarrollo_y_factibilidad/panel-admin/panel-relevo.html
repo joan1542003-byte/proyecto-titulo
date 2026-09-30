@@ -7,6 +7,7 @@
 :root {
   --paper: #F2F2EF; --card: #FCFCFA; --ink: #17181C; --on-ink: #F2F2EF; --graphite: #5B5F68; --mist: #E5E5E2;
   --line: #D5D6D8; --gray: #9BA0A9; --slate: #33363D; --voice: #2A4BD7; --voice-soft: #EEF1FD; --error: #B3261E;
+  --chart-focus: #2A4BD7; --chart-context: #82878F;
   --glass: rgba(247, 247, 244, .66); --glass-edge: rgba(23, 24, 28, .07); --scrim: rgba(0, 0, 0, .18); --segment: #FCFCFA;
   --font: "Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
   --r-panel: 28px; --r-tile: 22px; --r-sheet: 34px;
@@ -15,18 +16,21 @@
   :root:not([data-theme="light"]) {
     --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --on-ink: #111215; --graphite: #9BA0A9; --mist: #26282D;
     --line: #30333A; --gray: #5B5F68; --slate: #C9CBCF; --voice: #8CA6FF; --voice-soft: #1C2238; --error: #F2B8B5;
+    --chart-focus: #6F8CF2; --chart-context: #6F737C;
     --glass: rgba(27, 28, 32, .68); --glass-edge: rgba(255, 255, 255, .09); --scrim: rgba(0, 0, 0, .45); --segment: #3A3C42; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --on-ink: #111215; --graphite: #9BA0A9; --mist: #26282D;
   --line: #30333A; --gray: #5B5F68; --slate: #C9CBCF; --voice: #8CA6FF; --voice-soft: #1C2238; --error: #F2B8B5;
+  --chart-focus: #6F8CF2; --chart-context: #6F737C;
   --glass: rgba(27, 28, 32, .68); --glass-edge: rgba(255, 255, 255, .09); --scrim: rgba(0, 0, 0, .45); --segment: #3A3C42; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body { background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 26px; padding: 0 16px 48px; -webkit-font-smoothing: antialiased; }
 button, input, textarea, select { font: inherit; color: inherit; }
 button { cursor: pointer; background: none; border: 0; padding: 0; }
+button:disabled { cursor: default; }
 :focus-visible { outline: 2px solid var(--voice); outline-offset: 3px; border-radius: 12px; }
 svg.i { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 svg.i.sm { width: 16px; height: 16px; stroke-width: 2; }
@@ -44,6 +48,7 @@ svg.i.sm { width: 16px; height: 16px; stroke-width: 2; }
 .bar-right { flex: 1 1 0; display: flex; justify-content: flex-end; align-items: center; gap: 8px; min-width: 0; }
 .chip { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px; border-radius: 999px; background: var(--mist); font-size: 13px; line-height: 18px; font-weight: 600; white-space: nowrap; }
 .chip.on-card { background: var(--paper); }
+.chip.warn { color: var(--error); }
 .chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray); }
 .chip.live .dot { background: var(--ink); }
 .chip.error { color: var(--error); }
@@ -83,24 +88,31 @@ h2 { margin: 0 0 8px 4px; font-size: 15px; line-height: 20px; font-weight: 600; 
 .row { display: flex; align-items: center; gap: 14px; min-height: 58px; padding: 12px 16px 12px 18px; position: relative; width: 100%; text-align: left; }
 .row + .row::before { content: ""; position: absolute; top: 0; left: 62px; right: 0; border-top: 1px solid var(--line); }
 .row.plain + .row.plain::before { left: 18px; }
-button.row:hover { background: color-mix(in srgb, var(--line) 38%, transparent); }
+button.row:hover, .row-link:hover { background: color-mix(in srgb, var(--line) 38%, transparent); }
+.row-link { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; text-align: left; border-radius: 16px; margin: -6px; padding: 6px; }
 .lead-icon { width: 30px; display: grid; place-items: center; color: var(--ink); flex: none; }
 .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--mist); display: grid; place-items: center; font-weight: 700; font-size: 13px; letter-spacing: .02em; flex: none; }
 .row-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .row-title { font-size: 17px; line-height: 22px; overflow-wrap: anywhere; }
 .row-title.voice { color: var(--voice); font-weight: 500; }
+.row-title.muted { color: var(--graphite); }
 .row-sub { font-size: 13px; line-height: 18px; color: var(--graphite); overflow-wrap: anywhere; }
 .row-end { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end; color: var(--graphite); font-size: 15px; }
 .row .chev { color: var(--gray); }
 .empty { padding: 20px 18px; color: var(--graphite); font-size: 15px; line-height: 21px; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .pill { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--paper); font-size: 13px; font-weight: 600; white-space: nowrap; }
+.sheet .pill { background: var(--card); }
 .pill.quiet { font-weight: 400; color: var(--graphite); }
+.pill.warn { color: var(--error); }
 .code { font-weight: 700; letter-spacing: .02em; }
-@media (max-width: 640px) { .row { flex-wrap: wrap; } .row-end { width: 100%; justify-content: flex-start; padding-left: 44px; } }
+.mini { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border-radius: 999px; background: var(--ink); color: var(--on-ink); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.mini.soft { background: var(--mist); color: var(--ink); }
+@media (max-width: 640px) { .row { flex-wrap: wrap; } .row-end { width: 100%; justify-content: flex-start; padding-left: 54px; } }
 
 /* Panel suelto: condiciones, gráfico y formulario */
 .panel { background: var(--card); border-radius: var(--r-panel); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.sheet .panel { background: var(--paper); }
 .cond { display: flex; flex-direction: column; gap: 8px; }
 .cond + .cond { padding-top: 14px; border-top: 1px solid var(--line); }
 .cond-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
@@ -111,8 +123,22 @@ button.row:hover { background: color-mix(in srgb, var(--line) 38%, transparent);
 .b-yes { background: var(--ink); } .b-part { background: var(--gray); } .b-no { background: var(--line); }
 .legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--graphite); font-size: 13px; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
-.chart svg { width: 100%; height: auto; display: block; }
+.chart { position: relative; }
+.chart svg { width: 100%; height: auto; display: block; touch-action: pan-y; }
 .chart text { fill: var(--graphite); font-family: var(--font); font-size: 11px; }
+.tip { position: absolute; z-index: 5; pointer-events: none; background: var(--ink); color: var(--on-ink); border-radius: 14px; padding: 8px 12px; font-size: 13px; line-height: 18px; box-shadow: 0 6px 20px rgba(0, 0, 0, .18); white-space: nowrap; }
+.tip b { display: block; font-weight: 700; }
+.summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.summary div { display: flex; flex-direction: column; gap: 2px; }
+.summary b { font-size: 20px; line-height: 26px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.summary span { color: var(--graphite); font-size: 12px; line-height: 16px; }
+details.table-view summary { cursor: pointer; color: var(--graphite); font-size: 13px; font-weight: 600; }
+.scroll { overflow-x: auto; }
+table.days { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 18px; margin-top: 8px; }
+table.days th, table.days td { padding: 5px 6px; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.days th:first-child, table.days td:first-child { text-align: left; }
+table.days th { color: var(--graphite); font-weight: 600; border-bottom: 1px solid var(--line); }
+table.days td { border-bottom: 1px solid var(--line); }
 
 /* Formulario con renglones */
 .field { display: flex; flex-direction: column; gap: 4px; }
@@ -121,7 +147,7 @@ button.row:hover { background: color-mix(in srgb, var(--line) 38%, transparent);
 .renglon { width: 100%; border: 0; border-bottom: 1.5px solid var(--line); background: transparent; padding: 6px 2px 8px; color: var(--voice); font-size: 20px; line-height: 26px; font-weight: 500; outline: none; resize: none; }
 .renglon::placeholder { color: var(--gray); font-weight: 400; }
 .renglon:focus { border-bottom-color: var(--voice); }
-textarea.renglon { min-height: 84px; }
+textarea.renglon { min-height: 104px; }
 .segmented { display: flex; padding: 3px; border-radius: 999px; background: var(--mist); height: 44px; }
 .segmented button { flex: 1; border-radius: 999px; font-size: 15px; font-weight: 600; color: var(--graphite); }
 .segmented button[aria-pressed="true"] { background: var(--segment); color: var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .10); }
@@ -130,13 +156,22 @@ textarea.renglon { min-height: 84px; }
 .picker button b { font-size: 15px; line-height: 20px; }
 .picker button small { font-size: 12px; line-height: 16px; color: var(--graphite); }
 .picker button[aria-pressed="true"] { background: var(--voice-soft); box-shadow: inset 0 0 0 1.5px var(--voice); }
+.templates { display: flex; flex-direction: column; gap: 12px; }
+.tpl-group { display: flex; flex-wrap: wrap; gap: 6px; }
+.tpl-group > span { width: 100%; color: var(--graphite); font-size: 13px; line-height: 18px; }
+.tpl { height: 34px; padding: 0 14px; border-radius: 999px; background: var(--mist); font-size: 14px; font-weight: 600; }
+.tpl:hover { background: var(--line); }
+.tpl[aria-pressed="true"] { background: var(--voice-soft); color: var(--voice); box-shadow: inset 0 0 0 1.5px var(--voice); }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 54px; padding: 0 26px; border-radius: 999px; background: var(--ink); color: var(--on-ink); font-size: 17px; font-weight: 600; }
-.btn:disabled { background: var(--mist); color: var(--gray); cursor: default; }
+.btn:disabled { background: var(--mist); color: var(--gray); }
 .btn.secondary { background: var(--mist); color: var(--ink); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .plain-action { color: var(--ink); font-weight: 600; font-size: 15px; display: inline-flex; gap: 6px; align-items: center; }
 .note { color: var(--graphite); font-size: 13px; line-height: 18px; margin: 0; }
-.toast { border-radius: 18px; padding: 12px 16px; background: var(--card); display: flex; gap: 10px; align-items: center; font-weight: 600; }
+.toast { border-radius: 18px; padding: 12px 16px; background: var(--card); display: flex; gap: 10px; align-items: center; font-weight: 600; flex-wrap: wrap; }
+.sheet .toast { background: var(--paper); }
 .toast.error { color: var(--error); }
+.toast .plain-action { margin-left: auto; }
 .notice { background: var(--card); border-radius: var(--r-panel); padding: 18px; display: flex; gap: 14px; align-items: flex-start; }
 .notice .ring { width: 36px; height: 36px; border-radius: 50%; background: var(--mist); display: grid; place-items: center; flex: none; }
 .notice strong { display: block; font-size: 17px; line-height: 22px; }
@@ -146,21 +181,26 @@ textarea.renglon { min-height: 84px; }
 /* Hoja */
 .scrim { position: fixed; inset: 0; background: var(--scrim); z-index: 40; }
 .sheet { position: fixed; z-index: 50; background: var(--card); display: flex; flex-direction: column; box-shadow: 0 12px 40px rgba(0, 0, 0, .18); }
-@media (min-width: 761px) { .sheet { top: 16px; right: 16px; bottom: 16px; width: min(460px, calc(100% - 32px)); border-radius: var(--r-sheet); } }
-@media (max-width: 760px) { .sheet { left: 0; right: 0; bottom: 0; max-height: 88%; border-radius: var(--r-sheet) var(--r-sheet) 0 0; padding-bottom: env(safe-area-inset-bottom, 0px); } }
+@media (min-width: 761px) { .sheet { top: 16px; right: 16px; bottom: 16px; width: min(480px, calc(100% - 32px)); border-radius: var(--r-sheet); } }
+@media (max-width: 760px) { .sheet { left: 0; right: 0; bottom: 0; max-height: 90%; border-radius: var(--r-sheet) var(--r-sheet) 0 0; padding-bottom: env(safe-area-inset-bottom, 0px); } }
 .sheet-head { display: flex; align-items: center; gap: 14px; padding: 22px 22px 8px; }
 .sheet-head h3 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.01em; }
 .sheet-body { overflow-y: auto; padding: 8px 22px 24px; display: flex; flex-direction: column; gap: 22px; }
+.sheet-body > * { flex-shrink: 0; }
+.sheet-body > div:empty { display: none; }
 .sheet .section { background: var(--paper); }
 .fact { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px; font-size: 15px; }
 .fact + .fact { border-top: 1px solid var(--line); }
-.fact span:first-child { color: var(--graphite); }
-.fact span:last-child { text-align: right; }
+.fact span:first-child { color: var(--graphite); flex: none; }
+.fact span:last-child { text-align: right; min-width: 0; overflow-wrap: anywhere; }
+.fact .warn { color: var(--error); font-weight: 600; }
 .preview { background: var(--paper); border-radius: 22px; padding: 14px 16px; display: flex; gap: 12px; }
 .preview .app { width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--on-ink); display: grid; place-items: center; font-weight: 800; font-size: 15px; flex: none; }
 .preview small { color: var(--graphite); font-size: 13px; }
 .preview strong { display: block; font-size: 15px; line-height: 20px; }
 .preview p { margin: 2px 0 0; font-size: 15px; line-height: 21px; color: var(--slate); overflow-wrap: anywhere; }
+.steps { margin: 6px 0 0; padding-left: 20px; font-size: 15px; line-height: 21px; color: var(--slate); }
+.steps li.now { color: var(--voice); font-weight: 600; }
 
 /* En el teléfono, las pestañas bajan como en la app */
 @media (max-width: 760px) {
@@ -206,6 +246,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
       <div class="stat"><b class="num" id="k-auto">–</b><span>Se activaron solos</span></div>
       <div class="stat"><b class="num" id="k-online">–</b><span>Con actividad en 15 min</span></div>
     </div>
+    <div><h2>Para revisar</h2><div class="section" id="l-attention"><div class="empty">Cargando…</div></div></div>
     <div class="two">
       <div><h2>Ahora mismo</h2><div class="section" id="l-now"><div class="empty">Cargando…</div></div></div>
       <div><h2>Lo último que llegó</h2><div class="section" id="l-feed"><div class="empty">Cargando…</div></div></div>
@@ -216,7 +257,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
     <div class="view-head">
       <span class="eyebrow" id="p-count">En el testeo</span>
       <h1>Participantes.</h1>
-      <p class="lede">Toca a alguien para ver sus relevos, sus respuestas y escribirle.</p>
+      <p class="lede">Toca a alguien para ver su uso del teléfono, sus apps, sus relevos, sus respuestas y su configuración, escribirle o descargar sus datos.</p>
     </div>
     <div class="section" id="l-participants"><div class="empty">Cargando…</div></div>
   </section>
@@ -251,11 +292,14 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
             </div>
           </div>
           <div class="picker" id="picker" hidden></div>
+          <div class="field"><span class="field-label">Mensajes listos <span>Tócalo y edítalo si quieres</span></span>
+            <div class="templates" id="templates"></div>
+          </div>
           <label class="field" for="f-title"><span class="field-label">Título <span id="c-title">0 de 60</span></span>
-            <input class="renglon" id="f-title" maxlength="60" placeholder="Semana 2" autocomplete="off">
+            <input class="renglon" id="f-title" maxlength="60" placeholder="Empieza una semana nueva" autocomplete="off">
           </label>
           <label class="field" for="f-body"><span class="field-label">Mensaje <span id="c-body">0 de 400</span></span>
-            <textarea class="renglon" id="f-body" maxlength="400" placeholder="Esta semana deja el parlante en otro lugar de la casa."></textarea>
+            <textarea class="renglon" id="f-body" maxlength="400" placeholder="Abre Relevo: en Inicio verás dónde sonará el aviso esta semana."></textarea>
           </label>
           <div><button class="btn" type="submit" id="f-send" disabled>Revisar y enviar</button></div>
           <p class="note" id="f-eta">Llega al instante si Relevo está contando o con la activación automática encendida (app 2.17 o posterior). Si no, al abrir la app o en hasta 15 minutos.</p>
@@ -266,7 +310,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
     </div>
   </section>
 
-  <footer>Los teléfonos envían sus datos al activar un relevo, cuando suena, al cerrar la app y cada 15 minutos mientras cuentan. El panel se actualiza cada 30 segundos. Horas de Chile continental.</footer>
+  <footer>Los teléfonos envían sus datos al activar un relevo, cuando suena, al cerrar la app y cada 15 minutos; el estado y el uso diario, cada 30 minutos (app 2.18 o posterior). El panel se actualiza cada 30 segundos. Horas de Chile continental.</footer>
 </main>
 
 <div class="scrim" id="scrim" hidden></div>
@@ -277,7 +321,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000;
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.18';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -288,31 +332,52 @@ codes as (select participant_code, max(created_at) as last_seen from ev group by
 ls as (
   select distinct on (participant_code) participant_code, activity, threshold_seconds, observed_seconds, study_condition, study_day,
     signal_route, activation, signal_at, outcome, closed_at, started_at
-  from public.relevo_sessions order by participant_code, started_at desc
+  from public.relevo_sessions where outcome is distinct from 'deleted' order by participant_code, started_at desc
 ),
 le as (select distinct on (participant_code) participant_code, event_type, created_at from public.relevo_events order by participant_code, created_at desc),
 au as (select distinct on (participant_code) participant_code, detail from public.relevo_app_events where event = 'activacion_automatica' order by participant_code, created_at desc),
 ver as (select distinct on (participant_code) participant_code, app_version, user_id from public.relevo_app_events order by participant_code, created_at desc),
 nm as (select distinct on (participant_code) participant_code, name from public.relevo_participants order by participant_code, updated_at desc),
+st as (
+  select distinct on (participant_code) participant_code, state->'permisos' as permisos, state->'equipo' as equipo,
+    (state->'ajustes'->>'activacion_automatica')::boolean as auto_state,
+    case when jsonb_typeof(state->'apps_elegidas') = 'array' then jsonb_array_length(state->'apps_elegidas') else 0 end as apps, updated_at as state_at
+  from public.relevo_participant_state order by participant_code, updated_at desc
+),
+uu as (select participant_code, max(updated_at) as usage_at from public.relevo_daily_usage group by participant_code),
+tu as (
+  select participant_code, sum(seconds) filter (where package = '_total') as pantalla_hoy, sum(seconds) filter (where package <> '_total') as elegidas_hoy
+  from public.relevo_daily_usage where day = (now() at time zone 'America/Santiago')::date group by participant_code
+),
 ct as (
-  select participant_code, count(*) as relevos, count(outcome) as respondidos, count(signal_at) as senales, count(*) filter (where activation = 'auto') as automaticos
+  select participant_code,
+    count(*) filter (where outcome is distinct from 'deleted') as relevos,
+    count(*) filter (where signal_at is not null and outcome in ('started', 'later', 'changed')) as respondidos,
+    count(signal_at) as senales,
+    count(*) filter (where activation = 'auto' and outcome is distinct from 'deleted') as automaticos,
+    count(*) filter (where outcome = 'deleted') as eliminados
   from public.relevo_sessions group by participant_code
 )
 select json_build_object(
   'participants', coalesce((select json_agg(json_build_object(
       'code', c.participant_code, 'name', nm.name, 'version', ver.app_version, 'user_id', ver.user_id, 'last_seen', c.last_seen,
+      'contact', greatest(c.last_seen, st.state_at, uu.usage_at),
       'last_event', le.event_type, 'activity', ls.activity, 'threshold', ls.threshold_seconds, 'observed', ls.observed_seconds,
       'started_at', ls.started_at, 'condition', ls.study_condition, 'day', ls.study_day, 'route', ls.signal_route,
-      'last_signal_at', ls.signal_at, 'last_outcome', ls.outcome, 'auto', au.detail,
-      'relevos', coalesce(ct.relevos, 0), 'respondidos', coalesce(ct.respondidos, 0), 'senales', coalesce(ct.senales, 0), 'automaticos', coalesce(ct.automaticos, 0)
+      'last_signal_at', ls.signal_at, 'last_outcome', ls.outcome, 'auto', au.detail, 'auto_state', st.auto_state,
+      'permisos', st.permisos, 'equipo', st.equipo, 'apps', st.apps, 'state_at', st.state_at,
+      'pantalla_hoy', tu.pantalla_hoy, 'elegidas_hoy', tu.elegidas_hoy,
+      'relevos', coalesce(ct.relevos, 0), 'respondidos', coalesce(ct.respondidos, 0), 'senales', coalesce(ct.senales, 0),
+      'automaticos', coalesce(ct.automaticos, 0), 'eliminados', coalesce(ct.eliminados, 0)
     ) order by c.last_seen desc)
     from codes c left join nm using (participant_code) left join ver using (participant_code) left join le using (participant_code)
-    left join ls using (participant_code) left join au using (participant_code) left join ct using (participant_code)), '[]'::json),
+    left join ls using (participant_code) left join au using (participant_code) left join ct using (participant_code)
+    left join st using (participant_code) left join uu using (participant_code) left join tu using (participant_code)), '[]'::json),
   'totals', json_build_object(
-    'relevos_hoy', (select count(*) from public.relevo_sessions where started_at >= (date_trunc('day', now() at time zone 'America/Santiago') at time zone 'America/Santiago')),
+    'relevos_hoy', (select count(*) from public.relevo_sessions where outcome is distinct from 'deleted' and started_at >= (date_trunc('day', now() at time zone 'America/Santiago') at time zone 'America/Santiago')),
     'senales', (select count(*) from public.relevo_sessions where signal_at is not null),
-    'respondidos', (select count(*) from public.relevo_sessions where outcome is not null),
-    'automaticos', (select count(*) from public.relevo_sessions where activation = 'auto')
+    'respondidos', (select count(*) from public.relevo_sessions where signal_at is not null and outcome in ('started', 'later', 'changed')),
+    'automaticos', (select count(*) from public.relevo_sessions where activation = 'auto' and outcome is distinct from 'deleted')
   ),
   'sessions', coalesce((select json_agg(s) from (
     select participant_code as code, activity, started_at, signal_at, outcome, knew_intention, recalled_first_step, signal_feeling,
@@ -324,15 +389,16 @@ select json_build_object(
     select study_condition as condition, count(*) as relevos, count(signal_at) as senales,
       count(*) filter (where knew_intention = 'yes') as si, count(*) filter (where knew_intention = 'partly') as medias, count(*) filter (where knew_intention = 'no') as no,
       count(*) filter (where recalled_first_step = 'yes') as recordo, count(*) filter (where outcome = 'started') as comenzo
-    from public.relevo_sessions where study_condition is not null group by study_condition order by study_condition) y), '[]'::json),
+    from public.relevo_sessions where study_condition is not null and outcome is distinct from 'deleted' group by study_condition order by study_condition) y), '[]'::json),
   'daily', coalesce((select json_agg(d order by d.day) from (
     select (started_at at time zone 'America/Santiago')::date as day, count(*) as relevos, count(signal_at) as senales
-    from public.relevo_sessions where started_at > now() - interval '21 days' group by 1) d), '[]'::json),
+    from public.relevo_sessions where started_at > now() - interval '21 days' and outcome is distinct from 'deleted' group by 1) d), '[]'::json),
   'feed', coalesce((select json_agg(f) from (
     select * from (
-      select participant_code as code, event_type as what, created_at from public.relevo_events
-      union all select participant_code, event, created_at from public.relevo_app_events where event not in ('pantalla', 'preparar_paso', 'permisos')
-    ) z order by created_at desc limit 30) f), '[]'::json),
+      select participant_code as code, event_type as what, null::text as detail, created_at from public.relevo_events
+      union all select participant_code, event, case when event = 'falta_completar' then detail end, created_at from public.relevo_app_events
+        where event not in ('pantalla', 'preparar_paso', 'permisos')
+    ) z order by created_at desc limit 40) f), '[]'::json),
   'messages', coalesce((select json_agg(m) from (
     select msg.id, msg.created_at, msg.target_code, msg.title, msg.body,
       (select count(*) from public.relevo_message_receipts r where r.message_id = msg.id and r.delivered_at is not null) as entregados,
@@ -340,11 +406,41 @@ select json_build_object(
     from public.relevo_messages msg order by msg.created_at desc limit 20) m), '[]'::json)
 ) as snapshot;`;
 
+  // Mensajes listos: solo coordinación. Ninguno recuerda la actividad ni anuncia la señal (D-096).
+  const TEMPLATES = [
+    { group: 'Al empezar', id: 'bienvenida', label: 'Bienvenida', title: 'Gracias por participar',
+      body: 'Ya empezó tu prueba de Relevo. Si algo falla o tienes dudas, escríbeme por el medio que acordamos. Puedes dejar la prueba cuando quieras, sin dar explicaciones.' },
+    { group: 'Al empezar', id: 'semana', label: 'Semana nueva', title: 'Empieza una semana nueva',
+      body: 'Abre Relevo: en Inicio verás dónde sonará el aviso esta semana. Lo demás sigue igual.' },
+    { group: 'Durante la prueba', id: 'tarjeta', label: 'Tarjeta semanal', title: 'Tu tarjeta de la semana',
+      body: 'En Inicio tienes una tarjeta con tres preguntas de 1 a 5 y un comentario opcional sobre esta semana. Toma un minuto y puedes omitir lo que quieras.' },
+    { group: 'Durante la prueba', id: 'todo_bien', label: '¿Todo bien?', title: '¿Cómo va Relevo?',
+      body: '¿Te ha funcionado bien la app? Si algo falló o te molestó, cuéntame por el medio que acordamos. Si todo va bien, no hace falta responder.' },
+    { group: 'Durante la prueba', id: 'automatica', label: 'Activación automática', title: 'Sobre la activación automática',
+      body: 'Si la activación automática te molesta, puedes apagarla en Inicio con «Apagar». Los relevos que actives a mano siguen igual.' },
+    { group: 'Problemas técnicos', id: 'parlante', label: 'Parlante', title: 'Revisa el parlante',
+      body: 'Revisa que el parlante tenga batería, esté encendido y conectado al teléfono. Si no se conecta, escríbeme y lo vemos.' },
+    { group: 'Problemas técnicos', id: 'sin_datos', label: 'Sin datos', title: 'No han llegado datos de Relevo',
+      body: 'Hace un rato no llegan datos de tu teléfono. Abre Relevo un momento con internet para que se envíen. Si ves un aviso, síguelo; si no, escríbeme.' },
+    { group: 'Problemas técnicos', id: 'permiso_uso', label: 'Permiso de Tiempo de uso', title: 'Relevo necesita un permiso',
+      body: 'A Relevo le falta el permiso de Tiempo de uso y no puede contar el tiempo en tus apps. Ábrelo y ve a Perfil › Permisos › Tiempo de uso para darlo.' },
+    { group: 'Problemas técnicos', id: 'bateria', label: 'Batería', title: 'Ajusta la batería de Relevo',
+      body: 'Android puede estar deteniendo Relevo para ahorrar batería. Ábrelo y ve a Perfil › Permisos › Batería para dejarlo sin restricción.' },
+    { group: 'Problemas técnicos', id: 'version', label: 'Versión nueva', title: 'Hay una versión nueva de Relevo',
+      body: 'Te la envío por el medio que acordamos. Instálala encima de la actual, sin desinstalar, para no perder lo que ya tienes.' },
+    { group: 'Al terminar', id: 'conversacion', label: 'Conversación final', title: 'Coordinemos la conversación final',
+      body: 'Terminaste las tres semanas. Me gustaría conversar 15 minutos, en persona o por llamada, sobre cómo te fue. Escríbeme por el medio que acordamos con el día y la hora que te acomoden.' },
+    { group: 'Al terminar', id: 'gracias', label: 'Gracias', title: 'Gracias por estas tres semanas',
+      body: 'La prueba terminó. Si quieres borrar tus datos ahora, hazlo antes de desinstalar: Perfil › Tus datos › Borrar mis datos. Si no, se borran a más tardar el 30 de diciembre de 2026.' }
+  ];
+
   const CONDITIONS = { A: 'Junto al primer paso', B: 'Otro lugar de la casa', C: 'En el teléfono' };
   const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj' };
-  const OUTCOMES = { started: 'Comenzó', later: 'Lo dejó para después', changed: 'Cambió de idea', not_answered: 'Sin respuesta' };
+  const OUTCOMES = { started: 'Comenzó', later: 'Lo dejó para después', changed: 'Cambió de idea', not_answered: 'Saltó las preguntas', deleted: 'Lo eliminó' };
   const KNEW = { yes: 'Sí', partly: 'A medias', no: 'No' };
   const FEELING = { good: '😄 Bien', neutral: '😐 Normal', bad: '😞 Mal' };
+  const ANDROID = { 31: '12', 32: '12L', 33: '13', 34: '14', 35: '15', 36: '16', 37: '17' };
+  const REMINDER_STATES = { draft: 'Borrador', waiting: 'Contando', signalled: 'Sonó', silenced: 'Silenciado', done: 'Cerrado' };
   const EVENTS = {
     armed: ['play', 'Activó un relevo'], target_entered: ['phone', 'Abrió una app elegida'], target_left: ['phone', 'Salió de una app elegida'],
     signal_emitted: ['bell', 'Sonó la señal'], signal_failed: ['bell', 'La señal no sonó'], signal_ended: ['bell', 'La señal terminó sola'],
@@ -352,6 +448,7 @@ select json_build_object(
     responded: ['check', 'Respondió'], closed: ['check', 'Cerró el relevo'], monitor_paused: ['pause', 'Se pausó el conteo'], monitor_resumed: ['play', 'Se retomó el conteo'],
     app_abierta: ['phone', 'Abrió Relevo'], app_cerrada: ['phone', 'Cerró Relevo'], consentimiento_aceptado: ['check', 'Aceptó el consentimiento'],
     relevo_automatico: ['bolt', 'Relevo se activó solo'], activacion_automatica: ['bolt', 'Cambió la activación automática'],
+    relevo_eliminado: ['close', 'Eliminó un relevo activo'], falta_completar: ['info', 'Le faltó completar un campo'],
     mensaje_recibido: ['send', 'Le llegó un mensaje'], mensaje_abierto: ['send', 'Abrió un mensaje'], mensaje_sin_notificaciones: ['send', 'Mensaje sin notificaciones'],
     preparar_abierto: ['play', 'Empezó a preparar'], preparar_cerrado: ['pause', 'Cerró la preparación'], actividad_elegida: ['check', 'Eligió una actividad'],
     prueba_de_sonido: ['bell', 'Probó el sonido'], video_como_funciona: ['play', 'Vio el video'], aviso_semanal_enviado: ['bell', 'Le llegó el aviso semanal']
@@ -367,7 +464,8 @@ select json_build_object(
     check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>', pause: '<path d="M9 6.5v11M15 6.5v11"/>', play: '<path d="M8 5.5v13l10.5-6.5z"/>',
     phone: '<rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/>', dot: '<circle cx="12" cy="12" r="4"/>',
     refresh: '<path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4.5v4h-4"/>', chevron: '<path d="m9.5 6 6 6-6 6"/>',
-    close: '<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>', info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/>'
+    close: '<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>', info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/>',
+    download: '<path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/>'
   };
   const STATES = {
     counting: ['hourglass', 'Contando'], awaiting: ['bell', 'Espera responder'], paused: ['pause', 'En pausa'],
@@ -376,7 +474,7 @@ select json_build_object(
   const COUNTING = ['armed', 'target_entered', 'target_left', 'monitor_resumed'];
 
   const $ = (id) => document.getElementById(id);
-  let mcp = null, data = null, lastOk = 0, busy = false, lastError = null, view = 'ahora', target = 'all';
+  let mcp = null, data = null, lastOk = 0, busy = false, lastError = null, view = 'ahora', target = 'all', undo = null;
   try { const saved = localStorage.getItem('relevo-panel-view'); if (saved && $('view-' + saved)) view = saved; } catch (e) {}
 
   // ---- Utilidades ----
@@ -396,7 +494,9 @@ select json_build_object(
   }
   const fmtDate = new Intl.DateTimeFormat('es-CL', { timeZone: TZ, day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
   const fmtDay = new Intl.DateTimeFormat('es-CL', { timeZone: TZ, day: 'numeric', month: 'numeric' });
+  const fmtLongDay = new Intl.DateTimeFormat('es-CL', { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' });
   const fmtToday = new Intl.DateTimeFormat('es-CL', { timeZone: TZ, weekday: 'long', day: 'numeric', month: 'long' });
+  const isoDay = (d) => new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(d);
   const when = (iso) => { if (!iso) return '—'; const d = new Date(iso); return isNaN(d) ? '—' : fmtDate.format(d); };
   function ago(iso) {
     if (!iso) return '—';
@@ -407,8 +507,14 @@ select json_build_object(
     return when(iso);
   }
   const minutes = (sec) => sec == null ? '—' : (sec < 60 ? sec + ' s' : Math.round(sec / 60) + ' min');
+  function duration(sec) {
+    if (sec == null) return '—';
+    if (sec < 60) return sec + ' s';
+    const m = Math.round(sec / 60); if (m < 60) return m + ' min';
+    const h = Math.floor(m / 60), r = m % 60; return h + ' h' + (r ? ' ' + r + ' min' : '');
+  }
   const initials = (p) => (p.name ? p.name.trim().split(/\s+/).map((w) => w[0]).join('').slice(0, 2) : p.code.slice(0, 2)).toUpperCase();
-  const autoOn = (p) => typeof p.auto === 'string' && p.auto.startsWith('si');
+  const autoOn = (p) => p.auto_state != null ? p.auto_state === true : (typeof p.auto === 'string' && p.auto.startsWith('si'));
   const versionAtLeast = (v, min) => { const a = String(v || '0').split('.').map(Number), b = min.split('.').map(Number); for (let i = 0; i < 3; i++) { if ((a[i] || 0) !== (b[i] || 0)) return (a[i] || 0) > (b[i] || 0); } return true; };
   function stateOf(p) {
     const e = p.last_event;
@@ -430,8 +536,20 @@ select json_build_object(
     return map[q] || q.replace(/_/g, ' ');
   }
   function section(container, rows, emptyText) {
-    const box = $(container);
+    const box = typeof container === 'string' ? $(container) : container;
     box.replaceChildren(...(rows.length ? rows : [el('div', { class: 'empty', text: emptyText })]));
+  }
+  const missingText = (detail) => { const m = /aviso=(.*)$/.exec(detail || ''); return m ? m[1] : ''; };
+
+  // Lo que conviene revisar de cada persona, con el mensaje listo que lo resuelve.
+  function issuesOf(p) {
+    const out = [], perm = p.permisos || {};
+    if (perm.tiempo_de_uso === false) out.push({ text: 'Falta el permiso de Tiempo de uso', tpl: 'permiso_uso' });
+    if (perm.notificaciones === false) out.push({ text: 'Tiene las notificaciones apagadas: los mensajes no le llegan', tpl: null });
+    if (perm.bateria_sin_restriccion === false) out.push({ text: 'La batería está con restricción', tpl: 'bateria' });
+    if (p.contact && Date.now() - new Date(p.contact).getTime() > 24 * 3600e3) out.push({ text: 'No llegan datos desde ' + when(p.contact), tpl: 'sin_datos' });
+    if (p.version && !versionAtLeast(p.version, LATEST)) out.push({ text: 'Usa la app ' + p.version + '; la ' + LATEST + ' guarda su uso diario y su configuración', tpl: 'version' });
+    return out;
   }
 
   // ---- Supabase por el conector de quien abre la página ----
@@ -489,6 +607,55 @@ select json_build_object(
     } finally { busy = false; setLive(); }
   }
 
+  // ---- Gráficos: barras apiladas con una sola escala y una nota al pasar el puntero ----
+  function niceMax(v) { if (v <= 0) return 1; const p = Math.pow(10, Math.floor(Math.log10(v))); const n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p; }
+  function barChart(box, opts) {
+    // opts: days [iso], series [{key, color, label}], values [{key: n}], max, tick(v), label(i), tip(i) -> [title, lines], marker {index, text}, aria
+    const W = 360, H = 170, L = 38, R = 6, T = 14, B = 22, ns = 'http://www.w3.org/2000/svg';
+    const n = opts.days.length, bw = (W - L - R) / n, max = opts.max, y = (v) => H - B - (H - B - T) * v / max;
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', opts.aria);
+    const add = (name, attrs, text, parent) => { const e = document.createElementNS(ns, name); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; (parent || svg).append(e); return e; };
+    [0, max / 2, max].forEach((v) => { add('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), stroke: 'var(--line)', 'stroke-width': 1 }); add('text', { x: L - 6, y: y(v) + 4, 'text-anchor': 'end' }, opts.tick(v)); });
+    if (opts.marker && opts.marker.index >= 0 && opts.marker.index < n) {
+      const mx = L + opts.marker.index * bw;
+      add('line', { x1: mx, x2: mx, y1: T - 4, y2: H - B, stroke: 'var(--graphite)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+      add('text', { x: mx + 4, y: T + 2, 'text-anchor': 'start' }, opts.marker.text);
+    }
+    const r = Math.min(4, Math.max(1, bw / 2 - 2));
+    opts.values.forEach((v, i) => {
+      const x = L + i * bw + Math.max(1, bw * 0.14), w = Math.max(2, bw - 2 * Math.max(1, bw * 0.14));
+      let base = 0;
+      opts.series.forEach((s, si) => {
+        const val = v[s.key] || 0; if (!val) return;
+        const top = y(base + val), bottom = y(base) - (base > 0 ? 2 : 0), h = Math.max(1, bottom - top);
+        const last = !opts.series.slice(si + 1).some((t) => v[t.key] > 0);
+        // Solo el extremo de datos es redondeado; la base queda recta sobre el eje.
+        const rr = last ? Math.min(r, h) : 0;
+        add('path', { d: 'M' + x + ',' + (top + h) + 'V' + (top + rr) + 'q0,-' + rr + ' ' + rr + ',-' + rr + 'H' + (x + w - rr) + 'q' + rr + ',0 ' + rr + ',' + rr + 'V' + (top + h) + 'Z', fill: s.color });
+        base += val;
+      });
+      const lab = opts.label(i); if (lab) add('text', { x: x + w / 2, y: H - 6, 'text-anchor': 'middle' }, lab);
+    });
+    const tip = el('div', { class: 'tip', role: 'status' }); tip.hidden = true;
+    const guide = add('rect', { x: 0, y: T - 4, width: bw, height: H - B - T + 4, fill: 'var(--line)', opacity: 0.35, rx: 4 }); guide.style.display = 'none';
+    svg.insertBefore(guide, svg.firstChild);
+    function show(evt) {
+      const rect = svg.getBoundingClientRect(); const px = (evt.clientX - rect.left) * W / rect.width;
+      const i = Math.floor((px - L) / bw); if (i < 0 || i >= n) { hide(); return; }
+      const [title, lines] = opts.tip(i);
+      tip.replaceChildren(el('b', { text: title }), ...lines.map((t) => el('div', { text: t })));
+      tip.hidden = false; guide.style.display = ''; guide.setAttribute('x', L + i * bw);
+      const cx = (L + (i + 0.5) * bw) * rect.width / W, boxW = box.clientWidth, tw = tip.offsetWidth;
+      tip.style.left = Math.max(0, Math.min(boxW - tw, cx + svg.offsetLeft - tw / 2)) + 'px';
+      tip.style.top = Math.max(0, svg.offsetTop + y(max) * rect.height / H - tip.offsetHeight - 6) + 'px';
+    }
+    function hide() { tip.hidden = true; guide.style.display = 'none'; }
+    svg.addEventListener('pointermove', show); svg.addEventListener('pointerdown', show); svg.addEventListener('pointerleave', hide);
+    const legend = el('div', { class: 'legend' }, opts.series.map((s) => el('span', null, [el('i', { style: 'background:' + s.color }), s.label])));
+    box.replaceChildren(svg, tip, legend, ...(opts.extra || []));
+  }
+
   // ---- Pantallas ----
   function render() {
     const P = data.participants || [], T = data.totals || {};
@@ -500,13 +667,31 @@ select json_build_object(
     $('k-auto').textContent = T.automaticos ?? 0;
     $('k-online').textContent = P.filter((p) => p.last_seen && Date.now() - new Date(p.last_seen) < 15 * 60000).length;
     $('p-count').textContent = P.length === 1 ? '1 persona en el testeo' : P.length + ' personas en el testeo';
-    renderNow(P); renderFeed(data.feed || []); renderParticipants(P);
+    renderAttention(P); renderNow(P); renderFeed(data.feed || []); renderParticipants(P);
     renderConditions(data.conditions || []); renderDaily(data.daily || []); renderSessions(data.sessions || []); renderAnswers(data.answers || []);
     renderPicker(P); renderMessages(data.messages || []); updateForm();
   }
   function personRow(p, sub, end, onClick) {
     const kids = [el('span', { class: 'avatar', text: initials(p) }), el('span', { class: 'row-main' }, [el('span', { class: 'row-title', text: p.name || p.code }), el('span', { class: 'row-sub', text: sub })]), el('span', { class: 'row-end' }, end)];
     return onClick ? el('button', { class: 'row', type: 'button', onclick: onClick }, kids) : el('div', { class: 'row' }, kids);
+  }
+  function writeTo(p, tplId) {
+    closeSheet(); target = p.code; setTarget('one'); go('mensajes');
+    if (tplId) applyTemplate(tplId); else $('f-title').focus();
+  }
+  function renderAttention(P) {
+    const rows = [];
+    P.forEach((p) => {
+      const issues = issuesOf(p); if (!issues.length) return;
+      const fix = issues.find((i) => i.tpl);
+      const end = fix ? [el('button', { class: 'mini', type: 'button', onclick: () => writeTo(p, fix.tpl) }, [icon('send', 'sm'), 'Escribirle'])]
+        : [el('span', { class: 'row-sub', text: 'Escríbele por otro medio' })];
+      rows.push(el('div', { class: 'row' }, [
+        el('button', { class: 'row-link', type: 'button', onclick: () => openPerson(p) }, [el('span', { class: 'avatar', text: initials(p) }),
+          el('span', { class: 'row-main' }, [el('span', { class: 'row-title', text: p.name || p.code }), el('span', { class: 'row-sub', text: issues.map((i) => i.text).join(' · ') })])]),
+        el('span', { class: 'row-end' }, end)]));
+    });
+    section('l-attention', rows, 'Todo en orden: permisos dados, datos al día y la app ' + LATEST + ' en todos los teléfonos que la tienen.');
   }
   function renderNow(P) {
     const live = P.filter((p) => ['counting', 'awaiting'].includes(stateOf(p)));
@@ -519,17 +704,24 @@ select json_build_object(
     }), 'Nadie está contando ni esperando responder en este momento.');
   }
   function renderFeed(F) {
-    section('l-feed', F.slice(0, 14).map((f) => {
+    const items = [];
+    F.forEach((f) => { const prev = items[items.length - 1]; if (prev && prev.code === f.code && prev.what === f.what) prev.times++; else items.push(Object.assign({ times: 1 }, f)); });
+    section('l-feed', items.slice(0, 14).map((f) => {
       const [ic, label] = EVENTS[f.what] || ['dot', String(f.what).replace(/_/g, ' ')];
+      const extra = f.what === 'falta_completar' && missingText(f.detail) ? '«' + missingText(f.detail) + '» · ' : '';
       return el('div', { class: 'row' }, [el('span', { class: 'lead-icon' }, [icon(ic)]),
-        el('span', { class: 'row-main' }, [el('span', { class: 'row-title', text: label }), el('span', { class: 'row-sub', text: f.code + ' · ' + ago(f.created_at) })])]);
+        el('span', { class: 'row-main' }, [el('span', { class: 'row-title', text: label + (f.times > 1 ? ' · ' + f.times + ' veces' : '') }), el('span', { class: 'row-sub', text: extra + f.code + ' · ' + ago(f.created_at) })])]);
     }), 'Todavía no llega nada.');
   }
   function renderParticipants(P) {
     section('l-participants', P.map((p) => {
       const cond = p.condition ? 'Semana ' + p.condition + ' · ' + (CONDITIONS[p.condition] || '').toLowerCase() : 'Fuera de la prueba';
-      const sub = p.code + ' · ' + cond + ' · ' + p.respondidos + ' de ' + p.relevos + ' relevos respondidos · ' + ago(p.last_seen);
-      return personRow(p, sub, [stateChip(stateOf(p), false), icon('chevron', 'chev')], () => openPerson(p));
+      const today = p.pantalla_hoy != null ? 'hoy ' + duration(p.pantalla_hoy) + ' de pantalla, ' + duration(p.elegidas_hoy || 0) + ' en sus apps' : null;
+      const sub = [p.code, cond, p.respondidos + ' de ' + p.senales + ' señales respondidas', today, ago(p.last_seen)].filter(Boolean).join(' · ');
+      const end = [stateChip(stateOf(p), false)];
+      if (issuesOf(p).length) end.unshift(el('span', { class: 'chip warn' }, [icon('info', 'sm'), 'Revisar']));
+      end.push(icon('chevron', 'chev'));
+      return personRow(p, sub, end, () => openPerson(p));
     }), 'Todavía no hay participantes. Aparecen cuando un teléfono acepta el consentimiento y envía sus primeros datos.');
   }
   function renderConditions(C) {
@@ -546,36 +738,33 @@ select json_build_object(
     }));
   }
   function renderDaily(D) {
-    const box = $('c-daily'), days = [], today = new Date();
-    for (let i = 20; i >= 0; i--) days.push(new Intl.DateTimeFormat('en-CA', { timeZone: TZ }).format(new Date(today.getTime() - i * 86400000)));
+    const days = [], today = new Date();
+    for (let i = 20; i >= 0; i--) days.push(isoDay(new Date(today.getTime() - i * 86400000)));
     const byDay = Object.fromEntries(D.map((d) => [String(d.day).slice(0, 10), d]));
-    const values = days.map((k) => byDay[k] || { relevos: 0, senales: 0 });
-    const max = Math.max(1, ...values.map((v) => v.relevos));
-    const W = 340, H = 150, L = 20, B = 20, bw = (W - L) / days.length, ns = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'Relevos por día en los últimos 21 días; el máximo es ' + max);
-    const add = (name, attrs, text) => { const n = document.createElementNS(ns, name); for (const k in attrs) n.setAttribute(k, attrs[k]); if (text != null) n.textContent = text; svg.append(n); return n; };
-    [0, max].forEach((v) => { const y = H - B - (H - B - 10) * v / max; add('line', { x1: L, x2: W, y1: y, y2: y, stroke: 'var(--line)', 'stroke-width': 1 }); add('text', { x: L - 5, y: y + 4, 'text-anchor': 'end' }, v); });
-    values.forEach((v, i) => {
-      const x = L + i * bw + 2, w = Math.max(2, bw - 4), h = (H - B - 10) * v.relevos / max, hs = (H - B - 10) * v.senales / max;
-      if (v.relevos) add('rect', { x, y: H - B - h, width: w, height: h, rx: 3, fill: 'var(--mist)' });
-      if (v.senales) add('rect', { x, y: H - B - hs, width: w, height: hs, rx: 3, fill: 'var(--ink)' });
-      if (i % 5 === 0 || i === values.length - 1) add('text', { x: x + w / 2, y: H - 5, 'text-anchor': 'middle' }, fmtDay.format(new Date(days[i] + 'T12:00:00')));
+    const values = days.map((k) => { const d = byDay[k] || { relevos: 0, senales: 0 }; return { con: d.senales, sin: Math.max(0, d.relevos - d.senales), relevos: d.relevos }; });
+    const max = niceMax(Math.max(2, ...values.map((v) => v.relevos)));
+    barChart($('c-daily'), {
+      days, max, aria: 'Relevos por día en los últimos 21 días, separados en los que sonaron y los que no.',
+      series: [{ key: 'con', color: 'var(--chart-focus)', label: 'Sonó la señal' }, { key: 'sin', color: 'var(--chart-context)', label: 'No llegó a sonar' }],
+      values, tick: (v) => String(Math.round(v)),
+      label: (i) => (i % 5 === 0 || i === days.length - 1) ? fmtDay.format(new Date(days[i] + 'T12:00:00')) : '',
+      tip: (i) => [fmtLongDay.format(new Date(days[i] + 'T00:00:00Z')), [values[i].relevos + ' relevos', values[i].con + ' con señal']]
     });
-    box.replaceChildren(svg, el('div', { class: 'legend' }, [el('span', null, [el('i', { style: 'background:var(--mist)' }), 'Relevos']), el('span', null, [el('i', { style: 'background:var(--ink)' }), 'Con señal'])]));
   }
   function sessionRow(s, showCode) {
     const pills = [];
-    if (s.signal_at) {
+    if (s.outcome === 'deleted') pills.push(el('span', { class: 'pill warn', text: 'Lo eliminó antes de que sonara' }));
+    else if (s.signal_at) {
       pills.push(el('span', { class: 'pill' }, ['Supo: ' + (KNEW[s.knew_intention] || '—')]));
       pills.push(el('span', { class: 'pill' }, ['Recordó cómo empezar: ' + (KNEW[s.recalled_first_step] || '—')]));
       pills.push(el('span', { class: 'pill' }, [OUTCOMES[s.outcome] || 'Sin responder']));
       if (FEELING[s.signal_feeling]) pills.push(el('span', { class: 'pill quiet', text: FEELING[s.signal_feeling] }));
       if (s.response_seconds != null) pills.push(el('span', { class: 'pill quiet num', text: 'respondió en ' + s.response_seconds + ' s' }));
-    } else pills.push(el('span', { class: 'pill quiet', text: 'Todavía no suena' }));
+    } else if (s.outcome) pills.push(el('span', { class: 'pill quiet', text: OUTCOMES[s.outcome] || s.outcome }));
+    else pills.push(el('span', { class: 'pill quiet', text: 'Todavía no suena' }));
     const meta = [showCode ? s.code : null, when(s.started_at), s.activation === 'auto' ? 'se activó solo' : 'a mano',
       s.study_condition ? 'semana ' + s.study_condition + (s.study_day != null ? ', día ' + s.study_day : '') : null, 'suena en el ' + (ROUTES[s.signal_route] || 'teléfono')].filter(Boolean).join(' · ');
-    return el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [el('span', { class: 'row-title voice', text: s.activity || 'Relevo' }), el('span', { class: 'row-sub', text: meta }), el('span', { class: 'pills' }, pills)])]);
+    return el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [el('span', { class: 'row-title ' + (s.outcome === 'deleted' ? 'muted' : 'voice'), text: s.activity || 'Relevo' }), el('span', { class: 'row-sub', text: meta }), el('span', { class: 'pills' }, pills)])]);
   }
   function renderSessions(S) { section('l-sessions', S.map((s) => sessionRow(s, true)), 'Todavía no hay relevos.'); }
   function answerRow(a, showCode) {
@@ -588,38 +777,191 @@ select json_build_object(
   // ---- Detalle de una persona ----
   let lastFocus = null;
   function openSheet(title, leadNode, bodyNodes) {
-    lastFocus = document.activeElement;
+    if ($('sheet').hidden) lastFocus = document.activeElement;
     $('sheet-title').textContent = title;
     $('sheet-lead').replaceChildren(leadNode || '');
-    $('sheet-body').replaceChildren(...bodyNodes);
+    $('sheet-body').replaceChildren(...bodyNodes); $('sheet-body').scrollTop = 0;
     $('scrim').hidden = false; $('sheet').hidden = false; $('sheet-close').focus();
   }
-  function closeSheet() { $('scrim').hidden = true; $('sheet').hidden = true; if (lastFocus) lastFocus.focus(); }
+  function closeSheet() { if ($('sheet').hidden) return; $('scrim').hidden = true; $('sheet').hidden = true; if (lastFocus && document.contains(lastFocus)) lastFocus.focus(); }
+  const factList = (pairs) => el('div', { class: 'section' }, pairs.filter(Boolean).map(([k, v, warn]) => el('div', { class: 'fact' }, [el('span', { text: k }), el('span', { class: warn ? 'warn' : '', text: v })])));
+  const block = (title, node) => el('div', null, [el('h2', { text: title }), node]);
+  const loading = (text) => el('div', { class: 'section' }, [el('div', { class: 'empty', text })]);
+
+  function usageBlock(usage, st) {
+    const box = el('div', { class: 'panel chart' });
+    if (!usage.length) { box.append(el('div', { class: 'empty', style: 'padding:0', text: 'Todavía no llega su uso diario. Lo envía la app ' + LATEST + ' o posterior, cada 30 minutos.' })); return box; }
+    const byDay = {}; const apps = {};
+    usage.forEach((u) => {
+      const k = String(u.day).slice(0, 10); const d = byDay[k] || (byDay[k] = { total: 0, opens: 0, chosen: 0 });
+      if (u.package === '_total') { d.total = u.seconds; d.opens = u.opens; }
+      else { d.chosen += u.seconds; const a = apps[u.package] || (apps[u.package] = { label: u.label || u.package, seconds: 0, opens: 0, days: 0 }); a.seconds += u.seconds; a.opens += u.opens; if (u.seconds > 0) a.days++; }
+    });
+    const first = Object.keys(byDay).sort()[0], today = isoDay(new Date()), days = [];
+    for (let t = new Date(first + 'T12:00:00Z'); isoDayUTC(t) <= today && days.length < 35; t = new Date(t.getTime() + 86400000)) days.push(isoDayUTC(t));
+    const values = days.map((k) => { const d = byDay[k] || { total: 0, opens: 0, chosen: 0 }; return { elegidas: Math.min(d.chosen, d.total || d.chosen), resto: Math.max(0, d.total - d.chosen), total: d.total, opens: d.opens, has: !!byDay[k] }; });
+    const maxH = niceMax(Math.max(3600, ...values.map((v) => Math.max(v.total, v.elegidas))) / 3600) * 3600;
+    const day0 = st && st.prueba && st.prueba.dia0 ? days.indexOf(String(st.prueba.dia0).slice(0, 10)) : -1;
+    const recent = values.slice(-7).filter((v) => v.has), avg = (f) => recent.length ? Math.round(recent.reduce((s, v) => s + f(v), 0) / recent.length) : null;
+    const summary = el('div', { class: 'summary' }, [
+      el('div', null, [el('b', { text: duration(avg((v) => v.total)) }), el('span', { text: 'Pantalla al día, últimos 7 días' })]),
+      el('div', null, [el('b', { text: duration(avg((v) => v.elegidas)) }), el('span', { text: 'En sus apps elegidas' })]),
+      el('div', null, [el('b', { class: 'num', text: String(avg((v) => v.opens) ?? '—') }), el('span', { text: 'Veces que abrió apps' })])
+    ]);
+    const table = el('table', { class: 'days' }, [el('thead', null, [el('tr', null, ['Día', 'Pantalla', 'Apps elegidas', 'Aperturas'].map((h) => el('th', { text: h })))]),
+      el('tbody', null, days.slice().reverse().map((k, j) => { const v = values[days.length - 1 - j]; return el('tr', null, [el('td', { text: fmtLongDay.format(new Date(k + 'T00:00:00Z')) }), el('td', { text: v.has ? duration(v.total) : '—' }), el('td', { text: v.has ? duration(v.elegidas) : '—' }), el('td', { class: 'num', text: v.has ? String(v.opens) : '—' })]); }))]);
+    barChart(box, {
+      days, max: maxH, aria: 'Tiempo de pantalla por día, separado en sus apps elegidas y el resto, desde ' + days[0] + ' hasta hoy.',
+      series: [{ key: 'elegidas', color: 'var(--chart-focus)', label: 'Apps elegidas en Relevo' }, { key: 'resto', color: 'var(--chart-context)', label: 'Resto del teléfono' }],
+      values, tick: (v) => v === 0 ? '0' : (v / 3600) + ' h',
+      label: (i) => (i % 7 === 0 || i === days.length - 1) ? fmtDay.format(new Date(days[i] + 'T12:00:00')) : '',
+      marker: day0 >= 0 ? { index: day0, text: 'Día 0' } : null,
+      tip: (i) => [fmtLongDay.format(new Date(days[i] + 'T00:00:00Z')), values[i].has ? ['Pantalla: ' + duration(values[i].total), 'Apps elegidas: ' + duration(values[i].elegidas), 'Abrió apps ' + values[i].opens + ' veces'] : ['Sin datos de este día']],
+      extra: [summary, el('details', { class: 'table-view' }, [el('summary', { text: 'Ver cada día' }), el('div', { class: 'scroll' }, [table])])]
+    });
+    const list = Object.values(apps).sort((a, b) => b.seconds - a.seconds);
+    const appsBox = el('div', { class: 'section' }, list.length ? list.map((a) => el('div', { class: 'fact' }, [el('span', { text: a.label }), el('span', { class: 'num', text: duration(a.seconds) + ' · ' + a.opens + ' aperturas · ' + a.days + ' días' })]))
+      : [el('div', { class: 'empty', text: 'Todavía no usa sus apps elegidas en estos días.' })]);
+    return el('div', { style: 'display:flex;flex-direction:column;gap:12px' }, [box, block('Uso de cada app elegida desde ' + fmtDay.format(new Date(days[0] + 'T12:00:00')), appsBox)]);
+  }
+  function isoDayUTC(d) { return d.toISOString().slice(0, 10); }
+
+  function phoneBlock(st, meta) {
+    if (!st) return el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Todavía no llega su configuración. La envía la app ' + LATEST + ' o posterior.' })]);
+    const eq = st.equipo || {}, perm = st.permisos || {}, aj = st.ajustes || {};
+    return factList([
+      ['Teléfono', [eq.fabricante, eq.modelo].filter(Boolean).join(' ') || '—'],
+      ['Android', eq.android ? (ANDROID[eq.android] || 'API ' + eq.android) : '—'],
+      ['App', eq.app || meta.app_version || '—'],
+      ['Tiempo de uso', perm.tiempo_de_uso ? 'Permitido' : 'Falta', perm.tiempo_de_uso === false],
+      ['Notificaciones', perm.notificaciones ? 'Permitidas' : 'Apagadas', perm.notificaciones === false],
+      ['Batería', perm.bateria_sin_restriccion ? 'Sin restricción' : 'Con restricción', perm.bateria_sin_restriccion === false],
+      ['Activación automática', aj.activacion_automatica ? 'Encendida' : 'Apagada'],
+      ['Veces por semana', aj.veces_por_semana != null ? String(aj.veces_por_semana) : '—'],
+      ['Aviso semanal', aj.aviso_semanal ? 'Encendido' : 'Apagado'],
+      ['Resumen semanal', aj.resumen_semanal ? 'Encendido' : 'Apagado'],
+      ['Mensaje al responder', aj.mensaje_despues_de_responder ? 'Encendido' : 'Apagado'],
+      ['Apariencia', (aj.tema || '—') + (aj.texto_grande ? ' · texto grande' : '')],
+      ['Consentimiento', meta.consent_version || '—'],
+      ['Configuración recibida', ago(meta.updated_at)]
+    ]);
+  }
+  function reminderBlock(r) {
+    if (!r) return null;
+    return factList([
+      ['Estado', REMINDER_STATES[r.estado] || r.estado || '—'],
+      ['Quiere hacer', r.actividad || '—'], ['Para empezar', r.para_empezar || '—'], ['Dónde', r.lugar || '—'],
+      ['Apps que cuentan', (r.apps || []).map((a) => a.nombre).join(', ') || '—'],
+      ['Tiempo', duration(r.contados) + ' de ' + duration(r.segundos)],
+      ['Suena en el', ROUTES[r.salida] || r.salida || '—'], ['Cómo empezó', r.se_activo_solo ? 'Se activó solo' : 'A mano']
+    ]);
+  }
+  function profileBlock(st) {
+    if (!st) return null;
+    const kids = [];
+    const intereses = [...((st.perfil && st.perfil.intereses) || []), st.perfil && st.perfil.otro_interes].filter(Boolean);
+    kids.push(el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [el('span', { class: 'row-sub', text: 'Intereses' }), intereses.length ? el('span', { class: 'pills' }, intereses.map((i) => el('span', { class: 'pill', text: i }))) : el('span', { class: 'row-title muted', text: 'Sin elegir' })])]));
+    (st.ruta || []).forEach((t) => kids.push(el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [
+      el('span', { class: 'row-sub', text: 'Ruta · ' + t.interes + ' · paso ' + t.paso_actual + ' de ' + (t.pasos || []).length }),
+      el('ol', { class: 'steps' }, (t.pasos || []).map((s, i) => el('li', { class: i + 1 === t.paso_actual ? 'now' : '', text: s.actividad + (s.para_empezar ? ' · ' + s.para_empezar : '') })))])])));
+    if ((st.actividades_propias || []).length) kids.push(el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [el('span', { class: 'row-sub', text: 'Actividades propias' }),
+      el('ol', { class: 'steps' }, st.actividades_propias.map((a) => el('li', { text: a.actividad + (a.para_empezar ? ' · ' + a.para_empezar : '') })))])]));
+    if (st.prueba) kids.push(el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [el('span', { class: 'row-sub', text: 'Prueba de 21 días' }),
+      el('span', { class: 'row-title', text: 'Secuencia ' + st.prueba.secuencia + ' · día ' + st.prueba.dia + (st.prueba.condicion ? ' · condición ' + st.prueba.condicion : '') + ' · empezó el ' + fmtDay.format(new Date(st.prueba.dia0 + 'T12:00:00')) })])]));
+    return el('div', { class: 'section' }, kids);
+  }
+
   async function openPerson(p) {
-    const facts = [
+    const issues = issuesOf(p);
+    const facts = factList([
       ['Código', p.code], ['Estado', STATES[stateOf(p)][1]], ['Condición', p.condition ? 'Semana ' + p.condition + ' · ' + CONDITIONS[p.condition] + (p.day != null ? ' · día ' + p.day : '') : 'Fuera de la prueba'],
-      ['Relevos', p.respondidos + ' de ' + p.relevos + ' respondidos · ' + p.automaticos + ' solos'], ['Activación automática', autoOn(p) ? 'Encendida' : 'Apagada'],
-      ['App', p.version || '—'], ['Mensajes', instant(p) ? 'Le llegan al instante' : 'Le llegan al abrir la app o en hasta 15 min'], ['Última actividad', ago(p.last_seen)]
-    ];
-    const factBox = el('div', { class: 'section' }, facts.map(([k, v]) => el('div', { class: 'fact' }, [el('span', { text: k }), el('span', { text: v })])));
-    const sessionsBox = el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Cargando sus relevos…' })]);
-    const answersBox = el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Cargando sus respuestas…' })]);
-    const write = el('button', { class: 'btn', type: 'button', onclick: () => { target = p.code; setTarget('one'); closeSheet(); go('mensajes'); $('f-title').focus(); } }, [icon('send', 'sm'), 'Escribirle un mensaje']);
-    openSheet(p.name || p.code, el('span', { class: 'avatar', text: initials(p) }), [factBox, write, el('div', null, [el('h2', { text: 'Sus relevos' }), sessionsBox]), el('div', null, [el('h2', { text: 'Sus respuestas' }), answersBox])]);
+      ['Relevos', p.relevos + ' · ' + p.automaticos + ' solos' + (p.eliminados ? ' · ' + p.eliminados + ' eliminados' : '')],
+      ['Señales respondidas', p.respondidos + ' de ' + p.senales],
+      ['Mensajes', instant(p) ? 'Le llegan al instante' : 'Le llegan al abrir la app o en hasta 15 min'], ['Última actividad', ago(p.last_seen)]
+    ]);
+    const write = el('button', { class: 'btn', type: 'button', onclick: () => writeTo(p, (issues.find((i) => i.tpl) || {}).tpl) }, [icon('send', 'sm'), 'Escribirle']);
+    const dl = el('button', { class: 'btn secondary', type: 'button' }, [icon('download', 'sm'), 'Descargar sus datos']);
+    const dlNote = el('div'); dl.addEventListener('click', () => downloadPerson(p, dl, dlNote));
+    const usageSlot = el('div', null, [loading('Cargando su uso del teléfono…')]);
+    const phoneSlot = el('div', null, [loading('Cargando su configuración…')]);
+    const profileSlot = el('div'), reminderSlot = el('div'), missingSlot = el('div');
+    const sessionsBox = loading('Cargando sus relevos…'), answersBox = loading('Cargando sus respuestas…');
+    const nodes = [];
+    if (issues.length) nodes.push(el('div', { class: 'notice' }, [el('span', { class: 'ring' }, [icon('info')]), el('div', null, [el('strong', { text: 'Para revisar' }), el('p', { text: issues.map((i) => i.text).join(' · ') })])]));
+    nodes.push(facts, el('div', { class: 'actions' }, [write, dl]), dlNote, block('Uso del teléfono', usageSlot), reminderSlot, block('Sus relevos', sessionsBox), block('Sus respuestas', answersBox),
+      block('Su teléfono y ajustes', phoneSlot), profileSlot, missingSlot);
+    openSheet(p.name || p.code, el('span', { class: 'avatar', text: initials(p) }), nodes);
     try {
       const code = sqlText(p.code);
       const rows = await runSql(`select json_build_object(
         'sessions', coalesce((select json_agg(s) from (select activity, started_at, signal_at, outcome, knew_intention, recalled_first_step, signal_feeling, response_seconds, study_condition, study_day, signal_route, activation
           from public.relevo_sessions where participant_code = ${code} order by started_at desc limit 40) s), '[]'::json),
-        'answers', coalesce((select json_agg(a) from (select question, answer, created_at from public.relevo_answers where participant_code = ${code} order by created_at desc limit 40) a), '[]'::json)
+        'answers', coalesce((select json_agg(a) from (select question, answer, created_at from public.relevo_answers where participant_code = ${code} order by created_at desc limit 40) a), '[]'::json),
+        'state', (select json_build_object('state', state, 'updated_at', updated_at, 'app_version', app_version, 'consent_version', consent_version)
+          from public.relevo_participant_state where participant_code = ${code} order by updated_at desc limit 1),
+        'usage', coalesce((select json_agg(u order by u.day) from (select day, package, label, seconds, opens from public.relevo_daily_usage
+          where participant_code = ${code} and day >= (now() at time zone 'America/Santiago')::date - 34) u), '[]'::json),
+        'missing', coalesce((select json_agg(m) from (select detail, created_at from public.relevo_app_events where participant_code = ${code} and event = 'falta_completar' order by created_at desc limit 20) m), '[]'::json)
       ) as detail;`);
       let d = rows[0] && rows[0].detail; if (typeof d === 'string') d = JSON.parse(d);
-      sessionsBox.replaceChildren(...(d.sessions.length ? d.sessions.map((s) => sessionRow(s, false)) : [el('div', { class: 'empty', text: 'Sin relevos todavía.' })]));
-      answersBox.replaceChildren(...(d.answers.length ? d.answers.map((a) => answerRow(a, false)) : [el('div', { class: 'empty', text: 'Sin respuestas todavía.' })]));
+      if ($('sheet').hidden || $('sheet-title').textContent !== (p.name || p.code)) return;
+      const meta = d.state || {}, st = meta.state || null;
+      usageSlot.replaceChildren(usageBlock(d.usage || [], st));
+      phoneSlot.replaceChildren(phoneBlock(st, meta));
+      const apps = st && st.apps_elegidas ? st.apps_elegidas : [];
+      const current = st && st.relevo_actual, last = st && st.ultimo_relevo;
+      const rb = reminderBlock(current || last);
+      reminderSlot.replaceChildren(...[
+        apps.length ? block('Apps que eligió alguna vez', el('div', { class: 'panel' }, [el('div', { class: 'pills', style: 'margin:0' }, apps.map((a) => el('span', { class: 'pill', text: a.nombre || a.paquete })))])) : null,
+        rb ? block(current ? 'Su relevo ahora' : 'Su último relevo', rb) : null
+      ].filter(Boolean));
+      if (apps.length || rb) reminderSlot.style.cssText = 'display:flex;flex-direction:column;gap:22px';
+      const pb = profileBlock(st); profileSlot.replaceChildren(...(pb ? [block('Perfil, ruta y prueba', pb)] : []));
+      if ((d.missing || []).length) {
+        const groups = [];
+        d.missing.forEach((m) => { const text = missingText(m.detail) || m.detail; const g = groups.find((x) => x.text === text); if (g) g.times++; else groups.push({ text, times: 1, last: m.created_at }); });
+        missingSlot.replaceChildren(block('Dónde le faltó completar', el('div', { class: 'section' }, groups.map((g) => el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [
+          el('span', { class: 'row-title', text: g.text }), el('span', { class: 'row-sub', text: (g.times > 1 ? g.times + ' veces · ' : '') + 'la última, ' + when(g.last) })])])))));
+      }
+      section(sessionsBox, (d.sessions || []).map((s) => sessionRow(s, false)), 'Sin relevos todavía.');
+      section(answersBox, (d.answers || []).map((a) => answerRow(a, false)), 'Sin respuestas todavía.');
     } catch (err) {
       const msg = explain(err).join('. ');
+      [usageSlot, phoneSlot].forEach((s) => s.replaceChildren(el('div', { class: 'section' }, [el('div', { class: 'empty', text: msg })])));
       sessionsBox.replaceChildren(el('div', { class: 'empty', text: msg })); answersBox.replaceChildren();
     }
+  }
+
+  // Descarga todo lo guardado de una persona, tabla por tabla, en un archivo JSON.
+  async function downloadPerson(p, btn, note) {
+    const say = (text, isError) => note.replaceChildren(el('div', { class: 'toast' + (isError ? ' error' : '') }, [icon(isError ? 'info' : 'check'), text]));
+    btn.disabled = true; say('Preparando el archivo…');
+    try {
+      const x = sqlText(p.code);
+      const rows = await runSql(`select json_build_object(
+        'codigo', ${x}, 'exportado', now(),
+        'participante', (select json_agg(t) from public.relevo_participants t where participant_code = ${x}),
+        'estado', (select json_agg(t) from public.relevo_participant_state t where participant_code = ${x}),
+        'relevos', (select json_agg(t order by t.started_at) from public.relevo_sessions t where participant_code = ${x}),
+        'eventos_del_relevo', (select json_agg(t order by t.created_at) from public.relevo_events t where participant_code = ${x}),
+        'eventos_de_la_app', (select json_agg(t order by t.created_at) from public.relevo_app_events t where participant_code = ${x}),
+        'respuestas', (select json_agg(t order by t.created_at) from public.relevo_answers t where participant_code = ${x}),
+        'uso_diario', (select json_agg(t order by t.day, t.package) from public.relevo_daily_usage t where participant_code = ${x}),
+        'mensajes', (select json_agg(json_build_object('id', m.id, 'creado', m.created_at, 'para', coalesce(m.target_code, 'todos'), 'titulo', m.title, 'texto', m.body,
+            'llego', r.delivered_at, 'abierto', r.opened_at) order by m.created_at)
+          from public.relevo_messages m left join public.relevo_message_receipts r on r.message_id = m.id and r.participant_code = ${x}
+          where m.target_code = ${x} or r.message_id is not null)
+      ) as export;`);
+      let d = rows[0] && rows[0].export; if (typeof d === 'string') d = JSON.parse(d);
+      const downloads = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('downloads') : null;
+      if (!downloads) { say('Esta vista no permite descargar archivos. Abre el panel en claude.ai desde el navegador.', true); return; }
+      const res = await downloads.save({ filename: 'relevo-' + p.code + '-' + isoDay(new Date()) + '.json', data: JSON.stringify(d, null, 2) });
+      say(res && res.status === 'delivered' ? 'Archivo entregado.' : 'Archivo guardado.');
+    } catch (err) {
+      if (err && err.code === 'declined') say('No se descargó.', false);
+      else if (err && err.code === 'rate_limited') say('Ya hay una descarga esperando tu respuesta.', true);
+      else say(explain(err).join('. '), true);
+    } finally { btn.disabled = false; }
   }
 
   // ---- Mensajes ----
@@ -637,11 +979,31 @@ select json_build_object(
     box.replaceChildren(...P.filter((p) => p.user_id).map((p) => el('button', { type: 'button', 'aria-pressed': String(target === p.code), onclick: () => { target = p.code; renderPicker(P); updateForm(); } },
       [el('b', { text: p.name ? p.name + ' · ' + p.code : p.code }), el('small', { text: instant(p) ? 'Le llega al instante' : 'Al abrir la app o en hasta 15 min' })])));
   }
+  function renderTemplates() {
+    const groups = [];
+    TEMPLATES.forEach((t) => { let g = groups.find((x) => x.name === t.group); if (!g) groups.push(g = { name: t.group, items: [] }); g.items.push(t); });
+    $('templates').replaceChildren(...groups.map((g) => el('div', { class: 'tpl-group', role: 'group', 'aria-label': g.name }, [el('span', { text: g.name }),
+      ...g.items.map((t) => el('button', { class: 'tpl', type: 'button', 'data-tpl': t.id, 'aria-pressed': 'false', onclick: () => applyTemplate(t.id) }, [t.label]))])));
+  }
+  function applyTemplate(id) {
+    const t = TEMPLATES.find((x) => x.id === id); if (!t) return;
+    const title = $('f-title').value, body = $('f-body').value;
+    const custom = (title.trim() || body.trim()) && !TEMPLATES.some((x) => x.title === title && x.body === body);
+    undo = custom ? { title, body } : null;
+    $('f-title').value = t.title; $('f-body').value = t.body; updateForm();
+    if (undo) {
+      const r = $('f-result');
+      r.replaceChildren(el('div', { class: 'toast' }, [icon('info'), 'Se reemplazó lo que habías escrito.', el('button', { class: 'plain-action', type: 'button', onclick: () => { $('f-title').value = undo.title; $('f-body').value = undo.body; undo = null; r.hidden = true; updateForm(); } }, ['Deshacer'])]));
+      r.hidden = false;
+    } else $('f-result').hidden = true;
+    $('f-body').focus();
+  }
   function recipients() { const P = (data && data.participants || []).filter((p) => p.user_id); return target === 'all' ? P : P.filter((p) => p.code === target); }
   function updateForm() {
     const t = $('f-title').value.trim(), b = $('f-body').value.trim();
     $('c-title').textContent = $('f-title').value.length + ' de 60'; $('c-body').textContent = $('f-body').value.length + ' de 400';
     $('f-send').disabled = !mcp || !data || !t || !b || !recipients().length;
+    document.querySelectorAll('.tpl').forEach((btn) => { const x = TEMPLATES.find((y) => y.id === btn.dataset.tpl); btn.setAttribute('aria-pressed', String(!!x && x.title === $('f-title').value && x.body === $('f-body').value)); });
   }
   function result(text, isError) { const r = $('f-result'); r.replaceChildren(el('div', { class: 'toast' + (isError ? ' error' : '') }, [icon(isError ? 'info' : 'check'), text])); r.hidden = false; }
   function renderMessages(M) {
@@ -658,6 +1020,7 @@ select json_build_object(
     const fast = to.filter(instant).length;
     const who = target === 'all' ? 'Todos los participantes (' + to.length + ')' : (to[0].name ? to[0].name + ' · ' + to[0].code : to[0].code);
     const eta = fast === to.length ? 'Llega al instante.' : fast ? 'Llega al instante a ' + fast + ' de ' + to.length + '; al resto, al abrir la app o en hasta 15 minutos.' : 'Llega al abrir la app o en hasta 15 minutos.';
+    const blocked = to.filter((p) => p.permisos && p.permisos.notificaciones === false).length;
     const send = el('button', { class: 'btn', type: 'button' }, [icon('send', 'sm'), 'Enviar ahora']);
     const cancel = el('button', { class: 'btn secondary', type: 'button', onclick: closeSheet }, ['Cancelar']);
     send.addEventListener('click', async () => {
@@ -665,7 +1028,7 @@ select json_build_object(
       const p = to[0]; const uuid = target !== 'all' && p && /^[0-9a-f-]{36}$/i.test(p.user_id || '') ? p.user_id : null;
       const q = 'insert into public.relevo_messages (target_user_id, target_code, title, body) values (' + (uuid ? sqlText(uuid) + '::uuid' : 'null') + ', ' +
         (uuid ? sqlText(p.code) : 'null') + ', ' + sqlText(title.slice(0, 60)) + ', ' + sqlText(body.slice(0, 400)) + ') returning id;';
-      try { await runSql(q); closeSheet(); $('f-title').value = ''; $('f-body').value = ''; updateForm(); result('Enviado. ' + eta); refresh(); }
+      try { await runSql(q); closeSheet(); $('f-title').value = ''; $('f-body').value = ''; undo = null; updateForm(); result('Enviado. ' + eta); refresh(); }
       catch (err) {
         closeSheet();
         const ambiguous = err && (err.code === 'server_unavailable' || err.code === 'upstream_error');
@@ -674,9 +1037,9 @@ select json_build_object(
     });
     openSheet('¿Enviar este mensaje?', null, [
       el('div', { class: 'preview' }, [el('span', { class: 'app', text: 'r' }), el('div', { style: 'min-width:0' }, [el('small', { text: 'Relevo · ahora' }), el('strong', { text: title }), el('p', { text: body })])]),
-      el('div', { class: 'section' }, [el('div', { class: 'fact' }, [el('span', { text: 'Para' }), el('span', { text: who })]), el('div', { class: 'fact' }, [el('span', { text: 'Cuándo llega' }), el('span', { text: eta })])]),
+      factList([['Para', who], ['Cuándo llega', eta], blocked ? ['Sin notificaciones', blocked + (blocked === 1 ? ' persona no lo verá hasta abrir la app' : ' personas no lo verán hasta abrir la app'), true] : null]),
       el('p', { class: 'note', text: 'En la pantalla de bloqueo solo dice «Tienes un mensaje nuevo». Durante el testeo, úsalo para coordinar, no para recordar la actividad.' }),
-      el('div', { style: 'display:flex;gap:10px;flex-wrap:wrap' }, [send, cancel])
+      el('div', { class: 'actions' }, [send, cancel])
     ]);
   });
 
@@ -698,7 +1061,7 @@ select json_build_object(
   setInterval(() => { if (document.visibilityState === 'visible') refresh(); }, REFRESH_MS);
   setInterval(setLive, 1000);
   const todayText = fmtToday.format(new Date()); $('today').textContent = todayText.charAt(0).toUpperCase() + todayText.slice(1);
-  go(view); setTarget('all');
+  renderTemplates(); go(view); setTarget('all');
 
   const use = window.claude && typeof window.claude.use === 'function' ? window.claude.use('mcp') : Promise.resolve(null);
   use.then((ns) => {

@@ -230,6 +230,19 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     log("pantalla", screen)
   }
 
+  /**
+   * 2.18: la persona tocó «Seguir» con algo sin completar; sirve para ver qué pasos cuestan. Los toques
+   * repetidos con el mismo aviso se registran una vez cada 10 segundos.
+   */
+  fun onMissingField(step: String, missing: String) {
+    val key = "$step|$missing"
+    val now = System.currentTimeMillis()
+    lastMissing?.let { (previous, at) -> if (previous == key && now - at < 10_000L) return }
+    lastMissing = key to now
+    log("falta_completar", "paso=$step;aviso=$missing")
+  }
+  private var lastMissing: Pair<String, Long>? = null
+
   fun onPrepareOpened(source: String) { lastPrepareStep = null; log("preparar_abierto", source) }
   fun onPrepareStep(step: String) { lastPrepareStep = step; log("preparar_paso", step) }
   fun onPrepareClosed() { log("preparar_cerrado", "paso=${lastPrepareStep.orEmpty()}") }
@@ -616,6 +629,21 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   /**
+   * 2.18: elimina un relevo activo, por ejemplo uno activado por error. Deja de contar y no sonará; no
+   * entra al historial ni pasa a ser el último relevo (que repite la activación automática). En la base
+   * queda registrado como `deleted`, con su evento, para que el estudio sepa que existió.
+   */
+  fun deleteActive() {
+    val current = _reminder.value
+    if (current.status != ReminderStatus.WAITING) return
+    researchLog.record(current.sessionId, current.participantCode, "disarmed", current.targetPackage, current.observedUsageSeconds)
+    researchLog.completeSession(current, "deleted")
+    log("relevo_eliminado", "${current.activity};segundos=${current.observedUsageSeconds};${if (current.autoActivated) "solo" else "a_mano"}")
+    reset(keepAsLast = false)
+    syncRemote()
+  }
+
+  /**
    * Primera acción de la persona en la pantalla de señal. Si el sonido seguía, lo silencia; si ya
    * había terminado, solo registra la respuesta. En ambos casos guarda cuánto tardó en responder.
    */
@@ -663,11 +691,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     }
   }
 
-  fun reset() {
+  /** Vuelve a Inicio sin relevo. [keepAsLast]: el relevo terminado pasa a ser el último, para repetirlo. */
+  fun reset(keepAsLast: Boolean = true) {
     if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     if (_reminder.value.sessionId.isNotBlank()) markRelevoClosed()
     signalPlayer.stop()
-    _reminder.value.takeIf { it.activity.isNotBlank() && it.selectedApps.isNotEmpty() }?.let { finished ->
+    _reminder.value.takeIf { keepAsLast && it.activity.isNotBlank() && it.selectedApps.isNotEmpty() }?.let { finished ->
       val configuration = finished.copy(
         sessionId = "", observedUsageSeconds = 0, signalDelivered = false, status = ReminderStatus.DRAFT,
         signalAt = 0L, signalEnded = false, studyCondition = "", studyDay = -1, autoActivated = false,
