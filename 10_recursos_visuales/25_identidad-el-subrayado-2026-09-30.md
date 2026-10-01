@@ -1,6 +1,70 @@
 # Identidad de Relevo: el subrayado
 
-**Fecha:** 30 de septiembre de 2026. **Estado:** propuesta D-098, pendiente de la decisión del autor; no reemplaza el sistema vigente hasta aprobarse. **Lámina:** [página publicada](https://claude.ai/artifact/Je5eJkLaCQX8JFcuDsbfVU) (privada, versión 2) y copias en el repositorio: [versión 2, con las referencias del autor](marca-el-subrayado/lamina-el-subrayado-v2-2026-09-30.html) y [versión 1, sobria](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html). Ambas tienen controles para comparar las alternativas.
+**Fecha:** 30 de septiembre de 2026. **Estado:** propuesta D-098, decidida en parte por el autor (ver la versión 3); no reemplaza el sistema vigente hasta cerrar las decisiones pendientes. **Lámina:** [página publicada](https://claude.ai/artifact/Je5eJkLaCQX8JFcuDsbfVU) (privada, versión 3) y copias en el repositorio:
+
+- [versión 3, neutra con azul eléctrico](marca-el-subrayado/lamina-el-subrayado-v3-2026-09-30.html);
+- [versión 2, con las referencias del autor](marca-el-subrayado/lamina-el-subrayado-v2-2026-09-30.html);
+- [versión 1, sobria](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html).
+
+## Versión 3: lo que decidió el autor y una propuesta más neutra
+
+**Decidido por el autor el 30 de septiembre:**
+
+1. La dirección con sus referencias, pero más neutra.
+2. «relevo» en minúsculas.
+3. Serif en los titulares. Instrument Serif está bien, con la petición de explorar serifas pensadas para pantalla.
+4. La trama de puntos como parte de la identidad, con la petición de explorarla también en los íconos.
+5. Sin el degradado magenta: en su lugar, un azul eléctrico o algo similar, fundamentado.
+
+**Color:** un solo azul eléctrico, el de la presentación (`#3D38F5`), sobre papel, blanco y tinta. La escala tiene cinco tonos: `#1F1BB4` (presionado), `#3D38F5`, `#9A97FF` (modo oscuro), `#C4C2FC` (puntos claros) y `#ECEBFE` (selección). Fundamentos:
+
+- Es el azul que se recordó.
+- Es un azul saturado, cercano al azul con que la pantalla forma la imagen: si la trama son los píxeles, el azul es su luz.
+- Se distingue de los colores de las apps de bienestar digital y del rojo de error (D-073).
+- Relevo trabaja contra el diseño que captura la atención (ámbito «El diseño de la atención» de la memoria), y una paleta de muchos colores vivos se parecería a lo que critica.
+- Se imprime con dos tintas, negro y azul.
+
+Como el color solo es lo que menos distingue (Ward et al., 2020), va siempre con el logotipo, el renglón y la trama. Hay una variante, «azul a celeste», del azul profundo a un celeste eléctrico. Es más viva, pero su cambio de color no tiene un significado propio.
+
+**La trama, con funciones:**
+
+- En las fotos de actividades: una sola tinta azul, el punto crece con la sombra.
+- En el tiempo: cada punto es un minuto en las apps elegidas, y «6 de 15» se ve como seis puntos llenos.
+- En la señal: la pantalla se llena de trama y los puntos laten mientras suena.
+- En el ícono de la app y en las portadas.
+
+No aparece en cada pantalla.
+
+**Serifas para pantalla:** se compararon cinco, todas con licencia SIL Open Font y posibles de incluir en la app. Las serifas con tamaño óptico ajustan proporciones, grosores y detalles al tamaño en que se leen (Microsoft, 2024). Ninguna letra es la más rápida de leer para todas las personas (Wallace et al., 2022), así que conviene elegir por el uso y probar en el teléfono.
+
+| Serif | Diseño | Ejes | Para qué |
+| --- | --- | --- | --- |
+| Instrument Serif | Rodrigo Fuenzalida y Jordan Egstad, 2023 | Un peso, sin tamaño óptico | Titulares grandes; la más cercana a las referencias |
+| Newsreader | Production Type, 2020 | Tamaño óptico 6–72, peso 200–800 | Lectura continua en pantalla; recomendada para la app |
+| Literata | TypeTogether, 2018 | Tamaño óptico 7–72, peso 200–900 | Texto digital: titulares, párrafos y notas |
+| Source Serif 4 | Frank Grießhammer (Adobe) | Tamaño óptico 8–60, peso 200–900 | Formas simplificadas para entornos digitales |
+| Fraunces | Undercase Type, 2020 | Tamaño óptico 9–144, peso, suavidad | Exhibición, suave y con carácter |
+
+**Íconos en trama (exploración):** cada ícono de trazo se pasa a una retícula de 12 × 12 o 16 × 16 puntos. Se recomiendan solo para momentos de marca: el ícono de la app, la señal, los estados vacíos y los afiches. En la interfaz se quedan los de trazo, porque a 24 px los puntos se pierden y un ícono se reconoce mejor cuanto más cerca está de lo que representa y cuanto más familiar es (Isherwood et al., 2007).
+
+**¿Los íconos son nuestros?** Sí:
+
+- Los 27 de la propuesta se dibujaron para Relevo sobre una retícula de 24. No se copiaron de Material Symbols ni de SF Symbols: de ellos se tomaron reglas, no dibujos. Las formas comunes, como una casa o una papelera, son convenciones.
+- Los 97 íconos actuales de la app también se dibujaron para Relevo (sistema 2.0).
+- Los SF Symbols de Apple solo se pueden usar en apps para sistemas de Apple, así que no servirían en Android.
+
+**Referencias parecidas a las del autor, buscadas en internet:**
+
+- **Braun T3 (1958) y LE 1 (1960), de Dieter Rams:** rejilla perforada en retícula sobre un cuerpo neutro, en la colección del MoMA. Es el argumento físico de la trama: la cara del parlante.
+- **Nothing:** una letra de puntos que repite las luces de puntos de sus teléfonos, con una paleta casi monocroma. Muestra que la misma trama puede unir la pantalla, la marca y el aparato.
+- **International Klein Blue, de Yves Klein:** un solo azul intenso usado siempre igual hasta volverse firma. Klein registró la técnica, no el color.
+
+**Pendiente:**
+
+1. **Serif:** Newsreader se recomienda para la app; Instrument Serif es la más cercana a las referencias.
+2. **Color:** una tinta (recomendado) o azul a celeste.
+3. **Trama en los íconos:** solo en momentos de marca (recomendado), también en la interfaz o no usarla.
+4. **Orden de aplicación:** app 2.19, Figma y presentación.
 
 ## Versión 2: con las referencias del autor
 
@@ -114,6 +178,8 @@ Es una propuesta de diseño, no un resultado: no se probó si las personas recon
 
 Apple. (s. f.). *SF Symbols*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/sf-symbols
 
+Centre Pompidou. (s. f.). *The untold story of the International Klein Blue (IKB) of Yves Klein*. https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/the-untold-story-of-the-international-klein-blue-ikb-of-yves-klein
+
 Fussell, G. (2025, 31 de octubre). *Graphic design trends 2026: 8 styles shaping visual culture*. Envato Elements. https://elements.envato.com/learn/graphic-design-trends
 
 Google. (s. f.-a). *System icons*. Material Design. https://m2.material.io/design/iconography/system-icons.html
@@ -124,13 +190,25 @@ Hekkert, P., Snelders, D. y van Wieringen, P. C. W. (2003). «Most advanced, yet
 
 Isherwood, S. J., McDougall, S. J. P. y Curry, M. B. (2007). Icon identification in context: The changing role of icon characteristics with user experience. *Human Factors, 49*(3), 465–476. https://doi.org/10.1518/001872007X200102
 
+Microsoft. (2024). *opsz design-variation axis tag (OpenType 1.9.1)*. Microsoft Learn. https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_opsz
+
+MoMA. (s. f.). *Dieter Rams, Hochschule für Gestaltung, Ulm. Pocket Radio (model T3). 1958*. https://www.moma.org/collection/works/4134
+
 Romaniuk, J. (2018). *Building distinctive brand assets*. Oxford University Press.
+
+Wallace, S., Bylinskii, Z., Dobres, J., Kerr, B., Berlow, S., Treitman, R., Kumawat, N., Arpin, K., Miller, D. B., Huang, J. y Sawyer, B. D. (2022). Towards individuated reading experiences: Different fonts increase reading speed for different individuals. *ACM Transactions on Computer-Human Interaction, 29*(4), 1–56. https://doi.org/10.1145/3502222
 
 Ward, E., Yang, S., Romaniuk, J. y Beal, V. (2020). Building a unique brand identity: Measuring the relative ownership potential of brand identity element types. *Journal of Brand Management, 27*(4), 393–407. https://doi.org/10.1057/s41262-020-00187-6
 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Versión 3: decisiones del autor y propuesta neutra
+
+- **Qué cambió:** se registraron las decisiones del autor (dirección con sus referencias pero más neutra, minúsculas, serif en titulares, trama como identidad, azul eléctrico sin magenta) y se sumó la versión 3. Incluye la paleta de un azul, la trama con funciones, la comparación de cinco serifas para pantalla, los íconos en trama, la respuesta sobre el origen de los íconos y tres referencias nuevas (Braun, Nothing, Klein).
+- **Cómo estaba antes:** la versión 2 recomendaba un degradado del azul a magenta y coral, con Instrument Serif como única serif.
+- **Por qué:** respuestas y pedidos del autor del mismo día.
 
 ### 2026-09-30 — Versión 2 con las referencias del autor
 

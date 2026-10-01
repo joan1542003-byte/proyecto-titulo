@@ -1082,7 +1082,10 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-098 — Una sola identidad alrededor del subrayado (propuesta)
 
 - **Fecha:** 2026-09-30.
-- **Estado:** propuesta, pendiente de la decisión del autor. No reemplaza el sistema vigente hasta aprobarse.
+- **Estado:** decidida en parte por el autor el mismo día.
+  - **Decidido:** la dirección con sus referencias pero más neutra, «relevo» en minúsculas, serif en titulares, la trama de puntos como parte de la identidad y un azul eléctrico en lugar del degradado magenta.
+  - **Pendiente:** qué serif (Newsreader, recomendada para pantalla, o Instrument Serif), si el color va en una tinta o de azul a celeste, el uso de la trama en los íconos y el orden de aplicación.
+  - No reemplaza el sistema vigente hasta cerrar lo pendiente.
 - **Propuesta:**
   - **Recurso principal:** el subrayado azul. Marca la actividad en la app, la idea clave en la presentación y, con el objeto, el lugar donde empieza la actividad.
   - **Logotipo:** «relevo» en minúsculas sobre su renglón azul.
@@ -1104,6 +1107,12 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Documentación:** [identidad «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md) y su [lámina](../10_recursos_visuales/marca-el-subrayado/lamina-el-subrayado-2026-09-30.html).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — D-098, decisiones del autor y versión 3
+
+- **Qué cambió:** el estado de D-098 registra lo que decidió el autor y lo que queda pendiente; la versión 3 es neutra, con un solo azul eléctrico, la trama con funciones, cinco serifas comparadas e íconos en trama.
+- **Cómo estaba antes:** D-098 tenía todas sus decisiones abiertas y la versión 2 usaba un degradado a magenta y coral.
+- **Por qué:** respuestas del autor.
 
 ### 2026-09-30 — D-098, versión 2
 

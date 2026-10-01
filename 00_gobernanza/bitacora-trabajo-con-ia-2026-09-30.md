@@ -14,7 +14,7 @@
 | Mensajes al instante | [Android 2.17](../06_desarrollo_y_factibilidad/app-android/version-2.17-mensajes-al-instante-2026-09-30.md): conexión Realtime mientras Relevo cuenta o espera; en emulador, el mensaje llegó en 0,8 segundos. | D-096 |
 | Registro completo | [Android 2.18](../06_desarrollo_y_factibilidad/app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md): uso diario de las apps elegidas y tiempo total de pantalla desde 7 días antes de aceptar, estado del teléfono, «Eliminar este relevo» en el relevo activo y avisos de qué falta al tocar «Seguir». | D-097 |
 | Panel v3 | 12 mensajes listos para coordinar, «Para revisar» (permisos, batería, datos que no llegan, versión), uso diario con gráfico y tabla, configuración, perfil y ruta de cada persona, y descarga de sus datos en JSON. | D-097 |
-| Identidad | Tras la corrección cruzada, diagnóstico de la presentación frente a la app y [propuesta «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md): logotipo con renglón, el azul de la presentación, Schibsted Grotesk en todo, 27 íconos redibujados y maquetas, en una lámina para decidir. Con las referencias personales del autor, una versión 2: trama de puntos, paso de color de la pantalla a la casa, vidrio y serif en titulares. | D-098, pendiente |
+| Identidad | Tras la corrección cruzada, diagnóstico de la presentación frente a la app y [propuesta «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md): logotipo con renglón, el azul de la presentación, Schibsted Grotesk en todo, 27 íconos redibujados y maquetas, en una lámina para decidir. Con las referencias personales del autor, una versión 2: trama de puntos, paso de color de la pantalla a la casa, vidrio y serif en titulares. Con sus decisiones, una versión 3 neutra: un solo azul eléctrico, la trama en fotos, tiempo y señal, cinco serifas para pantalla comparadas e íconos en trama. | D-098, decidida en parte |
 | Consentimiento | Versión v10: explica la activación automática y los mensajes. Versión v11: suma el uso diario, el tiempo total de pantalla, el equipo, los permisos y los relevos eliminados ([documento](../07_validacion/consentimiento-android-vigente-2026-09-23.md)). | D-095 a D-097 |
 
 ## 2. Cómo se usó la IA
@@ -35,14 +35,14 @@
 - Instalar la 2.18 en el teléfono de la prueba y comprobar que la activación automática sigue funcionando con el ahorro de batería del fabricante, y que el uso diario coincide con Bienestar digital.
 - Abrir el panel, permitir el conector de Supabase y enviar un mensaje de prueba a ese teléfono.
 - Revisar el consentimiento v11 con el profesor guía: ahora incluye el tiempo total de pantalla por día.
-- Decidir la identidad D-098 (dirección, titulares, color cálido, logotipo, azul y qué se aplica primero) para llevarla a la app 2.19, a Figma y a la presentación.
+- Cerrar la identidad D-098 (qué serif, una tinta o azul a celeste, trama en los íconos y qué se aplica primero) para llevarla a la app 2.19, a Figma y a la presentación.
 - Decidir si el capítulo 11 de la memoria describe la 2.16 como la app del testeo.
 
 ## Registro de cambios (disclaimer)
 
 ### 2026-09-30 — Identidad
 
-- **Qué cambió:** se sumaron la propuesta de identidad D-098, en sus versiones 1 (sobria) y 2 (con las referencias del autor), y su decisión pendiente.
+- **Qué cambió:** se sumaron la propuesta de identidad D-098, en sus versiones 1 (sobria), 2 (con las referencias del autor) y 3 (neutra, con azul eléctrico), y lo que el autor decidió y dejó pendiente.
 - **Cómo estaba antes:** la bitácora terminaba en la 2.18 y el panel v3.
 - **Por qué:** comentario de la corrección cruzada y pedido del autor.
 

@@ -1,0 +1,770 @@
+<title>El subrayado de Relevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=IBM+Plex+Mono:wght@300;400&family=Instrument+Serif:ital@0;1&family=Literata:opsz,wght@7..72,300..700&family=Newsreader:opsz,wght@6..72,300..700&family=Schibsted+Grotesk:wght@400..800&family=Source+Serif+4:opsz,wght@8..60,300..700&display=swap">
+<style>
+/* Layout: lámina de identidad en una columna de 1080 px. Neutra: papel, blanco y tinta; un solo azul eléctrico para el logotipo, el renglón y la trama; titulares en serif. */
+:root {
+  --paper: #F2F2EF; --card: #FFFFFF; --ink: #17181C; --graphite: #5B5F68; --mist: #E5E5E2; --line: #D5D6D8; --gray: #9BA0A9;
+  --blue: #3D38F5; --brand: #3D38F5; --blue-soft: #ECEBFE; --blue-tint: #C4C2FC; --ok: #1E7A46; --no: #B3261E;
+  --renglon-img: linear-gradient(var(--brand), var(--brand));
+  --m-paper: #F2F2EF; --m-card: #FCFCFA; --m-ink: #17181C; --m-graphite: #5B5F68; --m-mist: #E5E5E2; --m-line: #D5D6D8;
+  --glass: rgba(255, 255, 255, .66); --glass-edge: rgba(255, 255, 255, .78);
+  --font: "Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --display: "Instrument Serif", "Iowan Old Style", Georgia, serif; --display-weight: 400; --display-track: -0.01em; --display-vars: normal;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+  --r-card: 28px; --r-tile: 22px;
+}
+:root[data-color="celeste"] { --renglon-img: linear-gradient(90deg, #1F1BB4, #3D38F5, #2E7BFF, #7CC4FF); }
+:root[data-serif="newsreader"] { --display: "Newsreader", Georgia, serif; --display-weight: 380; --display-track: -0.015em; }
+:root[data-serif="literata"] { --display: "Literata", Georgia, serif; --display-weight: 380; --display-track: -0.02em; }
+:root[data-serif="sourceserif"] { --display: "Source Serif 4", Georgia, serif; --display-weight: 400; --display-track: -0.02em; }
+:root[data-serif="fraunces"] { --display: "Fraunces", Georgia, serif; --display-weight: 380; --display-track: -0.02em; --display-vars: "SOFT" 60, "WONK" 0; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --graphite: #9BA0A9; --mist: #26282D; --line: #30333A; --gray: #5B5F68; --blue: #9A97FF; --blue-soft: #23224A; --blue-tint: #3A3880; --ok: #7FD1A0; --no: #F2B8B5; --glass: rgba(27, 28, 32, .62); --glass-edge: rgba(255, 255, 255, .12); color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --graphite: #9BA0A9; --mist: #26282D; --line: #30333A; --gray: #5B5F68; --blue: #9A97FF; --blue-soft: #23224A; --blue-tint: #3A3880; --ok: #7FD1A0; --no: #F2B8B5; --glass: rgba(27, 28, 32, .62); --glass-edge: rgba(255, 255, 255, .12); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 26px; padding: 0 16px 64px; -webkit-font-smoothing: antialiased; }
+button, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 10px; }
+img { max-width: 100%; display: block; }
+canvas { display: block; }
+.num { font-variant-numeric: tabular-nums; }
+.serif, h1, h2 { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); }
+
+/* El renglón */
+.sub { background-image: var(--renglon-img); background-repeat: no-repeat; background-size: 100% max(2px, .085em); background-position: 0 calc(100% - .02em); padding-bottom: .03em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.wm { display: inline-block; position: relative; font-family: var(--font); font-weight: 650; letter-spacing: -0.03em; line-height: 1; padding-bottom: .17em; white-space: nowrap; width: fit-content; align-self: flex-start; font-variation-settings: normal; }
+.wm::after { content: ""; position: absolute; left: .03em; right: .03em; bottom: 0; height: .075em; background: var(--wm-line, var(--renglon-img)); }
+
+/* Barra superior */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; margin: 0 -16px; padding: 10px 16px; background: color-mix(in srgb, var(--paper) 84%, transparent); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+.bar-in { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; gap: 10px 18px; flex-wrap: wrap; }
+.bar .wm { font-size: 24px; }
+.bar-note { color: var(--graphite); font-size: 14px; flex: 1 1 auto; }
+.seg { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--graphite); }
+.seg-in { display: inline-flex; padding: 3px; border-radius: 999px; background: var(--mist); }
+.seg-in button { height: 30px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--graphite); white-space: nowrap; }
+.seg-in button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.pick { height: 36px; padding: 0 30px 0 12px; border-radius: 999px; border: 0; background: var(--mist); color: var(--ink); font-size: 13px; font-weight: 600; appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--graphite) 50%), linear-gradient(135deg, var(--graphite) 50%, transparent 50%); background-position: calc(100% - 15px) 16px, calc(100% - 10px) 16px; background-size: 5px 5px; background-repeat: no-repeat; }
+
+main { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 96px; padding-top: 40px; }
+section { display: flex; flex-direction: column; gap: 28px; }
+.eyebrow { color: var(--graphite); font-size: 15px; line-height: 20px; font-weight: 600; }
+h1 { margin: 0; font-size: clamp(40px, 6.4vw, 72px); line-height: 1.02; text-wrap: balance; }
+h2 { margin: 0; font-size: clamp(34px, 4.8vw, 54px); line-height: 1.05; text-wrap: balance; max-width: 20ch; }
+h3 { margin: 0; font-size: 20px; line-height: 26px; font-weight: 650; letter-spacing: -0.005em; }
+p { margin: 0; }
+.lede { font-size: clamp(18px, 2vw, 21px); line-height: 1.5; max-width: 62ch; }
+.body { max-width: 64ch; display: flex; flex-direction: column; gap: 14px; }
+.muted { color: var(--graphite); }
+.small { font-size: 14px; line-height: 20px; }
+.cite { color: var(--graphite); white-space: nowrap; }
+.head { display: flex; flex-direction: column; gap: 10px; }
+.tile { background: var(--card); border-radius: var(--r-card); padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 860px) { .grid3 { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 760px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+
+/* Portada */
+.hero-field { position: relative; border-radius: 34px; overflow: hidden; min-height: 560px; display: grid; place-items: center; padding: 48px 16px; background: var(--paper); border: 1px solid var(--line); }
+.hero-field canvas.bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.glass { position: relative; background: var(--glass); backdrop-filter: blur(22px) saturate(1.2); -webkit-backdrop-filter: blur(22px) saturate(1.2); border: 1px solid var(--glass-edge); box-shadow: 0 18px 50px rgba(20, 20, 60, .12); }
+.hero-card { border-radius: 30px; width: min(560px, 100%); padding: 34px 32px 30px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.hero-card .wm { font-size: 30px; align-self: center; }
+.hero-card h1 { max-width: 13ch; }
+.hero-card p { font-size: 17px; line-height: 24px; max-width: 36ch; }
+.decided { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px; border-radius: 999px; background: var(--card); font-size: 14px; font-weight: 600; }
+.chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+.chip.open i { background: var(--gray); }
+
+/* Referencias */
+.refcard { background: var(--card); border-radius: var(--r-tile); padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.refcard h3 a { color: inherit; text-decoration: none; }
+.refcard h3 a:hover { text-decoration: underline; }
+.refcard .take { font-size: 14px; line-height: 20px; color: var(--ink); padding-top: 10px; border-top: 1px solid var(--line); }
+.refcard .take b { color: var(--blue); font-weight: 650; }
+.src { font-size: 12px; line-height: 17px; color: var(--graphite); overflow-wrap: anywhere; }
+.src a { color: inherit; }
+
+/* Color */
+.scale { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-radius: var(--r-tile); overflow: hidden; }
+@media (max-width: 640px) { .scale { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.scale div { height: 112px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 13px; line-height: 18px; }
+.scale b { font-size: 15px; font-weight: 650; }
+.variants { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .variants { grid-template-columns: minmax(0, 1fr); } }
+.variant { background: var(--card); border-radius: var(--r-tile); overflow: hidden; display: flex; flex-direction: column; text-align: left; }
+.variant canvas { width: 100%; height: 150px; }
+.variant .v-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 4px; }
+.variant[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--blue); }
+
+/* Trama */
+.trama-demo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 640px) { .trama-demo { grid-template-columns: minmax(0, 1fr); } }
+.trama-demo figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.trama-demo figure > div { aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: #FFFFFF; }
+.trama-demo img, .trama-demo canvas { width: 100%; height: 100%; object-fit: cover; }
+figcaption { font-size: 14px; line-height: 20px; color: var(--graphite); }
+.dots-time { display: flex; gap: 6px; flex-wrap: wrap; }
+.dots-time i { width: 12px; height: 12px; border-radius: 50%; background: var(--mist); }
+.dots-time i.on { background: var(--brand); }
+
+/* Serifas */
+.serifs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.sf { background: var(--card); border-radius: var(--r-tile); padding: 20px; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.sf[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--blue); }
+.sf .big { font-size: 44px; line-height: 46px; }
+.sf .mid { font-size: 26px; line-height: 30px; }
+.sf .tiny { font-size: 15px; line-height: 21px; }
+.sf .meta { font-size: 13px; line-height: 18px; color: var(--graphite); border-top: 1px solid var(--line); padding-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.rec { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font-size: 12px; font-weight: 650; margin-left: 6px; vertical-align: 2px; white-space: nowrap; }
+
+/* Logotipo */
+.lock-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 860px) { .lock-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.lock { border-radius: var(--r-tile); aspect-ratio: 4 / 3; display: grid; place-items: center; border: 1px solid var(--line); max-width: 100%; position: relative; overflow: hidden; }
+.lock .wm { font-size: clamp(34px, 5vw, 50px); position: relative; }
+.lock.on-paper { background: #F2F2EF; color: #17181C; }
+.lock.on-white { background: #FFFFFF; color: #17181C; }
+.lock.on-ink { background: #17181C; color: #F2F2EF; --wm-line: #9A97FF; border-color: var(--line); }
+.lock.on-field canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.glass-chip { position: relative; padding: 14px 20px 12px; border-radius: 20px; color: #17181C; background: rgba(255,255,255,.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.8); }
+.glass-chip .wm { font-size: clamp(28px, 4vw, 40px); }
+.lock-cap { font-size: 13px; line-height: 18px; color: var(--graphite); margin-top: 8px; }
+.icons-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-end; }
+.appicon { width: 96px; height: 96px; border-radius: 26px; display: grid; place-items: center; position: relative; overflow: hidden; }
+.appicon canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.appicon span { font-weight: 650; font-size: 64px; line-height: 1; letter-spacing: -0.03em; position: relative; top: -6px; font-family: var(--font); }
+.appicon i { position: absolute; left: 32px; right: 32px; bottom: 22px; height: 5px; }
+.appicon.blue { background: var(--brand); color: #FFFFFF; } .appicon.blue i { background: #FFFFFF; }
+.appicon.ink { background: #17181C; color: #F2F2EF; } .appicon.ink i { background: #9A97FF; }
+.appicon.field { background: var(--brand); color: #FFFFFF; } .appicon.field i { background: #FFFFFF; }
+.appicon.round { border-radius: 50%; }
+
+/* Íconos */
+.icon-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.icon-group { display: flex; flex-direction: column; gap: 12px; }
+.icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 10px; }
+.ic { background: var(--card); border-radius: 20px; padding: 16px 8px 12px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.ic svg { width: 48px; height: 48px; color: var(--ink); overflow: visible; }
+.ic canvas { width: 48px; height: 48px; }
+.ic span { font-size: 13px; line-height: 17px; color: var(--graphite); }
+.keys { display: none; }
+.show-keys .keys { display: inline; }
+.show-keys .ic svg { background: var(--paper); border-radius: 6px; }
+.ours { background: var(--card); border-radius: var(--r-card); padding: 22px; display: flex; gap: 16px; align-items: flex-start; border: 1.5px solid var(--line); }
+.ours .q { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 28px; line-height: 1.1; flex: none; max-width: 9ch; }
+.dot-big { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; }
+.dot-big figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.dot-big canvas { width: 120px; height: 120px; background: var(--card); border-radius: 22px; }
+
+/* Maquetas */
+.mocks { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.mock-wrap { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.phone { width: 290px; max-width: 100%; height: 600px; border-radius: 44px; background: var(--m-paper); color: var(--m-ink); border: 8px solid #0E0F12; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 14px 16px 0; font-size: 14px; line-height: 19px; }
+.phone .status { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; padding: 0 6px 10px; position: relative; z-index: 1; }
+.phone .m-top { display: flex; justify-content: space-between; align-items: center; padding: 4px 2px 0; }
+.phone .m-top .wm { font-size: 26px; }
+.m-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--m-card); display: grid; place-items: center; }
+.m-avatar svg { width: 20px; height: 20px; }
+.m-date { color: var(--m-graphite); font-size: 13px; margin-top: 14px; }
+.m-hello { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 36px; line-height: 38px; margin-top: 2px; }
+.m-card { background: var(--m-card); border-radius: 26px; margin-top: 12px; overflow: hidden; }
+.m-photo { height: 108px; position: relative; overflow: hidden; background: #FFFFFF; }
+.m-photo canvas { width: 100%; height: 100%; }
+.m-body { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+.m-chip { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--m-mist); font-size: 12px; font-weight: 600; }
+.m-chip svg { width: 14px; height: 14px; }
+.m-h { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 30px; line-height: 32px; }
+.m-s { color: var(--m-graphite); font-size: 13px; line-height: 18px; }
+.m-dots { display: flex; gap: 4px; }
+.m-dots i { width: 11px; height: 11px; border-radius: 50%; background: var(--m-mist); }
+.m-dots i.on { background: var(--brand); }
+.m-n { font-size: 12px; color: var(--m-graphite); }
+.m-n b { color: var(--m-ink); }
+.m-list { background: var(--m-card); border-radius: 22px; margin-top: 10px; }
+.m-row { display: flex; align-items: center; gap: 10px; padding: 11px 14px; font-size: 13px; }
+.m-row svg { width: 20px; height: 20px; flex: none; }
+.m-row span { flex: 1; color: var(--m-graphite); white-space: nowrap; }
+.m-row b { font-weight: 600; white-space: nowrap; }
+.m-tabs { position: absolute; left: 14px; right: 14px; bottom: 14px; height: 62px; border-radius: 999px; background: rgba(252, 252, 250, .84); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 6px 22px rgba(0,0,0,.10); display: flex; padding: 5px; }
+.m-tab { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; color: var(--m-graphite); }
+.m-tab svg { width: 22px; height: 22px; }
+.m-tab.on { color: var(--m-ink); font-weight: 650; }
+.m-x { display: flex; align-items: center; gap: 12px; padding: 2px; }
+.m-x svg { width: 22px; height: 22px; }
+.m-steps { flex: 1; display: flex; gap: 4px; }
+.m-steps i { flex: 1; height: 4px; border-radius: 999px; background: var(--m-mist); }
+.m-steps i.on { background: var(--brand); }
+.m-title { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 36px; line-height: 38px; margin-top: 22px; }
+.m-label { font-size: 12px; color: var(--m-graphite); margin-top: 20px; }
+.m-field { font-size: 21px; line-height: 28px; font-weight: 500; padding: 4px 0 8px; background-image: var(--renglon-img); background-repeat: no-repeat; background-size: 100% 2.5px; background-position: 0 100%; }
+.m-hint { font-size: 12px; color: var(--m-graphite); margin-top: 8px; }
+.m-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.m-chips span { height: 30px; padding: 0 12px; border-radius: 999px; background: var(--m-card); display: inline-flex; align-items: center; font-size: 13px; }
+.m-chips span.sel { background: #17181C; color: #F2F2EF; }
+.m-btn { position: absolute; left: 16px; right: 16px; bottom: 22px; height: 50px; border-radius: 999px; background: #17181C; color: #F2F2EF; display: grid; place-items: center; font-weight: 650; font-size: 15px; z-index: 1; }
+.phone.signal { padding: 0; background: #F2F2EF; }
+.phone.signal canvas.bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sig-in { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; padding: 14px 16px 0; }
+.sig-card { margin-top: auto; margin-bottom: 150px; border-radius: 28px; padding: 20px 18px; display: flex; flex-direction: column; gap: 10px; color: #17181C; background: rgba(255,255,255,.72); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); border: 1px solid rgba(255,255,255,.85); }
+.sig-card .wave { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+.sig-card .wave svg { width: 18px; height: 18px; }
+.sig-card .big { font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 44px; line-height: 44px; }
+.sig-card .m-s { color: #5B5F68; font-size: 15px; line-height: 21px; }
+.m-btn2 { position: absolute; left: 16px; right: 16px; bottom: 82px; height: 50px; border-radius: 999px; background: rgba(255,255,255,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.85); color: #17181C; display: grid; place-items: center; font-weight: 600; font-size: 15px; z-index: 1; }
+.mock-cap { font-size: 14px; color: var(--graphite); text-align: center; max-width: 290px; }
+
+/* Afiches */
+.posters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 860px) { .posters { grid-template-columns: minmax(0, 1fr); max-width: 420px; margin: 0 auto; } }
+.poster { aspect-ratio: 1272 / 1800; border-radius: 18px; overflow: hidden; position: relative; display: grid; place-items: center; padding: 9%; container-type: inline-size; border: 1px solid var(--line); max-width: 100%; }
+.poster canvas.bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pA .card { position: relative; width: 100%; aspect-ratio: 3 / 4.4; border-radius: 7cqw; padding: 9cqw 7cqw 8cqw; display: flex; flex-direction: column; align-items: center; text-align: center; color: #17181C; background: rgba(255,255,255,.6); backdrop-filter: blur(14px) saturate(1.1); -webkit-backdrop-filter: blur(14px) saturate(1.1); border: 1px solid rgba(255,255,255,.8); }
+.pA .card .wm { font-size: 7.5cqw; align-self: center; }
+.pA .card h4 { margin: auto 0 0; font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 10cqw; line-height: 1; }
+.pA .card p { margin-top: 4cqw; font-size: 3.6cqw; line-height: 1.35; color: #3A3B40; }
+.pB { background: #E6E7EC; }
+.pB .blur { position: absolute; inset: -10%; background: radial-gradient(40% 36% at 30% 30%, rgba(61,56,245,.85) 0%, transparent 70%), radial-gradient(42% 40% at 72% 50%, rgba(61,56,245,.45) 0%, transparent 72%), radial-gradient(46% 44% at 40% 80%, rgba(46,123,255,.5) 0%, transparent 70%); filter: blur(30px); }
+:root[data-color="mono"] .pB .blur { background: radial-gradient(40% 36% at 30% 30%, rgba(61,56,245,.8) 0%, transparent 70%), radial-gradient(42% 40% at 72% 52%, rgba(61,56,245,.4) 0%, transparent 72%), radial-gradient(46% 44% at 40% 80%, rgba(61,56,245,.25) 0%, transparent 70%); }
+.pB .words { position: absolute; inset: 4% 6%; font-family: var(--mono); font-weight: 300; font-size: 3.1cqw; line-height: 1.85; color: rgba(255,255,255,.7); white-space: pre; overflow: hidden; letter-spacing: .25em; }
+.pB .card { position: relative; width: 100%; border-radius: 6cqw; padding: 8cqw 6cqw; text-align: center; background: #17181C; color: #F2F2EF; box-shadow: 0 10px 40px rgba(0,0,0,.2); }
+.pB .card h4 { margin: 0; font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 8.4cqw; line-height: 1.02; }
+.pB .card p { margin-top: 4cqw; font-size: 3.4cqw; line-height: 1.35; opacity: .8; }
+.pC { background: #EEEEEA; }
+.pC .card { position: relative; width: 100%; aspect-ratio: 3 / 3.6; border-radius: 6cqw; overflow: hidden; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 10px 40px rgba(20, 20, 30, .07); }
+.pC .card .txt { padding: 8cqw 6cqw 0; display: flex; flex-direction: column; align-items: center; gap: 3cqw; position: relative; z-index: 1; }
+.pC .card h4 { margin: 0; font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 8.6cqw; line-height: 1.02; color: #17181C; }
+.pC .card p { font-size: 3.3cqw; line-height: 1.35; color: #6A6B72; }
+.pC .card .go { display: inline-flex; align-items: center; height: 8cqw; padding: 0 3.6cqw; border-radius: 1.8cqw; background: #17181C; color: #FFFFFF; font-size: 3.4cqw; margin-top: 1cqw; }
+.pC .card canvas { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 62%; }
+.slide { width: 100%; max-width: 760px; aspect-ratio: 16 / 9; background: #FFFFFF; color: #17181C; border-radius: 16px; border: 1px solid var(--line); position: relative; overflow: hidden; display: grid; grid-template-columns: 1.15fr 1fr; container-type: inline-size; }
+.slide .s-left { padding: 5.5cqw; display: flex; flex-direction: column; }
+.slide .s-left .wm { font-size: 3cqw; }
+.slide .s-left h4 { margin: auto 0 0; font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track); font-variation-settings: var(--display-vars); font-size: 6.2cqw; line-height: 1.02; }
+.slide .s-left p { margin-top: 2cqw; font-size: 1.8cqw; line-height: 1.4; color: #5B5F68; }
+.slide .s-right { position: relative; }
+.slide .s-right canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Decisiones */
+.decide { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .decide { grid-template-columns: minmax(0, 1fr); } }
+.dcard { background: var(--card); border-radius: var(--r-card); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+.opts { display: flex; flex-direction: column; gap: 8px; }
+.opt { display: flex; align-items: flex-start; gap: 12px; text-align: left; padding: 12px 14px; border-radius: 18px; background: var(--paper); }
+.opt[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--blue); background: var(--blue-soft); }
+.opt .dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--gray); flex: none; margin-top: 3px; display: grid; place-items: center; }
+.opt[aria-pressed="true"] .dot { border-color: var(--blue); }
+.opt[aria-pressed="true"] .dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+.opt b { display: block; font-weight: 600; font-size: 16px; line-height: 22px; }
+.opt small { display: block; font-size: 13px; line-height: 18px; color: var(--graphite); }
+.list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; max-width: 70ch; }
+.refs { display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 21px; color: var(--graphite); max-width: 82ch; }
+.refs p { padding-left: 2em; text-indent: -2em; overflow-wrap: anywhere; }
+.refs a { color: inherit; }
+footer { max-width: 1080px; margin: 72px auto 0; color: var(--graphite); font-size: 13px; line-height: 19px; }
+@media (prefers-reduced-motion: no-preference) { .opt, .seg-in button, .sf, .variant { transition: background .2s, box-shadow .2s; } }
+</style>
+
+<header class="bar">
+  <div class="bar-in">
+    <span class="wm">relevo</span>
+    <span class="bar-note">Propuesta de identidad · versión 3, más neutra</span>
+    <label class="seg" for="serif-pick">Serif <select class="pick" id="serif-pick" aria-label="Serif de los titulares"><option value="instrument">Instrument Serif</option><option value="newsreader">Newsreader</option><option value="literata">Literata</option><option value="sourceserif">Source Serif 4</option><option value="fraunces">Fraunces</option></select></label>
+    <span class="seg">Color <span class="seg-in" role="group" aria-label="Color"><button type="button" data-set="color" data-val="mono">Azul eléctrico</button><button type="button" data-set="color" data-val="celeste">Azul a celeste</button></span></span>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="hero-field">
+      <canvas class="bg" data-field="hero" aria-hidden="true"></canvas>
+      <div class="glass hero-card">
+        <span class="wm">relevo</span>
+        <h1>Vuelve a <span class="sub">lo que querías hacer</span>.</h1>
+        <p>Una app y un objeto que suena donde empieza. Un solo azul, una trama de puntos y el renglón.</p>
+      </div>
+    </div>
+    <p class="lede">Esta versión sigue tus respuestas. Mantiene tus referencias, pero más neutra: papel, blanco y tinta, con un solo azul eléctrico, el de la presentación, que la corrección cruzada recordó. La trama pasa a ser parte de la identidad. Arriba puedes cambiar la serif de los titulares y el color en toda la página.</p>
+    <div class="decided">
+      <span class="chip"><i></i>Dirección: tus referencias, más neutra</span>
+      <span class="chip"><i></i>«relevo» en minúsculas</span>
+      <span class="chip"><i></i>Serif en titulares</span>
+      <span class="chip"><i></i>La trama es parte de la identidad</span>
+      <span class="chip"><i></i>Azul eléctrico, sin magenta</span>
+      <span class="chip open"><i></i>Por decidir: qué serif, variante de color, trama en íconos</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Referencias</span><h2>Tus afiches y otras referencias parecidas.</h2><p class="muted small">Tus tres afiches de Otherwise siguen siendo la base: trama de puntos, vidrio, serif en titulares y letras dispersas. Busqué otras que usan los mismos recursos con un motivo, y que llevan a una versión más neutra.</p></div>
+    <div class="grid2">
+      <div class="refcard"><h3>Tus referencias · Otherwise</h3><p class="small">Campo de puntos de colores, tarjeta de vidrio, serif fina de alto contraste con grotesca, el nombre desarmado en letras monoespaciadas.</p><p class="take"><b>Se toma:</b> la trama, el vidrio, la serif en titulares y las letras dispersas. <b>Se deja:</b> los colores vivos (magenta, coral, verde) y el símbolo de cuatro formas.</p><p class="src">Afiches compartidos por el autor; no se pudo verificar quién los diseñó.</p></div>
+      <div class="refcard"><h3><a href="https://www.moma.org/collection/works/4134">Braun T3 y LE 1 · Dieter Rams</a></h3><p class="small">La radio de bolsillo T3 (1958) y el parlante LE 1 (1960), en la colección del MoMA, tienen una rejilla perforada en retícula sobre un cuerpo neutro. La trama del parlante es la cara del objeto.</p><p class="take"><b>Se toma:</b> la trama como rejilla del parlante, en una retícula regular, sobre fondos neutros. Es el argumento físico de la trama de Relevo.</p><p class="src"><a href="https://www.moma.org/collection/works/4134">moma.org/collection/works/4134</a> · <a href="https://www.moma.org/collection/works/4081">moma.org/collection/works/4081</a></p></div>
+      <div class="refcard"><h3><a href="https://nothing.tech">Nothing</a></h3><p class="small">Su letra de puntos (Ndot) repite las luces de puntos de sus teléfonos: la misma trama está en la pantalla, en la marca y en el aparato. Usa una paleta casi monocroma.</p><p class="take"><b>Se toma:</b> que la trama una el objeto con la pantalla, y la paleta neutra con un solo acento. <b>Se deja:</b> la letra de puntos para textos, porque cuesta leerla.</p><p class="src"><a href="https://nothing.tech">nothing.tech</a></p></div>
+      <div class="refcard"><h3><a href="https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/the-untold-story-of-the-international-klein-blue-ikb-of-yves-klein">International Klein Blue · Yves Klein</a></h3><p class="small">Un solo azul ultramar, intenso y mate, que Klein usó una y otra vez hasta volverlo su firma. Registró en 1960 la técnica (el aglutinante), no el color.</p><p class="take"><b>Se toma:</b> la idea de un azul único, saturado y usado siempre igual, en vez de un degradado de varios colores.</p><p class="src"><a href="https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/the-untold-story-of-the-international-klein-blue-ikb-of-yves-klein">Centre Pompidou</a> · <a href="https://www.britannica.com/topic/International-Klein-Blue">Britannica</a></p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Color</span><h2>Un azul eléctrico, y lo demás neutro.</h2></div>
+    <div class="scale" role="img" aria-label="Escala del azul Relevo y los neutros">
+      <div style="background:#1F1BB4;color:#FFFFFF"><b>Azul 800</b><span class="num">#1F1BB4 · presionado</span></div>
+      <div style="background:#3D38F5;color:#FFFFFF"><b>Azul Relevo</b><span class="num">#3D38F5 · 6,8:1 en blanco</span></div>
+      <div style="background:#9A97FF;color:#17181C"><b>Azul 300</b><span class="num">#9A97FF · modo oscuro</span></div>
+      <div style="background:#C4C2FC;color:#17181C"><b>Azul 200</b><span class="num">#C4C2FC · puntos claros</span></div>
+      <div style="background:#ECEBFE;color:#17181C"><b>Azul 50</b><span class="num">#ECEBFE · selección</span></div>
+    </div>
+    <div class="body">
+      <p><b>Por qué un azul eléctrico.</b> Es el azul de la presentación, el que se recordó. También es el color de la pantalla: un azul saturado, cercano al azul con que la pantalla forma la imagen; si la trama son los píxeles, el azul es su luz. Se distingue de los verdes, naranjos y morados de las apps de bienestar digital y del rojo de error (D-073).</p>
+      <p><b>Por qué neutro alrededor.</b> Relevo trabaja contra el diseño que captura la atención (el ámbito «El diseño de la atención» de la memoria). Una paleta de muchos colores vivos se parece a lo que critica. Con papel, blanco y tinta, el azul marca solo lo que importa. El color por sí solo es lo que menos distingue a una marca <span class="cite">(Ward et al., 2020)</span>; por eso va siempre con el logotipo, el renglón y la trama. Además, se imprime con dos tintas: negro y azul.</p>
+    </div>
+    <div class="variants">
+      <button type="button" class="variant" data-set="color" data-val="mono"><canvas data-variant="mono" aria-hidden="true"></canvas><span class="v-body"><b>Azul eléctrico <span class="rec">Recomendado</span></b><span class="small muted">Una sola tinta: la trama cambia de tamaño, no de color. Como una impresión a un color.</span></span></button>
+      <button type="button" class="variant" data-set="color" data-val="celeste"><canvas data-variant="celeste" aria-hidden="true"></canvas><span class="v-body"><b>Azul a celeste</b><span class="small muted">Del azul profundo a un celeste eléctrico. Más vivo, pero el cambio de color no significa nada propio.</span></span></button>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">La trama</span><h2>Puntos: los píxeles de la pantalla y la rejilla del parlante.</h2></div>
+    <div class="body"><p>La trama es el recurso que une el teléfono y el objeto: la misma retícula de puntos está en las fotos de la app, en la pantalla de la señal y en la cara del parlante. Se usa en momentos de marca, no en cada pantalla.</p></div>
+    <div class="trama-demo">
+      <figure><div><img src="img/foto-leer.jpg" alt="Foto de la app: un libro abierto en tonos beige." width="640" height="640"></div><figcaption>Hoy: foto beige generada con IA, igual a la de muchas apps.</figcaption></figure>
+      <figure><div><canvas data-photo="demo" role="img" aria-label="La misma foto convertida en puntos azules sobre blanco."></canvas></div><figcaption>Con la trama: cada píxel pasa a ser un punto azul que crece con la sombra.</figcaption></figure>
+    </div>
+    <div class="grid3">
+      <div class="tile"><h3>En las fotos</h3><p class="small muted">Las imágenes de actividades pasan por la trama. Dejan de parecer fotos de archivo y pasan a ser de Relevo. Puntos cada 6 px en pantalla y cada 2 mm en papel.</p></div>
+      <div class="tile"><h3>En el tiempo</h3><div class="dots-time" aria-label="6 de 15 minutos"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="small muted">Cada punto es un minuto en tus apps. La barra del tiempo se vuelve trama: «6 de 15» se ve como seis puntos llenos.</p></div>
+      <div class="tile"><h3>En la señal</h3><p class="small muted">Cuando suena, la pantalla se llena de trama y los puntos laten mientras dura la señal, como la rejilla de un parlante.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Tipografía</span><h2>Serifas pensadas para pantalla.</h2></div>
+    <div class="body">
+      <p>Instrument Serif funciona en titulares grandes, pero tiene un solo peso y no cambia con el tamaño. Las serifas con <b>tamaño óptico</b> ajustan proporciones, grosores y detalles según el tamaño en que se leen: son más firmes en tamaños chicos y más finas en tamaños grandes <span class="cite">(Microsoft, 2024)</span>. Para la app sirven más, porque el mismo titular aparece a 36 px en Inicio y a 20 px en una tarjeta. No hay una letra que se lea mejor para todos: la velocidad de lectura cambia según la persona <span class="cite">(Wallace et al., 2022)</span>. Por eso conviene elegir por el uso y probarla en el teléfono.</p>
+      <p class="small muted">Toca una para verla en toda la página. Las cinco son gratuitas (licencia SIL Open Font) y se pueden incluir en la app.</p>
+    </div>
+    <div class="serifs" id="serifs"></div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Logotipo</span><h2>relevo, sobre su renglón.</h2></div>
+    <div class="lock-grid">
+      <div><div class="lock on-field"><canvas data-field="lock" aria-hidden="true"></canvas><span class="glass-chip"><span class="wm">relevo</span></span></div><p class="lock-cap">Sobre la trama, en una tarjeta de vidrio.</p></div>
+      <div><div class="lock on-paper"><span class="wm">relevo</span></div><p class="lock-cap">Principal: tinta sobre papel, renglón azul.</p></div>
+      <div><div class="lock on-white"><span class="wm">relevo</span></div><p class="lock-cap">Sobre blanco: presentación y papel impreso.</p></div>
+      <div><div class="lock on-ink"><span class="wm">relevo</span></div><p class="lock-cap">Sobre tinta y en modo oscuro.</p></div>
+    </div>
+    <div class="tile"><h3>Ícono de la app</h3><div class="icons-row"><div class="appicon field"><canvas data-field="icon" aria-hidden="true"></canvas><span>r</span><i></i></div><div class="appicon field round"><canvas data-field="icon2" aria-hidden="true"></canvas><span>r</span><i></i></div><div class="appicon blue"><span>r</span><i></i></div><div class="appicon ink"><span>r</span><i></i></div></div><p class="small muted">La «r» con su renglón sobre la trama azul. Entre los íconos del teléfono se reconoce por la textura, sin agregar otro color.</p></div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Íconos</span><h2>Trazo para usar, trama para la marca.</h2></div>
+    <div class="ours"><span class="q">¿Son nuestros?</span><div class="body small" style="font-size:15px;line-height:22px"><p><b>Sí.</b> Los 27 de esta propuesta los dibujé para Relevo, punto por punto sobre una retícula de 24. No se copiaron de Material Symbols ni de SF Symbols; de ellos se tomaron reglas (retícula, figuras guía, peso según el texto), no dibujos. Las formas comunes, como una casa o una papelera, son convenciones que cualquiera usa. Los 97 íconos que tiene hoy la app también se dibujaron para Relevo, en el sistema 2.0. Ojo: los SF Symbols de Apple solo se pueden usar en apps para sistemas de Apple, así que en Android no servirían aunque quisiéramos.</p></div></div>
+    <div class="body small" style="font-size:15px;line-height:22px"><p><b>De trazo, para la interfaz:</b> retícula de 24 con área útil de 20 y figuras guía de Material Design <span class="cite">(Google, s. f.-a)</span>, trazo según el peso del texto como SF Symbols <span class="cite">(Apple, s. f.)</span> y estado lleno para lo elegido <span class="cite">(Google, s. f.-b)</span>. Los propios de Relevo llevan el renglón azul.</p></div>
+    <div class="icon-tools"><span class="seg-in" role="group" aria-label="Retícula"><button type="button" id="keys-off" aria-pressed="true">Sin retícula</button><button type="button" id="keys-on" aria-pressed="false">Con retícula</button></span></div>
+    <div id="icon-groups" class="icon-group"></div>
+    <div class="head" style="gap:6px"><h3>Exploración: los mismos íconos, en trama</h3><p class="small muted" style="max-width:68ch">Cada ícono de trazo se pasa a una retícula de puntos, como la trama. Sirven para momentos de marca: el ícono de la app, la pantalla de la señal, estados vacíos y afiches. En la interfaz se quedan los de trazo, porque un ícono se reconoce mejor cuanto más cerca está de lo que representa y cuanto más familiar es <span class="cite">(Isherwood et al., 2007)</span>, y a 24 px los puntos se pierden.</p></div>
+    <div class="icon-tools"><span class="seg-in" role="group" aria-label="Puntos por lado"><button type="button" data-grid="12" aria-pressed="false">12 × 12 puntos</button><button type="button" data-grid="16" aria-pressed="true">16 × 16 puntos</button></span></div>
+    <div class="dot-big" id="dot-big"></div>
+    <div class="icon-grid" id="dot-grid"></div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Aplicaciones</span><h2>Así se vería.</h2><p class="muted small">Maquetas de la propuesta, no capturas de la app. La foto es una imagen de la app generada con IA, pasada por la trama.</p></div>
+    <div class="mocks">
+      <div class="mock-wrap"><div class="phone" aria-label="Maqueta de Inicio">
+        <div class="status"><span class="num">10:24</span><span>●●●</span></div>
+        <div class="m-top"><span class="wm">relevo</span><span class="m-avatar" data-icon="perfil"></span></div>
+        <div class="m-date">Miércoles 30 de septiembre</div>
+        <div class="m-hello">Hola.</div>
+        <div class="m-card"><div class="m-photo"><canvas data-photo="mock" aria-hidden="true"></canvas></div>
+          <div class="m-body"><span class="m-chip"><span data-icon="esperando"></span>Contando</span><div class="m-h">Vuelve a <span class="sub">leer</span>.</div><div class="m-s">Sonará junto al sillón cuando sumes 15 min en tus apps.</div><div class="m-dots" aria-label="6 de 15 minutos"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="m-n num"><b>6 min</b> de 15</div></div></div>
+        <div class="m-tabs"><div class="m-tab on"><span data-icon="inicio" data-filled></span><span class="sub">Inicio</span></div><div class="m-tab"><span data-icon="ruta"></span>Ruta</div><div class="m-tab"><span data-icon="perfil"></span>Perfil</div></div>
+      </div><span class="mock-cap">Inicio: la foto en trama y el tiempo en puntos</span></div>
+
+      <div class="mock-wrap"><div class="phone" aria-label="Maqueta de preparar un relevo">
+        <div class="status"><span class="num">10:21</span><span>●●●</span></div>
+        <div class="m-x"><span data-icon="cerrar"></span><div class="m-steps"><i class="on"></i><i></i><i></i><i></i></div></div>
+        <div class="m-title">¿Qué quieres hacer?</div>
+        <div class="m-label">Actividad</div>
+        <div class="m-field">Leer 10 páginas</div>
+        <div class="m-hint">Escribe lo que quieres hacer o toca una idea.</div>
+        <div class="m-label">Ideas</div>
+        <div class="m-chips"><span class="sel">Leer</span><span>Dibujar</span><span>Salir a caminar</span><span>Ordenar</span><span>Cocinar</span><span>Tocar guitarra</span></div>
+        <div class="m-btn">Seguir</div>
+      </div><span class="mock-cap">Preparar: el campo es el renglón</span></div>
+
+      <div class="mock-wrap"><div class="phone signal" aria-label="Maqueta de la pantalla cuando suena la señal">
+        <canvas class="bg" data-field="signal" aria-hidden="true"></canvas>
+        <div class="sig-in">
+          <div class="status"><span class="num">10:39</span><span>●●●</span></div>
+          <div class="sig-card">
+            <span class="wm" style="font-size:20px">relevo</span>
+            <div class="wave"><span data-icon="senal"></span>Sonando junto al sillón</div>
+            <div class="big">Vuelve a <span class="sub">leer</span>.</div>
+            <div class="m-s">Para empezar: abrir el libro.</div>
+          </div>
+        </div>
+        <div class="m-btn2">Seguir en el teléfono</div>
+        <div class="m-btn">Silenciar y empezar</div>
+      </div><span class="mock-cap">Cuando suena: la trama late con la señal</span></div>
+    </div>
+
+    <h3>Afiches, en los formatos de tus referencias</h3>
+    <div class="posters">
+      <div class="poster pA"><canvas class="bg" data-field="posterA" aria-hidden="true"></canvas><div class="card"><span class="wm">relevo</span><h4>Vuelve a lo que querías hacer</h4><p>Una app y un objeto que suena donde empieza.</p></div></div>
+      <div class="poster pB"><div class="blur" aria-hidden="true"></div><div class="words" id="words" aria-hidden="true"></div><div class="card"><h4>Lo que querías hacer sigue ahí</h4><p>Relevo te lo recuerda en el lugar donde empieza.</p></div></div>
+      <div class="poster pC"><div class="card"><div class="txt"><h4>¿Leer diez páginas antes de dormir?</h4><p>Sonará junto al sillón cuando sumes 15 minutos en tus apps.</p><span class="go">Preparar un relevo →</span></div><canvas data-photo="poster" aria-hidden="true"></canvas></div></div>
+    </div>
+
+    <h3>La portada de la presentación</h3>
+    <div class="slide" aria-label="Maqueta de la portada de la presentación con la identidad propuesta">
+      <div class="s-left"><span class="wm">relevo</span><h4>Vuelve a lo que querías hacer <span class="sub">a&nbsp;tiempo</span>.</h4><p>Sistema phygital para recuperar intenciones personales durante el ocio digital.</p></div>
+      <div class="s-right"><canvas data-field="slide" aria-hidden="true"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Para cerrar</span><h2>Lo que falta decidir.</h2><p class="muted small">Al elegir, la página cambia. Las recomendaciones están marcadas.</p></div>
+    <div class="decide">
+      <div class="dcard"><h3>Serif de los titulares</h3><div class="opts" id="serif-opts"></div></div>
+      <div class="dcard"><h3>Color</h3><div class="opts">
+        <button type="button" class="opt" data-set="color" data-val="mono"><span class="dot"></span><span><b>Azul eléctrico, una tinta <span class="rec">Recomendado</span></b><small>La trama cambia de tamaño, no de color. Más neutra.</small></span></button>
+        <button type="button" class="opt" data-set="color" data-val="celeste"><span class="dot"></span><span><b>Azul a celeste</b><small>Más viva; el cambio de color no tiene un significado propio.</small></span></button></div></div>
+      <div class="dcard"><h3>La trama en los íconos</h3><div class="opts">
+        <button type="button" class="opt" data-set="icons" data-val="marca"><span class="dot"></span><span><b>Solo en momentos de marca <span class="rec">Recomendado</span></b><small>Ícono de la app, señal, estados vacíos y afiches. La interfaz sigue con trazo.</small></span></button>
+        <button type="button" class="opt" data-set="icons" data-val="todo"><span class="dot"></span><span><b>También en la interfaz</b><small>Más propio, pero se lee peor a 24 px.</small></span></button>
+        <button type="button" class="opt" data-set="icons" data-val="no"><span class="dot"></span><span><b>No usarla en íconos</b><small>La trama queda en fotos, señal y portadas.</small></span></button></div></div>
+      <div class="dcard"><h3>Qué cambia si se aprueba</h3>
+        <ul class="list small">
+          <li><b>App 2.19:</b> el logotipo con renglón, la serif elegida en titulares, la trama en fotos y en la señal, el tiempo en puntos, el campo renglón, el ícono de la app y los 97 íconos redibujados.</li>
+          <li><b>Presentación:</b> la serif, el logotipo y la trama en la portada.</li>
+          <li><b>Figma:</b> sistema 3.0 con la trama como estilo y los íconos como componentes.</li>
+          <li><b>Se mantienen</b> los emoji del perfil y el vidrio de la navegación (D-083).</li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Fuentes</span></div>
+    <div class="refs">
+      <p>Apple. (s. f.). <i>SF Symbols</i>. Human Interface Guidelines. <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols">https://developer.apple.com/design/human-interface-guidelines/sf-symbols</a></p>
+      <p>Centre Pompidou. (s. f.). <i>The untold story of the International Klein Blue (IKB) of Yves Klein</i>. <a href="https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/the-untold-story-of-the-international-klein-blue-ikb-of-yves-klein">https://www.centrepompidou.fr/en/pompidou-plus/magazine/article/the-untold-story-of-the-international-klein-blue-ikb-of-yves-klein</a></p>
+      <p>Google. (s. f.-a). <i>System icons</i>. Material Design. <a href="https://m2.material.io/design/iconography/system-icons.html">https://m2.material.io/design/iconography/system-icons.html</a></p>
+      <p>Google. (s. f.-b). <i>Material Symbols guide</i>. Google Fonts for Developers. <a href="https://developers.google.com/fonts/docs/material_symbols">https://developers.google.com/fonts/docs/material_symbols</a></p>
+      <p>Isherwood, S. J., McDougall, S. J. P. y Curry, M. B. (2007). Icon identification in context: The changing role of icon characteristics with user experience. <i>Human Factors, 49</i>(3), 465–476. <a href="https://doi.org/10.1518/001872007X200102">https://doi.org/10.1518/001872007X200102</a></p>
+      <p>Microsoft. (2024). <i>opsz design-variation axis tag (OpenType 1.9.1)</i>. Microsoft Learn. <a href="https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_opsz">https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_opsz</a></p>
+      <p>MoMA. (s. f.). <i>Dieter Rams, Hochschule für Gestaltung, Ulm. Pocket Radio (model T3). 1958</i>. <a href="https://www.moma.org/collection/works/4134">https://www.moma.org/collection/works/4134</a></p>
+      <p>Romaniuk, J. (2018). <i>Building distinctive brand assets</i>. Oxford University Press.</p>
+      <p>Wallace, S., Bylinskii, Z., Dobres, J., Kerr, B., Berlow, S., Treitman, R., Kumawat, N., Arpin, K., Miller, D. B., Huang, J. y Sawyer, B. D. (2022). Towards individuated reading experiences: Different fonts increase reading speed for different individuals. <i>ACM Transactions on Computer-Human Interaction, 29</i>(4), 1–56. <a href="https://doi.org/10.1145/3502222">https://doi.org/10.1145/3502222</a></p>
+      <p>Ward, E., Yang, S., Romaniuk, J. y Beal, V. (2020). Building a unique brand identity: Measuring the relative ownership potential of brand identity element types. <i>Journal of Brand Management, 27</i>(4), 393–407. <a href="https://doi.org/10.1057/s41262-020-00187-6">https://doi.org/10.1057/s41262-020-00187-6</a></p>
+    </div>
+  </section>
+</main>
+<footer>Propuesta para el proyecto de título de Relevo, Escuela de Diseño UDP. Pendiente de la decisión del autor; no reemplaza el sistema vigente hasta aprobarse. Las referencias pertenecen a sus autores y no se reproducen.</footer>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const NS = 'http://www.w3.org/2000/svg';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const state = { serif: 'instrument', color: 'mono', icons: 'marca', grid: 16 };
+  try { Object.assign(state, JSON.parse(localStorage.getItem('relevo-identidad-v3') || '{}')); } catch (e) {}
+
+  // ---- Color: una tinta azul o azul a celeste ----
+  const STOPS = { mono: ['#C4C2FC', '#3D38F5'], celeste: ['#1F1BB4', '#3D38F5', '#2E7BFF', '#7CC4FF'] };
+  const hexRgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+  function paletteAt(stops, p) {
+    p = Math.min(1, Math.max(0, p));
+    const seg = (stops.length - 1) * p, i = Math.min(stops.length - 2, Math.floor(seg)), f = seg - i, a = stops[i], b = stops[i + 1];
+    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f];
+  }
+  const rgb = (c) => 'rgb(' + (c[0] | 0) + ',' + (c[1] | 0) + ',' + (c[2] | 0) + ')';
+  const cssVar = (n) => getComputedStyle(root).getPropertyValue(n).trim();
+  const isDark = () => root.dataset.theme === 'dark' || (!root.dataset.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  // ---- Trama ----
+  function sizeCanvas(cv) {
+    const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = cv.clientHeight;
+    if (!w || !h) return null;
+    const W = Math.round(w * dpr), H = Math.round(h * dpr);
+    if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
+    const ctx = cv.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w, h };
+  }
+  const FIELDS = {
+    hero: { pitch: 8, seed: 0.2, bg: 'paper' }, lock: { pitch: 5, seed: 2.6, bg: '#F2F2EF' },
+    icon: { pitch: 4, seed: 0.9, bg: '#3D38F5', onBlue: true }, icon2: { pitch: 4, seed: 3.1, bg: '#3D38F5', onBlue: true },
+    signal: { pitch: 7, seed: 1.1, bg: '#F2F2EF', dense: true }, posterA: { pitch: 5, seed: 0.5, bg: '#ECECE8' }, slide: { pitch: 6, seed: 2.2, bg: '#FFFFFF', dense: true }
+  };
+  function drawField(cv, t, colorOverride) {
+    const conf = FIELDS[cv.dataset.field] || { pitch: 6, seed: cv.dataset.variant === 'celeste' ? 1.4 : 0.7, bg: '#FFFFFF', dense: true };
+    const s = sizeCanvas(cv); if (!s) return;
+    const { ctx, w, h } = s, pitch = conf.pitch, cols = Math.ceil(w / pitch), rows = Math.ceil(h / pitch);
+    const dark = conf.bg === 'paper' && isDark();
+    ctx.fillStyle = conf.bg === 'paper' ? cssVar('--paper') : conf.bg; ctx.fillRect(0, 0, w, h);
+    const mode = colorOverride || state.color;
+    const stops = (conf.onBlue ? ['#5A55FF', '#FFFFFF'] : STOPS[mode]).map(hexRgb);
+    const faint = conf.onBlue ? 'rgba(255,255,255,.14)' : dark ? 'rgba(255,255,255,.10)' : 'rgba(60,60,120,.14)';
+    const pulseOn = cv.dataset.field === 'signal';
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+      const nx = i / cols, ny = j / rows, sd = conf.seed;
+      const a = Math.sin((nx * 1.5 + ny * 0.8) * 3.6 + t * 0.6 + sd);
+      const b = Math.sin((-nx * 0.7 + ny * 1.6) * 3.3 - t * 0.45 + 1.3 + sd * 0.7);
+      const c = Math.sin((nx * 2.1 - ny * 0.6) * 2.8 + t * 0.3 + 2.1 + sd * 0.4);
+      let v = a * 0.55 + b * 0.35 + c * 0.2;
+      v = 1 / (1 + Math.exp(-3.4 * (v - (conf.dense ? -0.35 : 0.1))));
+      const x = i * pitch + pitch / 2, y = j * pitch + pitch / 2;
+      if (v < 0.16) { ctx.fillStyle = faint; ctx.beginPath(); ctx.arc(x, y, pitch * 0.17, 0, 6.2832); ctx.fill(); continue; }
+      const p = mode === 'mono' || conf.onBlue ? v : nx * 0.62 + (1 - ny) * 0.3 + a * 0.16;
+      ctx.fillStyle = rgb(paletteAt(stops, p));
+      const pulse = pulseOn ? 1 + 0.16 * Math.sin(t * 5.4 - (nx + ny) * 7) : 1;
+      ctx.beginPath(); ctx.arc(x, y, Math.min(pitch * 0.56, pitch * 0.5 * (0.24 + 0.8 * v) * pulse), 0, 6.2832); ctx.fill();
+    }
+  }
+  const photo = new Image(); let photoReady = false;
+  photo.onload = () => { photoReady = true; drawPhotos(); };
+  photo.src = 'img/foto-leer.jpg';
+  function drawPhotoTrama(cv) {
+    if (!photoReady) return;
+    const s = sizeCanvas(cv); if (!s) return;
+    const { ctx, w, h } = s, pitch = cv.dataset.photo === 'mock' ? 4 : 6, cols = Math.ceil(w / pitch), rows = Math.ceil(h / pitch);
+    const off = document.createElement('canvas'); off.width = cols; off.height = rows;
+    const o = off.getContext('2d', { willReadFrequently: true });
+    const ir = photo.naturalWidth / photo.naturalHeight, cr = cols / rows;
+    let sw, sh, sx, sy;
+    if (ir > cr) { sh = photo.naturalHeight; sw = sh * cr; sx = (photo.naturalWidth - sw) / 2; sy = 0; } else { sw = photo.naturalWidth; sh = sw / cr; sx = 0; sy = (photo.naturalHeight - sh) * 0.55; }
+    o.drawImage(photo, sx, sy, sw, sh, 0, 0, cols, rows);
+    let data; try { data = o.getImageData(0, 0, cols, rows).data; } catch (e) { return; }
+    let lo = 1, hi = 0; const dk = new Float32Array(cols * rows);
+    for (let k = 0; k < cols * rows; k++) { const d = 1 - (0.2126 * data[k * 4] + 0.7152 * data[k * 4 + 1] + 0.0722 * data[k * 4 + 2]) / 255; dk[k] = d; if (d < lo) lo = d; if (d > hi) hi = d; }
+    const span = Math.max(0.05, hi - lo), stops = STOPS[state.color].map(hexRgb);
+    ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, w, h);
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+      const d = (dk[j * cols + i] - lo) / span, x = i * pitch + pitch / 2, y = j * pitch + pitch / 2;
+      if (d < 0.06) { ctx.fillStyle = 'rgba(60,60,120,.12)'; ctx.beginPath(); ctx.arc(x, y, pitch * 0.14, 0, 6.2832); ctx.fill(); continue; }
+      ctx.fillStyle = state.color === 'mono' ? '#3D38F5' : rgb(paletteAt(stops, 0.15 + d * 0.85));
+      ctx.beginPath(); ctx.arc(x, y, pitch * 0.5 * (0.16 + 0.88 * Math.pow(d, 0.85)), 0, 6.2832); ctx.fill();
+    }
+  }
+  function drawPhotos() { document.querySelectorAll('canvas[data-photo]').forEach(drawPhotoTrama); }
+  function drawFields(t) {
+    document.querySelectorAll('canvas[data-field]').forEach((cv) => { if (cv.offsetParent !== null) drawField(cv, t); });
+    document.querySelectorAll('canvas[data-variant]').forEach((cv) => drawField(cv, 0, cv.dataset.variant));
+  }
+  const live = new Set();
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) live.add(e.target); else live.delete(e.target); }), { threshold: 0.05 });
+    document.querySelectorAll('canvas[data-field="hero"], canvas[data-field="signal"]').forEach((c) => io.observe(c));
+    let t = 0, last = 0;
+    const loop = (now) => { if (now - last > 90 && document.visibilityState === 'visible') { last = now; t += 0.04; live.forEach((c) => drawField(c, t)); } requestAnimationFrame(loop); };
+    requestAnimationFrame(loop);
+  }
+
+  function words() {
+    const box = document.getElementById('words'); if (!box) return;
+    const list = ['leer', 'dibujar', 'caminar', 'cocinar', 'ordenar', 'estirar', 'escribir', 'pintar', 'dormir', 'estudiar'];
+    let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+    const lines = [];
+    for (let r = 0; r < 26; r++) {
+      let line = '';
+      while (line.length < 30) { const wd = list[Math.floor(rnd() * list.length)]; line += wd.split('').map((ch) => rnd() < 0.42 ? ' ' : ch).join('') + ' '.repeat(1 + Math.floor(rnd() * 4)); }
+      lines.push(line.slice(0, 30));
+    }
+    box.textContent = lines.join('\n');
+  }
+
+  // ---- Serifas ----
+  const SERIFS = [
+    { id: 'instrument', name: 'Instrument Serif', by: 'Rodrigo Fuenzalida y Jordan Egstad, 2023', axes: 'Un peso, sin tamaño óptico', use: 'Titulares grandes; la más cercana a tus referencias.', note: 'Bajo 28 px su trazo fino se debilita.' },
+    { id: 'newsreader', name: 'Newsreader', by: 'Production Type, 2020', axes: 'Tamaño óptico 6–72 · peso 200–800', use: 'Pensada para leer de corrido en pantalla.', note: 'Fina y contrastada en grande, firme en chico. Una sola familia para todos los titulares.', rec: true },
+    { id: 'literata', name: 'Literata', by: 'TypeTogether, 2018', axes: 'Tamaño óptico 7–72 · peso 200–900', use: 'Hecha para texto digital: titulares, párrafos y notas.', note: 'Más sobria y abierta; menos de afiche.' },
+    { id: 'sourceserif', name: 'Source Serif 4', by: 'Frank Grießhammer (Adobe)', axes: 'Tamaño óptico 8–60 · peso 200–900', use: 'Formas simplificadas para entornos digitales.', note: 'La más neutra; cerca de una serif de sistema.' },
+    { id: 'fraunces', name: 'Fraunces', by: 'Undercase Type, 2020', axes: 'Tamaño óptico 9–144 · peso · suavidad', use: 'Serif de exhibición, suave y con carácter.', note: 'La más expresiva; puede sentirse de marca de alimentos.' }
+  ];
+  function renderSerifs() {
+    const box = document.getElementById('serifs');
+    box.replaceChildren(...SERIFS.map((s) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'sf'; b.dataset.set = 'serif'; b.dataset.val = s.id;
+      const fam = { instrument: '"Instrument Serif"', newsreader: '"Newsreader"', literata: '"Literata"', sourceserif: '"Source Serif 4"', fraunces: '"Fraunces"' }[s.id];
+      const wt = s.id === 'instrument' || s.id === 'sourceserif' ? 400 : 380;
+      const vars = s.id === 'fraunces' ? '"SOFT" 60, "WONK" 0' : 'normal';
+      const mk = (cls, txt) => { const d = document.createElement('div'); d.className = cls; d.textContent = txt; d.style.fontFamily = fam + ', Georgia, serif'; d.style.fontWeight = wt; d.style.fontVariationSettings = vars; d.style.letterSpacing = '-0.015em'; return d; };
+      const title = document.createElement('b'); title.textContent = s.name; title.style.fontSize = '15px';
+      if (s.rec) { const r = document.createElement('span'); r.className = 'rec'; r.textContent = 'Recomendada para pantalla'; title.append(r); }
+      const meta = document.createElement('div'); meta.className = 'meta';
+      [s.by, s.axes, s.use, s.note].forEach((t) => { const p = document.createElement('span'); p.textContent = t; meta.append(p); });
+      b.append(title, mk('big', 'Vuelve a leer.'), mk('mid', '¿Qué quieres hacer?'), mk('tiny', 'Sonará junto al sillón cuando sumes 15 minutos en tus apps.'), meta);
+      return b;
+    }));
+    const opts = document.getElementById('serif-opts');
+    opts.replaceChildren(...SERIFS.map((s) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.dataset.set = 'serif'; b.dataset.val = s.id;
+      const dot = document.createElement('span'); dot.className = 'dot';
+      const t = document.createElement('span'); const bb = document.createElement('b'); bb.textContent = s.name;
+      if (s.rec) { const r = document.createElement('span'); r.className = 'rec'; r.textContent = 'Recomendada'; bb.append(r); }
+      const sm = document.createElement('small'); sm.textContent = s.use; t.append(bb, sm); b.append(dot, t); return b;
+    }));
+  }
+
+  // ---- Íconos de trazo ----
+  const ICONS = {
+    inicio: { label: 'Inicio', parts: [{ d: 'M5 10.4V18.6Q5 20.5 6.9 20.5H17.1Q19 20.5 19 18.6V10.4' }, { d: 'M3.4 11.6L12 4.1L20.6 11.6' }, { d: 'M10 20.5V16.3Q10 14.4 12 14.4Q14 14.4 14 16.3V20.5' }],
+      filled: [{ d: 'M5 10.6L12 4.6L19 10.6V18.6Q19 20.5 17.1 20.5H14V16.3Q14 14.4 12 14.4Q10 14.4 10 16.3V20.5H6.9Q5 20.5 5 18.6Z', fill: 'ink' }, { d: 'M3.4 11.6L12 4.1L20.6 11.6' }] },
+    ruta: { label: 'Ruta', parts: [{ d: 'M7.75 18.5H15A3.25 3.25 0 0 0 15 12H9A3.25 3.25 0 0 1 9 5.5H16.25' }, { c: [5.5, 18.5, 2.25] }, { c: [18.5, 5.5, 2.25] }],
+      filled: [{ d: 'M7.75 18.5H15A3.25 3.25 0 0 0 15 12H9A3.25 3.25 0 0 1 9 5.5H16.25' }, { c: [5.5, 18.5, 2.25], fill: 'ink' }, { c: [18.5, 5.5, 2.25], fill: 'ink' }] },
+    perfil: { label: 'Perfil', parts: [{ c: [12, 12, 9.1] }, { c: [12, 9.7, 3.1] }, { d: 'M6.7 18.3Q8.5 15 12 15Q15.5 15 17.3 18.3' }],
+      filled: [{ c: [12, 12, 9.1], fill: 'ink' }, { c: [12, 9.7, 3.1], fill: 'bg', stroke: 'none' }, { d: 'M6.6 18.5Q8.4 15.2 12 15.2Q15.6 15.2 17.4 18.5Q15.1 20.4 12 20.4Q8.9 20.4 6.6 18.5Z', fill: 'bg', stroke: 'none' }] },
+    actividad: { label: 'Actividad', parts: [{ d: 'M5.3 18.7L6 14.75L15.4 5.35L18.65 8.6L9.25 18Z' }, { d: 'M13.4 7.35L16.65 10.6' }, { d: 'M3.5 21.1H20.5', accent: true }] },
+    lugar: { label: 'Dónde empiezas', parts: [{ d: 'M12 18.75C12 18.75 6 13.9 6 9.25A6 6 0 0 1 18 9.25C18 13.9 12 18.75 12 18.75Z' }, { c: [12, 9.25, 2.1] }, { d: 'M6.75 21.1H17.25', accent: true }] },
+    parlante: { label: 'Parlante', parts: [{ d: 'M9.5 2.75H14.5Q17 2.75 17 5.25V15.75Q17 18.25 14.5 18.25H9.5Q7 18.25 7 15.75V5.25Q7 2.75 9.5 2.75Z' }, { c: [12, 12.6, 2.6] }, { c: [12, 6.6, 1.05], fill: 'ink', stroke: 'none' }, { d: 'M5 21.1H19', accent: true }] },
+    primerpaso: { label: 'Para empezar', parts: [{ d: 'M9 17V12H14V7H19.75' }, { d: 'M4.25 17H9', accent: true }] },
+    apps: { label: 'Apps elegidas', parts: [{ r: [3.25, 3.25, 7.5, 7.5, 2.25] }, { r: [13.25, 3.25, 7.5, 7.5, 2.25], accent: true, fill: 'accent' }, { r: [3.25, 13.25, 7.5, 7.5, 2.25] }, { r: [13.25, 13.25, 7.5, 7.5, 2.25] }] },
+    senal: { label: 'Señal', parts: [{ d: 'M4.75 9.25H7.25L11.1 5.9Q12.25 4.95 12.25 6.45V17.55Q12.25 19.05 11.1 18.1L7.25 14.75H4.75Q3.75 14.75 3.75 13.75V10.25Q3.75 9.25 4.75 9.25Z' }, { d: 'M15.6 9.1A4.1 4.1 0 0 1 15.6 14.9' }, { d: 'M18.1 6.6A7.6 7.6 0 0 1 18.1 17.4' }] },
+    silenciar: { label: 'Silenciar', parts: [{ d: 'M4.75 9.25H7.25L11.1 5.9Q12.25 4.95 12.25 6.45V17.55Q12.25 19.05 11.1 18.1L7.25 14.75H4.75Q3.75 14.75 3.75 13.75V10.25Q3.75 9.25 4.75 9.25Z' }, { d: 'M15.75 9.75L20.25 14.25M20.25 9.75L15.75 14.25' }] },
+    telefono: { label: 'Este teléfono', parts: [{ d: 'M9.25 2.75H14.75Q17.25 2.75 17.25 5.25V18.75Q17.25 21.25 14.75 21.25H9.25Q6.75 21.25 6.75 18.75V5.25Q6.75 2.75 9.25 2.75Z' }, { d: 'M10.5 18.25H13.5' }] },
+    tiempo: { label: 'Tiempo', parts: [{ c: [12, 12, 9.1] }, { d: 'M12 7.25V12L15.25 14' }] },
+    esperando: { label: 'Contando', parts: [{ d: 'M6.5 3.25H17.5M6.5 20.75H17.5' }, { d: 'M7.75 3.25C7.75 8.25 12 9.5 12 12C12 14.5 7.75 15.75 7.75 20.75' }, { d: 'M16.25 3.25C16.25 8.25 12 9.5 12 12C12 14.5 16.25 15.75 16.25 20.75' }, { d: 'M9.4 20.75C9.6 18.9 12 17.9 12 17.9C12 17.9 14.4 18.9 14.6 20.75Z', fill: 'ink', stroke: 'none' }] },
+    agregar: { label: 'Agregar', parts: [{ d: 'M12 5V19M5 12H19' }] },
+    editar: { label: 'Editar', parts: [{ d: 'M5.3 18.7L6 14.75L15.4 5.35L18.65 8.6L9.25 18Z' }, { d: 'M13.4 7.35L16.65 10.6' }] },
+    borrar: { label: 'Eliminar', parts: [{ d: 'M4.25 6.5H19.75' }, { d: 'M9.25 6.5V5.1Q9.25 3.75 10.6 3.75H13.4Q14.75 3.75 14.75 5.1V6.5' }, { d: 'M6.1 6.5L6.95 18.8Q7.1 20.5 8.8 20.5H15.2Q16.9 20.5 17.05 18.8L17.9 6.5' }, { d: 'M10.1 10.25V16.5M13.9 10.25V16.5' }] },
+    cerrar: { label: 'Cerrar', parts: [{ d: 'M6.75 6.75L17.25 17.25M17.25 6.75L6.75 17.25' }] },
+    volver: { label: 'Volver', parts: [{ d: 'M14.75 5.25L8 12L14.75 18.75' }] },
+    siguiente: { label: 'Seguir', parts: [{ d: 'M9.25 5.25L16 12L9.25 18.75' }] },
+    listo: { label: 'Listo', parts: [{ d: 'M4.75 12.6L9.6 17.25L19.25 6.75' }] },
+    comence: { label: 'Comencé', parts: [{ c: [12, 12, 9.1] }, { d: 'M8.1 12.3L10.9 15.1L16.1 9.4' }] },
+    despues: { label: 'Para después', parts: [{ d: 'M7.25 3.25H16.75Q18 3.25 18 4.5V20.25L12 16.4L6 20.25V4.5Q6 3.25 7.25 3.25Z' }] },
+    cambie: { label: 'Cambié de idea', parts: [{ d: 'M4.5 8H18.75M15.25 4.5L18.75 8L15.25 11.5' }, { d: 'M19.5 16H5.25M8.75 12.5L5.25 16L8.75 19.5' }] },
+    info: { label: 'Información', parts: [{ c: [12, 12, 9.1] }, { d: 'M12 11V16.5' }, { c: [12, 7.9, 1.1], fill: 'ink', stroke: 'none' }] },
+    privacidad: { label: 'Tus datos', parts: [{ d: 'M8 10.25H16Q18.5 10.25 18.5 12.75V18.25Q18.5 20.75 16 20.75H8Q5.5 20.75 5.5 18.25V12.75Q5.5 10.25 8 10.25Z' }, { d: 'M8.25 10.25V7.5A3.75 3.75 0 0 1 15.75 7.5V10.25' }, { d: 'M12 14.25V16.75' }] },
+    permiso: { label: 'Permiso', parts: [{ c: [8, 16, 3.9] }, { d: 'M10.8 13.2L19.75 4.25' }, { d: 'M16.5 7.5L18.75 9.75M14.25 9.75L15.9 11.4' }] },
+    advertencia: { label: 'Advertencia', parts: [{ d: 'M12 4L20.9 19.5H3.1Z' }, { d: 'M12 9.75V13.75' }, { c: [12, 16.6, 1.05], fill: 'ink', stroke: 'none' }] },
+    ajustes: { label: 'Ajustes', parts: [{ d: 'M4 7.5H20M4 16.5H20' }, { c: [9, 7.5, 2.4], fill: 'bg' }, { c: [15, 16.5, 2.4], fill: 'bg' }] }
+  };
+  function el(name, attrs) { const n = document.createElementNS(NS, name); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; }
+  function keylines() {
+    const g = el('g', { class: 'keys', fill: 'none', stroke: 'var(--blue)', 'stroke-width': '0.12', opacity: '0.55' });
+    for (let i = 1; i < 24; i++) g.append(el('line', { x1: i, y1: 0, x2: i, y2: 24, opacity: '0.35' }), el('line', { x1: 0, y1: i, x2: 24, y2: i, opacity: '0.35' }));
+    g.append(el('rect', { x: 2, y: 2, width: 20, height: 20, 'stroke-dasharray': '0.6 0.4' }), el('circle', { cx: 12, cy: 12, r: 10 }), el('rect', { x: 3, y: 3, width: 18, height: 18, rx: 1 }), el('rect', { x: 4, y: 2, width: 16, height: 20, rx: 1 }), el('rect', { x: 2, y: 4, width: 20, height: 16, rx: 1 }));
+    return g;
+  }
+  function draw(parts, o) {
+    o = o || {};
+    const svg = el('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true' });
+    if (o.keys) svg.append(keylines());
+    parts.forEach((p) => {
+      const n = p.d ? el('path', { d: p.d }) : p.c ? el('circle', { cx: p.c[0], cy: p.c[1], r: p.c[2] }) : el('rect', { x: p.r[0], y: p.r[1], width: p.r[2], height: p.r[3], rx: p.r[4] });
+      const color = p.accent ? 'var(--brand)' : 'currentColor';
+      n.setAttribute('fill', p.fill === 'ink' ? 'currentColor' : p.fill === 'bg' ? 'var(--icon-bg, var(--card))' : p.fill === 'accent' ? color : 'none');
+      n.setAttribute('stroke', p.stroke === 'none' ? 'none' : (p.fill === 'bg' ? 'currentColor' : color));
+      n.setAttribute('stroke-width', '1.75'); n.setAttribute('stroke-linecap', 'round'); n.setAttribute('stroke-linejoin', 'round');
+      svg.append(n);
+    });
+    return svg;
+  }
+  const GROUPS = [
+    ['Navegación, en contorno y lleno', ['inicio', 'ruta', 'perfil'], true],
+    ['Propios de Relevo, con el renglón', ['actividad', 'primerpaso', 'lugar', 'parlante', 'apps', 'senal', 'silenciar', 'telefono', 'tiempo', 'esperando']],
+    ['Acciones', ['agregar', 'editar', 'borrar', 'cerrar', 'volver', 'siguiente', 'listo', 'ajustes']],
+    ['Respuestas y estados', ['comence', 'despues', 'cambie', 'info', 'privacidad', 'permiso', 'advertencia']]
+  ];
+  function renderIcons() {
+    const keys = document.body.classList.contains('show-keys'), box = document.getElementById('icon-groups');
+    box.replaceChildren();
+    GROUPS.forEach(([title, names, withFilled]) => {
+      const grid = document.createElement('div'); grid.className = 'icon-grid';
+      names.forEach((name) => {
+        const ic = ICONS[name];
+        const add = (parts, label) => { const cell = document.createElement('div'); cell.className = 'ic'; cell.append(draw(parts, { keys })); const s = document.createElement('span'); s.textContent = label; cell.append(s); grid.append(cell); };
+        add(ic.parts, ic.label); if (withFilled && ic.filled) add(ic.filled, ic.label + ', elegido');
+      });
+      const h = document.createElement('p'); h.className = 'small muted'; h.style.fontWeight = '600'; h.textContent = title;
+      box.append(h, grid);
+    });
+  }
+  function fillIconSlots() {
+    document.querySelectorAll('[data-icon]').forEach((slot) => {
+      const ic = ICONS[slot.dataset.icon]; if (!ic) return;
+      slot.replaceChildren(draw(slot.hasAttribute('data-filled') && ic.filled ? ic.filled : ic.parts));
+    });
+  }
+
+  // ---- Íconos en trama: el trazo se rasteriza y se vuelve puntos ----
+  function iconPaths(parts) {
+    return parts.map((p) => {
+      let path;
+      if (p.d) path = new Path2D(p.d);
+      else if (p.c) { path = new Path2D(); path.arc(p.c[0], p.c[1], p.c[2], 0, Math.PI * 2); }
+      else { path = new Path2D(); const [x, y, w, h, r] = p.r; path.moveTo(x + r, y); path.arcTo(x + w, y, x + w, y + h, r); path.arcTo(x + w, y + h, x, y + h, r); path.arcTo(x, y + h, x, y, r); path.arcTo(x, y, x + w, y, r); path.closePath(); }
+      return { path, p };
+    });
+  }
+  function drawDotIcon(cv, name, n) {
+    const s = sizeCanvas(cv); if (!s) return;
+    const { ctx, w, h } = s, S = 8, R = 24 * S;
+    const off = document.createElement('canvas'); off.width = R; off.height = R;
+    const o = off.getContext('2d', { willReadFrequently: true });
+    const acc = document.createElement('canvas'); acc.width = R; acc.height = R;
+    const a = acc.getContext('2d', { willReadFrequently: true });
+    o.scale(S, S); a.scale(S, S);
+    const parts = ICONS[name].parts;
+    iconPaths(parts).forEach(({ path, p }) => {
+      const tgt = p.accent ? a : o;
+      tgt.lineCap = 'round'; tgt.lineJoin = 'round'; tgt.lineWidth = 2.4; tgt.strokeStyle = '#000'; tgt.fillStyle = '#000';
+      if (p.fill === 'ink' || p.fill === 'accent') tgt.fill(path);
+      if (p.stroke !== 'none') tgt.stroke(path);
+    });
+    const d1 = o.getImageData(0, 0, R, R).data, d2 = a.getImageData(0, 0, R, R).data;
+    ctx.clearRect(0, 0, w, h);
+    const cell = R / n, step = w / n, ink = getComputedStyle(cv).color, blue = cssVar('--brand');
+    for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) {
+      let s1 = 0, s2 = 0, cnt = 0;
+      for (let y = Math.floor(j * cell); y < Math.floor((j + 1) * cell); y += 2) for (let x = Math.floor(i * cell); x < Math.floor((i + 1) * cell); x += 2) { const k = (y * R + x) * 4 + 3; s1 += d1[k]; s2 += d2[k]; cnt++; }
+      const c1 = s1 / (cnt * 255), c2 = s2 / (cnt * 255), cov = Math.max(c1, c2);
+      const cx = i * step + step / 2, cy = j * step + step / 2;
+      if (cov < 0.08) { ctx.fillStyle = 'rgba(120,120,140,.14)'; ctx.beginPath(); ctx.arc(cx, cy, step * 0.12, 0, 6.2832); ctx.fill(); continue; }
+      ctx.fillStyle = c2 > c1 ? blue : ink;
+      ctx.beginPath(); ctx.arc(cx, cy, step * 0.5 * Math.min(1, 0.35 + 0.75 * Math.sqrt(cov)), 0, 6.2832); ctx.fill();
+    }
+  }
+  const DOT_BIG = [['actividad', 'Actividad'], ['lugar', 'Dónde empiezas'], ['parlante', 'Parlante'], ['senal', 'Señal']];
+  const DOT_SET = ['inicio', 'ruta', 'perfil', 'primerpaso', 'apps', 'tiempo', 'esperando', 'telefono', 'agregar', 'listo', 'comence', 'despues', 'cambie', 'privacidad'];
+  function renderDotIcons() {
+    const big = document.getElementById('dot-big');
+    big.replaceChildren(...DOT_BIG.map(([k, label]) => { const f = document.createElement('figure'); const cv = document.createElement('canvas'); cv.dataset.dot = k; cv.style.color = 'var(--ink)'; const cap = document.createElement('figcaption'); cap.textContent = label; f.append(cv, cap); return f; }));
+    const grid = document.getElementById('dot-grid');
+    grid.replaceChildren(...DOT_SET.map((k) => { const c = document.createElement('div'); c.className = 'ic'; const cv = document.createElement('canvas'); cv.dataset.dot = k; cv.style.color = 'var(--ink)'; const s = document.createElement('span'); s.textContent = ICONS[k].label; c.append(cv, s); return c; }));
+    requestAnimationFrame(() => document.querySelectorAll('canvas[data-dot]').forEach((cv) => drawDotIcon(cv, cv.dataset.dot, state.grid)));
+  }
+
+  // ---- Estado ----
+  function apply() {
+    root.dataset.serif = state.serif; root.dataset.color = state.color;
+    document.getElementById('serif-pick').value = state.serif;
+    document.querySelectorAll('[data-set]').forEach((b) => b.setAttribute('aria-pressed', String(state[b.dataset.set] === b.dataset.val)));
+    document.querySelectorAll('[data-grid]').forEach((b) => b.setAttribute('aria-pressed', String(String(state.grid) === b.dataset.grid)));
+    try { localStorage.setItem('relevo-identidad-v3', JSON.stringify(state)); } catch (e) {}
+    requestAnimationFrame(() => { drawFields(0); drawPhotos(); renderDotIcons(); });
+  }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-set]'); if (b) { state[b.dataset.set] = b.dataset.val; apply(); return; }
+    const g = e.target.closest('[data-grid]'); if (g) { state.grid = Number(g.dataset.grid); apply(); }
+  });
+  document.getElementById('serif-pick').addEventListener('change', (e) => { state.serif = e.target.value; apply(); });
+  document.getElementById('keys-on').addEventListener('click', () => { document.body.classList.add('show-keys'); document.getElementById('keys-on').setAttribute('aria-pressed', 'true'); document.getElementById('keys-off').setAttribute('aria-pressed', 'false'); renderIcons(); });
+  document.getElementById('keys-off').addEventListener('click', () => { document.body.classList.remove('show-keys'); document.getElementById('keys-on').setAttribute('aria-pressed', 'false'); document.getElementById('keys-off').setAttribute('aria-pressed', 'true'); renderIcons(); });
+  let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { drawFields(0); drawPhotos(); renderDotIcons(); }, 200); });
+  new MutationObserver(() => { drawFields(0); renderDotIcons(); }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { drawFields(0); renderDotIcons(); });
+
+  words(); renderSerifs(); renderIcons(); fillIconSlots(); apply();
+})();
+</script>
