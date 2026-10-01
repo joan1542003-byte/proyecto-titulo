@@ -47,7 +47,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 22. [Sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) y sus [vistas](marca-2.0/README.md) (propuesta D-085), con el [video de 30 segundos](marca-2.0/video/README.md)
 23. [Actividades predefinidas e imágenes por generar](23_actividades-e-imagenes-2026-09-29.md): 31 actividades para personas de 18 a 30 años, 18 imágenes nuevas y la plantilla de prompt
 24. [Presentación de la corrección cruzada del 30 de septiembre](24_presentacion-correccion-cruzada-2026-09-30.md): estado, estructura, reglas de diseño y cómo se hizo en Figma, con las [15 diapositivas exportadas](presentacion-correccion-cruzada-2026-09-30/)
-25. [Identidad: el subrayado](25_identidad-el-subrayado-2026-09-30.md) y su [lámina](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html): diagnóstico de la presentación frente a la app, sistema propuesto, 27 íconos de muestra y decisiones pendientes (propuesta D-098)
+25. [Identidad: el subrayado](25_identidad-el-subrayado-2026-09-30.md) y sus láminas: [versión 2, con las referencias del autor](marca-el-subrayado/lamina-el-subrayado-v2-2026-09-30.html) (trama, paso de color, vidrio y serif en titulares) y [versión 1, sobria](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html). Incluye el diagnóstico de la presentación frente a la app, 27 íconos de muestra y las decisiones pendientes (propuesta D-098)
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 

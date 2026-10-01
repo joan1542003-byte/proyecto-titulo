@@ -1094,9 +1094,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Un recurso de marca funciona cuando es conocido y único, y eso se construye repitiéndolo igual (Romaniuk, 2018).
   - Los logotipos son más propios que el color (Ward et al., 2020).
 - **Alternativas:** Inter en todo, «Relevo» con mayúscula o el azul `#2A4BD7` de la app. La lámina permite compararlas. El sistema 2.0 (D-085) queda como antecedente si se aprueba esta propuesta.
+- **Versión 2 (mismo día):** con las referencias personales del autor (afiches de Otherwise), la dirección recomendada suma:
+  - la trama de puntos (los píxeles de la pantalla y la rejilla del parlante);
+  - el paso de color del azul a un cálido (de la pantalla a la casa);
+  - tarjetas de vidrio;
+  - Instrument Serif en titulares.
+
+  Contradice D-068 (serif rechazada el 25 de septiembre) y D-070 y D-073 (sin degradados ni patrones), así que el autor decide entre esta dirección y la sobria de la versión 1, entre serif y grotesca en titulares, y entre coral y magenta.
 - **Documentación:** [identidad «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md) y su [lámina](../10_recursos_visuales/marca-el-subrayado/lamina-el-subrayado-2026-09-30.html).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — D-098, versión 2
+
+- **Qué cambió:** D-098 suma la versión 2 con las referencias del autor y las contradicciones con D-068, D-070 y D-073.
+- **Cómo estaba antes:** D-098 proponía solo la dirección sobria.
+- **Por qué:** el autor compartió sus referencias personales para Relevo.
 
 ### 2026-09-30 — D-098 (propuesta)
 

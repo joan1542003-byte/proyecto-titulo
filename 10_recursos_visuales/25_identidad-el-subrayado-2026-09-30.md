@@ -1,6 +1,51 @@
 # Identidad de Relevo: el subrayado
 
-**Fecha:** 30 de septiembre de 2026. **Estado:** propuesta D-098, pendiente de la decisión del autor; no reemplaza el sistema vigente hasta aprobarse. **Lámina:** [página publicada](https://claude.ai/artifact/Je5eJkLaCQX8JFcuDsbfVU) (privada) y [copia en el repositorio](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html), con controles para comparar las alternativas.
+**Fecha:** 30 de septiembre de 2026. **Estado:** propuesta D-098, pendiente de la decisión del autor; no reemplaza el sistema vigente hasta aprobarse. **Lámina:** [página publicada](https://claude.ai/artifact/Je5eJkLaCQX8JFcuDsbfVU) (privada, versión 2) y copias en el repositorio: [versión 2, con las referencias del autor](marca-el-subrayado/lamina-el-subrayado-v2-2026-09-30.html) y [versión 1, sobria](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html). Ambas tienen controles para comparar las alternativas.
+
+## Versión 2: con las referencias del autor
+
+Después de la versión 1, el autor compartió tres afiches de una marca llamada Otherwise como referencias personales para Relevo. No se pudo verificar quién los diseñó, así que no se guardan en el repositorio.
+
+**Qué hacen:**
+
+- un campo de color vivo hecho de puntos, como una pantalla vista de cerca;
+- tarjetas de vidrio esmerilado, blancas u oscuras;
+- titulares en una serif fina de alto contraste, con nombre y bajada en grotesca;
+- el nombre de la marca desarmado en letras monoespaciadas como textura;
+- una imagen que se disuelve en trama de puntos.
+
+**Qué se toma y qué significa en Relevo:**
+
+| Recurso | En Relevo | Decisión |
+| --- | --- | --- |
+| Trama de puntos | Fotos y fondos hechos de puntos: son los píxeles de la pantalla y también la rejilla del parlante, así que unen el teléfono con el objeto | Se toma |
+| Degradado vivo | El paso: del azul de la presentación (la pantalla) a un color cálido (la actividad en la casa), siempre en esa dirección | Se adapta |
+| Tarjeta de vidrio | Todo texto va en una tarjeta, nunca suelto sobre la trama; la app ya usa vidrio (D-083) | Se toma |
+| Serif fina en titulares | Instrument Serif (Rodrigo Fuenzalida y Jordan Egstad, licencia SIL Open Font) en titulares de 28 px o más; Schibsted Grotesk en la interfaz | Por decidir |
+| Letras dispersas | Las actividades de las personas dispersas en IBM Plex Mono, solo en piezas de comunicación | Se adapta |
+| Símbolo de cuatro formas | No se toma: el logotipo con su renglón es lo más propio (Ward et al., 2020) | No |
+
+El renglón sigue al centro (marca la actividad, la idea clave y el lugar). Los íconos de la versión 1 no cambian; su renglón va en azul liso, porque a ese tamaño el paso no se ve. La lámina muestra:
+
+- la foto de «leer» de la app convertida en trama;
+- tres maquetas de pantallas, con la pantalla de la señal latiendo;
+- tres afiches en los formatos de las referencias;
+- una portada para la presentación.
+
+**Antes de decidir:**
+
+- **Serif:** el 25 de septiembre el autor rechazó la propuesta con serif (D-068) y pidió un estudio sin serifas. Las referencias usan una serif de titular, que es otro uso, pero queda como decisión explícita.
+- **Marca de septiembre:** D-070 y D-073 excluyeron degradados, patrones y vidrio, y nombraron los degradados morados como rasgo del diseño genérico de IA.
+- **Tendencia:** las tramas de medio tono, los degradados de varias capas y «una serif refinada con una grotesca neutra» figuran entre las tendencias de 2026 (Fussell, 2025). Eso da actualidad, pero muchas marcas las comparten. La preferencia suele combinar lo conocido con lo nuevo (Hekkert et al., 2003); aquí lo nuevo es el significado de cada recurso.
+- **Uso en la app:** para que Relevo no parezca una app de IA, la trama aparece en momentos puntuales (la señal, la guía, las portadas) y no en cada pantalla.
+
+**Decisiones nuevas:**
+
+1. **Dirección:** con las referencias (recomendada) o la sobria de la versión 1.
+2. **Titulares:** Instrument Serif (recomendada) o Schibsted Grotesk.
+3. **Color cálido del paso:** coral (recomendado) o magenta.
+
+Siguen pendientes el logotipo en minúsculas y el azul de la presentación, ambos recomendados.
 
 ## Por qué
 
@@ -69,9 +114,13 @@ Es una propuesta de diseño, no un resultado: no se probó si las personas recon
 
 Apple. (s. f.). *SF Symbols*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/sf-symbols
 
+Fussell, G. (2025, 31 de octubre). *Graphic design trends 2026: 8 styles shaping visual culture*. Envato Elements. https://elements.envato.com/learn/graphic-design-trends
+
 Google. (s. f.-a). *System icons*. Material Design. https://m2.material.io/design/iconography/system-icons.html
 
 Google. (s. f.-b). *Material Symbols guide*. Google Fonts for Developers. https://developers.google.com/fonts/docs/material_symbols
+
+Hekkert, P., Snelders, D. y van Wieringen, P. C. W. (2003). «Most advanced, yet acceptable»: Typicality and novelty as joint predictors of aesthetic preference in industrial design. *British Journal of Psychology, 94*(1), 111–124. https://doi.org/10.1348/000712603762842147
 
 Isherwood, S. J., McDougall, S. J. P. y Curry, M. B. (2007). Icon identification in context: The changing role of icon characteristics with user experience. *Human Factors, 49*(3), 465–476. https://doi.org/10.1518/001872007X200102
 
@@ -82,6 +131,12 @@ Ward, E., Yang, S., Romaniuk, J. y Beal, V. (2020). Building a unique brand iden
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Versión 2 con las referencias del autor
+
+- **Qué cambió:** se sumó la versión 2. Toma de las referencias Otherwise la trama de puntos, el degradado (como paso de la pantalla a la casa), el vidrio, la serif en titulares y las letras dispersas, cada uno con su significado en Relevo. Se señalan las contradicciones con D-068, D-070 y D-073, y se agregan tres decisiones (dirección, titulares y color cálido). La versión 1 se conserva como la dirección sobria.
+- **Cómo estaba antes:** la propuesta era solo la dirección sobria: tinta, papel, un azul y el renglón.
+- **Por qué:** el autor compartió sus referencias personales para Relevo.
 
 ### 2026-09-30 — Creación
 
