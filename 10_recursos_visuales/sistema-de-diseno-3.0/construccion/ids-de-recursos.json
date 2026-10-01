@@ -1,0 +1,754 @@
+{
+ "Iconos": {
+  "accesibilidad.svg": {
+   "name": "accesibilidad.svg",
+   "blob": "6bffb4cf41438df0bbf3005229ab5588",
+   "size": 467,
+   "type": "image/svg+xml"
+  },
+  "actividad.svg": {
+   "name": "actividad.svg",
+   "blob": "6f4d75760d529448abfeeaef0081d05f",
+   "size": 337,
+   "type": "image/svg+xml"
+  },
+  "advertencia.svg": {
+   "name": "advertencia.svg",
+   "blob": "aa7ed6e447543858de4fcd911b61ec74",
+   "size": 368,
+   "type": "image/svg+xml"
+  },
+  "agregar.svg": {
+   "name": "agregar.svg",
+   "blob": "2f8e1d53f4c3feaeede326e5f3e703eb",
+   "size": 219,
+   "type": "image/svg+xml"
+  },
+  "ajustes.svg": {
+   "name": "ajustes.svg",
+   "blob": "baf0a8642ed9fb09e038b7180d5c9647",
+   "size": 931,
+   "type": "image/svg+xml"
+  },
+  "apps.svg": {
+   "name": "apps.svg",
+   "blob": "1a4fe144a7c347ac04497a276ff3742c",
+   "size": 825,
+   "type": "image/svg+xml"
+  },
+  "avisos.svg": {
+   "name": "avisos.svg",
+   "blob": "0702cb47a9c09b8dad6f3d0e7ddd3fc5",
+   "size": 779,
+   "type": "image/svg+xml"
+  },
+  "ayuda.svg": {
+   "name": "ayuda.svg",
+   "blob": "21cab3e7240e1d9aeb5cf2b4052dffb6",
+   "size": 430,
+   "type": "image/svg+xml"
+  },
+  "bateria.svg": {
+   "name": "bateria.svg",
+   "blob": "e9ec0ec1e42f458efe999425a6c79201",
+   "size": 529,
+   "type": "image/svg+xml"
+  },
+  "bicicleta.svg": {
+   "name": "bicicleta.svg",
+   "blob": "c22086f25d9cf9b86b914e3734ae8ea2",
+   "size": 486,
+   "type": "image/svg+xml"
+  },
+  "borrar.svg": {
+   "name": "borrar.svg",
+   "blob": "e9bab375eb9f220bd2ceb9e756ba24df",
+   "size": 438,
+   "type": "image/svg+xml"
+  },
+  "buscar.svg": {
+   "name": "buscar.svg",
+   "blob": "ec356dad3bb7a4b7046957f34e760d4f",
+   "size": 305,
+   "type": "image/svg+xml"
+  },
+  "calendario.svg": {
+   "name": "calendario.svg",
+   "blob": "bfe1a8d42f15ceb4d2829b684dafa69b",
+   "size": 373,
+   "type": "image/svg+xml"
+  },
+  "cambie.svg": {
+   "name": "cambie.svg",
+   "blob": "c50a1c8564e5965d3e31d10f7a18f694",
+   "size": 303,
+   "type": "image/svg+xml"
+  },
+  "caminar.svg": {
+   "name": "caminar.svg",
+   "blob": "60fd41569985578d09f1e1a58d48213e",
+   "size": 461,
+   "type": "image/svg+xml"
+  },
+  "carta.svg": {
+   "name": "carta.svg",
+   "blob": "6d317985e4a6588272973941d0df0701",
+   "size": 349,
+   "type": "image/svg+xml"
+  },
+  "cerrar-sesion.svg": {
+   "name": "cerrar-sesion.svg",
+   "blob": "280c8338f0c372174eda86f2bbf12ce4",
+   "size": 329,
+   "type": "image/svg+xml"
+  },
+  "cerrar.svg": {
+   "name": "cerrar.svg",
+   "blob": "5e5338c3f4b7996330ec7a9261ca3eb1",
+   "size": 247,
+   "type": "image/svg+xml"
+  },
+  "cocinar.svg": {
+   "name": "cocinar.svg",
+   "blob": "7a0df0c68c8fde4d02a5b54babcb2435",
+   "size": 400,
+   "type": "image/svg+xml"
+  },
+  "codigo.svg": {
+   "name": "codigo.svg",
+   "blob": "8d65df848033bb81aa0e8ff74928c432",
+   "size": 262,
+   "type": "image/svg+xml"
+  },
+  "comence.svg": {
+   "name": "comence.svg",
+   "blob": "6ee80527f23b95006091bcd64e4c3604",
+   "size": 300,
+   "type": "image/svg+xml"
+  },
+  "comentario.svg": {
+   "name": "comentario.svg",
+   "blob": "d676ee45f926931723d76d41a2031828",
+   "size": 320,
+   "type": "image/svg+xml"
+  },
+  "conexion.svg": {
+   "name": "conexion.svg",
+   "blob": "f3b42108f732d0e6113c1a370b2f5963",
+   "size": 351,
+   "type": "image/svg+xml"
+  },
+  "consentimiento.svg": {
+   "name": "consentimiento.svg",
+   "blob": "05b2a095bd26b2496eb4c470b4ed8d51",
+   "size": 371,
+   "type": "image/svg+xml"
+  },
+  "contraer.svg": {
+   "name": "contraer.svg",
+   "blob": "4bfd1526f4b579dd42ed6d097e44de36",
+   "size": 228,
+   "type": "image/svg+xml"
+  },
+  "copiar.svg": {
+   "name": "copiar.svg",
+   "blob": "0093f9b1e68e780fac26cedea3fbb713",
+   "size": 409,
+   "type": "image/svg+xml"
+  },
+  "datos.svg": {
+   "name": "datos.svg",
+   "blob": "d3de0ba4b9ec27f0074d8190aff1bc63",
+   "size": 846,
+   "type": "image/svg+xml"
+  },
+  "decision.svg": {
+   "name": "decision.svg",
+   "blob": "4bf41ea406d99895fe4e8fc76bda6faf",
+   "size": 305,
+   "type": "image/svg+xml"
+  },
+  "desbloqueado.svg": {
+   "name": "desbloqueado.svg",
+   "blob": "66c9b54a0e41ff125cbe24af21da65dd",
+   "size": 399,
+   "type": "image/svg+xml"
+  },
+  "descargar.svg": {
+   "name": "descargar.svg",
+   "blob": "f3e6a08d9612f0dff158a682b2cd96d3",
+   "size": 333,
+   "type": "image/svg+xml"
+  },
+  "despues.svg": {
+   "name": "despues.svg",
+   "blob": "9108783e16fe8250b4277ba59e40dbe0",
+   "size": 278,
+   "type": "image/svg+xml"
+  },
+  "detener.svg": {
+   "name": "detener.svg",
+   "blob": "0e85c2b806bff77fd10b44b2222487fa",
+   "size": 312,
+   "type": "image/svg+xml"
+  },
+  "dibujar.svg": {
+   "name": "dibujar.svg",
+   "blob": "9d2da698a2aa00eaed3c87bbf6712a28",
+   "size": 390,
+   "type": "image/svg+xml"
+  },
+  "dormir.svg": {
+   "name": "dormir.svg",
+   "blob": "1a8c8e4ebf47fae6d325572ba7b8f647",
+   "size": 428,
+   "type": "image/svg+xml"
+  },
+  "editar.svg": {
+   "name": "editar.svg",
+   "blob": "93fab3a7bb8c546524da0834158e8324",
+   "size": 288,
+   "type": "image/svg+xml"
+  },
+  "ejercicio.svg": {
+   "name": "ejercicio.svg",
+   "blob": "4bc9834c8ad3f5063aa2386e7b00a87a",
+   "size": 263,
+   "type": "image/svg+xml"
+  },
+  "enlace-externo.svg": {
+   "name": "enlace-externo.svg",
+   "blob": "17e559efbf37459bca94df86e0b50505",
+   "size": 346,
+   "type": "image/svg+xml"
+  },
+  "entrevistas.svg": {
+   "name": "entrevistas.svg",
+   "blob": "353e9e4a2eb91ae18e4ac12ea96a055e",
+   "size": 305,
+   "type": "image/svg+xml"
+  },
+  "enviar.svg": {
+   "name": "enviar.svg",
+   "blob": "85ccac9420a1d95bf3df9454cb8ca429",
+   "size": 281,
+   "type": "image/svg+xml"
+  },
+  "error.svg": {
+   "name": "error.svg",
+   "blob": "9d6e89e3d43514c24c2baf2487761f01",
+   "size": 385,
+   "type": "image/svg+xml"
+  },
+  "escribir.svg": {
+   "name": "escribir.svg",
+   "blob": "f50c759a5343d34731646dc8d7a5afc2",
+   "size": 358,
+   "type": "image/svg+xml"
+  },
+  "esperando.svg": {
+   "name": "esperando.svg",
+   "blob": "4df816760704bf0eee081dc686fdbeaf",
+   "size": 510,
+   "type": "image/svg+xml"
+  },
+  "estirar.svg": {
+   "name": "estirar.svg",
+   "blob": "debfd22e3b9f8cf4817c2502165e5711",
+   "size": 401,
+   "type": "image/svg+xml"
+  },
+  "estrella-llena.svg": {
+   "name": "estrella-llena.svg",
+   "blob": "6af1b1aeabc7ec2bc543d38f5511b658",
+   "size": 323,
+   "type": "image/svg+xml"
+  },
+  "estrella-media.svg": {
+   "name": "estrella-media.svg",
+   "blob": "6c6535760f3aaa2a43b30a9061c6af60",
+   "size": 414,
+   "type": "image/svg+xml"
+  },
+  "estrella.svg": {
+   "name": "estrella.svg",
+   "blob": "8346428e7e9f2e1a3cc3ca51e0860c3d",
+   "size": 308,
+   "type": "image/svg+xml"
+  },
+  "estudiar.svg": {
+   "name": "estudiar.svg",
+   "blob": "2494a198eca4affdc2b5bf13573477c2",
+   "size": 361,
+   "type": "image/svg+xml"
+  },
+  "expandir.svg": {
+   "name": "expandir.svg",
+   "blob": "73a47896d17fb108f9ac785a631d1da1",
+   "size": 227,
+   "type": "image/svg+xml"
+  },
+  "exportar.svg": {
+   "name": "exportar.svg",
+   "blob": "0dc9f958964e0a53d9b2f4ed5481b58f",
+   "size": 330,
+   "type": "image/svg+xml"
+  },
+  "filtrar.svg": {
+   "name": "filtrar.svg",
+   "blob": "3b1e50febdb05f890007f8ebaebd39d9",
+   "size": 246,
+   "type": "image/svg+xml"
+  },
+  "fotografia.svg": {
+   "name": "fotografia.svg",
+   "blob": "efa6e4f2a0f3c6d2451919c436efb689",
+   "size": 393,
+   "type": "image/svg+xml"
+  },
+  "guitarra.svg": {
+   "name": "guitarra.svg",
+   "blob": "176778e8bb8bd8f1daf5a46e2c1296e0",
+   "size": 409,
+   "type": "image/svg+xml"
+  },
+  "hipotesis.svg": {
+   "name": "hipotesis.svg",
+   "blob": "819afd1d259277e6c01ea4c5060b00f3",
+   "size": 363,
+   "type": "image/svg+xml"
+  },
+  "historial.svg": {
+   "name": "historial.svg",
+   "blob": "d769f3c33f09d970ccb33e13866a9c07",
+   "size": 311,
+   "type": "image/svg+xml"
+  },
+  "info.svg": {
+   "name": "info.svg",
+   "blob": "b9e6e5d8a52933324c0e6b589f61f10c",
+   "size": 386,
+   "type": "image/svg+xml"
+  },
+  "inicio-lleno.svg": {
+   "name": "inicio-lleno.svg",
+   "blob": "343134c66820b0fd048544715d58665a",
+   "size": 371,
+   "type": "image/svg+xml"
+  },
+  "inicio.svg": {
+   "name": "inicio.svg",
+   "blob": "f2d97d39aee618f55457e00943656bc1",
+   "size": 369,
+   "type": "image/svg+xml"
+  },
+  "investigacion.svg": {
+   "name": "investigacion.svg",
+   "blob": "d46c98abba3cf99117dc30b88b3c1cd5",
+   "size": 449,
+   "type": "image/svg+xml"
+  },
+  "juego-de-mesa.svg": {
+   "name": "juego-de-mesa.svg",
+   "blob": "b9638771063be55d80a0a8873e4642b1",
+   "size": 639,
+   "type": "image/svg+xml"
+  },
+  "leer.svg": {
+   "name": "leer.svg",
+   "blob": "83e2dc8d10b4333de6e036769a60cfdd",
+   "size": 422,
+   "type": "image/svg+xml"
+  },
+  "listo.svg": {
+   "name": "listo.svg",
+   "blob": "53a6b4142419cf6ef3b1dce5a77d2cca",
+   "size": 234,
+   "type": "image/svg+xml"
+  },
+  "llamar.svg": {
+   "name": "llamar.svg",
+   "blob": "2207b495118d9b2276bbba657bd061ed",
+   "size": 345,
+   "type": "image/svg+xml"
+  },
+  "lugar.svg": {
+   "name": "lugar.svg",
+   "blob": "ad6ad01daa9b3d1746f5fc7adec4f1ee",
+   "size": 406,
+   "type": "image/svg+xml"
+  },
+  "manualidades.svg": {
+   "name": "manualidades.svg",
+   "blob": "742d6e3ec5368374d3df0cf0d81ef4a5",
+   "size": 390,
+   "type": "image/svg+xml"
+  },
+  "mas.svg": {
+   "name": "mas.svg",
+   "blob": "81e2d615feeb78c16f093371742b0152",
+   "size": 470,
+   "type": "image/svg+xml"
+  },
+  "menu.svg": {
+   "name": "menu.svg",
+   "blob": "b9caca9bb573a80bfc39aac46aac5043",
+   "size": 226,
+   "type": "image/svg+xml"
+  },
+  "mostrar.svg": {
+   "name": "mostrar.svg",
+   "blob": "a7322c26bb7a45ff18d346e96c54a21f",
+   "size": 345,
+   "type": "image/svg+xml"
+  },
+  "musica.svg": {
+   "name": "musica.svg",
+   "blob": "582aab8a6e08507374c510b4d32f6d8f",
+   "size": 467,
+   "type": "image/svg+xml"
+  },
+  "objeto.svg": {
+   "name": "objeto.svg",
+   "blob": "82e31fac6fa95776b792a8d93404061f",
+   "size": 428,
+   "type": "image/svg+xml"
+  },
+  "ocultar.svg": {
+   "name": "ocultar.svg",
+   "blob": "c04bc2c846e9e8769cc39dd6e2d80ec7",
+   "size": 381,
+   "type": "image/svg+xml"
+  },
+  "ordenar.svg": {
+   "name": "ordenar.svg",
+   "blob": "891a12b346768366b38f397f032876e0",
+   "size": 317,
+   "type": "image/svg+xml"
+  },
+  "parlante.svg": {
+   "name": "parlante.svg",
+   "blob": "2de36b12de69816e7914e96120ab0c7e",
+   "size": 531,
+   "type": "image/svg+xml"
+  },
+  "pausar.svg": {
+   "name": "pausar.svg",
+   "blob": "bc8f505262201ca27ffaa5e6c68e0e69",
+   "size": 226,
+   "type": "image/svg+xml"
+  },
+  "perfil-lleno.svg": {
+   "name": "perfil-lleno.svg",
+   "blob": "0e4eaa17d6e365b4424396cdb647c3f8",
+   "size": 819,
+   "type": "image/svg+xml"
+  },
+  "perfil.svg": {
+   "name": "perfil.svg",
+   "blob": "d29a67f25b1c1f1b29af270ecbe9d1bd",
+   "size": 384,
+   "type": "image/svg+xml"
+  },
+  "permiso.svg": {
+   "name": "permiso.svg",
+   "blob": "081ad57dda013347077a6c9e5794218a",
+   "size": 352,
+   "type": "image/svg+xml"
+  },
+  "pintar.svg": {
+   "name": "pintar.svg",
+   "blob": "f43cfeb83244467460989c1f4a6300b9",
+   "size": 438,
+   "type": "image/svg+xml"
+  },
+  "plantas.svg": {
+   "name": "plantas.svg",
+   "blob": "2f09b74f4b5a96dae33c04dc007ea4c8",
+   "size": 419,
+   "type": "image/svg+xml"
+  },
+  "primer-paso.svg": {
+   "name": "primer-paso.svg",
+   "blob": "ab86536e157624f45b41e60c932eabd7",
+   "size": 267,
+   "type": "image/svg+xml"
+  },
+  "privacidad.svg": {
+   "name": "privacidad.svg",
+   "blob": "299a77a4a0c9cf7ab2b728586f99bf44",
+   "size": 407,
+   "type": "image/svg+xml"
+  },
+  "probar.svg": {
+   "name": "probar.svg",
+   "blob": "7969f6b775fcfa4960ffea494c5a6106",
+   "size": 339,
+   "type": "image/svg+xml"
+  },
+  "problema.svg": {
+   "name": "problema.svg",
+   "blob": "d7cc4ec9d25a1ab60d46fb6ab84dcc13",
+   "size": 504,
+   "type": "image/svg+xml"
+  },
+  "reintentar.svg": {
+   "name": "reintentar.svg",
+   "blob": "2a77054b94b4f640d718494c152a9722",
+   "size": 277,
+   "type": "image/svg+xml"
+  },
+  "relevos.svg": {
+   "name": "relevos.svg",
+   "blob": "72cd03c9c1dd30cfd3c03d45df9d87f5",
+   "size": 542,
+   "type": "image/svg+xml"
+  },
+  "reproducir.svg": {
+   "name": "reproducir.svg",
+   "blob": "d51948785301ace85096b404ddb3ae2b",
+   "size": 231,
+   "type": "image/svg+xml"
+  },
+  "ruta-llena.svg": {
+   "name": "ruta-llena.svg",
+   "blob": "251b164172b89e0bc926c74a2c7fef4d",
+   "size": 460,
+   "type": "image/svg+xml"
+  },
+  "ruta.svg": {
+   "name": "ruta.svg",
+   "blob": "3c74c6b1c99d448256a9e4da91f6019b",
+   "size": 430,
+   "type": "image/svg+xml"
+  },
+  "salir.svg": {
+   "name": "salir.svg",
+   "blob": "9c97d9cd6ad73c359f06d74df2de14fc",
+   "size": 410,
+   "type": "image/svg+xml"
+  },
+  "senal.svg": {
+   "name": "senal.svg",
+   "blob": "e938c3f7749d2ee89b624fd480863d7f",
+   "size": 444,
+   "type": "image/svg+xml"
+  },
+  "siguiente.svg": {
+   "name": "siguiente.svg",
+   "blob": "b2768f2923c57702d493b9f3fbd91982",
+   "size": 230,
+   "type": "image/svg+xml"
+  },
+  "silenciar.svg": {
+   "name": "silenciar.svg",
+   "blob": "20a0a712566c680c39c470cfa32a59e0",
+   "size": 406,
+   "type": "image/svg+xml"
+  },
+  "sin-conexion.svg": {
+   "name": "sin-conexion.svg",
+   "blob": "5f57ade8c9b533d9ecfd1b9fcb5ff43c",
+   "size": 319,
+   "type": "image/svg+xml"
+  },
+  "sincronizar.svg": {
+   "name": "sincronizar.svg",
+   "blob": "c1bfd949f8837c8883676e704a7df9d4",
+   "size": 351,
+   "type": "image/svg+xml"
+  },
+  "sistema.svg": {
+   "name": "sistema.svg",
+   "blob": "ff214c3039f5461dd613c80cb16ab263",
+   "size": 476,
+   "type": "image/svg+xml"
+  },
+  "telefono.svg": {
+   "name": "telefono.svg",
+   "blob": "8513db43f3880772a6568a71ec102437",
+   "size": 358,
+   "type": "image/svg+xml"
+  },
+  "tema.svg": {
+   "name": "tema.svg",
+   "blob": "0e082524e27553d8928b7b623a8b76d9",
+   "size": 342,
+   "type": "image/svg+xml"
+  },
+  "texto.svg": {
+   "name": "texto.svg",
+   "blob": "96d25eb3d33cbdd238b764aa219137ef",
+   "size": 362,
+   "type": "image/svg+xml"
+  },
+  "tiempo.svg": {
+   "name": "tiempo.svg",
+   "blob": "5e7942a28062071033104a5b2cc89a5c",
+   "size": 292,
+   "type": "image/svg+xml"
+  },
+  "uso.svg": {
+   "name": "uso.svg",
+   "blob": "19850cae5da21b6798c3dc59627c50d1",
+   "size": 366,
+   "type": "image/svg+xml"
+  },
+  "usuario.svg": {
+   "name": "usuario.svg",
+   "blob": "863688ae0c05dcd83593b90bf55e6fb1",
+   "size": 310,
+   "type": "image/svg+xml"
+  },
+  "validacion.svg": {
+   "name": "validacion.svg",
+   "blob": "93513326901793dc8960723b915c2d09",
+   "size": 443,
+   "type": "image/svg+xml"
+  },
+  "volver.svg": {
+   "name": "volver.svg",
+   "blob": "21ca2a9e343cdcafe1d13eaa7b44a24c",
+   "size": 231,
+   "type": "image/svg+xml"
+  }
+ },
+ "Logotipo": {
+  "icono-azul.svg": {
+   "name": "icono-azul.svg",
+   "blob": "f63338003480ad6f27d4392ee46a2a2b",
+   "size": 608,
+   "type": "image/svg+xml"
+  },
+  "icono-tinta.svg": {
+   "name": "icono-tinta.svg",
+   "blob": "be7c29d4a32746d07f17a9aea5158f57",
+   "size": 608,
+   "type": "image/svg+xml"
+  },
+  "icono-trama.svg": {
+   "name": "icono-trama.svg",
+   "blob": "ccd4e81cebf43383d0ceb06a20d60e45",
+   "size": 29644,
+   "type": "image/svg+xml"
+  },
+  "relevo-blanco.svg": {
+   "name": "relevo-blanco.svg",
+   "blob": "f3b3672d06aa8bfc7e56d9154a385089",
+   "size": 2365,
+   "type": "image/svg+xml"
+  },
+  "relevo-papel.svg": {
+   "name": "relevo-papel.svg",
+   "blob": "4c6e7fa6c19fd92c509f58d93dacfc8a",
+   "size": 2375,
+   "type": "image/svg+xml"
+  },
+  "relevo-tinta.svg": {
+   "name": "relevo-tinta.svg",
+   "blob": "ff87fc0cf48509ee2424e21b508d33c7",
+   "size": 2369,
+   "type": "image/svg+xml"
+  }
+ },
+ "Trama": {
+  "foto-libro-trama.svg": {
+   "name": "foto-libro-trama.svg",
+   "blob": "2519c799bd8c24b47f8d890817fe68cc",
+   "size": 349912,
+   "type": "image/svg+xml"
+  },
+  "icono-trama-actividad.svg": {
+   "name": "icono-trama-actividad.svg",
+   "blob": "0390690328b14a00012f16f5e4d6ebf0",
+   "size": 12477,
+   "type": "image/svg+xml"
+  },
+  "icono-trama-apps.svg": {
+   "name": "icono-trama-apps.svg",
+   "blob": "8032e01c9ce15f819e67b5557ec2f66a",
+   "size": 12477,
+   "type": "image/svg+xml"
+  },
+  "icono-trama-inicio.svg": {
+   "name": "icono-trama-inicio.svg",
+   "blob": "8e2bc59b261dc158d88c79e2a70975fd",
+   "size": 12477,
+   "type": "image/svg+xml"
+  },
+  "icono-trama-lugar.svg": {
+   "name": "icono-trama-lugar.svg",
+   "blob": "32eecb39ced0da3dea79535b0729d9ba",
+   "size": 12477,
+   "type": "image/svg+xml"
+  },
+  "icono-trama-parlante.svg": {
+   "name": "icono-trama-parlante.svg",
+   "blob": "923c9701cd14c2f2583e0bc86a0b322d",
+   "size": 12477,
+   "type": "image/svg+xml"
+  },
+  "icono-trama-senal.svg": {
+   "name": "icono-trama-senal.svg",
+   "blob": "5e21f90b710824e5ed229e01b207e648",
+   "size": 12477,
+   "type": "image/svg+xml"
+  },
+  "tiempo-6-de-15.svg": {
+   "name": "tiempo-6-de-15.svg",
+   "blob": "772cce6ad5c3775555a745621c69ca59",
+   "size": 985,
+   "type": "image/svg+xml"
+  },
+  "trama-campo.svg": {
+   "name": "trama-campo.svg",
+   "blob": "e6693c48f369c00084c05622ab5e7cb8",
+   "size": 402774,
+   "type": "image/svg+xml"
+  },
+  "trama-senal.svg": {
+   "name": "trama-senal.svg",
+   "blob": "a3a31838ad44365a4c098f0005df8fd6",
+   "size": 328579,
+   "type": "image/svg+xml"
+  }
+ },
+ "Fotos": {
+  "aprender.jpg": {
+   "name": "aprender.jpg",
+   "blob": "91cce8c4672f239f69c61686ea36f7b0",
+   "size": 71616,
+   "type": "image/jpeg"
+  },
+  "escribir.jpg": {
+   "name": "escribir.jpg",
+   "blob": "dfc7ab984fb85bed5feba468e39563ca",
+   "size": 76085,
+   "type": "image/jpeg"
+  },
+  "guitarra.jpg": {
+   "name": "guitarra.jpg",
+   "blob": "6e5e21b8c9f1452e909a8665ae99eeff",
+   "size": 83839,
+   "type": "image/jpeg"
+  },
+  "libro.jpg": {
+   "name": "libro.jpg",
+   "blob": "3bf86915b563a259cc1ccc25a91cf9fa",
+   "size": 71677,
+   "type": "image/jpeg"
+  },
+  "pan.jpg": {
+   "name": "pan.jpg",
+   "blob": "89d7b5b600ba8f7872fb00550cd251ee",
+   "size": 74581,
+   "type": "image/jpeg"
+  },
+  "pintar.jpg": {
+   "name": "pintar.jpg",
+   "blob": "336ad297f99c76f50c1ee6bfcb92fbbe",
+   "size": 107083,
+   "type": "image/jpeg"
+  }
+ }
+}

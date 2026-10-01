@@ -1,0 +1,20 @@
+<!-- @dsCard group="Marca" height=360 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Trama — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var box = { height: 200, borderRadius: 22, overflow: 'hidden', background: 'var(--card)' };
+    return h('div', { className: 'rl-demo' },
+      h('div', { style: { display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gap: 12 } },
+        h('figure', { style: { margin: 0 } }, h('div', { style: box }, h(R.Trama, { mode: 'senal' })), h('figcaption', { className: 'rl-demo-cap' }, 'Señal: late mientras suena')),
+        h('figure', { style: { margin: 0 } }, h('div', { style: Object.assign({}, box, { background: 'var(--card)' }) }, h(R.Trama, { mode: 'foto', src: '/_blob/3bf86915b563a259cc1ccc25a91cf9fa', label: 'Un libro abierto, en trama' })), h('figcaption', { className: 'rl-demo-cap' }, 'Foto de «leer» en trama')),
+        h('figure', { style: { margin: 0 } }, h('div', { style: Object.assign({}, box, { padding: 28, boxSizing: 'border-box' }) }, h(R.Trama, { mode: 'icono', icon: 'parlante', grid: 16 })), h('figcaption', { className: 'rl-demo-cap' }, 'Parlante en 16 × 16 puntos'))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

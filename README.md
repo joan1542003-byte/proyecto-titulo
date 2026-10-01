@@ -54,7 +54,9 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 - **App 2.18 (D-097):** registra cada día el uso de las apps elegidas y el tiempo total de pantalla, desde 7 días antes de aceptar, y el estado del teléfono (permisos, modelo, ajustes, ruta). También permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío. Consentimiento v11, pendiente de revisión docente. Probada en emulador, incluido el borrado de las tablas nuevas; falta el teléfono real ([detalle](06_desarrollo_y_factibilidad/app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md)).
 - **Panel del testeo:** página privada en claude.ai con el diseño de la app y cuatro pestañas: Ahora, Participantes, Respuestas y Mensajes. Envía notificaciones con 12 mensajes listos, muestra el uso diario y la configuración de cada persona, lo que conviene revisar, y descarga los datos de cada persona ([cómo funciona](06_desarrollo_y_factibilidad/panel-admin/README.md)).
 - **Presentación:** la diapositiva 14 muestra en una carta Gantt lo que sigue hasta el examen.
-- **Identidad (D-098, propuesta):** la corrección cruzada recordó la presentación, pero no la reconoció en la app. La propuesta une ambas alrededor del subrayado azul de la presentación, con un solo logotipo, una sola letra e íconos redibujados ([documento](10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md)). Falta la decisión del autor.
+- **Identidad (D-098, decidida en parte):** la corrección cruzada recordó la presentación, pero no la reconoció en la app. La propuesta une ambas alrededor del subrayado azul de la presentación, con un solo logotipo, una sola letra e íconos redibujados ([documento](10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md)). El autor eligió la dirección, las minúsculas, la serif en titulares, la trama y el azul eléctrico.
+
+**1 de octubre:** la identidad se desarrolló como [sistema de diseño 3.0](10_recursos_visuales/26_sistema-de-diseno-3.0-2026-10-01.md) en el tipo Design System de claude.ai: libro de marca con voz y tono, tokens en tema claro y oscuro, 43 componentes, 102 íconos, logotipo, ícono de la app y trama ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-01.md)).
 
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
@@ -130,6 +132,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-01 — Sistema de diseño 3.0
+
+- **Qué cambió:** el estado suma el sistema de diseño 3.0 y lo que decidió el autor sobre D-098.
+- **Cómo estaba antes:** la identidad figuraba como propuesta sin decidir.
+- **Por qué:** pedido del autor.
 
 ### 2026-09-30 — Identidad
 

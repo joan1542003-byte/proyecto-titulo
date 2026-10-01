@@ -1,0 +1,15 @@
+<!-- @dsCard group="Selección" height=110 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>RadioMark — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h('div', { className: 'rl-demo-row', style: { gap: 18 } }, h(R.RadioMark, { selected: true }), h(R.RadioMark, { selected: false })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085). El 30 de septiembre, después de la corrección cruzada, se propuso [una sola identidad alrededor del subrayado azul](25_identidad-el-subrayado-2026-09-30.md) para la presentación, la app y el objeto, con íconos nuevos (D-098, pendiente).
+**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085). El 30 de septiembre, después de la corrección cruzada, se propuso [una sola identidad alrededor del subrayado azul](25_identidad-el-subrayado-2026-09-30.md) para la presentación, la app y el objeto, con íconos nuevos (D-098, decidida en parte). El 1 de octubre se desarrolló como [sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md), publicado en el tipo Design System de claude.ai, con tokens, 43 componentes, 124 recursos y libro de marca.
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -48,6 +48,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 23. [Actividades predefinidas e imágenes por generar](23_actividades-e-imagenes-2026-09-29.md): 31 actividades para personas de 18 a 30 años, 18 imágenes nuevas y la plantilla de prompt
 24. [Presentación de la corrección cruzada del 30 de septiembre](24_presentacion-correccion-cruzada-2026-09-30.md): estado, estructura, reglas de diseño y cómo se hizo en Figma, con las [15 diapositivas exportadas](presentacion-correccion-cruzada-2026-09-30/)
 25. [Identidad: el subrayado](25_identidad-el-subrayado-2026-09-30.md) y sus láminas: [versión 3, neutra con azul eléctrico](marca-el-subrayado/lamina-el-subrayado-v3-2026-09-30.html) (decidida en parte por el autor), [versión 2, con las referencias del autor](marca-el-subrayado/lamina-el-subrayado-v2-2026-09-30.html) (trama, paso de color, vidrio y serif en titulares) y [versión 1, sobria](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html). Incluye el diagnóstico de la presentación frente a la app, 27 íconos de muestra y las decisiones pendientes (propuesta D-098)
+26. [Sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md) y sus [archivos](sistema-de-diseno-3.0/README.md): libro de marca con voz y tono, color y variantes, logotipo, trama, iconografía, aplicaciones y fundamentos; tokens en tema claro y oscuro; 43 componentes en React; 102 íconos, logotipo, ícono de la app y trama. Publicado en claude.ai (D-098)
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -77,6 +78,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-01 — Sistema de diseño 3.0
+
+- **Qué cambió:** el estado y el índice suman el documento 26 y la carpeta del sistema de diseño 3.0.
+- **Cómo estaba antes:** el índice terminaba en la propuesta D-098 (documento 25).
+- **Por qué:** el autor pidió desarrollar el sistema gráfico y pasarlo a Claude Design.
 
 ### 2026-09-30 — Identidad: el subrayado
 

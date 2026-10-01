@@ -1,0 +1,656 @@
+/* @ds-bundle: {"format":4,"namespace":"Relevo","components":[{"name":"Wordmark"},{"name":"Subrayado"},{"name":"Icon"},{"name":"Trama"},{"name":"TimeDots"},{"name":"Button"},{"name":"GuardedButton"},{"name":"MissingHint"},{"name":"PlainAction"},{"name":"IconAction"},{"name":"GlassIconButton"},{"name":"GlassTextButton"},{"name":"SegmentedControl"},{"name":"ScaleControl"},{"name":"QuickChoice"},{"name":"CheckMark"},{"name":"RadioMark"},{"name":"StarRating"},{"name":"DurationStepper"},{"name":"CountStepper"},{"name":"RenglonField"},{"name":"RenglonArea"},{"name":"SearchField"},{"name":"Signature"},{"name":"ListSection"},{"name":"ListRow"},{"name":"FactRow"},{"name":"IconTile"},{"name":"Notice"},{"name":"StatusChip"},{"name":"Panel"},{"name":"SectionHeader"},{"name":"PhotoCard"},{"name":"PictureTile"},{"name":"PhotoHero"},{"name":"Avatar"},{"name":"EmojiTile"},{"name":"Screen"},{"name":"StepProgress"},{"name":"ProgressLine"},{"name":"Carousel"},{"name":"Sheet"},{"name":"TabBar"}]} */
+(function () {
+  'use strict';
+  var React = window.React;
+  var h = React.createElement;
+  var useState = React.useState, useEffect = React.useEffect, useRef = React.useRef, useId = React.useId;
+
+  /* Íconos: [trazado, banderas] en la retícula de 24. s = trazo, i = relleno, b = recorte del fondo, a = azul. */
+  var ICONS = {"accesibilidad":[["M3.25 12A8.75 8.75 0 1 0 20.75 12A8.75 8.75 0 1 0 3.25 12Z","s"],["M10.9 7.75A1.1 1.1 0 1 0 13.1 7.75A1.1 1.1 0 1 0 10.9 7.75Z","i"],["M7.75 10.25H16.25","s"],["M12 10.25V13.25L9.75 17.25M12 13.25L14.25 17.25","s"]],"actividad":[["M5.3 18.7L6 14.75L15.4 5.35L18.65 8.6L9.25 18Z","s"],["M13.4 7.35L16.65 10.6","s"],["M3.5 21.1H20.5","sa"]],"advertencia":[["M12 4L20.9 19.5H3.1Z","s"],["M12 9.75V13.75","s"],["M10.95 16.6A1.05 1.05 0 1 0 13.05 16.6A1.05 1.05 0 1 0 10.95 16.6Z","i"]],"agregar":[["M12 5V19M5 12H19","s"]],"ajustes":[["M4 7.5H20M4 16.5H20","s"],["M6.6 7.5A2.4 2.4 0 1 0 11.4 7.5A2.4 2.4 0 1 0 6.6 7.5Z","sb"],["M12.6 16.5A2.4 2.4 0 1 0 17.4 16.5A2.4 2.4 0 1 0 12.6 16.5Z","sb"]],"apps":[["M5.5 3.25H8.5A2.25 2.25 0 0 1 10.75 5.5V8.5A2.25 2.25 0 0 1 8.5 10.75H5.5A2.25 2.25 0 0 1 3.25 8.5V5.5A2.25 2.25 0 0 1 5.5 3.25Z","s"],["M15.5 3.25H18.5A2.25 2.25 0 0 1 20.75 5.5V8.5A2.25 2.25 0 0 1 18.5 10.75H15.5A2.25 2.25 0 0 1 13.25 8.5V5.5A2.25 2.25 0 0 1 15.5 3.25Z","sia"],["M5.5 13.25H8.5A2.25 2.25 0 0 1 10.75 15.5V18.5A2.25 2.25 0 0 1 8.5 20.75H5.5A2.25 2.25 0 0 1 3.25 18.5V15.5A2.25 2.25 0 0 1 5.5 13.25Z","s"],["M15.5 13.25H18.5A2.25 2.25 0 0 1 20.75 15.5V18.5A2.25 2.25 0 0 1 18.5 20.75H15.5A2.25 2.25 0 0 1 13.25 18.5V15.5A2.25 2.25 0 0 1 15.5 13.25Z","s"]],"avisos":[["M8.5 2.75H13.5A3 3 0 0 1 16.5 5.75V18.25A3 3 0 0 1 13.5 21.25H8.5A3 3 0 0 1 5.5 18.25V5.75A3 3 0 0 1 8.5 2.75Z","s"],["M9.5 18H12.5","s"],["M14.5 6A3 3 0 1 0 20.5 6A3 3 0 1 0 14.5 6Z","sb"],["M15.75 6A1.75 1.75 0 1 0 19.25 6A1.75 1.75 0 1 0 15.75 6Z","i"]],"ayuda":[["M3.25 12A8.75 8.75 0 1 0 20.75 12A8.75 8.75 0 1 0 3.25 12Z","s"],["M9.6 9.6A2.5 2.5 0 1 1 13.3 11.8C12.5 12.3 12 12.9 12 13.75","s"],["M11 16.9A1 1 0 1 0 13 16.9A1 1 0 1 0 11 16.9Z","i"]],"bateria":[["M5.5 7.25H16.5A2.75 2.75 0 0 1 19.25 10V14A2.75 2.75 0 0 1 16.5 16.75H5.5A2.75 2.75 0 0 1 2.75 14V10A2.75 2.75 0 0 1 5.5 7.25Z","s"],["M21.25 10.5V13.5","s"],["M6.25 9.75H10.75A1 1 0 0 1 11.75 10.75V13.25A1 1 0 0 1 10.75 14.25H6.25A1 1 0 0 1 5.25 13.25V10.75A1 1 0 0 1 6.25 9.75Z","i"]],"bicicleta":[["M2.25 16A3.75 3.75 0 1 0 9.75 16A3.75 3.75 0 1 0 2.25 16Z","s"],["M14.25 16A3.75 3.75 0 1 0 21.75 16A3.75 3.75 0 1 0 14.25 16Z","s"],["M6 16L9.75 9H15.5L18 16","s"],["M9.75 9L12.75 16H6","s"],["M8.5 6.75H11","s"],["M15.5 9L14.75 6.5H16.75","s"]],"borrar":[["M4.25 6.5H19.75","s"],["M9.25 6.5V5.1Q9.25 3.75 10.6 3.75H13.4Q14.75 3.75 14.75 5.1V6.5","s"],["M6.1 6.5L6.95 18.8Q7.1 20.5 8.8 20.5H15.2Q16.9 20.5 17.05 18.8L17.9 6.5","s"],["M10.1 10.25V16.5M13.9 10.25V16.5","s"]],"buscar":[["M3.75 10.5A6.75 6.75 0 1 0 17.25 10.5A6.75 6.75 0 1 0 3.75 10.5Z","s"],["M15.5 15.5L20.5 20.5","s"]],"calendario":[["M6 5H18A2.5 2.5 0 0 1 20.5 7.5V18A2.5 2.5 0 0 1 18 20.5H6A2.5 2.5 0 0 1 3.5 18V7.5A2.5 2.5 0 0 1 6 5Z","s"],["M3.5 9.75H20.5","s"],["M8 3V6.75M16 3V6.75","s"]],"cambie":[["M4.5 8H18.75M15.25 4.5L18.75 8L15.25 11.5","s"],["M19.5 16H5.25M8.75 12.5L5.25 16L8.75 19.5","s"]],"caminar":[["M3.5 16.5V9.6C3.5 8.6 4.6 8.1 5.4 8.6L7.9 10.2L10.9 7.6C12 9.7 14.1 11.1 17.1 11.6C19.2 11.9 20.5 13.2 20.5 15.1V16.5Z","s"],["M3.5 16.5V18.25A1 1 0 0 0 4.5 19.25H19.5A1 1 0 0 0 20.5 18.25V16.5","s"],["M9.2 11.3L10.4 12.6M11.3 9.9L12.4 11.2","s"]],"carta":[["M5.5 5.5H18.5A2.5 2.5 0 0 1 21 8V16A2.5 2.5 0 0 1 18.5 18.5H5.5A2.5 2.5 0 0 1 3 16V8A2.5 2.5 0 0 1 5.5 5.5Z","s"],["M3.75 7L12 13L20.25 7","s"]],"cerrar":[["M6.75 6.75L17.25 17.25M17.25 6.75L6.75 17.25","s"]],"cerrar-sesion":[["M14 20.5H6.5A2 2 0 0 1 4.5 18.5V5.5A2 2 0 0 1 6.5 3.5H14","s"],["M10 12H20.5","s"],["M16.5 8L20.5 12L16.5 16","s"]],"cocinar":[["M4.5 10.5H19.5V17.5A2.5 2.5 0 0 1 17 20H7A2.5 2.5 0 0 1 4.5 17.5Z","s"],["M2.5 12.5H4.5M19.5 12.5H21.5","s"],["M6 8H18","s"],["M12 8V5.75","s"],["M10.5 5.75H13.5","s"]],"codigo":[["M9.75 3.5L7.75 20.5M16.25 3.5L14.25 20.5M4.5 9H20M4 15H19.5","s"]],"comence":[["M2.9 12A9.1 9.1 0 1 0 21.1 12A9.1 9.1 0 1 0 2.9 12Z","s"],["M8.1 12.3L10.9 15.1L16.1 9.4","s"]],"comentario":[["M5.5 4.5H18.5A2 2 0 0 1 20.5 6.5V15A2 2 0 0 1 18.5 17H10.25L6.25 20.25V17H5.5A2 2 0 0 1 3.5 15V6.5A2 2 0 0 1 5.5 4.5Z","s"]],"conexion":[["M10 14L14 10","s"],["M8.5 11L6.6 12.9A3.35 3.35 0 0 0 11.1 17.4L13 15.5","s"],["M11 8.5L12.9 6.6A3.35 3.35 0 0 1 17.4 11.1L15.5 13","s"]],"consentimiento":[["M6 4.5A1.5 1.5 0 0 1 7.5 3H14L18.5 7.5V19.5A1.5 1.5 0 0 1 17 21H7.5A1.5 1.5 0 0 1 6 19.5Z","s"],["M14 3V7.5H18.5","s"],["M9.25 14.25L11.25 16.25L15 12","s"]],"contraer":[["M4.75 15L12 7.75L19.25 15","s"]],"copiar":[["M11 8.5H18A2.5 2.5 0 0 1 20.5 11V18A2.5 2.5 0 0 1 18 20.5H11A2.5 2.5 0 0 1 8.5 18V11A2.5 2.5 0 0 1 11 8.5Z","s"],["M15.5 8.5V5.5A2 2 0 0 0 13.5 3.5H5.5A2 2 0 0 0 3.5 5.5V13.5A2 2 0 0 0 5.5 15.5H8.5","s"]],"datos":[["M7.5 4.5H16.5A2.5 2.5 0 0 1 19 7V18.5A2.5 2.5 0 0 1 16.5 21H7.5A2.5 2.5 0 0 1 5 18.5V7A2.5 2.5 0 0 1 7.5 4.5Z","s"],["M10.25 2.75H13.75A1.25 1.25 0 0 1 15 4V5A1.25 1.25 0 0 1 13.75 6.25H10.25A1.25 1.25 0 0 1 9 5V4A1.25 1.25 0 0 1 10.25 2.75Z","sb"],["M8.5 11H15.5M8.5 15H13","s"]],"decision":[["M12 20.75V13","s"],["M12 13L6.25 7.25M12 13L17.75 7.25","s"],["M6 11V7H10M18 11V7H14","s"]],"desbloqueado":[["M7.25 10.25H16.75A2.5 2.5 0 0 1 19.25 12.75V18.25A2.5 2.5 0 0 1 16.75 20.75H7.25A2.5 2.5 0 0 1 4.75 18.25V12.75A2.5 2.5 0 0 1 7.25 10.25Z","s"],["M8.25 10.25V7.75A3.75 3.75 0 0 1 15.4 6.2","s"]],"descargar":[["M12 3.5V14.5","s"],["M8 10.5L12 14.5L16 10.5","s"],["M4.5 13V18.5A2 2 0 0 0 6.5 20.5H17.5A2 2 0 0 0 19.5 18.5V13","s"]],"despues":[["M7.25 3.25H16.75Q18 3.25 18 4.5V20.25L12 16.4L6 20.25V4.5Q6 3.25 7.25 3.25Z","s"]],"detener":[["M8.5 6H15.5A2.5 2.5 0 0 1 18 8.5V15.5A2.5 2.5 0 0 1 15.5 18H8.5A2.5 2.5 0 0 1 6 15.5V8.5A2.5 2.5 0 0 1 8.5 6Z","s"]],"dibujar":[["M9.5 16V13.4L17.1 5.8A1.9 1.9 0 0 1 19.8 5.8L20.2 6.2A1.9 1.9 0 0 1 20.2 8.9L12.6 16.5H10A.5.5 0 0 1 9.5 16Z","s"],["M3.5 19.5C5.5 17 7 21.5 9.25 19.5C10.25 18.6 11 19.2 12 19.75","s"]],"dormir":[["M3.5 6.5V19M3.5 16H20.5V19","s"],["M3.5 12.75H17.25A3.25 3.25 0 0 1 20.5 16","s"],["M7 9.25H8.75A1.5 1.5 0 0 1 10.25 10.75V11.25A1.5 1.5 0 0 1 8.75 12.75H7A1.5 1.5 0 0 1 5.5 11.25V10.75A1.5 1.5 0 0 1 7 9.25Z","s"]],"editar":[["M5.3 18.7L6 14.75L15.4 5.35L18.65 8.6L9.25 18Z","s"],["M13.4 7.35L16.65 10.6","s"]],"ejercicio":[["M6.5 7.5V16.5M17.5 7.5V16.5M3.5 10V14M20.5 10V14M6.5 12H17.5","s"]],"enlace-externo":[["M13.5 3.5H20.5V10.5","s"],["M20.5 3.5L11 13","s"],["M18 14V18.5A2 2 0 0 1 16 20.5H5.5A2 2 0 0 1 3.5 18.5V8A2 2 0 0 1 5.5 6H10","s"]],"entrevistas":[["M3.5 4.75H14V12.25H8.5L5.5 14.75V12.25H3.5Z","s"],["M17 9H20.5V16.5H18.75V19L15.75 16.5H10V15","s"]],"enviar":[["M20.5 3.5L3.5 10.25L10.5 13.5L13.75 20.5Z","s"],["M20.5 3.5L10.5 13.5","s"]],"error":[["M3.25 12A8.75 8.75 0 1 0 20.75 12A8.75 8.75 0 1 0 3.25 12Z","s"],["M12 7.25V13","s"],["M11 16.25A1 1 0 1 0 13 16.25A1 1 0 1 0 11 16.25Z","i"]],"escribir":[["M12 3.25L18 11L14.5 20.75H9.5L6 11Z","s"],["M12 20.75V14.75","s"],["M10.75 12.75A1.25 1.25 0 1 0 13.25 12.75A1.25 1.25 0 1 0 10.75 12.75Z","s"]],"esperando":[["M6.5 3.25H17.5M6.5 20.75H17.5","s"],["M7.75 3.25C7.75 8.25 12 9.5 12 12C12 14.5 7.75 15.75 7.75 20.75","s"],["M16.25 3.25C16.25 8.25 12 9.5 12 12C12 14.5 16.25 15.75 16.25 20.75","s"],["M9.4 20.75C9.6 18.9 12 17.9 12 17.9C12 17.9 14.4 18.9 14.6 20.75Z","i"]],"estirar":[["M10.25 5A1.75 1.75 0 1 0 13.75 5A1.75 1.75 0 1 0 10.25 5Z","s"],["M12 9V14.25","s"],["M12 9.25L6.75 4.25M12 9.25L17.25 4.25","s"],["M12 14.25L8.25 20.5M12 14.25L15.75 20.5","s"]],"estrella":[["M12 3.5L14.56 9.08L20.65 9.79L16.14 13.94L17.35 19.96L12 16.95L6.65 19.96L7.86 13.94L3.35 9.79L9.44 9.08Z","s"]],"estrella-llena":[["M12 3.5L14.56 9.08L20.65 9.79L16.14 13.94L17.35 19.96L12 16.95L6.65 19.96L7.86 13.94L3.35 9.79L9.44 9.08Z","si"]],"estrella-media":[["M12 3.5L9.44 9.08L3.35 9.79L7.86 13.94L6.65 19.96L12 16.95Z","i"],["M12 3.5L14.56 9.08L20.65 9.79L16.14 13.94L17.35 19.96L12 16.95L6.65 19.96L7.86 13.94L3.35 9.79L9.44 9.08Z","s"]],"estudiar":[["M8 3H17.5A2 2 0 0 1 19.5 5V19A2 2 0 0 1 17.5 21H8A2 2 0 0 1 6 19V5A2 2 0 0 1 8 3Z","s"],["M4 7H8M4 12H8M4 17H8","s"],["M11.5 8H16M11.5 12H16","s"]],"expandir":[["M4.75 9L12 16.25L19.25 9","s"]],"exportar":[["M12 14.5V3.5","s"],["M8 7.5L12 3.5L16 7.5","s"],["M4.5 13V18.5A2 2 0 0 0 6.5 20.5H17.5A2 2 0 0 0 19.5 18.5V13","s"]],"filtrar":[["M3.5 4.75H20.5L14 12.5V18.75L10 20.75V12.5Z","s"]],"fotografia":[["M3.5 8.5A2 2 0 0 1 5.5 6.5H8L9.5 4.5H14.5L16 6.5H18.5A2 2 0 0 1 20.5 8.5V17.5A2 2 0 0 1 18.5 19.5H5.5A2 2 0 0 1 3.5 17.5Z","s"],["M8.5 13A3.5 3.5 0 1 0 15.5 13A3.5 3.5 0 1 0 8.5 13Z","s"]],"guitarra":[["M9.76 13.99A3 3 0 1 1 14.24 13.99A3.75 3.75 0 1 1 9.76 13.99Z","s"],["M10.75 16.6A1.25 1.25 0 1 0 13.25 16.6A1.25 1.25 0 1 0 10.75 16.6Z","s"],["M12 9V3.25","s"],["M10.5 3.25H13.5","s"]],"hipotesis":[["M9.5 3.25H14.5","s"],["M10.5 3.25V9.25L5.4 18.2A1.75 1.75 0 0 0 6.9 20.75H17.1A1.75 1.75 0 0 0 18.6 18.2L13.5 9.25V3.25","s"],["M7.75 15H16.25","s"]],"historial":[["M4.25 12A7.75 7.75 0 1 0 6.5 6.5","s"],["M3.75 3.75V7.25H7.25","s"],["M12 8V12L14.75 13.75","s"]],"info":[["M2.9 12A9.1 9.1 0 1 0 21.1 12A9.1 9.1 0 1 0 2.9 12Z","s"],["M12 11V16.5","s"],["M10.9 7.9A1.1 1.1 0 1 0 13.1 7.9A1.1 1.1 0 1 0 10.9 7.9Z","i"]],"inicio":[["M5 10.4V18.6Q5 20.5 6.9 20.5H17.1Q19 20.5 19 18.6V10.4","s"],["M3.4 11.6L12 4.1L20.6 11.6","s"],["M10 20.5V16.3Q10 14.4 12 14.4Q14 14.4 14 16.3V20.5","s"]],"inicio-lleno":[["M5 10.6L12 4.6L19 10.6V18.6Q19 20.5 17.1 20.5H14V16.3Q14 14.4 12 14.4Q10 14.4 10 16.3V20.5H6.9Q5 20.5 5 18.6Z","si"],["M3.4 11.6L12 4.1L20.6 11.6","s"]],"investigacion":[["M16.5 10V5A1.5 1.5 0 0 0 15 3.5H5.5A1.5 1.5 0 0 0 4 5V19A1.5 1.5 0 0 0 5.5 20.5H10","s"],["M7.5 7.5H13M7.5 11H10.5","s"],["M11.75 15.25A3.5 3.5 0 1 0 18.75 15.25A3.5 3.5 0 1 0 11.75 15.25Z","s"],["M17.75 17.75L20.5 20.5","s"]],"juego-de-mesa":[["M7.5 4H16.5A3.5 3.5 0 0 1 20 7.5V16.5A3.5 3.5 0 0 1 16.5 20H7.5A3.5 3.5 0 0 1 4 16.5V7.5A3.5 3.5 0 0 1 7.5 4Z","s"],["M7.25 8.5A1.25 1.25 0 1 0 9.75 8.5A1.25 1.25 0 1 0 7.25 8.5Z","i"],["M10.75 12A1.25 1.25 0 1 0 13.25 12A1.25 1.25 0 1 0 10.75 12Z","i"],["M14.25 15.5A1.25 1.25 0 1 0 16.75 15.5A1.25 1.25 0 1 0 14.25 15.5Z","i"]],"leer":[["M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z","s"],["M12 6.25V20","s"],["M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85","s"]],"listo":[["M4.75 12.6L9.6 17.25L19.25 6.75","s"]],"llamar":[["M6.6 3.5H9L10.5 7.5L8.6 9A11 11 0 0 0 15 15.4L16.5 13.5L20.5 15V17.4A2.5 2.5 0 0 1 17.9 19.9C10.3 19.4 4.6 13.7 4.1 6.1A2.5 2.5 0 0 1 6.6 3.5Z","s"]],"lugar":[["M12 18.75C12 18.75 6 13.9 6 9.25A6 6 0 0 1 18 9.25C18 13.9 12 18.75 12 18.75Z","s"],["M9.9 9.25A2.1 2.1 0 1 0 14.1 9.25A2.1 2.1 0 1 0 9.9 9.25Z","s"],["M6.75 21.1H17.25","sa"]],"manualidades":[["M3.75 17A2.75 2.75 0 1 0 9.25 17A2.75 2.75 0 1 0 3.75 17Z","s"],["M14.75 17A2.75 2.75 0 1 0 20.25 17A2.75 2.75 0 1 0 14.75 17Z","s"],["M8.4 15L17.5 3.75M15.6 15L6.5 3.75","s"]],"mas":[["M4 12A1.5 1.5 0 1 0 7 12A1.5 1.5 0 1 0 4 12Z","i"],["M10.5 12A1.5 1.5 0 1 0 13.5 12A1.5 1.5 0 1 0 10.5 12Z","i"],["M17 12A1.5 1.5 0 1 0 20 12A1.5 1.5 0 1 0 17 12Z","i"]],"menu":[["M4 7H20M4 12H20M4 17H20","s"]],"mostrar":[["M2.75 12C5 7.5 8.3 5.5 12 5.5S19 7.5 21.25 12C19 16.5 15.7 18.5 12 18.5S5 16.5 2.75 12Z","s"],["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","s"]],"musica":[["M4 15V12A8 8 0 0 1 20 12V15","s"],["M5.5 13.5H6A2 2 0 0 1 8 15.5V18.5A2 2 0 0 1 6 20.5H5.5A2 2 0 0 1 3.5 18.5V15.5A2 2 0 0 1 5.5 13.5Z","s"],["M18 13.5H18.5A2 2 0 0 1 20.5 15.5V18.5A2 2 0 0 1 18.5 20.5H18A2 2 0 0 1 16 18.5V15.5A2 2 0 0 1 18 13.5Z","s"]],"objeto":[["M4 8.75A8 3 0 1 0 20 8.75A8 3 0 1 0 4 8.75Z","s"],["M4 8.75V15.25C4 16.9 7.6 18.25 12 18.25C16.4 18.25 20 16.9 20 15.25V8.75","s"],["M11 8.75A1 1 0 1 0 13 8.75A1 1 0 1 0 11 8.75Z","i"]],"ocultar":[["M2.75 12C5 7.5 8.3 5.5 12 5.5S19 7.5 21.25 12C19 16.5 15.7 18.5 12 18.5S5 16.5 2.75 12Z","s"],["M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z","s"],["M4.5 4.5L19.5 19.5","s"]],"ordenar":[["M3.5 8L12 3.75L20.5 8V16L12 20.25L3.5 16Z","s"],["M3.5 8L12 12.25L20.5 8","s"],["M12 12.25V20.25","s"]],"parlante":[["M9.5 2.75H14.5Q17 2.75 17 5.25V15.75Q17 18.25 14.5 18.25H9.5Q7 18.25 7 15.75V5.25Q7 2.75 9.5 2.75Z","s"],["M9.4 12.6A2.6 2.6 0 1 0 14.6 12.6A2.6 2.6 0 1 0 9.4 12.6Z","s"],["M10.95 6.6A1.05 1.05 0 1 0 13.05 6.6A1.05 1.05 0 1 0 10.95 6.6Z","i"],["M5 21.1H19","sa"]],"pausar":[["M9 5.5V18.5M15 5.5V18.5","s"]],"perfil":[["M2.9 12A9.1 9.1 0 1 0 21.1 12A9.1 9.1 0 1 0 2.9 12Z","s"],["M8.9 9.7A3.1 3.1 0 1 0 15.1 9.7A3.1 3.1 0 1 0 8.9 9.7Z","s"],["M6.7 18.3Q8.5 15 12 15Q15.5 15 17.3 18.3","s"]],"perfil-lleno":[["M2.9 12A9.1 9.1 0 1 0 21.1 12A9.1 9.1 0 1 0 2.9 12Z","si"],["M8.9 9.7A3.1 3.1 0 1 0 15.1 9.7A3.1 3.1 0 1 0 8.9 9.7Z","b"],["M6.6 18.5Q8.4 15.2 12 15.2Q15.6 15.2 17.4 18.5Q15.1 20.4 12 20.4Q8.9 20.4 6.6 18.5Z","b"]],"permiso":[["M4.1 16A3.9 3.9 0 1 0 11.9 16A3.9 3.9 0 1 0 4.1 16Z","s"],["M10.8 13.2L19.75 4.25","s"],["M16.5 7.5L18.75 9.75M14.25 9.75L15.9 11.4","s"]],"pintar":[["M13.75 10.25L19.1 4.9A1.5 1.5 0 0 1 21.2 7L15.85 12.35","s"],["M12.75 11.25L14.85 13.35","s"],["M9.6 13.1C11.9 12.9 13.4 15.4 11.8 17.2C9.9 19.3 6.3 18.9 3.5 20.5C3.9 17.6 5.2 16.2 6.6 14.9C7.4 13.9 8.4 13.2 9.6 13.1Z","s"]],"plantas":[["M6.5 13H17.5L16.25 20.5H7.75Z","s"],["M12 13V8.5","s"],["M12 9.75C12 6.75 14.4 4.75 17.5 5C17.5 7.9 15.1 9.75 12 9.75Z","s"],["M12 11.25C12 9 10.2 7.5 7.25 7.75C7.25 9.9 9.1 11.25 12 11.25Z","s"]],"primer-paso":[["M9 17V12H14V7H19.75","s"],["M4.25 17H9","sa"]],"privacidad":[["M8 10.25H16Q18.5 10.25 18.5 12.75V18.25Q18.5 20.75 16 20.75H8Q5.5 20.75 5.5 18.25V12.75Q5.5 10.25 8 10.25Z","s"],["M8.25 10.25V7.5A3.75 3.75 0 0 1 15.75 7.5V10.25","s"],["M12 14.25V16.75","s"]],"probar":[["M3.5 9.5H6.75L11.5 5.5V18.5L6.75 14.5H3.5Z","s"],["M15 9.25A4 4 0 0 1 15 14.75","s"],["M17.75 6.5A8 8 0 0 1 17.75 17.5","s"]],"problema":[["M9.4 8.9A2.6 2.6 0 0 1 14.6 8.9","s"],["M12 8.25C15 8.25 16.75 10.6 16.75 14C16.75 17.4 14.6 19.75 12 19.75S7.25 17.4 7.25 14C7.25 10.6 9 8.25 12 8.25Z","s"],["M12 11V19.5","s"],["M7.25 13H4M7.3 16.5L4.75 18.25M16.75 13H20M16.7 16.5L19.25 18.25M8.4 10L6 7.75M15.6 10L18 7.75","s"]],"reintentar":[["M19.75 12A7.75 7.75 0 1 1 17.5 6.5","s"],["M20.25 3.75V7.25H16.75","s"]],"relevos":[["M9 6.5H20.5M9 12H20.5M9 17.5H20.5","s"],["M3.5 6.5A1.25 1.25 0 1 0 6 6.5A1.25 1.25 0 1 0 3.5 6.5Z","i"],["M3.5 12A1.25 1.25 0 1 0 6 12A1.25 1.25 0 1 0 3.5 12Z","i"],["M3.5 17.5A1.25 1.25 0 1 0 6 17.5A1.25 1.25 0 1 0 3.5 17.5Z","i"]],"reproducir":[["M7.5 5.25L18.5 12L7.5 18.75Z","s"]],"ruta":[["M7.75 18.5H15A3.25 3.25 0 0 0 15 12H9A3.25 3.25 0 0 1 9 5.5H16.25","s"],["M3.25 18.5A2.25 2.25 0 1 0 7.75 18.5A2.25 2.25 0 1 0 3.25 18.5Z","s"],["M16.25 5.5A2.25 2.25 0 1 0 20.75 5.5A2.25 2.25 0 1 0 16.25 5.5Z","s"]],"ruta-llena":[["M7.75 18.5H15A3.25 3.25 0 0 0 15 12H9A3.25 3.25 0 0 1 9 5.5H16.25","s"],["M3.25 18.5A2.25 2.25 0 1 0 7.75 18.5A2.25 2.25 0 1 0 3.25 18.5Z","si"],["M16.25 5.5A2.25 2.25 0 1 0 20.75 5.5A2.25 2.25 0 1 0 16.25 5.5Z","si"]],"salir":[["M6 20.5V4.75A1.25 1.25 0 0 1 7.25 3.5H16.75A1.25 1.25 0 0 1 18 4.75V20.5","s"],["M3.75 20.5H20.25","s"],["M13.75 12.5A1 1 0 1 0 15.75 12.5A1 1 0 1 0 13.75 12.5Z","i"]],"senal":[["M4.75 9.25H7.25L11.1 5.9Q12.25 4.95 12.25 6.45V17.55Q12.25 19.05 11.1 18.1L7.25 14.75H4.75Q3.75 14.75 3.75 13.75V10.25Q3.75 9.25 4.75 9.25Z","s"],["M15.6 9.1A4.1 4.1 0 0 1 15.6 14.9","s"],["M18.1 6.6A7.6 7.6 0 0 1 18.1 17.4","s"]],"siguiente":[["M9.25 5.25L16 12L9.25 18.75","s"]],"silenciar":[["M4.75 9.25H7.25L11.1 5.9Q12.25 4.95 12.25 6.45V17.55Q12.25 19.05 11.1 18.1L7.25 14.75H4.75Q3.75 14.75 3.75 13.75V10.25Q3.75 9.25 4.75 9.25Z","s"],["M15.75 9.75L20.25 14.25M20.25 9.75L15.75 14.25","s"]],"sin-conexion":[["M7 18.5A4.25 4.25 0 0 1 6.35 10.05A5.75 5.75 0 0 1 17.45 9.4A4.55 4.55 0 0 1 17.25 18.5Z","s"],["M4 4L20 20","s"]],"sincronizar":[["M7 18.5A4.25 4.25 0 0 1 6.35 10.05A5.75 5.75 0 0 1 17.45 9.4A4.55 4.55 0 0 1 17.25 18.5Z","s"],["M12 16V11.25M9.9 13.25L12 11.15L14.1 13.25","s"]],"sistema":[["M5.25 3.75H8.75A2.25 2.25 0 0 1 11 6V18A2.25 2.25 0 0 1 8.75 20.25H5.25A2.25 2.25 0 0 1 3 18V6A2.25 2.25 0 0 1 5.25 3.75Z","s"],["M17 10.5H19A2 2 0 0 1 21 12.5V18.25A2 2 0 0 1 19 20.25H17A2 2 0 0 1 15 18.25V12.5A2 2 0 0 1 17 10.5Z","s"],["M12.5 15.25H13.5","s"]],"telefono":[["M9.25 2.75H14.75Q17.25 2.75 17.25 5.25V18.75Q17.25 21.25 14.75 21.25H9.25Q6.75 21.25 6.75 18.75V5.25Q6.75 2.75 9.25 2.75Z","s"],["M10.5 18.25H13.5","s"]],"tema":[["M3.25 12A8.75 8.75 0 1 0 20.75 12A8.75 8.75 0 1 0 3.25 12Z","s"],["M12 3.25A8.75 8.75 0 0 1 12 20.75Z","i"]],"texto":[["M3.5 18L8 6L12.5 18M5.3 13.5H10.7","s"],["M15.25 11.4C16.2 10.4 20.25 10 20.25 13V18M20.25 14.4C19.1 13.8 15 13.6 15 16.1C15 18.6 19.1 18.5 20.25 16.4","s"]],"tiempo":[["M2.9 12A9.1 9.1 0 1 0 21.1 12A9.1 9.1 0 1 0 2.9 12Z","s"],["M12 7.25V12L15.25 14","s"]],"uso":[["M4.25 13.25A7.75 7.75 0 1 0 19.75 13.25A7.75 7.75 0 1 0 4.25 13.25Z","s"],["M12 13.25V9.25","s"],["M9.75 2.75H14.25","s"],["M12 2.75V5.5","s"]],"usuario":[["M8 8A4 4 0 1 0 16 8A4 4 0 1 0 8 8Z","s"],["M4.5 20.5C4.5 16.4 7.9 13.5 12 13.5S19.5 16.4 19.5 20.5","s"]],"validacion":[["M6.75 3.25H17.25A2.5 2.5 0 0 1 19.75 5.75V18.25A2.5 2.5 0 0 1 17.25 20.75H6.75A2.5 2.5 0 0 1 4.25 18.25V5.75A2.5 2.5 0 0 1 6.75 3.25Z","s"],["M7.75 8.75L9.1 10L11.25 7.5M13.25 8.75H16.5M7.75 14.75L9.1 16L11.25 13.5M13.25 14.75H16.5","s"]],"volver":[["M14.75 5.25L8 12L14.75 18.75","s"]]};
+  /* Contornos del logotipo «relevo» (Schibsted Grotesk 650, unidades de la fuente, UPM 2048). */
+  var WORDMARK = ["M145 0V-1080H408V-840L397 -870Q448 -989 541.5 -1047.5Q635 -1106 743 -1106Q774 -1106 805.0 -1101.0Q836 -1096 866 -1084L844 -848Q780 -866 722 -866Q675 -866 622.5 -850.0Q570 -834 523.5 -791.5Q477 -749 447.5 -671.0Q418 -593 418 -471V0Z","M1461 26Q1303 26 1179.5 -43.5Q1056 -113 984.5 -240.0Q913 -367 913 -541Q913 -714 983.0 -840.5Q1053 -967 1176.0 -1036.5Q1299 -1106 1458 -1106Q1547 -1106 1637.5 -1078.5Q1728 -1051 1803.5 -982.5Q1879 -914 1925.5 -793.0Q1972 -672 1972 -484H1088V-647H1729L1695 -592Q1687 -707 1653.5 -777.0Q1620 -847 1567.5 -878.5Q1515 -910 1451 -910Q1368 -910 1312.5 -864.0Q1257 -818 1228.5 -735.0Q1200 -652 1200 -539Q1200 -371 1264.5 -275.0Q1329 -179 1459 -179Q1546 -179 1607.5 -223.5Q1669 -268 1701 -357L1950 -291Q1912 -183 1837.5 -112.5Q1763 -42 1665.5 -8.0Q1568 26 1461 26Z","M2394 0Q2284 0 2223.0 -55.5Q2162 -111 2162 -212V-1500H2435V-259Q2435 -225 2444.5 -214.0Q2454 -203 2485 -203H2572V0Z","M3216 26Q3058 26 2934.5 -43.5Q2811 -113 2739.5 -240.0Q2668 -367 2668 -541Q2668 -714 2738.0 -840.5Q2808 -967 2931.0 -1036.5Q3054 -1106 3213 -1106Q3302 -1106 3392.5 -1078.5Q3483 -1051 3558.5 -982.5Q3634 -914 3680.5 -793.0Q3727 -672 3727 -484H2843V-647H3484L3450 -592Q3442 -707 3408.5 -777.0Q3375 -847 3322.5 -878.5Q3270 -910 3206 -910Q3123 -910 3067.5 -864.0Q3012 -818 2983.5 -735.0Q2955 -652 2955 -539Q2955 -371 3019.5 -275.0Q3084 -179 3214 -179Q3301 -179 3362.5 -223.5Q3424 -268 3456 -357L3705 -291Q3667 -183 3592.5 -112.5Q3518 -42 3420.5 -8.0Q3323 26 3216 26Z","M4184 0 3775 -1080H4080L4362 -189H4333L4614 -1080H4918L4511 0Z","M5510 26Q5349 26 5226.5 -46.0Q5104 -118 5035.0 -245.5Q4966 -373 4966 -540Q4966 -707 5035.0 -834.5Q5104 -962 5226.5 -1034.0Q5349 -1106 5510 -1106Q5672 -1106 5794.5 -1034.0Q5917 -962 5986.0 -835.0Q6055 -708 6055 -540Q6055 -373 5986.5 -245.5Q5918 -118 5794.5 -46.0Q5671 26 5510 26ZM5511 -178Q5630 -178 5699.0 -275.5Q5768 -373 5768 -540Q5768 -708 5699.0 -805.0Q5630 -902 5511 -902Q5391 -902 5322.0 -805.0Q5253 -708 5253 -540Q5253 -372 5322.0 -275.0Q5391 -178 5511 -178Z"];
+
+  function cx() {
+    var out = [];
+    for (var i = 0; i < arguments.length; i++) if (arguments[i]) out.push(arguments[i]);
+    return out.join(' ');
+  }
+  function reduceMotion() {
+    return typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+  function safeId(id) { return 'rl' + String(id).replace(/[^A-Za-z0-9]/g, ''); }
+  function optValue(o) { return Array.isArray(o) ? o[0] : o.value; }
+  function optLabel(o) { return Array.isArray(o) ? o[1] : o.label; }
+
+  /* ---------- Marca ---------- */
+
+  /** Trazo según el tamaño, como RelevoIcon: 16 → 1,9; 20 → 1,8; 24 → 1,75; 32 → 1,6; más → 1,5. */
+  function strokeFor(size) { return size <= 16 ? 1.9 : size <= 20 ? 1.8 : size <= 24 ? 1.75 : size <= 32 ? 1.6 : 1.5; }
+
+  function Icon(props) {
+    var size = props.size || 24;
+    var parts = ICONS[props.name];
+    var uid = safeId(useId());
+    if (!parts) return null;
+    var sw = props.strokeWidth != null ? props.strokeWidth : strokeFor(size);
+    var accent = props.mono ? 'currentColor' : 'var(--blue)';
+    var masks = [];
+    var body = [];
+    parts.forEach(function (p, i) {
+      var f = p[1], col = f.indexOf('a') >= 0 ? accent : 'currentColor';
+      if (f.indexOf('b') >= 0) {
+        var id = uid + 'k' + i;
+        masks.push(h('mask', { key: id, id: id, maskUnits: 'userSpaceOnUse', x: -2, y: -2, width: 28, height: 28 },
+          h('rect', { x: -2, y: -2, width: 28, height: 28, fill: '#fff' }), h('path', { d: p[0], fill: '#000' })));
+        body = [h('g', { key: 'g' + i, mask: 'url(#' + id + ')' }, body)];
+        if (f.indexOf('s') >= 0) body.push(h('path', { key: i, d: p[0], fill: 'none', stroke: col }));
+        return;
+      }
+      body.push(h('path', { key: i, d: p[0], fill: f.indexOf('i') >= 0 ? col : 'none', stroke: f.indexOf('s') >= 0 ? col : 'none' }));
+    });
+    var a11y = props.label ? { role: 'img', 'aria-label': props.label } : { 'aria-hidden': 'true', focusable: 'false' };
+    return h('svg', Object.assign({
+      className: cx('rl-icon', props.className), viewBox: '0 0 24 24', width: size, height: size, fill: 'none',
+      strokeWidth: sw, strokeLinecap: 'round', strokeLinejoin: 'round', style: Object.assign({ color: props.color }, props.style),
+    }, a11y), masks.length ? h('defs', null, masks) : null, body);
+  }
+  Icon.names = Object.keys(ICONS);
+
+  /** Logotipo «relevo» con su renglón: del ancho de la palabra y 0,075 em de alto. size = alto de las letras. */
+  function Wordmark(props) {
+    var size = props.size || 22;
+    var tone = props.tone || 'ink';
+    var letters = { 'on-blue': 'var(--on-blue)', white: 'var(--blanco)', paper: 'var(--papel)' }[tone] || 'var(--ink)';
+    var line = { 'on-blue': 'var(--on-blue)', white: 'var(--blanco)', paper: 'var(--azul-300)' }[tone] || 'var(--blue)';
+    return h('svg', {
+      className: cx('rl-wordmark', props.className), viewBox: '145 -1500 5910 2137', role: 'img', 'aria-label': 'relevo',
+      width: Math.round(size * 5910 / 1500 * 10) / 10, height: Math.round(size * 2137 / 1500 * 10) / 10, style: props.style,
+    },
+    h('g', { fill: letters }, WORDMARK.map(function (d, i) { return h('path', { key: i, d: d }); })),
+    props.line === false ? null : h('rect', { x: 145, y: 483, width: 5910, height: 154, fill: line }));
+  }
+
+  /** El renglón bajo una palabra: lo que importa en la frase. Uno por pantalla y nunca bajo texto azul. */
+  function Subrayado(props) {
+    return h('span', { className: cx('rl-sub', props.tone && 'rl-sub--' + props.tone, props.className) }, props.children);
+  }
+
+  /* ---------- Trama ---------- */
+
+  function cssVar(el, name, fallback) {
+    var v = getComputedStyle(el).getPropertyValue(name).trim();
+    return v || fallback;
+  }
+  function parseColor(c) {
+    var m = /^#([0-9a-f]{6})/i.exec(c);
+    if (m) return [parseInt(m[1].slice(0, 2), 16), parseInt(m[1].slice(2, 4), 16), parseInt(m[1].slice(4, 6), 16)];
+    m = /rgba?\(([^)]+)\)/.exec(c);
+    if (m) return m[1].split(',').slice(0, 3).map(function (x) { return parseFloat(x); });
+    return [61, 56, 245];
+  }
+  function mixRgb(a, b, t) { return 'rgb(' + a.map(function (v, k) { return Math.round(v + (b[k] - v) * t); }).join(',') + ')'; }
+  function fieldValue(nx, ny, seed, dense, t) {
+    var a = Math.sin((nx * 1.5 + ny * 0.8) * 3.6 + t * 0.6 + seed);
+    var b = Math.sin((-nx * 0.7 + ny * 1.6) * 3.3 - t * 0.45 + 1.3 + seed * 0.7);
+    var c = Math.sin((nx * 2.1 - ny * 0.6) * 2.8 + t * 0.3 + 2.1 + seed * 0.4);
+    var v = a * 0.55 + b * 0.35 + c * 0.2;
+    return 1 / (1 + Math.exp(-3.4 * (v - (dense ? -0.35 : 0.1))));
+  }
+  function iconCoverage(name, n) {
+    var S = 8, R = 24 * S;
+    function mk() { var cv = document.createElement('canvas'); cv.width = R; cv.height = R; var x = cv.getContext('2d', { willReadFrequently: true }); x.scale(S, S); return x; }
+    var o = mk(), a = mk();
+    (ICONS[name] || []).forEach(function (p) {
+      var t = p[1].indexOf('a') >= 0 ? a : o, path = new Path2D(p[0]);
+      t.lineCap = 'round'; t.lineJoin = 'round'; t.lineWidth = 2.4; t.fillStyle = '#000'; t.strokeStyle = '#000';
+      if (p[1].indexOf('i') >= 0) t.fill(path);
+      if (p[1].indexOf('s') >= 0) t.stroke(path);
+    });
+    var d1 = o.getImageData(0, 0, R, R).data, d2 = a.getImageData(0, 0, R, R).data, cell = R / n, out = [];
+    for (var j = 0; j < n; j++) for (var i = 0; i < n; i++) {
+      var s1 = 0, s2 = 0, cnt = 0;
+      for (var y = Math.floor(j * cell); y < Math.floor((j + 1) * cell); y += 2) for (var x = Math.floor(i * cell); x < Math.floor((i + 1) * cell); x += 2) { var k = (y * R + x) * 4 + 3; s1 += d1[k]; s2 += d2[k]; cnt++; }
+      out.push([s1 / (cnt * 255), s2 / (cnt * 255)]);
+    }
+    return out;
+  }
+
+  /**
+   * Trama de puntos en un lienzo. mode: 'campo' (fondo), 'senal' (late mientras suena), 'foto' (una foto en
+   * una sola tinta azul; src del mismo origen) o 'icono' (un ícono en una retícula de 12 o 16 puntos).
+   */
+  function Trama(props) {
+    var ref = useRef(null);
+    var mode = props.mode || 'campo';
+    useEffect(function () {
+      var cv = ref.current;
+      if (!cv) return undefined;
+      var alive = true, raf = 0, visible = true, img = null, cover = null, t0 = performance.now();
+      var animate = (props.animate !== false) && mode === 'senal' && !reduceMotion();
+      function draw(t) {
+        var dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = cv.clientHeight;
+        if (!w || !hh) return;
+        if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(hh * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        var ctx = cv.getContext('2d');
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, hh);
+        var blue = parseColor(cssVar(cv, '--blue', '#3d38f5'));
+        var dots = parseColor(cssVar(cv, '--blue-dots', '#c4c2fc'));
+        var ink = cssVar(cv, '--ink', '#17181c');
+        var paper = parseColor(cssVar(cv, '--paper', '#f2f2ef'));
+        var dark = (paper[0] + paper[1] + paper[2]) / 3 < 100;
+        var faint = dark ? 'rgba(255,255,255,.10)' : 'rgba(60,60,120,.14)';
+        var TAU = Math.PI * 2, i, j, x, y, v, r;
+        if (mode === 'icono') {
+          var n = props.grid || 16, step = Math.min(w, hh) / n, ox = (w - step * n) / 2, oy = (hh - step * n) / 2;
+          if (!cover) cover = iconCoverage(props.icon || 'actividad', n);
+          for (j = 0; j < n; j++) for (i = 0; i < n; i++) {
+            var cvv = cover[j * n + i], cov = Math.max(cvv[0], cvv[1]);
+            x = ox + i * step + step / 2; y = oy + j * step + step / 2;
+            ctx.beginPath();
+            if (cov < 0.08) { ctx.fillStyle = faint; ctx.arc(x, y, step * 0.12, 0, TAU); ctx.fill(); continue; }
+            ctx.fillStyle = cvv[1] > cvv[0] ? 'rgb(' + blue.join(',') + ')' : ink;
+            ctx.arc(x, y, step * 0.5 * Math.min(1, 0.35 + 0.75 * Math.sqrt(cov)), 0, TAU); ctx.fill();
+          }
+          return;
+        }
+        var pitch = props.pitch || (mode === 'senal' ? 7 : 6);
+        var cols = Math.ceil(w / pitch), rows = Math.ceil(hh / pitch);
+        if (mode === 'foto') {
+          if (!img || !img.complete || !img.naturalWidth) return;
+          var off = document.createElement('canvas'); off.width = cols; off.height = rows;
+          var o = off.getContext('2d', { willReadFrequently: true });
+          var ir = img.naturalWidth / img.naturalHeight, cr = cols / rows, sw, sh, sx, sy;
+          if (ir > cr) { sh = img.naturalHeight; sw = sh * cr; sx = (img.naturalWidth - sw) / 2; sy = 0; } else { sw = img.naturalWidth; sh = sw / cr; sx = 0; sy = (img.naturalHeight - sh) * 0.55; }
+          o.drawImage(img, sx, sy, sw, sh, 0, 0, cols, rows);
+          var data;
+          try { data = o.getImageData(0, 0, cols, rows).data; } catch (e) { return; }
+          var lo = 1, hi = 0, dk = new Float32Array(cols * rows);
+          for (var k = 0; k < cols * rows; k++) { var d = 1 - (0.2126 * data[k * 4] + 0.7152 * data[k * 4 + 1] + 0.0722 * data[k * 4 + 2]) / 255; dk[k] = d; if (d < lo) lo = d; if (d > hi) hi = d; }
+          var span = Math.max(0.05, hi - lo);
+          if (props.background) { ctx.fillStyle = props.background; ctx.fillRect(0, 0, w, hh); }
+          for (j = 0; j < rows; j++) for (i = 0; i < cols; i++) {
+            v = (dk[j * cols + i] - lo) / span; x = i * pitch + pitch / 2; y = j * pitch + pitch / 2;
+            ctx.beginPath();
+            if (v < 0.06) { ctx.fillStyle = faint; ctx.arc(x, y, pitch * 0.14, 0, TAU); ctx.fill(); continue; }
+            ctx.fillStyle = 'rgb(' + blue.join(',') + ')';
+            ctx.arc(x, y, pitch * 0.5 * (0.16 + 0.88 * Math.pow(v, 0.85)), 0, TAU); ctx.fill();
+          }
+          return;
+        }
+        var seed = props.seed != null ? props.seed : (mode === 'senal' ? 1.1 : 0.7);
+        for (j = 0; j < rows; j++) for (i = 0; i < cols; i++) {
+          var nx = i / cols, ny = j / rows;
+          v = fieldValue(nx, ny, seed, true, animate ? t * 0.35 : 0);
+          x = i * pitch + pitch / 2; y = j * pitch + pitch / 2;
+          ctx.beginPath();
+          if (v < 0.16) { ctx.fillStyle = faint; ctx.arc(x, y, pitch * 0.17, 0, TAU); ctx.fill(); continue; }
+          ctx.fillStyle = mixRgb(dots, blue, v);
+          var pulse = animate ? 1 + 0.16 * Math.sin(t * 5.4 - (nx + ny) * 7) : 1;
+          r = Math.min(pitch * 0.56, pitch * 0.5 * (0.24 + 0.8 * v) * pulse);
+          ctx.arc(x, y, r, 0, TAU); ctx.fill();
+        }
+      }
+      function loop(now) {
+        if (!alive) return;
+        if (visible) draw((now - t0) / 1000);
+        raf = requestAnimationFrame(loop);
+      }
+      if (mode === 'foto' && props.src) {
+        img = new Image();
+        img.onload = function () { if (alive) draw(0); };
+        img.src = props.src;
+      }
+      draw(0);
+      var ro = typeof ResizeObserver === 'function' ? new ResizeObserver(function () { draw((performance.now() - t0) / 1000); }) : null;
+      if (ro) ro.observe(cv);
+      var io = null;
+      if (animate) {
+        if (typeof IntersectionObserver === 'function') {
+          io = new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; });
+          io.observe(cv);
+        }
+        raf = requestAnimationFrame(loop);
+      }
+      return function () { alive = false; cancelAnimationFrame(raf); if (ro) ro.disconnect(); if (io) io.disconnect(); };
+    }, [mode, props.src, props.icon, props.grid, props.pitch, props.seed, props.animate, props.background]);
+    return h('canvas', {
+      ref: ref, className: cx('rl-trama', props.className), style: props.style,
+      role: props.label ? 'img' : undefined, 'aria-label': props.label || undefined, 'aria-hidden': props.label ? undefined : 'true',
+    });
+  }
+
+  /** El tiempo en puntos: un punto por minuto en las apps elegidas; sobre 60, un punto cada 5 minutos. */
+  function TimeDots(props) {
+    var total = Math.max(1, props.total || 15);
+    var value = Math.max(0, Math.min(props.value || 0, total));
+    var unit = total > 60 ? 5 : 1;
+    var n = Math.ceil(total / unit), on = Math.floor(value / unit), dots = [];
+    for (var i = 0; i < n; i++) dots.push(h('i', { key: i, className: cx('rl-time__dot', i < on && 'is-on') }));
+    return h('div', { className: cx('rl-time', props.dense && 'rl-time--dense', props.className) },
+      h('div', { className: 'rl-time__dots', role: 'img', 'aria-label': value + ' de ' + total + ' minutos' }, dots),
+      props.caption === false ? null : h('p', { className: 'rl-time__label' }, h('b', null, value + ' min'), ' de ' + total));
+  }
+
+  /* ---------- Acciones ---------- */
+
+  function Button(props) {
+    var kind = props.kind || 'primary';
+    return h('button', {
+      type: props.type || 'button', className: cx('rl-btn', 'rl-btn--' + kind, props.compact && 'rl-btn--compact', props.muted && 'rl-btn--muted', props.className),
+      disabled: props.disabled, onClick: props.onClick, 'aria-disabled': props.muted ? 'true' : undefined, style: props.style,
+    },
+    props.icon ? h(Icon, { name: props.icon, size: props.compact ? 18 : 20, strokeWidth: 2 }) : null,
+    h('span', null, props.children != null ? props.children : props.label));
+  }
+
+  function MissingHint(props) {
+    return h('div', { className: cx('rl-hint', props.className), role: 'status' },
+      h(Icon, { name: 'info', size: 18, strokeWidth: 2 }), h('span', null, props.text != null ? props.text : props.children));
+  }
+
+  /** Botón que dice qué falta: con missing, se ve apagado pero responde mostrando el aviso encima. */
+  function GuardedButton(props) {
+    var s = useState(null), shown = s[0], setShown = s[1];
+    var b = useState(0), bump = b[0], setBump = b[1];
+    var missing = props.missing == null ? null : props.missing;
+    useEffect(function () { setShown(function (prev) { return missing == null ? null : prev == null ? null : missing; }); }, [missing]);
+    function click(e) {
+      if (missing != null) {
+        if (shown === missing && !reduceMotion()) setBump(function (n) { return n + 1; });
+        setShown(missing);
+        if (props.onMissing) props.onMissing(missing);
+      } else if (props.onClick) props.onClick(e);
+    }
+    return h('div', { className: cx('rl-guarded', props.className) },
+      h('div', { className: cx('rl-guarded__hint', shown != null && 'is-open') },
+        h('div', { className: 'rl-guarded__inner' }, shown != null ? h(MissingHint, { key: bump, text: shown, className: bump ? 'rl-bump' : null }) : null)),
+      h(Button, { kind: props.kind, icon: props.icon, muted: missing != null, onClick: click }, props.children != null ? props.children : props.label));
+  }
+
+  function PlainAction(props) {
+    return h('button', { type: 'button', className: cx('rl-plain', props.className), disabled: props.disabled, onClick: props.onClick, style: Object.assign({ color: props.color }, props.style) },
+      props.icon ? h(Icon, { name: props.icon, size: 20 }) : null, h('span', null, props.children != null ? props.children : props.label));
+  }
+
+  function IconAction(props) {
+    return h('button', { type: 'button', className: cx('rl-iconbtn', props.filled && 'is-filled', props.className), 'aria-label': props.label, onClick: props.onClick },
+      h(Icon, { name: props.icon, size: 20 }));
+  }
+
+  function GlassIconButton(props) {
+    var size = props.size || 44;
+    return h('button', { type: 'button', className: cx('rl-glass-btn', props.className), 'aria-label': props.label, onClick: props.onClick, style: { width: size, height: size } },
+      h(Icon, { name: props.icon, size: 20, strokeWidth: 2 }));
+  }
+
+  function GlassTextButton(props) {
+    return h('button', { type: 'button', className: cx('rl-glass-text', props.className), onClick: props.onClick, style: { color: props.color } },
+      props.icon ? h(Icon, { name: props.icon, size: 18 }) : null, h('span', null, props.children != null ? props.children : props.label));
+  }
+
+  /* ---------- Selección ---------- */
+
+  function SegmentedControl(props) {
+    var options = props.options || [];
+    var idx = -1;
+    options.forEach(function (o, i) { if (optValue(o) === props.value) idx = i; });
+    var allowDeselect = props.allowDeselect !== false;
+    return h('div', { className: cx('rl-seg', props.className), role: 'radiogroup', 'aria-label': props.label, style: { '--n': options.length, '--i': Math.max(0, idx) } },
+      h('span', { className: cx('rl-seg__thumb', idx < 0 && 'is-hidden'), 'aria-hidden': 'true' }),
+      options.map(function (o, i) {
+        var active = i === idx;
+        return h('button', {
+          key: String(optValue(o)), type: 'button', role: 'radio', 'aria-checked': active ? 'true' : 'false', className: cx('rl-seg__opt', active && 'is-on'),
+          onClick: function () { if (props.onChange) props.onChange(active && allowDeselect ? null : optValue(o)); },
+        }, optLabel(o));
+      }));
+  }
+
+  function ScaleControl(props) {
+    var opts = [1, 2, 3, 4, 5].map(function (n) { return [n, String(n)]; });
+    return h('div', { className: cx('rl-scale', props.className) },
+      h(SegmentedControl, { options: opts, value: props.value, onChange: props.onChange, label: props.label }),
+      h('div', { className: 'rl-scale__ends' }, h('span', null, '1 · ' + (props.low || 'Nada')), h('span', null, '5 · ' + (props.high || 'Mucho'))));
+  }
+
+  function QuickChoice(props) {
+    return h('button', { type: 'button', className: cx('rl-chip', props.selected && 'is-on', props.className), 'aria-pressed': props.selected ? 'true' : 'false', onClick: props.onClick },
+      props.icon ? h(Icon, { name: props.icon, size: 18 }) : null, h('span', null, props.children != null ? props.children : props.label));
+  }
+
+  function CheckMark(props) {
+    var size = props.size || 24, box = size * 0.6;
+    return h('span', { className: cx('rl-check', props.checked && 'is-on', props.className), style: { width: size, height: size }, 'aria-hidden': 'true' },
+      h('svg', { viewBox: '0 0 10 10', width: box, height: box }, h('path', { d: 'M1.2 5.2L4 7.8L8.8 2.4', pathLength: 1, strokeWidth: 2.2 * 10 / box })));
+  }
+
+  function RadioMark(props) {
+    return h('span', { className: cx('rl-radio', props.selected && 'is-on', props.className), 'aria-hidden': 'true' });
+  }
+
+  function StarRating(props) {
+    var value = props.value || 0;
+    return h('div', { className: cx('rl-stars', props.className), role: 'radiogroup', 'aria-label': props.label || 'Calificación' },
+      [1, 2, 3, 4, 5].map(function (n) {
+        var filled = value >= n;
+        return h('button', {
+          key: n, type: 'button', role: 'radio', 'aria-checked': value === n ? 'true' : 'false', 'aria-label': n + ' de 5', className: cx('rl-star', filled && 'is-on'),
+          onClick: function () { if (props.onChange) props.onChange(value === n ? null : n); },
+        }, h(Icon, { name: filled ? 'estrella-llena' : 'estrella', size: 34 }));
+      }));
+  }
+
+  function formatDuration(seconds) {
+    if (seconds < 60) return seconds + ' s';
+    if (seconds % 3600 === 0) return seconds / 3600 + ' h';
+    if (seconds > 3600) return Math.floor(seconds / 3600) + ' h ' + Math.floor((seconds % 3600) / 60) + ' min';
+    return Math.floor(seconds / 60) + ' min';
+  }
+
+  /** Botón − o + que repite el paso al mantenerlo presionado (450 ms y luego cada 110 ms). */
+  function RepeatButton(props) {
+    var timer = useRef(null), stepRef = useRef(props.onStep);
+    stepRef.current = props.onStep;
+    function stop() { if (timer.current) { clearTimeout(timer.current); clearInterval(timer.current); timer.current = null; } }
+    useEffect(function () { return stop; }, []);
+    useEffect(function () { if (props.disabled) stop(); }, [props.disabled]);
+    return h('button', {
+      type: 'button', className: 'rl-step', disabled: props.disabled, 'aria-label': props.label,
+      onClick: function () { stepRef.current(); },
+      onPointerDown: function () {
+        stop();
+        timer.current = setTimeout(function () { timer.current = setInterval(function () { stepRef.current(); }, 110); }, 450);
+      },
+      onPointerUp: stop, onPointerLeave: stop, onPointerCancel: stop,
+    }, props.symbol);
+  }
+
+  function DurationStepper(props) {
+    var seconds = props.seconds;
+    function step(c) { return c < 600 ? 60 : c < 3600 ? 300 : c < 7200 ? 900 : 1800; }
+    function dec() { if (props.onChange) props.onChange(Math.max(60, seconds - step(seconds - 1))); }
+    function inc() { if (props.onChange) props.onChange(Math.min(21600, seconds + step(seconds))); }
+    return h('div', { className: cx('rl-stepper', props.className) },
+      h('div', { className: 'rl-stepper__text' },
+        h('span', { key: seconds, className: 'rl-stepper__value', 'aria-live': 'polite' }, formatDuration(seconds)),
+        h('span', { className: 'rl-stepper__label' }, props.label)),
+      h(RepeatButton, { label: 'Restar tiempo', symbol: '−', disabled: seconds <= 60, onStep: dec }),
+      h(RepeatButton, { label: 'Sumar tiempo', symbol: '+', disabled: seconds >= 21600, onStep: inc }));
+  }
+
+  function CountStepper(props) {
+    var min = props.min != null ? props.min : 1, max = props.max != null ? props.max : 7, value = props.value;
+    return h('div', { className: cx('rl-stepper', props.className) },
+      h('span', { className: 'rl-stepper__count', 'aria-live': 'polite' }, props.label),
+      h(RepeatButton, { label: 'Restar', symbol: '−', disabled: value <= min, onStep: function () { if (props.onChange) props.onChange(Math.max(min, value - 1)); } }),
+      h(RepeatButton, { label: 'Sumar', symbol: '+', disabled: value >= max, onStep: function () { if (props.onChange) props.onChange(Math.min(max, value + 1)); } }));
+  }
+
+  /* ---------- Campos ---------- */
+
+  /** El renglón: lo que escribe la persona en tinta sobre una línea azul (1,5 px; 2,5 px con foco). */
+  function RenglonField(props) {
+    var Tag = props.multiline ? 'textarea' : 'input';
+    var controlled = props.value !== undefined;
+    var attrs = {
+      className: 'rl-field__input', placeholder: props.placeholder, maxLength: props.maxLength || (props.multiline ? 600 : 120),
+      autoCapitalize: 'sentences', rows: props.multiline ? 3 : undefined, onKeyDown: props.onKeyDown,
+      onChange: function (e) { if (props.onChange) props.onChange(e.target.value); },
+    };
+    if (controlled) attrs.value = props.value; else attrs.defaultValue = props.defaultValue;
+    return h('label', { className: cx('rl-field', props.className) },
+      h('span', { className: 'rl-field__label' }, props.label), h(Tag, attrs));
+  }
+
+  function RenglonArea(props) {
+    return h(RenglonField, Object.assign({}, props, { multiline: true, maxLength: props.maxLength || 600 }));
+  }
+
+  function SearchField(props) {
+    var s = useState(props.defaultValue || ''), inner = s[0], setInner = s[1];
+    var value = props.value !== undefined ? props.value : inner;
+    function set(v) { if (props.value === undefined) setInner(v); if (props.onChange) props.onChange(v); }
+    return h('div', { className: cx('rl-search', value && 'has-value', props.className), role: 'search' },
+      h(Icon, { name: 'buscar', size: 20 }),
+      h('input', { className: 'rl-search__input', type: 'search', value: value, placeholder: props.placeholder, 'aria-label': props.placeholder, onChange: function (e) { set(e.target.value); } }),
+      value ? h(IconAction, { icon: 'cerrar', label: 'Borrar la búsqueda', onClick: function () { set(''); } }) : null);
+  }
+
+  /**
+   * La firma «Vuelve a ___.»: las palabras de la persona en tinta sobre el renglón azul. El renglón está
+   * desde el comienzo y las letras se escriben encima en 450 ms (sin animación si se pide reducir).
+   */
+  function Signature(props) {
+    var prefix = props.prefix != null ? props.prefix : 'Vuelve a ';
+    var raw = String(props.words || '').trim().replace(/\.+$/, '');
+    var phrase = raw ? raw.charAt(0).toLowerCase() + raw.slice(1) : '';
+    var animate = props.animate !== false && !reduceMotion();
+    var s = useState(animate ? 0 : phrase.length), shown = s[0], setShown = s[1];
+    useEffect(function () {
+      if (!animate) { setShown(phrase.length); return undefined; }
+      setShown(0);
+      var n = 0, len = phrase.length, every = Math.max(16, 450 / Math.max(1, len)), timer = 0;
+      function tick() { n += 1; setShown(n); if (n < len) timer = setTimeout(tick, every); }
+      timer = setTimeout(tick, every);
+      return function () { clearTimeout(timer); };
+    }, [phrase, animate]);
+    var variant = props.variant || 'title';
+    return h(props.as || 'p', { className: cx('rl-signature', 'rl-signature--' + variant, props.className), 'aria-label': prefix + phrase + '.' },
+      h('span', { 'aria-hidden': 'true' }, prefix,
+        h('span', { className: 'rl-sub' }, phrase.slice(0, shown), h('span', { className: 'rl-signature__rest' }, phrase.slice(shown))), '.'));
+  }
+
+  /* ---------- Listas ---------- */
+
+  function ListSection(props) {
+    return h('section', { className: cx('rl-section', props.className) },
+      props.title ? h('h3', { className: 'rl-section__title' }, props.title) : null,
+      h('div', { className: 'rl-section__card' }, props.children),
+      props.footer ? h('p', { className: 'rl-section__footer' }, props.footer) : null);
+  }
+
+  function IconTile(props) {
+    return h('span', { className: cx('rl-icontile', props.className), style: { color: props.tint } }, h(Icon, { name: props.icon, size: 22 }));
+  }
+
+  function ListRow(props) {
+    var Tag = props.onClick ? 'button' : 'div';
+    var lead = props.leading || (props.icon ? h(IconTile, { icon: props.icon, tint: props.iconTint }) : null);
+    var hasValue = props.value != null && props.value !== '';
+    return h(Tag, {
+      type: props.onClick ? 'button' : undefined, onClick: props.onClick,
+      className: cx('rl-row', lead && 'rl-row--lead', hasValue && 'rl-row--value', props.onClick && 'rl-row--action', props.className),
+    },
+    lead ? h('span', { className: 'rl-row__lead' }, lead) : null,
+    h('span', { className: 'rl-row__text' },
+      h('span', { className: 'rl-row__title', style: { color: props.titleColor } }, props.title),
+      props.subtitle ? h('span', { className: 'rl-row__subtitle' }, props.subtitle) : null),
+    hasValue ? h('span', { className: cx('rl-row__value', props.valueIsVoice && 'is-voice') }, props.value) : null,
+    props.trailing ? h('span', { className: 'rl-row__trailing' }, props.trailing) : null,
+    props.chevron ? h(Icon, { name: 'siguiente', size: 16, strokeWidth: 2.2, className: 'rl-row__chevron' }) : null);
+  }
+
+  /** Dato con su rótulo para resúmenes: lo que escribió la persona va en voice. */
+  function FactRow(props) {
+    return h(ListRow, {
+      icon: props.icon, title: props.label, value: props.value, valueIsVoice: props.valueIsVoice !== false,
+      titleColor: 'var(--graphite)', chevron: !!props.onClick, onClick: props.onClick, className: props.className,
+    });
+  }
+
+  function Notice(props) {
+    var error = props.tone === 'error';
+    return h('div', { className: cx('rl-notice', error && 'rl-notice--error', props.className), role: error ? 'alert' : 'note' },
+      h('span', { className: 'rl-notice__icon' }, h(Icon, { name: error ? 'error' : (props.icon || 'info'), size: 20 })),
+      h('div', { className: 'rl-notice__body' },
+        props.title ? h('p', { className: 'rl-notice__title' }, props.title) : null,
+        h('p', { className: 'rl-notice__text' }, props.text != null ? props.text : props.children),
+        props.actions ? h('div', { className: 'rl-notice__actions' }, props.actions) : null));
+  }
+
+  function StatusChip(props) {
+    return h('span', { className: cx('rl-status', props.onPanel && 'is-on-panel', props.className) },
+      props.icon ? h(Icon, { name: props.icon, size: 16 }) : null, h('span', null, props.text != null ? props.text : props.children));
+  }
+
+  function Panel(props) {
+    return h('div', { className: cx('rl-panel', props.className), style: Object.assign(props.padding != null ? { padding: props.padding } : {}, props.style) }, props.children);
+  }
+
+  function SectionHeader(props) {
+    return h('div', { className: cx('rl-sechead', props.className) },
+      h('h2', { className: 'rl-sechead__title' }, props.title),
+      props.action ? h(PlainAction, { color: 'var(--graphite)', onClick: props.onAction }, props.action) : null);
+  }
+
+  /* ---------- Fotos ---------- */
+
+  /** Contenido de una ficha: foto, foto en trama o ícono del kit sobre niebla. */
+  function Picture(props) {
+    if (props.src && props.trama) return h('span', { className: 'rl-picture' }, h(Trama, { mode: 'foto', src: props.src, pitch: props.pitch || 6, label: props.alt }));
+    if (props.src) return h('span', { className: 'rl-picture' }, h('img', { src: props.src, alt: props.alt || '', loading: 'lazy' }));
+    return h('span', { className: 'rl-picture rl-picture--icon' }, h(Icon, { name: props.icon || 'actividad', size: props.iconSize || 36, label: props.alt }));
+  }
+
+  function PhotoCard(props) {
+    return h('button', { type: 'button', className: cx('rl-photocard', props.className), onClick: props.onClick, style: { width: props.width || 152 } },
+      h('span', { className: 'rl-photocard__pic' }, h(Picture, { src: props.src, trama: props.trama, icon: props.icon, alt: props.alt, iconSize: 40 })),
+      h('span', { className: 'rl-photocard__title' }, props.title),
+      props.subtitle ? h('span', { className: 'rl-photocard__sub' }, props.subtitle) : null);
+  }
+
+  function PictureTile(props) {
+    var r = props.cornerRadius != null ? props.cornerRadius : 22;
+    return h('button', {
+      type: 'button', role: 'radio', 'aria-checked': props.selected ? 'true' : 'false', 'aria-label': props.description || props.label,
+      className: cx('rl-tile', props.selected && 'is-on', props.prominent && 'rl-tile--prominent', props.className), onClick: props.onClick,
+      style: { '--aspect': props.aspect || 0.8, '--r': r + 'px' },
+    },
+    h('span', { className: 'rl-tile__frame' },
+      h('span', { className: 'rl-tile__pic' }, h(Picture, { src: props.src, trama: props.trama, icon: props.icon, iconSize: 30 })),
+      h('span', { className: 'rl-tile__ring' }),
+      props.selected ? h('span', { className: 'rl-tile__check' }, h(CheckMark, { checked: true, size: 22 })) : null),
+    props.label ? h('span', { className: 'rl-tile__label' }, props.label) : null);
+  }
+
+  /** Foto grande con una banda de vidrio abajo; dark: la foto es oscura bajo el texto y la banda toma el tema oscuro. */
+  function PhotoHero(props) {
+    var Tag = props.onClick ? 'button' : 'div';
+    return h(Tag, {
+      type: props.onClick ? 'button' : undefined, onClick: props.onClick, 'aria-label': props.clickLabel,
+      className: cx('rl-hero', props.className), style: { '--aspect': props.aspect || 0.9 },
+    },
+    h('span', { className: 'rl-hero__pic' }, h(Picture, { src: props.src, trama: props.trama, icon: props.icon, alt: props.alt, iconSize: 56 })),
+    h('span', { className: 'rl-hero__band', 'data-theme': props.dark ? 'dark' : 'light' }, props.children));
+  }
+
+  function Avatar(props) {
+    var size = props.size || 72;
+    var initial = (props.name || '').trim().charAt(0).toUpperCase();
+    var content;
+    if (props.src) content = h('img', { src: props.src, alt: '' });
+    else if (props.emoji) content = h('span', { className: 'rl-avatar__emoji', style: { fontSize: size * 0.5 } }, props.emoji);
+    else if (initial) content = h('span', { style: { fontSize: 28 * size / 72 } }, initial);
+    else content = h(Icon, { name: 'perfil', size: Math.round(size * 0.46) });
+    return h('span', { className: cx('rl-avatar', props.className), role: 'img', 'aria-label': props.label || props.name || 'Perfil', style: { width: size, height: size, background: props.background } }, content);
+  }
+
+  function EmojiTile(props) {
+    return h('button', {
+      type: 'button', role: 'radio', 'aria-checked': props.selected ? 'true' : 'false', 'aria-label': props.label,
+      className: cx('rl-emoji', props.selected && 'is-on', props.className), onClick: props.onClick,
+    },
+    h('span', { className: 'rl-emoji__disc' }, props.src ? h('img', { src: props.src, alt: '' }) : h('span', { className: 'rl-emoji__char', 'aria-hidden': 'true' }, props.emoji)),
+    h('span', { className: 'rl-emoji__ring' }));
+  }
+
+  /* ---------- Estructura ---------- */
+
+  function ProgressLine(props) {
+    var p = Math.max(0, Math.min(1, props.progress || 0));
+    return h('div', {
+      className: cx('rl-progress', props.className), role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': Math.round(p * 100), 'aria-label': props.label,
+      style: { '--p': p, height: props.height || 6 },
+    }, h('span', { className: 'rl-progress__fill' }));
+  }
+
+  function StepProgress(props) {
+    return h(ProgressLine, { progress: props.progress, className: cx('rl-progress--step', props.className), label: props.step ? 'Paso ' + props.step : 'Avance' });
+  }
+
+  function Carousel(props) {
+    return h('div', { className: cx('rl-carousel', props.bleed === false && 'is-contained', props.className), style: { '--gap': (props.spacing != null ? props.spacing : 12) + 'px' } }, props.children);
+  }
+
+  /** Marco de pantalla de la app: barra de vidrio, título, contenido que se desplaza y acción flotante. */
+  function Screen(props) {
+    var s = useState(false), scrolled = s[0], setScrolled = s[1];
+    var hasTitle = props.title != null;
+    return h('div', { className: cx('rl-screen', scrolled && 'is-scrolled', props.bottom && 'has-bottom', props.className), style: Object.assign({ height: props.height }, props.style) },
+      h('div', { className: 'rl-screen__bar' },
+        h('div', { className: 'rl-screen__side' }, props.onBack ? h(GlassIconButton, { icon: props.closeIcon ? 'cerrar' : 'volver', label: props.backLabel || 'Volver', onClick: props.onBack }) : props.leading),
+        h('div', { className: 'rl-screen__center' }, props.progress != null ? h(StepProgress, { progress: props.progress, step: props.step }) : hasTitle && scrolled ? h('span', { className: 'rl-screen__bar-title' }, props.title) : null),
+        h('div', { className: 'rl-screen__side rl-screen__side--end' }, props.trailing)),
+      h('div', { className: 'rl-screen__scroll', onScroll: function (e) { setScrolled(e.currentTarget.scrollTop > 0); } },
+        h('div', { className: 'rl-screen__content' },
+          props.header,
+          hasTitle ? h('div', { className: 'rl-screen__head' },
+            props.eyebrow ? h('p', { className: 'rl-screen__eyebrow' }, props.eyebrow) : null,
+            h('h1', { className: cx('rl-screen__title', props.serif === false && 'is-sans') }, props.title),
+            props.subtitle ? h('p', { className: 'rl-screen__subtitle' }, props.subtitle) : null) : null,
+          props.children)),
+      props.bottom ? h('div', { className: 'rl-screen__bottom' }, props.bottom) : null);
+  }
+
+  /** Hoja flotante de vidrio. inline: se dibuja dentro de su contenedor (vistas previas, maquetas). */
+  function Sheet(props) {
+    useEffect(function () {
+      if (!props.open) return undefined;
+      function onKey(e) { if (e.key === 'Escape' && props.onDismiss) props.onDismiss(); }
+      document.addEventListener('keydown', onKey);
+      return function () { document.removeEventListener('keydown', onKey); };
+    }, [props.open, props.onDismiss]);
+    if (!props.open) return null;
+    return h('div', { className: cx('rl-sheet-layer', props.inline && 'is-inline') },
+      h('div', { className: 'rl-sheet-scrim', onClick: props.onDismiss }),
+      h('div', { className: cx('rl-sheet', props.tall && 'is-tall'), role: 'dialog', 'aria-modal': 'true', 'aria-label': props.title },
+        h('div', { className: 'rl-sheet__handle' }),
+        props.title || props.done ? h('div', { className: 'rl-sheet__head' },
+          h('h2', { className: 'rl-sheet__title' }, props.title),
+          props.done ? h(GlassTextButton, { onClick: props.onDismiss }, props.done) : null) : null,
+        h('div', { className: 'rl-sheet__body' }, props.children)));
+  }
+
+  /** Barra de pestañas flotante. En 3.0 la elegida lleva el ícono lleno y su nombre sobre el renglón. */
+  function TabBar(props) {
+    var items = props.items || [];
+    var sel = props.selected || 0;
+    return h('nav', { className: cx('rl-tabbar', props.className), role: 'tablist', style: { '--n': items.length, '--i': sel } },
+      h('span', { className: 'rl-tabbar__indicator', 'aria-hidden': 'true' }),
+      items.map(function (it, i) {
+        var active = i === sel;
+        return h('button', {
+          key: it.label, type: 'button', role: 'tab', 'aria-selected': active ? 'true' : 'false', className: cx('rl-tab', active && 'is-on'),
+          onClick: function () { if (props.onSelect) props.onSelect(i); },
+        },
+        h(Icon, { key: active ? 'on' : 'off', name: active && it.iconSelected ? it.iconSelected : it.icon, size: 24, strokeWidth: active ? 2.1 : 1.7 }),
+        h('span', { className: cx('rl-tab__label', active && 'rl-sub') }, it.label));
+      }));
+  }
+
+  var C = window;
+  C.Relevo = Object.assign(C.Relevo || {}, {
+    Wordmark: Wordmark, Subrayado: Subrayado, Icon: Icon, Trama: Trama, TimeDots: TimeDots,
+    Button: Button, GuardedButton: GuardedButton, MissingHint: MissingHint, PlainAction: PlainAction, IconAction: IconAction,
+    GlassIconButton: GlassIconButton, GlassTextButton: GlassTextButton,
+    SegmentedControl: SegmentedControl, ScaleControl: ScaleControl, QuickChoice: QuickChoice, CheckMark: CheckMark, RadioMark: RadioMark,
+    StarRating: StarRating, DurationStepper: DurationStepper, CountStepper: CountStepper,
+    RenglonField: RenglonField, RenglonArea: RenglonArea, SearchField: SearchField, Signature: Signature,
+    ListSection: ListSection, ListRow: ListRow, FactRow: FactRow, IconTile: IconTile, Notice: Notice, StatusChip: StatusChip,
+    Panel: Panel, SectionHeader: SectionHeader,
+    PhotoCard: PhotoCard, PictureTile: PictureTile, PhotoHero: PhotoHero, Avatar: Avatar, EmojiTile: EmojiTile,
+    Screen: Screen, StepProgress: StepProgress, ProgressLine: ProgressLine, Carousel: Carousel, Sheet: Sheet, TabBar: TabBar,
+    formatDuration: formatDuration,
+  });
+})();

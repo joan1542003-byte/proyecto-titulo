@@ -1,0 +1,17 @@
+<!-- @dsCard group="Campos" height=200 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>RenglonField — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo', style: { maxWidth: 420, gap: 22 } },
+      h(R.RenglonField, { label: 'Actividad', defaultValue: 'Leer 10 páginas' }),
+      h(R.RenglonField, { label: 'Cómo empieza', placeholder: 'Abrir el libro' }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

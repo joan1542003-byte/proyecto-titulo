@@ -1,0 +1,16 @@
+<!-- @dsCard group="Fotos" height=130 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Avatar — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h('div', { className: 'rl-demo-row', style: { gap: 16 } },
+      h(R.Avatar, { size: 72, emoji: '📚', label: 'Libros' }), h(R.Avatar, { size: 72, name: 'Ana' }), h(R.Avatar, { size: 72 }), h(R.Avatar, { size: 34, name: 'Ana' })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

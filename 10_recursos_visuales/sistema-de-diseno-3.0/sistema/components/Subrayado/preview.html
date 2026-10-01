@@ -1,0 +1,17 @@
+<!-- @dsCard group="Marca" height=170 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Subrayado — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' },
+      h('p', { style: { margin: 0, font: '380 44px/48px var(--font-serif)', letterSpacing: '-0.015em' } }, 'Vuelve a ', h(R.Subrayado, null, 'leer'), '.'),
+      h('p', { style: { margin: 0, font: '400 17px/26px var(--font-sans)' } }, 'Relevo suena ', h(R.Subrayado, null, 'donde empieza'), ' lo que querías hacer.'));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

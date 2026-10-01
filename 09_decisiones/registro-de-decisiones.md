@@ -1104,9 +1104,16 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Instrument Serif en titulares.
 
   Contradice D-068 (serif rechazada el 25 de septiembre) y D-070 y D-073 (sin degradados ni patrones), así que el autor decide entre esta dirección y la sobria de la versión 1, entre serif y grotesca en titulares, y entre coral y magenta.
-- **Documentación:** [identidad «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md) y su [lámina](../10_recursos_visuales/marca-el-subrayado/lamina-el-subrayado-2026-09-30.html).
+- **Sistema 3.0 (1 de octubre):** a pedido del autor, la versión 3 se desarrolló como sistema de diseño en el tipo Design System de claude.ai: libro de marca con voz y tono, color y variantes, tokens en tema claro y oscuro, 43 componentes, 102 íconos, logotipo, ícono de la app y trama. Lo pendiente se resolvió con lo recomendado, como supuesto de trabajo: Newsreader, una sola tinta y trama en íconos solo en momentos de marca. También corrige dos pares de la app que no llegaban a 3:1: el borde de las marcas de selección y la flecha de las filas pasan a grafito.
+- **Documentación:** [identidad «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md), su [lámina](../10_recursos_visuales/marca-el-subrayado/lamina-el-subrayado-2026-09-30.html) y el [sistema de diseño 3.0](../10_recursos_visuales/26_sistema-de-diseno-3.0-2026-10-01.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-01 — D-098, sistema de diseño 3.0
+
+- **Qué cambió:** D-098 suma el sistema de diseño 3.0 y los supuestos con que se resolvió lo pendiente.
+- **Cómo estaba antes:** D-098 era una lámina de propuesta, decidida en parte.
+- **Por qué:** pedido del autor.
 
 ### 2026-09-30 — D-098, decisiones del autor y versión 3
 

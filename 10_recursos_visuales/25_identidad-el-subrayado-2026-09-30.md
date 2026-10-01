@@ -6,6 +6,8 @@
 - [versión 2, con las referencias del autor](marca-el-subrayado/lamina-el-subrayado-v2-2026-09-30.html);
 - [versión 1, sobria](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html).
 
+El 1 de octubre la versión 3 se desarrolló como [sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md), con tokens, componentes, recursos y libro de marca.
+
 ## Versión 3: lo que decidió el autor y una propuesta más neutra
 
 **Decidido por el autor el 30 de septiembre:**
@@ -203,6 +205,12 @@ Ward, E., Yang, S., Romaniuk, J. y Beal, V. (2020). Building a unique brand iden
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-01 — Enlace al sistema de diseño 3.0
+
+- **Qué cambió:** el encabezado enlaza el documento 26, que desarrolla la versión 3 como sistema de diseño.
+- **Cómo estaba antes:** el documento terminaba en la propuesta y sus decisiones pendientes.
+- **Por qué:** pedido del autor del 1 de octubre.
 
 ### 2026-09-30 — Versión 3: decisiones del autor y propuesta neutra
 

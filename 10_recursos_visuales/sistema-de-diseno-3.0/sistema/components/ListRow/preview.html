@@ -1,0 +1,21 @@
+<!-- @dsCard group="Listas" height=430 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ListRow — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var s = React.useState('15'), v = s[0], set = s[1];
+    function opt(val, label) { return h(R.ListRow, { key: val, title: label, trailing: h(R.RadioMark, { selected: v === val }), onClick: function () { set(val); } }); }
+    return h('div', { className: 'rl-demo', style: { maxWidth: 440 } },
+      h(R.ListSection, null,
+        h(R.ListRow, { icon: 'actividad', title: 'Actividad', value: 'Leer 10 páginas', valueIsVoice: true }),
+        h(R.ListRow, { leading: h(R.Avatar, { name: 'Ana', size: 30 }), title: 'Tu perfil', subtitle: 'Código, intereses y apariencia', chevron: true, onClick: function () {} })),
+      h(R.ListSection, { title: 'Después de cuánto uso' }, opt('15', '15 min'), opt('30', '30 min'), opt('45', '45 min')));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

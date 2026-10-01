@@ -1,0 +1,22 @@
+<!-- @dsCard group="Estructura" height=700 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Screen — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var s = React.useState(''), v = s[0], set = s[1];
+    var ideas = ['Leer', 'Dibujar', 'Salir a caminar', 'Ordenar'];
+    return h('div', { className: 'rl-demo', style: { alignItems: 'center' } }, h('div', { className: 'rl-demo-phone' },
+      h(R.Screen, { title: '¿Qué quieres hacer?', onBack: function () {}, closeIcon: true, progress: 0.25, step: '1 de 4',
+        bottom: h(R.GuardedButton, { missing: v.trim() ? null : 'Escribe qué quieres hacer o toca una idea.' }, 'Seguir') },
+        h('div', { style: { display: 'flex', flexDirection: 'column', gap: 18 } },
+          h(R.RenglonField, { label: 'Actividad', placeholder: 'Leer 10 páginas', value: v, onChange: set }),
+          h('div', { className: 'rl-demo-row', style: { gap: 8 } }, ideas.map(function (i) { return h(R.QuickChoice, { key: i, selected: v === i, onClick: function () { set(i); } }, i); }))))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

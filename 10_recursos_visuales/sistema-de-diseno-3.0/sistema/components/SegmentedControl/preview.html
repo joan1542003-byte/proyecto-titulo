@@ -1,0 +1,19 @@
+<!-- @dsCard group="Selección" height=170 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>SegmentedControl — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var s = React.useState('auto'), v = s[0], set = s[1];
+    var t = React.useState(null), v2 = t[0], set2 = t[1];
+    return h('div', { className: 'rl-demo', style: { maxWidth: 420 } },
+      h(R.SegmentedControl, { label: 'Tema', options: [['light', 'Claro'], ['dark', 'Oscuro'], ['auto', 'Automático']], value: v, onChange: set, allowDeselect: false }),
+      h(R.SegmentedControl, { label: '¿Cómo te fue?', options: [['bien', 'Bien'], ['regular', 'Regular'], ['mal', 'Mal']], value: v2, onChange: set2 }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

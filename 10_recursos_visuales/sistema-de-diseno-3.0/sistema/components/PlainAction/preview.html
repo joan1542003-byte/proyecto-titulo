@@ -1,0 +1,16 @@
+<!-- @dsCard group="Acciones" height=120 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>PlainAction — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h('div', { className: 'rl-demo-row', style: { gap: 20 } },
+      h(R.PlainAction, { icon: 'probar' }, 'Probar otra vez'), h(R.PlainAction, { color: 'var(--graphite)' }, 'Ver todas'), h(R.PlainAction, { disabled: true }, 'Sin conexión')));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

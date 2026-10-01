@@ -1,0 +1,15 @@
+<!-- @dsCard group="Estructura" height=120 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ProgressLine — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo', style: { maxWidth: 420 } }, h(R.ProgressLine, { progress: 0.4, label: '6 de 15 minutos' }), h('p', { className: 'rl-demo-cap' }, '6 min de 15'));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

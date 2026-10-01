@@ -1,0 +1,19 @@
+<!-- @dsCard group="Listas" height=330 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ListSection — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo', style: { maxWidth: 440 } },
+      h(R.ListSection, { title: 'Ajustes', footer: 'Puedes cambiarlos cuando quieras.' },
+        h(R.ListRow, { icon: 'avisos', title: 'Avisos y resúmenes', chevron: true, onClick: function () {} }),
+        h(R.ListRow, { icon: 'tema', title: 'Apariencia', value: 'Automática', chevron: true, onClick: function () {} }),
+        h(R.ListRow, { icon: 'privacidad', title: 'Tus datos', chevron: true, onClick: function () {} })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Estructura" height=520 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Sheet — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var s = React.useState(true), open = s[0], set = s[1];
+    return h('div', { className: 'rl-demo', style: { alignItems: 'center' } }, h('div', { className: 'rl-demo-phone', style: { height: 460 } },
+      h(R.Screen, { title: 'Perfil', serif: false }, h(R.Button, { kind: 'secondary', onClick: function () { set(true); } }, 'Abrir la hoja')),
+      h(R.Sheet, { open: open, inline: true, title: 'Tu imagen', done: 'Listo', onDismiss: function () { set(false); } },
+        h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 } },
+          ['📚', '🎸', '🪴', '☕', '👟', '🎨', '🧩', '🚲'].map(function (e, i) { return h(R.EmojiTile, { key: i, emoji: e, label: 'Emoji ' + (i + 1), selected: i === 0 }); })))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

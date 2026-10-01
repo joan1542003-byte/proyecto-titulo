@@ -1,0 +1,19 @@
+<!-- @dsCard group="Marca" height=300 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Icon — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  var SET = ['inicio', 'inicio-lleno', 'ruta', 'ruta-llena', 'perfil', 'perfil-lleno', 'actividad', 'primer-paso', 'lugar', 'parlante', 'apps', 'senal', 'tiempo', 'esperando', 'telefono', 'silenciar', 'comence', 'despues', 'cambie', 'agregar', 'editar', 'borrar', 'listo', 'ajustes'];
+  function Demo() {
+    return h('div', { className: 'rl-demo' },
+      h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(76px, 1fr))', gap: 8 } },
+        SET.map(function (n) { return h('div', { key: n, style: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, padding: '12px 4px', background: 'var(--card)', borderRadius: 18 } }, h(R.Icon, { name: n, size: 24 }), h('span', { className: 'rl-demo-cap', style: { fontSize: 11, lineHeight: '14px' } }, n)); })),
+      h('div', { className: 'rl-demo-row', style: { gap: 18 } }, [16, 20, 24, 32, 48].map(function (s) { return h(R.Icon, { key: s, name: 'parlante', size: s }); }), h('span', { className: 'rl-demo-cap' }, 'El trazo se adelgaza al crecer.')));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

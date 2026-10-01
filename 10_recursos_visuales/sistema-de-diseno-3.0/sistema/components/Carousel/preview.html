@@ -1,0 +1,19 @@
+<!-- @dsCard group="Estructura" height=330 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Carousel — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h(R.Carousel, null,
+      h(R.PhotoCard, { title: 'Hacer pan', subtitle: 'Sacar la harina', src: '/_blob/89d7b5b600ba8f7872fb00550cd251ee' }),
+      h(R.PhotoCard, { title: 'Pintar', subtitle: 'Mojar el pincel', src: '/_blob/336ad297f99c76f50c1ee6bfcb92fbbe' }),
+      h(R.PhotoCard, { title: 'Escribir', subtitle: 'Abrir el cuaderno', src: '/_blob/dfc7ab984fb85bed5feba468e39563ca' }),
+      h(R.PhotoCard, { title: 'Aprender', subtitle: 'Leer la primera página', src: '/_blob/91cce8c4672f239f69c61686ea36f7b0' })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

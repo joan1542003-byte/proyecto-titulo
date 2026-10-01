@@ -1,0 +1,614 @@
+[
+ {
+  "name": "accesibilidad",
+  "label": "Accesibilidad",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "actividad",
+  "label": "Actividad",
+  "origin": "d098",
+  "accent": true
+ },
+ {
+  "name": "advertencia",
+  "label": "Advertencia",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "agregar",
+  "label": "Agregar",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "ajustes",
+  "label": "Ajustes",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "apps",
+  "label": "Apps elegidas",
+  "origin": "d098",
+  "accent": true
+ },
+ {
+  "name": "avisos",
+  "label": "Avisos del teléfono",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "ayuda",
+  "label": "Ayuda",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "bateria",
+  "label": "Batería del objeto",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "bicicleta",
+  "label": "Andar en bicicleta",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "borrar",
+  "label": "Borrar",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "buscar",
+  "label": "Buscar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "calendario",
+  "label": "Calendario",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "cambie",
+  "label": "Cambié de idea",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "caminar",
+  "label": "Caminar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "carta",
+  "label": "Escribirle a alguien",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "cerrar",
+  "label": "Cerrar",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "cerrar-sesion",
+  "label": "Cerrar sesión",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "cocinar",
+  "label": "Cocinar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "codigo",
+  "label": "Código de participante",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "comence",
+  "label": "Comencé",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "comentario",
+  "label": "Comentario",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "conexion",
+  "label": "Conexión",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "consentimiento",
+  "label": "Consentimiento",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "contraer",
+  "label": "Contraer",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "copiar",
+  "label": "Copiar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "datos",
+  "label": "Datos del estudio",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "decision",
+  "label": "Decisión",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "desbloqueado",
+  "label": "Acceso abierto",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "descargar",
+  "label": "Descargar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "despues",
+  "label": "La dejé para después",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "detener",
+  "label": "Detener",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "dibujar",
+  "label": "Dibujar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "dormir",
+  "label": "Dormir",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "editar",
+  "label": "Editar",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "ejercicio",
+  "label": "Hacer ejercicio",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "enlace-externo",
+  "label": "Abrir fuera de la app",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "entrevistas",
+  "label": "Entrevistas",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "enviar",
+  "label": "Enviar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "error",
+  "label": "Error",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "escribir",
+  "label": "Escribir",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "esperando",
+  "label": "Esperando",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "estirar",
+  "label": "Estirar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "estrella",
+  "label": "Estrella vacía",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "estrella-llena",
+  "label": "Estrella llena",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "estrella-media",
+  "label": "Media estrella",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "estudiar",
+  "label": "Estudiar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "expandir",
+  "label": "Expandir",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "exportar",
+  "label": "Exportar o compartir",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "filtrar",
+  "label": "Filtrar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "fotografia",
+  "label": "Fotografiar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "guitarra",
+  "label": "Tocar un instrumento",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "hipotesis",
+  "label": "Hipótesis y prueba",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "historial",
+  "label": "Historial",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "info",
+  "label": "Información",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "inicio",
+  "label": "Inicio",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "inicio-lleno",
+  "label": "Inicio, elegido",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "investigacion",
+  "label": "Investigación",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "juego-de-mesa",
+  "label": "Jugar un juego de mesa",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "leer",
+  "label": "Leer",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "listo",
+  "label": "Listo",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "llamar",
+  "label": "Llamar a alguien",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "lugar",
+  "label": "Lugar",
+  "origin": "d098",
+  "accent": true
+ },
+ {
+  "name": "manualidades",
+  "label": "Hacer manualidades",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "mas",
+  "label": "Más opciones",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "menu",
+  "label": "Menú",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "mostrar",
+  "label": "Mostrar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "musica",
+  "label": "Escuchar música",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "objeto",
+  "label": "Objeto",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "ocultar",
+  "label": "Ocultar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "ordenar",
+  "label": "Ordenar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "parlante",
+  "label": "Parlante",
+  "origin": "d098",
+  "accent": true
+ },
+ {
+  "name": "pausar",
+  "label": "Pausar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "perfil",
+  "label": "Perfil",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "perfil-lleno",
+  "label": "Perfil, elegido",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "permiso",
+  "label": "Permiso",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "pintar",
+  "label": "Pintar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "plantas",
+  "label": "Cuidar las plantas",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "primer-paso",
+  "label": "Cómo empieza",
+  "origin": "d098",
+  "accent": true
+ },
+ {
+  "name": "privacidad",
+  "label": "Privacidad",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "probar",
+  "label": "Probar sonido",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "problema",
+  "label": "Reportar un problema",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "reintentar",
+  "label": "Reintentar",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "relevos",
+  "label": "Relevos",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "reproducir",
+  "label": "Reproducir",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "ruta",
+  "label": "Ruta",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "ruta-llena",
+  "label": "Ruta, elegido",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "salir",
+  "label": "Salir",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "senal",
+  "label": "Señal",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "siguiente",
+  "label": "Siguiente",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "silenciar",
+  "label": "Silenciar",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "sin-conexion",
+  "label": "Sin conexión",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "sincronizar",
+  "label": "Sincronizar datos",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "sistema",
+  "label": "Sistema phygital",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "telefono",
+  "label": "Este teléfono",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "tema",
+  "label": "Tema claro u oscuro",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "texto",
+  "label": "Tamaño del texto",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "tiempo",
+  "label": "Tiempo",
+  "origin": "d098",
+  "accent": false
+ },
+ {
+  "name": "uso",
+  "label": "Después de cuánto uso",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "usuario",
+  "label": "Persona",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "validacion",
+  "label": "Validación",
+  "origin": "app",
+  "accent": false
+ },
+ {
+  "name": "volver",
+  "label": "Volver",
+  "origin": "d098",
+  "accent": false
+ }
+]

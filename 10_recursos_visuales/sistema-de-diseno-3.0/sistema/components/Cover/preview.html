@@ -1,0 +1,93 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Relevo</title>
+<style>
+  body { margin: 0; background: var(--paper); }
+  .cv { position: relative; width: 960px; height: 300px; overflow: hidden; background: var(--paper); }
+  .cv svg { position: absolute; inset: 0; }
+  .b-blue { fill: var(--blue); rx: var(--radius-panel); }
+  .b-ink { fill: var(--ink); rx: 20px; }
+  .b-tint { fill: var(--azul-200); rx: 20px; }
+  .dot { fill: var(--paper); }
+  .txt { position: absolute; left: 40px; bottom: 30px; width: 440px; }
+  .name { margin: 0; font: 650 120px/0.92 var(--font-sans); letter-spacing: -0.03em; color: var(--ink); text-decoration-line: underline; text-decoration-color: var(--blue); text-decoration-thickness: 0.075em; text-underline-offset: 0.2em; text-decoration-skip-ink: none; }
+  .tag { margin: 30px 0 0; font: 400 14px/20px var(--font-sans); color: var(--graphite); }
+</style>
+</head>
+<body>
+<div class="cv">
+  <svg width="960" height="300" viewBox="0 0 960 300" aria-hidden="true">
+    <!--
+      Bloques: blue 440 × 112 (radius-panel), ink 320 × 40 y azul-200 324 × 40 (cápsulas: la mitad de 40); un cuarto del cover.
+      Disposición: tres bandas desiguales apiladas a la derecha y cortadas por el borde, como renglones de un cuaderno.
+      Patrón: trama de puntos (fila «grilla de puntos»), elegida porque el README hace de la trama un recurso central: el punto crece con la sombra.
+      Escalas: distancia entre puntos space-24 (24 px); diámetro de trama-dot-min (16 %) a trama-dot-max (104 %); esquinas radius-panel.
+    -->
+    <rect class="b-blue" x="520" y="40" width="472" height="112"/>
+    <rect class="b-ink" x="640" y="168" width="352" height="40"/>
+    <rect class="b-tint" x="576" y="224" width="324" height="40"/>
+    <circle class="dot" cx="548" cy="58" r="1.92"/>
+    <circle class="dot" cx="572" cy="58" r="3.11"/>
+    <circle class="dot" cx="596" cy="58" r="4.07"/>
+    <circle class="dot" cx="620" cy="58" r="4.96"/>
+    <circle class="dot" cx="644" cy="58" r="5.80"/>
+    <circle class="dot" cx="668" cy="58" r="6.61"/>
+    <circle class="dot" cx="692" cy="58" r="7.39"/>
+    <circle class="dot" cx="716" cy="58" r="8.16"/>
+    <circle class="dot" cx="740" cy="58" r="8.91"/>
+    <circle class="dot" cx="764" cy="58" r="9.65"/>
+    <circle class="dot" cx="788" cy="58" r="10.37"/>
+    <circle class="dot" cx="812" cy="58" r="11.08"/>
+    <circle class="dot" cx="836" cy="58" r="11.79"/>
+    <circle class="dot" cx="860" cy="58" r="12.48"/>
+    <circle class="dot" cx="548" cy="82" r="1.92"/>
+    <circle class="dot" cx="572" cy="82" r="3.11"/>
+    <circle class="dot" cx="596" cy="82" r="4.07"/>
+    <circle class="dot" cx="620" cy="82" r="4.96"/>
+    <circle class="dot" cx="644" cy="82" r="5.80"/>
+    <circle class="dot" cx="668" cy="82" r="6.61"/>
+    <circle class="dot" cx="692" cy="82" r="7.39"/>
+    <circle class="dot" cx="716" cy="82" r="8.16"/>
+    <circle class="dot" cx="740" cy="82" r="8.91"/>
+    <circle class="dot" cx="764" cy="82" r="9.65"/>
+    <circle class="dot" cx="788" cy="82" r="10.37"/>
+    <circle class="dot" cx="812" cy="82" r="11.08"/>
+    <circle class="dot" cx="836" cy="82" r="11.79"/>
+    <circle class="dot" cx="860" cy="82" r="12.48"/>
+    <circle class="dot" cx="548" cy="106" r="1.92"/>
+    <circle class="dot" cx="572" cy="106" r="3.11"/>
+    <circle class="dot" cx="596" cy="106" r="4.07"/>
+    <circle class="dot" cx="620" cy="106" r="4.96"/>
+    <circle class="dot" cx="644" cy="106" r="5.80"/>
+    <circle class="dot" cx="668" cy="106" r="6.61"/>
+    <circle class="dot" cx="692" cy="106" r="7.39"/>
+    <circle class="dot" cx="716" cy="106" r="8.16"/>
+    <circle class="dot" cx="740" cy="106" r="8.91"/>
+    <circle class="dot" cx="764" cy="106" r="9.65"/>
+    <circle class="dot" cx="788" cy="106" r="10.37"/>
+    <circle class="dot" cx="812" cy="106" r="11.08"/>
+    <circle class="dot" cx="836" cy="106" r="11.79"/>
+    <circle class="dot" cx="860" cy="106" r="12.48"/>
+    <circle class="dot" cx="548" cy="130" r="1.92"/>
+    <circle class="dot" cx="572" cy="130" r="3.11"/>
+    <circle class="dot" cx="596" cy="130" r="4.07"/>
+    <circle class="dot" cx="620" cy="130" r="4.96"/>
+    <circle class="dot" cx="644" cy="130" r="5.80"/>
+    <circle class="dot" cx="668" cy="130" r="6.61"/>
+    <circle class="dot" cx="692" cy="130" r="7.39"/>
+    <circle class="dot" cx="716" cy="130" r="8.16"/>
+    <circle class="dot" cx="740" cy="130" r="8.91"/>
+    <circle class="dot" cx="764" cy="130" r="9.65"/>
+    <circle class="dot" cx="788" cy="130" r="10.37"/>
+    <circle class="dot" cx="812" cy="130" r="11.08"/>
+    <circle class="dot" cx="836" cy="130" r="11.79"/>
+    <circle class="dot" cx="860" cy="130" r="12.48"/>
+  </svg>
+  <div class="txt">
+    <p class="name">relevo</p>
+    <p class="tag">Vuelve a lo que querías hacer.</p>
+  </div>
+</div>
+</body>
+</html>
