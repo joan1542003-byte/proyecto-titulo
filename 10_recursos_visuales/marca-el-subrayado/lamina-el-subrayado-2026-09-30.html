@@ -1,0 +1,710 @@
+<title>El subrayado de Relevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Schibsted+Grotesk:wght@400..800&display=swap">
+<style>
+/* Layout: lámina de identidad en una columna editorial de 1080 px; la página usa la marca que propone: papel, tinta, un azul y el subrayado. */
+:root {
+  --paper: #F2F2EF; --card: #FFFFFF; --ink: #17181C; --graphite: #5B5F68; --mist: #E5E5E2; --line: #D5D6D8; --gray: #9BA0A9;
+  --blue: #3D38F5; --brand: #3D38F5; --blue-soft: #ECEBFE; --on-brand: #FFFFFF; --ok: #1E7A46; --no: #B3261E;
+  --m-paper: #F2F2EF; --m-card: #FCFCFA; --m-ink: #17181C; --m-graphite: #5B5F68; --m-mist: #E5E5E2; --m-line: #D5D6D8;
+  --font: "Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --r-card: 28px; --r-tile: 22px;
+}
+:root[data-blue="app"] { --blue: #2A4BD7; --brand: #2A4BD7; --blue-soft: #EEF1FD; }
+:root[data-font="inter"] { --font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --graphite: #9BA0A9; --mist: #26282D; --line: #30333A; --gray: #5B5F68; --blue: #9A97FF; --blue-soft: #23224A; --ok: #7FD1A0; --no: #F2B8B5; color-scheme: dark; }
+  :root:not([data-theme="light"])[data-blue="app"] { --blue: #8CA6FF; --blue-soft: #1C2238; }
+}
+:root[data-theme="dark"] { --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --graphite: #9BA0A9; --mist: #26282D; --line: #30333A; --gray: #5B5F68; --blue: #9A97FF; --blue-soft: #23224A; --ok: #7FD1A0; --no: #F2B8B5; color-scheme: dark; }
+:root[data-theme="dark"][data-blue="app"] { --blue: #8CA6FF; --blue-soft: #1C2238; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 26px; padding: 0 16px 64px; -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; padding: 0; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 10px; }
+img { max-width: 100%; display: block; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* El subrayado y el logotipo */
+.sub { text-decoration-line: underline; text-decoration-color: var(--blue); text-decoration-thickness: max(2px, .09em); text-underline-offset: .14em; text-decoration-skip-ink: none; }
+.wm { display: inline-block; position: relative; font-weight: 650; letter-spacing: -0.03em; line-height: 1; padding-bottom: .17em; white-space: nowrap; width: fit-content; align-self: flex-start; }
+.wm::after { content: ""; position: absolute; left: .03em; right: .03em; bottom: 0; height: .075em; background: var(--wm-line, var(--blue)); }
+:root[data-case="upper"] .wm { letter-spacing: -0.035em; }
+
+/* Barra con las decisiones a la vista */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; margin: 0 -16px; padding: 10px 16px; background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+.bar-in { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; gap: 12px 18px; flex-wrap: wrap; }
+.bar .wm { font-size: 24px; }
+.bar-note { color: var(--graphite); font-size: 14px; flex: 1 1 auto; }
+.seg { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--graphite); }
+.seg-in { display: inline-flex; padding: 3px; border-radius: 999px; background: var(--mist); }
+.seg-in button { height: 30px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--graphite); white-space: nowrap; }
+.seg-in button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+
+main { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 96px; padding-top: 56px; }
+section { display: flex; flex-direction: column; gap: 28px; }
+.eyebrow { color: var(--graphite); font-size: 15px; line-height: 20px; font-weight: 600; }
+h1 { margin: 0; font-size: clamp(36px, 6vw, 64px); line-height: 1.06; font-weight: 650; letter-spacing: -0.025em; text-wrap: balance; max-width: 16ch; }
+h2 { margin: 0; font-size: clamp(30px, 4.2vw, 46px); line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; text-wrap: balance; max-width: 22ch; }
+h3 { margin: 0; font-size: 20px; line-height: 26px; font-weight: 650; letter-spacing: -0.005em; }
+p { margin: 0; }
+.lede { font-size: clamp(18px, 2vw, 21px); line-height: 1.5; color: var(--ink); max-width: 60ch; }
+.body { max-width: 62ch; display: flex; flex-direction: column; gap: 14px; }
+.body p { color: var(--ink); }
+.muted { color: var(--graphite); }
+.small { font-size: 14px; line-height: 20px; }
+.cite { color: var(--graphite); white-space: nowrap; }
+.head { display: flex; flex-direction: column; gap: 10px; }
+
+/* Portada */
+.hero { gap: 34px; }
+.hero .wm.big { font-size: clamp(84px, 17vw, 200px); }
+
+/* Diagnóstico */
+.pair { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 24px; align-items: center; }
+@media (max-width: 760px) { .pair { grid-template-columns: minmax(0, 1fr); } }
+figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+figure img { border-radius: 18px; border: 1px solid var(--line); background: #fff; }
+.shot { justify-self: center; align-items: center; text-align: center; }
+.shot img { width: 210px; max-width: 100%; height: auto; border-radius: 26px; }
+.shot figcaption { max-width: 240px; }
+figcaption { font-size: 14px; line-height: 20px; color: var(--graphite); }
+.table-wrap { overflow-x: auto; border-radius: var(--r-tile); background: var(--card); }
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 15px; line-height: 21px; }
+th, td { text-align: left; vertical-align: top; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--graphite); font-size: 14px; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; white-space: nowrap; }
+td.prop { font-weight: 600; }
+
+/* Tríptico */
+.tri { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 860px) { .tri { grid-template-columns: minmax(0, 1fr); } }
+.tile { background: var(--card); border-radius: var(--r-card); padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.tile .stage { min-height: 170px; display: grid; place-items: center; text-align: center; border-radius: 18px; background: var(--paper); padding: 18px; }
+.tile .stage .say { font-size: 30px; line-height: 1.15; font-weight: 650; letter-spacing: -0.015em; }
+.tile .stage.deck { background: #FFFFFF; color: #17181C; }
+.tile .stage svg { width: 100%; max-width: 260px; height: auto; }
+
+/* Logotipo */
+.lock-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 860px) { .lock-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.lock { border-radius: var(--r-tile); aspect-ratio: 4 / 3; display: grid; place-items: center; border: 1px solid var(--line); max-width: 100%; }
+.lock .wm { font-size: clamp(34px, 5vw, 52px); }
+.lock.on-paper { background: #F2F2EF; color: #17181C; --wm-line: var(--brand); }
+.lock.on-white { background: #FFFFFF; color: #17181C; --wm-line: var(--brand); }
+.lock.on-blue { background: var(--brand); color: #FFFFFF; --wm-line: #FFFFFF; border-color: transparent; }
+.lock.on-ink { background: #17181C; color: #F2F2EF; --wm-line: #9A97FF; border-color: var(--line); }
+:root[data-blue="app"] .lock.on-ink { --wm-line: #8CA6FF; }
+.lock-cap { font-size: 13px; line-height: 18px; color: var(--graphite); margin-top: 8px; }
+.icons-row { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-end; }
+.appicon { width: 96px; height: 96px; border-radius: 26px; display: grid; place-items: center; position: relative; }
+.appicon span { font-weight: 650; font-size: 64px; line-height: 1; letter-spacing: -0.03em; position: relative; top: -6px; }
+.appicon i { position: absolute; left: 32px; right: 32px; bottom: 22px; height: 5px; }
+.appicon.blue { background: var(--brand); color: #FFFFFF; } .appicon.blue i { background: #FFFFFF; }
+.appicon.ink { background: #17181C; color: #F2F2EF; } .appicon.ink i { background: #9A97FF; }
+.appicon.paper { background: #F2F2EF; color: #17181C; border: 1px solid #D5D6D8; } .appicon.paper i { background: var(--brand); }
+.appicon.round { border-radius: 50%; }
+.spec { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 760px) { .spec { grid-template-columns: minmax(0, 1fr); } }
+.spec .tile svg { width: 100%; height: auto; }
+.spec text { font-family: var(--font); }
+
+/* Color */
+.swatches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.sw { border-radius: var(--r-tile); overflow: hidden; background: var(--card); display: flex; flex-direction: column; }
+.sw .chip { height: 108px; display: flex; align-items: flex-end; padding: 14px 16px; font-weight: 650; font-size: 18px; }
+.sw .meta { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; line-height: 20px; }
+.sw .meta b { font-weight: 600; font-size: 15px; }
+.uses { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 860px) { .uses { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .uses { grid-template-columns: minmax(0, 1fr); } }
+.use { background: var(--card); border-radius: var(--r-tile); padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.use .demo { height: 64px; display: flex; align-items: center; }
+.prop-bar { display: flex; height: 18px; border-radius: 999px; overflow: hidden; gap: 2px; background: var(--card); }
+.prop-bar span { height: 100%; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--graphite); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 1px solid var(--line); }
+
+/* Tipografía */
+.type { background: var(--card); border-radius: var(--r-card); padding: 28px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; }
+@media (max-width: 760px) { .type { grid-template-columns: minmax(0, 1fr); } }
+.type .aa { font-size: clamp(96px, 14vw, 168px); line-height: .9; font-weight: 650; letter-spacing: -0.04em; }
+.scale { display: flex; flex-direction: column; gap: 14px; }
+.scale div { display: flex; flex-direction: column; gap: 2px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+.scale small { font-size: 13px; color: var(--graphite); }
+
+/* Reglas del subrayado */
+.rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .rules { grid-template-columns: minmax(0, 1fr); } }
+.rule { background: var(--card); border-radius: var(--r-tile); padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+.rule .ex { background: var(--paper); border-radius: 16px; padding: 18px; font-size: 22px; line-height: 1.3; font-weight: 600; }
+.verdict { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 650; }
+.verdict.ok { color: var(--ok); } .verdict.no { color: var(--no); }
+.link-look { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .12em; }
+.thin-gray { text-decoration: underline; text-decoration-color: var(--gray); text-decoration-thickness: 1px; text-underline-offset: .14em; }
+
+/* Íconos */
+.icon-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.icon-group { display: flex; flex-direction: column; gap: 12px; }
+.icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 10px; }
+.ic { background: var(--card); border-radius: 20px; padding: 16px 8px 12px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.ic svg { width: 48px; height: 48px; color: var(--ink); overflow: visible; }
+.ic span { font-size: 13px; line-height: 17px; color: var(--graphite); }
+.keys { display: none; }
+.show-keys .keys { display: inline; }
+.show-keys .ic svg { background: var(--paper); border-radius: 6px; }
+.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.cmp { background: var(--card); border-radius: 20px; padding: 16px; display: flex; align-items: center; gap: 16px; }
+.cmp svg { width: 40px; height: 40px; color: var(--ink); flex: none; }
+.cmp .arrow { color: var(--gray); font-size: 18px; }
+.cmp div { display: flex; flex-direction: column; font-size: 13px; line-height: 18px; color: var(--graphite); }
+.cmp div b { color: var(--ink); font-size: 15px; font-weight: 600; }
+.weights { background: var(--card); border-radius: var(--r-card); padding: 22px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 760px) { .weights { grid-template-columns: minmax(0, 1fr); } }
+.wrow { display: flex; align-items: center; gap: 12px; }
+.wrow svg { width: 24px; height: 24px; flex: none; color: var(--ink); }
+
+/* Maquetas */
+.mocks { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+.mock-wrap { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.phone { width: 290px; max-width: 100%; height: 600px; border-radius: 44px; background: var(--m-paper); color: var(--m-ink); border: 8px solid #0E0F12; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 14px 16px 0; font-size: 14px; line-height: 19px; }
+.phone .status { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; padding: 0 6px 10px; }
+.phone .m-top { display: flex; justify-content: space-between; align-items: center; padding: 4px 2px 0; }
+.phone .m-top .wm { font-size: 26px; --wm-line: var(--brand); }
+.m-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--m-card); display: grid; place-items: center; }
+.m-avatar svg { width: 20px; height: 20px; }
+.m-date { color: var(--m-graphite); font-size: 13px; margin-top: 16px; }
+.m-hello { font-size: 30px; line-height: 34px; font-weight: 650; letter-spacing: -0.02em; margin-top: 2px; }
+.m-card { background: var(--m-card); border-radius: 26px; margin-top: 14px; overflow: hidden; }
+.m-photo { height: 112px; background-size: cover; background-position: center 60%; }
+.m-body { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+.m-chip { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--m-mist); font-size: 12px; font-weight: 600; }
+.m-chip svg { width: 14px; height: 14px; }
+.m-h { font-size: 24px; line-height: 28px; font-weight: 650; letter-spacing: -0.015em; }
+.m-h .sub, .m-big .sub { text-decoration-color: var(--brand); }
+.m-s { color: var(--m-graphite); font-size: 13px; line-height: 18px; }
+.m-bar { height: 6px; border-radius: 999px; background: var(--m-mist); overflow: hidden; }
+.m-bar i { display: block; height: 100%; background: var(--brand); border-radius: 999px; }
+.m-n { font-size: 12px; color: var(--m-graphite); }
+.m-n b { color: var(--m-ink); }
+.m-list { background: var(--m-card); border-radius: 22px; margin-top: 10px; }
+.m-row { display: flex; align-items: center; gap: 10px; padding: 11px 14px; font-size: 13px; }
+.m-row + .m-row { border-top: 1px solid var(--m-line); }
+.m-row svg { width: 20px; height: 20px; flex: none; }
+.m-row span { flex: 1; color: var(--m-graphite); white-space: nowrap; }
+.m-row b { font-weight: 600; white-space: nowrap; }
+.m-tabs { position: absolute; left: 14px; right: 14px; bottom: 14px; height: 62px; border-radius: 999px; background: rgba(252, 252, 250, .82); backdrop-filter: blur(14px); box-shadow: 0 6px 22px rgba(0,0,0,.10); display: flex; padding: 5px; }
+.m-tab { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; color: var(--m-graphite); }
+.m-tab svg { width: 22px; height: 22px; }
+.m-tab.on { color: var(--m-ink); font-weight: 650; }
+.m-tab.on em { font-style: normal; text-decoration: underline; text-decoration-color: var(--brand); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.m-x { display: flex; align-items: center; gap: 12px; padding: 2px; }
+.m-x svg { width: 22px; height: 22px; }
+.m-steps { flex: 1; display: flex; gap: 4px; }
+.m-steps i { flex: 1; height: 4px; border-radius: 999px; background: var(--m-mist); }
+.m-steps i.on { background: var(--brand); }
+.m-title { font-size: 28px; line-height: 32px; font-weight: 650; letter-spacing: -0.02em; margin-top: 22px; }
+.m-label { font-size: 12px; color: var(--m-graphite); margin-top: 20px; }
+.m-field { font-size: 21px; line-height: 28px; font-weight: 500; padding: 4px 0 6px; border-bottom: 2.5px solid var(--brand); }
+.m-hint { font-size: 12px; color: var(--m-graphite); margin-top: 8px; }
+.m-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.m-chips span { height: 30px; padding: 0 12px; border-radius: 999px; background: var(--m-card); display: inline-flex; align-items: center; font-size: 13px; }
+.m-chips span.sel { background: #17181C; color: #F2F2EF; }
+.m-btn { position: absolute; left: 16px; right: 16px; bottom: 22px; height: 50px; border-radius: 999px; background: #17181C; color: #F2F2EF; display: grid; place-items: center; font-weight: 650; font-size: 15px; }
+.phone.signal { background: var(--brand); color: #FFFFFF; }
+.phone.signal .m-s { color: rgba(255,255,255,.82); }
+.m-big { font-size: 40px; line-height: 44px; font-weight: 650; letter-spacing: -0.025em; margin-top: 18px; }
+.phone.signal .m-big .sub { text-decoration-color: #FFFFFF; }
+.m-wave { display: flex; align-items: center; gap: 8px; margin-top: 70px; font-size: 13px; font-weight: 600; }
+.m-wave svg { width: 20px; height: 20px; }
+.m-btn.light { background: #FFFFFF; color: var(--brand); }
+.m-btn2 { position: absolute; left: 16px; right: 16px; bottom: 82px; height: 50px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.6); color: #FFFFFF; display: grid; place-items: center; font-weight: 600; font-size: 15px; }
+.mock-cap { font-size: 14px; color: var(--graphite); }
+.slide { width: 100%; max-width: 760px; aspect-ratio: 16 / 9; background: #FFFFFF; color: #17181C; border-radius: 16px; border: 1px solid var(--line); padding: 4.2% 5.5%; display: flex; flex-direction: column; container-type: inline-size; }
+.slide .s-top { display: flex; justify-content: space-between; font-size: 1.9cqw; color: #5B5F68; }
+.slide .wm { font-size: 9cqw; margin-top: 4cqw; --wm-line: var(--brand); }
+.slide .s-line { font-size: 3cqw; line-height: 1.35; margin-top: 3cqw; }
+.slide .s-line .sub { text-decoration-color: var(--brand); }
+.slide .s-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3cqw; margin-top: auto; }
+.slide .s-steps b { display: block; color: var(--brand); font-size: 5.6cqw; line-height: 1; font-weight: 650; }
+.slide .s-steps span { display: block; font-size: 2.1cqw; line-height: 1.3; font-weight: 600; margin-top: 1.4cqw; }
+.apps { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+@media (max-width: 860px) { .apps { grid-template-columns: minmax(0, 1fr); } }
+.object { background: var(--card); border-radius: var(--r-card); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.object svg { width: 100%; height: auto; }
+
+/* Decisiones */
+.decide { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .decide { grid-template-columns: minmax(0, 1fr); } }
+.dcard { background: var(--card); border-radius: var(--r-card); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+.opts { display: flex; flex-direction: column; gap: 8px; }
+.opt { display: flex; align-items: flex-start; gap: 12px; text-align: left; padding: 12px 14px; border-radius: 18px; background: var(--paper); }
+.opt[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--blue); background: var(--blue-soft); }
+.opt .dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--gray); flex: none; margin-top: 3px; display: grid; place-items: center; }
+.opt[aria-pressed="true"] .dot { border-color: var(--blue); }
+.opt[aria-pressed="true"] .dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+.opt b { display: block; font-weight: 600; font-size: 16px; line-height: 22px; }
+.opt small { display: block; font-size: 13px; line-height: 18px; color: var(--graphite); }
+.rec { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; background: var(--mist); color: var(--ink); font-size: 12px; font-weight: 600; margin-left: 6px; vertical-align: 1px; }
+.list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; max-width: 70ch; }
+.refs { display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 21px; color: var(--graphite); max-width: 82ch; }
+.refs p { padding-left: 2em; text-indent: -2em; overflow-wrap: anywhere; }
+.refs a { color: inherit; }
+footer { max-width: 1080px; margin: 72px auto 0; color: var(--graphite); font-size: 13px; line-height: 19px; }
+@media (prefers-reduced-motion: no-preference) { .opt, .seg-in button { transition: background .2s, box-shadow .2s; } }
+</style>
+
+<header class="bar">
+  <div class="bar-in">
+    <span class="wm" data-wm>relevo</span>
+    <span class="bar-note">Propuesta de identidad · 30 de septiembre de 2026</span>
+    <span class="seg">Letra <span class="seg-in" role="group" aria-label="Letra"><button type="button" data-set="font" data-val="schibsted">Schibsted Grotesk</button><button type="button" data-set="font" data-val="inter">Inter</button></span></span>
+    <span class="seg">Azul <span class="seg-in" role="group" aria-label="Azul"><button type="button" data-set="blue" data-val="deck">Presentación</button><button type="button" data-set="blue" data-val="app">App</button></span></span>
+    <span class="seg">Logotipo <span class="seg-in" role="group" aria-label="Logotipo"><button type="button" data-set="case" data-val="lower">relevo</button><button type="button" data-set="case" data-val="upper">Relevo</button></span></span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="eyebrow">Después de la corrección cruzada</span>
+    <span class="wm big" data-wm>relevo</span>
+    <h1>Subrayar <span class="sub">lo que querías hacer</span>.</h1>
+    <p class="lede">En la corrección cruzada se recordó el diseño de la presentación, pero no se reconoció en la app. La presentación tenía algo propio: un azul y un subrayado que marcan lo importante. Esta propuesta los convierte en la marca y los lleva a la app, al objeto y a cada pieza. Los controles de arriba muestran las alternativas que falta decidir.</p>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Diagnóstico</span><h2>Hoy hay dos Relevo.</h2></div>
+    <div class="pair">
+      <figure><img src="img/presentacion-12.jpg" alt="Diapositiva 12 de la presentación: Relevo en azul, una frase con «donde empieza» subrayado en azul y tres pasos con números azules." width="1200" height="675"><figcaption>Presentación del 30 de septiembre: «Relevo» en Inter, el azul #3D38F5 y el subrayado.</figcaption></figure>
+      <figure class="shot"><img src="img/app-inicio.jpg" alt="Inicio de la app 2.13: logotipo relevo en tinta, foto beige de un libro y el texto «Vuelve a leer» con la palabra leer en azul." width="540" height="1200"><figcaption>App: «relevo» en Schibsted Grotesk y tinta; el azul solo en lo que escribe la persona.</figcaption></figure>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Elemento</th><th>Presentación</th><th>App</th><th>Propuesta</th></tr></thead>
+        <tbody>
+          <tr><td>Logotipo</td><td>«Relevo», Inter Bold, azul</td><td>«relevo», Schibsted Grotesk, tinta</td><td class="prop">«relevo» sobre su renglón azul</td></tr>
+          <tr><td>Letra</td><td>Inter</td><td>Schibsted Grotesk</td><td class="prop">Schibsted Grotesk en todo</td></tr>
+          <tr><td>Azul</td><td>#3D38F5 en el nombre, las cifras y el subrayado</td><td>#2A4BD7, solo en lo que escribe la persona (2 a 5 % de la pantalla)</td><td class="prop">#3D38F5, con cuatro usos fijos</td></tr>
+          <tr><td>Fondo</td><td>Blanco</td><td>Papel #F2F2EF con fotos</td><td class="prop">Papel y blanco; las fotos acompañan</td></tr>
+          <tr><td>Lo propio</td><td>El subrayado azul en cada diapositiva</td><td>Casi no se ve: dominan las fotos, los emoji y el vidrio</td><td class="prop">El subrayado en todas las piezas</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="body">
+      <p>Lo que se recordó no fue el fondo blanco ni la letra: fue el azul junto al subrayado, repetido en cada diapositiva. La app usa otro azul y otro logotipo, y guarda el azul para muy poco. Por eso lo más visible en ella son fotos, emoji y vidrio, que no son de Relevo: también los usan muchas otras apps.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">La idea</span><h2>El subrayado es la marca.</h2></div>
+    <div class="tri">
+      <div class="tile"><div class="stage"><span class="say">Vuelve a <span class="sub">leer</span>.</span></div><p class="small"><b>En la app,</b> marca la actividad que la persona eligió y que va a volver.</p></div>
+      <div class="tile"><div class="stage deck"><span class="say">Falta recordarlo <span class="sub">a tiempo</span>.</span></div><p class="small"><b>En la presentación,</b> marca la idea que importa en cada diapositiva.</p></div>
+      <div class="tile"><div class="stage" id="house-stage"></div><p class="small"><b>En la casa,</b> el objeto subraya el lugar donde empieza la actividad.</p></div>
+    </div>
+    <div class="body">
+      <p><b>Por qué el subrayado.</b> Subrayar es lo que hace una persona con lo que no quiere olvidar, y esa es la promesa de Relevo: que lo que querías hacer vuelva a tiempo. La hipótesis vincula una actividad con el lugar donde comienza; el objeto marca ese lugar en la casa como el subrayado marca una palabra en la pantalla. El renglón ya estaba en la marca de septiembre (D-073) como el lugar donde la persona escribe; aquí pasa a ser el recurso principal.</p>
+      <p><b>Por qué no basta el color.</b> En un estudio de 1.281 elementos de marca de 19 países, los personajes, los logotipos y los logotipos tipográficos fueron los más fáciles de asociar a una sola marca; el color fue el más compartido con la competencia <span class="cite">(Ward et al., 2020)</span>. Por eso el azul no trabaja solo: va unido al logotipo y al subrayado.</p>
+      <p><b>Por qué repetirlo igual en todo.</b> Un recurso de marca sirve cuando muchas personas lo asocian a la marca y cuando evoca solo a esa marca <span class="cite">(Romaniuk, 2018)</span>. Eso se construye usándolo igual en cada pieza. Relevo tuvo seis propuestas de marca el 25 de septiembre y una versión 2.0 el 27; esta no suma una más: elige lo que ya se recordó.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Logotipo</span><h2><span data-wm-text>relevo</span>, sobre su renglón.</h2></div>
+    <div class="lock-grid">
+      <div><div class="lock on-paper"><span class="wm" data-wm>relevo</span></div><p class="lock-cap">Principal: tinta y renglón azul sobre papel.</p></div>
+      <div><div class="lock on-white"><span class="wm" data-wm>relevo</span></div><p class="lock-cap">Sobre blanco, en la presentación y lo impreso.</p></div>
+      <div><div class="lock on-blue"><span class="wm" data-wm>relevo</span></div><p class="lock-cap">Sobre azul: la señal, el ícono y piezas cortas.</p></div>
+      <div><div class="lock on-ink"><span class="wm" data-wm>relevo</span></div><p class="lock-cap">Sobre tinta y en modo oscuro: renglón azul claro.</p></div>
+    </div>
+    <div class="spec">
+      <div class="tile"><h3>Medidas</h3><div id="wm-spec"></div><p class="small muted">El renglón mide lo mismo que la palabra, tiene el 7,5 % de la altura del cuerpo y queda a una distancia igual a su grosor bajo la letra. Tamaño mínimo: 64 px de ancho en pantalla y 18 mm en papel.</p></div>
+      <div class="tile"><h3>Ícono de la app</h3><div class="icons-row"><div class="appicon blue"><span>r</span><i></i></div><div class="appicon ink"><span>r</span><i></i></div><div class="appicon paper"><span>r</span><i></i></div><div class="appicon blue round"><span>r</span><i></i></div></div><p class="small muted">La «r» con su renglón. El azul es la versión principal: entre los íconos del teléfono es lo que más se nota, y es el mismo azul de la señal.</p></div>
+    </div>
+    <div class="body"><p><b>En minúsculas,</b> como en la app y en D-073: «relevo» se lee como la palabra de todos los días (pasar la posta), sin el tono de un título. La presentación usaba «Relevo» con mayúscula porque era el título de la diapositiva, no un logotipo. El control de arriba muestra las dos.</p></div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Color</span><h2>Un azul con cuatro tareas.</h2></div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--brand);color:#FFFFFF">Azul Relevo</div><div class="meta"><b class="num" data-blue-hex>#3D38F5</b><span class="muted num">6,8:1 sobre blanco · 6,1:1 sobre papel</span></div></div>
+      <div class="sw"><div class="chip" style="background:#17181C;color:#F2F2EF">Tinta</div><div class="meta"><b class="num">#17181C</b><span class="muted num">15,8:1 sobre papel</span></div></div>
+      <div class="sw"><div class="chip" style="background:#F2F2EF;color:#17181C;border-bottom:1px solid var(--line)">Papel</div><div class="meta"><b class="num">#F2F2EF</b><span class="muted">Fondo de la app</span></div></div>
+      <div class="sw"><div class="chip" style="background:#FFFFFF;color:#17181C;border-bottom:1px solid var(--line)">Blanco</div><div class="meta"><b class="num">#FFFFFF</b><span class="muted">Tarjetas y presentación</span></div></div>
+      <div class="sw"><div class="chip" style="background:#5B5F68;color:#FFFFFF">Grafito</div><div class="meta"><b class="num">#5B5F68</b><span class="muted num">Texto secundario · 5,7:1</span></div></div>
+      <div class="sw"><div class="chip" style="background:#1B1C20;color:#9A97FF">Azul en modo oscuro</div><div class="meta"><b class="num" data-blue-dark>#9A97FF</b><span class="muted num">6,7:1 sobre las tarjetas oscuras</span></div></div>
+    </div>
+    <div class="uses">
+      <div class="use"><div class="demo"><span class="wm" data-wm style="font-size:34px">relevo</span></div><h3>1. El logotipo</h3><p class="small muted">Siempre con su renglón.</p></div>
+      <div class="use"><div class="demo" style="font-size:24px;font-weight:650">Vuelve a&nbsp;<span class="sub">leer</span>.</div><h3>2. El subrayado</h3><p class="small muted">Lo que la persona quiere hacer y la idea clave.</p></div>
+      <div class="use"><div class="demo"><div style="width:100%"><div class="m-bar" style="background:var(--mist)"><i style="width:42%;background:var(--blue)"></i></div><p class="small muted" style="margin-top:8px"><b style="color:var(--ink)">6 min</b> de 15</p></div></div><h3>3. El tiempo</h3><p class="small muted">Lo que falta para la señal y las cifras clave.</p></div>
+      <div class="use"><div class="demo" id="use-tab"></div><h3>4. Dónde estás</h3><p class="small muted">La pestaña y lo elegido.</p></div>
+    </div>
+    <div class="head" style="gap:12px">
+      <div class="prop-bar" role="img" aria-label="Proporción aproximada en una pantalla: papel y blanco 70 %, tinta 18 %, azul 10 %, grises 2 %"><span style="width:70%;background:#F2F2EF;border-right:1px solid var(--line)"></span><span style="width:18%;background:#17181C"></span><span style="width:10%;background:var(--brand)"></span><span style="width:2%;background:#9BA0A9"></span></div>
+      <div class="legend"><span><i style="background:#F2F2EF"></i>Papel y blanco, 70 %</span><span><i style="background:#17181C"></i>Tinta, 18 %</span><span><i style="background:var(--brand)"></i>Azul, cerca del 10 % (antes, 2 a 5 %)</span><span><i style="background:#9BA0A9"></i>Grises, 2 %</span></div>
+    </div>
+    <div class="body"><p><b>Por qué el azul de la presentación.</b> #3D38F5 y #2A4BD7 tienen el mismo contraste (6,07:1 sobre papel), así que el cambio no afecta la lectura. El de la presentación es más intenso y es el que se recordó. Los botones siguen en tinta: si todo fuera azul, el subrayado dejaría de destacar.</p></div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Tipografía</span><h2>Una sola letra para todo.</h2></div>
+    <div class="type">
+      <div><div class="aa">Aa ñ ¿?</div><p class="small muted" style="margin-top:14px" data-font-name>Schibsted Grotesk · Henrik Kongsvoll para Bakken &amp; Bæck, 2022 · licencia SIL Open Font</p></div>
+      <div class="scale">
+        <div><small>Título · 650 · 34 / 40</small><span style="font-size:30px;line-height:36px;font-weight:650;letter-spacing:-0.02em">¿Qué quieres hacer?</span></div>
+        <div><small>Texto · 400 · 17 / 26</small><span>Usa el teléfono como siempre. Cuando sumes 15 minutos, sonará donde empiezas.</span></div>
+        <div><small>Nota · 400 · 13 / 18</small><span style="font-size:13px;line-height:18px" class="muted">Puedes desactivar o eliminar el relevo en Inicio.</span></div>
+        <div style="border:0;padding:0"><small>Cifras tabulares</small><span class="num" style="font-size:26px;font-weight:650">6 de 15 min · 21 días</span></div>
+      </div>
+    </div>
+    <div class="body"><p><b>La presentación pasa de Inter a Schibsted Grotesk.</b> En Figma es un cambio de familia en los textos; la diagramación queda igual. Inter es la letra por defecto de una enorme cantidad de interfaces, así que no distingue. Schibsted Grotesk ya está en la app y en el logotipo, viene de la prensa impresa y resuelve bien «ñ», «¿¡» y las comillas latinas.</p></div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">El subrayado</span><h2>Reglas para que siga siendo propio.</h2></div>
+    <div class="tile"><div id="sub-spec"></div></div>
+    <div class="rules">
+      <div class="rule"><span class="verdict ok">✓ Uno por pantalla o diapositiva</span><div class="ex">Vuelve a <span class="sub">salir a caminar</span>.</div><p class="small muted">Marca lo que importa ahora: la actividad, el momento o el lugar.</p></div>
+      <div class="rule"><span class="verdict ok">✓ El renglón es el campo donde se escribe</span><div class="ex"><span style="display:block;border-bottom:3px solid var(--blue);padding-bottom:6px">Leer 10 páginas</span></div><p class="small muted">Lo que escribe la persona va en tinta, sobre un renglón azul.</p></div>
+      <div class="rule"><span class="verdict no">✕ Texto azul y subrayado</span><div class="ex">Vuelve a <span class="link-look">leer</span>.</div><p class="small muted">Azul más subrayado parece un enlace. Por eso el texto subrayado va en tinta (hoy la app lo pone en azul).</p></div>
+      <div class="rule"><span class="verdict no">✕ Subrayar todo o con un trazo fino</span><div class="ex"><span class="thin-gray">Usa el teléfono</span> como <span class="sub">siempre</span> y <span class="sub">sonará</span>.</div><p class="small muted">Si se repite en cada frase o pierde grosor, deja de marcar algo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Íconos</span><h2>La retícula de Material, el peso de Apple.</h2></div>
+    <div class="body">
+      <p><b>Retícula de 24 con área útil de 20</b> y cuatro figuras guía: círculo de 20, cuadrado de 18 y rectángulos de 16 × 20 y 20 × 16, como los íconos de sistema de Material Design <span class="cite">(Google, s. f.-a)</span>.</p>
+      <p><b>El trazo sigue al texto:</b> 1,75 junto a texto regular de 17 px y 2,1 junto a semibold, del mismo modo que cada peso de SF Symbols corresponde a un peso de la letra del sistema <span class="cite">(Apple, s. f.)</span>. Extremos y uniones redondeados.</p>
+      <p><b>Dos estados:</b> contorno y lleno para lo elegido, como el eje de relleno de Material Symbols <span class="cite">(Google, s. f.-b)</span>.</p>
+      <p><b>Los íconos propios llevan el renglón azul:</b> actividad, lugar, parlante, primer paso y apps elegidas. Los comunes usan formas conocidas, porque al principio se reconoce mejor un dibujo cercano a lo que hace y, con el uso, uno familiar <span class="cite">(Isherwood et al., 2007)</span>. Siempre van con palabra.</p>
+    </div>
+    <div class="icon-tools"><span class="seg-in" role="group" aria-label="Retícula"><button type="button" id="keys-off" aria-pressed="true">Sin retícula</button><button type="button" id="keys-on" aria-pressed="false">Con retícula</button></span><span class="small muted">27 de los 97 íconos de la app, redibujados como muestra.</span></div>
+    <div id="icon-groups" class="icon-group"></div>
+    <h3>Antes y ahora</h3>
+    <div class="pairs" id="icon-pairs"></div>
+    <h3>El peso sigue a la letra</h3>
+    <div class="weights" id="icon-weights"></div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Aplicaciones</span><h2>Así se vería.</h2><p class="muted small">Maquetas de la propuesta, no capturas de la app. La foto es una de las imágenes de la app, generada con IA.</p></div>
+    <div class="mocks">
+      <div class="mock-wrap"><div class="phone" aria-label="Maqueta de Inicio">
+        <div class="status"><span class="num">10:24</span><span>●●●</span></div>
+        <div class="m-top"><span class="wm" data-wm>relevo</span><span class="m-avatar" data-icon="perfil"></span></div>
+        <div class="m-date">Miércoles 30 de septiembre</div>
+        <div class="m-hello">Hola.</div>
+        <div class="m-card"><div class="m-photo" style="background-image:url(img/foto-leer.jpg)"></div>
+          <div class="m-body"><span class="m-chip"><span data-icon="esperando"></span>Contando</span><div class="m-h">Vuelve a <span class="sub">leer</span>.</div><div class="m-s">Sonará junto al sillón cuando sumes 15 min en tus apps.</div><div class="m-bar"><i style="width:40%"></i></div><div class="m-n num"><b>6 min</b> de 15</div></div></div>
+        <div class="m-list"><div class="m-row"><span data-icon="primerpaso"></span><span>Para empezar</span><b>Abrir el libro</b></div></div>
+        <div class="m-tabs"><div class="m-tab on"><span data-icon="inicio" data-filled></span><em>Inicio</em></div><div class="m-tab"><span data-icon="ruta"></span>Ruta</div><div class="m-tab"><span data-icon="perfil"></span>Perfil</div></div>
+      </div><span class="mock-cap">Inicio</span></div>
+
+      <div class="mock-wrap"><div class="phone" aria-label="Maqueta de preparar un relevo">
+        <div class="status"><span class="num">10:21</span><span>●●●</span></div>
+        <div class="m-x"><span data-icon="cerrar"></span><div class="m-steps"><i class="on"></i><i></i><i></i><i></i></div></div>
+        <div class="m-title">¿Qué quieres hacer?</div>
+        <div class="m-label">Actividad</div>
+        <div class="m-field">Leer 10 páginas</div>
+        <div class="m-hint">Escribe lo que quieres hacer o toca una idea.</div>
+        <div class="m-label">Ideas</div>
+        <div class="m-chips"><span class="sel">Leer</span><span>Dibujar</span><span>Salir a caminar</span><span>Ordenar</span><span>Cocinar</span><span>Tocar guitarra</span></div>
+        <div class="m-btn">Seguir</div>
+      </div><span class="mock-cap">Preparar un relevo</span></div>
+
+      <div class="mock-wrap"><div class="phone signal" aria-label="Maqueta de la pantalla cuando suena la señal">
+        <div class="status"><span class="num">10:39</span><span>●●●</span></div>
+        <span class="wm" data-wm style="font-size:22px;--wm-line:#FFFFFF;align-self:flex-start">relevo</span>
+        <div class="m-wave"><span data-icon="senal"></span>Sonando junto al sillón</div>
+        <div class="m-big">Vuelve a <span class="sub">leer</span>.</div>
+        <div class="m-s" style="font-size:15px;line-height:21px;margin-top:10px">Para empezar: abrir el libro.</div>
+        <div class="m-btn2">Seguir en el teléfono</div>
+        <div class="m-btn light">Silenciar y empezar</div>
+      </div><span class="mock-cap">Cuando suena: el momento azul</span></div>
+    </div>
+    <div class="apps">
+      <div class="tile" style="align-items:center"><div class="slide" aria-label="Maqueta de la diapositiva 12 con la identidad nueva">
+        <div class="s-top"><span>Propuesta</span><span class="num">12</span></div>
+        <span class="wm" data-wm>relevo</span>
+        <p class="s-line">Una app y un objeto que suena <span class="sub">donde empieza</span> lo que querías hacer.</p>
+        <div class="s-steps"><div><b>1</b><span>Eliges qué quieres hacer y dónde empieza.</span></div><div><b>2</b><span>Usas el teléfono como siempre. Relevo cuenta el tiempo.</span></div><div><b>3</b><span>Al cumplirse el tiempo, el objeto suena ahí.</span></div></div>
+      </div><p class="small muted">La diapositiva 12 con la misma diagramación, en Schibsted Grotesk y con el logotipo.</p></div>
+      <div class="object"><h3>El objeto</h3><div id="object-art"></div><p class="small muted">El parlante lleva una banda azul en la base: es el renglón puesto en la casa. Cuando el objeto final esté definido (reloj, llavero o parlante), la banda va donde se apoya.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Para cerrar</span><h2>Lo que falta decidir.</h2><p class="muted small">Al elegir, la página cambia. Las recomendaciones están marcadas.</p></div>
+    <div class="decide">
+      <div class="dcard"><h3>Letra</h3><div class="opts">
+        <button type="button" class="opt" data-set="font" data-val="schibsted"><span class="dot"></span><span><b>Schibsted Grotesk en todo <span class="rec">Recomendada</span></b><small>La app no cambia; la presentación cambia de familia.</small></span></button>
+        <button type="button" class="opt" data-set="font" data-val="inter"><span class="dot"></span><span><b>Inter en todo</b><small>La presentación no cambia; la app y el logotipo cambian de letra.</small></span></button></div></div>
+      <div class="dcard"><h3>Logotipo</h3><div class="opts">
+        <button type="button" class="opt" data-set="case" data-val="lower"><span class="dot"></span><span><b>«relevo» en minúsculas, sobre su renglón <span class="rec">Recomendado</span></b><small>Sigue al de la app y al de D-073.</small></span></button>
+        <button type="button" class="opt" data-set="case" data-val="upper"><span class="dot"></span><span><b>«Relevo» con mayúscula, sobre su renglón</b><small>Sigue al título de la presentación.</small></span></button></div></div>
+      <div class="dcard"><h3>Azul</h3><div class="opts">
+        <button type="button" class="opt" data-set="blue" data-val="deck"><span class="dot"></span><span><b>#3D38F5, el de la presentación <span class="rec">Recomendado</span></b><small>Más intenso y es el que se recordó.</small></span></button>
+        <button type="button" class="opt" data-set="blue" data-val="app"><span class="dot"></span><span><b>#2A4BD7, el de la app</b><small>El «azul pasta» de D-073.</small></span></button></div></div>
+      <div class="dcard"><h3>Qué cambia si se aprueba</h3>
+        <ul class="list small">
+          <li><b>App 2.19:</b> el logotipo con renglón en Inicio, el azul nuevo, el subrayado bajo la actividad en tinta, el campo renglón, la barra del tiempo, la pestaña elegida, la pantalla azul de la señal, el ícono de la app y los 97 íconos redibujados.</li>
+          <li><b>Presentación:</b> Schibsted Grotesk y el logotipo en la portada y en la diapositiva 12.</li>
+          <li><b>Figma:</b> sistema 3.0 en el archivo de marca, con los íconos como componentes.</li>
+          <li><b>Se mantienen</b> las fotos, los emoji del perfil y el vidrio de la navegación (D-083), pero dejan de ser lo principal.</li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="eyebrow">Fuentes</span></div>
+    <div class="refs">
+      <p>Apple. (s. f.). <i>SF Symbols</i>. Human Interface Guidelines. <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols">https://developer.apple.com/design/human-interface-guidelines/sf-symbols</a></p>
+      <p>Google. (s. f.-a). <i>System icons</i>. Material Design. <a href="https://m2.material.io/design/iconography/system-icons.html">https://m2.material.io/design/iconography/system-icons.html</a></p>
+      <p>Google. (s. f.-b). <i>Material Symbols guide</i>. Google Fonts for Developers. <a href="https://developers.google.com/fonts/docs/material_symbols">https://developers.google.com/fonts/docs/material_symbols</a></p>
+      <p>Isherwood, S. J., McDougall, S. J. P. y Curry, M. B. (2007). Icon identification in context: The changing role of icon characteristics with user experience. <i>Human Factors, 49</i>(3), 465–476. <a href="https://doi.org/10.1518/001872007X200102">https://doi.org/10.1518/001872007X200102</a></p>
+      <p>Romaniuk, J. (2018). <i>Building distinctive brand assets</i>. Oxford University Press.</p>
+      <p>Ward, E., Yang, S., Romaniuk, J. y Beal, V. (2020). Building a unique brand identity: Measuring the relative ownership potential of brand identity element types. <i>Journal of Brand Management, 27</i>(4), 393–407. <a href="https://doi.org/10.1057/s41262-020-00187-6">https://doi.org/10.1057/s41262-020-00187-6</a></p>
+    </div>
+  </section>
+</main>
+<footer>Propuesta para el proyecto de título de Relevo, Escuela de Diseño UDP. Pendiente de la decisión del autor; no reemplaza el sistema vigente hasta aprobarse.</footer>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  const NS = 'http://www.w3.org/2000/svg';
+
+  // Íconos: retícula de 24, trazo 1,75, extremos y uniones redondeados. accent = renglón azul.
+  const ICONS = {
+    inicio: { label: 'Inicio', parts: [{ d: 'M5 10.4V18.6Q5 20.5 6.9 20.5H17.1Q19 20.5 19 18.6V10.4' }, { d: 'M3.4 11.6L12 4.1L20.6 11.6' }, { d: 'M10 20.5V16.3Q10 14.4 12 14.4Q14 14.4 14 16.3V20.5' }],
+      filled: [{ d: 'M5 10.6L12 4.6L19 10.6V18.6Q19 20.5 17.1 20.5H14V16.3Q14 14.4 12 14.4Q10 14.4 10 16.3V20.5H6.9Q5 20.5 5 18.6Z', fill: 'ink' }, { d: 'M3.4 11.6L12 4.1L20.6 11.6' }] },
+    ruta: { label: 'Ruta', parts: [{ d: 'M7.75 18.5H15A3.25 3.25 0 0 0 15 12H9A3.25 3.25 0 0 1 9 5.5H16.25' }, { c: [5.5, 18.5, 2.25] }, { c: [18.5, 5.5, 2.25] }],
+      filled: [{ d: 'M7.75 18.5H15A3.25 3.25 0 0 0 15 12H9A3.25 3.25 0 0 1 9 5.5H16.25' }, { c: [5.5, 18.5, 2.25], fill: 'ink' }, { c: [18.5, 5.5, 2.25], fill: 'ink' }] },
+    perfil: { label: 'Perfil', parts: [{ c: [12, 12, 9.1] }, { c: [12, 9.7, 3.1] }, { d: 'M6.7 18.3Q8.5 15 12 15Q15.5 15 17.3 18.3' }],
+      filled: [{ c: [12, 12, 9.1], fill: 'ink' }, { c: [12, 9.7, 3.1], fill: 'bg', stroke: 'none' }, { d: 'M6.6 18.5Q8.4 15.2 12 15.2Q15.6 15.2 17.4 18.5Q15.1 20.4 12 20.4Q8.9 20.4 6.6 18.5Z', fill: 'bg', stroke: 'none' }] },
+    actividad: { label: 'Actividad', parts: [{ d: 'M5.3 18.7L6 14.75L15.4 5.35L18.65 8.6L9.25 18Z' }, { d: 'M13.4 7.35L16.65 10.6' }, { d: 'M3.5 21.1H20.5', accent: true }] },
+    lugar: { label: 'Dónde empiezas', parts: [{ d: 'M12 18.75C12 18.75 6 13.9 6 9.25A6 6 0 0 1 18 9.25C18 13.9 12 18.75 12 18.75Z' }, { c: [12, 9.25, 2.1] }, { d: 'M6.75 21.1H17.25', accent: true }] },
+    parlante: { label: 'Parlante', parts: [{ d: 'M9.5 2.75H14.5Q17 2.75 17 5.25V15.75Q17 18.25 14.5 18.25H9.5Q7 18.25 7 15.75V5.25Q7 2.75 9.5 2.75Z' }, { c: [12, 12.6, 2.6] }, { c: [12, 6.6, 1.05], fill: 'ink', stroke: 'none' }, { d: 'M5 21.1H19', accent: true }] },
+    primerpaso: { label: 'Para empezar', parts: [{ d: 'M9 17V12H14V7H19.75' }, { d: 'M4.25 17H9', accent: true }] },
+    apps: { label: 'Apps elegidas', parts: [{ r: [3.25, 3.25, 7.5, 7.5, 2.25] }, { r: [13.25, 3.25, 7.5, 7.5, 2.25], accent: true, fill: 'accent' }, { r: [3.25, 13.25, 7.5, 7.5, 2.25] }, { r: [13.25, 13.25, 7.5, 7.5, 2.25] }] },
+    senal: { label: 'Señal', parts: [{ d: 'M4.75 9.25H7.25L11.1 5.9Q12.25 4.95 12.25 6.45V17.55Q12.25 19.05 11.1 18.1L7.25 14.75H4.75Q3.75 14.75 3.75 13.75V10.25Q3.75 9.25 4.75 9.25Z' }, { d: 'M15.6 9.1A4.1 4.1 0 0 1 15.6 14.9' }, { d: 'M18.1 6.6A7.6 7.6 0 0 1 18.1 17.4' }] },
+    silenciar: { label: 'Silenciar', parts: [{ d: 'M4.75 9.25H7.25L11.1 5.9Q12.25 4.95 12.25 6.45V17.55Q12.25 19.05 11.1 18.1L7.25 14.75H4.75Q3.75 14.75 3.75 13.75V10.25Q3.75 9.25 4.75 9.25Z' }, { d: 'M15.75 9.75L20.25 14.25M20.25 9.75L15.75 14.25' }] },
+    telefono: { label: 'Este teléfono', parts: [{ d: 'M9.25 2.75H14.75Q17.25 2.75 17.25 5.25V18.75Q17.25 21.25 14.75 21.25H9.25Q6.75 21.25 6.75 18.75V5.25Q6.75 2.75 9.25 2.75Z' }, { d: 'M10.5 18.25H13.5' }] },
+    tiempo: { label: 'Tiempo', parts: [{ c: [12, 12, 9.1] }, { d: 'M12 7.25V12L15.25 14' }] },
+    esperando: { label: 'Contando', parts: [{ d: 'M6.5 3.25H17.5M6.5 20.75H17.5' }, { d: 'M7.75 3.25C7.75 8.25 12 9.5 12 12C12 14.5 7.75 15.75 7.75 20.75' }, { d: 'M16.25 3.25C16.25 8.25 12 9.5 12 12C12 14.5 16.25 15.75 16.25 20.75' }, { d: 'M9.4 20.75C9.6 18.9 12 17.9 12 17.9C12 17.9 14.4 18.9 14.6 20.75Z', fill: 'ink', stroke: 'none' }] },
+    agregar: { label: 'Agregar', parts: [{ d: 'M12 5V19M5 12H19' }] },
+    editar: { label: 'Editar', parts: [{ d: 'M5.3 18.7L6 14.75L15.4 5.35L18.65 8.6L9.25 18Z' }, { d: 'M13.4 7.35L16.65 10.6' }] },
+    borrar: { label: 'Eliminar', parts: [{ d: 'M4.25 6.5H19.75' }, { d: 'M9.25 6.5V5.1Q9.25 3.75 10.6 3.75H13.4Q14.75 3.75 14.75 5.1V6.5' }, { d: 'M6.1 6.5L6.95 18.8Q7.1 20.5 8.8 20.5H15.2Q16.9 20.5 17.05 18.8L17.9 6.5' }, { d: 'M10.1 10.25V16.5M13.9 10.25V16.5' }] },
+    cerrar: { label: 'Cerrar', parts: [{ d: 'M6.75 6.75L17.25 17.25M17.25 6.75L6.75 17.25' }] },
+    volver: { label: 'Volver', parts: [{ d: 'M14.75 5.25L8 12L14.75 18.75' }] },
+    siguiente: { label: 'Seguir', parts: [{ d: 'M9.25 5.25L16 12L9.25 18.75' }] },
+    listo: { label: 'Listo', parts: [{ d: 'M4.75 12.6L9.6 17.25L19.25 6.75' }] },
+    comence: { label: 'Comencé', parts: [{ c: [12, 12, 9.1] }, { d: 'M8.1 12.3L10.9 15.1L16.1 9.4' }] },
+    despues: { label: 'Para después', parts: [{ d: 'M7.25 3.25H16.75Q18 3.25 18 4.5V20.25L12 16.4L6 20.25V4.5Q6 3.25 7.25 3.25Z' }] },
+    cambie: { label: 'Cambié de idea', parts: [{ d: 'M4.5 8H18.75M15.25 4.5L18.75 8L15.25 11.5' }, { d: 'M19.5 16H5.25M8.75 12.5L5.25 16L8.75 19.5' }] },
+    info: { label: 'Información', parts: [{ c: [12, 12, 9.1] }, { d: 'M12 11V16.5' }, { c: [12, 7.9, 1.1], fill: 'ink', stroke: 'none' }] },
+    privacidad: { label: 'Tus datos', parts: [{ d: 'M8 10.25H16Q18.5 10.25 18.5 12.75V18.25Q18.5 20.75 16 20.75H8Q5.5 20.75 5.5 18.25V12.75Q5.5 10.25 8 10.25Z' }, { d: 'M8.25 10.25V7.5A3.75 3.75 0 0 1 15.75 7.5V10.25' }, { d: 'M12 14.25V16.75' }] },
+    permiso: { label: 'Permiso', parts: [{ c: [8, 16, 3.9] }, { d: 'M10.8 13.2L19.75 4.25' }, { d: 'M16.5 7.5L18.75 9.75M14.25 9.75L15.9 11.4' }] },
+    advertencia: { label: 'Advertencia', parts: [{ d: 'M12 4L20.9 19.5H3.1Z' }, { d: 'M12 9.75V13.75' }, { c: [12, 16.6, 1.05], fill: 'ink', stroke: 'none' }] },
+    ajustes: { label: 'Ajustes', parts: [{ d: 'M4 7.5H20M4 16.5H20' }, { c: [9, 7.5, 2.4], fill: 'bg' }, { c: [15, 16.5, 2.4], fill: 'bg' }] }
+  };
+  // Íconos actuales de la app (KitIcons.kt), para comparar.
+  const OLD = {
+    inicio: [{ d: 'M4 10.5L12 3.75L20 10.5V19.25A1.75 1.75 0 0 1 18.25 21H5.75A1.75 1.75 0 0 1 4 19.25Z' }, { d: 'M9.75 21V15.25H14.25V21' }],
+    actividad: [{ d: 'M3.5 20.5H20.5' }, { d: 'M5 17V14.4L14.6 4.8A1.9 1.9 0 0 1 17.3 4.8L17.7 5.2A1.9 1.9 0 0 1 17.7 7.9L8.1 17.5H5.5A.5.5 0 0 1 5 17Z' }, { d: 'M13 6.4L16.1 9.5' }],
+    lugar: [{ d: 'M12 20.5C12 20.5 5.75 14.6 5.75 9.75A6.25 6.25 0 0 1 18.25 9.75C18.25 14.6 12 20.5 12 20.5Z' }, { d: 'M9.75 9.75A2.25 2.25 0 1 0 14.25 9.75A2.25 2.25 0 1 0 9.75 9.75Z' }],
+    parlante: [{ d: 'M9 2.75H15A3 3 0 0 1 18 5.75V18.25A3 3 0 0 1 15 21.25H9A3 3 0 0 1 6 18.25V5.75A3 3 0 0 1 9 2.75Z' }, { d: 'M8.75 14.5A3.25 3.25 0 1 0 15.25 14.5A3.25 3.25 0 1 0 8.75 14.5Z' }, { d: 'M11 7.5A1 1 0 1 0 13 7.5A1 1 0 1 0 11 7.5Z', fill: 'ink', stroke: 'none' }],
+    ruta: [{ d: 'M3.5 19.5H8.5V14H14V8.5H20.5' }],
+    perfil: [{ d: 'M5.25 5H18.75A2.5 2.5 0 0 1 21.25 7.5V16.5A2.5 2.5 0 0 1 18.75 19H5.25A2.5 2.5 0 0 1 2.75 16.5V7.5A2.5 2.5 0 0 1 5.25 5Z' }, { d: 'M6.25 10.75A2.25 2.25 0 1 0 10.75 10.75A2.25 2.25 0 1 0 6.25 10.75Z' }, { d: 'M5.25 16.25C5.6 14.6 6.9 13.75 8.5 13.75S11.4 14.6 11.75 16.25' }, { d: 'M14.5 10H18M14.5 13.5H17' }]
+  };
+
+  function el(name, attrs) { const n = document.createElementNS(NS, name); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; }
+  function keylines() {
+    const g = el('g', { class: 'keys', fill: 'none', stroke: 'var(--blue)', 'stroke-width': '0.12', opacity: '0.55' });
+    for (let i = 1; i < 24; i++) { g.append(el('line', { x1: i, y1: 0, x2: i, y2: 24, opacity: '0.35' }), el('line', { x1: 0, y1: i, x2: 24, y2: i, opacity: '0.35' })); }
+    g.append(el('rect', { x: 2, y: 2, width: 20, height: 20, 'stroke-dasharray': '0.6 0.4' }), el('circle', { cx: 12, cy: 12, r: 10 }), el('rect', { x: 3, y: 3, width: 18, height: 18, rx: 1 }), el('rect', { x: 4, y: 2, width: 16, height: 20, rx: 1 }), el('rect', { x: 2, y: 4, width: 20, height: 16, rx: 1 }));
+    return g;
+  }
+  function draw(parts, opts) {
+    const o = opts || {};
+    const svg = el('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true' });
+    if (o.keys) svg.append(keylines());
+    const sw = String(o.sw || 1.75);
+    parts.forEach((p) => {
+      let n;
+      if (p.d) n = el('path', { d: p.d });
+      else if (p.c) n = el('circle', { cx: p.c[0], cy: p.c[1], r: p.c[2] });
+      else if (p.r) n = el('rect', { x: p.r[0], y: p.r[1], width: p.r[2], height: p.r[3], rx: p.r[4] });
+      const color = p.accent ? 'var(--accent, var(--blue))' : 'currentColor';
+      const fill = p.fill === 'ink' ? 'currentColor' : p.fill === 'bg' ? 'var(--icon-bg, var(--card))' : p.fill === 'accent' ? color : 'none';
+      n.setAttribute('fill', fill);
+      n.setAttribute('stroke', p.stroke === 'none' ? 'none' : (p.fill === 'bg' ? 'currentColor' : color));
+      n.setAttribute('stroke-width', sw); n.setAttribute('stroke-linecap', 'round'); n.setAttribute('stroke-linejoin', 'round');
+      svg.append(n);
+    });
+    return svg;
+  }
+
+  // Grupos de íconos
+  const GROUPS = [
+    ['Navegación, en contorno y lleno', ['inicio', 'ruta', 'perfil'], true],
+    ['Propios de Relevo, con el renglón azul', ['actividad', 'primerpaso', 'lugar', 'parlante', 'apps', 'senal', 'silenciar', 'telefono', 'tiempo', 'esperando']],
+    ['Acciones', ['agregar', 'editar', 'borrar', 'cerrar', 'volver', 'siguiente', 'listo', 'ajustes']],
+    ['Respuestas y estados', ['comence', 'despues', 'cambie', 'info', 'privacidad', 'permiso', 'advertencia']]
+  ];
+  function renderIcons() {
+    const keys = document.body.classList.contains('show-keys');
+    const box = document.getElementById('icon-groups');
+    box.replaceChildren();
+    GROUPS.forEach(([title, names, withFilled]) => {
+      const grid = document.createElement('div'); grid.className = 'icon-grid';
+      names.forEach((name) => {
+        const ic = ICONS[name];
+        const add = (parts, label) => { const cell = document.createElement('div'); cell.className = 'ic'; cell.append(draw(parts, { keys })); const s = document.createElement('span'); s.textContent = label; cell.append(s); grid.append(cell); };
+        add(ic.parts, ic.label);
+        if (withFilled && ic.filled) add(ic.filled, ic.label + ', elegido');
+      });
+      const h = document.createElement('p'); h.className = 'small muted'; h.style.fontWeight = '600'; h.textContent = title;
+      box.append(h, grid);
+    });
+  }
+  function renderPairs() {
+    const box = document.getElementById('icon-pairs');
+    [['inicio', 'Inicio'], ['ruta', 'Ruta'], ['perfil', 'Perfil'], ['actividad', 'Actividad'], ['lugar', 'Dónde empiezas'], ['parlante', 'Parlante']].forEach(([k, label]) => {
+      const c = document.createElement('div'); c.className = 'cmp';
+      const a = document.createElement('span'); a.className = 'arrow'; a.textContent = '→';
+      const t = document.createElement('div'); const b = document.createElement('b'); b.textContent = label; const s = document.createElement('span');
+      s.textContent = k === 'ruta' ? 'De escalera a recorrido con inicio y meta' : k === 'perfil' ? 'De credencial a persona, con estado lleno' : (ICONS[k].parts.some((p) => p.accent) ? 'Suma el renglón azul' : 'Retícula y peso nuevos');
+      t.append(b, s);
+      c.append(draw(OLD[k], { sw: 1.75 }), a, draw(ICONS[k].parts), t);
+      box.append(c);
+    });
+  }
+  function renderWeights() {
+    const box = document.getElementById('icon-weights');
+    [[1.5, 400, 'Regular fino · 1,5'], [1.75, 400, 'Texto regular · 1,75'], [2.1, 600, 'Semibold · 2,1']].forEach(([sw, wt, cap]) => {
+      const col = document.createElement('div'); col.style.display = 'flex'; col.style.flexDirection = 'column'; col.style.gap = '12px';
+      const small = document.createElement('p'); small.className = 'small muted'; small.textContent = cap; col.append(small);
+      [['primerpaso', 'Para empezar'], ['lugar', 'Dónde empiezas'], ['tiempo', '15 min en tus apps']].forEach(([k, txt]) => {
+        const r = document.createElement('div'); r.className = 'wrow'; r.append(draw(ICONS[k].parts, { sw }));
+        const s = document.createElement('span'); s.textContent = txt; s.style.fontWeight = wt; r.append(s); col.append(r);
+      });
+      box.append(col);
+    });
+  }
+  function fillIconSlots() {
+    document.querySelectorAll('[data-icon]').forEach((slot) => {
+      const ic = ICONS[slot.dataset.icon]; if (!ic) return;
+      const parts = slot.hasAttribute('data-filled') && ic.filled ? ic.filled : ic.parts;
+      slot.replaceChildren(draw(parts));
+    });
+    const tab = document.getElementById('use-tab');
+    const wrap = document.createElement('div'); wrap.style.cssText = 'display:flex;gap:22px;align-items:center';
+    [['inicio', 'Inicio', true], ['ruta', 'Ruta', false], ['perfil', 'Perfil', false]].forEach(([k, label, on]) => {
+      const t = document.createElement('div'); t.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;' + (on ? 'font-weight:650' : 'color:var(--graphite)');
+      const svg = draw(on ? ICONS[k].filled : ICONS[k].parts); svg.style.cssText = 'width:24px;height:24px;color:' + (on ? 'var(--ink)' : 'var(--graphite)');
+      const em = document.createElement('span'); em.textContent = label; if (on) em.className = 'sub';
+      t.append(svg, em); wrap.append(t);
+    });
+    tab.replaceChildren(wrap);
+  }
+
+  // Medidas del logotipo y del subrayado, dibujadas a escala sobre la letra cargada.
+  function specs() {
+    const fam = getComputedStyle(root).getPropertyValue('--font');
+    const word = root.dataset.case === 'upper' ? 'Relevo' : 'relevo';
+    const W = 520, H = 210, size = 120;
+    const svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Medidas del logotipo: renglón del ancho de la palabra, con el 7,5 % de la altura del cuerpo' });
+    const t = el('text', { x: 40, y: 130, 'font-size': size, 'font-weight': 650, fill: 'var(--ink)', 'letter-spacing': '-3.6', style: 'font-family:' + fam });
+    t.textContent = word; svg.append(t);
+    document.getElementById('wm-spec').replaceChildren(svg);
+    requestAnimationFrame(() => {
+      let bb; try { bb = t.getBBox(); } catch (e) { return; }
+      const thick = size * 0.075, y = 130 + size * 0.17 - thick;
+      svg.append(el('rect', { x: bb.x + 3, y, width: bb.width - 6, height: thick, fill: 'var(--blue)' }));
+      const g = el('g', { stroke: 'var(--graphite)', 'stroke-width': 1, fill: 'none' });
+      g.append(el('line', { x1: bb.x + 3, y1: y + thick + 18, x2: bb.x + bb.width - 3, y2: y + thick + 18 }), el('line', { x1: bb.x + 3, y1: y + thick + 12, x2: bb.x + 3, y2: y + thick + 24 }), el('line', { x1: bb.x + bb.width - 3, y1: y + thick + 12, x2: bb.x + bb.width - 3, y2: y + thick + 24 }));
+      g.append(el('line', { x1: bb.x + bb.width + 14, y1: y, x2: bb.x + bb.width + 14, y2: y + thick }));
+      svg.append(g);
+      const lab = (x, yy, s, anchor) => { const n = el('text', { x, y: yy, 'font-size': 13, fill: 'var(--graphite)', 'text-anchor': anchor || 'start', style: 'font-family:' + fam }); n.textContent = s; svg.append(n); };
+      lab(bb.x + bb.width / 2, y + thick + 38, 'ancho de la palabra', 'middle');
+      lab(bb.x + bb.width + 22, y + thick - 1, 'grosor: 7,5 % del cuerpo');
+    });
+    // Subrayado de texto
+    const S = el('svg', { viewBox: '0 0 520 150', role: 'img', 'aria-label': 'Medidas del subrayado: grosor 0,09 em y separación 0,14 em bajo la línea base' });
+    const t2 = el('text', { x: 24, y: 78, 'font-size': 56, 'font-weight': 650, fill: 'var(--ink)', style: 'font-family:' + fam }); t2.textContent = 'a tiempo';
+    S.append(t2);
+    document.getElementById('sub-spec').replaceChildren(S);
+    requestAnimationFrame(() => {
+      let bb; try { bb = t2.getBBox(); } catch (e) { return; }
+      const th = 56 * 0.09, off = 56 * 0.14;
+      S.append(el('rect', { x: bb.x, y: 78 + off, width: bb.width, height: th, fill: 'var(--blue)' }));
+      const g = el('g', { stroke: 'var(--graphite)', 'stroke-width': 1, 'stroke-dasharray': '3 3' });
+      g.append(el('line', { x1: 10, y1: 78, x2: bb.x + bb.width + 30, y2: 78 }));
+      S.append(g);
+      const lab = (x, yy, s) => { const n = el('text', { x, y: yy, 'font-size': 13, fill: 'var(--graphite)', style: 'font-family:' + fam }); n.textContent = s; S.append(n); };
+      lab(bb.x + bb.width + 40, 72, 'línea base');
+      lab(bb.x + bb.width + 40, 78 + off + th + 2, 'grosor 0,09 em, a 0,14 em bajo la base');
+      lab(bb.x, 78 + off + th + 34, 'Uno por pantalla. Bajo texto en tinta. Del largo de lo que marca.');
+    });
+  }
+
+  // Dibujos: el objeto en la casa y el parlante con su banda.
+  function house(w) {
+    const svg = el('svg', { viewBox: '0 0 260 150', role: 'img', 'aria-label': 'Un parlante sobre una repisa, con una línea azul bajo él, junto a un libro' });
+    svg.append(el('line', { x1: 14, y1: 118, x2: 246, y2: 118, stroke: 'var(--ink)', 'stroke-width': 2.5, 'stroke-linecap': 'round' }));
+    svg.append(el('rect', { x: 98, y: 46, width: 52, height: 66, rx: 13, fill: 'var(--card)', stroke: 'var(--ink)', 'stroke-width': 2.5 }));
+    svg.append(el('circle', { cx: 124, cy: 88, r: 12, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 2.5 }), el('circle', { cx: 124, cy: 62, r: 3.5, fill: 'var(--ink)' }));
+    svg.append(el('rect', { x: 92, y: 124, width: 64, height: 7, fill: 'var(--blue)' }));
+    svg.append(el('rect', { x: 170, y: 98, width: 58, height: 14, rx: 2.5, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 2.5 }), el('line', { x1: 176, y1: 105, x2: 222, y2: 105, stroke: 'var(--ink)', 'stroke-width': 1.5 }));
+    svg.append(el('path', { d: 'M164 70A10 10 0 0 1 164 86M170 64A18 18 0 0 1 170 92', fill: 'none', stroke: 'var(--blue)', 'stroke-width': 2.5, 'stroke-linecap': 'round' }));
+    return svg;
+  }
+  function objectArt() {
+    const svg = el('svg', { viewBox: '0 0 320 230', role: 'img', 'aria-label': 'Parlante cilíndrico con la palabra relevo y una banda azul en la base, sobre una mesa' });
+    svg.append(el('ellipse', { cx: 160, cy: 196, rx: 96, ry: 10, fill: 'var(--mist)' }));
+    svg.append(el('path', { d: 'M110 52Q110 36 126 36H194Q210 36 210 52V176Q210 192 194 192H126Q110 192 110 176Z', fill: 'var(--paper)', stroke: 'var(--ink)', 'stroke-width': 2.5 }));
+    svg.append(el('rect', { x: 110, y: 172, width: 100, height: 14, fill: 'var(--brand)' }));
+    for (let r = 0; r < 6; r++) for (let c = 0; c < 7; c++) svg.append(el('circle', { cx: 130 + c * 10, cy: 64 + r * 10, r: 1.8, fill: 'var(--graphite)' }));
+    const t = el('text', { x: 160, y: 150, 'text-anchor': 'middle', 'font-size': 24, 'font-weight': 650, fill: 'var(--ink)', 'letter-spacing': '-0.7', style: 'font-family:' + getComputedStyle(root).getPropertyValue('--font') });
+    t.textContent = root.dataset.case === 'upper' ? 'Relevo' : 'relevo'; svg.append(t);
+    svg.append(el('rect', { x: 128, y: 157, width: 64, height: 2.4, fill: 'var(--brand)' }));
+    return svg;
+  }
+
+  // Estado de las decisiones
+  const state = { font: 'schibsted', blue: 'deck', case: 'lower' };
+  try { const saved = JSON.parse(localStorage.getItem('relevo-identidad') || '{}'); Object.assign(state, saved); } catch (e) {}
+  function apply() {
+    root.dataset.font = state.font === 'inter' ? 'inter' : 'schibsted';
+    root.dataset.blue = state.blue === 'app' ? 'app' : 'deck';
+    root.dataset.case = state.case === 'upper' ? 'upper' : 'lower';
+    const word = state.case === 'upper' ? 'Relevo' : 'relevo';
+    document.querySelectorAll('[data-wm], [data-wm-text]').forEach((n) => { n.textContent = word; });
+    document.querySelectorAll('[data-set]').forEach((b) => b.setAttribute('aria-pressed', String(state[b.dataset.set] === b.dataset.val)));
+    document.querySelectorAll('[data-blue-hex]').forEach((n) => { n.textContent = state.blue === 'app' ? '#2A4BD7' : '#3D38F5'; });
+    document.querySelectorAll('[data-blue-dark]').forEach((n) => { n.textContent = state.blue === 'app' ? '#8CA6FF' : '#9A97FF'; });
+    const fontName = document.querySelector('[data-font-name]');
+    if (fontName) fontName.textContent = state.font === 'inter' ? 'Inter · Rasmus Andersson, 2017 · licencia SIL Open Font' : 'Schibsted Grotesk · Henrik Kongsvoll para Bakken & Bæck, 2022 · licencia SIL Open Font';
+    document.getElementById('house-stage').replaceChildren(house());
+    document.getElementById('object-art').replaceChildren(objectArt());
+    specs();
+    try { localStorage.setItem('relevo-identidad', JSON.stringify(state)); } catch (e) {}
+  }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-set]'); if (!b) return;
+    state[b.dataset.set] = b.dataset.val; apply();
+  });
+  document.getElementById('keys-on').addEventListener('click', () => { document.body.classList.add('show-keys'); document.getElementById('keys-on').setAttribute('aria-pressed', 'true'); document.getElementById('keys-off').setAttribute('aria-pressed', 'false'); renderIcons(); });
+  document.getElementById('keys-off').addEventListener('click', () => { document.body.classList.remove('show-keys'); document.getElementById('keys-on').setAttribute('aria-pressed', 'false'); document.getElementById('keys-off').setAttribute('aria-pressed', 'true'); renderIcons(); });
+
+  renderIcons(); renderPairs(); renderWeights(); fillIconSlots(); apply();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => specs());
+})();
+</script>

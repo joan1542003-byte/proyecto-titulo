@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085).
+**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085). El 30 de septiembre, después de la corrección cruzada, se propuso [una sola identidad alrededor del subrayado azul](25_identidad-el-subrayado-2026-09-30.md) para la presentación, la app y el objeto, con íconos nuevos (D-098, pendiente).
 
 **Fecha de corte:** 16 de septiembre de 2026.
 
@@ -47,6 +47,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 22. [Sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) y sus [vistas](marca-2.0/README.md) (propuesta D-085), con el [video de 30 segundos](marca-2.0/video/README.md)
 23. [Actividades predefinidas e imágenes por generar](23_actividades-e-imagenes-2026-09-29.md): 31 actividades para personas de 18 a 30 años, 18 imágenes nuevas y la plantilla de prompt
 24. [Presentación de la corrección cruzada del 30 de septiembre](24_presentacion-correccion-cruzada-2026-09-30.md): estado, estructura, reglas de diseño y cómo se hizo en Figma, con las [15 diapositivas exportadas](presentacion-correccion-cruzada-2026-09-30/)
+25. [Identidad: el subrayado](25_identidad-el-subrayado-2026-09-30.md) y su [lámina](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html): diagnóstico de la presentación frente a la app, sistema propuesto, 27 íconos de muestra y decisiones pendientes (propuesta D-098)
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -76,6 +77,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Identidad: el subrayado
+
+- **Qué cambió:** el estado y el índice suman la propuesta D-098 y su lámina.
+- **Cómo estaba antes:** el índice terminaba en la presentación del 30 de septiembre.
+- **Por qué:** la corrección cruzada pidió más desarrollo de la identidad y el autor pidió una identidad más notoria y fundamentada.
 
 ### 2026-09-29 — Presentación de la corrección cruzada
 

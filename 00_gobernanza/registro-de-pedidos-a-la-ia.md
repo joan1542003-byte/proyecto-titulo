@@ -73,6 +73,7 @@
 | 30 sep. | Decisión | Activación automática opcional, también en el testeo; notificaciones con el Supabase del proyecto, enviadas desde su computador; panel como página privada en claude.ai. | [Android 2.16](../06_desarrollo_y_factibilidad/app-android/version-2.16-activacion-automatica-y-mensajes-2026-09-30.md) con activación automática, mensajes y consentimiento v10; tablas de mensajes en Supabase; [panel privado](../06_desarrollo_y_factibilidad/panel-admin/README.md). Probado en emulador: se activa solo, suena, llega el mensaje y se registran su llegada y su apertura | D-095 y D-096 |
 | 30 sep. | Corrección y consulta | Ordenar mejor el panel y diseñarlo como la app de Relevo; preguntar si la notificación puede llegar al instante. | Panel rediseñado con los colores, la fuente, las tarjetas y las cápsulas de la app, en cuatro pestañas y con una hoja por persona. [Android 2.17](../06_desarrollo_y_factibilidad/app-android/version-2.17-mensajes-al-instante-2026-09-30.md): el mensaje llega al instante mientras Relevo cuenta o espera (0,8 s en emulador); para que llegue siempre al instante haría falta Firebase | D-096 |
 | 30 sep. | Encargo y corrección | Registrar y tener almacenado todo lo de cada usuario (apps elegidas, uso y lo demás); dar mensajes predeterminados para enviarles; agregar la opción de eliminar un relevo activo, que no existía, y que la app avise qué campo falta cuando se toca «Seguir» sin completarlo. | [Android 2.18](../06_desarrollo_y_factibilidad/app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md) con uso diario de las apps elegidas y tiempo total de pantalla desde 7 días antes, estado del teléfono, eliminación del relevo activo y avisos de campos faltantes; consentimiento v11. [Panel v3](../06_desarrollo_y_factibilidad/panel-admin/README.md) con 12 mensajes listos, uso y configuración de cada persona, «Para revisar» y descarga de datos. Probado en emulador, incluido el borrado de las tablas nuevas | D-097 |
+| 30 sep. | Información y encargo | Informar lo que dijo la corrección cruzada: a la identidad de Relevo le falta desarrollo; se recordó el diseño de la presentación, pero no se vio en la app. Pedir elegir bien, quizás íconos propios que mezclen Material Design 3 y los de Apple, y sobre todo una identidad más notoria y fundamentada. | Diagnóstico de las dos identidades (presentación y app) y [propuesta «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md) con lámina interactiva: logotipo con renglón, el azul de la presentación con cuatro usos, Schibsted Grotesk en todo, reglas del subrayado, 27 íconos redibujados, maquetas y fuentes | D-098, pendiente de decisión |
 
 ## Lo que muestra el registro
 
@@ -83,6 +84,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — Identidad después de la corrección cruzada
+
+- **Qué cambió:** se registró el comentario de la corrección cruzada sobre la identidad y el pedido del autor, con la propuesta D-098 como resultado.
+- **Cómo estaba antes:** el registro terminaba en la app 2.18.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-09-30 — Registro completo y mensajes listos
 

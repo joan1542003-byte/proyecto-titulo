@@ -1079,7 +1079,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas:** guardar solo el uso alrededor de cada señal (lo que había) o el uso de todas las apps con su nombre. Esta última se descartó porque expone apps que no tienen que ver con Relevo.
 - **Documentación:** [Android 2.18](../06_desarrollo_y_factibilidad/app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md), [consentimiento](../07_validacion/consentimiento-android-vigente-2026-09-23.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
 
+## D-098 — Una sola identidad alrededor del subrayado (propuesta)
+
+- **Fecha:** 2026-09-30.
+- **Estado:** propuesta, pendiente de la decisión del autor. No reemplaza el sistema vigente hasta aprobarse.
+- **Propuesta:**
+  - **Recurso principal:** el subrayado azul. Marca la actividad en la app, la idea clave en la presentación y, con el objeto, el lugar donde empieza la actividad.
+  - **Logotipo:** «relevo» en minúsculas sobre su renglón azul.
+  - **Azul:** `#3D38F5`, el de la presentación, con cuatro usos (logotipo, subrayado, tiempo y lo elegido).
+  - **Letra:** Schibsted Grotesk en todas las piezas.
+  - **Íconos:** redibujados con la retícula de Material Design y el peso de SF Symbols; los propios de Relevo llevan el renglón azul.
+- **Fundamento:**
+  - En la corrección cruzada se recordó el diseño de la presentación, pero no se reconoció en la app, que usaba otro logotipo, otra letra y otro azul.
+  - Un recurso de marca funciona cuando es conocido y único, y eso se construye repitiéndolo igual (Romaniuk, 2018).
+  - Los logotipos son más propios que el color (Ward et al., 2020).
+- **Alternativas:** Inter en todo, «Relevo» con mayúscula o el azul `#2A4BD7` de la app. La lámina permite compararlas. El sistema 2.0 (D-085) queda como antecedente si se aprueba esta propuesta.
+- **Documentación:** [identidad «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md) y su [lámina](../10_recursos_visuales/marca-el-subrayado/lamina-el-subrayado-2026-09-30.html).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-09-30 — D-098 (propuesta)
+
+- **Qué cambió:** se registró la propuesta D-098: una sola identidad para la presentación, la app y el objeto, alrededor del subrayado azul.
+- **Cómo estaba antes:** la presentación y la app usaban logotipo, letra y azul distintos; D-085 seguía sin aprobar.
+- **Por qué:** comentario de la corrección cruzada y pedido del autor.
 
 ### 2026-09-30 — D-097
 
