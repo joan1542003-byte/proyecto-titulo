@@ -58,6 +58,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **1 de octubre:** la identidad se desarrolló como [sistema de diseño 3.0](10_recursos_visuales/26_sistema-de-diseno-3.0-2026-10-01.md) en el tipo Design System de claude.ai: libro de marca con voz y tono, tokens en tema claro y oscuro, 43 componentes, 102 íconos, logotipo, ícono de la app y trama ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-01.md)).
 
+**2 de octubre:** el [sistema de diseño 3.1](10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) (propuesta D-099) suma un logotipo nuevo con un renglón que hace lugar, dos voces tipográficas (la persona en itálica), seis colores de la casa, uno por categoría de actividad, 135 íconos, ilustraciones, patrones, 24 aplicaciones, el logotipo animado y la firma sonora ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-02.md)).
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».
@@ -132,6 +134,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — Sistema de diseño 3.1
+
+- **Qué cambió:** el estado suma el sistema de diseño 3.1 (D-099).
+- **Cómo estaba antes:** terminaba en el sistema de diseño 3.0.
+- **Por qué:** pedido del autor del 1 de octubre, retomado el 2.
 
 ### 2026-10-01 — Sistema de diseño 3.0
 

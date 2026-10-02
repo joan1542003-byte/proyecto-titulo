@@ -1,0 +1,55 @@
+<!-- @dsCard height=300 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Relevo</title>
+<style>
+  body { margin: 0; background: var(--paper); }
+  .cv { position: relative; width: 960px; height: 300px; overflow: hidden; background: var(--paper); }
+  .cv svg { position: absolute; inset: 0; }
+  .b-blue { fill: var(--blue); }
+  .dot { fill: var(--paper); }
+  .c-moverme { fill: var(--moverme-line); }
+  .c-leer { fill: var(--leer-line); }
+  .c-crear { fill: var(--crear-line); }
+  .c-aprender { fill: var(--aprender-line); }
+  .c-cuidar { fill: var(--cuidar-line); }
+  .c-compartir { fill: var(--compartir-line); }
+  .txt { position: absolute; left: 40px; bottom: 30px; width: 440px; }
+  .name { position: relative; display: inline-block; margin: 0; padding-right: 0.527em; font: 600 120px/0.95 var(--font-sans); letter-spacing: -0.022em; color: var(--ink); }
+  .name i { display: inline-block; width: 0; height: 0; }
+  .name b { position: absolute; left: 0.04em; right: 0; height: 0.078em; border-radius: 9999px; background: var(--blue); }
+  .tag { margin: 26px 0 0; font: 400 14px/20px var(--font-sans); color: var(--graphite); }
+</style>
+</head>
+<body>
+<div class="cv">
+  <svg width="960" height="300" viewBox="0 0 960 300" aria-hidden="true">
+    <!--
+      Bloques: blue 440 × 112 (radius-panel) y seis cápsulas de 12 (space-12) en moverme-line, leer-line, crear-line, aprender-line, cuidar-line y compartir-line; cerca de un tercio del cover.
+      Disposición: el azul arriba, cortado por el borde derecho, y debajo los renglones de la casa, de largos desiguales, que salen por la derecha como en la portada de la memoria.
+      Patrón: trama de puntos (fila «grilla de puntos») en el azul, porque el README hace de la trama un recurso central; siete colores a propósito: son un solo sistema, el azul de Relevo y los seis de la casa en fila.
+      Escalas: puntos cada space-24, de trama-dot-min a trama-dot-max; renglones de space-12 cada space-12 + space-8; esquinas radius-panel y cápsulas a la mitad de su alto.
+    -->
+    <rect class="b-blue" x="520" y="36" width="472" height="112" rx="28"/>
+    <circle class="dot" cx="540" cy="52" r="1.73"/><circle class="dot" cx="564" cy="52" r="2.13"/><circle class="dot" cx="588" cy="52" r="2.65"/><circle class="dot" cx="612" cy="52" r="3.22"/><circle class="dot" cx="636" cy="52" r="3.84"/><circle class="dot" cx="660" cy="52" r="4.49"/><circle class="dot" cx="684" cy="52" r="5.17"/><circle class="dot" cx="708" cy="52" r="5.86"/><circle class="dot" cx="732" cy="52" r="6.58"/><circle class="dot" cx="756" cy="52" r="7.32"/><circle class="dot" cx="780" cy="52" r="8.07"/><circle class="dot" cx="804" cy="52" r="8.84"/><circle class="dot" cx="828" cy="52" r="9.63"/><circle class="dot" cx="852" cy="52" r="10.42"/><circle class="dot" cx="876" cy="52" r="11.23"/><circle class="dot" cx="540" cy="76" r="1.73"/><circle class="dot" cx="564" cy="76" r="2.13"/><circle class="dot" cx="588" cy="76" r="2.65"/><circle class="dot" cx="612" cy="76" r="3.22"/><circle class="dot" cx="636" cy="76" r="3.84"/><circle class="dot" cx="660" cy="76" r="4.49"/><circle class="dot" cx="684" cy="76" r="5.17"/><circle class="dot" cx="708" cy="76" r="5.86"/><circle class="dot" cx="732" cy="76" r="6.58"/><circle class="dot" cx="756" cy="76" r="7.32"/><circle class="dot" cx="780" cy="76" r="8.07"/><circle class="dot" cx="804" cy="76" r="8.84"/><circle class="dot" cx="828" cy="76" r="9.63"/><circle class="dot" cx="852" cy="76" r="10.42"/><circle class="dot" cx="876" cy="76" r="11.23"/><circle class="dot" cx="540" cy="100" r="1.73"/><circle class="dot" cx="564" cy="100" r="2.13"/><circle class="dot" cx="588" cy="100" r="2.65"/><circle class="dot" cx="612" cy="100" r="3.22"/><circle class="dot" cx="636" cy="100" r="3.84"/><circle class="dot" cx="660" cy="100" r="4.49"/><circle class="dot" cx="684" cy="100" r="5.17"/><circle class="dot" cx="708" cy="100" r="5.86"/><circle class="dot" cx="732" cy="100" r="6.58"/><circle class="dot" cx="756" cy="100" r="7.32"/><circle class="dot" cx="780" cy="100" r="8.07"/><circle class="dot" cx="804" cy="100" r="8.84"/><circle class="dot" cx="828" cy="100" r="9.63"/><circle class="dot" cx="852" cy="100" r="10.42"/><circle class="dot" cx="876" cy="100" r="11.23"/><circle class="dot" cx="540" cy="124" r="1.73"/><circle class="dot" cx="564" cy="124" r="2.13"/><circle class="dot" cx="588" cy="124" r="2.65"/><circle class="dot" cx="612" cy="124" r="3.22"/><circle class="dot" cx="636" cy="124" r="3.84"/><circle class="dot" cx="660" cy="124" r="4.49"/><circle class="dot" cx="684" cy="124" r="5.17"/><circle class="dot" cx="708" cy="124" r="5.86"/><circle class="dot" cx="732" cy="124" r="6.58"/><circle class="dot" cx="756" cy="124" r="7.32"/><circle class="dot" cx="780" cy="124" r="8.07"/><circle class="dot" cx="804" cy="124" r="8.84"/><circle class="dot" cx="828" cy="124" r="9.63"/><circle class="dot" cx="852" cy="124" r="10.42"/><circle class="dot" cx="876" cy="124" r="11.23"/>
+    <rect class="c-moverme" x="600" y="176" width="380" height="12" rx="6"/>
+    <rect class="c-leer" x="690" y="196" width="290" height="12" rx="6"/>
+    <rect class="c-crear" x="560" y="216" width="420" height="12" rx="6"/>
+    <rect class="c-aprender" x="740" y="236" width="240" height="12" rx="6"/>
+    <rect class="c-cuidar" x="620" y="256" width="360" height="12" rx="6"/>
+    <rect class="c-compartir" x="700" y="276" width="280" height="12" rx="6"/>
+  </svg>
+  <div class="txt">
+    <p class="name" id="nm">relevo<i></i><b></b></p>
+    <p class="tag">Vuelve a lo que querías hacer.</p>
+  </div>
+</div>
+<script>
+(function () {
+  // El renglón del logotipo: 0,088 em bajo la línea base, 0,078 em de grosor, y pasa la «o» en una altura de x.
+  function place() { var n = document.getElementById('nm'), base = n.querySelector('i').offsetTop, em = parseFloat(getComputedStyle(n).fontSize); n.querySelector('b').style.top = (base + 0.088 * em) + 'px'; }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(place); place();
+})();
+</script>
+</body>
+</html>

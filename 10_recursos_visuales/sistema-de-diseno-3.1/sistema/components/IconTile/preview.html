@@ -1,0 +1,15 @@
+<!-- @dsCard group="Listas" height=100 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>IconTile — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h('div', { className: 'rl-demo-row' }, ['actividad', 'lugar', 'parlante', 'apps', 'tiempo'].map(function (n) { return h(R.IconTile, { key: n, icon: n }); })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

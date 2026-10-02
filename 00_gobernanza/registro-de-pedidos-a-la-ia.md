@@ -77,6 +77,8 @@
 | 30 sep. | Información | Compartir sus referencias personales para Relevo: tres afiches de una marca llamada Otherwise (trama de puntos de colores, tarjetas de vidrio, titulares en serif, letras dispersas). | Versión 2 de la propuesta, en la misma lámina. Toma la trama (píxeles y rejilla del parlante), el paso de color de la pantalla a la casa, el vidrio y la serif en titulares, con maquetas, afiches y la foto de la app en trama. Señala que contradice D-068, D-070 y D-073 | D-098, pendiente; tres decisiones nuevas |
 | 30 sep. | Decisión, consulta y encargo | Eligió sus referencias como dirección y pidió hacerla más neutra. Dijo que Instrument Serif está bien y pidió explorar serifas pensadas para pantalla. Pidió que la trama sea parte de la identidad y explorarla en los íconos, y confirmó «relevo» en minúsculas. Pidió evitar el degradado magenta y usar un color fundamentado, como un azul eléctrico. Preguntó si los íconos son propios y pidió buscar referencias parecidas en internet. | [Versión 3](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md): un solo azul eléctrico sobre neutros, la trama en fotos, tiempo y señal, cinco serifas comparadas (Newsreader recomendada para pantalla), íconos en trama para momentos de marca y referencias de Braun, Nothing y Klein. Respuesta: los íconos se dibujaron para Relevo | D-098, decidida en parte |
 | 1 oct. | Encargo | Desarrollar, mejorar y perfeccionar el sistema gráfico (comunicación, tono, colores, variantes y lo demás) y, si se puede, pasarlo a Claude Design. | [Sistema de diseño 3.0](../10_recursos_visuales/26_sistema-de-diseno-3.0-2026-10-01.md) publicado en el tipo Design System de claude.ai: libro de marca con siete secciones (voz y tono, color y variantes, logotipo, trama, iconografía, aplicaciones y fundamentos), tokens en tema claro y oscuro, 43 componentes en React escritos desde los de la app, 124 recursos y portada. Lo que el autor no había decidido se usó como supuesto: Newsreader, una tinta y trama en íconos solo en momentos de marca | D-098, decidida en parte |
+| 1 oct. | Encargo | Seguir con el desarrollo: iconografía, tipografías, diseños y «un sinfín de recursos», cada uno argumentado en la memoria o en otros principios de diseño; perfección de diseño, variedad e identidad propia; un logotipo hermoso, una selección tipográfica cuidada y libertad para no usar un solo color. | [Sistema de diseño 3.1](../10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) publicado en la misma página de Claude Design: logotipo nuevo con su renglón que hace lugar y una familia de 29 archivos con su exploración; dos voces tipográficas (la persona en Newsreader itálica); seis colores de la casa, uno por categoría de actividad, con contraste y visión del color medidos; 33 íconos nuevos; 6 ilustraciones; 11 patrones; 24 aplicaciones (afiches, redes, láminas, portada de la memoria, objeto, tarjeta y stickers); logotipo animado con la firma sonora; 13 páginas de muestra y libro de marca en diez secciones con referencias. Se señaló que el capítulo 11 de la memoria aún describe la marca anterior. | D-099 |
+| 2 oct. | Encargo | Intentar nuevamente: retomar el trabajo, que se había interrumpido. | Se retomó desde la subida de recursos y se terminó y publicó el sistema 3.1, con su copia en el repositorio. | D-099 |
 
 ## Lo que muestra el registro
 
@@ -87,6 +89,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — Sistema de diseño 3.1
+
+- **Qué cambió:** se registraron el pedido del 1 de octubre de seguir con iconografía, tipografías y diseños con recursos argumentados, y el del 2 de octubre de retomarlo, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en el sistema de diseño 3.0.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-01 — Sistema de diseño 3.0
 

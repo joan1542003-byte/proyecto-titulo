@@ -1,0 +1,17 @@
+<!-- @dsCard group="Fotos" height=470 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>PhotoHero — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 260px))', gap: 16 } },
+      h(R.PhotoHero, { src: '/_blob/3bf86915b563a259cc1ccc25a91cf9fa', alt: 'Un libro abierto' }, h(R.StatusChip, { icon: 'esperando', text: 'Contando' }), h(R.Signature, { words: 'Leer', variant: 'card', animate: false })),
+      h(R.PhotoHero, { src: '/_blob/3bf86915b563a259cc1ccc25a91cf9fa', trama: true, alt: 'Un libro abierto, en trama' }, h(R.Signature, { words: 'Leer', variant: 'card', animate: false }), h(R.TimeDots, { value: 6, total: 15, dense: true }))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!-- @dsCard group="Pantallas" height=760 width=1120 page subtitle="Inicio, Preparar y la señal armados con los componentes" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Pantallas — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  var TABS = [{ label: 'Inicio', icon: 'inicio', iconSelected: 'inicio-lleno' }, { label: 'Ruta', icon: 'ruta', iconSelected: 'ruta-llena' }, { label: 'Perfil', icon: 'perfil', iconSelected: 'perfil-lleno' }];
+  function Phone(props) { return h('figure', { style: { margin: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 } }, h('div', { className: 'rl-demo-phone' }, props.children), h('figcaption', { className: 'rl-demo-cap', style: { maxWidth: 300, textAlign: 'center' } }, props.caption)); }
+  function Inicio() {
+    return h(R.Screen, { leading: h('span', { style: { paddingLeft: 8 } }, h(R.Wordmark, { size: 22 })), trailing: h(R.Avatar, { size: 34, emoji: '📚', label: 'Perfil' }), title: 'Hola.', eyebrow: 'Miércoles 1 de octubre' },
+      h('div', { style: { display: 'flex', flexDirection: 'column', gap: 18 } },
+        h('div', { style: { background: 'var(--card)', borderRadius: 28, overflow: 'hidden' } },
+          h('div', { style: { height: 150 } }, h(R.Trama, { mode: 'foto', src: '/_blob/3bf86915b563a259cc1ccc25a91cf9fa', pitch: 5, color: 'leer', label: 'Un libro abierto, en trama' })),
+          h('div', { style: { padding: '14px 18px 18px', display: 'flex', flexDirection: 'column', gap: 10 } },
+            h('div', { className: 'rl-demo-row', style: { gap: 6 } }, h(R.StatusChip, { icon: 'esperando', text: 'Contando' }), h(R.ActivityTag, { category: 'leer' })),
+            h(R.Signature, { words: 'Leer', variant: 'card', category: 'leer' }),
+            h('p', { style: { margin: 0, font: '400 15px/21px var(--font-sans)', color: 'var(--graphite)' } }, 'Sonará junto al sillón cuando sumes 15 min en tus apps.'),
+            h(R.TimeDots, { value: 6, total: 15, dense: true })))),
+      h('div', { style: { position: 'absolute', left: 14, right: 14, bottom: 14, zIndex: 3 } }, h(R.TabBar, { items: TABS, selected: 0 })));
+  }
+  function Preparar() {
+    var s = React.useState('Leer 10 páginas'), v = s[0], set = s[1];
+    return h(R.Screen, { title: '¿Qué quieres hacer?', onBack: function () {}, closeIcon: true, progress: 0.25, step: '1 de 4', bottom: h(R.GuardedButton, { missing: v.trim() ? null : 'Escribe qué quieres hacer o toca una idea.' }, 'Seguir') },
+      h('div', { style: { display: 'flex', flexDirection: 'column', gap: 18 } },
+        h(R.RenglonField, { label: 'Actividad', value: v, onChange: set, category: 'leer' }),
+        h('p', { className: 'rl-demo-cap' }, 'Escribe lo que quieres hacer o toca una idea.'),
+        h('div', { className: 'rl-demo-row', style: { gap: 8 } }, ['Leer', 'Dibujar', 'Salir a caminar', 'Ordenar', 'Cocinar'].map(function (i) { return h(R.QuickChoice, { key: i, selected: v === i, onClick: function () { set(i); } }, i); }))));
+  }
+  function Senal() {
+    return h('div', { style: { position: 'absolute', inset: 0, background: 'var(--paper)' } },
+      h('div', { style: { position: 'absolute', inset: 0 } }, h(R.Trama, { mode: 'senal' })),
+      h('div', { style: { position: 'absolute', left: 16, right: 16, bottom: 92, padding: '20px 18px', borderRadius: 28, background: 'var(--glass)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', border: '.75px solid var(--glass-edge)', boxShadow: 'var(--shadow-glass)', display: 'flex', flexDirection: 'column', gap: 10 } },
+        h(R.Wordmark, { size: 18 }),
+        h('div', null, h(R.StatusChip, { icon: 'senal', text: 'Suena en el parlante', onPanel: true })),
+        h(R.Signature, { words: 'Leer', variant: 'signal' }),
+        h('p', { style: { margin: 0, font: '400 15px/21px var(--font-sans)', color: 'var(--graphite)' } }, 'Para empezar: abrir el libro.')),
+      h('div', { style: { position: 'absolute', left: 16, right: 16, bottom: 18 } }, h(R.Button, { icon: 'silenciar' }, 'Silenciar y continuar')));
+  }
+  function Demo() {
+    return h('div', { className: 'rl-demo', style: { flexDirection: 'row', gap: 36, justifyContent: 'center', padding: '24px 20px' } },
+      h(Phone, { caption: 'Inicio: la foto en trama, la frase de la persona sobre el renglón y el tiempo en puntos.' }, h(Inicio)),
+      h(Phone, { caption: 'Preparar: el campo es el renglón y el botón dice qué falta.' }, h(Preparar)),
+      h(Phone, { caption: 'La señal: la trama late mientras suena y el texto va en una tarjeta de vidrio.' }, h(Senal)));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

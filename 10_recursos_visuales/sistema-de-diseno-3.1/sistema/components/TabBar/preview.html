@@ -1,0 +1,17 @@
+<!-- @dsCard group="Estructura" height=140 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>TabBar — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  var TABS = [{ label: 'Inicio', icon: 'inicio', iconSelected: 'inicio-lleno' }, { label: 'Ruta', icon: 'ruta', iconSelected: 'ruta-llena' }, { label: 'Perfil', icon: 'perfil', iconSelected: 'perfil-lleno' }];
+  function Demo() {
+    var s = React.useState(0), v = s[0], set = s[1];
+    return h('div', { className: 'rl-demo', style: { maxWidth: 360 } }, h(R.TabBar, { items: TABS, selected: v, onSelect: set }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

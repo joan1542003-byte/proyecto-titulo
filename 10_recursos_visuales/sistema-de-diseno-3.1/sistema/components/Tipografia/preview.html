@@ -1,0 +1,56 @@
+<!-- @dsCard group="Marca" height=1500 width=1120 page subtitle="Dos voces: Relevo en grotesca y romana; la persona en itálica" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Tipografía — Relevo</title>
+<style>
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
+  .pg { padding: 40px 48px 56px; }
+  .eyebrow { font: 600 13px/18px var(--font-sans); color: var(--graphite); margin: 0; }
+  h1 { font: 380 46px/50px var(--font-serif); letter-spacing: -0.015em; margin: 8px 0 12px; }
+  h2 { font: 600 17px/22px var(--font-sans); margin: 40px 0 12px; }
+  .lead { font: 400 17px/26px var(--font-sans); color: var(--graphite); max-width: 780px; margin: 0; }
+  .grid { display: grid; gap: 16px; }
+  .g2 { grid-template-columns: repeat(2, 1fr); } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); } .g6 { grid-template-columns: repeat(6, 1fr); }
+  .card { background: var(--card); border-radius: var(--radius-panel); padding: 20px; }
+  .tile { border-radius: var(--radius-tile); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .cap { font: 400 13px/18px var(--font-sans); color: var(--graphite); margin: 10px 2px 0; }
+  .cap b { color: var(--ink); font-weight: 600; }
+  .why { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .why li { font: 400 15px/22px var(--font-sans); color: var(--graphite); padding-top: 14px; border-top: 1px solid var(--line); }
+  .why li b { color: var(--ink); font-weight: 600; }
+  .ref { font: 300 12px/17px var(--font-mono); color: var(--graphite); margin-top: 28px; }
+  img { display: block; max-width: 100%; height: auto; }
+  .fixed { background: var(--papel); }
+</style>
+</head>
+<body>
+<div class="pg">
+  <p class="eyebrow">Tipografía</p>
+  <h1>Dos voces</h1>
+  <p class="lead">Relevo habla en Schibsted Grotesk y en Newsreader romana. Lo que escribe la persona va en Newsreader itálica, en tinta y sobre el renglón: sus palabras se distinguen por la letra, no por el color.</p>
+
+  <div class="card" style="margin-top:28px;padding:36px 40px"><div id="firma"></div><p class="cap" style="margin-top:14px">«Vuelve a» es Relevo (romana); «leer», lo que escribió la persona (itálica sobre el renglón).</p></div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><p class="eyebrow">Schibsted Grotesk · interfaz y logotipo</p><div style="font:400 22px/30px var(--font-sans);margin:14px 0 12px">Te avisa cuando sumes este tiempo en las apps que elijas.</div><p class="cap" style="margin:0">Variable de 400 a 900. Todo lo que se toca y se lee de corrido. En la app: body 17/26, headline 17/22 en 600, largeTitle 34/40 en 650.</p></div>
+    <div class="card"><p class="eyebrow">Newsreader romana · la frase de Relevo</p><div style="font:380 44px/48px var(--font-serif);letter-spacing:-.015em;margin:14px 0 12px">¿Qué quieres hacer?</div><p class="cap" style="margin:0">Una frase por pantalla, desde 28 px: displayTitle 36/40, displayCard 30/34, displaySignal 44/46, displaySlide y displayPoster en láminas y afiches.</p></div>
+    <div class="card"><p class="eyebrow">Newsreader itálica · la voz de la persona</p><div style="min-height:90px;margin:14px 0 12px"><span id="campo"></span></div><p class="cap" style="margin:0">personaDisplay 36/40, persona 22/28 y personaBody 19/26, siempre en tinta. Solo para lo que la persona escribió.</p></div>
+    <div class="card"><p class="eyebrow">IBM Plex Mono · los datos</p><div style="font:300 15px/22px var(--font-mono);color:var(--graphite);margin:14px 0 12px">ejemplo · 2026-10-02 21:42 · leer · 15 min · comencé</div><p class="cap" style="margin:0">Solo en piezas de comunicación y en el panel del investigador: cifras alineadas y la textura de un registro.</p></div>
+  </div>
+  <h2>Pesos de Schibsted Grotesk</h2>
+  <div class="card" style="display:flex;gap:36px;align-items:baseline;flex-wrap:wrap"><div><div style="font:400 54px/1 var(--font-sans);letter-spacing:-.02em">Aa</div><p class="cap">400 · texto</p></div><div><div style="font:500 54px/1 var(--font-sans);letter-spacing:-.02em">Aa</div><p class="cap">500</p></div><div><div style="font:600 54px/1 var(--font-sans);letter-spacing:-.02em">Aa</div><p class="cap">600 · logotipo</p></div><div><div style="font:650 54px/1 var(--font-sans);letter-spacing:-.02em">Aa</div><p class="cap">650 · títulos</p></div><div><div style="font:700 54px/1 var(--font-sans);letter-spacing:-.02em">Aa</div><p class="cap">700</p></div><div><div style="font:800 54px/1 var(--font-sans);letter-spacing:-.02em">Aa</div><p class="cap">800</p></div></div>
+  <h2>Tamaño óptico de Newsreader</h2>
+  <div class="card" style="display:flex;gap:28px;align-items:baseline;flex-wrap:wrap"><div><div style="font:380 12px/1.1 var(--font-serif);font-optical-sizing:auto">Lugar</div><p class="cap">12 px · nota</p></div><div><div style="font:380 19px/1.1 var(--font-serif);font-optical-sizing:auto">Lugar</div><p class="cap">19 px · personaBody</p></div><div><div style="font:380 30px/1.1 var(--font-serif);font-optical-sizing:auto">Lugar</div><p class="cap">30 px · displayCard</p></div><div><div style="font:380 44px/1.1 var(--font-serif);font-optical-sizing:auto">Lugar</div><p class="cap">44 px · displaySignal</p></div><div><div style="font:380 72px/1.1 var(--font-serif);font-optical-sizing:auto">Lugar</div><p class="cap">72 px · displayPoster</p></div></div>
+  <h2>Por qué</h2>
+  <ul class="why"><li><b>Dos voces sin color.</b> En la app 2.18 la voz de la persona era azul; en 3.1 el azul queda para el sistema y la itálica marca sus palabras. Así funciona también en escala de grises, como pide WCAG 2.2 (1.4.1, no usar solo el color).</li><li><b>Tamaño óptico.</b> Newsreader cambia sus formas de 6 a 72 puntos (eje opsz): más fina y contrastada en titulares, más robusta en tamaños chicos (Microsoft, 2024).</li><li><b>Serif solo en la frase principal.</b> Ninguna letra es la más rápida de leer para todas las personas (Wallace et al., 2022): lo que se lee de corrido queda en la grotesca, que ya usa la app.</li><li><b>La misma letra en todo.</b> La presentación deja Inter y usa Schibsted Grotesk, para que la app y las láminas se reconozcan como una sola marca (corrección cruzada, 30 de septiembre).</li><li><b>Alternativa abierta.</b> Instrument Serif, más condensada y sin tamaño óptico. Cambiarla es tocar solo <code>type.families.serif</code>.</li></ul>
+  <p class="ref">Schibsted Grotesk (The Schibsted-Grotesk Project Authors), Newsreader (Production Type) e IBM Plex Mono (IBM): licencia SIL Open Font. Newsreader e IBM Plex Mono se cargan de Google Fonts.</p>
+</div>
+<script>
+(function () {
+  var h = React.createElement, R = window.Relevo;
+  function mount(id, el) { var n = document.getElementById(id); if (n) ReactDOM.createRoot(n).render(el); }
+  mount('firma', h(R.Signature, { words: 'leer', variant: 'title' }));
+  mount('campo', h(R.RenglonField, { label: 'Actividad', defaultValue: 'Leer 10 páginas', category: 'leer' }));
+})();
+</script>
+</body>
+</html>

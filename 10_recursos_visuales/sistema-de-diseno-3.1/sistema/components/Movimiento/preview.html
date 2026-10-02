@@ -1,0 +1,42 @@
+<!-- @dsCard group="Aplicaciones" height=1150 width=1120 page subtitle="Logotipo animado y firma sonora" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Movimiento y sonido — Relevo</title>
+<style>
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
+  .pg { padding: 40px 48px 56px; }
+  .eyebrow { font: 600 13px/18px var(--font-sans); color: var(--graphite); margin: 0; }
+  h1 { font: 380 46px/50px var(--font-serif); letter-spacing: -0.015em; margin: 8px 0 12px; }
+  h2 { font: 600 17px/22px var(--font-sans); margin: 40px 0 12px; }
+  .lead { font: 400 17px/26px var(--font-sans); color: var(--graphite); max-width: 780px; margin: 0; }
+  .grid { display: grid; gap: 16px; }
+  .g2 { grid-template-columns: repeat(2, 1fr); } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); } .g6 { grid-template-columns: repeat(6, 1fr); }
+  .card { background: var(--card); border-radius: var(--radius-panel); padding: 20px; }
+  .tile { border-radius: var(--radius-tile); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .cap { font: 400 13px/18px var(--font-sans); color: var(--graphite); margin: 10px 2px 0; }
+  .cap b { color: var(--ink); font-weight: 600; }
+  .why { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .why li { font: 400 15px/22px var(--font-sans); color: var(--graphite); padding-top: 14px; border-top: 1px solid var(--line); }
+  .why li b { color: var(--ink); font-weight: 600; }
+  .ref { font: 300 12px/17px var(--font-mono); color: var(--graphite); margin-top: 28px; }
+  img { display: block; max-width: 100%; height: auto; }
+  .fixed { background: var(--papel); }
+</style>
+</head>
+<body>
+<div class="pg">
+  <p class="eyebrow">Movimiento y sonido</p>
+  <h1>Se escribe, y después hace lugar</h1>
+  <p class="lead">El logotipo se anima como se escribe sobre un renglón: primero la línea, luego las letras y al final el renglón pasa la «o». Lo acompaña la firma sonora de dos notas.</p>
+
+  <div class="card fixed" style="margin-top:28px;padding:0;overflow:hidden"><video src="/_blob/660fad4616d3f903bf89381d88055051" poster="/_blob/aefa435c03c3861e8425d334d3cc0ae5" controls playsinline style="display:block;width:100%;height:auto"></video></div>
+  <h2>Tiempos</h2>
+  <div class="card"><table style="width:100%;border-collapse:collapse;font:400 14px/20px var(--font-sans)">
+    <tr style="border-top:1px solid var(--line)"><td style="padding:7px 16px 7px 0;font:300 13px/20px var(--font-mono);white-space:nowrap">0,35 – 1,05 s</td><td>El renglón se escribe bajo la palabra, con salida suave.</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 16px 7px 0;font:300 13px/20px var(--font-mono);white-space:nowrap">0,55 – 1,22 s</td><td>Las letras aparecen de a una, cada 70 ms, subiendo un poco.</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 16px 7px 0;font:300 13px/20px var(--font-mono);white-space:nowrap">1,05 s</td><td>Primera nota: 587 Hz (re), madera.</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 16px 7px 0;font:300 13px/20px var(--font-mono);white-space:nowrap">1,45 – 1,95 s</td><td>El renglón pasa la «o»: hace lugar.</td></tr><tr style="border-top:1px solid var(--line)"><td style="padding:7px 16px 7px 0;font:300 13px/20px var(--font-mono);white-space:nowrap">1,60 s</td><td>Segunda nota: 440 Hz (la). La firma sonora dura 2,2 s.</td></tr>
+  </table></div>
+  <h2>Por qué</h2>
+  <ul class="why"><li><b>Una sola animación de marca.</b> Escribir sobre el renglón, como la firma de la app (450 ms). En la interfaz, el resto se mueve entre 200 y 250 ms con la curva cubic-bezier(.2, 0, 0, 1) y sin rebotes.</li><li><b>Dos notas que bajan.</b> La firma sonora de D-071: timbre de madera, 587 → 440 Hz, una vez. Los sonidos más graves y más lentos se perciben menos urgentes (Edworthy et al., 1991): avisa sin alarmar.</li><li><b>Siempre igual.</b> Los logos sonoros pueden cambiar cómo se percibe una marca (Krishnan et al., 2012): este es breve, tranquilo y no cambia. No reemplaza la señal de 30 segundos del parlante.</li><li><b>Si se pide menos movimiento,</b> se muestra el cuadro final y el sonido solo suena si la persona lo activó.</li></ul>
+</div>
+
+</body>
+</html>

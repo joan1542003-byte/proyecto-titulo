@@ -1,0 +1,15 @@
+<!-- @dsCard group="Listas" height=110 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>SectionHeader — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo', style: { maxWidth: 440 } }, h(R.SectionHeader, { title: 'Ideas', action: 'Ver todas', onAction: function () {} }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

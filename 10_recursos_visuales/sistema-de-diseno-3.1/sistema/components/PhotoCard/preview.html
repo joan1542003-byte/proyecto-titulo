@@ -1,0 +1,19 @@
+<!-- @dsCard group="Fotos" height=330 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>PhotoCard — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h(R.Carousel, null,
+      h(R.PhotoCard, { title: 'Leer', subtitle: 'Abrir el libro', src: '/_blob/3bf86915b563a259cc1ccc25a91cf9fa', alt: 'Un libro abierto' }),
+      h(R.PhotoCard, { title: 'Leer', subtitle: 'En trama', src: '/_blob/3bf86915b563a259cc1ccc25a91cf9fa', trama: true, alt: 'Un libro abierto, en trama' }),
+      h(R.PhotoCard, { title: 'Tocar guitarra', src: '/_blob/6e5e21b8c9f1452e909a8665ae99eeff', alt: 'Una guitarra' }),
+      h(R.PhotoCard, { title: 'Ordenar', icon: 'ordenar' })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

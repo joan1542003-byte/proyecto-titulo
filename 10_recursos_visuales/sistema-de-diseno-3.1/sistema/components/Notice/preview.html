@@ -1,0 +1,17 @@
+<!-- @dsCard group="Listas" height=330 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Notice — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo', style: { maxWidth: 460 } },
+      h(R.Notice, { title: 'Tu primer relevo está activo', text: 'Cuando suene, la app te dirá qué hacer. Puedes ver o desactivar el relevo en Inicio.', icon: 'comence' }),
+      h(R.Notice, { tone: 'error', title: 'Sin conexión', text: 'Guardamos tus respuestas y las enviamos cuando vuelva la conexión.', actions: h(R.PlainAction, { icon: 'reintentar' }, 'Reintentar') }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

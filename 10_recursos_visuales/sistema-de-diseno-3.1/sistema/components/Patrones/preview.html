@@ -1,0 +1,43 @@
+<!-- @dsCard group="Marca" height=1500 width=1120 page subtitle="Renglones, cuadrícula de puntos, campos de trama y bandas" -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Patrones — Relevo</title>
+<style>
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
+  .pg { padding: 40px 48px 56px; }
+  .eyebrow { font: 600 13px/18px var(--font-sans); color: var(--graphite); margin: 0; }
+  h1 { font: 380 46px/50px var(--font-serif); letter-spacing: -0.015em; margin: 8px 0 12px; }
+  h2 { font: 600 17px/22px var(--font-sans); margin: 40px 0 12px; }
+  .lead { font: 400 17px/26px var(--font-sans); color: var(--graphite); max-width: 780px; margin: 0; }
+  .grid { display: grid; gap: 16px; }
+  .g2 { grid-template-columns: repeat(2, 1fr); } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); } .g6 { grid-template-columns: repeat(6, 1fr); }
+  .card { background: var(--card); border-radius: var(--radius-panel); padding: 20px; }
+  .tile { border-radius: var(--radius-tile); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .cap { font: 400 13px/18px var(--font-sans); color: var(--graphite); margin: 10px 2px 0; }
+  .cap b { color: var(--ink); font-weight: 600; }
+  .why { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .why li { font: 400 15px/22px var(--font-sans); color: var(--graphite); padding-top: 14px; border-top: 1px solid var(--line); }
+  .why li b { color: var(--ink); font-weight: 600; }
+  .ref { font: 300 12px/17px var(--font-mono); color: var(--graphite); margin-top: 28px; }
+  img { display: block; max-width: 100%; height: auto; }
+  .fixed { background: var(--papel); }
+</style>
+</head>
+<body>
+<div class="pg">
+  <p class="eyebrow">Patrones</p>
+  <h1>Hojas, puntos y renglones</h1>
+  <p class="lead">Los patrones salen de los dos recursos de la marca: el renglón (una hoja donde se escribe lo que se quiere hacer) y la trama (los puntos de la pantalla y de la rejilla del parlante). Son fondos: nunca llevan texto encima sin una tarjeta.</p>
+
+  <h2>Renglones</h2>
+  <div class="grid g3"><div><div class="tile"><img src="/_blob/3d377bc6c9d3a94cef9a31eebdc67ee0" alt="Renglones azules"></div><p class="cap"><b>Azul sobre blanco</b> · la hoja donde se escribe la intención: piezas para escribir a mano.</p></div><div><div class="tile"><img src="/_blob/d80e2ec358c49e6d35fab0a813fdf857" alt="Renglones suaves"></div><p class="cap"><b>Suaves sobre papel</b> · fondos de lectura y de láminas.</p></div><div><div class="tile"><img src="/_blob/21508fabaab7a4af5d29db6fc3bd27e7" alt="Renglones sobre tinta"></div><p class="cap"><b>Sobre tinta</b> · fondos oscuros.</p></div></div>
+  <h2>Cuadrícula de puntos</h2>
+  <div class="grid g2"><div><div class="tile"><img src="/_blob/7a33979202b8874c9dab5b83b59f014f" alt="Cuadrícula de puntos"></div><p class="cap"><b>La trama en reposo</b> · un punto cada 24 px (space-24): fondos tranquilos.</p></div><div><div class="tile"><img src="/_blob/080bff2ad314ee03f80039450bc9f77e" alt="Renglones de colores"></div><p class="cap"><b>Renglones de colores</b> · el azul y las seis firmas: portadas, separadores y la memoria.</p></div></div>
+  <h2>Campos de trama por categoría</h2>
+  <div class="grid g3"><div><div class="tile"><img src="/_blob/ea7f7ccf45f3ee6b5a87c0b73c785847" alt="Trama mostaza"></div><p class="cap"><b>Leer</b> · claros en mostaza-200 y sombras en mostaza-700.</p></div><div><div class="tile"><img src="/_blob/2afa39b18e37070d49f5aecca558a33d" alt="Trama arcilla"></div><p class="cap"><b>Crear con las manos</b> · claros en arcilla-200 y sombras en arcilla-700.</p></div><div><div class="tile"><img src="/_blob/d0382a1d2c8d3034fe26e5d66c6992e4" alt="Trama salvia"></div><p class="cap"><b>Cuidar la casa y a mí</b> · claros en salvia-200 y sombras en salvia-700.</p></div><div><div class="tile"><img src="/_blob/94594419e5f7fb594cb3cd2e97b1405e" alt="Trama terracota"></div><p class="cap"><b>Moverme</b> · claros en terracota-200 y sombras en terracota-700.</p></div><div><div class="tile"><img src="/_blob/5c5828f176180f32f6ddd0b06443d985" alt="Trama ciruela"></div><p class="cap"><b>Con otras personas</b> · claros en ciruela-200 y sombras en ciruela-700.</p></div><div><div class="tile"><img src="/_blob/f5854a3a9598ae0d595f8eafafcd56f3" alt="Trama pizarra"></div><p class="cap"><b>Aprender algo</b> · claros en pizarra-200 y sombras en pizarra-800.</p></div></div>
+  <h2>Por qué</h2>
+  <ul class="why"><li><b>Renglones cada 48 px.</b> El alto de una línea de cuaderno a escala de lámina: el renglón deja de ser adorno y vuelve a ser un lugar para escribir.</li><li><b>Una función por trama.</b> La trama en reposo es fondo; los campos de color anuncian una categoría. Ninguno se usa en las pantallas de lista de la app.</li><li><b>Puntos que crecen con la sombra.</b> Como en el medio tono: el punto mide de 16 % a 104 % del paso (trama-dot-min a trama-dot-max).</li></ul>
+</div>
+
+</body>
+</html>

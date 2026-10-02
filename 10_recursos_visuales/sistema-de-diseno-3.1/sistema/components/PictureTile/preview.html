@@ -1,0 +1,18 @@
+<!-- @dsCard group="Fotos" height=330 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>PictureTile — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var s = React.useState('pan'), v = s[0], set = s[1];
+    var items = [['pan', 'Hacer pan', '/_blob/89d7b5b600ba8f7872fb00550cd251ee'], ['pintar', 'Pintar', '/_blob/336ad297f99c76f50c1ee6bfcb92fbbe'], ['escribir', 'Escribir', '/_blob/dfc7ab984fb85bed5feba468e39563ca'], ['caminar', 'Caminar', null]];
+    return h('div', { className: 'rl-demo' }, h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 12, maxWidth: 560 } },
+      items.map(function (it) { return h(R.PictureTile, { key: it[0], label: it[1], src: it[2] || undefined, icon: it[2] ? undefined : 'caminar', selected: v === it[0], onClick: function () { set(it[0]); } }); })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

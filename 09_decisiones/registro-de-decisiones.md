@@ -1107,7 +1107,34 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Sistema 3.0 (1 de octubre):** a pedido del autor, la versión 3 se desarrolló como sistema de diseño en el tipo Design System de claude.ai: libro de marca con voz y tono, color y variantes, tokens en tema claro y oscuro, 43 componentes, 102 íconos, logotipo, ícono de la app y trama. Lo pendiente se resolvió con lo recomendado, como supuesto de trabajo: Newsreader, una sola tinta y trama en íconos solo en momentos de marca. También corrige dos pares de la app que no llegaban a 3:1: el borde de las marcas de selección y la flecha de las filas pasan a grafito.
 - **Documentación:** [identidad «el subrayado»](../10_recursos_visuales/25_identidad-el-subrayado-2026-09-30.md), su [lámina](../10_recursos_visuales/marca-el-subrayado/lamina-el-subrayado-2026-09-30.html) y el [sistema de diseño 3.0](../10_recursos_visuales/26_sistema-de-diseno-3.0-2026-10-01.md).
 
+
+## D-099 — Sistema de diseño 3.1: un renglón que hace lugar, dos voces y los colores de la casa (propuesta)
+
+- **Fecha:** 2026-10-02 (pedido del 1 de octubre, retomado el 2).
+- **Estado:** propuesta sobre D-098; trabaja con cuatro supuestos hasta que el autor decida.
+- **Pedido del autor:** seguir con iconografía, tipografías y diseños, con muchos recursos argumentados en la memoria o en principios de diseño; un logotipo hermoso, una selección tipográfica cuidada y libertad para usar más de un color.
+- **Propuesta:**
+  - **Logotipo:** «relevo» en Schibsted Grotesk 600 sobre un renglón en cápsula del grosor del travesaño de la «e», que pasa la «o» en una altura de x («hace lugar»). Símbolo: la «r» con su renglón. Familia de 29 archivos.
+  - **Tipografía, dos voces:** Relevo en Schibsted Grotesk y Newsreader romana; lo que escribe la persona, en Newsreader itálica y en tinta (deja de ser azul); IBM Plex Mono para datos.
+  - **Color:** el azul `#3D38F5` sigue siendo el único color del sistema; se suman seis colores de la casa, uno por categoría de actividad (terracota, mostaza, arcilla, pizarra, salvia y ciruela), con roles de renglón, texto y fondo.
+  - **Recursos:** 33 íconos nuevos (135 en total), 6 ilustraciones, 11 patrones, 24 aplicaciones, el logotipo animado con la firma sonora de D-071 y 13 páginas de muestra.
+- **Fundamento:**
+  - «Relevar» también es resaltar (D-071); el renglón que sigue después de la «o» dibuja la frase «Hazle lugar a lo que quieres hacer» (D-062).
+  - Los logotipos tipográficos son más propios que el color (Ward et al., 2020), y un recurso se vuelve distintivo cuando se repite igual (Romaniuk, 2018).
+  - Los colores de la casa salen de las categorías de la app (documento 23), son apagados (croma de 0,055 a 0,128 contra 0,266 del azul), se construyeron en OKLCH (Ottosson, 2020) y se distinguen también en las simulaciones de visión del color de Machado et al. (2009).
+  - La itálica distingue la voz de la persona sin depender del color (WCAG 2.2, 1.4.1).
+- **Supuestos:** Newsreader (o Instrument Serif); los colores de la casa (o volver a una sola tinta); la itálica para la voz de la persona (o el azul de la app 2.18); trama en íconos solo en momentos de marca.
+- **Alternativas:** mantener 3.0 tal cual; la variante «azul a celeste» de 3.0, que queda como antecedente porque su cambio de color no significa nada; la «o» del logotipo como parlante, descartada porque pone el objeto en el centro (D-072).
+- **Límites:** no se probó con personas; las pantallas y piezas son maquetas; la firma sonora no se escuchó en un parlante real; la página publicada no se revisó desde el navegador de trabajo.
+- **Documentación:** [sistema de diseño 3.1](../10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) y su [copia de archivos](../10_recursos_visuales/sistema-de-diseno-3.1/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — D-099, sistema de diseño 3.1
+
+- **Qué cambió:** se registró la propuesta D-099: logotipo que hace lugar, dos voces tipográficas, seis colores de la casa y los recursos del sistema 3.1.
+- **Cómo estaba antes:** el sistema vigente de trabajo era 3.0 (D-098), de una sola tinta.
+- **Por qué:** pedido del autor del 1 de octubre, retomado el 2.
 
 ### 2026-10-01 — D-098, sistema de diseño 3.0
 

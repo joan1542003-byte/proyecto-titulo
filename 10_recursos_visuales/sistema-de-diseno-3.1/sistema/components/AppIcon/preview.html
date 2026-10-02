@@ -1,0 +1,16 @@
+<!-- @dsCard group="Marca" height=200 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>AppIcon — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h('div', { className: 'rl-demo-row', style: { gap: 20, alignItems: 'flex-end' } },
+      h(R.AppIcon, { size: 112 }), h(R.AppIcon, { size: 112, variant: 'tinta' }), h(R.AppIcon, { size: 112, variant: 'papel' }), h(R.AppIcon, { size: 72, round: true }), h(R.AppIcon, { size: 48 }), h(R.AppIcon, { size: 32 })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

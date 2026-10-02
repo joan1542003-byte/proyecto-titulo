@@ -1,0 +1,18 @@
+<!-- @dsCard group="Marca" height=150 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>TimeDots — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var s = React.useState(6), v = s[0], set = s[1];
+    return h('div', { className: 'rl-demo' },
+      h(R.TimeDots, { value: v, total: 15 }),
+      h('div', { className: 'rl-demo-row' }, h(R.Button, { kind: 'secondary', compact: true, onClick: function () { set(Math.min(15, v + 1)); } }, 'Sumar un minuto'), h(R.PlainAction, { color: 'var(--graphite)', onClick: function () { set(0); } }, 'Reiniciar')));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

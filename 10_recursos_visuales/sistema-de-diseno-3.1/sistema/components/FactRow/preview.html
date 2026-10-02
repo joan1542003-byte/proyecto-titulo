@@ -1,0 +1,19 @@
+<!-- @dsCard group="Listas" height=240 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>FactRow — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    return h('div', { className: 'rl-demo', style: { maxWidth: 440 } }, h(R.ListSection, null,
+      h(R.FactRow, { icon: 'actividad', label: 'Actividad', value: 'Leer 10 páginas' }),
+      h(R.FactRow, { icon: 'primer-paso', label: 'Cómo empieza', value: 'Abrir el libro', onClick: function () {} }),
+      h(R.FactRow, { icon: 'lugar', label: 'Dónde', value: 'Junto al sillón' }),
+      h(R.FactRow, { icon: 'tiempo', label: 'Después de', value: '15 min', valueIsVoice: false })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

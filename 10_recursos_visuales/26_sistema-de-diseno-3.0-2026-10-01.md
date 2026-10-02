@@ -4,6 +4,7 @@
 
 - Sistema publicado en el tipo Design System de claude.ai: [página privada](https://claude.ai/artifact/SsGWeeHPHxxkXrCKN1WW8x).
 - Copia en el repositorio: [`sistema-de-diseno-3.0/`](sistema-de-diseno-3.0/README.md), con los programas que lo generan.
+- **Actualización del 2 de octubre:** la página publicada pasó a la versión 3.1, descrita en el [documento 27](27_sistema-de-diseno-3.1-2026-10-02.md). Este documento describe 3.0, que se conserva como antecedente.
 
 ## Qué pidió el autor
 
@@ -74,6 +75,12 @@ Para no dejar el sistema a medias, se usó lo recomendado donde el autor aún no
 - Emoji: la app usa imágenes Noto 3D. En el sistema, `Avatar` y `EmojiTile` reciben esa imagen por `src`, y en las maquetas se usó el carácter del sistema operativo como sustituto.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — Paso a 3.1
+
+- **Qué cambió:** se avisa que la página publicada pasó a la versión 3.1 (documento 27).
+- **Cómo estaba antes:** el documento describía la versión publicada.
+- **Por qué:** el autor pidió seguir desarrollando el sistema.
 
 ### 2026-10-01 — Creación
 

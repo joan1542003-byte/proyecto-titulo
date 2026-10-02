@@ -1,0 +1,21 @@
+<!-- @dsCard group="Marca" height=380 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Trama — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var box = { height: 210, borderRadius: 22, overflow: 'hidden', background: 'var(--card)' };
+    return h('div', { className: 'rl-demo' },
+      h('div', { style: { display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', gap: 12 } },
+        h('figure', { style: { margin: 0 } }, h('div', { style: box }, h(R.Trama, { mode: 'senal' })), h('figcaption', { className: 'rl-demo-cap' }, 'La señal, en azul')),
+        h('figure', { style: { margin: 0 } }, h('div', { style: box }, h(R.Trama, { mode: 'foto', src: '/_blob/3bf86915b563a259cc1ccc25a91cf9fa', color: 'leer', label: 'Un libro abierto, en trama' })), h('figcaption', { className: 'rl-demo-cap' }, 'Leer, en mostaza')),
+        h('figure', { style: { margin: 0 } }, h('div', { style: box }, h(R.Trama, { mode: 'foto', src: '/_blob/6e5e21b8c9f1452e909a8665ae99eeff', color: 'crear', label: 'Una guitarra, en trama' })), h('figcaption', { className: 'rl-demo-cap' }, 'Crear, en arcilla')),
+        h('figure', { style: { margin: 0 } }, h('div', { style: Object.assign({}, box, { padding: 26, boxSizing: 'border-box' }) }, h(R.Trama, { mode: 'icono', icon: 'testigo-sonando', grid: 16 })), h('figcaption', { className: 'rl-demo-cap' }, 'El testigo sonando, en puntos'))));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

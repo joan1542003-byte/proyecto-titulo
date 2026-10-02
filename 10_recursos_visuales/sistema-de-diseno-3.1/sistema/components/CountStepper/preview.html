@@ -1,0 +1,16 @@
+<!-- @dsCard group="Selección" height=110 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>CountStepper — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  function Demo() {
+    var s = React.useState(3), v = s[0], set = s[1];
+    return h('div', { className: 'rl-demo', style: { maxWidth: 420 } }, h(R.CountStepper, { value: v, min: 1, max: 7, onChange: set, label: v + (v === 1 ? ' día por semana' : ' días por semana') }));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- @dsCard group="Marca" height=150 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ActivityTag — Relevo</title></head>
+<body>
+<div id="root"></div>
+<script>
+  var R = window.Relevo, h = React.createElement;
+  var CATS = ['moverme', 'leer', 'crear', 'aprender', 'cuidar', 'compartir'];
+  function Demo() {
+    return h('div', { className: 'rl-demo' }, h('div', { className: 'rl-demo-row', style: { gap: 8 } }, CATS.map(function (c) { return h(R.ActivityTag, { key: c, category: c }); })),
+      h('div', { className: 'rl-demo-row', style: { gap: 8 } }, h(R.ActivityTag, { category: 'crear', label: 'Tejer o bordar', icon: 'tejer' }), h(R.ActivityTag, { category: 'moverme', label: 'Salir a trotar', icon: 'trotar' }), h(R.ActivityTag, { category: 'cuidar', label: 'Pasear al perro', icon: 'huella' })));
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>
+</body>
+</html>
