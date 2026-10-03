@@ -1156,11 +1156,18 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Color:** la paleta viva de D-100, ahora como luz: cada color con la foto de su actividad desenfocada en luz suave. Nunca manchas de color sin una foto detrás.
   - **Letra:** vuelven las dos voces de la 3.1: Newsreader romana para Relevo e itálica para la persona; Schibsted Grotesk para la interfaz y el logotipo; IBM Plex Mono para datos.
 - **Fundamento:** la memoria describe la actividad que «puede dejar de estar presente»; Rose Pilkington hizo el degradado de Instagram «iluminado desde dentro» (2022); Special Offer construyó brat con un color y una frase (2024); Pentagram usó el desenfoque como lenguaje de la temporada 2022-2023 del Atlantic Theater; Newsreader es de Production Type (2020-2021).
+- **Versión 2 (mismo día):** el autor pidió no abusar de la raya ni de la serif. Relevo pasa a hablar en Schibsted Grotesk también en titulares; la serif queda solo para las palabras de la persona, y el renglón va solo bajo esas palabras, del largo de la palabra y media eme más, como el del logotipo.
 - **Alternativas:** la 3.2 con colores planos; la casa apagada de 3.1; las direcciones del documento 28.
 - **Límites:** maquetas sin prueba con personas; dos de las seis fotos son generadas con IA; sin tema oscuro.
 - **Documentación:** [Volver a enfocar](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/volver-a-enfocar-2026-10-03/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — D-101, versión 2
+
+- **Qué cambió:** D-101 suma su versión 2: menos serif y menos renglón.
+- **Cómo estaba antes:** D-101 usaba Newsreader en los titulares y el renglón de borde a borde.
+- **Por qué:** el autor dijo que era mejorable y pidió no abusar de la raya ni de la serif, que no es obligatoria.
 
 ### 2026-10-03 — D-101 y estado de D-100
 

@@ -9,6 +9,16 @@
 
 Rechazó Playwrite, la letra escrita a mano de la 3.2. Compartió seis referencias para trabajar con ellas (Scribbit, bird, bloop, furion, Meristem y Wanderly) y pidió fundamentar siempre con diseñadores recientes, famosos y de buena reputación, no con antecedentes antiguos.
 
+## Versión 2 (mismo día)
+
+El autor la encontró mejorable y pidió no abusar de la raya ni de la serif, que no es obligatoria. La lámina publicada pasó a la versión 2 (`volver-a-enfocar-2026-10-03/volver-a-enfocar-v2.html`, piezas en `volver-a-enfocar-2026-10-03/piezas-v2/`):
+
+- **Relevo habla en Schibsted Grotesk**, también en los titulares (650, apretados). La serif queda en un solo lugar: las palabras que escribió la persona, en Newsreader itálica.
+- **El renglón ya no cruza la pieza.** Va solo bajo las palabras de la persona, del largo de la palabra y media eme más, en cápsula, como el del logotipo. Las líneas para escribir de la historia y de la tarjeta quedan dentro de los márgenes y más finas.
+- La idea, el color como luz y las piezas no cambian.
+
+Las tablas de letra y las reglas de abajo describen la versión 1; en la versión 2 manda lo de esta sección.
+
 ## La idea
 
 En el teléfono, lo que la persona quería hacer queda fuera de foco. La memoria lo dice así: la otra actividad «puede dejar de estar presente» mientras todavía era posible empezarla. Relevo la vuelve a enfocar. Por eso la actividad aparece **desenfocada, en el color vivo de su categoría**, y encima, nítidas, la frase de Relevo y las palabras de la persona sobre el renglón azul.
@@ -109,6 +119,12 @@ Schibsted. (s. f.). *Schibsted Grotesk* [Repositorio de la fuente]. GitHub. http
 W3C. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Versión 2
+
+- **Qué cambió:** se suma la versión 2: grotesca para Relevo, serif solo para la persona y el renglón solo bajo sus palabras.
+- **Cómo estaba antes:** la versión 1 usaba Newsreader en todos los titulares y un renglón de borde a borde en cada pieza.
+- **Por qué:** el autor dijo que era mejorable y pidió no abusar de la raya ni de la serif, que no es obligatoria.
 
 ### 2026-10-03 — Creación
 

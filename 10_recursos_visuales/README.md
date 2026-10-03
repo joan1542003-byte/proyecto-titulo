@@ -52,7 +52,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 27. [Sistema de diseño 3.1](27_sistema-de-diseno-3.1-2026-10-02.md) y sus [archivos](sistema-de-diseno-3.1/README.md): logotipo que hace lugar con 29 archivos y su exploración, dos voces tipográficas, seis colores de la casa, 135 íconos, 6 ilustraciones, 11 patrones, 24 aplicaciones, logotipo animado con firma sonora, 13 páginas de muestra y libro de marca en diez secciones. Publicado en claude.ai (D-099).
 28. [Exploración de color y letra](28_exploracion-color-y-letra-2026-10-02.md) y su [lámina](exploracion-color-y-letra-2026-10-02/color-y-letra.html): nueve referencias de Behance, cuatro direcciones de color, cinco pares de letra y un combinador. Propuesta para que el autor elija.
 29. [Relevo vivo, propuesta 3.2](29_relevo-vivo-2026-10-03.md), su [lámina](relevo-vivo-2026-10-03/relevo-vivo.html) y sus [catorce piezas](relevo-vivo-2026-10-03/README.md): un color, una frase, un renglón; seis colores vivos; grotesca gruesa y letra escrita a mano (D-100).
-30. [Volver a enfocar, propuesta 3.3](30_volver-a-enfocar-2026-10-03.md), su [lámina](volver-a-enfocar-2026-10-03/volver-a-enfocar.html) y sus [catorce piezas](volver-a-enfocar-2026-10-03/README.md): la actividad fuera de foco en su color vivo; Newsreader para Relevo y su itálica para la persona (D-101).
+30. [Volver a enfocar, propuesta 3.3](30_volver-a-enfocar-2026-10-03.md), su [lámina](volver-a-enfocar-2026-10-03/volver-a-enfocar.html) y sus [catorce piezas](volver-a-enfocar-2026-10-03/README.md): la actividad fuera de foco en su color vivo; Newsreader para Relevo y su itálica para la persona (D-101). Versión 2: [lámina](volver-a-enfocar-2026-10-03/volver-a-enfocar-v2.html) con la grotesca en los titulares, la serif solo para la persona y el renglón solo bajo sus palabras.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -82,6 +82,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Volver a enfocar, versión 2
+
+- **Qué cambió:** el índice suma la versión 2 del documento 30.
+- **Cómo estaba antes:** enlazaba solo la versión 1.
+- **Por qué:** el autor dijo que era mejorable y pidió no abusar de la raya ni de la serif, que no es obligatoria.
 
 ### 2026-10-03 — Volver a enfocar
 
