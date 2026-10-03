@@ -80,6 +80,7 @@
 | 1 oct. | Encargo | Seguir con el desarrollo: iconografía, tipografías, diseños y «un sinfín de recursos», cada uno argumentado en la memoria o en otros principios de diseño; perfección de diseño, variedad e identidad propia; un logotipo hermoso, una selección tipográfica cuidada y libertad para no usar un solo color. | [Sistema de diseño 3.1](../10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) publicado en la misma página de Claude Design: logotipo nuevo con su renglón que hace lugar y una familia de 29 archivos con su exploración; dos voces tipográficas (la persona en Newsreader itálica); seis colores de la casa, uno por categoría de actividad, con contraste y visión del color medidos; 33 íconos nuevos; 6 ilustraciones; 11 patrones; 24 aplicaciones (afiches, redes, láminas, portada de la memoria, objeto, tarjeta y stickers); logotipo animado con la firma sonora; 13 páginas de muestra y libro de marca en diez secciones con referencias. Se señaló que el capítulo 11 de la memoria aún describe la marca anterior. | D-099 |
 | 2 oct. | Encargo | Intentar nuevamente: retomar el trabajo, que se había interrumpido. | Se retomó desde la subida de recursos y se terminó y publicó el sistema 3.1, con su copia en el repositorio. | D-099 |
 | 2 oct. | Encargo | Seguir explorando: mirar de nuevo los colores y la tipografía; recomendó revisar Behance para nutrirse de referencias. | [Exploración de color y letra](../10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md) con una [lámina interactiva](https://claude.ai/artifact/T8FY5qmRDCa7T5Mmfk5oxP): nueve referencias de Behance con lo que sirve de cada una, cuatro direcciones de color (casa apagada, cuaderno, tintas de imprenta, noche y lámpara), cinco pares de letra (entre ellos Playwrite CL, la letra ligada escolar chilena) y un combinador sobre las mismas piezas. Recomendación: cuaderno con letra de cuaderno; cuatro preguntas para decidir. | D-099 |
+| 3 oct. | Corrección | Usar colores más vivos y darle más personalidad; evitar el diseño genérico de IA y no sobrediseñar: una mezcla entre minimalismo y un diseño hermoso y expresivo. | [Propuesta 3.2, «Relevo vivo»](../10_recursos_visuales/29_relevo-vivo-2026-10-03.md) con su [lámina](https://claude.ai/artifact/VyeLFYsuWgkyJ45pkfywJL): un color, una frase, un renglón. Seis colores de la casa vivos con tres usos cada uno, la frase de Relevo en grotesca gruesa y la palabra de la persona escrita a mano (Playwrite CL), catorce piezas y reglas de lo que se evita. Se señaló que quita la serif de titulares elegida el 30 de septiembre. | D-100 |
 
 ## Lo que muestra el registro
 
@@ -90,6 +91,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Relevo vivo
+
+- **Qué cambió:** se registró el pedido de colores más vivos y más personalidad, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en la exploración de color y letra.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-02 — Exploración de color y letra
 

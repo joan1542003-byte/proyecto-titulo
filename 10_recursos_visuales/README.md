@@ -51,6 +51,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 26. [Sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md) y sus [archivos](sistema-de-diseno-3.0/README.md): libro de marca con voz y tono, color y variantes, logotipo, trama, iconografía, aplicaciones y fundamentos; tokens en tema claro y oscuro; 43 componentes en React; 102 íconos, logotipo, ícono de la app y trama. Publicado en claude.ai (D-098)
 27. [Sistema de diseño 3.1](27_sistema-de-diseno-3.1-2026-10-02.md) y sus [archivos](sistema-de-diseno-3.1/README.md): logotipo que hace lugar con 29 archivos y su exploración, dos voces tipográficas, seis colores de la casa, 135 íconos, 6 ilustraciones, 11 patrones, 24 aplicaciones, logotipo animado con firma sonora, 13 páginas de muestra y libro de marca en diez secciones. Publicado en claude.ai (D-099).
 28. [Exploración de color y letra](28_exploracion-color-y-letra-2026-10-02.md) y su [lámina](exploracion-color-y-letra-2026-10-02/color-y-letra.html): nueve referencias de Behance, cuatro direcciones de color, cinco pares de letra y un combinador. Propuesta para que el autor elija.
+29. [Relevo vivo, propuesta 3.2](29_relevo-vivo-2026-10-03.md), su [lámina](relevo-vivo-2026-10-03/relevo-vivo.html) y sus [catorce piezas](relevo-vivo-2026-10-03/README.md): un color, una frase, un renglón; seis colores vivos; grotesca gruesa y letra escrita a mano (D-100).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -80,6 +81,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Relevo vivo
+
+- **Qué cambió:** el índice suma el documento 29 y su carpeta.
+- **Cómo estaba antes:** el índice terminaba en la exploración de color y letra (documento 28).
+- **Por qué:** el autor pidió colores más vivos y más personalidad, sin diseño genérico ni recargado.
 
 ### 2026-10-02 — Exploración de color y letra
 

@@ -1,0 +1,195 @@
+{
+ "base": {
+  "INK": "#141519",
+  "PAPER": "#FAFAF7",
+  "BLUE": "#3D38F5"
+ },
+ "cats": {
+  "leer": {
+   "name": "Leer",
+   "fam": "sol",
+   "h": 90,
+   "Lc": 0.895,
+   "k": {
+    "inkOnCampo": 13.26,
+    "tintaOnPaper": 4.57,
+    "campoOnNight": 13.26,
+    "tintaOnSuave": 4.2
+   },
+   "why": "la luz de la lámpara sobre el libro",
+   "campo": {
+    "L": 0.895,
+    "C": 0.131,
+    "hex": "#FED86F"
+   },
+   "tinta": {
+    "L": 0.555,
+    "C": 0.109,
+    "hex": "#8C6F0E"
+   },
+   "suave": {
+    "L": 0.955,
+    "C": 0.032,
+    "hex": "#F8F0D9"
+   }
+  },
+  "moverme": {
+   "name": "Moverme",
+   "fam": "naranja",
+   "h": 45,
+   "Lc": 0.72,
+   "k": {
+    "inkOnCampo": 6.92,
+    "tintaOnPaper": 4.57,
+    "campoOnNight": 6.92,
+    "tintaOnSuave": 4.18
+   },
+   "why": "la tierra y el atardecer afuera",
+   "campo": {
+    "L": 0.72,
+    "C": 0.18,
+    "hex": "#FD7934"
+   },
+   "tinta": {
+    "L": 0.57,
+    "C": 0.157,
+    "hex": "#BF510F"
+   },
+   "suave": {
+    "L": 0.955,
+    "C": 0.013,
+    "hex": "#F8EEE9"
+   }
+  },
+  "crear": {
+   "name": "Crear con las manos",
+   "fam": "fucsia",
+   "h": 354,
+   "Lc": 0.775,
+   "k": {
+    "inkOnCampo": 8.41,
+    "tintaOnPaper": 4.56,
+    "campoOnNight": 8.41,
+    "tintaOnSuave": 4.15
+   },
+   "why": "el pigmento en las manos",
+   "campo": {
+    "L": 0.775,
+    "C": 0.144,
+    "hex": "#FC8DBC"
+   },
+   "tinta": {
+    "L": 0.585,
+    "C": 0.232,
+    "hex": "#D91685"
+   },
+   "suave": {
+    "L": 0.955,
+    "C": 0.014,
+    "hex": "#F8ECF1"
+   }
+  },
+  "cuidar": {
+   "name": "Cuidar la casa y a mí",
+   "fam": "hoja",
+   "h": 156,
+   "Lc": 0.69,
+   "k": {
+    "inkOnCampo": 7,
+    "tintaOnPaper": 4.53,
+    "campoOnNight": 7,
+    "tintaOnSuave": 4.19
+   },
+   "why": "una planta recién regada",
+   "campo": {
+    "L": 0.69,
+    "C": 0.144,
+    "hex": "#3BB575"
+   },
+   "tinta": {
+    "L": 0.54,
+    "C": 0.126,
+    "hex": "#11844E"
+   },
+   "suave": {
+    "L": 0.955,
+    "C": 0.039,
+    "hex": "#DCF8E5"
+   }
+  },
+  "aprender": {
+   "name": "Aprender algo",
+   "fam": "celeste",
+   "h": 228,
+   "Lc": 0.84,
+   "k": {
+    "inkOnCampo": 11.4,
+    "tintaOnPaper": 4.54,
+    "campoOnNight": 11.4,
+    "tintaOnSuave": 4.17
+   },
+   "why": "los renglones celestes del cuaderno",
+   "campo": {
+    "L": 0.84,
+    "C": 0.094,
+    "hex": "#86D7FB"
+   },
+   "tinta": {
+    "L": 0.55,
+    "C": 0.103,
+    "hex": "#117CA1"
+   },
+   "suave": {
+    "L": 0.955,
+    "C": 0.015,
+    "hex": "#E6F2F8"
+   }
+  },
+  "compartir": {
+   "name": "Con otras personas",
+   "fam": "cereza",
+   "h": 22,
+   "Lc": 0.625,
+   "k": {
+    "inkOnCampo": 4.53,
+    "tintaOnPaper": 4.52,
+    "campoOnNight": 4.53,
+    "tintaOnSuave": 4.12
+   },
+   "why": "la mesa compartida",
+   "campo": {
+    "L": 0.625,
+    "C": 0.245,
+    "hex": "#F9163D"
+   },
+   "tinta": {
+    "L": 0.585,
+    "C": 0.227,
+    "hex": "#E31738"
+   },
+   "suave": {
+    "L": 0.955,
+    "C": 0.012,
+    "hex": "#F8EDEC"
+   }
+  }
+ },
+ "dist": {
+  "normal": {
+   "min": 14.3,
+   "pair": "moverme/compartir"
+  },
+  "protan": {
+   "min": 9.6,
+   "pair": "moverme/cuidar"
+  },
+  "deutan": {
+   "min": 7.7,
+   "pair": "cuidar/compartir"
+  },
+  "tritan": {
+   "min": 8.9,
+   "pair": "moverme/compartir"
+  }
+ }
+}

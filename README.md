@@ -60,6 +60,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **2 de octubre:** el [sistema de diseño 3.1](10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) (propuesta D-099) suma un logotipo nuevo con un renglón que hace lugar, dos voces tipográficas (la persona en itálica), seis colores de la casa, uno por categoría de actividad, 135 íconos, ilustraciones, patrones, 24 aplicaciones, el logotipo animado y la firma sonora ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-02.md)). Después, una [exploración de color y letra](10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md) con referencias de Behance propone cuatro direcciones de color y cinco pares de letra; la recomendada es el cuaderno (azul y margen rojo) con la persona escribiendo en Playwrite CL.
 
+**3 de octubre:** a pedido del autor, la [propuesta 3.2, «Relevo vivo»](10_recursos_visuales/29_relevo-vivo-2026-10-03.md) (D-100) lleva la marca a colores vivos con una regla: un color, una frase, un renglón. La frase de Relevo va en grotesca gruesa y la palabra de la persona, escrita a mano en Playwrite CL ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-03.md)).
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».
@@ -134,6 +136,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Relevo vivo
+
+- **Qué cambió:** el estado suma la propuesta 3.2.
+- **Cómo estaba antes:** terminaba en la exploración de color y letra.
+- **Por qué:** el autor pidió colores más vivos y más personalidad, sin diseño genérico ni recargado.
 
 ### 2026-10-02 — Exploración de color y letra
 

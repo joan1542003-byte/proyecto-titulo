@@ -1,0 +1,340 @@
+<title>Relevo vivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Playwrite+CL:wght@100..400&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+/* Una columna con piezas grandes: la página es papel y tinta; el color vive solo en las piezas. */
+:root {
+  --bg: {{PAPER}}; --surface: #FFFFFF; --fg: {{INK}}; --muted: #5B5F68; --line: #DADBD6; --accent: {{BLUE}};
+  --ink: {{INK}}; --blue: {{BLUE}}; --paper: {{PAPER}};
+  --f-ui: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-hand: "Playwrite CL", "Segoe Script", cursive;
+  --f-data: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #111215; --surface: #1B1C20; --fg: #ECEDEF; --muted: #A0A4AC; --line: #2E3036; --accent: #9A97FF; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #111215; --surface: #1B1C20; --fg: #ECEDEF; --muted: #A0A4AC; --line: #2E3036; --accent: #9A97FF; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.55 var(--f-ui); padding-inline: 20px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-block: 28px 100px; }
+figure { margin: 0; }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: .18em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.top .wm { width: 92px; }
+.top .wm .ww { fill: var(--fg); } .top .wm .wl { fill: var(--accent); }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.top nav a { font: 600 14px/20px var(--f-ui); text-decoration: none; color: var(--muted); }
+.top nav a:hover { color: var(--fg); }
+.eyebrow { font: 600 13px/18px var(--f-ui); color: var(--muted); margin: 0; }
+h1 { font: 800 clamp(44px, 7.4vw, 104px)/.9 var(--f-ui); letter-spacing: -.05em; margin: 10px 0 0; text-wrap: balance; }
+h2 { font: 800 clamp(30px, 4.4vw, 54px)/.95 var(--f-ui); letter-spacing: -.045em; margin: 0; text-wrap: balance; }
+.lead { font-size: 19px; line-height: 1.5; color: var(--muted); max-width: 58ch; margin: 18px 0 0; }
+.lead b { color: var(--fg); font-weight: 600; }
+section { margin-top: 110px; scroll-margin-top: 24px; }
+.head { display: grid; gap: 12px; margin-bottom: 34px; max-width: 760px; }
+.head p { margin: 0; color: var(--muted); font-size: 17px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 48px; align-items: end; margin-top: 56px; }
+.rules { list-style: none; padding: 0; margin: 34px 0 0; display: grid; gap: 0; max-width: 560px; }
+.rules li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding: 14px 0; border-top: 1.5px solid var(--fg); font-size: 16px; line-height: 23px; color: var(--muted); }
+.rules li b { color: var(--fg); font-weight: 700; display: block; font-size: 18px; }
+.rules li span.n { font: 500 13px/23px var(--f-data); color: var(--fg); }
+.status { margin-top: 28px; font: 500 13px/18px var(--f-data); color: var(--muted); }
+
+/* Logotipo en línea */
+.wm { display: block; height: auto; }
+.wm .wl { fill: var(--blue); } .wm .ww { fill: var(--ink); }
+
+/* Color */
+.colors { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; }
+.colors .big { aspect-ratio: 3 / 4; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; }
+.colors .big b { font: 700 15px/18px var(--f-ui); }
+.colors .big span, .colors .sm span { font: 400 12px/16px var(--f-data); }
+.colors .sm { margin-top: 6px; border-radius: 4px; padding: 8px 10px; display: flex; align-items: center; }
+.colors .sm span { display: inline-flex; gap: 6px; align-items: center; font-family: var(--f-ui); font-weight: 600; }
+.colors .sm:first-of-type span { font-family: var(--f-data); font-weight: 400; }
+.colors p { margin: 10px 0 0; font-size: 13.5px; line-height: 19px; color: var(--muted); }
+.facts-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 32px; margin-top: 40px; list-style: none; padding: 0; }
+.facts-row li { border-top: 1.5px solid var(--fg); padding: 14px 0 18px; font-size: 15px; line-height: 22px; color: var(--muted); }
+.facts-row li b { display: block; color: var(--fg); font-size: 17px; margin-bottom: 4px; }
+
+/* Letra */
+.type { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.spec { background: var(--surface); padding: 34px 34px 30px; border-radius: 4px; }
+.spec .s-head { font: 800 clamp(56px, 8vw, 112px)/.86 var(--f-ui); letter-spacing: -.055em; color: var(--fg); }
+.spec .s-line { position: relative; margin-top: 18px; padding-bottom: 10px; white-space: nowrap; }
+.spec .s-line::after { content: ""; position: absolute; left: -34px; right: -34px; bottom: 0; height: 9px; background: var(--blue); }
+.spec .s-hand { font: 300 clamp(34px, 4.6vw, 58px)/1.1 var(--f-hand); color: var(--fg); }
+.roles { list-style: none; padding: 0; margin: 0; display: grid; }
+.roles li { padding: 16px 0; border-top: 1.5px solid var(--fg); display: grid; gap: 4px; }
+.roles .r1 { font: 800 28px/1 var(--f-ui); letter-spacing: -.04em; }
+.roles .r2 { font: 300 24px/1.2 var(--f-hand); }
+.roles .r3 { font: 400 16px/1.3 var(--f-ui); }
+.roles .r4 { font: 300 14px/1.3 var(--f-data); }
+.roles small { color: var(--muted); font-size: 14px; line-height: 20px; }
+
+/* Piezas */
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; justify-items: center; }
+.cap { margin: 12px 0 0; font-size: 14px; line-height: 20px; color: var(--muted); max-width: 46ch; }
+.cap b { color: var(--fg); font-weight: 600; }
+.duo { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.cards { display: grid; gap: 16px; }
+.slides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.sub { font: 700 18px/24px var(--f-ui); margin: 54px 0 16px; letter-spacing: -.01em; }
+
+/* Afiche 4:5 */
+.poster { position: relative; aspect-ratio: 4 / 5; width: 100%; container-type: inline-size; background: var(--campo); color: var(--ink); overflow: hidden; }
+.pi { position: absolute; inset: 0; padding: 6.5cqw; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; }
+.ptop { display: flex; justify-content: space-between; font: 600 3.2cqw/1 var(--f-ui); }
+.pmid { align-self: end; margin-bottom: 8cqw; min-width: 0; }
+.phead { font: 800 21cqw/.86 var(--f-ui); letter-spacing: -.055em; }
+.pline { position: relative; margin-top: 4.5cqw; padding-bottom: 2.2cqw; white-space: nowrap; }
+.pline::after { content: ""; position: absolute; left: -6.5cqw; right: -6.5cqw; bottom: 0; height: 2.2cqw; background: var(--blue); }
+.hand { font-family: var(--f-hand); font-weight: 300; }
+.pline .hand { font-size: 13cqw; line-height: 1.15; display: inline-block; }
+.pbot p { margin: 0 0 5cqw; font: 400 3.6cqw/1.4 var(--f-ui); max-width: 82%; }
+.pfoot { display: flex; justify-content: space-between; align-items: flex-end; }
+.pfoot .wm { width: 26cqw; }
+.pfoot span { font: 400 2.6cqw/1.35 var(--f-data); text-align: right; }
+
+/* Teléfonos */
+.phone { width: 100%; max-width: 340px; aspect-ratio: 9 / 19.5; border-radius: 44px; background: var(--paper); color: var(--ink); box-shadow: 0 0 0 1px rgba(20,21,25,.12); overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; container-type: inline-size; }
+.sb { display: flex; justify-content: space-between; align-items: center; padding: 16px 26px 6px; font: 600 13px/1 var(--f-ui); }
+.sbi { display: inline-flex; gap: 3px; align-items: flex-end; }
+.sbi i { width: 3px; background: currentColor; border-radius: 1px; } .sbi i:nth-child(1) { height: 5px; } .sbi i:nth-child(2) { height: 8px; } .sbi i:nth-child(3) { height: 11px; }
+.scr { padding: 10px 18px 16px; display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+.abar { display: flex; justify-content: space-between; align-items: center; }
+.abar .wm { width: 82px; }
+.ava { width: 36px; height: 36px; border-radius: 50%; background: #ECECE7; display: grid; place-items: center; }
+.active { background: var(--campo); border-radius: 26px; padding: 16px 18px 16px; display: grid; gap: 10px; overflow: hidden; }
+.arow { display: flex; justify-content: space-between; align-items: center; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font: 600 12.5px/1 var(--f-ui); padding: 6px 10px; border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--ink); }
+.chip.ink { background: var(--ink); color: #fff; box-shadow: none; }
+.ahead { font: 800 32px/.9 var(--f-ui); letter-spacing: -.05em; margin-top: 4px; }
+.aline { position: relative; padding-bottom: 6px; margin: 0 -18px; padding-inline: 18px; white-space: nowrap; }
+.aline::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--blue); }
+.aline .hand { font-size: 25px; line-height: 1.25; display: inline-block; }
+.dots15 { display: grid; grid-template-columns: repeat(15, 1fr); gap: 4px; margin-top: 4px; }
+.dots15 i { aspect-ratio: 1; border-radius: 50%; background: var(--ink); }
+.dots15 i.off { background: transparent; box-shadow: inset 0 0 0 1.5px rgba(20,21,25,.35); }
+.atime { font: 400 13px/1 var(--f-ui); } .atime b { font-weight: 700; }
+.facts { display: grid; }
+.facts div { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 12px 2px; border-top: 1px solid #E2E2DD; font: 400 14.5px/1.2 var(--f-ui); color: #5B5F68; }
+.hand.sm { font-size: 16px; color: var(--ink); }
+.tabs { display: flex; justify-content: space-around; padding: 10px 10px 22px; border-top: 1px solid #E2E2DD; }
+.tabs span { display: grid; justify-items: center; gap: 4px; font: 600 11.5px/1 var(--f-ui); color: #8A8E96; }
+.tabs span.on { color: var(--ink); }
+.tabs span.on b { box-shadow: inset 0 -2px 0 var(--blue); padding-bottom: 3px; }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin-top: 4px; }
+.steps i { height: 4px; border-radius: 4px; background: #E2E2DD; } .steps i.on { background: var(--blue); }
+.qtitle { font: 800 36px/.92 var(--f-ui); letter-spacing: -.05em; margin: 8px 0 4px; }
+.field { display: grid; gap: 4px; }
+.field > span:first-child { font: 600 12.5px/1 var(--f-ui); color: #5B5F68; }
+.fieldv { font-size: 24px; line-height: 1.35; padding-bottom: 4px; box-shadow: inset 0 -3px 0 var(--blue); }
+.ideas { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; padding: 8px 11px; border-radius: 999px; background: var(--suave); color: var(--ink); font: 600 13px/1 var(--f-ui); }
+.tag svg { color: var(--tinta); }
+.btn { margin-top: auto; height: 54px; border-radius: 999px; background: var(--ink); color: #fff; display: grid; place-items: center; font: 600 16px/1 var(--f-ui); }
+.senal { background: var(--campo); grid-template-rows: auto 1fr; }
+.senal .scr { gap: 0; padding-bottom: 22px; }
+.sgtop { display: flex; justify-content: space-between; align-items: center; }
+.sgtop .wm { width: 78px; }
+.sghead { font: 800 70px/.86 var(--f-ui); letter-spacing: -.055em; margin-top: auto; }
+.sgline { position: relative; margin: 14px -18px 0; padding: 0 18px 7px; white-space: nowrap; }
+.sgline::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: var(--blue); }
+.sgline .hand { font-size: 32px; line-height: 1.25; display: inline-block; }
+.sgsub { margin: 14px 0 26px; font: 400 13px/1.3 var(--f-data); }
+
+/* Historia 9:16 */
+.story { position: relative; aspect-ratio: 9 / 16; width: 100%; container-type: inline-size; background: var(--campo); color: var(--ink); overflow: hidden; }
+.story .pi { grid-template-rows: auto 1fr auto auto; padding: 8cqw; }
+.story .wm { width: 30cqw; }
+.sthead { align-self: end; font: 800 25cqw/.84 var(--f-ui); letter-spacing: -.06em; }
+.stline { height: 3cqw; background: var(--blue); margin: 26cqw -8cqw 0; }
+.story p { margin: 5cqw 0 0; font: 500 4.4cqw/1.35 var(--f-ui); max-width: 80%; }
+
+/* Tarjeta 85 × 55 mm */
+.pcard { position: relative; aspect-ratio: 85 / 55; width: 100%; container-type: inline-size; background: var(--campo); color: var(--ink); overflow: hidden; }
+.pcard .pi { padding: 7cqw; grid-template-rows: auto 1fr auto; }
+.pcard .wm { width: 24cqw; }
+.pchead { align-self: end; font: 800 13cqw/.9 var(--f-ui); letter-spacing: -.05em; }
+.pcline { height: 1.4cqw; background: var(--blue); margin: 11cqw -7cqw 1cqw; }
+.pcard.ink { background: var(--ink); color: #fff; }
+.pcard.ink .pi { grid-template-rows: 1fr auto; }
+.pcard.ink p { margin: 0; font: 400 3.9cqw/1.42 var(--f-ui); max-width: 92%; }
+.pcard.ink .wm .ww, .pcard.ink .wm .wl { fill: #fff; }
+
+/* Láminas 16:9 */
+.slide { position: relative; aspect-ratio: 16 / 9; width: 100%; container-type: inline-size; background: #fff; color: var(--ink); overflow: hidden; box-shadow: 0 0 0 1px rgba(20,21,25,.1); }
+.slide .pi { padding: 5cqw 6cqw; grid-template-rows: auto 1fr auto; }
+.sltop { display: flex; justify-content: space-between; font: 600 1.5cqw/1 var(--f-ui); }
+.sltop span:last-child { font-family: var(--f-data); font-weight: 400; }
+.slide h3 { align-self: center; margin: 0; font: 800 5cqw/1 var(--f-ui); letter-spacing: -.045em; max-width: 90%; }
+.slide h3.big { font-size: 9.5cqw; line-height: .88; letter-spacing: -.055em; align-self: end; }
+.rg { box-shadow: inset 0 -.12em 0 var(--blue); }
+.slsrc { font: 400 1.4cqw/1 var(--f-data); color: #5B5F68; }
+.slide.campo { background: var(--campo); box-shadow: none; }
+.slide .wm { width: 13cqw; justify-self: end; margin-top: 3cqw; }
+
+/* Reglas */
+.yesno { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.yesno h3 { font: 800 30px/1 var(--f-ui); letter-spacing: -.04em; margin: 0 0 12px; }
+.yesno ul { list-style: none; padding: 0; margin: 0; }
+.yesno li { padding: 12px 0; border-top: 1.5px solid var(--fg); font-size: 16px; line-height: 23px; }
+.yesno li small { display: block; color: var(--muted); font-size: 14px; line-height: 20px; margin-top: 2px; }
+.qs { list-style: none; padding: 0; margin: 0; counter-reset: q; display: grid; gap: 0; max-width: 820px; }
+.qs li { counter-increment: q; display: grid; grid-template-columns: 40px minmax(0, 1fr); padding: 14px 0; border-top: 1.5px solid var(--fg); font-size: 17px; line-height: 25px; }
+.qs li::before { content: counter(q); font: 500 14px/25px var(--f-data); color: var(--accent); }
+.foot { margin-top: 90px; display: grid; gap: 8px; font-size: 14px; color: var(--muted); max-width: 80ch; }
+.foot p { margin: 0; }
+
+@media (max-width: 980px) {
+  .colors { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero, .type, .duo { grid-template-columns: minmax(0, 1fr); }
+  .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .colors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid3, .phones, .slides, .yesno { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="wm-word" d="{{WORD}}"/></defs></svg>
+
+<div class="wrap">
+  <header class="top">
+    {{WMTOP}}
+    <nav aria-label="Secciones"><a href="#color">Color</a><a href="#letra">Letra</a><a href="#piezas">Piezas</a><a href="#reglas">Reglas</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Propuesta 3.2 · 3 de octubre de 2026</p>
+      <h1>Un color, una frase, un renglón.</h1>
+      <p class="lead">Relevo con colores vivos y más carácter, sin adornos. Cada pieza usa <b>un solo color de la casa</b>, la frase de Relevo en grotesca gruesa y la palabra de la persona <b>escrita a mano</b> sobre un renglón azul que cruza de lado a lado.</p>
+      <ol class="rules">
+        <li><span class="n">1</span><span><b>Un color por pieza.</b>El de la actividad. El azul nunca es fondo de una categoría: es el renglón y el sistema.</span></li>
+        <li><span class="n">2</span><span><b>Dos voces, dos letras.</b>Relevo habla en Schibsted Grotesk; la persona escribe en Playwrite CL, la letra ligada de la escuela chilena.</span></li>
+        <li><span class="n">3</span><span><b>El renglón cruza.</b>Va de borde a borde: deja lugar para lo que la persona va a hacer.</span></li>
+      </ol>
+      <p class="status">Propuesta para el autor · no cambia todavía la app ni el sistema publicado</p>
+    </div>
+    {{HERO}}
+  </div>
+
+  <section id="color">
+    <div class="head">
+      <p class="eyebrow">Color</p>
+      <h2>Seis colores vivos y un azul</h2>
+      <p>Cada color de la casa tiene tres usos: el campo vivo para fondos (con tinta encima), su tinta para renglones, íconos y texto sobre papel, y un fondo suave para etiquetas. El azul de Relevo no cambia.</p>
+    </div>
+    <div class="colors">
+{{SWATCHES}}
+    </div>
+    <ul class="facts-row">
+      <li><b>Con tinta encima, siempre legible.</b>La tinta sobre cada campo da de 4,5 a 13,3:1; la tinta de cada color sobre papel, 4,5:1 o más.</li>
+      <li><b>Distintos para todos.</b>Los campos tienen luces distintas: la distancia mínima entre ellos es {{DIST}}, según la simulación de Machado et al. (2009). Igual van con ícono y nombre.</li>
+      <li><b>Vivos, pero de la casa.</b>Cada color sale de algo real de la actividad: la luz de la lámpara, la tierra, el pigmento, la planta, el cuaderno, la mesa.</li>
+    </ul>
+  </section>
+
+  <section id="letra">
+    <div class="head">
+      <p class="eyebrow">Letra</p>
+      <h2>La grotesca de Relevo y la letra de la persona</h2>
+      <p>Se quita la serif de titulares: con una grotesca gruesa y una letra escrita a mano, las dos voces se distinguen solas y el sistema queda en dos familias. Si se prefiere mantener la serif que el autor eligió el 30 de septiembre, Newsreader puede volver en los titulares sin tocar lo demás.</p>
+    </div>
+    <div class="type">
+      <div class="spec"><div class="s-head">Vuelve<br>a</div><div class="s-line"><span class="s-hand">leer 10 páginas</span></div></div>
+      <ul class="roles">
+        <li><span class="r1">Schibsted Grotesk 800</span><small>La frase de Relevo, grande y apretada (−5 %). También el logotipo (600) y toda la interfaz (400 a 700).</small></li>
+        <li><span class="r2">Playwrite CL</span><small>Lo que escribe la persona. Es la letra ligada que se enseña en las escuelas de Chile, de TypeTogether (proyecto Primarium). Desde 16 px; en listas largas, la interfaz.</small></li>
+        <li><span class="r3">Schibsted Grotesk 400</span><small>Explicaciones y botones, en frases cortas.</small></li>
+        <li><span class="r4">IBM Plex Mono 300</span><small>Solo datos: la ficha de la actividad, números de lámina, registros.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="piezas">
+    <div class="head">
+      <p class="eyebrow">Piezas</p>
+      <h2>Lo mismo en todas partes</h2>
+      <p>Las mismas tres cosas en cada pieza, y nada más.</p>
+    </div>
+    <div class="grid3">
+{{POSTERS}}
+    </div>
+    <p class="cap"><b>Afiches «Vuelve a…».</b> Uno por categoría, con una idea de la app. La palabra de la persona se escribe a mano y el renglón llega a los bordes.</p>
+
+    <h3 class="sub">La app</h3>
+    <div class="phones">
+{{APP}}
+    </div>
+    <p class="cap"><b>Inicio, Preparar y la señal.</b> La pantalla es papel y tinta; el color aparece solo donde está la actividad: la tarjeta del relevo activo y la señal, que se vuelve el momento de marca.</p>
+
+    <h3 class="sub">Redes y tarjeta</h3>
+    <div class="duo">
+{{HISTORIA}}
+{{TARJETA}}
+    </div>
+    <p class="cap"><b>Historia para escribir y tarjeta de bolsillo.</b> El renglón queda vacío para que la persona escriba a mano.</p>
+
+    <h3 class="sub">Presentación</h3>
+    <div class="slides">
+{{LAMINAS}}
+    </div>
+    <p class="cap"><b>Láminas.</b> Blancas para las ideas, con el renglón bajo la frase clave; un color de la casa para abrir cada sección.</p>
+  </section>
+
+  <section id="reglas">
+    <div class="head">
+      <p class="eyebrow">Reglas</p>
+      <h2>Expresivo, sin adornos</h2>
+    </div>
+    <div class="yesno">
+      <div><h3>Sí</h3><ul>
+        <li>Un color de la casa por pieza, a sangre.<small>El color dice la actividad; el resto es papel y tinta.</small></li>
+        <li>Letra grande y apretada, con mucho aire alrededor.<small>Una frase por pieza.</small></li>
+        <li>Palabras reales de la app.<small>Nada inventado ni de relleno.</small></li>
+        <li>El renglón azul de borde a borde.<small>Uno por pieza.</small></li>
+      </ul></div>
+      <div><h3>No</h3><ul>
+        <li>Degradados, brillos, vidrio en piezas gráficas, sombras de adorno.<small>El vidrio queda para las barras de la app.</small></li>
+        <li>Dos colores de la casa en la misma pieza, o el azul como fondo de una categoría.</li>
+        <li>Emoji, íconos de banco de imágenes, ilustraciones 3D.</li>
+        <li>Todo centrado, tarjetas redondeadas por todas partes, texto sobre fotos sin tarjeta.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="decidir">
+    <div class="head"><p class="eyebrow">Para decidir</p><h2>Tres preguntas</h2></div>
+    <ol class="qs">
+      <li>¿Esta paleta viva reemplaza a la casa apagada de 3.1?</li>
+      <li>¿Se quita la serif de titulares y queda la grotesca gruesa, o vuelve Newsreader?</li>
+      <li>¿La persona escribe a mano (Playwrite CL) en la app, o solo en piezas y en el campo donde escribe?</li>
+    </ol>
+  </section>
+
+  <footer class="foot">
+    <p>Referencias: Machado, Oliveira y Fernandes (2009), simulación de visión del color; W3C (2023), WCAG 2.2; TypeTogether (s. f.), <a href="https://www.type-together.com/playwrite-instructions">Playwrite</a>; Google Fonts (s. f.), <a href="https://fonts.google.com/specimen/Playwrite+CL">Playwrite Chile</a>.</p>
+    <p>Sigue de la <a href="https://claude.ai/artifact/T8FY5qmRDCa7T5Mmfk5oxP">exploración de color y letra</a> del 2 de octubre.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Ajusta la palabra escrita a mano para que quepa en su renglón.
+  function fit() {
+    document.querySelectorAll('.fit').forEach(function (el) {
+      el.style.fontSize = '';
+      var box = el.parentElement, max = parseFloat(el.dataset.max || '0.9') * box.clientWidth;
+      var fs = parseFloat(getComputedStyle(el).fontSize), guard = 0;
+      while (el.scrollWidth > max && fs > 8 && guard++ < 80) { fs -= 1; el.style.fontSize = fs + 'px'; }
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('resize', function () { clearTimeout(window.__f); window.__f = setTimeout(fit, 120); });
+  fit();
+})();
+</script>

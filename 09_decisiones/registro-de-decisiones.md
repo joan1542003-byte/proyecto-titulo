@@ -1129,7 +1129,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Exploración (mismo día):** a pedido del autor, cuatro direcciones de color (casa apagada, cuaderno, tintas de imprenta, noche y lámpara) y cinco pares de letra, con referencias de Behance. La recomendación es el cuaderno: dos tintas, el renglón azul y un margen rojo que marca dónde empieza, con la voz de la persona en Playwrite CL, la letra ligada escolar chilena. Queda abierta hasta que el autor elija ([documento 28](../10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md)).
 - **Documentación:** [sistema de diseño 3.1](../10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) y su [copia de archivos](../10_recursos_visuales/sistema-de-diseno-3.1/README.md).
 
+
+## D-100 — Relevo vivo: un color, una frase, un renglón (propuesta 3.2)
+
+- **Fecha:** 2026-10-03.
+- **Estado:** propuesta sobre D-099; no cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** colores más vivos y más personalidad, sin diseño genérico de IA y sin sobrediseñar: minimalismo con un diseño hermoso y expresivo.
+- **Propuesta:**
+  - **Regla:** cada pieza usa un solo color de la casa a sangre, la frase de Relevo en grotesca gruesa y la palabra de la persona escrita a mano sobre un renglón azul de borde a borde.
+  - **Color:** seis colores de la casa vivos (sol, naranja, fucsia, hoja, celeste y cereza), cada uno con campo, tinta y fondo suave; el azul `#3D38F5` sigue siendo el único color del sistema.
+  - **Letra:** Schibsted Grotesk 800 para la frase de Relevo y toda la interfaz; Playwrite CL, la letra ligada escolar chilena, para lo que escribe la persona; IBM Plex Mono para datos.
+- **Fundamento:** el renglón ya es el recurso propio de la marca (D-098) y se vuelve el gesto principal; la letra a mano hace visible la voz de la persona sin depender del color; la paleta se midió en contraste (WCAG 2.2) y en visión del color (Machado et al., 2009).
+- **Conflicto:** quita la serif de titulares que el autor eligió el 30 de septiembre (D-098). Si el autor la mantiene, Newsreader vuelve en los titulares sin tocar lo demás.
+- **Alternativas:** la casa apagada de 3.1; las direcciones del documento 28 (cuaderno, tintas de imprenta, noche y lámpara).
+- **Límites:** maquetas sin prueba con personas; sin tema oscuro todavía.
+- **Documentación:** [Relevo vivo](../10_recursos_visuales/29_relevo-vivo-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/relevo-vivo-2026-10-03/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — D-100, Relevo vivo
+
+- **Qué cambió:** se registró la propuesta D-100.
+- **Cómo estaba antes:** la última propuesta de identidad era D-099 con su exploración.
+- **Por qué:** el autor pidió colores más vivos y más personalidad, sin diseño genérico ni recargado.
 
 ### 2026-10-02 — D-099, exploración de color y letra
 

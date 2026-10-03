@@ -1,0 +1,438 @@
+<title>Relevo vivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Playwrite+CL:wght@100..400&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+/* Una columna con piezas grandes: la página es papel y tinta; el color vive solo en las piezas. */
+:root {
+  --bg: #FAFAF7; --surface: #FFFFFF; --fg: #141519; --muted: #5B5F68; --line: #DADBD6; --accent: #3D38F5;
+  --ink: #141519; --blue: #3D38F5; --paper: #FAFAF7;
+  --f-ui: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-hand: "Playwrite CL", "Segoe Script", cursive;
+  --f-data: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #111215; --surface: #1B1C20; --fg: #ECEDEF; --muted: #A0A4AC; --line: #2E3036; --accent: #9A97FF; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #111215; --surface: #1B1C20; --fg: #ECEDEF; --muted: #A0A4AC; --line: #2E3036; --accent: #9A97FF; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.55 var(--f-ui); padding-inline: 20px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-block: 28px 100px; }
+figure { margin: 0; }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: .18em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.top .wm { width: 92px; }
+.top .wm .ww { fill: var(--fg); } .top .wm .wl { fill: var(--accent); }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.top nav a { font: 600 14px/20px var(--f-ui); text-decoration: none; color: var(--muted); }
+.top nav a:hover { color: var(--fg); }
+.eyebrow { font: 600 13px/18px var(--f-ui); color: var(--muted); margin: 0; }
+h1 { font: 800 clamp(44px, 7.4vw, 104px)/.9 var(--f-ui); letter-spacing: -.05em; margin: 10px 0 0; text-wrap: balance; }
+h2 { font: 800 clamp(30px, 4.4vw, 54px)/.95 var(--f-ui); letter-spacing: -.045em; margin: 0; text-wrap: balance; }
+.lead { font-size: 19px; line-height: 1.5; color: var(--muted); max-width: 58ch; margin: 18px 0 0; }
+.lead b { color: var(--fg); font-weight: 600; }
+section { margin-top: 110px; scroll-margin-top: 24px; }
+.head { display: grid; gap: 12px; margin-bottom: 34px; max-width: 760px; }
+.head p { margin: 0; color: var(--muted); font-size: 17px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 48px; align-items: end; margin-top: 56px; }
+.rules { list-style: none; padding: 0; margin: 34px 0 0; display: grid; gap: 0; max-width: 560px; }
+.rules li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding: 14px 0; border-top: 1.5px solid var(--fg); font-size: 16px; line-height: 23px; color: var(--muted); }
+.rules li b { color: var(--fg); font-weight: 700; display: block; font-size: 18px; }
+.rules li span.n { font: 500 13px/23px var(--f-data); color: var(--fg); }
+.status { margin-top: 28px; font: 500 13px/18px var(--f-data); color: var(--muted); }
+
+/* Logotipo en línea */
+.wm { display: block; height: auto; }
+.wm .wl { fill: var(--blue); } .wm .ww { fill: var(--ink); }
+
+/* Color */
+.colors { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; }
+.colors .big { aspect-ratio: 3 / 4; border-radius: 4px; padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; }
+.colors .big b { font: 700 15px/18px var(--f-ui); }
+.colors .big span, .colors .sm span { font: 400 12px/16px var(--f-data); }
+.colors .sm { margin-top: 6px; border-radius: 4px; padding: 8px 10px; display: flex; align-items: center; }
+.colors .sm span { display: inline-flex; gap: 6px; align-items: center; font-family: var(--f-ui); font-weight: 600; }
+.colors .sm:first-of-type span { font-family: var(--f-data); font-weight: 400; }
+.colors p { margin: 10px 0 0; font-size: 13.5px; line-height: 19px; color: var(--muted); }
+.facts-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 32px; margin-top: 40px; list-style: none; padding: 0; }
+.facts-row li { border-top: 1.5px solid var(--fg); padding: 14px 0 18px; font-size: 15px; line-height: 22px; color: var(--muted); }
+.facts-row li b { display: block; color: var(--fg); font-size: 17px; margin-bottom: 4px; }
+
+/* Letra */
+.type { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.spec { background: var(--surface); padding: 34px 34px 30px; border-radius: 4px; }
+.spec .s-head { font: 800 clamp(56px, 8vw, 112px)/.86 var(--f-ui); letter-spacing: -.055em; color: var(--fg); }
+.spec .s-line { position: relative; margin-top: 18px; padding-bottom: 10px; white-space: nowrap; }
+.spec .s-line::after { content: ""; position: absolute; left: -34px; right: -34px; bottom: 0; height: 9px; background: var(--blue); }
+.spec .s-hand { font: 300 clamp(34px, 4.6vw, 58px)/1.1 var(--f-hand); color: var(--fg); }
+.roles { list-style: none; padding: 0; margin: 0; display: grid; }
+.roles li { padding: 16px 0; border-top: 1.5px solid var(--fg); display: grid; gap: 4px; }
+.roles .r1 { font: 800 28px/1 var(--f-ui); letter-spacing: -.04em; }
+.roles .r2 { font: 300 24px/1.2 var(--f-hand); }
+.roles .r3 { font: 400 16px/1.3 var(--f-ui); }
+.roles .r4 { font: 300 14px/1.3 var(--f-data); }
+.roles small { color: var(--muted); font-size: 14px; line-height: 20px; }
+
+/* Piezas */
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; justify-items: center; }
+.cap { margin: 12px 0 0; font-size: 14px; line-height: 20px; color: var(--muted); max-width: 46ch; }
+.cap b { color: var(--fg); font-weight: 600; }
+.duo { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.cards { display: grid; gap: 16px; }
+.slides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.sub { font: 700 18px/24px var(--f-ui); margin: 54px 0 16px; letter-spacing: -.01em; }
+
+/* Afiche 4:5 */
+.poster { position: relative; aspect-ratio: 4 / 5; width: 100%; container-type: inline-size; background: var(--campo); color: var(--ink); overflow: hidden; }
+.pi { position: absolute; inset: 0; padding: 6.5cqw; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; }
+.ptop { display: flex; justify-content: space-between; font: 600 3.2cqw/1 var(--f-ui); }
+.pmid { align-self: end; margin-bottom: 8cqw; min-width: 0; }
+.phead { font: 800 21cqw/.86 var(--f-ui); letter-spacing: -.055em; }
+.pline { position: relative; margin-top: 4.5cqw; padding-bottom: 2.2cqw; white-space: nowrap; }
+.pline::after { content: ""; position: absolute; left: -6.5cqw; right: -6.5cqw; bottom: 0; height: 2.2cqw; background: var(--blue); }
+.hand { font-family: var(--f-hand); font-weight: 300; }
+.pline .hand { font-size: 13cqw; line-height: 1.15; display: inline-block; }
+.pbot p { margin: 0 0 5cqw; font: 400 3.6cqw/1.4 var(--f-ui); max-width: 82%; }
+.pfoot { display: flex; justify-content: space-between; align-items: flex-end; }
+.pfoot .wm { width: 26cqw; }
+.pfoot span { font: 400 2.6cqw/1.35 var(--f-data); text-align: right; }
+
+/* Teléfonos */
+.phone { width: 100%; max-width: 340px; aspect-ratio: 9 / 19.5; border-radius: 44px; background: var(--paper); color: var(--ink); box-shadow: 0 0 0 1px rgba(20,21,25,.12); overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; container-type: inline-size; }
+.sb { display: flex; justify-content: space-between; align-items: center; padding: 16px 26px 6px; font: 600 13px/1 var(--f-ui); }
+.sbi { display: inline-flex; gap: 3px; align-items: flex-end; }
+.sbi i { width: 3px; background: currentColor; border-radius: 1px; } .sbi i:nth-child(1) { height: 5px; } .sbi i:nth-child(2) { height: 8px; } .sbi i:nth-child(3) { height: 11px; }
+.scr { padding: 10px 18px 16px; display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+.abar { display: flex; justify-content: space-between; align-items: center; }
+.abar .wm { width: 82px; }
+.ava { width: 36px; height: 36px; border-radius: 50%; background: #ECECE7; display: grid; place-items: center; }
+.active { background: var(--campo); border-radius: 26px; padding: 16px 18px 16px; display: grid; gap: 10px; overflow: hidden; }
+.arow { display: flex; justify-content: space-between; align-items: center; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font: 600 12.5px/1 var(--f-ui); padding: 6px 10px; border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--ink); }
+.chip.ink { background: var(--ink); color: #fff; box-shadow: none; }
+.ahead { font: 800 32px/.9 var(--f-ui); letter-spacing: -.05em; margin-top: 4px; }
+.aline { position: relative; padding-bottom: 6px; margin: 0 -18px; padding-inline: 18px; white-space: nowrap; }
+.aline::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--blue); }
+.aline .hand { font-size: 25px; line-height: 1.25; display: inline-block; }
+.dots15 { display: grid; grid-template-columns: repeat(15, 1fr); gap: 4px; margin-top: 4px; }
+.dots15 i { aspect-ratio: 1; border-radius: 50%; background: var(--ink); }
+.dots15 i.off { background: transparent; box-shadow: inset 0 0 0 1.5px rgba(20,21,25,.35); }
+.atime { font: 400 13px/1 var(--f-ui); } .atime b { font-weight: 700; }
+.facts { display: grid; }
+.facts div { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 12px 2px; border-top: 1px solid #E2E2DD; font: 400 14.5px/1.2 var(--f-ui); color: #5B5F68; }
+.hand.sm { font-size: 16px; color: var(--ink); }
+.tabs { display: flex; justify-content: space-around; padding: 10px 10px 22px; border-top: 1px solid #E2E2DD; }
+.tabs span { display: grid; justify-items: center; gap: 4px; font: 600 11.5px/1 var(--f-ui); color: #8A8E96; }
+.tabs span.on { color: var(--ink); }
+.tabs span.on b { box-shadow: inset 0 -2px 0 var(--blue); padding-bottom: 3px; }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin-top: 4px; }
+.steps i { height: 4px; border-radius: 4px; background: #E2E2DD; } .steps i.on { background: var(--blue); }
+.qtitle { font: 800 36px/.92 var(--f-ui); letter-spacing: -.05em; margin: 8px 0 4px; }
+.field { display: grid; gap: 4px; }
+.field > span:first-child { font: 600 12.5px/1 var(--f-ui); color: #5B5F68; }
+.fieldv { font-size: 24px; line-height: 1.35; padding-bottom: 4px; box-shadow: inset 0 -3px 0 var(--blue); }
+.ideas { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; padding: 8px 11px; border-radius: 999px; background: var(--suave); color: var(--ink); font: 600 13px/1 var(--f-ui); }
+.tag svg { color: var(--tinta); }
+.btn { margin-top: auto; height: 54px; border-radius: 999px; background: var(--ink); color: #fff; display: grid; place-items: center; font: 600 16px/1 var(--f-ui); }
+.senal { background: var(--campo); grid-template-rows: auto 1fr; }
+.senal .scr { gap: 0; padding-bottom: 22px; }
+.sgtop { display: flex; justify-content: space-between; align-items: center; }
+.sgtop .wm { width: 78px; }
+.sghead { font: 800 70px/.86 var(--f-ui); letter-spacing: -.055em; margin-top: auto; }
+.sgline { position: relative; margin: 14px -18px 0; padding: 0 18px 7px; white-space: nowrap; }
+.sgline::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: var(--blue); }
+.sgline .hand { font-size: 32px; line-height: 1.25; display: inline-block; }
+.sgsub { margin: 14px 0 26px; font: 400 13px/1.3 var(--f-data); }
+
+/* Historia 9:16 */
+.story { position: relative; aspect-ratio: 9 / 16; width: 100%; container-type: inline-size; background: var(--campo); color: var(--ink); overflow: hidden; }
+.story .pi { grid-template-rows: auto 1fr auto auto; padding: 8cqw; }
+.story .wm { width: 30cqw; }
+.sthead { align-self: end; font: 800 25cqw/.84 var(--f-ui); letter-spacing: -.06em; }
+.stline { height: 3cqw; background: var(--blue); margin: 26cqw -8cqw 0; }
+.story p { margin: 5cqw 0 0; font: 500 4.4cqw/1.35 var(--f-ui); max-width: 80%; }
+
+/* Tarjeta 85 × 55 mm */
+.pcard { position: relative; aspect-ratio: 85 / 55; width: 100%; container-type: inline-size; background: var(--campo); color: var(--ink); overflow: hidden; }
+.pcard .pi { padding: 7cqw; grid-template-rows: auto 1fr auto; }
+.pcard .wm { width: 24cqw; }
+.pchead { align-self: end; font: 800 13cqw/.9 var(--f-ui); letter-spacing: -.05em; }
+.pcline { height: 1.4cqw; background: var(--blue); margin: 11cqw -7cqw 1cqw; }
+.pcard.ink { background: var(--ink); color: #fff; }
+.pcard.ink .pi { grid-template-rows: 1fr auto; }
+.pcard.ink p { margin: 0; font: 400 3.9cqw/1.42 var(--f-ui); max-width: 92%; }
+.pcard.ink .wm .ww, .pcard.ink .wm .wl { fill: #fff; }
+
+/* Láminas 16:9 */
+.slide { position: relative; aspect-ratio: 16 / 9; width: 100%; container-type: inline-size; background: #fff; color: var(--ink); overflow: hidden; box-shadow: 0 0 0 1px rgba(20,21,25,.1); }
+.slide .pi { padding: 5cqw 6cqw; grid-template-rows: auto 1fr auto; }
+.sltop { display: flex; justify-content: space-between; font: 600 1.5cqw/1 var(--f-ui); }
+.sltop span:last-child { font-family: var(--f-data); font-weight: 400; }
+.slide h3 { align-self: center; margin: 0; font: 800 5cqw/1 var(--f-ui); letter-spacing: -.045em; max-width: 90%; }
+.slide h3.big { font-size: 9.5cqw; line-height: .88; letter-spacing: -.055em; align-self: end; }
+.rg { box-shadow: inset 0 -.12em 0 var(--blue); }
+.slsrc { font: 400 1.4cqw/1 var(--f-data); color: #5B5F68; }
+.slide.campo { background: var(--campo); box-shadow: none; }
+.slide .wm { width: 13cqw; justify-self: end; margin-top: 3cqw; }
+
+/* Reglas */
+.yesno { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.yesno h3 { font: 800 30px/1 var(--f-ui); letter-spacing: -.04em; margin: 0 0 12px; }
+.yesno ul { list-style: none; padding: 0; margin: 0; }
+.yesno li { padding: 12px 0; border-top: 1.5px solid var(--fg); font-size: 16px; line-height: 23px; }
+.yesno li small { display: block; color: var(--muted); font-size: 14px; line-height: 20px; margin-top: 2px; }
+.qs { list-style: none; padding: 0; margin: 0; counter-reset: q; display: grid; gap: 0; max-width: 820px; }
+.qs li { counter-increment: q; display: grid; grid-template-columns: 40px minmax(0, 1fr); padding: 14px 0; border-top: 1.5px solid var(--fg); font-size: 17px; line-height: 25px; }
+.qs li::before { content: counter(q); font: 500 14px/25px var(--f-data); color: var(--accent); }
+.foot { margin-top: 90px; display: grid; gap: 8px; font-size: 14px; color: var(--muted); max-width: 80ch; }
+.foot p { margin: 0; }
+
+@media (max-width: 980px) {
+  .colors { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero, .type, .duo { grid-template-columns: minmax(0, 1fr); }
+  .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .colors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid3, .phones, .slides, .yesno { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="wm-word" d="M0 0L0 -1080L250.8 -1080L250.8 -841L240.4 -871Q290.8 -989 384.7 -1047.3Q478.6 -1105.6 585.6 -1105.6Q616.2 -1105.6 646.9 -1100.6Q677.6 -1095.6 706.8 -1083.6L684.4 -856.8Q622.2 -874.6 563.8 -874.6Q519 -874.6 466.5 -858.7Q414 -842.8 367.3 -800.7Q320.6 -758.6 290.7 -680.6Q260.8 -602.6 260.8 -478.8L260.8 0L0 0ZM1336.14 25.6Q1178.94 25.6 1056.44 -43.6Q933.94 -112.8 863.74 -239.9Q793.54 -367 793.54 -540.6Q793.54 -713.6 862.74 -840.4Q931.94 -967.2 1053.54 -1036.4Q1175.14 -1105.6 1332.74 -1105.6Q1421.14 -1105.6 1511.24 -1078.3Q1601.34 -1051 1676.64 -982.7Q1751.94 -914.4 1797.84 -793.5Q1843.74 -672.6 1843.74 -486L961.14 -486L961.14 -646L1612.54 -646L1576.14 -590.2Q1569.14 -707.8 1534.74 -779.6Q1500.34 -851.4 1446.44 -883.9Q1392.54 -916.4 1326.14 -916.4Q1242.34 -916.4 1184.94 -870.1Q1127.54 -823.8 1098.14 -739.2Q1068.74 -654.6 1068.74 -539.2Q1068.74 -367.2 1135.44 -269.4Q1202.14 -171.6 1334.54 -171.6Q1423.94 -171.6 1487.04 -217.2Q1550.14 -262.8 1582.34 -354L1822.14 -288.8Q1783.54 -182.4 1710.14 -112.7Q1636.74 -43 1540.04 -8.7Q1443.34 25.6 1336.14 25.6ZM2202.29 0Q2097.89 0 2038.29 -53.9Q1978.69 -107.8 1978.69 -204.8L1978.69 -1500L2239.49 -1500L2239.49 -251.4Q2239.49 -218.16 2248.99 -207.08Q2258.49 -196 2289.49 -196L2378.89 -196L2378.89 0L2202.29 0ZM2992.83 25.6Q2835.63 25.6 2713.13 -43.6Q2590.63 -112.8 2520.43 -239.9Q2450.23 -367 2450.23 -540.6Q2450.23 -713.6 2519.43 -840.4Q2588.63 -967.2 2710.23 -1036.4Q2831.83 -1105.6 2989.43 -1105.6Q3077.83 -1105.6 3167.93 -1078.3Q3258.03 -1051 3333.33 -982.7Q3408.63 -914.4 3454.53 -793.5Q3500.43 -672.6 3500.43 -486L2617.83 -486L2617.83 -646L3269.23 -646L3232.83 -590.2Q3225.83 -707.8 3191.43 -779.6Q3157.03 -851.4 3103.13 -883.9Q3049.23 -916.4 2982.83 -916.4Q2899.03 -916.4 2841.63 -870.1Q2784.23 -823.8 2754.83 -739.2Q2725.43 -654.6 2725.43 -539.2Q2725.43 -367.2 2792.13 -269.4Q2858.83 -171.6 2991.23 -171.6Q3080.63 -171.6 3143.73 -217.2Q3206.83 -262.8 3239.03 -354L3478.83 -288.8Q3440.23 -182.4 3366.83 -112.7Q3293.43 -43 3196.73 -8.7Q3100.03 25.6 2992.83 25.6ZM3979.38 0L3571.38 -1080L3862.18 -1080L4151.18 -178.6L4122.38 -178.6L4409.78 -1080L4700.58 -1080L4293.78 0L3979.38 0ZM5307.98 25.6Q5148.04 25.6 5025.97 -46.19Q4903.91 -117.98 4835.52 -245.49Q4767.12 -373 4767.12 -540.2Q4767.12 -707.4 4835.51 -834.78Q4903.9 -962.17 5025.95 -1033.88Q5147.99 -1105.6 5307.92 -1105.6Q5468.32 -1105.6 5590.32 -1033.9Q5712.32 -962.2 5780.92 -834.85Q5849.52 -707.51 5849.52 -540.05Q5849.52 -372.6 5781 -245.22Q5712.48 -117.83 5590.2 -46.12Q5467.92 25.6 5307.98 25.6ZM5308.37 -171.2Q5431.72 -171.2 5503.02 -270.36Q5574.32 -369.52 5574.32 -540Q5574.32 -711 5502.97 -809.9Q5431.62 -908.8 5308.27 -908.8Q5184.92 -908.8 5113.62 -809.9Q5042.32 -711 5042.32 -540Q5042.32 -369.2 5113.67 -270.2Q5185.02 -171.2 5308.37 -171.2Z"/></defs></svg>
+
+<div class="wrap">
+  <header class="top">
+    <svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg>
+    <nav aria-label="Secciones"><a href="#color">Color</a><a href="#letra">Letra</a><a href="#piezas">Piezas</a><a href="#reglas">Reglas</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Propuesta 3.2 · 3 de octubre de 2026</p>
+      <h1>Un color, una frase, un renglón.</h1>
+      <p class="lead">Relevo con colores vivos y más carácter, sin adornos. Cada pieza usa <b>un solo color de la casa</b>, la frase de Relevo en grotesca gruesa y la palabra de la persona <b>escrita a mano</b> sobre un renglón azul que cruza de lado a lado.</p>
+      <ol class="rules">
+        <li><span class="n">1</span><span><b>Un color por pieza.</b>El de la actividad. El azul nunca es fondo de una categoría: es el renglón y el sistema.</span></li>
+        <li><span class="n">2</span><span><b>Dos voces, dos letras.</b>Relevo habla en Schibsted Grotesk; la persona escribe en Playwrite CL, la letra ligada de la escuela chilena.</span></li>
+        <li><span class="n">3</span><span><b>El renglón cruza.</b>Va de borde a borde: deja lugar para lo que la persona va a hacer.</span></li>
+      </ol>
+      <p class="status">Propuesta para el autor · no cambia todavía la app ni el sistema publicado</p>
+    </div>
+    <figure class="poster" id="afiche-portada" style="--campo:#FED86F"><div class="pi">
+  <div class="ptop"><span>Leer</span></div>
+  <div class="pmid"><div class="phead">Vuelve<br>a</div><div class="pline"><span class="hand fit" data-max="0.86">leer</span></div></div>
+  <div class="pbot"><p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p><div class="pfoot"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span>Abrir el libro<br>Junto al sillón</span></div></div>
+</div></figure>
+  </div>
+
+  <section id="color">
+    <div class="head">
+      <p class="eyebrow">Color</p>
+      <h2>Seis colores vivos y un azul</h2>
+      <p>Cada color de la casa tiene tres usos: el campo vivo para fondos (con tinta encima), su tinta para renglones, íconos y texto sobre papel, y un fondo suave para etiquetas. El azul de Relevo no cambia.</p>
+    </div>
+    <div class="colors">
+<div class="sw-blue"><div class="big" style="background:#3D38F5;color:#fff"><b>Azul Relevo</b><span>#3D38F5</span></div><p>El sistema: logotipo, renglón, tiempo y dónde estás. Blanco encima: 6,8:1.</p></div>
+<div class="sw-cat"><div class="big" style="background:#FED86F;color:#141519"><b>Leer</b><span>#FED86F</span></div>
+<div class="sm" style="background:#8C6F0E;color:#fff"><span>tinta #8C6F0E</span></div>
+<div class="sm" style="background:#F8F0D9;color:#8C6F0E"><span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg>fondo suave</span></div>
+<p>la luz de la lámpara sobre el libro. Tinta sobre el campo: 13,26:1. Su tinta sobre papel: 4,57:1.</p></div>
+<div class="sw-cat"><div class="big" style="background:#FD7934;color:#141519"><b>Moverme</b><span>#FD7934</span></div>
+<div class="sm" style="background:#BF510F;color:#fff"><span>tinta #BF510F</span></div>
+<div class="sm" style="background:#F8EEE9;color:#BF510F"><span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16.5V9.6C3.5 8.6 4.6 8.1 5.4 8.6L7.9 10.2L10.9 7.6C12 9.7 14.1 11.1 17.1 11.6C19.2 11.9 20.5 13.2 20.5 15.1V16.5Z" fill="none" stroke="currentColor"/><path d="M3.5 16.5V18.25A1 1 0 0 0 4.5 19.25H19.5A1 1 0 0 0 20.5 18.25V16.5" fill="none" stroke="currentColor"/><path d="M9.2 11.3L10.4 12.6M11.3 9.9L12.4 11.2" fill="none" stroke="currentColor"/></svg>fondo suave</span></div>
+<p>la tierra y el atardecer afuera. Tinta sobre el campo: 6,92:1. Su tinta sobre papel: 4,57:1.</p></div>
+<div class="sw-cat"><div class="big" style="background:#FC8DBC;color:#141519"><b>Crear con las manos</b><span>#FC8DBC</span></div>
+<div class="sm" style="background:#D91685;color:#fff"><span>tinta #D91685</span></div>
+<div class="sm" style="background:#F8ECF1;color:#D91685"><span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13.75 10.25L19.1 4.9A1.5 1.5 0 0 1 21.2 7L15.85 12.35" fill="none" stroke="currentColor"/><path d="M12.75 11.25L14.85 13.35" fill="none" stroke="currentColor"/><path d="M9.6 13.1C11.9 12.9 13.4 15.4 11.8 17.2C9.9 19.3 6.3 18.9 3.5 20.5C3.9 17.6 5.2 16.2 6.6 14.9C7.4 13.9 8.4 13.2 9.6 13.1Z" fill="none" stroke="currentColor"/></svg>fondo suave</span></div>
+<p>el pigmento en las manos. Tinta sobre el campo: 8,41:1. Su tinta sobre papel: 4,56:1.</p></div>
+<div class="sw-cat"><div class="big" style="background:#3BB575;color:#141519"><b>Cuidar la casa y a mí</b><span>#3BB575</span></div>
+<div class="sm" style="background:#11844E;color:#fff"><span>tinta #11844E</span></div>
+<div class="sm" style="background:#DCF8E5;color:#11844E"><span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 13H17.5L16.25 20.5H7.75Z" fill="none" stroke="currentColor"/><path d="M12 13V8.5" fill="none" stroke="currentColor"/><path d="M12 9.75C12 6.75 14.4 4.75 17.5 5C17.5 7.9 15.1 9.75 12 9.75Z" fill="none" stroke="currentColor"/><path d="M12 11.25C12 9 10.2 7.5 7.25 7.75C7.25 9.9 9.1 11.25 12 11.25Z" fill="none" stroke="currentColor"/></svg>fondo suave</span></div>
+<p>una planta recién regada. Tinta sobre el campo: 7:1. Su tinta sobre papel: 4,53:1.</p></div>
+<div class="sw-cat"><div class="big" style="background:#86D7FB;color:#141519"><b>Aprender algo</b><span>#86D7FB</span></div>
+<div class="sm" style="background:#117CA1;color:#fff"><span>tinta #117CA1</span></div>
+<div class="sm" style="background:#E6F2F8;color:#117CA1"><span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H17.5A2 2 0 0 1 19.5 5V19A2 2 0 0 1 17.5 21H8A2 2 0 0 1 6 19V5A2 2 0 0 1 8 3Z" fill="none" stroke="currentColor"/><path d="M4 7H8M4 12H8M4 17H8" fill="none" stroke="currentColor"/><path d="M11.5 8H16M11.5 12H16" fill="none" stroke="currentColor"/></svg>fondo suave</span></div>
+<p>los renglones celestes del cuaderno. Tinta sobre el campo: 11,4:1. Su tinta sobre papel: 4,54:1.</p></div>
+<div class="sw-cat"><div class="big" style="background:#F9163D;color:#141519"><b>Con otras personas</b><span>#F9163D</span></div>
+<div class="sm" style="background:#E31738;color:#fff"><span>tinta #E31738</span></div>
+<div class="sm" style="background:#F8EDEC;color:#E31738"><span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 4H16.5A3.5 3.5 0 0 1 20 7.5V16.5A3.5 3.5 0 0 1 16.5 20H7.5A3.5 3.5 0 0 1 4 16.5V7.5A3.5 3.5 0 0 1 7.5 4Z" fill="none" stroke="currentColor"/><path d="M7.25 8.5A1.25 1.25 0 1 0 9.75 8.5A1.25 1.25 0 1 0 7.25 8.5Z" fill="currentColor" stroke="none"/><path d="M10.75 12A1.25 1.25 0 1 0 13.25 12A1.25 1.25 0 1 0 10.75 12Z" fill="currentColor" stroke="none"/><path d="M14.25 15.5A1.25 1.25 0 1 0 16.75 15.5A1.25 1.25 0 1 0 14.25 15.5Z" fill="currentColor" stroke="none"/></svg>fondo suave</span></div>
+<p>la mesa compartida. Tinta sobre el campo: 4,53:1. Su tinta sobre papel: 4,52:1.</p></div>
+    </div>
+    <ul class="facts-row">
+      <li><b>Con tinta encima, siempre legible.</b>La tinta sobre cada campo da de 4,5 a 13,3:1; la tinta de cada color sobre papel, 4,5:1 o más.</li>
+      <li><b>Distintos para todos.</b>Los campos tienen luces distintas: la distancia mínima entre ellos es 9,6 con protanopía, 7,7 con deuteranopía y 8,9 con tritanopía, según la simulación de Machado et al. (2009). Igual van con ícono y nombre.</li>
+      <li><b>Vivos, pero de la casa.</b>Cada color sale de algo real de la actividad: la luz de la lámpara, la tierra, el pigmento, la planta, el cuaderno, la mesa.</li>
+    </ul>
+  </section>
+
+  <section id="letra">
+    <div class="head">
+      <p class="eyebrow">Letra</p>
+      <h2>La grotesca de Relevo y la letra de la persona</h2>
+      <p>Se quita la serif de titulares: con una grotesca gruesa y una letra escrita a mano, las dos voces se distinguen solas y el sistema queda en dos familias. Si se prefiere mantener la serif que el autor eligió el 30 de septiembre, Newsreader puede volver en los titulares sin tocar lo demás.</p>
+    </div>
+    <div class="type">
+      <div class="spec"><div class="s-head">Vuelve<br>a</div><div class="s-line"><span class="s-hand">leer 10 páginas</span></div></div>
+      <ul class="roles">
+        <li><span class="r1">Schibsted Grotesk 800</span><small>La frase de Relevo, grande y apretada (−5 %). También el logotipo (600) y toda la interfaz (400 a 700).</small></li>
+        <li><span class="r2">Playwrite CL</span><small>Lo que escribe la persona. Es la letra ligada que se enseña en las escuelas de Chile, de TypeTogether (proyecto Primarium). Desde 16 px; en listas largas, la interfaz.</small></li>
+        <li><span class="r3">Schibsted Grotesk 400</span><small>Explicaciones y botones, en frases cortas.</small></li>
+        <li><span class="r4">IBM Plex Mono 300</span><small>Solo datos: la ficha de la actividad, números de lámina, registros.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="piezas">
+    <div class="head">
+      <p class="eyebrow">Piezas</p>
+      <h2>Lo mismo en todas partes</h2>
+      <p>Las mismas tres cosas en cada pieza, y nada más.</p>
+    </div>
+    <div class="grid3">
+<figure class="poster" id="afiche-leer" style="--campo:#FED86F"><div class="pi">
+  <div class="ptop"><span>Leer</span></div>
+  <div class="pmid"><div class="phead">Vuelve<br>a</div><div class="pline"><span class="hand fit" data-max="0.86">leer</span></div></div>
+  <div class="pbot"><p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p><div class="pfoot"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span>Abrir el libro<br>Junto al sillón</span></div></div>
+</div></figure>
+<figure class="poster" id="afiche-moverme" style="--campo:#FD7934"><div class="pi">
+  <div class="ptop"><span>Moverme</span></div>
+  <div class="pmid"><div class="phead">Vuelve<br>a</div><div class="pline"><span class="hand fit" data-max="0.86">salir a caminar</span></div></div>
+  <div class="pbot"><p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p><div class="pfoot"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span>Ponerte las zapatillas<br>Junto a la puerta</span></div></div>
+</div></figure>
+<figure class="poster" id="afiche-crear" style="--campo:#FC8DBC"><div class="pi">
+  <div class="ptop"><span>Crear con las manos</span></div>
+  <div class="pmid"><div class="phead">Vuelve<br>a</div><div class="pline"><span class="hand fit" data-max="0.86">pintar</span></div></div>
+  <div class="pbot"><p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p><div class="pfoot"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span>Preparar las acuarelas<br>En la mesa</span></div></div>
+</div></figure>
+<figure class="poster" id="afiche-cuidar" style="--campo:#3BB575"><div class="pi">
+  <div class="ptop"><span>Cuidar la casa y a mí</span></div>
+  <div class="pmid"><div class="phead">Vuelve<br>a</div><div class="pline"><span class="hand fit" data-max="0.86">regar las plantas</span></div></div>
+  <div class="pbot"><p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p><div class="pfoot"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span>Llenar la regadera<br>Junto a las plantas</span></div></div>
+</div></figure>
+<figure class="poster" id="afiche-aprender" style="--campo:#86D7FB"><div class="pi">
+  <div class="ptop"><span>Aprender algo</span></div>
+  <div class="pmid"><div class="phead">Vuelve<br>a</div><div class="pline"><span class="hand fit" data-max="0.86">estudiar</span></div></div>
+  <div class="pbot"><p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p><div class="pfoot"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span>Abrir tus apuntes<br>En el escritorio</span></div></div>
+</div></figure>
+<figure class="poster" id="afiche-compartir" style="--campo:#F9163D"><div class="pi">
+  <div class="ptop"><span>Con otras personas</span></div>
+  <div class="pmid"><div class="phead">Vuelve<br>a</div><div class="pline"><span class="hand fit" data-max="0.86">jugar con alguien</span></div></div>
+  <div class="pbot"><p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p><div class="pfoot"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span>Sacar la caja<br>En la mesa</span></div></div>
+</div></figure>
+    </div>
+    <p class="cap"><b>Afiches «Vuelve a…».</b> Uno por categoría, con una idea de la app. La palabra de la persona se escribe a mano y el renglón llega a los bordes.</p>
+
+    <h3 class="sub">La app</h3>
+    <div class="phones">
+<figure class="phone" id="app-inicio"><div class="sb"><span>21:42</span><span class="sbi"><i></i><i></i><i></i></span></div><div class="scr">
+  <div class="abar"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span class="ava"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.9 12A9.1 9.1 0 1 0 21.1 12A9.1 9.1 0 1 0 2.9 12Z" fill="none" stroke="currentColor"/><path d="M8.9 9.7A3.1 3.1 0 1 0 15.1 9.7A3.1 3.1 0 1 0 8.9 9.7Z" fill="none" stroke="currentColor"/><path d="M6.7 18.3Q8.5 15 12 15Q15.5 15 17.3 18.3" fill="none" stroke="currentColor"/></svg></span></div>
+  <p class="eyebrow">Ahora</p>
+  <div class="active" style="--campo:#FED86F">
+    <div class="arow"><span class="chip"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg>Leer</span><span class="chip ink">Contando</span></div>
+    <div class="ahead">Vuelve a</div>
+    <div class="aline"><span class="hand fit" data-max="0.92">leer 10 páginas</span></div>
+    <div class="dots15"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+    <div class="atime"><b>6 min</b> de 15 en tus apps</div>
+  </div>
+  <div class="facts">
+    <div><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17V12H14V7H19.75" fill="none" stroke="currentColor"/><path d="M4.25 17H9" fill="none" stroke="currentColor"/></svg><span>Cómo empiezas</span><span class="hand sm">Abrir el libro</span></div>
+    <div><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18.75C12 18.75 6 13.9 6 9.25A6 6 0 0 1 18 9.25C18 13.9 12 18.75 12 18.75Z" fill="none" stroke="currentColor"/><path d="M9.9 9.25A2.1 2.1 0 1 0 14.1 9.25A2.1 2.1 0 1 0 9.9 9.25Z" fill="none" stroke="currentColor"/><path d="M6.75 21.1H17.25" fill="none" stroke="currentColor"/></svg><span>Dónde</span><span class="hand sm">Junto al sillón</span></div>
+  </div>
+</div><nav class="tabs"><span class="on"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10.6L12 4.6L19 10.6V18.6Q19 20.5 17.1 20.5H14V16.3Q14 14.4 12 14.4Q10 14.4 10 16.3V20.5H6.9Q5 20.5 5 18.6Z" fill="currentColor" stroke="currentColor"/><path d="M3.4 11.6L12 4.1L20.6 11.6" fill="none" stroke="currentColor"/></svg><b>Inicio</b></span><span class=""><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.75 18.5H15A3.25 3.25 0 0 0 15 12H9A3.25 3.25 0 0 1 9 5.5H16.25" fill="none" stroke="currentColor"/><path d="M3.25 18.5A2.25 2.25 0 1 0 7.75 18.5A2.25 2.25 0 1 0 3.25 18.5Z" fill="none" stroke="currentColor"/><path d="M16.25 5.5A2.25 2.25 0 1 0 20.75 5.5A2.25 2.25 0 1 0 16.25 5.5Z" fill="none" stroke="currentColor"/></svg><b>Ruta</b></span><span class=""><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.9 12A9.1 9.1 0 1 0 21.1 12A9.1 9.1 0 1 0 2.9 12Z" fill="none" stroke="currentColor"/><path d="M8.9 9.7A3.1 3.1 0 1 0 15.1 9.7A3.1 3.1 0 1 0 8.9 9.7Z" fill="none" stroke="currentColor"/><path d="M6.7 18.3Q8.5 15 12 15Q15.5 15 17.3 18.3" fill="none" stroke="currentColor"/></svg><b>Perfil</b></span></nav></figure><figure class="phone" id="app-preparar"><div class="sb"><span>21:42</span><span class="sbi"><i></i><i></i><i></i></span></div><div class="scr">
+  <div class="steps"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+  <h3 class="qtitle">¿Qué quieres hacer?</h3>
+  <label class="field"><span>Actividad</span><span class="hand fieldv">leer 10 páginas</span></label>
+  <p class="eyebrow">Ideas</p>
+  <div class="ideas"><span class="tag" style="--suave:#F8F0D9;--tinta:#8C6F0E"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg>Leer</span><span class="tag" style="--suave:#F8EEE9;--tinta:#BF510F"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16.5V9.6C3.5 8.6 4.6 8.1 5.4 8.6L7.9 10.2L10.9 7.6C12 9.7 14.1 11.1 17.1 11.6C19.2 11.9 20.5 13.2 20.5 15.1V16.5Z" fill="none" stroke="currentColor"/><path d="M3.5 16.5V18.25A1 1 0 0 0 4.5 19.25H19.5A1 1 0 0 0 20.5 18.25V16.5" fill="none" stroke="currentColor"/><path d="M9.2 11.3L10.4 12.6M11.3 9.9L12.4 11.2" fill="none" stroke="currentColor"/></svg>Salir a caminar</span><span class="tag" style="--suave:#F8ECF1;--tinta:#D91685"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13.75 10.25L19.1 4.9A1.5 1.5 0 0 1 21.2 7L15.85 12.35" fill="none" stroke="currentColor"/><path d="M12.75 11.25L14.85 13.35" fill="none" stroke="currentColor"/><path d="M9.6 13.1C11.9 12.9 13.4 15.4 11.8 17.2C9.9 19.3 6.3 18.9 3.5 20.5C3.9 17.6 5.2 16.2 6.6 14.9C7.4 13.9 8.4 13.2 9.6 13.1Z" fill="none" stroke="currentColor"/></svg>Pintar</span><span class="tag" style="--suave:#DCF8E5;--tinta:#11844E"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 13H17.5L16.25 20.5H7.75Z" fill="none" stroke="currentColor"/><path d="M12 13V8.5" fill="none" stroke="currentColor"/><path d="M12 9.75C12 6.75 14.4 4.75 17.5 5C17.5 7.9 15.1 9.75 12 9.75Z" fill="none" stroke="currentColor"/><path d="M12 11.25C12 9 10.2 7.5 7.25 7.75C7.25 9.9 9.1 11.25 12 11.25Z" fill="none" stroke="currentColor"/></svg>Cuidar las plantas</span><span class="tag" style="--suave:#E6F2F8;--tinta:#117CA1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H17.5A2 2 0 0 1 19.5 5V19A2 2 0 0 1 17.5 21H8A2 2 0 0 1 6 19V5A2 2 0 0 1 8 3Z" fill="none" stroke="currentColor"/><path d="M4 7H8M4 12H8M4 17H8" fill="none" stroke="currentColor"/><path d="M11.5 8H16M11.5 12H16" fill="none" stroke="currentColor"/></svg>Estudiar</span><span class="tag" style="--suave:#F8EDEC;--tinta:#E31738"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 4H16.5A3.5 3.5 0 0 1 20 7.5V16.5A3.5 3.5 0 0 1 16.5 20H7.5A3.5 3.5 0 0 1 4 16.5V7.5A3.5 3.5 0 0 1 7.5 4Z" fill="none" stroke="currentColor"/><path d="M7.25 8.5A1.25 1.25 0 1 0 9.75 8.5A1.25 1.25 0 1 0 7.25 8.5Z" fill="currentColor" stroke="none"/><path d="M10.75 12A1.25 1.25 0 1 0 13.25 12A1.25 1.25 0 1 0 10.75 12Z" fill="currentColor" stroke="none"/><path d="M14.25 15.5A1.25 1.25 0 1 0 16.75 15.5A1.25 1.25 0 1 0 14.25 15.5Z" fill="currentColor" stroke="none"/></svg>Jugar un juego de mesa</span></div>
+  <div class="btn">Seguir</div>
+</div></figure><figure class="phone senal" id="app-senal" style="--campo:#FED86F"><div class="sb"><span>21:42</span><span class="sbi"><i></i><i></i><i></i></span></div><div class="scr">
+  <div class="sgtop"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><span class="chip ink"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.75H14.5Q17 2.75 17 5.25V15.75Q17 18.25 14.5 18.25H9.5Q7 18.25 7 15.75V5.25Q7 2.75 9.5 2.75Z" fill="none" stroke="currentColor"/><path d="M9.4 12.6A2.6 2.6 0 1 0 14.6 12.6A2.6 2.6 0 1 0 9.4 12.6Z" fill="none" stroke="currentColor"/><path d="M10.95 6.6A1.05 1.05 0 1 0 13.05 6.6A1.05 1.05 0 1 0 10.95 6.6Z" fill="currentColor" stroke="none"/><path d="M5 21.1H19" fill="none" stroke="currentColor"/></svg>Suena en el parlante</span></div>
+  <div class="sghead">Vuelve<br>a</div>
+  <div class="sgline"><span class="hand fit" data-max="0.9">leer 10 páginas</span></div>
+  <p class="sgsub">Abrir el libro · Junto al sillón</p>
+  <div class="btn">Silenciar y continuar</div>
+</div></figure>
+    </div>
+    <p class="cap"><b>Inicio, Preparar y la señal.</b> La pantalla es papel y tinta; el color aparece solo donde está la actividad: la tarjeta del relevo activo y la señal, que se vuelve el momento de marca.</p>
+
+    <h3 class="sub">Redes y tarjeta</h3>
+    <div class="duo">
+<figure class="story" id="historia" style="--campo:#FC8DBC"><div class="pi">
+  <svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg>
+  <div class="sthead">Vuelve<br>a</div>
+  <div class="stline"></div>
+  <p>Escribe sobre el renglón lo que quieres hacer.</p>
+</div></figure>
+<div class="cards"><figure class="pcard" id="tarjeta-frente" style="--campo:#86D7FB"><div class="pi"><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg><div class="pchead">Vuelve a</div><div class="pcline"></div></div></figure>
+<figure class="pcard ink" id="tarjeta-reverso"><div class="pi"><p>Relevo es un recordatorio físico que preparas desde el teléfono. Lo dejas cerca de una actividad que quieres tener presente y, cuando se cumple la condición que elegiste, emite una señal breve. Tú decides qué hacer después.</p><svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg></div></figure></div>
+    </div>
+    <p class="cap"><b>Historia para escribir y tarjeta de bolsillo.</b> El renglón queda vacío para que la persona escriba a mano.</p>
+
+    <h3 class="sub">Presentación</h3>
+    <div class="slides">
+<figure class="slide" id="lamina"><div class="pi">
+  <div class="sltop"><span>Problema</span><span>04</span></div>
+  <h3>Algunas sesiones de ocio digital se prolongan sin que la persona <span class="rg">vuelva a decidir</span> si quiere continuar.</h3>
+  <span class="slsrc">Memoria, resumen</span>
+</div></figure><figure class="slide campo" id="lamina-seccion" style="--campo:#FD7934"><div class="pi">
+  <div class="sltop"><span>Sección</span><span>03</span></div>
+  <h3 class="big">Planteamiento<br>del problema</h3>
+  <svg class="wm " viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="wl" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="ww" href="#wm-word"/></svg>
+</div></figure>
+    </div>
+    <p class="cap"><b>Láminas.</b> Blancas para las ideas, con el renglón bajo la frase clave; un color de la casa para abrir cada sección.</p>
+  </section>
+
+  <section id="reglas">
+    <div class="head">
+      <p class="eyebrow">Reglas</p>
+      <h2>Expresivo, sin adornos</h2>
+    </div>
+    <div class="yesno">
+      <div><h3>Sí</h3><ul>
+        <li>Un color de la casa por pieza, a sangre.<small>El color dice la actividad; el resto es papel y tinta.</small></li>
+        <li>Letra grande y apretada, con mucho aire alrededor.<small>Una frase por pieza.</small></li>
+        <li>Palabras reales de la app.<small>Nada inventado ni de relleno.</small></li>
+        <li>El renglón azul de borde a borde.<small>Uno por pieza.</small></li>
+      </ul></div>
+      <div><h3>No</h3><ul>
+        <li>Degradados, brillos, vidrio en piezas gráficas, sombras de adorno.<small>El vidrio queda para las barras de la app.</small></li>
+        <li>Dos colores de la casa en la misma pieza, o el azul como fondo de una categoría.</li>
+        <li>Emoji, íconos de banco de imágenes, ilustraciones 3D.</li>
+        <li>Todo centrado, tarjetas redondeadas por todas partes, texto sobre fotos sin tarjeta.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="decidir">
+    <div class="head"><p class="eyebrow">Para decidir</p><h2>Tres preguntas</h2></div>
+    <ol class="qs">
+      <li>¿Esta paleta viva reemplaza a la casa apagada de 3.1?</li>
+      <li>¿Se quita la serif de titulares y queda la grotesca gruesa, o vuelve Newsreader?</li>
+      <li>¿La persona escribe a mano (Playwrite CL) en la app, o solo en piezas y en el campo donde escribe?</li>
+    </ol>
+  </section>
+
+  <footer class="foot">
+    <p>Referencias: Machado, Oliveira y Fernandes (2009), simulación de visión del color; W3C (2023), WCAG 2.2; TypeTogether (s. f.), <a href="https://www.type-together.com/playwrite-instructions">Playwrite</a>; Google Fonts (s. f.), <a href="https://fonts.google.com/specimen/Playwrite+CL">Playwrite Chile</a>.</p>
+    <p>Sigue de la <a href="https://claude.ai/artifact/T8FY5qmRDCa7T5Mmfk5oxP">exploración de color y letra</a> del 2 de octubre.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Ajusta la palabra escrita a mano para que quepa en su renglón.
+  function fit() {
+    document.querySelectorAll('.fit').forEach(function (el) {
+      el.style.fontSize = '';
+      var box = el.parentElement, max = parseFloat(el.dataset.max || '0.9') * box.clientWidth;
+      var fs = parseFloat(getComputedStyle(el).fontSize), guard = 0;
+      while (el.scrollWidth > max && fs > 8 && guard++ < 80) { fs -= 1; el.style.fontSize = fs + 'px'; }
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('resize', function () { clearTimeout(window.__f); window.__f = setTimeout(fit, 120); });
+  fit();
+})();
+</script>
