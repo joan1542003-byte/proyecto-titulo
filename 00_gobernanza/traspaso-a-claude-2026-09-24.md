@@ -188,6 +188,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Sistema de diseño 3.1 (2 de octubre, D-099):** sobre la misma página publicada ([documento 27](../10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md); [archivos](../10_recursos_visuales/sistema-de-diseno-3.1/README.md)). Logotipo en Schibsted Grotesk 600 con un renglón que pasa la «o»; Relevo en grotesca y romana, la persona en Newsreader itálica; el azul como único color del sistema y seis colores de la casa para las categorías de actividad; 135 íconos, ilustraciones, patrones, aplicaciones y movimiento. Supuestos: Newsreader, los colores de la casa, la itálica para la persona y trama en íconos solo en momentos de marca. Falta corregir el capítulo 11 de la memoria, que aún describe la marca anterior ([bitácora del 2 de octubre](bitacora-trabajo-con-ia-2026-10-02.md)).
 - **Exploración de color y letra (2 de octubre):** el autor pidió seguir explorando con referencias de Behance. [Documento 28](../10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md) y [lámina](https://claude.ai/artifact/T8FY5qmRDCa7T5Mmfk5oxP): cuatro direcciones de color y cinco pares de letra. Recomendación: cuaderno (renglón azul y margen rojo que marca dónde empieza) con la persona escribiendo en Playwrite CL. Pendiente de su elección.
 - **Relevo vivo, propuesta 3.2 (3 de octubre, D-100):** colores vivos y más personalidad, a pedido del autor. Regla: un color, una frase, un renglón. Seis colores de la casa vivos con campo, tinta y fondo suave; Schibsted Grotesk 800 para Relevo y Playwrite CL para la persona ([documento 29](../10_recursos_visuales/29_relevo-vivo-2026-10-03.md); [lámina](https://claude.ai/artifact/VyeLFYsuWgkyJ45pkfywJL)). Quita la serif de titulares de D-098: el autor debe decidir. Falta el tema oscuro y, si se aprueba, llevarla al sistema publicado, a la app y a la presentación.
+- **Volver a enfocar, propuesta 3.3 (3 de octubre, D-101):** el autor rechazó Playwrite (no usar letras escritas a mano) y pidió fundamentar siempre con diseñadores recientes, famosos y de buena reputación, no antiguos. La actividad aparece fuera de foco (foto de su lugar desenfocada sobre su color vivo) y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul ([documento 30](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md); [lámina](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn)). Pendiente: que el autor la apruebe para llevarla al sistema publicado y a la app.
 
 ## Seguridad, privacidad y GitHub
 
@@ -200,6 +201,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Volver a enfocar
+
+- **Qué cambió:** el estado suma la propuesta 3.3 y las reglas del autor sobre letra y fundamentos.
+- **Cómo estaba antes:** terminaba en la propuesta 3.2.
+- **Por qué:** el autor rechazó la letra escrita a mano, compartió seis referencias y pidió fundamentar con diseñadores recientes y reconocidos.
 
 ### 2026-10-03 — Relevo vivo
 

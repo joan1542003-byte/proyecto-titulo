@@ -81,6 +81,7 @@
 | 2 oct. | Encargo | Intentar nuevamente: retomar el trabajo, que se había interrumpido. | Se retomó desde la subida de recursos y se terminó y publicó el sistema 3.1, con su copia en el repositorio. | D-099 |
 | 2 oct. | Encargo | Seguir explorando: mirar de nuevo los colores y la tipografía; recomendó revisar Behance para nutrirse de referencias. | [Exploración de color y letra](../10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md) con una [lámina interactiva](https://claude.ai/artifact/T8FY5qmRDCa7T5Mmfk5oxP): nueve referencias de Behance con lo que sirve de cada una, cuatro direcciones de color (casa apagada, cuaderno, tintas de imprenta, noche y lámpara), cinco pares de letra (entre ellos Playwrite CL, la letra ligada escolar chilena) y un combinador sobre las mismas piezas. Recomendación: cuaderno con letra de cuaderno; cuatro preguntas para decidir. | D-099 |
 | 3 oct. | Corrección | Usar colores más vivos y darle más personalidad; evitar el diseño genérico de IA y no sobrediseñar: una mezcla entre minimalismo y un diseño hermoso y expresivo. | [Propuesta 3.2, «Relevo vivo»](../10_recursos_visuales/29_relevo-vivo-2026-10-03.md) con su [lámina](https://claude.ai/artifact/VyeLFYsuWgkyJ45pkfywJL): un color, una frase, un renglón. Seis colores de la casa vivos con tres usos cada uno, la frase de Relevo en grotesca gruesa y la palabra de la persona escrita a mano (Playwrite CL), catorce piezas y reglas de lo que se evita. Se señaló que quita la serif de titulares elegida el 30 de septiembre. | D-100 |
+| 3 oct. | Corrección e información | Rechazó Playwrite, la letra escrita a mano de la 3.2. Compartió seis referencias para trabajar con ellas (Scribbit, bird, bloop, furion, Meristem y Wanderly) y pidió fundamentar siempre con diseñadores recientes, famosos y de buena reputación, no antiguos. | [Propuesta 3.3, «Volver a enfocar»](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) con su [lámina](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn): la actividad fuera de foco en su color vivo y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul. Sin letra a mano. Fundamento en Rose Pilkington, Special Offer, Pentagram, Production Type y Bakken & Bæck. | D-101 |
 
 ## Lo que muestra el registro
 
@@ -91,6 +92,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Volver a enfocar
+
+- **Qué cambió:** se registró el rechazo de Playwrite, las referencias del autor y la regla de fundamentar con diseñadores recientes, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en la propuesta 3.2.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-03 — Relevo vivo
 

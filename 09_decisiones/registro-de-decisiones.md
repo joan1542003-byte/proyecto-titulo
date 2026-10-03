@@ -1133,7 +1133,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-100 — Relevo vivo: un color, una frase, un renglón (propuesta 3.2)
 
 - **Fecha:** 2026-10-03.
-- **Estado:** propuesta sobre D-099; no cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta sobre D-099, reemplazada el mismo día en su letra y en sus fondos planos por D-101: el autor rechazó Playwrite. Se conserva la paleta viva.
 - **Pedido del autor:** colores más vivos y más personalidad, sin diseño genérico de IA y sin sobrediseñar: minimalismo con un diseño hermoso y expresivo.
 - **Propuesta:**
   - **Regla:** cada pieza usa un solo color de la casa a sangre, la frase de Relevo en grotesca gruesa y la palabra de la persona escrita a mano sobre un renglón azul de borde a borde.
@@ -1145,7 +1145,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** maquetas sin prueba con personas; sin tema oscuro todavía.
 - **Documentación:** [Relevo vivo](../10_recursos_visuales/29_relevo-vivo-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/relevo-vivo-2026-10-03/README.md).
 
+
+## D-101 — Volver a enfocar (propuesta 3.3)
+
+- **Fecha:** 2026-10-03.
+- **Estado:** propuesta; reemplaza la letra escrita a mano y los fondos planos de D-100. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** rechazó Playwrite; compartió seis referencias (Scribbit, bird, bloop, furion, Meristem y Wanderly) y pidió fundamentar con diseñadores recientes, famosos y de buena reputación.
+- **Propuesta:**
+  - **Idea:** en el teléfono, lo que la persona quería hacer queda fuera de foco; Relevo lo vuelve a enfocar. La actividad aparece desenfocada en su color vivo y, encima, nítidas, la frase de Relevo y las palabras de la persona sobre el renglón azul.
+  - **Color:** la paleta viva de D-100, ahora como luz: cada color con la foto de su actividad desenfocada en luz suave. Nunca manchas de color sin una foto detrás.
+  - **Letra:** vuelven las dos voces de la 3.1: Newsreader romana para Relevo e itálica para la persona; Schibsted Grotesk para la interfaz y el logotipo; IBM Plex Mono para datos.
+- **Fundamento:** la memoria describe la actividad que «puede dejar de estar presente»; Rose Pilkington hizo el degradado de Instagram «iluminado desde dentro» (2022); Special Offer construyó brat con un color y una frase (2024); Pentagram usó el desenfoque como lenguaje de la temporada 2022-2023 del Atlantic Theater; Newsreader es de Production Type (2020-2021).
+- **Alternativas:** la 3.2 con colores planos; la casa apagada de 3.1; las direcciones del documento 28.
+- **Límites:** maquetas sin prueba con personas; dos de las seis fotos son generadas con IA; sin tema oscuro.
+- **Documentación:** [Volver a enfocar](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/volver-a-enfocar-2026-10-03/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — D-101 y estado de D-100
+
+- **Qué cambió:** se registró D-101 y D-100 queda reemplazada en su letra y sus fondos planos.
+- **Cómo estaba antes:** D-100 era la última propuesta, con Playwrite.
+- **Por qué:** el autor rechazó la letra escrita a mano, compartió seis referencias y pidió fundamentar con diseñadores recientes y reconocidos.
 
 ### 2026-10-03 — D-100, Relevo vivo
 
