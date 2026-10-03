@@ -1126,9 +1126,16 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Supuestos:** Newsreader (o Instrument Serif); los colores de la casa (o volver a una sola tinta); la itálica para la voz de la persona (o el azul de la app 2.18); trama en íconos solo en momentos de marca.
 - **Alternativas:** mantener 3.0 tal cual; la variante «azul a celeste» de 3.0, que queda como antecedente porque su cambio de color no significa nada; la «o» del logotipo como parlante, descartada porque pone el objeto en el centro (D-072).
 - **Límites:** no se probó con personas; las pantallas y piezas son maquetas; la firma sonora no se escuchó en un parlante real; la página publicada no se revisó desde el navegador de trabajo.
+- **Exploración (mismo día):** a pedido del autor, cuatro direcciones de color (casa apagada, cuaderno, tintas de imprenta, noche y lámpara) y cinco pares de letra, con referencias de Behance. La recomendación es el cuaderno: dos tintas, el renglón azul y un margen rojo que marca dónde empieza, con la voz de la persona en Playwrite CL, la letra ligada escolar chilena. Queda abierta hasta que el autor elija ([documento 28](../10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md)).
 - **Documentación:** [sistema de diseño 3.1](../10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) y su [copia de archivos](../10_recursos_visuales/sistema-de-diseno-3.1/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — D-099, exploración de color y letra
+
+- **Qué cambió:** D-099 suma la exploración de color y letra y su recomendación.
+- **Cómo estaba antes:** D-099 tenía una sola propuesta de color y de letra.
+- **Por qué:** el autor pidió seguir explorando colores y tipografía, con referencias de Behance.
 
 ### 2026-10-02 — D-099, sistema de diseño 3.1
 

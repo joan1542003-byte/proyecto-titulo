@@ -27,6 +27,7 @@ Copia en el repositorio del [sistema de diseño de Relevo](https://claude.ai/art
   - `apps-lib.js` y `gen-apps.js` arman y capturan las 24 aplicaciones; `gen-motion.js`, el logotipo animado y la firma sonora (con ffmpeg); `cdp.js` maneja Chrome sin interfaz.
   - En `build/`: `tokens31.js` lleva `tokens.json` de 3.0 a 3.1; `bundle31-patch.js` es el cambio que ya se aplicó a `bundle-src.js`; `make-components31.js` adapta `components.js` (el generador de 3.0) y escribe los componentes; `make-cards31.js` escribe las páginas de muestra; `index31.js`, el índice.
   - `ids31.txt` e `ids-de-recursos.json` guardan el identificador y el tamaño de cada recurso subido.
+  - `exploracion/`: `plantilla.html` y `build.js` arman la lámina de la [exploración de color y letra](../28_exploracion-color-y-letra-2026-10-02.md).
 
 ## Volver a generar
 
@@ -39,6 +40,12 @@ Los programas esperan una carpeta de trabajo con esta forma: los programas de `c
 Para actualizar la página publicada se suben primero los recursos, después los archivos que cambiaron y al final el índice, como en 3.0.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — Generador de la exploración
+
+- **Qué cambió:** se suma la carpeta `construccion/exploracion/`.
+- **Cómo estaba antes:** la copia no tenía el generador de la lámina de color y letra.
+- **Por qué:** el autor pidió seguir explorando colores y tipografía, con referencias de Behance.
 
 ### 2026-10-02 — Creación
 

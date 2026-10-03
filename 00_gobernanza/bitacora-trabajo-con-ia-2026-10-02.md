@@ -13,6 +13,7 @@
 | Tipografía | Dos voces: Relevo en Schibsted Grotesk y Newsreader romana; la persona en Newsreader itálica y en tinta; IBM Plex Mono para datos. Tres estilos nuevos en `tokens.json`. | D-099 |
 | Color | Seis colores de la casa, uno por categoría de actividad, en OKLCH, con roles de renglón, texto y fondo en los dos temas; contraste y visión del color medidos. | D-099 |
 | Recursos | 33 íconos nuevos (135 en total), 6 ilustraciones, 11 patrones, la lámina de color, 24 aplicaciones, el logotipo animado y la firma sonora. 106 recursos subidos. | D-099 |
+| Exploración de color y letra | Pedido del autor después de 3.1. Se revisó Behance y se armó una [lámina interactiva](https://claude.ai/artifact/T8FY5qmRDCa7T5Mmfk5oxP) con cuatro direcciones de color, cinco pares de letra y un combinador ([documento 28](../10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md)). Recomendación: cuaderno (azul y margen rojo) con la persona escribiendo en Playwrite CL. | D-099 |
 | Páginas y libro de marca | 13 páginas de muestra con sus razones, portada nueva y libro de marca en diez secciones con referencias APA. | D-099 |
 
 ## 2. Cómo se usó la IA
@@ -25,16 +26,23 @@
 ## 3. Qué se comprobó y qué no
 
 - **Comprobado:** las 60 vistas previas del sistema (46 componentes, la portada y 13 páginas) en un marco local; la portada y las páginas de logotipo, tipografía, paleta e iconografía también en tema oscuro; los contrastes de cada color de la casa; que los 106 recursos se subieron y quedaron en el índice; que la copia del repositorio no tiene rutas locales ni datos personales; las referencias nuevas en sus fuentes.
+- **Exploración:** la lámina se revisó en escritorio y a 400 px de ancho, en tema oscuro, y en tres combinaciones del combinador.
 - **No comprobado:** la página publicada vista desde la cuenta del autor; la firma sonora en un parlante real; la impresión de afiches y tarjeta; si las personas reconocen la marca, los íconos o los colores.
 
 ## 4. Pendientes
 
-- Que el autor decida los supuestos de D-099 (y los que siguen abiertos de D-098).
+- Que el autor decida los supuestos de D-099 (y los que siguen abiertos de D-098) y responda las cuatro preguntas de la exploración de color y letra.
 - Corregir el capítulo 11 de la memoria con la marca vigente, respetando sus límites de palabras.
 - Aplicar 3.1 a la app 2.19, al archivo de marca de Figma y a la presentación.
 - Siguen abiertos los pendientes técnicos del 30 de septiembre: teléfono real con la 2.18, Firebase y la revisión del consentimiento v11.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — Exploración de color y letra
+
+- **Qué cambió:** se suma la exploración de color y letra con referencias de Behance.
+- **Cómo estaba antes:** la bitácora terminaba en el sistema 3.1.
+- **Por qué:** el autor pidió seguir explorando colores y tipografía, con referencias de Behance.
 
 ### 2026-10-02 — Creación
 

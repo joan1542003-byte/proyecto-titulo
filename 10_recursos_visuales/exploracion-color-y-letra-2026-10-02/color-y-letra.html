@@ -1,0 +1,531 @@
+<title>Color y letra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Playwrite+CL:wght@100..400&family=Playwrite+CL+Guides&family=IBM+Plex+Mono:wght@300;400;500&display=swap">
+<style>
+/* Lámina de exploración: una columna editorial; cada opción se muestra aplicada a las mismas piezas. */
+:root {
+  --bg: #F2F2EF; --surface: #FCFCFA; --fg: #17181C; --muted: #5B5F68; --line: #D5D6D8; --accent: #3D38F5; --accent-soft: #ECEBFE;
+  --f-ui: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-display: "Newsreader", Georgia, serif;
+  --f-data: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #111215; --surface: #1B1C20; --fg: #E9EAEC; --muted: #9BA0A9; --line: #30333A; --accent: #9A97FF; --accent-soft: #23224A; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #111215; --surface: #1B1C20; --fg: #E9EAEC; --muted: #9BA0A9; --line: #30333A; --accent: #9A97FF; --accent-soft: #23224A; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.55 var(--f-ui); padding-inline: 20px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 40px 96px; }
+a { color: var(--fg); text-decoration-color: var(--accent); text-decoration-thickness: .09em; text-underline-offset: .18em; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.eyebrow { font: 600 13px/18px var(--f-ui); color: var(--muted); margin: 0; }
+h1 { font: 380 clamp(40px, 6vw, 72px)/1.02 var(--f-display); letter-spacing: -.02em; margin: 10px 0 18px; text-wrap: balance; }
+h2 { font: 380 clamp(30px, 4vw, 44px)/1.08 var(--f-display); letter-spacing: -.015em; margin: 0 0 10px; text-wrap: balance; }
+h3 { font: 600 18px/24px var(--f-ui); margin: 0; }
+.lead { font-size: 19px; line-height: 1.55; color: var(--muted); max-width: 66ch; margin: 0; }
+.lead b, .note b { color: var(--fg); font-weight: 600; }
+.note { font-size: 15px; color: var(--muted); max-width: 70ch; }
+.data { font: 300 13px/18px var(--f-data); color: var(--muted); }
+section { margin-top: 88px; scroll-margin-top: 80px; }
+.sec-head { display: grid; gap: 8px; margin-bottom: 28px; max-width: 760px; }
+nav.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); margin-inline: -20px; padding: 10px 20px; border-bottom: 1px solid var(--line); }
+nav.top ul { list-style: none; display: flex; gap: 6px 18px; flex-wrap: wrap; margin: 0 auto; padding: 0; max-width: 1180px; align-items: center; }
+nav.top a { font: 600 14px/20px var(--f-ui); text-decoration: none; color: var(--muted); }
+nav.top a:hover { color: var(--fg); }
+nav.top .logo { margin-right: auto; display: inline-flex; color: var(--fg); }
+.hero-logo { display: block; width: min(260px, 60vw); height: auto; color: var(--fg); }
+.status { display: inline-flex; gap: 8px; align-items: center; font: 600 13px/18px var(--f-ui); color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 6px 14px; margin-top: 22px; }
+
+/* Referencias */
+.refs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.ref { background: var(--surface); border-radius: 22px; padding: 20px 20px 18px; display: grid; gap: 10px; align-content: start; }
+.ref h3 { font-size: 16px; line-height: 22px; }
+.ref p { margin: 0; font-size: 14.5px; line-height: 21px; color: var(--muted); }
+.ref .take { color: var(--fg); }
+.ref .take::before { content: "Para Relevo: "; font-weight: 600; }
+.ref .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.ref .tags span { font: 500 12px/16px var(--f-ui); color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+.insights { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0 28px; margin: 0 0 30px; padding: 0; list-style: none; }
+.insights li { border-top: 2px solid var(--fg); padding: 14px 0 18px; font-size: 15px; line-height: 22px; color: var(--muted); }
+.insights li b { display: block; color: var(--fg); font: 380 22px/26px var(--f-display); margin-bottom: 6px; }
+
+/* Direcciones de color */
+.dirs { display: grid; gap: 22px; }
+.dir { background: var(--surface); border-radius: 28px; padding: 26px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.dir header { display: grid; gap: 6px; }
+.dir .tag { font: 500 13px/18px var(--f-data); color: var(--muted); }
+.dir h3 { font: 380 30px/34px var(--f-display); letter-spacing: -.01em; }
+.dir .idea { margin: 0; font-size: 16px; line-height: 24px; color: var(--muted); }
+.sw { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; margin: 16px 0 6px; }
+.sw div { border-radius: 14px; padding: 10px 11px 9px; min-height: 76px; display: grid; align-content: space-between; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+.sw b { font: 600 12.5px/16px var(--f-ui); }
+.sw span { font: 400 11.5px/14px var(--f-data); opacity: .85; }
+.why { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.why li { font-size: 14.5px; line-height: 21px; color: var(--muted); padding-top: 10px; border-top: 1px solid var(--line); }
+.why li b { color: var(--fg); font-weight: 600; }
+.risk { margin: 12px 0 0; font-size: 14.5px; line-height: 21px; color: var(--fg); background: var(--bg); border-radius: 14px; padding: 12px 14px; }
+.risk::before { content: "Riesgo: "; font-weight: 600; }
+.trio { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+
+/* Letra */
+.types { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+.type { background: var(--surface); border-radius: 28px; padding: 22px; display: grid; gap: 14px; align-content: start; }
+.type .tag { font: 500 13px/18px var(--f-data); color: var(--muted); }
+.type h3 { font: 380 26px/30px var(--f-display); }
+.spec { border-radius: 18px; padding: 20px 20px 18px; }
+
+/* Combinador */
+.combo { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 26px; align-items: start; }
+.controls { position: sticky; top: 80px; background: var(--surface); border-radius: 24px; padding: 20px; display: grid; gap: 18px; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+legend { font: 600 13px/18px var(--f-ui); color: var(--muted); margin-bottom: 6px; padding: 0; }
+.opt { display: flex; gap: 10px; align-items: center; border-radius: 14px; padding: 9px 12px; cursor: pointer; border: 1px solid var(--line); font-size: 14.5px; line-height: 20px; }
+.opt input { accent-color: var(--accent); margin: 0; }
+.opt:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.opt small { display: block; color: var(--muted); font-size: 12.5px; line-height: 17px; }
+.combo-out { display: grid; gap: 16px; }
+.combo-name { font: 380 28px/32px var(--f-display); margin: 0; }
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.stage .wide { grid-column: 1 / -1; }
+
+/* Recomendación */
+.rec { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.rec article { background: var(--surface); border-radius: 24px; padding: 22px; display: grid; gap: 10px; align-content: start; }
+.rec article.main { background: var(--fg); color: var(--bg); }
+.rec article.main .note, .rec article.main p { color: color-mix(in srgb, var(--bg) 78%, var(--fg)); }
+.rec h3 { font: 380 26px/30px var(--f-display); }
+.rec p { margin: 0; font-size: 15px; line-height: 22px; color: var(--muted); }
+.qs { counter-reset: q; list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; max-width: 780px; }
+.qs li { counter-increment: q; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 10px; font-size: 16px; line-height: 24px; }
+.qs li::before { content: counter(q); font: 400 14px/24px var(--f-data); color: var(--accent); }
+.foot { margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+.foot p { margin: 0; }
+
+/* ===== Muestras: las mismas piezas con cada dirección (data-pal) y cada letra (data-type) ===== */
+.muestra { --m-bg: #F2F2EF; --m-fg: #17181C; --m-muted: #5B5F68; --m-card: #FCFCFA; --m-line: #926E0B; --m-blue: #3D38F5; --m-accent: #926E0B; --m-dots: #ECD5A6; --m-soft: #F7EACF; --m-logo-ink: #17181C; --m-logo-line: #3D38F5; --m-chip-fg: #765806; --m-off: #D5D6D8;
+  --t-ui: "Schibsted Grotesk", system-ui, sans-serif; --t-display: "Newsreader", Georgia, serif; --t-display-w: 380; --t-display-style: normal; --t-display-ls: -.015em; --t-display-var: normal;
+  --t-voice: "Newsreader", Georgia, serif; --t-voice-w: 400; --t-voice-style: italic; --t-voice-size: 1; --t-voice-var: normal; --t-rg: .1em; --t-voice-ls: -.01em;
+  color: var(--m-fg); font-family: var(--t-ui); }
+.muestra[data-pal="B"] { --m-bg: #FBFBF7; --m-fg: #2A2C33; --m-muted: #5E6170; --m-card: #FFFFFF; --m-line: #3D38F5; --m-blue: #3D38F5; --m-accent: #E23B45; --m-dots: #BFD3F2; --m-soft: #EEF3FC; --m-logo-ink: #2A2C33; --m-logo-line: #3D38F5; --m-chip-fg: #C72B36; --m-off: #D9DEE8; }
+.muestra[data-pal="C"] { --m-bg: #F7F4EE; --m-fg: #17181C; --m-muted: #4E5058; --m-card: #FFFFFF; --m-line: #3D38F5; --m-blue: #3D38F5; --m-accent: #FFD23F; --m-dots: #3D38F5; --m-soft: #FFF3C4; --m-logo-ink: #17181C; --m-logo-line: #3D38F5; --m-chip-fg: #17181C; --m-off: #DCD7CC; }
+.muestra[data-pal="D"] { --m-bg: #121327; --m-fg: #F2EDE3; --m-muted: #A9A6B8; --m-card: #1D1F3B; --m-line: #FFB547; --m-blue: #8F8CFF; --m-accent: #FFB547; --m-dots: #FFB547; --m-soft: #2C2A33; --m-logo-ink: #F2EDE3; --m-logo-line: #8F8CFF; --m-chip-fg: #FFB547; --m-off: #34365A; }
+.muestra[data-type="2"] { --t-display: "Instrument Serif", Georgia, serif; --t-display-w: 400; --t-display-ls: -.01em; --t-voice: "Instrument Serif", Georgia, serif; --t-voice-w: 400; --t-voice-size: 1.06; }
+.muestra[data-type="3"] { --t-display: "Fraunces", Georgia, serif; --t-display-w: 340; --t-display-ls: -.02em; --t-display-var: "SOFT" 100, "WONK" 0; --t-voice: "Fraunces", Georgia, serif; --t-voice-w: 360; --t-voice-var: "SOFT" 100, "WONK" 1; }
+.muestra[data-type="4"] { --t-ui: "Bricolage Grotesque", system-ui, sans-serif; --t-display: "Bricolage Grotesque", system-ui, sans-serif; --t-display-w: 620; --t-display-ls: -.035em; --t-display-var: "wdth" 80; }
+.muestra[data-type="5"] { --t-voice: "Playwrite CL", cursive; --t-voice-w: 300; --t-voice-style: normal; --t-voice-size: .78; --t-rg: -.02em; --t-voice-ls: 0; }
+
+.m-display { font-family: var(--t-display); font-weight: var(--t-display-w); font-style: var(--t-display-style); letter-spacing: var(--t-display-ls); font-variation-settings: var(--t-display-var); font-optical-sizing: auto; }
+.m-voice { position: relative; display: inline-block; font-family: var(--t-voice); font-weight: var(--t-voice-w); font-style: var(--t-voice-style); font-variation-settings: var(--t-voice-var); font-size: calc(var(--t-voice-size) * 1em); letter-spacing: var(--t-voice-ls); white-space: nowrap; }
+.m-voice::after { content: ""; position: absolute; left: 0; right: -.18em; bottom: var(--t-rg); height: max(2px, .085em); border-radius: 999px; background: var(--m-line); }
+.m-wm { display: block; height: auto; }
+.m-wm .l { fill: var(--m-logo-line); } .m-wm .w { fill: var(--m-logo-ink); }
+
+/* Afiche */
+.poster { position: relative; aspect-ratio: 4 / 5; width: 100%; max-width: 100%; border-radius: 16px; overflow: hidden; background: var(--m-bg); container-type: inline-size; isolation: isolate; box-shadow: 0 0 0 1px rgba(0,0,0,.06); }
+.poster .dots { position: absolute; inset: 0 0 46% 0; background: radial-gradient(circle, var(--m-dots) 0 42%, transparent 46%) 0 0 / 5.2cqw 5.2cqw; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 35%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 35%, transparent 100%); z-index: -1; }
+.poster .in { position: absolute; inset: 0; padding: 7cqw 7.5cqw 6.5cqw; display: grid; grid-template-rows: auto 1fr auto auto auto; }
+.poster .chip { justify-self: start; font: 600 3.4cqw/1 var(--t-ui); color: var(--m-chip-fg); background: var(--m-soft); border-radius: 999px; padding: 1.6cqw 3.2cqw; display: inline-flex; gap: 1.6cqw; align-items: center; }
+.poster .chip svg { width: 4.4cqw; height: 4.4cqw; }
+.poster h4 { margin: 0; font-size: 15cqw; line-height: 1.02; font-weight: inherit; }
+.poster p { margin: 4.5cqw 0 0; font: 400 3.5cqw/1.42 var(--t-ui); color: var(--m-muted); max-width: 86%; }
+.poster .foot { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 5cqw; }
+.poster .foot .m-wm { width: 26cqw; }
+.poster .foot span { font: 300 2.5cqw/1.3 var(--f-data); color: var(--m-muted); text-align: right; }
+/* Cuaderno: renglones celestes y margen rojo, que marca dónde empieza */
+.muestra[data-pal="B"] .poster .dots { inset: 0; background: repeating-linear-gradient(180deg, transparent 0 calc(7cqw - 1px), var(--m-dots) calc(7cqw - 1px) 7cqw); -webkit-mask-image: none; mask-image: none; }
+.muestra[data-pal="B"] .poster::before { content: ""; position: absolute; top: 0; bottom: 0; left: 6.5cqw; width: .6cqw; background: var(--m-accent); z-index: 0; }
+/* Tintas de imprenta: campo de tinta plena y el azul sobreimpreso */
+.muestra[data-pal="C"] .poster .dots { inset: 0 0 58% 0; background: var(--m-accent); -webkit-mask-image: none; mask-image: none; }
+.muestra[data-pal="C"] .poster .dots::after { content: ""; position: absolute; inset: 14% 8% 14% 50%; background: radial-gradient(circle, var(--m-blue) 0 40%, transparent 44%) 0 0 / 4.2cqw 4.2cqw; mix-blend-mode: multiply; opacity: .9; border-radius: 50%; }
+/* Noche y lámpara: la luz de la casa en trama ámbar */
+.muestra[data-pal="D"] .poster .dots { inset: -15% -30% 56% 35%; border-radius: 50%; -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 0 30%, transparent 70%); mask-image: radial-gradient(circle at 50% 50%, #000 0 30%, transparent 70%); }
+
+/* Tarjeta de la app */
+.app { background: var(--m-bg); border-radius: 28px; padding: 18px 16px 18px; display: grid; gap: 12px; box-shadow: 0 0 0 1px rgba(0,0,0,.06); }
+.app .bar { display: flex; justify-content: space-between; align-items: center; padding: 2px 4px 4px; }
+.app .bar .m-wm { width: 76px; }
+.app .bar span { font: 600 12.5px/1 var(--t-ui); color: var(--m-muted); }
+.app .hello { font-size: 26px; line-height: 1.08; padding: 2px 4px 4px; }
+.app .card { background: var(--m-card); border-radius: 22px; padding: 16px 16px 14px; display: grid; gap: 10px; }
+.app .lbl { font: 600 12px/16px var(--t-ui); color: var(--m-muted); display: flex; justify-content: space-between; align-items: center; }
+.app .state { font: 600 11.5px/1 var(--t-ui); color: var(--m-chip-fg); background: var(--m-soft); border-radius: 999px; padding: 5px 9px; }
+.app .act { font-size: 25px; line-height: 1.25; }
+.app .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font: 400 13.5px/1.3 var(--t-ui); color: var(--m-muted); border-top: 1px solid color-mix(in srgb, var(--m-fg) 10%, transparent); padding-top: 9px; }
+.app .row .m-voice { color: var(--m-fg); font-size: 17px; }
+.app .row .m-voice::after { display: none; }
+.app .dots15 { display: grid; grid-template-columns: repeat(15, 1fr); gap: 4px; margin-top: 2px; }
+.app .dots15 i { aspect-ratio: 1; border-radius: 50%; background: var(--m-blue); }
+.app .dots15 i.off { background: transparent; box-shadow: inset 0 0 0 1.5px var(--m-off); }
+.app .time { font: 600 13px/1 var(--t-ui); color: var(--m-fg); font-variant-numeric: tabular-nums; }
+.app .time span { color: var(--m-muted); font-weight: 400; }
+.muestra[data-pal="B"] .app .card { box-shadow: inset 3px 0 0 var(--m-accent); }
+
+/* Tarjeta de bolsillo */
+.pocket { position: relative; aspect-ratio: 85 / 55; width: 100%; border-radius: 12px; overflow: hidden; background: var(--m-card); container-type: inline-size; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+.pocket .in { position: absolute; inset: 0; padding: 6.5cqw 7cqw; display: grid; grid-template-rows: auto 1fr auto; }
+.pocket .m-wm { width: 22cqw; }
+.pocket .ttl { align-self: end; font-size: 10cqw; line-height: 1; }
+.pocket .blank { display: flex; align-items: flex-end; gap: 1.2cqw; margin-top: 12cqw; }
+.pocket .blank i { flex: 1; height: max(2px, .8cqw); border-radius: 999px; background: var(--m-line); }
+.pocket .blank b { font: 400 10cqw/.5 var(--t-display); }
+.pocket .hand { position: absolute; left: 7cqw; bottom: 8cqw; line-height: 1; font-family: var(--t-voice); font-style: var(--t-voice-style); font-weight: var(--t-voice-w); font-variation-settings: var(--t-voice-var); font-size: calc(var(--t-voice-size) * 7.2cqw); color: var(--m-fg); }
+.muestra[data-pal="B"] .pocket { background: repeating-linear-gradient(180deg, transparent 0 calc(6cqw - 1px), var(--m-dots) calc(6cqw - 1px) 6cqw), var(--m-card); }
+.muestra[data-pal="B"] .pocket::before { content: ""; position: absolute; top: 0; bottom: 0; left: 4.2cqw; width: .45cqw; background: var(--m-accent); }
+.muestra[data-pal="D"] .pocket { background: var(--m-card); }
+
+/* Especímenes de letra */
+.spec .s1 { font-size: 34px; line-height: 1.08; }
+.spec .s2 { font-size: 30px; line-height: 1.15; margin-top: 10px; }
+.spec .s3 { font: 400 15.5px/1.5 var(--t-ui); color: var(--m-muted); margin: 12px 0 0; }
+.spec .s4 { margin-top: 12px; display: grid; gap: 6px; }
+.spec .s4 div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-top: 1px solid color-mix(in srgb, var(--m-fg) 10%, transparent); padding-top: 7px; font: 400 14px/1.3 var(--t-ui); color: var(--m-muted); }
+.spec .s4 .m-voice { color: var(--m-fg); font-size: 18px; }
+.spec .s4 .m-voice::after { display: none; }
+.spec .s5 { margin-top: 12px; font: 300 12.5px/1.4 var(--f-data); color: var(--m-muted); }
+.guides { font-family: "Playwrite CL Guides", cursive; font-size: 30px; line-height: 1.4; color: #3D38F5; }
+
+@media (max-width: 880px) {
+  .dir { grid-template-columns: minmax(0, 1fr); }
+  .combo { grid-template-columns: minmax(0, 1fr); }
+  .controls { position: static; }
+}
+@media (max-width: 520px) {
+  .stage { grid-template-columns: minmax(0, 1fr); }
+  .trio { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) { .poster, .app, .pocket { transition: background-color .25s cubic-bezier(.2,0,0,1); } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="wm-word" d="M0 0L0 -1080L250.8 -1080L250.8 -841L240.4 -871Q290.8 -989 384.7 -1047.3Q478.6 -1105.6 585.6 -1105.6Q616.2 -1105.6 646.9 -1100.6Q677.6 -1095.6 706.8 -1083.6L684.4 -856.8Q622.2 -874.6 563.8 -874.6Q519 -874.6 466.5 -858.7Q414 -842.8 367.3 -800.7Q320.6 -758.6 290.7 -680.6Q260.8 -602.6 260.8 -478.8L260.8 0L0 0ZM1336.14 25.6Q1178.94 25.6 1056.44 -43.6Q933.94 -112.8 863.74 -239.9Q793.54 -367 793.54 -540.6Q793.54 -713.6 862.74 -840.4Q931.94 -967.2 1053.54 -1036.4Q1175.14 -1105.6 1332.74 -1105.6Q1421.14 -1105.6 1511.24 -1078.3Q1601.34 -1051 1676.64 -982.7Q1751.94 -914.4 1797.84 -793.5Q1843.74 -672.6 1843.74 -486L961.14 -486L961.14 -646L1612.54 -646L1576.14 -590.2Q1569.14 -707.8 1534.74 -779.6Q1500.34 -851.4 1446.44 -883.9Q1392.54 -916.4 1326.14 -916.4Q1242.34 -916.4 1184.94 -870.1Q1127.54 -823.8 1098.14 -739.2Q1068.74 -654.6 1068.74 -539.2Q1068.74 -367.2 1135.44 -269.4Q1202.14 -171.6 1334.54 -171.6Q1423.94 -171.6 1487.04 -217.2Q1550.14 -262.8 1582.34 -354L1822.14 -288.8Q1783.54 -182.4 1710.14 -112.7Q1636.74 -43 1540.04 -8.7Q1443.34 25.6 1336.14 25.6ZM2202.29 0Q2097.89 0 2038.29 -53.9Q1978.69 -107.8 1978.69 -204.8L1978.69 -1500L2239.49 -1500L2239.49 -251.4Q2239.49 -218.16 2248.99 -207.08Q2258.49 -196 2289.49 -196L2378.89 -196L2378.89 0L2202.29 0ZM2992.83 25.6Q2835.63 25.6 2713.13 -43.6Q2590.63 -112.8 2520.43 -239.9Q2450.23 -367 2450.23 -540.6Q2450.23 -713.6 2519.43 -840.4Q2588.63 -967.2 2710.23 -1036.4Q2831.83 -1105.6 2989.43 -1105.6Q3077.83 -1105.6 3167.93 -1078.3Q3258.03 -1051 3333.33 -982.7Q3408.63 -914.4 3454.53 -793.5Q3500.43 -672.6 3500.43 -486L2617.83 -486L2617.83 -646L3269.23 -646L3232.83 -590.2Q3225.83 -707.8 3191.43 -779.6Q3157.03 -851.4 3103.13 -883.9Q3049.23 -916.4 2982.83 -916.4Q2899.03 -916.4 2841.63 -870.1Q2784.23 -823.8 2754.83 -739.2Q2725.43 -654.6 2725.43 -539.2Q2725.43 -367.2 2792.13 -269.4Q2858.83 -171.6 2991.23 -171.6Q3080.63 -171.6 3143.73 -217.2Q3206.83 -262.8 3239.03 -354L3478.83 -288.8Q3440.23 -182.4 3366.83 -112.7Q3293.43 -43 3196.73 -8.7Q3100.03 25.6 2992.83 25.6ZM3979.38 0L3571.38 -1080L3862.18 -1080L4151.18 -178.6L4122.38 -178.6L4409.78 -1080L4700.58 -1080L4293.78 0L3979.38 0ZM5307.98 25.6Q5148.04 25.6 5025.97 -46.19Q4903.91 -117.98 4835.52 -245.49Q4767.12 -373 4767.12 -540.2Q4767.12 -707.4 4835.51 -834.78Q4903.9 -962.17 5025.95 -1033.88Q5147.99 -1105.6 5307.92 -1105.6Q5468.32 -1105.6 5590.32 -1033.9Q5712.32 -962.2 5780.92 -834.85Q5849.52 -707.51 5849.52 -540.05Q5849.52 -372.6 5781 -245.22Q5712.48 -117.83 5590.2 -46.12Q5467.92 25.6 5307.98 25.6ZM5308.37 -171.2Q5431.72 -171.2 5503.02 -270.36Q5574.32 -369.52 5574.32 -540Q5574.32 -711 5502.97 -809.9Q5431.62 -908.8 5308.27 -908.8Q5184.92 -908.8 5113.62 -809.9Q5042.32 -711 5042.32 -540Q5042.32 -369.2 5113.67 -270.2Q5185.02 -171.2 5308.37 -171.2Z"/></defs></svg>
+
+<nav class="top" aria-label="Secciones">
+  <ul>
+    <li class="logo"><svg width="64" height="19" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect x="0" y="180" width="6929.5" height="160" rx="80" fill="var(--accent)"/><use href="#wm-word" fill="currentColor"/></svg></li>
+    <li><a href="#referencias">Referencias</a></li>
+    <li><a href="#color">Color</a></li>
+    <li><a href="#letra">Letra</a></li>
+    <li><a href="#combinar">Combinar</a></li>
+    <li><a href="#recomendacion">Recomendación</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Exploración · 2 de octubre de 2026 · sobre el sistema 3.1</p>
+    <h1>Color y letra, otra vuelta</h1>
+    <p class="lead">Cuatro direcciones de color y cinco de letra, cada una aplicada a las mismas tres piezas: un afiche, la tarjeta del relevo en la app y la tarjeta de bolsillo. Parte de lo que se vio en Behance y de la memoria. <b>Nada está decidido:</b> la sección Combinar deja mezclar cualquier color con cualquier letra.</p>
+    <span class="status">Propuesta para que el autor elija</span>
+  </header>
+
+  <section id="referencias">
+    <div class="sec-head">
+      <p class="eyebrow">Lo que vi en Behance</p>
+      <h2>Cinco cosas que se repiten</h2>
+      <p class="note">Revisé proyectos de identidad, de apps de bienestar, de risografía y de lectura. No copio imágenes: cada ficha dice qué vi y qué sirve para Relevo, con el enlace al proyecto.</p>
+    </div>
+    <ul class="insights">
+      <li><b>Dos tintas bastan</b>Azul y un rojo cálido sobre papel, con la textura de la imprenta: se ven humanos y propios.</li>
+      <li><b>Un solo acento</b>Ilustraciones en grises con un único color se leen tranquilas y claras.</li>
+      <li><b>El azul eléctrico ya es de otros</b>Hay marcas con casi el mismo azul y logotipo en minúsculas. Lo propio tiene que ser el renglón.</li>
+      <li><b>Bienestar suena apagado</b>Las apps de calma usan colores suaves y letra limpia. La casa apagada de 3.1 se parece a ese promedio.</li>
+      <li><b>Hecho a mano</b>Papel, lápiz y letra escrita dan la materialidad de la casa sin depender del color.</li>
+    </ul>
+    <div class="refs">
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/206664653/Work-in-Progress-Mental-Health-Campaign">Work in Progress, campaña de salud mental</a></h3><div class="tags"><span>risografía</span><span>dos tintas</span></div><p>Personajes impresos en azul y rojo coral, con el grano de la risografía, para hablar de salud mental.</p><p class="take">dos tintas cálidas tratan un tema delicado sin dramatismo.</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/189594043/Livres-a-Vous-2021-2022">Livres à Vous 2021-2022</a></h3><div class="tags"><span>libros</span><span>papel</span></div><p>El afiche de un festival de libros: papel crema, un dibujo a lápiz y dos tintas, rojo y azul petróleo.</p><p class="take">el lápiz y el papel dicen «hecho a mano», y dos tintas alcanzan.</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/256225289/Digital-Library-for-Reading-Listening-Hedwig">Hedwig, biblioteca para leer y escuchar</a></h3><div class="tags"><span>app de lectura</span><span>ilustración</span></div><p>Ilustraciones en grises, con textura, y un solo amarillo que hace de sol.</p><p class="take">las ilustraciones podrían ir en tinta con el color de su categoría como único acento.</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/223657767/timeis-visual-identity">time:is</a></h3><div class="tags"><span>tiempo</span><span>color plano</span></div><p>Una identidad sobre el tiempo: fondos planos rojos, amarillos y rosados con dibujos negros hechos de píxeles.</p><p class="take">color pleno a sangre con un dibujo en tinta; el tiempo hecho de puntos, como TimeDots.</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/232670173/The-Daily-Form-Brand-Identity">The Daily Form</a></h3><div class="tags"><span>azul eléctrico</span></div><p>Casi el mismo azul eléctrico de Relevo, junto a un logotipo en minúsculas.</p><p class="take">el azul solo no distingue; lo propio tiene que ser el renglón (Ward et al., 2020).</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/245473209/Branding-Visual-Identity-for-Yoga-App-Embody">Embody, app de yoga</a></h3><div class="tags"><span>bienestar</span></div><p>Sus autores la describen con colores apagados y tipografía limpia.</p><p class="take">ese es el tono por defecto del bienestar; Relevo necesita algo más propio.</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/255056303/Thatre-lAvant-Seine-26-27">Théâtre l'Avant Seine 26-27</a></h3><div class="tags"><span>degradados</span></div><p>Fotos cortadas por formas en degradados de colores vivos.</p><p class="take">tiene energía, pero es la dirección de degradados que el autor descartó (D-098).</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/255387287/Matiz-ceramic-studio-Branding-Design">Matiz, estudio de cerámica</a></h3><div class="tags"><span>materia</span><span>mano</span></div><p>Crema, negro, papel kraft y un logotipo escrito a mano.</p><p class="take">la materia de la casa puede venir del papel y de la mano, no solo del color.</p></article>
+      <article class="ref"><h3><a href="https://www.behance.net/gallery/225640497/OFFit">OFFit</a></h3><div class="tags"><span>objeto</span><span>desconexión</span></div><p>Un objeto para desconectarse presentado como aparato: plata, verde menta y renders.</p><p class="take">Relevo va al revés: un objeto doméstico, no un aparato.</p></article>
+    </div>
+  </section>
+
+  <section id="color">
+    <div class="sec-head">
+      <p class="eyebrow">Color</p>
+      <h2>Cuatro direcciones</h2>
+      <p class="note">Las piezas usan la misma letra (Schibsted Grotesk y Newsreader) para que solo cambie el color. Los contrastes se midieron con la fórmula de WCAG 2.2; las distancias para visión del color, con la simulación de Machado et al. (2009).</p>
+    </div>
+    <div class="dirs">
+      <article class="dir" id="dir-A">
+        <div>
+          <header><span class="tag">A · actual (3.1)</span><h3>Casa apagada</h3><p class="idea">El azul es Relevo; seis colores apagados, uno por categoría, salidos de los materiales de la casa.</p></header>
+          <div class="sw"><div style="background:#3D38F5;color:#fff"><b>Azul</b><span>#3D38F5 · 6,1:1</span></div><div style="background:#F2F2EF;color:#17181C"><b>Papel</b><span>#F2F2EF</span></div><div style="background:#17181C;color:#F2F2EF"><b>Tinta</b><span>#17181C · 15,8:1</span></div><div style="background:#DAB974;color:#17181C"><b>Mostaza 300</b><span>#DAB974 · leer</span></div><div style="background:#DA8C8E;color:#17181C"><b>Arcilla 400</b><span>#DA8C8E · crear</span></div><div style="background:#649C66;color:#fff"><b>Salvia 500</b><span>#649C66 · cuidar</span></div><div style="background:#B0582D;color:#fff"><b>Terracota 600</b><span>#B0582D · moverme</span></div><div style="background:#82466F;color:#fff"><b>Ciruela 700</b><span>#82466F · compartir</span></div><div style="background:#1A4D55;color:#fff"><b>Pizarra 800</b><span>#1A4D55 · aprender</span></div></div>
+          <ul class="why"><li><b>Cada categoría tiene su color</b> y siempre va con ícono y nombre.</li><li><b>Medido:</b> renglones e íconos en 600 dan de 3,96 a 4,38:1 sobre papel; el texto en 700, de 5,59 a 6,13:1.</li><li><b>Construido en OKLCH,</b> con la misma luz por paso en las seis familias.</li></ul>
+          <p class="risk">Se parece al promedio de las apps de bienestar (colores suaves y letra limpia) y al estilo cálido muy repetido de crema, serif y terracota. Seis colores piden memoria a quien mira.</p>
+        </div>
+        <div class="muestra trio" data-pal="A" data-type="1"><div class="poster"><div class="dots"></div><div class="in">
+  <span class="chip"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg><span>Leer</span></span><span></span>
+  <h4 class="m-display">Vuelve a<br><span class="m-voice">leer</span>.</h4>
+  <p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p>
+  <div class="foot"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Leer<br>Abrir el libro · Junto al sillón</span></div>
+</div></div><div class="app">
+  <div class="bar"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Inicio</span></div>
+  <div class="card">
+    <div class="lbl"><span>Ahora</span><span class="state">Contando</span></div>
+    <div class="act m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+    <div class="row"><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div>
+    <div class="row"><span>Dónde</span><span class="m-voice">Junto al sillón</span></div>
+    <div class="dots15"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+    <div class="time">6 min <span>de 15</span></div>
+  </div>
+</div></div>
+      </article>
+      <article class="dir" id="dir-B">
+        <div>
+          <header><span class="tag">B · nueva</span><h3>Cuaderno</h3><p class="idea">Dos tintas, como un cuaderno escolar: el renglón azul donde se escribe y el margen rojo que marca dónde empieza.</p></header>
+          <div class="sw"><div style="background:#FBFBF7;color:#2A2C33"><b>Papel de cuaderno</b><span>#FBFBF7</span></div><div style="background:#2A2C33;color:#FBFBF7"><b>Grafito</b><span>#2A2C33 · 13,4:1</span></div><div style="background:#3D38F5;color:#fff"><b>Azul Relevo</b><span>#3D38F5 · 6,6:1</span></div><div style="background:#E23B45;color:#fff"><b>Rojo de margen</b><span>#E23B45 · 4,1:1 líneas</span></div><div style="background:#C72B36;color:#fff"><b>Rojo para texto</b><span>#C72B36 · 5,3:1</span></div><div style="background:#BFD3F2;color:#2A2C33"><b>Celeste de renglones</b><span>#BFD3F2 · solo fondo</span></div></div>
+          <ul class="why"><li><b>El margen es donde empieza.</b> Relevo suena donde empieza la actividad; en un cuaderno, la línea roja marca dónde se empieza a escribir. Es un segundo recurso con sentido.</li><li><b>Dos tintas se recuerdan.</b> Las referencias que mejor funcionan usan azul y un rojo cálido, y un recurso repetido igual es el que se vuelve propio (Romaniuk, 2018).</li><li><b>Lápiz y papel.</b> La persona escribe en grafito sobre el renglón azul: su voz no es azul, así no se confunde con un enlace.</li></ul>
+          <p class="risk">Azul y rojo pueden verse escolares o institucionales si se abusa. El rojo de margen no se usa para errores ni alarmas: el error de la app tiene que quedar en otro rojo, más oscuro.</p>
+        </div>
+        <div class="muestra trio" data-pal="B" data-type="1"><div class="poster"><div class="dots"></div><div class="in">
+  <span class="chip"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg><span>Leer</span></span><span></span>
+  <h4 class="m-display">Vuelve a<br><span class="m-voice">leer</span>.</h4>
+  <p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p>
+  <div class="foot"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Leer<br>Abrir el libro · Junto al sillón</span></div>
+</div></div><div class="app">
+  <div class="bar"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Inicio</span></div>
+  <div class="card">
+    <div class="lbl"><span>Ahora</span><span class="state">Contando</span></div>
+    <div class="act m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+    <div class="row"><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div>
+    <div class="row"><span>Dónde</span><span class="m-voice">Junto al sillón</span></div>
+    <div class="dots15"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+    <div class="time">6 min <span>de 15</span></div>
+  </div>
+</div></div>
+      </article>
+      <article class="dir" id="dir-C">
+        <div>
+          <header><span class="tag">C · nueva</span><h3>Tintas de imprenta</h3><p class="idea">Seis tintas vivas, como las de una risógrafa, que se sobreimprimen con el azul. Para piezas, no para la interfaz.</p></header>
+          <div class="sw"><div style="background:#3D38F5;color:#fff"><b>Azul</b><span>#3D38F5 · blanco 6,8:1</span></div><div style="background:#FFD23F;color:#17181C"><b>Amarillo</b><span>#FFD23F · leer · 12,3:1</span></div><div style="background:#FF5D9E;color:#17181C"><b>Rosa</b><span>#FF5D9E · crear · 6,2:1</span></div><div style="background:#FF7A33;color:#17181C"><b>Naranja</b><span>#FF7A33 · moverme · 6,8:1</span></div><div style="background:#1FA866;color:#17181C"><b>Verde</b><span>#1FA866 · cuidar · 5,8:1</span></div><div style="background:#12A1B0;color:#17181C"><b>Turquesa</b><span>#12A1B0 · aprender · 5,7:1</span></div><div style="background:#8E3C8C;color:#fff"><b>Morado</b><span>#8E3C8C · compartir · 6,6:1</span></div></div>
+          <ul class="why"><li><b>Imprime con puntos.</b> La risografía imprime en trama: la trama de Relevo deja de ser un efecto y pasa a ser técnica.</li><li><b>Energía sin degradados,</b> cerca de las referencias que el autor compartió el 30 de septiembre.</li><li><b>Texto en tinta sobre cada color</b> (5,7 a 12,3:1), salvo el morado y el azul, que llevan blanco.</li></ul>
+          <p class="risk">No sirve en la interfaz: amarillo, rosa, naranja, verde y turquesa no llegan a 3:1 sobre papel. Verde y turquesa casi se confunden con tritanopía (2,0). Vuelve a ser una paleta de colores vivos, lo que 3.0 quiso evitar.</p>
+        </div>
+        <div class="muestra trio" data-pal="C" data-type="1"><div class="poster"><div class="dots"></div><div class="in">
+  <span class="chip"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg><span>Leer</span></span><span></span>
+  <h4 class="m-display">Vuelve a<br><span class="m-voice">leer</span>.</h4>
+  <p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p>
+  <div class="foot"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Leer<br>Abrir el libro · Junto al sillón</span></div>
+</div></div><div class="app">
+  <div class="bar"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Inicio</span></div>
+  <div class="card">
+    <div class="lbl"><span>Ahora</span><span class="state">Contando</span></div>
+    <div class="act m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+    <div class="row"><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div>
+    <div class="row"><span>Dónde</span><span class="m-voice">Junto al sillón</span></div>
+    <div class="dots15"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+    <div class="time">6 min <span>de 15</span></div>
+  </div>
+</div></div>
+      </article>
+      <article class="dir" id="dir-D">
+        <div>
+          <header><span class="tag">D · nueva</span><h3>Noche y lámpara</h3><p class="idea">El momento real del uso: de noche, el teléfono es azul y la casa es la luz cálida de una lámpara.</p></header>
+          <div class="sw"><div style="background:#121327;color:#F2EDE3"><b>Noche</b><span>#121327</span></div><div style="background:#1D1F3B;color:#F2EDE3"><b>Tarjeta</b><span>#1D1F3B</span></div><div style="background:#F2EDE3;color:#121327"><b>Luz</b><span>#F2EDE3 · 15,7:1</span></div><div style="background:#8F8CFF;color:#121327"><b>Azul pantalla</b><span>#8F8CFF · 6,4:1</span></div><div style="background:#FFB547;color:#121327"><b>Lámpara</b><span>#FFB547 · 10,4:1</span></div></div>
+          <ul class="why"><li><b>Cuenta la escena.</b> El rato en el teléfono suele ser de noche; la lámpara es la casa que espera, como en la ilustración de «Leer».</li><li><b>El renglón se enciende.</b> Bajo la palabra de la persona va en ámbar: la luz que se prende cuando suena.</li><li><b>Contraste alto</b> en todo: la luz da 15,7:1 y el ámbar 10,4:1 sobre la noche.</li></ul>
+          <p class="risk">Una identidad oscura pesa en papel e impresión, y una app clara de día la contradice. Sirve mejor como tema oscuro y para la pantalla de la señal.</p>
+        </div>
+        <div class="muestra trio" data-pal="D" data-type="1"><div class="poster"><div class="dots"></div><div class="in">
+  <span class="chip"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg><span>Leer</span></span><span></span>
+  <h4 class="m-display">Vuelve a<br><span class="m-voice">leer</span>.</h4>
+  <p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p>
+  <div class="foot"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Leer<br>Abrir el libro · Junto al sillón</span></div>
+</div></div><div class="app">
+  <div class="bar"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Inicio</span></div>
+  <div class="card">
+    <div class="lbl"><span>Ahora</span><span class="state">Contando</span></div>
+    <div class="act m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+    <div class="row"><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div>
+    <div class="row"><span>Dónde</span><span class="m-voice">Junto al sillón</span></div>
+    <div class="dots15"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+    <div class="time">6 min <span>de 15</span></div>
+  </div>
+</div></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="letra">
+    <div class="sec-head">
+      <p class="eyebrow">Letra</p>
+      <h2>Cinco pares</h2>
+      <p class="note">Todas tienen licencia SIL Open Font y están en Google Fonts. Cada ficha muestra la frase de Relevo, la voz de la persona, un texto de la app y una línea de datos, con el color de 3.1.</p>
+    </div>
+    <div class="types">
+      <article class="type">
+        <span class="tag">1 · actual (3.1)</span><h3>Dos voces</h3>
+        <p class="note" style="margin:0">Schibsted Grotesk para la interfaz; Newsreader romana para Relevo e itálica para la persona.</p>
+        <div class="muestra spec" data-pal="A" data-type="1" style="background:var(--m-bg)">
+          <div class="s1 m-display">¿Qué quieres hacer?</div>
+          <div class="s2 m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+          <p class="s3">Te avisa cuando sumes este tiempo en las apps que elijas.</p>
+          <div class="s4"><div><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div><div><span>Dónde</span><span class="m-voice">Junto al sillón</span></div></div>
+          <div class="s5">ejemplo · 2026-10-02 21:42 · leer · 15 min · comencé</div>
+        </div>
+        <ul class="why"><li><b>Tamaño óptico</b> de 6 a 72: sirve desde 19 px.</li><li><b>Sobria y legible,</b> ya probada en el sistema 3.1.</li></ul>
+        <p class="risk">Correcta pero esperable; a 17 px la itálica se distingue poco de la romana.</p>
+      </article>
+      <article class="type">
+        <span class="tag">2</span><h3>Instrument Serif</h3>
+        <p class="note" style="margin:0">Schibsted Grotesk con Instrument Serif, más estrecha y editorial, en romana e itálica.</p>
+        <div class="muestra spec" data-pal="A" data-type="2" style="background:var(--m-bg)">
+          <div class="s1 m-display">¿Qué quieres hacer?</div>
+          <div class="s2 m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+          <p class="s3">Te avisa cuando sumes este tiempo en las apps que elijas.</p>
+          <div class="s4"><div><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div><div><span>Dónde</span><span class="m-voice">Junto al sillón</span></div></div>
+          <div class="s5">ejemplo · 2026-10-02 21:42 · leer · 15 min · comencé</div>
+        </div>
+        <ul class="why"><li><b>La aprobó el autor</b> el 30 de septiembre como serif posible.</li><li><b>Más carácter en titulares:</b> contraste alto y formas estrechas.</li></ul>
+        <p class="risk">No tiene tamaño óptico: bajo 28 px se ve frágil. Solo para titulares y la palabra de la persona en grande.</p>
+      </article>
+      <article class="type">
+        <span class="tag">3</span><h3>Fraunces suave</h3>
+        <p class="note" style="margin:0">Schibsted Grotesk con Fraunces: el eje SOFT redondea los remates y WONK le da a la itálica un gesto de mano.</p>
+        <div class="muestra spec" data-pal="A" data-type="3" style="background:var(--m-bg)">
+          <div class="s1 m-display">¿Qué quieres hacer?</div>
+          <div class="s2 m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+          <p class="s3">Te avisa cuando sumes este tiempo en las apps que elijas.</p>
+          <div class="s4"><div><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div><div><span>Dónde</span><span class="m-voice">Junto al sillón</span></div></div>
+          <div class="s5">ejemplo · 2026-10-02 21:42 · leer · 15 min · comencé</div>
+        </div>
+        <ul class="why"><li><b>Cálida, de casa:</b> se siente doméstica sin ser infantil a pesos medios.</li><li><b>Ejes propios:</b> se puede ajustar qué tan suave o qué tan inclinada.</li></ul>
+        <p class="risk">Se acerca al estilo cálido muy repetido; con peso alto se vuelve juguetona.</p>
+      </article>
+      <article class="type">
+        <span class="tag">4</span><h3>Bricolage Grotesque</h3>
+        <p class="note" style="margin:0">Una grotesca con carácter para titulares e interfaz, con ancho y tamaño óptico variables; la persona sigue en itálica serif.</p>
+        <div class="muestra spec" data-pal="A" data-type="4" style="background:var(--m-bg)">
+          <div class="s1 m-display">¿Qué quieres hacer?</div>
+          <div class="s2 m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+          <p class="s3">Te avisa cuando sumes este tiempo en las apps que elijas.</p>
+          <div class="s4"><div><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div><div><span>Dónde</span><span class="m-voice">Junto al sillón</span></div></div>
+          <div class="s5">ejemplo · 2026-10-02 21:42 · leer · 15 min · comencé</div>
+        </div>
+        <ul class="why"><li><b>Más propia que una grotesca neutra:</b> trampas de tinta y formas irregulares.</li><li><b>Titulares estrechos</b> (ancho 80) que caben en pantallas chicas.</li></ul>
+        <p class="risk">Cambia la letra de la app y la base del logotipo, que hoy es Schibsted Grotesk: es la opción más cara.</p>
+      </article>
+      <article class="type">
+        <span class="tag">5 · nueva</span><h3>Letra de cuaderno</h3>
+        <p class="note" style="margin:0">Relevo sigue en Schibsted Grotesk y Newsreader; la persona escribe en Playwrite CL, la letra ligada que se enseña en las escuelas de Chile.</p>
+        <div class="muestra spec" data-pal="A" data-type="5" style="background:var(--m-bg)">
+          <div class="s1 m-display">¿Qué quieres hacer?</div>
+          <div class="s2 m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+          <p class="s3">Te avisa cuando sumes este tiempo en las apps que elijas.</p>
+          <div class="s4"><div><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div><div><span>Dónde</span><span class="m-voice">Junto al sillón</span></div></div>
+          <div class="s5">ejemplo · 2026-10-02 21:42 · leer · 15 min · comencé</div>
+          <div class="guides" aria-label="Playwrite CL Guides">leer 10 páginas</div>
+        </div>
+        <ul class="why"><li><b>Sale de la escuela chilena:</b> TypeTogether la dibujó con el modelo de letra ligada del país, en su proyecto Primarium sobre cómo se enseña a escribir.</li><li><b>Trae renglones:</b> su versión Guides dibuja las líneas guía del cuaderno, como el renglón de Relevo.</li></ul>
+        <p class="risk">Una cursiva cuesta más de leer en tamaños chicos y para quien aprendió otra letra. Solo en piezas, en la tarjeta y en el campo grande donde se escribe; en listas, itálica.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="combinar">
+    <div class="sec-head">
+      <p class="eyebrow">Combinar</p>
+      <h2>Mezcla un color con una letra</h2>
+      <p class="note">Cambia las opciones y las tres piezas se rehacen. Lo que eliges queda guardado solo en este navegador.</p>
+    </div>
+    <div class="combo">
+      <form class="controls" id="ctl" aria-label="Opciones de la combinación">
+        <fieldset>
+          <legend>Color</legend>
+          <label class="opt" for="pal-A"><input type="radio" name="pal" id="pal-A" value="A" checked><span>Casa apagada<small>3.1: seis colores de la casa</small></span></label>
+          <label class="opt" for="pal-B"><input type="radio" name="pal" id="pal-B" value="B"><span>Cuaderno<small>azul y margen rojo</small></span></label>
+          <label class="opt" for="pal-C"><input type="radio" name="pal" id="pal-C" value="C"><span>Tintas de imprenta<small>tintas vivas para piezas</small></span></label>
+          <label class="opt" for="pal-D"><input type="radio" name="pal" id="pal-D" value="D"><span>Noche y lámpara<small>azul de pantalla y luz cálida</small></span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Letra</legend>
+          <label class="opt" for="type-1"><input type="radio" name="type" id="type-1" value="1" checked><span>Dos voces<small>Schibsted y Newsreader</small></span></label>
+          <label class="opt" for="type-2"><input type="radio" name="type" id="type-2" value="2"><span>Instrument Serif<small>más editorial</small></span></label>
+          <label class="opt" for="type-3"><input type="radio" name="type" id="type-3" value="3"><span>Fraunces suave<small>más cálida</small></span></label>
+          <label class="opt" for="type-4"><input type="radio" name="type" id="type-4" value="4"><span>Bricolage Grotesque<small>grotesca con carácter</small></span></label>
+          <label class="opt" for="type-5"><input type="radio" name="type" id="type-5" value="5"><span>Letra de cuaderno<small>la persona en Playwrite CL</small></span></label>
+        </fieldset>
+      </form>
+      <div class="combo-out">
+        <p class="combo-name" id="combo-name" aria-live="polite">Casa apagada con dos voces</p>
+        <div class="muestra stage" id="combo" data-pal="A" data-type="1">
+          <div class="poster"><div class="dots"></div><div class="in">
+  <span class="chip"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.25C9.75 4.75 6.75 4.25 3.5 4.75V18.5C6.75 18 9.75 18.5 12 20C14.25 18.5 17.25 18 20.5 18.5V4.75C17.25 4.25 14.25 4.75 12 6.25Z" fill="none" stroke="currentColor"/><path d="M12 6.25V20" fill="none" stroke="currentColor"/><path d="M15.5 5.1V10.25L16.9 9.1L18.3 10.25V4.85" fill="none" stroke="currentColor"/></svg><span>Leer</span></span><span></span>
+  <h4 class="m-display">Vuelve a<br><span class="m-voice">leer</span>.</h4>
+  <p>Relevo te recuerda lo que querías hacer mientras todavía puedes hacerlo, en el lugar donde lo empiezas.</p>
+  <div class="foot"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Leer<br>Abrir el libro · Junto al sillón</span></div>
+</div></div>
+          <div style="display:grid;gap:16px">
+            <div class="app">
+  <div class="bar"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><span>Inicio</span></div>
+  <div class="card">
+    <div class="lbl"><span>Ahora</span><span class="state">Contando</span></div>
+    <div class="act m-display">Vuelve a <span class="m-voice">leer</span>.</div>
+    <div class="row"><span>Cómo empiezas</span><span class="m-voice">Abrir el libro</span></div>
+    <div class="row"><span>Dónde</span><span class="m-voice">Junto al sillón</span></div>
+    <div class="dots15"><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+    <div class="time">6 min <span>de 15</span></div>
+  </div>
+</div>
+            <div class="pocket"><div class="in"><svg class="m-wm" viewBox="0 -1500 6929.5 1840" role="img" aria-label="relevo"><rect class="l" x="0" y="180" width="6929.5" height="160" rx="80"/><use class="w" href="#wm-word"/></svg><div class="ttl m-display">Vuelve a</div><div class="blank"><i></i><b>.</b></div></div><span class="hand">leer 10 páginas</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recomendacion">
+    <div class="sec-head">
+      <p class="eyebrow">Recomendación</p>
+      <h2>Por dónde seguiría</h2>
+    </div>
+    <div class="rec">
+      <article class="main">
+        <p class="eyebrow" style="color:inherit;opacity:.7">Primera opción</p>
+        <h3>Cuaderno, con la letra de cuaderno</h3>
+        <p>Es la dirección más propia: nace del renglón, que ya es la marca, y del cuaderno donde se escribe lo que uno quiere hacer. Suma un segundo recurso con sentido, el margen rojo que marca dónde empieza, y deja que la persona escriba con la letra ligada que se enseña en Chile. Usa dos tintas, como las referencias que mejor funcionan, y no depende de seis colores para reconocerse.</p>
+        <p>En la app, las categorías siguen con ícono y nombre; el color de categoría podría quedar solo como un tinte suave.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Si se quiere más color</p>
+        <h3>Tintas de imprenta, solo en piezas</h3>
+        <p>Para afiches, redes y stickers. Da energía y conversa con la trama, porque la risografía imprime con puntos. En la interfaz no sirve: cinco de sus tintas no llegan a 3:1 sobre papel.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Para la noche</p>
+        <h3>Noche y lámpara, como tema oscuro</h3>
+        <p>Cuenta el momento real del uso: de noche, el teléfono es azul y la casa es la luz de una lámpara. Sirve para la pantalla de la señal y el tema oscuro, no como identidad entera.</p>
+      </article>
+    </div>
+    <ol class="qs">
+      <li>¿Dos tintas (azul y rojo de margen) o seis colores de la casa?</li>
+      <li>¿La voz de la persona escrita a mano con Playwrite CL, o en itálica como en 3.1? La letra a mano solo cabe en piezas y en la tarjeta; en listas de la app conviene la itálica.</li>
+      <li>¿Te gusta sumar el margen rojo como segundo recurso de marca, o el renglón debe quedar solo?</li>
+      <li>¿Alguna de las letras de titular te convence más que Newsreader?</li>
+    </ol>
+  </section>
+
+  <footer class="foot">
+    <p class="data">Relevo · exploración de color y letra · propuesta, no aplicada a la app ni al sistema publicado</p>
+    <p class="note">Referencias: TypeTogether (s. f.), <a href="https://www.type-together.com/playwrite-instructions">Playwrite</a>; Google Fonts (s. f.), <a href="https://fonts.google.com/specimen/Playwrite+CL">Playwrite Chile</a>; Machado, Oliveira y Fernandes (2009); W3C (2023), WCAG 2.2; Ward et al. (2020). Los proyectos de Behance se citan con su enlace.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var NAMES = { pal: { A: 'Casa apagada', B: 'Cuaderno', C: 'Tintas de imprenta', D: 'Noche y lámpara' }, type: { '1': 'dos voces', '2': 'Instrument Serif', '3': 'Fraunces suave', '4': 'Bricolage Grotesque', '5': 'letra de cuaderno' } };
+  var form = document.getElementById('ctl'), stage = document.getElementById('combo'), name = document.getElementById('combo-name');
+  function apply(p, t) {
+    stage.setAttribute('data-pal', p); stage.setAttribute('data-type', t);
+    name.textContent = NAMES.pal[p] + ' con ' + NAMES.type[t];
+  }
+  function read() { var p = form.querySelector('input[name=pal]:checked'), t = form.querySelector('input[name=type]:checked'); return [p ? p.value : 'A', t ? t.value : '1']; }
+  try { var saved = JSON.parse(localStorage.getItem('relevo-color-letra') || 'null'); if (saved) { var a = form.querySelector('input[name=pal][value="' + saved[0] + '"]'), b = form.querySelector('input[name=type][value="' + saved[1] + '"]'); if (a) a.checked = true; if (b) b.checked = true; } } catch (e) {}
+  var v = read(); apply(v[0], v[1]);
+  form.addEventListener('change', function () { var v = read(); apply(v[0], v[1]); try { localStorage.setItem('relevo-color-letra', JSON.stringify(v)); } catch (e) {} });
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+})();
+</script>

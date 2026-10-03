@@ -50,6 +50,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 25. [Identidad: el subrayado](25_identidad-el-subrayado-2026-09-30.md) y sus láminas: [versión 3, neutra con azul eléctrico](marca-el-subrayado/lamina-el-subrayado-v3-2026-09-30.html) (decidida en parte por el autor), [versión 2, con las referencias del autor](marca-el-subrayado/lamina-el-subrayado-v2-2026-09-30.html) (trama, paso de color, vidrio y serif en titulares) y [versión 1, sobria](marca-el-subrayado/lamina-el-subrayado-2026-09-30.html). Incluye el diagnóstico de la presentación frente a la app, 27 íconos de muestra y las decisiones pendientes (propuesta D-098)
 26. [Sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md) y sus [archivos](sistema-de-diseno-3.0/README.md): libro de marca con voz y tono, color y variantes, logotipo, trama, iconografía, aplicaciones y fundamentos; tokens en tema claro y oscuro; 43 componentes en React; 102 íconos, logotipo, ícono de la app y trama. Publicado en claude.ai (D-098)
 27. [Sistema de diseño 3.1](27_sistema-de-diseno-3.1-2026-10-02.md) y sus [archivos](sistema-de-diseno-3.1/README.md): logotipo que hace lugar con 29 archivos y su exploración, dos voces tipográficas, seis colores de la casa, 135 íconos, 6 ilustraciones, 11 patrones, 24 aplicaciones, logotipo animado con firma sonora, 13 páginas de muestra y libro de marca en diez secciones. Publicado en claude.ai (D-099).
+28. [Exploración de color y letra](28_exploracion-color-y-letra-2026-10-02.md) y su [lámina](exploracion-color-y-letra-2026-10-02/color-y-letra.html): nueve referencias de Behance, cuatro direcciones de color, cinco pares de letra y un combinador. Propuesta para que el autor elija.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -79,6 +80,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-02 — Exploración de color y letra
+
+- **Qué cambió:** el índice suma el documento 28 y su lámina.
+- **Cómo estaba antes:** el índice terminaba en el sistema de diseño 3.1 (documento 27).
+- **Por qué:** el autor pidió seguir explorando colores y tipografía, con referencias de Behance.
 
 ### 2026-10-02 — Sistema de diseño 3.1
 
