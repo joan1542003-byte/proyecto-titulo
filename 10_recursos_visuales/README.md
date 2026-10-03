@@ -53,6 +53,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 28. [Exploración de color y letra](28_exploracion-color-y-letra-2026-10-02.md) y su [lámina](exploracion-color-y-letra-2026-10-02/color-y-letra.html): nueve referencias de Behance, cuatro direcciones de color, cinco pares de letra y un combinador. Propuesta para que el autor elija.
 29. [Relevo vivo, propuesta 3.2](29_relevo-vivo-2026-10-03.md), su [lámina](relevo-vivo-2026-10-03/relevo-vivo.html) y sus [catorce piezas](relevo-vivo-2026-10-03/README.md): un color, una frase, un renglón; seis colores vivos; grotesca gruesa y letra escrita a mano (D-100).
 30. [Volver a enfocar, propuesta 3.3](30_volver-a-enfocar-2026-10-03.md), su [lámina](volver-a-enfocar-2026-10-03/volver-a-enfocar.html) y sus [catorce piezas](volver-a-enfocar-2026-10-03/README.md): la actividad fuera de foco en su color vivo; Newsreader para Relevo y su itálica para la persona (D-101). Versión 2: [lámina](volver-a-enfocar-2026-10-03/volver-a-enfocar-v2.html) con la grotesca en los titulares, la serif solo para la persona y el renglón solo bajo sus palabras.
+31. [Las ganas estaban, propuesta 3.4](31_las-ganas-estaban-2026-10-03.md), su [lámina](las-ganas-estaban-2026-10-03/las-ganas-estaban.html) y sus [diecinueve piezas](las-ganas-estaban-2026-10-03/README.md): cada pieza dice algo que sabemos, con seis pares de color, fotos en duotono, solo Schibsted Grotesk y el renglón azul solo donde se escribe (D-102).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -82,6 +83,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Las ganas estaban
+
+- **Qué cambió:** el índice suma el documento 31.
+- **Cómo estaba antes:** terminaba en el documento 30.
+- **Por qué:** el autor señaló que los afiches citaban palabras de usuario sin comunicar lo que se sabe, que la serif no funcionaba y que el marcador azul no podía estar en todas las piezas, y pidió colores que combinen.
 
 ### 2026-10-03 — Volver a enfocar, versión 2
 

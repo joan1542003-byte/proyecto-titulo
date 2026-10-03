@@ -189,6 +189,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Exploración de color y letra (2 de octubre):** el autor pidió seguir explorando con referencias de Behance. [Documento 28](../10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md) y [lámina](https://claude.ai/artifact/T8FY5qmRDCa7T5Mmfk5oxP): cuatro direcciones de color y cinco pares de letra. Recomendación: cuaderno (renglón azul y margen rojo que marca dónde empieza) con la persona escribiendo en Playwrite CL. Pendiente de su elección.
 - **Relevo vivo, propuesta 3.2 (3 de octubre, D-100):** colores vivos y más personalidad, a pedido del autor. Regla: un color, una frase, un renglón. Seis colores de la casa vivos con campo, tinta y fondo suave; Schibsted Grotesk 800 para Relevo y Playwrite CL para la persona ([documento 29](../10_recursos_visuales/29_relevo-vivo-2026-10-03.md); [lámina](https://claude.ai/artifact/VyeLFYsuWgkyJ45pkfywJL)). Quita la serif de titulares de D-098: el autor debe decidir. Falta el tema oscuro y, si se aprueba, llevarla al sistema publicado, a la app y a la presentación.
 - **Volver a enfocar, propuesta 3.3 (3 de octubre, D-101):** el autor rechazó Playwrite (no usar letras escritas a mano) y pidió fundamentar siempre con diseñadores recientes, famosos y de buena reputación, no antiguos. La actividad aparece fuera de foco (foto de su lugar desenfocada sobre su color vivo) y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul ([documento 30](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md); [lámina](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn)). Pendiente: que el autor la apruebe para llevarla al sistema publicado y a la app. **Versión 2:** el autor pidió no abusar de la raya ni de la serif; los titulares van en Schibsted Grotesk, la serif solo para las palabras de la persona y el renglón solo bajo ellas.
+- **Las ganas estaban, propuesta 3.4 (3 de octubre, D-102):** el autor pidió comunicar con lo que se sabe y no citar palabras de usuario como titular, quitar la serif, no poner el marcador azul en todas las piezas y usar colores que combinen. Cada pieza dice una cifra de la encuesta, el principio de la señal o lo que hace Relevo; solo Schibsted Grotesk; el renglón azul solo en el logotipo y donde se escribe; seis pares de color con fotos en duotono ([documento 31](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md); [lámina](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff)). Pendiente: que el autor la apruebe para llevarla al sistema publicado y a la app.
 
 ## Seguridad, privacidad y GitHub
 
@@ -201,6 +202,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Las ganas estaban
+
+- **Qué cambió:** el estado suma la propuesta 3.4 y las reglas del autor sobre la voz, la serif, el marcador azul y el color.
+- **Cómo estaba antes:** describía la 3.3 como última propuesta.
+- **Por qué:** el autor señaló que los afiches citaban palabras de usuario sin comunicar lo que se sabe, que la serif no funcionaba y que el marcador azul no podía estar en todas las piezas, y pidió colores que combinen.
 
 ### 2026-10-03 — Volver a enfocar, versión 2
 

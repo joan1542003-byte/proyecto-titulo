@@ -1149,7 +1149,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-101 — Volver a enfocar (propuesta 3.3)
 
 - **Fecha:** 2026-10-03.
-- **Estado:** propuesta; reemplaza la letra escrita a mano y los fondos planos de D-100. No cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta; reemplaza la letra escrita a mano y los fondos planos de D-100. Reemplazada en parte el mismo día por D-102 (serif, desenfoque, renglón en las piezas y nombres de categoría). No cambia todavía la app ni el sistema publicado.
 - **Pedido del autor:** rechazó Playwrite; compartió seis referencias (Scribbit, bird, bloop, furion, Meristem y Wanderly) y pidió fundamentar con diseñadores recientes, famosos y de buena reputación.
 - **Propuesta:**
   - **Idea:** en el teléfono, lo que la persona quería hacer queda fuera de foco; Relevo lo vuelve a enfocar. La actividad aparece desenfocada en su color vivo y, encima, nítidas, la frase de Relevo y las palabras de la persona sobre el renglón azul.
@@ -1161,7 +1161,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** maquetas sin prueba con personas; dos de las seis fotos son generadas con IA; sin tema oscuro.
 - **Documentación:** [Volver a enfocar](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/volver-a-enfocar-2026-10-03/README.md).
 
+## D-102 — Las ganas estaban (propuesta 3.4)
+
+- **Fecha:** 2026-10-03.
+- **Estado:** propuesta; reemplaza en D-101 la serif, el desenfoque y el renglón en las piezas, y en D-100 y D-101 los titulares con nombres de categoría. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** los afiches citaban textualmente palabras de usuario («Cuidar la casa y a mí») en vez de comunicar con lo que se sabe; la serif no funciona; el marcador azul no puede estar en todas las piezas; usar colores que combinen (ejemplo: verde neón con morado).
+- **Propuesta:**
+  - **Voz:** cada pieza dice algo que sabemos. Tres afiches con cifras de la encuesta («Las ganas estaban», 43 de 47; «Pasa donde están tus cosas», 44 de 47; «Sabes por dónde empezar», 42 de 43), siempre con su fuente; seis afiches del objeto que sigue en su lugar («El libro sigue en el velador»), y una lámina con el principio de la señal ligada a la acción.
+  - **Color:** seis pares de un color profundo y uno vivo, con 5,4 a 6,5:1 de contraste entre sí; el de la marca es el azul de Relevo con un lima. Las fotos se tiñen con su par en duotono y quedan nítidas.
+  - **Letra:** solo Schibsted Grotesk; IBM Plex Mono para fuentes y datos chicos. Sin serif.
+  - **Renglón azul:** solo en el logotipo, el campo donde se escribe y la pestaña activa.
+- **Fundamento:** Collins tiñó con duotono las fotos de Spotify y amplió su paleta (2015); Collins dio a Twitch un morado propio con colores vivos (2019); el equipo creativo de Spotify hizo su mayor campaña con datos reales de escucha (2016); la encuesta del proyecto y el marco multiproceso de McDaniel y Einstein (2000).
+- **Alternativas:** la versión 2 de la 3.3 (serif solo para la persona, luz desenfocada); la paleta viva de la 3.2.
+- **Límites:** maquetas sin prueba con personas; dos de las seis fotos son generadas con IA; el par de la marca baja a 4,2:1 con protanopía simulada; el duotono se revisó solo en Chrome.
+- **Documentación:** [Las ganas estaban](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/las-ganas-estaban-2026-10-03/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — D-102
+
+- **Qué cambió:** se registró D-102, propuesta 3.4, y D-101 pasa a reemplazada en parte.
+- **Cómo estaba antes:** la última decisión era D-101, en su versión 2.
+- **Por qué:** el autor señaló que los afiches citaban palabras de usuario sin comunicar lo que se sabe, que la serif no funcionaba y que el marcador azul no podía estar en todas las piezas, y pidió colores que combinen.
 
 ### 2026-10-03 — D-101, versión 2
 

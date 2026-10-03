@@ -1,6 +1,6 @@
 # Volver a enfocar: propuesta 3.3
 
-**Fecha:** 3 de octubre de 2026. **Estado:** propuesta D-101; reemplaza la letra escrita a mano y los fondos planos de la propuesta 3.2 (D-100). No cambia todavía la app ni el sistema publicado. **Dónde está:**
+**Fecha:** 3 de octubre de 2026. **Estado:** propuesta D-101, reemplazada en parte el mismo día por la [propuesta 3.4](31_las-ganas-estaban-2026-10-03.md) (D-102): sin serif, sin desenfoque, sin renglón azul en las piezas y sin nombres de categoría en los afiches. Antes reemplazó la letra escrita a mano y los fondos planos de la propuesta 3.2 (D-100). No cambia todavía la app ni el sistema publicado. **Dónde está:**
 
 - Lámina publicada en claude.ai: [Volver a enfocar](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn) (privada del autor).
 - Copia en el repositorio: [`volver-a-enfocar-2026-10-03/`](volver-a-enfocar-2026-10-03/volver-a-enfocar.html), con las 14 piezas en PNG y su generador.
@@ -119,6 +119,12 @@ Schibsted. (s. f.). *Schibsted Grotesk* [Repositorio de la fuente]. GitHub. http
 W3C. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Reemplazada en parte por la 3.4
+
+- **Qué cambió:** se avisa que la serif, el desenfoque, el renglón en las piezas y los nombres de categoría fueron reemplazados por la propuesta 3.4.
+- **Cómo estaba antes:** era la propuesta vigente, en su versión 2.
+- **Por qué:** el autor señaló que los afiches citaban palabras de usuario sin comunicar lo que se sabe, que la serif no funcionaba y que el marcador azul no podía estar en todas las piezas, y pidió colores que combinen.
 
 ### 2026-10-03 — Versión 2
 
