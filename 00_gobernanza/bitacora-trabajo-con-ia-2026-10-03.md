@@ -12,6 +12,7 @@
 | Propuesta 3.3, «Volver a enfocar» | El autor rechazó Playwrite y compartió seis referencias. [Lámina](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn) y [documento 30](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md): la actividad fuera de foco (la foto de su lugar, desenfocada sobre su color vivo) y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul. Catorce piezas. Fundamento en Rose Pilkington (Instagram, 2022), Special Offer (brat, 2024), Pentagram (Atlantic Theater, 2022-2023), Production Type (Newsreader) y Bakken & Bæck (Schibsted Grotesk). | D-101 |
 | Propuesta 3.3, versión 2 | A pedido del autor, menos serif y menos renglón: titulares en Schibsted Grotesk, la serif solo para las palabras de la persona y el renglón solo bajo ellas. Misma [lámina](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn), versión 2. | D-101 |
 | Propuesta 3.4, «Las ganas estaban» | A pedido del autor: titulares con lo que se sabe (cifras de la encuesta, el principio de la señal, lo que hace Relevo), solo Schibsted Grotesk, el renglón azul solo donde se escribe y seis pares de color. [Lámina](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff) y [documento 31](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md). | D-102 |
+| Propuesta 3.4, versión 2: cuándo va color | A pedido del autor, reglas de uso del color apoyadas en Apple, Google, Material Design 3, Wolfe y Horowitz (2017) y WCAG: tres niveles, cinco papeles y tres pares cambiados. Misma [lámina](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff), versión 2, y [documento 32](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md). | D-103 |
 
 ## 2. Cómo se usó la IA
 
@@ -21,20 +22,27 @@
 - **Fundamento reciente:** a pedido del autor, las razones se apoyan en diseñadores y estudios recientes y reconocidos, verificados en sus fuentes, y no en antecedentes antiguos.
 - **Comunicar con datos:** para la 3.4, cada titular sale de una cifra de la encuesta, del marco multiproceso o de lo que hace la app; cada cifra lleva su fuente y sus límites quedan en el documento 31.
 - **Pares medidos:** el contraste de cada par se midió con visión típica y simulada; se aclaró el naranja y se oscureció el rojo hasta pasar 4,5:1. El par de la marca queda en 4,2:1 con protanopía porque su azul no cambia.
+- **Color medido:** para la versión 2 de la 3.4 se midió qué parte de cada pantalla ocupa el color de actividad (0,7 %, 35 % y 100 %) y cuánto se diferenciaban los colores que podían confundirse: el rojo de escribirle a alguien y el de error daban ΔE 1,9 en OKLab.
 - **Lo que la IA señaló:** la propuesta quita la serif de titulares que el autor eligió el 30 de septiembre (D-098); queda como pregunta.
 
 ## 3. Qué se comprobó y qué no
 
-- **Comprobado:** la lámina a 1280 y a 400 px de ancho, sin desbordes; las catorce piezas exportadas; los contrastes y las distancias de color. Para la 3.4: la lámina a 1280 y 400 px, sin desbordes; las diecinueve piezas; el contraste de los seis pares con visión típica y simulada.
+- **Comprobado:** la lámina a 1280 y a 400 px de ancho, sin desbordes; las catorce piezas exportadas; los contrastes y las distancias de color. Para la 3.4: la lámina a 1280 y 400 px, sin desbordes; las diecinueve piezas; el contraste de los seis pares con visión típica y simulada. Para la versión 2: la lámina a 1280 y 400 px sin desbordes, las diecinueve piezas, el área de color por pantalla y los contrastes de los siete pares.
 - **No comprobado:** las piezas con personas, en un teléfono real o impresas; un tema oscuro para 3.2.
 
 ## 4. Pendientes
 
-- Que el autor responda las tres preguntas de la propuesta 3.4 (si los titulares dicen lo que sabemos; si los pares reemplazan la paleta viva y la luz; si se lleva al sistema y a la app). La 3.2 y la 3.3 quedan como antecedentes.
+- Que el autor responda las tres preguntas de la versión 2 de la 3.4 (si las reglas de color le sirven para revisar piezas nuevas; si acepta los tres cambios de color; si se lleva al sistema y a la app). La 3.2 y la 3.3 quedan como antecedentes.
 - Si la aprueba: llevar 3.2 al sistema publicado en Claude Design, a la app 2.19 y a la presentación, y diseñar su tema oscuro.
 - Siguen abiertos los pendientes técnicos: teléfono real con la 2.18, Firebase y la revisión del consentimiento v11.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Cuándo va color
+
+- **Qué cambió:** se suma la versión 2 de la propuesta 3.4, con lo hecho, lo medido y lo pendiente.
+- **Cómo estaba antes:** la bitácora terminaba en la versión 1 de la 3.4.
+- **Por qué:** el autor encontró la 3.4 mucho mejor y pidió saber cuándo usar los colores y cuándo no, aprendiendo de diseño de interfaces, diseño y color.
 
 ### 2026-10-03 — Propuesta 3.4
 

@@ -1174,9 +1174,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Fundamento:** Collins tiñó con duotono las fotos de Spotify y amplió su paleta (2015); Collins dio a Twitch un morado propio con colores vivos (2019); el equipo creativo de Spotify hizo su mayor campaña con datos reales de escucha (2016); la encuesta del proyecto y el marco multiproceso de McDaniel y Einstein (2000).
 - **Alternativas:** la versión 2 de la 3.3 (serif solo para la persona, luz desenfocada); la paleta viva de la 3.2.
 - **Límites:** maquetas sin prueba con personas; dos de las seis fotos son generadas con IA; el par de la marca baja a 4,2:1 con protanopía simulada; el duotono se revisó solo en Chrome.
+- **Versión 2 (mismo día):** reglas de cuándo va color y tres pares cambiados; ver D-103.
 - **Documentación:** [Las ganas estaban](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/las-ganas-estaban-2026-10-03/README.md).
 
+## D-103 — Cuándo va color (propuesta 3.4, versión 2)
+
+- **Fecha:** 2026-10-03.
+- **Estado:** propuesta; completa D-102 y cambia tres de sus pares. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** la 3.4 está mucho mejor, pero hay que saber cuándo usar los colores y cuándo no, aprendiendo de diseño de interfaces, diseño y color.
+- **Propuesta:**
+  - **Principio:** el color sube con el momento. En calma, papel y tinta (0,7 % de color de actividad en Preparar); en presencia, el par en un solo elemento (35 % en Inicio); en la señal, el par llena la pantalla o la pieza.
+  - **Cinco papeles:** neutros, sistema (azul), marca (azul y lima), actividad (seis pares) y estado (rojo de error `#B3261E`). Un significado por color, siempre con ícono o nombre.
+  - **Aplicación:** datos, portadas, tarjeta e ícono en el par de la marca; afiches del objeto, historia y señal en el par de su actividad; láminas de ideas y formularios en papel y tinta; las ideas de Preparar neutras y la elegida en su par.
+  - **Paleta:** leer pasa a café y sol (`#3B2416`, `#FFC94D`), escribirle a alguien a vino (`#7D1838`) y estudiar a petróleo (`#0B4A55`), para que ningún color tenga dos significados.
+- **Fundamento:** Apple, *Human Interface Guidelines* (color); Google Design (2025), investigación de Material 3 Expressive; Material Design 3, roles de color; Wolfe y Horowitz (2017); WCAG 2.2.
+- **Alternativas:** la versión 1 de la 3.4, con pares sin reglas de uso.
+- **Límites:** reglas probadas en maquetas; falta revisar los errores de la app 2.18 y maquetar listas y el tema oscuro.
+- **Documentación:** [Cuándo va color](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — D-103
+
+- **Qué cambió:** se registró D-103, cuándo va color, y D-102 suma su versión 2.
+- **Cómo estaba antes:** la última decisión era D-102.
+- **Por qué:** el autor encontró la 3.4 mucho mejor y pidió saber cuándo usar los colores y cuándo no, aprendiendo de diseño de interfaces, diseño y color.
 
 ### 2026-10-03 — D-102
 

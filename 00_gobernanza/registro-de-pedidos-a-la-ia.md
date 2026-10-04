@@ -84,6 +84,7 @@
 | 3 oct. | Corrección e información | Rechazó Playwrite, la letra escrita a mano de la 3.2. Compartió seis referencias para trabajar con ellas (Scribbit, bird, bloop, furion, Meristem y Wanderly) y pidió fundamentar siempre con diseñadores recientes, famosos y de buena reputación, no antiguos. | [Propuesta 3.3, «Volver a enfocar»](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) con su [lámina](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn): la actividad fuera de foco en su color vivo y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul. Sin letra a mano. Fundamento en Rose Pilkington, Special Offer, Pentagram, Production Type y Bakken & Bæck. | D-101 |
 | 3 oct. | Corrección | La propuesta es mejorable: no abusar de la raya ni de las serifas; la serif no es obligatoria. | Versión 2 de [«Volver a enfocar»](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) en el mismo enlace: titulares en Schibsted Grotesk, Newsreader itálica solo para las palabras de la persona y el renglón solo bajo esas palabras, del largo de la palabra y un poco más, como el del logotipo. | D-101 |
 | 3 oct. | Corrección | Los afiches citaban textualmente palabras de usuario («Cuidar la casa y a mí») sin comunicar lo que se sabe; la serif no funciona; el marcador azul no puede estar en todas las piezas; usar colores que combinen (por ejemplo, verde neón con morado). | [Propuesta 3.4, «Las ganas estaban»](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md): titulares con cifras de la encuesta, el principio de la señal y lo que hace Relevo; solo Schibsted Grotesk; el renglón azul solo en el logotipo y donde se escribe; seis pares de color con fotos en duotono. | D-102 |
+| 3 oct. | Corrección | Está mucho mejor, pero hay que saber cuándo usar los colores y cuándo no; aprender de diseño de interfaces, diseño y color. | [Cuándo va color](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md) y versión 2 de la lámina de la 3.4: tres niveles según el momento (calma, presencia y señal), cinco papeles para el color, ideas de Preparar neutras, datos y portadas en el par de la marca, y tres pares cambiados para que ningún color tenga dos significados. | D-103 |
 
 ## Lo que muestra el registro
 
@@ -94,6 +95,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Cuándo va color
+
+- **Qué cambió:** se registró el pedido de saber cuándo usar los colores, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en la propuesta 3.4.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-03 — Las ganas estaban
 

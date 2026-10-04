@@ -5,6 +5,17 @@
 - Lámina publicada en claude.ai: [Las ganas estaban](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff) (privada del autor).
 - Copia en el repositorio: [`las-ganas-estaban-2026-10-03/`](las-ganas-estaban-2026-10-03/las-ganas-estaban.html), con las 19 piezas en PNG y su generador.
 
+## Versión 2: cuándo va color (mismo día)
+
+El autor la encontró mucho mejor y pidió saber cuándo usar los colores y cuándo no. Las reglas están en [Cuándo va color](32_cuando-va-color-2026-10-03.md) (D-103), y la lámina publicada pasó a la versión 2 ([`las-ganas-estaban-v2.html`](las-ganas-estaban-2026-10-03/las-ganas-estaban-v2.html), piezas en [`piezas-v2/`](las-ganas-estaban-2026-10-03/piezas-v2/)):
+
+- el color sube con el momento: calma, presencia y señal;
+- cada color cumple uno de cinco papeles: neutros, sistema, marca, actividad o estado;
+- los afiches de dato y la portada de sección pasan al par de la marca, y las ideas de Preparar van neutras salvo la elegida;
+- leer pasa a café y sol, escribirle a alguien a vino y rosa pálido, y estudiar a petróleo y celeste.
+
+Las tablas de color de abajo describen la versión 1; en la versión 2 manda el documento 32.
+
 ## Qué pidió el autor
 
 Sobre la versión 2 de la [propuesta 3.3](30_volver-a-enfocar-2026-10-03.md), el autor hizo cuatro correcciones:
@@ -127,6 +138,12 @@ McDaniel, M. A. y Einstein, G. O. (2000). Strategic and automatic processes in p
 W3C. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Versión 2
+
+- **Qué cambió:** se suma la versión 2, con las reglas de cuándo va color y tres pares cambiados.
+- **Cómo estaba antes:** la propuesta tenía pares de color sin reglas de uso.
+- **Por qué:** el autor encontró la 3.4 mucho mejor y pidió saber cuándo usar los colores y cuándo no, aprendiendo de diseño de interfaces, diseño y color.
 
 ### 2026-10-03 — Creación
 
