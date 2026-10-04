@@ -1,6 +1,6 @@
 # Letras para relevo: propuesta 3.7
 
-**Fecha:** 4 de octubre de 2026. **Estado:** propuesta D-106. Amplía la búsqueda de la letra del logotipo de la [propuesta 3.6](34_letra-con-identidad-2026-10-04.md) (D-105), que recomendaba Chubbo con Calistoga y Fraunces Soft; el autor pidió más variedad y descartó Google Fonts para el logotipo. Mantiene el azul `#1C3891` y todo lo demás de la 3.6. No cambia todavía la app ni el sistema publicado. **Dónde está:**
+**Fecha:** 4 de octubre de 2026. **Estado:** propuesta D-106. Amplía la búsqueda de la letra del logotipo de la [propuesta 3.6](34_letra-con-identidad-2026-10-04.md) (D-105), que recomendaba Chubbo con Calistoga y Fraunces Soft; el autor pidió más variedad y descartó Google Fonts para el logotipo. Mantiene el azul `#1C3891` y todo lo demás de la 3.6. No cambia todavía la app ni el sistema publicado. Su versión 2 suma una segunda ronda con descargas, de UNCUT y Open Foundry. **Dónde está:**
 
 - Lámina publicada en claude.ai: [Letras para relevo](https://claude.ai/artifact/R9eHYeUaWooRcPjXqvC2B6) (privada del autor).
 - Copia en el repositorio: [`letras-para-relevo-2026-10-04/`](letras-para-relevo-2026-10-04/letras-para-relevo.html), con los 18 tableros, las cinco hojas con las 176 letras y los generadores.
@@ -8,6 +8,35 @@
 ## Qué pidió el autor
 
 Seguir explorando tipografías, con más variedad de elecciones. Como es un proyecto de título y nada sale a la venta todavía, se pueden usar más licencias. No usar Google Fonts, al menos para el logotipo.
+
+## Versión 2: segunda ronda con descargas (mismo día)
+
+El autor dio permiso para descargar lo que quisiera de las fuentes que quisiera y pidió explorar más. La lámina publicada pasó a la versión 2 ([`letras-para-relevo-v2.html`](letras-para-relevo-2026-10-04/letras-para-relevo-v2.html)): 30 finalistas (18 de la primera ronda y 12 de la segunda) entre 264 letras de seis fuentes.
+
+- **Descargas:** 84 archivos de los enlaces de UNCUT: 52 repositorios de GitHub, 13 zips de UNCUT, 1 de Codeberg y 18 de los sitios de sus autores. Pesan unos 550 MB. Se guardaron en una carpeta de trabajo fuera del repositorio y no se instaló nada. No se usó ningún formulario ni se dio ningún dato personal. El detalle está en [`uncut-descargas.json`](letras-para-relevo-2026-10-04/hojas/uncut-descargas.json).
+- **Mostradas:** 69 de UNCUT y 19 de Open Foundry, sin las que también están en Google Fonts. Open Foundry se probó con su hoja de estilo pública. Las hojas 6 a 8 (números 177 a 264) las reúnen.
+- **No se descargó:** las letras de UNCUT que están en Google Fonts (excluidas del logotipo); Fraunces y Pretendard, por tamaño (242 y 530 MB); Dauphine, por enlace roto; Max Hana, por tiempo agotado; las alojadas en Behance o en sitios de autores sin archivo directo; y las pruebas gratuitas de fundiciones comerciales, que piden un correo para descargar.
+- **Licencias:** según UNCUT, de sus 163 letras 129 tienen SIL OFL, 7 GPL, 1 MIT y 26 no lo indican. Las doce nuevas finalistas son OFL, según UNCUT o Open Foundry.
+- **Problema técnico:** Windows no abre rutas de más de 260 caracteres y varias letras de GitHub quedaron en rutas más largas; se copiaron a una ruta corta para mostrarlas.
+
+### Las doce nuevas finalistas
+
+| Letra | Autoría | Fuente | Lo bueno | Cuidado |
+| --- | --- | --- | --- | --- |
+| Hauora Sans | Wayne Shih | UNCUT | Sans humanista de aperturas abiertas; variable. | Poco gesto propio. |
+| Rag | Dennis Grauel | UNCUT | Grotesca robusta de terminales suaves. | Parece una grotesca negra convencional. |
+| Tanklager | Ariel Martín Pérez | UNCUT | Grotesca ancha y firme; variable. | Ancha para la barra de la app. |
+| Gap Sans | Antoine Sigur | UNCUT | Contornos algo irregulares, calidez sin ser infantil. | La irregularidad se pierde a 16 px. |
+| Violet Sans | Violet Office | UNCUT | Sans redonda y liviana. | Poco memorable. |
+| Cooper Hewitt | Chester Jenkins | Open Foundry | La sans del museo Cooper Hewitt: equilibrada, ocho pesos. | Menos carácter. |
+| Solitus | J Hudson | UNCUT | Semiancha, curvas llenas. | Espaciado por ajustar. |
+| Perun | Stefan Peev | UNCUT | Negra de curvas generosas. | Parecida a otras negras. |
+| Bagnard | Sebastien Sanfilippo | Open Foundry | Inspirada en los grafitis de un prisionero anónimo de las guerras napoleónicas; cálida, con historia. | Un solo peso. |
+| Bluu Next | Jean-Baptiste Morizot | Open Foundry | Serif afilada y precisa; solo bold. | Tono formal. |
+| Sprat | Ethan Nakache | UNCUT | Serif negra de contraste alto; variable. | Pierde finura en chico. |
+| Career | Antoine Gelgon | UNCUT | Serif de proporciones amplias, calmada. | Parece de libro. |
+
+De la segunda ronda destacan **Bagnard** (la serif libre con historia) y **Hauora Sans** (la sans humanista y variable), que se suman a la recomendación de la primera: Chubbo, Erode, Combat y Gosha Sans.
 
 ## Cómo se buscó
 
@@ -20,9 +49,9 @@ Se escribió «relevo» en 176 letras de cuatro fuentes. Se descartaron las que 
 | Velvetyne | 41 | SIL Open Font License | Fundición francesa de letras abiertas, muchas experimentales |
 | Collletttivo | 16 | SIL Open Font License | Colectivo italiano de letras abiertas |
 
-**Método:** cada letra se probó dentro de la página de su propia fundición. Esa página ya carga la letra para su probador de texto, así que se agregó «relevo» a la página en Chrome sin ventana y se capturó. No se descargó ni se guardó ningún archivo de fuente. Las de Fontshare se compusieron con su hoja de estilo pública.
+**Primera ronda, 176 letras.** **Método:** cada letra se probó dentro de la página de su propia fundición. Esa página ya carga la letra para su probador de texto, así que se agregó «relevo» a la página en Chrome sin ventana y se capturó. No se descargó ni se guardó ningún archivo de fuente. Las de Fontshare se compusieron con su hoja de estilo pública.
 
-**Fuentes que no se pudieron probar así:** UNCUT, un catálogo de 163 letras abiertas contemporáneas, solo enlaza descargas y no tiene probador; probarlas requiere descargar los archivos, con permiso del autor. Tampoco se probaron las pruebas gratuitas de fundiciones comerciales, cuya licencia de prueba suele cubrir solo maquetas.
+**UNCUT**, un catálogo de 163 letras abiertas contemporáneas, solo enlaza descargas y no tiene probador; se resolvió en la versión 2 descargando los archivos, con permiso del autor. Las pruebas gratuitas de fundiciones comerciales no se probaron: piden un correo para descargar y su licencia de prueba suele cubrir solo maquetas.
 
 ## Licencias, en claro
 
@@ -115,6 +144,12 @@ Pangram Pangram Foundry. (2025). *Frequently asked questions*. https://pangrampa
 Velvetyne. (s. f.). *Fonts*. https://velvetyne.fr/fonts/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Versión 2
+
+- **Qué cambió:** se suma la segunda ronda: 84 descargas de UNCUT, 88 letras nuevas de UNCUT y Open Foundry, doce finalistas nuevas y 264 letras en total.
+- **Cómo estaba antes:** la propuesta tenía 176 letras de cuatro fuentes y dieciocho finalistas; UNCUT quedaba pendiente por requerir descargas.
+- **Por qué:** el autor dio permiso para descargar lo que quisiera de las fuentes que quisiera y pidió explorar más.
 
 ### 2026-10-04 — Creación
 

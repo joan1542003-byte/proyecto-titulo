@@ -10,6 +10,7 @@
 | --- | --- | --- |
 | Propuesta 3.6, «Letra con identidad» | El autor descartó los logotipos dibujados. Se buscaron 29 letras gratuitas con identidad y se recomendó Chubbo, con Calistoga y Fraunces Soft como alternativas. El azul pasa a `#1C3891`. [Lámina](https://claude.ai/artifact/XPgDvNQEcgjZ1nnTWX3GXS) y [documento 34](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md). | D-105 |
 | Propuesta 3.7, «Letras para relevo» | A pedido del autor: 176 letras de cuatro fuentes sin Google Fonts, dieciocho finalistas en cuatro familias con su autoría y licencia, y una recomendación por familia. [Lámina](https://claude.ai/artifact/R9eHYeUaWooRcPjXqvC2B6) y [documento 35](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md). | D-106 |
+| Propuesta 3.7, versión 2 | Con permiso para descargar, se bajaron 84 archivos de los enlaces de UNCUT y se sumaron 88 letras (UNCUT y Open Foundry): 264 en total y 30 finalistas. Misma [lámina](https://claude.ai/artifact/R9eHYeUaWooRcPjXqvC2B6), versión 2, y [documento 35](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md). | D-106 |
 
 ## 2. Cómo se usó la IA
 
@@ -17,6 +18,8 @@
 - **Letras compuestas, no descargadas:** las 29 letras se compusieron con las hojas de estilo públicas de Fontshare y Google Fonts en Chrome sin ventana. No se descargó ningún archivo de fuente.
 - **Probadas en su propia página:** para la 3.7, cada letra de Pangram Pangram, Velvetyne y Collletttivo se probó escribiendo «relevo» dentro de la página de su fundición, que ya carga la fuente para su probador; no se descargó ningún archivo. La de Fontshare se probó con su hoja de estilo pública.
 - **Autorías verificadas:** la autoría de las dieciocho y la licencia de cada fuente se leyeron en las páginas de cada una (Pangram Pangram exige comprar licencia para un logotipo real).
+- **Descargas con permiso:** en la segunda ronda se bajaron 84 archivos (repositorios de GitHub y Codeberg, zips de UNCUT y archivos de los sitios de sus autores). Se guardaron fuera del repositorio, no se instaló ni ejecutó nada y no se usó ningún formulario. Las letras de Google Fonts se excluyeron.
+- **Un tropiezo técnico:** Windows no abría los archivos de rutas de más de 260 caracteres; varias letras salían con la letra de reemplazo hasta que se copiaron a una ruta corta. La verificación del navegador decía «sin cargar» en letras que sí cargaban, así que se revisó cada imagen a ojo.
 - **De la amplitud a la decisión:** primero las 29 letras en una grilla, después seis en usos reales con el azul nuevo y la familia de colores, y al final tableros completos de tres.
 
 ## 3. Qué se comprobó y qué no
@@ -27,6 +30,7 @@
   - las licencias;
   - el antecedente de Mailchimp en Design Week.
 - **Para la 3.7:** la lámina a 1280 y 400 px sin desbordes; los dieciocho tableros con la fuente cargada en cada uno.
+- **Para la versión 2:** las 69 letras de UNCUT y las 19 de Open Foundry se revisaron en sus imágenes; los doce tableros nuevos con la fuente cargada; la licencia de cada finalista nueva, en la página de UNCUT u Open Foundry.
 - **No comprobado:**
   - las letras con personas;
   - Chubbo dentro de la app, porque incorporarla requiere descargar la fuente.
@@ -36,10 +40,16 @@
 - Que el autor elija la letra del logotipo (Chubbo, Calistoga o Fraunces Soft) y diga si también va en titulares de campaña.
 - Que el autor apruebe el azul `#1C3891`.
 - Con su permiso, descargar la fuente elegida para dibujar el logotipo en curvas y probarla en la app.
-- Que el autor elija entre las dieciocho finalistas de la 3.7 y autorice descargar los archivos de la o las elegidas.
+- Que el autor elija entre las treinta finalistas de la 3.7; la descarga de los archivos de la o las elegidas ya está autorizada.
 - Retomar la exploración de los visuales generales (composición, fotografía, app, movimiento y objeto), que el 3 de octubre se cortó por el límite de uso.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letras para relevo, versión 2
+
+- **Qué cambió:** se suma la versión 2 de la propuesta 3.7 con lo hecho, lo comprobado y lo pendiente.
+- **Cómo estaba antes:** la bitácora tenía solo la primera versión de la 3.7.
+- **Por qué:** el autor dio permiso para descargar lo que quisiera de las fuentes que quisiera y pidió explorar más.
 
 ### 2026-10-04 — Corrección de un término
 

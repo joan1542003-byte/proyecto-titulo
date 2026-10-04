@@ -1,0 +1,1632 @@
+[
+ {
+  "id": "display/trille",
+  "dl": "https://trille.xyz/",
+  "lic": "",
+  "by": "Paw Poulsen",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Trille",
+  "google": false
+ },
+ {
+  "id": "sans-serif/tanklager",
+  "dl": "https://www.tunera.xyz/fonts/tanklager/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ariel Martín Pérez",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Tanklager",
+  "google": false
+ },
+ {
+  "id": "display/cambrian",
+  "dl": "https://uncut.wtf/downloads/cambrian.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Andy Li",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Cambrian",
+  "google": false
+ },
+ {
+  "id": "display/gemini",
+  "dl": "https://hiyaaaaa.com/gemini/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Hiya Singh",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Gemini",
+  "google": false
+ },
+ {
+  "id": "display/gloock",
+  "dl": "https://github.com/duartp/gloock",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Duarte Pinto",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Gloock",
+  "google": true
+ },
+ {
+  "id": "serif/maname",
+  "dl": "https://github.com/mooniak/maname-font",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "mooniak",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Maname",
+  "google": true
+ },
+ {
+  "id": "display/gap-sans",
+  "dl": "https://github.com/Interstices-/GapSans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Antoine Sigur",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Gap Sans",
+  "google": false
+ },
+ {
+  "id": "sans-serif/opening-hours-sans",
+  "dl": "https://github.com/opening-hours-studio/opening-hours-sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Opening Hours Studio",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Opening Hours Sans",
+  "google": false
+ },
+ {
+  "id": "serif/lt-remark",
+  "dl": "https://lyonstype4.wixsite.com/lyonstype-beta/fonts",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Daniel Lyons",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "LT Remark",
+  "google": false
+ },
+ {
+  "id": "sans-serif/lt-institute",
+  "dl": "https://lyonstype4.wixsite.com/lyonstype-beta/fonts",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Daniel Lyons",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "LT Institute",
+  "google": false
+ },
+ {
+  "id": "monospace/lt-superior-mono",
+  "dl": "https://lyonstype4.wixsite.com/lyonstype-beta/fonts",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Daniel Lyons",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "LT Superior Mono",
+  "google": false
+ },
+ {
+  "id": "display/hikaru-mono",
+  "dl": "https://github.com/AntoineVRM/VRM-HIKARU/tree/main",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Antoine Sigur",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "HIKARU MONO",
+  "google": false
+ },
+ {
+  "id": "display/galgo",
+  "dl": "https://uncut.wtf/downloads/galgovf.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Giulia Boggio",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Galgo",
+  "google": false
+ },
+ {
+  "id": "monospace/uncut-plan8",
+  "dl": "https://github.com/kaspernordkvist/uncut_plan8",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "UNCUT.wtf",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Uncut Plan8",
+  "google": false
+ },
+ {
+  "id": "sans-serif/geist",
+  "dl": "https://vercel.com/font",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Vercel, Basement Studio",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Geist",
+  "google": true
+ },
+ {
+  "id": "monospace/geist-mono",
+  "dl": "https://vercel.com/font/mono",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Vercel, Basement Studio",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Geist Mono",
+  "google": true
+ },
+ {
+  "id": "sans-serif/berlin-grotesk",
+  "dl": "https://uncut.wtf/downloads/berlin_grotesk.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Christopher Dalamagas",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Berlin Grotesk",
+  "google": false
+ },
+ {
+  "id": "serif/hedvig-letters-serif",
+  "dl": "https://github.com/KanonFoundry/HedvigLetters/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Kanon Foundry",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Hedvig Letters Serif",
+  "google": true
+ },
+ {
+  "id": "sans-serif/hedvig-letters-sans",
+  "dl": "https://github.com/KanonFoundry/HedvigLetters/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Kanon Foundry",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Hedvig Letters Sans",
+  "google": true
+ },
+ {
+  "id": "sans-serif/liga-sans",
+  "dl": "https://github.com/NathanLaurent/Liga-Sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Nathan Laurent",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Liga Sans",
+  "google": false
+ },
+ {
+  "id": "display/granturismo",
+  "dl": "https://nathanlaurent.github.io/granturismo.html",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Nathan Laurent",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Granturismo",
+  "google": false
+ },
+ {
+  "id": "monospace/new-heterodox-mono",
+  "dl": "https://github.com/hckiang/font-new-heterodox-mono",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Hao Chi",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "New Heterodox Mono",
+  "google": false
+ },
+ {
+  "id": "sans-serif/overused-grotesk",
+  "dl": "https://github.com/RandomMaerks/Overused-Grotesk",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "RandomMaerks",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Overused Grotesk",
+  "google": false
+ },
+ {
+  "id": "sans-serif/rag",
+  "dl": "https://github.com/dennisgrauel/Rag",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Dennis Grauel",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Rag",
+  "google": false
+ },
+ {
+  "id": "sans-serif/inclusive-sans",
+  "dl": "https://github.com/LivKing/Inclusive-Sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Olivia King",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Inclusive Sans",
+  "google": true
+ },
+ {
+  "id": "display/sunday-masthead",
+  "dl": "https://github.com/dennisgrauel/The-Sunday-Paper-fonts",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Dennis Grauel",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Sunday Masthead",
+  "google": false
+ },
+ {
+  "id": "display/frick",
+  "dl": "https://github.com/dennisgrauel/Frick",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Dennis Grauel",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Frick",
+  "google": false
+ },
+ {
+  "id": "monospace/commit-mono",
+  "dl": "https://commitmono.com/",
+  "lic": "mit Mono – UNCUT.wtf, free typeface catalogue",
+  "by": "Eigil Nikolajsen",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Commit Mono",
+  "google": false
+ },
+ {
+  "id": "monospace/basically-a-mono",
+  "dl": "https://experi.mentallydesigned.com/type/bam/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Hyung-Suk Kim",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Basically A Mono",
+  "google": false
+ },
+ {
+  "id": "sans-serif/bdo-grotesk",
+  "dl": "https://lokalcontainer.com/Typeface",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Deni Anggara, Fadhl Haqq",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "BDO Grotesk",
+  "google": false
+ },
+ {
+  "id": "display/utara",
+  "dl": "https://lokalcontainer.com/Typeface",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Deni Anggara, Fadhl Haqq",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Utara",
+  "google": false
+ },
+ {
+  "id": "display/lc-mogi",
+  "dl": "https://lokalcontainer.com/Typeface",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Deni Anggara, Fadhl Haqq",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "LC Mogi",
+  "google": false
+ },
+ {
+  "id": "sans-serif/tasa-orbiter",
+  "dl": "https://github.com/adrianzwz/TASA-Typeface-Collection",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Local Remote",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "TASA Orbiter",
+  "google": true
+ },
+ {
+  "id": "sans-serif/giphurs",
+  "dl": "https://github.com/Corne2Plum3/Giphurs",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Corne2Plum3",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Giphurs",
+  "google": false
+ },
+ {
+  "id": "serif/instrument-serif",
+  "dl": "https://github.com/Instrument/instrument-serif",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Rodrigo Fuenzalida, Jordan Egstad",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Instrument Serif",
+  "google": true
+ },
+ {
+  "id": "sans-serif/instrument-sans",
+  "dl": "https://github.com/Instrument/instrument-sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Rodrigo Fuenzalida, Jordan Egstad",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Instrument Sans",
+  "google": true
+ },
+ {
+  "id": "monospace/necto-mono",
+  "dl": "https://www.collletttivo.it/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Marco Condello",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Necto Mono",
+  "google": false
+ },
+ {
+  "id": "display/heal-the-web",
+  "dl": "https://healtheweb.site/",
+  "lic": "",
+  "by": "Rainbow Unicorn, Jakub Kanior",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Heal the Web",
+  "google": false
+ },
+ {
+  "id": "sans-serif/amiamie",
+  "dl": "https://typotheque.genderfluid.space/amiamie.html",
+  "lic": "",
+  "by": "Mirat Masson",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Amiamie",
+  "google": false
+ },
+ {
+  "id": "display/roberte",
+  "dl": "https://typotheque.genderfluid.space/roberte.html",
+  "lic": "",
+  "by": "Eugénie Bidaut",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Roberte",
+  "google": false
+ },
+ {
+  "id": "display/queering",
+  "dl": "https://www.adamnac.com/queering",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Adam Naccarato",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Queering",
+  "google": false
+ },
+ {
+  "id": "display/slibinas",
+  "dl": "https://www.behance.net/gallery/139952349/Slibinas-%28free-typeface%29",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Maksim Nikiškin",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Slibinas",
+  "google": false
+ },
+ {
+  "id": "monospace/fragment-mono",
+  "dl": "https://github.com/weiweihuanghuang/fragment-mono",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Wei Huang",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Fragment Mono",
+  "google": true
+ },
+ {
+  "id": "display/garamon-d-t",
+  "dl": "https://fonderie.download/garamondt.html",
+  "lic": "",
+  "by": "Paul Tubert",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Garamon(d/t)",
+  "google": false
+ },
+ {
+  "id": "serif/nyght-serif",
+  "dl": "https://www.tunera.xyz/fonts/nyght-serif/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Maksym Kobuzan",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Nyght Serif",
+  "google": false
+ },
+ {
+  "id": "sans-serif/haskoy",
+  "dl": "https://haskoy.ertekinn.com/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ertekin Erdin",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Hasköy",
+  "google": false
+ },
+ {
+  "id": "display/cakra",
+  "dl": "https://www.cakra.oomtype.com/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "OomType",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Cakra",
+  "google": false
+ },
+ {
+  "id": "display/blocks-on-blocks",
+  "dl": "https://github.com/nervousattack/BLOCKS-ON-BLOCKS",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Rory King",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Blocks on Blocks",
+  "google": false
+ },
+ {
+  "id": "display/geom",
+  "dl": "https://github.com/D0MIN0KID/GEOM/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Geom",
+  "google": true
+ },
+ {
+  "id": "sans-serif/vercetti",
+  "dl": "https://filipposfragkogiannis.com/fonts/vercetti-regular/",
+  "lic": "",
+  "by": "Filippos Fragkogiannis, Richard Mandona",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Vercetti",
+  "google": false
+ },
+ {
+  "id": "sans-serif/aspekta",
+  "dl": "https://github.com/ivodolenc/aspekta",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ivo Dolenc",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Aspekta",
+  "google": false
+ },
+ {
+  "id": "display/gtl001",
+  "dl": "https://github.com/eliheuer/GTL001",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Eli Heuer",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "GTL001",
+  "google": false
+ },
+ {
+  "id": "sans-serif/barlaxent",
+  "dl": "http://typotheque.le75.be/#barlaxent",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Jeremy Tribby",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Barlaxent",
+  "google": false
+ },
+ {
+  "id": "display/saint",
+  "dl": "https://uncut.wtf/downloads/saint.ttf.zip",
+  "lic": "",
+  "by": "Liza Dushnota",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Saint",
+  "google": false
+ },
+ {
+  "id": "sans-serif/swansea",
+  "dl": "https://uncut.wtf/downloads/swansea.zip",
+  "lic": "",
+  "by": "Roger White",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Swansea",
+  "google": false
+ },
+ {
+  "id": "sans-serif/milford",
+  "dl": "https://uncut.wtf/downloads/milford.zip",
+  "lic": "",
+  "by": "Roger White",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Milford",
+  "google": false
+ },
+ {
+  "id": "sans-serif/dindong",
+  "dl": "https://typotheque.genderfluid.space/DINdong.html",
+  "lic": "",
+  "by": "Clara Sambot",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "DINdong",
+  "google": false
+ },
+ {
+  "id": "display/getai-grotesk-display",
+  "dl": "https://deathoftypography.com/getai-grotesk-display/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Sylvester Tan",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Getai Grotesk Display",
+  "google": false
+ },
+ {
+  "id": "display/destra",
+  "dl": "http://fonderiz.fr/destra/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Cédric Rossignol-Brunet",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Destra",
+  "google": false
+ },
+ {
+  "id": "display/basteleur",
+  "dl": "https://velvetyne.fr/fonts/basteleur/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Keussel",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Basteleur",
+  "google": false
+ },
+ {
+  "id": "monospace/max-hana",
+  "dl": "https://github.com/max32002/max-hana",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Max",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Max Hana",
+  "google": false
+ },
+ {
+  "id": "monospace/fairfax-hd",
+  "dl": "http://www.kreativekorp.com/software/fonts/fairfaxhd.shtml",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Rebecca Bettencourt",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Fairfax HD",
+  "google": false
+ },
+ {
+  "id": "sans-serif/perun",
+  "dl": "https://github.com/StefanPeev/Perun",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Stefan Peev",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Perun",
+  "google": false
+ },
+ {
+  "id": "sans-serif/bertioga-sans",
+  "dl": "https://github.com/cssobral2013/Bertioga-Sans",
+  "lic": "gpl-3.0.en.html\" target=\"_blank\" rel=\"nofollow\" class=\"font-license__link\" aria-label=\"Read full license - link opens in new tab\">here",
+  "by": "Cristiano Sobral",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Bertioga Sans",
+  "google": false
+ },
+ {
+  "id": "serif/redaction",
+  "dl": "https://www.redaction.us/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Jeremy Mickel, Forest Young",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Redaction",
+  "google": false
+ },
+ {
+  "id": "sans-serif/fudd",
+  "dl": "https://squaregear.net/fonts/fudd.html",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Matthew Welch",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Fudd",
+  "google": false
+ },
+ {
+  "id": "monospace/sligoil",
+  "dl": "https://velvetyne.fr/fonts/sligoil/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Sligoil",
+  "google": false
+ },
+ {
+  "id": "monospace/martian-mono",
+  "dl": "https://github.com/evilmartians/mono",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Roman Shamin",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Martian Mono",
+  "google": true
+ },
+ {
+  "id": "sans-serif/marynata",
+  "dl": "https://github.com/kasiawojciechowska/Marynata-Typeface",
+  "lic": "",
+  "by": "Kasia Wojciechowska",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Marynata",
+  "google": false
+ },
+ {
+  "id": "sans-serif/pretendard",
+  "dl": "https://github.com/orioncactus/pretendard",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Hyung-jin Kil",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Pretendard",
+  "google": false
+ },
+ {
+  "id": "sans-serif/solitus",
+  "dl": "https://github.com/jhudson100/Solitus-font",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "J Hudson",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Solitus",
+  "google": false
+ },
+ {
+  "id": "serif/biz-udpmincho",
+  "dl": "https://fonts.google.com/specimen/BIZ+UDPMincho",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "TypeBank Co., Ltd",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "BIZ UDPMincho",
+  "google": true
+ },
+ {
+  "id": "monospace/biz-udmincho",
+  "dl": "https://fonts.google.com/specimen/BIZ+UDMincho",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "TypeBank Co., Ltd",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "BIZ UDMincho",
+  "google": true
+ },
+ {
+  "id": "sans-serif/abordage",
+  "dl": "https://velvetyne.fr/fonts/degheest/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ange Degheest, Eugénie Bidaut",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Abordage",
+  "google": false
+ },
+ {
+  "id": "serif/latitude",
+  "dl": "https://velvetyne.fr/fonts/degheest/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ange Degheest, Eugénie Bidaut",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Latitude",
+  "google": false
+ },
+ {
+  "id": "serif/equateur",
+  "dl": "https://velvetyne.fr/fonts/degheest/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ange Degheest, Eugénie Bidaut",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Equateur",
+  "google": false
+ },
+ {
+  "id": "display/louise",
+  "dl": "https://velvetyne.fr/fonts/degheest/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ange Degheest, Eugénie Bidaut",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Louise",
+  "google": false
+ },
+ {
+  "id": "serif/paragon",
+  "dl": "https://fonderiz.fr/paragon/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Cédric Rossignol-Brunet",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Paragon",
+  "google": false
+ },
+ {
+  "id": "monospace/monor",
+  "dl": "https://fonderiz.fr/monor/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Cédric Rossignol-Brunet",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Monor",
+  "google": false
+ },
+ {
+  "id": "display/picnic",
+  "dl": "https://velvetyne.fr/fonts/picnic/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Marielle Nils",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "PicNic",
+  "google": false
+ },
+ {
+  "id": "sans-serif/uncut-sans",
+  "dl": "https://github.com/kaspernordkvist/uncut_sans/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "UNCUT.wtf",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Uncut Sans",
+  "google": false
+ },
+ {
+  "id": "monospace/heming",
+  "dl": "https://uncut.wtf/downloads/heming.ttf.zip",
+  "lic": "",
+  "by": "Görzsöny Ádám",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Heming",
+  "google": false
+ },
+ {
+  "id": "serif/times-dot",
+  "dl": "https://www.librarystack.org/times-dot/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Laurel Schwulst",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Times Dot",
+  "google": false
+ },
+ {
+  "id": "serif/times-newer-roman",
+  "dl": "https://timesnewerroman.com/",
+  "lic": "gpl-2.0.html\" target=\"_blank\" rel=\"nofollow\" class=\"font-license__link\" aria-label=\"Read full license - link opens in new tab\">here",
+  "by": "MSCHF",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Times Newer Roman",
+  "google": false
+ },
+ {
+  "id": "sans-serif/zen-kaku-gothic-new",
+  "dl": "https://fonts.google.com/specimen/Zen+Kaku+Gothic+New",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Yoshimichi Ohira",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Zen Kaku Gothic New",
+  "google": true
+ },
+ {
+  "id": "serif/meta-old-french",
+  "dl": "https://gitlab.com/Luuse/foundry/meta-old-french",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Luuse",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Meta Old French",
+  "google": false
+ },
+ {
+  "id": "monospace/azeret-mono",
+  "dl": "https://displaay.net/typeface/azeret/azeret-mono/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Martin Vácha, Daniel Quisek",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Azeret Mono",
+  "google": true
+ },
+ {
+  "id": "serif/williwaw",
+  "dl": "https://www.behance.net/gallery/60195151/WILLIWAW-A-free-old-style-typeface",
+  "lic": "",
+  "by": "Stephen French",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Williwaw",
+  "google": false
+ },
+ {
+  "id": "display/aventine",
+  "dl": "https://www.behance.net/gallery/69526881/AVENTINE-Free-Oldstyle-Typeface",
+  "lic": "",
+  "by": "Stephen French",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Aventine",
+  "google": false
+ },
+ {
+  "id": "sans-serif/miedinger",
+  "dl": "https://github.com/indestructible-type/Miedinger",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Owen Earl",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Miedinger*",
+  "google": false
+ },
+ {
+  "id": "display/betatron",
+  "dl": "https://cotypefoundry.com/our-fonts/betatron/",
+  "lic": "",
+  "by": "CoType Foundry",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Betatron",
+  "google": false
+ },
+ {
+  "id": "sans-serif/porpora",
+  "dl": "http://collletttivo.it/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Davide Montesano",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Porpora",
+  "google": false
+ },
+ {
+  "id": "display/kulture-type",
+  "dl": "https://uncut.wtf/downloads/kulture_type.otf.zip",
+  "lic": "gpl-3.0.en.html\" target=\"_blank\" rel=\"nofollow\" class=\"font-license__link\" aria-label=\"Read full license - link opens in new tab\">here",
+  "by": "Leonit Gashi",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Kultüre",
+  "google": false
+ },
+ {
+  "id": "display/honey",
+  "dl": "https://www.onlyanother.co/honey",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Melina Sweet",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Honey",
+  "google": false
+ },
+ {
+  "id": "sans-serif/milkman",
+  "dl": "https://uncut.wtf/downloads/milkman.ttf.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Giulia Boggio",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Milkman",
+  "google": false
+ },
+ {
+  "id": "display/fablab",
+  "dl": "https://gitlab.com/ameliedumont/fonts",
+  "lic": "gpl-3.0.en.html\" target=\"_blank\" rel=\"nofollow\" class=\"font-license__link\" aria-label=\"Read full license - link opens in new tab\">here",
+  "by": "Amélie Dumont",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Fablab",
+  "google": false
+ },
+ {
+  "id": "sans-serif/fungis",
+  "dl": "https://www.behance.net/gallery/119722547/FUNGIS-Free-Typeface",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Milena Leimig",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "FUNGIS",
+  "google": false
+ },
+ {
+  "id": "serif/wremena",
+  "dl": "https://typefaces.temporarystate.net/preview/Wremena",
+  "lic": "",
+  "by": "Roman Gornitsky",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Wremena",
+  "google": false
+ },
+ {
+  "id": "serif/halibut",
+  "dl": "http://collletttivo.it/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Matteo Maggi",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Halibut",
+  "google": false
+ },
+ {
+  "id": "sans-serif/konstant-grotesk",
+  "dl": "https://www.behance.net/gallery/79470103/Konstant-Grotesk-Neue-Free-Font",
+  "lic": "",
+  "by": "Stephen French",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Konstant Grotesk Neue",
+  "google": false
+ },
+ {
+  "id": "sans-serif/anderson-grotesk",
+  "dl": "https://www.behance.net/gallery/58071711/Anderson-Grotesk-A-free-font-family",
+  "lic": "",
+  "by": "Stephen French",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Anderson Grotesk",
+  "google": false
+ },
+ {
+  "id": "sans-serif/reglo",
+  "dl": "http://osp.kitchen/foundry/reglo/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Sebastien Sanfilippo",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Reglo",
+  "google": false
+ },
+ {
+  "id": "sans-serif/alfphabet",
+  "dl": "http://osp.kitchen/foundry/alfphabet/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Karl Bassil, Pierre Huyghebaert, Ludi Loiseau, Jérémy Landes",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Alfphabet",
+  "google": false
+ },
+ {
+  "id": "serif/libertinage",
+  "dl": "http://osp.kitchen/foundry/libertinage/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ethan Nakache",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Libertinage",
+  "google": false
+ },
+ {
+  "id": "display/solide",
+  "dl": "https://velvetyne.fr/fonts/solide-mirage/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Jérémy Landes, Walid Bouchouchi",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Solide Mirage",
+  "google": false
+ },
+ {
+  "id": "display/le-murmure",
+  "dl": "http://velvetyne.fr/fonts/le-murmure/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Jérémy Landes, Alex Slobzheninov, George Triantafyllakos",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Le Murmure",
+  "google": false
+ },
+ {
+  "id": "display/format-1452",
+  "dl": "https://www.velvetyne.fr/fonts/format-1452/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Frank Adebiaye, Anton Moglia",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "format 1452",
+  "google": false
+ },
+ {
+  "id": "display/cirruscumulus",
+  "dl": "https://www.velvetyne.fr/fonts/cirruscumulus/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Clara Sambot",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "CirrusCumulus",
+  "google": false
+ },
+ {
+  "id": "sans-serif/project-blackbird",
+  "dl": "https://uncut.wtf/downloads/projekt_blackbird.otf.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Leonit Gashi",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Project Blackbird",
+  "google": false
+ },
+ {
+  "id": "sans-serif/fibel-nord",
+  "dl": "http://www.peter-wiegel.de/Fibel.html",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Peter Wiegel",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Fibel Nord",
+  "google": false
+ },
+ {
+  "id": "sans-serif/cat-neuzeit",
+  "dl": "http://www.peter-wiegel.de/CAT_Neuzeit.html",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Peter Wiegel",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "CAT Neuzeit",
+  "google": false
+ },
+ {
+  "id": "display/cat-eckmann",
+  "dl": "http://www.peter-wiegel.de/eckmann.html",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Peter Wiegel",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "CAT Eckmann",
+  "google": false
+ },
+ {
+  "id": "display/ribes",
+  "dl": "http://collletttivo.it/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Luigi Gorlero",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Ribes",
+  "google": false
+ },
+ {
+  "id": "serif/sprat",
+  "dl": "https://github.com/EthanNakache/Sprat-type",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Ethan Nakache",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Sprat",
+  "google": false
+ },
+ {
+  "id": "serif/happy-times",
+  "dl": "https://velvetyne.fr/fonts/happy-times/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Lucas Le Bihan",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Happy Times at the IKOB",
+  "google": false
+ },
+ {
+  "id": "sans-serif/dauphine",
+  "dl": "http://www.esad-gv.fr/media/images/Identite/%C3%89SAD%E2%80%A2%E2%80%A2_Dauphine_DEF.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Dauphine",
+  "google": false
+ },
+ {
+  "id": "serif/career",
+  "dl": "https://github.com/Antoine-Gelgon/CareerFont",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Antoine Gelgon",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Career",
+  "google": false
+ },
+ {
+  "id": "serif/zarathustra",
+  "dl": "https://github.com/lorene-cn/zarathustra-typeface",
+  "lic": "",
+  "by": "Lorène Picard",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Zarathustra",
+  "google": false
+ },
+ {
+  "id": "sans-serif/hauora-sans",
+  "dl": "https://github.com/WCYS-Co/Hauora-Sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Wayne Shih",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Hauora Sans",
+  "google": false
+ },
+ {
+  "id": "sans-serif/optician-sans",
+  "dl": "https://github.com/anewtypeofinterference/Optician-Sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Simen Schikulski",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Optician Sans",
+  "google": false
+ },
+ {
+  "id": "sans-serif/prodigy-sans",
+  "dl": "https://github.com/weiweihuanghuang/Prodigy-Sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Wei Huang",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Prodigy Sans",
+  "google": false
+ },
+ {
+  "id": "monospace/lab-mono",
+  "dl": "https://github.com/hatsumatsu/Lab-Mono",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Martin Wecke",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Lab Mono",
+  "google": false
+ },
+ {
+  "id": "display/phosphene",
+  "dl": "https://uncut.wtf/downloads/phosphene.ttf.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Jeanne Saliou",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Phosphène",
+  "google": false
+ },
+ {
+  "id": "sans-serif/micro-grotesk",
+  "dl": "https://github.com/eliheuer/micro-grotesk",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Eli Heuer",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Micro Grotesk",
+  "google": false
+ },
+ {
+  "id": "sans-serif/gnu-grotesk",
+  "dl": "https://github.com/eliheuer/gnugrotesk",
+  "lic": "",
+  "by": "Eli Heuer",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Gnu Grotesk",
+  "google": false
+ },
+ {
+  "id": "monospace/whois",
+  "dl": "https://github.com/raphaelbastide/Whois-mono",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Raphaël Bastide",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Whois",
+  "google": false
+ },
+ {
+  "id": "monospace/compagnon",
+  "dl": "http://compagnon.eesab.fr/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Compagnon",
+  "google": false
+ },
+ {
+  "id": "display/boris",
+  "dl": "https://www.behance.net/gallery/129274943/Boris-Free-Playful-Display-Font",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Giulia Boggio",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Boris",
+  "google": false
+ },
+ {
+  "id": "monospace/victor-mono",
+  "dl": "https://rubjo.github.io/victor-mono/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Rune B",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Victor Mono",
+  "google": true
+ },
+ {
+  "id": "display/handjet",
+  "dl": "https://github.com/rosettatype/handjet",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "David Březina",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Handjet",
+  "google": true
+ },
+ {
+  "id": "serif/ortica",
+  "dl": "http://collletttivo.it/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Benedetta Bovani",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Ortica",
+  "google": false
+ },
+ {
+  "id": "serif/imogen",
+  "dl": "https://www.suvatypefoundry.ee/imogen/",
+  "lic": "",
+  "by": "Aleksander Alev",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Imogen",
+  "google": false
+ },
+ {
+  "id": "monospace/snapit-mono",
+  "dl": "https://gitlab.com/Alune/snap-it-mono-font",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Corentin Moussard, Morgane Bartoli",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Snap-it Mono",
+  "google": false
+ },
+ {
+  "id": "monospace/steps-mono",
+  "dl": "https://velvetyne.fr/fonts/steps-mono/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Raphaël Bastide",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Steps-Mono",
+  "google": false
+ },
+ {
+  "id": "display/nultien",
+  "dl": "https://uncut.wtf/downloads/nultien.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Constantine Belias",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "NulTien",
+  "google": false
+ },
+ {
+  "id": "sans-serif/vorsik",
+  "dl": "https://www.suvatypefoundry.ee/vorsik/",
+  "lic": "",
+  "by": "Karri Kaljend",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Vorsik",
+  "google": false
+ },
+ {
+  "id": "sans-serif/libre-office-sans",
+  "dl": "https://www.suvatypefoundry.ee/libre-office-sans/",
+  "lic": "",
+  "by": "Andree Paat",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Libre Office Sans",
+  "google": false
+ },
+ {
+  "id": "display/ouroboros",
+  "dl": "https://velvetyne.fr/fonts/ouroboros/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Ouroboros",
+  "google": false
+ },
+ {
+  "id": "sans-serif/lunchtype",
+  "dl": "https://uncut.wtf/downloads/lunchtype.zip",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Stefan Wetterstrand",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Lunchtype",
+  "google": false
+ },
+ {
+  "id": "display/escapist-diaries",
+  "dl": "https://www.suvatypefoundry.ee/escapistdiaries/",
+  "lic": "",
+  "by": "Alíz Stocker",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Escapist Diaries",
+  "google": false
+ },
+ {
+  "id": "serif/minipax",
+  "dl": "https://velvetyne.fr/fonts/minipax/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Raphaël Ronot",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Minipax",
+  "google": false
+ },
+ {
+  "id": "sans-serif/logisoso",
+  "dl": "http://osp.kitchen/foundry/logisoso/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Mathieu Gabiot",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Logisoso",
+  "google": false
+ },
+ {
+  "id": "display/gulax",
+  "dl": "https://velvetyne.fr/fonts/gulax/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Morgan Gilbert, Anton Moglia",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Gulax",
+  "google": false
+ },
+ {
+  "id": "sans-serif/breite-grotesk",
+  "dl": "https://github.com/metapolator/Breite",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Nicolas Franck Pauly",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Breite Grotesk",
+  "google": false
+ },
+ {
+  "id": "serif/young-serif",
+  "dl": "https://github.com/noirblancrouge/YoungSerif",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Bastien Sozeau",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Young Serif",
+  "google": true
+ },
+ {
+  "id": "serif/freeserif",
+  "dl": "https://ftp.gnu.org/gnu/freefont/",
+  "lic": "gpl-2.0.html\" target=\"_blank\" rel=\"nofollow\" class=\"font-license__link\" aria-label=\"Read full license - link opens in new tab\">here",
+  "by": "Primož Peterlin, Steve White",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "FreeSerif",
+  "google": false
+ },
+ {
+  "id": "serif/fraunces",
+  "dl": "https://github.com/undercasetype/Fraunces",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Flavia Zimbardi, Phaedra Charles",
+  "cuts": "2",
+  "variable": true,
+  "nombre": "Fraunces",
+  "google": true
+ },
+ {
+  "id": "sans-serif/vremena-grotesk",
+  "dl": "https://www.fontspring.com/fonts/abstrkt/vremena",
+  "lic": "",
+  "by": "Roman Gornitsky",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Vremena Grotesk",
+  "google": false
+ },
+ {
+  "id": "monospace/freemono",
+  "dl": "https://ftp.gnu.org/gnu/freefont/",
+  "lic": "gpl-2.0.html\" target=\"_blank\" rel=\"nofollow\" class=\"font-license__link\" aria-label=\"Read full license - link opens in new tab\">here",
+  "by": "Primož Peterlin, Steve White",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "FreeMono",
+  "google": false
+ },
+ {
+  "id": "display/trickster",
+  "dl": "https://velvetyne.fr/fonts/trickster/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Jean-Baptiste Morizot",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Trickster",
+  "google": false
+ },
+ {
+  "id": "display/outward",
+  "dl": "https://velvetyne.fr/fonts/outward/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Raoul Audouin",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Outward",
+  "google": false
+ },
+ {
+  "id": "sans-serif/kulim-park",
+  "dl": "https://github.com/noponies/Kulim-Park",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Dale Sattler",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Kulim Park",
+  "google": true
+ },
+ {
+  "id": "sans-serif/manifont-grotesk",
+  "dl": "https://github.com/Interstices-/Manifont-Grotesk",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Alexandre Liziard, Etienne Ozeary",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Manifont Grotesk",
+  "google": false
+ },
+ {
+  "id": "sans-serif/freesans",
+  "dl": "https://ftp.gnu.org/gnu/freefont/",
+  "lic": "gpl-2.0.html\" target=\"_blank\" rel=\"nofollow\" class=\"font-license__link\" aria-label=\"Read full license - link opens in new tab\">here",
+  "by": "Primož Peterlin, Steve White",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "FreeSans",
+  "google": false
+ },
+ {
+  "id": "sans-serif/panamera",
+  "dl": "https://github.com/noirblancrouge/Panamera",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Bastien Sozeau",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Panamera",
+  "google": false
+ },
+ {
+  "id": "sans-serif/lil-grotesk",
+  "dl": "https://github.com/noirblancrouge/LilGrotesk",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Bastien Sozeau",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Lil Grotesk",
+  "google": false
+ },
+ {
+  "id": "sans-serif/apfel-grotezk",
+  "dl": "http://collletttivo.it/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Luigi Gorlero",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Apfel Grotezk",
+  "google": false
+ },
+ {
+  "id": "sans-serif/helmet",
+  "dl": "https://github.com/carlenlund/helmet",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Carl Enlund",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Helmet",
+  "google": false
+ },
+ {
+  "id": "sans-serif/evening",
+  "dl": "https://github.com/brycewilner/Evening",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Bryce Wilner",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Evening",
+  "google": false
+ },
+ {
+  "id": "sans-serif/karrik",
+  "dl": "https://velvetyne.fr/fonts/karrik/",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Jean-Baptiste Morizot, Lucas Le Bihan",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Karrik",
+  "google": false
+ },
+ {
+  "id": "sans-serif/authentic-sans",
+  "dl": "https://authentic.website/sans",
+  "lic": "",
+  "by": "Christina Janus, Desmond Wong",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "AUTHENTIC Sans",
+  "google": false
+ },
+ {
+  "id": "sans-serif/violet-sans",
+  "dl": "https://github.com/violetoffice/violet_sans",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Violet Office",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Violet Sans",
+  "google": false
+ },
+ {
+  "id": "sans-serif/standard",
+  "dl": "https://github.com/brycewilner/Standard",
+  "lic": "SIL Open Font License&nbsp;1.1",
+  "by": "Bryce Wilner",
+  "cuts": "2",
+  "variable": false,
+  "nombre": "Standard",
+  "google": false
+ }
+]

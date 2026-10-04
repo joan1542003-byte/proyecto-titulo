@@ -1232,11 +1232,18 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Recomendación:** una por familia: Chubbo, Erode, Combat y Gosha Sans.
   - **Licencias:** Fontshare y las abiertas (OFL) sirven también para un producto real; las de Pangram Pangram sirven para la tesis (portafolio y proyectos escolares) y, si Relevo sale a la venta, requieren licencias de pago desde 40 USD.
 - **Fundamento:** licencia de Fontshare (ITF FFL 2.0), preguntas frecuentes de Pangram Pangram y páginas de Velvetyne y Collletttivo.
-- **Alternativas:** Chubbo con Calistoga y Fraunces Soft (D-105); los logotipos dibujados; UNCUT y las pruebas de fundiciones comerciales, que requieren descargar archivos.
-- **Límites:** logotipos compuestos con la letra tal cual; sin pruebas en la app ni con personas; para ajustar y dibujar el logotipo hay que descargar los archivos, con permiso del autor.
+- **Versión 2 (mismo día):** el autor autorizó descargar de cualquier fuente. Se suman 88 letras (UNCUT, 69, y Open Foundry, 19), doce finalistas nuevas en tres grupos (más sans con carácter, más blandas y firmes, más serif con identidad) y se llega a 30 finalistas entre 264 letras de seis fuentes. Todas las nuevas son OFL. Destacan Bagnard y Hauora Sans.
+- **Alternativas:** Chubbo con Calistoga y Fraunces Soft (D-105); los logotipos dibujados; las pruebas de fundiciones comerciales, que piden un correo para descargar.
+- **Límites:** logotipos compuestos con la letra tal cual; sin pruebas en la app ni con personas; para ajustar y dibujar el logotipo hay que descargar los archivos de la letra elegida (el autor ya autorizó descargar).
 - **Documentación:** [Letras para relevo](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letras-para-relevo-2026-10-04/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — D-106, versión 2
+
+- **Qué cambió:** D-106 suma su versión 2: segunda ronda con descargas y 30 finalistas.
+- **Cómo estaba antes:** D-106 tenía 176 letras de cuatro fuentes y dieciocho finalistas.
+- **Por qué:** el autor dio permiso para descargar lo que quisiera de las fuentes que quisiera y pidió explorar más.
 
 ### 2026-10-04 — D-106
 

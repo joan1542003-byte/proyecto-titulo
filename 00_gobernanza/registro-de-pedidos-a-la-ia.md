@@ -89,6 +89,7 @@
 | 3 oct. | Corrección y orden | El azul de Relevo no combina con los otros colores: arreglarlo. Diseñar el logotipo uno mismo. Seguir explorando los visuales generales. | Azul nuevo `#1C3891`, con la luz de los profundos y algo más de croma. Cuatro logotipos dibujados en SVG y dos jueces (eligieron «el testigo»). La exploración de los visuales se cortó por el límite de uso. Registrado en la [propuesta 3.6](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md). | D-105 |
 | 4 oct. | Corrección | Los logotipos dibujados le parecen feos; explorar otras tipografías gratuitas, o con algún resquicio de licencia, más atractivas, con identidad y que no sean una sans simple. | [Propuesta 3.6, «Letra con identidad»](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md): 29 letras gratuitas de Fontshare y Google Fonts, seis en uso y tres tableros; recomendada Chubbo, con Calistoga y Fraunces Soft como alternativas; licencias explicadas. | D-105 |
 | 4 oct. | Corrección y orden | Continuar y explorar más tipografías; como es un proyecto de título que no sale a la venta, se pueden usar más licencias; no usar Google Fonts, al menos para el logotipo; explorar más, con una variedad de elecciones. | [Propuesta 3.7, «Letras para relevo»](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md): 176 letras de Pangram Pangram, Fontshare, Velvetyne y Collletttivo; dieciocho finalistas en cuatro familias con su autoría y licencia; una recomendación por familia. | D-106 |
+| 4 oct. | Orden y permiso | Tiene permiso para descargar lo que quiera, de las fuentes que quiera; explorar más. | Versión 2 de la [propuesta 3.7](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md): 84 archivos descargados de los enlaces de UNCUT, 88 letras nuevas (UNCUT y Open Foundry), doce finalistas nuevas y 264 letras en total. | D-106 |
 
 ## Lo que muestra el registro
 
@@ -99,6 +100,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letras para relevo, versión 2
+
+- **Qué cambió:** se registró el permiso de descargar y el pedido de explorar más, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en la primera versión de la propuesta 3.7.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-04 — Letras para relevo
 

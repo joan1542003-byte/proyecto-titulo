@@ -1,0 +1,506 @@
+[
+ {
+  "id": "display/cambrian",
+  "nombre": "Cambrian",
+  "enlace": "https://uncut.wtf/downloads/cambrian.zip",
+  "mb": null
+ },
+ {
+  "id": "serif/maname",
+  "nombre": "Maname",
+  "enlace": "https://github.com/mooniak/maname-font",
+  "mb": 1.8
+ },
+ {
+  "id": "sans-serif/opening-hours-sans",
+  "nombre": "Opening Hours Sans",
+  "enlace": "https://github.com/opening-hours-studio/opening-hours-sans",
+  "mb": 0.1
+ },
+ {
+  "id": "display/hikaru-mono",
+  "nombre": "HIKARU MONO",
+  "enlace": "https://github.com/AntoineVRM/VRM-HIKARU/tree/main",
+  "mb": 0.1
+ },
+ {
+  "id": "display/galgo",
+  "nombre": "Galgo",
+  "enlace": "https://uncut.wtf/downloads/galgovf.zip",
+  "mb": 0.1
+ },
+ {
+  "id": "display/gap-sans",
+  "nombre": "Gap Sans",
+  "enlace": "https://github.com/Interstices-/GapSans",
+  "mb": 31.4
+ },
+ {
+  "id": "sans-serif/berlin-grotesk",
+  "nombre": "Berlin Grotesk",
+  "enlace": "https://uncut.wtf/downloads/berlin_grotesk.zip",
+  "mb": 0.1
+ },
+ {
+  "id": "monospace/uncut-plan8",
+  "nombre": "Uncut Plan8",
+  "enlace": "https://github.com/kaspernordkvist/uncut_plan8",
+  "mb": 0.4
+ },
+ {
+  "id": "sans-serif/hedvig-letters-sans",
+  "nombre": "Hedvig Letters Sans",
+  "enlace": "https://github.com/KanonFoundry/HedvigLetters/",
+  "mb": 0.5
+ },
+ {
+  "id": "serif/hedvig-letters-serif",
+  "nombre": "Hedvig Letters Serif",
+  "enlace": "https://github.com/KanonFoundry/HedvigLetters/",
+  "mb": 0.5
+ },
+ {
+  "id": "sans-serif/liga-sans",
+  "nombre": "Liga Sans",
+  "enlace": "https://github.com/NathanLaurent/Liga-Sans",
+  "mb": 0.3
+ },
+ {
+  "id": "monospace/new-heterodox-mono",
+  "nombre": "New Heterodox Mono",
+  "enlace": "https://github.com/hckiang/font-new-heterodox-mono",
+  "mb": 0.2
+ },
+ {
+  "id": "display/gloock",
+  "nombre": "Gloock",
+  "enlace": "https://github.com/duartp/gloock",
+  "mb": 52
+ },
+ {
+  "id": "sans-serif/rag",
+  "nombre": "Rag",
+  "enlace": "https://github.com/dennisgrauel/Rag",
+  "mb": 1.1
+ },
+ {
+  "id": "sans-serif/overused-grotesk",
+  "nombre": "Overused Grotesk",
+  "enlace": "https://github.com/RandomMaerks/Overused-Grotesk",
+  "mb": 31.7
+ },
+ {
+  "id": "display/frick",
+  "nombre": "Frick",
+  "enlace": "https://github.com/dennisgrauel/Frick",
+  "mb": 0.3
+ },
+ {
+  "id": "sans-serif/inclusive-sans",
+  "nombre": "Inclusive Sans",
+  "enlace": "https://github.com/LivKing/Inclusive-Sans",
+  "mb": 17.7
+ },
+ {
+  "id": "display/sunday-masthead",
+  "nombre": "Sunday Masthead",
+  "enlace": "https://github.com/dennisgrauel/The-Sunday-Paper-fonts",
+  "mb": 1.3
+ },
+ {
+  "id": "serif/instrument-serif",
+  "nombre": "Instrument Serif",
+  "enlace": "https://github.com/Instrument/instrument-serif",
+  "mb": 0.6
+ },
+ {
+  "id": "sans-serif/tasa-orbiter",
+  "nombre": "TASA Orbiter",
+  "enlace": "https://github.com/adrianzwz/TASA-Typeface-Collection",
+  "mb": 2.5
+ },
+ {
+  "id": "monospace/fragment-mono",
+  "nombre": "Fragment Mono",
+  "enlace": "https://github.com/weiweihuanghuang/fragment-mono",
+  "mb": 3.2
+ },
+ {
+  "id": "sans-serif/instrument-sans",
+  "nombre": "Instrument Sans",
+  "enlace": "https://github.com/Instrument/instrument-sans",
+  "mb": 6.1
+ },
+ {
+  "id": "display/blocks-on-blocks",
+  "nombre": "Blocks on Blocks",
+  "enlace": "https://github.com/nervousattack/BLOCKS-ON-BLOCKS",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/aspekta",
+  "nombre": "Aspekta",
+  "enlace": "https://github.com/ivodolenc/aspekta",
+  "mb": 1.9
+ },
+ {
+  "id": "display/geom",
+  "nombre": "Geom",
+  "enlace": "https://github.com/D0MIN0KID/GEOM/",
+  "mb": 0.1
+ },
+ {
+  "id": "display/gtl001",
+  "nombre": "GTL001",
+  "enlace": "https://github.com/eliheuer/GTL001",
+  "mb": 0.4
+ },
+ {
+  "id": "display/saint",
+  "nombre": "Saint",
+  "enlace": "https://uncut.wtf/downloads/saint.ttf.zip",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/swansea",
+  "nombre": "Swansea",
+  "enlace": "https://uncut.wtf/downloads/swansea.zip",
+  "mb": 0.1
+ },
+ {
+  "id": "sans-serif/giphurs",
+  "nombre": "Giphurs",
+  "enlace": "https://github.com/Corne2Plum3/Giphurs",
+  "mb": 52.1
+ },
+ {
+  "id": "sans-serif/milford",
+  "nombre": "Milford",
+  "enlace": "https://uncut.wtf/downloads/milford.zip",
+  "mb": 0.4
+ },
+ {
+  "id": "monospace/martian-mono",
+  "nombre": "Martian Mono",
+  "enlace": "https://github.com/evilmartians/mono",
+  "mb": 4.7
+ },
+ {
+  "id": "sans-serif/marynata",
+  "nombre": "Marynata",
+  "enlace": "https://github.com/kasiawojciechowska/Marynata-Typeface",
+  "mb": 0.1
+ },
+ {
+  "id": "sans-serif/bertioga-sans",
+  "nombre": "Bertioga Sans",
+  "enlace": "https://github.com/cssobral2013/Bertioga-Sans",
+  "mb": 65
+ },
+ {
+  "id": "sans-serif/perun",
+  "nombre": "Perun",
+  "enlace": "https://github.com/StefanPeev/Perun",
+  "mb": 103.9
+ },
+ {
+  "id": "sans-serif/solitus",
+  "nombre": "Solitus",
+  "enlace": "https://github.com/jhudson100/Solitus-font",
+  "mb": 0.1
+ },
+ {
+  "id": "monospace/heming",
+  "nombre": "Heming",
+  "enlace": "https://uncut.wtf/downloads/heming.ttf.zip",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/uncut-sans",
+  "nombre": "Uncut Sans",
+  "enlace": "https://github.com/kaspernordkvist/uncut_sans/",
+  "mb": 2.2
+ },
+ {
+  "id": "display/kulture-type",
+  "nombre": "Kultüre",
+  "enlace": "https://uncut.wtf/downloads/kulture_type.otf.zip",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/miedinger",
+  "nombre": "Miedinger*",
+  "enlace": "https://github.com/indestructible-type/Miedinger",
+  "mb": 4.8
+ },
+ {
+  "id": "sans-serif/project-blackbird",
+  "nombre": "Project Blackbird",
+  "enlace": "https://uncut.wtf/downloads/projekt_blackbird.otf.zip",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/milkman",
+  "nombre": "Milkman",
+  "enlace": "https://uncut.wtf/downloads/milkman.ttf.zip",
+  "mb": null
+ },
+ {
+  "id": "serif/sprat",
+  "nombre": "Sprat",
+  "enlace": "https://github.com/EthanNakache/Sprat-type",
+  "mb": 0.6
+ },
+ {
+  "id": "serif/zarathustra",
+  "nombre": "Zarathustra",
+  "enlace": "https://github.com/lorene-cn/zarathustra-typeface",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/hauora-sans",
+  "nombre": "Hauora Sans",
+  "enlace": "https://github.com/WCYS-Co/Hauora-Sans",
+  "mb": 1.6
+ },
+ {
+  "id": "sans-serif/optician-sans",
+  "nombre": "Optician Sans",
+  "enlace": "https://github.com/anewtypeofinterference/Optician-Sans",
+  "mb": 0.1
+ },
+ {
+  "id": "serif/career",
+  "nombre": "Career",
+  "enlace": "https://github.com/Antoine-Gelgon/CareerFont",
+  "mb": 48.2
+ },
+ {
+  "id": "sans-serif/prodigy-sans",
+  "nombre": "Prodigy Sans",
+  "enlace": "https://github.com/weiweihuanghuang/Prodigy-Sans",
+  "mb": 3.4
+ },
+ {
+  "id": "display/phosphene",
+  "nombre": "Phosphène",
+  "enlace": "https://uncut.wtf/downloads/phosphene.ttf.zip",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/micro-grotesk",
+  "nombre": "Micro Grotesk",
+  "enlace": "https://github.com/eliheuer/micro-grotesk",
+  "mb": 1.8
+ },
+ {
+  "id": "monospace/lab-mono",
+  "nombre": "Lab Mono",
+  "enlace": "https://github.com/hatsumatsu/Lab-Mono",
+  "mb": 14.7
+ },
+ {
+  "id": "sans-serif/gnu-grotesk",
+  "nombre": "Gnu Grotesk",
+  "enlace": "https://github.com/eliheuer/gnugrotesk",
+  "mb": null
+ },
+ {
+  "id": "monospace/whois",
+  "nombre": "Whois",
+  "enlace": "https://github.com/raphaelbastide/Whois-mono",
+  "mb": 5.8
+ },
+ {
+  "id": "display/handjet",
+  "nombre": "Handjet",
+  "enlace": "https://github.com/rosettatype/handjet",
+  "mb": 15.7
+ },
+ {
+  "id": "display/nultien",
+  "nombre": "NulTien",
+  "enlace": "https://uncut.wtf/downloads/nultien.zip",
+  "mb": null
+ },
+ {
+  "id": "sans-serif/lunchtype",
+  "nombre": "Lunchtype",
+  "enlace": "https://uncut.wtf/downloads/lunchtype.zip",
+  "mb": 0.4
+ },
+ {
+  "id": "sans-serif/breite-grotesk",
+  "nombre": "Breite Grotesk",
+  "enlace": "https://github.com/metapolator/Breite",
+  "mb": 3.7
+ },
+ {
+  "id": "serif/young-serif",
+  "nombre": "Young Serif",
+  "enlace": "https://github.com/noirblancrouge/YoungSerif",
+  "mb": 10.8
+ },
+ {
+  "id": "sans-serif/kulim-park",
+  "nombre": "Kulim Park",
+  "enlace": "https://github.com/noponies/Kulim-Park",
+  "mb": 11.4
+ },
+ {
+  "id": "sans-serif/manifont-grotesk",
+  "nombre": "Manifont Grotesk",
+  "enlace": "https://github.com/Interstices-/Manifont-Grotesk",
+  "mb": 6.2
+ },
+ {
+  "id": "sans-serif/panamera",
+  "nombre": "Panamera",
+  "enlace": "https://github.com/noirblancrouge/Panamera",
+  "mb": 10.3
+ },
+ {
+  "id": "sans-serif/helmet",
+  "nombre": "Helmet",
+  "enlace": "https://github.com/carlenlund/helmet",
+  "mb": 0.8
+ },
+ {
+  "id": "sans-serif/lil-grotesk",
+  "nombre": "Lil Grotesk",
+  "enlace": "https://github.com/noirblancrouge/LilGrotesk",
+  "mb": 11.8
+ },
+ {
+  "id": "sans-serif/evening",
+  "nombre": "Evening",
+  "enlace": "https://github.com/brycewilner/Evening",
+  "mb": 0.1
+ },
+ {
+  "id": "sans-serif/violet-sans",
+  "nombre": "Violet Sans",
+  "enlace": "https://github.com/violetoffice/violet_sans",
+  "mb": 0.3
+ },
+ {
+  "id": "sans-serif/standard",
+  "nombre": "Standard",
+  "enlace": "https://github.com/brycewilner/Standard",
+  "mb": 0.5
+ },
+ {
+  "id": "sans-serif/tanklager",
+  "nombre": "Tanklager",
+  "enlace": "https://codeberg.org/ArielMartinPerez/Tanklager/archive/main.zip",
+  "mb": 6.55
+ },
+ {
+  "id": "display/granturismo",
+  "nombre": "Granturismo",
+  "enlace": "https://nathanlaurent.github.io/Granturismo.zip",
+  "mb": 0.19
+ },
+ {
+  "id": "monospace/basically-a-mono",
+  "nombre": "Basically A Mono",
+  "enlace": "https://experi.mentallydesigned.com/type/bam/fonts/BasicallyAMono-Thin.woff2",
+  "mb": 0.02
+ },
+ {
+  "id": "display/garamon-d-t",
+  "nombre": "Garamon(d/t)",
+  "enlace": "https://fonderie.download/downloads/FD_Garamon(d-t).zip",
+  "mb": 2.05
+ },
+ {
+  "id": "sans-serif/vercetti",
+  "nombre": "Vercetti",
+  "enlace": "https://filipposfragkogiannis.com/wp-content/uploads/Vercetti-Regular.zip",
+  "mb": 0.18
+ },
+ {
+  "id": "sans-serif/barlaxent",
+  "nombre": "Barlaxent",
+  "enlace": "https://typotheque.le75.be/site/assets/files/1034/barlaxent.zip",
+  "mb": 0.13
+ },
+ {
+  "id": "display/destra",
+  "nombre": "Destra",
+  "enlace": "http://fonderiz.fr/site/assets/files/1020/destra.zip",
+  "mb": 0.03
+ },
+ {
+  "id": "sans-serif/fudd",
+  "nombre": "Fudd",
+  "enlace": "https://squaregear.net/fonts/fudd.zip",
+  "mb": 0.04
+ },
+ {
+  "id": "serif/paragon",
+  "nombre": "Paragon",
+  "enlace": "https://fonderiz.fr/site/assets/files/1021/paragon.zip",
+  "mb": 0.04
+ },
+ {
+  "id": "monospace/monor",
+  "nombre": "Monor",
+  "enlace": "https://fonderiz.fr/site/assets/files/1017/monor.zip",
+  "mb": 0.03
+ },
+ {
+  "id": "serif/times-newer-roman",
+  "nombre": "Times Newer Roman",
+  "enlace": "https://timesnewerroman.com/assets/TimesNewerRoman.zip",
+  "mb": 0.34
+ },
+ {
+  "id": "display/honey",
+  "nombre": "Honey",
+  "enlace": "https://www.onlyanother.co/s/Honey-Demo-Light.zip",
+  "mb": 0.11
+ },
+ {
+  "id": "sans-serif/fibel-nord",
+  "nombre": "Fibel Nord",
+  "enlace": "http://www.peter-wiegel.de/Fonts/FibelNordTT.zip",
+  "mb": 0.15
+ },
+ {
+  "id": "sans-serif/cat-neuzeit",
+  "nombre": "CAT Neuzeit",
+  "enlace": "http://www.peter-wiegel.de/Fonts/CATNeuzeit.zip",
+  "mb": 0.45
+ },
+ {
+  "id": "display/cat-eckmann",
+  "nombre": "CAT Eckmann",
+  "enlace": "http://www.peter-wiegel.de/Fonts/Eckmann.zip",
+  "mb": 0.13
+ },
+ {
+  "id": "serif/imogen",
+  "nombre": "Imogen",
+  "enlace": "https://www.suvatypefoundry.ee/wp-content/uploads/imogen.zip",
+  "mb": 0.01
+ },
+ {
+  "id": "sans-serif/vorsik",
+  "nombre": "Vorsik",
+  "enlace": "https://www.suvatypefoundry.ee/wp-content/uploads/vorsik.zip",
+  "mb": 0.06
+ },
+ {
+  "id": "sans-serif/libre-office-sans",
+  "nombre": "Libre Office Sans",
+  "enlace": "https://www.suvatypefoundry.ee/wp-content/uploads/libreofficesans.zip",
+  "mb": 0.02
+ },
+ {
+  "id": "display/escapist-diaries",
+  "nombre": "Escapist Diaries",
+  "enlace": "https://www.suvatypefoundry.ee/wp-content/uploads/escapistdiaries.zip",
+  "mb": null
+ }
+]
