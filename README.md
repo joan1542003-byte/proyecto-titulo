@@ -60,7 +60,7 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **2 de octubre:** el [sistema de diseño 3.1](10_recursos_visuales/27_sistema-de-diseno-3.1-2026-10-02.md) (propuesta D-099) suma un logotipo nuevo con un renglón que hace lugar, dos voces tipográficas (la persona en itálica), seis colores de la casa, uno por categoría de actividad, 135 íconos, ilustraciones, patrones, 24 aplicaciones, el logotipo animado y la firma sonora ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-02.md)). Después, una [exploración de color y letra](10_recursos_visuales/28_exploracion-color-y-letra-2026-10-02.md) con referencias de Behance propone cuatro direcciones de color y cinco pares de letra; la recomendada es el cuaderno (azul y margen rojo) con la persona escribiendo en Playwrite CL.
 
-**3 de octubre:** a pedido del autor, la [propuesta 3.2, «Relevo vivo»](10_recursos_visuales/29_relevo-vivo-2026-10-03.md) (D-100) lleva la marca a colores vivos con una regla: un color, una frase, un renglón. La frase de Relevo va en grotesca gruesa y la palabra de la persona, escrita a mano en Playwrite CL ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-03.md)). El autor rechazó esa letra; la [propuesta 3.3, «Volver a enfocar»](10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) (D-101) muestra la actividad fuera de foco en su color vivo y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul. Después, la [propuesta 3.4, «Las ganas estaban»](10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md) (D-102) hace que cada pieza diga algo que sabemos (cifras de la encuesta, el principio de la señal y lo que hace la app), con seis pares de color, fotos en duotono, solo Schibsted Grotesk y el renglón azul solo donde se escribe. Su versión 2 fija [cuándo va color](10_recursos_visuales/32_cuando-va-color-2026-10-03.md) (D-103): el color sube con el momento y cada color tiene un solo papel.
+**3 de octubre:** a pedido del autor, la [propuesta 3.2, «Relevo vivo»](10_recursos_visuales/29_relevo-vivo-2026-10-03.md) (D-100) lleva la marca a colores vivos con una regla: un color, una frase, un renglón. La frase de Relevo va en grotesca gruesa y la palabra de la persona, escrita a mano en Playwrite CL ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-03.md)). El autor rechazó esa letra; la [propuesta 3.3, «Volver a enfocar»](10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) (D-101) muestra la actividad fuera de foco en su color vivo y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul. Después, la [propuesta 3.4, «Las ganas estaban»](10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md) (D-102) hace que cada pieza diga algo que sabemos (cifras de la encuesta, el principio de la señal y lo que hace la app), con seis pares de color, fotos en duotono, solo Schibsted Grotesk y el renglón azul solo donde se escribe. Su versión 2 fija [cuándo va color](10_recursos_visuales/32_cuando-va-color-2026-10-03.md) (D-103): el color sube con el momento y cada color tiene un solo papel. La [propuesta 3.5, «El traspaso»](10_recursos_visuales/33_el-traspaso-2026-10-03.md) (D-104) cambia el subrayado por la idea del testigo, lleva el logotipo a Familjen Grotesk, arma una familia de colores en que todo combina y deja el color pleno en 5 de 19 piezas.
 
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
@@ -136,6 +136,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — El traspaso
+
+- **Qué cambió:** el estado del 3 de octubre suma la propuesta 3.5.
+- **Cómo estaba antes:** terminaba en la versión 2 de la 3.4.
+- **Por qué:** el autor pidió no abusar de los colores, un logotipo con más carácter en una sans, colores que combinen todos entre sí y otras ideas en vez del subrayado.
 
 ### 2026-10-03 — Cuándo va color
 

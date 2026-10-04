@@ -13,6 +13,7 @@
 | Propuesta 3.3, versión 2 | A pedido del autor, menos serif y menos renglón: titulares en Schibsted Grotesk, la serif solo para las palabras de la persona y el renglón solo bajo ellas. Misma [lámina](https://claude.ai/artifact/AQn4nbdQbPAPwkX4Pzw5tn), versión 2. | D-101 |
 | Propuesta 3.4, «Las ganas estaban» | A pedido del autor: titulares con lo que se sabe (cifras de la encuesta, el principio de la señal, lo que hace Relevo), solo Schibsted Grotesk, el renglón azul solo donde se escribe y seis pares de color. [Lámina](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff) y [documento 31](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md). | D-102 |
 | Propuesta 3.4, versión 2: cuándo va color | A pedido del autor, reglas de uso del color apoyadas en Apple, Google, Material Design 3, Wolfe y Horowitz (2017) y WCAG: tres niveles, cinco papeles y tres pares cambiados. Misma [lámina](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff), versión 2, y [documento 32](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md). | D-103 |
+| Propuesta 3.5, «El traspaso» | A pedido del autor: la idea del testigo en vez del subrayado, logotipo en Familjen Grotesk tras comparar doce sans libres, una familia de color en que todo combina y color pleno en 5 de 19 piezas. [Lámina](https://claude.ai/artifact/EG2Ta5ahzMU55sJrijL3fA) y [documento 33](../10_recursos_visuales/33_el-traspaso-2026-10-03.md). | D-104 |
 
 ## 2. Cómo se usó la IA
 
@@ -23,20 +24,28 @@
 - **Comunicar con datos:** para la 3.4, cada titular sale de una cifra de la encuesta, del marco multiproceso o de lo que hace la app; cada cifra lleva su fuente y sus límites quedan en el documento 31.
 - **Pares medidos:** el contraste de cada par se midió con visión típica y simulada; se aclaró el naranja y se oscureció el rojo hasta pasar 4,5:1. El par de la marca queda en 4,2:1 con protanopía porque su azul no cambia.
 - **Color medido:** para la versión 2 de la 3.4 se midió qué parte de cada pantalla ocupa el color de actividad (0,7 %, 35 % y 100 %) y cuánto se diferenciaban los colores que podían confundirse: el rojo de escribirle a alguien y el de error daban ΔE 1,9 en OKLab.
+- **Familia de color medida:** para la 3.5 se compararon tres familias con la misma luz por nivel (pastel, media y plena) y se comprobaron las 24 combinaciones de profundo y claro, con visión típica y simulada.
+- **Logotipo comparado:** se compusieron doce sans libres escribiendo «relevo» y se probaron tres gestos; el elegido no agrega formas: aprieta la «l» hasta que su gancho toca la «e».
 - **Lo que la IA señaló:** la propuesta quita la serif de titulares que el autor eligió el 30 de septiembre (D-098); queda como pregunta.
 
 ## 3. Qué se comprobó y qué no
 
-- **Comprobado:** la lámina a 1280 y a 400 px de ancho, sin desbordes; las catorce piezas exportadas; los contrastes y las distancias de color. Para la 3.4: la lámina a 1280 y 400 px, sin desbordes; las diecinueve piezas; el contraste de los seis pares con visión típica y simulada. Para la versión 2: la lámina a 1280 y 400 px sin desbordes, las diecinueve piezas, el área de color por pantalla y los contrastes de los siete pares.
+- **Comprobado:** la lámina a 1280 y a 400 px de ancho, sin desbordes; las catorce piezas exportadas; los contrastes y las distancias de color. Para la 3.4: la lámina a 1280 y 400 px, sin desbordes; las diecinueve piezas; el contraste de los seis pares con visión típica y simulada. Para la versión 2: la lámina a 1280 y 400 px sin desbordes, las diecinueve piezas, el área de color por pantalla y los contrastes de los siete pares. Para la 3.5: la lámina a 1280 y 400 px sin desbordes, las diecinueve piezas, el área de color por pantalla y las 24 combinaciones de color.
 - **No comprobado:** las piezas con personas, en un teléfono real o impresas; un tema oscuro para 3.2.
 
 ## 4. Pendientes
 
-- Que el autor responda las tres preguntas de la versión 2 de la 3.4 (si las reglas de color le sirven para revisar piezas nuevas; si acepta los tres cambios de color; si se lleva al sistema y a la app). La 3.2 y la 3.3 quedan como antecedentes.
+- Que el autor responda las tres preguntas de la propuesta 3.5 (si Familjen Grotesk con el traspaso es el logotipo; si el traspaso reemplaza al subrayado; si acepta la familia de color y la regla de una pieza de color cada tres). Con su permiso, descargar la fuente para dibujar el logotipo en curvas. La 3.2, la 3.3 y la 3.4 quedan como antecedentes.
 - Si la aprueba: llevar 3.2 al sistema publicado en Claude Design, a la app 2.19 y a la presentación, y diseñar su tema oscuro.
 - Siguen abiertos los pendientes técnicos: teléfono real con la 2.18, Firebase y la revisión del consentimiento v11.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — El traspaso
+
+- **Qué cambió:** se suma la propuesta 3.5, con lo hecho, lo medido y lo pendiente.
+- **Cómo estaba antes:** la bitácora terminaba en la versión 2 de la 3.4.
+- **Por qué:** el autor pidió no abusar de los colores, un logotipo con más carácter en una sans, colores que combinen todos entre sí y otras ideas en vez del subrayado.
 
 ### 2026-10-03 — Cuándo va color
 

@@ -1,6 +1,6 @@
 # Las ganas estaban: propuesta 3.4
 
-**Fecha:** 3 de octubre de 2026. **Estado:** propuesta D-102. Reemplaza en la propuesta 3.3 (D-101) la serif, el desenfoque y el renglón azul en las piezas, y en las propuestas 3.2 y 3.3 los titulares con nombres de categoría. No cambia todavía la app ni el sistema publicado. **Dónde está:**
+**Fecha:** 3 de octubre de 2026. **Estado:** propuesta D-102, reemplazada en parte el mismo día por la [propuesta 3.5](33_el-traspaso-2026-10-03.md) (D-104) en el logotipo, los pares de color y el uso del color. Reemplaza en la propuesta 3.3 (D-101) la serif, el desenfoque y el renglón azul en las piezas, y en las propuestas 3.2 y 3.3 los titulares con nombres de categoría. No cambia todavía la app ni el sistema publicado. **Dónde está:**
 
 - Lámina publicada en claude.ai: [Las ganas estaban](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff) (privada del autor).
 - Copia en el repositorio: [`las-ganas-estaban-2026-10-03/`](las-ganas-estaban-2026-10-03/las-ganas-estaban.html), con las 19 piezas en PNG y su generador.
@@ -138,6 +138,12 @@ McDaniel, M. A. y Einstein, G. O. (2000). Strategic and automatic processes in p
 W3C. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Reemplazada en parte por la 3.5
+
+- **Qué cambió:** se avisa que el logotipo, los pares de color y el uso del color fueron reemplazados por la propuesta 3.5.
+- **Cómo estaba antes:** era la propuesta vigente.
+- **Por qué:** el autor pidió no abusar de los colores, un logotipo con más carácter en una sans, colores que combinen todos entre sí y otras ideas en vez del subrayado.
 
 ### 2026-10-03 — Versión 2
 

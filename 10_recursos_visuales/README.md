@@ -55,6 +55,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 30. [Volver a enfocar, propuesta 3.3](30_volver-a-enfocar-2026-10-03.md), su [lámina](volver-a-enfocar-2026-10-03/volver-a-enfocar.html) y sus [catorce piezas](volver-a-enfocar-2026-10-03/README.md): la actividad fuera de foco en su color vivo; Newsreader para Relevo y su itálica para la persona (D-101). Versión 2: [lámina](volver-a-enfocar-2026-10-03/volver-a-enfocar-v2.html) con la grotesca en los titulares, la serif solo para la persona y el renglón solo bajo sus palabras.
 31. [Las ganas estaban, propuesta 3.4](31_las-ganas-estaban-2026-10-03.md), su [lámina](las-ganas-estaban-2026-10-03/las-ganas-estaban.html) y sus [diecinueve piezas](las-ganas-estaban-2026-10-03/README.md): cada pieza dice algo que sabemos, con seis pares de color, fotos en duotono, solo Schibsted Grotesk y el renglón azul solo donde se escribe (D-102). Versión 2: [lámina](las-ganas-estaban-2026-10-03/las-ganas-estaban-v2.html).
 32. [Cuándo va color](32_cuando-va-color-2026-10-03.md): el color sube con el momento (calma, presencia y señal), cinco papeles para el color y tres pares cambiados para que ningún color tenga dos significados (D-103).
+33. [El traspaso, propuesta 3.5](33_el-traspaso-2026-10-03.md), su [lámina](el-traspaso-2026-10-03/el-traspaso.html) y sus [diecinueve piezas](el-traspaso-2026-10-03/README.md): la idea del testigo en vez del subrayado, el logotipo en Familjen Grotesk, una familia de colores en que todo combina y el color pleno en 5 de 19 piezas (D-104).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -84,6 +85,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — El traspaso
+
+- **Qué cambió:** el índice suma el documento 33.
+- **Cómo estaba antes:** terminaba en el documento 32.
+- **Por qué:** el autor pidió no abusar de los colores, un logotipo con más carácter en una sans, colores que combinen todos entre sí y otras ideas en vez del subrayado.
 
 ### 2026-10-03 — Cuándo va color
 

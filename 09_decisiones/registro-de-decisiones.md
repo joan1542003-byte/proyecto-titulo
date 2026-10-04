@@ -1164,7 +1164,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-102 — Las ganas estaban (propuesta 3.4)
 
 - **Fecha:** 2026-10-03.
-- **Estado:** propuesta; reemplaza en D-101 la serif, el desenfoque y el renglón en las piezas, y en D-100 y D-101 los titulares con nombres de categoría. No cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta; reemplaza en D-101 la serif, el desenfoque y el renglón en las piezas, y en D-100 y D-101 los titulares con nombres de categoría. No cambia todavía la app ni el sistema publicado. Reemplazada en parte por D-104 (logotipo, pares de color y uso del color).
 - **Pedido del autor:** los afiches citaban textualmente palabras de usuario («Cuidar la casa y a mí») en vez de comunicar con lo que se sabe; la serif no funciona; el marcador azul no puede estar en todas las piezas; usar colores que combinen (ejemplo: verde neón con morado).
 - **Propuesta:**
   - **Voz:** cada pieza dice algo que sabemos. Tres afiches con cifras de la encuesta («Las ganas estaban», 43 de 47; «Pasa donde están tus cosas», 44 de 47; «Sabes por dónde empezar», 42 de 43), siempre con su fuente; seis afiches del objeto que sigue en su lugar («El libro sigue en el velador»), y una lámina con el principio de la señal ligada a la acción.
@@ -1180,7 +1180,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-103 — Cuándo va color (propuesta 3.4, versión 2)
 
 - **Fecha:** 2026-10-03.
-- **Estado:** propuesta; completa D-102 y cambia tres de sus pares. No cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta; completa D-102 y cambia tres de sus pares. No cambia todavía la app ni el sistema publicado. Actualizada en parte por D-104 (presencia, marca y paleta).
 - **Pedido del autor:** la 3.4 está mucho mejor, pero hay que saber cuándo usar los colores y cuándo no, aprendiendo de diseño de interfaces, diseño y color.
 - **Propuesta:**
   - **Principio:** el color sube con el momento. En calma, papel y tinta (0,7 % de color de actividad en Preparar); en presencia, el par en un solo elemento (35 % en Inicio); en la señal, el par llena la pantalla o la pieza.
@@ -1192,7 +1192,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** reglas probadas en maquetas; falta revisar los errores de la app 2.18 y maquetar listas y el tema oscuro.
 - **Documentación:** [Cuándo va color](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md).
 
+## D-104 — El traspaso (propuesta 3.5)
+
+- **Fecha:** 2026-10-03.
+- **Estado:** propuesta; reemplaza el logotipo con renglón (D-099), el subrayado como idea de marca, los pares de color de D-102 y D-103 y el uso del color en las piezas. Mantiene la voz de la 3.4 y los cinco papeles del color. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** no usar siempre los colores ni abusar de ellos; un logotipo mejor, en una sans con carácter que le quede bien a Relevo; colores que combinen todos entre sí (por ejemplo, el violeta con el bosque y la menta); no abusar del subrayado, ni siquiera como concepto.
+- **Propuesta:**
+  - **Idea:** el traspaso. Relevo es el momento en que el teléfono le pasa el testigo a lo que querías hacer, en el lugar donde empieza (RAE, relevo y testigo). El renglón queda solo donde se escribe.
+  - **Logotipo:** Familjen Grotesk 700 en minúsculas, apretada; el gancho de la «l» toca la «e». Una tinta; ícono con la «r» en papel sobre azul. Se compararon doce sans libres; Bricolage Grotesque queda como segunda opción.
+  - **Color:** seis claros con luz 0,82 y croma 0,13 y cuatro profundos con luz 0,33 y croma 0,11 (OKLCH); las 24 combinaciones de profundo y claro dan 6,4:1 o más. La marca pasa a azul y papel.
+  - **Uso:** papel y tinta primero; a lo más una pieza de cada tres en color pleno; una pareja por pieza; fotos en gris salvo en las piezas de color. Color pleno en 5 de 19 piezas; la tarjeta activa de Inicio baja a 1 % de color.
+- **Fundamento:** Pentagram para Mastercard (2016), un solo gesto y una letra elegida porque permite ese gesto; Familjen STHLM (2022); Google, Material Color Utilities y HCT; Apple, *Human Interface Guidelines*; Wolfe y Horowitz (2017).
+- **Alternativas:** Bricolage Grotesque para el logotipo; claros pastel o plenos; la 3.4 con sus pares.
+- **Límites:** el logotipo está compuesto con la letra de Google Fonts y falta dibujarlo en curvas, lo que requiere descargar la fuente con permiso del autor; la letra es de uso libre; maquetas sin prueba con personas.
+- **Documentación:** [El traspaso](../10_recursos_visuales/33_el-traspaso-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/el-traspaso-2026-10-03/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — D-104
+
+- **Qué cambió:** se registró D-104, propuesta 3.5, y D-102 y D-103 pasan a reemplazadas o actualizadas en parte.
+- **Cómo estaba antes:** la última decisión era D-103.
+- **Por qué:** el autor pidió no abusar de los colores, un logotipo con más carácter en una sans, colores que combinen todos entre sí y otras ideas en vez del subrayado.
 
 ### 2026-10-03 — D-103
 

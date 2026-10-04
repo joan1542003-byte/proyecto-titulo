@@ -1,6 +1,6 @@
 # Cuándo va color
 
-**Fecha:** 3 de octubre de 2026. **Estado:** propuesta D-103, versión 2 de la [propuesta 3.4](31_las-ganas-estaban-2026-10-03.md). Son las reglas para decidir dónde va cada color de Relevo, en la app y en las piezas. No cambia todavía la app ni el sistema publicado. **Dónde está:**
+**Fecha:** 3 de octubre de 2026. **Estado:** propuesta D-103, versión 2 de la [propuesta 3.4](31_las-ganas-estaban-2026-10-03.md). Actualizada en parte por la [propuesta 3.5](33_el-traspaso-2026-10-03.md) (D-104): la presencia baja a 1 % de color, la marca pasa a azul y papel, y la paleta pasa a una familia en que todo combina. Son las reglas para decidir dónde va cada color de Relevo, en la app y en las piezas. No cambia todavía la app ni el sistema publicado. **Dónde está:**
 
 - Lámina publicada en claude.ai: [Las ganas estaban](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff), sección «Cuándo va color» (privada del autor).
 - Copia en el repositorio: [`las-ganas-estaban-v2.html`](las-ganas-estaban-2026-10-03/las-ganas-estaban-v2.html), con las piezas en [`piezas-v2/`](las-ganas-estaban-2026-10-03/piezas-v2/).
@@ -116,6 +116,12 @@ W3C. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.o
 Wolfe, J. M. y Horowitz, T. S. (2017). Five factors that guide attention in visual search. *Nature Human Behaviour, 1*(3), Artículo 0058. https://doi.org/10.1038/s41562-017-0058
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — Actualizada en parte por la 3.5
+
+- **Qué cambió:** se avisa qué reglas cambia la propuesta 3.5.
+- **Cómo estaba antes:** las reglas de este documento eran las vigentes.
+- **Por qué:** el autor pidió no abusar de los colores, un logotipo con más carácter en una sans, colores que combinen todos entre sí y otras ideas en vez del subrayado.
 
 ### 2026-10-03 — Creación
 

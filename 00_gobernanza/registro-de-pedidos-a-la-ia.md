@@ -85,6 +85,7 @@
 | 3 oct. | Corrección | La propuesta es mejorable: no abusar de la raya ni de las serifas; la serif no es obligatoria. | Versión 2 de [«Volver a enfocar»](../10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) en el mismo enlace: titulares en Schibsted Grotesk, Newsreader itálica solo para las palabras de la persona y el renglón solo bajo esas palabras, del largo de la palabra y un poco más, como el del logotipo. | D-101 |
 | 3 oct. | Corrección | Los afiches citaban textualmente palabras de usuario («Cuidar la casa y a mí») sin comunicar lo que se sabe; la serif no funciona; el marcador azul no puede estar en todas las piezas; usar colores que combinen (por ejemplo, verde neón con morado). | [Propuesta 3.4, «Las ganas estaban»](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md): titulares con cifras de la encuesta, el principio de la señal y lo que hace Relevo; solo Schibsted Grotesk; el renglón azul solo en el logotipo y donde se escribe; seis pares de color con fotos en duotono. | D-102 |
 | 3 oct. | Corrección | Está mucho mejor, pero hay que saber cuándo usar los colores y cuándo no; aprender de diseño de interfaces, diseño y color. | [Cuándo va color](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md) y versión 2 de la lámina de la 3.4: tres niveles según el momento (calma, presencia y señal), cinco papeles para el color, ideas de Preparar neutras, datos y portadas en el par de la marca, y tres pares cambiados para que ningún color tenga dos significados. | D-103 |
+| 3 oct. | Corrección | No usar siempre los colores ni abusar de ellos; un logotipo mejor, en una sans con carácter que le quede bien a Relevo; que los colores combinen todos entre sí (por ejemplo, el violeta con el bosque y la menta); no abusar del subrayado, ni siquiera como concepto. | [Propuesta 3.5, «El traspaso»](../10_recursos_visuales/33_el-traspaso-2026-10-03.md): la idea del testigo en vez del subrayado, logotipo en Familjen Grotesk con el gancho de la «l» tocando la «e», una familia de seis claros y cuatro profundos en que todo combina, la marca en azul y papel, y color pleno en 5 de 19 piezas. | D-104 |
 
 ## Lo que muestra el registro
 
@@ -95,6 +96,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-03 — El traspaso
+
+- **Qué cambió:** se registró el pedido sobre el logotipo, el color y el subrayado, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en la versión 2 de la 3.4.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-03 — Cuándo va color
 
