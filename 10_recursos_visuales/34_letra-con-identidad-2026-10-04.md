@@ -1,6 +1,6 @@
 # Letra con identidad: propuesta 3.6
 
-**Fecha:** 3 y 4 de octubre de 2026. **Estado:** propuesta D-105. Cambia el azul de Relevo (`#3D38F5`, D-098) y el logotipo de la [propuesta 3.5](33_el-traspaso-2026-10-03.md) (Familjen Grotesk, D-104). Lo demás de la 3.5 se mantiene: la idea del traspaso, la familia de colores, el uso medido del color y la voz. No cambia todavía la app ni el sistema publicado. **Dónde está:**
+**Fecha:** 3 y 4 de octubre de 2026. **Estado:** propuesta D-105, ampliada en la letra del logotipo por la [propuesta 3.7](35_letras-para-relevo-2026-10-04.md) (D-106): el autor pidió más variedad y sin Google Fonts. El azul `#1C3891` se mantiene. Cambia el azul de Relevo (`#3D38F5`, D-098) y el logotipo de la [propuesta 3.5](33_el-traspaso-2026-10-03.md) (Familjen Grotesk, D-104). Lo demás de la 3.5 se mantiene: la idea del traspaso, la familia de colores, el uso medido del color y la voz. No cambia todavía la app ni el sistema publicado. **Dónde está:**
 
 - Lámina publicada en claude.ai: [Letra con identidad](https://claude.ai/artifact/XPgDvNQEcgjZ1nnTWX3GXS) (privada del autor).
 - Copia en el repositorio: [`letra-con-identidad-2026-10-04/`](letra-con-identidad-2026-10-04/letra-con-identidad.html), con los tableros, los logotipos dibujados que se descartaron y los generadores.
@@ -103,6 +103,12 @@ Undercase Type. (2020). *Fraunces* [Tipografía]. Google Fonts. https://fonts.go
 W3C. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Ampliada por la 3.7
+
+- **Qué cambió:** se avisa que la búsqueda de la letra del logotipo continúa en la propuesta 3.7, sin Google Fonts.
+- **Cómo estaba antes:** recomendaba Chubbo con Calistoga y Fraunces Soft, estas dos de Google Fonts.
+- **Por qué:** el autor pidió explorar más tipografías, usar más licencias porque el proyecto no sale a la venta, no usar Google Fonts en el logotipo y tener una variedad de elecciones.
 
 ### 2026-10-04 — Creación
 

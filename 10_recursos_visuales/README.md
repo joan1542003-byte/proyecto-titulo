@@ -57,6 +57,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 32. [Cuándo va color](32_cuando-va-color-2026-10-03.md): el color sube con el momento (calma, presencia y señal), cinco papeles para el color y tres pares cambiados para que ningún color tenga dos significados (D-103).
 33. [El traspaso, propuesta 3.5](33_el-traspaso-2026-10-03.md), su [lámina](el-traspaso-2026-10-03/el-traspaso.html) y sus [diecinueve piezas](el-traspaso-2026-10-03/README.md): la idea del testigo en vez del subrayado, el logotipo en Familjen Grotesk, una familia de colores en que todo combina y el color pleno en 5 de 19 piezas (D-104).
 34. [Letra con identidad, propuesta 3.6](34_letra-con-identidad-2026-10-04.md), su [lámina](letra-con-identidad-2026-10-04/letra-con-identidad.html) y sus [tableros](letra-con-identidad-2026-10-04/README.md): el azul nuevo `#1C3891` y 29 letras gratuitas con identidad para el logotipo; recomendada Chubbo (D-105).
+35. [Letras para relevo, propuesta 3.7](35_letras-para-relevo-2026-10-04.md), su [lámina](letras-para-relevo-2026-10-04/letras-para-relevo.html) y sus [tableros](letras-para-relevo-2026-10-04/README.md): 176 letras de cuatro fuentes sin Google Fonts, dieciocho finalistas en cuatro familias y sus licencias (D-106).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -86,6 +87,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letras para relevo
+
+- **Qué cambió:** el índice suma el documento 35.
+- **Cómo estaba antes:** terminaba en el documento 34.
+- **Por qué:** el autor pidió explorar más tipografías, usar más licencias porque el proyecto no sale a la venta, no usar Google Fonts en el logotipo y tener una variedad de elecciones.
 
 ### 2026-10-04 — Letra con identidad
 

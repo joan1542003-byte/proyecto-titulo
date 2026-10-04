@@ -1210,7 +1210,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-105 — Letra con identidad (propuesta 3.6)
 
 - **Fecha:** 2026-10-03 y 2026-10-04.
-- **Estado:** propuesta; cambia el azul de D-098 y el logotipo de D-104. Mantiene la idea del traspaso, la familia de colores y el uso medido del color. No cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta; cambia el azul de D-098 y el logotipo de D-104. Mantiene la idea del traspaso, la familia de colores y el uso medido del color. No cambia todavía la app ni el sistema publicado. La letra del logotipo se amplía en D-106 (sin Google Fonts).
 - **Pedido del autor:** el azul de Relevo no combina con los otros colores; diseñar el logotipo; seguir explorando los visuales generales. Después: los logotipos dibujados le parecen feos; explorar letras gratuitas, o con algún resquicio de licencia, más atractivas, con identidad y que no sean una sans simple.
 - **Propuesta:**
   - **Azul:** `#1C3891` (OKLCH 0,38 / 0,15 / 266), con la luz de los profundos y algo más de croma. Los claros dan 5,6:1 o más encima (antes 3,7:1); 9,9:1 sobre papel; `#87A8F7` en tema oscuro.
@@ -1221,7 +1221,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** Chubbo no está en Google Fonts, así que en la lámina aparece en imágenes; para dibujarla en curvas o usarla en la app hay que descargarla con permiso del autor; la exploración de los visuales generales quedó pendiente por el límite de uso.
 - **Documentación:** [Letra con identidad](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letra-con-identidad-2026-10-04/README.md).
 
+## D-106 — Letras para relevo (propuesta 3.7)
+
+- **Fecha:** 2026-10-04.
+- **Estado:** propuesta; amplía la búsqueda de la letra del logotipo de D-105. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** explorar más tipografías; como es un proyecto de título que no sale a la venta, usar más licencias; no usar Google Fonts, al menos en el logotipo; una variedad de elecciones.
+- **Propuesta:**
+  - **Búsqueda:** 176 letras de cuatro fuentes: Pangram Pangram (60, «gratis para probar»), Fontshare (59, ITF Free Font License 2.0), Velvetyne (41, OFL) y Collletttivo (16, OFL). Cada una se probó escribiendo «relevo» dentro de la página de su fundición; no se descargó ningún archivo de fuente.
+  - **Finalistas:** dieciocho en cuatro familias: sans con carácter (Gosha Sans, Cabinet Grotesk, Pally, Mattone, Ronzino), blandas y cálidas (Chubbo, Paquito, Combat, Ouroboros), serif con identidad (Erode, Neco, Editorial New, Migra, Eiko, Pangaia) y anchas y firmes (Agrandir, Frama, Watch).
+  - **Recomendación:** una por familia: Chubbo, Erode, Combat y Gosha Sans.
+  - **Licencias:** Fontshare y las abiertas (OFL) sirven también para un producto real; las de Pangram Pangram sirven para la tesis (portafolio y proyectos escolares) y, si Relevo sale a la venta, requieren licencias de pago desde 40 USD.
+- **Fundamento:** licencia de Fontshare (ITF FFL 2.0), preguntas frecuentes de Pangram Pangram y páginas de Velvetyne y Collletttivo.
+- **Alternativas:** Chubbo con Calistoga y Fraunces Soft (D-105); los logotipos dibujados; UNCUT y las pruebas de fundiciones comerciales, que requieren descargar archivos.
+- **Límites:** logotipos compuestos con la letra tal cual; sin pruebas en la app ni con personas; para ajustar y dibujar el logotipo hay que descargar los archivos, con permiso del autor.
+- **Documentación:** [Letras para relevo](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letras-para-relevo-2026-10-04/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — D-106
+
+- **Qué cambió:** se registró D-106, propuesta 3.7, y D-105 pasa a ampliada en la letra del logotipo.
+- **Cómo estaba antes:** la última decisión era D-105.
+- **Por qué:** el autor pidió explorar más tipografías, usar más licencias porque el proyecto no sale a la venta, no usar Google Fonts en el logotipo y tener una variedad de elecciones.
 
 ### 2026-10-04 — D-105
 
