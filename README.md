@@ -62,6 +62,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **3 de octubre:** a pedido del autor, la [propuesta 3.2, «Relevo vivo»](10_recursos_visuales/29_relevo-vivo-2026-10-03.md) (D-100) lleva la marca a colores vivos con una regla: un color, una frase, un renglón. La frase de Relevo va en grotesca gruesa y la palabra de la persona, escrita a mano en Playwrite CL ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-03.md)). El autor rechazó esa letra; la [propuesta 3.3, «Volver a enfocar»](10_recursos_visuales/30_volver-a-enfocar-2026-10-03.md) (D-101) muestra la actividad fuera de foco en su color vivo y, nítidas, la frase de Relevo en Newsreader y las palabras de la persona en itálica sobre el renglón azul. Después, la [propuesta 3.4, «Las ganas estaban»](10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md) (D-102) hace que cada pieza diga algo que sabemos (cifras de la encuesta, el principio de la señal y lo que hace la app), con seis pares de color, fotos en duotono, solo Schibsted Grotesk y el renglón azul solo donde se escribe. Su versión 2 fija [cuándo va color](10_recursos_visuales/32_cuando-va-color-2026-10-03.md) (D-103): el color sube con el momento y cada color tiene un solo papel. La [propuesta 3.5, «El traspaso»](10_recursos_visuales/33_el-traspaso-2026-10-03.md) (D-104) cambia el subrayado por la idea del testigo, lleva el logotipo a Familjen Grotesk, arma una familia de colores en que todo combina y deja el color pleno en 5 de 19 piezas.
 
+**4 de octubre:** la [propuesta 3.6, «Letra con identidad»](10_recursos_visuales/34_letra-con-identidad-2026-10-04.md) (D-105) arregla el azul de Relevo (`#1C3891`) para que combine con la familia y, tras descartar los logotipos dibujados, propone el logotipo en Chubbo, una letra gratuita con identidad ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-04.md)).
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».
@@ -136,6 +138,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letra con identidad
+
+- **Qué cambió:** el estado suma el 4 de octubre con la propuesta 3.6.
+- **Cómo estaba antes:** terminaba en el 3 de octubre.
+- **Por qué:** el autor pidió arreglar el azul y diseñar el logotipo; después encontró feos los dibujados y pidió letras gratuitas con identidad, que no fueran una sans simple.
 
 ### 2026-10-03 — El traspaso
 

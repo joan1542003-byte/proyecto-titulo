@@ -14,6 +14,7 @@
 | Propuesta 3.4, «Las ganas estaban» | A pedido del autor: titulares con lo que se sabe (cifras de la encuesta, el principio de la señal, lo que hace Relevo), solo Schibsted Grotesk, el renglón azul solo donde se escribe y seis pares de color. [Lámina](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff) y [documento 31](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md). | D-102 |
 | Propuesta 3.4, versión 2: cuándo va color | A pedido del autor, reglas de uso del color apoyadas en Apple, Google, Material Design 3, Wolfe y Horowitz (2017) y WCAG: tres niveles, cinco papeles y tres pares cambiados. Misma [lámina](https://claude.ai/artifact/TLqwUeq6KhgbFXvbVRsXff), versión 2, y [documento 32](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md). | D-103 |
 | Propuesta 3.5, «El traspaso» | A pedido del autor: la idea del testigo en vez del subrayado, logotipo en Familjen Grotesk tras comparar doce sans libres, una familia de color en que todo combina y color pleno en 5 de 19 piezas. [Lámina](https://claude.ai/artifact/EG2Ta5ahzMU55sJrijL3fA) y [documento 33](../10_recursos_visuales/33_el-traspaso-2026-10-03.md). | D-104 |
+| Azul y logotipo dibujado | A pedido del autor: el azul pasa a `#1C3891` para combinar con la familia; cuatro logotipos dibujados en SVG y dos jueces, que eligieron «el testigo». La ronda de refinamiento y la exploración de los visuales se cortaron por el límite de uso. El autor descartó los dibujos al día siguiente ([documento 34](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md)). | D-105 |
 
 ## 2. Cómo se usó la IA
 
@@ -40,6 +41,12 @@
 - Siguen abiertos los pendientes técnicos: teléfono real con la 2.18, Firebase y la revisión del consentimiento v11.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Azul y logotipo dibujado
+
+- **Qué cambió:** se suma el trabajo de la noche del 3 de octubre: el azul nuevo y los logotipos dibujados.
+- **Cómo estaba antes:** la bitácora terminaba en la propuesta 3.5.
+- **Por qué:** el autor pidió arreglar el azul y diseñar el logotipo; después encontró feos los dibujados y pidió letras gratuitas con identidad, que no fueran una sans simple.
 
 ### 2026-10-03 — El traspaso
 

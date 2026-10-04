@@ -1195,7 +1195,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-104 — El traspaso (propuesta 3.5)
 
 - **Fecha:** 2026-10-03.
-- **Estado:** propuesta; reemplaza el logotipo con renglón (D-099), el subrayado como idea de marca, los pares de color de D-102 y D-103 y el uso del color en las piezas. Mantiene la voz de la 3.4 y los cinco papeles del color. No cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta; reemplaza el logotipo con renglón (D-099), el subrayado como idea de marca, los pares de color de D-102 y D-103 y el uso del color en las piezas. Mantiene la voz de la 3.4 y los cinco papeles del color. No cambia todavía la app ni el sistema publicado. Actualizada en parte por D-105 (azul y logotipo).
 - **Pedido del autor:** no usar siempre los colores ni abusar de ellos; un logotipo mejor, en una sans con carácter que le quede bien a Relevo; colores que combinen todos entre sí (por ejemplo, el violeta con el bosque y la menta); no abusar del subrayado, ni siquiera como concepto.
 - **Propuesta:**
   - **Idea:** el traspaso. Relevo es el momento en que el teléfono le pasa el testigo a lo que querías hacer, en el lugar donde empieza (RAE, relevo y testigo). El renglón queda solo donde se escribe.
@@ -1207,7 +1207,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** el logotipo está compuesto con la letra de Google Fonts y falta dibujarlo en curvas, lo que requiere descargar la fuente con permiso del autor; la letra es de uso libre; maquetas sin prueba con personas.
 - **Documentación:** [El traspaso](../10_recursos_visuales/33_el-traspaso-2026-10-03.md) y su [copia de archivos](../10_recursos_visuales/el-traspaso-2026-10-03/README.md).
 
+## D-105 — Letra con identidad (propuesta 3.6)
+
+- **Fecha:** 2026-10-03 y 2026-10-04.
+- **Estado:** propuesta; cambia el azul de D-098 y el logotipo de D-104. Mantiene la idea del traspaso, la familia de colores y el uso medido del color. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** el azul de Relevo no combina con los otros colores; diseñar el logotipo; seguir explorando los visuales generales. Después: los logotipos dibujados le parecen feos; explorar letras gratuitas, o con algún resquicio de licencia, más atractivas, con identidad y que no sean una sans simple.
+- **Propuesta:**
+  - **Azul:** `#1C3891` (OKLCH 0,38 / 0,15 / 266), con la luz de los profundos y algo más de croma. Los claros dan 5,6:1 o más encima (antes 3,7:1); 9,9:1 sobre papel; `#87A8F7` en tema oscuro.
+  - **Logotipo:** se descartan los cuatro dibujados en SVG. De 29 letras gratuitas (Fontshare y Google Fonts) se recomienda Chubbo Bold (Rafał Buchner, 2021), una egipcia de remates redondos; alternativas, Calistoga y Fraunces Soft. Solo para el logotipo y, si el autor quiere, titulares grandes de campaña.
+  - **Licencias:** Fontshare (ITF FFL 2.0) y Google Fonts (OFL) permiten uso comercial y logotipos; las letras «gratis para probar» sirven para la tesis, no para una marca real.
+- **Fundamento:** Collins y R/GA para Mailchimp (2018): Cooper Light, ajustada, por su espíritu humano y cálido; licencia ITF FFL 2.0; preguntas frecuentes de Pangram Pangram.
+- **Alternativas:** Calistoga, Fraunces Soft, Panchang; los logotipos dibujados; Familjen Grotesk.
+- **Límites:** Chubbo no está en Google Fonts, así que en la lámina aparece en imágenes; para dibujarla en curvas o usarla en la app hay que descargarla con permiso del autor; la exploración de los visuales generales quedó pendiente por el límite de uso.
+- **Documentación:** [Letra con identidad](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letra-con-identidad-2026-10-04/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — D-105
+
+- **Qué cambió:** se registró D-105, propuesta 3.6, y D-104 pasa a actualizada en parte.
+- **Cómo estaba antes:** la última decisión era D-104.
+- **Por qué:** el autor pidió arreglar el azul y diseñar el logotipo; después encontró feos los dibujados y pidió letras gratuitas con identidad, que no fueran una sans simple.
 
 ### 2026-10-03 — D-104
 

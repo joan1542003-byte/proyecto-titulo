@@ -86,6 +86,8 @@
 | 3 oct. | Corrección | Los afiches citaban textualmente palabras de usuario («Cuidar la casa y a mí») sin comunicar lo que se sabe; la serif no funciona; el marcador azul no puede estar en todas las piezas; usar colores que combinen (por ejemplo, verde neón con morado). | [Propuesta 3.4, «Las ganas estaban»](../10_recursos_visuales/31_las-ganas-estaban-2026-10-03.md): titulares con cifras de la encuesta, el principio de la señal y lo que hace Relevo; solo Schibsted Grotesk; el renglón azul solo en el logotipo y donde se escribe; seis pares de color con fotos en duotono. | D-102 |
 | 3 oct. | Corrección | Está mucho mejor, pero hay que saber cuándo usar los colores y cuándo no; aprender de diseño de interfaces, diseño y color. | [Cuándo va color](../10_recursos_visuales/32_cuando-va-color-2026-10-03.md) y versión 2 de la lámina de la 3.4: tres niveles según el momento (calma, presencia y señal), cinco papeles para el color, ideas de Preparar neutras, datos y portadas en el par de la marca, y tres pares cambiados para que ningún color tenga dos significados. | D-103 |
 | 3 oct. | Corrección | No usar siempre los colores ni abusar de ellos; un logotipo mejor, en una sans con carácter que le quede bien a Relevo; que los colores combinen todos entre sí (por ejemplo, el violeta con el bosque y la menta); no abusar del subrayado, ni siquiera como concepto. | [Propuesta 3.5, «El traspaso»](../10_recursos_visuales/33_el-traspaso-2026-10-03.md): la idea del testigo en vez del subrayado, logotipo en Familjen Grotesk con el gancho de la «l» tocando la «e», una familia de seis claros y cuatro profundos en que todo combina, la marca en azul y papel, y color pleno en 5 de 19 piezas. | D-104 |
+| 3 oct. | Corrección y orden | El azul de Relevo no combina con los otros colores: arreglarlo. Diseñar el logotipo uno mismo. Seguir explorando los visuales generales. | Azul nuevo `#1C3891`, con la luz de los profundos y algo más de croma. Cuatro logotipos dibujados en SVG y dos jueces (eligieron «el testigo»). La exploración de los visuales se cortó por el límite de uso. Registrado en la [propuesta 3.6](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md). | D-105 |
+| 4 oct. | Corrección | Los logotipos dibujados le parecen feos; explorar otras tipografías gratuitas, o con algún resquicio de licencia, más atractivas, con identidad y que no sean una sans simple. | [Propuesta 3.6, «Letra con identidad»](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md): 29 letras gratuitas de Fontshare y Google Fonts, seis en uso y tres tableros; recomendada Chubbo, con Calistoga y Fraunces Soft como alternativas; licencias explicadas. | D-105 |
 
 ## Lo que muestra el registro
 
@@ -96,6 +98,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letra con identidad
+
+- **Qué cambió:** se registraron el pedido del 3 de octubre sobre el azul y el logotipo, y el del 4 de octubre sobre las tipografías, con sus resultados.
+- **Cómo estaba antes:** el registro terminaba en la propuesta 3.5.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-03 — El traspaso
 

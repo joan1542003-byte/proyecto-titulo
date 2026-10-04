@@ -56,6 +56,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 31. [Las ganas estaban, propuesta 3.4](31_las-ganas-estaban-2026-10-03.md), su [lámina](las-ganas-estaban-2026-10-03/las-ganas-estaban.html) y sus [diecinueve piezas](las-ganas-estaban-2026-10-03/README.md): cada pieza dice algo que sabemos, con seis pares de color, fotos en duotono, solo Schibsted Grotesk y el renglón azul solo donde se escribe (D-102). Versión 2: [lámina](las-ganas-estaban-2026-10-03/las-ganas-estaban-v2.html).
 32. [Cuándo va color](32_cuando-va-color-2026-10-03.md): el color sube con el momento (calma, presencia y señal), cinco papeles para el color y tres pares cambiados para que ningún color tenga dos significados (D-103).
 33. [El traspaso, propuesta 3.5](33_el-traspaso-2026-10-03.md), su [lámina](el-traspaso-2026-10-03/el-traspaso.html) y sus [diecinueve piezas](el-traspaso-2026-10-03/README.md): la idea del testigo en vez del subrayado, el logotipo en Familjen Grotesk, una familia de colores en que todo combina y el color pleno en 5 de 19 piezas (D-104).
+34. [Letra con identidad, propuesta 3.6](34_letra-con-identidad-2026-10-04.md), su [lámina](letra-con-identidad-2026-10-04/letra-con-identidad.html) y sus [tableros](letra-con-identidad-2026-10-04/README.md): el azul nuevo `#1C3891` y 29 letras gratuitas con identidad para el logotipo; recomendada Chubbo (D-105).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -85,6 +86,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letra con identidad
+
+- **Qué cambió:** el índice suma el documento 34.
+- **Cómo estaba antes:** terminaba en el documento 33.
+- **Por qué:** el autor pidió arreglar el azul y diseñar el logotipo; después encontró feos los dibujados y pidió letras gratuitas con identidad, que no fueran una sans simple.
 
 ### 2026-10-03 — El traspaso
 
