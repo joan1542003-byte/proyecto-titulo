@@ -90,6 +90,7 @@
 | 4 oct. | Corrección | Los logotipos dibujados le parecen feos; explorar otras tipografías gratuitas, o con algún resquicio de licencia, más atractivas, con identidad y que no sean una sans simple. | [Propuesta 3.6, «Letra con identidad»](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md): 29 letras gratuitas de Fontshare y Google Fonts, seis en uso y tres tableros; recomendada Chubbo, con Calistoga y Fraunces Soft como alternativas; licencias explicadas. | D-105 |
 | 4 oct. | Corrección y orden | Continuar y explorar más tipografías; como es un proyecto de título que no sale a la venta, se pueden usar más licencias; no usar Google Fonts, al menos para el logotipo; explorar más, con una variedad de elecciones. | [Propuesta 3.7, «Letras para relevo»](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md): 176 letras de Pangram Pangram, Fontshare, Velvetyne y Collletttivo; dieciocho finalistas en cuatro familias con su autoría y licencia; una recomendación por familia. | D-106 |
 | 4 oct. | Orden y permiso | Tiene permiso para descargar lo que quiera, de las fuentes que quiera; explorar más. | Versión 2 de la [propuesta 3.7](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md): 84 archivos descargados de los enlaces de UNCUT, 88 letras nuevas (UNCUT y Open Foundry), doce finalistas nuevas y 264 letras en total. | D-106 |
+| 4 oct. | Encargo | Buscar más letras de tipo display y analizar cada una: verla y ver qué conceptos de Relevo le evoca. | [Propuesta 3.8, «Letras que dicen relevo»](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md) con su [lámina](https://claude.ai/artifact/C8C9apN8tayiAoPERJ9gxZ): 61 letras nuevas de cinco fuentes, 108 miradas en grande y catorce fichas de lectura con sus conceptos (cinco para el logotipo, tres para los momentos de señal y seis para carteles). | D-107 |
 
 ## Lo que muestra el registro
 
@@ -100,6 +101,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letras que dicen relevo
+
+- **Qué cambió:** se registró el pedido de buscar más letras de tipo display y analizarlas, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en el permiso de descargar y la versión 2 de la propuesta 3.7.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-04 — Letras para relevo, versión 2
 

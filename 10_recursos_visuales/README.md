@@ -58,6 +58,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 33. [El traspaso, propuesta 3.5](33_el-traspaso-2026-10-03.md), su [lámina](el-traspaso-2026-10-03/el-traspaso.html) y sus [diecinueve piezas](el-traspaso-2026-10-03/README.md): la idea del testigo en vez del subrayado, el logotipo en Familjen Grotesk, una familia de colores en que todo combina y el color pleno en 5 de 19 piezas (D-104).
 34. [Letra con identidad, propuesta 3.6](34_letra-con-identidad-2026-10-04.md), su [lámina](letra-con-identidad-2026-10-04/letra-con-identidad.html) y sus [tableros](letra-con-identidad-2026-10-04/README.md): el azul nuevo `#1C3891` y 29 letras gratuitas con identidad para el logotipo; recomendada Chubbo (D-105).
 35. [Letras para relevo, propuesta 3.7](35_letras-para-relevo-2026-10-04.md), su [lámina](letras-para-relevo-2026-10-04/letras-para-relevo.html) y sus [tableros](letras-para-relevo-2026-10-04/README.md): 176 letras de cuatro fuentes sin Google Fonts, dieciocho finalistas en cuatro familias y sus licencias (D-106). Versión 2: [lámina](letras-para-relevo-2026-10-04/letras-para-relevo-v2.html) con 30 finalistas entre 264 letras de seis fuentes.
+36. [Letras que dicen relevo, propuesta 3.8](36_letras-que-dicen-relevo-2026-10-04.md), su [lámina](letras-que-dicen-relevo-2026-10-04/letras-que-dicen-relevo.html) y sus [láminas de lectura](letras-que-dicen-relevo-2026-10-04/README.md): 61 letras nuevas de tipo display, 108 miradas en grande y catorce fichas que leen cada letra con los conceptos de Relevo (D-107).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -87,6 +88,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letras que dicen relevo
+
+- **Qué cambió:** el índice suma el documento 36 y la carpeta de la propuesta 3.8.
+- **Cómo estaba antes:** terminaba en el documento 35.
+- **Por qué:** el autor pidió buscar más letras de tipo display y analizarlas, viéndolas y leyendo qué conceptos de Relevo evocan.
 
 ### 2026-10-04 — Letras para relevo, versión 2
 

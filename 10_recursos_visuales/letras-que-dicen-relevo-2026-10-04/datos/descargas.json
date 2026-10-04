@@ -1,0 +1,518 @@
+{
+ "nota": "Archivos bajados el 4 de octubre de 2026 con permiso del autor. Se guardaron en una carpeta de trabajo fuera del repositorio; nada se instaló y no se usó ningún formulario. Los archivos de fuente no se incluyen.",
+ "zips_fundiciones": [
+  {
+   "id": "struggle",
+   "url": "https://klotter.supply/media/pages/works/struggle/733a719f1f-1718058700/struggle-1_0.zip"
+  },
+  {
+   "id": "manosque",
+   "url": "https://codeberg.org/ArielMartinPerez/Manosque/archive/master.zip"
+  },
+  {
+   "id": "ampoule",
+   "url": "https://codeberg.org/daytonamess/Ampoule/archive/master.zip"
+  },
+  {
+   "id": "luperca",
+   "url": "https://codeberg.org/ArielMartinPerez/Luperca/archive/main.zip"
+  },
+  {
+   "id": "canarina",
+   "url": "https://codeberg.org/ArielMartinPerez/Canarina/archive/master.zip"
+  },
+  {
+   "id": "azabache",
+   "url": "https://codeberg.org/ArielMartinPerez/azabache/archive/main.zip"
+  },
+  {
+   "id": "choso",
+   "url": "https://codeberg.org/ArielMartinPerez/Choso/archive/main.zip"
+  },
+  {
+   "id": "lobular",
+   "url": "https://codeberg.org/ArielMartinPerez/Lobular/archive/main.zip"
+  },
+  {
+   "id": "piscolabis",
+   "url": "https://codeberg.org/ArielMartinPerez/Piscolabis/archive/main.zip"
+  },
+  {
+   "id": "roubaix",
+   "url": "https://codeberg.org/ArielMartinPerez/RoubaixIndustrielle/archive/main.zip"
+  },
+  {
+   "id": "gtl001",
+   "url": "https://github.com/eliheuer/GTL001/archive/HEAD.zip"
+  },
+  {
+   "id": "chunk",
+   "url": "https://github.com/theleagueof/chunk/archive/HEAD.zip"
+  },
+  {
+   "id": "blackout",
+   "url": "https://github.com/theleagueof/blackout/archive/HEAD.zip"
+  },
+  {
+   "id": "the-neue-black",
+   "url": "https://github.com/theleagueof/the-neue-black/archive/HEAD.zip"
+  },
+  {
+   "id": "junction",
+   "url": "https://github.com/theleagueof/junction/archive/HEAD.zip"
+  },
+  {
+   "id": "league-mono",
+   "url": "https://github.com/theleagueof/league-mono/archive/HEAD.zip"
+  },
+  {
+   "id": "league-script",
+   "url": "https://github.com/theleagueof/league-script-number-one/archive/HEAD.zip"
+  },
+  {
+   "id": "patriot",
+   "url": "https://republi.sh/wp-content/uploads/2021/02/Patriot-v1.0-1.zip"
+  },
+  {
+   "id": "barber",
+   "url": "https://republi.sh/wp-content/uploads/2020/05/Barber-v2.0-1.zip"
+  },
+  {
+   "id": "danhda",
+   "url": "https://republi.sh/wp-content/uploads/2020/05/Danhda-v2.0-1.zip"
+  },
+  {
+   "id": "westgate",
+   "url": "https://republi.sh/wp-content/uploads/2020/05/Westgate-v2.0-1.zip"
+  }
+ ],
+ "zips_le75": [
+  {
+   "id": "acte",
+   "url": "https://typotheque.le75.be/site/assets/files/1028/acte.zip"
+  },
+  {
+   "id": "barlaxent",
+   "url": "https://typotheque.le75.be/site/assets/files/1034/barlaxent.zip"
+  },
+  {
+   "id": "barlow-typodesbois",
+   "url": "https://typotheque.le75.be/site/assets/files/1048/barlow-typodesbois.zip"
+  },
+  {
+   "id": "barlowfold",
+   "url": "https://typotheque.le75.be/site/assets/files/1053/barlowfold.zip"
+  },
+  {
+   "id": "briz",
+   "url": "https://typotheque.le75.be/site/assets/files/1056/briz.zip"
+  },
+  {
+   "id": "brutuswriter",
+   "url": "https://typotheque.le75.be/site/assets/files/1062/brutuswriter.zip"
+  },
+  {
+   "id": "cling",
+   "url": "https://typotheque.le75.be/site/assets/files/1064/cling.zip"
+  },
+  {
+   "id": "der75",
+   "url": "https://typotheque.le75.be/site/assets/files/1066/der75.zip"
+  },
+  {
+   "id": "ding-dong",
+   "url": "https://typotheque.le75.be/site/assets/files/1068/ding-dong.zip"
+  },
+  {
+   "id": "ductus",
+   "url": "https://typotheque.le75.be/site/assets/files/1070/ductus.zip"
+  },
+  {
+   "id": "elastic",
+   "url": "https://typotheque.le75.be/site/assets/files/1044/elastic.zip"
+  },
+  {
+   "id": "elemental",
+   "url": "https://typotheque.le75.be/site/assets/files/1072/elemental.zip"
+  },
+  {
+   "id": "ellipse",
+   "url": "https://typotheque.le75.be/site/assets/files/1074/ellipse.zip"
+  },
+  {
+   "id": "fourmi",
+   "url": "https://typotheque.le75.be/site/assets/files/1076/fourmi.zip"
+  },
+  {
+   "id": "frame",
+   "url": "https://typotheque.le75.be/site/assets/files/1080/frame.zip"
+  },
+  {
+   "id": "goozee",
+   "url": "https://typotheque.le75.be/site/assets/files/1083/goozee.zip"
+  },
+  {
+   "id": "goozette",
+   "url": "https://typotheque.le75.be/site/assets/files/1086/goozette.zip"
+  },
+  {
+   "id": "haslea",
+   "url": "https://typotheque.le75.be/site/assets/files/1087/haslea.zip"
+  },
+  {
+   "id": "infini",
+   "url": "https://typotheque.le75.be/site/assets/files/1029/infini.zip"
+  },
+  {
+   "id": "lacollective",
+   "url": "https://typotheque.le75.be/site/assets/files/1092/lacollective.zip"
+  },
+  {
+   "id": "linea",
+   "url": "https://typotheque.le75.be/site/assets/files/1101/linea.zip"
+  },
+  {
+   "id": "marion",
+   "url": "https://typotheque.le75.be/site/assets/files/1104/marion.zip"
+  },
+  {
+   "id": "metro-zine",
+   "url": "https://typotheque.le75.be/site/assets/files/1106/metro-zine.zip"
+  },
+  {
+   "id": "noloice",
+   "url": "https://typotheque.le75.be/site/assets/files/1108/noloice.zip"
+  },
+  {
+   "id": "onlytrue",
+   "url": "https://typotheque.le75.be/site/assets/files/1038/onlytrue.zip"
+  },
+  {
+   "id": "outata",
+   "url": "https://typotheque.le75.be/site/assets/files/1112/outata.zip"
+  },
+  {
+   "id": "panton",
+   "url": "https://typotheque.le75.be/site/assets/files/1117/panton.zip"
+  },
+  {
+   "id": "paradox",
+   "url": "https://typotheque.le75.be/site/assets/files/1120/paradox.zip"
+  },
+  {
+   "id": "parasitype",
+   "url": "https://typotheque.le75.be/site/assets/files/1126/parasitype.zip"
+  },
+  {
+   "id": "punctata",
+   "url": "https://typotheque.le75.be/site/assets/files/1131/punctata.zip"
+  },
+  {
+   "id": "rami",
+   "url": "https://typotheque.le75.be/site/assets/files/1133/rami.zip"
+  },
+  {
+   "id": "revival",
+   "url": "https://typotheque.le75.be/site/assets/files/1134/revival.zip"
+  },
+  {
+   "id": "scorpius",
+   "url": "https://typotheque.le75.be/site/assets/files/1136/scorpius.zip"
+  },
+  {
+   "id": "simple",
+   "url": "https://typotheque.le75.be/site/assets/files/1139/simple.zip"
+  },
+  {
+   "id": "spacenotoriousrounded",
+   "url": "https://typotheque.le75.be/site/assets/files/1146/spacenotoriousrounded.zip"
+  },
+  {
+   "id": "stairs",
+   "url": "https://typotheque.le75.be/site/assets/files/1141/stairs.zip"
+  },
+  {
+   "id": "super-clip",
+   "url": "https://typotheque.le75.be/site/assets/files/1143/super-clip.zip"
+  },
+  {
+   "id": "supernotoriousdot",
+   "url": "https://typotheque.le75.be/site/assets/files/1144/supernotoriousdot.zip"
+  },
+  {
+   "id": "supernotorioustordue",
+   "url": "https://typotheque.le75.be/site/assets/files/1149/supernotorioustordue.zip"
+  },
+  {
+   "id": "thalsa",
+   "url": "https://typotheque.le75.be/site/assets/files/1151/thalsa.zip"
+  },
+  {
+   "id": "touillette",
+   "url": "https://typotheque.le75.be/site/assets/files/1152/touillette.zip"
+  },
+  {
+   "id": "wavy",
+   "url": "https://typotheque.le75.be/site/assets/files/1155/wavy.zip"
+  },
+  {
+   "id": "yunik",
+   "url": "https://typotheque.le75.be/site/assets/files/1157/yunik.zip"
+  }
+ ],
+ "zips_collletttivo": [
+  {
+   "id": "apfel-grotezk",
+   "url": "https://github.com/Collletttivo/apfel-grotezk/archive/HEAD.zip"
+  },
+  {
+   "id": "borges",
+   "url": "https://github.com/Collletttivo/borges/archive/HEAD.zip"
+  }
+ ],
+ "archivos_web": [
+  {
+   "id": "ouroboros",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1367/ouroboros-regular.woff2",
+   "bytes": 89756
+  },
+  {
+   "id": "pilowlava",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1380/pilowlava-atome.woff2",
+   "bytes": 33624
+  },
+  {
+   "id": "hyper-scrypt",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1319/hyperscrypt-stencil.woff2",
+   "bytes": 22272
+  },
+  {
+   "id": "mourier",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1209/mourier-regular.woff2",
+   "bytes": 14300
+  },
+  {
+   "id": "kaeru-kaeru",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1855/kaerukaeru-regular.woff2",
+   "bytes": 37840
+  },
+  {
+   "id": "typefesse",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/2046/typefesse-claire-obscure.woff2",
+   "bytes": 23856
+  },
+  {
+   "id": "combat",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1189/combat.woff2",
+   "bytes": 12732
+  },
+  {
+   "id": "trickster",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1318/trickster-regular.woff2",
+   "bytes": 29580
+  },
+  {
+   "id": "karrik",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/2125/karrik-regular.woff2",
+   "bytes": 31180
+  },
+  {
+   "id": "kihim",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/KOGNLTCKMHYTVPJIEQEW4B7BPUKAQGXM/XLAHRPYFN6ZW2PAIAUG3R33QFYFJN5QB/4TN7YRXJ3XQYLUTKR4IXYSO62CQLPOJO.woff2",
+   "bytes": 13444
+  },
+  {
+   "id": "sharpie",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/LCVGQ32RKOGWKQCVQA4FSUCLBTK7B4OO/SRMMO5FG7SLD73FT36IHBHOVAWDIUB4T/FZPYHU7WM7VKJ2XCLFZEY4VBQYEXEWMU.woff2",
+   "bytes": 17056
+  },
+  {
+   "id": "kola",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/ZVVL6RG6PSMH6O534V2MWEFOHRYXBL6J/XHV4FSH2UVPBH3PWOMYXVOQDVZ5EQXN3/5VPG7YAKNROIGJQ6H545Q24EY5YGPGDT.woff2",
+   "bytes": 16008
+  },
+  {
+   "id": "segment",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/VZF4NDVQCSRS7EZER7OOWF4WF2ELJH3U/ISIH5XZT5TGQI5UT6U7JDNNKRM6ZQU3X/PUEYM6L6KPQBGIMX4UCVI5GTMQ6PFHBC.woff2",
+   "bytes": 13160
+  },
+  {
+   "id": "stardom",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/55LJGATMQKPK2BTD7N2IXUHALPWNZDNS/GHNSWJKY6KQGQZNHIGVGKP3PVRORBVBW/NPPNOUBFWCNOP7IJUAHBBDRSDI2ZAE7F.woff2",
+   "bytes": 20204
+  },
+  {
+   "id": "zina",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/ISV4T7NRO2A2F4YM5VCIX27QNDV66Z4B/I2MS2JTVRVRZ7CN2X6H2QU4VXFBDTBYG/EL76ZS7AY22ALJEBHCNRLQSR7UA6S5NG.woff2",
+   "bytes": 23736
+  },
+  {
+   "id": "styro",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/CWKPUDBRGX3252FB35ARFNVCDEKOWYGK/IBUZE3D5RYJL7SKLLKFROJ35635HXPJU/Z6QLXDN2S4CI5NGJCKGFPF3SDLBEDHIN.woff2",
+   "bytes": 13236
+  },
+  {
+   "id": "backout",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1163/backout.woff2",
+   "bytes": 41696
+  },
+  {
+   "id": "basteleur",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/2229/basteleur-bold.woff2",
+   "bytes": 55148
+  },
+  {
+   "id": "facade",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/2297/facade-sud.woff2",
+   "bytes": 12200
+  },
+  {
+   "id": "picnic",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/2333/picnic-regular.woff2",
+   "bytes": 71032
+  },
+  {
+   "id": "gulax",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1187/gulax-regular.woff2",
+   "bytes": 18084
+  },
+  {
+   "id": "outward",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1360/outward-round.woff2",
+   "bytes": 20268
+  },
+  {
+   "id": "resistance",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1218/resistance_generale.woff2",
+   "bytes": 10360
+  },
+  {
+   "id": "steps-mono",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1171/steps-mono-thin.woff2",
+   "bytes": 8984
+  },
+  {
+   "id": "lithops",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/2349/lithops-regular.woff2",
+   "bytes": 133616
+  },
+  {
+   "id": "ouvrieres",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/4307/ouvrieres-affamees.woff2",
+   "bytes": 122748
+  },
+  {
+   "id": "boxing",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/3TCCMEW7OSY4MORIBO6XAVNRHGH2GCNO/M4CQ6LURAV5JJNQN553ONEN4JC5LOWC4/TBVH46IPDALW6CXZUYYWHJP7BV43WVVF.woff2",
+   "bytes": 20048
+  },
+  {
+   "id": "striper",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/3PWNWRPUUTSC5E7Q6IBGLDOPGFXW4A26/WWHLMMAKXUGIHYF7AD6WYVBFUX6SSIBP/SKVWXOS7RATPO64GYZYFTJRULHWGCXTJ.woff2",
+   "bytes": 40408
+  },
+  {
+   "id": "bevellier",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/E4JZ72VW5JMNXFWZQ4GQHE742ZSXHX2S/C5T5WYKWULYZPODDWCN7GXV2SM3QYF6B/UUUYL7NICBKOYXYVF7G3X2EN6Q2VP3KA.woff2",
+   "bytes": 21536
+  },
+  {
+   "id": "nippo",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/AFAHDMOVBCROSSGE5GOSMLJMR75FYHZP/MX7VPGBDFGT7ERCST2IAA4LH5KO7BZNK/B3C3BZREKEN22Q6DYVZUXV3W4RJM63VW.woff2",
+   "bytes": 14880
+  },
+  {
+   "id": "chubbo",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/6QFCPK4POVX7C5YUOWPEMZYSINZRB3QX/67EZ6JMMWBZNY5UVHM762OFNZFZNQOYH/SXM42C3P3F7WF4EN4MWPKHQ46R5YFZZB.woff2",
+   "bytes": 24428
+  },
+  {
+   "id": "melodrama",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/FMIFUSZQKVN6G2NCRCXK5TPTKXYXKKL4/O66D3TBMFNXSQZEQQPR3PJJVE3NRVCMA/DNLDXNUKJAOEZM6YJM654QGAZ3EXZIXD.woff2",
+   "bytes": 22148
+  },
+  {
+   "id": "clash-display",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/FPDAZ2S6SW4QMSRIIKNNGTPM6VIXYMKO/5HNPQ453FRLIQWV2FNOBUU3FKTDZQVSG/Z3MGHFHX6DCTLQ55LJYRJ5MDCZPMFZU6.woff2",
+   "bytes": 15284
+  },
+  {
+   "id": "aktura",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/NIVDH3M5EHMOFQLFSO44DGIVRSURZ2LO/UBHE7HWG6SMKX5EOD4TITKPDUJOMJVMC/UI4W6M6UVXNFLVDCI5G55QMMEE26RWQZ.woff2",
+   "bytes": 31468
+  },
+  {
+   "id": "tanker",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/ATKS7EHYU4PKFTXRA4UFAHPY7XS75QMY/OYTCFLQCR7FVKK7FIO7TCJPY4YG22I3S/GKSURDSYOFIC3Y6F5SMWSENDSAB2YMKC.woff2",
+   "bytes": 19236
+  },
+  {
+   "id": "technor",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/RZYHTNGMAM277HHQBAANMAMZAK2RASOJ/ZMFNEW255W5MH35ANX3VS4OA2VGPLJ6V/MRUFJCB2XBGJKEWAZRVXWUXXFT2Z7TDZ.woff2",
+   "bytes": 14284
+  },
+  {
+   "id": "bespoke-stencil",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/STKNIVBLCHAONBJW3CS4KMML2XQDCCP7/XGOBRRCQANN3KGW3SBO735X76YXOMLJ7/FWAZTX4NTMBFWRMB3QRA6OPAOQS3SOQ6.woff2",
+   "bytes": 21816
+  },
+  {
+   "id": "array",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/UPIFVAOR6LZHAYRMF2C77WE3FN5BLNEC/INIDOMS2AGMFQXDWKOC6LOTPXKPZEIHL/2RWR7WKM4ZCDU656OKUXMQXLJH4H3EJD.woff2",
+   "bytes": 32148
+  },
+  {
+   "id": "kohinoor-zerone-200",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/XO4L453LHZTMSNUMDM7PYVUP3VT4GM4L/4EM4BB7RQTOVX4WMCXUH6R5DOI254JLC/KVWGWMDVVFLN3GN3CUDYNPV5WNWUHWWN.woff2"
+  },
+  {
+   "id": "kohinoor-zerone-100",
+   "fuente": "Fontshare",
+   "url": "https://cdn.fontshare.com/wf/FYTORTFNJYZ4FNJD7NT5U4ZRCAVXETBN/H7YFJAFB4LLKSA2ZYKRC3LFGCB544MJU/RLKOV6TPYE6YAESCXJJKCU6UGPO5NWQS.woff2"
+  },
+  {
+   "id": "pilowlava-regular",
+   "fuente": "Velvetyne",
+   "url": "https://velvetyne.fr/site/assets/files/1380/pilowlava-regular.woff2"
+  }
+ ]
+}

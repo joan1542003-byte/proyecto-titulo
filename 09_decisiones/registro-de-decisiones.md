@@ -1224,7 +1224,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-106 — Letras para relevo (propuesta 3.7)
 
 - **Fecha:** 2026-10-04.
-- **Estado:** propuesta; amplía la búsqueda de la letra del logotipo de D-105. No cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta; amplía la búsqueda de la letra del logotipo de D-105. No cambia todavía la app ni el sistema publicado. La lectura por conceptos de las letras display sigue en D-107.
 - **Pedido del autor:** explorar más tipografías; como es un proyecto de título que no sale a la venta, usar más licencias; no usar Google Fonts, al menos en el logotipo; una variedad de elecciones.
 - **Propuesta:**
   - **Búsqueda:** 176 letras de cuatro fuentes: Pangram Pangram (60, «gratis para probar»), Fontshare (59, ITF Free Font License 2.0), Velvetyne (41, OFL) y Collletttivo (16, OFL). Cada una se probó escribiendo «relevo» dentro de la página de su fundición; no se descargó ningún archivo de fuente.
@@ -1237,7 +1237,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** logotipos compuestos con la letra tal cual; sin pruebas en la app ni con personas; para ajustar y dibujar el logotipo hay que descargar los archivos de la letra elegida (el autor ya autorizó descargar).
 - **Documentación:** [Letras para relevo](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letras-para-relevo-2026-10-04/README.md).
 
+## D-107 — Letras que dicen relevo (propuesta 3.8)
+
+- **Fecha:** 2026-10-04.
+- **Estado:** propuesta; continúa D-106 con letras de tipo display y una lectura por conceptos. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** buscar más letras, de tipo display, y analizarlas: verlas y ver qué conceptos de Relevo le evocan.
+- **Propuesta:**
+  - **Búsqueda:** 61 letras nuevas de cinco fuentes (Le75, Tunera, Republish, The League of Moveable Type y Klotter Supply); el total llega a 325. Se miraron 108 en grande, con la palabra a tamaño de cartel, en mayúsculas, con la firma y los acentos.
+  - **Lectura:** siete conceptos de Relevo (testigo, traspaso, lugar, señal, volver, calma y pausa), cada uno con el rasgo que se busca en la letra. Se aplican después de los filtros del autor: minúsculas propias, acentos del español, nada de letra a mano y, en los titulares, nada de serif.
+  - **Catorce fichas:** para el logotipo, Struggle, Bespoke Stencil, Manosque, Kola y Ouroboros; para los momentos de señal, Striper, Ampoule y Linea; para carteles, Hyper Scrypt, Pilowlava, Westgate, Patriot, Blackout y Roubaix Industrielle.
+  - **Lectura de diseño:** para el logotipo, el voto va a Struggle y a Kola; para el aviso, a Ampoule. Ouroboros cuenta el «vuelve», pero es serif; Bespoke Stencil es la más calmada.
+- **Fundamento:** Brumberger (2003), Henderson et al. (2004), Kulahcioglu y de Melo (2018), Bar y Neta (2006) y Doyle y Bottomley (2006): los rasgos de una letra comunican una personalidad y importa que encaje con lo que representa. Ninguno dice qué letra comunica «relevo», así que la lectura es una hipótesis. Autorías y licencias, según la página de cada letra.
+- **Alternativas:** las finalistas de D-106; los logotipos dibujados, ya descartados.
+- **Límites:** letras compuestas tal cual, sin probar en la app ni con personas; cada letra se vio en un solo estilo; Le75 declara GNU/GPL sin el texto en los zips; Westgate y Patriot se declaran OFL en la página de Republish.
+- **Documentación:** [Letras que dicen relevo](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letras-que-dicen-relevo-2026-10-04/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — D-107
+
+- **Qué cambió:** se registró D-107, propuesta 3.8, y D-106 sigue vigente con su lectura por conceptos.
+- **Cómo estaba antes:** la última decisión era D-106.
+- **Por qué:** el autor pidió buscar más letras de tipo display y analizarlas, viéndolas y leyendo qué conceptos de Relevo evocan.
 
 ### 2026-10-04 — D-106, versión 2
 

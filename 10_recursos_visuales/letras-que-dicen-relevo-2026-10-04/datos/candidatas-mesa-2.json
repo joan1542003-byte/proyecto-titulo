@@ -1,0 +1,506 @@
+[
+ {
+  "k": "l75:acte",
+  "nombre": "acte",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 101
+ },
+ {
+  "k": "l75:elastic",
+  "nombre": "elastic",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 102
+ },
+ {
+  "k": "l75:infini",
+  "nombre": "infini",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 103
+ },
+ {
+  "k": "l75:onlytrue",
+  "nombre": "onlytrue",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 104
+ },
+ {
+  "k": "l75:rami",
+  "nombre": "rami",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 105
+ },
+ {
+  "k": "l75:metro-zine",
+  "nombre": "metro-zine",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 106
+ },
+ {
+  "k": "l75:ding-dong",
+  "nombre": "ding-dong",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 107
+ },
+ {
+  "k": "l75:ellipse",
+  "nombre": "ellipse",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 108
+ },
+ {
+  "k": "l75:elemental",
+  "nombre": "elemental",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 109
+ },
+ {
+  "k": "l75:haslea",
+  "nombre": "haslea",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 110
+ },
+ {
+  "k": "l75:supernotoriousdot",
+  "nombre": "supernotoriousdot",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 111
+ },
+ {
+  "k": "l75:spacenotoriousrounded",
+  "nombre": "spacenotoriousrounded",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 112
+ },
+ {
+  "k": "l75:super-clip",
+  "nombre": "super-clip",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 113
+ },
+ {
+  "k": "l75:parasitype",
+  "nombre": "parasitype",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 114
+ },
+ {
+  "k": "l75:punctata",
+  "nombre": "punctata",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 115
+ },
+ {
+  "k": "l75:thalsa",
+  "nombre": "thalsa",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 116
+ },
+ {
+  "k": "l75:frame",
+  "nombre": "frame",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 117
+ },
+ {
+  "k": "l75:simple",
+  "nombre": "simple",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 118
+ },
+ {
+  "k": "l75:barlowfold",
+  "nombre": "barlowfold",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 119
+ },
+ {
+  "k": "l75:paradox",
+  "nombre": "paradox",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 120
+ },
+ {
+  "k": "l75:outata",
+  "nombre": "outata",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 121
+ },
+ {
+  "k": "l75:yunik",
+  "nombre": "yunik",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 122
+ },
+ {
+  "k": "l75:scorpius",
+  "nombre": "scorpius",
+  "origen": "Le75",
+  "variable": false,
+  "peso": 400,
+  "n": 123
+ },
+ {
+  "k": "un:granturismo",
+  "nombre": "Granturismo",
+  "origen": "UNCUT",
+  "variable": true,
+  "peso": 700,
+  "n": 124
+ },
+ {
+  "k": "un:giphurs",
+  "nombre": "Giphurs",
+  "origen": "UNCUT",
+  "variable": true,
+  "peso": 700,
+  "n": 125
+ },
+ {
+  "k": "un:blocks-on-blocks",
+  "nombre": "Blocks on Blocks",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 126
+ },
+ {
+  "k": "un:frick",
+  "nombre": "Frick",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 127
+ },
+ {
+  "k": "un:sunday-masthead",
+  "nombre": "Sunday Masthead",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 128
+ },
+ {
+  "k": "un:kulture-type",
+  "nombre": "Kultüre",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 129
+ },
+ {
+  "k": "un:milkman",
+  "nombre": "Milkman",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 130
+ },
+ {
+  "k": "un:imogen",
+  "nombre": "Imogen",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 131
+ },
+ {
+  "k": "un:fibel-nord",
+  "nombre": "Fibel Nord",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 132
+ },
+ {
+  "k": "un:zarathustra",
+  "nombre": "Zarathustra",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 133
+ },
+ {
+  "k": "un:cat-eckmann",
+  "nombre": "CAT Eckmann",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 134
+ },
+ {
+  "k": "un:heming",
+  "nombre": "Heming",
+  "origen": "UNCUT",
+  "variable": true,
+  "peso": 700,
+  "n": 135
+ },
+ {
+  "k": "un:garamon-d-t",
+  "nombre": "Garamon(d/t)",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 136
+ },
+ {
+  "k": "un:swansea",
+  "nombre": "Swansea",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 137
+ },
+ {
+  "k": "un:milford",
+  "nombre": "Milford",
+  "origen": "UNCUT",
+  "variable": false,
+  "peso": 400,
+  "n": 138
+ },
+ {
+  "k": "vw:backout",
+  "nombre": "Backout",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 139
+ },
+ {
+  "k": "vw:basteleur",
+  "nombre": "Basteleur",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 140
+ },
+ {
+  "k": "vw:facade",
+  "nombre": "Façade",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 141
+ },
+ {
+  "k": "vw:picnic",
+  "nombre": "Picnic",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 142
+ },
+ {
+  "k": "vw:gulax",
+  "nombre": "Gulax",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 143
+ },
+ {
+  "k": "vw:outward",
+  "nombre": "Outward",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 144
+ },
+ {
+  "k": "vw:resistance",
+  "nombre": "Resistance",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 145
+ },
+ {
+  "k": "vw:steps-mono",
+  "nombre": "Steps Mono",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 146
+ },
+ {
+  "k": "vw:lithops",
+  "nombre": "Lithops",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 147
+ },
+ {
+  "k": "vw:ouvrieres",
+  "nombre": "Ouvrières",
+  "origen": "Velvetyne",
+  "variable": false,
+  "peso": 400,
+  "n": 148
+ },
+ {
+  "k": "fk:boxing",
+  "nombre": "Boxing",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 149
+ },
+ {
+  "k": "fk:striper",
+  "nombre": "Striper",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 150
+ },
+ {
+  "k": "fk:bevellier",
+  "nombre": "Bevellier",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 151
+ },
+ {
+  "k": "fk:nippo",
+  "nombre": "Nippo",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 152
+ },
+ {
+  "k": "fk:styro",
+  "nombre": "Styro",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 153
+ },
+ {
+  "k": "fk:chubbo",
+  "nombre": "Chubbo",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 154
+ },
+ {
+  "k": "fk:melodrama",
+  "nombre": "Melodrama",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 155
+ },
+ {
+  "k": "fk:clash-display",
+  "nombre": "Clash Display",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 156
+ },
+ {
+  "k": "fk:aktura",
+  "nombre": "Aktura",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 157
+ },
+ {
+  "k": "fk:tanker",
+  "nombre": "Tanker",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 158
+ },
+ {
+  "k": "fk:technor",
+  "nombre": "Technor",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 159
+ },
+ {
+  "k": "fk:bespoke-stencil",
+  "nombre": "Bespoke Stencil",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 160
+ },
+ {
+  "k": "fk:array",
+  "nombre": "Array",
+  "origen": "Fontshare",
+  "variable": false,
+  "peso": 400,
+  "n": 161
+ },
+ {
+  "k": "cl:apfel",
+  "nombre": "Apfel Grotezk",
+  "origen": "Collletttivo",
+  "variable": false,
+  "peso": 400,
+  "n": 162
+ },
+ {
+  "k": "cl:borges",
+  "nombre": "Borges",
+  "origen": "Collletttivo",
+  "variable": false,
+  "peso": 400,
+  "n": 163
+ }
+]

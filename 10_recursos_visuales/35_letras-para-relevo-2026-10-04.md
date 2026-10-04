@@ -1,6 +1,6 @@
 # Letras para relevo: propuesta 3.7
 
-**Fecha:** 4 de octubre de 2026. **Estado:** propuesta D-106. Amplía la búsqueda de la letra del logotipo de la [propuesta 3.6](34_letra-con-identidad-2026-10-04.md) (D-105), que recomendaba Chubbo con Calistoga y Fraunces Soft; el autor pidió más variedad y descartó Google Fonts para el logotipo. Mantiene el azul `#1C3891` y todo lo demás de la 3.6. No cambia todavía la app ni el sistema publicado. Su versión 2 suma una segunda ronda con descargas, de UNCUT y Open Foundry. **Dónde está:**
+**Fecha:** 4 de octubre de 2026. **Estado:** propuesta D-106. Amplía la búsqueda de la letra del logotipo de la [propuesta 3.6](34_letra-con-identidad-2026-10-04.md) (D-105), que recomendaba Chubbo con Calistoga y Fraunces Soft; el autor pidió más variedad y descartó Google Fonts para el logotipo. Mantiene el azul `#1C3891` y todo lo demás de la 3.6. No cambia todavía la app ni el sistema publicado. Su versión 2 suma una segunda ronda con descargas, de UNCUT y Open Foundry. La [propuesta 3.8](36_letras-que-dicen-relevo-2026-10-04.md) (D-107) sigue con letras de tipo display y una lectura por conceptos. **Dónde está:**
 
 - Lámina publicada en claude.ai: [Letras para relevo](https://claude.ai/artifact/R9eHYeUaWooRcPjXqvC2B6) (privada del autor).
 - Copia en el repositorio: [`letras-para-relevo-2026-10-04/`](letras-para-relevo-2026-10-04/letras-para-relevo.html), con los 18 tableros, las cinco hojas con las 176 letras y los generadores.
@@ -144,6 +144,12 @@ Pangram Pangram Foundry. (2025). *Frequently asked questions*. https://pangrampa
 Velvetyne. (s. f.). *Fonts*. https://velvetyne.fr/fonts/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Enlace a la propuesta 3.8
+
+- **Qué cambió:** el encabezado enlaza la propuesta 3.8.
+- **Cómo estaba antes:** terminaba en la versión 2.
+- **Por qué:** el autor pidió buscar más letras de tipo display y analizarlas, viéndolas y leyendo qué conceptos de Relevo evocan.
 
 ### 2026-10-04 — Versión 2
 

@@ -1,0 +1,407 @@
+[
+ {
+  "k": "nw:struggle",
+  "nombre": "Struggle",
+  "origen": "Klotter Supply",
+  "grupo": "Pastilla",
+  "variable": false,
+  "peso": 400,
+  "n": 1
+ },
+ {
+  "k": "nw:lobular",
+  "nombre": "Lobular",
+  "origen": "Tunera",
+  "grupo": "Pastilla",
+  "variable": false,
+  "peso": 400,
+  "n": 2
+ },
+ {
+  "k": "vw:pilowlava",
+  "nombre": "Pilowlava",
+  "origen": "Velvetyne",
+  "grupo": "Pastilla",
+  "variable": false,
+  "peso": 400,
+  "n": 3
+ },
+ {
+  "k": "vw:combat",
+  "nombre": "Combat",
+  "origen": "Velvetyne",
+  "grupo": "Pastilla",
+  "variable": false,
+  "peso": 400,
+  "n": 4
+ },
+ {
+  "k": "l75:touillette",
+  "nombre": "Touillette",
+  "origen": "Le75",
+  "grupo": "Pastilla",
+  "variable": false,
+  "peso": 400,
+  "n": 5
+ },
+ {
+  "k": "l75:revival",
+  "nombre": "Revival",
+  "origen": "Le75",
+  "grupo": "Pastilla",
+  "variable": false,
+  "peso": 400,
+  "n": 6
+ },
+ {
+  "k": "vw:mourier",
+  "nombre": "Mourier",
+  "origen": "Velvetyne",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 7
+ },
+ {
+  "k": "vw:hyper-scrypt",
+  "nombre": "Hyper Scrypt",
+  "origen": "Velvetyne",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 8
+ },
+ {
+  "k": "fk:kohinoor-zerone-200",
+  "nombre": "Kohinoor Zerone",
+  "origen": "Fontshare",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 9
+ },
+ {
+  "k": "fk:sharpie",
+  "nombre": "Sharpie",
+  "origen": "Fontshare",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 10
+ },
+ {
+  "k": "nw:azabache",
+  "nombre": "Azabache",
+  "origen": "Tunera",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 11
+ },
+ {
+  "k": "l75:lacollective",
+  "nombre": "Lacollective",
+  "origen": "Le75",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 12
+ },
+ {
+  "k": "l75:ductus",
+  "nombre": "Ductus",
+  "origen": "Le75",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 13
+ },
+ {
+  "k": "vw:trickster",
+  "nombre": "Trickster",
+  "origen": "Velvetyne",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 14
+ },
+ {
+  "k": "vw:typefesse",
+  "nombre": "Typefesse",
+  "origen": "Velvetyne",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 15
+ },
+ {
+  "k": "l75:marion",
+  "nombre": "Marion",
+  "origen": "Le75",
+  "grupo": "Traspaso",
+  "variable": false,
+  "peso": 400,
+  "n": 16
+ },
+ {
+  "k": "nw:manosque",
+  "nombre": "Manosque",
+  "origen": "Tunera",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 17
+ },
+ {
+  "k": "nw:patriot",
+  "nombre": "Patriot",
+  "origen": "Republish",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 18
+ },
+ {
+  "k": "nw:barber",
+  "nombre": "Barber",
+  "origen": "Republish",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 19
+ },
+ {
+  "k": "nw:westgate",
+  "nombre": "Westgate",
+  "origen": "Republish",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 20
+ },
+ {
+  "k": "nw:danhda",
+  "nombre": "Danhda",
+  "origen": "Republish",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 21
+ },
+ {
+  "k": "nw:blackout",
+  "nombre": "Blackout",
+  "origen": "The League of Moveable Type",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 22
+ },
+ {
+  "k": "nw:chunk",
+  "nombre": "Chunk",
+  "origen": "The League of Moveable Type",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 23
+ },
+ {
+  "k": "nw:choso",
+  "nombre": "Choso",
+  "origen": "Tunera",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 24
+ },
+ {
+  "k": "nw:roubaix",
+  "nombre": "Roubaix Industrielle",
+  "origen": "Tunera",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 25
+ },
+ {
+  "k": "un:cat-neuzeit",
+  "nombre": "CAT Neuzeit",
+  "origen": "UNCUT",
+  "grupo": "Lugar",
+  "variable": false,
+  "peso": 400,
+  "n": 26
+ },
+ {
+  "k": "nw:ampoule",
+  "nombre": "Ampoule",
+  "origen": "Tunera",
+  "grupo": "Señal",
+  "variable": true,
+  "peso": 700,
+  "n": 27
+ },
+ {
+  "k": "un:phosphene",
+  "nombre": "Phosphène",
+  "origen": "UNCUT",
+  "grupo": "Señal",
+  "variable": false,
+  "peso": 400,
+  "n": 28
+ },
+ {
+  "k": "l75:linea",
+  "nombre": "Linea",
+  "origen": "Le75",
+  "grupo": "Señal",
+  "variable": false,
+  "peso": 400,
+  "n": 29
+ },
+ {
+  "k": "l75:wavy",
+  "nombre": "Wavy",
+  "origen": "Le75",
+  "grupo": "Señal",
+  "variable": false,
+  "peso": 400,
+  "n": 30
+ },
+ {
+  "k": "fk:segment",
+  "nombre": "Segment",
+  "origen": "Fontshare",
+  "grupo": "Señal",
+  "variable": false,
+  "peso": 400,
+  "n": 31
+ },
+ {
+  "k": "fk:kola",
+  "nombre": "Kola",
+  "origen": "Fontshare",
+  "grupo": "Señal",
+  "variable": false,
+  "peso": 400,
+  "n": 32
+ },
+ {
+  "k": "un:hikaru-mono",
+  "nombre": "Hikaru Mono",
+  "origen": "UNCUT",
+  "grupo": "Señal",
+  "variable": false,
+  "peso": 400,
+  "n": 33
+ },
+ {
+  "k": "vw:ouroboros",
+  "nombre": "Ouroboros",
+  "origen": "Velvetyne",
+  "grupo": "Volver",
+  "variable": false,
+  "peso": 400,
+  "n": 34
+ },
+ {
+  "k": "vw:kaeru-kaeru",
+  "nombre": "Kaeru Kaeru",
+  "origen": "Velvetyne",
+  "grupo": "Volver",
+  "variable": false,
+  "peso": 400,
+  "n": 35
+ },
+ {
+  "k": "un:cambrian",
+  "nombre": "Cambrian",
+  "origen": "UNCUT",
+  "grupo": "Volver",
+  "variable": false,
+  "peso": 400,
+  "n": 36
+ },
+ {
+  "k": "un:saint",
+  "nombre": "Saint",
+  "origen": "UNCUT",
+  "grupo": "Volver",
+  "variable": false,
+  "peso": 400,
+  "n": 37
+ },
+ {
+  "k": "fk:kihim",
+  "nombre": "Kihim",
+  "origen": "Fontshare",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 38
+ },
+ {
+  "k": "vw:karrik",
+  "nombre": "Karrik",
+  "origen": "Velvetyne",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 39
+ },
+ {
+  "k": "un:destra",
+  "nombre": "Destra",
+  "origen": "UNCUT",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 40
+ },
+ {
+  "k": "un:nultien",
+  "nombre": "NulTien",
+  "origen": "UNCUT",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 41
+ },
+ {
+  "k": "un:escapist-diaries",
+  "nombre": "Escapist Diaries",
+  "origen": "UNCUT",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 42
+ },
+ {
+  "k": "l75:stairs",
+  "nombre": "Stairs",
+  "origen": "Le75",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 43
+ },
+ {
+  "k": "fk:zina",
+  "nombre": "Zina",
+  "origen": "Fontshare",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 44
+ },
+ {
+  "k": "fk:stardom",
+  "nombre": "Stardom",
+  "origen": "Fontshare",
+  "grupo": "Avance",
+  "variable": false,
+  "peso": 400,
+  "n": 45
+ }
+]
