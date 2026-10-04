@@ -16,7 +16,7 @@
 - **Licencias verificadas en su fuente:** Claude leyó la ITF Free Font License 2.0 de Fontshare (permite crear logotipos y registrarlos como marca) y las preguntas frecuentes de Pangram Pangram (gratis solo para uso personal y proyectos escolares; un logotipo de empresa requiere licencia pagada).
 - **Letras compuestas, no descargadas:** las 29 letras se compusieron con las hojas de estilo públicas de Fontshare y Google Fonts en Chrome sin ventana. No se descargó ningún archivo de fuente.
 - **Probadas en su propia página:** para la 3.7, cada letra de Pangram Pangram, Velvetyne y Collletttivo se probó escribiendo «relevo» dentro de la página de su fundición, que ya carga la fuente para su probador; no se descargó ningún archivo. La de Fontshare se probó con su hoja de estilo pública.
-- **Credenciales verificadas:** la autoría de las dieciocho y la licencia de cada fuente se leyeron en las páginas de cada una (Pangram Pangram exige comprar licencia para un logotipo real).
+- **Autorías verificadas:** la autoría de las dieciocho y la licencia de cada fuente se leyeron en las páginas de cada una (Pangram Pangram exige comprar licencia para un logotipo real).
 - **De la amplitud a la decisión:** primero las 29 letras en una grilla, después seis en usos reales con el azul nuevo y la familia de colores, y al final tableros completos de tres.
 
 ## 3. Qué se comprobó y qué no
@@ -40,6 +40,12 @@
 - Retomar la exploración de los visuales generales (composición, fotografía, app, movimiento y objeto), que el 3 de octubre se cortó por el límite de uso.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Corrección de un término
+
+- **Qué cambió:** «Credenciales verificadas» pasa a «Autorías verificadas».
+- **Cómo estaba antes:** el término decía credenciales, que no es lo que se verificó.
+- **Por qué:** lo verificado fueron las autorías y las licencias de las letras.
 
 ### 2026-10-04 — Letras para relevo
 
