@@ -11,7 +11,8 @@
 | Propuesta 3.6, «Letra con identidad» | El autor descartó los logotipos dibujados. Se buscaron 29 letras gratuitas con identidad y se recomendó Chubbo, con Calistoga y Fraunces Soft como alternativas. El azul pasa a `#1C3891`. [Lámina](https://claude.ai/artifact/XPgDvNQEcgjZ1nnTWX3GXS) y [documento 34](../10_recursos_visuales/34_letra-con-identidad-2026-10-04.md). | D-105 |
 | Propuesta 3.7, «Letras para relevo» | A pedido del autor: 176 letras de cuatro fuentes sin Google Fonts, dieciocho finalistas en cuatro familias con su autoría y licencia, y una recomendación por familia. [Lámina](https://claude.ai/artifact/R9eHYeUaWooRcPjXqvC2B6) y [documento 35](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md). | D-106 |
 | Propuesta 3.7, versión 2 | Con permiso para descargar, se bajaron 84 archivos de los enlaces de UNCUT y se sumaron 88 letras (UNCUT y Open Foundry): 264 en total y 30 finalistas. Misma [lámina](https://claude.ai/artifact/R9eHYeUaWooRcPjXqvC2B6), versión 2, y [documento 35](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md). | D-106 |
-| Propuesta 3.8, «Letras que dicen relevo» | A pedido del autor: 61 letras nuevas de tipo display de cinco fuentes, 108 miradas en grande y catorce fichas que leen cada letra con los conceptos de Relevo. [Lámina](https://claude.ai/artifact/C8C9apN8tayiAoPERJ9gxZ) y [documento 36](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md). | D-107 |
+| Propuesta 3.8, «Letras que dicen relevo» | A pedido del autor: 61 letras nuevas de tipo display de cinco fuentes, 108 miradas en grande y catorce fichas que leen cada letra con los conceptos de Relevo. [Lámina](https://claude.ai/artifact/C8C9apN8tayiAoPERJ9gxZ) y [documento 36](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md). | D-107 | El autor la descartó por genérica.
+| Propuesta 3.9, «Letras para lucirse» | El autor aclaró que display es una letra hecha para verse linda en un logotipo. Se buscó por belleza: 113 especímenes, 23 letras en cuatro familias con su tablero. [Lámina](https://claude.ai/artifact/YAVi4rd5H4tKPPXSAnn3rp) y [documento 37](../10_recursos_visuales/37_letras-para-lucirse-2026-10-04.md). | D-108 |
 
 ## 2. Cómo se usó la IA
 
@@ -24,6 +25,8 @@
 - **Lectura letra por letra (3.8):** cada una de las 108 letras se escribió en grande, con «relevo», «RELEVO», la firma y los acentos, y se miró; las catorce elegidas tienen una lámina con la palabra, cada letra suelta con notas numeradas y pruebas en azul. Las notas anotan solo lo que se ve; la relación con los conceptos de Relevo se declara como hipótesis de diseño.
 - **Hechos leídos en la fuente:** la página de cada letra se leyó para la autoría, la licencia y la descripción; así se corrigió una primera impresión errónea de Typefesse (se leyó como manos y la página dice que son glúteos) y se supo que los agujeros de Pilowlava son del estilo Atome.
 - **Pruebas medidas:** minúsculas propias y acentos se comprobaron dibujando cada carácter en un canvas con dos tipografías de respaldo, y se midió lo que ocupa «relevo» a 32 px; la primera prueba no detectaba glifos vacíos y se corrigió.
+- **Belleza antes que concepto (3.9):** tras el rechazo de la 3.8, se probó «relevo» con 57 especímenes de Pangram Pangram (sus familias variables, con pesos y cursivas, dentro de su propia página) y 56 de Fontshare, Velvetyne, Collletttivo y UNCUT; los tableros de las 23 elegidas se compusieron con el azul y la familia de colores.
+- **Condiciones leídas, datos no usados:** las pruebas de Reckless, GT Super, GT Alpina y Domaine Display piden nombre y correo; se leyeron sus condiciones y no se envió ningún dato.
 - **De la amplitud a la decisión:** primero las 29 letras en una grilla, después seis en usos reales con el azul nuevo y la familia de colores, y al final tableros completos de tres.
 
 ## 3. Qué se comprobó y qué no
@@ -36,7 +39,9 @@
 - **Para la 3.7:** la lámina a 1280 y 400 px sin desbordes; los dieciocho tableros con la fuente cargada en cada uno.
 - **Para la versión 2:** las 69 letras de UNCUT y las 19 de Open Foundry se revisaron en sus imágenes; los doce tableros nuevos con la fuente cargada; la licencia de cada finalista nueva, en la página de UNCUT u Open Foundry.
 - **Para la 3.8:** las catorce láminas de lectura y la página a 1280 y 390 px, con el filtro por concepto y la ampliación de láminas funcionando; las autorías y las licencias, en la página de cada letra; los acentos y las minúsculas, con la prueba de canvas.
+- **Para la 3.9:** los 23 tableros con la fuente cargada (las de Pangram Pangram, con la comprobación del navegador en verdadero) y la página a 1280 y 390 px, en tema claro y oscuro; las autorías y las licencias, en la página de cada letra.
 - **No comprobado:**
+  - la belleza de las 23 con personas;
   - la lectura de conceptos con personas;
   - las 17 letras nuevas que solo se vieron en la hoja de contacto;
   - las letras con personas;
@@ -48,10 +53,17 @@
 - Que el autor apruebe el azul `#1C3891`.
 - Con su permiso, descargar la fuente elegida para dibujar el logotipo en curvas y probarla en la app.
 - Que el autor elija entre las treinta finalistas de la 3.7; la descarga de los archivos de la o las elegidas ya está autorizada.
+- Que el autor elija tres o más de las 23 letras de la 3.9 y autorice, o no, usar su nombre y correo para las pruebas de Reckless, GT Super, GT Alpina y Domaine Display.
 - Que el autor elija entre las catorce fichas de la 3.8 (cinco de logotipo, tres de señal y seis de carteles) y diga si los carteles pueden ir en mayúsculas.
 - Retomar la exploración de los visuales generales (composición, fotografía, app, movimiento y objeto), que el 3 de octubre se cortó por el límite de uso.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letras para lucirse
+
+- **Qué cambió:** se suma la propuesta 3.9 con lo hecho, lo comprobado y lo pendiente, y la 3.8 queda descartada.
+- **Cómo estaba antes:** la bitácora llegaba a la propuesta 3.8.
+- **Por qué:** el autor rechazó la propuesta 3.8 por genérica y pidió letras display hermosas, hechas para lucirse en un logotipo.
 
 ### 2026-10-04 — Letras que dicen relevo
 

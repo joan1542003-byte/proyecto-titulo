@@ -1,0 +1,217 @@
+{
+ "bluu-next": {
+  "url": "https://github.com/velvetyne/BluuNext/archive/HEAD.zip",
+  "base": "bluunext-bold.otf",
+  "n": 12,
+  "todos": [
+   "BluuNext-Bold.otf",
+   "BluuNext-Bolditalic.otf",
+   "BluuNext-Titling.otf",
+   "bluunext-bold-webfont.woff",
+   "bluunext-bold-webfont.woff2",
+   "bluunext-bold.ttf",
+   "bluunext-bolditalic-webfont.woff",
+   "bluunext-bolditalic-webfont.woff2",
+   "bluunext-bolditalic.ttf",
+   "BluuNext-Titling.ttf",
+   "bluunext-titling.woff",
+   "bluunext-titling.woff2"
+  ]
+ },
+ "mazius-display": {
+  "url": "https://github.com/Collletttivo/mazius-display/archive/HEAD.zip",
+  "base": "maziusdisplay-regular.otf",
+  "n": 12,
+  "todos": [
+   "MaziusDisplay-Bold.otf",
+   "MaziusDisplay-Bold.woff",
+   "MaziusDisplay-Bold.woff2",
+   "MaziusDisplay-Extraitalic.otf",
+   "MaziusDisplay-Extraitalic.woff",
+   "MaziusDisplay-Extraitalic.woff2",
+   "MaziusDisplay-ExtraItalicBold.otf",
+   "MaziusDisplay-ExtraItalicBold.woff",
+   "MaziusDisplay-ExtraItalicBold.woff2",
+   "MaziusDisplay-Regular.otf",
+   "MaziusDisplay-Regular.woff",
+   "MaziusDisplay-Regular.woff2"
+  ]
+ },
+ "messapia": {
+  "url": "https://github.com/Collletttivo/messapia/archive/HEAD.zip",
+  "base": "messapia-regular.otf",
+  "n": 6,
+  "todos": [
+   "Messapia-Bold.otf",
+   "Messapia-Bold.woff",
+   "Messapia-Bold.woff2",
+   "Messapia-Regular.otf",
+   "Messapia-Regular.woff",
+   "Messapia-Regular.woff2"
+  ]
+ },
+ "ortica": {
+  "url": "https://github.com/Collletttivo/ortica/archive/HEAD.zip",
+  "base": "orticalinear-regular.otf",
+  "n": 12,
+  "todos": [
+   "OrticaAngular-Bold.otf",
+   "OrticaAngular-Bold.woff",
+   "OrticaAngular-Bold.woff2",
+   "OrticaLinear-Bold.otf",
+   "OrticaLinear-Bold.woff",
+   "OrticaLinear-Bold.woff2",
+   "OrticaLinear-Light.otf",
+   "OrticaLinear-Light.woff",
+   "OrticaLinear-Light.woff2",
+   "OrticaLinear-Regular.otf",
+   "OrticaLinear-Regular.woff",
+   "OrticaLinear-Regular.woff2"
+  ]
+ },
+ "sneaky-times": {
+  "url": "https://github.com/Collletttivo/sneaky-times/archive/HEAD.zip",
+  "base": "sneaky-times.otf",
+  "n": 3,
+  "todos": [
+   "Sneaky-Times.otf",
+   "Sneaky-Times.woff",
+   "Sneaky-Times.woff2"
+  ]
+ },
+ "sprat": {
+  "url": "https://github.com/Collletttivo/sprat/archive/HEAD.zip",
+  "base": "sprat-condesedregular.otf",
+  "n": 56,
+  "todos": [
+   "Sprat-Black.otf",
+   "Sprat-Black.woff",
+   "Sprat-Black.woff2",
+   "Sprat-Bold.otf",
+   "Sprat-Bold.woff",
+   "Sprat-Bold.woff2",
+   "Sprat-CondensedBlack.otf",
+   "Sprat-CondensedBlack.woff",
+   "Sprat-CondensedBlack.woff2",
+   "Sprat-CondensedBold.otf",
+   "Sprat-CondensedBold.woff",
+   "Sprat-CondensedBold.woff2",
+   "Sprat-CondensedLight.otf",
+   "Sprat-CondensedLight.woff",
+   "Sprat-CondensedLight.woff2",
+   "Sprat-CondensedMedium.otf",
+   "Sprat-CondensedMedium.woff",
+   "Sprat-CondensedMedium.woff2",
+   "Sprat-CondensedThin.otf",
+   "Sprat-CondensedThin.woff",
+   "Sprat-CondensedThin.woff2",
+   "Sprat-CondesedRegular.otf",
+   "Sprat-CondesedRegular.woff",
+   "Sprat-CondesedRegular.woff2",
+   "Sprat-ExtendedBlack.otf",
+   "Sprat-ExtendedBlack.woff",
+   "Sprat-ExtendedBlack.woff2",
+   "Sprat-ExtendedBold.otf",
+   "Sprat-ExtendedBold.woff",
+   "Sprat-ExtendedBold.woff2",
+   "Sprat-ExtendedLight.otf",
+   "Sprat-ExtendedLight.woff",
+   "Sprat-ExtendedLight.woff2",
+   "Sprat-ExtendedMedium.otf",
+   "Sprat-ExtendedMedium.woff",
+   "Sprat-ExtendedMedium.woff2",
+   "Sprat-ExtendedRegular.otf",
+   "Sprat-ExtendedRegular.woff",
+   "Sprat-ExtendedRegular.woff2",
+   "Sprat-ExtendedThin.otf"
+  ]
+ },
+ "sinistre": {
+  "url": "https://github.com/Collletttivo/sinistre/archive/HEAD.zip",
+  "base": "sinistre-regular.otf",
+  "n": 11,
+  "todos": [
+   "Sinistre-Bold.otf",
+   "Sinistre-Bold.ttf",
+   "Sinistre-Bold.woff2",
+   "Sinistre-Dark.otf",
+   "Sinistre-Dark.ttf",
+   "Sinistre-Dark.woff2",
+   "Sinistre-Regular.otf",
+   "Sinistre-Regular.ttf",
+   "Sinistre-Regular.woff2",
+   "SinistreVF.ttf",
+   "SinistreVF.woff2"
+  ]
+ },
+ "ribes": {
+  "url": "https://github.com/Collletttivo/ribes/archive/HEAD.zip",
+  "base": "ribes-regular.otf",
+  "n": 9,
+  "todos": [
+   "Ribes-Black.otf",
+   "Ribes-Black.woff",
+   "Ribes-Black.woff2",
+   "Ribes-Light.otf",
+   "Ribes-Light.woff",
+   "Ribes-Light.woff2",
+   "Ribes-Regular.otf",
+   "Ribes-Regular.woff",
+   "Ribes-Regular.woff2"
+  ]
+ },
+ "halibut": {
+  "url": "https://github.com/Collletttivo/halibut/archive/HEAD.zip",
+  "base": "halibut-condensedregular.otf",
+  "n": 18,
+  "todos": [
+   "Halibut-CondensedRegular.otf",
+   "Halibut-CondensedRegular.woff",
+   "Halibut-CondensedRegular.woff2",
+   "Halibut-CondensedThin.otf",
+   "Halibut-CondensedThin.woff",
+   "Halibut-CondensedThin.woff2",
+   "Halibut-ExpandedRegular.otf",
+   "Halibut-ExpandedRegular.woff",
+   "Halibut-ExpandedRegular.woff2",
+   "Halibut-ExpandedThin.otf",
+   "Halibut-ExpandedThin.woff",
+   "Halibut-ExpandedThin.woff2",
+   "Halibut-Regular.otf",
+   "Halibut-Regular.woff",
+   "Halibut-Regular.woff2",
+   "Halibut-Thin.otf",
+   "Halibut-Thin.woff",
+   "Halibut-Thin.woff2"
+  ]
+ },
+ "aujournuit": {
+  "url": "https://github.com/Collletttivo/aujournuit/archive/HEAD.zip",
+  "base": "aujournuit-regular.otf",
+  "n": 22,
+  "todos": [
+   "Aujournuit-Airy.otf",
+   "Aujournuit-Airy.ttf",
+   "Aujournuit-Airy.woff",
+   "Aujournuit-Airy.woff2",
+   "Aujournuit-Condensed.otf",
+   "Aujournuit-Condensed.ttf",
+   "Aujournuit-Condensed.woff",
+   "Aujournuit-Condensed.woff2",
+   "Aujournuit-Densed.otf",
+   "Aujournuit-Densed.ttf",
+   "Aujournuit-Densed.woff",
+   "Aujournuit-Densed.woff2",
+   "Aujournuit-Regular.otf",
+   "Aujournuit-Regular.ttf",
+   "Aujournuit-Regular.woff",
+   "Aujournuit-Regular.woff2",
+   "Aujournuit-VariableVF.ttf",
+   "Aujournuit-VariableVF.woff2",
+   "Aujournuit-Wide.otf",
+   "Aujournuit-Wide.ttf",
+   "Aujournuit-Wide.woff",
+   "Aujournuit-Wide.woff2"
+  ]
+ }
+}

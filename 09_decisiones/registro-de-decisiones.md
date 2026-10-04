@@ -1240,7 +1240,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-107 — Letras que dicen relevo (propuesta 3.8)
 
 - **Fecha:** 2026-10-04.
-- **Estado:** propuesta; continúa D-106 con letras de tipo display y una lectura por conceptos. No cambia todavía la app ni el sistema publicado.
+- **Estado:** propuesta descartada por el autor el mismo día; la reemplaza D-108. Continuaba D-106 con letras de tipo display y una lectura por conceptos. No cambió la app ni el sistema publicado.
 - **Pedido del autor:** buscar más letras, de tipo display, y analizarlas: verlas y ver qué conceptos de Relevo le evocan.
 - **Propuesta:**
   - **Búsqueda:** 61 letras nuevas de cinco fuentes (Le75, Tunera, Republish, The League of Moveable Type y Klotter Supply); el total llega a 325. Se miraron 108 en grande, con la palabra a tamaño de cartel, en mayúsculas, con la firma y los acentos.
@@ -1252,7 +1252,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** letras compuestas tal cual, sin probar en la app ni con personas; cada letra se vio en un solo estilo; Le75 declara GNU/GPL sin el texto en los zips; Westgate y Patriot se declaran OFL en la página de Republish.
 - **Documentación:** [Letras que dicen relevo](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letras-que-dicen-relevo-2026-10-04/README.md).
 
+## D-108 — Letras para lucirse (propuesta 3.9)
+
+- **Fecha:** 2026-10-04.
+- **Estado:** propuesta; reemplaza D-107 (descartada por el autor el mismo día) y continúa D-106. No cambia todavía la app ni el sistema publicado.
+- **Pedido del autor:** rechazó las letras de la 3.8 por genéricas y sin carácter, estilo ni diseño, y cuestionó la elección de Struggle; aclaró que display es una letra hecha para verse linda y lucirse en un logotipo, no para pantallas, y pidió algo hermoso.
+- **Propuesta:**
+  - **Criterio:** belleza antes que concepto: contraste con intención, gestos propios (la gota de la «r», el lazo de la «v», la espiral de la «o»), «relevo» bien resuelto en minúsculas y que aguante el azul, el ícono y los 16 px. Se dejaron fuera las letras de pantalla, las experimentales y las que parecen de cuaderno.
+  - **Búsqueda:** 113 especímenes: 57 de Pangram Pangram (16 familias, con pesos y cursivas, probados dentro de su página) y 56 de Fontshare, Velvetyne, Collletttivo, UNCUT y Le75 (archivos descargados).
+  - **23 tableros en cuatro familias:** cursivas con vuelo (Acma, Hatton, Migra, Kyoto, Pangaia, Eiko, Editorial New, Right Didone y Telma), contraste alto y afilado (Gatwick Glider, Boska, Bonny, Melodrama y Stardom), cálidas y con cuerpo (Woodland, Gambetta, Sentient, Zodiak y Ouroboros) y decorativas (Zina, Chronos Serif, Aktura y Playground).
+  - **Licencias:** Pangram Pangram, «gratis para probar» (sirve para la tesis; un logotipo real pide licencia de pago desde 40 USD); Fontshare, ITF FFL 2.0 con logotipos incluidos; Velvetyne, OFL.
+  - **Pendiente de permiso:** las pruebas de Reckless (Displaay), GT Super y GT Alpina (Grilli Type) y Domaine Display (Klim) piden nombre y correo; no se usó ningún dato.
+- **Fundamento:** licencias y páginas de cada fundición (Pangram Pangram, Fontshare, Velvetyne, Displaay, Grilli Type y Klim).
+- **Alternativas:** las catorce fichas de D-107, descartadas; los logotipos dibujados, descartados.
+- **Límites:** cada letra se vio en un solo peso y estilo; sin probar en la app ni con personas; la belleza es una apreciación de diseño; Telma y Playground rozan la regla de no usar letra a mano y Ouroboros, la de «sin serif» fuera del logotipo.
+- **Documentación:** [Letras para lucirse](../10_recursos_visuales/37_letras-para-lucirse-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letras-para-lucirse-2026-10-04/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — D-108
+
+- **Qué cambió:** se registró D-108, propuesta 3.9, y D-107 pasa a descartada.
+- **Cómo estaba antes:** la última decisión era D-107.
+- **Por qué:** el autor rechazó la propuesta 3.8 por genérica y pidió letras display hermosas, hechas para lucirse en un logotipo.
 
 ### 2026-10-04 — D-107
 

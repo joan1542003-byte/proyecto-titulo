@@ -1,6 +1,6 @@
 # Letras que dicen relevo: propuesta 3.8
 
-**Fecha:** 4 de octubre de 2026. **Estado:** propuesta D-107. Continúa la búsqueda de la letra del logotipo de la [propuesta 3.7](35_letras-para-relevo-2026-10-04.md) (D-106): el autor pidió más letras de tipo display y mirarlas, una por una, para ver qué conceptos de Relevo le evoca cada una. Mantiene el azul `#1C3891` y todo lo demás de la 3.6. No cambia todavía la app ni el sistema publicado. **Dónde está:**
+**Fecha:** 4 de octubre de 2026. **Estado:** propuesta D-107, descartada por el autor el mismo día y reemplazada por la [propuesta 3.9](37_letras-para-lucirse-2026-10-04.md) (D-108). Continúa la búsqueda de la letra del logotipo de la [propuesta 3.7](35_letras-para-relevo-2026-10-04.md) (D-106): el autor pidió más letras de tipo display y mirarlas, una por una, para ver qué conceptos de Relevo le evoca cada una. Mantiene el azul `#1C3891` y todo lo demás de la 3.6. No cambia todavía la app ni el sistema publicado. **Dónde está:**
 
 - Lámina publicada en claude.ai: [Letras que dicen relevo](https://claude.ai/artifact/C8C9apN8tayiAoPERJ9gxZ) (privada del autor).
 - Copia en el repositorio: [`letras-que-dicen-relevo-2026-10-04/`](letras-que-dicen-relevo-2026-10-04/letras-que-dicen-relevo.html), con las 14 láminas de lectura, las 14 tandas de la mesa de análisis, las hojas de las 61 letras nuevas, los datos y los generadores.
@@ -389,6 +389,12 @@ Real Academia Española y Asociación de Academias de la Lengua Española. (2014
 Las autorías, las descripciones y las licencias de cada letra salen de su página: [Tunera](https://www.tunera.xyz/), [Velvetyne](https://velvetyne.fr/fonts/), [Republish](https://republi.sh/), [The League of Moveable Type](https://www.theleagueofmoveabletype.com/), [Klotter Supply](https://klotter.supply/struggle), [Typothèque ESA le 75](https://typotheque.le75.be/) y [Fontshare](https://www.fontshare.com/).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Descartada por el autor
+
+- **Qué cambió:** el encabezado marca la propuesta como descartada y enlaza la 3.9.
+- **Cómo estaba antes:** el documento no indicaba que se hubiera descartado.
+- **Por qué:** el autor rechazó la propuesta 3.8 por genérica y pidió letras display hermosas, hechas para lucirse en un logotipo.
 
 ### 2026-10-04 — Creación
 

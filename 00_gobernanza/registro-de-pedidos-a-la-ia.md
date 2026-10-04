@@ -91,6 +91,7 @@
 | 4 oct. | Corrección y orden | Continuar y explorar más tipografías; como es un proyecto de título que no sale a la venta, se pueden usar más licencias; no usar Google Fonts, al menos para el logotipo; explorar más, con una variedad de elecciones. | [Propuesta 3.7, «Letras para relevo»](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md): 176 letras de Pangram Pangram, Fontshare, Velvetyne y Collletttivo; dieciocho finalistas en cuatro familias con su autoría y licencia; una recomendación por familia. | D-106 |
 | 4 oct. | Orden y permiso | Tiene permiso para descargar lo que quiera, de las fuentes que quiera; explorar más. | Versión 2 de la [propuesta 3.7](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md): 84 archivos descargados de los enlaces de UNCUT, 88 letras nuevas (UNCUT y Open Foundry), doce finalistas nuevas y 264 letras en total. | D-106 |
 | 4 oct. | Encargo | Buscar más letras de tipo display y analizar cada una: verla y ver qué conceptos de Relevo le evoca. | [Propuesta 3.8, «Letras que dicen relevo»](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md) con su [lámina](https://claude.ai/artifact/C8C9apN8tayiAoPERJ9gxZ): 61 letras nuevas de cinco fuentes, 108 miradas en grande y catorce fichas de lectura con sus conceptos (cinco para el logotipo, tres para los momentos de señal y seis para carteles). | D-107 |
+| 4 oct. | Corrección | Rechazó las letras de la propuesta 3.8 por genéricas y sin carácter, estilo ni diseño, y cuestionó la elección de Struggle. Aclaró que display es una letra hecha para verse linda y lucirse en un logotipo, no para pantallas, y pidió algo hermoso. | [Propuesta 3.9, «Letras para lucirse»](../10_recursos_visuales/37_letras-para-lucirse-2026-10-04.md) con su [lámina](https://claude.ai/artifact/YAVi4rd5H4tKPPXSAnn3rp): 23 letras hermosas en cuatro familias (cursivas con vuelo, contraste alto y afilado, cálidas y con cuerpo, y decorativas), cada una en su tablero. Las pruebas de pago que piden correo esperan su permiso. | D-108 |
 
 ## Lo que muestra el registro
 
@@ -101,6 +102,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-04 — Letras para lucirse
+
+- **Qué cambió:** se registró el rechazo de la propuesta 3.8, la aclaración de qué es display y el pedido de letras hermosas, con su resultado.
+- **Cómo estaba antes:** el registro terminaba en el pedido de la propuesta 3.8.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-04 — Letras que dicen relevo
 

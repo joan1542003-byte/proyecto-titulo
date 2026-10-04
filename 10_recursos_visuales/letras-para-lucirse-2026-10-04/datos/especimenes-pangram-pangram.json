@@ -1,0 +1,75 @@
+[
+ { "page": "https://pangrampangram.com/products/acma", "items": [
+   { "id": "acma-300", "fam": "acma", "w": "300", "label": "Acma 300" },
+   { "id": "acma-500", "fam": "acma", "w": "500", "label": "Acma 500" },
+   { "id": "acma-800", "fam": "acma", "w": "800", "label": "Acma 800" },
+   { "id": "acma-500i", "fam": "acma", "w": "500", "st": "italic", "label": "Acma 500 cursiva" } ] },
+ { "page": "https://pangrampangram.com/products/gatwick", "items": [
+   { "id": "gatwick-300", "fam": "gatwick", "w": "300", "label": "Gatwick 300" },
+   { "id": "gatwick-500", "fam": "gatwick", "w": "500", "label": "Gatwick 500" },
+   { "id": "gatwick-glider", "fam": "gatwick-glider-regular", "w": "500", "label": "Gatwick Glider" },
+   { "id": "gatwick-jumbo", "fam": "gatwick-jumbo-regular", "w": "500", "label": "Gatwick Jumbo" },
+   { "id": "gatwick-jet", "fam": "gatwick-jet-regular", "w": "500", "label": "Gatwick Jet" } ] },
+ { "page": "https://pangrampangram.com/products/hatton", "items": [
+   { "id": "hatton-300", "fam": "hatton", "w": "300", "label": "Hatton 300" },
+   { "id": "hatton-500", "fam": "hatton", "w": "500", "label": "Hatton 500" },
+   { "id": "hatton-800", "fam": "hatton", "w": "800", "label": "Hatton 800" },
+   { "id": "hatton-500i", "fam": "hatton", "w": "500", "st": "italic", "label": "Hatton 500 cursiva" } ] },
+ { "page": "https://pangrampangram.com/products/migra", "items": [
+   { "id": "migra-300", "fam": "migra", "w": "300", "label": "Migra 300" },
+   { "id": "migra-500", "fam": "migra", "w": "500", "label": "Migra 500" },
+   { "id": "migra-800", "fam": "migra", "w": "800", "label": "Migra 800" },
+   { "id": "migra-400i", "fam": "migra", "w": "400", "st": "italic", "label": "Migra 400 cursiva" },
+   { "id": "migra-800i", "fam": "migra", "w": "800", "st": "italic", "label": "Migra 800 cursiva" } ] },
+ { "page": "https://pangrampangram.com/products/editorial-new", "items": [
+   { "id": "editorial-new-200", "fam": "editorial-new", "w": "200", "label": "Editorial New 200" },
+   { "id": "editorial-new-400", "fam": "editorial-new", "w": "400", "label": "Editorial New 400" },
+   { "id": "editorial-new-400i", "fam": "editorial-new", "w": "400", "st": "italic", "label": "Editorial New 400 cursiva" },
+   { "id": "editorial-new-800", "fam": "editorial-new", "w": "800", "label": "Editorial New 800" } ] },
+ { "page": "https://pangrampangram.com/products/right-didone", "items": [
+   { "id": "rd-spatial", "fam": "right-didone-spatial-medium", "w": "470", "label": "Right Didone Spatial" },
+   { "id": "rd-wide", "fam": "right-didone-wide-medium", "w": "470", "label": "Right Didone Wide" },
+   { "id": "rd-italic", "fam": "right-didone-italic-medium", "w": "470", "label": "Right Didone Italic" },
+   { "id": "rd-casual", "fam": "right-didone-casual-medium", "w": "470", "label": "Right Didone Casual" },
+   { "id": "rd-tight", "fam": "right-didone-tight-medium", "w": "470", "label": "Right Didone Tight" },
+   { "id": "rd-tall", "fam": "right-didone-tall-medium", "w": "470", "label": "Right Didone Tall" } ] },
+ { "page": "https://pangrampangram.com/products/casa-stencil", "items": [
+   { "id": "casa-stencil", "fam": "casa-stencil", "w": "400", "label": "Casa Stencil" } ] },
+ { "page": "https://pangrampangram.com/products/chronos-serif", "items": [
+   { "id": "chronos-100", "fam": "chronos-serif", "w": "100", "label": "Chronos Serif 100" },
+   { "id": "chronos-200", "fam": "chronos-serif", "w": "200", "label": "Chronos Serif 200" },
+   { "id": "chronos-300", "fam": "chronos-serif", "w": "300", "label": "Chronos Serif 300" } ] },
+ { "page": "https://pangrampangram.com/products/woodland", "items": [
+   { "id": "woodland-100", "fam": "woodland", "w": "100", "label": "Woodland 100" },
+   { "id": "woodland-250", "fam": "woodland", "w": "250", "label": "Woodland 250" },
+   { "id": "woodland-400", "fam": "woodland", "w": "400", "label": "Woodland 400" },
+   { "id": "woodland-700", "fam": "woodland", "w": "700", "label": "Woodland 700" },
+   { "id": "woodland-900", "fam": "woodland", "w": "900", "label": "Woodland 900" } ] },
+ { "page": "https://pangrampangram.com/products/kyoto", "items": [
+   { "id": "kyoto-300", "fam": "kyoto", "w": "300", "label": "Kyoto 300" },
+   { "id": "kyoto-600", "fam": "kyoto", "w": "600", "label": "Kyoto 600" },
+   { "id": "kyoto-400i", "fam": "kyoto", "w": "400", "st": "italic", "label": "Kyoto 400 cursiva" } ] },
+ { "page": "https://pangrampangram.com/products/grafier", "items": [
+   { "id": "grafier-400", "fam": "grafier", "w": "400", "label": "Grafier 400" },
+   { "id": "grafier-700", "fam": "grafier", "w": "700", "label": "Grafier 700" },
+   { "id": "grafier-900", "fam": "grafier", "w": "900", "label": "Grafier 900" } ] },
+ { "page": "https://pangrampangram.com/products/palma", "items": [
+   { "id": "palma-300", "fam": "palma", "w": "300", "label": "Palma 300" },
+   { "id": "palma-fizzy", "fam": "palma-fizzy-heavy", "w": "800", "label": "Palma Fizzy Heavy" },
+   { "id": "palma-plain", "fam": "palma-plain-heavy", "w": "800", "label": "Palma Plain Heavy" } ] },
+ { "page": "https://pangrampangram.com/products/talisman", "items": [
+   { "id": "talisman-normal", "fam": "talisman-normal-medium", "w": "500", "label": "Talisman Normal" },
+   { "id": "talisman-narrow", "fam": "talisman-narrow-medium", "w": "500", "label": "Talisman Narrow" },
+   { "id": "talisman-compressed", "fam": "talisman-compressed-medium", "w": "500", "label": "Talisman Compressed" } ] },
+ { "page": "https://pangrampangram.com/products/playground", "items": [
+   { "id": "playground-300", "fam": "playground", "w": "300", "label": "Playground 300" },
+   { "id": "playground-500", "fam": "playground", "w": "500", "label": "Playground 500" } ] },
+ { "page": "https://pangrampangram.com/products/pangaia", "items": [
+   { "id": "pangaia-300", "fam": "pangaia", "w": "300", "label": "Pangaia 300" },
+   { "id": "pangaia-700", "fam": "pangaia", "w": "700", "label": "Pangaia 700" },
+   { "id": "pangaia-400i", "fam": "pangaia", "w": "400", "st": "italic", "label": "Pangaia 400 cursiva" } ] },
+ { "page": "https://pangrampangram.com/products/eiko", "items": [
+   { "id": "eiko-300", "fam": "eiko", "w": "300", "label": "Eiko 300" },
+   { "id": "eiko-700", "fam": "eiko", "w": "700", "label": "Eiko 700" },
+   { "id": "eiko-400i", "fam": "eiko", "w": "400", "st": "italic", "label": "Eiko 400 cursiva" } ] }
+]

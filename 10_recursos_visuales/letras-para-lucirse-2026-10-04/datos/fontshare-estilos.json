@@ -1,0 +1,416 @@
+{
+ "boska": {
+  "nombre": "Boska",
+  "designers": "Barbara Bigosinska",
+  "categoria": "Serif, Display",
+  "estilos": [
+   {
+    "w": 200,
+    "st": "normal"
+   },
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   },
+   {
+    "w": 900,
+    "st": "normal"
+   }
+  ]
+ },
+ "gambetta": {
+  "nombre": "Gambetta",
+  "designers": "Paul Troppmar",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 600,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "gambarino": {
+  "nombre": "Gambarino",
+  "designers": "Théo Guillard",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 400,
+    "st": "normal"
+   }
+  ]
+ },
+ "sentient": {
+  "nombre": "Sentient",
+  "designers": "Noopur Choksi",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 200,
+    "st": "normal"
+   },
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "zodiak": {
+  "nombre": "Zodiak",
+  "designers": "Jérémie Hornus, Gaetan Baehr, Jean-Baptiste Morizot, Alisa Nowak, Theo Guillard",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 100,
+    "st": "normal"
+   },
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   },
+   {
+    "w": 800,
+    "st": "normal"
+   },
+   {
+    "w": 900,
+    "st": "normal"
+   }
+  ]
+ },
+ "bonny": {
+  "nombre": "Bonny",
+  "designers": "Barbara Bigosinska",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 100,
+    "st": "normal"
+   },
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "recia": {
+  "nombre": "Recia",
+  "designers": "Carlos de Toro",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 600,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "rowan": {
+  "nombre": "Rowan",
+  "designers": "Inga Plönnigs",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 600,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "erode": {
+  "nombre": "Erode",
+  "designers": "Nikhil Ranganathan",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 600,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "neco": {
+  "nombre": "Neco",
+  "designers": "Jitka Janečková",
+  "categoria": "Serif",
+  "estilos": [
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   },
+   {
+    "w": 900,
+    "st": "normal"
+   }
+  ]
+ },
+ "quilon": {
+  "nombre": "Quilon",
+  "designers": "Jonny Pinhorn",
+  "categoria": "Sans",
+  "estilos": [
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 600,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "melodrama": {
+  "nombre": "Melodrama",
+  "designers": "Shaily Patel",
+  "categoria": "Sans, Display",
+  "estilos": [
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 600,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "stardom": {
+  "nombre": "Stardom",
+  "designers": "Indian Type Foundry",
+  "categoria": "Display",
+  "estilos": [
+   {
+    "w": 400,
+    "st": "normal"
+   }
+  ]
+ },
+ "zina": {
+  "nombre": "Zina",
+  "designers": "Théo Guillard",
+  "categoria": "Display",
+  "estilos": [
+   {
+    "w": 400,
+    "st": "normal"
+   }
+  ]
+ },
+ "telma": {
+  "nombre": "Telma",
+  "designers": "Jitka Janečková",
+  "categoria": "Script",
+  "estilos": [
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   },
+   {
+    "w": 900,
+    "st": "normal"
+   }
+  ]
+ },
+ "hoover": {
+  "nombre": "Hoover",
+  "designers": "Gaetan Baehr",
+  "categoria": "Slab",
+  "estilos": [
+   {
+    "w": 100,
+    "st": "normal"
+   },
+   {
+    "w": 300,
+    "st": "normal"
+   },
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "paquito": {
+  "nombre": "Paquito",
+  "designers": "Juanjo Lopez",
+  "categoria": "Serif, Slab",
+  "estilos": [
+   {
+    "w": 400,
+    "st": "normal"
+   },
+   {
+    "w": 500,
+    "st": "normal"
+   },
+   {
+    "w": 700,
+    "st": "normal"
+   }
+  ]
+ },
+ "aktura": {
+  "nombre": "Aktura",
+  "designers": "Gaetan Baehr",
+  "categoria": "Serif,  Blackletter, Display",
+  "estilos": [
+   {
+    "w": 400,
+    "st": "normal"
+   }
+  ]
+ }
+}

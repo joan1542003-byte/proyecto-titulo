@@ -1,0 +1,233 @@
+[
+ {
+  "id": "fs-boska-300",
+  "label": "Boska 300 · Fontshare"
+ },
+ {
+  "id": "fs-boska-500",
+  "label": "Boska 500 · Fontshare"
+ },
+ {
+  "id": "fs-boska-900",
+  "label": "Boska 900 · Fontshare"
+ },
+ {
+  "id": "fs-gambetta-300",
+  "label": "Gambetta 300 · Fontshare"
+ },
+ {
+  "id": "fs-gambetta-500",
+  "label": "Gambetta 500 · Fontshare"
+ },
+ {
+  "id": "fs-gambetta-700",
+  "label": "Gambetta 700 · Fontshare"
+ },
+ {
+  "id": "fs-gambarino-400",
+  "label": "Gambarino 400 · Fontshare"
+ },
+ {
+  "id": "fs-sentient-300",
+  "label": "Sentient 300 · Fontshare"
+ },
+ {
+  "id": "fs-sentient-500",
+  "label": "Sentient 500 · Fontshare"
+ },
+ {
+  "id": "fs-sentient-700",
+  "label": "Sentient 700 · Fontshare"
+ },
+ {
+  "id": "fs-zodiak-100",
+  "label": "Zodiak 100 · Fontshare"
+ },
+ {
+  "id": "fs-zodiak-400",
+  "label": "Zodiak 400 · Fontshare"
+ },
+ {
+  "id": "fs-zodiak-800",
+  "label": "Zodiak 800 · Fontshare"
+ },
+ {
+  "id": "fs-bonny-300",
+  "label": "Bonny 300 · Fontshare"
+ },
+ {
+  "id": "fs-bonny-500",
+  "label": "Bonny 500 · Fontshare"
+ },
+ {
+  "id": "fs-bonny-700",
+  "label": "Bonny 700 · Fontshare"
+ },
+ {
+  "id": "fs-recia-400",
+  "label": "Recia 400 · Fontshare"
+ },
+ {
+  "id": "fs-recia-700",
+  "label": "Recia 700 · Fontshare"
+ },
+ {
+  "id": "fs-rowan-400",
+  "label": "Rowan 400 · Fontshare"
+ },
+ {
+  "id": "fs-rowan-700",
+  "label": "Rowan 700 · Fontshare"
+ },
+ {
+  "id": "fs-erode-400",
+  "label": "Erode 400 · Fontshare"
+ },
+ {
+  "id": "fs-erode-700",
+  "label": "Erode 700 · Fontshare"
+ },
+ {
+  "id": "fs-neco-500",
+  "label": "Neco 500 · Fontshare"
+ },
+ {
+  "id": "fs-neco-900",
+  "label": "Neco 900 · Fontshare"
+ },
+ {
+  "id": "fs-quilon-500",
+  "label": "Quilon 500 · Fontshare"
+ },
+ {
+  "id": "fs-quilon-700",
+  "label": "Quilon 700 · Fontshare"
+ },
+ {
+  "id": "fs-melodrama-300",
+  "label": "Melodrama 300 · Fontshare"
+ },
+ {
+  "id": "fs-melodrama-500",
+  "label": "Melodrama 500 · Fontshare"
+ },
+ {
+  "id": "fs-melodrama-700",
+  "label": "Melodrama 700 · Fontshare"
+ },
+ {
+  "id": "fs-stardom-400",
+  "label": "Stardom 400 · Fontshare"
+ },
+ {
+  "id": "fs-zina-400",
+  "label": "Zina 400 · Fontshare"
+ },
+ {
+  "id": "fs-telma-300",
+  "label": "Telma 300 · Fontshare"
+ },
+ {
+  "id": "fs-telma-700",
+  "label": "Telma 700 · Fontshare"
+ },
+ {
+  "id": "fs-telma-900",
+  "label": "Telma 900 · Fontshare"
+ },
+ {
+  "id": "fs-hoover-400",
+  "label": "Hoover 400 · Fontshare"
+ },
+ {
+  "id": "fs-hoover-700",
+  "label": "Hoover 700 · Fontshare"
+ },
+ {
+  "id": "fs-paquito-700",
+  "label": "Paquito 700 · Fontshare"
+ },
+ {
+  "id": "fs-aktura-400",
+  "label": "Aktura 400 · Fontshare"
+ },
+ {
+  "id": "gh-bluu-next",
+  "label": "Bluu Next · Velvetyne"
+ },
+ {
+  "id": "gh-mazius-display",
+  "label": "Mazius Display · Collletttivo"
+ },
+ {
+  "id": "gh-messapia",
+  "label": "Messapia · Collletttivo"
+ },
+ {
+  "id": "gh-ortica",
+  "label": "Ortica · Collletttivo"
+ },
+ {
+  "id": "gh-sneaky-times",
+  "label": "Sneaky Times · Collletttivo"
+ },
+ {
+  "id": "gh-sprat",
+  "label": "Sprat · Collletttivo"
+ },
+ {
+  "id": "gh-sinistre",
+  "label": "Sinistre · Collletttivo"
+ },
+ {
+  "id": "gh-ribes",
+  "label": "Ribes · Collletttivo"
+ },
+ {
+  "id": "gh-halibut",
+  "label": "Halibut · Collletttivo"
+ },
+ {
+  "id": "gh-aujournuit",
+  "label": "Aujourd’hui · Collletttivo"
+ },
+ {
+  "id": "un-zarathustra",
+  "label": "Zarathustra · UNCUT",
+  "variable": false
+ },
+ {
+  "id": "un-cat-eckmann",
+  "label": "CAT Eckmann · UNCUT",
+  "variable": false
+ },
+ {
+  "id": "un-garamon-d-t",
+  "label": "Garamon(d/t) · UNCUT",
+  "variable": false
+ },
+ {
+  "id": "un-fibel-nord",
+  "label": "Fibel Nord · UNCUT",
+  "variable": false
+ },
+ {
+  "id": "un-kulture-type",
+  "label": "Kultüre · UNCUT",
+  "variable": false
+ },
+ {
+  "id": "un-imogen",
+  "label": "Imogen · UNCUT",
+  "variable": false
+ },
+ {
+  "id": "un-milford",
+  "label": "Milford · UNCUT",
+  "variable": false
+ },
+ {
+  "id": "l75-thalsa",
+  "label": "Thalsa · Le75"
+ }
+]
