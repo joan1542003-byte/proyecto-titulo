@@ -92,6 +92,10 @@
 | 4 oct. | Orden y permiso | Tiene permiso para descargar lo que quiera, de las fuentes que quiera; explorar más. | Versión 2 de la [propuesta 3.7](../10_recursos_visuales/35_letras-para-relevo-2026-10-04.md): 84 archivos descargados de los enlaces de UNCUT, 88 letras nuevas (UNCUT y Open Foundry), doce finalistas nuevas y 264 letras en total. | D-106 |
 | 4 oct. | Encargo | Buscar más letras de tipo display y analizar cada una: verla y ver qué conceptos de Relevo le evoca. | [Propuesta 3.8, «Letras que dicen relevo»](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md) con su [lámina](https://claude.ai/artifact/C8C9apN8tayiAoPERJ9gxZ): 61 letras nuevas de cinco fuentes, 108 miradas en grande y catorce fichas de lectura con sus conceptos (cinco para el logotipo, tres para los momentos de señal y seis para carteles). | D-107 |
 | 4 oct. | Corrección | Rechazó las letras de la propuesta 3.8 por genéricas y sin carácter, estilo ni diseño, y cuestionó la elección de Struggle. Aclaró que display es una letra hecha para verse linda y lucirse en un logotipo, no para pantallas, y pidió algo hermoso. | [Propuesta 3.9, «Letras para lucirse»](../10_recursos_visuales/37_letras-para-lucirse-2026-10-04.md) con su [lámina](https://claude.ai/artifact/YAVi4rd5H4tKPPXSAnn3rp): 23 letras hermosas en cuatro familias (cursivas con vuelo, contraste alto y afilado, cálidas y con cuerpo, y decorativas), cada una en su tablero. Las pruebas de pago que piden correo esperan su permiso. | D-108 |
+| 4 oct. | Corrección | Probar más sans o tipografías únicas, porque demasiadas de la 3.9 parecen serif; como es un fin universitario, usar lo que la licencia permita. | [Lámina «Sans para lucirse»](https://claude.ai/artifact/R6RcGELJZqsPppKtqGn8Ah): 128 especímenes de 32 familias de Pangram Pangram y 23 sans en tablero (únicas, anchas, en cursiva y de Fontshare). Pendiente de su elección; no se copió al repositorio. | Sin decisión |
+| 4 oct. | Consulta | Buscar las mejores tipografías de los últimos dos años según diseñadores. | Respuesta en la conversación: favoritas de 2025 de Okay Type y lanzamientos de 2026 reseñados por Creative Boom, con enlaces; la lista de Typographica no apareció en las búsquedas. | — |
+| 4 oct. | Encargo | Probar esas tipografías, porque las anteriores no le convencen. | Se probó «relevo» en las páginas de 19 fundiciones; seis cargan su letra (Partiche, Tuffo, Peignot Jumbo, Reel, AT Glacier y Unifora) y se armaron siete tableros en la carpeta de trabajo. Las demás piden un formulario con nombre y correo, pendiente de su permiso. | Sin decisión |
+| 5 oct. | Consulta | Preguntar qué debe comprar al final para el testeo y pedir una revisión del logotipo. | Respuesta en la conversación: un parlante Bluetooth solo para quien no tenga (JBL Go 4 a CLP 24.990 en Paris, visto el 5 de octubre) y, opcional, un llavero iTag (CLP 6.990 en Tienda8), que la app todavía no hace sonar. Revisión del logotipo: el vigente del sistema 3.1 contradice tres pedidos posteriores (letra simple, subrayado y azul antiguo) y no coincide con el de la app. | — |
 
 ## Lo que muestra el registro
 
@@ -102,6 +106,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-05 — Sans, tipografías recientes, compra y logotipo
+
+- **Qué cambió:** se registraron los pedidos de probar sans y tipografías únicas, de buscar y probar las mejores tipografías recientes según diseñadores, y la consulta sobre la compra para el testeo y la revisión del logotipo.
+- **Cómo estaba antes:** el registro terminaba en la propuesta 3.9.
+- **Por qué:** regla de registrar cada pedido del autor; los del 4 de octubre quedaron pendientes y se registran el 5.
 
 ### 2026-10-04 — Letras para lucirse
 
