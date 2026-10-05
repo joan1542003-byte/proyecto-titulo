@@ -1268,7 +1268,23 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** cada letra se vio en un solo peso y estilo; sin probar en la app ni con personas; la belleza es una apreciación de diseño; Telma y Playground rozan la regla de no usar letra a mano y Ouroboros, la de «sin serif» fuera del logotipo.
 - **Documentación:** [Letras para lucirse](../10_recursos_visuales/37_letras-para-lucirse-2026-10-04.md) y su [copia de archivos](../10_recursos_visuales/letras-para-lucirse-2026-10-04/README.md).
 
+## D-109 — El llavero iTag como objeto que suena
+
+- **Fecha:** 2026-10-05.
+- **Estado:** decisión del autor de comprarlo; implementada en Android 2.19 y probada en emulador solo en su pantalla. **Sin probar con un llavero real.** No cambia el protocolo 02 mientras el autor no decida usar el llavero en la prueba.
+- **Decisión:** agregar la salida «El llavero». Relevo se conecta por Bluetooth a un iTag clásico (el que se configura con iSearching) y lo hace pitar con el servicio estándar de alerta inmediata: seis pitidos de 2 s en 30 s. La conexión se abre al activar el relevo y se mantiene hasta que suena; el botón del llavero calla la señal y queda registrado como silencio en el objeto (`signal_end = 'object'`). En las semanas A y B se mantiene, como el reloj; en la C suena el teléfono.
+- **Fundamento:** el autor quiere un objeto barato que suene donde empieza la actividad. El protocolo del iTag está verificado en una app de código abierto publicada en Google Play y en análisis independientes (D-093). Un llavero situado pone a prueba la misma hipótesis que el parlante y cuesta unos CLP 6.000 a 8.000.
+- **Compra:** publicaciones de MercadoLibre Chile que indican iSearching, de CLP 5.930 a 7.990 según los resultados de búsqueda del 5 de octubre. Comprar dos y una pila CR2032 de repuesto.
+- **Riesgos y límites:** un modelo que no use iSearching puede no responder; sin probar la conexión real, el botón ni el apagado de la alarma por desconexión; requiere el permiso de dispositivos cercanos, declarado sin uso de ubicación. Si el llavero no responde, Relevo vibra y avisa en vez de cambiar de salida.
+- **Documentación:** [Android 2.19](../06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md) y [objetos que Relevo puede hacer sonar](../06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-05 — D-109
+
+- **Qué cambió:** se registró D-109, la salida «El llavero» de Android 2.19.
+- **Cómo estaba antes:** la última decisión era D-108 y el llavero figuraba en D-093 como alternativa pendiente de compra y prueba.
+- **Por qué:** el autor decidió comprar un iTag y pidió que la app lo haga sonar.
 
 ### 2026-10-04 — D-108
 

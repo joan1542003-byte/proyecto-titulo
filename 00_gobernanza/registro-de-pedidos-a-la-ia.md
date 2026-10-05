@@ -96,6 +96,7 @@
 | 4 oct. | Consulta | Buscar las mejores tipografías de los últimos dos años según diseñadores. | Respuesta en la conversación: favoritas de 2025 de Okay Type y lanzamientos de 2026 reseñados por Creative Boom, con enlaces; la lista de Typographica no apareció en las búsquedas. | — |
 | 4 oct. | Encargo | Probar esas tipografías, porque las anteriores no le convencen. | Se probó «relevo» en las páginas de 19 fundiciones; seis cargan su letra (Partiche, Tuffo, Peignot Jumbo, Reel, AT Glacier y Unifora) y se armaron siete tableros en la carpeta de trabajo. Las demás piden un formulario con nombre y correo, pendiente de su permiso. | Sin decisión |
 | 5 oct. | Consulta | Preguntar qué debe comprar al final para el testeo y pedir una revisión del logotipo. | Respuesta en la conversación: un parlante Bluetooth solo para quien no tenga (JBL Go 4 a CLP 24.990 en Paris, visto el 5 de octubre) y, opcional, un llavero iTag (CLP 6.990 en Tienda8), que la app todavía no hace sonar. Revisión del logotipo: el vigente del sistema 3.1 contradice tres pedidos posteriores (letra simple, subrayado y azul antiguo) y no coincide con el de la app. | — |
+| 5 oct. | Encargo y compra | Quiere comprar el llavero iTag, en MercadoLibre si hay uno compatible; pide actualizar la app para que lo soporte, solo si se le asegura que funciona. | [Android 2.19](../06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md): salida «El llavero» con búsqueda, prueba, conexión durante la espera, botón que calla la señal y migración de Supabase; probada en emulador, sin llavero real. Tres publicaciones de MercadoLibre que indican iSearching (CLP 5.930 a 7.990). Se aseguró el protocolo, no un anuncio concreto: hay que probarlo al llegar. | D-109 |
 
 ## Lo que muestra el registro
 
@@ -106,6 +107,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-05 — Llavero iTag
+
+- **Qué cambió:** se registró el pedido de comprar el llavero iTag y de que la app lo soporte.
+- **Cómo estaba antes:** el registro terminaba en la consulta sobre la compra para el testeo y el logotipo.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-05 — Sans, tipografías recientes, compra y logotipo
 

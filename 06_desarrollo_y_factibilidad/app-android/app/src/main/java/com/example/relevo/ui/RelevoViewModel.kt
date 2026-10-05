@@ -25,6 +25,7 @@ import com.example.relevo.data.Settings
 import com.example.relevo.data.SettingsStore
 import com.example.relevo.data.StudyStore
 import com.example.relevo.data.SyncStatus
+import com.example.relevo.data.TagStore
 import com.example.relevo.domain.AutoMode
 import com.example.relevo.domain.Interests
 import com.example.relevo.domain.NextStepRule
@@ -44,6 +45,7 @@ import com.example.relevo.monitor.ReturnNotice
 import com.example.relevo.monitor.UsageAccess
 import com.example.relevo.monitor.UsageAfterSignal
 import com.example.relevo.signal.SignalPlayer
+import com.example.relevo.signal.TagLink
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -117,6 +119,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Último relevo cuya tarjeta de regreso la persona cerró con «Ahora no». */
   private val _returnDismissedFor = MutableStateFlow(experiencePreferences.getLong("return_dismissed_for", 0L))
   val returnDismissedFor: StateFlow<Long> = _returnDismissedFor.asStateFlow()
+
+  /** Llavero (D-109): el vinculado, la búsqueda y la última prueba. */
+  private val tagStore = TagStore(application)
+  private val _tag = MutableStateFlow(TagUi(linkedName = tagStore.name.takeIf { tagStore.linked }))
+  val tag: StateFlow<TagUi> = _tag.asStateFlow()
+  val tagStatus: StateFlow<TagLink.Status> = TagLink.status
 
   private val _participation = MutableStateFlow(currentParticipation())
   val participation: StateFlow<ParticipationMode> = _participation.asStateFlow()
@@ -609,6 +617,85 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     return started
   }
 
+  // ---- Llavero (D-109) ----
+
+  /** Busca llaveros cerca durante unos 12 s y los ordena del más cercano al más lejano. */
+  fun searchTags() = searchNearby(all = false)
+
+  /** Respaldo si el llavero no aparece: muestra todos los aparatos con nombre (D-109). */
+  fun searchAllDevices() = searchNearby(all = true)
+
+  private fun searchNearby(all: Boolean) {
+    if (_tag.value.searching) return
+    _tag.value = _tag.value.copy(searching = true, found = emptyList(), searched = false, problem = null, searchedAll = all)
+    log("llavero_busqueda", if (all) "todos" else null)
+    viewModelScope.launch(Dispatchers.IO) {
+      val problem = TagLink.search(getApplication(), all = all) { found ->
+        val others = _tag.value.found.filterNot { it.address == found.address }
+        _tag.value = _tag.value.copy(found = (others + found).sortedByDescending { it.rssi })
+      }
+      _tag.value = _tag.value.copy(searching = false, searched = true, problem = problem)
+      log("llavero_encontrados", "${_tag.value.found.size};${problem?.name?.lowercase() ?: "ok"}")
+    }
+  }
+
+  /** Guarda el llavero elegido y lo hace pitar una vez para confirmar que es el correcto. */
+  fun linkTag(found: TagLink.Found) {
+    tagStore.save(found.address, found.name)
+    // Sin el nombre del aparato: solo este teléfono sabe cuál es el llavero.
+    log("llavero_vinculado")
+    _tag.value = _tag.value.copy(linkedName = tagStore.name, found = emptyList(), searched = false, test = TagTest.IDLE)
+    testTag()
+  }
+
+  /** Prueba el llavero: se conecta si hace falta y pita 2 s. No bloquea la pantalla. */
+  fun testTag() {
+    val address = tagStore.address ?: return
+    if (_tag.value.test == TagTest.WORKING) return
+    _tag.value = _tag.value.copy(test = TagTest.WORKING, problem = null)
+    viewModelScope.launch(Dispatchers.IO) {
+      val sounded = TagLink.connect(getApplication(), address) && TagLink.beep(TAG_TEST_MILLIS)
+      val status = TagLink.status.value
+      // Un aparato que no sabe pitar no queda elegido: se vuelve a buscar, con el motivo a la vista.
+      if (!sounded && status.problem == TagLink.Problem.NOT_A_TAG) {
+        tagStore.clear()
+        _tag.value = TagUi(problem = TagLink.Problem.NOT_A_TAG)
+        log("prueba_de_sonido", "salida=tag;sono=no;no_es_llavero")
+        TagLink.idle()
+        return@launch
+      }
+      _tag.value = _tag.value.copy(
+        test = if (sounded) TagTest.SOUNDED else TagTest.FAILED,
+        problem = if (sounded) null else status.problem,
+        button = status.button,
+        linkLossOff = status.linkLossOff,
+      )
+      log(
+        "prueba_de_sonido",
+        "salida=tag;sono=${if (sounded) "si" else "no"};boton=${if (status.button) "si" else "no"};" +
+          "alarma_desconexion=${if (status.linkLossOff) "apagada" else "sin_apagar"}",
+      )
+      // Si ningún relevo usa el llavero, se desconecta para no gastar su pila.
+      TagLink.idle()
+    }
+  }
+
+  /** El Bluetooth se encendió después del aviso: sin llavero elegido vuelve a buscar; con uno, borra el aviso. */
+  fun bluetoothTurnedOn() {
+    val current = _tag.value
+    if (current.problem != TagLink.Problem.BLUETOOTH_OFF) return
+    if (current.linkedName == null) searchNearby(current.searchedAll) else _tag.value = current.copy(problem = null, test = TagTest.IDLE)
+  }
+
+  /** Olvida el llavero vinculado, por ejemplo para elegir otro. No se usa con un relevo activo. */
+  fun forgetTag() {
+    if (_reminder.value.status == ReminderStatus.WAITING && _reminder.value.signalRoute == SignalRoute.TAG) return
+    tagStore.clear()
+    TagLink.idle()
+    log("llavero_olvidado")
+    _tag.value = TagUi()
+  }
+
   fun disarm() {
     // Con la activación automática, el servicio no se detiene: al ver el relevo desactivado vuelve a esperar.
     if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
@@ -927,6 +1014,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         _lastReminder.value = null
         studyStore.clear()
         _study.value = StudyState()
+        tagStore.clear()
+        TagLink.release()
+        _tag.value = TagUi()
         _returnDismissedFor.value = 0L
         remoteSync.clearCredentials()
         experiencePreferences.edit().clear().apply()
@@ -993,6 +1083,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   companion object {
+    private const val TAG_TEST_MILLIS = 2_000L
+
     /** Mensaje tras borrar los datos; también marca que la persona dejó la prueba. */
     const val DELETED_MESSAGE = "Tus datos se borraron y saliste del proyecto. Si quieres volver, tendrás que aceptar de nuevo."
 
@@ -1000,6 +1092,27 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val QUICK_FEEDBACK_AT = listOf(3, 10)
   }
 }
+
+/** Estado de la prueba del llavero en la pantalla de preparar. */
+enum class TagTest { IDLE, WORKING, SOUNDED, FAILED }
+
+/**
+ * Lo que la pantalla de preparar muestra del llavero (D-109). [searched]: terminó una búsqueda, para
+ * decir si no apareció ninguno; [searchedAll]: fue la búsqueda de respaldo, con todos los aparatos.
+ * [button] y [linkLossOff], de la última prueba: si su botón avisa y si se pudo apagar su alarma por
+ * desconexión.
+ */
+data class TagUi(
+  val linkedName: String? = null,
+  val searching: Boolean = false,
+  val found: List<TagLink.Found> = emptyList(),
+  val searched: Boolean = false,
+  val searchedAll: Boolean = false,
+  val problem: TagLink.Problem? = null,
+  val test: TagTest = TagTest.IDLE,
+  val button: Boolean = false,
+  val linkLossOff: Boolean = true,
+)
 
 /** Qué notas de la guía siguen visibles: se ocultan después del primer relevo. */
 data class GuideState(val prepare: Boolean = false, val signal: Boolean = false, val decide: Boolean = false)

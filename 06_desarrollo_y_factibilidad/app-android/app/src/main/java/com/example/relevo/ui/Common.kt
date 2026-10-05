@@ -212,18 +212,21 @@ internal fun bluetoothSpeakerConnected(context: Context): Boolean =
 internal fun routeName(route: SignalRoute): String = when (route) {
   SignalRoute.BLUETOOTH -> "El parlante"
   SignalRoute.WATCH -> "El reloj"
+  SignalRoute.TAG -> "El llavero"
   SignalRoute.PHONE -> "El teléfono"
 }
 
 internal fun routeIcon(route: SignalRoute): KitIcon = when (route) {
   SignalRoute.BLUETOOTH -> KitIcon.PARLANTE
   SignalRoute.WATCH -> KitIcon.TIEMPO
+  SignalRoute.TAG -> KitIcon.OBJETO
   SignalRoute.PHONE -> KitIcon.TELEFONO
 }
 
 internal fun routeFailure(route: SignalRoute): String = when (route) {
   SignalRoute.BLUETOOTH -> "No sonó en el parlante. Revisa que esté encendido y conectado."
   SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado y con las llamadas por Bluetooth activadas."
+  SignalRoute.TAG -> "No sonó en el llavero. Revisa que esté encendido y cerca del teléfono."
   SignalRoute.PHONE -> "No sonó en el teléfono. Revisa el volumen."
 }
 

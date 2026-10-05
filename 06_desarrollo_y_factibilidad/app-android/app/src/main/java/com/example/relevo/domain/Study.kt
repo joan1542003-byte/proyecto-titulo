@@ -16,14 +16,17 @@ enum class StudyCondition(val code: Char, val route: SignalRoute) {
   PHONE('C', SignalRoute.PHONE);
 
   /**
-   * Salida que usa esta condición. A y B piden el objeto: si la persona usa un reloj como objeto
-   * (D-093), se mantiene el reloj; C siempre suena en el teléfono.
+   * Salida que usa esta condición. A y B piden el objeto: si la persona usa un reloj (D-093) o un
+   * llavero (D-109) como objeto, se mantiene; C siempre suena en el teléfono.
    */
   fun routeFor(current: SignalRoute): SignalRoute =
-    if (route == SignalRoute.BLUETOOTH && current == SignalRoute.WATCH) SignalRoute.WATCH else route
+    if (route == SignalRoute.BLUETOOTH && current in OBJECTS) current else route
 
   companion object {
     fun fromCode(code: Char): StudyCondition? = entries.firstOrNull { it.code == code }
+
+    /** Objetos que reemplazan al parlante en las semanas A y B. */
+    private val OBJECTS = setOf(SignalRoute.WATCH, SignalRoute.TAG)
   }
 }
 

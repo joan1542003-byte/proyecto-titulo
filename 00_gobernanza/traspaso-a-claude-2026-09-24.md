@@ -196,6 +196,13 @@ En la rama `android-2.7`, a pedido del autor:
 - **Letras que dicen relevo, propuesta 3.8 (4 de octubre, D-107):** el autor pidió más letras de tipo display y analizarlas viéndolas y leyendo qué conceptos de Relevo evocan. Se sumaron 61 letras de cinco fuentes (Le75, Tunera, Republish, The League of Moveable Type y Klotter Supply), hasta 325; 108 se miraron en grande y catorce pasaron a ficha: para el logotipo Struggle, Bespoke Stencil, Manosque, Kola y Ouroboros; para la señal Striper, Ampoule y Linea; para carteles seis de solo mayúsculas ([documento 36](../10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md); [lámina](https://claude.ai/artifact/C8C9apN8tayiAoPERJ9gxZ)). La lectura de conceptos es una hipótesis de diseño sin probar con personas. El autor la descartó el mismo día por genérica; la reemplaza la 3.9.
 - **Letras para lucirse, propuesta 3.9 (4 de octubre, D-108):** el autor rechazó la 3.8 («genéricas, sin carácter, estilo ni diseño») y aclaró que display es una letra hecha para verse linda y lucirse en un logotipo, no para pantallas. Se buscó belleza: 113 especímenes y 23 letras en cuatro familias, con su tablero: cursivas con vuelo (Acma, Hatton, Migra, Kyoto, Pangaia, Eiko, Editorial New, Right Didone y Telma), contraste alto y afilado (Gatwick Glider, Boska, Bonny, Melodrama y Stardom), cálidas y con cuerpo (Woodland, Gambetta, Sentient, Zodiak y Ouroboros) y decorativas (Zina, Chronos Serif, Aktura y Playground) ([documento 37](../10_recursos_visuales/37_letras-para-lucirse-2026-10-04.md); [lámina](https://claude.ai/artifact/YAVi4rd5H4tKPPXSAnn3rp)). Las de Pangram Pangram son «gratis para probar» (sirven para la tesis; un logotipo real pide licencia). Pendiente: que el autor elija tres o más y diga si autoriza usar su nombre y correo para las pruebas de Reckless, GT Super, GT Alpina y Domaine Display; retomar la exploración de los visuales generales.
 
+## Actualización del 5 de octubre de 2026
+
+- **Android 2.19 (D-109):** salida «El llavero». Relevo busca un llavero iTag, lo prueba, mantiene la conexión mientras el relevo espera y lo hace pitar seis veces en 30 s; su botón calla la señal (`signal_end = 'object'`). Probada en emulador solo en su pantalla; **falta probarla con un llavero real** ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md)).
+- **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
+- **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
+- **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
+
 ## Seguridad, privacidad y GitHub
 
 El README informó que el repositorio fue público al 9 de septiembre de 2026; esa visibilidad debe verificarse antes de cargar material nuevo. No subir notas personales, consentimientos firmados, nombres, contactos de participantes, registros brutos identificables ni archivos locales que no estén preparados para difusión. Mantener solo corpus anonimizado autorizado. No guardar credenciales, `.env`, `local.properties`, claves privadas o copias de bases de datos. El archivo `local.properties.example` es una plantilla, no una credencial.
@@ -207,6 +214,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-05 — Llavero iTag
+
+- **Qué cambió:** el estado suma Android 2.19 con el llavero, la migración `relevo_2_19_llavero`, el panel 4 y la compra en MercadoLibre.
+- **Cómo estaba antes:** terminaba en la propuesta 3.9 del 4 de octubre.
+- **Por qué:** el autor decidió comprar un llavero iTag y pidió que la app lo haga sonar (D-109).
 
 ### 2026-10-04 — Letras para lucirse
 

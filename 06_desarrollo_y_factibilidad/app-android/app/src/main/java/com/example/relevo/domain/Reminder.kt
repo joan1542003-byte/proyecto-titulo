@@ -12,8 +12,9 @@ enum class ReminderStatus {
 /**
  * Por dónde suena la señal. BLUETOOTH: parlante multimedia. PHONE: altavoz del teléfono.
  * WATCH: reloj u otro equipo que contesta llamadas; el tono viaja como audio de llamada (D-093, experimental).
+ * TAG: llavero iTag clásico; pita con el servicio Bluetooth estándar de alerta inmediata (D-109).
  */
-enum class SignalRoute { BLUETOOTH, PHONE, WATCH }
+enum class SignalRoute { BLUETOOTH, PHONE, WATCH, TAG }
 data class TrackedApp(val packageName: String, val label: String)
 
 data class Reminder(

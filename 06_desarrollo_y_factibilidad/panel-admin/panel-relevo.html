@@ -435,7 +435,7 @@ select json_build_object(
   ];
 
   const CONDITIONS = { A: 'Junto al primer paso', B: 'Otro lugar de la casa', C: 'En el teléfono' };
-  const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj' };
+  const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj', tag: 'llavero' };
   const OUTCOMES = { started: 'Comenzó', later: 'Lo dejó para después', changed: 'Cambió de idea', not_answered: 'Saltó las preguntas', deleted: 'Lo eliminó' };
   const KNEW = { yes: 'Sí', partly: 'A medias', no: 'No' };
   const FEELING = { good: '😄 Bien', neutral: '😐 Normal', bad: '😞 Mal' };
@@ -445,13 +445,16 @@ select json_build_object(
     armed: ['play', 'Activó un relevo'], target_entered: ['phone', 'Abrió una app elegida'], target_left: ['phone', 'Salió de una app elegida'],
     signal_emitted: ['bell', 'Sonó la señal'], signal_failed: ['bell', 'La señal no sonó'], signal_ended: ['bell', 'La señal terminó sola'],
     signal_interrupted: ['bell', 'Se cortó la señal'], disarmed: ['pause', 'Desactivó el relevo'], silenced: ['check', 'Silenció la señal'],
+    silenced_object: ['check', 'Calló la señal con el llavero'],
     responded: ['check', 'Respondió'], closed: ['check', 'Cerró el relevo'], monitor_paused: ['pause', 'Se pausó el conteo'], monitor_resumed: ['play', 'Se retomó el conteo'],
     app_abierta: ['phone', 'Abrió Relevo'], app_cerrada: ['phone', 'Cerró Relevo'], consentimiento_aceptado: ['check', 'Aceptó el consentimiento'],
     relevo_automatico: ['bolt', 'Relevo se activó solo'], activacion_automatica: ['bolt', 'Cambió la activación automática'],
     relevo_eliminado: ['close', 'Eliminó un relevo activo'], falta_completar: ['info', 'Le faltó completar un campo'],
     mensaje_recibido: ['send', 'Le llegó un mensaje'], mensaje_abierto: ['send', 'Abrió un mensaje'], mensaje_sin_notificaciones: ['send', 'Mensaje sin notificaciones'],
     preparar_abierto: ['play', 'Empezó a preparar'], preparar_cerrado: ['pause', 'Cerró la preparación'], actividad_elegida: ['check', 'Eligió una actividad'],
-    prueba_de_sonido: ['bell', 'Probó el sonido'], video_como_funciona: ['play', 'Vio el video'], aviso_semanal_enviado: ['bell', 'Le llegó el aviso semanal']
+    prueba_de_sonido: ['bell', 'Probó el sonido'], video_como_funciona: ['play', 'Vio el video'], aviso_semanal_enviado: ['bell', 'Le llegó el aviso semanal'],
+    llavero_busqueda: ['bell', 'Buscó su llavero'], llavero_encontrados: ['bell', 'Terminó de buscar el llavero'], llavero_vinculado: ['check', 'Eligió su llavero'],
+    llavero_olvidado: ['close', 'Olvidó su llavero']
   };
   const ICONS = {
     now: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
@@ -836,6 +839,7 @@ select json_build_object(
       ['Tiempo de uso', perm.tiempo_de_uso ? 'Permitido' : 'Falta', perm.tiempo_de_uso === false],
       ['Notificaciones', perm.notificaciones ? 'Permitidas' : 'Apagadas', perm.notificaciones === false],
       ['Batería', perm.bateria_sin_restriccion ? 'Sin restricción' : 'Con restricción', perm.bateria_sin_restriccion === false],
+      eq.llavero_vinculado != null ? ['Llavero', eq.llavero_vinculado ? 'Elegido' + (perm.bluetooth_cercano === false ? ', sin permiso de dispositivos cercanos' : '') : 'Sin llavero', eq.llavero_vinculado && perm.bluetooth_cercano === false] : null,
       ['Activación automática', aj.activacion_automatica ? 'Encendida' : 'Apagada'],
       ['Veces por semana', aj.veces_por_semana != null ? String(aj.veces_por_semana) : '—'],
       ['Aviso semanal', aj.aviso_semanal ? 'Encendido' : 'Apagado'],

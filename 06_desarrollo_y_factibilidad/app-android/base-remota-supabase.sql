@@ -411,3 +411,14 @@ drop policy if exists "participants delete own usage" on public.relevo_daily_usa
 create policy "participants delete own usage" on public.relevo_daily_usage
   for delete to authenticated using ((select auth.uid()) = user_id);
 create index if not exists relevo_daily_usage_code_day_idx on public.relevo_daily_usage (participant_code, day);
+
+-- 2026-10-05 · Relevo 2.19 (D-109): la señal puede sonar en un llavero iTag. Migración `relevo_2_19_llavero`.
+-- 'object': la persona calló la señal con el botón del llavero; se registra también el evento 'silenced_object'.
+alter table public.relevo_sessions drop constraint if exists relevo_sessions_signal_route_check;
+alter table public.relevo_sessions add constraint relevo_sessions_signal_route_check
+  check (signal_route is null or signal_route in ('bluetooth', 'phone', 'watch', 'tag'));
+alter table public.relevo_sessions drop constraint if exists relevo_sessions_signal_end_check;
+alter table public.relevo_sessions add constraint relevo_sessions_signal_end_check
+  check (signal_end is null or signal_end in ('silenced', 'auto', 'interrupted', 'object'));
+alter table public.relevo_events drop constraint if exists relevo_events_event_type_check;
+alter table public.relevo_events add constraint relevo_events_event_type_check check (event_type in ('armed', 'target_entered', 'target_left', 'signal_emitted', 'signal_failed', 'signal_ended', 'signal_interrupted', 'disarmed', 'silenced', 'silenced_object', 'responded', 'closed', 'monitor_paused', 'monitor_resumed'));

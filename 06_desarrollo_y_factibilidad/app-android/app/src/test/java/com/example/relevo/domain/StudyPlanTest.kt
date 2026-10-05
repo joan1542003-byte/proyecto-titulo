@@ -41,6 +41,14 @@ class StudyPlanTest {
   }
 
   @Test
+  fun objectWeeksKeepTheTag() {
+    // El llavero (D-109) también reemplaza al parlante en A y B; en C suena el teléfono.
+    assertEquals(SignalRoute.TAG, StudyCondition.SITUATED.routeFor(SignalRoute.TAG))
+    assertEquals(SignalRoute.TAG, StudyCondition.NEUTRAL.routeFor(SignalRoute.TAG))
+    assertEquals(SignalRoute.PHONE, StudyCondition.PHONE.routeFor(SignalRoute.TAG))
+  }
+
+  @Test
   fun studyEndsAfterDayTwentyOne() {
     assertFalse(plan.isFinished(day0.plusDays(21)))
     assertTrue(plan.isFinished(day0.plusDays(22)))

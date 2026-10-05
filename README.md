@@ -64,6 +64,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **4 de octubre:** la [propuesta 3.6, «Letra con identidad»](10_recursos_visuales/34_letra-con-identidad-2026-10-04.md) (D-105) arregla el azul de Relevo (`#1C3891`) para que combine con la familia y, tras descartar los logotipos dibujados, propone el logotipo en Chubbo, una letra gratuita con identidad ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-04.md)). La [propuesta 3.7, «Letras para relevo»](10_recursos_visuales/35_letras-para-relevo-2026-10-04.md) (D-106) amplía la búsqueda a 176 letras de cuatro fuentes sin Google Fonts, con dieciocho finalistas y sus licencias; su versión 2 suma descargas de UNCUT y Open Foundry y llega a treinta finalistas entre 264 letras. La [propuesta 3.8, «Letras que dicen relevo»](10_recursos_visuales/36_letras-que-dicen-relevo-2026-10-04.md) (D-107) suma 61 letras de tipo display y lee catorce de ellas con los conceptos de Relevo (testigo, traspaso, lugar marcado, señal, volver, calma y pausa); el autor la descartó por genérica. La [propuesta 3.9, «Letras para lucirse»](10_recursos_visuales/37_letras-para-lucirse-2026-10-04.md) (D-108) busca belleza: 23 letras display, hechas para lucirse en un logotipo, en cuatro familias.
 
+**5 de octubre:** la [app 2.19](06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md) (D-109) agrega la salida «El llavero»: Relevo hace pitar un llavero iTag por Bluetooth, mantiene la conexión mientras el relevo espera y el botón del llavero calla la señal. Su pantalla se probó en emulador; falta probarla con el llavero, que el autor comprará en MercadoLibre ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-05.md)).
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».
@@ -138,6 +140,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-05 — App 2.19
+
+- **Qué cambió:** el estado actual suma la app 2.19 con el llavero iTag.
+- **Cómo estaba antes:** terminaba en las propuestas de letra del 4 de octubre.
+- **Por qué:** el autor decidió comprar un llavero iTag y pidió que la app lo haga sonar (D-109).
 
 ### 2026-10-04 — Letras para lucirse
 

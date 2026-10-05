@@ -144,6 +144,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   val quickFeedbackDue by viewModel.quickFeedbackDue.collectAsState()
   val guide by viewModel.guide.collectAsState()
   val firstActivated by viewModel.firstActivated.collectAsState()
+  val tag by viewModel.tag.collectAsState()
+  val tagStatus by viewModel.tagStatus.collectAsState()
 
   val preferences = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   fun onboardingComplete() = preferences.getBoolean("onboarding_complete", false)
@@ -377,6 +379,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 Route.PREPARE -> PrepareScreen(
                   reminder = reminder, apps = apps, customActivities = customActivities, routes = routes, usageAccess = usageAccess,
                   backgroundUnrestricted = backgroundUnrestricted, studyCondition = study.condition, photoKey = photoKey, guided = guide.prepare,
+                  tag = tag, tagStatus = tagStatus,
                   actions = PrepareActions(
                     onActivity = viewModel::updateActivity,
                     onStart = viewModel::updateHowToStart,
@@ -394,6 +397,12 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     onClose = { viewModel.onPrepareClosed(); pop() },
                     onStepShown = viewModel::onPrepareStep,
                     onMissing = viewModel::onMissingField,
+                    onTagSearch = viewModel::searchTags,
+                    onTagSearchAll = viewModel::searchAllDevices,
+                    onTagLink = viewModel::linkTag,
+                    onTagTest = viewModel::testTag,
+                    onTagForget = viewModel::forgetTag,
+                    onBluetoothOn = viewModel::bluetoothTurnedOn,
                   ),
                 )
                 Route.ACTIVE -> ActiveScreen(

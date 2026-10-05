@@ -1,6 +1,6 @@
 # Panel del testeo de Relevo
 
-**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096 y D-097. **Fecha:** 30 de septiembre de 2026. **Versión:** 3.
+**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097 y D-109. **Fecha:** 5 de octubre de 2026. **Versión:** 4.
 
 ## Diseño
 
@@ -65,6 +65,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-05 — Llavero (versión 4)
+
+- **Qué cambió:** el panel reconoce la salida «llavero» de Android 2.19, el evento de silencio con el botón del llavero y los eventos de búsqueda y elección del llavero; la ficha de cada persona dice si eligió un llavero y si le falta el permiso de dispositivos cercanos.
+- **Cómo estaba antes:** conocía el parlante, el teléfono y el reloj; un relevo con llavero se habría mostrado como «suena en el teléfono».
+- **Por qué:** Android 2.19 agrega el llavero iTag (D-109).
 
 ### 2026-09-30 — Uso diario, configuración y mensajes listos (versión 3)
 

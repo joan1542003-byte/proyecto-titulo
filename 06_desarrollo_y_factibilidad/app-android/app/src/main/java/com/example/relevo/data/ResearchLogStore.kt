@@ -220,6 +220,7 @@ class ResearchLogStore(context: Context) :
       put("signal_route", when (reminder.signalRoute) {
         com.example.relevo.domain.SignalRoute.PHONE -> "phone"
         com.example.relevo.domain.SignalRoute.WATCH -> "watch"
+        com.example.relevo.domain.SignalRoute.TAG -> "tag"
         com.example.relevo.domain.SignalRoute.BLUETOOTH -> "bluetooth"
       })
       put("app_version", cl.udp.relevo.BuildConfig.VERSION_NAME)

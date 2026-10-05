@@ -20,6 +20,7 @@ import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RemoteSync
 import com.example.relevo.data.ResearchBackup
 import com.example.relevo.data.StudyStore
+import com.example.relevo.data.TagStore
 import com.example.relevo.domain.AutoMode
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
@@ -30,6 +31,7 @@ import java.time.LocalDate
 import java.util.UUID
 import kotlinx.coroutines.CompletableDeferred
 import com.example.relevo.signal.SignalPlayer
+import com.example.relevo.signal.TagLink
 import com.example.relevo.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -102,6 +104,7 @@ class AppUsageMonitorService : Service() {
     messageStream.stop()
     monitorJob?.cancel()
     signalPlayer.stop()
+    TagLink.release()
     scope.cancel()
     super.onDestroy()
   }
@@ -135,6 +138,8 @@ class AppUsageMonitorService : Service() {
     isWatching = false
     isCounting = true
     messageStream.start()
+    // El llavero se conecta al activar el relevo y se mantiene así hasta la señal (D-109).
+    if (store.load().signalRoute == SignalRoute.TAG) TagStore(this).address?.let { TagLink.hold(this, it) }
     val startedAt = System.currentTimeMillis()
     // Se revisa un periodo previo para saber qué app estaba abierta al empezar o al retomar.
     lastQueryMillis = startedAt - LOOKBACK_MILLIS
@@ -187,6 +192,7 @@ class AppUsageMonitorService : Service() {
 
           delay(POLL_INTERVAL_MILLIS)
         }
+        TagLink.release()
         // Con la activación automática, al terminar un relevo vuelve a esperar en vez de detenerse.
         if (autoMode.enabled && hasCurrentConsent()) startWatching() else stopMonitoring()
       }
@@ -288,6 +294,11 @@ class AppUsageMonitorService : Service() {
           researchLog.record(signalled.sessionId, signalled.participantCode, "signal_interrupted", signalled.targetPackage, seconds)
           researchLog.markSignalEnd(signalled.sessionId, "interrupted")
         }
+        // Se apretó el botón del llavero: la señal se calló en el objeto, sin abrir la app (D-109).
+        SignalPlayer.Ending.SILENCED_ON_OBJECT -> {
+          researchLog.record(signalled.sessionId, signalled.participantCode, "silenced_object", signalled.targetPackage, seconds)
+          researchLog.markSignalEnd(signalled.sessionId, "object")
+        }
         SignalPlayer.Ending.STOPPED -> Unit
       }
       store.save(store.load().endSignal())
@@ -377,6 +388,7 @@ class AppUsageMonitorService : Service() {
     val text = when {
       !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No se encontró el parlante. Abre Relevo para revisarlo."
       !audible && reminder.signalRoute == SignalRoute.WATCH -> "No se encontró el reloj. Abre Relevo para revisarlo."
+      !audible && reminder.signalRoute == SignalRoute.TAG -> "No se encontró el llavero. Abre Relevo para revisarlo."
       !audible -> "No sonó en el teléfono. Abre Relevo para revisarlo."
       generic -> GENERIC_SIGNAL_TEXT
       reminder.howToStart.isBlank() -> "Es momento de volver a elegir."

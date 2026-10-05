@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- Abrir el canal de llamada hacia un reloj (salida WATCH, D-093); permiso normal, sin diálogo. -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- Llavero iTag (D-109): buscarlo, conectarse y hacerlo pitar. Solo busca ese llavero; no ubica a la persona. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />

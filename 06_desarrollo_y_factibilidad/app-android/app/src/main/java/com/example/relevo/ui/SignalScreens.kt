@@ -101,6 +101,7 @@ internal fun SignalScreen(
         when (reminder.signalRoute) {
           SignalRoute.BLUETOOTH -> "No sonó en el parlante. Revisa que esté encendido o elige el teléfono."
           SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado o elige el teléfono."
+          SignalRoute.TAG -> "No sonó en el llavero. Revisa que esté encendido y cerca del teléfono, o elige el teléfono."
           SignalRoute.PHONE -> "No sonó en el teléfono. Revisa el volumen."
         },
         title = "Se cumplió el tiempo", tone = Tone.Error,

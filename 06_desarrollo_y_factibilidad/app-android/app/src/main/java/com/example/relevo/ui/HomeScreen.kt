@@ -374,6 +374,7 @@ internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
   val where = when (reminder.signalRoute) {
     SignalRoute.PHONE -> "en el teléfono"
     SignalRoute.WATCH -> "en el reloj, ${placePhrase(reminder.place)}"
+    SignalRoute.TAG -> "en el llavero, ${placePhrase(reminder.place)}"
     SignalRoute.BLUETOOTH -> "en el parlante, ${placePhrase(reminder.place)}"
   }
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {

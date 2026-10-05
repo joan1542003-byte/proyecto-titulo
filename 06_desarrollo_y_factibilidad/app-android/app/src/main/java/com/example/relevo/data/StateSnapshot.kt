@@ -8,6 +8,7 @@ import com.example.relevo.domain.Reminder
 import com.example.relevo.monitor.BackgroundAccess
 import com.example.relevo.monitor.DailyUsage
 import com.example.relevo.monitor.UsageAccess
+import com.example.relevo.signal.TagLink
 import org.json.JSONArray
 import org.json.JSONObject
 import java.time.LocalDate
@@ -43,8 +44,11 @@ object StateSnapshot {
       .put("permisos", JSONObject()
         .put("tiempo_de_uso", UsageAccess.isGranted(app))
         .put("notificaciones", NotificationManagerCompat.from(app).areNotificationsEnabled())
-        .put("bateria_sin_restriccion", BackgroundAccess.isUnrestricted(app)))
-      .put("equipo", JSONObject().put("android", Build.VERSION.SDK_INT).put("fabricante", Build.MANUFACTURER).put("modelo", Build.MODEL).put("app", BuildConfig.VERSION_NAME))
+        .put("bateria_sin_restriccion", BackgroundAccess.isUnrestricted(app))
+        .put("bluetooth_cercano", TagLink.hasPermissions(app)))
+      .put("equipo", JSONObject().put("android", Build.VERSION.SDK_INT).put("fabricante", Build.MANUFACTURER).put("modelo", Build.MODEL).put("app", BuildConfig.VERSION_NAME)
+        // Solo si hay un llavero vinculado (D-109); su dirección no sale del teléfono.
+        .put("llavero_vinculado", TagStore(app).linked))
       .put("ultimo_relevo", reminderJson(ReminderStore(app, ReminderStore.LAST_CONFIGURATION).load()))
       .put("relevo_actual", reminderJson(ReminderStore(app).load()))
       .put("prueba", if (plan == null) JSONObject.NULL else JSONObject().put("secuencia", plan.sequence).put("dia0", plan.day0.toString())
