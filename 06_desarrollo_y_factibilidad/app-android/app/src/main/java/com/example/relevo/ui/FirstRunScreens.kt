@@ -140,7 +140,7 @@ internal fun ConsentScreen(
 @Composable
 internal fun ConsentSections(remoteConfigured: Boolean) {
   Column(Modifier.padding(top = 8.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-    ConsentPart("Cómo es", "Empieza con un encuentro de unos 45 minutos para dejar todo listo. Algunas semanas la app te pedirá dejar el parlante en otro lugar o usar el teléfono. Cuando se cumple el tiempo que elegiste, suena unos 30 segundos y se apaga. Después de cada aviso y al final de cada semana hay preguntas de un toque; puedes saltarlas. Al final te invitamos a conversar unos 15 minutos. El parlante es provisorio; no es el objeto final.")
+    ConsentPart("Cómo es", "Empieza con un encuentro de unos 45 minutos para dejar todo listo. Cada vez eliges dónde suena: un parlante, un reloj, un llavero o el teléfono, y dónde lo dejas. Cuando se cumple el tiempo que elegiste, suena unos 30 segundos y se apaga. Después de cada aviso y al final de cada semana hay preguntas de un toque; puedes saltarlas. Al final te invitamos a conversar unos 15 minutos. El parlante es provisorio; no es el objeto final.")
     ConsentPart("Tú decides", "Participar es voluntario. Puedes saltar preguntas, silenciar el aviso, quitar los permisos o salir cuando quieras, sin dar explicaciones. Nadie va a juzgar lo que elijas hacer. El sonido puede molestar a otras personas; puedes detenerlo y contárnoslo.")
     ConsentPart("Qué guardamos", "Un código al azar; lo que preparas (actividad, cómo empiezas, dónde, apps y tiempo); cuándo lo activas, a mano o solo, cuándo suena y qué respondes; cuánto usaste las apps elegidas 10 minutos antes y después del aviso; cuánto usas cada día las apps que elegiste en Relevo y cuánto tiempo usas el teléfono en total, desde 7 días antes de aceptar; el modelo del teléfono y los permisos que diste; y cómo usas Relevo: cuándo lo abres y por cuánto tiempo, qué pantallas ves, cuánto del video ves, tus intereses, tus actividades y los ajustes que cambias. Tu nombre se guarda aparte, solo con tu código, para saber quién participa; no va junto a lo que haces en Relevo.")
     ConsentPart("Dónde se guarda", if (remoteConfigured) "En el teléfono y en la base de datos del proyecto (Supabase). Si no hay internet, se envía después. También queda una copia sin tu nombre en la carpeta Documentos/Relevo del teléfono; se borra si borras tus datos."
@@ -202,7 +202,7 @@ internal fun PermissionScreen(
       else RelevoButton("Dar el permiso", { waitingForSettings = true; onOpenUsageSettings() })
     },
   ) {
-    Text("Para avisarte, Relevo necesita saber cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.", style = Relevo.type.body, color = Relevo.colors.ink)
+    Text("Relevo necesita saber cuánto tiempo pasas en las apps que elijas. No ve lo que haces en ellas.", style = Relevo.type.body, color = Relevo.colors.ink)
     SectionGap()
     ListSection {
       ListRow(

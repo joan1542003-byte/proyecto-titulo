@@ -49,6 +49,27 @@ class StudyPlanTest {
   }
 
   @Test
+  fun freePlanHasNoAssignedCondition() {
+    // D-110: la persona elige; el plan solo cuenta los días y las semanas.
+    val free = StudyPlan(StudyPlan.FREE, day0)
+    assertTrue(free.free)
+    assertNull(free.condition(day0.plusDays(3)))
+    assertEquals(2, free.week(day0.plusDays(10)))
+    assertEquals(listOf(1), free.weeksReadyForReview(day0.plusDays(7)))
+    assertTrue(free.closingReady(day0.plusDays(21)))
+  }
+
+  @Test
+  fun chosenConditionFollowsRouteAndPlace() {
+    val base = Reminder(signalRoute = SignalRoute.BLUETOOTH)
+    assertEquals("A", base.copy(objectNearStart = true).chosenCondition())
+    assertEquals("B", base.copy(objectNearStart = false).chosenCondition())
+    assertEquals("", base.chosenCondition())
+    assertEquals("A", base.copy(signalRoute = SignalRoute.TAG, objectNearStart = true).chosenCondition())
+    assertEquals("C", base.copy(signalRoute = SignalRoute.PHONE, objectNearStart = true).chosenCondition())
+  }
+
+  @Test
   fun studyEndsAfterDayTwentyOne() {
     assertFalse(plan.isFinished(day0.plusDays(21)))
     assertTrue(plan.isFinished(day0.plusDays(22)))

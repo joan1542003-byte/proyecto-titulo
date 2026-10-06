@@ -16,8 +16,8 @@ android {
         applicationId = "cl.udp.relevo"
         minSdk = 31
         targetSdk = 36
-        versionCode = 31
-        versionName = "2.19"
+        versionCode = 32
+        versionName = "2.20"
         buildConfigField("String", "SUPABASE_URL", "\"${localProperties.getProperty("SUPABASE_URL", "")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${localProperties.getProperty("SUPABASE_PUBLISHABLE_KEY", "")}\"")
     }

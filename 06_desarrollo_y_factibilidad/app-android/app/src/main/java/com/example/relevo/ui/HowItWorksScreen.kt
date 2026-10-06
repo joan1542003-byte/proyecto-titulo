@@ -113,7 +113,7 @@ internal fun HowItWorksScreen(
       GuidePanel {
         SystemRow(KitIcon.TELEFONO, "La app", "Anotas qué quieres hacer y cómo empiezas.")
         Spacer(Modifier.height(18.dp))
-        SystemRow(KitIcon.PARLANTE, "El parlante", "Lo dejas donde empiezas. Suena cuando llevas en tus apps el tiempo que elegiste.")
+        SystemRow(KitIcon.PARLANTE, "Lo que suena", "Un parlante, un reloj, un llavero o el teléfono. Tú eliges cuál y dónde lo dejas. Suena cuando llevas en tus apps el tiempo que elegiste.")
         Spacer(Modifier.height(18.dp))
         SystemRow(KitIcon.USUARIO, "Tú", "Decides si empiezas o sigues con lo que estabas haciendo.")
       }
@@ -210,7 +210,7 @@ internal fun FirstRelevoScreen(name: String, suggestion: String?, routeTitle: St
     )
     SectionGap()
     Panel {
-      listOf("Qué quieres hacer", "Cómo empiezas", "Dónde dejas el parlante", "Cuándo te avisa", "Cómo suena", "Activarlo").forEachIndexed { i, step ->
+      listOf("Qué quieres hacer", "Cómo empiezas", "Dónde empiezas", "Cuándo te avisa", "Dónde suena", "Activarlo").forEachIndexed { i, step ->
         Row(Modifier.fillMaxWidth().padding(vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
           Box(Modifier.size(26.dp).clip(CircleShape).background(Relevo.colors.ink), contentAlignment = Alignment.Center) {
             Text("${i + 1}", style = Relevo.type.footnote, color = Relevo.colors.onInk)

@@ -89,9 +89,8 @@ internal fun SignalScreen(
     Text("Es momento de volver a elegir", style = Relevo.type.title2, color = Relevo.colors.graphite, modifier = Modifier.appear(1))
     Spacer(Modifier.height(10.dp))
     Signature(reminder.activity)
-    // Una frase en vez de rótulos: cómo empezar y dónde (D-084). En la semana del parlante en otro lugar, el lugar no es el del comienzo.
-    val neutral = StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ') == StudyCondition.NEUTRAL
-    startSentence(reminder.howToStart, if (neutral) "" else reminder.place)?.let {
+    // Una frase en vez de rótulos: cómo empezar y dónde (D-084). El lugar siempre es donde empieza (D-110).
+    startSentence(reminder.howToStart, reminder.place)?.let {
       Spacer(Modifier.height(14.dp))
       Text(it, style = Relevo.type.title2.copy(fontWeight = FontWeight.Normal), color = Relevo.colors.ink, modifier = Modifier.appear(2))
     }

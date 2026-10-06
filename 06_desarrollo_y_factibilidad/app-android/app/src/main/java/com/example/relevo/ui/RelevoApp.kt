@@ -399,6 +399,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     onMissing = viewModel::onMissingField,
                     onTagSearch = viewModel::searchTags,
                     onTagSearchAll = viewModel::searchAllDevices,
+                    onObjectPlace = viewModel::updateObjectNearStart,
                     onTagLink = viewModel::linkTag,
                     onTagTest = viewModel::testTag,
                     onTagForget = viewModel::forgetTag,

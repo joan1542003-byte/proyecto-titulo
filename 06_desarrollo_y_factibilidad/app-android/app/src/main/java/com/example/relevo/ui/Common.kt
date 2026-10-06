@@ -25,6 +25,7 @@ import com.example.relevo.data.CustomActivity
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.SyncStatus
 import com.example.relevo.domain.RouteTrack
+import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.SignalRoute
 import com.example.relevo.domain.StudyCondition
 import com.example.relevo.ui.components.KitIcon
@@ -286,6 +287,14 @@ internal fun weekFacts(history: List<HistoryEntry>, today: LocalDate = LocalDate
   val monday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
   val thisWeek = history.filter { !Instant.ofEpochMilli(it.completedAt).atZone(ZoneId.systemDefault()).toLocalDate().isBefore(monday) }
   return WeekFacts(prepared = thisWeek.size, started = thisWeek.count { it.outcome == "started" })
+}
+
+/** Dónde suena, en palabras: «El parlante, donde empiezas» (D-110). */
+internal fun soundPlace(reminder: Reminder): String = routeName(reminder.signalRoute) + when {
+  reminder.signalRoute == SignalRoute.PHONE -> ""
+  reminder.objectNearStart == true -> ", donde empiezas"
+  reminder.objectNearStart == false -> ", en otro lugar"
+  else -> ""
 }
 
 /** Nombre de la condición para la persona, en palabras de todos los días (D-084). */

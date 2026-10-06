@@ -32,8 +32,13 @@ data class Reminder(
   val signalDelivered: Boolean = false,
   val signalRoute: SignalRoute = SignalRoute.BLUETOOTH,
   val targetApps: List<TrackedApp> = emptyList(),
-  /** Condición de la prueba de 21 días en que se activó (A, B o C); vacío fuera de la prueba o el día 0. */
+  /**
+   * Condición en que sonó (D-110): la elige la persona con la salida y el lugar del objeto. A: objeto donde
+   * empieza; B: objeto en otro lugar; C: teléfono. Vacío si no eligió dónde deja el objeto.
+   */
   val studyCondition: String = "",
+  /** Dónde deja el objeto que suena: true donde empieza, false en otro lugar; null sin elegir (D-110). */
+  val objectNearStart: Boolean? = null,
   /** Día de la prueba en que se activó (0 a 21); −1 fuera de la prueba. */
   val studyDay: Int = -1,
   /** Momento en que se emitió la señal. */
@@ -61,6 +66,14 @@ data class Reminder(
 
   val hasRequiredContent: Boolean
     get() = hasPreparedContent && place.isNotBlank()
+
+  /** La condición que eligió la persona: C en el teléfono; A o B según dónde deja el objeto (D-110). */
+  fun chosenCondition(): String = when {
+    signalRoute == SignalRoute.PHONE -> "C"
+    objectNearStart == true -> "A"
+    objectNearStart == false -> "B"
+    else -> ""
+  }
 
   fun ready(): Reminder = if (hasPreparedContent) copy(status = ReminderStatus.READY) else this
 

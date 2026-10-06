@@ -4,7 +4,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión:** 2.14 de prueba, para el testeo real. La **2.19** agrega la salida «El llavero»: un llavero iTag que pita con Bluetooth, con búsqueda, prueba, conexión durante la espera y botón que calla la señal; la pantalla se probó en emulador, pero falta probarla con un llavero real ([detalle](version-2.19-llavero-itag-2026-10-05.md), D-109). La **2.18** registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío; el consentimiento pasa a v11 ([detalle](version-2.18-registro-completo-y-avisos-2026-09-30.md), D-097). La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
+**Versión:** 2.20, para el primer testeo del 7 de octubre: la persona elige dónde suena y la app registra su elección (D-110; [detalle](version-2.20-eleccion-libre-2026-10-06.md)). La **2.19** agrega la salida «El llavero»: un llavero iTag que pita con Bluetooth, con búsqueda, prueba, conexión durante la espera y botón que calla la señal; la pantalla se probó en emulador, pero falta probarla con un llavero real ([detalle](version-2.19-llavero-itag-2026-10-05.md), D-109). La **2.18** registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío; el consentimiento pasa a v11 ([detalle](version-2.18-registro-completo-y-avisos-2026-09-30.md), D-097). La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
 
 **Fecha:** 29 de septiembre de 2026
 
@@ -141,6 +141,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Android 2.20
+
+- **Qué cambió:** el estado suma la 2.20, con elección libre.
+- **Cómo estaba antes:** la versión más reciente era la 2.19.
+- **Por qué:** pedido del autor (D-110).
 
 ### 2026-10-05 — Android 2.19
 

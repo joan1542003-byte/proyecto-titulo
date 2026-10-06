@@ -31,19 +31,22 @@ enum class StudyCondition(val code: Char, val route: SignalRoute) {
 }
 
 /**
- * Plan de la prueba de 21 días de una persona: la secuencia de condiciones que le asignó el
- * investigador (una de las seis posibles) y la fecha de la sesión inicial (día 0).
+ * Plan de la prueba de 21 días de una persona y la fecha de la sesión inicial (día 0). Desde D-110 la
+ * persona elige cada vez dónde suena ([FREE]); las seis secuencias asignadas quedan para planes antiguos.
  * Los días 1 a 7 son la semana 1; 8 a 14, la semana 2, y 15 a 21, la semana 3.
  */
 data class StudyPlan(val sequence: String, val day0: LocalDate) {
-  init { require(sequence in SEQUENCES) { "Secuencia no válida: $sequence" } }
+  init { require(sequence in SEQUENCES || sequence == FREE) { "Secuencia no válida: $sequence" } }
+
+  /** La persona elige dónde suena: no hay condición impuesta (D-110). */
+  val free: Boolean get() = sequence == FREE
 
   fun day(today: LocalDate): Int = ChronoUnit.DAYS.between(day0, today).toInt()
 
   /** Semana en curso (1 a 3); null el día 0, antes de empezar o después del día 21. */
   fun week(today: LocalDate): Int? = day(today).takeIf { it in 1..LAST_DAY }?.let { (it - 1) / 7 + 1 }
 
-  fun condition(today: LocalDate): StudyCondition? = week(today)?.let { conditionOfWeek(it) }
+  fun condition(today: LocalDate): StudyCondition? = if (free) null else week(today)?.let { conditionOfWeek(it) }
 
   fun conditionOfWeek(week: Int): StudyCondition = StudyCondition.fromCode(sequence[week - 1])!!
 
@@ -59,6 +62,9 @@ data class StudyPlan(val sequence: String, val day0: LocalDate) {
 
   companion object {
     const val LAST_DAY = 21
+
+    /** Plan sin condiciones asignadas: la persona elige (D-110). */
+    const val FREE = "LIBRE"
 
     /** Las seis secuencias posibles de A, B y C, una por participante (protocolo 02). */
     val SEQUENCES = listOf("ABC", "ACB", "BAC", "BCA", "CAB", "CBA")

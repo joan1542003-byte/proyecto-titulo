@@ -1,6 +1,6 @@
 # Panel del testeo de Relevo
 
-**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097 y D-109. **Fecha:** 6 de octubre de 2026. **Versión:** 5.
+**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-110. **Fecha:** 6 de octubre de 2026. **Versión:** 6.
 
 ## Diseño
 
@@ -30,6 +30,10 @@ El panel se ordena en cuatro pestañas:
 - **Resultados:** se puede ver todo o una persona. Seis cifras (relevos, señales, respondidas, comenzó la actividad, supo qué quería hacer y la mediana del tiempo para responder), una tarjeta por condición, barras que comparan A, B y C con el porcentaje y «x de y», el reparto de qué hizo después de la señal, el uso de las apps elegidas 10 minutos antes y después, cómo sonó (salida, activación y final de la señal), los relevos por día y las listas de respuestas. No cuenta los relevos eliminados. Las cifras se calculan en la página con los relevos de Supabase.
 - **Colores de las condiciones:** A azul, B naranja y C verde agua, validados para daltonismo en todos los pares y en ambos temas; cada barra lleva su letra y su valor escritos.
 - **Exportar:** todo en Excel (una hoja por tabla, el resumen por condición y un diccionario de columnas), CSV por tabla (resumen, relevos, respuestas, eventos, uso de Relevo y uso diario), un respaldo JSON y, aparte, los códigos con nombres. Se puede exportar todo o una persona. Los archivos salen sin `user_id` ni nombres, con horas de Chile; los CSV usan punto y coma y UTF-8 para Excel. El Excel se arma con SheetJS 0.18.5, que se carga desde cdnjs solo al pedirlo. Cada descarga pide confirmación en claude.ai.
+
+## Elección libre (versión 6)
+
+Desde D-110, A, B y C son lo que eligió la persona: A, un objeto donde empieza; B, un objeto en otro lugar; C, el teléfono. Resultados suma «Qué elige», con barras de A, B y C en total y por semana y su cantidad escrita, y la cifra «Elige más». Las tarjetas, la comparación y las exportaciones hablan de elecciones, no de condiciones asignadas. «Para revisar» avisa a quien use una app anterior a la 2.20.
 
 ## Mensajes listos
 
@@ -72,6 +76,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Elección libre (versión 6)
+
+- **Qué cambió:** Resultados muestra qué elige cada persona, en total y por semana, y nombra A, B y C como elecciones.
+- **Cómo estaba antes:** A, B y C eran condiciones asignadas por semana.
+- **Por qué:** D-110.
 
 ### 2026-10-06 — Resultados y exportar (versión 5)
 

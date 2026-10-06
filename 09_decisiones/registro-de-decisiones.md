@@ -1278,7 +1278,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Riesgos y límites:** un modelo que no use iSearching puede no responder; sin probar la conexión real, el botón ni el apagado de la alarma por desconexión; requiere el permiso de dispositivos cercanos, declarado sin uso de ubicación. Si el llavero no responde, Relevo vibra y avisa en vez de cambiar de salida.
 - **Documentación:** [Android 2.19](../06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md) y [objetos que Relevo puede hacer sonar](../06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md).
 
+## D-110 — La persona elige dónde suena
+
+- **Fecha:** 2026-10-06.
+- **Estado:** decisión del autor; implementada en Android 2.20 y en el panel 6, y recorrida en emulador. Reemplaza la asignación de condiciones por semana de D-079 para la prueba que empieza el 7 de octubre.
+- **Decisión:** la app no impone A, B ni C. En cada relevo la persona elige dónde suena (parlante, reloj, llavero o teléfono) y, si es un objeto, si lo deja donde empieza o en otro lugar. La app registra la elección como A (objeto donde empieza), B (objeto en otro lugar) o C (teléfono). La prueba sigue durando 21 días, con tarjetas semanales y cierre.
+- **Fundamento:** el autor quiere saber a qué tiende la persona cuando nadie le indica dónde dejar el objeto. Con una sola persona (D-081), la comparación contrabalanceada no permitía separar el efecto del lugar del orden de las semanas; observar la elección libre muestra si la persona sitúa la señal por su cuenta, que es lo que la hipótesis (D-091) supone.
+- **Riesgos y límites:** las diferencias entre A, B y C dejan de ser una comparación controlada, porque pueden deberse a la actividad, al día o a preferencias propias. Las reglas de decisión del protocolo 02 sobre las tres semanas no se aplican; se describe la tendencia y cómo le fue con cada elección. La app sugiere el parlante por defecto como salida, lo que puede inclinar la elección. El consentimiento pasa a v12 y debe revisarse con el profesor.
+- **Documentación:** [Android 2.20](../06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md), [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — D-110
+
+- **Qué cambió:** se registró D-110: la persona elige dónde suena y la app registra su elección.
+- **Cómo estaba antes:** D-079 asignaba una condición por semana según una secuencia.
+- **Por qué:** el autor pidió que la persona elija para saber a qué tiende.
 
 ### 2026-10-05 — D-109
 

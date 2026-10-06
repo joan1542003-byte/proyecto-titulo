@@ -384,7 +384,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     }
   }
 
-  /** El investigador asigna la secuencia en la sesión inicial; hoy es el día 0. */
+  /** El investigador empieza la prueba en la sesión inicial; hoy es el día 0. Desde D-110, sin secuencia asignada. */
   fun startStudy(sequence: String) {
     val today = LocalDate.now()
     studyStore.start(sequence, today)
@@ -492,6 +492,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     update { copy(signalRoute = route, status = ReminderStatus.DRAFT) }
   }
 
+  /** Dónde deja la persona el objeto que suena: donde empieza o en otro lugar (D-110). */
+  fun updateObjectNearStart(near: Boolean) {
+    log("lugar_del_objeto", if (near) "donde_empieza" else "otro_lugar")
+    update { copy(objectNearStart = near, status = ReminderStatus.DRAFT) }
+  }
+
   fun updateConsent(accepted: Boolean) {
     if (accepted && remoteSync.deletionPending) return
     if (accepted) _deletionStatus.value = null
@@ -582,11 +588,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     refreshUsageAccess()
     if (!_usageAccessGranted.value) return false
     refreshStudy()
-    // Cada relevo queda asociado al día y a la condición en que se activó.
+    // Cada relevo queda asociado al día y a la condición que eligió la persona (D-110).
     val study = _study.value
+    val route = study.condition?.routeFor(_reminder.value.signalRoute) ?: _reminder.value.signalRoute
     val prepared = _reminder.value.copy(
-      signalRoute = study.condition?.routeFor(_reminder.value.signalRoute) ?: _reminder.value.signalRoute,
-      studyCondition = study.condition?.code?.toString().orEmpty(),
+      signalRoute = route,
+      studyCondition = study.condition?.code?.toString() ?: _reminder.value.copy(signalRoute = route).chosenCondition(),
       studyDay = if (study.active) study.day else -1,
       autoActivated = false,
     )

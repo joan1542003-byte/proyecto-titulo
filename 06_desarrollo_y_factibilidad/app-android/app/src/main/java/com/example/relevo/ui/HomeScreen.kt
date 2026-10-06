@@ -353,13 +353,10 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
   val remaining = (reminder.requiredUsageSeconds - reminder.observedUsageSeconds).coerceAtLeast(0)
   ListSection(title = "Tu relevo") {
     FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart)
-    if (reminder.signalRoute == SignalRoute.PHONE) FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
-    else FactRow(KitIcon.PARLANTE, "El parlante está", reminder.place)
+    FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
+    ListRow("Suena", icon = routeIcon(reminder.signalRoute), titleColor = Relevo.colors.graphite, value = soundPlace(reminder))
     ListRow("Apps que cuentan", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite, value = reminder.selectedApps.joinToString(", ") { it.label })
     ListRow("Falta", icon = KitIcon.TIEMPO, titleColor = Relevo.colors.graphite, value = "${formatDuration(remaining)} en esas apps")
-    StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ')?.let { condition ->
-      ListRow("Esta semana", icon = conditionIcon(condition), titleColor = Relevo.colors.graphite, value = conditionName(condition))
-    }
     if (reminder.autoActivated) ListRow("Cómo empezó", icon = KitIcon.ESPERANDO, titleColor = Relevo.colors.graphite, value = "Se activó solo")
     ListRow("Ver, desactivar o eliminar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
   }
@@ -371,11 +368,13 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
  */
 @Composable
 internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
+  // Dónde sonará: el objeto donde empieza, en otro lugar o el teléfono, como lo eligió la persona (D-110).
+  val spot = if (reminder.objectNearStart == false) "donde lo dejaste" else placePhrase(reminder.place)
   val where = when (reminder.signalRoute) {
     SignalRoute.PHONE -> "en el teléfono"
-    SignalRoute.WATCH -> "en el reloj, ${placePhrase(reminder.place)}"
-    SignalRoute.TAG -> "en el llavero, ${placePhrase(reminder.place)}"
-    SignalRoute.BLUETOOTH -> "en el parlante, ${placePhrase(reminder.place)}"
+    SignalRoute.WATCH -> "en el reloj, $spot"
+    SignalRoute.TAG -> "en el llavero, $spot"
+    SignalRoute.BLUETOOTH -> "en el parlante, $spot"
   }
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
     Text("Tu primer relevo está activo", style = Relevo.type.title2, color = Relevo.colors.ink)
@@ -524,9 +523,6 @@ internal fun ActiveScreen(
         },
         value = reminder.selectedApps.joinToString(", ") { it.label },
       )
-      StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ')?.let { condition ->
-        ListRow("Esta semana", icon = conditionIcon(condition), titleColor = Relevo.colors.graphite, value = conditionName(condition))
-      }
     }
     if (!backgroundUnrestricted) {
       SectionGap()
