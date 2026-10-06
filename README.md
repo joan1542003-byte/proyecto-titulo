@@ -66,7 +66,7 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **5 de octubre:** la [app 2.19](06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md) (D-109) agrega la salida «El llavero»: Relevo hace pitar un llavero iTag por Bluetooth, mantiene la conexión mientras el relevo espera y el botón del llavero calla la señal. Su pantalla se probó en emulador; falta probarla con el llavero, que el autor comprará en MercadoLibre ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-05.md)).
 
-**6 de octubre:** la [app 2.20](06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md) (D-110) deja que la persona elija dónde suena y registra su elección; es la versión del primer testeo, que empieza el 7 de octubre. El [panel del testeo](06_desarrollo_y_factibilidad/panel-admin/README.md) pasa a la versión 5, con resultados por condición y por persona y exportación a Excel, CSV y JSON ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-06.md)).
+**6 de octubre:** la [app 2.21](06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md) (D-111) muestra cada actividad con un icono sobre un degradado, no marca ninguna opción de antemano y suma «No quiero participar». La [app 2.20](06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md) (D-110) deja que la persona elija dónde suena y registra su elección; es la versión del primer testeo, que empieza el 7 de octubre. El [panel del testeo](06_desarrollo_y_factibilidad/panel-admin/README.md) pasa a la versión 5, con resultados por condición y por persona y exportación a Excel, CSV y JSON ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-06.md)).
 
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
@@ -142,6 +142,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — App 2.21
+
+- **Qué cambió:** el estado actual suma la app 2.21.
+- **Cómo estaba antes:** terminaba en la 2.20.
+- **Por qué:** pedido del autor (D-111).
 
 ### 2026-10-06 — App 2.20
 

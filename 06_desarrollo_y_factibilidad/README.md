@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.21](app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md): iconos con degradado, nada elegido de antemano y sin patrones oscuros (D-111); la versión del primer testeo.
 - [Aplicación Android 2.20](app-android/version-2.20-eleccion-libre-2026-10-06.md): la persona elige dónde suena y la app registra su elección (D-110). Recorrida completa en emulador; es la versión del primer testeo.
 - [Aplicación Android 2.19](app-android/version-2.19-llavero-itag-2026-10-05.md): agrega la salida «El llavero», un llavero iTag que pita con Bluetooth, con búsqueda, prueba, conexión durante la espera y botón que calla la señal (D-109). Pantalla probada en emulador; falta probarla con un llavero real.
 - [Aplicación Android 2.18](app-android/version-2.18-registro-completo-y-avisos-2026-09-30.md): registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío (D-097). Consentimiento v11. Probada en emulador, falta el teléfono real.
@@ -69,6 +70,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-06 — Android 2.21
+
+- **Qué cambió:** se enlaza la 2.21.
+- **Cómo estaba antes:** la más reciente era la 2.20.
+- **Por qué:** pedido del autor (D-111).
 
 ### 2026-10-06 — Android 2.20
 

@@ -1287,7 +1287,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Riesgos y límites:** las diferencias entre A, B y C dejan de ser una comparación controlada, porque pueden deberse a la actividad, al día o a preferencias propias. Las reglas de decisión del protocolo 02 sobre las tres semanas no se aplican; se describe la tendencia y cómo le fue con cada elección. La app sugiere el parlante por defecto como salida, lo que puede inclinar la elección. El consentimiento pasa a v12 y debe revisarse con el profesor.
 - **Documentación:** [Android 2.20](../06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md), [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
 
+## D-111 — Iconos con degradado y nada elegido de antemano
+
+- **Fecha:** 2026-10-06.
+- **Estado:** pedido del autor; implementado en Android 2.21 y revisado en emulador.
+- **Decisión:** las actividades se muestran con su icono sobre un degradado sutil del color de su familia, sin fotos. Ninguna salida viene marcada por defecto, los textos no se inclinan hacia una opción, el consentimiento ofrece «No quiero participar» y el aviso semanal muestra sus dos respuestas con el mismo peso.
+- **Fundamento:** el autor pidió una app fácil de entender, sin patrones oscuros y coherente con la memoria. Una opción marcada de antemano o un texto que favorece una respuesta sesgarían lo que se quiere observar (D-110) y contradirían que la decisión es de la persona.
+- **Pendiente:** la memoria todavía describe un objeto junto al primer paso y una comparación entre condiciones (objetivo 3); hay que ajustarla a D-110. El profesor debe revisar que la participación obligatoria (D-084) encaje con el consentimiento.
+- **Documentación:** [Android 2.21](../06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — D-111
+
+- **Qué cambió:** se registró D-111.
+- **Cómo estaba antes:** la última decisión era D-110.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-06 — D-110
 

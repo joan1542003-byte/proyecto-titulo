@@ -202,6 +202,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
 - **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
 - **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
+- **Android 2.21 (D-111, 6 de octubre):** icono con degradado en vez de fotos, ninguna salida marcada, textos neutros, «No quiero participar». Pendiente: ajustar la memoria a D-110 y D-111 ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md)).
 - **Android 2.20 (D-110, 6 de octubre):** la persona elige dónde suena; la app registra A, B o C según su elección. La prueba de 21 días ya no asigna secuencias. Consentimiento v12, pendiente de revisión docente ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md)). Panel 6 con «Qué elige».
 - **Panel 5 (6 de octubre):** pestañas Resultados (estadísticas por condición y por persona) y Exportar (Excel, CSV y JSON). Pendiente: preguntar al profesor cuántas personas espera para el Pase de Examen ([bitácora del 6 de octubre](bitacora-trabajo-con-ia-2026-10-06.md)).
 
@@ -216,6 +217,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Android 2.21
+
+- **Qué cambió:** el estado suma la 2.21.
+- **Cómo estaba antes:** terminaba en la 2.20.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-06 — Android 2.20
 

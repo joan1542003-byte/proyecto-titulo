@@ -46,7 +46,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.asImageBitmap
@@ -72,29 +74,29 @@ import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
 
 /**
- * Fotos de la app. Muestran el comienzo, no el resultado: lo que espera, con su primer paso a la
- * vista (D-073). Todas pasan por la receta de imagen del proyecto; el texto va siempre fuera de la
- * foto, sin velos ni degradados encima. Procedencia y licencias en `licencias/README.md`.
+ * Imágenes de las actividades. Desde 2.21 no son fotos: cada una se dibuja como su icono del kit sobre
+ * un degradado sutil del color de su familia (pedido del autor del 6 de octubre). Las fotos de D-073
+ * quedan en los recursos y en `licencias/README.md` como antecedente; [res] ya no se dibuja.
  */
-enum class Photo(@param:DrawableRes val res: Int, val description: String, @param:DrawableRes val wide: Int? = null) {
-  CAMINAR(R.drawable.foto_caminar, "Zapatillas listas para salir"),
-  EJERCICIO(R.drawable.foto_ejercicio, "Dos pesas en el suelo"),
-  LEER(R.drawable.foto_leer, "Un libro abierto sobre la mesa"),
-  ESTUDIAR(R.drawable.foto_estudiar, "Un cuaderno con un lápiz"),
-  DIBUJAR(R.drawable.foto_dibujar, "Un cuaderno de dibujo abierto"),
-  COCINAR(R.drawable.foto_cocinar, "Ingredientes y una cuchara de palo"),
-  ORDENAR(R.drawable.foto_ordenar, "Toallas dobladas junto a un canasto"),
-  PERRO(R.drawable.foto_perro, "La correa del perro junto a la puerta"),
-  MANUALIDADES(R.drawable.foto_manualidades, "Papeles de colores y tijeras sobre la mesa"),
-  GUITARRA(R.drawable.foto_guitarra, "Una mano sobre una guitarra"),
-  ESCRIBIR(R.drawable.foto_escribir, "Una mano que empieza a escribir"),
-  LIBRO(R.drawable.foto_libro, "Las páginas de un libro abierto"),
-  APRENDER(R.drawable.foto_aprender, "Manos sobre un cuaderno con una regla"),
-  PAN(R.drawable.foto_pan, "Manos que amasan"),
-  PINTAR(R.drawable.foto_pintar, "Acuarelas, pinceles y un croquis"),
-  PUERTA(R.drawable.foto_puerta, "Zapatillas y el parlante junto a la puerta", R.drawable.foto_puerta_ancha),
-  SALIDA(R.drawable.foto_salida, "Zapatillas junto a la puerta abierta", R.drawable.foto_salida_ancha),
-  TIEMPO(R.drawable.foto_tiempo, "Un teléfono boca abajo junto a un reloj de tiempo", R.drawable.foto_tiempo_ancha);
+enum class Photo(@param:DrawableRes val res: Int, val description: String, @param:DrawableRes val wide: Int? = null, val icon: KitIcon = KitIcon.ACTIVIDAD) {
+  CAMINAR(R.drawable.foto_caminar, "Caminar", icon = KitIcon.CAMINAR),
+  EJERCICIO(R.drawable.foto_ejercicio, "Hacer ejercicio", icon = KitIcon.EJERCICIO),
+  LEER(R.drawable.foto_leer, "Leer", icon = KitIcon.LEER),
+  ESTUDIAR(R.drawable.foto_estudiar, "Estudiar", icon = KitIcon.ESTUDIAR),
+  DIBUJAR(R.drawable.foto_dibujar, "Dibujar", icon = KitIcon.DIBUJAR),
+  COCINAR(R.drawable.foto_cocinar, "Cocinar", icon = KitIcon.COCINAR),
+  ORDENAR(R.drawable.foto_ordenar, "Ordenar", icon = KitIcon.ORDENAR),
+  PERRO(R.drawable.foto_perro, "Salir con el perro", icon = KitIcon.CAMINAR),
+  MANUALIDADES(R.drawable.foto_manualidades, "Manualidades", icon = KitIcon.MANUALIDADES),
+  GUITARRA(R.drawable.foto_guitarra, "Tocar guitarra", icon = KitIcon.GUITARRA),
+  ESCRIBIR(R.drawable.foto_escribir, "Escribir", icon = KitIcon.ESCRIBIR),
+  LIBRO(R.drawable.foto_libro, "Leer un libro", icon = KitIcon.LEER),
+  APRENDER(R.drawable.foto_aprender, "Aprender", icon = KitIcon.ESTUDIAR),
+  PAN(R.drawable.foto_pan, "Hacer pan", icon = KitIcon.COCINAR),
+  PINTAR(R.drawable.foto_pintar, "Pintar", icon = KitIcon.PINTAR),
+  PUERTA(R.drawable.foto_puerta, "Empezar", R.drawable.foto_puerta_ancha, icon = KitIcon.PRIMER_PASO),
+  SALIDA(R.drawable.foto_salida, "Salir", R.drawable.foto_salida_ancha, icon = KitIcon.SALIR),
+  TIEMPO(R.drawable.foto_tiempo, "El tiempo en el teléfono", R.drawable.foto_tiempo_ancha, icon = KitIcon.TIEMPO);
 
   val key: String get() = "foto:$name"
 }
@@ -308,6 +310,46 @@ private object PhotoCache {
  */
 @Composable
 fun PhotoImage(photo: Photo, modifier: Modifier = Modifier, wide: Boolean = false, size: PhotoSize = PhotoSize.Full, describe: Boolean = false) {
+  ActivityArt(photo.icon, modifier.then(if (describe) Modifier.semantics { contentDescription = photo.description } else Modifier))
+}
+
+/**
+ * Familias de color de las actividades (los claros de D-104): moverse en menta, leer y estudiar en
+ * celeste, crear en lila, música y juego en rosa, casa y cocina en naranja; lo demás en sol.
+ */
+internal fun artTint(icon: KitIcon): Color = when (icon) {
+  KitIcon.CAMINAR, KitIcon.EJERCICIO, KitIcon.BICICLETA, KitIcon.ESTIRAR, KitIcon.SALIR, KitIcon.PLANTAS -> Color(0xFF6FDEA7)
+  KitIcon.LEER, KitIcon.ESTUDIAR, KitIcon.ESCRIBIR, KitIcon.TEXTO -> Color(0xFF54D6FE)
+  KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.FOTOGRAFIA -> Color(0xFFCEB5FE)
+  KitIcon.GUITARRA, KitIcon.MUSICA, KitIcon.JUEGO_DE_MESA -> Color(0xFFFEA4CF)
+  KitIcon.COCINAR, KitIcon.ORDENAR -> Color(0xFFFEB074)
+  else -> Color(0xFFE7BF57)
+}
+
+/**
+ * La imagen de una actividad: su icono en tinta sobre un degradado sutil de su color, de casi papel
+ * arriba a la izquierda a un tinte suave abajo a la derecha. Sin fotos, sin brillos y sin texto encima.
+ */
+@Composable
+fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = null) {
+  val colors = Relevo.colors
+  val tint = artTint(icon)
+  val start = tint.copy(alpha = if (colors.isDark) 0.10f else 0.16f).compositeOver(colors.card)
+  val end = tint.copy(alpha = if (colors.isDark) 0.34f else 0.58f).compositeOver(colors.card)
+  var side by remember { mutableIntStateOf(0) }
+  val density = LocalDensity.current
+  val auto = with(density) { (side * 0.28f).toDp() }.coerceIn(24.dp, 80.dp)
+  Box(
+    modifier.onSizeChanged { side = minOf(it.width, it.height) }.background(Brush.linearGradient(listOf(start, end))),
+    contentAlignment = Alignment.Center,
+  ) {
+    RelevoIcon(icon, size = iconSize ?: auto, tint = colors.ink, background = Color.Transparent)
+  }
+}
+
+@Suppress("unused")
+@Composable
+private fun LegacyPhotoImage(photo: Photo, modifier: Modifier = Modifier, wide: Boolean = false, size: PhotoSize = PhotoSize.Full, describe: Boolean = false) {
   val res = if (wide) photo.wide ?: photo.res else photo.res
   val key = res * 4 + size.sample
   val context = LocalContext.current
@@ -348,12 +390,9 @@ fun Modifier.sharedPhoto(key: String?): Modifier {
 /** Contenido de una ficha: foto o icono del kit sobre niebla. */
 @Composable
 fun PictureContent(picture: Picture?, modifier: Modifier = Modifier, iconSize: Dp = 36.dp, fallback: KitIcon = KitIcon.ACTIVIDAD, size: PhotoSize = PhotoSize.Full, wide: Boolean = false) {
-  when (picture) {
-    is Picture.OfPhoto -> PhotoImage(picture.photo, modifier, wide = wide, size = size)
-    else -> Box(modifier.background(Relevo.colors.mist), contentAlignment = Alignment.Center) {
-      RelevoIcon((picture as? Picture.OfIcon)?.icon ?: fallback, size = iconSize, tint = Relevo.colors.ink, background = Relevo.colors.mist)
-    }
-  }
+  // Foto o icono, se dibuja igual: el icono de la actividad sobre su degradado (2.21).
+  val icon = when (picture) { is Picture.OfPhoto -> picture.photo.icon; is Picture.OfIcon -> picture.icon; null -> fallback }
+  ActivityArt(icon, modifier, iconSize = iconSize)
 }
 
 /**

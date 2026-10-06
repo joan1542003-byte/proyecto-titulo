@@ -100,15 +100,10 @@ object ToneMath {
  * mientras se calcula y cuando la imagen no es una foto (un icono sobre niebla sigue el tema).
  */
 @Composable
-fun rememberPhotoDark(picture: Picture?, wide: Boolean, frameAspect: Float, from: Float, to: Float): Boolean? {
-  val photo = (picture as? Picture.OfPhoto)?.photo ?: return null
-  val res = if (wide) photo.wide ?: photo.res else photo.res
-  val context = LocalContext.current
-  val dark by produceState<Boolean?>(null, res, frameAspect, from, to) {
-    value = PhotoTone.luminance(context, res, frameAspect, from, to) < ToneMath.DARK_BELOW
-  }
-  return dark
-}
+@Suppress("UNUSED_PARAMETER")
+fun rememberPhotoDark(picture: Picture?, wide: Boolean, frameAspect: Float, from: Float, to: Float): Boolean? =
+  // Desde 2.21 no hay fotos: el degradado es claro en el tema claro y oscuro en el oscuro, así que manda el tema.
+  null
 
 /** Paleta para lo que va sobre una foto: la de noche si la zona es oscura, la de papel si es clara. */
 @Composable

@@ -70,6 +70,12 @@ class StudyPlanTest {
   }
 
   @Test
+  fun newReminderHasNoChosenRoute() {
+    // 2.21: ninguna salida viene marcada.
+    assertFalse(Reminder().routeChosen)
+  }
+
+  @Test
   fun studyEndsAfterDayTwentyOne() {
     assertFalse(plan.isFinished(day0.plusDays(21)))
     assertTrue(plan.isFinished(day0.plusDays(22)))

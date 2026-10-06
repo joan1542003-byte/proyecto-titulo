@@ -380,7 +380,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val current = _reminder.value
     val route = state.condition?.routeFor(current.signalRoute)
     if (route != null && current.signalRoute != route && current.status != ReminderStatus.WAITING && current.status != ReminderStatus.SIGNALLED) {
-      updateValue(current.copy(signalRoute = route))
+      updateValue(current.copy(signalRoute = route, routeChosen = true))
     }
   }
 
@@ -489,7 +489,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun updateSignalRoute(route: SignalRoute) {
     if (_study.value.condition != null) return
     log("salida_elegida", route.name.lowercase())
-    update { copy(signalRoute = route, status = ReminderStatus.DRAFT) }
+    update { copy(signalRoute = route, routeChosen = true, status = ReminderStatus.DRAFT) }
   }
 
   /** Dónde deja la persona el objeto que suena: donde empieza o en otro lugar (D-110). */
@@ -585,6 +585,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   fun arm(): Boolean {
     if (!Participation.canUse(getApplication())) return false
+    // Sin salida elegida no se activa: la pantalla de preparar lo pide antes (2.21).
+    if (!_reminder.value.routeChosen && _study.value.condition == null) return false
     refreshUsageAccess()
     if (!_usageAccessGranted.value) return false
     refreshStudy()

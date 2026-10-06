@@ -144,7 +144,8 @@ internal fun HowItWorksScreen(
       when {
         !last -> RelevoButton("Seguir", { go(index + 1) })
         onReturnNotice != null -> {
-          RelevoButton("Sí, avísame", { onReturnNotice(true); onContinue() })
+          // Las dos respuestas pesan lo mismo: ninguna viene sugerida.
+          RelevoButton("Sí, avísame", { onReturnNotice(true); onContinue() }, kind = ButtonKind.Secondary)
           RelevoButton("No, gracias", { onReturnNotice(false); onContinue() }, kind = ButtonKind.Secondary)
         }
         else -> RelevoButton(continueLabel, onContinue)
@@ -193,7 +194,7 @@ private fun SystemRow(icon: KitIcon, title: String, text: String) {
 internal fun FirstRelevoScreen(name: String, suggestion: String?, routeTitle: String?, picture: Picture, onStart: () -> Unit, onLater: () -> Unit) {
   RelevoScreen(
     hero = { PictureContent(picture, Modifier.fillMaxSize(), iconSize = 64.dp, wide = true) },
-    heroHeight = 300.dp,
+    heroHeight = 200.dp,
     heroPicture = picture,
     bottom = {
       RelevoButton("Empezar", onStart)
@@ -211,7 +212,7 @@ internal fun FirstRelevoScreen(name: String, suggestion: String?, routeTitle: St
     SectionGap()
     Panel {
       listOf("Qué quieres hacer", "Cómo empiezas", "Dónde empiezas", "Cuándo te avisa", "Dónde suena", "Activarlo").forEachIndexed { i, step ->
-        Row(Modifier.fillMaxWidth().padding(vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), verticalAlignment = Alignment.CenterVertically) {
           Box(Modifier.size(26.dp).clip(CircleShape).background(Relevo.colors.ink), contentAlignment = Alignment.Center) {
             Text("${i + 1}", style = Relevo.type.footnote, color = Relevo.colors.onInk)
           }

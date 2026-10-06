@@ -102,6 +102,7 @@
 | 5 oct. | Consulta | Preguntar qué pasa si el testeo se hace con un solo usuario y si eso basta para la entrega final. | Respuesta en la conversación: D-081 ya lo fija y el protocolo 02 lo trata como un caso que orienta el diseño, sin comparar ni generalizar; ningún documento del repositorio fija cuántas personas pide la rúbrica, así que se sugirió preguntarlo al profesor y sumar formas livianas de evidencia con 2 o 3 personas. | D-081 |
 | 6 oct. | Encargo | Pedir el APK actual y el panel, rediseñado para que se vea mejor y se entienda fácil, con estadísticas y exportación. | APK 2.19 enviado. [Panel](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM) versión 5: Resultados por condición y por persona, Exportar a Excel, CSV y JSON, cifras explicadas y guía de lectura ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-096 |
 | 6 oct. | Corrección | En la app no imponer las condiciones A, B y C: que la persona elija, para saber a qué tiende. El flujo de navegación debe ser perfecto y fácil de entender, porque el primer testeo empieza al día siguiente. | [Android 2.20](../06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md): elección libre con la pregunta «¿Dónde dejarás el parlante?», registro de A, B o C según la elección, textos neutros, consentimiento v12 y recorrido completo en emulador; panel 6 con «Qué elige». | D-110 |
+| 6 oct. | Corrección | Quitar la salida que viene por defecto y corregir lo pendiente; cada actividad con un icono sobre un degradado sutil, sin fotos; una app fácil de usar y de entender, que no choque con la memoria y sin patrones oscuros. | [Android 2.21](../06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md): iconos con degradado, ninguna salida marcada, textos neutros, primer relevo sin superposición, «No quiero participar» y aviso semanal con opciones del mismo peso; revisión de patrones oscuros y de coherencia con la memoria. | D-111 |
 
 ## Lo que muestra el registro
 
@@ -112,6 +113,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Iconos y sin sugerencias
+
+- **Qué cambió:** se registró el pedido de la 2.21.
+- **Cómo estaba antes:** terminaba en la elección libre.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-06 — Elección libre
 

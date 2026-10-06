@@ -37,6 +37,11 @@ data class Reminder(
    * empieza; B: objeto en otro lugar; C: teléfono. Vacío si no eligió dónde deja el objeto.
    */
   val studyCondition: String = "",
+  /**
+   * La persona eligió dónde suena. En un relevo nuevo no hay salida marcada (2.21): sin elegir,
+   * [signalRoute] no se muestra ni se usa. Al repetir un relevo se conserva su propia elección.
+   */
+  val routeChosen: Boolean = false,
   /** Dónde deja el objeto que suena: true donde empieza, false en otro lugar; null sin elegir (D-110). */
   val objectNearStart: Boolean? = null,
   /** Día de la prueba en que se activó (0 a 21); −1 fuera de la prueba. */

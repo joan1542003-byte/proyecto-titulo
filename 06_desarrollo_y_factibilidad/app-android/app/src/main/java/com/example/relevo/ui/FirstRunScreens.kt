@@ -99,6 +99,7 @@ internal fun ConsentScreen(
 ) {
   var checked by rememberSaveable { mutableStateOf(false) }
   var details by rememberSaveable { mutableStateOf(false) }
+  var declined by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(
     title = "Antes de empezar",
     bottom = {
@@ -116,6 +117,14 @@ internal fun ConsentScreen(
         !checked -> "Marca «Acepto participar durante 21 días» para seguir."
         else -> null
       })
+      // Decir que no es tan fácil como decir que sí: sin presión ni culpa.
+      PlainAction(if (declined) "Ocultar" else "No quiero participar", { declined = !declined }, color = Relevo.colors.graphite)
+      if (declined) {
+        Text(
+          "Está bien. Relevo solo se puede usar dentro de esta prueba, así que puedes cerrar la app y desinstalarla. No se guardó nada tuyo.",
+          style = Relevo.type.footnote, color = Relevo.colors.graphite,
+        )
+      }
     },
   ) {
     Text(

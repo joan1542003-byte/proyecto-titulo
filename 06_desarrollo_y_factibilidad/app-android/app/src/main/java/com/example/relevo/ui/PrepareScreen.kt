@@ -124,7 +124,7 @@ private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder:
   PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja el parlante en otro lugar de tu casa y anota dónde."
     else "Anota el lugar donde está lo que usas para empezar. Más adelante eliges dónde suena."
   PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
-  PrepareStep.SOUND -> "Elige dónde quieres que suene. No hay una respuesta correcta: queremos saber qué te acomoda. Pruébalo antes de seguir."
+  PrepareStep.SOUND -> "No hay una respuesta correcta: elige lo que te acomode. Lo puedes cambiar en cada relevo."
   PrepareStep.REVIEW -> "Revisa que todo esté bien y toca «Activar el relevo». Puedes desactivarlo cuando quieras."
 }
 
@@ -176,12 +176,14 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
     else -> null
   }
   PrepareStep.SOUND -> when {
+    !reminder.routeChosen -> "Elige dónde quieres que suene."
     reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige tu llavero, o elige otra forma de avisar."
     reminder.signalRoute != SignalRoute.PHONE && reminder.objectNearStart == null -> "Elige dónde lo dejarás: donde empiezas o en otro lugar."
     else -> null
   }
   PrepareStep.REVIEW -> when {
     !usageAccess -> "Falta el permiso de Tiempo de uso."
+    !reminder.routeChosen -> "Falta elegir dónde suena."
     reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Falta elegir el llavero."
     reminder.signalRoute != SignalRoute.PHONE && reminder.objectNearStart == null -> "Falta elegir dónde lo dejarás."
     reminder.activity.isBlank() -> "Falta qué quieres hacer."
@@ -299,7 +301,7 @@ internal fun PrepareScreen(
               FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Parlante" else "Dónde empiezas", reminder.place) { go(PrepareStep.PLACE) }
               FactRow(KitIcon.APPS, "Apps que cuentan", reminder.selectedApps.joinToString(", ") { it.label }, valueIsVoice = false) { go(PrepareStep.USAGE) }
               FactRow(KitIcon.USO, "Te avisa después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(routeIcon(reminder.signalRoute), "Te avisa", soundPlace(reminder), valueIsVoice = false) { go(PrepareStep.SOUND) }
+              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Te avisa", if (reminder.routeChosen) soundPlace(reminder) else "Sin elegir", valueIsVoice = false) { go(PrepareStep.SOUND) }
             }
             if (!isKnown && reminder.activity.isNotBlank()) {
               Spacer(Modifier.height(10.dp))
@@ -466,7 +468,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   val objectChoice = studyCondition == null || studyCondition != StudyCondition.PHONE
   Text(
     when (studyCondition) {
-      null -> "Prueba cómo suena antes de activarlo."
+      null -> "Elige una. Después puedes probar cómo suena."
       StudyCondition.PHONE -> "Esta semana suena en el teléfono."
       StudyCondition.SITUATED -> "Esta semana suena en el parlante, junto a lo que usas para empezar."
       StudyCondition.NEUTRAL -> "Esta semana suena en el parlante, en otro lugar de tu casa."
@@ -476,15 +478,17 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   SectionGap()
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
     SoundOption(KitIcon.PARLANTE, "El parlante", if (speakerConnected) "Conectado por Bluetooth" else "Sin parlante conectado",
-      selected = reminder.signalRoute == SignalRoute.BLUETOOTH, enabled = objectChoice) { actions.onRoute(SignalRoute.BLUETOOTH) }
+      selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, enabled = objectChoice) { actions.onRoute(SignalRoute.BLUETOOTH) }
     SoundOption(KitIcon.TIEMPO, "El reloj", if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas",
-      selected = reminder.signalRoute == SignalRoute.WATCH, enabled = objectChoice) { actions.onRoute(SignalRoute.WATCH) }
+      selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.WATCH, enabled = objectChoice) { actions.onRoute(SignalRoute.WATCH) }
     SoundOption(KitIcon.OBJETO, "El llavero", tagSubtitle(tag, tagStatus),
-      selected = reminder.signalRoute == SignalRoute.TAG, enabled = objectChoice) { actions.onRoute(SignalRoute.TAG) }
+      selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, enabled = objectChoice) { actions.onRoute(SignalRoute.TAG) }
     SoundOption(KitIcon.TELEFONO, "El teléfono", "Suena donde esté el teléfono",
-      selected = reminder.signalRoute == SignalRoute.PHONE, enabled = studyCondition == null) { actions.onRoute(SignalRoute.PHONE) }
+      selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, enabled = studyCondition == null) { actions.onRoute(SignalRoute.PHONE) }
   }
   SectionGap()
+  // Sin elección todavía: nada más que elegir.
+  if (!reminder.routeChosen) return
   if (reminder.signalRoute != SignalRoute.PHONE) {
     ObjectPlaceQuestion(reminder, actions)
     SectionGap()
@@ -524,8 +528,10 @@ private fun ObjectPlaceQuestion(reminder: Reminder, actions: PrepareActions) {
   )
   Spacer(Modifier.height(8.dp))
   Text(
-    if (reminder.objectNearStart == false) "En cualquier otra parte de tu casa. Elige lo que de verdad vas a hacer."
-    else "Junto a lo que usas para empezar${reminder.place.takeIf { it.isNotBlank() }?.let { ": " + it.replaceFirstChar { c -> c.lowercase() } } ?: ""}. Elige lo que de verdad vas a hacer.",
+    // Sin elección todavía, el texto no inclina hacia ninguna opción.
+    if (reminder.objectNearStart == null) "Las dos opciones sirven. Elige lo que de verdad vas a hacer."
+    else if (reminder.objectNearStart == false) "En cualquier otra parte de tu casa."
+    else "Junto a lo que usas para empezar${reminder.place.takeIf { it.isNotBlank() }?.let { ": " + it.replaceFirstChar { c -> c.lowercase() } } ?: ""}.",
     style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
   )
 }

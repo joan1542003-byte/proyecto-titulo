@@ -9,6 +9,7 @@
 | Trabajo | Resultado | Decisión |
 | --- | --- | --- |
 | Elección libre (Android 2.20) | La persona elige dónde suena y si deja el objeto donde empieza; la app registra A, B o C según su elección. Recorrido completo en emulador como persona nueva ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md)). Panel 6 con «Qué elige». | D-110 |
+| Iconos y sin sugerencias (Android 2.21) | Icono con degradado en vez de fotos, ninguna salida marcada, textos neutros, «No quiero participar», revisión de patrones oscuros y de coherencia con la memoria ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md)). | D-111 |
 | APK y panel | Se envió el APK 2.19. El [panel](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM) pasa a la versión 5, con Resultados y Exportar ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-096 |
 
 ## 2. Cómo se usó la IA
@@ -27,10 +28,17 @@
 ## 4. Pendientes
 
 - Revisar el consentimiento v12 con el profesor.
+- Ajustar la memoria a D-110 y D-111: el objeto ya no va siempre junto al primer paso y el objetivo 3 deja de ser una comparación controlada.
 - Preguntar al profesor cuántas personas espera para el Pase de Examen (25 de noviembre) y si acepta un estudio de caso.
 - Comprar el iTag y probarlo con los pasos de la 2.19.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Android 2.21
+
+- **Qué cambió:** la bitácora suma la 2.21 y el pendiente de ajustar la memoria.
+- **Cómo estaba antes:** terminaba en la 2.20.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-06 — Elección libre
 
