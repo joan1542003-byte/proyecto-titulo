@@ -1281,7 +1281,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-110 — La persona elige dónde suena
 
 - **Fecha:** 2026-10-06.
-- **Estado:** decisión del autor; implementada en Android 2.20 y en el panel 6, y recorrida en emulador. Reemplaza la asignación de condiciones por semana de D-079 para la prueba que empieza el 7 de octubre.
+- **Estado:** reemplazada por D-112 el mismo día. Estuvo implementada en Android 2.20 y 2.21 y en el panel 6.
 - **Decisión:** la app no impone A, B ni C. En cada relevo la persona elige dónde suena (parlante, reloj, llavero o teléfono) y, si es un objeto, si lo deja donde empieza o en otro lugar. La app registra la elección como A (objeto donde empieza), B (objeto en otro lugar) o C (teléfono). La prueba sigue durando 21 días, con tarjetas semanales y cierre.
 - **Fundamento:** el autor quiere saber a qué tiende la persona cuando nadie le indica dónde dejar el objeto. Con una sola persona (D-081), la comparación contrabalanceada no permitía separar el efecto del lugar del orden de las semanas; observar la elección libre muestra si la persona sitúa la señal por su cuenta, que es lo que la hipótesis (D-091) supone.
 - **Riesgos y límites:** las diferencias entre A, B y C dejan de ser una comparación controlada, porque pueden deberse a la actividad, al día o a preferencias propias. Las reglas de decisión del protocolo 02 sobre las tres semanas no se aplican; se describe la tendencia y cómo le fue con cada elección. La app sugiere el parlante por defecto como salida, lo que puede inclinar la elección. El consentimiento pasa a v12 y debe revisarse con el profesor.
@@ -1296,7 +1296,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Pendiente:** la memoria todavía describe un objeto junto al primer paso y una comparación entre condiciones (objetivo 3); hay que ajustarla a D-110. El profesor debe revisar que la participación obligatoria (D-084) encaje con el consentimiento.
 - **Documentación:** [Android 2.21](../06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md).
 
+## D-112 — Volver a comparar: el objeto va donde la persona empieza
+
+- **Fecha:** 2026-10-06.
+- **Estado:** decisión del autor tras pedir la opción óptima; implementada en Android 2.22 y en el panel (versión 5 restaurada). Reemplaza D-110 y vuelve a D-079.
+- **Decisión:** la prueba compara tres semanas en el orden de una secuencia asignada: A, lo que suena va donde la persona empieza (el lugar que ella escribió); B, en otro lugar de su casa; C, el teléfono. La persona elige su actividad, su primer paso, su lugar y su objeto (parlante, reloj o llavero); la semana decide solo dónde se deja. Ninguna opción viene marcada (D-111).
+- **Fundamento:** la hipótesis (D-091) necesita comparar la señal en el lugar del comienzo con la señal sin ese vínculo; con elección libre no se distingue el efecto del lugar de la preferencia. La memoria (objetivo específico 3) y el protocolo 02 ya describen esta comparación, así que no quedan discrepancias. El autor aclaró que la persona elige el lugar porque sabe dónde está su primer paso.
+- **Límites:** con una persona (D-081) el resultado describe un caso y el orden de las semanas puede influir; la preferencia de la persona se recoge en el cierre del día 21.
+- **Documentación:** [Android 2.22](../06_desarrollo_y_factibilidad/app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — D-112
+
+- **Qué cambió:** se registró D-112, que vuelve a la comparación de D-079; D-110 pasa a reemplazada.
+- **Cómo estaba antes:** D-110 dejaba elegir dónde sonaba.
+- **Por qué:** el autor pidió corregir las discrepancias con la memoria y aplicar la opción óptima.
 
 ### 2026-10-06 — D-111
 

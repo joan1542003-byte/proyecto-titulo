@@ -1,6 +1,6 @@
 # Panel del testeo de Relevo
 
-**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-110. **Fecha:** 6 de octubre de 2026. **Versión:** 6.
+**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 7, que restaura la 5.
 
 ## Diseño
 
@@ -31,9 +31,9 @@ El panel se ordena en cuatro pestañas:
 - **Colores de las condiciones:** A azul, B naranja y C verde agua, validados para daltonismo en todos los pares y en ambos temas; cada barra lleva su letra y su valor escritos.
 - **Exportar:** todo en Excel (una hoja por tabla, el resumen por condición y un diccionario de columnas), CSV por tabla (resumen, relevos, respuestas, eventos, uso de Relevo y uso diario), un respaldo JSON y, aparte, los códigos con nombres. Se puede exportar todo o una persona. Los archivos salen sin `user_id` ni nombres, con horas de Chile; los CSV usan punto y coma y UTF-8 para Excel. El Excel se arma con SheetJS 0.18.5, que se carga desde cdnjs solo al pedirlo. Cada descarga pide confirmación en claude.ai.
 
-## Elección libre (versión 6)
+## Elección libre (versión 6, retirada)
 
-Desde D-110, A, B y C son lo que eligió la persona: A, un objeto donde empieza; B, un objeto en otro lugar; C, el teléfono. Resultados suma «Qué elige», con barras de A, B y C en total y por semana y su cantidad escrita, y la cifra «Elige más». Las tarjetas, la comparación y las exportaciones hablan de elecciones, no de condiciones asignadas. «Para revisar» avisa a quien use una app anterior a la 2.20.
+Retirada el mismo día por D-112: la versión 7 restaura la 5, por condiciones, y exige la app 2.22. Lo que sigue describe la versión 6 como antecedente. Desde D-110, A, B y C son lo que eligió la persona: A, un objeto donde empieza; B, un objeto en otro lugar; C, el teléfono. Resultados suma «Qué elige», con barras de A, B y C en total y por semana y su cantidad escrita, y la cifra «Elige más». Las tarjetas, la comparación y las exportaciones hablan de elecciones, no de condiciones asignadas. «Para revisar» avisa a quien use una app anterior a la 2.20.
 
 ## Mensajes listos
 
@@ -76,6 +76,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Por condiciones otra vez (versión 7)
+
+- **Qué cambió:** se restauró la versión 5 (resultados por condición) y «Para revisar» exige la app 2.22.
+- **Cómo estaba antes:** la versión 6 mostraba elecciones libres.
+- **Por qué:** D-112.
 
 ### 2026-10-06 — Elección libre (versión 6)
 

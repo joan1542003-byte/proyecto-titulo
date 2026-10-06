@@ -81,7 +81,7 @@ internal fun SignalScreen(
     Box(Modifier.appear(0)) {
       when {
         !reminder.signalDelivered -> StatusChip(KitIcon.ERROR, "No sonó")
-        sounding -> SoundingChip(reminder.signalRoute == SignalRoute.PHONE)
+        sounding -> SoundingChip(reminder.signalRoute)
         else -> StatusChip(KitIcon.LISTO, "Ya dejó de sonar")
       }
     }
@@ -89,20 +89,17 @@ internal fun SignalScreen(
     Text("Es momento de volver a elegir", style = Relevo.type.title2, color = Relevo.colors.graphite, modifier = Modifier.appear(1))
     Spacer(Modifier.height(10.dp))
     Signature(reminder.activity)
-    // Una frase en vez de rótulos: cómo empezar y dónde (D-084). El lugar siempre es donde empieza (D-110).
-    startSentence(reminder.howToStart, reminder.place)?.let {
+    // Una frase en vez de rótulos: cómo empezar y dónde (D-084). En la semana del parlante en otro lugar, el lugar no es el del comienzo.
+    val neutral = StudyCondition.fromCode(reminder.studyCondition.firstOrNull() ?: ' ') == StudyCondition.NEUTRAL
+    startSentence(reminder.howToStart, if (neutral) "" else reminder.place)?.let {
       Spacer(Modifier.height(14.dp))
       Text(it, style = Relevo.type.title2.copy(fontWeight = FontWeight.Normal), color = Relevo.colors.ink, modifier = Modifier.appear(2))
     }
     if (!reminder.signalDelivered) {
       SectionGap()
+      // Solo se ofrece el teléfono cuando se puede usar: durante la prueba, la semana decide dónde suena.
       Notice(
-        when (reminder.signalRoute) {
-          SignalRoute.BLUETOOTH -> "No sonó en el parlante. Revisa que esté encendido o elige el teléfono."
-          SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado o elige el teléfono."
-          SignalRoute.TAG -> "No sonó en el llavero. Revisa que esté encendido y cerca del teléfono, o elige el teléfono."
-          SignalRoute.PHONE -> "No sonó en el teléfono. Revisa el volumen."
-        },
+        routeFailure(reminder.signalRoute) + if (!studyActive && reminder.signalRoute != SignalRoute.PHONE) " También puedes hacerlo sonar en el teléfono." else "",
         title = "Se cumplió el tiempo", tone = Tone.Error,
       ) {
         PlainAction("Probar otra vez", { tested = onTestSound(null) }, icon = KitIcon.PROBAR)
@@ -115,7 +112,7 @@ internal fun SignalScreen(
 
 /** Estado mientras suena: el icono respira despacio; sin ondas ni destellos. */
 @Composable
-private fun SoundingChip(phone: Boolean) {
+private fun SoundingChip(route: SignalRoute) {
   val reduce = rememberReduceMotion()
   val pulse by rememberInfiniteTransition(label = "sounding").animateFloat(
     initialValue = 1f, targetValue = if (reduce) 1f else .35f,
@@ -123,9 +120,9 @@ private fun SoundingChip(phone: Boolean) {
   )
   val colors = Relevo.colors
   Row(Modifier.background(colors.mist, Relevo.controlShape).padding(horizontal = 12.dp, vertical = 7.dp), verticalAlignment = Alignment.CenterVertically) {
-    Box(Modifier.graphicsLayer { alpha = pulse }) { RelevoIcon(if (phone) KitIcon.TELEFONO else KitIcon.PARLANTE, size = 16.dp, background = colors.mist) }
+    Box(Modifier.graphicsLayer { alpha = pulse }) { RelevoIcon(routeIcon(route), size = 16.dp, background = colors.mist) }
     Spacer(Modifier.width(8.dp))
-    Text(if (phone) "Suena en el teléfono" else "Suena en el parlante", style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = colors.ink)
+    Text("Suena en " + routeName(route).replaceFirstChar { it.lowercase() }, style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = colors.ink)
   }
 }
 
@@ -170,11 +167,11 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
     }
     if (ask) {
       SectionGap()
-      Question("¿Cómo te cayó el aviso?") {
+      Question("¿Cómo te cayó el sonido?") {
         FacePicker(feelingFaces, feeling, { feeling = it })
       }
       SectionGap()
-      Question("Cuando sonó, ¿supiste qué querías hacer sin mirar el teléfono?") {
+      Question("Cuando sonó, ¿supiste qué querías hacer antes de leerlo en la pantalla?") {
         SegmentedControl(listOf("yes" to "Sí", "partly" to "A medias", "no" to "No"), knew, { knew = it })
       }
       SectionGap()

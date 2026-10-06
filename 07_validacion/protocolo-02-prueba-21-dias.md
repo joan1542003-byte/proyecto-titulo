@@ -1,18 +1,13 @@
 # Protocolo 02 — Prueba de 21 días en casa: asociación, comparación y uso
 
-**Estado:** primer testeo desde el 7 de octubre de 2026, con elección libre (D-110).
+**Estado:** primer testeo desde el 7 de octubre de 2026, con condiciones asignadas por semana (D-112).
 **Fecha de preparación:** 25 de septiembre de 2026.
 **Decisiones:** D-070 (sin luz), D-075 (21 días), D-078 (señal de unos 30 segundos) y D-079 (la prueba responde la hipótesis), en el [registro de decisiones](../09_decisiones/registro-de-decisiones.md).
 **Relación con el protocolo 01:** lo reemplaza como estudio principal. Conserva su cadena de asociación, sus tres condiciones, sus reglas de decisión y sus fallos críticos, pero los lleva a una sola prueba en los hogares, sin luz. El [protocolo 01](protocolo-01-asociacion-y-comparacion.md) queda como antecedente.
 
-## Cambio del 6 de octubre de 2026: la persona elige (D-110)
+## Cambio del 6 de octubre de 2026 (D-110, reemplazado por D-112)
 
-Desde Android 2.20, la app no asigna condiciones por semana. En cada relevo la persona elige dónde suena y, con un objeto, si lo deja donde empieza o en otro lugar. La elección se registra como A (objeto donde empieza), B (objeto en otro lugar) o C (teléfono).
-
-- **Pregunta 2:** pasa a ser «¿A qué tiende la persona y cómo le va con cada elección?». Se responde con la proporción de A, B y C en total y por semana, y con las respuestas después de cada señal según la elección.
-- **Secuencias y reglas de las tres semanas:** no se aplican. La sesión inicial, las tarjetas semanales, el cierre del día 21 y la entrevista siguen igual.
-- **Límite:** como la persona elige, las diferencias entre A, B y C no se pueden atribuir solo al lugar; pueden deberse a la actividad, al día o a preferencias.
-- **Secciones siguientes:** describen el diseño con condiciones asignadas y se conservan como antecedente. Donde lo contradigan, prevalece este cambio.
+Durante el 6 de octubre se probó dejar que la persona eligiera dónde sonaba (D-110). El mismo día se volvió al diseño de este protocolo (D-112): la secuencia asignada decide cada semana si lo que suena va donde la persona empieza (A), en otro lugar (B) o en el teléfono (C). La persona elige su actividad, su lugar y su objeto (parlante, reloj o llavero). Este documento vuelve a valer completo.
 
 ## Qué responde
 
@@ -180,6 +175,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Vuelta a las condiciones (D-112)
+
+- **Qué cambió:** el cambio de elección libre queda como antecedente y el protocolo vuelve a valer completo.
+- **Cómo estaba antes:** una sección decía que la persona elegía y que la pregunta 2 cambiaba.
+- **Por qué:** D-112.
 
 ### 2026-10-06 — Elección libre (D-110)
 

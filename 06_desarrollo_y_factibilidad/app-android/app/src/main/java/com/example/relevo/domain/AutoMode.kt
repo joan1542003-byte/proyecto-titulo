@@ -40,7 +40,7 @@ object AutoMode {
       consentAccepted = true,
       localOnly = false,
       signalRoute = condition?.routeFor(last.signalRoute) ?: last.signalRoute,
-      studyCondition = condition?.code?.toString() ?: last.chosenCondition(),
+      studyCondition = condition?.code?.toString().orEmpty(),
       studyDay = studyDay,
       status = ReminderStatus.READY,
       autoActivated = true,

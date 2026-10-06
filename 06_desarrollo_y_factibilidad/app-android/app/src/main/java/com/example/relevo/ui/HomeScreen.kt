@@ -322,7 +322,7 @@ private fun AcknowledgementToast(text: String?, changedRouteInterest: String?, o
 @Composable
 private fun ActiveCard(reminder: Reminder, customActivities: List<CustomActivity>, usageAccess: Boolean, onOpen: () -> Unit) {
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
-  val where = if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else placePhrase(reminder.place)
+  val where = soundWhere(reminder)
   PhotoHero(
     activityPicture(reminder.activity, customActivities), aspect = 0.92f, sharedKey = ACTIVE_PHOTO,
     onClick = onOpen, clickLabel = "Ver mi relevo",
@@ -368,14 +368,7 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
  */
 @Composable
 internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
-  // Dónde sonará: el objeto donde empieza, en otro lugar o el teléfono, como lo eligió la persona (D-110).
-  val spot = if (reminder.objectNearStart == false) "donde lo dejaste" else placePhrase(reminder.place)
-  val where = when (reminder.signalRoute) {
-    SignalRoute.PHONE -> "en el teléfono"
-    SignalRoute.WATCH -> "en el reloj, $spot"
-    SignalRoute.TAG -> "en el llavero, $spot"
-    SignalRoute.BLUETOOTH -> "en el parlante, $spot"
-  }
+  val where = soundWhere(reminder)
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
     Text("Tu primer relevo está activo", style = Relevo.type.title2, color = Relevo.colors.ink)
     Spacer(Modifier.height(10.dp))
@@ -482,7 +475,7 @@ internal fun ActiveScreen(
   var confirming by rememberSaveable { mutableStateOf(false) }
   var confirmingDelete by rememberSaveable { mutableStateOf(false) }
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
-  val where = if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono" else placePhrase(reminder.place)
+  val where = soundWhere(reminder)
   RelevoScreen(
     onBack = onBack, backLabel = "Inicio",
     hero = {

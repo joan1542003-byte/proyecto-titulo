@@ -379,8 +379,7 @@ class AppUsageMonitorService : Service() {
    */
   private fun showCompletionNotification(reminder: Reminder, audible: Boolean) {
     val manager = getSystemService(NotificationManager::class.java) ?: return
-    // Desde D-110 la persona elige el teléfono: la notificación muestra su actividad, salvo en la pantalla de bloqueo.
-    val generic = false
+    val generic = reminder.studyCondition == StudyCondition.PHONE.code.toString()
     val publicVersion = NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
       .setSmallIcon(R.drawable.ic_stat_relevo)
       .setContentTitle("Relevo")

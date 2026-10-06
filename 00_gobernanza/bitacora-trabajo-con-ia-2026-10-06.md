@@ -9,6 +9,7 @@
 | Trabajo | Resultado | Decisión |
 | --- | --- | --- |
 | Elección libre (Android 2.20) | La persona elige dónde suena y si deja el objeto donde empieza; la app registra A, B o C según su elección. Recorrido completo en emulador como persona nueva ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md)). Panel 6 con «Qué elige». | D-110 |
+| Comparar y lenguaje claro (Android 2.22) | Vuelven las semanas A, B y C (D-112) con el objeto donde la persona empieza; se corrige elegir el objeto en A y B; lenguaje sin ambigüedades ni contradicciones; panel por condiciones ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md)). | D-112 |
 | Iconos y sin sugerencias (Android 2.21) | Icono con degradado en vez de fotos, ninguna salida marcada, textos neutros, «No quiero participar», revisión de patrones oscuros y de coherencia con la memoria ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md)). | D-111 |
 | APK y panel | Se envió el APK 2.19. El [panel](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM) pasa a la versión 5, con Resultados y Exportar ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-096 |
 
@@ -28,11 +29,17 @@
 ## 4. Pendientes
 
 - Revisar el consentimiento v12 con el profesor.
-- Ajustar la memoria a D-110 y D-111: el objeto ya no va siempre junto al primer paso y el objetivo 3 deja de ser una comparación controlada.
+- La memoria ya coincide con la app (D-112): no hace falta reescribir el objetivo 3.
 - Preguntar al profesor cuántas personas espera para el Pase de Examen (25 de noviembre) y si acepta un estudio de caso.
 - Comprar el iTag y probarlo con los pasos de la 2.19.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Android 2.22
+
+- **Qué cambió:** la bitácora suma la 2.22 y retira el pendiente de reescribir la memoria.
+- **Cómo estaba antes:** decía que había que ajustar la memoria a D-110.
+- **Por qué:** D-112 vuelve al diseño de la memoria.
 
 ### 2026-10-06 — Android 2.21
 

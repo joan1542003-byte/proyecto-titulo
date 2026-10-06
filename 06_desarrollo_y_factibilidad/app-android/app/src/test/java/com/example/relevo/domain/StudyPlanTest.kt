@@ -60,16 +60,6 @@ class StudyPlanTest {
   }
 
   @Test
-  fun chosenConditionFollowsRouteAndPlace() {
-    val base = Reminder(signalRoute = SignalRoute.BLUETOOTH)
-    assertEquals("A", base.copy(objectNearStart = true).chosenCondition())
-    assertEquals("B", base.copy(objectNearStart = false).chosenCondition())
-    assertEquals("", base.chosenCondition())
-    assertEquals("A", base.copy(signalRoute = SignalRoute.TAG, objectNearStart = true).chosenCondition())
-    assertEquals("C", base.copy(signalRoute = SignalRoute.PHONE, objectNearStart = true).chosenCondition())
-  }
-
-  @Test
   fun newReminderHasNoChosenRoute() {
     // 2.21: ninguna salida viene marcada.
     assertFalse(Reminder().routeChosen)

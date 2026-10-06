@@ -110,8 +110,8 @@ private enum class PrepareStep(val title: String) {
   ACTIVITY("¿Qué quieres hacer?"),
   START("¿Cómo empiezas?"),
   PLACE("¿Dónde empiezas?"),
-  USAGE("¿Cuándo te avisa?"),
-  SOUND("¿Cómo te avisa?"),
+  USAGE("¿Cuándo suena?"),
+  SOUND("¿Dónde suena?"),
   REVIEW("Todo listo"),
 }
 
@@ -121,16 +121,17 @@ private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder:
     else "Escribe algo que quieras hacer o toca una idea. Mientras más concreto, mejor: «leer 10 páginas» en vez de «leer más»."
   PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "El primer paso es «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta empezar."
     else "Anota lo primero que harías, algo que tome segundos: abrir el libro, ponerte las zapatillas."
-  PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja el parlante en otro lugar de tu casa y anota dónde."
-    else "Anota el lugar donde está lo que usas para empezar. Más adelante eliges dónde suena."
+  PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja lo que suena en otro lugar de tu casa y anota dónde."
+    else "Escríbelo con tus palabras, como lo dirías en voz alta: «en el velador», «junto a la puerta»."
   PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
-  PrepareStep.SOUND -> "No hay una respuesta correcta: elige lo que te acomode. Lo puedes cambiar en cada relevo."
+  PrepareStep.SOUND -> if (condition != null) "Elige el que tienes y pruébalo antes de seguir."
+    else "Elige con qué suena. El parlante, el reloj o el llavero se dejan donde empiezas; el teléfono suena donde esté."
   PrepareStep.REVIEW -> "Revisa que todo esté bien y toca «Activar el relevo». Puedes desactivarlo cuando quieras."
 }
 
 /** En la semana del parlante en otro lugar, el lugar que se anota es el del parlante, no el del comienzo. */
 private fun PrepareStep.titleFor(condition: StudyCondition?): String =
-  if (this == PrepareStep.PLACE && condition == StudyCondition.NEUTRAL) "¿Dónde dejas el parlante?" else title
+  if (this == PrepareStep.PLACE && condition == StudyCondition.NEUTRAL) "¿Dónde dejas lo que suena?" else title
 
 internal class PrepareActions(
   val onActivity: (String) -> Unit,
@@ -158,8 +159,6 @@ internal class PrepareActions(
   val onTagLink: (TagLink.Found) -> Unit = {},
   val onTagTest: () -> Unit = {},
   val onTagForget: () -> Unit = {},
-  /** Dónde deja el objeto que suena: true donde empieza, false en otro lugar (D-110). */
-  val onObjectPlace: (Boolean) -> Unit = {},
   /** El Bluetooth se encendió después del aviso: retoma la búsqueda o borra el aviso. */
   val onBluetoothOn: () -> Unit = {},
 )
@@ -169,7 +168,7 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
   PrepareStep.ACTIVITY -> if (reminder.activity.isBlank()) "Escribe qué quieres hacer o toca una idea." else null
   PrepareStep.START -> if (reminder.howToStart.isBlank()) "Escribe cómo empiezas: lo primero que harías." else null
   PrepareStep.PLACE -> if (reminder.place.isNotBlank()) null
-    else if (condition == StudyCondition.NEUTRAL) "Escribe dónde dejas el parlante." else "Escribe dónde empiezas."
+    else if (condition == StudyCondition.NEUTRAL) "Escribe dónde dejas lo que suena." else "Escribe dónde empiezas."
   PrepareStep.USAGE -> when {
     !usageAccess -> "Falta el permiso de Tiempo de uso. Tócalo arriba para darlo."
     reminder.selectedApps.isEmpty() -> "Elige al menos una app que cuente."
@@ -178,14 +177,12 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
   PrepareStep.SOUND -> when {
     !reminder.routeChosen -> "Elige dónde quieres que suene."
     reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige tu llavero, o elige otra forma de avisar."
-    reminder.signalRoute != SignalRoute.PHONE && reminder.objectNearStart == null -> "Elige dónde lo dejarás: donde empiezas o en otro lugar."
     else -> null
   }
   PrepareStep.REVIEW -> when {
     !usageAccess -> "Falta el permiso de Tiempo de uso."
     !reminder.routeChosen -> "Falta elegir dónde suena."
     reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Falta elegir el llavero."
-    reminder.signalRoute != SignalRoute.PHONE && reminder.objectNearStart == null -> "Falta elegir dónde lo dejarás."
     reminder.activity.isBlank() -> "Falta qué quieres hacer."
     reminder.howToStart.isBlank() -> "Falta cómo empiezas."
     reminder.place.isBlank() -> "Falta dónde empiezas."
@@ -298,10 +295,10 @@ internal fun PrepareScreen(
             SectionGap()
             ListSection {
               FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { go(PrepareStep.START) }
-              FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Parlante" else "Dónde empiezas", reminder.place) { go(PrepareStep.PLACE) }
+              FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Lo que suena está" else "Dónde empiezas", reminder.place) { go(PrepareStep.PLACE) }
               FactRow(KitIcon.APPS, "Apps que cuentan", reminder.selectedApps.joinToString(", ") { it.label }, valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(KitIcon.USO, "Te avisa después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Te avisa", if (reminder.routeChosen) soundPlace(reminder) else "Sin elegir", valueIsVoice = false) { go(PrepareStep.SOUND) }
+              FactRow(KitIcon.USO, "Suena después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { go(PrepareStep.USAGE) }
+              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Suena", if (reminder.routeChosen) soundPlace(reminder) else "Sin elegir", valueIsVoice = false) { go(PrepareStep.SOUND) }
             }
             if (!isKnown && reminder.activity.isNotBlank()) {
               Spacer(Modifier.height(10.dp))
@@ -404,7 +401,7 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
     Column(Modifier.weight(1f)) {
       Text(
         when (studyCondition) {
-          null -> "El lugar donde está lo que necesitas para empezar."
+          null -> "Escribe dónde está lo que usas para empezar: el libro, las zapatillas, el cuaderno."
           StudyCondition.PHONE -> "${conditionInstruction(studyCondition)} Anota dónde está lo que necesitas para empezar."
           else -> conditionInstruction(studyCondition)
         },
@@ -416,7 +413,7 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   SectionGap()
   RenglonField(
     when (studyCondition) {
-      StudyCondition.NEUTRAL -> "Dónde está el parlante"
+      StudyCondition.NEUTRAL -> "Dónde dejas lo que suena"
       else -> "Dónde empiezas"
     },
     reminder.place, actions.onPlace,
@@ -428,7 +425,7 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: PrepareActions, onPick: () -> Unit) {
-  Text("Te avisa cuando sumes este tiempo en las apps que elijas.", style = Relevo.type.body, color = Relevo.colors.graphite)
+  Text("Suena cuando sumes este tiempo en las apps que elijas.", style = Relevo.type.body, color = Relevo.colors.graphite)
   if (!usageAccess) {
     SectionGap()
     Notice("Relevo necesita el permiso de Tiempo de uso para contar.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
@@ -470,8 +467,8 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
     when (studyCondition) {
       null -> "Elige una. Después puedes probar cómo suena."
       StudyCondition.PHONE -> "Esta semana suena en el teléfono."
-      StudyCondition.SITUATED -> "Esta semana suena en el parlante, junto a lo que usas para empezar."
-      StudyCondition.NEUTRAL -> "Esta semana suena en el parlante, en otro lugar de tu casa."
+      StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el llavero."
+      StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el llavero."
     },
     style = Relevo.type.body, color = Relevo.colors.graphite,
   )
@@ -489,10 +486,6 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   SectionGap()
   // Sin elección todavía: nada más que elegir.
   if (!reminder.routeChosen) return
-  if (reminder.signalRoute != SignalRoute.PHONE) {
-    ObjectPlaceQuestion(reminder, actions)
-    SectionGap()
-  }
   if (reminder.signalRoute == SignalRoute.TAG) {
     TagPanel(tag, actions)
     return
@@ -513,27 +506,6 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
     Spacer(Modifier.height(8.dp))
     Text("Deja el reloj donde empiezas, con las llamadas por Bluetooth activadas.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
   }
-}
-
-/** Dónde deja el objeto: la persona lo elige y así se sabe a qué tiende (D-110). */
-@Composable
-private fun ObjectPlaceQuestion(reminder: Reminder, actions: PrepareActions) {
-  val thing = when (reminder.signalRoute) { SignalRoute.WATCH -> "el reloj"; SignalRoute.TAG -> "el llavero"; else -> "el parlante" }
-  Text("¿Dónde dejarás $thing?", style = Relevo.type.headline, color = Relevo.colors.ink)
-  Spacer(Modifier.height(10.dp))
-  SegmentedControl(
-    listOf("cerca" to "Donde empiezas", "lejos" to "En otro lugar"),
-    when (reminder.objectNearStart) { true -> "cerca"; false -> "lejos"; null -> null },
-    { value -> value?.let { actions.onObjectPlace(it == "cerca") } },
-  )
-  Spacer(Modifier.height(8.dp))
-  Text(
-    // Sin elección todavía, el texto no inclina hacia ninguna opción.
-    if (reminder.objectNearStart == null) "Las dos opciones sirven. Elige lo que de verdad vas a hacer."
-    else if (reminder.objectNearStart == false) "En cualquier otra parte de tu casa."
-    else "Junto a lo que usas para empezar${reminder.place.takeIf { it.isNotBlank() }?.let { ": " + it.replaceFirstChar { c -> c.lowercase() } } ?: ""}.",
-    style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
-  )
 }
 
 private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String = when {

@@ -289,31 +289,38 @@ internal fun weekFacts(history: List<HistoryEntry>, today: LocalDate = LocalDate
   return WeekFacts(prepared = thisWeek.size, started = thisWeek.count { it.outcome == "started" })
 }
 
-/** Dónde suena, en palabras: «El parlante, donde empiezas» (D-110). */
+/**
+ * Dónde suena, en palabras. El objeto va donde la persona dijo que empieza; solo en la semana B va en
+ * otro lugar de la casa (D-079, D-112).
+ */
 internal fun soundPlace(reminder: Reminder): String = routeName(reminder.signalRoute) + when {
   reminder.signalRoute == SignalRoute.PHONE -> ""
-  reminder.objectNearStart == true -> ", donde empiezas"
-  reminder.objectNearStart == false -> ", en otro lugar"
-  else -> ""
+  reminder.studyCondition == StudyCondition.NEUTRAL.code.toString() -> ", en otro lugar de tu casa"
+  else -> ", donde empiezas"
 }
+
+/** Dónde sonará, en una frase: «en el reloj, en el velador» o «en el teléfono». Se usa en Inicio y en el relevo activo. */
+internal fun soundWhere(reminder: Reminder): String =
+  if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono"
+  else "en " + routeName(reminder.signalRoute).replaceFirstChar { it.lowercase() } + ", " + placePhrase(reminder.place)
 
 /** Nombre de la condición para la persona, en palabras de todos los días (D-084). */
 internal fun conditionName(condition: StudyCondition): String = when (condition) {
-  StudyCondition.SITUATED -> "Parlante donde empiezas"
-  StudyCondition.NEUTRAL -> "Parlante en otro lugar"
-  StudyCondition.PHONE -> "Aviso en el teléfono"
+  StudyCondition.SITUATED -> "Suena donde empiezas"
+  StudyCondition.NEUTRAL -> "Suena en otro lugar"
+  StudyCondition.PHONE -> "Suena en el teléfono"
 }
 
 /** Lo que la app pide al comenzar cada semana, con las palabras del protocolo 02. */
 internal fun conditionInstruction(condition: StudyCondition): String = when (condition) {
-  StudyCondition.SITUATED -> "Esta semana deja el parlante junto a lo que necesitas para empezar."
-  StudyCondition.NEUTRAL -> "Esta semana deja el parlante en un lugar que no tenga relación con la actividad."
-  StudyCondition.PHONE -> "Esta semana el aviso sonará en tu teléfono."
+  StudyCondition.SITUATED -> "Esta semana deja el parlante, el reloj o el llavero junto a lo que usas para empezar."
+  StudyCondition.NEUTRAL -> "Esta semana déjalo en otro lugar de tu casa, que no tenga que ver con la actividad."
+  StudyCondition.PHONE -> "Esta semana suena en tu teléfono."
 }
 
 internal fun conditionDetail(condition: StudyCondition): String? = when (condition) {
   StudyCondition.NEUTRAL -> "Un lugar visible, a más de un metro de lo que necesitas para empezar y fuera de tu camino."
-  StudyCondition.PHONE -> "No necesitas el parlante. La notificación solo dirá «Es momento de volver a elegir»."
+  StudyCondition.PHONE -> "No necesitas el parlante, el reloj ni el llavero. La notificación solo dirá «Es momento de volver a elegir»."
   StudyCondition.SITUATED -> null
 }
 

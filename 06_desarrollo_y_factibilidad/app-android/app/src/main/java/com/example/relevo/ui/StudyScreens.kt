@@ -51,7 +51,7 @@ internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, 
   if (!firstCard && (week == null || condition == null) && study.pendingWeek == null && !closing) return
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
     if (firstCard) {
-      StudyCard(KitIcon.VALIDACION, "Hoy", "Tu primer relevo", "Prepáralo con calma y elige dónde quieres que suene.")
+      StudyCard(KitIcon.VALIDACION, "Hoy", "Tu primer relevo", "Prepáralo con calma. Deja el parlante, el reloj o el llavero junto a lo que usas para empezar.")
     }
     if (week != null && condition != null) {
       StudyCard(conditionIcon(condition), "Esta semana", conditionName(condition), conditionInstruction(condition), conditionDetail(condition)) {
@@ -99,35 +99,39 @@ internal fun StudyScreen(study: StudyState, participantCode: String, participati
   val plan = study.plan
   RelevoScreen(
     title = "Prueba de 21 días", onBack = onBack,
-    bottom = if (plan == null && participating) ({ GuardedButton("Empezar la prueba hoy", { onStart(StudyPlan.FREE) }, missing = null) }) else null,
+    bottom = if (plan == null && participating) ({ GuardedButton("Empezar la prueba hoy", { sequence?.let(onStart) }, missing = if (sequence == null) "Elige una secuencia." else null) }) else null,
   ) {
     if (!participating) {
       Text("Para configurar la prueba, primero hay que aceptar participar.", style = Relevo.type.body, color = Relevo.colors.graphite)
     } else if (plan == null) {
-      Text("Para el investigador, en la sesión inicial. Hoy será el día 0 y la prueba dura 21 días.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Para el investigador, en la sesión inicial. Elige la secuencia asignada; hoy será el día 0.", style = Relevo.type.body, color = Relevo.colors.graphite)
       SectionGap()
-      ListSection(title = "Qué registra") {
-        ListRow("La persona elige dónde suena", subtitle = "En cada relevo elige parlante, reloj, llavero o teléfono, y si deja el objeto donde empieza o en otro lugar (D-110).")
-        ListRow("A, B o C, según lo que elige", subtitle = "A: el objeto donde empieza. B: el objeto en otro lugar. C: el teléfono.")
-        ListRow("Tarjetas y cierre", subtitle = "Las preguntas de cada semana y del día 21 aparecen solas en Inicio.")
+      ListSection(title = "Condiciones") {
+        StudyCondition.entries.forEach { ListRow("${it.code}. ${conditionName(it)}", subtitle = conditionInstruction(it)) }
+      }
+      SectionGap()
+      ListSection(title = "Secuencia") {
+        StudyPlan.SEQUENCES.forEachIndexed { index, option ->
+          ListRow("Secuencia ${index + 1}", subtitle = option.toList().joinToString(" → "), onClick = { sequence = option }, trailing = { RadioMark(sequence == option) })
+        }
       }
     } else {
       Text(
         when {
           study.finished -> "La prueba terminó el día 21."
           study.day == 0 -> "Hoy es la sesión inicial (día 0)."
-          else -> "Día ${study.day} de 21 · semana ${study.week}" + (study.condition?.let { ": " + conditionName(it).lowercase() } ?: "") + "."
+          else -> "Día ${study.day} de 21 · semana ${study.week}: ${study.condition?.let(::conditionName)?.lowercase()}."
         },
         style = Relevo.type.title2, color = Relevo.colors.ink,
       )
       SectionGap()
       ListSection {
-        ListRow("Dónde suena", value = if (plan.free) "Lo elige la persona" else plan.sequence.toList().joinToString(" → "))
+        ListRow("Secuencia", value = plan.sequence.toList().joinToString(" → "))
         ListRow("Día 0", value = plan.day0.toString())
         ListRow("Código de participación", value = participantCode)
       }
       Spacer(Modifier.height(10.dp))
-      Text(if (plan.free) "La persona elige dónde suena en cada relevo. Las preguntas y las tarjetas aparecen solas." else "La condición de cada semana fija dónde suena la señal. Las preguntas y las tarjetas aparecen solas.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+      Text("La condición de cada semana fija dónde suena la señal. Las preguntas y las tarjetas aparecen solas.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
       SectionGap()
       if (confirmEnd) {
         RelevoButton("Terminar la prueba", { confirmEnd = false; onEnd() }, kind = ButtonKind.Destructive)
@@ -186,10 +190,10 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
       RelevoButton("Enviar", {
         onSubmit(mapOf(
           "seguiria_usando" to continueUsing.orEmpty(),
-          "salida_que_ayudo" to helpedMost.orEmpty(),
+          "semana_que_ayudo" to helpedMost.orEmpty(),
           "que_molesto" to bothered,
           "que_cambiaria" to change,
-          "lugar_del_objeto" to speakerPlace,
+          "lugar_parlante" to speakerPlace,
         ))
       })
     },
@@ -198,9 +202,9 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
       SegmentedControl(listOf("si" to "Sí", "tal_vez" to "Tal vez", "no" to "No"), continueUsing, { continueUsing = it })
     }
     SectionGap()
-    Question("2. ¿Dónde te sirvió más que sonara?") {
+    Question("2. ¿Qué semana te ayudó más?") {
       ListSection {
-        listOf("A" to "Un objeto donde empiezo", "B" to "Un objeto en otro lugar", "C" to "El teléfono", "ninguna" to "En ninguno").forEach { (value, label) ->
+        (StudyCondition.entries.map { it.code.toString() to conditionName(it) } + ("ninguna" to "Ninguna")).forEach { (value, label) ->
           ListRow(label, onClick = { helpedMost = if (helpedMost == value) null else value }, trailing = { RadioMark(helpedMost == value) })
         }
       }
@@ -210,6 +214,6 @@ internal fun ClosingScreen(onSubmit: (Map<String, String>) -> Unit, onLater: () 
     SectionGap()
     RenglonArea("4. ¿Qué cambiarías?", change, { change = it }, "Escribe aquí")
     SectionGap()
-    RenglonArea("5. ¿Dónde dejabas lo que sonaba la mayor parte del tiempo?", speakerPlace, { speakerPlace = it }, "Ejemplo: el parlante junto a la puerta")
+    RenglonArea("5. ¿Dónde quedó lo que sonaba la mayor parte del tiempo?", speakerPlace, { speakerPlace = it }, "Ejemplo: junto a la puerta")
   }
 }

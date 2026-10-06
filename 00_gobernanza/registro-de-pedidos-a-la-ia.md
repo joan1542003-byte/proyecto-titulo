@@ -103,6 +103,7 @@
 | 6 oct. | Encargo | Pedir el APK actual y el panel, rediseñado para que se vea mejor y se entienda fácil, con estadísticas y exportación. | APK 2.19 enviado. [Panel](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM) versión 5: Resultados por condición y por persona, Exportar a Excel, CSV y JSON, cifras explicadas y guía de lectura ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-096 |
 | 6 oct. | Corrección | En la app no imponer las condiciones A, B y C: que la persona elija, para saber a qué tiende. El flujo de navegación debe ser perfecto y fácil de entender, porque el primer testeo empieza al día siguiente. | [Android 2.20](../06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md): elección libre con la pregunta «¿Dónde dejarás el parlante?», registro de A, B o C según la elección, textos neutros, consentimiento v12 y recorrido completo en emulador; panel 6 con «Qué elige». | D-110 |
 | 6 oct. | Corrección | Quitar la salida que viene por defecto y corregir lo pendiente; cada actividad con un icono sobre un degradado sutil, sin fotos; una app fácil de usar y de entender, que no choque con la memoria y sin patrones oscuros. | [Android 2.21](../06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md): iconos con degradado, ninguna salida marcada, textos neutros, primer relevo sin superposición, «No quiero participar» y aviso semanal con opciones del mismo peso; revisión de patrones oscuros y de coherencia con la memoria. | D-111 |
+| 6 oct. | Corrección y consulta | La persona elige porque sabe dónde está su primer paso: corregir las discrepancias; preguntó si es mejor comparar o dejar elegir y pidió aplicar lo óptimo; mejorar el lenguaje ambiguo o contradictorio de la app. | Recomendación: comparar, porque la hipótesis y la memoria lo piden. [Android 2.22](../06_desarrollo_y_factibilidad/app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md): vuelven las semanas A, B y C con el objeto donde la persona empieza; se corrige elegir el objeto en las semanas A y B; un solo verbo («suena»), sin frases que contradigan la app; consentimiento v13; panel por condiciones. | D-112 |
 
 ## Lo que muestra el registro
 
@@ -113,6 +114,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Comparar y lenguaje claro
+
+- **Qué cambió:** se registró el pedido de la 2.22.
+- **Cómo estaba antes:** terminaba en la 2.21.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-06 — Iconos y sin sugerencias
 

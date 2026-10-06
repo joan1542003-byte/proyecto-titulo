@@ -379,12 +379,14 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _study.value = state
     val current = _reminder.value
     val route = state.condition?.routeFor(current.signalRoute)
-    if (route != null && current.signalRoute != route && current.status != ReminderStatus.WAITING && current.status != ReminderStatus.SIGNALLED) {
-      updateValue(current.copy(signalRoute = route, routeChosen = true))
+    val phoneWeekUnmarked = route == SignalRoute.PHONE && !current.routeChosen
+    if (route != null && (current.signalRoute != route || phoneWeekUnmarked) && current.status != ReminderStatus.WAITING && current.status != ReminderStatus.SIGNALLED) {
+      // En la semana C suena el teléfono; en A y B se conserva el objeto que la persona ya eligió, sin elegir por ella.
+      updateValue(current.copy(signalRoute = route, routeChosen = route == SignalRoute.PHONE || (current.routeChosen && current.signalRoute == route)))
     }
   }
 
-  /** El investigador empieza la prueba en la sesión inicial; hoy es el día 0. Desde D-110, sin secuencia asignada. */
+  /** El investigador asigna la secuencia en la sesión inicial; hoy es el día 0. */
   fun startStudy(sequence: String) {
     val today = LocalDate.now()
     studyStore.start(sequence, today)
@@ -485,17 +487,15 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun updateRequiredUsage(seconds: Int) =
     update { copy(requiredUsageSeconds = seconds.coerceAtLeast(1), status = ReminderStatus.DRAFT) }
 
-  /** Durante la prueba, la condición de la semana decide dónde suena; la persona no la cambia. */
+  /**
+   * Durante la prueba, la semana decide dónde suena: en C, el teléfono; en A y B, la persona elige con qué
+   * objeto (parlante, reloj o llavero), pero no el teléfono.
+   */
   fun updateSignalRoute(route: SignalRoute) {
-    if (_study.value.condition != null) return
+    val condition = _study.value.condition
+    if (condition != null && condition.routeFor(route) != route) return
     log("salida_elegida", route.name.lowercase())
     update { copy(signalRoute = route, routeChosen = true, status = ReminderStatus.DRAFT) }
-  }
-
-  /** Dónde deja la persona el objeto que suena: donde empieza o en otro lugar (D-110). */
-  fun updateObjectNearStart(near: Boolean) {
-    log("lugar_del_objeto", if (near) "donde_empieza" else "otro_lugar")
-    update { copy(objectNearStart = near, status = ReminderStatus.DRAFT) }
   }
 
   fun updateConsent(accepted: Boolean) {
@@ -585,17 +585,16 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   fun arm(): Boolean {
     if (!Participation.canUse(getApplication())) return false
-    // Sin salida elegida no se activa: la pantalla de preparar lo pide antes (2.21).
-    if (!_reminder.value.routeChosen && _study.value.condition == null) return false
     refreshUsageAccess()
     if (!_usageAccessGranted.value) return false
     refreshStudy()
-    // Cada relevo queda asociado al día y a la condición que eligió la persona (D-110).
+    // Sin salida elegida no se activa: la pantalla de preparar lo pide antes (2.21).
+    if (!_reminder.value.routeChosen) return false
+    // Cada relevo queda asociado al día y a la condición de la semana en que se activó (D-079, D-112).
     val study = _study.value
-    val route = study.condition?.routeFor(_reminder.value.signalRoute) ?: _reminder.value.signalRoute
     val prepared = _reminder.value.copy(
-      signalRoute = route,
-      studyCondition = study.condition?.code?.toString() ?: _reminder.value.copy(signalRoute = route).chosenCondition(),
+      signalRoute = study.condition?.routeFor(_reminder.value.signalRoute) ?: _reminder.value.signalRoute,
+      studyCondition = study.condition?.code?.toString().orEmpty(),
       studyDay = if (study.active) study.day else -1,
       autoActivated = false,
     )

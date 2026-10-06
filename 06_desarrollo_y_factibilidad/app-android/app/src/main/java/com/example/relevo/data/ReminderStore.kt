@@ -46,7 +46,6 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       signalEnded = preferences.getBoolean("signal_ended", false),
       localOnly = preferences.getBoolean("local_only", false),
       autoActivated = preferences.getBoolean("auto_activated", false),
-      objectNearStart = when (preferences.getInt("object_near_start", -1)) { 1 -> true; 0 -> false; else -> null },
       // Antes de 2.21 la salida siempre estaba elegida: si hay una guardada sin esta marca, cuenta como elegida.
       routeChosen = preferences.getBoolean("route_chosen", preferences.contains("signal_route")),
     )
@@ -74,7 +73,6 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       .putBoolean("signal_ended", reminder.signalEnded)
       .putBoolean("local_only", reminder.localOnly)
       .putBoolean("auto_activated", reminder.autoActivated)
-      .putInt("object_near_start", when (reminder.objectNearStart) { true -> 1; false -> 0; null -> -1 })
       .putBoolean("route_chosen", reminder.routeChosen)
       .apply()
   }
