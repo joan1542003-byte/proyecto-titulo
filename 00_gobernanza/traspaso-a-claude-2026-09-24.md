@@ -202,6 +202,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
 - **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
 - **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
+- **Panel 5 (6 de octubre):** pestañas Resultados (estadísticas por condición y por persona) y Exportar (Excel, CSV y JSON). Pendiente: preguntar al profesor cuántas personas espera para el Pase de Examen ([bitácora del 6 de octubre](bitacora-trabajo-con-ia-2026-10-06.md)).
 
 ## Seguridad, privacidad y GitHub
 
@@ -214,6 +215,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Panel 5
+
+- **Qué cambió:** el estado suma el panel 5 y la pregunta pendiente al profesor sobre el número de personas.
+- **Cómo estaba antes:** terminaba en Android 2.19.
+- **Por qué:** pedido del autor del 6 de octubre.
 
 ### 2026-10-05 — Llavero iTag
 

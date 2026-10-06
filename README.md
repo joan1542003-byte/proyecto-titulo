@@ -66,6 +66,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **5 de octubre:** la [app 2.19](06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md) (D-109) agrega la salida «El llavero»: Relevo hace pitar un llavero iTag por Bluetooth, mantiene la conexión mientras el relevo espera y el botón del llavero calla la señal. Su pantalla se probó en emulador; falta probarla con el llavero, que el autor comprará en MercadoLibre ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-05.md)).
 
+**6 de octubre:** el [panel del testeo](06_desarrollo_y_factibilidad/panel-admin/README.md) pasa a la versión 5, con resultados por condición y por persona y exportación a Excel, CSV y JSON ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-06.md)).
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».
@@ -140,6 +142,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Panel 5
+
+- **Qué cambió:** el estado actual suma el panel 5.
+- **Cómo estaba antes:** terminaba en la app 2.19.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-05 — App 2.19
 

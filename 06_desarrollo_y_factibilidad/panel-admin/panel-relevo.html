@@ -8,6 +8,7 @@
   --paper: #F2F2EF; --card: #FCFCFA; --ink: #17181C; --on-ink: #F2F2EF; --graphite: #5B5F68; --mist: #E5E5E2;
   --line: #D5D6D8; --gray: #9BA0A9; --slate: #33363D; --voice: #2A4BD7; --voice-soft: #EEF1FD; --error: #B3261E;
   --chart-focus: #2A4BD7; --chart-context: #82878F;
+  --cond-a: #2a78d6; --cond-b: #eb6834; --cond-c: #1baf7a;
   --glass: rgba(247, 247, 244, .66); --glass-edge: rgba(23, 24, 28, .07); --scrim: rgba(0, 0, 0, .18); --segment: #FCFCFA;
   --font: "Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
   --r-panel: 28px; --r-tile: 22px; --r-sheet: 34px;
@@ -16,14 +17,14 @@
   :root:not([data-theme="light"]) {
     --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --on-ink: #111215; --graphite: #9BA0A9; --mist: #26282D;
     --line: #30333A; --gray: #5B5F68; --slate: #C9CBCF; --voice: #8CA6FF; --voice-soft: #1C2238; --error: #F2B8B5;
-    --chart-focus: #6F8CF2; --chart-context: #6F737C;
+    --chart-focus: #6F8CF2; --chart-context: #6F737C; --cond-a: #3987e5; --cond-b: #d95926; --cond-c: #199e70;
     --glass: rgba(27, 28, 32, .68); --glass-edge: rgba(255, 255, 255, .09); --scrim: rgba(0, 0, 0, .45); --segment: #3A3C42; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #111215; --card: #1B1C20; --ink: #E9EAEC; --on-ink: #111215; --graphite: #9BA0A9; --mist: #26282D;
   --line: #30333A; --gray: #5B5F68; --slate: #C9CBCF; --voice: #8CA6FF; --voice-soft: #1C2238; --error: #F2B8B5;
-  --chart-focus: #6F8CF2; --chart-context: #6F737C;
+  --chart-focus: #6F8CF2; --chart-context: #6F737C; --cond-a: #3987e5; --cond-b: #d95926; --cond-c: #199e70;
   --glass: rgba(27, 28, 32, .68); --glass-edge: rgba(255, 255, 255, .09); --scrim: rgba(0, 0, 0, .45); --segment: #3A3C42; color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -211,6 +212,70 @@ textarea.renglon { min-height: 104px; }
   .view { padding-top: 24px; }
   h1 { font-size: 30px; line-height: 36px; }
 }
+/* v5: ayudas de lectura, resultados y exportar */
+.stat small { color: var(--graphite); font-size: 12px; line-height: 16px; }
+.stat.lead small { color: var(--on-ink); opacity: .62; }
+.help { margin: -4px 0 10px 4px; color: var(--graphite); font-size: 13px; line-height: 18px; max-width: 72ch; }
+.progress { display: inline-block; height: 6px; width: 72px; border-radius: 999px; background: var(--mist); overflow: hidden; vertical-align: middle; }
+.progress span { display: block; height: 100%; border-radius: 999px; background: var(--ink); }
+.filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.filters .field-label { margin-left: 4px; }
+.select { height: 40px; padding: 0 36px 0 16px; border-radius: 999px; border: 0; background: var(--card); font-size: 15px; font-weight: 600; appearance: none; -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--graphite) 50%), linear-gradient(135deg, var(--graphite) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 17px, calc(100% - 15px) 17px; background-size: 5px 5px; background-repeat: no-repeat; max-width: 100%; }
+.cond-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 860px) { .cond-cards { grid-template-columns: minmax(0, 1fr); } }
+.cond-card { background: var(--card); border-radius: var(--r-tile); padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.cond-title { display: flex; align-items: center; gap: 10px; }
+.cond-title b { font-size: 17px; line-height: 22px; font-weight: 650; }
+.cond-title div span { color: var(--graphite); font-size: 13px; line-height: 18px; }
+.letter { width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 15px; flex: none; }
+.metrics { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; font-size: 15px; line-height: 21px; margin: 0; }
+.metrics dt { color: var(--graphite); }
+.metrics dd { margin: 0; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.metrics dd small { color: var(--graphite); font-weight: 400; font-size: 13px; }
+.stack-col { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+.compare { display: flex; flex-direction: column; gap: 18px; }
+.compare-group { display: flex; flex-direction: column; gap: 6px; }
+.compare-group > strong { font-size: 15px; line-height: 20px; font-weight: 600; }
+.hbar { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(92px, auto); gap: 10px; align-items: center; font-size: 13px; line-height: 18px; }
+.hbar .k { font-weight: 700; }
+.hbar .track { height: 12px; border-radius: 999px; background: var(--mist); overflow: hidden; }
+.hbar .track span { display: block; height: 100%; border-radius: 0 4px 4px 0; }
+.hbar .v { text-align: right; color: var(--graphite); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hbar .v b { color: var(--ink); font-weight: 650; }
+.stack { display: flex; gap: 2px; height: 14px; border-radius: 999px; overflow: hidden; background: var(--mist); }
+.stack span { height: 100%; }
+.s-started { background: var(--ink); } .s-later { background: var(--chart-context); } .s-changed { background: var(--line); } .s-none { background: repeating-linear-gradient(135deg, var(--line) 0 3px, transparent 3px 7px); }
+table.plain { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 21px; }
+table.plain th, table.plain td { padding: 8px 6px; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; border-bottom: 1px solid var(--line); }
+table.plain th { color: var(--graphite); font-weight: 600; font-size: 13px; }
+table.plain th:first-child, table.plain td:first-child { text-align: left; }
+table.plain tr:last-child td { border-bottom: 0; }
+.export-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 900px) { .export-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .export-grid { grid-template-columns: minmax(0, 1fr); } }
+.export-card { background: var(--card); border-radius: var(--r-tile); padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.export-card.main { background: var(--ink); color: var(--on-ink); grid-column: span 2; }
+@media (max-width: 600px) { .export-card.main { grid-column: auto; } }
+.export-card h3 { margin: 0; font-size: 17px; line-height: 22px; font-weight: 650; display: flex; align-items: center; gap: 8px; }
+.export-card p { margin: 0; color: var(--graphite); font-size: 14px; line-height: 20px; flex: 1; }
+.export-card.main p { color: var(--on-ink); opacity: .72; }
+.export-card .ext { font-size: 12px; font-weight: 700; letter-spacing: .04em; color: var(--graphite); }
+.export-card.main .ext { color: var(--on-ink); opacity: .7; }
+.export-card .mini { align-self: flex-start; margin-top: 4px; }
+.export-card.main .mini { background: var(--on-ink); color: var(--ink); }
+.export-card.warn h3 { color: var(--error); }
+details.glossary { background: var(--card); border-radius: var(--r-panel); padding: 16px 20px; }
+details.glossary summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+details.glossary dl { display: grid; grid-template-columns: minmax(120px, max-content) minmax(0, 1fr); gap: 8px 16px; margin: 14px 0 2px; font-size: 15px; line-height: 21px; }
+details.glossary dt { font-weight: 600; }
+details.glossary dd { margin: 0; color: var(--graphite); }
+@media (max-width: 600px) { details.glossary dl { grid-template-columns: minmax(0, 1fr); gap: 2px; } details.glossary dd { margin-bottom: 8px; } }
+.brand { overflow: hidden; }
+.brand small { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+@media (max-width: 1240px) { .brand small { display: none; } }
+@media (max-width: 960px) and (min-width: 761px) { .tab { padding: 0 11px; } .tab svg { display: none; } }
 footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-size: 13px; line-height: 18px; }
 </style>
 
@@ -220,8 +285,9 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
     <nav class="tabs" role="tablist" aria-label="Secciones">
       <button class="tab" role="tab" id="tab-ahora" data-view="ahora" aria-selected="true" aria-controls="view-ahora"></button>
       <button class="tab" role="tab" id="tab-participantes" data-view="participantes" aria-selected="false" aria-controls="view-participantes"></button>
-      <button class="tab" role="tab" id="tab-respuestas" data-view="respuestas" aria-selected="false" aria-controls="view-respuestas"></button>
+      <button class="tab" role="tab" id="tab-resultados" data-view="resultados" aria-selected="false" aria-controls="view-resultados"></button>
       <button class="tab" role="tab" id="tab-mensajes" data-view="mensajes" aria-selected="false" aria-controls="view-mensajes"></button>
+      <button class="tab" role="tab" id="tab-exportar" data-view="exportar" aria-selected="false" aria-controls="view-exportar"></button>
     </nav>
     <div class="bar-right">
       <span class="chip" id="live"><span class="dot"></span><span id="live-text">Conectando</span></span>
@@ -239,18 +305,29 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
       <h1>Así va el testeo.</h1>
     </div>
     <div class="stats">
-      <div class="stat lead"><b class="num" id="k-counting">–</b><span>Contando ahora</span></div>
-      <div class="stat"><b class="num" id="k-awaiting">–</b><span>Esperan responder</span></div>
-      <div class="stat"><b class="num" id="k-today">–</b><span>Relevos hoy</span></div>
-      <div class="stat"><b class="num" id="k-answered">–</b><span>Respuestas de las señales</span></div>
-      <div class="stat"><b class="num" id="k-auto">–</b><span>Se activaron solos</span></div>
-      <div class="stat"><b class="num" id="k-online">–</b><span>Con actividad en 15 min</span></div>
+      <div class="stat lead"><b class="num" id="k-counting">–</b><span>Contando ahora</span><small>Tienen un relevo activo y están en sus apps</small></div>
+      <div class="stat"><b class="num" id="k-awaiting">–</b><span>Esperan responder</span><small>Sonó la señal y aún no contestan</small></div>
+      <div class="stat"><b class="num" id="k-today">–</b><span>Relevos hoy</span><small>Activados desde la medianoche</small></div>
+      <div class="stat"><b class="num" id="k-answered">–</b><span>Señales respondidas</span><small>Respondidas de todas las que sonaron</small></div>
+      <div class="stat"><b class="num" id="k-auto">–</b><span>Se activaron solos</span><small>Con la activación automática</small></div>
+      <div class="stat"><b class="num" id="k-online">–</b><span>Activos en 15 min</span><small>Teléfonos que enviaron algo hace poco</small></div>
     </div>
     <div><h2>Para revisar</h2><div class="section" id="l-attention"><div class="empty">Cargando…</div></div></div>
     <div class="two">
       <div><h2>Ahora mismo</h2><div class="section" id="l-now"><div class="empty">Cargando…</div></div></div>
       <div><h2>Lo último que llegó</h2><div class="section" id="l-feed"><div class="empty">Cargando…</div></div></div>
     </div>
+    <details class="glossary">
+      <summary>Cómo leer este panel</summary>
+      <dl>
+        <dt>Relevo</dt><dd>Lo que la persona prepara: una actividad, cómo empieza, dónde, qué apps cuentan y después de cuánto tiempo suena.</dd>
+        <dt>Señal</dt><dd>El sonido de 30 segundos cuando se cumple el tiempo en las apps elegidas.</dd>
+        <dt>Respondida</dt><dd>Después de la señal, la persona dijo si comenzó, lo dejó para después o cambió de idea.</dd>
+        <dt>Condiciones</dt><dd>A: la señal suena junto al primer paso de la actividad. B: suena en otro lugar de la casa. C: suena en el teléfono. Cada semana de la prueba usa una.</dd>
+        <dt>Se activó solo</dt><dd>La activación automática armó el relevo al abrir una app elegida.</dd>
+        <dt>Para revisar</dt><dd>Permisos que faltan, batería con restricción, teléfonos sin datos hace más de un día o con una versión antigua.</dd>
+      </dl>
+    </details>
   </section>
 
   <section class="view" id="view-participantes" role="tabpanel" aria-labelledby="tab-participantes" hidden>
@@ -262,16 +339,25 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
     <div class="section" id="l-participants"><div class="empty">Cargando…</div></div>
   </section>
 
-  <section class="view" id="view-respuestas" role="tabpanel" aria-labelledby="tab-respuestas" hidden>
+  <section class="view" id="view-resultados" role="tabpanel" aria-labelledby="tab-resultados" hidden>
     <div class="view-head">
-      <span class="eyebrow">Después de cada señal</span>
-      <h1>Respuestas.</h1>
+      <span class="eyebrow">Lo que pasó después de cada señal</span>
+      <h1>Resultados.</h1>
+      <p class="lede">Compara las tres condiciones de la prueba. Con pocas personas, estos números describen casos: orientan el diseño, pero no permiten generalizar.</p>
+    </div>
+    <div class="filters"><label class="field-label" for="r-person">Ver</label><select class="select" id="r-person"><option value="all">Todas las personas</option></select><span class="note" id="r-scope"></span></div>
+    <div class="stats" id="r-kpis"></div>
+    <div><h2>Por condición</h2><p class="help">A: suena junto al primer paso. B: suena en otro lugar de la casa. C: suena en el teléfono. No cuenta los relevos eliminados.</p><div class="cond-cards" id="r-conditions"></div></div>
+    <div class="two">
+      <div><h2>Comparar condiciones</h2><p class="help">Porcentaje sobre las señales que la persona respondió en cada condición.</p><div class="panel" id="r-compare"></div></div>
+      <div><h2>Qué hizo después de la señal</h2><p class="help">Reparto de las señales que sonaron en cada condición.</p><div class="panel" id="r-outcomes"></div></div>
     </div>
     <div class="two">
-      <div><h2>¿Supo qué quería hacer al sonar?</h2>
-        <div class="panel"><div id="l-conditions"><div class="empty" style="padding:0">Cargando…</div></div>
-          <div class="legend"><span><i style="background:var(--ink)"></i>Sí</span><span><i style="background:var(--gray)"></i>A medias</span><span><i style="background:var(--line)"></i>No</span></div></div></div>
-      <div><h2>Relevos por día</h2><div class="panel chart" id="c-daily"><div class="empty" style="padding:0">Cargando…</div></div></div>
+      <div class="stack-col">
+        <div><h2>Uso de las apps elegidas</h2><p class="help">Minutos en las apps elegidas en los 10 minutos antes y después de la señal, en promedio.</p><div class="panel" id="r-usage"></div></div>
+        <div><h2>Relevos por día</h2><p class="help">Últimos 21 días, de todas las personas.</p><div class="panel chart" id="c-daily"><div class="empty" style="padding:0">Cargando…</div></div></div>
+      </div>
+      <div><h2>Cómo sonó</h2><p class="help">Dónde sonó, cómo se activó y cómo terminó la señal.</p><div class="section" id="r-routes"></div></div>
     </div>
     <div><h2>Respuestas a la señal</h2><div class="section" id="l-sessions"><div class="empty">Cargando…</div></div></div>
     <div><h2>Tarjetas semanales, cierre y opiniones</h2><div class="section" id="l-answers"><div class="empty">Cargando…</div></div></div>
@@ -308,6 +394,18 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
       </div>
       <div><h2>Enviados</h2><div class="section" id="l-messages"><div class="empty">Cargando…</div></div></div>
     </div>
+  </section>
+
+  <section class="view" id="view-exportar" role="tabpanel" aria-labelledby="tab-exportar" hidden>
+    <div class="view-head">
+      <span class="eyebrow">Para analizar en Excel o guardar un respaldo</span>
+      <h1>Exportar.</h1>
+      <p class="lede">Los archivos salen sin nombres: cada persona aparece con su código. Las horas están en hora de Chile continental.</p>
+    </div>
+    <div class="filters"><label class="field-label" for="x-person">Datos de</label><select class="select" id="x-person"><option value="all">Todas las personas</option></select></div>
+    <div class="export-grid" id="x-cards"></div>
+    <div id="x-result" hidden></div>
+    <p class="note">Los CSV usan punto y coma y UTF-8, como espera Excel en Chile. El libro de Excel trae una hoja por tabla, el resumen por condición y un diccionario de columnas. Cada descarga pide tu confirmación.</p>
   </section>
 
   <footer>Los teléfonos envían sus datos al activar un relevo, cuando suena, al cerrar la app y cada 15 minutos; el estado y el uso diario, cada 30 minutos (app 2.18 o posterior). El panel se actualiza cada 30 segundos. Horas de Chile continental.</footer>
@@ -475,6 +573,15 @@ select json_build_object(
     auto: ['bolt', 'Se activará solo'], idle: ['dot', 'Sin relevo activo'], none: ['dot', 'Sin relevos']
   };
   const COUNTING = ['armed', 'target_entered', 'target_left', 'monitor_resumed'];
+  const COND_COLOR = { A: 'var(--cond-a)', B: 'var(--cond-b)', C: 'var(--cond-c)' };
+  const COND_SHORT = { A: 'Junto al primer paso', B: 'Otro lugar de la casa', C: 'En el teléfono' };
+  const ANSWERED = ['started', 'later', 'changed'];
+  const STUDY_DAYS = 21;
+  const STATS_SQL = `select coalesce(json_agg(s order by s.started_at), '[]'::json) as stats from (
+  select participant_code as code, started_at, study_condition, study_day, signal_route, activation, signal_at, outcome, knew_intention,
+    recalled_first_step, signal_feeling, response_seconds, usage_before_seconds, usage_after_seconds, signal_end
+  from public.relevo_sessions where outcome is distinct from 'deleted') s;`;
+  let stats = null, statsAt = 0, statsBusy = false;
 
   const $ = (id) => document.getElementById(id);
   let mcp = null, data = null, lastOk = 0, busy = false, lastError = null, view = 'ahora', target = 'all', undo = null;
@@ -671,8 +778,9 @@ select json_build_object(
     $('k-online').textContent = P.filter((p) => p.last_seen && Date.now() - new Date(p.last_seen) < 15 * 60000).length;
     $('p-count').textContent = P.length === 1 ? '1 persona en el testeo' : P.length + ' personas en el testeo';
     renderAttention(P); renderNow(P); renderFeed(data.feed || []); renderParticipants(P);
-    renderConditions(data.conditions || []); renderDaily(data.daily || []); renderSessions(data.sessions || []); renderAnswers(data.answers || []);
-    renderPicker(P); renderMessages(data.messages || []); updateForm();
+    renderDaily(data.daily || []); renderSessions(data.sessions || []); renderAnswers(data.answers || []);
+    renderPicker(P); renderMessages(data.messages || []); updateForm(); renderPersonSelects(P);
+    if (view === 'resultados') loadStats(); if (view === 'exportar') renderExport();
   }
   function personRow(p, sub, end, onClick) {
     const kids = [el('span', { class: 'avatar', text: initials(p) }), el('span', { class: 'row-main' }, [el('span', { class: 'row-title', text: p.name || p.code }), el('span', { class: 'row-sub', text: sub })]), el('span', { class: 'row-end' }, end)];
@@ -722,23 +830,15 @@ select json_build_object(
       const today = p.pantalla_hoy != null ? 'hoy ' + duration(p.pantalla_hoy) + ' de pantalla, ' + duration(p.elegidas_hoy || 0) + ' en sus apps' : null;
       const sub = [p.code, cond, p.respondidos + ' de ' + p.senales + ' señales respondidas', today, ago(p.last_seen)].filter(Boolean).join(' · ');
       const end = [stateChip(stateOf(p), false)];
+      if (p.condition && p.day != null) {
+        const bar = el('span', { class: 'progress', role: 'img', 'aria-label': 'Día ' + p.day + ' de ' + STUDY_DAYS }, [el('span')]);
+        bar.firstChild.style.width = Math.min(100, Math.round(100 * p.day / STUDY_DAYS)) + '%';
+        end.unshift(el('span', { class: 'row-sub num', text: 'día ' + p.day + ' de ' + STUDY_DAYS }), bar);
+      }
       if (issuesOf(p).length) end.unshift(el('span', { class: 'chip warn' }, [icon('info', 'sm'), 'Revisar']));
       end.push(icon('chevron', 'chev'));
       return personRow(p, sub, end, () => openPerson(p));
     }), 'Todavía no hay participantes. Aparecen cuando un teléfono acepta el consentimiento y envía sus primeros datos.');
-  }
-  function renderConditions(C) {
-    const box = $('l-conditions');
-    if (!C.length) { box.replaceChildren(el('div', { class: 'empty', style: 'padding:0', text: 'Aparece cuando empiece el testeo de 21 días.' })); return; }
-    box.replaceChildren(...C.map((c) => {
-      const total = Math.max(1, c.si + c.medias + c.no);
-      const seg = (cls, n) => { const s = el('span', { class: cls, title: n + ' de ' + total }); s.style.width = (100 * n / total) + '%'; return s; };
-      return el('div', { class: 'cond' }, [
-        el('div', { class: 'cond-head' }, [el('strong', { text: c.condition + ' · ' + (CONDITIONS[c.condition] || '') }), el('span', { class: 'num', text: c.senales + ' señales de ' + c.relevos + ' relevos' })]),
-        el('div', { class: 'bar-track', role: 'img', 'aria-label': 'Sí ' + c.si + ', a medias ' + c.medias + ', no ' + c.no }, [seg('b-yes', c.si), seg('b-part', c.medias), seg('b-no', c.no)]),
-        el('span', { class: 'note', text: 'Recordó cómo empezar ' + c.recordo + ' veces · comenzó la actividad ' + c.comenzo + ' veces' })
-      ]);
-    }));
   }
   function renderDaily(D) {
     const days = [], today = new Date();
@@ -776,6 +876,235 @@ select json_build_object(
       el('span', { class: 'row-title voice', text: String(a.answer || '').slice(0, 400) })])]);
   }
   function renderAnswers(A) { section('l-answers', A.map((a) => answerRow(a, true)), 'Todavía no hay respuestas de tarjetas ni opiniones.'); }
+
+  // ---- Resultados: cifras por condición, calculadas en la página con los relevos sin eliminar ----
+  const pct = (a, b) => b ? Math.round(100 * a / b) : null;
+  const pctText = (a, b) => b ? pct(a, b) + ' %' : '—';
+  const median = (xs) => { const v = xs.filter((x) => x != null).sort((a, b) => a - b); if (!v.length) return null; const m = Math.floor(v.length / 2); return v.length % 2 ? v[m] : Math.round((v[m - 1] + v[m]) / 2); };
+  const mean = (xs) => { const v = xs.filter((x) => x != null); return v.length ? v.reduce((t, x) => t + x, 0) / v.length : null; };
+  const minText = (sec) => sec == null ? '—' : (sec / 60).toLocaleString('es-CL', { maximumFractionDigits: 1 }) + ' min';
+  function groupStats(G) {
+    const signalled = G.filter((x) => x.signal_at), answered = signalled.filter((x) => ANSWERED.includes(x.outcome));
+    const knew = G.filter((x) => x.knew_intention), recalled = G.filter((x) => x.recalled_first_step);
+    const count = (arr, k, v) => arr.filter((x) => x[k] === v).length;
+    return {
+      relevos: G.length, senales: signalled.length, respondidas: answered.length,
+      supo: count(knew, 'knew_intention', 'yes'), supo_medias: count(knew, 'knew_intention', 'partly'), supo_no: count(knew, 'knew_intention', 'no'), supo_n: knew.length,
+      recordo: count(recalled, 'recalled_first_step', 'yes'), recordo_n: recalled.length,
+      comenzo: count(answered, 'outcome', 'started'), despues: count(answered, 'outcome', 'later'), cambio: count(answered, 'outcome', 'changed'),
+      sin_responder: signalled.length - answered.length,
+      respuesta_mediana: median(signalled.map((x) => x.response_seconds)),
+      bien: count(signalled, 'signal_feeling', 'good'), normal: count(signalled, 'signal_feeling', 'neutral'), mal: count(signalled, 'signal_feeling', 'bad'),
+      antes: mean(signalled.map((x) => x.usage_before_seconds)), despues_uso: mean(signalled.map((x) => x.usage_after_seconds)),
+      calladas_objeto: count(signalled, 'signal_end', 'object'), calladas: count(signalled, 'signal_end', 'silenced'), solas: count(signalled, 'signal_end', 'auto'), cortadas: count(signalled, 'signal_end', 'interrupted'),
+      automaticos: count(G, 'activation', 'auto')
+    };
+  }
+  function summaryRows(rows) {
+    const live = rows.filter((x) => x.outcome !== 'deleted');
+    return ['A', 'B', 'C', null].map((c) => {
+      const G = live.filter((x) => (x.study_condition || null) === c); const g = groupStats(G);
+      return { 'Condición': c ? c + ' · ' + COND_SHORT[c] : 'Fuera de la prueba', 'Relevos': g.relevos, 'Sonó la señal': g.senales, 'Respondidas': g.respondidas,
+        'Supo qué quería hacer (%)': pct(g.supo, g.supo_n), 'Recordó cómo empezar (%)': pct(g.recordo, g.recordo_n), 'Comenzó la actividad (%)': pct(g.comenzo, g.respondidas),
+        'Lo dejó para después': g.despues, 'Cambió de idea': g.cambio, 'Sin responder': g.sin_responder, 'Segundos para responder (mediana)': g.respuesta_mediana,
+        'Minutos en apps antes (promedio)': g.antes == null ? null : +(g.antes / 60).toFixed(1), 'Minutos en apps después (promedio)': g.despues_uso == null ? null : +(g.despues_uso / 60).toFixed(1),
+        'Le cayó bien': g.bien, 'Normal': g.normal, 'Le cayó mal': g.mal, 'Se activaron solos': g.automaticos };
+    }).filter((r) => r['Relevos'] > 0 || r['Condición'] !== 'Fuera de la prueba');
+  }
+  async function loadStats(force) {
+    if (!mcp || statsBusy) return;
+    if (!force && stats && Date.now() - statsAt < REFRESH_MS) { renderResults(); return; }
+    statsBusy = true;
+    try {
+      const rows = await runSql(STATS_SQL); let v = rows[0] && rows[0].stats; if (typeof v === 'string') v = JSON.parse(v);
+      stats = v || []; statsAt = Date.now(); renderResults();
+    } catch (err) { $('r-conditions').replaceChildren(el('div', { class: 'cond-card' }, [el('span', { class: 'note', text: explain(err).join('. ') })])); }
+    finally { statsBusy = false; }
+  }
+  function renderPersonSelects(P) {
+    ['r-person', 'x-person'].forEach((id) => {
+      const sel = $(id), keep = sel.value || 'all';
+      sel.replaceChildren(el('option', { value: 'all', text: 'Todas las personas' }), ...P.map((p) => el('option', { value: p.code, text: p.name ? p.name + ' · ' + p.code : p.code })));
+      sel.value = [...sel.options].some((o) => o.value === keep) ? keep : 'all';
+    });
+  }
+  function kpi(value, label, caption, lead) { return el('div', { class: 'stat' + (lead ? ' lead' : '') }, [el('b', { class: 'num', text: value }), el('span', { text: label }), el('small', { text: caption })]); }
+  function renderResults() {
+    if (!stats) return;
+    const code = $('r-person').value || 'all';
+    const S = stats.filter((x) => code === 'all' || x.code === code);
+    const all = groupStats(S), outside = S.filter((x) => !x.study_condition).length;
+    $('r-scope').textContent = (code === 'all' ? new Set(S.map((x) => x.code)).size + ' personas · ' : '') + S.length + ' relevos' + (outside ? ' · ' + outside + ' fuera de la prueba' : '');
+    $('r-kpis').replaceChildren(
+      kpi(String(all.relevos), 'Relevos', 'Preparados y activados', true),
+      kpi(String(all.senales), 'Sonó la señal', 'Se cumplió el tiempo en las apps'),
+      kpi(all.senales ? all.respondidas + ' de ' + all.senales : '—', 'Respondidas', pctText(all.respondidas, all.senales) + ' de las señales'),
+      kpi(pctText(all.comenzo, all.respondidas), 'Comenzó la actividad', 'De las señales respondidas'),
+      kpi(pctText(all.supo, all.supo_n), 'Supo qué quería hacer', 'Al sonar, de quienes contestaron'),
+      kpi(all.respuesta_mediana == null ? '—' : all.respuesta_mediana + ' s', 'Tardó en responder', 'Mediana desde la señal'));
+    const groups = { A: groupStats(S.filter((x) => x.study_condition === 'A')), B: groupStats(S.filter((x) => x.study_condition === 'B')), C: groupStats(S.filter((x) => x.study_condition === 'C')) };
+    const letter = (c) => { const l = el('span', { class: 'letter', text: c, 'aria-hidden': 'true' }); l.style.background = COND_COLOR[c]; return l; };
+    const frac = (a, b) => b ? [pct(a, b) + ' % ', el('small', { text: a + ' de ' + b })] : ['—'];
+    $('r-conditions').replaceChildren(...['A', 'B', 'C'].map((c) => {
+      const g = groups[c];
+      const kids = [el('div', { class: 'cond-title' }, [letter(c), el('div', null, [el('b', { text: 'Condición ' + c }), el('br'), el('span', { text: COND_SHORT[c] })])])];
+      if (!g.relevos) kids.push(el('span', { class: 'note', text: 'Sin relevos en esta condición todavía.' }));
+      else kids.push(el('dl', { class: 'metrics' }, [
+        el('dt', { text: 'Relevos' }), el('dd', { text: String(g.relevos) }),
+        el('dt', { text: 'Sonó la señal' }), el('dd', { text: String(g.senales) }),
+        el('dt', { text: 'Respondidas' }), el('dd', null, frac(g.respondidas, g.senales)),
+        el('dt', { text: 'Supo qué quería hacer' }), el('dd', null, frac(g.supo, g.supo_n)),
+        el('dt', { text: 'Recordó cómo empezar' }), el('dd', null, frac(g.recordo, g.recordo_n)),
+        el('dt', { text: 'Comenzó la actividad' }), el('dd', null, frac(g.comenzo, g.respondidas)),
+        el('dt', { text: 'Tardó en responder' }), el('dd', { text: g.respuesta_mediana == null ? '—' : g.respuesta_mediana + ' s' }),
+        el('dt', { text: 'Cómo le cayó' }), el('dd', { text: g.bien + g.normal + g.mal ? '😄 ' + g.bien + ' · 😐 ' + g.normal + ' · 😞 ' + g.mal : '—' })
+      ]));
+      return el('div', { class: 'cond-card' }, kids);
+    }));
+    const hbar = (c, a, b) => {
+      const track = el('span', { class: 'track' }, [el('span')]);
+      track.firstChild.style.width = (b ? pct(a, b) : 0) + '%'; track.firstChild.style.background = COND_COLOR[c];
+      return el('div', { class: 'hbar', title: 'Condición ' + c + ': ' + (b ? a + ' de ' + b : 'sin datos') }, [el('span', { class: 'k', text: c }), track,
+        el('span', { class: 'v' }, b ? [el('b', { text: pct(a, b) + ' %' }), ' · ' + a + ' de ' + b] : ['sin datos'])]);
+    };
+    const metricsDef = [['Supo qué quería hacer', 'supo', 'supo_n'], ['Recordó cómo empezar', 'recordo', 'recordo_n'], ['Comenzó la actividad', 'comenzo', 'respondidas']];
+    $('r-compare').replaceChildren(el('div', { class: 'compare' }, metricsDef.map(([title, a, b]) => el('div', { class: 'compare-group' }, [el('strong', { text: title }), ...['A', 'B', 'C'].map((c) => hbar(c, groups[c][a], groups[c][b]))]))));
+    const seg = (cls, n, total, label) => { const x = el('span', { class: cls, title: label + ': ' + n + ' de ' + total }); x.style.width = (100 * n / total) + '%'; return x; };
+    const outRows = ['A', 'B', 'C'].map((c) => {
+      const g = groups[c], total = g.senales;
+      const bar = total ? el('div', { class: 'stack', role: 'img', 'aria-label': 'Condición ' + c + ': comenzó ' + g.comenzo + ', después ' + g.despues + ', cambió ' + g.cambio + ', sin responder ' + g.sin_responder },
+        [seg('s-started', g.comenzo, total, 'Comenzó'), seg('s-later', g.despues, total, 'Lo dejó para después'), seg('s-changed', g.cambio, total, 'Cambió de idea'), seg('s-none', g.sin_responder, total, 'Sin responder')].filter((x) => parseFloat(x.style.width) > 0))
+        : el('span', { class: 'note', text: 'Sin señales todavía.' });
+      return el('div', { class: 'compare-group' }, [el('strong', { text: 'Condición ' + c + (total ? ' · ' + total + ' señales' : '') }), bar]);
+    });
+    const legend = el('div', { class: 'legend' }, [['var(--ink)', 'Comenzó'], ['var(--chart-context)', 'Lo dejó para después'], ['var(--line)', 'Cambió de idea'], ['repeating-linear-gradient(135deg, var(--line) 0 3px, transparent 3px 7px)', 'Sin responder']]
+      .map(([bg, label]) => el('span', null, [el('i', { style: 'background:' + bg }), label])));
+    $('r-outcomes').replaceChildren(el('div', { class: 'compare' }, outRows), legend);
+    const usageRows = ['A', 'B', 'C'].map((c) => { const g = groups[c]; const diff = g.antes != null && g.despues_uso != null ? g.despues_uso - g.antes : null;
+      return el('tr', null, [el('td', { text: 'Condición ' + c }), el('td', { text: minText(g.antes) }), el('td', { text: minText(g.despues_uso) }),
+        el('td', { text: diff == null ? '—' : (diff > 0 ? '+' : diff < 0 ? '−' : '') + minText(Math.abs(diff)) })]); });
+    $('r-usage').replaceChildren(el('div', { class: 'scroll' }, [el('table', { class: 'plain' }, [el('thead', null, [el('tr', null, ['', 'Antes', 'Después', 'Cambio'].map((h) => el('th', { text: h })))]), el('tbody', null, usageRows)])]),
+      el('p', { class: 'note', text: 'Un cambio negativo significa que, después de la señal, usó menos sus apps elegidas.' }));
+    const routeCount = (r) => S.filter((x) => x.signal_route === r).length;
+    $('r-routes').replaceChildren(...[
+      ['En el parlante', routeCount('bluetooth')], ['En el reloj', routeCount('watch')], ['En el llavero', routeCount('tag')], ['En el teléfono', routeCount('phone')],
+      ['Se activó a mano', all.relevos - all.automaticos], ['Se activó solo', all.automaticos],
+      ['La silenció en el teléfono', all.calladas], ['La calló con el botón del llavero', all.calladas_objeto], ['Terminó sola a los 30 s', all.solas], ['Se cortó', all.cortadas]
+    ].filter(([, n], i) => i >= 4 || n > 0).map(([k, n]) => el('div', { class: 'fact' }, [el('span', { text: k }), el('span', { class: 'num', text: String(n) })])));
+  }
+
+  // ---- Exportar: Excel, CSV y JSON con la confirmación de descarga de claude.ai ----
+  const EXPORTS = [
+    { id: 'xlsx', title: 'Todo en Excel', text: 'Un libro con una hoja por tabla, el resumen por condición y un diccionario de columnas. Es el más cómodo para analizar.', ext: 'xlsx', main: true },
+    { id: 'resumen', title: 'Resumen por condición', text: 'Las cifras de Resultados, listas para una tabla de la memoria.', ext: 'csv' },
+    { id: 'relevos', title: 'Relevos', text: 'Una fila por relevo: condición, día, salida, cuándo sonó, qué respondió y el uso antes y después.', ext: 'csv' },
+    { id: 'respuestas', title: 'Respuestas', text: 'Tarjetas semanales, cierre de la prueba y opiniones sobre la app.', ext: 'csv' },
+    { id: 'eventos', title: 'Eventos del relevo', text: 'Cada paso de cada relevo: activado, entró a una app, sonó, se silenció.', ext: 'csv' },
+    { id: 'uso_app', title: 'Uso de Relevo', text: 'Cuándo abrió la app, qué pantallas vio y qué le faltó completar.', ext: 'csv' },
+    { id: 'uso_diario', title: 'Uso diario del teléfono', text: 'Minutos y aperturas por día en las apps elegidas y el tiempo total de pantalla.', ext: 'csv' },
+    { id: 'json', title: 'Respaldo completo', text: 'Todas las tablas, también el estado del teléfono, en un archivo para guardar.', ext: 'json' },
+    { id: 'nombres', title: 'Códigos y nombres', text: 'La única exportación con nombres. Guárdala aparte de los datos.', ext: 'csv', warn: true }
+  ];
+  const SHEETS = { relevos: 'Relevos', respuestas: 'Respuestas', eventos: 'Eventos del relevo', uso_app: 'Uso de Relevo', uso_diario: 'Uso diario', mensajes: 'Mensajes' };
+  const DICTIONARY = [
+    ['Relevos', 'participant_code', 'Código de la persona'], ['Relevos', 'session_id', 'Identificador del relevo'], ['Relevos', 'activity', 'Lo que quería hacer'],
+    ['Relevos', 'first_step', 'Cómo empieza'], ['Relevos', 'place', 'Dónde empieza'], ['Relevos', 'target_apps', 'Apps que cuentan'],
+    ['Relevos', 'threshold_seconds', 'Tiempo en las apps para que suene (segundos)'], ['Relevos', 'observed_seconds', 'Tiempo contado (segundos)'],
+    ['Relevos', 'started_at', 'Cuándo se activó'], ['Relevos', 'signal_at', 'Cuándo sonó la señal (vacío: no sonó)'], ['Relevos', 'closed_at', 'Cuándo se cerró'],
+    ['Relevos', 'study_condition', 'Condición de la semana: A junto al primer paso, B otro lugar, C teléfono'], ['Relevos', 'study_day', 'Día de la prueba (0 a 21)'],
+    ['Relevos', 'signal_route', 'Dónde sonó: bluetooth (parlante), watch (reloj), tag (llavero), phone (teléfono)'], ['Relevos', 'activation', 'manual o auto (activación automática)'],
+    ['Relevos', 'signal_end', 'Cómo terminó: silenced (la silenció), object (botón del llavero), auto (sola a los 30 s), interrupted (se cortó)'],
+    ['Relevos', 'response_seconds', 'Segundos entre la señal y su primera acción'], ['Relevos', 'knew_intention', '¿Supo qué quería hacer? yes, partly, no'],
+    ['Relevos', 'recalled_first_step', '¿Recordó cómo empezar? yes, no'], ['Relevos', 'outcome', 'Qué hizo: started, later, changed, not_answered, deleted'],
+    ['Relevos', 'signal_feeling', 'Cómo le cayó la señal: good, neutral, bad'], ['Relevos', 'usage_before_seconds', 'Segundos en las apps elegidas en los 10 min antes de la señal'],
+    ['Relevos', 'usage_after_seconds', 'Segundos en las apps elegidas en los 10 min después de la señal'], ['Relevos', 'app_version', 'Versión de la app'],
+    ['Respuestas', 'question', 'Pregunta: semanaN_… (tarjeta semanal), cierre_…, opinion_…'], ['Eventos del relevo', 'event_type', 'Paso del relevo (armed, target_entered, signal_emitted, silenced, …)'],
+    ['Uso de Relevo', 'event', 'Qué hizo en la app; detail agrega datos del evento'], ['Uso diario', 'package', 'App; _total es el tiempo total de pantalla'], ['Uso diario', 'seconds', 'Segundos de uso ese día'],
+    ['Todas', 'consent_version', 'Versión del consentimiento aceptado'], ['Todas', 'created_at, updated_at', 'Fechas en hora de Chile continental']
+  ].map(([Hoja, Columna, q]) => ({ Hoja, Columna, 'Qué es': q }));
+  const fmtLocal = new Intl.DateTimeFormat('sv-SE', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  const ISO_TS = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/;
+  function cell(v) {
+    if (v == null) return null;
+    if (typeof v === 'string' && ISO_TS.test(v)) { const d = new Date(v); return isNaN(d) ? v : fmtLocal.format(d); }
+    if (typeof v === 'object') return JSON.stringify(v);
+    return v;
+  }
+  function tidy(rows) { return (rows || []).map((r) => { const o = {}; for (const k in r) o[k] = cell(r[k]); return o; }); }
+  function toCsv(rows) {
+    if (!rows.length) return '\ufeffsin datos\n';
+    const keys = []; rows.forEach((r) => Object.keys(r).forEach((k) => { if (!keys.includes(k)) keys.push(k); }));
+    const q = (v) => { if (v == null) return ''; const t = String(v); return /[;"\n\r]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t; };
+    return '\ufeff' + [keys.join(';'), ...rows.map((r) => keys.map((k) => q(r[k])).join(';'))].join('\r\n') + '\r\n';
+  }
+  function exportSql(code) {
+    const where = code === 'all' ? 'true' : 'participant_code = ' + sqlText(code);
+    const t = (table, order) => `(select coalesce(json_agg(to_jsonb(t) - 'user_id' order by ${order}), '[]'::json) from public.${table} t where ${where})`;
+    const msgWhere = code === 'all' ? 'true' : '(m.target_code = ' + sqlText(code) + ' or m.target_code is null)';
+    return `select json_build_object(
+  'relevos', ${t('relevo_sessions', 't.started_at')}, 'respuestas', ${t('relevo_answers', 't.created_at')}, 'eventos', ${t('relevo_events', 't.created_at')},
+  'uso_app', ${t('relevo_app_events', 't.created_at')}, 'uso_diario', ${t('relevo_daily_usage', 't.day, t.package')}, 'estado', ${t('relevo_participant_state', 't.updated_at')},
+  'mensajes', (select coalesce(json_agg(json_build_object('creado', m.created_at, 'para', coalesce(m.target_code, 'todos'), 'titulo', m.title, 'texto', m.body,
+      'llegaron', (select count(*) from public.relevo_message_receipts r where r.message_id = m.id and r.delivered_at is not null),
+      'abrieron', (select count(*) from public.relevo_message_receipts r where r.message_id = m.id and r.opened_at is not null)) order by m.created_at), '[]'::json)
+    from public.relevo_messages m where ${msgWhere})
+) as export;`;
+  }
+  let xlsxLoading = null;
+  function loadXlsx() {
+    if (window.XLSX) return Promise.resolve(window.XLSX);
+    if (!xlsxLoading) xlsxLoading = new Promise((resolve, reject) => {
+      const tag = document.createElement('script'); tag.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
+      tag.onload = () => resolve(window.XLSX); tag.onerror = () => { xlsxLoading = null; reject({ code: 'xlsx_load', message: 'No se pudo cargar el generador de Excel. Prueba con los CSV.' }); };
+      document.head.append(tag);
+    });
+    return xlsxLoading;
+  }
+  function renderExport() {
+    $('x-cards').replaceChildren(...EXPORTS.map((x) => {
+      const btn = el('button', { class: 'mini', type: 'button' }, [icon('download', 'sm'), 'Descargar']);
+      btn.addEventListener('click', () => runExport(x, btn));
+      return el('div', { class: 'export-card' + (x.main ? ' main' : '') + (x.warn ? ' warn' : '') }, [el('span', { class: 'ext', text: x.ext.toUpperCase() }), el('h3', { text: x.title }), el('p', { text: x.text }), btn]);
+    }));
+  }
+  function exportNote(text, isError) { const r = $('x-result'); r.replaceChildren(el('div', { class: 'toast' + (isError ? ' error' : '') }, [icon(isError ? 'info' : 'check'), text])); r.hidden = false; r.style.marginTop = '-8px'; }
+  async function runExport(x, btn) {
+    const downloads = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('downloads') : null;
+    if (!downloads) { exportNote('Esta vista no permite descargar archivos. Abre el panel en claude.ai desde el navegador.', true); return; }
+    const code = $('x-person').value || 'all', who = code === 'all' ? 'todos' : code, stamp = isoDay(new Date());
+    document.querySelectorAll('.export-card .mini').forEach((b) => { b.disabled = true; });
+    exportNote('Preparando ' + x.title.toLowerCase() + '…');
+    try {
+      let filename = 'relevo-' + (x.id === 'xlsx' ? 'datos' : x.id.replace('_', '-')) + '-' + who + '-' + stamp + '.' + x.ext, data;
+      if (x.id === 'nombres') {
+        const where = code === 'all' ? 'true' : 'participant_code = ' + sqlText(code);
+        const rows = await runSql(`select coalesce(json_agg(json_build_object('codigo', participant_code, 'nombre', name, 'registro', created_at) order by participant_code), '[]'::json) as nombres from public.relevo_participants where ${where};`);
+        let v = rows[0] && rows[0].nombres; if (typeof v === 'string') v = JSON.parse(v);
+        data = toCsv(tidy(v));
+      } else {
+        const rows = await runSql(exportSql(code)); let d = rows[0] && rows[0].export; if (typeof d === 'string') d = JSON.parse(d);
+        if (x.id === 'json') { filename = 'relevo-respaldo-' + who + '-' + stamp + '.json'; data = JSON.stringify(Object.assign({ exportado: new Date().toISOString(), de: who }, d), null, 2); }
+        else if (x.id === 'resumen') data = toCsv(summaryRows(d.relevos || []));
+        else if (x.id === 'xlsx') {
+          const XLSX = await loadXlsx(); const wb = XLSX.utils.book_new();
+          const add = (name, rows) => XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(rows.length ? rows : [{ '': 'sin datos' }]), name.slice(0, 31));
+          add('Resumen por condición', summaryRows(d.relevos || []));
+          Object.keys(SHEETS).forEach((k) => add(SHEETS[k], tidy(d[k])));
+          add('Diccionario', DICTIONARY);
+          data = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+        } else data = toCsv(tidy(d[x.id]));
+      }
+      const res = await downloads.save({ filename, data });
+      exportNote(res && res.status === 'delivered' ? 'Archivo entregado.' : 'Archivo guardado.');
+    } catch (err) {
+      if (err && err.code === 'declined') exportNote('No se descargó.', false);
+      else if (err && err.code === 'rate_limited') exportNote('Ya hay una descarga esperando tu respuesta.', true);
+      else if (err && err.code === 'extension_not_enabled') exportNote('Este formato no está disponible en esta vista.', true);
+      else if (err && err.code === 'xlsx_load') exportNote(err.message, true);
+      else exportNote(explain(err).join('. '), true);
+    } finally { document.querySelectorAll('.export-card .mini').forEach((b) => { b.disabled = false; }); }
+  }
+  $('r-person').addEventListener('change', renderResults);
 
   // ---- Detalle de una persona ----
   let lastFocus = null;
@@ -1048,7 +1377,7 @@ select json_build_object(
   });
 
   // ---- Navegación ----
-  const TAB_META = { ahora: ['now', 'Ahora'], participantes: ['people', 'Participantes'], respuestas: ['bubble', 'Respuestas'], mensajes: ['send', 'Mensajes'] };
+  const TAB_META = { ahora: ['now', 'Ahora'], participantes: ['people', 'Personas'], resultados: ['bubble', 'Resultados'], mensajes: ['send', 'Mensajes'], exportar: ['download', 'Exportar'] };
   document.querySelectorAll('.tab').forEach((b) => { const [ic, label] = TAB_META[b.dataset.view]; b.append(icon(ic), el('span', { text: label })); b.addEventListener('click', () => go(b.dataset.view)); });
   function go(name) {
     view = name;
@@ -1056,6 +1385,7 @@ select json_build_object(
     document.querySelectorAll('.view').forEach((v) => { v.hidden = v.id !== 'view-' + name; });
     try { localStorage.setItem('relevo-panel-view', name); } catch (e) {}
     window.scrollTo({ top: 0 });
+    if (name === 'resultados') loadStats(); if (name === 'exportar') renderExport();
   }
   $('refresh').append(icon('refresh')); $('sheet-close').append(icon('close'));
   $('refresh').addEventListener('click', () => refresh());

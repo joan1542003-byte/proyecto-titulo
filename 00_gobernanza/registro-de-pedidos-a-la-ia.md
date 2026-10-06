@@ -98,6 +98,9 @@
 | 5 oct. | Consulta | Preguntar qué debe comprar al final para el testeo y pedir una revisión del logotipo. | Respuesta en la conversación: un parlante Bluetooth solo para quien no tenga (JBL Go 4 a CLP 24.990 en Paris, visto el 5 de octubre) y, opcional, un llavero iTag (CLP 6.990 en Tienda8), que la app todavía no hace sonar. Revisión del logotipo: el vigente del sistema 3.1 contradice tres pedidos posteriores (letra simple, subrayado y azul antiguo) y no coincide con el de la app. | — |
 | 5 oct. | Encargo y compra | Quiere comprar el llavero iTag, en MercadoLibre si hay uno compatible; pide actualizar la app para que lo soporte, solo si se le asegura que funciona. | [Android 2.19](../06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md): salida «El llavero» con búsqueda, prueba, conexión durante la espera, botón que calla la señal y migración de Supabase; probada en emulador, sin llavero real. Tres publicaciones de MercadoLibre que indican iSearching (CLP 5.930 a 7.990). Se aseguró el protocolo, no un anuncio concreto: hay que probarlo al llegar. | D-109 |
 | 5 oct. | Consulta | Pegó la publicación de un llavero de Netexpertos en MercadoLibre (modelo NEWOTAG, app iSearching, pila CR2032 incluida, 180 días de garantía) y preguntó si comprarlo. | Respuesta en la conversación: sí, porque usa iSearching y se puede hacer sonar desde el teléfono, que es lo que hace Relevo; tiene garantía y retiro en Macul. Se recordaron los pasos para probarlo al llegar. | D-109 |
+| 5 oct. | Consulta | Preguntar si la publicación de MercadoLibre del iTag (MLC-2478783150) incluye pilas. | Respuesta en la conversación: según el resultado de búsqueda, incluye llavero y pila; no se pudo confirmar en la ficha porque MercadoLibre pide iniciar sesión. | D-109 |
+| 5 oct. | Consulta | Preguntar qué pasa si el testeo se hace con un solo usuario y si eso basta para la entrega final. | Respuesta en la conversación: D-081 ya lo fija y el protocolo 02 lo trata como un caso que orienta el diseño, sin comparar ni generalizar; ningún documento del repositorio fija cuántas personas pide la rúbrica, así que se sugirió preguntarlo al profesor y sumar formas livianas de evidencia con 2 o 3 personas. | D-081 |
+| 6 oct. | Encargo | Pedir el APK actual y el panel, rediseñado para que se vea mejor y se entienda fácil, con estadísticas y exportación. | APK 2.19 enviado. [Panel](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM) versión 5: Resultados por condición y por persona, Exportar a Excel, CSV y JSON, cifras explicadas y guía de lectura ([cómo funciona](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-096 |
 
 ## Lo que muestra el registro
 
@@ -108,6 +111,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-06 — Pilas, testeo con una persona y panel 5
+
+- **Qué cambió:** se registraron las consultas sobre las pilas del iTag y sobre testear con una persona, y el pedido del APK y del panel rediseñado.
+- **Cómo estaba antes:** el registro terminaba en la consulta sobre la compra del llavero.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-05 — Consulta sobre la compra del llavero
 

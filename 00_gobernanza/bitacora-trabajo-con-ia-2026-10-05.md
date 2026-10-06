@@ -12,6 +12,8 @@
 | Android 2.19, «El llavero» | El autor decidió comprar un iTag y pidió que la app lo haga sonar solo si se le aseguraba que funciona. Salida «El llavero» con búsqueda, prueba, conexión durante la espera, botón que calla la señal, registro y migración de Supabase. [Detalle](../06_desarrollo_y_factibilidad/app-android/version-2.19-llavero-itag-2026-10-05.md). | D-109 |
 | Compra del llavero | Tres publicaciones de MercadoLibre Chile que indican la app iSearching, de CLP 5.930 a 7.990, y los pasos para probarlo al llegar. | D-109 |
 | Panel privado | Muestra «llavero» como salida y los eventos nuevos. | D-109 |
+| Pilas del iTag | Según el resultado de búsqueda, la publicación incluye llavero y pila; no se confirmó en la ficha. | D-109 |
+| Testeo con una persona | D-081 ya lo fija: describe un caso, no compara ni generaliza. Ningún documento fija cuántas personas pide la rúbrica; se sugirió preguntarlo al profesor. | D-081 |
 
 ## 2. Cómo se usó la IA
 
@@ -40,6 +42,12 @@
 - Que el autor decida el logotipo y la letra: siguen abiertas las propuestas 3.6 a 3.9, la lámina «Sans para lucirse» y los tableros de tipografías recientes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-05 — Consultas de la tarde
+
+- **Qué cambió:** la tabla suma las consultas sobre las pilas del iTag y sobre testear con una persona.
+- **Cómo estaba antes:** terminaba en el panel privado.
+- **Por qué:** registrar el trabajo del día.
 
 ### 2026-10-05 — Creación
 
