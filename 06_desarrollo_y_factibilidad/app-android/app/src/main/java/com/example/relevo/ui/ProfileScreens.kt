@@ -118,6 +118,8 @@ internal fun ProfileTab(
   var firstReselect by remember { mutableStateOf(reselect) }
   LaunchedEffect(reselect) { if (reselect != firstReselect) scroll.animateScrollTo(0) else firstReselect = reselect }
   var noting by rememberSaveable { mutableStateOf(false) }
+  var tagGuide by rememberSaveable { mutableStateOf(false) }
+  if (tagGuide) TagGuideSheet(onDismiss = { tagGuide = false })
   RelevoScreen(scrollState = scroll) {
     ProfileHeader(profile, routes, actions.onEdit, Modifier.appear(0))
     if (settings.weeklySummary) {
@@ -143,6 +145,7 @@ internal fun ProfileTab(
     SectionGap()
     ListSection(title = "Ayuda", modifier = Modifier.appear(5)) {
       ListRow("Cómo funciona Relevo", icon = KitIcon.AYUDA, chevron = true, onClick = actions.onHowItWorks)
+      ListRow("Cómo usar el llavero", icon = KitIcon.OBJETO, chevron = true, onClick = { tagGuide = true })
       ListRow("Tu opinión", icon = KitIcon.ESTRELLA, chevron = true, onClick = actions.onFeedback)
       ListRow("Reportar un problema", icon = KitIcon.PROBLEMA, chevron = true, onClick = actions.onReport)
     }

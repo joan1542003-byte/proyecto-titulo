@@ -9,6 +9,7 @@
 | Trabajo | Resultado | Decisión |
 | --- | --- | --- |
 | Llavero comprado | El autor probó su llavero con iSearching y funciona. Puede usarlo en Android si el iPhone se desconecta: el llavero acepta una conexión a la vez. | D-109 |
+| Android 2.24 | Hoja «Cómo usar el llavero» y aviso para callarlo con un toque sin apagarlo ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.24-tutorial-del-llavero-2026-10-07.md)). | D-109 |
 | Android 2.23 | Degradados de tres colores, cuatro actividades nuevas (videojuegos, música, películas, llamar a alguien) y opciones de un toque para el primer paso y el lugar ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md)). | D-113 |
 
 ## 2. Cómo se usó la IA
@@ -27,6 +28,12 @@
 - Revisar el consentimiento v13 con el profesor.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Android 2.24
+
+- **Qué cambió:** la bitácora suma la 2.24.
+- **Cómo estaba antes:** terminaba en la 2.23.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — Creación
 

@@ -107,6 +107,7 @@
 | 6 oct. | Corrección | Los degradados no tienen estilo: deben ser de varios colores, como sus referencias; sumar actividades como jugar videojuegos, igual de válidas; cada actividad con todo predefinido para no escribir. | [Android 2.23](../06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md): degradados de tres colores, cuatro actividades nuevas del corpus con su icono y opciones de un toque para el primer paso y el lugar. | D-113 |
 | 7 oct. | Consulta | Compró el llavero, lo probó con iSearching en su iPhone y funciona; borró iSearching y preguntó si puede usarlo después en un Android. | Respuesta en la conversación: sí; borrar la app no basta si el iPhone sigue conectado: hay que apagar el Bluetooth del iPhone o «Omitir este dispositivo», porque el llavero acepta una conexión a la vez. | D-109 |
 | 7 oct. | Consulta | Preguntó cuánto dura la pila del llavero, qué pasa si se apaga y si la persona tiene que encenderlo seguido. | Respuesta en la conversación: pila CR2032 de 2 a 6 meses según los vendedores, con conexión permanente; el llavero queda encendido hasta que se mantiene apretado el botón o se agota la pila; si no responde al sonar, el teléfono vibra y avisa, y queda registrado como señal fallida. Se sugirió pila nueva el día 0 y probar si ese modelo se apaga solo. | D-109 |
+| 7 oct. | Encargo | Un tutorial en la app para encender y apagar el llavero (modelo NEWOTAG-BL). | [Android 2.24](../06_desarrollo_y_factibilidad/app-android/version-2.24-tutorial-del-llavero-2026-10-07.md): hoja «Cómo usar el llavero» (encender, callar, apagar, saber si está encendido, pila y si no aparece), desde preparar y Perfil › Ayuda, y aviso para callarlo sin apagarlo. | D-109 |
 
 ## Lo que muestra el registro
 
@@ -117,6 +118,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Tutorial del llavero
+
+- **Qué cambió:** se registró el pedido del tutorial del llavero.
+- **Cómo estaba antes:** terminaba en la consulta sobre la pila.
+- **Por qué:** regla de registrar cada pedido del autor.
 
 ### 2026-10-07 — Pila del llavero
 

@@ -85,6 +85,10 @@ internal fun SignalScreen(
         else -> StatusChip(KitIcon.LISTO, "Ya dejó de sonar")
       }
     }
+    if (sounding && reminder.signalRoute == SignalRoute.TAG) {
+      Spacer(Modifier.height(8.dp))
+      Text("Para callarlo en el llavero, toca su botón una vez.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+    }
     Spacer(Modifier.height(18.dp))
     Text("Es momento de volver a elegir", style = Relevo.type.title2, color = Relevo.colors.graphite, modifier = Modifier.appear(1))
     Spacer(Modifier.height(10.dp))

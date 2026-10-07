@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.24](app-android/version-2.24-tutorial-del-llavero-2026-10-07.md): la 2.23 con la guía «Cómo usar el llavero»; la versión del primer testeo.
 - [Aplicación Android 2.23](app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md): degradados de varios colores, actividades de ocio y opciones de un toque (D-113); la versión del primer testeo.
 - [Aplicación Android 2.22](app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md): compara las semanas A, B y C con el objeto donde la persona empieza y aclara el lenguaje (D-112); la versión del primer testeo.
 - [Aplicación Android 2.21](app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md): iconos con degradado, nada elegido de antemano y sin patrones oscuros (D-111); la versión del primer testeo.
@@ -72,6 +73,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-07 — Android 2.24
+
+- **Qué cambió:** se enlaza la 2.24.
+- **Cómo estaba antes:** la más reciente era la 2.23.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — Android 2.23
 

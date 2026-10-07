@@ -546,6 +546,8 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   val context = LocalContext.current
   var pending by remember { mutableStateOf<(() -> Unit)?>(null) }
   var denied by rememberSaveable { mutableStateOf(false) }
+  var guide by rememberSaveable { mutableStateOf(false) }
+  if (guide) TagGuideSheet(onDismiss = { guide = false })
   val permissions = rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
     denied = result.values.any { !it }
     if (!denied) pending?.invoke()
@@ -582,6 +584,8 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   }
   if (tag.linkedName == null) {
     Text("Enciende el llavero: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después búscalo.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(8.dp))
+    PlainAction("Cómo usar el llavero", { guide = true }, icon = KitIcon.AYUDA)
     SectionGap()
     RelevoButton(
       if (tag.searching) "Buscando…" else "Buscar el llavero", { withPermission(actions.onTagSearch) },
@@ -633,7 +637,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     if (tag.test == TagTest.SOUNDED) {
       Column(verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
         Text("Así va a sonar: cuando se cumpla el tiempo, pitará seis veces en 30 segundos.", style = Relevo.type.body, color = Relevo.colors.ink)
-        if (tag.button) Text("Para callarlo antes, aprieta su botón.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+        if (tag.button) Text("Para callarlo, toca su botón una vez. Si lo mantienes apretado, se apaga.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         if (!tag.linkLossOff) {
           Text("Este llavero no dejó apagar su alarma de desconexión: puede pitar un momento cuando Relevo termine.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         }
@@ -643,6 +647,8 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     }
   }
   Spacer(Modifier.height(8.dp))
+  PlainAction("Cómo usar el llavero", { guide = true }, icon = KitIcon.AYUDA)
+  Spacer(Modifier.height(4.dp))
   PlainAction("Elegir otro llavero", actions.onTagForget, color = Relevo.colors.graphite, icon = KitIcon.CAMBIE)
   Spacer(Modifier.height(8.dp))
   Text(
