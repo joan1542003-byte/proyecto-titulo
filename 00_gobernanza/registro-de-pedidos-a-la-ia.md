@@ -109,6 +109,7 @@
 | 7 oct. | Consulta | Preguntó cuánto dura la pila del llavero, qué pasa si se apaga y si la persona tiene que encenderlo seguido. | Respuesta en la conversación: pila CR2032 de 2 a 6 meses según los vendedores, con conexión permanente; el llavero queda encendido hasta que se mantiene apretado el botón o se agota la pila; si no responde al sonar, el teléfono vibra y avisa, y queda registrado como señal fallida. Se sugirió pila nueva el día 0 y probar si ese modelo se apaga solo. | D-109 |
 | 7 oct. | Encargo | Un tutorial en la app para encender y apagar el llavero (modelo NEWOTAG-BL). | [Android 2.24](../06_desarrollo_y_factibilidad/app-android/version-2.24-tutorial-del-llavero-2026-10-07.md): hoja «Cómo usar el llavero» (encender, callar, apagar, saber si está encendido, pila y si no aparece), desde preparar y Perfil › Ayuda, y aviso para callarlo sin apagarlo. | D-109 |
 | 7 oct. | Corrección y encargo | La guía del llavero debe ser más intuitiva y paso a paso y aparecer la primera vez que se elige; llamarlo «Tag»; es totalmente circular. En el panel, poder eliminar usuarios o datos específicos de uno y mejorar la visualidad y la navegación. | [Android 2.25](../06_desarrollo_y_factibilidad/app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md): «Tag» en pantalla y guía de ocho pasos con un Tag redondo animado, que se abre sola la primera vez. [Panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) versión 10: borrar un relevo, grupos de datos o a la persona completa, con confirmación; barra lateral, insignias, búsqueda, filtros y saltos en la ficha. | D-114 |
+| 7 oct. | Corrección | En Resultados siguen apareciendo datos de personas que ya se eliminaron. | La causa eran cuatro relevos antiguos (22 y 23 de septiembre) de códigos sin eventos, que contaban en Resultados pero no aparecían en Personas. El [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) ahora muestra en Personas todo código con datos, para poder borrarlo, y recalcula Resultados después de borrar. No se borró ninguna fila. | D-114 |
 
 ## Lo que muestra el registro
 
@@ -119,6 +120,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Datos sin persona
+
+- **Qué cambió:** se registró la corrección de Resultados.
+- **Cómo estaba antes:** terminaba en la 2.25 y el panel 10.
+- **Por qué:** regla de registrar cada pedido del autor.
 
 ### 2026-10-07 — Tag y borrar datos
 

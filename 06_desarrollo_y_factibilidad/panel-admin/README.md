@@ -42,6 +42,8 @@ Retirada el mismo día por D-112: la versión 7 restaura la 5, por condiciones, 
 - **Ficha:** botones para saltar a Uso, Relevos, Respuestas, Teléfono y Borrar datos.
 - **Borrar un relevo:** «Borrar» en cada relevo de la ficha, con confirmación en la misma fila. Borra el relevo, sus eventos y sus respuestas.
 - **Borrar datos de una persona:** se marcan los grupos (relevos y eventos, respuestas, uso de Relevo, uso diario, configuración, mensajes y nombre), con cuántas filas tiene cada uno. Para confirmar hay que escribir su código. «Marcar todo» elimina a la persona del panel. Todo se borra en una sola consulta, que devuelve cuántas filas salieron.
+- **Quién aparece en Personas:** todo código que tenga datos en cualquier tabla (relevos, respuestas, uso, configuración, nombre o mensajes), aunque no tenga eventos. Así nada de lo que cuenta Resultados queda fuera de Personas y sin forma de borrarse.
+- **Resultados al día:** después de borrar, Resultados se vuelve a calcular de inmediato.
 - **Límite:** si la persona sigue usando la app, lo nuevo vuelve a llegar, y la copia en su teléfono no se toca. Para un borrado completo, lo ideal es que use «Borrar mis datos» en la app.
 
 ## Mensajes listos
@@ -85,6 +87,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Datos sin persona en Resultados
+
+- **Qué cambió:** Personas muestra todo código con datos en cualquier tabla y Resultados se recalcula después de borrar.
+- **Cómo estaba antes:** Personas solo listaba códigos con eventos; cuatro relevos antiguos (22 y 23 de septiembre, versiones previas a los eventos de uso) seguían contando en Resultados sin aparecer en Personas, y no se podían borrar desde el panel.
+- **Por qué:** el autor vio en Resultados datos de personas que ya había eliminado.
 
 ### 2026-10-07 — Borrar datos y navegación (versión 10)
 

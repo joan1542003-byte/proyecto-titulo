@@ -473,8 +473,14 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 with ev as (
   select participant_code, created_at from public.relevo_app_events
   union all select participant_code, created_at from public.relevo_events
+  union all select participant_code, coalesce(closed_at, signal_at, started_at) from public.relevo_sessions
+  union all select participant_code, created_at from public.relevo_answers
+  union all select participant_code, updated_at from public.relevo_daily_usage
+  union all select participant_code, updated_at from public.relevo_participant_state
+  union all select participant_code, updated_at from public.relevo_participants
+  union all select participant_code, coalesce(opened_at, delivered_at) from public.relevo_message_receipts
 ),
-codes as (select participant_code, max(created_at) as last_seen from ev group by participant_code),
+codes as (select participant_code, max(created_at) as last_seen from ev where participant_code is not null group by participant_code),
 ls as (
   select distinct on (participant_code) participant_code, activity, threshold_seconds, observed_seconds, study_condition, study_day,
     signal_route, activation, signal_at, outcome, closed_at, started_at
@@ -1406,7 +1412,7 @@ select json_build_object(
         const n = Object.values(d || {}).reduce((t, v) => t + Number(v || 0), 0);
         const everything = groups.length === DELETE_GROUPS.length;
         note.replaceChildren(el('div', { class: 'toast' }, [icon('check'), 'Se borraron ' + n + ' filas.' + (everything ? ' ' + (p.name || p.code) + ' ya no aparece en el panel.' : '')]));
-        await refresh();
+        stats = null; await refresh();
         if (everything) setTimeout(closeSheet, 1500); else openPerson((data.participants || []).find((x) => x.code === p.code) || p, 'Se borraron ' + rowsWord(n) + '.');
       } catch (err) { note.replaceChildren(el('div', { class: 'toast error' }, [icon('info'), explain(err).join('. ')])); update(); }
     });
@@ -1421,7 +1427,7 @@ select json_build_object(
       const id = sqlText(s.session_id);
       await runSql(`with e as (delete from public.relevo_events where session_id = ${id}::uuid returning 1), a as (delete from public.relevo_answers where session_id = ${id}::uuid returning 1), r as (delete from public.relevo_sessions where session_id = ${id}::uuid returning 1)
 select json_build_object('eventos', (select count(*) from e), 'respuestas', (select count(*) from a), 'relevos', (select count(*) from r)) as deleted;`);
-      done(true); refresh(); stats = null;
+      stats = null; done(true); refresh();
     } catch (err) { done(false, explain(err).join('. ')); }
   }
 
