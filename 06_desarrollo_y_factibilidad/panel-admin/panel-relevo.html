@@ -307,6 +307,20 @@ details.glossary dd { margin: 0; color: var(--graphite); }
   .nav-person .state { font-size: 12px; color: var(--graphite); flex: none; }
   .nav-people .more { font-size: 13px; color: var(--graphite); padding: 6px 14px; text-align: left; }
 }
+/* Ficha: resumen, respuestas por relevo y flujo de uso (panel 12). */
+.qa { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px 14px; margin: 8px 0 0; font-size: 13px; line-height: 18px; }
+.qa dt { color: var(--graphite); }
+.qa dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+.flow { display: flex; flex-direction: column; gap: 16px; }
+.flow-day h4 { margin: 0 0 4px; font-size: 13px; line-height: 18px; color: var(--graphite); font-weight: 600; }
+.flow-item { display: grid; grid-template-columns: 46px 18px minmax(0, 1fr); gap: 8px; align-items: start; padding: 4px 0; font-size: 14px; line-height: 20px; }
+.flow-item time { color: var(--graphite); font-variant-numeric: tabular-nums; font-size: 13px; }
+.flow-item svg.i { margin-top: 2px; color: var(--graphite); }
+.flow-item.relevo .txt { font-weight: 600; }
+.flow-item .times { color: var(--graphite); font-weight: 400; }
+.two-step { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.two-step .inline-confirm { font-size: 14px; }
+.btn.small { height: 40px; padding: 0 18px; font-size: 15px; }
 table.apps { width: 100%; }
 table.apps td, table.apps th { padding-left: 6px; padding-right: 6px; white-space: nowrap; }
 table.apps td:first-child { white-space: normal; }
@@ -332,7 +346,6 @@ table.apps td.num, table.apps th.num { text-align: right; font-variant-numeric: 
 .check small { color: var(--graphite); font-variant-numeric: tabular-nums; }
 .btn.danger { background: var(--error); color: #fff; }
 .btn.danger:disabled { background: var(--mist); color: var(--gray); }
-.confirm-input { width: 100%; height: 44px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--card); padding: 0 14px; font-size: 16px; letter-spacing: .06em; text-transform: uppercase; }
 .row-action { font-size: 13px; font-weight: 600; color: var(--graphite); padding: 6px 10px; border-radius: 999px; background: var(--paper); flex: none; }
 .row-action.danger { color: var(--error); }
 .inline-confirm { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--error); font-weight: 600; }
@@ -604,7 +617,7 @@ select json_build_object(
   ];
 
   const CONDITIONS = { A: 'Junto al primer paso', B: 'Otro lugar de la casa', C: 'En el teléfono' };
-  const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj', tag: 'llavero' };
+  const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj', tag: 'Tag' };
   const OUTCOMES = { started: 'Comenzó', later: 'Lo dejó para después', changed: 'Cambió de idea', not_answered: 'Saltó las preguntas', deleted: 'Lo eliminó' };
   const KNEW = { yes: 'Sí', partly: 'A medias', no: 'No' };
   const FEELING = { good: '😄 Bien', neutral: '😐 Normal', bad: '😞 Mal' };
@@ -614,7 +627,7 @@ select json_build_object(
     armed: ['play', 'Activó un relevo'], target_entered: ['phone', 'Abrió una app elegida'], target_left: ['phone', 'Salió de una app elegida'],
     signal_emitted: ['bell', 'Sonó la señal'], signal_failed: ['bell', 'La señal no sonó'], signal_ended: ['bell', 'La señal terminó sola'],
     signal_interrupted: ['bell', 'Se cortó la señal'], disarmed: ['pause', 'Desactivó el relevo'], silenced: ['check', 'Silenció la señal'],
-    silenced_object: ['check', 'Calló la señal con el llavero'],
+    silenced_object: ['check', 'Calló la señal tocando el Tag'],
     responded: ['check', 'Respondió'], closed: ['check', 'Cerró el relevo'], monitor_paused: ['pause', 'Se pausó el conteo'], monitor_resumed: ['play', 'Se retomó el conteo'],
     app_abierta: ['phone', 'Abrió Relevo'], app_cerrada: ['phone', 'Cerró Relevo'], consentimiento_aceptado: ['check', 'Aceptó el consentimiento'],
     relevo_automatico: ['bolt', 'Relevo se activó solo'], activacion_automatica: ['bolt', 'Cambió la activación automática'],
@@ -713,9 +726,110 @@ select json_build_object(
     if (m) return 'Semana ' + m[1] + ': ' + (names[m[2]] || m[2].replace(/_/g, ' '));
     if (q.startsWith('cierre_')) return 'Cierre: ' + q.slice(7).replace(/_/g, ' ');
     const map = { opinion_rapida: 'Opinión rápida (1 a 5)', opinion_estrellas: 'Estrellas a la app', opinion_comentario: 'Comentario sobre la app',
-      reporte_problema: 'Reporte de un problema', reporte_registro: 'Registro técnico', prueba_inicio: 'Inicio de la prueba', prueba_fin: 'Fin de la prueba', tu_semana_ayudo: 'Tu semana: qué ayudó' };
+      reporte_problema: 'Reporte de un problema', lugar_del_objeto: 'Dónde dejó el objeto', salida_que_ayudo: 'Qué salida le ayudó', reporte_registro: 'Registro técnico', prueba_inicio: 'Inicio de la prueba', prueba_fin: 'Fin de la prueba', tu_semana_ayudo: 'Tu semana: qué ayudó' };
     return map[q] || q.replace(/_/g, ' ');
   }
+  // ---- Flujo de uso: cada evento de la app y del relevo, en palabras ----
+  const SCREENS = { welcome: 'la bienvenida', how_it_works: 'cómo funciona', consent: 'el consentimiento', permission: 'los permisos', profile_setup: 'crear su perfil', first_relevo: 'su primer relevo',
+    prepare: 'preparar un relevo', active: 'su relevo activo', signal: 'la señal', decide: 'qué decidió', route_edit: 'editar su ruta', profile_edit: 'editar su perfil', notices: 'avisos', appearance: 'apariencia',
+    permissions: 'permisos', history: 'sus relevos', activities: 'sus actividades', activity_edit: 'editar una actividad', privacy: 'privacidad', consent_details: 'el consentimiento completo', study: 'la prueba',
+    week: 'las preguntas de la semana', closing: 'el cierre', feedback: 'dar su opinión', report: 'reportar un problema', pestana_home: 'Inicio', pestana_route: 'Ruta', pestana_profile: 'Perfil' };
+  const STEPS = { activity: 'qué quiere hacer', start: 'cómo empieza', place: 'dónde empieza', usage: 'cuándo suena', sound: 'dónde suena', review: 'revisar y activar' };
+  const parseKv = (d) => Object.fromEntries(String(d || '').split(';').map((x) => x.split('=')).filter((x) => x.length === 2));
+  function flowLabel(f) {
+    const d = f.detail || '';
+    switch (f.what) {
+      case 'pantalla': return ['phone', 'Abrió ' + (SCREENS[d] || d.replace(/_/g, ' '))];
+      case 'preparar_paso': return ['play', 'Paso: ' + (STEPS[d] || d)];
+      case 'preparar_abierto': return ['play', 'Empezó a preparar' + ({ nuevo: ' uno nuevo', idea: ' desde una idea', ruta: ' desde su ruta' }[d] || '')];
+      case 'actividad_elegida': return ['check', 'Eligió «' + d + '»'];
+      case 'salida_elegida': return ['bell', 'Eligió que suene en el ' + (ROUTES[d] || d)];
+      case 'prueba_de_sonido': { const kv = parseKv(d); const ok = kv.sono || kv.orden; return ['bell', 'Probó el sonido en el ' + (ROUTES[kv.salida] || 'teléfono') + (ok ? (ok === 'si' ? (kv.sono ? ': sonó' : '') : ': no sonó') : '')]; }
+      case 'llavero_escuchado': return ['bell', d.startsWith('si') ? 'Dijo que escuchó el Tag' : 'Dijo que no escuchó el Tag'];
+      case 'falta_completar': return ['info', 'Le faltó completar: ' + (missingText(d) || d)];
+      case 'app_cerrada': { const m = /segundos=(\d+)/.exec(d); return ['phone', 'Cerró Relevo' + (m ? ', después de ' + duration(+m[1]) : '')]; }
+      case 'permisos': { const kv = parseKv(d); return ['info', 'Permisos: ' + Object.entries(kv).map(([k, v]) => k.replace(/_/g, ' ') + ' ' + v.replace(/_/g, ' ')).join(' · ')]; }
+      default: { const [ic, label] = EVENTS[f.what] || ['dot', String(f.what).replace(/_/g, ' ')]; const extra = d && d.length <= 48 && !['llavero_perfil', 'ajuste'].includes(f.what) ? ' · ' + d.replace(/_/g, ' ') : ''; return [ic, label + extra]; }
+    }
+  }
+  const fmtClock = new Intl.DateTimeFormat('es-CL', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+  const fmtDayLong = new Intl.DateTimeFormat('es-CL', { timeZone: TZ, weekday: 'long', day: 'numeric', month: 'long' });
+  /** El flujo de uso por día, del más reciente al más antiguo; dentro de cada día, en orden. Los repetidos seguidos se juntan. */
+  function flowBlock(flow) {
+    if (!flow.length) return el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Todavía no llega nada de lo que hace en la app.' })]);
+    const days = [];
+    flow.slice().sort((a, b) => new Date(a.created_at) - new Date(b.created_at)).forEach((f) => {
+      const day = isoDay(new Date(f.created_at)); let g = days[days.length - 1];
+      if (!g || g.day !== day) { g = { day, at: f.created_at, items: [] }; days.push(g); }
+      const [ic, text] = flowLabel(f); const prev = g.items[g.items.length - 1];
+      if (prev && prev.text === text) { prev.times++; return; }
+      g.items.push({ ic, text, at: f.created_at, src: f.src, times: 1 });
+    });
+    return el('div', { class: 'panel' }, [el('div', { class: 'flow' }, days.reverse().map((g) => el('div', { class: 'flow-day' }, [
+      el('h4', { text: fmtDayLong.format(new Date(g.at)) }),
+      ...g.items.map((it) => el('div', { class: 'flow-item' + (it.src === 'relevo' ? ' relevo' : '') }, [el('time', { text: fmtClock.format(new Date(it.at)) }), icon(it.ic, 'sm'),
+        el('span', { class: 'txt' }, [it.text, it.times > 1 ? el('span', { class: 'times', text: ' · ' + it.times + ' veces' }) : null].filter(Boolean))])),
+    ]))), el('p', { class: 'note', text: 'En negrita, lo que pasó con sus relevos; lo demás es lo que hizo en la app. Muestra los últimos 250 eventos.' })]);
+  }
+
+  /** Resumen de la persona: sus apps y el tiempo en ellas, sus relevos y lo que respondió. */
+  function summaryBlock(p, d, st) {
+    const sessions = (d.sessions || []).filter((x) => x.outcome !== 'deleted');
+    const apps = {};
+    sessions.forEach((x) => (Array.isArray(x.target_apps) ? x.target_apps : []).forEach((a) => {
+      if (!a || !a.package) return; const y = apps[a.package] || (apps[a.package] = { label: a.label || a.package, seconds: 0, measured: false });
+      if (a.seconds != null) { y.seconds += a.seconds; y.measured = true; }
+    }));
+    ((st && st.apps_elegidas) || []).forEach((a) => { if (a && a.paquete && !apps[a.paquete]) apps[a.paquete] = { label: a.nombre || a.paquete, seconds: 0, measured: false }; });
+    const today = isoDay(new Date()), weekStart = isoDay(new Date(Date.now() - 6 * 86400000));
+    let hoy = 0, semana = 0, hasDaily = false;
+    (d.usage || []).forEach((u) => { if (u.package === '_total') return; hasDaily = true; const k = String(u.day).slice(0, 10); if (k === today) hoy += u.seconds; if (k >= weekStart) semana += u.seconds; });
+    const inRelevos = Object.values(apps).reduce((t, a) => t + a.seconds, 0), anyMeasured = Object.values(apps).some((a) => a.measured);
+    const signalled = sessions.filter((x) => x.signal_at);
+    const tally = (key, names) => { const c = {}; signalled.forEach((x) => { if (x[key]) c[x[key]] = (c[x[key]] || 0) + 1; }); const parts = Object.keys(names).filter((k) => c[k]).map((k) => names[k] + ' ' + c[k]); return parts.length ? parts.join(' · ') : '—'; };
+    const acts = {}; sessions.forEach((x) => { if (x.activity) acts[x.activity] = (acts[x.activity] || 0) + 1; });
+    const top = Object.entries(acts).sort((a, b) => b[1] - a[1])[0];
+    const routes = {}; sessions.forEach((x) => { const r = x.signal_route || 'phone'; routes[r] = (routes[r] || 0) + 1; });
+    const topRoute = Object.entries(routes).sort((a, b) => b[1] - a[1])[0];
+    const appList = Object.values(apps).sort((a, b) => b.seconds - a.seconds);
+    return factList([
+      ['Apps elegidas', appList.length ? appList.map((a) => a.label + (a.measured ? ' (' + duration(a.seconds) + ' en relevos)' : '')).join(', ') : '—'],
+      ['Tiempo en ellas', hasDaily ? 'Hoy ' + duration(hoy) + ' · últimos 7 días ' + duration(semana) : (anyMeasured ? 'En sus relevos ' + duration(inRelevos) : 'Todavía no llega')],
+      ['Relevos', (() => { const r = signalled.filter((x) => ['started', 'later', 'changed'].includes(x.outcome)).length; return sessions.length + (sessions.length === 1 ? ' preparado · ' : ' preparados · ') + signalled.length + (signalled.length === 1 ? ' sonó · ' : ' sonaron · ') + r + (r === 1 ? ' respondido' : ' respondidos'); })()],
+      ['Qué decidió', tally('outcome', { started: 'Comenzó', later: 'Después', changed: 'Cambió de idea', not_answered: 'Saltó las preguntas' })],
+      ['Supo qué quería hacer', tally('knew_intention', { yes: 'Sí', partly: 'A medias', no: 'No' })],
+      ['Recordó cómo empezar', tally('recalled_first_step', { yes: 'Sí', partly: 'A medias', no: 'No' })],
+      ['Cómo le cayó la señal', tally('signal_feeling', { good: 'Bien', neutral: 'Normal', bad: 'Mal' })],
+      ['Lo que más prepara', top ? '«' + top[0] + '»' + (top[1] > 1 ? ' · ' + top[1] + ' veces' : '') : '—'],
+      ['Dónde suena', topRoute ? 'En el ' + (ROUTES[topRoute[0]] || topRoute[0]) : '—'],
+      ['Última vez en Relevo', ago(p.last_seen)],
+    ]);
+  }
+
+  /** Detalle de un relevo en la ficha: cuándo sonó, lo que respondió y las respuestas de ese relevo. */
+  function relevoDetails(x, extra) {
+    const qa = [];
+    if (x.signal_at) {
+      qa.push(['Sonó', when(x.signal_at) + (x.observed_seconds ? ', tras ' + duration(x.observed_seconds) + ' en sus apps' : '')]);
+      qa.push(['Supo qué quería hacer', KNEW[x.knew_intention] || '—'], ['Recordó cómo empezar', KNEW[x.recalled_first_step] || '—'], ['Qué decidió', OUTCOMES[x.outcome] || 'Sin responder']);
+      if (x.signal_feeling) qa.push(['Cómo le cayó', FEELING[x.signal_feeling] || x.signal_feeling]);
+      if (x.response_seconds != null) qa.push(['Tardó en responder', x.response_seconds + ' s']);
+    } else if (x.outcome && x.outcome !== 'deleted') qa.push(['Terminó', (OUTCOMES[x.outcome] || x.outcome) + (x.closed_at ? ', ' + when(x.closed_at) : '') + ', sin sonar']);
+    else if (!x.outcome) qa.push(['Estado', 'Contando; todavía no suena']);
+    extra.forEach((a) => qa.push([prettyQuestion(a.question), String(a.answer || '').slice(0, 240)]));
+    return qa.length ? el('dl', { class: 'qa' }, qa.flatMap(([k, v]) => [el('dt', { text: k }), el('dd', { text: v })])) : null;
+  }
+
+  /** Acción que pide una sola confirmación: el primer clic pregunta y el segundo la hace. */
+  function twoStep(label, question, yes, action, small) {
+    const slot = el('span', { class: 'two-step' });
+    const idle = () => slot.replaceChildren(el('button', { class: 'btn danger' + (small ? ' small' : ''), type: 'button', onclick: ask }, [label]));
+    const ask = () => slot.replaceChildren(el('span', { class: 'inline-confirm' }, [question]),
+      el('button', { class: 'btn danger small', type: 'button', onclick: async () => { slot.replaceChildren(el('span', { class: 'row-sub', text: 'Borrando…' })); const ok = await action(); if (!ok) idle(); } }, [yes]),
+      el('button', { class: 'btn secondary small', type: 'button', onclick: idle }, ['Cancelar']));
+    idle(); return slot;
+  }
+
   function section(container, rows, emptyText) {
     const box = typeof container === 'string' ? $(container) : container;
     box.replaceChildren(...(rows.length ? rows : [el('div', { class: 'empty', text: emptyText })]));
@@ -1103,9 +1217,9 @@ select json_build_object(
       el('p', { class: 'note', text: 'Un cambio negativo significa que, después de la señal, usó menos sus apps elegidas.' }));
     const routeCount = (r) => S.filter((x) => x.signal_route === r).length;
     $('r-routes').replaceChildren(...[
-      ['En el parlante', routeCount('bluetooth')], ['En el reloj', routeCount('watch')], ['En el llavero', routeCount('tag')], ['En el teléfono', routeCount('phone')],
+      ['En el parlante', routeCount('bluetooth')], ['En el reloj', routeCount('watch')], ['En el Tag', routeCount('tag')], ['En el teléfono', routeCount('phone')],
       ['Se activó a mano', all.relevos - all.automaticos], ['Se activó solo', all.automaticos],
-      ['La silenció en el teléfono', all.calladas], ['La calló con el botón del llavero', all.calladas_objeto], ['Terminó sola a los 30 s', all.solas], ['Se cortó', all.cortadas]
+      ['La silenció en el teléfono', all.calladas], ['La calló tocando el Tag', all.calladas_objeto], ['Terminó sola a los 30 s', all.solas], ['Se cortó', all.cortadas]
     ].filter(([, n], i) => i >= 4 || n > 0).map(([k, n]) => el('div', { class: 'fact' }, [el('span', { text: k }), el('span', { class: 'num', text: String(n) })])));
   }
 
@@ -1128,8 +1242,8 @@ select json_build_object(
     ['Relevos', 'threshold_seconds', 'Tiempo en las apps para que suene (segundos)'], ['Relevos', 'observed_seconds', 'Tiempo contado (segundos)'],
     ['Relevos', 'started_at', 'Cuándo se activó'], ['Relevos', 'signal_at', 'Cuándo sonó la señal (vacío: no sonó)'], ['Relevos', 'closed_at', 'Cuándo se cerró'],
     ['Relevos', 'study_condition', 'Condición de la semana: A junto al primer paso, B otro lugar, C teléfono'], ['Relevos', 'study_day', 'Día de la prueba (0 a 21)'],
-    ['Relevos', 'signal_route', 'Dónde sonó: bluetooth (parlante), watch (reloj), tag (llavero), phone (teléfono)'], ['Relevos', 'activation', 'manual o auto (activación automática)'],
-    ['Relevos', 'signal_end', 'Cómo terminó: silenced (la silenció), object (botón del llavero), auto (sola a los 30 s), interrupted (se cortó)'],
+    ['Relevos', 'signal_route', 'Dónde sonó: bluetooth (parlante), watch (reloj), tag (Tag), phone (teléfono)'], ['Relevos', 'activation', 'manual o auto (activación automática)'],
+    ['Relevos', 'signal_end', 'Cómo terminó: silenced (la silenció), object (tocó el Tag), auto (sola a los 30 s), interrupted (se cortó)'],
     ['Relevos', 'response_seconds', 'Segundos entre la señal y su primera acción'], ['Relevos', 'knew_intention', '¿Supo qué quería hacer? yes, partly, no'],
     ['Relevos', 'recalled_first_step', '¿Recordó cómo empezar? yes, no'], ['Relevos', 'outcome', 'Qué hizo: started, later, changed, not_answered, deleted'],
     ['Relevos', 'signal_feeling', 'Cómo le cayó la señal: good, neutral, bad'], ['Relevos', 'usage_before_seconds', 'Segundos en las apps elegidas en los 10 min antes de la señal'],
@@ -1361,22 +1475,30 @@ select json_build_object(
     const phoneSlot = el('div', null, [loading('Cargando su configuración…')]);
     const profileSlot = el('div'), reminderSlot = el('div'), missingSlot = el('div');
     const sessionsBox = loading('Cargando sus relevos…'), answersBox = loading('Cargando sus respuestas…');
+    const summarySlot = el('div', null, [loading('Cargando su resumen…')]), flowSlot = el('div', null, [loading('Cargando lo que hizo en la app…')]);
+    const removeTop = twoStep('Eliminar', '¿Eliminar a ' + (p.name || p.code) + ' y todos sus datos?', 'Sí, eliminar', () => runDelete(p, DELETE_GROUPS.map((g) => g[0]), dlNote));
     const nodes = [];
     const deleteSlot = el('div', { id: 'sec-borrar' }, [loading('Cargando lo que hay guardado…')]);
     const jump = (label, id, danger) => el('button', { class: 'jump' + (danger ? ' danger' : ''), type: 'button', onclick: () => { const t = document.getElementById(id); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }, [label]);
-    nodes.push(el('nav', { class: 'jumps', 'aria-label': 'Ir a' }, [jump('Apps', 'sec-apps'), jump('Uso', 'sec-uso'), jump('Relevos', 'sec-relevos'), jump('Respuestas', 'sec-respuestas'), jump('Teléfono', 'sec-telefono'), jump('Borrar datos', 'sec-borrar', true)]));
+    nodes.push(el('nav', { class: 'jumps', 'aria-label': 'Ir a' }, [jump('Resumen', 'sec-resumen'), jump('Apps', 'sec-apps'), jump('Relevos', 'sec-relevos'), jump('Flujo de uso', 'sec-flujo'), jump('Respuestas', 'sec-respuestas'), jump('Uso', 'sec-uso'), jump('Teléfono', 'sec-telefono'), jump('Borrar datos', 'sec-borrar', true)]));
     if (notice) nodes.push(el('div', { class: 'toast' }, [icon('check'), notice]));
     if (issues.length) nodes.push(el('div', { class: 'notice' }, [el('span', { class: 'ring' }, [icon('info')]), el('div', null, [el('strong', { text: 'Para revisar' }), el('p', { text: issues.map((i) => i.text).join(' · ') })])]));
     const anchored = (id, node) => { node.id = id; node.style.scrollMarginTop = '52px'; return node; };
-    nodes.push(facts, el('div', { class: 'actions' }, [write, dl]), dlNote, anchored('sec-apps', block('Tiempo en cada app elegida', appsSlot)), anchored('sec-uso', block('Uso del teléfono', usageSlot)), reminderSlot, anchored('sec-relevos', block('Sus relevos', sessionsBox)), anchored('sec-respuestas', block('Sus respuestas', answersBox)),
-      anchored('sec-telefono', block('Su teléfono y ajustes', phoneSlot)), profileSlot, missingSlot, deleteSlot);
+    // El resumen va primero: sus apps, el tiempo en ellas y lo que respondió; el estado, después (panel 12).
+    nodes.push(anchored('sec-resumen', block('Resumen', summarySlot)), el('div', { class: 'actions' }, [write, dl, removeTop]), dlNote, anchored('sec-apps', block('Tiempo en cada app elegida', appsSlot)),
+      anchored('sec-relevos', block('Sus relevos y lo que respondió', sessionsBox)), anchored('sec-flujo', block('Flujo de uso', flowSlot)), anchored('sec-respuestas', block('Otras respuestas', answersBox)),
+      block('Estado', facts), anchored('sec-uso', block('Uso del teléfono', usageSlot)), reminderSlot, anchored('sec-telefono', block('Su teléfono y ajustes', phoneSlot)), profileSlot, missingSlot, deleteSlot);
     openSheet(p.name || p.code, el('span', { class: 'avatar', text: initials(p) }), nodes);
     try {
       const code = sqlText(p.code);
       const rows = await runSql(`select json_build_object(
-        'sessions', coalesce((select json_agg(s) from (select session_id, activity, started_at, signal_at, outcome, knew_intention, recalled_first_step, signal_feeling, response_seconds, study_condition, study_day, signal_route, activation, target_apps, observed_seconds, threshold_seconds
+        'sessions', coalesce((select json_agg(s) from (select session_id, activity, started_at, signal_at, outcome, knew_intention, recalled_first_step, signal_feeling, response_seconds, study_condition, study_day, signal_route, activation, target_apps, observed_seconds, threshold_seconds, closed_at, signal_end
           from public.relevo_sessions where participant_code = ${code} order by started_at desc limit 40) s), '[]'::json),
-        'answers', coalesce((select json_agg(a) from (select question, answer, created_at from public.relevo_answers where participant_code = ${code} order by created_at desc limit 40) a), '[]'::json),
+        'answers', coalesce((select json_agg(a) from (select session_id, question, answer, created_at from public.relevo_answers where participant_code = ${code} order by created_at desc limit 80) a), '[]'::json),
+        'flow', coalesce((select json_agg(f) from (select * from (
+            select event as what, detail, created_at, 'app' as src from public.relevo_app_events where participant_code = ${code}
+            union all select event_type, null, created_at, 'relevo' from public.relevo_events where participant_code = ${code}
+          ) z order by created_at desc limit 250) f), '[]'::json),
         'state', (select json_build_object('state', state, 'updated_at', updated_at, 'app_version', app_version, 'consent_version', consent_version)
           from public.relevo_participant_state where participant_code = ${code} order by updated_at desc limit 1),
         'usage', coalesce((select json_agg(u order by u.day) from (select day, package, label, seconds, opens from public.relevo_daily_usage
@@ -1397,6 +1519,8 @@ select json_build_object(
       const meta = d.state || {}, st = meta.state || null;
       usageSlot.replaceChildren(usageBlock(d.usage || [], st));
       appsSlot.replaceChildren(appTimeBlock(d.sessions || [], d.usage || []));
+      summarySlot.replaceChildren(summaryBlock(p, d, st));
+      flowSlot.replaceChildren(flowBlock(d.flow || []));
       phoneSlot.replaceChildren(phoneBlock(st, meta));
       const apps = st && st.apps_elegidas ? st.apps_elegidas : [];
       const current = st && st.relevo_actual, last = st && st.ultimo_relevo;
@@ -1413,12 +1537,14 @@ select json_build_object(
         missingSlot.replaceChildren(block('Dónde le faltó completar', el('div', { class: 'section' }, groups.map((g) => el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [
           el('span', { class: 'row-title', text: g.text }), el('span', { class: 'row-sub', text: (g.times > 1 ? g.times + ' veces · ' : '') + 'la última, ' + when(g.last) })])])))));
       }
-      section(sessionsBox, (d.sessions || []).map((s) => sessionRow(s, false, deleteSession)), 'Sin relevos todavía.');
+      // Cada relevo con lo que respondió y las respuestas guardadas con su sesión.
+      const bySession = {}; (d.answers || []).forEach((a) => { if (a.session_id) (bySession[a.session_id] || (bySession[a.session_id] = [])).push(a); });
+      section(sessionsBox, (d.sessions || []).map((x) => { const row = sessionRow(x, false, deleteSession); const det = x.outcome === 'deleted' ? null : relevoDetails(x, (bySession[x.session_id] || []).slice().reverse()); if (det) row.querySelector('.row-main').append(det); return row; }), 'Sin relevos todavía.');
       deleteSlot.replaceChildren(deleteBlock(p, d.counts || {}));
-      section(answersBox, (d.answers || []).map((a) => answerRow(a, false)), 'Sin respuestas todavía.');
+      section(answersBox, (d.answers || []).filter((a) => !a.session_id).map((a) => answerRow(a, false)), 'Sin respuestas de la semana, del cierre ni opiniones todavía.');
     } catch (err) {
       const msg = explain(err).join('. ');
-      [usageSlot, phoneSlot].forEach((s) => s.replaceChildren(el('div', { class: 'section' }, [el('div', { class: 'empty', text: msg })])));
+      [usageSlot, phoneSlot, summarySlot, flowSlot, appsSlot].forEach((s) => s.replaceChildren(el('div', { class: 'section' }, [el('div', { class: 'empty', text: msg })])));
       sessionsBox.replaceChildren(el('div', { class: 'empty', text: msg })); answersBox.replaceChildren();
     }
   }
@@ -1442,39 +1568,39 @@ select json_build_object(
     const counts = chosen.flatMap((g) => g[4]).map((t) => `'${t}', (select count(*) from ${t})`).join(', ');
     return `with ${ctes}\nselect json_build_object(${counts}) as deleted;`;
   }
+  /** Borra los grupos elegidos de una persona en una sola consulta y vuelve a cargar el panel. */
+  async function runDelete(p, groups, note) {
+    note.replaceChildren(el('div', { class: 'toast' }, [icon('info'), 'Borrando…']));
+    try {
+      const rows = await runSql(deleteSql(p.code, groups)); let d = rows[0] && rows[0].deleted; if (typeof d === 'string') d = JSON.parse(d);
+      const n = Object.values(d || {}).reduce((t, v) => t + Number(v || 0), 0);
+      const everything = groups.length === DELETE_GROUPS.length;
+      note.replaceChildren(el('div', { class: 'toast' }, [icon('check'), 'Se borraron ' + rowsWord(n) + '.' + (everything ? ' ' + (p.name || p.code) + ' ya no aparece en el panel.' : '')]));
+      stats = null; await refresh();
+      if (everything) setTimeout(closeSheet, 1500); else openPerson((data.participants || []).find((x) => x.code === p.code) || p, 'Se borraron ' + rowsWord(n) + '.');
+      return true;
+    } catch (err) { note.replaceChildren(el('div', { class: 'toast error' }, [icon('info'), explain(err).join('. ')])); return false; }
+  }
+  /** Eliminar a la persona o solo una parte: dos clics, sin escribir nada (panel 12). */
   function deleteBlock(p, counts) {
     const boxes = {};
     const list = el('div', { class: 'checks' }, DELETE_GROUPS.map(([id, label, count]) => {
-      const box = el('input', { type: 'checkbox' }); boxes[id] = box; box.addEventListener('change', update);
+      const box = el('input', { type: 'checkbox' }); boxes[id] = box;
       return el('label', { class: 'check' }, [box, el('span', { text: label }), el('small', { text: count(counts) })]);
     }));
-    const confirmText = el('input', { class: 'confirm-input', type: 'text', placeholder: 'Escribe ' + p.code + ' para confirmar', autocomplete: 'off', 'aria-label': 'Escribe el código para confirmar' });
-    const run = el('button', { class: 'btn danger', type: 'button', disabled: '' }, ['Borrar lo marcado']);
-    const all = el('button', { class: 'plain-action', type: 'button', style: 'color:var(--error)', onclick: () => { Object.values(boxes).forEach((b) => { b.checked = true; }); update(); confirmText.focus(); } }, ['Marcar todo para eliminar a esta persona']);
     const note = el('div');
-    function update() {
-      const any = Object.values(boxes).some((b) => b.checked);
-      const ok = confirmText.value.trim().toUpperCase() === p.code.toUpperCase();
-      if (any && ok) run.removeAttribute('disabled'); else run.setAttribute('disabled', '');
-      run.textContent = Object.values(boxes).every((b) => b.checked) ? 'Eliminar a ' + (p.name || p.code) : 'Borrar lo marcado';
-    }
-    confirmText.addEventListener('input', update);
-    run.addEventListener('click', async () => {
-      const groups = Object.keys(boxes).filter((k) => boxes[k].checked); if (!groups.length) return;
-      run.setAttribute('disabled', ''); note.replaceChildren(el('div', { class: 'toast' }, [icon('info'), 'Borrando…']));
-      try {
-        const rows = await runSql(deleteSql(p.code, groups)); let d = rows[0] && rows[0].deleted; if (typeof d === 'string') d = JSON.parse(d);
-        const n = Object.values(d || {}).reduce((t, v) => t + Number(v || 0), 0);
-        const everything = groups.length === DELETE_GROUPS.length;
-        note.replaceChildren(el('div', { class: 'toast' }, [icon('check'), 'Se borraron ' + n + ' filas.' + (everything ? ' ' + (p.name || p.code) + ' ya no aparece en el panel.' : '')]));
-        stats = null; await refresh();
-        if (everything) setTimeout(closeSheet, 1500); else openPerson((data.participants || []).find((x) => x.code === p.code) || p, 'Se borraron ' + rowsWord(n) + '.');
-      } catch (err) { note.replaceChildren(el('div', { class: 'toast error' }, [icon('info'), explain(err).join('. ')])); update(); }
-    });
+    const partial = twoStep('Borrar lo marcado', '¿Borrar lo marcado? No se puede deshacer.', 'Sí, borrar', () => {
+      const groups = Object.keys(boxes).filter((k) => boxes[k].checked);
+      if (!groups.length) { note.replaceChildren(el('div', { class: 'toast error' }, [icon('info'), 'Marca al menos un grupo.'])); return Promise.resolve(false); }
+      return runDelete(p, groups, note);
+    }, true);
+    const all = twoStep('Eliminar a ' + (p.name || p.code), '¿Eliminar a ' + (p.name || p.code) + ' y todos sus datos?', 'Sí, eliminar', () => runDelete(p, DELETE_GROUPS.map((g) => g[0]), note));
     return el('div', { class: 'danger-zone' }, [
       el('h4', { text: 'Borrar datos de ' + (p.name || p.code) }),
-      el('p', { text: 'Marca lo que quieres borrar de Supabase. No se puede deshacer. Si la persona sigue usando la app, lo nuevo volverá a llegar; para que no, que borre sus datos desde Perfil › Tus datos o desinstale Relevo. La copia en su teléfono no se toca.' }),
-      list, all, confirmText, el('div', { class: 'actions' }, [run]), note,
+      el('p', { text: 'Se borran de Supabase y no se puede deshacer. Si la persona sigue usando la app, lo nuevo volverá a llegar; para que no, que borre sus datos desde Perfil › Tus datos o desinstale Relevo. La copia en su teléfono no se toca.' }),
+      el('div', { class: 'actions' }, [all]),
+      el('details', null, [el('summary', { text: 'Borrar solo una parte' }), list, el('div', { class: 'actions', style: 'margin-top:8px' }, [partial])]),
+      note,
     ]);
   }
   async function deleteSession(s, done) {

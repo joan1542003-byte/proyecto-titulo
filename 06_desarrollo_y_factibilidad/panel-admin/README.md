@@ -1,6 +1,6 @@
 # Panel del testeo de Relevo
 
-**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 11.
+**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 12.
 
 ## Diseño
 
@@ -35,6 +35,14 @@ El panel se ordena en cuatro pestañas:
 
 Retirada el mismo día por D-112: la versión 7 restaura la 5, por condiciones, y exige la app 2.22. Lo que sigue describe la versión 6 como antecedente. Desde D-110, A, B y C son lo que eligió la persona: A, un objeto donde empieza; B, un objeto en otro lugar; C, el teléfono. Resultados suma «Qué elige», con barras de A, B y C en total y por semana y su cantidad escrita, y la cifra «Elige más». Las tarjetas, la comparación y las exportaciones hablan de elecciones, no de condiciones asignadas. «Para revisar» avisa a quien use una app anterior a la 2.20.
 
+## La ficha de cada persona y eliminar en dos clics (versión 12)
+
+- **Resumen, primero:** sus apps elegidas y el tiempo en ellas (hoy, últimos 7 días y dentro de sus relevos). También cuántos relevos preparó, cuántos sonaron y cuántos respondió. Por último, qué decidió, si supo qué quería hacer, si recordó cómo empezar, cómo le cayó la señal, qué prepara más, dónde suena y cuándo usó Relevo por última vez.
+- **Sus relevos y lo que respondió:** cada relevo muestra cuándo sonó y tras cuánto tiempo en sus apps, sus respuestas y el tiempo en cada app. Si terminó sin sonar, cómo terminó. Incluye las respuestas guardadas con ese relevo, como dónde dejó el objeto.
+- **Flujo de uso:** lo que hizo en la app, día por día y con la hora: pantallas, pasos al preparar, actividad y salida elegidas, pruebas de sonido, campos que le faltó completar, y lo que pasó con sus relevos (en negrita). Los repetidos seguidos se juntan; muestra los últimos 250 eventos.
+- **Otras respuestas:** las de la semana, el cierre y las opiniones, que no son de un relevo.
+- **Eliminar en dos clics:** «Eliminar» junto a «Escribirle» y «Descargar sus datos». El primer clic pregunta «¿Eliminar a … y todos sus datos?» y el segundo borra. Al final de la ficha, «Borrar solo una parte» usa los mismos dos clics. Ya no se escribe el código.
+
 ## Tiempo en cada app y perfiles (versión 11)
 
 - **Tiempo en cada app elegida:** la ficha de cada persona abre con una tabla por app: hoy, últimos 7 días, total, veces que la abrió y tiempo dentro de sus relevos. Las cuatro primeras vienen del uso diario, que llega cada 30 minutos. La última, desde la app 2.28, que guarda el tiempo de cada app al sonar o al desactivar un relevo. Cada relevo de la ficha muestra además su desglose, por ejemplo «En sus apps: Instagram 7 min · TikTok 3 min».
@@ -46,7 +54,7 @@ Retirada el mismo día por D-112: la versión 7 restaura la 5, por condiciones, 
 - **Personas:** búsqueda por nombre o código y filtros «Todas», «Contando», «Esperan responder», «Para revisar» y «En la prueba», con su cantidad.
 - **Ficha:** botones para saltar a Uso, Relevos, Respuestas, Teléfono y Borrar datos.
 - **Borrar un relevo:** «Borrar» en cada relevo de la ficha, con confirmación en la misma fila. Borra el relevo, sus eventos y sus respuestas.
-- **Borrar datos de una persona:** se marcan los grupos (relevos y eventos, respuestas, uso de Relevo, uso diario, configuración, mensajes y nombre), con cuántas filas tiene cada uno. Para confirmar hay que escribir su código. «Marcar todo» elimina a la persona del panel. Todo se borra en una sola consulta, que devuelve cuántas filas salieron.
+- **Borrar datos de una persona:** se marcan los grupos (relevos y eventos, respuestas, uso de Relevo, uso diario, configuración, mensajes y nombre), con cuántas filas tiene cada uno. Desde la versión 12 se confirma con dos clics, sin escribir el código. Todo se borra en una sola consulta, que devuelve cuántas filas salieron.
 - **Quién aparece en Personas:** todo código que tenga datos en cualquier tabla (relevos, respuestas, uso, configuración, nombre o mensajes), aunque no tenga eventos. Así nada de lo que cuenta Resultados queda fuera de Personas y sin forma de borrarse.
 - **Resultados al día:** después de borrar, Resultados se vuelve a calcular de inmediato.
 - **Límite:** si la persona sigue usando la app, lo nuevo vuelve a llegar, y la copia en su teléfono no se toca. Para un borrado completo, lo ideal es que use «Borrar mis datos» en la app.
@@ -92,6 +100,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — La ficha de cada persona y eliminar en dos clics (versión 12)
+
+- **Qué cambió:** eliminar pide dos clics, sin escribir el código; la ficha abre con un resumen y suma cada relevo con lo que respondió, el flujo de uso y las otras respuestas aparte; dice «Tag» en vez de «llavero» en Resultados y en el diccionario.
+- **Cómo estaba antes:** para eliminar había que escribir el código; la ficha empezaba con el estado, y las respuestas y el uso estaban separados de cada relevo.
+- **Por qué:** pedido del autor (D-118).
 
 ### 2026-10-07 — Tiempo en cada app y perfiles (versión 11)
 

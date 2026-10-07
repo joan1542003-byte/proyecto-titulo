@@ -1349,7 +1349,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** que el Tag venga elegido revierte en parte D-111, que no preseleccionaba nada. Es visible y se cambia con un toque. Las cifras de fluidez son del emulador.
 - **Documentación:** [Android 2.28](../06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
 
+## D-118 — Panel: eliminar en dos clics y una ficha que resume a cada persona
+
+- **Fecha:** 2026-10-07.
+- **Estado:** implementado en el panel (versión 12); revisado con datos de ejemplo. Las consultas se validaron en la base real solo leyendo.
+- **Decisión:** eliminar a una persona, o una parte de sus datos, pide dos clics: el primero pregunta y el segundo borra. Ya no hay que escribir su código. La ficha empieza con un resumen: sus apps y el tiempo en ellas, cuántos relevos preparó, cuántos sonaron y qué respondió. Después vienen cada relevo con sus respuestas y su flujo de uso, día por día.
+- **Fundamento:** pedido del autor. Escribir el código era una confirmación de más para un panel que solo usa él, y el resumen debía mostrar de un vistazo apps, tiempo, respuestas y flujo.
+- **Límites:** reemplaza la confirmación por código de D-114; sigue sin poder deshacerse. El flujo muestra los últimos 250 eventos.
+- **Documentación:** [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — D-118
+
+- **Qué cambió:** se registró D-118.
+- **Cómo estaba antes:** la última decisión era D-117.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — D-117
 
