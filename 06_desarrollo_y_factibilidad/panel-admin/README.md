@@ -1,6 +1,6 @@
 # Panel del testeo de Relevo
 
-**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 12.
+**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 13.
 
 ## Diseño
 
@@ -34,6 +34,12 @@ El panel se ordena en cuatro pestañas:
 ## Elección libre (versión 6, retirada)
 
 Retirada el mismo día por D-112: la versión 7 restaura la 5, por condiciones, y exige la app 2.22. Lo que sigue describe la versión 6 como antecedente. Desde D-110, A, B y C son lo que eligió la persona: A, un objeto donde empieza; B, un objeto en otro lugar; C, el teléfono. Resultados suma «Qué elige», con barras de A, B y C en total y por semana y su cantidad escrita, y la cifra «Elige más». Las tarjetas, la comparación y las exportaciones hablan de elecciones, no de condiciones asignadas. «Para revisar» avisa a quien use una app anterior a la 2.20.
+
+## Tiempo en las apps solo con relevo activo (versión 13)
+
+- **Qué cuenta:** el tiempo en las apps elegidas solo cuenta con un relevo activo, desde que la persona lo activó hasta que sonó o lo desactivó. Lo guarda la app desde la 2.28, en cada relevo. El relevo que está contando se suma cuando suena o se desactiva; los relevos anteriores a la 2.28 dicen «sin medir».
+- **Dónde se ve:** en Personas («hoy X en sus apps con relevo»), en el resumen de la ficha (hoy, últimos 7 días y en total) y en la tabla «Tiempo en sus apps con relevo activo», con el tiempo por relevo.
+- **El uso del día completo** queda como contexto, cerrado al final de la ficha: «Uso del teléfono en todo el día, con y sin relevo».
 
 ## La ficha de cada persona y eliminar en dos clics (versión 12)
 
@@ -100,6 +106,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Tiempo en las apps solo con relevo activo (versión 13)
+
+- **Qué cambió:** el tiempo en las apps se calcula solo con un relevo activo, en Personas, el resumen y la tabla de la ficha; el uso del día completo queda cerrado, como contexto.
+- **Cómo estaba antes:** la tabla y el resumen mezclaban el uso de todo el día con el de los relevos.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — La ficha de cada persona y eliminar en dos clics (versión 12)
 

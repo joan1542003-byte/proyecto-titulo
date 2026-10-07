@@ -9,6 +9,7 @@
 | Trabajo | Resultado | Decisión |
 | --- | --- | --- |
 | Llavero comprado | El autor probó su llavero con iSearching y funciona. Puede usarlo en Android si el iPhone se desconecta: el llavero acepta una conexión a la vez. | D-109 |
+| Panel 13 | El tiempo en las apps cuenta solo con un relevo activo ([panel](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-118 |
 | Panel 12 | Eliminar en dos clics; la ficha abre con un resumen y muestra cada relevo con lo que respondió y el flujo de uso ([panel](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-118 |
 | Android 2.28 y panel 11 | Tag por defecto con búsqueda automática, lugares concretos, «Volver al inicio», tiempo en cada app y una app optimizada; en el panel, tiempo por app y perfiles en la barra ([app](../06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md); [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-117 |
 | Android 2.27 | El Tag no sonaba en la señal real: FFE2 en 1 junto con la alerta, pitido continuo de 30 segundos ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md)). | D-116 |
@@ -40,6 +41,12 @@
 - Revisar el consentimiento v13 con el profesor.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Panel 13
+
+- **Qué cambió:** la bitácora suma el panel 13.
+- **Cómo estaba antes:** terminaba en el panel 12.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — Panel 12
 

@@ -114,6 +114,7 @@
 | 7 oct. | Corrección | Ahora sí pita, pero al usar la app no suena cuando el relevo debería sonar. Asegurar que el pitido sea constante y no uno solo. | El registro mostró que la prueba escribía 1 en FFE2 justo antes de pitar y la señal no. [Android 2.27](../06_desarrollo_y_factibilidad/app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md): FFE2 en 1 junto con la alerta para pitar, pitido continuo de 30 segundos con la orden repetida cada segundo, y reconexión si el Tag no confirma. Falta probarlo con el Tag real. | D-116 |
 | 7 oct. | Encargo | En el panel, ver cuánto tiempo usó en cada app elegida y tener el perfil en la barra de navegación. El Tag por defecto, con su búsqueda por Bluetooth siempre a la vista: elegir el aparato y listo. Quitar lugares ambiguos como «en la pieza». Con el relevo listo, la acción principal debe ser volver, no desactivar. La app debe ir a 60 cuadros por segundo o más. | [Android 2.28](../06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md): Tag por defecto con búsqueda automática, lugares concretos, «Volver al inicio» como acción principal, tiempo en cada app por relevo y una app optimizada (de 72 % a 6 % de cuadros lentos en el emulador). [Panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) versión 11: tabla de tiempo en cada app y perfiles en la barra lateral. | D-117 |
 | 7 oct. | Corrección y encargo | En el panel, eliminar a un participante debe pedir solo dos confirmaciones con clic. El resumen de cada persona debe mostrar sus apps, el tiempo en ellas, qué respondió en cada relevo y su flujo de uso. | [Panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) versión 12: «Eliminar» en dos clics, sin escribir el código, también para borrar solo una parte. La ficha abre con un resumen y sigue con el tiempo en cada app, cada relevo con lo que respondió, el flujo de uso por día y las otras respuestas. | D-118 |
+| 7 oct. | Corrección | El tiempo en las apps debe ser con relevo activo, no sin él; si no es posible, dejarlo como está. | Sí era posible, porque la app 2.28 guarda el tiempo en cada app por relevo. El [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) versión 13 muestra el tiempo en las apps solo con relevo activo en Personas, el resumen y la tabla de la ficha; el uso del día completo queda cerrado, como contexto. | D-118 |
 
 ## Lo que muestra el registro
 
@@ -124,6 +125,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Tiempo con relevo activo
+
+- **Qué cambió:** se registró el pedido del panel 13.
+- **Cómo estaba antes:** terminaba en el panel 12.
+- **Por qué:** regla de registrar cada pedido del autor.
 
 ### 2026-10-07 — Panel 12
 

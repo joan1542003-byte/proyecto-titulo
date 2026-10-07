@@ -318,6 +318,7 @@ details.glossary dd { margin: 0; color: var(--graphite); }
 .flow-item svg.i { margin-top: 2px; color: var(--graphite); }
 .flow-item.relevo .txt { font-weight: 600; }
 .flow-item .times { color: var(--graphite); font-weight: 400; }
+details.context > summary { font-size: 15px; font-weight: 600; color: var(--graphite); cursor: pointer; padding: 6px 0 12px; }
 .two-step { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .two-step .inline-confirm { font-size: 14px; }
 .btn.small { height: 40px; padding: 0 18px; font-size: 15px; }
@@ -531,6 +532,15 @@ tu as (
   select participant_code, sum(seconds) filter (where package = '_total') as pantalla_hoy, sum(seconds) filter (where package <> '_total') as elegidas_hoy
   from public.relevo_daily_usage where day = (now() at time zone 'America/Santiago')::date group by participant_code
 ),
+ra as (
+  select s.participant_code,
+    sum((a->>'seconds')::int) filter (where (s.started_at at time zone 'America/Santiago')::date = (now() at time zone 'America/Santiago')::date) as relevo_hoy,
+    sum((a->>'seconds')::int) as relevo_total
+  from public.relevo_sessions s
+    cross join lateral jsonb_array_elements(case when jsonb_typeof(s.target_apps) = 'array' then s.target_apps else '[]'::jsonb end) a
+  where s.outcome is distinct from 'deleted' and a ? 'seconds'
+  group by s.participant_code
+),
 ct as (
   select participant_code,
     count(*) filter (where outcome is distinct from 'deleted') as relevos,
@@ -548,13 +558,13 @@ select json_build_object(
       'started_at', ls.started_at, 'condition', ls.study_condition, 'day', ls.study_day, 'route', ls.signal_route,
       'last_signal_at', ls.signal_at, 'last_outcome', ls.outcome, 'auto', au.detail, 'auto_state', st.auto_state,
       'permisos', st.permisos, 'equipo', st.equipo, 'apps', st.apps, 'state_at', st.state_at,
-      'pantalla_hoy', tu.pantalla_hoy, 'elegidas_hoy', tu.elegidas_hoy,
+      'pantalla_hoy', tu.pantalla_hoy, 'elegidas_hoy', tu.elegidas_hoy, 'relevo_hoy', ra.relevo_hoy, 'relevo_total', ra.relevo_total,
       'relevos', coalesce(ct.relevos, 0), 'respondidos', coalesce(ct.respondidos, 0), 'senales', coalesce(ct.senales, 0),
       'automaticos', coalesce(ct.automaticos, 0), 'eliminados', coalesce(ct.eliminados, 0)
     ) order by c.last_seen desc)
     from codes c left join nm using (participant_code) left join ver using (participant_code) left join le using (participant_code)
     left join ls using (participant_code) left join au using (participant_code) left join ct using (participant_code)
-    left join st using (participant_code) left join uu using (participant_code) left join tu using (participant_code)), '[]'::json),
+    left join st using (participant_code) left join uu using (participant_code) left join tu using (participant_code) left join ra using (participant_code)), '[]'::json),
   'totals', json_build_object(
     'relevos_hoy', (select count(*) from public.relevo_sessions where outcome is distinct from 'deleted' and started_at >= (date_trunc('day', now() at time zone 'America/Santiago') at time zone 'America/Santiago')),
     'senales', (select count(*) from public.relevo_sessions where signal_at is not null),
@@ -775,26 +785,18 @@ select json_build_object(
   /** Resumen de la persona: sus apps y el tiempo en ellas, sus relevos y lo que respondió. */
   function summaryBlock(p, d, st) {
     const sessions = (d.sessions || []).filter((x) => x.outcome !== 'deleted');
-    const apps = {};
-    sessions.forEach((x) => (Array.isArray(x.target_apps) ? x.target_apps : []).forEach((a) => {
-      if (!a || !a.package) return; const y = apps[a.package] || (apps[a.package] = { label: a.label || a.package, seconds: 0, measured: false });
-      if (a.seconds != null) { y.seconds += a.seconds; y.measured = true; }
-    }));
-    ((st && st.apps_elegidas) || []).forEach((a) => { if (a && a.paquete && !apps[a.paquete]) apps[a.paquete] = { label: a.nombre || a.paquete, seconds: 0, measured: false }; });
-    const today = isoDay(new Date()), weekStart = isoDay(new Date(Date.now() - 6 * 86400000));
-    let hoy = 0, semana = 0, hasDaily = false;
-    (d.usage || []).forEach((u) => { if (u.package === '_total') return; hasDaily = true; const k = String(u.day).slice(0, 10); if (k === today) hoy += u.seconds; if (k >= weekStart) semana += u.seconds; });
-    const inRelevos = Object.values(apps).reduce((t, a) => t + a.seconds, 0), anyMeasured = Object.values(apps).some((a) => a.measured);
+    // El tiempo en sus apps es solo con un relevo activo (panel 13).
+    const appTimes = relevoAppTime(sessions), anyMeasured = appTimes.some((x) => x.medidos);
+    const sum = (k) => appTimes.reduce((t, x) => t + x[k], 0);
     const signalled = sessions.filter((x) => x.signal_at);
     const tally = (key, names) => { const c = {}; signalled.forEach((x) => { if (x[key]) c[x[key]] = (c[x[key]] || 0) + 1; }); const parts = Object.keys(names).filter((k) => c[k]).map((k) => names[k] + ' ' + c[k]); return parts.length ? parts.join(' · ') : '—'; };
     const acts = {}; sessions.forEach((x) => { if (x.activity) acts[x.activity] = (acts[x.activity] || 0) + 1; });
     const top = Object.entries(acts).sort((a, b) => b[1] - a[1])[0];
     const routes = {}; sessions.forEach((x) => { const r = x.signal_route || 'phone'; routes[r] = (routes[r] || 0) + 1; });
     const topRoute = Object.entries(routes).sort((a, b) => b[1] - a[1])[0];
-    const appList = Object.values(apps).sort((a, b) => b.seconds - a.seconds);
     return factList([
-      ['Apps elegidas', appList.length ? appList.map((a) => a.label + (a.measured ? ' (' + duration(a.seconds) + ' en relevos)' : '')).join(', ') : '—'],
-      ['Tiempo en ellas', hasDaily ? 'Hoy ' + duration(hoy) + ' · últimos 7 días ' + duration(semana) : (anyMeasured ? 'En sus relevos ' + duration(inRelevos) : 'Todavía no llega')],
+      ['Apps elegidas', appTimes.length ? appTimes.map((x) => x.label + (x.medidos ? ' (' + duration(x.total) + ')' : '')).join(', ') : '—'],
+      ['Tiempo en ellas con relevo activo', anyMeasured ? 'Hoy ' + duration(sum('hoy')) + ' · últimos 7 días ' + duration(sum('semana')) + ' · en total ' + duration(sum('total')) : 'Todavía no hay relevos medidos (desde la app 2.28)'],
       ['Relevos', (() => { const r = signalled.filter((x) => ['started', 'later', 'changed'].includes(x.outcome)).length; return sessions.length + (sessions.length === 1 ? ' preparado · ' : ' preparados · ') + signalled.length + (signalled.length === 1 ? ' sonó · ' : ' sonaron · ') + r + (r === 1 ? ' respondido' : ' respondidos'); })()],
       ['Qué decidió', tally('outcome', { started: 'Comenzó', later: 'Después', changed: 'Cambió de idea', not_answered: 'Saltó las preguntas' })],
       ['Supo qué quería hacer', tally('knew_intention', { yes: 'Sí', partly: 'A medias', no: 'No' })],
@@ -1040,7 +1042,8 @@ select json_build_object(
     const P = all.filter(test).filter((p) => !q || plainText((p.name || '') + ' ' + p.code).includes(q));
     section('l-participants', P.map((p) => {
       const cond = p.condition ? 'Semana ' + p.condition + ' · ' + (CONDITIONS[p.condition] || '').toLowerCase() : 'Fuera de la prueba';
-      const today = p.pantalla_hoy != null ? 'hoy ' + duration(p.pantalla_hoy) + ' de pantalla, ' + duration(p.elegidas_hoy || 0) + ' en sus apps' : null;
+      // Solo el tiempo con un relevo activo (panel 13): desde que lo activó hasta que sonó o lo desactivó.
+      const today = p.relevo_total != null ? 'hoy ' + duration(p.relevo_hoy || 0) + ' en sus apps con relevo' : null;
       const sub = [p.code, cond, p.respondidos + ' de ' + p.senales + ' señales respondidas', today, ago(p.last_seen)].filter(Boolean).join(' · ');
       const end = [stateChip(stateOf(p), false)];
       if (p.condition && p.day != null) {
@@ -1351,30 +1354,36 @@ select json_build_object(
   const loading = (text) => el('div', { class: 'section' }, [el('div', { class: 'empty', text })]);
 
   /**
-   * Tiempo en cada app elegida: hoy, últimos 7 días y desde el primer día (uso diario, cada 30 min), y
-   * dentro de sus relevos (desde la app 2.28, al sonar o al desactivarlo).
+   * Tiempo en cada app elegida con un relevo activo (panel 13): desde que lo activó hasta que sonó o lo
+   * desactivó. Lo guarda la app desde la 2.28, en cada relevo; el que está contando se suma cuando suena o
+   * se desactiva. El uso del resto del día no cuenta aquí.
    */
-  function appTimeBlock(sessions, usage) {
+  function relevoAppTime(sessions) {
     const apps = {};
-    const entry = (pkg, label) => apps[pkg] || (apps[pkg] = { label: label || pkg, hoy: 0, semana: 0, total: 0, opens: 0, relevos: 0, enRelevos: 0, medidos: 0, diario: false });
-    sessions.filter((s) => s.outcome !== 'deleted').forEach((s) => (Array.isArray(s.target_apps) ? s.target_apps : []).forEach((a) => {
-      if (!a || !a.package) return; const x = entry(a.package, a.label); x.relevos++;
-      if (a.seconds != null) { x.enRelevos += a.seconds; x.medidos++; }
-    }));
     const today = isoDay(new Date()), weekStart = isoDay(new Date(Date.now() - 6 * 86400000));
-    usage.filter((u) => u.package !== '_total').forEach((u) => {
-      const k = String(u.day).slice(0, 10), x = entry(u.package, u.label); x.diario = true;
-      x.total += u.seconds; x.opens += u.opens; if (k === today) x.hoy += u.seconds; if (k >= weekStart) x.semana += u.seconds;
+    sessions.filter((x) => x.outcome !== 'deleted').forEach((x) => {
+      const day = x.started_at ? isoDay(new Date(x.started_at)) : '';
+      (Array.isArray(x.target_apps) ? x.target_apps : []).forEach((a) => {
+        if (!a || !a.package) return;
+        const y = apps[a.package] || (apps[a.package] = { label: a.label || a.package, hoy: 0, semana: 0, total: 0, relevos: 0, medidos: 0 });
+        y.relevos++;
+        if (a.seconds == null) return;
+        y.medidos++; y.total += a.seconds; if (day === today) y.hoy += a.seconds; if (day >= weekStart) y.semana += a.seconds;
+      });
     });
-    const list = Object.values(apps).sort((a, b) => (b.total + b.enRelevos) - (a.total + a.enRelevos));
-    if (!list.length) return el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Todavía no hay tiempo registrado en sus apps elegidas. El uso del día llega cada 30 minutos; el de cada relevo, desde la app 2.28, cuando suena o se desactiva.' })]);
-    const cell = (x, v) => x.diario ? duration(v) : '—';
+    return Object.values(apps).sort((x, y) => y.total - x.total);
+  }
+  function appTimeBlock(sessions) {
+    const list = relevoAppTime(sessions);
+    if (!list.length) return el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Todavía no tiene relevos con apps elegidas.' })]);
+    const measured = list.some((x) => x.medidos);
+    const t = (x, v) => x.medidos ? duration(v) : '—';
     const table = el('table', { class: 'days apps' }, [
-      el('thead', null, [el('tr', null, [el('th', { text: 'App' }), el('th', { class: 'num', text: 'Hoy' }), el('th', { class: 'num', text: '7 días' }), el('th', { class: 'num', text: 'Total' }), el('th', { class: 'num', text: 'Abrió' }), el('th', { class: 'num', text: 'En relevos' })])]),
-      el('tbody', null, list.map((x) => el('tr', null, [el('td', { text: x.label }), el('td', { class: 'num', text: cell(x, x.hoy) }), el('td', { class: 'num', text: cell(x, x.semana) }), el('td', { class: 'num', text: cell(x, x.total) }), el('td', { class: 'num', text: x.diario ? String(x.opens) : '—' }),
-        el('td', { class: 'num', text: x.medidos ? duration(x.enRelevos) : (x.relevos ? 'sin medir' : '—'), title: x.medidos ? 'En ' + x.medidos + (x.medidos === 1 ? ' relevo' : ' relevos') : '' })]))),
+      el('thead', null, [el('tr', null, [el('th', { text: 'App' }), el('th', { class: 'num', text: 'Hoy' }), el('th', { class: 'num', text: '7 días' }), el('th', { class: 'num', text: 'Total' }), el('th', { class: 'num', text: 'Relevos' }), el('th', { class: 'num', text: 'Por relevo' })])]),
+      el('tbody', null, list.map((x) => el('tr', null, [el('td', { text: x.label }), el('td', { class: 'num', text: t(x, x.hoy) }), el('td', { class: 'num', text: t(x, x.semana) }), el('td', { class: 'num', text: t(x, x.total) }),
+        el('td', { class: 'num', text: String(x.relevos) }), el('td', { class: 'num', text: x.medidos ? duration(Math.round(x.total / x.medidos)) : 'sin medir' })]))),
     ]);
-    return el('div', { class: 'panel' }, [el('div', { class: 'scroll' }, [table]), el('p', { class: 'note', text: '«Total» suma desde el primer día con datos, hasta 35 días. «Abrió» cuenta las veces que abrió la app. «En relevos» es el tiempo que pasó en cada app entre que activó un relevo y que sonó o lo desactivó.' })]);
+    return el('div', { class: 'panel' }, [el('div', { class: 'scroll' }, [table]), el('p', { class: 'note', text: 'Solo cuenta el tiempo con un relevo activo: desde que lo activó hasta que sonó o lo desactivó. El relevo que está contando se suma cuando suena o se desactiva. Lo registra la app desde la 2.28; en relevos anteriores dice «sin medir».' + (measured ? '' : ' Todavía no hay relevos medidos.') })]);
   }
 
   function usageBlock(usage, st) {
@@ -1480,14 +1489,14 @@ select json_build_object(
     const nodes = [];
     const deleteSlot = el('div', { id: 'sec-borrar' }, [loading('Cargando lo que hay guardado…')]);
     const jump = (label, id, danger) => el('button', { class: 'jump' + (danger ? ' danger' : ''), type: 'button', onclick: () => { const t = document.getElementById(id); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }, [label]);
-    nodes.push(el('nav', { class: 'jumps', 'aria-label': 'Ir a' }, [jump('Resumen', 'sec-resumen'), jump('Apps', 'sec-apps'), jump('Relevos', 'sec-relevos'), jump('Flujo de uso', 'sec-flujo'), jump('Respuestas', 'sec-respuestas'), jump('Uso', 'sec-uso'), jump('Teléfono', 'sec-telefono'), jump('Borrar datos', 'sec-borrar', true)]));
+    nodes.push(el('nav', { class: 'jumps', 'aria-label': 'Ir a' }, [jump('Resumen', 'sec-resumen'), jump('Apps', 'sec-apps'), jump('Relevos', 'sec-relevos'), jump('Flujo de uso', 'sec-flujo'), jump('Respuestas', 'sec-respuestas'), jump('Teléfono', 'sec-telefono'), jump('Borrar datos', 'sec-borrar', true)]));
     if (notice) nodes.push(el('div', { class: 'toast' }, [icon('check'), notice]));
     if (issues.length) nodes.push(el('div', { class: 'notice' }, [el('span', { class: 'ring' }, [icon('info')]), el('div', null, [el('strong', { text: 'Para revisar' }), el('p', { text: issues.map((i) => i.text).join(' · ') })])]));
     const anchored = (id, node) => { node.id = id; node.style.scrollMarginTop = '52px'; return node; };
     // El resumen va primero: sus apps, el tiempo en ellas y lo que respondió; el estado, después (panel 12).
-    nodes.push(anchored('sec-resumen', block('Resumen', summarySlot)), el('div', { class: 'actions' }, [write, dl, removeTop]), dlNote, anchored('sec-apps', block('Tiempo en cada app elegida', appsSlot)),
+    nodes.push(anchored('sec-resumen', block('Resumen', summarySlot)), el('div', { class: 'actions' }, [write, dl, removeTop]), dlNote, anchored('sec-apps', block('Tiempo en sus apps con relevo activo', appsSlot)),
       anchored('sec-relevos', block('Sus relevos y lo que respondió', sessionsBox)), anchored('sec-flujo', block('Flujo de uso', flowSlot)), anchored('sec-respuestas', block('Otras respuestas', answersBox)),
-      block('Estado', facts), anchored('sec-uso', block('Uso del teléfono', usageSlot)), reminderSlot, anchored('sec-telefono', block('Su teléfono y ajustes', phoneSlot)), profileSlot, missingSlot, deleteSlot);
+      block('Estado', facts), anchored('sec-uso', el('details', { class: 'context' }, [el('summary', { text: 'Uso del teléfono en todo el día, con y sin relevo' }), usageSlot])), reminderSlot, anchored('sec-telefono', block('Su teléfono y ajustes', phoneSlot)), profileSlot, missingSlot, deleteSlot);
     openSheet(p.name || p.code, el('span', { class: 'avatar', text: initials(p) }), nodes);
     try {
       const code = sqlText(p.code);
@@ -1518,7 +1527,7 @@ select json_build_object(
       if ($('sheet').hidden || $('sheet-title').textContent !== (p.name || p.code)) return;
       const meta = d.state || {}, st = meta.state || null;
       usageSlot.replaceChildren(usageBlock(d.usage || [], st));
-      appsSlot.replaceChildren(appTimeBlock(d.sessions || [], d.usage || []));
+      appsSlot.replaceChildren(appTimeBlock(d.sessions || []));
       summarySlot.replaceChildren(summaryBlock(p, d, st));
       flowSlot.replaceChildren(flowBlock(d.flow || []));
       phoneSlot.replaceChildren(phoneBlock(st, meta));
