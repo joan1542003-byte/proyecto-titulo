@@ -143,7 +143,7 @@ class SignalPlayer(private val context: Context) {
       } else {
         runBlocking { withTimeoutOrNull(TAG_CONNECT_MILLIS) { TagLink.connect(context, address) } } == true
       }
-    if (!ready || !runBlocking { TagLink.setAlert(TagProtocol.ALERT_HIGH) }) {
+    if (!ready || !runBlocking { TagLink.alertOn(context) }) {
       vibrateOnce()
       return false
     }
@@ -170,7 +170,7 @@ class SignalPlayer(private val context: Context) {
         }
         for ((index, pulse) in TagProtocol.pulses(pattern == Pattern.TEST).withIndex()) {
           // El primer pitido ya se encendió al empezar.
-          if (index > 0 && !runBlocking { TagLink.setAlert(TagProtocol.ALERT_HIGH) }) { ending = Ending.ROUTE_LOST; break }
+          if (index > 0 && !runBlocking { TagLink.alertOn(context) }) { ending = Ending.ROUTE_LOST; break }
           waitOrEnd(pulse.onMillis)?.let { ending = it }
           runBlocking { TagLink.setAlert(TagProtocol.ALERT_OFF) }
           if (ending != Ending.COMPLETED) break

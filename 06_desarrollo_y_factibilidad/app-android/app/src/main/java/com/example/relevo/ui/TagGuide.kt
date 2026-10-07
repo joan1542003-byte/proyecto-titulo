@@ -70,7 +70,7 @@ private val guideSteps = listOf(
   GuideStep("Para callarlo, un toque", "Cuando suene, toca el botón una vez. No lo mantengas apretado: así se apaga.", TagGesture.TAP, "Un toque"),
   GuideStep("Para apagarlo", "Mantén apretado el botón 3 segundos, hasta que dé un pitido largo. Durante la prueba, mejor déjalo encendido.", TagGesture.HOLD_OFF, "3 segundos · pitido largo"),
   GuideStep("La pila dura meses", "Usa una pila de botón CR2032. Para cambiarla, abre la tapa por la ranura del borde con una uña o una moneda.", TagGesture.BATTERY, "Pila CR2032"),
-  GuideStep("Si no aparece", "El Tag se conecta a un solo teléfono a la vez. Cierra apps como iSearching y, si lo usaste con otro teléfono, apaga su Bluetooth.", TagGesture.ONE_PHONE, "Un teléfono a la vez"),
+  GuideStep("Si no aparece o no pita", "El Tag se conecta a un solo teléfono a la vez: cierra apps como iSearching y, si lo usaste con otro teléfono, apaga su Bluetooth. Si se conecta pero no pita, apágalo y vuelve a encenderlo.", TagGesture.ONE_PHONE, "Un teléfono a la vez"),
 )
 
 /**

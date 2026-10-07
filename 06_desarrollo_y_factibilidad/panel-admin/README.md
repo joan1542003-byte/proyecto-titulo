@@ -88,6 +88,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-10-07 — Eventos del Tag
+
+- **Qué cambió:** el panel nombra «Tag» al llavero, suma los eventos `llavero_escuchado` y `llavero_perfil` de la 2.26 y marca la 2.26 como la versión del testeo.
+- **Cómo estaba antes:** decía «llavero» y esperaba la 2.25.
+- **Por qué:** D-115.
+
 ### 2026-10-07 — Datos sin persona en Resultados
 
 - **Qué cambió:** Personas muestra todo código con datos en cualquier tabla y Resultados se recalcula después de borrar.

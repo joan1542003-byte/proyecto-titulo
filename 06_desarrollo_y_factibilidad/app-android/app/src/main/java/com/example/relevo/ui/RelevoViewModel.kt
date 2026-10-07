@@ -36,6 +36,7 @@ import com.example.relevo.domain.RouteTrack
 import com.example.relevo.domain.SignalRoute
 import com.example.relevo.domain.StudyCondition
 import com.example.relevo.domain.StudyPlan
+import com.example.relevo.domain.TagProtocol
 import com.example.relevo.monitor.AppUsageMonitorService
 import com.example.relevo.monitor.BackgroundAccess
 import com.example.relevo.monitor.InstalledApp
@@ -122,7 +123,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Llavero (D-109): el vinculado, la búsqueda y la última prueba. */
   private val tagStore = TagStore(application)
-  private val _tag = MutableStateFlow(TagUi(linkedName = tagStore.name.takeIf { tagStore.linked }))
+  private val _tag = MutableStateFlow(TagUi(linkedName = tagStore.name.takeIf { tagStore.linked }, heard = tagStore.heard))
   val tag: StateFlow<TagUi> = _tag.asStateFlow()
   val tagStatus: StateFlow<TagLink.Status> = TagLink.status
 
@@ -652,37 +653,78 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     tagStore.save(found.address, found.name)
     // Sin el nombre del aparato: solo este teléfono sabe cuál es el llavero.
     log("llavero_vinculado")
-    _tag.value = _tag.value.copy(linkedName = tagStore.name, found = emptyList(), searched = false, test = TagTest.IDLE)
+    _tag.value = _tag.value.copy(linkedName = tagStore.name, found = emptyList(), searched = false, test = TagTest.IDLE, heard = false)
     testTag()
   }
 
-  /** Prueba el llavero: se conecta si hace falta y pita 2 s. No bloquea la pantalla. */
-  fun testTag() {
+  /**
+   * Prueba el Tag: se conecta si hace falta, le pide pitar 2 s y pregunta si se escuchó. Que el Tag
+   * acepte la orden no prueba que haya pitado (2.26): solo la persona lo sabe. No bloquea la pantalla.
+   */
+  fun testTag() = runTagTest(TagProtocol.tryIndex(tagStore.alertLevel, tagStore.keepLinkLossAlarm), retry = false)
+
+  /**
+   * La persona dice si escuchó el pitido. Si no, se prueba la forma siguiente de hacerlo pitar; si ya no
+   * quedan, se vuelve a la primera y se explica qué hacer.
+   */
+  fun tagHeard(heard: Boolean) {
+    val current = _tag.value
+    if (current.test != TagTest.ASKING) return
+    log("llavero_escuchado", "${if (heard) "si" else "no"};intento=${current.attempt + 1}")
+    tagStore.heard = heard
+    if (heard) {
+      _tag.value = current.copy(test = TagTest.SOUNDED, heard = true, silent = false)
+      return
+    }
+    val next = TagProtocol.nextTry(current.attempt, current.switchOff)
+    if (next != null) {
+      _tag.value = current.copy(heard = false)
+      runTagTest(next, retry = true)
+      return
+    }
+    val first = TagProtocol.ALERT_TRIES.first()
+    tagStore.alertLevel = first.level
+    tagStore.keepLinkLossAlarm = first.keepLinkLossAlarm
+    _tag.value = current.copy(test = TagTest.FAILED, problem = null, heard = false, silent = true, attempt = 0)
+  }
+
+  private fun runTagTest(attempt: Int, retry: Boolean) {
     val address = tagStore.address ?: return
     if (_tag.value.test == TagTest.WORKING) return
-    _tag.value = _tag.value.copy(test = TagTest.WORKING, problem = null)
+    val form = TagProtocol.ALERT_TRIES[attempt]
+    tagStore.alertLevel = form.level
+    tagStore.keepLinkLossAlarm = form.keepLinkLossAlarm
+    _tag.value = _tag.value.copy(test = TagTest.WORKING, problem = null, attempt = attempt, retry = retry, silent = false)
     viewModelScope.launch(Dispatchers.IO) {
-      val sounded = TagLink.connect(getApplication(), address) && TagLink.beep(TAG_TEST_MILLIS)
+      val app = getApplication<Application>()
+      val connected = TagLink.connect(app, address)
+      // Si la conexión ya estaba abierta, la forma nueva se aplica sobre ella.
+      if (connected) TagLink.applySettings(app)
+      val sent = connected && TagLink.beep(app, TAG_TEST_MILLIS)
       val status = TagLink.status.value
       // Un aparato que no sabe pitar no queda elegido: se vuelve a buscar, con el motivo a la vista.
-      if (!sounded && status.problem == TagLink.Problem.NOT_A_TAG) {
+      if (!sent && status.problem == TagLink.Problem.NOT_A_TAG) {
         tagStore.clear()
         _tag.value = TagUi(problem = TagLink.Problem.NOT_A_TAG)
-        log("prueba_de_sonido", "salida=tag;sono=no;no_es_llavero")
+        log("prueba_de_sonido", "salida=tag;orden=no;no_es_llavero")
         TagLink.idle()
         return@launch
       }
       _tag.value = _tag.value.copy(
-        test = if (sounded) TagTest.SOUNDED else TagTest.FAILED,
-        problem = if (sounded) null else status.problem,
+        test = if (sent) TagTest.ASKING else TagTest.FAILED,
+        problem = if (sent) null else status.problem,
         button = status.button,
         linkLossOff = status.linkLossOff,
+        switchOff = status.switchOff,
       )
       log(
         "prueba_de_sonido",
-        "salida=tag;sono=${if (sounded) "si" else "no"};boton=${if (status.button) "si" else "no"};" +
+        "salida=tag;orden=${if (sent) "si" else "no"};intento=${attempt + 1};nivel=${form.level};" +
+          "ffe2=${if (status.switchOff) "apagado" else "encendido"};boton=${if (status.button) "si" else "no"};" +
           "alarma_desconexion=${if (status.linkLossOff) "apagada" else "sin_apagar"}",
       )
+      // Cómo es este modelo por dentro, una vez por prueba: servicios y propiedades, sin su dirección.
+      if (connected && !retry) TagLink.profile?.let { log("llavero_perfil", it.take(600)) }
       // Si ningún relevo usa el llavero, se desconecta para no gastar su pila.
       TagLink.idle()
     }
@@ -1102,13 +1144,14 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 }
 
 /** Estado de la prueba del llavero en la pantalla de preparar. */
-enum class TagTest { IDLE, WORKING, SOUNDED, FAILED }
+enum class TagTest { IDLE, WORKING, ASKING, SOUNDED, FAILED }
 
 /**
  * Lo que la pantalla de preparar muestra del llavero (D-109). [searched]: terminó una búsqueda, para
  * decir si no apareció ninguno; [searchedAll]: fue la búsqueda de respaldo, con todos los aparatos.
  * [button] y [linkLossOff], de la última prueba: si su botón avisa y si se pudo apagar su alarma por
- * desconexión.
+ * desconexión. [attempt]: la forma de hacerlo pitar que se está probando; [retry]: no es la primera.
+ * [heard]: la persona confirmó que lo escuchó; [silent]: ninguna forma funcionó.
  */
 data class TagUi(
   val linkedName: String? = null,
@@ -1120,6 +1163,11 @@ data class TagUi(
   val test: TagTest = TagTest.IDLE,
   val button: Boolean = false,
   val linkLossOff: Boolean = true,
+  val switchOff: Boolean = false,
+  val attempt: Int = 0,
+  val retry: Boolean = false,
+  val heard: Boolean = false,
+  val silent: Boolean = false,
 )
 
 /** Qué notas de la guía siguen visibles: se ocultan después del primer relevo. */

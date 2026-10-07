@@ -1322,7 +1322,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** el borrado solo alcanza a Supabase; si la persona sigue usando la app, lo nuevo vuelve a llegar, y la copia en su teléfono no se toca. Los nombres internos (`TAG`, `llavero_*`) no cambian.
 - **Documentación:** [Android 2.25](../06_desarrollo_y_factibilidad/app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
 
+## D-115 — El Tag pita: no apagar FFE2 a ciegas y confirmar con la persona
+
+- **Fecha:** 2026-10-07.
+- **Estado:** implementado en Android 2.26; compilado y con pruebas unitarias. Falta probarlo con el Tag real.
+- **Decisión:** Relevo apaga el interruptor FFE2 del Tag solo si el propio Tag lo nombra como alarma de desconexión; si no, lo deja encendido. «Probar el Tag» pregunta si se escuchó y, si no, prueba otras formas (nivel alto, nivel medio, FFE2 encendido) y guarda la que la persona confirma. Se registra cómo es el Tag por dentro, sin su dirección.
+- **Fundamento:** en el teléfono del autor, la 2.25 se conectaba y el Tag aceptaba la orden, pero no pitaba; con iSearching sí pita. En algunos iTag, un interruptor de ese tipo en 0 deja la luz y quita el pitido. Que el Tag acepte la orden no prueba que haya sonado: solo la persona lo sabe.
+- **Límites:** la causa es probable, no confirmada. Si el Tag mantiene su alarma de alejamiento, puede pitar solo cuando el teléfono se aleja mucho mientras un relevo espera.
+- **Documentación:** [Android 2.26](../06_desarrollo_y_factibilidad/app-android/version-2.26-el-tag-pita-2026-10-07.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — D-115
+
+- **Qué cambió:** se registró D-115.
+- **Cómo estaba antes:** la última decisión era D-114.
+- **Por qué:** el Tag no pitaba con la 2.25.
 
 ### 2026-10-07 — D-114
 

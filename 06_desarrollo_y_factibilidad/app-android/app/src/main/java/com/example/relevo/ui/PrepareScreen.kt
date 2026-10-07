@@ -159,6 +159,7 @@ internal class PrepareActions(
   val onTagSearchAll: () -> Unit = {},
   val onTagLink: (TagLink.Found) -> Unit = {},
   val onTagTest: () -> Unit = {},
+  val onTagHeard: (Boolean) -> Unit = {},
   val onTagForget: () -> Unit = {},
   /** El Bluetooth se encendió después del aviso: retoma la búsqueda o borra el aviso. */
   val onBluetoothOn: () -> Unit = {},
@@ -634,25 +635,41 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     return
   }
   RelevoButton(
-    if (tag.test == TagTest.WORKING) "Probando…" else "Probar el Tag", { withPermission(actions.onTagTest) },
-    kind = ButtonKind.Secondary, icon = KitIcon.PROBAR, enabled = tag.test != TagTest.WORKING,
+    when {
+      tag.test == TagTest.WORKING && tag.retry -> "Probando de otra forma…"
+      tag.test == TagTest.WORKING -> "Probando…"
+      else -> "Probar el Tag"
+    },
+    { withPermission(actions.onTagTest) },
+    kind = ButtonKind.Secondary, icon = KitIcon.PROBAR, enabled = tag.test != TagTest.WORKING && tag.test != TagTest.ASKING,
   )
   Spacer(Modifier.height(12.dp))
+  if (!tag.heard && tag.test == TagTest.IDLE) {
+    Text(
+      "Pruébalo y cuéntanos si lo escuchas pitar: así Relevo sabe cómo hacerlo sonar.",
+      style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
+    )
+    Spacer(Modifier.height(8.dp))
+  }
   // Con el Bluetooth apagado basta el aviso de arriba.
   AnimatedVisibility(
-    tag.test == TagTest.SOUNDED || (tag.test == TagTest.FAILED && tag.problem != TagLink.Problem.BLUETOOTH_OFF),
+    tag.test == TagTest.ASKING || tag.test == TagTest.SOUNDED || (tag.test == TagTest.FAILED && tag.problem != TagLink.Problem.BLUETOOTH_OFF),
     enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut(),
   ) {
-    if (tag.test == TagTest.SOUNDED) {
-      Column(verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
+    when {
+      tag.test == TagTest.ASKING -> TagHeardQuestion(tag.retry, actions.onTagHeard)
+      tag.test == TagTest.SOUNDED -> Column(verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
         Text("Así va a sonar: cuando se cumpla el tiempo, pitará seis veces en 30 segundos.", style = Relevo.type.body, color = Relevo.colors.ink)
         if (tag.button) Text("Para callarlo, toca su botón una vez. Si lo mantienes apretado, se apaga.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         if (!tag.linkLossOff) {
-          Text("Este Tag no dejó apagar su alarma de desconexión: puede pitar un momento cuando Relevo termine.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+          Text("Este Tag mantiene su alarma de alejamiento: si el teléfono se aleja mucho mientras espera, puede pitar solo. Para callarlo, tócalo una vez.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         }
       }
-    } else {
-      Notice(tagProblem(tag.problem), title = "No sonó en el Tag", tone = Tone.Error)
+      tag.silent -> Notice(
+        "Recibió la orden, pero no pitó. Apágalo y vuelve a encenderlo: mantén su botón apretado 3 segundos hasta que pite largo, y otra vez hasta que pite dos veces. Después pruébalo de nuevo. Si sigue sin pitar, elige otra salida.",
+        title = "El Tag no pitó", tone = Tone.Error,
+      )
+      else -> Notice(tagProblem(tag.problem), title = "No sonó en el Tag", tone = Tone.Error)
     }
   }
   Spacer(Modifier.height(8.dp))
@@ -664,6 +681,25 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     "Déjalo encendido donde empiezas. Relevo se conecta a él al activar el relevo y lo mantiene así hasta que suene.",
     style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
   )
+}
+
+/**
+ * Después de pedirle al Tag que pite: solo la persona sabe si sonó (2.26). Las dos respuestas pesan lo
+ * mismo; «No pitó» prueba otra forma.
+ */
+@Composable
+private fun TagHeardQuestion(retry: Boolean, onAnswer: (Boolean) -> Unit) {
+  Column(verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
+    Text("¿Lo escuchaste pitar?", style = Relevo.type.headline, color = Relevo.colors.ink)
+    Text(
+      if (retry) "Lo probamos de otra forma. Debió pitar 2 segundos." else "Debió pitar 2 segundos.",
+      style = Relevo.type.footnote, color = Relevo.colors.graphite,
+    )
+    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+      RelevoButton("Sí, pitó", { onAnswer(true) }, modifier = Modifier.weight(1f), kind = ButtonKind.Secondary)
+      RelevoButton("No pitó", { onAnswer(false) }, modifier = Modifier.weight(1f), kind = ButtonKind.Secondary)
+    }
+  }
 }
 
 /** Opción de salida en una tarjeta redondeada: la elegida lleva un anillo de tinta. */

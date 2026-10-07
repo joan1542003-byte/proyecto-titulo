@@ -9,6 +9,7 @@
 | Trabajo | Resultado | Decisión |
 | --- | --- | --- |
 | Llavero comprado | El autor probó su llavero con iSearching y funciona. Puede usarlo en Android si el iPhone se desconecta: el llavero acepta una conexión a la vez. | D-109 |
+| Android 2.26 | El Tag se conectaba pero no pitaba: Relevo ya no apaga a ciegas su interruptor FFE2 y la prueba pregunta si se escuchó ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.26-el-tag-pita-2026-10-07.md)). | D-115 |
 | Android 2.25 y panel 10 | «Tag» en pantalla y guía de ocho pasos con un Tag redondo animado; el panel permite borrar datos y suma barra lateral, búsqueda y filtros ([app](../06_desarrollo_y_factibilidad/app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md); [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-114 |
 | Android 2.24 | Hoja «Cómo usar el llavero» y aviso para callarlo con un toque sin apagarlo ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.24-tutorial-del-llavero-2026-10-07.md)). | D-109 |
 | Android 2.23 | Degradados de tres colores, cuatro actividades nuevas (videojuegos, música, películas, llamar a alguien) y opciones de un toque para el primer paso y el lugar ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md)). | D-113 |
@@ -21,6 +22,8 @@
 - **Borrado probado sin borrar:** las consultas de borrado se validaron con `explain` en la base real, sin ejecutarlas, y se probaron completas con datos de ejemplo. No se borró ninguna fila real.
 - **Un error antiguo del panel:** en el teléfono, las pestañas quedaban arriba y no abajo, porque el desenfoque de la barra superior las contenía. Se corrigió quitando el desenfoque en el teléfono.
 
+- **El registro como diagnóstico:** los eventos de la prueba del autor mostraron que la conexión, el botón y la orden funcionaban; eso descartó problemas de permisos o de conexión y apuntó al interruptor FFE2. La 2.26 no se ha probado con el Tag real.
+
 ## 3. Qué se comprobó y qué no
 
 - **Comprobado:** compilación desde cero, 83 pruebas y recorrido en el emulador de los intereses a Inicio, con las opciones de un toque.
@@ -32,6 +35,12 @@
 - Revisar el consentimiento v13 con el profesor.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Android 2.26
+
+- **Qué cambió:** la bitácora suma la 2.26.
+- **Cómo estaba antes:** terminaba en la 2.25 y el panel 10.
+- **Por qué:** el Tag no pitaba.
 
 ### 2026-10-07 — Android 2.25 y panel 10
 

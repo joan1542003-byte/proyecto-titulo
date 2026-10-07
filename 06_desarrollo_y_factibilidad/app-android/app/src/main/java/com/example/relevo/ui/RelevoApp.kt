@@ -401,6 +401,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     onTagSearchAll = viewModel::searchAllDevices,
                     onTagLink = viewModel::linkTag,
                     onTagTest = viewModel::testTag,
+                    onTagHeard = viewModel::tagHeard,
                     onTagForget = viewModel::forgetTag,
                     onBluetoothOn = viewModel::bluetoothTurnedOn,
                   ),

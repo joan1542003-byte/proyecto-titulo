@@ -32,8 +32,40 @@ object TagProtocol {
   /** Descriptor estándar para pedir avisos de una característica (0x2902). */
   val CLIENT_CONFIG: UUID = uuid16(0x2902)
 
+  /** Descriptor estándar con el nombre que el fabricante le dio a una característica (0x2901). */
+  val USER_DESCRIPTION: UUID = uuid16(0x2901)
+
   const val ALERT_OFF: Byte = 0x00
   const val ALERT_HIGH: Byte = 0x02
+
+  /** Una forma de pedirle al Tag que pite: su nivel de alerta y si se deja su interruptor FFE2 como viene. */
+  data class AlertTry(val level: Int, val keepLinkLossAlarm: Boolean)
+
+  /**
+   * Las formas que la prueba recorre, en orden, hasta que la persona escucha el pitido (2.26): la de
+   * iTag One (nivel alto), el nivel medio y, por último, sin apagar el interruptor FFE2. En algunos
+   * modelos ese interruptor no es solo la alarma de desconexión: en 0, el Tag recibe la orden pero no
+   * pita, y lo recuerda hasta que se apaga.
+   */
+  val ALERT_TRIES = listOf(AlertTry(2, false), AlertTry(1, false), AlertTry(2, true))
+
+  /**
+   * La forma que sigue después de [current]. La última solo cambia algo si el interruptor FFE2 se
+   * apagó ([switchTurnedOff]); si no, se salta.
+   */
+  fun nextTry(current: Int, switchTurnedOff: Boolean): Int? =
+    (current + 1 until ALERT_TRIES.size).firstOrNull { switchTurnedOff || !ALERT_TRIES[it].keepLinkLossAlarm }
+
+  /** El índice de la forma guardada, o 0 si no coincide con ninguna. */
+  fun tryIndex(level: Int, keepLinkLossAlarm: Boolean): Int =
+    ALERT_TRIES.indexOf(AlertTry(level, keepLinkLossAlarm)).coerceAtLeast(0)
+
+  /**
+   * FFE2 se apaga solo si el propio Tag lo nombra como su alarma de desconexión, como el «Set LinkLost
+   * Alert» que documentó Shing Lyu. Sin ese nombre se deja encendido: no se sabe qué silencia.
+   */
+  fun isLinkLossSwitch(label: String?): Boolean =
+    label != null && (label.contains("link", ignoreCase = true) || label.contains("lost", ignoreCase = true))
 
   /** Un pitido de [onMillis] seguido de [offMillis] en silencio. */
   data class Pulse(val onMillis: Long, val offMillis: Long)

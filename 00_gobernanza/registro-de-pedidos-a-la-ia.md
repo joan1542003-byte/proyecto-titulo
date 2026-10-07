@@ -110,6 +110,7 @@
 | 7 oct. | Encargo | Un tutorial en la app para encender y apagar el llavero (modelo NEWOTAG-BL). | [Android 2.24](../06_desarrollo_y_factibilidad/app-android/version-2.24-tutorial-del-llavero-2026-10-07.md): hoja «Cómo usar el llavero» (encender, callar, apagar, saber si está encendido, pila y si no aparece), desde preparar y Perfil › Ayuda, y aviso para callarlo sin apagarlo. | D-109 |
 | 7 oct. | Corrección y encargo | La guía del llavero debe ser más intuitiva y paso a paso y aparecer la primera vez que se elige; llamarlo «Tag»; es totalmente circular. En el panel, poder eliminar usuarios o datos específicos de uno y mejorar la visualidad y la navegación. | [Android 2.25](../06_desarrollo_y_factibilidad/app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md): «Tag» en pantalla y guía de ocho pasos con un Tag redondo animado, que se abre sola la primera vez. [Panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) versión 10: borrar un relevo, grupos de datos o a la persona completa, con confirmación; barra lateral, insignias, búsqueda, filtros y saltos en la ficha. | D-114 |
 | 7 oct. | Corrección | En Resultados siguen apareciendo datos de personas que ya se eliminaron. | La causa eran cuatro relevos antiguos (22 y 23 de septiembre) de códigos sin eventos, que contaban en Resultados pero no aparecían en Personas. El [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) ahora muestra en Personas todo código con datos, para poder borrarlo, y recalcula Resultados después de borrar. No se borró ninguna fila. | D-114 |
+| 7 oct. | Corrección | iSearching en el iPhone encuentra el Tag y funciona; en Android, Relevo dice encontrarlo y conectarse, pero no suena y el teléfono vibra. | El registro mostró que la conexión y la orden funcionaban, pero el Tag no pitaba. [Android 2.26](../06_desarrollo_y_factibilidad/app-android/version-2.26-el-tag-pita-2026-10-07.md): Relevo ya no apaga a ciegas el interruptor FFE2 (en algunos modelos silencia el pitido), la prueba pregunta si se escuchó y prueba otras formas, y se registra cómo es el Tag por dentro. Falta probarlo con el Tag real. | D-115 |
 
 ## Lo que muestra el registro
 
@@ -120,6 +121,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — El Tag no pitaba
+
+- **Qué cambió:** se registró el pedido de la 2.26.
+- **Cómo estaba antes:** terminaba en la corrección de Resultados.
+- **Por qué:** regla de registrar cada pedido del autor.
 
 ### 2026-10-07 — Datos sin persona
 

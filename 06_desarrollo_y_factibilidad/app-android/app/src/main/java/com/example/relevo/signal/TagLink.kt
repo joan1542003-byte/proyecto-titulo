@@ -19,6 +19,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.content.ContextCompat
+import com.example.relevo.data.TagStore
 import com.example.relevo.domain.TagProtocol
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
@@ -34,6 +35,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withTimeoutOrNull
+import java.util.UUID
 
 /**
  * Conexión con el llavero iTag (D-109). Hay una sola por app: la usan el servicio que cuenta, que la
@@ -41,7 +43,9 @@ import kotlinx.coroutines.withTimeoutOrNull
  *
  * Cómo funciona el llavero, verificado en código abierto y en el manual de iSearching:
  * - pita al escribir en la característica estándar «Nivel de alerta» (2 enciende, 0 apaga);
- * - pita solo cuando pierde la conexión, salvo que se escriba 0 en FFE2: Relevo lo apaga al conectarse;
+ * - pita solo cuando pierde la conexión; en algunos modelos se apaga escribiendo 0 en FFE2, pero en otros
+ *   ese 0 también silencia el pitido. Desde 2.26 Relevo lo apaga solo si el Tag lo nombra como alarma de
+ *   desconexión, y si no, lo deja encendido;
  * - avisa cada vez que se aprieta su botón (FFE1): durante la señal, eso la silencia;
  * - algunos se apagan si nadie se conecta en unos minutos: por eso la conexión se abre al activar el
  *   relevo y se mantiene, como hace iSearching.
@@ -54,12 +58,16 @@ object TagLink {
 
   enum class Problem { NO_PERMISSION, BLUETOOTH_OFF, NOT_FOUND, NOT_A_TAG }
 
-  /** [button]: el botón del llavero avisa al apretarlo. [linkLossOff]: se apagó su alarma por desconexión. */
+  /**
+   * [button]: el botón del llavero avisa al apretarlo. [linkLossOff]: se apagó su alarma por desconexión.
+   * [switchOff]: se escribió 0 en su interruptor FFE2.
+   */
   data class Status(
     val phase: Phase = Phase.IDLE,
     val problem: Problem? = null,
     val button: Boolean = false,
     val linkLossOff: Boolean = false,
+    val switchOff: Boolean = false,
   )
 
   /** Un llavero encontrado en la búsqueda. */
@@ -86,6 +94,16 @@ object TagLink {
   @Volatile private var pendingConnect: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingDiscovery: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingOperation: CompletableDeferred<Boolean>? = null
+  @Volatile private var pendingRead: CompletableDeferred<ByteArray?>? = null
+  /** Nombre que el Tag le da a su interruptor FFE2, si lo tiene. */
+  @Volatile private var switchLabel: String? = null
+
+  /**
+   * Resumen de la última conexión: servicios, características con sus propiedades y el nombre y valor de
+   * FFE2. Sirve para saber cómo es un modelo sin tenerlo a mano; no incluye la dirección ni el nombre.
+   */
+  @Volatile var profile: String? = null
+    private set
   @Volatile private var lastButtonAt = 0L
   private var holdJob: Job? = null
 
@@ -156,9 +174,24 @@ object TagLink {
     return write(g, characteristic, byteArrayOf(level))
   }
 
-  /** Un pitido de prueba de [millis]. */
-  suspend fun beep(millis: Long): Boolean {
-    if (!setAlert(TagProtocol.ALERT_HIGH)) return false
+  /** Enciende el pitido con el nivel que funcionó en la prueba de este Tag. */
+  suspend fun alertOn(context: Context): Boolean = setAlert(TagStore(context).alertLevel.toByte())
+
+  /**
+   * Vuelve a aplicar, en la conexión abierta, cómo se trata la alarma de desconexión de este Tag. La
+   * prueba lo usa al cambiar de forma.
+   */
+  suspend fun applySettings(context: Context): Boolean = connection.withLock {
+    val g = gatt ?: return@withLock false
+    if (alertLevel == null) return@withLock false
+    val (linkLossOff, switchOff) = applyLinkLoss(g, TagStore(context).keepLinkLossAlarm)
+    publish(_status.value.copy(linkLossOff = linkLossOff, switchOff = switchOff))
+    true
+  }
+
+  /** Un pitido de prueba de [millis], con el nivel guardado para este Tag. */
+  suspend fun beep(context: Context, millis: Long): Boolean {
+    if (!alertOn(context)) return false
     delay(millis)
     setAlert(TagProtocol.ALERT_OFF)
     return true
@@ -231,15 +264,50 @@ object TagLink {
     alertLevel = alert
     connectedAddress = address
     val keys = g.getService(TagProtocol.KEY_SERVICE)
-    // La alarma por desconexión se apaga de las dos formas: la propia del iTag (FFE2) y la estándar.
-    val switchOff = keys?.getCharacteristic(TagProtocol.LINK_LOSS_SWITCH)?.let { write(g, it, byteArrayOf(0)) } == true
-    val standardOff = g.getService(TagProtocol.LINK_LOSS_SERVICE)?.getCharacteristic(TagProtocol.ALERT_LEVEL)
-      ?.let { write(g, it, byteArrayOf(TagProtocol.ALERT_OFF)) } == true
-    val linkLossOff = switchOff || standardOff
+    val switch = keys?.getCharacteristic(TagProtocol.LINK_LOSS_SWITCH)
+    switchLabel = switch?.getDescriptor(TagProtocol.USER_DESCRIPTION)?.let { readDescriptor(g, it) }?.let(::label)
+    val switchValue = switch?.takeIf { it.properties and BluetoothGattCharacteristic.PROPERTY_READ != 0 }?.let { read(g, it) }
+    profile = describe(g, switchLabel, switchValue)
+    val (linkLossOff, switchOff) = applyLinkLoss(g, TagStore(app).keepLinkLossAlarm)
     val button = keys?.getCharacteristic(TagProtocol.BUTTON)?.let { enableNotifications(g, it) } == true
-    publish(Status(Phase.CONNECTED, button = button, linkLossOff = linkLossOff))
+    publish(Status(Phase.CONNECTED, button = button, linkLossOff = linkLossOff, switchOff = switchOff))
     return null
   }
+
+  /**
+   * Apaga la alarma por desconexión sin silenciar el pitido. La estándar (0x1803) siempre; el interruptor
+   * propio (FFE2) solo si el Tag lo nombra como esa alarma y la prueba no pidió dejarlo como viene. Si no,
+   * FFE2 queda en 1, lo que además deshace el 0 que escribían las versiones 2.19 a 2.25. Devuelve si la
+   * alarma quedó apagada y si se escribió 0 en FFE2.
+   */
+  private suspend fun applyLinkLoss(g: BluetoothGatt, keepAlarm: Boolean): Pair<Boolean, Boolean> {
+    val standardOff = g.getService(TagProtocol.LINK_LOSS_SERVICE)?.getCharacteristic(TagProtocol.ALERT_LEVEL)
+      ?.let { write(g, it, byteArrayOf(TagProtocol.ALERT_OFF)) } == true
+    val switch = g.getService(TagProtocol.KEY_SERVICE)?.getCharacteristic(TagProtocol.LINK_LOSS_SWITCH)
+      ?: return standardOff to false
+    val turnOff = TagProtocol.isLinkLossSwitch(switchLabel) && !keepAlarm
+    val written = write(g, switch, byteArrayOf(if (turnOff) 0 else 1))
+    return (turnOff && written) to (turnOff && written)
+  }
+
+  /** Servicios y características con sus propiedades en hexadecimal, más el nombre y valor de FFE2. */
+  private fun describe(g: BluetoothGatt, switchLabel: String?, switchValue: ByteArray?): String {
+    val services = g.services.joinToString(";") { service ->
+      short(service.uuid) + ":" + service.characteristics.joinToString(",") { short(it.uuid) + "=" + "%02x".format(it.properties) }
+    }
+    val value = switchValue?.joinToString("") { "%02x".format(it) }
+    return services + (switchLabel?.let { ";ffe2_nombre=" + it } ?: "") + (value?.let { ";ffe2_valor=" + it } ?: "")
+  }
+
+  /** Los UUID estándar se acortan a sus 4 cifras; los demás, a las primeras 8. */
+  private fun short(uuid: UUID): String {
+    val text = uuid.toString()
+    return if (text.startsWith("0000") && text.endsWith("-0000-1000-8000-00805f9b34fb")) text.substring(4, 8) else text.substring(0, 8)
+  }
+
+  /** El nombre que entrega el Tag, limpio: solo letras, números y espacios, hasta 32 caracteres. */
+  private fun label(bytes: ByteArray): String? =
+    String(bytes, Charsets.UTF_8).filter { it.isLetterOrDigit() || it == ' ' }.trim().take(32).ifBlank { null }
 
   /**
    * Encuentra el llavero guardado. Buscarlo antes de conectar le dice a Android qué tipo de dirección
@@ -288,6 +356,24 @@ object TagLink {
       ok
     }
 
+  private suspend fun read(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic): ByteArray? =
+    operation.withLock {
+      val done = CompletableDeferred<ByteArray?>().also { pendingRead = it }
+      val started = runCatching { g.readCharacteristic(characteristic) }.getOrDefault(false)
+      val value = if (started) withTimeoutOrNull(OPERATION_MILLIS) { done.await() } else null
+      pendingRead = null
+      value
+    }
+
+  private suspend fun readDescriptor(g: BluetoothGatt, descriptor: BluetoothGattDescriptor): ByteArray? =
+    operation.withLock {
+      val done = CompletableDeferred<ByteArray?>().also { pendingRead = it }
+      val started = runCatching { g.readDescriptor(descriptor) }.getOrDefault(false)
+      val value = if (started) withTimeoutOrNull(OPERATION_MILLIS) { done.await() } else null
+      pendingRead = null
+      value
+    }
+
   private suspend fun enableNotifications(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic): Boolean =
     operation.withLock {
       if (!runCatching { g.setCharacteristicNotification(characteristic, true) }.getOrDefault(false)) return@withLock false
@@ -319,6 +405,7 @@ object TagLink {
       pendingConnect?.complete(false)
       pendingDiscovery?.complete(false)
       pendingOperation?.complete(false)
+      pendingRead?.complete(null)
       if (g == gatt) {
         gatt = null
         alertLevel = null
@@ -330,6 +417,27 @@ object TagLink {
 
     override fun onServicesDiscovered(g: BluetoothGatt, status: Int) {
       pendingDiscovery?.complete(status == BluetoothGatt.GATT_SUCCESS)
+    }
+
+    override fun onCharacteristicRead(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic, value: ByteArray, status: Int) {
+      pendingRead?.complete(if (status == BluetoothGatt.GATT_SUCCESS) value else null)
+    }
+
+    override fun onDescriptorRead(g: BluetoothGatt, descriptor: BluetoothGattDescriptor, status: Int, value: ByteArray) {
+      pendingRead?.complete(if (status == BluetoothGatt.GATT_SUCCESS) value else null)
+    }
+
+    // Android 12 llama a estas dos versiones; desde Android 13, a las de arriba.
+    @Deprecated("Solo para Android 12")
+    override fun onCharacteristicRead(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic, status: Int) {
+      @Suppress("DEPRECATION")
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) pendingRead?.complete(if (status == BluetoothGatt.GATT_SUCCESS) characteristic.value else null)
+    }
+
+    @Deprecated("Solo para Android 12")
+    override fun onDescriptorRead(g: BluetoothGatt, descriptor: BluetoothGattDescriptor, status: Int) {
+      @Suppress("DEPRECATION")
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) pendingRead?.complete(if (status == BluetoothGatt.GATT_SUCCESS) descriptor.value else null)
     }
 
     override fun onCharacteristicWrite(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic, status: Int) {

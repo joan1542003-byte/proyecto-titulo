@@ -48,6 +48,26 @@ class TagProtocolTest {
   }
 
   @Test
+  fun triesHighThenMediumThenWithoutTurningOffTheSwitch() {
+    assertEquals(TagProtocol.AlertTry(2, false), TagProtocol.ALERT_TRIES[0])
+    assertEquals(1, TagProtocol.nextTry(0, switchTurnedOff = true))
+    assertEquals(2, TagProtocol.nextTry(1, switchTurnedOff = true))
+    assertEquals(null, TagProtocol.nextTry(2, switchTurnedOff = true))
+    // Si FFE2 no se apagó, dejarlo como viene no cambia nada: esa forma se salta.
+    assertEquals(null, TagProtocol.nextTry(1, switchTurnedOff = false))
+    assertEquals(0, TagProtocol.tryIndex(2, false))
+    assertEquals(2, TagProtocol.tryIndex(2, true))
+    assertEquals(0, TagProtocol.tryIndex(3, false))
+  }
+
+  @Test
+  fun turnsOffTheSwitchOnlyWhenTheTagNamesItLinkLoss() {
+    assertTrue(TagProtocol.isLinkLossSwitch("Set LinkLost Alert"))
+    assertFalse(TagProtocol.isLinkLossSwitch(null))
+    assertFalse(TagProtocol.isLinkLossSwitch("Key Press State"))
+  }
+
+  @Test
   fun describesSignalStrengthInWords() {
     assertEquals("Muy cerca", TagProtocol.strength(-50))
     assertEquals("Cerca", TagProtocol.strength(-70))

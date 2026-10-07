@@ -467,7 +467,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.25';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.26';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -605,8 +605,8 @@ select json_build_object(
     mensaje_recibido: ['send', 'Le llegó un mensaje'], mensaje_abierto: ['send', 'Abrió un mensaje'], mensaje_sin_notificaciones: ['send', 'Mensaje sin notificaciones'],
     preparar_abierto: ['play', 'Empezó a preparar'], preparar_cerrado: ['pause', 'Cerró la preparación'], actividad_elegida: ['check', 'Eligió una actividad'],
     prueba_de_sonido: ['bell', 'Probó el sonido'], video_como_funciona: ['play', 'Vio el video'], aviso_semanal_enviado: ['bell', 'Le llegó el aviso semanal'],
-    llavero_busqueda: ['bell', 'Buscó su llavero'], llavero_encontrados: ['bell', 'Terminó de buscar el llavero'], llavero_vinculado: ['check', 'Eligió su llavero'],
-    llavero_olvidado: ['close', 'Olvidó su llavero']
+    llavero_busqueda: ['bell', 'Buscó su Tag'], llavero_encontrados: ['bell', 'Terminó de buscar el Tag'], llavero_vinculado: ['check', 'Eligió su Tag'],
+    llavero_olvidado: ['close', 'Olvidó su Tag'], llavero_escuchado: ['bell', 'Dijo si escuchó el Tag'], llavero_perfil: ['info', 'Registró cómo es su Tag']
   };
   const ICONS = {
     now: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
@@ -1256,7 +1256,7 @@ select json_build_object(
       ['Tiempo de uso', perm.tiempo_de_uso ? 'Permitido' : 'Falta', perm.tiempo_de_uso === false],
       ['Notificaciones', perm.notificaciones ? 'Permitidas' : 'Apagadas', perm.notificaciones === false],
       ['Batería', perm.bateria_sin_restriccion ? 'Sin restricción' : 'Con restricción', perm.bateria_sin_restriccion === false],
-      eq.llavero_vinculado != null ? ['Llavero', eq.llavero_vinculado ? 'Elegido' + (perm.bluetooth_cercano === false ? ', sin permiso de dispositivos cercanos' : '') : 'Sin llavero', eq.llavero_vinculado && perm.bluetooth_cercano === false] : null,
+      eq.llavero_vinculado != null ? ['Tag', eq.llavero_vinculado ? 'Elegido' + (perm.bluetooth_cercano === false ? ', sin permiso de dispositivos cercanos' : '') : 'Sin Tag', eq.llavero_vinculado && perm.bluetooth_cercano === false] : null,
       ['Activación automática', aj.activacion_automatica ? 'Encendida' : 'Apagada'],
       ['Veces por semana', aj.veces_por_semana != null ? String(aj.veces_por_semana) : '—'],
       ['Aviso semanal', aj.aviso_semanal ? 'Encendido' : 'Apagado'],
