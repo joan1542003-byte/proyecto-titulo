@@ -106,6 +106,7 @@
 | 6 oct. | Corrección y consulta | La persona elige porque sabe dónde está su primer paso: corregir las discrepancias; preguntó si es mejor comparar o dejar elegir y pidió aplicar lo óptimo; mejorar el lenguaje ambiguo o contradictorio de la app. | Recomendación: comparar, porque la hipótesis y la memoria lo piden. [Android 2.22](../06_desarrollo_y_factibilidad/app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md): vuelven las semanas A, B y C con el objeto donde la persona empieza; se corrige elegir el objeto en las semanas A y B; un solo verbo («suena»), sin frases que contradigan la app; consentimiento v13; panel por condiciones. | D-112 |
 | 6 oct. | Corrección | Los degradados no tienen estilo: deben ser de varios colores, como sus referencias; sumar actividades como jugar videojuegos, igual de válidas; cada actividad con todo predefinido para no escribir. | [Android 2.23](../06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md): degradados de tres colores, cuatro actividades nuevas del corpus con su icono y opciones de un toque para el primer paso y el lugar. | D-113 |
 | 7 oct. | Consulta | Compró el llavero, lo probó con iSearching en su iPhone y funciona; borró iSearching y preguntó si puede usarlo después en un Android. | Respuesta en la conversación: sí; borrar la app no basta si el iPhone sigue conectado: hay que apagar el Bluetooth del iPhone o «Omitir este dispositivo», porque el llavero acepta una conexión a la vez. | D-109 |
+| 7 oct. | Consulta | Preguntó cuánto dura la pila del llavero, qué pasa si se apaga y si la persona tiene que encenderlo seguido. | Respuesta en la conversación: pila CR2032 de 2 a 6 meses según los vendedores, con conexión permanente; el llavero queda encendido hasta que se mantiene apretado el botón o se agota la pila; si no responde al sonar, el teléfono vibra y avisa, y queda registrado como señal fallida. Se sugirió pila nueva el día 0 y probar si ese modelo se apaga solo. | D-109 |
 
 ## Lo que muestra el registro
 
@@ -116,6 +117,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Pila del llavero
+
+- **Qué cambió:** se registró la consulta sobre la pila del llavero.
+- **Cómo estaba antes:** terminaba en la consulta sobre usar el llavero en Android.
+- **Por qué:** regla de registrar cada pedido del autor.
 
 ### 2026-10-07 — Colores, opciones listas y llavero
 
