@@ -25,6 +25,7 @@ import com.example.relevo.data.CustomActivity
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.SyncStatus
 import com.example.relevo.domain.RouteTrack
+import com.example.relevo.domain.Interests
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.SignalRoute
 import com.example.relevo.domain.StudyCondition
@@ -63,7 +64,49 @@ internal val activityIdeas = listOf(
   ActivityIdea("Salir en bicicleta", "Sacar la bici", "Junto a la puerta", KitIcon.BICICLETA), // P7
   ActivityIdea("Meditar", "Sentarte en el cojín", "En tu pieza", KitIcon.ESTIRAR), // P3
   ActivityIdea("Leer manga", "Sacar el tomo del estante", "Junto al estante", KitIcon.LEER, Photo.LIBRO), // P1
+  // Desde 2.23, a pedido del autor: actividades de ocio que también son válidas y aparecen en P1–P8.
+  ActivityIdea("Jugar videojuegos", "Encender la consola", "Junto a la tele", KitIcon.VIDEOJUEGOS), // P3, P6, P7, P8
+  ActivityIdea("Escuchar música", "Ponerte los audífonos", "En el sillón", KitIcon.MUSICA), // P5, P6, P8
+  ActivityIdea("Ver una película", "Elegir la película", "En el living", KitIcon.REPRODUCIR), // P1, P2, P5
+  ActivityIdea("Llamar a alguien", "Buscar su número", "En el sillón", KitIcon.LLAMAR), // P6
+  ActivityIdea("Jugar un juego de mesa", "Sacar la caja", "En la mesa", KitIcon.JUEGO_DE_MESA), // P2
 )
+
+/** Lugares de la casa para elegir con un toque, sin escribir. */
+internal val commonPlaces = listOf(
+  "En tu pieza", "En el velador", "En el escritorio", "En el living", "En el sillón", "En la mesa", "En la cocina", "Junto a la puerta",
+)
+
+private fun sameActivity(a: String, b: String): Boolean = plain(a).trim() == plain(b).trim()
+
+/** Todos los relevos conocidos: ideas y pasos de las rutas, como (actividad, primer paso, lugar). */
+private fun knownRelevos(): List<Triple<String, String, String>> =
+  activityIdeas.map { Triple(it.activity, it.start, it.place) } + Interests.all.flatMap { it.suggestions }
+
+/**
+ * Primeros pasos para elegir con un toque: los de la misma actividad primero y después los de
+ * actividades parecidas (mismo icono). Sin repetir y como máximo seis.
+ */
+internal fun startSuggestions(activity: String): List<String> {
+  val icon = iconForActivity(activity, emptyList())
+  val known = knownRelevos()
+  val same = known.filter { sameActivity(it.first, activity) }.map { it.second }
+  // Los otros pasos de la misma ruta: «Jugar una partida» también propone «Dejar el control cargado».
+  val route = Interests.all.filter { interest -> interest.suggestions.any { sameActivity(it.first, activity) } || sameActivity(interest.label, activity) }
+    .flatMap { interest -> interest.suggestions.map { it.second } }
+  val similar = known.filter { !sameActivity(it.first, activity) && iconForActivity(it.first, emptyList()) == icon }.map { it.second }
+  val generic = listOf("Dejar el teléfono en otro lugar")
+  return (same + route + similar + generic).distinct().take(6)
+}
+
+/** Lugares para elegir con un toque: los de la actividad primero y después los comunes de la casa. */
+internal fun placeSuggestions(activity: String): List<String> {
+  val known = knownRelevos()
+  val same = known.filter { sameActivity(it.first, activity) }.map { it.third }
+  val route = Interests.all.filter { interest -> interest.suggestions.any { sameActivity(it.first, activity) } || sameActivity(interest.label, activity) }
+    .flatMap { interest -> interest.suggestions.map { it.third } }
+  return (same + route + commonPlaces).distinct().take(8)
+}
 
 /** Fotos e iconos de los intereses de P3 y de sus rutas (intereses concretos desde 2.13, D-088). */
 internal fun interestPhoto(id: String): Photo? = when (id) {
@@ -95,6 +138,9 @@ internal fun interestIcon(id: String): KitIcon = when (id) {
   "meditar" -> KitIcon.ESTIRAR
   "estudiar", "aprender" -> KitIcon.ESTUDIAR
   "compartir" -> KitIcon.JUEGO_DE_MESA
+  "videojuegos" -> KitIcon.VIDEOJUEGOS
+  "musica" -> KitIcon.MUSICA
+  "peliculas" -> KitIcon.REPRODUCIR
   "cuidar" -> KitIcon.PLANTAS
   else -> KitIcon.ACTIVIDAD
 }
@@ -107,6 +153,9 @@ private val keywords: List<Triple<List<String>, Photo?, KitIcon>> = listOf(
   Triple(listOf("perro", "correa"), Photo.PERRO, KitIcon.SALIR),
   Triple(listOf("camin", "trot", "corr", "zapatill", "pasear"), Photo.CAMINAR, KitIcon.CAMINAR),
   Triple(listOf("bici"), null, KitIcon.BICICLETA),
+  Triple(listOf("videojuego", "consola", "jugar en el comput", "partida"), null, KitIcon.VIDEOJUEGOS),
+  Triple(listOf("pelicula", "serie", "capitulo"), null, KitIcon.REPRODUCIR),
+  Triple(listOf("llamar", "videollamada"), null, KitIcon.LLAMAR),
   Triple(listOf("estir", "yoga"), null, KitIcon.ESTIRAR),
   Triple(listOf("ejercicio", "entren", "pesas", "gimnasio", "serie"), Photo.EJERCICIO, KitIcon.EJERCICIO),
   Triple(listOf("leer", "libro", "capitulo", "pagina", "lectura", "genero"), Photo.LEER, KitIcon.LEER),

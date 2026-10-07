@@ -120,9 +120,9 @@ private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder:
   PrepareStep.ACTIVITY -> if (reminder.activity.isNotBlank()) "Te propusimos «${reminder.activity.trim()}». Puedes dejarla o escribir otra cosa que quieras hacer."
     else "Escribe algo que quieras hacer o toca una idea. Mientras más concreto, mejor: «leer 10 páginas» en vez de «leer más»."
   PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "El primer paso es «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta empezar."
-    else "Anota lo primero que harías, algo que tome segundos: abrir el libro, ponerte las zapatillas."
+    else "Toca un primer paso o escribe el tuyo: algo que tome segundos."
   PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja lo que suena en otro lugar de tu casa y anota dónde."
-    else "Escríbelo con tus palabras, como lo dirías en voz alta: «en el velador», «junto a la puerta»."
+    else "Toca el que más se parezca. Si ninguno calza, escríbelo como lo dirías en voz alta."
   PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
   PrepareStep.SOUND -> if (condition != null) "Elige el que tienes y pruébalo antes de seguir."
     else "Elige con qué suena. El parlante, el reloj o el llavero se dejan donde empiezas; el teléfono suena donde esté."
@@ -281,9 +281,11 @@ internal fun PrepareScreen(
         when (current) {
           PrepareStep.ACTIVITY -> ActivityStep(reminder, customActivities, routes, actions, onNext = { if (reminder.activity.isNotBlank()) go(PrepareStep.START) })
           PrepareStep.START -> {
-            Text("Lo primero que harías, en pocas palabras.", style = Relevo.type.body, color = Relevo.colors.graphite)
+            Text("Toca una opción o escribe la tuya: lo primero que harías.", style = Relevo.type.body, color = Relevo.colors.graphite)
             SectionGap()
-            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "Ej.: sacar la guitarra del estuche", imeAction = ImeAction.Next, onImeAction = { if (canContinue) go(PrepareStep.PLACE) })
+            SuggestionChips(startSuggestions(reminder.activity), reminder.howToStart, actions.onStart)
+            SectionGap()
+            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "O escríbelo aquí", imeAction = ImeAction.Next, onImeAction = { if (canContinue) go(PrepareStep.PLACE) })
           }
           PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) go(PrepareStep.USAGE) })
           PrepareStep.USAGE -> UsageStep(reminder, usageAccess, actions, onPick = { picking = true })
@@ -401,7 +403,7 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
     Column(Modifier.weight(1f)) {
       Text(
         when (studyCondition) {
-          null -> "Escribe dónde está lo que usas para empezar: el libro, las zapatillas, el cuaderno."
+          null -> "Toca el lugar donde está lo que usas para empezar, o escríbelo."
           StudyCondition.PHONE -> "${conditionInstruction(studyCondition)} Anota dónde está lo que necesitas para empezar."
           else -> conditionInstruction(studyCondition)
         },
@@ -411,15 +413,29 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
     }
   }
   SectionGap()
+  SuggestionChips(
+    if (studyCondition == StudyCondition.NEUTRAL) commonPlaces else placeSuggestions(reminder.activity),
+    reminder.place, actions.onPlace,
+  )
+  SectionGap()
   RenglonField(
     when (studyCondition) {
       StudyCondition.NEUTRAL -> "Dónde dejas lo que suena"
       else -> "Dónde empiezas"
     },
     reminder.place, actions.onPlace,
-    placeholder = if (studyCondition == StudyCondition.NEUTRAL) "Ej.: en la repisa del living" else "Ej.: junto a las zapatillas",
+    placeholder = "O escríbelo aquí",
     onImeAction = onNext,
   )
+}
+
+/** Opciones de un toque; la elegida queda marcada y se puede cambiar o escribir encima. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun SuggestionChips(options: List<String>, current: String, onPick: (String) -> Unit) {
+  FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    options.forEach { option -> QuickChoice(option, current.trim().equals(option, ignoreCase = true), { onPick(option) }) }
+  }
 }
 
 @OptIn(ExperimentalLayoutApi::class)

@@ -121,11 +121,31 @@ object Interests {
       Triple("Hacer una tarea", "Abrir el cuaderno en la tarea", "En el escritorio"),
       Triple("Repasar para una prueba", "Sacar tus resúmenes", "En el escritorio"),
     )),
+    // P3, Q1 (jugar en el computador); P6, Q1; P7, Q1; P8, Q1 y Q10 (completar un juego).
+    Interest("videojuegos", "Jugar videojuegos", listOf(
+      Triple("Jugar una partida", "Encender la consola", "Junto a la tele"),
+      Triple("Avanzar en tu juego", "Dejar el control cargado", "Junto a la tele"),
+      Triple("Jugar con alguien", "Avisar a quien juega contigo", "Junto al computador"),
+    )),
+    // P5, Q1; P6, Q1; P8, Q1.
+    Interest("musica", "Escuchar música", listOf(
+      Triple("Escuchar un disco entero", "Elegir el disco", "En tu pieza"),
+      Triple("Escuchar música sin hacer nada más", "Ponerte los audífonos", "En el sillón"),
+      Triple("Tocar una canción", "Sacar el instrumento", "Junto al instrumento"),
+    )),
+    // P1, Q1; P2, Q1; P5, Q1.
+    Interest("peliculas", "Ver una película o serie", listOf(
+      Triple("Ver una película", "Elegir la película", "En el living"),
+      Triple("Ver un capítulo con alguien", "Avisar a quien ve contigo", "En el living"),
+      Triple("Ver una película sin el teléfono", "Dejar el teléfono cargando", "Junto al cargador"),
+    )),
     // P2, Q2 (pareja); P6, Q1 (cenar con su familia); P7, Q2 (fútbol).
     Interest("compartir", "Compartir con alguien", listOf(
       Triple("Comer sin el teléfono", "Poner la mesa", "En el comedor"),
       Triple("Jugar un juego de mesa", "Sacar la caja", "En la mesa"),
       Triple("Juntarte a jugar a la pelota", "Preparar las zapatillas", "Junto a la puerta"),
+      // P6, Q1 (videollamada con una amiga).
+      Triple("Llamar a alguien", "Buscar su número", "En el sillón"),
     )),
   )
 

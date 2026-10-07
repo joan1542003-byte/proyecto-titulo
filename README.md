@@ -68,6 +68,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **6 de octubre:** la [app 2.22](06_desarrollo_y_factibilidad/app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md) (D-112) vuelve a comparar las semanas A, B y C del protocolo 02, con el objeto donde la persona dice que empieza, y aclara el lenguaje; es la versión del primer testeo. La [app 2.21](06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md) (D-111) muestra cada actividad con un icono sobre un degradado, no marca ninguna opción de antemano y suma «No quiero participar». La [app 2.20](06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md) (D-110) deja que la persona elija dónde suena y registra su elección; es la versión del primer testeo, que empieza el 7 de octubre. El [panel del testeo](06_desarrollo_y_factibilidad/panel-admin/README.md) pasa a la versión 5, con resultados por condición y por persona y exportación a Excel, CSV y JSON ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-06.md)).
 
+**7 de octubre:** la [app 2.23](06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md) (D-113) suma degradados de varios colores, actividades de ocio como jugar videojuegos y opciones de un toque para no escribir; es la versión del primer testeo ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-07.md)).
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».
@@ -142,6 +144,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — App 2.23
+
+- **Qué cambió:** el estado actual suma la app 2.23.
+- **Cómo estaba antes:** terminaba en la 2.22.
+- **Por qué:** D-113.
 
 ### 2026-10-06 — App 2.22
 

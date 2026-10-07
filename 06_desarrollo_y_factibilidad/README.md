@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.23](app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md): degradados de varios colores, actividades de ocio y opciones de un toque (D-113); la versión del primer testeo.
 - [Aplicación Android 2.22](app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md): compara las semanas A, B y C con el objeto donde la persona empieza y aclara el lenguaje (D-112); la versión del primer testeo.
 - [Aplicación Android 2.21](app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md): iconos con degradado, nada elegido de antemano y sin patrones oscuros (D-111); la versión del primer testeo.
 - [Aplicación Android 2.20](app-android/version-2.20-eleccion-libre-2026-10-06.md): la persona elige dónde suena y la app registra su elección (D-110). Recorrida completa en emulador; es la versión del primer testeo.
@@ -71,6 +72,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-07 — Android 2.23
+
+- **Qué cambió:** se enlaza la 2.23.
+- **Cómo estaba antes:** la más reciente era la 2.22.
+- **Por qué:** D-113.
 
 ### 2026-10-06 — Android 2.22
 

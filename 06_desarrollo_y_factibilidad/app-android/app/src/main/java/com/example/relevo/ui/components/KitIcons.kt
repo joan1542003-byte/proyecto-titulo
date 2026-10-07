@@ -465,6 +465,15 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M8 12.25L10.75 15L16 9.25", true, KitFill.NONE),
     ),
   ),
+  VIDEOJUEGOS(
+    "Jugar videojuegos",
+    listOf(
+      KitShape("M7.25 7.5H16.75A4 4 0 0 1 20.6 12.6L19.7 16.4A2.4 2.4 0 0 1 15.6 17.4L14.1 15.5H9.9L8.4 17.4A2.4 2.4 0 0 1 4.3 16.4L3.4 12.6A4 4 0 0 1 7.25 7.5Z", true, KitFill.NONE),
+      KitShape("M7.75 10V13M6.25 11.5H9.25", true, KitFill.NONE),
+      KitShape("M14.65 10.5A.9.9 0 1 0 16.45 10.5A.9.9 0 1 0 14.65 10.5Z", false, KitFill.INK),
+      KitShape("M16.35 12.75A.9.9 0 1 0 18.15 12.75A.9.9 0 1 0 16.35 12.75Z", false, KitFill.INK),
+    ),
+  ),
   LLAMAR(
     "Llamar a alguien",
     listOf(

@@ -1305,7 +1305,21 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** con una persona (D-081) el resultado describe un caso y el orden de las semanas puede influir; la preferencia de la persona se recoge en el cierre del día 21.
 - **Documentación:** [Android 2.22](../06_desarrollo_y_factibilidad/app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md).
 
+## D-113 — Degradados de varios colores, ocio también válido y opciones listas
+
+- **Fecha:** 2026-10-07.
+- **Estado:** pedido del autor; implementado en Android 2.23 y revisado en emulador.
+- **Decisión:** las imágenes combinan tres colores de la familia de la casa, con una luz desde una esquina. Jugar videojuegos, escuchar música, ver una película y llamar a alguien se suman como actividades válidas. El primer paso y el lugar se eligen con un toque entre opciones predefinidas, y escribir queda como alternativa.
+- **Fundamento:** el autor pidió degradados con estilo, como en sus referencias (documento 30, Rose Pilkington), y que la persona no tenga que escribir. Las actividades nuevas aparecen en P1–P8 (corpus), y la memoria no juzga el ocio: la intención es la que la persona elige.
+- **Documentación:** [Android 2.23](../06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — D-113
+
+- **Qué cambió:** se registró D-113.
+- **Cómo estaba antes:** la última decisión era D-112.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-06 — D-112
 

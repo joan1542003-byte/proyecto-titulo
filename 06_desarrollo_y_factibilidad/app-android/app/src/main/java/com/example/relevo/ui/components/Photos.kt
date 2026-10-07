@@ -46,6 +46,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
@@ -317,7 +319,33 @@ fun PhotoImage(photo: Photo, modifier: Modifier = Modifier, wide: Boolean = fals
  * Familias de color de las actividades (los claros de D-104): moverse en menta, leer y estudiar en
  * celeste, crear en lila, música y juego en rosa, casa y cocina en naranja; lo demás en sol.
  */
-internal fun artTint(icon: KitIcon): Color = when (icon) {
+internal fun artTint(icon: KitIcon): Color = artPalette(icon).first()
+
+private val SOL = Color(0xFFE7BF57)
+private val NARANJA = Color(0xFFFEB074)
+private val ROSA = Color(0xFFFEA4CF)
+private val MENTA = Color(0xFF6FDEA7)
+private val CELESTE = Color(0xFF54D6FE)
+private val LILA = Color(0xFFCEB5FE)
+
+/**
+ * Tres colores por familia, de los claros de D-104: moverse (menta, celeste, lila), leer y estudiar
+ * (celeste, lila, menta), crear (lila, rosa, celeste), música y juego (rosa, lila, naranja), casa y
+ * cocina (naranja, sol, rosa), y lo demás (sol, naranja, rosa). El amarillo no se mezcla con el verde, que da un tono oliva.
+ */
+internal fun artPalette(icon: KitIcon): List<Color> = when (icon) {
+  KitIcon.CAMINAR, KitIcon.EJERCICIO, KitIcon.BICICLETA, KitIcon.ESTIRAR, KitIcon.SALIR, KitIcon.PLANTAS -> listOf(MENTA, CELESTE, LILA)
+  KitIcon.LEER, KitIcon.ESTUDIAR, KitIcon.ESCRIBIR, KitIcon.TEXTO -> listOf(CELESTE, LILA, MENTA)
+  KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.FOTOGRAFIA -> listOf(LILA, ROSA, CELESTE)
+  KitIcon.GUITARRA, KitIcon.MUSICA, KitIcon.JUEGO_DE_MESA, KitIcon.LLAMAR -> listOf(ROSA, LILA, NARANJA)
+  KitIcon.VIDEOJUEGOS -> listOf(LILA, CELESTE, ROSA)
+  KitIcon.REPRODUCIR -> listOf(NARANJA, ROSA, LILA)
+  KitIcon.COCINAR, KitIcon.ORDENAR -> listOf(NARANJA, SOL, ROSA)
+  else -> listOf(SOL, NARANJA, ROSA)
+}
+
+@Suppress("unused")
+private fun singleTint(icon: KitIcon): Color = when (icon) {
   KitIcon.CAMINAR, KitIcon.EJERCICIO, KitIcon.BICICLETA, KitIcon.ESTIRAR, KitIcon.SALIR, KitIcon.PLANTAS -> Color(0xFF6FDEA7)
   KitIcon.LEER, KitIcon.ESTUDIAR, KitIcon.ESCRIBIR, KitIcon.TEXTO -> Color(0xFF54D6FE)
   KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.FOTOGRAFIA -> Color(0xFFCEB5FE)
@@ -333,15 +361,29 @@ internal fun artTint(icon: KitIcon): Color = when (icon) {
 @Composable
 fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = null) {
   val colors = Relevo.colors
-  val tint = artTint(icon)
-  val start = tint.copy(alpha = if (colors.isDark) 0.10f else 0.16f).compositeOver(colors.card)
-  val end = tint.copy(alpha = if (colors.isDark) 0.34f else 0.58f).compositeOver(colors.card)
+  val (a, b, c) = artPalette(icon)
+  val strength = if (colors.isDark) 0.55f else 1f
+  val base1 = a.copy(alpha = 0.55f * strength).compositeOver(colors.card)
+  val base2 = b.copy(alpha = 0.50f * strength).compositeOver(colors.card)
+  val light = c.copy(alpha = 0.85f * strength)
+  val glow = colors.card.copy(alpha = if (colors.isDark) 0.10f else 0.55f)
+  // Cada icono parte de una esquina distinta, para que las fichas vecinas no se vean iguales.
+  val corner = icon.ordinal % 4
   var side by remember { mutableIntStateOf(0) }
   val density = LocalDensity.current
   val auto = with(density) { (side * 0.28f).toDp() }.coerceIn(24.dp, 80.dp)
   Box(
-    modifier.onSizeChanged { side = minOf(it.width, it.height) }.background(Brush.linearGradient(listOf(start, end))),
-    contentAlignment = Alignment.Center,
+    modifier.onSizeChanged { side = minOf(it.width, it.height) }.drawBehind {
+      val w = size.width; val h = size.height; val r = maxOf(w, h)
+      val from = when (corner) { 0 -> Offset(0f, 0f); 1 -> Offset(w, 0f); 2 -> Offset(w, h); else -> Offset(0f, h) }
+      val to = Offset(w - from.x, h - from.y)
+      drawRect(Brush.linearGradient(listOf(base1, base2), start = from, end = to))
+      // Una luz del tercer color desde la esquina opuesta y un brillo suave al centro: «iluminado desde dentro».
+      drawRect(Brush.radialGradient(listOf(light, light.copy(alpha = 0f)), center = to, radius = r * 0.85f))
+      drawRect(Brush.radialGradient(listOf(glow, glow.copy(alpha = 0f)), center = Offset(w * 0.5f, h * 0.45f), radius = r * 0.45f))
+    },
+    // Un poco sobre el centro: en las fichas grandes, la banda de texto ocupa la parte de abajo.
+    contentAlignment = androidx.compose.ui.BiasAlignment(0f, -0.35f),
   ) {
     RelevoIcon(icon, size = iconSize ?: auto, tint = colors.ink, background = Color.Transparent)
   }
