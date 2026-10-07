@@ -69,8 +69,6 @@ import androidx.compose.ui.unit.dp
 import cl.udp.relevo.R
 import com.example.relevo.theme.LocalRelevoColors
 import com.example.relevo.theme.Relevo
-import dev.chrisbanes.haze.hazeSource
-import dev.chrisbanes.haze.rememberHazeState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
@@ -550,7 +548,6 @@ fun PhotoHero(
   band: @Composable ColumnScope.() -> Unit,
 ) {
   val interaction = remember { MutableInteractionSource() }
-  val haze = rememberHazeState()
   val density = LocalDensity.current
   var frame by remember { mutableIntStateOf(0) }
   var bandHeight by remember { mutableIntStateOf(0) }
@@ -561,10 +558,10 @@ fun PhotoHero(
     modifier.fillMaxWidth().aspectRatio(aspect).onSizeChanged { frame = it.height }.pressScale(interaction, 0.985f).clip(Relevo.panelShape)
       .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = clickLabel, onClick = onClick) else Modifier),
   ) {
-    PictureContent(picture, Modifier.matchParentSize().hazeSource(haze).sharedPhoto(sharedKey), wide = wide, iconSize = 56.dp)
+    PictureContent(picture, Modifier.matchParentSize().sharedPhoto(sharedKey), wide = wide, iconSize = 56.dp)
     CompositionLocalProvider(LocalRelevoColors provides paletteOver(dark)) {
       Column(
-        Modifier.align(Alignment.BottomStart).fillMaxWidth().onSizeChanged { bandHeight = it.height }.photoBand(haze)
+        Modifier.align(Alignment.BottomStart).fillMaxWidth().onSizeChanged { bandHeight = it.height }.photoBand()
           .padding(start = 20.dp, end = 20.dp, top = 48.dp, bottom = 20.dp),
         content = band,
       )

@@ -274,6 +274,7 @@ class AppUsageMonitorService : Service() {
     store.save(signalled)
     researchLog.record(signalled.sessionId, signalled.participantCode, if (audible) "signal_emitted" else "signal_failed", signalled.targetPackage, signalled.observedUsageSeconds)
     if (audible) researchLog.markSignal(signalled.sessionId, signalled.observedUsageSeconds, signalAt, usageBefore)
+    researchLog.markAppSeconds(signalled.sessionId, signalAt)
     scope.launch(Dispatchers.IO) {
       RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()
       ResearchBackup.write(this@AppUsageMonitorService, researchLog, signalled.participantCode)

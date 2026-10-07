@@ -1,6 +1,5 @@
 package com.example.relevo.ui.components
 
-import androidx.compose.animation.core.Easing
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -22,6 +21,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
@@ -30,7 +31,6 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
-import dev.chrisbanes.haze.HazeProgressive
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.HazeStyle
 import dev.chrisbanes.haze.HazeTint
@@ -74,48 +74,34 @@ fun Modifier.glass(
 }
 
 /**
- * Arriba, el desenfoque es completo bajo la barra y se desvanece en la mitad inferior de la franja,
- * que termina poco después de la barra (D-084: lejos del centro de la pantalla).
- */
-private val TopEdgeEasing = Easing { t -> ((t - 0.5f) / 0.5f).coerceIn(0f, 1f) }
-
-/** Abajo, empieza a la altura del botón y se completa detrás de su mitad inferior y de las pestañas. */
-private val BottomEdgeEasing = Easing { t -> ((t - 0.2f) / 0.5f).coerceIn(0f, 1f) }
-
-/**
- * Borde de desplazamiento, como en iOS 26: el contenido se desenfoca y se funde con el papel al pasar
- * bajo una barra. [fromTop] indica dónde el efecto es completo.
+ * Borde de desplazamiento, como en iOS 26: el contenido se funde con el papel al pasar bajo una barra.
+ * Arriba es completo bajo la barra y se desvanece en la mitad inferior de la franja; abajo empieza a la
+ * altura del botón y se completa detrás de las pestañas (D-084). Desde 2.28 es un degradado y no un
+ * desenfoque progresivo: el desenfoque se recalculaba en cada cuadro al desplazar y bajaba la app de los
+ * 60 cuadros por segundo. [fromTop] indica dónde el efecto es completo.
  */
 @Composable
-fun Modifier.edgeBlur(state: HazeState?, fromTop: Boolean, alpha: Float = 1f): Modifier {
-  if (state == null) return this
-  val style = glassStyle(Relevo.colors.paper.copy(alpha = if (Relevo.colors.isDark) .82f else .76f), blur = 18.dp)
-  return this.hazeEffect(state, style) {
-    this.alpha = alpha
-    progressive = HazeProgressive.verticalGradient(
-      easing = if (fromTop) TopEdgeEasing else BottomEdgeEasing,
-      startIntensity = if (fromTop) 1f else 0f,
-      endIntensity = if (fromTop) 0f else 1f,
-    )
-  }
+fun Modifier.edgeFade(fromTop: Boolean, alpha: Float = 1f): Modifier {
+  val paper = Relevo.colors.paper
+  val full = paper.copy(alpha = .94f)
+  val clear = paper.copy(alpha = 0f)
+  val brush = if (fromTop) Brush.verticalGradient(0f to full, 0.5f to full, 1f to clear)
+    else Brush.verticalGradient(0f to clear, 0.2f to clear, 0.7f to full, 1f to full)
+  return this.drawBehind { if (alpha > 0f) drawRect(brush, alpha = alpha.coerceAtMost(1f)) }
 }
 
 /**
- * Banda de vidrio sobre la parte baja de una foto: empieza transparente y termina desenfocada, para
- * que el texto se lea sin velos opacos. Toma el tono de la paleta vigente: clara sobre fotos claras y
- * oscura sobre fotos oscuras (ver [PhotoTone]).
+ * Banda sobre la parte baja de una imagen: empieza transparente y llega pronto a un velo de papel, para
+ * que el texto se lea. Toma el tono de la paleta vigente (ver [PhotoTone]). Desde 2.28 es un degradado:
+ * sobre los fondos de color de las actividades, el desenfoque no se notaba y costaba cuadros.
  */
 @Composable
-fun Modifier.photoBand(state: HazeState): Modifier {
+fun Modifier.photoBand(): Modifier {
   val colors = Relevo.colors
-  val style = glassStyle(colors.paper.copy(alpha = if (colors.isDark) .62f else .66f), blur = 26.dp)
-  return this.hazeEffect(state, style) {
-    progressive = HazeProgressive.verticalGradient(easing = BandEasing, startIntensity = 0f, endIntensity = 1f)
-  }
+  val veil = colors.paper.copy(alpha = if (colors.isDark) .72f else .76f)
+  val brush = Brush.verticalGradient(0f to veil.copy(alpha = 0f), 0.5f to veil, 1f to veil)
+  return this.background(brush)
 }
-
-/** La banda llega pronto a su intensidad completa, para que el texto siempre se lea sobre vidrio. */
-private val BandEasing = Easing { t -> val x = (t / 0.5f).coerceIn(0f, 1f); 1f - (1f - x) * (1f - x) }
 
 /** Botón redondo de vidrio para la barra: volver, cerrar, más opciones. Área táctil de 44 dp. */
 @Composable

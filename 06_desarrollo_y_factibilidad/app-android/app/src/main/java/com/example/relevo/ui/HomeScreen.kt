@@ -483,7 +483,12 @@ internal fun ActiveScreen(
     },
     heroHeight = 300.dp,
     heroPicture = activityPicture(reminder.activity, customActivities),
-    bottom = { RelevoButton("Desactivar el relevo", { confirming = true }, kind = ButtonKind.Secondary) },
+    // Con el relevo listo, lo principal es volver; desactivarlo queda como opción secundaria (2.28).
+    bottom = {
+      RelevoButton("Volver al inicio", onBack)
+      Spacer(Modifier.height(8.dp))
+      RelevoButton("Desactivar el relevo", { confirming = true }, kind = ButtonKind.Secondary)
+    },
   ) {
     Spacer(Modifier.height(24.dp))
     StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Contando" else "En pausa")
@@ -507,8 +512,8 @@ internal fun ActiveScreen(
     SectionGap()
     ListSection {
       FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart)
-      if (reminder.signalRoute == SignalRoute.PHONE) FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
-      else FactRow(KitIcon.PARLANTE, "Parlante", reminder.place)
+      FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
+      FactRow(routeIcon(reminder.signalRoute), "Suena", soundPlace(reminder))
       ListRow(
         "Apps que cuentan", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite,
         trailing = {

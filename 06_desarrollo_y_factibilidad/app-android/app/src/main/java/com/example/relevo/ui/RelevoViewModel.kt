@@ -385,6 +385,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       // En la semana C suena el teléfono; en A y B se conserva el objeto que la persona ya eligió, sin elegir por ella.
       updateValue(current.copy(signalRoute = route, routeChosen = route == SignalRoute.PHONE || (current.routeChosen && current.signalRoute == route)))
     }
+    // El Tag es la salida por defecto (D-117): sin una elección previa queda elegido, salvo en la semana C.
+    val now = _reminder.value
+    if (!now.routeChosen && state.condition != StudyCondition.PHONE && now.status != ReminderStatus.WAITING && now.status != ReminderStatus.SIGNALLED) {
+      updateValue(now.copy(signalRoute = SignalRoute.TAG, routeChosen = true))
+    }
   }
 
   /** El investigador asigna la secuencia en la sesión inicial; hoy es el día 0. */
@@ -755,6 +760,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       current.targetPackage,
       current.observedUsageSeconds,
     )
+    val closedAt = System.currentTimeMillis()
+    viewModelScope.launch(Dispatchers.IO) { researchLog.markAppSeconds(current.sessionId, closedAt) }
     updateValue(_reminder.value.disarm())
     _remainingSeconds.value = 0
   }

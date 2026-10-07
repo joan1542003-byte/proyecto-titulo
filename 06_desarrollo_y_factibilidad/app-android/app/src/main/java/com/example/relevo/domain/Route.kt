@@ -59,7 +59,7 @@ object Interests {
     Interest("dormir", "Dormir a tiempo", listOf(
       Triple("Acostarte sin el teléfono", "Dejar el teléfono cargando lejos de la cama", "Junto al cargador"),
       Triple("Leer un rato antes de dormir", "Dejar el libro en el velador", "En el velador"),
-      Triple("Acostarte a la misma hora", "Apagar la luz grande", "En tu pieza"),
+      Triple("Acostarte a la misma hora", "Apagar la luz grande", "Junto al interruptor"),
     )),
     // P6 y P8, Q1–Q2 y Q12; P1, Q12 (manga).
     Interest("leer", "Leer", listOf(
@@ -69,8 +69,8 @@ object Interests {
     )),
     // P1, Q2 y Q12; P3, Q1 y Q12 (artes marciales).
     Interest("ejercicio", "Hacer ejercicio", listOf(
-      Triple("Hacer una serie corta", "Ponerte ropa cómoda", "En tu pieza"),
-      Triple("Entrenar 20 minutos", "Estirar la colchoneta", "En el living"),
+      Triple("Hacer una serie corta", "Ponerte ropa cómoda", "Junto al clóset"),
+      Triple("Entrenar 20 minutos", "Estirar la colchoneta", "Donde guardas la colchoneta"),
       Triple("Ir a entrenar", "Preparar el bolso", "Junto a la puerta"),
     )),
     // P7, Q1 y Q12.
@@ -99,20 +99,20 @@ object Interests {
     )),
     // P1, Q2 y Q12.
     Interest("cocinar", "Cocinar", listOf(
-      Triple("Cocinar algo simple", "Reunir los ingredientes", "En la cocina"),
-      Triple("Probar una receta nueva", "Dejar la receta a la vista", "En la cocina"),
-      Triple("Preparar la comida de mañana", "Sacar los táper", "En la cocina"),
+      Triple("Cocinar algo simple", "Reunir los ingredientes", "En el mesón de la cocina"),
+      Triple("Probar una receta nueva", "Dejar la receta a la vista", "En el mesón de la cocina"),
+      Triple("Preparar la comida de mañana", "Sacar los táper", "En el mesón de la cocina"),
     )),
     // P5, Q2 y Q12.
     Interest("ordenar", "Ordenar tu pieza", listOf(
       Triple("Ordenar un cajón", "Vaciar el cajón sobre la cama", "Junto al cajón"),
-      Triple("Hacer la cama", "Estirar las sábanas", "En tu pieza"),
+      Triple("Hacer la cama", "Estirar las sábanas", "Junto a la cama"),
       Triple("Ordenar la ropa", "Juntar la ropa en el canasto", "Junto al canasto"),
     )),
     // P3, Q2 y Q12.
     Interest("meditar", "Meditar", listOf(
-      Triple("Respirar 5 minutos", "Sentarte en el cojín", "En tu pieza"),
-      Triple("Meditar 10 minutos", "Apagar la luz grande", "En tu pieza"),
+      Triple("Respirar 5 minutos", "Sentarte en el cojín", "Junto al cojín"),
+      Triple("Meditar 10 minutos", "Apagar la luz grande", "Junto al interruptor"),
       Triple("Estirar antes de dormir", "Desenrollar la colchoneta", "Junto a la cama"),
     )),
     // P8, Q12 (tareas).
@@ -129,19 +129,19 @@ object Interests {
     )),
     // P5, Q1; P6, Q1; P8, Q1.
     Interest("musica", "Escuchar música", listOf(
-      Triple("Escuchar un disco entero", "Elegir el disco", "En tu pieza"),
+      Triple("Escuchar un disco entero", "Elegir el disco", "Junto a los discos"),
       Triple("Escuchar música sin hacer nada más", "Ponerte los audífonos", "En el sillón"),
       Triple("Tocar una canción", "Sacar el instrumento", "Junto al instrumento"),
     )),
     // P1, Q1; P2, Q1; P5, Q1.
     Interest("peliculas", "Ver una película o serie", listOf(
-      Triple("Ver una película", "Elegir la película", "En el living"),
-      Triple("Ver un capítulo con alguien", "Avisar a quien ve contigo", "En el living"),
+      Triple("Ver una película", "Elegir la película", "Junto a la tele"),
+      Triple("Ver un capítulo con alguien", "Avisar a quien ve contigo", "Junto a la tele"),
       Triple("Ver una película sin el teléfono", "Dejar el teléfono cargando", "Junto al cargador"),
     )),
     // P2, Q2 (pareja); P6, Q1 (cenar con su familia); P7, Q2 (fútbol).
     Interest("compartir", "Compartir con alguien", listOf(
-      Triple("Comer sin el teléfono", "Poner la mesa", "En el comedor"),
+      Triple("Comer sin el teléfono", "Poner la mesa", "En la mesa del comedor"),
       Triple("Jugar un juego de mesa", "Sacar la caja", "En la mesa"),
       Triple("Juntarte a jugar a la pelota", "Preparar las zapatillas", "Junto a la puerta"),
       // P6, Q1 (videollamada con una amiga).
@@ -159,6 +159,18 @@ object Interests {
     } else {
       RouteTrack(interest.id, interest.label, interest.suggestions.map { (activity, first, place) -> RouteStep(newId(), activity, first, place) })
     }
+  }
+
+  /** Lugares que nombran una habitación entera: hasta 2.27 venían sugeridos; son ambiguos (2.28). */
+  private val roomPlaces = setOf("En tu pieza", "En el living", "En la cocina", "En el comedor")
+
+  /**
+   * El lugar de un paso sugerido, actualizado: si se guardó con una habitación entera y el paso viene de
+   * una ruta sugerida, toma el lugar concreto que la reemplazó. Lo que la persona escribió no se toca.
+   */
+  fun updatedPlace(activity: String, firstStep: String, place: String): String {
+    if (place !in roomPlaces) return place
+    return all.flatMap { it.suggestions }.firstOrNull { it.first == activity && it.second == firstStep }?.third ?: place
   }
 
   /**

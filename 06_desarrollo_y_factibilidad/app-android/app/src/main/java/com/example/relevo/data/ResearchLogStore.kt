@@ -243,6 +243,25 @@ class ResearchLogStore(context: Context) :
     }, "session_id = ?", arrayOf(reminder.sessionId))
   }
 
+  /**
+   * Guarda, dentro de target_apps, cuántos segundos pasó en cada app elegida desde que se activó el relevo
+   * hasta [end] (2.28): la señal o el momento en que se desactivó. Así el panel muestra el tiempo de cada app.
+   */
+  fun markAppSeconds(sessionId: String, end: Long) {
+    if (sessionId.isBlank()) return
+    val (start, apps) = readableDatabase.query("sessions", arrayOf("started_at", "target_apps"), "session_id = ?", arrayOf(sessionId), null, null, null)
+      .use { cursor -> if (!cursor.moveToFirst()) return; cursor.getLong(0) to cursor.getString(1) }
+    val array = runCatching { JSONArray(apps) }.getOrNull() ?: return
+    val tracked = (0 until array.length()).mapNotNull { array.optJSONObject(it)?.optString("package")?.takeIf(String::isNotBlank) }.toSet()
+    if (tracked.isEmpty()) return
+    val seconds = com.example.relevo.monitor.UsageWindow.secondsByApp(appContext, start, end, tracked) ?: return
+    for (i in 0 until array.length()) {
+      val app = array.optJSONObject(i) ?: continue
+      app.put("seconds", seconds[app.optString("package")] ?: 0)
+    }
+    writableDatabase.update("sessions", ContentValues().apply { put("target_apps", array.toString()); put("synced", PENDING) }, "session_id = ?", arrayOf(sessionId))
+  }
+
   fun markSignal(sessionId: String, observedSeconds: Int, signalAt: Long, usageBeforeSeconds: Int?) {
     writableDatabase.update("sessions", ContentValues().apply {
       put("signal_at", signalAt); put("observed_seconds", observedSeconds); put("synced", PENDING)

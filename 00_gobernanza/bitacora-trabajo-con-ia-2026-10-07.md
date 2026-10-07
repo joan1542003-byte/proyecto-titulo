@@ -9,6 +9,7 @@
 | Trabajo | Resultado | Decisión |
 | --- | --- | --- |
 | Llavero comprado | El autor probó su llavero con iSearching y funciona. Puede usarlo en Android si el iPhone se desconecta: el llavero acepta una conexión a la vez. | D-109 |
+| Android 2.28 y panel 11 | Tag por defecto con búsqueda automática, lugares concretos, «Volver al inicio», tiempo en cada app y una app optimizada; en el panel, tiempo por app y perfiles en la barra ([app](../06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md); [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-117 |
 | Android 2.27 | El Tag no sonaba en la señal real: FFE2 en 1 junto con la alerta, pitido continuo de 30 segundos ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md)). | D-116 |
 | Android 2.26 | El Tag se conectaba pero no pitaba: Relevo ya no apaga a ciegas su interruptor FFE2 y la prueba pregunta si se escuchó ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.26-el-tag-pita-2026-10-07.md)). | D-115 |
 | Android 2.25 y panel 10 | «Tag» en pantalla y guía de ocho pasos con un Tag redondo animado; el panel permite borrar datos y suma barra lateral, búsqueda y filtros ([app](../06_desarrollo_y_factibilidad/app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md); [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md)). | D-114 |
@@ -25,6 +26,8 @@
 
 - **El registro como diagnóstico:** los eventos de la prueba del autor mostraron que la conexión, el botón y la orden funcionaban; eso descartó problemas de permisos o de conexión y apuntó al interruptor FFE2. La 2.26 no se ha probado con el Tag real.
 
+- **Fluidez medida, no supuesta:** antes de cambiar nada se midió el Inicio con `dumpsys gfxinfo` y se comparó con los Ajustes del sistema. Así se encontró que los desenfoques progresivos eran la causa, y no solo la versión de depuración.
+
 ## 3. Qué se comprobó y qué no
 
 - **Comprobado:** compilación desde cero, 83 pruebas y recorrido en el emulador de los intereses a Inicio, con las opciones de un toque.
@@ -36,6 +39,12 @@
 - Revisar el consentimiento v13 con el profesor.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Android 2.28 y panel 11
+
+- **Qué cambió:** la bitácora suma la 2.28 y el panel 11.
+- **Cómo estaba antes:** terminaba en la 2.27.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — Android 2.27
 

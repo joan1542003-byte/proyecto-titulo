@@ -1,6 +1,7 @@
 package com.example.relevo.data
 
 import android.content.Context
+import com.example.relevo.domain.Interests
 import com.example.relevo.domain.RouteStep
 import com.example.relevo.domain.RouteTrack
 import org.json.JSONArray
@@ -22,7 +23,11 @@ class RouteStore(context: Context) {
         interest = item.getString("interest"),
         title = item.getString("title"),
         steps = List(steps.length()) { s ->
-          steps.getJSONObject(s).let { RouteStep(it.getString("id"), it.getString("activity"), it.optString("first_step"), it.optString("place")) }
+          steps.getJSONObject(s).let {
+            val activity = it.getString("activity")
+            val firstStep = it.optString("first_step")
+            RouteStep(it.getString("id"), activity, firstStep, Interests.updatedPlace(activity, firstStep, it.optString("place")))
+          }
         },
         current = item.optInt("current", 0),
       )

@@ -483,7 +483,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   val objectChoice = studyCondition == null || studyCondition != StudyCondition.PHONE
   Text(
     when (studyCondition) {
-      null -> "Elige una. Después puedes probar cómo suena."
+      null -> "Suena en el Tag. Si prefieres otra cosa, elígela."
       StudyCondition.PHONE -> "Esta semana suena en el teléfono."
       StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el Tag."
       StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el Tag."
@@ -492,12 +492,12 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   )
   SectionGap()
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+    SoundOption(KitIcon.OBJETO, "El Tag", tagSubtitle(tag, tagStatus),
+      selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, enabled = objectChoice) { actions.onRoute(SignalRoute.TAG) }
     SoundOption(KitIcon.PARLANTE, "El parlante", if (speakerConnected) "Conectado por Bluetooth" else "Sin parlante conectado",
       selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, enabled = objectChoice) { actions.onRoute(SignalRoute.BLUETOOTH) }
     SoundOption(KitIcon.TIEMPO, "El reloj", if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas",
       selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.WATCH, enabled = objectChoice) { actions.onRoute(SignalRoute.WATCH) }
-    SoundOption(KitIcon.OBJETO, "El Tag", tagSubtitle(tag, tagStatus),
-      selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, enabled = objectChoice) { actions.onRoute(SignalRoute.TAG) }
     SoundOption(KitIcon.TELEFONO, "El teléfono", "Suena donde esté el teléfono",
       selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, enabled = studyCondition == null) { actions.onRoute(SignalRoute.PHONE) }
   }
@@ -568,6 +568,22 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
       onFinish = if (tag.linkedName == null) ({ withPermission(actions.onTagSearch) }) else null,
     )
   }
+  // Sin Tag elegido, la búsqueda empieza sola al llegar (2.28): basta tocar el que aparece. Si no aparece
+  // ninguno, se vuelve a buscar hasta tres veces.
+  var autoSearched by rememberSaveable { mutableStateOf(false) }
+  var retries by rememberSaveable { mutableIntStateOf(0) }
+  LaunchedEffect(tag.linkedName, guide, tag.searching) {
+    if (tag.linkedName != null || guide || tag.searching || autoSearched || denied) return@LaunchedEffect
+    autoSearched = true
+    withPermission(actions.onTagSearch)
+  }
+  LaunchedEffect(tag.searched, tag.searching) {
+    if (tag.linkedName == null && tag.searched && !tag.searching && tag.found.isEmpty() && tag.problem == null && retries < 3 && TagLink.hasPermissions(context)) {
+      delay(2_000)
+      retries++
+      actions.onTagSearch()
+    }
+  }
   if (denied) {
     Notice("Relevo necesita el permiso de dispositivos cercanos para encontrar el Tag. Solo lo usa para eso.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
       PlainAction("Abrir los ajustes de Relevo", {
@@ -593,12 +609,16 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     SectionGap()
   }
   if (tag.linkedName == null) {
-    Text("Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después búscalo.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    Text(
+      if (tag.searching) "Buscando Tags cerca. Si el tuyo está apagado, mantén apretado su botón 3 segundos, hasta que pite dos veces."
+      else "Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después toca el tuyo en la lista.",
+      style = Relevo.type.body, color = Relevo.colors.graphite,
+    )
     Spacer(Modifier.height(8.dp))
     PlainAction("Cómo usar el Tag", { guide = true }, icon = KitIcon.AYUDA)
     SectionGap()
     RelevoButton(
-      if (tag.searching) "Buscando…" else "Buscar el Tag", { withPermission(actions.onTagSearch) },
+      if (tag.searching) "Buscando…" else if (tag.searched) "Buscar de nuevo" else "Buscar el Tag", { retries = 0; withPermission(actions.onTagSearch) },
       kind = ButtonKind.Secondary, icon = KitIcon.BUSCAR, enabled = !tag.searching,
     )
     if (!TagLink.hasPermissions(context)) {

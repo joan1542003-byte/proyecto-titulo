@@ -15,6 +15,18 @@ class UsageWindowTest {
   }
 
   @Test
+  fun separatesTheTimeOfEachTrackedApp() {
+    val events = listOf(
+      event(110, Kind.RESUMED, "app.a"),
+      event(120, Kind.PAUSED, "app.a"),
+      event(120, Kind.RESUMED, "other"),
+      event(150, Kind.PAUSED, "other"),
+      event(150, Kind.RESUMED, "app.b"),
+    )
+    assertEquals(mapOf("app.a" to 10_000L, "app.b" to 50_000L), UsageWindow.millisByApp(events, 100_000L, 200_000L, tracked))
+  }
+
+  @Test
   fun sumsSeveralTrackedAppsAndIgnoresOthers() {
     val events = listOf(
       event(110, Kind.RESUMED, "app.a"),

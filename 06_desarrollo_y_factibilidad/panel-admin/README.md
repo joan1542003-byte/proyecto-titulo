@@ -1,6 +1,6 @@
 # Panel del testeo de Relevo
 
-**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 10.
+**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 11.
 
 ## Diseño
 
@@ -34,6 +34,11 @@ El panel se ordena en cuatro pestañas:
 ## Elección libre (versión 6, retirada)
 
 Retirada el mismo día por D-112: la versión 7 restaura la 5, por condiciones, y exige la app 2.22. Lo que sigue describe la versión 6 como antecedente. Desde D-110, A, B y C son lo que eligió la persona: A, un objeto donde empieza; B, un objeto en otro lugar; C, el teléfono. Resultados suma «Qué elige», con barras de A, B y C en total y por semana y su cantidad escrita, y la cifra «Elige más». Las tarjetas, la comparación y las exportaciones hablan de elecciones, no de condiciones asignadas. «Para revisar» avisa a quien use una app anterior a la 2.20.
+
+## Tiempo en cada app y perfiles (versión 11)
+
+- **Tiempo en cada app elegida:** la ficha de cada persona abre con una tabla por app: hoy, últimos 7 días, total, veces que la abrió y tiempo dentro de sus relevos. Las cuatro primeras vienen del uso diario, que llega cada 30 minutos. La última, desde la app 2.28, que guarda el tiempo de cada app al sonar o al desactivar un relevo. Cada relevo de la ficha muestra además su desglose, por ejemplo «En sus apps: Instagram 7 min · TikTok 3 min».
+- **Perfiles en la barra:** en computador, bajo las secciones, aparece cada persona con su estado; tocarla abre su perfil. Se muestran hasta 12; el resto, en Personas.
 
 ## Borrar datos y navegación (versión 10)
 
@@ -87,6 +92,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Tiempo en cada app y perfiles (versión 11)
+
+- **Qué cambió:** la ficha suma la tabla de tiempo en cada app elegida y el desglose por relevo; la barra lateral suma los perfiles; se quitó la lista anterior de uso por app, que quedó repetida; marca la 2.28 como la versión del testeo.
+- **Cómo estaba antes:** el uso por app era una lista al final de la sección de uso, sin el tiempo dentro de los relevos, y los perfiles solo se abrían desde Personas.
+- **Por qué:** pedido del autor (D-117).
 
 ### 2026-10-07 — Versión 2.27
 

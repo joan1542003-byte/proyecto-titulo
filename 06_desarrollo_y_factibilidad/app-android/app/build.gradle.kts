@@ -1,4 +1,4 @@
-﻿import java.util.Properties
+import java.util.Properties
 
 plugins {
   alias(libs.plugins.android.application)
@@ -16,15 +16,20 @@ android {
         applicationId = "cl.udp.relevo"
         minSdk = 31
         targetSdk = 36
-        versionCode = 39
-        versionName = "2.27"
+        versionCode = 40
+        versionName = "2.28"
         buildConfigField("String", "SUPABASE_URL", "\"${localProperties.getProperty("SUPABASE_URL", "")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${localProperties.getProperty("SUPABASE_PUBLISHABLE_KEY", "")}\"")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            // 2.28: la versión para teléfonos va optimizada (sin depuración, con R8 y los perfiles de Compose)
+            // para que se mueva a la frecuencia de la pantalla. Se firma con la clave de depuración de este
+            // computador, la misma de las versiones anteriores, para instalarse encima sin perder datos.
+            isMinifyEnabled = true
+            isShrinkResources = true
+            signingConfig = signingConfigs.getByName("debug")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -68,9 +73,9 @@ dependencies {
   implementation(libs.androidx.compose.ui)
   implementation(libs.androidx.compose.ui.tooling.preview)
   implementation(libs.androidx.compose.material3)
-  // Vidrio de la capa de navegaciÃ³n: desenfoque real con RenderEffect (Android 12+), D-083.
+  // Vidrio de la capa de navegación: desenfoque real con RenderEffect (Android 12+), D-083.
   implementation("dev.chrisbanes.haze:haze:1.6.10")
-  // Mensajes del proyecto al instante: conexiÃ³n Realtime de Supabase por WebSocket (D-096).
+  // Mensajes del proyecto al instante: conexión Realtime de Supabase por WebSocket (D-096).
   implementation("com.squareup.okhttp3:okhttp:4.12.0")
   // Tooling
   debugImplementation(libs.androidx.compose.ui.tooling)

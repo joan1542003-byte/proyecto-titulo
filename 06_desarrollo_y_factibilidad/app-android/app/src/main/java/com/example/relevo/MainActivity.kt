@@ -13,6 +13,7 @@ class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     enableEdgeToEdge()
+    preferFastestRefreshRate()
     LaunchRequests.handle(intent)
     messageOpened(intent)
     setContent { MainNavigation() }
@@ -23,6 +24,20 @@ class MainActivity : ComponentActivity() {
     setIntent(intent)
     LaunchRequests.handle(intent)
     messageOpened(intent)
+  }
+
+  /**
+   * Pide la frecuencia de pantalla más alta que el teléfono ofrece con la misma resolución (90 o 120 Hz),
+   * para que las animaciones vayan a 60 cuadros por segundo o más (2.28). Android puede bajarla para
+   * ahorrar batería; la app solo la pide.
+   */
+  private fun preferFastestRefreshRate() {
+    val display = display ?: return
+    val current = display.mode
+    val fastest = display.supportedModes
+      .filter { it.physicalWidth == current.physicalWidth && it.physicalHeight == current.physicalHeight }
+      .maxByOrNull { it.refreshRate } ?: return
+    if (fastest.modeId != current.modeId) window.attributes = window.attributes.apply { preferredDisplayModeId = fastest.modeId }
   }
 
   /** Se abrió la app desde un mensaje del proyecto (D-096): queda registrado cuándo. */

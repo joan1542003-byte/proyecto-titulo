@@ -1340,7 +1340,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** la explicación se deduce de tres observaciones y no está confirmada. Treinta segundos de pitido continuo pueden molestar más que los pulsos: se revisará con lo que digan las personas.
 - **Documentación:** [Android 2.27](../06_desarrollo_y_factibilidad/app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md).
 
+## D-117 — El Tag por defecto, lugares concretos y una app fluida
+
+- **Fecha:** 2026-10-07.
+- **Estado:** implementado en Android 2.28 y en el panel (versión 11); revisado en el emulador y con datos de ejemplo. No probado en un teléfono real.
+- **Decisión:** el Tag es la salida por defecto, salvo en la semana C, y su búsqueda empieza sola. Las sugerencias de lugar son lugares concretos, nunca habitaciones enteras. Con el relevo listo, la acción principal es volver. El APK se entrega optimizado, sin desenfoques progresivos y pidiendo la frecuencia de pantalla más alta. Cada relevo guarda el tiempo en cada app elegida, y el panel lo muestra junto con perfiles en su barra lateral.
+- **Fundamento:** pedido del autor. Su Tag es el objeto del proyecto, y elegirlo y buscarlo debía ser lo más directo. En el emulador, los desenfoques progresivos dejaban 72 % de cuadros lentos al desplazar el Inicio; sin ellos, 6 %, como los Ajustes del sistema.
+- **Límites:** que el Tag venga elegido revierte en parte D-111, que no preseleccionaba nada. Es visible y se cambia con un toque. Las cifras de fluidez son del emulador.
+- **Documentación:** [Android 2.28](../06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — D-117
+
+- **Qué cambió:** se registró D-117.
+- **Cómo estaba antes:** la última decisión era D-116.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — D-116
 

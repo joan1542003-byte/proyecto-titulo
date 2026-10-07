@@ -112,6 +112,7 @@
 | 7 oct. | Corrección | En Resultados siguen apareciendo datos de personas que ya se eliminaron. | La causa eran cuatro relevos antiguos (22 y 23 de septiembre) de códigos sin eventos, que contaban en Resultados pero no aparecían en Personas. El [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) ahora muestra en Personas todo código con datos, para poder borrarlo, y recalcula Resultados después de borrar. No se borró ninguna fila. | D-114 |
 | 7 oct. | Corrección | iSearching en el iPhone encuentra el Tag y funciona; en Android, Relevo dice encontrarlo y conectarse, pero no suena y el teléfono vibra. | El registro mostró que la conexión y la orden funcionaban, pero el Tag no pitaba. [Android 2.26](../06_desarrollo_y_factibilidad/app-android/version-2.26-el-tag-pita-2026-10-07.md): Relevo ya no apaga a ciegas el interruptor FFE2 (en algunos modelos silencia el pitido), la prueba pregunta si se escuchó y prueba otras formas, y se registra cómo es el Tag por dentro. Falta probarlo con el Tag real. | D-115 |
 | 7 oct. | Corrección | Ahora sí pita, pero al usar la app no suena cuando el relevo debería sonar. Asegurar que el pitido sea constante y no uno solo. | El registro mostró que la prueba escribía 1 en FFE2 justo antes de pitar y la señal no. [Android 2.27](../06_desarrollo_y_factibilidad/app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md): FFE2 en 1 junto con la alerta para pitar, pitido continuo de 30 segundos con la orden repetida cada segundo, y reconexión si el Tag no confirma. Falta probarlo con el Tag real. | D-116 |
+| 7 oct. | Encargo | En el panel, ver cuánto tiempo usó en cada app elegida y tener el perfil en la barra de navegación. El Tag por defecto, con su búsqueda por Bluetooth siempre a la vista: elegir el aparato y listo. Quitar lugares ambiguos como «en la pieza». Con el relevo listo, la acción principal debe ser volver, no desactivar. La app debe ir a 60 cuadros por segundo o más. | [Android 2.28](../06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md): Tag por defecto con búsqueda automática, lugares concretos, «Volver al inicio» como acción principal, tiempo en cada app por relevo y una app optimizada (de 72 % a 6 % de cuadros lentos en el emulador). [Panel](../06_desarrollo_y_factibilidad/panel-admin/README.md) versión 11: tabla de tiempo en cada app y perfiles en la barra lateral. | D-117 |
 
 ## Lo que muestra el registro
 
@@ -122,6 +123,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Tag por defecto y fluidez
+
+- **Qué cambió:** se registró el pedido de la 2.28 y del panel 11.
+- **Cómo estaba antes:** terminaba en la 2.27.
+- **Por qué:** regla de registrar cada pedido del autor.
 
 ### 2026-10-07 — El Tag no sonaba en la señal
 

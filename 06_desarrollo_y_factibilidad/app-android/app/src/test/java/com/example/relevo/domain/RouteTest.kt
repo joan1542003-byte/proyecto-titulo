@@ -54,6 +54,17 @@ class RouteTest {
     assertEquals("Leer", result[1].title)
   }
 
+  @Test fun savedStepsLeaveRoomLevelPlacesBehind() {
+    // Un paso sugerido guardado con «En tu pieza» toma el lugar concreto que lo reemplazó.
+    assertEquals("Junto al clóset", Interests.updatedPlace("Hacer una serie corta", "Ponerte ropa cómoda", "En tu pieza"))
+    // Lo que la persona escribió, o un paso que no es sugerido, no cambia.
+    assertEquals("En la terraza", Interests.updatedPlace("Hacer una serie corta", "Ponerte ropa cómoda", "En la terraza"))
+    assertEquals("En tu pieza", Interests.updatedPlace("Algo propio", "Otro paso", "En tu pieza"))
+    // Ninguna sugerencia nombra una habitación entera.
+    val rooms = setOf("En tu pieza", "En el living", "En la cocina", "En el comedor")
+    assertTrue(Interests.all.flatMap { it.suggestions }.none { it.third in rooms })
+  }
+
   @Test fun reconcileDropsInterestsThatWereRemoved() {
     val result = Interests.reconcile(listOf(track), listOf("leer"), "", ::id)
     assertEquals(listOf("leer"), result.map { it.interest })

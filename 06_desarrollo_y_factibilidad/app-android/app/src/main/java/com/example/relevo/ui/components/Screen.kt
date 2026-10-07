@@ -172,7 +172,7 @@ fun RelevoScreen(
     }
 
     // Borde superior: el contenido se funde bajo la barra, en una franja que termina poco después de ella.
-    Column(Modifier.fillMaxWidth().edgeBlur(haze, fromTop = true, alpha = topAlpha)) {
+    Column(Modifier.fillMaxWidth().edgeFade(fromTop = true, alpha = topAlpha)) {
       Spacer(Modifier.statusBarsPadding())
       Spacer(Modifier.height(BarHeight + 12.dp))
     }
@@ -205,7 +205,7 @@ fun RelevoScreen(
     // Abajo: la acción principal flota sobre un borde desenfocado; en las pestañas, por encima de la barra.
     if (bottom != null || dock > 0.dp) {
       Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth()) {
-        Box(Modifier.matchParentSize().edgeBlur(haze, fromTop = false))
+        Box(Modifier.matchParentSize().edgeFade(fromTop = false))
         Column(
           Modifier.fillMaxWidth().onSizeChanged { bottomHeight = it.height }
             .padding(horizontal = Relevo.margin).padding(top = 22.dp, bottom = 12.dp + dock).navigationBarsPadding(),

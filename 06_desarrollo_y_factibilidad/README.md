@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.28](app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md): el Tag por defecto, lugares concretos y una app optimizada (D-117); la versión del primer testeo.
 - [Aplicación Android 2.27](app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md): el Tag suena en la señal y pita seguido (D-116); la versión del primer testeo.
 - [Aplicación Android 2.26](app-android/version-2.26-el-tag-pita-2026-10-07.md): el Tag pita y la prueba pregunta si se escuchó (D-115); la versión del primer testeo.
 - [Aplicación Android 2.25](app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md): «Tag» en pantalla y guía paso a paso (D-114); la versión del primer testeo.
@@ -76,6 +77,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-07 — Android 2.28
+
+- **Qué cambió:** se enlaza la 2.28.
+- **Cómo estaba antes:** la más reciente era la 2.27.
+- **Por qué:** D-117.
 
 ### 2026-10-07 — Android 2.27
 

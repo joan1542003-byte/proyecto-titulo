@@ -33,8 +33,48 @@ object UsageWindow {
     return tracker.accumulatedMillis
   }
 
+  /**
+   * Tiempo en cada app elegida dentro de la ventana (2.28): el mismo cálculo que [trackedMillis], separado
+   * por app. Una app que no se abrió no aparece.
+   */
+  fun millisByApp(events: List<ForegroundEvent>, start: Long, end: Long, tracked: Set<String>): Map<String, Long> {
+    if (end <= start) return emptyMap()
+    val totals = linkedMapOf<String, Long>()
+    var current: String? = null
+    var cursor = start
+    fun count(until: Long) {
+      val app = current ?: return
+      if (app in tracked && until > cursor) totals[app] = (totals[app] ?: 0L) + (until - cursor)
+    }
+    for (event in events.sortedBy { it.at }) {
+      if (event.at > end) break
+      if (event.at > start) {
+        count(event.at)
+        cursor = event.at
+      }
+      when (event.kind) {
+        ForegroundTracker.Kind.RESUMED -> current = event.packageName
+        ForegroundTracker.Kind.PAUSED -> if (current == event.packageName) current = null
+        ForegroundTracker.Kind.SCREEN_OFF -> current = null
+      }
+    }
+    count(end)
+    return totals
+  }
+
   /** Lee los eventos de Tiempo de uso de Android. Devuelve null si no hay permiso. */
   fun trackedSeconds(context: Context, start: Long, end: Long, tracked: Set<String>): Int? {
+    val list = foregroundEvents(context, start, end) ?: return null
+    return (trackedMillis(list, start, end, tracked) / 1_000L).toInt()
+  }
+
+  /** Segundos en cada app elegida dentro de la ventana. Devuelve null si no hay permiso. */
+  fun secondsByApp(context: Context, start: Long, end: Long, tracked: Set<String>): Map<String, Int>? {
+    val list = foregroundEvents(context, start, end) ?: return null
+    return millisByApp(list, start, end, tracked).mapValues { (it.value / 1_000L).toInt() }
+  }
+
+  private fun foregroundEvents(context: Context, start: Long, end: Long): List<ForegroundEvent>? {
     if (!UsageAccess.isGranted(context)) return null
     val manager = context.getSystemService(UsageStatsManager::class.java) ?: return null
     val events = runCatching { manager.queryEvents(start - LOOKBACK_MILLIS, end) }.getOrNull() ?: return null
@@ -50,6 +90,6 @@ object UsageWindow {
       } ?: continue
       list += ForegroundEvent(event.timeStamp, kind, event.packageName)
     }
-    return (trackedMillis(list, start, end, tracked) / 1_000L).toInt()
+    return list
   }
 }

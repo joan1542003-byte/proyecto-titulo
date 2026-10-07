@@ -52,29 +52,30 @@ internal val activityIdeas = listOf(
   // Desde 2.13 (D-088), solo actividades que aparecen en las entrevistas P1–P8 (corpus, Q1, Q2 y Q12).
   ActivityIdea("Leer", "Abrir el libro", "En el velador", KitIcon.LEER, Photo.LEER), // P6, P8
   ActivityIdea("Dormir a tiempo", "Dejar el teléfono cargando lejos", "Junto al cargador", KitIcon.DORMIR), // P2, P3, P8
-  ActivityIdea("Hacer ejercicio", "Ponerte ropa cómoda", "En tu pieza", KitIcon.EJERCICIO, Photo.EJERCICIO), // P1, P3
+  ActivityIdea("Hacer ejercicio", "Ponerte ropa cómoda", "Junto al clóset", KitIcon.EJERCICIO, Photo.EJERCICIO), // P1, P3
   ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la puerta", KitIcon.SALIR, Photo.PERRO), // P1, P4
   ActivityIdea("Dibujar", "Sacar el cuaderno y un lápiz", "En el escritorio", KitIcon.DIBUJAR, Photo.DIBUJAR), // P2
   ActivityIdea("Pintar", "Preparar las acuarelas", "En la mesa", KitIcon.PINTAR, Photo.PINTAR), // P2
-  ActivityIdea("Cocinar", "Reunir los ingredientes", "En la cocina", KitIcon.COCINAR, Photo.COCINAR), // P1
+  ActivityIdea("Cocinar", "Reunir los ingredientes", "En el mesón de la cocina", KitIcon.COCINAR, Photo.COCINAR), // P1
   ActivityIdea("Estudiar", "Abrir tus apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR), // P8
-  ActivityIdea("Ordenar tu pieza", "Despejar una superficie", "En tu pieza", KitIcon.ORDENAR, Photo.ORDENAR), // P5
+  ActivityIdea("Ordenar tu pieza", "Despejar una superficie", "En el escritorio", KitIcon.ORDENAR, Photo.ORDENAR), // P5
   ActivityIdea("Hacer manualidades", "Preparar los materiales", "En la mesa de trabajo", KitIcon.MANUALIDADES, Photo.MANUALIDADES), // P2
   ActivityIdea("Armar una maqueta", "Abrir la caja de la maqueta", "En la mesa", KitIcon.MANUALIDADES), // P6
   ActivityIdea("Salir en bicicleta", "Sacar la bici", "Junto a la puerta", KitIcon.BICICLETA), // P7
-  ActivityIdea("Meditar", "Sentarte en el cojín", "En tu pieza", KitIcon.ESTIRAR), // P3
+  ActivityIdea("Meditar", "Sentarte en el cojín", "Junto al cojín", KitIcon.ESTIRAR), // P3
   ActivityIdea("Leer manga", "Sacar el tomo del estante", "Junto al estante", KitIcon.LEER, Photo.LIBRO), // P1
   // Desde 2.23, a pedido del autor: actividades de ocio que también son válidas y aparecen en P1–P8.
   ActivityIdea("Jugar videojuegos", "Encender la consola", "Junto a la tele", KitIcon.VIDEOJUEGOS), // P3, P6, P7, P8
   ActivityIdea("Escuchar música", "Ponerte los audífonos", "En el sillón", KitIcon.MUSICA), // P5, P6, P8
-  ActivityIdea("Ver una película", "Elegir la película", "En el living", KitIcon.REPRODUCIR), // P1, P2, P5
+  ActivityIdea("Ver una película", "Elegir la película", "Junto a la tele", KitIcon.REPRODUCIR), // P1, P2, P5
   ActivityIdea("Llamar a alguien", "Buscar su número", "En el sillón", KitIcon.LLAMAR), // P6
   ActivityIdea("Jugar un juego de mesa", "Sacar la caja", "En la mesa", KitIcon.JUEGO_DE_MESA), // P2
 )
 
 /** Lugares de la casa para elegir con un toque, sin escribir. */
+/** Lugares concretos, donde se puede dejar el Tag: nunca una habitación entera, que es ambigua (2.28). */
 internal val commonPlaces = listOf(
-  "En tu pieza", "En el velador", "En el escritorio", "En el living", "En el sillón", "En la mesa", "En la cocina", "Junto a la puerta",
+  "En el velador", "En el escritorio", "En la mesa", "En el sillón", "Junto a la cama", "Junto a la tele", "En el mesón de la cocina", "Junto a la puerta",
 )
 
 private fun sameActivity(a: String, b: String): Boolean = plain(a).trim() == plain(b).trim()
