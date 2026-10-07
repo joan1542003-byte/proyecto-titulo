@@ -22,19 +22,11 @@ class TagProtocolTest {
   }
 
   @Test
-  fun signalLastsThirtySecondsInSixBeeps() {
-    val pulses = TagProtocol.pulses(test = false)
-    assertEquals(6, pulses.size)
-    assertEquals(30_000L, pulses.sumOf { it.onMillis + it.offMillis })
-    assertTrue(pulses.all { it.onMillis == 2_000L })
-  }
-
-  @Test
-  fun testIsASingleShortBeep() {
-    val pulses = TagProtocol.pulses(test = true)
-    assertEquals(1, pulses.size)
-    assertEquals(2_000L, pulses.single().onMillis)
-    assertEquals(0L, pulses.single().offMillis)
+  fun beepsWithoutPausesThirtySecondsOrThreeInTheTest() {
+    assertEquals(30_000L, TagProtocol.durationMillis(test = false))
+    assertEquals(3_000L, TagProtocol.durationMillis(test = true))
+    // La orden se repite varias veces dentro de la prueba, para que el pitido no se corte.
+    assertTrue(TagProtocol.REPEAT_MILLIS * 2 < TagProtocol.durationMillis(test = true))
   }
 
   @Test
@@ -48,23 +40,13 @@ class TagProtocolTest {
   }
 
   @Test
-  fun triesHighThenMediumThenWithoutTurningOffTheSwitch() {
-    assertEquals(TagProtocol.AlertTry(2, false), TagProtocol.ALERT_TRIES[0])
-    assertEquals(1, TagProtocol.nextTry(0, switchTurnedOff = true))
-    assertEquals(2, TagProtocol.nextTry(1, switchTurnedOff = true))
-    assertEquals(null, TagProtocol.nextTry(2, switchTurnedOff = true))
-    // Si FFE2 no se apagó, dejarlo como viene no cambia nada: esa forma se salta.
-    assertEquals(null, TagProtocol.nextTry(1, switchTurnedOff = false))
-    assertEquals(0, TagProtocol.tryIndex(2, false))
-    assertEquals(2, TagProtocol.tryIndex(2, true))
-    assertEquals(0, TagProtocol.tryIndex(3, false))
-  }
-
-  @Test
-  fun turnsOffTheSwitchOnlyWhenTheTagNamesItLinkLoss() {
-    assertTrue(TagProtocol.isLinkLossSwitch("Set LinkLost Alert"))
-    assertFalse(TagProtocol.isLinkLossSwitch(null))
-    assertFalse(TagProtocol.isLinkLossSwitch("Key Press State"))
+  fun triesHighThenMediumLevel() {
+    assertEquals(listOf(2, 1), TagProtocol.ALERT_LEVELS)
+    assertEquals(1, TagProtocol.nextTry(0))
+    assertEquals(null, TagProtocol.nextTry(1))
+    assertEquals(0, TagProtocol.tryIndex(2))
+    assertEquals(1, TagProtocol.tryIndex(1))
+    assertEquals(0, TagProtocol.tryIndex(3))
   }
 
   @Test

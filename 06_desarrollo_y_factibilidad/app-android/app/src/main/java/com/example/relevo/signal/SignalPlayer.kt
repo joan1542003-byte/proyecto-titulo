@@ -125,9 +125,10 @@ class SignalPlayer(private val context: Context) {
   }
 
   /**
-   * El llavero pita seis veces, 2 s cada vez, durante 30 s; la prueba es un pitido. Si no está
+   * El Tag pita seguido durante 30 s, o 3 s en la prueba, hasta que se toca su botón (D-116). Si no está
    * conectado, se conecta antes (hasta 20 s), salvo que la orden llegue desde la pantalla: ahí no se
-   * espera, se abre la conexión en segundo plano y se avisa que no sonó. Apretar su botón la silencia.
+   * espera, se abre la conexión en segundo plano y se avisa que no sonó. Si el Tag no confirma la orden,
+   * la conexión se abre de nuevo y se reintenta una vez.
    */
   private fun playOnTag(pattern: Pattern, onEnded: ((Ending) -> Unit)?): Boolean {
     val address = TagStore(context).address
@@ -136,14 +137,13 @@ class SignalPlayer(private val context: Context) {
       return false
     }
     val onScreen = Looper.myLooper() == Looper.getMainLooper()
-    val ready = TagLink.isConnectedTo(address) ||
-      if (onScreen) {
-        TagLink.connectInBackground(context, address)
-        false
-      } else {
-        runBlocking { withTimeoutOrNull(TAG_CONNECT_MILLIS) { TagLink.connect(context, address) } } == true
-      }
-    if (!ready || !runBlocking { TagLink.alertOn(context) }) {
+    var on = TagLink.isConnectedTo(address) && runBlocking { TagLink.alertOn(context) }
+    if (!on && onScreen) {
+      TagLink.connectInBackground(context, address)
+    } else if (!on) {
+      on = runBlocking { withTimeoutOrNull(TAG_CONNECT_MILLIS) { TagLink.reconnect(context, address) && TagLink.alertOn(context) } } == true
+    }
+    if (!on) {
       vibrateOnce()
       return false
     }
@@ -154,29 +154,24 @@ class SignalPlayer(private val context: Context) {
     tagThread =
       thread(name = "relevo-tag", isDaemon = true) {
         var ending = Ending.COMPLETED
-        // Espera [millis] mientras suena; devuelve por qué se cortó antes, o null si terminó la espera.
-        fun waitOrEnd(millis: Long): Ending? {
-          var waited = 0L
-          while (waited < millis) {
-            when {
-              pressed.get() -> return Ending.SILENCED_ON_OBJECT
-              !playing -> return Ending.STOPPED
-              !TagLink.isConnectedTo(address) -> return Ending.ROUTE_LOST
-            }
-            runCatching { Thread.sleep(TAG_STEP_MILLIS) }
-            waited += TAG_STEP_MILLIS
+        val endAt = System.currentTimeMillis() + TagProtocol.durationMillis(pattern == Pattern.TEST)
+        var repeatAt = System.currentTimeMillis() + TagProtocol.REPEAT_MILLIS
+        var misses = 0
+        while (System.currentTimeMillis() < endAt) {
+          when {
+            pressed.get() -> { ending = Ending.SILENCED_ON_OBJECT; break }
+            !playing -> { ending = Ending.STOPPED; break }
+            !TagLink.isConnectedTo(address) -> { ending = Ending.ROUTE_LOST; break }
           }
-          return null
+          // La orden se repite cada segundo para que el pitido siga; tres fallos seguidos cuentan como corte.
+          if (System.currentTimeMillis() >= repeatAt) {
+            misses = if (runBlocking { TagLink.alertOn(context) }) 0 else misses + 1
+            if (misses >= TAG_MISSES) { ending = Ending.ROUTE_LOST; break }
+            repeatAt += TagProtocol.REPEAT_MILLIS
+          }
+          runCatching { Thread.sleep(TAG_STEP_MILLIS) }
         }
-        for ((index, pulse) in TagProtocol.pulses(pattern == Pattern.TEST).withIndex()) {
-          // El primer pitido ya se encendió al empezar.
-          if (index > 0 && !runBlocking { TagLink.alertOn(context) }) { ending = Ending.ROUTE_LOST; break }
-          waitOrEnd(pulse.onMillis)?.let { ending = it }
-          runBlocking { TagLink.setAlert(TagProtocol.ALERT_OFF) }
-          if (ending != Ending.COMPLETED) break
-          if (pulse.offMillis > 0L) waitOrEnd(pulse.offMillis)?.let { ending = it }
-          if (ending != Ending.COMPLETED) break
-        }
+        runBlocking { TagLink.alertOff() }
         TagLink.onButton = null
         // Solo stop() apaga `playing`: si ocurrió, la señal se detuvo por decisión de la persona en la app.
         if (!playing && ending == Ending.COMPLETED) ending = Ending.STOPPED
@@ -275,5 +270,6 @@ class SignalPlayer(private val context: Context) {
     const val CHUNK = 2_048
     const val TAG_CONNECT_MILLIS = 20_000L
     const val TAG_STEP_MILLIS = 100L
+    const val TAG_MISSES = 3
   }
 }

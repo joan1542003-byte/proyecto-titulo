@@ -659,7 +659,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     when {
       tag.test == TagTest.ASKING -> TagHeardQuestion(tag.retry, actions.onTagHeard)
       tag.test == TagTest.SOUNDED -> Column(verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
-        Text("Así va a sonar: cuando se cumpla el tiempo, pitará seis veces en 30 segundos.", style = Relevo.type.body, color = Relevo.colors.ink)
+        Text("Así va a sonar: cuando se cumpla el tiempo, pitará seguido hasta 30 segundos.", style = Relevo.type.body, color = Relevo.colors.ink)
         if (tag.button) Text("Para callarlo, toca su botón una vez. Si lo mantienes apretado, se apaga.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         if (!tag.linkLossOff) {
           Text("Este Tag mantiene su alarma de alejamiento: si el teléfono se aleja mucho mientras espera, puede pitar solo. Para callarlo, tócalo una vez.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
@@ -692,7 +692,7 @@ private fun TagHeardQuestion(retry: Boolean, onAnswer: (Boolean) -> Unit) {
   Column(verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
     Text("¿Lo escuchaste pitar?", style = Relevo.type.headline, color = Relevo.colors.ink)
     Text(
-      if (retry) "Lo probamos de otra forma. Debió pitar 2 segundos." else "Debió pitar 2 segundos.",
+      if (retry) "Lo probamos de otra forma. Debió pitar 3 segundos seguidos." else "Debió pitar 3 segundos seguidos.",
       style = Relevo.type.footnote, color = Relevo.colors.graphite,
     )
     Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {

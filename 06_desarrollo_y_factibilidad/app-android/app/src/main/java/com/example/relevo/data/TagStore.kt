@@ -26,18 +26,12 @@ class TagStore(context: Context) {
   }
 
   /**
-   * Cómo se le pide a este Tag que pite (2.26). Los modelos no responden igual: la prueba recorre las
-   * formas hasta que la persona confirma que lo escuchó, y se guarda la que funcionó. [alertLevel]: 2
-   * (alto, el de iTag One) o 1 (medio). [keepLinkLossAlarm]: no tocar su interruptor FFE2, porque en
-   * algunos modelos apagarlo también silencia el pitido.
+   * Con qué nivel de alerta pita este Tag: 2 (alto, el de iTag One) o 1 (medio). La prueba los recorre
+   * hasta que la persona confirma que lo escuchó, y se guarda el que funcionó.
    */
   var alertLevel: Int
     get() = preferences.getInt("alert_level", 2)
     set(value) { preferences.edit().putInt("alert_level", value).apply() }
-
-  var keepLinkLossAlarm: Boolean
-    get() = preferences.getBoolean("keep_link_loss_alarm", false)
-    set(value) { preferences.edit().putBoolean("keep_link_loss_alarm", value).apply() }
 
   /** La persona confirmó que lo escuchó pitar con la forma guardada. */
   var heard: Boolean

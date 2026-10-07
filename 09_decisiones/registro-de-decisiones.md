@@ -1331,7 +1331,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** la causa es probable, no confirmada. Si el Tag mantiene su alarma de alejamiento, puede pitar solo cuando el teléfono se aleja mucho mientras un relevo espera.
 - **Documentación:** [Android 2.26](../06_desarrollo_y_factibilidad/app-android/version-2.26-el-tag-pita-2026-10-07.md).
 
+## D-116 — El Tag suena en la señal, seguido
+
+- **Fecha:** 2026-10-07.
+- **Estado:** implementado en Android 2.27; compilado y con pruebas unitarias. Falta probarlo con el Tag real.
+- **Decisión:** para pitar, Relevo escribe 1 en FFE2 y la alerta estándar; para callar, 0 en ambas; mientras espera, FFE2 queda en 0. El Tag pita seguido 30 segundos, o hasta que se toca, con la orden repetida cada segundo; la prueba pita 3 segundos. Si el Tag no confirma la orden al empezar, se reconecta y reintenta.
+- **Fundamento:** con la 2.26, la prueba pitó y la señal real no. El registro mostró que la prueba escribía 1 en FFE2 justo antes de la alerta y la señal no. El autor pidió un pitido constante.
+- **Límites:** la explicación se deduce de tres observaciones y no está confirmada. Treinta segundos de pitido continuo pueden molestar más que los pulsos: se revisará con lo que digan las personas.
+- **Documentación:** [Android 2.27](../06_desarrollo_y_factibilidad/app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — D-116
+
+- **Qué cambió:** se registró D-116.
+- **Cómo estaba antes:** la última decisión era D-115.
+- **Por qué:** el Tag no sonaba en la señal real.
 
 ### 2026-10-07 — D-115
 

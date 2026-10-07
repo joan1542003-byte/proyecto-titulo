@@ -6,8 +6,9 @@ import java.util.UUID
 /**
  * Llavero iTag clásico, el que se configura con las apps iSearching o Kindelf, usado como objeto que
  * suena (D-109). Relevo lo hace pitar con el servicio estándar de Bluetooth «Alerta inmediata»:
- * escribir 2 en «Nivel de alerta» lo enciende y 0 lo apaga. Lo mismo usan la app de código abierto
- * iTag One (s4ysolutions/itag) y la función «Alert / Stop alert» de iSearching. Ver
+ * escribir 2 en «Nivel de alerta» lo enciende y 0 lo apaga, como la app de código abierto iTag One
+ * (s4ysolutions/itag). Desde 2.27 también escribe 1 en FFE2 al pitar y 0 al callar: en el Tag del
+ * autor, la alerta estándar sola no suena (D-116). Ver
  * 06_desarrollo_y_factibilidad/objetos-que-suenan-2026-09-29.md.
  */
 object TagProtocol {
@@ -16,8 +17,9 @@ object TagProtocol {
   val ALERT_LEVEL: UUID = uuid16(0x2A06)
 
   /**
-   * Servicio propio del iTag (0xFFE0): FFE1 avisa cada vez que se aprieta el botón y FFE2 enciende o
-   * apaga la alarma que suena en el llavero cuando pierde la conexión con el teléfono.
+   * Servicio propio del iTag (0xFFE0): FFE1 avisa cada vez que se aprieta el botón. FFE2 cambia según el
+   * modelo: en algunos es la alarma por desconexión (Shing Lyu, 2023); en el Tag del autor, escribir 1
+   * lo hace pitar. Relevo lo deja en 0 mientras espera y lo pone en 1 solo mientras suena.
    */
   val KEY_SERVICE: UUID = uuid16(0xFFE0)
   val BUTTON: UUID = uuid16(0xFFE1)
@@ -38,44 +40,26 @@ object TagProtocol {
   const val ALERT_OFF: Byte = 0x00
   const val ALERT_HIGH: Byte = 0x02
 
-  /** Una forma de pedirle al Tag que pite: su nivel de alerta y si se deja su interruptor FFE2 como viene. */
-  data class AlertTry(val level: Int, val keepLinkLossAlarm: Boolean)
+  /**
+   * Niveles de alerta que la prueba recorre, en orden, hasta que la persona escucha el pitido: alto, el de
+   * iTag One, y medio.
+   */
+  val ALERT_LEVELS = listOf(2, 1)
+
+  /** El índice del nivel que sigue después de [current], o null si no quedan. */
+  fun nextTry(current: Int): Int? = (current + 1).takeIf { it < ALERT_LEVELS.size }
+
+  /** El índice del nivel guardado, o 0 si no es uno de los conocidos. */
+  fun tryIndex(level: Int): Int = ALERT_LEVELS.indexOf(level).coerceAtLeast(0)
 
   /**
-   * Las formas que la prueba recorre, en orden, hasta que la persona escucha el pitido (2.26): la de
-   * iTag One (nivel alto), el nivel medio y, por último, sin apagar el interruptor FFE2. En algunos
-   * modelos ese interruptor no es solo la alarma de desconexión: en 0, el Tag recibe la orden pero no
-   * pita, y lo recuerda hasta que se apaga.
+   * Cuánto pita: la señal, 30 s seguidos, como dura la del parlante (D-078), salvo que se toque el Tag; la
+   * prueba, 3 s seguidos. La orden se repite cada [REPEAT_MILLIS] para que el pitido no se corte: algunos
+   * Tag pitan un rato y se detienen solos.
    */
-  val ALERT_TRIES = listOf(AlertTry(2, false), AlertTry(1, false), AlertTry(2, true))
+  fun durationMillis(test: Boolean): Long = if (test) TEST_MILLIS else SIGNAL_MILLIS
 
-  /**
-   * La forma que sigue después de [current]. La última solo cambia algo si el interruptor FFE2 se
-   * apagó ([switchTurnedOff]); si no, se salta.
-   */
-  fun nextTry(current: Int, switchTurnedOff: Boolean): Int? =
-    (current + 1 until ALERT_TRIES.size).firstOrNull { switchTurnedOff || !ALERT_TRIES[it].keepLinkLossAlarm }
-
-  /** El índice de la forma guardada, o 0 si no coincide con ninguna. */
-  fun tryIndex(level: Int, keepLinkLossAlarm: Boolean): Int =
-    ALERT_TRIES.indexOf(AlertTry(level, keepLinkLossAlarm)).coerceAtLeast(0)
-
-  /**
-   * FFE2 se apaga solo si el propio Tag lo nombra como su alarma de desconexión, como el «Set LinkLost
-   * Alert» que documentó Shing Lyu. Sin ese nombre se deja encendido: no se sabe qué silencia.
-   */
-  fun isLinkLossSwitch(label: String?): Boolean =
-    label != null && (label.contains("link", ignoreCase = true) || label.contains("lost", ignoreCase = true))
-
-  /** Un pitido de [onMillis] seguido de [offMillis] en silencio. */
-  data class Pulse(val onMillis: Long, val offMillis: Long)
-
-  /**
-   * La señal dura 30 s, como la del parlante (D-078): seis pitidos de 2 s separados por 3 s, para que
-   * no sea un pitido continuo. La prueba es un solo pitido de 2 s.
-   */
-  fun pulses(test: Boolean): List<Pulse> =
-    if (test) listOf(Pulse(TEST_MILLIS, 0L)) else List(SIGNAL_PULSES) { Pulse(PULSE_ON_MILLIS, PULSE_OFF_MILLIS) }
+  const val REPEAT_MILLIS = 1_000L
 
   /**
    * Reconoce un iTag en la búsqueda: se anuncia como «iTAG» o «iTag», a veces seguido de espacios,
@@ -92,10 +76,8 @@ object TagProtocol {
     else -> "Lejos"
   }
 
-  private const val SIGNAL_PULSES = 6
-  private const val PULSE_ON_MILLIS = 2_000L
-  private const val PULSE_OFF_MILLIS = 3_000L
-  private const val TEST_MILLIS = 2_000L
+  private const val SIGNAL_MILLIS = 30_000L
+  private const val TEST_MILLIS = 3_000L
 
   private fun uuid16(short: Int): UUID = UUID.fromString(String.format(Locale.ROOT, "%08x-0000-1000-8000-00805f9b34fb", short))
 }

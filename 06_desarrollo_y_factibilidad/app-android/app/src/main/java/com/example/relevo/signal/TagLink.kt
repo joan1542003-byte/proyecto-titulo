@@ -43,9 +43,8 @@ import java.util.UUID
  *
  * Cómo funciona el llavero, verificado en código abierto y en el manual de iSearching:
  * - pita al escribir en la característica estándar «Nivel de alerta» (2 enciende, 0 apaga);
- * - pita solo cuando pierde la conexión; en algunos modelos se apaga escribiendo 0 en FFE2, pero en otros
- *   ese 0 también silencia el pitido. Desde 2.26 Relevo lo apaga solo si el Tag lo nombra como alarma de
- *   desconexión, y si no, lo deja encendido;
+ * - FFE2 cambia según el modelo: en unos apaga la alarma por desconexión, en el del autor hace pitar.
+ *   Relevo lo deja en 0 mientras espera y lo pone en 1, junto con la alerta estándar, solo mientras suena;
  * - avisa cada vez que se aprieta su botón (FFE1): durante la señal, eso la silencia;
  * - algunos se apagan si nadie se conecta en unos minutos: por eso la conexión se abre al activar el
  *   relevo y se mantiene, como hace iSearching.
@@ -58,16 +57,12 @@ object TagLink {
 
   enum class Problem { NO_PERMISSION, BLUETOOTH_OFF, NOT_FOUND, NOT_A_TAG }
 
-  /**
-   * [button]: el botón del llavero avisa al apretarlo. [linkLossOff]: se apagó su alarma por desconexión.
-   * [switchOff]: se escribió 0 en su interruptor FFE2.
-   */
+  /** [button]: el botón del llavero avisa al apretarlo. [linkLossOff]: se apagó su alarma por desconexión. */
   data class Status(
     val phase: Phase = Phase.IDLE,
     val problem: Problem? = null,
     val button: Boolean = false,
     val linkLossOff: Boolean = false,
-    val switchOff: Boolean = false,
   )
 
   /** Un llavero encontrado en la búsqueda. */
@@ -89,14 +84,13 @@ object TagLink {
 
   @Volatile private var gatt: BluetoothGatt? = null
   @Volatile private var alertLevel: BluetoothGattCharacteristic? = null
+  @Volatile private var switch: BluetoothGattCharacteristic? = null
   @Volatile private var connectedAddress: String? = null
   @Volatile private var heldAddress: String? = null
   @Volatile private var pendingConnect: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingDiscovery: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingOperation: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingRead: CompletableDeferred<ByteArray?>? = null
-  /** Nombre que el Tag le da a su interruptor FFE2, si lo tiene. */
-  @Volatile private var switchLabel: String? = null
 
   /**
    * Resumen de la última conexión: servicios, características con sus propiedades y el nombre y valor de
@@ -167,33 +161,48 @@ object TagLink {
     scope.launch { connect(app, address) }
   }
 
-  /** Enciende o apaga el pitido. Devuelve false si el llavero no está conectado o la orden no salió. */
-  suspend fun setAlert(level: Byte): Boolean {
+  /**
+   * Enciende el pitido con el nivel que funcionó en la prueba de este Tag: FFE2 en 1 y la alerta estándar.
+   * FFE2 se escribe con respuesta, así que confirma que el Tag la recibió; sin FFE2 cuenta la alerta, que
+   * sin respuesta solo confirma que salió del teléfono.
+   */
+  suspend fun alertOn(context: Context): Boolean {
     val g = gatt ?: return false
-    val characteristic = alertLevel ?: return false
-    return write(g, characteristic, byteArrayOf(level))
+    val alert = alertLevel ?: return false
+    val switched = switch?.let { write(g, it, byteArrayOf(1)) }
+    val alerted = write(g, alert, byteArrayOf(TagStore(context).alertLevel.toByte()))
+    return switched ?: alerted
   }
 
-  /** Enciende el pitido con el nivel que funcionó en la prueba de este Tag. */
-  suspend fun alertOn(context: Context): Boolean = setAlert(TagStore(context).alertLevel.toByte())
+  /** Calla el pitido: la alerta estándar en 0 y FFE2 en 0. */
+  suspend fun alertOff(): Boolean {
+    val g = gatt ?: return false
+    val alerted = alertLevel?.let { write(g, it, byteArrayOf(TagProtocol.ALERT_OFF)) } == true
+    val switched = switch?.let { write(g, it, byteArrayOf(0)) }
+    return switched ?: alerted
+  }
 
   /**
-   * Vuelve a aplicar, en la conexión abierta, cómo se trata la alarma de desconexión de este Tag. La
-   * prueba lo usa al cambiar de forma.
+   * Cierra la conexión y la abre de nuevo. La señal la usa si el Tag no confirma la orden: una conexión
+   * que se cortó sin aviso puede parecer abierta.
    */
-  suspend fun applySettings(context: Context): Boolean = connection.withLock {
-    val g = gatt ?: return@withLock false
-    if (alertLevel == null) return@withLock false
-    val (linkLossOff, switchOff) = applyLinkLoss(g, TagStore(context).keepLinkLossAlarm)
-    publish(_status.value.copy(linkLossOff = linkLossOff, switchOff = switchOff))
-    true
-  }
+  suspend fun reconnect(context: Context, address: String): Boolean =
+    connection.withLock {
+      closeGatt()
+      connectLocked(context.applicationContext, address)
+    }
 
-  /** Un pitido de prueba de [millis], con el nivel guardado para este Tag. */
+  /** Un pitido de prueba de [millis], seguido: la orden se repite como en la señal. */
   suspend fun beep(context: Context, millis: Long): Boolean {
     if (!alertOn(context)) return false
-    delay(millis)
-    setAlert(TagProtocol.ALERT_OFF)
+    var left = millis
+    while (left > 0) {
+      val step = minOf(TagProtocol.REPEAT_MILLIS, left)
+      delay(step)
+      left -= step
+      if (left > 0) alertOn(context)
+    }
+    alertOff()
     return true
   }
 
@@ -214,7 +223,7 @@ object TagLink {
   private suspend fun disconnect() {
     connection.withLock {
       if (heldAddress != null) return@withLock
-      setAlert(TagProtocol.ALERT_OFF)
+      alertOff()
       closeGatt()
       publish(Status())
     }
@@ -264,30 +273,20 @@ object TagLink {
     alertLevel = alert
     connectedAddress = address
     val keys = g.getService(TagProtocol.KEY_SERVICE)
-    val switch = keys?.getCharacteristic(TagProtocol.LINK_LOSS_SWITCH)
-    switchLabel = switch?.getDescriptor(TagProtocol.USER_DESCRIPTION)?.let { readDescriptor(g, it) }?.let(::label)
-    val switchValue = switch?.takeIf { it.properties and BluetoothGattCharacteristic.PROPERTY_READ != 0 }?.let { read(g, it) }
+    val ffe2 = keys?.getCharacteristic(TagProtocol.LINK_LOSS_SWITCH)?.takeIf {
+      it.properties and (BluetoothGattCharacteristic.PROPERTY_WRITE or BluetoothGattCharacteristic.PROPERTY_WRITE_NO_RESPONSE) != 0
+    }
+    switch = ffe2
+    val switchLabel = ffe2?.getDescriptor(TagProtocol.USER_DESCRIPTION)?.let { readDescriptor(g, it) }?.let(::label)
+    val switchValue = ffe2?.takeIf { it.properties and BluetoothGattCharacteristic.PROPERTY_READ != 0 }?.let { read(g, it) }
     profile = describe(g, switchLabel, switchValue)
-    val (linkLossOff, switchOff) = applyLinkLoss(g, TagStore(app).keepLinkLossAlarm)
-    val button = keys?.getCharacteristic(TagProtocol.BUTTON)?.let { enableNotifications(g, it) } == true
-    publish(Status(Phase.CONNECTED, button = button, linkLossOff = linkLossOff, switchOff = switchOff))
-    return null
-  }
-
-  /**
-   * Apaga la alarma por desconexión sin silenciar el pitido. La estándar (0x1803) siempre; el interruptor
-   * propio (FFE2) solo si el Tag lo nombra como esa alarma y la prueba no pidió dejarlo como viene. Si no,
-   * FFE2 queda en 1, lo que además deshace el 0 que escribían las versiones 2.19 a 2.25. Devuelve si la
-   * alarma quedó apagada y si se escribió 0 en FFE2.
-   */
-  private suspend fun applyLinkLoss(g: BluetoothGatt, keepAlarm: Boolean): Pair<Boolean, Boolean> {
+    // Mientras espera, el Tag queda en silencio y sin alarma por desconexión: FFE2 en 0 y la estándar en 0.
+    val switchOff = ffe2?.let { write(g, it, byteArrayOf(0)) } == true
     val standardOff = g.getService(TagProtocol.LINK_LOSS_SERVICE)?.getCharacteristic(TagProtocol.ALERT_LEVEL)
       ?.let { write(g, it, byteArrayOf(TagProtocol.ALERT_OFF)) } == true
-    val switch = g.getService(TagProtocol.KEY_SERVICE)?.getCharacteristic(TagProtocol.LINK_LOSS_SWITCH)
-      ?: return standardOff to false
-    val turnOff = TagProtocol.isLinkLossSwitch(switchLabel) && !keepAlarm
-    val written = write(g, switch, byteArrayOf(if (turnOff) 0 else 1))
-    return (turnOff && written) to (turnOff && written)
+    val button = keys?.getCharacteristic(TagProtocol.BUTTON)?.let { enableNotifications(g, it) } == true
+    publish(Status(Phase.CONNECTED, button = button, linkLossOff = switchOff || standardOff))
+    return null
   }
 
   /** Servicios y características con sus propiedades en hexadecimal, más el nombre y valor de FFE2. */
@@ -409,6 +408,7 @@ object TagLink {
       if (g == gatt) {
         gatt = null
         alertLevel = null
+        switch = null
         connectedAddress = null
         publish(Status(if (heldAddress != null) Phase.CONNECTING else Phase.IDLE, problem = if (heldAddress != null) Problem.NOT_FOUND else null))
       }
@@ -471,6 +471,7 @@ object TagLink {
     val g = gatt ?: return
     gatt = null
     alertLevel = null
+    switch = null
     connectedAddress = null
     runCatching { g.disconnect() }
     runCatching { g.close() }

@@ -661,7 +661,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
    * Prueba el Tag: se conecta si hace falta, le pide pitar 2 s y pregunta si se escuchó. Que el Tag
    * acepte la orden no prueba que haya pitado (2.26): solo la persona lo sabe. No bloquea la pantalla.
    */
-  fun testTag() = runTagTest(TagProtocol.tryIndex(tagStore.alertLevel, tagStore.keepLinkLossAlarm), retry = false)
+  fun testTag() = runTagTest(TagProtocol.tryIndex(tagStore.alertLevel), retry = false)
 
   /**
    * La persona dice si escuchó el pitido. Si no, se prueba la forma siguiente de hacerlo pitar; si ya no
@@ -676,31 +676,26 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       _tag.value = current.copy(test = TagTest.SOUNDED, heard = true, silent = false)
       return
     }
-    val next = TagProtocol.nextTry(current.attempt, current.switchOff)
+    val next = TagProtocol.nextTry(current.attempt)
     if (next != null) {
       _tag.value = current.copy(heard = false)
       runTagTest(next, retry = true)
       return
     }
-    val first = TagProtocol.ALERT_TRIES.first()
-    tagStore.alertLevel = first.level
-    tagStore.keepLinkLossAlarm = first.keepLinkLossAlarm
+    tagStore.alertLevel = TagProtocol.ALERT_LEVELS.first()
     _tag.value = current.copy(test = TagTest.FAILED, problem = null, heard = false, silent = true, attempt = 0)
   }
 
   private fun runTagTest(attempt: Int, retry: Boolean) {
     val address = tagStore.address ?: return
     if (_tag.value.test == TagTest.WORKING) return
-    val form = TagProtocol.ALERT_TRIES[attempt]
-    tagStore.alertLevel = form.level
-    tagStore.keepLinkLossAlarm = form.keepLinkLossAlarm
+    val level = TagProtocol.ALERT_LEVELS[attempt]
+    tagStore.alertLevel = level
     _tag.value = _tag.value.copy(test = TagTest.WORKING, problem = null, attempt = attempt, retry = retry, silent = false)
     viewModelScope.launch(Dispatchers.IO) {
       val app = getApplication<Application>()
       val connected = TagLink.connect(app, address)
-      // Si la conexión ya estaba abierta, la forma nueva se aplica sobre ella.
-      if (connected) TagLink.applySettings(app)
-      val sent = connected && TagLink.beep(app, TAG_TEST_MILLIS)
+      val sent = connected && TagLink.beep(app, TagProtocol.durationMillis(test = true))
       val status = TagLink.status.value
       // Un aparato que no sabe pitar no queda elegido: se vuelve a buscar, con el motivo a la vista.
       if (!sent && status.problem == TagLink.Problem.NOT_A_TAG) {
@@ -715,12 +710,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         problem = if (sent) null else status.problem,
         button = status.button,
         linkLossOff = status.linkLossOff,
-        switchOff = status.switchOff,
       )
       log(
         "prueba_de_sonido",
-        "salida=tag;orden=${if (sent) "si" else "no"};intento=${attempt + 1};nivel=${form.level};" +
-          "ffe2=${if (status.switchOff) "apagado" else "encendido"};boton=${if (status.button) "si" else "no"};" +
+        "salida=tag;orden=${if (sent) "si" else "no"};intento=${attempt + 1};nivel=$level;" +
+          "boton=${if (status.button) "si" else "no"};" +
           "alarma_desconexion=${if (status.linkLossOff) "apagada" else "sin_apagar"}",
       )
       // Cómo es este modelo por dentro, una vez por prueba: servicios y propiedades, sin su dirección.
@@ -1133,7 +1127,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   companion object {
-    private const val TAG_TEST_MILLIS = 2_000L
 
     /** Mensaje tras borrar los datos; también marca que la persona dejó la prueba. */
     const val DELETED_MESSAGE = "Tus datos se borraron y saliste del proyecto. Si quieres volver, tendrás que aceptar de nuevo."
@@ -1163,7 +1156,6 @@ data class TagUi(
   val test: TagTest = TagTest.IDLE,
   val button: Boolean = false,
   val linkLossOff: Boolean = true,
-  val switchOff: Boolean = false,
   val attempt: Int = 0,
   val retry: Boolean = false,
   val heard: Boolean = false,
