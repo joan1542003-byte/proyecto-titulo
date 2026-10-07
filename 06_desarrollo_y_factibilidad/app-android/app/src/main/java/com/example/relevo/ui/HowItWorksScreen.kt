@@ -113,7 +113,7 @@ internal fun HowItWorksScreen(
       GuidePanel {
         SystemRow(KitIcon.TELEFONO, "La app", "Anotas qué quieres hacer y cómo empiezas.")
         Spacer(Modifier.height(18.dp))
-        SystemRow(KitIcon.PARLANTE, "Lo que suena", "Un parlante, un reloj o un llavero que dejas donde empiezas. Suena cuando llevas en tus apps el tiempo que elegiste.")
+        SystemRow(KitIcon.PARLANTE, "Lo que suena", "Un parlante, un reloj o un Tag que dejas donde empiezas. Suena cuando llevas en tus apps el tiempo que elegiste.")
         Spacer(Modifier.height(18.dp))
         SystemRow(KitIcon.USUARIO, "Tú", "Decides si empiezas o sigues con lo que estabas haciendo.")
       }

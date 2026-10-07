@@ -388,7 +388,7 @@ class AppUsageMonitorService : Service() {
     val text = when {
       !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No se encontró el parlante. Abre Relevo para revisarlo."
       !audible && reminder.signalRoute == SignalRoute.WATCH -> "No se encontró el reloj. Abre Relevo para revisarlo."
-      !audible && reminder.signalRoute == SignalRoute.TAG -> "No se encontró el llavero. Abre Relevo para revisarlo."
+      !audible && reminder.signalRoute == SignalRoute.TAG -> "No se encontró el Tag. Abre Relevo para revisarlo."
       !audible -> "No sonó en el teléfono. Abre Relevo para revisarlo."
       generic -> GENERIC_SIGNAL_TEXT
       reminder.howToStart.isBlank() -> "Es momento de volver a elegir."

@@ -1,6 +1,6 @@
 # Panel del testeo de Relevo
 
-**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 7, que restaura la 5.
+**Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 10.
 
 ## Diseño
 
@@ -34,6 +34,15 @@ El panel se ordena en cuatro pestañas:
 ## Elección libre (versión 6, retirada)
 
 Retirada el mismo día por D-112: la versión 7 restaura la 5, por condiciones, y exige la app 2.22. Lo que sigue describe la versión 6 como antecedente. Desde D-110, A, B y C son lo que eligió la persona: A, un objeto donde empieza; B, un objeto en otro lugar; C, el teléfono. Resultados suma «Qué elige», con barras de A, B y C en total y por semana y su cantidad escrita, y la cifra «Elige más». Las tarjetas, la comparación y las exportaciones hablan de elecciones, no de condiciones asignadas. «Para revisar» avisa a quien use una app anterior a la 2.20.
+
+## Borrar datos y navegación (versión 10)
+
+- **Navegación:** en computador, una barra lateral con insignias: Personas muestra cuántas hay y Ahora, cuántas están para revisar. En el teléfono, las pestañas quedan abajo, como en la app.
+- **Personas:** búsqueda por nombre o código y filtros «Todas», «Contando», «Esperan responder», «Para revisar» y «En la prueba», con su cantidad.
+- **Ficha:** botones para saltar a Uso, Relevos, Respuestas, Teléfono y Borrar datos.
+- **Borrar un relevo:** «Borrar» en cada relevo de la ficha, con confirmación en la misma fila. Borra el relevo, sus eventos y sus respuestas.
+- **Borrar datos de una persona:** se marcan los grupos (relevos y eventos, respuestas, uso de Relevo, uso diario, configuración, mensajes y nombre), con cuántas filas tiene cada uno. Para confirmar hay que escribir su código. «Marcar todo» elimina a la persona del panel. Todo se borra en una sola consulta, que devuelve cuántas filas salieron.
+- **Límite:** si la persona sigue usando la app, lo nuevo vuelve a llegar, y la copia en su teléfono no se toca. Para un borrado completo, lo ideal es que use «Borrar mis datos» en la app.
 
 ## Mensajes listos
 
@@ -76,6 +85,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — Borrar datos y navegación (versión 10)
+
+- **Qué cambió:** el panel suma borrar un relevo, grupos de datos o a una persona, con confirmación; barra lateral con insignias; búsqueda y filtros en Personas; saltos en la ficha; y corrige las pestañas del teléfono, que quedaban arriba.
+- **Cómo estaba antes:** no se podía borrar nada desde el panel y la navegación eran pestañas arriba.
+- **Por qué:** pedido del autor (D-114).
 
 ### 2026-10-06 — Por condiciones otra vez (versión 7)
 

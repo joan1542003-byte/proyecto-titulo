@@ -51,7 +51,7 @@ internal fun StudyCards(study: StudyState, onDismissInstruction: (Int) -> Unit, 
   if (!firstCard && (week == null || condition == null) && study.pendingWeek == null && !closing) return
   Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
     if (firstCard) {
-      StudyCard(KitIcon.VALIDACION, "Hoy", "Tu primer relevo", "Prepáralo con calma. Deja el parlante, el reloj o el llavero junto a lo que usas para empezar.")
+      StudyCard(KitIcon.VALIDACION, "Hoy", "Tu primer relevo", "Prepáralo con calma. Deja el parlante, el reloj o el Tag junto a lo que usas para empezar.")
     }
     if (week != null && condition != null) {
       StudyCard(conditionIcon(condition), "Esta semana", conditionName(condition), conditionInstruction(condition), conditionDetail(condition)) {

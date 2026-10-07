@@ -262,7 +262,7 @@ internal fun bluetoothSpeakerConnected(context: Context): Boolean =
 internal fun routeName(route: SignalRoute): String = when (route) {
   SignalRoute.BLUETOOTH -> "El parlante"
   SignalRoute.WATCH -> "El reloj"
-  SignalRoute.TAG -> "El llavero"
+  SignalRoute.TAG -> "El Tag"
   SignalRoute.PHONE -> "El teléfono"
 }
 
@@ -276,7 +276,7 @@ internal fun routeIcon(route: SignalRoute): KitIcon = when (route) {
 internal fun routeFailure(route: SignalRoute): String = when (route) {
   SignalRoute.BLUETOOTH -> "No sonó en el parlante. Revisa que esté encendido y conectado."
   SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado y con las llamadas por Bluetooth activadas."
-  SignalRoute.TAG -> "No sonó en el llavero. Revisa que esté encendido y cerca del teléfono."
+  SignalRoute.TAG -> "No sonó en el Tag. Revisa que esté encendido y cerca del teléfono."
   SignalRoute.PHONE -> "No sonó en el teléfono. Revisa el volumen."
 }
 
@@ -362,14 +362,14 @@ internal fun conditionName(condition: StudyCondition): String = when (condition)
 
 /** Lo que la app pide al comenzar cada semana, con las palabras del protocolo 02. */
 internal fun conditionInstruction(condition: StudyCondition): String = when (condition) {
-  StudyCondition.SITUATED -> "Esta semana deja el parlante, el reloj o el llavero junto a lo que usas para empezar."
+  StudyCondition.SITUATED -> "Esta semana deja el parlante, el reloj o el Tag junto a lo que usas para empezar."
   StudyCondition.NEUTRAL -> "Esta semana déjalo en otro lugar de tu casa, que no tenga que ver con la actividad."
   StudyCondition.PHONE -> "Esta semana suena en tu teléfono."
 }
 
 internal fun conditionDetail(condition: StudyCondition): String? = when (condition) {
   StudyCondition.NEUTRAL -> "Un lugar visible, a más de un metro de lo que necesitas para empezar y fuera de tu camino."
-  StudyCondition.PHONE -> "No necesitas el parlante, el reloj ni el llavero. La notificación solo dirá «Es momento de volver a elegir»."
+  StudyCondition.PHONE -> "No necesitas el parlante, el reloj ni el Tag. La notificación solo dirá «Es momento de volver a elegir»."
   StudyCondition.SITUATED -> null
 }
 

@@ -61,6 +61,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import com.example.relevo.data.CustomActivity
+import com.example.relevo.data.TagStore
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.domain.SignalRoute
@@ -125,7 +126,7 @@ private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder:
     else "Toca el que más se parezca. Si ninguno calza, escríbelo como lo dirías en voz alta."
   PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
   PrepareStep.SOUND -> if (condition != null) "Elige el que tienes y pruébalo antes de seguir."
-    else "Elige con qué suena. El parlante, el reloj o el llavero se dejan donde empiezas; el teléfono suena donde esté."
+    else "Elige con qué suena. El parlante, el reloj o el Tag se dejan donde empiezas; el teléfono suena donde esté."
   PrepareStep.REVIEW -> "Revisa que todo esté bien y toca «Activar el relevo». Puedes desactivarlo cuando quieras."
 }
 
@@ -176,13 +177,13 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
   }
   PrepareStep.SOUND -> when {
     !reminder.routeChosen -> "Elige dónde quieres que suene."
-    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige tu llavero, o elige otra forma de avisar."
+    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige tu Tag, o elige otra forma de avisar."
     else -> null
   }
   PrepareStep.REVIEW -> when {
     !usageAccess -> "Falta el permiso de Tiempo de uso."
     !reminder.routeChosen -> "Falta elegir dónde suena."
-    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Falta elegir el llavero."
+    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Falta elegir el Tag."
     reminder.activity.isBlank() -> "Falta qué quieres hacer."
     reminder.howToStart.isBlank() -> "Falta cómo empiezas."
     reminder.place.isBlank() -> "Falta dónde empiezas."
@@ -483,8 +484,8 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
     when (studyCondition) {
       null -> "Elige una. Después puedes probar cómo suena."
       StudyCondition.PHONE -> "Esta semana suena en el teléfono."
-      StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el llavero."
-      StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el llavero."
+      StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el Tag."
+      StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el Tag."
     },
     style = Relevo.type.body, color = Relevo.colors.graphite,
   )
@@ -494,7 +495,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
       selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, enabled = objectChoice) { actions.onRoute(SignalRoute.BLUETOOTH) }
     SoundOption(KitIcon.TIEMPO, "El reloj", if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas",
       selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.WATCH, enabled = objectChoice) { actions.onRoute(SignalRoute.WATCH) }
-    SoundOption(KitIcon.OBJETO, "El llavero", tagSubtitle(tag, tagStatus),
+    SoundOption(KitIcon.OBJETO, "El Tag", tagSubtitle(tag, tagStatus),
       selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, enabled = objectChoice) { actions.onRoute(SignalRoute.TAG) }
     SoundOption(KitIcon.TELEFONO, "El teléfono", "Suena donde esté el teléfono",
       selected = reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, enabled = studyCondition == null) { actions.onRoute(SignalRoute.PHONE) }
@@ -525,7 +526,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
 }
 
 private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String = when {
-  tag.linkedName == null -> "Un llavero iTag que pita"
+  tag.linkedName == null -> "Un Tag que pita"
   status.phase == TagLink.Phase.CONNECTED -> "${tag.linkedName}, conectado"
   else -> "${tag.linkedName}, elegido"
 }
@@ -533,7 +534,7 @@ private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String = when {
 private fun tagProblem(problem: TagLink.Problem?): String = when (problem) {
   TagLink.Problem.NO_PERMISSION -> "Falta el permiso de dispositivos cercanos."
   TagLink.Problem.BLUETOOTH_OFF -> "El Bluetooth del teléfono está apagado."
-  TagLink.Problem.NOT_A_TAG -> "Ese aparato no acepta la orden para pitar: no es un llavero compatible."
+  TagLink.Problem.NOT_A_TAG -> "Ese aparato no acepta la orden para pitar: no es un Tag compatible."
   TagLink.Problem.NOT_FOUND, null -> "No lo encontramos. Revisa que esté encendido y cerca, y que ninguna otra app, como iSearching, esté conectada a él: acepta una conexión a la vez."
 }
 
@@ -546,8 +547,9 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   val context = LocalContext.current
   var pending by remember { mutableStateOf<(() -> Unit)?>(null) }
   var denied by rememberSaveable { mutableStateOf(false) }
-  var guide by rememberSaveable { mutableStateOf(false) }
-  if (guide) TagGuideSheet(onDismiss = { guide = false })
+  // La primera vez que se elige el Tag, la guía se abre sola; después, desde «Cómo usar el Tag».
+  val tagStore = remember { TagStore(context) }
+  var guide by rememberSaveable { mutableStateOf(!tagStore.guideSeen) }
   val permissions = rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
     denied = result.values.any { !it }
     if (!denied) pending?.invoke()
@@ -558,8 +560,15 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   val withPermission: (() -> Unit) -> Unit = { action ->
     if (TagLink.hasPermissions(context)) action() else { pending = action; permissions.launch(TagLink.requiredPermissions) }
   }
+  if (guide) {
+    TagGuideSheet(
+      onDismiss = { guide = false; tagStore.guideSeen = true },
+      finishLabel = if (tag.linkedName == null) "Buscar mi Tag" else "Entendido",
+      onFinish = if (tag.linkedName == null) ({ withPermission(actions.onTagSearch) }) else null,
+    )
+  }
   if (denied) {
-    Notice("Relevo necesita el permiso de dispositivos cercanos para encontrar el llavero. Solo lo usa para eso.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
+    Notice("Relevo necesita el permiso de dispositivos cercanos para encontrar el Tag. Solo lo usa para eso.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
       PlainAction("Abrir los ajustes de Relevo", {
         context.startActivity(
           Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", context.packageName, null)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
@@ -574,7 +583,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
       while (!TagLink.bluetoothOn(context)) delay(1_000)
       actions.onBluetoothOn()
     }
-    Notice("Enciende el Bluetooth del teléfono para encontrar el llavero.", title = "Bluetooth apagado", icon = KitIcon.CONEXION) {
+    Notice("Enciende el Bluetooth del teléfono para encontrar el Tag.", title = "Bluetooth apagado", icon = KitIcon.CONEXION) {
       PlainAction("Encender Bluetooth", {
         runCatching { enableBluetooth.launch(Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)) }
           .onFailure { context.startActivity(Intent(Settings.ACTION_BLUETOOTH_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
@@ -583,26 +592,26 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     SectionGap()
   }
   if (tag.linkedName == null) {
-    Text("Enciende el llavero: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después búscalo.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    Text("Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después búscalo.", style = Relevo.type.body, color = Relevo.colors.graphite)
     Spacer(Modifier.height(8.dp))
-    PlainAction("Cómo usar el llavero", { guide = true }, icon = KitIcon.AYUDA)
+    PlainAction("Cómo usar el Tag", { guide = true }, icon = KitIcon.AYUDA)
     SectionGap()
     RelevoButton(
-      if (tag.searching) "Buscando…" else "Buscar el llavero", { withPermission(actions.onTagSearch) },
+      if (tag.searching) "Buscando…" else "Buscar el Tag", { withPermission(actions.onTagSearch) },
       kind = ButtonKind.Secondary, icon = KitIcon.BUSCAR, enabled = !tag.searching,
     )
     if (!TagLink.hasPermissions(context)) {
       Spacer(Modifier.height(8.dp))
       Text(
-        "Para buscarlo, Android te pedirá permiso para encontrar dispositivos cercanos. Relevo solo recuerda el llavero que elijas, en este teléfono; no usa tu ubicación.",
+        "Para buscarlo, Android te pedirá permiso para encontrar dispositivos cercanos. Relevo solo recuerda el Tag que elijas, en este teléfono; no usa tu ubicación.",
         style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
       )
     }
     if (tag.found.isNotEmpty()) {
       SectionGap()
       ListSection(
-        title = if (tag.searchedAll) "Aparatos cerca" else "Llaveros cerca",
-        footer = if (tag.searchedAll) "Toca tu llavero. Si es compatible, va a pitar una vez." else "Toca el tuyo. Va a pitar una vez para confirmarlo.",
+        title = if (tag.searchedAll) "Aparatos cerca" else "Tags cerca",
+        footer = if (tag.searchedAll) "Toca tu Tag. Si es compatible, va a pitar una vez." else "Toca el tuyo. Va a pitar una vez para confirmarlo.",
       ) {
         tag.found.forEach { found ->
           ListRow(found.name, icon = KitIcon.OBJETO, subtitle = TagProtocol.strength(found.rssi), chevron = true, onClick = { actions.onTagLink(found) })
@@ -611,8 +620,8 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     } else if (tag.searched && !tag.searching && tag.problem == null) {
       SectionGap()
       Notice(
-        if (tag.searchedAll) "No apareció ningún aparato con Bluetooth cerca. Revisa que el llavero esté encendido y cerca del teléfono, y búscalo de nuevo."
-        else "No apareció ningún llavero. Revisa que esté encendido y cerca del teléfono, y búscalo de nuevo. Si lo usa otra app, como iSearching, ciérrala: el llavero acepta una conexión a la vez.",
+        if (tag.searchedAll) "No apareció ningún aparato con Bluetooth cerca. Revisa que el Tag esté encendido y cerca del teléfono, y búscalo de nuevo."
+        else "No apareció ningún Tag. Revisa que esté encendido y cerca del teléfono, y búscalo de nuevo. Si lo usa otra app, como iSearching, ciérrala: el Tag acepta una conexión a la vez.",
         tone = Tone.Error,
         actions = if (tag.searchedAll) null else {
           { PlainAction("Ver todos los aparatos cercanos", { withPermission(actions.onTagSearchAll) }) }
@@ -620,12 +629,12 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
       )
     } else if (tag.problem == TagLink.Problem.NOT_A_TAG && !tag.searching) {
       SectionGap()
-      Notice("Ese aparato no aceptó la orden para pitar: no es un llavero compatible. Búscalo de nuevo y elige otro.", tone = Tone.Error)
+      Notice("Ese aparato no aceptó la orden para pitar: no es un Tag compatible. Búscalo de nuevo y elige otro.", tone = Tone.Error)
     }
     return
   }
   RelevoButton(
-    if (tag.test == TagTest.WORKING) "Probando…" else "Probar el llavero", { withPermission(actions.onTagTest) },
+    if (tag.test == TagTest.WORKING) "Probando…" else "Probar el Tag", { withPermission(actions.onTagTest) },
     kind = ButtonKind.Secondary, icon = KitIcon.PROBAR, enabled = tag.test != TagTest.WORKING,
   )
   Spacer(Modifier.height(12.dp))
@@ -639,17 +648,17 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
         Text("Así va a sonar: cuando se cumpla el tiempo, pitará seis veces en 30 segundos.", style = Relevo.type.body, color = Relevo.colors.ink)
         if (tag.button) Text("Para callarlo, toca su botón una vez. Si lo mantienes apretado, se apaga.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         if (!tag.linkLossOff) {
-          Text("Este llavero no dejó apagar su alarma de desconexión: puede pitar un momento cuando Relevo termine.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+          Text("Este Tag no dejó apagar su alarma de desconexión: puede pitar un momento cuando Relevo termine.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         }
       }
     } else {
-      Notice(tagProblem(tag.problem), title = "No sonó en el llavero", tone = Tone.Error)
+      Notice(tagProblem(tag.problem), title = "No sonó en el Tag", tone = Tone.Error)
     }
   }
   Spacer(Modifier.height(8.dp))
-  PlainAction("Cómo usar el llavero", { guide = true }, icon = KitIcon.AYUDA)
+  PlainAction("Cómo usar el Tag", { guide = true }, icon = KitIcon.AYUDA)
   Spacer(Modifier.height(4.dp))
-  PlainAction("Elegir otro llavero", actions.onTagForget, color = Relevo.colors.graphite, icon = KitIcon.CAMBIE)
+  PlainAction("Elegir otro Tag", actions.onTagForget, color = Relevo.colors.graphite, icon = KitIcon.CAMBIE)
   Spacer(Modifier.height(8.dp))
   Text(
     "Déjalo encendido donde empiezas. Relevo se conecta a él al activar el relevo y lo mantiene así hasta que suene.",

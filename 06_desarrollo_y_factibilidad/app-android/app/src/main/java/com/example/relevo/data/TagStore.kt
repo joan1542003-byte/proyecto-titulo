@@ -11,7 +11,7 @@ class TagStore(context: Context) {
 
   val address: String? get() = preferences.getString("address", null)?.takeIf { it.isNotBlank() }
 
-  val name: String get() = preferences.getString("name", null)?.trim().orEmpty().ifBlank { "Llavero" }
+  val name: String get() = preferences.getString("name", null)?.trim().orEmpty().ifBlank { "Tag" }
 
   val linked: Boolean get() = address != null
 
@@ -23,5 +23,13 @@ class TagStore(context: Context) {
       .apply()
   }
 
-  fun clear() { preferences.edit().clear().apply() }
+  /** La guía «Cómo usar el Tag» ya se mostró: se abre sola solo la primera vez. */
+  var guideSeen: Boolean
+    get() = preferences.getBoolean("guide_seen", false)
+    set(value) { preferences.edit().putBoolean("guide_seen", value).apply() }
+
+  fun clear() {
+    val seen = guideSeen
+    preferences.edit().clear().putBoolean("guide_seen", seen).apply()
+  }
 }

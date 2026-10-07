@@ -145,7 +145,7 @@ internal fun ProfileTab(
     SectionGap()
     ListSection(title = "Ayuda", modifier = Modifier.appear(5)) {
       ListRow("Cómo funciona Relevo", icon = KitIcon.AYUDA, chevron = true, onClick = actions.onHowItWorks)
-      ListRow("Cómo usar el llavero", icon = KitIcon.OBJETO, chevron = true, onClick = { tagGuide = true })
+      ListRow("Cómo usar el Tag", icon = KitIcon.OBJETO, chevron = true, onClick = { tagGuide = true })
       ListRow("Tu opinión", icon = KitIcon.ESTRELLA, chevron = true, onClick = actions.onFeedback)
       ListRow("Reportar un problema", icon = KitIcon.PROBLEMA, chevron = true, onClick = actions.onReport)
     }

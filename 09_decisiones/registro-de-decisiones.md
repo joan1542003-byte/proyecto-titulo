@@ -1313,7 +1313,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Fundamento:** el autor pidió degradados con estilo, como en sus referencias (documento 30, Rose Pilkington), y que la persona no tenga que escribir. Las actividades nuevas aparecen en P1–P8 (corpus), y la memoria no juzga el ocio: la intención es la que la persona elige.
 - **Documentación:** [Android 2.23](../06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md).
 
+## D-114 — El Tag, su guía paso a paso y borrar datos desde el panel
+
+- **Fecha:** 2026-10-07.
+- **Estado:** pedido del autor; implementado en Android 2.25 y en el panel (versión 10), y revisado en emulador y con datos de ejemplo.
+- **Decisión:** en pantalla, el llavero se llama «Tag». Su guía tiene ocho pasos, cada uno con un dibujo animado del Tag redondo, y se abre sola la primera vez que se elige. El panel permite borrar un relevo, grupos de datos de una persona o a la persona completa, con confirmación escribiendo su código, y suma una barra lateral, insignias, búsqueda y filtros.
+- **Fundamento:** el autor pidió una guía más intuitiva y paso a paso, el nombre «Tag» y poder eliminar usuarios o datos específicos. Borrar a pedido de una persona es parte del consentimiento («puedes borrar tus datos escribiendo al investigador»).
+- **Límites:** el borrado solo alcanza a Supabase; si la persona sigue usando la app, lo nuevo vuelve a llegar, y la copia en su teléfono no se toca. Los nombres internos (`TAG`, `llavero_*`) no cambian.
+- **Documentación:** [Android 2.25](../06_desarrollo_y_factibilidad/app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md) y [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — D-114
+
+- **Qué cambió:** se registró D-114.
+- **Cómo estaba antes:** la última decisión era D-113.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — D-113
 
