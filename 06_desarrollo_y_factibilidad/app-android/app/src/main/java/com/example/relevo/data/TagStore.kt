@@ -26,11 +26,11 @@ class TagStore(context: Context) {
   }
 
   /**
-   * Con qué nivel de alerta pita este Tag: 2 (alto, el de iTag One) o 1 (medio). La prueba los recorre
-   * hasta que la persona confirma que lo escuchó, y se guarda el que funcionó.
+   * Con qué nivel de alerta pita este Tag: 1 (medio, el primero desde 2.29) o 2 (alto, el de iTag One). La
+   * prueba los recorre hasta que la persona confirma que lo escuchó, y se guarda el que funcionó.
    */
   var alertLevel: Int
-    get() = preferences.getInt("alert_level", 2)
+    get() = preferences.getInt("alert_level", 1)
     set(value) { preferences.edit().putInt("alert_level", value).apply() }
 
   /** La persona confirmó que lo escuchó pitar con la forma guardada. */

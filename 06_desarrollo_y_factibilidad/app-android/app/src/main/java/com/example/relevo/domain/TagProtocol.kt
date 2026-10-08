@@ -41,10 +41,11 @@ object TagProtocol {
   const val ALERT_HIGH: Byte = 0x02
 
   /**
-   * Niveles de alerta que la prueba recorre, en orden, hasta que la persona escucha el pitido: alto, el de
-   * iTag One, y medio.
+   * Niveles de alerta que la prueba recorre, en orden, hasta que la persona escucha el pitido: medio y alto.
+   * Desde 2.29 el medio va primero: con el Tag del autor, el alto (el de iTag One) no pitaba y el medio sí,
+   * según el registro de la prueba.
    */
-  val ALERT_LEVELS = listOf(2, 1)
+  val ALERT_LEVELS = listOf(1, 2)
 
   /** El índice del nivel que sigue después de [current], o null si no quedan. */
   fun nextTry(current: Int): Int? = (current + 1).takeIf { it < ALERT_LEVELS.size }

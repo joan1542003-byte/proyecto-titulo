@@ -666,7 +666,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
    * Prueba el Tag: se conecta si hace falta, le pide pitar 2 s y pregunta si se escuchó. Que el Tag
    * acepte la orden no prueba que haya pitado (2.26): solo la persona lo sabe. No bloquea la pantalla.
    */
-  fun testTag() = runTagTest(TagProtocol.tryIndex(tagStore.alertLevel), retry = false)
+  // Empieza por el nivel que la persona ya confirmó; si nunca lo confirmó, por el primero (2.29).
+  fun testTag() = runTagTest(if (tagStore.heard) TagProtocol.tryIndex(tagStore.alertLevel) else 0, retry = false)
 
   /**
    * La persona dice si escuchó el pitido. Si no, se prueba la forma siguiente de hacerlo pitar; si ya no

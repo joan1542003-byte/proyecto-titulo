@@ -40,12 +40,13 @@ class TagProtocolTest {
   }
 
   @Test
-  fun triesHighThenMediumLevel() {
-    assertEquals(listOf(2, 1), TagProtocol.ALERT_LEVELS)
+  fun triesMediumThenHighLevel() {
+    // Con el Tag del autor, el nivel medio pita y el alto no: el medio va primero (2.29).
+    assertEquals(listOf(1, 2), TagProtocol.ALERT_LEVELS)
     assertEquals(1, TagProtocol.nextTry(0))
     assertEquals(null, TagProtocol.nextTry(1))
-    assertEquals(0, TagProtocol.tryIndex(2))
-    assertEquals(1, TagProtocol.tryIndex(1))
+    assertEquals(0, TagProtocol.tryIndex(1))
+    assertEquals(1, TagProtocol.tryIndex(2))
     assertEquals(0, TagProtocol.tryIndex(3))
   }
 

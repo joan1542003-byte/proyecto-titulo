@@ -1358,7 +1358,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** reemplaza la confirmación por código de D-114; sigue sin poder deshacerse. El flujo muestra los últimos 250 eventos.
 - **Documentación:** [panel](../06_desarrollo_y_factibilidad/panel-admin/README.md).
 
+## D-119 — El Tag prueba primero el nivel medio
+
+- **Fecha:** 2026-10-07.
+- **Estado:** implementado en Android 2.29; compilado y con pruebas unitarias.
+- **Decisión:** la prueba del Tag recorre primero el nivel de alerta medio (1) y después el alto (2); un Tag nuevo pita con el medio.
+- **Fundamento:** en el registro de la prueba del autor, el nivel alto no pitó dos veces y el medio sí. El autor pidió que el intento que funciona sea el primero.
+- **Límites:** se basa en un solo Tag; si otro modelo solo pita con el alto, la prueba lo encuentra en el segundo intento.
+- **Documentación:** [Android 2.29](../06_desarrollo_y_factibilidad/app-android/version-2.29-nivel-medio-primero-2026-10-07.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-07 — D-119
+
+- **Qué cambió:** se registró D-119.
+- **Cómo estaba antes:** la última decisión era D-118.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-07 — D-118
 

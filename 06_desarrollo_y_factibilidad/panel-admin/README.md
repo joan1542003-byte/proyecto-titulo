@@ -107,6 +107,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-10-07 — Versión 2.29
+
+- **Qué cambió:** el panel marca la 2.29 como la versión del testeo.
+- **Cómo estaba antes:** esperaba la 2.28.
+- **Por qué:** D-119.
+
 ### 2026-10-07 — Tiempo en las apps solo con relevo activo (versión 13)
 
 - **Qué cambió:** el tiempo en las apps se calcula solo con un relevo activo, en Personas, el resumen y la tabla de la ficha; el uso del día completo queda cerrado, como contexto.
