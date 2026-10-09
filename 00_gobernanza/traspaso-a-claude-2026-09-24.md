@@ -202,6 +202,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
 - **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
 - **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
+- **Memoria en Affinity (D-121, 9 de octubre):** guía para usar Affinity como InDesign y plantilla IDML de la memoria en A3 horizontal con el texto ya diagramado; comprobada en Scribus, falta abrirla en Affinity ([guía](../10_recursos_visuales/38_memoria-en-affinity-2026-10-09.md)).
 - **Android 2.30 (D-120, 9 de octubre), versión del primer testeo:** editar un relevo sin borrarlo, antes y después de activarlo ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md)).
 - **Android 2.29 (D-119, 7 de octubre):** igual que la 2.28, pero la prueba del Tag empieza por el nivel medio, el que pitó ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.29-nivel-medio-primero-2026-10-07.md)).
 - **Android 2.28 (D-117, 7 de octubre):** Tag por defecto con búsqueda automática, lugares concretos, «Volver al inicio» y una app optimizada; el APK ya no es de depuración ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md)). **Panel 12** (D-118): eliminar en dos clics; la ficha abre con un resumen y muestra cada relevo con lo que respondió y el flujo de uso. Mantiene el tiempo en cada app y los perfiles en la barra lateral del panel 11.
@@ -226,6 +227,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-09 — Memoria en Affinity
+
+- **Qué cambió:** el estado suma la plantilla de la memoria para Affinity.
+- **Cómo estaba antes:** terminaba en Android 2.30.
+- **Por qué:** D-121.
 
 ### 2026-10-09 — Android 2.30
 

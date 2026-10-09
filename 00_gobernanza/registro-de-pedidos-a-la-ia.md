@@ -118,6 +118,7 @@
 | 7 oct. | Corrección | Al probar el Tag, el segundo intento sí suena (después de responder que no se escuchó). Que ese segundo intento sea el primero. | El registro mostró que el primer intento usaba el nivel alto, que no pitaba, y el segundo el medio, que sí. [Android 2.29](../06_desarrollo_y_factibilidad/app-android/version-2.29-nivel-medio-primero-2026-10-07.md): la prueba empieza por el nivel medio y un Tag nuevo pita con él. | D-119 |
 | 8 oct. | Pregunta | Breve exploración de apps o productos que hagan lo mismo que Relevo, para no hacer algo que ya existe; y si existe algo así solo digital. | Respuesta en el chat: one sec (pausa e intención, vuelve a interrumpir tras un tiempo), Brick y Unpluq (objeto que desbloquea), ScreenZen y Tiempo de pantalla. Ninguno recuerda una actividad propia con su primer paso ni avisa desde un objeto ubicado donde empieza. Se recomendó no llamarlo «único» y hacer una revisión formal para la memoria. | — |
 | 9 oct. | Corrección | Comentario sobre la app: poder editar las opciones ya elegidas antes de iniciar el relevo, para no borrarlo y crearlo de nuevo si hubo un error. | [Android 2.30](../06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md): «Todo listo» suma la actividad y vuelve ahí tras cambiar un dato; un relevo activo se edita sin borrarlo y sigue con el tiempo contado si las apps son las mismas. | D-120 |
+| 9 oct. | Encargo | Configurar Affinity para que quede igual a Adobe InDesign y listo para diseñar la memoria de Relevo, con diseño de nivel gráfico. | Como Affinity está en el equipo del autor, se entregó una [guía](../10_recursos_visuales/38_memoria-en-affinity-2026-10-09.md) con ajustes, espacio de trabajo y atajos de InDesign, y una [plantilla IDML](../10_recursos_visuales/memoria-affinity/README.md) en A3 horizontal: retícula de 12 columnas, línea base de 15 pt, 31 estilos de párrafo, cuatro maestras, paleta de Relevo, fuentes y el texto de la memoria en 40 páginas. Se comprobó en Scribus; falta abrirla en Affinity | D-121 |
 
 ## Lo que muestra el registro
 
@@ -128,6 +129,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-09 — Affinity como InDesign
+
+- **Qué cambió:** se registró el pedido de configurar Affinity como InDesign para diseñar la memoria (D-121).
+- **Cómo estaba antes:** el registro terminaba en la edición de un relevo sin borrarlo.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-09 — Exploración y editar sin borrar
 

@@ -71,6 +71,8 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 **Control de versiones:** la memoria vigente es el Markdown enlazado arriba. La maqueta anterior de 87 páginas pertenece al sistema visual retirado y puede recuperarse mediante la etiqueta Git `pre-reinicio-visual-2026-09-11`; no incorpora la revisión textual del 9 de septiembre ni define la diagramación futura.
 
+**Diagramación:** desde el 9 de octubre hay una [plantilla para Affinity](../10_recursos_visuales/38_memoria-en-affinity-2026-10-09.md) en A3 horizontal con el texto de esta memoria ya repartido en 40 páginas (propuesta D-121). El Markdown sigue siendo la fuente del texto; si cambia, el script de la plantilla la vuelve a generar.
+
 ## Controles editoriales
 
 - Objetivo editorial: aproximadamente 15.000 palabras en preliminares y capítulos 1–13, sin bibliografía ni registro administrativo. La versión del 25 de septiembre, después de verificar fuentes y simplificar el lenguaje, tiene 16.174 palabras según el método del control de extensión, dentro del rango institucional de 15.000 a 20.000, y los seis apartados con límite propio cumplen su rango; el [control de extensión](auditoria-redaccion-v4-2026-08-26.md) conserva los conteos anteriores.
@@ -87,6 +89,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-09 — Plantilla para Affinity
+
+- **Qué cambió:** se enlazó la plantilla de diagramación de la memoria para Affinity.
+- **Cómo estaba antes:** la diagramación futura no estaba definida.
+- **Por qué:** el autor pidió dejar Affinity listo para diseñar la memoria.
 
 ### 2026-09-29 — Coherencia de la app con la memoria
 
