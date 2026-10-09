@@ -358,7 +358,7 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
     ListRow("Apps que cuentan", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite, value = reminder.selectedApps.joinToString(", ") { it.label })
     ListRow("Falta", icon = KitIcon.TIEMPO, titleColor = Relevo.colors.graphite, value = "${formatDuration(remaining)} en esas apps")
     if (reminder.autoActivated) ListRow("Cómo empezó", icon = KitIcon.ESPERANDO, titleColor = Relevo.colors.graphite, value = "Se activó solo")
-    ListRow("Ver, desactivar o eliminar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
+    ListRow("Ver, editar o desactivar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
   }
 }
 
@@ -471,8 +471,10 @@ internal fun ActiveScreen(
   onUsageSettings: () -> Unit,
   onBackground: () -> Unit,
   onDelete: () -> Unit = {},
+  onEdit: () -> Unit = {},
 ) {
   var confirming by rememberSaveable { mutableStateOf(false) }
+  var confirmingEdit by rememberSaveable { mutableStateOf(false) }
   var confirmingDelete by rememberSaveable { mutableStateOf(false) }
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
   val where = soundWhere(reminder)
@@ -510,10 +512,11 @@ internal fun ActiveScreen(
       }
     }
     SectionGap()
+    // Cada dato se puede cambiar sin borrar el relevo (2.30): tocarlo lleva a editarlo.
     ListSection {
-      FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart)
-      FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
-      FactRow(routeIcon(reminder.signalRoute), "Suena", soundPlace(reminder))
+      FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { confirmingEdit = true }
+      FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place) { confirmingEdit = true }
+      FactRow(routeIcon(reminder.signalRoute), "Suena", soundPlace(reminder)) { confirmingEdit = true }
       ListRow(
         "Apps que cuentan", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite,
         trailing = {
@@ -528,9 +531,22 @@ internal fun ActiveScreen(
         PlainAction("Quitar la restricción", onBackground)
       }
     }
-    // 2.18: eliminar un relevo activado por error, sin preguntas ni guardarlo en tus relevos.
     SectionGap()
+    PlainAction("Editar este relevo", { confirmingEdit = true }, icon = KitIcon.CAMBIE)
+    // 2.18: eliminar un relevo activado por error, sin preguntas ni guardarlo en tus relevos.
+    Spacer(Modifier.height(4.dp))
     PlainAction("Eliminar este relevo", { confirmingDelete = true }, color = Relevo.colors.error, icon = KitIcon.BORRAR)
+  }
+  if (confirmingEdit) {
+    RelevoSheet(onDismiss = { confirmingEdit = false }, scrollable = false) {
+      Text("¿Editar el relevo?", style = Relevo.type.title2, color = Relevo.colors.ink)
+      Spacer(Modifier.height(8.dp))
+      Text("Puedes cambiar cualquier dato sin borrarlo. Mientras lo editas no cuenta; al activarlo de nuevo, sigue con el tiempo que llevabas si las apps son las mismas.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Spacer(Modifier.height(22.dp))
+      RelevoButton("Editar", { confirmingEdit = false; onEdit() })
+      Spacer(Modifier.height(8.dp))
+      RelevoButton("Cancelar", { confirmingEdit = false }, kind = ButtonKind.Secondary)
+    }
   }
   if (confirmingDelete) {
     RelevoSheet(onDismiss = { confirmingDelete = false }, scrollable = false) {

@@ -127,7 +127,7 @@ private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder:
   PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
   PrepareStep.SOUND -> if (condition != null) "Elige el que tienes y pruébalo antes de seguir."
     else "Elige con qué suena. El parlante, el reloj o el Tag se dejan donde empiezas; el teléfono suena donde esté."
-  PrepareStep.REVIEW -> "Revisa que todo esté bien y toca «Activar el relevo». Puedes desactivarlo cuando quieras."
+  PrepareStep.REVIEW -> "Revisa que todo esté bien. Toca cualquier dato para cambiarlo y después «Activar el relevo»."
 }
 
 /** En la semana del parlante en otro lugar, el lugar que se anota es el del parlante, no el del comienzo. */
@@ -214,6 +214,8 @@ internal fun PrepareScreen(
   /** Llavero (D-109): el vinculado, la búsqueda y la conexión. */
   tag: TagUi = TagUi(),
   tagStatus: TagLink.Status = TagLink.Status(),
+  /** Se está editando un relevo que ya estaba activo (2.30). */
+  editing: Boolean = false,
 ) {
   // Se abre en el primer dato que falta: una idea elegida ya trae actividad, comienzo y lugar.
   var step by rememberSaveable {
@@ -231,8 +233,16 @@ internal fun PrepareScreen(
   var picking by rememberSaveable { mutableStateOf(false) }
   var saveActivity by rememberSaveable { mutableStateOf(false) }
   val reduce = rememberReduceMotion()
-  fun go(to: PrepareStep) { forward = to.ordinal > step.ordinal; step = to }
-  fun back() = if (step == PrepareStep.ACTIVITY) actions.onClose() else go(PrepareStep.entries[step.ordinal - 1])
+  // Un dato tocado en «Todo listo» se cambia y se vuelve ahí, sin recorrer los pasos siguientes (2.30).
+  var fromReview by rememberSaveable { mutableStateOf(false) }
+  fun go(to: PrepareStep) { forward = to.ordinal > step.ordinal; step = to; if (to == PrepareStep.REVIEW) fromReview = false }
+  fun edit(to: PrepareStep) { fromReview = true; go(to) }
+  fun next(to: PrepareStep) = go(if (fromReview && reminder.hasRequiredContent && reminder.routeChosen) PrepareStep.REVIEW else to)
+  fun back() = when {
+    fromReview && reminder.hasRequiredContent && reminder.routeChosen -> go(PrepareStep.REVIEW)
+    step == PrepareStep.ACTIVITY -> actions.onClose()
+    else -> go(PrepareStep.entries[step.ordinal - 1])
+  }
   LaunchedEffect(step) { actions.onStepShown(step.name.lowercase()) }
   BackHandler(enabled = !picking) { back() }
 
@@ -254,7 +264,7 @@ internal fun PrepareScreen(
     bottom = {
       val onMissing: (String) -> Unit = { actions.onMissing(step.name.lowercase(), it) }
       if (step == PrepareStep.REVIEW) {
-        GuardedButton("Activar el relevo", {
+        GuardedButton(if (editing) "Guardar y activar" else "Activar el relevo", {
           if (saveActivity && !isKnown) {
             val image = (picture as? Picture.OfPhoto)?.photo?.key ?: (picture as? Picture.OfIcon)?.icon?.key ?: KitIcon.ACTIVIDAD.key
             actions.onSaveCustom(CustomActivity(UUID.randomUUID().toString(), reminder.activity.trim(), reminder.howToStart.trim(), reminder.place.trim(), image, 0))
@@ -262,7 +272,7 @@ internal fun PrepareScreen(
           actions.onActivate()
         }, missing = missing, onMissing = onMissing)
       } else {
-        GuardedButton("Seguir", { go(PrepareStep.entries[step.ordinal + 1]) }, missing = missing, onMissing = onMissing)
+        GuardedButton(if (fromReview) "Listo" else "Seguir", { next(PrepareStep.entries[step.ordinal + 1]) }, missing = missing, onMissing = onMissing)
       }
     },
   ) {
@@ -281,15 +291,15 @@ internal fun PrepareScreen(
     ) { current ->
       Column(Modifier.fillMaxWidth()) {
         when (current) {
-          PrepareStep.ACTIVITY -> ActivityStep(reminder, customActivities, routes, actions, onNext = { if (reminder.activity.isNotBlank()) go(PrepareStep.START) })
+          PrepareStep.ACTIVITY -> ActivityStep(reminder, customActivities, routes, actions, onNext = { if (reminder.activity.isNotBlank()) next(PrepareStep.START) })
           PrepareStep.START -> {
             Text("Toca una opción o escribe la tuya: lo primero que harías.", style = Relevo.type.body, color = Relevo.colors.graphite)
             SectionGap()
             SuggestionChips(startSuggestions(reminder.activity), reminder.howToStart, actions.onStart)
             SectionGap()
-            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "O escríbelo aquí", imeAction = ImeAction.Next, onImeAction = { if (canContinue) go(PrepareStep.PLACE) })
+            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "O escríbelo aquí", imeAction = ImeAction.Next, onImeAction = { if (canContinue) next(PrepareStep.PLACE) })
           }
-          PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) go(PrepareStep.USAGE) })
+          PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) next(PrepareStep.USAGE) })
           PrepareStep.USAGE -> UsageStep(reminder, usageAccess, actions, onPick = { picking = true })
           PrepareStep.SOUND -> SoundStep(reminder, studyCondition, tag, tagStatus, actions)
           PrepareStep.REVIEW -> {
@@ -297,12 +307,18 @@ internal fun PrepareScreen(
               Signature(reminder.activity, style = Relevo.type.title)
             }
             SectionGap()
+            if (editing) {
+              Text("Estás editando tu relevo. Al guardarlo vuelve a contar, con el tiempo que llevabas si las apps son las mismas.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+              Spacer(Modifier.height(12.dp))
+            }
             ListSection {
-              FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { go(PrepareStep.START) }
-              FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Lo que suena está" else "Dónde empiezas", reminder.place) { go(PrepareStep.PLACE) }
-              FactRow(KitIcon.APPS, "Apps que cuentan", reminder.selectedApps.joinToString(", ") { it.label }, valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(KitIcon.USO, "Suena después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { go(PrepareStep.USAGE) }
-              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Suena", if (reminder.routeChosen) soundPlace(reminder) else "Sin elegir", valueIsVoice = false) { go(PrepareStep.SOUND) }
+              // 2.30: la actividad también se cambia desde aquí, sin volver atrás.
+              FactRow(KitIcon.ACTIVIDAD, "Qué quieres hacer", reminder.activity) { edit(PrepareStep.ACTIVITY) }
+              FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { edit(PrepareStep.START) }
+              FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Lo que suena está" else "Dónde empiezas", reminder.place) { edit(PrepareStep.PLACE) }
+              FactRow(KitIcon.APPS, "Apps que cuentan", reminder.selectedApps.joinToString(", ") { it.label }, valueIsVoice = false) { edit(PrepareStep.USAGE) }
+              FactRow(KitIcon.USO, "Suena después de", formatDuration(reminder.requiredUsageSeconds), valueIsVoice = false) { edit(PrepareStep.USAGE) }
+              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Suena", if (reminder.routeChosen) soundPlace(reminder) else "Sin elegir", valueIsVoice = false) { edit(PrepareStep.SOUND) }
             }
             if (!isKnown && reminder.activity.isNotBlank()) {
               Spacer(Modifier.height(10.dp))

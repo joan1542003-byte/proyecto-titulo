@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.30](app-android/version-2.30-editar-sin-borrar-2026-10-09.md): editar un relevo sin borrarlo (D-120); la versión del primer testeo.
 - [Aplicación Android 2.29](app-android/version-2.29-nivel-medio-primero-2026-10-07.md): la prueba del Tag empieza por el nivel medio (D-119); la versión del primer testeo.
 - [Aplicación Android 2.28](app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md): el Tag por defecto, lugares concretos y una app optimizada (D-117); la versión del primer testeo.
 - [Aplicación Android 2.27](app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md): el Tag suena en la señal y pita seguido (D-116); la versión del primer testeo.
@@ -78,6 +79,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-09 — Android 2.30
+
+- **Qué cambió:** se enlaza la 2.30.
+- **Cómo estaba antes:** la más reciente era la 2.29.
+- **Por qué:** D-120.
 
 ### 2026-10-07 — Android 2.29
 

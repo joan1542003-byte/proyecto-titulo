@@ -117,6 +117,7 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
 @Composable
 private fun RelevoNavigation(viewModel: RelevoViewModel) {
   val reminder by viewModel.reminder.collectAsState()
+  val editing by viewModel.editing.collectAsState()
   val apps by viewModel.installedApps.collectAsState()
   val usageAccess by viewModel.usageAccessGranted.collectAsState()
   val history by viewModel.history.collectAsState()
@@ -377,6 +378,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   }
                 }
                 Route.PREPARE -> PrepareScreen(
+                  editing = editing,
                   reminder = reminder, apps = apps, customActivities = customActivities, routes = routes, usageAccess = usageAccess,
                   backgroundUnrestricted = backgroundUnrestricted, studyCondition = study.condition, photoKey = photoKey, guided = guide.prepare,
                   tag = tag, tagStatus = tagStatus,
@@ -412,6 +414,13 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   onBack = { pop() }, onDisarm = viewModel::disarm,
                   onUsageSettings = viewModel::openUsageAccessSettings, onBackground = viewModel::requestBackgroundAccess,
                   onDelete = viewModel::deleteActive,
+                  onEdit = {
+                    if (viewModel.editActive()) {
+                      viewModel.onPrepareOpened("editar")
+                      photoKey = null
+                      replace(listOf(Route.TABS, Route.PREPARE))
+                    }
+                  },
                 )
                 Route.SIGNAL -> SignalScreen(
                   reminder = reminder, customActivities = customActivities, studyActive = study.condition != null, guided = guide.signal,

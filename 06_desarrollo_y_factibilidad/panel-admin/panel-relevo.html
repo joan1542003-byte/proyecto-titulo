@@ -498,7 +498,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.29';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.30';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -641,7 +641,7 @@ select json_build_object(
     responded: ['check', 'Respondió'], closed: ['check', 'Cerró el relevo'], monitor_paused: ['pause', 'Se pausó el conteo'], monitor_resumed: ['play', 'Se retomó el conteo'],
     app_abierta: ['phone', 'Abrió Relevo'], app_cerrada: ['phone', 'Cerró Relevo'], consentimiento_aceptado: ['check', 'Aceptó el consentimiento'],
     relevo_automatico: ['bolt', 'Relevo se activó solo'], activacion_automatica: ['bolt', 'Cambió la activación automática'],
-    relevo_eliminado: ['close', 'Eliminó un relevo activo'], falta_completar: ['info', 'Le faltó completar un campo'],
+    relevo_eliminado: ['close', 'Eliminó un relevo activo'], relevo_editado: ['pause', 'Editó un relevo activo'], falta_completar: ['info', 'Le faltó completar un campo'],
     mensaje_recibido: ['send', 'Le llegó un mensaje'], mensaje_abierto: ['send', 'Abrió un mensaje'], mensaje_sin_notificaciones: ['send', 'Mensaje sin notificaciones'],
     preparar_abierto: ['play', 'Empezó a preparar'], preparar_cerrado: ['pause', 'Cerró la preparación'], actividad_elegida: ['check', 'Eligió una actividad'],
     prueba_de_sonido: ['bell', 'Probó el sonido'], video_como_funciona: ['play', 'Vio el video'], aviso_semanal_enviado: ['bell', 'Le llegó el aviso semanal'],

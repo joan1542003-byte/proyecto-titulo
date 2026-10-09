@@ -167,6 +167,15 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** El primer relevo se acaba de activar: Inicio explica qué pasa ahora (D-090). */
   private val _firstActivated = MutableStateFlow(false)
   val firstActivated: StateFlow<Boolean> = _firstActivated.asStateFlow()
+
+  /** Tiempo contado de un relevo que se está editando: sigue si cuenta las mismas apps (2.30). */
+  private data class CarriedCount(val apps: Set<String>, val seconds: Int)
+  private var carriedCount: CarriedCount? = null
+  private val _editing = MutableStateFlow(false)
+  /** Se está editando un relevo que ya estaba activo. */
+  val editing: StateFlow<Boolean> = _editing.asStateFlow()
+
+  private fun clearCarried() { carriedCount = null; _editing.value = false }
   fun dismissFirstActivated() { _firstActivated.value = false }
 
   private fun markGuide(key: String) {
@@ -454,6 +463,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Carga la última configuración usada para revisarla y activarla de nuevo. No la activa por sí sola. */
   fun repeatLast(): Boolean {
     val last = _lastReminder.value ?: return false
+    clearCarried()
     log("repetir_ultimo", last.activity)
     val installed = _installedApps.value.map { it.packageName }.toSet()
     val apps = last.selectedApps.filter { it.packageName in installed }
@@ -604,7 +614,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       studyDay = if (study.active) study.day else -1,
       autoActivated = false,
     )
-    val next = prepared.arm(UUID.randomUUID().toString())
+    // Un relevo editado sigue con el tiempo que llevaba si cuenta las mismas apps (2.30).
+    val carried = carriedCount?.takeIf { it.apps == prepared.selectedApps.map { app -> app.packageName }.toSet() }?.seconds ?: 0
+    val armed = prepared.arm(UUID.randomUUID().toString())
+    val next = if (carried > 0 && armed.status == ReminderStatus.WAITING) armed.copy(observedUsageSeconds = carried.coerceAtMost(armed.requiredUsageSeconds - 1)) else armed
+    if (next.status == ReminderStatus.WAITING) clearCarried()
     updateValue(next)
     if (next.status == ReminderStatus.WAITING) {
       if (_guide.value.prepare) _firstActivated.value = true
@@ -772,6 +786,27 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
    * entra al historial ni pasa a ser el último relevo (que repite la activación automática). En la base
    * queda registrado como `deleted`, con su evento, para que el estudio sepa que existió.
    */
+  /**
+   * 2.30: editar un relevo activo sin borrarlo ni crearlo de nuevo. Mientras se edita deja de contar; la
+   * sesión anterior queda como `deleted`, con el evento `relevo_editado`, y al activarlo empieza otra.
+   * Si cuenta las mismas apps, sigue con el tiempo que ya llevaba.
+   */
+  fun editActive(): Boolean {
+    val current = _reminder.value
+    if (current.status != ReminderStatus.WAITING) return false
+    researchLog.record(current.sessionId, current.participantCode, "disarmed", current.targetPackage, current.observedUsageSeconds)
+    researchLog.completeSession(current, "deleted")
+    log("relevo_editado", "${current.activity};segundos=${current.observedUsageSeconds}")
+    if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+    markRelevoClosed()
+    carriedCount = CarriedCount(current.selectedApps.map { it.packageName }.toSet(), current.observedUsageSeconds)
+    _editing.value = true
+    updateValue(current.copy(status = ReminderStatus.DRAFT, sessionId = "", signalDelivered = false, signalAt = 0L, signalEnded = false, autoActivated = false))
+    _remainingSeconds.value = 0
+    syncRemote()
+    return true
+  }
+
   fun deleteActive() {
     val current = _reminder.value
     if (current.status != ReminderStatus.WAITING) return
@@ -832,6 +867,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Vuelve a Inicio sin relevo. [keepAsLast]: el relevo terminado pasa a ser el último, para repetirlo. */
   fun reset(keepAsLast: Boolean = true) {
+    clearCarried()
     if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     if (_reminder.value.sessionId.isNotBlank()) markRelevoClosed()
     signalPlayer.stop()

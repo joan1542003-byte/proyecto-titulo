@@ -1367,7 +1367,22 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** se basa en un solo Tag; si otro modelo solo pita con el alto, la prueba lo encuentra en el segundo intento.
 - **Documentación:** [Android 2.29](../06_desarrollo_y_factibilidad/app-android/version-2.29-nivel-medio-primero-2026-10-07.md).
 
+## D-120 — Editar un relevo sin borrarlo
+
+- **Fecha:** 2026-10-09.
+- **Estado:** implementado en Android 2.30; revisado en el emulador.
+- **Decisión:** todo lo elegido se puede cambiar desde «Todo listo», incluida la actividad, y se vuelve ahí al terminar. Un relevo activo se puede editar sin borrarlo: deja de contar mientras se edita y, al guardarlo, sigue con el tiempo que llevaba si cuenta las mismas apps.
+- **Fundamento:** comentario sobre la app: equivocarse en una opción obligaba a borrar el relevo y crearlo de nuevo.
+- **Límites:** para el registro, editar cierra la sesión anterior como `deleted` (con el evento `relevo_editado`) y abre otra.
+- **Documentación:** [Android 2.30](../06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-09 — D-120
+
+- **Qué cambió:** se registró D-120.
+- **Cómo estaba antes:** la última decisión era D-119.
+- **Por qué:** comentario sobre la app.
 
 ### 2026-10-07 — D-119
 

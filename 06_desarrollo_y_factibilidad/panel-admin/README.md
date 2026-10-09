@@ -107,6 +107,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-10-09 — Versión 2.30
+
+- **Qué cambió:** el panel marca la 2.30 como la versión del testeo y nombra el evento `relevo_editado` («Editó un relevo activo»).
+- **Cómo estaba antes:** esperaba la 2.29 y no conocía ese evento.
+- **Por qué:** D-120.
+
 ### 2026-10-07 — Versión 2.29
 
 - **Qué cambió:** el panel marca la 2.29 como la versión del testeo.
