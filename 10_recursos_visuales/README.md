@@ -60,6 +60,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 35. [Letras para relevo, propuesta 3.7](35_letras-para-relevo-2026-10-04.md), su [lámina](letras-para-relevo-2026-10-04/letras-para-relevo.html) y sus [tableros](letras-para-relevo-2026-10-04/README.md): 176 letras de cuatro fuentes sin Google Fonts, dieciocho finalistas en cuatro familias y sus licencias (D-106). Versión 2: [lámina](letras-para-relevo-2026-10-04/letras-para-relevo-v2.html) con 30 finalistas entre 264 letras de seis fuentes.
 36. [Letras que dicen relevo, propuesta 3.8](36_letras-que-dicen-relevo-2026-10-04.md), su [lámina](letras-que-dicen-relevo-2026-10-04/letras-que-dicen-relevo.html) y sus [láminas de lectura](letras-que-dicen-relevo-2026-10-04/README.md): 61 letras nuevas de tipo display, 108 miradas en grande y catorce fichas que leen cada letra con los conceptos de Relevo (D-107). Descartada por el autor.
 37. [Letras para lucirse, propuesta 3.9](37_letras-para-lucirse-2026-10-04.md), su [lámina](letras-para-lucirse-2026-10-04/letras-para-lucirse.html) y sus [tableros](letras-para-lucirse-2026-10-04/README.md): 23 letras display hermosas en cuatro familias, cada una en su tablero con el azul de Relevo (D-108).
+38. [La memoria en Affinity](38_memoria-en-affinity-2026-10-09.md) y su [plantilla](memoria-affinity/README.md): ajustes y atajos para usar Affinity como InDesign, y una plantilla IDML en A3 horizontal con retícula de 12 columnas, línea base de 15 pt, 31 estilos de párrafo, cuatro páginas maestras, la paleta de Relevo y el texto de la memoria en 40 páginas (propuesta D-121).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -74,7 +75,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 | Sonido | Único canal del objeto por ahora (D-070); unos 30 segundos (D-078) | Intensidad, patrón y convivencia requieren pruebas situadas. |
 | Paleta y tipografía | Cerradas para producción | Source Sans 3, verde Relevo y la base neutra conforman el sistema vigente. |
 | Logotipo e iconografía | Cerrados en su nivel necesario | Se usa logotipo tipográfico y una `R` reducida; no se desarrollará un símbolo adicional sin una necesidad funcional. |
-| Sistema editorial | Directrices cerradas; diagramación pendiente | Debe aplicarse al texto real mediante retícula horizontal de doce columnas. |
+| Sistema editorial | Directrices cerradas; diagramación propuesta el 9 de octubre (D-121) | La [plantilla para Affinity](38_memoria-en-affinity-2026-10-09.md) aplica la retícula de doce columnas al texto real; falta abrirla en Affinity y que el autor la apruebe. |
 
 ## Regla de sobriedad
 
@@ -89,6 +90,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-09 — La memoria en Affinity
+
+- **Qué cambió:** el índice suma el documento 38 y la carpeta de la plantilla, y la fila del sistema editorial pasa de «diagramación pendiente» a la propuesta D-121.
+- **Cómo estaba antes:** terminaba en el documento 37 y la diagramación estaba pendiente.
+- **Por qué:** el autor pidió configurar Affinity como InDesign y dejarlo listo para diseñar la memoria.
 
 ### 2026-10-04 — Letras para lucirse
 

@@ -1376,7 +1376,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** para el registro, editar cierra la sesión anterior como `deleted` (con el evento `relevo_editado`) y abre otra.
 - **Documentación:** [Android 2.30](../06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md).
 
+## D-121 — La memoria en A3 horizontal, diagramada en Affinity (propuesta)
+
+- **Fecha:** 2026-10-09.
+- **Estado:** propuesta; falta que el autor abra la plantilla en Affinity y la apruebe. No cambia el texto de la memoria.
+- **Pedido del autor:** configurar Affinity igual que InDesign y dejarlo listo para diseñar la memoria a nivel gráfico.
+- **Propuesta:**
+  - **Formato:** A3 horizontal, páginas sueltas, 3 mm de sangrado; márgenes de 20 mm (inferior, 28,3 mm).
+  - **Retícula:** 12 columnas con medianil de 15 pt y línea base de 15 pt (47 líneas, 6 filas de 7). El texto va en dos marcos de 4 columnas, de unos 64 caracteres por línea; las columnas 1–4 quedan para figuras, notas y aire.
+  - **Letra:** solo Schibsted Grotesk, la de la app (cuerpo 10,5/15), e IBM Plex Mono para cornisa y folio.
+  - **Color:** tinta sobre blanco; el azul `#1C3891` solo para orientarse (número de capítulo, figura y portada).
+  - **Producción:** plantilla IDML con 31 estilos de párrafo, 6 de carácter, un estilo de tabla APA 7, cuatro páginas maestras, la paleta de Relevo y el texto de la memoria repartido en un hilo por capítulo; guía de ajustes y atajos de InDesign para Affinity.
+- **Fundamento:** el autor pidió trabajar la memoria como publicación en A3 horizontal (C04); el documento 07 fija doce columnas, líneas de 55 a 75 caracteres, línea base común y la ruta de una sola familia; Bringhurst (2012) da 45 a 75 caracteres como medida cómoda; APA 7 (2020) para tablas y figuras.
+- **Alternativas:** serif para el cuerpo y sans para títulos (segunda ruta del documento 07); tres columnas de texto en todas las páginas; A4 vertical si la UDP lo exige.
+- **Límites:** la plantilla se comprobó en Scribus, no en Affinity; las páginas por capítulo son una estimación; no se confirmó el formato que exige la UDP; el logotipo depende de D-108.
+- **Documentación:** [La memoria en Affinity](../10_recursos_visuales/38_memoria-en-affinity-2026-10-09.md) y su [plantilla](../10_recursos_visuales/memoria-affinity/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-09 — D-121
+
+- **Qué cambió:** se registró D-121.
+- **Cómo estaba antes:** la última decisión era D-120.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-09 — D-120
 
