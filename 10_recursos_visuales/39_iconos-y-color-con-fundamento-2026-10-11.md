@@ -1,6 +1,6 @@
 # Íconos y color con fundamento
 
-**Fecha:** 11 de octubre de 2026. **Decisión:** D-123, propuesta pendiente de la revisión del autor. **Lámina:** [iconos-relevo.html](iconos-relevo-2026-10-11/iconos-relevo.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/NHpnEr63JXn6JqCfDotPC2). **Archivos:** [72 SVG](iconos-relevo-2026-10-11/svg), el [sprite](iconos-relevo-2026-10-11/iconos-relevo.svg) y los [datos en JSON](iconos-relevo-2026-10-11/iconos-relevo.json).
+**Fecha:** 11 de octubre de 2026. **Decisión:** D-124, propuesta pendiente de la revisión del autor. **Lámina:** [iconos-relevo.html](iconos-relevo-2026-10-11/iconos-relevo.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/NHpnEr63JXn6JqCfDotPC2). **Archivos:** [72 SVG](iconos-relevo-2026-10-11/svg), el [sprite](iconos-relevo-2026-10-11/iconos-relevo.svg) y los [datos en JSON](iconos-relevo-2026-10-11/iconos-relevo.json).
 
 ## Pedido
 
@@ -102,7 +102,7 @@ Es una biblioteca abierta, con licencia MIT, de componentes animados para React,
 
 ## Pendientes
 
-- Que el autor revise D-123: los íconos y la paleta 2.
+- Que el autor revise D-124: los íconos y la paleta 2.
 - Si los aprueba, generar los íconos de la app desde el JSON, como se hizo con el kit D-073, y probarlos en el teléfono a 16 y 20 px.
 - Dibujar variantes rellenas para la pestaña activa (el eje de relleno de Material Symbols sirve para cambios de estado).
 - Probar el reconocimiento de los íconos de Relevo con personas, por ejemplo pidiendo que digan qué significa cada uno sin su palabra.
@@ -145,4 +145,4 @@ World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 
   - La gráfica nueva usaba 14 íconos dibujados para la exploración.
   - La app usaba el kit D-073.
   - Los colores de las fichas no tenían un fundamento escrito.
-- **Por qué:** pedido del autor (D-123).
+- **Por qué:** pedido del autor (D-124).

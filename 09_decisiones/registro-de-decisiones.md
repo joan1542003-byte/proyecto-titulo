@@ -1411,7 +1411,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** es una exploración visual, no probada con personas.
 - **Documentación:** [Relevo con aura, versión 4](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md).
 
-## D-123 — Íconos propios y paleta 2 con fundamento
+## D-124 — Íconos propios y paleta 2 con fundamento
 
 - **Fecha:** 2026-10-11.
 - **Estado:** propuesta. Aplicada en «Relevo con aura» y en el Taller de auras; pendiente de la revisión del autor antes de llevarla a la app Android.
@@ -1439,9 +1439,9 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 
 ## Registro de cambios (disclaimer)
 
-### 2026-10-11 — D-123
+### 2026-10-11 — D-124
 
-- **Qué cambió:** se registró D-123.
+- **Qué cambió:** se registró D-124.
 - **Cómo estaba antes:** la última decisión era D-122.
 - **Por qué:** pedido del autor.
 
