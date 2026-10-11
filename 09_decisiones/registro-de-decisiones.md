@@ -1376,7 +1376,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** para el registro, editar cierra la sesión anterior como `deleted` (con el evento `relevo_editado`) y abre otra.
 - **Documentación:** [Android 2.30](../06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md).
 
+## D-121 — «Relevo con aura» como dirección visual: el aura es de la pantalla, sin giros
+
+- **Fecha:** 2026-10-11.
+- **Estado:** aprobada como dirección de la exploración visual y de las piezas para presentaciones y la memoria. No está implementada en la app: llevarla a Android queda pendiente de que el autor lo pida.
+- **Decisión:**
+  - La exploración «Relevo con aura», inspirada en Dafi, es la dirección visual que el autor quiere desarrollar.
+  - El aura es una opción de personalización de la pantalla (Perfil › Tu aura: color, intensidad, movimiento o apagarla). El Tag no emite luz: solo suena.
+  - Las tarjetas y demás piezas van derechas, sin giros.
+- **Fundamento:**
+  - El autor dijo que la exploración le encanta.
+  - El autor recordó que el dispositivo no emite luz personalizada.
+  - Pidió que ni las tarjetas ni nada tengan el efecto de girarse.
+- **Límites:**
+  - Es una dirección de diseño, no un resultado con personas.
+  - Las cifras de las piezas son ejemplos de interfaz, salvo las 53 respuestas de la encuesta (D-092).
+  - Convive con la marca vigente hasta que el autor decida reemplazarla en la app.
+- **Documentación:** [Relevo con aura y el Taller de auras](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — D-121
+
+- **Qué cambió:** se registró D-121.
+- **Cómo estaba antes:** la última decisión era D-120; la exploración «Relevo con aura» solo estaba en su documento y en el registro de pedidos.
+- **Por qué:** el autor aprobó la dirección, aclaró que el Tag no emite luz y pidió piezas sin giros.
 
 ### 2026-10-09 — D-120
 

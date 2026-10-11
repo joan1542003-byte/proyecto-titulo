@@ -68,7 +68,7 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 
 /* Fichas con cuadrado de color */
 .chip { display: inline-flex; align-items: center; gap: 14px; background: var(--white); border-radius: 16px; padding: 9px 9px 9px 16px; font-size: 15px; font-weight: 500; line-height: 1.22; box-shadow: var(--shadow); transition: transform .5s var(--spring), box-shadow .5s; }
-.chip:hover { transform: translateY(-3px) rotate(-.6deg); box-shadow: 0 2px 4px rgba(30,22,12,.06), 0 26px 50px -26px rgba(30,22,12,.36); }
+.chip:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(30,22,12,.06), 0 26px 50px -26px rgba(30,22,12,.36); }
 .tile { width: 46px; height: 46px; border-radius: 11px; display: grid; place-items: center; flex: none; }
 .tile svg, .ii svg, .dock svg, .ico svg { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .tile svg { width: 28px; height: 28px; }
@@ -121,10 +121,11 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .big { font-size: 54px; font-weight: 600; letter-spacing: -.05em; line-height: .95; font-variant-numeric: tabular-nums; }
 .ring { width: 150px; height: 150px; }
 
-/* Collage de tarjetas inclinadas */
+/* Collage de tarjetas sobre el aura, todas derechas */
 .collage { position: relative; height: clamp(420px, 52vw, 560px); border-radius: 28px; overflow: hidden; }
 .collage .piece { position: absolute; transition: transform .7s var(--spring); }
-.collage .piece:hover { transform: rotate(0deg) translateY(-6px) scale(1.02) !important; z-index: 5; }
+.collage .piece:hover { transform: translateY(-6px) scale(1.02) !important; z-index: 5; }
+@media (max-width: 640px) { .collage { height: auto; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; padding: 150px 18px 26px; } .collage .piece { position: static; } }
 .note { width: 210px; padding: 14px 16px 16px; border-radius: 16px; background: #FCF2A6; box-shadow: var(--shadow); display: grid; gap: 4px; }
 .note b { font-size: 17px; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; }
 .note span { font-size: 11px; color: rgba(20,19,18,.6); }
@@ -287,16 +288,16 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
             <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
             <div class="segments"><i class="on"></i><i class="on"></i><i></i></div>
             <div style="flex:1;position:relative">
-              <div class="tex" data-tex="clouds-blue" style="position:absolute;left:24%;top:10%;width:50%;aspect-ratio:1;border-radius:22px;transform:rotate(5deg);box-shadow:var(--shadow)"></div>
-              <div class="label glass" style="position:absolute;left:6%;top:46%;transform:rotate(-5deg)"><span class="th tex" data-tex="sunset"></span><span><b>Abrir el libro</b><span>Tu primer paso</span></span></div>
-              <span class="tile butter" style="position:absolute;right:8%;top:4%;width:40px;height:40px;transform:rotate(10deg);box-shadow:var(--shadow)"><svg style="width:24px;height:24px"><use href="#i-book"/></svg></span>
+              <div class="tex" data-tex="clouds-blue" style="position:absolute;left:24%;top:13%;width:50%;aspect-ratio:1;border-radius:22px;box-shadow:var(--shadow)"></div>
+              <div class="label glass" style="position:absolute;left:6%;top:50%"><span class="th tex" data-tex="sunset"></span><span><b>Abrir el libro</b><span>Tu primer paso</span></span></div>
+              <span class="tile butter" style="position:absolute;right:8%;top:7%;width:40px;height:40px;box-shadow:var(--shadow)"><svg style="width:24px;height:24px"><use href="#i-book"/></svg></span>
             </div>
             <p class="title" style="text-align:center">Tus ganas,<br>a un paso de distancia</p>
             <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;font-size:13px;font-weight:600">Empezar <span class="roundgo"><svg><use href="#i-arrow"/></svg></span></div>
             <div class="home-ind" style="margin-top:4px"></div>
           </div>
         </div>
-        <figcaption class="cap">Bienvenida: tarjetas inclinadas y avance en tres segmentos</figcaption>
+        <figcaption class="cap">Bienvenida: el primer paso a la vista y avance en tres segmentos</figcaption>
       </figure>
 
       <figure class="screen">
@@ -388,10 +389,10 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
         <span class="eyebrow" style="color:var(--ink);opacity:.6">Tarjetas sobre el aura</span>
         <h2 id="h-collage" style="font-size:clamp(26px,3.4vw,40px);font-weight:600;line-height:1.05;margin-top:8px">Lo que preparaste, <span class="soft" style="color:rgba(20,19,18,.5)">a la vista.</span></h2>
       </div>
-      <div class="piece note" style="left:46%;top:24%;transform:rotate(-7deg)"><span>Tu primer paso</span><b>Abrir el libro en el marcador</b><span>Junto al velador</span></div>
-      <div class="piece label glass" style="left:56%;top:56%;transform:rotate(5deg)"><span class="th tex" data-tex="clouds-blue"></span><span><b>Leer</b><span>5 relevos esta semana</span></span></div>
-      <span class="piece tile butter" style="left:43%;top:58%;width:64px;height:64px;border-radius:16px;transform:rotate(-10deg);box-shadow:var(--shadow)"><svg style="width:38px;height:38px" viewBox="0 0 28 28"><use href="#i-book"/></svg></span>
-      <div class="piece card" style="left:66%;top:16%;transform:rotate(8deg);padding:14px 16px;display:grid;gap:4px;width:180px"><span class="small">Suena después de</span><b style="font-size:30px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums">30 min</b><span class="small">en Instagram y TikTok</span></div>
+      <div class="piece note" style="left:42%;top:30%"><span>Tu primer paso</span><b>Abrir el libro en el marcador</b><span>Junto al velador</span></div>
+      <div class="piece label glass" style="left:calc(42% + 78px);top:calc(30% + 130px)"><span class="th tex" data-tex="clouds-blue"></span><span><b>Leer</b><span>5 relevos esta semana</span></span></div>
+      <span class="piece tile butter" style="left:42%;top:calc(30% + 130px);width:64px;height:64px;border-radius:16px;box-shadow:var(--shadow)"><svg style="width:38px;height:38px" viewBox="0 0 28 28"><use href="#i-book"/></svg></span>
+      <div class="piece card" style="left:calc(42% + 228px);top:30%;padding:14px 16px;display:grid;gap:4px;width:180px"><span class="small">Suena después de</span><b style="font-size:30px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums">30 min</b><span class="small">en Instagram y TikTok</span></div>
     </div>
   </section>
 

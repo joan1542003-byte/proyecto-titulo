@@ -1,6 +1,6 @@
 # Relevo con aura
 
-**Fecha:** 10 de octubre de 2026. **Estado:** exploración aprobada por el autor como dirección («me encanta»), pendiente de llevarla a la app. **Herramienta:** [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html), también en [claude.ai](https://claude.ai/artifact/5utecSucGmfP1RKcVk8zBL). **Lámina:** [relevo-con-aura.html](relevo-con-aura-2026-10-10/relevo-con-aura.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/BspSzs5esMdDAGJa69umud).
+**Fecha:** 10 de octubre de 2026. **Estado:** exploración aprobada por el autor como dirección («me encanta», D-121), pendiente de llevarla a la app. **Herramienta:** [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html), también en [claude.ai](https://claude.ai/artifact/5utecSucGmfP1RKcVk8zBL). **Lámina:** [relevo-con-aura.html](relevo-con-aura-2026-10-10/relevo-con-aura.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/BspSzs5esMdDAGJa69umud).
 
 ## Referencia
 
@@ -17,13 +17,14 @@ El autor notó que el taller solo hacía fondos y pidió las piezas que sí ten�
   - **Controles:** botones (negro, contorno, grande con flecha, flecha redonda, etiquetas y conteo), selector de estados, respuestas en un toque, ajustes con interruptores, elegir color y barra de navegación.
   - **Marca:** logotipo, con aura detrás si se quiere; marca de cuatro luces; ícono de la app; y el juego de 18 íconos.
   - **Pantallas:** al abrir, bienvenida, inicio, contando, suena, después y Tu aura.
-- **Edición:** cada pieza cambia sus textos, números, colores, ícono, cielo o fondo (blanco, papel, piedra, vidrio, aura o un cielo), su giro y su sombra. Atajos al escribir: «|» pasa a gris, «\*\*…\*\*» es negrita y `{time butter}` pone un ícono dentro del texto.
+- **Edición:** cada pieza cambia sus textos, números, colores, ícono, cielo o fondo (blanco, papel, piedra, vidrio, aura o un cielo) y su sombra. Atajos al escribir: «|» pasa a gris, «\*\*…\*\*» es negrita y `{time butter}` pone un ícono dentro del texto.
 - **Salida:**
   - **Sola:** PNG con fondo transparente y su sombra, recortado justo, a 1×, 2×, 3× o 4×.
   - **Copiar:** deja la pieza lista para pegar en Google Slides, Keynote, PowerPoint, Figma o Word.
   - **En una lámina:** la pieza sobre papel, piedra, un aura, un cielo o el fondo armado en «Fondos», con título, en formatos de diapositiva (16:9, 4K, 4:3), A4 vertical u horizontal, figura para la memoria, cuadrado o vertical. Las piezas de vidrio desenfocan el fondo de la lámina.
   - **En lote:** un grupo o todas las piezas en un ZIP, solas o en lámina.
 - **Guardar:** los cambios quedan en el navegador; «Guardar» suma una copia a «Guardadas» y la receta en texto rehace la pieza exacta en otro equipo.
+- **Sin giros (D-121):** el autor pidió que ni las tarjetas ni nada se giren. Las piezas salen derechas y el taller ya no tiene control de giro. En la lámina de la exploración, la bienvenida y el collage de tarjetas también quedan derechos, ordenados en dos filas (en el teléfono, una debajo de otra), y las fichas ya no se inclinan al pasar el puntero.
 - **Datos de ejemplo:** las piezas traen los textos de la exploración, que muestran la interfaz y no son resultados del estudio. Los saludos de las pantallas no usan nombres de personas.
 - **Verificación:** en Chrome sin ventana se exportaron las 39 piezas sin errores, se recorrieron con clics la edición, la lámina, el respaldo cuando no hay descarga, los fondos y la persistencia al recargar, y se abrió un ZIP generado. Las 39 piezas a 3× pesan unos 21 MB y se preparan en unos 4 segundos en ese equipo.
 
@@ -84,6 +85,12 @@ En este orden, sin cambiar las condiciones de la prueba, los tiempos ni las preg
 5. Enfoque desde lo borroso en el logotipo al abrir y en la frase de la señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Sin giros
+
+- **Qué cambió:** las piezas del taller y las tarjetas de la lámina quedan derechas; se quitó el control de giro y la inclinación al pasar el puntero; el collage se ordenó en dos filas.
+- **Cómo estaba antes:** la nota, la etiqueta, «Suena después de» y el cuadro con ícono venían girados, el taller tenía un control de giro y la bienvenida y el collage mostraban tarjetas inclinadas.
+- **Por qué:** pedido del autor (D-121).
 
 ### 2026-10-11 — Taller de auras, versión 2
 

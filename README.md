@@ -68,7 +68,16 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **6 de octubre:** la [app 2.22](06_desarrollo_y_factibilidad/app-android/version-2.22-comparar-y-lenguaje-claro-2026-10-06.md) (D-112) vuelve a comparar las semanas A, B y C del protocolo 02, con el objeto donde la persona dice que empieza, y aclara el lenguaje; es la versión del primer testeo. La [app 2.21](06_desarrollo_y_factibilidad/app-android/version-2.21-iconos-y-sin-sugerencias-2026-10-06.md) (D-111) muestra cada actividad con un icono sobre un degradado, no marca ninguna opción de antemano y suma «No quiero participar». La [app 2.20](06_desarrollo_y_factibilidad/app-android/version-2.20-eleccion-libre-2026-10-06.md) (D-110) deja que la persona elija dónde suena y registra su elección; es la versión del primer testeo, que empieza el 7 de octubre. El [panel del testeo](06_desarrollo_y_factibilidad/panel-admin/README.md) pasa a la versión 5, con resultados por condición y por persona y exportación a Excel, CSV y JSON ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-06.md)).
 
-**7 de octubre:** la [app 2.23](06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md) (D-113) suma degradados de varios colores, actividades de ocio como jugar videojuegos y opciones de un toque para no escribir; es la versión del primer testeo ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-07.md)).
+**7 de octubre:** la [app 2.23](06_desarrollo_y_factibilidad/app-android/version-2.23-colores-y-opciones-listas-2026-10-07.md) (D-113) suma degradados de varios colores, actividades de ocio como jugar videojuegos y opciones de un toque para no escribir; es la versión del primer testeo ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-07.md)). Ese mismo día siguieron:
+
+- la [2.24](06_desarrollo_y_factibilidad/app-android/version-2.24-tutorial-del-llavero-2026-10-07.md) (cómo usar el llavero) y la [2.25](06_desarrollo_y_factibilidad/app-android/version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md) (D-114, el «Tag» y su guía paso a paso);
+- la [2.26](06_desarrollo_y_factibilidad/app-android/version-2.26-el-tag-pita-2026-10-07.md) (D-115) y la [2.27](06_desarrollo_y_factibilidad/app-android/version-2.27-el-tag-suena-en-la-senal-2026-10-07.md) (D-116), con las que el Tag pita en la señal y de forma continua;
+- la [2.28](06_desarrollo_y_factibilidad/app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md) (D-117: Tag por defecto, lugares concretos y una app fluida) y la [2.29](06_desarrollo_y_factibilidad/app-android/version-2.29-nivel-medio-primero-2026-10-07.md) (D-119: la prueba del Tag por el nivel medio);
+- y las versiones 10 a 13 del [panel](06_desarrollo_y_factibilidad/panel-admin/README.md) (D-114 y D-118): borrar datos en dos clics, una ficha con resumen, respuestas y flujo de uso, y el tiempo en las apps solo con un relevo activo.
+
+**9 de octubre:** la [app 2.30](06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md) (D-120) permite editar un relevo sin borrarlo; es la versión del primer testeo.
+
+**10 y 11 de octubre:** la exploración [«Relevo con aura»](10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), inspirada en Dafi, queda aprobada como dirección visual (D-121). El aura es de la pantalla y se personaliza: el Tag no emite luz, solo suena; las piezas van derechas, sin giros. El [Taller de auras](10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) saca sus 39 piezas y sus fondos en PNG, en láminas para diapositivas o la memoria, o en ZIP ([bitácora del 8 al 11 de octubre](00_gobernanza/bitacora-trabajo-con-ia-2026-10-08-11.md)).
 
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
@@ -144,6 +153,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Estado hasta el 11 de octubre
+
+- **Qué cambió:** el estado actual suma las apps 2.24 a 2.30, los paneles 10 a 13, «Relevo con aura» con el Taller de auras (D-121) y la bitácora del 8 al 11 de octubre.
+- **Cómo estaba antes:** terminaba en la app 2.23 del 7 de octubre.
+- **Por qué:** el autor preguntó si todo estaba documentado; faltaba este tramo.
 
 ### 2026-10-07 — App 2.23
 
