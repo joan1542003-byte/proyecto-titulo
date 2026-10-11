@@ -13,7 +13,7 @@
   --mute: #8B8580;      /* segundo tono de los titulares */
   --line: #E4DED6;
   /* Aura */
-  --butter: #FFD54A; --peach: #FFAE7A; --blush: #F6A3CB; --lilac: #C5B2F6; --sky: #9DD6F4;
+  --butter: #FFD54A; --peach: #FFAE7A; --blush: #F6A3CB; --lilac: #C5B2F6; --sky: #9DD6F4; --lime: #C8E06A;
   /* Fichas */
   --t-butter: #F9E77C; --t-sky: #C2E4F3; --t-lime: #DCEA98; --t-blush: #F8C9D9; --t-lilac: #DED2F7; --t-peach: #FBD3B6;
   --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
@@ -43,20 +43,24 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .wordmark { font-weight: 700; font-size: clamp(76px, 15vw, 188px); line-height: .82; letter-spacing: -.065em; font-stretch: 92%; }
 .wordmark i { font-style: normal; display: inline-block; }
 .hero .tag { font-size: clamp(17px, 2vw, 21px); font-weight: 500; max-width: 26ch; line-height: 1.25; }
-.icons { position: absolute; left: 50%; bottom: -70px; transform: translateX(-50%); z-index: 2; width: min(340px, 78vw); aspect-ratio: 1.1; border-radius: 44px; padding: 22px;
+.icons { position: absolute; left: 50%; bottom: -70px; transform: translateX(-50%); z-index: 2; width: min(360px, 80vw); aspect-ratio: 2; border-radius: 44px; padding: 18px;
   background: rgba(255,255,255,.34); border: 1px solid rgba(255,255,255,.75); backdrop-filter: blur(22px) saturate(1.3); -webkit-backdrop-filter: blur(22px) saturate(1.3);
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 30px 60px -40px rgba(40,30,20,.35); }
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 30px 60px -40px rgba(40,30,20,.35); }
+.icons .obj { display: grid; place-items: center; }
+.icons .obj .tagobj { width: 56%; }
 .icons > span { border-radius: 22px; background: rgba(255,255,255,.42); border: 1px solid rgba(255,255,255,.7); aspect-ratio: 1; }
 .icons .app { background: var(--white); display: grid; place-items: center; box-shadow: 0 10px 22px -12px rgba(40,30,20,.45); }
 .credit { position: absolute; left: 20px; top: 18px; z-index: 3; font-size: 12px; color: var(--mute); max-width: 44ch; text-align: left; }
 
 /* Marca: el Tag como flor de cuatro luces */
-.mark { display: inline-block; width: 56%; aspect-ratio: 1; position: relative; filter: saturate(1.15); }
-.mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: multiply; filter: blur(.4px); }
-.mark i:nth-child(1) { left: 0; top: 21%; background: radial-gradient(circle at 35% 35%, #FFE680, var(--butter)); }
-.mark i:nth-child(2) { right: 0; top: 21%; background: radial-gradient(circle at 65% 35%, #FBC9E2, var(--blush)); }
-.mark i:nth-child(3) { left: 21%; top: 0; background: radial-gradient(circle at 50% 30%, #D2F0FF, var(--sky)); }
-.mark i:nth-child(4) { left: 21%; bottom: 0; background: radial-gradient(circle at 50% 70%, #E2D7FF, var(--lilac)); }
+/* Marca: cuatro luces, una por peldaño, en el orden de la lectura: arriba tu tiempo, a la derecha el primer paso,
+   abajo el Tag, a la izquierda lo que decides. Se mezclan oscureciendo, para que el centro no se ensucie. */
+.mark { display: inline-block; width: 56%; aspect-ratio: 1; position: relative; }
+.mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: darken; opacity: .92; }
+.mark i:nth-child(1) { left: 21%; top: 0; background: radial-gradient(circle at 50% 30%, #FFE989, var(--butter)); }
+.mark i:nth-child(2) { right: 0; top: 21%; background: radial-gradient(circle at 65% 40%, #D6F0FF, var(--sky)); }
+.mark i:nth-child(3) { left: 21%; bottom: 0; background: radial-gradient(circle at 50% 70%, #E6F3A8, var(--lime)); }
+.mark i:nth-child(4) { left: 0; top: 21%; background: radial-gradient(circle at 35% 40%, #FBD0E4, var(--blush)); }
 
 /* Tableros */
 .board { margin-top: 28px; background: var(--stone); border-radius: 40px; padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(36px, 6vw, 72px); position: relative; overflow: hidden; }
@@ -82,6 +86,73 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .ii { display: inline-grid; place-items: center; width: 1.18em; height: 1.18em; border-radius: .28em; vertical-align: -.2em; margin-inline: .06em; }
 .ii svg { width: .86em; height: .86em; stroke-width: 1.9; }
 .manifest { font-size: clamp(26px, 3.6vw, 46px); line-height: 1.16; letter-spacing: -.025em; font-weight: 500; max-width: 24ch; }
+
+/* Sin cortes: la palabra y su ícono viajan juntos. */
+.nw { white-space: nowrap; }
+.ii.end { margin-right: 0; }
+
+/* El Tag: un objeto redondo que suena. Su señal se dibuja con anillos de tinta, nunca con luz. */
+.tagobj { position: relative; display: inline-block; width: 96px; aspect-ratio: 1; border-radius: 50%; flex: none;
+  background: radial-gradient(circle at 36% 30%, #FFFFFF 0 16%, #F5F2ED 52%, #E4DED5 100%);
+  box-shadow: inset 0 -4px 8px rgba(30,22,12,.07), inset 0 2px 2px rgba(255,255,255,.9), 0 2px 3px rgba(30,22,12,.08), 0 18px 26px -16px rgba(30,22,12,.45); }
+.tagobj::before { content: ""; position: absolute; inset: 31%; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFFFF, #EFEBE5); box-shadow: inset 0 0 0 1.2px rgba(20,19,18,.1), 0 1px 2px rgba(30,22,12,.12); }
+.tagobj::after { content: ""; position: absolute; left: 44.5%; top: 7%; width: 11%; aspect-ratio: 1; border-radius: 50%; background: var(--stone); box-shadow: inset 0 1px 2px rgba(30,22,12,.25); }
+.rings { position: absolute; inset: 0; pointer-events: none; }
+.rings i { position: absolute; inset: 0; border-radius: 50%; border: 1.4px solid var(--ink); opacity: 0; }
+.sounding .rings i { animation: ring 2.4s cubic-bezier(.2,.6,.3,1) infinite; }
+.sounding .rings i:nth-child(2) { animation-delay: .8s; }
+.sounding .rings i:nth-child(3) { animation-delay: 1.6s; }
+@keyframes ring { 0% { transform: scale(1); opacity: .5; } 100% { transform: scale(2.5); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .sounding .rings i { animation: none; opacity: .2; transform: scale(1.35); }
+  .sounding .rings i:nth-child(2) { transform: scale(1.75); opacity: .12; }
+  .sounding .rings i:nth-child(3) { transform: scale(2.15); opacity: .06; }
+}
+
+/* El traspaso: un relevo en tres tiempos */
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 22px); counter-reset: paso; }
+.flow .step { display: grid; gap: 12px; align-content: start; position: relative; }
+.flow .vis { position: relative; aspect-ratio: 1.12; border-radius: 26px; overflow: hidden; display: grid; place-items: center; background: var(--paper); box-shadow: var(--shadow); }
+.flow .vis.place { background: linear-gradient(180deg, var(--paper) 0 58%, var(--stone) 58% 100%); }
+.flow .vis.place::after { content: ""; position: absolute; left: 0; right: 0; top: 58%; height: 1px; background: rgba(20,19,18,.08); }
+.flow .vis.place .tagobj { position: relative; z-index: 1; margin-top: 16%; }
+.flow .vis .over { position: relative; z-index: 2; display: grid; justify-items: center; gap: 2px; text-align: center; }
+.flow .chipxs { position: absolute; left: 14px; top: 14px; z-index: 3; background: var(--white); }
+.flow .go { position: absolute; z-index: 4; right: calc(-1 * clamp(14px, 2vw, 22px) / 2 - 17px); top: 0; margin-top: calc(50% / 1.12 - 17px); width: 34px; height: 34px; border-radius: 50%; background: var(--white); box-shadow: var(--shadow); display: grid; place-items: center; }
+.flow .go svg { width: 15px; height: 15px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.flow .go .down { display: none; }
+.flow h3 { font-size: 21px; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; display: flex; align-items: baseline; gap: 8px; }
+.flow h3::before { counter-increment: paso; content: counter(paso); font-size: 13px; font-weight: 600; color: var(--mute); font-variant-numeric: tabular-nums; }
+.flow p { color: var(--mute); font-size: 15px; max-width: 36ch; }
+.flow .act { aspect-ratio: auto; position: absolute; inset: 0; border-radius: 0; padding: 18px; }
+@media (max-width: 760px) {
+  .flow { grid-template-columns: 1fr; gap: 46px; }
+  .flow .go { right: auto; left: calc(50% - 17px); top: auto; margin-top: 0; bottom: -40px; }
+  .flow .go .side { display: none; } .flow .go .down { display: block; }
+}
+
+/* Sistema: un color, un papel */
+.system { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.45fr); gap: clamp(18px, 3vw, 40px); align-items: start; }
+@media (max-width: 860px) { .system { grid-template-columns: 1fr; } }
+.roles { display: grid; gap: 8px; }
+.roles div { display: grid; grid-template-columns: 46px minmax(0, 1fr); align-items: center; gap: 14px; background: var(--white); border-radius: 16px; padding: 9px 16px 9px 9px; box-shadow: var(--shadow); }
+.roles b { display: block; font-size: 15px; font-weight: 600; line-height: 1.2; }
+.roles span.t { font-size: 13px; color: var(--mute); }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.rules .card { padding: 18px; display: grid; gap: 10px; align-content: start; }
+.rules h3 { font-size: 17px; font-weight: 600; letter-spacing: -.015em; line-height: 1.2; }
+.rules p { font-size: 14px; color: var(--mute); }
+.rules .ex { font-size: 16px; font-weight: 500; line-height: 1.5; letter-spacing: -.01em; }
+.rules .ex small { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 99px; margin-right: 8px; vertical-align: 2px; }
+.rules .ex .si { background: var(--ink); color: var(--white); } .rules .ex .no { background: var(--stone); color: var(--mute); }
+.rules .ex.off { color: var(--mute); text-decoration: line-through; text-decoration-color: rgba(20,19,18,.35); }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.duo > span { height: 112px; border-radius: 14px; background: var(--paper); display: grid; place-items: center; overflow: hidden; }
+.moments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.moments span { aspect-ratio: 1.2; border-radius: 12px; display: grid; align-items: end; padding: 7px 8px; font-size: 11px; font-weight: 600; }
+.markmap { display: grid; grid-template-columns: auto auto auto; grid-template-rows: auto auto auto; align-items: center; justify-items: center; gap: 4px 10px; font-size: 12px; font-weight: 600; color: var(--mute); }
+.markmap .m { grid-column: 2; grid-row: 2; width: 92px; height: 92px; display: grid; place-items: center; }
+.markmap .m .mark { width: 100%; }
 
 /* Pantallas */
 .screens { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(14px, 2vw, 22px); align-items: start; }
@@ -112,7 +183,8 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .count { font-size: 11px; font-weight: 600; background: var(--white); border-radius: 99px; padding: 1px 7px; margin-left: 4px; vertical-align: 2px; }
 .dock { margin-top: auto; display: flex; justify-content: space-around; align-items: center; border-radius: 20px; padding: 7px; }
 .dock span { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; }
-.dock span.on { background: var(--t-butter); }
+.dock span.on { background: var(--ink); }
+.dock span.on svg { stroke: var(--white); }
 .dock svg { width: 21px; height: 21px; }
 .opt { display: flex; align-items: center; gap: 10px; padding: 11px 12px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); background: var(--white); font-size: 12.5px; color: var(--mute); }
 .opt .r { margin-left: auto; width: 16px; height: 16px; border-radius: 50%; box-shadow: inset 0 0 0 1.4px var(--line); flex: none; }
@@ -213,7 +285,7 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .cta { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px 0 24px; border-radius: 99px; background: var(--ink); color: var(--white); text-decoration: none; font-weight: 600; font-size: 16px; transition: transform .35s var(--spring); }
 .cta:hover { transform: translateY(-2px); }
 .cta svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 14px; }
 .notes .card { padding: 22px; display: grid; gap: 10px; align-content: start; }
 .notes h3 { font-size: 19px; font-weight: 600; }
 .notes ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--mute); font-size: 15px; }
@@ -245,7 +317,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
     <div class="wordmark" data-focus aria-label="relevo"><i>r</i><i>e</i><i>l</i><i>e</i><i>v</i><i>o</i></div>
     <p class="tag" data-focus>De la pantalla <span class="soft">a lo que querías hacer.</span></p>
   </div>
-  <div class="icons" aria-hidden="true"><span></span><span class="app"><span class="mark"><i></i><i></i><i></i><i></i></span></span><span></span><span></span><span></span><span></span></div>
+  <div class="icons" aria-hidden="true"><span class="app"><span class="mark"><i></i><i></i><i></i><i></i></span></span><span class="obj"><span class="tagobj sounding"><span class="rings"><i></i><i></i><i></i></span></span></span></div>
   <p class="credit">Exploración visual nueva para Relevo, inspirada en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a> de Mambo Mambo. Todo está dibujado aquí: ninguna imagen ni video de la referencia. El aura es de la pantalla; el Tag solo suena.</p>
 </header>
 
@@ -262,8 +334,28 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   </section>
 
   <section class="board white" aria-labelledby="h-manifest">
-    <span class="eyebrow">Íconos dentro de la frase</span>
-    <p class="manifest" id="h-manifest" data-reveal style="margin-top:14px"><b style="font-weight:600">relevo</b> cuenta tu tiempo en <span class="ii butter"><svg viewBox="0 0 28 28"><use href="#i-time"/></svg></span> las apps que eliges, te recuerda <span class="ii sky"><svg viewBox="0 0 28 28"><use href="#i-step"/></svg></span> tu primer paso y suena en <span class="ii lime"><svg viewBox="0 0 28 28"><use href="#i-tag"/></svg></span> el Tag, junto a donde empiezas, para que <span class="ii blush"><svg viewBox="0 0 28 28"><use href="#i-flag"/></svg></span> decidas tú.</p>
+    <span class="eyebrow">Íconos después de lo que nombran</span>
+    <p class="manifest" id="h-manifest" data-reveal style="margin-top:14px"><b style="font-weight:600">relevo</b> cuenta tu <span class="nw">tiempo <span class="ii butter"><svg viewBox="0 0 28 28"><use href="#i-time"/></svg></span></span> en las apps que eliges, te recuerda tu primer <span class="nw">paso <span class="ii sky"><svg viewBox="0 0 28 28"><use href="#i-step"/></svg></span></span> y suena en el <span class="nw">Tag <span class="ii lime"><svg viewBox="0 0 28 28"><use href="#i-tag"/></svg></span></span> junto a donde empiezas, para que decidas <span class="nw">tú <span class="ii blush end"><svg viewBox="0 0 28 28"><use href="#i-flag"/></svg></span>.</span></p>
+  </section>
+
+  <section class="board white" aria-labelledby="h-flow">
+    <div class="board-head"><span class="eyebrow">El traspaso</span><h2 id="h-flow">Un relevo en tres tiempos, <span class="soft">de la pantalla al lugar y a lo que querías.</span></h2><p class="lead">Como en una carrera de relevos, la pantalla pasa el testigo: cuenta tu tiempo, suena donde empiezas y te deja la actividad a ti.</p></div>
+    <div class="flow">
+      <div class="step">
+        <div class="vis"><canvas class="aura" data-aura="counting" aria-hidden="true"></canvas><span class="chipxs">En la pantalla</span><div class="over"><span class="big" style="font-size:46px">12<span style="font-size:18px;letter-spacing:-.02em;margin-left:5px">min</span></span><span class="small" style="color:var(--ink)">de 30 en Instagram y TikTok</span></div></div>
+        <span class="go" aria-hidden="true"><svg class="side" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg class="down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></span>
+        <h3>Cuenta</h3><p>Mientras usas las apps que elegiste, el aura de la pantalla respira y cuenta tu tiempo.</p>
+      </div>
+      <div class="step">
+        <div class="vis place"><span class="chipxs">En el velador</span><span class="tagobj sounding"><span class="rings"><i></i><i></i><i></i></span></span></div>
+        <span class="go" aria-hidden="true"><svg class="side" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg><svg class="down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></svg></span>
+        <h3>Suena</h3><p>Al llegar al tiempo, el Tag suena junto a donde empiezas. No se enciende: suena, y un toque lo calla.</p>
+      </div>
+      <div class="step">
+        <div class="vis tex" data-tex="clouds-blue"><div class="act"><div><b>Leer 10 páginas</b><span>Tu primer paso: abrir el libro</span></div></div></div>
+        <h3>Empiezas, si quieres</h3><p>La actividad te espera con su color. Tú decides qué hacer, y la app solo lo anota.</p>
+      </div>
+    </div>
   </section>
 
   <section class="board" aria-labelledby="h-screens">
@@ -290,7 +382,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
             <div style="flex:1;position:relative">
               <div class="tex" data-tex="clouds-blue" style="position:absolute;left:24%;top:13%;width:50%;aspect-ratio:1;border-radius:22px;box-shadow:var(--shadow)"></div>
               <div class="label glass" style="position:absolute;left:6%;top:50%"><span class="th tex" data-tex="sunset"></span><span><b>Abrir el libro</b><span>Tu primer paso</span></span></div>
-              <span class="tile butter" style="position:absolute;right:8%;top:7%;width:40px;height:40px;box-shadow:var(--shadow)"><svg style="width:24px;height:24px"><use href="#i-book"/></svg></span>
+              <span class="tile sky" style="position:absolute;right:8%;top:7%;width:40px;height:40px;box-shadow:var(--shadow)"><svg style="width:24px;height:24px"><use href="#i-book"/></svg></span>
             </div>
             <p class="title" style="text-align:center">Tus ganas,<br>a un paso de distancia</p>
             <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;font-size:13px;font-weight:600">Empezar <span class="roundgo"><svg><use href="#i-arrow"/></svg></span></div>
@@ -334,7 +426,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
               <span class="big">12<span style="font-size:20px;letter-spacing:-.02em"> min</span></span>
               <span class="small" style="color:var(--ink)">de 30 en Instagram y TikTok</span>
             </div>
-            <p style="font-size:15px;line-height:1.5;font-weight:500">Empieza por <span class="ii butter"><svg viewBox="0 0 28 28"><use href="#i-book"/></svg></span> abrir el libro, <span class="ii blush"><svg viewBox="0 0 28 28"><use href="#i-pin"/></svg></span> en el velador. Suena en <span class="ii lime"><svg viewBox="0 0 28 28"><use href="#i-tag"/></svg></span> el Tag.</p>
+            <p style="font-size:15px;line-height:1.5;font-weight:500">Empieza por abrir el <span class="nw">libro <span class="ii sky end"><svg viewBox="0 0 28 28"><use href="#i-book"/></svg></span>.</span> Suena en el <span class="nw">Tag <span class="ii lime"><svg viewBox="0 0 28 28"><use href="#i-tag"/></svg></span></span> junto al velador.</p>
             <div style="display:flex;gap:8px;justify-content:center"><span class="pillbtn">Volver al inicio</span><span class="pillbtn ghost">Editar</span></div>
             <div class="home-ind"></div>
           </div>
@@ -391,7 +483,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
       </div>
       <div class="piece note" style="left:42%;top:30%"><span>Tu primer paso</span><b>Abrir el libro en el marcador</b><span>Junto al velador</span></div>
       <div class="piece label glass" style="left:calc(42% + 78px);top:calc(30% + 130px)"><span class="th tex" data-tex="clouds-blue"></span><span><b>Leer</b><span>5 relevos esta semana</span></span></div>
-      <span class="piece tile butter" style="left:42%;top:calc(30% + 130px);width:64px;height:64px;border-radius:16px;box-shadow:var(--shadow)"><svg style="width:38px;height:38px" viewBox="0 0 28 28"><use href="#i-book"/></svg></span>
+      <span class="piece tile sky" style="left:42%;top:calc(30% + 130px);width:64px;height:64px;border-radius:16px;box-shadow:var(--shadow)"><svg style="width:38px;height:38px" viewBox="0 0 28 28"><use href="#i-book"/></svg></span>
       <div class="piece card" style="left:calc(42% + 228px);top:30%;padding:14px 16px;display:grid;gap:4px;width:180px"><span class="small">Suena después de</span><b style="font-size:30px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums">30 min</b><span class="small">en Instagram y TikTok</span></div>
     </div>
   </section>
@@ -440,8 +532,8 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
         <span class="eyebrow">Personalización</span>
         <h3 id="h-own">El aura es de la app, <span class="soft">y cada persona la ajusta.</span></h3>
         <ul>
-          <li><span class="tile butter"><svg viewBox="0 0 28 28"><use href="#i-spark"/></svg></span><span><b>Su color:</b> cinco auras y los cielos de cada actividad.</span></li>
-          <li><span class="tile sky"><svg viewBox="0 0 28 28"><use href="#i-chart"/></svg></span><span><b>Su intensidad</b> y si se mueve o queda quieta.</span></li>
+          <li><span class="tile lilac"><svg viewBox="0 0 28 28"><use href="#i-spark"/></svg></span><span><b>Su color:</b> cinco auras y los cielos de cada actividad.</span></li>
+          <li><span class="tile lilac"><svg viewBox="0 0 28 28"><use href="#i-chart"/></svg></span><span><b>Su intensidad</b> y si se mueve o queda quieta.</span></li>
           <li><span class="tile blush"><svg viewBox="0 0 28 28"><use href="#i-flag"/></svg></span><span><b>Apagarla:</b> la app funciona igual sin ella.</span></li>
         </ul>
         <p class="callout"><b style="font-weight:600">El Tag no emite luz.</b> Solo suena, junto a donde empiezas. El aura vive en la pantalla: acompaña el estado del relevo y le da carácter a la app, pero no es una señal del objeto.</p>
@@ -457,14 +549,14 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
       <div class="card" style="position:relative;overflow:hidden"><div class="tex" data-tex="aura-soft" style="position:absolute;inset:0"></div><div style="position:relative;display:grid;gap:10px"><span class="chipxs" style="background:var(--white);width:fit-content">Próxima señal</span><p style="font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.05">Suena en<br>18 minutos</p><span class="pillbtn" style="width:fit-content">Ver mi relevo</span></div></div>
       <div class="card"><span class="quiet">Elige con qué suena</span>
         <div class="chip" style="box-shadow:inset 0 0 0 1.5px var(--ink);justify-content:space-between">El Tag <span class="tile lime" style="width:38px;height:38px"><svg viewBox="0 0 28 28" style="width:22px;height:22px"><use href="#i-tag"/></svg></span></div>
-        <div class="chip" style="box-shadow:inset 0 0 0 1px var(--line);justify-content:space-between">El parlante <span class="tile sky" style="width:38px;height:38px"><svg viewBox="0 0 28 28" style="width:22px;height:22px"><use href="#i-speaker"/></svg></span></div>
+        <div class="chip" style="box-shadow:inset 0 0 0 1px var(--line);justify-content:space-between">El parlante <span class="tile lime" style="width:38px;height:38px"><svg viewBox="0 0 28 28" style="width:22px;height:22px"><use href="#i-speaker"/></svg></span></div>
       </div>
     </div>
   </section>
 
   <section class="board white" aria-labelledby="h-states">
     <div class="states">
-      <div class="stage"><canvas class="aura" data-aura="demo" aria-hidden="true"></canvas><div class="over"><p id="stateline">Contando tu tiempo</p></div></div>
+      <div class="stage"><canvas class="aura" data-aura="demo" aria-hidden="true"></canvas><div class="over"><p id="stateline">Contando tu tiempo</p></div><span class="tagobj" id="stagetag" style="position:absolute;right:7%;bottom:8%;width:58px;z-index:3" aria-hidden="true"><span class="rings"><i></i><i></i><i></i></span></span></div>
       <div class="statedesc">
         <span class="eyebrow">El efecto</span>
         <h3 id="h-states">En la pantalla, el aura dice en qué está tu relevo, <span class="soft">sin leer nada.</span></h3>
@@ -476,6 +568,35 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
           <button type="button" data-state="off" aria-pressed="false">Apagada</button>
         </div>
         <p class="quiet">Cuando suena, el que pita es el Tag; la pantalla solo acompaña.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="board white" aria-labelledby="h-system">
+    <div class="board-head"><span class="eyebrow">Sistema</span><h2 id="h-system">Un color, un papel. <span class="soft">Así la gráfica es de Relevo.</span></h2><p class="lead">Cada color dice siempre lo mismo, en las fichas, los íconos, la marca y las pantallas. La selección va en tinta; el color queda para lo que significa.</p></div>
+    <div class="system">
+      <div class="roles">
+        <div><span class="tile butter"><svg viewBox="0 0 28 28"><use href="#i-time"/></svg></span><span><b>Tu tiempo</b><span class="t">Las apps que eliges y los minutos que cuenta</span></span></div>
+        <div><span class="tile sky"><svg viewBox="0 0 28 28"><use href="#i-step"/></svg></span><span><b>Tu primer paso</b><span class="t">Lo que preparaste para empezar</span></span></div>
+        <div><span class="tile lime"><svg viewBox="0 0 28 28"><use href="#i-tag"/></svg></span><span><b>El Tag</b><span class="t">El objeto y su sonido, donde empiezas</span></span></div>
+        <div><span class="tile blush"><svg viewBox="0 0 28 28"><use href="#i-flag"/></svg></span><span><b>Lo que decides</b><span class="t">Tu respuesta después de la señal</span></span></div>
+        <div><span class="tile lilac"><svg viewBox="0 0 28 28"><use href="#i-spark"/></svg></span><span><b>Tu aura</b><span class="t">La luz de la pantalla, a tu gusto</span></span></div>
+        <div><span class="tile peach"><svg viewBox="0 0 28 28"><use href="#i-chart"/></svg></span><span><b>Después</b><span class="t">Lo que pasó cuando sonó</span></span></div>
+      </div>
+      <div class="rules">
+        <div class="card"><h3>La marca son los cuatro peldaños</h3>
+          <div class="markmap"><span style="grid-column:2;grid-row:1">Tu tiempo</span><span style="grid-column:3;grid-row:2">Primer paso</span><span style="grid-column:2;grid-row:3">El Tag</span><span style="grid-column:1;grid-row:2">Decides</span><span class="m"><span class="mark"><i></i><i></i><i></i><i></i></span></span></div>
+          <p>Cada luz es un peldaño, en el sentido del reloj desde arriba.</p></div>
+        <div class="card"><h3>El ícono va después de lo que nombra</h3>
+          <p class="ex"><small class="si">Sí</small>tu primer <span class="nw">paso <span class="ii sky"><svg viewBox="0 0 28 28"><use href="#i-step"/></svg></span></span></p>
+          <p class="ex off"><small class="no">No</small><span class="ii sky"><svg viewBox="0 0 28 28"><use href="#i-step"/></svg></span> tu primer paso</p>
+          <p>La palabra y su ícono nunca se separan al cambiar de línea.</p></div>
+        <div class="card"><h3>La luz es de la pantalla; el Tag suena</h3>
+          <div class="duo"><span><span class="tagobj sounding" style="width:46px"><span class="rings"><i></i><i></i><i></i></span></span></span><span><span class="tex" data-tex="aura-soft" style="width:58px;height:58px;border-radius:16px;box-shadow:var(--shadow)"></span></span></div>
+          <p>El sonido se dibuja con anillos de tinta. El aura vive solo en la pantalla y se puede apagar.</p></div>
+        <div class="card"><h3>El color sube con el momento</h3>
+          <div class="moments"><span style="background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)">En calma</span><span class="tex" data-tex="aura-soft">Contando</span><span class="tex" data-tex="mist" style="color:var(--ink)">Suena</span></div>
+          <p>En calma, papel y tinta. Contando, el aura respira. Cuando suena, se abre. Todo va derecho: se mueve la luz, no las tarjetas.</p></div>
       </div>
     </div>
   </section>
@@ -492,7 +613,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   </section>
 
   <section class="board" aria-labelledby="h-notes">
-    <div class="board-head"><span class="eyebrow">Notas</span><h2 id="h-notes">Qué se tomó de la referencia <span class="soft">y cómo se resolvió aquí.</span></h2></div>
+    <div class="board-head"><span class="eyebrow">Notas</span><h2 id="h-notes">Qué se tomó de la referencia, <span class="soft">qué se resolvió aquí y qué es nuestro.</span></h2></div>
     <div class="notes">
       <div class="card"><h3>Efectos</h3><ul>
         <li><b>Aura</b> de la pantalla, dibujada en tiempo real: cinco luces que se mueven lento sobre blanco tibio, con grano fino para que no se vean bandas. Es una opción de personalización.</li>
@@ -506,6 +627,12 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
         <li><b>Íconos dentro de la frase</b> y botones negros compactos, al centro.</li>
         <li><b>Actividades</b> con cielos de color con grano y volumen; cada persona elige el suyo.</li>
       </ul></div>
+      <div class="card"><h3>Lo nuestro</h3><ul>
+        <li><b>El traspaso:</b> la pantalla cuenta, el Tag suena en el lugar y la actividad queda en tus manos.</li>
+        <li><b>Un color, un papel:</b> cada peldaño tiene su color, también en la marca de cuatro luces.</li>
+        <li><b>El sonido en anillos:</b> el Tag no brilla; su señal se dibuja con anillos de tinta.</li>
+        <li><b>Íconos después de lo que nombran</b> y piezas derechas, sin giros.</li>
+      </ul></div>
       <div class="card"><h3>Lo que no</h3><ul>
         <li>Imágenes, videos, logotipo y textos de Dafi: todo se dibujó de nuevo.</li>
         <li>Títulos con serifa y etiquetas en mayúscula.</li>
@@ -515,7 +642,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
     </div>
   </section>
 
-  <footer>Referencia: <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi en Behance</a>, de Mambo Mambo (dirección creativa de Guillaume Beaulieu y Zorani Sanabria; movimiento de Tommy Hachez). Exploración del 10 de octubre de 2026; no reproduce material del proyecto.</footer>
+  <footer>Referencia: <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi en Behance</a>, de Mambo Mambo (dirección creativa de Guillaume Beaulieu y Zorani Sanabria; movimiento de Tommy Hachez). Exploración del 10 de octubre de 2026, versión 4 del 11 de octubre; no reproduce material del proyecto. Otras referencias para la versión 4: el borde de luz de Siri presentado por Apple en junio de 2024, que dice en qué estado está el asistente (<a href="https://www.pbs.org/newshour/economy/apple-bringing-apple-intelligence-to-its-popular-products" target="_blank" rel="noopener">PBS</a>); los degradados de Gemini, que según Google Design transmiten un traspaso de energía y una dirección (<a href="https://9to5google.com/2026/01/17/gemini-gradient-design/" target="_blank" rel="noopener">9to5Google</a>); y el degradado de Instagram de 2022, rehecho para verse «iluminado desde dentro» (<a href="https://www.meta.com/design-at-meta/blog/behind-instagrams-brand-evolution-movement-inclusivity-and-a-new-purpose/" target="_blank" rel="noopener">Meta Design</a>).</footer>
 </main>
 
 <script>
@@ -646,7 +773,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   const TEXT = {
     idle: ['Sin relevo activo', 'Sin relevo, el aura casi se apaga: queda una luz tenue que no pide nada.'],
     count: ['Contando tu tiempo', 'Mientras cuenta, el aura respira lento y suave: está ahí, pero no llama.'],
-    ring: ['Es hora de leer 10 páginas', 'Cuando suena el Tag, el aura de la pantalla se abre y late: el momento de volver.'],
+    ring: ['Es hora de leer 10 páginas', 'Cuando suena el Tag, sus anillos dicen que está sonando y el aura de la pantalla se abre y late: el momento de volver.'],
     off: ['Sin aura', 'Apagada desde Perfil › Tu aura: la app funciona igual, con su fondo tibio.'],
   };
   document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
@@ -655,6 +782,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
     if (demo) { demo.target = { ...target }; if (reduce) { Object.assign(demo.mode, target); draw(demo, 0); } }
     document.getElementById('stateline').textContent = TEXT[st][0]; document.getElementById('statetext').textContent = TEXT[st][1];
     if (!reduce) focusIn(document.getElementById('stateline'), 700);
+    document.getElementById('stagetag').classList.toggle('sounding', st === 'ring');
   }));
   if (demo) demo.target = { ...MODES.count };
 

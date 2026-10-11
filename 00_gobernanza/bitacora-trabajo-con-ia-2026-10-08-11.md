@@ -15,6 +15,7 @@
 | 11 oct. | Taller de auras, versión 1 | Generador de fondos con aura: presets de presentación, auras, cielos y elementos; formatos para diapositivas y la memoria; descarga en PNG. | D-121 |
 | 11 oct. | Taller de auras, versión 2 | El autor pidió las piezas con diseño de la exploración, como «3 de 5». Ahora son 39 piezas editables (datos, fichas, tarjetas, controles, marca y siete pantallas), que salen solas en PNG transparente, copiadas, en lámina o en ZIP ([taller](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html)). | D-121 |
 | 11 oct. | Sin giros | Las tarjetas y las piezas quedan derechas en el taller y en la lámina de la exploración. | D-121 |
+| 11 oct. | Relevo con aura, versión 4 | Una gráfica propia: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños, el Tag que suena en anillos, y los tableros «El traspaso» y «Sistema» ([documento 38](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md)). | D-122 |
 | 11 oct. | Documentación | El autor preguntó si todo estaba documentado. Faltaban esta bitácora, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual; se completaron. | D-121 |
 
 ## 2. Cómo se usó la IA
@@ -33,6 +34,7 @@
   - un error del taller que perdía lo editado: cada lectura recreaba los valores de la pieza;
   - miniaturas de pantallas demasiado chicas;
   - y el collage de la lámina disperso tras quitar los giros, que se ordenó en dos filas.
+- **Referencias verificadas:** para la versión 4 se buscaron y se leyeron las fuentes de Apple (2024), Google Gemini e Instagram antes de citarlas; una afirmación sobre Instagram («momentos de descubrimiento») no se pudo confirmar en la fuente y se dejó fuera.
 - **Datos honestos:** las cifras de las piezas («3 de 5», «12 de 30 min», los minutos por app) son ejemplos de interfaz, no resultados. La única cifra real es la de las 53 respuestas de la encuesta (D-092). El saludo de la pantalla de inicio ya no usa un nombre de persona.
 
 ## 3. Qué se comprobó y qué no
@@ -56,6 +58,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Versión 4
+
+- **Qué cambió:** se sumó la versión 4 de la gráfica y cómo se verificaron sus referencias.
+- **Cómo estaba antes:** la bitácora terminaba en la documentación pendiente.
+- **Por qué:** pedido del autor (D-122).
 
 ### 2026-10-11 — Creación
 

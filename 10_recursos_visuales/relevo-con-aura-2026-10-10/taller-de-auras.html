@@ -25,9 +25,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .top h1 span.soft { color: var(--mute); }
 .top p { color: var(--mute); max-width: 70ch; margin-top: 8px; font-size: 14px; }
 .mark { width: 34px; height: 34px; position: relative; display: inline-block; flex: none; }
-.mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: multiply; }
-.mark i:nth-child(1) { left: 0; top: 21%; background: #FFD54A; } .mark i:nth-child(2) { right: 0; top: 21%; background: #F6A3CB; }
-.mark i:nth-child(3) { left: 21%; top: 0; background: #9DD6F4; } .mark i:nth-child(4) { left: 21%; bottom: 0; background: #C5B2F6; }
+.mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: darken; opacity: .92; }
+.mark i:nth-child(1) { left: 21%; top: 0; background: #FFD54A; } .mark i:nth-child(2) { right: 0; top: 21%; background: #9DD6F4; }
+.mark i:nth-child(3) { left: 21%; bottom: 0; background: #C8E06A; } .mark i:nth-child(4) { left: 0; top: 21%; background: #F6A3CB; }
 .seg { display: inline-grid; grid-auto-flow: column; gap: 4px; padding: 4px; border-radius: 99px; background: var(--white); box-shadow: var(--shadow); max-width: 100%; overflow-x: auto; }
 .seg button { border: 0; background: transparent; padding: 9px 16px; border-radius: 99px; font-size: 14px; font-weight: 600; color: var(--mute); cursor: pointer; white-space: nowrap; transition: background .25s, color .25s; }
 .seg button[aria-selected="true"], .seg button[aria-pressed="true"] { background: var(--ink); color: var(--white); }
@@ -370,7 +370,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
   // =====================================================================
   const C = { paper: '#F7F4F0', stone: '#EEE9E3', white: '#FFFFFF', ink: '#141312', mute: '#8B8580', line: '#E4DED6' };
   const TILE = { butter: '#F9E77C', sky: '#C2E4F3', lime: '#DCEA98', blush: '#F8C9D9', lilac: '#DED2F7', peach: '#FBD3B6' };
-  const TILE_NAME = { butter: 'Mantequilla', sky: 'Cielo', lime: 'Lima', blush: 'Rubor', lilac: 'Lila', peach: 'Durazno', note: 'Nota', white: 'Blanco' };
+  const TILE_NAME = { butter: 'Mantequilla', sky: 'Cielo', lime: 'Lima', blush: 'Rubor', lilac: 'Lila', peach: 'Durazno', note: 'Nota', white: 'Blanco', ink: 'Tinta' };
   const NOTE = '#FCF2A6';
   const SANS = '"Instrument Sans", "Helvetica Neue", Arial, sans-serif';
   // Sombras como en la exploración: [x, y, desenfoque, extensión, opacidad].
@@ -550,9 +550,9 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
     if (o.ghost) { ctx.save(); ctx.clip(); ctx.lineWidth = 2.6; ctx.strokeStyle = C.ink; ctx.stroke(); ctx.restore(); } else { ctx.fillStyle = o.bg || C.ink; ctx.fill(); }
     label(ctx, s, x + padX, y + h / 2, 600, px, o.ghost ? C.ink : (o.fg || C.white)); return w;
   }
-  function markDraw(ctx, x, y, s, cols = ['#FFD54A', '#F6A3CB', '#9DD6F4', '#C5B2F6'], blend = 'multiply') {
+  function markDraw(ctx, x, y, s, cols = ['#F6A3CB', '#9DD6F4', '#FFD54A', '#C8E06A'], blend = 'darken') {
     const d = s * .58, pos = [[0, .21], [.42, .21], [.21, 0], [.21, .42]], hl = [[.35, .35], [.65, .35], [.5, .3], [.5, .7]];
-    ctx.save(); if (blend === 'soft') ctx.globalAlpha = .74; else ctx.globalCompositeOperation = 'multiply';
+    ctx.save(); if (blend === 'soft') ctx.globalAlpha = .74; else if (blend === 'darken') { ctx.globalCompositeOperation = 'darken'; ctx.globalAlpha = .92; } else ctx.globalCompositeOperation = 'multiply';
     pos.forEach(([px, py], i) => { const cx = x + px * s + d / 2, cy = y + py * s + d / 2; const g = ctx.createRadialGradient(x + px * s + d * hl[i][0], y + py * s + d * hl[i][1], 0, cx, cy, d * .72); g.addColorStop(0, mix(cols[i], '#FFFFFF', .45)); g.addColorStop(1, cols[i]); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, d / 2, 0, Math.PI * 2); ctx.fill(); });
     ctx.restore();
   }
@@ -778,7 +778,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
   function dockPaint(ctx, x, y, w, icons, active, tile, surf, S, sh) {
     surface(ctx, surf, x, y, w, 50, 20, S, sh);
     const n = icons.length; if (!n) return; const slot = (w - 14) / n;
-    icons.forEach((ic, i) => { const cx = x + 7 + slot * i + slot / 2 - 18; if (i + 1 === active) { ctx.fillStyle = TILE[tile] || TILE.butter; ctx.beginPath(); rrPath(ctx, cx, y + 7, 36, 36, 11); ctx.fill(); } drawIcon(ctx, ic, cx + 7.5, y + 14.5, 21); });
+    icons.forEach((ic, i) => { const cx = x + 7 + slot * i + slot / 2 - 18; const on = i + 1 === active; if (on) { ctx.fillStyle = tile === 'ink' ? C.ink : (TILE[tile] || C.ink); ctx.beginPath(); rrPath(ctx, cx, y + 7, 36, 36, 11); ctx.fill(); } drawIcon(ctx, ic, cx + 7.5, y + 14.5, 21, on && (tile === 'ink' || !TILE[tile]) ? C.white : C.ink); });
   }
   function optBuild(ctx, text, w, sel) {
     const L = layout(ctx, text, T(12.5, sel ? 500 : 400, { main: sel ? C.ink : C.mute, maxW: w - 24 - 26 }));
@@ -946,7 +946,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
 
   piece({ id: 'sonido', group: 'fichas', name: 'Elige con qué suena',
     f: [fText('eyebrow', 'Encima'), fArea('items', 'Opciones', { hint: 'Una por línea: texto | color | ícono.' }), fNum('selected', 'Elegida', 0, 6), fSurf(), fNum('width', 'Ancho', 200, 520)],
-    d: { eyebrow: 'Elige con qué suena', items: 'El Tag | lime | tag\nEl parlante | sky | speaker', selected: 1, surface: 'white', width: 280 },
+    d: { eyebrow: 'Elige con qué suena', items: 'El Tag | lime | tag\nEl parlante | lime | speaker', selected: 1, surface: 'white', width: 280 },
     build(ctx, p) {
       const W = p.width, pad = 18, iw = W - pad * 2; const A = Lx(ctx, p.eyebrow, T(13, 400, { main: C.mute, maxW: iw }));
       const chips = cells(p.items).slice(0, 5).map(([tx, tl, ic], i) => chipBuild(ctx, { text: brk(tx), tile: tl || 'lime', icon: ICONS[ic] ? ic : 'tag', ts: 38, border: i + 1 === +p.selected ? 'ink' : 'line', surface: 'white' }));
@@ -956,12 +956,12 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
 
   piece({ id: 'cuadro', group: 'fichas', name: 'Cuadro con ícono',
     f: [fTile(), fIcon(), fNum('size', 'Tamaño', 24, 240)],
-    d: { tile: 'butter', icon: 'book', size: 64 },
+    d: { tile: 'sky', icon: 'book', size: 64 },
     build(ctx, p) { const s = p.size; return { w: s, h: s, paint(ctx, S, st) { tileBox(ctx, 0, 0, s, p.tile, p.icon, s * .25, S, st.shadow); } }; } });
 
   piece({ id: 'frase', group: 'fichas', name: 'Frase con íconos',
     f: [fArea('text', 'Frase', { rows: 5, hint: 'Íconos con {ícono color}, negrita con **…**.' }), fNum('size', 'Tamaño', 14, 96), fNum('width', 'Ancho', 240, 1400), fAlign(), fTone(), fSurf()],
-    d: { text: '**relevo** cuenta tu tiempo en {time butter} las apps que eliges, te recuerda {step sky} tu primer paso y suena en {tag lime} el Tag, junto a donde empiezas, para que {flag blush} decidas tú.', size: 46, width: 900, align: 'left', tone: 'ink', surface: 'none' },
+    d: { text: '**relevo** cuenta tu tiempo {time butter} en las apps que eliges, te recuerda tu primer paso {step sky} y suena en el Tag {tag lime} junto a donde empiezas, para que decidas tú {flag blush}.', size: 46, width: 900, align: 'left', tone: 'ink', surface: 'none' },
     shadow: false, lam: { eyebrow: '', title: '', sub: '' },
     build(ctx, p) {
       const t = tone(p); const L = layout(ctx, p.text, T(p.size, 500, { bw: 600, em: -.025, lh: 1.16, main: t.main, soft: t.soft, maxW: p.width }));
@@ -1051,7 +1051,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
 
   piece({ id: 'lista', group: 'tarjetas', name: 'Lista con íconos',
     f: [fArea('items', 'Puntos', { rows: 5, hint: 'Uno por línea: ícono | color | texto. **Negrita** al inicio.' }), fNum('size', 'Tamaño del texto', 12, 32), fNum('width', 'Ancho', 240, 900), fTone()],
-    d: { items: 'spark | butter | **Su color:** cinco auras y los cielos de cada actividad.\nchart | sky | **Su intensidad** y si se mueve o queda quieta.\nflag | blush | **Apagarla:** la app funciona igual sin ella.', size: 16, width: 460, tone: 'ink' },
+    d: { items: 'spark | lilac | **Su color:** cinco auras y los cielos de cada actividad.\nchart | lilac | **Su intensidad** y si se mueve o queda quieta.\nflag | blush | **Apagarla:** la app funciona igual sin ella.', size: 16, width: 460, tone: 'ink' },
     shadow: false,
     build(ctx, p) {
       const t = tone(p), k = p.size / 16, ts = 34 * k; const its = cells(p.items).slice(0, 10).map(([ic, tl, ...rest]) => ({ ic: ICONS[ic] ? ic : 'spark', tl: tl || 'butter', L: layout(ctx, rest.join(' | '), T(p.size, 400, { bw: 600, main: t.main, soft: t.soft, maxW: p.width - ts - 12 * k })) }));
@@ -1105,8 +1105,8 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
     build(ctx, p) { const ns = words(p.skies).filter((n) => SKIES[n]).slice(0, 10); const s = +p.size; const gap = s >= 44 ? 12 : 8; const W = Math.max(s, ns.length * (s + gap) - gap) + 8; return { w: W, h: s + 8, paint(ctx, S) { swatchRow(ctx, 4, 4, ns, +p.selected, s, S); } }; } });
 
   piece({ id: 'barra', group: 'controles', name: 'Barra de navegación',
-    f: [fText('icons', 'Íconos', { hint: 'Separados por espacios: home spark chart cal…' }), fNum('active', 'Activo', 0, 6), fTile('tile', 'Color del activo'), fSurf(), fNum('width', 'Ancho', 160, 520)],
-    d: { icons: 'home spark chart cal', active: 1, tile: 'butter', surface: 'glass', width: 268 },
+    f: [fText('icons', 'Íconos', { hint: 'Separados por espacios: home spark chart cal…' }), fNum('active', 'Activo', 0, 6), fTile('tile', 'Color del activo', { extra: ['ink'] }), fSurf(), fNum('width', 'Ancho', 160, 520)],
+    d: { icons: 'home spark chart cal', active: 1, tile: 'ink', surface: 'glass', width: 268 },
     build(ctx, p) { const ics = words(p.icons).filter((n) => ICONS[n]).slice(0, 6); return { w: p.width, h: 50, paint(ctx, S, st) { dockPaint(ctx, 0, 0, p.width, ics, +p.active, p.tile, p.surface, S, st.shadow); } }; } });
 
   // ---------- Marca ----------
@@ -1126,13 +1126,13 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
     } });
 
   piece({ id: 'marca', group: 'marca', name: 'Marca de cuatro luces',
-    f: [fColor('c1', 'Izquierda'), fColor('c2', 'Derecha'), fColor('c3', 'Arriba'), fColor('c4', 'Abajo'), fSel('blend', 'Mezcla', [['multiply', 'Multiplicar, como en la app'], ['soft', 'Suave, transparente']]), fNum('size', 'Tamaño', 40, 600)],
-    d: { c1: '#FFD54A', c2: '#F6A3CB', c3: '#9DD6F4', c4: '#C5B2F6', blend: 'multiply', size: 220 }, shadow: false,
+    f: [fColor('c1', 'Izquierda'), fColor('c2', 'Derecha'), fColor('c3', 'Arriba'), fColor('c4', 'Abajo'), fSel('blend', 'Mezcla', [['darken', 'Limpia (oscurecer)'], ['multiply', 'Multiplicar'], ['soft', 'Suave, transparente']]), fNum('size', 'Tamaño', 40, 600)],
+    d: { c1: '#F6A3CB', c2: '#9DD6F4', c3: '#FFD54A', c4: '#C8E06A', blend: 'darken', size: 220 }, shadow: false,
     build(ctx, p) { return { w: p.size, h: p.size, paint(ctx) { markDraw(ctx, 0, 0, p.size, [p.c1, p.c2, p.c3, p.c4], p.blend); } }; } });
 
   piece({ id: 'icono-app', group: 'marca', name: 'Ícono de la app',
-    f: [fSel('fill', 'Fondo', [['white', 'Blanco'], ['aura', 'Aura'], ['sky', 'Cielo'], ['glass', 'Vidrio']]), fSky('sky', 'Cielo', { when: (p) => p.fill === 'sky' }), fCheck('mark', 'Con la marca'), fSel('blend', 'Mezcla de la marca', [['multiply', 'Multiplicar'], ['soft', 'Suave']], { when: (p) => p.mark }), fNum('size', 'Tamaño', 64, 600)],
-    d: { fill: 'white', sky: 'aura-soft', mark: true, blend: 'multiply', size: 220 },
+    f: [fSel('fill', 'Fondo', [['white', 'Blanco'], ['aura', 'Aura'], ['sky', 'Cielo'], ['glass', 'Vidrio']]), fSky('sky', 'Cielo', { when: (p) => p.fill === 'sky' }), fCheck('mark', 'Con la marca'), fSel('blend', 'Mezcla de la marca', [['darken', 'Limpia'], ['multiply', 'Multiplicar'], ['soft', 'Suave']], { when: (p) => p.mark }), fNum('size', 'Tamaño', 64, 600)],
+    d: { fill: 'white', sky: 'aura-soft', mark: true, blend: 'darken', size: 220 },
     build(ctx, p) {
       const s = p.size;
       return { w: s, h: s, paint(ctx, S, st) {
@@ -1204,7 +1204,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
           ctx.save(); ctx.translate(PX + PIW * .06 + lab.w / 2, y + h * .5 + 32); ctx.translate(-lab.w / 2, -32);
           surface(ctx, 'glass', 0, 0, lab.w, 64, 16, S, true); ctx.save(); ctx.beginPath(); rrPath(ctx, 8, 8, 48, 48, 12); ctx.clip(); drawSky(ctx, p.thumb, 8, 8, 48, 48, S); ctx.restore();
           const th = lab.A.height + lab.Bs.height; drawL(ctx, lab.A, 66, (64 - th) / 2); drawL(ctx, lab.Bs, 66, (64 - th) / 2 + lab.A.height); ctx.restore();
-          ctx.save(); ctx.translate(PX + PIW - PIW * .08 - 20, y + h * .07 + 20); surface(ctx, TILE.butter, -20, -20, 40, 40, 11, S, true); drawIcon(ctx, 'book', -12, -12, 24); ctx.restore();
+          ctx.save(); ctx.translate(PX + PIW - PIW * .08 - 20, y + h * .07 + 20); surface(ctx, TILE.sky, -20, -20, 40, 40, 11, S, true); drawIcon(ctx, 'book', -12, -12, 24); ctx.restore();
         } },
         { h: Lt.height, d: (y) => drawL(ctx, Lt, PX, y, 'center', PIW) },
         { h: 42, d: (y) => { const tw = textW(ctx, p.go, 600, 13); label(ctx, p.go, PX + PIW - 42 - 10 - tw, y + 21, 600, 13, C.ink); ctx.strokeStyle = C.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(PX + PIW - 21, y + 21, 20, 0, Math.PI * 2); ctx.stroke(); drawIcon(ctx, 'arrow', PX + PIW - 29, y + 13, 16, C.ink, 2); } },
@@ -1225,13 +1225,13 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
         { h: 21, d: (y) => { const tw = label(ctx, 'Tus actividades', PX, y + 10.5, 600, 14, C.ink); const cw = textW(ctx, String(acts.length * 2), 600, 11) + 14; ctx.fillStyle = C.white; ctx.beginPath(); rrPath(ctx, PX + tw + 4, y + 1, cw, 18.5, 9.25); ctx.fill(); label(ctx, String(acts.length * 2), PX + tw + 11, y + 10.25, 600, 11, C.ink); const vw = textW(ctx, 'Ver todas', 600, 11) + 20; insetStroke(ctx, PX + PIW - vw, y + 1, vw, 22.5, 11.25, 1.2, C.ink); label(ctx, 'Ver todas', PX + PIW - vw + 10, y + 12.25, 600, 11, C.ink); } },
         { h: aw, d: (y) => acts.forEach((a, i) => actPaint(ctx, PX + i * (aw + 8), y, aw, aw, a, { r: 16, pad: 10, tpx: 13, spx: 10 }, S, false)) },
         { h: row.h, d: (y) => row.paint(ctx, PX, y, S, true, PIW) },
-        { h: 50, auto: true, d: (y) => dockPaint(ctx, PX, y, PIW, ['home', 'spark', 'chart', 'cal'], 1, 'butter', 'glass', S, true) },
+        { h: 50, auto: true, d: (y) => dockPaint(ctx, PX, y, PIW, ['home', 'spark', 'chart', 'cal'], 1, 'ink', 'glass', S, true) },
       ]);
     }); } }; } });
 
   screen({ id: 'p-contando', name: 'Pantalla · Contando', lamTitle: 'Contando: | el aura respira lenta.',
     f: [fText('num', 'Minutos'), fText('unit', 'Unidad'), fText('caption', 'Debajo'), fArea('sentence', 'Frase con íconos'), fText('b1', 'Botón'), fText('b2', 'Segundo botón'), AURA_PICK],
-    d: { num: '12', unit: 'min', caption: 'de 30 en Instagram y TikTok', sentence: 'Empieza por {book butter} abrir el libro, {pin blush} en el velador. Suena en {tag lime} el Tag.', b1: 'Volver al inicio', b2: 'Editar', auraPal: 'aura' },
+    d: { num: '12', unit: 'min', caption: 'de 30 en Instagram y TikTok', sentence: 'Empieza por abrir el libro {book sky}. Suena en el Tag {tag lime} junto al velador.', b1: 'Volver al inicio', b2: 'Editar', auraPal: 'aura' },
     build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { withPal(p, () => phoneShell(ctx, S, st.shadow, () => { ctx.fillStyle = C.paper; ctx.fillRect(0, 0, PW, PH); drawAura(ctx, 'phone', 0, 0, PW, PH, S, { scale: .66, k: .85 }); }, () => {
       const Ls = layout(ctx, p.sentence, T(15, 500, { lh: 1.5, maxW: PIW }));
       vstack(PT, PH - PB, 12, [
@@ -1547,7 +1547,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
         const sel = el('select'); sel.id = id; f.opts.forEach(([v, t]) => { const o = el('option', null, t); o.value = v; sel.appendChild(o); }); sel.value = String(p[f.k]); sel.addEventListener('change', () => set(sel.value)); w.append(lab, sel);
       } else if (f.type === 'tile') {
         const row = el('div', 'swrow'); row.setAttribute('role', 'group'); row.setAttribute('aria-label', f.label);
-        [...Object.keys(TILE), ...(f.extra || [])].forEach((k) => row.appendChild(swatchBtn(k === 'note' ? NOTE : (TILE[k] || C.white), TILE_NAME[k] || k, p[f.k] === k, (e) => { pressOne(row, e.currentTarget); set(k); })));
+        [...Object.keys(TILE), ...(f.extra || [])].forEach((k) => row.appendChild(swatchBtn(k === 'note' ? NOTE : k === 'ink' ? C.ink : (TILE[k] || C.white), TILE_NAME[k] || k, p[f.k] === k, (e) => { pressOne(row, e.currentTarget); set(k); })));
         w.append(el('span', 'lbl', f.label), row);
       } else if (f.type === 'icon') {
         const g = el('div', 'icongrid'); g.setAttribute('role', 'group'); g.setAttribute('aria-label', f.label);

@@ -1394,7 +1394,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Convive con la marca vigente hasta que el autor decida reemplazarla en la app.
 - **Documentación:** [Relevo con aura y el Taller de auras](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md).
 
+## D-122 — Reglas propias de «Relevo con aura»
+
+- **Fecha:** 2026-10-11.
+- **Estado:** propuesta en la versión 4 de la exploración y aplicada en el Taller de auras; pendiente de la revisión del autor. No está en la app.
+- **Decisión:**
+  - El ícono va después de la palabra que nombra y no se separa de ella al cambiar de línea.
+  - Un color, un papel: mantequilla es tu tiempo; cielo, el primer paso; lima, el Tag y su sonido; rubor, lo que decides; lila, tu aura; durazno, después de la señal. La selección va en tinta.
+  - La marca de cuatro luces son los cuatro peldaños, en el sentido del reloj desde arriba, mezclados oscureciendo.
+  - El Tag se muestra como objeto redondo y su señal con anillos de tinta, nunca con luz.
+  - El relevo se cuenta en tres tiempos: cuenta, suena y empiezas.
+- **Fundamento:**
+  - El autor señaló que los íconos de la frase iban antes de lo que nombran y pidió que la gráfica fuera propia, no una copia de Dafi.
+  - Referencias: el borde de luz de Siri (Apple, 2024) como estado de la pantalla; los degradados de Gemini como traspaso de energía (Google Design, según 9to5Google, 2026); el degradado «iluminado desde dentro» de Instagram (Meta Design, 2022).
+  - Retoma D-103: el color sube con el momento.
+- **Límites:** es una exploración visual, no probada con personas.
+- **Documentación:** [Relevo con aura, versión 4](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — D-122
+
+- **Qué cambió:** se registró D-122.
+- **Cómo estaba antes:** la última decisión era D-121.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-11 — D-121
 

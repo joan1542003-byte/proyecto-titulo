@@ -1,10 +1,36 @@
 # Relevo con aura
 
-**Fecha:** 10 de octubre de 2026. **Estado:** exploración aprobada por el autor como dirección («me encanta», D-121), pendiente de llevarla a la app. **Herramienta:** [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html), también en [claude.ai](https://claude.ai/artifact/5utecSucGmfP1RKcVk8zBL). **Lámina:** [relevo-con-aura.html](relevo-con-aura-2026-10-10/relevo-con-aura.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/BspSzs5esMdDAGJa69umud).
+**Fecha:** 10 de octubre de 2026. **Estado:** exploración aprobada por el autor como dirección («me encanta», D-121), versión 4 con reglas propias (D-122), pendiente de llevarla a la app. **Herramienta:** [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html), también en [claude.ai](https://claude.ai/artifact/5utecSucGmfP1RKcVk8zBL). **Lámina:** [relevo-con-aura.html](relevo-con-aura-2026-10-10/relevo-con-aura.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/BspSzs5esMdDAGJa69umud).
 
 ## Referencia
 
 [Dafi](https://www.behance.net/gallery/253069605/Dafi), de Mambo Mambo, en Behance. Es una app de estudio con IA; la dirección creativa es de Guillaume Beaulieu y Zorani Sanabria y el movimiento, de Tommy Hachez. El autor la eligió como inspiración directa, no como copia. Se revisaron sus 17 imágenes y parte de sus 6 videos en el navegador, sin descargarlos ni guardarlos.
+
+## Versión 4 (11 de octubre): una gráfica nuestra
+
+El autor pidió seguir perfeccionando la gráfica general, sin que sea una copia uno a uno de la referencia, y señaló un error: en la frase con íconos, cada ícono debe ir después de la palabra que nombra («tiempo» y luego su ícono), no antes ni entre «recuerda» y «tu». También pidió buscar referencias parecidas. La [lámina](relevo-con-aura-2026-10-10/relevo-con-aura.html) suma reglas y tableros que vienen de Relevo y no de Dafi (D-122).
+
+- **El ícono va después de lo que nombra:** tiempo, primer paso, el Tag, decides tú. La palabra y su ícono no se separan al cambiar de línea, y el punto final queda pegado al ícono. Se corrigió la frase de la lámina, la de la pantalla «Contando» y la del taller.
+- **Un color, un papel:**
+  - Cada color dice siempre lo mismo: mantequilla es tu tiempo; cielo, tu primer paso; lima, el Tag y su sonido; rubor, lo que decides; lila, tu aura; durazno, lo que pasó después de la señal.
+  - La selección va en tinta, como en el selector de estados: la barra de navegación ya no marca la pestaña activa en amarillo.
+  - Se corrigieron colores que no calzaban: el libro, que es el primer paso, pasa a cielo; «El parlante» pasa a lima, porque también es sonido; los puntos sobre el aura pasan a lila.
+- **La marca son los cuatro peldaños:** las cuatro luces son los colores de los peldaños, en el sentido del reloj desde arriba (tu tiempo, primer paso, el Tag y decides). Se mezclan oscureciendo, así el centro ya no se ensucia.
+- **El Tag suena, no brilla:** aparece como un objeto redondo, con su argolla, y su señal se dibuja con anillos de tinta que se abren. Está en la bandeja de la portada, junto al ícono de la app; en el tablero del traspaso; y en los estados, donde solo suena en «Suena».
+- **El traspaso, un tablero nuevo:**
+  - Un relevo en tres tiempos, como una carrera de relevos: **cuenta** (el aura en la pantalla), **suena** (el Tag en el velador) y **empiezas, si quieres** (la actividad con su color).
+  - Lo une la idea de pasar el testigo de la pantalla al lugar.
+- **Sistema, un tablero nuevo:** reúne los seis colores con su papel y cuatro reglas: la marca son los cuatro peldaños, el ícono va después de lo que nombra, la luz es de la pantalla y el Tag suena, y el color sube con el momento (D-103). Todo va derecho: se mueve la luz, no las tarjetas.
+- **Notas:** suman «Lo nuestro» y fuentes nuevas.
+
+**Referencias revisadas:**
+
+| Referencia | Qué es | Qué se toma |
+| --- | --- | --- |
+| Apple, Siri con Apple Intelligence (junio de 2024) | Un borde de luz en la pantalla que dice en qué estado está el asistente ([PBS](https://www.pbs.org/newshour/economy/apple-bringing-apple-intelligence-to-its-popular-products)). | La luz como estado de la pantalla, no como adorno. |
+| Google, Gemini | Según Google Design, sus degradados transmiten «un traspaso de energía» y una dirección, y guían la atención ([9to5Google, 17 de enero de 2026](https://9to5google.com/2026/01/17/gemini-gradient-design/)). | La idea del traspaso en tres tiempos. |
+| Instagram (2022) | El degradado rehecho por Rose Pilkington para verse «iluminado desde dentro» ([Meta Design](https://www.meta.com/design-at-meta/blog/behind-instagrams-brand-evolution-movement-inclusivity-and-a-new-purpose/), ya usado en el [documento 30](30_volver-a-enfocar-2026-10-03.md)). | La luz que sale de dentro, sin bordes. |
+| Behance | Se miraron [Suno](https://www.behance.net/gallery/250116953/Suno-Brand-Product-Design) y [Niva](https://www.behance.net/gallery/241915081/Niva-AI-family-assistant), sin descargar imágenes. | Niva enuncia el problema en frases grandes en dos tonos, como ya hace Relevo. Ninguno usa un objeto físico: el Tag es lo que distingue a Relevo. |
 
 ## Taller de auras, versión 2: piezas (11 de octubre)
 
@@ -85,6 +111,12 @@ En este orden, sin cambiar las condiciones de la prueba, los tiempos ni las preg
 5. Enfoque desde lo borroso en el logotipo al abrir y en la frase de la señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Versión 4: una gráfica nuestra
+
+- **Qué cambió:** íconos después de lo que nombran, un color un papel, la marca de los cuatro peldaños, el Tag que suena en anillos y los tableros «El traspaso» y «Sistema»; el taller sigue las mismas reglas; se suman referencias.
+- **Cómo estaba antes:** la frase con íconos los ponía antes de la palabra, algunos colores no tenían un papel fijo, la marca mezclaba multiplicando con un centro turbio y el Tag no aparecía como objeto.
+- **Por qué:** pedido del autor (D-122).
 
 ### 2026-10-11 — Sin giros
 

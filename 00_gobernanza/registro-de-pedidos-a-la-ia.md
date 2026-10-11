@@ -123,6 +123,7 @@
 | 11 oct. | Encargo | Le encanta la exploración: perfeccionarla y crear presets para presentaciones. Habla mucho de luz y aura, pero el dispositivo no emite luz: darle protagonismo, como opción de personalización en la app. Hacer una herramienta para elaborar elementos con los degradados personalizados, para futuras presentaciones y la memoria. | [Relevo con aura](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), versión 3: el aura es de la pantalla y se personaliza en Perfil › Tu aura; el Tag solo suena. [Taller de auras](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html): presets de presentación, auras, cielos y elementos; formatos para diapositivas y la memoria; texto en dos tonos; recetas; descarga en PNG. | D-121 |
 | 11 oct. | Corrección | En el taller no aparecen los elementos que sí tenían diseño en «Relevo con aura», como el dato «3 de 5». Quiere ese tipo de piezas y poder exportarlas aparte; debe ser perfecto: una herramienta de diseño para sacar fácil cosas para sus presentaciones o ponerlas en la memoria. | [Taller de auras](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html), versión 2: 39 piezas editables de la exploración en seis grupos (datos, fichas y frases, tarjetas, controles, marca y siete pantallas). Cada una sale sola en PNG transparente a 1×–4×, se copia para pegar, se pone en una lámina con título para diapositivas o la memoria, o se descarga en lote en ZIP. Los fondos siguen en su propio modo. | D-121 |
 | 11 oct. | Corrección y pregunta | Ni las tarjetas ni nada deben tener el efecto de girarse. Preguntó si se documentaron todos los cambios y lo hecho. | Sin giros en el [taller](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) ni en la [lámina](../10_recursos_visuales/relevo-con-aura-2026-10-10/relevo-con-aura.html). Al revisar la documentación faltaban la bitácora del 8 al 11 de octubre, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual: se completaron con la [bitácora del 8 al 11 de octubre](bitacora-trabajo-con-ia-2026-10-08-11.md) y D-121. | D-121 |
+| 11 oct. | Encargo y corrección | Seguir perfeccionando la gráfica general, no el editor, sin que sea una copia uno a uno de la referencia. En la frase con íconos, cada ícono debe ir después de lo que nombra (el de tiempo después de «tiempo», el del Tag junto a «Tag»). Buscar referencias parecidas: le encanta lo que hay, pero es mejorable y debe ser nuestro. | [Relevo con aura](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), versión 4: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños, el Tag como objeto que suena en anillos, y los tableros «El traspaso» y «Sistema». Referencias: Apple (2024), Google Gemini, Instagram (2022) y dos proyectos de Behance. El taller sigue las mismas reglas. | D-122 |
 
 ## Lo que muestra el registro
 
@@ -133,6 +134,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Versión 4 de la gráfica
+
+- **Qué cambió:** se registró el pedido de perfeccionar la gráfica y ordenar los íconos.
+- **Cómo estaba antes:** terminaba en el pedido de quitar los giros.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-11 — Sin giros y documentación pendiente
 
