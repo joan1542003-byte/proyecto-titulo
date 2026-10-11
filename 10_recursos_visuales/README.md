@@ -60,6 +60,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 35. [Letras para relevo, propuesta 3.7](35_letras-para-relevo-2026-10-04.md), su [lámina](letras-para-relevo-2026-10-04/letras-para-relevo.html) y sus [tableros](letras-para-relevo-2026-10-04/README.md): 176 letras de cuatro fuentes sin Google Fonts, dieciocho finalistas en cuatro familias y sus licencias (D-106). Versión 2: [lámina](letras-para-relevo-2026-10-04/letras-para-relevo-v2.html) con 30 finalistas entre 264 letras de seis fuentes.
 36. [Letras que dicen relevo, propuesta 3.8](36_letras-que-dicen-relevo-2026-10-04.md), su [lámina](letras-que-dicen-relevo-2026-10-04/letras-que-dicen-relevo.html) y sus [láminas de lectura](letras-que-dicen-relevo-2026-10-04/README.md): 61 letras nuevas de tipo display, 108 miradas en grande y catorce fichas que leen cada letra con los conceptos de Relevo (D-107). Descartada por el autor.
 37. [Letras para lucirse, propuesta 3.9](37_letras-para-lucirse-2026-10-04.md), su [lámina](letras-para-lucirse-2026-10-04/letras-para-lucirse.html) y sus [tableros](letras-para-lucirse-2026-10-04/README.md): 23 letras display hermosas en cuatro familias, cada una en su tablero con el azul de Relevo (D-108).
+38. [Relevo con aura](38_relevo-con-aura-2026-10-10.md) y su [lámina](relevo-con-aura-2026-10-10/relevo-con-aura.html): exploración inspirada en Dafi (Mambo Mambo): aura que se enciende, grano, fichas de color en escalera y cinco pantallas de la app. Pendiente de la elección del autor.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -89,6 +90,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-10 — Relevo con aura
+
+- **Qué cambió:** se agregó la exploración 38, inspirada en Dafi.
+- **Cómo estaba antes:** el índice terminaba en la 37.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-04 — Letras para lucirse
 

@@ -1,0 +1,411 @@
+<title>Relevo con aura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+/* Lámina editorial a la izquierda; las pantallas en una grilla que se apila en el teléfono. */
+:root {
+  --paper: #F2F1EC;      /* papel de Relevo, un punto más tibio, como el de la referencia */
+  --stone: #E9E5DE;      /* fondo de las secciones de pantallas */
+  --card: #FCFCFA;
+  --ink: #17181C;
+  --graphite: #5E6068;
+  --line: #DEDAD2;
+  --voice: #2A4BD7;      /* lo que escribe la persona */
+  --on-ink: #FCFCFA;
+  /* Aura: la familia de color de Relevo (D-104) */
+  --sol: #E7BF57; --naranja: #FEB074; --rosa: #FEA4CF; --menta: #6FDEA7; --celeste: #54D6FE; --lila: #CEB5FE;
+  /* Fichas: los mismos tonos, más claros */
+  --t-sol: #F6E38E; --t-celeste: #C3E9F6; --t-menta: #CDEFD3; --t-rosa: #F9D2E0; --t-lila: #E4DAFB; --t-naranja: #FBD9BC;
+  --aura-alpha: .9;
+  --grain: .14;
+  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --r-phone: 34px; --r-card: 22px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #131417; --stone: #1B1C20; --card: #212329; --ink: #F2F1EC; --graphite: #A4A7AF; --line: #2E3037; --voice: #8EA2FF; --on-ink: #17181C;
+  --aura-alpha: .6; --grain: .1; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --paper: #131417; --stone: #1B1C20; --card: #212329; --ink: #F2F1EC; --graphite: #A4A7AF; --line: #2E3037; --voice: #8EA2FF; --on-ink: #17181C;
+  --aura-alpha: .6; --grain: .1; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 0 72px; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -.02em; }
+p { margin: 0; }
+
+/* Grano: ruido fractal como textura táctil sobre los degradados. */
+.grain { position: relative; isolation: isolate; overflow: hidden; }
+.grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: var(--grain); mix-blend-mode: soft-light; z-index: 3;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .8 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+/* Aura: varias luces de la familia de color, desenfocadas, que respiran. */
+.aura { position: absolute; inset: -20%; z-index: 0; opacity: var(--aura-alpha); filter: blur(38px); pointer-events: none;
+  background:
+    radial-gradient(40% 38% at 38% 62%, var(--sol) 0%, transparent 70%),
+    radial-gradient(34% 32% at 62% 38%, var(--rosa) 0%, transparent 72%),
+    radial-gradient(36% 34% at 32% 34%, var(--celeste) 0%, transparent 72%),
+    radial-gradient(30% 30% at 68% 66%, var(--lila) 0%, transparent 72%);
+  animation: breathe 9s ease-in-out infinite alternate; }
+.aura.calm { animation-duration: 12s; }
+.aura.live { filter: blur(26px); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes breathe { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(14deg) scale(1.08); } 100% { transform: rotate(-10deg) scale(.96); } }
+@keyframes pulse { 0%, 100% { transform: scale(.94); opacity: calc(var(--aura-alpha) * .8); } 50% { transform: scale(1.12); opacity: 1; } }
+.focus-in { animation: focus 1.6s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes focus { from { filter: blur(14px); opacity: .2; letter-spacing: .02em; } to { filter: blur(0); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .aura, .aura.live, .focus-in { animation: none; } }
+
+/* Portada */
+.hero .aura { inset: -25% -15% -25% 30%; filter: blur(48px); }
+.hero { background: var(--paper); position: relative; border-radius: 0 0 40px 40px; padding-inline: 20px; padding-block: 56px 64px; margin-bottom: 56px; }
+.hero .inner { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; display: grid; gap: 28px; }
+.wordmark { font-family: var(--display); font-weight: 800; font-size: clamp(64px, 13vw, 156px); line-height: .9; letter-spacing: -.05em; }
+.hero h1 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 600; line-height: 1.12; max-width: 22ch; }
+.hero h1 .soft { color: var(--graphite); font-weight: 500; }
+.credit { font-size: 14px; color: var(--graphite); max-width: 60ch; }
+.credit a { text-underline-offset: 3px; }
+
+.eyebrow { font-size: 14px; font-weight: 600; color: var(--graphite); }
+.section { display: grid; gap: 22px; margin-top: 64px; }
+.section > header { display: grid; gap: 8px; max-width: 64ch; }
+.section h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; line-height: 1.1; }
+.section h2 .soft { color: var(--graphite); font-weight: 500; }
+.lead { color: var(--graphite); font-size: 17px; }
+
+/* Principios */
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.principle { background: var(--card); border-radius: var(--r-card); padding: 18px; display: grid; gap: 12px; align-content: start; }
+.principle .demo { height: 128px; border-radius: 16px; position: relative; background: var(--stone); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.principle h3 { font-size: 19px; font-weight: 700; }
+.principle p { color: var(--graphite); font-size: 15px; }
+.principle .to { color: var(--ink); font-size: 15px; }
+.principle .to b { font-weight: 600; }
+
+/* Fichas con ícono de color */
+.chip { display: inline-flex; align-items: center; gap: 12px; background: var(--card); border-radius: 16px; padding: 8px 8px 8px 14px; font-size: 14px; font-weight: 500; line-height: 1.2; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 24px -16px rgba(0,0,0,.3); }
+.tile { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; flex: none; color: #17181C; }
+.tile svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.t-sol { background: var(--t-sol); } .t-celeste { background: var(--t-celeste); } .t-menta { background: var(--t-menta); } .t-rosa { background: var(--t-rosa); } .t-lila { background: var(--t-lila); } .t-naranja { background: var(--t-naranja); }
+.stairs { display: grid; gap: 8px; }
+.stairs .chip:nth-child(2) { margin-left: 18%; } .stairs .chip:nth-child(3) { margin-left: 36%; } .stairs .chip:nth-child(4) { margin-left: 54%; }
+.inline-ico { display: inline-grid; place-items: center; width: 1.25em; height: 1.25em; border-radius: .32em; vertical-align: -.22em; margin-inline: .08em; color: #17181C; }
+.inline-ico svg { width: .9em; height: .9em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Pantallas */
+.screens { background: var(--stone); border-radius: 36px; padding-inline: 18px; padding-block: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 18px; }
+.phone { background: var(--paper); border-radius: var(--r-phone); aspect-ratio: 9 / 19; max-width: 320px; width: 100%; justify-self: center; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 60px -40px rgba(0,0,0,.45); }
+.phone .content { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 22px 16px 16px; }
+.cap { text-align: center; font-size: 14px; color: var(--graphite); margin-top: 10px; }
+.status { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--graphite); }
+.greet { font-size: 22px; line-height: 1.15; font-weight: 600; }
+.greet .soft { color: var(--graphite); font-weight: 500; }
+.relevo-card { position: relative; border-radius: 22px; background: var(--card); padding: 14px; display: grid; gap: 8px; overflow: hidden; }
+.relevo-card .content-in { position: relative; z-index: 2; display: grid; gap: 8px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: color-mix(in srgb, var(--card) 80%, transparent); font-size: 12px; font-weight: 600; width: fit-content; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
+.sig { font-size: 19px; font-weight: 700; line-height: 1.15; }
+.sig u { color: var(--voice); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.bar { height: 6px; border-radius: 99px; background: color-mix(in srgb, var(--ink) 12%, transparent); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 40%; background: var(--ink); border-radius: 99px; }
+.mini { font-size: 12px; color: var(--graphite); }
+.mini b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.row-title { display: flex; align-items: baseline; gap: 6px; font-size: 15px; font-weight: 700; margin-top: 4px; }
+.count { font-size: 11px; font-weight: 700; background: var(--card); border-radius: 99px; padding: 1px 7px; }
+.ideas { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.idea { border-radius: 16px; aspect-ratio: 1 / 1.05; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 10px; color: #fff; font-size: 13px; font-weight: 600; line-height: 1.15; }
+.idea::before { content: ""; position: absolute; inset: 0; z-index: 0; }
+.idea span { position: relative; z-index: 4; text-shadow: 0 1px 8px rgba(0,0,0,.25); }
+.idea small { display: block; font-weight: 400; opacity: .9; }
+/* Degradados de actividad con volumen, como nubes: más saturados que los de 2.23 */
+.g-leer::before { background: radial-gradient(70% 60% at 30% 25%, #9FD9FF 0%, transparent 60%), radial-gradient(60% 70% at 80% 70%, #7C6CF2 0%, transparent 65%), linear-gradient(160deg, #6FB5F5, #3E57C9); }
+.g-dormir::before { background: radial-gradient(60% 60% at 70% 30%, #FFD39A 0%, transparent 60%), radial-gradient(70% 70% at 25% 80%, #F58BB4 0%, transparent 65%), linear-gradient(150deg, #FFB98A, #D86B9A); }
+.g-jugar::before { background: radial-gradient(60% 60% at 25% 30%, #B9A2FF 0%, transparent 60%), radial-gradient(60% 60% at 80% 75%, #58D3F7 0%, transparent 60%), linear-gradient(140deg, #8F7BEF, #3FA7D6); }
+.g-mover::before { background: radial-gradient(60% 60% at 75% 25%, #A8F0C6 0%, transparent 60%), radial-gradient(70% 70% at 20% 80%, #2FB386 0%, transparent 65%), linear-gradient(150deg, #64D9A2, #1E8F78); }
+.dock { margin-top: auto; display: flex; gap: 6px; justify-content: space-around; background: color-mix(in srgb, var(--card) 85%, transparent); border-radius: 18px; padding: 8px; }
+.dock span { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; color: var(--graphite); }
+.dock span.on { background: var(--t-sol); color: #17181C; }
+.dock svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.btn { display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; background: var(--ink); color: var(--on-ink); font-weight: 600; font-size: 15px; }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+.big { font-size: 46px; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.center-stage { position: relative; flex: 1; display: grid; place-items: center; text-align: center; }
+.center-stage .aura { inset: 0; }
+.center-stage .in { position: relative; z-index: 2; display: grid; gap: 6px; justify-items: center; }
+.sentence { font-size: 16px; line-height: 1.5; }
+.choice { display: flex; align-items: center; gap: 10px; background: var(--card); border-radius: 16px; padding: 8px; font-size: 14px; font-weight: 600; }
+.choice small { display: block; font-weight: 400; font-size: 12px; color: var(--graphite); }
+.choice .radio { margin-left: auto; width: 20px; height: 20px; border-radius: 50%; box-shadow: inset 0 0 0 1.75px var(--graphite); flex: none; }
+.choice.sel { box-shadow: inset 0 0 0 2px var(--ink); }
+.choice.sel .radio { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 6px var(--card); background: var(--ink); }
+.tag-photo { width: 34px; height: 34px; border-radius: 50%; background: var(--card); box-shadow: inset 0 0 0 2px #17181C; display: grid; place-items: center; }
+.tag-photo i { width: 12px; height: 12px; border-radius: 50%; background: #E6E6E1; box-shadow: inset 0 0 0 1.5px #17181C; }
+
+/* Paleta */
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.sw { border-radius: 18px; overflow: hidden; background: var(--card); }
+.sw .c { height: 72px; }
+.sw .k { padding: 10px 12px; font-size: 13px; display: grid; gap: 2px; }
+.sw .k b { font-weight: 600; } .sw .k span { color: var(--graphite); font-variant-numeric: tabular-nums; }
+
+/* Tomar y no tomar */
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.list { background: var(--card); border-radius: var(--r-card); padding: 20px; display: grid; gap: 12px; align-content: start; }
+.list h3 { font-size: 19px; }
+.list ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--graphite); }
+.list li b { color: var(--ink); font-weight: 600; }
+ol.plan { margin: 0; padding-left: 20px; display: grid; gap: 10px; max-width: 70ch; }
+ol.plan li b { font-weight: 600; }
+footer { margin-top: 64px; font-size: 13px; color: var(--graphite); max-width: 70ch; }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-libro" viewBox="0 0 24 24"><path d="M4 5.5c2.6-1 5.3-1 8 .8v13c-2.7-1.8-5.4-1.8-8-.8z"/><path d="M20 5.5c-2.6-1-5.3-1-8 .8v13c2.7-1.8 5.4-1.8 8-.8z"/></symbol>
+  <symbol id="i-lugar" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15 12 21 12 21z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="6" r=".6"/></symbol>
+  <symbol id="i-parlante" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="3"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7.5" r=".8"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-telefono" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol>
+  <symbol id="i-paso" viewBox="0 0 24 24"><path d="M4 18h5v-5h5V8h6"/></symbol>
+  <symbol id="i-cama" viewBox="0 0 24 24"><path d="M3 19V6M3 15h18v4M3 11h7a3 3 0 0 1 3 3v1"/><circle cx="6.5" cy="9" r="1.6"/></symbol>
+  <symbol id="i-campana" viewBox="0 0 24 24"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5h-14z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-inicio" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8.5H4z"/><path d="M10 19.5v-5h4v5"/></symbol>
+  <symbol id="i-perfil" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><circle cx="9" cy="11" r="2"/><path d="M6.5 15.5c.8-1.6 4.2-1.6 5 0M14 10h4M14 13h3"/></symbol>
+  <symbol id="i-control" viewBox="0 0 24 24"><path d="M7 8h10a4 4 0 0 1 4 4v1a3.5 3.5 0 0 1-6.3 2.1L14 14h-4l-.7 1.1A3.5 3.5 0 0 1 3 13v-1a4 4 0 0 1 4-4z"/><path d="M8 11v3M6.5 12.5h3M16 12h.01M18 13.5h.01"/></symbol>
+</svg>
+
+<section class="hero grain" aria-labelledby="t">
+  <div class="aura"></div>
+  <div class="inner">
+    <div class="wordmark focus-in" aria-hidden="true">relevo</div>
+    <h1 id="t">Un aura que se enciende <span class="soft">cuando es momento de volver a lo que querías hacer.</span></h1>
+    <p class="credit">Exploración del 10 de octubre de 2026, inspirada en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a>, de Mambo Mambo (dirección creativa de Guillaume Beaulieu y Zorani Sanabria; movimiento de Tommy Hachez). No se copian sus imágenes ni videos: se lee su lenguaje y se rehace con los colores, la letra y los íconos de Relevo.</p>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="section" aria-labelledby="p">
+    <header>
+      <span class="eyebrow">Lo que hace hermosa a Dafi</span>
+      <h2 id="p">Seis ideas, <span class="soft">y lo que cada una significa en Relevo.</span></h2>
+    </header>
+    <div class="principles">
+      <article class="principle">
+        <div class="demo grain"><div class="aura"></div></div>
+        <h3>Un aura que se activa</h3>
+        <p>En Dafi, un degradado irisado se enciende cuando la IA trabaja o recomienda: nunca queda quieto.</p>
+        <p class="to"><b>En Relevo:</b> el aura respira mientras el relevo cuenta y se enciende cuando suena. Es el estado del relevo, no un adorno.</p>
+      </article>
+      <article class="principle">
+        <div class="demo grain" style="background:linear-gradient(135deg,var(--t-naranja),var(--t-lila) 55%,var(--t-celeste))"></div>
+        <h3>Grano sobre el color</h3>
+        <p>Sus degradados llevan textura de grano fino: se ven impresos, cálidos, no de pantalla.</p>
+        <p class="to"><b>En Relevo:</b> el grano en los fondos de cada actividad acerca la app al objeto físico, lo phygital hecho textura.</p>
+      </article>
+      <article class="principle">
+        <div class="demo"><div class="stairs" style="width:86%">
+          <span class="chip">Abrir el libro <span class="tile t-sol"><svg><use href="#i-libro"/></svg></span></span>
+          <span class="chip">Leer 10 páginas <span class="tile t-celeste"><svg><use href="#i-paso"/></svg></span></span>
+        </div></div>
+        <h3>Fichas en escalera</h3>
+        <p>Cada función es una ficha blanca con un ícono sobre un cuadrado de color, puestas en diagonal como peldaños.</p>
+        <p class="to"><b>En Relevo:</b> la escalera es literal: la ruta de pasos, del primer paso al siguiente.</p>
+      </article>
+      <article class="principle">
+        <div class="demo" style="justify-content:flex-start;padding:16px"><p class="greet" style="font-size:20px">Hola, Ana,<br><span class="soft">tu relevo va en 12 de 30 min.</span></p></div>
+        <h3>Titulares en dos tonos</h3>
+        <p>«Bonjour Sara, ta compréhension augmente rapidement»: el saludo en tinta y la continuación en gris.</p>
+        <p class="to"><b>En Relevo:</b> la primera parte nombra, la segunda informa. Mantiene la voz sin agregar elementos.</p>
+      </article>
+      <article class="principle">
+        <div class="demo" style="padding:16px"><p class="sentence" style="font-size:17px">Empieza por <span class="inline-ico t-sol"><svg><use href="#i-libro"/></svg></span> abrir el libro, <span class="inline-ico t-rosa"><svg><use href="#i-lugar"/></svg></span> en el velador.</p></div>
+        <h3>Íconos dentro de la frase</h3>
+        <p>En su sitio, las palabras clave llevan un pequeño ícono de color en la misma línea.</p>
+        <p class="to"><b>En Relevo:</b> la frase de inicio («Empieza por…, en…») se lee y se ve a la vez: qué hacer y dónde.</p>
+      </article>
+      <article class="principle">
+        <div class="demo grain"><div class="aura calm"></div><span class="wordmark focus-in" style="position:relative;z-index:4;font-size:52px">relevo</span></div>
+        <h3>Enfocar desde lo borroso</h3>
+        <p>En sus videos, el logotipo y los textos aparecen pasando de desenfocados a nítidos.</p>
+        <p class="to"><b>En Relevo:</b> es la idea del proyecto, volver a enfocar. Se usa una vez, al abrir y al sonar.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="s">
+    <header>
+      <span class="eyebrow">Relevo así</span>
+      <h2 id="s">Cinco pantallas <span class="soft">con el lenguaje de la referencia.</span></h2>
+      <p class="lead">Con el texto, las pantallas y las reglas actuales de la app: frases en minúscula, sin mayúsculas sostenidas, sin fotos de personas.</p>
+    </header>
+    <div class="screens">
+
+      <figure style="margin:0">
+        <div class="phone grain">
+          <div class="content">
+            <div class="status"><span>9:41</span><span>relevo</span></div>
+            <p class="mini">Viernes 10 de octubre</p>
+            <p class="greet">Hola, Ana,<br><span class="soft">tu relevo va en 12 de 30 min.</span></p>
+            <div class="relevo-card">
+              <div class="aura calm" style="inset:-30%"></div>
+              <div class="content-in">
+                <span class="pill"><span class="dot"></span>Contando</span>
+                <p class="sig">Vuelve a <u>leer 10 páginas</u>.</p>
+                <div class="bar"><i></i></div>
+                <p class="mini"><b>12 min</b> de 30 en tus apps</p>
+              </div>
+            </div>
+            <p class="row-title">Ideas <span class="count">12</span></p>
+            <div class="ideas">
+              <div class="idea g-dormir grain"><span>Dormir a tiempo<small>Dejar el teléfono lejos</small></span></div>
+              <div class="idea g-jugar grain"><span>Jugar una partida<small>Prender la consola</small></span></div>
+            </div>
+            <div class="dock"><span class="on"><svg><use href="#i-inicio"/></svg></span><span><svg><use href="#i-paso"/></svg></span><span><svg><use href="#i-perfil"/></svg></span></div>
+          </div>
+        </div>
+        <figcaption class="cap">Inicio: saludo en dos tonos y el relevo con su aura</figcaption>
+      </figure>
+
+      <figure style="margin:0">
+        <div class="phone grain">
+          <div class="content">
+            <div class="status"><span>9:41</span><span>Tu relevo</span></div>
+            <div class="center-stage">
+              <div class="aura calm"></div>
+              <div class="in">
+                <span class="pill"><span class="dot"></span>Contando</span>
+                <span class="big">12<span style="font-size:22px;font-weight:600"> min</span></span>
+                <span class="mini">de 30 en Instagram y TikTok</span>
+              </div>
+            </div>
+            <p class="sentence">Empieza por <span class="inline-ico t-sol"><svg><use href="#i-libro"/></svg></span> abrir el libro, <span class="inline-ico t-rosa"><svg><use href="#i-lugar"/></svg></span> en el velador. Suena en el <span class="inline-ico t-lila"><svg><use href="#i-tag"/></svg></span> Tag.</p>
+            <span class="btn">Volver al inicio</span>
+            <span class="btn ghost">Editar este relevo</span>
+          </div>
+        </div>
+        <figcaption class="cap">Relevo activo: el aura respira mientras cuenta</figcaption>
+      </figure>
+
+      <figure style="margin:0">
+        <div class="phone grain">
+          <div class="content">
+            <div class="status"><span>9:41</span><span>Suena</span></div>
+            <div class="center-stage">
+              <div class="aura live"></div>
+              <div class="in">
+                <span class="tile t-lila" style="width:56px;height:56px;border-radius:16px"><svg style="width:32px;height:32px"><use href="#i-tag"/></svg></span>
+                <p class="sig focus-in" style="font-size:24px;max-width:12ch">Vuelve a <u>leer 10 páginas</u>.</p>
+                <p class="mini">El Tag está sonando en el velador. Un toque lo calla.</p>
+              </div>
+            </div>
+            <span class="btn">Comencé la actividad</span>
+            <span class="btn ghost">Lo dejo para después</span>
+          </div>
+        </div>
+        <figcaption class="cap">La señal: el aura se enciende y la frase enfoca</figcaption>
+      </figure>
+
+      <figure style="margin:0">
+        <div class="phone grain">
+          <div class="content">
+            <div class="status"><span>9:41</span><span>Preparar</span></div>
+            <p class="greet" style="font-size:24px">¿Dónde suena?<br><span class="soft" style="font-size:16px">Suena en el Tag. Si prefieres otra cosa, elígela.</span></p>
+            <div class="choice sel"><span class="tile t-sol"><svg><use href="#i-tag"/></svg></span><span>El Tag<small>Junto a donde empiezas</small></span><span class="radio"></span></div>
+            <div class="choice"><span class="tile t-celeste"><svg><use href="#i-parlante"/></svg></span><span>El parlante<small>Sin parlante conectado</small></span><span class="radio"></span></div>
+            <div class="choice"><span class="tile t-lila"><svg><use href="#i-reloj"/></svg></span><span>El reloj<small>Suena como una llamada</small></span><span class="radio"></span></div>
+            <div class="choice"><span class="tile t-rosa"><svg><use href="#i-telefono"/></svg></span><span>El teléfono<small>Suena donde esté</small></span><span class="radio"></span></div>
+            <span class="btn" style="margin-top:auto">Seguir</span>
+          </div>
+        </div>
+        <figcaption class="cap">Preparar: las salidas como fichas de color</figcaption>
+      </figure>
+
+      <figure style="margin:0">
+        <div class="phone grain">
+          <div class="content">
+            <div class="status"><span>9:41</span><span>Ruta</span></div>
+            <p class="greet" style="font-size:24px">Tu ruta para leer,<br><span class="soft">un paso a la vez.</span></p>
+            <div class="stairs" style="margin-top:8px">
+              <span class="chip">Abrir el libro <span class="tile t-sol"><svg><use href="#i-libro"/></svg></span></span>
+              <span class="chip">Leer 10 páginas <span class="tile t-celeste"><svg><use href="#i-paso"/></svg></span></span>
+              <span class="chip">Leer 20 minutos <span class="tile t-lila"><svg><use href="#i-reloj"/></svg></span></span>
+              <span class="chip">Un capítulo <span class="tile t-rosa"><svg><use href="#i-campana"/></svg></span></span>
+            </div>
+            <p class="mini" style="margin-top:6px">Vas en el segundo paso. Después de tres veces que empiezas, te proponemos el siguiente.</p>
+            <div class="dock"><span><svg><use href="#i-inicio"/></svg></span><span class="on"><svg><use href="#i-paso"/></svg></span><span><svg><use href="#i-perfil"/></svg></span></div>
+          </div>
+        </div>
+        <figcaption class="cap">Tu ruta: la escalera de pasos, literal</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="c">
+    <header>
+      <span class="eyebrow">Color</span>
+      <h2 id="c">La misma familia de Relevo, <span class="soft">en dos intensidades.</span></h2>
+      <p class="lead">El aura usa los seis tonos de Relevo (D-104) a plena luz y desenfocados. Las fichas usan los mismos tonos aclarados, con íconos en tinta. Se mantiene la regla de no poner el sol junto a la menta.</p>
+    </header>
+    <div class="swatches">
+      <div class="sw"><div class="c" style="background:var(--sol)"></div><div class="k"><b>Sol</b><span>#E7BF57 · ficha #F6E38E</span></div></div>
+      <div class="sw"><div class="c" style="background:var(--naranja)"></div><div class="k"><b>Naranja</b><span>#FEB074 · ficha #FBD9BC</span></div></div>
+      <div class="sw"><div class="c" style="background:var(--rosa)"></div><div class="k"><b>Rosa</b><span>#FEA4CF · ficha #F9D2E0</span></div></div>
+      <div class="sw"><div class="c" style="background:var(--lila)"></div><div class="k"><b>Lila</b><span>#CEB5FE · ficha #E4DAFB</span></div></div>
+      <div class="sw"><div class="c" style="background:var(--celeste)"></div><div class="k"><b>Celeste</b><span>#54D6FE · ficha #C3E9F6</span></div></div>
+      <div class="sw"><div class="c" style="background:var(--menta)"></div><div class="k"><b>Menta</b><span>#6FDEA7 · ficha #CDEFD3</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="n">
+    <header>
+      <span class="eyebrow">Qué tomar y qué no</span>
+      <h2 id="n">Inspiración directa, <span class="soft">con las reglas de Relevo.</span></h2>
+    </header>
+    <div class="two">
+      <div class="list">
+        <h3>Se toma</h3>
+        <ul>
+          <li><b>El aura como estado:</b> quieta y suave al contar, encendida al sonar.</li>
+          <li><b>El grano</b> sobre los degradados de las actividades.</li>
+          <li><b>Las fichas con ícono de color</b> para salidas, pasos y la guía del Tag.</li>
+          <li><b>La escalera</b> para la ruta.</li>
+          <li><b>Los titulares en dos tonos</b> y <b>los íconos dentro de la frase</b>.</li>
+          <li><b>El enfoque desde lo borroso</b>, una vez, al abrir y al sonar.</li>
+          <li><b>El papel cálido</b> y las secciones sobre un fondo piedra.</li>
+        </ul>
+      </div>
+      <div class="list">
+        <h3>No se toma</h3>
+        <ul>
+          <li><b>Títulos con serifa</b>: la regla del autor es letra sin serifa en titulares.</li>
+          <li><b>Etiquetas en mayúscula</b> como su «QUIZ»: Relevo no usa mayúsculas sostenidas (D-084).</li>
+          <li><b>Fotos de personas</b>: Relevo usa ícono y degradado por actividad (D-111).</li>
+          <li><b>El lenguaje de inteligencia artificial</b>: el aura de Relevo no «piensa», marca el momento.</li>
+          <li><b>Sus imágenes, videos y logotipo</b>: todo se rehace con lo propio de Relevo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="a">
+    <header>
+      <span class="eyebrow">Cómo llevarlo a la app</span>
+      <h2 id="a">En orden, <span class="soft">sin tocar el estudio.</span></h2>
+      <p class="lead">Son cambios de forma: no cambian las condiciones de la prueba, los tiempos ni las preguntas.</p>
+    </header>
+    <ol class="plan">
+      <li><b>Aura del relevo:</b> en la tarjeta de Inicio y en la pantalla del relevo activo, respirando; en la señal, encendida. Sin movimiento con «reducir movimiento».</li>
+      <li><b>Grano</b> en los fondos de actividad, con los degradados un poco más saturados y con volumen.</li>
+      <li><b>Fichas de color</b> en «¿Dónde suena?», en la guía del Tag y en la ruta, que pasa a escalera.</li>
+      <li><b>Saludo en dos tonos</b> en Inicio e <b>íconos dentro de la frase</b> de inicio.</li>
+      <li><b>Enfoque desde lo borroso</b> en el logotipo al abrir y en la frase de la señal.</li>
+    </ol>
+  </section>
+
+  <footer>Referencia: <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi en Behance</a>, de Mambo Mambo. Esta lámina no reproduce material del proyecto; todas las pantallas, íconos y degradados son de Relevo.</footer>
+</main>
