@@ -156,6 +156,12 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 
 ## Registro de cambios (disclaimer)
 
+### 2026-10-11 — Borrador v5 de la memoria
+
+- **Qué cambió:** el estado indica que el borrador v5 de la memoria quedó aprobado (D-123) y enlaza sus notas y su bitácora.
+- **Cómo estaba antes:** el estado no mencionaba la revisión de la memoria.
+- **Por qué:** el autor aprobó el borrador y pidió dejarlo documentado.
+
 ### 2026-10-11 — Relevo con aura, versión 4
 
 - **Qué cambió:** el estado suma la versión 4 de la gráfica (D-122).
