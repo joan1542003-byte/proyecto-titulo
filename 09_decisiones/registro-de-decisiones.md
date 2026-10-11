@@ -1411,7 +1411,26 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** es una exploración visual, no probada con personas.
 - **Documentación:** [Relevo con aura, versión 4](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md).
 
+## D-123 — Borrador v5 de la memoria aprobado
+
+- **Fecha:** 2026-10-11.
+- **Estado:** aprobado por el autor.
+- **Decisión:**
+  - El [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) queda aprobado como base de trabajo de la memoria.
+  - Se aprueban con él sus decisiones editoriales: capítulo 14 «Conclusiones» y «Referencias» sin número; apartados de método, uso de inteligencia artificial, modelo de gestión, ética y amenazas a la validez; el Tag descrito como sustituto provisional del testigo; números sin punto de millares.
+  - No cambian la pregunta, la hipótesis (D-091), los ocho criterios ni los títulos de los capítulos 1 a 13. El objetivo específico 1 ahora menciona la encuesta.
+  - La memoria v4 se conserva sin cambios, para trazabilidad.
+- **Fundamento:** el autor pidió una memoria sin puntos débiles y con APA 7 sin errores, y aprobó el resultado. La v4 describía la app 2.14 con un parlante y no tenía apartados que la rúbrica exige.
+- **Límites:** el borrador no es la versión de entrega: conserva 24 marcadores por confirmar, cuatro figuras por producir y ningún resultado de la prueba. El objetivo específico 3 dice «establecer» lo que una persona no permite establecer; queda a decisión del autor.
+- **Documentación:** [notas del borrador](../08_memoria/notas-del-borrador-v5-2026-10-11.md) y [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — D-123
+
+- **Qué cambió:** se registró D-123.
+- **Cómo estaba antes:** la última decisión era D-122.
+- **Por qué:** el autor aprobó el borrador v5 de la memoria.
 
 ### 2026-10-11 — D-122
 

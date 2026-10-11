@@ -8,7 +8,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
-- [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): propuesta de revisión completa, pendiente de aprobación del autor; no reemplaza a la v4 mientras no se aprueben sus cambios y se completen sus marcadores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
+- [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: faltan sus 24 marcadores, las figuras y los resultados de la prueba. La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión integral de fuentes, corpus y redacción](revision-integral-fuentes-y-redaccion-2026-09-25.md): verificación de las 64 referencias, contraste con P1–P8 y Android 2.6, revisión página por página, correcciones aplicadas y problemas pendientes al 25 de septiembre.
@@ -88,6 +88,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-11 — Borrador v5 aprobado
+
+- **Cambio:** la entrada del borrador v5 indica que el autor lo aprobó (D-123) y enlaza la bitácora de la revisión.
+- **Versión anterior:** figuraba como propuesta pendiente de aprobación.
+- **Motivo:** el autor aprobó el borrador y pidió documentar cambios, decisiones y errores.
+- **Alcance:** la v4 se conserva; el borrador aún no es la versión de entrega.
 
 ### 2026-10-11 — Borrador v5 de la memoria
 

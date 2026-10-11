@@ -79,6 +79,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **10 y 11 de octubre:** la exploración [«Relevo con aura»](10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), inspirada en Dafi, queda aprobada como dirección visual (D-121). El aura es de la pantalla y se personaliza: el Tag no emite luz, solo suena; las piezas van derechas, sin giros. Su versión 4 (D-122) la hace propia: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños y el Tag, que suena en anillos y no brilla. El [Taller de auras](10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) saca sus 39 piezas y sus fondos en PNG, en láminas para diapositivas o la memoria, o en ZIP ([bitácora del 8 al 11 de octubre](00_gobernanza/bitacora-trabajo-con-ia-2026-10-08-11.md)).
 
+**11 de octubre, memoria:** el [borrador v5 de la memoria](08_memoria/borrador-memoria-v5-2026-10-11.md) queda aprobado como base de trabajo (D-123). Actualiza el texto a la app 2.30 y al Tag, agrega los apartados de método, uso de IA, gestión, ética y conclusiones, y deja 78 referencias verificadas. Faltan 24 datos por confirmar, las figuras y los resultados de la prueba; las [notas](08_memoria/notas-del-borrador-v5-2026-10-11.md) y la [bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) lo detallan.
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».

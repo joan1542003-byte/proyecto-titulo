@@ -127,6 +127,7 @@
 | 11 oct. | Encargo | Revisar la memoria completa leyendo todo el repositorio y crear un borrador mejorado: sin puntos débiles, con APA 7 en español sin errores en citas ni referencias y con rigor académico. | [Borrador v5 de la memoria](../08_memoria/borrador-memoria-v5-2026-10-11.md) y sus [notas](../08_memoria/notas-del-borrador-v5-2026-10-11.md): actualizado a la app 2.30 y al Tag; apartados nuevos de método, uso de IA, gestión, ética, validez y conclusiones; 78 referencias verificadas en su fuente. Quedan 24 marcadores por confirmar, las cuatro figuras y los resultados de la prueba. La v4 sigue vigente. | — |
 | 11 oct. | Corrección | No clonar el repositorio: es privado para el autor; leerlo en línea y guardar solo lo creado, en su equipo. | Se borró la copia y el resto se leyó en línea. Se avisó que el repositorio figura como público en GitHub. | — |
 | 11 oct. | Encargo | Subir todo a `main`, publicado con la cuenta del autor, y dejarlo documentado. | Borrador y notas en `08_memoria`, enlazados en su README; este registro actualizado. | — |
+| 11 oct. | Decisión y encargo | Aprueba el borrador. Documentar los cambios, las decisiones y los errores que hubo. | [Bitácora de la revisión](bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md), con etapas, decisiones, errores y pendientes; estado actualizado en el README de la memoria y en el general. | D-123 |
 
 ## Lo que muestra el registro
 
@@ -137,6 +138,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Aprobación del borrador v5
+
+- **Qué cambió:** se registró la aprobación del borrador y el pedido de documentarlo.
+- **Cómo estaba antes:** terminaba en el pedido de publicar en `main`.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-11 — Borrador v5 de la memoria
 
