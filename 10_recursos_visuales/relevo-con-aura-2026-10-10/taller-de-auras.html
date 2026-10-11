@@ -3,11 +3,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap">
 <style>
-/* Mesa de trabajo: la vista previa manda a la izquierda; los controles en una columna angosta a la derecha. Solo en claro. */
+/* Mesa de diseño: biblioteca a la izquierda, lienzo al centro, propiedades a la derecha. Solo en claro, como la exploración. */
 :root {
   color-scheme: light;
-  --paper: #F7F4F0; --stone: #EEE9E3; --white: #FFFFFF; --ink: #141312; --mute: #8B8580; --line: #E4DED6;
-  --t-butter: #F9E77C;
+  --paper: #F7F4F0; --stone: #EEE9E3; --white: #FFFFFF; --ink: #141312; --mute: #8B8580; --line: #E4DED6; --desk: #E9E4DD;
   --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   --shadow: 0 1px 2px rgba(30,22,12,.05), 0 18px 44px -26px rgba(30,22,12,.28);
   --spring: cubic-bezier(.2,.8,.2,1.15);
@@ -17,179 +16,344 @@ html, body { background: var(--paper); }
 body { margin: 0; color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, p { margin: 0; }
 button, input, select, textarea { font: inherit; color: inherit; }
-.app { max-width: 1440px; margin: 0 auto; padding-inline: 20px; padding-block: 20px 48px; display: grid; gap: 18px; }
-.top { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.top h1 { font-size: clamp(30px, 3.4vw, 44px); font-weight: 600; letter-spacing: -.035em; line-height: 1; }
-.top h1 span { color: var(--mute); }
-.top p { color: var(--mute); max-width: 60ch; margin-top: 8px; }
-.mark { width: 34px; height: 34px; position: relative; display: inline-block; vertical-align: -6px; margin-right: 10px; }
+[hidden] { display: none !important; }
+.app { max-width: 1720px; margin: 0 auto; padding-inline: 20px; padding-block: 18px 48px; display: grid; gap: 16px; }
+
+/* Encabezado */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 14px 24px; flex-wrap: wrap; }
+.top h1 { font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: -.035em; line-height: 1; display: flex; align-items: center; gap: 12px; }
+.top h1 span.soft { color: var(--mute); }
+.top p { color: var(--mute); max-width: 70ch; margin-top: 8px; font-size: 14px; }
+.mark { width: 34px; height: 34px; position: relative; display: inline-block; flex: none; }
 .mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: multiply; }
 .mark i:nth-child(1) { left: 0; top: 21%; background: #FFD54A; } .mark i:nth-child(2) { right: 0; top: 21%; background: #F6A3CB; }
 .mark i:nth-child(3) { left: 21%; top: 0; background: #9DD6F4; } .mark i:nth-child(4) { left: 21%; bottom: 0; background: #C5B2F6; }
+.seg { display: inline-grid; grid-auto-flow: column; gap: 4px; padding: 4px; border-radius: 99px; background: var(--white); box-shadow: var(--shadow); max-width: 100%; overflow-x: auto; }
+.seg button { border: 0; background: transparent; padding: 9px 16px; border-radius: 99px; font-size: 14px; font-weight: 600; color: var(--mute); cursor: pointer; white-space: nowrap; transition: background .25s, color .25s; }
+.seg button[aria-selected="true"], .seg button[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.seg.small button { padding: 7px 12px; font-size: 13px; }
+.seg.flat { box-shadow: none; background: var(--paper); }
 
-.layout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 18px; align-items: start; }
-@media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } }
+/* Tres columnas */
+.layout { display: grid; grid-template-columns: 256px minmax(0, 1fr) 348px; gap: 16px; align-items: start; }
+.lib { position: sticky; top: calc(14px + env(safe-area-inset-top, 0px)); max-height: calc(100vh - 28px); overflow: auto; background: var(--white); border-radius: 24px; padding: 14px; box-shadow: var(--shadow); display: grid; gap: 12px; align-content: start; overscroll-behavior: contain; }
+.lib h2 { font-size: 14px; font-weight: 600; }
+.groups { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 0; background: var(--paper); padding: 7px 12px; border-radius: 99px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--mute); white-space: nowrap; transition: background .2s, color .2s; }
+.chip[aria-pressed="true"], .chip[aria-selected="true"] { background: var(--ink); color: var(--white); }
+.chip:hover { color: var(--ink); }
+.chip[aria-pressed="true"]:hover, .chip[aria-selected="true"]:hover { color: var(--white); }
+.pgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.pbtn { border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; gap: 5px; text-align: left; transition: transform .35s var(--spring); min-width: 0; }
+.pbtn:hover { transform: translateY(-2px); }
+.pbtn .th { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; background: var(--paper); overflow: hidden; }
+.pbtn img { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; display: block; }
+.pbtn span { font-size: 12px; font-weight: 600; line-height: 1.2; }
+.pbtn small { font-size: 11px; color: var(--mute); font-weight: 500; }
+.pbtn[aria-pressed="true"] .th { box-shadow: 0 0 0 2px var(--white), 0 0 0 3.5px var(--ink); }
+.empty { font-size: 13px; color: var(--mute); padding: 6px 2px; }
 
-/* Vista previa */
-.stage { position: sticky; top: calc(14px + env(safe-area-inset-top, 0px)); background: var(--stone); border-radius: 32px; padding: clamp(14px, 2.4vw, 28px); display: grid; gap: 14px; }
-@media (max-width: 1000px) { .stage { position: static; } }
-.frame { position: relative; margin: 0 auto; max-width: 100%; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 4px rgba(30,22,12,.06), 0 40px 80px -50px rgba(30,22,12,.55);
-  background-image: linear-gradient(45deg, #ece7e0 25%, transparent 25%), linear-gradient(-45deg, #ece7e0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ece7e0 75%), linear-gradient(-45deg, transparent 75%, #ece7e0 75%);
-  background-size: 22px 22px; background-position: 0 0, 0 11px, 11px -11px, -11px 0; background-color: #f6f2ec; }
-.frame canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
-.frame canvas.dragging { cursor: grabbing; }
+/* Lienzo */
+.stage { position: sticky; top: calc(14px + env(safe-area-inset-top, 0px)); background: var(--white); border-radius: 28px; padding: 12px; display: grid; gap: 12px; box-shadow: var(--shadow); min-width: 0; }
+.stagehead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 4px 6px 0; }
+.stagehead h2 { font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
+.stagehead h2 small { color: var(--mute); font-weight: 500; font-size: 13px; margin-left: 6px; letter-spacing: 0; }
+.area { position: relative; height: clamp(380px, 66vh, 780px); border-radius: 20px; display: grid; place-items: center; overflow: hidden; background: var(--paper); }
+.area.v-white { background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
+.area.v-stone, .area.v-desk { background: var(--desk); }
+.area.v-check { background-color: #f7f3ee; background-image: linear-gradient(45deg, #ebe5dd 25%, transparent 25%), linear-gradient(-45deg, #ebe5dd 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ebe5dd 75%), linear-gradient(-45deg, transparent 75%, #ebe5dd 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0; }
+.area.v-aura { background-size: cover; background-position: center; }
+.frame { position: relative; max-width: 100%; }
+.frame canvas { display: block; width: 100%; height: 100%; }
+.frame.sheet { box-shadow: 0 2px 4px rgba(30,22,12,.06), 0 40px 80px -50px rgba(30,22,12,.55); border-radius: 4px; overflow: hidden; }
+.frame.drag canvas { touch-action: none; cursor: grab; }
+.frame.drag canvas.dragging { cursor: grabbing; }
 .frame .handle { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; border: 2px solid rgba(255,255,255,.95); box-shadow: 0 2px 8px rgba(0,0,0,.25); pointer-events: none; opacity: 0; transition: opacity .25s; }
-.frame:hover .handle, .frame.show-handles .handle { opacity: 1; }
-.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
-.bar .left, .bar .right { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 99px; border: 0; background: var(--white); font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: var(--shadow); transition: transform .35s var(--spring); }
+.frame.drag:hover .handle, .frame.show-handles .handle { opacity: 1; }
+.zoom { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: var(--mute); font-variant-numeric: tabular-nums; background: rgba(255,255,255,.7); padding: 3px 9px; border-radius: 99px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; padding: 0 2px 2px; }
+.bar .grp { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 99px; border: 0; background: var(--paper); font-weight: 600; font-size: 14px; cursor: pointer; transition: transform .35s var(--spring), background .2s; white-space: nowrap; }
 .btn:hover { transform: translateY(-1px); }
 .btn.primary { background: var(--ink); color: var(--white); }
+.btn.line { background: var(--white); box-shadow: inset 0 0 0 1.3px var(--line); }
 .btn[aria-pressed="true"] { background: var(--ink); color: var(--white); }
-.btn:focus-visible, .chip:focus-visible, .preset:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.btn:disabled { opacity: .55; cursor: progress; }
+.btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.btn.wide { width: 100%; }
 .meta { font-size: 13px; color: var(--mute); font-variant-numeric: tabular-nums; }
-.hint { font-size: 13px; color: var(--mute); }
+.hint { font-size: 12.5px; color: var(--mute); line-height: 1.45; }
+.btn:focus-visible, .chip:focus-visible, .pbtn:focus-visible, .seg button:focus-visible, .sw:focus-visible, .ib:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
-/* Panel */
-.panel { display: grid; gap: 12px; }
-.sec { background: var(--white); border-radius: 22px; padding: 16px; display: grid; gap: 12px; box-shadow: var(--shadow); }
+/* Propiedades */
+.panel { display: grid; gap: 12px; min-width: 0; }
+.sec { background: var(--white); border-radius: 22px; padding: 16px; display: grid; gap: 12px; box-shadow: var(--shadow); min-width: 0; }
 .sec h2 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.sec h2 small { font-size: 12px; font-weight: 500; color: var(--mute); }
-.tabs { display: inline-grid; grid-auto-flow: column; gap: 4px; padding: 4px; border-radius: 99px; background: var(--paper); width: fit-content; max-width: 100%; overflow-x: auto; }
-.tabs button { border: 0; background: transparent; padding: 7px 12px; border-radius: 99px; font-size: 13px; font-weight: 600; color: var(--mute); cursor: pointer; white-space: nowrap; }
-.tabs button[aria-selected="true"] { background: var(--ink); color: var(--white); }
-.presets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-.preset { border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; gap: 5px; text-align: left; transition: transform .35s var(--spring); }
+.sec h2 small { font-size: 12px; font-weight: 500; color: var(--mute); text-align: right; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field > label, .lbl { font-size: 13px; font-weight: 500; }
+.field .row, .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.field output { font-size: 12px; color: var(--mute); font-variant-numeric: tabular-nums; }
+select, input[type="text"], textarea { width: 100%; border: 1px solid var(--line); background: var(--paper); border-radius: 12px; padding: 9px 12px; font-size: 14px; min-width: 0; }
+textarea { resize: vertical; min-height: 44px; line-height: 1.4; }
+input[type="range"] { width: 100%; accent-color: var(--ink); }
+input[type="color"] { width: 44px; height: 32px; border: 0; padding: 0; border-radius: 9px; cursor: pointer; background: none; }
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-webkit-color-swatch { border: 1px solid rgba(0,0,0,.08); border-radius: 9px; }
+input[type="color"]::-moz-color-swatch { border: 1px solid rgba(0,0,0,.08); border-radius: 9px; }
+.check { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--ink); }
+.swrow { display: flex; flex-wrap: wrap; gap: 6px; }
+.sw { width: 30px; height: 30px; border-radius: 9px; border: 0; padding: 0; cursor: pointer; background-size: cover; background-position: center; box-shadow: inset 0 0 0 1px rgba(0,0,0,.07); transition: transform .3s var(--spring); }
+.sw:hover { transform: scale(1.08); }
+.sw[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--white), 0 0 0 3.5px var(--ink); }
+.sw.wide { width: 46px; height: 30px; }
+.icongrid { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; }
+.ib { aspect-ratio: 1; border: 0; border-radius: 9px; background: var(--paper); display: grid; place-items: center; cursor: pointer; padding: 0; color: var(--ink); }
+.ib svg { width: 70%; height: 70%; }
+.ib[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.colors { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.colors label { display: grid; gap: 3px; justify-items: center; font-size: 10px; color: var(--mute); }
+.colors input[type="color"] { width: 100%; aspect-ratio: 1; height: auto; border-radius: 10px; }
+details.tips { font-size: 12.5px; color: var(--mute); }
+details.tips summary { cursor: pointer; font-weight: 600; color: var(--ink); font-size: 13px; }
+details.tips p { margin-top: 6px; }
+details.tips code { font-family: inherit; background: var(--paper); padding: 1px 6px; border-radius: 6px; color: var(--ink); }
+.presets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.preset { border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; gap: 5px; text-align: left; transition: transform .35s var(--spring); min-width: 0; }
 .preset:hover { transform: translateY(-2px); }
 .preset img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; display: block; background: var(--stone); box-shadow: 0 1px 2px rgba(30,22,12,.08); }
 .preset span { font-size: 12px; font-weight: 600; line-height: 1.2; }
 .preset[aria-pressed="true"] img { box-shadow: 0 0 0 2px var(--white), 0 0 0 3.5px var(--ink); }
-.preset .del { font-size: 11px; color: var(--mute); font-weight: 500; }
-.empty { font-size: 13px; color: var(--mute); padding: 6px 2px; }
-.row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; }
-label.lbl { font-size: 13px; font-weight: 500; }
-.slider { display: grid; gap: 4px; }
-.slider .row output { font-size: 12px; color: var(--mute); font-variant-numeric: tabular-nums; }
-input[type="range"] { width: 100%; accent-color: var(--ink); }
-.colors { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
-.colors label { display: grid; gap: 3px; justify-items: center; font-size: 10px; color: var(--mute); }
-.colors input[type="color"] { width: 100%; aspect-ratio: 1; height: auto; border: 0; padding: 0; border-radius: 10px; cursor: pointer; background: none; }
-.colors input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
-.colors input[type="color"]::-webkit-color-swatch { border: 1px solid rgba(0,0,0,.08); border-radius: 10px; }
-.colors input[type="color"]::-moz-color-swatch { border: 1px solid rgba(0,0,0,.08); border-radius: 10px; }
-select, input[type="text"], textarea { width: 100%; border: 1px solid var(--line); background: var(--paper); border-radius: 12px; padding: 9px 12px; font-size: 14px; }
-textarea { resize: vertical; min-height: 64px; }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { border: 0; background: var(--paper); padding: 7px 12px; border-radius: 99px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--mute); }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--white); }
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.check { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; cursor: pointer; }
-.check input { width: 18px; height: 18px; accent-color: var(--ink); }
+.preset .del, .pbtn .del { font-size: 11px; color: var(--mute); font-weight: 500; }
 .toast { position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--white); padding: 11px 18px; border-radius: 99px; font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .3s, transform .45s var(--spring); z-index: 20; max-width: calc(100vw - 32px); text-align: center; }
 .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
 .fallback { position: fixed; inset: 0; z-index: 30; background: rgba(247,244,240,.92); display: grid; place-items: center; padding: 20px; }
 .fallback .box { background: var(--white); border-radius: 24px; padding: 18px; max-width: min(900px, 100%); display: grid; gap: 12px; box-shadow: var(--shadow); }
-.fallback img { max-width: 100%; max-height: 70vh; border-radius: 8px; }
-footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
+.fallback img { max-width: 100%; max-height: 70vh; border-radius: 8px; background-color: #f7f3ee; background-image: linear-gradient(45deg, #ebe5dd 25%, transparent 25%), linear-gradient(-45deg, #ebe5dd 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ebe5dd 75%), linear-gradient(-45deg, transparent 75%, #ebe5dd 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0; }
+footer { color: var(--mute); font-size: 13px; max-width: 90ch; }
+
+@media (max-width: 1320px) {
+  .layout { grid-template-columns: minmax(0, 1fr) 340px; }
+  .lib { grid-column: 1 / -1; position: static; max-height: none; }
+  .pgrid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 148px; overflow-x: auto; padding: 4px 4px 8px; margin: -4px; }
+  .presets { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+@media (max-width: 920px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .stage { position: static; }
+  .area { height: min(68vh, 540px); }
+}
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
 <div class="app">
   <header class="top">
     <div>
-      <h1><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Taller de auras <span>para Relevo</span></h1>
-      <p>Fondos y elementos con luces suaves, grano y volumen para presentaciones y para la memoria. Elige un preset, ajústalo, arrastra las luces sobre la imagen y descárgalo en PNG.</p>
+      <h1><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Taller de auras <span class="soft">para Relevo</span></span></h1>
+      <p>Las piezas de «Relevo con aura» listas para tus presentaciones y la memoria: datos como «3 de 5», fichas, tarjetas, controles, la marca y las pantallas. Elige una, cambia sus textos y colores, y descárgala sola con fondo transparente o puesta en una lámina.</p>
+    </div>
+    <div class="seg" role="tablist" aria-label="Modo">
+      <button role="tab" type="button" data-mode="piezas" aria-selected="true">Piezas</button>
+      <button role="tab" type="button" data-mode="fondos" aria-selected="false">Fondos</button>
     </div>
   </header>
 
   <div class="layout">
-    <section class="stage" aria-label="Vista previa">
-      <div class="frame" id="frame"><canvas id="view" aria-label="Vista previa de la imagen"></canvas></div>
-      <div class="bar">
-        <div class="left">
+    <!-- Biblioteca -->
+    <aside class="lib" aria-label="Biblioteca">
+      <div id="lib-piezas" style="display:grid;gap:12px">
+        <div class="groups" role="tablist" aria-label="Grupos de piezas" id="groups"></div>
+        <div class="pgrid" id="pgrid"></div>
+      </div>
+      <div id="lib-fondos" hidden style="display:grid;gap:12px">
+        <div class="groups" role="tablist" aria-label="Grupos de fondos">
+          <button class="chip" role="tab" type="button" aria-selected="true" data-group="slide">Presentación</button>
+          <button class="chip" role="tab" type="button" aria-selected="false" data-group="aura">Auras</button>
+          <button class="chip" role="tab" type="button" aria-selected="false" data-group="cielo">Cielos</button>
+          <button class="chip" role="tab" type="button" aria-selected="false" data-group="elemento">Elementos</button>
+          <button class="chip" role="tab" type="button" aria-selected="false" data-group="mias">Mías</button>
+        </div>
+        <div class="presets" id="presets"></div>
+      </div>
+    </aside>
+
+    <!-- Lienzo -->
+    <section class="stage" aria-label="Lienzo">
+      <div class="stagehead">
+        <h2 id="stage-title">Esta semana · 3 de 5</h2>
+        <div class="seg small flat" role="group" aria-label="Ver la pieza sobre" id="viewbg">
+          <button type="button" data-view="paper" aria-pressed="true">Papel</button>
+          <button type="button" data-view="white" aria-pressed="false">Blanco</button>
+          <button type="button" data-view="check" aria-pressed="false">Cuadros</button>
+          <button type="button" data-view="aura" aria-pressed="false">Aura</button>
+        </div>
+      </div>
+      <div class="area" id="area">
+        <div class="frame" id="frame"><canvas id="view" aria-label="Vista previa"></canvas></div>
+        <span class="zoom" id="zoom"></span>
+      </div>
+
+      <div class="bar" id="bar-piezas">
+        <div class="grp">
+          <div class="seg small flat" role="group" aria-label="Cómo sale" id="outmode">
+            <button type="button" data-out="sola" aria-pressed="true">Sola</button>
+            <button type="button" data-out="lamina" aria-pressed="false">En una lámina</button>
+          </div>
+          <div class="seg small flat" role="group" aria-label="Escala" id="scales">
+            <button type="button" data-scale="1" aria-pressed="false">1×</button>
+            <button type="button" data-scale="2" aria-pressed="false">2×</button>
+            <button type="button" data-scale="3" aria-pressed="true">3×</button>
+            <button type="button" data-scale="4" aria-pressed="false">4×</button>
+          </div>
+        </div>
+        <div class="grp">
+          <span class="meta" id="p-size"></span>
+          <button class="btn line" id="p-copy" type="button"><svg viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5"/></svg>Copiar</button>
+          <button class="btn primary" id="p-download" type="button"><svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg><span>Descargar PNG</span></button>
+        </div>
+      </div>
+
+      <div class="bar" id="bar-fondos" hidden>
+        <div class="grp">
           <button class="btn" id="shuffle" type="button"><svg viewBox="0 0 24 24"><path d="M4 7h3.5c2 0 3.2 1 4.5 3l1 1.6c1.3 2 2.5 3 4.5 3H20M17 11.5l3 3-3 3M4 17h3.5c1.2 0 2.1-.4 2.9-1.1M20 7h-2.5c-1.2 0-2.1.4-2.9 1.1M17 4l3 3-3 3"/></svg>Otra forma</button>
           <button class="btn" id="move" type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg>Mover</button>
         </div>
-        <div class="right">
+        <div class="grp">
           <span class="meta" id="size">1920 × 1080</span>
-          <button class="btn primary" id="download" type="button"><svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg>Descargar PNG</button>
+          <button class="btn primary" id="download" type="button"><svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg><span>Descargar PNG</span></button>
         </div>
       </div>
-      <p class="hint">Arrastra sobre la imagen para mover la luz más cercana. Con «Mover», las luces se desplazan solas; la descarga guarda el cuadro que ves.</p>
+      <p class="hint" id="stage-hint">«Sola» descarga la pieza con fondo transparente y su sombra suave, recortada justo. «Copiar» la deja lista para pegar en Google Slides, Keynote, PowerPoint, Figma o Word.</p>
     </section>
 
-    <aside class="panel" aria-label="Controles">
-      <section class="sec" aria-labelledby="h-presets">
-        <h2 id="h-presets">Presets <small id="preset-name">Aura</small></h2>
-        <div class="tabs" role="tablist" aria-label="Grupos de presets">
-          <button role="tab" aria-selected="true" data-group="slide">Presentación</button>
-          <button role="tab" aria-selected="false" data-group="aura">Auras</button>
-          <button role="tab" aria-selected="false" data-group="cielo">Cielos</button>
-          <button role="tab" aria-selected="false" data-group="elemento">Elementos</button>
-          <button role="tab" aria-selected="false" data-group="mias">Mías</button>
-        </div>
-        <div class="presets" id="presets"></div>
-      </section>
+    <!-- Propiedades -->
+    <aside class="panel" aria-label="Propiedades">
+      <div id="panel-piezas" style="display:grid;gap:12px">
+        <section class="sec" aria-labelledby="h-content">
+          <h2 id="h-content">Contenido <small id="piece-name"></small></h2>
+          <div id="fields" style="display:grid;gap:12px"></div>
+          <details class="tips">
+            <summary>Atajos para escribir</summary>
+            <p><code>|</code> pasa a gris lo que sigue (vuelve a tinta con otro <code>|</code>). <code>**palabra**</code> la deja en negrita. Un salto de línea con Intro. En las listas, <code>/</code> entre espacios corta la línea.</p>
+            <p>Íconos dentro del texto: <code>{time butter}</code>. Íconos: time, step, tag, flag, book, pin, bell, home, spark, chart, cal, speaker, pad, phone, moon, chat, check, heart. Colores: butter, sky, lime, blush, lilac, peach (o nada).</p>
+          </details>
+          <button class="btn line wide" id="p-reset" type="button">Volver a los textos originales</button>
+        </section>
 
-      <section class="sec" aria-labelledby="h-format">
-        <h2 id="h-format">Formato</h2>
-        <select id="format" aria-label="Formato">
-          <option value="1920x1080">Diapositiva 16:9 · 1920 × 1080</option>
-          <option value="3840x2160">Diapositiva 4K · 3840 × 2160</option>
-          <option value="1440x1080">Diapositiva 4:3 · 1440 × 1080</option>
-          <option value="2480x3508">Memoria A4 vertical · 2480 × 3508</option>
-          <option value="3508x2480">Memoria A4 horizontal · 3508 × 2480</option>
-          <option value="2400x800">Banda para la memoria · 2400 × 800</option>
-          <option value="2048x2048">Cuadrado · 2048 × 2048</option>
-          <option value="1080x1920">Vertical 9:16 · 1080 × 1920</option>
-          <option value="1024x1024">Elemento · 1024 × 1024</option>
-        </select>
-        <div class="chips" role="group" aria-label="Forma">
-          <button class="chip" type="button" data-shape="rect" aria-pressed="true">Rectángulo</button>
-          <button class="chip" type="button" data-shape="round" aria-pressed="false">Redondeado</button>
-          <button class="chip" type="button" data-shape="squircle" aria-pressed="false">Ficha</button>
-          <button class="chip" type="button" data-shape="circle" aria-pressed="false">Círculo</button>
-        </div>
-        <label class="check"><input type="checkbox" id="transparent"> Fondo transparente (solo las luces)</label>
-      </section>
+        <section class="sec" aria-labelledby="h-style">
+          <h2 id="h-style">Estilo</h2>
+          <div class="field"><div class="row"><label for="st-rot">Giro</label><output id="st-rot-o"></output></div><input type="range" id="st-rot" min="-15" max="15" step="0.5"></div>
+          <label class="check"><input type="checkbox" id="st-shadow"> Sombra suave</label>
+        </section>
 
-      <section class="sec" aria-labelledby="h-colors">
-        <h2 id="h-colors">Colores</h2>
-        <div class="colors" id="colors"></div>
-      </section>
+        <section class="sec" aria-labelledby="h-lam" id="sec-lam" hidden>
+          <h2 id="h-lam">Lámina <small>la pieza sobre un fondo</small></h2>
+          <div class="field"><label for="lam-format">Formato</label>
+            <select id="lam-format">
+              <option value="1920x1080">Diapositiva 16:9 · 1920 × 1080</option>
+              <option value="3840x2160">Diapositiva 4K · 3840 × 2160</option>
+              <option value="1440x1080">Diapositiva 4:3 · 1440 × 1080</option>
+              <option value="2480x3508">Memoria A4 vertical · 2480 × 3508</option>
+              <option value="3508x2480">Memoria A4 horizontal · 3508 × 2480</option>
+              <option value="2400x1200">Figura para la memoria · 2400 × 1200</option>
+              <option value="2048x2048">Cuadrado · 2048 × 2048</option>
+              <option value="1080x1920">Vertical 9:16 · 1080 × 1920</option>
+            </select>
+          </div>
+          <div class="field"><span class="lbl">Fondo</span><div class="swrow" id="lam-bg"></div></div>
+          <div class="field"><span class="lbl">Composición</span><div class="seg small flat" role="group" aria-label="Composición" id="lam-layout">
+            <button type="button" data-lay="solo" aria-pressed="false">Solo la pieza</button>
+            <button type="button" data-lay="derecha" aria-pressed="true">Título y pieza</button>
+            <button type="button" data-lay="izquierda" aria-pressed="false">Pieza y título</button>
+            <button type="button" data-lay="arriba" aria-pressed="false">Título arriba</button>
+          </div></div>
+          <div class="field"><div class="row"><label for="lam-size">Tamaño de la pieza</label><output id="lam-size-o"></output></div><input type="range" id="lam-size" min="30" max="100" step="1"></div>
+          <div id="lam-texts" style="display:grid;gap:8px">
+            <input type="text" id="lam-eyebrow" placeholder="Encima del título" aria-label="Texto encima del título">
+            <textarea id="lam-title" placeholder="Título. Usa | para pasar a gris lo que sigue." aria-label="Título de la lámina"></textarea>
+            <input type="text" id="lam-sub" placeholder="Bajada" aria-label="Bajada">
+            <select id="lam-tone" aria-label="Color del texto"><option value="ink">Texto en tinta</option><option value="white">Texto en blanco</option></select>
+          </div>
+          <p class="hint">El título es de esta pieza: cada pieza guarda el suyo. Las piezas de vidrio desenfocan el fondo de la lámina.</p>
+        </section>
 
-      <section class="sec" aria-labelledby="h-adjust">
-        <h2 id="h-adjust">Ajustes</h2>
-        <div id="sliders" style="display:grid;gap:10px"></div>
-      </section>
+        <section class="sec" aria-labelledby="h-batch">
+          <h2 id="h-batch">En lote</h2>
+          <button class="btn line wide" id="zip-group" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="3"/><path d="M12 3.5v3M12 8.5v1.5M12 12v1.5M10.5 16h3"/></svg><span>Este grupo en ZIP</span></button>
+          <button class="btn line wide" id="zip-all" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="3"/><path d="M12 3.5v3M12 8.5v1.5M12 12v1.5M10.5 16h3"/></svg><span>Todas las piezas en ZIP</span></button>
+          <p class="hint">Cada pieza sale con tus cambios, a la escala elegida y como está arriba: sola o en lámina.</p>
+        </section>
 
-      <section class="sec" aria-labelledby="h-text">
-        <h2 id="h-text">Texto <small>para diapositivas</small></h2>
-        <div class="chips" role="group" aria-label="Diseño del texto" id="layouts"></div>
-        <input type="text" id="t-eyebrow" placeholder="Encima del título" aria-label="Texto pequeño encima del título">
-        <textarea id="t-title" placeholder="Título. Usa | para pasar a gris lo que sigue." aria-label="Título"></textarea>
-        <input type="text" id="t-sub" placeholder="Bajada" aria-label="Bajada">
-        <div class="grid2">
-          <select id="t-color" aria-label="Color del texto"><option value="ink">Texto en tinta</option><option value="white">Texto en blanco</option></select>
-          <select id="t-align" aria-label="Alineación"><option value="left">A la izquierda</option><option value="center">Al centro</option></select>
-        </div>
-      </section>
+        <section class="sec" aria-labelledby="h-keep">
+          <h2 id="h-keep">Guardar y compartir</h2>
+          <div class="grid2">
+            <button class="btn line" type="button" id="p-save">Guardar</button>
+            <button class="btn line" type="button" id="p-copyr">Copiar receta</button>
+          </div>
+          <textarea id="p-recipe" placeholder="Pega aquí una receta para cargarla" aria-label="Receta de la pieza" style="min-height:52px"></textarea>
+          <button class="btn line" type="button" id="p-load">Cargar receta</button>
+          <p class="hint">Tus cambios quedan en este navegador. «Guardar» suma una copia a «Guardadas»; la receta es un texto para rehacer la pieza exacta en otro equipo o guardarla en el repositorio.</p>
+        </section>
+      </div>
 
-      <section class="sec" aria-labelledby="h-mine">
-        <h2 id="h-mine">Guardar y compartir</h2>
-        <div class="grid2">
-          <button class="btn" type="button" id="save-mine">Guardar en Mías</button>
-          <button class="btn" type="button" id="copy">Copiar receta</button>
-        </div>
-        <textarea id="recipe" placeholder="Pega aquí una receta para cargarla" aria-label="Receta" style="min-height:52px"></textarea>
-        <button class="btn" type="button" id="load">Cargar receta</button>
-        <p class="hint">«Mías» se guarda solo en este navegador. La receta es un texto que reproduce la imagen exacta: sirve para guardarla en el repositorio o rehacerla después.</p>
-      </section>
+      <div id="panel-fondos" hidden style="display:grid;gap:12px">
+        <section class="sec" aria-labelledby="h-format">
+          <h2 id="h-format">Formato <small id="preset-name">Aura</small></h2>
+          <select id="format" aria-label="Formato">
+            <option value="1920x1080">Diapositiva 16:9 · 1920 × 1080</option>
+            <option value="3840x2160">Diapositiva 4K · 3840 × 2160</option>
+            <option value="1440x1080">Diapositiva 4:3 · 1440 × 1080</option>
+            <option value="2480x3508">Memoria A4 vertical · 2480 × 3508</option>
+            <option value="3508x2480">Memoria A4 horizontal · 3508 × 2480</option>
+            <option value="2400x800">Banda para la memoria · 2400 × 800</option>
+            <option value="2048x2048">Cuadrado · 2048 × 2048</option>
+            <option value="1080x1920">Vertical 9:16 · 1080 × 1920</option>
+            <option value="1024x1024">Elemento · 1024 × 1024</option>
+          </select>
+          <div class="groups" role="group" aria-label="Forma">
+            <button class="chip" type="button" data-shape="rect" aria-pressed="true">Rectángulo</button>
+            <button class="chip" type="button" data-shape="round" aria-pressed="false">Redondeado</button>
+            <button class="chip" type="button" data-shape="squircle" aria-pressed="false">Ficha</button>
+            <button class="chip" type="button" data-shape="circle" aria-pressed="false">Círculo</button>
+          </div>
+          <label class="check"><input type="checkbox" id="transparent"> Fondo transparente (solo las luces)</label>
+        </section>
+        <section class="sec" aria-labelledby="h-colors">
+          <h2 id="h-colors">Colores</h2>
+          <div class="colors" id="colors"></div>
+        </section>
+        <section class="sec" aria-labelledby="h-adjust">
+          <h2 id="h-adjust">Ajustes</h2>
+          <div id="sliders" style="display:grid;gap:10px"></div>
+        </section>
+        <section class="sec" aria-labelledby="h-text">
+          <h2 id="h-text">Texto <small>para diapositivas</small></h2>
+          <div class="groups" role="group" aria-label="Diseño del texto" id="layouts"></div>
+          <input type="text" id="t-eyebrow" placeholder="Encima del título" aria-label="Texto pequeño encima del título">
+          <textarea id="t-title" placeholder="Título. Usa | para pasar a gris lo que sigue." aria-label="Título"></textarea>
+          <input type="text" id="t-sub" placeholder="Bajada" aria-label="Bajada">
+          <div class="grid2">
+            <select id="t-color" aria-label="Color del texto"><option value="ink">Texto en tinta</option><option value="white">Texto en blanco</option></select>
+            <select id="t-align" aria-label="Alineación"><option value="left">A la izquierda</option><option value="center">Al centro</option></select>
+          </div>
+        </section>
+        <section class="sec" aria-labelledby="h-mine">
+          <h2 id="h-mine">Guardar y compartir</h2>
+          <div class="grid2">
+            <button class="btn line" type="button" id="save-mine">Guardar en Mías</button>
+            <button class="btn line" type="button" id="copy">Copiar receta</button>
+          </div>
+          <textarea id="recipe" placeholder="Pega aquí una receta para cargarla" aria-label="Receta" style="min-height:52px"></textarea>
+          <button class="btn line" type="button" id="load">Cargar receta</button>
+          <p class="hint">«Mías» se guarda solo en este navegador. Un fondo que armes aquí también se puede usar detrás de las piezas: en «Lámina», elige «Mi fondo».</p>
+        </section>
+      </div>
     </aside>
   </div>
 
-  <footer>Inspirado en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a> de Mambo Mambo, como parte de la exploración «Relevo con aura». Todas las imágenes se generan aquí: no usan material de la referencia.</footer>
+  <footer>Inspirado en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a> de Mambo Mambo, como parte de la exploración «Relevo con aura». Todo se dibuja aquí, sin material de la referencia. El aura es de la pantalla: el Tag no emite luz, solo suena.</footer>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -197,30 +361,267 @@ footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
 (() => {
   const $ = (id) => document.getElementById(id);
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const toast = (msg) => { const t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('on'), 2600); };
+  const toast = (msg, ms = 2600) => { const t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('on'), ms); };
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const clone = (o) => JSON.parse(JSON.stringify(o));
+  const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } } };
 
-  // ---------- Presets ----------
+  // =====================================================================
+  // Tokens de «Relevo con aura»
+  // =====================================================================
+  const C = { paper: '#F7F4F0', stone: '#EEE9E3', white: '#FFFFFF', ink: '#141312', mute: '#8B8580', line: '#E4DED6' };
+  const TILE = { butter: '#F9E77C', sky: '#C2E4F3', lime: '#DCEA98', blush: '#F8C9D9', lilac: '#DED2F7', peach: '#FBD3B6' };
+  const TILE_NAME = { butter: 'Mantequilla', sky: 'Cielo', lime: 'Lima', blush: 'Rubor', lilac: 'Lila', peach: 'Durazno', note: 'Nota', white: 'Blanco' };
+  const NOTE = '#FCF2A6';
+  const SANS = '"Instrument Sans", "Helvetica Neue", Arial, sans-serif';
+  // Sombras como en la exploración: [x, y, desenfoque, extensión, opacidad].
+  const SH = { card: [[0, 1, 2, 0, .05], [0, 18, 44, -26, .28]], phone: [[0, 2, 3, 0, .05], [0, 40, 70, -46, .5]], glass: [[0, 14, 30, -20, .35]], soft: [[0, 1, 2, 0, .06]], lift: [[0, 10, 22, -12, .45]] };
+
+  // =====================================================================
+  // Íconos de línea (28 × 28, trazo 1,5)
+  // =====================================================================
+  const circ = (cx, cy, r) => `M${cx - r} ${cy}a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0z`;
+  const box = (x, y, w, h, r) => `M${x + r} ${y}h${w - 2 * r}a${r} ${r} 0 0 1 ${r} ${r}v${h - 2 * r}a${r} ${r} 0 0 1 ${-r} ${r}h${-(w - 2 * r)}a${r} ${r} 0 0 1 ${-r} ${-r}v${-(h - 2 * r)}a${r} ${r} 0 0 1 ${r} ${-r}z`;
+  const ICONS = {
+    time: { n: 'Tiempo', p: [[circ(14, 15, 8.5)], ['M14 10.5V15l3 2M11.5 4.5h5'], ['M22.5 5.5l1.5-1.5M4 7.5 5.5 9', 1.2]] },
+    step: { n: 'Primer paso', p: [['M4.5 22h6v-5.5h6.5V11h6.5'], ['M20 4.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z', 1.1]] },
+    tag: { n: 'Tag', p: [[circ(14, 14, 9)], [circ(14, 14, 3.4)], ['M14 7.2v.01'], ['M23.5 5.5c1 1.2 1.6 2.6 1.8 4M25.5 3.5c1.4 1.6 2.3 3.6 2.5 5.6', 1.1]] },
+    flag: { n: 'Decidir', p: [['M7 24V5'], ['M7 5.5c3-2 6 2 9 0s4.5-1 5.5 0v9c-1-1-2.5-2-5.5 0s-6-2-9 0']] },
+    book: { n: 'Libro', p: [['M4.5 7c3-1.2 6.2-1.2 9.5 1v14c-3.3-2.2-6.5-2.2-9.5-1z'], ['M23.5 7c-3-1.2-6.2-1.2-9.5 1v14c3.3-2.2 6.5-2.2 9.5-1z'], ['M21 3.5l.6 1.3 1.3.6-1.3.6-.6 1.3-.6-1.3-1.3-.6 1.3-.6z', 1.1]] },
+    pin: { n: 'Lugar', p: [['M14 24.5s-7.5-6.8-7.5-12.5a7.5 7.5 0 0 1 15 0c0 5.7-7.5 12.5-7.5 12.5z'], [circ(14, 12, 2.6)]] },
+    bell: { n: 'Aviso', p: [['M7.5 19V13a6.5 6.5 0 0 1 13 0v6l1.8 1.8H5.7z'], ['M11.8 23.5a2.3 2.3 0 0 0 4.4 0']] },
+    home: { n: 'Inicio', p: [[box(5, 5, 7.5, 7.5, 2)], [box(15.5, 5, 7.5, 7.5, 2)], [box(5, 15.5, 7.5, 7.5, 2)], [box(15.5, 15.5, 7.5, 7.5, 2)]] },
+    spark: { n: 'Aura', p: [['M14 4l1.8 5.2L21 11l-5.2 1.8L14 18l-1.8-5.2L7 11l5.2-1.8z'], ['M21.5 17.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z']] },
+    chart: { n: 'Avance', p: [[circ(14, 14, 9.5)], ['M14 4.5V14l7 6']] },
+    cal: { n: 'Calendario', p: [[box(4.5, 6, 19, 17.5, 3.5)], ['M4.5 11.5h19M9.5 3.5v4M18.5 3.5v4']] },
+    speaker: { n: 'Parlante', p: [[box(7.5, 3.5, 13, 21, 3.5)], [circ(14, 16, 3.6)], [circ(14, 8.6, 1.1)]] },
+    pad: { n: 'Juego', p: [['M8.5 9h11a5 5 0 0 1 5 5v1.5a4 4 0 0 1-7.2 2.4L16.5 17h-5l-.8.9a4 4 0 0 1-7.2-2.4V14a5 5 0 0 1 5-5z'], ['M9 12v4M7 14h4M19 13.2v.01M21 15.2v.01']] },
+    phone: { n: 'Teléfono', p: [[box(8, 3.5, 12, 21, 3)], ['M12.5 20.5h3']] },
+    moon: { n: 'Dormir', p: [['M21.5 17.2A8.5 8.5 0 0 1 10.8 6.5a8.5 8.5 0 1 0 10.7 10.7z']] },
+    chat: { n: 'Conversar', p: [['M5 8a3.5 3.5 0 0 1 3.5-3.5h11A3.5 3.5 0 0 1 23 8v7a3.5 3.5 0 0 1-3.5 3.5H13l-5 4v-4h.5A3.5 3.5 0 0 1 5 15z']] },
+    check: { n: 'Hecho', p: [['M6 14.5l5 5 11-11']] },
+    heart: { n: 'Gusto', p: [['M14 22.5s-8.5-5-8.5-11A4.6 4.6 0 0 1 14 9a4.6 4.6 0 0 1 8.5 2.5c0 6-8.5 11-8.5 11z']] },
+    arrow: { n: 'Flecha', vb: 16, hide: true, p: [['M3 8h10M9 4l4 4-4 4']] },
+    out: { n: 'Abrir', vb: 24, hide: true, p: [['M7 17 17 7M9 7h8v8']] },
+  };
+  const ICON_LIST = Object.keys(ICONS).filter((k) => !ICONS[k].hide);
+  const P2D = {};
+  const path2d = (d) => P2D[d] || (P2D[d] = new Path2D(d));
+  function drawIcon(ctx, name, x, y, size, color = C.ink, sw = 1.5) {
+    const ic = ICONS[name]; if (!ic) return; const vb = ic.vb || 28; const k = size / vb;
+    ctx.save(); ctx.translate(x, y); ctx.scale(k, k); ctx.strokeStyle = color; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ic.p.forEach(([d, w]) => { ctx.lineWidth = w ? w * sw / 1.5 : sw; ctx.stroke(path2d(d)); });
+    ctx.restore();
+  }
+  const iconSVG = (name) => { const ic = ICONS[name]; const vb = ic.vb || 28; return `<svg viewBox="0 0 ${vb} ${vb}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ic.p.map(([d, w]) => `<path d="${d}"${w ? ` stroke-width="${w + .2}"` : ''}/>`).join('')}</svg>`; };
+
+  // =====================================================================
+  // Texto: medidas como en CSS, dos tonos, negrita e íconos en la frase
+  // =====================================================================
+  const hasLS = 'letterSpacing' in CanvasRenderingContext2D.prototype;
+  let fontsReady = false;
+  function setF(ctx, w, px, em = 0) { ctx.font = `${w} ${px}px ${SANS}`; if (hasLS) ctx.letterSpacing = (px * em) + 'px'; ctx._fk = w + '/' + px; ctx._px = px; }
+  const FM = {};
+  function fm(ctx) { const k = ctx._fk; if (FM[k]) return FM[k]; const m = ctx.measureText('Hg'); const h = ctx.measureText('H'); const r = [m.fontBoundingBoxAscent || ctx._px * .96, m.fontBoundingBoxDescent || ctx._px * .25, h.actualBoundingBoxAscent || ctx._px * .7]; if (fontsReady) FM[k] = r; return r; }
+  function textW(ctx, s, w, px, em = 0) { setF(ctx, w, px, em); return ctx.measureText(s).width; }
+  // Etiqueta de una línea centrada por las mayúsculas en cy.
+  function label(ctx, s, x, cy, w, px, color, em = 0, align = 'left') {
+    setF(ctx, w, px, em); ctx.fillStyle = color; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    const tw = ctx.measureText(s).width; const X = align === 'center' ? x - tw / 2 : align === 'right' ? x - tw : x;
+    ctx.fillText(s, X, cy + fm(ctx)[2] / 2); return tw;
+  }
+  function parse(str) {
+    const words = []; let cur = [], soft = false, bold = false, buf = '';
+    const flush = () => { if (buf) { cur.push({ t: buf, soft, bold }); buf = ''; } };
+    const end = () => { flush(); if (cur.length) { words.push(cur); cur = []; } };
+    for (let i = 0; i < str.length; i++) {
+      const ch = str[i];
+      if (ch === '\n') { end(); words.push('br'); }
+      else if (ch === ' ' || ch === '\t') end();
+      else if (ch === '|') { flush(); soft = !soft; }
+      else if (ch === '*' && str[i + 1] === '*') { flush(); bold = !bold; i++; }
+      else if (ch === '{') { const j = str.indexOf('}', i); if (j > i) { flush(); const [ic, tl] = str.slice(i + 1, j).trim().split(/\s+/); cur.push({ icon: ic, tile: tl || 'none', soft, bold }); i = j; } else buf += ch; }
+      else buf += ch;
+    }
+    end(); return words;
+  }
+  const T = (px, w, o = {}) => ({ px, w, bw: o.bw || (w >= 600 ? 700 : 600), em: o.em || 0, lh: o.lh || 1.5, main: o.main || C.ink, soft: o.soft || C.mute, maxW: o.maxW || 0, balance: !!o.balance });
+  function layout(ctx, str, o) {
+    const L = layout0(ctx, str, o); if (!o.balance || !o.maxW || L.lines.length < 2) return L;
+    let lo = o.maxW * .4, hi = o.maxW, best = L;
+    for (let i = 0; i < 9; i++) { const mid = (lo + hi) / 2; const t = layout0(ctx, str, { ...o, maxW: mid }); if (t.lines.length <= L.lines.length) { best = t; hi = mid; } else lo = mid; }
+    best.o = o; return best;
+  }
+  function layout0(ctx, str, o) {
+    const words = parse(String(str || '')); setF(ctx, o.w, o.px, o.em); const space = ctx.measureText(' ').width;
+    const lines = []; let line = { items: [], width: 0 };
+    const mw = (r) => { if (r.icon) return o.px * 1.3; setF(ctx, r.bold ? o.bw : o.w, o.px, o.em); return ctx.measureText(r.t).width; };
+    for (const wd of words) {
+      if (wd === 'br') { lines.push(line); line = { items: [], width: 0 }; continue; }
+      const ws = wd.map(mw); const ww = ws.reduce((a, b) => a + b, 0);
+      if (o.maxW && line.items.length && line.width + space + ww > o.maxW + .5) { lines.push(line); line = { items: [], width: 0 }; }
+      let x = line.width + (line.items.length ? space : 0);
+      wd.forEach((r, i) => { line.items.push({ r, x, w: ws[i] }); x += ws[i]; });
+      line.width = x;
+    }
+    lines.push(line);
+    const lh = o.px * o.lh;
+    return { lines, width: Math.max(0, ...lines.map((l) => l.width)), height: lines.length * lh, lh, o };
+  }
+  const Lx = (ctx, str, o) => (str && String(str).trim() ? layout(ctx, str, o) : null);
+  function inlineIcon(ctx, r, x, base, px, color) {
+    const s = px * 1.18, top = base + px * .2 - s;
+    if (TILE[r.tile]) { ctx.fillStyle = TILE[r.tile]; ctx.beginPath(); rrPath(ctx, x, top, s, s, px * .28); ctx.fill(); }
+    const is = px * .86; drawIcon(ctx, r.icon, x + (s - is) / 2, top + (s - is) / 2, is, color, 1.9);
+  }
+  function drawL(ctx, L, x, top, align = 'left', boxW) {
+    if (!L) return; const o = L.o; const bw = boxW ?? L.width; setF(ctx, o.w, o.px, o.em); const [asc, desc] = fm(ctx);
+    ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    L.lines.forEach((ln, i) => {
+      const off = align === 'center' ? (bw - ln.width) / 2 : align === 'right' ? bw - ln.width : 0;
+      const base = top + i * L.lh + (L.lh - (asc + desc)) / 2 + asc;
+      ln.items.forEach(({ r, x: ix }) => {
+        const X = x + off + ix;
+        if (r.icon) { inlineIcon(ctx, r, X + o.px * .06, base, o.px, r.soft ? o.soft : o.main); return; }
+        setF(ctx, r.bold ? o.bw : o.w, o.px, o.em); ctx.fillStyle = r.soft ? o.soft : o.main; ctx.fillText(r.t, X, base);
+      });
+    });
+  }
+
+  // =====================================================================
+  // Formas, sombras y superficies
+  // =====================================================================
+  function rrPath(ctx, x, y, w, h, r) {
+    let [a, b, c, d] = Array.isArray(r) ? r : [r, r, r, r]; const m = Math.max(0, Math.min(w, h) / 2);
+    a = clamp(a, 0, m); b = clamp(b, 0, m); c = clamp(c, 0, m); d = clamp(d, 0, m);
+    ctx.moveTo(x + a, y); ctx.lineTo(x + w - b, y); ctx.arcTo(x + w, y, x + w, y + b, b); ctx.lineTo(x + w, y + h - c); ctx.arcTo(x + w, y + h, x + w - c, y + h, c);
+    ctx.lineTo(x + d, y + h); ctx.arcTo(x, y + h, x, y + h - d, d); ctx.lineTo(x, y + a); ctx.arcTo(x, y, x + a, y, a); ctx.closePath();
+  }
+  function squirclePath(ctx, x, y, w, h, n = 5) {
+    const a = w / 2, b = h / 2, cx = x + a, cy = y + b;
+    for (let i = 0; i <= 180; i++) { const th = i / 180 * Math.PI * 2, ct = Math.cos(th), st = Math.sin(th); const px = cx + a * Math.sign(ct) * Math.pow(Math.abs(ct), 2 / n), py = cy + b * Math.sign(st) * Math.pow(Math.abs(st), 2 / n); i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
+    ctx.closePath();
+  }
+  // Sombra con extensión negativa, como box-shadow: la forma se dibuja fuera del lienzo y solo su sombra vuelve.
+  function shadow(ctx, S, pathFn, layers) {
+    const inv = ctx.getTransform().inverse(); const BIG = 20000; const vx = inv.a * -BIG, vy = inv.b * -BIG;
+    for (const [x, y, blur, spread, a] of layers) {
+      ctx.save(); ctx.shadowColor = `rgba(30,22,12,${a})`; ctx.shadowBlur = blur * S; ctx.shadowOffsetX = BIG + x * S; ctx.shadowOffsetY = y * S;
+      ctx.translate(vx, vy); ctx.beginPath(); pathFn(ctx, -spread); ctx.fillStyle = '#000'; ctx.fill(); ctx.restore();
+    }
+  }
+  let GLASS_BG = null; // fondo de la lámina ya desenfocado, en píxeles del lienzo
+  function fillKind(ctx, kind, x, y, w, h, S) {
+    if (kind === 'glass') { if (GLASS_BG) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(GLASS_BG, 0, 0); ctx.restore(); } ctx.fillStyle = GLASS_BG ? 'rgba(255,255,255,.5)' : 'rgba(255,255,255,.62)'; ctx.fillRect(x - 1, y - 1, w + 2, h + 2); return; }
+    if (kind.startsWith('sky:')) { drawSky(ctx, kind.slice(4), x, y, w, h, S); return; }
+    if (kind === 'aura') { ctx.fillStyle = C.paper; ctx.fillRect(x, y, w, h); drawAura(ctx, 'card', x, y, w, h, S); return; }
+    if (kind === 'fondos') { drawFondo(ctx, x, y, w, h, S); return; }
+    ctx.fillStyle = C[kind] || (kind === 'note' ? NOTE : TILE[kind]) || kind; ctx.fillRect(x - 1, y - 1, w + 2, h + 2);
+  }
+  function glassEdge(ctx, pathFn, x, y, w, h) {
+    ctx.save(); ctx.beginPath(); pathFn(ctx, 0); ctx.clip();
+    ctx.beginPath(); ctx.rect(x - 4, y - 4, w + 8, h + 8); pathFn(ctx, 0, 1); ctx.fillStyle = 'rgba(255,255,255,.95)'; ctx.fill('evenodd');
+    ctx.beginPath(); pathFn(ctx, .5); ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.stroke();
+    ctx.restore();
+  }
+  function surface(ctx, kind, x, y, w, h, r, S, sh, layers) {
+    kind = kind || 'white'; if (kind === 'none') return;
+    const pathFn = (c, i = 0, dy = 0) => rrPath(c, x + i, y + i + dy, w - 2 * i, h - 2 * i, Array.isArray(r) ? r.map((v) => Math.max(0, v - i)) : Math.max(0, r - i));
+    if (sh) shadow(ctx, S, pathFn, layers || (kind === 'glass' ? SH.glass : SH.card));
+    ctx.save(); ctx.beginPath(); pathFn(ctx); ctx.clip(); fillKind(ctx, kind, x, y, w, h, S); ctx.restore();
+    if (kind === 'glass') glassEdge(ctx, pathFn, x, y, w, h);
+  }
+  function insetStroke(ctx, x, y, w, h, r, lw, color) { ctx.save(); ctx.beginPath(); rrPath(ctx, x, y, w, h, r); ctx.clip(); ctx.lineWidth = lw * 2; ctx.strokeStyle = color; ctx.stroke(); ctx.restore(); }
+  const OFF = (s) => (s === 'white' || s === 'none' || s === 'paper' ? C.stone : s === 'stone' ? C.line : 'rgba(255,255,255,.62)');
+  const CELL = (s) => (s === 'white' || s === 'none' ? C.paper : s === 'paper' || s === 'stone' ? C.white : 'rgba(255,255,255,.62)');
+  const tone = (p) => (p.tone === 'white' ? { main: '#FFFFFF', soft: 'rgba(255,255,255,.7)' } : { main: C.ink, soft: C.mute });
+
+  // Piezas pequeñas reutilizables
+  function tileBox(ctx, x, y, s, tile, icon, r, S, sh) {
+    const col = TILE[tile] || (tile === 'white' ? C.white : tile === 'note' ? NOTE : null);
+    if (col) surface(ctx, col, x, y, s, s, r ?? s * 11 / 46, S, sh);
+    if (icon) { const is = s * 28 / 46; drawIcon(ctx, icon, x + (s - is) / 2, y + (s - is) / 2, is); }
+  }
+  function badge(ctx, s, x, y, bg = C.white, fg = C.ink) { const w = textW(ctx, s, 600, 10) + 16; ctx.fillStyle = TILE[bg] || bg; ctx.beginPath(); rrPath(ctx, x, y, w, 20, 10); ctx.fill(); label(ctx, s, x + 8, y + 10, 600, 10, fg); return w; }
+  const badgeW = (ctx, s) => textW(ctx, s, 600, 10) + 16;
+  function pillW(ctx, s, o = {}) { return textW(ctx, s, 600, o.px || 13) + 2 * (o.padX ?? 18); }
+  function pill(ctx, s, x, y, o = {}) {
+    const h = o.h || 40, px = o.px || 13, padX = o.padX ?? 18; const w = pillW(ctx, s, o);
+    ctx.beginPath(); rrPath(ctx, x, y, w, h, h / 2);
+    if (o.ghost) { ctx.save(); ctx.clip(); ctx.lineWidth = 2.6; ctx.strokeStyle = C.ink; ctx.stroke(); ctx.restore(); } else { ctx.fillStyle = o.bg || C.ink; ctx.fill(); }
+    label(ctx, s, x + padX, y + h / 2, 600, px, o.ghost ? C.ink : (o.fg || C.white)); return w;
+  }
+  function markDraw(ctx, x, y, s, cols = ['#FFD54A', '#F6A3CB', '#9DD6F4', '#C5B2F6'], blend = 'multiply') {
+    const d = s * .58, pos = [[0, .21], [.42, .21], [.21, 0], [.21, .42]], hl = [[.35, .35], [.65, .35], [.5, .3], [.5, .7]];
+    ctx.save(); if (blend === 'soft') ctx.globalAlpha = .74; else ctx.globalCompositeOperation = 'multiply';
+    pos.forEach(([px, py], i) => { const cx = x + px * s + d / 2, cy = y + py * s + d / 2; const g = ctx.createRadialGradient(x + px * s + d * hl[i][0], y + py * s + d * hl[i][1], 0, cx, cy, d * .72); g.addColorStop(0, mix(cols[i], '#FFFFFF', .45)); g.addColorStop(1, cols[i]); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, d / 2, 0, Math.PI * 2); ctx.fill(); });
+    ctx.restore();
+  }
+  function mix(a, b, t) { const A = parseInt(a.slice(1), 16), B = parseInt(b.slice(1), 16); const ch = (s) => Math.round(((A >> s) & 255) * (1 - t) + ((B >> s) & 255) * t); return `rgb(${ch(16)},${ch(8)},${ch(0)})`; }
+  function toggleDraw(ctx, x, y, on) { ctx.fillStyle = on ? C.ink : C.line; ctx.beginPath(); rrPath(ctx, x, y, 36, 21, 10.5); ctx.fill(); ctx.save(); if (!on) { ctx.shadowColor = 'rgba(0,0,0,.18)'; ctx.shadowBlur = 3; ctx.shadowOffsetY = 1; } ctx.fillStyle = C.white; ctx.beginPath(); ctx.arc(on ? x + 36 - 2.5 - 8 : x + 2.5 + 8, y + 10.5, 8, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
+  function trackDraw(ctx, x, cy, w, pct, S) {
+    ctx.fillStyle = C.line; ctx.beginPath(); rrPath(ctx, x, cy - 2, w, 4, 2); ctx.fill();
+    const fx = x + w * clamp(pct, 0, 100) / 100; ctx.fillStyle = C.ink; ctx.beginPath(); rrPath(ctx, x, cy - 2, fx - x, 4, 2); ctx.fill();
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.3)'; ctx.shadowBlur = 4 * S; ctx.shadowOffsetY = 1 * S; ctx.fillStyle = C.white; ctx.beginPath(); ctx.arc(fx, cy, 7, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+  }
+
+  // =====================================================================
+  // Cielos: degradados con grano, pintados una vez (grano con semilla fija)
+  // =====================================================================
+  const SKIES = {
+    'aura-soft': { base: '#FBF5EC', blobs: [['#FFD54A', .25, .75, .55], ['#F6A3CB', .7, .3, .5], ['#9DD6F4', .15, .2, .45], ['#C5B2F6', .9, .8, .45]], alpha: .75 },
+    mist: { base: '#F1ECE6', blobs: [['#FFC98A', .15, .85, .45], ['#F2B4D3', .45, .2, .45], ['#BFA9F2', .85, .35, .5], ['#A9D8F4', .95, .9, .4], ['#FFFFFF', .6, .65, .35]], alpha: .85, grain: 34 },
+    sunset: { base: '#F3B38E', blobs: [['#F06A3B', .25, .3, .5], ['#F7C6DD', .8, .3, .5], ['#B9A4F2', .75, .85, .5], ['#FFE6A6', .3, .8, .4]] },
+    rose: { base: '#F4C9D2', blobs: [['#C8325A', .25, .35, .55], ['#F7A9BE', .75, .25, .5], ['#FFFFFF', .55, .6, .35], ['#E0617F', .3, .85, .45], ['#FBE4EA', .85, .8, .4]] },
+    amber: { base: '#E9B85C', blobs: [['#F2A20C', .2, .3, .6], ['#B78BEF', .85, .2, .55], ['#F7D27A', .5, .7, .45], ['#9C7BE8', .9, .85, .4]] },
+    ember: { base: '#F28A4A', blobs: [['#E8501E', .2, .75, .6], ['#F9B36B', .75, .3, .55], ['#FFE0B8', .55, .1, .4], ['#E2471C', .9, .9, .35]] },
+    'clouds-blue': { base: '#8DB9EA', blobs: [['#2559C9', .2, .85, .6], ['#E9F3FF', .6, .35, .45], ['#7EA9E8', .85, .7, .45], ['#F7FBFF', .35, .2, .35], ['#3B6BD2', .9, .1, .35]] },
+    lilac: { base: '#C9B8F2', blobs: [['#8E6FE6', .25, .7, .55], ['#F3D3F0', .75, .25, .5], ['#A7CFF5', .8, .85, .45], ['#FFFFFF', .4, .3, .3]] },
+    moss: { base: '#7FAE6B', blobs: [['#2F6E3B', .2, .3, .6], ['#B9DB8E', .8, .25, .5], ['#3E8F4E', .7, .85, .55], ['#E7F2C8', .4, .65, .3]] },
+    mint: { base: '#BFE7D3', blobs: [['#5FC79A', .2, .8, .55], ['#E6F7FF', .7, .25, .5], ['#9ED6F4', .85, .75, .45]] },
+    night: { base: '#2B3A66', blobs: [['#0F1A3D', .2, .3, .6], ['#5E7BD8', .8, .7, .55], ['#A9B8F5', .6, .2, .35], ['#121B3A', .9, .9, .4]] },
+  };
+  const SKY_NAME = { 'aura-soft': 'Aura suave', mist: 'Bruma', sunset: 'Atardecer', rose: 'Rosa', amber: 'Ámbar', ember: 'Brasa', 'clouds-blue': 'Cielo', lilac: 'Lila', moss: 'Musgo', mint: 'Menta', night: 'Noche' };
+  const hexA = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+  function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  const hashStr = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return h >>> 0; };
+  const skyCache = new Map();
+  function skyCanvas(name, w, h) {
+    w = clamp(Math.round(w), 8, 2600); h = clamp(Math.round(h), 8, 2600);
+    const key = name + ':' + w + 'x' + h; if (skyCache.has(key)) return skyCache.get(key);
+    const def = SKIES[name] || SKIES['aura-soft']; const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d');
+    g.fillStyle = def.base; g.fillRect(0, 0, w, h); const m = Math.max(w, h);
+    def.blobs.forEach(([col, x, y, r]) => { const a = def.alpha ?? 1; const gr = g.createRadialGradient(x * w, y * h, 0, x * w, y * h, r * m); gr.addColorStop(0, hexA(col, a)); gr.addColorStop(.55, hexA(col, a * .45)); gr.addColorStop(1, hexA(col, 0)); g.fillStyle = gr; g.fillRect(0, 0, w, h); });
+    const img = g.getImageData(0, 0, w, h), d = img.data, amt = def.grain ?? 18, rnd = rng(hashStr(name));
+    for (let i = 0; i < d.length; i += 4) { const n = (rnd() - .5) * amt; d[i] += n; d[i + 1] += n; d[i + 2] += n; }
+    g.putImageData(img, 0, 0);
+    if (skyCache.size > 90) skyCache.delete(skyCache.keys().next().value);
+    skyCache.set(key, c); return c;
+  }
+  function drawSky(ctx, name, x, y, w, h, S) { const k = clamp(S, 1, 3); ctx.drawImage(skyCanvas(name, w * k, h * k), x, y, w, h); }
+  const skyURL = {}; const skyThumb = (name) => skyURL[name] || (skyURL[name] = skyCanvas(name, 72, 72).toDataURL('image/png'));
+
+  // =====================================================================
+  // Fondos: presets del generador de auras (WebGL)
+  // =====================================================================
   const AURA6 = ['#FFD54A', '#F6A3CB', '#C5B2F6', '#9DD6F4', '#FFF3D6', '#FFAE7A'];
   const B = (x, y, r) => [x, y, r];
   const base = { bg: '#F7F4F0', colors: AURA6, blobs: [B(.44, .6, .25), B(.56, .38, .23), B(.66, .56, .24), B(.34, .42, .25), B(.5, .5, .09), B(.42, .74, .16)], k: .95, scale: 1, warp: .12, grain: .045, depth: 0, transparent: false, shape: 'rect', format: '1920x1080', text: null };
   const P = (o) => JSON.parse(JSON.stringify({ ...base, ...o }));
-  const T = (layout, eyebrow, title, sub, color = 'ink', align = 'left') => ({ layout, eyebrow, title, sub, color, align });
+  const TXT = (layout, eyebrow, title, sub, color = 'ink', align = 'left') => ({ layout, eyebrow, title, sub, color, align });
   const PRESETS = [
-    // Presentación
-    P({ id: 'portada', group: 'slide', name: 'Portada', blobs: [B(.72, .6, .27), B(.82, .36, .24), B(.92, .62, .25), B(.64, .4, .25), B(.78, .5, .1), B(.72, .82, .18)], text: T('portada', 'Proyecto de título · Diseño UDP', 'relevo', 'De la pantalla | a lo que querías hacer.') }),
-    P({ id: 'seccion', group: 'slide', name: 'Sección', bg: '#C9B8F2', colors: ['#8E6FE6', '#F3D3F0', '#A7CFF5', '#FFFFFF', '#6D55D6', '#F7C9DE'], blobs: [B(.2, .78, .32), B(.78, .22, .3), B(.85, .85, .28), B(.45, .3, .2), B(.1, .1, .25), B(.6, .65, .22)], k: 1, warp: .38, grain: .06, depth: .45, text: T('seccion', '02', 'Lo que dicen | las personas', '', 'white') }),
-    P({ id: 'cita', group: 'slide', name: 'Frase', colors: ['#FFAE7A', '#F6A3CB', '#C5B2F6', '#FFD54A', '#FFF3D6', '#9DD6F4'], blobs: [B(.36, .64, .3), B(.62, .36, .3), B(.7, .66, .28), B(.3, .36, .28), B(.5, .5, .12), B(.5, .82, .2)], k: .72, text: T('cita', 'La idea', 'Vuelve a lo que | querías hacer.', '', 'ink', 'center') }),
-    P({ id: 'dato', group: 'slide', name: 'Dato', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.18, .85, .35), B(.6, .35, .26), B(.88, .7, .26), B(.35, .2, .2), B(.92, .08, .2), B(.5, .7, .2)], k: 1, warp: .42, grain: .06, depth: .5, text: T('dato', 'Encuesta', '53', 'respuestas sobre el tiempo | que se va en el teléfono', 'white') }),
-    P({ id: 'cierre', group: 'slide', name: 'Cierre', blobs: [B(.42, .62, .28), B(.58, .36, .26), B(.7, .58, .27), B(.3, .42, .27), B(.5, .5, .1), B(.46, .8, .18)], text: T('cierre', '', 'Gracias', 'relevo', 'ink', 'center') }),
-    P({ id: 'fondo-limpio', group: 'slide', name: 'Fondo limpio', blobs: [B(.86, .82, .22), B(.94, .6, .18), B(.76, .94, .2), B(.98, .9, .2), B(.88, .78, .07), B(.7, .8, .12)], text: T('portada', 'Título de la sección', 'Escribe aquí | lo que quieres decir.', '') }),
-    // Auras sobre blanco
+    P({ id: 'portada', group: 'slide', name: 'Portada', blobs: [B(.72, .6, .27), B(.82, .36, .24), B(.92, .62, .25), B(.64, .4, .25), B(.78, .5, .1), B(.72, .82, .18)], text: TXT('portada', 'Proyecto de título · Diseño UDP', 'relevo', 'De la pantalla | a lo que querías hacer.') }),
+    P({ id: 'seccion', group: 'slide', name: 'Sección', bg: '#C9B8F2', colors: ['#8E6FE6', '#F3D3F0', '#A7CFF5', '#FFFFFF', '#6D55D6', '#F7C9DE'], blobs: [B(.2, .78, .32), B(.78, .22, .3), B(.85, .85, .28), B(.45, .3, .2), B(.1, .1, .25), B(.6, .65, .22)], k: 1, warp: .38, grain: .06, depth: .45, text: TXT('seccion', '02', 'Lo que dicen | las personas', '', 'white') }),
+    P({ id: 'cita', group: 'slide', name: 'Frase', colors: ['#FFAE7A', '#F6A3CB', '#C5B2F6', '#FFD54A', '#FFF3D6', '#9DD6F4'], blobs: [B(.36, .64, .3), B(.62, .36, .3), B(.7, .66, .28), B(.3, .36, .28), B(.5, .5, .12), B(.5, .82, .2)], k: .72, text: TXT('cita', 'La idea', 'Vuelve a lo que | querías hacer.', '', 'ink', 'center') }),
+    P({ id: 'dato', group: 'slide', name: 'Dato', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.18, .85, .35), B(.6, .35, .26), B(.88, .7, .26), B(.35, .2, .2), B(.92, .08, .2), B(.5, .7, .2)], k: 1, warp: .42, grain: .06, depth: .5, text: TXT('dato', 'Encuesta', '53', 'respuestas sobre el tiempo | que se va en el teléfono', 'white') }),
+    P({ id: 'cierre', group: 'slide', name: 'Cierre', blobs: [B(.42, .62, .28), B(.58, .36, .26), B(.7, .58, .27), B(.3, .42, .27), B(.5, .5, .1), B(.46, .8, .18)], text: TXT('cierre', '', 'Gracias', 'relevo', 'ink', 'center') }),
+    P({ id: 'fondo-limpio', group: 'slide', name: 'Fondo limpio', blobs: [B(.86, .82, .22), B(.94, .6, .18), B(.76, .94, .2), B(.98, .9, .2), B(.88, .78, .07), B(.7, .8, .12)], text: TXT('portada', 'Título de la sección', 'Escribe aquí | lo que quieres decir.', '') }),
     P({ id: 'aura', group: 'aura', name: 'Aura' }),
     P({ id: 'amanecer', group: 'aura', name: 'Amanecer', colors: ['#FFD54A', '#FFAE7A', '#F6A3CB', '#FFE7A6', '#FFF3D6', '#FFC98A'], blobs: [B(.4, .7, .24), B(.6, .5, .2), B(.66, .72, .18), B(.36, .5, .18), B(.5, .64, .08), B(.5, .85, .15)] }),
     P({ id: 'brisa', group: 'aura', name: 'Brisa', colors: ['#9DD6F4', '#C5B2F6', '#A8E8CF', '#DCEFFB', '#FFFFFF', '#B7C6F7'], blobs: [B(.38, .55, .22), B(.6, .42, .2), B(.66, .62, .2), B(.3, .38, .18), B(.5, .5, .08), B(.48, .72, .14)] }),
     P({ id: 'rubor', group: 'aura', name: 'Rubor', colors: ['#F6A3CB', '#FFAE7A', '#C5B2F6', '#FBD3E3', '#FFF3D6', '#F79FB5'], blobs: [B(.42, .58, .22), B(.58, .4, .2), B(.66, .6, .19), B(.34, .42, .18), B(.5, .5, .08), B(.52, .76, .14)] }),
     P({ id: 'esquina', group: 'aura', name: 'Esquina', blobs: [B(.86, .82, .22), B(.94, .6, .18), B(.76, .94, .2), B(.98, .9, .2), B(.88, .78, .07), B(.7, .8, .12)] }),
     P({ id: 'horizonte', group: 'aura', name: 'Horizonte', blobs: [B(.2, .95, .2), B(.42, 1, .2), B(.62, .96, .2), B(.84, 1, .2), B(.5, .98, .1), B(.05, .98, .16)] }),
-    // Cielos llenos de color
     P({ id: 'rosa', group: 'cielo', name: 'Rosa', bg: '#F4C9D2', colors: ['#C8325A', '#F7A9BE', '#FFFFFF', '#E0617F', '#FBE4EA', '#F28BA7'], blobs: [B(.25, .35, .3), B(.75, .25, .28), B(.55, .6, .2), B(.3, .85, .26), B(.85, .8, .22), B(.6, .1, .2)], k: 1, warp: .4, grain: .06, depth: .45 }),
     P({ id: 'ambar', group: 'cielo', name: 'Ámbar', bg: '#E9B85C', colors: ['#F2A20C', '#B78BEF', '#F7D27A', '#9C7BE8', '#FFE7B0', '#E88F1A'], blobs: [B(.2, .3, .32), B(.85, .2, .3), B(.5, .7, .24), B(.9, .85, .24), B(.4, .1, .18), B(.15, .9, .22)], k: 1, warp: .4, grain: .06, depth: .45 }),
     P({ id: 'brasa', group: 'cielo', name: 'Brasa', bg: '#F28A4A', colors: ['#E8501E', '#F9B36B', '#FFE0B8', '#E2471C', '#FFC58E', '#C9370F'], blobs: [B(.2, .75, .32), B(.75, .3, .28), B(.55, .1, .22), B(.9, .9, .2), B(.4, .45, .18), B(.05, .3, .2)], k: 1, warp: .4, grain: .06, depth: .5 }),
@@ -230,7 +631,6 @@ footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
     P({ id: 'menta', group: 'cielo', name: 'Menta', bg: '#BFE7D3', colors: ['#5FC79A', '#E6F7FF', '#9ED6F4', '#FFFFFF', '#3FB487', '#CBEFE0'], blobs: [B(.2, .8, .3), B(.7, .25, .28), B(.85, .75, .26), B(.4, .4, .16), B(.1, .2, .2), B(.6, .6, .2)], k: 1, warp: .4, grain: .055, depth: .35 }),
     P({ id: 'noche', group: 'cielo', name: 'Noche', bg: '#2B3A66', colors: ['#0F1A3D', '#5E7BD8', '#A9B8F5', '#121B3A', '#3B4F99', '#7E8FE0'], blobs: [B(.2, .3, .32), B(.8, .7, .28), B(.6, .2, .18), B(.9, .9, .24), B(.4, .8, .22), B(.5, .5, .16)], k: 1, warp: .45, grain: .07, depth: .4 }),
     P({ id: 'atardecer', group: 'cielo', name: 'Atardecer', bg: '#F3B38E', colors: ['#F06A3B', '#F7C6DD', '#B9A4F2', '#FFE6A6', '#E9558F', '#FFD3A8'], blobs: [B(.25, .3, .28), B(.8, .3, .28), B(.75, .85, .28), B(.3, .8, .24), B(.55, .55, .16), B(.05, .05, .2)], k: 1, warp: .4, grain: .06, depth: .4 }),
-    // Elementos con fondo transparente
     P({ id: 'orbe', group: 'elemento', name: 'Orbe', format: '1024x1024', transparent: true, blobs: [B(.44, .58, .2), B(.56, .4, .18), B(.64, .56, .19), B(.36, .44, .19), B(.5, .5, .08), B(.46, .66, .1)] }),
     P({ id: 'ficha-color', group: 'elemento', name: 'Ficha', format: '1024x1024', shape: 'squircle', bg: '#F4C9D2', colors: ['#C8325A', '#F7A9BE', '#FFFFFF', '#E0617F', '#FBE4EA', '#F28BA7'], blobs: [B(.25, .35, .3), B(.75, .25, .28), B(.55, .6, .2), B(.3, .85, .26), B(.85, .8, .22), B(.6, .1, .2)], k: 1, warp: .4, grain: .06, depth: .45 }),
     P({ id: 'circulo', group: 'elemento', name: 'Círculo', format: '1024x1024', shape: 'circle', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.2, .85, .32), B(.6, .35, .24), B(.85, .7, .24), B(.35, .2, .2), B(.9, .1, .2), B(.5, .65, .18)], k: 1, warp: .45, grain: .06, depth: .5 }),
@@ -238,12 +638,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
   ];
   const LAYOUTS = [['portada', 'Portada'], ['seccion', 'Sección'], ['cita', 'Frase'], ['dato', 'Dato'], ['cierre', 'Cierre'], ['none', 'Sin texto']];
 
-  // ---------- Estado ----------
-  let state = P(PRESETS[0]); state.t = 0; let presetId = 'portada'; let group = 'slide'; let playing = false;
-  const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } } };
-  let mine = store.get('taller-auras-mias', []);
-
-  // ---------- WebGL ----------
+  // WebGL: luces gaussianas con volumen (fbm) y grano sin patrón (hash sin seno).
   const glc = document.createElement('canvas');
   const gl = glc.getContext('webgl', { preserveDrawingBuffer: true, premultipliedAlpha: true, alpha: true, antialias: false });
   const VS = 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
@@ -290,45 +685,718 @@ footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
     glc.width = w; glc.height = h; gl.viewport(0, 0, w, h); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
     gl.uniform2f(U.res, w, h); gl.uniform1f(U.t, s.t || 0); gl.uniform1f(U.k, s.k); gl.uniform1f(U.sc, s.scale); gl.uniform1f(U.warp, s.warp);
     gl.uniform1f(U.grain, s.grain); gl.uniform1f(U.depth, s.depth); gl.uniform1f(U.tr, s.transparent ? 1 : 0); gl.uniform1f(U.seed, s.seed || 0);
-    gl.uniform3fv(U.bg, rgb(s.bg));
-    gl.uniform3fv(U.col, new Float32Array(s.colors.flatMap(rgb)));
-    gl.uniform3fv(U.pr, new Float32Array(s.blobs.flat()));
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    return glc;
+    gl.uniform3fv(U.bg, rgb(s.bg)); gl.uniform3fv(U.col, new Float32Array(s.colors.flatMap(rgb))); gl.uniform3fv(U.pr, new Float32Array(s.blobs.flat()));
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); return glc;
+  }
+  // Auras dentro de las piezas: tarjetas, teléfonos, logotipo.
+  const AURA_LAYOUT = {
+    card: { blobs: [B(.3, .75, .32), B(.68, .3, .3), B(.15, .2, .26), B(.88, .82, .28), B(.5, .5, .1), B(.55, .9, .18)], scale: 1, k: .9 },
+    phone: { blobs: [B(.42, .54, .25), B(.58, .45, .23), B(.62, .56, .24), B(.38, .46, .25), B(.5, .5, .09), B(.48, .61, .16)], scale: .62, k: 1 },
+    halo: { blobs: [B(.4, .58, .24), B(.58, .4, .22), B(.66, .58, .23), B(.33, .42, .23), B(.5, .5, .09), B(.46, .72, .15)], scale: 1, k: .95, transparent: true },
+  };
+  let auraSource = 'aura'; // preset de colores para las auras de las piezas
+  function auraState(kind, over = {}) {
+    const pal = auraSource === 'fondos' ? fs : (PRESETS.find((p) => p.id === auraSource) || PRESETS.find((p) => p.id === 'aura'));
+    return { ...P(pal), ...(AURA_LAYOUT[kind] || {}), text: null, shape: 'rect', t: 3, seed: 0, ...over, bg: over.bg || C.paper };
+  }
+  function drawAura(ctx, kind, x, y, w, h, S, over) {
+    if (!gl) { if (!(AURA_LAYOUT[kind] || {}).transparent) { ctx.fillStyle = C.paper; ctx.fillRect(x, y, w, h); } return; }
+    const k = Math.min(S, 4096 / Math.max(w, h)); const s = auraState(kind, over);
+    ctx.drawImage(renderGL(s, Math.max(2, Math.round(w * k)), Math.max(2, Math.round(h * k))), x, y, w, h);
+  }
+  function drawFondo(ctx, x, y, w, h, S) { const c = document.createElement('canvas'); const k = Math.min(S, 4096 / Math.max(w, h)); compose({ ...fs, text: null, shape: 'rect', transparent: false }, Math.max(2, Math.round(w * k)), Math.max(2, Math.round(h * k)), c); ctx.drawImage(c, x, y, w, h); }
+
+  // =====================================================================
+  // Piezas
+  // =====================================================================
+  const PIECES = []; const piece = (d) => { PIECES.push(d); return d; };
+  const lines = (s) => String(s || '').split('\n').map((x) => x.trim()).filter(Boolean);
+  const cells = (s) => lines(s).map((l) => l.split('|').map((x) => x.trim()));
+  const nums = (s) => String(s || '').split(/[\s,;]+/).filter((x) => x !== '').map(Number).filter((n) => isFinite(n));
+  const brk = (s) => String(s || '').replace(/\s+\/\s+/g, '\n');
+  const words = (s) => String(s || '').split(/[\s,]+/).filter(Boolean);
+  function col(items, gap) { let y = 0, first = true; for (const it of items) { if (!first) y += it.mt ?? gap; it.y = y; y += it.h; first = false; } return y; }
+  const asPiece = (b) => ({ w: b.w, h: b.h, paint: (ctx, S, st) => b.paint(ctx, 0, 0, S, st.shadow) });
+  // Campos del panel
+  const fText = (k, label, o = {}) => ({ k, label, type: 'text', ...o });
+  const fArea = (k, label, o = {}) => ({ k, label, type: 'area', ...o });
+  const fNum = (k, label, min, max, step = 1, o = {}) => ({ k, label, type: 'num', min, max, step, ...o });
+  const fTile = (k = 'tile', label = 'Color del cuadro', o = {}) => ({ k, label, type: 'tile', ...o });
+  const fIcon = (k = 'icon', label = 'Ícono', o = {}) => ({ k, label, type: 'icon', ...o });
+  const fSky = (k = 'sky', label = 'Cielo', o = {}) => ({ k, label, type: 'sky', ...o });
+  const fSurf = (k = 'surface', label = 'Fondo de la pieza', o = {}) => ({ k, label, type: 'surface', ...o });
+  const fSel = (k, label, opts, o = {}) => ({ k, label, type: 'select', opts, ...o });
+  const fColor = (k, label, o = {}) => ({ k, label, type: 'color', ...o });
+  const fCheck = (k, label, o = {}) => ({ k, label, type: 'check', ...o });
+  const fTone = () => fSel('tone', 'Color del texto', [['ink', 'Tinta'], ['white', 'Blanco']]);
+  const fAlign = () => fSel('align', 'Alineación', [['left', 'A la izquierda'], ['center', 'Al centro']]);
+  const GENERIC_LAM = { eyebrow: 'Relevo', title: 'Escribe aquí | lo que quieres decir.', sub: '' };
+
+  // ---------- Componentes compartidos ----------
+  function chipBuild(ctx, o) {
+    const ts = o.ts || 46, px = o.px || 15, left = o.side === 'left';
+    const L = layout(ctx, o.text, T(px, 500, { lh: 1.22 }));
+    const w = 16 + L.width + 14 + ts + 9, h = Math.max(L.height, ts) + 18;
+    return { w, h, paint(ctx, x, y, S, sh, W = w) {
+      surface(ctx, o.surface || 'white', x, y, W, h, 16, S, sh);
+      if (o.border === 'ink') insetStroke(ctx, x, y, W, h, 16, 1.5, C.ink); else if (o.border === 'line') insetStroke(ctx, x, y, W, h, 16, 1, C.line);
+      const tx = left ? x + 9 + ts + 14 : x + 16, tileX = left ? x + 9 : x + W - 9 - ts;
+      drawL(ctx, L, tx, y + (h - L.height) / 2);
+      tileBox(ctx, tileX, y + (h - ts) / 2, ts, o.tile, o.icon, ts * 11 / 46);
+    } };
+  }
+  function progressBuild(ctx, p) {
+    const W = p.width, pad = 12, iw = W - pad * 2;
+    const Lt = layout(ctx, p.title, T(16, 600, { em: -.015, lh: 1.15, maxW: iw }));
+    const h = pad + 20 + 8 + Lt.height + 8 + 5 + pad;
+    return { w: W, h, paint(ctx, x, y, S, sh) {
+      surface(ctx, p.surface || 'sky:aura-soft', x, y, W, h, 18, S, sh);
+      badge(ctx, p.chip, x + pad, y + pad, C.white);
+      label(ctx, p.right, x + W - pad, y + pad + 10, 400, 12, C.ink, 0, 'right');
+      drawL(ctx, Lt, x + pad, y + pad + 28);
+      const by = y + pad + 28 + Lt.height + 8; ctx.fillStyle = 'rgba(255,255,255,.7)'; ctx.beginPath(); rrPath(ctx, x + pad, by, iw, 5, 2.5); ctx.fill();
+      ctx.fillStyle = C.ink; ctx.beginPath(); rrPath(ctx, x + pad, by, iw * clamp(+p.pct || 0, 0, 100) / 100, 5, 2.5); ctx.fill();
+    } };
+  }
+  function rowBuild(ctx, p) {
+    const A = layout(ctx, p.title, T(12, 600, { lh: 1.25 })), Bq = layout(ctx, p.sub, T(12, 400, { lh: 1.25, main: C.mute }));
+    const tw = Math.max(A.width, Bq.width); const w = 8 + 34 + 10 + tw + 10, h = Math.max(34, A.height + Bq.height) + 16;
+    return { w, h, paint(ctx, x, y, S, sh, W = w) {
+      surface(ctx, p.surface || 'white', x, y, W, h, 18, S, sh);
+      tileBox(ctx, x + 8, y + (h - 34) / 2, 34, p.tile, null, 10); drawIcon(ctx, p.icon, x + 8 + 7, y + (h - 34) / 2 + 7, 20);
+      const ty = y + (h - A.height - Bq.height) / 2; drawL(ctx, A, x + 52, ty); drawL(ctx, Bq, x + 52, ty + A.height);
+    } };
+  }
+  function actPaint(ctx, x, y, w, h, a, o, S, sh) {
+    const r = o.r ?? 22, pad = o.pad ?? 14, tpx = o.tpx ?? 16, spx = o.spx ?? 12;
+    surface(ctx, 'sky:' + (SKIES[a[2]] ? a[2] : 'rose'), x, y, w, h, r, S, sh);
+    ctx.save(); ctx.beginPath(); rrPath(ctx, x, y, w, h, r); ctx.clip();
+    const g = ctx.createLinearGradient(0, y + h * .4, 0, y + h); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.4)'); ctx.fillStyle = g; ctx.fillRect(x, y + h * .4, w, h * .6);
+    const Lt = layout(ctx, a[0] || '', T(tpx, 600, { lh: 1.12, main: '#FFFFFF', maxW: w - pad * 2 })); const Ls = a[1] ? layout(ctx, a[1], T(spx, 400, { lh: 1.5, main: 'rgba(255,255,255,.9)', maxW: w - pad * 2 })) : null;
+    const th = Lt.height + (Ls ? Ls.height : 0); drawL(ctx, Lt, x + pad, y + h - pad - th); if (Ls) drawL(ctx, Ls, x + pad, y + h - pad - Ls.height);
+    ctx.restore();
+  }
+  function dockPaint(ctx, x, y, w, icons, active, tile, surf, S, sh) {
+    surface(ctx, surf, x, y, w, 50, 20, S, sh);
+    const n = icons.length; if (!n) return; const slot = (w - 14) / n;
+    icons.forEach((ic, i) => { const cx = x + 7 + slot * i + slot / 2 - 18; if (i + 1 === active) { ctx.fillStyle = TILE[tile] || TILE.butter; ctx.beginPath(); rrPath(ctx, cx, y + 7, 36, 36, 11); ctx.fill(); } drawIcon(ctx, ic, cx + 7.5, y + 14.5, 21); });
+  }
+  function optBuild(ctx, text, w, sel) {
+    const L = layout(ctx, text, T(12.5, sel ? 500 : 400, { main: sel ? C.ink : C.mute, maxW: w - 24 - 26 }));
+    const h = L.height + 22;
+    return { h, paint(ctx, x, y) {
+      ctx.fillStyle = C.white; ctx.beginPath(); rrPath(ctx, x, y, w, h, 12); ctx.fill(); insetStroke(ctx, x, y, w, h, 12, sel ? 1.4 : 1, sel ? C.ink : C.line);
+      drawL(ctx, L, x + 12, y + 11);
+      const cx = x + w - 12 - 8, cy = y + h / 2;
+      if (sel) { ctx.strokeStyle = C.ink; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(cx, cy, 8.7, 0, Math.PI * 2); ctx.stroke(); ctx.fillStyle = C.ink; ctx.beginPath(); ctx.arc(cx, cy, 4.5, 0, Math.PI * 2); ctx.fill(); }
+      else { ctx.strokeStyle = C.line; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(cx, cy, 7.3, 0, Math.PI * 2); ctx.stroke(); }
+    } };
+  }
+  function setrowBuild(ctx, name, val, w) {
+    return { h: 41, paint(ctx, x, y, S, sh) {
+      surface(ctx, 'white', x, y, w, 41, 14, S, sh, SH.soft);
+      label(ctx, name, x + 12, y + 20.5, 500, 13, C.ink);
+      const v = String(val || '').toLowerCase();
+      if (/^\d+(\.\d+)?$/.test(v)) trackDraw(ctx, x + w - 12 - 92 - 7, y + 20.5, 92, +v, S);
+      else if (['sí', 'si', 'on', 'activado', 'encendido'].includes(v)) toggleDraw(ctx, x + w - 12 - 36, y + 10, true);
+      else if (['no', 'off', 'apagado', 'desactivado'].includes(v)) toggleDraw(ctx, x + w - 12 - 36, y + 10, false);
+      else if (v) label(ctx, val, x + w - 12, y + 20.5, 500, 13, C.mute, 0, 'right');
+    } };
+  }
+  function swatchRow(ctx, x, y, names, sel, s, S) {
+    const gap = s >= 44 ? 12 : 8, r = s >= 44 ? 13 : 11;
+    names.forEach((n, i) => {
+      const sx = x + i * (s + gap); ctx.save(); ctx.beginPath(); rrPath(ctx, sx, y, s, s, r); ctx.clip(); drawSky(ctx, n, sx, y, s, s, S); ctx.restore();
+      if (i + 1 === sel) {
+        ctx.strokeStyle = C.ink; ctx.lineWidth = 1.5; ctx.beginPath(); rrPath(ctx, sx - 2.75, y - 2.75, s + 5.5, s + 5.5, r + 2.75); ctx.stroke();
+        if (s >= 40) { ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.4)'; ctx.shadowBlur = 2 * S; ctx.shadowOffsetY = 1 * S; ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(sx + s / 2 - 7, y + s / 2 - 1); ctx.lineTo(sx + s / 2 - 2, y + s / 2 + 4); ctx.lineTo(sx + s / 2 + 7, y + s / 2 - 5); ctx.stroke(); ctx.restore(); }
+      }
+    });
+    return names.length * (s + gap) - gap;
   }
 
-  // ---------- Composición: forma + texto ----------
+  // ---------- Datos ----------
+  piece({ id: 'semana', group: 'datos', name: 'Esta semana · 3 de 5',
+    f: [fText('eyebrow', 'Encima'), fText('value', 'Dato', { hint: 'Con | el resto pasa a gris: 3 | de 5.' }), fText('caption', 'Debajo'), fText('bars', 'Alto de las barras', { hint: 'En porcentaje, separados por espacios.' }), fText('on', 'Barras de color', { hint: 'Su número de orden: 1 3 5.' }), fText('labels', 'Nombres bajo las barras', { hint: 'Opcional: L M M J V.' }), fColor('c1', 'Barra, arriba'), fColor('c2', 'Barra, abajo'), fSurf(), fTone(), fNum('width', 'Ancho', 200, 560)],
+    d: { eyebrow: 'Esta semana', value: '3 de 5', caption: 'veces empezaste cuando sonó', bars: '70 40 90 30 60', on: '1 3 5', labels: '', c1: '#F7C9A4', c2: '#F2A3C6', surface: 'white', tone: 'ink', width: 280 },
+    lam: { eyebrow: 'La app', title: 'Al cerrar la semana, | cada persona ve cuántas veces empezó.', sub: '' },
+    build(ctx, p) {
+      const t = tone(p), W = p.width, pad = 18, iw = W - pad * 2;
+      const A = Lx(ctx, p.eyebrow, T(13, 400, { main: t.soft, soft: t.soft, maxW: iw })), Bv = Lx(ctx, p.value, T(44, 600, { em: -.04, lh: 1, main: t.main, soft: t.soft, maxW: iw })), Cc = Lx(ctx, p.caption, T(13, 400, { main: t.soft, soft: t.soft, maxW: iw }));
+      const vals = nums(p.bars), on = new Set(nums(p.on)), labs = words(p.labels);
+      const items = [A && { h: A.height, L: A }, Bv && { h: Bv.height, L: Bv }, Cc && { h: Cc.height, L: Cc, mt: Bv ? 6 : 12 }, vals.length && { h: 76, bars: 1 }, vals.length && labs.length && { h: 15, labs: 1, mt: 6 }].filter(Boolean);
+      const h = col(items, 12) + pad * 2;
+      return { w: W, h, paint(ctx, S, st) {
+        surface(ctx, p.surface, 0, 0, W, h, 18, S, st.shadow);
+        const n = vals.length, bw = (iw - 8 * (n - 1)) / n;
+        for (const it of items) {
+          const y = pad + it.y;
+          if (it.L) drawL(ctx, it.L, pad, y);
+          else if (it.bars) vals.forEach((v, i) => { const bh = clamp(v, 6, 100) / 100 * 76, bx = pad + i * (bw + 8), by = y + 76 - bh; ctx.beginPath(); rrPath(ctx, bx, by, bw, bh, [8, 8, 4, 4]); if (on.has(i + 1)) { const g = ctx.createLinearGradient(0, by, 0, by + bh); g.addColorStop(0, p.c1); g.addColorStop(1, p.c2); ctx.fillStyle = g; } else ctx.fillStyle = OFF(p.surface); ctx.fill(); });
+          else if (it.labs) labs.slice(0, n).forEach((s, i) => label(ctx, s, pad + i * (bw + 8) + bw / 2, y + 7.5, 500, 11, t.soft, 0, 'center'));
+        }
+      } };
+    } });
+
+  piece({ id: 'prueba', group: 'datos', name: 'Contador de la prueba',
+    f: [fText('eyebrow', 'Encima'), fArea('cells', 'Casillas', { hint: 'Una por línea: número | texto. De 2 a 6.' }), fArea('caption', 'Debajo'), fSurf(), fTone(), fNum('width', 'Ancho', 220, 600)],
+    d: { eyebrow: 'La prueba', cells: '04 | día\n21 | días\nA | semana\n12 | relevos', caption: 'Esta semana el Tag va donde empiezas.', surface: 'white', tone: 'ink', width: 300 },
+    build(ctx, p) {
+      const t = tone(p), W = p.width, pad = 18, iw = W - pad * 2; const cs = cells(p.cells).slice(0, 6); const n = Math.max(1, cs.length), cw = (iw - 6 * (n - 1)) / n;
+      const A = Lx(ctx, p.eyebrow, T(13, 400, { main: t.soft, soft: t.soft, maxW: iw })), Cc = Lx(ctx, p.caption, T(13, 400, { main: t.soft, soft: t.soft, maxW: iw }));
+      const items = [A && { h: A.height, L: A }, cs.length && { h: 57.4, grid: 1 }, Cc && { h: Cc.height, L: Cc }].filter(Boolean);
+      const h = col(items, 12) + pad * 2;
+      return { w: W, h, paint(ctx, S, st) {
+        surface(ctx, p.surface, 0, 0, W, h, 18, S, st.shadow);
+        for (const it of items) { const y = pad + it.y; if (it.L) drawL(ctx, it.L, pad, y); else cs.forEach(([num, txt], i) => { const x = pad + i * (cw + 6); ctx.fillStyle = CELL(p.surface); ctx.beginPath(); rrPath(ctx, x, y, cw, 57.4, 12); ctx.fill(); const Ln = layout(ctx, num || '', T(24, 600, { em: -.03, lh: 1.1, main: t.main })); drawL(ctx, Ln, x, y + 8, 'center', cw); const Lt = layout(ctx, txt || '', T(10, 400, { main: t.soft })); drawL(ctx, Lt, x, y + 8 + 26.4, 'center', cw); }); }
+      } };
+    } });
+
+  piece({ id: 'senal', group: 'datos', name: 'Próxima señal',
+    f: [fText('chip', 'Etiqueta'), fArea('title', 'Título'), fText('button', 'Botón'), fSurf(), fTone(), fNum('width', 'Ancho', 200, 480)],
+    d: { chip: 'Próxima señal', title: 'Suena en\n18 minutos', button: 'Ver mi relevo', surface: 'sky:aura-soft', tone: 'ink', width: 260 },
+    build(ctx, p) {
+      const t = tone(p), W = p.width, pad = 18, iw = W - pad * 2; const Lt = Lx(ctx, p.title, T(30, 600, { em: -.03, lh: 1.05, main: t.main, soft: t.soft, maxW: iw }));
+      const items = [p.chip && { h: 20, chip: 1 }, Lt && { h: Lt.height, L: Lt }, p.button && { h: 40, btn: 1 }].filter(Boolean);
+      const h = col(items, 10) + pad * 2;
+      return { w: W, h, paint(ctx, S, st) {
+        surface(ctx, p.surface, 0, 0, W, h, 18, S, st.shadow);
+        for (const it of items) { const y = pad + it.y; if (it.chip) badge(ctx, p.chip, pad, y, C.white); else if (it.L) drawL(ctx, it.L, pad, y); else pill(ctx, p.button, pad, y); }
+      } };
+    } });
+
+  piece({ id: 'dato', group: 'datos', name: 'Número grande',
+    f: [fText('eyebrow', 'Encima'), fText('number', 'Número'), fText('unit', 'Unidad'), fArea('caption', 'Debajo'), fNum('size', 'Tamaño del número', 48, 280), fNum('width', 'Ancho del texto', 160, 900), fAlign(), fTone(), fSurf()],
+    d: { eyebrow: 'Encuesta', number: '53', unit: '', caption: 'respuestas sobre el tiempo\n| que se va en el teléfono', size: 160, width: 460, align: 'left', tone: 'ink', surface: 'none' },
+    lam: { eyebrow: '', title: '', sub: '' }, shadow: false,
+    build(ctx, p) {
+      const t = tone(p), s = p.size, cen = p.align === 'center';
+      const A = Lx(ctx, p.eyebrow, T(Math.max(13, s * .1), 600, { main: t.soft, soft: t.soft }));
+      const nw = textW(ctx, p.number || '', 600, s, -.05), uw = p.unit ? textW(ctx, p.unit, 600, s * .37, -.02) + s * .12 : 0;
+      const Cc = Lx(ctx, p.caption, T(Math.max(14, s * .13), 500, { lh: 1.25, em: -.015, main: t.main, soft: t.soft, maxW: p.width, balance: true }));
+      const cw = Math.max(nw + uw, A ? A.width : 0, Cc ? Cc.width : 0); const pad = p.surface === 'none' ? 0 : Math.round(s * .22);
+      const items = [A && { h: A.height, L: A }, { h: s * .95, num: 1, mt: s * .06 }, Cc && { h: Cc.height, L: Cc, mt: s * .1 }].filter(Boolean);
+      const W = cw + pad * 2, h = col(items, s * .06) + pad * 2;
+      return { w: W, h, paint(ctx, S, st) {
+        surface(ctx, p.surface, 0, 0, W, h, Math.max(18, s * .14), S, st.shadow);
+        for (const it of items) {
+          const y = pad + it.y;
+          if (it.L) drawL(ctx, it.L, pad, y, cen ? 'center' : 'left', cw);
+          else { setF(ctx, 600, s, -.05); const [asc, desc] = fm(ctx); const base = y + (s * .95 - (asc + desc)) / 2 + asc; const x0 = pad + (cen ? (cw - nw - uw) / 2 : 0); ctx.fillStyle = t.main; ctx.fillText(p.number || '', x0, base); if (p.unit) { setF(ctx, 600, s * .37, -.02); ctx.fillText(p.unit, x0 + nw + s * .12, base); } }
+        }
+      } };
+    } });
+
+  piece({ id: 'anillo', group: 'datos', name: 'Anillo de avance',
+    f: [fText('value', 'Valor'), fText('total', 'Total'), fText('unit', 'Unidad'), fText('caption', 'Debajo (opcional)'), fColor('c1', 'Inicio del arco'), fColor('c2', 'Final del arco'), fNum('size', 'Tamaño', 120, 360), fNum('stroke', 'Grosor', 6, 40), fSurf(), fTone()],
+    d: { value: '12', total: '30', unit: 'min', caption: 'en Instagram y TikTok', c1: '#F7C9A4', c2: '#F2A3C6', size: 200, stroke: 16, surface: 'none', tone: 'ink' },
+    shadow: false,
+    build(ctx, p) {
+      const t = tone(p), s = p.size, pad = p.surface === 'none' ? 0 : 22; const Cc = Lx(ctx, p.caption, T(13, 400, { main: t.soft, soft: t.soft, maxW: s * 1.3 }));
+      const W = Math.max(s, Cc ? Cc.width : 0) + pad * 2, h = s + (Cc ? 12 + Cc.height : 0) + pad * 2;
+      return { w: W, h, paint(ctx, S, st) {
+        surface(ctx, p.surface, 0, 0, W, h, 22, S, st.shadow);
+        const cx = W / 2, cy = pad + s / 2, r = (s - p.stroke) / 2; const v = parseFloat(p.value) || 0, tot = parseFloat(p.total) || 1; const f = clamp(v / tot, 0, 1);
+        ctx.lineWidth = p.stroke; ctx.lineCap = 'round'; ctx.strokeStyle = OFF(p.surface); ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+        if (f > 0) { const cap = (p.stroke / 2) / r; const a0 = -Math.PI / 2; let g; if (ctx.createConicGradient) { g = ctx.createConicGradient(a0 - cap, cx, cy); g.addColorStop(0, p.c1); g.addColorStop(clamp((f * Math.PI * 2 + cap * 2) / (Math.PI * 2), 0, 1), p.c2); g.addColorStop(1, p.c2); } else { g = ctx.createLinearGradient(cx, cy - r, cx, cy + r); g.addColorStop(0, p.c1); g.addColorStop(1, p.c2); } ctx.strokeStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r, a0, a0 + f * Math.PI * 2 * .9999); ctx.stroke(); }
+        const big = s * .27; label(ctx, p.value, cx, cy - s * .04, 600, big, t.main, -.05, 'center');
+        label(ctx, `de ${p.total} ${p.unit}`.trim(), cx, cy + big * .62, 500, Math.max(11, s * .068), t.soft, 0, 'center');
+        if (Cc) drawL(ctx, Cc, 0, pad + s + 12, 'center', W);
+      } };
+    } });
+
+  piece({ id: 'progreso', group: 'datos', name: 'Relevo contando',
+    f: [fText('chip', 'Etiqueta'), fText('right', 'A la derecha'), fText('title', 'Actividad'), fNum('pct', 'Avance', 0, 100), fSurf(), fNum('width', 'Ancho', 200, 520)],
+    d: { chip: 'Contando', right: '12 de 30 min', title: 'Leer 10 páginas', pct: 40, surface: 'sky:aura-soft', width: 280 },
+    build(ctx, p) { return asPiece(progressBuild(ctx, p)); } });
+
+  piece({ id: 'apps', group: 'datos', name: 'Tiempo por app',
+    f: [fText('eyebrow', 'Encima'), fText('total', 'Total'), fArea('rows', 'Filas', { hint: 'Una por línea: app | minutos.' }), fText('unit', 'Unidad'), fColor('c1', 'Barra, inicio'), fColor('c2', 'Barra, final'), fSurf(), fTone(), fNum('width', 'Ancho', 220, 560)],
+    d: { eyebrow: 'Hoy, con el relevo activo', total: '25 min', rows: 'Instagram | 12\nTikTok | 8\nYouTube | 5', unit: 'min', c1: '#F7C9A4', c2: '#F2A3C6', surface: 'white', tone: 'ink', width: 300 },
+    build(ctx, p) {
+      const t = tone(p), W = p.width, pad = 18, iw = W - pad * 2; const rs = cells(p.rows).slice(0, 8); const max = Math.max(1, ...rs.map((r) => parseFloat(r[1]) || 0));
+      const A = Lx(ctx, p.eyebrow, T(13, 400, { main: t.soft, soft: t.soft, maxW: iw })), Bt = Lx(ctx, p.total, T(34, 600, { em: -.04, lh: 1, main: t.main, soft: t.soft, maxW: iw }));
+      const items = [A && { h: A.height, L: A }, Bt && { h: Bt.height, L: Bt, mt: 6 }, ...rs.map((r, i) => ({ h: 33.5, row: r, mt: i ? 10 : 16 }))].filter(Boolean);
+      const h = col(items, 12) + pad * 2;
+      return { w: W, h, paint(ctx, S, st) {
+        surface(ctx, p.surface, 0, 0, W, h, 18, S, st.shadow);
+        for (const it of items) {
+          const y = pad + it.y; if (it.L) { drawL(ctx, it.L, pad, y); continue; }
+          const [name, v] = it.row; label(ctx, name, pad, y + 9.75, 500, 13, t.main); label(ctx, `${v || 0} ${p.unit}`.trim(), W - pad, y + 9.75, 400, 13, t.soft, 0, 'right');
+          ctx.fillStyle = OFF(p.surface); ctx.beginPath(); rrPath(ctx, pad, y + 25.5, iw, 8, 4); ctx.fill();
+          const bw = Math.max(8, iw * (parseFloat(v) || 0) / max); const g = ctx.createLinearGradient(pad, 0, pad + bw, 0); g.addColorStop(0, p.c1); g.addColorStop(1, p.c2); ctx.fillStyle = g; ctx.beginPath(); rrPath(ctx, pad, y + 25.5, bw, 8, 4); ctx.fill();
+        }
+      } };
+    } });
+
+  // ---------- Fichas y frases ----------
+  piece({ id: 'ficha', group: 'fichas', name: 'Ficha con ícono',
+    f: [fArea('text', 'Texto'), fTile(), fIcon(), fSel('side', 'Cuadro', [['right', 'A la derecha'], ['left', 'A la izquierda']]), fSel('border', 'Borde', [['none', 'Sin borde'], ['line', 'Fino'], ['ink', 'En tinta']]), fSurf()],
+    d: { text: 'Cuenta tu tiempo\nen las apps que eliges', tile: 'butter', icon: 'time', side: 'right', border: 'none', surface: 'white' },
+    build(ctx, p) { return asPiece(chipBuild(ctx, p)); } });
+
+  piece({ id: 'escalera', group: 'fichas', name: 'Escalera de fichas',
+    f: [fArea('items', 'Fichas', { hint: 'Una por línea: texto | color | ícono. « / » corta la línea.', rows: 5 }), fNum('step', 'Escalón (%)', 0, 30), fNum('width', 'Ancho', 400, 1100), fSurf()],
+    d: { items: 'Cuenta tu tiempo / en las apps que eliges | butter | time\nTe recuerda / tu primer paso | sky | step\nSuena donde / empiezas | lime | tag\nTú decides / qué hacer | blush | flag', step: 18, width: 760, surface: 'white' },
+    lam: { eyebrow: 'Qué hace Relevo', title: 'Cuatro peldaños, | del uso del teléfono a empezar.', sub: '' },
+    build(ctx, p) {
+      const chips = cells(p.items).slice(0, 6).map(([tx, tl, ic]) => chipBuild(ctx, { text: brk(tx), tile: tl || 'butter', icon: ICONS[ic] ? ic : 'spark', surface: p.surface }));
+      const W = Math.max(p.width, ...chips.map((c) => c.w)); let y = 0; const pos = chips.map((c, i) => { const r = { x: Math.min(i * p.step / 100 * W, W - c.w), y }; y += c.h + 14; return r; });
+      return { w: W, h: Math.max(1, y - 14), paint(ctx, S, st) { chips.forEach((c, i) => c.paint(ctx, pos[i].x, pos[i].y, S, st.shadow)); } };
+    } });
+
+  piece({ id: 'sonido', group: 'fichas', name: 'Elige con qué suena',
+    f: [fText('eyebrow', 'Encima'), fArea('items', 'Opciones', { hint: 'Una por línea: texto | color | ícono.' }), fNum('selected', 'Elegida', 0, 6), fSurf(), fNum('width', 'Ancho', 200, 520)],
+    d: { eyebrow: 'Elige con qué suena', items: 'El Tag | lime | tag\nEl parlante | sky | speaker', selected: 1, surface: 'white', width: 280 },
+    build(ctx, p) {
+      const W = p.width, pad = 18, iw = W - pad * 2; const A = Lx(ctx, p.eyebrow, T(13, 400, { main: C.mute, maxW: iw }));
+      const chips = cells(p.items).slice(0, 5).map(([tx, tl, ic], i) => chipBuild(ctx, { text: brk(tx), tile: tl || 'lime', icon: ICONS[ic] ? ic : 'tag', ts: 38, border: i + 1 === +p.selected ? 'ink' : 'line', surface: 'white' }));
+      const items = [A && { h: A.height, L: A }, ...chips.map((c) => ({ h: c.h, c }))].filter(Boolean); const h = col(items, 12) + pad * 2;
+      return { w: W, h, paint(ctx, S, st) { surface(ctx, p.surface, 0, 0, W, h, 18, S, st.shadow); for (const it of items) { const y = pad + it.y; if (it.L) drawL(ctx, it.L, pad, y); else it.c.paint(ctx, pad, y, S, false, iw); } } };
+    } });
+
+  piece({ id: 'cuadro', group: 'fichas', name: 'Cuadro con ícono',
+    f: [fTile(), fIcon(), fNum('size', 'Tamaño', 24, 240)],
+    d: { tile: 'butter', icon: 'book', size: 64 }, rot: -10,
+    build(ctx, p) { const s = p.size; return { w: s, h: s, paint(ctx, S, st) { tileBox(ctx, 0, 0, s, p.tile, p.icon, s * .25, S, st.shadow); } }; } });
+
+  piece({ id: 'frase', group: 'fichas', name: 'Frase con íconos',
+    f: [fArea('text', 'Frase', { rows: 5, hint: 'Íconos con {ícono color}, negrita con **…**.' }), fNum('size', 'Tamaño', 14, 96), fNum('width', 'Ancho', 240, 1400), fAlign(), fTone(), fSurf()],
+    d: { text: '**relevo** cuenta tu tiempo en {time butter} las apps que eliges, te recuerda {step sky} tu primer paso y suena en {tag lime} el Tag, junto a donde empiezas, para que {flag blush} decidas tú.', size: 46, width: 900, align: 'left', tone: 'ink', surface: 'none' },
+    shadow: false, lam: { eyebrow: '', title: '', sub: '' },
+    build(ctx, p) {
+      const t = tone(p); const L = layout(ctx, p.text, T(p.size, 500, { bw: 600, em: -.025, lh: 1.16, main: t.main, soft: t.soft, maxW: p.width }));
+      const pad = p.surface === 'none' ? 0 : Math.round(p.size * .8); const W = L.width + pad * 2, h = L.height + pad * 2;
+      return { w: W, h, paint(ctx, S, st) { surface(ctx, p.surface, 0, 0, W, h, 28, S, st.shadow); drawL(ctx, L, pad, pad, p.align, L.width); } };
+    } });
+
+  piece({ id: 'titular', group: 'fichas', name: 'Titular en dos tonos',
+    f: [fText('eyebrow', 'Encima'), fArea('title', 'Título', { hint: 'Lo que va después de | queda en gris.' }), fArea('lead', 'Bajada'), fNum('size', 'Tamaño', 20, 120), fNum('width', 'Ancho', 240, 1400), fAlign(), fTone()],
+    d: { eyebrow: 'Qué hace Relevo', title: 'Cuatro peldaños, | del uso del teléfono a empezar.', lead: '', size: 44, width: 640, align: 'left', tone: 'ink' },
+    shadow: false, lam: { eyebrow: '', title: '', sub: '' },
+    build(ctx, p) {
+      const t = tone(p), s = p.size, k = s / 44;
+      const A = Lx(ctx, p.eyebrow, T(Math.max(12, 13 * k), 600, { main: t.soft, soft: t.soft, maxW: p.width })), Bt = Lx(ctx, p.title, T(s, 600, { em: -.025, lh: 1.04, main: t.main, soft: t.soft, maxW: p.width, balance: true })), Cl = Lx(ctx, p.lead, T(Math.max(13, 17 * k), 400, { main: t.soft, soft: t.soft, maxW: p.width }));
+      const items = [A && { h: A.height, L: A }, Bt && { h: Bt.height, L: Bt }, Cl && { h: Cl.height, L: Cl, mt: 12 * k }].filter(Boolean);
+      const W = Math.max(1, ...items.map((i) => i.L.width)), h = Math.max(1, col(items, 8 * k));
+      return { w: W, h, paint(ctx) { for (const it of items) drawL(ctx, it.L, 0, it.y, p.align, W); } };
+    } });
+
+  // ---------- Tarjetas ----------
+  piece({ id: 'nota', group: 'tarjetas', name: 'Nota amarilla',
+    f: [fText('top', 'Arriba'), fArea('main', 'Texto principal'), fText('bottom', 'Abajo'), fTile('color', 'Color', { extra: ['note', 'white'] }), fNum('width', 'Ancho', 150, 420)],
+    d: { top: 'Tu primer paso', main: 'Abrir el libro en el marcador', bottom: 'Junto al velador', color: 'note', width: 210 }, rot: -7,
+    build(ctx, p) {
+      const W = p.width, iw = W - 32; const soft = 'rgba(20,19,18,.6)';
+      const A = Lx(ctx, p.top, T(11, 400, { main: soft, maxW: iw })), Bm = Lx(ctx, p.main, T(17, 600, { em: -.01, lh: 1.15, maxW: iw })), Cb = Lx(ctx, p.bottom, T(11, 400, { main: soft, maxW: iw }));
+      const items = [A && { h: A.height, L: A }, Bm && { h: Bm.height, L: Bm }, Cb && { h: Cb.height, L: Cb }].filter(Boolean); const h = col(items, 4) + 30;
+      return { w: W, h, paint(ctx, S, st) { surface(ctx, p.color === 'note' ? NOTE : (TILE[p.color] || C.white), 0, 0, W, h, 16, S, st.shadow); for (const it of items) drawL(ctx, it.L, 16, 14 + it.y); } };
+    } });
+
+  piece({ id: 'etiqueta', group: 'tarjetas', name: 'Etiqueta de vidrio',
+    f: [fText('title', 'Título'), fText('sub', 'Debajo'), fSky('thumb', 'Miniatura'), fSurf()],
+    d: { title: 'Leer', sub: '5 relevos esta semana', thumb: 'clouds-blue', surface: 'glass' }, rot: 5,
+    build(ctx, p) {
+      const A = layout(ctx, p.title, T(16, 600, { lh: 1.1 })), Bs = Lx(ctx, p.sub, T(12, 400, { main: C.mute }));
+      const tw = Math.max(A.width, Bs ? Bs.width : 0); const W = 8 + 48 + 10 + tw + 14, h = 64;
+      return { w: W, h, paint(ctx, S, st) {
+        surface(ctx, p.surface, 0, 0, W, h, 16, S, st.shadow);
+        ctx.save(); ctx.beginPath(); rrPath(ctx, 8, 8, 48, 48, 12); ctx.clip(); drawSky(ctx, p.thumb, 8, 8, 48, 48, S); ctx.restore();
+        const th = A.height + (Bs ? Bs.height : 0); drawL(ctx, A, 66, (h - th) / 2); if (Bs) drawL(ctx, Bs, 66, (h - th) / 2 + A.height);
+      } };
+    } });
+
+  piece({ id: 'despues', group: 'tarjetas', name: 'Suena después de',
+    f: [fText('top', 'Arriba'), fText('main', 'Dato'), fText('bottom', 'Abajo'), fSurf(), fNum('width', 'Ancho', 140, 400)],
+    d: { top: 'Suena después de', main: '30 min', bottom: 'en Instagram y TikTok', surface: 'white', width: 180 }, rot: 8,
+    build(ctx, p) {
+      const W = p.width, iw = W - 32; const A = Lx(ctx, p.top, T(12, 400, { main: C.mute, maxW: iw })), Bm = Lx(ctx, p.main, T(30, 600, { em: -.04, lh: 1.5, maxW: iw })), Cb = Lx(ctx, p.bottom, T(12, 400, { main: C.mute, maxW: iw }));
+      const items = [A && { h: A.height, L: A }, Bm && { h: Bm.height, L: Bm }, Cb && { h: Cb.height, L: Cb }].filter(Boolean); const h = col(items, 4) + 28;
+      return { w: W, h, paint(ctx, S, st) { surface(ctx, p.surface, 0, 0, W, h, 18, S, st.shadow); for (const it of items) drawL(ctx, it.L, 16, 14 + it.y); } };
+    } });
+
+  piece({ id: 'actividad', group: 'tarjetas', name: 'Actividad con cielo',
+    f: [fText('title', 'Actividad'), fText('sub', 'Debajo'), fSky(), fNum('width', 'Ancho', 120, 420)],
+    d: { title: 'Leer 10 páginas', sub: '5 relevos', sky: 'clouds-blue', width: 200 },
+    build(ctx, p) { const W = p.width, h = Math.round(W * 1.02); return { w: W, h, paint(ctx, S, st) { actPaint(ctx, 0, 0, W, h, [p.title, p.sub, p.sky], {}, S, st.shadow); } }; } });
+
+  piece({ id: 'actividades', group: 'tarjetas', name: 'Actividades y crear',
+    f: [fArea('items', 'Actividades', { rows: 5, hint: 'Una por línea: título | debajo | cielo (rose, amber, ember, clouds-blue, moss, sunset, lilac, mint, night, mist, aura-soft).' }), fNum('columns', 'Columnas', 1, 6), fNum('width', 'Ancho', 320, 1400), fCheck('create', 'Con la barra «Crear una actividad»'), fText('createText', 'Texto de la barra', { when: (p) => p.create })],
+    d: { items: 'Dormir a tiempo | 3 relevos | rose\nJugar una partida | 2 relevos | amber\nCocinar algo simple | 1 relevo | ember\nLeer 10 páginas | 5 relevos | clouds-blue\nSalir a caminar | 4 relevos | moss', columns: 5, width: 980, create: true, createText: 'Crear una actividad' },
+    lam: { eyebrow: 'Actividades', title: 'Cada actividad tiene su color, | como un cielo distinto.', sub: '' },
+    build(ctx, p) {
+      const as = cells(p.items).slice(0, 12); const n = clamp(+p.columns || 1, 1, 6), W = p.width, tw = (W - 12 * (n - 1)) / n, th = tw * 1.02; const rows = Math.ceil(as.length / n) || 1;
+      const h = rows * th + (rows - 1) * 12 + (p.create ? 12 + 58 : 0);
+      return { w: W, h, paint(ctx, S, st) {
+        as.forEach((a, i) => actPaint(ctx, (i % n) * (tw + 12), Math.floor(i / n) * (th + 12), tw, th, a, {}, S, st.shadow));
+        if (p.create) createPaint(ctx, 0, h - 58, W, p.createText, ['#FBE68A', '#FCEFD8', '#F9D7E6', '#E3D6FA'], S, st.shadow);
+      } };
+    } });
+
+  function createPaint(ctx, x, y, w, text, g4, S, sh) {
+    const g = ctx.createLinearGradient(x, 0, x + w, 0); [0, .45, .75, 1].forEach((s, i) => g.addColorStop(s, g4[i]));
+    ctx.fillStyle = g; ctx.beginPath(); rrPath(ctx, x, y, w, 58, 18); ctx.fill();
+    label(ctx, text, x + 18, y + 29, 500, 15, C.ink);
+    surface(ctx, 'white', x + w - 10 - 38, y + 10, 38, 38, 12, S, sh);
+    ctx.strokeStyle = C.ink; ctx.lineWidth = 1.4; ctx.lineCap = 'round'; const cx = x + w - 10 - 19, cy = y + 29; ctx.beginPath(); ctx.moveTo(cx - 6.5, cy); ctx.lineTo(cx + 6.5, cy); ctx.moveTo(cx, cy - 6.5); ctx.lineTo(cx, cy + 6.5); ctx.stroke();
+  }
+  piece({ id: 'crear', group: 'tarjetas', name: 'Crear una actividad',
+    f: [fText('text', 'Texto'), fColor('g1', 'Color 1'), fColor('g2', 'Color 2'), fColor('g3', 'Color 3'), fColor('g4', 'Color 4'), fNum('width', 'Ancho', 220, 900)],
+    d: { text: 'Crear una actividad', g1: '#FBE68A', g2: '#FCEFD8', g3: '#F9D7E6', g4: '#E3D6FA', width: 420 },
+    build(ctx, p) { return { w: p.width, h: 58, paint(ctx, S, st) { createPaint(ctx, 0, 0, p.width, p.text, [p.g1, p.g2, p.g3, p.g4], S, st.shadow); } }; } });
+
+  piece({ id: 'fila', group: 'tarjetas', name: 'Fila con ícono',
+    f: [fText('title', 'Título'), fText('sub', 'Debajo'), fTile(), fIcon(), fSurf()],
+    d: { title: 'Suena en el Tag', sub: 'en 18 minutos, en el velador', tile: 'lime', icon: 'tag', surface: 'white' },
+    build(ctx, p) { return asPiece(rowBuild(ctx, p)); } });
+
+  piece({ id: 'lista', group: 'tarjetas', name: 'Lista con íconos',
+    f: [fArea('items', 'Puntos', { rows: 5, hint: 'Uno por línea: ícono | color | texto. **Negrita** al inicio.' }), fNum('size', 'Tamaño del texto', 12, 32), fNum('width', 'Ancho', 240, 900), fTone()],
+    d: { items: 'spark | butter | **Su color:** cinco auras y los cielos de cada actividad.\nchart | sky | **Su intensidad** y si se mueve o queda quieta.\nflag | blush | **Apagarla:** la app funciona igual sin ella.', size: 16, width: 460, tone: 'ink' },
+    shadow: false,
+    build(ctx, p) {
+      const t = tone(p), k = p.size / 16, ts = 34 * k; const its = cells(p.items).slice(0, 10).map(([ic, tl, ...rest]) => ({ ic: ICONS[ic] ? ic : 'spark', tl: tl || 'butter', L: layout(ctx, rest.join(' | '), T(p.size, 400, { bw: 600, main: t.main, soft: t.soft, maxW: p.width - ts - 12 * k })) }));
+      const items = its.map((it) => ({ h: Math.max(ts, it.L.height), it })); const h = Math.max(1, col(items, 10 * k));
+      return { w: p.width, h, paint(ctx) { for (const { y, it } of items) { tileBox(ctx, 0, y, ts, it.tl, null, 10 * k); drawIcon(ctx, it.ic, 7 * k, y + 7 * k, 20 * k); drawL(ctx, it.L, ts + 12 * k, y + (it.L.lines.length === 1 ? (ts - it.L.lh) / 2 : 0)); } } };
+    } });
+
+  piece({ id: 'aviso', group: 'tarjetas', name: 'Nota destacada',
+    f: [fArea('text', 'Texto', { rows: 4, hint: '**Negrita** para la idea principal.' }), fSurf(), fNum('width', 'Ancho', 220, 900)],
+    d: { text: '**El Tag no emite luz.** Solo suena, junto a donde empiezas. El aura vive en la pantalla: acompaña el estado del relevo y le da carácter a la app, pero no es una señal del objeto.', surface: 'white', width: 460 },
+    build(ctx, p) { const L = layout(ctx, p.text, T(15, 400, { bw: 600, maxW: p.width - 32 })); const h = L.height + 28; return { w: p.width, h, paint(ctx, S, st) { surface(ctx, p.surface, 0, 0, p.width, h, 18, S, st.shadow); drawL(ctx, L, 16, 14); } }; } });
+
+  // ---------- Controles ----------
+  piece({ id: 'boton', group: 'controles', name: 'Botón',
+    f: [fSel('kind', 'Tipo', [['negro', 'Negro'], ['contorno', 'Contorno'], ['grande', 'Grande con flecha'], ['empezar', 'Texto y flecha redonda'], ['etiqueta', 'Etiqueta pequeña'], ['conteo', 'Conteo']]), fText('text', 'Texto'), fTile('color', 'Color', { extra: ['white'], when: (p) => p.kind === 'etiqueta' || p.kind === 'conteo' })],
+    d: { kind: 'negro', text: 'Voy a empezar', color: 'lime' }, shadow: false,
+    build(ctx, p) {
+      const k = p.kind, s = p.text || '';
+      if (k === 'grande') { const w = textW(ctx, s, 600, 16) + 24 + 22 + 28; return { w, h: 52, paint(ctx) { ctx.fillStyle = C.ink; ctx.beginPath(); rrPath(ctx, 0, 0, w, 52, 26); ctx.fill(); label(ctx, s, 24, 26, 600, 16, C.white); drawIcon(ctx, 'out', w - 22 - 18, 17, 18, C.white, 2); } }; }
+      if (k === 'empezar') { const tw = textW(ctx, s, 600, 13); const w = tw + 10 + 42; return { w, h: 42, paint(ctx) { label(ctx, s, 0, 21, 600, 13, C.ink); ctx.strokeStyle = C.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(w - 21, 21, 20, 0, Math.PI * 2); ctx.stroke(); drawIcon(ctx, 'arrow', w - 29, 13, 16, C.ink, 2); } }; }
+      if (k === 'etiqueta') { const w = badgeW(ctx, s); return { w, h: 20, paint(ctx) { badge(ctx, s, 0, 0, TILE[p.color] || C.white); } }; }
+      if (k === 'conteo') { const w = textW(ctx, s, 600, 11) + 14; return { w, h: 18.5, paint(ctx) { ctx.fillStyle = TILE[p.color] || C.white; ctx.beginPath(); rrPath(ctx, 0, 0, w, 18.5, 9.25); ctx.fill(); label(ctx, s, 7, 9.25, 600, 11, C.ink); } }; }
+      const w = pillW(ctx, s); return { w, h: 40, paint(ctx) { pill(ctx, s, 0, 0, { ghost: k === 'contorno' }); } };
+    } });
+
+  piece({ id: 'selector', group: 'controles', name: 'Selector de estados',
+    f: [fText('items', 'Opciones', { hint: 'Separadas por comas.' }), fNum('selected', 'Elegida', 1, 6)],
+    d: { items: 'En calma, Contando, Suena, Apagada', selected: 2 },
+    build(ctx, p) {
+      const its = String(p.items || '').split(',').map((s) => s.trim()).filter(Boolean).slice(0, 6); const ws = its.map((s) => textW(ctx, s, 600, 14) + 32); const W = ws.reduce((a, b) => a + b, 0) + 4 * (its.length - 1) + 8;
+      return { w: W, h: 47, paint(ctx, S, st) { surface(ctx, 'white', 0, 0, W, 47, 23.5, S, st.shadow); let x = 4; its.forEach((s, i) => { const on = i + 1 === +p.selected; if (on) { ctx.fillStyle = C.ink; ctx.beginPath(); rrPath(ctx, x, 4, ws[i], 39, 19.5); ctx.fill(); } label(ctx, s, x + 16, 23.5, 600, 14, on ? C.white : C.mute); x += ws[i] + 4; }); } };
+    } });
+
+  piece({ id: 'respuestas', group: 'controles', name: 'Respuestas en un toque',
+    f: [fText('question', 'Pregunta (opcional)'), fArea('items', 'Respuestas', { hint: 'Una por línea.' }), fNum('selected', 'Elegida', 0, 6), fNum('width', 'Ancho', 200, 520)],
+    d: { question: '¿Qué hiciste cuando sonó?', items: 'Empecé la actividad\nLo dejé para después\nCambié de idea', selected: 1, width: 280 }, shadow: false,
+    build(ctx, p) {
+      const W = p.width; const Q = Lx(ctx, p.question, T(13, 500, { maxW: W })); const os = lines(p.items).slice(0, 6).map((s, i) => optBuild(ctx, s, W, i + 1 === +p.selected));
+      const items = [Q && { h: Q.height, L: Q, mt: 0 }, ...os.map((o, i) => ({ h: o.h, o, mt: i === 0 && Q ? 12 : 7 }))].filter(Boolean); const h = Math.max(1, col(items, 7));
+      return { w: W, h, paint(ctx) { for (const it of items) { if (it.L) drawL(ctx, it.L, 0, it.y, 'center', W); else it.o.paint(ctx, 0, it.y); } } };
+    } });
+
+  piece({ id: 'ajustes', group: 'controles', name: 'Ajustes con interruptores',
+    f: [fArea('rows', 'Filas', { hint: 'Una por línea: texto | sí, no o un número (barra).' }), fNum('width', 'Ancho', 200, 520)],
+    d: { rows: 'Intensidad | 70\nQue se mueva | sí\nMostrar el aura | sí', width: 280 },
+    build(ctx, p) { const rs = cells(p.rows).slice(0, 8).map(([n, v]) => setrowBuild(ctx, n, v, p.width)); const h = Math.max(1, rs.length * 41 + (rs.length - 1) * 8); return { w: p.width, h, paint(ctx, S, st) { rs.forEach((r, i) => r.paint(ctx, 0, i * 49, S, st.shadow)); } }; } });
+
+  piece({ id: 'colores', group: 'controles', name: 'Elegir color',
+    f: [fText('skies', 'Cielos', { hint: 'Separados por espacios: sunset rose amber clouds-blue ember lilac moss mint night aura-soft mist.' }), fNum('selected', 'Elegido', 0, 10), fSel('size', 'Tamaño', [['44', 'Grande'], ['36', 'Pequeño']])],
+    d: { skies: 'sunset rose amber clouds-blue ember', selected: 1, size: '44' }, shadow: false,
+    build(ctx, p) { const ns = words(p.skies).filter((n) => SKIES[n]).slice(0, 10); const s = +p.size; const gap = s >= 44 ? 12 : 8; const W = Math.max(s, ns.length * (s + gap) - gap) + 8; return { w: W, h: s + 8, paint(ctx, S) { swatchRow(ctx, 4, 4, ns, +p.selected, s, S); } }; } });
+
+  piece({ id: 'barra', group: 'controles', name: 'Barra de navegación',
+    f: [fText('icons', 'Íconos', { hint: 'Separados por espacios: home spark chart cal…' }), fNum('active', 'Activo', 0, 6), fTile('tile', 'Color del activo'), fSurf(), fNum('width', 'Ancho', 160, 520)],
+    d: { icons: 'home spark chart cal', active: 1, tile: 'butter', surface: 'glass', width: 268 },
+    build(ctx, p) { const ics = words(p.icons).filter((n) => ICONS[n]).slice(0, 6); return { w: p.width, h: 50, paint(ctx, S, st) { dockPaint(ctx, 0, 0, p.width, ics, +p.active, p.tile, p.surface, S, st.shadow); } }; } });
+
+  // ---------- Marca ----------
+  piece({ id: 'logotipo', group: 'marca', name: 'Logotipo',
+    f: [fText('text', 'Nombre'), fArea('tagline', 'Frase (opcional)'), fNum('size', 'Tamaño', 40, 320), fTone(), fCheck('aura', 'Con aura detrás')],
+    d: { text: 'relevo', tagline: 'De la pantalla | a lo que querías hacer.', size: 150, tone: 'ink', aura: false }, shadow: false,
+    lam: { eyebrow: '', title: '', sub: '' },
+    build(ctx, p) {
+      const t = tone(p), s = p.size; const nw = textW(ctx, p.text || '', 700, s, -.065); const Tg = Lx(ctx, p.tagline, T(Math.max(14, s * .13), 500, { lh: 1.25, em: -.01, main: t.main, soft: t.soft, maxW: Math.max(nw, s * 2.6) }));
+      const cw = Math.max(nw, Tg ? Tg.width : 0); const ch = s * .82 + (Tg ? s * .14 + Tg.height : 0); const ax = p.aura ? s * .9 : 0, ay = p.aura ? s * .8 : 0;
+      const W = cw + ax * 2, h = ch + ay * 2;
+      return { w: W, h, paint(ctx, S) {
+        if (p.aura) drawAura(ctx, 'halo', 0, 0, W, h, S);
+        setF(ctx, 700, s, -.065); const [asc, desc] = fm(ctx); const base = ay + (s * .82 - (asc + desc)) / 2 + asc; ctx.fillStyle = t.main; ctx.fillText(p.text || '', ax + (cw - nw) / 2, base);
+        if (Tg) drawL(ctx, Tg, ax, ay + s * .82 + s * .14, 'center', cw);
+      } };
+    } });
+
+  piece({ id: 'marca', group: 'marca', name: 'Marca de cuatro luces',
+    f: [fColor('c1', 'Izquierda'), fColor('c2', 'Derecha'), fColor('c3', 'Arriba'), fColor('c4', 'Abajo'), fSel('blend', 'Mezcla', [['multiply', 'Multiplicar, como en la app'], ['soft', 'Suave, transparente']]), fNum('size', 'Tamaño', 40, 600)],
+    d: { c1: '#FFD54A', c2: '#F6A3CB', c3: '#9DD6F4', c4: '#C5B2F6', blend: 'multiply', size: 220 }, shadow: false,
+    build(ctx, p) { return { w: p.size, h: p.size, paint(ctx) { markDraw(ctx, 0, 0, p.size, [p.c1, p.c2, p.c3, p.c4], p.blend); } }; } });
+
+  piece({ id: 'icono-app', group: 'marca', name: 'Ícono de la app',
+    f: [fSel('fill', 'Fondo', [['white', 'Blanco'], ['aura', 'Aura'], ['sky', 'Cielo'], ['glass', 'Vidrio']]), fSky('sky', 'Cielo', { when: (p) => p.fill === 'sky' }), fCheck('mark', 'Con la marca'), fSel('blend', 'Mezcla de la marca', [['multiply', 'Multiplicar'], ['soft', 'Suave']], { when: (p) => p.mark }), fNum('size', 'Tamaño', 64, 600)],
+    d: { fill: 'white', sky: 'aura-soft', mark: true, blend: 'multiply', size: 220 },
+    build(ctx, p) {
+      const s = p.size;
+      return { w: s, h: s, paint(ctx, S, st) {
+        const pathFn = (c, i = 0, dy = 0) => squirclePath(c, i, i + dy, s - 2 * i, s - 2 * i);
+        if (st.shadow) shadow(ctx, S, pathFn, SH.lift.map(([x, y, b, sp, a]) => [x, y * s / 88, b * s / 88, sp * s / 88, a]));
+        ctx.save(); ctx.beginPath(); pathFn(ctx); ctx.clip();
+        if (p.fill === 'aura') { ctx.fillStyle = C.paper; ctx.fillRect(0, 0, s, s); drawAura(ctx, 'card', 0, 0, s, s, S); } else if (p.fill === 'sky') drawSky(ctx, p.sky, 0, 0, s, s, S); else fillKind(ctx, p.fill === 'glass' ? 'glass' : 'white', 0, 0, s, s, S);
+        ctx.restore(); if (p.fill === 'glass') glassEdge(ctx, pathFn, 0, 0, s, s);
+        if (p.mark) markDraw(ctx, s * .22, s * .22, s * .56, undefined, p.blend);
+      } };
+    } });
+
+  piece({ id: 'iconos', group: 'marca', name: 'Juego de íconos',
+    f: [fSel('mode', 'Cuadros', [['colores', 'De colores'], ['uno', 'De un color'], ['sin', 'Sin cuadro']]), fTile('tile', 'Color', { when: (p) => p.mode === 'uno' }), fCheck('names', 'Con nombres'), fNum('columns', 'Columnas', 3, 9), fNum('size', 'Tamaño', 32, 120)],
+    d: { mode: 'colores', tile: 'butter', names: true, columns: 6, size: 56 }, shadow: false,
+    build(ctx, p) {
+      const n = clamp(+p.columns, 3, 9), s = p.size, gx = s * .45, lh = p.names ? 24 : 0; const rows = Math.ceil(ICON_LIST.length / n); const cw = s + gx;
+      const W = n * cw - gx, h = rows * (s + lh) + (rows - 1) * s * .35; const tk = Object.keys(TILE);
+      return { w: W, h, paint(ctx) {
+        ICON_LIST.forEach((ic, i) => { const x = (i % n) * cw, y = Math.floor(i / n) * (s + lh + s * .35); const tl = p.mode === 'sin' ? null : p.mode === 'uno' ? p.tile : tk[i % tk.length];
+          if (tl) tileBox(ctx, x, y, s, tl, ic, s * .24); else drawIcon(ctx, ic, x + s * .1, y + s * .1, s * .8);
+          if (p.names) label(ctx, ICONS[ic].n, x + s / 2, y + s + 13, 500, 11, C.mute, 0, 'center'); });
+      } };
+    } });
+
+  // ---------- Pantallas ----------
+  const PW = 300, PH = 650, PX = 16, PT = 14, PB = 12, PIW = 268;
+  function phoneShell(ctx, S, sh, bg, inner) {
+    const pathFn = (c, i = 0) => rrPath(c, i, i, PW - 2 * i, PH - 2 * i, Math.max(0, 38 - i));
+    if (sh) shadow(ctx, S, pathFn, SH.phone);
+    ctx.save(); ctx.beginPath(); pathFn(ctx); ctx.clip();
+    if (typeof bg === 'function') bg(); else { ctx.fillStyle = bg || C.paper; ctx.fillRect(0, 0, PW, PH); }
+    inner(); ctx.restore();
+  }
+  function statusBar(ctx, y, time) {
+    label(ctx, time || '9:41', PX + 8, y + 11, 600, 11, C.ink);
+    ctx.fillStyle = C.ink; ctx.beginPath(); rrPath(ctx, PW / 2 - 36, y + 1, 72, 20, 10); ctx.fill();
+    [[261, 4], [267, 6], [273, 8]].forEach(([x, hh]) => { ctx.beginPath(); rrPath(ctx, x, y + 15 - hh, 3, hh, 1); ctx.fill(); });
+  }
+  function homeInd(ctx, y, w = PIW * .34) { ctx.save(); ctx.globalAlpha = .9; ctx.fillStyle = C.ink; ctx.beginPath(); rrPath(ctx, PW / 2 - w / 2, y, w, 4, 2); ctx.fill(); ctx.restore(); }
+  function vstack(top, bottom, gap, items) {
+    const fixed = items.reduce((t, it) => t + (it.flex ? 0 : it.h), 0) + items.reduce((t, it, i) => t + (i ? it.mt ?? gap : 0), 0);
+    const free = Math.max(0, bottom - top - fixed), nf = items.filter((i) => i.flex).length, na = items.filter((i) => i.auto).length; let y = top;
+    items.forEach((it, i) => { if (i) y += it.mt ?? gap; if (it.auto && !nf) y += free / na; const h = it.flex ? free / nf : it.h; it.y = y; it.hh = h; y += h; });
+    items.forEach((it) => it.d && it.d(it.y, it.hh));
+  }
+  const back = (ctx, y, s = '‹ Volver') => label(ctx, s, PX, y + 10, 600, 12, C.ink);
+  const AURA_PICK = fSel('auraPal', 'Colores del aura', [['aura', 'Aura'], ['amanecer', 'Amanecer'], ['brisa', 'Brisa'], ['rubor', 'Rubor'], ['fondos', 'Mi fondo (de Fondos)']]);
+  function withPal(p, fn) { const keep = auraSource; auraSource = p.auraPal || 'aura'; try { fn(); } finally { auraSource = keep; } }
+  const screen = (o) => piece({ group: 'pantallas', pad: 72, lam: { eyebrow: 'La app', title: o.lamTitle || 'Una pantalla | de Relevo.', sub: '' }, ...o, f: [fText('time', 'Hora'), ...o.f], d: { time: '9:41', ...o.d } });
+
+  screen({ id: 'p-abrir', name: 'Pantalla · Al abrir', lamTitle: 'Al abrir, | el nombre enfoca sobre el aura.',
+    f: [fText('word', 'Nombre'), AURA_PICK], d: { word: 'relevo', auraPal: 'aura' },
+    build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { withPal(p, () => phoneShell(ctx, S, st.shadow, () => { ctx.fillStyle = C.paper; ctx.fillRect(0, 0, PW, PH); drawAura(ctx, 'phone', 0, 0, PW, PH, S); }, () => {
+      vstack(PT, PH - PB, 12, [{ h: 22, d: (y) => statusBar(ctx, y, p.time) }, { flex: 1, d: (y, h) => label(ctx, p.word, PW / 2, y + h / 2, 700, 56, C.ink, -.065, 'center') }, { h: 4, d: (y) => homeInd(ctx, y) }]);
+    })); } }; } });
+
+  screen({ id: 'p-bienvenida', name: 'Pantalla · Bienvenida', lamTitle: 'Bienvenida: | tarjetas inclinadas y avance en tres segmentos.',
+    f: [fArea('title', 'Título'), fText('ltitle', 'Etiqueta'), fText('lsub', 'Bajo la etiqueta'), fText('go', 'Botón'), fSky('card', 'Tarjeta grande'), fSky('thumb', 'Miniatura')],
+    d: { title: 'Tus ganas,\na un paso de distancia', ltitle: 'Abrir el libro', lsub: 'Tu primer paso', go: 'Empezar', card: 'clouds-blue', thumb: 'sunset' },
+    build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { phoneShell(ctx, S, st.shadow, C.paper, () => {
+      const Lt = layout(ctx, p.title, T(21, 600, { em: -.025, lh: 1.12, maxW: PIW }));
+      vstack(PT, PH - PB, 12, [
+        { h: 22, d: (y) => statusBar(ctx, y, p.time) },
+        { h: 3, d: (y) => { const w = (PIW - 12 - 12) / 3; [1, 1, 0].forEach((on, i) => { ctx.fillStyle = on ? C.ink : C.line; ctx.beginPath(); rrPath(ctx, PX + 6 + i * (w + 6), y, w, 3, 1.5); ctx.fill(); }); } },
+        { flex: 1, d: (y, h) => {
+          const cw = PIW * .5; ctx.save(); ctx.translate(PX + PIW * .24 + cw / 2, y + h * .13 + cw / 2); ctx.rotate(5 * Math.PI / 180); surface(ctx, 'sky:' + p.card, -cw / 2, -cw / 2, cw, cw, 22, S, true); ctx.restore();
+          const lab = (() => { const A = layout(ctx, p.ltitle, T(16, 600, { lh: 1.1 })), Bs = layout(ctx, p.lsub, T(12, 400, { main: C.mute })); return { A, Bs, w: 8 + 48 + 10 + Math.max(A.width, Bs.width) + 14 }; })();
+          ctx.save(); ctx.translate(PX + PIW * .06 + lab.w / 2, y + h * .5 + 32); ctx.rotate(-5 * Math.PI / 180); ctx.translate(-lab.w / 2, -32);
+          surface(ctx, 'glass', 0, 0, lab.w, 64, 16, S, true); ctx.save(); ctx.beginPath(); rrPath(ctx, 8, 8, 48, 48, 12); ctx.clip(); drawSky(ctx, p.thumb, 8, 8, 48, 48, S); ctx.restore();
+          const th = lab.A.height + lab.Bs.height; drawL(ctx, lab.A, 66, (64 - th) / 2); drawL(ctx, lab.Bs, 66, (64 - th) / 2 + lab.A.height); ctx.restore();
+          ctx.save(); ctx.translate(PX + PIW - PIW * .08 - 20, y + h * .07 + 20); ctx.rotate(10 * Math.PI / 180); surface(ctx, TILE.butter, -20, -20, 40, 40, 11, S, true); drawIcon(ctx, 'book', -12, -12, 24); ctx.restore();
+        } },
+        { h: Lt.height, d: (y) => drawL(ctx, Lt, PX, y, 'center', PIW) },
+        { h: 42, d: (y) => { const tw = textW(ctx, p.go, 600, 13); label(ctx, p.go, PX + PIW - 42 - 10 - tw, y + 21, 600, 13, C.ink); ctx.strokeStyle = C.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(PX + PIW - 21, y + 21, 20, 0, Math.PI * 2); ctx.stroke(); drawIcon(ctx, 'arrow', PX + PIW - 29, y + 13, 16, C.ink, 2); } },
+        { h: 4, mt: 16, d: (y) => homeInd(ctx, y) },
+      ]);
+    }); } }; } });
+
+  screen({ id: 'p-inicio', name: 'Pantalla · Inicio', lamTitle: 'Inicio: | el relevo con su aura y las actividades.',
+    f: [fArea('title', 'Saludo'), fText('chip', 'Estado'), fText('right', 'Tiempo'), fText('ptitle', 'Actividad'), fNum('pct', 'Avance', 0, 100), fArea('acts', 'Actividades', { hint: 'Dos líneas: título | debajo | cielo.' }), fText('rtitle', 'Aviso'), fText('rsub', 'Bajo el aviso')],
+    d: { title: 'Hola de nuevo,\n| hoy volviste dos veces a lo que querías.', chip: 'Contando', right: '12 de 30 min', ptitle: 'Leer 10 páginas', pct: 40, acts: 'Dormir a tiempo | 3 relevos | rose\nJugar una partida | 2 relevos | amber', rtitle: 'Suena en el Tag', rsub: 'en 18 minutos, en el velador' },
+    build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { phoneShell(ctx, S, st.shadow, () => { const g = ctx.createLinearGradient(0, 0, 0, PH); g.addColorStop(0, C.paper); g.addColorStop(.55, C.paper); g.addColorStop(1, C.stone); ctx.fillStyle = g; ctx.fillRect(0, 0, PW, PH); }, () => {
+      const Lt = layout(ctx, p.title, T(21, 600, { em: -.025, lh: 1.12, maxW: PIW })); const card = progressBuild(ctx, { chip: p.chip, right: p.right, title: p.ptitle, pct: p.pct, surface: 'sky:aura-soft', width: PIW }); const acts = cells(p.acts).slice(0, 2); const row = rowBuild(ctx, { title: p.rtitle, sub: p.rsub, tile: 'lime', icon: 'tag' }); const aw = (PIW - 8) / 2;
+      vstack(PT, PH - PB, 12, [
+        { h: 22, d: (y) => statusBar(ctx, y, p.time) },
+        { h: 22, d: (y) => { markDraw(ctx, PX, y, 22); label(ctx, 'Inicio', PX + 30, y + 11, 600, 12, C.ink); drawIcon(ctx, 'bell', PX + PIW - 18, y + 2, 18); } },
+        { h: Lt.height, d: (y) => drawL(ctx, Lt, PX, y) },
+        { h: card.h, d: (y) => card.paint(ctx, PX, y, S, true) },
+        { h: 21, d: (y) => { const tw = label(ctx, 'Tus actividades', PX, y + 10.5, 600, 14, C.ink); const cw = textW(ctx, String(acts.length * 2), 600, 11) + 14; ctx.fillStyle = C.white; ctx.beginPath(); rrPath(ctx, PX + tw + 4, y + 1, cw, 18.5, 9.25); ctx.fill(); label(ctx, String(acts.length * 2), PX + tw + 11, y + 10.25, 600, 11, C.ink); const vw = textW(ctx, 'Ver todas', 600, 11) + 20; insetStroke(ctx, PX + PIW - vw, y + 1, vw, 22.5, 11.25, 1.2, C.ink); label(ctx, 'Ver todas', PX + PIW - vw + 10, y + 12.25, 600, 11, C.ink); } },
+        { h: aw, d: (y) => acts.forEach((a, i) => actPaint(ctx, PX + i * (aw + 8), y, aw, aw, a, { r: 16, pad: 10, tpx: 13, spx: 10 }, S, false)) },
+        { h: row.h, d: (y) => row.paint(ctx, PX, y, S, true, PIW) },
+        { h: 50, auto: true, d: (y) => dockPaint(ctx, PX, y, PIW, ['home', 'spark', 'chart', 'cal'], 1, 'butter', 'glass', S, true) },
+      ]);
+    }); } }; } });
+
+  screen({ id: 'p-contando', name: 'Pantalla · Contando', lamTitle: 'Contando: | el aura respira lenta.',
+    f: [fText('num', 'Minutos'), fText('unit', 'Unidad'), fText('caption', 'Debajo'), fArea('sentence', 'Frase con íconos'), fText('b1', 'Botón'), fText('b2', 'Segundo botón'), AURA_PICK],
+    d: { num: '12', unit: 'min', caption: 'de 30 en Instagram y TikTok', sentence: 'Empieza por {book butter} abrir el libro, {pin blush} en el velador. Suena en {tag lime} el Tag.', b1: 'Volver al inicio', b2: 'Editar', auraPal: 'aura' },
+    build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { withPal(p, () => phoneShell(ctx, S, st.shadow, () => { ctx.fillStyle = C.paper; ctx.fillRect(0, 0, PW, PH); drawAura(ctx, 'phone', 0, 0, PW, PH, S, { scale: .66, k: .85 }); }, () => {
+      const Ls = layout(ctx, p.sentence, T(15, 500, { lh: 1.5, maxW: PIW }));
+      vstack(PT, PH - PB, 12, [
+        { h: 22, d: (y) => statusBar(ctx, y, p.time) },
+        { h: 20, d: (y) => { back(ctx, y); badge(ctx, 'Contando', PX + PIW - badgeW(ctx, 'Contando'), y, C.white); } },
+        { flex: 1, d: (y, h) => { const nw = textW(ctx, p.num, 600, 54, -.05), uw = p.unit ? textW(ctx, p.unit, 600, 20, -.02) + 7 : 0; const cy = y + h / 2; setF(ctx, 600, 54, -.05); ctx.fillStyle = C.ink; const base = cy + 8; ctx.fillText(p.num, PW / 2 - (nw + uw) / 2, base); if (p.unit) { setF(ctx, 600, 20, -.02); ctx.fillText(p.unit, PW / 2 - (nw + uw) / 2 + nw + 7, base); } label(ctx, p.caption, PW / 2, base + 22, 400, 12, C.ink, 0, 'center'); } },
+        { h: Ls.height, d: (y) => drawL(ctx, Ls, PX, y) },
+        { h: 40, d: (y) => { const w1 = pillW(ctx, p.b1), w2 = p.b2 ? pillW(ctx, p.b2) : 0; const x0 = PW / 2 - (w1 + (p.b2 ? 8 + w2 : 0)) / 2; pill(ctx, p.b1, x0, y); if (p.b2) pill(ctx, p.b2, x0 + w1 + 8, y, { ghost: true }); } },
+        { h: 4, d: (y) => homeInd(ctx, y) },
+      ]);
+    })); } }; } });
+
+  screen({ id: 'p-suena', name: 'Pantalla · Suena', lamTitle: 'Suena: | el Tag pita y el aura de la pantalla late.',
+    f: [fArea('title', 'Título'), fArea('sub', 'Debajo'), fText('btn', 'Botón'), fText('link', 'Enlace'), AURA_PICK],
+    d: { title: 'Es hora de leer 10 páginas', sub: 'El Tag suena en el velador.\nUn toque lo calla.', btn: 'Voy a empezar', link: 'Ver otras respuestas', auraPal: 'aura' },
+    build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { withPal(p, () => phoneShell(ctx, S, st.shadow, () => { ctx.fillStyle = C.paper; ctx.fillRect(0, 0, PW, PH); drawAura(ctx, 'phone', 0, 0, PW, PH, S, { scale: .84, k: 1.2 }); }, () => {
+      setF(ctx, 600, 25); const ch = ctx.measureText('0').width; const Lt = layout(ctx, p.title, T(25, 600, { em: -.025, lh: 1.12, maxW: Math.min(PIW, ch * 11) })); const Lb = layout(ctx, p.sub, T(12, 400, { main: C.ink }));
+      vstack(PT, PH - PB, 12, [
+        { h: 22, d: (y) => statusBar(ctx, y, p.time) },
+        { flex: 1, d: (y, h) => { const tot = 58 + 14 + Lt.height + 14 + Lb.height; let yy = y + (h - tot) / 2; surface(ctx, TILE.lime, PW / 2 - 29, yy, 58, 58, 16, S, true); drawIcon(ctx, 'tag', PW / 2 - 17, yy + 12, 34); yy += 72; drawL(ctx, Lt, PX, yy, 'center', PIW); yy += Lt.height + 14; drawL(ctx, Lb, PX, yy, 'center', PIW); } },
+        { h: 40 + 8 + 18, d: (y) => { const w = pillW(ctx, p.btn); pill(ctx, p.btn, PW / 2 - w / 2, y); label(ctx, p.link, PW / 2, y + 48 + 9, 400, 12, C.mute, 0, 'center'); } },
+        { h: 4, d: (y) => homeInd(ctx, y) },
+      ]);
+    })); } }; } });
+
+  screen({ id: 'p-despues', name: 'Pantalla · Después', lamTitle: 'Después: | responder en un toque.',
+    f: [fText('chip', 'Etiqueta'), fText('title', 'Actividad'), fText('question', 'Pregunta'), fArea('items', 'Respuestas'), fNum('selected', 'Elegida', 0, 5), fText('btn', 'Botón'), fSky('sky', 'Cielo de la actividad')],
+    d: { chip: 'Después de la señal', title: 'Leer 10 páginas', question: '¿Qué hiciste cuando sonó?', items: 'Empecé la actividad\nLo dejé para después\nCambié de idea', selected: 1, btn: 'Listo', sky: 'sunset' },
+    build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { phoneShell(ctx, S, st.shadow, C.paper, () => {
+      const Lt = layout(ctx, p.title, T(21, 600, { em: -.025, lh: 1.12, maxW: PIW })); const os = lines(p.items).slice(0, 5).map((s, i) => optBuild(ctx, s, PIW, i + 1 === +p.selected)); const oh = os.reduce((t, o) => t + o.h, 0) + 7 * Math.max(0, os.length - 1);
+      vstack(PT, PH - PB, 12, [
+        { h: 22, d: (y) => statusBar(ctx, y, p.time) },
+        { h: 20, d: (y) => { const bw = textW(ctx, '‹ Volver', 600, 12); back(ctx, y); if (p.chip) badge(ctx, p.chip, PX + bw + 8, y, TILE.peach); } },
+        { h: 54 + 10 + Lt.height + 10 + 19.5, mt: 18, d: (y) => { ctx.save(); surface(ctx, 'sky:' + p.sky, PW / 2 - 27, y, 54, 54, 14, S, true); ctx.restore(); drawL(ctx, Lt, PX, y + 64, 'center', PIW); label(ctx, p.question, PW / 2, y + 64 + Lt.height + 10 + 9.75, 500, 13, C.ink, 0, 'center'); } },
+        { h: oh, d: (y) => { let yy = y; os.forEach((o) => { o.paint(ctx, PX, yy); yy += o.h + 7; }); } },
+        { h: 40 + 10 + 4, auto: true, d: (y) => { const w = pillW(ctx, p.btn); pill(ctx, p.btn, PW / 2 - w / 2, y); homeInd(ctx, y + 50, 90); } },
+      ]);
+    }); } }; } });
+
+  screen({ id: 'p-aura', name: 'Pantalla · Tu aura', lamTitle: 'Perfil › Tu aura: | cada persona la ajusta, o la apaga.',
+    f: [fArea('title', 'Título'), fText('skies', 'Cielos', { hint: 'Cinco, separados por espacios.' }), fArea('rows', 'Ajustes', { hint: 'texto | sí, no o un número.' }), fText('foot', 'Al pie'), AURA_PICK],
+    d: { title: 'Tu aura\n| en la pantalla, a tu gusto.', skies: 'aura-soft sunset lilac mint clouds-blue', rows: 'Intensidad | 70\nQue se mueva | sí\nMostrar el aura | sí', foot: 'El Tag no cambia: solo suena.', auraPal: 'aura' },
+    build(ctx, p) { return { w: PW, h: PH, paint(ctx, S, st) { withPal(p, () => phoneShell(ctx, S, st.shadow, C.paper, () => {
+      const Lt = layout(ctx, p.title, T(21, 600, { em: -.025, lh: 1.12, maxW: PIW })); const rs = cells(p.rows).slice(0, 3).map(([n, v]) => setrowBuild(ctx, n, v, PIW)); const ns = words(p.skies).filter((n) => SKIES[n]).slice(0, 6);
+      const items = [
+        { h: 22, d: (y) => statusBar(ctx, y, p.time) },
+        { h: 18, d: (y) => label(ctx, '‹ Perfil', PX, y + 9, 600, 12, C.ink) },
+        { h: Lt.height, d: (y) => drawL(ctx, Lt, PX, y) },
+        { h: Math.round((PH - PT - PB) * .3), d: (y, h) => { surface(ctx, C.paper, PX, y, PIW, h, 22, S, true); ctx.save(); ctx.beginPath(); rrPath(ctx, PX, y, PIW, h, 22); ctx.clip(); drawAura(ctx, 'card', PX, y, PIW, h, S, { scale: .85, k: .95 }); ctx.restore(); } },
+        { h: 36, d: (y) => swatchRow(ctx, PX, y, ns, 1, 36, S) },
+        ...rs.map((r) => ({ h: 41, d: (y) => r.paint(ctx, PX, y, S, true) })),
+        { h: 18, auto: true, d: (y) => label(ctx, p.foot, PW / 2, y + 9, 400, 12, C.mute, 0, 'center') },
+        { h: 4, mt: 16, d: (y) => homeInd(ctx, y) },
+      ];
+      vstack(PT, PH - PB, 12, items);
+    })); } }; } });
+
+  const GROUPS = [['datos', 'Datos'], ['fichas', 'Fichas y frases'], ['tarjetas', 'Tarjetas'], ['controles', 'Controles'], ['marca', 'Marca'], ['pantallas', 'Pantallas'], ['guardadas', 'Guardadas']];
+  const byId = (id) => PIECES.find((x) => x.id === id);
+
+  // =====================================================================
+  // Render de piezas y láminas
+  // =====================================================================
+  const mc = document.createElement('canvas').getContext('2d'); // para medir
+  function measure(def, p, st) {
+    const b = def.build(mc, p); const th = (st.rot || 0) * Math.PI / 180;
+    const bw = Math.abs(b.w * Math.cos(th)) + Math.abs(b.h * Math.sin(th)), bh = Math.abs(b.w * Math.sin(th)) + Math.abs(b.h * Math.cos(th));
+    const pad = st.shadow ? (def.pad || 48) : 3; return { b, th, bw, bh, pad, W: bw + pad * 2, H: bh + pad * 2 };
+  }
+  function renderPiece(def, p, st, scale, out) {
+    const m = measure(def, p, st); out.width = Math.max(1, Math.ceil(m.W * scale)); out.height = Math.max(1, Math.ceil(m.H * scale));
+    const ctx = out.getContext('2d'); ctx.clearRect(0, 0, out.width, out.height);
+    ctx.setTransform(scale, 0, 0, scale, 0, 0); ctx.translate(m.W / 2, m.H / 2); ctx.rotate(m.th); ctx.translate(-m.b.w / 2, -m.b.h / 2);
+    m.b.paint(ctx, scale, st); ctx.setTransform(1, 0, 0, 1, 0, 0); return m;
+  }
+  // Recorta los bordes transparentes, dejando la sombra entera.
+  function trim(c) {
+    const w = c.width, h = c.height, d = c.getContext('2d').getImageData(0, 0, w, h).data; let x0 = w, y0 = h, x1 = -1, y1 = -1;
+    for (let y = 0; y < h; y++) { const row = y * w * 4; for (let x = 0; x < w; x++) if (d[row + x * 4 + 3] > 2) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; y1 = y; } }
+    if (x1 < 0) return c; x0 = Math.max(0, x0 - 2); y0 = Math.max(0, y0 - 2); x1 = Math.min(w - 1, x1 + 2); y1 = Math.min(h - 1, y1 + 2);
+    const o = document.createElement('canvas'); o.width = x1 - x0 + 1; o.height = y1 - y0 + 1; o.getContext('2d').drawImage(c, -x0, -y0); return o;
+  }
+  function blurCopy(src, f) {
+    const W = src.width, H = src.height; const a = document.createElement('canvas'); a.width = Math.max(2, Math.round(W / f)); a.height = Math.max(2, Math.round(H / f)); const ac = a.getContext('2d'); ac.imageSmoothingQuality = 'high'; ac.drawImage(src, 0, 0, a.width, a.height);
+    const b = document.createElement('canvas'); b.width = a.width * 4; b.height = a.height * 4; const bc = b.getContext('2d'); bc.imageSmoothingQuality = 'high'; bc.drawImage(a, 0, 0, b.width, b.height);
+    const o = document.createElement('canvas'); o.width = W; o.height = H; const oc = o.getContext('2d'); oc.imageSmoothingQuality = 'high'; oc.drawImage(b, 0, 0, W, H); return o;
+  }
+  const LAM_BG = [['paper', 'Papel'], ['white', 'Blanco'], ['stone', 'Piedra'], ['esquina', 'Aura en la esquina'], ['aura', 'Aura'], ['horizonte', 'Horizonte'], ['amanecer', 'Amanecer'], ['brisa', 'Brisa'], ['rubor', 'Rubor'], ...Object.keys(SKIES).map((k) => ['sky:' + k, SKY_NAME[k]]), ['fondos', 'Mi fondo (de Fondos)']];
+  function paintBg(ctx, bg, W, H) {
+    if (C[bg]) { ctx.fillStyle = C[bg]; ctx.fillRect(0, 0, W, H); return; }
+    if (bg.startsWith('sky:')) { drawSky(ctx, bg.slice(4), 0, 0, W, H, 1); return; }
+    const c = document.createElement('canvas');
+    if (bg === 'fondos') compose({ ...fs, text: null, shape: 'rect', transparent: false }, W, H, c);
+    else compose({ ...P(PRESETS.find((p) => p.id === bg) || PRESETS.find((p) => p.id === 'aura')), text: null, t: 3 }, W, H, c);
+    ctx.drawImage(c, 0, 0);
+  }
+  function renderLamina(def, p, st, lam, txt, W, H, out) {
+    out.width = W; out.height = H; const ctx = out.getContext('2d');
+    const bgc = document.createElement('canvas'); bgc.width = W; bgc.height = H; paintBg(bgc.getContext('2d'), lam.bg, W, H); ctx.drawImage(bgc, 0, 0);
+    const u = Math.min(W, H * 16 / 9), m = Math.round(Math.min(W, H) * .075); const white = lam.tone === 'white'; const main = white ? '#FFFFFF' : C.ink, soft = white ? 'rgba(255,255,255,.66)' : 'rgba(20,19,18,.45)';
+    let lay = lam.layout; if ((lay === 'derecha' || lay === 'izquierda') && W / H < 1.15) lay = 'arriba';
+    const hasText = lay !== 'solo' && (txt.eyebrow || txt.title || txt.sub);
+    const colW = lay === 'arriba' ? W - m * 2 : W * .42 - m;
+    const E = hasText && Lx(ctx, txt.eyebrow, T(Math.round(u * .0155), 600, { main: soft, soft })), Tt = hasText && Lx(ctx, txt.title, T(Math.round(u * .042), 600, { em: -.035, lh: 1.04, main, soft, maxW: colW, balance: true })), Sb = hasText && Lx(ctx, txt.sub, T(Math.round(u * .018), 500, { lh: 1.35, em: -.01, main: soft, soft, maxW: Math.min(colW, u * .42), balance: true }));
+    const items = [E && { h: E.height, L: E }, Tt && { h: Tt.height, L: Tt, mt: u * .012 }, Sb && { h: Sb.height, L: Sb, mt: u * .016 }].filter(Boolean); const th = items.length ? col(items, u * .012) : 0;
+    let tx = m, ty = m, boxX = m, boxY = m, boxW = W - 2 * m, boxH = H - 2 * m;
+    if (hasText && lay === 'derecha') { ty = (H - th) / 2; boxX = W * .48; boxW = W - m - boxX; }
+    else if (hasText && lay === 'izquierda') { tx = W * .58; ty = (H - th) / 2; boxW = W * .52 - m * 1.5; }
+    else if (hasText && lay === 'arriba') { boxY = m + th + m * .8; boxH = H - m - boxY; }
+    items.forEach((it) => drawL(ctx, it.L, tx, ty + it.y));
+    const mm = measure(def, p, { ...st, shadow: false }); const k = Math.min(boxW / mm.bw, boxH / mm.bh) * clamp(lam.size, 20, 100) / 100;
+    GLASS_BG = blurCopy(bgc, Math.max(8, Math.min(W, H) / 40));
+    try { ctx.save(); ctx.translate(boxX + boxW / 2, boxY + boxH / 2); ctx.scale(k, k); ctx.rotate(mm.th); ctx.translate(-mm.b.w / 2, -mm.b.h / 2); mm.b.paint(ctx, k, st); ctx.restore(); }
+    finally { GLASS_BG = null; }
+    return out;
+  }
+
+  // =====================================================================
+  // Estado de piezas
+  // =====================================================================
+  const SAVE_KEY = 'taller-relevo-piezas-v2';
+  const st0 = { mode: 'piezas', piece: 'semana', group: 'datos', out: 'sola', scale: 3, view: 'paper', params: {}, style: {}, slide: {}, lam: { format: '1920x1080', bg: 'esquina', layout: 'derecha', size: 82, tone: 'ink' } };
+  const saved = store.get(SAVE_KEY, null);
+  const S0 = { ...st0, ...(saved && typeof saved === 'object' ? saved : {}) }; S0.lam = { ...st0.lam, ...(S0.lam || {}) };
+  const state = S0; if (!byId(state.piece)) state.piece = 'semana';
+  let kept = store.get('taller-piezas-guardadas', []);
+  // Cada pieza completa sus valores una sola vez; después se edita siempre el mismo objeto.
+  const done = { p: new Set(), s: new Set(), t: new Set() };
+  const once = (bag, key, id, make) => { if (!done[key].has(id) || !bag[id]) { bag[id] = make(bag[id] || {}); done[key].add(id); } return bag[id]; };
+  const getP = (def) => once(state.params, 'p', def.id, (o) => ({ ...clone(def.d), ...o }));
+  const getS = (def) => once(state.style, 's', def.id, (o) => ({ rot: def.rot || 0, shadow: def.shadow !== false, ...o }));
+  const getT = (def) => once(state.slide, 't', def.id, (o) => ({ ...(def.lam || GENERIC_LAM), ...o }));
+  const cur = () => byId(state.piece);
+  let saveT = 0; const persist = () => { clearTimeout(saveT); saveT = setTimeout(() => store.set(SAVE_KEY, state), 350); };
+
+  // =====================================================================
+  // Fondos (generador de auras)
+  // =====================================================================
+  let fs = P(PRESETS[0]); fs.t = 0; let presetId = 'portada'; let fgroup = 'slide'; let playing = false;
+  let mine = store.get('taller-auras-mias', []);
   const dims = (s) => s.format.split('x').map(Number);
   function shapePath(ctx, shape, w, h) {
     ctx.beginPath();
-    if (shape === 'circle') { const r = Math.min(w, h) / 2; ctx.arc(w / 2, h / 2, r, 0, Math.PI * 2); return true; }
-    if (shape === 'round') { ctx.roundRect(0, 0, w, h, Math.min(w, h) * .06); return true; }
-    if (shape === 'squircle') { // superelipse, como un ícono de app
-      const n = 5, a = w / 2, b = h / 2, cx = w / 2, cy = h / 2;
-      for (let i = 0; i <= 160; i++) { const th = i / 160 * Math.PI * 2, ct = Math.cos(th), st = Math.sin(th);
-        const x = cx + a * Math.sign(ct) * Math.pow(Math.abs(ct), 2 / n), y = cy + b * Math.sign(st) * Math.pow(Math.abs(st), 2 / n); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-      ctx.closePath(); return true; }
+    if (shape === 'circle') { ctx.arc(w / 2, h / 2, Math.min(w, h) / 2, 0, Math.PI * 2); return true; }
+    if (shape === 'round') { rrPath(ctx, 0, 0, w, h, Math.min(w, h) * .06); return true; }
+    if (shape === 'squircle') { squirclePath(ctx, 0, 0, w, h); return true; }
     return false;
   }
-  function wrap(ctx, text, maxW) {
-    const out = []; text.split('\n').forEach((para) => { let line = ''; para.split(/\s+/).forEach((word) => { const test = line ? line + ' ' + word : word; if (ctx.measureText(test).width > maxW && line) { out.push(line); line = word; } else line = test; }); out.push(line); }); return out;
-  }
-  // Escribe un texto en dos tonos: lo que va después de «|» queda en gris.
+  function wrapW(ctx, text, maxW) { const out = []; text.split('\n').forEach((para) => { let line = ''; para.split(/\s+/).forEach((word) => { const test = line ? line + ' ' + word : word; if (ctx.measureText(test).width > maxW && line) { out.push(line); line = word; } else line = test; }); out.push(line); }); return out; }
   function twoTone(ctx, raw, x, y, maxW, lh, align, main, soft) {
     const [a, b = ''] = raw.split('|').map((s) => s.trim());
-    const words = [...a.split(/\s+/).filter(Boolean).map((w) => [w, main]), ...b.split(/\s+/).filter(Boolean).map((w) => [w, soft])];
-    const lines = []; let cur = [], curW = 0; const space = ctx.measureText(' ').width;
-    words.forEach(([w, c]) => { const ww = ctx.measureText(w).width; if (cur.length && curW + space + ww > maxW) { lines.push([cur, curW]); cur = []; curW = 0; } cur.push([w, c, ww]); curW += (cur.length > 1 ? space : 0) + ww; });
-    if (cur.length) lines.push([cur, curW]);
-    lines.forEach(([ws, lw], i) => { let cx = align === 'center' ? x - lw / 2 : x; ws.forEach(([w, c, ww]) => { ctx.fillStyle = c; ctx.fillText(w, cx, y + i * lh); cx += ww + space; }); });
-    return lines.length;
+    const ws = [...a.split(/\s+/).filter(Boolean).map((w) => [w, main]), ...b.split(/\s+/).filter(Boolean).map((w) => [w, soft])];
+    const ls = []; let cu = [], cw = 0; const space = ctx.measureText(' ').width;
+    ws.forEach(([w, c]) => { const ww = ctx.measureText(w).width; if (cu.length && cw + space + ww > maxW) { ls.push([cu, cw]); cu = []; cw = 0; } cu.push([w, c, ww]); cw += (cu.length > 1 ? space : 0) + ww; });
+    if (cu.length) ls.push([cu, cw]);
+    ls.forEach(([row, lw], i) => { let cx = align === 'center' ? x - lw / 2 : x; row.forEach(([w, c, ww]) => { ctx.fillStyle = c; ctx.fillText(w, cx, y + i * lh); cx += ww + space; }); });
+    return ls.length;
   }
   function drawText(ctx, s, w, h) {
     const tx = s.text; if (!tx || tx.layout === 'none') return;
     const white = tx.color === 'white'; const main = white ? '#FFFFFF' : '#141312'; const soft = white ? 'rgba(255,255,255,.62)' : 'rgba(20,19,18,.45)';
     const m = Math.round(Math.min(w, h) * .075); const center = tx.align === 'center'; const x = center ? w / 2 : m; const maxW = w - m * 2;
-    const font = (weight, px) => `${weight} ${px}px "Instrument Sans", "Helvetica Neue", Arial, sans-serif`;
-    const ls = (px, em) => { if ('letterSpacing' in ctx) ctx.letterSpacing = (px * em) + 'px'; };
+    const font = (weight, px) => `${weight} ${px}px ${SANS}`;
+    const ls = (px, em) => { if (hasLS) ctx.letterSpacing = (px * em) + 'px'; };
     ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
     const H = Math.min(h, w * .75);
     const eyebrow = (y) => { if (!tx.eyebrow) return; const px = Math.round(H * .028); ctx.font = font(600, px); ls(px, 0); ctx.fillStyle = soft; const tw = ctx.measureText(tx.eyebrow).width; ctx.fillText(tx.eyebrow, center ? x - tw / 2 : x, y); };
@@ -337,14 +1405,14 @@ footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
       const px = Math.round(H * (tx.title.length < 12 ? .2 : .1)); ctx.font = font(700, px); ls(px, -.05);
       const subPx = Math.round(H * .042); const subLines = tx.sub ? 2 : 0;
       const yTitle = h - m - (subLines ? subPx * 1.3 * subLines + H * .03 : 0);
-      ctx.fillStyle = main; const tl = wrap(ctx, tx.title.replace('|', ''), maxW);
+      ctx.fillStyle = main; const tl = wrapW(ctx, tx.title.replace('|', ''), maxW);
       tl.forEach((ln, i) => { const tw = ctx.measureText(ln).width; ctx.fillText(ln, center ? x - tw / 2 : x, yTitle - (tl.length - 1 - i) * px * .95); });
       if (tx.sub) { ctx.font = font(500, subPx); ls(subPx, -.015); twoTone(ctx, tx.sub, x, yTitle + H * .03 + subPx * 1.05, Math.min(maxW, w * .5), subPx * 1.3, tx.align, main, soft); }
     } else if (tx.layout === 'seccion') {
       if (tx.eyebrow) { const px = Math.round(H * .2); ctx.font = font(600, px); ls(px, -.05); ctx.fillStyle = soft; const tw = ctx.measureText(tx.eyebrow).width; ctx.fillText(tx.eyebrow, center ? x - tw / 2 : x, m + px * .8); }
       const px = Math.round(H * .095); ctx.font = font(600, px); ls(px, -.035);
-      const lines = Math.ceil(ctx.measureText(tx.title.replace('|', '')).width / (maxW * .85)) + 1;
-      twoTone(ctx, tx.title, x, h - m - (lines - 1) * px * 1.02, maxW * .85, px * 1.02, tx.align, main, soft);
+      const nl = Math.ceil(ctx.measureText(tx.title.replace('|', '')).width / (maxW * .85)) + 1;
+      twoTone(ctx, tx.title, x, h - m - (nl - 1) * px * 1.02, maxW * .85, px * 1.02, tx.align, main, soft);
     } else if (tx.layout === 'cita') {
       const px = Math.round(H * .085); ctx.font = font(500, px); ls(px, -.03);
       const est = Math.max(1, Math.ceil(ctx.measureText(tx.title.replace('|', '')).width / (maxW * .78)));
@@ -361,7 +1429,7 @@ footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
       if (tx.sub) { const sp = Math.round(H * .045); ctx.font = font(600, sp); ls(sp, -.03); ctx.fillStyle = soft; const sw = ctx.measureText(tx.sub).width; ctx.fillText(tx.sub, center ? x - sw / 2 : x, h / 2 + px * .3 + sp * 2.2); }
       eyebrow(m + H * .03);
     }
-    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+    if (hasLS) ctx.letterSpacing = '0px';
   }
   function compose(s, w, h, out) {
     out.width = w; out.height = h; const ctx = out.getContext('2d'); ctx.clearRect(0, 0, w, h);
@@ -372,147 +1440,333 @@ footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
     return out;
   }
 
-  // ---------- Vista previa ----------
-  const view = $('view'), frame = $('frame');
-  function fitFrame() {
-    const [w, h] = dims(state); const box = frame.parentElement.getBoundingClientRect();
-    const maxW = box.width - 2 * parseFloat(getComputedStyle(frame.parentElement).paddingLeft || 0);
-    const maxH = Math.min(innerHeight * .7, 820);
-    let fw = maxW, fh = fw * h / w; if (fh > maxH) { fh = maxH; fw = fh * w / h; }
-    frame.style.width = fw + 'px'; frame.style.height = fh + 'px';
-    frame.style.borderRadius = state.shape === 'rect' ? '6px' : '0';
-    frame.style.boxShadow = state.shape === 'rect' && !state.transparent ? '' : 'none';
-    $('size').textContent = `${w} × ${h}`;
-    return [fw, fh];
+  // =====================================================================
+  // Lienzo
+  // =====================================================================
+  const view = $('view'), frame = $('frame'), area = $('area');
+  const dpr = () => Math.min(devicePixelRatio || 1, 2);
+  function areaBox() { const r = area.getBoundingClientRect(); return [Math.max(80, r.width - 48), Math.max(80, r.height - 48)]; }
+  let auraViewURL = '';
+  function setView() {
+    const v = state.mode === 'fondos' || state.out === 'lamina' ? 'desk' : state.view;
+    area.className = 'area v-' + v;
+    if (v === 'aura') { if (!auraViewURL) { const c = document.createElement('canvas'); compose({ ...P(PRESETS.find((p) => p.id === 'aura')), t: 3, text: null }, 1400, 900, c); auraViewURL = c.toDataURL('image/jpeg', .9); } area.style.backgroundImage = `url(${auraViewURL})`; } else area.style.backgroundImage = '';
+    $('viewbg').hidden = !(state.mode === 'piezas' && state.out === 'sola');
   }
-  function drawPreview() {
-    const [fw, fh] = fitFrame(); const dpr = Math.min(devicePixelRatio || 1, 2);
-    compose(state, Math.round(fw * dpr), Math.round(fh * dpr), view);
-    drawHandles(fw, fh);
+  function drawPieces() {
+    const def = cur(), p = getP(def), st = getS(def); const [aw, ah] = areaBox(); frame.classList.remove('drag'); frame.querySelectorAll('.handle').forEach((n) => n.remove());
+    if (state.out === 'lamina') {
+      const [W, H] = state.lam.format.split('x').map(Number); let fw = aw, fh = fw * H / W; if (fh > ah) { fh = ah; fw = fh * W / H; }
+      frame.className = 'frame sheet'; frame.style.width = fw + 'px'; frame.style.height = fh + 'px';
+      renderLamina(def, p, st, state.lam, getT(def), Math.round(fw * dpr()), Math.round(fh * dpr()), view);
+      $('zoom').textContent = `${W} × ${H}`; $('p-size').textContent = `${W} × ${H} px`;
+    } else {
+      const m = measure(def, p, st); const z = Math.min(3, aw / m.W, ah / m.H);
+      frame.className = 'frame'; frame.style.width = m.W * z + 'px'; frame.style.height = m.H * z + 'px';
+      renderPiece(def, p, st, z * dpr(), view);
+      $('zoom').textContent = `Vista al ${Math.round(z * 100)} %`; $('p-size').textContent = `hasta ${Math.round(m.W * state.scale)} × ${Math.round(m.H * state.scale)} px`;
+    }
   }
-  function drawHandles(fw, fh) {
-    frame.querySelectorAll('.handle').forEach((n) => n.remove());
-    state.blobs.forEach((b, i) => { const d = document.createElement('span'); d.className = 'handle'; d.style.left = (b[0] * fw) + 'px'; d.style.top = (b[1] * fh) + 'px'; d.style.background = state.colors[i]; frame.appendChild(d); });
-  }
-  let raf = 0, last = 0;
-  function loop(now) { if (!playing) return; const dt = Math.min(.05, (now - (last || now)) / 1000); last = now; state.t = (state.t || 0) + dt * .8; drawPreview(); raf = requestAnimationFrame(loop); }
-  $('move').addEventListener('click', () => { playing = !playing; $('move').setAttribute('aria-pressed', String(playing)); if (playing && !reduce) { last = 0; raf = requestAnimationFrame(loop); } else cancelAnimationFrame(raf); });
-  $('shuffle').addEventListener('click', () => {
-    state.seed = Math.random() * 40;
-    const cx = state.blobs.reduce((t, b) => t + b[0], 0) / 6, cy = state.blobs.reduce((t, b) => t + b[1], 0) / 6;
-    const spread = state.group === 'cielo' || state.bg !== '#F7F4F0' ? .38 : .16;
-    state.blobs = state.blobs.map((b, i) => [clamp(cx + (Math.random() - .5) * spread * 2, -.1, 1.1), clamp(cy + (Math.random() - .5) * spread * 2, -.1, 1.1), b[2] * (.85 + Math.random() * .3)]);
-    drawPreview();
-  });
-  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-  // Arrastrar la luz más cercana
-  let drag = -1;
-  view.addEventListener('pointerdown', (e) => { const r = view.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-    let best = -1, bd = 1e9; state.blobs.forEach((b, i) => { const d = (b[0] - x) ** 2 + (b[1] - y) ** 2; if (d < bd) { bd = d; best = i; } }); drag = best; view.setPointerCapture(e.pointerId); view.classList.add('dragging'); frame.classList.add('show-handles'); });
-  view.addEventListener('pointermove', (e) => { if (drag < 0) return; const r = view.getBoundingClientRect(); state.blobs[drag][0] = clamp((e.clientX - r.left) / r.width, -.2, 1.2); state.blobs[drag][1] = clamp((e.clientY - r.top) / r.height, -.2, 1.2); drawPreview(); });
-  const endDrag = () => { drag = -1; view.classList.remove('dragging'); frame.classList.remove('show-handles'); };
-  view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', endDrag);
-  addEventListener('resize', () => drawPreview());
+  function render() { setView(); if (state.mode === 'fondos') drawFondos(); else drawPieces(); }
+  let rq = 0; const queue = () => { if (rq) return; rq = requestAnimationFrame(() => { rq = 0; render(); }); };
+  addEventListener('resize', queue);
 
-  // ---------- Controles ----------
-  const SLIDERS = [['k', 'Intensidad', .2, 1.3, .01], ['scale', 'Tamaño de las luces', .4, 2.2, .01], ['warp', 'Volumen, como nubes', 0, .8, .01], ['grain', 'Grano', 0, .14, .005], ['depth', 'Profundidad', 0, 1, .01]];
-  const sl = $('sliders');
-  SLIDERS.forEach(([key, label, min, max, step]) => {
-    const id = 's-' + key; const wrapEl = document.createElement('div'); wrapEl.className = 'slider';
-    wrapEl.innerHTML = `<div class="row"><label class="lbl" for="${id}">${label}</label><output id="${id}-o"></output></div><input type="range" id="${id}" min="${min}" max="${max}" step="${step}">`;
-    sl.appendChild(wrapEl);
-    const inp = wrapEl.querySelector('input'); inp.addEventListener('input', () => { state[key] = parseFloat(inp.value); $(id + '-o').textContent = (+inp.value).toFixed(2); drawPreview(); });
-  });
-  const colorsEl = $('colors');
-  ['Fondo', '1', '2', '3', '4', '5', '6'].forEach((lab, i) => {
-    const l = document.createElement('label'); const id = 'c-' + i;
-    l.innerHTML = `<input type="color" id="${id}" aria-label="${i ? 'Luz ' + lab : 'Fondo'}"><span>${lab}</span>`; colorsEl.appendChild(l);
-    l.querySelector('input').addEventListener('input', (e) => { if (i === 0) state.bg = e.target.value; else state.colors[i - 1] = e.target.value; drawPreview(); });
-  });
-  $('format').addEventListener('change', (e) => { state.format = e.target.value; drawPreview(); });
-  document.querySelectorAll('[data-shape]').forEach((b) => b.addEventListener('click', () => { state.shape = b.dataset.shape; syncControls(); drawPreview(); }));
-  $('transparent').addEventListener('change', (e) => { state.transparent = e.target.checked; drawPreview(); });
-  const layoutsEl = $('layouts');
-  LAYOUTS.forEach(([id, name]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.dataset.layout = id; b.textContent = name; layoutsEl.appendChild(b);
-    b.addEventListener('click', () => { if (id === 'none') state.text = null; else state.text = { ...(state.text || T(id, '', 'Título | que sigue en gris', '')), layout: id }; syncControls(); drawPreview(); }); });
-  const textInputs = [['t-eyebrow', 'eyebrow'], ['t-title', 'title'], ['t-sub', 'sub'], ['t-color', 'color'], ['t-align', 'align']];
-  textInputs.forEach(([id, key]) => $(id).addEventListener('input', (e) => { if (!state.text) state.text = T('portada', '', '', ''); state.text[key] = e.target.value; syncLayoutChips(); drawPreview(); }));
-  function syncLayoutChips() { const lay = state.text ? state.text.layout : 'none'; layoutsEl.querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.layout === lay))); }
-  function syncControls() {
-    SLIDERS.forEach(([key]) => { const i = $('s-' + key); i.value = state[key]; $('s-' + key + '-o').textContent = (+state[key]).toFixed(2); });
-    $('c-0').value = state.bg; state.colors.forEach((c, i) => { $('c-' + (i + 1)).value = c; });
-    $('format').value = state.format; if (![...$('format').options].some((o) => o.value === state.format)) { const o = document.createElement('option'); o.value = state.format; o.textContent = state.format.replace('x', ' × '); $('format').appendChild(o); $('format').value = state.format; }
-    document.querySelectorAll('[data-shape]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.shape === state.shape)));
-    $('transparent').checked = !!state.transparent;
-    const tx = state.text || { eyebrow: '', title: '', sub: '', color: 'ink', align: 'left' };
-    $('t-eyebrow').value = tx.eyebrow || ''; $('t-title').value = tx.title || ''; $('t-sub').value = tx.sub || ''; $('t-color').value = tx.color || 'ink'; $('t-align').value = tx.align || 'left';
-    syncLayoutChips(); $('preset-name').textContent = state.name || 'Mía';
+  // =====================================================================
+  // Biblioteca de piezas
+  // =====================================================================
+  const thumbs = {}; let thumbQ = [];
+  function thumbOf(def, p, st) {
+    const m = measure(def, p, st); const tall = m.H / m.W > 1.4; const k = (tall ? Math.min(200 / m.W, 1.6) : Math.min(200 / m.W, 150 / m.H, 1.6)) * 2; const c = document.createElement('canvas'); renderPiece(def, p, st, k, c);
+    if (!tall) return c.toDataURL('image/png');
+    // Las pantallas, recortadas al centro para que se lean en la miniatura.
+    const ch = Math.round(c.width * .95), o = document.createElement('canvas'); o.width = c.width; o.height = ch; o.getContext('2d').drawImage(c, 0, -Math.round((c.height - ch) * .42)); return o.toDataURL('image/png');
   }
-
-  // ---------- Galería de presets ----------
-  const thumbs = {};
-  function thumb(p) { if (thumbs[p.id]) return thumbs[p.id]; const c = document.createElement('canvas'); const s = { ...P(p), t: 3 }; compose(s, 320, 200, c); return (thumbs[p.id] = c.toDataURL('image/png')); }
-  function renderPresets() {
-    const box = $('presets'); box.replaceChildren();
-    const list = group === 'mias' ? mine : PRESETS.filter((p) => p.group === group);
-    if (!list.length) { const e = document.createElement('p'); e.className = 'empty'; e.textContent = 'Todavía no guardas ninguno. Ajusta una imagen y toca «Guardar en Mías».'; box.appendChild(e); return; }
-    list.forEach((p, idx) => {
-      const b = document.createElement('button'); b.type = 'button'; b.className = 'preset'; b.setAttribute('aria-pressed', String(p.id === presetId));
-      const img = document.createElement('img'); img.alt = ''; img.src = p.thumb || thumb(p); const sp = document.createElement('span'); sp.textContent = p.name;
-      b.append(img, sp);
-      if (group === 'mias') { const d = document.createElement('span'); d.className = 'del'; d.textContent = 'Quitar'; d.setAttribute('role', 'button'); d.tabIndex = 0;
-        d.addEventListener('click', (ev) => { ev.stopPropagation(); mine.splice(idx, 1); store.set('taller-auras-mias', mine); renderPresets(); toast('Quitado de Mías'); }); b.appendChild(d); }
-      b.addEventListener('click', () => { const t = state.t; state = P(p); state.t = t; presetId = p.id; syncControls(); drawPreview(); renderPresets(); });
-      box.appendChild(b);
+  function pumpThumbs() {
+    if (!thumbQ.length) return; const id = thumbQ.shift(); const def = byId(id); const img = document.querySelector(`.pbtn[data-id="${id}"] img`);
+    if (def && img) { try { thumbs[id] = thumbOf(def, getP(def), getS(def)); img.src = thumbs[id]; } catch (e) { console.error(e); } }
+    if (thumbQ.length) setTimeout(pumpThumbs, 16);
+  }
+  const queueThumb = (id) => { if (!thumbQ.includes(id)) thumbQ.push(id); if (thumbQ.length === 1) setTimeout(pumpThumbs, 60); };
+  let thumbT = 0; const refreshThumb = (id) => { clearTimeout(thumbT); thumbT = setTimeout(() => { delete thumbs[id]; queueThumb(id); }, 700); };
+  function renderGroups() {
+    const g = $('groups'); g.replaceChildren();
+    GROUPS.forEach(([id, name]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(state.group === id)); b.textContent = name; b.addEventListener('click', () => { state.group = id; persist(); renderGroups(); renderLib(); }); g.appendChild(b); });
+  }
+  function renderLib() {
+    const box = $('pgrid'); box.replaceChildren();
+    if (state.group === 'guardadas') {
+      if (!kept.length) { const e = document.createElement('p'); e.className = 'empty'; e.textContent = 'Aún no guardas piezas. Ajusta una y toca «Guardar».'; box.appendChild(e); return; }
+      kept.forEach((k, i) => { const def = byId(k.piece); if (!def) return; const b = document.createElement('button'); b.type = 'button'; b.className = 'pbtn';
+        b.innerHTML = `<span class="th"><img alt=""></span><span></span><span class="del" role="button" tabindex="0">Quitar</span>`; b.children[1].textContent = k.name;
+        try { b.querySelector('img').src = thumbOf(def, { ...clone(def.d), ...k.params }, { rot: def.rot || 0, shadow: def.shadow !== false, ...k.style }); } catch (e) { /* miniatura opcional */ }
+        b.querySelector('.del').addEventListener('click', (ev) => { ev.stopPropagation(); kept.splice(i, 1); store.set('taller-piezas-guardadas', kept); renderLib(); toast('Quitada de Guardadas'); });
+        b.addEventListener('click', () => { state.params[def.id] = { ...clone(def.d), ...k.params }; state.style[def.id] = { ...getS(def), ...k.style }; if (k.slide) state.slide[def.id] = { ...k.slide }; selectPiece(def.id); toast('Cargada: ' + k.name); });
+        box.appendChild(b); });
+      return;
+    }
+    PIECES.filter((d) => d.group === state.group).forEach((def) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'pbtn'; b.dataset.id = def.id; b.setAttribute('aria-pressed', String(def.id === state.piece));
+      b.innerHTML = '<span class="th"><img alt=""></span><span></span>'; b.children[1].textContent = def.name.replace('Pantalla · ', '');
+      const img = b.querySelector('img'); if (thumbs[def.id]) img.src = thumbs[def.id]; else queueThumb(def.id);
+      b.addEventListener('click', () => selectPiece(def.id)); box.appendChild(b);
     });
   }
-  document.querySelectorAll('.tabs [data-group]').forEach((t) => t.addEventListener('click', () => { group = t.dataset.group; document.querySelectorAll('.tabs [data-group]').forEach((x) => x.setAttribute('aria-selected', String(x === t))); renderPresets(); }));
+  function selectPiece(id) {
+    state.piece = id; const def = cur(); if (state.group !== 'guardadas' && def.group !== state.group) { state.group = def.group; renderGroups(); renderLib(); }
+    document.querySelectorAll('.pbtn[data-id]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
+    renderEditor(); persist(); queue();
+  }
 
-  // ---------- Guardar, copiar y cargar ----------
-  const recipe = () => { const { thumb: _t, ...r } = state; return { ...r, t: +(state.t || 0).toFixed(3) }; };
-  $('save-mine').addEventListener('click', () => {
-    const c = document.createElement('canvas'); compose({ ...state }, 320, 200, c);
-    const item = { ...recipe(), id: 'mia-' + Date.now(), group: 'mias', name: 'Mía ' + (mine.length + 1), thumb: c.toDataURL('image/png') };
-    mine.unshift(item); store.set('taller-auras-mias', mine.slice(0, 40)); toast('Guardado en Mías'); if (group === 'mias') renderPresets();
+  // =====================================================================
+  // Editor de propiedades
+  // =====================================================================
+  const el = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
+  let fid = 0;
+  function onField(def) { persist(); queue(); refreshThumb(def.id); syncWhen(def); }
+  function syncWhen(def) { const p = getP(def); document.querySelectorAll('#fields .field').forEach((w) => { const f = def.f.find((x) => x.k === w.dataset.k); if (f && f.when) w.hidden = !f.when(p); }); }
+  function swatchBtn(bg, labelTxt, pressed, onClick, wide) { const b = el('button', 'sw' + (wide ? ' wide' : '')); b.type = 'button'; b.setAttribute('aria-label', labelTxt); b.title = labelTxt; b.setAttribute('aria-pressed', String(pressed)); if (bg.startsWith('url')) b.style.backgroundImage = bg; else b.style.background = bg; b.addEventListener('click', onClick); return b; }
+  function pressOne(container, btn) { container.querySelectorAll('[aria-pressed]').forEach((x) => x.setAttribute('aria-pressed', String(x === btn))); }
+  function renderEditor() {
+    const def = cur(), p = getP(def), st = getS(def); const box = $('fields'); box.replaceChildren();
+    $('piece-name').textContent = def.name; $('stage-title').replaceChildren(def.name.replace('Pantalla · ', ''), el('small', null, (GROUPS.find((g) => g[0] === def.group) || [])[1] || ''));
+    def.f.forEach((f) => {
+      const w = el('div', 'field'); w.dataset.k = f.k; const id = 'f' + (++fid);
+      const lab = el('label', null, f.label); lab.htmlFor = id;
+      const set = (v) => { p[f.k] = v; onField(def); };
+      if (f.type === 'text' || f.type === 'area') {
+        const inp = f.type === 'text' ? el('input') : el('textarea'); if (f.type === 'text') inp.type = 'text'; inp.id = id; inp.value = p[f.k] ?? '';
+        if (f.type === 'area') { const v = String(p[f.k] || ''); inp.rows = f.rows || clamp(v.split('\n').length + Math.floor(v.length / 38), 2, 6); }
+        inp.addEventListener('input', () => set(inp.value)); w.append(lab, inp);
+      } else if (f.type === 'num') {
+        const row = el('div', 'row'); const out = el('output'); out.textContent = p[f.k]; row.append(lab, out); const inp = el('input'); inp.type = 'range'; inp.id = id; inp.min = f.min; inp.max = f.max; inp.step = f.step; inp.value = p[f.k];
+        inp.addEventListener('input', () => { out.textContent = inp.value; set(parseFloat(inp.value)); }); w.append(row, inp);
+      } else if (f.type === 'color') {
+        const row = el('div', 'row'); const inp = el('input'); inp.type = 'color'; inp.id = id; inp.value = p[f.k]; inp.addEventListener('input', () => set(inp.value)); row.append(lab, inp); w.append(row);
+      } else if (f.type === 'check') {
+        const l = el('label', 'check'); const inp = el('input'); inp.type = 'checkbox'; inp.checked = !!p[f.k]; inp.addEventListener('change', () => set(inp.checked)); l.append(inp, document.createTextNode(' ' + f.label)); w.append(l);
+      } else if (f.type === 'select') {
+        const sel = el('select'); sel.id = id; f.opts.forEach(([v, t]) => { const o = el('option', null, t); o.value = v; sel.appendChild(o); }); sel.value = String(p[f.k]); sel.addEventListener('change', () => set(sel.value)); w.append(lab, sel);
+      } else if (f.type === 'tile') {
+        const row = el('div', 'swrow'); row.setAttribute('role', 'group'); row.setAttribute('aria-label', f.label);
+        [...Object.keys(TILE), ...(f.extra || [])].forEach((k) => row.appendChild(swatchBtn(k === 'note' ? NOTE : (TILE[k] || C.white), TILE_NAME[k] || k, p[f.k] === k, (e) => { pressOne(row, e.currentTarget); set(k); })));
+        w.append(el('span', 'lbl', f.label), row);
+      } else if (f.type === 'icon') {
+        const g = el('div', 'icongrid'); g.setAttribute('role', 'group'); g.setAttribute('aria-label', f.label);
+        ICON_LIST.forEach((k) => { const b = el('button', 'ib'); b.type = 'button'; b.innerHTML = iconSVG(k); b.title = ICONS[k].n; b.setAttribute('aria-label', ICONS[k].n); b.setAttribute('aria-pressed', String(p[f.k] === k)); b.addEventListener('click', () => { pressOne(g, b); set(k); }); g.appendChild(b); });
+        w.append(el('span', 'lbl', f.label), g);
+      } else if (f.type === 'sky') {
+        const row = el('div', 'swrow'); row.setAttribute('role', 'group'); row.setAttribute('aria-label', f.label);
+        Object.keys(SKIES).forEach((k) => row.appendChild(swatchBtn(`url(${skyThumb(k)})`, SKY_NAME[k], p[f.k] === k, (e) => { pressOne(row, e.currentTarget); set(k); })));
+        w.append(el('span', 'lbl', f.label), row);
+      } else if (f.type === 'surface') {
+        const row = el('div', 'swrow'); row.setAttribute('role', 'group'); row.setAttribute('aria-label', f.label);
+        const opts = [['white', C.white, 'Blanco'], ['paper', C.paper, 'Papel'], ['stone', C.stone, 'Piedra'], ['glass', 'linear-gradient(135deg, rgba(255,255,255,.9), rgba(220,230,245,.7))', 'Vidrio'], ['aura', 'radial-gradient(circle at 35% 60%, #FFD54A, transparent 55%), radial-gradient(circle at 65% 40%, #F6A3CB, transparent 55%), radial-gradient(circle at 60% 75%, #C5B2F6, transparent 55%), #F7F4F0', 'Aura'], ['none', 'repeating-conic-gradient(#eee 0 25%, #fff 0 50%) 0 0 / 10px 10px', 'Sin fondo']];
+        opts.forEach(([v, bg, t]) => row.appendChild(swatchBtn(bg, t, p[f.k] === v, (e) => { pressOne(row, e.currentTarget); set(v); })));
+        Object.keys(SKIES).forEach((k) => row.appendChild(swatchBtn(`url(${skyThumb(k)})`, 'Cielo ' + SKY_NAME[k], p[f.k] === 'sky:' + k, (e) => { pressOne(row, e.currentTarget); set('sky:' + k); })));
+        w.append(el('span', 'lbl', f.label), row);
+      }
+      if (f.hint) w.appendChild(el('p', 'hint', f.hint));
+      box.appendChild(w);
+    });
+    syncWhen(def);
+    $('st-rot').value = st.rot; $('st-rot-o').textContent = st.rot + '°'; $('st-shadow').checked = !!st.shadow;
+    const tx = getT(def); $('lam-eyebrow').value = tx.eyebrow || ''; $('lam-title').value = tx.title || ''; $('lam-sub').value = tx.sub || '';
+  }
+  $('st-rot').addEventListener('input', (e) => { const def = cur(); getS(def).rot = parseFloat(e.target.value); $('st-rot-o').textContent = e.target.value + '°'; onField(def); });
+  $('st-shadow').addEventListener('change', (e) => { const def = cur(); getS(def).shadow = e.target.checked; onField(def); });
+  $('p-reset').addEventListener('click', () => { const def = cur(); state.params[def.id] = clone(def.d); state.style[def.id] = { rot: def.rot || 0, shadow: def.shadow !== false }; delete state.slide[def.id]; renderEditor(); onField(def); toast('Pieza como al principio'); });
+
+  // Lámina
+  function renderLamBg() {
+    const row = $('lam-bg'); row.replaceChildren();
+    LAM_BG.forEach(([v, t]) => {
+      let bg; if (C[v]) bg = C[v]; else if (v.startsWith('sky:')) bg = `url(${skyThumb(v.slice(4))})`; else if (v === 'fondos') bg = 'conic-gradient(from 90deg, #FFD54A, #F6A3CB, #C5B2F6, #9DD6F4, #FFD54A)'; else bg = `url(${presetThumb(PRESETS.find((p) => p.id === v))})`;
+      row.appendChild(swatchBtn(bg, t, state.lam.bg === v, (e) => { pressOne(row, e.currentTarget); state.lam.bg = v; persist(); queue(); }, true));
+    });
+  }
+  function syncLam() {
+    $('lam-format').value = state.lam.format; $('lam-size').value = state.lam.size; $('lam-size-o').textContent = state.lam.size + ' %'; $('lam-tone').value = state.lam.tone;
+    document.querySelectorAll('#lam-layout [data-lay]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lay === state.lam.layout)));
+    $('lam-texts').hidden = state.lam.layout === 'solo';
+  }
+  $('lam-format').addEventListener('change', (e) => { state.lam.format = e.target.value; persist(); queue(); });
+  $('lam-size').addEventListener('input', (e) => { state.lam.size = +e.target.value; $('lam-size-o').textContent = e.target.value + ' %'; persist(); queue(); });
+  $('lam-tone').addEventListener('change', (e) => { state.lam.tone = e.target.value; persist(); queue(); });
+  document.querySelectorAll('#lam-layout [data-lay]').forEach((b) => b.addEventListener('click', () => { state.lam.layout = b.dataset.lay; syncLam(); persist(); queue(); }));
+  [['lam-eyebrow', 'eyebrow'], ['lam-title', 'title'], ['lam-sub', 'sub']].forEach(([id, k]) => $(id).addEventListener('input', (e) => { getT(cur())[k] = e.target.value; persist(); queue(); }));
+
+  // Salida, escala y vista
+  function syncOut() {
+    document.querySelectorAll('#outmode [data-out]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.out === state.out)));
+    document.querySelectorAll('#scales [data-scale]').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.scale === state.scale)));
+    document.querySelectorAll('#viewbg [data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === state.view)));
+    $('scales').hidden = state.out === 'lamina'; $('sec-lam').hidden = state.out !== 'lamina';
+    $('stage-hint').textContent = state.out === 'lamina' ? 'La lámina sale al tamaño del formato elegido, lista para una diapositiva o una página de la memoria. Arma el título en «Lámina», a la derecha.' : '«Sola» descarga la pieza con fondo transparente y su sombra suave, recortada justo. «Copiar» la deja lista para pegar en Google Slides, Keynote, PowerPoint, Figma o Word.';
+  }
+  document.querySelectorAll('#outmode [data-out]').forEach((b) => b.addEventListener('click', () => { state.out = b.dataset.out; syncOut(); persist(); queue(); }));
+  document.querySelectorAll('#scales [data-scale]').forEach((b) => b.addEventListener('click', () => { state.scale = +b.dataset.scale; syncOut(); persist(); queue(); }));
+  document.querySelectorAll('#viewbg [data-view]').forEach((b) => b.addEventListener('click', () => { state.view = b.dataset.view; syncOut(); persist(); queue(); }));
+
+  // =====================================================================
+  // Exportar: PNG, copiar, ZIP
+  // =====================================================================
+  let downloads = null;
+  if (window.claude && typeof window.claude.use === 'function') window.claude.use('downloads').then((d) => { downloads = d; }).catch(() => {});
+  const slug = (s) => (s || 'pieza').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  function exportCanvas(def) {
+    const p = getP(def), st = getS(def);
+    if (state.out === 'lamina') { const [W, H] = state.lam.format.split('x').map(Number); const c = document.createElement('canvas'); renderLamina(def, p, st, state.lam, getT(def), W, H, c); return { c, name: `relevo-${slug(def.id)}-lamina-${W}x${H}.png` }; }
+    const c = document.createElement('canvas'); renderPiece(def, p, st, state.scale, c); return { c: trim(c), name: `relevo-${slug(def.id)}@${state.scale}x.png` };
+  }
+  const toBlob = (c, type = 'image/png') => new Promise((res) => c.toBlob(res, type));
+  async function offer(blob, name, canvas) {
+    if (downloads) {
+      try { await downloads.save({ filename: name, data: blob }); toast('Descargado: ' + name); return; }
+      catch (err) { const code = err && err.code; if (code === 'declined') { toast('Descarga cancelada'); return; } if (code === 'rate_limited') { toast('Hay una descarga pendiente. Espera un momento.'); return; } }
+    }
+    if (canvas) showFallback(canvas, name); else toast('Aquí no se puede descargar: abre el taller desde claude.ai.');
+  }
+  function busy(btn, on, txt) { btn.disabled = on; const sp = btn.querySelector('span'); if (on) { btn._t = sp.textContent; sp.textContent = txt; } else if (btn._t) sp.textContent = btn._t; }
+  $('p-download').addEventListener('click', async () => {
+    const btn = $('p-download'); busy(btn, true, 'Preparando…');
+    try { await document.fonts.ready; const { c, name } = exportCanvas(cur()); const blob = await toBlob(c); await offer(blob, name, c); }
+    catch (e) { console.error(e); toast('No se pudo preparar la imagen.'); } finally { busy(btn, false); }
   });
-  $('copy').addEventListener('click', async () => {
-    const txt = JSON.stringify(recipe()); $('recipe').value = txt;
-    try { await navigator.clipboard.writeText(txt); toast('Receta copiada'); } catch (e) { $('recipe').select(); toast('Receta lista: cópiala del cuadro'); }
+  $('p-copy').addEventListener('click', async () => {
+    try {
+      if (!navigator.clipboard || !window.ClipboardItem) throw new Error('sin portapapeles');
+      const { c } = exportCanvas(cur());
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': toBlob(c) })]);
+      toast('Copiada: pégala en tu presentación');
+    } catch (e) { toast('Este navegador no deja copiar imágenes aquí. Usa «Descargar PNG».', 3400); }
   });
-  $('load').addEventListener('click', () => {
-    try { const r = JSON.parse($('recipe').value); if (!r || !Array.isArray(r.blobs) || !Array.isArray(r.colors)) throw new Error(); state = P(r); state.t = r.t || 0; presetId = ''; syncControls(); drawPreview(); renderPresets(); toast('Receta cargada'); }
+  // ZIP sin compresión (las PNG ya vienen comprimidas)
+  const CRC = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+  const crc32 = (u8) => { let c = 0xFFFFFFFF; for (let i = 0; i < u8.length; i++) c = CRC[(c ^ u8[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+  function makeZip(files) {
+    const enc = new TextEncoder(); const parts = [], central = []; let off = 0; const d = new Date();
+    const time = (d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1), date = ((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate();
+    for (const f of files) {
+      const name = enc.encode(f.name), data = f.data, crc = crc32(data);
+      const lh = new DataView(new ArrayBuffer(30)); lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(6, 0x0800, true); lh.setUint16(8, 0, true); lh.setUint16(10, time, true); lh.setUint16(12, date, true); lh.setUint32(14, crc, true); lh.setUint32(18, data.length, true); lh.setUint32(22, data.length, true); lh.setUint16(26, name.length, true); lh.setUint16(28, 0, true);
+      parts.push(lh, name, data);
+      const ch = new DataView(new ArrayBuffer(46)); ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true); ch.setUint16(8, 0x0800, true); ch.setUint16(10, 0, true); ch.setUint16(12, time, true); ch.setUint16(14, date, true); ch.setUint32(16, crc, true); ch.setUint32(20, data.length, true); ch.setUint32(24, data.length, true); ch.setUint16(28, name.length, true); ch.setUint16(30, 0, true); ch.setUint16(32, 0, true); ch.setUint16(34, 0, true); ch.setUint16(36, 0, true); ch.setUint32(38, 0, true); ch.setUint32(42, off, true);
+      central.push(ch, name); off += 30 + name.length + data.length;
+    }
+    const size = central.reduce((t, x) => t + x.byteLength, 0); const end = new DataView(new ArrayBuffer(22)); end.setUint32(0, 0x06054b50, true); end.setUint16(8, files.length, true); end.setUint16(10, files.length, true); end.setUint32(12, size, true); end.setUint32(16, off, true);
+    return new Blob([...parts, ...central, end], { type: 'application/zip' });
+  }
+  async function zipOf(list, name, btn) {
+    busy(btn, true, 'Preparando 0 de ' + list.length); const files = [];
+    try {
+      await document.fonts.ready;
+      for (let i = 0; i < list.length; i++) { btn.querySelector('span').textContent = `Preparando ${i + 1} de ${list.length}`; await new Promise((r) => setTimeout(r, 0)); const { c, name: n } = exportCanvas(list[i]); const blob = await toBlob(c); files.push({ name: `${String(i + 1).padStart(2, '0')}-${n}`, data: new Uint8Array(await blob.arrayBuffer()) }); }
+      await offer(makeZip(files), name, null);
+    } catch (e) { console.error(e); toast('No se pudo armar el ZIP.'); } finally { busy(btn, false); }
+  }
+  $('zip-group').addEventListener('click', () => { const g = state.group === 'guardadas' ? cur().group : state.group; zipOf(PIECES.filter((d) => d.group === g), `relevo-${g}${state.out === 'lamina' ? '-laminas' : '@' + state.scale + 'x'}.zip`, $('zip-group')); });
+  $('zip-all').addEventListener('click', () => zipOf(PIECES, `relevo-piezas${state.out === 'lamina' ? '-laminas' : '@' + state.scale + 'x'}.zip`, $('zip-all')));
+  function showFallback(c, name) {
+    const wrapEl = el('div', 'fallback'); const bx = el('div', 'box');
+    const p = el('p', null, 'Aquí no se puede descargar directo. Haz clic derecho sobre la imagen (o mantenla presionada) y elige «Guardar imagen como…». Nombre sugerido: ' + name);
+    const img = el('img'); img.src = c.toDataURL('image/png'); img.alt = 'Imagen lista para guardar';
+    const close = el('button', 'btn primary', 'Cerrar'); close.type = 'button'; close.addEventListener('click', () => wrapEl.remove()); bx.append(p, img, close); wrapEl.appendChild(bx); document.body.appendChild(wrapEl); close.focus();
+  }
+
+  // Guardar y recetas
+  $('p-save').addEventListener('click', () => { const def = cur(); const n = kept.filter((k) => k.piece === def.id).length + 1; kept.unshift({ piece: def.id, name: `${def.name.replace('Pantalla · ', '')} · ${n}`, params: clone(getP(def)), style: clone(getS(def)), slide: clone(getT(def)) }); kept = kept.slice(0, 60); store.set('taller-piezas-guardadas', kept); toast('Guardada en «Guardadas»'); if (state.group === 'guardadas') renderLib(); });
+  $('p-copyr').addEventListener('click', async () => { const def = cur(); const txt = JSON.stringify({ taller: 'pieza', piece: def.id, params: getP(def), style: getS(def), slide: getT(def), lam: state.lam }); $('p-recipe').value = txt; try { await navigator.clipboard.writeText(txt); toast('Receta copiada'); } catch (e) { $('p-recipe').select(); toast('Receta lista: cópiala del cuadro'); } });
+  $('p-load').addEventListener('click', () => {
+    try { const r = JSON.parse($('p-recipe').value); const def = byId(r.piece); if (!def || typeof r.params !== 'object') throw new Error(); state.params[def.id] = { ...clone(def.d), ...r.params }; if (r.style) state.style[def.id] = { ...getS(def), ...r.style }; if (r.slide) state.slide[def.id] = { ...r.slide }; if (r.lam) state.lam = { ...state.lam, ...r.lam }; syncLam(); renderLamBg(); selectPiece(def.id); toast('Receta cargada'); }
     catch (e) { toast('Esa receta no se pudo leer. Copia una completa desde «Copiar receta».'); }
   });
 
-  // ---------- Descargar ----------
-  let downloads = null;
-  if (window.claude && typeof window.claude.use === 'function') window.claude.use('downloads').then((d) => { downloads = d; }).catch(() => {});
-  const slug = (s) => (s || 'aura').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  $('download').addEventListener('click', async () => {
-    const [w, h] = dims(state); const btn = $('download'); btn.disabled = true; const old = btn.lastChild.textContent; btn.lastChild.textContent = 'Preparando…';
-    try {
-      await document.fonts.ready;
-      const c = document.createElement('canvas'); compose(state, w, h, c);
-      const blob = await new Promise((res) => c.toBlob(res, 'image/png'));
-      const name = `relevo-${slug(state.name)}-${w}x${h}.png`;
-      if (downloads) {
-        try { await downloads.save({ filename: name, data: blob }); toast('Descargado: ' + name); }
-        catch (err) { if (err && err.code === 'declined') toast('Descarga cancelada'); else if (err && err.code === 'rate_limited') toast('Hay una descarga pendiente. Espera un momento.'); else showFallback(c, name); }
-      } else showFallback(c, name);
-    } finally { btn.disabled = false; btn.lastChild.textContent = old; }
-  });
-  function showFallback(c, name) {
-    const wrapEl = document.createElement('div'); wrapEl.className = 'fallback';
-    const box = document.createElement('div'); box.className = 'box';
-    const p = document.createElement('p'); p.textContent = 'Aquí no se puede descargar directo. Haz clic derecho sobre la imagen (o mantenla presionada) y elige «Guardar imagen como…». Nombre sugerido: ' + name;
-    const img = document.createElement('img'); img.src = c.toDataURL('image/png'); img.alt = 'Imagen lista para guardar';
-    const close = document.createElement('button'); close.className = 'btn primary'; close.type = 'button'; close.textContent = 'Cerrar';
-    close.addEventListener('click', () => wrapEl.remove()); box.append(p, img, close); wrapEl.appendChild(box); document.body.appendChild(wrapEl);
+  // =====================================================================
+  // Modo Fondos (generador de auras)
+  // =====================================================================
+  function fitFondos() {
+    const [w, h] = dims(fs); const [aw, ah] = areaBox(); let fw = aw, fh = fw * h / w; if (fh > ah) { fh = ah; fw = fh * w / h; }
+    frame.className = 'frame drag' + (fs.shape === 'rect' && !fs.transparent ? ' sheet' : ''); frame.style.width = fw + 'px'; frame.style.height = fh + 'px';
+    $('size').textContent = `${w} × ${h}`; $('zoom').textContent = `${w} × ${h}`; return [fw, fh];
   }
+  function drawFondos() { const [fw, fh] = fitFondos(); compose(fs, Math.round(fw * dpr()), Math.round(fh * dpr()), view); drawHandles(fw, fh); }
+  function drawHandles(fw, fh) { frame.querySelectorAll('.handle').forEach((n) => n.remove()); fs.blobs.forEach((b, i) => { const d = el('span', 'handle'); d.style.left = (b[0] * fw) + 'px'; d.style.top = (b[1] * fh) + 'px'; d.style.background = fs.colors[i]; frame.appendChild(d); }); }
+  let raf = 0, last = 0;
+  function loop(now) { if (!playing || state.mode !== 'fondos') { playing = false; $('move').setAttribute('aria-pressed', 'false'); return; } const dt = Math.min(.05, (now - (last || now)) / 1000); last = now; fs.t = (fs.t || 0) + dt * .8; drawFondos(); raf = requestAnimationFrame(loop); }
+  $('move').addEventListener('click', () => { playing = !playing; $('move').setAttribute('aria-pressed', String(playing)); if (playing && !reduce) { last = 0; raf = requestAnimationFrame(loop); } else cancelAnimationFrame(raf); });
+  $('shuffle').addEventListener('click', () => {
+    fs.seed = Math.random() * 40; const cx = fs.blobs.reduce((t, b) => t + b[0], 0) / 6, cy = fs.blobs.reduce((t, b) => t + b[1], 0) / 6; const spread = fs.group === 'cielo' || fs.bg !== '#F7F4F0' ? .38 : .16;
+    fs.blobs = fs.blobs.map((b) => [clamp(cx + (Math.random() - .5) * spread * 2, -.1, 1.1), clamp(cy + (Math.random() - .5) * spread * 2, -.1, 1.1), b[2] * (.85 + Math.random() * .3)]); drawFondos();
+  });
+  let drag = -1;
+  view.addEventListener('pointerdown', (e) => { if (state.mode !== 'fondos') return; const r = view.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height; let best = -1, bd = 1e9; fs.blobs.forEach((b, i) => { const d = (b[0] - x) ** 2 + (b[1] - y) ** 2; if (d < bd) { bd = d; best = i; } }); drag = best; view.setPointerCapture(e.pointerId); view.classList.add('dragging'); frame.classList.add('show-handles'); });
+  view.addEventListener('pointermove', (e) => { if (drag < 0) return; const r = view.getBoundingClientRect(); fs.blobs[drag][0] = clamp((e.clientX - r.left) / r.width, -.2, 1.2); fs.blobs[drag][1] = clamp((e.clientY - r.top) / r.height, -.2, 1.2); drawFondos(); });
+  const endDrag = () => { drag = -1; view.classList.remove('dragging'); frame.classList.remove('show-handles'); };
+  view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', endDrag);
+  const SLIDERS = [['k', 'Intensidad', .2, 1.3, .01], ['scale', 'Tamaño de las luces', .4, 2.2, .01], ['warp', 'Volumen, como nubes', 0, .8, .01], ['grain', 'Grano', 0, .14, .005], ['depth', 'Profundidad', 0, 1, .01]];
+  SLIDERS.forEach(([key, lab, min, max, step]) => {
+    const id = 's-' + key; const w = el('div', 'field'); w.innerHTML = `<div class="row"><label for="${id}">${lab}</label><output id="${id}-o"></output></div><input type="range" id="${id}" min="${min}" max="${max}" step="${step}">`; $('sliders').appendChild(w);
+    const inp = w.querySelector('input'); inp.addEventListener('input', () => { fs[key] = parseFloat(inp.value); $(id + '-o').textContent = (+inp.value).toFixed(2); drawFondos(); });
+  });
+  ['Fondo', '1', '2', '3', '4', '5', '6'].forEach((lab, i) => {
+    const l = el('label'); l.innerHTML = `<input type="color" id="c-${i}" aria-label="${i ? 'Luz ' + lab : 'Fondo'}"><span>${lab}</span>`; $('colors').appendChild(l);
+    l.querySelector('input').addEventListener('input', (e) => { if (i === 0) fs.bg = e.target.value; else fs.colors[i - 1] = e.target.value; drawFondos(); });
+  });
+  $('format').addEventListener('change', (e) => { fs.format = e.target.value; drawFondos(); });
+  document.querySelectorAll('[data-shape]').forEach((b) => b.addEventListener('click', () => { fs.shape = b.dataset.shape; syncFondos(); drawFondos(); }));
+  $('transparent').addEventListener('change', (e) => { fs.transparent = e.target.checked; drawFondos(); });
+  LAYOUTS.forEach(([id, name]) => { const b = el('button', 'chip', name); b.type = 'button'; b.dataset.layout = id; $('layouts').appendChild(b); b.addEventListener('click', () => { fs.text = id === 'none' ? null : { ...(fs.text || TXT(id, '', 'Título | que sigue en gris', '')), layout: id }; syncFondos(); drawFondos(); }); });
+  [['t-eyebrow', 'eyebrow'], ['t-title', 'title'], ['t-sub', 'sub'], ['t-color', 'color'], ['t-align', 'align']].forEach(([id, key]) => $(id).addEventListener('input', (e) => { if (!fs.text) fs.text = TXT('portada', '', '', ''); fs.text[key] = e.target.value; syncLayoutChips(); drawFondos(); }));
+  function syncLayoutChips() { const lay = fs.text ? fs.text.layout : 'none'; $('layouts').querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.layout === lay))); }
+  function syncFondos() {
+    SLIDERS.forEach(([key]) => { $('s-' + key).value = fs[key]; $('s-' + key + '-o').textContent = (+fs[key]).toFixed(2); });
+    $('c-0').value = fs.bg; fs.colors.forEach((c, i) => { $('c-' + (i + 1)).value = c; });
+    if (![...$('format').options].some((o) => o.value === fs.format)) { const o = el('option', null, fs.format.replace('x', ' × ')); o.value = fs.format; $('format').appendChild(o); } $('format').value = fs.format;
+    document.querySelectorAll('[data-shape]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.shape === fs.shape)));
+    $('transparent').checked = !!fs.transparent;
+    const tx = fs.text || { eyebrow: '', title: '', sub: '', color: 'ink', align: 'left' };
+    $('t-eyebrow').value = tx.eyebrow || ''; $('t-title').value = tx.title || ''; $('t-sub').value = tx.sub || ''; $('t-color').value = tx.color || 'ink'; $('t-align').value = tx.align || 'left';
+    syncLayoutChips(); $('preset-name').textContent = fs.name || 'Mía';
+  }
+  const pthumbs = {};
+  function presetThumb(p) { if (!p) return ''; if (pthumbs[p.id]) return pthumbs[p.id]; const c = document.createElement('canvas'); compose({ ...P(p), t: 3 }, 320, 200, c); return (pthumbs[p.id] = c.toDataURL('image/png')); }
+  function renderPresets() {
+    const bx = $('presets'); bx.replaceChildren(); const list = fgroup === 'mias' ? mine : PRESETS.filter((p) => p.group === fgroup);
+    if (!list.length) { bx.appendChild(el('p', 'empty', 'Todavía no guardas ninguno. Ajusta una imagen y toca «Guardar en Mías».')); return; }
+    list.forEach((p, idx) => {
+      const b = el('button', 'preset'); b.type = 'button'; b.setAttribute('aria-pressed', String(p.id === presetId)); const img = el('img'); img.alt = ''; img.src = p.thumb || presetThumb(p); b.append(img, el('span', null, p.name));
+      if (fgroup === 'mias') { const d = el('span', 'del', 'Quitar'); d.setAttribute('role', 'button'); d.tabIndex = 0; d.addEventListener('click', (ev) => { ev.stopPropagation(); mine.splice(idx, 1); store.set('taller-auras-mias', mine); renderPresets(); toast('Quitado de Mías'); }); b.appendChild(d); }
+      b.addEventListener('click', () => { const t = fs.t; fs = P(p); fs.t = t; presetId = p.id; syncFondos(); drawFondos(); renderPresets(); }); bx.appendChild(b);
+    });
+  }
+  document.querySelectorAll('#lib-fondos [data-group]').forEach((t) => t.addEventListener('click', () => { fgroup = t.dataset.group; document.querySelectorAll('#lib-fondos [data-group]').forEach((x) => x.setAttribute('aria-selected', String(x === t))); renderPresets(); }));
+  const frecipe = () => { const { thumb: _t, ...r } = fs; return { ...r, t: +(fs.t || 0).toFixed(3) }; };
+  $('save-mine').addEventListener('click', () => { const c = document.createElement('canvas'); compose({ ...fs }, 320, 200, c); mine.unshift({ ...frecipe(), id: 'mia-' + Date.now(), group: 'mias', name: 'Mía ' + (mine.length + 1), thumb: c.toDataURL('image/png') }); mine = mine.slice(0, 40); store.set('taller-auras-mias', mine); toast('Guardado en Mías'); if (fgroup === 'mias') renderPresets(); });
+  $('copy').addEventListener('click', async () => { const txt = JSON.stringify(frecipe()); $('recipe').value = txt; try { await navigator.clipboard.writeText(txt); toast('Receta copiada'); } catch (e) { $('recipe').select(); toast('Receta lista: cópiala del cuadro'); } });
+  $('load').addEventListener('click', () => { try { const r = JSON.parse($('recipe').value); if (!r || !Array.isArray(r.blobs) || !Array.isArray(r.colors)) throw new Error(); fs = P(r); fs.t = r.t || 0; presetId = ''; syncFondos(); drawFondos(); renderPresets(); toast('Receta cargada'); } catch (e) { toast('Esa receta no se pudo leer. Copia una completa desde «Copiar receta».'); } });
+  $('download').addEventListener('click', async () => {
+    const [w, h] = dims(fs); const btn = $('download'); busy(btn, true, 'Preparando…');
+    try { await document.fonts.ready; const c = document.createElement('canvas'); compose(fs, w, h, c); const blob = await toBlob(c); await offer(blob, `relevo-${slug(fs.name || 'aura')}-${w}x${h}.png`, c); }
+    finally { busy(btn, false); }
+  });
 
-  // ---------- Inicio ----------
-  syncControls(); renderPresets(); drawPreview();
-  document.fonts && document.fonts.load('700 80px "Instrument Sans"').then(() => { drawPreview(); Object.keys(thumbs).forEach((k) => delete thumbs[k]); renderPresets(); }).catch(() => {});
-  if (!gl) toast('Este navegador no tiene WebGL: la vista previa queda en color plano.');
+  // Cambio de modo
+  function setMode(m) {
+    state.mode = m; persist(); const pz = m === 'piezas';
+    document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.mode === m)));
+    $('lib-piezas').hidden = !pz; $('lib-fondos').hidden = pz; $('panel-piezas').hidden = !pz; $('panel-fondos').hidden = pz; $('bar-piezas').hidden = !pz; $('bar-fondos').hidden = pz;
+    if (pz) { playing = false; $('move').setAttribute('aria-pressed', 'false'); $('stage-hint').hidden = false; syncOut(); renderEditor(); } else { $('stage-title').textContent = 'Fondos con aura'; $('stage-hint').textContent = 'Arrastra sobre la imagen para mover la luz más cercana. Con «Mover», las luces se desplazan solas; la descarga guarda el cuadro que ves.'; syncFondos(); renderPresets(); }
+    queue();
+  }
+  document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.mode)));
+
+  // =====================================================================
+  // Inicio
+  // =====================================================================
+  renderGroups(); renderLib(); renderLamBg(); syncLam(); syncOut(); setMode(state.mode === 'fondos' ? 'fondos' : 'piezas');
+  const fontLoads = document.fonts ? Promise.all([400, 500, 600, 700].map((w) => document.fonts.load(`${w} 24px "Instrument Sans"`, 'Aa¿áé01'))) : Promise.resolve();
+  fontLoads.catch(() => {}).then(() => { fontsReady = true; Object.keys(FM).forEach((k) => delete FM[k]); Object.keys(thumbs).forEach((k) => delete thumbs[k]); Object.keys(pthumbs).forEach((k) => delete pthumbs[k]); renderLib(); renderLamBg(); if (state.mode === 'fondos') renderPresets(); queue(); });
+  if (!gl) toast('Este navegador no tiene WebGL: las auras quedan en color plano.');
+  window.__taller = { PIECES, state, render, exportCanvas, selectPiece, measure, makeZip };
 })();
 </script>

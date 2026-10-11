@@ -6,6 +6,27 @@
 
 [Dafi](https://www.behance.net/gallery/253069605/Dafi), de Mambo Mambo, en Behance. Es una app de estudio con IA; la dirección creativa es de Guillaume Beaulieu y Zorani Sanabria y el movimiento, de Tommy Hachez. El autor la eligió como inspiración directa, no como copia. Se revisaron sus 17 imágenes y parte de sus 6 videos en el navegador, sin descargarlos ni guardarlos.
 
+## Taller de auras, versión 2: piezas (11 de octubre)
+
+El autor notó que el taller solo hacía fondos y pidió las piezas que sí tenían diseño en la exploración, como el dato «3 de 5», editables y exportables aparte: una herramienta para sacar fácil elementos para sus presentaciones y la memoria. El [taller](relevo-con-aura-2026-10-10/taller-de-auras.html) pasa a tener dos modos, «Piezas» y «Fondos», con una mesa de tres columnas: biblioteca, lienzo y propiedades.
+
+- **39 piezas** dibujadas de nuevo con las medidas, colores, sombras, vidrio, cielos con grano e íconos de la exploración:
+  - **Datos:** «Esta semana · 3 de 5» con barras, contador de la prueba, próxima señal, número grande, anillo de avance, relevo contando y tiempo por app.
+  - **Fichas y frases:** ficha con ícono, escalera de fichas, «Elige con qué suena», cuadro con ícono, frase con íconos dentro y titular en dos tonos.
+  - **Tarjetas:** nota amarilla, etiqueta de vidrio, «Suena después de», actividad con cielo, actividades con la barra «Crear una actividad», fila con ícono, lista con íconos y nota destacada.
+  - **Controles:** botones (negro, contorno, grande con flecha, flecha redonda, etiquetas y conteo), selector de estados, respuestas en un toque, ajustes con interruptores, elegir color y barra de navegación.
+  - **Marca:** logotipo, con aura detrás si se quiere; marca de cuatro luces; ícono de la app; y el juego de 18 íconos.
+  - **Pantallas:** al abrir, bienvenida, inicio, contando, suena, después y Tu aura.
+- **Edición:** cada pieza cambia sus textos, números, colores, ícono, cielo o fondo (blanco, papel, piedra, vidrio, aura o un cielo), su giro y su sombra. Atajos al escribir: «|» pasa a gris, «\*\*…\*\*» es negrita y `{time butter}` pone un ícono dentro del texto.
+- **Salida:**
+  - **Sola:** PNG con fondo transparente y su sombra, recortado justo, a 1×, 2×, 3× o 4×.
+  - **Copiar:** deja la pieza lista para pegar en Google Slides, Keynote, PowerPoint, Figma o Word.
+  - **En una lámina:** la pieza sobre papel, piedra, un aura, un cielo o el fondo armado en «Fondos», con título, en formatos de diapositiva (16:9, 4K, 4:3), A4 vertical u horizontal, figura para la memoria, cuadrado o vertical. Las piezas de vidrio desenfocan el fondo de la lámina.
+  - **En lote:** un grupo o todas las piezas en un ZIP, solas o en lámina.
+- **Guardar:** los cambios quedan en el navegador; «Guardar» suma una copia a «Guardadas» y la receta en texto rehace la pieza exacta en otro equipo.
+- **Datos de ejemplo:** las piezas traen los textos de la exploración, que muestran la interfaz y no son resultados del estudio. Los saludos de las pantallas no usan nombres de personas.
+- **Verificación:** en Chrome sin ventana se exportaron las 39 piezas sin errores, se recorrieron con clics la edición, la lámina, el respaldo cuando no hay descarga, los fondos y la persistencia al recargar, y se abrió un ZIP generado. Las 39 piezas a 3× pesan unos 21 MB y se preparan en unos 4 segundos en ese equipo.
+
 ## Versión 3 (11 de octubre) y taller de auras
 
 El autor pidió perfeccionarla, crear presets para presentaciones y una herramienta para elaborar sus propios elementos con estos degradados. También recordó que el Tag no emite luz.
@@ -63,6 +84,12 @@ En este orden, sin cambiar las condiciones de la prueba, los tiempos ni las preg
 5. Enfoque desde lo borroso en el logotipo al abrir y en la frase de la señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Taller de auras, versión 2
+
+- **Qué cambió:** se documentó la versión 2 del taller, con 39 piezas editables de la exploración, salida sola, en lámina, copiada o en ZIP; el saludo de la pantalla de inicio de la lámina ya no usa un nombre.
+- **Cómo estaba antes:** el taller solo generaba fondos, presets de diapositiva y cuatro elementos simples (orbe, ficha, círculo y banda).
+- **Por qué:** el autor pidió las piezas con diseño, como «3 de 5», exportables aparte para presentaciones y la memoria.
 
 ### 2026-10-11 — Versión 3 y taller de auras
 
