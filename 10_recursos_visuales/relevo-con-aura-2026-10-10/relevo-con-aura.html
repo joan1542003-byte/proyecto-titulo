@@ -1,411 +1,591 @@
 <title>Relevo con aura</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
 <style>
-/* Lámina editorial a la izquierda; las pantallas en una grilla que se apila en el teléfono. */
+/* Láminas como tableros de Behance: mucho blanco tibio, una idea por tablero, piezas centradas sobre piedra. Solo en claro. */
 :root {
-  --paper: #F2F1EC;      /* papel de Relevo, un punto más tibio, como el de la referencia */
-  --stone: #E9E5DE;      /* fondo de las secciones de pantallas */
-  --card: #FCFCFA;
-  --ink: #17181C;
-  --graphite: #5E6068;
-  --line: #DEDAD2;
-  --voice: #2A4BD7;      /* lo que escribe la persona */
-  --on-ink: #FCFCFA;
-  /* Aura: la familia de color de Relevo (D-104) */
-  --sol: #E7BF57; --naranja: #FEB074; --rosa: #FEA4CF; --menta: #6FDEA7; --celeste: #54D6FE; --lila: #CEB5FE;
-  /* Fichas: los mismos tonos, más claros */
-  --t-sol: #F6E38E; --t-celeste: #C3E9F6; --t-menta: #CDEFD3; --t-rosa: #F9D2E0; --t-lila: #E4DAFB; --t-naranja: #FBD9BC;
-  --aura-alpha: .9;
-  --grain: .14;
-  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --r-phone: 34px; --r-card: 22px;
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --paper: #131417; --stone: #1B1C20; --card: #212329; --ink: #F2F1EC; --graphite: #A4A7AF; --line: #2E3037; --voice: #8EA2FF; --on-ink: #17181C;
-  --aura-alpha: .6; --grain: .1; color-scheme: dark;
-} }
-:root[data-theme="dark"] {
-  --paper: #131417; --stone: #1B1C20; --card: #212329; --ink: #F2F1EC; --graphite: #A4A7AF; --line: #2E3037; --voice: #8EA2FF; --on-ink: #17181C;
-  --aura-alpha: .6; --grain: .1; color-scheme: dark;
+  color-scheme: light;
+  --paper: #F7F4F0;     /* blanco tibio */
+  --stone: #EEE9E3;     /* piedra de los tableros */
+  --white: #FFFFFF;
+  --ink: #141312;
+  --mute: #8B8580;      /* segundo tono de los titulares */
+  --line: #E4DED6;
+  /* Aura */
+  --butter: #FFD54A; --peach: #FFAE7A; --blush: #F6A3CB; --lilac: #C5B2F6; --sky: #9DD6F4;
+  /* Fichas */
+  --t-butter: #F9E77C; --t-sky: #C2E4F3; --t-lime: #DCEA98; --t-blush: #F8C9D9; --t-lilac: #DED2F7; --t-peach: #FBD3B6;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --shadow: 0 1px 2px rgba(30,22,12,.05), 0 18px 44px -26px rgba(30,22,12,.28);
+  --spring: cubic-bezier(.2,.8,.2,1.15);
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
-.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 0 72px; }
+html { background: var(--paper); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -.025em; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -.02em; }
-p { margin: 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 0 80px; }
+.soft { color: var(--mute); }
 
-/* Grano: ruido fractal como textura táctil sobre los degradados. */
-.grain { position: relative; isolation: isolate; overflow: hidden; }
-.grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: var(--grain); mix-blend-mode: soft-light; z-index: 3;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .8 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+/* Grano de papel sobre todo el sitio, muy leve. */
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
 
-/* Aura: varias luces de la familia de color, desenfocadas, que respiran. */
-.aura { position: absolute; inset: -20%; z-index: 0; opacity: var(--aura-alpha); filter: blur(38px); pointer-events: none;
-  background:
-    radial-gradient(40% 38% at 38% 62%, var(--sol) 0%, transparent 70%),
-    radial-gradient(34% 32% at 62% 38%, var(--rosa) 0%, transparent 72%),
-    radial-gradient(36% 34% at 32% 34%, var(--celeste) 0%, transparent 72%),
-    radial-gradient(30% 30% at 68% 66%, var(--lila) 0%, transparent 72%);
-  animation: breathe 9s ease-in-out infinite alternate; }
-.aura.calm { animation-duration: 12s; }
-.aura.live { filter: blur(26px); animation: pulse 2.4s ease-in-out infinite; }
-@keyframes breathe { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(14deg) scale(1.08); } 100% { transform: rotate(-10deg) scale(.96); } }
-@keyframes pulse { 0%, 100% { transform: scale(.94); opacity: calc(var(--aura-alpha) * .8); } 50% { transform: scale(1.12); opacity: 1; } }
-.focus-in { animation: focus 1.6s cubic-bezier(.2,.7,.2,1) both; }
-@keyframes focus { from { filter: blur(14px); opacity: .2; letter-spacing: .02em; } to { filter: blur(0); opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .aura, .aura.live, .focus-in { animation: none; } }
+/* Aura: lienzo WebGL; si no hay WebGL, un degradado de respaldo. */
+canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.aura-fallback { background: radial-gradient(30% 34% at 40% 62%, var(--butter), transparent 70%), radial-gradient(28% 30% at 58% 38%, var(--blush), transparent 72%), radial-gradient(30% 30% at 32% 40%, var(--sky), transparent 72%), radial-gradient(26% 28% at 66% 60%, var(--lilac), transparent 72%), var(--paper); }
 
 /* Portada */
-.hero .aura { inset: -25% -15% -25% 30%; filter: blur(48px); }
-.hero { background: var(--paper); position: relative; border-radius: 0 0 40px 40px; padding-inline: 20px; padding-block: 56px 64px; margin-bottom: 56px; }
-.hero .inner { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; display: grid; gap: 28px; }
-.wordmark { font-family: var(--display); font-weight: 800; font-size: clamp(64px, 13vw, 156px); line-height: .9; letter-spacing: -.05em; }
-.hero h1 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 600; line-height: 1.12; max-width: 22ch; }
-.hero h1 .soft { color: var(--graphite); font-weight: 500; }
-.credit { font-size: 14px; color: var(--graphite); max-width: 60ch; }
-.credit a { text-underline-offset: 3px; }
+.hero { position: relative; height: clamp(700px, 94vh, 880px); overflow: hidden; background: var(--paper); }
+.hero .center { position: absolute; inset: 0 0 auto; z-index: 2; display: grid; justify-items: center; gap: 18px; padding-inline: 20px; padding-block: clamp(120px, 20vh, 200px) 0; text-align: center; }
+.wordmark { font-weight: 700; font-size: clamp(76px, 15vw, 188px); line-height: .82; letter-spacing: -.065em; font-stretch: 92%; }
+.wordmark i { font-style: normal; display: inline-block; }
+.hero .tag { font-size: clamp(17px, 2vw, 21px); font-weight: 500; max-width: 26ch; line-height: 1.25; }
+.icons { position: absolute; left: 50%; bottom: -70px; transform: translateX(-50%); z-index: 2; width: min(340px, 78vw); aspect-ratio: 1.1; border-radius: 44px; padding: 22px;
+  background: rgba(255,255,255,.34); border: 1px solid rgba(255,255,255,.75); backdrop-filter: blur(22px) saturate(1.3); -webkit-backdrop-filter: blur(22px) saturate(1.3);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 30px 60px -40px rgba(40,30,20,.35); }
+.icons > span { border-radius: 22px; background: rgba(255,255,255,.42); border: 1px solid rgba(255,255,255,.7); aspect-ratio: 1; }
+.icons .app { background: var(--white); display: grid; place-items: center; box-shadow: 0 10px 22px -12px rgba(40,30,20,.45); }
+.credit { position: absolute; left: 20px; top: 18px; z-index: 3; font-size: 12px; color: var(--mute); max-width: 44ch; text-align: left; }
 
-.eyebrow { font-size: 14px; font-weight: 600; color: var(--graphite); }
-.section { display: grid; gap: 22px; margin-top: 64px; }
-.section > header { display: grid; gap: 8px; max-width: 64ch; }
-.section h2 { font-size: clamp(26px, 3.2vw, 36px); font-weight: 700; line-height: 1.1; }
-.section h2 .soft { color: var(--graphite); font-weight: 500; }
-.lead { color: var(--graphite); font-size: 17px; }
+/* Marca: el Tag como flor de cuatro luces */
+.mark { display: inline-block; width: 56%; aspect-ratio: 1; position: relative; filter: saturate(1.15); }
+.mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: multiply; filter: blur(.4px); }
+.mark i:nth-child(1) { left: 0; top: 21%; background: radial-gradient(circle at 35% 35%, #FFE680, var(--butter)); }
+.mark i:nth-child(2) { right: 0; top: 21%; background: radial-gradient(circle at 65% 35%, #FBC9E2, var(--blush)); }
+.mark i:nth-child(3) { left: 21%; top: 0; background: radial-gradient(circle at 50% 30%, #D2F0FF, var(--sky)); }
+.mark i:nth-child(4) { left: 21%; bottom: 0; background: radial-gradient(circle at 50% 70%, #E2D7FF, var(--lilac)); }
 
-/* Principios */
-.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
-.principle { background: var(--card); border-radius: var(--r-card); padding: 18px; display: grid; gap: 12px; align-content: start; }
-.principle .demo { height: 128px; border-radius: 16px; position: relative; background: var(--stone); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.principle h3 { font-size: 19px; font-weight: 700; }
-.principle p { color: var(--graphite); font-size: 15px; }
-.principle .to { color: var(--ink); font-size: 15px; }
-.principle .to b { font-weight: 600; }
+/* Tableros */
+.board { margin-top: 28px; background: var(--stone); border-radius: 40px; padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(36px, 6vw, 72px); position: relative; overflow: hidden; }
+.board.white { background: var(--white); }
+.board-head { display: grid; gap: 8px; max-width: 58ch; margin-bottom: clamp(26px, 4vw, 44px); }
+.eyebrow { font-size: 13px; font-weight: 600; color: var(--mute); }
+.board h2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 600; line-height: 1.04; }
+.lead { color: var(--mute); font-size: 17px; max-width: 58ch; }
 
-/* Fichas con ícono de color */
-.chip { display: inline-flex; align-items: center; gap: 12px; background: var(--card); border-radius: 16px; padding: 8px 8px 8px 14px; font-size: 14px; font-weight: 500; line-height: 1.2; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 24px -16px rgba(0,0,0,.3); }
-.tile { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; flex: none; color: #17181C; }
-.tile svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.t-sol { background: var(--t-sol); } .t-celeste { background: var(--t-celeste); } .t-menta { background: var(--t-menta); } .t-rosa { background: var(--t-rosa); } .t-lila { background: var(--t-lila); } .t-naranja { background: var(--t-naranja); }
-.stairs { display: grid; gap: 8px; }
+/* Fichas con cuadrado de color */
+.chip { display: inline-flex; align-items: center; gap: 14px; background: var(--white); border-radius: 16px; padding: 9px 9px 9px 16px; font-size: 15px; font-weight: 500; line-height: 1.22; box-shadow: var(--shadow); transition: transform .5s var(--spring), box-shadow .5s; }
+.chip:hover { transform: translateY(-3px) rotate(-.6deg); box-shadow: 0 2px 4px rgba(30,22,12,.06), 0 26px 50px -26px rgba(30,22,12,.36); }
+.tile { width: 46px; height: 46px; border-radius: 11px; display: grid; place-items: center; flex: none; }
+.tile svg, .ii svg, .dock svg, .ico svg { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tile svg { width: 28px; height: 28px; }
+.butter { background: var(--t-butter); } .sky { background: var(--t-sky); } .lime { background: var(--t-lime); } .blush { background: var(--t-blush); } .lilac { background: var(--t-lilac); } .peach { background: var(--t-peach); }
+.stairs { display: grid; gap: 14px; width: min(760px, 100%); margin-inline: auto; }
+.stairs .chip { width: fit-content; max-width: 100%; }
 .stairs .chip:nth-child(2) { margin-left: 18%; } .stairs .chip:nth-child(3) { margin-left: 36%; } .stairs .chip:nth-child(4) { margin-left: 54%; }
-.inline-ico { display: inline-grid; place-items: center; width: 1.25em; height: 1.25em; border-radius: .32em; vertical-align: -.22em; margin-inline: .08em; color: #17181C; }
-.inline-ico svg { width: .9em; height: .9em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 640px) { .stairs .chip:nth-child(2) { margin-left: 8%; } .stairs .chip:nth-child(3) { margin-left: 16%; } .stairs .chip:nth-child(4) { margin-left: 24%; } }
+
+/* Íconos dentro de la frase */
+.ii { display: inline-grid; place-items: center; width: 1.18em; height: 1.18em; border-radius: .28em; vertical-align: -.2em; margin-inline: .06em; }
+.ii svg { width: .86em; height: .86em; stroke-width: 1.9; }
+.manifest { font-size: clamp(26px, 3.6vw, 46px); line-height: 1.16; letter-spacing: -.025em; font-weight: 500; max-width: 24ch; }
 
 /* Pantallas */
-.screens { background: var(--stone); border-radius: 36px; padding-inline: 18px; padding-block: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 18px; }
-.phone { background: var(--paper); border-radius: var(--r-phone); aspect-ratio: 9 / 19; max-width: 320px; width: 100%; justify-self: center; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 60px -40px rgba(0,0,0,.45); }
-.phone .content { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 22px 16px 16px; }
-.cap { text-align: center; font-size: 14px; color: var(--graphite); margin-top: 10px; }
-.status { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--graphite); }
-.greet { font-size: 22px; line-height: 1.15; font-weight: 600; }
-.greet .soft { color: var(--graphite); font-weight: 500; }
-.relevo-card { position: relative; border-radius: 22px; background: var(--card); padding: 14px; display: grid; gap: 8px; overflow: hidden; }
-.relevo-card .content-in { position: relative; z-index: 2; display: grid; gap: 8px; }
-.pill { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: color-mix(in srgb, var(--card) 80%, transparent); font-size: 12px; font-weight: 600; width: fit-content; }
-.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
-.sig { font-size: 19px; font-weight: 700; line-height: 1.15; }
-.sig u { color: var(--voice); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-.bar { height: 6px; border-radius: 99px; background: color-mix(in srgb, var(--ink) 12%, transparent); overflow: hidden; }
-.bar i { display: block; height: 100%; width: 40%; background: var(--ink); border-radius: 99px; }
-.mini { font-size: 12px; color: var(--graphite); }
-.mini b { color: var(--ink); font-variant-numeric: tabular-nums; }
-.row-title { display: flex; align-items: baseline; gap: 6px; font-size: 15px; font-weight: 700; margin-top: 4px; }
-.count { font-size: 11px; font-weight: 700; background: var(--card); border-radius: 99px; padding: 1px 7px; }
-.ideas { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.idea { border-radius: 16px; aspect-ratio: 1 / 1.05; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 10px; color: #fff; font-size: 13px; font-weight: 600; line-height: 1.15; }
-.idea::before { content: ""; position: absolute; inset: 0; z-index: 0; }
-.idea span { position: relative; z-index: 4; text-shadow: 0 1px 8px rgba(0,0,0,.25); }
-.idea small { display: block; font-weight: 400; opacity: .9; }
-/* Degradados de actividad con volumen, como nubes: más saturados que los de 2.23 */
-.g-leer::before { background: radial-gradient(70% 60% at 30% 25%, #9FD9FF 0%, transparent 60%), radial-gradient(60% 70% at 80% 70%, #7C6CF2 0%, transparent 65%), linear-gradient(160deg, #6FB5F5, #3E57C9); }
-.g-dormir::before { background: radial-gradient(60% 60% at 70% 30%, #FFD39A 0%, transparent 60%), radial-gradient(70% 70% at 25% 80%, #F58BB4 0%, transparent 65%), linear-gradient(150deg, #FFB98A, #D86B9A); }
-.g-jugar::before { background: radial-gradient(60% 60% at 25% 30%, #B9A2FF 0%, transparent 60%), radial-gradient(60% 60% at 80% 75%, #58D3F7 0%, transparent 60%), linear-gradient(140deg, #8F7BEF, #3FA7D6); }
-.g-mover::before { background: radial-gradient(60% 60% at 75% 25%, #A8F0C6 0%, transparent 60%), radial-gradient(70% 70% at 20% 80%, #2FB386 0%, transparent 65%), linear-gradient(150deg, #64D9A2, #1E8F78); }
-.dock { margin-top: auto; display: flex; gap: 6px; justify-content: space-around; background: color-mix(in srgb, var(--card) 85%, transparent); border-radius: 18px; padding: 8px; }
-.dock span { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; color: var(--graphite); }
-.dock span.on { background: var(--t-sol); color: #17181C; }
-.dock svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.btn { display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; background: var(--ink); color: var(--on-ink); font-weight: 600; font-size: 15px; }
-.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
-.big { font-size: 46px; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
-.center-stage { position: relative; flex: 1; display: grid; place-items: center; text-align: center; }
-.center-stage .aura { inset: 0; }
-.center-stage .in { position: relative; z-index: 2; display: grid; gap: 6px; justify-items: center; }
-.sentence { font-size: 16px; line-height: 1.5; }
-.choice { display: flex; align-items: center; gap: 10px; background: var(--card); border-radius: 16px; padding: 8px; font-size: 14px; font-weight: 600; }
-.choice small { display: block; font-weight: 400; font-size: 12px; color: var(--graphite); }
-.choice .radio { margin-left: auto; width: 20px; height: 20px; border-radius: 50%; box-shadow: inset 0 0 0 1.75px var(--graphite); flex: none; }
-.choice.sel { box-shadow: inset 0 0 0 2px var(--ink); }
-.choice.sel .radio { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 6px var(--card); background: var(--ink); }
-.tag-photo { width: 34px; height: 34px; border-radius: 50%; background: var(--card); box-shadow: inset 0 0 0 2px #17181C; display: grid; place-items: center; }
-.tag-photo i { width: 12px; height: 12px; border-radius: 50%; background: #E6E6E1; box-shadow: inset 0 0 0 1.5px #17181C; }
+.screens { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(14px, 2vw, 22px); align-items: start; }
+.screen { margin: 0; display: grid; gap: 12px; justify-items: center; }
+.phone { width: 100%; max-width: 300px; aspect-ratio: 9 / 19.5; border-radius: 38px; background: var(--paper); position: relative; overflow: hidden; box-shadow: 0 2px 3px rgba(30,22,12,.05), 0 40px 70px -46px rgba(30,22,12,.5); isolation: isolate; }
+.phone .ui { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; padding: 14px 16px 12px; gap: 12px; }
+.statusbar { display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 600; padding: 0 8px; height: 22px; }
+.statusbar .isl { width: 72px; height: 20px; border-radius: 99px; background: var(--ink); }
+.statusbar .sig { display: flex; gap: 3px; align-items: flex-end; }
+.statusbar .sig i { width: 3px; background: var(--ink); border-radius: 1px; }
+.home-ind { width: 34%; height: 4px; border-radius: 99px; background: var(--ink); margin: auto auto 0; opacity: .9; }
+.cap { font-size: 13px; color: var(--mute); text-align: center; max-width: 30ch; }
+.title { font-size: 21px; line-height: 1.12; font-weight: 600; letter-spacing: -.025em; }
+.small { font-size: 12px; color: var(--mute); }
+.pillbtn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 99px; background: var(--ink); color: var(--white); font-size: 13px; font-weight: 600; border: 0; font-family: inherit; cursor: pointer; transition: transform .3s var(--spring); }
+.pillbtn:hover { transform: scale(1.04); }
+.pillbtn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.3px var(--ink); }
+.pillbtn:focus-visible, .seg button:focus-visible, .sw:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.roundgo { width: 42px; height: 42px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--ink); display: grid; place-items: center; }
+.roundgo svg { width: 16px; height: 16px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.segments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 0 6px; }
+.segments i { height: 3px; border-radius: 99px; background: var(--line); }
+.segments i.on { background: var(--ink); }
+.glass { background: rgba(255,255,255,.58); border: 1px solid rgba(255,255,255,.85); backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 14px 30px -20px rgba(30,22,12,.35); }
+.card { background: var(--white); border-radius: 18px; box-shadow: var(--shadow); }
+.tex { background-size: cover; background-position: center; }
+.chipxs { display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 8px; border-radius: 99px; font-size: 10px; font-weight: 600; background: var(--t-lime); }
+.count { font-size: 11px; font-weight: 600; background: var(--white); border-radius: 99px; padding: 1px 7px; margin-left: 4px; vertical-align: 2px; }
+.dock { margin-top: auto; display: flex; justify-content: space-around; align-items: center; border-radius: 20px; padding: 7px; }
+.dock span { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; }
+.dock span.on { background: var(--t-butter); }
+.dock svg { width: 21px; height: 21px; }
+.opt { display: flex; align-items: center; gap: 10px; padding: 11px 12px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); background: var(--white); font-size: 12.5px; color: var(--mute); }
+.opt .r { margin-left: auto; width: 16px; height: 16px; border-radius: 50%; box-shadow: inset 0 0 0 1.4px var(--line); flex: none; }
+.opt.sel { color: var(--ink); box-shadow: inset 0 0 0 1.4px var(--ink); font-weight: 500; }
+.opt.sel .r { background: var(--ink); box-shadow: inset 0 0 0 3.5px var(--white), 0 0 0 1.4px var(--ink); }
+.big { font-size: 54px; font-weight: 600; letter-spacing: -.05em; line-height: .95; font-variant-numeric: tabular-nums; }
+.ring { width: 150px; height: 150px; }
 
-/* Paleta */
-.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-.sw { border-radius: 18px; overflow: hidden; background: var(--card); }
-.sw .c { height: 72px; }
-.sw .k { padding: 10px 12px; font-size: 13px; display: grid; gap: 2px; }
-.sw .k b { font-weight: 600; } .sw .k span { color: var(--graphite); font-variant-numeric: tabular-nums; }
+/* Collage de tarjetas inclinadas */
+.collage { position: relative; height: clamp(420px, 52vw, 560px); border-radius: 28px; overflow: hidden; }
+.collage .piece { position: absolute; transition: transform .7s var(--spring); }
+.collage .piece:hover { transform: rotate(0deg) translateY(-6px) scale(1.02) !important; z-index: 5; }
+.note { width: 210px; padding: 14px 16px 16px; border-radius: 16px; background: #FCF2A6; box-shadow: var(--shadow); display: grid; gap: 4px; }
+.note b { font-size: 17px; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; }
+.note span { font-size: 11px; color: rgba(20,19,18,.6); }
+.label { display: flex; align-items: center; gap: 10px; padding: 8px 14px 8px 8px; border-radius: 16px; }
+.label .th { width: 48px; height: 48px; border-radius: 12px; }
+.label b { display: block; font-size: 16px; font-weight: 600; line-height: 1.1; }
+.label span { font-size: 12px; color: var(--mute); }
 
-/* Tomar y no tomar */
-.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
-.list { background: var(--card); border-radius: var(--r-card); padding: 20px; display: grid; gap: 12px; align-content: start; }
-.list h3 { font-size: 19px; }
-.list ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--graphite); }
-.list li b { color: var(--ink); font-weight: 600; }
-ol.plan { margin: 0; padding-left: 20px; display: grid; gap: 10px; max-width: 70ch; }
-ol.plan li b { font-weight: 600; }
-footer { margin-top: 64px; font-size: 13px; color: var(--graphite); max-width: 70ch; }
+/* Actividades */
+.acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.act { aspect-ratio: 1 / 1.02; border-radius: 22px; position: relative; overflow: hidden; color: var(--white); display: flex; align-items: flex-end; padding: 14px; transition: transform .6s var(--spring); }
+.act:hover { transform: translateY(-4px) scale(1.015); }
+.act::before { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(180deg, transparent, rgba(0,0,0,.4)); }
+.act b { position: relative; font-size: 16px; font-weight: 600; line-height: 1.12; display: block; }
+.act span { position: relative; font-size: 12px; opacity: .9; }
+.create { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 10px 18px; border-radius: 18px; font-weight: 500; font-size: 15px;
+  background: linear-gradient(90deg, #FBE68A 0%, #FCEFD8 45%, #F9D7E6 75%, #E3D6FA 100%); }
+.create .plus { width: 38px; height: 38px; border-radius: 12px; background: var(--white); display: grid; place-items: center; font-size: 22px; font-weight: 400; box-shadow: var(--shadow); }
+.picker { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 40px); align-items: center; }
+@media (max-width: 760px) { .picker { grid-template-columns: 1fr; } }
+.preview { aspect-ratio: 1.15; border-radius: 30px; position: relative; overflow: hidden; color: var(--white); display: flex; align-items: flex-end; padding: 22px; box-shadow: var(--shadow); transition: background-image .2s; }
+.preview::before { content: ""; position: absolute; inset: 50% 0 0; background: linear-gradient(180deg, transparent, rgba(0,0,0,.26)); }
+.preview div { position: relative; }
+.preview b { font-size: 26px; font-weight: 600; display: block; letter-spacing: -.02em; }
+.swatches { display: grid; grid-template-columns: repeat(5, 44px); gap: 12px; margin-top: 12px; }
+.sw { width: 44px; height: 44px; border-radius: 13px; border: 0; padding: 0; cursor: pointer; background-size: cover; position: relative; transition: transform .35s var(--spring); }
+.sw:hover { transform: scale(1.08); }
+.sw[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--white), 0 0 0 3.5px var(--ink); }
+.sw[aria-pressed="true"]::after { content: ""; position: absolute; inset: 0; margin: auto; width: 14px; height: 8px; border-left: 2.2px solid #fff; border-bottom: 2.2px solid #fff; transform: translateY(-2px) rotate(-45deg); filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
+
+/* Bento */
+.bento { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.bento .card { padding: 18px; display: grid; gap: 12px; align-content: start; }
+.bars { display: flex; align-items: flex-end; gap: 8px; height: 76px; }
+.bars i { flex: 1; border-radius: 8px 8px 4px 4px; background: var(--stone); }
+.bars i.on { background: linear-gradient(180deg, #F7C9A4, #F2A3C6); }
+.days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; }
+.days div { background: var(--paper); border-radius: 12px; padding: 8px 4px; }
+.days b { display: block; font-size: 24px; font-weight: 600; letter-spacing: -.03em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.days span { font-size: 10px; color: var(--mute); }
+.quiet { font-size: 13px; color: var(--mute); }
+
+/* Estados del aura */
+.states { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 40px); align-items: center; }
+@media (max-width: 860px) { .states { grid-template-columns: 1fr; } }
+.stage { position: relative; aspect-ratio: 1.25; border-radius: 30px; overflow: hidden; background: var(--paper); }
+.stage .over { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; text-align: center; }
+.stage .over p { font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; letter-spacing: -.025em; line-height: 1.12; max-width: 14ch; }
+.seg { display: inline-grid; grid-auto-flow: column; gap: 4px; padding: 4px; border-radius: 99px; background: var(--white); box-shadow: var(--shadow); }
+.seg button { border: 0; background: transparent; font-family: inherit; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 99px; cursor: pointer; color: var(--mute); transition: background .3s, color .3s; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.statedesc { display: grid; gap: 14px; }
+.statedesc h3 { font-size: 26px; font-weight: 600; line-height: 1.1; }
+
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.notes .card { padding: 22px; display: grid; gap: 10px; align-content: start; }
+.notes h3 { font-size: 19px; font-weight: 600; }
+.notes ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--mute); font-size: 15px; }
+.notes li b { color: var(--ink); font-weight: 600; }
+footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-libro" viewBox="0 0 24 24"><path d="M4 5.5c2.6-1 5.3-1 8 .8v13c-2.7-1.8-5.4-1.8-8-.8z"/><path d="M20 5.5c-2.6-1-5.3-1-8 .8v13c2.7-1.8 5.4-1.8 8-.8z"/></symbol>
-  <symbol id="i-lugar" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15 12 21 12 21z"/><circle cx="12" cy="10" r="2.3"/></symbol>
-  <symbol id="i-tag" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="6" r=".6"/></symbol>
-  <symbol id="i-parlante" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="3"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7.5" r=".8"/></symbol>
-  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
-  <symbol id="i-telefono" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol>
-  <symbol id="i-paso" viewBox="0 0 24 24"><path d="M4 18h5v-5h5V8h6"/></symbol>
-  <symbol id="i-cama" viewBox="0 0 24 24"><path d="M3 19V6M3 15h18v4M3 11h7a3 3 0 0 1 3 3v1"/><circle cx="6.5" cy="9" r="1.6"/></symbol>
-  <symbol id="i-campana" viewBox="0 0 24 24"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5h-14z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
-  <symbol id="i-inicio" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8.5H4z"/><path d="M10 19.5v-5h4v5"/></symbol>
-  <symbol id="i-perfil" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><circle cx="9" cy="11" r="2"/><path d="M6.5 15.5c.8-1.6 4.2-1.6 5 0M14 10h4M14 13h3"/></symbol>
-  <symbol id="i-control" viewBox="0 0 24 24"><path d="M7 8h10a4 4 0 0 1 4 4v1a3.5 3.5 0 0 1-6.3 2.1L14 14h-4l-.7 1.1A3.5 3.5 0 0 1 3 13v-1a4 4 0 0 1 4-4z"/><path d="M8 11v3M6.5 12.5h3M16 12h.01M18 13.5h.01"/></symbol>
+  <symbol id="i-time" viewBox="0 0 28 28"><circle cx="14" cy="15" r="8.5"/><path d="M14 10.5V15l3 2M11.5 4.5h5"/><path d="M22.5 5.5l1.5-1.5M4 7.5 5.5 9" stroke-width="1.2"/></symbol>
+  <symbol id="i-step" viewBox="0 0 28 28"><path d="M4.5 22h6v-5.5h6.5V11h6.5"/><path d="M20 4.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z" stroke-width="1.1"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9"/><circle cx="14" cy="14" r="3.4"/><path d="M14 7.2v.01"/><path d="M23.5 5.5c1 1.2 1.6 2.6 1.8 4M25.5 3.5c1.4 1.6 2.3 3.6 2.5 5.6" stroke-width="1.1"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 28 28"><path d="M7 24V5"/><path d="M7 5.5c3-2 6 2 9 0s4.5-1 5.5 0v9c-1-1-2.5-2-5.5 0s-6-2-9 0"/></symbol>
+  <symbol id="i-book" viewBox="0 0 28 28"><path d="M4.5 7c3-1.2 6.2-1.2 9.5 1v14c-3.3-2.2-6.5-2.2-9.5-1z"/><path d="M23.5 7c-3-1.2-6.2-1.2-9.5 1v14c3.3-2.2 6.5-2.2 9.5-1z"/><path d="M21 3.5l.6 1.3 1.3.6-1.3.6-.6 1.3-.6-1.3-1.3-.6 1.3-.6z" stroke-width="1.1"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 28 28"><path d="M14 24.5s-7.5-6.8-7.5-12.5a7.5 7.5 0 0 1 15 0c0 5.7-7.5 12.5-7.5 12.5z"/><circle cx="14" cy="12" r="2.6"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 28 28"><path d="M7.5 19V13a6.5 6.5 0 0 1 13 0v6l1.8 1.8H5.7z"/><path d="M11.8 23.5a2.3 2.3 0 0 0 4.4 0"/></symbol>
+  <symbol id="i-home" viewBox="0 0 28 28"><rect x="5" y="5" width="7.5" height="7.5" rx="2"/><rect x="15.5" y="5" width="7.5" height="7.5" rx="2"/><rect x="5" y="15.5" width="7.5" height="7.5" rx="2"/><rect x="15.5" y="15.5" width="7.5" height="7.5" rx="2"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 28 28"><path d="M14 4l1.8 5.2L21 11l-5.2 1.8L14 18l-1.8-5.2L7 11l5.2-1.8z"/><path d="M21.5 17.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9.5"/><path d="M14 4.5V14l7 6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 28 28"><rect x="4.5" y="6" width="19" height="17.5" rx="3.5"/><path d="M4.5 11.5h19M9.5 3.5v4M18.5 3.5v4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 28 28"><rect x="7.5" y="3.5" width="13" height="21" rx="3.5"/><circle cx="14" cy="16" r="3.6"/><circle cx="14" cy="8.6" r="1.1"/></symbol>
+  <symbol id="i-pad" viewBox="0 0 28 28"><path d="M8.5 9h11a5 5 0 0 1 5 5v1.5a4 4 0 0 1-7.2 2.4L16.5 17h-5l-.8.9a4 4 0 0 1-7.2-2.4V14a5 5 0 0 1 5-5z"/><path d="M9 12v4M7 14h4M19 13.2v.01M21 15.2v.01"/></symbol>
 </svg>
 
-<section class="hero grain" aria-labelledby="t">
-  <div class="aura"></div>
-  <div class="inner">
-    <div class="wordmark focus-in" aria-hidden="true">relevo</div>
-    <h1 id="t">Un aura que se enciende <span class="soft">cuando es momento de volver a lo que querías hacer.</span></h1>
-    <p class="credit">Exploración del 10 de octubre de 2026, inspirada en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a>, de Mambo Mambo (dirección creativa de Guillaume Beaulieu y Zorani Sanabria; movimiento de Tommy Hachez). No se copian sus imágenes ni videos: se lee su lenguaje y se rehace con los colores, la letra y los íconos de Relevo.</p>
+<header class="hero" id="top">
+  <canvas class="aura" data-aura="hero" aria-hidden="true"></canvas>
+  <div class="center">
+    <div class="wordmark" data-focus aria-label="relevo"><i>r</i><i>e</i><i>l</i><i>e</i><i>v</i><i>o</i></div>
+    <p class="tag" data-focus>De la pantalla <span class="soft">a lo que querías hacer.</span></p>
   </div>
-</section>
+  <div class="icons" aria-hidden="true"><span></span><span class="app"><span class="mark"><i></i><i></i><i></i><i></i></span></span><span></span><span></span><span></span><span></span></div>
+  <p class="credit">Exploración visual nueva para Relevo, inspirada en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a> de Mambo Mambo. Todo está dibujado aquí: ninguna imagen ni video de la referencia.</p>
+</header>
 
 <main class="wrap">
 
-  <section class="section" aria-labelledby="p">
-    <header>
-      <span class="eyebrow">Lo que hace hermosa a Dafi</span>
-      <h2 id="p">Seis ideas, <span class="soft">y lo que cada una significa en Relevo.</span></h2>
-    </header>
-    <div class="principles">
-      <article class="principle">
-        <div class="demo grain"><div class="aura"></div></div>
-        <h3>Un aura que se activa</h3>
-        <p>En Dafi, un degradado irisado se enciende cuando la IA trabaja o recomienda: nunca queda quieto.</p>
-        <p class="to"><b>En Relevo:</b> el aura respira mientras el relevo cuenta y se enciende cuando suena. Es el estado del relevo, no un adorno.</p>
-      </article>
-      <article class="principle">
-        <div class="demo grain" style="background:linear-gradient(135deg,var(--t-naranja),var(--t-lila) 55%,var(--t-celeste))"></div>
-        <h3>Grano sobre el color</h3>
-        <p>Sus degradados llevan textura de grano fino: se ven impresos, cálidos, no de pantalla.</p>
-        <p class="to"><b>En Relevo:</b> el grano en los fondos de cada actividad acerca la app al objeto físico, lo phygital hecho textura.</p>
-      </article>
-      <article class="principle">
-        <div class="demo"><div class="stairs" style="width:86%">
-          <span class="chip">Abrir el libro <span class="tile t-sol"><svg><use href="#i-libro"/></svg></span></span>
-          <span class="chip">Leer 10 páginas <span class="tile t-celeste"><svg><use href="#i-paso"/></svg></span></span>
-        </div></div>
-        <h3>Fichas en escalera</h3>
-        <p>Cada función es una ficha blanca con un ícono sobre un cuadrado de color, puestas en diagonal como peldaños.</p>
-        <p class="to"><b>En Relevo:</b> la escalera es literal: la ruta de pasos, del primer paso al siguiente.</p>
-      </article>
-      <article class="principle">
-        <div class="demo" style="justify-content:flex-start;padding:16px"><p class="greet" style="font-size:20px">Hola, Ana,<br><span class="soft">tu relevo va en 12 de 30 min.</span></p></div>
-        <h3>Titulares en dos tonos</h3>
-        <p>«Bonjour Sara, ta compréhension augmente rapidement»: el saludo en tinta y la continuación en gris.</p>
-        <p class="to"><b>En Relevo:</b> la primera parte nombra, la segunda informa. Mantiene la voz sin agregar elementos.</p>
-      </article>
-      <article class="principle">
-        <div class="demo" style="padding:16px"><p class="sentence" style="font-size:17px">Empieza por <span class="inline-ico t-sol"><svg><use href="#i-libro"/></svg></span> abrir el libro, <span class="inline-ico t-rosa"><svg><use href="#i-lugar"/></svg></span> en el velador.</p></div>
-        <h3>Íconos dentro de la frase</h3>
-        <p>En su sitio, las palabras clave llevan un pequeño ícono de color en la misma línea.</p>
-        <p class="to"><b>En Relevo:</b> la frase de inicio («Empieza por…, en…») se lee y se ve a la vez: qué hacer y dónde.</p>
-      </article>
-      <article class="principle">
-        <div class="demo grain"><div class="aura calm"></div><span class="wordmark focus-in" style="position:relative;z-index:4;font-size:52px">relevo</span></div>
-        <h3>Enfocar desde lo borroso</h3>
-        <p>En sus videos, el logotipo y los textos aparecen pasando de desenfocados a nítidos.</p>
-        <p class="to"><b>En Relevo:</b> es la idea del proyecto, volver a enfocar. Se usa una vez, al abrir y al sonar.</p>
-      </article>
+  <section class="board" aria-labelledby="h-stairs">
+    <div class="board-head"><span class="eyebrow">Qué hace Relevo</span><h2 id="h-stairs">Cuatro peldaños, <span class="soft">del uso del teléfono a empezar.</span></h2></div>
+    <div class="stairs">
+      <span class="chip" data-reveal>Cuenta tu tiempo<br>en las apps que eliges <span class="tile butter"><svg><use href="#i-time"/></svg></span></span>
+      <span class="chip" data-reveal>Te recuerda<br>tu primer paso <span class="tile sky"><svg><use href="#i-step"/></svg></span></span>
+      <span class="chip" data-reveal>Suena donde<br>empiezas <span class="tile lime"><svg><use href="#i-tag"/></svg></span></span>
+      <span class="chip" data-reveal>Tú decides<br>qué hacer <span class="tile blush"><svg><use href="#i-flag"/></svg></span></span>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="s">
-    <header>
-      <span class="eyebrow">Relevo así</span>
-      <h2 id="s">Cinco pantallas <span class="soft">con el lenguaje de la referencia.</span></h2>
-      <p class="lead">Con el texto, las pantallas y las reglas actuales de la app: frases en minúscula, sin mayúsculas sostenidas, sin fotos de personas.</p>
-    </header>
+  <section class="board white" aria-labelledby="h-manifest">
+    <span class="eyebrow">Íconos dentro de la frase</span>
+    <p class="manifest" id="h-manifest" data-reveal style="margin-top:14px"><b style="font-weight:600">relevo</b> cuenta tu tiempo en <span class="ii butter"><svg viewBox="0 0 28 28"><use href="#i-time"/></svg></span> las apps que eliges, te recuerda <span class="ii sky"><svg viewBox="0 0 28 28"><use href="#i-step"/></svg></span> tu primer paso y suena en <span class="ii lime"><svg viewBox="0 0 28 28"><use href="#i-tag"/></svg></span> el Tag, junto a donde empiezas, para que <span class="ii blush"><svg viewBox="0 0 28 28"><use href="#i-flag"/></svg></span> decidas tú.</p>
+  </section>
+
+  <section class="board" aria-labelledby="h-screens">
+    <div class="board-head"><span class="eyebrow">La app</span><h2 id="h-screens">Seis pantallas <span class="soft">con el aura como protagonista.</span></h2></div>
     <div class="screens">
 
-      <figure style="margin:0">
-        <div class="phone grain">
-          <div class="content">
-            <div class="status"><span>9:41</span><span>relevo</span></div>
-            <p class="mini">Viernes 10 de octubre</p>
-            <p class="greet">Hola, Ana,<br><span class="soft">tu relevo va en 12 de 30 min.</span></p>
-            <div class="relevo-card">
-              <div class="aura calm" style="inset:-30%"></div>
-              <div class="content-in">
-                <span class="pill"><span class="dot"></span>Contando</span>
-                <p class="sig">Vuelve a <u>leer 10 páginas</u>.</p>
-                <div class="bar"><i></i></div>
-                <p class="mini"><b>12 min</b> de 30 en tus apps</p>
-              </div>
+      <figure class="screen">
+        <div class="phone">
+          <canvas class="aura" data-aura="splash" aria-hidden="true"></canvas>
+          <div class="ui">
+            <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
+            <div style="flex:1;display:grid;place-items:center"><span class="wordmark" data-focus style="font-size:56px">relevo</span></div>
+            <div class="home-ind"></div>
+          </div>
+        </div>
+        <figcaption class="cap">Al abrir: el nombre enfoca sobre el aura</figcaption>
+      </figure>
+
+      <figure class="screen">
+        <div class="phone">
+          <div class="ui">
+            <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
+            <div class="segments"><i class="on"></i><i class="on"></i><i></i></div>
+            <div style="flex:1;position:relative">
+              <div class="tex" data-tex="clouds-blue" style="position:absolute;left:24%;top:10%;width:50%;aspect-ratio:1;border-radius:22px;transform:rotate(5deg);box-shadow:var(--shadow)"></div>
+              <div class="label glass" style="position:absolute;left:6%;top:46%;transform:rotate(-5deg)"><span class="th tex" data-tex="sunset"></span><span><b>Abrir el libro</b><span>Tu primer paso</span></span></div>
+              <span class="tile butter" style="position:absolute;right:8%;top:4%;width:40px;height:40px;transform:rotate(10deg);box-shadow:var(--shadow)"><svg style="width:24px;height:24px"><use href="#i-book"/></svg></span>
             </div>
-            <p class="row-title">Ideas <span class="count">12</span></p>
-            <div class="ideas">
-              <div class="idea g-dormir grain"><span>Dormir a tiempo<small>Dejar el teléfono lejos</small></span></div>
-              <div class="idea g-jugar grain"><span>Jugar una partida<small>Prender la consola</small></span></div>
+            <p class="title" style="text-align:center">Tus ganas,<br>a un paso de distancia</p>
+            <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;font-size:13px;font-weight:600">Empezar <span class="roundgo"><svg><use href="#i-arrow"/></svg></span></div>
+            <div class="home-ind" style="margin-top:4px"></div>
+          </div>
+        </div>
+        <figcaption class="cap">Bienvenida: tarjetas inclinadas y avance en tres segmentos</figcaption>
+      </figure>
+
+      <figure class="screen">
+        <div class="phone" style="background:linear-gradient(180deg,var(--paper) 0 55%,var(--stone))">
+          <div class="ui">
+            <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600"><span class="mark" style="width:22px"><i></i><i></i><i></i><i></i></span>Inicio<span style="margin-left:auto" class="ico"><svg viewBox="0 0 28 28" style="width:18px;height:18px"><use href="#i-bell"/></svg></span></div>
+            <p class="title">Hola, Ana,<br><span class="soft">hoy volviste dos veces a lo que querías.</span></p>
+            <div class="card" style="padding:12px;display:grid;gap:8px;position:relative;overflow:hidden">
+              <div class="tex" data-tex="aura-soft" style="position:absolute;inset:0;opacity:.85"></div>
+              <div style="position:relative;display:flex;justify-content:space-between;align-items:center"><span class="chipxs" style="background:var(--white)">Contando</span><span class="small" style="color:var(--ink);font-variant-numeric:tabular-nums">12 de 30 min</span></div>
+              <p style="position:relative;font-size:16px;font-weight:600;letter-spacing:-.015em;line-height:1.15">Leer 10 páginas</p>
+              <div style="position:relative;height:5px;border-radius:9px;background:rgba(255,255,255,.7);overflow:hidden"><i style="display:block;width:40%;height:100%;background:var(--ink);border-radius:9px"></i></div>
             </div>
-            <div class="dock"><span class="on"><svg><use href="#i-inicio"/></svg></span><span><svg><use href="#i-paso"/></svg></span><span><svg><use href="#i-perfil"/></svg></span></div>
+            <p style="font-size:14px;font-weight:600">Tus actividades<span class="count">4</span><span style="float:right;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;box-shadow:inset 0 0 0 1.2px var(--ink)">Ver todas</span></p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div class="act tex" data-tex="rose" style="aspect-ratio:1;border-radius:16px;padding:10px"><div><b style="font-size:13px">Dormir a tiempo</b><span style="font-size:10px">3 relevos</span></div></div>
+              <div class="act tex" data-tex="amber" style="aspect-ratio:1;border-radius:16px;padding:10px"><div><b style="font-size:13px">Jugar una partida</b><span style="font-size:10px">2 relevos</span></div></div>
+            </div>
+            <div class="card" style="display:flex;align-items:center;gap:10px;padding:8px 10px 8px 8px"><span class="tile lime" style="width:34px;height:34px;border-radius:10px"><svg viewBox="0 0 28 28" style="width:20px;height:20px"><use href="#i-tag"/></svg></span><span style="font-size:12px;line-height:1.25"><b style="font-weight:600">Suena en el Tag</b><br><span class="small">en 18 minutos, en el velador</span></span></div>
+            <div class="dock glass"><span class="on"><svg viewBox="0 0 28 28"><use href="#i-home"/></svg></span><span><svg viewBox="0 0 28 28"><use href="#i-spark"/></svg></span><span><svg viewBox="0 0 28 28"><use href="#i-chart"/></svg></span><span><svg viewBox="0 0 28 28"><use href="#i-cal"/></svg></span></div>
           </div>
         </div>
         <figcaption class="cap">Inicio: saludo en dos tonos y el relevo con su aura</figcaption>
       </figure>
 
-      <figure style="margin:0">
-        <div class="phone grain">
-          <div class="content">
-            <div class="status"><span>9:41</span><span>Tu relevo</span></div>
-            <div class="center-stage">
-              <div class="aura calm"></div>
-              <div class="in">
-                <span class="pill"><span class="dot"></span>Contando</span>
-                <span class="big">12<span style="font-size:22px;font-weight:600"> min</span></span>
-                <span class="mini">de 30 en Instagram y TikTok</span>
-              </div>
+      <figure class="screen">
+        <div class="phone">
+          <canvas class="aura" data-aura="counting" aria-hidden="true"></canvas>
+          <div class="ui">
+            <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:600"><span>‹ Volver</span><span class="chipxs" style="background:var(--white)">Contando</span></div>
+            <div style="flex:1;display:grid;place-items:center;text-align:center;align-content:center;gap:4px">
+              <span class="big">12<span style="font-size:20px;letter-spacing:-.02em"> min</span></span>
+              <span class="small" style="color:var(--ink)">de 30 en Instagram y TikTok</span>
             </div>
-            <p class="sentence">Empieza por <span class="inline-ico t-sol"><svg><use href="#i-libro"/></svg></span> abrir el libro, <span class="inline-ico t-rosa"><svg><use href="#i-lugar"/></svg></span> en el velador. Suena en el <span class="inline-ico t-lila"><svg><use href="#i-tag"/></svg></span> Tag.</p>
-            <span class="btn">Volver al inicio</span>
-            <span class="btn ghost">Editar este relevo</span>
+            <p style="font-size:15px;line-height:1.5;font-weight:500">Empieza por <span class="ii butter"><svg viewBox="0 0 28 28"><use href="#i-book"/></svg></span> abrir el libro, <span class="ii blush"><svg viewBox="0 0 28 28"><use href="#i-pin"/></svg></span> en el velador. Suena en <span class="ii lime"><svg viewBox="0 0 28 28"><use href="#i-tag"/></svg></span> el Tag.</p>
+            <div style="display:flex;gap:8px;justify-content:center"><span class="pillbtn">Volver al inicio</span><span class="pillbtn ghost">Editar</span></div>
+            <div class="home-ind"></div>
           </div>
         </div>
-        <figcaption class="cap">Relevo activo: el aura respira mientras cuenta</figcaption>
+        <figcaption class="cap">Contando: el aura respira lenta</figcaption>
       </figure>
 
-      <figure style="margin:0">
-        <div class="phone grain">
-          <div class="content">
-            <div class="status"><span>9:41</span><span>Suena</span></div>
-            <div class="center-stage">
-              <div class="aura live"></div>
-              <div class="in">
-                <span class="tile t-lila" style="width:56px;height:56px;border-radius:16px"><svg style="width:32px;height:32px"><use href="#i-tag"/></svg></span>
-                <p class="sig focus-in" style="font-size:24px;max-width:12ch">Vuelve a <u>leer 10 páginas</u>.</p>
-                <p class="mini">El Tag está sonando en el velador. Un toque lo calla.</p>
-              </div>
+      <figure class="screen">
+        <div class="phone">
+          <canvas class="aura" data-aura="ring" aria-hidden="true"></canvas>
+          <div class="ui">
+            <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
+            <div style="flex:1;display:grid;place-items:center;text-align:center;align-content:center;gap:14px">
+              <span class="tile lime" style="width:58px;height:58px;border-radius:16px;box-shadow:var(--shadow)"><svg style="width:34px;height:34px" viewBox="0 0 28 28"><use href="#i-tag"/></svg></span>
+              <p class="title" data-focus-loop style="font-size:25px;max-width:11ch">Es hora de leer 10 páginas</p>
+              <span class="small" style="color:var(--ink)">El Tag suena en el velador.<br>Un toque lo calla.</span>
             </div>
-            <span class="btn">Comencé la actividad</span>
-            <span class="btn ghost">Lo dejo para después</span>
+            <div style="display:grid;gap:8px;justify-items:center"><span class="pillbtn">Voy a empezar</span><span class="small">Ver otras respuestas</span></div>
+            <div class="home-ind"></div>
           </div>
         </div>
-        <figcaption class="cap">La señal: el aura se enciende y la frase enfoca</figcaption>
+        <figcaption class="cap">Suena: el aura se enciende y late</figcaption>
       </figure>
 
-      <figure style="margin:0">
-        <div class="phone grain">
-          <div class="content">
-            <div class="status"><span>9:41</span><span>Preparar</span></div>
-            <p class="greet" style="font-size:24px">¿Dónde suena?<br><span class="soft" style="font-size:16px">Suena en el Tag. Si prefieres otra cosa, elígela.</span></p>
-            <div class="choice sel"><span class="tile t-sol"><svg><use href="#i-tag"/></svg></span><span>El Tag<small>Junto a donde empiezas</small></span><span class="radio"></span></div>
-            <div class="choice"><span class="tile t-celeste"><svg><use href="#i-parlante"/></svg></span><span>El parlante<small>Sin parlante conectado</small></span><span class="radio"></span></div>
-            <div class="choice"><span class="tile t-lila"><svg><use href="#i-reloj"/></svg></span><span>El reloj<small>Suena como una llamada</small></span><span class="radio"></span></div>
-            <div class="choice"><span class="tile t-rosa"><svg><use href="#i-telefono"/></svg></span><span>El teléfono<small>Suena donde esté</small></span><span class="radio"></span></div>
-            <span class="btn" style="margin-top:auto">Seguir</span>
-          </div>
-        </div>
-        <figcaption class="cap">Preparar: las salidas como fichas de color</figcaption>
-      </figure>
-
-      <figure style="margin:0">
-        <div class="phone grain">
-          <div class="content">
-            <div class="status"><span>9:41</span><span>Ruta</span></div>
-            <p class="greet" style="font-size:24px">Tu ruta para leer,<br><span class="soft">un paso a la vez.</span></p>
-            <div class="stairs" style="margin-top:8px">
-              <span class="chip">Abrir el libro <span class="tile t-sol"><svg><use href="#i-libro"/></svg></span></span>
-              <span class="chip">Leer 10 páginas <span class="tile t-celeste"><svg><use href="#i-paso"/></svg></span></span>
-              <span class="chip">Leer 20 minutos <span class="tile t-lila"><svg><use href="#i-reloj"/></svg></span></span>
-              <span class="chip">Un capítulo <span class="tile t-rosa"><svg><use href="#i-campana"/></svg></span></span>
+      <figure class="screen">
+        <div class="phone">
+          <div class="ui">
+            <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
+            <div style="font-size:12px;font-weight:600">‹ Volver <span class="chipxs" style="background:var(--t-peach);margin-left:8px">Después de la señal</span></div>
+            <div style="display:grid;justify-items:center;gap:10px;margin-top:6px">
+              <span class="tex" data-tex="sunset" style="width:54px;height:54px;border-radius:14px;box-shadow:var(--shadow)"></span>
+              <p class="title" style="text-align:center">Leer 10 páginas</p>
+              <p style="text-align:center;font-size:13px;font-weight:500">¿Qué hiciste cuando sonó?</p>
             </div>
-            <p class="mini" style="margin-top:6px">Vas en el segundo paso. Después de tres veces que empiezas, te proponemos el siguiente.</p>
-            <div class="dock"><span><svg><use href="#i-inicio"/></svg></span><span class="on"><svg><use href="#i-paso"/></svg></span><span><svg><use href="#i-perfil"/></svg></span></div>
+            <div style="display:grid;gap:7px">
+              <div class="opt sel">Empecé la actividad<span class="r"></span></div>
+              <div class="opt">Lo dejé para después<span class="r"></span></div>
+              <div class="opt">Cambié de idea<span class="r"></span></div>
+            </div>
+            <div style="display:grid;justify-items:center;margin-top:auto;gap:10px"><span class="pillbtn">Listo</span><div class="home-ind" style="margin:0;width:90px"></div></div>
           </div>
         </div>
-        <figcaption class="cap">Tu ruta: la escalera de pasos, literal</figcaption>
+        <figcaption class="cap">Después: responder en un toque</figcaption>
       </figure>
 
     </div>
   </section>
 
-  <section class="section" aria-labelledby="c">
-    <header>
-      <span class="eyebrow">Color</span>
-      <h2 id="c">La misma familia de Relevo, <span class="soft">en dos intensidades.</span></h2>
-      <p class="lead">El aura usa los seis tonos de Relevo (D-104) a plena luz y desenfocados. Las fichas usan los mismos tonos aclarados, con íconos en tinta. Se mantiene la regla de no poner el sol junto a la menta.</p>
-    </header>
-    <div class="swatches">
-      <div class="sw"><div class="c" style="background:var(--sol)"></div><div class="k"><b>Sol</b><span>#E7BF57 · ficha #F6E38E</span></div></div>
-      <div class="sw"><div class="c" style="background:var(--naranja)"></div><div class="k"><b>Naranja</b><span>#FEB074 · ficha #FBD9BC</span></div></div>
-      <div class="sw"><div class="c" style="background:var(--rosa)"></div><div class="k"><b>Rosa</b><span>#FEA4CF · ficha #F9D2E0</span></div></div>
-      <div class="sw"><div class="c" style="background:var(--lila)"></div><div class="k"><b>Lila</b><span>#CEB5FE · ficha #E4DAFB</span></div></div>
-      <div class="sw"><div class="c" style="background:var(--celeste)"></div><div class="k"><b>Celeste</b><span>#54D6FE · ficha #C3E9F6</span></div></div>
-      <div class="sw"><div class="c" style="background:var(--menta)"></div><div class="k"><b>Menta</b><span>#6FDEA7 · ficha #CDEFD3</span></div></div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="n">
-    <header>
-      <span class="eyebrow">Qué tomar y qué no</span>
-      <h2 id="n">Inspiración directa, <span class="soft">con las reglas de Relevo.</span></h2>
-    </header>
-    <div class="two">
-      <div class="list">
-        <h3>Se toma</h3>
-        <ul>
-          <li><b>El aura como estado:</b> quieta y suave al contar, encendida al sonar.</li>
-          <li><b>El grano</b> sobre los degradados de las actividades.</li>
-          <li><b>Las fichas con ícono de color</b> para salidas, pasos y la guía del Tag.</li>
-          <li><b>La escalera</b> para la ruta.</li>
-          <li><b>Los titulares en dos tonos</b> y <b>los íconos dentro de la frase</b>.</li>
-          <li><b>El enfoque desde lo borroso</b>, una vez, al abrir y al sonar.</li>
-          <li><b>El papel cálido</b> y las secciones sobre un fondo piedra.</li>
-        </ul>
+  <section class="board" aria-labelledby="h-collage" style="padding:0">
+    <div class="collage tex" data-tex="mist">
+      <div style="position:absolute;left:clamp(18px,4vw,56px);top:clamp(26px,5vw,56px);max-width:28ch;z-index:4">
+        <span class="eyebrow" style="color:var(--ink);opacity:.6">Tarjetas sobre el aura</span>
+        <h2 id="h-collage" style="font-size:clamp(26px,3.4vw,40px);font-weight:600;line-height:1.05;margin-top:8px">Lo que preparaste, <span class="soft" style="color:rgba(20,19,18,.5)">a la vista.</span></h2>
       </div>
-      <div class="list">
-        <h3>No se toma</h3>
-        <ul>
-          <li><b>Títulos con serifa</b>: la regla del autor es letra sin serifa en titulares.</li>
-          <li><b>Etiquetas en mayúscula</b> como su «QUIZ»: Relevo no usa mayúsculas sostenidas (D-084).</li>
-          <li><b>Fotos de personas</b>: Relevo usa ícono y degradado por actividad (D-111).</li>
-          <li><b>El lenguaje de inteligencia artificial</b>: el aura de Relevo no «piensa», marca el momento.</li>
-          <li><b>Sus imágenes, videos y logotipo</b>: todo se rehace con lo propio de Relevo.</li>
-        </ul>
+      <div class="piece note" style="left:46%;top:24%;transform:rotate(-7deg)"><span>Tu primer paso</span><b>Abrir el libro en el marcador</b><span>Junto al velador</span></div>
+      <div class="piece label glass" style="left:56%;top:56%;transform:rotate(5deg)"><span class="th tex" data-tex="clouds-blue"></span><span><b>Leer</b><span>5 relevos esta semana</span></span></div>
+      <span class="piece tile butter" style="left:43%;top:58%;width:64px;height:64px;border-radius:16px;transform:rotate(-10deg);box-shadow:var(--shadow)"><svg style="width:38px;height:38px" viewBox="0 0 28 28"><use href="#i-book"/></svg></span>
+      <div class="piece card" style="left:66%;top:16%;transform:rotate(8deg);padding:14px 16px;display:grid;gap:4px;width:180px"><span class="small">Suena después de</span><b style="font-size:30px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums">30 min</b><span class="small">en Instagram y TikTok</span></div>
+    </div>
+  </section>
+
+  <section class="board white" aria-labelledby="h-acts">
+    <div class="board-head"><span class="eyebrow">Actividades</span><h2 id="h-acts">Cada actividad tiene su luz, <span class="soft">como un cielo distinto.</span></h2></div>
+    <div class="acts">
+      <div class="act tex" data-tex="rose"><div><b>Dormir a tiempo</b><span>3 relevos</span></div></div>
+      <div class="act tex" data-tex="amber"><div><b>Jugar una partida</b><span>2 relevos</span></div></div>
+      <div class="act tex" data-tex="ember"><div><b>Cocinar algo simple</b><span>1 relevo</span></div></div>
+      <div class="act tex" data-tex="clouds-blue"><div><b>Leer 10 páginas</b><span>5 relevos</span></div></div>
+      <div class="act tex" data-tex="moss"><div><b>Salir a caminar</b><span>4 relevos</span></div></div>
+    </div>
+    <div class="create">Crear una actividad<span class="plus" aria-hidden="true">+</span></div>
+    <div class="picker" style="margin-top:clamp(36px,5vw,64px)">
+      <div class="preview tex" id="preview" data-tex="sunset"><div><b>Dibujar</b><span>Elige su luz</span></div></div>
+      <div>
+        <h3 style="font-size:24px;font-weight:600;line-height:1.1">Cada persona elige la luz <span class="soft">de su actividad.</span></h3>
+        <p class="quiet" style="margin-top:8px;max-width:40ch">Toca un tono para verlo. Todos tienen grano y volumen, como nubes, para que no se vean planos.</p>
+        <div class="swatches" id="swatches" role="group" aria-label="Luces"></div>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="a">
-    <header>
-      <span class="eyebrow">Cómo llevarlo a la app</span>
-      <h2 id="a">En orden, <span class="soft">sin tocar el estudio.</span></h2>
-      <p class="lead">Son cambios de forma: no cambian las condiciones de la prueba, los tiempos ni las preguntas.</p>
-    </header>
-    <ol class="plan">
-      <li><b>Aura del relevo:</b> en la tarjeta de Inicio y en la pantalla del relevo activo, respirando; en la señal, encendida. Sin movimiento con «reducir movimiento».</li>
-      <li><b>Grano</b> en los fondos de actividad, con los degradados un poco más saturados y con volumen.</li>
-      <li><b>Fichas de color</b> en «¿Dónde suena?», en la guía del Tag y en la ruta, que pasa a escalera.</li>
-      <li><b>Saludo en dos tonos</b> en Inicio e <b>íconos dentro de la frase</b> de inicio.</li>
-      <li><b>Enfoque desde lo borroso</b> en el logotipo al abrir y en la frase de la señal.</li>
-    </ol>
+  <section class="board" aria-labelledby="h-bento">
+    <div class="board-head"><span class="eyebrow">Piezas</span><h2 id="h-bento">Lo que acompaña <span class="soft">a cada relevo.</span></h2></div>
+    <div class="bento">
+      <div class="card"><span class="quiet">Esta semana</span><p style="font-size:44px;font-weight:600;letter-spacing:-.04em;line-height:1">3 de 5</p><p class="quiet" style="margin-top:-6px">veces empezaste cuando sonó</p><div class="bars"><i class="on" style="height:70%"></i><i style="height:40%"></i><i class="on" style="height:90%"></i><i style="height:30%"></i><i class="on" style="height:60%"></i></div></div>
+      <div class="card"><span class="quiet">La prueba</span><div class="days"><div><b>04</b><span>día</span></div><div><b>21</b><span>días</span></div><div><b>A</b><span>semana</span></div><div><b>12</b><span>relevos</span></div></div><p class="quiet">Esta semana el Tag va donde empiezas.</p></div>
+      <div class="card" style="position:relative;overflow:hidden"><div class="tex" data-tex="aura-soft" style="position:absolute;inset:0"></div><div style="position:relative;display:grid;gap:10px"><span class="chipxs" style="background:var(--white);width:fit-content">Próxima señal</span><p style="font-size:30px;font-weight:600;letter-spacing:-.03em;line-height:1.05">Suena en<br>18 minutos</p><span class="pillbtn" style="width:fit-content">Ver mi relevo</span></div></div>
+      <div class="card"><span class="quiet">Elige con qué suena</span>
+        <div class="chip" style="box-shadow:inset 0 0 0 1.5px var(--ink);justify-content:space-between">El Tag <span class="tile lime" style="width:38px;height:38px"><svg viewBox="0 0 28 28" style="width:22px;height:22px"><use href="#i-tag"/></svg></span></div>
+        <div class="chip" style="box-shadow:inset 0 0 0 1px var(--line);justify-content:space-between">El parlante <span class="tile sky" style="width:38px;height:38px"><svg viewBox="0 0 28 28" style="width:22px;height:22px"><use href="#i-speaker"/></svg></span></div>
+      </div>
+    </div>
   </section>
 
-  <footer>Referencia: <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi en Behance</a>, de Mambo Mambo. Esta lámina no reproduce material del proyecto; todas las pantallas, íconos y degradados son de Relevo.</footer>
+  <section class="board white" aria-labelledby="h-states">
+    <div class="states">
+      <div class="stage"><canvas class="aura" data-aura="demo" aria-hidden="true"></canvas><div class="over"><p id="stateline">Contando tu tiempo</p></div></div>
+      <div class="statedesc">
+        <span class="eyebrow">El efecto</span>
+        <h3 id="h-states">El aura dice en qué está tu relevo, <span class="soft">sin leer nada.</span></h3>
+        <p class="quiet" id="statetext">Mientras cuenta, el aura respira lento y suave: está ahí, pero no llama.</p>
+        <div class="seg" role="group" aria-label="Estado del relevo">
+          <button type="button" data-state="idle" aria-pressed="false">En calma</button>
+          <button type="button" data-state="count" aria-pressed="true">Contando</button>
+          <button type="button" data-state="ring" aria-pressed="false">Suena</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="board" aria-labelledby="h-notes">
+    <div class="board-head"><span class="eyebrow">Notas</span><h2 id="h-notes">Qué se tomó de la referencia <span class="soft">y cómo se resolvió aquí.</span></h2></div>
+    <div class="notes">
+      <div class="card"><h3>Efectos</h3><ul>
+        <li><b>Aura</b> dibujada en tiempo real: cinco luces que se mueven lento sobre blanco tibio, con grano fino para que no se vean bandas.</li>
+        <li><b>Enfoque</b>: el nombre y los textos llegan desde borrosos a nítidos.</li>
+        <li><b>Vidrio</b> con desenfoque y borde blanco sobre las luces.</li>
+        <li><b>Resortes</b> suaves al pasar sobre fichas, tarjetas y actividades.</li>
+      </ul></div>
+      <div class="card"><h3>Detalles</h3><ul>
+        <li><b>Titulares en dos tonos</b> y <b>conteos</b> en una cápsula junto al título.</li>
+        <li><b>Fichas</b> blancas con ícono de línea sobre un cuadrado de color, en escalera.</li>
+        <li><b>Íconos dentro de la frase</b> y botones negros compactos, al centro.</li>
+        <li><b>Actividades</b> con cielos de color con grano y volumen; cada persona elige el suyo.</li>
+      </ul></div>
+      <div class="card"><h3>Lo que no</h3><ul>
+        <li>Imágenes, videos, logotipo y textos de Dafi: todo se dibujó de nuevo.</li>
+        <li>Títulos con serifa y etiquetas en mayúscula.</li>
+        <li>Fotos de personas: las actividades se dicen con luz y con íconos.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <footer>Referencia: <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi en Behance</a>, de Mambo Mambo (dirección creativa de Guillaume Beaulieu y Zorani Sanabria; movimiento de Tommy Hachez). Exploración del 10 de octubre de 2026; no reproduce material del proyecto.</footer>
 </main>
+
+<script>
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Texturas: cielos de color con grano, pintados una vez en un lienzo 2D ----
+  const SKIES = {
+    'rose':        { base: '#F4C9D2', blobs: [['#C8325A', .25, .35, .55], ['#F7A9BE', .75, .25, .5], ['#FFFFFF', .55, .6, .35], ['#E0617F', .3, .85, .45], ['#FBE4EA', .85, .8, .4]] },
+    'amber':       { base: '#E9B85C', blobs: [['#F2A20C', .2, .3, .6], ['#B78BEF', .85, .2, .55], ['#F7D27A', .5, .7, .45], ['#9C7BE8', .9, .85, .4]] },
+    'ember':       { base: '#F28A4A', blobs: [['#E8501E', .2, .75, .6], ['#F9B36B', .75, .3, .55], ['#FFE0B8', .55, .1, .4], ['#E2471C', .9, .9, .35]] },
+    'clouds-blue': { base: '#8DB9EA', blobs: [['#2559C9', .2, .85, .6], ['#E9F3FF', .6, .35, .45], ['#7EA9E8', .85, .7, .45], ['#F7FBFF', .35, .2, .35], ['#3B6BD2', .9, .1, .35]] },
+    'moss':        { base: '#7FAE6B', blobs: [['#2F6E3B', .2, .3, .6], ['#B9DB8E', .8, .25, .5], ['#3E8F4E', .7, .85, .55], ['#E7F2C8', .4, .65, .3]] },
+    'sunset':      { base: '#F3B38E', blobs: [['#F06A3B', .25, .3, .5], ['#F7C6DD', .8, .3, .5], ['#B9A4F2', .75, .85, .5], ['#FFE6A6', .3, .8, .4]] },
+    'lilac':       { base: '#C9B8F2', blobs: [['#8E6FE6', .25, .7, .55], ['#F3D3F0', .75, .25, .5], ['#A7CFF5', .8, .85, .45], ['#FFFFFF', .4, .3, .3]] },
+    'mint':        { base: '#BFE7D3', blobs: [['#5FC79A', .2, .8, .55], ['#E6F7FF', .7, .25, .5], ['#9ED6F4', .85, .75, .45]] },
+    'night':       { base: '#2B3A66', blobs: [['#0F1A3D', .2, .3, .6], ['#5E7BD8', .8, .7, .55], ['#A9B8F5', .6, .2, .35], ['#121B3A', .9, .9, .4]] },
+    'aura-soft':   { base: '#FBF5EC', blobs: [['#FFD54A', .25, .75, .55], ['#F6A3CB', .7, .3, .5], ['#9DD6F4', .15, .2, .45], ['#C5B2F6', .9, .8, .45]], alpha: .75 },
+    'mist':        { base: '#F1ECE6', blobs: [['#FFC98A', .15, .85, .45], ['#F2B4D3', .45, .2, .45], ['#BFA9F2', .85, .35, .5], ['#A9D8F4', .95, .9, .4], ['#FFFFFF', .6, .65, .35]], alpha: .85, grain: 34 },
+  };
+  const cache = {};
+  function sky(name, w = 640, h = 640) {
+    const key = name + w + 'x' + h; if (cache[key]) return cache[key];
+    const def = SKIES[name]; const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d');
+    g.fillStyle = def.base; g.fillRect(0, 0, w, h);
+    const m = Math.max(w, h);
+    def.blobs.forEach(([col, x, y, r]) => {
+      const gr = g.createRadialGradient(x * w, y * h, 0, x * w, y * h, r * m);
+      const a = def.alpha ?? 1;
+      gr.addColorStop(0, hexA(col, a)); gr.addColorStop(.55, hexA(col, a * .45)); gr.addColorStop(1, hexA(col, 0));
+      g.fillStyle = gr; g.fillRect(0, 0, w, h);
+    });
+    // Grano: ruido por píxel, más visible en los tonos medios.
+    const img = g.getImageData(0, 0, w, h), d = img.data, amt = def.grain ?? 18;
+    for (let i = 0; i < d.length; i += 4) { const n = (Math.random() - .5) * amt; d[i] += n; d[i + 1] += n; d[i + 2] += n; }
+    g.putImageData(img, 0, 0);
+    return (cache[key] = c.toDataURL('image/jpeg', .9));
+  }
+  function hexA(hex, a) { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; }
+  document.querySelectorAll('[data-tex]').forEach((el) => {
+    const big = el.classList.contains('collage') ? [1400, 700] : el.classList.contains('preview') ? [900, 780] : [640, 640];
+    el.style.backgroundImage = `url(${sky(el.dataset.tex, big[0], big[1])})`; el.style.backgroundSize = 'cover';
+  });
+
+  // ---- Selector de luces ----
+  const picks = ['sunset', 'rose', 'amber', 'clouds-blue', 'ember', 'lilac', 'moss', 'mint', 'night', 'aura-soft'];
+  const sw = document.getElementById('swatches'), preview = document.getElementById('preview');
+  picks.forEach((name, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'sw'; b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
+    b.setAttribute('aria-label', 'Luz ' + (i + 1)); b.style.backgroundImage = `url(${sky(name, 160, 160)})`;
+    b.addEventListener('click', () => { sw.querySelectorAll('.sw').forEach((x) => x.setAttribute('aria-pressed', 'false')); b.setAttribute('aria-pressed', 'true'); preview.style.backgroundImage = `url(${sky(name, 900, 780)})`; });
+    sw.appendChild(b);
+  });
+
+  // ---- Aura en WebGL: cinco luces gaussianas que se mueven lento, con grano en el sombreador ----
+  const VS = 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
+  const FS = `precision highp float;
+  uniform vec2 r; uniform float t; uniform float k; uniform float s; uniform vec2 m; uniform vec3 bg;
+  uniform vec3 c0; uniform vec3 c1; uniform vec3 c2; uniform vec3 c3; uniform vec3 c4;
+  float h(vec2 q){ return fract(sin(dot(q, vec2(12.9898, 78.233))) * 43758.5453); }
+  vec3 blob(vec3 col, vec2 p, vec2 c, float rad, vec3 tint){ vec2 d = p - c; float w = exp(-dot(d, d) / (rad * rad)) * k; return mix(col, tint, clamp(w, 0.0, 1.0)); }
+  void main(){
+    vec2 uv = gl_FragCoord.xy / r; vec2 p = uv - 0.5; p.x *= r.x / r.y; p /= s; p -= m * 0.05;
+    vec3 col = bg;
+    col = blob(col, p, vec2(-0.20 + 0.07 * sin(t * 0.31), 0.05 + 0.08 * cos(t * 0.27)), 0.26, c3);
+    col = blob(col, p, vec2(0.22 + 0.08 * cos(t * 0.23 + 1.3), -0.04 + 0.07 * sin(t * 0.35)), 0.25, c2);
+    col = blob(col, p, vec2(0.08 + 0.06 * sin(t * 0.29 + 2.1), 0.17 + 0.05 * cos(t * 0.33)), 0.24, c1);
+    col = blob(col, p, vec2(-0.06 + 0.07 * cos(t * 0.25 + 0.7), -0.15 + 0.06 * sin(t * 0.37)), 0.27, c0);
+    col = blob(col, p, vec2(0.02 + 0.05 * sin(t * 0.41 + 3.0), -0.02 + 0.04 * cos(t * 0.39)), 0.13, c4);
+    float g = h(gl_FragCoord.xy + fract(t * 7.0) * 61.0) - 0.5;
+    col += g * 0.045;
+    gl_FragColor = vec4(col, 1.0);
+  }`;
+  const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return [(n >> 16) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255]; };
+  const PAL = { bg: rgb('#F7F4F0'), c0: rgb('#FFD54A'), c1: rgb('#F6A3CB'), c2: rgb('#C5B2F6'), c3: rgb('#9DD6F4'), c4: rgb('#FFF3D6') };
+  const MODES = {
+    hero:     { k: 1.0, s: 1.15, speed: 1.0, pulse: 0 },
+    splash:   { k: 1.0, s: .62, speed: 1.0, pulse: 0 },
+    counting: { k: .85, s: .66, speed: .55, pulse: 0 },
+    ring:     { k: 1.1, s: .8, speed: 2.2, pulse: 1 },
+    demo:     { k: .85, s: .9, speed: .6, pulse: 0 },
+    idle:     { k: .5, s: .75, speed: .35, pulse: 0 },
+    count:    { k: .85, s: .9, speed: .6, pulse: 0 },
+    ringDemo: { k: 1.1, s: 1.05, speed: 2.2, pulse: 1 },
+  };
+  const auras = [];
+  function makeAura(canvas) {
+    const gl = canvas.getContext('webgl', { antialias: false, premultipliedAlpha: false, preserveDrawingBuffer: false });
+    if (!gl) { canvas.parentElement.classList.add('aura-fallback'); canvas.remove(); return; }
+    const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; };
+    const pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { canvas.parentElement.classList.add('aura-fallback'); canvas.remove(); return; }
+    gl.useProgram(pr);
+    const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    const u = (n) => gl.getUniformLocation(pr, n);
+    const U = { r: u('r'), t: u('t'), k: u('k'), s: u('s'), m: u('m'), bg: u('bg'), c0: u('c0'), c1: u('c1'), c2: u('c2'), c3: u('c3'), c4: u('c4') };
+    ['bg', 'c0', 'c1', 'c2', 'c3', 'c4'].forEach((n) => gl.uniform3fv(U[n], PAL[n]));
+    const a = { canvas, gl, U, mode: { ...MODES[canvas.dataset.aura] }, target: null, visible: true, time: 3 + Math.random() * 20, mouse: [0, 0], mx: [0, 0] };
+    const size = () => { const dpr = Math.min(window.devicePixelRatio || 1, 1.5); const w = Math.max(2, Math.round(canvas.clientWidth * dpr)), h = Math.max(2, Math.round(canvas.clientHeight * dpr)); if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); } };
+    a.size = size; size(); auras.push(a); return a;
+  }
+  document.querySelectorAll('canvas[data-aura]').forEach(makeAura);
+  const io = new IntersectionObserver((es) => es.forEach((e) => { const a = auras.find((x) => x.canvas === e.target); if (a) a.visible = e.isIntersecting; }), { rootMargin: '120px' });
+  auras.forEach((a) => io.observe(a.canvas));
+  window.addEventListener('resize', () => auras.forEach((a) => a.size()));
+  const hero = auras.find((a) => a.canvas.dataset.aura === 'hero');
+  if (hero && !reduce) window.addEventListener('pointermove', (e) => { hero.mouse = [(e.clientX / innerWidth - .5) * 2, -(e.clientY / innerHeight - .5) * 2]; }, { passive: true });
+
+  function draw(a, dt) {
+    const { gl, U, mode } = a;
+    if (a.target) { for (const k of ['k', 's', 'speed', 'pulse']) mode[k] += (a.target[k] - mode[k]) * Math.min(1, dt * 2.4); }
+    a.time += dt * mode.speed;
+    a.mx[0] += (a.mouse[0] - a.mx[0]) * Math.min(1, dt * 2); a.mx[1] += (a.mouse[1] - a.mx[1]) * Math.min(1, dt * 2);
+    const beat = mode.pulse * (0.5 + 0.5 * Math.sin(a.time * 2.6));
+    gl.uniform2f(U.r, a.canvas.width, a.canvas.height); gl.uniform1f(U.t, a.time);
+    gl.uniform1f(U.k, mode.k + beat * .25); gl.uniform1f(U.s, mode.s + beat * .12); gl.uniform2f(U.m, a.mx[0], a.mx[1]);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+  let last = performance.now();
+  function loop(now) { const dt = Math.min(.05, (now - last) / 1000); last = now; auras.forEach((a) => { if (a.visible) draw(a, dt); }); requestAnimationFrame(loop); }
+  if (reduce) auras.forEach((a) => draw(a, 0)); else requestAnimationFrame(loop);
+
+  // ---- Estados del aura ----
+  const demo = auras.find((a) => a.canvas.dataset.aura === 'demo');
+  const TEXT = {
+    idle: ['Sin relevo activo', 'Sin relevo, el aura casi se apaga: queda una luz tenue que no pide nada.'],
+    count: ['Contando tu tiempo', 'Mientras cuenta, el aura respira lento y suave: está ahí, pero no llama.'],
+    ring: ['Es hora de leer 10 páginas', 'Cuando suena, el aura se abre y late con el pitido del Tag: el momento de volver.'],
+  };
+  document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.seg button').forEach((x) => x.setAttribute('aria-pressed', 'false')); b.setAttribute('aria-pressed', 'true');
+    const st = b.dataset.state; const target = st === 'ring' ? MODES.ringDemo : MODES[st];
+    if (demo) { demo.target = { ...target }; if (reduce) { Object.assign(demo.mode, target); draw(demo, 0); } }
+    document.getElementById('stateline').textContent = TEXT[st][0]; document.getElementById('statetext').textContent = TEXT[st][1];
+    if (!reduce) focusIn(document.getElementById('stateline'), 700);
+  }));
+  if (demo) demo.target = { ...MODES.count };
+
+  // ---- Enfoque: de borroso a nítido ----
+  function focusIn(el, dur = 1400, delay = 0) {
+    if (reduce || !el.animate) return;
+    el.animate([{ filter: 'blur(16px)', opacity: .25, transform: 'scale(1.03)' }, { filter: 'blur(0)', opacity: 1, transform: 'none' }], { duration: dur, delay, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
+  }
+  document.querySelectorAll('[data-focus]').forEach((el, i) => focusIn(el, 1500, 120 + i * 220));
+  const letters = document.querySelectorAll('.hero .wordmark i');
+  letters.forEach((el, i) => { if (!reduce && el.animate) el.animate([{ filter: 'blur(10px)', opacity: 0, transform: 'translateY(10px)' }, { filter: 'blur(0)', opacity: 1, transform: 'none' }], { duration: 1100, delay: 140 + i * 70, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' }); });
+  const loopEl = document.querySelector('[data-focus-loop]');
+  if (loopEl && !reduce) setInterval(() => focusIn(loopEl, 1200), 4200);
+  // Lo que está bajo el pliegue entra enfocándose la primera vez que se ve.
+  const reveal = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { focusIn(e.target, 900); reveal.unobserve(e.target); } }), { threshold: .3 });
+  document.querySelectorAll('[data-reveal]').forEach((el) => { if (el.getBoundingClientRect().top > innerHeight) reveal.observe(el); });
+})();
+</script>

@@ -6,6 +6,18 @@
 
 [Dafi](https://www.behance.net/gallery/253069605/Dafi), de Mambo Mambo, en Behance. Es una app de estudio con IA; la dirección creativa es de Guillaume Beaulieu y Zorani Sanabria y el movimiento, de Tommy Hachez. El autor la eligió como inspiración directa, no como copia. Se revisaron sus 17 imágenes y parte de sus 6 videos en el navegador, sin descargarlos ni guardarlos.
 
+## Versión 2 (10 de octubre)
+
+El autor pidió que fuera más parecida a lo que vio, que se viera en claro y que no trajera nada de lo que ya existe en Relevo: es una exploración de visuales nuevas. Cambios:
+
+- **Solo en claro**, sobre blanco tibio, aunque el dispositivo esté en modo oscuro.
+- **Lenguaje nuevo:** otra letra (Instrument Sans), otra paleta (mantequilla, durazno, rosa, lila y cielo), íconos de línea nuevos con destellos y una marca nueva, una flor de cuatro luces que representa al Tag. Nada de la paleta, la letra, los íconos ni el vidrio de Relevo.
+- **Efectos:** el aura se dibuja en tiempo real con WebGL: cinco luces que se mueven lento, con grano en el propio dibujo para que no se vean bandas, y que siguen un poco al cursor en la portada. Tiene tres estados que se pueden probar (en calma, contando, suena). El nombre y los textos llegan pasando de borrosos a nítidos. Los cielos de cada actividad se pintan con grano y volumen, y se puede elegir la luz de una actividad entre diez. Las fichas y tarjetas responden con resortes suaves.
+- **Piezas nuevas:** bandeja de íconos en vidrio en la portada, bienvenida con tarjetas inclinadas y avance en tres segmentos, respuesta después de la señal en opciones, collage de tarjetas sobre el aura, piezas de estadística y de la prueba.
+- **Con «reducir movimiento»,** el aura queda quieta y los textos aparecen sin enfoque.
+
+La sección siguiente describe la versión 1, con la paleta y la letra de Relevo.
+
 ## Lo que se lee de la referencia
 
 | Idea | En Dafi | En Relevo |
@@ -36,6 +48,12 @@ En este orden, sin cambiar las condiciones de la prueba, los tiempos ni las preg
 5. Enfoque desde lo borroso en el logotipo al abrir y en la frase de la señal.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-10 — Versión 2
+
+- **Qué cambió:** lenguaje visual nuevo, solo en claro, con aura en WebGL, enfoque desde lo borroso, cielos con grano y piezas nuevas.
+- **Cómo estaba antes:** la versión 1 usaba la paleta, la letra y los íconos de Relevo, seguía el tema oscuro del dispositivo y el aura era un degradado CSS.
+- **Por qué:** el autor pidió perfeccionarla, en especial los efectos y detalles, verla en blanco y explorar visuales nuevas.
 
 ### 2026-10-10 — Creación
 

@@ -119,6 +119,7 @@
 | 8 oct. | Pregunta | Breve exploración de apps o productos que hagan lo mismo que Relevo, para no hacer algo que ya existe; y si existe algo así solo digital. | Respuesta en el chat: one sec (pausa e intención, vuelve a interrumpir tras un tiempo), Brick y Unpluq (objeto que desbloquea), ScreenZen y Tiempo de pantalla. Ninguno recuerda una actividad propia con su primer paso ni avisa desde un objeto ubicado donde empieza. Se recomendó no llamarlo «único» y hacer una revisión formal para la memoria. | — |
 | 9 oct. | Corrección | Comentario sobre la app: poder editar las opciones ya elegidas antes de iniciar el relevo, para no borrarlo y crearlo de nuevo si hubo un error. | [Android 2.30](../06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md): «Todo listo» suma la actividad y vuelve ahí tras cambiar un dato; un relevo activo se edita sin borrarlo y sigue con el tiempo contado si las apps son las mismas. | D-120 |
 | 10 oct. | Encargo | Referencia visual de Behance (Dafi): extraer sus imágenes y videos y llevarlos a Relevo, como inspiración directa y no como copia. | Se revisaron sus 17 imágenes y sus videos en el navegador, sin descargarlos. [Relevo con aura](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md): seis ideas leídas de la referencia, cinco pantallas de Relevo rehechas con sus colores, letra e íconos, lo que no se toma y una propuesta para la app, pendiente de la elección del autor. | — |
+| 10 oct. | Corrección | La exploración todavía es mejorable y no es del todo similar a la referencia: perfeccionar todo, en especial los efectos y los detalles pequeños; verla en blanco; no traer nada de lo que ya existe en Relevo, sino explorar visuales nuevas. | [Relevo con aura](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), versión 2: solo en claro, letra, paleta, íconos y marca nuevos; aura dibujada en tiempo real con grano y tres estados; enfoque desde lo borroso; cielos por actividad con grano y selector de luz; seis pantallas y piezas nuevas. | — |
 
 ## Lo que muestra el registro
 
@@ -129,6 +130,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-10 — Relevo con aura, versión 2
+
+- **Qué cambió:** se registró el pedido de la versión 2 de la exploración.
+- **Cómo estaba antes:** terminaba en la versión 1.
+- **Por qué:** regla de registrar cada pedido del autor.
 
 ### 2026-10-10 — Relevo con aura
 
