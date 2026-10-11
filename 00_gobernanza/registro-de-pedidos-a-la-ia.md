@@ -124,6 +124,9 @@
 | 11 oct. | Corrección | En el taller no aparecen los elementos que sí tenían diseño en «Relevo con aura», como el dato «3 de 5». Quiere ese tipo de piezas y poder exportarlas aparte; debe ser perfecto: una herramienta de diseño para sacar fácil cosas para sus presentaciones o ponerlas en la memoria. | [Taller de auras](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html), versión 2: 39 piezas editables de la exploración en seis grupos (datos, fichas y frases, tarjetas, controles, marca y siete pantallas). Cada una sale sola en PNG transparente a 1×–4×, se copia para pegar, se pone en una lámina con título para diapositivas o la memoria, o se descarga en lote en ZIP. Los fondos siguen en su propio modo. | D-121 |
 | 11 oct. | Corrección y pregunta | Ni las tarjetas ni nada deben tener el efecto de girarse. Preguntó si se documentaron todos los cambios y lo hecho. | Sin giros en el [taller](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) ni en la [lámina](../10_recursos_visuales/relevo-con-aura-2026-10-10/relevo-con-aura.html). Al revisar la documentación faltaban la bitácora del 8 al 11 de octubre, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual: se completaron con la [bitácora del 8 al 11 de octubre](bitacora-trabajo-con-ia-2026-10-08-11.md) y D-121. | D-121 |
 | 11 oct. | Encargo y corrección | Seguir perfeccionando la gráfica general, no el editor, sin que sea una copia uno a uno de la referencia. En la frase con íconos, cada ícono debe ir después de lo que nombra (el de tiempo después de «tiempo», el del Tag junto a «Tag»). Buscar referencias parecidas: le encanta lo que hay, pero es mejorable y debe ser nuestro. | [Relevo con aura](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), versión 4: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños, el Tag como objeto que suena en anillos, y los tableros «El traspaso» y «Sistema». Referencias: Apple (2024), Google Gemini, Instagram (2022) y dos proyectos de Behance. El taller sigue las mismas reglas. | D-122 |
+| 11 oct. | Encargo | Revisar la memoria completa leyendo todo el repositorio y crear un borrador mejorado: sin puntos débiles, con APA 7 en español sin errores en citas ni referencias y con rigor académico. | [Borrador v5 de la memoria](../08_memoria/borrador-memoria-v5-2026-10-11.md) y sus [notas](../08_memoria/notas-del-borrador-v5-2026-10-11.md): actualizado a la app 2.30 y al Tag; apartados nuevos de método, uso de IA, gestión, ética, validez y conclusiones; 78 referencias verificadas en su fuente. Quedan 24 marcadores por confirmar, las cuatro figuras y los resultados de la prueba. La v4 sigue vigente. | — |
+| 11 oct. | Corrección | No clonar el repositorio: es privado para el autor; leerlo en línea y guardar solo lo creado, en su equipo. | Se borró la copia y el resto se leyó en línea. Se avisó que el repositorio figura como público en GitHub. | — |
+| 11 oct. | Encargo | Subir todo a `main`, publicado con la cuenta del autor, y dejarlo documentado. | Borrador y notas en `08_memoria`, enlazados en su README; este registro actualizado. | — |
 
 ## Lo que muestra el registro
 
@@ -134,6 +137,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Borrador v5 de la memoria
+
+- **Qué cambió:** se registraron el encargo del borrador v5, la corrección sobre no clonar el repositorio y el pedido de publicarlo en `main`.
+- **Cómo estaba antes:** terminaba en el pedido de perfeccionar la gráfica.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-11 — Versión 4 de la gráfica
 
