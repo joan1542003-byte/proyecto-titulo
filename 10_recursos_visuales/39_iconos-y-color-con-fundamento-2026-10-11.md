@@ -106,7 +106,7 @@ Es una biblioteca abierta, con licencia MIT, de componentes animados para React,
 - Si los aprueba, generar los íconos de la app desde el JSON, como se hizo con el kit D-073, y probarlos en el teléfono a 16 y 20 px.
 - Dibujar variantes rellenas para la pestaña activa (el eje de relleno de Material Symbols sirve para cambios de estado).
 - Probar el reconocimiento de los íconos de Relevo con personas, por ejemplo pidiendo que digan qué significa cada uno sin su palabra.
-- La muestra de los estudios de color incluye Colombia, España y México, pero no Chile: es una base, no una verdad local.
+- La muestra de los estudios de color incluye Colombia, España y México, pero no Chile: es una base, no una verdad local. El [documento 40](40_logo-colores-y-recorrido-2026-10-11.md) suma una encuesta que incluye a Chile (UNAM, 2023) y estudios de Colombia y Ecuador; confirman la paleta 2 y no la cambian.
 
 ## Referencias
 
@@ -133,6 +133,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Chile y Latinoamérica
+
+- **Qué cambió:** el pendiente sobre Chile enlaza la evidencia regional del documento 40.
+- **Cómo estaba antes:** solo decía que la muestra no incluía Chile.
+- **Por qué:** el autor pidió fundamentar el color también en Chile o Latinoamérica.
 
 ### 2026-10-11 — Creación
 

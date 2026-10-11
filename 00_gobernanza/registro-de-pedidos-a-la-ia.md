@@ -129,6 +129,7 @@
 | 11 oct. | Encargo | Subir todo a `main`, publicado con la cuenta del autor, y dejarlo documentado. | Borrador y notas en `08_memoria`, enlazados en su README; este registro actualizado. | — |
 | 11 oct. | Decisión y encargo | Aprueba el borrador. Documentar los cambios, las decisiones y los errores que hubo. | [Bitácora de la revisión](bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md), con etapas, decisiones, errores y pendientes; estado actualizado en el README de la memoria y en el general. | D-123 |
 | 11 oct. | Encargo | Íconos nuevos en SVG, perfectos y hermosos, acordes a la app y a quienes la usan. Mandó como referencias Biceps Grotesk, Dafi y DAYO, y Obsidian UI como recurso para animar más adelante. Le importa que cada decisión de diseño, incluidos los colores, esté fundamentada: no un rojo porque «evoca» algo, sino familias de color con razones. | [Íconos y color con fundamento](../10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md): 72 íconos propios (SVG, sprite y JSON) con su construcción y sus metáforas, y la paleta 2 con un papel por color. Se funda en estudios de 31 países, en ISO 3864, en WCAG 2.2 y en medidas en OKLCH. La [lámina](https://claude.ai/artifact/NHpnEr63JXn6JqCfDotPC2) muestra todo y deja copiar o descargar cada ícono. «Relevo con aura» y el taller ya usan ambos; la app Android, todavía no. | D-124 |
+| 11 oct. | Encargo | Fundamentar los colores también en Chile o Latinoamérica, si hay un estudio; pensar los colores de las actividades dentro del sistema completo (recorrido, pantallas, wireframes, colores e íconos); y un logo de Relevo fundamentado, simple y hermoso. | [Logo, colores de las actividades y recorrido](../10_recursos_visuales/40_logo-colores-y-recorrido-2026-10-11.md) y su [lámina](https://claude.ai/artifact/5FCdqi76iF52dfNoFyYoeX). No hay un estudio solo de Chile; sí una encuesta que lo incluye (UNAM, 2023) y estudios de Colombia y Ecuador. Siete familias de cielos para las actividades, con el nombre en cápsula blanca porque el texto blanco no llegaba a 4,5:1. El recorrido en 12 wireframes con notas. El logo: cuatro luces planas y Chillax Semibold, en 12 SVG. Nada de esto está en la app todavía. | D-125 y D-126 |
 
 ## Lo que muestra el registro
 
@@ -139,6 +140,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Logo, colores y recorrido
+
+- **Qué cambió:** se registró el pedido del logo, el color desde Chile y Latinoamérica y el recorrido.
+- **Cómo estaba antes:** terminaba en el pedido de íconos y color.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-11 — Íconos y color
 

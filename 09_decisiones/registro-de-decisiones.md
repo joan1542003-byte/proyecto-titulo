@@ -1450,7 +1450,71 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Con daltonismo, el celeste y el lila, o el rosa y el durazno, se parecen; por eso el color va siempre con ícono y palabra.
 - **Documentación:** [Íconos y color con fundamento](../10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md).
 
+## D-125 — Logo de Relevo: cuatro luces y Chillax Semibold
+
+- **Fecha:** 2026-10-11.
+- **Estado:** propuesta, pendiente de la revisión del autor. No está en la app.
+- **Decisión:**
+  - **Marca:** cuatro luces que se pasan el turno: tu tiempo, tu primer paso, el Tag y lo que decides, en el sentido del reloj desde arriba.
+    - Cada luz queda bajo la siguiente, con un corte limpio, y el centro queda abierto.
+    - Son trazados planos, sin máscaras ni transparencias.
+    - Reemplaza la marca que mezclaba las luces oscureciendo (D-122).
+  - **Logotipo:** «relevo» en minúsculas, con Chillax Semibold (Indian Type Foundry, licencia ITF Free Font License), convertido a trazos. Va en tinta o en blanco.
+  - **Versiones:** 12 SVG: horizontal, vertical, marca, una tinta, blanco, ícono de la app y notificación de Android.
+  - **Reglas de uso:**
+    - Espacio libre de media marca alrededor.
+    - Tamaños mínimos: la marca chica a 16 px y el logo horizontal a 96 px.
+    - Sin giros, sombras ni brillos.
+    - Donde aún no conocen Relevo, el logo va con una frase que dice qué hace.
+- **Fundamento:**
+  - El autor pidió un logo fundamentado, simple y hermoso, con una letra que no sea de Google Fonts ni dibujada a mano.
+  - En seis estudios, los logos que comunican qué hace una marca nueva se evalúan mejor (Luffarelli et al., 2019).
+  - En cinco experimentos, las formas circulares hicieron pensar en suavidad y cuidado (Jiang et al., 2016).
+  - El cambio de logo de Slack en 2019 mostró que los cruces con transparencia son difíciles de reproducir bien.
+  - De 20 letras de Fontshare, Chillax tiene las formas más cercanas a las luces: su «o» es casi un círculo.
+- **Límites:**
+  - No se probó con personas.
+  - No se buscó en INAPI si hay marcas registradas parecidas.
+- **Documentación:** [Logo, colores de las actividades y recorrido](../10_recursos_visuales/40_logo-colores-y-recorrido-2026-10-11.md).
+
+## D-126 — Colores de las actividades y su lugar en el recorrido
+
+- **Fecha:** 2026-10-11.
+- **Estado:** propuesta, pendiente de la revisión del autor. No está en la app.
+- **Decisión:**
+  - **Siete familias de cielos:**
+    - Menta: moverse y aire libre.
+    - Cielo: leer y aprender.
+    - Atardecer: crear.
+    - Ámbar: jugar y disfrutar.
+    - Brasa: la casa.
+    - Noche: descansar.
+    - Rosa: personas.
+  - **Dos lenguajes:** las fichas pastel planas son los papeles de Relevo (D-124); los cielos, lo que la persona quiere hacer. No se mezclan.
+  - **Cápsula:** el nombre de la actividad va en una cápsula blanca con letra de tinta, nunca en blanco directo sobre el cielo.
+  - **Lugar:** el cielo aparece solo donde está la actividad: su tarjeta, el encabezado al preparar y la pantalla completa cuando suena. En Suena, el mensaje va en vidrio blanco y el botón en tinta.
+  - **Estados de la persona:** nunca en negro, gris ni rojo.
+  - **Personalización:** cada persona puede cambiar el color de una actividad.
+- **Fundamento:**
+  - El autor pidió fundamentar el color también en Chile o Latinoamérica y pensar el sistema completo.
+  - Una encuesta a 1.066 personas de México, Argentina y Chile asoció el miedo con el negro (52,4 %), el rojo y el gris (UNAM, 2023).
+  - En Medellín, el verde es naturaleza y esperanza; el azul, mar y cielo; y el morado, luto (Restrepo Betancur, 2022).
+  - En Ecuador, los conceptos abstractos como «creativo» no tienen un color propio (Sánchez-Borrero et al., 2026).
+  - Las asociaciones de 31 países (Jonauskaite et al., 2024) completan la evidencia.
+  - El texto blanco medido sobre los cielos claros no llegaba a 4,5:1 (WCAG 2.2).
+- **Límites:**
+  - No hay un estudio de color hecho solo en Chile.
+  - Los wireframes no son la app final.
+  - Los colores no se probaron con personas.
+- **Documentación:** [Logo, colores de las actividades y recorrido](../10_recursos_visuales/40_logo-colores-y-recorrido-2026-10-11.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — D-125 y D-126
+
+- **Qué cambió:** se registraron D-125 y D-126.
+- **Cómo estaba antes:** la última decisión era D-124.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-11 — D-124
 

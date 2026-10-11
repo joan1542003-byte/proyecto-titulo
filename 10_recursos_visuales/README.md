@@ -62,6 +62,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 37. [Letras para lucirse, propuesta 3.9](37_letras-para-lucirse-2026-10-04.md), su [lámina](letras-para-lucirse-2026-10-04/letras-para-lucirse.html) y sus [tableros](letras-para-lucirse-2026-10-04/README.md): 23 letras display hermosas en cuatro familias, cada una en su tablero con el azul de Relevo (D-108).
 38. [Relevo con aura](38_relevo-con-aura-2026-10-10.md), su [lámina](relevo-con-aura-2026-10-10/relevo-con-aura.html) y el [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html): exploración inspirada en Dafi (Mambo Mambo), aprobada como dirección: aura de la pantalla como personalización (el Tag solo suena), grano, fichas en escalera, pantallas y presentaciones. El taller es una herramienta de diseño con 39 piezas editables de la exploración (datos como «3 de 5», fichas, tarjetas, controles, marca y pantallas) y fondos con aura, que salen en PNG transparente, en láminas para diapositivas o la memoria, o en ZIP.
 39. [Íconos y color con fundamento](39_iconos-y-color-con-fundamento-2026-10-11.md), su [lámina](iconos-relevo-2026-10-11/iconos-relevo.html) ([en claude.ai](https://claude.ai/artifact/NHpnEr63JXn6JqCfDotPC2)) y los [archivos SVG](iconos-relevo-2026-10-11/svg): 72 íconos propios en retícula de 24 con el trazo de Instrument Sans, y la paleta 2. Cada color tiene un papel fundado en estudios de color y emoción en 31 países, en la norma ISO 3864 y en medidas de contraste (D-124).
+40. [Logo, colores de las actividades y recorrido](40_logo-colores-y-recorrido-2026-10-11.md), su [lámina «Relevo aplicado»](logo-relevo-2026-10-11/relevo-aplicado.html) ([en claude.ai](https://claude.ai/artifact/5FCdqi76iF52dfNoFyYoeX)) y los [12 SVG del logo](logo-relevo-2026-10-11): la marca de cuatro luces con el logotipo en Chillax Semibold (D-125); evidencia de color de Chile y Latinoamérica; siete familias de cielos para las actividades, con el nombre en cápsula blanca; y el recorrido de la app en 12 wireframes con notas de color e íconos (D-126).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -91,6 +92,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Logo, colores y recorrido
+
+- **Qué cambió:** se agregó la entrada 40.
+- **Cómo estaba antes:** la última entrada era la 39.
+- **Por qué:** pedido del autor (D-125 y D-126).
 
 ### 2026-10-11 — Íconos y color con fundamento
 
