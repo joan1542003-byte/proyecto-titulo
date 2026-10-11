@@ -179,6 +179,39 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .statedesc { display: grid; gap: 14px; }
 .statedesc h3 { font-size: 26px; font-weight: 600; line-height: 1.1; }
 
+/* Personalización */
+.settings { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(22px, 4vw, 56px); align-items: center; }
+@media (max-width: 760px) { .settings { grid-template-columns: 1fr; } }
+.setrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; font-weight: 500; background: var(--white); border-radius: 14px; padding: 10px 12px; box-shadow: 0 1px 2px rgba(30,22,12,.05); }
+.toggle { width: 36px; height: 21px; border-radius: 99px; background: var(--ink); position: relative; flex: none; }
+.toggle::after { content: ""; position: absolute; top: 2.5px; right: 2.5px; width: 16px; height: 16px; border-radius: 50%; background: var(--white); }
+.minitrack { width: 92px; height: 4px; border-radius: 99px; background: var(--line); position: relative; }
+.minitrack i { position: absolute; left: 0; top: 0; bottom: 0; width: 70%; border-radius: 99px; background: var(--ink); }
+.minitrack i::after { content: ""; position: absolute; right: -7px; top: -5px; width: 14px; height: 14px; border-radius: 50%; background: var(--white); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.dots { display: flex; gap: 8px; }
+.dots span { width: 36px; height: 36px; border-radius: 11px; background-size: cover; }
+.dots span.on { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--ink); }
+.facts { display: grid; gap: 14px; }
+.facts h3 { font-size: clamp(24px, 2.6vw, 32px); font-weight: 600; line-height: 1.08; }
+.facts ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.facts li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+.facts li .tile { width: 34px; height: 34px; border-radius: 10px; }
+.facts li .tile svg { width: 20px; height: 20px; }
+.facts li b { font-weight: 600; }
+.callout { background: var(--white); border-radius: 18px; padding: 14px 16px; font-size: 15px; box-shadow: var(--shadow); }
+/* Diapositivas */
+.slides { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 14px; }
+.slide { aspect-ratio: 16 / 9; border-radius: 14px; position: relative; overflow: hidden; container-type: inline-size; box-shadow: var(--shadow); background-size: cover; transition: transform .6s var(--spring); }
+.slide:hover { transform: translateY(-4px); }
+.slide .s-in { position: absolute; inset: 7cqw; display: flex; flex-direction: column; justify-content: space-between; }
+.slide .eb { font-size: 2.4cqw; font-weight: 600; opacity: .55; }
+.slide .tt { font-size: 9cqw; font-weight: 700; letter-spacing: -.05em; line-height: .9; }
+.slide .st { font-size: 3.4cqw; font-weight: 500; letter-spacing: -.015em; line-height: 1.2; }
+.slide.w { color: #fff; }
+.slide .st .sf { opacity: .55; }
+.cta { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 22px 0 24px; border-radius: 99px; background: var(--ink); color: var(--white); text-decoration: none; font-weight: 600; font-size: 16px; transition: transform .35s var(--spring); }
+.cta:hover { transform: translateY(-2px); }
+.cta svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 .notes .card { padding: 22px; display: grid; gap: 10px; align-content: start; }
 .notes h3 { font-size: 19px; font-weight: 600; }
@@ -212,7 +245,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
     <p class="tag" data-focus>De la pantalla <span class="soft">a lo que querías hacer.</span></p>
   </div>
   <div class="icons" aria-hidden="true"><span></span><span class="app"><span class="mark"><i></i><i></i><i></i><i></i></span></span><span></span><span></span><span></span><span></span></div>
-  <p class="credit">Exploración visual nueva para Relevo, inspirada en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a> de Mambo Mambo. Todo está dibujado aquí: ninguna imagen ni video de la referencia.</p>
+  <p class="credit">Exploración visual nueva para Relevo, inspirada en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a> de Mambo Mambo. Todo está dibujado aquí: ninguna imagen ni video de la referencia. El aura es de la pantalla; el Tag solo suena.</p>
 </header>
 
 <main class="wrap">
@@ -322,7 +355,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
             <div class="home-ind"></div>
           </div>
         </div>
-        <figcaption class="cap">Suena: el aura se enciende y late</figcaption>
+        <figcaption class="cap">Suena: el Tag pita y el aura de la pantalla late</figcaption>
       </figure>
 
       <figure class="screen">
@@ -363,7 +396,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   </section>
 
   <section class="board white" aria-labelledby="h-acts">
-    <div class="board-head"><span class="eyebrow">Actividades</span><h2 id="h-acts">Cada actividad tiene su luz, <span class="soft">como un cielo distinto.</span></h2></div>
+    <div class="board-head"><span class="eyebrow">Actividades</span><h2 id="h-acts">Cada actividad tiene su color, <span class="soft">como un cielo distinto.</span></h2></div>
     <div class="acts">
       <div class="act tex" data-tex="rose"><div><b>Dormir a tiempo</b><span>3 relevos</span></div></div>
       <div class="act tex" data-tex="amber"><div><b>Jugar una partida</b><span>2 relevos</span></div></div>
@@ -373,11 +406,44 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
     </div>
     <div class="create">Crear una actividad<span class="plus" aria-hidden="true">+</span></div>
     <div class="picker" style="margin-top:clamp(36px,5vw,64px)">
-      <div class="preview tex" id="preview" data-tex="sunset"><div><b>Dibujar</b><span>Elige su luz</span></div></div>
+      <div class="preview tex" id="preview" data-tex="sunset"><div><b>Dibujar</b><span>Elige su color</span></div></div>
       <div>
-        <h3 style="font-size:24px;font-weight:600;line-height:1.1">Cada persona elige la luz <span class="soft">de su actividad.</span></h3>
-        <p class="quiet" style="margin-top:8px;max-width:40ch">Toca un tono para verlo. Todos tienen grano y volumen, como nubes, para que no se vean planos.</p>
-        <div class="swatches" id="swatches" role="group" aria-label="Luces"></div>
+        <h3 style="font-size:24px;font-weight:600;line-height:1.1">Cada persona elige el color <span class="soft">de su actividad.</span></h3>
+        <p class="quiet" style="margin-top:8px;max-width:42ch">Toca un tono para verlo. Todos tienen grano y volumen, como nubes, para que no se vean planos. Es una opción de la app: cambia la pantalla, no el Tag.</p>
+        <div class="swatches" id="swatches" role="group" aria-label="Colores"></div>
+        <a class="cta" href="https://claude.ai/artifact/5utecSucGmfP1RKcVk8zBL" target="_blank" rel="noopener" style="margin-top:22px">Crear los tuyos en el taller<svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="board" aria-labelledby="h-own">
+    <div class="settings">
+      <figure class="screen" style="margin:0">
+        <div class="phone">
+          <div class="ui">
+            <div class="statusbar"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>
+            <div style="font-size:12px;font-weight:600">‹ Perfil</div>
+            <p class="title">Tu aura<br><span class="soft">en la pantalla, a tu gusto.</span></p>
+            <div style="position:relative;height:34%;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:var(--paper)"><canvas class="aura" data-aura="settings" aria-hidden="true"></canvas></div>
+            <div class="dots"><span class="tex on" data-tex="aura-soft"></span><span class="tex" data-tex="sunset"></span><span class="tex" data-tex="lilac"></span><span class="tex" data-tex="mint"></span><span class="tex" data-tex="clouds-blue"></span></div>
+            <div class="setrow">Intensidad <span class="minitrack"><i></i></span></div>
+            <div class="setrow">Que se mueva <span class="toggle"></span></div>
+            <div class="setrow">Mostrar el aura <span class="toggle"></span></div>
+            <p class="small" style="text-align:center;margin-top:auto">El Tag no cambia: solo suena.</p>
+            <div class="home-ind" style="margin-top:4px"></div>
+          </div>
+        </div>
+        <figcaption class="cap">Perfil › Tu aura</figcaption>
+      </figure>
+      <div class="facts">
+        <span class="eyebrow">Personalización</span>
+        <h3 id="h-own">El aura es de la app, <span class="soft">y cada persona la ajusta.</span></h3>
+        <ul>
+          <li><span class="tile butter"><svg viewBox="0 0 28 28"><use href="#i-spark"/></svg></span><span><b>Su color:</b> cinco auras y los cielos de cada actividad.</span></li>
+          <li><span class="tile sky"><svg viewBox="0 0 28 28"><use href="#i-chart"/></svg></span><span><b>Su intensidad</b> y si se mueve o queda quieta.</span></li>
+          <li><span class="tile blush"><svg viewBox="0 0 28 28"><use href="#i-flag"/></svg></span><span><b>Apagarla:</b> la app funciona igual sin ella.</span></li>
+        </ul>
+        <p class="callout"><b style="font-weight:600">El Tag no emite luz.</b> Solo suena, junto a donde empiezas. El aura vive en la pantalla: acompaña el estado del relevo y le da carácter a la app, pero no es una señal del objeto.</p>
       </div>
     </div>
   </section>
@@ -400,22 +466,35 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
       <div class="stage"><canvas class="aura" data-aura="demo" aria-hidden="true"></canvas><div class="over"><p id="stateline">Contando tu tiempo</p></div></div>
       <div class="statedesc">
         <span class="eyebrow">El efecto</span>
-        <h3 id="h-states">El aura dice en qué está tu relevo, <span class="soft">sin leer nada.</span></h3>
+        <h3 id="h-states">En la pantalla, el aura dice en qué está tu relevo, <span class="soft">sin leer nada.</span></h3>
         <p class="quiet" id="statetext">Mientras cuenta, el aura respira lento y suave: está ahí, pero no llama.</p>
         <div class="seg" role="group" aria-label="Estado del relevo">
           <button type="button" data-state="idle" aria-pressed="false">En calma</button>
           <button type="button" data-state="count" aria-pressed="true">Contando</button>
           <button type="button" data-state="ring" aria-pressed="false">Suena</button>
+          <button type="button" data-state="off" aria-pressed="false">Apagada</button>
         </div>
+        <p class="quiet">Cuando suena, el que pita es el Tag; la pantalla solo acompaña.</p>
       </div>
     </div>
+  </section>
+
+  <section class="board white" aria-labelledby="h-slides">
+    <div class="board-head"><span class="eyebrow">Para presentaciones y la memoria</span><h2 id="h-slides">Los mismos cielos, <span class="soft">listos para tus diapositivas.</span></h2><p class="lead">Portada, sección, dato, frase y cierre. En el taller se ajusta cada uno, se cambian colores y textos, se arrastran las luces y se descarga en PNG para diapositivas, la memoria o como elemento suelto.</p></div>
+    <div class="slides">
+      <div class="slide tex" data-tex="aura-soft"><div class="s-in"><span class="eb">Proyecto de título · Diseño UDP</span><div><div class="tt">relevo</div><div class="st" style="margin-top:2cqw">De la pantalla <span class="sf">a lo que querías hacer.</span></div></div></div></div>
+      <div class="slide w tex" data-tex="lilac"><div class="s-in"><span class="tt" style="opacity:.6;font-weight:600">02</span><div class="st" style="font-size:6cqw;font-weight:600;letter-spacing:-.035em">Lo que dicen <span class="sf">las personas</span></div></div></div>
+      <div class="slide w tex" data-tex="clouds-blue"><div class="s-in"><span class="eb">Encuesta</span><div><div class="tt" style="font-size:22cqw;font-weight:600;line-height:.85">53</div><div class="st">respuestas sobre el tiempo <span class="sf">que se va en el teléfono</span></div></div></div></div>
+      <div class="slide tex" data-tex="mist"><div class="s-in" style="justify-content:center;align-items:center;text-align:center"><div class="tt">Gracias</div><span class="eb" style="margin-top:2cqw">relevo</span></div></div>
+    </div>
+    <a class="cta" href="https://claude.ai/artifact/5utecSucGmfP1RKcVk8zBL" target="_blank" rel="noopener" style="margin-top:22px">Abrir el taller de auras<svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
   </section>
 
   <section class="board" aria-labelledby="h-notes">
     <div class="board-head"><span class="eyebrow">Notas</span><h2 id="h-notes">Qué se tomó de la referencia <span class="soft">y cómo se resolvió aquí.</span></h2></div>
     <div class="notes">
       <div class="card"><h3>Efectos</h3><ul>
-        <li><b>Aura</b> dibujada en tiempo real: cinco luces que se mueven lento sobre blanco tibio, con grano fino para que no se vean bandas.</li>
+        <li><b>Aura</b> de la pantalla, dibujada en tiempo real: cinco luces que se mueven lento sobre blanco tibio, con grano fino para que no se vean bandas. Es una opción de personalización.</li>
         <li><b>Enfoque</b>: el nombre y los textos llegan desde borrosos a nítidos.</li>
         <li><b>Vidrio</b> con desenfoque y borde blanco sobre las luces.</li>
         <li><b>Resortes</b> suaves al pasar sobre fichas, tarjetas y actividades.</li>
@@ -429,7 +508,8 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
       <div class="card"><h3>Lo que no</h3><ul>
         <li>Imágenes, videos, logotipo y textos de Dafi: todo se dibujó de nuevo.</li>
         <li>Títulos con serifa y etiquetas en mayúscula.</li>
-        <li>Fotos de personas: las actividades se dicen con luz y con íconos.</li>
+        <li>Fotos de personas: las actividades se dicen con color y con íconos.</li>
+        <li>Luz en el Tag: el objeto solo suena; el aura es de la app.</li>
       </ul></div>
     </div>
   </section>
@@ -475,7 +555,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   }
   function hexA(hex, a) { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; }
   document.querySelectorAll('[data-tex]').forEach((el) => {
-    const big = el.classList.contains('collage') ? [1400, 700] : el.classList.contains('preview') ? [900, 780] : [640, 640];
+    const big = el.classList.contains('collage') ? [1400, 700] : el.classList.contains('preview') ? [900, 780] : el.classList.contains('slide') ? [960, 540] : [640, 640];
     el.style.backgroundImage = `url(${sky(el.dataset.tex, big[0], big[1])})`; el.style.backgroundSize = 'cover';
   });
 
@@ -484,7 +564,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   const sw = document.getElementById('swatches'), preview = document.getElementById('preview');
   picks.forEach((name, i) => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'sw'; b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
-    b.setAttribute('aria-label', 'Luz ' + (i + 1)); b.style.backgroundImage = `url(${sky(name, 160, 160)})`;
+    b.setAttribute('aria-label', 'Color ' + (i + 1)); b.style.backgroundImage = `url(${sky(name, 160, 160)})`;
     b.addEventListener('click', () => { sw.querySelectorAll('.sw').forEach((x) => x.setAttribute('aria-pressed', 'false')); b.setAttribute('aria-pressed', 'true'); preview.style.backgroundImage = `url(${sky(name, 900, 780)})`; });
     sw.appendChild(b);
   });
@@ -494,7 +574,7 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   const FS = `precision highp float;
   uniform vec2 r; uniform float t; uniform float k; uniform float s; uniform vec2 m; uniform vec3 bg;
   uniform vec3 c0; uniform vec3 c1; uniform vec3 c2; uniform vec3 c3; uniform vec3 c4;
-  float h(vec2 q){ return fract(sin(dot(q, vec2(12.9898, 78.233))) * 43758.5453); }
+  float h(vec2 q){ vec3 p3 = fract(vec3(q.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
   vec3 blob(vec3 col, vec2 p, vec2 c, float rad, vec3 tint){ vec2 d = p - c; float w = exp(-dot(d, d) / (rad * rad)) * k; return mix(col, tint, clamp(w, 0.0, 1.0)); }
   void main(){
     vec2 uv = gl_FragCoord.xy / r; vec2 p = uv - 0.5; p.x *= r.x / r.y; p /= s; p -= m * 0.05;
@@ -519,6 +599,8 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
     idle:     { k: .5, s: .75, speed: .35, pulse: 0 },
     count:    { k: .85, s: .9, speed: .6, pulse: 0 },
     ringDemo: { k: 1.1, s: 1.05, speed: 2.2, pulse: 1 },
+    off:      { k: 0, s: .9, speed: .2, pulse: 0 },
+    settings: { k: .95, s: .7, speed: .8, pulse: 0 },
   };
   const auras = [];
   function makeAura(canvas) {
@@ -563,7 +645,8 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
   const TEXT = {
     idle: ['Sin relevo activo', 'Sin relevo, el aura casi se apaga: queda una luz tenue que no pide nada.'],
     count: ['Contando tu tiempo', 'Mientras cuenta, el aura respira lento y suave: está ahí, pero no llama.'],
-    ring: ['Es hora de leer 10 páginas', 'Cuando suena, el aura se abre y late con el pitido del Tag: el momento de volver.'],
+    ring: ['Es hora de leer 10 páginas', 'Cuando suena el Tag, el aura de la pantalla se abre y late: el momento de volver.'],
+    off: ['Sin aura', 'Apagada desde Perfil › Tu aura: la app funciona igual, con su fondo tibio.'],
   };
   document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('.seg button').forEach((x) => x.setAttribute('aria-pressed', 'false')); b.setAttribute('aria-pressed', 'true');

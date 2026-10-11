@@ -1,0 +1,518 @@
+<title>Taller de auras</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+/* Mesa de trabajo: la vista previa manda a la izquierda; los controles en una columna angosta a la derecha. Solo en claro. */
+:root {
+  color-scheme: light;
+  --paper: #F7F4F0; --stone: #EEE9E3; --white: #FFFFFF; --ink: #141312; --mute: #8B8580; --line: #E4DED6;
+  --t-butter: #F9E77C;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --shadow: 0 1px 2px rgba(30,22,12,.05), 0 18px 44px -26px rgba(30,22,12,.28);
+  --spring: cubic-bezier(.2,.8,.2,1.15);
+}
+* { box-sizing: border-box; }
+html, body { background: var(--paper); }
+body { margin: 0; color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+.app { max-width: 1440px; margin: 0 auto; padding-inline: 20px; padding-block: 20px 48px; display: grid; gap: 18px; }
+.top { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.top h1 { font-size: clamp(30px, 3.4vw, 44px); font-weight: 600; letter-spacing: -.035em; line-height: 1; }
+.top h1 span { color: var(--mute); }
+.top p { color: var(--mute); max-width: 60ch; margin-top: 8px; }
+.mark { width: 34px; height: 34px; position: relative; display: inline-block; vertical-align: -6px; margin-right: 10px; }
+.mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: multiply; }
+.mark i:nth-child(1) { left: 0; top: 21%; background: #FFD54A; } .mark i:nth-child(2) { right: 0; top: 21%; background: #F6A3CB; }
+.mark i:nth-child(3) { left: 21%; top: 0; background: #9DD6F4; } .mark i:nth-child(4) { left: 21%; bottom: 0; background: #C5B2F6; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 18px; align-items: start; }
+@media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } }
+
+/* Vista previa */
+.stage { position: sticky; top: calc(14px + env(safe-area-inset-top, 0px)); background: var(--stone); border-radius: 32px; padding: clamp(14px, 2.4vw, 28px); display: grid; gap: 14px; }
+@media (max-width: 1000px) { .stage { position: static; } }
+.frame { position: relative; margin: 0 auto; max-width: 100%; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 4px rgba(30,22,12,.06), 0 40px 80px -50px rgba(30,22,12,.55);
+  background-image: linear-gradient(45deg, #ece7e0 25%, transparent 25%), linear-gradient(-45deg, #ece7e0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ece7e0 75%), linear-gradient(-45deg, transparent 75%, #ece7e0 75%);
+  background-size: 22px 22px; background-position: 0 0, 0 11px, 11px -11px, -11px 0; background-color: #f6f2ec; }
+.frame canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+.frame canvas.dragging { cursor: grabbing; }
+.frame .handle { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; border: 2px solid rgba(255,255,255,.95); box-shadow: 0 2px 8px rgba(0,0,0,.25); pointer-events: none; opacity: 0; transition: opacity .25s; }
+.frame:hover .handle, .frame.show-handles .handle { opacity: 1; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.bar .left, .bar .right { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 99px; border: 0; background: var(--white); font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: var(--shadow); transition: transform .35s var(--spring); }
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: var(--ink); color: var(--white); }
+.btn[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.btn:focus-visible, .chip:focus-visible, .preset:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.meta { font-size: 13px; color: var(--mute); font-variant-numeric: tabular-nums; }
+.hint { font-size: 13px; color: var(--mute); }
+
+/* Panel */
+.panel { display: grid; gap: 12px; }
+.sec { background: var(--white); border-radius: 22px; padding: 16px; display: grid; gap: 12px; box-shadow: var(--shadow); }
+.sec h2 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.sec h2 small { font-size: 12px; font-weight: 500; color: var(--mute); }
+.tabs { display: inline-grid; grid-auto-flow: column; gap: 4px; padding: 4px; border-radius: 99px; background: var(--paper); width: fit-content; max-width: 100%; overflow-x: auto; }
+.tabs button { border: 0; background: transparent; padding: 7px 12px; border-radius: 99px; font-size: 13px; font-weight: 600; color: var(--mute); cursor: pointer; white-space: nowrap; }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--white); }
+.presets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.preset { border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; gap: 5px; text-align: left; transition: transform .35s var(--spring); }
+.preset:hover { transform: translateY(-2px); }
+.preset img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px; display: block; background: var(--stone); box-shadow: 0 1px 2px rgba(30,22,12,.08); }
+.preset span { font-size: 12px; font-weight: 600; line-height: 1.2; }
+.preset[aria-pressed="true"] img { box-shadow: 0 0 0 2px var(--white), 0 0 0 3.5px var(--ink); }
+.preset .del { font-size: 11px; color: var(--mute); font-weight: 500; }
+.empty { font-size: 13px; color: var(--mute); padding: 6px 2px; }
+.row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; }
+label.lbl { font-size: 13px; font-weight: 500; }
+.slider { display: grid; gap: 4px; }
+.slider .row output { font-size: 12px; color: var(--mute); font-variant-numeric: tabular-nums; }
+input[type="range"] { width: 100%; accent-color: var(--ink); }
+.colors { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.colors label { display: grid; gap: 3px; justify-items: center; font-size: 10px; color: var(--mute); }
+.colors input[type="color"] { width: 100%; aspect-ratio: 1; height: auto; border: 0; padding: 0; border-radius: 10px; cursor: pointer; background: none; }
+.colors input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+.colors input[type="color"]::-webkit-color-swatch { border: 1px solid rgba(0,0,0,.08); border-radius: 10px; }
+.colors input[type="color"]::-moz-color-swatch { border: 1px solid rgba(0,0,0,.08); border-radius: 10px; }
+select, input[type="text"], textarea { width: 100%; border: 1px solid var(--line); background: var(--paper); border-radius: 12px; padding: 9px 12px; font-size: 14px; }
+textarea { resize: vertical; min-height: 64px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 0; background: var(--paper); padding: 7px 12px; border-radius: 99px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--mute); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.check { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--ink); }
+.toast { position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--white); padding: 11px 18px; border-radius: 99px; font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity .3s, transform .45s var(--spring); z-index: 20; max-width: calc(100vw - 32px); text-align: center; }
+.toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
+.fallback { position: fixed; inset: 0; z-index: 30; background: rgba(247,244,240,.92); display: grid; place-items: center; padding: 20px; }
+.fallback .box { background: var(--white); border-radius: 24px; padding: 18px; max-width: min(900px, 100%); display: grid; gap: 12px; box-shadow: var(--shadow); }
+.fallback img { max-width: 100%; max-height: 70vh; border-radius: 8px; }
+footer { color: var(--mute); font-size: 13px; max-width: 80ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="app">
+  <header class="top">
+    <div>
+      <h1><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Taller de auras <span>para Relevo</span></h1>
+      <p>Fondos y elementos con luces suaves, grano y volumen para presentaciones y para la memoria. Elige un preset, ajústalo, arrastra las luces sobre la imagen y descárgalo en PNG.</p>
+    </div>
+  </header>
+
+  <div class="layout">
+    <section class="stage" aria-label="Vista previa">
+      <div class="frame" id="frame"><canvas id="view" aria-label="Vista previa de la imagen"></canvas></div>
+      <div class="bar">
+        <div class="left">
+          <button class="btn" id="shuffle" type="button"><svg viewBox="0 0 24 24"><path d="M4 7h3.5c2 0 3.2 1 4.5 3l1 1.6c1.3 2 2.5 3 4.5 3H20M17 11.5l3 3-3 3M4 17h3.5c1.2 0 2.1-.4 2.9-1.1M20 7h-2.5c-1.2 0-2.1.4-2.9 1.1M17 4l3 3-3 3"/></svg>Otra forma</button>
+          <button class="btn" id="move" type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg>Mover</button>
+        </div>
+        <div class="right">
+          <span class="meta" id="size">1920 × 1080</span>
+          <button class="btn primary" id="download" type="button"><svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19.5h14"/></svg>Descargar PNG</button>
+        </div>
+      </div>
+      <p class="hint">Arrastra sobre la imagen para mover la luz más cercana. Con «Mover», las luces se desplazan solas; la descarga guarda el cuadro que ves.</p>
+    </section>
+
+    <aside class="panel" aria-label="Controles">
+      <section class="sec" aria-labelledby="h-presets">
+        <h2 id="h-presets">Presets <small id="preset-name">Aura</small></h2>
+        <div class="tabs" role="tablist" aria-label="Grupos de presets">
+          <button role="tab" aria-selected="true" data-group="slide">Presentación</button>
+          <button role="tab" aria-selected="false" data-group="aura">Auras</button>
+          <button role="tab" aria-selected="false" data-group="cielo">Cielos</button>
+          <button role="tab" aria-selected="false" data-group="elemento">Elementos</button>
+          <button role="tab" aria-selected="false" data-group="mias">Mías</button>
+        </div>
+        <div class="presets" id="presets"></div>
+      </section>
+
+      <section class="sec" aria-labelledby="h-format">
+        <h2 id="h-format">Formato</h2>
+        <select id="format" aria-label="Formato">
+          <option value="1920x1080">Diapositiva 16:9 · 1920 × 1080</option>
+          <option value="3840x2160">Diapositiva 4K · 3840 × 2160</option>
+          <option value="1440x1080">Diapositiva 4:3 · 1440 × 1080</option>
+          <option value="2480x3508">Memoria A4 vertical · 2480 × 3508</option>
+          <option value="3508x2480">Memoria A4 horizontal · 3508 × 2480</option>
+          <option value="2400x800">Banda para la memoria · 2400 × 800</option>
+          <option value="2048x2048">Cuadrado · 2048 × 2048</option>
+          <option value="1080x1920">Vertical 9:16 · 1080 × 1920</option>
+          <option value="1024x1024">Elemento · 1024 × 1024</option>
+        </select>
+        <div class="chips" role="group" aria-label="Forma">
+          <button class="chip" type="button" data-shape="rect" aria-pressed="true">Rectángulo</button>
+          <button class="chip" type="button" data-shape="round" aria-pressed="false">Redondeado</button>
+          <button class="chip" type="button" data-shape="squircle" aria-pressed="false">Ficha</button>
+          <button class="chip" type="button" data-shape="circle" aria-pressed="false">Círculo</button>
+        </div>
+        <label class="check"><input type="checkbox" id="transparent"> Fondo transparente (solo las luces)</label>
+      </section>
+
+      <section class="sec" aria-labelledby="h-colors">
+        <h2 id="h-colors">Colores</h2>
+        <div class="colors" id="colors"></div>
+      </section>
+
+      <section class="sec" aria-labelledby="h-adjust">
+        <h2 id="h-adjust">Ajustes</h2>
+        <div id="sliders" style="display:grid;gap:10px"></div>
+      </section>
+
+      <section class="sec" aria-labelledby="h-text">
+        <h2 id="h-text">Texto <small>para diapositivas</small></h2>
+        <div class="chips" role="group" aria-label="Diseño del texto" id="layouts"></div>
+        <input type="text" id="t-eyebrow" placeholder="Encima del título" aria-label="Texto pequeño encima del título">
+        <textarea id="t-title" placeholder="Título. Usa | para pasar a gris lo que sigue." aria-label="Título"></textarea>
+        <input type="text" id="t-sub" placeholder="Bajada" aria-label="Bajada">
+        <div class="grid2">
+          <select id="t-color" aria-label="Color del texto"><option value="ink">Texto en tinta</option><option value="white">Texto en blanco</option></select>
+          <select id="t-align" aria-label="Alineación"><option value="left">A la izquierda</option><option value="center">Al centro</option></select>
+        </div>
+      </section>
+
+      <section class="sec" aria-labelledby="h-mine">
+        <h2 id="h-mine">Guardar y compartir</h2>
+        <div class="grid2">
+          <button class="btn" type="button" id="save-mine">Guardar en Mías</button>
+          <button class="btn" type="button" id="copy">Copiar receta</button>
+        </div>
+        <textarea id="recipe" placeholder="Pega aquí una receta para cargarla" aria-label="Receta" style="min-height:52px"></textarea>
+        <button class="btn" type="button" id="load">Cargar receta</button>
+        <p class="hint">«Mías» se guarda solo en este navegador. La receta es un texto que reproduce la imagen exacta: sirve para guardarla en el repositorio o rehacerla después.</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer>Inspirado en <a href="https://www.behance.net/gallery/253069605/Dafi" target="_blank" rel="noopener">Dafi</a> de Mambo Mambo, como parte de la exploración «Relevo con aura». Todas las imágenes se generan aquí: no usan material de la referencia.</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const toast = (msg) => { const t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('on'), 2600); };
+
+  // ---------- Presets ----------
+  const AURA6 = ['#FFD54A', '#F6A3CB', '#C5B2F6', '#9DD6F4', '#FFF3D6', '#FFAE7A'];
+  const B = (x, y, r) => [x, y, r];
+  const base = { bg: '#F7F4F0', colors: AURA6, blobs: [B(.44, .6, .25), B(.56, .38, .23), B(.66, .56, .24), B(.34, .42, .25), B(.5, .5, .09), B(.42, .74, .16)], k: .95, scale: 1, warp: .12, grain: .045, depth: 0, transparent: false, shape: 'rect', format: '1920x1080', text: null };
+  const P = (o) => JSON.parse(JSON.stringify({ ...base, ...o }));
+  const T = (layout, eyebrow, title, sub, color = 'ink', align = 'left') => ({ layout, eyebrow, title, sub, color, align });
+  const PRESETS = [
+    // Presentación
+    P({ id: 'portada', group: 'slide', name: 'Portada', blobs: [B(.72, .6, .27), B(.82, .36, .24), B(.92, .62, .25), B(.64, .4, .25), B(.78, .5, .1), B(.72, .82, .18)], text: T('portada', 'Proyecto de título · Diseño UDP', 'relevo', 'De la pantalla | a lo que querías hacer.') }),
+    P({ id: 'seccion', group: 'slide', name: 'Sección', bg: '#C9B8F2', colors: ['#8E6FE6', '#F3D3F0', '#A7CFF5', '#FFFFFF', '#6D55D6', '#F7C9DE'], blobs: [B(.2, .78, .32), B(.78, .22, .3), B(.85, .85, .28), B(.45, .3, .2), B(.1, .1, .25), B(.6, .65, .22)], k: 1, warp: .38, grain: .06, depth: .45, text: T('seccion', '02', 'Lo que dicen | las personas', '', 'white') }),
+    P({ id: 'cita', group: 'slide', name: 'Frase', colors: ['#FFAE7A', '#F6A3CB', '#C5B2F6', '#FFD54A', '#FFF3D6', '#9DD6F4'], blobs: [B(.36, .64, .3), B(.62, .36, .3), B(.7, .66, .28), B(.3, .36, .28), B(.5, .5, .12), B(.5, .82, .2)], k: .72, text: T('cita', 'La idea', 'Vuelve a lo que | querías hacer.', '', 'ink', 'center') }),
+    P({ id: 'dato', group: 'slide', name: 'Dato', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.18, .85, .35), B(.6, .35, .26), B(.88, .7, .26), B(.35, .2, .2), B(.92, .08, .2), B(.5, .7, .2)], k: 1, warp: .42, grain: .06, depth: .5, text: T('dato', 'Encuesta', '53', 'respuestas sobre el tiempo | que se va en el teléfono', 'white') }),
+    P({ id: 'cierre', group: 'slide', name: 'Cierre', blobs: [B(.42, .62, .28), B(.58, .36, .26), B(.7, .58, .27), B(.3, .42, .27), B(.5, .5, .1), B(.46, .8, .18)], text: T('cierre', '', 'Gracias', 'relevo', 'ink', 'center') }),
+    P({ id: 'fondo-limpio', group: 'slide', name: 'Fondo limpio', blobs: [B(.86, .82, .22), B(.94, .6, .18), B(.76, .94, .2), B(.98, .9, .2), B(.88, .78, .07), B(.7, .8, .12)], text: T('portada', 'Título de la sección', 'Escribe aquí | lo que quieres decir.', '') }),
+    // Auras sobre blanco
+    P({ id: 'aura', group: 'aura', name: 'Aura' }),
+    P({ id: 'amanecer', group: 'aura', name: 'Amanecer', colors: ['#FFD54A', '#FFAE7A', '#F6A3CB', '#FFE7A6', '#FFF3D6', '#FFC98A'], blobs: [B(.4, .7, .24), B(.6, .5, .2), B(.66, .72, .18), B(.36, .5, .18), B(.5, .64, .08), B(.5, .85, .15)] }),
+    P({ id: 'brisa', group: 'aura', name: 'Brisa', colors: ['#9DD6F4', '#C5B2F6', '#A8E8CF', '#DCEFFB', '#FFFFFF', '#B7C6F7'], blobs: [B(.38, .55, .22), B(.6, .42, .2), B(.66, .62, .2), B(.3, .38, .18), B(.5, .5, .08), B(.48, .72, .14)] }),
+    P({ id: 'rubor', group: 'aura', name: 'Rubor', colors: ['#F6A3CB', '#FFAE7A', '#C5B2F6', '#FBD3E3', '#FFF3D6', '#F79FB5'], blobs: [B(.42, .58, .22), B(.58, .4, .2), B(.66, .6, .19), B(.34, .42, .18), B(.5, .5, .08), B(.52, .76, .14)] }),
+    P({ id: 'esquina', group: 'aura', name: 'Esquina', blobs: [B(.86, .82, .22), B(.94, .6, .18), B(.76, .94, .2), B(.98, .9, .2), B(.88, .78, .07), B(.7, .8, .12)] }),
+    P({ id: 'horizonte', group: 'aura', name: 'Horizonte', blobs: [B(.2, .95, .2), B(.42, 1, .2), B(.62, .96, .2), B(.84, 1, .2), B(.5, .98, .1), B(.05, .98, .16)] }),
+    // Cielos llenos de color
+    P({ id: 'rosa', group: 'cielo', name: 'Rosa', bg: '#F4C9D2', colors: ['#C8325A', '#F7A9BE', '#FFFFFF', '#E0617F', '#FBE4EA', '#F28BA7'], blobs: [B(.25, .35, .3), B(.75, .25, .28), B(.55, .6, .2), B(.3, .85, .26), B(.85, .8, .22), B(.6, .1, .2)], k: 1, warp: .4, grain: .06, depth: .45 }),
+    P({ id: 'ambar', group: 'cielo', name: 'Ámbar', bg: '#E9B85C', colors: ['#F2A20C', '#B78BEF', '#F7D27A', '#9C7BE8', '#FFE7B0', '#E88F1A'], blobs: [B(.2, .3, .32), B(.85, .2, .3), B(.5, .7, .24), B(.9, .85, .24), B(.4, .1, .18), B(.15, .9, .22)], k: 1, warp: .4, grain: .06, depth: .45 }),
+    P({ id: 'brasa', group: 'cielo', name: 'Brasa', bg: '#F28A4A', colors: ['#E8501E', '#F9B36B', '#FFE0B8', '#E2471C', '#FFC58E', '#C9370F'], blobs: [B(.2, .75, .32), B(.75, .3, .28), B(.55, .1, .22), B(.9, .9, .2), B(.4, .45, .18), B(.05, .3, .2)], k: 1, warp: .4, grain: .06, depth: .5 }),
+    P({ id: 'cielo-azul', group: 'cielo', name: 'Cielo', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.2, .85, .32), B(.6, .35, .24), B(.85, .7, .24), B(.35, .2, .2), B(.9, .1, .2), B(.5, .65, .18)], k: 1, warp: .45, grain: .06, depth: .5 }),
+    P({ id: 'musgo', group: 'cielo', name: 'Musgo', bg: '#7FAE6B', colors: ['#2F6E3B', '#B9DB8E', '#3E8F4E', '#E7F2C8', '#5FA05A', '#1F5530'], blobs: [B(.2, .3, .32), B(.8, .25, .28), B(.7, .85, .3), B(.4, .65, .18), B(.55, .45, .16), B(.1, .9, .22)], k: 1, warp: .4, grain: .06, depth: .5 }),
+    P({ id: 'lila', group: 'cielo', name: 'Lila', bg: '#C9B8F2', colors: ['#8E6FE6', '#F3D3F0', '#A7CFF5', '#FFFFFF', '#6D55D6', '#F7C9DE'], blobs: [B(.25, .7, .3), B(.75, .25, .28), B(.8, .85, .26), B(.4, .3, .18), B(.1, .15, .22), B(.6, .6, .2)], k: 1, warp: .4, grain: .06, depth: .4 }),
+    P({ id: 'menta', group: 'cielo', name: 'Menta', bg: '#BFE7D3', colors: ['#5FC79A', '#E6F7FF', '#9ED6F4', '#FFFFFF', '#3FB487', '#CBEFE0'], blobs: [B(.2, .8, .3), B(.7, .25, .28), B(.85, .75, .26), B(.4, .4, .16), B(.1, .2, .2), B(.6, .6, .2)], k: 1, warp: .4, grain: .055, depth: .35 }),
+    P({ id: 'noche', group: 'cielo', name: 'Noche', bg: '#2B3A66', colors: ['#0F1A3D', '#5E7BD8', '#A9B8F5', '#121B3A', '#3B4F99', '#7E8FE0'], blobs: [B(.2, .3, .32), B(.8, .7, .28), B(.6, .2, .18), B(.9, .9, .24), B(.4, .8, .22), B(.5, .5, .16)], k: 1, warp: .45, grain: .07, depth: .4 }),
+    P({ id: 'atardecer', group: 'cielo', name: 'Atardecer', bg: '#F3B38E', colors: ['#F06A3B', '#F7C6DD', '#B9A4F2', '#FFE6A6', '#E9558F', '#FFD3A8'], blobs: [B(.25, .3, .28), B(.8, .3, .28), B(.75, .85, .28), B(.3, .8, .24), B(.55, .55, .16), B(.05, .05, .2)], k: 1, warp: .4, grain: .06, depth: .4 }),
+    // Elementos con fondo transparente
+    P({ id: 'orbe', group: 'elemento', name: 'Orbe', format: '1024x1024', transparent: true, blobs: [B(.44, .58, .2), B(.56, .4, .18), B(.64, .56, .19), B(.36, .44, .19), B(.5, .5, .08), B(.46, .66, .1)] }),
+    P({ id: 'ficha-color', group: 'elemento', name: 'Ficha', format: '1024x1024', shape: 'squircle', bg: '#F4C9D2', colors: ['#C8325A', '#F7A9BE', '#FFFFFF', '#E0617F', '#FBE4EA', '#F28BA7'], blobs: [B(.25, .35, .3), B(.75, .25, .28), B(.55, .6, .2), B(.3, .85, .26), B(.85, .8, .22), B(.6, .1, .2)], k: 1, warp: .4, grain: .06, depth: .45 }),
+    P({ id: 'circulo', group: 'elemento', name: 'Círculo', format: '1024x1024', shape: 'circle', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.2, .85, .32), B(.6, .35, .24), B(.85, .7, .24), B(.35, .2, .2), B(.9, .1, .2), B(.5, .65, .18)], k: 1, warp: .45, grain: .06, depth: .5 }),
+    P({ id: 'banda', group: 'elemento', name: 'Banda', format: '2400x800', blobs: [B(.15, .5, .3), B(.35, .5, .28), B(.55, .5, .3), B(.75, .5, .28), B(.9, .5, .3), B(.45, .5, .12)] }),
+  ];
+  const LAYOUTS = [['portada', 'Portada'], ['seccion', 'Sección'], ['cita', 'Frase'], ['dato', 'Dato'], ['cierre', 'Cierre'], ['none', 'Sin texto']];
+
+  // ---------- Estado ----------
+  let state = P(PRESETS[0]); state.t = 0; let presetId = 'portada'; let group = 'slide'; let playing = false;
+  const store = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } } };
+  let mine = store.get('taller-auras-mias', []);
+
+  // ---------- WebGL ----------
+  const glc = document.createElement('canvas');
+  const gl = glc.getContext('webgl', { preserveDrawingBuffer: true, premultipliedAlpha: true, alpha: true, antialias: false });
+  const VS = 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
+  const FS = `precision highp float;
+  uniform vec2 res; uniform float t; uniform float k; uniform float sc; uniform float warp; uniform float grain; uniform float depth; uniform float tr; uniform float seed;
+  uniform vec3 bg; uniform vec3 col[6]; uniform vec3 pr[6];
+  float hash(vec2 p){ vec3 p3 = fract(vec3(p.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+  float noise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }
+  float fbm(vec2 p){ float v = 0.0; float a = 0.5; for (int i = 0; i < 5; i++){ v += a * noise(p); p *= 2.03; a *= 0.5; } return v; }
+  void main(){
+    vec2 uv = gl_FragCoord.xy / res; vec2 p = vec2(uv.x, 1.0 - uv.y);
+    float asp = res.x / res.y;
+    vec2 q = vec2((p.x - 0.5) * asp, p.y - 0.5);
+    vec2 w = vec2(fbm(q * 1.7 + vec2(seed, t * 0.04)), fbm(q * 1.7 + vec2(seed + 5.2, -t * 0.04))) - 0.5;
+    vec2 qw = q + warp * w;
+    vec3 c = bg; float a = 0.0; vec3 acc = vec3(0.0); float sw = 0.0;
+    for (int i = 0; i < 6; i++){
+      vec3 b = pr[i];
+      if (b.z <= 0.0) continue;
+      vec2 ctr = vec2((b.x - 0.5) * asp, b.y - 0.5) + 0.035 * vec2(sin(t * 0.31 + float(i) * 1.7), cos(t * 0.27 + float(i) * 2.3));
+      float r = b.z * sc; vec2 d = qw - ctr;
+      float wg = clamp(exp(-dot(d, d) / (r * r)) * k, 0.0, 1.0);
+      c = mix(c, col[i], wg); a = a + wg * (1.0 - a); acc += col[i] * wg; sw += wg;
+    }
+    float sh = depth * (0.55 * smoothstep(0.15, 1.15, p.y) + 0.35 * smoothstep(0.2, 0.9, length(q)));
+    c *= 1.0 - sh * 0.45;
+    float g = hash(gl_FragCoord.xy + fract(t * 7.0) * 61.0) - 0.5;
+    if (tr > 0.5) {
+      vec3 m = sw > 0.0 ? acc / sw : bg; m += g * grain; float al = clamp(a * 1.05, 0.0, 1.0);
+      gl_FragColor = vec4(m * al, al);
+    } else { c += g * grain; gl_FragColor = vec4(c, 1.0); }
+  }`;
+  let U = null;
+  if (gl) {
+    const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(o)); return o; };
+    const pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(pr); gl.useProgram(pr);
+    const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    U = {}; ['res', 't', 'k', 'sc', 'warp', 'grain', 'depth', 'tr', 'seed', 'bg', 'col', 'pr'].forEach((n) => U[n] = gl.getUniformLocation(pr, n));
+  }
+  const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return [(n >> 16) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255]; };
+  function renderGL(s, w, h) {
+    glc.width = w; glc.height = h; gl.viewport(0, 0, w, h); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform2f(U.res, w, h); gl.uniform1f(U.t, s.t || 0); gl.uniform1f(U.k, s.k); gl.uniform1f(U.sc, s.scale); gl.uniform1f(U.warp, s.warp);
+    gl.uniform1f(U.grain, s.grain); gl.uniform1f(U.depth, s.depth); gl.uniform1f(U.tr, s.transparent ? 1 : 0); gl.uniform1f(U.seed, s.seed || 0);
+    gl.uniform3fv(U.bg, rgb(s.bg));
+    gl.uniform3fv(U.col, new Float32Array(s.colors.flatMap(rgb)));
+    gl.uniform3fv(U.pr, new Float32Array(s.blobs.flat()));
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    return glc;
+  }
+
+  // ---------- Composición: forma + texto ----------
+  const dims = (s) => s.format.split('x').map(Number);
+  function shapePath(ctx, shape, w, h) {
+    ctx.beginPath();
+    if (shape === 'circle') { const r = Math.min(w, h) / 2; ctx.arc(w / 2, h / 2, r, 0, Math.PI * 2); return true; }
+    if (shape === 'round') { ctx.roundRect(0, 0, w, h, Math.min(w, h) * .06); return true; }
+    if (shape === 'squircle') { // superelipse, como un ícono de app
+      const n = 5, a = w / 2, b = h / 2, cx = w / 2, cy = h / 2;
+      for (let i = 0; i <= 160; i++) { const th = i / 160 * Math.PI * 2, ct = Math.cos(th), st = Math.sin(th);
+        const x = cx + a * Math.sign(ct) * Math.pow(Math.abs(ct), 2 / n), y = cy + b * Math.sign(st) * Math.pow(Math.abs(st), 2 / n); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+      ctx.closePath(); return true; }
+    return false;
+  }
+  function wrap(ctx, text, maxW) {
+    const out = []; text.split('\n').forEach((para) => { let line = ''; para.split(/\s+/).forEach((word) => { const test = line ? line + ' ' + word : word; if (ctx.measureText(test).width > maxW && line) { out.push(line); line = word; } else line = test; }); out.push(line); }); return out;
+  }
+  // Escribe un texto en dos tonos: lo que va después de «|» queda en gris.
+  function twoTone(ctx, raw, x, y, maxW, lh, align, main, soft) {
+    const [a, b = ''] = raw.split('|').map((s) => s.trim());
+    const words = [...a.split(/\s+/).filter(Boolean).map((w) => [w, main]), ...b.split(/\s+/).filter(Boolean).map((w) => [w, soft])];
+    const lines = []; let cur = [], curW = 0; const space = ctx.measureText(' ').width;
+    words.forEach(([w, c]) => { const ww = ctx.measureText(w).width; if (cur.length && curW + space + ww > maxW) { lines.push([cur, curW]); cur = []; curW = 0; } cur.push([w, c, ww]); curW += (cur.length > 1 ? space : 0) + ww; });
+    if (cur.length) lines.push([cur, curW]);
+    lines.forEach(([ws, lw], i) => { let cx = align === 'center' ? x - lw / 2 : x; ws.forEach(([w, c, ww]) => { ctx.fillStyle = c; ctx.fillText(w, cx, y + i * lh); cx += ww + space; }); });
+    return lines.length;
+  }
+  function drawText(ctx, s, w, h) {
+    const tx = s.text; if (!tx || tx.layout === 'none') return;
+    const white = tx.color === 'white'; const main = white ? '#FFFFFF' : '#141312'; const soft = white ? 'rgba(255,255,255,.62)' : 'rgba(20,19,18,.45)';
+    const m = Math.round(Math.min(w, h) * .075); const center = tx.align === 'center'; const x = center ? w / 2 : m; const maxW = w - m * 2;
+    const font = (weight, px) => `${weight} ${px}px "Instrument Sans", "Helvetica Neue", Arial, sans-serif`;
+    const ls = (px, em) => { if ('letterSpacing' in ctx) ctx.letterSpacing = (px * em) + 'px'; };
+    ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    const H = Math.min(h, w * .75);
+    const eyebrow = (y) => { if (!tx.eyebrow) return; const px = Math.round(H * .028); ctx.font = font(600, px); ls(px, 0); ctx.fillStyle = soft; const tw = ctx.measureText(tx.eyebrow).width; ctx.fillText(tx.eyebrow, center ? x - tw / 2 : x, y); };
+    if (tx.layout === 'portada') {
+      eyebrow(m + H * .03);
+      const px = Math.round(H * (tx.title.length < 12 ? .2 : .1)); ctx.font = font(700, px); ls(px, -.05);
+      const subPx = Math.round(H * .042); const subLines = tx.sub ? 2 : 0;
+      const yTitle = h - m - (subLines ? subPx * 1.3 * subLines + H * .03 : 0);
+      ctx.fillStyle = main; const tl = wrap(ctx, tx.title.replace('|', ''), maxW);
+      tl.forEach((ln, i) => { const tw = ctx.measureText(ln).width; ctx.fillText(ln, center ? x - tw / 2 : x, yTitle - (tl.length - 1 - i) * px * .95); });
+      if (tx.sub) { ctx.font = font(500, subPx); ls(subPx, -.015); twoTone(ctx, tx.sub, x, yTitle + H * .03 + subPx * 1.05, Math.min(maxW, w * .5), subPx * 1.3, tx.align, main, soft); }
+    } else if (tx.layout === 'seccion') {
+      if (tx.eyebrow) { const px = Math.round(H * .2); ctx.font = font(600, px); ls(px, -.05); ctx.fillStyle = soft; const tw = ctx.measureText(tx.eyebrow).width; ctx.fillText(tx.eyebrow, center ? x - tw / 2 : x, m + px * .8); }
+      const px = Math.round(H * .095); ctx.font = font(600, px); ls(px, -.035);
+      const lines = Math.ceil(ctx.measureText(tx.title.replace('|', '')).width / (maxW * .85)) + 1;
+      twoTone(ctx, tx.title, x, h - m - (lines - 1) * px * 1.02, maxW * .85, px * 1.02, tx.align, main, soft);
+    } else if (tx.layout === 'cita') {
+      const px = Math.round(H * .085); ctx.font = font(500, px); ls(px, -.03);
+      const est = Math.max(1, Math.ceil(ctx.measureText(tx.title.replace('|', '')).width / (maxW * .78)));
+      const y0 = h / 2 - (est - 1) * px * .55 + px * .3; eyebrow(y0 - px * 1.25); ctx.font = font(500, px); ls(px, -.03);
+      twoTone(ctx, tx.title, x, y0, maxW * .78, px * 1.1, tx.align, main, soft);
+    } else if (tx.layout === 'dato') {
+      eyebrow(m + H * .03);
+      const px = Math.round(H * .42); ctx.font = font(600, px); ls(px, -.06); ctx.fillStyle = main;
+      const tw = ctx.measureText(tx.title).width; const y = h / 2 + px * .32; ctx.fillText(tx.title, center ? x - tw / 2 : x, y);
+      if (tx.sub) { const sp = Math.round(H * .05); ctx.font = font(500, sp); ls(sp, -.02); twoTone(ctx, tx.sub, x, y + sp * 1.5, Math.min(maxW, w * .55), sp * 1.25, tx.align, main, soft); }
+    } else if (tx.layout === 'cierre') {
+      const px = Math.round(H * .2); ctx.font = font(700, px); ls(px, -.05); ctx.fillStyle = main;
+      const tw = ctx.measureText(tx.title).width; ctx.fillText(tx.title, center ? x - tw / 2 : x, h / 2 + px * .3);
+      if (tx.sub) { const sp = Math.round(H * .045); ctx.font = font(600, sp); ls(sp, -.03); ctx.fillStyle = soft; const sw = ctx.measureText(tx.sub).width; ctx.fillText(tx.sub, center ? x - sw / 2 : x, h / 2 + px * .3 + sp * 2.2); }
+      eyebrow(m + H * .03);
+    }
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+  }
+  function compose(s, w, h, out) {
+    out.width = w; out.height = h; const ctx = out.getContext('2d'); ctx.clearRect(0, 0, w, h);
+    ctx.save(); if (shapePath(ctx, s.shape, w, h)) ctx.clip();
+    if (gl) ctx.drawImage(renderGL(s, w, h), 0, 0, w, h); else { ctx.fillStyle = s.bg; ctx.fillRect(0, 0, w, h); }
+    ctx.restore();
+    if (s.shape === 'rect' || !s.shape) drawText(ctx, s, w, h);
+    return out;
+  }
+
+  // ---------- Vista previa ----------
+  const view = $('view'), frame = $('frame');
+  function fitFrame() {
+    const [w, h] = dims(state); const box = frame.parentElement.getBoundingClientRect();
+    const maxW = box.width - 2 * parseFloat(getComputedStyle(frame.parentElement).paddingLeft || 0);
+    const maxH = Math.min(innerHeight * .7, 820);
+    let fw = maxW, fh = fw * h / w; if (fh > maxH) { fh = maxH; fw = fh * w / h; }
+    frame.style.width = fw + 'px'; frame.style.height = fh + 'px';
+    frame.style.borderRadius = state.shape === 'rect' ? '6px' : '0';
+    frame.style.boxShadow = state.shape === 'rect' && !state.transparent ? '' : 'none';
+    $('size').textContent = `${w} × ${h}`;
+    return [fw, fh];
+  }
+  function drawPreview() {
+    const [fw, fh] = fitFrame(); const dpr = Math.min(devicePixelRatio || 1, 2);
+    compose(state, Math.round(fw * dpr), Math.round(fh * dpr), view);
+    drawHandles(fw, fh);
+  }
+  function drawHandles(fw, fh) {
+    frame.querySelectorAll('.handle').forEach((n) => n.remove());
+    state.blobs.forEach((b, i) => { const d = document.createElement('span'); d.className = 'handle'; d.style.left = (b[0] * fw) + 'px'; d.style.top = (b[1] * fh) + 'px'; d.style.background = state.colors[i]; frame.appendChild(d); });
+  }
+  let raf = 0, last = 0;
+  function loop(now) { if (!playing) return; const dt = Math.min(.05, (now - (last || now)) / 1000); last = now; state.t = (state.t || 0) + dt * .8; drawPreview(); raf = requestAnimationFrame(loop); }
+  $('move').addEventListener('click', () => { playing = !playing; $('move').setAttribute('aria-pressed', String(playing)); if (playing && !reduce) { last = 0; raf = requestAnimationFrame(loop); } else cancelAnimationFrame(raf); });
+  $('shuffle').addEventListener('click', () => {
+    state.seed = Math.random() * 40;
+    const cx = state.blobs.reduce((t, b) => t + b[0], 0) / 6, cy = state.blobs.reduce((t, b) => t + b[1], 0) / 6;
+    const spread = state.group === 'cielo' || state.bg !== '#F7F4F0' ? .38 : .16;
+    state.blobs = state.blobs.map((b, i) => [clamp(cx + (Math.random() - .5) * spread * 2, -.1, 1.1), clamp(cy + (Math.random() - .5) * spread * 2, -.1, 1.1), b[2] * (.85 + Math.random() * .3)]);
+    drawPreview();
+  });
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  // Arrastrar la luz más cercana
+  let drag = -1;
+  view.addEventListener('pointerdown', (e) => { const r = view.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    let best = -1, bd = 1e9; state.blobs.forEach((b, i) => { const d = (b[0] - x) ** 2 + (b[1] - y) ** 2; if (d < bd) { bd = d; best = i; } }); drag = best; view.setPointerCapture(e.pointerId); view.classList.add('dragging'); frame.classList.add('show-handles'); });
+  view.addEventListener('pointermove', (e) => { if (drag < 0) return; const r = view.getBoundingClientRect(); state.blobs[drag][0] = clamp((e.clientX - r.left) / r.width, -.2, 1.2); state.blobs[drag][1] = clamp((e.clientY - r.top) / r.height, -.2, 1.2); drawPreview(); });
+  const endDrag = () => { drag = -1; view.classList.remove('dragging'); frame.classList.remove('show-handles'); };
+  view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', endDrag);
+  addEventListener('resize', () => drawPreview());
+
+  // ---------- Controles ----------
+  const SLIDERS = [['k', 'Intensidad', .2, 1.3, .01], ['scale', 'Tamaño de las luces', .4, 2.2, .01], ['warp', 'Volumen, como nubes', 0, .8, .01], ['grain', 'Grano', 0, .14, .005], ['depth', 'Profundidad', 0, 1, .01]];
+  const sl = $('sliders');
+  SLIDERS.forEach(([key, label, min, max, step]) => {
+    const id = 's-' + key; const wrapEl = document.createElement('div'); wrapEl.className = 'slider';
+    wrapEl.innerHTML = `<div class="row"><label class="lbl" for="${id}">${label}</label><output id="${id}-o"></output></div><input type="range" id="${id}" min="${min}" max="${max}" step="${step}">`;
+    sl.appendChild(wrapEl);
+    const inp = wrapEl.querySelector('input'); inp.addEventListener('input', () => { state[key] = parseFloat(inp.value); $(id + '-o').textContent = (+inp.value).toFixed(2); drawPreview(); });
+  });
+  const colorsEl = $('colors');
+  ['Fondo', '1', '2', '3', '4', '5', '6'].forEach((lab, i) => {
+    const l = document.createElement('label'); const id = 'c-' + i;
+    l.innerHTML = `<input type="color" id="${id}" aria-label="${i ? 'Luz ' + lab : 'Fondo'}"><span>${lab}</span>`; colorsEl.appendChild(l);
+    l.querySelector('input').addEventListener('input', (e) => { if (i === 0) state.bg = e.target.value; else state.colors[i - 1] = e.target.value; drawPreview(); });
+  });
+  $('format').addEventListener('change', (e) => { state.format = e.target.value; drawPreview(); });
+  document.querySelectorAll('[data-shape]').forEach((b) => b.addEventListener('click', () => { state.shape = b.dataset.shape; syncControls(); drawPreview(); }));
+  $('transparent').addEventListener('change', (e) => { state.transparent = e.target.checked; drawPreview(); });
+  const layoutsEl = $('layouts');
+  LAYOUTS.forEach(([id, name]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.dataset.layout = id; b.textContent = name; layoutsEl.appendChild(b);
+    b.addEventListener('click', () => { if (id === 'none') state.text = null; else state.text = { ...(state.text || T(id, '', 'Título | que sigue en gris', '')), layout: id }; syncControls(); drawPreview(); }); });
+  const textInputs = [['t-eyebrow', 'eyebrow'], ['t-title', 'title'], ['t-sub', 'sub'], ['t-color', 'color'], ['t-align', 'align']];
+  textInputs.forEach(([id, key]) => $(id).addEventListener('input', (e) => { if (!state.text) state.text = T('portada', '', '', ''); state.text[key] = e.target.value; syncLayoutChips(); drawPreview(); }));
+  function syncLayoutChips() { const lay = state.text ? state.text.layout : 'none'; layoutsEl.querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.layout === lay))); }
+  function syncControls() {
+    SLIDERS.forEach(([key]) => { const i = $('s-' + key); i.value = state[key]; $('s-' + key + '-o').textContent = (+state[key]).toFixed(2); });
+    $('c-0').value = state.bg; state.colors.forEach((c, i) => { $('c-' + (i + 1)).value = c; });
+    $('format').value = state.format; if (![...$('format').options].some((o) => o.value === state.format)) { const o = document.createElement('option'); o.value = state.format; o.textContent = state.format.replace('x', ' × '); $('format').appendChild(o); $('format').value = state.format; }
+    document.querySelectorAll('[data-shape]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.shape === state.shape)));
+    $('transparent').checked = !!state.transparent;
+    const tx = state.text || { eyebrow: '', title: '', sub: '', color: 'ink', align: 'left' };
+    $('t-eyebrow').value = tx.eyebrow || ''; $('t-title').value = tx.title || ''; $('t-sub').value = tx.sub || ''; $('t-color').value = tx.color || 'ink'; $('t-align').value = tx.align || 'left';
+    syncLayoutChips(); $('preset-name').textContent = state.name || 'Mía';
+  }
+
+  // ---------- Galería de presets ----------
+  const thumbs = {};
+  function thumb(p) { if (thumbs[p.id]) return thumbs[p.id]; const c = document.createElement('canvas'); const s = { ...P(p), t: 3 }; compose(s, 320, 200, c); return (thumbs[p.id] = c.toDataURL('image/png')); }
+  function renderPresets() {
+    const box = $('presets'); box.replaceChildren();
+    const list = group === 'mias' ? mine : PRESETS.filter((p) => p.group === group);
+    if (!list.length) { const e = document.createElement('p'); e.className = 'empty'; e.textContent = 'Todavía no guardas ninguno. Ajusta una imagen y toca «Guardar en Mías».'; box.appendChild(e); return; }
+    list.forEach((p, idx) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'preset'; b.setAttribute('aria-pressed', String(p.id === presetId));
+      const img = document.createElement('img'); img.alt = ''; img.src = p.thumb || thumb(p); const sp = document.createElement('span'); sp.textContent = p.name;
+      b.append(img, sp);
+      if (group === 'mias') { const d = document.createElement('span'); d.className = 'del'; d.textContent = 'Quitar'; d.setAttribute('role', 'button'); d.tabIndex = 0;
+        d.addEventListener('click', (ev) => { ev.stopPropagation(); mine.splice(idx, 1); store.set('taller-auras-mias', mine); renderPresets(); toast('Quitado de Mías'); }); b.appendChild(d); }
+      b.addEventListener('click', () => { const t = state.t; state = P(p); state.t = t; presetId = p.id; syncControls(); drawPreview(); renderPresets(); });
+      box.appendChild(b);
+    });
+  }
+  document.querySelectorAll('.tabs [data-group]').forEach((t) => t.addEventListener('click', () => { group = t.dataset.group; document.querySelectorAll('.tabs [data-group]').forEach((x) => x.setAttribute('aria-selected', String(x === t))); renderPresets(); }));
+
+  // ---------- Guardar, copiar y cargar ----------
+  const recipe = () => { const { thumb: _t, ...r } = state; return { ...r, t: +(state.t || 0).toFixed(3) }; };
+  $('save-mine').addEventListener('click', () => {
+    const c = document.createElement('canvas'); compose({ ...state }, 320, 200, c);
+    const item = { ...recipe(), id: 'mia-' + Date.now(), group: 'mias', name: 'Mía ' + (mine.length + 1), thumb: c.toDataURL('image/png') };
+    mine.unshift(item); store.set('taller-auras-mias', mine.slice(0, 40)); toast('Guardado en Mías'); if (group === 'mias') renderPresets();
+  });
+  $('copy').addEventListener('click', async () => {
+    const txt = JSON.stringify(recipe()); $('recipe').value = txt;
+    try { await navigator.clipboard.writeText(txt); toast('Receta copiada'); } catch (e) { $('recipe').select(); toast('Receta lista: cópiala del cuadro'); }
+  });
+  $('load').addEventListener('click', () => {
+    try { const r = JSON.parse($('recipe').value); if (!r || !Array.isArray(r.blobs) || !Array.isArray(r.colors)) throw new Error(); state = P(r); state.t = r.t || 0; presetId = ''; syncControls(); drawPreview(); renderPresets(); toast('Receta cargada'); }
+    catch (e) { toast('Esa receta no se pudo leer. Copia una completa desde «Copiar receta».'); }
+  });
+
+  // ---------- Descargar ----------
+  let downloads = null;
+  if (window.claude && typeof window.claude.use === 'function') window.claude.use('downloads').then((d) => { downloads = d; }).catch(() => {});
+  const slug = (s) => (s || 'aura').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  $('download').addEventListener('click', async () => {
+    const [w, h] = dims(state); const btn = $('download'); btn.disabled = true; const old = btn.lastChild.textContent; btn.lastChild.textContent = 'Preparando…';
+    try {
+      await document.fonts.ready;
+      const c = document.createElement('canvas'); compose(state, w, h, c);
+      const blob = await new Promise((res) => c.toBlob(res, 'image/png'));
+      const name = `relevo-${slug(state.name)}-${w}x${h}.png`;
+      if (downloads) {
+        try { await downloads.save({ filename: name, data: blob }); toast('Descargado: ' + name); }
+        catch (err) { if (err && err.code === 'declined') toast('Descarga cancelada'); else if (err && err.code === 'rate_limited') toast('Hay una descarga pendiente. Espera un momento.'); else showFallback(c, name); }
+      } else showFallback(c, name);
+    } finally { btn.disabled = false; btn.lastChild.textContent = old; }
+  });
+  function showFallback(c, name) {
+    const wrapEl = document.createElement('div'); wrapEl.className = 'fallback';
+    const box = document.createElement('div'); box.className = 'box';
+    const p = document.createElement('p'); p.textContent = 'Aquí no se puede descargar directo. Haz clic derecho sobre la imagen (o mantenla presionada) y elige «Guardar imagen como…». Nombre sugerido: ' + name;
+    const img = document.createElement('img'); img.src = c.toDataURL('image/png'); img.alt = 'Imagen lista para guardar';
+    const close = document.createElement('button'); close.className = 'btn primary'; close.type = 'button'; close.textContent = 'Cerrar';
+    close.addEventListener('click', () => wrapEl.remove()); box.append(p, img, close); wrapEl.appendChild(box); document.body.appendChild(wrapEl);
+  }
+
+  // ---------- Inicio ----------
+  syncControls(); renderPresets(); drawPreview();
+  document.fonts && document.fonts.load('700 80px "Instrument Sans"').then(() => { drawPreview(); Object.keys(thumbs).forEach((k) => delete thumbs[k]); renderPresets(); }).catch(() => {});
+  if (!gl) toast('Este navegador no tiene WebGL: la vista previa queda en color plano.');
+})();
+</script>

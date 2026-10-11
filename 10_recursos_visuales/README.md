@@ -60,7 +60,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 35. [Letras para relevo, propuesta 3.7](35_letras-para-relevo-2026-10-04.md), su [lámina](letras-para-relevo-2026-10-04/letras-para-relevo.html) y sus [tableros](letras-para-relevo-2026-10-04/README.md): 176 letras de cuatro fuentes sin Google Fonts, dieciocho finalistas en cuatro familias y sus licencias (D-106). Versión 2: [lámina](letras-para-relevo-2026-10-04/letras-para-relevo-v2.html) con 30 finalistas entre 264 letras de seis fuentes.
 36. [Letras que dicen relevo, propuesta 3.8](36_letras-que-dicen-relevo-2026-10-04.md), su [lámina](letras-que-dicen-relevo-2026-10-04/letras-que-dicen-relevo.html) y sus [láminas de lectura](letras-que-dicen-relevo-2026-10-04/README.md): 61 letras nuevas de tipo display, 108 miradas en grande y catorce fichas que leen cada letra con los conceptos de Relevo (D-107). Descartada por el autor.
 37. [Letras para lucirse, propuesta 3.9](37_letras-para-lucirse-2026-10-04.md), su [lámina](letras-para-lucirse-2026-10-04/letras-para-lucirse.html) y sus [tableros](letras-para-lucirse-2026-10-04/README.md): 23 letras display hermosas en cuatro familias, cada una en su tablero con el azul de Relevo (D-108).
-38. [Relevo con aura](38_relevo-con-aura-2026-10-10.md) y su [lámina](relevo-con-aura-2026-10-10/relevo-con-aura.html): exploración inspirada en Dafi (Mambo Mambo): aura que se enciende, grano, fichas de color en escalera y cinco pantallas de la app. Pendiente de la elección del autor.
+38. [Relevo con aura](38_relevo-con-aura-2026-10-10.md), su [lámina](relevo-con-aura-2026-10-10/relevo-con-aura.html) y el [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html): exploración inspirada en Dafi (Mambo Mambo), aprobada como dirección: aura de la pantalla como personalización (el Tag solo suena), grano, fichas en escalera, pantallas, presentaciones, y una herramienta para crear fondos y elementos en PNG.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -90,6 +90,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Taller de auras
+
+- **Qué cambió:** la entrada 38 suma el Taller de auras y la versión 3.
+- **Cómo estaba antes:** solo enlazaba la lámina.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-10 — Relevo con aura
 
