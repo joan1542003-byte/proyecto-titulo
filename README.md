@@ -79,6 +79,8 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **10 y 11 de octubre:** la exploración [«Relevo con aura»](10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), inspirada en Dafi, queda aprobada como dirección visual (D-121). El aura es de la pantalla y se personaliza: el Tag no emite luz, solo suena; las piezas van derechas, sin giros. Su versión 4 (D-122) la hace propia: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños y el Tag, que suena en anillos y no brilla. Suma [72 íconos propios y la paleta 2](10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md), con un papel fundamentado por color (D-124). El [Taller de auras](10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) saca sus 39 piezas y sus fondos en PNG, en láminas para diapositivas o la memoria, o en ZIP ([bitácora del 8 al 11 de octubre](00_gobernanza/bitacora-trabajo-con-ia-2026-10-08-11.md)).
 
+**11 de octubre, memoria:** el [borrador v5 de la memoria](08_memoria/borrador-memoria-v5-2026-10-11.md) queda aprobado como base de trabajo (D-123). Actualiza el texto a la app 2.30 y al Tag, agrega los apartados de método, uso de IA, gestión, ética y conclusiones, y deja 78 referencias verificadas. Faltan 24 datos por confirmar, las figuras y los resultados de la prueba; las [notas](08_memoria/notas-del-borrador-v5-2026-10-11.md) y la [bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) lo detallan.
+
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
 - **Hipótesis final (D-091):** «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella».
@@ -157,8 +159,14 @@ Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown
 ### 2026-10-11 — Íconos y color
 
 - **Qué cambió:** el estado suma los íconos propios y la paleta 2 (D-124).
-- **Cómo estaba antes:** terminaba en la versión 4 de la gráfica.
+- **Cómo estaba antes:** terminaba en el borrador v5 de la memoria.
 - **Por qué:** pedido del autor.
+
+### 2026-10-11 — Borrador v5 de la memoria
+
+- **Qué cambió:** el estado indica que el borrador v5 de la memoria quedó aprobado (D-123) y enlaza sus notas y su bitácora.
+- **Cómo estaba antes:** el estado no mencionaba la revisión de la memoria.
+- **Por qué:** el autor aprobó el borrador y pidió dejarlo documentado.
 
 ### 2026-10-11 — Relevo con aura, versión 4
 
