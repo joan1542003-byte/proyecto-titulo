@@ -1508,7 +1508,56 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Los colores no se probaron con personas.
 - **Documentación:** [Logo, colores de las actividades y recorrido](../10_recursos_visuales/40_logo-colores-y-recorrido-2026-10-11.md).
 
+## D-127 — El lugar como tercera luz, y el logo con degradado «Luz»
+
+- **Fecha:** 2026-10-11.
+- **Estado:** propuesta, pendiente de la revisión del autor. Corrige D-124 y D-125 en lo que dicen del Tag.
+- **Decisión:**
+  - **El lugar, no el Tag:** la tercera luz de la marca y el color lima representan el lugar donde se empieza, que también es donde suena la señal.
+  - **El Tag como medio:** el objeto que suena (Tag o teléfono) se muestra en tinta.
+  - **Los cuatro componentes:** la marca reúne la condición (tu tiempo), el primer paso, el lugar y la decisión, que vienen del modelo de la memoria (Figura 1).
+  - **Degradado «Luz»:** cada círculo es más claro en su borde exterior y más intenso hacia el centro, calculado en OKLCH. Se usa desde 48 px.
+  - **Versión plana:** se mantiene para 32 px o menos, una tinta, la notificación y lo impreso.
+  - **Variantes descartadas:** «Profundidad», porque apenas se nota, y «Turno», porque produce tonos oliva y salmón.
+- **Fundamento:**
+  - El autor pidió no usar el Tag como concepto, sino el lugar, y pensar en el fundamento y no en el resultado.
+  - El Tag es un sustituto provisional del testigo (memoria, capítulo 11). Que el lugar aporte a la señal es la hipótesis que se estudia (Guynn et al., 1998; capítulo 6). Por eso la marca nombra lo que se estudia y sigue valiendo si el objeto cambia.
+  - El autor también pidió probar un degradado sutil en los colores.
+- **Límites:** no se probó con personas.
+- **Documentación:**
+  - [Texto académico del fundamento](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md).
+  - [Relevo, la app](../10_recursos_visuales/rediseno-app-2026-10-11/relevo-la-app.html), sección «Logo».
+  - Los cuatro SVG `*-degradado.svg` en [logo-relevo-2026-10-11](../10_recursos_visuales/logo-relevo-2026-10-11).
+
+## D-128 — Rediseño 3.0 de la app sin perder datos
+
+- **Fecha:** 2026-10-11.
+- **Estado:** plan propuesto, pendiente de la aprobación del autor. No hay código cambiado.
+- **Decisión:**
+  - **Alcance:** rediseñar la app completa con el estilo de las pantallas de «Relevo con aura» y la línea nueva (D-124 a D-127), tocando solo la capa visual.
+  - **Lo que se mantiene:**
+    - el paquete y la firma;
+    - los 14 archivos de preferencias y la base local en su versión 9;
+    - Supabase, las 26 rutas, los textos de la investigación y la versión del consentimiento.
+  - **Valores guardados:** los que ya existen (ícono, color y emoji) se traducen al dibujo nuevo sin reescribirse.
+  - **Seis fases:** preparar, tokens, íconos y piezas, pantallas, aura y logo, y verificar con una actualización real sobre la 2.30 con datos.
+  - **Cuándo se instala:** no se instala a nadie en medio de su prueba de 21 días.
+- **Fundamento:**
+  - El autor pidió un rediseño total sin perder pantallas, decisiones ni datos, y que la persona pueda actualizar sin problemas.
+  - Android solo instala encima si coinciden el paquete y la firma; un cambio de firma obligaría a desinstalar y borraría los datos.
+  - Cambiar el aspecto durante la prueba agregaría una diferencia entre semanas que su diseño no considera.
+- **Límites:**
+  - Es un plan.
+  - El tema oscuro y el momento de instalarla son decisiones del autor.
+- **Documentación:** [Plan del rediseño 3.0](../06_desarrollo_y_factibilidad/app-android/plan-rediseno-3.0-2026-10-11.md) y [Relevo, la app](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — D-127 y D-128
+
+- **Qué cambió:** se registraron D-127 y D-128.
+- **Cómo estaba antes:** la última decisión era D-126.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-11 — D-125 y D-126
 

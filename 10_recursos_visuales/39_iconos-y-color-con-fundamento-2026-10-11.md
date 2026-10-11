@@ -61,7 +61,7 @@ El autor pidió no elegir un tono porque «evoque» algo. La evidencia disponibl
 | --- | --- | --- | --- | --- |
 | Tu tiempo | `#F4E496` mantequilla | `#F9E77C` | 0,91 · 0,10 · 98° | El amarillo es el color más asociado con alegría y pide precaución en señalética: llama la atención sin reproche. Baja de saturación porque un amarillo intenso activa más. |
 | Tu primer paso | `#B3E5FC` cielo | `#C2E4F3` | 0,90 · 0,06 · 228° | El azul es «acción que hay que hacer» en ISO 3864, y junto al verde es lo que menos activa: una instrucción tranquila. |
-| El Tag | `#C6EEAE` lima | `#DCEA98` | 0,91 · 0,09 · 134° | El verde es condición segura y, por costumbre, «adelante»: la señal invita a empezar. Pasa hacia el verde para separarse del amarillo. |
+| El lugar (antes, el Tag; D-127) | `#C6EEAE` lima | `#DCEA98` | 0,91 · 0,09 · 134° | El verde es condición segura y, por costumbre, «adelante»: la señal invita a empezar. Pasa hacia el verde para separarse del amarillo. |
 | Lo que decides | `#FAC8D9` rubor | `#F8C9D9` | 0,88 · 0,06 · 356° | El rosa conserva el amor, el placer y la alegría del rojo, sin su rabia. Decidir no se juzga. |
 | Tu aura | `#DFD1FC` lila | `#DED2F7` | 0,89 · 0,06 · 300° | El morado no tiene una emoción compartida por el 40 %: es un color neutro para lo que cada persona personaliza. |
 | Después | `#FBD1B3` durazno | `#FBD3B6` | 0,89 · 0,06 · 57° | El naranja se asocia con alegría y diversión: mirar lo que pasó, con ligereza. |
@@ -133,6 +133,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — El lugar
+
+- **Qué cambió:** el lima pasa a representar el lugar donde se empieza.
+- **Cómo estaba antes:** el lima representaba el Tag.
+- **Por qué:** D-127: la marca y los colores nombran el fundamento, no el objeto del prototipo.
 
 ### 2026-10-11 — Chile y Latinoamérica
 

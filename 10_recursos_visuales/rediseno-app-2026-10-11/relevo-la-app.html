@@ -1,0 +1,479 @@
+<title>Relevo, la app</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+/* El rediseño completo de la app con la línea nueva. Solo en claro, como «Relevo con aura». */
+:root {
+  color-scheme: light;
+  --paper: #F7F4F0; --stone: #EEE9E3; --white: #FFFFFF; --ink: #141312; --mute: #8B8580; --line: #E4DED6;
+  --t-butter: #F4E496; --t-sky: #B3E5FC; --t-lime: #C6EEAE; --t-blush: #FAC8D9; --t-lilac: #DFD1FC; --t-peach: #FBD1B3;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --shadow: 0 1px 2px rgba(30,22,12,.05), 0 18px 44px -26px rgba(30,22,12,.28);
+  --spring: cubic-bezier(.2,.8,.2,1.15);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { background: var(--paper); }
+body { margin: 0; color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -.025em; }
+.soft { color: var(--mute); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 80px; }
+.board { margin-top: 28px; background: var(--stone); border-radius: 40px; padding-inline: clamp(16px, 4vw, 56px); padding-block: clamp(32px, 5vw, 64px); }
+.board.white { background: var(--white); }
+.head { display: grid; gap: 8px; max-width: 66ch; margin-bottom: clamp(22px, 3.5vw, 40px); }
+.eyebrow { font-size: 13px; font-weight: 600; color: var(--mute); }
+.board h2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 600; line-height: 1.04; }
+.lead { color: var(--mute); font-size: 17px; max-width: 66ch; }
+.card { background: var(--white); border-radius: 22px; padding: 18px; box-shadow: 0 1px 2px rgba(30,22,12,.05); min-width: 0; }
+svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; display: block; }
+svg.i .f { fill: currentColor; stroke: none; }
+svg.lg { width: 100%; height: auto; display: block; }
+.nw { white-space: nowrap; }
+
+/* Portada */
+.hero { position: relative; border-radius: 40px; overflow: hidden; min-height: clamp(520px, 72vh, 700px); display: grid; align-content: end; padding: clamp(24px, 5vw, 64px); }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero > div { position: relative; display: grid; gap: 18px; justify-items: start; }
+.hero .logo { width: min(440px, 80vw); }
+.hero h1 { font-size: clamp(34px, 5vw, 64px); font-weight: 600; line-height: 1; letter-spacing: -.04em; max-width: 17ch; }
+.hero .lead { color: rgba(20,19,18,.66); font-size: clamp(17px, 1.6vw, 20px); }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; }
+.toc a { text-decoration: none; color: inherit; font-size: 14px; font-weight: 600; background: rgba(255,255,255,.7); border-radius: 99px; padding: 8px 14px; box-shadow: var(--shadow); }
+
+/* Logo con degradado */
+.vars { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+.vars figure { margin: 0; background: var(--paper); border-radius: 24px; padding: 20px; display: grid; gap: 14px; align-content: start; position: relative; }
+.vars figure.pick { background: var(--white); box-shadow: inset 0 0 0 2px var(--ink); }
+.vars .sizes { display: flex; align-items: flex-end; gap: 14px; }
+.vars figcaption b { font-weight: 600; }
+.vars figcaption { font-size: 14px; }
+.vars figcaption span { color: var(--mute); }
+.badge { position: absolute; top: 14px; right: 14px; font-size: 12px; font-weight: 600; background: var(--ink); color: #fff; border-radius: 99px; padding: 3px 10px; }
+.badge.no { background: var(--stone); color: var(--mute); }
+.twocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 12px; margin-top: 12px; }
+.twocol .card { background: var(--paper); }
+.twocol h3 { font-size: 18px; font-weight: 600; }
+.twocol p { font-size: 15px; margin-top: 6px; }
+.lights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.lights div { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; }
+.lights .t { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; }
+
+/* Sistema */
+.sys { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+.sys h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+.roles { display: grid; gap: 6px; }
+.roles div { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; align-items: center; font-size: 14px; }
+.roles .t { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; }
+.roles small { display: block; color: var(--mute); font-size: 12px; }
+.skyrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.skyrow span { aspect-ratio: 1; border-radius: 12px; display: flex; align-items: flex-end; padding: 4px; background-size: cover; }
+.cap { display: inline-block; background: rgba(255,255,255,.92); color: var(--ink); border-radius: 99px; padding: 2px 8px; font-size: 11px; font-weight: 600; line-height: 1.35; box-shadow: 0 1px 2px rgba(30,22,12,.12); }
+.typo b { font-size: 34px; font-weight: 600; letter-spacing: -.03em; line-height: 1; display: block; }
+.typo p { font-size: 14px; color: var(--mute); margin-top: 8px; }
+.comps { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+/* Teléfonos */
+.screens { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 26px 18px; }
+.scr { margin: 0; display: grid; gap: 10px; align-content: start; justify-items: center; }
+.scr h3 { font-size: 15px; font-weight: 600; text-align: center; }
+.scr h3 small { display: block; font-size: 12px; color: var(--mute); font-weight: 500; letter-spacing: 0; }
+.scr p.why { font-size: 13px; color: var(--mute); max-width: 32ch; text-align: center; }
+.phone { width: 100%; max-width: 262px; aspect-ratio: 9 / 19.5; border-radius: 34px; background: var(--paper); position: relative; overflow: hidden; isolation: isolate; box-shadow: 0 2px 3px rgba(30,22,12,.05), 0 36px 64px -44px rgba(30,22,12,.5); font-size: 12px; line-height: 1.35; }
+.phone > canvas, .phone > .bgfill { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.phone .ui { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; padding: 12px 14px 10px; gap: 10px; }
+.sb { display: flex; align-items: center; justify-content: space-between; font-size: 10px; font-weight: 600; padding: 0 6px; height: 20px; flex: none; }
+.sb .isl { width: 64px; height: 18px; border-radius: 99px; background: var(--ink); }
+.sb .sig { display: flex; gap: 2px; align-items: flex-end; } .sb .sig i { width: 3px; background: currentColor; border-radius: 1px; }
+.hi { width: 34%; height: 4px; border-radius: 99px; background: var(--ink); margin: auto auto 0; opacity: .85; flex: none; }
+.foot + .hi, .dock + .hi, .center + .hi { margin-top: 0; }
+.top { display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 600; min-height: 22px; }
+.top .x { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.75); display: grid; place-items: center; }
+.top .x svg.i { width: 14px; height: 14px; stroke-width: 2; }
+.ttl { font-size: 19px; line-height: 1.1; font-weight: 600; letter-spacing: -.025em; }
+.ttl .soft { color: var(--mute); }
+.sub { font-size: 11.5px; color: var(--mute); }
+.segs { display: grid; gap: 4px; padding: 0 4px; flex: none; }
+.segs i { height: 3px; border-radius: 99px; background: var(--line); } .segs i.on { background: var(--ink); }
+.btn { height: 38px; border-radius: 99px; background: var(--ink); color: #fff; font-size: 12.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; flex: none; }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.3px var(--ink); }
+.btn.white { background: #fff; color: var(--ink); }
+.btn.sm { height: 28px; font-size: 11px; padding: 0 12px; display: inline-flex; white-space: nowrap; }
+.rowx .end { flex: none; }
+.link { font-size: 11px; font-weight: 600; text-align: center; flex: none; }
+.foot { margin-top: auto; display: grid; gap: 8px; }
+.rowx { display: flex; align-items: center; gap: 9px; background: var(--white); border-radius: 14px; padding: 7px 10px 7px 7px; box-shadow: 0 1px 2px rgba(30,22,12,.05); }
+.rowx .t { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; flex: none; background: var(--stone); }
+.rowx .t svg.i { width: 18px; height: 18px; stroke-width: 1.6; }
+.rowx b { font-weight: 600; font-size: 11.5px; display: block; line-height: 1.25; }
+.rowx small { display: block; font-size: 10px; color: var(--mute); line-height: 1.3; }
+.rowx .end { margin-left: auto; color: var(--mute); }
+.rowx .end svg.i { width: 14px; height: 14px; }
+.rowx.sel { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.list { display: grid; gap: 6px; }
+.opt { display: flex; align-items: center; gap: 9px; padding: 10px 11px; border-radius: 13px; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); font-size: 11.5px; font-weight: 500; }
+.opt .r { margin-left: auto; width: 15px; height: 15px; border-radius: 50%; box-shadow: inset 0 0 0 1.4px var(--line); flex: none; }
+.opt.sel { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.opt.sel .r { background: var(--ink); box-shadow: inset 0 0 0 3.5px var(--white), 0 0 0 1.4px var(--ink); }
+.opt .t { width: 24px; height: 24px; border-radius: 7px; display: grid; place-items: center; flex: none; }
+.opt .t svg.i { width: 15px; height: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chips span { font-size: 10.5px; font-weight: 500; padding: 5px 10px; border-radius: 99px; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); display: inline-flex; align-items: center; gap: 5px; }
+.chips span.sel { background: var(--ink); color: #fff; box-shadow: none; }
+.chips span i { width: 12px; height: 12px; border-radius: 4px; background-size: cover; display: inline-block; }
+.field { background: var(--white); border-radius: 13px; padding: 9px 11px; box-shadow: inset 0 0 0 1px var(--line); font-size: 11.5px; }
+.field small { display: block; font-size: 9.5px; color: var(--mute); font-weight: 600; }
+.field.focus { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.caret { display: inline-block; width: 1.2px; height: 12px; background: var(--ink); vertical-align: -2px; margin-left: 1px; }
+.skyc { border-radius: 16px; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 6px; }
+.skyc .cap { font-size: 10px; padding: 2px 8px; }
+.skyc.sel { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--ink); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.glass { background: rgba(255,255,255,.62); border: 1px solid rgba(255,255,255,.85); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 14px 30px -20px rgba(30,22,12,.35); }
+.gcard { border-radius: 18px; padding: 12px; display: grid; gap: 6px; }
+.chipxs { display: inline-flex; align-items: center; gap: 4px; height: 19px; padding: 0 8px; border-radius: 99px; font-size: 9.5px; font-weight: 600; background: var(--white); width: fit-content; }
+.dock { display: flex; justify-content: space-around; align-items: center; border-radius: 22px; padding: 6px; flex: none; margin-top: auto; }
+.dock span { display: grid; justify-items: center; gap: 1px; font-size: 8.5px; font-weight: 600; color: var(--mute); padding: 4px 12px; border-radius: 14px; }
+.dock span svg.i { width: 19px; height: 19px; }
+.dock span.on { background: var(--ink); color: #fff; }
+.ii { display: inline-grid; place-items: center; width: 1.3em; height: 1.3em; border-radius: .32em; vertical-align: -.3em; margin-left: .12em; }
+.ii svg.i { width: .95em; height: .95em; stroke-width: 2; }
+.big { font-size: 50px; font-weight: 600; letter-spacing: -.05em; line-height: .95; font-variant-numeric: tabular-nums; }
+.center { flex: 1; display: grid; place-items: center; align-content: center; gap: 6px; text-align: center; }
+.tagobj { position: relative; display: inline-block; width: 64px; aspect-ratio: 1; border-radius: 50%; flex: none; background: radial-gradient(circle at 36% 30%, #FFFFFF 0 16%, #F5F2ED 52%, #E4DED5 100%); box-shadow: inset 0 -4px 8px rgba(30,22,12,.07), inset 0 2px 2px rgba(255,255,255,.9), 0 2px 3px rgba(30,22,12,.08), 0 18px 26px -16px rgba(30,22,12,.45); }
+.tagobj::before { content: ""; position: absolute; inset: 31%; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FFFFFF, #EFEBE5); box-shadow: inset 0 0 0 1.2px rgba(20,19,18,.1); }
+.tagobj::after { content: ""; position: absolute; left: 44.5%; top: 7%; width: 11%; aspect-ratio: 1; border-radius: 50%; background: var(--stone); box-shadow: inset 0 1px 2px rgba(30,22,12,.25); }
+.rings { position: absolute; inset: 0; pointer-events: none; }
+.rings i { position: absolute; inset: 0; border-radius: 50%; border: 1.4px solid var(--ink); opacity: 0; animation: ring 2.4s cubic-bezier(.2,.6,.3,1) infinite; }
+.rings i:nth-child(2) { animation-delay: .8s; } .rings i:nth-child(3) { animation-delay: 1.6s; }
+@keyframes ring { 0% { transform: scale(1); opacity: .5; } 100% { transform: scale(2.4); opacity: 0; } }
+.bars { display: flex; align-items: flex-end; gap: 5px; height: 54px; }
+.bars i { flex: 1; border-radius: 6px 6px 3px 3px; background: var(--stone); }
+.bars i.on { background: linear-gradient(180deg, #F7C9A4, #F2A3C6); }
+.days { display: flex; justify-content: space-between; font-size: 9px; color: var(--mute); padding: 0 2px; }
+.toggle { width: 32px; height: 19px; border-radius: 99px; background: var(--ink); position: relative; flex: none; margin-left: auto; }
+.toggle::after { content: ""; position: absolute; top: 2.5px; right: 2.5px; width: 14px; height: 14px; border-radius: 50%; background: #fff; }
+.toggle.off { background: var(--line); } .toggle.off::after { right: auto; left: 2.5px; }
+.track { height: 4px; border-radius: 99px; background: var(--line); position: relative; margin: 8px 4px 4px; }
+.track i { position: absolute; left: 0; top: 0; bottom: 0; width: 64%; border-radius: 99px; background: var(--ink); }
+.track i::after { content: ""; position: absolute; right: -7px; top: -5px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.seg3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 3px; border-radius: 99px; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); }
+.seg3 span { text-align: center; font-size: 10px; font-weight: 600; padding: 5px 0; border-radius: 99px; color: var(--mute); }
+.seg3 span.on { background: var(--ink); color: #fff; }
+.dots { display: flex; gap: 6px; }
+.dots span { width: 26px; height: 26px; border-radius: 8px; background-size: cover; }
+.dots span.on { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--ink); }
+.faces { display: flex; gap: 8px; justify-content: center; }
+.faces span { width: 44px; height: 44px; border-radius: 50%; background: var(--white); display: grid; place-items: center; font-size: 22px; box-shadow: inset 0 0 0 1px var(--line); }
+.faces span.sel { box-shadow: inset 0 0 0 1.6px var(--ink); }
+.avatar { width: 54px; height: 54px; border-radius: 50%; background: var(--white); display: grid; place-items: center; font-size: 28px; box-shadow: var(--shadow); }
+.scrim { position: absolute; inset: 0; background: rgba(20,19,18,.22); z-index: 3; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; background: var(--paper); border-radius: 26px 26px 0 0; padding: 10px 16px 12px; display: grid; gap: 10px; }
+.sheet .grab { width: 36px; height: 4px; border-radius: 99px; background: var(--line); margin: 0 auto; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+@keyframes pulse { 50% { filter: saturate(1.15) brightness(1.04); transform: scale(1.03); } }
+@media (prefers-reduced-motion: reduce) { .rings i, .pulse { animation: none; } .rings i { opacity: .18; transform: scale(1.5); } }
+
+/* Plan */
+.never { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px; }
+.never .card { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; }
+.never .card .t { width: 30px; height: 30px; border-radius: 9px; background: var(--t-lime); display: grid; place-items: center; }
+.never h3 { font-size: 15px; font-weight: 600; } .never p { font-size: 13.5px; color: var(--mute); margin-top: 2px; }
+.phases { display: grid; gap: 8px; margin-top: 14px; counter-reset: f; }
+.phases div { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; background: var(--white); border-radius: 18px; padding: 14px; }
+.phases div::before { counter-increment: f; content: counter(f); width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; display: grid; place-items: center; }
+.phases b { font-weight: 600; } .phases p { font-size: 14px; color: var(--mute); }
+footer { margin-top: 36px; font-size: 13px; color: var(--mute); max-width: 84ch; }
+footer code { overflow-wrap: anywhere; }
+</style>
+
+<div class="wrap">
+  <header class="hero" aria-labelledby="h1">
+    <canvas data-aura="hero" aria-hidden="true"></canvas>
+    <div>
+      <div class="logo" id="herologo"></div>
+      <h1 id="h1">La app, rediseñada <span style="color:rgba(20,19,18,.5)">con la línea nueva.</span></h1>
+      <p class="lead">Veinticinco pantallas que cubren el recorrido completo de la versión 2.30, con el diseño que gustaba en «Relevo con aura» y lo que se hizo después: el logo, la paleta 2, los íconos propios y los cielos de las actividades. Se mantienen las mismas pantallas, los mismos pasos y los mismos datos; cambia cómo se ven.</p>
+      <nav class="toc" aria-label="Secciones"><a href="#logo">Logo con degradado</a><a href="#linea">La línea</a><a href="#primera">Primera vez</a><a href="#pestanas">Pestañas</a><a href="#preparar">Preparar</a><a href="#relevo">El relevo</a><a href="#tuyo">Lo tuyo</a><a href="#actualizar">Actualizar sin perder nada</a></nav>
+    </div>
+  </header>
+
+  <section class="board white" id="logo" aria-labelledby="h-logo">
+    <div class="head"><span class="eyebrow">Logo</span><h2 id="h-logo">Un degradado sutil, <span class="soft">y la tercera luz es el lugar.</span></h2>
+      <p class="lead">Se probaron tres degradados calculados en OKLCH, para que el cambio de luz sea parejo a la vista. Se recomienda «Luz»: cada círculo es más claro en su borde exterior y más intenso hacia el centro. Se ve encendido, sin cambiar de color.</p></div>
+    <div class="vars" id="vars"></div>
+    <div class="twocol">
+      <div class="card"><h3>Cuándo va cada versión</h3><p>Con degradado, desde 48 px: la pantalla de inicio, el ícono de la app, la portada y las piezas grandes. Plana, en 32 px o menos, en una tinta, en la notificación de Android y en lo que se imprime. La forma no cambia, así que las dos se reconocen como la misma marca.</p></div>
+      <div class="card"><h3>El lugar, no el Tag</h3><p>La tercera luz pasa a ser el lugar donde empiezas. El Tag es el objeto que hoy sustituye al testigo y podría cambiar, mientras que el lugar es lo que estudia la hipótesis. La marca nombra el fundamento y no el objeto que se usa para probarlo.</p>
+        <div class="lights" id="lights"></div></div>
+    </div>
+  </section>
+
+  <section class="board" id="linea" aria-labelledby="h-linea">
+    <div class="head"><span class="eyebrow">La línea</span><h2 id="h-linea">Lo que se aplica a la app, <span class="soft">en cuatro piezas.</span></h2></div>
+    <div class="sys">
+      <div class="card"><h3>Un color, un papel</h3><div class="roles" id="roles"></div></div>
+      <div class="card"><h3>Cielos de las actividades</h3><div class="skyrow" id="skyrow"></div><p class="sub" style="margin-top:10px;font-size:13px">El nombre siempre va en una cápsula blanca con letra de tinta. Cada persona puede cambiar el color.</p></div>
+      <div class="card typo"><h3>Letra</h3><b>Instrument Sans</b><p>Es la letra de la interfaz, y la app la lleva dentro. Chillax Semibold queda solo para el logotipo, que va convertido a trazos y no se usa como letra.</p></div>
+      <div class="card"><h3>Piezas</h3><div class="comps" id="comps"></div><p class="sub" style="margin-top:10px;font-size:13px">Botones en píldora de tinta, la selección marcada en tinta, vidrio para la barra y las hojas, y fichas de color con el ícono en tinta.</p></div>
+    </div>
+  </section>
+
+  <section class="board white" id="primera" aria-labelledby="h-primera"><div class="head"><span class="eyebrow">Primera vez</span><h2 id="h-primera">De abrir la app <span class="soft">a preparar el primer relevo.</span></h2></div><div class="screens" data-group="primera"></div></section>
+  <section class="board" id="pestanas" aria-labelledby="h-pest"><div class="head"><span class="eyebrow">Pestañas</span><h2 id="h-pest">Inicio, Ruta y Perfil, <span class="soft">con el aura donde algo está pasando.</span></h2></div><div class="screens" data-group="pestanas"></div></section>
+  <section class="board white" id="preparar" aria-labelledby="h-prep"><div class="head"><span class="eyebrow">Preparar</span><h2 id="h-prep">Seis preguntas, <span class="soft">cada respuesta con el color de su papel.</span></h2></div><div class="screens" data-group="preparar"></div></section>
+  <section class="board" id="relevo" aria-labelledby="h-rel"><div class="head"><span class="eyebrow">El relevo</span><h2 id="h-rel">Cuenta, suena y decides; <span class="soft">el color sube con el momento.</span></h2></div><div class="screens" data-group="relevo"></div></section>
+  <section class="board white" id="tuyo" aria-labelledby="h-tuyo"><div class="head"><span class="eyebrow">Lo tuyo</span><h2 id="h-tuyo">Tus actividades, tu aura <span class="soft">y tu semana.</span></h2></div><div class="screens" data-group="tuyo"></div></section>
+
+  <section class="board" id="actualizar" aria-labelledby="h-act">
+    <div class="head"><span class="eyebrow">Actualizar sin perder nada</span><h2 id="h-act">Cambia cómo se ve, <span class="soft">no lo que la app sabe de ti.</span></h2>
+      <p class="lead">El rediseño toca solo la capa visual. La versión 3.0 se instala encima de la 2.30, como las anteriores, y conserva relevos, actividades, ruta, el Tag vinculado, los permisos y lo que ya se envió a la investigación. El plan completo está en el repositorio.</p></div>
+    <div class="never" id="never"></div>
+    <div class="phases" id="phases"></div>
+  </section>
+
+  <footer>Relevo, la app, versión 1 (11 de octubre de 2026). Rediseño propuesto de la app 2.30 (D-128) y logo con degradado, con el lugar como tercera luz (D-127). Pendiente de la revisión del autor. Las cifras de las pantallas son ejemplos de interfaz, no resultados. El plan está en <code>06_desarrollo_y_factibilidad/app-android/plan-rediseno-3.0-2026-10-11.md</code>. El Tag no emite luz: solo suena.</footer>
+</div>
+
+<script>
+(() => {
+  const D = {"ICONS":{"tiempo":"<circle cx=\"12\" cy=\"13.5\" r=\"7.5\"/><path d=\"M10 3.5h4M12 3.5V6\"/><path d=\"M12 9.6v3.9l2.6 1.7\"/><path d=\"M18.3 7.2l1.2-1.2\"/>","contando":"<path d=\"M6.5 3.5h11M6.5 20.5h11\"/><path d=\"M8 3.5c0 4.6 4 5.2 4 8.5s-4 3.9-4 8.5M16 3.5c0 4.6-4 5.2-4 8.5s4 3.9 4 8.5\"/><path d=\"M10.2 18.2c.6-.9 1.2-1.4 1.8-1.4s1.2.5 1.8 1.4z\"/>","apps":"<rect x=\"4\" y=\"4\" width=\"7\" height=\"7\" rx=\"2.2\"/><rect x=\"13\" y=\"4\" width=\"7\" height=\"7\" rx=\"2.2\"/><rect x=\"4\" y=\"13\" width=\"7\" height=\"7\" rx=\"2.2\"/><rect x=\"13\" y=\"13\" width=\"7\" height=\"7\" rx=\"2.2\"/>","primer-paso":"<path d=\"M3.5 20H8v-4.5h4.5V11H17V6.5h3.5\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"5.6\" cy=\"17.1\" r=\"1.35\"/>","tag":"<circle cx=\"12\" cy=\"12.5\" r=\"8.5\"/><circle cx=\"12\" cy=\"13.4\" r=\"3\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"12\" cy=\"6.9\" r=\"1.1\"/>","suena":"<circle cx=\"9\" cy=\"12.5\" r=\"6\"/><circle cx=\"9\" cy=\"13.2\" r=\"2.1\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"9\" cy=\"8.4\" r=\"0.9\"/><path d=\"M16.4 9.3a4.6 4.6 0 0 1 0 6.4\"/><path d=\"M19 6.5a9 9 0 0 1 0 12\"/>","silenciar":"<circle cx=\"9\" cy=\"12.5\" r=\"6\"/><circle cx=\"9\" cy=\"13.2\" r=\"2.1\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"9\" cy=\"8.4\" r=\"0.9\"/><path d=\"M16.5 10l4.5 4.5M21 10l-4.5 4.5\"/>","lugar":"<path d=\"M12 21s-6.5-5.8-6.5-10.8a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z\"/><circle cx=\"12\" cy=\"10.2\" r=\"2.3\"/>","aura":"<path d=\"M10.5 4c.6 4 2.1 5.5 6 6.1-3.9.6-5.4 2.1-6 6.1-.6-4-2.1-5.5-6-6.1 3.9-.6 5.4-2.1 6-6.1z\"/><path d=\"M18 14.6c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.5-2.6 1.6-.2 2.2-.8 2.5-2.5z\"/>","decidir":"<path d=\"M6 20.5V3.8\"/><path d=\"M6 4.5h11.2l-2.4 3.9 2.4 3.9H6\"/>","empece":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M10.3 8.7c0-.6.7-1 1.2-.7l4.6 3.3c.5.3.5 1 0 1.4l-4.6 3.3c-.5.3-1.2 0-1.2-.7z\"/>","despues":"<path d=\"M20.5 12a8.5 8.5 0 1 1-2.5-6\"/><path d=\"M18.4 3.2l-.2 3.1-3.1-.3\"/><path d=\"M12 7.8v4.4l2.8 1.7\"/>","cambie":"<path d=\"M4 8.2h13.5M14 4.7l3.5 3.5-3.5 3.5\"/><path d=\"M20 15.8H6.5M10 12.3l-3.5 3.5 3.5 3.5\"/>","leer":"<path d=\"M3.5 6.3c2.8-1 5.6-.8 8.5 1v12.2c-2.9-1.8-5.7-2-8.5-1z\"/><path d=\"M20.5 6.3c-2.8-1-5.6-.8-8.5 1v12.2c2.9-1.8 5.7-2 8.5-1z\"/>","dormir":"<path d=\"M19.5 14.8A8 8 0 0 1 9.2 4.5a8 8 0 1 0 10.3 10.3z\"/><path d=\"M16.6 3.2c.3 1.6.8 2.1 2.4 2.4-1.6.3-2.1.8-2.4 2.4-.3-1.6-.8-2.1-2.4-2.4 1.6-.3 2.1-.8 2.4-2.4z\"/>","ejercicio":"<path d=\"M8 12h8\"/><rect x=\"4.5\" y=\"7.2\" width=\"3.5\" height=\"9.6\" rx=\"1.3\"/><rect x=\"16\" y=\"7.2\" width=\"3.5\" height=\"9.6\" rx=\"1.3\"/><path d=\"M2.6 10v4M21.4 10v4\"/>","pasear-perro":"<path d=\"M8.3 16.4c.6-2.6 2-3.9 3.7-3.9s3.1 1.3 3.7 3.9c.4 1.9-.8 3.6-2.6 3.6h-2.2c-1.8 0-3-1.7-2.6-3.6z\"/><circle cx=\"5.9\" cy=\"10.9\" r=\"1.7\"/><circle cx=\"9.5\" cy=\"6.9\" r=\"1.8\"/><circle cx=\"14.5\" cy=\"6.9\" r=\"1.8\"/><circle cx=\"18.1\" cy=\"10.9\" r=\"1.7\"/>","caminar":"<path d=\"M4.9 11.4c0-2.8 1.1-4.6 2.4-4.6s2.4 1.8 2.4 4.6c0 1.7-.6 2.9-1.1 4.1h-2.6c-.5-1.2-1.1-2.4-1.1-4.1z\"/><path d=\"M5.8 16.8h3c.3 0 .5.2.5.5v.7c0 1-.9 1.8-2 1.8s-2-.8-2-1.8v-.7c0-.3.2-.5.5-.5z\"/><path d=\"M14.3 7.4c0-2.8 1.1-4.6 2.4-4.6s2.4 1.8 2.4 4.6c0 1.7-.6 2.9-1.1 4.1h-2.6c-.5-1.2-1.1-2.4-1.1-4.1z\"/><path d=\"M15.2 12.8h3c.3 0 .5.2.5.5v.7c0 1-.9 1.8-2 1.8s-2-.8-2-1.8v-.7c0-.3.2-.5.5-.5z\"/>","bicicleta":"<circle cx=\"6\" cy=\"15.5\" r=\"3.8\"/><circle cx=\"18\" cy=\"15.5\" r=\"3.8\"/><path d=\"M6 15.5h5.5l3.6-6.3M11.5 15.5L9.6 9.2h5.5M15.1 9.2L18 15.5\"/><path d=\"M8.2 9.2h2.9M14.2 7h2.4\"/>","dibujar":"<path d=\"M15.2 4.8a2 2 0 0 1 2.8 0l1.2 1.2a2 2 0 0 1 0 2.8L9.1 18.9l-4.6 1.1 1.1-4.6z\"/><path d=\"M13.4 6.6l4 4\"/>","pintar":"<path d=\"M20 4c-.9-.9-2.3-.9-3.2 0L10 10.8l3.2 3.2L20 7.2c.9-.9.9-2.3 0-3.2z\"/><path d=\"M10 10.8c-2.3-.4-4.1 1.2-4.3 3.5-.1 1.6-.8 2.8-2.2 3.5 3.3 1.3 7.3.8 8.8-2.3.6-1.4.4-1.9.9-1.5\"/>","cocinar":"<path d=\"M4.5 10.5h15v6.5a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3z\"/><path d=\"M4.5 12.8H2.8M19.5 12.8h1.7\"/><path d=\"M5.5 8c4.3-1.5 8.7-1.5 13 0\"/><path d=\"M12 5.2v1.6\"/>","estudiar":"<rect x=\"6\" y=\"3.5\" width=\"13\" height=\"17\" rx=\"2.5\"/><path d=\"M6 7.5H4M6 12H4M6 16.5H4\"/><path d=\"M10 8.5h5M10 12h5\"/>","ordenar":"<rect x=\"3\" y=\"4.5\" width=\"18\" height=\"4.5\" rx=\"1.5\"/><path d=\"M4.5 9v9.5a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V9\"/><path d=\"M10 12.8h4\"/>","manualidades":"<circle cx=\"6.6\" cy=\"17.4\" r=\"2.8\"/><circle cx=\"17.4\" cy=\"17.4\" r=\"2.8\"/><path d=\"M8.6 15.4L18.4 4.4M15.4 15.4L5.6 4.4\"/>","maqueta":"<path d=\"M12 3.5l7.5 4.3v8.4L12 20.5l-7.5-4.3V7.8z\"/><path d=\"M4.5 7.8L12 12l7.5-4.2M12 12v8.5\"/>","meditar":"<path d=\"M12 4.8c2.1 2.3 3 4.9 2.7 7.8-.2 2.1-1.1 3.8-2.7 5.2-1.6-1.4-2.5-3.1-2.7-5.2-.3-2.9.6-5.5 2.7-7.8z\"/><path d=\"M12 17.8c-4.3.5-7.6-1.6-8.9-5.6 2.6-.9 4.9-.7 6.6.5\"/><path d=\"M12 17.8c4.3.5 7.6-1.6 8.9-5.6-2.6-.9-4.9-.7-6.6.5\"/><path d=\"M8.5 20.5h7\"/>","videojuegos":"<path d=\"M7.6 7.5h8.8a4.5 4.5 0 0 1 4.4 3.6l.9 4.6a2.6 2.6 0 0 1-4.4 2.3L15.6 16H8.4l-1.7 2a2.6 2.6 0 0 1-4.4-2.3l.9-4.6a4.5 4.5 0 0 1 4.4-3.6z\"/><path d=\"M8 10.5v3M6.5 12h3\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"15.6\" cy=\"11\" r=\"0.95\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"17.4\" cy=\"12.9\" r=\"0.95\"/>","musica":"<path d=\"M4.5 14.5V12a7.5 7.5 0 0 1 15 0v2.5\"/><path d=\"M4.5 14.5h1.6c.8 0 1.4.6 1.4 1.4v3.2c0 .8-.6 1.4-1.4 1.4h-.2c-.8 0-1.4-.6-1.4-1.4z\"/><path d=\"M19.5 14.5h-1.6c-.8 0-1.4.6-1.4 1.4v3.2c0 .8.6 1.4 1.4 1.4h.2c.8 0 1.4-.6 1.4-1.4z\"/>","pelicula":"<rect x=\"3\" y=\"4.5\" width=\"18\" height=\"12.5\" rx=\"2.6\"/><path d=\"M10.6 8.6c0-.5.6-.8 1-.5l3 2c.4.3.4.8 0 1.1l-3 2c-.4.3-1 0-1-.5z\"/><path d=\"M8.5 20.5h7\"/>","llamar":"<path d=\"M8.3 3.8H6.1c-1.2 0-2.1 1-2 2.2.9 7.7 6.1 12.9 13.8 13.8 1.2.1 2.2-.8 2.2-2v-2.2c0-.5-.3-.9-.8-1.1l-3-.9c-.4-.1-.8 0-1.1.3l-1.3 1.4c-2.5-1.1-4.5-3.1-5.6-5.6l1.4-1.3c.3-.3.4-.7.3-1.1l-.9-3c-.2-.5-.6-.8-1.1-.8z\"/>","juego-de-mesa":"<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.6\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"8.6\" cy=\"8.6\" r=\"1.25\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"12\" cy=\"12\" r=\"1.25\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"15.4\" cy=\"15.4\" r=\"1.25\"/>","plantas":"<path d=\"M6.8 14h10.4l-1.3 5.3a1.5 1.5 0 0 1-1.5 1.2H9.6a1.5 1.5 0 0 1-1.5-1.2z\"/><path d=\"M12 14V9.3\"/><path d=\"M12 10.2C12 7.4 10.1 5.7 7 5.7c0 2.8 1.9 4.5 5 4.5z\"/><path d=\"M12 9.3c0-2.5 1.7-4 4.6-4 0 2.5-1.7 4-4.6 4z\"/>","escribir":"<path d=\"M12 3.5l4.8 6.3L15 18.5H9L7.2 9.8z\"/><path d=\"M12 3.5v7.2\"/><circle cx=\"12\" cy=\"12.2\" r=\"1.4\"/><path d=\"M8 21h8\"/>","guitarra":"<path d=\"M9.02 11.04A3.2 3.2 0 1 1 12.96 14.98A4.6 4.6 0 1 1 9.02 11.04Z\"/><path d=\"M13.9 10.1l5.4-5.4\"/><path d=\"M18.2 3.6l2.2 2.2\"/><circle cx=\"9.6\" cy=\"14.4\" r=\"1.3\"/><path d=\"M6.2 18.6l1.7-1.7\"/>","fotografia":"<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"3\"/><path d=\"M8.6 7l1.2-2.1c.2-.4.6-.6 1.1-.6h2.2c.5 0 .9.2 1.1.6L15.4 7\"/><circle cx=\"12\" cy=\"13.5\" r=\"3.4\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"17.4\" cy=\"10.2\" r=\"0.85\"/>","inicio":"<path d=\"M4 10.3L12 4l8 6.3V19a1.5 1.5 0 0 1-1.5 1.5H15v-5.2a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5.2H5.5A1.5 1.5 0 0 1 4 19z\"/>","ruta":"<path d=\"M3.5 20H8v-4.5h4.5V11H17V6.5h3.5\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"5.6\" cy=\"17.1\" r=\"1.35\"/>","perfil":"<circle cx=\"12\" cy=\"8.4\" r=\"3.9\"/><path d=\"M4.5 20.5c.8-3.8 3.8-6 7.5-6s6.7 2.2 7.5 6\"/>","ajustes":"<path d=\"M4 7.5h9M17 7.5h3M4 16.5h3M11 16.5h9\"/><circle cx=\"15\" cy=\"7.5\" r=\"2\"/><circle cx=\"9\" cy=\"16.5\" r=\"2\"/>","avance":"<path d=\"M5 20v-6M10 20V9M15 20v-4M20 20V5\"/>","calendario":"<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15.5\" rx=\"3\"/><path d=\"M3.5 10h17M8 3v4M16 3v4\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"8.4\" cy=\"14.4\" r=\"1.1\"/>","ayuda":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.6 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.5 2.1-2.5 3.8\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"12\" cy=\"16.9\" r=\"1\"/>","avisos":"<path d=\"M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 2H5z\"/><path d=\"M10 20.5a2.2 2.2 0 0 0 4 0\"/>","volver":"<path d=\"M19.5 12h-15M10 6.5L4.5 12l5.5 5.5\"/>","siguiente":"<path d=\"M4.5 12h15M14 6.5l5.5 5.5-5.5 5.5\"/>","abrir":"<path d=\"M9.5 5.5l6.5 6.5-6.5 6.5\"/>","expandir":"<path d=\"M5.5 9.5l6.5 6.5 6.5-6.5\"/>","contraer":"<path d=\"M5.5 14.5L12 8l6.5 6.5\"/>","mas":"<circle fill=\"currentColor\" stroke=\"none\" cx=\"6\" cy=\"12\" r=\"1.4\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"12\" cy=\"12\" r=\"1.4\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"18\" cy=\"12\" r=\"1.4\"/>","agregar":"<path d=\"M12 5v14M5 12h14\"/>","editar":"<path d=\"M14.6 5.4a2.1 2.1 0 0 1 3 0l1 1a2.1 2.1 0 0 1 0 3L9 19H5v-4z\"/><path d=\"M12.8 7.2l4 4\"/><path d=\"M13.5 20h6\"/>","borrar":"<path d=\"M4.5 6.5h15\"/><path d=\"M9.5 6.5V4.8c0-.7.6-1.3 1.3-1.3h2.4c.7 0 1.3.6 1.3 1.3v1.7\"/><path d=\"M6.5 6.5l.9 12c.1 1.1 1 1.9 2 1.9h5.2c1 0 1.9-.8 2-1.9l.9-12\"/><path d=\"M10.3 10.5v6M13.7 10.5v6\"/>","cerrar":"<path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/>","listo":"<path d=\"M5 12.5l4.4 4.4L19 7.5\"/>","buscar":"<circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"M15.4 15.4l5.1 5.1\"/>","conexion":"<path d=\"M6.5 7.5l10 9-4.5 4V3.5l4.5 4-10 9\"/>","bateria":"<rect x=\"2.8\" y=\"7.5\" width=\"16\" height=\"9\" rx=\"2.6\"/><path d=\"M21.3 10.8v2.4\"/><path d=\"M6.5 10.5v3M9.7 10.5v3\"/>","privacidad":"<rect x=\"5\" y=\"10.5\" width=\"14\" height=\"10\" rx=\"2.6\"/><path d=\"M8 10.5V8a4 4 0 0 1 8 0v2.5\"/><path d=\"M12 14.4v2.2\"/>","permiso":"<path d=\"M12 3.5l7 2.7v5.1c0 4.4-2.9 8-7 9.2-4.1-1.2-7-4.8-7-9.2V6.2z\"/><path d=\"M9 12l2.2 2.2 3.8-4\"/>","info":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v5.6\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"12\" cy=\"7.9\" r=\"1\"/>","advertencia":"<path d=\"M10.3 4.6a2 2 0 0 1 3.4 0l7.5 12.9a2 2 0 0 1-1.7 3H4.5a2 2 0 0 1-1.7-3z\"/><path d=\"M12 9.6v4\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"12\" cy=\"16.7\" r=\"1\"/>","error":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6\"/>","reintentar":"<path d=\"M19.5 12a7.5 7.5 0 1 1-2.2-5.3\"/><path d=\"M19.6 4.2v3.6H16\"/>","pausar":"<path d=\"M9 6.2v11.6M15 6.2v11.6\"/>","reproducir":"<path d=\"M8 6.3c0-.9 1-1.4 1.7-.9l8.4 5.7c.6.4.6 1.4 0 1.8l-8.4 5.7c-.7.5-1.7 0-1.7-.9z\"/>","enviar":"<path d=\"M20.5 3.5L3.6 10.4c-.6.2-.6 1.1 0 1.3l6.9 2.8 2.8 6.9c.2.6 1.1.6 1.3 0z\"/><path d=\"M10.5 13.5l4.2-4.2\"/>","descargar":"<path d=\"M12 4v11M7.5 10.5L12 15l4.5-4.5\"/><path d=\"M5 19.5h14\"/>","telefono":"<rect x=\"6.5\" y=\"3\" width=\"11\" height=\"18\" rx=\"2.8\"/><path d=\"M10.5 18h3\"/>","parlante":"<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"3\"/><circle cx=\"12\" cy=\"14.4\" r=\"3.1\"/><circle fill=\"currentColor\" stroke=\"none\" cx=\"12\" cy=\"7.5\" r=\"1\"/>","comentario":"<path d=\"M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-7l-4.6 3.4V17.5H5A1.5 1.5 0 0 1 3.5 16V7A1.5 1.5 0 0 1 5 5.5z\"/>","estrella":"<path d=\"M12 3.9l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4-3.9-3.8 5.4-.8z\"/>"},"MARKS":{"plano":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g transform=\"translate(0 0) scale(1)\"><path fill=\"#FFD54A\" d=\"M76.89 18.14A29 29 0 1 0 39.14 55.89A32.4 32.4 0 0 1 76.89 18.14Z\"/><path fill=\"#9DD6F4\" d=\"M81.86 76.89A29 29 0 1 0 44.11 39.14A32.4 32.4 0 0 1 81.86 76.89Z\"/><path fill=\"#B3E788\" d=\"M23.11 81.86A29 29 0 1 0 60.86 44.11A32.4 32.4 0 0 1 23.11 81.86Z\"/><path fill=\"#F6A3CB\" d=\"M18.14 23.11A29 29 0 1 0 55.89 60.86A32.4 32.4 0 0 1 18.14 23.11Z\"/></g></svg>","luz":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><radialGradient id=\"IDX_T\" gradientUnits=\"userSpaceOnUse\" cx=\"50\" cy=\"13.05\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#FFE57E\"/><stop offset=\".55\" stop-color=\"#FFD54A\"/><stop offset=\"1\" stop-color=\"#F8CE41\"/></radialGradient><radialGradient id=\"IDX_R\" gradientUnits=\"userSpaceOnUse\" cx=\"86.95\" cy=\"50\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#B5E3FC\"/><stop offset=\".55\" stop-color=\"#9DD6F4\"/><stop offset=\"1\" stop-color=\"#96CFED\"/></radialGradient><radialGradient id=\"IDX_B\" gradientUnits=\"userSpaceOnUse\" cx=\"50\" cy=\"86.95\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#C8F3A6\"/><stop offset=\".55\" stop-color=\"#B3E788\"/><stop offset=\"1\" stop-color=\"#ACE081\"/></radialGradient><radialGradient id=\"IDX_L\" gradientUnits=\"userSpaceOnUse\" cx=\"13.05\" cy=\"50\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#FDB7D8\"/><stop offset=\".55\" stop-color=\"#F6A3CB\"/><stop offset=\"1\" stop-color=\"#EE9CC4\"/></radialGradient></defs><g transform=\"translate(0 0) scale(1)\"><path fill=\"url(#IDX_T)\" d=\"M76.89 18.14A29 29 0 1 0 39.14 55.89A32.4 32.4 0 0 1 76.89 18.14Z\"/><path fill=\"url(#IDX_R)\" d=\"M81.86 76.89A29 29 0 1 0 44.11 39.14A32.4 32.4 0 0 1 81.86 76.89Z\"/><path fill=\"url(#IDX_B)\" d=\"M23.11 81.86A29 29 0 1 0 60.86 44.11A32.4 32.4 0 0 1 23.11 81.86Z\"/><path fill=\"url(#IDX_L)\" d=\"M18.14 23.11A29 29 0 1 0 55.89 60.86A32.4 32.4 0 0 1 18.14 23.11Z\"/></g></svg>","turno":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><linearGradient id=\"IDX_T\" gradientUnits=\"userSpaceOnUse\" x1=\"21\" y1=\"29\" x2=\"79\" y2=\"29\"><stop offset=\"0\" stop-color=\"#FFE16C\"/><stop offset=\".5\" stop-color=\"#FFD54A\"/><stop offset=\"1\" stop-color=\"#DDDE55\"/></linearGradient><linearGradient id=\"IDX_R\" gradientUnits=\"userSpaceOnUse\" x1=\"71\" y1=\"21\" x2=\"71\" y2=\"79\"><stop offset=\"0\" stop-color=\"#AEE1FC\"/><stop offset=\".5\" stop-color=\"#9DD6F4\"/><stop offset=\"1\" stop-color=\"#92D6E6\"/></linearGradient><linearGradient id=\"IDX_B\" gradientUnits=\"userSpaceOnUse\" x1=\"79\" y1=\"71\" x2=\"21\" y2=\"71\"><stop offset=\"0\" stop-color=\"#C2F19C\"/><stop offset=\".5\" stop-color=\"#B3E788\"/><stop offset=\"1\" stop-color=\"#D0DB6D\"/></linearGradient><linearGradient id=\"IDX_L\" gradientUnits=\"userSpaceOnUse\" x1=\"29\" y1=\"79\" x2=\"29\" y2=\"21\"><stop offset=\"0\" stop-color=\"#FDB1D5\"/><stop offset=\".5\" stop-color=\"#F6A3CB\"/><stop offset=\"1\" stop-color=\"#FA9FB0\"/></linearGradient></defs><g transform=\"translate(0 0) scale(1)\"><path fill=\"url(#IDX_T)\" d=\"M76.89 18.14A29 29 0 1 0 39.14 55.89A32.4 32.4 0 0 1 76.89 18.14Z\"/><path fill=\"url(#IDX_R)\" d=\"M81.86 76.89A29 29 0 1 0 44.11 39.14A32.4 32.4 0 0 1 81.86 76.89Z\"/><path fill=\"url(#IDX_B)\" d=\"M23.11 81.86A29 29 0 1 0 60.86 44.11A32.4 32.4 0 0 1 23.11 81.86Z\"/><path fill=\"url(#IDX_L)\" d=\"M18.14 23.11A29 29 0 1 0 55.89 60.86A32.4 32.4 0 0 1 18.14 23.11Z\"/></g></svg>","profundidad":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><linearGradient id=\"IDX_T\" gradientUnits=\"userSpaceOnUse\" x1=\"29.494\" y1=\"8.494\" x2=\"70.506\" y2=\"49.506\"><stop offset=\"0\" stop-color=\"#FFE06A\"/><stop offset=\".55\" stop-color=\"#FFD54A\"/><stop offset=\"1\" stop-color=\"#F0C200\"/></linearGradient><linearGradient id=\"IDX_R\" gradientUnits=\"userSpaceOnUse\" x1=\"91.506\" y1=\"29.494\" x2=\"50.494\" y2=\"70.506\"><stop offset=\"0\" stop-color=\"#ACDFFA\"/><stop offset=\".55\" stop-color=\"#9DD6F4\"/><stop offset=\"1\" stop-color=\"#86C5E5\"/></linearGradient><linearGradient id=\"IDX_B\" gradientUnits=\"userSpaceOnUse\" x1=\"70.506\" y1=\"91.506\" x2=\"29.494\" y2=\"50.494\"><stop offset=\"0\" stop-color=\"#C0EF9A\"/><stop offset=\".55\" stop-color=\"#B3E788\"/><stop offset=\"1\" stop-color=\"#9ED66D\"/></linearGradient><linearGradient id=\"IDX_L\" gradientUnits=\"userSpaceOnUse\" x1=\"8.494\" y1=\"70.506\" x2=\"49.506\" y2=\"29.494\"><stop offset=\"0\" stop-color=\"#FBB0D4\"/><stop offset=\".55\" stop-color=\"#F6A3CB\"/><stop offset=\"1\" stop-color=\"#E88EBA\"/></linearGradient></defs><g transform=\"translate(0 0) scale(1)\"><path fill=\"url(#IDX_T)\" d=\"M76.89 18.14A29 29 0 1 0 39.14 55.89A32.4 32.4 0 0 1 76.89 18.14Z\"/><path fill=\"url(#IDX_R)\" d=\"M81.86 76.89A29 29 0 1 0 44.11 39.14A32.4 32.4 0 0 1 81.86 76.89Z\"/><path fill=\"url(#IDX_B)\" d=\"M23.11 81.86A29 29 0 1 0 60.86 44.11A32.4 32.4 0 0 1 23.11 81.86Z\"/><path fill=\"url(#IDX_L)\" d=\"M18.14 23.11A29 29 0 1 0 55.89 60.86A32.4 32.4 0 0 1 18.14 23.11Z\"/></g></svg>"},"MARK_SMALL":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g transform=\"translate(0 0) scale(1)\"><path fill=\"#FFD54A\" d=\"M75.261 14.757A29 29 0 1 0 35.757 54.261A35.5 35.5 0 0 1 75.261 14.757Z\"/><path fill=\"#9DD6F4\" d=\"M85.243 75.261A29 29 0 1 0 45.739 35.757A35.5 35.5 0 0 1 85.243 75.261Z\"/><path fill=\"#B3E788\" d=\"M24.739 85.243A29 29 0 1 0 64.243 45.739A35.5 35.5 0 0 1 24.739 85.243Z\"/><path fill=\"#F6A3CB\" d=\"M14.757 24.739A29 29 0 1 0 54.261 64.243A35.5 35.5 0 0 1 14.757 24.739Z\"/></g></svg>","LOCKUP":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 406.214 85.314\"><defs><radialGradient id=\"IDX_T\" gradientUnits=\"userSpaceOnUse\" cx=\"50\" cy=\"13.05\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#FFE57E\"/><stop offset=\".55\" stop-color=\"#FFD54A\"/><stop offset=\"1\" stop-color=\"#F8CE41\"/></radialGradient><radialGradient id=\"IDX_R\" gradientUnits=\"userSpaceOnUse\" cx=\"86.95\" cy=\"50\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#B5E3FC\"/><stop offset=\".55\" stop-color=\"#9DD6F4\"/><stop offset=\"1\" stop-color=\"#96CFED\"/></radialGradient><radialGradient id=\"IDX_B\" gradientUnits=\"userSpaceOnUse\" cx=\"50\" cy=\"86.95\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#C8F3A6\"/><stop offset=\".55\" stop-color=\"#B3E788\"/><stop offset=\"1\" stop-color=\"#ACE081\"/></radialGradient><radialGradient id=\"IDX_L\" gradientUnits=\"userSpaceOnUse\" cx=\"13.05\" cy=\"50\" r=\"42.05\"><stop offset=\"0\" stop-color=\"#FDB7D8\"/><stop offset=\".55\" stop-color=\"#F6A3CB\"/><stop offset=\"1\" stop-color=\"#EE9CC4\"/></radialGradient></defs><g transform=\"translate(0 0) scale(0.853)\"><path fill=\"url(#IDX_T)\" d=\"M76.89 18.14A29 29 0 1 0 39.14 55.89A32.4 32.4 0 0 1 76.89 18.14Z\"/><path fill=\"url(#IDX_R)\" d=\"M81.86 76.89A29 29 0 1 0 44.11 39.14A32.4 32.4 0 0 1 81.86 76.89Z\"/><path fill=\"url(#IDX_B)\" d=\"M23.11 81.86A29 29 0 1 0 60.86 44.11A32.4 32.4 0 0 1 23.11 81.86Z\"/><path fill=\"url(#IDX_L)\" d=\"M18.14 23.11A29 29 0 1 0 55.89 60.86A32.4 32.4 0 0 1 18.14 23.11Z\"/></g><path fill=\"#141312\" transform=\"translate(109.314 72.3)\" d=\"M20.20 0L20.20-27.90C20.20-33.80 23.60-37.40 29.20-37.40C31.80-37.40 34.70-36.70 37.10-35.30L37.10-49.10C34.60-50.20 31.10-50.80 27.90-50.80C13.20-50.80 6-41.10 6-28.40L6 0ZM66.50 1.30C77 1.30 85.20-3.80 89.50-12.70L78.60-18.20C76.30-13.60 71.80-11 66.40-11C59.30-11 54.20-15.40 53.20-22L90-22L90-26.20C90-39.70 80.90-51.30 65.20-51.30C49.90-51.30 39.50-39.50 39.50-25.20C39.50-9.40 51.10 1.30 66.50 1.30ZM53.80-29.90C54.80-34.90 58.90-38.90 65.10-38.90C71.10-38.90 75.30-35 75.90-29.90ZM100.40-72.30L100.40 0L114.60 0L114.60-72.30ZM151 1.30C161.50 1.30 169.70-3.80 174-12.70L163.10-18.20C160.80-13.60 156.30-11 150.90-11C143.80-11 138.70-15.40 137.70-22L174.50-22L174.50-26.20C174.50-39.70 165.40-51.30 149.70-51.30C134.40-51.30 124.00-39.50 124.00-25.20C124.00-9.40 135.60 1.30 151 1.30ZM138.30-29.90C139.30-34.90 143.40-38.90 149.60-38.90C155.60-38.90 159.80-35 160.40-29.90ZM191.70-8.20C194-1.80 198.60 1.40 204.60 1.40C210.70 1.40 215-1.80 217.40-8.20L232.70-49.50L217.60-49.50L204.70-12.60L191.70-49.50L176.60-49.50ZM204.60-12.20L204.70-12.20C204.70-12.20 204.70-12.20 204.60-12.20ZM260.60 1.30C275.80 1.30 287.50-10.50 287.50-24.90C287.50-39.10 275.90-51 260.60-51C245.50-51 233.80-39.20 233.80-24.90C233.80-10.50 245.40 1.30 260.60 1.30ZM260.60-12C253.30-12 248.00-17.80 248.00-24.80C248.00-31.80 253.30-37.60 260.60-37.60C267.90-37.60 273.30-31.80 273.30-24.80C273.30-17.80 267.90-12 260.60-12Z\"/></svg>","WORD":"<svg class=\"lg\" aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"6 -72.3 291.5 73.7\"><path fill=\"#141312\" d=\"M20.20 0L20.20-27.90C20.20-33.80 23.60-37.40 29.20-37.40C31.80-37.40 34.70-36.70 37.10-35.30L37.10-49.10C34.60-50.20 31.10-50.80 27.90-50.80C13.20-50.80 6-41.10 6-28.40L6 0ZM66.50 1.30C77 1.30 85.20-3.80 89.50-12.70L78.60-18.20C76.30-13.60 71.80-11 66.40-11C59.30-11 54.20-15.40 53.20-22L90-22L90-26.20C90-39.70 80.90-51.30 65.20-51.30C49.90-51.30 39.50-39.50 39.50-25.20C39.50-9.40 51.10 1.30 66.50 1.30ZM53.80-29.90C54.80-34.90 58.90-38.90 65.10-38.90C71.10-38.90 75.30-35 75.90-29.90ZM100.40-72.30L100.40 0L114.60 0L114.60-72.30ZM151 1.30C161.50 1.30 169.70-3.80 174-12.70L163.10-18.20C160.80-13.60 156.30-11 150.90-11C143.80-11 138.70-15.40 137.70-22L174.50-22L174.50-26.20C174.50-39.70 165.40-51.30 149.70-51.30C134.40-51.30 124.00-39.50 124.00-25.20C124.00-9.40 135.60 1.30 151 1.30ZM138.30-29.90C139.30-34.90 143.40-38.90 149.60-38.90C155.60-38.90 159.80-35 160.40-29.90ZM191.70-8.20C194-1.80 198.60 1.40 204.60 1.40C210.70 1.40 215-1.80 217.40-8.20L232.70-49.50L217.60-49.50L204.70-12.60L191.70-49.50L176.60-49.50ZM204.60-12.20L204.70-12.20C204.70-12.20 204.70-12.20 204.60-12.20ZM260.60 1.30C275.80 1.30 287.50-10.50 287.50-24.90C287.50-39.10 275.90-51 260.60-51C245.50-51 233.80-39.20 233.80-24.90C233.80-10.50 245.40 1.30 260.60 1.30ZM260.60-12C253.30-12 248.00-17.80 248.00-24.80C248.00-31.80 253.30-37.60 260.60-37.60C267.90-37.60 273.30-31.80 273.30-24.80C273.30-17.80 267.90-12 260.60-12Z\"/></svg>"};
+  const $ = (s) => document.querySelector(s);
+  let uid = 0;
+  const mark = (v = 'luz', small = false) => (small ? D.MARK_SMALL : D.MARKS[v]).replaceAll('IDX_', 'm' + (uid++) + '_').replace('<svg ', '<svg class="lg" aria-hidden="true" ');
+  const ic = (id) => D.ICONS[id] ? `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${D.ICONS[id].replace(/<circle fill="currentColor" stroke="none"/g, '<circle class="f"')}</svg>` : '';
+  const TILE = { butter: 'var(--t-butter)', sky: 'var(--t-sky)', lime: 'var(--t-lime)', blush: 'var(--t-blush)', lilac: 'var(--t-lilac)', peach: 'var(--t-peach)', stone: 'var(--stone)', white: 'var(--white)' };
+
+  // ---------- Cielos con grano (los de «Relevo con aura») ----------
+  const SKIES = {
+    menta: { base: '#BFE7D3', blobs: [['#3FB487', .2, .8, .6], ['#E6F7FF', .7, .25, .55], ['#9ED6F4', .85, .75, .5], ['#5FC79A', .4, .45, .4]] },
+    cielo: { base: '#8DB9EA', blobs: [['#2559C9', .2, .85, .6], ['#E9F3FF', .6, .35, .45], ['#7EA9E8', .85, .7, .45], ['#F7FBFF', .35, .2, .35], ['#3B6BD2', .9, .1, .35]] },
+    atardecer: { base: '#F3B38E', blobs: [['#F06A3B', .25, .3, .5], ['#F7C6DD', .8, .3, .5], ['#B9A4F2', .75, .85, .5], ['#FFE6A6', .3, .8, .4]] },
+    ambar: { base: '#E9B85C', blobs: [['#F2A20C', .2, .3, .6], ['#B78BEF', .85, .2, .55], ['#F7D27A', .5, .7, .45], ['#9C7BE8', .9, .85, .4]] },
+    brasa: { base: '#F28A4A', blobs: [['#E8501E', .2, .75, .6], ['#F9B36B', .75, .3, .55], ['#FFE0B8', .55, .1, .4], ['#C9370F', .9, .9, .35]] },
+    noche: { base: '#2B3A66', blobs: [['#0F1A3D', .2, .3, .6], ['#5E7BD8', .8, .7, .55], ['#A9B8F5', .6, .2, .35], ['#1E2B5C', .9, .9, .4]] },
+    rosa: { base: '#F4C9D2', blobs: [['#C8325A', .25, .35, .55], ['#F7A9BE', .75, .25, .5], ['#FFFFFF', .55, .6, .35], ['#E0617F', .3, .85, .45]] },
+    aura: { base: '#FBF5EC', blobs: [['#FFD54A', .25, .75, .55], ['#F6A3CB', .7, .3, .5], ['#9DD6F4', .15, .2, .45], ['#C5B2F6', .9, .8, .45]], alpha: .75 },
+    lila: { base: '#C9B8F2', blobs: [['#8E6FE6', .25, .7, .55], ['#F3D3F0', .75, .25, .5], ['#A7CFF5', .8, .85, .45], ['#FFFFFF', .4, .3, .3]] },
+  };
+  const hexA = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+  const cache = {};
+  function skyURL(name, w = 480, h = 480) {
+    const key = name + w + 'x' + h; if (cache[key]) return cache[key];
+    const def = SKIES[name]; const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d');
+    g.fillStyle = def.base; g.fillRect(0, 0, w, h); const m = Math.max(w, h);
+    def.blobs.forEach(([col, x, y, r]) => { const gr = g.createRadialGradient(x * w, y * h, 0, x * w, y * h, r * m); const a = def.alpha ?? 1; gr.addColorStop(0, hexA(col, a)); gr.addColorStop(.55, hexA(col, a * .45)); gr.addColorStop(1, hexA(col, 0)); g.fillStyle = gr; g.fillRect(0, 0, w, h); });
+    const img = g.getImageData(0, 0, w, h), d = img.data; for (let i = 0; i < d.length; i += 4) { const n = (Math.random() - .5) * 18; d[i] += n; d[i + 1] += n; d[i + 2] += n; } g.putImageData(img, 0, 0);
+    return (cache[key] = c.toDataURL('image/jpeg', .88));
+  }
+  const sky = (k) => `data-sky="${k}"`;
+
+  // ---------- Piezas de pantalla ----------
+  const sb = (light) => `<div class="sb" style="${light ? 'color:#fff' : ''}"><span>9:41</span><span class="isl"></span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i></span></div>`;
+  const tile = (id, role = 'stone', s = 30) => `<span class="t" style="background:${TILE[role]};width:${s}px;height:${s}px">${ic(id)}</span>`;
+  const row = (id, role, t, s, o = {}) => `<div class="rowx${o.sel ? ' sel' : ''}">${tile(id, role)}<span style="min-width:0"><b>${t}</b>${s ? `<small>${s}</small>` : ''}</span>${o.end === false ? '' : `<span class="end">${o.end || ic('abrir')}</span>`}</div>`;
+  const ii = (id, role) => `<span class="ii" style="background:${TILE[role]}">${ic(id)}</span>`;
+  const segs = (n, of) => `<div class="segs" style="grid-template-columns:repeat(${of},1fr)">${Array.from({ length: of }, (_, i) => `<i class="${i < n ? 'on' : ''}"></i>`).join('')}</div>`;
+  const opt = (t, sel, lead = '') => `<div class="opt${sel ? ' sel' : ''}">${lead}${t}<span class="r"></span></div>`;
+  const dock = (on) => `<div class="dock glass">${[['inicio', 'Inicio'], ['ruta', 'Ruta'], ['perfil', 'Perfil']].map(([i, t]) => `<span class="${t === on ? 'on' : ''}">${ic(i)}${t}</span>`).join('')}</div>`;
+  const cap = (t) => `<span class="cap">${t}</span>`;
+  const top = (l, r = '') => `<div class="top"><span>${l}</span>${r}</div>`;
+  const close = `<span class="x">${ic('cerrar')}</span>`;
+  const back = `<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:14px;display:inline-block">${ic('volver')}</span>Volver</span>`;
+  const phone = (body, o = {}) => `<div class="phone"${o.bgstyle ? ` style="${o.bgstyle}"` : ''}>${o.aura ? `<canvas data-aura="${o.aura}" aria-hidden="true"></canvas>` : ''}${o.skybg ? `<div class="bgfill${o.pulse ? ' pulse' : ''}" ${sky(o.skybg)} style="background-size:cover"></div>` : ''}<div class="ui">${sb(o.light)}${body}<div class="hi" style="${o.light ? 'background:#fff' : ''}"></div></div>${o.over || ''}</div>`;
+  const wordmark = (w) => `<div style="width:${w}px">${D.WORD}</div>`;
+
+  // ---------- Pantallas ----------
+  const S = [];
+  const add = (group, title, small, why, html) => S.push({ group, title, small, why, html });
+
+  // Primera vez
+  add('primera', 'Abrir', 'pantalla de carga', 'La marca con degradado enfoca sobre el aura. Antes había un logotipo de texto sobre papel.',
+    phone(`<div class="center" style="gap:16px"><div style="width:92px">${mark('luz')}</div>${wordmark(132)}<p class="sub" style="max-width:20ch;color:rgba(20,19,18,.6)">Un recordatorio físico preparado desde el teléfono</p></div>`, { aura: 'splash' }));
+  add('primera', 'Bienvenida', 'WELCOME', 'El primer paso, el lugar y la actividad se ven antes de explicarlos. Se mantienen el texto y el botón.',
+    phone(`${segs(1, 3)}<div style="flex:1;position:relative">
+      <div class="skyc" ${sky('cielo')} style="position:absolute;left:22%;top:8%;width:56%;aspect-ratio:1;box-shadow:var(--shadow)">${cap('Leer 10 páginas')}</div>
+      <div class="rowx glass" style="position:absolute;left:4%;top:56%;width:68%">${tile('primer-paso', 'sky')}<span><b>Abrir el libro</b><small>Tu primer paso</small></span></div>
+      <div class="rowx glass" style="position:absolute;right:4%;top:76%;width:62%">${tile('lugar', 'lime')}<span><b>Junto al velador</b><small>Donde empiezas</small></span></div></div>
+      <p class="ttl">Anota algo que quieres hacer. <span class="soft">Relevo te lo recuerda mientras todavía puedes hacerlo.</span></p>
+      <div class="btn">Empezar</div>`));
+  add('primera', 'Cómo funciona', 'HOW_IT_WORKS', 'Los cuatro pasos son las cuatro luces de la marca, con su ficha de color. Se mantiene el video de 30 segundos.',
+    phone(`${segs(2, 3)}<div class="skyc" ${sky('aura')} style="aspect-ratio:16/10;justify-content:center;align-items:center"><span style="width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow)">${ic('reproducir')}</span></div>
+      <p class="ttl" style="font-size:17px">Cómo funciona</p>
+      <div class="list">${row('tiempo', 'butter', 'Cuenta tu tiempo', 'en las apps que eliges', { end: false })}${row('primer-paso', 'sky', 'Te recuerda tu primer paso', 'algo pequeño para empezar', { end: false })}${row('lugar', 'lime', 'Suena donde empiezas', 'en el Tag, junto a tu primer paso', { end: false })}${row('decidir', 'blush', 'Tú decides', 'empezar, después o cambiar de idea', { end: false })}</div>
+      <div class="foot"><div class="btn">Seguir</div></div>`));
+  add('primera', 'Antes de empezar', 'CONSENT', 'El texto del consentimiento no cambia, así que nadie debe aceptarlo de nuevo. Cambian el orden visual y los íconos.',
+    phone(`${segs(3, 3)}<p class="ttl">Antes de empezar</p><p class="sub">Lee lo que aceptas. Puedes salir cuando quieras.</p>
+      <div class="list">${row('info', 'white', 'Qué guardamos', 'Tus relevos, respuestas y minutos en las apps elegidas')}${row('privacidad', 'white', 'Qué no vemos', 'Lo que haces dentro de las apps')}${row('telefono', 'white', 'Dónde se guarda', 'En tu teléfono y en una base del proyecto')}${row('calendario', 'white', 'Hasta cuándo', '21 días')}</div>
+      <div class="opt sel" style="gap:8px"><span style="width:16px;height:16px;border-radius:5px;background:var(--ink);display:grid;place-items:center;color:#fff">${ic('listo')}</span>Acepto participar durante 21 días.</div>
+      <div class="foot"><div class="btn">Aceptar y empezar</div><div class="link">No quiero participar</div></div>`));
+  add('primera', 'Permisos', 'PERMISSION', 'Los permisos van en tinta sobre papel: pedirlos no es un estado de la persona.',
+    phone(`<p class="ttl">Para saber cuándo avisarte</p><p class="sub">Relevo solo cuenta minutos en las apps que elijas.</p>
+      <div class="list">${row('permiso', 'white', 'Tiempo de uso', 'Necesario.', { end: '<span class="btn sm">Dar el permiso</span>' })}${row('avisos', 'white', 'Notificaciones', 'Para avisarte aunque estés en otra app.', { end: '<span class="btn sm ghost">Activar</span>' })}${row('bateria', 'white', 'Batería', 'Para que Relevo siga funcionando aunque pasen días.', { end: ic('listo') })}</div>
+      <div class="foot"><div class="btn">Seguir</div></div>`));
+  add('primera', 'Tu perfil', 'PROFILE_SETUP', 'Los intereses muestran el color de su familia. El nombre se pide y se guarda aparte, como en la 2.13.',
+    phone(`<div style="display:flex;align-items:center;gap:12px"><span class="avatar">🌿</span><span><p class="ttl" style="font-size:17px">Tu perfil</p><span class="sub">Cambiar el emoji</span></span></div>
+      <div class="field focus"><small>Tu nombre o como te dicen</small><span class="caret"></span></div>
+      <p style="font-size:12px;font-weight:600">Intereses <span class="sub" style="font-weight:500">Elige una o varias.</span></p>
+      <div class="chips">${[['Leer', 'cielo', 1], ['Dormir', 'noche', 1], ['Dibujar', 'atardecer', 0], ['Ejercicio', 'menta', 0], ['Música', 'ambar', 1], ['Cocinar', 'brasa', 0], ['Llamar a alguien', 'rosa', 0]].map(([t, k, s]) => `<span class="${s ? 'sel' : ''}"><i ${sky(k)}></i>${t}</span>`).join('')}</div>
+      <div class="foot"><div class="btn">Seguir</div><div class="link">Saltar</div></div>`));
+  add('primera', 'Tu primer relevo', 'FIRST_RELEVO', 'La actividad propuesta aparece en su cielo y el paso, en su ficha. Te acompañamos paso a paso, como antes.',
+    phone(`<p class="ttl">Tu primer relevo</p><div class="skyc" ${sky('cielo')} style="aspect-ratio:1.25">${cap('Leer 10 páginas')}</div>
+      <div class="list">${row('primer-paso', 'sky', 'Para empezar', 'Abrir el libro', { end: false })}${row('lugar', 'lime', 'Dónde empiezas', 'Junto al velador', { end: false })}</div>
+      <p class="sub">Puedes cambiar todo antes de activarlo.</p><div class="foot"><div class="btn">Preparar un relevo</div></div>`));
+
+  // Pestañas
+  add('pestanas', 'Inicio', 'TABS · Inicio', 'El relevo activo respira en su aura y las actividades van en sus cielos. El lugar donde suena lleva la ficha lima.',
+    phone(`<div class="top"><span style="display:flex;align-items:center;gap:7px"><span style="width:20px">${mark('luz', true)}</span>Inicio</span><span style="width:18px">${ic('avisos')}</span></div>
+      <p class="ttl">Hola de nuevo. <span class="soft">Hoy volviste dos veces a lo que querías.</span></p>
+      <div class="gcard" ${sky('aura')} style="background-size:cover;box-shadow:var(--shadow)"><div style="display:flex;justify-content:space-between;align-items:center"><span class="chipxs">Contando</span><span style="font-size:10.5px;font-weight:600;font-variant-numeric:tabular-nums">12 de 30 min</span></div><b style="font-size:15px;letter-spacing:-.015em">Leer 10 páginas</b><div style="height:5px;border-radius:9px;background:rgba(255,255,255,.75);overflow:hidden"><i style="display:block;width:40%;height:100%;background:var(--ink);border-radius:9px"></i></div><span style="font-size:10.5px;font-weight:600">Ver, editar o desactivar</span></div>
+      ${row('lugar', 'lime', 'Suena en el velador', 'en tu Tag, en unos 18 minutos', { end: false })}
+      <p style="font-size:12px;font-weight:600">Tus actividades</p>
+      <div class="grid2"><div class="skyc" ${sky('noche')} style="aspect-ratio:1.15">${cap('Dormir a tiempo')}</div><div class="skyc" ${sky('ambar')} style="aspect-ratio:1.15">${cap('Videojuegos')}</div></div>
+      ${dock('Inicio')}`, { bgstyle: 'background:linear-gradient(180deg,var(--paper) 0 60%,var(--stone))' }));
+  add('pestanas', 'Tu ruta', 'TABS · Ruta', 'Los pasos suben en escalera, como en la exploración. El paso actual se marca en tinta.',
+    phone(`<p class="ttl">Tu ruta <span class="soft">Pasos pequeños hacia lo que te gustaría hacer más seguido.</span></p>
+      <div style="display:grid;gap:8px;margin-top:4px">${[['Leer 10 páginas', 'Hecho 3 veces', 0, 'listo'], ['Leer 20 minutos', 'Paso actual', 1, 'leer'], ['Terminar un capítulo', 'Siguiente', 0, 'estrella']].map(([t, s, on, i], k) => `<div class="rowx${on ? ' sel' : ''}" style="margin-left:${k * 14}%;width:${86 - k * 6}%">${tile(i, on ? 'sky' : 'stone')}<span><b>${t}</b><small>${s}</small></span></div>`).join('')}</div>
+      <div class="rowx" style="background:transparent;box-shadow:inset 0 0 0 1px var(--line)">${tile('agregar', 'white')}<span><b>Agregar un paso</b></span></div>
+      <div class="btn" style="margin-top:4px">Preparar un relevo con este paso</div>${dock('Ruta')}`));
+  add('pestanas', 'Perfil', 'TABS · Perfil', 'Las secciones de Perfil son las mismas. «Apariencia» pasa a llamarse «Apariencia y aura» y agrega «Tu aura».',
+    phone(`<div style="display:flex;align-items:center;gap:12px"><span class="avatar">🌿</span><span><p class="ttl" style="font-size:17px">Tu perfil</p><span class="sub">Preparaste 3 relevos esta semana.</span></span></div>
+      <div class="list">${row('avance', 'blush', 'Tu semana', 'Volviste 3 de 5 veces')}${row('estrella', 'stone', 'Tus actividades', '6 actividades')}${row('ruta', 'stone', 'Tu ruta', 'Leer 20 minutos')}${row('aura', 'lilac', 'Apariencia y aura', 'Tu aura, tema y letra')}${row('avisos', 'stone', 'Avisos y resúmenes', 'Aviso semanal apagado')}${row('privacidad', 'stone', 'Privacidad y datos', '')}${row('tag', 'stone', 'Cómo usar el Tag', '')}</div>${dock('Perfil')}`));
+
+  // Preparar
+  const prepHead = (n, act = true) => `${top(close, `<span class="sub">${n} de 6</span>`)}${segs(n, 6)}${act ? `<div class="skyc" ${sky('cielo')} style="aspect-ratio:3.2;border-radius:14px">${cap('Leer 10 páginas')}</div>` : ''}`;
+  add('preparar', '¿Qué quieres hacer?', 'PREPARE 1 · ACTIVITY', 'Cada idea va en el cielo de su familia. La elegida se marca con un anillo de tinta, no con otro color.',
+    phone(`${prepHead(1, false)}<p class="ttl">¿Qué quieres hacer?</p><div class="grid2">${[['menta', 'Caminar'], ['cielo', 'Leer', 1], ['atardecer', 'Dibujar'], ['ambar', 'Música'], ['brasa', 'Cocinar'], ['noche', 'Dormir']].map(([k, t, s]) => `<div class="skyc${s ? ' sel' : ''}" ${sky(k)} style="aspect-ratio:1.55">${cap(t)}</div>`).join('')}</div>
+      <div class="field">${'O escribe la tuya'}</div><div class="foot"><div class="btn">Seguir</div></div>`));
+  add('preparar', '¿Cómo empiezas?', 'PREPARE 2 · START', 'Las sugerencias son de un toque, como en la 2.23. El primer paso lleva su ficha celeste.',
+    phone(`${prepHead(2)}<p class="ttl">¿Cómo empiezas?</p><div class="chips"><span class="sel">Abrir el libro</span><span>Dejarlo a la vista</span><span>Elegir el capítulo</span></div>
+      ${row('primer-paso', 'sky', 'Abrir el libro', 'Para empezar', { end: ic('editar') })}
+      <div class="gcard glass" style="font-size:11px">Mientras más pequeño, menos cuesta empezar.</div><div class="foot"><div class="btn">Seguir</div></div>`));
+  add('preparar', '¿Dónde empiezas?', 'PREPARE 3 · PLACE', 'El lugar lleva la ficha lima, el color de la tercera luz. Se siguen sugiriendo lugares concretos y no habitaciones.',
+    phone(`${prepHead(3)}<p class="ttl">¿Dónde empiezas?</p><div class="chips"><span class="sel">Junto al velador</span><span>En el escritorio</span><span>En el sillón</span></div>
+      ${row('lugar', 'lime', 'Junto al velador', 'Ahí dejarás lo que suena', { end: ic('editar') })}<div class="foot"><div class="btn">Seguir</div></div>`));
+  add('preparar', '¿Cuándo suena?', 'PREPARE 4 · USAGE', 'Las apps y el tiempo llevan mantequilla, el color de tu tiempo. Se mantiene «Probar con 15 segundos».',
+    phone(`${prepHead(4)}<p class="ttl">¿Cuándo suena?</p>${row('apps', 'butter', 'Instagram y TikTok', 'Apps que cuentan', { end: ic('editar') })}${row('tiempo', 'butter', 'Después de 30 minutos', 'Sumando las dos', { end: false })}
+      <div class="chips"><span>15 min</span><span class="sel">30 min</span><span>45 min</span><span>1 hora</span></div><div class="link" style="text-align:left">Probar con 15 segundos</div><div class="foot"><div class="btn">Seguir</div></div>`));
+  add('preparar', '¿Dónde suena?', 'PREPARE 5 · SOUND', 'Arriba se recuerda el lugar, y abajo se elige el objeto que suena ahí. El Tag es el medio y el lugar es el fundamento.',
+    phone(`${prepHead(5, false)}<p class="ttl">¿Dónde suena?</p>${row('lugar', 'lime', 'Junto al velador', 'El lugar donde empiezas', { end: false })}
+      <div class="list">${opt('En tu Tag', 1, `<span class="t" style="background:var(--stone)">${ic('tag')}</span>`)}${opt('En el teléfono', 0, `<span class="t" style="background:var(--stone)">${ic('telefono')}</span>`)}</div>
+      <div class="center" style="flex:0;padding:10px 0"><span class="tagobj" style="width:52px"><span class="rings"><i></i><i></i><i></i></span></span></div>
+      <div class="foot"><div class="btn ghost">Probar el sonido</div><div class="btn">Seguir</div></div>`));
+  add('preparar', 'Todo listo', 'PREPARE 6 · REVIEW', 'Cada dato va en la ficha de su papel, así se revisa de un vistazo. Tocar una fila vuelve a ese paso (D-120).',
+    phone(`${prepHead(6, false)}<p class="ttl">Todo listo</p><div class="list">${row('leer', 'white', 'Leer 10 páginas', 'Qué quieres hacer', { end: ic('editar') })}${row('primer-paso', 'sky', 'Abrir el libro', 'Cómo empiezas', { end: ic('editar') })}${row('lugar', 'lime', 'Junto al velador', 'Dónde empiezas', { end: ic('editar') })}${row('tiempo', 'butter', '30 min en 2 apps', 'Cuándo suena', { end: ic('editar') })}${row('tag', 'stone', 'En tu Tag', 'Dónde suena', { end: ic('editar') })}</div><div class="foot"><div class="btn">Activar el relevo</div></div>`));
+
+  // El relevo
+  add('relevo', 'Contando', 'ACTIVE', 'El aura respira lento: está ahí, pero no llama. Si la persona la apagó, el fondo es papel. Los íconos van después de lo que nombran.',
+    phone(`${top(back, '<span class="chipxs">Contando</span>')}<div class="center"><span class="big">12<span style="font-size:18px;letter-spacing:-.02em"> min</span></span><span class="sub" style="color:var(--ink)">de 30 en Instagram y TikTok</span></div>
+      <p style="font-size:13px;line-height:1.55;font-weight:500">Tu primer <span class="nw">paso ${ii('primer-paso', 'sky')}</span>: abrir el libro. Suena junto al <span class="nw">velador ${ii('lugar', 'lime')}</span>, en tu Tag.</p>
+      <div class="foot"><div class="btn">Volver al inicio</div><div class="link">Editar este relevo</div></div>`, { aura: 'counting' }));
+  add('relevo', 'Suena', 'SIGNAL', 'La pantalla toma el cielo de tu actividad, el momento de más color (D-103). El mensaje va en vidrio blanco y el Tag suena en anillos, sin luz.',
+    phone(`<div class="center"><span class="tagobj"><span class="rings"><i></i><i></i><i></i></span></span></div>
+      <div class="gcard glass" style="text-align:center;gap:6px"><p class="ttl" style="font-size:18px">Es momento de volver a elegir</p><span class="sub" style="color:#5F5952">Leer 10 páginas. Empieza por abrir el libro, junto al velador.</span><div class="btn" style="margin-top:6px">Silenciar y continuar</div><span style="font-size:10px">Para callarlo en el Tag, toca su botón una vez.</span></div>`, { skybg: 'cielo', pulse: true, light: true }));
+  add('relevo', '¿Qué decidiste?', 'DECIDE', 'Lo que decides va en rosa, y ninguna respuesta va en gris ni en rojo, porque ninguna es mala. Las tres pesan lo mismo.',
+    phone(`${top('<span class="chipxs" style="background:var(--t-peach)">Después de la señal</span>')}<div style="display:grid;justify-items:center;gap:8px"><span class="skyc" ${sky('cielo')} style="width:52px;height:52px;border-radius:14px"></span><p class="ttl" style="text-align:center">Leer 10 páginas</p><p style="font-size:12.5px;font-weight:500">¿Qué decidiste?</p></div>
+      <div class="list">${opt('Comencé la actividad', 1, `<span class="t" style="background:var(--t-blush)">${ic('empece')}</span>`)}${opt('La dejé para después', 0, `<span class="t" style="background:var(--t-peach)">${ic('despues')}</span>`)}${opt('Cambié de idea', 0, `<span class="t" style="background:var(--t-blush)">${ic('cambie')}</span>`)}</div><div class="foot"><div class="btn">Continuar</div></div>`));
+  add('relevo', 'Tres preguntas', 'DECIDE · preguntas', 'Las preguntas tras la señal se mantienen sin cambios, porque son datos de la investigación. Cambian solo los controles.',
+    phone(`<p class="ttl">Tres preguntas de un toque</p><p style="font-size:12px;font-weight:500">¿Recordaste cómo empezar?</p><div class="seg3"><span class="on">Sí</span><span>A medias</span><span>No</span></div>
+      <p style="font-size:12px;font-weight:500">Cuando sonó, ¿supiste qué querías hacer antes de leerlo en la pantalla?</p><div class="seg3" style="grid-template-columns:1fr 1fr"><span class="on">Sí</span><span>No</span></div>
+      <p style="font-size:12px;font-weight:500">¿Cómo te cayó el sonido?</p><div class="faces"><span class="sel">🙂</span><span>😐</span><span>🙁</span></div><div class="foot"><div class="btn">Listo</div></div>`));
+
+  // Lo tuyo
+  add('tuyo', 'Tus actividades', 'ACTIVITIES', 'Cada actividad aparece en su cielo, con el nombre en una cápsula. Las fotos y los emoji anteriores pasan a cielos.',
+    phone(`<p class="ttl">Tus actividades</p><div class="grid2">${[['cielo', 'Leer', '3 relevos'], ['noche', 'Dormir a tiempo', '2 relevos'], ['ambar', 'Videojuegos', '1 relevo'], ['menta', 'Caminar', 'Sin relevos'], ['atardecer', 'Dibujar', '1 relevo'], ['rosa', 'Llamar a alguien', 'Sin relevos']].map(([k, t]) => `<div class="skyc" ${sky(k)} style="aspect-ratio:1.05">${cap(t)}</div>`).join('')}</div>
+      <div class="rowx" style="background:linear-gradient(90deg,#FBE68A 0%,#FCEFD8 45%,#F9D7E6 75%,#E3D6FA 100%)"><span><b>Crear una actividad</b></span><span class="end" style="width:28px;height:28px;border-radius:9px;background:#fff;display:grid;place-items:center;color:var(--ink)">${ic('agregar')}</span></div>`));
+  add('tuyo', 'Elige su color', 'ACTIVITY_EDIT', 'Cada persona puede cambiar el color de una actividad. Los demás datos de la actividad no cambian.',
+    phone(`${top(back, '<span>Guardar</span>')}<div class="skyc" ${sky('atardecer')} style="aspect-ratio:1.2" id="pv">${cap('Dibujar')}</div><p style="font-size:12px;font-weight:600">Elige su color</p>
+      <div class="dots">${['atardecer', 'cielo', 'menta', 'ambar', 'brasa', 'noche', 'rosa'].map((k, i) => `<span class="${i ? '' : 'on'}" ${sky(k)}></span>`).join('')}</div>
+      <div class="field"><small>Cómo empiezas</small>Sacar los lápices</div><div class="field"><small>Dónde empiezas</small>En el escritorio</div>`));
+  add('tuyo', 'Apariencia y aura', 'APPEARANCE', 'El aura es de la pantalla, y cada persona la ajusta o la apaga. Se mantienen el tema y la letra grande.',
+    phone(`${top(back)}<div class="skyc" style="aspect-ratio:1.6;overflow:hidden;position:relative;padding:0"><canvas data-aura="settings" style="position:absolute;inset:0;width:100%;height:100%"></canvas></div>
+      <div class="rowx">${tile('aura', 'lilac')}<span><b>Tu aura</b><small>Aparece mientras cuenta y cuando suena</small></span><span class="toggle"></span></div>
+      <div class="rowx" style="display:block"><b>Intensidad</b><div class="track"><i></i></div></div>
+      <div class="dots">${['aura', 'lila', 'cielo', 'menta', 'rosa'].map((k, i) => `<span class="${i ? '' : 'on'}" ${sky(k)}></span>`).join('')}</div>
+      <div class="seg3"><span class="on">Claro</span><span>Oscuro</span><span>Teléfono</span></div><div class="rowx"><span><b>Letra grande</b></span><span class="toggle off"></span></div>`));
+  add('tuyo', 'Tu semana', 'WEEK', 'Los días en que empezaste van en el degradado de lo que decides, y los demás en piedra. No hay rachas ni medallas (D-111).',
+    phone(`${top(close)}<p class="ttl">Esta semana <span class="soft">volviste 3 de 5 veces.</span></p><div class="card" style="padding:12px"><div class="bars"><i class="on" style="height:70%"></i><i style="height:40%"></i><i class="on" style="height:90%"></i><i style="height:30%"></i><i class="on" style="height:60%"></i><i style="height:18%"></i><i style="height:12%"></i></div><div class="days"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div></div>
+      ${row('empece', 'blush', '3 veces empezaste', 'cuando sonó', { end: false })}${row('despues', 'peach', '2 lo dejaste para después', '', { end: false })}<div class="foot"><div class="btn">¿Cómo te fue esta semana?</div></div>`));
+  add('tuyo', 'Cómo usar el Tag', 'TagGuide · hoja', 'La guía de ocho pasos se mantiene, y el paso que dice dónde dejarlo nombra el lugar. Va en una hoja sobre Inicio.',
+    phone(`<p class="ttl">Hola de nuevo.</p><div class="gcard" ${sky('aura')} style="background-size:cover;height:90px"></div>`, { over: `<div class="scrim"></div><div class="sheet"><span class="grab"></span><div style="display:grid;place-items:center;padding:14px 0 6px;background:linear-gradient(180deg,var(--paper) 0 62%,var(--stone) 62%);border-radius:18px"><span class="tagobj" style="width:58px;margin-top:8px"></span></div><p class="ttl" style="font-size:17px">Déjalo en su <span class="nw">lugar ${ii('lugar', 'lime')}</span></p><p class="sub" style="font-size:11.5px">Junto a lo que usas para empezar. Así, cuando suene, el sonido te dice dónde empezar.</p><div style="display:flex;gap:4px;justify-content:center">${Array.from({ length: 8 }, (_, i) => `<i style="width:${i === 3 ? 14 : 5}px;height:5px;border-radius:9px;background:${i === 3 ? 'var(--ink)' : 'var(--line)'}"></i>`).join('')}</div><div class="btn">Siguiente</div></div>` }));
+
+  // Pintar las pantallas
+  document.querySelectorAll('.screens').forEach((el) => {
+    el.innerHTML = S.filter((s) => s.group === el.dataset.group).map((s) => `<figure class="scr">${s.html}<h3>${s.title}<small>${s.small}</small></h3><p class="why">${s.why}</p></figure>`).join('');
+  });
+
+  // ---------- Logo ----------
+  $('#herologo').innerHTML = D.LOCKUP.replaceAll('IDX_', 'hero_').replace('<svg ', '<svg class="lg" role="img" aria-label="Relevo" ');
+  const VAR = [['luz', 'Luz', 'Más clara afuera y más intensa hacia el centro, donde las luces se cruzan. Se ve encendida y conserva sus cuatro colores.', 'Recomendada'], ['plano', 'Plano', 'La referencia: se usa en tamaños chicos, en una tinta y en la notificación.', 'Se mantiene'], ['profundidad', 'Profundidad', 'Cada luz se oscurece donde pasa bajo la siguiente. Es correcta, pero casi no se nota.', ''], ['turno', 'Turno', 'Cada luz gira su tono hacia la siguiente. En los bordes aparecen tonos oliva y salmón, como pasó con el amarillo junto al verde en la 2.23.', 'Descartada']];
+  $('#vars').innerHTML = VAR.map(([v, n, t, b]) => `<figure class="${v === 'luz' ? 'pick' : ''}">${b ? `<span class="badge${b === 'Descartada' ? ' no' : ''}">${b}</span>` : ''}<div class="sizes"><div style="width:130px">${mark(v)}</div><div style="width:48px">${mark(v)}</div><div style="width:24px">${v === 'plano' ? mark('plano', true) : mark(v)}</div></div><div style="display:flex;gap:10px"><span style="width:70px;height:70px;border-radius:18px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.12);display:grid;place-items:center"><span style="width:44px">${mark(v)}</span></span><span style="width:70px;height:70px;border-radius:18px;display:grid;place-items:center" ${sky('aura')}><span style="width:44px">${mark(v)}</span></span></div><figcaption><b>${n}.</b> <span>${t}</span></figcaption></figure>`).join('');
+  $('#lights').innerHTML = [['tiempo', 'butter', 'Tu tiempo'], ['primer-paso', 'sky', 'Tu primer paso'], ['lugar', 'lime', 'El lugar'], ['decidir', 'blush', 'Lo que decides']].map(([i, r, t]) => `<div><span class="t" style="background:${TILE[r]}">${ic(i)}</span>${t}</div>`).join('');
+
+  // ---------- La línea ----------
+  $('#roles').innerHTML = [['tiempo', 'butter', 'Tu tiempo', 'la condición: apps y minutos'], ['primer-paso', 'sky', 'Tu primer paso', 'cómo empiezas'], ['lugar', 'lime', 'El lugar', 'dónde empiezas y dónde suena'], ['decidir', 'blush', 'Lo que decides', 'tus respuestas'], ['aura', 'lilac', 'Tu aura', 'lo que personalizas'], ['despues', 'peach', 'Después', 'lo que pasó tras la señal']].map(([i, r, t, s]) => `<div><span class="t" style="background:${TILE[r]}">${ic(i)}</span><span>${t}<small>${s}</small></span></div>`).join('');
+  $('#skyrow').innerHTML = [['menta', 'Moverse'], ['cielo', 'Leer'], ['atardecer', 'Crear'], ['ambar', 'Jugar'], ['brasa', 'Casa'], ['noche', 'Descansar'], ['rosa', 'Personas'], ['aura', 'Propia']].map(([k, t]) => `<span ${sky(k)}>${cap(t)}</span>`).join('');
+  $('#comps').innerHTML = `<span class="btn" style="padding:0 16px">Seguir</span><span class="btn ghost" style="padding:0 16px">Probar el sonido</span><span class="chips"><span class="sel">30 min</span><span>45 min</span></span><span class="chipxs" style="box-shadow:inset 0 0 0 1px var(--line)">Contando</span><span class="rowx" style="width:190px">${tile('lugar', 'lime')}<span><b>Junto al velador</b><small>Dónde empiezas</small></span></span>`;
+
+  // ---------- Actualizar ----------
+  $('#never').innerHTML = [
+    ['El mismo paquete y la misma firma', 'cl.udp.relevo, firmado con la misma clave. Por eso se instala encima de la 2.30 sin desinstalar.'],
+    ['Los mismos datos en el teléfono', 'Los 14 archivos de preferencias y la base relevo_research.db siguen en la versión 9: no hay migraciones ni se borra nada.'],
+    ['Lo mismo en la base del proyecto', 'Supabase no cambia: mismas tablas, mismos eventos y mismos nombres. Solo cambia app_version.'],
+    ['Las mismas pantallas y decisiones', 'Las 26 rutas, los 6 pasos de preparar y las preguntas de la investigación se mantienen. El consentimiento no cambia de versión.'],
+    ['El relevo sigue contando', 'Si alguien actualiza con un relevo activo, Relevo vuelve a contar solo al terminar la instalación, como ya hace hoy.'],
+    ['Copia de seguridad', 'Antes de cada prueba se respaldan los datos del emulador, y la copia en Documentos/Relevo sigue funcionando.'],
+  ].map(([t, p]) => `<div class="card"><span class="t">${ic('listo')}</span><div><h3>${t}</h3><p>${p}</p></div></div>`).join('');
+  $('#phases').innerHTML = [
+    ['Preparar', 'Respaldar la clave de firma y los datos del emulador, capturar las 26 rutas de la 2.30 y fijar la regla: el rediseño no toca data, domain, monitor ni signal.'],
+    ['Tokens', 'Colores, letra y formas en el tema. Con eso, toda la app cambia de piel sin tocar ninguna pantalla.'],
+    ['Íconos y piezas', 'Se generan los 72 íconos a partir del JSON, con los mismos nombres que el kit. Se rehacen botones, fichas, cápsulas, vidrio y la barra.'],
+    ['Pantallas', 'Se rehacen por grupos: pestañas, preparar, el relevo, primera vez y lo tuyo, cada uno con capturas antes y después.'],
+    ['Aura, cielos y logo', 'El aura con un sombreador en Android 13 o superior, y un degradado fijo en Android 12. A eso se suman los cielos con grano, el ícono adaptable, la notificación y la pantalla de carga.'],
+    ['Verificar y publicar', 'Se instala la 3.0 sobre la 2.30 con datos y se comparan los datos antes y después; deben ser iguales. Luego van las pruebas unitarias, TalkBack, la letra grande y el contraste. Finalmente se publica el APK firmado.'],
+  ].map(([t, p]) => `<div><span><b>${t}.</b> <p style="display:inline">${p}</p></span></div>`).join('');
+
+  // Cielos con grano en todos los elementos marcados
+  document.querySelectorAll('[data-sky]').forEach((el) => { const big = el.classList.contains('bgfill') ? [540, 1170] : [360, 360]; el.style.backgroundImage = `url(${skyURL(el.dataset.sky, big[0], big[1])})`; el.style.backgroundSize = 'cover'; el.style.backgroundPosition = 'center'; });
+
+  // ---------- Aura en WebGL (la de «Relevo con aura») ----------
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const VS = 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
+  const FS = `precision highp float; uniform vec2 r; uniform float t; uniform float k; uniform float s; uniform vec3 bg; uniform vec3 c0; uniform vec3 c1; uniform vec3 c2; uniform vec3 c3; uniform vec3 c4;
+  float h(vec2 q){ vec3 p3 = fract(vec3(q.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+  vec3 blob(vec3 col, vec2 p, vec2 c, float rad, vec3 tint){ vec2 d = p - c; float w = exp(-dot(d, d) / (rad * rad)) * k; return mix(col, tint, clamp(w, 0.0, 1.0)); }
+  void main(){ vec2 uv = gl_FragCoord.xy / r; vec2 p = uv - 0.5; p.x *= r.x / r.y; p /= s; vec3 col = bg;
+    col = blob(col, p, vec2(-0.20 + 0.07 * sin(t * 0.31), 0.05 + 0.08 * cos(t * 0.27)), 0.26, c3);
+    col = blob(col, p, vec2(0.22 + 0.08 * cos(t * 0.23 + 1.3), -0.04 + 0.07 * sin(t * 0.35)), 0.25, c2);
+    col = blob(col, p, vec2(0.08 + 0.06 * sin(t * 0.29 + 2.1), 0.17 + 0.05 * cos(t * 0.33)), 0.24, c1);
+    col = blob(col, p, vec2(-0.06 + 0.07 * cos(t * 0.25 + 0.7), -0.15 + 0.06 * sin(t * 0.37)), 0.27, c0);
+    col = blob(col, p, vec2(0.02 + 0.05 * sin(t * 0.41 + 3.0), -0.02 + 0.04 * cos(t * 0.39)), 0.13, c4);
+    col += (h(gl_FragCoord.xy + fract(t * 7.0) * 61.0) - 0.5) * 0.045; gl_FragColor = vec4(col, 1.0); }`;
+  const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return [(n >> 16) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255]; };
+  const PAL = { bg: rgb('#F7F4F0'), c0: rgb('#FFD54A'), c1: rgb('#F6A3CB'), c2: rgb('#C5B2F6'), c3: rgb('#9DD6F4'), c4: rgb('#FFF3D6') };
+  const MODES = { hero: [1, 1.1, 1], splash: [1, .62, 1], counting: [.85, .66, .55], settings: [.95, .7, .8] };
+  const auras = [];
+  document.querySelectorAll('canvas[data-aura]').forEach((canvas) => {
+    const gl = canvas.getContext('webgl', { antialias: false });
+    const fallback = () => { canvas.style.background = 'radial-gradient(30% 34% at 40% 62%, #FFD54A, transparent 70%), radial-gradient(28% 30% at 58% 38%, #F6A3CB, transparent 72%), radial-gradient(30% 30% at 32% 40%, #9DD6F4, transparent 72%), radial-gradient(26% 28% at 66% 60%, #C5B2F6, transparent 72%), #F7F4F0'; };
+    if (!gl) return fallback();
+    const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; };
+    const pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return fallback();
+    gl.useProgram(pr); const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    const U = Object.fromEntries(['r', 't', 'k', 's', 'bg', 'c0', 'c1', 'c2', 'c3', 'c4'].map((n) => [n, gl.getUniformLocation(pr, n)]));
+    ['bg', 'c0', 'c1', 'c2', 'c3', 'c4'].forEach((n) => gl.uniform3fv(U[n], PAL[n]));
+    const [k, s, speed] = MODES[canvas.dataset.aura] || MODES.counting;
+    auras.push({ canvas, gl, U, k, s, speed, time: 3 + Math.random() * 20, visible: true });
+  });
+  const size = (a) => { const dpr = Math.min(devicePixelRatio || 1, 1.5); const w = Math.max(2, Math.round(a.canvas.clientWidth * dpr)), h = Math.max(2, Math.round(a.canvas.clientHeight * dpr)); if (a.canvas.width !== w || a.canvas.height !== h) { a.canvas.width = w; a.canvas.height = h; a.gl.viewport(0, 0, w, h); } };
+  const draw = (a, dt) => { size(a); a.time += dt * a.speed; const { gl, U } = a; gl.uniform2f(U.r, a.canvas.width, a.canvas.height); gl.uniform1f(U.t, a.time); gl.uniform1f(U.k, a.k); gl.uniform1f(U.s, a.s); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); };
+  const io = new IntersectionObserver((es) => es.forEach((e) => { const a = auras.find((x) => x.canvas === e.target); if (a) a.visible = e.isIntersecting; }), { rootMargin: '120px' });
+  auras.forEach((a) => io.observe(a.canvas));
+  let last = performance.now();
+  const loop = (now) => { const dt = Math.min(.05, (now - last) / 1000); last = now; auras.forEach((a) => { if (a.visible) draw(a, dt); }); requestAnimationFrame(loop); };
+  if (reduce) auras.forEach((a) => draw(a, 0)); else requestAnimationFrame(loop);
+})();
+</script>

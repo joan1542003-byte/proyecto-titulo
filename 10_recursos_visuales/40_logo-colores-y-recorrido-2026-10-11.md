@@ -28,7 +28,7 @@ Cuatro luces que se pasan el turno. Cada luz es un peldaño de Relevo, en el sen
 | --- | --- | --- |
 | Arriba | `#FFD54A` amarillo | Tu tiempo |
 | Derecha | `#9DD6F4` celeste | Tu primer paso |
-| Abajo | `#B3E788` lima | El Tag |
+| Abajo | `#B3E788` lima | El lugar donde empiezas (antes, el Tag: ver D-127) |
 | Izquierda | `#F6A3CB` rosa | Lo que decides |
 
 Cada luz queda bajo la siguiente, como el testigo que pasa de mano en una carrera de relevos. El centro queda abierto: es el momento del traspaso, de la pantalla a lo que la persona quería hacer.
@@ -73,6 +73,7 @@ Cada luz queda bajo la siguiente, como el testigo que pasa de mano en una carrer
 - **Composición horizontal:** la marca mide 1,18 veces la altura de la «l» y se centra en ella. La separación es 0,30 del cuerpo de la letra.
 - **Color del logotipo:** siempre en minúsculas, y en tinta o en blanco, nunca de colores.
 - **Logo blanco:** solo sobre fondos oscuros. Sobre el aura clara se pierde.
+- **Con degradado (D-127):** desde 48 px se puede usar la versión «Luz» (`*-degradado.svg`): cada luz es más clara afuera y más intensa hacia el centro.
 - **Prohibido:** girarlo, rellenar el centro, cambiar el orden de las luces o agregarle sombras o brillos.
 
 ### Fundamento
@@ -211,6 +212,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — El lugar y el degradado
+
+- **Qué cambió:** la tercera luz es el lugar y no el Tag, y se suman las versiones con degradado «Luz» (D-127).
+- **Cómo estaba antes:** la tercera luz era el Tag y solo había versiones planas.
+- **Por qué:** el autor pidió pensar en el fundamento y no en el resultado, y probar un degradado sutil.
 
 ### 2026-10-11 — Creación
 

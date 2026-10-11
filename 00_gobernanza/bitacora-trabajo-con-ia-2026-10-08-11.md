@@ -18,6 +18,7 @@
 | 11 oct. | Relevo con aura, versión 4 | Una gráfica propia: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños, el Tag que suena en anillos, y los tableros «El traspaso» y «Sistema» ([documento 38](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md)). | D-122 |
 | 11 oct. | Íconos y color con fundamento | 72 íconos propios y la paleta 2. Cada color tiene un papel, fundado en estudios de 31 países, en ISO 3864 y en medidas en OKLCH, contraste y daltonismo ([documento 39](../10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md); [lámina](https://claude.ai/artifact/NHpnEr63JXn6JqCfDotPC2)). | D-124 |
 | 11 oct. | Logo, colores y recorrido | Un logo de cuatro luces planas con Chillax Semibold; la evidencia de color de Chile y Latinoamérica; siete familias de cielos para las actividades; y el recorrido en 12 wireframes con notas ([documento 40](../10_recursos_visuales/40_logo-colores-y-recorrido-2026-10-11.md); [lámina](https://claude.ai/artifact/5FCdqi76iF52dfNoFyYoeX)). | D-125 y D-126 |
+| 11 oct. | Texto académico, rediseño y el lugar | El fundamento del color en el registro de la memoria. Además: 25 pantallas de la app con la línea nueva, el logo con degradado «Luz» y el lugar en vez del Tag como tercera luz. Se sumó el plan para actualizar a la 3.0 sin perder datos ([documento 41](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md); [lámina](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM); [plan](../06_desarrollo_y_factibilidad/app-android/plan-rediseno-3.0-2026-10-11.md)). | D-127 y D-128 |
 | 11 oct. | Documentación | El autor preguntó si todo estaba documentado. Faltaban esta bitácora, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual; se completaron. | D-121 |
 
 ## 2. Cómo se usó la IA
@@ -60,6 +61,7 @@
 
 ## 4. Pendientes
 
+- Que el autor apruebe el plan 3.0 (D-128) y decida el tema oscuro y el momento de instalarla. Hasta entonces no se toca el código.
 - Que el autor revise el logo (D-125) y los colores de las actividades (D-126), y buscar en INAPI si hay marcas parecidas.
 - Llevar el aura a la app solo si el autor lo pide. Se sugirió empezar por Perfil › Tu aura.
 - Probar la 2.30 en un teléfono real.
@@ -68,6 +70,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Texto académico, rediseño y el lugar
+
+- **Qué cambió:** se sumaron el texto académico, el rediseño de la app y el plan 3.0.
+- **Cómo estaba antes:** terminaba en el logo, los colores y el recorrido.
+- **Por qué:** pedido del autor (D-127 y D-128).
 
 ### 2026-10-11 — Logo, colores y recorrido
 
