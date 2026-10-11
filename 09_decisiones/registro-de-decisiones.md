@@ -1411,7 +1411,39 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:** es una exploración visual, no probada con personas.
 - **Documentación:** [Relevo con aura, versión 4](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md).
 
+## D-123 — Íconos propios y paleta 2 con fundamento
+
+- **Fecha:** 2026-10-11.
+- **Estado:** propuesta. Aplicada en «Relevo con aura» y en el Taller de auras; pendiente de la revisión del autor antes de llevarla a la app Android.
+- **Decisión:**
+  - **Íconos:** 72 propios en retícula de 24 y área viva de 20, con cuatro formas de base y trazo 1,6 redondeado (el asta de Instrument Sans Medium a 15 px). El trazo se ajusta al tamaño (de 2,0 a 16 px a 1,3 a 48 px), siempre con una palabra.
+  - **Paleta 2:**
+    - mantequilla `#F4E496`: tu tiempo;
+    - cielo `#B3E5FC`: primer paso;
+    - lima `#C6EEAE`: el Tag;
+    - rubor `#FAC8D9`: lo que decides;
+    - lila `#DFD1FC`: tu aura;
+    - durazno `#FBD1B3`: después.
+  - Las seis fichas tienen la misma luminosidad OKLCH (0,88–0,91) y una saturación de 0,06 a 0,10.
+  - El rojo queda solo para errores.
+- **Fundamento:**
+  - **Pedido del autor:** íconos hermosos y acordes a la app, y decisiones de color fundamentadas en familias y no en tonos «que evocan».
+  - **Íconos:** Material Design y Material Symbols (retícula, formas de base y tamaño óptico), SF Symbols (el peso del ícono iguala al del texto) y Nielsen Norman Group (íconos con texto).
+  - **Color:** Jonauskaite et al. (2020, 2024), con las asociaciones entre color y emoción en 31 países; Wilms y Oberfeld (2018), con la saturación y el brillo como activación; la norma ISO 3864; y WCAG 2.2.
+  - **Medidas:** en OKLCH, con simulación de daltonismo.
+- **Límites:**
+  - No se probó con personas si se reconocen los íconos.
+  - Las asociaciones de color son tendencias por familia, no efectos garantizados, y la muestra no incluye Chile.
+  - Con daltonismo, el celeste y el lila, o el rosa y el durazno, se parecen; por eso el color va siempre con ícono y palabra.
+- **Documentación:** [Íconos y color con fundamento](../10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — D-123
+
+- **Qué cambió:** se registró D-123.
+- **Cómo estaba antes:** la última decisión era D-122.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-11 — D-122
 

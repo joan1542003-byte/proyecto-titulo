@@ -124,6 +124,7 @@
 | 11 oct. | Corrección | En el taller no aparecen los elementos que sí tenían diseño en «Relevo con aura», como el dato «3 de 5». Quiere ese tipo de piezas y poder exportarlas aparte; debe ser perfecto: una herramienta de diseño para sacar fácil cosas para sus presentaciones o ponerlas en la memoria. | [Taller de auras](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html), versión 2: 39 piezas editables de la exploración en seis grupos (datos, fichas y frases, tarjetas, controles, marca y siete pantallas). Cada una sale sola en PNG transparente a 1×–4×, se copia para pegar, se pone en una lámina con título para diapositivas o la memoria, o se descarga en lote en ZIP. Los fondos siguen en su propio modo. | D-121 |
 | 11 oct. | Corrección y pregunta | Ni las tarjetas ni nada deben tener el efecto de girarse. Preguntó si se documentaron todos los cambios y lo hecho. | Sin giros en el [taller](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) ni en la [lámina](../10_recursos_visuales/relevo-con-aura-2026-10-10/relevo-con-aura.html). Al revisar la documentación faltaban la bitácora del 8 al 11 de octubre, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual: se completaron con la [bitácora del 8 al 11 de octubre](bitacora-trabajo-con-ia-2026-10-08-11.md) y D-121. | D-121 |
 | 11 oct. | Encargo y corrección | Seguir perfeccionando la gráfica general, no el editor, sin que sea una copia uno a uno de la referencia. En la frase con íconos, cada ícono debe ir después de lo que nombra (el de tiempo después de «tiempo», el del Tag junto a «Tag»). Buscar referencias parecidas: le encanta lo que hay, pero es mejorable y debe ser nuestro. | [Relevo con aura](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), versión 4: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños, el Tag como objeto que suena en anillos, y los tableros «El traspaso» y «Sistema». Referencias: Apple (2024), Google Gemini, Instagram (2022) y dos proyectos de Behance. El taller sigue las mismas reglas. | D-122 |
+| 11 oct. | Encargo | Íconos nuevos en SVG, perfectos y hermosos, acordes a la app y a quienes la usan. Mandó como referencias Biceps Grotesk, Dafi y DAYO, y Obsidian UI como recurso para animar más adelante. Le importa que cada decisión de diseño, incluidos los colores, esté fundamentada: no un rojo porque «evoca» algo, sino familias de color con razones. | [Íconos y color con fundamento](../10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md): 72 íconos propios (SVG, sprite y JSON) con su construcción y sus metáforas, y la paleta 2 con un papel por color. Se funda en estudios de 31 países, en ISO 3864, en WCAG 2.2 y en medidas en OKLCH. La [lámina](https://claude.ai/artifact/NHpnEr63JXn6JqCfDotPC2) muestra todo y deja copiar o descargar cada ícono. «Relevo con aura» y el taller ya usan ambos; la app Android, todavía no. | D-123 |
 
 ## Lo que muestra el registro
 
@@ -134,6 +135,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Íconos y color
+
+- **Qué cambió:** se registró el pedido de íconos y color con fundamento.
+- **Cómo estaba antes:** terminaba en la versión 4 de la gráfica.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-11 — Versión 4 de la gráfica
 

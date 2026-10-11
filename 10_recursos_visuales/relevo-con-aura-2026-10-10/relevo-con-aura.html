@@ -13,9 +13,9 @@
   --mute: #8B8580;      /* segundo tono de los titulares */
   --line: #E4DED6;
   /* Aura */
-  --butter: #FFD54A; --peach: #FFAE7A; --blush: #F6A3CB; --lilac: #C5B2F6; --sky: #9DD6F4; --lime: #C8E06A;
+  --butter: #FFD54A; --peach: #FFAE7A; --blush: #F6A3CB; --lilac: #C5B2F6; --sky: #9DD6F4; --lime: #B3E788;
   /* Fichas */
-  --t-butter: #F9E77C; --t-sky: #C2E4F3; --t-lime: #DCEA98; --t-blush: #F8C9D9; --t-lilac: #DED2F7; --t-peach: #FBD3B6;
+  --t-butter: #F4E496; --t-sky: #B3E5FC; --t-lime: #C6EEAE; --t-blush: #FAC8D9; --t-lilac: #DFD1FC; --t-peach: #FBD1B3;
   --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   --shadow: 0 1px 2px rgba(30,22,12,.05), 0 18px 44px -26px rgba(30,22,12,.28);
   --spring: cubic-bezier(.2,.8,.2,1.15);
@@ -59,7 +59,7 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .mark i { position: absolute; width: 58%; height: 58%; border-radius: 50%; mix-blend-mode: darken; opacity: .92; }
 .mark i:nth-child(1) { left: 21%; top: 0; background: radial-gradient(circle at 50% 30%, #FFE989, var(--butter)); }
 .mark i:nth-child(2) { right: 0; top: 21%; background: radial-gradient(circle at 65% 40%, #D6F0FF, var(--sky)); }
-.mark i:nth-child(3) { left: 21%; bottom: 0; background: radial-gradient(circle at 50% 70%, #E6F3A8, var(--lime)); }
+.mark i:nth-child(3) { left: 21%; bottom: 0; background: radial-gradient(circle at 50% 70%, #DDF5C8, var(--lime)); }
 .mark i:nth-child(4) { left: 0; top: 21%; background: radial-gradient(circle at 35% 40%, #FBD0E4, var(--blush)); }
 
 /* Tableros */
@@ -74,7 +74,8 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .chip { display: inline-flex; align-items: center; gap: 14px; background: var(--white); border-radius: 16px; padding: 9px 9px 9px 16px; font-size: 15px; font-weight: 500; line-height: 1.22; box-shadow: var(--shadow); transition: transform .5s var(--spring), box-shadow .5s; }
 .chip:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(30,22,12,.06), 0 26px 50px -26px rgba(30,22,12,.36); }
 .tile { width: 46px; height: 46px; border-radius: 11px; display: grid; place-items: center; flex: none; }
-.tile svg, .ii svg, .dock svg, .ico svg { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tile svg, .ii svg, .dock svg, .ico svg { fill: none; stroke: var(--ink); stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
+.tile svg { stroke-width: 1.35; }
 .tile svg { width: 28px; height: 28px; }
 .butter { background: var(--t-butter); } .sky { background: var(--t-sky); } .lime { background: var(--t-lime); } .blush { background: var(--t-blush); } .lilac { background: var(--t-lilac); } .peach { background: var(--t-peach); }
 .stairs { display: grid; gap: 14px; width: min(760px, 100%); margin-inline: auto; }
@@ -84,12 +85,12 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 
 /* Íconos dentro de la frase */
 .ii { display: inline-grid; place-items: center; width: 1.18em; height: 1.18em; border-radius: .28em; vertical-align: -.2em; margin-inline: .06em; }
-.ii svg { width: .86em; height: .86em; stroke-width: 1.9; }
+.ii svg { width: .86em; height: .86em; stroke-width: 1.6; }
 .manifest { font-size: clamp(26px, 3.6vw, 46px); line-height: 1.16; letter-spacing: -.025em; font-weight: 500; max-width: 24ch; }
 
 /* Sin cortes: la palabra y su ícono viajan juntos. */
 .nw { white-space: nowrap; }
-.ii.end { margin-right: 0; }
+.ii.end { margin-right: -.03em; }
 
 /* El Tag: un objeto redondo que suena. Su señal se dibuja con anillos de tinta, nunca con luz. */
 .tagobj { position: relative; display: inline-block; width: 96px; aspect-ratio: 1; border-radius: 50%; flex: none;
@@ -172,7 +173,7 @@ canvas.aura { position: absolute; inset: 0; width: 100%; height: 100%; display: 
 .pillbtn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.3px var(--ink); }
 .pillbtn:focus-visible, .seg button:focus-visible, .sw:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .roundgo { width: 42px; height: 42px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--ink); display: grid; place-items: center; }
-.roundgo svg { width: 16px; height: 16px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.roundgo svg { width: 18px; height: 18px; fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .segments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 0 6px; }
 .segments i { height: 3px; border-radius: 99px; background: var(--line); }
 .segments i.on { background: var(--ink); }
@@ -295,20 +296,20 @@ footer { margin-top: 40px; font-size: 13px; color: var(--mute); max-width: 72ch;
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-time" viewBox="0 0 28 28"><circle cx="14" cy="15" r="8.5"/><path d="M14 10.5V15l3 2M11.5 4.5h5"/><path d="M22.5 5.5l1.5-1.5M4 7.5 5.5 9" stroke-width="1.2"/></symbol>
-  <symbol id="i-step" viewBox="0 0 28 28"><path d="M4.5 22h6v-5.5h6.5V11h6.5"/><path d="M20 4.5l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z" stroke-width="1.1"/></symbol>
-  <symbol id="i-tag" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9"/><circle cx="14" cy="14" r="3.4"/><path d="M14 7.2v.01"/><path d="M23.5 5.5c1 1.2 1.6 2.6 1.8 4M25.5 3.5c1.4 1.6 2.3 3.6 2.5 5.6" stroke-width="1.1"/></symbol>
-  <symbol id="i-flag" viewBox="0 0 28 28"><path d="M7 24V5"/><path d="M7 5.5c3-2 6 2 9 0s4.5-1 5.5 0v9c-1-1-2.5-2-5.5 0s-6-2-9 0"/></symbol>
-  <symbol id="i-book" viewBox="0 0 28 28"><path d="M4.5 7c3-1.2 6.2-1.2 9.5 1v14c-3.3-2.2-6.5-2.2-9.5-1z"/><path d="M23.5 7c-3-1.2-6.2-1.2-9.5 1v14c3.3-2.2 6.5-2.2 9.5-1z"/><path d="M21 3.5l.6 1.3 1.3.6-1.3.6-.6 1.3-.6-1.3-1.3-.6 1.3-.6z" stroke-width="1.1"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 28 28"><path d="M14 24.5s-7.5-6.8-7.5-12.5a7.5 7.5 0 0 1 15 0c0 5.7-7.5 12.5-7.5 12.5z"/><circle cx="14" cy="12" r="2.6"/></symbol>
-  <symbol id="i-bell" viewBox="0 0 28 28"><path d="M7.5 19V13a6.5 6.5 0 0 1 13 0v6l1.8 1.8H5.7z"/><path d="M11.8 23.5a2.3 2.3 0 0 0 4.4 0"/></symbol>
-  <symbol id="i-home" viewBox="0 0 28 28"><rect x="5" y="5" width="7.5" height="7.5" rx="2"/><rect x="15.5" y="5" width="7.5" height="7.5" rx="2"/><rect x="5" y="15.5" width="7.5" height="7.5" rx="2"/><rect x="15.5" y="15.5" width="7.5" height="7.5" rx="2"/></symbol>
-  <symbol id="i-spark" viewBox="0 0 28 28"><path d="M14 4l1.8 5.2L21 11l-5.2 1.8L14 18l-1.8-5.2L7 11l5.2-1.8z"/><path d="M21.5 17.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
-  <symbol id="i-chart" viewBox="0 0 28 28"><circle cx="14" cy="14" r="9.5"/><path d="M14 4.5V14l7 6"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 28 28"><rect x="4.5" y="6" width="19" height="17.5" rx="3.5"/><path d="M4.5 11.5h19M9.5 3.5v4M18.5 3.5v4"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
-  <symbol id="i-speaker" viewBox="0 0 28 28"><rect x="7.5" y="3.5" width="13" height="21" rx="3.5"/><circle cx="14" cy="16" r="3.6"/><circle cx="14" cy="8.6" r="1.1"/></symbol>
-  <symbol id="i-pad" viewBox="0 0 28 28"><path d="M8.5 9h11a5 5 0 0 1 5 5v1.5a4 4 0 0 1-7.2 2.4L16.5 17h-5l-.8.9a4 4 0 0 1-7.2-2.4V14a5 5 0 0 1 5-5z"/><path d="M9 12v4M7 14h4M19 13.2v.01M21 15.2v.01"/></symbol>
+  <symbol id="i-time" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M10 3.5h4M12 3.5V6"/><path d="M12 9.6v3.9l2.6 1.7"/><path d="M18.3 7.2l1.2-1.2"/></symbol>
+  <symbol id="i-step" viewBox="0 0 24 24"><path d="M3.5 20H8v-4.5h4.5V11H17V6.5h3.5"/><circle fill="currentColor" stroke="none" cx="5.6" cy="17.1" r="1.35"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><circle cx="12" cy="12.5" r="8.5"/><circle cx="12" cy="13.4" r="3"/><circle fill="currentColor" stroke="none" cx="12" cy="6.9" r="1.1"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 20.5V3.8"/><path d="M6 4.5h11.2l-2.4 3.9 2.4 3.9H6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M3.5 6.3c2.8-1 5.6-.8 8.5 1v12.2c-2.9-1.8-5.7-2-8.5-1z"/><path d="M20.5 6.3c-2.8-1-5.6-.8-8.5 1v12.2c2.9-1.8 5.7-2 8.5-1z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-10.8a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.2" r="2.3"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 2H5z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.3L12 4l8 6.3V19a1.5 1.5 0 0 1-1.5 1.5H15v-5.2a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5.2H5.5A1.5 1.5 0 0 1 4 19z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M10.5 4c.6 4 2.1 5.5 6 6.1-3.9.6-5.4 2.1-6 6.1-.6-4-2.1-5.5-6-6.1 3.9-.6 5.4-2.1 6-6.1z"/><path d="M18 14.6c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.5-2.6 1.6-.2 2.2-.8 2.5-2.5z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20v-6M10 20V9M15 20v-4M20 20V5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle fill="currentColor" stroke="none" cx="8.4" cy="14.4" r="1.1"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M14 6.5l5.5 5.5-5.5 5.5"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="3"/><circle cx="12" cy="14.4" r="3.1"/><circle fill="currentColor" stroke="none" cx="12" cy="7.5" r="1"/></symbol>
+  <symbol id="i-pad" viewBox="0 0 24 24"><path d="M7.6 7.5h8.8a4.5 4.5 0 0 1 4.4 3.6l.9 4.6a2.6 2.6 0 0 1-4.4 2.3L15.6 16H8.4l-1.7 2a2.6 2.6 0 0 1-4.4-2.3l.9-4.6a4.5 4.5 0 0 1 4.4-3.6z"/><path d="M8 10.5v3M6.5 12h3"/><circle fill="currentColor" stroke="none" cx="15.6" cy="11" r="0.95"/><circle fill="currentColor" stroke="none" cx="17.4" cy="12.9" r="0.95"/></symbol>
 </svg>
 
 <header class="hero" id="top">

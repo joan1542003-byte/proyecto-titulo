@@ -16,6 +16,7 @@
 | 11 oct. | Taller de auras, versión 2 | El autor pidió las piezas con diseño de la exploración, como «3 de 5». Ahora son 39 piezas editables (datos, fichas, tarjetas, controles, marca y siete pantallas), que salen solas en PNG transparente, copiadas, en lámina o en ZIP ([taller](../10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html)). | D-121 |
 | 11 oct. | Sin giros | Las tarjetas y las piezas quedan derechas en el taller y en la lámina de la exploración. | D-121 |
 | 11 oct. | Relevo con aura, versión 4 | Una gráfica propia: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños, el Tag que suena en anillos, y los tableros «El traspaso» y «Sistema» ([documento 38](../10_recursos_visuales/38_relevo-con-aura-2026-10-10.md)). | D-122 |
+| 11 oct. | Íconos y color con fundamento | 72 íconos propios y la paleta 2. Cada color tiene un papel, fundado en estudios de 31 países, en ISO 3864 y en medidas en OKLCH, contraste y daltonismo ([documento 39](../10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md); [lámina](https://claude.ai/artifact/NHpnEr63JXn6JqCfDotPC2)). | D-123 |
 | 11 oct. | Documentación | El autor preguntó si todo estaba documentado. Faltaban esta bitácora, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual; se completaron. | D-121 |
 
 ## 2. Cómo se usó la IA
@@ -35,6 +36,10 @@
   - miniaturas de pantallas demasiado chicas;
   - y el collage de la lámina disperso tras quitar los giros, que se ordenó en dos filas.
 - **Referencias verificadas:** para la versión 4 se buscaron y se leyeron las fuentes de Apple (2024), Google Gemini e Instagram antes de citarlas; una afirmación sobre Instagram («momentos de descubrimiento») no se pudo confirmar en la fuente y se dejó fuera.
+- **Medir antes de afirmar:**
+  - Para los íconos se midió el asta de Instrument Sans en el navegador.
+  - Para el color se calcularon la luminosidad y la saturación en OKLCH, el contraste según WCAG y la separación entre colores con daltonismo simulado. Así apareció que el amarillo y el lima casi se confundían, y se corrigió.
+  - Los datos de las citas se comprobaron en Crossref.
 - **Datos honestos:** las cifras de las piezas («3 de 5», «12 de 30 min», los minutos por app) son ejemplos de interfaz, no resultados. La única cifra real es la de las 53 respuestas de la encuesta (D-092). El saludo de la pantalla de inicio ya no usa un nombre de persona.
 
 ## 3. Qué se comprobó y qué no
@@ -58,6 +63,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Íconos y color
+
+- **Qué cambió:** se sumaron los íconos y la paleta 2, y cómo se midieron.
+- **Cómo estaba antes:** terminaba en la versión 4 de la gráfica.
+- **Por qué:** pedido del autor (D-123).
 
 ### 2026-10-11 — Versión 4
 

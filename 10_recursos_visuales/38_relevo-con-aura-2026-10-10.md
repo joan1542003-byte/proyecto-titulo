@@ -112,6 +112,12 @@ En este orden, sin cambiar las condiciones de la prueba, los tiempos ni las preg
 
 ## Registro de cambios (disclaimer)
 
+### 2026-10-11 — Íconos propios y paleta 2
+
+- **Qué cambió:** la lámina y el taller usan los 72 íconos de Relevo y la paleta 2 de D-123; el trazo de los íconos se ajusta a su tamaño.
+- **Cómo estaba antes:** usaban 14 íconos dibujados para la exploración y las fichas de la versión 4.
+- **Por qué:** pedido del autor de íconos y colores con fundamento ([documento 39](39_iconos-y-color-con-fundamento-2026-10-11.md)).
+
 ### 2026-10-11 — Versión 4: una gráfica nuestra
 
 - **Qué cambió:** íconos después de lo que nombran, un color un papel, la marca de los cuatro peldaños, el Tag que suena en anillos y los tableros «El traspaso» y «Sistema»; el taller sigue las mismas reglas; se suman referencias.

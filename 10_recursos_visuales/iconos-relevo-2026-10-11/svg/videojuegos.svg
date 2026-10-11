@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Jugar videojuegos">
+  <title>Jugar videojuegos</title>
+  <path d="M7.6 7.5h8.8a4.5 4.5 0 0 1 4.4 3.6l.9 4.6a2.6 2.6 0 0 1-4.4 2.3L15.6 16H8.4l-1.7 2a2.6 2.6 0 0 1-4.4-2.3l.9-4.6a4.5 4.5 0 0 1 4.4-3.6z"/>
+  <path d="M8 10.5v3M6.5 12h3"/>
+  <circle fill="currentColor" stroke="none" cx="15.6" cy="11" r="0.95"/>
+  <circle fill="currentColor" stroke="none" cx="17.4" cy="12.9" r="0.95"/>
+</svg>

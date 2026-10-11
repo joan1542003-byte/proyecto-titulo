@@ -77,7 +77,7 @@ El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositi
 
 **9 de octubre:** la [app 2.30](06_desarrollo_y_factibilidad/app-android/version-2.30-editar-sin-borrar-2026-10-09.md) (D-120) permite editar un relevo sin borrarlo; es la versión del primer testeo.
 
-**10 y 11 de octubre:** la exploración [«Relevo con aura»](10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), inspirada en Dafi, queda aprobada como dirección visual (D-121). El aura es de la pantalla y se personaliza: el Tag no emite luz, solo suena; las piezas van derechas, sin giros. Su versión 4 (D-122) la hace propia: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños y el Tag, que suena en anillos y no brilla. El [Taller de auras](10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) saca sus 39 piezas y sus fondos en PNG, en láminas para diapositivas o la memoria, o en ZIP ([bitácora del 8 al 11 de octubre](00_gobernanza/bitacora-trabajo-con-ia-2026-10-08-11.md)).
+**10 y 11 de octubre:** la exploración [«Relevo con aura»](10_recursos_visuales/38_relevo-con-aura-2026-10-10.md), inspirada en Dafi, queda aprobada como dirección visual (D-121). El aura es de la pantalla y se personaliza: el Tag no emite luz, solo suena; las piezas van derechas, sin giros. Su versión 4 (D-122) la hace propia: íconos después de lo que nombran, un color con un solo papel, la marca de los cuatro peldaños y el Tag, que suena en anillos y no brilla. Suma [72 íconos propios y la paleta 2](10_recursos_visuales/39_iconos-y-color-con-fundamento-2026-10-11.md), con un papel fundamentado por color (D-123). El [Taller de auras](10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) saca sus 39 piezas y sus fondos en PNG, en láminas para diapositivas o la memoria, o en ZIP ([bitácora del 8 al 11 de octubre](00_gobernanza/bitacora-trabajo-con-ia-2026-10-08-11.md)).
 
 **Resumen del 29 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-29.md)):
 
@@ -153,6 +153,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-11 — Íconos y color
+
+- **Qué cambió:** el estado suma los íconos propios y la paleta 2 (D-123).
+- **Cómo estaba antes:** terminaba en la versión 4 de la gráfica.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-11 — Relevo con aura, versión 4
 

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pintar">
+  <title>Pintar</title>
+  <path d="M20 4c-.9-.9-2.3-.9-3.2 0L10 10.8l3.2 3.2L20 7.2c.9-.9.9-2.3 0-3.2z"/>
+  <path d="M10 10.8c-2.3-.4-4.1 1.2-4.3 3.5-.1 1.6-.8 2.8-2.2 3.5 3.3 1.3 7.3.8 8.8-2.3.6-1.4.4-1.9.9-1.5"/>
+</svg>
