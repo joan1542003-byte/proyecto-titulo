@@ -96,6 +96,9 @@ import com.example.relevo.ui.components.AuraBackground
 import com.example.relevo.ui.components.AuraMood
 import com.example.relevo.ui.components.BrandMark
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.em
+import com.example.relevo.ui.components.SkyBackground
+import com.example.relevo.ui.components.Sky
 import java.time.temporal.ChronoUnit
 
 internal class HomeActions(
@@ -328,26 +331,30 @@ private fun AcknowledgementToast(text: String?, changedRouteInterest: String?, o
   }
 }
 
-/** B3 en Inicio: la foto, la firma con las palabras de la persona y el tiempo contado. */
+/** B3 en Inicio (3.1): el relevo activo sobre el aura, que respira mientras cuenta; la firma y el tiempo contado. */
 @Composable
+@Suppress("UNUSED_PARAMETER")
 private fun ActiveCard(reminder: Reminder, customActivities: List<CustomActivity>, usageAccess: Boolean, onOpen: () -> Unit) {
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
   val where = soundWhere(reminder)
-  PhotoHero(
-    activityPicture(reminder.activity, customActivities), aspect = 0.92f, sharedKey = ACTIVE_PHOTO,
-    onClick = onOpen, clickLabel = "Ver mi relevo",
+  val interaction = remember { MutableInteractionSource() }
+  Box(
+    Modifier.fillMaxWidth().pressScale(interaction, 0.985f).clip(Relevo.panelShape)
+      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Ver mi relevo", onClick = onOpen),
   ) {
-    StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Contando" else "En pausa", onPanel = true)
-    Spacer(Modifier.height(12.dp))
+    SkyBackground(Sky.AURA, Modifier.matchParentSize())
+    Column(Modifier.fillMaxWidth().padding(20.dp)) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+      StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Contando" else "En pausa", onPanel = true)
+      Spacer(Modifier.weight(1f))
+      Text("${formatDuration(reminder.observedUsageSeconds)} de ${formatDuration(reminder.requiredUsageSeconds)}", style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = Relevo.colors.ink)
+    }
+    Spacer(Modifier.height(16.dp))
     Signature(reminder.activity, style = Relevo.type.title, animate = false)
     Spacer(Modifier.height(6.dp))
-    Text("Sonará $where.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    Spacer(Modifier.height(14.dp))
-    ProgressLine(progress, trackColor = Relevo.colors.ink.copy(alpha = .12f))
-    Spacer(Modifier.height(8.dp))
-    Row(verticalAlignment = Alignment.CenterVertically) {
-      CountedTime(reminder.observedUsageSeconds)
-      Text(" de ${formatDuration(reminder.requiredUsageSeconds)}", style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 1, overflow = TextOverflow.Ellipsis)
+    Text("Sonará $where.", style = Relevo.type.subhead, color = Relevo.colors.ink)
+    Spacer(Modifier.height(16.dp))
+    ProgressLine(progress, trackColor = androidx.compose.ui.graphics.Color.White.copy(alpha = .7f))
     }
   }
 }
@@ -364,10 +371,10 @@ private fun ActiveSummary(reminder: Reminder, onOpen: () -> Unit) {
   ListSection(title = "Tu relevo") {
     FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart)
     FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place)
-    ListRow("Suena", icon = routeIcon(reminder.signalRoute), titleColor = Relevo.colors.graphite, value = soundPlace(reminder))
-    ListRow("Apps que cuentan", icon = KitIcon.APPS, titleColor = Relevo.colors.graphite, value = reminder.selectedApps.joinToString(", ") { it.label })
-    ListRow("Falta", icon = KitIcon.TIEMPO, titleColor = Relevo.colors.graphite, value = "${formatDuration(remaining)} en esas apps")
-    if (reminder.autoActivated) ListRow("Cómo empezó", icon = KitIcon.ESPERANDO, titleColor = Relevo.colors.graphite, value = "Se activó solo")
+    FactRow(routeIcon(reminder.signalRoute), "Suena", soundPlace(reminder))
+    FactRow(KitIcon.APPS, "Apps que cuentan", reminder.selectedApps.joinToString(", ") { it.label })
+    FactRow(KitIcon.TIEMPO, "Falta", "${formatDuration(remaining)} en esas apps")
+    if (reminder.autoActivated) FactRow(KitIcon.ESPERANDO, "Cómo empezó", "Se activó solo")
     ListRow("Ver, editar o desactivar", icon = KitIcon.AJUSTES, chevron = true, onClick = onOpen)
   }
 }
@@ -490,17 +497,8 @@ internal fun ActiveScreen(
   val where = soundWhere(reminder)
   RelevoScreen(
     onBack = onBack, backLabel = "Inicio",
-    // Mientras cuenta, el aura respira lenta: está ahí, pero no llama (D-121, D-128). Apagada, es papel.
-    hero = {
-      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.COUNTING) {
-        Column(Modifier.align(Alignment.Center).padding(top = 44.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-          Text(formatDuration(reminder.observedUsageSeconds), style = Relevo.type.largeTitle.copy(fontSize = 56.sp, lineHeight = 60.sp), color = Relevo.colors.ink)
-          Spacer(Modifier.height(4.dp))
-          Text("de ${formatDuration(reminder.requiredUsageSeconds)} en las apps que elegiste", style = Relevo.type.subhead, color = Relevo.colors.ink)
-        }
-      }
-    },
-    heroHeight = 300.dp,
+    // Mientras cuenta, el aura respira lenta a pantalla completa: está ahí, pero no llama (D-121, D-128). Apagada, es papel.
+    backdrop = { AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.COUNTING) },
     // Con el relevo listo, lo principal es volver; desactivarlo queda como opción secundaria (2.28).
     bottom = {
       RelevoButton("Volver al inicio", onBack)
@@ -508,7 +506,11 @@ internal fun ActiveScreen(
       RelevoButton("Desactivar el relevo", { confirming = true }, kind = ButtonKind.Secondary)
     },
   ) {
-    Spacer(Modifier.height(24.dp))
+    Column(Modifier.fillMaxWidth().padding(top = 48.dp, bottom = 44.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+      Text(formatDuration(reminder.observedUsageSeconds), style = Relevo.type.largeTitle.copy(fontSize = 64.sp, lineHeight = 68.sp, letterSpacing = (-0.04).em), color = Relevo.colors.ink)
+      Spacer(Modifier.height(6.dp))
+      Text("de ${formatDuration(reminder.requiredUsageSeconds)} en las apps que elegiste", style = Relevo.type.subhead, color = Relevo.colors.ink)
+    }
     StatusChip(if (usageAccess) KitIcon.ESPERANDO else KitIcon.PAUSAR, if (usageAccess) "Contando" else "En pausa")
     Spacer(Modifier.height(16.dp))
     Signature(reminder.activity)

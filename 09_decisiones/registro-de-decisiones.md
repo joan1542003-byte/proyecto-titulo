@@ -1586,7 +1586,43 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - La memoria, en su capítulo 11, aún describe la identidad de la 2.30.
 - **Documentación:** [Android 3.0](../06_desarrollo_y_factibilidad/app-android/version-3.0-la-linea-nueva-2026-10-12.md).
 
+## D-130 — Android 3.1: las pantallas de «Relevo, la app»
+
+- **Fecha:** 2026-10-12.
+- **Estado:** implementada en la app 3.1 (versionCode 44). Revisada en el emulador, no en un teléfono real.
+- **Contexto:** el autor revisó la 3.0 y dijo que no se parecía a la lámina «Relevo, la app» ni a los últimos artefactos. La 3.0 había cambiado los colores, la letra, los íconos y los cielos, pero conservaba la composición de la 2.30: fotos grandes arriba, listas agrupadas con separadores y títulos muy grandes.
+- **Decisión:** componer las pantallas como en la lámina:
+  - cada fila en su propia tarjeta blanca, con una ficha de color;
+  - el valor de cada dato primero y su etiqueta debajo;
+  - el nombre de cada actividad en una cápsula blanca sobre su cielo;
+  - el progreso de pasos en segmentos;
+  - el aura a pantalla completa en la bienvenida y mientras cuenta, y el cielo de la actividad cuando suena;
+  - la ruta en escalera y el perfil en una tarjeta;
+  - «Cómo funciona» con fichas de color en vez de círculos de piedra.
+- **Lo que se mantiene:**
+  - Las pantallas, el recorrido y los textos. Solo se suman los rótulos «Sin completar» y «Después de la señal».
+  - El orden y los valores de las tres respuestas de «¿Qué decidiste?», que siguen iguales entre sí.
+  - Los datos, la firma y el consentimiento v13. Solo cambia `ui/`.
+- **Fundamento:**
+  - La lámina es la referencia que el autor aprobó (D-127 y D-128).
+  - La cápsula blanca da contraste suficiente sobre cualquier cielo (D-126).
+- **Verificación:**
+  - Pasaron 85 pruebas unitarias tras una compilación limpia.
+  - Se revisaron en el emulador, pantalla por pantalla, la primera vez, Inicio, Ruta, Perfil, Preparar, un relevo completo y el tema oscuro.
+  - Los datos del autor se restauraron idénticos (MD5). La firma es la misma.
+- **Límites:**
+  - No se probó en un teléfono real ni con el Tag.
+  - No se recorrieron las pantallas menos usadas.
+  - No conviene instalarla a mitad de la prueba de 21 días.
+- **Documentación:** [Android 3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — D-130
+
+- **Qué cambió:** se registró D-130.
+- **Cómo estaba antes:** la última decisión era D-129.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-12 — D-129
 

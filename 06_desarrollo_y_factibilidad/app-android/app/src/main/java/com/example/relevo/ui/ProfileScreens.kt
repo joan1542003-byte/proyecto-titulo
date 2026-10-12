@@ -74,6 +74,10 @@ import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.appear
 import com.example.relevo.ui.components.pressScale
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.background
+import androidx.compose.ui.text.font.FontWeight
 import com.example.relevo.ui.components.rememberReduceMotion
 
 internal class ProfileActions(
@@ -160,28 +164,28 @@ internal fun ProfileTab(
   if (noting) WeekNoteSheet(onDismiss = { noting = false }, onSend = { actions.onWeekNote(it); noting = false })
 }
 
-/** Encabezado del perfil al centro, como en los ajustes de iOS. Tocarlo abre la edición. */
+/** Encabezado del perfil (3.1, «Relevo, la app»): el emoji en un círculo, el nombre y los intereses en una tarjeta. Tocarla abre la edición. */
 @Composable
 private fun ProfileHeader(profile: Profile, routes: List<RouteTrack>, onEdit: () -> Unit, modifier: Modifier = Modifier) {
   val interaction = remember { MutableInteractionSource() }
   val interests = routes.joinToString(" · ") { it.title }
-  Column(
-    modifier.fillMaxWidth().padding(top = 12.dp),
-    horizontalAlignment = Alignment.CenterHorizontally,
+  Row(
+    modifier.fillMaxWidth().padding(top = 8.dp).pressScale(interaction, 0.985f).clip(Relevo.panelShape).background(Relevo.colors.card)
+      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Editar el perfil", onClick = onEdit)
+      .padding(16.dp),
+    verticalAlignment = Alignment.CenterVertically,
   ) {
-    Box(
-      Modifier.pressScale(interaction, 0.95f)
-        .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onEdit)
-        .semantics { contentDescription = "Editar el perfil" },
-    ) { Avatar(profile.image, profile.name, 104.dp) }
-    Spacer(Modifier.height(14.dp))
-    Text(profile.name.ifBlank { "Tu perfil" }, style = Relevo.type.title, color = Relevo.colors.ink, textAlign = TextAlign.Center)
-    if (interests.isNotBlank()) {
+    Avatar(profile.image, profile.name, 72.dp, background = Relevo.colors.mist)
+    Spacer(Modifier.width(16.dp))
+    Column(Modifier.weight(1f)) {
+      Text(profile.name.ifBlank { "Tu perfil" }, style = Relevo.type.title2, color = Relevo.colors.ink)
+      if (interests.isNotBlank()) {
+        Spacer(Modifier.height(2.dp))
+        Text(interests, style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 2)
+      }
       Spacer(Modifier.height(4.dp))
-      Text(interests, style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center)
+      Text("Editar", style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = Relevo.colors.ink)
     }
-    Spacer(Modifier.height(14.dp))
-    RelevoButton("Editar", onEdit, kind = ButtonKind.Secondary, compact = true)
   }
 }
 

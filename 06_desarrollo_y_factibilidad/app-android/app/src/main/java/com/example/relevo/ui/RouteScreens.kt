@@ -71,6 +71,8 @@ import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.appear
 import com.example.relevo.ui.components.rememberReduceMotion
+import com.example.relevo.ui.components.pressScale
+import androidx.compose.foundation.border
 import java.util.UUID
 
 /**
@@ -231,37 +233,37 @@ internal fun StepDot(number: Int, current: Boolean, past: Boolean = false, size:
   }
 }
 
-/** Los pasos en orden, unidos por una línea fina. El actual va con su número en tinta y, debajo, «Ahora». */
+/**
+ * Los pasos en escalera (3.1, «Relevo, la app»): cada paso en su tarjeta, un poco más a la derecha que
+ * el anterior. El actual lleva su número en la ficha celeste del primer paso y un borde de tinta.
+ */
 @Composable
 private fun StepTimeline(track: RouteTrack, onTap: (RouteStep) -> Unit) {
   val colors = Relevo.colors
+  val shape = RoundedCornerShape(20.dp)
   track.steps.forEachIndexed { index, step ->
     val current = index == track.currentIndex
-    val first = index == 0
-    val last = index == track.steps.lastIndex
+    val past = index < track.currentIndex
     val interaction = remember { MutableInteractionSource() }
     Row(
-      Modifier.fillMaxWidth().heightIn(min = 60.dp)
+      Modifier.padding(start = (minOf(index, 4) * 14).dp).fillMaxWidth().heightIn(min = 64.dp).pressScale(interaction, 0.985f)
+        .clip(shape).background(colors.card)
+        .then(if (current) Modifier.border(1.5.dp, colors.ink, shape) else Modifier)
         .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Ver el paso") { onTap(step) }
         .semantics { if (current) stateDescription = "Paso actual" }
-        .drawBehind {
-          val x = 18.dp.toPx() + 15.dp.toPx()
-          val stroke = 1.5.dp.toPx()
-          val center = size.height / 2
-          if (!first) drawLine(colors.line, Offset(x, 0f), Offset(x, center - 15.dp.toPx()), stroke)
-          if (!last) drawLine(colors.line, Offset(x, center + 15.dp.toPx()), Offset(x, size.height), stroke)
-        }
-        .padding(start = 18.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
+        .padding(start = 12.dp, end = 16.dp, top = 10.dp, bottom = 10.dp),
       verticalAlignment = Alignment.CenterVertically,
     ) {
-      StepDot(index + 1, current, past = index < track.currentIndex)
+      Box(Modifier.size(40.dp).clip(RoundedCornerShape(12.dp)).background(if (current) colors.sky else colors.mist), contentAlignment = Alignment.Center) {
+        Text("${index + 1}", style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold), color = when { current -> colors.onTile; past -> colors.graphite; else -> colors.ink })
+      }
       Spacer(Modifier.width(14.dp))
       Column(Modifier.weight(1f)) {
-        Text(step.activity, style = if (current) Relevo.type.headline else Relevo.type.body, color = if (index < track.currentIndex) colors.graphite else colors.ink)
-        if (current) Text("Ahora", style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = colors.graphite)
+        Text(step.activity, style = Relevo.type.callout.copy(fontWeight = FontWeight.SemiBold), color = if (past) colors.graphite else colors.ink)
+        if (current) Text("Ahora", style = Relevo.type.footnote, color = colors.graphite)
       }
       Spacer(Modifier.width(8.dp))
-      RelevoIcon(KitIcon.SIGUIENTE, size = 16.dp, tint = colors.gray, background = colors.card, strokeWidth = 2.2f)
+      RelevoIcon(KitIcon.SIGUIENTE, size = 18.dp, tint = colors.graphite, background = colors.card)
     }
   }
 }

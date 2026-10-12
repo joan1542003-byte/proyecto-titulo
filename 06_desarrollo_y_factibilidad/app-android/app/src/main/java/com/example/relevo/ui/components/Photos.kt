@@ -71,6 +71,7 @@ import com.example.relevo.theme.LocalRelevoColors
 import com.example.relevo.theme.Relevo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import androidx.compose.ui.text.font.FontWeight
 import kotlin.math.roundToInt
 
 /**
@@ -325,7 +326,7 @@ internal fun artPalette(icon: KitIcon): List<Color> = skyFor(icon).palette
  * el cielo: va debajo o en una banda clara.
  */
 @Composable
-fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = null) {
+fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = null, showIcon: Boolean = true) {
   val colors = Relevo.colors
   val sky = skyFor(icon)
   var side by remember { mutableIntStateOf(0) }
@@ -337,7 +338,7 @@ fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = nu
     // Un poco sobre el centro: en las fichas grandes, la banda de texto ocupa la parte de abajo.
     contentAlignment = androidx.compose.ui.BiasAlignment(0f, -0.35f),
   ) {
-    Box(Modifier.size(glyph * 1.7f).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
+    if (showIcon) Box(Modifier.size(glyph * 1.7f).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
       RelevoIcon(icon, size = glyph, tint = colors.onTile, background = Color.White)
     }
   }
@@ -383,17 +384,42 @@ fun Modifier.sharedPhoto(key: String?): Modifier {
   return with(shared) { this@sharedPhoto.sharedElement(rememberSharedContentState(key), scope) }
 }
 
-/** Contenido de una ficha: foto o icono del kit sobre niebla. */
+/** Contenido de una ficha: el cielo de la actividad, con su ícono o sin él. */
 @Composable
-fun PictureContent(picture: Picture?, modifier: Modifier = Modifier, iconSize: Dp = 36.dp, fallback: KitIcon = KitIcon.ACTIVIDAD, size: PhotoSize = PhotoSize.Full, wide: Boolean = false) {
-  // Foto o icono, se dibuja igual: el icono de la actividad sobre su degradado (2.21).
-  val icon = when (picture) { is Picture.OfPhoto -> picture.photo.icon; is Picture.OfIcon -> picture.icon; null -> fallback }
-  ActivityArt(icon, modifier, iconSize = iconSize)
+fun PictureContent(picture: Picture?, modifier: Modifier = Modifier, iconSize: Dp = 36.dp, fallback: KitIcon = KitIcon.ACTIVIDAD, size: PhotoSize = PhotoSize.Full, wide: Boolean = false, showIcon: Boolean = true) {
+  ActivityArt(pictureIcon(picture, fallback), modifier, iconSize = iconSize, showIcon = showIcon)
+}
+
+/** El ícono de una imagen guardada: el de la foto o el del kit. */
+internal fun pictureIcon(picture: Picture?, fallback: KitIcon = KitIcon.ACTIVIDAD): KitIcon =
+  when (picture) { is Picture.OfPhoto -> picture.photo.icon; is Picture.OfIcon -> picture.icon; null -> fallback }
+
+/**
+ * Nombre sobre un cielo (D-126): cápsula blanca con letra de tinta. El texto blanco directo no
+ * alcanzaba 4,5:1 en los cielos claros; en la cápsula supera 15:1 sobre cualquiera.
+ */
+@Composable
+fun SkyLabel(text: String, modifier: Modifier = Modifier, large: Boolean = false) {
+  Text(
+    text,
+    style = (if (large) Relevo.type.headline else Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold)),
+    color = Color(0xFF141312), maxLines = 2, overflow = TextOverflow.Ellipsis,
+    modifier = modifier.clip(RoundedCornerShape(if (large) 14.dp else 12.dp)).background(Color.White.copy(alpha = .94f))
+      .padding(horizontal = if (large) 12.dp else 10.dp, vertical = if (large) 6.dp else 4.dp),
+  )
+}
+
+/** Ícono pequeño en un círculo blanco, arriba a la izquierda de un cielo. */
+@Composable
+private fun SkyBadge(icon: KitIcon, size: Dp = 30.dp) {
+  Box(Modifier.size(size).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
+    RelevoIcon(icon, size = size * 0.6f, tint = Color(0xFF141312), background = Color.White)
+  }
 }
 
 /**
- * Ficha de actividad: foto 4:5 con el nombre debajo, sobre papel (el texto nunca va sobre la foto).
- * Al presionar se hunde un poco; la foto puede viajar a la pantalla siguiente.
+ * Ficha de actividad (D-126): su cielo con el nombre en una cápsula y el ícono en un círculo blanco.
+ * Debajo, en gris, cómo empieza. Al presionar se hunde un poco; el cielo puede viajar a la pantalla siguiente.
  */
 @Composable
 fun PhotoCard(
@@ -411,22 +437,21 @@ fun PhotoCard(
     modifier.width(width).pressScale(interaction)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = title, onClick = onClick),
   ) {
-    PictureContent(
-      picture, Modifier.fillMaxWidth().aspectRatio(0.8f).sharedPhoto(sharedKey).clip(Relevo.tileShape),
-      fallback = fallback, iconSize = 40.dp,
-    )
-    Spacer(Modifier.height(10.dp))
-    Text(title, style = Relevo.type.headline, color = Relevo.colors.ink, maxLines = 2, overflow = TextOverflow.Ellipsis)
+    Box(Modifier.fillMaxWidth().aspectRatio(0.95f).clip(Relevo.tileShape)) {
+      PictureContent(picture, Modifier.matchParentSize().sharedPhoto(sharedKey), fallback = fallback, showIcon = false)
+      Box(Modifier.align(Alignment.TopStart).padding(10.dp)) { SkyBadge(pictureIcon(picture, fallback)) }
+      SkyLabel(title, Modifier.align(Alignment.BottomStart).padding(10.dp))
+    }
     if (subtitle != null) {
-      Spacer(Modifier.height(2.dp))
-      Text(subtitle, style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 2, overflow = TextOverflow.Ellipsis)
+      Spacer(Modifier.height(8.dp))
+      Text(subtitle, style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 2, overflow = TextOverflow.Ellipsis, modifier = Modifier.padding(horizontal = 2.dp))
     }
   }
 }
 
 /**
- * Ficha elegible en una cuadrícula. La elegida se encoge un poco dentro de un anillo de tinta
- * concéntrico, como el selector de fondos de iOS, y muestra una marca redonda.
+ * Ficha elegible en una cuadrícula: el cielo con su nombre en una cápsula. La elegida se encoge un poco
+ * dentro de un anillo de tinta concéntrico, como el selector de fondos de iOS, y muestra una marca.
  */
 @Composable
 fun PictureTile(
@@ -444,21 +469,21 @@ fun PictureTile(
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val inset by animateDpAsState(if (selected) 5.dp else 0.dp, Motion.smooth(stiffness = 600f), label = "tile_inset")
-  Column(
-    modifier.pressScale(interaction)
+  Box(
+    modifier.fillMaxWidth().aspectRatio(aspect).pressScale(interaction)
       .clickable(interactionSource = interaction, indication = null, role = Role.RadioButton, onClick = onClick)
       .semantics { this.selected = selected; contentDescription = description },
   ) {
-    Box(Modifier.fillMaxWidth().aspectRatio(aspect)) {
-      PictureContent(picture, Modifier.fillMaxSize().padding(inset).clip(RoundedCornerShape(cornerRadius - inset)), size = PhotoSize.Thumb, iconSize = 30.dp)
-      if (selected) {
-        Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, RoundedCornerShape(cornerRadius)))
-        Box(Modifier.align(Alignment.TopEnd).padding(10.dp)) { CheckMark(true, size = 22.dp) }
+    Box(Modifier.fillMaxSize().padding(inset).clip(RoundedCornerShape(cornerRadius - inset))) {
+      PictureContent(picture, Modifier.matchParentSize(), size = PhotoSize.Thumb, showIcon = label == null, iconSize = 26.dp)
+      if (label != null) {
+        Box(Modifier.align(Alignment.TopStart).padding(8.dp)) { SkyBadge(pictureIcon(picture), size = 26.dp) }
+        SkyLabel(label, Modifier.align(Alignment.BottomStart).padding(8.dp), large = prominent)
       }
     }
-    if (label != null) {
-      Spacer(Modifier.height(6.dp))
-      Text(label, style = if (prominent) Relevo.type.headline else Relevo.type.footnote, color = if (selected || prominent) colors.ink else colors.graphite, maxLines = 2, overflow = TextOverflow.Ellipsis)
+    if (selected) {
+      Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, RoundedCornerShape(cornerRadius)))
+      Box(Modifier.align(Alignment.TopEnd).padding(10.dp)) { CheckMark(true, size = 22.dp) }
     }
   }
 }
@@ -487,12 +512,12 @@ fun Avatar(image: String, name: String, size: Dp, modifier: Modifier = Modifier,
 }
 
 /**
- * Foto grande con una banda de vidrio abajo: la foto sigue a la vista y el texto se lee sobre un
- * desenfoque que crece hacia el borde, sin velos opacos (D-083). El texto y el vidrio toman el tono
- * de la foto que queda debajo: tinta sobre fotos claras y blanco sobre fotos oscuras (D-084). Toda
- * la ficha se puede tocar.
+ * Tarjeta de una actividad (3.1, «Relevo, la app»): una franja con su cielo y su ícono y, debajo, el
+ * contenido sobre blanco, en tinta. Toda la tarjeta se puede tocar. [aspect] y [wide] quedan por
+ * compatibilidad: la franja siempre mide lo mismo.
  */
 @Composable
+@Suppress("UNUSED_PARAMETER")
 fun PhotoHero(
   picture: Picture,
   modifier: Modifier = Modifier,
@@ -504,24 +529,12 @@ fun PhotoHero(
   band: @Composable ColumnScope.() -> Unit,
 ) {
   val interaction = remember { MutableInteractionSource() }
-  val density = LocalDensity.current
-  var frame by remember { mutableIntStateOf(0) }
-  var bandHeight by remember { mutableIntStateOf(0) }
-  // El texto empieza 48 dp bajo el borde de la banda: se mide esa zona de la foto, redondeada al 5 %.
-  val textTop = if (frame > 0 && bandHeight > 0) ((frame - bandHeight + with(density) { 48.dp.toPx() }) / frame).coerceIn(0f, 0.9f) else 0.6f
-  val dark = rememberPhotoDark(picture, wide, aspect, (textTop * 20).roundToInt() / 20f, 1f)
-  Box(
-    modifier.fillMaxWidth().aspectRatio(aspect).onSizeChanged { frame = it.height }.pressScale(interaction, 0.985f).clip(Relevo.panelShape)
+  Column(
+    modifier.fillMaxWidth().pressScale(interaction, 0.985f).clip(Relevo.panelShape).background(Relevo.colors.card)
       .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = clickLabel, onClick = onClick) else Modifier),
   ) {
-    PictureContent(picture, Modifier.matchParentSize().sharedPhoto(sharedKey), wide = wide, iconSize = 56.dp)
-    CompositionLocalProvider(LocalRelevoColors provides paletteOver(dark)) {
-      Column(
-        Modifier.align(Alignment.BottomStart).fillMaxWidth().onSizeChanged { bandHeight = it.height }.photoBand()
-          .padding(start = 20.dp, end = 20.dp, top = 48.dp, bottom = 20.dp),
-        content = band,
-      )
-    }
+    PictureContent(picture, Modifier.fillMaxWidth().aspectRatio(2.8f).sharedPhoto(sharedKey), iconSize = 26.dp)
+    Column(Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 18.dp, bottom = 20.dp), content = band)
   }
 }
 

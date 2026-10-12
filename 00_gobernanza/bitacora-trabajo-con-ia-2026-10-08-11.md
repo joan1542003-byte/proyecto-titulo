@@ -20,6 +20,7 @@
 | 11 oct. | Logo, colores y recorrido | Un logo de cuatro luces planas con Chillax Semibold; la evidencia de color de Chile y Latinoamérica; siete familias de cielos para las actividades; y el recorrido en 12 wireframes con notas ([documento 40](../10_recursos_visuales/40_logo-colores-y-recorrido-2026-10-11.md); [lámina](https://claude.ai/artifact/5FCdqi76iF52dfNoFyYoeX)). | D-125 y D-126 |
 | 11 oct. | Texto académico, rediseño y el lugar | El fundamento del color en el registro de la memoria. Además: 25 pantallas de la app con la línea nueva, el logo con degradado «Luz» y el lugar en vez del Tag como tercera luz. Se sumó el plan para actualizar a la 3.0 sin perder datos ([documento 41](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md); [lámina](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM); [plan](../06_desarrollo_y_factibilidad/app-android/plan-rediseno-3.0-2026-10-11.md)). | D-127 y D-128 |
 | 12 oct. | Android 3.0 | La línea nueva en la app, sin perder datos: se instaló sobre la 2.30 con datos y quedaron idénticos byte a byte; un relevo activo siguió contando tras actualizar ([versión 3.0](../06_desarrollo_y_factibilidad/app-android/version-3.0-la-linea-nueva-2026-10-12.md)). | D-129 |
+| 12 oct. | Android 3.1 | El autor notó que la 3.0 no se parecía a la lámina. Se recompuso cada pantalla según la lámina: tarjetas sueltas, cápsulas sobre los cielos, el aura y el cielo a pantalla completa, la ruta en escalera y el perfil en una tarjeta. Mismos datos ([versión 3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md)). | D-130 |
 | 11 oct. | Documentación | El autor preguntó si todo estaba documentado. Faltaban esta bitácora, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual; se completaron. | D-121 |
 
 ## 2. Cómo se usó la IA
@@ -45,6 +46,7 @@
   - Los datos de las citas se comprobaron en Crossref.
   - Para los cielos se midió el contraste del texto en capturas, sobre el píxel más desfavorable del fondo. El texto blanco quedaba entre 2,6:1 y 3,7:1 en los cielos claros; con la cápsula blanca sube a entre 15:1 y 17,8:1.
 - **Probar sin ensuciar los datos:** antes de probar la 3.0 se respaldó la clave de firma y los datos del emulador. Se trabajó sin conexión y, al terminar, se restauró el respaldo. Se comprobó que los datos quedaran idénticos (MD5) y que no se escribieran archivos en Documentos/Relevo. Durante la prueba apareció un relevo activo que no se había pedido; se descartó al restaurar.
+- **Error de la IA en la 3.0:** aplicó la línea nueva a la superficie (colores, letra, íconos y cielos) y dejó la composición de la 2.30. Lo notó el autor, no la IA. En la 3.1 cada pantalla del emulador se comparó con la lámina, con capturas, antes de darla por terminada.
 - **Buscar evidencia local antes de suponerla:** se buscó un estudio de color hecho en Chile y no se encontró. Se usó una encuesta que incluye a Chile, presentada por la UNAM; por ser un boletín de prensa se marcó como apoyo y no como prueba. Una cifra del estudio de Medellín se corrigió antes de publicar: el azul tiene cerca de 75 % de aceptación, pero no es el color preferido.
 - **El logo se probó en lo difícil:** la primera marca, con las luces mezcladas, dejaba un centro turbio; la elegida usa cortes planos. Se compararon 20 letras antes de elegir Chillax, y la fuente quedó fuera del repositorio.
 - **Datos honestos:** las cifras de las piezas («3 de 5», «12 de 30 min», los minutos por app) son ejemplos de interfaz, no resultados. La única cifra real es la de las 53 respuestas de la encuesta (D-092). El saludo de la pantalla de inicio ya no usa un nombre de persona.
@@ -56,22 +58,29 @@
   - Se generó y se abrió un ZIP.
   - Ni el taller ni la lámina se desbordan a lo ancho en un teléfono de 390 px.
   - La 2.30 se compiló, pasó sus pruebas unitarias y se revisó en el emulador.
+  - La 3.0 y la 3.1 se compilaron limpias, pasaron 85 pruebas y se revisaron en el emulador; los datos del autor quedaron idénticos (MD5).
 - **No comprobado:**
   - La descarga y el botón «Copiar» dentro de claude.ai con la confirmación real; en la prueba solo se vio el respaldo.
   - La 2.30 en un teléfono real, incluido que siga con el tiempo contado al editar.
-  - El aura en la app Android, que no está implementada.
+  - La 3.0 y la 3.1 en un teléfono real, con TalkBack y con la letra al 200 %.
 
 ## 4. Pendientes
 
-- Que el autor apruebe el plan 3.0 (D-128) y decida el tema oscuro y el momento de instalarla. Hasta entonces no se toca el código.
+- Que el autor decida cuándo instalar la 3.1: no conviene a mitad de la prueba de 21 días.
 - Que el autor revise el logo (D-125) y los colores de las actividades (D-126), y buscar en INAPI si hay marcas parecidas.
-- Llevar el aura a la app solo si el autor lo pide. Se sugirió empezar por Perfil › Tu aura.
+- Rehacer el video de «Cómo funciona» y actualizar el capítulo 11 de la memoria a la línea nueva.
 - Probar la 2.30 en un teléfono real.
 - Revisar el consentimiento v13 con el profesor.
 - Hacer la revisión formal de apps y productos parecidos para la memoria.
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — Android 3.1
+
+- **Qué cambió:** se sumaron la 3.1, el error de la 3.0 y cómo se comparó con la lámina; se actualizaron lo comprobado y los pendientes, que aún decían que el aura no estaba en la app.
+- **Cómo estaba antes:** terminaba en la 3.0, y las secciones 3 y 4 seguían en el estado anterior a la 3.0.
+- **Por qué:** pedido del autor (D-130).
 
 ### 2026-10-12 — Android 3.0
 

@@ -68,21 +68,17 @@ import com.example.relevo.ui.components.rememberReduceMotion
 @Composable
 internal fun WelcomeScreen(onStart: () -> Unit) {
   RelevoScreen(
-    hero = {
-      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.CALM) {
-        Column(Modifier.align(Alignment.Center).padding(top = 36.dp, start = 32.dp, end = 32.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-          BrandMark(size = 104.dp, description = "Relevo", modifier = Modifier.appear(0))
-          Spacer(Modifier.height(22.dp))
-          Wordmark(height = 40.dp, modifier = Modifier.appear(1))
-          Spacer(Modifier.height(12.dp))
-          Text("Un recordatorio físico preparado desde el teléfono", style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(2))
-        }
-      }
-    },
-    heroHeight = 400.dp,
+    // El aura a pantalla completa, como al abrir «Relevo, la app».
+    backdrop = { AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.CALM) },
     bottom = { RelevoButton("Empezar", onStart) },
   ) {
-    Spacer(Modifier.height(26.dp))
+    Column(Modifier.fillMaxWidth().padding(top = 56.dp, bottom = 64.dp, start = 12.dp, end = 12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+      BrandMark(size = 112.dp, description = "Relevo", modifier = Modifier.appear(0))
+      Spacer(Modifier.height(24.dp))
+      Wordmark(height = 44.dp, modifier = Modifier.appear(1))
+      Spacer(Modifier.height(12.dp))
+      Text("Un recordatorio físico preparado desde el teléfono", style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(2))
+    }
     Signature("lo que querías hacer", phraseColor = Relevo.colors.ink)
     Spacer(Modifier.height(14.dp))
     Text("Anota algo que quieres hacer. Relevo te lo recuerda mientras todavía puedes hacerlo.",

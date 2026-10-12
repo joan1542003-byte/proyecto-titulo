@@ -47,8 +47,7 @@ import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 
 /**
- * Sección agrupada, como las de iOS 26: título breve escrito como frase, tarjeta clara con esquinas
- * amplias y filas separadas por una línea fina que empieza después del icono.
+ * Sección: título breve escrito como frase y, debajo, filas sueltas en tarjetas blancas (3.1).
  */
 @Composable
 fun ListSection(
@@ -61,16 +60,8 @@ fun ListSection(
     if (title != null) {
       Text(title, style = Relevo.type.section, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 8.dp).semantics { heading() })
     }
-    Column(
-      Modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.card)
-        // Cada fila dibuja su línea arriba; se recorta la de la primera para que solo haya líneas entre filas.
-        .layout { measurable, constraints ->
-          val cut = 1.dp.roundToPx()
-          val placeable = measurable.measure(constraints)
-          layout(placeable.width, (placeable.height - cut).coerceAtLeast(0)) { placeable.place(0, -cut) }
-        },
-      content = content,
-    )
+    // 3.1: cada fila es su propia tarjeta, separadas por 8 dp, como en «Relevo, la app».
+    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp), content = content)
     if (footer != null) {
       Text(footer, style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, end = 4.dp, top = 8.dp))
     }
@@ -83,10 +74,10 @@ fun ListSection(
  */
 @Composable
 fun IconTile(icon: KitIcon, tint: Color = Relevo.colors.ink) {
-  RoleTile(icon, size = 30.dp, tint = tint)
+  RoleTile(icon, size = 38.dp, tint = tint)
 }
 
-/** Fila del kit dentro de una sección: icono, texto, valor y destino. Al presionar se oscurece. */
+/** Fila en su tarjeta: ficha de color, texto, valor y destino. Al presionar se oscurece. */
 @Composable
 fun ListRow(
   title: String,
@@ -100,21 +91,18 @@ fun ListRow(
   chevron: Boolean = false,
   onClick: (() -> Unit)? = null,
   leading: (@Composable () -> Unit)? = null,
-  leadingWidth: Dp = 30.dp,
+  leadingWidth: Dp = 38.dp,
   trailing: (@Composable RowScope.() -> Unit)? = null,
   divider: Boolean = true,
 ) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
-  val background by animateColorAsState(if (pressed) colors.line.copy(alpha = .55f) else Color.Transparent, Motion.standard(90), label = "row")
-  val hasLeading = leading != null || icon != null
-  val inset = if (hasLeading) 18.dp + leadingWidth + 14.dp else 18.dp
+  val background by animateColorAsState(if (pressed) colors.mist else colors.card, Motion.standard(90), label = "row")
   Row(
-    modifier.fillMaxWidth().heightIn(min = 54.dp).background(background)
-      .drawBehind { if (divider) drawLine(colors.line, Offset(inset.toPx(), 0f), Offset(size.width, 0f), strokeWidth = 1.dp.toPx()) }
+    modifier.fillMaxWidth().heightIn(min = 62.dp).pressScale(interaction, 0.985f).clip(RoundedCornerShape(20.dp)).background(background)
       .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick) else Modifier)
-      .padding(start = 18.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
+      .padding(start = 12.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     when {
@@ -125,7 +113,7 @@ fun ListRow(
       Modifier.weight(1f),
       title = {
         Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-          Text(title, style = Relevo.type.body, color = titleColor)
+          Text(title, style = Relevo.type.callout.copy(fontWeight = FontWeight.SemiBold), color = titleColor)
           if (subtitle != null) Text(subtitle, style = Relevo.type.footnote, color = colors.graphite)
         }
       },
@@ -174,10 +162,15 @@ private fun TitleAndValue(modifier: Modifier, title: @Composable () -> Unit, val
   }
 }
 
-/** Dato con su rótulo, para resúmenes: «Cómo empieza · Abrir el libro». Lo que escribió la persona va en azul. */
+/** Dato con su rótulo, como en «Relevo, la app»: el dato en tinta y, debajo, qué es. Si se puede cambiar, lleva un lápiz. */
 @Composable
+@Suppress("UNUSED_PARAMETER")
 fun FactRow(icon: KitIcon, label: String, value: String, valueIsVoice: Boolean = true, onClick: (() -> Unit)? = null) {
-  ListRow(title = label, icon = icon, value = value, valueIsVoice = valueIsVoice, titleColor = Relevo.colors.graphite, chevron = onClick != null, onClick = onClick)
+  ListRow(
+    title = value.ifBlank { "Sin completar" }, subtitle = label, icon = icon,
+    titleColor = if (value.isBlank()) Relevo.colors.graphite else Relevo.colors.ink, onClick = onClick,
+    trailing = if (onClick != null) ({ RelevoIcon(KitIcon.EDITAR, size = 18.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) }) else null,
+  )
 }
 
 enum class Tone { Info, Error }
@@ -199,7 +192,7 @@ fun Notice(
     modifier.fillMaxWidth().clip(Relevo.panelShape).background(background).padding(18.dp),
     verticalAlignment = Alignment.Top,
   ) {
-    Box(Modifier.size(36.dp).clip(CircleShape).background(if (error) colors.error.copy(alpha = .12f) else colors.mist), contentAlignment = Alignment.Center) {
+    Box(Modifier.size(38.dp).clip(RoundedCornerShape(11.dp)).background(if (error) colors.error.copy(alpha = .12f) else colors.mist), contentAlignment = Alignment.Center) {
       RelevoIcon(if (error) KitIcon.ERROR else icon, size = 20.dp, tint = if (error) colors.error else colors.ink, background = Color.Transparent)
     }
     Spacer(Modifier.width(14.dp))
@@ -215,9 +208,9 @@ fun Notice(
 @Composable
 fun StatusChip(icon: KitIcon, text: String, modifier: Modifier = Modifier, onPanel: Boolean = false) {
   val colors = Relevo.colors
-  val background = if (onPanel) colors.paper else colors.mist
+  val background = if (onPanel) colors.card else colors.card
   Row(
-    modifier.background(background, Relevo.controlShape).padding(horizontal = 12.dp, vertical = 7.dp),
+    modifier.background(background, Relevo.controlShape).border(1.dp, colors.line, Relevo.controlShape).padding(horizontal = 12.dp, vertical = 7.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     RelevoIcon(icon, size = 16.dp, tint = colors.ink, background = background)

@@ -105,6 +105,9 @@ import com.example.relevo.ui.components.key
 import com.example.relevo.ui.components.pressScale
 import com.example.relevo.ui.components.rememberReduceMotion
 import com.example.relevo.ui.components.sharedPhoto
+import com.example.relevo.ui.components.SkyLabel
+import com.example.relevo.ui.components.pictureIcon
+import androidx.compose.foundation.shape.RoundedCornerShape
 import java.util.UUID
 
 private enum class PrepareStep(val title: String) {
@@ -350,14 +353,16 @@ internal fun PrepareScreen(
 /** La actividad elegida acompaña cada paso: su foto en un círculo y «Vuelve a ___.» con las palabras de la persona. */
 @Composable
 private fun ActivityHeader(activity: String, picture: Picture, photoKey: String?, onEdit: () -> Unit) {
-  Row(
-    Modifier.fillMaxWidth().clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Button, onClickLabel = "Cambiar la actividad", onClick = onEdit)
-      .padding(top = 8.dp),
-    verticalAlignment = Alignment.CenterVertically,
+  // 3.1: una franja con el cielo de la actividad y su nombre en una cápsula, como en «Relevo, la app».
+  Box(
+    Modifier.padding(top = 8.dp).fillMaxWidth().height(88.dp).clip(RoundedCornerShape(22.dp))
+      .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Button, onClickLabel = "Cambiar la actividad", onClick = onEdit),
   ) {
-    PictureContent(picture, Modifier.size(56.dp).sharedPhoto(photoKey).clip(CircleShape), iconSize = 24.dp)
-    Spacer(Modifier.width(14.dp))
-    Signature(activity, style = Relevo.type.title2, animate = false, modifier = Modifier.weight(1f))
+    PictureContent(picture, Modifier.matchParentSize().sharedPhoto(photoKey), showIcon = false)
+    SkyLabel(activity.trim(), Modifier.align(Alignment.BottomStart).padding(12.dp), large = true)
+    Box(Modifier.align(Alignment.CenterEnd).padding(end = 14.dp).size(40.dp).clip(CircleShape).background(androidx.compose.ui.graphics.Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
+      RelevoIcon(pictureIcon(picture), size = 22.dp, tint = Relevo.colors.onTile, background = androidx.compose.ui.graphics.Color.White)
+    }
   }
 }
 

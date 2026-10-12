@@ -111,6 +111,8 @@ fun RelevoScreen(
   header: (@Composable ColumnScope.() -> Unit)? = null,
   titleTrailing: (@Composable () -> Unit)? = null,
   bottom: (@Composable ColumnScope.() -> Unit)? = null,
+  /** 3.1: un fondo a pantalla completa (el aura o el cielo de la actividad) que queda quieto detrás del contenido. */
+  backdrop: (@Composable BoxScope.() -> Unit)? = null,
   content: @Composable ColumnScope.() -> Unit,
 ) {
   val colors = Relevo.colors
@@ -135,9 +137,10 @@ fun RelevoScreen(
   val barColors = if (heroUnderBar) paletteOver(heroDark) else colors
   if (hero != null) StatusBarTone(darkBackground = barColors.isDark)
   // El borde superior aparece solo cuando pasa contenido bajo la barra, como en iOS; sobre la foto, no.
-  val topAlpha by animateFloatAsState(if (scrollState.value > 0 && !heroUnderBar) 1f else 0f, Motion.standard(Motion.SHORT), label = "top_edge")
+  val topAlpha by animateFloatAsState(if (scrollState.value > 0 && !heroUnderBar && backdrop == null) 1f else 0f, Motion.standard(Motion.SHORT), label = "top_edge")
 
   Box(modifier.fillMaxSize().background(colors.paper).imePadding()) {
+    if (backdrop != null) Box(Modifier.fillMaxSize()) { backdrop() }
     Column(
       Modifier.fillMaxSize()
         .padding(bottom = if (imeVisible && bottom != null) with(density) { bottomHeight.toDp() } else 0.dp)
@@ -158,7 +161,7 @@ fun RelevoScreen(
           ) {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
               if (eyebrow != null) Text(eyebrow, style = Relevo.type.label, color = colors.graphite)
-              Text(title, style = Relevo.type.largeTitle, color = colors.ink, modifier = Modifier.semantics { heading() }.graphicsLayer { alpha = 1f - collapse * .7f })
+              Text(title, style = Relevo.type.title, color = colors.ink, modifier = Modifier.semantics { heading() }.graphicsLayer { alpha = 1f - collapse * .7f })
               if (subtitle != null) Text(subtitle, style = Relevo.type.body, color = colors.graphite)
             }
             titleTrailing?.invoke()
@@ -205,7 +208,7 @@ fun RelevoScreen(
     // Abajo: la acción principal flota sobre un borde desenfocado; en las pestañas, por encima de la barra.
     if (bottom != null || dock > 0.dp) {
       Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth()) {
-        Box(Modifier.matchParentSize().edgeFade(fromTop = false))
+        if (backdrop == null) Box(Modifier.matchParentSize().edgeFade(fromTop = false))
         Column(
           Modifier.fillMaxWidth().onSizeChanged { bottomHeight = it.height }
             .padding(horizontal = Relevo.margin).padding(top = 22.dp, bottom = 12.dp + dock).navigationBarsPadding(),
@@ -217,18 +220,29 @@ fun RelevoScreen(
   }
 }
 
-/** Avance de un recorrido por pasos: una cápsula fina que se llena, con su lectura para TalkBack. */
+/**
+ * Avance de un recorrido por pasos (3.1): un segmento por paso, de tinta los hechos y el actual, con su
+ * lectura para TalkBack. Si el paso no dice cuántos hay, una cápsula que se llena.
+ */
 @Composable
 private fun StepProgress(progress: Float, step: String?) {
   val value by animateFloatAsState(progress.coerceIn(0f, 1f), Motion.smooth(stiffness = 220f), label = "step_progress")
-  Box(
-    Modifier.width(112.dp).height(6.dp).background(Relevo.colors.mist, Relevo.controlShape)
-      .semantics {
-        progressBarRangeInfo = ProgressBarRangeInfo(value, 0f..1f)
-        if (step != null) contentDescription = "Paso $step"
-      },
+  val parts = step?.let { Regex("(\\d+) de (\\d+)").find(it) }?.destructured?.let { (n, of) -> n.toInt() to of.toInt() }
+  val colors = Relevo.colors
+  Row(
+    Modifier.width(150.dp).semantics {
+      progressBarRangeInfo = ProgressBarRangeInfo(value, 0f..1f)
+      if (step != null) contentDescription = "Paso $step"
+    },
+    horizontalArrangement = Arrangement.spacedBy(5.dp),
   ) {
-    Box(Modifier.fillMaxWidth(value).height(6.dp).background(Relevo.colors.ink, Relevo.controlShape))
+    if (parts != null && parts.second in 2..12) {
+      repeat(parts.second) { i -> Box(Modifier.weight(1f).height(4.dp).background(if (i < parts.first) colors.ink else colors.line, Relevo.controlShape)) }
+    } else {
+      Box(Modifier.weight(1f).height(6.dp).background(colors.mist, Relevo.controlShape)) {
+        Box(Modifier.fillMaxWidth(value).height(6.dp).background(colors.ink, Relevo.controlShape))
+      }
+    }
   }
 }
 

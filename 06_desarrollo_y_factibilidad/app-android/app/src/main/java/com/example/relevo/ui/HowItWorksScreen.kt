@@ -71,6 +71,7 @@ import com.example.relevo.ui.components.Panel
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.SectionGap
+import com.example.relevo.ui.components.RoleTile
 import com.example.relevo.ui.components.rememberReduceMotion
 
 /** Una pantalla de la guía: un título, un ejemplo que se ve como en la app y una explicación corta. */
@@ -110,12 +111,11 @@ internal fun HowItWorksScreen(
       }
     })
     add(GuidePage("sistema", "Cómo funciona", "Cuando suene, nos cuentas qué hiciste con un toque. Ninguna respuesta es mejor que otra.") {
-      GuidePanel {
-        SystemRow(KitIcon.TELEFONO, "La app", "Anotas qué quieres hacer y cómo empiezas.")
-        Spacer(Modifier.height(18.dp))
-        SystemRow(KitIcon.PARLANTE, "Lo que suena", "Un parlante, un reloj o un Tag que dejas donde empiezas. Suena cuando llevas en tus apps el tiempo que elegiste.")
-        Spacer(Modifier.height(18.dp))
-        SystemRow(KitIcon.USUARIO, "Tú", "Decides si empiezas o sigues con lo que estabas haciendo.")
+      // 3.1: cada parte en su tarjeta, con el color de su papel: el primer paso, el lugar y lo que decides.
+      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        SystemRow(KitIcon.TELEFONO, "La app", "Anotas qué quieres hacer y cómo empiezas.", Relevo.colors.sky)
+        SystemRow(KitIcon.PARLANTE, "Lo que suena", "Un parlante, un reloj o un Tag que dejas donde empiezas. Suena cuando llevas en tus apps el tiempo que elegiste.", Relevo.colors.lime)
+        SystemRow(KitIcon.USUARIO, "Tú", "Decides si empiezas o sigues con lo que estabas haciendo.", Relevo.colors.blush)
       }
     })
     if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Lo puedes cambiar cuando quieras en Perfil.") {
@@ -171,12 +171,12 @@ internal fun HowItWorksScreen(
   }
 }
 
-/** Una parte del sistema: icono en un círculo, su nombre y qué hace. */
+/** Una parte del sistema en su tarjeta: su ficha de color, su nombre y qué hace. */
 @Composable
-private fun SystemRow(icon: KitIcon, title: String, text: String) {
-  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
-    Box(Modifier.size(44.dp).clip(CircleShape).background(Relevo.colors.mist), contentAlignment = Alignment.Center) {
-      RelevoIcon(icon, size = 22.dp, background = Relevo.colors.mist)
+private fun SystemRow(icon: KitIcon, title: String, text: String, tint: androidx.compose.ui.graphics.Color) {
+  Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Relevo.colors.card).padding(14.dp), verticalAlignment = Alignment.Top) {
+    Box(Modifier.size(42.dp).clip(RoundedCornerShape(12.dp)).background(tint), contentAlignment = Alignment.Center) {
+      RelevoIcon(icon, size = 24.dp, tint = Relevo.colors.onTile, background = tint)
     }
     Spacer(Modifier.width(14.dp))
     Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {

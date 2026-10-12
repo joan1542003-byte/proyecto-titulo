@@ -51,6 +51,18 @@ import com.example.relevo.ui.components.Tone
 import com.example.relevo.ui.components.appear
 import com.example.relevo.ui.components.SoundRings
 import androidx.compose.foundation.layout.size
+import com.example.relevo.ui.components.SkyBackground
+import com.example.relevo.ui.components.Sky
+import com.example.relevo.ui.components.skyFor
+import com.example.relevo.ui.components.pictureIcon
+import com.example.relevo.ui.components.StatusBarTone
+import com.example.relevo.ui.components.pressScale
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.semantics.Role
+import androidx.compose.foundation.layout.fillMaxWidth
 import com.example.relevo.ui.components.rememberReduceMotion
 
 /**
@@ -70,18 +82,23 @@ internal fun SignalScreen(
   var tested by rememberSaveable { mutableStateOf<Boolean?>(null) }
   val picture = activityPicture(reminder.activity, customActivities)
   RelevoScreen(
-    // El momento de más color (D-103): el cielo de la actividad, y el sonido en anillos de tinta, sin luz (D-121).
-    hero = {
-      Box(Modifier.fillMaxSize()) {
-        PictureContent(picture, Modifier.fillMaxSize(), iconSize = 64.dp, wide = true)
-        if (sounding) SoundRings(Modifier.align(androidx.compose.ui.BiasAlignment(0f, -0.35f)).size(109.dp))
+    // El momento de más color (D-103): la pantalla toma el cielo de la actividad, y el sonido se dibuja en
+    // anillos de tinta alrededor de su ícono, sin luz (D-121). El mensaje va en una tarjeta blanca.
+    backdrop = {
+      val sky = skyFor(pictureIcon(picture))
+      SkyBackground(sky, Modifier.fillMaxSize())
+      StatusBarTone(darkBackground = sky == Sky.NOCHE)
+      Box(Modifier.fillMaxWidth().statusBarsPadding().padding(top = 72.dp).height(200.dp), contentAlignment = Alignment.Center) {
+        if (sounding) SoundRings(Modifier.size(112.dp))
+        Box(Modifier.size(112.dp).clip(CircleShape).background(androidx.compose.ui.graphics.Color.White.copy(alpha = .94f)), contentAlignment = Alignment.Center) {
+          RelevoIcon(pictureIcon(picture), size = 50.dp, tint = Relevo.colors.onTile, background = androidx.compose.ui.graphics.Color.White)
+        }
       }
     },
-    heroHeight = 320.dp,
-    heroPicture = picture,
     bottom = { RelevoButton(if (sounding) "Silenciar y continuar" else "Continuar", onContinue, icon = if (sounding) KitIcon.SILENCIAR else null) },
   ) {
-    Spacer(Modifier.height(22.dp))
+    Spacer(Modifier.height(232.dp))
+    Column(Modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.card.copy(alpha = .96f)).padding(20.dp)) {
     if (guided) {
       GuideTip("Así suena Relevo. Toca «Silenciar y continuar» y después cuéntanos qué hiciste.")
       Spacer(Modifier.height(16.dp))
@@ -118,6 +135,7 @@ internal fun SignalScreen(
         if (!studyActive && reminder.signalRoute != SignalRoute.PHONE) PlainAction("Sonar en el teléfono", { tested = onTestSound(SignalRoute.PHONE) }, icon = KitIcon.TELEFONO)
         tested?.let { Text(if (it) "Ahora sonó." else "Todavía no suena.", style = Relevo.type.subhead, color = Relevo.colors.graphite) }
       }
+    }
     }
   }
 }
@@ -165,8 +183,11 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
       GuideTip("Responde lo que pasó de verdad. No hay respuestas buenas ni malas; todas nos ayudan a mejorar Relevo.")
       Spacer(Modifier.height(16.dp))
     }
+    Text("Después de la señal", style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = Relevo.colors.onTile,
+      modifier = Modifier.background(Relevo.colors.peach, Relevo.controlShape).padding(horizontal = 12.dp, vertical = 5.dp))
+    Spacer(Modifier.height(14.dp))
     Row(verticalAlignment = Alignment.CenterVertically) {
-      PictureContent(activityPicture(shownReminder.activity, customActivities), Modifier.size(64.dp).clip(CircleShape), iconSize = 26.dp)
+      PictureContent(activityPicture(shownReminder.activity, customActivities), Modifier.size(64.dp).clip(RoundedCornerShape(18.dp)), iconSize = 24.dp)
       Spacer(Modifier.width(16.dp))
       Column(Modifier.weight(1f)) {
         Text(
@@ -194,11 +215,32 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
     SectionGap()
     Text("¿Qué decidiste?", style = Relevo.type.largeTitle, color = Relevo.colors.ink)
     Spacer(Modifier.height(18.dp))
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-      RelevoButton("Comencé la actividad", { finish("started") }, kind = ButtonKind.Secondary, icon = KitIcon.COMENCE)
-      RelevoButton("La dejé para después", { finish("later") }, kind = ButtonKind.Secondary, icon = KitIcon.DESPUES)
-      RelevoButton("Cambié de idea", { finish("changed") }, kind = ButtonKind.Secondary, icon = KitIcon.CAMBIE)
+    // Las tres respuestas pesan lo mismo: misma tarjeta, mismo color de ficha (lo que decides) y mismo tamaño.
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+      DecisionRow("Comencé la actividad", KitIcon.COMENCE) { finish("started") }
+      DecisionRow("La dejé para después", KitIcon.DESPUES) { finish("later") }
+      DecisionRow("Cambié de idea", KitIcon.CAMBIE) { finish("changed") }
     }
+  }
+}
+
+/** Una respuesta a «¿Qué decidiste?»: tarjeta blanca con su ficha rubor y un toque para responder. */
+@Composable
+private fun DecisionRow(label: String, icon: KitIcon, onClick: () -> Unit) {
+  val colors = Relevo.colors
+  val interaction = remember { androidx.compose.foundation.interaction.MutableInteractionSource() }
+  Row(
+    Modifier.fillMaxWidth().heightIn(min = 64.dp).pressScale(interaction, 0.98f).clip(RoundedCornerShape(20.dp)).background(colors.card)
+      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
+      .padding(start = 12.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
+    verticalAlignment = Alignment.CenterVertically,
+  ) {
+    Box(Modifier.size(40.dp).clip(RoundedCornerShape(12.dp)).background(colors.blush), contentAlignment = Alignment.Center) {
+      RelevoIcon(icon, size = 24.dp, tint = colors.onTile, background = colors.blush)
+    }
+    Spacer(Modifier.width(14.dp))
+    Text(label, style = Relevo.type.callout.copy(fontWeight = FontWeight.SemiBold), color = colors.ink, modifier = Modifier.weight(1f))
+    RelevoIcon(KitIcon.SIGUIENTE, size = 18.dp, tint = colors.graphite, background = colors.card)
   }
 }
 

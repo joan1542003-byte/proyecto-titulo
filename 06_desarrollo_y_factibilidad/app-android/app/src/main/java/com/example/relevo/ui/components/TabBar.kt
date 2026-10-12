@@ -57,8 +57,9 @@ fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifie
   BoxWithConstraints(modifier.fillMaxWidth().height(TabBarHeight).glass(Relevo.controlShape, blur = BarBlur).padding(5.dp)) {
     val segment = maxWidth / items.size
     val offset by animateDpAsState(segment * selected, if (reduce) snap() else Motion.smooth(stiffness = 420f), label = "tab_indicator")
+    val pill = minOf(segment - 10.dp, 96.dp)
     Box(
-      Modifier.offset(x = offset).width(segment).fillMaxHeight().clip(Relevo.controlShape)
+      Modifier.offset(x = offset + (segment - pill) / 2).width(pill).fillMaxHeight().clip(Relevo.controlShape)
         .background(colors.ink),
     )
     Row(Modifier.fillMaxWidth().fillMaxHeight()) {
