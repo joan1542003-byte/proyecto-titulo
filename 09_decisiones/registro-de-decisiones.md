@@ -1551,7 +1551,48 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - El tema oscuro y el momento de instalarla son decisiones del autor.
 - **Documentación:** [Plan del rediseño 3.0](../06_desarrollo_y_factibilidad/app-android/plan-rediseno-3.0-2026-10-11.md) y [Relevo, la app](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM).
 
+## D-129 — Android 3.0: la línea nueva, sin perder nada
+
+- **Fecha:** 2026-10-12.
+- **Estado:** implementada en la app 3.0 (versionCode 43). Revisada en el emulador, no en un teléfono real.
+- **Decisión:**
+  - **Diseño:** aplicar a la app la línea de D-124 a D-128:
+    - la paleta 2, con una ficha de color por papel y el lugar en lima;
+    - Instrument Sans;
+    - los íconos propios con sus tamaños ópticos;
+    - los siete cielos de las actividades;
+    - el aura de la pantalla, con cuatro niveles y la media por defecto;
+    - «Suena» con anillos de tinta;
+    - la marca con degradado «Luz» en la bienvenida y en el ícono de la app.
+  - **Decisiones de implementación:**
+    - Se conserva el tema oscuro como «Noche».
+    - Lo que escribe la persona y la selección van en tinta.
+    - Los botones secundarios son blancos con contorno.
+    - Los campos son cajas blancas.
+    - El halo de la guía del Tag se cambia por una superficie neutra, porque el Tag no emite luz.
+  - **Lo que se mantiene:** el paquete, la firma, las preferencias, la base local, Supabase, las rutas, los textos de la investigación y el consentimiento. Solo se agrega la clave `aura`.
+- **Fundamento:**
+  - El autor pidió implementar la actualización del diseño, perfecta y sin errores.
+  - El plan D-128 fijó qué no puede cambiar para no perder datos.
+- **Verificación:**
+  - Al instalar la 3.0 sobre la 2.30, los datos quedaron idénticos byte a byte.
+  - Con un relevo contando, la actualización lo retomó solo.
+  - Se recorrió un relevo completo.
+  - La versión optimizada abre sin fallos.
+  - Pasaron 85 pruebas unitarias, y la firma es la misma.
+- **Límites:**
+  - No se probó en un teléfono real ni con el Tag.
+  - No conviene instalarla a mitad de la prueba de 21 días.
+  - La memoria, en su capítulo 11, aún describe la identidad de la 2.30.
+- **Documentación:** [Android 3.0](../06_desarrollo_y_factibilidad/app-android/version-3.0-la-linea-nueva-2026-10-12.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — D-129
+
+- **Qué cambió:** se registró D-129.
+- **Cómo estaba antes:** la última decisión era D-128.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-11 — D-127 y D-128
 

@@ -5,23 +5,23 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 /**
- * Paleta del manual de marca D-073, con las superficies de vidrio que el autor pidió para la app
- * (D-083). El azul es solo para lo que escribe la persona o para el foco de un control; nunca decora.
- * El vidrio es un tinte translúcido sobre un desenfoque: sin brillos ni degradados de luz.
+ * Paleta de la línea 3.0 (D-124 a D-128): papel tibio, tinta casi negra y seis fichas claras, una por
+ * papel. Cada color dice siempre lo mismo; la selección va en tinta. El vidrio es un tinte translúcido
+ * sobre un desenfoque, solo en la capa de navegación (D-083).
  */
 @Immutable
 data class RelevoColors(
   /** Papel: fondo general. */
   val paper: Color,
-  /** Tarjeta: el contenido agrupado, apenas más claro que el papel. */
+  /** Tarjeta: el contenido agrupado, más claro que el papel. */
   val card: Color,
-  /** Tinta: texto, acciones y lo impreso. */
+  /** Tinta: texto, acciones, la selección y lo que escribe la persona. */
   val ink: Color,
   /** Texto sobre un botón de tinta. */
   val onInk: Color,
-  /** Grafito: texto secundario (5,71:1 sobre papel). */
+  /** Grafito: texto secundario y el segundo tono de los títulos (5,3:1 sobre papel). */
   val graphite: Color,
-  /** Niebla: rellenos de controles secundarios. */
+  /** Piedra: rellenos de controles secundarios y fichas sin papel. */
   val mist: Color,
   /** Línea de separación. */
   val line: Color,
@@ -29,11 +29,11 @@ data class RelevoColors(
   val gray: Color,
   /** Pizarra: tinta presionada. */
   val slate: Color,
-  /** La voz de la persona: lo que escribe sobre el renglón. */
+  /** Lo que escribe la persona. Desde 3.0 va en tinta, como toda la selección. */
   val voice: Color,
-  /** Azul muy suave para una selección. */
+  /** Fondo suave de una selección. */
   val voiceSoft: Color,
-  /** Solo errores. */
+  /** Solo errores, siempre con ícono y texto. */
   val error: Color,
   /** Tinte del vidrio de la capa de navegación. */
   val glass: Color,
@@ -41,45 +41,70 @@ data class RelevoColors(
   val glassEdge: Color,
   /** Velo detrás de una hoja. */
   val scrim: Color,
+  /** Mantequilla: tu tiempo (las apps y los minutos). */
+  val butter: Color,
+  /** Cielo: tu primer paso. */
+  val sky: Color,
+  /** Lima: el lugar donde empiezas, y donde suena (D-127). */
+  val lime: Color,
+  /** Rubor: lo que decides. */
+  val blush: Color,
+  /** Lila: tu aura, lo que personalizas. */
+  val lilac: Color,
+  /** Durazno: lo que pasó después de la señal. */
+  val peach: Color,
+  /** Tinta de los íconos sobre las fichas de color: igual en claro y en oscuro. */
+  val onTile: Color,
   val isDark: Boolean,
 )
 
+/** Las seis fichas son las mismas en los dos temas: luminosidad OKLCH 0,88–0,91 y tinta encima (12,7:1 a 14,5:1). */
+private val Butter = Color(0xFFF4E496)
+private val Sky = Color(0xFFB3E5FC)
+private val Lime = Color(0xFFC6EEAE)
+private val Blush = Color(0xFFFAC8D9)
+private val Lilac = Color(0xFFDFD1FC)
+private val Peach = Color(0xFFFBD1B3)
+private val TileInk = Color(0xFF141312)
+
 internal val LightColors = RelevoColors(
-  paper = Color(0xFFF2F2EF),
-  card = Color(0xFFFCFCFA),
-  ink = Color(0xFF17181C),
-  onInk = Color(0xFFF2F2EF),
-  graphite = Color(0xFF5B5F68),
-  mist = Color(0xFFE5E5E2),
-  line = Color(0xFFD5D6D8),
-  gray = Color(0xFF9BA0A9),
-  slate = Color(0xFF33363D),
-  voice = Color(0xFF2A4BD7),
-  voiceSoft = Color(0xFFEEF1FD),
+  paper = Color(0xFFF7F4F0),
+  card = Color(0xFFFFFFFF),
+  ink = Color(0xFF141312),
+  onInk = Color(0xFFFFFFFF),
+  graphite = Color(0xFF6B655F),
+  mist = Color(0xFFEEE9E3),
+  line = Color(0xFFE4DED6),
+  gray = Color(0xFFA9A197),
+  slate = Color(0xFF33302C),
+  voice = Color(0xFF141312),
+  voiceSoft = Color(0xFFEEE9E3),
   error = Color(0xFFB3261E),
-  glass = Color(0xFFF7F7F4).copy(alpha = 0.66f),
-  glassEdge = Color(0xFF17181C).copy(alpha = 0.07f),
+  glass = Color(0xFFFFFFFF).copy(alpha = 0.62f),
+  glassEdge = Color(0xFF141312).copy(alpha = 0.06f),
   scrim = Color.Black.copy(alpha = 0.18f),
+  butter = Butter, sky = Sky, lime = Lime, blush = Blush, lilac = Lilac, peach = Peach, onTile = TileInk,
   isDark = false,
 )
 
-/** Tema oscuro del kit: noche de fondo y azul claro para lo que escribe la persona. */
+/** Tema oscuro «Noche» (D-128): se conserva para quien lo eligió, con los mismos papeles. */
 internal val DarkColors = RelevoColors(
-  paper = Color(0xFF111215),
-  card = Color(0xFF1B1C20),
-  ink = Color(0xFFE9EAEC),
-  onInk = Color(0xFF111215),
-  graphite = Color(0xFF9BA0A9),
-  mist = Color(0xFF26282D),
-  line = Color(0xFF30333A),
-  gray = Color(0xFF5B5F68),
-  slate = Color(0xFFC9CBCF),
-  voice = Color(0xFF8CA6FF),
-  voiceSoft = Color(0xFF1C2238),
+  paper = Color(0xFF141312),
+  card = Color(0xFF1F1D1B),
+  ink = Color(0xFFF2EEE9),
+  onInk = Color(0xFF141312),
+  graphite = Color(0xFFABA49C),
+  mist = Color(0xFF2A2724),
+  line = Color(0xFF36322E),
+  gray = Color(0xFF6E6862),
+  slate = Color(0xFFD8D2CB),
+  voice = Color(0xFFF2EEE9),
+  voiceSoft = Color(0xFF2A2724),
   error = Color(0xFFF2B8B5),
-  glass = Color(0xFF1B1C20).copy(alpha = 0.68f),
+  glass = Color(0xFF1F1D1B).copy(alpha = 0.68f),
   glassEdge = Color.White.copy(alpha = 0.09f),
   scrim = Color.Black.copy(alpha = 0.45f),
+  butter = Butter, sky = Sky, lime = Lime, blush = Blush, lilac = Lilac, peach = Peach, onTile = TileInk,
   isDark = true,
 )
 

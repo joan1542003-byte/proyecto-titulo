@@ -72,6 +72,11 @@ import com.example.relevo.ui.components.key
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
+import com.example.relevo.ui.components.AuraBackground
+import com.example.relevo.ui.components.AuraMood
+import com.example.relevo.data.AuraLevel
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import java.util.UUID
 
 /** Una opción de ajuste: qué es, en una línea, y sus valores en un control segmentado. */
@@ -162,11 +167,22 @@ internal fun NoticesScreen(
 @Composable
 internal fun AppearanceScreen(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onBack: () -> Unit) {
   RelevoScreen(title = "Apariencia", onBack = onBack, backLabel = "Perfil") {
-    Panel {
-      Signature("leer", style = Relevo.type.title, animate = false)
-      Text("Sonará junto al sillón después de 40 min.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    // Vista previa: el aura con el nivel elegido, como se ve mientras cuenta un relevo.
+    Box(Modifier.fillMaxWidth().aspectRatio(1.5f).clip(Relevo.panelShape)) {
+      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.PREVIEW, level = settings.aura) {
+        Column(Modifier.align(Alignment.BottomStart).padding(20.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+          Signature("leer", style = Relevo.type.title, animate = false)
+          Text("Sonará junto al sillón después de 40 min.", style = Relevo.type.body, color = Relevo.colors.ink)
+        }
+      }
     }
     SectionGap()
+    SettingPanel(
+      "Tu aura", "Aparece mientras cuenta un relevo. Es de la pantalla: el Tag no se ilumina.",
+      listOf(AuraLevel.OFF.name to "Apagada", AuraLevel.SOFT.name to "Suave", AuraLevel.MEDIUM.name to "Media", AuraLevel.STRONG.name to "Viva"), settings.aura.name,
+      { value -> onChange { copy(aura = AuraLevel.valueOf(value)) } },
+    )
+    Spacer(Modifier.height(14.dp))
     SettingPanel(
       "Tema", "Claro, oscuro o como esté tu teléfono.",
       listOf(ThemeMode.SYSTEM.name to "Automático", ThemeMode.LIGHT.name to "Claro", ThemeMode.DARK.name to "Oscuro"), settings.theme.name,

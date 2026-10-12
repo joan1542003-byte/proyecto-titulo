@@ -4,6 +4,9 @@ import android.content.Context
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
+/** Aura de la pantalla (3.0, D-128): apagada, suave, media o viva. Es de la app; el Tag no emite luz. */
+enum class AuraLevel { OFF, SOFT, MEDIUM, STRONG }
+
 /**
  * Preferencias de S2 y de apariencia. Desde 2.12 (D-087) la app empieza en modo claro y con el resumen
  * semanal encendido. Desde 2.13 (D-088) el aviso semanal vuelve a empezar apagado y la guía de la primera
@@ -21,6 +24,8 @@ data class Settings(
   /** Constancia elegida: veces por semana que fija la persona; 0 es apagada. Variante de la prueba. */
   val constancy: Int = 0,
   val constancyPaused: Boolean = false,
+  /** Desde 3.0. Se guarda en una clave nueva; quien actualiza parte con el aura media. */
+  val aura: AuraLevel = AuraLevel.MEDIUM,
 )
 
 class SettingsStore(context: Context) {
@@ -34,6 +39,7 @@ class SettingsStore(context: Context) {
     acknowledgements = preferences.getBoolean("acknowledgements", true),
     constancy = preferences.getInt("constancy", 0).coerceIn(0, 7),
     constancyPaused = preferences.getBoolean("constancy_paused", false),
+    aura = runCatching { AuraLevel.valueOf(preferences.getString("aura", AuraLevel.MEDIUM.name).orEmpty()) }.getOrDefault(AuraLevel.MEDIUM),
   )
 
   fun save(settings: Settings) {
@@ -45,6 +51,7 @@ class SettingsStore(context: Context) {
       .putBoolean("acknowledgements", settings.acknowledgements)
       .putInt("constancy", settings.constancy.coerceIn(0, 7))
       .putBoolean("constancy_paused", settings.constancyPaused)
+      .putString("aura", settings.aura.name)
       .apply()
   }
 

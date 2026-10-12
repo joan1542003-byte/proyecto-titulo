@@ -49,6 +49,8 @@ import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StatusChip
 import com.example.relevo.ui.components.Tone
 import com.example.relevo.ui.components.appear
+import com.example.relevo.ui.components.SoundRings
+import androidx.compose.foundation.layout.size
 import com.example.relevo.ui.components.rememberReduceMotion
 
 /**
@@ -68,7 +70,13 @@ internal fun SignalScreen(
   var tested by rememberSaveable { mutableStateOf<Boolean?>(null) }
   val picture = activityPicture(reminder.activity, customActivities)
   RelevoScreen(
-    hero = { PictureContent(picture, Modifier.fillMaxSize(), iconSize = 64.dp, wide = true) },
+    // El momento de más color (D-103): el cielo de la actividad, y el sonido en anillos de tinta, sin luz (D-121).
+    hero = {
+      Box(Modifier.fillMaxSize()) {
+        PictureContent(picture, Modifier.fillMaxSize(), iconSize = 64.dp, wide = true)
+        if (sounding) SoundRings(Modifier.align(androidx.compose.ui.BiasAlignment(0f, -0.35f)).size(109.dp))
+      }
+    },
     heroHeight = 320.dp,
     heroPicture = picture,
     bottom = { RelevoButton(if (sounding) "Silenciar y continuar" else "Continuar", onContinue, icon = if (sounding) KitIcon.SILENCIAR else null) },

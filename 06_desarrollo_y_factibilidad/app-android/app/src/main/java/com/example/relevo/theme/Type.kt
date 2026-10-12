@@ -15,27 +15,27 @@ import androidx.compose.ui.unit.sp
 import cl.udp.relevo.R
 
 /**
- * Schibsted Grotesk variable (eje de peso 400–900), en todos los usos (D-073). Cada peso fija el
- * eje `wght` de forma explícita; sin eso, Android dibuja todos los pesos como el regular.
+ * Instrument Sans variable (pesos 400–700, ancho 75–100), la letra de la línea 3.0 (D-128). Cada peso
+ * fija el eje `wght` de forma explícita; sin eso, Android dibuja todos los pesos como el regular. El
+ * logotipo no usa esta letra: es Chillax convertida a trazos (D-125).
  */
 @OptIn(ExperimentalTextApi::class)
-private fun schibsted(weight: FontWeight) =
-  Font(R.font.schibsted_grotesk, weight, variationSettings = FontVariation.Settings(FontVariation.weight(weight.weight)))
+private fun instrument(weight: FontWeight) =
+  Font(R.font.instrument_sans, weight, variationSettings = FontVariation.Settings(FontVariation.weight(weight.weight), FontVariation.width(100f)))
 
-val SchibstedGrotesk = FontFamily(
-  schibsted(FontWeight.Normal),
-  schibsted(FontWeight.Medium),
-  schibsted(FontWeight.SemiBold),
-  schibsted(FontWeight(650)),
-  schibsted(FontWeight.Bold),
+val InstrumentSans = FontFamily(
+  instrument(FontWeight.Normal),
+  instrument(FontWeight.Medium),
+  instrument(FontWeight.SemiBold),
+  instrument(FontWeight.Bold),
 )
 
-/** Peso de titular del manual: 650. */
-val FontWeight.Companion.Title: FontWeight get() = FontWeight(650)
+/** Peso de los titulares de la línea 3.0: 600, con interletrado cerrado. */
+val FontWeight.Companion.Title: FontWeight get() = FontWeight.SemiBold
 
 /**
  * Escala tipográfica. Toma la jerarquía de las apps de iOS (título grande, título, encabezado,
- * texto, nota) con las reglas del manual: titulares en 650 con −2 % y texto de 17 con interlineado
+ * texto, nota): titulares en 600 con −2,5 % a −3 % y texto de 17 con interlineado
  * amplio. Nada va en mayúsculas sostenidas ni con letras espaciadas (D-084): los rótulos se
  * escriben como una frase.
  */
@@ -64,7 +64,7 @@ data class RelevoType(
 private val trim = LineHeightStyle(LineHeightStyle.Alignment.Center, LineHeightStyle.Trim.None)
 
 private fun style(size: Int, lineHeight: Int, weight: FontWeight, tracking: Double = 0.0) = TextStyle(
-  fontFamily = SchibstedGrotesk,
+  fontFamily = InstrumentSans,
   fontSize = size.sp,
   lineHeight = lineHeight.sp,
   fontWeight = weight,
@@ -73,9 +73,9 @@ private fun style(size: Int, lineHeight: Int, weight: FontWeight, tracking: Doub
 )
 
 internal val DefaultType = RelevoType(
-  largeTitle = style(34, 40, FontWeight.Title, -0.02),
-  title = style(28, 34, FontWeight.Title, -0.02),
-  title2 = style(22, 28, FontWeight.SemiBold, -0.01),
+  largeTitle = style(34, 38, FontWeight.Title, -0.03),
+  title = style(28, 32, FontWeight.Title, -0.025),
+  title2 = style(22, 27, FontWeight.SemiBold, -0.015),
   headline = style(17, 22, FontWeight.SemiBold),
   body = style(17, 26, FontWeight.Normal),
   callout = style(16, 23, FontWeight.Normal),

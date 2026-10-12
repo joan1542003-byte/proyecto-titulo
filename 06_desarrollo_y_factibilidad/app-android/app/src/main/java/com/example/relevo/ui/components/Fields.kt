@@ -6,6 +6,8 @@ import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -44,8 +46,8 @@ import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 
 /**
- * El renglón del manual: la línea en tinta y, encima, lo que escribe la persona en azul.
- * En reposo la línea mide 1,5 dp; con foco, 2 dp y azul. El ejemplo va en grafito.
+ * Campo de texto de la línea 3.0: una caja blanca con borde fino y, dentro, lo que escribe la persona
+ * en tinta. Con foco, el borde pasa a tinta. El ejemplo va en grafito y el rótulo, arriba.
  */
 @Composable
 fun RenglonField(
@@ -62,8 +64,8 @@ fun RenglonField(
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val focused by interaction.collectIsFocusedAsState()
-  val lineColor by animateColorAsState(if (focused) colors.voice else colors.ink, Motion.standard(Motion.SHORT), label = "renglon_line")
-  val lineWidth by animateDpAsState(if (focused) 2.dp else 1.5.dp, Motion.standard(Motion.SHORT), label = "renglon_width")
+  val lineColor by animateColorAsState(if (focused) colors.ink else colors.line, Motion.standard(Motion.SHORT), label = "renglon_line")
+  val lineWidth by animateDpAsState(if (focused) 1.5.dp else 1.dp, Motion.standard(Motion.SHORT), label = "renglon_width")
   Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
     Text(label, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Medium), color = colors.graphite)
     BasicTextField(
@@ -75,10 +77,10 @@ fun RenglonField(
       interactionSource = interaction,
       keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = imeAction),
       keyboardActions = KeyboardActions(onAny = { onImeAction() }),
-      modifier = Modifier.fillMaxWidth().heightIn(min = 40.dp).drawBehind {
-        val y = size.height - lineWidth.toPx() / 2
-        drawLine(lineColor, Offset(0f, y), Offset(size.width, y), strokeWidth = lineWidth.toPx())
-      }.padding(bottom = 8.dp),
+      modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)
+        .background(colors.card, RoundedCornerShape(16.dp))
+        .border(lineWidth, lineColor, RoundedCornerShape(16.dp))
+        .padding(horizontal = 16.dp, vertical = 13.dp),
       decorationBox = { inner ->
         Box {
           if (value.isEmpty() && placeholder.isNotEmpty()) Text(placeholder, style = Relevo.type.voice.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Normal), color = colors.graphite)
@@ -119,8 +121,9 @@ fun SearchField(value: String, onValueChange: (String) -> Unit, placeholder: Str
 }
 
 /**
- * La firma con las palabras de la persona: «Vuelve a leer.». Lo escrito aparece sobre el renglón
- * en 450 ms, la única animación de marca; sin animación si Android la desactiva.
+ * La firma con las palabras de la persona: «Vuelve a leer.», en dos tonos como los títulos de la línea
+ * 3.0: el comienzo en grafito y lo que escribió la persona en tinta. Lo escrito aparece en 450 ms; sin
+ * animación si Android la desactiva.
  */
 @Composable
 fun Signature(
@@ -129,7 +132,7 @@ fun Signature(
   style: TextStyle = Relevo.type.signature,
   animate: Boolean = true,
   prefix: String = "Vuelve a ",
-  /** Lo que escribió la persona va en azul; la firma de la marca, en tinta. */
+  /** Lo que escribió la persona va en tinta; el comienzo, en grafito. */
   phraseColor: Color = Relevo.colors.voice,
 ) {
   val colors = Relevo.colors
@@ -140,35 +143,16 @@ fun Signature(
     if (animate && !reduce) progress.animateTo(1f, tween(Motion.WRITING, easing = LinearEasing)) else progress.snapTo(1f)
   }
   val visible = (phrase.length * progress.value).toInt()
-  var layout by remember { mutableStateOf<TextLayoutResult?>(null) }
   val text = buildAnnotatedString {
-    withStyle(SpanStyle(color = colors.ink)) { append(prefix) }
+    withStyle(SpanStyle(color = colors.graphite)) { append(prefix) }
     withStyle(SpanStyle(color = phraseColor)) { append(phrase.take(visible)) }
     withStyle(SpanStyle(color = Color.Transparent)) { append(phrase.drop(visible)) }
     withStyle(SpanStyle(color = colors.ink)) { append(".") }
   }
-  val start = prefix.length
-  val end = start + phrase.length
   Text(
     text,
     style = style,
-    onTextLayout = { layout = it },
-    modifier = modifier.drawBehind {
-      val result = layout ?: return@drawBehind
-      if (phrase.isEmpty()) return@drawBehind
-      val thickness = 0.055f * style.fontSize.toPx()
-      for (line in 0 until result.lineCount) {
-        val lineStart = result.getLineStart(line)
-        val lineEnd = result.getLineEnd(line, visibleEnd = true)
-        val from = maxOf(start, lineStart)
-        val to = minOf(end, lineEnd)
-        if (from >= to) continue
-        val x1 = result.getHorizontalPosition(from, usePrimaryDirection = true)
-        val x2 = result.getBoundingBox(to - 1).right
-        val y = result.getLineBaseline(line) + thickness * 2.2f
-        drawLine(colors.ink, Offset(x1, y), Offset(x2, y), strokeWidth = thickness)
-      }
-    },
+    modifier = modifier,
   )
 }
 

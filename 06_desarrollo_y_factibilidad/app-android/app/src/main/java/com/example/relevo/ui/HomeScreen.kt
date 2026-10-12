@@ -92,6 +92,10 @@ import kotlinx.coroutines.delay
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
+import com.example.relevo.ui.components.AuraBackground
+import com.example.relevo.ui.components.AuraMood
+import com.example.relevo.ui.components.BrandMark
+import androidx.compose.ui.unit.sp
 import java.time.temporal.ChronoUnit
 
 internal class HomeActions(
@@ -168,7 +172,13 @@ internal fun HomeTab(
   RelevoScreen(
     title = title,
     eyebrow = todayLabel(),
-    leading = { Wordmark(height = 20.dp) },
+    leading = {
+      Row(verticalAlignment = Alignment.CenterVertically) {
+        BrandMark(size = 24.dp)
+        Spacer(Modifier.width(8.dp))
+        Wordmark(height = 18.dp)
+      }
+    },
     trailing = { AvatarButton(profile, actions.onProfile) },
     scrollState = scroll,
     bottom = {
@@ -480,11 +490,17 @@ internal fun ActiveScreen(
   val where = soundWhere(reminder)
   RelevoScreen(
     onBack = onBack, backLabel = "Inicio",
+    // Mientras cuenta, el aura respira lenta: está ahí, pero no llama (D-121, D-128). Apagada, es papel.
     hero = {
-      PictureContent(activityPicture(reminder.activity, customActivities), Modifier.fillMaxSize().sharedPhoto(ACTIVE_PHOTO), iconSize = 64.dp, wide = true)
+      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.COUNTING) {
+        Column(Modifier.align(Alignment.Center).padding(top = 44.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+          Text(formatDuration(reminder.observedUsageSeconds), style = Relevo.type.largeTitle.copy(fontSize = 56.sp, lineHeight = 60.sp), color = Relevo.colors.ink)
+          Spacer(Modifier.height(4.dp))
+          Text("de ${formatDuration(reminder.requiredUsageSeconds)} en las apps que elegiste", style = Relevo.type.subhead, color = Relevo.colors.ink)
+        }
+      }
     },
     heroHeight = 300.dp,
-    heroPicture = activityPicture(reminder.activity, customActivities),
     // Con el relevo listo, lo principal es volver; desactivarlo queda como opción secundaria (2.28).
     bottom = {
       RelevoButton("Volver al inicio", onBack)

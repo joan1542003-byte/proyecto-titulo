@@ -77,12 +77,13 @@ fun ListSection(
   }
 }
 
-/** Icono de fila: el trazo del kit, sin baldosa (nada de bloques cuadrados, D-083). */
+/**
+ * Ícono de fila en su ficha (3.0): una cápsula redondeada con el color de su papel (D-124, D-127) y el
+ * ícono en tinta; si el ícono no tiene papel, la ficha es de piedra. Un color, un papel.
+ */
 @Composable
 fun IconTile(icon: KitIcon, tint: Color = Relevo.colors.ink) {
-  Box(Modifier.size(30.dp), contentAlignment = Alignment.Center) {
-    RelevoIcon(icon, size = 22.dp, tint = tint, background = Relevo.colors.card)
-  }
+  RoleTile(icon, size = 30.dp, tint = tint)
 }
 
 /** Fila del kit dentro de una sección: icono, texto, valor y destino. Al presionar se oscurece. */

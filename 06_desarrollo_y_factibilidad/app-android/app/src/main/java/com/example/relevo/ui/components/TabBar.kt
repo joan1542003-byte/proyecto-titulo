@@ -46,8 +46,8 @@ val TabBarHeight = 64.dp
 
 /**
  * Barra de pestañas de iOS 26: una cápsula de vidrio que flota sobre el contenido, separada de los
- * bordes. Una cápsula más clara marca el destino elegido y se desliza al cambiar, sin rebote. Los
- * destinos llevan icono y nombre.
+ * bordes. Desde 3.0, una cápsula de tinta marca el destino elegido (la selección va en tinta) y se
+ * desliza al cambiar, sin rebote. Los destinos llevan ícono y nombre.
  */
 @Composable
 fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifier: Modifier = Modifier) {
@@ -59,12 +59,12 @@ fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifie
     val offset by animateDpAsState(segment * selected, if (reduce) snap() else Motion.smooth(stiffness = 420f), label = "tab_indicator")
     Box(
       Modifier.offset(x = offset).width(segment).fillMaxHeight().clip(Relevo.controlShape)
-        .background(if (colors.isDark) Color.White.copy(alpha = .10f) else colors.ink.copy(alpha = .07f)),
+        .background(colors.ink),
     )
     Row(Modifier.fillMaxWidth().fillMaxHeight()) {
       items.forEachIndexed { index, item ->
         val active = index == selected
-        val tint by animateColorAsState(if (active) colors.ink else colors.graphite, Motion.standard(Motion.SHORT), label = "tab_tint")
+        val tint by animateColorAsState(if (active) colors.onInk else colors.graphite, Motion.standard(Motion.SHORT), label = "tab_tint")
         val bump = remember { Animatable(1f) }
         LaunchedEffect(active) {
           if (active && !reduce) {
@@ -83,7 +83,7 @@ fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifie
           verticalArrangement = Arrangement.Center,
         ) {
           RelevoIcon(
-            item.icon, size = 24.dp, tint = tint, background = Color.Transparent, strokeWidth = if (active) 2.1f else 1.7f,
+            item.icon, size = 24.dp, tint = tint, background = Color.Transparent, strokeWidth = if (active) 1.9f else 1.6f,
             modifier = Modifier.graphicsLayer { scaleX = bump.value; scaleY = bump.value },
           )
           Spacer(Modifier.height(2.dp))

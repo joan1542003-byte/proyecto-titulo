@@ -78,7 +78,7 @@ enum class ButtonKind { Primary, Secondary, Destructive }
 
 /**
  * Botón en cápsula (D-083): 56 dp de alto y ancho completo, o compacto dentro de una tarjeta. El
- * principal va en tinta; el secundario, en un relleno suave, sin bordes. Al presionar se hunde un
+ * principal va en tinta; el secundario, desde 3.0, blanco con un contorno de tinta. Al presionar se hunde un
  * poco, sin ondas ni rebotes; la acción principal se confirma con un toque háptico.
  */
 @Composable
@@ -101,8 +101,9 @@ fun RelevoButton(
     !enabled || muted -> colors.mist to colors.gray
     kind == ButtonKind.Primary -> colors.ink to colors.onInk
     kind == ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .16f else .09f) to colors.error
-    else -> colors.mist to colors.ink
+    else -> colors.card to colors.ink
   }
+  val outlined = kind == ButtonKind.Secondary && enabled && !muted
   val pressedColor = when (kind) {
     ButtonKind.Primary -> colors.slate
     ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .24f else .15f)
@@ -114,6 +115,7 @@ fun RelevoButton(
       .heightIn(min = if (compact) 40.dp else 56.dp)
       .pressScale(interaction, if (compact) 0.95f else 0.97f)
       .clip(Relevo.controlShape).background(background)
+      .then(if (outlined) Modifier.border(1.3.dp, colors.ink, Relevo.controlShape) else Modifier)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button) {
         if (kind == ButtonKind.Primary && !muted) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
         onClick()
@@ -376,15 +378,16 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
   }
 }
 
-/** Opción rápida en cápsula: relleno suave; la elegida, en tinta. */
+/** Opción rápida en cápsula: blanca con un borde fino; la elegida, en tinta. */
 @Composable
 fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
-  val background by animateColorAsState(if (selected) colors.ink else colors.mist, Motion.standard(Motion.SHORT), label = "chip")
+  val background by animateColorAsState(if (selected) colors.ink else colors.card, Motion.standard(Motion.SHORT), label = "chip")
   val content by animateColorAsState(if (selected) colors.onInk else colors.ink, Motion.standard(Motion.SHORT), label = "chip_text")
   Row(
     modifier.heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
+      .then(if (selected) Modifier else Modifier.border(1.dp, colors.line, Relevo.controlShape))
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick).semantics { this.selected = selected }
       .padding(horizontal = 16.dp),
     verticalAlignment = Alignment.CenterVertically,

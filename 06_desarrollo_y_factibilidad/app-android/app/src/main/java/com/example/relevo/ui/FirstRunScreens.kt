@@ -54,29 +54,35 @@ import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StatusChip
 import com.example.relevo.ui.components.Wordmark
 import com.example.relevo.ui.components.appear
+import com.example.relevo.ui.components.AuraBackground
+import com.example.relevo.ui.components.AuraMood
+import com.example.relevo.ui.components.BrandMark
+import androidx.compose.ui.text.style.TextAlign
 import com.example.relevo.ui.components.rememberReduceMotion
 
 /**
- * A1. La foto del comienzo (zapatillas y el parlante junto a la puerta) llega al borde superior y se
- * acerca despacio; la firma se escribe sola. No pide datos ni explica de más.
+ * A1. La marca enfoca sobre el aura (3.0, D-125 a D-128), con el descriptor del proyecto: para una marca
+ * nueva, decir qué hace ayuda a entenderla (Luffarelli et al., 2019). La firma se escribe sola. No pide
+ * datos ni explica de más.
  */
 @Composable
 internal fun WelcomeScreen(onStart: () -> Unit) {
-  val reduce = rememberReduceMotion()
-  val zoom = remember { Animatable(if (reduce) 1f else 1.08f) }
-  LaunchedEffect(Unit) { zoom.animateTo(1f, tween(1600, easing = Motion.Easing)) }
   RelevoScreen(
     hero = {
-      PhotoImage(Photo.PUERTA, Modifier.fillMaxSize().graphicsLayer { scaleX = zoom.value; scaleY = zoom.value }, describe = true)
+      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.CALM) {
+        Column(Modifier.align(Alignment.Center).padding(top = 36.dp, start = 32.dp, end = 32.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+          BrandMark(size = 104.dp, description = "Relevo", modifier = Modifier.appear(0))
+          Spacer(Modifier.height(22.dp))
+          Wordmark(height = 40.dp, modifier = Modifier.appear(1))
+          Spacer(Modifier.height(12.dp))
+          Text("Un recordatorio físico preparado desde el teléfono", style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(2))
+        }
+      }
     },
     heroHeight = 400.dp,
-    heroPicture = Picture.OfPhoto(Photo.PUERTA),
-    heroWide = false,
     bottom = { RelevoButton("Empezar", onStart) },
   ) {
     Spacer(Modifier.height(26.dp))
-    Wordmark(height = 22.dp, modifier = Modifier.appear(0))
-    Spacer(Modifier.height(22.dp))
     Signature("lo que querías hacer", phraseColor = Relevo.colors.ink)
     Spacer(Modifier.height(14.dp))
     Text("Anota algo que quieres hacer. Relevo te lo recuerda mientras todavía puedes hacerlo.",

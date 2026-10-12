@@ -39,7 +39,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.semantics.contentDescription
@@ -50,7 +49,6 @@ import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoSheet
-import com.example.relevo.ui.components.artPalette
 import com.example.relevo.ui.components.rememberReduceMotion
 
 /** Qué muestra el dibujo del Tag en cada paso. */
@@ -130,7 +128,7 @@ private fun StepDots(current: Int, count: Int) {
 }
 
 /**
- * El Tag dibujado: un disco con un botón al centro y una luz pequeña, sobre un halo de colores.
+ * El Tag dibujado: un disco con un botón al centro y su luz pequeña de fábrica, sobre una superficie de piedra.
  * Cada paso anima lo que hay que hacer: mantener 3 s (un arco que se llena), un toque (un anillo que
  * se abre), la conexión con el teléfono o la pila. Con «reducir movimiento», queda quieto.
  */
@@ -149,15 +147,14 @@ private fun TagIllustration(gesture: TagGesture, modifier: Modifier = Modifier) 
   val blink by time.animateFloat(0.25f, 1f, infiniteRepeatable(tween(900), RepeatMode.Reverse), label = "blink")
   val h = if (reduce) 0.7f else hold
   val p = if (reduce) 0.5f else pulse
-  val (c1, c2, c3) = artPalette(KitIcon.OBJETO)
   Canvas(modifier) {
     val w = size.width; val center = Offset(w / 2f, size.height / 2f)
     val linked = gesture == TagGesture.LINK || gesture == TagGesture.ONE_PHONE
     val body = w * (if (linked) 0.22f else 0.30f)
     val button = body * 0.42f
     val line = w * 0.018f
-    // Halo de colores detrás del Tag.
-    drawCircle(Brush.radialGradient(listOf(c1.copy(alpha = .55f), c2.copy(alpha = .35f), c3.copy(alpha = 0f)), center, w * 0.5f), w * 0.5f, center)
+    // Una superficie de piedra detrás del Tag, sin halo: el Tag no emite luz (D-121).
+    drawCircle(colors.mist, w * 0.42f, center)
     val tagCenter = when (gesture) {
       TagGesture.LINK, TagGesture.ONE_PHONE -> Offset(w * 0.30f, center.y)
       TagGesture.BATTERY -> Offset(w * 0.42f, center.y)

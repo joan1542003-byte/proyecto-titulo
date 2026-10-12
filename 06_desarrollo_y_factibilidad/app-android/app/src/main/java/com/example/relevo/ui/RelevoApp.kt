@@ -73,6 +73,7 @@ import com.example.relevo.ui.components.TabBarHeight
 import com.example.relevo.ui.components.TabItem
 import com.example.relevo.ui.components.rememberReduceMotion
 import kotlinx.coroutines.CancellationException
+import com.example.relevo.ui.components.LocalAuraLevel
 import kotlinx.coroutines.launch
 
 internal enum class Route {
@@ -84,7 +85,7 @@ internal enum class Route {
 
 internal enum class Tab(val label: String, val icon: KitIcon) {
   HOME("Inicio", KitIcon.INICIO),
-  ROUTE("Ruta", KitIcon.PRIMER_PASO),
+  ROUTE("Ruta", KitIcon.RUTA),
   PROFILE("Perfil", KitIcon.PERFIL),
 }
 
@@ -110,7 +111,9 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
       else SystemBarStyle.light(android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT)
     activity?.enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
   }
-  RelevoTheme(darkTheme = dark, largeText = settings.largeText) { RelevoNavigation(viewModel) }
+  RelevoTheme(darkTheme = dark, largeText = settings.largeText) {
+    CompositionLocalProvider(LocalAuraLevel provides settings.aura) { RelevoNavigation(viewModel) }
+  }
 }
 
 @OptIn(ExperimentalSharedTransitionApi::class)

@@ -4,7 +4,9 @@ La aplicación Android incluye recursos que no fueron creados para el proyecto. 
 
 | Recurso | Ubicación | Autor | Licencia | Condición |
 | --- | --- | --- | --- | --- |
-| Schibsted Grotesk, fuente variable (desde 2.8) | `app/src/main/res/font/schibsted_grotesk.ttf` | The Schibsted-Grotesk Project Authors | SIL Open Font License 1.1 | Se puede usar, incluir en la app y redistribuir si se acompaña del aviso de licencia y no se vende la fuente por separado. El texto completo está en [`app/licenses/SCHIBSTED_GROTESK_LICENSE.md`](../app/licenses/SCHIBSTED_GROTESK_LICENSE.md) y proviene del [repositorio oficial](https://github.com/schibsted/schibsted-grotesk). |
+| Instrument Sans, fuente variable (desde 3.0) | `app/src/main/res/font/instrument_sans.ttf` | The Instrument Sans Project Authors | SIL Open Font License 1.1 | Se puede usar, incluir en la app y redistribuir con el aviso de licencia y sin venderla por separado. El texto está en [`app/licenses/INSTRUMENT_SANS_LICENSE.md`](../app/licenses/INSTRUMENT_SANS_LICENSE.md) y proviene del [repositorio de Google Fonts](https://github.com/google/fonts/tree/main/ofl/instrumentsans), descargado el 12 de octubre de 2026 con permiso del autor. |
+| Logotipo «relevo» (desde 3.0) | `app/src/main/res/drawable/relevo_wordmark.xml` | Trazos hechos para el proyecto con Chillax Semibold, de Indian Type Foundry | ITF Free Font License | Permite el uso comercial; un logotipo hecho con la letra no es obra derivada y pertenece a quien lo crea. La app lleva solo los trazos, no la fuente (D-125). |
+| Schibsted Grotesk, fuente variable (2.8 a 2.30) | Ya no está en la app | The Schibsted-Grotesk Project Authors | SIL Open Font License 1.1 | Se puede usar, incluir en la app y redistribuir si se acompaña del aviso de licencia y no se vende la fuente por separado. El texto completo está en [`app/licenses/SCHIBSTED_GROTESK_LICENSE.md`](../app/licenses/SCHIBSTED_GROTESK_LICENSE.md) y proviene del [repositorio oficial](https://github.com/schibsted/schibsted-grotesk). |
 | Seis fotografías (desde 2.8) | `app/src/main/res/drawable-nodpi/`, ver la tabla siguiente | Ver la tabla siguiente | CC0 1.0, dedicación al dominio público | Se pueden usar, modificar y redistribuir sin pedir permiso ni atribuir. Los créditos se dan por transparencia. |
 | Emoji Noto 3D de Google, 88 imágenes (24 desde 2.9, 60 desde 2.10 y 4 caras desde 2.12: 1f604, 1f610, 1f615 y 1f61e, para las reacciones) | `app/src/main/res/drawable-nodpi/emoji_*.png` | Google | SIL Open Font License 1.1 | Se pueden usar, modificar y redistribuir con la app si se incluye el aviso de licencia y no se venden por separado. Se redujeron de 512 a 256 px y se recomprimieron sin pérdida; siguen bajo la misma licencia. El texto está en [`app/licenses/NOTO_EMOJI_LICENSE.md`](../app/licenses/NOTO_EMOJI_LICENSE.md). |
 | Source Sans 3, cuatro pesos (hasta 2.7) | Ya no está en la app | Adobe | SIL Open Font License 1.1 | Antecedente. Su aviso se conserva en [`app/licenses/SOURCE_SANS_LICENSE.md`](../app/licenses/SOURCE_SANS_LICENSE.md) porque los APK anteriores la incluyen. |
@@ -37,6 +39,12 @@ Se obtuvieron mediante Openverse el 25 de septiembre de 2026 para el [estudio de
 Las otras quince fotografías de `drawable-nodpi` no son obras de terceros: salen de doce imágenes generadas con IA para el proyecto entre las versiones 2.3 y 2.6; tres de ellas se usan en dos encuadres. Hasta 2.7 se usaban como PNG; esos originales se conservan en [`assets-explorados/fotos-app-hasta-2.7`](../assets-explorados/fotos-app-hasta-2.7). En 2.8 se recortaron y trataron con la receta de imagen de D-073. Su procedencia se registra en [assets-explorados](../assets-explorados/README.md) y en la [trazabilidad del uso de IA](../../../00_gobernanza/trazabilidad-uso-ia-2026-09-23.md). Deben presentarse como imágenes generadas, no como fotografías documentales.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — Versión 3.0
+
+- **Qué cambió:** Instrument Sans pasa a ser la fuente de la app y se registra el logotipo a trazos de Chillax; Schibsted Grotesk queda como antecedente.
+- **Cómo estaba antes:** la fuente de la app era Schibsted Grotesk.
+- **Por qué:** la versión 3.0 aplica la línea nueva (D-129).
 
 ### 2026-09-29 — Cuatro caras para las reacciones
 

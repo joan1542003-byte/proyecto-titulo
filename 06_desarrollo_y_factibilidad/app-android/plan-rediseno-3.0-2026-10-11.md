@@ -1,6 +1,6 @@
 # Plan del rediseño 3.0: la app con la línea nueva, sin perder nada
 
-**Fecha:** 11 de octubre de 2026. **Decisión:** D-128, plan propuesto y pendiente de la aprobación del autor. **Diseño de referencia:** [«Relevo, la app»](../../10_recursos_visuales/rediseno-app-2026-10-11/relevo-la-app.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM). **Parte de:** la app 2.30 (versionCode 42).
+**Fecha:** 11 de octubre de 2026. **Decisión:** D-128. **Estado:** implementado en la [versión 3.0](version-3.0-la-linea-nueva-2026-10-12.md) el 12 de octubre de 2026 (D-129). **Diseño de referencia:** [«Relevo, la app»](../../10_recursos_visuales/rediseno-app-2026-10-11/relevo-la-app.html), también publicada como [página privada en claude.ai](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM). **Parte de:** la app 2.30 (versionCode 42).
 
 ## Pedido
 
@@ -117,6 +117,12 @@ Cada fase termina con la app compilada, las pruebas unitarias en verde y captura
 - Hay que registrar la versión en el README de la app, en el panel de administración (última versión) y en el traspaso.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — Implementado
+
+- **Qué cambió:** el plan queda implementado en la versión 3.0.
+- **Cómo estaba antes:** era una propuesta pendiente de aprobación.
+- **Por qué:** el autor pidió implementarlo.
 
 ### 2026-10-11 — Creación
 
