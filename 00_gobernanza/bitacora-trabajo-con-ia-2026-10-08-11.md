@@ -21,6 +21,7 @@
 | 11 oct. | Texto académico, rediseño y el lugar | El fundamento del color en el registro de la memoria. Además: 25 pantallas de la app con la línea nueva, el logo con degradado «Luz» y el lugar en vez del Tag como tercera luz. Se sumó el plan para actualizar a la 3.0 sin perder datos ([documento 41](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md); [lámina](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM); [plan](../06_desarrollo_y_factibilidad/app-android/plan-rediseno-3.0-2026-10-11.md)). | D-127 y D-128 |
 | 12 oct. | Android 3.0 | La línea nueva en la app, sin perder datos: se instaló sobre la 2.30 con datos y quedaron idénticos byte a byte; un relevo activo siguió contando tras actualizar ([versión 3.0](../06_desarrollo_y_factibilidad/app-android/version-3.0-la-linea-nueva-2026-10-12.md)). | D-129 |
 | 12 oct. | Android 3.1 | El autor notó que la 3.0 no se parecía a la lámina. Se recompuso cada pantalla según la lámina: tarjetas sueltas, cápsulas sobre los cielos, el aura y el cielo a pantalla completa, la ruta en escalera y el perfil en una tarjeta. Mismos datos ([versión 3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md)). | D-130 |
+| 12 oct. | Android 3.2 | La 3.1 tampoco se parecía lo suficiente. La lámina se capturó a la escala del teléfono y se comparó pantalla por pantalla. Se rehicieron las piezas con sus medidas, las ideas se ordenaron por familia de color y se aclararon los textos que el autor encontró raros ([versión 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md)). | D-131 |
 | 11 oct. | Documentación | El autor preguntó si todo estaba documentado. Faltaban esta bitácora, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual; se completaron. | D-121 |
 
 ## 2. Cómo se usó la IA
@@ -47,6 +48,7 @@
   - Para los cielos se midió el contraste del texto en capturas, sobre el píxel más desfavorable del fondo. El texto blanco quedaba entre 2,6:1 y 3,7:1 en los cielos claros; con la cápsula blanca sube a entre 15:1 y 17,8:1.
 - **Probar sin ensuciar los datos:** antes de probar la 3.0 se respaldó la clave de firma y los datos del emulador. Se trabajó sin conexión y, al terminar, se restauró el respaldo. Se comprobó que los datos quedaran idénticos (MD5) y que no se escribieran archivos en Documentos/Relevo. Durante la prueba apareció un relevo activo que no se había pedido; se descartó al restaurar.
 - **Error de la IA en la 3.0:** aplicó la línea nueva a la superficie (colores, letra, íconos y cielos) y dejó la composición de la 2.30. Lo notó el autor, no la IA. En la 3.1 cada pantalla del emulador se comparó con la lámina, con capturas, antes de darla por terminada.
+- **Comparar con la referencia, no de memoria:** en la 3.1 las pantallas se compararon con la lámina de memoria y quedaron diferencias que el autor sí vio. En la 3.2 la lámina se capturó a 411 dp con Chrome sin ventana y cada captura se puso junto a la del emulador. Así aparecieron la escala de 1,5, las fichas sin íconos, el botón que tapaba contenido y los colores salpicados.
 - **Buscar evidencia local antes de suponerla:** se buscó un estudio de color hecho en Chile y no se encontró. Se usó una encuesta que incluye a Chile, presentada por la UNAM; por ser un boletín de prensa se marcó como apoyo y no como prueba. Una cifra del estudio de Medellín se corrigió antes de publicar: el azul tiene cerca de 75 % de aceptación, pero no es el color preferido.
 - **El logo se probó en lo difícil:** la primera marca, con las luces mezcladas, dejaba un centro turbio; la elegida usa cortes planos. Se compararon 20 letras antes de elegir Chillax, y la fuente quedó fuera del repositorio.
 - **Datos honestos:** las cifras de las piezas («3 de 5», «12 de 30 min», los minutos por app) son ejemplos de interfaz, no resultados. La única cifra real es la de las 53 respuestas de la encuesta (D-092). El saludo de la pantalla de inicio ya no usa un nombre de persona.
@@ -75,6 +77,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — Android 3.2
+
+- **Qué cambió:** se sumaron la 3.2 y el método de comparación con la lámina.
+- **Cómo estaba antes:** terminaba en la 3.1.
+- **Por qué:** pedidos del autor (D-131).
 
 ### 2026-10-12 — Android 3.1
 

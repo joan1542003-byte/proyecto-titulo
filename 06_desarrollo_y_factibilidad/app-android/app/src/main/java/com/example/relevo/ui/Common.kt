@@ -32,6 +32,10 @@ import com.example.relevo.domain.StudyCondition
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.Photo
 import com.example.relevo.ui.components.Picture
+import com.example.relevo.ui.components.Sky
+import com.example.relevo.ui.components.SkyOrder
+import com.example.relevo.ui.components.pictureIcon
+import com.example.relevo.ui.components.skyFor
 import java.text.Normalizer
 import java.time.DayOfWeek
 import java.time.Instant
@@ -208,6 +212,35 @@ internal fun iconForActivity(name: String, custom: List<CustomActivity>): KitIco
     ?: (custom.firstOrNull { it.name.equals(trimmed, ignoreCase = true) }?.let { (Picture.parse(it.icon) as? Picture.OfIcon)?.icon })
     ?: KitIcon.ACTIVIDAD
 }
+
+/**
+ * Variante del cielo de una actividad (3.2, D-131): las ideas de una misma familia toman variantes
+ * distintas en orden, para que dos fichas del mismo color nunca se vean idénticas; las demás, una fija
+ * según su nombre. Es la misma en todas las pantallas.
+ */
+internal fun activityVariant(name: String): Int {
+  val trimmed = name.trim()
+  val index = activityIdeas.indexOfFirst { it.activity.equals(trimmed, ignoreCase = true) }
+  if (index >= 0) {
+    val sky = skyFor(pictureIcon(activityIdeas[index].picture))
+    return activityIdeas.take(index).count { skyFor(pictureIcon(it.picture)) == sky } % 4
+  }
+  return (plain(trimmed).hashCode() and 0x7fffffff) % 4
+}
+
+/** El ícono que da el cielo de una actividad: el de su imagen. */
+@Composable
+internal fun activityIcon(name: String, custom: List<CustomActivity>): KitIcon = pictureIcon(activityPicture(name, custom))
+
+/**
+ * Ideas para Inicio (3.2): una por familia, en el orden de los cielos (moverse, leer, crear, jugar, la casa
+ * y descansar), para que los colores no se repitan ni se mezclen.
+ */
+internal val homeIdeas: List<ActivityIdea> = SkyOrder.mapNotNull { sky -> activityIdeas.firstOrNull { skyFor(pictureIcon(it.picture)) == sky } }.take(6)
+
+/** Ideas agrupadas por familia, en el orden de los cielos, para «¿Qué quieres hacer?». */
+internal val ideasByFamily: List<Pair<Sky, List<ActivityIdea>>> =
+  SkyOrder.map { sky -> sky to activityIdeas.filter { skyFor(pictureIcon(it.picture)) == sky } }.filter { it.second.isNotEmpty() }
 
 /** Clave estable para que la foto de una actividad viaje entre pantallas. */
 internal fun photoKey(source: String, name: String) = "$source:${name.trim().lowercase(spanish)}"

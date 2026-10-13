@@ -78,14 +78,22 @@ import com.example.relevo.data.AuraLevel
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import java.util.UUID
+import com.example.relevo.ui.components.BackStyle
+import com.example.relevo.ui.components.Gap
+import com.example.relevo.ui.components.RowShape
+import com.example.relevo.ui.components.SkyCard
+import com.example.relevo.ui.components.SkySquare
+import com.example.relevo.ui.components.ToggleRow
+import com.example.relevo.ui.components.TwoColumnGrid
+import com.example.relevo.ui.components.pictureIcon
 
 /** Una opción de ajuste: qué es, en una línea, y sus valores en un control segmentado. */
 @Composable
 private fun SettingPanel(title: String, detail: String, options: List<Pair<String, String>>, selected: String, onSelect: (String) -> Unit, extra: (@Composable () -> Unit)? = null) {
-  Panel {
+  Panel(Modifier.clip(RowShape)) {
     Text(title, style = Relevo.type.headline, color = Relevo.colors.ink)
     Text(detail, style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    Spacer(Modifier.height(6.dp))
+    Spacer(Modifier.height(4.dp))
     SegmentedControl(options, selected, { it?.let(onSelect) }, allowDeselect = false)
     extra?.invoke()
   }
@@ -105,95 +113,74 @@ internal fun NoticesScreen(
   var autoUnavailable by remember { mutableStateOf(false) }
   RelevoScreen(title = "Avisos y resúmenes", onBack = onBack, backLabel = "Perfil") {
     // D-095: repite el último relevo cada vez que se abre una de sus apps.
-    SettingPanel(
-      "Activación automática", "Cuando abras las apps de tu último relevo, Relevo empieza a contar solo.",
-      listOf("no" to "No", "si" to "Sí"), if (autoMode) "si" else "no",
-      { value -> autoUnavailable = !onAutoMode(value == "si") },
-    ) {
-      if (autoMode && lastReminder != null) {
-        Spacer(Modifier.height(4.dp))
-        Text(
-          "${lastReminder.activity} · ${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatDuration(lastReminder.requiredUsageSeconds)}",
-          style = Relevo.type.subhead, color = Relevo.colors.voice,
-        )
-      }
-      if (autoUnavailable && !autoMode) {
-        Text("Primero prepara y termina un relevo: la activación automática repite ese.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
-      }
-      Text(
-        "Mientras esté encendida, Relevo mira qué app tienes abierta —solo su nombre— para saber cuándo empezar. Después de cada relevo espera 30 minutos antes de activarse otra vez.",
-        style = Relevo.type.footnote, color = Relevo.colors.graphite,
-      )
-    }
-    Spacer(Modifier.height(14.dp))
-    SettingPanel(
-      "Resumen semanal", "Lo que preparaste esta semana, en tu perfil.",
-      listOf("no" to "No", "si" to "Sí"), if (settings.weeklySummary) "si" else "no",
-      { value -> onChange { copy(weeklySummary = value == "si") } },
-    )
-    Spacer(Modifier.height(14.dp))
-    SettingPanel(
-      "Aviso semanal", "Si pasas una semana sin abrir Relevo, te avisa una vez.",
-      listOf("nunca" to "No", "semanal" to "Sí"), if (settings.returnNotice) "semanal" else "nunca",
-      { value ->
-        if (value == "semanal") requestNotificationPermission(context)
-        onChange { copy(returnNotice = value == "semanal") }
+    ToggleRow("Activación automática", autoMode, { on -> autoUnavailable = !onAutoMode(on) }, icon = KitIcon.ESPERANDO,
+      subtitle = "Cuando abras las apps de tu último relevo, empieza a contar solo.")
+    SettingNote(
+      buildList {
+        if (autoMode && lastReminder != null) add("${lastReminder.activity} · ${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatDuration(lastReminder.requiredUsageSeconds)}")
+        if (autoUnavailable && !autoMode) add("Primero prepara y termina un relevo: la activación automática repite ese.")
+        add("Mientras esté encendida, Relevo mira qué app tienes abierta —solo su nombre— para saber cuándo empezar. Después de cada relevo espera 30 minutos antes de activarse otra vez.")
       },
     )
-    Spacer(Modifier.height(14.dp))
-    SettingPanel(
-      "Mensaje después de responder", "Unas palabras cuando cuentas qué decidiste.",
-      listOf("solo" to "No", "con" to "Sí"), if (settings.acknowledgements) "con" else "solo",
-      { value -> onChange { copy(acknowledgements = value == "con") } },
-    )
-    Spacer(Modifier.height(14.dp))
-    SettingPanel(
-      "Veces por semana", "Cuántas veces por semana quieres hacerlo. Aparece en tu resumen semanal.",
-      listOf("no" to "No", "si" to "Sí"), if (settings.constancy > 0) "si" else "no",
-      { value -> onChange { copy(constancy = if (value == "si") constancy.coerceAtLeast(3) else 0, constancyPaused = false) } },
-    ) {
-      if (settings.constancy > 0) {
-        Spacer(Modifier.height(8.dp))
+    Spacer(Modifier.height(Gap.block))
+    Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
+      ToggleRow("Resumen semanal", settings.weeklySummary, { on -> onChange { copy(weeklySummary = on) } }, icon = KitIcon.AVANCE,
+        subtitle = "Lo que preparaste esta semana, en tu perfil.")
+      ToggleRow("Aviso semanal", settings.returnNotice, { on ->
+        if (on) requestNotificationPermission(context)
+        onChange { copy(returnNotice = on) }
+      }, icon = KitIcon.AVISOS, subtitle = "Si pasas una semana sin abrir Relevo, te avisa una vez.")
+      ToggleRow("Mensaje después de responder", settings.acknowledgements, { on -> onChange { copy(acknowledgements = on) } }, icon = KitIcon.COMENTARIO,
+        subtitle = "Unas palabras cuando cuentas qué decidiste.")
+      ToggleRow("Veces por semana", settings.constancy > 0, { on -> onChange { copy(constancy = if (on) constancy.coerceAtLeast(3) else 0, constancyPaused = false) } },
+        icon = KitIcon.CALENDARIO, subtitle = "Cuántas veces por semana quieres hacerlo. Aparece en tu resumen.")
+    }
+    if (settings.constancy > 0) {
+      Spacer(Modifier.height(Gap.list))
+      Panel {
         CountStepper(settings.constancy, { value -> onChange { copy(constancy = value) } }, 1..7, "${settings.constancy} ${if (settings.constancy == 1) "vez" else "veces"} por semana")
         PlainAction(if (settings.constancyPaused) "Retomar" else "Pausar", { onChange { copy(constancyPaused = !constancyPaused) } },
           icon = if (settings.constancyPaused) KitIcon.REPRODUCIR else KitIcon.PAUSAR)
       }
     }
-    Spacer(Modifier.height(10.dp))
+  }
+}
+
+/** Notas bajo un ajuste, en grafito y con el margen de las filas. */
+@Composable
+private fun SettingNote(lines: List<String>) {
+  Column(Modifier.padding(start = 6.dp, end = 6.dp, top = 10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    lines.forEach { Text(it, style = Relevo.type.footnote, color = Relevo.colors.graphite) }
   }
 }
 
 /** Apariencia: tema y tamaño del texto, con una vista previa que cambia al instante. */
 @Composable
 internal fun AppearanceScreen(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onBack: () -> Unit) {
-  RelevoScreen(title = "Apariencia", onBack = onBack, backLabel = "Perfil") {
+  RelevoScreen(title = "Apariencia y aura", onBack = onBack, backLabel = "Perfil", backStyle = BackStyle.Text) {
     // Vista previa: el aura con el nivel elegido, como se ve mientras cuenta un relevo.
-    Box(Modifier.fillMaxWidth().aspectRatio(1.5f).clip(Relevo.panelShape)) {
-      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.PREVIEW, level = settings.aura) {
-        Column(Modifier.align(Alignment.BottomStart).padding(20.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-          Signature("leer", style = Relevo.type.title, animate = false)
-          Text("Sonará junto al sillón después de 40 min.", style = Relevo.type.body, color = Relevo.colors.ink)
-        }
-      }
+    Box(Modifier.fillMaxWidth().aspectRatio(1.6f).clip(androidx.compose.foundation.shape.RoundedCornerShape(24.dp))) {
+      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.PREVIEW, level = settings.aura)
     }
-    SectionGap()
-    SettingPanel(
-      "Tu aura", "Aparece mientras cuenta un relevo. Es de la pantalla: el Tag no se ilumina.",
-      listOf(AuraLevel.OFF.name to "Apagada", AuraLevel.SOFT.name to "Suave", AuraLevel.MEDIUM.name to "Media", AuraLevel.STRONG.name to "Viva"), settings.aura.name,
-      { value -> onChange { copy(aura = AuraLevel.valueOf(value)) } },
-    )
-    Spacer(Modifier.height(14.dp))
+    Spacer(Modifier.height(Gap.block))
+    ToggleRow("Tu aura", settings.aura != AuraLevel.OFF, { on -> onChange { copy(aura = if (on) AuraLevel.MEDIUM else AuraLevel.OFF) } }, icon = KitIcon.AURA,
+      subtitle = "Aparece mientras cuenta un relevo. Es de la pantalla: el Tag no se ilumina.")
+    if (settings.aura != AuraLevel.OFF) {
+      Spacer(Modifier.height(Gap.list))
+      SettingPanel(
+        "Intensidad", "Cuánto color tiene el aura.",
+        listOf(AuraLevel.SOFT.name to "Suave", AuraLevel.MEDIUM.name to "Media", AuraLevel.STRONG.name to "Viva"), settings.aura.name,
+        { value -> onChange { copy(aura = AuraLevel.valueOf(value)) } },
+      )
+    }
+    Spacer(Modifier.height(Gap.list))
     SettingPanel(
       "Tema", "Claro, oscuro o como esté tu teléfono.",
-      listOf(ThemeMode.SYSTEM.name to "Automático", ThemeMode.LIGHT.name to "Claro", ThemeMode.DARK.name to "Oscuro"), settings.theme.name,
+      listOf(ThemeMode.LIGHT.name to "Claro", ThemeMode.DARK.name to "Oscuro", ThemeMode.SYSTEM.name to "Automático"), settings.theme.name,
       { value -> onChange { copy(theme = ThemeMode.valueOf(value)) } },
     )
-    Spacer(Modifier.height(14.dp))
-    SettingPanel(
-      "Tamaño del texto", "Se suma al tamaño que usas en el teléfono.",
-      listOf("normal" to "Estándar", "grande" to "Grande"), if (settings.largeText) "grande" else "normal",
-      { value -> onChange { copy(largeText = value == "grande") } },
-    )
+    Spacer(Modifier.height(Gap.list))
+    ToggleRow("Letra grande", settings.largeText, { on -> onChange { copy(largeText = on) } }, subtitle = "Se suma al tamaño que usas en el teléfono.")
   }
 }
 
@@ -234,8 +221,7 @@ internal fun HistoryScreen(history: List<HistoryEntry>, customActivities: List<C
           ListRow(
             entry.activity,
             subtitle = listOfNotNull(entry.appLabel.takeIf { it.isNotBlank() }, formatDuration(entry.seconds), outcomeLabel(entry.outcome) ?: if (entry.signalDelivered) "Sonó" else "Terminó antes de sonar").joinToString(" · "),
-            leading = { PictureContent(activityPicture(entry.activity, customActivities), Modifier.size(44.dp).clip(CircleShape), iconSize = 20.dp) },
-            leadingWidth = 44.dp,
+            leading = { SkySquare(activityIcon(entry.activity, customActivities), variant = activityVariant(entry.activity)) },
             trailing = { RelevoIcon(outcomeIcon(entry.outcome), size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) },
           )
         }
@@ -261,27 +247,21 @@ internal fun ActivitiesScreen(
   var shown by rememberSaveable { mutableStateOf<String?>(null) }
   RelevoScreen(
     title = "Tus actividades",
-    subtitle = "Lo que haces seguido, listo para preparar en un toque.",
+    titleSoft = "Lo que haces seguido, listo en un toque.",
     onBack = onBack, backLabel = "Perfil",
     bottom = { RelevoButton("Crear una actividad", onNew, icon = KitIcon.AGREGAR) },
   ) {
     if (customActivities.isEmpty()) {
       Panel {
-        Box(Modifier.size(48.dp).clip(CircleShape).background(Relevo.colors.mist), contentAlignment = Alignment.Center) {
-          RelevoIcon(KitIcon.ACTIVIDAD, size = 24.dp, background = Relevo.colors.mist)
-        }
         Text("Todavía no tienes actividades", style = Relevo.type.headline, color = Relevo.colors.ink)
         Text("Anota qué haces, cómo empiezas y dónde. Después la encuentras en Inicio y al preparar un relevo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
       }
     } else {
-      ListSection {
-        customActivities.forEach { activity ->
-          ListRow(
-            activity.name, subtitle = startSentence(activity.firstStep, activity.place),
-            leading = { PictureContent(Picture.parse(activity.icon) ?: pictureForActivity(activity.name, emptyList()), Modifier.size(48.dp).clip(CircleShape), iconSize = 22.dp) },
-            leadingWidth = 48.dp, chevron = true, onClick = { shown = activity.id },
-          )
-        }
+      TwoColumnGrid(customActivities) { activity, cell ->
+        SkyCard(
+          activity.name, pictureIcon(Picture.parse(activity.icon) ?: pictureForActivity(activity.name, emptyList())), cell,
+          aspect = 1.05f, onClick = { shown = activity.id }, variant = activityVariant(activity.name),
+        )
       }
     }
   }
@@ -289,7 +269,7 @@ internal fun ActivitiesScreen(
   if (selected != null) {
     RelevoSheet(onDismiss = { shown = null }, scrollable = false) {
       Row(verticalAlignment = Alignment.CenterVertically) {
-        PictureContent(Picture.parse(selected.icon) ?: pictureForActivity(selected.name, emptyList()), Modifier.size(64.dp).clip(CircleShape), iconSize = 28.dp)
+        SkySquare(pictureIcon(Picture.parse(selected.icon) ?: pictureForActivity(selected.name, emptyList())), size = 64.dp, radius = 18.dp, variant = activityVariant(selected.name))
         Spacer(Modifier.width(16.dp))
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
           Text(selected.name, style = Relevo.type.title2, color = Relevo.colors.ink)
@@ -342,23 +322,16 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
       })
     },
   ) {
-    val interaction = remember { MutableInteractionSource() }
-    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-      PictureContent(
-        picture,
-        Modifier.size(104.dp).clip(CircleShape).clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Cambiar la imagen") { picking = true },
-        iconSize = 40.dp,
-      )
-      Spacer(Modifier.height(8.dp))
-      PlainAction("Cambiar la imagen", { picking = true })
-    }
-    SectionGap()
+    SkyCard(name.ifBlank { "Tu actividad" }, pictureIcon(picture), aspect = 1.6f, largeLabel = true, onClick = { picking = true }, description = "Cambiar la imagen", variant = activityVariant(name))
+    Spacer(Modifier.height(4.dp))
+    Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { PlainAction("Cambiar la imagen", { picking = true }) }
+    Spacer(Modifier.height(Gap.block))
     RenglonField("Actividad", name, { name = it.take(60) }, placeholder = "Ej.: practicar guitarra")
     if (duplicate) { Spacer(Modifier.height(6.dp)); Text("Ya tienes una actividad con ese nombre.", style = Relevo.type.footnote, color = Relevo.colors.error) }
-    Spacer(Modifier.height(20.dp))
-    RenglonField("Para empezar", first, { first = it.take(120) }, placeholder = "Ej.: sacar la guitarra del estuche")
-    Spacer(Modifier.height(20.dp))
-    RenglonField("Dónde empiezas", place, { place = it.take(120) }, placeholder = "Ej.: junto a la guitarra")
+    Spacer(Modifier.height(Gap.list))
+    RenglonField("Para empezar", first, { first = it.take(120) }, placeholder = "Ej.: sacar la guitarra del estuche", icon = KitIcon.PRIMER_PASO)
+    Spacer(Modifier.height(Gap.list))
+    RenglonField("Dónde empiezas", place, { place = it.take(120) }, placeholder = "Ej.: junto a la guitarra", icon = KitIcon.LUGAR)
     if (initial != null) {
       SectionGap()
       RelevoButton("Borrar la actividad", { confirmDelete = true }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)

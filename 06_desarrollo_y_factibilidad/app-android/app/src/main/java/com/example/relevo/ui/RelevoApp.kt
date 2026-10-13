@@ -1,5 +1,7 @@
 package com.example.relevo.ui
 
+import com.example.relevo.ui.components.edgeFade
+import androidx.compose.foundation.layout.height
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.BackHandler
@@ -263,6 +265,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     onWeekReview = { push(Route.WEEK) },
     onClosing = { push(Route.CLOSING) },
     onDismissReturn = viewModel::dismissReturn,
+    onNotices = { push(Route.NOTICES) },
   )
 
   val rootHaze = rememberHazeState()
@@ -332,6 +335,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                       replace(listOf(Route.TABS, Route.PREPARE))
                     },
                     onLater = { viewModel.logScreen("primer_relevo_despues"); tab = Tab.HOME; replace(listOf(Route.TABS)) },
+                    firstStep = step?.firstStep.orEmpty(),
+                    place = step?.place.orEmpty(),
                   )
                 }
                 Route.TABS -> TabsHost(
@@ -543,9 +548,11 @@ private fun TabsHost(tab: Tab, reselect: Int, onTab: (Tab) -> Unit, content: @Co
       }
     }
     CompositionLocalProvider(LocalGlassSource provides tabHaze) {
+      // Bajo la barra, el papel cubre lo que pasa detrás para que no se mezcle con los destinos.
+      Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().navigationBarsPadding().height(TabBarHeight + 34.dp).edgeFade(fromTop = false))
       TabBar(
         Tab.entries.map { TabItem(it.label, it.icon) }, Tab.entries.indexOf(tab), { onTab(Tab.entries[it]) },
-        Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(start = 22.dp, end = 22.dp, bottom = 12.dp),
+        Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(start = 20.dp, end = 20.dp, bottom = 10.dp),
       )
     }
   }

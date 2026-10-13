@@ -73,18 +73,26 @@ private object Grain {
   val brush: ShaderBrush by lazy { ShaderBrush(ImageShader(image, TileMode.Repeated, TileMode.Repeated)) }
 }
 
-/** Pinta un cielo en el área dada: su color de base, sus luces y el grano. */
-internal fun DrawScope.drawSky(sky: Sky, grain: Boolean = true) {
+/**
+ * Pinta un cielo en el área dada: su color de base, sus luces y el grano. [variant] (0 a 3) refleja las
+ * luces a lo ancho o a lo alto (3.2): dos actividades de la misma familia comparten el color, pero no el
+ * mismo cielo, así una cuadrícula no repite fichas idénticas.
+ */
+internal fun DrawScope.drawSky(sky: Sky, grain: Boolean = true, variant: Int = 0) {
   val w = size.width
   val h = size.height
   val m = maxOf(w, h)
+  val flipX = variant and 1 == 1
+  val flipY = variant and 2 == 2
   drawRect(sky.base)
   sky.blobs.forEach { blob ->
     val c = blob.color
+    val x = if (flipX) 1f - blob.x else blob.x
+    val y = if (flipY) 1f - blob.y else blob.y
     drawRect(
       Brush.radialGradient(
         0f to c.copy(alpha = .95f * c.alpha), .55f to c.copy(alpha = .45f * c.alpha), 1f to c.copy(alpha = 0f),
-        center = Offset(blob.x * w, blob.y * h), radius = (blob.radius * m).coerceAtLeast(1f),
+        center = Offset(x * w, y * h), radius = (blob.radius * m).coerceAtLeast(1f),
       ),
     )
   }
@@ -93,6 +101,24 @@ internal fun DrawScope.drawSky(sky: Sky, grain: Boolean = true) {
 
 /** Fondo de cielo para cualquier contenido. */
 @Composable
-fun SkyBackground(sky: Sky, modifier: Modifier = Modifier, content: @Composable () -> Unit = {}) {
-  Box(modifier.drawBehind { drawSky(sky) }) { content() }
+fun SkyBackground(sky: Sky, modifier: Modifier = Modifier, variant: Int = 0, content: @Composable () -> Unit = {}) {
+  Box(modifier.drawBehind { drawSky(sky, variant = variant) }) { content() }
+}
+
+/**
+ * Orden de las familias en una cuadrícula (3.2): de moverse a descansar, para que los colores vayan
+ * agrupados y en orden, y no salpicados.
+ */
+val SkyOrder = listOf(Sky.MENTA, Sky.CIELO, Sky.ATARDECER, Sky.AMBAR, Sky.BRASA, Sky.NOCHE, Sky.ROSA, Sky.AURA)
+
+/** Nombre de cada familia, para los rótulos de «¿Qué quieres hacer?». */
+val Sky.familyName: String get() = when (this) {
+  Sky.MENTA -> "Moverte"
+  Sky.CIELO -> "Leer y aprender"
+  Sky.ATARDECER -> "Crear"
+  Sky.AMBAR -> "Jugar y disfrutar"
+  Sky.BRASA -> "En casa"
+  Sky.NOCHE -> "Descansar"
+  Sky.ROSA -> "Con otras personas"
+  Sky.AURA -> "Otras"
 }

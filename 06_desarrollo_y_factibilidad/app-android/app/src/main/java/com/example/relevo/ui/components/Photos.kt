@@ -1,5 +1,6 @@
 package com.example.relevo.ui.components
 
+import androidx.compose.ui.draw.shadow
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.LruCache
@@ -326,7 +327,7 @@ internal fun artPalette(icon: KitIcon): List<Color> = skyFor(icon).palette
  * el cielo: va debajo o en una banda clara.
  */
 @Composable
-fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = null, showIcon: Boolean = true) {
+fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = null, showIcon: Boolean = true, variant: Int = 0) {
   val colors = Relevo.colors
   val sky = skyFor(icon)
   var side by remember { mutableIntStateOf(0) }
@@ -334,7 +335,7 @@ fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = nu
   val auto = with(density) { (side * 0.2f).toDp() }.coerceIn(18.dp, 56.dp)
   val glyph = iconSize ?: auto
   Box(
-    modifier.onSizeChanged { side = minOf(it.width, it.height) }.drawBehind { drawSky(sky) },
+    modifier.onSizeChanged { side = minOf(it.width, it.height) }.drawBehind { drawSky(sky, variant = variant) },
     // Un poco sobre el centro: en las fichas grandes, la banda de texto ocupa la parte de abajo.
     contentAlignment = androidx.compose.ui.BiasAlignment(0f, -0.35f),
   ) {
@@ -386,8 +387,8 @@ fun Modifier.sharedPhoto(key: String?): Modifier {
 
 /** Contenido de una ficha: el cielo de la actividad, con su ícono o sin él. */
 @Composable
-fun PictureContent(picture: Picture?, modifier: Modifier = Modifier, iconSize: Dp = 36.dp, fallback: KitIcon = KitIcon.ACTIVIDAD, size: PhotoSize = PhotoSize.Full, wide: Boolean = false, showIcon: Boolean = true) {
-  ActivityArt(pictureIcon(picture, fallback), modifier, iconSize = iconSize, showIcon = showIcon)
+fun PictureContent(picture: Picture?, modifier: Modifier = Modifier, iconSize: Dp = 36.dp, fallback: KitIcon = KitIcon.ACTIVIDAD, size: PhotoSize = PhotoSize.Full, wide: Boolean = false, showIcon: Boolean = true, variant: Int = 0) {
+  ActivityArt(pictureIcon(picture, fallback), modifier, iconSize = iconSize, showIcon = showIcon, variant = variant)
 }
 
 /** El ícono de una imagen guardada: el de la foto o el del kit. */
@@ -400,12 +401,15 @@ internal fun pictureIcon(picture: Picture?, fallback: KitIcon = KitIcon.ACTIVIDA
  */
 @Composable
 fun SkyLabel(text: String, modifier: Modifier = Modifier, large: Boolean = false) {
+  // Radio de media línea: una cápsula si el nombre cabe en una línea; si es largo, pasa a dos sin cortarse.
+  val shape = RoundedCornerShape(if (large) 15.dp else 13.dp)
   Text(
     text,
-    style = (if (large) Relevo.type.headline else Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold)),
+    style = (if (large) Relevo.type.headline else Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold, lineHeight = Relevo.type.subhead.fontSize * 1.3f)),
     color = Color(0xFF141312), maxLines = 2, overflow = TextOverflow.Ellipsis,
-    modifier = modifier.clip(RoundedCornerShape(if (large) 14.dp else 12.dp)).background(Color.White.copy(alpha = .94f))
-      .padding(horizontal = if (large) 12.dp else 10.dp, vertical = if (large) 6.dp else 4.dp),
+    modifier = modifier.shadow(2.dp, shape, ambientColor = Color.Black.copy(alpha = .06f), spotColor = Color.Black.copy(alpha = .16f))
+      .clip(shape).background(Color.White.copy(alpha = .94f))
+      .padding(horizontal = if (large) 14.dp else 12.dp, vertical = if (large) 5.dp else 3.dp),
   )
 }
 
@@ -437,10 +441,9 @@ fun PhotoCard(
     modifier.width(width).pressScale(interaction)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = title, onClick = onClick),
   ) {
-    Box(Modifier.fillMaxWidth().aspectRatio(0.95f).clip(Relevo.tileShape)) {
+    Box(Modifier.fillMaxWidth().aspectRatio(1.15f).clip(RoundedCornerShape(24.dp))) {
       PictureContent(picture, Modifier.matchParentSize().sharedPhoto(sharedKey), fallback = fallback, showIcon = false)
-      Box(Modifier.align(Alignment.TopStart).padding(10.dp)) { SkyBadge(pictureIcon(picture, fallback)) }
-      SkyLabel(title, Modifier.align(Alignment.BottomStart).padding(10.dp))
+      SkyLabel(title, Modifier.align(Alignment.BottomStart).padding(9.dp))
     }
     if (subtitle != null) {
       Spacer(Modifier.height(8.dp))
@@ -468,22 +471,14 @@ fun PictureTile(
 ) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
-  val inset by animateDpAsState(if (selected) 5.dp else 0.dp, Motion.smooth(stiffness = 600f), label = "tile_inset")
   Box(
-    modifier.fillMaxWidth().aspectRatio(aspect).pressScale(interaction)
+    modifier.fillMaxWidth().aspectRatio(aspect).outerRing(selected, cornerRadius.coerceAtMost(60.dp), colors.ink).pressScale(interaction)
       .clickable(interactionSource = interaction, indication = null, role = Role.RadioButton, onClick = onClick)
       .semantics { this.selected = selected; contentDescription = description },
   ) {
-    Box(Modifier.fillMaxSize().padding(inset).clip(RoundedCornerShape(cornerRadius - inset))) {
+    Box(Modifier.fillMaxSize().clip(RoundedCornerShape(cornerRadius))) {
       PictureContent(picture, Modifier.matchParentSize(), size = PhotoSize.Thumb, showIcon = label == null, iconSize = 26.dp)
-      if (label != null) {
-        Box(Modifier.align(Alignment.TopStart).padding(8.dp)) { SkyBadge(pictureIcon(picture), size = 26.dp) }
-        SkyLabel(label, Modifier.align(Alignment.BottomStart).padding(8.dp), large = prominent)
-      }
-    }
-    if (selected) {
-      Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, RoundedCornerShape(cornerRadius)))
-      Box(Modifier.align(Alignment.TopEnd).padding(10.dp)) { CheckMark(true, size = 22.dp) }
+      if (label != null) SkyLabel(label, Modifier.align(Alignment.BottomStart).padding(9.dp), large = prominent)
     }
   }
 }
@@ -533,7 +528,7 @@ fun PhotoHero(
     modifier.fillMaxWidth().pressScale(interaction, 0.985f).clip(Relevo.panelShape).background(Relevo.colors.card)
       .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = clickLabel, onClick = onClick) else Modifier),
   ) {
-    PictureContent(picture, Modifier.fillMaxWidth().aspectRatio(2.8f).sharedPhoto(sharedKey), iconSize = 26.dp)
+    PictureContent(picture, Modifier.fillMaxWidth().aspectRatio(2.8f).sharedPhoto(sharedKey), showIcon = false)
     Column(Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 18.dp, bottom = 20.dp), content = band)
   }
 }
@@ -550,7 +545,7 @@ fun EmojiTile(emoji: Emoji, selected: Boolean, onClick: () -> Unit, modifier: Mo
       .semantics { this.selected = selected; contentDescription = emoji.description },
     contentAlignment = Alignment.Center,
   ) {
-    Box(Modifier.fillMaxSize().padding(inset).clip(CircleShape).background(colors.mist), contentAlignment = Alignment.Center) {
+    Box(Modifier.fillMaxSize().padding(inset).clip(CircleShape).background(colors.card), contentAlignment = Alignment.Center) {
       EmojiImage(emoji, Modifier.fillMaxSize(0.64f), small = true)
     }
     if (selected) Box(Modifier.fillMaxSize().border(2.5.dp, colors.ink, CircleShape))

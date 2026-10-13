@@ -67,9 +67,8 @@ internal fun FacePicker(faces: List<Face>, selected: String?, onSelect: (String?
         horizontalAlignment = Alignment.CenterHorizontally,
       ) {
         Box(
-          Modifier.size(size + 12.dp).clip(CircleShape)
-            .background(if (on) Relevo.colors.card else Relevo.colors.mist)
-            .then(if (on) Modifier.border(2.dp, Relevo.colors.ink, CircleShape) else Modifier),
+          Modifier.size(size + 20.dp).clip(CircleShape).background(Relevo.colors.card)
+            .border(if (on) 2.dp else 1.5.dp, if (on) Relevo.colors.ink else Relevo.colors.line, CircleShape),
           contentAlignment = Alignment.Center,
         ) {
           Image(painterResource(face.res), contentDescription = null, modifier = Modifier.size(size))

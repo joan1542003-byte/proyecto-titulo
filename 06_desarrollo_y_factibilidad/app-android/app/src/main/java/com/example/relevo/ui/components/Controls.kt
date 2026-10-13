@@ -101,26 +101,26 @@ fun RelevoButton(
     !enabled || muted -> colors.mist to colors.gray
     kind == ButtonKind.Primary -> colors.ink to colors.onInk
     kind == ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .16f else .09f) to colors.error
-    else -> colors.card to colors.ink
+    else -> Color.Transparent to colors.ink
   }
   val outlined = kind == ButtonKind.Secondary && enabled && !muted
   val pressedColor = when (kind) {
     ButtonKind.Primary -> colors.slate
     ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .24f else .15f)
-    ButtonKind.Secondary -> colors.line
+    ButtonKind.Secondary -> colors.ink.copy(alpha = .08f)
   }
   val background by animateColorAsState(if (pressed && enabled) pressedColor else container, Motion.standard(120), label = "button_background")
   Row(
     modifier.then(if (compact) Modifier else Modifier.fillMaxWidth())
-      .heightIn(min = if (compact) 40.dp else 56.dp)
+      .heightIn(min = if (compact) 44.dp else 56.dp)
       .pressScale(interaction, if (compact) 0.95f else 0.97f)
       .clip(Relevo.controlShape).background(background)
-      .then(if (outlined) Modifier.border(1.3.dp, colors.ink, Relevo.controlShape) else Modifier)
+      .then(if (outlined) Modifier.border(2.dp, colors.ink, Relevo.controlShape) else Modifier)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button) {
         if (kind == ButtonKind.Primary && !muted) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
         onClick()
       }
-      .padding(horizontal = if (compact) 16.dp else 22.dp),
+      .padding(horizontal = if (compact) 18.dp else 22.dp),
     horizontalArrangement = Arrangement.Center,
     verticalAlignment = Alignment.CenterVertically,
   ) {
@@ -128,7 +128,7 @@ fun RelevoButton(
       RelevoIcon(icon, size = if (compact) 18.dp else 20.dp, tint = content, background = background, strokeWidth = 2f)
       Spacer(Modifier.width(if (compact) 6.dp else 10.dp))
     }
-    Text(label, style = if (compact) Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold) else Relevo.type.button, color = content, textAlign = TextAlign.Center, maxLines = 2)
+    Text(label, style = if (compact) Relevo.type.callout.copy(fontWeight = FontWeight.SemiBold) else Relevo.type.button, color = content, textAlign = TextAlign.Center, maxLines = 2)
   }
 }
 
@@ -208,7 +208,7 @@ fun PlainAction(
       RelevoIcon(icon, size = 20.dp, tint = tint, background = Color.Transparent)
       Spacer(Modifier.width(8.dp))
     }
-    Text(label, style = Relevo.type.headline, color = tint)
+    Text(label, style = Relevo.type.callout.copy(fontWeight = FontWeight.SemiBold), color = tint)
   }
 }
 
@@ -244,19 +244,18 @@ fun SegmentedControl(
   val haptics = LocalHapticFeedback.current
   val reduce = rememberReduceMotion()
   val index = options.indexOfFirst { it.first == selected }
-  BoxWithConstraints(modifier.fillMaxWidth().height(44.dp).clip(Relevo.controlShape).background(trackColor).padding(3.dp)) {
+  BoxWithConstraints(modifier.fillMaxWidth().height(46.dp).clip(Relevo.controlShape).background(colors.card).border(1.5.dp, colors.line, Relevo.controlShape).padding(4.dp)) {
     val segment = maxWidth / options.size
     val offset by animateDpAsState(segment * index.coerceAtLeast(0), if (reduce) snap() else Motion.smooth(), label = "segment_offset")
     val thumbAlpha by animateFloatAsState(if (index >= 0) 1f else 0f, Motion.standard(Motion.SHORT), label = "segment_thumb")
     Box(
       Modifier.offset(x = offset).width(segment).fillMaxHeight().graphicsLayer { alpha = thumbAlpha }
-        .shadow(if (colors.isDark) 0.dp else 3.dp, Relevo.controlShape, ambientColor = Color.Black.copy(alpha = .06f), spotColor = Color.Black.copy(alpha = .12f))
-        .clip(Relevo.controlShape).background(if (colors.isDark) Color(0xFF3A3C42) else colors.card),
+        .clip(Relevo.controlShape).background(colors.ink),
     )
     Row(Modifier.fillMaxWidth().fillMaxHeight()) {
       options.forEachIndexed { i, (value, label) ->
         val active = i == index
-        val textColor by animateColorAsState(if (active) colors.ink else colors.graphite, Motion.standard(Motion.SHORT), label = "segment_text")
+        val textColor by animateColorAsState(if (active) colors.onInk else colors.graphite, Motion.standard(Motion.SHORT), label = "segment_text")
         Box(
           Modifier.weight(1f).fillMaxHeight().clip(Relevo.controlShape)
             .clickable(indication = null, interactionSource = remember { MutableInteractionSource() }, role = Role.RadioButton) {
@@ -346,6 +345,23 @@ fun DurationStepper(seconds: Int, onChange: (Int) -> Unit, label: String) {
   }
 }
 
+/** Solo los botones − y + del tiempo, para ponerlos al final de una fila (3.2). */
+@Composable
+fun DurationButtons(seconds: Int, onChange: (Int) -> Unit) {
+  val haptics = LocalHapticFeedback.current
+  fun step(current: Int) = when {
+    current < 10 * 60 -> 60
+    current < 60 * 60 -> 5 * 60
+    current < 120 * 60 -> 15 * 60
+    else -> 30 * 60
+  }
+  Row(verticalAlignment = Alignment.CenterVertically) {
+    RepeatButton("Restar tiempo", "−", enabled = seconds > 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((seconds - step(seconds - 1)).coerceAtLeast(60)) }
+    Spacer(Modifier.width(8.dp))
+    RepeatButton("Sumar tiempo", "+", enabled = seconds < 6 * 60 * 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((seconds + step(seconds)).coerceAtMost(6 * 60 * 60)) }
+  }
+}
+
 /** Cantidad con − y +, para la constancia elegida. */
 @Composable
 fun CountStepper(value: Int, onChange: (Int) -> Unit, range: IntRange, label: String) {
@@ -369,7 +385,7 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
     while (true) { onStep(); delay(110) }
   }
   Box(
-    Modifier.size(52.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.line else colors.mist)
+    Modifier.size(44.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.mist else colors.card).border(1.5.dp, colors.line, CircleShape)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onStep)
       .semantics { contentDescription = description },
     contentAlignment = Alignment.Center,
@@ -380,29 +396,32 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
 
 /** Opción rápida en cápsula: blanca con un borde fino; la elegida, en tinta. */
 @Composable
-fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null) {
+fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null, sky: Sky? = null) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val background by animateColorAsState(if (selected) colors.ink else colors.card, Motion.standard(Motion.SHORT), label = "chip")
   val content by animateColorAsState(if (selected) colors.onInk else colors.ink, Motion.standard(Motion.SHORT), label = "chip_text")
   Row(
     modifier.heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
-      .then(if (selected) Modifier else Modifier.border(1.dp, colors.line, Relevo.controlShape))
+      .then(if (selected) Modifier else Modifier.border(1.5.dp, colors.line, Relevo.controlShape))
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick).semantics { this.selected = selected }
       .padding(horizontal = 16.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
-    if (icon != null) {
+    if (sky != null) {
+      SkySquare(sky, size = 18.dp, radius = 6.dp)
+      Spacer(Modifier.width(8.dp))
+    } else if (icon != null) {
       RelevoIcon(icon, size = 18.dp, tint = content, background = background)
       Spacer(Modifier.width(8.dp))
     }
-    Text(label, style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold), color = content, maxLines = 1)
+    Text(label, style = Relevo.type.callout.copy(fontWeight = FontWeight.Medium), color = content, maxLines = 1)
   }
 }
 
 /** Marca de selección redonda: el círculo se llena de tinta y la marca se dibuja con el trazo. */
 @Composable
-fun CheckMark(checked: Boolean, size: Dp = 24.dp) {
+fun CheckMark(checked: Boolean, size: Dp = 24.dp, square: Boolean = false) {
   val colors = Relevo.colors
   val reduce = rememberReduceMotion()
   val fill by animateColorAsState(if (checked) colors.ink else Color.Transparent, Motion.standard(Motion.SHORT), label = "check_fill")
@@ -411,8 +430,9 @@ fun CheckMark(checked: Boolean, size: Dp = 24.dp) {
     if (reduce) snap() else tween(260, delayMillis = if (checked) 60 else 0, easing = Motion.Easing),
     label = "check_draw",
   )
+  val shape = if (square) androidx.compose.foundation.shape.RoundedCornerShape(size * 0.3f) else CircleShape
   Box(
-    Modifier.size(size).clip(CircleShape).background(fill).border(1.75.dp, if (checked) colors.ink else colors.gray, CircleShape),
+    Modifier.size(size).clip(shape).background(fill).border(1.75.dp, if (checked) colors.ink else colors.gray, shape),
     contentAlignment = Alignment.Center,
   ) {
     Canvas(Modifier.size(size * 0.6f)) {
@@ -434,13 +454,7 @@ fun CheckMark(checked: Boolean, size: Dp = 24.dp) {
 
 /** Opción única: anillo con un punto que crece al elegirla. */
 @Composable
-fun RadioMark(selected: Boolean) {
-  val colors = Relevo.colors
-  val dot by animateDpAsState(if (selected) 10.dp else 0.dp, Motion.smooth(stiffness = 700f), label = "radio_dot")
-  Box(Modifier.size(24.dp).border(if (selected) 2.dp else 1.75.dp, if (selected) colors.ink else colors.gray, CircleShape), contentAlignment = Alignment.Center) {
-    Box(Modifier.size(dot).clip(CircleShape).background(colors.ink))
-  }
-}
+fun RadioMark(selected: Boolean) = RadioDot(selected)
 
 /** Las cifras y los textos que cambian entran con un leve desenfoque («number pop-in», transitions.dev). */
 @Composable

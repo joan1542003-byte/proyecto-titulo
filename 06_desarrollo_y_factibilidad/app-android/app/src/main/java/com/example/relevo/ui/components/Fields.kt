@@ -60,35 +60,46 @@ fun RenglonField(
   imeAction: ImeAction = ImeAction.Done,
   onImeAction: () -> Unit = {},
   maxLength: Int = 120,
+  /** La ficha de su papel a la izquierda, como en las filas: el primer paso en cielo, el lugar en lima. */
+  icon: KitIcon? = null,
 ) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val focused by interaction.collectIsFocusedAsState()
   val lineColor by animateColorAsState(if (focused) colors.ink else colors.line, Motion.standard(Motion.SHORT), label = "renglon_line")
-  val lineWidth by animateDpAsState(if (focused) 1.5.dp else 1.dp, Motion.standard(Motion.SHORT), label = "renglon_width")
-  Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-    Text(label, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Medium), color = colors.graphite)
-    BasicTextField(
-      value = value,
-      onValueChange = { onValueChange(it.take(maxLength)) },
-      singleLine = singleLine,
-      textStyle = Relevo.type.voice.copy(color = colors.voice),
-      cursorBrush = SolidColor(colors.voice),
-      interactionSource = interaction,
-      keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = imeAction),
-      keyboardActions = KeyboardActions(onAny = { onImeAction() }),
-      modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)
-        .background(colors.card, RoundedCornerShape(16.dp))
-        .border(lineWidth, lineColor, RoundedCornerShape(16.dp))
-        .padding(horizontal = 16.dp, vertical = 13.dp),
-      decorationBox = { inner ->
-        Box {
-          if (value.isEmpty() && placeholder.isNotEmpty()) Text(placeholder, style = Relevo.type.voice.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Normal), color = colors.graphite)
-          inner()
+  val lineWidth by animateDpAsState(if (focused) 2.dp else 1.5.dp, Motion.standard(Motion.SHORT), label = "renglon_width")
+  val shape = RoundedCornerShape(20.dp)
+  // 3.2 («Relevo, la app»): una caja blanca con el rótulo adentro, arriba, y lo escrito debajo. Toda la caja es el campo.
+  BasicTextField(
+    value = value,
+    onValueChange = { onValueChange(it.take(maxLength)) },
+    singleLine = singleLine,
+    textStyle = Relevo.type.body.copy(color = colors.voice, lineHeight = Relevo.type.headline.lineHeight),
+    cursorBrush = SolidColor(colors.voice),
+    interactionSource = interaction,
+    keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = imeAction),
+    keyboardActions = KeyboardActions(onAny = { onImeAction() }),
+    modifier = modifier.fillMaxWidth(),
+    decorationBox = { inner ->
+      androidx.compose.foundation.layout.Row(
+        Modifier.fillMaxWidth().heightIn(min = 64.dp).background(colors.card, shape).border(lineWidth, lineColor, shape)
+          .padding(start = if (icon != null) 10.dp else 16.dp, end = 16.dp, top = 10.dp, bottom = 10.dp),
+        verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+      ) {
+        if (icon != null) {
+          IconTile(icon)
+          Spacer(Modifier.width(14.dp))
         }
-      },
-    )
-  }
+        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+          if (label.isNotBlank()) Text(label, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = colors.graphite)
+          Box {
+            if (value.isEmpty() && placeholder.isNotEmpty()) Text(placeholder, style = Relevo.type.body, color = colors.graphite)
+            inner()
+          }
+        }
+      }
+    },
+  )
 }
 
 /** Buscador sobre niebla, como el de las listas de iOS: con lupa y un botón para borrar lo escrito. */

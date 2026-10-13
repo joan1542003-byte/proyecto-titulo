@@ -74,6 +74,11 @@ import com.example.relevo.ui.components.rememberReduceMotion
 import com.example.relevo.ui.components.pressScale
 import androidx.compose.foundation.border
 import java.util.UUID
+import androidx.compose.foundation.layout.BoxWithConstraints
+import com.example.relevo.ui.components.Gap
+import com.example.relevo.ui.components.IconTile
+import com.example.relevo.ui.components.PlainAction
+import com.example.relevo.ui.components.skyFor
 
 /**
  * R1: la ruta de cada interés (D-084). Arriba, en grande, el paso en que está la persona («Ahora»)
@@ -101,31 +106,28 @@ internal fun RouteTab(
   val reduce = rememberReduceMotion()
   val current = track?.currentStep
 
+  // Lámina «Tu ruta»: el título en dos tonos, los pasos en escalera y el botón debajo, sin flotar.
   RelevoScreen(
-    title = "Tu ruta",
-    subtitle = if (track != null) "Pasos pequeños hacia lo que te gustaría hacer más seguido." else null,
+    title = "Paso a paso",
+    titleSoft = "hacia lo que te gustaría hacer más seguido.",
     scrollState = scroll,
-    bottom = when {
-      track == null -> ({ RelevoButton("Elegir intereses", onChooseInterests, icon = KitIcon.AGREGAR) })
-      current != null && !activeRelevo -> ({ RelevoButton("Preparar un relevo con este paso", { onPrepare(track.interest, current.id, photoKey("ruta", current.id)) }) })
-      else -> null
-    },
   ) {
     if (track == null) {
-      PhotoHero(Picture.OfPhoto(Photo.SALIDA), aspect = 1.1f, wide = true, modifier = Modifier.appear(0)) {
-        Text("Arma tu ruta", style = Relevo.type.title2, color = Relevo.colors.ink)
-        Spacer(Modifier.height(4.dp))
-        Text("Elige lo que te gustaría hacer más seguido y te proponemos pasos pequeños, que puedes cambiar.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+      Panel(Modifier.appear(0)) {
+        Text("Elige qué te gustaría hacer más seguido", style = Relevo.type.title2, color = Relevo.colors.ink)
+        Text("Te proponemos pasos pequeños para empezar, y los puedes cambiar.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
       }
+      Spacer(Modifier.height(Gap.block))
+      RelevoButton("Elegir intereses", onChooseInterests, icon = KitIcon.AGREGAR)
       return@RelevoScreen
     }
     if (routes.size > 1) {
       Carousel(spacing = 8.dp) {
         items(routes, key = { it.interest }) { item ->
-          QuickChoice(item.title, item.interest == track.interest, { onSelect(item.interest) }, icon = interestIcon(item.interest))
+          QuickChoice(item.title, item.interest == track.interest, { onSelect(item.interest) }, sky = skyFor(interestIcon(item.interest)))
         }
       }
-      Spacer(Modifier.height(18.dp))
+      Spacer(Modifier.height(Gap.block))
     }
     AnimatedContent(
       targetState = track.interest,
@@ -144,32 +146,18 @@ internal fun RouteTab(
           }
           return@Column
         }
-        val photo = interestPhoto(shown.interest)
-        PhotoHero(
-          photo?.let { Picture.OfPhoto(it) } ?: Picture.OfIcon(interestIcon(shown.interest)), aspect = 1.05f, wide = true,
-          onClick = { openStep = now.id }, clickLabel = "Ver el paso",
-        ) {
-          Row(verticalAlignment = Alignment.CenterVertically) {
-            NowChip()
-            Spacer(Modifier.width(10.dp))
-            Text("${shown.title} · paso ${shown.currentIndex + 1} de ${shown.steps.size}", style = Relevo.type.footnote, color = Relevo.colors.graphite)
-          }
-          Spacer(Modifier.height(10.dp))
-          Text(now.activity, style = Relevo.type.title, color = Relevo.colors.ink)
-          startSentence(now.firstStep, now.place)?.let {
-            Spacer(Modifier.height(4.dp))
-            Text(it, style = Relevo.type.subhead, color = Relevo.colors.graphite)
-          }
-        }
-        if (activeRelevo) {
-          Spacer(Modifier.height(12.dp))
-          Text("Tienes un relevo activo. Cuando termine, puedes preparar otro.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
-        }
-        SectionGap()
-        ListSection(title = "Todos los pasos") {
+        Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
           StepTimeline(shown) { openStep = it.id }
+          // Agregar un paso: una fila sin fondo, con borde fino, como en la lámina.
+          ListRow("Agregar un paso", icon = KitIcon.AGREGAR, tileColor = Relevo.colors.card, outlined = true, onClick = { onEdit(shown.interest) })
         }
-        Spacer(Modifier.height(14.dp))
+        Spacer(Modifier.height(Gap.block))
+        if (activeRelevo) {
+          Text("Tienes un relevo activo. Cuando termine, puedes preparar otro con este paso.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 2.dp))
+        } else {
+          RelevoButton("Preparar un relevo con este paso", { onPrepare(shown.interest, now.id, photoKey("ruta", now.id)) })
+        }
+        Spacer(Modifier.height(6.dp))
         RouteActions(onEdit = { onEdit(shown.interest) }, onChooseInterests = onChooseInterests)
       }
     }
@@ -207,9 +195,10 @@ internal fun RouteTab(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun RouteActions(onEdit: () -> Unit, onChooseInterests: () -> Unit) {
-  FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-    RelevoButton("Editar los pasos", onEdit, kind = ButtonKind.Secondary, compact = true, icon = KitIcon.EDITAR)
-    RelevoButton("Cambiar intereses", onChooseInterests, kind = ButtonKind.Secondary, compact = true, icon = KitIcon.PERFIL)
+  Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
+    PlainAction("Editar los pasos", onEdit)
+    Text("·", style = Relevo.type.callout, color = Relevo.colors.graphite)
+    PlainAction("Cambiar intereses", onChooseInterests)
   }
 }
 
@@ -240,30 +229,32 @@ internal fun StepDot(number: Int, current: Boolean, past: Boolean = false, size:
 @Composable
 private fun StepTimeline(track: RouteTrack, onTap: (RouteStep) -> Unit) {
   val colors = Relevo.colors
-  val shape = RoundedCornerShape(20.dp)
-  track.steps.forEachIndexed { index, step ->
-    val current = index == track.currentIndex
-    val past = index < track.currentIndex
-    val interaction = remember { MutableInteractionSource() }
-    Row(
-      Modifier.padding(start = (minOf(index, 4) * 14).dp).fillMaxWidth().heightIn(min = 64.dp).pressScale(interaction, 0.985f)
-        .clip(shape).background(colors.card)
-        .then(if (current) Modifier.border(1.5.dp, colors.ink, shape) else Modifier)
-        .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Ver el paso") { onTap(step) }
-        .semantics { if (current) stateDescription = "Paso actual" }
-        .padding(start = 12.dp, end = 16.dp, top = 10.dp, bottom = 10.dp),
-      verticalAlignment = Alignment.CenterVertically,
-    ) {
-      Box(Modifier.size(40.dp).clip(RoundedCornerShape(12.dp)).background(if (current) colors.sky else colors.mist), contentAlignment = Alignment.Center) {
-        Text("${index + 1}", style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold), color = when { current -> colors.onTile; past -> colors.graphite; else -> colors.ink })
+  BoxWithConstraints(Modifier.fillMaxWidth()) {
+    val full = maxWidth
+    Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
+      track.steps.forEachIndexed { index, step ->
+        val current = index == track.currentIndex
+        val past = index < track.currentIndex
+        val level = minOf(index, 3)
+        // La escalera: 12 % más a la derecha por peldaño, hasta el cuarto; el ancho deja aire a la derecha.
+        val start = full * (0.12f * level)
+        val end = full * (0.06f * (3 - level))
+        ListRow(
+          step.activity,
+          Modifier.padding(start = start, end = end).semantics { if (current) stateDescription = "Paso actual" },
+          subtitle = when { current -> "Paso actual"; past -> "Hecho"; index == track.currentIndex + 1 -> "Siguiente"; else -> "Paso ${index + 1}" },
+          titleColor = if (past) colors.graphite else colors.ink,
+          leading = {
+            when {
+              current -> IconTile(interestIcon(track.interest), background = colors.sky)
+              past -> IconTile(KitIcon.LISTO, background = colors.mist)
+              else -> IconTile(KitIcon.ESTRELLA, background = colors.mist)
+            }
+          },
+          selected = current,
+          onClick = { onTap(step) },
+        )
       }
-      Spacer(Modifier.width(14.dp))
-      Column(Modifier.weight(1f)) {
-        Text(step.activity, style = Relevo.type.callout.copy(fontWeight = FontWeight.SemiBold), color = if (past) colors.graphite else colors.ink)
-        if (current) Text("Ahora", style = Relevo.type.footnote, color = colors.graphite)
-      }
-      Spacer(Modifier.width(8.dp))
-      RelevoIcon(KitIcon.SIGUIENTE, size = 18.dp, tint = colors.graphite, background = colors.card)
     }
   }
 }

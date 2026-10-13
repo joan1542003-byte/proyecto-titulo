@@ -1616,7 +1616,38 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - No conviene instalarla a mitad de la prueba de 21 días.
 - **Documentación:** [Android 3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md).
 
+## D-131 — Android 3.2: igual a «Relevo, la app» y con textos más claros
+
+- **Fecha:** 2026-10-12.
+- **Estado:** implementada en la app 3.2 (versionCode 45). Revisada en el emulador, no en un teléfono real.
+- **Contexto:**
+  - El autor dijo que la 3.1 seguía sin parecerse a la lámina, con malas alineaciones, sin orden y con colores repetidos y mezclados al elegir actividades.
+  - Al revisar la 3.2 pidió cambiar «mientras todavía puedes hacerlo» y «Tu ruta», que sonaban mal, y completar los detalles que faltaban.
+- **Decisión:**
+  - Rehacer las piezas con las medidas de la lámina por 1,5, que es la escala de su teléfono de muestra: el marco de pantalla, las filas, las opciones, los campos, las fichas de cielo sin íconos y la barra de pestañas.
+  - Ordenar las ideas por familia de color y dar a cada actividad una variante de su cielo, la misma en todas las pantallas.
+  - Componer cada pantalla como su lámina.
+  - Cambiar los textos que se entendían mal: «Relevo te avisa a tiempo, cuando llevas un rato en el teléfono», «Paso a paso hacia lo que te gustaría hacer más seguido», «Tu siguiente paso para leer» y «Tus pasos». La pestaña sigue llamándose «Ruta».
+- **Lo que se mantiene:**
+  - Los datos, la firma, el consentimiento v13 y las preguntas de la investigación.
+  - El orden y los valores de las respuestas. Solo cambia la interfaz.
+- **Verificación:**
+  - Pasaron 85 pruebas unitarias tras una compilación limpia.
+  - Se recorrieron en el emulador la primera vez completa y un relevo completo, y se revisaron las demás pantallas, también en tema oscuro.
+  - Se corrigió un cierre de la pantalla «Contando».
+  - Los datos del autor quedaron idénticos (MD5), y la firma es la misma.
+- **Límites:**
+  - No se probó en un teléfono real ni con el Tag.
+  - No conviene instalarla a mitad de la prueba de 21 días.
+- **Documentación:** [Android 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — D-131
+
+- **Qué cambió:** se registró D-131.
+- **Cómo estaba antes:** la última decisión era D-130.
+- **Por qué:** pedidos del autor.
 
 ### 2026-10-12 — D-130
 

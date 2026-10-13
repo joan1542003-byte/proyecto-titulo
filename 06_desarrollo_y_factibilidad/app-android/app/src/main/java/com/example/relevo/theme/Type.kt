@@ -86,7 +86,7 @@ internal val DefaultType = RelevoType(
   section = style(15, 20, FontWeight.SemiBold),
   voice = style(20, 26, FontWeight.Medium, -0.005),
   signature = style(36, 40, FontWeight.Title, -0.03),
-  button = style(17, 22, FontWeight.SemiBold),
+  button = style(18, 22, FontWeight.SemiBold),
 )
 
 val LocalRelevoType = staticCompositionLocalOf { DefaultType }

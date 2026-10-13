@@ -59,8 +59,8 @@ fun roleTint(icon: KitIcon): Color? {
     KitIcon.TIEMPO, KitIcon.USO, KitIcon.APPS, KitIcon.ESPERANDO, KitIcon.PAUSAR -> colors.butter
     KitIcon.PRIMER_PASO, KitIcon.RUTA -> colors.sky
     KitIcon.LUGAR, KitIcon.SUENA -> colors.lime
-    KitIcon.DECISION, KitIcon.COMENCE, KitIcon.CAMBIE -> colors.blush
-    KitIcon.TEMA -> colors.lilac
+    KitIcon.DECISION, KitIcon.COMENCE, KitIcon.CAMBIE, KitIcon.AVANCE -> colors.blush
+    KitIcon.TEMA, KitIcon.AURA -> colors.lilac
     KitIcon.DESPUES, KitIcon.HISTORIAL -> colors.peach
     else -> null
   }

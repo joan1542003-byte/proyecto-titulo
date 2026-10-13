@@ -763,4 +763,22 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M4.25 17.1A1.35 1.35 0 1 0 6.95 17.1A1.35 1.35 0 1 0 4.25 17.1Z", false, KitFill.INK),
     ),
   ),
+  /** 3.2: el aura, lo que personalizas (D-121). */
+  AURA(
+    "Aura",
+    listOf(
+      KitShape("M10.5 4c.6 4 2.1 5.5 6 6.1-3.9.6-5.4 2.1-6 6.1-.6-4-2.1-5.5-6-6.1 3.9-.6 5.4-2.1 6-6.1z", true, KitFill.NONE),
+      KitShape("M18 14.6c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.5-2.6 1.6-.2 2.2-.8 2.5-2.5z", true, KitFill.NONE),
+    ),
+  ),
+  /** 3.2: tu semana, en barras. */
+  AVANCE(
+    "Avance",
+    listOf(KitShape("M5 20v-6M10 20V9M15 20v-4M20 20V5", true, KitFill.NONE)),
+  ),
+  /** 3.2: abrir una fila, el galón de las listas. */
+  ABRIR(
+    "Abrir",
+    listOf(KitShape("M9.5 5.5l6.5 6.5-6.5 6.5", true, KitFill.NONE)),
+  ),
 }
