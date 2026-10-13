@@ -25,3 +25,6 @@ desktop.ini
 # Tokens locales (panel del testeo)
 **/.env.local
 **/.env
+
+# IDML de la memoria: sus enlaces a imágenes llevan la ruta del computador donde se generó
+08_memoria/memoria-a3/memoria-relevo-a3.idml

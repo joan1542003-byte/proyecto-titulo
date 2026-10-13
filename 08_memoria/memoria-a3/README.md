@@ -104,15 +104,28 @@ Si la v5 cambia, basta con volver a correr el script.
 - **Escritor de IDML:** [idml.js](idml.js) escribe IDML, el formato de intercambio que abren InDesign y Affinity. Incluye estilos de párrafo y de carácter, colores, capas, una página maestra con el número de página, marcos de texto enlazados, tablas e imágenes o PDF vinculados.
 - **Prueba en Affinity:** una página de muestra se abrió bien, con estilos, texto enlazado entre páginas, tabla con reglas, imágenes, PDF colocado y el idioma español (`$ID/Spanish: Castilian`).
 
+**Archivo editable (13 de octubre de 2026):**
+
+- **Generador:** [construir-idml.js](construir-idml.js) lee la v5 y escribe `memoria-relevo-a3.idml`, que se abre en Affinity o InDesign. Se corre con `node construir-idml.js` y necesita Google Chrome, que dibuja las luces, el logo y las figuras 1 y 4, y mide el alto de cada bloque para repartir las columnas.
+- **Qué trae:** 33 páginas A3 horizontales, tres columnas con texto de 11,5 pt y la escala única (8, 9,5, 11,5, 15, 20 y 200 pt); una luz de color con el número de cada capítulo; un texto enlazado por capítulo, que se reacomoda al editar; tablas y figuras a lo ancho, arriba de la página siguiente a su mención, y las tablas de hasta tres columnas con el título y la nota al lado; índice con los números de página; estilos de párrafo y de carácter con nombre; y los marcadores «Confirmar» resaltados.
+- **Viudas:** cada párrafo lleva un espacio fijo entre sus dos últimas palabras.
+- **El IDML no se guarda en el repositorio:** sus imágenes se enlazan con la ruta completa del computador donde se generó. Hay que generarlo en la carpeta donde se va a trabajar.
+- **Comprobado en Affinity 3.2 (Mac):** abre con sus 33 páginas, el texto enlazado, las tablas con sus reglas y el alto de fila, las imágenes y los PDF colocados.
+- **No comprobado:** el aspecto con Instrument Sans, que no estaba instalada en ese computador; Affinity usó una letra de reemplazo. Tampoco se imprimió ni se exportó el PDF.
+- **Límites:** Affinity no lee el relleno de las celdas del IDML, así que el aire de cada fila se da con su alto mínimo. El reparto de columnas se calcula con holgura: si al cambiar la letra o el texto sobra o falta una columna, se ajusta a mano o se vuelve a correr el generador. La figura 3 sigue como «Fotografía pendiente».
+
 **Lo que sigue:**
 
-- **Retícula y tipografía:** tres columnas con texto de 11,5 pt y una escala única: 8, 9,5, 11,5, 15, 20, 44 y 200 pt.
-- **Aperturas:** una luz de color por capítulo en vez del panel, con la altura ajustada para que ningún capítulo termine en una página casi vacía.
-- **Tablas:** rediseñadas; las angostas, con la leyenda al lado.
-- **Viudas:** se evitan con «líneas juntas» y un espacio fijo entre las dos últimas palabras.
-- **Salida:** el PDF se exportará desde el mismo IDML.
+- **Letra:** instalar Instrument Sans, redonda y cursiva, antes de abrir el archivo.
+- **Revisión en Affinity:** recorrer las 33 páginas con la letra instalada y exportar el PDF desde ahí.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Archivo editable para Affinity
+
+- **Qué cambió:** se añadió el generador del IDML y se documentó qué trae, qué se comprobó en Affinity y sus límites.
+- **Cómo estaba antes:** existía el escritor de IDML y una página de prueba, pero no la memoria completa en ese formato.
+- **Por qué:** el autor pidió diseñar la memoria para Affinity.
 
 ### 2026-10-13 — Versión editable en curso
 
