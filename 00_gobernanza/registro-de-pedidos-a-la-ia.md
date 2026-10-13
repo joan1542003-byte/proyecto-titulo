@@ -137,6 +137,7 @@
 | 12 oct. | Corrección y encargo | «Mientras todavía puedes hacerlo» suena mal y cuesta entenderlo; «Tu ruta» también suena raro. Todavía faltan detalles para que la app sea igual a «Relevo, la app». Además, pidió hacer su memoria diseñada en A3 horizontal con la v5: bien diseñada, no como un documento aburrido y con el diseño de Relevo. | Los textos y los detalles se resolvieron en la [app 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md) (D-131). La [memoria en A3](../08_memoria/memoria-a3/README.md) es un PDF de 32 páginas con el texto de la v5 sin cambios: apertura de capítulo sobre el aura, tres columnas, figuras dibujadas y capturas nuevas de la 3.2. El índice se calcula solo y se verificó contra el PDF. | D-131, D-132 |
 | 13 oct. | Corrección | La memoria en A3 se lee con dificultad: el texto es muy pequeño, el diseño a veces se repite, faltan coherencia entre los tamaños y tablas mejor hechas, y al ser una memoria de diseño se puede jugar más. No puede haber viudas; sobran etiquetas como «Capítulo» y el «cuadro gigante» de cada apertura. Debe poder editarse en InDesign, Affinity o similares. | Se instaló Instrument Sans, redonda y cursiva (OFL), con permiso del autor. Se empezó un escritor de IDML, el formato que abren InDesign y Affinity, y una página de muestra se abrió bien en Affinity. El rediseño completo quedó en pausa por el pedido siguiente ([memoria en A3](../08_memoria/memoria-a3/README.md)). | D-132 |
 | 13 oct. | Encargo | Subir a GitHub, a main, el panel de Relevo funcional y con datos visibles, y los cuatro últimos artefactos como algo que funcione de verdad y que otro Claude pueda leer, no como artefactos de claude.ai. Documentar todo: cómo usar el panel, los íconos, la app y el editor de presentaciones. | Las láminas y el taller funcionan solos. El panel muestra datos de ejemplo, o los reales con `node servidor.js` y un token que no entra al repositorio. La guía [HERRAMIENTAS.md](../HERRAMIENTAS.md) y la página [herramientas.html](../herramientas.html) reúnen todo. El modo con token no se probó. | D-133 |
+| 13 oct. | Encargo | Revisar los cambios recientes del repositorio y los datos del testeo en curso, y actualizar el borrador de la memoria. La persona sigue en la 2.30; no se reinicia la prueba; la marca nueva está aprobada; excluir los datos del emulador. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) actualizado: resultados parciales reales (cinco señales en tres días), aplicación 3.2, identidad aprobada con cinco referencias nuevas verificadas y capítulo 13 condensado. El ciclo del emulador del 12 de octubre se excluyó del análisis; no se borró de la base remota. | — |
 
 ## Lo que muestra el registro
 
@@ -147,6 +148,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Actualización del borrador v5
+
+- **Qué cambió:** se registró el pedido de actualizar el borrador con los datos del testeo y la identidad aprobada.
+- **Cómo estaba antes:** el último pedido registrado era anterior.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-13 — Herramientas y memoria
 

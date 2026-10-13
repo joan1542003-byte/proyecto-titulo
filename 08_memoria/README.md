@@ -90,6 +90,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-10-13 — Borrador v5 actualizado al 13 de octubre
+
+- **Cambio:** el borrador v5 incorpora los primeros resultados reales de la prueba (una persona, 8 al 10 de octubre, cinco señales), la aplicación 3.2 y la identidad aprobada, y condensa el capítulo 13.
+- **Versión anterior:** describía la versión 2.30, la identidad de septiembre y una prueba sin resultados.
+- **Motivo:** el autor entregó los datos del testeo en curso, confirmó la marca nueva y pidió actualizar el borrador.
+- **Alcance:** resultados parciales; la prueba no aplica las tres condiciones. Quedan 21 marcadores. Para rehacer la versión A3 hay que correr `construir.js`.
+
 ### 2026-10-12 — Memoria en A3
 
 - **Cambio:** se enlazó la v5 compuesta en A3 horizontal con la línea de Relevo.
