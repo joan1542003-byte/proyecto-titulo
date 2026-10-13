@@ -7,6 +7,16 @@
 **Alcance:** marca, aplicación Android, testigo físico, comunicación de producto y memoria editorial.
 **Formato:** documentación en Markdown; desde el 25 de septiembre, láminas visuales en HTML con dibujos vectoriales propios ([segunda propuesta](lamina-identidad-relevo-2026-09-25.html) y [exploración anterior](lamina-exploracion-visual-2026-09-25.html)) y [archivos SVG del logotipo propuesto](marca-segunda-propuesta/).
 
+## Herramientas que funcionan sin claude.ai (13 de octubre de 2026)
+
+Cinco láminas de esta carpeta se abren con doble clic en cualquier navegador, y sus descargas funcionan (D-133). Cómo se usa cada una está en [HERRAMIENTAS.md](../HERRAMIENTAS.md):
+
+- [Relevo, la app](rediseno-app-2026-10-11/relevo-la-app.html);
+- [Relevo aplicado](logo-relevo-2026-10-11/relevo-aplicado.html);
+- [Relevo con aura](relevo-con-aura-2026-10-10/relevo-con-aura.html);
+- el [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html), el editor de piezas para presentaciones;
+- los [Íconos de Relevo](iconos-relevo-2026-10-11/iconos-relevo.html).
+
 ## Para qué existe esta carpeta
 
 Esta carpeta reúne la investigación y las decisiones que gobiernan el sistema visual de Relevo. Los documentos 01–13 conservan el razonamiento, las alternativas y los criterios de evaluación. El documento 14 fija la dirección vigente para producir la aplicación, el dispositivo, la comunicación y la memoria editorial.
@@ -94,6 +104,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Herramientas sin claude.ai
+
+- **Qué cambió:** se enlazaron las cinco láminas que ahora funcionan solas, con su guía.
+- **Cómo estaba antes:** las láminas dependían de claude.ai para descargar, y sus copias no traían su esqueleto HTML.
+- **Por qué:** pedido del autor (D-133).
 
 ### 2026-10-11 — Texto académico y rediseño de la app
 

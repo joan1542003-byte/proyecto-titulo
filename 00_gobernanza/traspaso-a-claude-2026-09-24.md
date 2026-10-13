@@ -202,6 +202,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
 - **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
 - **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
+- **Herramientas (D-133, 13 de octubre):** el panel del testeo, las láminas, el taller de auras y los íconos funcionan sin claude.ai. La guía [HERRAMIENTAS.md](../HERRAMIENTAS.md) explica cómo usar cada uno y qué debe saber otro Claude. Para los datos reales, el panel necesita `node servidor.js` y un token de Supabase en `.env.local`, que nunca se sube.
 - **Memoria en A3 (D-132, 12 de octubre):** la v5 compuesta en A3 horizontal con la línea de Relevo ([detalle](../08_memoria/memoria-a3/README.md)). Se rehace con `node construir.js` en `08_memoria/memoria-a3/` cuando cambie la v5. Necesita Chrome y tarda unos 10 segundos.
 - **Android 3.2 (D-131, 12 de octubre):** igual a «Relevo, la app»: piezas con las medidas de la lámina por 1,5, ideas ordenadas por familia de color con una variante de cielo por actividad, el botón fijo sobre el papel y textos más claros («Relevo te avisa a tiempo…», «Paso a paso…», «Tus pasos»). Solo cambia la interfaz ([detalle](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md)).
 - **Android 3.0 y 3.1 (D-129 y D-130, 12 de octubre):** la 3.0 aplica la línea nueva (paleta 2, Instrument Sans, íconos propios, cielos, aura y logo) sin perder datos. La 3.1 compone las pantallas como en la lámina «Relevo, la app»: tarjetas sueltas, cápsulas sobre los cielos y el aura o el cielo a pantalla completa. Solo cambia la interfaz; datos, firma y consentimiento v13 son los de la 2.30. Revisadas en el emulador, no en un teléfono real. No conviene instalarlas a mitad de la prueba de 21 días ([3.0](../06_desarrollo_y_factibilidad/app-android/version-3.0-la-linea-nueva-2026-10-12.md); [3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md)).
@@ -230,6 +231,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Herramientas
+
+- **Qué cambió:** el estado suma las herramientas y su guía (D-133).
+- **Cómo estaba antes:** terminaba en la memoria en A3.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-12 — Memoria en A3
 

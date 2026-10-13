@@ -2,6 +2,17 @@
 
 **Enlace:** [Panel de Relevo](https://claude.ai/artifact/QMsAiSqpkuivix6FJzh9uM), una página privada en claude.ai. Solo la ven su dueño y las personas a quienes se invite desde el menú Compartir. **Decisiones:** D-096, D-097, D-109 y D-112. **Fecha:** 6 de octubre de 2026. **Versión:** 13.
 
+## Usarlo fuera de claude.ai (13 de octubre de 2026)
+
+Desde D-133, el panel funciona en cualquier navegador, sin claude.ai. La guía completa está en [HERRAMIENTAS.md](../../HERRAMIENTAS.md#panel-del-testeo).
+
+- **Datos reales:** con Node 18 o posterior, ejecuta `node servidor.js` en esta carpeta. Lee el token personal de Supabase de la variable `SUPABASE_ACCESS_TOKEN` o de un archivo `.env.local` aquí mismo, que Git ignora. Abre `http://127.0.0.1:8765/`.
+- **Datos de ejemplo:** abre `panel-relevo.html` con doble clic, o ejecuta el servidor sin token. Son las personas inventadas de [datos-de-ejemplo.js](datos-de-ejemplo.js); enviar o borrar no cambia nada.
+- **Archivos:**
+  - [conector-local.js](conector-local.js) da al panel lo que antes daba claude.ai: los datos (servidor o ejemplo) y las descargas del navegador.
+  - [servidor.js](servidor.js) reenvía las consultas a la API de administración de Supabase. Escucha solo en este computador y exige una clave nueva en cada arranque.
+- **Probado:** el servidor sin token, la clave, el bloqueo de otros dominios y todo el modo de ejemplo (pestañas, fichas y resultados, sin errores). **No probado:** con un token real.
+
 ## Diseño
 
 Desde la segunda versión, el panel usa el diseño de la app: el papel de fondo, las tarjetas de esquinas amplias (28 px), la fuente Schibsted Grotesk, las cápsulas, el azul solo para lo que escribe la persona y el vidrio solo en la barra de navegación. No hay textos en mayúsculas. Tiene modo claro y oscuro con los colores de la app. En el teléfono, las pestañas bajan a una barra en cápsula, como en la app.
@@ -106,6 +117,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Fuera de claude.ai
+
+- **Qué cambió:** se sumaron el servidor local, el conector y los datos de ejemplo, y la página trae su propio esqueleto HTML.
+- **Cómo estaba antes:** el panel solo funcionaba como artefacto de claude.ai, con el conector de Supabase.
+- **Por qué:** pedido del autor (D-133).
 
 ### 2026-10-09 — Versión 2.30
 

@@ -85,7 +85,40 @@ Si la v5 cambia, basta con volver a correr el script.
   - En la primera vez, el botón dice «Armar mi ruta».
   - En «¿Dónde suena?», la línea «Suena en el Tag. Si prefieres otra cosa, elígela.» sigue visible aunque se haya elegido el teléfono.
 
+## En curso: la versión editable y el rediseño (13 de octubre de 2026)
+
+**Lo que pidió el autor:**
+
+- texto más grande y una lectura más cómoda;
+- una escala de tamaños coherente;
+- menos repetición y más juego de diseño;
+- mejores tablas;
+- ninguna viuda;
+- sin etiquetas innecesarias, como «Capítulo»;
+- sin el panel grande repetido en cada apertura;
+- un archivo que se pueda editar en InDesign, Affinity o similares.
+
+**Lo hecho:**
+
+- **Letra:** Instrument Sans, redonda y cursiva, quedó instalada para el usuario de Windows, con permiso del autor. La cursiva es de Google Fonts (OFL) y no se guardó en el repositorio.
+- **Escritor de IDML:** [idml.js](idml.js) escribe IDML, el formato de intercambio que abren InDesign y Affinity. Incluye estilos de párrafo y de carácter, colores, capas, una página maestra con el número de página, marcos de texto enlazados, tablas e imágenes o PDF vinculados.
+- **Prueba en Affinity:** una página de muestra se abrió bien, con estilos, texto enlazado entre páginas, tabla con reglas, imágenes, PDF colocado y el idioma español (`$ID/Spanish: Castilian`).
+
+**Lo que sigue:**
+
+- **Retícula y tipografía:** tres columnas con texto de 11,5 pt y una escala única: 8, 9,5, 11,5, 15, 20, 44 y 200 pt.
+- **Aperturas:** una luz de color por capítulo en vez del panel, con la altura ajustada para que ningún capítulo termine en una página casi vacía.
+- **Tablas:** rediseñadas; las angostas, con la leyenda al lado.
+- **Viudas:** se evitan con «líneas juntas» y un espacio fijo entre las dos últimas palabras.
+- **Salida:** el PDF se exportará desde el mismo IDML.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Versión editable en curso
+
+- **Qué cambió:** se sumaron el pedido de rediseño, el escritor de IDML y su prueba en Affinity, y lo que sigue.
+- **Cómo estaba antes:** la memoria en A3 era solo HTML y PDF.
+- **Por qué:** pedido del autor del 13 de octubre (D-132).
 
 ### 2026-10-12 — Creación
 

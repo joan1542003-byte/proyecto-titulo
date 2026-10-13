@@ -23,6 +23,8 @@
 | 12 oct. | Android 3.1 | El autor notó que la 3.0 no se parecía a la lámina. Se recompuso cada pantalla según la lámina: tarjetas sueltas, cápsulas sobre los cielos, el aura y el cielo a pantalla completa, la ruta en escalera y el perfil en una tarjeta. Mismos datos ([versión 3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md)). | D-130 |
 | 12 oct. | Android 3.2 | La 3.1 tampoco se parecía lo suficiente. La lámina se capturó a la escala del teléfono y se comparó pantalla por pantalla. Se rehicieron las piezas con sus medidas, las ideas se ordenaron por familia de color y se aclararon los textos que el autor encontró raros ([versión 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md)). | D-131 |
 | 12 oct. | Memoria en A3 | La v5 compuesta en A3 horizontal con la línea de Relevo, en 32 páginas. Un paginador en Chrome llena cada página, ubica tablas y figuras y escribe el índice. Las capturas de la figura 2 se tomaron de nuevo con la 3.2, con datos de prueba ([memoria en A3](../08_memoria/memoria-a3/README.md)). | D-132 |
+| 13 oct. | Memoria editable | El autor pidió letra más grande, tamaños coherentes, mejores tablas, sin viudas ni etiquetas sobrantes, y un archivo para InDesign o Affinity. Se instaló Instrument Sans y se escribió un generador de IDML. Su página de muestra se abrió bien en Affinity; el rediseño quedó en pausa. | D-132 |
+| 13 oct. | Herramientas sin claude.ai | El panel, las láminas, el taller y los íconos pasan a funcionar solos desde el repositorio, con la guía [HERRAMIENTAS.md](../HERRAMIENTAS.md). | D-133 |
 | 11 oct. | Documentación | El autor preguntó si todo estaba documentado. Faltaban esta bitácora, el estado en el README general y en el traspaso desde la app 2.24, y la decisión de la dirección visual; se completaron. | D-121 |
 
 ## 2. Cómo se usó la IA
@@ -49,6 +51,7 @@
   - Para los cielos se midió el contraste del texto en capturas, sobre el píxel más desfavorable del fondo. El texto blanco quedaba entre 2,6:1 y 3,7:1 en los cielos claros; con la cápsula blanca sube a entre 15:1 y 17,8:1.
 - **Probar sin ensuciar los datos:** antes de probar la 3.0 se respaldó la clave de firma y los datos del emulador. Se trabajó sin conexión y, al terminar, se restauró el respaldo. Se comprobó que los datos quedaran idénticos (MD5) y que no se escribieran archivos en Documentos/Relevo. Durante la prueba apareció un relevo activo que no se había pedido; se descartó al restaurar.
 - **Error de la IA en la 3.0:** aplicó la línea nueva a la superficie (colores, letra, íconos y cielos) y dejó la composición de la 2.30. Lo notó el autor, no la IA. En la 3.1 cada pantalla del emulador se comparó con la lámina, con capturas, antes de darla por terminada.
+- **Un artefacto no es la única salida:** las páginas dependían de `window.claude` para leer datos y descargar. Un conector que ofrece la misma interfaz fuera de claude.ai las hizo funcionar sin tocar su lógica. El panel usa el servidor local con un token o, sin él, datos de ejemplo.
 - **Mirar cada página, no solo el total:** la primera versión de la memoria en A3 tenía las auras invisibles, porque las comillas de `url()` cortaban el atributo `style`. Además pesaba 31 MB y dejaba páginas casi vacías: las tablas a lo ancho no cabían en la página que abre el capítulo. Solo se vio al revisar las páginas en hojas de contacto. El paginador propio resolvió los vacíos, pero partía el panel en dos columnas: su altura se redondeaba hacia arriba. Se midió antes de ubicarlo.
 - **Comparar con la referencia, no de memoria:** en la 3.1 las pantallas se compararon con la lámina de memoria y quedaron diferencias que el autor sí vio. En la 3.2 la lámina se capturó a 411 dp con Chrome sin ventana y cada captura se puso junto a la del emulador. Así aparecieron la escala de 1,5, las fichas sin íconos, el botón que tapaba contenido y los colores salpicados.
 - **Buscar evidencia local antes de suponerla:** se buscó un estudio de color hecho en Chile y no se encontró. Se usó una encuesta que incluye a Chile, presentada por la UNAM; por ser un boletín de prensa se marcó como apoyo y no como prueba. Una cifra del estudio de Medellín se corrigió antes de publicar: el azul tiene cerca de 75 % de aceptación, pero no es el color preferido.
@@ -79,6 +82,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Herramientas y memoria editable
+
+- **Qué cambió:** se sumaron la memoria editable en curso y las herramientas que funcionan sin claude.ai.
+- **Cómo estaba antes:** terminaba en la memoria en A3 del 12 de octubre.
+- **Por qué:** pedidos del autor (D-132, D-133).
 
 ### 2026-10-12 — Memoria en A3
 

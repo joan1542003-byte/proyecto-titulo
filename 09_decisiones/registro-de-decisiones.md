@@ -1663,7 +1663,35 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Faltan los marcadores, la fotografía y los resultados de la prueba.
 - **Documentación:** [Memoria en A3](../08_memoria/memoria-a3/README.md).
 
+## D-133 — Las herramientas viven en el repositorio y funcionan sin claude.ai
+
+- **Fecha:** 2026-10-13.
+- **Estado:** hecha.
+- **Contexto:** el autor pidió subir a GitHub el panel, funcional y con datos visibles, y los últimos artefactos como algo que funcione de verdad, no como artefactos de claude.ai. También pidió documentarlo todo para que otro Claude lo pueda leer.
+- **Decisión:**
+  - **Láminas:** las cinco páginas (Relevo, la app; Relevo aplicado; Relevo con aura; Taller de auras; Íconos de Relevo) traen su esqueleto HTML y descargan con el navegador. El taller se enlaza por ruta relativa.
+  - **Panel:**
+    - Datos reales: `servidor.js` local reenvía las consultas a la API de administración de Supabase con un token personal que queda fuera de Git.
+    - Sin token: muestra datos de ejemplo inventados.
+    - Los datos reales de participantes nunca se guardan en el repositorio, por la regla de privacidad.
+  - **Documentación:** [HERRAMIENTAS.md](../HERRAMIENTAS.md) es la guía de uso para el autor y para otro Claude; [herramientas.html](../herramientas.html), la página de entrada.
+- **Verificación:**
+  - Las seis versiones publicadas eran idénticas a las copias del repositorio.
+  - En un navegador local, cada página carga en UTF-8 y modo estándar, sin errores, con sus 72 íconos, 25 pantallas y 39 piezas.
+  - El panel funciona completo con datos de ejemplo.
+  - El servidor rechaza peticiones sin su clave o desde otro dominio.
+- **Límites:**
+  - El modo con datos reales no se probó con un token real.
+  - Las letras se cargan desde Google Fonts y el Excel del panel desde cdnjs: sin internet cambian la letra y esa exportación.
+- **Documentación:** [HERRAMIENTAS.md](../HERRAMIENTAS.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — D-133
+
+- **Qué cambió:** se registró D-133.
+- **Cómo estaba antes:** la última decisión era D-132.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-12 — D-132
 

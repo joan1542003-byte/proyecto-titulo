@@ -135,6 +135,8 @@
 | 12 oct. | Corrección | El diseño de la app no se parece a lo que vio en «Relevo, la app» ni en los últimos artefactos. Pidió mejorarlo, sin errores y con un diseño perfecto. | [Android 3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md): la 3.0 había cambiado colores, letra e íconos, pero conservaba la composición de la 2.30. Ahora las pantallas siguen la lámina: tarjetas sueltas con fichas de color, cápsulas sobre los cielos, el aura y el cielo a pantalla completa, la ruta en escalera y el perfil en una tarjeta. Mismas pantallas, datos y firma. 85 pruebas aprobadas; revisada en el emulador, no en un teléfono real. | D-130 |
 | 12 oct. | Corrección | Sigue sin verse como en los artefactos: errores serios de diseño, malas alineaciones, sin orden, y al elegir actividades los colores se ven repetidos y mezclados. «Relevo, la app» tiene un diseño superior. | [Android 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md): cada pantalla se comparó con la lámina capturada a la escala del teléfono. Se rehicieron las piezas con sus medidas, las ideas se ordenaron por familia de color, cada actividad tiene su variante de cielo y el botón queda fijo sobre el papel. 85 pruebas aprobadas; se corrigió un cierre de «Contando» encontrado en el emulador. | D-131 |
 | 12 oct. | Corrección y encargo | «Mientras todavía puedes hacerlo» suena mal y cuesta entenderlo; «Tu ruta» también suena raro. Todavía faltan detalles para que la app sea igual a «Relevo, la app». Además, pidió hacer su memoria diseñada en A3 horizontal con la v5: bien diseñada, no como un documento aburrido y con el diseño de Relevo. | Los textos y los detalles se resolvieron en la [app 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md) (D-131). La [memoria en A3](../08_memoria/memoria-a3/README.md) es un PDF de 32 páginas con el texto de la v5 sin cambios: apertura de capítulo sobre el aura, tres columnas, figuras dibujadas y capturas nuevas de la 3.2. El índice se calcula solo y se verificó contra el PDF. | D-131, D-132 |
+| 13 oct. | Corrección | La memoria en A3 se lee con dificultad: el texto es muy pequeño, el diseño a veces se repite, faltan coherencia entre los tamaños y tablas mejor hechas, y al ser una memoria de diseño se puede jugar más. No puede haber viudas; sobran etiquetas como «Capítulo» y el «cuadro gigante» de cada apertura. Debe poder editarse en InDesign, Affinity o similares. | Se instaló Instrument Sans, redonda y cursiva (OFL), con permiso del autor. Se empezó un escritor de IDML, el formato que abren InDesign y Affinity, y una página de muestra se abrió bien en Affinity. El rediseño completo quedó en pausa por el pedido siguiente ([memoria en A3](../08_memoria/memoria-a3/README.md)). | D-132 |
+| 13 oct. | Encargo | Subir a GitHub, a main, el panel de Relevo funcional y con datos visibles, y los cuatro últimos artefactos como algo que funcione de verdad y que otro Claude pueda leer, no como artefactos de claude.ai. Documentar todo: cómo usar el panel, los íconos, la app y el editor de presentaciones. | Las láminas y el taller funcionan solos. El panel muestra datos de ejemplo, o los reales con `node servidor.js` y un token que no entra al repositorio. La guía [HERRAMIENTAS.md](../HERRAMIENTAS.md) y la página [herramientas.html](../herramientas.html) reúnen todo. El modo con token no se probó. | D-133 |
 
 ## Lo que muestra el registro
 
@@ -145,6 +147,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Herramientas y memoria
+
+- **Qué cambió:** se registraron la corrección de la memoria en A3 y el encargo de las herramientas.
+- **Cómo estaba antes:** terminaba en la memoria en A3 del 12 de octubre.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-12 — Memoria en A3
 

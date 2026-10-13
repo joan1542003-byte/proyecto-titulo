@@ -1,3 +1,4 @@
+<!doctype html><html lang="es"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Íconos de Relevo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -295,8 +296,10 @@ footer { margin-top: 36px; font-size: 13px; color: var(--mute); max-width: 80ch;
   // Descargas
   let downloads = null;
   if (window.claude && typeof window.claude.use === 'function') window.claude.use('downloads').then((d) => { downloads = d; }).catch(() => {});
+  function descargarEnNavegador(nombre, datos) { const blob = datos instanceof Blob ? datos : new Blob([datos]); const u = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = u; a.download = nombre; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 5000); }
   async function offer(name, data) {
-    if (!downloads) { toast('Las descargas funcionan al abrir la lámina en claude.ai. Los archivos también están en el repositorio.'); return; }
+    // Fuera de claude.ai, la descarga normal del navegador.
+    if (!downloads) { descargarEnNavegador(name, data); toast('Descargado: ' + name); return; }
     try { await downloads.save({ filename: name, data }); toast('Descargado: ' + name); }
     catch (e) { toast(e && e.code === 'declined' ? 'Descarga cancelada' : e && e.code === 'rate_limited' ? 'Hay una descarga pendiente' : 'No se pudo descargar'); }
   }
@@ -378,3 +381,5 @@ footer { margin-top: 36px; font-size: 13px; color: var(--mute); max-width: 80ch;
   renderAll();
 })();
 </script>
+
+</body></html>

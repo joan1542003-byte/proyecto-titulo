@@ -21,3 +21,7 @@ desktop.ini
 # Exportaciones de trabajo
 *.tmp
 *.bak
+
+# Tokens locales (panel del testeo)
+**/.env.local
+**/.env

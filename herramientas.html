@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Herramientas de Relevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+/* Entrada a las herramientas del proyecto, con la línea de Relevo: papel, tinta y fichas de color. */
+:root {
+  --paper: #F7F4F0; --stone: #EEE9E3; --white: #FFFFFF; --ink: #141312; --mute: #6B655F; --line: #E4DED6;
+  --butter: #F4E496; --sky: #B3E5FC; --lime: #C6EEAE; --blush: #FAC8D9; --lilac: #DFD1FC; --peach: #FBD1B3;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--paper); }
+body { margin: 0; color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 72px; }
+h1 { margin: 0; font-size: clamp(36px, 5vw, 60px); line-height: 1; letter-spacing: -.035em; font-weight: 600; max-width: 18ch; text-wrap: balance; }
+h1 span, h2 span { color: var(--mute); }
+.lead { color: var(--mute); font-size: 18px; max-width: 62ch; margin: 16px 0 0; }
+h2 { font-size: 22px; letter-spacing: -.02em; font-weight: 600; margin: 48px 0 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 12px; }
+a.card { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 16px; align-items: start; background: var(--white); border-radius: 22px; padding: 18px; color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(30,22,12,.05); transition: transform .3s cubic-bezier(.2,.8,.2,1.15), box-shadow .3s; min-width: 0; }
+a.card:hover { transform: translateY(-2px); box-shadow: 0 1px 2px rgba(30,22,12,.05), 0 18px 40px -24px rgba(30,22,12,.3); }
+a.card:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.tile { width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; }
+.tile svg { width: 28px; height: 28px; fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.card b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; }
+.card p { margin: 4px 0 0; color: var(--mute); font-size: 15px; }
+.card code { font-size: 13px; background: var(--paper); border-radius: 6px; padding: 1px 6px; color: var(--ink); overflow-wrap: anywhere; }
+.note { margin-top: 48px; background: var(--white); border-radius: 22px; padding: 20px 22px; color: var(--mute); font-size: 15px; max-width: 80ch; }
+.note b { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Herramientas de Relevo <span>para seguir el testeo, diseñar y presentar.</span></h1>
+  <p class="lead">Todo funciona fuera de claude.ai: las páginas se abren con doble clic, y el panel también puede leer los datos reales con su servidor local. Cómo se usa cada una está en <a href="HERRAMIENTAS.md">HERRAMIENTAS.md</a>.</p>
+
+  <h2>Testeo <span>y app</span></h2>
+  <div class="grid">
+    <a class="card" href="06_desarrollo_y_factibilidad/panel-admin/panel-relevo.html">
+      <span class="tile" style="background:var(--butter)"><svg viewBox="0 0 24 24"><path d="M5 20v-6M10 20V9M15 20v-4M20 20V5"/></svg></span>
+      <span><b>Panel del testeo</b><p>Participantes, relevos, respuestas, mensajes y exportar. Con doble clic muestra datos de ejemplo; con <code>node servidor.js</code> y tu token, los reales.</p></span>
+    </a>
+    <a class="card" href="06_desarrollo_y_factibilidad/app-android/releases/">
+      <span class="tile" style="background:var(--sky)"><svg viewBox="0 0 24 24"><rect x="6.5" y="3" width="11" height="18" rx="2.8"/><path d="M10.5 18h3"/></svg></span>
+      <span><b>App Android 3.2</b><p>El APK que usa cada participante: <code>relevo-android-3.2-2026-10-12.apk</code>.</p></span>
+    </a>
+  </div>
+
+  <h2>Diseño <span>y presentaciones</span></h2>
+  <div class="grid">
+    <a class="card" href="10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html">
+      <span class="tile" style="background:var(--lilac)"><svg viewBox="0 0 24 24"><path d="M10.5 4c.6 4 2.1 5.5 6 6.1-3.9.6-5.4 2.1-6 6.1-.6-4-2.1-5.5-6-6.1 3.9-.6 5.4-2.1 6-6.1z"/><path d="M18 14.6c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.5-2.6 1.6-.2 2.2-.8 2.5-2.5z"/></svg></span>
+      <span><b>Taller de auras</b><p>Editor de piezas y láminas para presentaciones y la memoria: PNG transparente, copiar y pegar, láminas y fondos de aura.</p></span>
+    </a>
+    <a class="card" href="10_recursos_visuales/iconos-relevo-2026-10-11/iconos-relevo.html">
+      <span class="tile" style="background:var(--lime)"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="2.2"/><rect x="13" y="4" width="7" height="7" rx="2.2"/><rect x="4" y="13" width="7" height="7" rx="2.2"/><rect x="13" y="13" width="7" height="7" rx="2.2"/></svg></span>
+      <span><b>Íconos de Relevo</b><p>Los 72 íconos, sus reglas y la paleta: copiar o descargar SVG, o todos en ZIP.</p></span>
+    </a>
+    <a class="card" href="10_recursos_visuales/rediseno-app-2026-10-11/relevo-la-app.html">
+      <span class="tile" style="background:var(--blush)"><svg viewBox="0 0 24 24"><path d="M3.5 20H8v-4.5h4.5V11H17V6.5h3.5"/></svg></span>
+      <span><b>Relevo, la app</b><p>Las 25 pantallas del rediseño: la referencia que sigue la app 3.2.</p></span>
+    </a>
+    <a class="card" href="10_recursos_visuales/logo-relevo-2026-10-11/relevo-aplicado.html">
+      <span class="tile" style="background:var(--peach)"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-10.8a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.2" r="2.3"/></svg></span>
+      <span><b>Relevo aplicado</b><p>El logo, los colores de las actividades y el recorrido, con su fundamento.</p></span>
+    </a>
+    <a class="card" href="10_recursos_visuales/relevo-con-aura-2026-10-10/relevo-con-aura.html">
+      <span class="tile" style="background:var(--stone)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <span><b>Relevo con aura</b><p>La exploración visual aprobada: el aura de la pantalla y las fichas de color.</p></span>
+    </a>
+    <a class="card" href="10_recursos_visuales/logo-relevo-2026-10-11/">
+      <span class="tile" style="background:var(--butter)"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.5"/><circle cx="16" cy="12" r="4.5"/><circle cx="12" cy="16" r="4.5"/><circle cx="8" cy="12" r="4.5"/></svg></span>
+      <span><b>Logo</b><p>Los archivos SVG del logo, la marca y el ícono de la app.</p></span>
+    </a>
+  </div>
+
+  <h2>Memoria</h2>
+  <div class="grid">
+    <a class="card" href="08_memoria/memoria-a3/">
+      <span class="tile" style="background:var(--sky)"><svg viewBox="0 0 24 24"><path d="M3.5 6.3c2.8-1 5.6-.8 8.5 1v12.2c-2.9-1.8-5.7-2-8.5-1z"/><path d="M20.5 6.3c-2.8-1-5.6-.8-8.5 1v12.2c2.9-1.8 5.7-2 8.5-1z"/></svg></span>
+      <span><b>Memoria en A3</b><p>La v5 compuesta en A3 horizontal, su generador y el archivo editable para InDesign y Affinity, en curso.</p></span>
+    </a>
+  </div>
+
+  <p class="note"><b>Para otro Claude:</b> lee primero <a href="CLAUDE.md">CLAUDE.md</a> y el traspaso en <code>00_gobernanza/</code>. Nunca subas tokens, claves de servicio, datos de participantes ni nombres al repositorio. El aura es de la pantalla: el Tag no emite luz, solo suena.</p>
+</main>
+</body>
+</html>
