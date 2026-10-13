@@ -106,20 +106,46 @@ Si la v5 cambia, basta con volver a correr el script.
 
 **Archivo editable (13 de octubre de 2026):**
 
-- **Generador:** [construir-idml.js](construir-idml.js) lee la v5 y escribe `memoria-relevo-a3.idml`, que se abre en Affinity o InDesign. Se corre con `node construir-idml.js` y necesita Google Chrome, que dibuja las luces, el logo y las figuras 1 y 4, y mide el alto de cada bloque para repartir las columnas.
-- **Qué trae:** 33 páginas A3 horizontales, tres columnas con texto de 11,5 pt y la escala única (8, 9,5, 11,5, 15, 20 y 200 pt); una luz de color con el número de cada capítulo; un texto enlazado por capítulo, que se reacomoda al editar; tablas y figuras a lo ancho, arriba de la página siguiente a su mención, y las tablas de hasta tres columnas con el título y la nota al lado; índice con los números de página; estilos de párrafo y de carácter con nombre; y los marcadores «Confirmar» resaltados.
+- **Generador:** [construir-idml.js](construir-idml.js) lee la v5 y escribe `memoria-relevo-a3.idml`, que se abre en Affinity o InDesign. Se corre con `node construir-idml.js` y necesita Google Chrome, que dibuja las luces, el logo, los diagramas, las tablas y las cifras, y mide el alto de cada bloque para repartir las columnas.
+- **Qué trae:** 36 páginas A3 horizontales (33 antes de sumar los agradecimientos y las figuras de cifras), tres columnas con texto de 11,5 pt y la escala única (8, 9,5, 11,5, 15, 20 y 200 pt); una luz de color con el número de cada capítulo; un texto enlazado por capítulo, que se reacomoda al editar; tablas y figuras a lo ancho, arriba de la página siguiente a su mención, y las tablas de hasta tres columnas, salvo la de participantes, con el título y la nota al lado; índice con los números de página; estilos de párrafo y de carácter con nombre; y los marcadores «Confirmar» resaltados.
 - **Viudas:** cada párrafo lleva un espacio fijo entre sus dos últimas palabras.
 - **El IDML no se guarda en el repositorio:** sus imágenes se enlazan con la ruta completa del computador donde se generó. Hay que generarlo en la carpeta donde se va a trabajar.
 - **Comprobado en Affinity 3.2 (Mac):** abre con sus 33 páginas, el texto enlazado, las tablas con sus reglas y el alto de fila, las imágenes y los PDF colocados.
 - **No comprobado:** el aspecto con Instrument Sans, que no estaba instalada en ese computador; Affinity usó una letra de reemplazo. Tampoco se imprimió ni se exportó el PDF.
-- **Límites:** Affinity no lee el relleno de las celdas del IDML, así que el aire de cada fila se da con su alto mínimo. El reparto de columnas se calcula con holgura: si al cambiar la letra o el texto sobra o falta una columna, se ajusta a mano o se vuelve a correr el generador. La figura 3 sigue como «Fotografía pendiente».
+- **Límites:** el reparto de columnas se calcula con holgura: si al cambiar la letra o el texto sobra o falta una columna, se ajusta a mano o se vuelve a correr el generador. La fotografía del Tag (figura 4) sigue como «Fotografía pendiente».
+
+**Tablas y cifras con la línea de la marca (13 de octubre de 2026):**
+
+El autor pidió que la memoria se viera como una memoria de diseño y que no llevara tablas genéricas. Desde entonces ninguna tabla es una tabla de procesador de texto.
+
+- **Tablas:** cada fila es una ficha blanca sobre el papel. La primera celda lleva un círculo de tinta con un icono de la aplicación ([marca-e-iconos.json](marca-e-iconos.json)), con el número de la fila cuando la tabla es una secuencia, o una cápsula con la versión. Los estados («Implementado», «Cumplido», «Parcial», «Pendiente») son cápsulas: llena, de contorno o de trazo discontinuo. Los objetivos específicos van en fichas redondas con su número.
+- **Tabla de participantes:** una ficha por persona, con su código en el círculo y su edad encima del aporte.
+- **Tabla de condiciones:** una columna por condición, con el color de su papel en la cabecera (cielo, primer paso; lima, lugar; amarillo, teléfono).
+- **Cifras (figuras 1 y 6):** una ficha por dato, con el valor en 44 pt, el total en gris, la explicación y una barra por cada caso (o un punto, si son diez o menos). Cada ficha usa el icono y el color del papel al que pertenece el dato; el caso «a medias» se dibuja a medias.
+- **Diagrama y línea de tiempo (figuras 2 y 5):** los nodos llevan el icono y el color de su papel.
+- **Regla de color:** el color solo aparece donde nombra un papel del sistema («un color, un papel»). Las tablas son de tinta, blanco y papel.
+- **Cómo están hechas:** Chrome compone cada pieza con la letra real. El fondo (fichas, círculos, cápsulas y barras) se guarda como PDF vectorial en `figuras/idml/` y el texto se coloca encima como texto vivo, con su estilo de párrafo, donde Chrome lo midió. El texto de los círculos y de las cápsulas es parte del fondo.
+- **Para cambiar una tabla:** se edita en la v5 y se vuelve a correr el generador. En Affinity se puede corregir el texto vivo, pero la ficha no crece sola.
+- **Vista previa de las piezas:** `PREVIA=carpeta node construir-idml.js` deja además cada pieza en PDF con su texto a la vista.
+- **Figuras por su contenido:** el generador reconoce cada figura por su descripción (cifras, diagrama, capturas, línea de tiempo o fotografía), no por su número. [construir.js](construir.js) hace lo mismo desde esta fecha; su PDF no se volvió a generar.
+- **Agradecimientos:** página propia después de la portada.
+- **Muestra:** [tablas-y-cifras.pdf](tablas-y-cifras.pdf) reúne las trece piezas con su texto y la letra real, una por página, para revisarlas sin abrir Affinity. El generador la rehace cada vez.
+- **Texto bajo las tablas:** una página lleva texto debajo de sus tablas y figuras si quedan al menos unos 65 mm; si no, queda solo para ellas.
+- **Comprobado en Affinity 3.2 (Mac):** abre con sus páginas, las fichas, los iconos y las cápsulas en su lugar y el texto vivo encima.
+- **No comprobado:** el aspecto con Instrument Sans, que sigue sin instalarse en ese computador. Con la letra de reemplazo, más ancha, algunas celdas parten la línea en otro punto.
 
 **Lo que sigue:**
 
 - **Letra:** instalar Instrument Sans, redonda y cursiva, antes de abrir el archivo.
-- **Revisión en Affinity:** recorrer las 33 páginas con la letra instalada y exportar el PDF desde ahí.
+- **Revisión en Affinity:** recorrer las páginas con la letra instalada y exportar el PDF desde ahí.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Tablas y cifras con la línea de la marca
+
+- **Qué cambió:** se documentó el rediseño de las tablas y de las cifras, la página de agradecimientos y el reconocimiento de las figuras por su contenido.
+- **Cómo estaba antes:** las tablas eran tablas nativas con reglas finas y las figuras se elegían por su número.
+- **Por qué:** el autor pidió que la memoria se viera como una memoria de diseño, sin tablas genéricas.
 
 ### 2026-10-13 — Archivo editable para Affinity
 

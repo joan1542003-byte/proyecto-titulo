@@ -159,23 +159,30 @@ function tabla(filas) {
 }
 
 // Figuras que el texto pide «por insertar» y que se pueden dibujar con lo que dice la propia memoria.
+// Se reconocen por su descripción, no por su número, para que renumerarlas no las cambie de lugar.
+const tipoFigura = (spec) => (/datos en tarjetas/.test(spec) ? 'datos' : /^diagrama/.test(spec) ? 'diagrama' : /capturas/.test(spec) ? 'capturas' : /^línea de tiempo/.test(spec) ? 'tiempo' : 'foto');
 const FIG = {
-  1: () => {
+  datos: (spec) => {
+    const datos = spec.replace(/^[^:]*: /, '').split('; ').map((d) => d.match(/^(\d+) de (\d+), (.*)$/)).filter(Boolean);
+    return `<div style="display:grid;grid-template-columns:repeat(${datos.length},1fr);gap:4mm">${datos.map(([, k, n, t]) =>
+      `<div style="background:#fff;border-radius:5mm;padding:5mm"><div style="font-size:34pt;line-height:1;font-weight:600">${k} <span style="font-size:16pt;font-weight:500;color:#6E6964">de ${n}</span></div><p style="margin-top:3mm">${inline(t.replace(/^./, (c) => c.toUpperCase()))}</p></div>`).join('')}</div>`;
+  },
+  diagrama: () => {
     const nodos = [['estrella', 'stone', 'Intención personal'], ['primer-paso', 'sky', 'Primer paso'], ['lugar', 'lime', 'Lugar elegido'],
       ['tiempo', 'butter', 'Condición configurada'], ['suena', 'lime', 'Pulso ambiental'], ['decidir', 'blush', 'Decisión de la persona']];
     const ramas = [['empece', 'Considerar la intención'], ['telefono', 'Seguir en el teléfono'], ['silenciar', 'Silenciar la señal']];
     return `<div class="fig1"><div class="fig1-fila">${nodos.map(([i, c, t], k) => `${k ? '<span class="flecha">' + svgIcono('siguiente') + '</span>' : ''}<div class="nodo"><span class="ficha ${c}">${svgIcono(i)}</span><b>${t}</b></div>`).join('')}</div>` +
       `<div class="fig1-llave"></div><div class="fig1-ramas">${ramas.map(([i, t]) => `<div class="rama"><span class="ficha stone">${svgIcono(i)}</span><b>${t}</b></div>`).join('')}</div></div>`;
   },
-  2: () => {
+  capturas: () => {
     const pasos = [['p1', '¿Qué quieres hacer?'], ['p2', '¿Cómo empiezas?'], ['p3', '¿Dónde empiezas?'], ['p4', '¿Cuándo suena?'], ['p5', '¿Dónde suena?'], ['p6', 'Todo listo']];
     return `<div class="fig2">${pasos.map(([f, t], k) => {
       const { w, h } = medidasPng(path.join(AQUI, 'figuras', `preparar-${f}.png`));
       return `<figure><img src="figuras/preparar-${f}.png" width="${w}" height="${h}" alt="Pantalla «${t}»"><figcaption><span class="n">${k + 1}</span>${t}</figcaption></figure>`;
     }).join('')}</div>`;
   },
-  3: (spec) => `<div class="fig-pendiente"><span class="pastilla">Fotografía pendiente</span><p>${inline(spec.replace(/^./, (c) => c.toUpperCase()))}.</p></div>`,
-  4: () => {
+  foto: (spec) => `<div class="fig-pendiente"><span class="pastilla">Fotografía pendiente</span><p>${inline(spec.replace(/^./, (c) => c.toUpperCase()))}.</p></div>`,
+  tiempo: () => {
     const semana = (n, dias) => `<div class="etapa semana"><span class="dia">Días ${dias}</span><b>Semana ${n}</b><span class="conds"><i>A</i><i>B</i><i>C</i></span><ul><li>Una condición, según la secuencia</li><li>Preguntas tras cada señal</li><li>Escalas semanales</li></ul></div>`;
     return `<div class="fig4"><div class="etapa inicio"><span class="dia">Día 0</span><b>Sesión inicial en el hogar</b><ul><li>Límite de 8 minutos</li><li>Cuatro momentos observados</li><li>Comprobación de autonomía</li></ul></div>` +
       semana(1, '1–7') + semana(2, '8–14') + semana(3, '15–21') +
@@ -210,17 +217,18 @@ function cuerpo(bloquesSec, registro, capitulo) {
         const n = Number((tab || fig)[1]);
         const titulo = (sig && sig.t === 'p' && /^\*[^*].*\*$/.test(sig.x)) ? sig.x.slice(1, -1) : '';
         let j = k + (titulo ? 2 : 1);
-        let contenido = '';
+        let contenido = ''; let tipo = null;
         if (tab && bloquesSec[j] && bloquesSec[j].t === 'tabla') { contenido = tabla(bloquesSec[j].filas); j++; }
         if (fig && bloquesSec[j] && bloquesSec[j].t === 'p' && /^\[FIGURA POR INSERTAR/.test(bloquesSec[j].x)) {
           const spec = bloquesSec[j].x.replace(/^\[FIGURA POR INSERTAR: /, '').replace(/\]$/, '');
-          contenido = FIG[n] ? FIG[n](spec) : `<div class="fig-pendiente"><p>${inline(spec)}</p></div>`;
+          tipo = tipoFigura(spec);
+          contenido = FIG[tipo](spec);
           j++;
         }
         let nota = '';
         if (bloquesSec[j] && bloquesSec[j].t === 'p' && /^\*Nota\.\*/.test(bloquesSec[j].x)) {
           let texto = bloquesSec[j].x;
-          if (fig && n === 2) texto += ' En este borrador, las capturas son de la versión 3.2, en emulador y con datos de prueba; el texto describe la 2.30. [CONFIRMAR: versión que se presentará]';
+          if (tipo === 'capturas') texto += ' En este borrador, las capturas son de la versión 3.2, en emulador y con datos de prueba; el texto describe la 2.30. [CONFIRMAR: versión que se presentará]';
           nota = `<p class="nota">${inline(texto)}</p>`; j++;
         }
         const id = `${tab ? 'tabla' : 'figura'}-${n}`;

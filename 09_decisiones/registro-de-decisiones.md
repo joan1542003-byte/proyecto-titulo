@@ -1685,7 +1685,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Las letras se cargan desde Google Fonts y el Excel del panel desde cdnjs: sin internet cambian la letra y esa exportación.
 - **Documentación:** [HERRAMIENTAS.md](../HERRAMIENTAS.md).
 
+## D-134 — Las tablas y las cifras de la memoria son piezas de la marca
+
+- **Fecha:** 2026-10-13.
+- **Estado:** hecha; falta revisarla con Instrument Sans instalada.
+- **Contexto:** el autor vio la memoria en A3 y dijo que le faltaba diseño: tablas y estadísticas diseñadas, sin tablas genéricas, porque es una memoria de diseño. Recordó que el repositorio ya tiene piezas con diseño y un generador.
+- **Decisión:**
+  - **Tablas:** una ficha blanca por fila sobre el papel; círculo de tinta con un icono de la aplicación, el número de la fila o la versión; estados como cápsulas (llena, de contorno o discontinua).
+  - **Cifras:** una ficha por dato, como la pieza «dato» del Taller de auras: valor grande, total en gris, explicación y una barra o un punto por caso.
+  - **Color:** solo donde nombra un papel del sistema («un color, un papel»). Las tablas van en tinta, blanco y papel; el color queda para las cifras, el diagrama, la línea de tiempo y las condiciones de la prueba.
+  - **Texto:** el fondo de cada pieza es un PDF vectorial y el texto va encima, vivo y con su estilo, para poder corregirlo en Affinity.
+  - **Fuente del contenido:** la v5. Las dos figuras de cifras repiten datos que el texto ya informa; no se añadió ningún dato.
+- **Verificación:**
+  - El generador produce 36 páginas, 11 tablas y 6 figuras; la [muestra](../08_memoria/memoria-a3/tablas-y-cifras.pdf) reúne las trece piezas compuestas.
+  - En Affinity 3.2 (Mac) se revisaron la página de agradecimientos, las figuras 1 y 5 y las tablas 2, 5 y 10: fondos, iconos, cápsulas y texto en su lugar.
+  - No se comprobó con Instrument Sans: no está instalada en ese computador y Affinity usó una letra de reemplazo.
+- **Documentos:** [README de la memoria en A3](../08_memoria/memoria-a3/README.md) y [construir-idml.js](../08_memoria/memoria-a3/construir-idml.js).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — D-134
+
+- **Qué cambió:** se registró D-134.
+- **Cómo estaba antes:** la última decisión era D-133.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-13 — D-133
 
