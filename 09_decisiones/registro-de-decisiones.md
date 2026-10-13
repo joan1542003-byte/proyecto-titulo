@@ -1641,7 +1641,35 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - No conviene instalarla a mitad de la prueba de 21 días.
 - **Documentación:** [Android 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md).
 
+## D-132 — La memoria v5 en A3 horizontal, con la línea de Relevo
+
+- **Fecha:** 2026-10-12.
+- **Estado:** hecha. Es un borrador de diseño: el texto es el de la v5, con sus 24 marcadores pendientes.
+- **Contexto:** el autor pidió diseñar su memoria en A3 horizontal a partir de la v5, «bien diseñada, no como un documento aburrido», con el diseño de Relevo.
+- **Decisión:**
+  - Componer la v5 sin cambiar su texto, en A3 horizontal y a tres columnas, con Instrument Sans, el papel, el aura con grano, las fichas, las cápsulas y los íconos de Relevo.
+  - Abrir cada capítulo con un panel de aura del alto de la columna. Cada capítulo empieza en la columna libre que deja el anterior, para que no queden páginas casi vacías. Los capítulos 1 y 4, que son breves, van en letra mayor.
+  - Ubicar tablas y figuras a lo ancho: al pie de la página donde se mencionan, si caben, o arriba de la siguiente. Respetar APA 7 en rótulos, títulos y notas.
+  - Dibujar las figuras 1 y 4 con lo que describe la v5. Usar capturas nuevas de la app 3.2 para la figura 2. Dejar la figura 3 como «Fotografía pendiente».
+  - Generar la memoria con un script ([`construir.js`](../08_memoria/memoria-a3/construir.js)) que pagina en Chrome y escribe el índice solo, para rehacerla cuando cambie la v5.
+- **Verificación:**
+  - 32 páginas, sin desbordes.
+  - Los 32 números del índice coinciden con el PDF.
+  - Se revisaron todas las páginas.
+  - Las capturas se tomaron en el emulador, con datos de prueba y en modo avión. Después se restauraron los datos del autor, que quedaron idénticos (MD5).
+- **Límites:**
+  - No se imprimió.
+  - La v5 describe la app 2.30 y las capturas son de la 3.2.
+  - Faltan los marcadores, la fotografía y los resultados de la prueba.
+- **Documentación:** [Memoria en A3](../08_memoria/memoria-a3/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — D-132
+
+- **Qué cambió:** se registró D-132.
+- **Cómo estaba antes:** la última decisión era D-131.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-12 — D-131
 

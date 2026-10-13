@@ -134,6 +134,7 @@
 | 12 oct. | Encargo | Implementar la actualización del diseño de la app, perfecta y sin errores. Aprobó descargar Instrument Sans para la app. | [Android 3.0](../06_desarrollo_y_factibilidad/app-android/version-3.0-la-linea-nueva-2026-10-12.md): colores, letra, íconos, cielos, aura y logo nuevos, con las mismas pantallas, decisiones y datos. Instalada sobre la 2.30 en el emulador, los datos quedaron idénticos y un relevo activo siguió contando. 85 pruebas aprobadas, misma firma. No se probó en un teléfono real. | D-129 |
 | 12 oct. | Corrección | El diseño de la app no se parece a lo que vio en «Relevo, la app» ni en los últimos artefactos. Pidió mejorarlo, sin errores y con un diseño perfecto. | [Android 3.1](../06_desarrollo_y_factibilidad/app-android/version-3.1-las-pantallas-de-la-lamina-2026-10-12.md): la 3.0 había cambiado colores, letra e íconos, pero conservaba la composición de la 2.30. Ahora las pantallas siguen la lámina: tarjetas sueltas con fichas de color, cápsulas sobre los cielos, el aura y el cielo a pantalla completa, la ruta en escalera y el perfil en una tarjeta. Mismas pantallas, datos y firma. 85 pruebas aprobadas; revisada en el emulador, no en un teléfono real. | D-130 |
 | 12 oct. | Corrección | Sigue sin verse como en los artefactos: errores serios de diseño, malas alineaciones, sin orden, y al elegir actividades los colores se ven repetidos y mezclados. «Relevo, la app» tiene un diseño superior. | [Android 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md): cada pantalla se comparó con la lámina capturada a la escala del teléfono. Se rehicieron las piezas con sus medidas, las ideas se ordenaron por familia de color, cada actividad tiene su variante de cielo y el botón queda fijo sobre el papel. 85 pruebas aprobadas; se corrigió un cierre de «Contando» encontrado en el emulador. | D-131 |
+| 12 oct. | Corrección y encargo | «Mientras todavía puedes hacerlo» suena mal y cuesta entenderlo; «Tu ruta» también suena raro. Todavía faltan detalles para que la app sea igual a «Relevo, la app». Además, pidió hacer su memoria diseñada en A3 horizontal con la v5: bien diseñada, no como un documento aburrido y con el diseño de Relevo. | Los textos y los detalles se resolvieron en la [app 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md) (D-131). La [memoria en A3](../08_memoria/memoria-a3/README.md) es un PDF de 32 páginas con el texto de la v5 sin cambios: apertura de capítulo sobre el aura, tres columnas, figuras dibujadas y capturas nuevas de la 3.2. El índice se calcula solo y se verificó contra el PDF. | D-131, D-132 |
 
 ## Lo que muestra el registro
 
@@ -144,6 +145,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-12 — Memoria en A3
+
+- **Qué cambió:** se registraron el pedido de textos más claros y el de la memoria en A3.
+- **Cómo estaba antes:** terminaba en la corrección de la 3.1.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-12 — Android 3.2
 

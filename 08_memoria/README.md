@@ -8,6 +8,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
+- [Memoria v5 en A3 horizontal (12 de octubre de 2026)](memoria-a3/README.md): la v5 compuesta con la línea de Relevo, en un [PDF de 32 páginas](memoria-a3/memoria-relevo-a3.pdf) (D-132). El texto es el de la v5, sin cambios, con sus marcadores a la vista. Se genera de nuevo con `node construir.js` cuando cambie la v5.
 - [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: faltan sus 24 marcadores, las figuras y los resultados de la prueba. La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
@@ -88,6 +89,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-12 — Memoria en A3
+
+- **Cambio:** se enlazó la v5 compuesta en A3 horizontal con la línea de Relevo.
+- **Versión anterior:** la v5 solo existía en Markdown.
+- **Motivo:** pedido del autor (D-132).
 
 ### 2026-10-11 — Borrador v5 aprobado
 
