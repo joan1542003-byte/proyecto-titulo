@@ -1697,12 +1697,37 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Texto:** el fondo de cada pieza es un PDF vectorial y el texto va encima, vivo y con su estilo, para poder corregirlo en Affinity.
   - **Fuente del contenido:** la v5. Las dos figuras de cifras repiten datos que el texto ya informa; no se añadió ningún dato.
 - **Verificación:**
-  - El generador produce 36 páginas, 11 tablas y 6 figuras; la [muestra](../08_memoria/memoria-a3/tablas-y-cifras.pdf) reúne las trece piezas compuestas.
+  - El generador produce 36 páginas, 11 tablas y 6 figuras; una muestra en PDF reunía las trece piezas compuestas.
   - En Affinity 3.2 (Mac) se revisaron la página de agradecimientos, las figuras 1 y 5 y las tablas 2, 5 y 10: fondos, iconos, cápsulas y texto en su lugar.
   - No se comprobó con Instrument Sans: no está instalada en ese computador y Affinity usó una letra de reemplazo.
-- **Documentos:** [README de la memoria en A3](../08_memoria/memoria-a3/README.md) y [construir-idml.js](../08_memoria/memoria-a3/construir-idml.js).
+- **Documentos:** [README de la memoria en A3](../08_memoria/memoria-a3/README.md) y [construir-idml.js](../08_memoria/memoria-a3/construir-idml.js). La muestra `tablas-y-cifras.pdf` se retiró con D-135: el PDF completo la reemplaza.
+
+## D-135 — La memoria en A3 vuelve al diseño del 12 de octubre, con letra grande, aire y sin viudas
+
+- **Fecha:** 2026-10-13.
+- **Estado:** hecha; falta recorrer las 53 páginas en Affinity y exportar desde ahí.
+- **Contexto:** el autor vio la versión editable y dijo que el texto y todo lo demás se veían muy pequeños y amontonados. Pidió instalar la tipografía, un diseño más fiel al del 12 de octubre, lectura perfecta en tamaño real y en pantalla, y ninguna viuda.
+- **Decisión:**
+  - **Diseño:** vuelven los paneles de aura con el número, el título y las secciones; la portada con el ejemplo de la app; las fichas del índice y de los anexos; y la pregunta y la hipótesis sobre el aura. Se mantienen las tablas y cifras de D-134.
+  - **Tamaño:** texto de 14 pt con interlineado de 20 pt (antes 11,5 pt; el 12 de octubre, 10 pt). Tablas en 11 pt. Escala única: 9, 11, 14, 18, 28, 44 y 150 pt.
+  - **Aire:** márgenes mayores, 12 mm entre piezas y texto, cada sección en columna nueva y páginas solo para tablas cuando bajo ellas quedan menos de 68 mm. La memoria pasa de 36 a 53 páginas.
+  - **Viudas:** el generador reparte el texto línea por línea y no deja menos de dos líneas a cada lado de un corte; las últimas palabras de cada párrafo van unidas.
+  - **Un solo reparto, tres archivos:** el generador escribe el IDML, el HTML y el PDF con las mismas páginas.
+  - **Letra:** Instrument Sans se instaló en el Mac del autor, con ocho estilos fijos, porque Affinity dibujaba la letra variable siempre en regular. La cursiva, de Google Fonts (OFL), se guardó en el repositorio para el generador.
+- **Verificación:**
+  - Una prueba en Affinity 3.2 confirmó que respeta el control de viudas del IDML y que parte las líneas igual que Chrome.
+  - Las páginas 9 y 36 del archivo de Affinity coinciden línea por línea con el PDF.
+  - Se revisaron 38 de las 53 páginas del PDF, con todas las tablas y figuras.
+- **Límites:** no se recorrieron las 53 páginas en Affinity, no se exportó desde Affinity y no se imprimió.
+- **Documentos:** [README de la memoria en A3](../08_memoria/memoria-a3/README.md), [construir-idml.js](../08_memoria/memoria-a3/construir-idml.js) y el [PDF](../08_memoria/memoria-a3/memoria-relevo-a3.pdf).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-13 — D-135
+
+- **Qué cambió:** se registró D-135.
+- **Cómo estaba antes:** la última decisión era D-134.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-13 — D-134
 

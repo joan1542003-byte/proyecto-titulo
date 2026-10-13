@@ -176,7 +176,8 @@ ${cs}
       const fin = i < parrafos.length - 1 ? '<Br/>' : '';
       if (p.tabla) return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}"><CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">${this.tablaXml(p.tabla)}${fin}</CharacterStyleRange></ParagraphStyleRange>`;
       const rs = this.runs(p.partes.length ? p.partes : [{ texto: '' }]);
-      return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}">${rs.map((s, k) => s + (k === rs.length - 1 ? fin : '') + '</CharacterStyleRange>').join('')}</ParagraphStyleRange>`;
+      const propio = p.despues != null ? ` SpaceAfter="${p.despues}"` : '';   // aire propio de este párrafo, sobre el de su estilo
+      return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}"${propio}>${rs.map((s, k) => s + (k === rs.length - 1 ? fin : '') + '</CharacterStyleRange>').join('')}</ParagraphStyleRange>`;
     }).join('\n');
     return XMLHEAD + `<idPkg:Story ${NS}><Story Self="${id}" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">` +
       `<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection"/>` +

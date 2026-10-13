@@ -8,7 +8,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
-- [Memoria v5 en A3 horizontal (12 de octubre de 2026)](memoria-a3/README.md): la v5 compuesta con la línea de Relevo, en un [PDF de 32 páginas](memoria-a3/memoria-relevo-a3.pdf) (D-132). El texto es el de la v5, sin cambios, con sus marcadores a la vista. Se genera de nuevo con `node construir.js` cuando cambie la v5. Ese PDF es del 12 de octubre y no trae los cambios posteriores de la v5. La versión editable para Affinity se genera con `node construir-idml.js`: 36 páginas, con las tablas y las cifras como piezas de la marca (D-134); su [muestra](memoria-a3/tablas-y-cifras.pdf) las reúne en un PDF.
+- [Memoria v5 en A3 horizontal](memoria-a3/README.md): la v5 compuesta con la línea de Relevo, en un [PDF de 53 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134 y D-135). Texto de 14 pt, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
 - [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: al 13 de octubre faltan sus 21 marcadores, la fotografía del Tag y el resto de los resultados de la prueba. La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
@@ -89,6 +89,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-13 — Memoria en A3 rehecha
+
+- **Cambio:** el enlace a la memoria en A3 describe la versión del 13 de octubre: 53 páginas, texto de 14 pt y un solo generador para el PDF y el archivo de Affinity.
+- **Versión anterior:** describía el PDF de 32 páginas del 12 de octubre y, aparte, la versión editable de 36 páginas.
+- **Motivo:** el autor pidió letra más grande, más aire, ninguna viuda y un diseño más fiel al del 12 de octubre (D-135).
+- **Alcance:** el texto de la v5 no cambió.
 
 ### 2026-10-13 — Borrador v5: agradecimientos, cifras y repeticiones
 
