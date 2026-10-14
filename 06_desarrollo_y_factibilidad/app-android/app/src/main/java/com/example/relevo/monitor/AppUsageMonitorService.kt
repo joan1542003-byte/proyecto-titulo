@@ -274,6 +274,8 @@ class AppUsageMonitorService : Service() {
     store.save(signalled)
     researchLog.record(signalled.sessionId, signalled.participantCode, if (audible) "signal_emitted" else "signal_failed", signalled.targetPackage, signalled.observedUsageSeconds)
     if (audible) researchLog.markSignal(signalled.sessionId, signalled.observedUsageSeconds, signalAt, usageBefore)
+    // La carga de la pila del Tag al sonar, si la informó al conectarse: explica señales que no se oyeron (2.31).
+    if (reminder.signalRoute == SignalRoute.TAG) TagStore(this).battery?.let { researchLog.logApp(signalled.participantCode, "llavero_pila", "pila=$it") }
     researchLog.markAppSeconds(signalled.sessionId, signalAt)
     scope.launch(Dispatchers.IO) {
       RemoteSync(this@AppUsageMonitorService, researchLog).syncPending()

@@ -31,6 +31,15 @@ object TagProtocol {
    */
   val LINK_LOSS_SERVICE: UUID = uuid16(0x1803)
 
+  /** Servicio estándar «Batería» (0x180F) y su «Nivel de batería» (0x2A19), de 0 a 100 (2.31). */
+  val BATTERY_SERVICE: UUID = uuid16(0x180F)
+  val BATTERY_LEVEL: UUID = uuid16(0x2A19)
+
+  /** La carga en palabras para la pantalla: el porcentaje y, si queda poca, el aviso de cambiar la pila. */
+  fun batteryLabel(percent: Int): String = if (percent <= LOW_BATTERY) "pila al $percent %, cámbiala pronto" else "pila al $percent %"
+
+  const val LOW_BATTERY = 20
+
   /** Descriptor estándar para pedir avisos de una característica (0x2902). */
   val CLIENT_CONFIG: UUID = uuid16(0x2902)
 

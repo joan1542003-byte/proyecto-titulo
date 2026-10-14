@@ -64,13 +64,13 @@ fun RelevoIcon(
   }
 }
 
-/** Logotipo «relevo» en minúsculas (Schibsted Grotesk 650). Mínimo 64 px de ancho. */
+/** Logotipo «relevo» en minúsculas: desde 2.31, el de la línea 3.0 (Chillax Semibold en trazos, D-125). Mínimo 64 px de ancho. */
 @Composable
 fun Wordmark(modifier: Modifier = Modifier, height: Dp = 22.dp, color: Color = Relevo.colors.ink) {
   Image(
     painter = painterResource(R.drawable.relevo_wordmark),
     contentDescription = "relevo",
     colorFilter = ColorFilter.tint(color),
-    modifier = modifier.height(height).width(height * (5910f / 1526f)),
+    modifier = modifier.height(height).width(height * (291.5f / 73.7f)),
   )
 }

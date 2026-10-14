@@ -157,27 +157,38 @@ class SignalPlayer(private val context: Context) {
         val endAt = System.currentTimeMillis() + TagProtocol.durationMillis(pattern == Pattern.TEST)
         var repeatAt = System.currentTimeMillis() + TagProtocol.REPEAT_MILLIS
         var misses = 0
+        var reopened = false
         while (System.currentTimeMillis() < endAt) {
           when {
             pressed.get() -> { ending = Ending.SILENCED_ON_OBJECT; break }
             !playing -> { ending = Ending.STOPPED; break }
-            !TagLink.isConnectedTo(address) -> { ending = Ending.ROUTE_LOST; break }
+            !TagLink.isConnectedTo(address) && reopened -> { ending = Ending.ROUTE_LOST; break }
           }
-          // La orden se repite cada segundo para que el pitido siga; tres fallos seguidos cuentan como corte.
-          if (System.currentTimeMillis() >= repeatAt) {
-            misses = if (runBlocking { TagLink.alertOn(context) }) 0 else misses + 1
-            if (misses >= TAG_MISSES) { ending = Ending.ROUTE_LOST; break }
-            repeatAt += TagProtocol.REPEAT_MILLIS
+          // La orden se repite cada segundo para que el pitido siga. Tres fallos seguidos o una conexión
+          // perdida abren la conexión de nuevo una vez (2.31); si vuelve a fallar, cuenta como corte.
+          if (System.currentTimeMillis() >= repeatAt || !TagLink.isConnectedTo(address)) {
+            misses = if (TagLink.isConnectedTo(address) && runBlocking { TagLink.alertOn(context) }) 0 else misses + 1
+            if (misses >= TAG_MISSES || !TagLink.isConnectedTo(address)) {
+              if (reopened) { ending = Ending.ROUTE_LOST; break }
+              reopened = true
+              val back = runBlocking { withTimeoutOrNull(TAG_CONNECT_MILLIS) { TagLink.reconnect(context, address) && TagLink.alertOn(context) } } == true
+              if (!back) { ending = Ending.ROUTE_LOST; break }
+              misses = 0
+            }
+            repeatAt = System.currentTimeMillis() + TagProtocol.REPEAT_MILLIS
           }
           runCatching { Thread.sleep(TAG_STEP_MILLIS) }
         }
-        runBlocking { TagLink.alertOff() }
+        val quiet = runBlocking { TagLink.alertOff() }
         TagLink.onButton = null
         // Solo stop() apaga `playing`: si ocurrió, la señal se detuvo por decisión de la persona en la app.
         if (!playing && ending == Ending.COMPLETED) ending = Ending.STOPPED
         playing = false
         isPlaying = false
         onEnded?.invoke(ending)
+        // Si el Tag no confirmó que se calló, se abre otra conexión para callarlo y apagar su alarma por
+        // desconexión (2.31). Va después de avisar el final, para no alargar la duración registrada.
+        if (!quiet) TagLink.quietInBackground(context)
       }
     vibrateOnce()
     return true
