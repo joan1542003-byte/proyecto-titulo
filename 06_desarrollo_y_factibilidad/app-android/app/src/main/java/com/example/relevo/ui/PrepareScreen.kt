@@ -548,10 +548,14 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   }
 }
 
-private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String = when {
-  tag.linkedName == null -> "Un Tag que pita"
-  status.phase == TagLink.Phase.CONNECTED -> "${tag.linkedName}, conectado"
-  else -> "${tag.linkedName}, elegido"
+/** Con la carga de la pila, si el Tag la informó (2.31). */
+private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String {
+  val battery = (status.battery ?: tag.battery)?.let { " · " + TagProtocol.batteryLabel(it) }.orEmpty()
+  return when {
+    tag.linkedName == null -> "Un Tag que pita"
+    status.phase == TagLink.Phase.CONNECTED -> "${tag.linkedName}, conectado$battery"
+    else -> "${tag.linkedName}, elegido$battery"
+  }
 }
 
 private fun tagProblem(problem: TagLink.Problem?): String = when (problem) {

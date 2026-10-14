@@ -18,7 +18,7 @@ class TagStore(context: Context) {
   /** Guarda un Tag nuevo; la forma de hacerlo pitar se vuelve a probar. */
   fun save(address: String, name: String?) {
     preferences.edit()
-      .remove("alert_level").remove("keep_link_loss_alarm").remove("heard")
+      .remove("alert_level").remove("keep_link_loss_alarm").remove("heard").remove("battery").remove("battery_at")
       .putString("address", address)
       .putString("name", name?.trim().orEmpty())
       .putLong("linked_at", System.currentTimeMillis())
@@ -42,6 +42,16 @@ class TagStore(context: Context) {
   var guideSeen: Boolean
     get() = preferences.getBoolean("guide_seen", false)
     set(value) { preferences.edit().putBoolean("guide_seen", value).apply() }
+
+  /** La última carga de pila que informó el Tag, en porcentaje, o null si nunca la informó (2.31). */
+  val battery: Int? get() = preferences.getInt("battery", -1).takeIf { it in 0..100 }
+
+  /** Cuándo la informó, en milisegundos, o 0. */
+  val batteryAt: Long get() = preferences.getLong("battery_at", 0L)
+
+  fun saveBattery(percent: Int) {
+    preferences.edit().putInt("battery", percent).putLong("battery_at", System.currentTimeMillis()).apply()
+  }
 
   fun clear() {
     val seen = guideSeen

@@ -116,7 +116,19 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - El estado de cada participante se deduce de lo último que llegó; un teléfono sin conexión puede verse desactualizado.
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
+## Desde la app 2.31
+
+- **Pila del Tag:** «Probó el sonido» muestra la pila del Tag, y el evento `llavero_pila` se lee «Pila de su Tag al sonar».
+- **Callar el Tag:** si el Tag no confirmó que se calló, la prueba lo dice: «hubo que reconectar para callarlo» o «no confirmó que se calló».
+- **Versión de referencia:** el aviso de versión compara contra la 2.31.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-14 — Android 2.31
+
+- **Qué cambió:** el panel lee la pila y el apagado del Tag y compara contra la 2.31.
+- **Cómo estaba antes:** comparaba contra la 2.30 y no mostraba la pila.
+- **Por qué:** D-134.
 
 ### 2026-10-13 — Fuera de claude.ai
 

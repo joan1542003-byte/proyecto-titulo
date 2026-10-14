@@ -1685,7 +1685,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Las letras se cargan desde Google Fonts y el Excel del panel desde cdnjs: sin internet cambian la letra y esa exportación.
 - **Documentación:** [HERRAMIENTAS.md](../HERRAMIENTAS.md).
 
+## D-134 — Android 2.31: el Tag se calla siempre y muestra su pila
+
+- **Fecha:** 2026-10-14.
+- **Estado:** hecha; falta probarla con el Tag real.
+- **Contexto:** una participante del primer testeo, con la 2.30, contó que el Tag siguió pitando después de la prueba y que, minutos después de dejar la app, sonó sin parar hasta que lo abrió. Su registro mostró una señal cortada a los 3 segundos y una prueba que no logró conectarse. El autor pidió revisar su versión, arreglar la app, leer la pila si se puede y no usar todavía el diseño nuevo, salvo el ícono y el logo.
+- **Causa:** si el Tag no responde a una orden, Android puede rechazar las siguientes en esa conexión. La 2.30 no revisaba que la orden de callar llegara y desconectaba sin esperar, así que el Tag podía quedar pitando o sonar su alarma por desconexión.
+- **Decisión:**
+  - **Callar el Tag:** FFE2, la alerta estándar y la alarma por desconexión se apagan con confirmación y hasta tres intentos. Si no se confirma, se abre otra conexión antes de desconectar, y se espera a que Android cierre.
+  - **Señal:** antes de darla por cortada, se reconecta una vez.
+  - **Pila:** se lee del servicio estándar de batería, se muestra junto al Tag elegido y se registra (`pila`, `llavero_pila`).
+  - **Versión del testeo:** la 2.31 sale de la 2.30, con su interfaz, y suma solo el ícono y el logo de la línea 3.0. Su código vive en la rama `android-2.31`; el arreglo también queda en `main`, sobre la 3.2.
+  - **Número de versión:** la 2.31 usa `versionCode` 46, así que la próxima 3.x debe usar 47 o más para instalarse encima.
+- **Verificación:** 86 pruebas unitarias, misma firma, instalada con datos en el emulador, que se dejó con los datos del autor idénticos (MD5). Sin Tag real.
+- **Documentación:** [versión 2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-14 — D-134
+
+- **Qué cambió:** se registró D-134.
+- **Cómo estaba antes:** la última decisión era D-133.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-13 — D-133
 

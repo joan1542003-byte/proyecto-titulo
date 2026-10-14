@@ -56,4 +56,13 @@ class TagProtocolTest {
     assertEquals("Cerca", TagProtocol.strength(-70))
     assertEquals("Lejos", TagProtocol.strength(-90))
   }
+
+  @Test
+  fun readsBatteryFromStandardService() {
+    // El Tag de una participante publica 180f:2a19 (2.31): servicio y característica estándar de batería.
+    assertEquals("0000180f-0000-1000-8000-00805f9b34fb", TagProtocol.BATTERY_SERVICE.toString())
+    assertEquals("00002a19-0000-1000-8000-00805f9b34fb", TagProtocol.BATTERY_LEVEL.toString())
+    assertEquals("pila al 80 %", TagProtocol.batteryLabel(80))
+    assertEquals("pila al 20 %, cámbiala pronto", TagProtocol.batteryLabel(20))
+  }
 }

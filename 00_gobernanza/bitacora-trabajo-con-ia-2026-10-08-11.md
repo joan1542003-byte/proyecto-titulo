@@ -71,7 +71,11 @@
   - La 2.30 en un teléfono real, incluido que siga con el tiempo contado al editar.
   - La 3.0 y la 3.1 en un teléfono real, con TalkBack y con la letra al 200 %.
 
+**14 de octubre, Android 2.31 (D-134):** una participante reportó que el Tag siguió sonando después de la prueba y, más tarde, sin parar. Se leyó su registro en Supabase, se encontró la causa en el código (órdenes que fallaban sin aviso y una desconexión sin esperar) y se hizo la [2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md) sobre la 2.30, con el ícono y el logo nuevos y la pila del Tag. El mismo arreglo quedó en la 3.2 de `main`. Se probó en el emulador, sin Tag real.
+
 ## 4. Pendientes
+
+- Probar la 2.31 con el Tag real de la participante: la prueba, una señal completa y la pila.
 
 - Que el autor decida cuándo instalar la 3.1: no conviene a mitad de la prueba de 21 días.
 - Que el autor revise el logo (D-125) y los colores de las actividades (D-126), y buscar en INAPI si hay marcas parecidas.
@@ -82,6 +86,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-14 — Android 2.31
+
+- **Qué cambió:** se sumaron el arreglo del Tag y la 2.31, con su pendiente.
+- **Cómo estaba antes:** terminaba en las herramientas del 13 de octubre.
+- **Por qué:** pedido del autor (D-134).
 
 ### 2026-10-13 — Herramientas y memoria editable
 

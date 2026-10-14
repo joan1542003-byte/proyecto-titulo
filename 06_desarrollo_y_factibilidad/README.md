@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Aplicación Android 2.31](app-android/version-2.31-el-tag-se-calla-2026-10-14.md): el Tag se calla siempre y muestra su pila, con el ícono y el logo nuevos (D-134); la versión del testeo desde el 14 de octubre.
 - [Aplicación Android 2.30](app-android/version-2.30-editar-sin-borrar-2026-10-09.md): editar un relevo sin borrarlo (D-120); la versión del primer testeo.
 - [Aplicación Android 2.29](app-android/version-2.29-nivel-medio-primero-2026-10-07.md): la prueba del Tag empieza por el nivel medio (D-119); la versión del primer testeo.
 - [Aplicación Android 2.28](app-android/version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md): el Tag por defecto, lugares concretos y una app optimizada (D-117); la versión del primer testeo.
@@ -79,6 +80,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-14 — Android 2.31
+
+- **Qué cambió:** se enlaza la 2.31.
+- **Cómo estaba antes:** la última versión enlazada para el testeo era la 2.30.
+- **Por qué:** reporte de una participante (D-134).
 
 ### 2026-10-09 — Android 2.30
 

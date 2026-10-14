@@ -47,7 +47,10 @@ import java.util.UUID
  *   Relevo lo deja en 0 mientras espera y lo pone en 1, junto con la alerta estándar, solo mientras suena;
  * - avisa cada vez que se aprieta su botón (FFE1): durante la señal, eso la silencia;
  * - algunos se apagan si nadie se conecta en unos minutos: por eso la conexión se abre al activar el
- *   relevo y se mantiene, como hace iSearching.
+ *   relevo y se mantiene, como hace iSearching;
+ * - si una orden queda sin respuesta, Android no acepta otra en esa conexión. Desde 2.31 la conexión se
+ *   marca como dudosa y, para callar el Tag, se abre de nuevo (D-134). Antes, la orden de apagar podía
+ *   fallar sin aviso: el Tag seguía pitando y, al desconectarse, sonaba su alarma por desconexión.
  *
  * Todas las entradas revisan los permisos de Bluetooth antes de usar el adaptador.
  */
@@ -57,13 +60,20 @@ object TagLink {
 
   enum class Problem { NO_PERMISSION, BLUETOOTH_OFF, NOT_FOUND, NOT_A_TAG }
 
-  /** [button]: el botón del llavero avisa al apretarlo. [linkLossOff]: se apagó su alarma por desconexión. */
+  /**
+   * [button]: el botón del llavero avisa al apretarlo. [linkLossOff]: se apagó su alarma por desconexión.
+   * [battery]: la carga de su pila en porcentaje, si el Tag la informa (2.31).
+   */
   data class Status(
     val phase: Phase = Phase.IDLE,
     val problem: Problem? = null,
     val button: Boolean = false,
     val linkLossOff: Boolean = false,
+    val battery: Int? = null,
   )
+
+  /** Cómo quedó el Tag al pedirle callar: confirmado, después de abrir otra conexión, o sin confirmar. */
+  enum class Off { QUIET, RECONNECTED, FAILED }
 
   /** Un llavero encontrado en la búsqueda. */
   data class Found(val address: String, val name: String, val rssi: Int)
@@ -85,12 +95,19 @@ object TagLink {
   @Volatile private var gatt: BluetoothGatt? = null
   @Volatile private var alertLevel: BluetoothGattCharacteristic? = null
   @Volatile private var switch: BluetoothGattCharacteristic? = null
+  /** «Nivel de alerta» del servicio «Pérdida de enlace» (0x1803): la alarma por desconexión estándar. */
+  @Volatile private var linkLoss: BluetoothGattCharacteristic? = null
+  /** Una orden quedó sin respuesta: Android puede no aceptar otra en esta conexión hasta abrirla de nuevo. */
+  @Volatile private var unreliable = false
+  /** Para volver a conectar al desconectar, cuando no hay otro contexto a mano. */
+  @Volatile private var appContext: Context? = null
   @Volatile private var connectedAddress: String? = null
   @Volatile private var heldAddress: String? = null
   @Volatile private var pendingConnect: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingDiscovery: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingOperation: CompletableDeferred<Boolean>? = null
   @Volatile private var pendingRead: CompletableDeferred<ByteArray?>? = null
+  @Volatile private var pendingDisconnect: CompletableDeferred<Boolean>? = null
 
   /**
    * Resumen de la última conexión: servicios, características con sus propiedades y el nombre y valor de
@@ -99,6 +116,10 @@ object TagLink {
   @Volatile var profile: String? = null
     private set
   @Volatile private var lastButtonAt = 0L
+
+  /** Cómo terminó la última prueba al callar el Tag. Se registra con la prueba (2.31). */
+  @Volatile var lastOff: Off = Off.QUIET
+    private set
   private var holdJob: Job? = null
 
   fun hasPermissions(context: Context): Boolean = requiredPermissions.all {
@@ -149,7 +170,7 @@ object TagLink {
     holdJob = scope.launch {
       while (isActive) {
         val target = heldAddress ?: break
-        if (!isConnectedTo(target)) connect(app, target)
+        if (!isConnectedTo(target) || unreliable) connect(app, target)
         delay(HOLD_RETRY_MILLIS)
       }
     }
@@ -174,12 +195,42 @@ object TagLink {
     return switched ?: alerted
   }
 
-  /** Calla el pitido: la alerta estándar en 0 y FFE2 en 0. */
+  /**
+   * Calla el pitido en la conexión abierta: FFE2, la alerta estándar y la alarma por desconexión en 0, cada
+   * una con hasta tres intentos (2.31). Devuelve true solo si el Tag confirmó las tres que tenga.
+   */
   suspend fun alertOff(): Boolean {
     val g = gatt ?: return false
-    val alerted = alertLevel?.let { write(g, it, byteArrayOf(TagProtocol.ALERT_OFF)) } == true
-    val switched = switch?.let { write(g, it, byteArrayOf(0)) }
-    return switched ?: alerted
+    if (unreliable) return false
+    return silence(g).all
+  }
+
+  /**
+   * Se asegura de que el Tag quede callado y sin alarma por desconexión. Prueba en la conexión abierta y, si
+   * no resulta, la abre de nuevo, porque al conectar se apagan las tres (2.31). Si ningún relevo usa el
+   * llavero, después desconecta. Puede tardar hasta unos 45 s.
+   */
+  suspend fun quiet(context: Context): Off {
+    val app = context.applicationContext
+    return connection.withLock {
+      val address = connectedAddress ?: heldAddress ?: TagStore(app).address
+      val off = when {
+        alertOff() -> Off.QUIET
+        address != null && withTimeoutOrNull(QUIET_MILLIS) { hangUp(); connectLocked(app, address) && alertOff() } == true -> Off.RECONNECTED
+        else -> Off.FAILED
+      }
+      if (heldAddress == null) {
+        hangUp()
+        publish(Status(battery = _status.value.battery))
+      }
+      off
+    }
+  }
+
+  /** [quiet] sin esperar, para quien no puede detenerse, como el hilo que hace pitar la señal. */
+  fun quietInBackground(context: Context) {
+    val app = context.applicationContext
+    scope.launch { quiet(app) }
   }
 
   /**
@@ -188,22 +239,27 @@ object TagLink {
    */
   suspend fun reconnect(context: Context, address: String): Boolean =
     connection.withLock {
-      closeGatt()
+      hangUp()
       connectLocked(context.applicationContext, address)
     }
 
-  /** Un pitido de prueba de [millis], seguido: la orden se repite como en la señal. */
+  /**
+   * Un pitido de prueba de [millis], seguido: la orden se repite como en la señal. Al terminar, el Tag se
+   * calla con [quiet] aunque la orden de encender haya fallado: pudo llegar al Tag sin confirmarse (2.31).
+   */
   suspend fun beep(context: Context, millis: Long): Boolean {
-    if (!alertOn(context)) return false
-    var left = millis
-    while (left > 0) {
-      val step = minOf(TagProtocol.REPEAT_MILLIS, left)
-      delay(step)
-      left -= step
-      if (left > 0) alertOn(context)
+    val on = alertOn(context)
+    if (on) {
+      var left = millis
+      while (left > 0) {
+        val step = minOf(TagProtocol.REPEAT_MILLIS, left)
+        delay(step)
+        left -= step
+        if (left > 0) alertOn(context)
+      }
     }
-    alertOff()
-    return true
+    lastOff = if (alertOff()) Off.QUIET else quiet(context)
+    return on
   }
 
   /** Termina el relevo: deja de mantener la conexión, apaga el pitido y desconecta. */
@@ -220,22 +276,42 @@ object TagLink {
     scope.launch { disconnect() }
   }
 
+  /**
+   * Desconecta solo después de callar el Tag: si la orden no se confirma, la conexión se abre de nuevo para
+   * callarlo. Después espera a que Android cierre de verdad, porque cerrar sin esperar puede dejar la
+   * conexión abierta a medias, y el Tag suena cuando por fin se corta (2.31).
+   */
   private suspend fun disconnect() {
     connection.withLock {
       if (heldAddress != null) return@withLock
-      alertOff()
-      closeGatt()
-      publish(Status())
+      val address = connectedAddress
+      val app = appContext
+      if (gatt != null && !alertOff() && address != null && app != null) {
+        withTimeoutOrNull(QUIET_MILLIS) { hangUp(); connectLocked(app, address) && alertOff() }
+      }
+      hangUp()
+      publish(Status(battery = _status.value.battery))
     }
   }
 
+  /** Pide desconectar y espera hasta 2 s a que Android lo confirme; después libera la conexión. */
+  private suspend fun hangUp() {
+    val g = gatt ?: return
+    val gone = CompletableDeferred<Boolean>().also { pendingDisconnect = it }
+    runCatching { g.disconnect() }
+    withTimeoutOrNull(DISCONNECT_MILLIS) { gone.await() }
+    pendingDisconnect = null
+    closeGatt()
+  }
+
   private suspend fun connectLocked(app: Context, address: String): Boolean {
-    if (isConnectedTo(address)) return true
+    appContext = app
+    if (isConnectedTo(address) && !unreliable) return true
     if (!hasPermissions(app)) return fail(Problem.NO_PERMISSION)
     val adapter = adapter(app)
     if (adapter == null || !adapter.isEnabled) return fail(Problem.BLUETOOTH_OFF)
-    closeGatt()
-    publish(Status(Phase.CONNECTING))
+    hangUp()
+    publish(Status(Phase.CONNECTING, battery = _status.value.battery))
     // El primer intento falla a veces con el error 133 de Android; un segundo intento suele bastar.
     repeat(CONNECT_ATTEMPTS) { attempt ->
       when (val result = openLocked(app, adapter, address)) {
@@ -254,6 +330,7 @@ object TagLink {
     val g = runCatching { device.connectGatt(app, false, callback, BluetoothDevice.TRANSPORT_LE) }.getOrNull()
       ?: return Problem.NOT_FOUND
     gatt = g
+    unreliable = false
     if (withTimeoutOrNull(CONNECT_MILLIS) { connected.await() } != true) {
       closeGatt()
       return Problem.NOT_FOUND
@@ -279,14 +356,43 @@ object TagLink {
     switch = ffe2
     val switchLabel = ffe2?.getDescriptor(TagProtocol.USER_DESCRIPTION)?.let { readDescriptor(g, it) }?.let(::label)
     val switchValue = ffe2?.takeIf { it.properties and BluetoothGattCharacteristic.PROPERTY_READ != 0 }?.let { read(g, it) }
+    val standard = g.getService(TagProtocol.LINK_LOSS_SERVICE)?.getCharacteristic(TagProtocol.ALERT_LEVEL)
+    linkLoss = standard
     profile = describe(g, switchLabel, switchValue)
-    // Mientras espera, el Tag queda en silencio y sin alarma por desconexión: FFE2 en 0 y la estándar en 0.
-    val switchOff = ffe2?.let { write(g, it, byteArrayOf(0)) } == true
-    val standardOff = g.getService(TagProtocol.LINK_LOSS_SERVICE)?.getCharacteristic(TagProtocol.ALERT_LEVEL)
-      ?.let { write(g, it, byteArrayOf(TagProtocol.ALERT_OFF)) } == true
+    // Mientras espera, el Tag queda en silencio y sin alarma por desconexión. Desde 2.31 también se apaga la
+    // alerta estándar: un Tag que quedó pitando desde una conexión anterior se calla al volver a conectarse.
+    val off = silence(g)
     val button = keys?.getCharacteristic(TagProtocol.BUTTON)?.let { enableNotifications(g, it) } == true
-    publish(Status(Phase.CONNECTED, button = button, linkLossOff = switchOff || standardOff))
+    val battery = readBattery(g)
+    battery?.let { TagStore(app).saveBattery(it) }
+    val linkLossOff = (ffe2 != null && off.switchOff) || (standard != null && off.linkLossOff)
+    publish(Status(Phase.CONNECTED, button = button, linkLossOff = linkLossOff, battery = battery))
     return null
+  }
+
+  /** Qué confirmó el Tag al callarlo. Lo que el Tag no tiene cuenta como confirmado. */
+  private data class Silence(val switchOff: Boolean, val alertOff: Boolean, val linkLossOff: Boolean) {
+    val all: Boolean get() = switchOff && alertOff && linkLossOff
+  }
+
+  /**
+   * FFE2, la alerta estándar y la alarma por desconexión en 0, con confirmación cuando el Tag la ofrece y
+   * hasta tres intentos cada una. FFE2 va primero: en algunos modelos es lo que hace pitar.
+   */
+  private suspend fun silence(g: BluetoothGatt): Silence {
+    suspend fun off(characteristic: BluetoothGattCharacteristic?): Boolean {
+      characteristic ?: return true
+      repeat(OFF_ATTEMPTS) { if (write(g, characteristic, byteArrayOf(TagProtocol.ALERT_OFF), confirm = true)) return true }
+      return false
+    }
+    return Silence(switchOff = off(switch), alertOff = off(alertLevel), linkLossOff = off(linkLoss))
+  }
+
+  /** La carga de la pila (servicio estándar 0x180F, característica 0x2A19), de 0 a 100, o null. */
+  private suspend fun readBattery(g: BluetoothGatt): Int? {
+    val level = g.getService(TagProtocol.BATTERY_SERVICE)?.getCharacteristic(TagProtocol.BATTERY_LEVEL) ?: return null
+    if (level.properties and BluetoothGattCharacteristic.PROPERTY_READ == 0) return null
+    return read(g, level)?.firstOrNull()?.toInt()?.and(0xFF)?.takeIf { it in 0..100 }
   }
 
   /** Servicios y características con sus propiedades en hexadecimal, más el nombre y valor de FFE2. */
@@ -333,9 +439,14 @@ object TagLink {
     return runCatching { adapter.getRemoteDevice(address.uppercase()) }.getOrNull()
   }
 
-  private suspend fun write(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic, value: ByteArray): Boolean =
+  /**
+   * Escribe en el Tag. Con [confirm], usa la escritura con respuesta si el Tag la ofrece, para saber que la
+   * recibió. Si la respuesta no llega, la conexión queda marcada como dudosa (2.31).
+   */
+  private suspend fun write(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic, value: ByteArray, confirm: Boolean = false): Boolean =
     operation.withLock {
-      val noResponse = characteristic.properties and BluetoothGattCharacteristic.PROPERTY_WRITE_NO_RESPONSE != 0
+      val canConfirm = characteristic.properties and BluetoothGattCharacteristic.PROPERTY_WRITE != 0
+      val noResponse = characteristic.properties and BluetoothGattCharacteristic.PROPERTY_WRITE_NO_RESPONSE != 0 && !(confirm && canConfirm)
       val type = if (noResponse) BluetoothGattCharacteristic.WRITE_TYPE_NO_RESPONSE else BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT
       val done = CompletableDeferred<Boolean>().also { pendingOperation = it }
       val started = runCatching {
@@ -350,9 +461,11 @@ object TagLink {
           g.writeCharacteristic(characteristic)
         }
       }.getOrDefault(false)
-      val ok = started && (withTimeoutOrNull(OPERATION_MILLIS) { done.await() } ?: noResponse)
+      val answer = if (started) withTimeoutOrNull(OPERATION_MILLIS) { done.await() } else null
+      // Sin respuesta a una escritura que la pide, o con Android ocupado, la conexión queda dudosa.
+      if (g == gatt && (!started || (answer == null && !noResponse))) unreliable = true
       pendingOperation = null
-      ok
+      started && (answer ?: noResponse)
     }
 
   private suspend fun read(g: BluetoothGatt, characteristic: BluetoothGattCharacteristic): ByteArray? =
@@ -401,6 +514,7 @@ object TagLink {
         return
       }
       if (newState != BluetoothProfile.STATE_DISCONNECTED && status == BluetoothGatt.GATT_SUCCESS) return
+      pendingDisconnect?.complete(true)
       pendingConnect?.complete(false)
       pendingDiscovery?.complete(false)
       pendingOperation?.complete(false)
@@ -409,8 +523,9 @@ object TagLink {
         gatt = null
         alertLevel = null
         switch = null
+        linkLoss = null
         connectedAddress = null
-        publish(Status(if (heldAddress != null) Phase.CONNECTING else Phase.IDLE, problem = if (heldAddress != null) Problem.NOT_FOUND else null))
+        publish(Status(if (heldAddress != null) Phase.CONNECTING else Phase.IDLE, problem = if (heldAddress != null) Problem.NOT_FOUND else null, battery = _status.value.battery))
       }
       runCatching { g.close() }
     }
@@ -472,13 +587,14 @@ object TagLink {
     gatt = null
     alertLevel = null
     switch = null
+    linkLoss = null
     connectedAddress = null
     runCatching { g.disconnect() }
     runCatching { g.close() }
   }
 
   private fun fail(problem: Problem): Boolean {
-    publish(Status(if (heldAddress != null) Phase.CONNECTING else Phase.IDLE, problem = problem))
+    publish(Status(if (heldAddress != null) Phase.CONNECTING else Phase.IDLE, problem = problem, battery = _status.value.battery))
     return false
   }
 
@@ -495,6 +611,10 @@ object TagLink {
   private const val SETTLE_MILLIS = 600L
   private const val DISCOVERY_MILLIS = 10_000L
   private const val OPERATION_MILLIS = 1_500L
+  private const val OFF_ATTEMPTS = 3
+  private const val DISCONNECT_MILLIS = 2_000L
+  /** Lo más que se espera para callar el Tag abriendo otra conexión: dos intentos de conexión completos. */
+  private const val QUIET_MILLIS = 45_000L
   private const val RETRY_PAUSE_MILLIS = 1_000L
   private const val CONNECT_ATTEMPTS = 2
   /** Android admite pocas búsquedas seguidas: cada intento hace hasta dos, cada 30 s. */

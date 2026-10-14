@@ -123,7 +123,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Llavero (D-109): el vinculado, la búsqueda y la última prueba. */
   private val tagStore = TagStore(application)
-  private val _tag = MutableStateFlow(TagUi(linkedName = tagStore.name.takeIf { tagStore.linked }, heard = tagStore.heard))
+  private val _tag = MutableStateFlow(TagUi(linkedName = tagStore.name.takeIf { tagStore.linked }, heard = tagStore.heard, battery = tagStore.battery))
   val tag: StateFlow<TagUi> = _tag.asStateFlow()
   val tagStatus: StateFlow<TagLink.Status> = TagLink.status
 
@@ -725,17 +725,21 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         TagLink.idle()
         return@launch
       }
+      val battery = status.battery ?: tagStore.battery
       _tag.value = _tag.value.copy(
         test = if (sent) TagTest.ASKING else TagTest.FAILED,
         problem = if (sent) null else status.problem,
         button = status.button,
         linkLossOff = status.linkLossOff,
+        battery = battery,
       )
+      // Desde 2.31 también cómo quedó el Tag al callarlo y la carga de su pila, si la informa.
       log(
         "prueba_de_sonido",
         "salida=tag;orden=${if (sent) "si" else "no"};intento=${attempt + 1};nivel=$level;" +
           "boton=${if (status.button) "si" else "no"};" +
-          "alarma_desconexion=${if (status.linkLossOff) "apagada" else "sin_apagar"}",
+          "alarma_desconexion=${if (status.linkLossOff) "apagada" else "sin_apagar"}" +
+          (if (connected) ";apagado=${TagLink.lastOff.name.lowercase()}" else "") + (battery?.let { ";pila=$it" } ?: ""),
       )
       // Cómo es este modelo por dentro, una vez por prueba: servicios y propiedades, sin su dirección.
       if (connected && !retry) TagLink.profile?.let { log("llavero_perfil", it.take(600)) }
@@ -1204,6 +1208,8 @@ data class TagUi(
   val retry: Boolean = false,
   val heard: Boolean = false,
   val silent: Boolean = false,
+  /** Carga de la pila del Tag en porcentaje, si la informó (2.31). */
+  val battery: Int? = null,
 )
 
 /** Qué notas de la guía siguen visibles: se ocultan después del primer relevo. */
