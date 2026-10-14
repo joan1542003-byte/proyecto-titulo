@@ -8,8 +8,8 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
-- [Memoria v5 en A3 horizontal (12 de octubre de 2026)](memoria-a3/README.md): la v5 compuesta con la línea de Relevo, en un [PDF de 32 páginas](memoria-a3/memoria-relevo-a3.pdf) (D-132). El texto es el de la v5, sin cambios, con sus marcadores a la vista. Se genera de nuevo con `node construir.js` cuando cambie la v5.
-- [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: faltan sus 24 marcadores, las figuras y los resultados de la prueba. La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
+- [Memoria v5 en A3 horizontal](memoria-a3/README.md): la v5 compuesta con la línea de Relevo, en un [PDF de 53 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134 y D-135). Texto de 14 pt, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
+- [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: al 13 de octubre faltan sus 21 marcadores, la fotografía del Tag y el resto de los resultados de la prueba. La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión integral de fuentes, corpus y redacción](revision-integral-fuentes-y-redaccion-2026-09-25.md): verificación de las 64 referencias, contraste con P1–P8 y Android 2.6, revisión página por página, correcciones aplicadas y problemas pendientes al 25 de septiembre.
@@ -89,6 +89,27 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-13 — Memoria en A3 rehecha
+
+- **Cambio:** el enlace a la memoria en A3 describe la versión del 13 de octubre: 53 páginas, texto de 14 pt y un solo generador para el PDF y el archivo de Affinity.
+- **Versión anterior:** describía el PDF de 32 páginas del 12 de octubre y, aparte, la versión editable de 36 páginas.
+- **Motivo:** el autor pidió letra más grande, más aire, ninguna viuda y un diseño más fiel al del 12 de octubre (D-135).
+- **Alcance:** el texto de la v5 no cambió.
+
+### 2026-10-13 — Borrador v5: agradecimientos, cifras y repeticiones
+
+- **Cambio:** el borrador v5 suma los agradecimientos y dos figuras de cifras (Figura 1, encuesta; Figura 6, primeros resultados), renumera las demás figuras (2 a 5) y pierde 58 repeticiones en los capítulos 1 a 12. El control de extensión registra 19 721 palabras hasta antes de «Referencias».
+- **Versión anterior:** 20 229 palabras con las figuras nuevas y los agradecimientos, sobre el máximo de 20 000; cuatro figuras; varias cautelas y la tesis sobre el bloqueo repetidas entre capítulos.
+- **Motivo:** el autor pidió quitar repeticiones, dio el contenido de sus agradecimientos y pidió tablas y estadísticas diseñadas.
+- **Alcance:** cada límite sigue dicho al menos una vez en su capítulo; no cambió ningún dato, ninguna cita ni el texto de la pregunta, la hipótesis y los objetivos. Los agradecimientos son una redacción propuesta que el autor ajustará. Quedan 21 marcadores. La [versión para Affinity](memoria-a3/README.md) se rehízo con `construir-idml.js`.
+
+### 2026-10-13 — Borrador v5 actualizado al 13 de octubre
+
+- **Cambio:** el borrador v5 incorpora los primeros resultados reales de la prueba (una persona, 8 al 10 de octubre, cinco señales), la aplicación 3.2 y la identidad aprobada, y condensa el capítulo 13.
+- **Versión anterior:** describía la versión 2.30, la identidad de septiembre y una prueba sin resultados.
+- **Motivo:** el autor entregó los datos del testeo en curso, confirmó la marca nueva y pidió actualizar el borrador.
+- **Alcance:** resultados parciales; la prueba no aplica las tres condiciones. Quedan 21 marcadores. Para rehacer la versión A3 hay que correr `construir.js`.
 
 ### 2026-10-12 — Memoria en A3
 

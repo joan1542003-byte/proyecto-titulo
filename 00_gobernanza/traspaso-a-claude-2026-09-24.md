@@ -202,7 +202,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
 - **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
 - **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
-- **Android 2.31 (D-134, 14 de octubre), versión del testeo:** la 2.30 con el Tag que se calla siempre (confirmación, otra conexión si hace falta y desconexión que espera a Android), la pila del Tag a la vista y en el registro, y el ícono y el logo de la línea 3.0. Su código está en la rama `android-2.31`; el arreglo también está en `main`, sobre la 3.2. La próxima 3.x debe usar `versionCode` 47 o más. Falta probarla con el Tag real ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md)).
+- **Android 2.31 (D-136, 14 de octubre), versión del testeo:** la 2.30 con el Tag que se calla siempre (confirmación, otra conexión si hace falta y desconexión que espera a Android), la pila del Tag a la vista y en el registro, y el ícono y el logo de la línea 3.0. Su código está en la rama `android-2.31`; el arreglo también está en `main`, sobre la 3.2. La próxima 3.x debe usar `versionCode` 47 o más. Falta probarla con el Tag real ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md)).
 - **Herramientas (D-133, 13 de octubre):** el panel del testeo, las láminas, el taller de auras y los íconos funcionan sin claude.ai. La guía [HERRAMIENTAS.md](../HERRAMIENTAS.md) explica cómo usar cada uno y qué debe saber otro Claude. Para los datos reales, el panel necesita `node servidor.js` y un token de Supabase en `.env.local`, que nunca se sube.
 - **Memoria en A3 (D-132, 12 de octubre):** la v5 compuesta en A3 horizontal con la línea de Relevo ([detalle](../08_memoria/memoria-a3/README.md)). Se rehace con `node construir.js` en `08_memoria/memoria-a3/` cuando cambie la v5. Necesita Chrome y tarda unos 10 segundos.
 - **Android 3.2 (D-131, 12 de octubre):** igual a «Relevo, la app»: piezas con las medidas de la lámina por 1,5, ideas ordenadas por familia de color con una variante de cielo por actividad, el botón fijo sobre el papel y textos más claros («Relevo te avisa a tiempo…», «Paso a paso…», «Tus pasos»). Solo cambia la interfaz ([detalle](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md)).
@@ -235,7 +235,7 @@ Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia
 
 ### 2026-10-14 — Android 2.31
 
-- **Qué cambió:** el estado suma la 2.31 (D-134).
+- **Qué cambió:** el estado suma la 2.31 (D-136).
 - **Cómo estaba antes:** terminaba en las herramientas.
 - **Por qué:** pedido del autor.
 

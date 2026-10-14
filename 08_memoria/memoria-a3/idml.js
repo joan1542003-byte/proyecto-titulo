@@ -154,7 +154,7 @@ ${cs}
   tablaXml(t) {
     const id = this.id('tb'); const filas = t.filas.length; const cols = t.anchos.length;
     const col = t.anchos.map((w, i) => `<Column Self="${id}c${i}" Name="${i}" SingleColumnWidth="${pt(w)}"/>`).join('');
-    const row = t.filas.map((_, i) => `<Row Self="${id}r${i}" Name="${i}" SingleRowHeight="12" MinimumHeight="12" AutoGrow="true"/>`).join('');
+    const row = t.filas.map((_, i) => `<Row Self="${id}r${i}" Name="${i}" SingleRowHeight="${t.altos ? t.altos[i] : 12}" MinimumHeight="${t.altos ? t.altos[i] : 12}" AutoGrow="true"/>`).join('');
     const borde = (lado, grosor, color) => `${lado}EdgeStrokeWeight="${grosor}" ${lado}EdgeStrokeColor="${grosor ? color : 'Swatch/None'}" ${lado}EdgeStrokeType="StrokeStyle/$ID/Solid" ${lado}EdgeStrokeTint="100"`;
     const celdas = [];
     t.filas.forEach((f, r) => f.forEach((c, k) => {
@@ -164,7 +164,7 @@ ${cs}
       const ins = `TopInset="${t.relleno[0]}" BottomInset="${t.relleno[1]}" LeftInset="${k === 0 ? 0 : t.relleno[2]}" RightInset="${k === cols - 1 ? 0 : t.relleno[2]}"`;
       const estilo = cab ? t.estiloCab : k === 0 ? t.estiloPrimera : t.estiloCelda;
       const alin = t.numericas && t.numericas[k] ? ' Justification="RightAlign"' : '';
-      celdas.push(`<Cell Self="${id}i${k}_${r}" Name="${k}:${r}" RowSpan="1" ColumnSpan="1" AppliedCellStyle="CellStyle/$ID/[None]" FillColor="Swatch/None" VerticalJustification="TopAlign" ${ins} ${top} ${bot} ${borde('Left', 0)} ${borde('Right', 0)}>` +
+      celdas.push(`<Cell Self="${id}i${k}_${r}" Name="${k}:${r}" RowSpan="1" ColumnSpan="1" AppliedCellStyle="CellStyle/$ID/[None]" FillColor="Swatch/None" VerticalJustification="${t.vertical || 'TopAlign'}" ${ins} ${top} ${bot} ${borde('Left', 0)} ${borde('Right', 0)}>` +
         `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(estilo)}"${alin}>${this.runs(c).map((s) => s + '</CharacterStyleRange>').join('')}</ParagraphStyleRange></Cell>`);
     }));
     return `<Table Self="${id}" HeaderRowCount="1" FooterRowCount="0" BodyRowCount="${filas - 1}" ColumnCount="${cols}" AppliedTableStyle="TableStyle/$ID/[Basic Table]" TableDirection="LeftToRightDirection" ` +
@@ -176,7 +176,8 @@ ${cs}
       const fin = i < parrafos.length - 1 ? '<Br/>' : '';
       if (p.tabla) return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}"><CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">${this.tablaXml(p.tabla)}${fin}</CharacterStyleRange></ParagraphStyleRange>`;
       const rs = this.runs(p.partes.length ? p.partes : [{ texto: '' }]);
-      return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}">${rs.map((s, k) => s + (k === rs.length - 1 ? fin : '') + '</CharacterStyleRange>').join('')}</ParagraphStyleRange>`;
+      const propio = p.despues != null ? ` SpaceAfter="${p.despues}"` : '';   // aire propio de este párrafo, sobre el de su estilo
+      return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}"${propio}>${rs.map((s, k) => s + (k === rs.length - 1 ? fin : '') + '</CharacterStyleRange>').join('')}</ParagraphStyleRange>`;
     }).join('\n');
     return XMLHEAD + `<idPkg:Story ${NS}><Story Self="${id}" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">` +
       `<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection"/>` +

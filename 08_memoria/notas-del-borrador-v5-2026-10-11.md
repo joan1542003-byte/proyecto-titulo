@@ -55,3 +55,23 @@ Desde la portada hasta antes de «Referencias»: 19 933 palabras con el método 
 ## Cómo se hizo
 
 Lectura del repositorio solo en línea, sin clonar. Nueve lectores por área, verificación de las 64 referencias en su fuente, auditorías de APA 7, estilo y una lectura como examinador; redacción por capítulos con una pauta común; y una revisión final de ocho revisores (190 correcciones, aplicadas salvo las que chocaban entre sí o cambiaban texto tuyo). Este borrador se elaboró con apoyo de inteligencia artificial, y la declaración del capítulo 10 lo dice.
+
+## Actualización del 13 de octubre de 2026: agradecimientos, cifras y repeticiones
+
+Estas notas describen el borrador al 11 de octubre; lo que sigue es lo que cambió después por pedido del autor.
+
+- **Repeticiones.** Se quitaron 58 repeticiones en los capítulos 1 a 12: la tesis de que bloquear o pausar no devuelve la intención (queda en los capítulos 2 y 10 y en la Tabla 2), cautelas apiladas en una misma oración, límites dichos dos y tres veces y fórmulas como «por sí solo» o «X, no Y». Cada límite sigue dicho al menos una vez donde corresponde. No cambió ningún dato ni ninguna cita, y no se tocaron la pregunta, la hipótesis, los objetivos, las tablas ni los marcadores.
+- **Dos recortes propuestos que no se aplicaron:** «Son riesgos inferidos, no observados» (capítulo 7) y «que el autor aún debe revisar» (declaración de uso de inteligencia artificial, capítulo 10). Ambos separan lo observado de lo inferido o declaran una revisión pendiente.
+- **Agradecimientos.** Sección nueva antes del resumen, redactada a partir de lo que dictó el autor. Es una propuesta: el autor la ajustará.
+- **Figuras.** Ahora son seis. La Figura 1 (cifras de la encuesta, capítulo 7) y la Figura 6 (primeros resultados, capítulo 13) son nuevas y repiten cifras que el texto ya informa; las demás pasaron a ser las figuras 2 a 5.
+- **Extensión.** 19 721 palabras desde la portada hasta antes de «Referencias», con el mismo método de control. Con las figuras nuevas y los agradecimientos había llegado a 20 229.
+- **Marcadores.** Quedan 21.
+- **Diseño.** Las tablas y las cifras se rehicieron como piezas de la marca en la [versión para Affinity](memoria-a3/README.md) (D-134).
+
+## Registro de cambios (disclaimer)
+
+### 2026-10-13 — Agradecimientos, cifras y repeticiones
+
+- **Qué cambió:** se añadió la actualización del 13 de octubre y este registro.
+- **Cómo estaba antes:** las notas describían el borrador al 11 de octubre y no tenían registro de cambios.
+- **Por qué:** el autor pidió quitar repeticiones, redactar sus agradecimientos y diseñar tablas y estadísticas.

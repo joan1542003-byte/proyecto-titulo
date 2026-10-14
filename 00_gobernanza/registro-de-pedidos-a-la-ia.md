@@ -137,9 +137,14 @@
 | 12 oct. | Corrección y encargo | «Mientras todavía puedes hacerlo» suena mal y cuesta entenderlo; «Tu ruta» también suena raro. Todavía faltan detalles para que la app sea igual a «Relevo, la app». Además, pidió hacer su memoria diseñada en A3 horizontal con la v5: bien diseñada, no como un documento aburrido y con el diseño de Relevo. | Los textos y los detalles se resolvieron en la [app 3.2](../06_desarrollo_y_factibilidad/app-android/version-3.2-igual-a-la-lamina-2026-10-12.md) (D-131). La [memoria en A3](../08_memoria/memoria-a3/README.md) es un PDF de 32 páginas con el texto de la v5 sin cambios: apertura de capítulo sobre el aura, tres columnas, figuras dibujadas y capturas nuevas de la 3.2. El índice se calcula solo y se verificó contra el PDF. | D-131, D-132 |
 | 13 oct. | Corrección | La memoria en A3 se lee con dificultad: el texto es muy pequeño, el diseño a veces se repite, faltan coherencia entre los tamaños y tablas mejor hechas, y al ser una memoria de diseño se puede jugar más. No puede haber viudas; sobran etiquetas como «Capítulo» y el «cuadro gigante» de cada apertura. Debe poder editarse en InDesign, Affinity o similares. | Se instaló Instrument Sans, redonda y cursiva (OFL), con permiso del autor. Se empezó un escritor de IDML, el formato que abren InDesign y Affinity, y una página de muestra se abrió bien en Affinity. El rediseño completo quedó en pausa por el pedido siguiente ([memoria en A3](../08_memoria/memoria-a3/README.md)). | D-132 |
 | 13 oct. | Encargo | Subir a GitHub, a main, el panel de Relevo funcional y con datos visibles, y los cuatro últimos artefactos como algo que funcione de verdad y que otro Claude pueda leer, no como artefactos de claude.ai. Documentar todo: cómo usar el panel, los íconos, la app y el editor de presentaciones. | Las láminas y el taller funcionan solos. El panel muestra datos de ejemplo, o los reales con `node servidor.js` y un token que no entra al repositorio. La guía [HERRAMIENTAS.md](../HERRAMIENTAS.md) y la página [herramientas.html](../herramientas.html) reúnen todo. El modo con token no se probó. | D-133 |
+| 13 oct. | Encargo | Revisar los cambios recientes del repositorio y los datos del testeo en curso, y actualizar el borrador de la memoria. La persona sigue en la 2.30; no se reinicia la prueba; la marca nueva está aprobada; excluir los datos del emulador. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) actualizado: resultados parciales reales (cinco señales en tres días), aplicación 3.2, identidad aprobada con cinco referencias nuevas verificadas y capítulo 13 condensado. El ciclo del emulador del 12 de octubre se excluyó del análisis; no se borró de la base remota. | — |
+| 13 oct. | Corrección y encargo | El consentimiento sí estaba revisado. Diseñar la memoria para Affinity, a partir de lo ya registrado. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md): consta la revisión del consentimiento por los profesores guía. [Generador del IDML](../08_memoria/memoria-a3/construir-idml.js): la memoria completa en A3, editable, abierta y revisada en Affinity; falta instalar Instrument Sans y exportar el PDF. | D-132 |
+| 13 oct. | Corrección y encargo | Quitar repeticiones de la memoria. Redactar mejor los agradecimientos (a su familia, su mamá y su abuela), que el autor ajustará. A la memoria le falta diseño: tablas y estadísticas diseñadas, sin tablas genéricas, con lo que ya hay en el repositorio. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md): 58 repeticiones menos (19 721 palabras), agradecimientos propuestos y dos figuras de cifras. [Generador del IDML](../08_memoria/memoria-a3/construir-idml.js): tablas en fichas con iconos y cápsulas de estado, cifras en fichas con barras de color y página de agradecimientos; muestra de las piezas en PDF (retirada después). Abierto y revisado en Affinity con una letra de reemplazo; sigue sin instalarse Instrument Sans. | D-134 |
+| 13 oct. | Corrección | Instalar la tipografía. Mejorar el diseño, más fiel a la versión del 12 de octubre. El texto y todo lo demás se ven muy pequeños y amontonados: debe leerse perfecto en tamaño real y en pantalla. Sin viudas. | Instrument Sans instalada en el Mac del autor (ocho estilos fijos). [Generador](../08_memoria/memoria-a3/construir-idml.js) rehecho: paneles de aura, texto de 14 pt, más aire y reparto línea por línea sin viudas; escribe el IDML y el [PDF de 53 páginas](../08_memoria/memoria-a3/memoria-relevo-a3.pdf). Comprobado en Affinity con la letra real en una muestra de páginas; falta recorrerlas todas y exportar desde ahí. | D-135 |
+| 13 oct. | Encargo | Una presentación breve en PDF del estado del proyecto para revisarla con los profesores guía el 14 de octubre: puntos clave, lo que hay, lo que falta, dudas y lo que se podría modificar. Diseño simple, centrado en el contenido. El autor informa que prueba con tres personas y plantea sus dudas sobre el objeto y la prueba. | [Presentación de 6 láminas](../08_memoria/presentacion-estado-2026-10-14/relevo-estado-2026-10-14.pdf). La primera versión tenía 9 y el autor la pidió más resumida, con preguntas breves, lenguaje llano y sin las propuestas de la IA. Después pidió una versión editable: [PowerPoint](../08_memoria/presentacion-estado-2026-10-14/relevo-estado-2026-10-14.pptx). Los resultados que muestra son los de una persona: los de las otras dos no están analizados ni en la memoria. | — |
 | 13 oct. | Encargo | Subir a GitHub los datos reales del testeo, con su autorización, para que Claude los lea en su Mac. | No se subieron: el repositorio es público y la regla del proyecto prohíbe datos de participantes en él. Se ofreció pasarlos por otra vía. | D-133 |
 | 13 oct. | Encargo | Recibir el archivo original de los datos reales, para subirlo él mismo a su Drive y dárselo a Claude. | Se exportaron las nueve tablas a un JSON en la carpeta local `datos_sensibles/`, que Git ignora, y se le envió el archivo. No entró al repositorio. | — |
-| 14 oct. | Corrección | Una participante contó que el Tag siguió pitando después de la prueba de 3 s y que, minutos después de dejar la app, sonó un tono más apagado sin parar hasta que abrió el Tag. Pidió revisar su versión (la que permite editar un relevo activo), arreglarla, leer la pila si se puede, y no usar todavía el diseño nuevo, salvo el ícono y el logo. | Su registro mostró la 2.30, una señal cortada a los 3 s y una prueba sin conexión. La causa: órdenes al Tag que fallaban sin aviso y una desconexión sin esperar. [Android 2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md): el Tag se calla con confirmación o con otra conexión, la señal se reconecta una vez y la pila se lee, se muestra y se registra. Tiene la interfaz de la 2.30 con el ícono y el logo nuevos. Falta probarla con el Tag real. | D-134 |
+| 14 oct. | Corrección | Una participante contó que el Tag siguió pitando después de la prueba de 3 s y que, minutos después de dejar la app, sonó un tono más apagado sin parar hasta que abrió el Tag. Pidió revisar su versión (la que permite editar un relevo activo), arreglarla, leer la pila si se puede, y no usar todavía el diseño nuevo, salvo el ícono y el logo. | Su registro mostró la 2.30, una señal cortada a los 3 s y una prueba sin conexión. La causa: órdenes al Tag que fallaban sin aviso y una desconexión sin esperar. [Android 2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md): el Tag se calla con confirmación o con otra conexión, la señal se reconecta una vez y la pila se lee, se muestra y se registra. Tiene la interfaz de la 2.30 con el ícono y el logo nuevos. Falta probarla con el Tag real. | D-136 |
 
 ## Lo que muestra el registro
 
@@ -154,8 +159,38 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 ### 2026-10-14 — Datos reales y Android 2.31
 
 - **Qué cambió:** se registraron los dos pedidos de datos reales del 13 de octubre y el reporte del Tag que llevó a la 2.31.
-- **Cómo estaba antes:** terminaba en el encargo de las herramientas.
+- **Cómo estaba antes:** terminaba en la presentación de estado.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día; los del 13 de octubre se registran un día tarde.
+
+### 2026-10-13 — Presentación de estado
+
+- **Qué cambió:** se registró el pedido de la presentación para la reunión del 14 de octubre.
+- **Cómo estaba antes:** el último pedido era el de letra grande, aire y viudas.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-13 — Letra grande, aire y viudas
+
+- **Qué cambió:** se registró la corrección del autor sobre el tamaño, el aire, las viudas y la fidelidad al diseño del 12 de octubre, y se quitó el enlace a la muestra de piezas, que ya no existe.
+- **Cómo estaba antes:** el último pedido era el de repeticiones, agradecimientos y diseño de tablas.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-13 — Repeticiones, agradecimientos y diseño de tablas
+
+- **Qué cambió:** se registró el pedido de quitar repeticiones, redactar los agradecimientos y diseñar las tablas y las estadísticas.
+- **Cómo estaba antes:** el último pedido era el diseño de la memoria para Affinity.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-13 — Memoria editable para Affinity
+
+- **Qué cambió:** se registró el pedido de diseñar la memoria para Affinity y la corrección sobre el consentimiento.
+- **Cómo estaba antes:** el último pedido era la actualización del borrador con los datos del testeo.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-13 — Actualización del borrador v5
+
+- **Qué cambió:** se registró el pedido de actualizar el borrador con los datos del testeo y la identidad aprobada.
+- **Cómo estaba antes:** el último pedido registrado era anterior.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-13 — Herramientas y memoria
 

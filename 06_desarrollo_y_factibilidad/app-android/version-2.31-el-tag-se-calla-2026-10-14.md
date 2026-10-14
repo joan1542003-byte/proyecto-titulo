@@ -1,6 +1,6 @@
 # Android 2.31: el Tag se calla siempre
 
-**Fecha:** 14 de octubre de 2026. **Decisión:** D-134. **Estado:** compilada desde cero en su versión optimizada, con 86 pruebas unitarias aprobadas y la misma firma de las anteriores. En el emulador se instaló sobre datos existentes y se revisaron la pantalla de inicio, el logo, el ícono y la línea de la pila. **No se probó con un Tag real:** el emulador no tiene Bluetooth, así que el arreglo se verificó leyendo el código y compilando. El consentimiento no cambia (v13).
+**Fecha:** 14 de octubre de 2026. **Decisión:** D-136. **Estado:** compilada desde cero en su versión optimizada, con 86 pruebas unitarias aprobadas y la misma firma de las anteriores. En el emulador se instaló sobre datos existentes y se revisaron la pantalla de inicio, el logo, el ícono y la línea de la pila. **No se probó con un Tag real:** el emulador no tiene Bluetooth, así que el arreglo se verificó leyendo el código y compilando. El consentimiento no cambia (v13).
 
 Es la 2.30 del primer testeo, con su misma interfaz, más el arreglo del Tag, la lectura de la pila y el ícono y el logo de la línea 3.0. Su código está en la rama `android-2.31`, que sale de la 2.30 (`4db9a99`). El mismo arreglo quedó en `main`, sobre la 3.2.
 
@@ -74,4 +74,4 @@ Es la explicación que mejor calza con el registro y con el código. No se repro
 
 - **Qué se añadió:** la versión 2.31, con el arreglo del Tag, la pila y el ícono y el logo nuevos sobre la interfaz de la 2.30.
 - **Cómo estaba antes:** la 2.30 no confirmaba que el Tag se callara, desconectaba sin esperar y no leía la pila.
-- **Por qué:** reporte de una participante del primer testeo, transmitido por el autor (D-134).
+- **Por qué:** reporte de una participante del primer testeo, transmitido por el autor (D-136).

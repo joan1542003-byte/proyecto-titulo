@@ -128,7 +128,7 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 - **Qué cambió:** el panel lee la pila y el apagado del Tag y compara contra la 2.31.
 - **Cómo estaba antes:** comparaba contra la 2.30 y no mostraba la pila.
-- **Por qué:** D-134.
+- **Por qué:** D-136.
 
 ### 2026-10-13 — Fuera de claude.ai
 
