@@ -49,7 +49,7 @@ import java.util.UUID
  * - algunos se apagan si nadie se conecta en unos minutos: por eso la conexión se abre al activar el
  *   relevo y se mantiene, como hace iSearching;
  * - si una orden queda sin respuesta, Android no acepta otra en esa conexión. Desde 2.31 la conexión se
- *   marca como dudosa y, para callar el Tag, se abre de nuevo (D-134). Antes, la orden de apagar podía
+ *   marca como dudosa y, para callar el Tag, se abre de nuevo (D-136). Antes, la orden de apagar podía
  *   fallar sin aviso: el Tag seguía pitando y, al desconectarse, sonaba su alarma por desconexión.
  *
  * Todas las entradas revisan los permisos de Bluetooth antes de usar el adaptador.
