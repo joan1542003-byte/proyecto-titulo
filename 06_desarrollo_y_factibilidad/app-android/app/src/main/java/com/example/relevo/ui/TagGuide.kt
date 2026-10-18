@@ -63,14 +63,14 @@ private class GuideStep(val title: String, val text: String, val gesture: TagGes
  * que se compró para la prueba. Se abre sola la primera vez que se elige el Tag y desde Perfil › Ayuda.
  */
 private val guideSteps = listOf(
-  GuideStep("Este es tu Tag", "Es redondo y tiene un solo botón, al centro. Relevo lo hace sonar por Bluetooth.", TagGesture.IDLE, "Un botón al centro"),
+  GuideStep("Este es tu Tag", "Es redondo y su botón no se ve: es el centro de la cara de arriba. Al apretarlo firme se siente un clic. Relevo lo hace sonar por Bluetooth.", TagGesture.IDLE, "El centro es el botón"),
   GuideStep("Enciéndelo", "Mantén apretado el botón 3 segundos, hasta que pite dos veces. Queda encendido: no hay que hacerlo cada vez.", TagGesture.HOLD_ON, "3 segundos · pita dos veces"),
   GuideStep("Búscalo en Relevo", "Con el Tag cerca del teléfono, toca «Buscar el Tag» y elígelo en la lista. Va a pitar una vez para confirmarlo.", TagGesture.LINK, "Cerca del teléfono"),
   GuideStep("Déjalo en su lugar", "Ponlo donde te indica Relevo esta semana. Sonará cuando sumes el tiempo que elegiste en tus apps.", TagGesture.PLACE, "Donde te indica la semana"),
   GuideStep("Para callarlo, un toque", "Cuando suene, toca el botón una vez. No lo mantengas apretado: así se apaga.", TagGesture.TAP, "Un toque"),
   GuideStep("Para apagarlo", "Mantén apretado el botón 3 segundos, hasta que dé un pitido largo. Durante la prueba, mejor déjalo encendido.", TagGesture.HOLD_OFF, "3 segundos · pitido largo"),
   GuideStep("La pila dura meses", "Usa una pila de botón CR2032. Para cambiarla, abre la tapa por la ranura del borde con una uña o una moneda.", TagGesture.BATTERY, "Pila CR2032"),
-  GuideStep("Si no aparece o no pita", "El Tag se conecta a un solo teléfono a la vez: cierra apps como iSearching y, si lo usaste con otro teléfono, apaga su Bluetooth. Si se conecta pero no pita, apágalo y vuelve a encenderlo.", TagGesture.ONE_PHONE, "Un teléfono a la vez"),
+  GuideStep("Si no aparece o no pita", "El Tag se conecta a un solo teléfono a la vez: cierra apps como iSearching y, si lo usaste con otro teléfono, apaga su Bluetooth. Si se conecta pero no pita, o si suena lento y sin parar, sácale la pila unos segundos y vuelve a ponerla.", TagGesture.ONE_PHONE, "Un teléfono a la vez"),
 )
 
 /**

@@ -126,7 +126,7 @@ class SignalPlayer(private val context: Context) {
 
   /**
    * El Tag pita seguido durante 30 s, o 3 s en la prueba, hasta que se toca su botón (D-116). Si no está
-   * conectado, se conecta antes (hasta 20 s), salvo que la orden llegue desde la pantalla: ahí no se
+   * conectado, se conecta antes (hasta 30 s), salvo que la orden llegue desde la pantalla: ahí no se
    * espera, se abre la conexión en segundo plano y se avisa que no sonó. Si el Tag no confirma la orden,
    * la conexión se abre de nuevo y se reintenta una vez.
    */
@@ -279,7 +279,8 @@ class SignalPlayer(private val context: Context) {
 
   private companion object {
     const val CHUNK = 2_048
-    const val TAG_CONNECT_MILLIS = 20_000L
+    /** Hasta 30 s para conectar o para que un Tag lento responda antes de sonar (2.32). */
+    const val TAG_CONNECT_MILLIS = 30_000L
     const val TAG_STEP_MILLIS = 100L
     const val TAG_MISSES = 3
   }
