@@ -85,10 +85,10 @@ El detalle de cada versión está en su [README](06_desarrollo_y_factibilidad/pa
 
 ### Instalar
 
-- **Para el testeo:** [releases/relevo-android-2.31-2026-10-14.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.31-2026-10-14.apk) (D-136). Es la 2.30 con el Tag que se calla siempre, la pila del Tag a la vista y el ícono y el logo nuevos. Su código está en la rama `android-2.31`.
-- **Con el diseño nuevo:** [releases/relevo-android-3.2-2026-10-12.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-3.2-2026-10-12.apk) (D-131). Todavía no trae el arreglo del Tag; la próxima 3.x lo tendrá y deberá usar `versionCode` 47 o más.
+- **Para el testeo:** [releases/relevo-android-2.32-2026-10-17.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.32-2026-10-17.apk) (D-137). Es la 2.30 con el Tag que se calla siempre y no se desconecta con su alarma encendida, la pila del Tag a la vista y el ícono y el logo nuevos. Su código está en la rama `android-2.32`.
+- **Con el diseño nuevo:** [releases/relevo-android-3.2-2026-10-12.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-3.2-2026-10-12.apk) (D-131). Todavía no trae el arreglo del Tag; la próxima 3.x lo tendrá y deberá usar `versionCode` 48 o más.
 - **Cómo instalar:** se copia al teléfono y se abre. Android pide permitir la instalación desde esa app.
-- **Actualizar:** las dos se instalan encima de versiones anteriores, porque tienen la misma firma, y conservan los datos. La 2.31 también se instala encima de la 3.2.
+- **Actualizar:** las dos se instalan encima de versiones anteriores, porque tienen la misma firma, y conservan los datos. La 2.32 también se instala encima de la 3.2.
 - **Durante el testeo:** no conviene cambiar de versión a mitad de la prueba de 21 días.
 
 ### Usarla
@@ -246,6 +246,12 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 - **Probar sin claude.ai:** con un servidor local cualquiera (por ejemplo `npx serve`, o el `servidor.js` del panel) y un navegador. Los `file://` también sirven, salvo el modo con datos reales del panel.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-17 — Android 2.32
+
+- **Qué cambió:** la app para el testeo pasa a ser la 2.32.
+- **Cómo estaba antes:** era la 2.31.
+- **Por qué:** reporte de una participante (D-137).
 
 ### 2026-10-14 — Android 2.31
 

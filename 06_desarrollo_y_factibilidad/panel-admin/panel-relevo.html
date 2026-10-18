@@ -501,7 +501,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.31';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.32';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -757,7 +757,7 @@ select json_build_object(
       case 'preparar_abierto': return ['play', 'Empezó a preparar' + ({ nuevo: ' uno nuevo', idea: ' desde una idea', ruta: ' desde su ruta' }[d] || '')];
       case 'actividad_elegida': return ['check', 'Eligió «' + d + '»'];
       case 'salida_elegida': return ['bell', 'Eligió que suene en el ' + (ROUTES[d] || d)];
-      case 'prueba_de_sonido': { const kv = parseKv(d); const ok = kv.sono || kv.orden; return ['bell', 'Probó el sonido en el ' + (ROUTES[kv.salida] || 'teléfono') + (ok ? (ok === 'si' ? (kv.sono ? ': sonó' : '') : ': no sonó') : '') + (kv.apagado === 'reconnected' ? ' · hubo que reconectar para callarlo' : kv.apagado === 'failed' ? ' · no confirmó que se calló' : '') + (kv.pila ? ' · pila ' + kv.pila + ' %' : '')]; }
+      case 'prueba_de_sonido': { const kv = parseKv(d); const ok = kv.sono || kv.orden; return ['bell', 'Probó el sonido en el ' + (ROUTES[kv.salida] || 'teléfono') + (ok ? (ok === 'si' ? (kv.sono ? ': sonó' : '') : ': no sonó') : '') + (kv.apagado === 'reconnected' ? ' · hubo que reconectar para callarlo' : kv.apagado === 'failed' ? ' · no confirmó que se calló' : '') + (kv.pila ? ' · pila ' + kv.pila + ' %' : '') + (Number(kv.respuesta_ms) > 1500 ? ' · el Tag tardó ' + (Number(kv.respuesta_ms) / 1000).toFixed(1).replace('.', ',') + ' s en responder' : '')]; }
       case 'llavero_escuchado': return ['bell', d.startsWith('si') ? 'Dijo que escuchó el Tag' : 'Dijo que no escuchó el Tag'];
       case 'falta_completar': return ['info', 'Le faltó completar: ' + (missingText(d) || d)];
       case 'app_cerrada': { const m = /segundos=(\d+)/.exec(d); return ['phone', 'Cerró Relevo' + (m ? ', después de ' + duration(+m[1]) : '')]; }

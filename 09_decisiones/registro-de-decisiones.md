@@ -1736,7 +1736,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 86 pruebas unitarias, misma firma, instalada con datos en el emulador, que se dejó con los datos del autor idénticos (MD5). Sin Tag real.
 - **Documentación:** [versión 2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md).
 
+## D-137 — Android 2.32: el Tag no se desconecta con la alarma encendida
+
+- **Fecha:** 2026-10-17.
+- **Estado:** hecha; falta probarla con el Tag real después de horas sin uso.
+- **Contexto:** con la 2.31, la participante contó que, después de mucho tiempo sin usarse, el Tag suena lento y repetido hasta que se reinicia sacándole la pila. Su registro mostró la pila entre 50 % y 75 %, y los casos malos en la primera conexión después de mucho rato: el Tag no confirmaba a tiempo y la app cortaba la conexión para abrir otra. El autor pidió una actualización segura que resuelva la mayoría de los problemas posibles.
+- **Causa probable:** cortar la conexión con la alarma por desconexión encendida la hace sonar, y en este modelo solo para al reiniciar el Tag.
+- **Decisión:**
+  - **Desconectar:** solo con la alarma confirmada apagada en esa conexión. Si no se confirma, la app mantiene la conexión e insiste hasta 10 minutos.
+  - **Insistir en vez de reconectar:** para callar el Tag o ante una señal sin respuesta, se insiste en la conexión abierta. Solo se abre otra si la conexión ya se perdió.
+  - **Paciencia y velocidad:** 6 s por respuesta, reintentos si Android está ocupado, y una conexión rápida al conectar y antes de sonar.
+  - **Pruebas:** la conexión queda abierta 90 s después de cada prueba.
+  - **Guía y registro:** la guía dice dónde está el botón y qué hacer si suena sin parar; el registro suma la demora del Tag.
+  - **Número de versión:** la 2.32 usa `versionCode` 47, así que la próxima 3.x debe usar 48 o más.
+- **Verificación:** 86 pruebas, misma firma, instalada con datos en el emulador; sin Tag real.
+- **Documentación:** [versión 2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-17 — D-137
+
+- **Qué cambió:** se registró D-137.
+- **Cómo estaba antes:** la última decisión era D-136.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-14 — D-136
 

@@ -73,7 +73,11 @@
 
 **14 de octubre, Android 2.31 (D-136):** una participante reportó que el Tag siguió sonando después de la prueba y, más tarde, sin parar. Se leyó su registro en Supabase, se encontró la causa en el código (órdenes que fallaban sin aviso y una desconexión sin esperar) y se hizo la [2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md) sobre la 2.30, con el ícono y el logo nuevos y la pila del Tag. El mismo arreglo quedó en la 3.2 de `main`. Se probó en el emulador, sin Tag real.
 
+**17 de octubre, Android 2.32 (D-137):** la participante contó que el Tag suena lento y sin parar después de mucho tiempo sin uso. El registro de la 2.31 apuntó a la primera conexión después de mucho rato: el Tag respondía lento y la app cortaba la conexión, lo que dispara su alarma. La [2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md) nunca corta la conexión con esa alarma encendida, espera más y pide una conexión rápida.
+
 ## 4. Pendientes
+
+- Probar la 2.32 con el Tag real después de horas sin uso, con una pila nueva para descartar la pila.
 
 - Probar la 2.31 con el Tag real de la participante: la prueba, una señal completa y la pila.
 
@@ -86,6 +90,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-17 — Android 2.32
+
+- **Qué cambió:** se sumó la 2.32 y su pendiente.
+- **Cómo estaba antes:** terminaba en la 2.31.
+- **Por qué:** pedido del autor (D-137).
 
 ### 2026-10-14 — Android 2.31
 

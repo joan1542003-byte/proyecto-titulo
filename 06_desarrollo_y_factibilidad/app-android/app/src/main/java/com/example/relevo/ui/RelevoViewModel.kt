@@ -733,13 +733,15 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         linkLossOff = status.linkLossOff,
         battery = battery,
       )
-      // Desde 2.31 también cómo quedó el Tag al callarlo y la carga de su pila, si la informa.
+      // Desde 2.31 también cómo quedó el Tag al callarlo y la carga de su pila; desde 2.32, su respuesta más
+      // lenta y si la conexión se abrió para esta prueba.
       log(
         "prueba_de_sonido",
         "salida=tag;orden=${if (sent) "si" else "no"};intento=${attempt + 1};nivel=$level;" +
           "boton=${if (status.button) "si" else "no"};" +
           "alarma_desconexion=${if (status.linkLossOff) "apagada" else "sin_apagar"}" +
-          (if (connected) ";apagado=${TagLink.lastOff.name.lowercase()}" else "") + (battery?.let { ";pila=$it" } ?: ""),
+          (if (connected) ";apagado=${TagLink.lastOff.name.lowercase()};respuesta_ms=${TagLink.slowestMillis};conexion=${if (TagLink.freshConnection) "nueva" else "abierta"}" else "") +
+          (battery?.let { ";pila=$it" } ?: ""),
       )
       // Cómo es este modelo por dentro, una vez por prueba: servicios y propiedades, sin su dirección.
       if (connected && !retry) TagLink.profile?.let { log("llavero_perfil", it.take(600)) }

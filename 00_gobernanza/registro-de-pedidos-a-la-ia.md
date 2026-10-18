@@ -146,6 +146,7 @@
 | 13 oct. | Encargo | Recibir el archivo original de los datos reales, para subirlo él mismo a su Drive y dárselo a Claude. | Se exportaron las nueve tablas a un JSON en la carpeta local `datos_sensibles/`, que Git ignora, y se le envió el archivo. No entró al repositorio. | — |
 | 14 oct. | Corrección | Una participante contó que el Tag siguió pitando después de la prueba de 3 s y que, minutos después de dejar la app, sonó un tono más apagado sin parar hasta que abrió el Tag. Pidió revisar su versión (la que permite editar un relevo activo), arreglarla, leer la pila si se puede, y no usar todavía el diseño nuevo, salvo el ícono y el logo. | Su registro mostró la 2.30, una señal cortada a los 3 s y una prueba sin conexión. La causa: órdenes al Tag que fallaban sin aviso y una desconexión sin esperar. [Android 2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md): el Tag se calla con confirmación o con otra conexión, la señal se reconecta una vez y la pila se lee, se muestra y se registra. Tiene la interfaz de la 2.30 con el ícono y el logo nuevos. Falta probarla con el Tag real. | D-136 |
 | 17 oct. | Consulta | Una persona contó que, cuando el Tag pasa mucho tiempo sin usarse y luego la app lo hace sonar (en la prueba o en un relevo), suena lento y repetido («tutututu») hasta que abre y cierra el Tag. Preguntó si es la pila o algo más, y si se arregla con una actualización de la 2.31. | Respuesta en la conversación, con el registro de la 2.31: la pila marca entre 50 % y 75 %, y los casos malos coinciden con la primera conexión después de mucho rato, cuando el Tag no confirma las órdenes y la app vuelve a conectarse. Ese corte probablemente dispara su alarma por desconexión. Se propuso una 2.32 que no corte la conexión mientras esa alarma siga encendida, y probar con una pila nueva. Pendiente de la respuesta del autor. | D-136 |
+| 17 oct. | Encargo | Dijo que el Tag tiene un botón, pero que nunca lo ha encontrado ni sentido. Pidió una actualización segura que resuelva la mayoría de los problemas que hubo y que puedan aparecer. | [Android 2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md): la app nunca corta la conexión con la alarma por desconexión encendida; insiste en vez de reconectar; espera más a un Tag lento y pide una conexión rápida. La guía explica que el botón es el centro de la cara de arriba. 86 pruebas; sin Tag real. | D-137 |
 
 ## Lo que muestra el registro
 
@@ -156,6 +157,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-17 — Android 2.32
+
+- **Qué cambió:** se registró el encargo de la 2.32.
+- **Cómo estaba antes:** terminaba en la consulta del Tag que suena lento.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-17 — Tag que suena lento
 
