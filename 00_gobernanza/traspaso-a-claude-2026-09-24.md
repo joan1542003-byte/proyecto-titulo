@@ -202,6 +202,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
 - **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
 - **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
+- **Relevo como sistema (18 de octubre):** [documento](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) que explica de punta a punta la app, el Tag, Supabase, el panel, los fundamentos y el desarrollo; es la mejor entrada técnica para continuar. Los [wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) salen del árbol real de cada pantalla con `generador/generar-wireframes.js`.
 - **Android 2.32 (D-137, 17 de octubre), versión del testeo:** la 2.31 sin cortes con la alarma por desconexión encendida, con más paciencia con un Tag lento, una conexión rápida y la guía del botón. Código en la rama `android-2.32`; el mismo cambio está en `main`, sobre la 3.2. La próxima 3.x debe usar `versionCode` 48 o más ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md)).
 - **Android 2.31 (D-136, 14 de octubre):** la 2.30 con el Tag que se calla siempre (confirmación, otra conexión si hace falta y desconexión que espera a Android), la pila del Tag a la vista y en el registro, y el ícono y el logo de la línea 3.0. Su código está en la rama `android-2.31`; el arreglo también está en `main`, sobre la 3.2. La próxima 3.x debe usar `versionCode` 47 o más. Falta probarla con el Tag real ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md)).
 - **Herramientas (D-133, 13 de octubre):** el panel del testeo, las láminas, el taller de auras y los íconos funcionan sin claude.ai. La guía [HERRAMIENTAS.md](../HERRAMIENTAS.md) explica cómo usar cada uno y qué debe saber otro Claude. Para los datos reales, el panel necesita `node servidor.js` y un token de Supabase en `.env.local`, que nunca se sube.
@@ -233,6 +234,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-18 — Relevo como sistema
+
+- **Qué cambió:** el estado suma el documento del sistema y los wireframes.
+- **Cómo estaba antes:** terminaba en la 2.32.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-17 — Android 2.32
 

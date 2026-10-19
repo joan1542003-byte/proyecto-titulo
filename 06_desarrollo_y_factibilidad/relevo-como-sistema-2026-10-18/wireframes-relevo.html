@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wireframes de Relevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+/* Lámina de wireframes de muy baja fidelidad: papel, tinta y cajas grises, como los propios wireframes. */
+:root { --paper: #F7F4F0; --card: #FFFFFF; --ink: #141312; --mute: #6B655F; --line: #E4DED6; --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #161514; --card: #201E1C; --ink: #F3F0EC; --mute: #A9A29A; --line: #34302C; color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #161514; --card: #201E1C; --ink: #F3F0EC; --mute: #A9A29A; --line: #34302C; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { background: var(--paper); }
+body { margin: 0; color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1400px; margin: 0 auto; padding-inline: 20px; padding-block: 44px 72px; }
+h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.02; letter-spacing: -.03em; font-weight: 600; margin: 0; max-width: 20ch; text-wrap: balance; }
+.lead { color: var(--mute); font-size: 17px; max-width: 70ch; margin: 14px 0 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 22px 0 0; padding: 0; list-style: none; color: var(--mute); font-size: 14px; }
+.legend li { display: flex; align-items: center; gap: 8px; }
+.sw { width: 34px; height: 18px; border-radius: 9px; display: inline-block; }
+.sw.dark { background: #2b2b2b; box-shadow: 0 0 0 1px var(--mute); } .sw.box { background: #fff; border: 1px solid #8a8a8a; }
+.sw.img { background: repeating-linear-gradient(45deg, #efefef 0 4px, #d6d6d6 4px 5px); border: 1px dashed #8a8a8a; }
+.sw.text { height: 6px; width: 34px; background: #d6d6d6; border-radius: 3px; }
+section { margin-top: 56px; }
+.group { display: grid; gap: 4px; border-top: 1px solid var(--line); padding-top: 18px; }
+.group h2 { margin: 0; font-size: 24px; letter-spacing: -.02em; font-weight: 600; }
+.group p { margin: 0; color: var(--mute); max-width: 70ch; }
+.flow { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 26px 20px; }
+.flow li { min-width: 0; position: relative; }
+.flow img { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 360 / 800; background: #fff; border-radius: 26px; box-shadow: 0 1px 2px rgba(20,19,18,.06), 0 16px 34px -26px rgba(20,19,18,.35); }
+.num { margin: 12px 0 0; font-size: 12px; color: var(--mute); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.flow h3 { margin: 2px 0 0; font-size: 16px; font-weight: 600; line-height: 1.3; }
+.flow li > p:last-child { margin: 4px 0 0; color: var(--mute); font-size: 14px; }
+.note { margin-top: 56px; background: var(--card); border-radius: 22px; padding: 20px 22px; color: var(--mute); max-width: 82ch; }
+.note b { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Wireframes de Relevo</h1>
+  <p class="lead">Las 39 pantallas de la app Android que usa el testeo (versión 2.32), en muy baja fidelidad. Se dibujaron a partir de la posición real de cada elemento en el emulador, sin color, fotos ni marca, para mirar solo la estructura y el recorrido.</p>
+  <ul class="legend" aria-label="Cómo leer los wireframes">
+    <li><span class="sw dark"></span>Acción principal</li>
+    <li><span class="sw box"></span>Botón, fila u opción que se toca</li>
+    <li><span class="sw img"></span>Imagen o ilustración</li>
+    <li><span class="sw text"></span>Párrafo</li>
+  </ul>
+
+  <section>
+    <header class="group"><h2>Primera vez</h2><p>Se ven una sola vez: presentan la idea, piden el consentimiento y los permisos, y arman el perfil y la ruta.</p></header>
+    <ol class="flow">
+      <li id="01-bienvenida">
+        <img src="wireframes/01-bienvenida.svg" alt="Wireframe de «Bienvenida»" loading="lazy" width="360" height="800">
+        <p class="num">01</p>
+        <h3>Bienvenida</h3>
+        <p>La promesa de Relevo y un solo botón para empezar.</p>
+      </li>
+      <li id="02-esto-es-relevo">
+        <img src="wireframes/02-esto-es-relevo.svg" alt="Wireframe de «Esto es Relevo (video)»" loading="lazy" width="360" height="800">
+        <p class="num">02</p>
+        <h3>Esto es Relevo (video)</h3>
+        <p>Video de 30 segundos que muestra la idea completa.</p>
+      </li>
+      <li id="03-te-ha-pasado">
+        <img src="wireframes/03-te-ha-pasado.svg" alt="Wireframe de «¿Te ha pasado?»" loading="lazy" width="360" height="800">
+        <p class="num">03</p>
+        <h3>¿Te ha pasado?</h3>
+        <p>El problema en palabras de la persona: el rato se pasa y lo que quería hacer queda esperando.</p>
+      </li>
+      <li id="04-como-funciona">
+        <img src="wireframes/04-como-funciona.svg" alt="Wireframe de «Cómo funciona»" loading="lazy" width="360" height="800">
+        <p class="num">04</p>
+        <h3>Cómo funciona</h3>
+        <p>Las tres partes del sistema: la app, lo que suena y la persona que decide.</p>
+      </li>
+      <li id="05-aviso-semanal">
+        <img src="wireframes/05-aviso-semanal.svg" alt="Wireframe de «Una última pregunta»" loading="lazy" width="360" height="800">
+        <p class="num">05</p>
+        <h3>Una última pregunta</h3>
+        <p>Pregunta si quiere un aviso después de una semana sin abrir la app. Ninguna opción viene marcada.</p>
+      </li>
+      <li id="06-consentimiento">
+        <img src="wireframes/06-consentimiento.svg" alt="Wireframe de «Antes de empezar (consentimiento)»" loading="lazy" width="360" height="800">
+        <p class="num">06</p>
+        <h3>Antes de empezar (consentimiento)</h3>
+        <p>Consentimiento para 21 días, con «Leer más». Aceptar exige marcar la casilla; «No quiero participar» pesa lo mismo.</p>
+      </li>
+      <li id="07-permisos">
+        <img src="wireframes/07-permisos.svg" alt="Wireframe de «Permisos»" loading="lazy" width="360" height="800">
+        <p class="num">07</p>
+        <h3>Permisos</h3>
+        <p>Tiempo de uso es necesario para contar; notificaciones y batería son opcionales. Cada uno dice para qué sirve.</p>
+      </li>
+      <li id="08-nombre">
+        <img src="wireframes/08-nombre.svg" alt="Wireframe de «¿Cómo te llamas?»" loading="lazy" width="360" height="800">
+        <p class="num">08</p>
+        <h3>¿Cómo te llamas?</h3>
+        <p>El nombre se guarda aparte, solo junto al código.</p>
+      </li>
+      <li id="09-emoji">
+        <img src="wireframes/09-emoji.svg" alt="Wireframe de «Elige tu emoji»" loading="lazy" width="360" height="800">
+        <p class="num">09</p>
+        <h3>Elige tu emoji</h3>
+        <p>La imagen del perfil: emoji en grupos, sin fotos.</p>
+      </li>
+      <li id="10-intereses">
+        <img src="wireframes/10-intereses.svg" alt="Wireframe de «Intereses»" loading="lazy" width="360" height="800">
+        <p class="num">10</p>
+        <h3>Intereses</h3>
+        <p>Lo que le gustaría hacer más seguido. Con esto se arma la ruta de pasos.</p>
+      </li>
+      <li id="11-primer-relevo">
+        <img src="wireframes/11-primer-relevo.svg" alt="Wireframe de «Tu primer relevo»" loading="lazy" width="360" height="800">
+        <p class="num">11</p>
+        <h3>Tu primer relevo</h3>
+        <p>El primer relevo se prepara acompañado: seis pasos a la vista.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <header class="group"><h2>Preparar un relevo</h2><p>El corazón de la app: seis pasos para pasar de una intención a una condición que suena en un lugar.</p></header>
+    <ol class="flow">
+      <li id="12-que-quieres-hacer">
+        <img src="wireframes/12-que-quieres-hacer.svg" alt="Wireframe de «Preparar 1/6 · ¿Qué quieres hacer?»" loading="lazy" width="360" height="800">
+        <p class="num">12</p>
+        <h3>Preparar 1/6 · ¿Qué quieres hacer?</h3>
+        <p>La actividad: la que propone la ruta, una idea o una escrita por la persona.</p>
+      </li>
+      <li id="13-como-empiezas">
+        <img src="wireframes/13-como-empiezas.svg" alt="Wireframe de «Preparar 2/6 · ¿Cómo empiezas?»" loading="lazy" width="360" height="800">
+        <p class="num">13</p>
+        <h3>Preparar 2/6 · ¿Cómo empiezas?</h3>
+        <p>El primer paso, con opciones de un toque o texto propio.</p>
+      </li>
+      <li id="14-donde-empiezas">
+        <img src="wireframes/14-donde-empiezas.svg" alt="Wireframe de «Preparar 3/6 · ¿Dónde empiezas?»" loading="lazy" width="360" height="800">
+        <p class="num">14</p>
+        <h3>Preparar 3/6 · ¿Dónde empiezas?</h3>
+        <p>El lugar donde empieza la actividad: opciones concretas, nunca habitaciones enteras.</p>
+      </li>
+      <li id="15-cuando-suena">
+        <img src="wireframes/15-cuando-suena.svg" alt="Wireframe de «Preparar 4/6 · ¿Cuándo suena?»" loading="lazy" width="360" height="800">
+        <p class="num">15</p>
+        <h3>Preparar 4/6 · ¿Cuándo suena?</h3>
+        <p>La condición: las apps que cuentan y el tiempo acumulado, de 1 minuto a 6 horas. «Probar con 15 segundos» sirve para ensayar.</p>
+      </li>
+      <li id="16-elegir-apps">
+        <img src="wireframes/16-elegir-apps.svg" alt="Wireframe de «Elegir las apps»" loading="lazy" width="360" height="800">
+        <p class="num">16</p>
+        <h3>Elegir las apps</h3>
+        <p>Las apps instaladas, con búsqueda; se pueden elegir varias.</p>
+      </li>
+      <li id="17-donde-suena">
+        <img src="wireframes/17-donde-suena.svg" alt="Wireframe de «Preparar 5/6 · ¿Dónde suena?»" loading="lazy" width="360" height="800">
+        <p class="num">17</p>
+        <h3>Preparar 5/6 · ¿Dónde suena?</h3>
+        <p>Con qué suena: el Tag, un parlante, un reloj o el teléfono, cada uno con su estado. Desde aquí se busca y se prueba el Tag.</p>
+      </li>
+      <li id="18-guia-del-tag">
+        <img src="wireframes/18-guia-del-tag.svg" alt="Wireframe de «Cómo usar el Tag (guía)»" loading="lazy" width="360" height="800">
+        <p class="num">18</p>
+        <h3>Cómo usar el Tag (guía)</h3>
+        <p>Guía del Tag en ocho pasos, que se abre sola la primera vez: dónde está el botón, encenderlo, callarlo y la pila.</p>
+      </li>
+      <li id="19-todo-listo">
+        <img src="wireframes/19-todo-listo.svg" alt="Wireframe de «Preparar 6/6 · Todo listo»" loading="lazy" width="360" height="800">
+        <p class="num">19</p>
+        <h3>Preparar 6/6 · Todo listo</h3>
+        <p>Revisión: cada dato se toca para cambiarlo. «Activar el relevo» empieza a contar.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <header class="group"><h2>Contar, sonar y decidir</h2><p>Lo que pasa después de activar: la app cuenta, la señal suena y la persona cuenta qué decidió.</p></header>
+    <ol class="flow">
+      <li id="20-relevo-activado">
+        <img src="wireframes/20-relevo-activado.svg" alt="Wireframe de «Tu primer relevo está activo»" loading="lazy" width="360" height="800">
+        <p class="num">20</p>
+        <h3>Tu primer relevo está activo</h3>
+        <p>Confirmación del primer relevo, con lo que va a pasar.</p>
+      </li>
+      <li id="21-inicio-contando">
+        <img src="wireframes/21-inicio-contando.svg" alt="Wireframe de «Inicio · contando»" loading="lazy" width="360" height="800">
+        <p class="num">21</p>
+        <h3>Inicio · contando</h3>
+        <p>Inicio mientras cuenta: el avance y el resumen del relevo.</p>
+      </li>
+      <li id="22-relevo-activo">
+        <img src="wireframes/22-relevo-activo.svg" alt="Wireframe de «Tu relevo (activo)»" loading="lazy" width="360" height="800">
+        <p class="num">22</p>
+        <h3>Tu relevo (activo)</h3>
+        <p>El relevo en curso: avance, datos editables, volver al inicio o desactivar.</p>
+      </li>
+      <li id="23-suena">
+        <img src="wireframes/23-suena.svg" alt="Wireframe de «Suena»" loading="lazy" width="360" height="800">
+        <p class="num">23</p>
+        <h3>Suena</h3>
+        <p>La señal: la actividad y su primer paso. «Silenciar y continuar» la detiene.</p>
+      </li>
+      <li id="24-que-decidiste">
+        <img src="wireframes/24-que-decidiste.svg" alt="Wireframe de «¿Qué decidiste?»" loading="lazy" width="360" height="800">
+        <p class="num">24</p>
+        <h3>¿Qué decidiste?</h3>
+        <p>Preguntas de un toque después de la señal, todas omitibles. «¿Qué decidiste?» tiene tres respuestas del mismo peso.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <header class="group"><h2>Inicio, Ruta y Perfil</h2><p>Las tres pestañas de la app.</p></header>
+    <ol class="flow">
+      <li id="25-inicio">
+        <img src="wireframes/25-inicio.svg" alt="Wireframe de «Inicio»" loading="lazy" width="360" height="800">
+        <p class="num">25</p>
+        <h3>Inicio</h3>
+        <p>Inicio sin relevo: el paso actual de la ruta e ideas para preparar otro.</p>
+      </li>
+      <li id="26-ruta">
+        <img src="wireframes/26-ruta.svg" alt="Wireframe de «Tu ruta»" loading="lazy" width="360" height="800">
+        <p class="num">26</p>
+        <h3>Tu ruta</h3>
+        <p>La ruta: el paso actual y todos los pasos, editables.</p>
+      </li>
+      <li id="27-perfil">
+        <img src="wireframes/27-perfil.svg" alt="Wireframe de «Perfil»" loading="lazy" width="360" height="800">
+        <p class="num">27</p>
+        <h3>Perfil</h3>
+        <p>Perfil: la semana, los relevos, las actividades y la ruta.</p>
+      </li>
+      <li id="28-perfil-ajustes">
+        <img src="wireframes/28-perfil-ajustes.svg" alt="Wireframe de «Perfil · ajustes y ayuda»" loading="lazy" width="360" height="800">
+        <p class="num">28</p>
+        <h3>Perfil · ajustes y ayuda</h3>
+        <p>Más abajo: ajustes, privacidad, ayuda y la versión de la app.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <header class="group"><h2>Perfil</h2><p>Ajustes, datos, ayuda y la configuración de la prueba.</p></header>
+    <ol class="flow">
+      <li id="29-tus-relevos">
+        <img src="wireframes/29-tus-relevos.svg" alt="Wireframe de «Tus relevos (historial)»" loading="lazy" width="360" height="800">
+        <p class="num">29</p>
+        <h3>Tus relevos (historial)</h3>
+        <p>Historial de relevos, por día.</p>
+      </li>
+      <li id="30-tus-actividades">
+        <img src="wireframes/30-tus-actividades.svg" alt="Wireframe de «Tus actividades»" loading="lazy" width="360" height="800">
+        <p class="num">30</p>
+        <h3>Tus actividades</h3>
+        <p>Actividades propias, para preparar en un toque.</p>
+      </li>
+      <li id="31-nueva-actividad">
+        <img src="wireframes/31-nueva-actividad.svg" alt="Wireframe de «Nueva actividad»" loading="lazy" width="360" height="800">
+        <p class="num">31</p>
+        <h3>Nueva actividad</h3>
+        <p>Crear una actividad: nombre, primer paso y lugar.</p>
+      </li>
+      <li id="32-tu-perfil">
+        <img src="wireframes/32-tu-perfil.svg" alt="Wireframe de «Editar el perfil»" loading="lazy" width="360" height="800">
+        <p class="num">32</p>
+        <h3>Editar el perfil</h3>
+        <p>Editar el perfil: emoji, nombre e intereses.</p>
+      </li>
+      <li id="33-avisos">
+        <img src="wireframes/33-avisos.svg" alt="Wireframe de «Avisos y resúmenes»" loading="lazy" width="360" height="800">
+        <p class="num">33</p>
+        <h3>Avisos y resúmenes</h3>
+        <p>Activación automática (apagada por defecto, con la explicación de qué mira), resumen semanal, aviso semanal y mensaje después de responder.</p>
+      </li>
+      <li id="34-apariencia">
+        <img src="wireframes/34-apariencia.svg" alt="Wireframe de «Apariencia»" loading="lazy" width="360" height="800">
+        <p class="num">34</p>
+        <h3>Apariencia</h3>
+        <p>Tema claro, oscuro o automático, y tamaño del texto.</p>
+      </li>
+      <li id="35-permisos">
+        <img src="wireframes/35-permisos.svg" alt="Wireframe de «Permisos»" loading="lazy" width="360" height="800">
+        <p class="num">35</p>
+        <h3>Permisos</h3>
+        <p>El estado de cada permiso y para qué sirve.</p>
+      </li>
+      <li id="36-tus-datos">
+        <img src="wireframes/36-tus-datos.svg" alt="Wireframe de «Tus datos»" loading="lazy" width="360" height="800">
+        <p class="num">36</p>
+        <h3>Tus datos</h3>
+        <p>Tu código, lo que aceptaste, el estado del envío, la copia en el teléfono, descargar y borrar los datos.</p>
+      </li>
+      <li id="37-tu-opinion">
+        <img src="wireframes/37-tu-opinion.svg" alt="Wireframe de «Tu opinión»" loading="lazy" width="360" height="800">
+        <p class="num">37</p>
+        <h3>Tu opinión</h3>
+        <p>Opinión sobre la app: de 1 a 5 y un comentario.</p>
+      </li>
+      <li id="38-reportar">
+        <img src="wireframes/38-reportar.svg" alt="Wireframe de «Reportar un problema»" loading="lazy" width="360" height="800">
+        <p class="num">38</p>
+        <h3>Reportar un problema</h3>
+        <p>Reportar un problema, con datos técnicos opcionales.</p>
+      </li>
+      <li id="39-prueba-21-dias">
+        <img src="wireframes/39-prueba-21-dias.svg" alt="Wireframe de «Prueba de 21 días (investigador)»" loading="lazy" width="360" height="800">
+        <p class="num">39</p>
+        <h3>Prueba de 21 días (investigador)</h3>
+        <p>Solo para el investigador, en la sesión inicial: condiciones A, B y C y la secuencia asignada. Se abre manteniendo apretada la versión en Perfil.</p>
+      </li>
+    </ol>
+  </section>
+  <p class="note"><b>Cómo se hicieron.</b> Cada pantalla se recorrió en el emulador con un perfil de prueba y sin conexión, y se guardó su árbol de elementos con <code>uiautomator</code>. El script <code>generador/generar-wireframes.js</code> lo convierte en SVG. La 3.2 tiene las mismas pantallas con otra composición visual. Las preguntas semanales y de cierre de la prueba no se dibujaron, porque solo aparecen al pasar los días de la prueba.</p>
+</main>
+</body>
+</html>

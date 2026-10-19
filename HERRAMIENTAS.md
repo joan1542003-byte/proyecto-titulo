@@ -245,7 +245,19 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 - **Panel:** las consultas están dentro de `panel-relevo.html` (`SNAPSHOT_SQL` para lo general y `STATS_SQL` para Resultados; las de la ficha, exportar, enviar y borrar están dentro de sus funciones). `datos-de-ejemplo.js` responde según el nombre de la columna que pide cada consulta (`as snapshot`, `as detail`, `as stats`, `as export`, `as nombres`, `as deleted`). Si se agrega una consulta nueva, conviene sumar su respuesta de ejemplo.
 - **Probar sin claude.ai:** con un servidor local cualquiera (por ejemplo `npx serve`, o el `servidor.js` del panel) y un navegador. Los `file://` también sirven, salvo el modo con datos reales del panel.
 
+## Wireframes de la app
+
+- **Qué es:** [la lámina](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) con las 39 pantallas de la 2.32 en muy baja fidelidad, agrupadas por recorrido y con una nota por pantalla. Los SVG sueltos están en `06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes/`.
+- **Cómo se regeneran:** en `06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/generador/`, `node generar-wireframes.js arbol ../wireframes pantallas.json` y `node generar-lamina.js`. El árbol de cada pantalla se captura con `adb shell uiautomator dump` en el emulador, con un perfil de prueba y sin conexión.
+- **Contexto:** el [documento del sistema](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) explica la app, el Tag, Supabase y el panel.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-18 — Wireframes
+
+- **Qué cambió:** se suma la lámina de wireframes y el documento del sistema.
+- **Cómo estaba antes:** no había wireframes de la app actual.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-17 — Android 2.32
 

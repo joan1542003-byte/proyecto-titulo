@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Relevo como sistema](relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md): frontend, backend y proyecto explicados de punta a punta, con sus fundamentos, y la [lámina de wireframes](relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
 - [Aplicación Android 2.32](app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md): el Tag no se desconecta con su alarma encendida y la app espera más a un Tag lento (D-137); la versión del testeo desde el 17 de octubre.
 - [Aplicación Android 2.31](app-android/version-2.31-el-tag-se-calla-2026-10-14.md): el Tag se calla siempre y muestra su pila, con el ícono y el logo nuevos (D-136); la versión del testeo desde el 14 de octubre.
 - [Aplicación Android 2.30](app-android/version-2.30-editar-sin-borrar-2026-10-09.md): editar un relevo sin borrarlo (D-120); la versión del primer testeo.
@@ -81,6 +82,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-18 — Relevo como sistema
+
+- **Qué cambió:** se enlazan el documento del sistema y los wireframes.
+- **Cómo estaba antes:** no había un documento que explicara el sistema completo.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-17 — Android 2.32
 

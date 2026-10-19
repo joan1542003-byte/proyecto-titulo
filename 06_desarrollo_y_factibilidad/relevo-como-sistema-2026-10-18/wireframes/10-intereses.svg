@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" font-family="Helvetica, Arial, sans-serif">
+<title>Intereses</title>
+<rect x="0.5" y="0.5" width="359" height="799" rx="28" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.5"/>
+<clipPath id="c"><rect x="0" y="0" width="360" height="800" rx="28"/></clipPath>
+<g clip-path="url(#c)">
+<g transform="translate(0 0)">
+<rect x="17.666666666666668" y="549.6666666666666" width="157" height="169.66666666666666" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="214.33333333333334" width="157" height="155.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="185.33333333333334" y="214.33333333333334" width="157" height="155.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="382" width="157" height="155.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="185.33333333333334" y="382" width="157" height="155.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="185.33333333333334" y="549.6666666666666" width="157" height="155.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="719.3333333333334" width="324.6666666666667" height="49" rx="16" fill="#2b2b2b"/>
+<rect x="17.666666666666668" y="768.3333333333334" width="157" height="31.666666666666668" rx="15.833333333333334" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="185.33333333333334" y="768.3333333333334" width="157" height="31.666666666666668" rx="15.833333333333334" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="283.6666666666667" y="24.666666666666668" width="65.66666666666667" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="9" y="24.666666666666668" width="42" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<g><rect x="17.666666666666668" y="214.33333333333334" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="25.666666666666668" y1="222.33333333333334" x2="166.66666666666666" y2="361.6666666666667" stroke="#d6d6d6"/><line x1="166.66666666666666" y1="222.33333333333334" x2="25.666666666666668" y2="361.6666666666667" stroke="#d6d6d6"/></g>
+<g><rect x="185.33333333333334" y="214.33333333333334" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="193.33333333333334" y1="222.33333333333334" x2="334.33333333333337" y2="361.6666666666667" stroke="#d6d6d6"/><line x1="334.33333333333337" y1="222.33333333333334" x2="193.33333333333334" y2="361.6666666666667" stroke="#d6d6d6"/></g>
+<g><rect x="17.666666666666668" y="382" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="25.666666666666668" y1="390" x2="166.66666666666666" y2="529.3333333333334" stroke="#d6d6d6"/><line x1="166.66666666666666" y1="390" x2="25.666666666666668" y2="529.3333333333334" stroke="#d6d6d6"/></g>
+<g><rect x="185.33333333333334" y="382" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="193.33333333333334" y1="390" x2="334.33333333333337" y2="529.3333333333334" stroke="#d6d6d6"/><line x1="334.33333333333337" y1="390" x2="193.33333333333334" y2="529.3333333333334" stroke="#d6d6d6"/></g>
+<g><rect x="17.666666666666668" y="549.6666666666666" width="157" height="174.66666666666666" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="25.666666666666668" y1="557.6666666666666" x2="166.66666666666666" y2="716.3333333333333" stroke="#d6d6d6"/><line x1="166.66666666666666" y1="557.6666666666666" x2="25.666666666666668" y2="716.3333333333333" stroke="#d6d6d6"/></g>
+<g><rect x="185.33333333333334" y="549.6666666666666" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="193.33333333333334" y1="557.6666666666666" x2="334.33333333333337" y2="697" stroke="#d6d6d6"/><line x1="334.33333333333337" y1="557.6666666666666" x2="193.33333333333334" y2="697" stroke="#d6d6d6"/></g>
+<text x="17.666666666666668" y="93.33333333333333" dominant-baseline="central" font-size="26.6" font-weight="700" fill="#2b2b2b">¿Qué te gustaría</text>
+<text x="17.666666666666668" y="129.33333333333331" dominant-baseline="central" font-size="26.6" font-weight="700" fill="#2b2b2b">hacer más seguido?</text>
+<text x="17.666666666666668" y="178.16666666666666" dominant-baseline="central" font-size="11.5" font-weight="400" fill="#555">Elige una o varias.</text>
+<text x="17.666666666666668" y="360" dominant-baseline="central" font-size="13.5" font-weight="700" fill="#2b2b2b">Dormir a tiempo</text>
+<text x="185.33333333333334" y="360" dominant-baseline="central" font-size="14.1" font-weight="700" fill="#2b2b2b">Leer</text>
+<text x="17.666666666666668" y="527.6666666666666" dominant-baseline="central" font-size="12.7" font-weight="700" fill="#2b2b2b">Hacer ejercicio</text>
+<text x="185.33333333333334" y="527.6666666666666" dominant-baseline="central" font-size="11.5" font-weight="700" fill="#2b2b2b">Salir en bicicleta</text>
+<text x="17.666666666666668" y="694.0833333333333" dominant-baseline="central" font-size="12.5" font-weight="700" fill="#2b2b2b">Pasear o jugar</text>
+<text x="17.666666666666668" y="710.9166666666666" dominant-baseline="central" font-size="12.5" font-weight="700" fill="#2b2b2b">con tu perro</text>
+<text x="185.33333333333334" y="695.3333333333333" dominant-baseline="central" font-size="12.2" font-weight="700" fill="#2b2b2b">Dibujar o pintar</text>
+<text x="316.5" y="45.666666666666664" dominant-baseline="central" font-size="11.2" font-weight="700" fill="#2b2b2b" text-anchor="middle">Saltar</text>
+<text x="180.16666666666666" y="744" dominant-baseline="central" font-size="13.3" font-weight="700" fill="#ffffff" text-anchor="middle">Armar mi ruta</text>
+<rect x="131" y="43.166666666666664" width="30" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="165" y="43.166666666666664" width="30" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="199" y="43.166666666666664" width="30" height="5" rx="2.5" fill="#2b2b2b"/>
+</g>
+<rect x="0" y="0" width="360" height="24" fill="#ffffff"/>
+<rect x="18" y="9" width="30" height="6" rx="3" fill="#d6d6d6"/><rect x="306" y="9" width="36" height="6" rx="3" fill="#d6d6d6"/>
+<rect x="130" y="788" width="100" height="4" rx="2" fill="#8a8a8a"/>
+</g>
+</svg>

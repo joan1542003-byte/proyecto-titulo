@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" font-family="Helvetica, Arial, sans-serif">
+<title>Apariencia</title>
+<rect x="0.5" y="0.5" width="359" height="799" rx="28" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.5"/>
+<clipPath id="c"><rect x="0" y="0" width="360" height="800" rx="28"/></clipPath>
+<g clip-path="url(#c)">
+<g transform="translate(0 0)">
+<rect x="180" y="483" width="142" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="38" y="332.3333333333333" width="94.66666666666667" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="227.33333333333334" y="332.3333333333333" width="94.66666666666667" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="9" y="24.666666666666668" width="42" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<text x="17.666666666666668" y="93.83333333333333" dominant-baseline="central" font-size="27.2" font-weight="700" fill="#2b2b2b">Apariencia</text>
+<text x="35.333333333333336" y="164.5" dominant-baseline="central" font-size="19.2" font-weight="700" fill="#2b2b2b">Vuelve a leer.</text>
+<text x="35.333333333333336" y="198.16666666666666" dominant-baseline="central" font-size="12.1" font-weight="400" fill="#555">Sonará junto al sillón después de 40 min.</text>
+<text x="35.333333333333336" y="279.33333333333337" dominant-baseline="central" font-size="14.3" font-weight="400" fill="#555">Tema</text>
+<text x="35.333333333333336" y="305.3333333333333" dominant-baseline="central" font-size="10.7" font-weight="400" fill="#555">Claro, oscuro o como esté tu teléfono.</text>
+<text x="85.33333333333334" y="353.3333333333333" dominant-baseline="central" font-size="12.6" font-weight="700" fill="#2b2b2b" text-anchor="middle">Automático</text>
+<text x="163" y="353.3333333333333" dominant-baseline="central" font-size="12.3" font-weight="400" fill="#555">Claro</text>
+<text x="274.6666666666667" y="353.3333333333333" dominant-baseline="central" font-size="13.3" font-weight="700" fill="#2b2b2b" text-anchor="middle">Oscuro</text>
+<text x="35.333333333333336" y="430" dominant-baseline="central" font-size="13.5" font-weight="400" fill="#555">Tamaño del texto</text>
+<text x="35.333333333333336" y="456" dominant-baseline="central" font-size="11.1" font-weight="400" fill="#555">Se suma al tamaño que usas en el teléfono.</text>
+<text x="81" y="504" dominant-baseline="central" font-size="12.6" font-weight="400" fill="#555">Estándar</text>
+<text x="251.16666666666666" y="504" dominant-baseline="central" font-size="13.4" font-weight="700" fill="#2b2b2b" text-anchor="middle">Grande</text>
+</g>
+<rect x="0" y="0" width="360" height="24" fill="#ffffff"/>
+<rect x="18" y="9" width="30" height="6" rx="3" fill="#d6d6d6"/><rect x="306" y="9" width="36" height="6" rx="3" fill="#d6d6d6"/>
+<rect x="130" y="788" width="100" height="4" rx="2" fill="#8a8a8a"/>
+</g>
+</svg>

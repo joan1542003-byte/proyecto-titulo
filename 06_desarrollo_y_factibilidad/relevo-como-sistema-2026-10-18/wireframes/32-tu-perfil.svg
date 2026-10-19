@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" font-family="Helvetica, Arial, sans-serif">
+<title>Editar el perfil</title>
+<rect x="0.5" y="0.5" width="359" height="799" rx="28" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.5"/>
+<clipPath id="c"><rect x="0" y="0" width="360" height="800" rx="28"/></clipPath>
+<g clip-path="url(#c)">
+<g transform="translate(0 0)">
+<rect x="17.666666666666668" y="407.3333333333333" width="157" height="155.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="575" width="157" height="144.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="185.33333333333334" y="575" width="157" height="144.33333333333334" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="719.3333333333334" width="324.6666666666667" height="49" rx="16" fill="#2b2b2b"/>
+<rect x="17.666666666666668" y="312.3333333333333" width="324.6666666666667" height="42" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="134.66666666666666" y="131.66666666666666" width="91" height="91" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="117.66666666666667" y="231.33333333333334" width="124.66666666666667" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="768.3333333333334" width="157" height="31.666666666666668" rx="15.833333333333334" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="185.33333333333334" y="768.3333333333334" width="157" height="31.666666666666668" rx="15.833333333333334" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="9" y="24.666666666666668" width="42" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<circle cx="180.16666666666666" cy="177.16666666666666" r="16.666666666666668" fill="#efefef" stroke="#8a8a8a"/>
+<g><rect x="17.666666666666668" y="407.3333333333333" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="25.666666666666668" y1="415.3333333333333" x2="166.66666666666666" y2="554.6666666666666" stroke="#d6d6d6"/><line x1="166.66666666666666" y1="415.3333333333333" x2="25.666666666666668" y2="554.6666666666666" stroke="#d6d6d6"/></g>
+<g><rect x="185.33333333333334" y="407.3333333333333" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="193.33333333333334" y1="415.3333333333333" x2="334.33333333333337" y2="554.6666666666666" stroke="#d6d6d6"/><line x1="334.33333333333337" y1="415.3333333333333" x2="193.33333333333334" y2="554.6666666666666" stroke="#d6d6d6"/></g>
+<g><rect x="17.666666666666668" y="575" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="25.666666666666668" y1="583" x2="166.66666666666666" y2="722.3333333333334" stroke="#d6d6d6"/><line x1="166.66666666666666" y1="583" x2="25.666666666666668" y2="722.3333333333334" stroke="#d6d6d6"/></g>
+<g><rect x="185.33333333333334" y="575" width="157" height="155.33333333333334" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="193.33333333333334" y1="583" x2="334.33333333333337" y2="722.3333333333334" stroke="#d6d6d6"/><line x1="334.33333333333337" y1="583" x2="193.33333333333334" y2="722.3333333333334" stroke="#d6d6d6"/></g>
+<text x="17.666666666666668" y="93.83333333333333" dominant-baseline="central" font-size="22.9" font-weight="700" fill="#2b2b2b">Tu perfil</text>
+<text x="121.33333333333333" y="252.33333333333331" dominant-baseline="central" font-size="13.1" font-weight="700" fill="#2b2b2b">Cambiar el emoji</text>
+<text x="17.666666666666668" y="305.1666666666667" dominant-baseline="central" font-size="10.6" font-weight="400" fill="#555">Tu nombre</text>
+<text x="17.666666666666668" y="333.3333333333333" dominant-baseline="central" font-size="30.0" font-weight="700" fill="#2b2b2b">Prueba</text>
+<text x="21.333333333333332" y="387.8333333333333" dominant-baseline="central" font-size="11.9" font-weight="400" fill="#555">Intereses</text>
+<text x="17.666666666666668" y="553" dominant-baseline="central" font-size="13.5" font-weight="700" fill="#2b2b2b">Dormir a tiempo</text>
+<text x="185.33333333333334" y="553" dominant-baseline="central" font-size="14.1" font-weight="400" fill="#555">Leer</text>
+<text x="17.666666666666668" y="715.1666666666666" dominant-baseline="central" font-size="8.5" font-weight="700" fill="#2b2b2b">Hacer ejercicio</text>
+<text x="185.33333333333334" y="715.1666666666666" dominant-baseline="central" font-size="8.5" font-weight="700" fill="#2b2b2b">Salir en bicicleta</text>
+<text x="180" y="744" dominant-baseline="central" font-size="14.3" font-weight="700" fill="#ffffff" text-anchor="middle">Guardar</text>
+</g>
+<rect x="0" y="0" width="360" height="24" fill="#ffffff"/>
+<rect x="18" y="9" width="30" height="6" rx="3" fill="#d6d6d6"/><rect x="306" y="9" width="36" height="6" rx="3" fill="#d6d6d6"/>
+<rect x="130" y="788" width="100" height="4" rx="2" fill="#8a8a8a"/>
+</g>
+</svg>

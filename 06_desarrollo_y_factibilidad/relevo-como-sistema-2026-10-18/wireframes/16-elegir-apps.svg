@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" font-family="Helvetica, Arial, sans-serif">
+<title>Elegir las apps</title>
+<rect x="0.5" y="0.5" width="359" height="799" rx="28" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.5"/>
+<clipPath id="c"><rect x="0" y="0" width="360" height="800" rx="28"/></clipPath>
+<g clip-path="url(#c)">
+<g transform="translate(0 0)">
+<rect x="26.333333333333332" y="171" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="220.33333333333334" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="269.6666666666667" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="319" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="368.3333333333333" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="417.6666666666667" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="467" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="516.3333333333334" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="565.6666666666666" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="615" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="664.3333333333334" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="26.333333333333332" y="713.6666666666666" width="307.3333333333333" height="49.333333333333336" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="61.666666666666664" y="120.33333333333333" width="261.3333333333333" height="42" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="284.3333333333333" y="70.66666666666667" width="58" height="42" rx="16" fill="#2b2b2b"/>
+<text x="26.333333333333332" y="91.66666666666666" dominant-baseline="central" font-size="18.3" font-weight="700" fill="#2b2b2b">Elige las apps</text>
+<text x="313.3333333333333" y="91.66666666666667" dominant-baseline="central" font-size="10.7" font-weight="700" fill="#ffffff" text-anchor="middle">Listo</text>
+<text x="61.666666666666664" y="141.16666666666666" dominant-baseline="central" font-size="14.3" font-weight="700" fill="#2b2b2b">Buscar</text>
+<text x="82.33333333333333" y="195.83333333333334" dominant-baseline="central" font-size="13.9" font-weight="700" fill="#2b2b2b">Calendar</text>
+<text x="82.33333333333333" y="245.16666666666666" dominant-baseline="central" font-size="15.8" font-weight="700" fill="#2b2b2b">Camera</text>
+<text x="82.33333333333333" y="294.5" dominant-baseline="central" font-size="16.2" font-weight="700" fill="#2b2b2b">Chrome</text>
+<text x="82.33333333333333" y="343.8333333333333" dominant-baseline="central" font-size="14.0" font-weight="700" fill="#2b2b2b">Clock</text>
+<text x="82.33333333333333" y="393.1666666666667" dominant-baseline="central" font-size="13.6" font-weight="700" fill="#2b2b2b">Contacts</text>
+<text x="82.33333333333333" y="442.5" dominant-baseline="central" font-size="12.9" font-weight="700" fill="#2b2b2b">Drive</text>
+<text x="82.33333333333333" y="491.8333333333333" dominant-baseline="central" font-size="11.4" font-weight="700" fill="#2b2b2b">Files</text>
+<text x="82.33333333333333" y="541.1666666666666" dominant-baseline="central" font-size="14.0" font-weight="700" fill="#2b2b2b">Gmail</text>
+<text x="82.33333333333333" y="590.5" dominant-baseline="central" font-size="14.6" font-weight="700" fill="#2b2b2b">Google</text>
+<text x="82.33333333333333" y="639.8333333333334" dominant-baseline="central" font-size="16.7" font-weight="700" fill="#2b2b2b">Maps</text>
+<text x="82.33333333333333" y="689.1666666666666" dominant-baseline="central" font-size="15.3" font-weight="700" fill="#2b2b2b">Messages</text>
+<text x="82.33333333333333" y="738.5" dominant-baseline="central" font-size="15.5" font-weight="700" fill="#2b2b2b">Phone</text>
+</g>
+<rect x="0" y="0" width="360" height="24" fill="#ffffff"/>
+<rect x="18" y="9" width="30" height="6" rx="3" fill="#d6d6d6"/><rect x="306" y="9" width="36" height="6" rx="3" fill="#d6d6d6"/>
+<rect x="130" y="788" width="100" height="4" rx="2" fill="#8a8a8a"/>
+</g>
+</svg>

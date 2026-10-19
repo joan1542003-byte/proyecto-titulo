@@ -1,0 +1,385 @@
+[
+ {
+  "id": "01-bienvenida",
+  "file": "01-bienvenida",
+  "title": "Bienvenida",
+  "group": "Primera vez",
+  "primary": [
+   "Empezar"
+  ]
+ },
+ {
+  "id": "02-esto-es-relevo",
+  "file": "02-como-funciona",
+  "title": "Esto es Relevo (video)",
+  "group": "Primera vez",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "03-te-ha-pasado",
+  "file": "02-como-funciona-2",
+  "title": "¿Te ha pasado?",
+  "group": "Primera vez",
+  "primary": [
+   "Seguir"
+  ],
+  "img": [
+   [
+    36,
+    150,
+    288,
+    148
+   ]
+  ]
+ },
+ {
+  "id": "04-como-funciona",
+  "file": "02-como-funciona-3",
+  "title": "Cómo funciona",
+  "group": "Primera vez",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "05-aviso-semanal",
+  "file": "02-como-funciona-4",
+  "title": "Una última pregunta",
+  "group": "Primera vez",
+  "primary": [
+   "Sí, avísame"
+  ]
+ },
+ {
+  "id": "06-consentimiento",
+  "file": "03-consentimiento",
+  "title": "Antes de empezar (consentimiento)",
+  "group": "Primera vez",
+  "primary": [
+   "Aceptar y empezar"
+  ]
+ },
+ {
+  "id": "07-permisos",
+  "file": "04-permisos",
+  "title": "Permisos",
+  "group": "Primera vez",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "08-nombre",
+  "file": "05-perfil-inicial",
+  "title": "¿Cómo te llamas?",
+  "group": "Primera vez",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "09-emoji",
+  "file": "05-perfil-inicial-2",
+  "title": "Elige tu emoji",
+  "group": "Primera vez",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "10-intereses",
+  "file": "05-perfil-inicial-3",
+  "title": "Intereses",
+  "group": "Primera vez",
+  "primary": [
+   "Armar mi ruta"
+  ]
+ },
+ {
+  "id": "11-primer-relevo",
+  "file": "06-primer-relevo",
+  "title": "Tu primer relevo",
+  "group": "Primera vez",
+  "primary": [
+   "Empezar"
+  ],
+  "img": [
+   [
+    0,
+    0,
+    360,
+    195
+   ]
+  ]
+ },
+ {
+  "id": "12-que-quieres-hacer",
+  "file": "07-preparar-1-actividad",
+  "title": "Preparar 1/6 · ¿Qué quieres hacer?",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "13-como-empiezas",
+  "file": "07-preparar-2",
+  "title": "Preparar 2/6 · ¿Cómo empiezas?",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "14-donde-empiezas",
+  "file": "07-preparar-3",
+  "title": "Preparar 3/6 · ¿Dónde empiezas?",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "15-cuando-suena",
+  "file": "07-preparar-4",
+  "title": "Preparar 4/6 · ¿Cuándo suena?",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "16-elegir-apps",
+  "file": "08-elegir-apps",
+  "title": "Elegir las apps",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Listo"
+  ]
+ },
+ {
+  "id": "17-donde-suena",
+  "file": "07-preparar-5",
+  "title": "Preparar 5/6 · ¿Dónde suena?",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Seguir"
+  ]
+ },
+ {
+  "id": "18-guia-del-tag",
+  "file": "09-guia-tag",
+  "title": "Cómo usar el Tag (guía)",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Siguiente"
+  ]
+ },
+ {
+  "id": "19-todo-listo",
+  "file": "07-preparar-6",
+  "title": "Preparar 6/6 · Todo listo",
+  "group": "Preparar un relevo",
+  "primary": [
+   "Activar el relevo"
+  ],
+  "img": [
+   [
+    17,
+    224,
+    326,
+    190
+   ]
+  ]
+ },
+ {
+  "id": "20-relevo-activado",
+  "file": "10a-primer-relevo-activo",
+  "title": "Tu primer relevo está activo",
+  "group": "Contar, sonar y decidir",
+  "primary": [
+   "Entendido"
+  ]
+ },
+ {
+  "id": "21-inicio-contando",
+  "file": "11-inicio-contando",
+  "title": "Inicio · contando",
+  "group": "Contar, sonar y decidir",
+  "primary": [
+   "Ver mi relevo"
+  ]
+ },
+ {
+  "id": "22-relevo-activo",
+  "file": "10-relevo-activo",
+  "title": "Tu relevo (activo)",
+  "group": "Contar, sonar y decidir",
+  "primary": [
+   "Volver al inicio"
+  ],
+  "img": [
+   [
+    0,
+    0,
+    360,
+    280
+   ]
+  ]
+ },
+ {
+  "id": "23-suena",
+  "file": "12-senal",
+  "title": "Suena",
+  "group": "Contar, sonar y decidir",
+  "primary": [
+   "Silenciar y continuar"
+  ],
+  "img": [
+   [
+    0,
+    0,
+    360,
+    300
+   ]
+  ]
+ },
+ {
+  "id": "24-que-decidiste",
+  "file": "13-decidir",
+  "title": "¿Qué decidiste?",
+  "group": "Contar, sonar y decidir",
+  "primary": []
+ },
+ {
+  "id": "25-inicio",
+  "file": "14-inicio",
+  "title": "Inicio",
+  "group": "Inicio, Ruta y Perfil",
+  "primary": [
+   "Preparar un relevo"
+  ]
+ },
+ {
+  "id": "26-ruta",
+  "file": "15-ruta",
+  "title": "Tu ruta",
+  "group": "Inicio, Ruta y Perfil",
+  "primary": [
+   "Preparar un relevo con este paso"
+  ],
+  "img": [
+   [
+    17,
+    184,
+    326,
+    210
+   ]
+  ]
+ },
+ {
+  "id": "27-perfil",
+  "file": "16-perfil",
+  "title": "Perfil",
+  "group": "Inicio, Ruta y Perfil",
+  "primary": []
+ },
+ {
+  "id": "28-perfil-ajustes",
+  "file": "16-perfil-b",
+  "title": "Perfil · ajustes y ayuda",
+  "group": "Inicio, Ruta y Perfil",
+  "primary": []
+ },
+ {
+  "id": "29-tus-relevos",
+  "file": "17-historial",
+  "title": "Tus relevos (historial)",
+  "group": "Perfil",
+  "primary": []
+ },
+ {
+  "id": "30-tus-actividades",
+  "file": "18-actividades",
+  "title": "Tus actividades",
+  "group": "Perfil",
+  "primary": [
+   "Crear una actividad"
+  ]
+ },
+ {
+  "id": "31-nueva-actividad",
+  "file": "26-crear-actividad",
+  "title": "Nueva actividad",
+  "group": "Perfil",
+  "primary": [
+   "Guardar"
+  ]
+ },
+ {
+  "id": "32-tu-perfil",
+  "file": "25-editar-perfil",
+  "title": "Editar el perfil",
+  "group": "Perfil",
+  "primary": [
+   "Guardar"
+  ]
+ },
+ {
+  "id": "33-avisos",
+  "file": "19-avisos",
+  "title": "Avisos y resúmenes",
+  "group": "Perfil",
+  "primary": []
+ },
+ {
+  "id": "34-apariencia",
+  "file": "20-apariencia",
+  "title": "Apariencia",
+  "group": "Perfil",
+  "primary": []
+ },
+ {
+  "id": "35-permisos",
+  "file": "21-permisos",
+  "title": "Permisos",
+  "group": "Perfil",
+  "primary": []
+ },
+ {
+  "id": "36-tus-datos",
+  "file": "22-tus-datos",
+  "title": "Tus datos",
+  "group": "Perfil",
+  "primary": []
+ },
+ {
+  "id": "37-tu-opinion",
+  "file": "23-opinion",
+  "title": "Tu opinión",
+  "group": "Perfil",
+  "primary": [
+   "Enviar"
+  ]
+ },
+ {
+  "id": "38-reportar",
+  "file": "24-reportar",
+  "title": "Reportar un problema",
+  "group": "Perfil",
+  "primary": [
+   "Enviar"
+  ]
+ },
+ {
+  "id": "39-prueba-21-dias",
+  "file": "27-prueba-21-dias",
+  "title": "Prueba de 21 días (investigador)",
+  "group": "Perfil",
+  "primary": [
+   "Empezar la prueba hoy"
+  ]
+ }
+]

@@ -75,6 +75,8 @@
 
 **17 de octubre, Android 2.32 (D-137):** la participante contó que el Tag suena lento y sin parar después de mucho tiempo sin uso. El registro de la 2.31 apuntó a la primera conexión después de mucho rato: el Tag respondía lento y la app cortaba la conexión, lo que dispara su alarma. La [2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md) nunca corta la conexión con esa alarma encendida, espera más y pide una conexión rápida.
 
+**18 de octubre, Relevo como sistema:** se escribió un [documento](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) que explica el frontend, el backend y el proyecto con sus fundamentos, a partir del código, la base remota, la memoria v5 y los registros. Las 39 pantallas de la 2.32 se recorrieron en el emulador sin conexión, y su árbol se convirtió en [wireframes de muy baja fidelidad](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html). Los datos del autor quedaron idénticos (MD5).
+
 ## 4. Pendientes
 
 - Probar la 2.32 con el Tag real después de horas sin uso, con una pila nueva para descartar la pila.
@@ -90,6 +92,12 @@
 - Probar en claude.ai la descarga, el ZIP y «Copiar» del taller.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-18 — Relevo como sistema
+
+- **Qué cambió:** se sumaron el documento del sistema y los wireframes.
+- **Cómo estaba antes:** terminaba en la 2.32.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-17 — Android 2.32
 

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" font-family="Helvetica, Arial, sans-serif">
+<title>Preparar 6/6 · Todo listo</title>
+<rect x="0.5" y="0.5" width="359" height="799" rx="28" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.5"/>
+<clipPath id="c"><rect x="0" y="0" width="360" height="800" rx="28"/></clipPath>
+<g clip-path="url(#c)">
+<g transform="translate(0 0)">
+<g><rect x="17" y="224" width="326" height="190" rx="14" fill="#efefef" stroke="#8a8a8a" stroke-dasharray="4 3"/><line x1="25" y1="232" x2="335" y2="406" stroke="#d6d6d6"/><line x1="335" y1="232" x2="25" y2="406" stroke="#d6d6d6"/></g>
+<rect x="17.666666666666668" y="506.3333333333333" width="324.6666666666667" height="67.33333333333333" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="719.3333333333334" width="324.6666666666667" height="49" rx="16" fill="#2b2b2b"/>
+<rect x="17.666666666666668" y="573.6666666666666" width="324.6666666666667" height="47.666666666666664" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="621.3333333333334" width="324.6666666666667" height="47.666666666666664" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="669" width="324.6666666666667" height="47.666666666666664" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="768.3333333333334" width="324.6666666666667" height="31.666666666666668" rx="15.833333333333334" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="9" y="24.666666666666668" width="42" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="716.6666666666666" width="324.6666666666667" height="2.6666666666666665" rx="1.3333333333333333" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<text x="17.666666666666668" y="93.83333333333333" dominant-baseline="central" font-size="24.0" font-weight="700" fill="#2b2b2b">Todo listo</text>
+<rect x="58" y="146.53333333333333" width="270.3333333333333" height="5.04" rx="2" fill="#d6d6d6"/>
+<rect x="58" y="160.53333333333333" width="270.3333333333333" height="5.04" rx="2" fill="#d6d6d6"/>
+<rect x="58" y="174.53333333333333" width="270.3333333333333" height="5.04" rx="2" fill="#d6d6d6"/>
+<rect x="58" y="188.53333333333333" width="167.60666666666665" height="5.04" rx="2" fill="#d6d6d6"/>
+<text x="35.333333333333336" y="449.83333333333337" dominant-baseline="central" font-size="19.7" font-weight="700" fill="#2b2b2b">Vuelve a leer 10 páginas.</text>
+<text x="72" y="539.8333333333334" dominant-baseline="central" font-size="13.2" font-weight="700" fill="#2b2b2b">Qué quieres hacer</text>
+<text x="208.33333333333334" y="528.5" dominant-baseline="central" font-size="17.0" font-weight="700" fill="#2b2b2b">Leer 10</text>
+<text x="208.33333333333334" y="551.5" dominant-baseline="central" font-size="17.0" font-weight="700" fill="#2b2b2b">páginas</text>
+<text x="72" y="597.5" dominant-baseline="central" font-size="13.9" font-weight="700" fill="#2b2b2b">Para empezar</text>
+<text x="223.66666666666666" y="597.5" dominant-baseline="central" font-size="10.9" font-weight="700" fill="#2b2b2b">Abrir el libro</text>
+<text x="72" y="645.1666666666666" dominant-baseline="central" font-size="14.4" font-weight="700" fill="#2b2b2b">Dónde empiezas</text>
+<text x="219.33333333333334" y="645.1666666666666" dominant-baseline="central" font-size="12.3" font-weight="700" fill="#2b2b2b">En el velador</text>
+<text x="72" y="692.8333333333334" dominant-baseline="central" font-size="13.8" font-weight="700" fill="#2b2b2b">Apps que cuentan</text>
+<text x="269.6666666666667" y="692.8333333333334" dominant-baseline="central" font-size="14.0" font-weight="700" fill="#2b2b2b">Clock</text>
+<text x="72" y="788.1666666666666" dominant-baseline="central" font-size="15.4" font-weight="700" fill="#2b2b2b">Suena</text>
+<text x="237" y="788.1666666666666" dominant-baseline="central" font-size="11.7" font-weight="700" fill="#2b2b2b">El teléfono</text>
+<text x="180" y="744" dominant-baseline="central" font-size="12.0" font-weight="700" fill="#ffffff" text-anchor="middle">Activar el relevo</text>
+<rect x="131" y="43.166666666666664" width="13" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="148" y="43.166666666666664" width="13" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="165" y="43.166666666666664" width="13" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="182" y="43.166666666666664" width="13" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="199" y="43.166666666666664" width="13" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="216" y="43.166666666666664" width="13" height="5" rx="2.5" fill="#2b2b2b"/>
+</g>
+<rect x="0" y="0" width="360" height="24" fill="#ffffff"/>
+<rect x="18" y="9" width="30" height="6" rx="3" fill="#d6d6d6"/><rect x="306" y="9" width="36" height="6" rx="3" fill="#d6d6d6"/>
+<rect x="130" y="788" width="100" height="4" rx="2" fill="#8a8a8a"/>
+</g>
+</svg>

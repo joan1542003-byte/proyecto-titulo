@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" font-family="Helvetica, Arial, sans-serif">
+<title>Una última pregunta</title>
+<rect x="0.5" y="0.5" width="359" height="799" rx="28" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.5"/>
+<clipPath id="c"><rect x="0" y="0" width="360" height="800" rx="28"/></clipPath>
+<g clip-path="url(#c)">
+<g transform="translate(0 0)">
+<rect x="17.666666666666668" y="665" width="324.6666666666667" height="49" rx="16" fill="#2b2b2b"/>
+<rect x="17.666666666666668" y="719.3333333333334" width="324.6666666666667" height="49" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="9" y="24.666666666666668" width="42" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<text x="17.666666666666668" y="93.83333333333333" dominant-baseline="central" font-size="26.1" font-weight="700" fill="#2b2b2b">Una última pregunta</text>
+<text x="67" y="163.33333333333334" dominant-baseline="central" font-size="11.2" font-weight="400" fill="#555">Relevo</text>
+<text x="35.333333333333336" y="209.66666666666666" dominant-baseline="central" font-size="14.3" font-weight="400" fill="#555">¿Quieres preparar un</text>
+<text x="35.333333333333336" y="229" dominant-baseline="central" font-size="14.3" font-weight="400" fill="#555">relevo esta semana?</text>
+<rect x="17.666666666666668" y="286.175" width="324.6666666666667" height="6.21" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="303.425" width="324.6666666666667" height="6.21" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="320.675" width="324.6666666666667" height="6.21" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="337.925" width="201.29333333333335" height="6.21" rx="2" fill="#d6d6d6"/>
+<text x="180.16666666666666" y="689.6666666666666" dominant-baseline="central" font-size="12.8" font-weight="700" fill="#ffffff" text-anchor="middle">Sí, avísame</text>
+<text x="180" y="744" dominant-baseline="central" font-size="12.7" font-weight="700" fill="#2b2b2b" text-anchor="middle">No, gracias</text>
+<rect x="131" y="43.166666666666664" width="21.5" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="156.5" y="43.166666666666664" width="21.5" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="182" y="43.166666666666664" width="21.5" height="5" rx="2.5" fill="#2b2b2b"/>
+<rect x="207.5" y="43.166666666666664" width="21.5" height="5" rx="2.5" fill="#2b2b2b"/>
+</g>
+<rect x="0" y="0" width="360" height="24" fill="#ffffff"/>
+<rect x="18" y="9" width="30" height="6" rx="3" fill="#d6d6d6"/><rect x="306" y="9" width="36" height="6" rx="3" fill="#d6d6d6"/>
+<rect x="130" y="788" width="100" height="4" rx="2" fill="#8a8a8a"/>
+</g>
+</svg>

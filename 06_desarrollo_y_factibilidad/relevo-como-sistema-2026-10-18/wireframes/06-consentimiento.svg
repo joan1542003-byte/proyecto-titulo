@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 800" width="360" height="800" font-family="Helvetica, Arial, sans-serif">
+<title>Antes de empezar (consentimiento)</title>
+<rect x="0.5" y="0.5" width="359" height="799" rx="28" fill="#ffffff" stroke="#2b2b2b" stroke-width="1.5"/>
+<clipPath id="c"><rect x="0" y="0" width="360" height="800" rx="28"/></clipPath>
+<g clip-path="url(#c)">
+<g transform="translate(0 0)">
+<rect x="17.666666666666668" y="672" width="324.6666666666667" height="49" rx="16" fill="#2b2b2b"/>
+<rect x="17.666666666666668" y="624.6666666666666" width="324.6666666666667" height="42" rx="16" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="105.66666666666667" y="726.3333333333334" width="149" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<rect x="17.666666666666668" y="303.3333333333333" width="96.33333333333333" height="42" rx="16" fill="#efefef" stroke="#8a8a8a" stroke-width="1"/>
+<text x="17.666666666666668" y="93.83333333333333" dominant-baseline="central" font-size="27.4" font-weight="700" fill="#2b2b2b">Antes de empezar</text>
+<rect x="17.666666666666668" y="137.70416666666665" width="324.6666666666667" height="7.245" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="157.82916666666665" width="324.6666666666667" height="7.245" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="177.95416666666665" width="324.6666666666667" height="7.245" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="198.07916666666665" width="324.6666666666667" height="7.245" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="218.20416666666665" width="324.6666666666667" height="7.245" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="238.32916666666665" width="324.6666666666667" height="7.245" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="258.45416666666665" width="324.6666666666667" height="7.245" rx="2" fill="#d6d6d6"/>
+<rect x="17.666666666666668" y="278.57916666666665" width="201.29333333333335" height="7.245" rx="2" fill="#d6d6d6"/>
+<text x="46" y="324.33333333333337" dominant-baseline="central" font-size="14.3" font-weight="700" fill="#2b2b2b">Leer más</text>
+<text x="49.333333333333336" y="645.6666666666667" dominant-baseline="central" font-size="10.6" font-weight="700" fill="#2b2b2b">Acepto participar durante 21 días.</text>
+<text x="180.16666666666666" y="696.6666666666666" dominant-baseline="central" font-size="14.0" font-weight="700" fill="#ffffff" text-anchor="middle">Aceptar y empezar</text>
+<text x="109.33333333333333" y="747.3333333333333" dominant-baseline="central" font-size="12.6" font-weight="700" fill="#2b2b2b">No quiero participar</text>
+</g>
+<rect x="0" y="0" width="360" height="24" fill="#ffffff"/>
+<rect x="18" y="9" width="30" height="6" rx="3" fill="#d6d6d6"/><rect x="306" y="9" width="36" height="6" rx="3" fill="#d6d6d6"/>
+<rect x="130" y="788" width="100" height="4" rx="2" fill="#8a8a8a"/>
+</g>
+</svg>
