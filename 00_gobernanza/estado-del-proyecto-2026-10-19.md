@@ -17,7 +17,7 @@ Relevo tiene una base de investigación sólida, una app que funciona en un hoga
 
 1. La hipótesis no está contrastada: la comparación con el teléfono nunca se aplicó.
 2. No hay un objeto diseñado por el autor: el Tag es un producto comprado.
-3. Los resultados son de una sola persona y de pocos días.
+3. Los resultados que se ven son de una sola persona y de pocos días; los de las otras dos están en sus teléfonos y faltan exportarlos.
 4. La prueba de 21 días nunca se inició dentro de la app. Por eso no aparecerán las escalas semanales ni las preguntas de cierre que la memoria espera.
 
 Quedan **37 días para el Pase de Examen**. Esta semana es de pruebas solemnes, y el cierre interno del producto está fijado para el 31 de octubre.
@@ -42,7 +42,7 @@ Quedan **37 días para el Pase de Examen**. Esta semana es de pruebas solemnes, 
 | App Android | La 2.32 para el testeo y la 3.2 con la línea visual nueva; 86 pruebas automáticas; consentimiento v13; borrado local y remoto. | [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md). |
 | Objeto | El Tag comercial suena desde la app y su botón calla la señal. Los fallos reales se corrigieron en la 2.31 y la 2.32. | Versiones [2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md) y [2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md). |
 | Datos y panel | Supabase con reglas por persona y el panel funcionando fuera de claude.ai. | [HERRAMIENTAS.md](../HERRAMIENTAS.md). |
-| Prueba en casa | Una persona, del 8 al 16 de octubre: 10 relevos, 7 con señal, 7 respondidos y 3 eliminados; ninguna señal fallida y 2 interrumpidas. | Supabase, recuento del 19 de octubre. |
+| Prueba en casa | Tres personas, según el autor. En Supabase hay datos de una, del 8 al 16 de octubre: 10 relevos, 7 con señal, 7 respondidos y 3 eliminados; ninguna señal fallida y 2 interrumpidas. | Supabase, recuento del 19 de octubre. |
 | Identidad | Aprobada: logo, Instrument Sans, íconos y color con fundamento. | Memoria v5, Anexo H. |
 | Memoria | Borrador v5 con 18.700 palabras en los capítulos 1 a 14, dentro del rango recomendado de 15.000 a 20.000, y diagramado en A3. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) y [memoria en A3](../08_memoria/memoria-a3/README.md). |
 | Wireframes | 39 pantallas de la app actual, en muy baja fidelidad. | [Lámina](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html). |
@@ -52,12 +52,19 @@ Quedan **37 días para el Pase de Examen**. Esta semana es de pruebas solemnes, 
 
 Ordenado por riesgo para el Pase y el examen.
 
-### 1. Resolver cuántas personas participan
+### 1. Recuperar los datos de las otras dos personas
 
-- **El dato:** la presentación del 14 de octubre dice «3 personas probándolo en su casa», pero en Supabase solo una persona envía datos desde el 7 de octubre.
-- **Las posibilidades:** si hay otras dos, no han aceptado participar, no tienen conexión o no han empezado. Si son tres, sus datos se están perdiendo.
-- **La acción:** confirmar con cada una, revisar en el panel si su código aparece y, si no, reinstalar o acompañar la configuración.
-- **Coherencia:** la memoria y la presentación tienen que decir lo mismo.
+- **El dato:** la presentación del 14 de octubre dice «3 personas probándolo en su casa», y en Supabase solo una envía datos desde el 7 de octubre. El autor aclaró el mismo 19 de octubre que **las otras dos sí están en la prueba**: sus teléfonos no se conectaron a Supabase, y sus datos se exportarán desde el teléfono.
+- **Dónde están:** la app guarda una copia en `Documentos/Relevo` de cada teléfono, con cuatro archivos por código: el registro completo en JSON y las tablas de relevos, respuestas y uso en CSV. La copia se actualiza en cada intento de envío, aunque no haya conexión. También se puede guardar todo con Perfil › Tus datos › «Descargar mis datos».
+- **Cuidados:**
+  - Exportar ya una copia de seguridad, y otra al final.
+  - No usar «Borrar mis datos» antes de exportar, porque también borra la copia.
+  - Guardar los archivos solo en `datos_sensibles/`, que Git ignora, nunca en el repositorio.
+- **Lo que falta resolver:**
+  - Por qué no se conectan: «Tus datos» muestra el detalle técnico del envío.
+  - Si usan el Tag, instalarles la 2.32.
+  - Cómo sumar sus datos al análisis, porque el panel no los ve.
+  - Hacer que la memoria diga «tres personas», con la fuente de los datos de cada una.
 
 ### 2. La prueba de 21 días no está iniciada en la app
 
@@ -175,7 +182,7 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 
 | Semana | Foco | Quién |
 | --- | --- | --- |
-| 19–25 oct. (solemnes) | Instalar la 2.32 y poner una pila nueva; confirmar cuántas personas participan; registrar el feedback del 14 de octubre; decidir la comparación (punto 3) y el objeto (punto 4); completar los datos por confirmar que solo sabe el autor. | Autor, con apoyo para registrar y documentar. |
+| 19–25 oct. (solemnes) | Instalar la 2.32 y poner una pila nueva; exportar una copia de los datos de las dos personas sin conexión; registrar el feedback del 14 de octubre; decidir la comparación (punto 3) y el objeto (punto 4); completar los datos por confirmar que solo sabe el autor. | Autor, con apoyo para registrar y documentar. |
 | 26 oct.–1 nov. | Modelar e imprimir la carcasa o la maqueta del objeto; fotografiar el uso; empezar la semana de comparación si se decidió; reunir costos. | Autor; la IA puede apoyar el modelado paramétrico y los planos. |
 | 2–8 nov. | Escalas y entrevista de cierre; actualizar resultados, figuras y conclusiones; armar los anexos. | Autor e IA. |
 | 9–15 nov. | Memoria v6 cerrada (cierre interno del 15 de noviembre); regenerar la versión A3. | IA, con revisión del autor. |
@@ -183,6 +190,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-19 — Las otras dos personas
+
+- **Qué cambió:** el punto 1 pasa de confirmar cuántas personas participan a recuperar los datos de las dos que no se conectaron a Supabase.
+- **Cómo estaba antes:** el documento suponía que podían no estar participando.
+- **Por qué:** aclaración del autor.
 
 ### 2026-10-19 — Creación
 
