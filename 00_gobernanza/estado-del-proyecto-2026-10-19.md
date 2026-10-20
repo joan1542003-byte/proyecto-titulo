@@ -37,7 +37,7 @@ Cerrado sin necesitar decisiones del autor:
 - **Punto 1:** el [script para unir los datos](../07_validacion/analisis/README.md) de Supabase, de los teléfonos sin conexión y del papel, con un resumen por persona.
 - **Repositorio:** el README de la app ya dice qué APK usa el testeo.
 - **App 3.x (sin publicar):** «Armar mi ruta» pasa a «Listo», y «¿Dónde suena?» dice lo que la persona eligió en vez de nombrar siempre el Tag. No se revisó en el emulador.
-
+- **Punto 1, cerrado:** los datos de las dos personas sin conexión llegaron y se unieron hasta el 19 de octubre. Son 31 ciclos y 23 señales del Tag, con 21 respuestas. La memoria los informa en el resumen, el abstract, las tablas, los resultados y las conclusiones.
 - **Punto 2, para la persona que pasa al teléfono:** la [app 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) hace en la app las escalas de las semanas anteriores, la pregunta tras cada relevo, la tarjeta del día 7 y un cierre que compara el objeto con el teléfono (D-138). Falta instalarla e iniciar la semana C en su teléfono, y llevar el cambio a la 3.x.
 
 Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los datos por confirmar de la memoria (ahora 22); la decisión sobre la notificación; los Issues y PR viejos de GitHub (no hay acceso de escritura desde esta sesión); y aplicar la ficha y exportar los datos de las otras dos personas.
@@ -62,7 +62,7 @@ Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los
 | App Android | La 2.32 para el testeo y la 3.2 con la línea visual nueva; 86 pruebas automáticas; consentimiento v13; borrado local y remoto. | [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md). |
 | Objeto | El Tag comercial suena desde la app y su botón calla la señal. Los fallos reales se corrigieron en la 2.31 y la 2.32. | Versiones [2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md) y [2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md). |
 | Datos y panel | Supabase con reglas por persona y el panel funcionando fuera de claude.ai. | [HERRAMIENTAS.md](../HERRAMIENTAS.md). |
-| Prueba en casa | Tres personas, según el autor. En Supabase hay datos de una, del 8 al 16 de octubre: 10 relevos, 7 con señal, 7 respondidos y 3 eliminados; ninguna señal fallida y 2 interrumpidas. | Supabase, recuento del 19 de octubre. |
+| Prueba en casa | Tres personas, del 8 al 19 de octubre. Son 31 relevos: 24 completados, 23 señales del Tag y 1 fallida (fuera de casa), 21 respondidos y 7 eliminados o editados. Desde el 20 de octubre, una persona prueba una semana con el teléfono. | Supabase y los datos que entregaron las dos personas sin conexión; recuento del 20 de octubre. |
 | Identidad | Aprobada: logo, Instrument Sans, íconos y color con fundamento. | Memoria v5, Anexo H. |
 | Memoria | Borrador v5 con 18.700 palabras en los capítulos 1 a 14, dentro del rango recomendado de 15.000 a 20.000, y diagramado en A3. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) y [memoria en A3](../08_memoria/memoria-a3/README.md). |
 | Wireframes | 39 pantallas de la app actual, en muy baja fidelidad. | [Lámina](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html). |
@@ -210,6 +210,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Datos de las tres personas
+
+- **Qué cambió:** la prueba suma los datos de las dos personas sin conexión y el punto 1 queda cerrado.
+- **Cómo estaba antes:** había datos de una persona, al 16 de octubre.
+- **Por qué:** el autor entregó los datos de las dos personas sin conexión.
 
 ### 2026-10-20 — Android 2.33
 

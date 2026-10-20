@@ -90,6 +90,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-10-20 — Resultados de las tres personas
+
+- **Cambio:** el borrador v5 informa los resultados de las tres personas al 19 de octubre: 31 ciclos, 23 señales y 21 respuestas.
+- **Versión anterior:** informaba una persona, al 16 de octubre.
+- **Motivo:** el autor entregó los datos de las dos personas sin conexión.
+
 ### 2026-10-20 — Resultados al 16 de octubre
 
 - **Cambio:** el borrador v5 suma los resultados al 16 de octubre, las tres personas de la prueba y las versiones 2.31 y 2.32; el resumen vigente se puso al día.

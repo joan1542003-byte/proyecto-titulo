@@ -81,7 +81,31 @@ Estas notas describen el borrador al 11 de octubre; lo que sigue es lo que cambi
   - la tabla de objetivos de las conclusiones («uso de una persona en su hogar»);
   - el párrafo de límites de las conclusiones.
 
+## Actualización del 20 de octubre de 2026, tarde
+
+- **Datos de las tres personas:** el autor entregó los registros de las dos personas cuyos teléfonos no se conectaron. Las personas los habían entregado en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla con el formato del panel. Según el autor, todo el contenido proviene de ellas y los códigos de participación se asignaron al azar. Los datos se unieron con `unir-datos.js`, hasta el 19 de octubre.
+- **Recuentos:**
+  - 31 ciclos: 24 completados y 7 eliminados o editados.
+  - El Tag sonó en 23 de los 24. El otro se activó fuera de casa y queda excluido como fallo.
+  - De las 21 respuestas: supieron qué hacer en 19 y a medias en 2; recordaron el primer paso en 21; empezaron en 10, lo dejaron para después en 9 y cambiaron de idea en 2.
+  - El sonido les pareció bueno en 10, neutro en 9 y malo en 2.
+- **Pasajes actualizados:**
+  - el resumen, con 297 palabras, y el abstract, con 296;
+  - las tablas 3, 4, 7, 8 y 11;
+  - la verificación técnica y el consentimiento;
+  - el alcance, ética, resultados, la Figura 6 y las conclusiones.
+- **Pasajes nuevos:**
+  - En el alcance: el paso por una planilla como amenaza a la validez y la semana con el teléfono de la 2.33.
+  - En resultados: los dos límites, que son la señal fuera de casa y que recordar no equivale a empezar.
+- **Marcadores:** se resolvió el de las otras dos personas, porque los datos muestran sus fechas, el Tag, el consentimiento v13 y que no tienen condición asignada. Se añadió uno para confirmar que las tres son mayores de edad. Siguen 22.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Resultados de las tres personas
+
+- **Qué cambió:** se añadió la actualización de la tarde del 20 de octubre.
+- **Cómo estaba antes:** la última actualización informaba una persona, al 16 de octubre.
+- **Por qué:** el autor entregó los datos de las dos personas sin conexión.
 
 ### 2026-10-20 — Resultados al 16 de octubre y tres personas
 

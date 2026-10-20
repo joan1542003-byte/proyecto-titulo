@@ -24,8 +24,10 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. El objeto propuest
   - 86 pruebas automáticas; consentimiento v13; datos seudonimizados en Supabase y en una copia en el teléfono.
   - Su arquitectura completa está en [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md), con [wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
 - **Prueba en casa:** tres personas desde octubre.
-  - En los registros remotos de una, del 8 al 16 de octubre, el Tag sonó en los 7 ciclos completados. Declaró saber qué quería hacer en 6, a medias en 1, recordó el primer paso en los 7 y empezó la actividad en 5.
-  - Los datos de las otras dos están en sus teléfonos y se exportarán.
+  - Del 8 al 19 de octubre, las tres usaron el Tag: 31 ciclos, 24 completados, y el Tag sonó en 23. El ciclo restante se activó fuera de casa.
+  - Tras 21 señales respondidas, declararon saber qué querían hacer en 19 y a medias en 2, recordaron el primer paso en las 21 y empezaron la actividad en 10.
+  - Los datos de dos personas los entregaron ellas, en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla. Se unen con [unir-datos.js](../07_validacion/analisis/README.md).
+  - Desde el 20 de octubre, una de ellas prueba una semana solo con la notificación del teléfono (app 2.33, D-138).
   - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
 - **Memoria:** borrador v5 con unas 19.100 palabras en los capítulos 1 a 14, diagramado en [A3](memoria-a3/README.md), con 22 datos por confirmar y 6 figuras pendientes.
 - **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
@@ -43,6 +45,12 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Resultados de las tres personas
+
+- **Qué cambió:** los resultados de la prueba suman a las dos personas sin conexión, hasta el 19 de octubre, y la semana con el teléfono.
+- **Cómo estaba antes:** informaba solo los registros remotos de una persona, al 16 de octubre.
+- **Por qué:** el autor entregó los datos de las dos personas sin conexión.
 
 ### 2026-10-20 — Al día con la 2.32 y la prueba
 

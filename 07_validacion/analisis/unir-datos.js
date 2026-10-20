@@ -2,23 +2,70 @@
 //  1. la exportación de Supabase (un JSON con las tablas relevo_*, como datos_sensibles/relevo-datos-reales-*.json);
 //  2. las copias de los teléfonos que no se conectaron (relevo-CODIGO.json de Documentos/Relevo, o el archivo de
 //     «Descargar mis datos»; los dos traen «registro_del_estudio»);
-//  3. las fichas en papel transcritas a CSV (columnas participant_code, question, answer, fecha, fuente).
+//  3. las fichas en papel transcritas a CSV (columnas participant_code, question, answer, fecha, fuente);
+//  4. el Excel con el formato de la descarga del panel (hojas «Relevos» y «Respuestas»), también cuando se
+//     armó a mano con los datos que entregó cada persona.
 //
 // Uso, desde esta carpeta:
-//   node unir-datos.js [carpeta] [--desde AAAA-MM-DD] [--solo COD1,COD2]
+//   node unir-datos.js [carpeta] [--desde AAAA-MM-DD] [--hasta AAAA-MM-DD] [--solo COD1,COD2]
 // Por defecto lee ../../datos_sensibles, toma los relevos desde el 8 de octubre de 2026 y escribe en
 // <carpeta>/analisis/: relevos.csv, respuestas.csv y resumen.md. Nada de esto entra al repositorio:
 // datos_sensibles/ está en .gitignore.
 const fs = require("fs");
 const path = require("path");
+const zlib = require("zlib");
 
 const args = process.argv.slice(2);
 const opt = (name, fallback) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : fallback; };
 const folder = path.resolve(args.find((a, i) => !a.startsWith("--") && !(i > 0 && args[i - 1].startsWith("--"))) || path.join(__dirname, "..", "..", "datos_sensibles"));
 const since = new Date((opt("--desde", "2026-10-08")) + "T00:00:00-03:00").getTime();
+const until = opt("--hasta", null) ? new Date(opt("--hasta") + "T23:59:59.999-03:00").getTime() : Infinity;
 const only = (opt("--solo", "") || "").split(",").map((c) => c.trim().toUpperCase()).filter(Boolean);
 
-const toMillis = (v) => v == null || v === "" ? null : typeof v === "number" ? v : Date.parse(v);
+// Las horas del Excel del panel vienen sin zona («2026-10-09 20:47:02») y son de Chile.
+const toMillis = (v) => v == null || v === "" ? null : typeof v === "number" ? v
+  : /^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}(:\d{2})?$/.test(v) ? Date.parse(v.replace(" ", "T") + "-03:00") : Date.parse(v);
+
+// Lee las hojas de un .xlsx sin dependencias: el archivo es un ZIP con XML adentro.
+function readXlsx(file) {
+  const buf = fs.readFileSync(file);
+  const entries = {};
+  let eocd = buf.length - 22;
+  while (eocd >= 0 && buf.readUInt32LE(eocd) !== 0x06054b50) eocd--;
+  let p = buf.readUInt32LE(eocd + 16);
+  for (let n = buf.readUInt16LE(eocd + 10); n > 0; n--) {
+    const method = buf.readUInt16LE(p + 10), size = buf.readUInt32LE(p + 20);
+    const nameLen = buf.readUInt16LE(p + 28), extra = buf.readUInt16LE(p + 30), note = buf.readUInt16LE(p + 32);
+    const local = buf.readUInt32LE(p + 42), name = buf.toString("utf8", p + 46, p + 46 + nameLen);
+    const start = local + 30 + buf.readUInt16LE(local + 26) + buf.readUInt16LE(local + 28);
+    const data = buf.subarray(start, start + size);
+    entries[name] = (method === 8 ? zlib.inflateRawSync(data) : data).toString("utf8");
+    p += 46 + nameLen + extra + note;
+  }
+  const dec = (s) => s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&amp;/g, "&");
+  const text = (x) => dec([...x.matchAll(/<t[^>]*>([\s\S]*?)<\/t>/g)].map((t) => t[1]).join(""));
+  const shared = [...(entries["xl/sharedStrings.xml"] || "").matchAll(/<si>([\s\S]*?)<\/si>/g)].map((m) => text(m[1]));
+  const rels = entries["xl/_rels/workbook.xml.rels"] || "";
+  const sheets = {};
+  for (const m of (entries["xl/workbook.xml"] || "").matchAll(/<sheet\b[^>]*?name="([^"]+)"[^>]*?r:id="([^"]+)"/g)) {
+    const target = (rels.match(new RegExp(`<Relationship[^>]*Id="${m[2]}"[^>]*>`)) || [""])[0].match(/Target="([^"]+)"/)?.[1] || "";
+    const xml = entries["xl/" + target.replace(/^\/?xl\//, "")] || "";
+    const rows = [...xml.matchAll(/<row[^>]*>([\s\S]*?)<\/row>/g)].map((rm) => {
+      const row = [];
+      for (const c of rm[1].matchAll(/<c r="([A-Z]+)\d+"([^>]*?)(?:\/>|>([\s\S]*?)<\/c>)/g)) {
+        const col = [...c[1]].reduce((n, ch) => n * 26 + ch.charCodeAt(0) - 64, 0) - 1;
+        const v = (c[3] || "").match(/<v>([\s\S]*?)<\/v>/)?.[1];
+        row[col] = /t="s"/.test(c[2]) ? shared[+v] : /t="inlineStr"/.test(c[2]) ? text(c[3] || "") : v == null ? "" : dec(v);
+      }
+      return row;
+    });
+    const head = (rows[0] || []).map((h) => String(h ?? "").trim());
+    sheets[dec(m[1])] = rows.slice(1).map((r) => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ""])));
+  }
+  return sheets;
+}
+// Las celdas numéricas del Excel llegan como texto («2700.0»); los campos que el script divide se pasan a número.
+const num = (v) => v === "" || v == null ? null : Number(v);
 const iso = (ms) => ms == null ? "" : new Date(ms).toLocaleString("sv-SE", { timeZone: "America/Santiago" }).replace(" ", "T");
 const keep = (code) => code && (!only.length || only.includes(String(code).toUpperCase()));
 
@@ -28,7 +75,7 @@ const sources = [];
 
 function addSession(row, source) {
   const started = toMillis(row.started_at);
-  if (!keep(row.participant_code) || started == null || started < since) return;
+  if (!keep(row.participant_code) || started == null || started < since || started > until) return;
   const s = {
     participant_code: row.participant_code, fuente: source, session_id: row.session_id, inicio: iso(started),
     actividad: row.activity, primer_paso: row.first_step, lugar: row.place,
@@ -49,13 +96,14 @@ function addAnswer(code, question, answer, when, source) {
   // Una fecha sin hora (las fichas en papel) es del día local: se compara al mediodía y se guarda tal cual.
   if (typeof when === "string" && /^\d{4}-\d{2}-\d{2}$/.test(when)) {
     const day = when;
-    if (Date.parse(day + "T12:00:00-03:00") < since) return;
+    const noon = Date.parse(day + "T12:00:00-03:00");
+    if (noon < since || noon > until) return;
     const key = [code, question, answer, day].join("|");
     if (!answers.some((x) => x.key === key)) answers.push({ key, participant_code: code, fuente: source, pregunta: question, respuesta: answer, fecha: day });
     return;
   }
   const ms = toMillis(when);
-  if (ms != null && ms < since) return;
+  if (ms != null && (ms < since || ms > until)) return;
   const key = [code, question, answer, ms == null ? "" : Math.round(ms / 60000)].join("|");
   if (answers.some((a) => a.key === key)) return;
   answers.push({ key, participant_code: code, fuente: source, pregunta: question, respuesta: answer, fecha: ms == null ? String(when || "") : iso(ms) });
@@ -90,6 +138,13 @@ for (const name of fs.readdirSync(folder)) {
       (log.sessions || []).forEach((r) => addSession({ ...r, participant_code: r.participant_code || code }, "telefono"));
       (log.answers || []).forEach((a) => addAnswer(a.participant_code || code, a.question, a.answer, a.created_at, "telefono"));
     }
+  } else if (name.endsWith(".xlsx") && !name.startsWith("~$")) {
+    let sh; try { sh = readXlsx(file); } catch { continue; }
+    if (!sh.Relevos) continue;
+    const codes = [...new Set(sh.Relevos.map((r) => r.participant_code).filter(Boolean))];
+    sources.push(`${name}: Excel con el formato del panel (${codes.join(", ") || "sin código"})`);
+    sh.Relevos.forEach((r) => addSession({ ...r, threshold_seconds: num(r.threshold_seconds), response_seconds: num(r.response_seconds), study_day: num(r.study_day) }, "excel"));
+    (sh.Respuestas || []).forEach((a) => addAnswer(a.participant_code, a.question, a.answer, a.created_at, "excel"));
   } else if (name.endsWith(".csv")) {
     const rows = csvRows(fs.readFileSync(file, "utf8").replace(/^﻿/, ""));
     const head = (rows[0] || []).map((h) => h.trim());
@@ -113,7 +168,7 @@ writeCsv("respuestas.csv", ans, ["participant_code", "fuente", "pregunta", "resp
 // Resumen por persona, con los mismos recuentos que informa la memoria.
 const codes = [...new Set([...rel.map((r) => r.participant_code), ...ans.map((a) => a.participant_code)])].sort();
 const count = (list, f) => list.filter(f).length;
-const lines = [`# Resumen de la prueba`, ``, `Generado el ${iso(Date.now()).slice(0, 16).replace("T", " ")} con relevos desde el ${new Date(since).toISOString().slice(0, 10)}.`, ``, `Fuentes leídas:`, ...sources.map((s) => `- ${s}`), ``,
+const lines = [`# Resumen de la prueba`, ``, `Generado el ${iso(Date.now()).slice(0, 16).replace("T", " ")} con relevos desde el ${iso(since).slice(0, 10)}${until < Infinity ? ` hasta el ${iso(until).slice(0, 10)}` : ""}.`, ``, `Fuentes leídas:`, ...sources.map((s) => `- ${s}`), ``,
   `| Persona | Relevos | Sonaron | Supo qué hacer (sí / a medias / no) | Recordó el primer paso | Empezó / después / cambió de idea | Sonido bien / normal / mal | Escalas semanales | Cierre |`,
   `| --- | ---: | ---: | --- | --- | --- | --- | ---: | ---: |`];
 for (const c of codes) {

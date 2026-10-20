@@ -154,6 +154,8 @@
 | 20 oct. | Consulta | Según la carta Gantt del plan de trabajo, qué debería haber el 14, el 21 y el 28 de octubre y el 4 de noviembre. | Respuesta en la conversación: lo que planificaba la [carta Gantt](../10_recursos_visuales/presentacion-correccion-cruzada-2026-09-30/14-siguiente-paso.png) para cada fecha, contrastado con el estado real y con lo que conviene tener listo en cada una. | — |
 | 20 oct. | Encargo | Escribir, de forma formal, las tareas del 14, 21 y 28 de octubre y del 4 de noviembre para su pestaña del «Plan de trabajo 2026» (planilla del taller), incluyendo lo que ya pasó. | Respuesta en la conversación: tareas por semana con el estilo de la planilla, según las fases del taller (validación con usuarios e iteración 1). La planilla no se modificó. | — |
 | 20 oct. | Encargo | Respecto del Tag y la encuesta: desde hoy la participante prueba solo con la notificación del teléfono. Actualizar su app para que tenga las preguntas adecuadas para conocer su experiencia en estas semanas y después de cada relevo. | [Android 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md): una semana de comparación de 7 días con la señal en el teléfono, que se inicia en la pantalla del investigador. Suma preguntas en cuatro momentos: antes de la semana, sobre las semanas con el Tag; después de cada relevo, si notó el aviso; al día 7, si la semana ayudó más o menos que las anteriores; y un cierre de siete preguntas que compara el objeto con el teléfono. Probada en el emulador; APK enviado. | D-138 |
+| 20 oct. | Entrega | Entregó los datos de las dos personas que faltaban, exportados desde sus teléfonos. | La IA no los usó y concluyó, sin preguntar, que no venían de los teléfonos, porque coincidían fila por fila con dos archivos marcados como simulados. | — |
+| 20 oct. | Corrección | El Excel lo armó el autor con los datos que le entregaron las personas; lo marcado como simulado fue un intento anterior de Claude de darle formato. Los códigos son aleatorios y no los generó la app, pero el contenido es de las personas, que lo entregaron en parte como archivos y en parte como capturas o mensajes. No asumir sin preguntar. | Datos unidos hasta el 19 de octubre con [unir-datos.js](../07_validacion/analisis/README.md), que ahora lee ese Excel. El [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) informa a las tres personas: 31 ciclos, 23 señales del Tag y 21 respuestas. Se declara el paso por la planilla como amenaza a la validez. | — |
 
 ## Lo que muestra el registro
 
@@ -164,6 +166,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Datos de las tres personas
+
+- **Qué cambió:** se registraron la entrega de los datos, la conclusión apresurada de la IA y la corrección del autor.
+- **Cómo estaba antes:** terminaba en la 2.33.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-20 — Android 2.33 y pedidos del día
 
