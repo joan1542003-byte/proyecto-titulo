@@ -512,9 +512,7 @@ El autor define el problema y los criterios, revisa cada versión en su teléfon
    - Sin esto, la app funciona igual, pero solo guarda en el teléfono.
 3. **Instalar** el APK en un teléfono con Android 12 o posterior.
 4. **Abrir el panel:** doble clic en `panel-relevo.html` muestra datos de ejemplo. Con datos reales, se pone el token en `panel-admin/.env.local` y se ejecuta `node servidor.js` ([HERRAMIENTAS.md](../../HERRAMIENTAS.md)).
-5. **Regenerar los wireframes:**
-   - Capturar el árbol de cada pantalla con `adb shell uiautomator dump` en la carpeta `generador/arbol`.
-   - Ejecutar `node generar-wireframes.js arbol ../wireframes pantallas.json` y `node generar-lamina.js`.
+5. **Regenerar los wireframes:** en `generador/`, editar las pantallas en `pantallas.js` y ejecutar `node exportar.js` y `node generar-lamina.js`. Se necesita Google Chrome.
 
 ## 8. La prueba de 21 días dentro del sistema
 
@@ -545,19 +543,21 @@ Con una sola persona, la prueba informa sobre la asociación y el funcionamiento
 
 ## 10. Wireframes
 
-La [lámina de wireframes](wireframes-relevo.html) reúne las 39 pantallas de la 2.32 en muy baja fidelidad, agrupadas por recorrido y con una nota sobre para qué sirve cada una. Los archivos SVG están en [`wireframes/`](wireframes/) y se pueden abrir o insertar uno por uno.
+La [lámina de wireframes](wireframes-relevo.html) reúne las 39 pantallas de la 2.32 en muy baja fidelidad, agrupadas por recorrido y con una nota sobre para qué sirve cada una.
+
+**Archivos:**
+
+- **Por pantalla:** cada una está en PNG a 3× (1176 × 2436 px) en [`wireframes-png/`](wireframes-png/), lista para imprimir o insertar en la memoria.
+- **Por recorrido:** [`wireframes-png/hojas/`](wireframes-png/hojas/) tiene una hoja para cada uno, con el título y la nota de cada pantalla.
 
 **Cómo se hicieron.**
 
-1. Cada pantalla se recorrió en el emulador con un perfil de prueba y sin conexión.
-2. Se guardó el árbol de elementos que Android expone para la accesibilidad, con su posición y tamaño.
-3. El script [`generar-wireframes.js`](generador/generar-wireframes.js) lo convierte en dibujo:
-   - Lo que se toca, como caja.
-   - La acción principal, en negro.
-   - Las imágenes, como caja con una X.
-   - Los textos breves se escriben y los párrafos se vuelven líneas grises.
+1. Cada pantalla se recorrió en el emulador con un perfil de prueba y sin conexión. Se guardaron sus textos y el árbol de sus elementos, que queda en [`generador/arbol/`](generador/arbol/) como referencia.
+2. Cada pantalla se escribió en [`pantallas.js`](generador/pantallas.js) como una lista de piezas, con los textos reales: título, párrafo, campo, opciones, filas, botón principal, etc.
+3. [`wireframes.html`](generador/wireframes.html) dibuja todas con las mismas piezas sobre una retícula de 360 × 780, de modo que nada se superpone.
+4. [`exportar.js`](generador/exportar.js) las exporta a PNG con Chrome.
 
-Así los wireframes muestran la estructura real de la app, sin color, fotos ni marca. Del código, del correo y del perfil de prueba no queda ningún dato.
+Así los wireframes muestran la estructura real de la app, sin color, fotos ni marca. Los datos de ejemplo («Nombre», «XXXX») no son de ninguna persona.
 
 ## Referencias
 
@@ -612,6 +612,12 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 *Nota.* Las letras de Apple Developer y de Google conservan las de la lista de referencias de la memoria v5, para que las citas coincidan con ella.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Wireframes rehechos
+
+- **Qué cambió:** los wireframes se dibujan pieza por pieza sobre una retícula común y se entregan en PNG por pantalla y por recorrido.
+- **Cómo estaba antes:** se generaban automáticamente desde el árbol de cada pantalla, en SVG, y quedaban con elementos superpuestos y textos cortados.
+- **Por qué:** el autor pidió hacerlos bien y en PNG.
 
 ### 2026-10-18 — Creación
 

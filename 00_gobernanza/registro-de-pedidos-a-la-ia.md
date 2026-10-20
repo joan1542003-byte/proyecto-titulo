@@ -150,6 +150,7 @@
 | 18 oct. | Encargo | Un documento detallado que explique el backend y el frontend de Relevo, no solo como app sino como proyecto: cada parte, cómo funciona, cómo se desarrolla, cómo se hizo y en qué se fundamenta. Además, wireframes de muy baja fidelidad de las pantallas de la app. | [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md): frontend (app, Tag y panel), backend (Supabase, reglas por fila, envío y servidor del panel), fundamentos teóricos, técnicos y éticos, desarrollo, verificación y cómo reproducirlo. [Lámina de wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html): las 39 pantallas de la 2.32, dibujadas a partir de la posición real de cada elemento en el emulador. | — |
 | 19 oct. | Consulta | Revisar el estado de Relevo y del proyecto completo, leyendo en GitHub los documentos recientes: qué falta, qué se puede mejorar y qué no hay y debería haber sí o sí. | [Estado del proyecto al 19 de octubre](estado-del-proyecto-2026-10-19.md): lo que está, ocho faltantes ordenados por riesgo, mejoras, lo que no existe, estimación por rúbrica y plan hasta el Pase. Hallazgos principales: solo una persona envía datos, aunque la presentación del 14 de octubre dice tres; la prueba de 21 días nunca se inició en la app, así que no habrá escalas semanales ni preguntas de cierre; la hipótesis sigue sin contrastar, y no hay un objeto diseñado por el autor. | — |
 | 19 oct. | Aclaración | Las otras dos personas sí están en la prueba: sus teléfonos no se conectaron a Supabase y sus datos se exportarán. | El [estado del proyecto](estado-del-proyecto-2026-10-19.md) cambia el punto 1: recuperar esos datos de la copia en Documentos/Relevo o con «Descargar mis datos», guardarlos solo en `datos_sensibles/`, averiguar por qué no se conectan y sumarlos al análisis. | — |
+| 20 oct. | Corrección y encargo | Los wireframes de baja fidelidad están muy rotos: hacerlos bien, perfeccionarlos y entregarlos también en PNG. Después, revisar si hay pendientes y hacerlos, porque falta un mes y medio para el examen y hay que ir cerrando. | Wireframes rehechos pieza por pieza sobre una retícula común, con los textos reales de la 2.32: 39 PNG a 3× y 5 hojas por recorrido, más la [lámina](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html). Se retiraron los SVG automáticos. | — |
 
 ## Lo que muestra el registro
 
@@ -160,6 +161,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Wireframes y pendientes
+
+- **Qué cambió:** se registró el pedido de rehacer los wireframes y avanzar pendientes.
+- **Cómo estaba antes:** terminaba en la aclaración sobre las otras dos personas.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-19 — Estado del proyecto
 

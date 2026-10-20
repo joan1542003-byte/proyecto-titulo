@@ -247,11 +247,17 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 
 ## Wireframes de la app
 
-- **Qué es:** [la lámina](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) con las 39 pantallas de la 2.32 en muy baja fidelidad, agrupadas por recorrido y con una nota por pantalla. Los SVG sueltos están en `06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes/`.
-- **Cómo se regeneran:** en `06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/generador/`, `node generar-wireframes.js arbol ../wireframes pantallas.json` y `node generar-lamina.js`. El árbol de cada pantalla se captura con `adb shell uiautomator dump` en el emulador, con un perfil de prueba y sin conexión.
+- **Qué es:** [la lámina](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) con las 39 pantallas de la 2.32 en muy baja fidelidad, agrupadas por recorrido y con una nota por pantalla. Cada pantalla está en PNG a 3× en `06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/`, y cada recorrido en una hoja en `wireframes-png/hojas/`.
+- **Cómo se regeneran:** en `06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/generador/`, se editan las pantallas en `pantallas.js` y se ejecutan `node exportar.js` (los PNG, con Chrome) y `node generar-lamina.js` (la lámina).
 - **Contexto:** el [documento del sistema](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) explica la app, el Tag, Supabase y el panel.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Wireframes en PNG
+
+- **Qué cambió:** los wireframes se rehicieron y se exportan en PNG por pantalla y por recorrido.
+- **Cómo estaba antes:** eran SVG generados automáticamente y tenían errores.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-18 — Wireframes
 
