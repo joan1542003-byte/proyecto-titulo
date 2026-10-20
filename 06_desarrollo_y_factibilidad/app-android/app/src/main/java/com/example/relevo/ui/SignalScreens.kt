@@ -136,7 +136,8 @@ private fun SoundingChip(route: SignalRoute) {
  * configurada la prueba. Las tres respuestas tienen el mismo tamaño, color y lugar; todo se puede saltar.
  */
 @Composable
-internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, guided: Boolean = false, onAnswer: (String, String?, String?, String?) -> Unit) {
+internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, guided: Boolean = false, onAnswer: (String, String?, String?, String?, String?) -> Unit) {
+  var noticed by rememberSaveable { mutableStateOf<String?>(null) }
   var knew by rememberSaveable { mutableStateOf<String?>(null) }
   var recalled by rememberSaveable { mutableStateOf<String?>(null) }
   var feeling by rememberSaveable { mutableStateOf<String?>(null) }
@@ -148,7 +149,7 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
   val shownReminder = lastShown[0]
   val ask = lastFlags[0]
   val showTip = lastFlags[1]
-  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { ask }, recalled.takeIf { ask }, feeling.takeIf { ask })
+  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { ask }, recalled.takeIf { ask }, feeling.takeIf { ask }, noticed.takeIf { ask })
   RelevoScreen(
     bottom = { PlainAction("Saltar", { finish("not_answered") }, color = Relevo.colors.graphite) },
   ) {
@@ -170,6 +171,11 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
       }
     }
     if (ask) {
+      SectionGap()
+      // Percibir la señal es el primer paso para recordar (protocolo 02); compara el teléfono con el objeto (2.33).
+      Question("¿Notaste el aviso apenas sonó?") {
+        SegmentedControl(listOf("enseguida" to "Enseguida", "tarde" to "Un rato después", "no" to "No lo noté"), noticed, { noticed = it })
+      }
       SectionGap()
       Question("¿Cómo te cayó el sonido?") {
         FacePicker(feelingFaces, feeling, { feeling = it })
