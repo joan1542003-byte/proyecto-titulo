@@ -501,7 +501,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.32';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.33';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -735,11 +735,14 @@ select json_build_object(
   function stateChip(key, onCard) { const [ic, label] = STATES[key]; return el('span', { class: 'chip' + (onCard ? ' on-card' : '') }, [icon(ic, 'sm'), label]); }
   function prettyQuestion(q) {
     const m = /^semana(\d)_(.+)$/.exec(q);
-    const names = { costo_preparar: 'cuánto costó preparar (1 a 5)', molestia_senal: 'cuánto molestó la señal (1 a 5)', relacion_lugar: 'relación con el lugar (1 a 5)', comentario: 'comentario', omitida: 'la omitió' };
+    const names = { costo_preparar: 'cuánto costó preparar (1 a 5)', molestia_senal: 'cuánto molestó la señal (1 a 5)', relacion_lugar: 'relación con el lugar (1 a 5)', comparacion: 'frente a las semanas anteriores (más, igual o menos)', comentario: 'comentario', omitida: 'la omitió' };
     if (m) return 'Semana ' + m[1] + ': ' + (names[m[2]] || m[2].replace(/_/g, ' '));
+    // Desde la 2.33: las semanas antes de una semana de comparación.
+    const prev = /^semanas_previas_(.+)$/.exec(q);
+    if (prev) return 'Semanas anteriores: ' + (names[prev[1]] || prev[1].replace(/_/g, ' '));
     if (q.startsWith('cierre_')) return 'Cierre: ' + q.slice(7).replace(/_/g, ' ');
     const map = { opinion_rapida: 'Opinión rápida (1 a 5)', opinion_estrellas: 'Estrellas a la app', opinion_comentario: 'Comentario sobre la app',
-      reporte_problema: 'Reporte de un problema', lugar_del_objeto: 'Dónde dejó el objeto', salida_que_ayudo: 'Qué salida le ayudó', reporte_registro: 'Registro técnico', prueba_inicio: 'Inicio de la prueba', prueba_fin: 'Fin de la prueba', tu_semana_ayudo: 'Tu semana: qué ayudó' };
+      reporte_problema: 'Reporte de un problema', lugar_del_objeto: 'Dónde dejó el objeto', salida_que_ayudo: 'Qué salida le ayudó', reporte_registro: 'Registro técnico', prueba_inicio: 'Inicio de la prueba', prueba_fin: 'Fin de la prueba', tu_semana_ayudo: 'Tu semana: qué ayudó', percepcion_senal: 'Notó el aviso (enseguida, un rato después o no)' };
     return map[q] || q.replace(/_/g, ' ');
   }
   // ---- Flujo de uso: cada evento de la app y del relevo, en palabras ----

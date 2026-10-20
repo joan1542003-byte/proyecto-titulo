@@ -35,12 +35,22 @@ Cada respuesta se escribe en una planilla con las mismas claves que usa la app, 
 | `fecha` | La fecha en que se respondió. |
 | `fuente` | `papel`, para distinguirla de las respuestas de la app. |
 
+## Con la 2.33
+
+Para la persona que pasa a la semana con el teléfono, la app 2.33 hace en el teléfono las escalas de las semanas anteriores, la tarjeta del día 7 y el cierre (D-138). Para ella, la ficha solo hace falta para la entrevista. Las claves de la app son `semanas_previas_*`, `semana1_*` y `cierre_*`.
+
 ## Límites
 
 - Responder en papel frente al investigador puede cambiar las respuestas respecto de la tarjeta en la app, que la persona contesta sola. Hay que declararlo en la memoria.
 - Si la persona empezó otro día, las semanas no coinciden con las del protocolo; se anota el día real de uso.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Con la 2.33
+
+- **Qué cambió:** se aclara que la 2.33 cubre en la app las escalas y el cierre de la semana con el teléfono.
+- **Cómo estaba antes:** la ficha era la única vía para esas respuestas.
+- **Por qué:** pedido del autor (D-138).
 
 ### 2026-10-20 — Creación
 

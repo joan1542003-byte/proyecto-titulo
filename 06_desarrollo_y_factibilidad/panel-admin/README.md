@@ -116,6 +116,13 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - El estado de cada participante se deduce de lo último que llegó; un teléfono sin conexión puede verse desactualizado.
 - Las funciones nuevas se probaron con las consultas reales sobre datos de prueba y con datos de ejemplo en local; los botones de descarga y los mensajes listos no se usaron dentro de claude.ai.
 
+## Desde la app 2.33
+
+- **Semanas anteriores:** las escalas `semanas_previas_*` se leen «Semanas anteriores: …».
+- **Tras cada relevo:** `percepcion_senal` se lee «Notó el aviso (enseguida, un rato después o no)».
+- **Día 7 y cierre:** `semana1_comparacion`, `cierre_por_que_ayudo` y `cierre_prefiere_que_suene` se muestran con palabras.
+- **Versión de referencia:** el aviso de versión compara contra la 2.33.
+
 ## Desde la app 2.32
 
 - **Demora del Tag:** si en una prueba el Tag tardó más de 1,5 s en responder, «Probó el sonido» lo dice («el Tag tardó 4,2 s en responder»).
@@ -128,6 +135,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - **Versión de referencia:** el aviso de versión compara contra la 2.31.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Android 2.33
+
+- **Qué cambió:** el panel lee las respuestas nuevas de la 2.33 y compara contra ella.
+- **Cómo estaba antes:** comparaba contra la 2.32.
+- **Por qué:** pedido del autor (D-138).
 
 ### 2026-10-17 — Android 2.32
 

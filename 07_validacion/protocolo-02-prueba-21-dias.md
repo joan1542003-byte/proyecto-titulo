@@ -168,6 +168,10 @@ Según el [plan de cierre](../00_gobernanza/plan-de-cierre-agosto-diciembre-2026
 
 Si la prueba técnica se atrasa, se corre todo el calendario y se registra el cambio.
 
+## Semana para comparar (desde la 2.33)
+
+Cuando una persona ya usó un objeto sin la prueba iniciada, la pantalla del investigador permite una sola semana de 7 días con una condición (D-138). La semana empieza el día que se inicia y no reemplaza al contrabalanceo de las tres semanas. Antes de empezar, la app pregunta por las semanas anteriores con las tres escalas de la tarjeta semanal. Después de cada relevo, la primera pregunta es si la persona notó el aviso apenas sonó. El día 7, la tarjeta suma «Comparado con las semanas anteriores…», y el cierre pregunta qué le ayudó más a recordar y con qué preferiría que sonara. El análisis debe declarar que el orden no se contrabalanceó ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md)).
+
 ## Referencias
 
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
@@ -175,6 +179,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Semana para comparar
+
+- **Qué cambió:** se describe la semana de una condición de la 2.33.
+- **Cómo estaba antes:** solo existía la prueba completa de 21 días.
+- **Por qué:** pedido del autor (D-138).
 
 ### 2026-10-06 — Vuelta a las condiciones (D-112)
 

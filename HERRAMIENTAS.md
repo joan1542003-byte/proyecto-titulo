@@ -85,10 +85,10 @@ El detalle de cada versión está en su [README](06_desarrollo_y_factibilidad/pa
 
 ### Instalar
 
-- **Para el testeo:** [releases/relevo-android-2.32-2026-10-17.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.32-2026-10-17.apk) (D-137). Es la 2.30 con el Tag que se calla siempre y no se desconecta con su alarma encendida, la pila del Tag a la vista y el ícono y el logo nuevos. Su código está en la rama `android-2.32`.
-- **Con el diseño nuevo:** [releases/relevo-android-3.2-2026-10-12.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-3.2-2026-10-12.apk) (D-131). Todavía no trae el arreglo del Tag; la próxima 3.x lo tendrá y deberá usar `versionCode` 48 o más.
+- **Para el testeo:** [releases/relevo-android-2.33-2026-10-20.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-2.33-2026-10-20.apk) (D-138). Es la 2.32 con una semana para comparar, con la señal en el teléfono, y sus preguntas. Se inicia en Perfil, manteniendo apretado el texto de la versión. Su código está en la rama `android-2.33`.
+- **Con el diseño nuevo:** [releases/relevo-android-3.2-2026-10-12.apk](06_desarrollo_y_factibilidad/app-android/releases/relevo-android-3.2-2026-10-12.apk) (D-131). Todavía no trae el arreglo del Tag; la próxima 3.x lo tendrá, junto con la semana para comparar, y deberá usar `versionCode` 49 o más.
 - **Cómo instalar:** se copia al teléfono y se abre. Android pide permitir la instalación desde esa app.
-- **Actualizar:** las dos se instalan encima de versiones anteriores, porque tienen la misma firma, y conservan los datos. La 2.32 también se instala encima de la 3.2.
+- **Actualizar:** las dos se instalan encima de versiones anteriores, porque tienen la misma firma, y conservan los datos. La 2.33 también se instala encima de la 3.2.
 - **Durante el testeo:** no conviene cambiar de versión a mitad de la prueba de 21 días.
 
 ### Usarla
@@ -252,6 +252,12 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 - **Contexto:** el [documento del sistema](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) explica la app, el Tag, Supabase y el panel.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Android 2.33
+
+- **Qué cambió:** la app para el testeo pasa a ser la 2.33.
+- **Cómo estaba antes:** era la 2.32.
+- **Por qué:** pedido del autor (D-138).
 
 ### 2026-10-20 — Wireframes en PNG
 

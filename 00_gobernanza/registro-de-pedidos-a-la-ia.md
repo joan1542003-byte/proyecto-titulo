@@ -153,6 +153,7 @@
 | 20 oct. | Corrección y encargo | Los wireframes de baja fidelidad están muy rotos: hacerlos bien, perfeccionarlos y entregarlos también en PNG. Después, revisar si hay pendientes y hacerlos, porque falta un mes y medio para el examen y hay que ir cerrando. | Wireframes rehechos pieza por pieza sobre una retícula común, con los textos reales de la 2.32: 39 PNG a 3× y 5 hojas por recorrido, más la [lámina](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html). Se retiraron los SVG automáticos. Pendientes cerrados el mismo día ([estado del proyecto](estado-del-proyecto-2026-10-19.md#avance-del-20-de-octubre)): resultados de la memoria al 16 de octubre, con las tres personas y las versiones 2.31 y 2.32; resumen vigente al día; ficha en papel para las escalas, el cierre y la entrevista; script para unir los datos de las tres vías; README de la app; y dos textos de la 3.x. | — |
 | 20 oct. | Consulta | Según la carta Gantt del plan de trabajo, qué debería haber el 14, el 21 y el 28 de octubre y el 4 de noviembre. | Respuesta en la conversación: lo que planificaba la [carta Gantt](../10_recursos_visuales/presentacion-correccion-cruzada-2026-09-30/14-siguiente-paso.png) para cada fecha, contrastado con el estado real y con lo que conviene tener listo en cada una. | — |
 | 20 oct. | Encargo | Escribir, de forma formal, las tareas del 14, 21 y 28 de octubre y del 4 de noviembre para su pestaña del «Plan de trabajo 2026» (planilla del taller), incluyendo lo que ya pasó. | Respuesta en la conversación: tareas por semana con el estilo de la planilla, según las fases del taller (validación con usuarios e iteración 1). La planilla no se modificó. | — |
+| 20 oct. | Encargo | Respecto del Tag y la encuesta: desde hoy la participante prueba solo con la notificación del teléfono. Actualizar su app para que tenga las preguntas adecuadas para conocer su experiencia en estas semanas y después de cada relevo. | [Android 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md): una semana de comparación de 7 días con la señal en el teléfono, que se inicia en la pantalla del investigador. Suma preguntas en cuatro momentos: antes de la semana, sobre las semanas con el Tag; después de cada relevo, si notó el aviso; al día 7, si la semana ayudó más o menos que las anteriores; y un cierre de siete preguntas que compara el objeto con el teléfono. Probada en el emulador; APK enviado. | D-138 |
 
 ## Lo que muestra el registro
 
@@ -163,6 +164,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Android 2.33 y pedidos del día
+
+- **Qué cambió:** se registraron la consulta de la carta Gantt, las tareas del plan de trabajo y la 2.33 con las preguntas de la semana con el teléfono.
+- **Cómo estaba antes:** terminaba en el pedido de los wireframes.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-20 — Wireframes y pendientes
 

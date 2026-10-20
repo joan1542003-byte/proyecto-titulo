@@ -1752,7 +1752,37 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 86 pruebas, misma firma, instalada con datos en el emulador; sin Tag real.
 - **Documentación:** [versión 2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md).
 
+## D-138 — Android 2.33: una semana para comparar con el teléfono
+
+- **Fecha:** 2026-10-20.
+- **Estado:** hecha; probada en el emulador, falta instalarla en el teléfono de la participante.
+- **Contexto:** desde el 20 de octubre, la participante que usó el Tag deja de usarlo y prueba solo con la notificación del teléfono. La app solo podía iniciar la prueba completa de 21 días. Esa prueba nunca se inició en su teléfono, y sin ella la app no hace preguntas semanales ni de cierre. Además, ninguna pregunta comparaba el teléfono con el objeto. El autor pidió que la app tuviera las preguntas para conocer su experiencia en estas semanas y después de cada relevo.
+- **Decisión:**
+  - **Semana de comparación:** en la pantalla del investigador, una semana de 7 días con una sola condición (A, B o C), que empieza hoy. Para esta participante es la semana C, con la notificación genérica que ya define el protocolo.
+  - **Antes de la semana:** las tres escalas de la tarjeta semanal sobre las semanas anteriores con el Tag, respondidas de memoria.
+  - **Tras cada relevo:** primero, «¿Notaste el aviso apenas sonó?» (enseguida, un rato después o no lo noté). Notar la señal es el primer paso para recordar. Es también donde más puede diferir el teléfono del objeto que suena en la casa.
+  - **Día 7:** las escalas, más dos preguntas: si la semana ayudó a recordar más, igual o menos que las anteriores, y por qué. Después, un cierre de siete preguntas:
+    - si seguiría usando Relevo;
+    - qué le ayudó más a recordar (el objeto o el teléfono) y por qué;
+    - con qué preferiría que sonara;
+    - qué le molestó y qué cambiaría;
+    - dónde quedó el objeto.
+  - **Sin cambios de fondo:** el resto de la 2.32 queda igual, incluidos el Tag, el consentimiento (v13) y los datos guardados.
+  - **Número de versión:** la 2.33 usa `versionCode` 48, así que la próxima 3.x debe usar 49 o más.
+- **Límites:**
+  - No es un contrabalanceo: la semana con el teléfono viene después de 12 días con el Tag, y hay una sola persona.
+  - Las escalas de las semanas con el Tag se responden de memoria.
+  - La línea 3.x todavía no tiene estos cambios.
+- **Verificación:** 87 pruebas, misma firma. Se recorrió completa en el emulador, sin conexión, incluidas la tarjeta y el cierre del día 7, adelantando la fecha.
+- **Documentación:** [versión 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — D-138
+
+- **Qué cambió:** se registró D-138.
+- **Cómo estaba antes:** la última decisión era D-137.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-17 — D-137
 

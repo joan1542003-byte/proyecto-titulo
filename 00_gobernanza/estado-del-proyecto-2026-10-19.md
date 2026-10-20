@@ -38,6 +38,8 @@ Cerrado sin necesitar decisiones del autor:
 - **Repositorio:** el README de la app ya dice qué APK usa el testeo.
 - **App 3.x (sin publicar):** «Armar mi ruta» pasa a «Listo», y «¿Dónde suena?» dice lo que la persona eligió en vez de nombrar siempre el Tag. No se revisó en el emulador.
 
+- **Punto 2, para la persona que pasa al teléfono:** la [app 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) hace en la app las escalas de las semanas anteriores, la pregunta tras cada relevo, la tarjeta del día 7 y un cierre que compara el objeto con el teléfono (D-138). Falta instalarla e iniciar la semana C en su teléfono, y llevar el cambio a la 3.x.
+
 Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los datos por confirmar de la memoria (ahora 22); la decisión sobre la notificación; los Issues y PR viejos de GitHub (no hay acceso de escritura desde esta sesión); y aplicar la ficha y exportar los datos de las otras dos personas.
 
 ## Plazos
@@ -208,6 +210,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Android 2.33
+
+- **Qué cambió:** el avance suma la 2.33.
+- **Cómo estaba antes:** el avance terminaba en los textos de la 3.x.
+- **Por qué:** pedido del autor (D-138).
 
 ### 2026-10-20 — Avance
 
