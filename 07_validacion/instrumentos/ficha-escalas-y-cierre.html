@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ficha de escalas y cierre</title>
+<style>
+/* Ficha imprimible, A4 vertical, en blanco y negro: tres semanas, cierre y guía de entrevista. */
+@font-face { font-family: "Instrument Sans"; src: url("../../06_desarrollo_y_factibilidad/app-android/app/src/main/res/font/instrument_sans.ttf"); font-weight: 400 700; }
+@page { size: A4; margin: 14mm 15mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; color: #141312; font-size: 10.5pt; line-height: 1.4; background: #fff; }
+.page { break-after: page; }
+.page:last-child { break-after: auto; }
+h1 { font-size: 19pt; margin: 0 0 1mm; letter-spacing: -.01em; }
+h2 { font-size: 12.5pt; margin: 4mm 0 1.5mm; }
+.lead { margin: 0 0 3mm; color: #555; font-size: 9.5pt; }
+.datos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 3mm 0 2mm; }
+.datos div { border-bottom: .3mm solid #141312; padding-bottom: 1mm; font-size: 9pt; color: #555; height: 9mm; display: flex; align-items: flex-end; }
+.semana { border: .35mm solid #141312; border-radius: 3mm; padding: 3mm 4mm; margin-bottom: 4mm; break-inside: avoid; }
+.semana h2 { margin: 0 0 2mm; display: flex; justify-content: space-between; }
+.semana h2 span { font-weight: 400; font-size: 9pt; color: #555; }
+table { width: 100%; border-collapse: collapse; }
+td { padding: 1.6mm 0; vertical-align: middle; }
+td.q { width: 48%; padding-right: 3mm; }
+.escala { display: flex; gap: 2.2mm; align-items: center; font-size: 8.5pt; color: #555; }
+.escala i { width: 7mm; height: 7mm; border-radius: 50%; border: .3mm solid #141312; display: grid; place-items: center; font-style: normal; color: #141312; font-size: 9pt; }
+.lineas { margin-top: 1mm; }
+.lineas i { display: block; border-bottom: .25mm solid #999; height: 6mm; }
+.opciones { display: flex; gap: 6mm; flex-wrap: wrap; }
+.opciones span { display: flex; align-items: center; gap: 2mm; }
+.opciones span::before { content: ""; width: 4.5mm; height: 4.5mm; border: .3mm solid #141312; border-radius: 1mm; }
+.nota { font-size: 8.5pt; color: #555; margin: 1mm 0 0; }
+ol.guia { margin: 1mm 0 0; padding-left: 5mm; }
+ol.guia li { margin-bottom: .6mm; }
+ol.guia li .lineas i { height: 5.2mm; }
+.pie { margin-top: 3mm; font-size: 8pt; color: #777; }
+</style>
+</head>
+<body>
+<section class="page">
+  <h1>Relevo · escalas semanales</h1>
+  <p class="lead">Para aplicar al final de cada semana de uso, cuando la app no muestra la tarjeta semanal. Se lee en voz alta o se entrega para responder. Toda pregunta se puede saltar.</p>
+  <div class="datos"><div>Código de participación</div><div>Día 0 (fecha)</div><div>Objeto que suena</div></div>
+
+  <div class="semana">
+    <h2>Semana 1 <span>Fecha: ____ / ____ / 2026</span></h2>
+    <table>
+      <tr><td class="q">¿Te costó preparar Relevo?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q">¿Te molestó el sonido?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q">¿El sonido tenía que ver con el lugar donde sonó?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+    </table>
+    <p class="nota">¿Algo más que quieras contarnos?</p>
+    <div class="lineas"><i></i><i></i></div>
+  </div>
+
+  <div class="semana">
+    <h2>Semana 2 <span>Fecha: ____ / ____ / 2026</span></h2>
+    <table>
+      <tr><td class="q">¿Te costó preparar Relevo?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q">¿Te molestó el sonido?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q">¿El sonido tenía que ver con el lugar donde sonó?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+    </table>
+    <p class="nota">¿Algo más que quieras contarnos?</p>
+    <div class="lineas"><i></i><i></i></div>
+  </div>
+
+  <div class="semana">
+    <h2>Semana 3 <span>Fecha: ____ / ____ / 2026</span></h2>
+    <table>
+      <tr><td class="q">¿Te costó preparar Relevo?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q">¿Te molestó el sonido?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q">¿El sonido tenía que ver con el lugar donde sonó?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+    </table>
+    <p class="nota">¿Algo más que quieras contarnos?</p>
+    <div class="lineas"><i></i><i></i></div>
+  </div>
+  <p class="pie">Mismas preguntas y escala que la tarjeta semanal de la app (T1, protocolo 02). Se transcriben con las claves semanaN_costo_preparar, semanaN_molestia_senal, semanaN_relacion_lugar y semanaN_comentario.</p>
+</section>
+
+<section class="page">
+  <h1>Relevo · cierre de la prueba</h1>
+  <p class="lead">Al terminar los 21 días. Primero, las cinco preguntas de la app; después, la entrevista de unos 15 minutos, presencial o por llamada. Toda pregunta se puede saltar.</p>
+  <div class="datos"><div>Código de participación</div><div>Fecha</div><div>Presencial o llamada</div></div>
+
+  <h2>Preguntas de cierre</h2>
+  <table>
+    <tr><td class="q">1. ¿Seguirías usando Relevo?</td><td><div class="opciones"><span>Sí</span><span>Tal vez</span><span>No</span></div></td></tr>
+    <tr><td class="q">2. ¿Qué semana te ayudó más?<br><span class="nota">Solo si hubo semanas con el objeto en lugares distintos o con el teléfono.</span></td><td><div class="opciones"><span>Donde empiezas</span><span>Otro lugar</span><span>Teléfono</span><span>Ninguna</span></div></td></tr>
+  </table>
+  <p class="nota" style="color:#141312;font-size:10.5pt;margin-top:2mm">3. ¿Qué te molestó?</p>
+  <div class="lineas"><i></i><i></i></div>
+  <p class="nota" style="color:#141312;font-size:10.5pt;margin-top:2mm">4. ¿Qué cambiarías?</p>
+  <div class="lineas"><i></i><i></i></div>
+  <p class="nota" style="color:#141312;font-size:10.5pt;margin-top:2mm">5. ¿Dónde quedó lo que sonaba la mayor parte del tiempo?</p>
+  <div class="lineas"><i></i></div>
+
+  <h2>Entrevista de cierre (unos 15 minutos)</h2>
+  <p class="lead">Temas del protocolo 02. Preguntar sin sugerir respuestas y anotar con las palabras de la persona.</p>
+  <ol class="guia">
+    <li>Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono?<div class="lineas"><i></i><i></i></div></li>
+    <li>¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué?<div class="lineas"><i></i><i></i></div></li>
+    <li>¿Qué te molestó o te costó (preparar, el sonido, el objeto, el teléfono)?<div class="lineas"><i></i><i></i></div></li>
+    <li>¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste?<div class="lineas"><i></i></div></li>
+    <li>¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir?<div class="lineas"><i></i></div></li>
+    <li>¿Qué cambiarías?<div class="lineas"><i></i><i></i></div></li>
+  </ol>
+  <p class="pie">Se transcriben con las claves cierre_seguiria_usando, cierre_semana_que_ayudo, cierre_que_molesto, cierre_que_cambiaria, cierre_lugar_parlante y, para la entrevista, entrevista_1 a entrevista_6. No anotar nombres ni datos que identifiquen a la persona.</p>
+</section>
+</body>
+</html>

@@ -288,7 +288,7 @@ internal fun ProfileSetupScreen(
       when (step) {
         0 -> GuardedButton("Seguir", { onName(name.trim()); go(1) }, missing = if (name.isBlank()) "Escribe tu nombre." else null)
         1 -> GuardedButton("Seguir", { onImage(image); go(2) }, missing = if (image.isBlank()) "Elige un emoji o toca «Saltar»." else null)
-        else -> GuardedButton("Armar mi ruta", { onInterests(interests, other); onFinish(true) }, missing = when {
+        else -> GuardedButton("Listo", { onInterests(interests, other); onFinish(true) }, missing = when {
           interests.isEmpty() -> "Elige al menos un interés o toca «Saltar»."
           Interests.OTHER in interests && other.isBlank() -> "Escribe cuál es tu otro interés."
           else -> null

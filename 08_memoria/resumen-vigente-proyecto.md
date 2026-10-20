@@ -1,28 +1,54 @@
 # Relevo en breve
 
-**Actualizado:** 29 de septiembre de 2026. **Fuente académica:** [memoria vigente](memoria-vigente-v4.md).
+**Actualizado:** 20 de octubre de 2026. **Fuente académica:** [borrador v5 de la memoria](borrador-memoria-v5-2026-10-11.md). **Estado completo y pendientes:** [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md).
 
 ## Qué es
 
-Relevo es un sistema *phygital* —con un componente físico y uno digital que cumplen funciones relacionadas— para que una persona vuelva a considerar una actividad que eligió mientras usa una aplicación de ocio digital. Prepara en Android la actividad, una forma concreta de empezarla y la condición para recibir un aviso. La propuesta final contempla un objeto situado cerca de esa actividad que emite una señal sonora de unos 30 segundos; la luz se descartó por tiempo (D-070). La señal ofrece una ocasión de decidir; no bloquea el teléfono ni comprueba que la actividad se realizó.
+Relevo es un sistema *phygital*, con un componente físico y uno digital, para que una persona vuelva a considerar una actividad que eligió mientras usa una aplicación de ocio digital.
 
-**Hipótesis** (D-091): «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Se basa en el marco multiproceso de la memoria prospectiva: cuando una actividad absorbe la atención, recordar lo que se quería hacer depende de que la señal sea llamativa y esté fuertemente asociada a la acción (McDaniel y Einstein, 2000).
+1. En la app Android escribe la actividad, su primer paso y dónde empieza.
+2. Elige las apps que cuentan y cuánto tiempo.
+3. Deja un objeto junto a ese primer paso.
+4. Al cumplirse el tiempo, el objeto suena desde ahí y la persona decide qué hacer.
+
+No bloquea el teléfono ni comprueba si la actividad se hizo. El objeto propuesto, el testigo, no se ha construido: en el prototipo lo sustituye el Tag, un localizador Bluetooth comercial.
+
+**Hipótesis** (D-091): «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Se basa en el marco multiproceso de la memoria prospectiva (McDaniel y Einstein, 2000).
 
 ## Qué existe hoy
 
-La [aplicación Android 2.14](../06_desarrollo_y_factibilidad/app-android/README.md) guía a la persona la primera vez, prepara un recordatorio, suma el uso de varias aplicaciones seleccionadas hasta un solo límite y, al cumplirlo, hace sonar durante unos 30 segundos un tono en un parlante Bluetooth multimedia o en el teléfono, que luego se detiene solo. Tras cada aviso hace preguntas de un toque. Guarda los registros en el teléfono y, con consentimiento, en Supabase con un código; el nombre se guarda aparte. El indicador de inicio es una respuesta autodeclarada, no una conducta observada. El APK compila y pasa 61 pruebas unitarias. El recorrido principal, el envío de registros y el borrado se comprobaron en emulador, pero no en un teléfono ni con un parlante reales. El parlante puede reproducir audio de otras aplicaciones y no es un testigo exclusivo de Relevo.
+- **Investigación:** 8 entrevistas analizadas con el método Framework, una encuesta de 53 respuestas (D-092), comparación de referentes, 78 referencias verificadas y 8 criterios de diseño.
+- **App Android:**
+  - La 2.32, para el testeo (D-137): el Tag se calla con confirmación, muestra su pila y no se desconecta con su alarma encendida.
+  - La 3.2, con la línea visual aprobada (D-131).
+  - 86 pruebas automáticas; consentimiento v13; datos seudonimizados en Supabase y en una copia en el teléfono.
+  - Su arquitectura completa está en [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md), con [wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
+- **Prueba en casa:** tres personas desde octubre.
+  - En los registros remotos de una, del 8 al 16 de octubre, el Tag sonó en los 7 ciclos completados. Declaró saber qué quería hacer en 6, a medias en 1, recordó el primer paso en los 7 y empezó la actividad en 5.
+  - Los datos de las otras dos están en sus teléfonos y se exportarán.
+  - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
+- **Memoria:** borrador v5 con unas 19.100 palabras en los capítulos 1 a 14, diagramado en [A3](memoria-a3/README.md), con 22 datos por confirmar y 6 figuras pendientes.
+- **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
 
-La memoria conserva la estructura de catorce capítulos. El 25 de septiembre se verificaron sus 64 referencias: todas existen, y se corrigieron datos bibliográficos, paráfrasis de entrevistas y la descripción del prototipo ([revisión integral](revision-integral-fuentes-y-redaccion-2026-09-25.md)). El mismo día se revisó su redacción según la pauta de presentación de la UDP, y se revisó para que la entienda quien no conoce el proyecto: los criterios se nombran con palabras y se explican los códigos de participantes y preguntas. Una revisión página por página corrigió paráfrasis que atribuían a las fuentes más de lo que dicen, retiró un dato sin respaldo sobre prototipos anteriores y devolvió la introducción y la justificación a su extensión mínima. El proyecto aparece de manera progresiva: el texto no lo nombra antes del capítulo 10, salvo en el resumen. El autor decidió que Relevo no usará luz por ahora ([D-070](../09_decisiones/registro-de-decisiones.md)), y la memoria ya describe una señal solo sonora de unos 30 segundos y la prueba de 21 días (D-078 y D-079). Una revisión completa de redacción precisó fuentes, retiró restos de la señal luminosa y alineó el plan de validación con el protocolo 02. Después se volvieron a verificar las 64 referencias y el formato APA 7, y se simplificó el lenguaje para la comisión. El 29 de septiembre la memoria incorporó la hipótesis nueva y el marco multiproceso, actualizó el estado del prototipo y de la prueba, y pasó sus citas a APA 7 en español («y» en lugar de «&»). El mismo día incorporó una [encuesta en línea de 53 respuestas](../03_usuarios/encuesta-53-respuestas-2026-09.md) como evidencia complementaria (D-092) y quedó en 16.965 palabras. La propuesta de marca [«Vuelve a lo que querías hacer»](../10_recursos_visuales/21_marca-relevo-a-tiempo-2026-09-25.md), cuya firma eligió el autor y que sigue pendiente de decisión (D-073), explica Relevo en palabras simples. La persona escribe en un renglón lo que quiere hacer, Relevo se lo recuerda mientras todavía puede y ella decide. La marca usa el logotipo «relevo» en Schibsted Grotesk, tinta y papel, y azul pasta para lo que escribe la persona. Las ocho entrevistas sostienen dos situaciones de uso, no dos identidades permanentes: la intención alternativa puede perder presencia, o el ocio digital puede conservar sentido y no requerir intervención. La encuesta (53 personas de 19 a 30 años; respuestas editadas antes del análisis y muestra no representativa) coincide con esas situaciones: 43 de 47 episodios tenían otra actividad deseada, 44 ocurrieron en casa y 42 personas nombraron un primer paso concreto. También muestra que 41 de 53 preferirían un sonido de 15 segundos o menos, más breve que el previsto.
+## Qué falta
 
-## Qué cambió y qué falta
+El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md). Lo principal es:
 
-Para la corrección cruzada del 30 de septiembre hay un [guion de presentación](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md) de unos 7 minutos, basado en la memoria, el protocolo 02 y el plan de cierre, y una [presentación en Figma](https://www.figma.com/slides/zhLK5LTPQWXPHIQeq4wuE8) de 15 diapositivas para 5 minutos, con una sección de respaldo y notas del orador.
-
-El feedback del 23 de septiembre llevó a distinguir recordar una intención, empezar una actividad y formar un hábito. No se añadieron rachas ni premios. La revisión de Android 2.6 aclaró el consentimiento, el registro seudónimo, la selección de salida y los límites del parlante. Las decisiones y alternativas están en el [registro de aplicación del feedback](../00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y en la [auditoría específica de Android](../06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md).
-
-La prueba con participantes será de 21 días en casa y responderá también la hipótesis ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)). Por ahora se hará con una persona (D-081), así que describirá un caso. Antes de convocar faltan pruebas en teléfono y parlante reales y la revisión académica del consentimiento. La [pauta de testeo](../07_validacion/pauta-testeo-prototipo-android-2026-09-23.md) todavía describe Android 2.6 y no contiene resultados. El aporte del objeto frente a un aviso digital, la forma final, la autonomía y los costos continúan abiertos a prueba.
+- contrastar la hipótesis, aunque sea con una semana en el teléfono, o reformular su alcance;
+- un objeto con forma propia;
+- fotos del uso;
+- las escalas y la entrevista de cierre;
+- los costos reales;
+- los anexos armados;
+- la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Al día con la 2.32 y la prueba
+
+- **Qué cambió:** el resumen describe el estado al 20 de octubre: la app 2.32 y 3.2, la prueba con tres personas y sus primeros resultados, la memoria v5 y lo que falta.
+- **Cómo estaba antes:** describía la app 2.14 y la memoria v4 del 29 de septiembre, antes de la prueba.
+- **Por qué:** la memoria cambió y este resumen debe coincidir con ella.
 
 ### 2026-09-29 — Encuesta y presentación completa
 

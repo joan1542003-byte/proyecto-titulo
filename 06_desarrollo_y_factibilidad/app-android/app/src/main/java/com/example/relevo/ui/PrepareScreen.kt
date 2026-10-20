@@ -503,7 +503,13 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   }
   Text(
     when (studyCondition) {
-      null -> "Suena en el Tag. Si prefieres otra cosa, elígela."
+      // Dice lo que la persona eligió, no siempre el Tag (3.3).
+      null -> if (!reminder.routeChosen) "Elige con qué suena." else "Suena " + when (reminder.signalRoute) {
+        SignalRoute.TAG -> "en el Tag"
+        SignalRoute.BLUETOOTH -> "en el parlante"
+        SignalRoute.WATCH -> "en el reloj"
+        SignalRoute.PHONE -> "en el teléfono"
+      } + ". Si prefieres otra cosa, elígela."
       StudyCondition.PHONE -> "Esta semana suena en el teléfono."
       StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el Tag."
       StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el Tag."

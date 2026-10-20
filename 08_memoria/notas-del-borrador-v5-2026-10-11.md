@@ -68,7 +68,26 @@ Estas notas describen el borrador al 11 de octubre; lo que sigue es lo que cambi
 - **Marcadores.** Quedan 21.
 - **Diseño.** Las tablas y las cifras se rehicieron como piezas de la marca en la [versión para Affinity](memoria-a3/README.md) (D-134).
 
+## Actualización del 20 de octubre de 2026
+
+- **Resultados:** al 16 de octubre, con los registros remotos de la persona participante, son 10 ciclos activados y 7 que sonaron. Supo qué quería hacer en 6 y a medias en 1; recordó el primer paso en los 7; empezó la actividad en 5. Se actualizaron el resumen, el abstract, las tablas 4 y 8, la verificación técnica, los resultados, la Figura 6 y las conclusiones.
+- **Tres personas:** el autor aclaró el 19 de octubre que otras dos personas usan el prototipo sin enviar datos a la base remota. Se añadió un marcador en «Alcance de la prueba» para sus fechas, objeto, consentimiento y condición.
+- **Tag:** la Tabla 7 suma las versiones 2.31 y 2.32, y «Funcionamiento y recuperación de fallos» describe cómo la app ya no corta la conexión para callar el Tag.
+- **Extensión y límites:** el resumen tiene 297 palabras y el abstract 295. El cuerpo tiene unas 19.100 palabras y quedan 22 marcadores.
+- **Pendiente para el autor:** cuando confirme los datos de las otras dos personas, revisar los pasajes que todavía hablan de una sola persona participante:
+  - la Tabla 3 («la prueba considera una persona»);
+  - el inicio de «Asociación y comparación con alternativas» («La persona participante aceptó el consentimiento…»);
+  - «Consideraciones éticas» («Participa una persona mayor de edad…»);
+  - la tabla de objetivos de las conclusiones («uso de una persona en su hogar»);
+  - el párrafo de límites de las conclusiones.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Resultados al 16 de octubre y tres personas
+
+- **Qué cambió:** se añadió la actualización del 20 de octubre.
+- **Cómo estaba antes:** terminaba en los cambios del 13 de octubre.
+- **Por qué:** el autor pidió avanzar los pendientes antes del examen y aclaró que son tres personas.
 
 ### 2026-10-13 — Agradecimientos, cifras y repeticiones
 

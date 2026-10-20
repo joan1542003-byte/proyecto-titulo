@@ -90,6 +90,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-10-20 — Resultados al 16 de octubre
+
+- **Cambio:** el borrador v5 suma los resultados al 16 de octubre, las tres personas de la prueba y las versiones 2.31 y 2.32; el resumen vigente se puso al día.
+- **Versión anterior:** los resultados llegaban al 10 de octubre, con una persona.
+- **Motivo:** pedido del autor de ir cerrando pendientes.
+- **Alcance:** la memoria en A3 no se regeneró; se rehará cuando el texto se cierre.
+
 ### 2026-10-13 — Memoria en A3 rehecha
 
 - **Cambio:** el enlace a la memoria en A3 describe la versión del 13 de octubre: 53 páginas, texto de 14 pt y un solo generador para el PDF y el archivo de Affinity.

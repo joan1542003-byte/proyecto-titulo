@@ -1,22 +1,22 @@
 # Aplicación Android de Relevo
 
-Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo uso se quiere contar y emitir una señal al completar un límite acumulado. La señal puede sonar en un parlante Bluetooth situado cerca de la actividad o, como alternativa de prueba, en el teléfono.
+Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo uso se quiere contar y emitir una señal al completar un límite acumulado. La señal suena en el Tag, un localizador Bluetooth que se deja junto al primer paso y es la salida por defecto; también en un parlante Bluetooth, en un reloj que recibe llamadas o en el teléfono. La arquitectura completa está en [Relevo como sistema](../relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md).
 
 ## Estado
 
 **Versión del testeo:** 2.32, la 2.31 sin cortes con la alarma del Tag encendida, con más paciencia con un Tag lento y la guía del botón; su código está en la rama `android-2.32` (D-137; [detalle](version-2.32-el-tag-no-se-corta-2026-10-17.md)). El mismo cambio está en la 3.2 de esta rama. La **2.31**: la 2.30 con el Tag que se calla siempre, la pila del Tag a la vista y el ícono y el logo de la línea 3.0; su código está en la rama `android-2.31` (D-136; [detalle](version-2.31-el-tag-se-calla-2026-10-14.md)). El arreglo del Tag y la pila también están en la 3.2 de esta rama, sin versión publicada. **Versión de diseño:** 3.2, igual a la lámina «Relevo, la app»: filas, opciones, campos y fichas con sus medidas, las ideas ordenadas por familia de color y textos más claros; solo cambia la interfaz (D-131; [detalle](version-3.2-igual-a-la-lamina-2026-10-12.md)). La **3.1**, las pantallas compuestas como en la lámina «Relevo, la app»: tarjetas sueltas con fichas de color, cápsulas sobre los cielos y el aura o el cielo a pantalla completa al empezar, al contar y al sonar; solo cambia la interfaz (D-130; [detalle](version-3.1-las-pantallas-de-la-lamina-2026-10-12.md)). La **3.0**, la línea nueva sin perder datos: colores, letra, íconos, cielos, aura y logo nuevos; mismas pantallas, decisiones y datos (D-129; [detalle](version-3.0-la-linea-nueva-2026-10-12.md); [plan](plan-rediseno-3.0-2026-10-11.md)). La **2.30**, para el primer testeo: editar un relevo sin borrarlo (D-120; [detalle](version-2.30-editar-sin-borrar-2026-10-09.md)). La **2.29**: la prueba del Tag empieza por el nivel medio (D-119; [detalle](version-2.29-nivel-medio-primero-2026-10-07.md)). La **2.28**: el Tag por defecto, lugares concretos y una app optimizada (D-117; [detalle](version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md)). Desde esta versión se entrega el APK optimizado (*release*), firmado con la misma clave. La **2.27**: el Tag suena en la señal y pita seguido (D-116; [detalle](version-2.27-el-tag-suena-en-la-senal-2026-10-07.md)). La **2.26**: el Tag pita y la prueba pregunta si se escuchó (D-115; [detalle](version-2.26-el-tag-pita-2026-10-07.md)). La **2.25**, del mismo día: «Tag» en pantalla y guía paso a paso (D-114; [detalle](version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md)). La **2.24** la 2.23 con la guía «Cómo usar el llavero» ([detalle](version-2.24-tutorial-del-llavero-2026-10-07.md)). La **2.23** degradados de varios colores, actividades de ocio como jugar videojuegos y opciones de un toque para no escribir (D-113; [detalle](version-2.23-colores-y-opciones-listas-2026-10-07.md)). La **2.22** compara las semanas A, B y C del protocolo 02, con el objeto donde la persona empieza, y aclara el lenguaje (D-112; [detalle](version-2.22-comparar-y-lenguaje-claro-2026-10-06.md)). La **2.21** iconos con degradado, nada elegido de antemano y sin patrones oscuros (D-111; [detalle](version-2.21-iconos-y-sin-sugerencias-2026-10-06.md)). La **2.20** la persona elige dónde suena y la app registra su elección (D-110; [detalle](version-2.20-eleccion-libre-2026-10-06.md)). La **2.19** agrega la salida «El llavero»: un llavero iTag que pita con Bluetooth, con búsqueda, prueba, conexión durante la espera y botón que calla la señal; la pantalla se probó en emulador, pero falta probarla con un llavero real ([detalle](version-2.19-llavero-itag-2026-10-05.md), D-109). La **2.18** registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío; el consentimiento pasa a v11 ([detalle](version-2.18-registro-completo-y-avisos-2026-09-30.md), D-097). La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
 
-**Fecha:** 29 de septiembre de 2026
+**Actualizado:** 20 de octubre de 2026
 
 **Identificador:** `cl.udp.relevo`
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK vigente:** [relevo-android-2.14-2026-09-29.apk](releases/relevo-android-2.14-2026-09-29.apk). Los de 2.13 a 2.7 se conservan: el autor debe decidir cuál se usa en la prueba de 21 días.
+**APK del testeo:** [relevo-android-2.32-2026-10-17.apk](releases/relevo-android-2.32-2026-10-17.apk), con el código en la rama `android-2.32`. **Con la línea visual nueva:** [relevo-android-3.2-2026-10-12.apk](releases/relevo-android-3.2-2026-10-12.apk), en esta rama. Las versiones anteriores se conservan en [releases/](releases/).
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
-**Paquete portable:** `releases/relevo-android-studio-2.14-2026-09-29.zip`
+**Proyecto para abrir:** esta carpeta se abre directo en Android Studio. El último ZIP portable es el de la 2.14 y no se siguió generando.
 
 **Criterios de interfaz y revisión:** [Diseño y experiencia](DISENO-Y-EXPERIENCIA.md) (hasta 2.7), el sistema de marca D-073 aplicado en [Android 2.8](version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) el vidrio, las formas y los emoji de D-083 en [Android 2.9](version-2.9-vidrio-y-emoji-2026-09-27.md) y los textos, el tono de las fotos y la participación de D-084 en [Android 2.10](version-2.10-participacion-y-claridad-2026-09-27.md).
 
@@ -40,7 +40,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Versión 2.7:** incorpora lo que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md) y corrige el envío de eventos. Cambios, causa del problema de eventos y verificación en [Android 2.7](version-2.7-prueba-21-dias-2026-09-25.md).
 
-La versión 2.10 compila y sus 58 pruebas unitarias pasan. En un emulador Android 16, sin red y con datos ficticios, se recorrieron la primera vez, la ruta, las actividades, la preparación, un ciclo completo con la señal y la respuesta sobre una foto oscura y el tema oscuro. Faltan el teléfono real de la prueba, el parlante Bluetooth y el borrado sin conexión. No es una aplicación validada con participantes.
+Las versiones 2.32 y 3.2 compilan y pasan sus 86 pruebas unitarias. Se revisan en un emulador Android 16, sin red y con datos de prueba. La prueba en casa usa la línea 2.x con el Tag desde el 8 de octubre de 2026. Faltan, en un teléfono real, el borrado sin conexión, el parlante y el reloj, y la 2.32 con el Tag después de horas sin uso. No es una aplicación validada: la prueba informa sobre su uso, no sobre su efecto.
 
 ## Qué permite hacer
 
@@ -141,6 +141,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Encabezado al día
+
+- **Qué cambió:** el encabezado dice qué APK usa el testeo, cómo se abre el proyecto, con qué suena y cómo se verifica hoy.
+- **Cómo estaba antes:** decía que el APK vigente era la 2.14 del 29 de septiembre y describía la verificación de la 2.10.
+- **Por qué:** pendiente del estado del proyecto del 19 de octubre.
 
 ### 2026-10-17 — Android 2.32
 

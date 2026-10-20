@@ -22,6 +22,24 @@ Relevo tiene una base de investigación sólida, una app que funciona en un hoga
 
 Quedan **37 días para el Pase de Examen**. Esta semana es de pruebas solemnes, y el cierre interno del producto está fijado para el 31 de octubre.
 
+## Avance del 20 de octubre
+
+Cerrado sin necesitar decisiones del autor:
+
+- **Wireframes:** rehechos pieza por pieza, con 39 PNG a 3× y 5 hojas por recorrido ([lámina](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html)).
+- **Memoria (punto 7, en parte):**
+  - Resultados al 16 de octubre: 7 señales, en el resumen, el abstract, las tablas 4 y 8, la Figura 6 y las conclusiones.
+  - Las tres personas, con un marcador para los datos de las dos sin conexión.
+  - Las versiones 2.31 y 2.32 en la Tabla 7.
+  - «Funcionamiento y recuperación de fallos» puesto al día.
+  - El [resumen vigente](../08_memoria/resumen-vigente-proyecto.md), que seguía en el 29 de septiembre.
+- **Punto 2:** la [ficha en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md) para las escalas semanales, el cierre y la entrevista, con las mismas preguntas y claves de la app ([PDF](../07_validacion/instrumentos/ficha-escalas-y-cierre.pdf)).
+- **Punto 1:** el [script para unir los datos](../07_validacion/analisis/README.md) de Supabase, de los teléfonos sin conexión y del papel, con un resumen por persona.
+- **Repositorio:** el README de la app ya dice qué APK usa el testeo.
+- **App 3.x (sin publicar):** «Armar mi ruta» pasa a «Listo», y «¿Dónde suena?» dice lo que la persona eligió en vez de nombrar siempre el Tag. No se revisó en el emulador.
+
+Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los datos por confirmar de la memoria (ahora 22); la decisión sobre la notificación; los Issues y PR viejos de GitHub (no hay acceso de escritura desde esta sesión); y aplicar la ficha y exportar los datos de las otras dos personas.
+
 ## Plazos
 
 | Fecha | Hito | Días desde hoy |
@@ -190,6 +208,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Avance
+
+- **Qué cambió:** se añadió lo que quedó cerrado el 20 de octubre.
+- **Cómo estaba antes:** el documento solo listaba pendientes.
+- **Por qué:** el autor pidió avanzar los pendientes.
 
 ### 2026-10-19 — Las otras dos personas
 

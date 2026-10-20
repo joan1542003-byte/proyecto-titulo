@@ -22,6 +22,8 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
+- [Ficha de escalas semanales y cierre en papel](instrumentos/ficha-escalas-y-cierre-2026-10-20.md): las preguntas de la tarjeta semanal y del cierre de la app, y la guía de la entrevista final, para aplicarlas cuando la prueba no se inició en el teléfono ([PDF](instrumentos/ficha-escalas-y-cierre.pdf)).
+- [Unir los datos de la prueba](analisis/README.md): script que junta Supabase, las copias de los teléfonos sin conexión y las fichas en papel, con un resumen por persona.
 - [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario iniciado en 2.3 y conciliado con 2.6, respuesta para la comisión y texto candidato; el correo y la fecha límite ya están indicados, pero falta verificar la eliminación y el canal de contacto antes de participantes.
 - [Modelo de datos para evaluar la aplicación](modelo-datos-evaluacion-app-2026-09-22.md): define qué registra el prototipo Android, qué preguntas puede responder y qué inferencias quedan excluidas.
 - [Protocolo 02 — Prueba de 21 días en casa](protocolo-02-prueba-21-dias.md): estudio vigente; responde asociación, lugar, autonomía, uso y carga.
@@ -71,6 +73,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-10-20 — Ficha en papel y unión de datos
+
+- **Qué cambió:** se enlazan la ficha de escalas y cierre y el script para unir los datos.
+- **Cómo estaba antes:** las escalas y el cierre existían solo en la app, y no había cómo sumar los datos de los teléfonos sin conexión.
+- **Por qué:** pendientes del estado del proyecto del 19 de octubre.
 
 ### 2026-09-27 — Android 2.10
 
