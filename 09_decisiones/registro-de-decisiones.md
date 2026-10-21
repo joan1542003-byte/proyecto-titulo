@@ -1776,7 +1776,52 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 87 pruebas, misma firma. Se recorrió completa en el emulador, sin conexión, incluidas la tarjeta y el cierre del día 7, adelantando la fecha.
 - **Documentación:** [versión 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md).
 
+## D-139 — Los estados de los objetivos quedan aprobados
+
+- **Fecha:** 2026-10-20.
+- **Estado:** decidida por el autor.
+- **Contexto:** la revisión de tono (tarea 1 de [Por hacer](../00_gobernanza/por-hacer.md)) propuso nuevos estados para la Tabla 11 y pidió al autor confirmarlos.
+- **Decisión:** el autor los aprobó («me parece justo»): objetivo 1, «Cumplido»; 2, «Cumplido con un objeto comercial; el testigo propio, especificado»; 3, «En curso»; 4, «Avanzado».
+- **Documentos:** [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md), Tabla 11.
+
+## D-140 — La Figura 4 muestra fotos reales de la prueba, sin datos que identifiquen
+
+- **Fecha:** 2026-10-20.
+- **Estado:** hecha; falta que el autor confirme quién tomó las fotos, que las personas autorizan publicarlas y de quién es el lugar de la foto c.
+- **Contexto:** el autor entregó tres fotos del Tag y de una persona tras configurar un relevo. La Figura 4 era un marcador («Fotografía pendiente»).
+- **Decisión:**
+  - **Contenido:** a) un relevo preparado y el Tag en la mano (7 de octubre); b) el Tag sobre un mueble del mismo hogar (7 de octubre); c) el Tag sobre un escritorio (17 de octubre).
+  - **Privacidad:** se quitaron todos los metadatos, incluido el GPS; se difuminó el nombre de la persona en la pantalla; se recortaron otras pantallas (un televisor y la barra de tareas de un monitor) y objetos personales, entre ellos medicamentos. No hay rostros. Los originales no entran al repositorio.
+  - **Título:** «El Tag durante la prueba en el hogar». El anterior, «Localizador Bluetooth situado junto al primer paso de una actividad», no describía estas fotos.
+  - **Nota:** dice qué muestra la pantalla en a, qué se difuminó y recortó, y que el Tag no representa la forma del testigo. Las guías de la Escuela no fijan una fórmula para fotos propias; queda un marcador para autoría, autorización y lugar.
+  - **Inicio de la prueba:** con el pedido del 6 de octubre («el primer testeo empieza al día siguiente»), la corrección del 20 de octubre («la primera fue un miércoles») y la foto a, el capítulo 13 dice que la prueba comenzó el miércoles 7 de octubre de 2026. Los registros de datos empiezan el 8, el 9 y el 10.
+  - **Versión A3:** el generador suma piezas de fotos: en fila, en dos columnas, cada una con su letra y su pie; título y nota en la tercera columna.
+- **Documentos:** [fotos](../08_memoria/figuras/), [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) y [construir-idml.js](../08_memoria/memoria-a3/construir-idml.js).
+
+## D-141 — Seis lecturas del autor entran a la memoria
+
+- **Fecha:** 2026-10-20.
+- **Estado:** hecha; el autor puede quitar alguna o pedir otras.
+- **Contexto:** el autor compartió su carpeta de bibliografía (36 archivos) y pidió incorporar lo necesario, que pasa a formar parte de las decisiones. Los PDF escaneados se pasaron a texto con reconocimiento de caracteres. Cuatro agentes (Sonnet, esfuerzo alto) leyeron la carpeta con preguntas por capítulo; la IA comprobó después cada cita y cada página en el texto, y el DOI de Fogg y el registro de Gembali en la web.
+- **Decisión:**
+  - **Entran:**
+    - Norman (1988/1990, pp. 73 y 103), capítulo 6: todo recordatorio reúne una señal y un mensaje; el sonido llega a quien está absorto y por eso irrumpe.
+    - Fogg (2009, p. 1), capítulo 13: una señal lleva a actuar solo si coincide con la motivación y la capacidad del momento, lo que explica que recordar no obligue a empezar.
+    - Nielsen (1993, pp. 96–97, 170, 173 y 221), capítulos 10 y 13 y glosario: un prototipo puede usar medios más simples si conservan lo esencial de la interacción (el Tag); la evaluación formativa; rondas de unas tres personas por iteración; el registro dice qué hizo la persona, y las preguntas, por qué.
+    - Gembali (2023, pp. 53 y 56), capítulos 6 y 12: comparar lo *phygital* con lo solo digital; integrar un dispositivo existente obliga a aceptar compromisos.
+    - Kolko (2011, p. 40), capítulo 9: formular criterios es parte de la síntesis.
+    - Sanders y Stappers (2012, p. 69), capítulo 7: lo que se dice puede diferir de lo que se hace.
+  - **No entran:** Krug y *Sprint*, porque se apoyan en Nielsen, que ya está como fuente primaria; *Nudge*, porque la memoria no usa ese concepto; Young, Beckman y Barry, Lupton y Maeda, porque no respaldan con precisión una afirmación de la memoria o la duplican; *Gamestorming*, *Making Things Move*, las tarjetas de IDEO e Innovakit, trycycle, *Design to Improve Life* y la guía de prompts, porque no tratan lo que la memoria afirma; y el guion para un *design lead*, que es de selección de personal.
+  - **Guías de la Escuela:** se aplicaron las citas de los conceptos del glosario y la fusión de párrafos de una oración en el capítulo 5. Lo que requiere una decisión del autor quedó como tarea 2 de [Por hacer](../00_gobernanza/por-hacer.md).
+- **Documentos:** [notas del borrador](../08_memoria/notas-del-borrador-v5-2026-10-11.md#fotos-lecturas-y-recorte-del-20-de-octubre-de-2026) y [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — D-139 a D-141
+
+- **Qué cambió:** se registraron D-139, D-140 y D-141.
+- **Cómo estaba antes:** la última decisión era D-138.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-20 — D-138 y la 3.3
 

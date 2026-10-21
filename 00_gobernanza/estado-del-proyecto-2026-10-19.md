@@ -41,8 +41,9 @@ Cerrado sin necesitar decisiones del autor:
 - **Punto 2, para la persona que pasa al teléfono:** la [app 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) hace en la app las escalas de las semanas anteriores, la pregunta tras cada relevo, la tarjeta del día 7 y un cierre que compara el objeto con el teléfono (D-138). Falta instalarla e iniciar la semana C en su teléfono. La línea 3.x ya lo tiene, en la [3.3](../06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md).
 
 - **Memoria, tono (tarea 1 de Por hacer):** los logros van primero en el resumen, el abstract, los resultados y las conclusiones; las carencias se dicen como decisiones y los límites quedan una sola vez, en «Alcance de la prueba y amenazas a la validez». Ninguna cifra cambió. La versión A3 se regeneró (53 páginas). Queda en revisión del autor.
+- **Memoria, fotos y lecturas (punto 6, en parte):** la Figura 4 muestra tres fotos de la prueba, sin metadatos y con el nombre difuminado (D-140); entran seis lecturas de la carpeta del autor (D-141), y el texto queda 170 palabras más corto. La prueba comenzó el 7 de octubre.
 
-Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los datos por confirmar de la memoria (ahora 22); la decisión sobre la notificación; los Issues y PR viejos de GitHub (no hay acceso de escritura desde esta sesión); y aplicar la ficha y exportar los datos de las otras dos personas.
+Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los datos por confirmar de la memoria (ahora 23); la decisión sobre la notificación; los Issues y PR viejos de GitHub (no hay acceso de escritura desde esta sesión); y aplicar la ficha y exportar los datos de las otras dos personas.
 
 ## Plazos
 
@@ -212,6 +213,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Fotos y lecturas en la memoria
+
+- **Qué cambió:** el avance suma la Figura 4 con fotos, las seis lecturas nuevas y el recorte; los datos por confirmar pasan a 23.
+- **Cómo estaba antes:** el avance terminaba en la revisión de tono, con 22 datos por confirmar.
+- **Por qué:** pedido del autor del mismo día.
 
 ### 2026-10-20 — Tono de la memoria
 

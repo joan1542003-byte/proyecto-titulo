@@ -21,7 +21,7 @@ Lo único que la composición agrega o adapta:
 
 - **Portada:** el descriptor «Memoria de título» y el ejemplo de la app («Leer», «Abrir el libro», «En el velador»), que no están en la v5.
 - **Tablas:** el estado («Implementado», «Parcial», «Pendiente», «Cumplido») pasa a una cápsula y su detalle empieza con mayúscula; los objetivos numerados llevan su número en un círculo; las versiones van en cápsulas.
-- **Figuras 2 y 5:** se dibujan con lo que dice la propia v5. La figura 4, la fotografía del Tag, sigue como «Fotografía pendiente».
+- **Figuras 2 y 5:** se dibujan con lo que dice la propia v5. La figura 4 compone las tres fotos de la v5 en fila, en dos columnas, cada una con su letra y su pie, y el título y la nota en la tercera columna.
 
 ## Diseño
 
@@ -109,13 +109,19 @@ Otros archivos:
 
 ## Límites y pendientes
 
-- **Texto:** faltan los marcadores de la v5, la fotografía de la figura 4 y el resto de los resultados de la prueba.
+- **Texto:** faltan los marcadores de la v5 y el resto de los resultados de la prueba.
 - **Marcadores «Confirmar»:** en el PDF van resaltados en amarillo; en Affinity, subrayados.
 - **Páginas con aire de sobra:** cuando una tabla alta coincide con el fin de un capítulo, la página queda con la tabla sola.
 - **Impresión:** los colores no tienen prueba de imprenta, y el aura puede verse distinta en una impresora de oficina.
 - **Accesibilidad:** no se revisó con un lector de pantalla.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Fotos de la Figura 4
+
+- **Qué cambió:** el generador lee imágenes de la v5 (`![pie](ruta)`) y compone una figura de fotos en dos columnas, con su letra, su pie como texto vivo y el título y la nota al lado. Se regeneró con la v5 del día: fotos, seis lecturas nuevas y el recorte.
+- **Cómo estaba antes:** la figura 4 era un recuadro «Fotografía pendiente».
+- **Por qué:** el autor entregó las fotos de la prueba (D-140).
 
 ### 2026-10-20 — Memoria con el tono revisado
 

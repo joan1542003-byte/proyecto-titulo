@@ -9,7 +9,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
 - [Memoria v5 en A3 horizontal](memoria-a3/README.md): la v5 compuesta con la línea de Relevo, en un [PDF de 53 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134 y D-135). Texto de 14 pt, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
-- [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: al 13 de octubre faltan sus 21 marcadores, la fotografía del Tag y el resto de los resultados de la prueba. La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
+- [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: al 20 de octubre faltan sus 23 marcadores y el cierre de la prueba. Las fotos de su Figura 4 están en [figuras](figuras/), sin metadatos y con el nombre difuminado (D-140). La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
 - [Revisión integral de fuentes, corpus y redacción](revision-integral-fuentes-y-redaccion-2026-09-25.md): verificación de las 64 referencias, contraste con P1–P8 y Android 2.6, revisión página por página, correcciones aplicadas y problemas pendientes al 25 de septiembre.
@@ -89,6 +89,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-20 — Fotos, lecturas y recorte
+
+- **Cambio:** la Figura 4 pasa a tres fotos de la prueba, en la carpeta nueva `figuras/` (D-140); entran seis lecturas del autor con su página y el glosario cita a sus autores (D-141); el capítulo 13 dice que la prueba comenzó el 7 de octubre, y el texto se recorta sin cambiar su contenido. La versión A3 se regeneró.
+- **Versión anterior:** la Figura 4 era un marcador; 19 288 palabras en los capítulos 1 a 14 y 20 291 desde la portada hasta antes de «Referencias».
+- **Motivo:** el autor entregó fotos y bibliografía y pidió recortar un poco más, sin alterar.
+- **Alcance:** 19 106 palabras en los capítulos 1 a 14; 19 784 con agradecimientos, resumen y abstract; 20 121 desde la portada. Ninguna cifra de resultados cambió. El detalle está en las [notas del borrador](notas-del-borrador-v5-2026-10-11.md#fotos-lecturas-y-recorte-del-20-de-octubre-de-2026).
 
 ### 2026-10-20 — Revisión de tono del borrador v5
 

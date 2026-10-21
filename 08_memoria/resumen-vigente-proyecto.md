@@ -30,7 +30,7 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
   - Los datos de dos personas los entregaron ellas, en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla. Se unen con [unir-datos.js](../07_validacion/analisis/README.md).
   - Desde el 20 de octubre, una de ellas prueba una semana solo con la notificación del teléfono (app 2.33, D-138).
   - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
-- **Memoria:** borrador v5 con 19 288 palabras en los capítulos 1 a 14, revisado el 20 de octubre para contar los logros primero y los límites una sola vez, y diagramado en [A3](memoria-a3/README.md) (53 páginas). Tiene 22 datos por confirmar; de sus seis figuras, cuatro ya están dibujadas en la versión A3 y faltan la fotografía del Tag y las capturas definitivas.
+- **Memoria:** borrador v5 con 19 106 palabras en los capítulos 1 a 14, revisado el 20 de octubre para contar los logros primero y los límites una sola vez, con seis lecturas nuevas del autor (D-141), y diagramado en [A3](memoria-a3/README.md) (53 páginas). Tiene 23 datos por confirmar; de sus seis figuras, cinco ya están en la versión A3, incluidas las fotos de la prueba (D-140), y faltan las capturas definitivas.
 - **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
 
 ## Qué falta
@@ -46,6 +46,12 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Fotos y lecturas
+
+- **Qué cambió:** la memoria tiene 19 106 palabras en los capítulos 1 a 14, seis lecturas nuevas y las fotos de la Figura 4; los datos por confirmar son 23.
+- **Cómo estaba antes:** 19 288 palabras, 22 datos por confirmar y la Figura 4 pendiente.
+- **Por qué:** el autor entregó fotos y bibliografía y pidió recortar sin alterar.
 
 ### 2026-10-20 — Logros primero
 
