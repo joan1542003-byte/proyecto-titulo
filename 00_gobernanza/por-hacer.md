@@ -4,7 +4,7 @@ Tareas acordadas con el autor que esperan su indicación para empezar. Cada una 
 
 ## 1. Memoria: contar los logros con seguridad y dejar los límites una sola vez
 
-**Estado:** en espera; se hace solo cuando el autor lo pida. **Anotada:** 20 de octubre de 2026.
+**Estado:** en espera; se hace solo cuando el autor lo pida. **Anotada:** 20 de octubre de 2026. **Issue:** [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14).
 
 ### Por qué
 
@@ -42,4 +42,4 @@ Un jurado espera los resultados dichos con seguridad, y los límites una vez, en
 
 - **Qué se añadió:** la lista de tareas en espera, con la revisión del tono de la memoria.
 - **Cómo estaba antes:** no había un lugar para tareas acordadas que esperan la indicación del autor.
-- **Por qué:** el autor pidió dejar esa revisión anotada en GitHub para hacerla cuando él lo diga. No se pudo crear un Issue, porque GitHub no tiene sesión iniciada en este equipo.
+- **Por qué:** el autor pidió dejar esa revisión anotada en GitHub para hacerla cuando él lo diga. El Issue [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14) se creó el mismo día, cuando el autor inició sesión en GitHub en este equipo.

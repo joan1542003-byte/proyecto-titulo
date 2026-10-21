@@ -159,7 +159,7 @@
 | 20 oct. | Encargo | Continuar con lo pendiente. | [Android 3.3](../06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md): la línea visual nueva recibe los arreglos del Tag de la 2.31 y la 2.32 y la semana para comparar de la 2.33. Probada en el emulador sobre los datos del autor, que se restauraron después; APK publicado en el repositorio. Lo demás pendiente depende del autor: instalar la 2.33 en el teléfono de la participante y, al terminar la semana, sumar sus respuestas. | D-138 |
 | 20 oct. | Consulta | Preguntó si la IA modificó la memoria y qué partes. | Respuesta en la conversación: los pasajes con datos de la prueba, cambiados en dos commits del mismo día, con su lista. La versión A3 no se regeneró. | — |
 | 20 oct. | Observación | Cada vez que se hace algo se dicen las cosas malas: el proyecto se describe de forma demasiado negativa. | La IA reconoció el problema: límites repetidos, logros contados con «solo» y frases negativas desactualizadas. Propuso revisar el tono de la memoria sin cambiar los datos. | — |
-| 20 oct. | Encargo | Anotar esa revisión como tarea en GitHub, para hacerla cuando el autor lo diga. | [Por hacer](por-hacer.md), tarea 1, en espera. No se pudo crear un Issue: GitHub no tiene sesión iniciada en este equipo. | — |
+| 20 oct. | Encargo | Anotar esa revisión como tarea en GitHub, para hacerla cuando el autor lo diga. | [Por hacer](por-hacer.md), tarea 1, en espera, y el Issue [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14), creado cuando el autor inició sesión en GitHub en este equipo. | — |
 
 ## Lo que muestra el registro
 
