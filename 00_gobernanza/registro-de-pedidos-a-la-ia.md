@@ -161,6 +161,7 @@
 | 20 oct. | Observación | Cada vez que se hace algo se dicen las cosas malas: el proyecto se describe de forma demasiado negativa. | La IA reconoció el problema: límites repetidos, logros contados con «solo» y frases negativas desactualizadas. Propuso revisar el tono de la memoria sin cambiar los datos. | — |
 | 20 oct. | Encargo | Anotar esa revisión como tarea en GitHub, para hacerla cuando el autor lo diga. | [Por hacer](por-hacer.md), tarea 1, en espera, y el Issue [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14), creado cuando el autor inició sesión en GitHub en este equipo. | — |
 | 20 oct. | Encargo | Una presentación breve en Figma Slides de lo que hay hasta ahora, con preguntas para los profesores, capturas de la app y datos de las personas usuarias. Simple, directa y con el estilo visual nuevo, no el antiguo. | [Presentación de 8 láminas](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) en la línea 3.0: Instrument Sans, logo de cuatro luces y paleta 2, con el tono de la del 14 de octubre. Incluye la idea, lo que tengo, 5 capturas reales de la app 3.3, los resultados de las tres personas al 19 de octubre, lo que dijeron y lo que cambió, lo que sigue y 7 preguntas. Las preguntas son una propuesta para que el autor las ajuste. | — |
+| 20 oct. | Corrección | A la presentación le falta explicar la identidad y el diseño de Relevo; las pruebas empezaron antes (la primera fue un miércoles, con la participante del Tag); desglosar mejor lo que sigue y resumir los títulos y el contenido de las secciones principales de la memoria. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 12 láminas. Suma «La identidad» (las cuatro luces y su papel), «El diseño» (fichas por papel, siete cielos, íconos y letra) y «El objeto y la señal» (testigo, pulso ambiental y Tag). También suma «La memoria», con 10 capítulos resumidos. «Lo que sigue» pasa a carta Gantt por etapas, con el calendario oficial, los cierres internos y el plan del taller. El registro confirma la fecha: el 6 de octubre se anotó que el primer testeo empezaba al día siguiente, el miércoles 7; sus datos de ese día eran de la puesta a punto del Tag y ya no están en Supabase. | — |
 
 ## Lo que muestra el registro
 
@@ -171,6 +172,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Presentación ampliada
+
+- **Qué cambió:** se registró la corrección de la presentación y la fecha de inicio de las pruebas.
+- **Cómo estaba antes:** terminaba en la primera versión de la presentación.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-20 — Presentación en Figma
 
