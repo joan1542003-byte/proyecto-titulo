@@ -377,7 +377,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       day = plan.day(today),
       week = week,
       condition = plan.condition(today),
-      pendingWeek = plan.weeksReadyForReview(today).firstOrNull { !studyStore.weekDone(it) },
+      // En una semana de comparación, primero se pregunta por las semanas anteriores (la «semana 0»).
+      pendingWeek = (if (plan.comparison && !studyStore.weekDone(0)) 0 else null)
+        ?: plan.weeksReadyForReview(today).firstOrNull { !studyStore.weekDone(it) },
       instructionWeek = week?.takeIf { !studyStore.instructionSeen(it) },
       closingPending = plan.closingReady(today) && !studyStore.closingDone(),
     )
@@ -404,8 +406,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** El investigador asigna la secuencia en la sesión inicial; hoy es el día 0. */
   fun startStudy(sequence: String) {
     val today = LocalDate.now()
-    studyStore.start(sequence, today)
-    researchLog.recordAnswer(_reminder.value.participantCode, "prueba_inicio", "secuencia=$sequence;dia0=$today")
+    // Una semana de comparación empieza hoy: hoy es el día 1 y no hay sesión inicial (2.33).
+    val plan = StudyPlan(sequence, if (sequence in StudyPlan.COMPARISONS) today.minusDays(1) else today)
+    studyStore.start(sequence, plan.day0)
+    researchLog.recordAnswer(_reminder.value.participantCode, "prueba_inicio", "secuencia=$sequence;dia0=${plan.day0}")
     refreshStudy()
     syncRemote()
   }
@@ -425,13 +429,19 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   /** Tarjeta de cierre de semana: tres escalas de 1 a 5 y un comentario, todo opcional. */
-  fun submitWeek(week: Int, preparation: Int?, annoyance: Int?, place: Int?, comment: String) {
+  /**
+   * La semana 0 son las semanas anteriores a una semana de comparación; [compared], cómo ayudó esta semana
+   * frente a esas: mas, igual o menos (2.33).
+   */
+  fun submitWeek(week: Int, preparation: Int?, annoyance: Int?, place: Int?, comment: String, compared: String? = null) {
     val code = _reminder.value.participantCode
-    preparation?.let { researchLog.recordAnswer(code, "semana${week}_costo_preparar", it.toString()) }
-    annoyance?.let { researchLog.recordAnswer(code, "semana${week}_molestia_senal", it.toString()) }
-    place?.let { researchLog.recordAnswer(code, "semana${week}_relacion_lugar", it.toString()) }
-    comment.trim().takeIf { it.isNotEmpty() }?.let { researchLog.recordAnswer(code, "semana${week}_comentario", it) }
-    if (preparation == null && annoyance == null && place == null && comment.isBlank()) researchLog.recordAnswer(code, "semana${week}_omitida", "si")
+    val key = if (week == 0) "semanas_previas" else "semana$week"
+    preparation?.let { researchLog.recordAnswer(code, "${key}_costo_preparar", it.toString()) }
+    annoyance?.let { researchLog.recordAnswer(code, "${key}_molestia_senal", it.toString()) }
+    place?.let { researchLog.recordAnswer(code, "${key}_relacion_lugar", it.toString()) }
+    compared?.let { researchLog.recordAnswer(code, "${key}_comparacion", it) }
+    comment.trim().takeIf { it.isNotEmpty() }?.let { researchLog.recordAnswer(code, "${key}_comentario", it) }
+    if (preparation == null && annoyance == null && place == null && compared == null && comment.isBlank()) researchLog.recordAnswer(code, "${key}_omitida", "si")
     studyStore.markWeekDone(week)
     refreshStudy()
     syncRemote()
@@ -846,8 +856,10 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
    * toque (protocolo 02); null significa que no se respondieron. Si el relevo vino de la ruta, la
    * respuesta puede ofrecer el siguiente paso (R3) o cambiar la actividad.
    */
-  fun completeEvaluation(outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null, feeling: String? = null) {
+  fun completeEvaluation(outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null, feeling: String? = null, noticed: String? = null) {
     AppUsageMonitorService.cancelSignalNotification(getApplication())
+    // Si notó la señal enseguida, un rato después o no la notó (2.33): compara el teléfono con el objeto.
+    noticed?.let { researchLog.recordAnswer(_reminder.value.participantCode, "percepcion_senal", it, _reminder.value.sessionId) }
     markRelevoClosed()
     historyStore.markOutcome(_reminder.value.sessionId, outcome)
     _history.value = historyStore.load()
@@ -1229,7 +1241,8 @@ data class StudyState(
   val instructionWeek: Int? = null,
   val closingPending: Boolean = false,
 ) {
-  val active: Boolean get() = plan != null && day in 0..StudyPlan.LAST_DAY
+  val active: Boolean get() = plan != null && day in 0..plan.lastDay
   val initialSession: Boolean get() = plan != null && day == 0
-  val finished: Boolean get() = plan != null && day > StudyPlan.LAST_DAY
+  val finished: Boolean get() = plan != null && day > plan.lastDay
+  val comparison: Boolean get() = plan?.comparison == true
 }

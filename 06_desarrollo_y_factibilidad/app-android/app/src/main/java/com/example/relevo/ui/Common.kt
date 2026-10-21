@@ -403,7 +403,7 @@ internal fun conditionInstruction(condition: StudyCondition): String = when (con
 
 internal fun conditionDetail(condition: StudyCondition): String? = when (condition) {
   StudyCondition.NEUTRAL -> "Un lugar visible, a más de un metro de lo que necesitas para empezar y fuera de tu camino."
-  StudyCondition.PHONE -> "No necesitas el parlante, el reloj ni el Tag. La notificación solo dirá «Es momento de volver a elegir»."
+  StudyCondition.PHONE -> "No necesitas el parlante, el reloj ni el Tag: puedes apagar el Tag manteniendo apretado su centro 3 segundos. La notificación solo dirá «Es momento de volver a elegir»."
   StudyCondition.SITUATED -> null
 }
 

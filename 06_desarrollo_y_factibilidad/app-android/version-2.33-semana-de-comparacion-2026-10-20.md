@@ -55,9 +55,15 @@ Si un relevo ya está activo al iniciar la semana, termina con la salida que ten
 
 - **No es un contrabalanceo:** es una semana con el teléfono después de 12 días con el Tag, con una persona. El orden puede influir: la persona ya conoce el sistema y tal vez recuerda más por costumbre. El análisis lo tiene que declarar.
 - **Las escalas de las semanas con el Tag** se responden al final de esas semanas, de memoria, y no al cierre de cada una.
-- **La línea 3.x no tiene estos cambios.** La próxima 3.x debe usar `versionCode` 49 o más e incorporarlos.
+- **Línea 3.x:** desde el mismo día, la [3.3](version-3.3-semana-de-comparacion-2026-10-20.md) tiene estos cambios, con `versionCode` 49.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Android 3.3
+
+- **Qué cambió:** los límites dicen que la 3.3 ya tiene estos cambios.
+- **Cómo estaba antes:** decían que la línea 3.x no los tenía.
+- **Por qué:** el autor pidió continuar con lo pendiente: llevar la 2.33 a la línea 3.x (D-138).
 
 ### 2026-10-20 — Creación
 

@@ -249,7 +249,7 @@ class AppUsageMonitorService : Service() {
     val code = Participation.code(this).ifBlank { return false }
     val plan = StudyStore(this).plan()
     val today = LocalDate.now()
-    val day = plan?.day(today)?.takeIf { it in 0..StudyPlan.LAST_DAY } ?: -1
+    val day = plan?.day(today)?.takeIf { it in 0..plan.lastDay } ?: -1
     val next = AutoMode.fromLast(last, code, plan?.condition(today), day, UUID.randomUUID().toString())
     if (next.status != ReminderStatus.WAITING) return false
     store.save(next)

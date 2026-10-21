@@ -95,6 +95,21 @@ class StudyPlanTest {
     StudyPlan.SEQUENCES.forEach { assertEquals(setOf('A', 'B', 'C'), it.toSet()) }
   }
 
+  @Test
+  fun comparisonWeekLastsSevenDaysWithOneCondition() {
+    // Una semana con el teléfono después de semanas con el Tag (2.33): empieza el día 1 y cierra el día 7.
+    val plan = StudyPlan("C", day0)
+    assertTrue(plan.comparison)
+    assertEquals(7, plan.lastDay)
+    assertEquals(StudyCondition.PHONE, plan.condition(day0.plusDays(1)))
+    assertEquals(StudyCondition.PHONE, plan.condition(day0.plusDays(7)))
+    assertEquals(null, plan.condition(day0.plusDays(8)))
+    assertEquals(listOf(1), plan.weeksReadyForReview(day0.plusDays(7)))
+    assertTrue(plan.closingReady(day0.plusDays(7)))
+    assertTrue(plan.isFinished(day0.plusDays(8)))
+    assertFalse(StudyPlan("ABC", day0).comparison)
+  }
+
   @Test(expected = IllegalArgumentException::class)
   fun rejectsSequencesOutsideTheProtocol() {
     StudyPlan("AAB", day0)

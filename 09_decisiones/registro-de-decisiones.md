@@ -1772,17 +1772,17 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Límites:**
   - No es un contrabalanceo: la semana con el teléfono viene después de 12 días con el Tag, y hay una sola persona.
   - Las escalas de las semanas con el Tag se responden de memoria.
-  - La línea 3.x todavía no tiene estos cambios.
+  - La línea 3.x los recibió el mismo día, en la [3.3](../06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md) (`versionCode` 49), así que la próxima versión debe usar 50 o más.
 - **Verificación:** 87 pruebas, misma firma. Se recorrió completa en el emulador, sin conexión, incluidas la tarjeta y el cierre del día 7, adelantando la fecha.
 - **Documentación:** [versión 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md).
 
 ## Registro de cambios (disclaimer)
 
-### 2026-10-20 — D-138
+### 2026-10-20 — D-138 y la 3.3
 
 - **Qué cambió:** se registró D-138.
 - **Cómo estaba antes:** la última decisión era D-137.
-- **Por qué:** pedido del autor.
+- **Por qué:** pedido del autor. El mismo día se sumó que la 3.3 lleva estos cambios a la línea 3.x.
 
 ### 2026-10-17 — D-137
 

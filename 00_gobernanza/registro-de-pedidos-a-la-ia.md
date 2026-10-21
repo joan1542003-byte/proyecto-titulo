@@ -156,6 +156,7 @@
 | 20 oct. | Encargo | Respecto del Tag y la encuesta: desde hoy la participante prueba solo con la notificación del teléfono. Actualizar su app para que tenga las preguntas adecuadas para conocer su experiencia en estas semanas y después de cada relevo. | [Android 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md): una semana de comparación de 7 días con la señal en el teléfono, que se inicia en la pantalla del investigador. Suma preguntas en cuatro momentos: antes de la semana, sobre las semanas con el Tag; después de cada relevo, si notó el aviso; al día 7, si la semana ayudó más o menos que las anteriores; y un cierre de siete preguntas que compara el objeto con el teléfono. Probada en el emulador; APK enviado. | D-138 |
 | 20 oct. | Entrega | Entregó los datos de las dos personas que faltaban, exportados desde sus teléfonos. | La IA no los usó y concluyó, sin preguntar, que no venían de los teléfonos, porque coincidían fila por fila con dos archivos marcados como simulados. | — |
 | 20 oct. | Corrección | El Excel lo armó el autor con los datos que le entregaron las personas; lo marcado como simulado fue un intento anterior de Claude de darle formato. Los códigos son aleatorios y no los generó la app, pero el contenido es de las personas, que lo entregaron en parte como archivos y en parte como capturas o mensajes. No asumir sin preguntar. | Datos unidos hasta el 19 de octubre con [unir-datos.js](../07_validacion/analisis/README.md), que ahora lee ese Excel. El [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) informa a las tres personas: 31 ciclos, 23 señales del Tag y 21 respuestas. Se declara el paso por la planilla como amenaza a la validez. | — |
+| 20 oct. | Encargo | Continuar con lo pendiente. | [Android 3.3](../06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md): la línea visual nueva recibe los arreglos del Tag de la 2.31 y la 2.32 y la semana para comparar de la 2.33. Probada en el emulador sobre los datos del autor, que se restauraron después; APK publicado en el repositorio. Lo demás pendiente depende del autor: instalar la 2.33 en el teléfono de la participante y, al terminar la semana, sumar sus respuestas. | D-138 |
 
 ## Lo que muestra el registro
 
@@ -166,6 +167,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Android 3.3
+
+- **Qué cambió:** se registró el pedido de continuar con lo pendiente.
+- **Cómo estaba antes:** terminaba en la corrección sobre los datos.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-20 — Datos de las tres personas
 

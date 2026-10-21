@@ -434,8 +434,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   reminder = reminder, customActivities = customActivities, studyActive = study.condition != null, guided = guide.signal,
                   onTestSound = { viewModel.testSignal(it) }, onContinue = viewModel::silence,
                 )
-                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered, guided = guide.decide) { outcome, knew, recalled, feeling ->
-                  viewModel.completeEvaluation(outcome, knew, recalled, feeling)
+                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered, guided = guide.decide) { outcome, knew, recalled, feeling, noticed ->
+                  viewModel.completeEvaluation(outcome, knew, recalled, feeling, noticed)
                   acknowledgement = if (settings.acknowledgements) acknowledgementFor(outcome) else null
                   viewModel.reset()
                   tab = Tab.HOME
@@ -493,11 +493,11 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 Route.WEEK -> {
                   val week = study.pendingWeek
                   if (week == null) LaunchedEffect(Unit) { pop() }
-                  else WeekReviewScreen(week, study.plan?.conditionOfWeek(week),
-                    onSubmit = { preparation, annoyance, place, comment -> viewModel.submitWeek(week, preparation, annoyance, place, comment); pop() },
+                  else WeekReviewScreen(week, if (week == 0) null else study.plan?.conditionOfWeek(week), comparison = study.comparison,
+                    onSubmit = { preparation, annoyance, place, comment, compared -> viewModel.submitWeek(week, preparation, annoyance, place, comment, compared); pop() },
                     onLater = { pop() })
                 }
-                Route.CLOSING -> ClosingScreen(onSubmit = { viewModel.submitClosing(it); pop() }, onLater = { pop() })
+                Route.CLOSING -> ClosingScreen(comparison = study.comparison, onSubmit = { viewModel.submitClosing(it); pop() }, onLater = { pop() })
                 Route.FEEDBACK -> FeedbackScreen(onSend = { stars, comment -> viewModel.submitFeedback(stars, comment); pop() }, onBack = { pop() })
                 Route.REPORT -> ReportScreen(onSend = { text, attach -> viewModel.submitReport(text, attach); pop() }, onBack = { pop() })
               }

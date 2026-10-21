@@ -139,12 +139,13 @@ internal fun SignalScreen(
 }
 
 /**
- * B5. Si sonó, primero van tres preguntas de un toque (protocolo 02) y después «¿Qué decidiste?», como en
- * las láminas «Tres preguntas» y «¿Qué decidiste?». Las tres respuestas tienen el mismo tamaño, color y
+ * B5. Si sonó, primero van cuatro preguntas de un toque (protocolo 02; la primera, desde la 3.3) y después
+ * «¿Qué decidiste?», como en las láminas «Tres preguntas» y «¿Qué decidiste?». Las tres respuestas tienen el mismo tamaño, color y
  * lugar; tocar una la marca y termina. Todo se puede saltar.
  */
 @Composable
-internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, guided: Boolean = false, onAnswer: (String, String?, String?, String?) -> Unit) {
+internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, guided: Boolean = false, onAnswer: (String, String?, String?, String?, String?) -> Unit) {
+  var noticed by rememberSaveable { mutableStateOf<String?>(null) }
   var knew by rememberSaveable { mutableStateOf<String?>(null) }
   var recalled by rememberSaveable { mutableStateOf<String?>(null) }
   var feeling by rememberSaveable { mutableStateOf<String?>(null) }
@@ -160,7 +161,7 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
   var phase by rememberSaveable { mutableIntStateOf(if (askSignalQuestions) 0 else 1) }
   val scope = rememberCoroutineScope()
   val colors = Relevo.colors
-  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { ask }, recalled.takeIf { ask }, feeling.takeIf { ask })
+  fun finish(outcome: String) = onAnswer(outcome, knew.takeIf { ask }, recalled.takeIf { ask }, feeling.takeIf { ask }, noticed.takeIf { ask })
   fun choose(outcome: String) {
     if (chosen != null) return
     chosen = outcome
@@ -170,7 +171,7 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
   RelevoScreen(
     leading = { Chip("Después de la señal", background = colors.peach, color = colors.onTile) },
     trailing = { PlainAction("Saltar", { finish("not_answered") }, color = colors.graphite) },
-    title = if (phase == 0) "Tres preguntas de un toque" else null,
+    title = if (phase == 0) "Cuatro preguntas de un toque" else null,
     bottom = if (phase == 0) ({ RelevoButton("Seguir", { phase = 1 }) }) else null,
   ) {
     // La nota de la guía va una sola vez: con las preguntas si las hay; si no, con «¿Qué decidiste?».
@@ -179,6 +180,11 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
       Spacer(Modifier.height(Gap.block))
     }
     if (phase == 0) {
+      // Percibir la señal es el primer paso para recordar (protocolo 02); compara el teléfono con el objeto (2.33).
+      Question("¿Notaste el aviso apenas sonó?") {
+        SegmentedControl(listOf("enseguida" to "Enseguida", "tarde" to "Un rato después", "no" to "No lo noté"), noticed, { noticed = it })
+      }
+      Spacer(Modifier.height(Gap.section))
       Question("¿Cómo te cayó el sonido?") { FacePicker(feelingFaces, feeling, { feeling = it }) }
       Spacer(Modifier.height(Gap.section))
       Question("Cuando sonó, ¿supiste qué querías hacer antes de leerlo en la pantalla?") {
