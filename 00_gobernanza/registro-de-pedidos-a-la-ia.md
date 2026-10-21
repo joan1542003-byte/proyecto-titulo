@@ -160,6 +160,7 @@
 | 20 oct. | Consulta | Preguntó si la IA modificó la memoria y qué partes. | Respuesta en la conversación: los pasajes con datos de la prueba, cambiados en dos commits del mismo día, con su lista. La versión A3 no se regeneró. | — |
 | 20 oct. | Observación | Cada vez que se hace algo se dicen las cosas malas: el proyecto se describe de forma demasiado negativa. | La IA reconoció el problema: límites repetidos, logros contados con «solo» y frases negativas desactualizadas. Propuso revisar el tono de la memoria sin cambiar los datos. | — |
 | 20 oct. | Encargo | Anotar esa revisión como tarea en GitHub, para hacerla cuando el autor lo diga. | [Por hacer](por-hacer.md), tarea 1, en espera, y el Issue [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14), creado cuando el autor inició sesión en GitHub en este equipo. | — |
+| 20 oct. | Encargo | Una presentación breve en Figma Slides de lo que hay hasta ahora, con preguntas para los profesores, capturas de la app y datos de las personas usuarias. Simple, directa y con el estilo visual nuevo, no el antiguo. | [Presentación de 8 láminas](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) en la línea 3.0: Instrument Sans, logo de cuatro luces y paleta 2, con el tono de la del 14 de octubre. Incluye la idea, lo que tengo, 5 capturas reales de la app 3.3, los resultados de las tres personas al 19 de octubre, lo que dijeron y lo que cambió, lo que sigue y 7 preguntas. Las preguntas son una propuesta para que el autor las ajuste. | — |
 
 ## Lo que muestra el registro
 
@@ -170,6 +171,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Presentación en Figma
+
+- **Qué cambió:** se registró la presentación breve en Figma Slides.
+- **Cómo estaba antes:** terminaba en el Issue del tono de la memoria.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-20 — Tono de la memoria
 
