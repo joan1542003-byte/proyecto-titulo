@@ -157,6 +157,9 @@
 | 20 oct. | Entrega | Entregó los datos de las dos personas que faltaban, exportados desde sus teléfonos. | La IA no los usó y concluyó, sin preguntar, que no venían de los teléfonos, porque coincidían fila por fila con dos archivos marcados como simulados. | — |
 | 20 oct. | Corrección | El Excel lo armó el autor con los datos que le entregaron las personas; lo marcado como simulado fue un intento anterior de Claude de darle formato. Los códigos son aleatorios y no los generó la app, pero el contenido es de las personas, que lo entregaron en parte como archivos y en parte como capturas o mensajes. No asumir sin preguntar. | Datos unidos hasta el 19 de octubre con [unir-datos.js](../07_validacion/analisis/README.md), que ahora lee ese Excel. El [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) informa a las tres personas: 31 ciclos, 23 señales del Tag y 21 respuestas. Se declara el paso por la planilla como amenaza a la validez. | — |
 | 20 oct. | Encargo | Continuar con lo pendiente. | [Android 3.3](../06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md): la línea visual nueva recibe los arreglos del Tag de la 2.31 y la 2.32 y la semana para comparar de la 2.33. Probada en el emulador sobre los datos del autor, que se restauraron después; APK publicado en el repositorio. Lo demás pendiente depende del autor: instalar la 2.33 en el teléfono de la participante y, al terminar la semana, sumar sus respuestas. | D-138 |
+| 20 oct. | Consulta | Preguntó si la IA modificó la memoria y qué partes. | Respuesta en la conversación: los pasajes con datos de la prueba, cambiados en dos commits del mismo día, con su lista. La versión A3 no se regeneró. | — |
+| 20 oct. | Observación | Cada vez que se hace algo se dicen las cosas malas: el proyecto se describe de forma demasiado negativa. | La IA reconoció el problema: límites repetidos, logros contados con «solo» y frases negativas desactualizadas. Propuso revisar el tono de la memoria sin cambiar los datos. | — |
+| 20 oct. | Encargo | Anotar esa revisión como tarea en GitHub, para hacerla cuando el autor lo diga. | [Por hacer](por-hacer.md), tarea 1, en espera. No se pudo crear un Issue: GitHub no tiene sesión iniciada en este equipo. | — |
 
 ## Lo que muestra el registro
 
@@ -167,6 +170,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Tono de la memoria
+
+- **Qué cambió:** se registraron la consulta sobre la memoria, la observación sobre el tono y la tarea en espera.
+- **Cómo estaba antes:** terminaba en la 3.3.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-20 — Android 3.3
 
