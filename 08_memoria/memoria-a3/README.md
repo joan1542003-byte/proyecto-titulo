@@ -117,6 +117,12 @@ Otros archivos:
 
 ## Registro de cambios (disclaimer)
 
+### 2026-10-20 — Memoria con el tono revisado
+
+- **Qué cambió:** se regeneró con el borrador v5 revisado (logros primero, límites una sola vez, tres personas en la prueba). Las cápsulas de estado reconocen «En curso» y «Avanzado».
+- **Cómo estaba antes:** la versión A3 era del 13 de octubre, con los resultados de una persona.
+- **Por qué:** el autor pidió actualizar la memoria con los datos nuevos y revisar su tono.
+
 ### 2026-10-13 — Letra grande, aire y viudas sobre el diseño del 12 de octubre
 
 - **Qué cambió:** el generador se rehízo. Vuelven los paneles de aura, la portada con el ejemplo de la app, las fichas del índice y de los anexos y las frases sobre el aura; el texto pasa a 14 pt; el reparto es línea por línea; el generador escribe también el HTML y el PDF. Se instaló Instrument Sans y se añadió su cursiva. Este documento se reescribió entero.

@@ -40,6 +40,8 @@ Cerrado sin necesitar decisiones del autor:
 - **Punto 1, cerrado:** los datos de las dos personas sin conexión llegaron y se unieron hasta el 19 de octubre. Son 31 ciclos y 23 señales del Tag, con 21 respuestas. La memoria los informa en el resumen, el abstract, las tablas, los resultados y las conclusiones.
 - **Punto 2, para la persona que pasa al teléfono:** la [app 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) hace en la app las escalas de las semanas anteriores, la pregunta tras cada relevo, la tarjeta del día 7 y un cierre que compara el objeto con el teléfono (D-138). Falta instalarla e iniciar la semana C en su teléfono. La línea 3.x ya lo tiene, en la [3.3](../06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md).
 
+- **Memoria, tono (tarea 1 de Por hacer):** los logros van primero en el resumen, el abstract, los resultados y las conclusiones; las carencias se dicen como decisiones y los límites quedan una sola vez, en «Alcance de la prueba y amenazas a la validez». Ninguna cifra cambió. La versión A3 se regeneró (53 páginas). Queda en revisión del autor.
+
 Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los datos por confirmar de la memoria (ahora 22); la decisión sobre la notificación; los Issues y PR viejos de GitHub (no hay acceso de escritura desde esta sesión); y aplicar la ficha y exportar los datos de las otras dos personas.
 
 ## Plazos
@@ -210,6 +212,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Tono de la memoria
+
+- **Qué cambió:** el avance suma la revisión de tono de la memoria.
+- **Cómo estaba antes:** terminaba en la 3.3.
+- **Por qué:** el autor pidió hacer la tarea 1 de Por hacer.
 
 ### 2026-10-20 — Android 3.3
 

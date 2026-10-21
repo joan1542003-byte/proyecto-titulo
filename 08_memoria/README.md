@@ -90,6 +90,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-10-20 — Revisión de tono del borrador v5
+
+- **Cambio:** el borrador v5 cuenta los logros primero (resumen, abstract, resultados y conclusiones), dice las carencias como decisiones de diseño y deja los límites una sola vez, en «Alcance de la prueba y amenazas a la validez». La Tabla 7 suma la 2.33 y la 3.3, y las conclusiones cierran con «Alcances y proyecciones». La versión A3 se regeneró (53 páginas).
+- **Versión anterior:** los límites se repetían en casi todas las secciones, los logros se contaban con «solo» y «a medias», y algunas frases negativas estaban desactualizadas, como que la respuesta de diseño seguía «sin probar con personas».
+- **Motivo:** el autor pidió que la memoria dejara de parecer una disculpa (tarea 1 de [Por hacer](../00_gobernanza/por-hacer.md)).
+- **Alcance:** no cambió ninguna cifra, cita, pregunta, hipótesis ni objetivo. Resumen y abstract: 299 y 300 palabras. Capítulos 1 a 14: 19 288 palabras; con agradecimientos, resumen y abstract, 19 969. El detalle está en las [notas del borrador](notas-del-borrador-v5-2026-10-11.md#revisión-de-tono-del-20-de-octubre-de-2026).
+
 ### 2026-10-20 — Resultados de las tres personas
 
 - **Cambio:** el borrador v5 informa los resultados de las tres personas al 19 de octubre: 31 ciclos, 23 señales y 21 respuestas.
