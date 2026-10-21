@@ -163,6 +163,7 @@
 | 20 oct. | Encargo | Una presentación breve en Figma Slides de lo que hay hasta ahora, con preguntas para los profesores, capturas de la app y datos de las personas usuarias. Simple, directa y con el estilo visual nuevo, no el antiguo. | [Presentación de 8 láminas](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) en la línea 3.0: Instrument Sans, logo de cuatro luces y paleta 2, con el tono de la del 14 de octubre. Incluye la idea, lo que tengo, 5 capturas reales de la app 3.3, los resultados de las tres personas al 19 de octubre, lo que dijeron y lo que cambió, lo que sigue y 7 preguntas. Las preguntas son una propuesta para que el autor las ajuste. | — |
 | 20 oct. | Encargo | Revisar el repositorio, que tiene cambios y datos nuevos de la prueba, actualizar la memoria y hacer la tarea de «Por hacer»: que la memoria deje de parecer una disculpa, aclarar los fallos y hablar más de los logros. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md): resumen, abstract, resultados y conclusiones abren con lo logrado; carencias dichas como decisiones; límites en un solo lugar; Tabla 7 con la 2.33 y la 3.3. Ninguna cifra ni cita cambió ([notas](../08_memoria/notas-del-borrador-v5-2026-10-11.md#revisión-de-tono-del-20-de-octubre-de-2026)). [Versión A3](../08_memoria/memoria-a3/README.md) regenerada: 53 páginas. La tarea 1 de [Por hacer](por-hacer.md) queda en revisión del autor. | — |
 | 20 oct. | Corrección | A la presentación le falta explicar la identidad y el diseño de Relevo; las pruebas empezaron antes (la primera fue un miércoles, con la participante del Tag); desglosar mejor lo que sigue y resumir los títulos y el contenido de las secciones principales de la memoria. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 12 láminas. Suma «La identidad» (las cuatro luces y su papel), «El diseño» (fichas por papel, siete cielos, íconos y letra) y «El objeto y la señal» (testigo, pulso ambiental y Tag). También suma «La memoria», con 10 capítulos resumidos. «Lo que sigue» pasa a carta Gantt por etapas, con el calendario oficial, los cierres internos y el plan del taller. El registro confirma la fecha: el 6 de octubre se anotó que el primer testeo empezaba al día siguiente, el miércoles 7; sus datos de ese día eran de la puesta a punto del Tag y ya no están en Supabase. | — |
+| 20 oct. | Encargo | Citar las fuentes de las elecciones de la identidad (colores, tipografía de la app y del logotipo, etc.) en láminas dedicadas a los fundamentos de la identidad visual, con fotos de los autores o de los libros si es posible. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 18 láminas, con cinco nuevas sobre el logo, la letra, la evidencia del color, cada color y el nombre, y una lámina final con 24 referencias en APA. Cada fuente lleva el hallazgo y cómo se aplica en Relevo, según los documentos 17, 39, 40 y 41 y el capítulo 11 de la memoria. Los autores de las letras se verificaron en Google Fonts y Fontshare: Chillax es de Manushi Parikh (Indian Type Foundry), e Instrument Sans, de Rodrigo Fuenzalida, diseñador venezolano radicado en Santiago, y Jordan Egstad. Con el permiso del autor se descargaron fuera del repositorio seis imágenes con su crédito: Michael Bierut y David Aaker (CC BY 2.0), el logo de Slack (dominio público), la portada de *Building Strong Brands* (Open Library) y las imágenes de los diseñadores de Instrument Sans (Google Fonts). | — |
 
 ## Lo que muestra el registro
 
@@ -173,6 +174,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Fundamentos de la identidad
+
+- **Qué cambió:** se registraron las láminas de fundamentos y referencias de la identidad.
+- **Cómo estaba antes:** terminaba en la presentación ampliada.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-20 — Presentación ampliada
 
