@@ -99,7 +99,28 @@ Estas notas describen el borrador al 11 de octubre; lo que sigue es lo que cambi
   - En resultados: los dos límites, que son la señal fuera de casa y que recordar no equivale a empezar.
 - **Marcadores:** se resolvió el de las otras dos personas, porque los datos muestran sus fechas, el Tag, el consentimiento v13 y que no tienen condición asignada. Se añadió uno para confirmar que las tres son mayores de edad. Siguen 22.
 
+## Revisión de tono del 20 de octubre de 2026
+
+El autor pidió que la memoria dejara de sonar como una disculpa: los logros, dichos con seguridad; los límites, una sola vez y en su lugar. Es la tarea 1 de [Por hacer](../00_gobernanza/por-hacer.md) y el Issue [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14). No cambió ninguna cifra, cita, pregunta, hipótesis ni objetivo.
+
+- **Resumen y abstract:** los resultados abren con lo logrado: el ciclo completo funcionó en los tres hogares, el Tag sonó en 23 de 24 ciclos, en 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla y en las 21 recordó cómo empezar. La comparación pasa de «sigue sin contrastar» a «el paso siguiente, ya implementado». Quedan en 299 y 300 palabras.
+- **Resultados (capítulo 13):** primero el dato fuerte; los dos límites se cuentan como hallazgos de diseño: la señal situada pertenece al lugar de la actividad, y recordar no obliga a empezar, que es lo que pide el criterio 4. Los comentarios de uso se leen como aportes al diseño. Las limitaciones de los datos remiten a «Alcance de la prueba y amenazas a la validez».
+- **Conclusiones:** la primera parte de la pregunta ya no dice «aún sin probar con personas»: la respuesta de diseño funciona en tres hogares. El párrafo de límites pasa a «Alcances y proyecciones», breve y al final. La Tabla 11 se nombra después de los logros: obj. 1 «Cumplido»; obj. 2 «Cumplido con un objeto comercial»; obj. 3 «En curso»; obj. 4 «Avanzado».
+- **Carencias que son decisiones:** el testigo «no se ha construido» pasa a «para probar la relación entre señal y lugar antes de fabricarlo, el prototipo usa un localizador comercial» (resumen, capítulo 10 y glosario); la forma del testigo «está especificada»; el pitido del Tag deja de ser «un límite del prototipo» y pasa a ser la razón de que la prueba examine el lugar y la asociación, y no el sonido.
+- **Tablas 5 y 8:** «Parcial» pasa a la función que existe: el lugar lo declara la persona; el ciclo se activa en la aplicación y el testigo sumaría un control físico. La nota de la Tabla 5 dice que las tres personas recorrieron el ciclo completo con el Tag.
+- **Límites en un solo lugar:** se quitaron repeticiones del capítulo 13 (la prueba del 7 de octubre, lo que el Tag no permite, la preferencia de la encuesta), del 10 (las cifras de la encuesta, que están en los capítulos 7 y 9), del 5, del 7 y del 12. El primer paso sugerido por la aplicación pasó del capítulo 11 al alcance de la prueba.
+- **Puesto al día:** la Tabla 7 suma la 2.33 y la 3.3; la verificación técnica cuenta 87 pruebas en la 3.3 y la 2.33; el alcance del Bluetooth ya está observado («sonó en todos los ciclos que se activaron en casa»); el piloto del capítulo 12 parte de lo que la prueba ya mostró; la Tabla 8 registra la carga de la pila.
+- **Dos frases se dejaron:** «Son riesgos inferidos, no observados» (capítulo 7) y «que el autor aún debe revisar» (uso de inteligencia artificial), porque separan lo observado de lo inferido y declaran una revisión pendiente.
+- **Extensión:** 19 288 palabras en los capítulos 1 a 14; 19 969 con agradecimientos, resumen y abstract; 20 291 desde la portada hasta antes de «Referencias», con los índices. Antes de la revisión eran 19 519, 20 214 y 20 489.
+- **Versión A3:** se regeneró (53 páginas). La Tabla 11 queda en las páginas de conclusiones.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Revisión de tono
+
+- **Qué cambió:** se añadió la revisión de tono del 20 de octubre.
+- **Cómo estaba antes:** la última actualización informaba los resultados de las tres personas.
+- **Por qué:** el autor pidió contar los logros con seguridad y dejar los límites una sola vez.
 
 ### 2026-10-20 — Resultados de las tres personas
 

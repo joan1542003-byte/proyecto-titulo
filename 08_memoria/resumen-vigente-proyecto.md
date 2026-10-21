@@ -11,7 +11,7 @@ Relevo es un sistema *phygital*, con un componente físico y uno digital, para q
 3. Deja un objeto junto a ese primer paso.
 4. Al cumplirse el tiempo, el objeto suena desde ahí y la persona decide qué hacer.
 
-No bloquea el teléfono ni comprueba si la actividad se hizo. El objeto propuesto, el testigo, no se ha construido: en el prototipo lo sustituye el Tag, un localizador Bluetooth comercial.
+No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la relación entre señal y lugar antes de fabricar el objeto propuesto, el testigo, el prototipo usa el Tag, un localizador Bluetooth comercial.
 
 **Hipótesis** (D-091): «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Se basa en el marco multiproceso de la memoria prospectiva (McDaniel y Einstein, 2000).
 
@@ -24,19 +24,20 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. El objeto propuest
   - 86 pruebas automáticas; consentimiento v13; datos seudonimizados en Supabase y en una copia en el teléfono.
   - Su arquitectura completa está en [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md), con [wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
 - **Prueba en casa:** tres personas desde octubre.
-  - Del 8 al 19 de octubre, las tres usaron el Tag: 31 ciclos, 24 completados, y el Tag sonó en 23. El ciclo restante se activó fuera de casa.
-  - Tras 21 señales respondidas, declararon saber qué querían hacer en 19 y a medias en 2, recordaron el primer paso en las 21 y empezaron la actividad en 10.
+  - Del 8 al 19 de octubre, el ciclo completo funcionó en los tres hogares: el Tag sonó en 23 de 24 ciclos; el otro se activó fuera de casa.
+  - En las 21 respuestas recordaron cómo empezar; en 19 supieron qué querían hacer antes de leerlo en la pantalla (en 2, a medias) y en 10 decidieron empezar la actividad.
+  - Los fallos del Tag que reportaron se atendieron en las versiones 2.31 y 2.32.
   - Los datos de dos personas los entregaron ellas, en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla. Se unen con [unir-datos.js](../07_validacion/analisis/README.md).
   - Desde el 20 de octubre, una de ellas prueba una semana solo con la notificación del teléfono (app 2.33, D-138).
   - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
-- **Memoria:** borrador v5 con unas 19.100 palabras en los capítulos 1 a 14, diagramado en [A3](memoria-a3/README.md), con 22 datos por confirmar y 6 figuras pendientes.
+- **Memoria:** borrador v5 con 19 288 palabras en los capítulos 1 a 14, revisado el 20 de octubre para contar los logros primero y los límites una sola vez, y diagramado en [A3](memoria-a3/README.md) (53 páginas). Tiene 22 datos por confirmar; de sus seis figuras, cuatro ya están dibujadas en la versión A3 y faltan la fotografía del Tag y las capturas definitivas.
 - **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
 
 ## Qué falta
 
 El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md). Lo principal es:
 
-- contrastar la hipótesis, aunque sea con una semana en el teléfono, o reformular su alcance;
+- la comparación entre lugares y soportes, ya implementada: una primera semana con el teléfono empezó el 20 de octubre;
 - un objeto con forma propia;
 - fotos del uso;
 - las escalas y la entrevista de cierre;
@@ -45,6 +46,12 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Logros primero
+
+- **Qué cambió:** el resumen cuenta los resultados y el objeto con el mismo tono que la memoria revisada: el ciclo validado en tres hogares y el Tag como decisión para probar antes de fabricar. Suma las correcciones del Tag y el estado de la memoria y sus figuras.
+- **Cómo estaba antes:** decía que el testigo «no se ha construido», contaba los resultados empezando por los ciclos y pedía «contrastar la hipótesis o reformular su alcance».
+- **Por qué:** el autor pidió revisar el tono de la memoria (tarea 1 de [Por hacer](../00_gobernanza/por-hacer.md)).
 
 ### 2026-10-20 — Resultados de las tres personas
 

@@ -348,8 +348,8 @@ let uid = 0;
 const marca = () => MARCA.mark.replace(/IDX_/g, `m${uid++}_`);
 const lockup = () => MARCA.lockup.replace(/IDX_/g, `l${uid++}_`);
 const mayus = (s) => s.replace(/^\p{Ll}/u, (c) => c.toUpperCase());
-const ESTADO = /^(Implementado|Cumplido|Parcial|Pendiente)\b[;:,]?\s*/;
-const CAPSULA = { Implementado: 'lleno', Cumplido: 'lleno', Parcial: '', Pendiente: 'hueco' };
+const ESTADO = /^(Implementado|Cumplido|Avanzado|En curso|Parcial|Pendiente)\b[;:,]?\s*/;
+const CAPSULA = { Implementado: 'lleno', Cumplido: 'lleno', Avanzado: '', 'En curso': '', Parcial: '', Pendiente: 'hueco' };
 // Icono de la aplicación que acompaña a cada fila, según cómo empieza su primera celda. Sin icono, la fila lleva su número.
 const ICONOS = [
   [/^Medición del uso/, 'avance'], [/^Pausa antes/, 'pausar'], [/^Intención preguntada/, 'ayuda'], [/^Bloqueo/, 'privacidad'], [/^Separación física/, 'telefono'], [/^Objeto de foco/, 'estrella'], [/^Recordatorio tangible/, 'avisos'], [/^Localizador/, 'tag'],
@@ -575,24 +575,27 @@ const lineasDe = (b) => Math.max(1, Math.round(alto[b.id] / PT / E[b.estilo].int
 
 // ---------------------------------------------------------------- Reparto en páginas, línea por línea
 
-const paginas = [];                                    // páginas del cuerpo
+let paginas = [];                                      // páginas del cuerpo
 const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, flot: [], paneles: [], frases: [], marcos: [], rotulo: null, rotuloPieza: null }); return paginas[i]; };
 const colTop = (i) => TOP + (pag(i).banda ? pag(i).banda + AIRE_BANDA : 0);
 const altoCol = (i) => BOTTOM - colTop(i);
 const soloPiezas = (i) => pag(i).banda > 0 && altoCol(i) < MIN_TEXTO;
-const cur = { p: 0, k: 0 };                            // la primera columna libre
+let cur = { p: 0, k: 0 };                              // la primera columna libre
 const normalizar = () => { while (soloPiezas(cur.p)) { cur.p++; cur.k = 0; } };
 const siguiente = () => { cur.k++; if (cur.k === 3) { cur.k = 0; cur.p++; } normalizar(); };
 const paginaNueva = () => { if (cur.k !== 0) { cur.k = 0; cur.p++; } normalizar(); };
 let ultimaConPieza = 0;
 
+function ubicar(b, q, seccion) {
+  const pg = pag(q);
+  b.pagina = q; b.y = TOP + (pg.banda ? pg.banda + AIRE_PIEZAS : 0);
+  pg.banda = b.y - TOP + b.pieza.alto; pg.flot.push(b); if (!pg.rotulo) pg.rotuloPieza = seccion;
+}
 /** Una tabla o figura va arriba de la página siguiente a su mención; si no cabe con las que ya hay, en la que sigue. */
 function programar(b, p, seccion) {
   const a = b.pieza.alto; let q = Math.max(p + 1, ultimaConPieza);
   while (pag(q).banda > 0 && pag(q).banda + AIRE_PIEZAS + a > BOTTOM - TOP) q++;
-  const pg = pag(q);
-  b.pagina = q; b.y = TOP + (pg.banda ? pg.banda + AIRE_PIEZAS : 0);
-  pg.banda = b.y - TOP + a; pg.flot.push(b); if (!pg.rotulo) pg.rotuloPieza = seccion; ultimaConPieza = q;
+  ubicar(b, q, seccion); ultimaConPieza = q;
 }
 
 function componer(c) {
@@ -661,10 +664,17 @@ function componer(c) {
   if (c.marcos.length) c.marcos[c.marcos.length - 1].ultimo = true;
   if (marco || y > 0) siguiente();
 }
-cuerpo.forEach(componer);
-// Anexos: página propia, con su panel y sus fichas.
-paginaNueva(); while (pag(cur.p).banda > 0) cur.p++;
-const pgAnexos = cur.p; pag(pgAnexos).rotulo = { titulo: 'Anexos' };
+/** Reparte todo el cuerpo y devuelve la página de los anexos. */
+function repartir() {
+  paginas = []; cur = { p: 0, k: 0 }; ultimaConPieza = 0;
+  cuerpo.forEach((c) => c.bloques.forEach((b) => { delete b.extra; }));
+  cuerpo.forEach(componer);
+  // Anexos: página propia, con su panel y sus fichas.
+  paginaNueva(); while (pag(cur.p).banda > 0) cur.p++;
+  return cur.p;
+}
+const pgAnexos = repartir();
+pag(pgAnexos).rotulo = { titulo: 'Anexos' };
 const total = Math.max(pgAnexos, ultimaConPieza) + 1; pag(total - 1);
 paginas.forEach((pg, q) => { if (!pg.rotulo) pg.rotulo = pg.rotuloPieza || (paginas.slice(0, q).reverse().find((x) => x.rotulo) || {}).rotulo; });
 const numPag = (q) => q + PRIMERA;

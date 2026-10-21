@@ -4,7 +4,7 @@ Tareas acordadas con el autor que esperan su indicación para empezar. Cada una 
 
 ## 1. Memoria: contar los logros con seguridad y dejar los límites una sola vez
 
-**Estado:** en espera; se hace solo cuando el autor lo pida. **Anotada:** 20 de octubre de 2026. **Issue:** [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14).
+**Estado:** hecha el 20 de octubre de 2026, a pedido del autor; en revisión del autor antes de cerrarla. **Anotada:** 20 de octubre de 2026. **Issue:** [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14).
 
 ### Por qué
 
@@ -18,16 +18,20 @@ Un jurado espera los resultados dichos con seguridad, y los límites una vez, en
 
 ### Qué hacer
 
-- [ ] **Resumen y abstract:** abrir los resultados con lo logrado. Por ejemplo: el ciclo completo funcionó en tres hogares, el Tag sonó en 23 de 24 ciclos y en 19 de 21 respuestas la persona supo qué quería hacer antes de mirar la pantalla.
-- [ ] **Capítulo 13, resultados:** poner primero el dato fuerte. Los dos límites (la señal fuera de casa; recordar no es empezar) se dicen como hallazgos útiles para el diseño, no con «También muestran dos límites».
-- [ ] **Conclusiones:**
+- [x] **Resumen y abstract:** abrir los resultados con lo logrado. Por ejemplo: el ciclo completo funcionó en tres hogares, el Tag sonó en 23 de 24 ciclos y en 19 de 21 respuestas la persona supo qué quería hacer antes de mirar la pantalla.
+- [x] **Capítulo 13, resultados:** poner primero el dato fuerte. Los dos límites (la señal fuera de casa; recordar no es empezar) se dicen como hallazgos útiles para el diseño, no con «También muestran dos límites».
+- [x] **Conclusiones:**
   - Corregir «solo la primera tiene respuesta: de diseño, y aún sin probar con personas». Ya no es cierto: lo usaron tres personas durante 10 a 12 días.
   - Convertir el último párrafo de límites en «Alcances y proyecciones», corto y al final, después de los logros.
-- [ ] **Carencias que son decisiones:** reescribirlas como decisiones de diseño. Por ejemplo:
+- [x] **Carencias que son decisiones:** reescribirlas como decisiones de diseño. Por ejemplo:
   - «el testigo propio no existe» pasa a «el prototipo usa un Tag comercial para probar la relación entre señal y lugar antes de fabricar un objeto propio»;
   - «la hipótesis sigue sin contrastar» pasa a «esta etapa validó el ciclo; la comparación entre lugares ya está implementada y es el siguiente paso».
-- [ ] **Límites repetidos:** dejarlos en un solo lugar, «Alcance de la prueba y amenazas a la validez», y que el resto remita ahí. Revisar «no se ha probado», «no existe», «en parte» y «sin contrastar».
-- [ ] **Al terminar:** actualizar el resumen vigente, las notas del borrador y el registro de pedidos. Si el autor lo pide, regenerar la versión A3.
+- [x] **Límites repetidos:** dejarlos en un solo lugar, «Alcance de la prueba y amenazas a la validez», y que el resto remita ahí. Revisar «no se ha probado», «no existe», «en parte» y «sin contrastar».
+- [x] **Al terminar:** actualizar el resumen vigente, las notas del borrador y el registro de pedidos. Si el autor lo pide, regenerar la versión A3.
+
+### Qué se hizo
+
+El detalle, con cada cambio, está en las [notas del borrador](../08_memoria/notas-del-borrador-v5-2026-10-11.md#revisión-de-tono-del-20-de-octubre-de-2026). No cambió ninguna cifra ni cita; el resumen y el abstract quedan en 299 y 300 palabras. La versión A3 se regeneró. Falta que el autor revise los cambios y, si los aprueba, cerrar el Issue #14.
 
 ### Reglas
 
@@ -37,6 +41,12 @@ Un jurado espera los resultados dichos con seguridad, y los límites una vez, en
 - Mostrar al autor los cambios antes de darlos por cerrados.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Tarea 1 hecha
+
+- **Qué cambió:** la tarea 1 pasa a hecha, en revisión del autor, con sus casillas marcadas y un enlace al detalle.
+- **Cómo estaba antes:** estaba en espera.
+- **Por qué:** el autor pidió hacerla.
 
 ### 2026-10-20 — Creación
 
