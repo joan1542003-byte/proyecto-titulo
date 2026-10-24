@@ -19,14 +19,14 @@ Fecha de corte: 11 de octubre de 2026. Base: `memoria-vigente-v4.md` (29 de sept
 - 58 afirmaciones atribuían a su fuente algo más fuerte o distinto de lo que dice; se reescribieron. Ninguna cifra quedó sin comprobar.
 - **Decisiones de formato que puedes revertir con buscar y reemplazar:** números sin punto de millares (1315; 24 990), como pide la norma académica del español, y «Ley 19628», como la titula la Biblioteca del Congreso. Si tu Escuela prefiere el uso chileno (1.315; Ley N.º 19.628), cámbialo en todo el texto.
 
-## Lo que solo tú puedes completar (24 marcadores `[CONFIRMAR: …]`)
+## Lo que solo tú puedes completar (23 marcadores `[CONFIRMAR: …]`)
 
 1. **Portada:** denominación oficial del título y mención; tu nombre legal completo.
 2. **Prueba de 21 días:** fecha real de la sesión inicial, objeto usado, secuencia, versión de la aplicación, y si el consentimiento se revisó antes. Si empezó antes de esa revisión, hay que declararlo como desviación del plan. Después, los **resultados reales** (cap. 13, resumen, Tabla 11 y conclusiones).
 3. **Entrevistas:** si hubo grabación de audio y con qué se transcribieron.
 4. **Encuesta:** fecha y convocatoria; su relación con la encuesta de 70 participantes registrada el 2 de septiembre; en qué consistió la edición de las respuestas; y tu revisión de la clasificación hecha por la herramienta de IA (de ella dependen cinco cifras, hoy declaradas provisionales).
 5. **Uso de IA:** herramientas anteriores a fines de septiembre y sus versiones.
-6. **Objeto:** medidas y peso del Tag; una fuente citable del localizador que compraste.
+6. **Objeto:** medidas y peso del Tag; una fuente citable del localizador que compraste; quién tomó las fotos de la Figura 4, la autorización para publicarlas y de quién es el lugar de la foto c.
 7. **Marca:** la frase definitiva (hoy conviven «Hazle lugar a lo que quieres hacer» y la firma «Vuelve a ___»).
 8. **Costos (Tabla 9):** montos pagados, plan del servicio remoto, suscripciones, financiamiento.
 9. **Ética:** si la Escuela exige alguna instancia de revisión.
@@ -114,6 +114,17 @@ El autor pidió que la memoria dejara de sonar como una disculpa: los logros, di
 - **Extensión:** 19 288 palabras en los capítulos 1 a 14; 19 969 con agradecimientos, resumen y abstract; 20 291 desde la portada hasta antes de «Referencias», con los índices. Antes de la revisión eran 19 519, 20 214 y 20 489.
 - **Versión A3:** se regeneró (53 páginas). La Tabla 11 queda en las páginas de conclusiones.
 
+## Fotos, lecturas y recorte del 20 de octubre de 2026
+
+El autor entregó tres fotos y su carpeta de bibliografía, aprobó los estados de los objetivos (D-139) y pidió recortar un poco más sin alterar el contenido.
+
+- **Figura 4 (D-140):** tres fotos de la prueba en el hogar: a) un relevo preparado y el Tag en la mano, el 7 de octubre; b) el Tag sobre un mueble del mismo hogar, ese día; c) el Tag sobre un escritorio, el 17 de octubre. Sin metadatos ni GPS, con el nombre de la persona difuminado y sin otras pantallas, medicamentos ni otros objetos personales. Título nuevo en el texto y en el índice. Queda un marcador: quién tomó las fotos, la autorización para publicarlas y de quién es el lugar de c.
+- **Inicio de la prueba:** el capítulo 13 dice que comenzó el miércoles 7 de octubre de 2026, cuando una persona preparó un relevo con el Tag (Figura 4a) y las versiones 2.26 a 2.29 aseguraron que sonara. Respaldo: el pedido del 6 de octubre («el primer testeo empieza al día siguiente») y la corrección del 20 («la primera fue un miércoles»). Los registros siguen empezando el 8, el 9 y el 10. La semana con el teléfono sigue en el 20 de octubre (D-138).
+- **Lecturas (D-141):** seis fuentes nuevas, con página: Norman (capítulo 6), Fogg (capítulo 13), Nielsen (capítulos 10 y 13), Gembali (capítulos 6 y 12), Kolko (capítulo 9) y Sanders y Stappers (capítulo 7). El glosario cita a los autores de 11 conceptos. Ninguna referencia queda sin cita.
+- **Recorte:** 99 ajustes de redacción propuestos por un agente y revisados uno a uno (se rechazaron 3 que quitaban contenido: una inferencia sobre Smit et al., el término «de forma espontánea» y la redacción del criterio 4), y 18 más de la IA, en frases que repetían lo dicho en otra parte o en una tabla. El detalle técnico del Tag queda en la Tabla 7 y en el Anexo G; los resultados, en «Resultados»; la revisión del consentimiento, en «Consideraciones éticas».
+- **Extensión:** capítulos 1 a 14, 19 106 palabras (antes 19 288); con agradecimientos, resumen y abstract, 19 784 (antes 19 969); desde la portada hasta antes de «Referencias», 20 121 (antes 20 291). El resumen y el abstract siguen en 299 y 300. Marcadores: 23, uno nuevo en la Figura 4.
+- **Versión A3:** regenerada, 53 páginas; la Figura 4 ocupa dos columnas, con título y nota al lado.
+
 ## Anexos del 24 de octubre de 2026
 
 Los nueve anexos que la lista final nombra quedaron armados en [`anexos/`](anexos/README.md): un Markdown por anexo, una versión HTML y un PDF en A4, generados desde sus documentos fuente con `node construir-anexos.js`.
@@ -126,8 +137,14 @@ Los nueve anexos que la lista final nombra quedaron armados en [`anexos/`](anexo
 ### 2026-10-24 — Anexos
 
 - **Qué cambió:** se añadió la nota de los anexos del 24 de octubre.
-- **Cómo estaba antes:** la última actualización era la revisión de tono.
+- **Cómo estaba antes:** la última actualización era la de fotos, lecturas y recorte del 20 de octubre.
 - **Por qué:** el autor pidió terminar un pendiente de prioridad alta; la memoria remitía a anexos que no estaban armados.
+
+### 2026-10-20 — Fotos, lecturas y recorte
+
+- **Qué cambió:** se añadió la sección «Fotos, lecturas y recorte del 20 de octubre de 2026», y la lista de marcadores suma el de la Figura 4.
+- **Cómo estaba antes:** terminaba en la revisión de tono.
+- **Por qué:** registrar lo que cambió en el borrador por el pedido del autor.
 
 ### 2026-10-20 — Revisión de tono
 

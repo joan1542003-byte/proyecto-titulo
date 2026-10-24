@@ -40,7 +40,40 @@ El detalle, con cada cambio, está en las [notas del borrador](../08_memoria/not
 - No tocar la pregunta, la hipótesis ni los objetivos, que son texto del autor.
 - Mostrar al autor los cambios antes de darlos por cerrados.
 
+## 2. Memoria: decisiones pendientes tras revisar las guías de la Escuela
+
+**Estado:** en espera de decisiones del autor. **Anotada:** 20 de octubre de 2026.
+
+### Por qué
+
+El 20 de octubre se revisó la memoria contra las guías y clases de la carpeta de bibliografía del autor (D-141). Se aplicó lo que no requería decidir; esto otro sí:
+
+- [ ] **Fotos de la Figura 4:** quién las tomó, si las personas autorizan publicarlas (un mensaje escrito basta; conviene guardarlo con el consentimiento) y de quién es el lugar de la foto c.
+- [ ] **Antigüedad de las fuentes:** la charla de marco teórico pide, para el estado del arte, fuentes de no más de 5 años. La memoria declara «desde 2019» y usa antecedentes anteriores (Sohn et al., 2005; Hermann et al., 2007; Zekveld et al., 2017). Decidir si se explica la excepción (antecedentes de mecanismo sin equivalente reciente) o se buscan fuentes más nuevas.
+- [ ] **Uso de inteligencia artificial (capítulo 10):** la charla trata como plagio pegar texto de IA sin reelaborarlo. Precisar qué partes tuvieron borrador de IA y cómo se revisaron, y cerrar el marcador de herramientas y versiones.
+- [ ] **Fecha de consulta de las páginas web:** la memoria usa «Recuperado el … de» (APA 7 en español); la guía de material digital de la Escuela usa «Consultado el …». Elegir una forma para todo el documento.
+- [ ] **Color (capítulo 11):** un boletín de prensa de la UNAM respalda una decisión de color, y la clase de escritura pide evitar fuentes no especializadas. Reemplazarlo por el estudio de origen o quitarlo.
+- [ ] **Entrevistas (capítulo 7):** qué se informó en el consentimiento oral; si se evaluó la saturación; si los textos se anonimizaron antes de usar herramientas de IA.
+- [ ] **Indicadores:** la clase de estrategia pide un indicador de logro por objetivo. La memoria tiene umbrales para la etapa con seis personas y estados en la Tabla 11. Decidir si se agrega un indicador a cada objetivo.
+
+### Qué se hizo ya
+
+- Citas de los autores de 11 conceptos del glosario.
+- Un párrafo del capítulo 5 que eran tres oraciones sueltas.
+- La Figura 4, con título y nota en formato APA 7.
+
+### Reglas
+
+- No inventar consentimientos, fechas ni autorías.
+- Cada cambio de formato se aplica a todo el documento.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-20 — Tarea 2
+
+- **Qué cambió:** se añadió la tarea 2, con las decisiones pendientes tras revisar las guías de la Escuela.
+- **Cómo estaba antes:** solo estaba la tarea 1.
+- **Por qué:** la revisión del 20 de octubre (D-141) encontró puntos que solo el autor puede decidir.
 
 ### 2026-10-20 — Tarea 1 hecha
 

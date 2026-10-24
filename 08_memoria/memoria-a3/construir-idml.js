@@ -157,6 +157,10 @@ function bloques(lineas, estiloTexto = 'Texto') {
         const filas = [];
         while (i < lineas.length && /^\|/.test(lineas[i])) { filas.push(lineas[i].trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())); i++; }
         f.filas = [filas[0], ...filas.slice(2)];
+      } else if (/^!\[/.test(lineas[i])) {
+        // Fotografías: ![pie](ruta relativa a la memoria), varias en una línea.
+        f.fotos = [...lineas[i].matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)].map((m) => ({ pie: m[1], src: path.relative(AQUI, path.join(path.dirname(FUENTE), m[2])) }));
+        f.descripcion = ''; i++;
       } else {
         f.descripcion = lineas[i].trim().replace(/^\[FIGURA POR INSERTAR: |\]$/g, ''); i++;
       }
@@ -262,6 +266,10 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .fig2 img{width:100%;height:auto;display:block;border-radius:5.5mm;border:.3mm solid #E4DED6}
 .fig2 .pie{display:flex;align-items:center;gap:2.4mm;margin-top:3.5mm;font-size:11pt;line-height:14pt;font-weight:600}
 .fig2 .cir{width:6.6mm;height:6.6mm;font-size:9pt}
+.fot{display:grid;gap:5mm}
+.fot img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:5.5mm}
+.fot .pie{display:flex;align-items:flex-start;gap:2.4mm;margin-top:3.5mm}.fot .pie .n{flex:1;padding-top:.3mm}
+.fot .cir{width:6.6mm;height:6.6mm;font-size:9pt}
 .pend{border:.5mm dashed #6E6964;border-radius:6mm;padding:10mm 12mm;min-height:60mm;width:${DOBLE}mm;display:grid;align-content:center;justify-items:start;gap:4mm;background:rgba(255,255,255,.5);font-size:14pt;line-height:20pt;color:#6E6964}
 .fondo{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
 .panel{width:${COL}mm;border-radius:9mm;padding:9mm 9mm 9.5mm;display:flex;flex-direction:column;position:relative;border:.3mm solid rgba(20,19,18,.06);overflow:hidden}.panel>*{position:relative}.panel>.fondo{position:absolute}
@@ -373,6 +381,7 @@ function pieza(id, ancho, armar) {
 }
 
 function tipoFigura(b) {
+  if (b.fotos) return 'fotos';
   const d = b.descripcion;
   return /datos en tarjetas/.test(d) ? 'datos' : /^diagrama/.test(d) ? 'diagrama' : /capturas/.test(d) ? 'capturas' : /^línea de tiempo/.test(d) ? 'tiempo' : 'foto';
 }
@@ -392,6 +401,7 @@ function cuerpoFlotante(b, T, ancho) {
   if (b.tipo === 'diagrama') return diagrama();
   if (b.tipo === 'tiempo') return lineaDeTiempo();
   if (b.tipo === 'capturas') return capturas(b);
+  if (b.tipo === 'fotos') return fotos(b, T);
   if (b.tipo === 'foto') return `<div class="pend"><span class="pil amarilla">Fotografía pendiente</span><p>${h(mayus(b.descripcion))}.</p></div>`;
   if (/^Participantes/.test(b.titulo)) return fichasPersonas(b, T);
   if (b.filas[0].slice(1).every((c) => /^[A-Z]\. /.test(c))) return matriz(b, T);
@@ -493,6 +503,14 @@ function capturas(b) {
   return `<div class="fig2">${[1, 2, 3, 4, 5, 6].map((i) => `<div><img src="figuras/preparar-p${i}.png" alt=""><div class="pie">${circulo(i)}<span>${h(nombres[i - 1] || '')}</span></div></div>`).join('')}</div>`;
 }
 
+/** Fotografías en fila, del mismo alto, cada una con su letra y su pie. */
+function fotos(b, T) {
+  return `<div class="fot" style="grid-template-columns:repeat(${b.fotos.length},1fr)">${b.fotos.map((f) => {
+    const m = f.pie.match(/^([a-z])\. (.*)$/);
+    return `<div><img src="${h(f.src.split(path.sep).join('/'))}" alt=""><div class="pie">${circulo(m ? m[1] : '')}${T('Celda', m ? m[2] : f.pie)}</div></div>`;
+  }).join('')}</div>`;
+}
+
 /** Panel de apertura: el aura, el número, el título y las secciones. */
 function panelHtml({ n, titulo, secciones = [], aura, alto }) {
   const lista = secciones.length && alto >= 128 + secciones.length * 13.6 ? `<ol>${secciones.map((s, k) => `<li><span class="fic">${k + 1}</span><span>${h(s)}</span></li>`).join('')}</ol>` : '';
@@ -540,7 +558,7 @@ auras([['panel-3', 700, 1530, 3], ['panel-4', 700, 1530, 4]]);
 const flot = cuerpo.flatMap((c) => c.bloques.filter((b) => b.flotante));
 flot.forEach((b) => {
   b.tipo = b.flotante === 'tabla' ? 'tabla' : tipoFigura(b);
-  b.angosta = b.flotante === 'tabla' && b.filas[0].length <= 3 && !/^Participantes/.test(b.titulo);   // dos columnas de ancho; título y nota en la tercera
+  b.angosta = b.tipo === 'fotos' || (b.flotante === 'tabla' && b.filas[0].length <= 3 && !/^Participantes/.test(b.titulo));   // dos columnas de ancho; título y nota en la tercera
   b.pieza = piezaFlotante(b);
 });
 const frases = cuerpo.flatMap((c) => c.bloques.filter((b) => b.frase));
