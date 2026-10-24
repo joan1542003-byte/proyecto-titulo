@@ -114,7 +114,20 @@ El autor pidió que la memoria dejara de sonar como una disculpa: los logros, di
 - **Extensión:** 19 288 palabras en los capítulos 1 a 14; 19 969 con agradecimientos, resumen y abstract; 20 291 desde la portada hasta antes de «Referencias», con los índices. Antes de la revisión eran 19 519, 20 214 y 20 489.
 - **Versión A3:** se regeneró (53 páginas). La Tabla 11 queda en las páginas de conclusiones.
 
+## Anexos del 24 de octubre de 2026
+
+Los nueve anexos que la lista final nombra quedaron armados en [`anexos/`](anexos/README.md): un Markdown por anexo, una versión HTML y un PDF en A4, generados desde sus documentos fuente con `node construir-anexos.js`.
+
+- **Lista de anexos:** D suma cómo aplica cada criterio el prototipo y lo que mostró la prueba; F suma los *wireframes* de las 39 pantallas de octubre; G describe la versión 3.3 y registra las versiones desde la 2.7; I suma la semana para comparar y las fichas de registro. No cambió nada más del texto.
+- **Fuente puesta al día:** el protocolo 02 describe a las tres personas que usan el Tag sin condición asignada, como el capítulo 13.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Anexos
+
+- **Qué cambió:** se añadió la nota de los anexos del 24 de octubre.
+- **Cómo estaba antes:** la última actualización era la revisión de tono.
+- **Por qué:** el autor pidió terminar un pendiente de prioridad alta; la memoria remitía a anexos que no estaban armados.
 
 ### 2026-10-20 — Revisión de tono
 

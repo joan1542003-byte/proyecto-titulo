@@ -1,6 +1,6 @@
 # Protocolo 02 — Prueba de 21 días en casa: asociación, comparación y uso
 
-**Estado:** primer testeo desde el 7 de octubre de 2026, con condiciones asignadas por semana (D-112).
+**Estado:** primera etapa desde el 7 de octubre de 2026, con tres personas que usan el Tag junto al primer paso sin condición asignada; desde el 20 de octubre, una de ellas prueba una semana con el teléfono (D-138). Las condiciones por semana (D-112) quedan implementadas para la etapa comparativa.
 **Fecha de preparación:** 25 de septiembre de 2026.
 **Decisiones:** D-070 (sin luz), D-075 (21 días), D-078 (señal de unos 30 segundos) y D-079 (la prueba responde la hipótesis), en el [registro de decisiones](../09_decisiones/registro-de-decisiones.md).
 **Relación con el protocolo 01:** lo reemplaza como estudio principal. Conserva su cadena de asociación, sus tres condiciones, sus reglas de decisión y sus fallos críticos, pero los lleva a una sola prueba en los hogares, sin luz. El [protocolo 01](protocolo-01-asociacion-y-comparacion.md) queda como antecedente.
@@ -24,7 +24,8 @@ La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a co
 
 ## Participantes
 
-- **Por ahora, una persona** (decisión del autor del 25 de septiembre de 2026, D-081) de 18 a 30 años que no participó en las entrevistas P1–P8, con un teléfono Android 12 o posterior. Se le asigna una de las seis secuencias. El diseño para seis personas se conserva por si la prueba se amplía.
+- **Criterio:** personas de 18 a 30 años que no participaron en las entrevistas P1–P8, con un teléfono Android 12 o posterior.
+- **Primera etapa:** tres personas desde octubre de 2026 (D-081 preveía una), con el Tag junto al primer paso y sin secuencia asignada. El diseño para seis personas, una por secuencia, se conserva para la etapa comparativa.
 - Cada una debe poder nombrar una actividad que a veces pierde frente al teléfono y un primer paso concreto.
 - Reclutamiento por referencias, voluntario y sin pago.
 - Cada persona usa un parlante Bluetooth propio o prestado por el proyecto. El parlante reemplaza al testigo, que no estará construido a tiempo; no es el objeto final.
@@ -114,7 +115,7 @@ Una **asociación completa** exige los cuatro momentos sin consultar el teléfon
 
 ## Reglas de decisión
 
-**Con una persona (D-081):** los umbrales siguientes, pensados para seis, no se aplican. Se describe si esa persona completó la asociación en la sesión inicial y cómo respondió en cada condición. Sirve para orientar el diseño; no permite comparar entre personas ni estimar eficacia. Las reglas se conservan para una ampliación.
+**Con tres personas (primera etapa):** los umbrales siguientes, pensados para seis, no se aplican. La lectura es cualitativa: la propuesta se mantiene si la señal se relaciona con la intención y la persona entiende sus opciones, y se modifica si falla una parte específica. Sirve para orientar el diseño; no permite estimar eficacia. Las reglas se conservan para la etapa comparativa.
 
 **Sesión inicial (asociación observada):**
 
@@ -149,7 +150,7 @@ Una falla de conexión, del parlante o de la app no cuenta como respuesta de la 
 - **Intenciones distintas:** cambian entre semanas y su dificultad no es idéntica.
 - **Orden y habituación:** el contrabalanceo reparte el efecto de practicar primero, pero la persona puede acostumbrarse a la señal.
 - **Parlante comercial:** no está reservado para Relevo y puede reproducir el audio de otras apps.
-- **Muestra:** por ahora, una persona reclutada por cercanía. Los resultados describen un caso.
+- **Muestra:** tres personas reclutadas por cercanía. Los resultados describen tres casos.
 
 ## Datos y conservación
 
@@ -179,6 +180,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Tres personas
+
+- **Qué cambió:** el estado, los participantes, la regla de decisión para la primera etapa y la muestra describen a las tres personas que usan el Tag sin condición asignada, como la memoria v5.
+- **Cómo estaba antes:** decían que participaba una persona (D-081) con condiciones asignadas por semana.
+- **Por qué:** el protocolo entra completo al Anexo I de la memoria y debía coincidir con lo que la prueba aplica desde octubre.
 
 ### 2026-10-20 — Semana para comparar
 

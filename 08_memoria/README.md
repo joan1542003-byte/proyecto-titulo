@@ -16,8 +16,8 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Guion de la corrección cruzada del 30 de septiembre](../00_gobernanza/guion-presentacion-correccion-cruzada-2026-09-30.md): presentación de unos 7 minutos basada en la memoria y el protocolo 02, con texto en pantalla, texto hablado y preguntas probables.
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia de las 64 entradas bibliográficas, actualizada tras el feedback del 23 de septiembre.
-- [Matriz de trazabilidad de los criterios](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requiere pruebas.
-- [Índice de anexos de la v4](anexos/README.md): selección mínima de evidencias metodológicas, analíticas, comerciales y proyectuales para una entrega formal.
+- [Matriz de trazabilidad de los criterios de la v4](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requería pruebas en agosto. La vigente es el [Anexo D](anexos/anexo-d-criterios.md).
+- [Anexos A a I de la v5](anexos/README.md): los nueve anexos de la memoria en Markdown, HTML y un [PDF en A4](anexos/anexos-relevo.pdf), armados desde sus documentos fuente con `node construir-anexos.js`.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
 - [Coherencia de la app con la memoria](coherencia-app-con-la-memoria-2026-09-29.md): contradicciones, cambios fundamentados y actualizaciones pendientes de la memoria tras Android 2.11 a 2.13.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve actualizada al 25 de septiembre sobre la propuesta, el APK 2.6, los cambios y los pendientes.
@@ -89,6 +89,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-24 — Anexos de la v5
+
+- **Cambio:** el índice de anexos de la v4 pasa a los anexos A a I de la v5, armados en Markdown, HTML y PDF; la matriz de criterios de la v4 remite al Anexo D. La lista de anexos del borrador v5 actualiza D, F, G e I.
+- **Versión anterior:** la carpeta de anexos solo tenía el índice de cinco anexos de la v4.
+- **Motivo:** el autor pidió terminar un pendiente de prioridad alta; la memoria v5 remitía a nueve anexos que no estaban armados.
+- **Alcance:** no cambió el texto de los capítulos. Los anexos se regeneran desde sus fuentes.
 
 ### 2026-10-20 — Revisión de tono del borrador v5
 

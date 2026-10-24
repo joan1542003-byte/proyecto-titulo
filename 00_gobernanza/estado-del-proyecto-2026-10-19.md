@@ -44,6 +44,12 @@ Cerrado sin necesitar decisiones del autor:
 
 Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los datos por confirmar de la memoria (ahora 22); la decisión sobre la notificación; los Issues y PR viejos de GitHub (no hay acceso de escritura desde esta sesión); y aplicar la ficha y exportar los datos de las otras dos personas.
 
+## Avance del 24 de octubre
+
+- **Anexos A a I, armados (punto 7):** los nueve que nombra la memoria, en [Markdown, HTML y un PDF en A4](../08_memoria/anexos/README.md) con la línea de Relevo. Se generan desde sus fuentes con `node construir-anexos.js`, así que se ponen al día solos cuando cambia un documento. El Anexo D trae la matriz de criterios con los resultados al 19 de octubre.
+- **Protocolo 02:** describe a las tres personas que usan el Tag sin condición asignada, como la memoria.
+- **Para el autor:** iniciar en la app la semana para comparar de la participante que usa el teléfono (Perfil, mantener presionada la versión, «Semana C», «Empezar la semana hoy»); sin eso, la app no le hace las preguntas de esa semana ni las del cierre.
+
 ## Plazos
 
 | Fecha | Hito | Días desde hoy |
@@ -138,7 +144,7 @@ Ordenado por riesgo para el Pase y el examen.
 - **Resultados y conclusiones:** actualizarlos con los registros posteriores al 13 de octubre (7 señales en vez de 5) y con las escalas y la entrevista de cierre.
 - **Iteraciones y fallos:** sumar a la Tabla 7 las versiones 2.31 y 2.32. Son el mejor ejemplo de iteración guiada por el uso real. También hay que actualizar «Funcionamiento y recuperación de fallos» (capítulo 11): la app ya no reconecta cortando la conexión.
 - **Versión que se presenta:** decidir cuál y decirlo igual en todas partes. El texto describe la 3.2, pero el testeo usa la 2.30 a la 2.32.
-- **Anexos:** los nueve (A a I) están listados, pero no armados como documentos. La carpeta `08_memoria/anexos/` solo tiene su README. Hay que reunirlos antes del 2 de diciembre; casi todo el material ya existe en el repositorio.
+- **Anexos:** armados el 24 de octubre ([anexos A a I](../08_memoria/anexos/README.md)). Al cierre basta volver a generarlos para que sumen las escalas, la entrevista y la semana con el teléfono.
 
 ### 8. La presentación del Pase y del examen
 
@@ -185,7 +191,7 @@ Son justo los puntos que la comisión de julio no entendió (feedback E15).
 | Escalas semanales y entrevista de cierre | Son la valoración de la carga, la molestia y el lugar. | Validación |
 | Costos reales del prototipo | La Tabla 9 tiene todos sus montos por confirmar. | Factibilidad y gestión |
 | Registro del feedback del 14 de octubre | Es la respuesta de los profesores a las dudas sobre el objeto. | Proceso |
-| Anexos armados | Forman parte de la entrega del 2 de diciembre. | Formal |
+| Anexos armados | Hechos el 24 de octubre; se regeneran al cierre. | Formal |
 | Presentación del Pase | Es la entrega del 25 de noviembre. | Todas |
 
 ## Estimación por rúbrica
@@ -195,7 +201,7 @@ Estimación propia y orientativa, con la rúbrica de Proyecto de Título.
 | Dimensión | Peso | Nivel estimado hoy | Qué lo sube |
 | --- | ---: | --- | --- |
 | Formulación | 20 % | Bueno | Contrastar algo de la hipótesis o reformular su alcance con claridad. |
-| Desarrollo de la investigación | 40 % | Bueno a excelente | Mantener la trazabilidad; armar los anexos A a D. |
+| Desarrollo de la investigación | 40 % | Bueno a excelente | Mantener la trazabilidad; los anexos A a I ya están armados. |
 | Propuesta de diseño | 40 % | Suficiente a bueno | Objeto propio documentado, resultados con escalas y entrevista, costos reales y fotos del uso. |
 
 La app y el uso de tecnologías están por sobre lo esperado. El marco ético también: consentimiento, seudonimización, borrado y ausencia de patrones oscuros. Lo débil es la factibilidad y la producción del objeto, y la validación.
@@ -206,12 +212,18 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | --- | --- | --- |
 | 19–25 oct. (solemnes) | Instalar la 2.32 y poner una pila nueva; exportar una copia de los datos de las dos personas sin conexión; registrar el feedback del 14 de octubre; decidir la comparación (punto 3) y el objeto (punto 4); completar los datos por confirmar que solo sabe el autor. | Autor, con apoyo para registrar y documentar. |
 | 26 oct.–1 nov. | Modelar e imprimir la carcasa o la maqueta del objeto; fotografiar el uso; empezar la semana de comparación si se decidió; reunir costos. | Autor; la IA puede apoyar el modelado paramétrico y los planos. |
-| 2–8 nov. | Escalas y entrevista de cierre; actualizar resultados, figuras y conclusiones; armar los anexos. | Autor e IA. |
+| 2–8 nov. | Escalas y entrevista de cierre; actualizar resultados, figuras y conclusiones; regenerar los anexos. | Autor e IA. |
 | 9–15 nov. | Memoria v6 cerrada (cierre interno del 15 de noviembre); regenerar la versión A3. | IA, con revisión del autor. |
 | 16–24 nov. | Presentación del Pase y ensayo. | Autor e IA. |
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Anexos
+
+- **Qué cambió:** se añadió el avance del 24 de octubre: los anexos A a I armados y el protocolo 02 al día. Los anexos dejan de figurar como faltantes.
+- **Cómo estaba antes:** los anexos estaban listados en la memoria, pero no armados.
+- **Por qué:** el autor pidió elegir un pendiente de prioridad alta y terminarlo.
 
 ### 2026-10-20 — Tono de la memoria
 

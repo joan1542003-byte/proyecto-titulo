@@ -202,6 +202,7 @@ En la rama `android-2.7`, a pedido del autor:
 - **Compra:** el autor comprará un iTag; hay publicaciones de MercadoLibre que indican iSearching, de CLP 5.930 a 7.990. Probarlo al llegar con los pasos de la 2.19.
 - **Supabase:** migración `relevo_2_19_llavero` (valores `tag`, `object` y `silenced_object`). **Panel:** versión 4, reconoce el llavero.
 - **Resumen del día:** [bitácora del 5 de octubre](bitacora-trabajo-con-ia-2026-10-05.md).
+- **Anexos de la memoria (24 de octubre):** los nueve anexos A a I en Markdown, HTML y un PDF en A4 ([índice](../08_memoria/anexos/README.md)). Se rehacen con `node construir-anexos.js` en `08_memoria/anexos/` cuando cambia una fuente; qué entra en cada uno está en `contenido-anexos.js`. Tarda unos 30 segundos y necesita Chrome.
 - **Estado del proyecto (19 de octubre):** [revisión completa](estado-del-proyecto-2026-10-19.md) con lo que falta sí o sí antes del Pase del 25 de noviembre. Antes de seguir, conviene leerla: la prueba no está iniciada en la app, solo una persona envía datos, la hipótesis sigue sin contrastar y falta un objeto propio.
 - **Relevo como sistema (18 de octubre):** [documento](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) que explica de punta a punta la app, el Tag, Supabase, el panel, los fundamentos y el desarrollo; es la mejor entrada técnica para continuar. Los [wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) salen del árbol real de cada pantalla con `generador/generar-wireframes.js`.
 - **Por hacer:** [tareas en espera](por-hacer.md) de la indicación del autor. La primera es revisar el tono de la memoria: logros primero y límites una sola vez.
@@ -237,6 +238,12 @@ En este corte, `main` local y `origin/main` coinciden en `ad12e100506d024f4043b3
 Antes de editar, decir brevemente cuál es la pregunta o entrega, qué evidencia local se revisará y qué no se puede afirmar todavía. Desarrollar una sola línea sustantiva a la vez. Al cierre: verificar enlaces y formato, registrar disclaimer, actualizar índices y resumen afectados, correr pruebas relevantes, guardar un commit claro y confirmar si se hizo push. No realizar pruebas con personas ni enviar mensajes a terceros sin una instrucción expresa y sin instrumentos/consentimientos vigentes.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Anexos
+
+- **Qué cambió:** el estado enlaza los anexos A a I y explica cómo se rehacen.
+- **Cómo estaba antes:** los anexos no estaban armados.
+- **Por qué:** el autor pidió terminar un pendiente de prioridad alta.
 
 ### 2026-10-20 — Por hacer
 
