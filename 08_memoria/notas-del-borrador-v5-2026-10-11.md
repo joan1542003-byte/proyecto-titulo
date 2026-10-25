@@ -13,7 +13,7 @@ Fecha de corte: 11 de octubre de 2026. Base: `memoria-vigente-v4.md` (29 de sept
 
 ## Referencias y APA 7
 
-- 78 referencias; correspondencia exacta con las citas, comprobada por script y por dos revisores. Los 44 DOI se verificaron en Crossref.
+- 78 referencias en la versión del 11 de octubre (hoy, 88); correspondencia exacta con las citas, comprobada por script y por dos revisores. Los 44 DOI se verificaron en Crossref.
 - De las 64 originales, 29 tenían errores de forma, ya corregidos. Los principales: páginas con fecha citadas como «s. f.»; la de Chrome tiene autor y fecha (Beaufort, 2015); las páginas de Android pasan a autor «Google»; números de artículo en Haliburton y Stapley; iniciales en Lukoff y Waggoner.
 - Salieron dos fuentes que el texto ya no cita (Karjalainen y Snelders; la página del W3C sobre destellos) y entraron 16, todas verificadas en la fuente.
 - 58 afirmaciones atribuían a su fuente algo más fuerte o distinto de lo que dice; se reescribieron. Ninguna cifra quedó sin comprobar.
@@ -132,7 +132,23 @@ Los nueve anexos que la lista final nombra quedaron armados en [`anexos/`](anexo
 - **Lista de anexos:** D suma cómo aplica cada criterio el prototipo y lo que mostró la prueba; F suma los *wireframes* de las 39 pantallas de octubre; G describe la versión 3.3 y registra las versiones desde la 2.7; I suma la semana para comparar y las fichas de registro. No cambió nada más del texto.
 - **Fuente puesta al día:** el protocolo 02 describe a las tres personas que usan el Tag sin condición asignada, como el capítulo 13.
 
+## Revisión de coherencia del 24 de octubre de 2026
+
+Se contrastó el borrador con el código de la app, los datos de la prueba, el registro de decisiones y los demás documentos. Coinciden las cifras de la encuesta y de la prueba, las fechas de la Tabla 7, los textos de la notificación y de las preguntas, el límite de 1 minuto a 6 horas, la regla de la ruta (tres comienzos antes de ofrecer el paso siguiente), la región de Supabase (Canadá) y los precios de las fichas. Las 88 referencias están citadas y en orden.
+
+- **Inicio de la prueba:** el resumen, el abstract y la Tabla 4 decían que el uso empezó el 8 de octubre; el capítulo 13 dice que la prueba comenzó el 7. Ahora los tres dicen 7. Los datos siguen siendo del 8 al 19.
+- **Versión 2.32:** el capítulo 11 decía que quedaba «por comprobar con el Tag»; en los datos, el Tag sonó en los seis ciclos que usaron la 2.32. Lo que falta, probarla después de horas sin uso, sigue en el README de la app.
+- **Referencias:** «Artículo 40» con mayúscula en Fogg (2009), como en las demás actas.
+- **Extensión:** dos palabras más (19 108 en los capítulos 1 a 14). Desde la portada hasta antes de «Referencias» son 20 123 contando índices y tablas, y unas 17 900 en texto corrido. Las 248 palabras de los marcadores de figuras salen al insertarlas.
+- **Para decidir:** la versión que se presenta (el texto describe la 3.2 y la Figura 3 pide capturas de la 3.2; la más reciente es la 3.3, con la misma interfaz) y la frase de marca (la memoria dice «Hazle lugar a lo que quieres hacer»; la bienvenida de la app, «Vuelve a lo que querías hacer»).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Revisión de coherencia
+
+- **Qué cambió:** se añadió la revisión de coherencia del 24 de octubre, con sus tres correcciones y dos decisiones pendientes, y la cuenta actual de referencias.
+- **Cómo estaba antes:** la última nota era la de los anexos.
+- **Por qué:** el autor pidió revisar la memoria y buscar incongruencias en el repositorio.
 
 ### 2026-10-24 — Anexos
 

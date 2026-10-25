@@ -2,7 +2,7 @@
 
 **Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Es una copia fechada para revisión, no el consentimiento vigente: conserva un contacto en blanco y un plazo anterior. El paquete único previo permanece en el archivo histórico.
 
-**Prueba vigente:** [protocolo 02: prueba de 21 días en casa](protocolo-02-prueba-21-dias.md), que responde la hipótesis y las preguntas de uso con una sesión inicial observada y tres semanas con una condición cada una (D-079). Usa la app Android 2.7 que el protocolo especifica y un parlante Bluetooth, sin luz (D-070), con una señal de unos 30 segundos (D-078). La [2.8](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md) y la [2.9](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md) conservan la lógica de la prueba; agregan el sistema D-073, perfil y ruta, y en 2.9 el vidrio y los emoji. La [2.10](../06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md) además exige participar para usar la app y aclara los textos (D-084). El autor decide cuál usar. Instrumentos: [consentimiento de 21 días](consentimiento-android-vigente-2026-09-23.md), [pauta Android](pauta-testeo-prototipo-android-2026-09-23.md) para la prueba técnica previa y [ficha de la sesión inicial](ficha-registro-protocolo-01.md). No se han realizado sesiones con participantes.
+**Prueba vigente:** [protocolo 02: prueba de 21 días en casa](protocolo-02-prueba-21-dias.md). Su primera etapa empezó el 7 de octubre de 2026 con tres personas que usan el Tag junto al primer paso, sin condición asignada, sobre la interfaz de la app 2.30 (versiones 2.29 a 2.32 en sus teléfonos). Desde el 20 de octubre, una de ellas prueba una semana con la señal solo en el teléfono, con la [app 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) (D-138). Instrumentos: el consentimiento v13 de la app, cuyo texto está en el [Anexo I](../08_memoria/anexos/anexo-i-prueba.md); la [ficha de la sesión inicial](ficha-registro-protocolo-01.md); la [ficha en papel](instrumentos/ficha-escalas-y-cierre-2026-10-20.md) para las escalas y el cierre, y el [script que une los datos](analisis/README.md). Los resultados al 19 de octubre están en el capítulo 13 de la memoria.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -73,6 +73,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-10-24 — Prueba vigente
+
+- **Qué cambió:** la prueba vigente describe la primera etapa con tres personas y el Tag desde el 7 de octubre, la semana con el teléfono de la 2.33 y los instrumentos actuales.
+- **Cómo estaba antes:** decía que la prueba usaba la app 2.7 y un parlante, que el autor debía elegir la versión y que no había sesiones con participantes.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-10-20 — Ficha en papel y unión de datos
 

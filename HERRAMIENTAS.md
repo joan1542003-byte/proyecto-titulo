@@ -23,7 +23,8 @@ La entrada visual es [herramientas.html](herramientas.html): una página con los
 | Taller de auras | [10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html](10_recursos_visuales/relevo-con-aura-2026-10-10/taller-de-auras.html) | Editor de piezas y láminas para presentaciones y la memoria | Doble clic |
 | Íconos de Relevo | [10_recursos_visuales/iconos-relevo-2026-10-11/iconos-relevo.html](10_recursos_visuales/iconos-relevo-2026-10-11/iconos-relevo.html) | Los 72 íconos, sus reglas y la paleta | Doble clic |
 | Logo | [10_recursos_visuales/logo-relevo-2026-10-11/](10_recursos_visuales/logo-relevo-2026-10-11/) | Archivos SVG del logo, la marca y el ícono de la app | Usar los SVG |
-| Memoria en A3 | [08_memoria/memoria-a3/](08_memoria/memoria-a3/) | La memoria v5 compuesta en A3 horizontal | `node construir.js` |
+| Memoria en A3 | [08_memoria/memoria-a3/](08_memoria/memoria-a3/) | La memoria v5 compuesta en A3 horizontal, con un IDML editable | `node construir-idml.js` |
+| Anexos de la memoria | [08_memoria/anexos/](08_memoria/anexos/) | Los nueve anexos, de la A a la I, en Markdown, HTML y PDF | `node construir-anexos.js` |
 
 Las páginas usan Instrument Sans desde Google Fonts. Sin internet se ven con otra letra, pero funcionan. El Excel del panel también necesita internet: carga SheetJS desde cdnjs.
 
@@ -225,12 +226,15 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 
 ## Memoria en A3
 
-- **Composición actual:** el generador [construir.js](08_memoria/memoria-a3/construir.js) compone la v5 en A3 horizontal: un PDF y un HTML de 32 páginas (D-132). Se ejecuta con `node construir.js` en esa carpeta, necesita Chrome y tarda unos 10 segundos.
-- **Rediseño en curso:**
-  - El autor pidió letra más grande, una escala de tamaños coherente, mejores tablas, sin viudas, sin etiquetas innecesarias, aperturas menos repetidas y un archivo que se pueda editar en InDesign o Affinity.
-  - Se empezó un escritor de IDML ([idml.js](08_memoria/memoria-a3/idml.js)), el formato que abren InDesign y Affinity. Una página de muestra se abrió bien en Affinity, con estilos, texto enlazado, tabla, imágenes, PDF colocado e idioma español.
-  - El rediseño completo quedó en pausa por pedido del autor: es lo siguiente.
+- **Composición actual:** el generador [construir-idml.js](08_memoria/memoria-a3/construir-idml.js) compone la v5 en A3 horizontal con letra grande, tablas diseñadas y control de viudas (D-135): escribe un PDF y un HTML de 53 páginas y el IDML que se abre en Affinity o InDesign. Se ejecuta con `node construir-idml.js` en esa carpeta, necesita Chrome y tarda cerca de un minuto. El IDML no se guarda en el repositorio, porque enlaza sus fondos con la ruta del computador.
+- **No usar `construir.js`:** es el generador del 12 de octubre y escribe los mismos archivos con la composición antigua, de 33 páginas.
 - **Letra:** Instrument Sans, redonda y cursiva (OFL), está instalada para el usuario de Windows. Quien edite el IDML necesita tenerla instalada.
+
+## Anexos de la memoria
+
+- **Qué es:** [construir-anexos.js](08_memoria/anexos/construir-anexos.js) arma los nueve anexos de la v5 desde sus documentos fuente: un Markdown por anexo, `anexos-relevo.html` y `anexos-relevo.pdf` en A4, con índice, diagramas y láminas. Qué entra en cada anexo está en [contenido-anexos.js](08_memoria/anexos/contenido-anexos.js).
+- **Cómo se usa:** `node construir-anexos.js` en esa carpeta; necesita Chrome y tarda unos 30 segundos. Con `--sin-pdf` solo escribe los Markdown y el HTML.
+- **Cuidado:** las fuentes no se reescriben; para corregir un anexo se corrige su fuente y se vuelve a generar. Los diagramas mermaid nuevos necesitan internet una vez. El generador se detiene si encuentra un correo en la salida.
 
 ## Para otro Claude
 
@@ -252,6 +256,18 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 - **Contexto:** el [documento del sistema](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) explica la app, el Tag, Supabase y el panel.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Memoria en A3
+
+- **Qué cambió:** la memoria en A3 se genera con construir-idml.js (53 páginas e IDML) y se advierte no usar construir.js.
+- **Cómo estaba antes:** indicaba construir.js, el generador del 12 de octubre, y daba el rediseño con IDML como en pausa, aunque ya está terminado.
+- **Por qué:** esa indicación llevó a regenerar la versión antigua durante la revisión de coherencia del 24 de octubre.
+
+### 2026-10-24 — Anexos
+
+- **Qué cambió:** la tabla y una sección nueva explican el generador de los anexos; la memoria en A3 tiene 53 páginas.
+- **Cómo estaba antes:** no estaban los anexos y la memoria en A3 figuraba con 32 páginas.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-10-20 — Android 3.3
 

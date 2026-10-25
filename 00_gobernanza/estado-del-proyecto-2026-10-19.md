@@ -66,16 +66,17 @@ Sigue pendiente de lo que solo decide o sabe el autor: los puntos 3 a 6 y 8; los
 
 | Parte | Estado | Evidencia |
 | --- | --- | --- |
-| Investigación | Completa: 8 entrevistas analizadas con el método Framework, encuesta de 53 respuestas, comparación de referentes, 78 referencias verificadas y 8 criterios de diseño trazables. | Memoria v5, capítulos 5 a 9, y anexos A a D (listados). |
+| Investigación | Completa: 8 entrevistas analizadas con el método Framework, encuesta de 53 respuestas, comparación de referentes, 88 referencias verificadas y 8 criterios de diseño trazables. | Memoria v5, capítulos 5 a 9, y [anexos A a D](../08_memoria/anexos/README.md). |
 | Formulación | Pregunta, hipótesis (D-091), objetivos, actores y método por fases. | Memoria v5, capítulo 10. |
-| App Android | La 2.32 para el testeo y la 3.2 con la línea visual nueva; 86 pruebas automáticas; consentimiento v13; borrado local y remoto. | [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md). |
+| App Android | La 2.33 para el testeo y la 3.3 con la línea visual nueva; 87 pruebas automáticas; consentimiento v13; borrado local y remoto. | [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md). |
 | Objeto | El Tag comercial suena desde la app y su botón calla la señal. Los fallos reales se corrigieron en la 2.31 y la 2.32. | Versiones [2.31](../06_desarrollo_y_factibilidad/app-android/version-2.31-el-tag-se-calla-2026-10-14.md) y [2.32](../06_desarrollo_y_factibilidad/app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md). |
 | Datos y panel | Supabase con reglas por persona y el panel funcionando fuera de claude.ai. | [HERRAMIENTAS.md](../HERRAMIENTAS.md). |
-| Prueba en casa | Tres personas, del 8 al 19 de octubre. Son 31 relevos: 24 completados, 23 señales del Tag y 1 fallida (fuera de casa), 21 respondidos y 7 eliminados o editados. Desde el 20 de octubre, una persona prueba una semana con el teléfono. | Supabase y los datos que entregaron las dos personas sin conexión; recuento del 20 de octubre. |
+| Prueba en casa | Tres personas desde el 7 de octubre, con datos del 8 al 19. Son 31 relevos: 24 completados, 23 señales del Tag y 1 fallida (fuera de casa), 21 respondidos y 7 eliminados o editados. Desde el 20 de octubre, una persona prueba una semana con el teléfono. | Supabase y los datos que entregaron las dos personas sin conexión; recuento del 20 de octubre. |
 | Identidad | Aprobada: logo, Instrument Sans, íconos y color con fundamento. | Memoria v5, Anexo H. |
-| Memoria | Borrador v5 con 18.700 palabras en los capítulos 1 a 14, dentro del rango recomendado de 15.000 a 20.000, y diagramado en A3. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) y [memoria en A3](../08_memoria/memoria-a3/README.md). |
+| Memoria | Borrador v5 con 19 108 palabras en los capítulos 1 a 14, diagramado en A3. Desde la portada hasta antes de las referencias suma unas 20 120 palabras contando índices y tablas, y 17 900 en texto corrido; el rango recomendado es de 15 000 a 20 000, y las 250 palabras de las figuras por insertar saldrán al ponerlas. | [Borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) y [memoria en A3](../08_memoria/memoria-a3/README.md). |
+| Anexos | Los nueve, de la A a la I, en Markdown, HTML y un PDF en A4, armados desde sus fuentes. | [Anexos](../08_memoria/anexos/README.md). |
 | Wireframes | 39 pantallas de la app actual, en muy baja fidelidad. | [Lámina](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html). |
-| Trazabilidad | Registro de pedidos diario, 137 decisiones, bitácoras y documentos por versión. | `00_gobernanza/` y `09_decisiones/`. |
+| Trazabilidad | Registro de pedidos diario, 141 decisiones, bitácoras y documentos por versión. | `00_gobernanza/` y `09_decisiones/`. |
 
 ## Lo que falta sí o sí
 
@@ -219,6 +220,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Revisión de coherencia
+
+- **Qué cambió:** «Lo que está» pasa a la 2.33 y la 3.3 con 87 pruebas, 88 referencias, 141 decisiones, la prueba desde el 7 de octubre, la extensión actual de la memoria y una fila para los anexos.
+- **Cómo estaba antes:** decía 2.32 y 3.2, 86 pruebas, 78 referencias, 137 decisiones y 18.700 palabras.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-10-24 — Anexos
 

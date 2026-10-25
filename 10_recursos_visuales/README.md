@@ -1,8 +1,10 @@
 # Investigación visual de Relevo
 
-**Estado:** sistema de marca vigente del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085). El 30 de septiembre, después de la corrección cruzada, se propuso [una sola identidad alrededor del subrayado azul](25_identidad-el-subrayado-2026-09-30.md) para la presentación, la app y el objeto, con íconos nuevos (D-098, decidida en parte). El 1 de octubre se desarrolló como [sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md), publicado en el tipo Design System de claude.ai, con tokens, 43 componentes, 124 recursos y libro de marca.
+**Estado al 24 de octubre de 2026:** la identidad vigente es la aprobada en octubre: «Relevo con aura» (D-121 y D-122), los 72 íconos propios y la paleta 2 (D-124), el logo de cuatro luces (D-125 y D-127) y los cielos de las actividades (D-126). La app la aplica desde la 3.0 (D-128 a D-131), y el [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) la documenta con su fundamento. Del 16 de septiembre se mantienen el nombre, el descriptor y la frase.
 
-**Fecha de corte:** 16 de septiembre de 2026.
+**Historia hasta el 1 de octubre:** sistema de marca del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085). El 30 de septiembre, después de la corrección cruzada, se propuso [una sola identidad alrededor del subrayado azul](25_identidad-el-subrayado-2026-09-30.md) para la presentación, la app y el objeto, con íconos nuevos (D-098, decidida en parte). El 1 de octubre se desarrolló como [sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md), publicado en el tipo Design System de claude.ai, con tokens, 43 componentes, 124 recursos y libro de marca.
+
+**Fecha de corte del sistema de marca original:** 16 de septiembre de 2026.
 
 **Alcance:** marca, aplicación Android, testigo físico, comunicación de producto y memoria editorial.
 **Formato:** documentación en Markdown; desde el 25 de septiembre, láminas visuales en HTML con dibujos vectoriales propios ([segunda propuesta](lamina-identidad-relevo-2026-09-25.html) y [exploración anterior](lamina-exploracion-visual-2026-09-25.html)) y [archivos SVG del logotipo propuesto](marca-segunda-propuesta/).
@@ -104,6 +106,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Identidad vigente
+
+- **Qué cambió:** el README abre con la identidad aprobada en octubre y su anexo; el estado anterior queda como historia hasta el 1 de octubre.
+- **Cómo estaba antes:** abría con el sistema de marca del 16 de septiembre y la propuesta D-073 pendiente.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-10-13 — Herramientas sin claude.ai
 

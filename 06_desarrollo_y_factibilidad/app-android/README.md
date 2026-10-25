@@ -40,7 +40,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Versión 2.7:** incorpora lo que exige el [protocolo 02](../../07_validacion/protocolo-02-prueba-21-dias.md) y corrige el envío de eventos. Cambios, causa del problema de eventos y verificación en [Android 2.7](version-2.7-prueba-21-dias-2026-09-25.md).
 
-Las versiones 2.32 y 3.2 compilan y pasan sus 86 pruebas unitarias. Se revisan en un emulador Android 16, sin red y con datos de prueba. La prueba en casa usa la línea 2.x con el Tag desde el 8 de octubre de 2026. Faltan, en un teléfono real, el borrado sin conexión, el parlante y el reloj, y la 2.32 con el Tag después de horas sin uso. No es una aplicación validada: la prueba informa sobre su uso, no sobre su efecto.
+Las versiones 2.33 y 3.3 compilan y pasan sus 87 pruebas unitarias. Se revisan en un emulador Android 16, sin red y con datos de prueba. La prueba en casa usa la línea 2.x con el Tag desde el 7 de octubre de 2026. Faltan, en un teléfono real, el borrado sin conexión, el parlante y el reloj, y la 2.32 con el Tag después de horas sin uso. No es una aplicación validada: la prueba informa sobre su uso, no sobre su efecto.
 
 ## Qué permite hacer
 
@@ -141,6 +141,12 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Estado al día
+
+- **Qué cambió:** el estado nombra la 2.33 y la 3.3 con sus 87 pruebas y la prueba desde el 7 de octubre.
+- **Cómo estaba antes:** nombraba la 2.32 y la 3.2 con 86 pruebas y la prueba desde el 8 de octubre.
+- **Por qué:** revisión de coherencia del repositorio.
 
 ### 2026-10-20 — Android 3.3
 

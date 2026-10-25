@@ -2,6 +2,8 @@
 
 ## Estado general
 
+**Al 24 de octubre de 2026:** la memoria es el [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md), con sus [anexos A a I](../08_memoria/anexos/README.md); la app va en la 2.33 para el testeo y en la 3.3 con la identidad aprobada, y la prueba en casa con el Tag empezó el 7 de octubre con tres personas. El detalle y los pendientes están en el [estado del proyecto](estado-del-proyecto-2026-10-19.md). El párrafo siguiente describe el estado al 27 de septiembre.
+
 Relevo cuenta con una memoria integral en Markdown, auditada según los títulos, la secuencia y los límites del examen. Articula investigación, usuarios, mercado, propuesta, flujos, producción y gestión. Desde el 21 de septiembre existe además una [aplicación Android](../06_desarrollo_y_factibilidad/app-android/README.md), hoy en la versión 2.6, que prepara el ciclo y emite un tono por un parlante Bluetooth o por el teléfono. La línea sustantiva activa es comprobar ese prototipo en equipos reales y, después, la [prueba de asociación entre intención, primer paso, lugar y señal](https://github.com/joan1542003-byte/proyecto-titulo/issues/8). La migración documental general permanece en pausa; el Encargo 17 quedó completado.
 
 El calendario de término se encuentra en el [plan de cierre de agosto a diciembre de 2026](plan-de-cierre-agosto-diciembre-2026.md) y sus fechas institucionales se respaldan en el [calendario oficial del segundo semestre de 2026](calendario-oficial-segundo-semestre-2026.md). El producto debe estar prácticamente terminado el 31 de octubre y completamente cerrado el 15 de noviembre. El Pase de Examen se entrega el 25 de noviembre, la memoria el 2 de diciembre y los exámenes de Proyecto de Título se realizan entre el 14 y el 18 de diciembre.
@@ -129,6 +131,12 @@ Una fase se considera suficientemente desarrollada cuando:
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Estado al día
+
+- **Qué cambió:** el estado general abre con la situación al 24 de octubre y remite al estado del proyecto; el párrafo anterior queda fechado.
+- **Cómo estaba antes:** describía la app 2.6 con un parlante y la prueba por empezar.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-09-27 — Marca 2.0 en Figma
 

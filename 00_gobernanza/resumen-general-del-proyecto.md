@@ -5,6 +5,8 @@ fecha_de_corte: 2026-09-25
 estado: "síntesis del estado de proyecto"
 ---
 
+> **Histórico.** Síntesis con corte al 25 de septiembre de 2026. El estado al día está en el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md) y en el [estado del proyecto](estado-del-proyecto-2026-10-19.md).
+
 # ¿Para qué sirve este documento?
 
 Este documento sirve para entender el proyecto sin tener que abrir diez carpetas. Resume qué cambió desde el examen del primer semestre, qué feedback se aplicó, qué investigamos, qué referentes tomamos, qué decisiones se han tomado y qué falta probar.
@@ -258,6 +260,12 @@ Eso todavía no lo pueden responder la memoria, el wireframe ni la app por sí s
 La [matriz de 23 preguntas](../01_contexto_y_fuentes/feedback-2026-09-02.md) conduce a respuestas por área: comunicación y primer paso; estado y viaje del usuario; forma y ubicación; localizador UGREEN; encontrabilidad y paleta; luz, sonido y vibración; prototipos, materiales y valor. La documentación está resuelta; las hipótesis empíricas siguen abiertas. UGREEN permanece como referente compacto, no como plataforma de control. La prueba de aceptación de dos iTag, prevista antes del banco de la Issue #11, no se realizó; la prueba vigente es la de 21 días con un parlante comercial ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Histórico
+
+- **Qué cambió:** una nota al comienzo dice que la síntesis es del 25 de septiembre y dónde está el estado al día.
+- **Cómo estaba antes:** no lo advertía, aunque el README lo presentaba como lectura ejecutiva del proyecto.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-09-25 — Extensión tras simplificar el lenguaje
 

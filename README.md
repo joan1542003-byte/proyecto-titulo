@@ -3,7 +3,7 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
-**Base académica:** [memoria vigente v4](08_memoria/memoria-vigente-v4.md), con revisión de coherencia y edición de lectura en los documentos enlazados desde `08_memoria/README.md`. La síntesis y el prototipo se actualizaron después; la memoria requiere integrar evidencia nueva cuando exista.
+**Base académica:** [borrador v5 de la memoria](08_memoria/borrador-memoria-v5-2026-10-11.md), aprobado como base de trabajo (D-123), con sus [anexos A a I](08_memoria/anexos/README.md) y su [versión en A3](08_memoria/memoria-a3/README.md). La [memoria v4](08_memoria/memoria-vigente-v4.md) queda como antecedente.
 
 **Revisión y limpieza de textos:** [Correcciones y comprobaciones del 9 de septiembre](00_gobernanza/auditoria-textual-2026-09-09.md). Estados, decisiones, enlaces y referencias reconciliados; las entregas antiguas conservan su fecha y sus límites.
 
@@ -39,13 +39,23 @@ Esta formulación continúa abierta a revisión. El producto final deberá respo
 
 La versión breve y mantenida después de cada actualización está en el [resumen vigente de Relevo](08_memoria/resumen-vigente-proyecto.md).
 
-Para una lectura ejecutiva del proyecto completo, con su evolución desde el Pase, el feedback aplicado, las investigaciones, decisiones, propuesta de valor y pendientes, consultar el [resumen general del proyecto](00_gobernanza/resumen-general-del-proyecto.md).
+Para una lectura ejecutiva del proyecto hasta el 25 de septiembre, con su evolución desde el Pase, el feedback aplicado, las investigaciones, decisiones y propuesta de valor, consultar el [resumen general del proyecto](00_gobernanza/resumen-general-del-proyecto.md); lo posterior está en el [estado del proyecto](00_gobernanza/estado-del-proyecto-2026-10-19.md).
 
 Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
 El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) es la definición física más reciente, anterior a la decisión de no usar luz (D-070). El [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) cierra nombre, categoría, frase, descriptor, tipografía, paleta y reglas por soporte. La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
-## Estado actual — 30 de septiembre de 2026
+## Estado actual — 24 de octubre de 2026
+
+- **Memoria:** [borrador v5](08_memoria/borrador-memoria-v5-2026-10-11.md) con los resultados de las tres personas al 19 de octubre, la Figura 4 con fotos de la prueba y 88 referencias; [anexos A a I](08_memoria/anexos/README.md) en Markdown, HTML y PDF, y [versión en A3](08_memoria/memoria-a3/README.md). Quedan 23 datos por confirmar que solo sabe el autor.
+- **App:** la [2.33](06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) para el testeo y la [3.3](06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md) con la identidad aprobada (D-138), ambas con 87 pruebas automáticas ([entregables](06_desarrollo_y_factibilidad/app-android/releases/README.md)).
+- **Prueba en casa:** tres personas con el Tag desde el 7 de octubre. Hasta el 19, el Tag sonó en 23 de 24 ciclos y en las 21 respuestas recordaron cómo empezar. Desde el 20, una prueba una semana con el teléfono ([protocolo 02](07_validacion/protocolo-02-prueba-21-dias.md)).
+- **Identidad:** aprobada en octubre: logo de cuatro luces, Instrument Sans, 72 íconos y color por función ([Anexo H](08_memoria/anexos/anexo-h-identidad.md)).
+- **Estado completo y pendientes:** [estado del proyecto](00_gobernanza/estado-del-proyecto-2026-10-19.md) y [por hacer](00_gobernanza/por-hacer.md).
+
+Lo que sigue es el estado al 30 de septiembre y lo anterior, como historia del proyecto.
+
+## Estado al 30 de septiembre de 2026 (histórico)
 
 **Resumen del 30 de septiembre** ([bitácora](00_gobernanza/bitacora-trabajo-con-ia-2026-09-30.md)):
 
@@ -155,6 +165,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Estado actual
+
+- **Qué cambió:** la base académica pasa al borrador v5 con sus anexos y su versión en A3, y un estado al 24 de octubre abre el README. El estado del 30 de septiembre queda como histórico, y el resumen general se presenta con su corte del 25 de septiembre.
+- **Cómo estaba antes:** la base académica era la memoria v4 y el estado más reciente era el del 30 de septiembre, con la app 2.14 a 2.18 y el parlante.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-10-20 — Android 3.3
 

@@ -2,10 +2,10 @@
 
 Este documento indica dónde comenzar, qué archivo funciona como referencia vigente y cómo distinguir el desarrollo actual del material histórico. Su propósito es evitar que una versión anterior oriente una decisión nueva por accidente.
 
-**Para migrar a Claude:** abre [`CLAUDE.md`](../CLAUDE.md), usa las [instrucciones de inicio](INICIO-CLAUDE.md) y el [traspaso completo con corte al 24 de septiembre](traspaso-a-claude-2026-09-24.md). La aplicación más reciente es Android 2.10, que exige participar en la prueba, aclara los textos y pone el texto de las fotos según su tono ([cambios y verificación](../06_desarrollo_y_factibilidad/app-android/version-2.10-participacion-y-claridad-2026-09-27.md)), sobre la 2.9, con vidrio, formas redondeadas y emoji ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.9-vidrio-y-emoji-2026-09-27.md)), y la 2.8, que agregó el sistema de marca D-073, perfil y ruta ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)); la 2.7 es la que especifica el protocolo 02 ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.7-prueba-21-dias-2026-09-25.md)), y el autor debe decidir cuál usar en la prueba; el estado de Issues debe confirmarse directamente en GitHub. La marca tiene una propuesta 2.0 en Figma ([D-085](../10_recursos_visuales/22_sistema-de-marca-2.0-figma-2026-09-27.md)).
+**Para migrar a Claude:** abre [`CLAUDE.md`](../CLAUDE.md), usa las [instrucciones de inicio](INICIO-CLAUDE.md) y el [traspaso completo](traspaso-a-claude-2026-09-24.md), que se actualiza con cada cambio. El estado al día está en el [estado del proyecto](estado-del-proyecto-2026-10-19.md): la app 2.33 para el testeo y la 3.3 con la identidad aprobada (D-138), la prueba en casa con tres personas desde el 7 de octubre y la memoria v5 con sus anexos. El estado de Issues debe confirmarse directamente en GitHub.
 
 
-**Base académica actualizada:** [Coherencia de la memoria y pendientes por área](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md). Recorrido, soporte y alcance comparativo reconciliados; evidencia empírica pendiente.
+**Base académica:** [borrador v5 de la memoria](../08_memoria/borrador-memoria-v5-2026-10-11.md) (D-123), con sus [anexos A a I](../08_memoria/anexos/README.md). La [coherencia del 9 de septiembre](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md) queda como antecedente.
 
 **Consulta del feedback:** [Las 23 preguntas y sus documentos responsables](../01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
@@ -81,6 +81,12 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Entrada al día
+
+- **Qué cambió:** la entrada remite al estado del proyecto, con la app 2.33 y 3.3, la prueba y la memoria v5 con sus anexos.
+- **Cómo estaba antes:** decía que la app más reciente era la 2.10 y que la base académica era la coherencia del 9 de septiembre.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-09-27 — Marca 2.0 en Figma
 

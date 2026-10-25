@@ -1,6 +1,6 @@
 # Relevo en breve
 
-**Actualizado:** 20 de octubre de 2026. **Fuente académica:** [borrador v5 de la memoria](borrador-memoria-v5-2026-10-11.md). **Estado completo y pendientes:** [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md).
+**Actualizado:** 24 de octubre de 2026. **Fuente académica:** [borrador v5 de la memoria](borrador-memoria-v5-2026-10-11.md). **Estado completo y pendientes:** [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md).
 
 ## Qué es
 
@@ -17,20 +17,20 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
 
 ## Qué existe hoy
 
-- **Investigación:** 8 entrevistas analizadas con el método Framework, una encuesta de 53 respuestas (D-092), comparación de referentes, 78 referencias verificadas y 8 criterios de diseño.
+- **Investigación:** 8 entrevistas analizadas con el método Framework, una encuesta de 53 respuestas (D-092), comparación de referentes, 88 referencias verificadas y 8 criterios de diseño.
 - **App Android:**
-  - La 2.32, para el testeo (D-137): el Tag se calla con confirmación, muestra su pila y no se desconecta con su alarma encendida.
-  - La 3.2, con la línea visual aprobada (D-131).
-  - 86 pruebas automáticas; consentimiento v13; datos seudonimizados en Supabase y en una copia en el teléfono.
+  - La 2.33, para el testeo (D-138): la 2.32, en que el Tag se calla con confirmación, muestra su pila y no se desconecta con su alarma encendida (D-137), con una semana para comparar con el teléfono.
+  - La 3.3, con la línea visual aprobada (D-131) y todo lo que suman la 2.31 a la 2.33 (D-138).
+  - 87 pruebas automáticas; consentimiento v13; datos seudonimizados en Supabase y en una copia en el teléfono.
   - Su arquitectura completa está en [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md), con [wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
-- **Prueba en casa:** tres personas desde octubre.
+- **Prueba en casa:** tres personas desde el 7 de octubre.
   - Del 8 al 19 de octubre, el ciclo completo funcionó en los tres hogares: el Tag sonó en 23 de 24 ciclos; el otro se activó fuera de casa.
   - En las 21 respuestas recordaron cómo empezar; en 19 supieron qué querían hacer antes de leerlo en la pantalla (en 2, a medias) y en 10 decidieron empezar la actividad.
   - Los fallos del Tag que reportaron se atendieron en las versiones 2.31 y 2.32.
   - Los datos de dos personas los entregaron ellas, en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla. Se unen con [unir-datos.js](../07_validacion/analisis/README.md).
   - Desde el 20 de octubre, una de ellas prueba una semana solo con la notificación del teléfono (app 2.33, D-138).
   - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
-- **Memoria:** borrador v5 con 19 106 palabras en los capítulos 1 a 14, revisado el 20 de octubre para contar los logros primero y los límites una sola vez, con seis lecturas nuevas del autor (D-141), y diagramado en [A3](memoria-a3/README.md) (53 páginas). Tiene 23 datos por confirmar; de sus seis figuras, cinco ya están en la versión A3, incluidas las fotos de la prueba (D-140), y faltan las capturas definitivas.
+- **Memoria:** borrador v5 con 19 108 palabras en los capítulos 1 a 14, revisado el 20 de octubre para contar los logros primero y los límites una sola vez, con seis lecturas nuevas del autor (D-141), y diagramado en [A3](memoria-a3/README.md) (53 páginas). Tiene 23 datos por confirmar; de sus seis figuras, cinco ya están en la versión A3, incluidas las fotos de la prueba (D-140), y faltan las capturas definitivas. Sus nueve [anexos](anexos/README.md), de la A a la I, están armados en Markdown, HTML y PDF desde el 24 de octubre.
 - **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
 
 ## Qué falta
@@ -42,10 +42,15 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - fotos del uso;
 - las escalas y la entrevista de cierre;
 - los costos reales;
-- los anexos armados;
 - la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Anexos y versiones al día
+
+- **Qué cambió:** la app pasa a la 2.33 para el testeo y la 3.3 con la línea visual (87 pruebas); las referencias son 88; la prueba empezó el 7 de octubre; los anexos dejan de faltar.
+- **Cómo estaba antes:** decía 2.32 y 3.2 con 86 pruebas, 78 referencias y los anexos por armar.
+- **Por qué:** revisión de coherencia del 24 de octubre: el resumen debe coincidir con la memoria y el repositorio.
 
 ### 2026-10-20 — Fotos y lecturas
 

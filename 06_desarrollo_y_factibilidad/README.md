@@ -3,7 +3,7 @@
 
 **Consulta del feedback:** [Luz, sonido y evaluación condicionada de vibración](senal-luz-sonido-y-vibracion.md). Respuesta documental disponible; validación empírica pendiente.
 
-**Desde el 25 de septiembre de 2026:** la señal es solo sonora, de unos 30 segundos (D-070 y D-078), y la prueba usa la app y un parlante Bluetooth ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)). Los estudios de luz, la micro:bit y la fase A se conservan como antecedentes o para un eventual testigo propio.
+**Desde el 25 de septiembre de 2026:** la señal es solo sonora, de unos 30 segundos (D-070 y D-078). Desde el 7 de octubre, la prueba usa la app y el Tag, un localizador Bluetooth que se deja junto al primer paso ([protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md)); el parlante y el reloj quedan como salidas alternativas. Los estudios de luz, la micro:bit y la fase A se conservan como antecedentes o para un eventual testigo propio.
 
 ## Propósito
 
@@ -84,6 +84,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-24 — El Tag en la prueba
+
+- **Qué cambió:** el estado dice que la prueba usa el Tag desde el 7 de octubre y que el parlante y el reloj son salidas alternativas.
+- **Cómo estaba antes:** decía que la prueba usaba la app y un parlante Bluetooth.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-10-20 — Android 3.3
 

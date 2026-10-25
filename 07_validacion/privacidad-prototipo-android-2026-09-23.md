@@ -1,5 +1,7 @@
 # Protección de datos y aviso de privacidad del prototipo Android 2.6
 
+> **Histórico.** Describe el prototipo 2.6, al 24 de septiembre de 2026. Lo que la app registra hoy está en el capítulo 11 de la memoria, en el consentimiento v13 ([Anexo I](../08_memoria/anexos/anexo-i-prueba.md)) y en «Qué sale del teléfono y qué no» de [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md).
+
 **Estado:** auditoría documental y borrador para revisión académica y jurídica antes de pruebas con participantes. **Corte:** 24 de septiembre de 2026. Este documento describe el prototipo del repositorio; no equivale a una política publicada ni acredita que todas sus promesas se ejecuten. **Contacto confirmado por el autor:** joan1542003@gmail.com. **Límite propuesto de conservación:** 30 de diciembre de 2026, sujeto a comprobar la eliminación completa.
 
 ## Respuesta breve para la comisión
@@ -71,6 +73,12 @@ En la versión 2.10 (27 de septiembre) usar la app exige el consentimiento vigen
 - Google. (s. f.). *Manifest.permission*. Android Developers. https://developer.android.com/reference/android/Manifest.permission#PACKAGE_USAGE_STATS
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Histórico
+
+- **Qué cambió:** una nota al comienzo remite a las fuentes vigentes sobre los datos que registra la app.
+- **Cómo estaba antes:** no avisaba que describe la app 2.6.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-09-27 — Android 2.10
 

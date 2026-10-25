@@ -1,5 +1,7 @@
 # Consentimiento para evaluar el prototipo Android de Relevo
 
+> **Histórico.** Es el borrador de septiembre de 2026 para la app 2.7 y un parlante. El consentimiento vigente es el v13 del 6 de octubre de 2026, que la persona acepta en la app; su texto completo está en el [Anexo I de la memoria](../08_memoria/anexos/anexo-i-prueba.md).
+
 **Borrador para revisión docente, alineado con el [protocolo 02](protocolo-02-prueba-21-dias.md) y la app 2.7 que ese protocolo requiere. No entregar a participantes hasta comprobar eliminación local y remota, envío de eventos, salida de audio y versión del APK.** Responsable: Johan Yantén, Proyecto de Título de Diseño, Universidad Diego Portales. Contacto para preguntas, retiro o solicitud de eliminación: **joan1542003@gmail.com**.
 
 ## En qué consiste
@@ -29,6 +31,12 @@ Nombre y firma de participante: ____________________________________________
 Firma del responsable: _____________________________________________________
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Histórico
+
+- **Qué cambió:** una nota al comienzo dice que es un borrador de septiembre y dónde está el consentimiento vigente (v13).
+- **Cómo estaba antes:** el nombre del archivo y el título lo presentaban como vigente.
+- **Por qué:** revisión de coherencia del repositorio pedida por el autor.
 
 ### 2026-09-30 — Uso diario y estado del teléfono (versión v11 en la app)
 
