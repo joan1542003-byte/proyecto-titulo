@@ -138,9 +138,16 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - `ui/RelevoApp.kt`: navegación, transiciones y gesto de volver;
 - `ui/FirstRunScreens.kt`, `ui/ProfileScreens.kt`, `ui/RouteScreens.kt`, `ui/HomeScreen.kt`, `ui/PrepareScreen.kt`, `ui/SignalScreens.kt` y `ui/SettingsScreens.kt`: pantallas;
 - `ui/components/` y `theme/`: componentes, iconos, fotos, emoji, vidrio, tono de las fotos (`Tone.kt`), movimiento y el sistema D-073;
-- `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas.
+- `ui/StudyScreens.kt`: configuración de la prueba, tarjetas y preguntas;
+- [`textos/`](textos/README.md): inventario de todos los textos de la app generado desde el código, estudio de cómo habla Relevo y descripción escrita de cada pantalla.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Textos de la app
+
+- **Qué cambió:** la estructura enlaza la carpeta `textos/`, con el inventario de los textos de 3.3 y 2.33, el estudio de escritura de interfaces y la descripción de cada pantalla.
+- **Cómo estaba antes:** los textos solo estaban dentro del código Kotlin y no había una descripción de todas las pantallas.
+- **Por qué:** el autor pidió estudiar y documentar cada palabra y cada pantalla de la app antes de actualizar los textos.
 
 ### 2026-10-24 — Estado al día
 

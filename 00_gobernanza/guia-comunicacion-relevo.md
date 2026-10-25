@@ -7,7 +7,7 @@ estado: "sistema verbal vigente; comprensión pendiente de prueba"
 
 # Guía de comunicación y explicación de Relevo
 
-> **Alcance:** este documento organiza cómo explicar el proyecto a personas que no conocen su investigación. No cambia la formulación académica, no agrega resultados y no presenta como validado el aporte del objeto. La definición extensa continúa en la [memoria v4](../08_memoria/memoria-vigente-v4.md) y el estado del proyecto en el [resumen general](resumen-general-del-proyecto.md).
+> **Alcance:** este documento organiza cómo explicar el proyecto a personas que no conocen su investigación. No cambia la formulación académica, no agrega resultados y no presenta como validado el aporte del objeto. La definición extensa continúa en la [memoria v4](../08_memoria/memoria-vigente-v4.md) y el estado del proyecto en el [resumen general](resumen-general-del-proyecto.md). Las palabras dentro de la app —voz, tono, vocabulario y reglas por tipo de texto— tienen su propio [estudio](../06_desarrollo_y_factibilidad/app-android/textos/estudio-escritura-de-interfaces-2026-10-24.md).
 
 ## Qué debe entender una persona
 
@@ -422,6 +422,12 @@ Hoy existen investigación, recorrido y programa compilado. Lo que el producto b
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Enlace al estudio de los textos de la app
+
+- **Qué cambió:** el alcance enlaza el estudio de escritura de interfaces de la app.
+- **Cómo estaba antes:** la guía no remitía a ningún documento sobre las palabras dentro de la app.
+- **Por qué:** la guía explica el proyecto hacia afuera y el estudio se ocupa de la app; conviene que se encuentren uno al otro.
 
 ### 2026-09-29 — Hipótesis nueva
 

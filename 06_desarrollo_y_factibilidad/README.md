@@ -32,6 +32,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 ## Documentación vigente
 
 - [Relevo como sistema](relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md): frontend, backend y proyecto explicados de punta a punta, con sus fundamentos, y la [lámina de wireframes](relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
+- [Textos de la app](app-android/textos/README.md): cómo habla Relevo —voz, tono, vocabulario y diagnóstico de sus textos—, la descripción escrita de cada pantalla de 3.3 y el inventario de sus 1.287 textos, generado desde el código.
 - [Aplicación Android 3.3](app-android/version-3.3-semana-de-comparacion-2026-10-20.md): la línea visual nueva con los arreglos del Tag y la semana para comparar (D-138).
 - [Aplicación Android 2.33](app-android/version-2.33-semana-de-comparacion-2026-10-20.md): una semana para comparar con la señal en el teléfono, con preguntas antes, tras cada relevo, el día 7 y al cierre (D-138); la versión del testeo desde el 20 de octubre.
 - [Aplicación Android 2.32](app-android/version-2.32-el-tag-no-se-corta-2026-10-17.md): el Tag no se desconecta con su alarma encendida y la app espera más a un Tag lento (D-137); la versión del testeo desde el 17 de octubre.
@@ -84,6 +85,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-24 — Textos de la app
+
+- **Qué cambió:** la documentación vigente enlaza la carpeta de textos de la app: estudio de escritura de interfaces, descripción de cada pantalla e inventario de textos.
+- **Cómo estaba antes:** no había un documento sobre los textos de la app ni una descripción escrita de cada pantalla actual.
+- **Por qué:** pedido del autor del 24 de octubre de estudiar y documentar los textos y las pantallas.
 
 ### 2026-10-24 — El Tag en la prueba
 

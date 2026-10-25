@@ -67,7 +67,42 @@ El 20 de octubre se revisó la memoria contra las guías y clases de la carpeta 
 - No inventar consentimientos, fechas ni autorías.
 - Cada cambio de formato se aplica a todo el documento.
 
+## 3. App: actualizar los textos según el estudio
+
+**Estado:** en espera de la indicación del autor. **Anotada:** 24 de octubre de 2026.
+
+### Por qué
+
+El autor pidió estudiar cómo comunicarse en la app y documentar cada texto y cada pantalla, y adelantó que después pedirá actualizar los textos según ese estudio. El [estudio de los textos](../06_desarrollo_y_factibilidad/app-android/textos/estudio-escritura-de-interfaces-2026-10-24.md) propone una voz, un tono y un vocabulario, y anota 14 puntos por revisar (R1 a R14).
+
+### Qué decidir antes
+
+- [ ] El nombre de la forma de empezar: volver a «Para empezar» (D-084) u otro (R1).
+- [ ] El nombre de la señal y el uso de «aviso» (R2).
+- [ ] Un solo nombre para la ruta en la pestaña, el título y Perfil (R4).
+- [ ] Si «nosotros» queda solo para el equipo del proyecto (R7).
+- [ ] El punto final en los títulos en dos tonos (R8).
+- [ ] En qué versión se aplica: 3.3 o la que use la prueba.
+
+### Qué hacer
+
+- [ ] Primero lo que desorienta: R5, R6, R1 y R2. Después R3, R4, R7, R11 y R12. Al final, el estilo.
+- [ ] Cambiar los textos en el código, regenerar el [inventario](../06_desarrollo_y_factibilidad/app-android/textos/README.md) con `node extraer-textos.js`, compilar y probar en el emulador, también con letra grande.
+- [ ] Registrar la decisión y documentar la versión.
+
+### Reglas
+
+- Mientras dura la prueba, no cambiar la frase de la señal, las preguntas, las instrucciones de cada semana, los cierres ni el consentimiento.
+- Un cambio del consentimiento se registra como versión nueva.
+- Mostrar al autor los textos nuevos antes de compilar la versión.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-24 — Tarea 3
+
+- **Qué cambió:** se añadió la tarea 3, actualizar los textos de la app según el estudio de escritura de interfaces.
+- **Cómo estaba antes:** había dos tareas, ambas de la memoria.
+- **Por qué:** el autor adelantó que pedirá actualizar los textos después del estudio.
 
 ### 2026-10-20 — Tarea 2
 
