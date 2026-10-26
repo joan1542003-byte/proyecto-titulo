@@ -142,7 +142,19 @@ Se contrastó el borrador con el código de la app, los datos de la prueba, el r
 - **Extensión:** dos palabras más (19 108 en los capítulos 1 a 14). Desde la portada hasta antes de «Referencias» son 20 123 contando índices y tablas, y unas 17 900 en texto corrido. Las 248 palabras de los marcadores de figuras salen al insertarlas.
 - **Para decidir:** la versión que se presenta (el texto describe la 3.2 y la Figura 3 pide capturas de la 3.2; la más reciente es la 3.3, con la misma interfaz) y la frase de marca (la memoria dice «Hazle lugar a lo que quieres hacer»; la bienvenida de la app, «Vuelve a lo que querías hacer»).
 
+## Tesis locales del 25 de octubre de 2026
+
+- **Qué cambió:** el capítulo 8 suma el apartado «Proyectos de título de diseño en Chile», de unas 180 palabras, con dos memorias de diseño de la Universidad de Chile (Venegas Álvarez, 2026; Riveros Oltra, 2023) y una de sociología (Cortés Concha, 2016). El método del capítulo registra la consulta, y las referencias pasan de 88 a 91.
+- **Por qué:** era la condición que dejó abierta el Pase de junio. El autor autorizó incluir las tres ([propuesta](propuesta-tesis-locales-capitulo-8-2026-10-25.md)).
+- **Verificación:** las tres están descritas según su ficha oficial; sus PDF no se leyeron. Se regeneraron los anexos, que suman la consulta al Anexo C, y la versión A3, que queda en 54 páginas.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Tesis locales
+
+- **Qué cambió:** se anotó la inclusión de tres memorias chilenas en el capítulo 8.
+- **Cómo estaba antes:** las notas terminaban en la revisión de coherencia del 24 de octubre.
+- **Por qué:** el autor autorizó incluirlas.
 
 ### 2026-10-24 — Revisión de coherencia
 

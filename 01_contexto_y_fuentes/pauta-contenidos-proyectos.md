@@ -11,7 +11,7 @@
 | Título | Breve y elocuente; puede ser emocional. | «Relevo». | Cumple |
 | Subtítulo | Descriptivo, preciso y concreto. | «Sistema *phygital* para recuperar intenciones personales durante el ocio digital». | Cumple |
 | Resumen y abstract | En pasado, con descripción, objetivos, metodología, resultados y conclusiones; 200 a 300 palabras. | 299 y 300 palabras. | Cumple |
-| Palabras clave | 4 conceptos, ordenados jerárquicamente. | 3: ocio digital, memoria prospectiva, diseño *phygital*. | **Falta una** |
+| Palabras clave | 4 conceptos, ordenados jerárquicamente. | 3: ocio digital, memoria prospectiva, diseño *phygital*. | Cumple con la Biblioteca, que pide 2 a 3 |
 | Índice | Estructura de todo el contenido. | Índice general, de tablas y de figuras. | Cumple |
 | Introducción | 600 a 1.200 palabras; de qué trata, por qué importa, cómo se originó, su estado y cómo está organizado el documento. | Unas 680 palabras. | Cumple |
 | Motivación personal | 100 a 300 palabras. | Unas 170 palabras. | Cumple |
@@ -22,11 +22,17 @@
 | Justificación | 300 a 600 palabras, con la pertinencia disciplinar. | Unas 330 palabras. | Cumple |
 | Pregunta, hipótesis y objetivos (opción de investigación) | Pregunta factible y relevante; hipótesis que relacione variables; objetivos con qué, para qué, mediante qué y dónde. | Capítulo 10, con hipótesis D-091 y estados de los objetivos (D-139). | Cumple |
 | Bajada proyectual | En Seminario, al menos dos propuestas y máximo 300 palabras. | Capítulo 11, el proyecto desarrollado. | No aplica: en Proyecto de Título la bajada es el proyecto |
-| Bibliografía | — | 88 referencias en APA 7. | Cumple |
+| Bibliografía | — | 91 referencias en APA 7. | Cumple |
 
-**Única corrección que sugiere la pauta:** agregar una cuarta palabra clave, por ejemplo «señal situada» o «recordatorio situado» (*situated cue*), y ordenarlas de la más general a la más específica.
+**Palabras clave:** esta pauta de Seminario pide 4, pero la [pauta de la Biblioteca](pauta-biblioteca-tesis.md), que rige el depósito de la memoria, pide destacar 2 a 3 términos de la especialidad. Se mantienen las 3 actuales, ordenadas de la más general a la más específica. Con eso, la memoria cumple todo lo que pide esta pauta.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Palabras clave
+
+- **Qué cambió:** las palabras clave pasan a «cumple»: se mantienen 3.
+- **Cómo estaba antes:** se recomendaba agregar una cuarta.
+- **Por qué:** la pauta de la Biblioteca, leída el mismo día, pide 2 a 3 términos y rige el depósito.
 
 ### 2026-10-25 — Creación
 

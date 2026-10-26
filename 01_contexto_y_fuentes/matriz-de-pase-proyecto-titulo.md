@@ -34,7 +34,7 @@ La matriz evalúa cada subcriterio como **logrado**, **en desarrollo** o **no lo
 | 1.3 Respuesta de trabajo | Logrado | Cada observación tiene su cambio y su versión (registro de pedidos y decisiones D-001 a D-141). |
 | 2.1 Contexto y usuario definidos | Logrado | Capítulo 7: entrevistas, encuesta, situaciones de uso y recorridos. |
 | 2.2 Problema bien formulado | Logrado | Capítulo 3: tres aristas con datos. |
-| 2.3 Estado del arte pertinente | En desarrollo | Capítulos 5 y 8 completos; falta una tesis local de diseño, condición del Pase de junio. |
+| 2.3 Estado del arte pertinente | Logrado | Capítulos 5 y 8; desde el 25 de octubre, con dos memorias de diseño y una de sociología chilenas, condición del Pase de junio. |
 | 3.1 Conclusiones y oportunidades | Logrado | Conclusiones del marco teórico y oportunidad del capítulo 8. |
 | 3.2 Definición del problema de diseño | Logrado | Capítulo 10. |
 | 3.3 Hipótesis o líneas de solución | Logrado | Hipótesis D-091 y ocho criterios de diseño. |
@@ -54,7 +54,7 @@ La matriz evalúa cada subcriterio como **logrado**, **en desarrollo** o **no lo
 | 8.2 Financiamiento y presupuesto | **No logrado** | La Tabla 9 no tiene montos y la fuente de financiamiento está por confirmar. |
 | 8.3 Viabilidad general | En desarrollo | El modelo de gestión en tres etapas existe; faltan costos reales. |
 
-**Resumen:** 14 logrados, 7 en desarrollo, 2 no logrados y 1 por confirmar. Los dos no logrados, el objeto con sus planos (5.2) y el presupuesto (8.2), son tareas de [Por hacer](../00_gobernanza/por-hacer.md).
+**Resumen:** 15 logrados, 6 en desarrollo, 2 no logrados y 1 por confirmar. Los dos no logrados, el objeto con sus planos (5.2) y el presupuesto (8.2), son tareas de [Por hacer](../00_gobernanza/por-hacer.md).
 
 ## Prioridad de cierre
 
@@ -65,6 +65,12 @@ Para la maqueta editorial, cada dimensión debe aparecer mediante evidencia pert
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Estado del arte logrado
+
+- **Qué cambió:** el subcriterio 2.3 pasa a logrado y el resumen a 15 logrados.
+- **Cómo estaba antes:** estaba en desarrollo, por la falta de una tesis local de diseño.
+- **Por qué:** el capítulo 8 incluye ahora tres memorias chilenas, con autorización del autor.
 
 ### 2026-10-25 — Autoevaluación por subcriterio
 

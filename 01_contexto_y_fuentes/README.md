@@ -20,7 +20,8 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Criterios oficiales para la memoria de Proyecto de Título](criterios-oficiales-memoria-proyecto-titulo.md): consolida estructura, áreas de evaluación y límites documentales verificados en reglamento y pautas institucionales.
 - [Matriz de pase — Proyecto de Título](matriz-de-pase-proyecto-titulo.md): integra las ocho dimensiones de evaluación institucional, su correspondencia documental con Relevo y la autoevaluación de sus 24 subcriterios.
 - [Pauta de contenidos de proyectos](pauta-contenidos-proyectos.md): estructura y extensiones de la pauta de la Escuela, contrastadas con la memoria v5.
-- **Documentos institucionales originales** en [`documentos_institucionales/`](documentos_institucionales/): calendario de titulación del segundo semestre de 2026, matriz de pase y pauta de contenidos.
+- [Pauta de la Biblioteca UDP](pauta-biblioteca-tesis.md): formato, portada y entrega para el depósito de la memoria, contrastados con la v5.
+- **Documentos institucionales originales** en [`documentos_institucionales/`](documentos_institucionales/): calendario de titulación del segundo semestre de 2026, matriz de pase, pauta de contenidos y la pauta y la portada de ejemplo de la Biblioteca.
 - [Matriz histórica de encargos y memoria](matriz-historica-encargos-memoria.md): reconstruye requisitos acumulativos, distingue formatos de proceso y audita su ubicación en la memoria v4.
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
@@ -52,6 +53,12 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Pauta de la Biblioteca
+
+- **Qué cambió:** se enlazan la pauta de la Biblioteca y sus dos PDF originales.
+- **Cómo estaba antes:** la pauta de la Biblioteca no estaba en el repositorio.
+- **Por qué:** el autor autorizó descargarla.
 
 ### 2026-10-25 — Documentos oficiales del segundo semestre
 

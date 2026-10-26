@@ -62,7 +62,7 @@ El instructivo también mezcla «Seminario» y «Proyecto de Título» en varios
 | Portada con nombre del proyecto, estudiante y profesor guía | Cumple en parte: el nombre legal está marcado como por confirmar. |
 | Portada con modalidad y fecha de entrega | **Falta:** solo dice «2026». |
 | Las siete dimensiones: problema, objetivos, método y plan, marco teórico, usuario y contexto, solución y factibilidad | Están todas. La factibilidad es la más débil, porque los costos están por confirmar. |
-| Ortografía, redacción y citación | Cumple: hay 88 referencias en APA verificadas. |
+| Ortografía, redacción y citación | Cumple: hay 91 referencias en APA verificadas. |
 | Solo las últimas visualizaciones pueden quedar pendientes | **Riesgo:** hoy hay 23 datos por confirmar y faltan resultados de cierre. |
 
 La no entrega, un archivo dañado o fuera de formato, o llegar tarde al examen, hacen reprobar el curso. El examen dura 50 minutos: 15 de exposición, 30 de preguntas y 10 de evaluación. Ajustarse al tiempo es parte de la nota.
@@ -71,7 +71,7 @@ La no entrega, un archivo dañado o fuera de formato, o llegar tarde al examen, 
 
 - Las objeciones de la comisión se corrigen antes de enviar la memoria a la Biblioteca.
 - La Biblioteca pide un formulario de autorización y un PDF sin clave nombrado con el RUT.
-- La [pauta de tesis de la Biblioteca](https://bibliotecas.udp.cl/recursos-online/formato-de-presentacion-de-tesis/) está en un PDF que todavía no se revisó.
+- La [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md), leída el 25 de octubre, pide formato carta, Arial 12 y una portada en mayúsculas. Para las carreras de Diseño nombra «tesis no convencionales», sin reglas. Hay que preguntar si se acepta el A3.
 
 ## Contraste con la rúbrica general
 
@@ -96,7 +96,7 @@ La no entrega, un archivo dañado o fuera de formato, o llegar tarde al examen, 
 El feedback del Pase del primer semestre fue para In(Visible), el proyecto anterior, con 60 de 70 puntos en la corrección cruzada. Puso dos condiciones antes del examen:
 
 1. **Integrar la culpa como fenómeno cultural y psicológico** (Han y De Masi). Con el giro a Relevo, la culpa dejó de ser el centro: basta explicarlo si la comisión lo pregunta.
-2. **Incorporar al benchmark al menos una tesis local de diseño sobre ocio o bienestar digital.** **Sigue abierta:** la memoria v5 no cita ninguna tesis de diseño. Es una corrección barata y conviene hacerla.
+2. **Incorporar al benchmark al menos una tesis local de diseño sobre ocio o bienestar digital.** **Cumplida el 25 de octubre:** el capítulo 8 incluye dos memorias de diseño de la Universidad de Chile (Venegas Álvarez, 2026; Riveros Oltra, 2023) y una de sociología (Cortés Concha, 2016).
 
 ## Lo que hay que cerrar
 
@@ -110,12 +110,12 @@ El feedback del Pase del primer semestre fue para In(Visible), el proyecto anter
 | 6 | **Datos por confirmar (23):** nombre legal, título y mención, frase de marca, grabación y transcripción, encuesta, herramientas de IA, mayoría de edad de las participantes, entre otros. | Tres están en la portada; ninguno puede quedar en la memoria entregada. | Medio | Autor | 15 de noviembre |
 | 7 | **Portada oficial:** logos de la Universidad, la Facultad y la Escuela, modalidad y fecha de entrega, y el nombre del archivo con la mención. | Es un requisito formal obligatorio. | Bajo, pero grave si falta | IA, cuando el autor confirme los datos | 15 de noviembre |
 | 8 | **Presentación del Pase y del examen** (15 minutos): qué es el objeto, dónde vive, el flujo de la persona y el técnico, la evidencia y sus límites. | Es lo que la comisión de julio no entendió. | Medio | Autor e IA | 22 de noviembre |
-| 9 | **Tesis local de diseño** en el capítulo 8. | Condición del Pase de junio. | Bajo | IA busca y propone; el autor elige | 8 de noviembre |
+| 9 | **Tesis local de diseño** en el capítulo 8: **hecha el 25 de octubre**. | Condición del Pase de junio. | Cerrado | — | — |
 | 10 | **Feedback del 14 de octubre** sobre el objeto, registrado como decisión. | Se preguntó a los profesores si basta una forma propia para el Tag. | Bajo | Autor | Esta semana |
 | 11 | **Versión que se presenta** (la 2.33 de la prueba o la 3.3), dicha igual en todas partes. | Hoy la memoria describe la 3.2. | Bajo | Autor | 15 de noviembre |
 | 12 | **Ética:** si la Escuela exige una revisión ética. | Es un dato por confirmar de la memoria. | Bajo | Autor | 15 de noviembre |
 
-**Orden interno:** los Issues #8 a #11 describen la luz, la micro:bit y el testigo con batería de septiembre, y los PR #12 y #13 son borradores viejos. Conviene cerrarlos o ponerlos al día antes de mostrar el repositorio; no afectan la nota.
+**Orden interno:** el 25 de octubre se cerró el Issue #11 y se pusieron al día el #8 y el #10. Quedan los PR #12 y #13, borradores viejos; no afectan la nota.
 
 Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su probabilidad e impacto, en el [registro de riesgos](registro-de-riesgos.md). La autoevaluación de los 24 subcriterios de la matriz de pase da 14 logrados, 7 en desarrollo, 2 no logrados —el objeto con sus planos y el presupuesto— y 1 por confirmar ([matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md)).
 
@@ -131,6 +131,12 @@ Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su
 | 26 nov. – 2 dic. | Ajustes finales; entrega de la memoria el miércoles 2 de diciembre antes de las 12:00. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Tesis local, Biblioteca e Issues
+
+- **Qué cambió:** la condición de la tesis local queda cumplida, la pauta de la Biblioteca leída y los Issues al día.
+- **Cómo estaba antes:** las tres figuraban pendientes.
+- **Por qué:** el autor autorizó hacerlas.
 
 ### 2026-10-25 — Respuestas del autor
 

@@ -209,23 +209,29 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - que las tres personas son mayores de edad;
   - la fuente de financiamiento.
 - [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en la carpeta `LOGOTIPOS UDP FAAD` de la Coordinación), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
-- [ ] **Cuarta palabra clave**, según la [pauta de contenidos](../01_contexto_y_fuentes/pauta-contenidos-proyectos.md).
+- [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
 - [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6).
 - [ ] **Antes de entregar:** PDF de menos de 15 MB, páginas simples, de 15.000 a 20.000 palabras, y el archivo nombrado con el nombre y la mención, por ejemplo «Johan Yantén Dis.[mención].pdf». Entregar el 1 de diciembre como margen.
-- [ ] **Después del examen:** revisar la pauta de tesis de la Biblioteca, el formulario de autorización y el PDF sin clave nombrado con el RUT.
+- [ ] **Depósito en la Biblioteca**, después del examen. La [pauta](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) ya se revisó: pide carta, Arial 12 y una portada en mayúsculas, y para las carreras de Diseño nombra «tesis no convencionales» sin dar reglas. Hay que preguntar a la Coordinación o a la Biblioteca si se acepta el A3 y si hace falta una portada institucional. Al depositar: PDF sin clave nombrado con el RUT y el formulario de autorización.
 
 ## 9. Pendientes menores y orden
 
 **Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
 
-- [ ] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: [propuesta lista](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md) con dos memorias de diseño de la Universidad de Chile y una de sociología. Falta que el autor elija; después se inserta.
+- [x] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: el 25 de octubre se incluyeron dos memorias de diseño de la Universidad de Chile y una de sociología ([propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md)). Conviene que el autor descargue y lea sus PDF, que la IA no pudo abrir.
 - [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la Figura 4.
-- [ ] **GitHub:** cerrar o poner al día los Issues #8 a #11 y decidir los PR #12 y #13.
+- [ ] **GitHub:** el 25 de octubre se cerró el #11, cumplido con el Tag, y se pusieron al día el #8 y el #10. Quedan por decidir los PR #12 y #13.
 - [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Tesis, Biblioteca e Issues
+
+- **Qué cambió:** quedan hechas la tesis local, las palabras clave y la revisión de la pauta de la Biblioteca; los Issues quedan al día, salvo los PR.
+- **Cómo estaba antes:** las tres estaban pendientes y la pauta de la Biblioteca sin leer.
+- **Por qué:** el autor autorizó todo el 25 de octubre.
 
 ### 2026-10-25 — Propuesta de tesis locales
 

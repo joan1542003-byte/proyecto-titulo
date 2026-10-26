@@ -118,6 +118,15 @@ Este registro tiene los siguientes límites:
 
 Por estas razones, la conclusión de oportunidad se formulará como una delimitación del corpus revisado y no como una afirmación de novedad absoluta.
 
+### 9. Consulta del 25 de octubre de 2026: memorias de título chilenas
+
+- **Por qué:** el feedback del Pase de junio pidió incorporar al menos una tesis local de diseño sobre ocio o bienestar digital.
+- **Dónde:** Repositorio Académico de la Universidad de Chile. La base de memorias de Diseño UC no respondió desde el equipo de trabajo, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
+- **Términos:** «celular», «smartphone», «redes sociales», «tiempo libre», «desconexión digital», «bienestar digital» y «uso del celular», combinados con «diseño» o «diseñadora».
+- **Incluidas:** Venegas Álvarez (2026), de Diseño, sobre una aplicación de bienestar digital con gamificación narrativa; Riveros Oltra (2023), de Diseño, sobre gamificación y formación de hábitos en Betterfly; y Cortés Concha (2016), de Sociología, sobre el ocio digital de jóvenes en redes sociales.
+- **Descartada:** Trincado Rivas (2020), de Diseño Gráfico, porque trata el acoso en redes sociales y no el ocio ni el bienestar digital.
+- **Qué se leyó:** las fichas oficiales del repositorio, con su título, carrera, profesor guía y resumen. Los PDF están tras una verificación automática de acceso que no se intentó saltar; el autor puede descargarlos para revisarlos.
+
 ## C.2 Fichas de los referentes
 
 Estas fichas registran lo que cada referente declara hacer y el peso que esa información puede tener para Relevo. La frase «afirmación comercial» identifica información proveniente del fabricante o de la plataforma. La frase «evidencia independiente» se reserva para estudios académicos o evaluaciones externas; una página oficial, una reseña de usuario o una cifra de ventas no se transforma en evidencia de eficacia por el solo hecho de estar publicada.
@@ -366,6 +375,8 @@ Brick LLC. (s. f.-b). *Brick Zone*. Recuperado el 24 de agosto de 2026, de https
 
 Chiu, G. y Gilbert, S. J. (2024). Influence of the physical effort of reminder-setting on strategic offloading of delayed intentions. *Quarterly Journal of Experimental Psychology, 77*(6), 1295–1311. https://doi.org/10.1177/17470218231199977
 
+Cortés Concha, O. S. (2016). *Ocio digital y vida cotidiana: alcances de la experiencia social de ocio en las social media por parte de jóvenes nativos y nativas digitales* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://repositorio.uchile.cl/handle/2250/164071
+
 Focusaur. (s. f.). *Focusaur: The phone-free focus device for deep work & habits*. Recuperado el 24 de agosto de 2026, de https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-habits
 
 Grüning, D. J., Riedel, F. y Lorenz-Spreen, P. (2023). Directing smartphone use through the self-nudge app one sec. *Proceedings of the National Academy of Sciences, 120*(8), Artículo e2213114120. https://doi.org/10.1073/pnas.2213114120
@@ -378,11 +389,15 @@ one sec. (s. f.). *Cut your screen time in half*. Recuperado el 24 de agosto de 
 
 Peña-Albert, A. K., Ingram, S., Khazaal, Y., Litrico, L., Farah, J. C. y Gillet, D. (2026). Restoring engagement in digital self-control tools using nudge reconfiguration prompts: Quasi-experimental study. *JMIR Formative Research, 10*, Artículo e85349. https://doi.org/10.2196/85349
 
+Riveros Oltra, J. (2023). *BetterHumans: explorando la gamificación y la formación de hábitos en la retención de usuarios: un estudio de caso de Betterfly* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://doi.org/10.58011/khxf-cq52
+
 Sanders, S. (2026, 12 de mayo). *Reclaim your time with Pause Point*. Google. https://blog.google/products-and-platforms/platforms/android/pause-point/
 
 Screenless. (s. f.). *Screenless Breaker*. Recuperado el 24 de agosto de 2026, de https://screenlessapp.com/en/products/screenless-breaker-v1
 
 Unpluq. (s. f.). *Unpluq: Stop scrolling. Reduce distractions. Reduce screentime*. Recuperado el 24 de agosto de 2026, de https://www.unpluq.com/
+
+Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño de aplicaciones para fomentar la gratitud a través de la gamificación narrativa* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://repositorio.uchile.cl/handle/2250/216623
 
 ## Registro de cambios (disclaimer)
 

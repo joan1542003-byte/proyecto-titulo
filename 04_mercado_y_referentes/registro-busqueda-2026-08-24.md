@@ -121,7 +121,22 @@ Este registro tiene los siguientes límites:
 
 Por estas razones, la conclusión de oportunidad se formulará como una delimitación del corpus revisado y no como una afirmación de novedad absoluta.
 
+## 9. Consulta del 25 de octubre de 2026: memorias de título chilenas
+
+- **Por qué:** el feedback del Pase de junio pidió incorporar al menos una tesis local de diseño sobre ocio o bienestar digital.
+- **Dónde:** Repositorio Académico de la Universidad de Chile. La base de memorias de Diseño UC no respondió desde el equipo de trabajo, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
+- **Términos:** «celular», «smartphone», «redes sociales», «tiempo libre», «desconexión digital», «bienestar digital» y «uso del celular», combinados con «diseño» o «diseñadora».
+- **Incluidas:** Venegas Álvarez (2026), de Diseño, sobre una aplicación de bienestar digital con gamificación narrativa; Riveros Oltra (2023), de Diseño, sobre gamificación y formación de hábitos en Betterfly; y Cortés Concha (2016), de Sociología, sobre el ocio digital de jóvenes en redes sociales.
+- **Descartada:** Trincado Rivas (2020), de Diseño Gráfico, porque trata el acoso en redes sociales y no el ocio ni el bienestar digital.
+- **Qué se leyó:** las fichas oficiales del repositorio, con su título, carrera, profesor guía y resumen. Los PDF están tras una verificación automática de acceso que no se intentó saltar; el autor puede descargarlos para revisarlos.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Memorias de título chilenas
+
+- **Qué cambió:** se añadió la sección 9, con la consulta de memorias de título chilenas.
+- **Cómo estaba antes:** el registro terminaba en la verificación de vigencia del 26 de agosto.
+- **Por qué:** el autor autorizó incluir en el capítulo 8 las tesis locales propuestas, condición del Pase de junio.
 
 ### 2026-08-24 — Creación del registro
 

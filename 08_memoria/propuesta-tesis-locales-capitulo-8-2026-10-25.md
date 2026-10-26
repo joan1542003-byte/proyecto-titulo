@@ -2,7 +2,7 @@
 
 > **Para qué:** cumplir la condición que dejó abierta el Pase de junio: «incorporar al benchmark al menos una tesis local de diseño sobre ocio o bienestar digital en Chile» (feedback de Majluf y Gallardo, 16 de junio de 2026). Es la tarea 9 de [Por hacer](../00_gobernanza/por-hacer.md#9-pendientes-menores-y-orden).
 >
-> **Estado:** propuesta para que el autor elija. La memoria todavía no cambió.
+> **Estado:** **incluida** el 25 de octubre de 2026, con autorización del autor. Entraron las tres memorias, como apartado «Proyectos de título de diseño en Chile» del capítulo 8, y se regeneraron los anexos y la versión A3. Falta que el autor descargue y lea los PDF, que la IA no pudo abrir.
 
 ## En breve
 
@@ -54,6 +54,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Con esa respuesta, se inserta en el [borrador v5](borrador-memoria-v5-2026-10-11.md), se suman las referencias, se actualiza el Anexo C y se regeneran los anexos y la versión A3.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Incluida
+
+- **Qué cambió:** la propuesta pasa a incluida en la memoria.
+- **Cómo estaba antes:** esperaba la elección del autor.
+- **Por qué:** el autor autorizó incluir todo.
 
 ### 2026-10-25 — Creación
 

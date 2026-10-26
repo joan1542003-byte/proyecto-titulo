@@ -324,7 +324,7 @@ De ambos recorridos se desprenden necesidades comunes: intención explícita, co
 
 El estado del arte compara productos y servicios disponibles, y la evidencia publicada sobre ellos, con seis preguntas: qué problema declara abordar cada referente; qué mecanismo utiliza; dónde ocurre la interacción principal; qué exige configurar y mantener; cómo conserva o limita la autonomía, y qué evidencia existe sobre sus resultados.
 
-La búsqueda, exploratoria, se cerró el 24 de agosto de 2026; las páginas de los referentes principales se verificaron de nuevo el 26 de agosto, y las consultas posteriores constan en la fecha de recuperación de cada referencia, a la que corresponden los precios y compatibilidades citados. Entre el 7 de septiembre y el 5 de octubre se añadió una consulta sobre localizadores Bluetooth, por la elección del objeto del prototipo. El Anexo C reúne el registro metodológico —pregunta, términos, criterios de inclusión y exclusión, límites— y las fichas. No es una revisión sistemática: no se guardaron las consultas exactas ni el número de resultados.
+La búsqueda, exploratoria, se cerró el 24 de agosto de 2026; las páginas de los referentes principales se verificaron de nuevo el 26 de agosto, y las consultas posteriores constan en la fecha de recuperación de cada referencia, a la que corresponden los precios y compatibilidades citados. Entre el 7 de septiembre y el 5 de octubre se añadió una consulta sobre localizadores Bluetooth, por la elección del objeto del prototipo. El 25 de octubre se buscaron memorias de título chilenas en el Repositorio Académico de la Universidad de Chile. El Anexo C reúne el registro metodológico —pregunta, términos, criterios de inclusión y exclusión, límites— y las fichas. No es una revisión sistemática: no se guardaron las consultas exactas ni el número de resultados.
 
 Hay nueve fichas comparativas (Digital Wellbeing y Pause Point comparten una); kSafe, Place-Its, MindPhone y Wobble se suman como antecedentes de mecanismo, y los localizadores, como familia de soporte. Las fuentes comerciales describen funciones, compatibilidad y modelo de negocio; no demuestran eficacia. No se estudió la participación de mercado ni la disponibilidad en Chile; la exploración de patentes descrita en el capítulo 5 consta en el mismo anexo.
 
@@ -337,6 +337,10 @@ Las aplicaciones de pausa llevan la reconsideración al momento de la apertura: 
 Pause Point, anunciado por Google en 2026, incorpora la pausa al sistema del teléfono: al abrir una aplicación distractora, introduce una espera de 10 segundos con opciones como respirar o pasar a otra aplicación sugerida, y desactivarlo exige reiniciar el teléfono (Sanders, 2026). Según la ayuda oficial de Pixel, está disponible en la serie Pixel 11 con Android 17 o posterior (Google, s. f.-a): no consta como función general de Android.
 
 MindPhone, descrito en el capítulo 5, preguntaba por el propósito al desbloquear el teléfono (Terzimehić et al., 2022). En todas estas herramientas la intervención ocurre en la pantalla que concentra la atención y, aun cuando hace presente una intención, no la relaciona con el lugar donde la actividad puede comenzar.
+
+## Proyectos de título de diseño en Chile
+
+Dos memorias recientes de diseño de la Universidad de Chile abordan el bienestar en aplicaciones móviles. Venegas Álvarez (2026) diseñó y evaluó en fase beta una aplicación de escritura de gratitud con gamificación narrativa. Atribuye el abandono de las aplicaciones de salud mental y bienestar digital a fallos de diseño y a una gamificación superficial que frustra las necesidades descritas por la teoría de la autodeterminación, y sus resultados preliminares indican que la adherencia a largo plazo requiere mejorar la usabilidad. Riveros Oltra (2023) estudió la gamificación y la formación de hábitos para retener a las personas usuarias, con Betterfly como caso. Ambas comparten con Relevo el fundamento en la autonomía, pero buscan que la persona vuelva a la aplicación; Relevo procura que deje la pantalla para retomar otra actividad, y excluye rachas y premios (criterio 4). Desde la sociología, Cortés Concha (2016) describió el ocio de jóvenes chilenos en redes sociales como una experiencia social en la que se consiguen intereses y se construyen proyectos propios, lo que respalda no tratar toda sesión prolongada como un problema.
 
 ## Objetos que restringen o alejan el teléfono
 
@@ -839,6 +843,8 @@ Brick LLC. (s. f.-b). *Brick Zone*. Recuperado el 24 de agosto de 2026, de https
 
 Chiu, G. y Gilbert, S. J. (2024). Influence of the physical effort of reminder-setting on strategic offloading of delayed intentions. *Quarterly Journal of Experimental Psychology, 77*(6), 1295–1311. https://doi.org/10.1177/17470218231199977
 
+Cortés Concha, O. S. (2016). *Ocio digital y vida cotidiana: alcances de la experiencia social de ocio en las social media por parte de jóvenes nativos y nativas digitales* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://repositorio.uchile.cl/handle/2250/164071
+
 de Segovia Vicente, D., Van Gaeveren, K., Murphy, S. L. y Vanden Abeele, M. M. P. (2024). Does mindless scrolling hamper well-being? Combining ESM and log-data to examine the link between mindless scrolling, goal conflict, guilt, and daily well-being. *Journal of Computer-Mediated Communication, 29*(1), Artículo zmad056. https://doi.org/10.1093/jcmc/zmad056
 
 Einstein, G. O. y McDaniel, M. A. (2005). Prospective memory: Multiple retrieval processes. *Current Directions in Psychological Science, 14*(6), 286–290. https://doi.org/10.1111/j.0963-7214.2005.00382.x
@@ -947,6 +953,8 @@ Restrepo Betancur, L. F. (2022). Preferencia por los colores en universitarios d
 
 Risko, E. F. y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676–688. https://doi.org/10.1016/j.tics.2016.07.002
 
+Riveros Oltra, J. (2023). *BetterHumans: explorando la gamificación y la formación de hábitos en la retención de usuarios: un estudio de caso de Betterfly* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://doi.org/10.58011/khxf-cq52
+
 Robertson, K. (1989). Strategically desirable brand name characteristics. *Journal of Consumer Marketing, 6*(4), 61–71. https://doi.org/10.1108/EUM0000000002563
 
 Ryan, R. M. y Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. *American Psychologist, 55*(1), 68–78. https://doi.org/10.1037/0003-066X.55.1.68
@@ -980,6 +988,8 @@ Tonietto, G. N., Malkoc, S. A., Reczek, R. W. y Norton, M. I. (2021). Viewing le
 Universidad Nacional Autónoma de México. (2023, 16 de abril). *Relacionamos nuestros miedos con los colores* (Boletín UNAM-DGCS-273). Dirección General de Comunicación Social. https://www.dgcs.unam.mx/boletin/bdboletin/2023_273.html
 
 Unpluq. (s. f.). *Unpluq: Stop scrolling. Reduce distractions. Reduce screentime*. Recuperado el 24 de agosto de 2026, de https://www.unpluq.com/
+
+Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño de aplicaciones para fomentar la gratitud a través de la gamificación narrativa* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://repositorio.uchile.cl/handle/2250/216623
 
 Waggoner, J., Lucky, S., Redick, S., Rizki, A. y Yu, J. (2026). Going beyond digital libraries: A literature review of phygital user experience research methods. *International Journal on Digital Libraries, 27*(1), Artículo 1. https://doi.org/10.1007/s00799-025-00436-6
 

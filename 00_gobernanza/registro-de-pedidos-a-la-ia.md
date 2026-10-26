@@ -176,6 +176,7 @@
 | 25 oct. | Consulta y encargo | Preguntó si están registrados todos los cambios, también los visuales. Pidió escribir un documento sobre cómo es el diseño de la marca Relevo, con lo más reciente aprobado, todo fundamentado y con el tono de comunicación estudiado. | Revisión del registro de pedidos, las decisiones y los commits desde el 1 de octubre: los cambios estaban registrados, salvo los estados de la identidad. D-121 decía que no estaba en la app, y D-122 y D-124 a D-128 seguían como «propuesta», aunque el autor las aprobó entre el 11 y el 13 de octubre; quedaron al día en el [registro de decisiones](../09_decisiones/registro-de-decisiones.md). [La marca Relevo](../10_recursos_visuales/42_marca-relevo-2026-10-25.md): idea, logo, letra, color, cielos, aura, íconos, forma de la interfaz, objeto y sonido, imágenes, voz, soportes y lo que no se hace, con 28 referencias en APA y los valores tomados del código de la app 3.3. El documento 14 pasa a antecedente. | — |
 | 25 oct. | Consulta | Si hay alguna tarea que la IA pueda hacer sola ahora. | Respuesta en la conversación: seis tareas sin depender del autor (modelo base de la carcasa, presupuesto, cierre de la semana con notificaciones, tesis local, portada y palabra clave) y dos que necesitan su permiso. | — |
 | 25 oct. | Encargo | Hacer la tarea 4 de esa lista: buscar una tesis local de diseño. | [Propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md): en el Repositorio Académico de la Universidad de Chile, dos memorias de diseño (Venegas Álvarez, 2026; Riveros Oltra, 2023) y una de sociología (Cortés Concha, 2016), verificadas en su ficha oficial, con un párrafo de unas 180 palabras para el capítulo 8 y sus referencias. Los PDF están tras una verificación de acceso que no se saltó; la base de Diseño UC no respondió. La memoria no cambió hasta que el autor elija. | — |
+| 25 oct. | Decisión y autorización | Autorizó todo, incluso descargar los documentos que la IA no pudo abrir por la verificación anti-robots, «como si él lo hiciera». | **Tesis:** las tres entraron al [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) como apartado «Proyectos de título de diseño en Chile» del capítulo 8; la memoria queda con 91 referencias, y se regeneraron los anexos (la consulta entra al Anexo C) y la versión A3 (54 páginas). **Biblioteca:** se descargaron su pauta de tesis y su portada de ejemplo ([resumen](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md)). Pide carta, Arial 12 y una portada en mayúsculas, y para Diseño nombra «tesis no convencionales» sin reglas; pide 2 a 3 términos clave, así que se mantienen las 3 palabras clave y se retiró la propuesta de una cuarta. **GitHub:** se cerró el Issue #11, cumplido con el Tag, y se comentaron el #8 y el #10 con su estado. **Lo que no se hizo:** abrir los PDF de las tesis, porque saltar una verificación anti-robots está prohibido aunque el autor lo autorice; el autor puede descargarlos y la IA los lee desde su equipo. | — |
 
 ## Lo que muestra el registro
 
@@ -186,6 +187,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Autorización del autor
+
+- **Qué cambió:** se registró la autorización del autor y lo que se hizo con ella: tesis en la memoria, pauta de la Biblioteca e Issues.
+- **Cómo estaba antes:** terminaba en la propuesta de tesis locales.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-25 — Tesis locales
 
