@@ -1,6 +1,6 @@
 # Por hacer
 
-Tareas acordadas con el autor que esperan su indicación para empezar. Cada una dice cuándo se hace, qué incluye y qué reglas sigue. Al cerrarlas, se marcan, se enlaza el commit y se registran en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
+Tareas acordadas con el autor: las de cierre hacia el Pase (4 a 9) y las que esperan su indicación para empezar. Cada una dice cuándo se hace, qué incluye y qué reglas sigue. Al cerrarlas, se marcan, se enlaza el commit y se registran en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
 
 ## 1. Memoria: contar los logros con seguridad y dejar los límites una sola vez
 
@@ -96,7 +96,142 @@ El autor pidió estudiar cómo comunicarse en la app y documentar cada texto y c
 - Un cambio del consentimiento se registra como versión nueva.
 - Mostrar al autor los textos nuevos antes de compilar la versión.
 
+## Calendario de cierre
+
+Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestre-2026.md): **Pase el miércoles 25 de noviembre, memoria el miércoles 2 de diciembre antes de las 12:00 y exámenes del 14 al 18 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
+
+| Tarea | Prioridad | Plazo |
+| --- | --- | --- |
+| 4. Objeto propio | Crítica | 1 de noviembre (una semana) |
+| 5. Costos y presupuesto | Crítica | 8 de noviembre |
+| 6. Semana solo con notificaciones | Crítica | Al terminar la semana; entrevistas antes del 8 de noviembre |
+| 7. Presentación | Alta | Borrador el 15 de noviembre; ensayo el 22 |
+| 8. Memoria: datos, portada y entrega | Alta | 15 de noviembre; entrega el 1 de diciembre |
+| 9. Pendientes menores | Baja | 15 de noviembre |
+
+## 4. Objeto propio: la carcasa del Tag
+
+**Estado:** por empezar, en una semana. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 1](registro-de-riesgos.md)).
+
+### Por qué
+
+La matriz de pase marca como no logrados los aspectos técnicos (5.2: dimensiones, uniones y estructura) y deja en desarrollo el prototipo final (7.1) y su documentación (7.2). Hoy la parte física es un Tag comprado. Una carcasa propia, que siga la especificación del testigo de la memoria (planta circular de 42 a 48 mm, sin frente y con el botón accesible), convierte la compra en un objeto diseñado. La señal y el volumen siguen siendo los del Tag, y eso se declara como límite.
+
+### Medir el Tag (lo hace el autor)
+
+Con un pie de metro (calibre), precisión de 0,1 mm, y fotos con una regla al lado:
+
+- [ ] Diámetro y alto totales; si no es un cilindro perfecto, el perfil del borde.
+- [ ] Peso, con pila.
+- [ ] Botón: posición, diámetro, cuánto sobresale y cuánto baja al apretarlo; fuerza aproximada del clic.
+- [ ] Dónde sale el sonido: agujeros o rejilla, su posición y tamaño.
+- [ ] Luz de fábrica: posición.
+- [ ] Tapa de la pila: la ranura para abrirla y el espacio necesario para cambiar la CR2032 sin sacar el Tag de la carcasa.
+- [ ] Argolla o agujero para llavero, si tiene.
+- [ ] Material y color del Tag.
+- [ ] Volumen del pitido a 1 m, con una app de sonómetro, para comparar después con la carcasa puesta.
+
+### Qué hacer
+
+- [ ] Registrar la respuesta de los profesores del 14 de octubre sobre el objeto, como decisión.
+- [ ] Bocetos de dos o tres formas posibles, con la regla de que el botón quede accesible y el sonido no se ahogue.
+- [ ] Modelo 3D paramétrico. La IA puede escribirlo, por ejemplo en OpenSCAD, a partir de las medidas.
+- [ ] Imprimir. Falta definir dónde: el taller de la Escuela, un servicio externo o una impresora propia.
+- [ ] Probar el calce, el botón, el cambio de pila y el volumen con la carcasa puesta.
+- [ ] Fotografiar el objeto en uso, junto al primer paso, sin caras ni datos personales.
+- [ ] Planos con medidas (planta, elevación y corte), una ficha de materiales y el costo de la impresión.
+- [ ] Llevarlo a la memoria: capítulos 11 y 12, figura nueva y anexo.
+
+## 5. Costos y presupuesto
+
+**Estado:** por hacer. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 2](registro-de-riesgos.md)).
+
+### Por qué
+
+La matriz de pase marca el presupuesto como no logrado (8.2): la Tabla 9 de la memoria no tiene montos y la fuente de financiamiento está por confirmar. La rúbrica pide parámetros cuantitativos de factibilidad.
+
+### Qué hacer
+
+- [ ] **Montos pagados:** Tag (unidades, monto y comercio), pilas, teléfono (propio, prestado o comprado), servicio remoto (Supabase, plan gratuito o de pago), suscripciones de IA e impresión de la carcasa.
+- [ ] **Fuente de financiamiento** de la etapa académica.
+- [ ] **Trabajo profesional** como referencia: horas de investigación, diseño, programación y electrónica, con un valor hora citado.
+- [ ] **Costo por unidad** para el piloto de seis hogares: Tag, carcasa y pila.
+- [ ] **Escenario de producción en serie corta:** costo de la carcasa por unidad con cotizaciones de impresión 3D o inyección, y posibles proveedores.
+- [ ] Llevarlo a la Tabla 9 y a «Modelo de gestión».
+
+## 6. Semana solo con notificaciones: cierre y comparación
+
+**Estado:** en curso. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 3](registro-de-riesgos.md)).
+
+### Por qué
+
+Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ven 8 relevos con la señal en el teléfono desde el 21 de octubre, todos respondidos, con la pregunta de si notaron el aviso. Como la semana no se inició en la app, esta no hará la pregunta de comparación del día 7 («¿esta semana te ayudó a recordar más, igual o menos?») ni el cierre que compara el objeto con el teléfono. Son la única evidencia de contraste de la hipótesis.
+
+### Qué hacer
+
+- [ ] Confirmar quiénes pasaron a la semana solo con notificaciones y desde qué día. La base remota solo muestra a una persona; las otras dos envían sus datos por exportación.
+- [ ] Al terminar la semana, aplicar la [ficha en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md) con las escalas, la comparación y el cierre. Es preferible a iniciar ahora la semana en la app, que la contaría desde el día 1.
+- [ ] Entrevista de cierre de unos 15 minutos con cada persona, según el protocolo.
+- [ ] Exportar por última vez los datos de las tres personas y guardarlos solo en `datos_sensibles/`.
+- [ ] Unir los datos con `unir-datos.js` y actualizar los resultados, las conclusiones y los anexos.
+
+## 7. Presentación del Pase y del examen
+
+**Estado:** para dentro de unas semanas. **Anotada:** 25 de octubre de 2026. **Riesgo:** alto ([riesgos 6 y 7](registro-de-riesgos.md)).
+
+### Qué hacer
+
+- [ ] Confirmar con los profesores qué formato tiene el Pase y qué se entrega ese día.
+- [ ] Una presentación de 15 minutos que muestre:
+  - qué es el objeto, dónde vive y cómo funciona;
+  - quién lo usa y por qué en la casa;
+  - el flujo de la persona y el técnico, por separado;
+  - la evidencia y sus límites.
+
+  Son los puntos que la comisión de julio no entendió.
+- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, el uso de IA y la factibilidad.
+- [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
+- [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
+
+## 8. Memoria: datos por confirmar, portada y entrega
+
+**Estado:** por hacer. **Anotada:** 25 de octubre de 2026. **Riesgo:** alto ([riesgos 4, 5, 10 y 15](registro-de-riesgos.md)).
+
+### Qué hacer
+
+- [ ] **Fechas por escrito:** confirmar con los profesores guía el Pase (25 de noviembre) y la memoria (2 de diciembre a las 12:00). El instructivo dice 26 de noviembre y «2 de noviembre».
+- [ ] **Datos por confirmar (23)**, que solo sabe el autor:
+  - nombre legal, título y mención;
+  - frase de marca;
+  - grabación y transcripción de las entrevistas;
+  - la encuesta: fecha, convocatoria y alcance de la edición;
+  - herramientas de IA usadas antes de septiembre;
+  - que las tres personas son mayores de edad;
+  - la fuente de financiamiento.
+- [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en la carpeta `LOGOTIPOS UDP FAAD` de la Coordinación), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
+- [ ] **Cuarta palabra clave**, según la [pauta de contenidos](../01_contexto_y_fuentes/pauta-contenidos-proyectos.md).
+- [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
+- [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6).
+- [ ] **Antes de entregar:** PDF de menos de 15 MB, páginas simples, de 15.000 a 20.000 palabras, y el archivo nombrado con el nombre y la mención, por ejemplo «Johan Yantén Dis.[mención].pdf». Entregar el 1 de diciembre como margen.
+- [ ] **Después del examen:** revisar la pauta de tesis de la Biblioteca, el formulario de autorización y el PDF sin clave nombrado con el RUT.
+
+## 9. Pendientes menores y orden
+
+**Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
+
+- [ ] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: la IA busca candidatas y el autor elige.
+- [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la Figura 4.
+- [ ] **GitHub:** cerrar o poner al día los Issues #8 a #11 y decidir los PR #12 y #13.
+- [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
+- [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Tareas de cierre hacia el Pase
+
+- **Qué cambió:** se añadieron el calendario de cierre y las tareas 4 a 9: objeto propio, con la lista de medidas del Tag; costos y presupuesto; cierre de la semana solo con notificaciones; presentación; memoria y entrega; y pendientes menores.
+- **Cómo estaba antes:** había tres tareas, sobre la memoria y los textos de la app.
+- **Por qué:** el autor pidió agregar a Por hacer todo lo crítico y lo que queda por cerrar.
 
 ### 2026-10-24 — Tarea 3
 

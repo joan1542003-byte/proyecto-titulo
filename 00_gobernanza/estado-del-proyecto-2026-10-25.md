@@ -17,7 +17,7 @@
 
 **Lo que todavía puede bajar la nota está en la *propuesta de diseño* (40 %)**, y se resuelve con cinco acciones del autor en las próximas tres semanas:
 
-1. **Iniciar hoy la semana para comparar** de la participante que usa el teléfono, o aplicarle la ficha en papel. Sin eso, la hipótesis queda sin ningún contraste.
+1. **Cerrar la semana solo con notificaciones.** Según el autor, la semana ya empezó, y se ven 8 relevos con el teléfono desde el 21 de octubre. Pero no se inició en la app, así que falta aplicar la ficha en papel con la comparación y el cierre, y hacer la entrevista. Sin eso, la hipótesis queda sin contraste.
 2. **Darle al objeto una forma propia:** carcasa del Tag, planos y fotos en uso.
 3. **Completar los costos reales y los 23 datos por confirmar** de la memoria. Tres están en la portada.
 4. **Confirmar por escrito con los profesores guía las fechas del Pase y de la memoria**, porque el instructivo y el calendario no coinciden.
@@ -102,7 +102,7 @@ El feedback del Pase del primer semestre fue para In(Visible), el proyecto anter
 
 | N.º | Qué | Por qué importa | Riesgo si no se hace | Quién | Plazo |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **Semana para comparar:** iniciarla en la app de la participante (Perfil, mantener presionada la versión, «Semana C», «Empezar la semana hoy») o aplicar la [ficha en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md) y la entrevista. | La base muestra 8 relevos con la señal en el teléfono desde el 21 de octubre, todos respondidos, pero sin la semana iniciada. No hay escalas, comparación ni cierre. Es el único contraste posible de la hipótesis. | **Alto** | Autor | Hoy o mañana |
+| 1 | **Semana solo con notificaciones:** está en uso según el autor; al terminar, aplicar la [ficha en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md) con la comparación y el cierre, y hacer la entrevista. | La base muestra 8 relevos con la señal en el teléfono desde el 21 de octubre, todos respondidos, pero sin la semana iniciada en la app: faltan las escalas, la comparación y el cierre. Es el único contraste posible de la hipótesis. | **Alto** | Autor | Al terminar la semana |
 | 2 | **Objeto propio:** carcasa del Tag según la especificación del testigo, con modelo 3D, impresión, planos con medidas, fotos en uso y ficha de materiales. | La rúbrica y la matriz de pase piden un prototipo, planos y registro de uso. Hoy la parte física es una compra. | **Alto** | Autor; la IA puede modelar y dibujar los planos | 8 de noviembre |
 | 3 | **Cierre con las tres personas:** última exportación de datos, escalas, preguntas de cierre y entrevista de 15 minutos. | Los resultados terminan el 19 de octubre y sin la valoración de carga, molestia y lugar. | **Alto** | Autor | 8 de noviembre |
 | 4 | **Fechas por escrito:** confirmar con los profesores guía el Pase (25 o 26 de noviembre), la memoria (2 de diciembre a las 12:00) y el formato del Pase. | El instructivo tiene errores de fecha y la no entrega reprueba. | Medio, pero grave si ocurre | Autor | Esta semana |
@@ -117,6 +117,8 @@ El feedback del Pase del primer semestre fue para In(Visible), el proyecto anter
 
 **Orden interno:** los Issues #8 a #11 describen la luz, la micro:bit y el testigo con batería de septiembre, y los PR #12 y #13 son borradores viejos. Conviene cerrarlos o ponerlos al día antes de mostrar el repositorio; no afectan la nota.
 
+Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su probabilidad e impacto, en el [registro de riesgos](registro-de-riesgos.md). La autoevaluación de los 24 subcriterios de la matriz de pase da 14 logrados, 7 en desarrollo, 2 no logrados —el objeto con sus planos y el presupuesto— y 1 por confirmar ([matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md)).
+
 ## Plan hasta el Pase
 
 | Semana | Foco |
@@ -129,6 +131,12 @@ El feedback del Pase del primer semestre fue para In(Visible), el proyecto anter
 | 26 nov. – 2 dic. | Ajustes finales; entrega de la memoria el miércoles 2 de diciembre antes de las 12:00. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Respuestas del autor
+
+- **Qué cambió:** el punto 1 dice que la semana solo con notificaciones ya empezó y que falta su cierre. También se enlazan las tareas 4 a 9, el registro de riesgos y la autoevaluación de la matriz de pase.
+- **Cómo estaba antes:** pedía iniciar hoy la semana en la app.
+- **Por qué:** el autor aclaró que la semana empezó, aunque no se inició en la app, y pidió llevar lo crítico a Por hacer.
 
 ### 2026-10-25 — Creación
 

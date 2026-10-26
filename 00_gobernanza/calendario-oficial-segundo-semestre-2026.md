@@ -11,7 +11,7 @@ Este documento reúne los hitos institucionales que afectan la planificación de
 - **Ubicación local consultada:** `SEMESTRE 2/COORDINACIÓN TITULACIÓN S2. 2026/FECHAS/`.
 - **Fecha de consulta:** 30 de agosto de 2026.
 
-El documento original se conserva en el archivo académico local. Este resumen no reemplaza futuras comunicaciones formales de la Escuela.
+El documento original está en el repositorio: [`calendario-titulacion-s2-2026.docx`](../01_contexto_y_fuentes/documentos_institucionales/calendario-titulacion-s2-2026.docx). El autor lo volvió a entregar el 25 de octubre de 2026, y su texto coincide con el consultado en agosto: Pase el 25 de noviembre, memoria el 2 de diciembre y exámenes del 14 al 18 de diciembre. Este resumen no reemplaza futuras comunicaciones formales de la Escuela.
 
 ## Hitos aplicables
 
@@ -48,6 +48,12 @@ El intervalo entre el 16 y el 24 de noviembre funciona como margen de seguridad 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Original en el repositorio
+
+- **Qué cambió:** la fuente enlaza el calendario original, entregado de nuevo por el autor, y confirma que sus fechas no cambiaron.
+- **Cómo estaba antes:** el original solo estaba en el archivo local.
+- **Por qué:** el autor pidió integrar los documentos oficiales al repositorio.
 
 ### 2026-10-25 — Diferencias con el instructivo
 

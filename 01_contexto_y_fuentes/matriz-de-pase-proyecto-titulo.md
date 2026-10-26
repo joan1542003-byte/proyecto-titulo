@@ -23,6 +23,39 @@ Se incorpora como pauta complementaria a los criterios históricos de la memoria
 | 7. Prototipado final | Prototipo, planos, registro de uso, documentación gráfica y coherencia global. | Entregables futuros y anexos. | Pendiente; depende de las decisiones y pruebas anteriores. |
 | 8. Gestión | Actores, presupuesto, financiamiento, calendario y viabilidad. | Capítulo 12 y `00_admin`. | Parcial; requiere costos y contactos reales antes del cierre. |
 
+## Autoevaluación por subcriterio al 25 de octubre de 2026
+
+La matriz evalúa cada subcriterio como **logrado**, **en desarrollo** o **no logrado**. Esta autoevaluación es propia y orientativa; no reemplaza la de los profesores guía.
+
+| Subcriterio | Estado | Evidencia o lo que falta |
+| --- | --- | --- |
+| 1.1 Asistencia y participación | Por confirmar | Lo sabe el autor y los profesores; el repositorio no lo registra. |
+| 1.2 Recepción del feedback | En desarrollo | El feedback de septiembre está registrado; el del 14 de octubre sobre el objeto, no. |
+| 1.3 Respuesta de trabajo | Logrado | Cada observación tiene su cambio y su versión (registro de pedidos y decisiones D-001 a D-141). |
+| 2.1 Contexto y usuario definidos | Logrado | Capítulo 7: entrevistas, encuesta, situaciones de uso y recorridos. |
+| 2.2 Problema bien formulado | Logrado | Capítulo 3: tres aristas con datos. |
+| 2.3 Estado del arte pertinente | En desarrollo | Capítulos 5 y 8 completos; falta una tesis local de diseño, condición del Pase de junio. |
+| 3.1 Conclusiones y oportunidades | Logrado | Conclusiones del marco teórico y oportunidad del capítulo 8. |
+| 3.2 Definición del problema de diseño | Logrado | Capítulo 10. |
+| 3.3 Hipótesis o líneas de solución | Logrado | Hipótesis D-091 y ocho criterios de diseño. |
+| 4.1 Conceptos rectores claros | Logrado | Capítulo 6 y glosario. |
+| 4.2 Coherencia concepto-propuesta | Logrado | Los criterios del capítulo 9 guían el capítulo 11 (Anexo D). |
+| 4.3 Referentes de diseño pertinentes | Logrado | Comparación de referentes del capítulo 8 y Anexo C. |
+| 5.1 Propuesta material o técnica pertinente | En desarrollo | La app y la arquitectura están definidas; el material y la forma del objeto, no. |
+| 5.2 Aspectos técnicos resueltos | **No logrado** | Faltan las dimensiones, las uniones y la estructura del objeto: el modelo y los planos. |
+| 5.3 Proceso productivo, proveedores y fabricantes | En desarrollo | Hay estudios de dispositivos en Chile; faltan el proceso de fabricación de la carcasa y sus proveedores. |
+| 6.1 Iteraciones documentadas | Logrado | Versiones 2.0 a 3.3, Tabla 7 y documentos por versión. |
+| 6.2 Testeos pertinentes | Logrado | Tres hogares desde el 7 de octubre y una semana solo con el teléfono desde el 20 de octubre. |
+| 6.3 Incorporación de aprendizajes | Logrado | Las versiones 2.31 y 2.32 corrigen fallos del uso real. |
+| 7.1 Prototipo final desarrollado | En desarrollo | La app funciona; el objeto es un Tag comprado, sin forma propia. |
+| 7.2 Documentación gráfica y técnica | En desarrollo | Wireframes, capturas y fotos de la prueba; faltan los planos y la ficha del objeto. |
+| 7.3 Coherencia global del resultado | En desarrollo | Depende de que el objeto exprese las decisiones del testigo. |
+| 8.1 Stakeholders identificados | Logrado | «Actores y responsabilidades», capítulo 10. |
+| 8.2 Financiamiento y presupuesto | **No logrado** | La Tabla 9 no tiene montos y la fuente de financiamiento está por confirmar. |
+| 8.3 Viabilidad general | En desarrollo | El modelo de gestión en tres etapas existe; faltan costos reales. |
+
+**Resumen:** 14 logrados, 7 en desarrollo, 2 no logrados y 1 por confirmar. Los dos no logrados, el objeto con sus planos (5.2) y el presupuesto (8.2), son tareas de [Por hacer](../00_gobernanza/por-hacer.md).
+
 ## Prioridad de cierre
 
 La matriz permite ordenar el trabajo sin confundir avance escrito con cumplimiento total. Los capítulos de investigación y formulación ya aportan una base para las dimensiones 2 a 4. El riesgo principal está en las dimensiones 5 a 8: no basta con una intención de producto; se necesitarán decisiones técnicas verificables, presupuesto, pruebas y un prototipo documentado.
@@ -32,6 +65,12 @@ Para la maqueta editorial, cada dimensión debe aparecer mediante evidencia pert
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Autoevaluación por subcriterio
+
+- **Qué cambió:** se añadió la autoevaluación de los 24 subcriterios de la matriz, con su evidencia y lo que falta.
+- **Cómo estaba antes:** la tabla tenía solo las ocho dimensiones, con estados de septiembre como «pendiente de ejecución».
+- **Por qué:** el autor volvió a entregar la matriz y pidió mostrar con claridad los riesgos y lo que está mal. El archivo entregado es idéntico al que ya estaba en `documentos_institucionales`.
 
 ### 2026-09-01 — Creación e incorporación de la matriz
 

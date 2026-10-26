@@ -18,7 +18,9 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
 - [Feedback E15](feedback-e15.md): sintetiza observaciones pertinentes sin convertirlas en decisiones automáticas.
 - [Criterios oficiales para la memoria de Proyecto de Título](criterios-oficiales-memoria-proyecto-titulo.md): consolida estructura, áreas de evaluación y límites documentales verificados en reglamento y pautas institucionales.
-- [Matriz de pase — Proyecto de Título](matriz-de-pase-proyecto-titulo.md): integra las ocho dimensiones de evaluación institucional y su correspondencia documental con Relevo.
+- [Matriz de pase — Proyecto de Título](matriz-de-pase-proyecto-titulo.md): integra las ocho dimensiones de evaluación institucional, su correspondencia documental con Relevo y la autoevaluación de sus 24 subcriterios.
+- [Pauta de contenidos de proyectos](pauta-contenidos-proyectos.md): estructura y extensiones de la pauta de la Escuela, contrastadas con la memoria v5.
+- **Documentos institucionales originales** en [`documentos_institucionales/`](documentos_institucionales/): calendario de titulación del segundo semestre de 2026, matriz de pase y pauta de contenidos.
 - [Matriz histórica de encargos y memoria](matriz-historica-encargos-memoria.md): reconstruye requisitos acumulativos, distingue formatos de proceso y audita su ubicación en la memoria v4.
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
@@ -50,6 +52,12 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Documentos oficiales del segundo semestre
+
+- **Qué cambió:** se agregaron el calendario de titulación y la pauta de contenidos originales, el resumen de la pauta y la autoevaluación de la matriz de pase.
+- **Cómo estaba antes:** solo estaba la matriz de pase original; el calendario se resumía desde una copia local.
+- **Por qué:** el autor entregó los documentos y pidió integrarlos al repositorio.
 
 ### 2026-09-25 — Anotaciones de clase
 
