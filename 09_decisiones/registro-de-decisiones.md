@@ -1379,7 +1379,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-121 — «Relevo con aura» como dirección visual: el aura es de la pantalla, sin giros
 
 - **Fecha:** 2026-10-11.
-- **Estado:** aprobada como dirección de la exploración visual y de las piezas para presentaciones y la memoria. No está implementada en la app: llevarla a Android queda pendiente de que el autor lo pida.
+- **Estado:** aprobada como dirección de la exploración visual y de las piezas para presentaciones y la memoria. Desde Android 3.0 está implementada en la app, a pedido del autor (D-129). Antes: «no está implementada en la app».
 - **Decisión:**
   - La exploración «Relevo con aura», inspirada en Dafi, es la dirección visual que el autor quiere desarrollar.
   - El aura es una opción de personalización de la pantalla (Perfil › Tu aura: color, intensidad, movimiento o apagarla). El Tag no emite luz: solo suena.
@@ -1397,7 +1397,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-122 — Reglas propias de «Relevo con aura»
 
 - **Fecha:** 2026-10-11.
-- **Estado:** propuesta en la versión 4 de la exploración y aplicada en el Taller de auras; pendiente de la revisión del autor. No está en la app.
+- **Estado:** **Aprobada por el autor** el 11 de octubre (le gustaron el resultado y el logo, y pidió llevarlo a la app), aplicada desde Android 3.0 a su pedido del 12 de octubre (D-129) y confirmada el 13 de octubre: «la marca nueva está aprobada» (registro de pedidos). Antes: propuesta en la versión 4 de la exploración, pendiente de revisión.
 - **Decisión:**
   - El ícono va después de la palabra que nombra y no se separa de ella al cambiar de línea.
   - Un color, un papel: mantequilla es tu tiempo; cielo, el primer paso; lima, el Tag y su sonido; rubor, lo que decides; lila, tu aura; durazno, después de la señal. La selección va en tinta.
@@ -1427,7 +1427,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-124 — Íconos propios y paleta 2 con fundamento
 
 - **Fecha:** 2026-10-11.
-- **Estado:** propuesta. Aplicada en «Relevo con aura» y en el Taller de auras; pendiente de la revisión del autor antes de llevarla a la app Android.
+- **Estado:** **Aprobada por el autor** el 11 de octubre (le gustaron el resultado y el logo, y pidió llevarlo a la app), aplicada desde Android 3.0 a su pedido del 12 de octubre (D-129) y confirmada el 13 de octubre: «la marca nueva está aprobada» (registro de pedidos). Antes: propuesta, pendiente de revisión antes de llevarla a la app.
 - **Decisión:**
   - **Íconos:** 72 propios en retícula de 24 y área viva de 20, con cuatro formas de base y trazo 1,6 redondeado (el asta de Instrument Sans Medium a 15 px). El trazo se ajusta al tamaño (de 2,0 a 16 px a 1,3 a 48 px), siempre con una palabra.
   - **Paleta 2:**
@@ -1453,7 +1453,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-125 — Logo de Relevo: cuatro luces y Chillax Semibold
 
 - **Fecha:** 2026-10-11.
-- **Estado:** propuesta, pendiente de la revisión del autor. No está en la app.
+- **Estado:** **Aprobada por el autor** el 11 de octubre (le gustaron el resultado y el logo, y pidió llevarlo a la app), aplicada desde Android 3.0 a su pedido del 12 de octubre (D-129) y confirmada el 13 de octubre: «la marca nueva está aprobada» (registro de pedidos). Antes: propuesta, pendiente de revisión.
 - **Decisión:**
   - **Marca:** cuatro luces que se pasan el turno: tu tiempo, tu primer paso, el Tag y lo que decides, en el sentido del reloj desde arriba.
     - Cada luz queda bajo la siguiente, con un corte limpio, y el centro queda abierto.
@@ -1480,7 +1480,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-126 — Colores de las actividades y su lugar en el recorrido
 
 - **Fecha:** 2026-10-11.
-- **Estado:** propuesta, pendiente de la revisión del autor. No está en la app.
+- **Estado:** **Aprobada por el autor** el 11 de octubre (le gustaron el resultado y el logo, y pidió llevarlo a la app), aplicada desde Android 3.0 a su pedido del 12 de octubre (D-129) y confirmada el 13 de octubre: «la marca nueva está aprobada» (registro de pedidos). Antes: propuesta, pendiente de revisión.
 - **Decisión:**
   - **Siete familias de cielos:**
     - Menta: moverse y aire libre.
@@ -1511,7 +1511,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-127 — El lugar como tercera luz, y el logo con degradado «Luz»
 
 - **Fecha:** 2026-10-11.
-- **Estado:** propuesta, pendiente de la revisión del autor. Corrige D-124 y D-125 en lo que dicen del Tag.
+- **Estado:** **Aprobada por el autor** el 11 de octubre (le gustaron el resultado y el logo, y pidió llevarlo a la app), aplicada desde Android 3.0 a su pedido del 12 de octubre (D-129) y confirmada el 13 de octubre: «la marca nueva está aprobada» (registro de pedidos). Corrige D-124 y D-125 en lo que dicen del Tag. Antes: propuesta, pendiente de revisión.
 - **Decisión:**
   - **El lugar, no el Tag:** la tercera luz de la marca y el color lima representan el lugar donde se empieza, que también es donde suena la señal.
   - **El Tag como medio:** el objeto que suena (Tag o teléfono) se muestra en tinta.
@@ -1532,7 +1532,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-128 — Rediseño 3.0 de la app sin perder datos
 
 - **Fecha:** 2026-10-11.
-- **Estado:** plan propuesto, pendiente de la aprobación del autor. No hay código cambiado.
+- **Estado:** **aprobado y ejecutado:** el 12 de octubre el autor pidió implementarlo y se hizo en las versiones 3.0 a 3.2 (D-129 a D-131). Antes: plan propuesto, pendiente de aprobación.
 - **Decisión:**
   - **Alcance:** rediseñar la app completa con el estilo de las pantallas de «Relevo con aura» y la línea nueva (D-124 a D-127), tocando solo la capa visual.
   - **Lo que se mantiene:**
@@ -1816,6 +1816,12 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Documentos:** [notas del borrador](../08_memoria/notas-del-borrador-v5-2026-10-11.md#fotos-lecturas-y-recorte-del-20-de-octubre-de-2026) y [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Estados de la identidad al día
+
+- **Qué cambió:** D-121 dice que ya está en la app; D-122 y D-124 a D-127 pasan a aprobadas, y D-128 a aprobada y ejecutada, con la evidencia del registro de pedidos.
+- **Cómo estaba antes:** seguían como «propuesta, pendiente de la revisión del autor», aunque el autor las aprobó entre el 11 y el 13 de octubre y la app las aplica desde la 3.0.
+- **Por qué:** el autor preguntó si estaban registrados todos los cambios; esta diferencia era el único estado sin actualizar.
 
 ### 2026-10-20 — D-139 a D-141
 

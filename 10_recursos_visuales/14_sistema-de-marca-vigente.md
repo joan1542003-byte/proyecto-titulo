@@ -1,5 +1,7 @@
 # Sistema de marca vigente de Relevo
 
+> **Histórico desde octubre de 2026:** la marca vigente está en [La marca Relevo](42_marca-relevo-2026-10-25.md). De este documento se mantienen el nombre, el descriptor y la frase.
+
 **Estado:** decisiones cerradas para el desarrollo del proyecto de título.
 
 **Fecha de vigencia:** 16 de septiembre de 2026.
@@ -224,6 +226,12 @@ Las preferencias aisladas no bastan para reiniciar el sistema. Las correcciones 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Pasa a histórico
+
+- **Qué cambió:** el encabezado remite a «La marca Relevo».
+- **Cómo estaba antes:** se presentaba como el sistema de marca vigente.
+- **Por qué:** la identidad aprobada en octubre lo reemplazó, salvo el nombre, el descriptor y la frase.
 
 ### 2026-09-25 — Sin luz
 

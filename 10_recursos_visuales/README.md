@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**Estado al 24 de octubre de 2026:** la identidad vigente es la aprobada en octubre: «Relevo con aura» (D-121 y D-122), los 72 íconos propios y la paleta 2 (D-124), el logo de cuatro luces (D-125 y D-127) y los cielos de las actividades (D-126). La app la aplica desde la 3.0 (D-128 a D-131), y el [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) la documenta con su fundamento. Del 16 de septiembre se mantienen el nombre, el descriptor y la frase.
+**La marca, en un solo documento:** [La marca Relevo](42_marca-relevo-2026-10-25.md) reúne la identidad vigente con su fundamento y la voz. **Estado al 24 de octubre de 2026:** la identidad vigente es la aprobada en octubre: «Relevo con aura» (D-121 y D-122), los 72 íconos propios y la paleta 2 (D-124), el logo de cuatro luces (D-125 y D-127) y los cielos de las actividades (D-126). La app la aplica desde la 3.0 (D-128 a D-131), y el [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) la documenta con su fundamento. Del 16 de septiembre se mantienen el nombre, el descriptor y la frase.
 
 **Historia hasta el 1 de octubre:** sistema de marca del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085). El 30 de septiembre, después de la corrección cruzada, se propuso [una sola identidad alrededor del subrayado azul](25_identidad-el-subrayado-2026-09-30.md) para la presentación, la app y el objeto, con íconos nuevos (D-098, decidida en parte). El 1 de octubre se desarrolló como [sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md), publicado en el tipo Design System de claude.ai, con tokens, 43 componentes, 124 recursos y libro de marca.
 
@@ -21,7 +21,7 @@ Cinco láminas de esta carpeta se abren con doble clic en cualquier navegador, y
 
 ## Para qué existe esta carpeta
 
-Esta carpeta reúne la investigación y las decisiones que gobiernan el sistema visual de Relevo. Los documentos 01–13 conservan el razonamiento, las alternativas y los criterios de evaluación. El documento 14 fija la dirección vigente para producir la aplicación, el dispositivo, la comunicación y la memoria editorial.
+Esta carpeta reúne la investigación y las decisiones que gobiernan el sistema visual de Relevo. Los documentos 01–13 conservan el razonamiento, las alternativas y los criterios de evaluación. El documento 42 describe la marca vigente; el 14 fijó la del 16 de septiembre y hoy es antecedente.
 
 Relevo es un sistema phygital compuesto por una aplicación Android y un testigo físico. La aplicación permite formular una intención, aclarar cómo podría comenzar y preparar un ciclo. La documentación denomina `primer paso` a esa acción breve y concreta; la interfaz utiliza una pregunta directa. El testigo se ubica cerca de aquello que facilita ese comienzo y, cuando corresponde, emite una señal breve de luz y sonido. La señal no bloquea el teléfono, no evalúa a la persona y no convierte la respuesta posterior en una medida de cumplimiento.
 
@@ -77,6 +77,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 40. [Logo, colores de las actividades y recorrido](40_logo-colores-y-recorrido-2026-10-11.md), su [lámina «Relevo aplicado»](logo-relevo-2026-10-11/relevo-aplicado.html) ([en claude.ai](https://claude.ai/artifact/5FCdqi76iF52dfNoFyYoeX)) y los [12 SVG del logo](logo-relevo-2026-10-11): la marca de cuatro luces con el logotipo en Chillax Semibold (D-125); evidencia de color de Chile y Latinoamérica; siete familias de cielos para las actividades, con el nombre en cápsula blanca; y el recorrido de la app en 12 wireframes con notas de color e íconos (D-126).
 41. [Fundamento del color y de la marca: texto académico](41_fundamento-del-color-texto-academico-2026-10-11.md): el fundamento en el registro de la memoria, con un texto completo para el Anexo H y una versión breve para el capítulo 11 (D-124 a D-127).
 42. [Relevo, la app](rediseno-app-2026-10-11/relevo-la-app.html) ([en claude.ai](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM)): el rediseño de la app en 25 pantallas con la línea nueva, el logo con degradado «Luz» y el lugar como tercera luz (D-127). Incluye el resumen del plan para actualizar sin perder datos (D-128).
+43. [La marca Relevo](42_marca-relevo-2026-10-25.md): la identidad vigente completa, con su fundamento: idea, logo, letra, color, cielos, aura, íconos, forma de la interfaz, objeto y sonido, voz, soportes y lo que no se hace.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -106,6 +107,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — La marca Relevo
+
+- **Qué cambió:** el README enlaza el documento 42, que describe la marca vigente, y el documento 14 pasa a antecedente.
+- **Cómo estaba antes:** la identidad vigente estaba repartida entre los documentos 38 a 41, y el README decía que el 14 fijaba la dirección vigente.
+- **Por qué:** el autor pidió un documento sobre cómo es el diseño de la marca.
 
 ### 2026-10-24 — Identidad vigente
 
