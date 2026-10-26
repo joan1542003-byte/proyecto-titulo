@@ -219,7 +219,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 **Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
 
-- [ ] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: la IA busca candidatas y el autor elige.
+- [ ] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: [propuesta lista](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md) con dos memorias de diseño de la Universidad de Chile y una de sociología. Falta que el autor elija; después se inserta.
 - [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la Figura 4.
 - [ ] **GitHub:** cerrar o poner al día los Issues #8 a #11 y decidir los PR #12 y #13.
 - [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
