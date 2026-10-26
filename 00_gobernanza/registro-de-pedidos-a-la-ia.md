@@ -171,6 +171,7 @@
 | 24 oct. | Encargo | Seguir buscando incongruencias: revisar la memoria, actualizada hace unos días, y el resto del repositorio. | Revisión de coherencia ([notas del borrador](../08_memoria/notas-del-borrador-v5-2026-10-11.md#revisión-de-coherencia-del-24-de-octubre-de-2026)): la memoria coincide con el código de la app, los datos de la prueba y las fichas; se corrigieron el inicio de la prueba en el resumen, el abstract y la Tabla 4 (7 de octubre, como el capítulo 13), la frase sobre la 2.32 (sonó en sus seis ciclos) y una referencia. Se pusieron al día el README raíz, el resumen vigente, el estado del proyecto, los README de la app, de validación, de desarrollo y de identidad visual, el índice, la hoja de ruta y HERRAMIENTAS; el consentimiento y la privacidad de septiembre y el resumen general quedan marcados como históricos. La memoria en A3 se regeneró con `construir-idml.js`, el generador vigente, y se corrigieron las instrucciones que nombraban el antiguo. Quedan para el autor la versión que se presenta, la frase de marca y tres Issues desactualizados (#8, #10 y #11). | — |
 | 24 oct. | Consulta | Cuál es la tarea 2 de «Por hacer». | Respuesta en la conversación: sus siete puntos, desde la autorización de las fotos de la Figura 4 hasta los indicadores por objetivo ([Por hacer](por-hacer.md)). | — |
 | 24 oct. | Encargo | Revisar todos los textos y pantallas de la app: estudiar cómo comunicarse, aprender de apps populares aunque no se parezcan a Relevo, documentarlo, y describir por escrito cada pantalla. Más adelante pedirá actualizar los textos según eso. | [Textos de la app](../06_desarrollo_y_factibilidad/app-android/textos/README.md): un [estudio de los textos](../06_desarrollo_y_factibilidad/app-android/textos/estudio-escritura-de-interfaces-2026-10-24.md) con fuentes verificadas en APA (Apple, Google, Android, Microsoft en español, GOV.UK, Nielsen Norman Group, RAE y ASALE, ISO y estudios sobre notificaciones y autonomía), la comparación con Bienestar digital, Tiempo en pantalla, Duolingo y one sec, el diagnóstico de los textos (R1 a R14), una voz de cuatro rasgos, el tono por momento, reglas por tipo de texto y un vocabulario. También [la descripción de las 30 pantallas de 3.3](../06_desarrollo_y_factibilidad/app-android/textos/pantallas-de-la-app-3.3.md), las notificaciones y las piezas compartidas, y el inventario de los 1.287 textos de 3.3 y los 1.247 de 2.33, generado desde el código con `extraer-textos.js`. Ningún texto de la app cambió. | — |
+| 25 oct. | Consulta | Revisar el estado del proyecto, contrastarlo con la documentación oficial de la universidad y sus fechas, buscar lo importante por cerrar y estimar el riesgo, para saber con seguridad si va bien. | [Estado al 25 de octubre](estado-del-proyecto-2026-10-25.md), leído desde los documentos originales de la Coordinación: el instructivo no coincide con el calendario en las fechas del Pase, la memoria y los exámenes (se planifica con la más temprana y hay que confirmarlas); a la portada le faltan los logos, la modalidad y la fecha; la semana para comparar sigue sin iniciarse (8 relevos con el teléfono desde el 21 de octubre, sin escalas ni cierre); y sigue abierta una condición del Pase de junio, una tesis local de diseño. Riesgo estimado de no obtener el Pase: 25 a 35 % si se entrega como está, menos de 10 % si se cierran cinco acciones. El [calendario](calendario-oficial-segundo-semestre-2026.md) registra las diferencias. | — |
 
 ## Lo que muestra el registro
 
@@ -181,6 +182,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Estado contra los documentos oficiales
+
+- **Qué cambió:** se registró la consulta del 25 de octubre sobre el estado del proyecto frente a la documentación oficial.
+- **Cómo estaba antes:** terminaba en el estudio de los textos de la app.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-24 — Textos y pantallas de la app
 

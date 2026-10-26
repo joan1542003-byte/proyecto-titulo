@@ -1,5 +1,7 @@
 # Estado de Relevo al 19 de octubre de 2026
 
+> **Histórico:** desde el 25 de octubre rige el [estado contrastado con los documentos oficiales](estado-del-proyecto-2026-10-25.md).
+
 **Qué es:** una revisión del proyecto completo: app, objeto, datos, prueba, memoria, presentación y repositorio. Dice qué está, qué falta sí o sí antes del Pase de Examen, qué conviene mejorar y qué no existe todavía.
 
 **Qué se revisó:**
@@ -220,6 +222,12 @@ La app y el uso de tecnologías están por sobre lo esperado. El marco ético ta
 | 25 nov. | Entrega del Pase. | Autor. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Pasa a histórico
+
+- **Qué cambió:** el encabezado remite al estado del 25 de octubre.
+- **Cómo estaba antes:** era el estado vigente.
+- **Por qué:** el estado nuevo contrasta el proyecto con los documentos oficiales originales.
 
 ### 2026-10-24 — Revisión de coherencia
 

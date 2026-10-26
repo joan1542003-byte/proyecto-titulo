@@ -26,6 +26,16 @@ El documento original se conserva en el archivo académico local. Este resumen n
 | 14–18 de diciembre | Exámenes de Proyecto de Título y TP1/TP2 | Periodo oficial para la defensa y presentación del proyecto. |
 | 21–23 de diciembre | Exámenes de Seminario | Hito institucional posterior que no gobierna el cierre de Relevo. |
 
+## Diferencias con el instructivo de examen
+
+El `INSTRUCTIVO EXAMEN PROYECTO DE TÍTULO 2026.docx`, leído el 25 de octubre de 2026, no coincide con este calendario en tres fechas:
+
+- **Pase:** dice «como máximo, el miércoles 26 de noviembre», pero el 26 es jueves.
+- **Memoria:** dice «miércoles 02 de noviembre hasta las 12:00», pero el 2 de noviembre es lunes. El día de la semana coincide con el 2 de diciembre del calendario.
+- **Exámenes:** dice «del lunes 14 al 23 de diciembre».
+
+Mientras los profesores guía no lo confirmen por escrito, se planifica con la fecha más temprana de cada hito: Pase el 25 de noviembre y memoria el 2 de diciembre a las 12:00. Ver el [estado del 25 de octubre](estado-del-proyecto-2026-10-25.md).
+
 ## Relación con los cierres internos
 
 Se mantienen dos fechas internas más exigentes:
@@ -38,6 +48,12 @@ El intervalo entre el 16 y el 24 de noviembre funciona como margen de seguridad 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Diferencias con el instructivo
+
+- **Qué cambió:** se añadieron las tres fechas en que el instructivo de examen no coincide con el calendario, y el criterio para planificar mientras no se confirmen.
+- **Cómo estaba antes:** el resumen solo reflejaba el calendario.
+- **Por qué:** el autor pidió contrastar el estado del proyecto con la documentación oficial.
 
 ### 2026-08-30 — Creación del calendario oficial resumido
 
