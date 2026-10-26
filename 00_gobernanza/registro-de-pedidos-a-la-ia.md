@@ -193,6 +193,12 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 - **Cómo estaba antes:** terminaba en el documento de marca.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
+### 2026-10-25 — Tesis locales
+
+- **Qué cambió:** se registraron la consulta sobre tareas que la IA puede hacer sola y el encargo de buscar una tesis local de diseño.
+- **Cómo estaba antes:** terminaba en el documento de marca.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
 ### 2026-10-25 — La marca Relevo
 
 - **Qué cambió:** se registró la consulta sobre si están todos los cambios y el encargo del documento de marca.

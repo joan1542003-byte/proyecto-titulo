@@ -227,6 +227,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ## Registro de cambios (disclaimer)
 
+### 2026-10-25 — Propuesta de tesis locales
+
+- **Qué cambió:** la tarea 9 enlaza la propuesta de tesis locales para el capítulo 8.
+- **Cómo estaba antes:** decía que la IA buscaría candidatas.
+- **Por qué:** el autor pidió hacer esa tarea.
+
 ### 2026-10-25 — Tareas de cierre hacia el Pase
 
 - **Qué cambió:** se añadieron el calendario de cierre y las tareas 4 a 9: objeto propio, con la lista de medidas del Tag; costos y presupuesto; cierre de la semana solo con notificaciones; presentación; memoria y entrega; y pendientes menores.
