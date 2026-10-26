@@ -219,13 +219,19 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 **Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
 
-- [x] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: el 25 de octubre se incluyeron dos memorias de diseño de la Universidad de Chile y una de sociología ([propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md)). Conviene que el autor descargue y lea sus PDF, que la IA no pudo abrir.
+- [x] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: el 25 de octubre se incluyeron dos memorias de diseño de la Universidad de Chile y una de sociología ([propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md)). El autor descargó los PDF de las dos de diseño, y su lectura completa corrigió el párrafo.
 - [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la Figura 4.
 - [ ] **GitHub:** el 25 de octubre se cerró el #11, cumplido con el Tag, y se pusieron al día el #8 y el #10. Quedan por decidir los PR #12 y #13.
 - [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Tesis leídas
+
+- **Qué cambió:** la tarea de la tesis local anota que sus PDF se leyeron.
+- **Cómo estaba antes:** pedía al autor descargarlos y leerlos.
+- **Por qué:** el autor los descargó.
 
 ### 2026-10-25 — Tesis, Biblioteca e Issues
 

@@ -126,11 +126,17 @@ Por estas razones, la conclusión de oportunidad se formulará como una delimita
 - **Por qué:** el feedback del Pase de junio pidió incorporar al menos una tesis local de diseño sobre ocio o bienestar digital.
 - **Dónde:** Repositorio Académico de la Universidad de Chile. La base de memorias de Diseño UC no respondió desde el equipo de trabajo, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
 - **Términos:** «celular», «smartphone», «redes sociales», «tiempo libre», «desconexión digital», «bienestar digital» y «uso del celular», combinados con «diseño» o «diseñadora».
-- **Incluidas:** Venegas Álvarez (2026), de Diseño, sobre una aplicación de bienestar digital con gamificación narrativa; Riveros Oltra (2023), de Diseño, sobre gamificación y formación de hábitos en Betterfly; y Cortés Concha (2016), de Sociología, sobre el ocio digital de jóvenes en redes sociales.
+- **Incluidas:** Venegas Álvarez (2026), de Diseño, sobre una aplicación de diario de gratitud con gamificación narrativa, probada durante un mes; Riveros Oltra (2023), de Diseño, sobre una función gamificada de hábitos saludables para Betterfly, probada durante ocho semanas; y Cortés Concha (2016), de Sociología, sobre el ocio digital de jóvenes en redes sociales.
 - **Descartada:** Trincado Rivas (2020), de Diseño Gráfico, porque trata el acoso en redes sociales y no el ocio ni el bienestar digital.
-- **Qué se leyó:** las fichas oficiales del repositorio, con su título, carrera, profesor guía y resumen. Los PDF están tras una verificación automática de acceso que no se intentó saltar; el autor puede descargarlos para revisarlos.
+- **Qué se leyó:** las fichas oficiales del repositorio, con su título, carrera, profesor guía y resumen. Los PDF están tras una verificación automática de acceso que no se intentó saltar: el autor descargó los de las dos memorias de diseño, que se leyeron completos, y su lectura corrigió la descripción del capítulo 8. De la memoria de sociología se usa solo la ficha.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Lectura de los PDF
+
+- **Qué cambió:** las memorias de diseño se describen con lo leído en su PDF.
+- **Cómo estaba antes:** solo se habían leído sus fichas.
+- **Por qué:** el autor descargó los PDF.
 
 ### 2026-10-25 — Memorias de título chilenas
 

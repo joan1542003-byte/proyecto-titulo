@@ -54,7 +54,7 @@ El instructivo también mezcla «Seminario» y «Proyecto de Título» en varios
 
 | Requisito | Estado de Relevo |
 | --- | --- |
-| PDF de 15.000 a 20.000 palabras sugeridas | Cumple: unas 19.100 palabras en los capítulos 1 a 14. |
+| PDF de 15.000 a 20.000 palabras sugeridas | Cumple: unas 19.400 palabras en los capítulos 1 a 14. |
 | Máximo 15 MB | Cumple: la versión A3 pesa 7,7 MB. |
 | Páginas simples, no dobles, y legibles en digital | Cumple: A3 apaisado, una página por hoja. |
 | Archivo con el nombre del estudiante y la mención, por ejemplo «Juan Vergara Dis.Gráfico.pdf» | **Falta:** decidir la mención y nombrar el archivo así al entregar. |
@@ -96,7 +96,7 @@ La no entrega, un archivo dañado o fuera de formato, o llegar tarde al examen, 
 El feedback del Pase del primer semestre fue para In(Visible), el proyecto anterior, con 60 de 70 puntos en la corrección cruzada. Puso dos condiciones antes del examen:
 
 1. **Integrar la culpa como fenómeno cultural y psicológico** (Han y De Masi). Con el giro a Relevo, la culpa dejó de ser el centro: basta explicarlo si la comisión lo pregunta.
-2. **Incorporar al benchmark al menos una tesis local de diseño sobre ocio o bienestar digital.** **Cumplida el 25 de octubre:** el capítulo 8 incluye dos memorias de diseño de la Universidad de Chile (Venegas Álvarez, 2026; Riveros Oltra, 2023) y una de sociología (Cortés Concha, 2016).
+2. **Incorporar al benchmark al menos una tesis local de diseño sobre ocio o bienestar digital.** **Cumplida el 25 de octubre:** el capítulo 8 incluye dos memorias de diseño de la Universidad de Chile (Venegas Álvarez, 2026; Riveros Oltra, 2023) y una de sociología (Cortés Concha, 2016). Las dos de diseño se leyeron en su PDF completo, y la de Betterfly aporta evidencia local coherente con excluir rachas y premios.
 
 ## Lo que hay que cerrar
 
@@ -131,6 +131,12 @@ Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su
 | 26 nov. – 2 dic. | Ajustes finales; entrega de la memoria el miércoles 2 de diciembre antes de las 12:00. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Tesis leídas
+
+- **Qué cambió:** la condición del Pase anota la lectura de los PDF, y la extensión sube a unas 19.400 palabras.
+- **Cómo estaba antes:** decía unas 19.100 palabras y no mencionaba la lectura.
+- **Por qué:** el autor descargó los PDF y el apartado se corrigió.
 
 ### 2026-10-25 — Tesis local, Biblioteca e Issues
 

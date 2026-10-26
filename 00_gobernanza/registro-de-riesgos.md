@@ -28,7 +28,7 @@ Las estimaciones son propias y se revisan cada semana. La base es el [estado del
 | 10 | **Quedan datos por confirmar en la memoria entregada**: hoy son 23, y tres están en la portada. | Media | Medio | Media | El autor los completa antes del 15 de noviembre. | [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
 | 11 | **Ética sin respaldo formal**: no se sabe si la Escuela exige una revisión ética, si las tres personas son mayores de edad, ni si autorizan las fotos de la Figura 4. | Baja | Alto | Media | Preguntarlo a los profesores y guardar las autorizaciones por escrito. | [2](por-hacer.md#2-memoria-decisiones-pendientes-tras-revisar-las-guías-de-la-escuela), [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
 | 12 | **El tiempo no alcanza**: queda un mes hasta el Pase, con otros ramos en paralelo. | Media | Alto | Media | Respetar los cierres internos (31 de octubre y 15 de noviembre) y hacer primero lo crítico. | Todas |
-| 13 | **Condición del Pase de junio (cerrada el 25 de octubre):** el capítulo 8 incluye dos memorias de diseño y una de sociología chilenas. | — | — | Cerrado | Que el autor lea sus PDF. | [9](por-hacer.md#9-pendientes-menores-y-orden) |
+| 13 | **Condición del Pase de junio (cerrada el 25 de octubre):** el capítulo 8 incluye dos memorias de diseño y una de sociología chilenas. | — | — | Cerrado | Hecho: el autor descargó los PDF de las dos de diseño y se leyeron completos. | [9](por-hacer.md#9-pendientes-menores-y-orden) |
 | 16 | **El depósito en la Biblioteca pide otro formato**: carta, Arial 12 y una portada en mayúsculas. Para Diseño nombra «tesis no convencionales», sin reglas. | Media | Medio | Media | Preguntar a la Coordinación o a la Biblioteca; si hace falta, sumar una portada institucional antes de la de marca. | [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
 | 14 | **Las fuentes del estado del arte son antiguas**: la charla de marco teórico pide no más de 5 años. | Media | Bajo | Baja | Explicar la excepción o sumar fuentes recientes. | [2](por-hacer.md#2-memoria-decisiones-pendientes-tras-revisar-las-guías-de-la-escuela) |
 | 15 | **Versiones inconsistentes**: la memoria describe la 3.2, la prueba usa la 2.33 y la línea vigente es la 3.3. | Media | Bajo | Baja | Elegir una versión y decirla igual en la memoria, los anexos y la presentación. | [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
@@ -82,6 +82,12 @@ Cosas que ya están aceptables y que suben el nivel de la rúbrica de «bueno» 
 | Reducir el tamaño del repositorio, de unos 785 MB, moviendo los APK antiguos a *releases*. | Orden | Bajo |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Tesis leídas
+
+- **Qué cambió:** el riesgo 13 anota que los PDF de las tesis se leyeron.
+- **Cómo estaba antes:** quedaba pendiente que el autor los leyera.
+- **Por qué:** el autor los descargó.
 
 ### 2026-10-25 — Tesis local, Biblioteca e Issues
 

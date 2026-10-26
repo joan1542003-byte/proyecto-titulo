@@ -146,9 +146,22 @@ Se contrastó el borrador con el código de la app, los datos de la prueba, el r
 
 - **Qué cambió:** el capítulo 8 suma el apartado «Proyectos de título de diseño en Chile», de unas 180 palabras, con dos memorias de diseño de la Universidad de Chile (Venegas Álvarez, 2026; Riveros Oltra, 2023) y una de sociología (Cortés Concha, 2016). El método del capítulo registra la consulta, y las referencias pasan de 88 a 91.
 - **Por qué:** era la condición que dejó abierta el Pase de junio. El autor autorizó incluir las tres ([propuesta](propuesta-tesis-locales-capitulo-8-2026-10-25.md)).
-- **Verificación:** las tres están descritas según su ficha oficial; sus PDF no se leyeron. Se regeneraron los anexos, que suman la consulta al Anexo C, y la versión A3, que queda en 54 páginas.
+- **Verificación:** al principio, las tres se describieron según su ficha oficial. Ese mismo día, el autor descargó los PDF de las dos memorias de diseño, y su lectura corrigió el apartado (véase la sección siguiente). Se regeneraron los anexos, que suman la consulta al Anexo C, y la versión A3, que queda en 54 páginas.
+
+## Lectura de las tesis locales (25 de octubre de 2026)
+
+- **Qué cambió:** el apartado «Proyectos de título de diseño en Chile» describe ahora la prueba y los resultados de las dos memorias de diseño, leídas en su PDF completo. Pasa de 178 a 254 palabras.
+- **Correcciones:** *BetterHumans* sí tiene resumen en su PDF. Su prueba —ocho semanas con 357 personas de Betterfly, un 6,4 % más de usuarios activos semanales frente a una meta del 20 %— la lleva a concluir que la gamificación no garantizó la retención y que las recompensas no parecieron motivar, así que pasa de contraste a antecedente coherente con el criterio 4. *Gratitud digitalizada* evita puntos y niveles, aunque el párrafo anterior daba a entender que ambas usaban rachas y premios. Se retiró que ambas comparten con Relevo el fundamento en la autonomía: *BetterHumans* nombra la autonomía solo como uno de los elementos de la gamificación.
+- **Extensión:** capítulos 1 a 14, 19 406 palabras (antes 19 328). La memoria de sociología sigue descrita según su ficha.
+- **Sin cambios:** pregunta, hipótesis, objetivos, resumen, abstract y referencias.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-25 — Lectura de las tesis locales
+
+- **Qué cambió:** se anotó la corrección del apartado de tesis locales tras leer los PDF de las dos memorias de diseño.
+- **Cómo estaba antes:** la verificación decía que sus PDF no se leyeron.
+- **Por qué:** el autor descargó los PDF.
 
 ### 2026-10-25 — Tesis locales
 
