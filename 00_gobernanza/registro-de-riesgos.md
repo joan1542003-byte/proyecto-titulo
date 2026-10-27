@@ -17,7 +17,7 @@ Las estimaciones son propias y se revisan cada semana. La base es el [estado del
 | N.º | Riesgo | Probabilidad | Impacto | Prioridad | Cómo se reduce | Tarea |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | **El objeto queda como un producto comprado**, sin forma, medidas ni planos propios. La matriz de pase lo marca como no logrado (5.2) y el prototipo como «en desarrollo» (7.1). | Alta | Alto | **Crítica** | Medir el Tag y modelar, imprimir, fotografiar y documentar una carcasa propia. | [4](por-hacer.md#4-objeto-propio-la-carcasa-del-tag) |
-| 2 | **No hay presupuesto ni financiamiento**: la Tabla 9 no tiene montos (subcriterio 8.2, no logrado). | Alta | Medio | **Crítica** | Reunir boletas y montos, sumar el trabajo profesional y declarar la fuente. | [5](por-hacer.md#5-costos-y-presupuesto) |
+| 2 | **Faltan los montos pagados y la fuente de financiamiento.** El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) del 27 de octubre cerró lo que no dependía del autor: el costo por unidad del piloto y un valor hora de referencia (subcriterio 8.2, en desarrollo). | Media | Bajo | Media | Reunir boletas y montos, anotar las horas por actividad y declarar la fuente. | [5](por-hacer.md#5-costos-y-presupuesto) |
 | 3 | **La hipótesis queda sin contraste**: la semana solo con notificaciones está en uso, pero no se inició en la app, que por eso no hace las preguntas de comparación ni las de cierre. | Media | Alto | **Crítica** | Ficha en papel y entrevista al terminar la semana; sumar los relevos con el teléfono al análisis. | [6](por-hacer.md#6-semana-solo-con-notificaciones-cierre-y-comparación) |
 | 4 | **Entrega fuera de plazo** por las fechas contradictorias del instructivo. La no entrega reprueba el curso. | Baja | Crítico | **Alta** | Confirmar por escrito con los profesores guía; entregar el 1 de diciembre como margen. | [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
 | 5 | **Memoria fuera de formato**: faltan logos, modalidad y fecha en la portada, y el archivo debe llevar el nombre y la mención. Un archivo fuera de formato reprueba. | Media | Crítico | **Alta** | Portada oficial y una lista de control antes de subir el archivo. | [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
@@ -82,6 +82,12 @@ Cosas que ya están aceptables y que suben el nivel de la rúbrica de «bueno» 
 | Reducir el tamaño del repositorio, de unos 785 MB, moviendo los APK antiguos a *releases*. | Orden | Bajo |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Presupuesto
+
+- **Qué cambió:** el riesgo 2 baja de crítico a medio, porque el presupuesto ya existe y solo faltan los datos del autor.
+- **Cómo estaba antes:** decía que no había presupuesto ni financiamiento, con prioridad crítica.
+- **Por qué:** se escribió el presupuesto del proyecto.
 
 ### 2026-10-25 — Tesis leídas
 

@@ -155,7 +155,20 @@ Se contrastó el borrador con el código de la app, los datos de la prueba, el r
 - **Extensión:** capítulos 1 a 14, 19 406 palabras (antes 19 328). La memoria de sociología sigue descrita según su ficha.
 - **Sin cambios:** pregunta, hipótesis, objetivos, resumen, abstract y referencias.
 
+## Presupuesto del 27 de octubre de 2026
+
+- **Qué cambió:** el capítulo 12 valoriza el trabajo profesional con una referencia pública y da el costo por unidad del piloto. En «Fabricación, mantenimiento y costos», el monto que antes no se valorizaba pasa a entre 5750 y 8480 pesos por hora, de los ingresos de titulados de Diseño (Ministerio de Educación, s. f.) repartidos en la jornada legal de 42 horas semanales (Ley 21561, 2023). En «Modelo de gestión», el piloto de seis hogares queda en entre 60 500 y 72 900 pesos, con el detalle por unidad. La Tabla 9 suma la referencia del servicio remoto.
+- **Qué no cambió:** los montos pagados siguen como datos por confirmar, porque solo los sabe el autor.
+- **Extensión:** capítulos 1 a 14, 19 632 palabras (antes 19 406). Referencias: 97 (antes 91), con seis fuentes nuevas de precios, ingresos y jornada legal.
+- **Dónde está el detalle:** [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Presupuesto
+
+- **Qué cambió:** se anotó la entrada del presupuesto al capítulo 12.
+- **Cómo estaba antes:** las notas terminaban en la lectura de las tesis locales.
+- **Por qué:** es la tarea 5 de Por hacer.
 
 ### 2026-10-25 — Lectura de las tesis locales
 

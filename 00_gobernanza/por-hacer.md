@@ -144,20 +144,21 @@ Con un pie de metro (calibre), precisión de 0,1 mm, y fotos con una regla al la
 
 ## 5. Costos y presupuesto
 
-**Estado:** por hacer. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 2](registro-de-riesgos.md)).
+**Estado:** hecha en lo que no dependía del autor, el 27 de octubre de 2026; faltan sus montos y sus horas. **Anotada:** 25 de octubre de 2026. **Riesgo:** medio ([riesgo 2](registro-de-riesgos.md)).
 
 ### Por qué
 
-La matriz de pase marca el presupuesto como no logrado (8.2): la Tabla 9 de la memoria no tiene montos y la fuente de financiamiento está por confirmar. La rúbrica pide parámetros cuantitativos de factibilidad.
+La matriz de pase marcaba el presupuesto como no logrado (8.2): la Tabla 9 de la memoria no tenía montos y la fuente de financiamiento estaba por confirmar. La rúbrica pide parámetros cuantitativos de factibilidad. El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) del 27 de octubre cerró todo lo que se podía calcular con fuentes públicas, y el subcriterio pasó a «en desarrollo».
 
 ### Qué hacer
 
-- [ ] **Montos pagados:** Tag (unidades, monto y comercio), pilas, teléfono (propio, prestado o comprado), servicio remoto (Supabase, plan gratuito o de pago), suscripciones de IA e impresión de la carcasa.
+- [ ] **Montos pagados:** Tag (unidades, monto y comercio), pilas, teléfono (propio, prestado o comprado), servicio remoto (Supabase, plan gratuito o de pago), suscripciones de IA e impresión de la carcasa. Son los cuatro datos que cierran la Tabla 9.
 - [ ] **Fuente de financiamiento** de la etapa académica.
-- [ ] **Trabajo profesional** como referencia: horas de investigación, diseño, programación y electrónica, con un valor hora citado.
-- [ ] **Costo por unidad** para el piloto de seis hogares: Tag, carcasa y pila.
-- [ ] **Escenario de producción en serie corta:** costo de la carcasa por unidad con cotizaciones de impresión 3D o inyección, y posibles proveedores.
-- [ ] Llevarlo a la Tabla 9 y a «Modelo de gestión».
+- [x] **Valor hora de referencia:** entre 5750 y 8480 pesos, de los ingresos de titulados de Diseño publicados por el Ministerio de Educación y la jornada legal de 42 horas.
+- [ ] **Horas** de investigación, diseño, programación y electrónica. El repositorio guarda la fecha de cada decisión, versión y pedido, así que la planilla se puede acotar.
+- [x] **Costo por unidad** para el piloto de seis hogares: entre 10 100 y 12 150 pesos; las seis unidades, entre 60 500 y 72 900.
+- [ ] **Escenario de producción en serie corta:** los dos caminos están descritos y comparados; faltan las cotizaciones, que exigen el modelo terminado (tarea 4).
+- [x] Llevarlo a la Tabla 9 y a «Modelo de gestión» del capítulo 12.
 
 ## 6. Semana solo con notificaciones: cierre y comparación
 
@@ -226,6 +227,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Presupuesto
+
+- **Qué cambió:** la tarea 5 queda hecha en lo que no dependía del autor: valor hora, costo por unidad del piloto y el paso a la memoria.
+- **Cómo estaba antes:** estaba por hacer y con riesgo crítico.
+- **Por qué:** el autor pidió a la IA elegir una tarea que pudiera hacer sola y hacerla.
 
 ### 2026-10-25 — Tesis leídas
 

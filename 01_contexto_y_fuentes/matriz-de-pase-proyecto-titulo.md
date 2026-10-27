@@ -51,10 +51,10 @@ La matriz evalúa cada subcriterio como **logrado**, **en desarrollo** o **no lo
 | 7.2 Documentación gráfica y técnica | En desarrollo | Wireframes, capturas y fotos de la prueba; faltan los planos y la ficha del objeto. |
 | 7.3 Coherencia global del resultado | En desarrollo | Depende de que el objeto exprese las decisiones del testigo. |
 | 8.1 Stakeholders identificados | Logrado | «Actores y responsabilidades», capítulo 10. |
-| 8.2 Financiamiento y presupuesto | **No logrado** | La Tabla 9 no tiene montos y la fuente de financiamiento está por confirmar. |
+| 8.2 Financiamiento y presupuesto | En desarrollo | El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) del 27 de octubre calcula el costo por unidad del piloto y un valor hora de referencia; faltan los montos pagados y la fuente de financiamiento, que solo sabe el autor. |
 | 8.3 Viabilidad general | En desarrollo | El modelo de gestión en tres etapas existe; faltan costos reales. |
 
-**Resumen:** 15 logrados, 6 en desarrollo, 2 no logrados y 1 por confirmar. Los dos no logrados, el objeto con sus planos (5.2) y el presupuesto (8.2), son tareas de [Por hacer](../00_gobernanza/por-hacer.md).
+**Resumen:** 14 logrados, 8 en desarrollo, 1 no logrado y 1 por confirmar. El no logrado es el objeto con sus planos (5.2), tarea 4 de [Por hacer](../00_gobernanza/por-hacer.md); el presupuesto (8.2) pasó a «en desarrollo» el 27 de octubre.
 
 ## Prioridad de cierre
 
@@ -65,6 +65,12 @@ Para la maqueta editorial, cada dimensión debe aparecer mediante evidencia pert
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Presupuesto
+
+- **Qué cambió:** el subcriterio 8.2 pasa de no logrado a en desarrollo, y el resumen se corrige a la suma real de los 24 subcriterios.
+- **Cómo estaba antes:** 8.2 estaba como no logrado y el resumen decía 15 logrados y 6 en desarrollo, que no coincidía con la tabla.
+- **Por qué:** se escribió el presupuesto del proyecto.
 
 ### 2026-10-25 — Estado del arte logrado
 

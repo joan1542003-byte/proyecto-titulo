@@ -665,7 +665,7 @@ Para un testigo propio se estudiaron varias plataformas; tres quedaron como refe
 
 El prototipo no exigió fabricación: su componente físico es un producto terminado. Un testigo propio comenzaría con carcasa impresa y placas de prueba, que no representan fabricación industrial ni costo en serie, y debería permitir separar y reemplazar batería, placa y emisor de sonido. El mantenimiento del Tag se reduce a cambiar su pila CR2032, cuya duración —entre 2 y 8 meses, según los vendedores— no se midió con la conexión que Relevo mantiene durante cada ciclo.
 
-Se separan cuatro montos: el costo del prototipo académico; el trabajo profesional de investigación, diseño, programación y electrónica; el costo de producción, logística y soporte; y el posible precio. La Tabla 9 detalla el primero. El segundo no se valoriza [CONFIRMAR: horas dedicadas y valor de referencia, si se decide estimarlo], y los dos últimos solo podrán cotizarse si la prueba justifica un testigo propio.
+Se separan cuatro montos: el costo del prototipo académico; el trabajo profesional de investigación, diseño, programación y electrónica; el costo de producción, logística y soporte; y el posible precio. La Tabla 9 detalla el primero. Para el segundo sirve una referencia pública: quienes se titulan de Diseño en universidades chilenas reciben entre 1 035 131 pesos brutos al mes el primer año y 1 525 896 el quinto, en pesos de septiembre de 2025 (Ministerio de Educación, s. f.); repartidos en las 180 horas que suma al mes una jornada ordinaria de 42 horas semanales, vigente desde abril de 2026 (Ley 21561, 2023), equivalen a entre 5750 y 8480 pesos por hora. Es un ingreso de trabajo dependiente, así que un honorario sería más alto: sirve como piso verificable [CONFIRMAR: horas dedicadas a investigación, diseño, programación y electrónica]. Los dos últimos montos solo podrán cotizarse si la prueba justifica un testigo propio.
 
 **Tabla 9**
 
@@ -675,9 +675,9 @@ Se separan cuatro montos: el costo del prototipo académico; el trabajo profesio
 | --- | --- | --- |
 | Tag con pila CR2032 | [CONFIRMAR: unidades, monto pagado y comercio] | Referencia: 5930 a 7990 (29 de septiembre y 5 de octubre de 2026). |
 | Teléfono Android | [CONFIRMAR: propio, prestado o monto] | — |
-| Servicio remoto de datos | [CONFIRMAR: plan y monto] | — |
+| Servicio remoto de datos | [CONFIRMAR: plan y monto] | Referencia: el plan gratuito cubre la escala de la prueba y el siguiente parte en 25 dólares al mes (Supabase, s. f.). |
 | Herramientas de inteligencia artificial | [CONFIRMAR: suscripciones y monto] | — |
-| Placas micro:bit V2 y XIAO nRF52840 | No adquiridas | 24 990 y 16 590 el 7 de septiembre de 2026 (MCI Electronics, s. f.; MechatronicStore, s. f.); la primera, 22 990 el 11 de octubre. |
+| Placas micro:bit V2 y XIAO nRF52840 | No adquiridas | 24 990 y 16 590 el 7 de septiembre de 2026 (MCI Electronics, s. f.-b; MechatronicStore, s. f.); la primera, 22 990 el 11 de octubre. |
 | Total desembolsado | [CONFIRMAR: suma] | — |
 
 *Nota.* CLP = pesos chilenos. Las referencias son precios publicados por comercios en línea chilenos en la fecha indicada, no montos pagados.
@@ -688,7 +688,7 @@ El modelo se plantea en tres etapas; cada una se inicia solo si la anterior entr
 
 La primera es el proyecto académico, de agosto a diciembre de 2026. El autor conduce investigación, diseño y desarrollo, con la retroalimentación de los profesores guía y la colaboración de quienes participan en la prueba (Tabla 3). Sus recursos y costos son los de la Tabla 9, más el trabajo del autor [CONFIRMAR: fuente de financiamiento de esta etapa]. Su resultado es conocimiento, no un bien en venta.
 
-La segunda, un piloto, parte de lo que la prueba ya mostró en tres hogares (capítulo 13): el ciclo completo es factible y la señal se comprende; las escalas semanales dirán si la carga es aceptable. El piloto tendría que establecer si situar la señal aporta. Ampliaría la prueba a las seis personas previstas, con un localizador por hogar, e incorporaría revisión especializada en accesibilidad, protección de datos y electrónica. Sus costos serían los localizadores y las horas de esos especialistas; su financiamiento no está definido.
+La segunda, un piloto, parte de lo que la prueba ya mostró en tres hogares (capítulo 13): el ciclo completo es factible y la señal se comprende; las escalas semanales dirán si la carga es aceptable. El piloto tendría que establecer si situar la señal aporta. Ampliaría la prueba a las seis personas previstas, con un localizador por hogar, e incorporaría revisión especializada en accesibilidad, protección de datos y electrónica. Con precios de octubre de 2026, cada hogar supondría entre 10 100 y 12 150 pesos: el localizador, entre 5930 y 7990; una pila CR2032 de repuesto, 1690 (MCI Electronics, s. f.-a); y la carcasa impresa, unos 2470, que resultan de repartir entre seis el mínimo de 14 800 por trabajo que publica un servicio nacional (Rabbit Hole, s. f.). El material es marginal —un rollo de PLA de un kilo cuesta entre 9690 y 13 890 pesos (TodoToner, s. f.) y una carcasa de este tamaño usa unos gramos—, de modo que las seis unidades sumarían entre 60 500 y 72 900 pesos. Esa cifra es un mínimo de servicio y no una cotización, que exige el modelo terminado. A ella se añaden las horas de esos especialistas; el financiamiento no está definido.
 
 La tercera, el producto, se abriría solo si el piloto alcanzara los umbrales previstos para seis personas, y admite dos vías. La de menor costo es distribuir la aplicación y recomendar un localizador compatible: no requiere fabricación, pero deja fuera del diseño el sonido, la forma y el control, y depende de modelos que varían entre fabricantes; integrar un dispositivo existente obliga a aceptar funciones que no se ajustan del todo (Gembali, 2023, p. 53). La otra es un testigo propio en series cortas, que se justificaría por lo que el localizador no permite diseñar y obliga a cotizar circuito, carcasa, batería, ensamblaje, ensayos, distribución y soporte. Elegir entre ambas, y entre venta, suscripción o distribución institucional, requiere datos de una etapa posterior: costo unitario, costo de cumplir la normativa y disposición a pagar.
 
@@ -913,6 +913,8 @@ Lee, J. G. W., Lee, B. y Choe, E. K. (2023). Decorative, evocative, and uncanny:
 
 Ley 19628. (1999, 28 de agosto). Sobre protección de la vida privada. Biblioteca del Congreso Nacional de Chile. https://www.bcn.cl/leychile/navegar?idNorma=141599
 
+Ley 21561. (2023, 26 de abril). Modifica el Código del Trabajo con el objeto de reducir la jornada laboral. Biblioteca del Congreso Nacional de Chile. https://www.bcn.cl/leychile/navegar?idNorma=1191554
+
 Ley 21719. (2024, 13 de diciembre). Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales. Biblioteca del Congreso Nacional de Chile. https://www.bcn.cl/leychile/navegar?idNorma=1209272
 
 Lukoff, K., Yu, C., Kientz, J. y Hiniker, A. (2018). What makes smartphone use meaningful or meaningless? *Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2*(1), Artículo 22. https://doi.org/10.1145/3191754
@@ -921,7 +923,9 @@ Lyngs, U., Lukoff, K., Slovak, P., Binns, R., Slack, A., Inzlicht, M., Van Kleek
 
 McDaniel, M. A. y Einstein, G. O. (2000). Strategic and automatic processes in prospective memory retrieval: A multiprocess framework. *Applied Cognitive Psychology, 14*(7), S127–S144. https://doi.org/10.1002/acp.775
 
-MCI Electronics. (s. f.). *Placa BBC micro:bit V2*. Recuperado el 7 de septiembre de 2026, de https://mcielectronics.cl/shop/product/bbc-microbit-v2-placa-unica/
+MCI Electronics. (s. f.-a). *Pila botón CR2032 de lithium para reloj*. Recuperado el 27 de octubre de 2026, de https://mcielectronics.cl/shop/product/pila-boton-cr2032-de-lithium-para-reloj-9838/
+
+MCI Electronics. (s. f.-b). *Placa BBC micro:bit V2*. Recuperado el 7 de septiembre de 2026, de https://mcielectronics.cl/shop/product/bbc-microbit-v2-placa-unica/
 
 MechatronicStore. (s. f.). *Seeed Studio XIAO nRF52840*. Recuperado el 7 de septiembre de 2026, de https://www.mechatronicstore.cl/seed-studio-xiao-nrf52840/
 
@@ -930,6 +934,8 @@ Meier, A. y Reinecke, L. (2021). Computer-mediated communication, social media, 
 Micro:bit Educational Foundation. (s. f.-a). *Bluetooth*. micro:bit developer community and technical resources. Recuperado el 7 de septiembre de 2026, de https://tech.microbit.org/bluetooth/
 
 Micro:bit Educational Foundation. (s. f.-b). *2.2x micro:bit revision*. micro:bit developer community and technical resources. Recuperado el 11 de octubre de 2026, de https://tech.microbit.org/hardware/2-2-revision/
+
+Ministerio de Educación. (s. f.). *Estadísticas por carrera: Diseño*. Mi Futuro, Servicio de Información de Educación Superior. Recuperado el 27 de octubre de 2026, de https://www.mifuturo.cl/buscador-de-estadisticas-por-carrera/
 
 Monge Roffarello, A. y De Russis, L. (2023). Achieving digital wellbeing through digital self-control tools: A systematic review and meta-analysis. *ACM Transactions on Computer-Human Interaction, 30*(4), Artículo 53. https://doi.org/10.1145/3571810
 
@@ -946,6 +952,8 @@ one sec. (s. f.). *Cut your screen time in half*. Recuperado el 24 de agosto de 
 O’Rear, A. E. y Radvansky, G. A. (2019). Location-based prospective memory. *Quarterly Journal of Experimental Psychology, 72*(3), 491–507. https://doi.org/10.1177/1747021818758608
 
 Peña-Albert, A. K., Ingram, S., Khazaal, Y., Litrico, L., Farah, J. C. y Gillet, D. (2026). Restoring engagement in digital self-control tools using nudge reconfiguration prompts: Quasi-experimental study. *JMIR Formative Research, 10*, Artículo e85349. https://doi.org/10.2196/85349
+
+Rabbit Hole. (s. f.). *Impresión 3D en Chile: resina SLA y FDM*. Recuperado el 27 de octubre de 2026, de https://rabbithole.cl/
 
 Radtke, T., Apel, T., Schenkel, K., Keller, J. y von Lindern, E. (2022). Digital detox: An effective solution in the smartphone era? A systematic literature review. *Mobile Media & Communication, 10*(2), 190–215. https://doi.org/10.1177/20501579211028647
 
@@ -981,7 +989,11 @@ Subsecretaría de Telecomunicaciones. (2025). *Informe final: Estudio duodécima
 
 Subsecretaría de Telecomunicaciones. (2026, 15 de enero). *Equipos de alcance reducido*. https://www.subtel.gob.cl/equipos-de-alcance-reducido/
 
+Supabase. (s. f.). *Pricing*. Recuperado el 27 de octubre de 2026, de https://supabase.com/pricing
+
 Terzimehić, N., Haliburton, L., Greiner, P., Schmidt, A., Hussmann, H. y Mäkelä, V. (2022). MindPhone: Mindful reflection at unlock can reduce absentminded smartphone use. En *Proceedings of the 2022 ACM Designing Interactive Systems Conference* (pp. 1818–1830). Association for Computing Machinery. https://doi.org/10.1145/3532106.3533575
+
+TodoToner. (s. f.). *Filamentos*. Recuperado el 27 de octubre de 2026, de https://www.todotoner.cl/filamentos
 
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W. y Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, Artículo 104198. https://doi.org/10.1016/j.jesp.2021.104198
 
