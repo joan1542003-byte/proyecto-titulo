@@ -186,6 +186,7 @@
 | 27 oct. | Consulta y encargo | Por qué el logo tiene esa forma. Pidió una lámina que explique su forma y su construcción, sin tocar las otras presentaciones. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 19 láminas. La 5, «Cómo está hecho el logo», es nueva y muestra los tres pasos dibujados: los cuatro círculos iguales a la misma distancia del centro, el recorte con el círculo del siguiente y la marca terminada. Las medidas salen de la [construcción documentada](../10_recursos_visuales/42_marca-relevo-2026-10-25.md#construcción) y se comprobaron en el SVG: círculos de radio 29 a 21 del centro en una unidad de 100, recortados por el círculo vecino agrandado a 32,4, es decir un corte de 3,4. No se tocó ninguna otra presentación. | — |
 | 27 oct. | Corrección | La lámina del logo no tenía la profundidad suficiente: falta explicar la forma y su fundamentación, con una lámina sobre las aplicaciones que existen, sus logos y en qué se basó la decisión. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 21 láminas. A la 5, la construcción, se suman la 6, «Qué hay en la categoría» —los cuatro códigos visuales que encontró la auditoría de ocho productos del 25 de septiembre: medición, control, juego y calma, y por qué Relevo no es ninguno—, y la 7, «En qué nos basamos» —que el logo diga lo que hace (Luffarelli et al., 2019), que sea redondo y no anguloso (Jiang et al., 2016), que sea plano y sin transparencias como el rediseño de Slack con Pentagram (Slack, 2019; Design Week, 2019), y que la dirección de color y luz vino de Dafi, de Mambo Mambo—. Todo sale de la [auditoría visual](../10_recursos_visuales/16_exploracion-visual-2026-09-25.md#5-auditoría-visual-de-la-categoría) y del [documento de marca](../10_recursos_visuales/42_marca-relevo-2026-10-25.md). | — |
 | 27 oct. | Corrección | Representar las apps con imágenes reales en vez de tarjetas de color, y explicar cada parte de la construcción del logo. Autorizó usar cualquier imagen, porque la presentación es personal y no comercial. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 21 láminas. La 5 muestra los íconos reales de siete productos —Digital Wellbeing, Brick, Unpluq, Forest, Focusaur, one sec y Opal—, agrupados en los cuatro códigos de la auditoría, con la marca de Relevo al lado de la conclusión. La 7 se rehízo: un plano acotado con la órbita de 21 y el radio de 29, y cuatro pasos explicados uno a uno —la órbita, los cuatro círculos, el corte de 3,4 y el giro con el centro abierto—. Los íconos se descargaron de las fichas públicas de las tiendas y quedaron solo en la presentación: no se suben al repositorio, que es público. | — |
+| 27 oct. | Corrección | No basta con los logos: pidió imágenes de las aplicaciones mismas, para entender su diseño y cómo funcionan, comparadas con Relevo. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 22 láminas. La 6, «Cómo funcionan, y dónde está la diferencia», es nueva: cinco pantallas reales, una por producto —one sec interrumpiendo al abrir Instagram, Opal midiendo el tiempo ahorrado, Forest con su árbol, Unpluq bloqueando una aplicación— y la de Relevo cuando suena, con una línea cada una. La bajada dice la diferencia: las cuatro primeras intervienen dentro del teléfono y Relevo interviene en el lugar. Las imágenes salen de las fichas públicas de la App Store y quedan solo en la presentación. Mientras tanto el autor rehízo por su cuenta la lámina 7, que no se tocó. | — |
 
 ## Lo que muestra el registro
 
@@ -196,6 +197,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Comparativa con pantallas reales
+
+- **Qué cambió:** se registró la lámina comparativa con las pantallas de cada aplicación.
+- **Cómo estaba antes:** terminaba en los íconos de la categoría.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-27 — Imágenes reales y construcción
 
