@@ -170,7 +170,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ### Qué hacer
 
-- [ ] Confirmar quiénes pasaron a la semana solo con notificaciones y desde qué día. La base remota solo muestra a una persona; las otras dos envían sus datos por exportación.
+- [x] **Quiénes pasaron a la semana solo con notificaciones:** las tres, desde el 21 de octubre, según el autor. La base remota solo muestra a una porque las otras dos entregan sus datos al exportarlos; sus relevos con el teléfono llegarán en la exportación del cierre.
+- [ ] **Cerrar el viernes 30 de octubre**, cuando la tercera persona cumple sus 21 días (la primera los cumple el 28 y la segunda el 29). Cerrar a las tres el mismo día evita coordinar tres fechas.
 - [ ] Al terminar la semana, aplicar la [ficha en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md) con las escalas, la comparación y el cierre. Es preferible a iniciar ahora la semana en la app, que la contaría desde el día 1.
 - [ ] Entrevista de cierre de unos 15 minutos con cada persona, según el protocolo.
 - [ ] Exportar por última vez los datos de las tres personas y guardarlos solo en `datos_sensibles/`.
@@ -226,6 +227,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Cierre de la prueba
+
+- **Qué cambió:** queda confirmado que las tres pasaron a la semana con el teléfono el 21 de octubre, y se fija el cierre para el viernes 30, cuando la tercera cumple 21 días.
+- **Cómo estaba antes:** pedía confirmar quiénes habían pasado, sin fecha de cierre.
+- **Por qué:** el autor confirmó que las tres están en esa semana y que las otras dos entregan sus datos por exportación.
 
 ### 2026-10-27 — Datos por confirmar
 
