@@ -188,6 +188,7 @@
 | 27 oct. | Corrección | Representar las apps con imágenes reales en vez de tarjetas de color, y explicar cada parte de la construcción del logo. Autorizó usar cualquier imagen, porque la presentación es personal y no comercial. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 21 láminas. La 5 muestra los íconos reales de siete productos —Digital Wellbeing, Brick, Unpluq, Forest, Focusaur, one sec y Opal—, agrupados en los cuatro códigos de la auditoría, con la marca de Relevo al lado de la conclusión. La 7 se rehízo: un plano acotado con la órbita de 21 y el radio de 29, y cuatro pasos explicados uno a uno —la órbita, los cuatro círculos, el corte de 3,4 y el giro con el centro abierto—. Los íconos se descargaron de las fichas públicas de las tiendas y quedaron solo en la presentación: no se suben al repositorio, que es público. | — |
 | 27 oct. | Corrección | No basta con los logos: pidió imágenes de las aplicaciones mismas, para entender su diseño y cómo funcionan, comparadas con Relevo. | [Presentación](https://www.figma.com/slides/9trHemCYe3I7AVrE6qQd6U) de 22 láminas. La 6, «Cómo funcionan, y dónde está la diferencia», es nueva: cinco pantallas reales, una por producto —one sec interrumpiendo al abrir Instagram, Opal midiendo el tiempo ahorrado, Forest con su árbol, Unpluq bloqueando una aplicación— y la de Relevo cuando suena, con una línea cada una. La bajada dice la diferencia: las cuatro primeras intervienen dentro del teléfono y Relevo interviene en el lugar. Las imágenes salen de las fichas públicas de la App Store y quedan solo en la presentación. Mientras tanto el autor rehízo por su cuenta la lámina 7, que no se tocó. | — |
 | 27 oct. | Corrección | Pidió capturas reales de las aplicaciones y comparar varias pantallas, no una sola. | La lámina de la comparativa pasa a «Varias pantallas de cada una»: diez capturas, dos por producto —one sec interrumpiendo y su resumen de tiempo; Opal bloqueando y midiendo; Forest con el árbol y el bosque; Unpluq bloqueando y su lista de horarios— más dos de Relevo, preparar el relevo y la señal. Son las capturas que cada aplicación publica en la App Store, que es lo accesible sin instalarlas; la nota lo dice. | — |
+| 27 oct. | Corrección | Comparar las pantallas clave, y extenderlo a más de una diapositiva si hacía falta. | La comparativa pasa a tres láminas, una por momento, con las mismas cinco aplicaciones en cada una: «Antes: cómo se configura», «Durante: el momento en que interviene» y «Después: qué queda». Quince capturas en total, elegidas una por una de las fichas de la App Store, más tres de Relevo. Cada lámina cierra con la diferencia: en las otras se configura qué se impide y en Relevo qué se quiere hacer; las otras aparecen en la pantalla que la persona mira y Relevo suena fuera de ella; tres devuelven una cifra o un premio y Relevo devuelve una pregunta. El deck queda en 24 láminas. | — |
 
 ## Lo que muestra el registro
 
@@ -198,6 +199,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Comparación por momentos
+
+- **Qué cambió:** la comparativa se reparte en tres láminas, una por pantalla clave.
+- **Cómo estaba antes:** era una sola lámina con dos pantallas por producto.
+- **Por qué:** el autor pidió comparar las pantallas clave y permitió usar más de una diapositiva.
 
 ### 2026-10-27 — Dos pantallas por aplicación
 
