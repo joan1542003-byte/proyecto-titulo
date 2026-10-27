@@ -22,11 +22,17 @@
 | Justificación | 300 a 600 palabras, con la pertinencia disciplinar. | Unas 330 palabras. | Cumple |
 | Pregunta, hipótesis y objetivos (opción de investigación) | Pregunta factible y relevante; hipótesis que relacione variables; objetivos con qué, para qué, mediante qué y dónde. | Capítulo 10, con hipótesis D-091 y estados de los objetivos (D-139). | Cumple |
 | Bajada proyectual | En Seminario, al menos dos propuestas y máximo 300 palabras. | Capítulo 11, el proyecto desarrollado. | No aplica: en Proyecto de Título la bajada es el proyecto |
-| Bibliografía | — | 97 referencias en APA 7. | Cumple |
+| Bibliografía | — | 100 referencias en APA 7. | Cumple |
 
 **Palabras clave:** esta pauta de Seminario pide 4, pero la [pauta de la Biblioteca](pauta-biblioteca-tesis.md), que rige el depósito de la memoria, pide destacar 2 a 3 términos de la especialidad. Se mantienen las 3 actuales, ordenadas de la más general a la más específica. Con eso, la memoria cumple todo lo que pide esta pauta.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Referencias
+
+- **Qué cambió:** la memoria pasa de 97 a 100 referencias.
+- **Cómo estaba antes:** decía 97.
+- **Por qué:** los precios de las suscripciones y el tipo de cambio sumaron tres fuentes.
 
 ### 2026-10-27 — Referencias
 

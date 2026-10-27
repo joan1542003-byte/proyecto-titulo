@@ -51,10 +51,10 @@ La matriz evalúa cada subcriterio como **logrado**, **en desarrollo** o **no lo
 | 7.2 Documentación gráfica y técnica | En desarrollo | Wireframes, capturas y fotos de la prueba; faltan los planos y la ficha del objeto. |
 | 7.3 Coherencia global del resultado | En desarrollo | Depende de que el objeto exprese las decisiones del testigo. |
 | 8.1 Stakeholders identificados | Logrado | «Actores y responsabilidades», capítulo 10. |
-| 8.2 Financiamiento y presupuesto | En desarrollo | El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) del 27 de octubre calcula el costo por unidad del piloto y un valor hora de referencia; faltan los montos pagados y la fuente de financiamiento, que solo sabe el autor. |
+| 8.2 Financiamiento y presupuesto | Logrado | El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) cierra el prototipo académico en unos 182 000 pesos con financiamiento propio, valoriza 114 horas de trabajo y calcula el costo por unidad del piloto. |
 | 8.3 Viabilidad general | En desarrollo | El modelo de gestión en tres etapas existe; faltan costos reales. |
 
-**Resumen:** 14 logrados, 8 en desarrollo, 1 no logrado y 1 por confirmar. El no logrado es el objeto con sus planos (5.2), tarea 4 de [Por hacer](../00_gobernanza/por-hacer.md); el presupuesto (8.2) pasó a «en desarrollo» el 27 de octubre.
+**Resumen:** 15 logrados, 7 en desarrollo, 1 no logrado y 1 por confirmar. El no logrado es el objeto con sus planos (5.2), tarea 4 de [Por hacer](../00_gobernanza/por-hacer.md); el presupuesto (8.2) quedó logrado el 27 de octubre, cuando el autor entregó sus montos.
 
 ## Prioridad de cierre
 
@@ -65,6 +65,12 @@ Para la maqueta editorial, cada dimensión debe aparecer mediante evidencia pert
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Presupuesto cerrado
+
+- **Qué cambió:** el subcriterio 8.2 pasa a logrado.
+- **Cómo estaba antes:** estaba en desarrollo, a la espera de los montos del autor.
+- **Por qué:** el autor entregó los montos pagados y la fuente de financiamiento.
 
 ### 2026-10-27 — Presupuesto
 

@@ -665,7 +665,7 @@ Para un testigo propio se estudiaron varias plataformas; tres quedaron como refe
 
 El prototipo no exigió fabricación: su componente físico es un producto terminado. Un testigo propio comenzaría con carcasa impresa y placas de prueba, que no representan fabricación industrial ni costo en serie, y debería permitir separar y reemplazar batería, placa y emisor de sonido. El mantenimiento del Tag se reduce a cambiar su pila CR2032, cuya duración —entre 2 y 8 meses, según los vendedores— no se midió con la conexión que Relevo mantiene durante cada ciclo.
 
-Se separan cuatro montos: el costo del prototipo académico; el trabajo profesional de investigación, diseño, programación y electrónica; el costo de producción, logística y soporte; y el posible precio. La Tabla 9 detalla el primero. Para el segundo sirve una referencia pública: quienes se titulan de Diseño en universidades chilenas reciben entre 1 035 131 pesos brutos al mes el primer año y 1 525 896 el quinto, en pesos de septiembre de 2025 (Ministerio de Educación, s. f.); repartidos en las 180 horas que suma al mes una jornada ordinaria de 42 horas semanales, vigente desde abril de 2026 (Ley 21561, 2023), equivalen a entre 5750 y 8480 pesos por hora. Es un ingreso de trabajo dependiente, así que un honorario sería más alto: sirve como piso verificable [CONFIRMAR: horas dedicadas a investigación, diseño, programación y electrónica]. Los dos últimos montos solo podrán cotizarse si la prueba justifica un testigo propio.
+Se separan cuatro montos: el costo del prototipo académico; el trabajo profesional de investigación, diseño, programación y electrónica; el costo de producción, logística y soporte; y el posible precio. La Tabla 9 detalla el primero. Para el segundo sirve una referencia pública: quienes se titulan de Diseño en universidades chilenas reciben entre 1 035 131 pesos brutos al mes el primer año y 1 525 896 el quinto, en pesos de septiembre de 2025 (Ministerio de Educación, s. f.); repartidos en las 180 horas que suma al mes una jornada ordinaria de 42 horas semanales, vigente desde abril de 2026 (Ley 21561, 2023), equivalen a entre 5750 y 8480 pesos por hora. Es un ingreso de trabajo dependiente, así que un honorario sería más alto: sirve como piso verificable. El repositorio del proyecto registra 114 horas de trabajo entre el 23 de agosto y el 27 de octubre de 2026 —34 en la aplicación y el objeto, 27 en la memoria, 20 en la identidad visual y el resto en gestión, validación y propuesta—, que a ese valor equivalen a entre 656 000 y 967 000 pesos. La cifra es un piso: cuenta solo el trabajo que quedó registrado y deja fuera el del primer semestre. Los dos últimos montos solo podrán cotizarse si la prueba justifica un testigo propio.
 
 **Tabla 9**
 
@@ -673,20 +673,20 @@ Se separan cuatro montos: el costo del prototipo académico; el trabajo profesio
 
 | Ítem | Valor (CLP) | Fecha y fuente |
 | --- | --- | --- |
-| Tag con pila CR2032 | [CONFIRMAR: unidades, monto pagado y comercio] | Referencia: 5930 a 7990 (29 de septiembre y 5 de octubre de 2026). |
-| Teléfono Android | [CONFIRMAR: propio, prestado o monto] | — |
-| Servicio remoto de datos | [CONFIRMAR: plan y monto] | Referencia: el plan gratuito cubre la escala de la prueba y el siguiente parte en 25 dólares al mes (Supabase, s. f.). |
-| Herramientas de inteligencia artificial | [CONFIRMAR: suscripciones y monto] | — |
+| Tag con pila CR2032 | 10 990 | Una unidad comprada en octubre de 2026: 7990 el producto y 3000 el envío. |
+| Teléfono Android | Sin costo | No se compró: quienes participaron usaron sus propios teléfonos. |
+| Servicio remoto de datos | Sin costo | Plan gratuito de Supabase, que cubre la escala de la prueba (Supabase, s. f.). |
+| Herramientas de inteligencia artificial | unos 171 000 | Entre marzo y octubre de 2026, cinco meses de ChatGPT Plus a 19 990 (OpenAI, s. f.) y tres de Claude Pro a 20 dólares más impuestos (Anthropic, s. f.), al dólar observado del 27 de octubre (Mindicador, 2026). |
 | Placas micro:bit V2 y XIAO nRF52840 | No adquiridas | 24 990 y 16 590 el 7 de septiembre de 2026 (MCI Electronics, s. f.-b; MechatronicStore, s. f.); la primera, 22 990 el 11 de octubre. |
-| Total desembolsado | [CONFIRMAR: suma] | — |
+| Total desembolsado | unos 182 000 | — |
 
-*Nota.* CLP = pesos chilenos. Las referencias son precios publicados por comercios en línea chilenos en la fecha indicada, no montos pagados.
+*Nota.* CLP = pesos chilenos. Los montos de las suscripciones son aproximados: usan los precios de lista vigentes y, para Claude, el dólar observado del 27 de octubre de 2026, porque los cargos se hicieron entre marzo y octubre. Las placas no se compraron y su valor es el precio publicado en la fecha indicada.
 
 ## Modelo de gestión
 
 El modelo se plantea en tres etapas; cada una se inicia solo si la anterior entrega evidencia.
 
-La primera es el proyecto académico, de agosto a diciembre de 2026. El autor conduce investigación, diseño y desarrollo, con la retroalimentación de los profesores guía y la colaboración de quienes participan en la prueba (Tabla 3). Sus recursos y costos son los de la Tabla 9, más el trabajo del autor [CONFIRMAR: fuente de financiamiento de esta etapa]. Su resultado es conocimiento, no un bien en venta.
+La primera es el proyecto académico, de agosto a diciembre de 2026. El autor conduce investigación, diseño y desarrollo, con la retroalimentación de los profesores guía y la colaboración de quienes participan en la prueba (Tabla 3). Sus recursos y costos son los de la Tabla 9, más el trabajo del autor; los financió él mismo con ingresos de su trabajo a tiempo parcial. Su resultado es conocimiento, no un bien en venta.
 
 La segunda, un piloto, parte de lo que la prueba ya mostró en tres hogares (capítulo 13): el ciclo completo es factible y la señal se comprende; las escalas semanales dirán si la carga es aceptable. El piloto tendría que establecer si situar la señal aporta. Ampliaría la prueba a las seis personas previstas, con un localizador por hogar, e incorporaría revisión especializada en accesibilidad, protección de datos y electrónica. Con precios de octubre de 2026, cada hogar supondría entre 10 100 y 12 150 pesos: el localizador, entre 5930 y 7990; una pila CR2032 de repuesto, 1690 (MCI Electronics, s. f.-a); y la carcasa impresa, unos 2470, que resultan de repartir entre seis el mínimo de 14 800 por trabajo que publica un servicio nacional (Rabbit Hole, s. f.). El material es marginal —un rollo de PLA de un kilo cuesta entre 9690 y 13 890 pesos (TodoToner, s. f.) y una carcasa de este tamaño usa unos gramos—, de modo que las seis unidades sumarían entre 60 500 y 72 900 pesos. Esa cifra es un mínimo de servicio y no una cotización, que exige el modelo terminado. A ella se añaden las horas de esos especialistas; el financiamiento no está definido.
 
@@ -702,7 +702,7 @@ La aplicación se distribuye hoy como archivo instalable fuera de la tienda, fir
 
 El papel del autor fue decidir qué debía ocurrir y traducirlo en especificaciones verificables (capítulo 10); la colaboración interdisciplinaria fue indirecta: la literatura, la documentación técnica y la orientación de los profesores guía.
 
-Quedan para la etapa siguiente la condición de activación; el sonido, la forma y el control de un testigo propio; la autonomía del localizador y el consumo en el teléfono; los materiales y los costos reales. El alcance excluye adicción, tratamiento clínico, control parental, vigilancia, productividad general y reducción universal del tiempo de pantalla.
+Quedan para la etapa siguiente la condición de activación; el sonido, la forma y el control de un testigo propio; la autonomía del localizador y el consumo en el teléfono; los materiales y los costos de producción. El alcance excluye adicción, tratamiento clínico, control parental, vigilancia, productividad general y reducción universal del tiempo de pantalla.
 
 # 13. Plan de desarrollo y validación
 
@@ -823,6 +823,8 @@ Los alcances de la investigación y la prueba se detallan en los capítulos 7, 8
 
 Aaker, D. A. (1996). *Building strong brands*. Free Press.
 
+Anthropic. (s. f.). *Planes y precios*. Claude. Recuperado el 27 de octubre de 2026, de https://claude.com/es/pricing
+
 Apple. (s. f.). *Set up Screen Time for yourself on iPhone*. Apple Support. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-ie/guide/iphone/iphbfa595995/ios
 
 Apple Developer. (s. f.-a). *Core Bluetooth*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/corebluetooth
@@ -935,6 +937,8 @@ Micro:bit Educational Foundation. (s. f.-a). *Bluetooth*. micro:bit developer co
 
 Micro:bit Educational Foundation. (s. f.-b). *2.2x micro:bit revision*. micro:bit developer community and technical resources. Recuperado el 11 de octubre de 2026, de https://tech.microbit.org/hardware/2-2-revision/
 
+Mindicador. (2026). *Dólar observado* [Serie del Banco Central de Chile]. Recuperado el 27 de octubre de 2026, de https://mindicador.cl/api/dolar
+
 Ministerio de Educación. (s. f.). *Estadísticas por carrera: Diseño*. Mi Futuro, Servicio de Información de Educación Superior. Recuperado el 27 de octubre de 2026, de https://www.mifuturo.cl/buscador-de-estadisticas-por-carrera/
 
 Monge Roffarello, A. y De Russis, L. (2023). Achieving digital wellbeing through digital self-control tools: A systematic review and meta-analysis. *ACM Transactions on Computer-Human Interaction, 30*(4), Artículo 53. https://doi.org/10.1145/3571810
@@ -948,6 +952,8 @@ Nielsen, J. (1993). *Usability engineering*. Academic Press.
 Norman, D. A. (1990). *The design of everyday things*. Doubleday/Currency. (Obra original publicada en 1988)
 
 one sec. (s. f.). *Cut your screen time in half*. Recuperado el 24 de agosto de 2026, de https://one-sec.app/
+
+OpenAI. (s. f.). *Planes y precios*. ChatGPT. Recuperado el 27 de octubre de 2026, de https://chatgpt.com/es-419/pricing/
 
 O’Rear, A. E. y Radvansky, G. A. (2019). Location-based prospective memory. *Quarterly Journal of Experimental Psychology, 72*(3), 491–507. https://doi.org/10.1177/1747021818758608
 

@@ -19,7 +19,7 @@
 
 1. **Cerrar la semana solo con notificaciones.** Según el autor, la semana ya empezó, y se ven 8 relevos con el teléfono desde el 21 de octubre. Pero no se inició en la app, así que falta aplicar la ficha en papel con la comparación y el cierre, y hacer la entrevista. Sin eso, la hipótesis queda sin contraste.
 2. **Darle al objeto una forma propia:** carcasa del Tag, planos y fotos en uso.
-3. **Completar los costos reales y los 23 datos por confirmar** de la memoria. Tres están en la portada.
+3. **Completar los 16 datos por confirmar** de la memoria. Tres están en la portada; los costos se cerraron el 27 de octubre.
 4. **Confirmar por escrito con los profesores guía las fechas del Pase y de la memoria**, porque el instructivo y el calendario no coinciden.
 5. **Armar la presentación del Pase y del examen.**
 
@@ -54,15 +54,15 @@ El instructivo también mezcla «Seminario» y «Proyecto de Título» en varios
 
 | Requisito | Estado de Relevo |
 | --- | --- |
-| PDF de 15.000 a 20.000 palabras sugeridas | Cumple: unas 19.600 palabras en los capítulos 1 a 14. |
+| PDF de 15.000 a 20.000 palabras sugeridas | Cumple: unas 19.700 palabras en los capítulos 1 a 14. |
 | Máximo 15 MB | Cumple: la versión A3 pesa 7,7 MB. |
 | Páginas simples, no dobles, y legibles en digital | Cumple: A3 apaisado, una página por hoja. |
 | Archivo con el nombre del estudiante y la mención, por ejemplo «Juan Vergara Dis.Gráfico.pdf» | **Falta:** decidir la mención y nombrar el archivo así al entregar. |
 | Portada con membrete (logo de la Universidad, la Facultad y la Escuela) | **Falta:** la portada tiene el texto, pero no los logos. Los logos oficiales están en la carpeta de la Coordinación (`LOGOTIPOS UDP FAAD`). |
 | Portada con nombre del proyecto, estudiante y profesor guía | Cumple en parte: el nombre legal está marcado como por confirmar. |
 | Portada con modalidad y fecha de entrega | **Falta:** solo dice «2026». |
-| Las siete dimensiones: problema, objetivos, método y plan, marco teórico, usuario y contexto, solución y factibilidad | Están todas. La factibilidad es la más débil, porque los costos están por confirmar. |
-| Ortografía, redacción y citación | Cumple: hay 97 referencias en APA verificadas. |
+| Las siete dimensiones: problema, objetivos, método y plan, marco teórico, usuario y contexto, solución y factibilidad | Están todas. La factibilidad es la más débil, aunque los costos ya están cerrados; falta el objeto propio. |
+| Ortografía, redacción y citación | Cumple: hay 100 referencias en APA verificadas. |
 | Solo las últimas visualizaciones pueden quedar pendientes | **Riesgo:** hoy hay 23 datos por confirmar y faltan resultados de cierre. |
 
 La no entrega, un archivo dañado o fuera de formato, o llegar tarde al examen, hacen reprobar el curso. El examen dura 50 minutos: 15 de exposición, 30 de preguntas y 10 de evaluación. Ajustarse al tiempo es parte de la nota.
@@ -87,7 +87,7 @@ La no entrega, un archivo dañado o fuera de formato, o llegar tarde al examen, 
 | | Bibliografía | Excelente | — |
 | | Usuario y contexto | Bueno | «Excelente» pide que las personas usuarias participen en el testeo: ya ocurre, con tres hogares. |
 | **Propuesta (40 %)** | Solución de diseño | Suficiente a bueno | El contraste de la hipótesis, aunque sea mínimo. |
-| | Factibilidad y producción | **Suficiente** | Un objeto propio, costos reales y parámetros cuantitativos de producción. |
+| | Factibilidad y producción | **Suficiente** | Un objeto propio y parámetros cuantitativos de producción; los costos ya están. |
 | | Tecnologías | Bueno a excelente | «Excelente» pide prototipos de calidad profesional: la app ya lo es; el objeto, no. |
 | | Ética y colaboración | Bueno a excelente | Confirmar si la Escuela exige una revisión ética. |
 
@@ -106,7 +106,7 @@ El feedback del Pase del primer semestre fue para In(Visible), el proyecto anter
 | 2 | **Objeto propio:** carcasa del Tag según la especificación del testigo, con modelo 3D, impresión, planos con medidas, fotos en uso y ficha de materiales. | La rúbrica y la matriz de pase piden un prototipo, planos y registro de uso. Hoy la parte física es una compra. | **Alto** | Autor; la IA puede modelar y dibujar los planos | 8 de noviembre |
 | 3 | **Cierre con las tres personas:** última exportación de datos, escalas, preguntas de cierre y entrevista de 15 minutos. | Los resultados terminan el 19 de octubre y sin la valoración de carga, molestia y lugar. | **Alto** | Autor | 8 de noviembre |
 | 4 | **Fechas por escrito:** confirmar con los profesores guía el Pase (25 o 26 de noviembre), la memoria (2 de diciembre a las 12:00) y el formato del Pase. | El instructivo tiene errores de fecha y la no entrega reprueba. | Medio, pero grave si ocurre | Autor | Esta semana |
-| 5 | **Costos reales** de la Tabla 9: Tag, teléfono, servicio remoto e IA, más las horas por actividad. El resto del [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) está hecho. | Sin esos montos, la factibilidad queda en «suficiente». | Medio | Autor | 8 de noviembre |
+| 5 | **Costos reales:** hecho el 27 de octubre. El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) cierra la Tabla 9 en unos 182 000 pesos y valoriza 114 horas de trabajo. | Cerrado | — | — | — |
 | 6 | **Datos por confirmar (23):** nombre legal, título y mención, frase de marca, grabación y transcripción, encuesta, herramientas de IA, mayoría de edad de las participantes, entre otros. | Tres están en la portada; ninguno puede quedar en la memoria entregada. | Medio | Autor | 15 de noviembre |
 | 7 | **Portada oficial:** logos de la Universidad, la Facultad y la Escuela, modalidad y fecha de entrega, y el nombre del archivo con la mención. | Es un requisito formal obligatorio. | Bajo, pero grave si falta | IA, cuando el autor confirme los datos | 15 de noviembre |
 | 8 | **Presentación del Pase y del examen** (15 minutos): qué es el objeto, dónde vive, el flujo de la persona y el técnico, la evidencia y sus límites. | Es lo que la comisión de julio no entendió. | Medio | Autor e IA | 22 de noviembre |
@@ -117,7 +117,7 @@ El feedback del Pase del primer semestre fue para In(Visible), el proyecto anter
 
 **Orden interno:** el 25 de octubre se cerró el Issue #11 y se pusieron al día el #8 y el #10. Quedan los PR #12 y #13, borradores viejos; no afectan la nota.
 
-Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su probabilidad e impacto, en el [registro de riesgos](registro-de-riesgos.md). La autoevaluación de los 24 subcriterios de la matriz de pase da 14 logrados, 8 en desarrollo, 1 no logrado —el objeto con sus planos— y 1 por confirmar ([matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md)).
+Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su probabilidad e impacto, en el [registro de riesgos](registro-de-riesgos.md). La autoevaluación de los 24 subcriterios de la matriz de pase da 15 logrados, 7 en desarrollo, 1 no logrado —el objeto con sus planos— y 1 por confirmar ([matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md)).
 
 ## Plan hasta el Pase
 
@@ -131,6 +131,12 @@ Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su
 | 26 nov. – 2 dic. | Ajustes finales; entrega de la memoria el miércoles 2 de diciembre antes de las 12:00. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Presupuesto cerrado
+
+- **Qué cambió:** la acción 5 queda cerrada, la matriz suma 15 logrados y los datos por confirmar bajan de 23 a 16.
+- **Cómo estaba antes:** la acción 5 esperaba los montos del autor y la memoria tenía 23 datos por confirmar.
+- **Por qué:** el autor entregó los montos y la fuente de financiamiento.
 
 ### 2026-10-27 — Presupuesto
 

@@ -162,7 +162,19 @@ Se contrastó el borrador con el código de la app, los datos de la prueba, el r
 - **Extensión:** capítulos 1 a 14, 19 632 palabras (antes 19 406). Referencias: 97 (antes 91), con seis fuentes nuevas de precios, ingresos y jornada legal.
 - **Dónde está el detalle:** [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md).
 
+## Montos del autor, 27 de octubre de 2026
+
+- **Qué cambió:** la Tabla 9 queda con montos reales. El Tag costó 10 990 con envío; el teléfono no se compró, porque quienes participaron usaron los suyos; Supabase va en su plan gratuito, y las suscripciones de inteligencia artificial suman unos 171 000 entre marzo y octubre. El total desembolsado es de unos 182 000, con financiamiento propio. En «Fabricación, mantenimiento y costos», las horas dejan de ser un dato por confirmar: el repositorio registra 114 entre el 23 de agosto y el 27 de octubre, que equivalen a entre 656 000 y 967 000 pesos.
+- **Marcadores:** bajan de 23 a 16, porque se cierran los cuatro montos, el total, el financiamiento y las horas.
+- **Extensión:** capítulos 1 a 14, 19 735 palabras (antes 19 632). Referencias: 100 (antes 97), con los precios de ChatGPT y Claude y el dólar observado.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Montos del autor
+
+- **Qué cambió:** se anotó el cierre de la Tabla 9 y de las horas.
+- **Cómo estaba antes:** las notas terminaban en el presupuesto, con los montos por confirmar.
+- **Por qué:** el autor entregó sus datos.
 
 ### 2026-10-27 — Presupuesto
 

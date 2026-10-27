@@ -10,11 +10,11 @@ El proyecto tiene tres presupuestos distintos, y conviene no mezclarlos:
 
 | Presupuesto | Para qué sirve | Estado |
 | --- | --- | --- |
-| **Prototipo académico** | Lo que costó llegar a la prueba de 21 días | Estructura lista; los montos pagados los sabe el autor |
+| **Prototipo académico** | Lo que costó llegar a la prueba de 21 días | **Cerrado:** unos 182 000 pesos, con financiamiento propio |
 | **Piloto de seis hogares** | Lo que costaría la etapa siguiente | **Calculado:** entre 60 500 y 72 900 pesos en materiales |
 | **Serie corta** | Lo que costaría fabricar testigos propios | Depende de un modelo que todavía no existe |
 
-El trabajo del autor se valoriza aparte, con una referencia pública: entre 5750 y 8480 pesos por hora.
+El trabajo del autor se valoriza aparte: 114 horas registradas en el repositorio entre el 23 de agosto y el 27 de octubre de 2026, que a valor de referencia equivalen a entre 656 000 y 967 000 pesos.
 
 ## 1. Prototipo académico
 
@@ -22,14 +22,14 @@ El prototipo no exigió fabricación: su parte física es un producto terminado,
 
 | Ítem | Valor (CLP) | Fuente y fecha |
 | --- | --- | --- |
-| Localizador Bluetooth (iTag NEWOTAG-BL), una unidad, con su pila CR2032 | **Por confirmar:** monto pagado y comercio | Publicaciones consultadas el 5 de octubre de 2026: 5930 y 7990 |
-| Teléfono Android | **Por confirmar:** propio, prestado o comprado | — |
-| Servicio remoto de datos (Supabase) | **Por confirmar:** plan y monto | El plan gratuito no tiene costo; el siguiente parte en 25 dólares al mes (Supabase, s. f.) |
-| Herramientas de inteligencia artificial | **Por confirmar:** suscripciones y monto | — |
+| Localizador Bluetooth (iTag NEWOTAG-BL), una unidad, con su pila CR2032 | **10 990** | Comprado en MercadoLibre en octubre de 2026: 7990 el producto y 3000 el envío |
+| Teléfono Android | **Sin costo** | No se compró: quienes participaron usaron sus propios teléfonos |
+| Servicio remoto de datos (Supabase) | **Sin costo** | Plan gratuito, que cubre la escala de la prueba |
+| Herramientas de inteligencia artificial | **unos 171 000** | Entre marzo y octubre de 2026: cinco meses de ChatGPT Plus a 19 990 (99 950) y tres de Claude Pro a 20 dólares más impuestos (unos 71 000 al dólar observado del 27 de octubre, 994,29) |
 | Placas micro:bit V2 y XIAO nRF52840 | No adquiridas | 24 990 y 16 590 el 7 de septiembre de 2026; la primera, 22 990 el 11 de octubre |
-| **Total desembolsado** | **Por confirmar** | — |
+| **Total desembolsado** | **unos 182 000** | Financiamiento propio, con ingresos del trabajo a tiempo parcial del autor |
 
-**Lo que falta es solo del autor:** cuánto pagó por el llavero y dónde, si el teléfono es propio, qué plan de Supabase usa y qué suscripciones de inteligencia artificial pagó en el período. Con esos cuatro datos la tabla queda cerrada.
+**La tabla está cerrada.** El autor confirmó los cuatro datos el 27 de octubre de 2026. El único monto aproximado es el de las suscripciones: se calcula con los precios de lista vigentes y, en el caso de Claude, con el dólar observado de ese día, porque los cargos se hicieron entre marzo y octubre a tipos de cambio distintos.
 
 **Lo que no cuesta dinero y conviene decir:** la aplicación se distribuye como archivo instalable, fuera de la tienda, así que no hubo cuenta de publicación; el plan gratuito de Supabase cubre 500 MB de base de datos, 50 000 personas usuarias al mes y 5 GB de tráfico, y pausa los proyectos tras una semana sin actividad (Supabase, s. f.), de modo que la escala de la prueba cabe sin costo.
 
@@ -67,7 +67,22 @@ Con impresión 3D, el costo por carcasa baja al repartir el mínimo por trabajo 
 
 La memoria no valoriza el trabajo del autor, y conviene hacerlo: la rúbrica pide parámetros cuantitativos, y el trabajo es la mayor parte del costo real del proyecto.
 
-**La referencia.** Quienes se titulan de Diseño en universidades chilenas reciben, en pesos de septiembre de 2025, estos ingresos brutos mensuales (Ministerio de Educación, s. f.):
+**Las horas.** El repositorio registra 114 horas de trabajo entre el 23 de agosto y el 27 de octubre de 2026. Se calculan agrupando las confirmaciones de cambios en sesiones —una sesión termina cuando pasan más de 90 minutos sin actividad— y sumando su duración, más 20 minutos por sesión para el trabajo previo al primer guardado. Cada sesión se atribuye al área donde cambió más archivos.
+
+| Área | Horas | Qué incluye |
+| --- | --- | --- |
+| Desarrollo y factibilidad | 34 | Aplicación Android, Tag, objeto y estudios técnicos |
+| Memoria | 27 | Escritura, anexos y versión A3 |
+| Recursos visuales | 20 | Identidad, íconos, color y láminas |
+| Gobernanza y administración | 14 | Estado, riesgos, decisiones y registro |
+| Validación | 8 | Protocolo, instrumentos y datos de la prueba |
+| Propuesta phygital | 5 | Recorrido, estados y especificación |
+| Otras | 6 | Índices, herramientas y archivo |
+| **Total** | **114** | |
+
+**Qué deja fuera.** Es un piso, no el total: no cuenta el primer semestre —entrevistas, encuesta y seminario—, ni la lectura, las conversaciones con la inteligencia artificial que no terminaron en un cambio guardado, las compilaciones y pruebas en el teléfono, ni las reuniones con los profesores guía. El autor puede sumar esas horas si quiere una cifra completa.
+
+**El valor.** Quienes se titulan de Diseño en universidades chilenas reciben, en pesos de septiembre de 2025, estos ingresos brutos mensuales (Ministerio de Educación, s. f.):
 
 | Año tras titularse | Ingreso bruto mensual (CLP) | Equivalente por hora (CLP) |
 | --- | --- | --- |
@@ -83,20 +98,13 @@ La columna de la derecha divide el ingreso mensual por 180 horas, que es lo que 
 
 **Las horas.** Esta planilla la llena el autor; el repositorio permite acotarla, porque guarda la fecha de cada decisión, cada versión de la aplicación y cada pedido a la inteligencia artificial.
 
-| Actividad | Horas | Valor (CLP) |
-| --- | --- | --- |
-| Investigación (entrevistas, encuesta, estado del arte) | Por confirmar | — |
-| Diseño (identidad, interfaz, objeto, memoria) | Por confirmar | — |
-| Programación (aplicación Android y herramientas) | Por confirmar | — |
-| Electrónica y pruebas con el objeto | Por confirmar | — |
-| **Total** | | |
+**Lo que vale ese trabajo.** Las 114 horas equivalen a 655 500 pesos al valor del primer año tras titularse y a 966 720 al del quinto. No es un desembolso: es el aporte del autor al proyecto, y conviene decirlo junto al total de la Tabla 9, porque es varias veces mayor.
 
 ## 5. Lo que falta
 
 | Qué | Quién | Cuándo |
 | --- | --- | --- |
-| Montos pagados del prototipo y fuente de financiamiento | El autor | Antes de la entrega |
-| Horas por actividad | El autor | Antes de la entrega |
+| Horas del primer semestre, si se quiere el total completo | El autor | Opcional |
 | Peso de la carcasa y cotización del taller | Después del modelo | Tarea 4 |
 | Horas de revisión especializada del piloto | Cotizar | Si el piloto se hace |
 | Circuito, molde y ensayos de la serie corta | Cotizar | Si la serie corta se justifica |
@@ -105,17 +113,26 @@ La columna de la derecha divide el ingreso mensual por 180 horas, que es lo que 
 
 Todas se consultaron el 27 de octubre de 2026, salvo las fechadas antes.
 
+- Anthropic. (s. f.). *Planes y precios*. Claude. https://claude.com/es/pricing
 - MCI Electronics. (s. f.). *Pila botón CR2032 de lithium para reloj*. https://mcielectronics.cl/shop/product/pila-boton-cr2032-de-lithium-para-reloj-9838/
+- Mindicador. (2026). *Dólar observado* [Serie del Banco Central de Chile]. https://mindicador.cl/api/dolar
 - Ministerio de Educación. (s. f.). *Estadísticas por carrera: Diseño*. Mi Futuro, Servicio de Información de Educación Superior. https://www.mifuturo.cl/buscador-de-estadisticas-por-carrera/
+- OpenAI. (s. f.). *Planes y precios*. ChatGPT. https://chatgpt.com/es-419/pricing/
 - Rabbit Hole. (s. f.). *Impresión 3D en Chile: resina SLA y FDM*. https://rabbithole.cl/
 - Supabase. (s. f.). *Pricing*. https://supabase.com/pricing
 - TodoToner. (s. f.). *Filamentos*. https://www.todotoner.cl/filamentos
 - Ley 21561. (2023, 26 de abril). Modifica el Código del Trabajo con el objeto de reducir la jornada laboral. Biblioteca del Congreso Nacional de Chile. https://www.bcn.cl/leychile/navegar?idNorma=1191554
 - Precios del localizador y de las placas: [búsqueda de productos terminados](busqueda-productos-terminados-chile-2026-09-11.md) y [versión 2.19 de la aplicación](app-android/version-2.19-llavero-itag-2026-10-05.md).
 
-**Límites.** Los precios de comercio varían y no se pactó ninguno; el mínimo de impresión es de un solo servicio y no reemplaza una cotización; el ingreso de referencia es un promedio nacional por carrera, no una tarifa del autor.
+**Límites.** El monto de las suscripciones usa precios de lista y un tipo de cambio de un solo día, así que es aproximado; los precios de comercio varían y no se pactó ninguno; el mínimo de impresión es de un solo servicio y no reemplaza una cotización; el ingreso de referencia es un promedio nacional por carrera, no una tarifa del autor.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Datos del autor
+
+- **Qué cambió:** la Tabla del prototipo académico queda cerrada en unos 182 000 pesos con financiamiento propio, y las horas pasan de una planilla vacía a 114 horas medidas en el repositorio, repartidas por área y valorizadas.
+- **Cómo estaba antes:** cuatro montos y las horas estaban por confirmar.
+- **Por qué:** el autor entregó los datos y pidió que las horas se estimaran desde el registro del proyecto.
 
 ### 2026-10-27 — Creación
 

@@ -144,7 +144,7 @@ Con un pie de metro (calibre), precisión de 0,1 mm, y fotos con una regla al la
 
 ## 5. Costos y presupuesto
 
-**Estado:** hecha en lo que no dependía del autor, el 27 de octubre de 2026; faltan sus montos y sus horas. **Anotada:** 25 de octubre de 2026. **Riesgo:** medio ([riesgo 2](registro-de-riesgos.md)).
+**Estado:** hecha el 27 de octubre de 2026. **Anotada:** 25 de octubre de 2026. **Riesgo:** cerrado ([riesgo 2](registro-de-riesgos.md)).
 
 ### Por qué
 
@@ -152,10 +152,10 @@ La matriz de pase marcaba el presupuesto como no logrado (8.2): la Tabla 9 de la
 
 ### Qué hacer
 
-- [ ] **Montos pagados:** Tag (unidades, monto y comercio), pilas, teléfono (propio, prestado o comprado), servicio remoto (Supabase, plan gratuito o de pago), suscripciones de IA e impresión de la carcasa. Son los cuatro datos que cierran la Tabla 9.
-- [ ] **Fuente de financiamiento** de la etapa académica.
+- [x] **Montos pagados:** el Tag costó 10 990 con envío; el teléfono y Supabase, nada; las suscripciones de inteligencia artificial, unos 171 000. Total: unos 182 000.
+- [x] **Fuente de financiamiento:** propia, con ingresos del trabajo a tiempo parcial del autor.
 - [x] **Valor hora de referencia:** entre 5750 y 8480 pesos, de los ingresos de titulados de Diseño publicados por el Ministerio de Educación y la jornada legal de 42 horas.
-- [ ] **Horas** de investigación, diseño, programación y electrónica. El repositorio guarda la fecha de cada decisión, versión y pedido, así que la planilla se puede acotar.
+- [x] **Horas:** 114 medidas en el repositorio entre el 23 de agosto y el 27 de octubre, repartidas por área. Queda opcional sumar las del primer semestre.
 - [x] **Costo por unidad** para el piloto de seis hogares: entre 10 100 y 12 150 pesos; las seis unidades, entre 60 500 y 72 900.
 - [ ] **Escenario de producción en serie corta:** los dos caminos están descritos y comparados; faltan las cotizaciones, que exigen el modelo terminado (tarea 4).
 - [x] Llevarlo a la Tabla 9 y a «Modelo de gestión» del capítulo 12.
@@ -201,14 +201,13 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Qué hacer
 
 - [ ] **Fechas por escrito:** confirmar con los profesores guía el Pase (25 de noviembre) y la memoria (2 de diciembre a las 12:00). El instructivo dice 26 de noviembre y «2 de noviembre».
-- [ ] **Datos por confirmar (23)**, que solo sabe el autor:
+- [ ] **Datos por confirmar (16)**, que solo sabe el autor:
   - nombre legal, título y mención;
   - frase de marca;
   - grabación y transcripción de las entrevistas;
   - la encuesta: fecha, convocatoria y alcance de la edición;
   - herramientas de IA usadas antes de septiembre;
   - que las tres personas son mayores de edad;
-  - la fuente de financiamiento.
 - [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en la carpeta `LOGOTIPOS UDP FAAD` de la Coordinación), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
@@ -227,6 +226,18 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Datos por confirmar
+
+- **Qué cambió:** la tarea 8 baja de 23 a 16 datos y sale la fuente de financiamiento, ya entregada.
+- **Cómo estaba antes:** listaba 23 datos, con el financiamiento entre ellos.
+- **Por qué:** el autor entregó los montos y la fuente.
+
+### 2026-10-27 — Presupuesto cerrado
+
+- **Qué cambió:** la tarea 5 queda hecha, con los montos del autor y las horas medidas.
+- **Cómo estaba antes:** faltaban los montos pagados, la fuente de financiamiento y las horas.
+- **Por qué:** el autor entregó sus datos.
 
 ### 2026-10-27 — Presupuesto
 
