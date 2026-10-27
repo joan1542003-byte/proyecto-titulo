@@ -14,7 +14,7 @@ El proyecto tiene tres presupuestos distintos, y conviene no mezclarlos:
 | **Piloto de seis hogares** | Lo que costaría la etapa siguiente | **Calculado:** entre 60 500 y 72 900 pesos en materiales |
 | **Serie corta** | Lo que costaría fabricar testigos propios | Depende de un modelo que todavía no existe |
 
-El trabajo del autor se valoriza aparte: 114 horas registradas en el repositorio entre el 23 de agosto y el 27 de octubre de 2026, que a valor de referencia equivalen a entre 656 000 y 967 000 pesos.
+El trabajo del autor se valoriza aparte: 186 horas en total —114 medidas en el repositorio y 72 estimadas del primer semestre—, que a valor de referencia equivalen a entre 1 070 000 y 1 577 000 pesos.
 
 ## 1. Prototipo académico
 
@@ -80,7 +80,11 @@ La memoria no valoriza el trabajo del autor, y conviene hacerlo: la rúbrica pid
 | Otras | 6 | Índices, herramientas y archivo |
 | **Total** | **114** | |
 
-**Qué deja fuera.** Es un piso, no el total: no cuenta el primer semestre —entrevistas, encuesta y seminario—, ni la lectura, las conversaciones con la inteligencia artificial que no terminaron en un cambio guardado, las compilaciones y pruebas en el teléfono, ni las reuniones con los profesores guía. El autor puede sumar esas horas si quiere una cifra completa.
+**Qué deja fuera.** Esas 114 horas son un piso del segundo semestre: no cuentan la lectura, las conversaciones con la inteligencia artificial que no terminaron en un cambio guardado, las compilaciones y pruebas en el teléfono, ni las reuniones con los profesores guía.
+
+**El primer semestre: 72 horas.** No se pueden medir igual, porque el repositorio parte el 23 de agosto y las fechas de los archivos anteriores las reescribió la sincronización en la nube. La estimación la dio el autor: unas cuatro horas por semana, menos que en el segundo porque tenía más ramos y trabajo. Se aplican a las dieciocho semanas de clases del seminario, del 11 de marzo al 12 de julio de 2026, según la planificación oficial de la asignatura. En ese período entregó dieciséis encargos, dos presentaciones orales, el Pase y una memoria de 36 páginas y unas 10 500 palabras, con ocho entrevistas en Santiago y seis referentes comparados.
+
+**Total: 186 horas.**
 
 **El valor.** Quienes se titulan de Diseño en universidades chilenas reciben, en pesos de septiembre de 2025, estos ingresos brutos mensuales (Ministerio de Educación, s. f.):
 
@@ -98,13 +102,12 @@ La columna de la derecha divide el ingreso mensual por 180 horas, que es lo que 
 
 **Las horas.** Esta planilla la llena el autor; el repositorio permite acotarla, porque guarda la fecha de cada decisión, cada versión de la aplicación y cada pedido a la inteligencia artificial.
 
-**Lo que vale ese trabajo.** Las 114 horas equivalen a 655 500 pesos al valor del primer año tras titularse y a 966 720 al del quinto. No es un desembolso: es el aporte del autor al proyecto, y conviene decirlo junto al total de la Tabla 9, porque es varias veces mayor.
+**Lo que vale ese trabajo.** Las 186 horas equivalen a 1 069 500 pesos al valor del primer año tras titularse y a 1 577 280 al del quinto. No es un desembolso: es el aporte del autor al proyecto, y conviene decirlo junto al total de la Tabla 9, porque lo supera entre seis y nueve veces.
 
 ## 5. Lo que falta
 
 | Qué | Quién | Cuándo |
 | --- | --- | --- |
-| Horas del primer semestre, si se quiere el total completo | El autor | Opcional |
 | Peso de la carcasa y cotización del taller | Después del modelo | Tarea 4 |
 | Horas de revisión especializada del piloto | Cotizar | Si el piloto se hace |
 | Circuito, molde y ensayos de la serie corta | Cotizar | Si la serie corta se justifica |
@@ -127,6 +130,12 @@ Todas se consultaron el 27 de octubre de 2026, salvo las fechadas antes.
 **Límites.** El monto de las suscripciones usa precios de lista y un tipo de cambio de un solo día, así que es aproximado; los precios de comercio varían y no se pactó ninguno; el mínimo de impresión es de un solo servicio y no reemplaza una cotización; el ingreso de referencia es un promedio nacional por carrera, no una tarifa del autor.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Primer semestre
+
+- **Qué cambió:** se sumaron las 72 horas estimadas del primer semestre, contrastadas con la planificación oficial del seminario y con lo entregado ese semestre. El trabajo del proyecto queda en 186 horas.
+- **Cómo estaba antes:** solo contaba las 114 horas medidas desde el 23 de agosto.
+- **Por qué:** el autor pidió revisar el plan de ese semestre y la memoria vieja, y estimó cuatro horas semanales.
 
 ### 2026-10-27 — Datos del autor
 

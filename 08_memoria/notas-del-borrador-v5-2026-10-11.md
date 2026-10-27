@@ -168,6 +168,12 @@ Se contrastó el borrador con el código de la app, los datos de la prueba, el r
 - **Marcadores:** bajan de 23 a 16, porque se cierran los cuatro montos, el total, el financiamiento y las horas.
 - **Extensión:** capítulos 1 a 14, 19 735 palabras (antes 19 632). Referencias: 100 (antes 97), con los precios de ChatGPT y Claude y el dólar observado.
 
+## Horas del primer semestre, 27 de octubre de 2026
+
+- **Qué cambió:** el capítulo 12 suma unas 72 horas del primer semestre a las 114 medidas, y el trabajo del proyecto queda en 186 horas, equivalentes a entre 1 070 000 y 1 577 000 pesos.
+- **De dónde sale:** el autor estimó cuatro horas semanales, menos que en el segundo semestre porque tenía más ramos y trabajo. Se aplican a las dieciocho semanas de clases del seminario, del 11 de marzo al 12 de julio de 2026, según su planificación oficial.
+- **Extensión:** capítulos 1 a 14, 19 800 palabras. Quedan 200 de margen para el máximo de 20 000, así que conviene no agregar texto sin quitar otro.
+
 ## Registro de cambios (disclaimer)
 
 ### 2026-10-27 — Montos del autor

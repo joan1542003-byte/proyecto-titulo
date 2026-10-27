@@ -155,7 +155,7 @@ La matriz de pase marcaba el presupuesto como no logrado (8.2): la Tabla 9 de la
 - [x] **Montos pagados:** el Tag costó 10 990 con envío; el teléfono y Supabase, nada; las suscripciones de inteligencia artificial, unos 171 000. Total: unos 182 000.
 - [x] **Fuente de financiamiento:** propia, con ingresos del trabajo a tiempo parcial del autor.
 - [x] **Valor hora de referencia:** entre 5750 y 8480 pesos, de los ingresos de titulados de Diseño publicados por el Ministerio de Educación y la jornada legal de 42 horas.
-- [x] **Horas:** 114 medidas en el repositorio entre el 23 de agosto y el 27 de octubre, repartidas por área. Queda opcional sumar las del primer semestre.
+- [x] **Horas:** 186 en total. 114 medidas en el repositorio entre el 23 de agosto y el 27 de octubre, repartidas por área, y 72 del primer semestre, estimadas en cuatro horas semanales sobre la planificación oficial del seminario.
 - [x] **Costo por unidad** para el piloto de seis hogares: entre 10 100 y 12 150 pesos; las seis unidades, entre 60 500 y 72 900.
 - [ ] **Escenario de producción en serie corta:** los dos caminos están descritos y comparados; faltan las cotizaciones, que exigen el modelo terminado (tarea 4).
 - [x] Llevarlo a la Tabla 9 y a «Modelo de gestión» del capítulo 12.
