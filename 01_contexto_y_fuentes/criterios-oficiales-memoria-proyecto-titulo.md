@@ -8,7 +8,7 @@ Este documento normaliza los requisitos institucionales que deben gobernar la re
 
 ### Reglamento de Titulación, Plan de Estudios 8.0
 
-El Reglamento de Titulación aprobado mediante la Resolución de Vicerrectoría Académica N.° 472/2022 define el Taller de Titulación como un proceso de dos semestres compuesto por Seminario de Título y Proyecto de Título. Para esta modalidad establece cuatro exigencias sustantivas:
+El Reglamento de Titulación aprobado mediante la Resolución de Vicerrectoría Académica N.° 472/2022 define el Taller de Titulación como un proceso de dos semestres compuesto por Seminario de Título y Proyecto de Título. Copia de consulta, con la firma cubierta: [`reglamento-titulacion-plan-8-0-res-472-2022-copia-de-consulta.pdf`](documentos_institucionales/reglamento-titulacion-plan-8-0-res-472-2022-copia-de-consulta.pdf). Para esta modalidad establece cuatro exigencias sustantivas:
 
 - desarrollar una investigación y un proyecto de diseño en un ámbito específico;
 - demostrar competencias de egreso mediante fundamentación y diseño proyectual;
@@ -19,7 +19,7 @@ El artículo 15 distingue las entregas: el informe de Seminario contiene, como m
 
 ### Instructivo de Examen de Proyecto de Título 2026
 
-El instructivo solicita una memoria completa con toda la información sobre investigación, diseño y producción. Recomienda entre 15.000 y 20.000 palabras y exige legibilidad, ortografía, redacción y citación. Define siete dimensiones que el texto académico debe demostrar mediante diagnósticos y argumentos basados en evidencia:
+Copia sin el contacto de la Facultad: [`instructivo-examen-proyecto-de-titulo-2026-sin-contacto.docx`](documentos_institucionales/instructivo-examen-proyecto-de-titulo-2026-sin-contacto.docx). El instructivo solicita una memoria completa con toda la información sobre investigación, diseño y producción. Recomienda entre 15.000 y 20.000 palabras y exige legibilidad, ortografía, redacción y citación. Define siete dimensiones que el texto académico debe demostrar mediante diagnósticos y argumentos basados en evidencia:
 
 1. construcción del problema;
 2. definición de objetivos;
@@ -74,6 +74,12 @@ La memoria revisada se considerará suficientemente alineada cuando cada criteri
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Enlaces a las copias
+
+- **Qué cambió:** el reglamento y el instructivo enlazan sus copias en el repositorio.
+- **Cómo estaba antes:** se citaban desde la carpeta local del autor.
+- **Por qué:** el autor pidió subir los documentos de la Coordinación (D-142).
 
 ### 2026-08-24 — Creación
 

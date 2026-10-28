@@ -4,7 +4,7 @@
 
 **Qué se revisó:**
 
-- **Documentos oficiales originales**, en la carpeta local de la Coordinación de Titulación: `Calendario de Titulación S2 2026.docx`, `INSTRUCTIVO EXAMEN PROYECTO DE TÍTULO 2026.docx`, `RÚBRICA Y ORIENTACIONES.pdf`, la matriz de pase y el `Protocolo Formato Informe`, que dice «en proceso».
+- **Documentos oficiales originales**, en la carpeta local de la Coordinación de Titulación (desde el 27 de octubre, copiados en [documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/README.md), salvo la rúbrica): `Calendario de Titulación S2 2026.docx`, `INSTRUCTIVO EXAMEN PROYECTO DE TÍTULO 2026.docx`, `RÚBRICA Y ORIENTACIONES.pdf`, la matriz de pase y el `Protocolo Formato Informe`, que dice «en proceso».
 - **El feedback del Pase del primer semestre** (Majluf y Gallardo, 16 de junio).
 - **El repositorio:** la memoria v5, los anexos, la app y las decisiones.
 - **La base remota:** solo recuentos, sin datos personales.
@@ -58,7 +58,7 @@ El instructivo también mezcla «Seminario» y «Proyecto de Título» en varios
 | Máximo 15 MB | Cumple: la versión A3 pesa 7,7 MB. |
 | Páginas simples, no dobles, y legibles en digital | Cumple: A3 apaisado, una página por hoja. |
 | Archivo con el nombre del estudiante y la mención, por ejemplo «Juan Vergara Dis.Gráfico.pdf» | **Falta:** decidir la mención y nombrar el archivo así al entregar. |
-| Portada con membrete (logo de la Universidad, la Facultad y la Escuela) | **Falta:** la portada tiene el texto, pero no los logos. Los logos oficiales están en la carpeta de la Coordinación (`LOGOTIPOS UDP FAAD`). |
+| Portada con membrete (logo de la Universidad, la Facultad y la Escuela) | **Falta:** la portada tiene el texto, pero no los logos. Los logos oficiales están en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/). |
 | Portada con nombre del proyecto, estudiante y profesor guía | Cumple en parte: el nombre legal está marcado como por confirmar. |
 | Portada con modalidad y fecha de entrega | **Falta:** solo dice «2026». |
 | Las siete dimensiones: problema, objetivos, método y plan, marco teórico, usuario y contexto, solución y factibilidad | Están todas. La factibilidad es la más débil, aunque los costos ya están cerrados; falta el objeto propio. |
@@ -131,6 +131,12 @@ Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su
 | 26 nov. – 2 dic. | Ajustes finales; entrega de la memoria el miércoles 2 de diciembre antes de las 12:00. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Documentos oficiales en el repositorio
+
+- **Qué cambió:** los documentos oficiales y los logos enlazan sus copias en el repositorio.
+- **Cómo estaba antes:** remitían a la carpeta local de la Coordinación.
+- **Por qué:** el autor pidió subir esa carpeta (D-142).
 
 ### 2026-10-27 — Presupuesto cerrado
 

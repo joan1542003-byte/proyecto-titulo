@@ -208,7 +208,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - grabación y transcripción de las entrevistas;
   - la encuesta: fecha, convocatoria y alcance de la edición;
   - que las tres personas son mayores de edad;
-- [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en la carpeta `LOGOTIPOS UDP FAAD` de la Coordinación), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
+- [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
 - [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6).
@@ -226,6 +226,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Logos en el repositorio
+
+- **Qué cambió:** la tarea de la portada enlaza los logos oficiales en el repositorio.
+- **Cómo estaba antes:** remitía a la carpeta local de la Coordinación.
+- **Por qué:** el autor pidió subir esa carpeta (D-142).
 
 ### 2026-10-27 — Herramientas de IA
 

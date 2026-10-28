@@ -28,7 +28,7 @@ El documento original está en el repositorio: [`calendario-titulacion-s2-2026.d
 
 ## Diferencias con el instructivo de examen
 
-El `INSTRUCTIVO EXAMEN PROYECTO DE TÍTULO 2026.docx`, leído el 25 de octubre de 2026, no coincide con este calendario en tres fechas:
+El `INSTRUCTIVO EXAMEN PROYECTO DE TÍTULO 2026.docx`, leído el 25 de octubre de 2026 ([copia sin el contacto de la Facultad](../01_contexto_y_fuentes/documentos_institucionales/instructivo-examen-proyecto-de-titulo-2026-sin-contacto.docx)), no coincide con este calendario en tres fechas:
 
 - **Pase:** dice «como máximo, el miércoles 26 de noviembre», pero el 26 es jueves.
 - **Memoria:** dice «miércoles 02 de noviembre hasta las 12:00», pero el 2 de noviembre es lunes. El día de la semana coincide con el 2 de diciembre del calendario.
@@ -48,6 +48,12 @@ El intervalo entre el 16 y el 24 de noviembre funciona como margen de seguridad 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Instructivo en el repositorio
+
+- **Qué cambió:** la sección de diferencias enlaza la copia del instructivo.
+- **Cómo estaba antes:** nombraba el archivo de la carpeta local.
+- **Por qué:** el autor pidió subir los documentos de la Coordinación (D-142).
 
 ### 2026-10-25 — Original en el repositorio
 

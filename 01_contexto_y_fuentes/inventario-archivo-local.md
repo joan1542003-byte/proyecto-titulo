@@ -154,7 +154,7 @@ No deben subirse sin revisión y anonimización:
 - carpetas codificadas que todavía contengan información reidentificable;
 - ZIP completos sin inspección;
 - materiales de otros estudiantes;
-- actas, reglamentos, instructivos o logotipos institucionales sin necesidad y permiso;
+- actas, reglamentos, instructivos o logotipos institucionales sin necesidad y permiso (los de la Coordinación de 2026 se agregaron el 27 de octubre, con permiso del autor y sin contactos ni firmas: ver [documentos institucionales](documentos_institucionales/README.md));
 - scripts con rutas, nombres, credenciales o datos locales;
 - memorias que incluyan citas o contexto identificable.
 
@@ -207,6 +207,12 @@ Estas decisiones explican la organización iniciada el 23 de agosto. No sustituy
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Documentos de la Coordinación
+
+- **Qué cambió:** la regla sobre documentos institucionales remite a los que se agregaron con permiso del autor.
+- **Cómo estaba antes:** solo decía que no se incorporaran sin necesidad y permiso.
+- **Por qué:** el autor pidió subirlos (D-142).
 
 ### 2026-09-11 — Estado visual actualizado
 

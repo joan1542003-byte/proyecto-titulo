@@ -192,6 +192,7 @@
 | 27 oct. | Encargo | Enlazar al final de la presentación lo relevante del repositorio: la memoria ya diseñada, los wireframes y cosas así. | Lámina final «Todo está en el repositorio», con doce enlaces en cuatro grupos: la memoria (A3 de 54 páginas, borrador v5 y anexos en PDF), el diseño (wireframes y estados, documento de marca y archivos del logo), el prototipo (aplicación Android, panel de la prueba y presupuesto) y la prueba y el estado (protocolo e instrumentos, estado del proyecto y Por hacer). Los doce enlaces se comprobaron uno a uno contra GitHub y responden. El deck queda en 25 láminas. | — |
 | 27 oct. | Corrección y encargo | El Anexo E ocupaba casi 40 páginas de registro de IA. Pidió reducirlo y contarlo primero en prosa: qué herramientas y modelos se usaron y cómo ayudaron en la redacción, la ortografía, la búsqueda masiva de fuentes y su filtrado, la revisión de citas en APA y, sobre todo, el desarrollo de la aplicación Android. Sin extenderse. | [Uso de inteligencia artificial](uso-de-ia-2026-10-27.md), de unas 900 palabras: ChatGPT Plus desde marzo y Claude Code desde fines de septiembre, con los modelos que firman los cambios —Opus 5.5 en 158, Opus 5 en 13 y Sonnet 5.5 en 5—, las cinco tareas en que ayudó y lo que decidió el autor. El Anexo E pasa de 26 a **2 páginas**, y los anexos completos, de 118 a 94. El capítulo 10 de la memoria cierra además el marcador de las herramientas anteriores a septiembre; queda por confirmar solo la de transcripción. | — |
 | 27 oct. | Corrección y consulta | Redactarlo mejor, con el registro de los documentos oficiales de la universidad; no nombrar modelos ni cuánto se usó cada uno, pero sí presentar las herramientas y en qué se diferencian; dejar constancia de que él revisó cada fuente propuesta y leyó las que servían; y cambiar títulos como «Qué decidió el autor» o «Dónde está el detalle». Pidió además leer el documento de la universidad sobre uso de IA. | **No existe tal documento** entre los que tenemos: se revisaron los dos instructivos de examen, el Reglamento de Titulación Plan 8.0, las actas, la pauta de contenidos, la pauta de la Biblioteca y la matriz de pase, y ninguno menciona la inteligencia artificial; lo único registrado es la charla de la Escuela que trata como plagio pegar texto de IA sin reelaborarlo (D-141). El [documento](uso-de-ia-2026-10-27.md) se reescribió en registro académico, con los apartados Herramientas, Tareas, Decisiones, Límites y resguardos, y Trazabilidad. | — |
+| 27 oct. | Consulta y encargo | Preguntó si la carpeta «COORDINACIÓN TITULACIÓN S2. 2026» estaba en el repositorio y pidió agregarla completa y documentarla. | Estaban 2 de sus 21 archivos: el calendario y la matriz de pase. Se agregaron 17 en [documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/README.md), con un índice: actas en blanco, los instructivos sin el nombre ni el correo de un funcionario, el reglamento con la firma cubierta, el protocolo en proceso y siete logotipos. No se subieron los PDF de los instructivos, que traen ese contacto. Se enlazaron las copias desde los criterios oficiales, el calendario, el estado del 25 de octubre y la tarea de la portada. | D-142 |
 
 ## Lo que muestra el registro
 
@@ -202,6 +203,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Documentos de la Coordinación
+
+- **Qué cambió:** se registró el pedido de subir la carpeta de la Coordinación.
+- **Cómo estaba antes:** terminaba en la redacción del Anexo E.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-27 — Redacción del Anexo E
 
