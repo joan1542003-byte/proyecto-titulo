@@ -1829,7 +1829,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Juego completo de logotipos:** el mismo día, el autor entregó la carpeta `Logo/`, con 33 archivos de la Facultad. Se sumaron los 26 que faltaban (logotipo principal, Facultad, Arte, Arquitectura y sus escuelas, y la fuente de Illustrator), sin modificarlos y con nombres por firma y color. La fuente de Illustrator no tiene autores en sus metadatos.
 - **Documentos:** [índice de documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/README.md).
 
+## D-143 — El testigo lleva adentro la placa y la pila del Tag, con el logo calado como botón
+
+- **Fecha:** 2026-10-28.
+- **Estado:** modelo hecho, versión 0; falta medir la placa del Tag, imprimir la prueba de calce y armarlo.
+- **Contexto:** el objeto de Relevo seguía siendo un producto comprado (tarea 4 de [Por hacer](../00_gobernanza/por-hacer.md) y riesgo 1). El autor pidió el objeto para imprimirlo en una Bambu Lab X1 Carbon, con un diseño óptimo y portable, con el logo de Relevo tallado y, adentro, la pila pegada a la placa del Tag: el Tag es la base de hardware. La tarea 4 planteaba una carcasa que envolviera el Tag completo.
+- **Decisión:**
+  - **Hardware:** la placa y la pila del Tag van dentro de una carcasa propia. El Bluetooth, el botón y el pitido siguen siendo del Tag, y eso se declara como límite.
+  - **Forma:** planta circular de 46 mm y 12,3 mm de alto, dentro de la envolvente de la memoria (de 42 a 48 mm por 12 a 16 mm), sin frente.
+  - **Botón:** el medallón con el logo es el botón. Baja 0,45 mm, y un tope protege el botón del Tag. Se descartaron una lengüeta flexible en el techo, porque el PLA se fatiga y no se puede calibrar sin medidas, y un botón aparte, porque rompía la simetría sin frente.
+  - **Logo:** calado en una placa de 1,4 mm sobre un fondo de color, y no grabado: grabado en una cara que se imprime contra la placa, el piso de cada luz queda en el aire. Usa la versión chica de la marca, con los colores y el orden de sus luces: cuatro colores con el AMS, o uno solo.
+  - **Cierre:** tapa roscada de 2,5 mm de paso y flancos de 45°, que se abre con una moneda, como la del Tag. Se descartaron una tapa a presión, que se gasta, y un cierre de bayoneta, que necesita un resorte para no soltarse.
+  - **Ajuste:** un chasis aparte es la única pieza que depende de la placa. El modelo es paramétrico ([`medidas.json`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/medidas.json)), y las medidas actuales de la placa son supuestas.
+  - **Impresión:** todas las piezas, en PLA y sin soportes, con las caras visibles contra la placa texturada.
+- **Verificación:** las piezas son sólidos cerrados; no chocan entre sí, ni en reposo ni con el medallón apretado; la rosca es derecha; ninguna superficie pasa de 47° desde la vertical, y ningún detalle del logo mide menos de 1,3 mm. No se ha impreso.
+- **Documentos:** [testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-143
+
+- **Qué cambió:** se registró D-143.
+- **Cómo estaba antes:** la última decisión era D-142.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-27 — D-142, logotipos
 

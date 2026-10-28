@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Testigo de Relevo · vistas</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #F7F4F0; overflow: hidden; font-family: "Helvetica Neue", Arial, sans-serif; }
+  canvas { display: block; }
+  .rot { position: absolute; font-size: 21px; line-height: 1.25; color: #141312; white-space: nowrap; }
+  .rot small { display: block; font-size: 16px; color: #6E6964; }
+  .rot::before { content: ""; position: absolute; top: 12px; width: 36px; height: 1.5px; background: #141312; }
+  .izq { text-align: right; } .izq::before { right: -46px; }
+  .der::before { left: -46px; }
+  #pie { position: absolute; left: 40px; bottom: 30px; font-size: 18px; color: #6E6964; }
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="pie"></div>
+<script type="module">
+import * as THREE from 'three';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { mergeVertices, toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
+
+const vista = new URLSearchParams(location.search).get('vista') || 'heroe';
+const W = innerWidth, Hh = innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, Hh);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.prepend(renderer.domElement);
+
+const escena = new THREE.Scene();
+escena.background = new THREE.Color('#F7F4F0');
+escena.add(new THREE.HemisphereLight('#ffffff', '#d9d2c8', 1.1));
+const sol = new THREE.DirectionalLight('#fff6ec', 2.4);
+sol.position.set(-60, 140, 90); sol.castShadow = true;
+sol.shadow.mapSize.set(4096, 4096); sol.shadow.camera.left = -90; sol.shadow.camera.right = 90; sol.shadow.camera.top = 90; sol.shadow.camera.bottom = -90; sol.shadow.bias = -0.0004; sol.shadow.radius = 6;
+escena.add(sol);
+const relleno = new THREE.DirectionalLight('#eef4ff', 0.7); relleno.position.set(80, 40, -60); escena.add(relleno);
+const suelo = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), new THREE.ShadowMaterial({ opacity: 0.16 }));
+suelo.rotation.x = -Math.PI / 2; suelo.receiveShadow = true; escena.add(suelo);
+
+const PAPEL = '#EFE9E1', CHASIS = '#D3CABE', TINTA = '#141312';
+const LUCES = ['#FFD54A', '#9DD6F4', '#B3E788', '#F6A3CB'];
+const mat = (c, r = 0.82) => new THREE.MeshStandardMaterial({ color: c, roughness: r, metalness: 0 });
+const MAT = {
+  cuerpo: mat(PAPEL), 'medallon-placa': mat(vista === 'corte' ? '#F8F5F0' : PAPEL), tapa: mat(vista === 'corte' ? '#E4DDD3' : PAPEL), chasis: mat(CHASIS), 'medallon-fondo': mat(PAPEL),
+  'fondo-base': mat(vista === 'corte' ? '#E9E3DA' : PAPEL), 'tag-placa': mat('#2E6B52', 0.6), 'tag-pila': new THREE.MeshStandardMaterial({ color: '#C8CCD2', roughness: 0.35, metalness: 0.8 }),
+  'tag-boton': mat('#2a2a2a', 0.5),
+};
+LUCES.forEach((c, i) => { MAT['fondo-luz-' + (i + 1)] = mat(c, 0.75); });
+
+const cargador = new STLLoader();
+const leer = (n) => new Promise((ok, mal) => cargador.load('_piezas/' + n + '.stl', (g) => {
+  let geo = mergeVertices(g, 1e-4); geo = toCreasedNormals(geo, Math.PI / 6);
+  const malla = new THREE.Mesh(geo, MAT[n.replace(/^corte-/, '')] || mat(PAPEL));
+  malla.castShadow = true; malla.receiveShadow = true; ok(malla);
+}, undefined, mal));
+
+const grupo = new THREE.Group(); grupo.rotation.x = -Math.PI / 2; escena.add(grupo);   // modelo con Z arriba
+const COLOR = ['fondo-base', 'fondo-luz-1', 'fondo-luz-2', 'fondo-luz-3', 'fondo-luz-4'];
+let piezas = [], camara, rotulos = [];
+
+if (vista === 'heroe' || vista === 'logo') {
+  piezas = ['cuerpo', 'medallon-placa', 'tapa', ...COLOR];
+} else if (vista === 'explosion') {
+  piezas = ['cuerpo', 'medallon-placa', 'tapa', 'chasis', 'tag-placa', 'tag-pila', 'tag-boton', ...COLOR];
+} else if (vista === 'corte') {
+  piezas = ['cuerpo', 'medallon-placa', 'tapa', 'chasis', 'tag-placa', 'tag-pila', 'tag-boton', ...COLOR].map((n) => 'corte-' + n);
+}
+const mallas = await Promise.all(piezas.map(leer));
+mallas.forEach((m) => grupo.add(m));
+
+const caja = new THREE.Box3().setFromObject(grupo);
+if (vista === 'explosion') {
+  const desplaza = { tapa: -30, 'tag-pila': -15, 'tag-placa': -15, 'tag-boton': -15, chasis: -2, cuerpo: 12, 'medallon-placa': 44, 'fondo-base': 30, 'fondo-luz-1': 30, 'fondo-luz-2': 30, 'fondo-luz-3': 30, 'fondo-luz-4': 30 };
+  mallas.forEach((m, i) => { m.position.z = desplaza[piezas[i]] || 0; });
+}
+
+if (vista === 'logo') {
+  camara = new THREE.OrthographicCamera(-30 * W / Hh, 30 * W / Hh, 30, -30, 1, 1000);
+  camara.position.set(0, 200, 0); camara.up.set(0, 0, -1); camara.lookAt(0, 0, 0);
+  sol.position.set(-40, 160, -60);
+} else if (vista === 'corte') {
+  const m = 21;                                     // medio alto visible, en mm
+  camara = new THREE.OrthographicCamera(-m * W / Hh, m * W / Hh, m, -m, 1, 1000);
+  camara.position.set(200, 6, -8); camara.lookAt(0, 6, -8);     // mira el plano x = 0; el modelo +y queda a la derecha
+  suelo.visible = false; sol.position.set(160, 90, 40); escena.background = new THREE.Color('#F7F4F0');
+} else {
+  camara = new THREE.PerspectiveCamera(vista === 'explosion' ? 24 : 22, W / Hh, 1, 2000);
+  const objetivo = new THREE.Vector3(0, vista === 'explosion' ? 18 : 5, 0);
+  const pos = { heroe: [-60, 72, 98], explosion: [-150, 120, 210] }[vista];
+  camara.position.set(...pos); camara.lookAt(objetivo);
+}
+
+renderer.render(escena, camara);
+
+// Rótulos de la explosión y del corte, puestos sobre la proyección de cada pieza.
+const pantalla = (x, y, z) => { const v = new THREE.Vector3(x, z, -y).project(camara); return [(v.x + 1) / 2 * W, (1 - v.y) / 2 * Hh]; };
+const rotulo = (texto, sub, xyz, lado, dx = 0) => {
+  const [x, y] = pantalla(...xyz); const d = document.createElement('div');
+  d.className = 'rot ' + lado; d.innerHTML = texto + (sub ? '<small>' + sub + '</small>' : '');
+  document.body.append(d);
+  if (lado === 'izq') { d.style.right = (W - x + 60 + dx) + 'px'; } else { d.style.left = (x + 60 + dx) + 'px'; }
+  d.style.top = (y - 12) + 'px';
+};
+if (vista === 'explosion') {
+  rotulo('Medallón calado', 'el logo, que también es el botón', [-14, 0, 12.3 + 44 - 1], 'izq');
+  rotulo('Fondo del medallón', 'las cuatro luces, en su color', [-16, 0, 10.9 + 30 - 1], 'izq');
+  rotulo('Cuerpo', '46 × 12,3 mm', [-23, 0, 12 + 6], 'izq');
+  rotulo('Chasis', 'se ajusta a la placa del Tag', [20.5, 0, 1.5], 'der');
+  rotulo('Placa del Tag y su pila', 'medidas por confirmar', [16, 0, 5 - 15], 'der');
+  rotulo('Tapa con rosca', 'se abre con una moneda', [21, 0, 3 - 30], 'der');
+}
+if (vista === 'corte') {
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS, 'svg'); svg.setAttribute('width', W); svg.setAttribute('height', Hh);
+  svg.style.cssText = 'position:absolute;left:0;top:0;pointer-events:none'; document.body.append(svg);
+  const linea = (pts, ancho = 1.5, color = '#141312') => { const l = document.createElementNS(NS, 'polyline'); l.setAttribute('points', pts.map((p) => p.join(',')).join(' ')); l.setAttribute('fill', 'none'); l.setAttribute('stroke', color); l.setAttribute('stroke-width', ancho); svg.append(l); };
+  const punto = ([x, y]) => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 3.5); c.setAttribute('fill', '#141312'); svg.append(c); };
+  const texto = (t, x, y, tam = 18, ancla = 'start', color = '#6E6964') => { const e = document.createElementNS(NS, 'text'); e.setAttribute('x', x); e.setAttribute('y', y); e.setAttribute('font-size', tam); e.setAttribute('text-anchor', ancla); e.setAttribute('fill', color); e.setAttribute('font-family', 'Helvetica Neue, Arial'); e.textContent = t; svg.append(e); };
+  const guias = [
+    ['Medallón calado', 'el logo; es también el botón', [0, 9.5, 11.9]],
+    ['Fondo con las cuatro luces', '', [0, 15.0, 10.3]],
+    ['Chasis', 'el único que cambia con las medidas', [0, 18.8, 8.6]],
+    ['Botón del Tag', 'el medallón baja 0,45 mm y lo aprieta', [0, 0.8, 8.0]],
+    ['Placa del Tag', 'medidas por confirmar', [0, 15.8, 6.45]],
+    ['Pila CR2032, en su portapila', '', [0, 6.0, 4.4]],
+    ['Tapa con rosca', 'se abre con una moneda', [0, 20.3, 2.4]],
+  ];
+  const col = W - 470; let ultimo = -1e9;
+  guias.map((g) => [g, pantalla(...g[2])]).sort((a, b) => a[1][1] - b[1][1]).forEach(([g, p]) => {
+    const y = Math.max(p[1], ultimo + 62); ultimo = y;
+    punto(p); linea([p, [col - 40, p[1]], [col - 20, y], [col - 8, y]]);
+    texto(g[0], col, y + 6, 21, 'start', '#141312'); if (g[1]) texto(g[1], col, y + 28, 16);
+  });
+  // Cotas: alto y diámetro
+  const a0 = pantalla(0, -26.6, 0), a1 = pantalla(0, -26.6, 12.3);
+  linea([[a0[0], a0[1]], [a1[0], a1[1]]], 1.2, '#6E6964'); linea([[a0[0] - 8, a0[1]], [a0[0] + 8, a0[1]]], 1.2, '#6E6964'); linea([[a1[0] - 8, a1[1]], [a1[0] + 8, a1[1]]], 1.2, '#6E6964');
+  texto('12,3 mm', a0[0] + 8, (a0[1] + a1[1]) / 2 + 6, 17, 'start');
+  const b0 = pantalla(0, -23, -2.2), b1 = pantalla(0, 23, -2.2);
+  linea([b0, b1], 1.2, '#6E6964'); linea([[b0[0], b0[1] - 8], [b0[0], b0[1] + 8]], 1.2, '#6E6964'); linea([[b1[0], b1[1] - 8], [b1[0], b1[1] + 8]], 1.2, '#6E6964');
+  texto('46 mm', (b0[0] + b1[0]) / 2, b0[1] + 28, 17, 'middle');
+}
+document.getElementById('pie').textContent = {
+  heroe: 'Testigo de Relevo · 46 × 12,3 mm · placa y pila del Tag adentro',
+  explosion: 'Cinco piezas impresas, sin soportes; la placa y la pila son del Tag',
+  corte: 'Corte: el medallón baja hasta el botón; el chasis fija la placa; la tapa sostiene la pila',
+  logo: 'Las cuatro luces caladas sobre su color: tiempo, primer paso, lugar y decisión',
+}[vista];
+document.title = 'listo';
+</script>
+</body>
+</html>

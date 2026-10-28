@@ -31,6 +31,7 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 ## Documentación vigente
 
+- [Testigo para impresión 3D](testigo-impresion-3d/README.md): el objeto propio, versión 0 (D-143). Carcasa de 46 × 12,3 mm con la placa y la pila del Tag adentro y el logo calado como botón. Incluye el modelo paramétrico, las piezas sin soportes para la Bambu Lab X1 Carbon y la guía de impresión y armado; las medidas de la placa están por confirmar.
 - [Relevo como sistema](relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md): frontend, backend y proyecto explicados de punta a punta, con sus fundamentos, y la [lámina de wireframes](relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
 - [Textos de la app](app-android/textos/README.md): cómo habla Relevo —voz, tono, vocabulario y diagnóstico de sus textos—, la descripción escrita de cada pantalla de 3.3 y el inventario de sus 1.287 textos, generado desde el código.
 - [Aplicación Android 3.3](app-android/version-3.3-semana-de-comparacion-2026-10-20.md): la línea visual nueva con los arreglos del Tag y la semana para comparar (D-138).
@@ -86,6 +87,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-10-28 — Testigo para impresión 3D
+
+- **Qué cambió:** la documentación vigente enlaza el modelo del testigo.
+- **Cómo estaba antes:** no había un modelo del objeto propio.
+- **Por qué:** pedido del autor del 28 de octubre (D-143).
 
 ### 2026-10-24 — Textos de la app
 

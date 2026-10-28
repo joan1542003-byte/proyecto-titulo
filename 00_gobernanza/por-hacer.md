@@ -111,13 +111,15 @@ Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestr
 
 ## 4. Objeto propio: la carcasa del Tag
 
-**Estado:** por empezar, en una semana. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 1](registro-de-riesgos.md)).
+**Estado:** en curso. El 28 de octubre se hizo el modelo, con la placa y la pila del Tag adentro y el logo calado como botón ([testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md), D-143). Falta medir la placa, imprimir y probar. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 1](registro-de-riesgos.md)).
 
 ### Por qué
 
 La matriz de pase marca como no logrados los aspectos técnicos (5.2: dimensiones, uniones y estructura) y deja en desarrollo el prototipo final (7.1) y su documentación (7.2). Hoy la parte física es un Tag comprado. Una carcasa propia, que siga la especificación del testigo de la memoria (planta circular de 42 a 48 mm, sin frente y con el botón accesible), convierte la compra en un objeto diseñado. La señal y el volumen siguen siendo los del Tag, y eso se declara como límite.
 
 ### Medir el Tag (lo hace el autor)
+
+Desde el 28 de octubre la placa va adentro del testigo: mide también la placa, según [`medidas.json`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/medidas.json).
 
 Con un pie de metro (calibre), precisión de 0,1 mm, y fotos con una regla al lado:
 
@@ -135,8 +137,8 @@ Con un pie de metro (calibre), precisión de 0,1 mm, y fotos con una regla al la
 
 - [ ] Registrar la respuesta de los profesores del 14 de octubre sobre el objeto, como decisión.
 - [ ] Bocetos de dos o tres formas posibles, con la regla de que el botón quede accesible y el sonido no se ahogue.
-- [ ] Modelo 3D paramétrico. La IA puede escribirlo, por ejemplo en OpenSCAD, a partir de las medidas.
-- [ ] Imprimir. Falta definir dónde: el taller de la Escuela, un servicio externo o una impresora propia.
+- [x] Modelo 3D paramétrico: [`testigo.py`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/testigo.py), en Python. Versión 0, con medidas supuestas de la placa.
+- [ ] Imprimir en la Bambu Lab X1 Carbon: primero la prueba de calce; después, las cinco piezas.
 - [ ] Probar el calce, el botón, el cambio de pila y el volumen con la carcasa puesta.
 - [ ] Fotografiar el objeto en uso, junto al primer paso, sin caras ni datos personales.
 - [ ] Planos con medidas (planta, elevación y corte), una ficha de materiales y el costo de la impresión.
@@ -226,6 +228,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Modelo del testigo
+
+- **Qué cambió:** la tarea 4 pasa a en curso, con el modelo hecho y la medida de la placa en la lista.
+- **Cómo estaba antes:** estaba por empezar y pedía medir solo el Tag completo.
+- **Por qué:** el autor pidió el objeto para imprimir, con la placa del Tag adentro (D-143).
 
 ### 2026-10-27 — Logos en el repositorio
 

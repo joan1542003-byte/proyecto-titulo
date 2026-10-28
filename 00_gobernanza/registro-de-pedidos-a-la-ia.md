@@ -196,6 +196,7 @@
 | 27 oct. | Entrega | Entregó la carpeta `Logo/`, con los logotipos de la Facultad. | Tenía 33 archivos; 7 ya estaban en el repositorio. Se sumaron los 26 restantes a [logotipos](../01_contexto_y_fuentes/documentos_institucionales/README.md#logotipos): el logotipo principal, la Facultad, Arte, Arquitectura y sus escuelas, en negro, blanco y blanco sobre negro, más la fuente de Illustrator. El índice los ordena en una tabla por firma y color. | D-142 |
 | 27 oct. | Aclaración | Dentro de ChatGPT usó Codex. Avisó además que ya subió los documentos actualizados de la universidad, que sí hablan de inteligencia artificial. | El [documento](uso-de-ia-2026-10-27.md) y el capítulo 10 nombran ahora tres herramientas y en qué se diferencian: ChatGPT, conversacional y sin acceso a los archivos; Codex, el agente de programación de OpenAI, que trabaja sobre ellos y escribió las primeras versiones de la aplicación y las piezas web; y Claude Code, que además deja constancia de cada cambio en el control de versiones. Los documentos actualizados estaban en la rama `main`, subidos por otra sesión: se integraron a esta rama. Se leyeron los quince que hay en [documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/) —los dos instructivos, el reglamento, las cuatro actas, el calendario, la matriz, la pauta de contenidos, el protocolo de formato, y la pauta y la portada de la Biblioteca— y **ninguno menciona la inteligencia artificial**. Queda por saber a qué documento se refiere el autor. | — |
 | 27 oct. | Corrección | Solo usó Codex y Claude Code. | El [documento](uso-de-ia-2026-10-27.md) y el capítulo 10 declaran ahora esas dos herramientas: ambas son agentes que trabajan sobre los archivos del proyecto, y no asistentes a los que haya que pegarles el material. Codex acompañó desde marzo la investigación, la redacción inicial y las primeras versiones de la aplicación; Claude Code fue la principal desde fines de septiembre y registra cada cambio en el control de versiones. Cada una conserva su archivo de instrucciones en el repositorio. | — |
+| 28 oct. | Encargo | Hacer el objeto para imprimirlo en su Bambu Lab X1 Carbon: diseño óptimo y portable, con el logo de Relevo tallado de forma hermosa y, adentro, la pila pegada a la placa del Tag, que es la base de hardware. Pidió saber qué tener en cuenta con esa impresora. | [Testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md), versión 0: cinco piezas sin soportes (cuerpo, medallón calado de dos piezas, chasis y tapa roscada), de 46 × 12,3 mm, con el logo calado sobre sus cuatro colores. Incluye el modelo paramétrico, una prueba de calce, las vistas y una guía de impresión y armado. Las medidas de la placa son supuestas: hay que medirla antes de la versión final. | D-143 |
 
 ## Lo que muestra el registro
 
@@ -206,6 +207,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Testigo para impresión 3D
+
+- **Qué cambió:** se registró el pedido del objeto para imprimir.
+- **Cómo estaba antes:** terminaba en la declaración de las herramientas de IA.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-27 — Solo dos herramientas
 
