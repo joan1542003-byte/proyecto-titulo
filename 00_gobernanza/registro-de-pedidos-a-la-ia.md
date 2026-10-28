@@ -196,6 +196,7 @@
 | 27 oct. | Entrega | Entregó la carpeta `Logo/`, con los logotipos de la Facultad. | Tenía 33 archivos; 7 ya estaban en el repositorio. Se sumaron los 26 restantes a [logotipos](../01_contexto_y_fuentes/documentos_institucionales/README.md#logotipos): el logotipo principal, la Facultad, Arte, Arquitectura y sus escuelas, en negro, blanco y blanco sobre negro, más la fuente de Illustrator. El índice los ordena en una tabla por firma y color. | D-142 |
 | 27 oct. | Aclaración | Dentro de ChatGPT usó Codex. Avisó además que ya subió los documentos actualizados de la universidad, que sí hablan de inteligencia artificial. | El [documento](uso-de-ia-2026-10-27.md) y el capítulo 10 nombran ahora tres herramientas y en qué se diferencian: ChatGPT, conversacional y sin acceso a los archivos; Codex, el agente de programación de OpenAI, que trabaja sobre ellos y escribió las primeras versiones de la aplicación y las piezas web; y Claude Code, que además deja constancia de cada cambio en el control de versiones. Los documentos actualizados estaban en la rama `main`, subidos por otra sesión: se integraron a esta rama. Se leyeron los quince que hay en [documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/) —los dos instructivos, el reglamento, las cuatro actas, el calendario, la matriz, la pauta de contenidos, el protocolo de formato, y la pauta y la portada de la Biblioteca— y **ninguno menciona la inteligencia artificial**. Queda por saber a qué documento se refiere el autor. | — |
 | 27 oct. | Corrección | Solo usó Codex y Claude Code. | El [documento](uso-de-ia-2026-10-27.md) y el capítulo 10 declaran ahora esas dos herramientas: ambas son agentes que trabajan sobre los archivos del proyecto, y no asistentes a los que haya que pegarles el material. Codex acompañó desde marzo la investigación, la redacción inicial y las primeras versiones de la aplicación; Claude Code fue la principal desde fines de septiembre y registra cada cambio en el control de versiones. Cada una conserva su archivo de instrucciones en el repositorio. | — |
+| 28 oct. | Entrega y encargo | Entregó sus apuntes de la revisión con los profesores y pidió entenderlos, preguntar las dudas y llevarlos a la lista de tareas. | [Por hacer](por-hacer.md#10-correcciones-de-la-revisión-con-los-profesores-28-de-octubre), tarea 10, con los apuntes ordenados en ocho grupos: la entrega de la memoria el viernes 30 y los criterios del Pase; las decisiones de diseño como centro de la memoria; los resultados como casos y no porcentajes, separados por persona; los arreglos de la aplicación —onboarding largo, pantalla del relevo cargada, pitidos del Tag, salida para quien no tiene objeto—; el objeto y el porta Tag; las entrevistas y su guion; el diseño editorial de la memoria, y la relectura del planteamiento del problema. Cinco apuntes quedaron marcados como «por aclarar» y se preguntaron al autor. | — |
 
 ## Lo que muestra el registro
 
@@ -206,6 +207,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Apuntes de la revisión
+
+- **Qué cambió:** se registró la entrega de los apuntes y su paso a la lista de tareas.
+- **Cómo estaba antes:** el registro terminaba el 27 de octubre.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-27 — Solo dos herramientas
 

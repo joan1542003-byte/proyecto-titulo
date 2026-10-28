@@ -225,7 +225,79 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
+## 10. Correcciones de la revisión con los profesores (28 de octubre)
+
+**Estado:** por hacer. **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
+
+### Lo primero
+
+> «El Pase, el criterio es la memoria: formalidad y fidelidad.» La memoria se entrega **el viernes**; las figuras se pueden desarrollar después.
+
+- [ ] **Entregar la memoria el viernes 30 de octubre**, con la estructura completa y el texto cerrado. Las figuras pueden quedar para después.
+- [ ] Revisar que la memoria cumpla formalidad —formato, citas, estructura— y fidelidad: que lo que dice sea lo que se hizo.
+
+### Las decisiones de diseño son el centro
+
+> «Enfatizar las decisiones de diseño: es incluso lo más relevante en la memoria.» «El diseño, toda la decisión es mía.»
+
+- [ ] **Justificar cada decisión de diseño**, no solo describirla: por qué se eligió, entre qué alternativas y con qué fundamento.
+- [ ] **El parecido con Apple:** un profesor señaló que la aplicación tiene una inspiración fuerte de Apple. Es una decisión del autor; hay que escribir por qué.
+- [ ] **La identidad y el diseño van en la memoria**, no solo en el repositorio.
+- [ ] **Mostrar las fuentes primarias propias**: las entrevistas, la encuesta y la prueba son del autor y deben verse como tales.
+- [ ] **Contar cómo se desarrolló el proyecto**, el proceso y no solo el resultado.
+- [ ] **Al escribir, releer lo ya escrito y preguntarse qué corresponde decir ahora**, para no repetir.
+
+### Resultados: casos, no porcentajes
+
+> «Sin porcentajes, mejor como números.» «Vale la pena ver el detalle, ya que son pocos usuarios.»
+
+- [ ] **Informar los resultados como casos y recuentos**, nunca en porcentajes, porque son tres personas.
+- [ ] **Separar los resultados por persona**: comprobar si la mitad de los casos corresponde a una sola, y decirlo.
+- [ ] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio.
+- [ ] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración.
+- [ ] **Media y mediana:** revisar dónde la memoria o las láminas usan un promedio. En la evidencia de color, la mitad asocia el rojo al amor y la mitad el rosa, de modo que el promedio esconde esa división. La mediana parte el total en dos y dice dónde cae el resultado. [POR ACLARAR: si la corrección apunta a la lámina del color o a los datos de la prueba.]
+
+### La aplicación, según lo que mostró la prueba
+
+- [ ] **El onboarding es muy largo**, aunque las tres personas lo completaron. Partirlo: una parte al empezar y el resto después.
+- [ ] **La pantalla del relevo tiene demasiada información.**
+- [ ] **Separar los problemas técnicos de los de usabilidad:** los pitidos del Tag son lo primero y están condicionados por el objeto comprado.
+- [ ] **«Elige tu emoji: ¿qué te identifica?»**: revisar esa pantalla del onboarding. [POR ACLARAR: si hay que quitarla, simplificarla o solo explicarla.]
+- [ ] **Qué pasa cuando se cumple el tiempo y no hay Tag.** [POR ACLARAR: el apunte queda cortado; falta qué debe ocurrir.]
+- [ ] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto.
+- [ ] **Registro de todas las pantallas de la aplicación.**
+- [ ] **Esquema de jerarquía y arquitectura de información** de la aplicación.
+
+### El objeto
+
+- [ ] **Justificar el diseño de un Tag más grande.**
+- [ ] **Sirve cualquier Tag, con un porta Tag:** desarrollar esa idea, que convierte la carcasa en un soporte y no en un objeto único.
+
+### Entrevistas
+
+- [ ] **Entrevistar a las personas de la prueba a partir de sus conversaciones**, donde ya se tomaron decisiones. [POR ACLARAR: el apunte dice «el anexo 24»; falta saber a cuál se refiere.]
+- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo.
+
+### La memoria diseñada
+
+- [ ] **Tamaño de página 1920 × 1080.** [POR ACLARAR: hoy está en A3 horizontal; confirmar si reemplaza ese formato.]
+- [ ] **Subir un poco el tamaño de la tipografía** y **aumentar ligeramente el interlineado**; revisar interlineado y peso.
+- [ ] **Ninguna página puede quedar con un solo párrafo** ni con una columna sola y poco texto.
+- [ ] **Los anexos no se diseñan como la memoria**, pero deben estar bien presentados.
+- [ ] **Las palabras de los anexos no cuentan** para el límite de extensión.
+- [ ] **Buscar Affinity Publisher**, equivalente a InDesign, para la diagramación.
+
+### El texto
+
+- [ ] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Correcciones de la revisión
+
+- **Qué cambió:** se añadió la tarea 10 con lo que salió de la revisión con los profesores: la entrega de la memoria el viernes, el peso de las decisiones de diseño, los resultados como casos, los arreglos de la aplicación, el objeto, las entrevistas y el diseño editorial.
+- **Cómo estaba antes:** la lista llegaba hasta la tarea 9.
+- **Por qué:** el autor entregó sus apuntes y pidió llevarlos a la lista.
 
 ### 2026-10-27 — Logos en el repositorio
 
