@@ -1858,7 +1858,26 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** iniciar ahora la semana en la app, porque la contaría desde el día 1, y preguntar en papel las escalas de cada semana con el Tag por separado, porque se responderían de memoria semanas después y la 2.33 las pregunta juntas.
 - **Documentos:** [instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md).
 
+## D-145 — La memoria en A3 se ordena: líneas de 8 a 12 palabras y cada sección en página nueva
+
+- **Fecha:** 2026-10-28.
+- **Estado:** hecha; el IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** el autor pidió ordenar la memoria diseñada, con no más de 8 a 12 palabras por línea en los párrafos, una portada más limpia y el archivo para Affinity; por ahora, sin agradecimientos y sin tablas ni figuras en el índice. El resumen, el abstract y el capítulo 1 iban en 18 pt a una columna ancha, con 13 a 17 palabras por línea; las notas de tablas y figuras iban a todo el ancho, con hasta 41; cada sección abría en la primera columna libre, así que su panel caía en cualquier columna; la tabla 7 se salía de la página.
+- **Decisión:**
+  - **Largo de línea:** todo el texto corrido va en columnas de 118 mm, a 14 pt: unas 8 palabras por línea. Las notas van en una columna de ese ancho, o en dos si son largas. Se descartó conservar los 18 pt del resumen en una columna más angosta: con 10 palabras por línea, el resumen no cabe en una página.
+  - **Orden:** cada sección abre en una página nueva, con su panel en la primera columna. Una tabla o figura que quedaría sola después del texto de su sección sube a la última página de ese texto, si cabe. Una tabla más alta que la página se parte en dos.
+  - **Portada:** la institución, el logo, el título y los datos de la v5; lo que falta confirmar va en gris. Sale el ejemplo de la app.
+  - **Por ahora:** sin agradecimientos y con un índice solo de secciones. Se vuelven a poner con dos opciones del generador; la pauta de la Biblioteca exige los índices de tablas y de figuras para el depósito.
+- **Verificación:** 57 páginas, sin avisos del generador. En el texto, 7,8 palabras por línea en promedio y 11 o menos en el 95 % de las líneas. El IDML tiene sus XML bien formados y sus 46 enlaces existen.
+- **Documentos:** [memoria en A3](../08_memoria/memoria-a3/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-145
+
+- **Qué cambió:** se registró D-145.
+- **Cómo estaba antes:** la última decisión era D-144.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-28 — D-144
 

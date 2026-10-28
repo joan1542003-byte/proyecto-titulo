@@ -1,8 +1,8 @@
 # Memoria en A3 horizontal
 
-**Decisiones:** D-132 (la memoria en A3 con la línea de Relevo), D-134 (tablas y cifras como piezas de la marca) y D-135 (letra grande, aire y control de viudas sobre el diseño del 12 de octubre).
+**Decisiones:** D-132 (la memoria en A3 con la línea de Relevo), D-134 (tablas y cifras como piezas de la marca), D-135 (letra grande, aire y control de viudas sobre el diseño del 12 de octubre) y D-145 (líneas de 8 a 12 palabras, cada sección en página nueva y portada limpia).
 
-**Para leer:** [memoria-relevo-a3.pdf](memoria-relevo-a3.pdf), de 53 páginas A3 horizontales. La [versión HTML](memoria-relevo-a3.html) es la misma composición y se abre en el navegador.
+**Para leer:** [memoria-relevo-a3.pdf](memoria-relevo-a3.pdf), de 57 páginas A3 horizontales. La [versión HTML](memoria-relevo-a3.html) es la misma composición y se abre en el navegador.
 
 **Para editar:** `memoria-relevo-a3.idml`, que se abre en Affinity o InDesign. No se guarda en el repositorio (ver «Cómo se genera»).
 
@@ -12,6 +12,7 @@
 - **13 de octubre, primera ronda:** texto más grande y lectura más cómoda; una escala de tamaños coherente; mejores tablas; ninguna viuda; sin etiquetas innecesarias, como «Capítulo»; un archivo editable en InDesign, Affinity o similares.
 - **13 de octubre, segunda ronda:** tablas y estadísticas diseñadas, sin tablas genéricas: «es una memoria de diseño, debe verse como tal».
 - **13 de octubre, tercera ronda:** instalar la tipografía; volver a un diseño más fiel al del 12 de octubre; todo se veía muy pequeño y amontonado; debe leerse perfecto en tamaño real y en pantalla; sin viudas.
+- **28 de octubre:** ordenarla, con no más de 8 a 12 palabras por línea en los párrafos; entregarla para Affinity; una portada más limpia; por ahora, sin agradecimientos y sin tablas ni figuras en el índice.
 
 ## Qué es
 
@@ -19,7 +20,8 @@ Es la composición del [borrador v5](../borrador-memoria-v5-2026-10-11.md) en la
 
 Lo único que la composición agrega o adapta:
 
-- **Portada:** el descriptor «Memoria de título» y el ejemplo de la app («Leer», «Abrir el libro», «En el velador»), que no están en la v5.
+- **Portada:** solo la institución, el logo, el título y los datos de la v5. Lo que falta confirmar va en gris, sin resaltar.
+- **Omisiones, por ahora:** los agradecimientos y los índices de tablas y de figuras (D-145). Se vuelven a poner en `construir-idml.js`, con `OMITIR` e `INDICE_DE_PIEZAS`.
 - **Tablas:** el estado («Implementado», «Parcial», «Pendiente», «Cumplido») pasa a una cápsula y su detalle empieza con mayúscula; los objetivos numerados llevan su número en un círculo; las versiones van en cápsulas.
 - **Figuras 2 y 5:** se dibujan con lo que dice la propia v5. La figura 4 compone las tres fotos de la v5 en fila, en dos columnas, cada una con su letra y su pie, y el título y la nota en la tercera columna.
 
@@ -29,17 +31,17 @@ Lo único que la composición agrega o adapta:
 | --- | --- |
 | Hoja | A3 horizontal (420 × 297 mm), papel `#F7F4F0` hasta el borde. Márgenes: 24 mm arriba, 26 mm abajo y 22 mm a los lados. Tres columnas de 118 mm con 11 mm de separación. |
 | Escala | Siete tamaños: 9, 11, 14, 18, 28, 44 y 150 pt. |
-| Texto | Instrument Sans de 14 pt con interlineado de 20 pt, en bandera y sin división de palabras: unas 48 letras por línea y 35 líneas por columna. |
-| Lectura | Agradecimientos, resumen, abstract y el capítulo 1 van a una columna ancha, en 18 pt, junto a su panel. |
+| Texto | Instrument Sans de 14 pt con interlineado de 20 pt, en bandera y sin división de palabras: unas 48 letras y 8 palabras por línea, y 35 líneas por columna. |
+| Largo de línea | Todo el texto corrido va en columnas de 118 mm, también el resumen, el abstract y el capítulo 1, para que las líneas tengan de 8 a 12 palabras (D-145). Las notas de tablas y figuras, en 11 pt, también: en una columna o, si son largas, en dos. |
 | Encabezado y pie | Arriba, «Relevo · Memoria de título» y la sección de la página. Abajo, el número de página. |
-| Portada | El aura a sangre, el logo, el título en 44 pt y, como en la bienvenida de la app, la actividad «Leer» con su primer paso y su lugar. |
-| Apertura de sección | Un panel de aura con grano del alto de la columna, con el número en 150 pt, el título en 28 pt y la lista de secciones. Cada sección abre en la primera columna libre; el texto empieza en la siguiente. Sin la etiqueta «Capítulo». |
+| Portada | El aura a sangre, la institución, el logo, el título en 44 pt y los datos. |
+| Apertura de sección | Un panel de aura con grano del alto de la columna, con el número en 150 pt, el título en 28 pt y la lista de secciones. Cada sección abre en una página nueva: el panel en la primera columna y el texto desde la segunda. Sin la etiqueta «Capítulo». |
 | Pregunta e hipótesis | En una ficha sobre el aura, con su rótulo en una cápsula. Viajan con el párrafo que las anuncia. |
-| Tablas y figuras | A lo ancho, arriba de la página siguiente a su mención. El rótulo va en una cápsula de tinta; el título, en cursiva, y la nota, debajo (APA 7). Las tablas de hasta tres columnas llevan título y nota al lado. |
+| Tablas y figuras | A lo ancho, arriba de la página siguiente a su mención. El rótulo va en una cápsula de tinta; el título, en cursiva, y la nota, debajo (APA 7). Las tablas de hasta tres columnas llevan título y nota al lado. Una tabla más alta que la página se parte en dos: la segunda parte repite la cabecera y dice «(continuación)». |
 | Tablas | Una ficha blanca por fila; círculo de tinta con un icono de la app, el número de la fila o la versión; estados en cápsulas. Texto de 11 pt. |
 | Cifras (figuras 1 y 6) | Una ficha por dato: valor en 44 pt, total en gris, explicación y una barra o un punto por caso, con el color del papel al que pertenece el dato. |
 | Color | Solo donde nombra un papel del sistema («un color, un papel»). |
-| Índice | Fichas con el número de la sección, su título y su página. Los números se calculan al componer. |
+| Índice | Fichas con el número de la sección, su título y su página, en dos columnas. Los números se calculan al componer. Por ahora no lista tablas ni figuras. |
 | Referencias y glosario | En tres columnas, en 11 pt; las referencias, con sangría francesa. |
 | Anexos | Una ficha por anexo, con su letra. |
 | Contraportada | El logo sobre el aura y el descriptor. |
@@ -47,8 +49,8 @@ Lo único que la composición agrega o adapta:
 ### Aire
 
 - Todo el espacio vertical va después de cada párrafo; un subtítulo lleva 15 pt extra arriba, salvo cuando cae al inicio de una columna.
-- Entre las tablas o figuras de arriba y el texto hay 12 mm. Si bajo ellas quedan menos de 68 mm, la página queda solo para ellas.
-- Cada sección empieza en una columna nueva: la anterior termina donde termina su texto.
+- Entre las tablas o figuras de arriba y el texto hay 12 mm. Si bajo ellas quedan menos de 60 mm, la página queda solo para ellas.
+- Cada sección empieza en una página nueva. Una tabla o figura que quedaría sola después del texto de su sección sube a la última página de ese texto, si cabe.
 
 ### Viudas
 
@@ -99,9 +101,14 @@ Otros archivos:
 
 ## Verificación
 
-- **Avisos:** el generador avisa si una página de lectura, el índice o los anexos no caben, o si tuvo que cortar un párrafo a la fuerza. No dio ningún aviso.
-- **PDF:** 53 páginas. Se revisaron de cerca 38, en tres pasadas: portada, entradas, índice, aperturas, las 11 tablas y las 6 figuras, las dos frases, referencias, glosario, anexos y contraportada.
-- **Affinity 3.2 (Mac), con Instrument Sans instalada:**
+- **Avisos:** el generador avisa si una página de entrada, el índice, los anexos o una tabla no caben, o si tuvo que cortar un párrafo a la fuerza. El 28 de octubre no dio ningún aviso.
+- **Palabras por línea,** contadas en el PDF del 28 de octubre con `pdftotext`:
+  - Texto: 7,8 en promedio y 11 o menos en el 95 % de las 2178 líneas. Seis tienen 13 o 14 palabras por las cifras, como «el 11 y el 12 de junio de 2026».
+  - Notas, referencias y glosario, a 11 pt: 12 o menos en el 95 % de las líneas. Las que pasan son referencias con iniciales y algunas celdas de tabla, de hasta 16.
+  - Antes, el resumen y el abstract tenían de 13 a 17 palabras por línea, y una nota llegaba a 41.
+- **PDF:** 57 páginas. Se revisaron la vista de todas y, de cerca, la portada, el resumen, el índice, la tabla 2 con su nota en dos columnas y las dos partes de la tabla 7.
+- **IDML del 28 de octubre:** 541 archivos, todos los XML bien formados y sus 46 enlaces existen. No se abrió en Affinity en esta ronda.
+- **Affinity 3.2 (Mac), con Instrument Sans instalada,** el 13 de octubre:
   - Una prueba aparte confirmó que Affinity respeta el control de viudas y huérfanas del IDML y que parte las líneas igual que Chrome.
   - Las páginas 9 y 36 del archivo coinciden línea por línea con el PDF; la 36 cierra el capítulo más largo.
   - Se revisaron la portada, un panel, la tabla 1, la tabla 8 y la figura 1: fondos, iconos y texto vivo en su lugar.
@@ -111,11 +118,18 @@ Otros archivos:
 
 - **Texto:** faltan los marcadores de la v5 y el resto de los resultados de la prueba.
 - **Marcadores «Confirmar»:** en el PDF van resaltados en amarillo; en Affinity, subrayados.
-- **Páginas con aire de sobra:** cuando una tabla alta coincide con el fin de un capítulo, la página queda con la tabla sola.
+- **Páginas con aire de sobra:** cuando una tabla alta coincide con el fin de un capítulo, la página queda con la tabla sola, como la tabla 8 y la tabla 11. Cada sección en página nueva suma también columnas en blanco al final de algunas.
+- **Biblioteca:** su pauta exige índices de tablas y de figuras para el depósito; por ahora el índice no los tiene.
 - **Impresión:** los colores no tienen prueba de imprenta, y el aura puede verse distinta en una impresora de oficina.
 - **Accesibilidad:** no se revisó con un lector de pantalla.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Ordenada, con líneas de 8 a 12 palabras
+
+- **Qué cambió:** todo el texto corrido pasa a columnas de 118 mm, también el resumen, el abstract y el capítulo 1; las notas de tablas y figuras van en una o dos columnas de ese ancho. Cada sección abre en una página nueva, y una tabla o figura que quedaría sola al final de su sección sube a su última página de texto. La tabla 7, más alta que la página, se parte en dos. La portada queda con la institución, el logo, el título y los datos; los marcadores van en gris. Se quitan, por ahora, los agradecimientos y las tablas y figuras del índice. Chrome se reintenta si falla.
+- **Cómo estaba antes:** el resumen, el abstract, los agradecimientos y el capítulo 1 iban en 18 pt a una columna ancha, con 13 a 17 palabras por línea; las notas iban a todo el ancho, con hasta 41; cada sección abría en la primera columna libre; la tabla 7 se salía de la página; la portada tenía el ejemplo de la app y el descriptor «Memoria de título». Eran 54 páginas.
+- **Por qué:** el autor pidió ordenarla, con no más de 8 a 12 palabras por línea en los párrafos, una portada más limpia, sin agradecimientos y sin tablas ni figuras en el índice, y el archivo para Affinity (D-145).
 
 ### 2026-10-20 — Fotos de la Figura 4
 
