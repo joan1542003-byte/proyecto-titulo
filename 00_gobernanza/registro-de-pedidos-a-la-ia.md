@@ -190,6 +190,7 @@
 | 27 oct. | Corrección | Pidió capturas reales de las aplicaciones y comparar varias pantallas, no una sola. | La lámina de la comparativa pasa a «Varias pantallas de cada una»: diez capturas, dos por producto —one sec interrumpiendo y su resumen de tiempo; Opal bloqueando y midiendo; Forest con el árbol y el bosque; Unpluq bloqueando y su lista de horarios— más dos de Relevo, preparar el relevo y la señal. Son las capturas que cada aplicación publica en la App Store, que es lo accesible sin instalarlas; la nota lo dice. | — |
 | 27 oct. | Corrección | Comparar las pantallas clave, y extenderlo a más de una diapositiva si hacía falta. | La comparativa pasa a tres láminas, una por momento, con las mismas cinco aplicaciones en cada una: «Antes: cómo se configura», «Durante: el momento en que interviene» y «Después: qué queda». Quince capturas en total, elegidas una por una de las fichas de la App Store, más tres de Relevo. Cada lámina cierra con la diferencia: en las otras se configura qué se impide y en Relevo qué se quiere hacer; las otras aparecen en la pantalla que la persona mira y Relevo suena fuera de ella; tres devuelven una cifra o un premio y Relevo devuelve una pregunta. El deck queda en 24 láminas. | — |
 | 27 oct. | Encargo | Enlazar al final de la presentación lo relevante del repositorio: la memoria ya diseñada, los wireframes y cosas así. | Lámina final «Todo está en el repositorio», con doce enlaces en cuatro grupos: la memoria (A3 de 54 páginas, borrador v5 y anexos en PDF), el diseño (wireframes y estados, documento de marca y archivos del logo), el prototipo (aplicación Android, panel de la prueba y presupuesto) y la prueba y el estado (protocolo e instrumentos, estado del proyecto y Por hacer). Los doce enlaces se comprobaron uno a uno contra GitHub y responden. El deck queda en 25 láminas. | — |
+| 27 oct. | Corrección y encargo | El Anexo E ocupaba casi 40 páginas de registro de IA. Pidió reducirlo y contarlo primero en prosa: qué herramientas y modelos se usaron y cómo ayudaron en la redacción, la ortografía, la búsqueda masiva de fuentes y su filtrado, la revisión de citas en APA y, sobre todo, el desarrollo de la aplicación Android. Sin extenderse. | [Uso de inteligencia artificial](uso-de-ia-2026-10-27.md), de unas 900 palabras: ChatGPT Plus desde marzo y Claude Code desde fines de septiembre, con los modelos que firman los cambios —Opus 5.5 en 158, Opus 5 en 13 y Sonnet 5.5 en 5—, las cinco tareas en que ayudó y lo que decidió el autor. El Anexo E pasa de 26 a **2 páginas**, y los anexos completos, de 118 a 94. El capítulo 10 de la memoria cierra además el marcador de las herramientas anteriores a septiembre; queda por confirmar solo la de transcripción. | — |
 
 ## Lo que muestra el registro
 
@@ -200,6 +201,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Anexo E reducido
+
+- **Qué cambió:** se registró la reducción del anexo de inteligencia artificial.
+- **Cómo estaba antes:** terminaba en los enlaces al repositorio.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-27 — Enlaces al repositorio
 

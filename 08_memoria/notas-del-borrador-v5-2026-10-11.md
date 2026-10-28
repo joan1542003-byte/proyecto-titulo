@@ -174,7 +174,20 @@ Se contrastó el borrador con el código de la app, los datos de la prueba, el r
 - **De dónde sale:** el autor estimó cuatro horas semanales, menos que en el segundo semestre porque tenía más ramos y trabajo. Se aplican a las dieciocho semanas de clases del seminario, del 11 de marzo al 12 de julio de 2026, según su planificación oficial.
 - **Extensión:** capítulos 1 a 14, 19 800 palabras. Quedan 200 de margen para el máximo de 20 000, así que conviene no agregar texto sin quitar otro.
 
+## Anexo E reducido, 27 de octubre de 2026
+
+- **Qué cambió:** el Anexo E deja de imprimir el registro completo de pedidos. Ahora es un texto breve, de unas 900 palabras, que declara las herramientas y los modelos, las cinco tareas en que ayudó la inteligencia artificial y lo que decidió el autor. Pasa de 26 a 2 páginas, y los anexos, de 118 a 94.
+- **Dónde queda el detalle:** el registro diario de 172 pedidos sigue abierto en el repositorio, enlazado desde el anexo.
+- **Capítulo 10:** nombra ahora ChatGPT en su plan Plus desde marzo y Claude Code desde fines de septiembre. Queda por confirmar solo la herramienta de transcripción, así que los marcadores bajan de 17 a 16.
+- **Extensión:** capítulos 1 a 14, 19 796 palabras.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Anexo E
+
+- **Qué cambió:** se anotó la reducción del Anexo E y el cierre del marcador de herramientas.
+- **Cómo estaba antes:** las notas terminaban en las horas del primer semestre.
+- **Por qué:** el autor pidió reducir el anexo de inteligencia artificial.
 
 ### 2026-10-27 — Montos del autor
 

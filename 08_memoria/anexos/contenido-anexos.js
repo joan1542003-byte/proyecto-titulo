@@ -72,14 +72,11 @@ const anexos = [
   {
     letra: 'E', slug: 'ia', color: 'lilac',
     titulo: 'Uso de inteligencia artificial',
-    resumen: 'Cómo se usó la IA, en qué tareas, y el registro de cada pedido y decisión del autor.',
-    intro: 'Declara el uso de herramientas de inteligencia artificial generativa y lo hace verificable: qué tareas apoyó, cómo cambió el proceso y qué decidió el autor en cada caso. Incluye el registro de pedidos, que se lleva a diario desde el 29 de septiembre de 2026; lo anterior se reconstruyó en parte.',
+    resumen: 'Qué herramientas se usaron, en qué ayudaron y qué decidió el autor.',
+    intro: 'Declara qué herramientas de inteligencia artificial se usaron, en qué tareas ayudaron y qué decidió el autor en cada caso. El registro de cada pedido, que se lleva a diario desde el 29 de septiembre de 2026, no se imprime aquí: está abierto en el repositorio del proyecto.',
     partes: [
-      { titulo: 'E.1 Declaración', fuente: '00_gobernanza/trazabilidad-uso-ia-2026-09-23.md', tomar: ['Texto utilizable en la memoria o en la defensa'] },
-      { titulo: 'E.2 Cómo cambió el proceso de diseño', fuente: '00_gobernanza/trazabilidad-uso-ia-2026-09-23.md', tomar: ['Cómo cambió el proceso de diseño'] },
-      { titulo: 'E.3 Ficha para cada producción con IA', fuente: '00_gobernanza/trazabilidad-uso-ia-2026-09-23.md', tomar: ['Ficha obligatoria para futuras producciones con IA'] },
-      { titulo: 'E.4 Pedidos anteriores al registro diario', fuente: '00_gobernanza/trazabilidad-uso-ia-2026-09-23.md', tomar: ['Registro de prompts existentes'] },
-      { titulo: 'E.5 Registro de pedidos del autor', fuente: '00_gobernanza/registro-de-pedidos-a-la-ia.md', tomar: ['Tipos de pedido', 'Pedidos', 'Lo que muestra el registro'], clase: 'registro' },
+      { titulo: 'E.1 Qué se usó y en qué ayudó', fuente: '00_gobernanza/uso-de-ia-2026-10-27.md', quitar: ['Dónde está el detalle'] },
+      { titulo: 'E.2 Ficha para cada producción con IA', fuente: '00_gobernanza/trazabilidad-uso-ia-2026-09-23.md', tomar: ['Ficha obligatoria para futuras producciones con IA'] },
     ],
   },
   {

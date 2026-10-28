@@ -207,7 +207,6 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - frase de marca;
   - grabación y transcripción de las entrevistas;
   - la encuesta: fecha, convocatoria y alcance de la edición;
-  - herramientas de IA usadas antes de septiembre;
   - que las tres personas son mayores de edad;
 - [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en la carpeta `LOGOTIPOS UDP FAAD` de la Coordinación), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
@@ -227,6 +226,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Herramientas de IA
+
+- **Qué cambió:** sale de los datos por confirmar la pregunta por las herramientas de IA anteriores a septiembre.
+- **Cómo estaba antes:** estaba en la lista de la tarea 8.
+- **Por qué:** el autor confirmó que usó ChatGPT Plus desde marzo.
 
 ### 2026-10-27 — Cierre de la prueba
 
