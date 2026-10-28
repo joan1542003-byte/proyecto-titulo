@@ -195,6 +195,7 @@
 | 27 oct. | Consulta y encargo | Preguntó si la carpeta «COORDINACIÓN TITULACIÓN S2. 2026» estaba en el repositorio y pidió agregarla completa y documentarla. | Estaban 2 de sus 21 archivos: el calendario y la matriz de pase. Se agregaron 17 en [documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/README.md), con un índice: actas en blanco, los instructivos sin el nombre ni el correo de un funcionario, el reglamento con la firma cubierta, el protocolo en proceso y siete logotipos. No se subieron los PDF de los instructivos, que traen ese contacto. Se enlazaron las copias desde los criterios oficiales, el calendario, el estado del 25 de octubre y la tarea de la portada. | D-142 |
 | 27 oct. | Entrega | Entregó la carpeta `Logo/`, con los logotipos de la Facultad. | Tenía 33 archivos; 7 ya estaban en el repositorio. Se sumaron los 26 restantes a [logotipos](../01_contexto_y_fuentes/documentos_institucionales/README.md#logotipos): el logotipo principal, la Facultad, Arte, Arquitectura y sus escuelas, en negro, blanco y blanco sobre negro, más la fuente de Illustrator. El índice los ordena en una tabla por firma y color. | D-142 |
 | 27 oct. | Aclaración | Dentro de ChatGPT usó Codex. Avisó además que ya subió los documentos actualizados de la universidad, que sí hablan de inteligencia artificial. | El [documento](uso-de-ia-2026-10-27.md) y el capítulo 10 nombran ahora tres herramientas y en qué se diferencian: ChatGPT, conversacional y sin acceso a los archivos; Codex, el agente de programación de OpenAI, que trabaja sobre ellos y escribió las primeras versiones de la aplicación y las piezas web; y Claude Code, que además deja constancia de cada cambio en el control de versiones. Los documentos actualizados estaban en la rama `main`, subidos por otra sesión: se integraron a esta rama. Se leyeron los quince que hay en [documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/) —los dos instructivos, el reglamento, las cuatro actas, el calendario, la matriz, la pauta de contenidos, el protocolo de formato, y la pauta y la portada de la Biblioteca— y **ninguno menciona la inteligencia artificial**. Queda por saber a qué documento se refiere el autor. | — |
+| 27 oct. | Corrección | Solo usó Codex y Claude Code. | El [documento](uso-de-ia-2026-10-27.md) y el capítulo 10 declaran ahora esas dos herramientas: ambas son agentes que trabajan sobre los archivos del proyecto, y no asistentes a los que haya que pegarles el material. Codex acompañó desde marzo la investigación, la redacción inicial y las primeras versiones de la aplicación; Claude Code fue la principal desde fines de septiembre y registra cada cambio en el control de versiones. Cada una conserva su archivo de instrucciones en el repositorio. | — |
 
 ## Lo que muestra el registro
 
@@ -205,6 +206,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Solo dos herramientas
+
+- **Qué cambió:** se registró que las herramientas usadas fueron Codex y Claude Code.
+- **Cómo estaba antes:** el registro nombraba además ChatGPT.
+- **Por qué:** el autor lo precisó.
 
 ### 2026-10-27 — Logotipos de la Facultad
 

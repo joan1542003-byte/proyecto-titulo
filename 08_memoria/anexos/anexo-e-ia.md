@@ -10,13 +10,11 @@ Declara qué herramientas de inteligencia artificial se usaron, en qué tareas a
 
 ### Herramientas
 
-El proyecto utilizó herramientas de inteligencia artificial generativa de dos proveedores, con funciones distintas.
+El proyecto utilizó dos herramientas de inteligencia artificial generativa, de proveedores distintos. Ambas son agentes que trabajan sobre los archivos del proyecto —los leen, los modifican y devuelven el resultado—, y no asistentes conversacionales a los que haya que pegarles el material en cada consulta. Esa condición es la que permitió encargarles tareas sostenidas, como programar la aplicación o mantener la coherencia entre documentos escritos en meses distintos.
 
-**ChatGPT**, de OpenAI, se empleó desde marzo de 2026. Es un asistente conversacional de propósito general: recibe texto y devuelve texto, sin acceso a los archivos del proyecto, de modo que cada consulta exigió pegar el material pertinente y trasladar después el resultado al documento. Acompañó la etapa de investigación y la primera redacción de la memoria.
+**Codex**, de OpenAI, se empleó desde marzo de 2026 y acompañó la primera etapa: la investigación, la redacción inicial de la memoria y las primeras versiones de la aplicación y de las piezas web. El repositorio conserva las instrucciones de trabajo redactadas para esta herramienta.
 
-**Codex**, el agente de programación de OpenAI, opera en cambio sobre los archivos: recibe una instrucción, modifica el proyecto y devuelve el resultado. Con él se escribieron las primeras versiones de la aplicación y las piezas web del repositorio, que conservan las instrucciones de trabajo redactadas para esa herramienta.
-
-**Claude Code**, de Anthropic, se empleó desde fines de septiembre de 2026 y fue la herramienta principal de la etapa final. Trabaja también dentro del repositorio y, además, deja constancia de cada cambio en el control de versiones, lo que permite revisarlo, atribuirlo y revertirlo. Esa trazabilidad es la que sostiene el registro que se describe más adelante.
+**Claude Code**, de Anthropic, se empleó desde fines de septiembre de 2026 y fue la herramienta principal de la etapa final. Se diferencia de la anterior en que registra cada cambio en el control de versiones del repositorio y lo firma, de modo que puede revisarse, atribuirse y revertirse. El repositorio conserva también su archivo de reglas. Esa trazabilidad es la que sostiene el registro que se describe más adelante.
 
 ### Tareas
 
