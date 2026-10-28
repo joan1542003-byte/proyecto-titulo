@@ -181,7 +181,19 @@ Se contrastó el borrador con el código de la app, los datos de la prueba, el r
 - **Capítulo 10:** nombra ahora ChatGPT en su plan Plus desde marzo y Claude Code desde fines de septiembre. Queda por confirmar solo la herramienta de transcripción, así que los marcadores bajan de 17 a 16.
 - **Extensión:** capítulos 1 a 14, 19 796 palabras.
 
+## Redacción del Anexo E, 27 de octubre de 2026
+
+- **Qué cambió:** el Anexo E se reescribió en el registro de un documento académico, con los apartados Herramientas, Tareas, Decisiones, Límites y resguardos, y Trazabilidad. Presenta las dos herramientas y en qué se diferencian —una conversacional, sin acceso a los archivos; otra dentro del repositorio—, sin nombrar modelos ni cuantificar su uso, y precisa que el autor revisó cada fuente propuesta y leyó las que servían antes de incorporarlas.
+- **Verificación:** se revisaron los instructivos de examen, el Reglamento de Titulación Plan 8.0, las actas, la pauta de contenidos, la pauta de la Biblioteca y la matriz de pase: ninguno contiene normas sobre inteligencia artificial.
+- **Extensión:** el anexo queda en 1006 palabras y dos páginas.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Redacción del Anexo E
+
+- **Qué cambió:** se anotó la reescritura académica del anexo y la revisión de la normativa.
+- **Cómo estaba antes:** las notas terminaban en la reducción del Anexo E.
+- **Por qué:** el autor pidió ajustar la redacción.
 
 ### 2026-10-27 — Anexo E
 

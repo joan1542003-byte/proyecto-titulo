@@ -75,7 +75,7 @@ const anexos = [
     resumen: 'Qué herramientas se usaron, en qué ayudaron y qué decidió el autor.',
     intro: 'Declara qué herramientas de inteligencia artificial se usaron, en qué tareas ayudaron y qué decidió el autor en cada caso. El registro de cada pedido, que se lleva a diario desde el 29 de septiembre de 2026, no se imprime aquí: está abierto en el repositorio del proyecto.',
     partes: [
-      { titulo: 'E.1 Qué se usó y en qué ayudó', fuente: '00_gobernanza/uso-de-ia-2026-10-27.md', quitar: ['Dónde está el detalle'] },
+      { titulo: 'E.1 Declaración', fuente: '00_gobernanza/uso-de-ia-2026-10-27.md' },
       { titulo: 'E.2 Ficha para cada producción con IA', fuente: '00_gobernanza/trazabilidad-uso-ia-2026-09-23.md', tomar: ['Ficha obligatoria para futuras producciones con IA'] },
     ],
   },
