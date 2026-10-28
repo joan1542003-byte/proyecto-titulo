@@ -32,17 +32,63 @@ El repositorio es público, y sus reglas impiden publicar nombres, correos o dat
 
 ### Logotipos
 
-En [`logotipos-udp-faad/`](logotipos-udp-faad/), desde `LOGOTIPOS UDP FAAD/`. Son de la Universidad Diego Portales: se usan solo donde la Escuela los pide, como el membrete de la portada de la memoria (tarea 8 de [Por hacer](../../00_gobernanza/por-hacer.md)). El instructivo pide en la portada los logos de la Universidad, la Facultad y la Escuela, y la firma «Escuela de Diseño» reúne los tres.
+En [`logotipos-udp-faad/`](logotipos-udp-faad/): el juego completo de la Facultad de Arquitectura, Arte y Diseño (FaAAD) de la Universidad Diego Portales, 33 archivos. Siete llegaron en la carpeta de la Coordinación (`LOGOTIPOS UDP FAAD/`) y el resto, el 27 de octubre, en la carpeta `Logo/` del autor, que repite esos siete. Son de la Universidad: se usan solo donde la Escuela los pide, como el membrete de la portada de la memoria (tarea 8 de [Por hacer](../../00_gobernanza/por-hacer.md)). El instructivo pide en la portada los logos de la Universidad, la Facultad y la Escuela, y la firma **Escuela de Diseño** reúne los tres. Las de Arte y Arquitectura son de las otras escuelas y no se usan en Relevo.
 
-| Archivo | Original | Contenido |
-| --- | --- | --- |
-| [`faad-udp-escuela-de-diseno-negro.svg`](logotipos-udp-faad/faad-udp-escuela-de-diseno-negro.svg) | `faad_escuela-diseno.svg` | «FaAD udp / Escuela de Diseño», negro, vectorial. |
-| [`faad-udp-diseno-negro.svg`](logotipos-udp-faad/faad-udp-diseno-negro.svg) | `faad_diseno.svg` | «FaAD udp / Diseño», negro, vectorial. |
-| [`faad-udp-escuela-de-diseno-negro.png`](logotipos-udp-faad/faad-udp-escuela-de-diseno-negro.png) | `faad_lockupsArtboard 5@2x.png` | Escuela de Diseño, negro, fondo transparente, 3008 × 879 px. |
-| [`faad-udp-escuela-de-diseno-blanco.png`](logotipos-udp-faad/faad-udp-escuela-de-diseno-blanco.png) | `faad_lockupsArtboard 5_1@2x.png` | Escuela de Diseño, blanco, fondo transparente. |
-| [`faad-udp-escuela-de-diseno-blanco-fondo-negro.png`](logotipos-udp-faad/faad-udp-escuela-de-diseno-blanco-fondo-negro.png) | `faad_lockupsArtboard 5 copy 5@2x.png` | Escuela de Diseño, blanco sobre fondo negro. |
-| [`faad-udp-diseno-negro.png`](logotipos-udp-faad/faad-udp-diseno-negro.png) | `faad_lockupsArtboard 5 copy 4@2x.png` | Diseño, negro, fondo transparente, 1802 × 880 px. |
-| [`faad-udp-diseno-blanco.png`](logotipos-udp-faad/faad-udp-diseno-blanco.png) | `faad_lockupsArtboard 5 copy 4_1@2x.png` | Diseño, blanco, fondo transparente. |
+Los PNG tienen fondo transparente, salvo los «blanco sobre negro». Cada firma tiene el mismo tamaño en sus tres PNG.
+
+| Firma | Negro, vectorial | Negro | Blanco | Blanco sobre negro |
+| --- | --- | --- | --- | --- |
+| Principal: «FaAAD udp» | [SVG](logotipos-udp-faad/faad-udp-principal-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-principal-negro.png) | [PNG](logotipos-udp-faad/faad-udp-principal-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-principal-blanco-fondo-negro.png) |
+| Facultad: «Facultad de Arquitectura, Arte y Diseño» | [SVG](logotipos-udp-faad/faad-udp-facultad-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-facultad-negro.png) | [PNG](logotipos-udp-faad/faad-udp-facultad-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-facultad-blanco-fondo-negro.png) |
+| Diseño | [SVG](logotipos-udp-faad/faad-udp-diseno-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-diseno-negro.png) | [PNG](logotipos-udp-faad/faad-udp-diseno-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-diseno-blanco-fondo-negro.png) |
+| **Escuela de Diseño** | [SVG](logotipos-udp-faad/faad-udp-escuela-de-diseno-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-diseno-negro.png) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-diseno-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-diseno-blanco-fondo-negro.png) |
+| Arte | [SVG](logotipos-udp-faad/faad-udp-arte-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-arte-negro.png) | [PNG](logotipos-udp-faad/faad-udp-arte-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-arte-blanco-fondo-negro.png) |
+| Escuela de Arte | [SVG](logotipos-udp-faad/faad-udp-escuela-de-arte-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-arte-negro.png) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-arte-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-arte-blanco-fondo-negro.png) |
+| Arquitectura | [SVG](logotipos-udp-faad/faad-udp-arquitectura-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-arquitectura-negro.png) | [PNG](logotipos-udp-faad/faad-udp-arquitectura-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-arquitectura-blanco-fondo-negro.png) |
+| Escuela de Arquitectura | [SVG](logotipos-udp-faad/faad-udp-escuela-de-arquitectura-negro.svg) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-arquitectura-negro.png) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-arquitectura-blanco.png) | [PNG](logotipos-udp-faad/faad-udp-escuela-de-arquitectura-blanco-fondo-negro.png) |
+
+**Fuente editable:** [`logos-faaad-udp-fuente-illustrator.ai`](logotipos-udp-faad/logos-faaad-udp-fuente-illustrator.ai), el archivo de Adobe Illustrator de la Facultad (30 de junio de 2025), con 24 mesas de trabajo, una por PNG. Se abre también como PDF.
+
+<details>
+<summary>Nombre original de cada archivo</summary>
+
+| Archivo | Original |
+| --- | --- |
+| `faad-udp-escuela-de-diseno-negro.svg` | `LOGOTIPOS UDP FAAD/faad_escuela-diseno.svg` |
+| `faad-udp-diseno-negro.svg` | `LOGOTIPOS UDP FAAD/faad_diseno.svg` |
+| `faad-udp-escuela-de-diseno-negro.png` | `LOGOTIPOS UDP FAAD/faad_lockupsArtboard 5@2x.png` |
+| `faad-udp-escuela-de-diseno-blanco.png` | `LOGOTIPOS UDP FAAD/faad_lockupsArtboard 5_1@2x.png` |
+| `faad-udp-escuela-de-diseno-blanco-fondo-negro.png` | `LOGOTIPOS UDP FAAD/faad_lockupsArtboard 5 copy 5@2x.png` |
+| `faad-udp-diseno-negro.png` | `LOGOTIPOS UDP FAAD/faad_lockupsArtboard 5 copy 4@2x.png` |
+| `faad-udp-diseno-blanco.png` | `LOGOTIPOS UDP FAAD/faad_lockupsArtboard 5 copy 4_1@2x.png` |
+| `faad-udp-principal-negro.png` | `Logo/PNG/faad_lockupsArtboard 1@2x.png` |
+| `faad-udp-principal-blanco.png` | `Logo/PNG/faad_lockupsArtboard 1_1@2x.png` |
+| `faad-udp-principal-blanco-fondo-negro.png` | `Logo/PNG/faad_lockupsArtboard 1 copy 2@2x.png` |
+| `faad-udp-facultad-negro.png` | `Logo/PNG/faad_lockupsArtboard 1 copy@2x.png` |
+| `faad-udp-facultad-blanco.png` | `Logo/PNG/faad_lockupsArtboard 1 copy_1@2x.png` |
+| `faad-udp-facultad-blanco-fondo-negro.png` | `Logo/PNG/faad_lockupsArtboard 1 copy 3@2x.png` |
+| `faad-udp-diseno-blanco-fondo-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 9@2x.png` |
+| `faad-udp-arte-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 3@2x.png` |
+| `faad-udp-arte-blanco.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 3_1@2x.png` |
+| `faad-udp-arte-blanco-fondo-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 8@2x.png` |
+| `faad-udp-escuela-de-arte-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy@2x.png` |
+| `faad-udp-escuela-de-arte-blanco.png` | `Logo/PNG/faad_lockupsArtboard 5 copy_2@2x.png` |
+| `faad-udp-escuela-de-arte-blanco-fondo-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 6@2x.png` |
+| `faad-udp-arquitectura-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 2@2x.png` |
+| `faad-udp-arquitectura-blanco.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 2_1@2x.png` |
+| `faad-udp-arquitectura-blanco-fondo-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 10@2x.png` |
+| `faad-udp-escuela-de-arquitectura-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy_1@2x.png` |
+| `faad-udp-escuela-de-arquitectura-blanco.png` | `Logo/PNG/faad_lockupsArtboard 5 copy_3@2x.png` |
+| `faad-udp-escuela-de-arquitectura-blanco-fondo-negro.png` | `Logo/PNG/faad_lockupsArtboard 5 copy 7@2x.png` |
+| `faad-udp-principal-negro.svg` | `Logo/SVG/faad_lockup-principal.svg` |
+| `faad-udp-facultad-negro.svg` | `Logo/SVG/faad_facultad.svg` |
+| `faad-udp-arte-negro.svg` | `Logo/SVG/faad_arte.svg` |
+| `faad-udp-escuela-de-arte-negro.svg` | `Logo/SVG/faad_escuela-arte.svg` |
+| `faad-udp-arquitectura-negro.svg` | `Logo/SVG/faad_arquitectura.svg` |
+| `faad-udp-escuela-de-arquitectura-negro.svg` | `Logo/SVG/faad_escuela-arquitectura.svg` |
+| `logos-faaad-udp-fuente-illustrator.ai` | `Logo/logos_FaAAD.ai` |
+
+</details>
 
 ## Lo que falta
 
@@ -55,6 +101,12 @@ En [`logotipos-udp-faad/`](logotipos-udp-faad/), desde `LOGOTIPOS UDP FAAD/`. So
 - No se suben datos de contacto, firmas ni actas completadas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Juego completo de logotipos
+
+- **Qué cambió:** la carpeta de logotipos pasa de 7 a 33 archivos: el logotipo principal, la Facultad, Arte, Arquitectura y sus escuelas, en negro, blanco y blanco sobre negro, más la fuente de Illustrator. La sección se ordena en una tabla por firma y color, y corrige «FaAD» por «FaAAD».
+- **Cómo estaba antes:** solo estaban las firmas de Diseño y Escuela de Diseño, en una lista.
+- **Por qué:** el autor entregó la carpeta `Logo/` con el juego completo (D-142).
 
 ### 2026-10-27 — Creación
 

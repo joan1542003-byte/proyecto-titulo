@@ -1826,9 +1826,16 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Reglamento:** una búsqueda del 27 de octubre no lo encontró publicado en la web. La copia tapa en la página 1 la firma, el timbre y el nombre de la autoridad que lo firma. Las otras 19 páginas son las del original, comprobado con reconocimiento de texto.
   - **Actas, protocolo y logotipos:** idénticos al original. Las actas están en blanco, y ningún documento tiene autores en sus metadatos.
   - **Logotipos:** se usan solo donde la Escuela los pide, como el membrete de la portada.
+  - **Juego completo de logotipos:** el mismo día, el autor entregó la carpeta `Logo/`, con 33 archivos de la Facultad. Se sumaron los 26 que faltaban (logotipo principal, Facultad, Arte, Arquitectura y sus escuelas, y la fuente de Illustrator), sin modificarlos y con nombres por firma y color. La fuente de Illustrator no tiene autores en sus metadatos.
 - **Documentos:** [índice de documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — D-142, logotipos
+
+- **Qué cambió:** D-142 suma el juego completo de logotipos.
+- **Cómo estaba antes:** D-142 cubría solo los siete logotipos de la carpeta de la Coordinación.
+- **Por qué:** el autor entregó la carpeta `Logo/`.
 
 ### 2026-10-27 — D-142
 
