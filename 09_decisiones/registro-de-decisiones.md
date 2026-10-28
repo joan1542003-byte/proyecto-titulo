@@ -1815,7 +1815,33 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Guías de la Escuela:** se aplicaron las citas de los conceptos del glosario y la fusión de párrafos de una oración en el capítulo 5. Lo que requiere una decisión del autor quedó como tarea 2 de [Por hacer](../00_gobernanza/por-hacer.md).
 - **Documentos:** [notas del borrador](../08_memoria/notas-del-borrador-v5-2026-10-11.md#fotos-lecturas-y-recorte-del-20-de-octubre-de-2026) y [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md).
 
+## D-142 — Los documentos de la Coordinación entran al repositorio sin contactos ni firmas
+
+- **Fecha:** 2026-10-27.
+- **Estado:** hecha.
+- **Contexto:** el autor preguntó si la carpeta «COORDINACIÓN TITULACIÓN S2. 2026» estaba en el repositorio y pidió agregarla completa y documentarla. De sus 21 archivos, solo el calendario y la matriz de pase estaban, idénticos por huella. El repositorio es público, y sus reglas impiden publicar nombres, correos o datos identificables. El inventario local de agosto excluía actas, reglamentos, instructivos y logotipos «sin necesidad y permiso».
+- **Decisión:**
+  - **Dónde:** 17 archivos en `01_contexto_y_fuentes/documentos_institucionales/`, con nombres sin espacios ni tildes y un [índice](../01_contexto_y_fuentes/documentos_institucionales/README.md) que da el original de cada uno.
+  - **Instructivos:** copias en DOCX sin el nombre ni el correo del funcionario que coordina el ingreso a las salas. Sus PDF no se suben, porque repiten ese contacto.
+  - **Reglamento:** una búsqueda del 27 de octubre no lo encontró publicado en la web. La copia tapa en la página 1 la firma, el timbre y el nombre de la autoridad que lo firma. Las otras 19 páginas son las del original, comprobado con reconocimiento de texto.
+  - **Actas, protocolo y logotipos:** idénticos al original. Las actas están en blanco, y ningún documento tiene autores en sus metadatos.
+  - **Logotipos:** se usan solo donde la Escuela los pide, como el membrete de la portada.
+  - **Juego completo de logotipos:** el mismo día, el autor entregó la carpeta `Logo/`, con 33 archivos de la Facultad. Se sumaron los 26 que faltaban (logotipo principal, Facultad, Arte, Arquitectura y sus escuelas, y la fuente de Illustrator), sin modificarlos y con nombres por firma y color. La fuente de Illustrator no tiene autores en sus metadatos.
+- **Documentos:** [índice de documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — D-142, logotipos
+
+- **Qué cambió:** D-142 suma el juego completo de logotipos.
+- **Cómo estaba antes:** D-142 cubría solo los siete logotipos de la carpeta de la Coordinación.
+- **Por qué:** el autor entregó la carpeta `Logo/`.
+
+### 2026-10-27 — D-142
+
+- **Qué cambió:** se registró D-142.
+- **Cómo estaba antes:** la última decisión era D-141.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-25 — Estados de la identidad al día
 

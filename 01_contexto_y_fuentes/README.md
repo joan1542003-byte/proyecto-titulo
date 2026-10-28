@@ -21,7 +21,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Matriz de pase — Proyecto de Título](matriz-de-pase-proyecto-titulo.md): integra las ocho dimensiones de evaluación institucional, su correspondencia documental con Relevo y la autoevaluación de sus 24 subcriterios.
 - [Pauta de contenidos de proyectos](pauta-contenidos-proyectos.md): estructura y extensiones de la pauta de la Escuela, contrastadas con la memoria v5.
 - [Pauta de la Biblioteca UDP](pauta-biblioteca-tesis.md): formato, portada y entrega para el depósito de la memoria, contrastados con la v5.
-- **Documentos institucionales originales** en [`documentos_institucionales/`](documentos_institucionales/): calendario de titulación del segundo semestre de 2026, matriz de pase, pauta de contenidos y la pauta y la portada de ejemplo de la Biblioteca.
+- **[Documentos institucionales](documentos_institucionales/README.md)**: calendario de titulación del segundo semestre de 2026, instructivos de examen, reglamento de titulación, actas en blanco, matriz de pase, pauta de contenidos, protocolo de formato, el juego completo de logotipos de la Facultad y la pauta y la portada de ejemplo de la Biblioteca. El índice dice el original de cada archivo y qué se omitió para publicarlo.
 - [Matriz histórica de encargos y memoria](matriz-historica-encargos-memoria.md): reconstruye requisitos acumulativos, distingue formatos de proceso y audita su ubicación en la memoria v4.
 - [Archivo completo de E15](../99_archivo/fuentes-locales/semestre-1/e15/README.md): conserva registro, matriz e integridad del bloque propio.
 - [Memoria final de Relevo](../99_archivo/fuentes-locales/semestre-1/cierre/memoria-final-relevo.md): F-001, cierre histórico del 8 de julio de 2026.
@@ -53,6 +53,18 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-27 — Logotipos completos
+
+- **Qué cambió:** el índice nombra el juego completo de logotipos de la Facultad.
+- **Cómo estaba antes:** nombraba los logotipos de la Escuela.
+- **Por qué:** el autor entregó la carpeta `Logo/` (D-142).
+
+### 2026-10-27 — Documentos de la Coordinación completos
+
+- **Qué cambió:** el enlace a los documentos institucionales lleva a su índice y nombra lo agregado: instructivos, reglamento, actas, protocolo y logotipos.
+- **Cómo estaba antes:** nombraba solo el calendario, la matriz de pase, la pauta de contenidos y los documentos de la Biblioteca.
+- **Por qué:** el autor pidió subir completa la carpeta de la Coordinación (D-142).
 
 ### 2026-10-25 — Pauta de la Biblioteca
 
