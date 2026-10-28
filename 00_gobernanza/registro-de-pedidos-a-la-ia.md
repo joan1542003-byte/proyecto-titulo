@@ -200,6 +200,7 @@
 | 28 oct. | Encargo | Instaló Bambu Studio. Pidió que se le explicara cómo imprimir y los archivos que debe imprimir, uno por impresión si son varias. | Tres proyectos de Bambu Studio, laminados con los perfiles oficiales de la X1 Carbon y listos para enviar a la impresora: la prueba de calce (unos 25 min y 11 g), el testigo en un color (32 min y 15 g) y el fondo del medallón en cuatro colores, con el AMS (6 min y 6 g). La [guía](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md) suma el paso a paso en Bambu Studio y cómo revisar la prueba de calce. El testigo en un color usa todavía las medidas supuestas de la placa. | D-143 |
 | 28 oct. | Encargo | Pidió el instrumento de validación y las preguntas que se harán al terminar la prueba de 21 días. | [Instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md), con un [PDF](../07_validacion/instrumentos/instrumento-de-cierre.pdf) de cinco páginas: una guía para aplicarlo; un cuestionario de 16 preguntas cortas, copiadas de la app 2.33, sobre las semanas con el Tag, la semana con el teléfono, la comparación entre ambos y el cierre; una entrevista de nueve preguntas, y la revisión de los seis fallos críticos del protocolo. Indica qué valida cada pregunta y cómo transcribirla con las claves de la app. Hacía falta porque la semana con el teléfono no se inició en la app, que por eso no hará esas preguntas. | D-144 |
 | 28 oct. | Encargo | Pidió ordenar la memoria diseñada, con no más de 8 a 12 palabras por línea en los párrafos, y dársela en Affinity para modificarla; una portada más limpia y, por ahora, sin agradecimientos. Después pidió quitar del índice las tablas y las figuras, también por ahora. | [Memoria en A3](../08_memoria/memoria-a3/README.md) de 57 páginas: todo el texto en columnas de 118 mm, con unas 8 palabras por línea (antes, el resumen y el abstract tenían de 13 a 17, y una nota llegaba a 41); cada sección en página nueva; la tabla 7 partida en dos, porque se salía de la página; una portada con la institución, el logo, el título y los datos; sin agradecimientos y con un índice solo de secciones. Se entregó el IDML para Affinity, que en esta ronda no se abrió en Affinity. La pauta de la Biblioteca exige los índices de tablas y de figuras para el depósito. | D-145 |
+| 28 oct. | Encargo | Pidió re-redactar la introducción sin adelantarse a los hechos ni al índice: el contexto, el problema, la situación y cómo y con qué medios se busca resolverlo, en un texto para copiar y pegar. | Se entregó en la conversación una introducción de 639 palabras en siete párrafos (la de la v5 tiene 677): el teléfono y el ocio digital, el problema y sus dos formas, las interfaces que sostienen la continuidad, las herramientas que actúan sobre la actividad presente, la memoria prospectiva y los medios del proyecto (investigación, un sistema *phygital* y una prueba en el hogar). Quita las cifras de los métodos, el prototipo, la prueba con tres personas y el recorrido por capítulos. Conserva las dos formas del problema, que cita el capítulo 7, y solo cita referencias de la v5. El borrador v5 no se modificó: el autor pega el texto. | — |
 
 ## Lo que muestra el registro
 
@@ -210,6 +211,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Introducción re-redactada
+
+- **Qué cambió:** se registró el pedido de re-redactar la introducción.
+- **Cómo estaba antes:** terminaba en el pedido de ordenar la memoria en A3.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-28 — Memoria en A3 ordenada
 
