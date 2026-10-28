@@ -2,6 +2,8 @@
 
 **Fecha:** 20 de octubre de 2026. **Archivos:** [ficha en PDF](ficha-escalas-y-cierre.pdf) (2 páginas A4, para imprimir) y su [fuente HTML](ficha-escalas-y-cierre.html).
 
+**Para el cierre del 30 de octubre** se usa el [instrumento de cierre](instrumento-de-cierre-2026-10-28.md), que aplica en papel la comparación con el teléfono de la app 2.33 y una entrevista más completa (D-144). Esta ficha queda para una prueba de tres semanas que no se inició en el teléfono.
+
 ## Por qué existe
 
 La app muestra la tarjeta semanal (los días 7, 14 y 21) y las cinco preguntas de cierre solo si la prueba de 21 días se inició en el teléfono, con «Empezar la prueba hoy». En los teléfonos de la prueba en curso no se inició: los relevos no tienen condición ni día, según la revisión del [estado del proyecto](../../00_gobernanza/estado-del-proyecto-2026-10-19.md). Sin esta ficha, la memoria quedaría sin las escalas de carga, molestia y relación con el lugar, y sin el cierre.
@@ -45,6 +47,12 @@ Para la persona que pasa a la semana con el teléfono, la app 2.33 hace en el te
 - Si la persona empezó otro día, las semanas no coinciden con las del protocolo; se anota el día real de uso.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Instrumento de cierre
+
+- **Qué cambió:** una nota remite al instrumento de cierre para el 30 de octubre.
+- **Cómo estaba antes:** esta ficha era el instrumento previsto para el cierre.
+- **Por qué:** la semana con el teléfono no se inició en la app, y la ficha no comparaba el objeto con el teléfono (D-144).
 
 ### 2026-10-20 — Con la 2.33
 

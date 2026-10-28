@@ -1845,7 +1845,26 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** las piezas son sólidos cerrados; no chocan entre sí, ni en reposo ni con el medallón apretado; la rosca es derecha; ninguna superficie pasa de 47° desde la vertical, y ningún detalle del logo mide menos de 1,3 mm. Bambu Studio 2.8 laminó los tres proyectos sin errores: unos 25, 32 y 6 minutos, con 11, 15 y 6 g de PLA. No se ha impreso.
 - **Documentos:** [testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md).
 
+## D-144 — El cierre de la prueba se aplica en papel, con la comparación de la app 2.33 y una entrevista que revisa los fallos críticos
+
+- **Fecha:** 2026-10-28.
+- **Estado:** preparado; se aplica el 30 de octubre de 2026.
+- **Contexto:** las tres personas pasaron a la semana con el teléfono sin iniciarla en la app, así que la app no mostrará las escalas de las semanas con el Tag, la comparación del día 7 ni el cierre de siete preguntas que preparó la 2.33 (D-138). Son la única evidencia que contrasta el objeto con el teléfono. La ficha del 20 de octubre preguntaba por tres semanas con el objeto, sin esa comparación. El autor pidió el instrumento de validación y las preguntas para el final de la prueba.
+- **Decisión:**
+  - **Cuestionario:** las preguntas de la 2.33, en papel, con el mismo texto, las mismas opciones y las mismas claves: las escalas de las semanas con el Tag, las de la semana con el teléfono con la comparación, y el cierre de siete preguntas. Lo que la persona ya respondió en la app no se repite.
+  - **Entrevista:** las seis preguntas de la ficha del 20 de octubre y tres del protocolo 02 —fallos, otras personas que oyeron o vieron, días sin uso—, con repreguntas sobre las amenazas a la validez del capítulo 13.
+  - **Fallos críticos:** el investigador revisa al final los seis del protocolo.
+  - **Sin grabación:** el consentimiento invita a conversar, pero no menciona grabar.
+- **Alternativas descartadas:** iniciar ahora la semana en la app, porque la contaría desde el día 1, y preguntar en papel las escalas de cada semana con el Tag por separado, porque se responderían de memoria semanas después y la 2.33 las pregunta juntas.
+- **Documentos:** [instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-144
+
+- **Qué cambió:** se registró D-144.
+- **Cómo estaba antes:** la última decisión era D-143.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-28 — D-143, proyectos de Bambu Studio
 

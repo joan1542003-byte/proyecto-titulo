@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instrumento de cierre</title>
+<style>
+/* Instrumento imprimible, A4 vertical, en blanco y negro: guía, cuestionario de la app 2.33 y entrevista. */
+@font-face { font-family: "Instrument Sans"; src: url("../../06_desarrollo_y_factibilidad/app-android/app/src/main/res/font/instrument_sans.ttf"); font-weight: 400 700; }
+@page { size: A4; margin: 14mm 15mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; color: #141312; font-size: 10.5pt; line-height: 1.4; background: #fff; }
+.page { break-after: page; }
+.page:last-child { break-after: auto; }
+h1 { font-size: 19pt; margin: 0 0 1mm; letter-spacing: -.01em; }
+h2 { font-size: 12.5pt; margin: 4mm 0 1.5mm; }
+.lead { margin: 0 0 3mm; color: #555; font-size: 9.5pt; }
+.datos { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 4mm; margin: 3mm 0 3mm; }
+.datos div { border-bottom: .3mm solid #141312; padding-bottom: 1mm; font-size: 9pt; color: #555; height: 9mm; display: flex; align-items: flex-end; }
+.caja { border: .35mm solid #141312; border-radius: 3mm; padding: 3mm 4mm; margin-bottom: 4mm; break-inside: avoid; }
+.caja h2 { margin: 0 0 2mm; display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.caja h2 span { font-weight: 400; font-size: 9pt; color: #555; }
+.app { display: flex; align-items: center; gap: 1.5mm; }
+.app::before, .opciones span::before, .check li::before, .marca { content: ""; flex: none; width: 4.5mm; height: 4.5mm; border: .3mm solid #141312; border-radius: 1mm; }
+table { width: 100%; border-collapse: collapse; }
+td, th { padding: 1.6mm 0; vertical-align: middle; text-align: left; }
+td.q { width: 52%; padding-right: 3mm; }
+.cod { display: inline-block; min-width: 7mm; font-weight: 700; }
+.escala { display: flex; gap: 2.2mm; align-items: center; font-size: 8.5pt; color: #555; }
+.escala i { width: 7mm; height: 7mm; border-radius: 50%; border: .3mm solid #141312; display: grid; place-items: center; font-style: normal; color: #141312; font-size: 9pt; }
+.pregunta { margin: 3mm 0 0; }
+.lineas { margin-top: 1mm; }
+.lineas i { display: block; border-bottom: .25mm solid #999; height: 6.5mm; }
+.opciones { display: flex; gap: 3mm 6mm; flex-wrap: wrap; margin-top: 1mm; }
+.opciones.columna { flex-direction: column; gap: 2mm; }
+.opciones span { display: flex; align-items: center; gap: 2mm; }
+.nota { font-size: 8.5pt; color: #555; margin: 1mm 0 0; }
+.check { list-style: none; margin: 0; padding: 0; }
+.check li { display: flex; gap: 2.5mm; margin-bottom: 1.5mm; }
+.check li::before { margin-top: .6mm; }
+ol.pasos { margin: 0; padding-left: 5mm; }
+ol.pasos li { margin-bottom: 1.5mm; }
+.matriz td, .matriz th { border-bottom: .2mm solid #ccc; padding: 1.2mm 2mm 1.2mm 0; font-size: 9.5pt; }
+.matriz th { font-size: 8.5pt; color: #555; font-weight: 400; }
+.matriz td:last-child { width: 32%; }
+ol.guia { margin: 0; padding-left: 6mm; }
+ol.guia > li { margin: 0 0 3mm; break-inside: avoid; }
+.repregunta { color: #555; font-size: 9pt; margin: .8mm 0 0; }
+.fallos td, .fallos th { border-bottom: .2mm solid #ccc; padding: 1.8mm 2mm 1.8mm 0; font-size: 9.5pt; }
+.fallos th { font-size: 8.5pt; color: #555; font-weight: 400; }
+.fallos td.si { width: 11mm; }
+.fallos td.si .marca, .fallos td.si span { display: inline-block; vertical-align: middle; }
+.fallos td.dato { width: 26mm; border-bottom: .25mm solid #999; }
+.pie { margin-top: 3mm; font-size: 8pt; color: #777; }
+/* La guía cabe en una página: algo más compacta que las fichas. */
+.compacta { font-size: 10pt; line-height: 1.35; }
+.compacta .caja { padding: 2.5mm 4mm; margin-bottom: 3mm; }
+.compacta .check li { margin-bottom: 1mm; }
+.compacta ol.pasos li { margin-bottom: 1mm; }
+.compacta .matriz td, .compacta .matriz th { padding: .8mm 2mm .8mm 0; font-size: 9pt; }
+</style>
+</head>
+<body>
+
+<section class="page compacta">
+  <h1>Relevo · cierre de la prueba</h1>
+  <p class="lead">Guía para el investigador. Esta página se imprime una vez; las páginas 2 a 5, una por persona. Unos 25 minutos por persona, en persona o por llamada, el viernes 30 de octubre o el día en que cumple 21 días.</p>
+
+  <div class="caja">
+    <h2>Antes</h2>
+    <ul class="check">
+      <li>Revisar en la app si ya respondió «¿Cómo te fue hasta ahora?», la tarjeta de la semana o el cierre. Lo respondido no se repite: se marca en la ficha.</li>
+      <li>Anotar solo el código de participación, nunca el nombre.</li>
+      <li>No grabar: el consentimiento invita a conversar, pero no menciona grabación. Se toman notas.</li>
+    </ul>
+  </div>
+
+  <div class="caja">
+    <h2>Durante</h2>
+    <ol class="pasos">
+      <li><b>Al comenzar:</b> «Gracias por estas semanas. Primero te pido unas respuestas cortas en esta hoja y después conversamos unos 15 minutos. Puedes saltar cualquier pregunta. No hay respuestas buenas ni malas: me sirve saber qué te pasó, también lo que no funcionó».</li>
+      <li><b>Cuestionario</b> (páginas 2 y 3, unos 8 minutos): la persona lo responde sola o se le lee, sin explicar ni dar ejemplos de las opciones.</li>
+      <li><b>Entrevista</b> (páginas 4 y 5, unos 15 minutos): preguntar sin sugerir respuestas ni anticipar qué se espera del Tag o del teléfono. Para profundizar, usar las repreguntas o pedir un ejemplo: «¿Me cuentas una vez en que pasó?». Anotar sus palabras; si nombra a alguien, anotar la relación, no el nombre. Si falta tiempo, priorizar las preguntas 1, 2, 5, 6 y 7.</li>
+      <li><b>Fallos críticos</b> (página 5): marcarlos al terminar.</li>
+      <li><b>Al terminar:</b> exportar los datos del teléfono, con su acuerdo, y decirle: «Gracias. Tus datos se borran a más tardar el 30 de diciembre, y puedes borrarlos antes desde Perfil, en Tus datos».</li>
+    </ol>
+  </div>
+
+  <div class="caja">
+    <h2>Después</h2>
+    <ul class="check">
+      <li>Exportar los datos el mismo día, desde Perfil › Tus datos › «Descargar mis datos» o la copia de Documentos/Relevo, antes de que la persona los borre o desinstale la app.</li>
+      <li>Guardar las fichas y las exportaciones solo en datos_sensibles/. No se suben al repositorio.</li>
+      <li>Transcribir con las claves del instrumento (07_validacion/instrumentos) y unir con unir-datos.js.</li>
+    </ul>
+  </div>
+
+  <div class="caja">
+    <h2>Qué valida</h2>
+    <table class="matriz">
+      <tr><th>Qué se quiere saber</th><th>Preguntas</th></tr>
+      <tr><td>Si al sonar notó la señal y recordó qué quería hacer y cómo empezar, sin mirar el teléfono</td><td>E1</td></tr>
+      <tr><td>Si el objeto ayudó más, igual o menos que el teléfono</td><td>B4, C2, C3, C4 y E2</td></tr>
+      <tr><td>Si el sonido tuvo que ver con el lugar</td><td>A3, B3, C7 y E4</td></tr>
+      <tr><td>Cuánto costó y cuánto molestó</td><td>A1, A2, B1, B2, C5 y E3</td></tr>
+      <tr><td>Si sintió que podía elegir</td><td>E5</td></tr>
+      <tr><td>Qué falló, cómo convivió con otras personas y si lo seguiría usando</td><td>E6, E7, E8 y C1</td></tr>
+      <tr><td>Qué cambiaría</td><td>C6 y E9</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Relevo · cuestionario de cierre</h1>
+  <p class="lead">Toda pregunta se puede saltar. En las escalas, marca un número: 1 es «Nada» y 5 es «Mucho».</p>
+  <div class="datos" style="--n:4"><div>Código de participación</div><div>Fecha</div><div>En persona o llamada</div><div>Pasó al teléfono el</div></div>
+
+  <div class="caja">
+    <h2>A. Las semanas con el Tag <span class="app">Respondida en la app</span></h2>
+    <p class="nota">¿Cómo te fue hasta ahora? Las semanas antes de la semana con el teléfono, con el Tag.</p>
+    <table>
+      <tr><td class="q"><span class="cod">A1</span>¿Te costó preparar Relevo?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q"><span class="cod">A2</span>¿Te molestó el sonido?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q"><span class="cod">A3</span>¿El sonido tenía que ver con el lugar donde sonó?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+    </table>
+    <p class="pregunta"><span class="cod">A4</span>¿Algo más que quieras contarnos?</p>
+    <div class="lineas"><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <div class="caja">
+    <h2>B. La semana con el teléfono <span class="app">Respondida en la app</span></h2>
+    <p class="nota">¿Cómo te fue esta semana?</p>
+    <table>
+      <tr><td class="q"><span class="cod">B1</span>¿Te costó preparar Relevo?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q"><span class="cod">B2</span>¿Te molestó el sonido?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+      <tr><td class="q"><span class="cod">B3</span>¿El sonido tenía que ver con el lugar donde sonó?</td><td><div class="escala">Nada <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i> Mucho</div></td></tr>
+    </table>
+    <p class="pregunta"><span class="cod">B4</span>Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer…</p>
+    <div class="opciones"><span>Más</span><span>Igual</span><span>Menos</span></div>
+    <p class="pregunta"><span class="cod">B5</span>¿Por qué? ¿Algo más que quieras contarnos?</p>
+    <div class="lineas"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<section class="page">
+  <h1>Relevo · cuestionario de cierre</h1>
+  <p class="lead">Toda pregunta se puede saltar.</p>
+  <div class="datos" style="--n:2"><div>Código de participación</div><div>Fecha</div></div>
+
+  <div class="caja">
+    <h2>C. ¡Terminaste la prueba! <span class="app">Respondida en la app</span></h2>
+    <p class="nota">Gracias. Siete preguntas cortas; puedes saltar las que quieras.</p>
+    <p class="pregunta"><span class="cod">C1</span>¿Seguirías usando Relevo?</p>
+    <div class="opciones"><span>Sí</span><span>Tal vez</span><span>No</span></div>
+    <p class="pregunta"><span class="cod">C2</span>¿Qué te ayudó más a recordar lo que querías hacer?</p>
+    <div class="opciones columna"><span>El objeto donde empiezo</span><span>El aviso en el teléfono</span><span>Los dos por igual</span><span>Ninguno</span></div>
+    <p class="pregunta"><span class="cod">C3</span>¿Por qué?</p>
+    <div class="lineas"><i></i><i></i><i></i></div>
+    <p class="pregunta"><span class="cod">C4</span>Si siguieras usando Relevo, ¿con qué te gustaría que sonara?</p>
+    <div class="opciones"><span>Un objeto</span><span>El teléfono</span><span>Me da igual</span></div>
+    <p class="pregunta"><span class="cod">C5</span>¿Qué te molestó?</p>
+    <div class="lineas"><i></i><i></i><i></i></div>
+    <p class="pregunta"><span class="cod">C6</span>¿Qué cambiarías?</p>
+    <div class="lineas"><i></i><i></i><i></i></div>
+    <p class="pregunta"><span class="cod">C7</span>¿Dónde quedó el objeto la mayor parte del tiempo?</p>
+    <div class="lineas"><i></i><i></i></div>
+  </div>
+  <p class="pie">Preguntas y opciones de la app Relevo 2.33, en el mismo orden.</p>
+</section>
+
+<section class="page">
+  <h1>Relevo · entrevista de cierre</h1>
+  <p class="lead">Unos 15 minutos. Preguntar sin sugerir respuestas y anotar con las palabras de la persona. Las repreguntas, en gris, se usan si hace falta.</p>
+  <div class="datos"><div>Código de participación</div><div>Fecha</div><div>Hora de inicio y de término</div></div>
+
+  <ol class="guia">
+    <li>Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono?
+      <p class="repregunta">¿Ya estabas pensando en la actividad o el sonido te la trajo? · ¿Hubo veces en que sonó y no lo escuchaste, o lo escuchaste y seguiste en lo que estabas?</p>
+      <div class="lineas"><i></i><i></i><i></i><i></i><i></i></div></li>
+    <li>¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué?
+      <p class="repregunta">En la semana con el teléfono, ¿supiste qué querías hacer antes de leer la notificación o al leerla? · ¿Qué fue distinto entre el Tag y el teléfono?</p>
+      <div class="lineas"><i></i><i></i><i></i><i></i><i></i></div></li>
+    <li>¿Qué te molestó o te costó (preparar, el sonido, el objeto, el teléfono)?
+      <div class="lineas"><i></i><i></i><i></i></div></li>
+    <li>¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste?
+      <p class="repregunta">¿Por qué ahí?</p>
+      <div class="lineas"><i></i><i></i></div></li>
+    <li>¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir?
+      <p class="repregunta">¿Sabías cómo callarlo o dejarlo para después?</p>
+      <div class="lineas"><i></i><i></i><i></i><i></i></div></li>
+  </ol>
+</section>
+
+<section class="page">
+  <h1>Relevo · entrevista de cierre</h1>
+  <div class="datos" style="--n:2"><div>Código de participación</div><div>Fecha</div></div>
+
+  <ol class="guia" start="6">
+    <li>¿Falló algo? Por ejemplo, que no sonara, que sonara cuando no lo esperabas o que el Tag o la app hicieran algo raro.
+      <div class="lineas"><i></i><i></i><i></i></div></li>
+    <li>¿Alguien más escuchó el sonido o vio lo que preparaste? ¿Cómo fue?
+      <div class="lineas"><i></i><i></i></div></li>
+    <li>¿Hubo días en que no lo usaste? ¿Qué pasó?
+      <div class="lineas"><i></i><i></i></div></li>
+    <li>¿Qué cambiarías? ¿Algo más que quieras contarme?
+      <div class="lineas"><i></i><i></i><i></i></div></li>
+  </ol>
+
+  <div class="caja">
+    <h2>Fallos críticos <span>Los marca el investigador al terminar</span></h2>
+    <table class="fallos">
+      <tr><th>Fallo del protocolo 02</th><th>Sí</th><th>No</th><th>En qué pregunta</th></tr>
+      <tr><td>1. Vivió la señal como obligación, sanción o evaluación.</td><td class="si"><span class="marca"></span></td><td class="si"><span class="marca"></span></td><td class="dato"></td></tr>
+      <tr><td>2. Lo que quería hacer quedó a la vista de otras personas sin que lo quisiera.</td><td class="si"><span class="marca"></span></td><td class="si"><span class="marca"></span></td><td class="dato"></td></tr>
+      <tr><td>3. No entendió cómo silenciar la señal o dejar la prueba.</td><td class="si"><span class="marca"></span></td><td class="si"><span class="marca"></span></td><td class="dato"></td></tr>
+      <tr><td>4. Sonó una señal fuera de un relevo que activó.</td><td class="si"><span class="marca"></span></td><td class="si"><span class="marca"></span></td><td class="dato"></td></tr>
+      <tr><td>5. Hubo una barrera de accesibilidad sin alternativa, por ejemplo, no oír la señal.</td><td class="si"><span class="marca"></span></td><td class="si"><span class="marca"></span></td><td class="dato"></td></tr>
+      <tr><td>6. Se anotó algo que el consentimiento no contempla.</td><td class="si"><span class="marca"></span></td><td class="si"><span class="marca"></span></td><td class="dato"></td></tr>
+    </table>
+    <p class="pregunta">Observaciones</p>
+    <div class="lineas"><i></i><i></i></div>
+  </div>
+  <p class="pie">Se transcriben como entrevista_1 a entrevista_9 y fallo_obligacion, fallo_exposicion, fallo_silenciar, fallo_senal_fuera, fallo_accesibilidad y fallo_consentimiento. No anotar nombres ni datos que identifiquen a la persona.</p>
+</section>
+</body>
+</html>

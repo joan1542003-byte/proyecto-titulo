@@ -2,7 +2,7 @@
 
 **Entrega para la corrección del 23 de septiembre de 2026:** [índice de ocho hojas independientes](entrega-23-09-2026/README.md), con un Word A4 y una fuente Markdown por hoja. Es una copia fechada para revisión, no el consentimiento vigente: conserva un contacto en blanco y un plazo anterior. El paquete único previo permanece en el archivo histórico.
 
-**Prueba vigente:** [protocolo 02: prueba de 21 días en casa](protocolo-02-prueba-21-dias.md). Su primera etapa empezó el 7 de octubre de 2026 con tres personas que usan el Tag junto al primer paso, sin condición asignada, sobre la interfaz de la app 2.30 (versiones 2.29 a 2.32 en sus teléfonos). Desde el 20 de octubre, una de ellas prueba una semana con la señal solo en el teléfono, con la [app 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) (D-138). Instrumentos: el consentimiento v13 de la app, cuyo texto está en el [Anexo I](../08_memoria/anexos/anexo-i-prueba.md); la [ficha de la sesión inicial](ficha-registro-protocolo-01.md); la [ficha en papel](instrumentos/ficha-escalas-y-cierre-2026-10-20.md) para las escalas y el cierre, y el [script que une los datos](analisis/README.md). Los resultados al 19 de octubre están en el capítulo 13 de la memoria.
+**Prueba vigente:** [protocolo 02: prueba de 21 días en casa](protocolo-02-prueba-21-dias.md). Su primera etapa empezó el 7 de octubre de 2026 con tres personas que usan el Tag junto al primer paso, sin condición asignada, sobre la interfaz de la app 2.30 (versiones 2.29 a 2.32 en sus teléfonos). Desde el 20 de octubre, una de ellas prueba una semana con la señal solo en el teléfono, con la [app 2.33](../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) (D-138). Instrumentos: el consentimiento v13 de la app, cuyo texto está en el [Anexo I](../08_memoria/anexos/anexo-i-prueba.md); la [ficha de la sesión inicial](ficha-registro-protocolo-01.md); la [ficha en papel](instrumentos/ficha-escalas-y-cierre-2026-10-20.md) para las escalas y el cierre; el [instrumento de cierre](instrumentos/instrumento-de-cierre-2026-10-28.md) del 30 de octubre, que compara el Tag con el teléfono, y el [script que une los datos](analisis/README.md). Los resultados al 19 de octubre están en el capítulo 13 de la memoria.
 
 
 **Consulta del feedback:** [Qué prototipar, materiales, tiempos y valor](que-prototipar-y-como-validar-el-valor.md). Respuesta documental disponible; validación empírica pendiente.
@@ -22,6 +22,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
+- [Instrumento de cierre de la prueba](instrumentos/instrumento-de-cierre-2026-10-28.md): para el 30 de octubre. Aplica en papel las preguntas de comparación de la app 2.33, una entrevista de nueve preguntas y la revisión de los fallos críticos ([PDF](instrumentos/instrumento-de-cierre.pdf)).
 - [Ficha de escalas semanales y cierre en papel](instrumentos/ficha-escalas-y-cierre-2026-10-20.md): las preguntas de la tarjeta semanal y del cierre de la app, y la guía de la entrevista final, para aplicarlas cuando la prueba no se inició en el teléfono ([PDF](instrumentos/ficha-escalas-y-cierre.pdf)).
 - [Unir los datos de la prueba](analisis/README.md): script que junta Supabase, las copias de los teléfonos sin conexión y las fichas en papel, con un resumen por persona.
 - [Protección de datos del prototipo Android](privacidad-prototipo-android-2026-09-23.md): inventario iniciado en 2.3 y conciliado con 2.6, respuesta para la comisión y texto candidato; el correo y la fecha límite ya están indicados, pero falta verificar la eliminación y el canal de contacto antes de participantes.
@@ -73,6 +74,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-10-28 — Instrumento de cierre
+
+- **Qué cambió:** el índice suma el instrumento de cierre del 30 de octubre.
+- **Cómo estaba antes:** el cierre se apoyaba en la ficha del 20 de octubre.
+- **Por qué:** pedido del autor (D-144).
 
 ### 2026-10-24 — Prueba vigente
 

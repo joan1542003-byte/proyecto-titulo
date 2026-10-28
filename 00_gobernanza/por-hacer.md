@@ -174,8 +174,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **Quiénes pasaron a la semana solo con notificaciones:** las tres, desde el 21 de octubre, según el autor. La base remota solo muestra a una porque las otras dos entregan sus datos al exportarlos; sus relevos con el teléfono llegarán en la exportación del cierre.
 - [ ] **Cerrar el viernes 30 de octubre**, cuando la tercera persona cumple sus 21 días (la primera los cumple el 28 y la segunda el 29). Cerrar a las tres el mismo día evita coordinar tres fechas.
-- [ ] Al terminar la semana, aplicar la [ficha en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md) con las escalas, la comparación y el cierre. Es preferible a iniciar ahora la semana en la app, que la contaría desde el día 1.
-- [ ] Entrevista de cierre de unos 15 minutos con cada persona, según el protocolo.
+- [ ] Al terminar la semana, aplicar el [instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md) ([PDF para imprimir](../07_validacion/instrumentos/instrumento-de-cierre.pdf)): las escalas, la comparación y el cierre de la app 2.33, en papel (D-144). Es preferible a iniciar ahora la semana en la app, que la contaría desde el día 1.
+- [ ] Entrevista de cierre de unos 15 minutos con cada persona, con la guía del mismo instrumento, y revisión de los fallos críticos.
 - [ ] Exportar por última vez los datos de las tres personas y guardarlos solo en `datos_sensibles/`.
 - [ ] Unir los datos con `unir-datos.js` y actualizar los resultados, las conclusiones y los anexos.
 
@@ -228,6 +228,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Instrumento de cierre
+
+- **Qué cambió:** la tarea 6 enlaza el instrumento de cierre, con el cuestionario, la entrevista y los fallos críticos.
+- **Cómo estaba antes:** remitía a la ficha del 20 de octubre, que no comparaba el objeto con el teléfono.
+- **Por qué:** el autor pidió el instrumento y las preguntas para el cierre (D-144).
 
 ### 2026-10-28 — Proyectos de impresión
 
