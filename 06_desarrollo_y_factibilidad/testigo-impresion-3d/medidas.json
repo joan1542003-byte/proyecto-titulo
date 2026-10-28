@@ -1,0 +1,57 @@
+{
+  "nota": "Medidas de la placa del Tag (iTag NEWOTAG-BL) y holguras de impresión. Las que dicen «supuesto» no se han medido: se estimaron porque el Tag mide 38 × 7 mm según el vendedor. Antes de imprimir la versión final, mide con un pie de metro, cambia «valor» y «estado» y vuelve a generar con python3 testigo.py.",
+  "placa": {
+    "diametro": {
+      "valor": 32.0,
+      "estado": "supuesto",
+      "que_es": "Diámetro de la placa del Tag, sin la pila.",
+      "como_medir": "Con el pie de metro, de borde a borde por el centro. Si no es redonda, la medida mayor."
+    },
+    "grosor": {
+      "valor": 1.0,
+      "estado": "supuesto",
+      "que_es": "Grosor de la placa sola.",
+      "como_medir": "En el borde, donde no hay componentes."
+    },
+    "alto_componentes": {
+      "valor": 2.0,
+      "estado": "supuesto",
+      "que_es": "Altura del componente más alto en la cara del botón, sin contar el botón: zumbador, luz u otro.",
+      "como_medir": "Con la sonda de profundidad del pie de metro, desde la cara de la placa."
+    },
+    "alto_boton": {
+      "valor": 1.5,
+      "estado": "supuesto",
+      "que_es": "Altura del botón desde la cara de la placa, sin apretar.",
+      "como_medir": "Con la sonda de profundidad, sobre el centro del botón."
+    },
+    "alto_bajo_placa": {
+      "valor": 3.6,
+      "estado": "supuesto",
+      "que_es": "De la cara de abajo de la placa a la cara de afuera de la pila puesta en su portapila.",
+      "como_medir": "Con la pila puesta, mide el grosor total (placa más pila) y resta el grosor de la placa."
+    }
+  },
+  "holguras": {
+    "rosca": {
+      "valor": 0.3,
+      "que_es": "Holgura radial entre la rosca de la tapa y la del cuerpo. Si cuesta girar, súbela a 0,4; si queda suelta, bájala a 0,2."
+    },
+    "halo": {
+      "valor": 0.35,
+      "que_es": "Ranura entre el medallón y el cuerpo. Es también por donde sale el sonido."
+    },
+    "placa": {
+      "valor": 0.2,
+      "que_es": "Holgura radial entre la placa del Tag y el chasis."
+    },
+    "boton": {
+      "valor": 0.15,
+      "que_es": "Espacio entre la punta del medallón y el botón, en reposo. Nunca debe ser negativo: el botón quedaría apretado y el Tag podría apagarse."
+    },
+    "apoyo_pila": {
+      "valor": 0.0,
+      "que_es": "Cuánto más bajo queda el apoyo de la tapa bajo la pila. Si pegas una almohadilla de espuma o fieltro de 1 mm sobre el apoyo, pon 0,8: absorbe las diferencias de grosor y evita que la placa suene suelta."
+    }
+  }
+}

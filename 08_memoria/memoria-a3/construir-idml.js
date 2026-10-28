@@ -2,14 +2,16 @@
 // Toma el texto de la v5 sin cambiarlo y lo compone con la línea del 12 de octubre (D-132): papel, tinta,
 // paneles de aura con grano, fichas blancas, cápsulas e Instrument Sans. Sobre esa línea aplica lo que el
 // autor pidió el 13 de octubre: letra grande (texto de 14 pt), una escala única (9, 11, 14, 18, 28, 44 y
-// 150 pt), más aire, tablas y cifras como piezas de la marca (D-134) y ninguna viuda.
+// 150 pt), más aire, tablas y cifras como piezas de la marca (D-134) y ninguna viuda. Desde el 28 de octubre
+// (D-145), todo el texto corrido va en columnas de 118 mm, para que cada línea tenga de 8 a 12 palabras, y
+// cada sección abre en una página nueva.
 //
 // Cómo se arma:
 //   1. Node lee la v5 y la parte en secciones, párrafos, tablas y figuras.
 //   2. Chrome sin ventana mide cada párrafo (cuántas líneas ocupa en su columna) y cada pieza.
 //   3. Node reparte el texto línea por línea: ningún párrafo deja menos de dos líneas a cada lado de un
 //      corte de columna y ningún subtítulo queda solo al pie. Las tablas y figuras van arriba de la página
-//      siguiente a su mención; cada sección abre con un panel de aura en la primera columna libre.
+//      siguiente a su mención; cada sección abre en una página nueva, con su panel de aura en la primera columna.
 //   4. Con ese reparto se escriben dos archivos iguales: el IDML (texto vivo y enlazado; fondos de cada
 //      pieza en PDF) y un HTML que Chrome imprime como PDF.
 //
@@ -47,15 +49,17 @@ const COL = 118, MED = 11, ANCHO = 376, DOBLE = COL * 2 + MED;
 const colX = (k) => MX + k * (COL + MED);
 const AIRE_BANDA = 12;                      // entre las tablas o figuras de arriba y el texto
 const AIRE_PIEZAS = 12;                     // entre dos tablas o figuras de una misma página
-const MIN_TEXTO = 68;                       // con menos alto libre, la página queda solo para tablas y figuras
-const MIN_PANEL = 112;                      // alto mínimo de un panel de apertura
+const MIN_TEXTO = 60;                       // con menos alto libre, la página queda solo para tablas y figuras
 const HOLGURA = 2.4;                        // cada marco mide lo que ocupa su texto más esto: no cabe otra línea
+// Por ahora, a pedido del autor (28 de octubre): sin agradecimientos y un índice solo de secciones. La Biblioteca
+// exige los índices de tablas y de figuras para el depósito: se vuelven a poner con INDICE_DE_PIEZAS = true.
+const OMITIR = ['Agradecimientos'];
+const INDICE_DE_PIEZAS = false;
 
 // Estilos de párrafo (pt). Los mismos números sirven para el IDML, para medir y para el PDF.
 // Todo el aire vertical es «después»: así un subtítulo que cae arriba de una columna no arrastra espacio.
 const E = {
   'Texto': { tamano: 14, interlineado: 20, despues: 10 },
-  'Lectura': { tamano: 18, interlineado: 26, despues: 14 },
   'Subtítulo': { tamano: 18, interlineado: 23, estilo: 'SemiBold', despues: 7, seguimiento: -15, conSiguiente: 2 },
   'Subtítulo menor': { tamano: 14, interlineado: 20, estilo: 'SemiBold', despues: 4, conSiguiente: 2 },
   'Lista': { tamano: 14, interlineado: 20, despues: 6, sangria: 22, primera: -22 },
@@ -78,7 +82,6 @@ const E = {
   'Encabezado sección': { tamano: 9, interlineado: 12, estilo: 'SemiBold', alineacion: 'RightAlign' },
   'Folio': { tamano: 11, interlineado: 14, estilo: 'SemiBold', alineacion: 'RightAlign' },
   'Portada institución': { tamano: 11, interlineado: 17, estilo: 'SemiBold' },
-  'Portada descriptor': { tamano: 14, interlineado: 18, estilo: 'SemiBold', color: 'Color/Gris' },
   'Portada título': { tamano: 44, interlineado: 47, estilo: 'SemiBold', seguimiento: -30 },
   'Portada dato': { tamano: 14, interlineado: 23 },
   'Contraportada': { tamano: 18, interlineado: 24, color: 'Color/Gris', alineacion: 'CenterAlign' },
@@ -187,7 +190,13 @@ function bloques(lineas, estiloTexto = 'Texto') {
 const temporales = new Set();
 const tmp = (nombre) => { const f = path.join(AQUI, `_${nombre}.html`); temporales.add(f); return f; };
 const url = (f) => 'file://' + f.split(path.sep).map(encodeURIComponent).join('/').replace(/%3A/g, ':');
-const chrome = (args) => execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--no-sandbox', '--hide-scrollbars', '--allow-file-access-from-files', ...args], { stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 1 << 29 });
+// Chrome sin ventana a veces termina con error sin motivo aparente: se reintenta hasta tres veces.
+const chrome = (args) => {
+  for (let intento = 1; ; intento++) {
+    try { return execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--no-sandbox', '--hide-scrollbars', '--allow-file-access-from-files', ...args], { stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 1 << 29 }); }
+    catch (e) { if (intento === 3) throw e; }
+  }
+};
 const h = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const PESO = { Regular: 400, Italic: 400, Medium: 500, SemiBold: 600, Bold: 700 };
 const clase = (estilo) => 'e' + Object.keys(E).indexOf(estilo);
@@ -198,7 +207,7 @@ ${tieneCursiva ? `@font-face{font-family:"Instrument Sans";src:url("${CURSIVA}")
 *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 html,body{background:transparent}
 body{font-family:"Instrument Sans",sans-serif;color:#141312;font-kerning:normal;-webkit-font-smoothing:antialiased}
-b{font-weight:600}i{font-style:italic}.cf{background:#F4E496;border-radius:1.2mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}.dr{font-size:18pt;font-weight:500;color:#6E6964;letter-spacing:0}
+b{font-weight:600}i{font-style:italic}.cf{background:#F4E496;border-radius:1.2mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}.pd{color:#6E6964}.dr{font-size:18pt;font-weight:500;color:#6E6964;letter-spacing:0}
 svg.ic{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
 `;
 // Una clase por estilo de párrafo, con los números del IDML.
@@ -212,7 +221,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .pil.lleno{background:#141312;color:#fff}.pil.hueco{border:.3mm dashed #6E6964;color:#6E6964}.pil.blanca{background:#fff;border-color:#fff}.pil.clara{background:#fff;border-color:#E4DED6}.pil.amarilla{background:#F4E496;border-color:#F4E496}
 .chip{width:6.4mm;height:6.4mm;border-radius:50%;border:.3mm solid #141312;display:flex;align-items:center;justify-content:center;font-size:9pt;font-weight:600;line-height:1}
 .rot{display:flex;align-items:center;gap:3.5mm;margin-bottom:5mm}.rot .tp{flex:1}
-.nota{margin-top:4mm}
+.nota{margin-top:4mm;max-width:${COL}mm}.nota.dos{max-width:${DOBLE}mm}.n.dos{column-count:2;column-gap:${MED}mm}
 .ang{display:grid;grid-template-columns:${DOBLE}mm 1fr;column-gap:${MED}mm;align-items:start}
 .ang .rot{flex-direction:column;align-items:flex-start;gap:3.5mm;margin-bottom:0}.ang .rot .tp{flex:none;align-self:stretch}
 .tb{display:flex;flex-direction:column;gap:1.8mm}
@@ -293,14 +302,8 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .portada{width:${W}mm;height:${H}mm;position:relative}
 .portada .p-inst{position:absolute;left:26mm;top:24mm;width:160mm}
 .portada .p-marca{position:absolute;left:26mm;top:60mm;width:150mm}.portada .p-marca svg{width:100%;height:auto;display:block}
-.portada .p-tit{position:absolute;left:26mm;top:116mm;width:230mm}.portada .p-tit .d{margin-bottom:4.5mm}
-.portada .p-datos{position:absolute;left:26mm;bottom:24mm;width:250mm}
-.portada .p-ej{position:absolute;right:30mm;top:46mm;width:150mm;height:200mm}
-.p-ej .cielo{position:absolute;left:30mm;top:0;width:100mm;height:100mm;border-radius:13mm;overflow:hidden}
-.p-ej .capsula{position:absolute;left:5.5mm;bottom:5.5mm;background:rgba(255,255,255,.94);border-radius:99px;padding:1.6mm 5.5mm;font-weight:600;font-size:14pt;line-height:20pt}
-.p-ej .flota{position:absolute;display:flex;align-items:center;gap:4.5mm;background:#fff;border-radius:9mm;padding:4mm 7mm 4mm 4mm}
-.p-ej .flota b{display:block;font-size:14pt;line-height:19pt}.p-ej .flota small{display:block;font-size:11pt;line-height:15pt;color:#6E6964}
-.p-ej .uno{left:0;top:112mm;width:100mm}.p-ej .dos{right:0;top:146mm;width:92mm}
+.portada .p-tit{position:absolute;left:26mm;top:116mm;width:230mm}
+.portada .p-datos{position:absolute;left:26mm;bottom:24mm;width:${COL + 50}mm}
 `;
 
 /** Guarda un PDF con el cuerpo dado, del tamaño exacto de la pieza. */
@@ -325,7 +328,7 @@ ${piezas.map((p) => `<div class="m" data-id="${p.id}" style="width:${p.ancho}mm"
   return Object.fromEntries(Object.entries(px).map(([k, v]) => [k, typeof v === 'number' ? v * MM : Object.fromEntries(Object.entries(v).map(([t, r]) => [t, r.map((n) => n * MM)]))]));
 }
 
-const htmlTramos = (partes) => partes.map((r) => { const t = h(r.texto); return r.estilo === 'Negrita' ? `<b>${t}</b>` : r.estilo === 'Cursiva' ? `<i>${t}</i>` : r.estilo === 'Negrita cursiva' ? `<b><i>${t}</i></b>` : r.estilo === 'Dato resto' ? `<span class="dr">${t}</span>` : r.estilo === 'Confirmar' ? `<span class="cf">${t}</span>` : t; }).join('');
+const htmlTramos = (partes) => partes.map((r) => { const t = h(r.texto); return r.estilo === 'Negrita' ? `<b>${t}</b>` : r.estilo === 'Cursiva' ? `<i>${t}</i>` : r.estilo === 'Negrita cursiva' ? `<b><i>${t}</i></b>` : r.estilo === 'Dato resto' ? `<span class="dr">${t}</span>` : r.estilo === 'Confirmar' ? `<span class="cf">${t}</span>` : r.estilo === 'Pendiente' ? `<span class="pd">${t}</span>` : t; }).join('');
 const htmlParrafo = (b) => `<div class="${clase(b.estilo)}">${htmlTramos(b.partes)}</div>`;
 
 /** Aura con grano, como en la app (D-121): la misma semilla da siempre la misma imagen. Solo dibuja las que faltan. */
@@ -374,7 +377,7 @@ function pieza(id, ancho, armar) {
   const T = (estilo, contenido, cls = '') => {
     let partes = typeof contenido === 'string' ? tramos(contenido) : contenido;
     if (/^(Celda|Nota|Índice)/.test(estilo) && estilo !== 'Celda cabecera') partes = sinViuda(partes, 6, 40);
-    textos.push({ estilo, partes });
+    textos.push({ estilo, partes, columnas: /\bdos\b/.test(cls) ? 2 : 1 });
     return `<div class="${clase(estilo)} n ${cls}" data-t="${textos.length - 1}">${htmlTramos(partes)}</div>`;
   };
   return { id, ancho, html: armar(T), textos };
@@ -388,10 +391,12 @@ function tipoFigura(b) {
 
 /** Tabla o figura completa: rótulo en cápsula, título, cuerpo y nota. Las tablas angostas llevan título y nota al lado. */
 function piezaFlotante(b) {
-  const nombre = `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}`;
-  return pieza(`${b.flotante}-${b.n}`, ANCHO, (T) => {
+  const nombre = `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}${b.continua ? ' (continuación)' : ''}`;
+  return pieza(`${b.flotante}-${b.n}${b.continua ? '-2' : ''}`, ANCHO, (T) => {
     const rot = `<div class="rot"><span class="pil lleno">${nombre}</span>${T('Título de pieza', b.titulo, 'tp')}</div>`;
-    const nota = b.nota ? `<div class="nota">${T('Nota', b.nota)}</div>` : '';
+    // La nota va en una columna de 118 mm, como el texto; si es larga, en dos.
+    const larga = b.nota && !b.angosta && plano(b.nota).length > 240;
+    const nota = b.nota ? `<div class="nota${larga ? ' dos' : ''}">${T('Nota', b.nota, larga ? 'dos' : '')}</div>` : '';
     if (b.angosta) return `<div class="ang"><div>${cuerpoFlotante(b, T, DOBLE)}</div><div>${rot}${nota}</div></div>`;
     return rot + cuerpoFlotante(b, T, ANCHO) + nota;
   });
@@ -411,12 +416,13 @@ function cuerpoFlotante(b, T, ancho) {
 /** Tabla general: una ficha blanca por fila; la primera celda lleva un círculo con icono, número o versión. */
 function tablaFichas(b, T, ancho) {
   const [cab, ...filas] = b.filas; const cols = cab.length, ult = cols - 1;
-  const conEstado = filas.every((f) => ESTADO.test(plano(f[ult])));
-  const chips = cab.map((_, k) => k > 0 && filas.every((f) => /^(\d+( y \d+)*|Todos)$/.test(f[k])));
-  const version = filas.every((f) => /^(Hasta la )?[\d.–]+, /.test(f[0]));
+  const todas = (b.todas || b.filas).slice(1);                        // en una tabla partida, las dos partes miden igual
+  const conEstado = todas.every((f) => ESTADO.test(plano(f[ult])));
+  const chips = cab.map((_, k) => k > 0 && todas.every((f) => /^(\d+( y \d+)*|Todos)$/.test(f[k])));
+  const version = todas.every((f) => /^(Hasta la )?[\d.–]+, /.test(f[0]));
   const peso = cab.map((_, k) => {
     if (chips[k]) return 0.46;
-    const largos = b.filas.map((f) => plano(f[k] || '').length); const max = Math.max(...largos), med = largos.reduce((x, y) => x + y, 0) / largos.length;
+    const largos = [cab, ...todas].map((f) => plano(f[k] || '').length); const max = Math.max(...largos), med = largos.reduce((x, y) => x + y, 0) / largos.length;
     return max <= 14 ? 0.8 : Math.max(1, Math.sqrt(med) / 3.2);
   });
   if (version) peso[0] = 0.72;
@@ -434,7 +440,7 @@ function tablaFichas(b, T, ancho) {
     } else {
       const ic = ICONOS.find(([re]) => re.test(primera));
       const num = f[0].match(/^(\d+)\. (.*)$/), par = f[0].match(/^(.+?) \(([^)]+)\)$/);
-      const signo = ic ? svgIcono(ic[1]) : /^Total/.test(primera) ? '=' : num ? num[1] : String(r + 1);
+      const signo = ic ? svgIcono(ic[1]) : /^Total/.test(primera) ? '=' : num ? num[1] : String(r + 1 + (b.desde || 0));
       const etiqueta = num ? num[2] : par ? par[1] : f[0];
       pri = `<div class="pri">${circulo(signo)}<div class="tx">${T(num ? 'Celda' : 'Celda primera', etiqueta)}${par && !num ? T('Celda cabecera', mayus(par[2])) : ''}</div></div>`;
     }
@@ -525,28 +531,26 @@ const sec = (titulo) => secciones.find((s) => s.titulo === titulo);
 const inicio = secciones[0].lineas.filter((l) => l.trim());          // institución, antes de «# Relevo»
 const portada = sec('Relevo').lineas.filter((l) => l.trim());       // subtítulo e identificación
 const capitulos = secciones.filter((s) => /^\d+\. /.test(s.titulo)).map((s) => {
-  const n = +s.titulo.match(/^(\d+)/)[1]; const bl = bloques(s.lineas);
-  const palabras = bl.filter((b) => b.partes).reduce((t, b) => t + textoDe(b.partes).split(/\s+/).length, 0);
-  return { n, titulo: s.titulo.replace(/^\d+\. /, ''), bloques: bl, aura: `panel-${10 + n}`, lectura: palabras < 300 && !bl.some((b) => b.flotante || b.frase) };
+  const n = +s.titulo.match(/^(\d+)/)[1];
+  return { n, titulo: s.titulo.replace(/^\d+\. /, ''), bloques: bloques(s.lineas), aura: `panel-${10 + n}` };
 });
 const finales = [
   { titulo: 'Referencias', bloques: bloques(sec('Referencias').lineas, 'Referencia'), aura: 'panel-30' },
   { titulo: 'Glosario', bloques: bloques(sec('Glosario').lineas, 'Glosario'), aura: 'panel-31' },
 ];
 const cuerpo = [...capitulos, ...finales];
-cuerpo.forEach((c) => { if (c.lectura) c.bloques.forEach((b) => { if (b.estilo === 'Texto') b.estilo = 'Lectura'; }); });
 const anexos = sec('Anexos').lineas.filter((l) => /^- /.test(l)).map((l) => l.slice(2).match(/^\*\*Anexo ([A-Z])\.\*\* (.*)$/));
-// Páginas de entrada: agradecimientos, resumen y abstract, a una columna ancha y en letra de lectura.
-const lecturaDe = (titulo, clave) => {
-  if (!sec(titulo)) return null;
-  const bl = bloques(sec(titulo).lineas, 'Lectura');
+// Páginas de entrada: resumen y abstract, con su panel y el texto en columnas, como el cuerpo.
+const entradaDe = (titulo, clave) => {
+  if (!sec(titulo) || OMITIR.includes(titulo)) return null;
+  const bl = bloques(sec(titulo).lineas);
   bl.forEach((b) => { if (clave && clave.test(textoDe(b.partes))) b.estilo = 'Palabras clave'; });
   return bl;
 };
 const entradas = [
-  { titulo: 'Agradecimientos', aura: 'panel-3', bloques: lecturaDe('Agradecimientos') },
-  { titulo: 'Resumen', aura: 'panel-2', bloques: lecturaDe('Resumen', /^Palabras clave/) },
-  { titulo: 'Abstract', aura: 'panel-4', bloques: lecturaDe('Abstract', /^Keywords/) },
+  { titulo: 'Agradecimientos', aura: 'panel-3', bloques: entradaDe('Agradecimientos') },
+  { titulo: 'Resumen', aura: 'panel-2', bloques: entradaDe('Resumen', /^Palabras clave/) },
+  { titulo: 'Abstract', aura: 'panel-4', bloques: entradaDe('Abstract', /^Keywords/) },
 ].filter((e) => e.bloques);
 const PRIMERA = entradas.length + 3;                                  // portada + entradas + índice; número de la primera página del cuerpo
 
@@ -567,22 +571,21 @@ frases.forEach((b, i) => {
   b.pieza = pieza(`frase-${i + 1}`, COL, (T) => `<div class="frase"><img class="fondo" src="figuras/aura/${aurasFrase[i % aurasFrase.length]}" alt=""><span class="pil blanca">${h(b.rotulo)}</span>${T('Frase', b.partes)}</div>`);
 });
 const subtitulo = (portada[0] || '').replace(/ (?=intenciones |durante )/g, '\n').split('\n');
+// Portada limpia: institución, logo, título y datos. Lo que falta confirmar va en gris, sin resaltar.
+const enGris = (partes) => partes.map((r) => (r.estilo === 'Confirmar' ? { ...r, estilo: 'Pendiente' } : r));
 const pPortada = pieza('portada', W, (T) => `<div class="portada">
 <div class="p-inst">${inicio.map((l) => T('Portada institución', l)).join('')}</div>
 <div class="p-marca">${lockup()}</div>
-<div class="p-tit">${T('Portada descriptor', 'Memoria de título', 'd')}${subtitulo.map((l) => T('Portada título', l)).join('')}</div>
-<div class="p-ej"><div class="cielo"><img class="fondo" src="figuras/aura/cielo-leer.jpg" alt=""><span class="capsula">Leer</span></div>
-<div class="flota uno"><span class="cuad" style="background:${rgb('Cielo')}">${svgIcono('primer-paso')}</span><span><b>Abrir el libro</b><small>Tu primer paso</small></span></div>
-<div class="flota dos"><span class="cuad" style="background:${rgb('Lima')}">${svgIcono('lugar')}</span><span><b>En el velador</b><small>Donde empiezas</small></span></div></div>
-<div class="p-datos">${portada.slice(1).map((l) => T('Portada dato', l)).join('')}</div></div>`);
+<div class="p-tit">${subtitulo.map((l) => T('Portada título', l)).join('')}</div>
+<div class="p-datos">${portada.slice(1).map((l) => T('Portada dato', enGris(tramos(l)))).join('')}</div></div>`);
 const pAnexos = pieza('anexos', DOBLE, (T) => `<div class="anx">${anexos.map((m) => `<div class="anexo"><span class="fic">${m[1]}</span>${T('Celda', m[2])}</div>`).join('')}</div>`);
 
 // Primera medida: cada párrafo en su columna y cada pieza.
 const medibles = [];
 cuerpo.forEach((c, ci) => c.bloques.forEach((b, bi) => {
-  if (b.partes && !b.frase) { b.id = `c${ci}b${bi}`; medibles.push({ id: b.id, ancho: c.lectura ? DOBLE : COL, html: htmlParrafo(b) }); }
+  if (b.partes && !b.frase) { b.id = `c${ci}b${bi}`; medibles.push({ id: b.id, ancho: COL, html: htmlParrafo(b) }); }
 }));
-entradas.forEach((e, ei) => e.bloques.forEach((b, bi) => { b.id = `e${ei}b${bi}`; medibles.push({ id: b.id, ancho: DOBLE, html: htmlParrafo(b) }); }));
+entradas.forEach((e, ei) => e.bloques.forEach((b, bi) => { b.id = `e${ei}b${bi}`; medibles.push({ id: b.id, ancho: COL, html: htmlParrafo(b) }); }));
 [...flot, ...frases].forEach((b) => medibles.push(b.pieza));
 medibles.push(pPortada, pAnexos);
 console.log(`Midiendo ${medibles.length} párrafos y piezas en Chrome…`);
@@ -590,6 +593,25 @@ const alto = medir(medibles);
 const lineasDe = (b) => Math.max(1, Math.round(alto[b.id] / PT / E[b.estilo].interlineado));
 [...cuerpo, ...entradas].forEach((c) => c.bloques.forEach((b) => { if (b.id) b.lineas = lineasDe(b); }));
 [...flot, ...frases, { pieza: pPortada }, { pieza: pAnexos }].forEach((b) => { b.pieza.alto = alto[b.pieza.id]; b.pieza.donde = alto[b.pieza.id + '#'] || {}; });
+// Una tabla que no cabe en la página se parte en dos: la segunda parte repite la cabecera y lleva la nota.
+const partidas = [];
+cuerpo.forEach((c) => {
+  for (let i = 0; i < c.bloques.length; i++) {
+    const b = c.bloques[i];
+    if (b.flotante !== 'tabla' || b.continua || !(b.pieza.alto > BOTTOM - TOP)) continue;
+    const [cab, ...filas] = b.filas; const mitad = Math.ceil(filas.length / 2);
+    const sigue = { ...b, filas: [cab, ...filas.slice(mitad)], todas: b.filas, desde: mitad, continua: true };
+    b.todas = b.filas; b.filas = [cab, ...filas.slice(0, mitad)]; delete b.nota;
+    b.pieza = piezaFlotante(b); sigue.pieza = piezaFlotante(sigue);
+    c.bloques.splice(i + 1, 0, sigue); flot.splice(flot.indexOf(b) + 1, 0, sigue); partidas.push(b, sigue);
+    i++;
+  }
+});
+if (partidas.length) {
+  const m = medir(partidas.map((b) => b.pieza));
+  partidas.forEach((b) => { b.pieza.alto = m[b.pieza.id]; b.pieza.donde = m[b.pieza.id + '#'] || {}; });
+}
+flot.forEach((b) => { if (b.pieza.alto > BOTTOM - TOP) console.log(`Atención: la ${b.flotante} ${b.n} mide ${Math.round(b.pieza.alto)} mm y no cabe en la página.`); });
 
 // ---------------------------------------------------------------- Reparto en páginas, línea por línea
 
@@ -611,27 +633,25 @@ function ubicar(b, q, seccion) {
 }
 /** Una tabla o figura va arriba de la página siguiente a su mención; si no cabe con las que ya hay, en la que sigue. */
 function programar(b, p, seccion) {
+  if (b.reservada) { ultimaConPieza = Math.max(ultimaConPieza, b.pagina); return; }
   const a = b.pieza.alto; let q = Math.max(p + 1, ultimaConPieza);
   while (pag(q).banda > 0 && pag(q).banda + AIRE_PIEZAS + a > BOTTOM - TOP) q++;
   ubicar(b, q, seccion); ultimaConPieza = q;
 }
 
 function componer(c) {
-  normalizar();
-  if (c.lectura) {
-    // Capítulo breve: página propia, panel a la izquierda y texto grande a una columna ancha.
-    paginaNueva(); while (pag(cur.p).banda > 0) cur.p++;
-    const pg = pag(cur.p); c.pagina = cur.p; pg.rotulo = pg.rotulo || c;
-    pg.paneles.push({ c, k: 0, y: TOP, alto: BOTTOM - TOP });
-    const m = { c, x: colX(1), y: TOP, ancho: DOBLE, alto: BOTTOM - TOP, cont: c.bloques.map((b) => ({ b, desde: 0, n: b.lineas, fin: true })), ultimo: true };
-    const usado = c.bloques.reduce((t, b) => t + b.lineas * E[b.estilo].interlineado + (E[b.estilo].despues || 0), 0) * PT;
-    if (usado > BOTTOM - TOP) console.log(`Atención: «${c.titulo}» no cabe en su página de lectura (${Math.round(usado)} mm).`);
-    pg.marcos.push(m); c.marcos = [m];
-    cur.p++; cur.k = 0; return;
-  }
-  while (altoCol(cur.p) < MIN_PANEL) { cur.p++; cur.k = 0; normalizar(); }
+  // Cada sección abre en una página nueva, sin tablas ni figuras de la anterior: el panel en la primera
+  // columna y el texto desde la segunda.
+  paginaNueva(); while (pag(cur.p).banda > 0) cur.p++;
   c.pagina = cur.p; pag(cur.p).rotulo = c;                // la página lleva el nombre de la sección que abre en ella
-  pag(cur.p).paneles.push({ c, k: cur.k, y: colTop(cur.p), alto: altoCol(cur.p) });
+  pag(cur.p).paneles.push({ c, k: 0, y: TOP, alto: BOTTOM - TOP });
+  // Las tablas y figuras que en una pasada anterior quedaron después del texto de su sección se reservan
+  // arriba de su última página de texto, para que no queden solas en una página.
+  c.bloques.filter((b) => b.flotante && b.rel).forEach((b) => {
+    let q = c.pagina + b.rel;
+    while (pag(q).banda > 0 && pag(q).banda + AIRE_PIEZAS + b.pieza.alto > BOTTOM - TOP) q++;
+    ubicar(b, q, c); b.reservada = true;
+  });
   siguiente();
 
   c.marcos = [];
@@ -682,16 +702,49 @@ function componer(c) {
   if (c.marcos.length) c.marcos[c.marcos.length - 1].ultimo = true;
   if (marco || y > 0) siguiente();
 }
+/** Una página de entrada (resumen, abstract): su texto, en las columnas dadas, con las mismas reglas de viudas. */
+function fluir(c, xs) {
+  c.marcos = []; let k = 0, y = 0, marco = null;
+  const cap = (BOTTOM - TOP) / PT;
+  const saltar = () => { marco = null; k++; y = 0; };
+  for (const b of c.bloques.filter((x) => x.partes)) {
+    const L = E[b.estilo].interlineado, despues = E[b.estilo].despues || 0;
+    let resto = b.lineas, desde = 0;
+    while (resto > 0) {
+      if (k === xs.length) { console.log(`Atención: «${c.titulo}» no cabe en su página.`); return; }
+      const caben = Math.floor((cap - y + 0.5) / L);
+      let toma = caben >= resto ? resto : b.lineas < 4 ? 0 : Math.min(caben, resto - 2);
+      if (toma < resto && toma < 2) toma = 0;
+      if (toma === 0) { if (y > 0) { saltar(); continue; } toma = Math.max(1, Math.min(caben, resto)); }
+      if (!marco) { marco = { c, x: xs[k], y: TOP + y * PT, ancho: COL, y0: y, cont: [] }; c.marcos.push(marco); }
+      marco.cont.push({ b, desde, n: toma, fin: toma === resto });
+      y += toma * L; marco.usado = y - marco.y0; desde += toma; resto -= toma;
+      if (resto > 0) saltar(); else y += despues;
+    }
+  }
+  c.marcos.forEach((m, i) => { m.ultimo = i === c.marcos.length - 1; m.alto = m.ultimo ? BOTTOM - m.y : Math.min(BOTTOM - m.y, m.usado * PT + HOLGURA); });
+}
 /** Reparte todo el cuerpo y devuelve la página de los anexos. */
 function repartir() {
   paginas = []; cur = { p: 0, k: 0 }; ultimaConPieza = 0;
-  cuerpo.forEach((c) => c.bloques.forEach((b) => { delete b.extra; }));
+  cuerpo.forEach((c) => c.bloques.forEach((b) => { delete b.extra; b.reservada = false; }));
   cuerpo.forEach(componer);
   // Anexos: página propia, con su panel y sus fichas.
   paginaNueva(); while (pag(cur.p).banda > 0) cur.p++;
   return cur.p;
 }
-const pgAnexos = repartir();
+let pgAnexos = repartir();
+// Una tabla o figura que quedó después del último texto de su sección se reserva en esa última página
+// (si no es la de apertura) y se reparte de nuevo, hasta que no cambie nada.
+for (let pasada = 0; pasada < 3; pasada++) {
+  let cambio = false;
+  cuerpo.forEach((c) => {
+    const ultima = Math.max(...c.marcos.map((m) => m.p));
+    c.bloques.filter((b) => b.flotante && !b.rel && b.pagina > ultima && ultima > c.pagina).forEach((b) => { b.rel = ultima - c.pagina; cambio = true; });
+  });
+  if (!cambio) break;
+  pgAnexos = repartir();
+}
 pag(pgAnexos).rotulo = { titulo: 'Anexos' };
 const total = Math.max(pgAnexos, ultimaConPieza) + 1; pag(total - 1);
 paginas.forEach((pg, q) => { if (!pg.rotulo) pg.rotulo = pg.rotuloPieza || (paginas.slice(0, q).reverse().find((x) => x.rotulo) || {}).rotulo; });
@@ -701,9 +754,14 @@ const numPag = (q) => q + PRIMERA;
 const pIndice = pieza('indice', DOBLE, (T) => {
   const fila = (ficha, titulo, n) => `<div class="ir">${ficha}${T('Índice', titulo)}${T('Índice página', String(n))}</div>`;
   const menor = (rot, titulo, n) => `<div class="ir m"><span class="pil clara">${rot}</span>${T('Índice menor', titulo)}${T('Índice menor página', String(n))}</div>`;
-  const caps = cuerpo.map((c) => fila(c.n != null ? `<span class="fic">${c.n}</span>` : '<span class="fic vacia"></span>', c.titulo, numPag(c.pagina))).join('') + fila('<span class="fic vacia"></span>', 'Anexos', numPag(pgAnexos));
-  const piezas = (tipo, nombre) => flot.filter((b) => b.flotante === tipo).map((b) => menor(`${nombre} ${b.n}`, b.titulo, numPag(b.pagina))).join('');
-  return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Capítulos')}</div>${caps}</div><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${piezas('tabla', 'Tabla')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${piezas('figura', 'Figura')}</div></div>`;
+  const filas = [...cuerpo.map((c) => fila(c.n != null ? `<span class="fic">${c.n}</span>` : '<span class="fic vacia"></span>', c.titulo, numPag(c.pagina))), fila('<span class="fic vacia"></span>', 'Anexos', numPag(pgAnexos))];
+  if (!INDICE_DE_PIEZAS) {
+    // Solo las secciones, repartidas en dos columnas.
+    const mitad = Math.ceil(filas.length / 2);
+    return `<div class="idx"><div>${filas.slice(0, mitad).join('')}</div><div>${filas.slice(mitad).join('')}</div></div>`;
+  }
+  const piezas = (tipo, nombre) => flot.filter((b) => b.flotante === tipo && !b.continua).map((b) => menor(`${nombre} ${b.n}`, b.titulo, numPag(b.pagina))).join('');
+  return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Capítulos')}</div>${filas.join('')}</div><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${piezas('tabla', 'Tabla')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${piezas('figura', 'Figura')}</div></div>`;
 });
 { const m = medir([pIndice]); pIndice.alto = m.indice; pIndice.donde = m['indice#']; }
 if (pIndice.alto > BOTTOM - TOP) console.log(`Atención: el índice mide ${Math.round(pIndice.alto)} mm y no cabe en su página.`);
@@ -717,10 +775,8 @@ const sinTildes = (s) => s.toLowerCase().normalize('NFD').replace(/[^a-z]/g, '')
 const panelDe = (o, x, y, a) => ({ tipo: 'panel', nombre: 'panel-' + (o.n != null ? o.n : sinTildes(o.titulo)), html: panelHtml({ n: o.n, titulo: o.titulo, secciones: (o.bloques || []).filter((b) => b.seccion).map((b) => b.seccion), aura: o.aura, alto: a }), x, y, alto: a });
 hojas.push({ sinMaestra: true, items: [{ tipo: 'imagen', archivo: 'figuras/aura/portada.jpg', rect: [-3, -3, W + 6, H + 6], nombre: 'Aura de la portada' }, { tipo: 'pieza', pieza: pPortada, x: 0, y: 0, nombre: 'Portada' }] });
 entradas.forEach((e) => {
-  const usado = e.bloques.reduce((t, b) => t + b.lineas * E[b.estilo].interlineado + (E[b.estilo].despues || 0), 0) * PT;
-  if (usado > BOTTOM - TOP) console.log(`Atención: «${e.titulo}» no cabe en su página (${Math.round(usado)} mm).`);
-  e.marcos = [{ c: e, x: colX(1), y: TOP, ancho: DOBLE, alto: BOTTOM - TOP, cont: e.bloques.map((b) => ({ b, desde: 0, n: b.lineas, fin: true })), ultimo: true }];
-  hojas.push({ rotulo: e.titulo, items: [panelDe(e, colX(0), TOP, BOTTOM - TOP), { tipo: 'marco', marco: e.marcos[0] }] });
+  fluir(e, [colX(1), colX(2)]);
+  hojas.push({ rotulo: e.titulo, items: [panelDe(e, colX(0), TOP, BOTTOM - TOP), ...e.marcos.map((m) => ({ tipo: 'marco', marco: m }))] });
 });
 hojas.push({ rotulo: 'Índice', items: [panelDe({ titulo: 'Índice', aura: 'panel-5' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pIndice, x: colX(1), y: TOP, nombre: 'Índice' }] });
 paginas.forEach((pg, q) => {
@@ -766,6 +822,7 @@ doc.caracter('Negrita', { estilo: 'SemiBold' });
 doc.caracter('Negrita cursiva', { estilo: 'SemiBold Italic' });
 doc.caracter('Dato resto', { tamano: 18, estilo: 'Medium', color: 'Color/Gris', seguimiento: 0 });
 doc.caracter('Confirmar', { subrayado: 'true', subColor: MARCADOR, subGrosor: 15, subDesplaz: -4 });
+doc.caracter('Pendiente', { color: 'Color/Gris' });
 
 const conPeso = (estilo, partes) => (E[estilo] && E[estilo].estilo === 'SemiBold' ? partes.map((r) => (r.estilo === 'Cursiva' ? { ...r, estilo: 'Negrita cursiva' } : r)) : partes);
 const P = (estilo, texto) => ({ estilo, partes: typeof texto === 'string' ? [{ texto }] : conPeso(estilo, texto) });
@@ -784,7 +841,8 @@ function itemsPieza(it) {
   const pz = it.pieza; const out = [{ tipo: 'imagen', archivo: pz.fondo, rect: [it.x, it.y, pz.ancho, pz.alto], ajuste: 'contener', nombre: `${it.nombre}: fondo` }];
   pz.textos.forEach((t, k) => {
     const [rx, ry, rw, rh] = pz.donde[k];
-    out.push(marcoTexto([it.x + rx, it.y + ry + baja(t.estilo), rw, rh + 1.6], [P(t.estilo, t.partes)], { nombre: `${it.nombre}: ${textoDe(t.partes).slice(0, 32)}` }));
+    const cols = t.columnas > 1 ? { columnas: t.columnas, medianil: MED, equilibrar: true } : {};
+    out.push(marcoTexto([it.x + rx, it.y + ry + baja(t.estilo), rw, rh + 1.6], [P(t.estilo, t.partes)], { nombre: `${it.nombre}: ${textoDe(t.partes).slice(0, 32)}`, ...cols }));
   });
   return out;
 }

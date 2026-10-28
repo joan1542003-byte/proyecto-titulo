@@ -1,0 +1,50 @@
+[
+ {
+  "impresion": "1-prueba-de-calce",
+  "minutos": 25,
+  "gramos": 10.8,
+  "filamentos": [
+   {
+    "id": 1,
+    "gramos": 10.8
+   }
+  ],
+  "cambios_de_filamento": 0
+ },
+ {
+  "impresion": "2-testigo-un-color",
+  "minutos": 32,
+  "gramos": 15.0,
+  "filamentos": [
+   {
+    "id": 1,
+    "gramos": 15.01
+   }
+  ],
+  "cambios_de_filamento": 0
+ },
+ {
+  "impresion": "3-fondo-cuatro-colores",
+  "minutos": 6,
+  "gramos": 5.9,
+  "filamentos": [
+   {
+    "id": 1,
+    "gramos": 2.69
+   },
+   {
+    "id": 2,
+    "gramos": 1.18
+   },
+   {
+    "id": 3,
+    "gramos": 0.94
+   },
+   {
+    "id": 4,
+    "gramos": 1.08
+   }
+  ],
+  "cambios_de_filamento": 10
+ }
+]

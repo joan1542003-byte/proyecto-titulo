@@ -1829,7 +1829,73 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Juego completo de logotipos:** el mismo día, el autor entregó la carpeta `Logo/`, con 33 archivos de la Facultad. Se sumaron los 26 que faltaban (logotipo principal, Facultad, Arte, Arquitectura y sus escuelas, y la fuente de Illustrator), sin modificarlos y con nombres por firma y color. La fuente de Illustrator no tiene autores en sus metadatos.
 - **Documentos:** [índice de documentos institucionales](../01_contexto_y_fuentes/documentos_institucionales/README.md).
 
+## D-143 — El testigo lleva adentro la placa y la pila del Tag, con el logo calado como botón
+
+- **Fecha:** 2026-10-28.
+- **Estado:** modelo hecho, versión 0; falta medir la placa del Tag, imprimir la prueba de calce y armarlo.
+- **Contexto:** el objeto de Relevo seguía siendo un producto comprado (tarea 4 de [Por hacer](../00_gobernanza/por-hacer.md) y riesgo 1). El autor pidió el objeto para imprimirlo en una Bambu Lab X1 Carbon, con un diseño óptimo y portable, con el logo de Relevo tallado y, adentro, la pila pegada a la placa del Tag: el Tag es la base de hardware. La tarea 4 planteaba una carcasa que envolviera el Tag completo.
+- **Decisión:**
+  - **Hardware:** la placa y la pila del Tag van dentro de una carcasa propia. El Bluetooth, el botón y el pitido siguen siendo del Tag, y eso se declara como límite.
+  - **Forma:** planta circular de 46 mm y 12,3 mm de alto, dentro de la envolvente de la memoria (de 42 a 48 mm por 12 a 16 mm), sin frente.
+  - **Botón:** el medallón con el logo es el botón. Baja 0,45 mm, y un tope protege el botón del Tag. Se descartaron una lengüeta flexible en el techo, porque el PLA se fatiga y no se puede calibrar sin medidas, y un botón aparte, porque rompía la simetría sin frente.
+  - **Logo:** calado en una placa de 1,4 mm sobre un fondo de color, y no grabado: grabado en una cara que se imprime contra la placa, el piso de cada luz queda en el aire. Usa la versión chica de la marca, con los colores y el orden de sus luces: cuatro colores con el AMS, o uno solo.
+  - **Cierre:** tapa roscada de 2,5 mm de paso y flancos de 45°, que se abre con una moneda, como la del Tag. Se descartaron una tapa a presión, que se gasta, y un cierre de bayoneta, que necesita un resorte para no soltarse.
+  - **Ajuste:** un chasis aparte es la única pieza que depende de la placa. El modelo es paramétrico ([`medidas.json`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/medidas.json)), y las medidas actuales de la placa son supuestas.
+  - **Impresión:** todas las piezas, en PLA y sin soportes, con las caras visibles contra la placa texturada. Se entregan como tres proyectos de Bambu Studio, laminados con los perfiles oficiales de la X1 Carbon (0,12 mm Fine y Bambu PLA Matte): la prueba de calce, el testigo en un color y el fondo del medallón en cuatro colores, con el AMS.
+- **Verificación:** las piezas son sólidos cerrados; no chocan entre sí, ni en reposo ni con el medallón apretado; la rosca es derecha; ninguna superficie pasa de 47° desde la vertical, y ningún detalle del logo mide menos de 1,3 mm. Bambu Studio 2.8 laminó los tres proyectos sin errores: unos 25, 32 y 6 minutos, con 11, 15 y 6 g de PLA. No se ha impreso.
+- **Documentos:** [testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md).
+
+## D-144 — El cierre de la prueba se aplica en papel, con la comparación de la app 2.33 y una entrevista que revisa los fallos críticos
+
+- **Fecha:** 2026-10-28.
+- **Estado:** preparado; se aplica el 30 de octubre de 2026.
+- **Contexto:** las tres personas pasaron a la semana con el teléfono sin iniciarla en la app, así que la app no mostrará las escalas de las semanas con el Tag, la comparación del día 7 ni el cierre de siete preguntas que preparó la 2.33 (D-138). Son la única evidencia que contrasta el objeto con el teléfono. La ficha del 20 de octubre preguntaba por tres semanas con el objeto, sin esa comparación. El autor pidió el instrumento de validación y las preguntas para el final de la prueba.
+- **Decisión:**
+  - **Cuestionario:** las preguntas de la 2.33, en papel, con el mismo texto, las mismas opciones y las mismas claves: las escalas de las semanas con el Tag, las de la semana con el teléfono con la comparación, y el cierre de siete preguntas. Lo que la persona ya respondió en la app no se repite.
+  - **Entrevista:** las seis preguntas de la ficha del 20 de octubre y tres del protocolo 02 —fallos, otras personas que oyeron o vieron, días sin uso—, con repreguntas sobre las amenazas a la validez del capítulo 13.
+  - **Fallos críticos:** el investigador revisa al final los seis del protocolo.
+  - **Sin grabación:** el consentimiento invita a conversar, pero no menciona grabar.
+- **Alternativas descartadas:** iniciar ahora la semana en la app, porque la contaría desde el día 1, y preguntar en papel las escalas de cada semana con el Tag por separado, porque se responderían de memoria semanas después y la 2.33 las pregunta juntas.
+- **Documentos:** [instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md).
+
+## D-145 — La memoria en A3 se ordena: líneas de 8 a 12 palabras y cada sección en página nueva
+
+- **Fecha:** 2026-10-28.
+- **Estado:** hecha; el IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** el autor pidió ordenar la memoria diseñada, con no más de 8 a 12 palabras por línea en los párrafos, una portada más limpia y el archivo para Affinity; por ahora, sin agradecimientos y sin tablas ni figuras en el índice. El resumen, el abstract y el capítulo 1 iban en 18 pt a una columna ancha, con 13 a 17 palabras por línea; las notas de tablas y figuras iban a todo el ancho, con hasta 41; cada sección abría en la primera columna libre, así que su panel caía en cualquier columna; la tabla 7 se salía de la página.
+- **Decisión:**
+  - **Largo de línea:** todo el texto corrido va en columnas de 118 mm, a 14 pt: unas 8 palabras por línea. Las notas van en una columna de ese ancho, o en dos si son largas. Se descartó conservar los 18 pt del resumen en una columna más angosta: con 10 palabras por línea, el resumen no cabe en una página.
+  - **Orden:** cada sección abre en una página nueva, con su panel en la primera columna. Una tabla o figura que quedaría sola después del texto de su sección sube a la última página de ese texto, si cabe. Una tabla más alta que la página se parte en dos.
+  - **Portada:** la institución, el logo, el título y los datos de la v5; lo que falta confirmar va en gris. Sale el ejemplo de la app.
+  - **Por ahora:** sin agradecimientos y con un índice solo de secciones. Se vuelven a poner con dos opciones del generador; la pauta de la Biblioteca exige los índices de tablas y de figuras para el depósito.
+- **Verificación:** 57 páginas, sin avisos del generador. En el texto, 7,8 palabras por línea en promedio y 11 o menos en el 95 % de las líneas. El IDML tiene sus XML bien formados y sus 46 enlaces existen.
+- **Documentos:** [memoria en A3](../08_memoria/memoria-a3/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-145
+
+- **Qué cambió:** se registró D-145.
+- **Cómo estaba antes:** la última decisión era D-144.
+- **Por qué:** pedido del autor.
+
+### 2026-10-28 — D-144
+
+- **Qué cambió:** se registró D-144.
+- **Cómo estaba antes:** la última decisión era D-143.
+- **Por qué:** pedido del autor.
+
+### 2026-10-28 — D-143, proyectos de Bambu Studio
+
+- **Qué cambió:** D-143 suma, en la impresión, los tres proyectos de Bambu Studio y, en la verificación, su laminado.
+- **Cómo estaba antes:** la impresión se describía solo con piezas en STL y una tabla de ajustes.
+- **Por qué:** el autor instaló Bambu Studio y pidió los archivos que debe imprimir.
+
+### 2026-10-28 — D-143
+
+- **Qué cambió:** se registró D-143.
+- **Cómo estaba antes:** la última decisión era D-142.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-27 — D-142, logotipos
 

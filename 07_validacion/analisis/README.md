@@ -8,7 +8,7 @@ Los datos de la prueba llegan por tres vías. Este script los junta en una sola 
 
 1. **Supabase:** la exportación del panel o la de `datos_sensibles/relevo-datos-reales-*.json`, con las tablas `relevo_*`.
 2. **Teléfonos sin conexión:** la copia que la app guarda en `Documentos/Relevo` (`relevo-CÓDIGO.json`) o el archivo de Perfil › Tus datos › «Descargar mis datos». Los dos traen el registro completo del estudio.
-3. **Papel:** las [fichas de escalas y cierre](../instrumentos/ficha-escalas-y-cierre-2026-10-20.md), transcritas a un CSV con las columnas `participant_code`, `question`, `answer`, `fecha` y `fuente`.
+3. **Papel:** las [fichas de escalas y cierre](../instrumentos/ficha-escalas-y-cierre-2026-10-20.md) y el [instrumento de cierre](../instrumentos/instrumento-de-cierre-2026-10-28.md), transcritos a un CSV con las columnas `participant_code`, `question`, `answer`, `fecha` y `fuente`.
 4. **Excel con el formato del panel:** un `.xlsx` con las hojas «Relevos» y «Respuestas», como el que descarga el panel o el que se arma a mano con los datos que entrega cada persona. Las horas sin zona se leen en hora de Chile.
 
 ## Cómo se usa
@@ -57,6 +57,12 @@ Se unieron los datos de las tres personas hasta el 19 de octubre. Para una, se u
 El ciclo que se activó fuera de casa no tiene `signal_at` y no cuenta como señal, aunque tenga respuestas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Instrumento de cierre
+
+- **Qué cambió:** la fuente en papel incluye el instrumento de cierre.
+- **Cómo estaba antes:** nombraba solo la ficha del 20 de octubre.
+- **Por qué:** el cierre del 30 de octubre usa ese instrumento (D-144).
 
 ### 2026-10-20 — Excel y fecha de término
 

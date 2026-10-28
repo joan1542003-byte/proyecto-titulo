@@ -103,7 +103,7 @@ El feedback del Pase del primer semestre fue para In(Visible), el proyecto anter
 | N.º | Qué | Por qué importa | Riesgo si no se hace | Quién | Plazo |
 | --- | --- | --- | --- | --- | --- |
 | 1 | **Semana solo con notificaciones:** está en uso según el autor; al terminar, aplicar la [ficha en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md) con la comparación y el cierre, y hacer la entrevista. | La base muestra 8 relevos con la señal en el teléfono desde el 21 de octubre, todos respondidos, pero sin la semana iniciada en la app: faltan las escalas, la comparación y el cierre. Es el único contraste posible de la hipótesis. | **Alto** | Autor | Al terminar la semana |
-| 2 | **Objeto propio:** carcasa del Tag según la especificación del testigo, con modelo 3D, impresión, planos con medidas, fotos en uso y ficha de materiales. | La rúbrica y la matriz de pase piden un prototipo, planos y registro de uso. Hoy la parte física es una compra. | **Alto** | Autor; la IA puede modelar y dibujar los planos | 8 de noviembre |
+| 2 | **Objeto propio:** carcasa del Tag según la especificación del testigo, con modelo 3D, impresión, planos con medidas, fotos en uso y ficha de materiales. | La rúbrica y la matriz de pase piden un prototipo, planos y registro de uso. Hoy la parte física es una compra; el modelo propio está hecho desde el 28 de octubre (D-143). | **Alto** | Autor; la IA puede modelar y dibujar los planos | 8 de noviembre |
 | 3 | **Cierre con las tres personas:** última exportación de datos, escalas, preguntas de cierre y entrevista de 15 minutos. | Los resultados terminan el 19 de octubre y sin la valoración de carga, molestia y lugar. | **Alto** | Autor | 8 de noviembre |
 | 4 | **Fechas por escrito:** confirmar con los profesores guía el Pase (25 o 26 de noviembre), la memoria (2 de diciembre a las 12:00) y el formato del Pase. | El instructivo tiene errores de fecha y la no entrega reprueba. | Medio, pero grave si ocurre | Autor | Esta semana |
 | 5 | **Costos reales:** hecho el 27 de octubre. El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) cierra la Tabla 9 en unos 182 000 pesos y valoriza 114 horas de trabajo. | Cerrado | — | — | — |
@@ -131,6 +131,12 @@ Las tareas están en [Por hacer](por-hacer.md), del 4 al 9, y los riesgos con su
 | 26 nov. – 2 dic. | Ajustes finales; entrega de la memoria el miércoles 2 de diciembre antes de las 12:00. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Modelo del testigo
+
+- **Qué cambió:** el punto 2 anota que el modelo del objeto propio está hecho.
+- **Cómo estaba antes:** decía que la parte física era solo una compra.
+- **Por qué:** avance del 28 de octubre (D-143).
 
 ### 2026-10-27 — Documentos oficiales en el repositorio
 
