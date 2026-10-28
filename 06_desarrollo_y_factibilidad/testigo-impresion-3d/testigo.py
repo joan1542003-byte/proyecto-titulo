@@ -3,7 +3,6 @@
 
 Lee medidas.json, arma las piezas con geometría sólida (manifold3d) y escribe:
   imprimir/*.stl            piezas ya orientadas para imprimir, sin soportes
-  imprimir/*.3mf            las piezas de un color en un plato de 256 × 256 mm (Bambu Lab X1 Carbon)
   imprimir/medallon-fondo-cuatro-colores/   el fondo del medallón partido en cinco piezas, para el AMS
   imprimir/prueba-de-calce/ dos cortes del cuerpo para probar la rosca y el medallón antes de todo
   montaje/*.stl             las piezas en su posición de uso (para las vistas y para revisar)
@@ -256,14 +255,6 @@ if __name__ == '__main__':
     c = piezas['cuerpo']
     guardar(boca_abajo(c ^ cil(R_EXT + 1, -1, 6.4), 6.4), os.path.join(AQUI, 'imprimir', 'prueba-de-calce', 'rosca.stl'))
     guardar(boca_abajo(c ^ cil(R_EXT + 1, H - 3.0, H + 1), H), os.path.join(AQUI, 'imprimir', 'prueba-de-calce', 'medallon.stl'))
-
-    # Un plato con las cinco piezas de un color, separadas, para abrir directo en Bambu Studio.
-    escena = trimesh.Scene()
-    sitios = {'cuerpo': (-35, 35), 'tapa': (35, 35), 'chasis': (-35, -35), 'medallon-placa': (25, -30), 'medallon-fondo': (55, -30)}
-    for n, (x, y) in sitios.items():
-        mm = malla(impresion[n]); mm.apply_translation((128 + x, 128 + y, 0))
-        escena.add_geometry(mm, node_name=n, geom_name=n)
-    escena.export(os.path.join(AQUI, 'imprimir', 'testigo-un-color.3mf'))
 
     # Resumen
     print(f'Alto total {H:.1f} mm, diámetro {2 * R_EXT:.0f} mm')

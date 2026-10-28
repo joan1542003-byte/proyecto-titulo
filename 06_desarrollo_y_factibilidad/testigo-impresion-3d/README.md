@@ -1,6 +1,6 @@
 # Testigo de Relevo para impresión 3D
 
-**Versión:** 0, del 28 de octubre de 2026 (D-143). **Estado:** modelo listo para una prueba de calce; las medidas de la placa del Tag son supuestas y falta imprimirlo.
+**Versión:** 0, del 28 de octubre de 2026 (D-143). **Estado:** listo para imprimir la prueba de calce; las medidas de la placa del Tag son supuestas y nada se ha impreso todavía.
 
 El testigo es el objeto propio de Relevo: una carcasa impresa que lleva adentro la placa y la pila del Tag. El Tag sigue siendo el hardware —su Bluetooth, su botón y su pitido—, y la forma, el control y la marca pasan a ser diseño propio. Sigue la especificación de la memoria (capítulo 11): planta circular de 42 a 48 mm, de 12 a 16 mm de alto, sin frente, con el botón accesible y la pila cambiable.
 
@@ -38,52 +38,86 @@ Las medidas de la placa no se conocen. El vendedor da 38 × 7 mm para el Tag com
 
 ## Imprimir en la Bambu Lab X1 Carbon
 
-### 1. Prueba de calce (unos 20 minutos)
+### Qué imprimir
 
-Imprime primero `imprimir/prueba-de-calce/rosca.stl` con `imprimir/tapa.stl`, y `prueba-de-calce/medallon.stl` con las dos piezas del medallón:
+Son tres impresiones separadas. Cada una es un proyecto de Bambu Studio ya configurado, en [`imprimir/bambu/`](imprimir/bambu/):
 
-- **La tapa** debe entrar girando con la mano, sin forzar, y quedar a ras. Si cuesta, sube `holguras.rosca` a 0,4; si baila, bájala a 0,2.
-- **El medallón** debe moverse libre en su ventana, con una ranura pareja alrededor.
+| Orden | Archivo | Qué trae | Tiempo | PLA | Cuándo |
+| --- | --- | --- | --- | --- | --- |
+| 1 | [`1-prueba-de-calce.3mf`](imprimir/bambu/1-prueba-de-calce.3mf) | La boca del cuerpo con la rosca, la tapa, el techo con la ventana y el medallón | ≈ 25 min | ≈ 11 g | Primero: prueba la rosca y el medallón |
+| 2 | [`2-testigo-un-color.3mf`](imprimir/bambu/2-testigo-un-color.3mf) | Las cinco piezas del testigo, en un color | ≈ 32 min | ≈ 15 g | Después de medir la placa del Tag y volver a generar: hoy usa las medidas supuestas |
+| 3 | [`3-fondo-cuatro-colores.3mf`](imprimir/bambu/3-fondo-cuatro-colores.3mf) | El fondo del medallón con las cuatro luces en su color | ≈ 6 min | ≈ 6 g, con la purga | Opcional, con el AMS: reemplaza el fondo de un color |
 
-### 2. Ajustes en Bambu Studio
+Bambu Studio 2.8 calculó los tiempos y los gramos al laminar con los perfiles oficiales de la X1 Carbon.
+
+| 1. Prueba de calce | 2. Testigo | 3. Fondo en cuatro colores |
+| --- | --- | --- |
+| ![Plato 1](imprimir/bambu/1-prueba-de-calce.png) | ![Plato 2](imprimir/bambu/2-testigo-un-color.png) | ![Plato 3](imprimir/bambu/3-fondo-cuatro-colores.png) |
+
+En el plato 3, los colores van en la cara de abajo, contra la placa de impresión; desde arriba se ve solo la base.
+
+### Paso a paso
+
+1. **Prepara la impresora.**
+   - Pon la placa PEI texturizada, limpia con agua y jabón o con alcohol isopropílico.
+   - Carga el PLA: para los proyectos 1 y 2, el color del cuerpo (blanco o marfil mate); para el 3, amarillo, celeste, verde lima y rosado.
+2. **Abre el proyecto en Bambu Studio**, con doble clic o en Archivo > Abrir proyecto. Si pregunta, elige «Abrir como proyecto» y no «Importar geometría solo»: así trae los ajustes.
+3. **Revisa los ajustes**, arriba a la izquierda:
+   - impresora: «Bambu Lab X1 Carbon 0.4 nozzle»;
+   - placa: «Placa PEI texturizada» (*Textured PEI Plate*);
+   - filamento: «Bambu PLA Matte»;
+   - proceso: «0.12mm Fine», que aparece como modificado porque trae los ajustes del testigo.
+
+   No muevas ni gires las piezas: ya están orientadas.
+4. **Lamina** con «Laminar placa» (*Slice plate*), arriba a la derecha. Verás el tiempo y los gramos.
+5. **Imprime** con «Imprimir placa» (*Print plate*). En la ventana:
+   - elige tu impresora;
+   - asigna cada color del proyecto al casillero del AMS que tiene ese carrete; sin AMS, elige la bobina externa (solo sirve para los proyectos 1 y 2);
+   - deja marcada la «Nivelación de la cama»;
+   - pulsa «Enviar».
+6. **Retira las piezas** cuando la placa se enfríe: al doblarla un poco, se sueltan. No uses espátula sobre las caras texturadas.
+
+### Revisar la prueba de calce
+
+- **La tapa** debe entrar girando con la mano en la boca de prueba, sin forzar, y quedar a ras. Si cuesta, sube `holguras.rosca` a 0,4; si baila, bájala a 0,2.
+- **El medallón**, con la placa calada pegada sobre su fondo, debe moverse libre en la ventana del techo de prueba, con una ranura pareja alrededor.
+- Si cambias una holgura, vuelve a generar las piezas y los proyectos (abajo).
+
+### Ajustes que ya traen los proyectos
 
 | Ajuste | Valor | Por qué |
 | --- | --- | --- |
 | Impresora | Bambu Lab X1 Carbon, boquilla de 0,4 mm | La de serie. |
-| Placa | Textured PEI | Las caras que se ven se imprimen contra la placa y quedan con una textura mate fina. Con la placa lisa quedan brillantes. |
-| Filamento | PLA Matte o PLA Basic | Fácil de imprimir y rígido; el mate disimula las capas. |
-| Proceso | 0,12 mm Fine, o 0,16 mm Optimal | Roscas y bordes del logo más finos. |
-| Soportes | Apagados | Ninguna pieza los necesita. |
-| Paredes | 3 | Las paredes del cuerpo quedan macizas. |
+| Placa | PEI texturizada (*Textured PEI*) | Las caras que se ven se imprimen contra la placa y quedan con una textura mate fina. |
+| Filamento | Bambu PLA Matte | Fácil de imprimir y rígido; el mate disimula las capas. PLA Basic también sirve. |
+| Proceso | 0,12 mm Fine | Roscas y bordes del logo más finos. |
+| Paredes | 3, con el generador Arachne | Paredes macizas y tabiques del logo bien rellenos. |
 | Relleno | 15 %, giroide | Casi todo es pared. |
-| Costura | Alineada; si tu versión la tiene, costura en bisel (*scarf seam*) | Disimula la línea en la pared redonda. |
-| Borde adicional (*brim*) | No | Piezas chicas de PLA. |
-| Compensación de pata de elefante | La de fábrica | Mantiene pareja la ranura del halo. |
+| Soportes | Apagados | Ninguna pieza los necesita. |
+| Borde adicional (*brim*) | No | No deja marcas en las caras visibles. |
+| Costura | Alineada | Una sola línea en la pared redonda. |
+| Compensación de pata de elefante | La de fábrica, 0,15 mm | Mantiene pareja la ranura del halo. |
+| Torre de purga | Solo en el proyecto 3 | Limpia la boquilla en cada cambio de color. |
 
-Los archivos de `imprimir/` ya vienen orientados: no los gires. El cuerpo, la placa y el fondo del medallón van boca abajo, con su cara visible sobre la placa de impresión. [`testigo-un-color.3mf`](imprimir/testigo-un-color.3mf) trae las cinco piezas de un color en un solo plato. Bambu Studio te mostrará el tiempo y el filamento exactos.
+### Las piezas
 
-### 3. Piezas
+| Pieza | Sobre la placa de impresión | Color sugerido | PLA |
+| --- | --- | --- | --- |
+| Cuerpo | La cara de arriba, la de la ventana | Blanco o marfil mate | ≈ 6 g |
+| Medallón, placa calada | La cara del logo | El del cuerpo | ≈ 1 g |
+| Medallón, fondo | La cara que se ve por las luces | Un color o los cuatro de la marca | ≈ 1 g |
+| Chasis | La falda, la cara ancha de abajo | Cualquiera: no se ve | ≈ 3 g |
+| Tapa | La cara de afuera, la de la moneda | El del cuerpo | ≈ 4 g |
 
-| Pieza | Archivo | Sobre la placa de impresión | Color sugerido | PLA |
-| --- | --- | --- | --- | --- |
-| Cuerpo | [`cuerpo.stl`](imprimir/cuerpo.stl) | La cara de arriba, la de la ventana | Blanco o marfil mate | ≈ 6 g |
-| Medallón, placa calada | [`medallon-placa.stl`](imprimir/medallon-placa.stl) | La cara del logo | El del cuerpo | ≈ 1 g |
-| Medallón, fondo | [`medallon-fondo.stl`](imprimir/medallon-fondo.stl) o la carpeta de cuatro colores | La cara que se ve por las luces | Un color o los cuatro de la marca | ≈ 1 g |
-| Chasis | [`chasis.stl`](imprimir/chasis.stl) | La falda, la cara ancha de abajo | Cualquiera: no se ve | ≈ 3 g |
-| Tapa | [`tapa.stl`](imprimir/tapa.stl) | La cara de afuera, con la moneda | El del cuerpo | ≈ 4 g |
+Las piezas sueltas también están en [`imprimir/`](imprimir/) como STL, ya orientadas, por si quieres armar tus propios platos.
 
-### 4. El fondo en cuatro colores, con el AMS
+### Los cuatro colores
 
 ![El medallón](vistas/testigo-logo.png)
 
-1. En Bambu Studio, importa a la vez los cinco archivos de `imprimir/medallon-fondo-cuatro-colores/`.
-2. Cuando pregunte si son un solo objeto con varias partes, responde que sí.
-3. En la lista de objetos, asigna a cada luz su filamento: amarillo (tiempo), celeste (primer paso), verde lima (lugar) y rosado (decisión). Los de la marca son #FFD54A, #9DD6F4, #B3E788 y #F6A3CB. Elige los más parecidos que tengas; por ejemplo, de la línea PLA Matte.
-4. A `base` dale cualquiera de los cuatro, porque no se ve. Así bastan cuatro carretes en el AMS.
+El proyecto 3 asigna cada luz a su filamento: amarillo para el tiempo, celeste para el primer paso, verde lima para el lugar y rosado para la decisión. Los colores de la marca son #FFD54A, #9DD6F4, #B3E788 y #F6A3CB; usa los carretes más parecidos que tengas. La base usa el amarillo, porque no se ve: bastan cuatro casilleros del AMS. El color solo cambia en las tres primeras capas, y la purga gasta unos pocos gramos.
 
-El color solo cambia en las dos primeras capas: se gastan pocos gramos en la purga.
-
-**Sin AMS:** imprime `medallon-fondo.stl` en un solo color. Las cuatro luces se verán de ese color; por ejemplo, tinta (#141312) sobre el cuerpo marfil.
+**Sin AMS:** usa el fondo de un color que viene en el proyecto 2. Las cuatro luces se verán de ese color; por ejemplo, tinta (#141312) sobre el cuerpo marfil.
 
 ## Armar
 
@@ -119,7 +153,9 @@ El color solo cambia en las dos primeras capas: se gastan pocos gramos en la pur
 | [`testigo.py`](testigo.py) | El modelo paramétrico: lee `medidas.json` y escribe todas las piezas. |
 | [`medidas.json`](medidas.json) | Las medidas de la placa del Tag y las holguras, cada una con cómo medirla. |
 | [`relevo-logotipo.svg`](relevo-logotipo.svg) | La palabra «relevo», grabada bajo la tapa. Es copia del [logotipo oficial](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-logotipo.svg). |
-| [`imprimir/`](imprimir/) | Piezas orientadas para imprimir, la carpeta de cuatro colores y las pruebas de calce. |
+| [`imprimir/bambu/`](imprimir/bambu/) | Los tres proyectos de Bambu Studio, laminados, con su vista y un resumen de tiempo y gramos. |
+| [`preparar-impresiones.py`](preparar-impresiones.py) | Arma y lamina los tres proyectos con el Bambu Studio instalado y sus perfiles oficiales de la X1 Carbon. |
+| [`imprimir/`](imprimir/) | Las piezas sueltas en STL, ya orientadas, la carpeta de cuatro colores y las pruebas de calce. |
 | [`montaje/testigo-montado.3mf`](montaje/testigo-montado.3mf) | Todo armado, con la placa y la pila del Tag como volúmenes de referencia, para mirarlo en cualquier visor 3D. |
 | [`vistas.py`](vistas.py) y [`vistas/`](vistas/) | Las vistas de esta página, hechas con three.js en Chrome. |
 
@@ -137,7 +173,17 @@ python3 testigo.py
 python3 vistas.py
 ```
 
+```bash
+python3 preparar-impresiones.py
+```
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Proyectos de Bambu Studio
+
+- **Qué cambió:** se agregaron los tres proyectos laminados con Bambu Studio 2.8 y los perfiles oficiales de la X1 Carbon, el script que los genera y el paso a paso para imprimir. Se quitó el 3MF genérico de un color, que no traía ajustes.
+- **Cómo estaba antes:** había solo piezas en STL, un 3MF sin ajustes y una tabla de ajustes para copiar a mano.
+- **Por qué:** el autor instaló Bambu Studio y pidió los archivos que debe imprimir, uno por impresión, y cómo imprimirlos.
 
 ### 2026-10-28 — Versión 0
 

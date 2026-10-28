@@ -1841,11 +1841,17 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Logo:** calado en una placa de 1,4 mm sobre un fondo de color, y no grabado: grabado en una cara que se imprime contra la placa, el piso de cada luz queda en el aire. Usa la versión chica de la marca, con los colores y el orden de sus luces: cuatro colores con el AMS, o uno solo.
   - **Cierre:** tapa roscada de 2,5 mm de paso y flancos de 45°, que se abre con una moneda, como la del Tag. Se descartaron una tapa a presión, que se gasta, y un cierre de bayoneta, que necesita un resorte para no soltarse.
   - **Ajuste:** un chasis aparte es la única pieza que depende de la placa. El modelo es paramétrico ([`medidas.json`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/medidas.json)), y las medidas actuales de la placa son supuestas.
-  - **Impresión:** todas las piezas, en PLA y sin soportes, con las caras visibles contra la placa texturada.
-- **Verificación:** las piezas son sólidos cerrados; no chocan entre sí, ni en reposo ni con el medallón apretado; la rosca es derecha; ninguna superficie pasa de 47° desde la vertical, y ningún detalle del logo mide menos de 1,3 mm. No se ha impreso.
+  - **Impresión:** todas las piezas, en PLA y sin soportes, con las caras visibles contra la placa texturada. Se entregan como tres proyectos de Bambu Studio, laminados con los perfiles oficiales de la X1 Carbon (0,12 mm Fine y Bambu PLA Matte): la prueba de calce, el testigo en un color y el fondo del medallón en cuatro colores, con el AMS.
+- **Verificación:** las piezas son sólidos cerrados; no chocan entre sí, ni en reposo ni con el medallón apretado; la rosca es derecha; ninguna superficie pasa de 47° desde la vertical, y ningún detalle del logo mide menos de 1,3 mm. Bambu Studio 2.8 laminó los tres proyectos sin errores: unos 25, 32 y 6 minutos, con 11, 15 y 6 g de PLA. No se ha impreso.
 - **Documentos:** [testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-143, proyectos de Bambu Studio
+
+- **Qué cambió:** D-143 suma, en la impresión, los tres proyectos de Bambu Studio y, en la verificación, su laminado.
+- **Cómo estaba antes:** la impresión se describía solo con piezas en STL y una tabla de ajustes.
+- **Por qué:** el autor instaló Bambu Studio y pidió los archivos que debe imprimir.
 
 ### 2026-10-28 — D-143
 
