@@ -202,6 +202,7 @@
 | 28 oct. | Encargo | Pidió ordenar la memoria diseñada, con no más de 8 a 12 palabras por línea en los párrafos, y dársela en Affinity para modificarla; una portada más limpia y, por ahora, sin agradecimientos. Después pidió quitar del índice las tablas y las figuras, también por ahora. | [Memoria en A3](../08_memoria/memoria-a3/README.md) de 57 páginas: todo el texto en columnas de 118 mm, con unas 8 palabras por línea (antes, el resumen y el abstract tenían de 13 a 17, y una nota llegaba a 41); cada sección en página nueva; la tabla 7 partida en dos, porque se salía de la página; una portada con la institución, el logo, el título y los datos; sin agradecimientos y con un índice solo de secciones. Se entregó el IDML para Affinity, que en esta ronda no se abrió en Affinity. La pauta de la Biblioteca exige los índices de tablas y de figuras para el depósito. | D-145 |
 | 28 oct. | Encargo | Pidió re-redactar la introducción sin adelantarse a los hechos ni al índice: el contexto, el problema, la situación y cómo y con qué medios se busca resolverlo, en un texto para copiar y pegar. | Se entregó en la conversación una introducción de 639 palabras en siete párrafos (la de la v5 tiene 677): el teléfono y el ocio digital, el problema y sus dos formas, las interfaces que sostienen la continuidad, las herramientas que actúan sobre la actividad presente, la memoria prospectiva y los medios del proyecto (investigación, un sistema *phygital* y una prueba en el hogar). Quita las cifras de los métodos, el prototipo, la prueba con tres personas y el recorrido por capítulos. Conserva las dos formas del problema, que cita el capítulo 7, y solo cita referencias de la v5. El borrador v5 no se modificó: el autor pega el texto. | — |
 | 28 oct. | Entrega y encargo | Entregó sus apuntes de la revisión con los profesores y pidió entenderlos, preguntar las dudas y llevarlos a la lista de tareas. | [Por hacer](por-hacer.md#10-correcciones-de-la-revisión-con-los-profesores-28-de-octubre), tarea 10, con los apuntes ordenados en ocho grupos: la entrega de la memoria el viernes 30 y los criterios del Pase; las decisiones de diseño como centro de la memoria; los resultados como casos y no porcentajes, separados por persona; los arreglos de la aplicación —onboarding largo, pantalla del relevo cargada, pitidos del Tag, salida para quien no tiene objeto—; el objeto y el porta Tag; las entrevistas y su guion; el diseño editorial de la memoria, y la relectura del planteamiento del problema. Cinco apuntes quedaron marcados como «por aclarar» y se preguntaron al autor. | — |
+| 28 oct. | Aclaración | Respondió cuatro de las cinco dudas: 1920 × 1080 es el formato y cambia toda la diagramación; si no hay Tag al cumplirse el tiempo, la app debe intentar conectarse a uno antes de que termine y, si no lo logra, sonar en el teléfono; el texto del emoji debe preguntar con qué se identifica la persona; y la corrección de los promedios apunta a la decisión cromática, que debe usar la mediana. Aclaró además que la memoria del viernes es para que la revise el profesor, no la entrega, y que empieza a escribirla el 29. | [Por hacer](por-hacer.md#10-correcciones-de-la-revisión-con-los-profesores-28-de-octubre) al día: queda una sola duda, a qué anexo se refiere «el anexo 24». | — |
 
 ## Lo que muestra el registro
 
@@ -212,6 +213,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Respuestas del autor
+
+- **Qué cambió:** se registraron las respuestas a las dudas de los apuntes.
+- **Cómo estaba antes:** terminaba en la entrega de los apuntes.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-28 — Introducción re-redactada
 

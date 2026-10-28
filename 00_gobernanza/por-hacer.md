@@ -233,9 +233,9 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ### Lo primero
 
-> «El Pase, el criterio es la memoria: formalidad y fidelidad.» La memoria se entrega **el viernes**; las figuras se pueden desarrollar después.
+> «El Pase, el criterio es la memoria: formalidad y fidelidad.»
 
-- [ ] **Entregar la memoria el viernes 30 de octubre**, con la estructura completa y el texto cerrado. Las figuras pueden quedar para después.
+- [ ] **Mandar la memoria al profesor el viernes 30 de octubre para que la revise.** No es la entrega oficial, que sigue en diciembre. El autor empieza a escribirla el 29. Las figuras pueden desarrollarse después.
 - [ ] Revisar que la memoria cumpla formalidad —formato, citas, estructura— y fidelidad: que lo que dice sea lo que se hizo.
 
 ### Las decisiones de diseño son el centro
@@ -257,15 +257,15 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Separar los resultados por persona**: comprobar si la mitad de los casos corresponde a una sola, y decirlo.
 - [ ] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio.
 - [ ] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración.
-- [ ] **Media y mediana:** revisar dónde la memoria o las láminas usan un promedio. En la evidencia de color, la mitad asocia el rojo al amor y la mitad el rosa, de modo que el promedio esconde esa división. La mediana parte el total en dos y dice dónde cae el resultado. [POR ACLARAR: si la corrección apunta a la lámina del color o a los datos de la prueba.]
+- [ ] **La decisión cromática no se apoya en promedios.** La corrección apunta al color: la mitad asocia el rojo al amor y la otra mitad el rosa, así que el promedio esconde esa división. Revisar el [fundamento del color](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md), el [documento de marca](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las láminas de color: usar la mediana o mostrar la dispersión, en vez de la media.
 
 ### La aplicación, según lo que mostró la prueba
 
 - [ ] **El onboarding es muy largo**, aunque las tres personas lo completaron. Partirlo: una parte al empezar y el resto después.
 - [ ] **La pantalla del relevo tiene demasiada información.**
 - [ ] **Separar los problemas técnicos de los de usabilidad:** los pitidos del Tag son lo primero y están condicionados por el objeto comprado.
-- [ ] **«Elige tu emoji: ¿qué te identifica?»**: revisar esa pantalla del onboarding. [POR ACLARAR: si hay que quitarla, simplificarla o solo explicarla.]
-- [ ] **Qué pasa cuando se cumple el tiempo y no hay Tag.** [POR ACLARAR: el apunte queda cortado; falta qué debe ocurrir.]
+- [ ] **Cambiar el texto de «Elige tu emoji».** Que vas a elegir un emoji ya se ve; la pregunta debe ser por la persona: «¿Con qué te identificas?» o algo así.
+- [ ] **Si no hay Tag al cumplirse el tiempo, la aplicación debe intentar conectarse a uno antes de que el tiempo termine; si no lo consigue, suena en el teléfono.** Es un cambio de comportamiento, no solo de aviso.
 - [ ] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto.
 - [ ] **Registro de todas las pantallas de la aplicación.**
 - [ ] **Esquema de jerarquía y arquitectura de información** de la aplicación.
@@ -282,7 +282,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ### La memoria diseñada
 
-- [ ] **Tamaño de página 1920 × 1080.** [POR ACLARAR: hoy está en A3 horizontal; confirmar si reemplaza ese formato.]
+- [ ] **Rehacer la memoria diseñada en 1920 × 1080 píxeles.** Reemplaza el A3 horizontal, así que cambia toda la diagramación: la retícula, el largo de línea, el corte de las páginas y la generación del IDML.
 - [ ] **Subir un poco el tamaño de la tipografía** y **aumentar ligeramente el interlineado**; revisar interlineado y peso.
 - [ ] **Ninguna página puede quedar con un solo párrafo** ni con una columna sola y poco texto.
 - [ ] **Los anexos no se diseñan como la memoria**, pero deben estar bien presentados.
@@ -294,6 +294,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Respuestas del autor
+
+- **Qué cambió:** se cerraron cuatro de los cinco apuntes marcados «por aclarar»: el formato de 1920 × 1080, el intento de conexión al Tag antes de que termine el tiempo, el texto del emoji y la decisión cromática sin promedios. La memoria del viernes es para que la revise el profesor, no la entrega oficial.
+- **Cómo estaba antes:** esos puntos estaban marcados como dudas, y la tarea decía «entregar la memoria el viernes».
+- **Por qué:** el autor respondió las dudas.
 
 ### 2026-10-28 — Instrumento de cierre
 
