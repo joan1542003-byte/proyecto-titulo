@@ -66,7 +66,7 @@ const INDICE_DE_PIEZAS = false;
 // Estilos de párrafo (pt). Los mismos números sirven para el IDML, para medir y para el PDF.
 // Todo el aire vertical es «después»: así un subtítulo que cae arriba de una columna no arrastra espacio.
 const E = {
-  'Texto': { tamano: 14, interlineado: 21, despues: 10 },
+  'Texto': { tamano: 14, interlineado: 21, despues: 12 },
   'Subtítulo': { tamano: 18, interlineado: 23, estilo: 'SemiBold', despues: 7, seguimiento: -15, conSiguiente: 2 },
   'Subtítulo menor': { tamano: 14, interlineado: 21, estilo: 'SemiBold', despues: 4, conSiguiente: 2 },
   'Lista': { tamano: 14, interlineado: 21, despues: 6, sangria: 22, primera: -22 },
@@ -76,7 +76,7 @@ const E = {
   'Nota': { tamano: 11, interlineado: 15, color: 'Color/Gris' },
   'Celda': { tamano: 11, interlineado: 15 },
   'Celda suave': { tamano: 11, interlineado: 15, color: 'Color/Gris' },
-  'Celda cabecera': { tamano: 9, interlineado: 12, estilo: 'SemiBold', color: 'Color/Gris' },
+  'Celda cabecera': { tamano: 11, interlineado: 14, estilo: 'SemiBold', color: 'Color/Gris' },
   'Celda primera': { tamano: 11, interlineado: 15, estilo: 'SemiBold' },
   'Dato': { tamano: 44, interlineado: 46, estilo: 'SemiBold', seguimiento: -20 },
   'Referencia': { tamano: 11, interlineado: 15, despues: 6, sangria: 18, primera: -18 },
@@ -85,8 +85,8 @@ const E = {
   'Índice página': { tamano: 14, interlineado: 18, estilo: 'SemiBold', color: 'Color/Gris', alineacion: 'RightAlign' },
   'Índice menor': { tamano: 11, interlineado: 15, estilo: 'Medium' },
   'Índice menor página': { tamano: 11, interlineado: 15, estilo: 'SemiBold', color: 'Color/Gris', alineacion: 'RightAlign' },
-  'Encabezado': { tamano: 9, interlineado: 12, estilo: 'SemiBold', color: 'Color/Gris' },
-  'Encabezado sección': { tamano: 9, interlineado: 12, estilo: 'SemiBold', alineacion: 'RightAlign' },
+  'Encabezado': { tamano: 11, interlineado: 14, estilo: 'SemiBold', color: 'Color/Gris' },
+  'Encabezado sección': { tamano: 11, interlineado: 14, estilo: 'SemiBold', alineacion: 'RightAlign' },
   'Folio': { tamano: 11, interlineado: 14, estilo: 'SemiBold', alineacion: 'RightAlign' },
   'Portada institución': { tamano: 11, interlineado: 17, estilo: 'SemiBold' },
   'Portada título': { tamano: 44, interlineado: 47, estilo: 'SemiBold', seguimiento: -30 },
@@ -170,7 +170,7 @@ function bloques(lineas, estiloTexto = 'Texto') {
       } else if (/^!\[/.test(lineas[i])) {
         // Fotografías: ![pie](ruta relativa a la memoria), varias en una línea.
         f.fotos = [...lineas[i].matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)].map((m) => ({ pie: m[1], src: path.relative(AQUI, path.join(path.dirname(FUENTE), m[2])) }));
-        f.descripcion = ''; i++;
+        f.descripcion = ''; f.columna = f.fotos.length === 1 && /figuras\/fuentes\//.test(f.fotos[0].src); i++;   // la portada de una fuente va en una columna
       } else {
         f.descripcion = lineas[i].trim().replace(/^\[FIGURA POR INSERTAR: |\]$/g, ''); i++;
       }
@@ -223,8 +223,8 @@ const CSS_E = Object.entries(E).map(([n, e], i) => `.e${i}{font-size:${e.tamano}
 const CSS_PIEZAS = `.n{padding-right:3%}
 .cir{flex:none;width:9.5mm;height:9.5mm;border-radius:50%;background:#141312;color:#F7F4F0;display:flex;align-items:center;justify-content:center;font-size:10pt;font-weight:600;line-height:1}
 .cir svg{width:5.6mm;height:5.6mm}
-.fic{flex:none;width:8.5mm;height:8.5mm;border-radius:2.8mm;background:#EEE9E3;display:flex;align-items:center;justify-content:center;font-size:9pt;font-weight:600;line-height:1}
-.pil{display:inline-flex;flex:none;align-items:center;height:6.4mm;padding:0 3.2mm;border-radius:3.2mm;border:.3mm solid #141312;font-size:9pt;font-weight:600;line-height:1;white-space:nowrap}
+.fic{flex:none;width:8.5mm;height:8.5mm;border-radius:2.8mm;background:#EEE9E3;display:flex;align-items:center;justify-content:center;font-size:11pt;font-weight:600;line-height:1}
+.pil{display:inline-flex;flex:none;align-items:center;height:8.6mm;padding:0 4.4mm;border-radius:4.3mm;border:.3mm solid #141312;font-size:12pt;font-weight:600;line-height:1;white-space:nowrap}
 .pil.lleno{background:#141312;color:#fff}.pil.hueco{border:.3mm dashed #6E6964;color:#6E6964}.pil.blanca{background:#fff;border-color:#fff}.pil.clara{background:#fff;border-color:#E4DED6}.pil.amarilla{background:#F4E496;border-color:#F4E496}
 .chip{width:6.4mm;height:6.4mm;border-radius:50%;border:.3mm solid #141312;display:flex;align-items:center;justify-content:center;font-size:9pt;font-weight:600;line-height:1}
 .rot{display:flex;align-items:center;gap:3.5mm;margin-bottom:5mm}.rot .tp{flex:1}
@@ -270,7 +270,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .rama .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:#EEE9E3}.rama .cuad svg{width:6mm;height:6mm}
 .fig4{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr .9fr;gap:3.5mm}
 .etapa{background:#fff;border-radius:6mm;padding:6mm;display:grid;gap:3mm;align-content:start;font-size:11pt;line-height:15pt}
-.etapa b{font-size:14pt;line-height:18pt}.etapa .dia{font-size:9pt;line-height:12pt;font-weight:600;color:#6E6964}
+.etapa b{font-size:14pt;line-height:18pt}.etapa .dia{font-size:11pt;line-height:14pt;font-weight:600;color:#6E6964}
 .etapa ul{display:grid;gap:1.4mm;list-style:none}.etapa li{position:relative;padding-left:4mm}
 .etapa li::before{content:"";position:absolute;left:0;top:2.1mm;width:1.5mm;height:1.5mm;border-radius:50%;background:#141312}
 .etapa.inicio{background:${rgb('Lima')}}.etapa.cierre{background:${rgb('Rubor')}}
@@ -301,16 +301,23 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .prs{display:grid;gap:3mm}.prs-f{display:grid;grid-template-columns:9.5mm 1fr auto 46mm;align-items:center;column-gap:7mm;background:#fff;border-radius:5mm;padding:5mm 7mm 5mm 5mm}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
 .prs-p{display:flex;gap:2.2mm}.prs-p span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-p span.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
 .prs-ley{display:flex;gap:9mm;margin-top:2mm;font-size:11pt;line-height:15pt;color:#6E6964}.prs-ley span{display:inline-flex;align-items:center;gap:2.4mm}.prs-ley i{width:5mm;height:5mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-ley i.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
+.fot.grande.nat img{max-height:165mm}
+.fl{align-self:center;justify-self:center;width:6mm;height:6mm;color:#6E6964;margin-top:-10mm}.fl svg{width:100%;height:100%}
+.fig2.flujo{grid-template-columns:49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm;justify-content:stretch}.fig2.flujo .fl{margin-top:-12mm}
+.fot.flujo{column-gap:2.5mm}.fot.flujo img{border-radius:3.5mm}
+.fcol{display:flex;flex-direction:column;gap:3mm}.fcol .rot{margin-bottom:0}.fcol img{display:block;max-width:100%;max-height:92mm;width:auto;align-self:flex-start;border:.3mm solid #E4DED6}
+.brs{display:grid;gap:4mm}.brs-g{display:grid;gap:3mm;padding:6mm}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
+.brs-b{height:6mm;background:#EEE9E3;border-radius:3mm;overflow:hidden}.brs-b span{display:block;height:100%;background:#141312;border-radius:3mm}
 .pend{border:.5mm dashed #6E6964;border-radius:6mm;padding:10mm 12mm;min-height:60mm;width:${DOBLE}mm;display:grid;align-content:center;justify-items:start;gap:4mm;background:rgba(255,255,255,.5);font-size:14pt;line-height:20pt;color:#6E6964}
 .fondo{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
 .panel{width:${COL}mm;border-radius:9mm;padding:9mm 9mm 9.5mm;display:flex;flex-direction:column;position:relative;border:.3mm solid rgba(20,19,18,.06);overflow:hidden}.panel>*{position:relative}.panel>.fondo{position:absolute}
 .panel>.pm{position:absolute;right:9mm;top:9mm;width:11mm;height:11mm}.panel .pm svg{width:100%;height:100%;display:block}
-.panel .pn{font-size:150pt;line-height:.82;font-weight:600;letter-spacing:-.06em;margin:16mm 0 0 -1.5mm;font-feature-settings:"tnum"}
+.panel .pn{font-size:60pt;line-height:.9;font-weight:600;letter-spacing:-.04em;margin:12mm 0 0 -.5mm;font-feature-settings:"tnum"}
 .panel.corto .pn{margin-top:4mm}
-.panel .pt{font-size:28pt;line-height:31pt;font-weight:600;letter-spacing:-.03em;margin-top:8mm}
+.panel .pt{font-size:40pt;line-height:43pt;font-weight:600;letter-spacing:-.03em;margin-top:6mm}
 .panel .ph{flex:1}
 .panel ol{list-style:none;margin-top:auto;padding-top:8mm;display:grid;gap:2.2mm}
-.panel li{display:flex;align-items:center;gap:3.5mm;background:rgba(255,255,255,.9);border-radius:5.4mm;padding:2.2mm 4.5mm 2.2mm 2.2mm;font-size:11pt;line-height:14pt;font-weight:600}
+.panel li{display:flex;align-items:center;gap:3.5mm;background:rgba(255,255,255,.9);border-radius:5.4mm;padding:2.4mm 4.5mm 2.4mm 2.2mm;font-size:13pt;line-height:16pt;font-weight:600}
 .frase{width:${COL}mm;border-radius:7mm;padding:6.5mm 7.5mm 8mm;position:relative;overflow:hidden;border:.3mm solid rgba(20,19,18,.06)}.frase>*{position:relative}.frase>.fondo{position:absolute}
 .frase .n{margin-top:4.5mm}
 .idx{display:grid;grid-template-columns:${COL}mm ${COL}mm;column-gap:${MED}mm;align-items:start}
@@ -391,7 +398,7 @@ const ICONOS = [
   [/^Tag con pila/, 'tag'], [/^Teléfono Android/, 'telefono'], [/^Servicio remoto/, 'enviar'], [/^Placas/, 'maqueta'],
 ];
 // Cifras: el icono y el color del papel que cumple cada dato en el sistema («un color, un papel»).
-const ROL_DATO = [[/primer paso/, 'primer-paso', 'Cielo'], [/sonido|sonó|suena/, 'suena', 'Durazno'], [/en casa|lugar/, 'lugar', 'Lima'], [/empezado|empezó/, 'empece', 'Rubor'], [/tiempo/, 'tiempo', 'Amarillo'], [/./, 'estrella', 'Lila']];
+const ROL_DATO = [[/^personas|personas que/, 'perfil', 'Lila'], [/primer paso/, 'primer-paso', 'Cielo'], [/sonido|sonó|suena/, 'suena', 'Durazno'], [/en casa|lugar/, 'lugar', 'Lima'], [/empezado|empezó/, 'empece', 'Rubor'], [/tiempo/, 'tiempo', 'Amarillo'], [/./, 'estrella', 'Lila']];
 
 /** Una pieza es un trozo de página compuesto en Chrome: su fondo va al IDML como PDF y sus textos, vivos encima. */
 function pieza(id, ancho, armar) {
@@ -408,7 +415,7 @@ function pieza(id, ancho, armar) {
 function tipoFigura(b) {
   if (b.fotos) return 'fotos';
   const d = b.descripcion;
-  return /^esquema de/.test(d) ? 'esquema' : /^cronología/.test(d) ? 'cronologia' : /^línea de tiempo de la prueba aplicada/.test(d) ? 'prueba'
+  return /^gráfico de barras/.test(d) ? 'barras' : /^esquema de/.test(d) ? 'esquema' : /^cronología/.test(d) ? 'cronologia' : /^línea de tiempo de la prueba aplicada/.test(d) ? 'prueba'
     : /^lámina de identidad/.test(d) ? 'identidad' : /^resultados por persona/.test(d) ? 'personas'
     : /datos en tarjetas/.test(d) ? 'datos' : /^diagrama/.test(d) ? 'diagrama' : /capturas/.test(d) ? 'capturas' : /^línea de tiempo/.test(d) ? 'tiempo' : 'foto';
 }
@@ -436,6 +443,7 @@ function cuerpoFlotante(b, T, ancho) {
   if (b.tipo === 'prueba') return pruebaAplicada(b, T);
   if (b.tipo === 'identidad') return identidad(T);
   if (b.tipo === 'personas') return personas(b, T);
+  if (b.tipo === 'barras') return barras(b, T);
   if (b.tipo === 'foto') return `<div class="pend"><span class="pil amarilla">Fotografía pendiente</span><p>${h(mayus(b.descripcion))}.</p></div>`;
   if (/^Participantes/.test(b.titulo)) return fichasPersonas(b, T);
   if (b.filas[0].slice(1).every((c) => /^[A-Z]\. /.test(c))) return matriz(b, T);
@@ -517,7 +525,7 @@ function fichasDatos(b, T) {
 
 /** Diagrama del sistema: seis nodos con el icono y el color de su papel y tres salidas del mismo peso. */
 function diagrama() {
-  const nodos = [['estrella', 'Lila', 'Intención personal'], ['primer-paso', 'Cielo', 'Primer paso'], ['lugar', 'Lima', 'Lugar elegido'], ['tiempo', 'Amarillo', 'Condición configurada'], ['suena', 'Durazno', 'Pulso ambiental'], ['decidir', 'Rubor', 'Decisión de la persona']];
+  const nodos = [['perfil', 'Lila', 'Intención personal'], ['primer-paso', 'Cielo', 'Primer paso'], ['lugar', 'Lima', 'Lugar elegido'], ['tiempo', 'Amarillo', 'Condición configurada'], ['suena', 'Durazno', 'Pulso ambiental'], ['decidir', 'Rubor', 'Decisión de la persona']];
   const ramas = [['empece', 'Considerar la intención'], ['telefono', 'Seguir en el teléfono'], ['silenciar', 'Silenciar la señal']];
   return `<div class="blanco"><div class="fig1"><div class="fig1-fila">${nodos.map(([i, c, t], k) => `${k ? `<span class="flecha">${svgIcono('siguiente')}</span>` : ''}<div class="nodo"><span class="cuad" style="background:${rgb(c)}">${svgIcono(i)}</span><span>${t}</span></div>`).join('')}</div>` +
     `<div class="fig1-llave"></div><div class="fig1-ramas">${ramas.map(([i, t]) => `<div class="rama"><span class="cuad">${svgIcono(i)}</span><span>${t}</span></div>`).join('')}</div></div></div>`;
@@ -535,15 +543,46 @@ function lineaDeTiempo() {
 /** Las seis pantallas de «Preparar», con su número y su nombre. */
 function capturas(b) {
   const nombres = [...b.descripcion.matchAll(/«([^»]+)»/g)].map((m) => m[1]);
-  return `<div class="fig2">${[1, 2, 3, 4, 5, 6].map((i) => `<div><img src="figuras/preparar-p${i}.png" alt=""><div class="pie">${circulo(i)}<span>${h(nombres[i - 1] || '')}</span></div></div>`).join('')}</div>`;
+  return `<div class="fig2 flujo">${[1, 2, 3, 4, 5, 6].map((i) => `${i > 1 ? `<span class="fl">${svgIcono('siguiente')}</span>` : ''}<div><img src="figuras/preparar-p${i}.png" alt=""><div class="pie">${circulo(i)}<span>${h(nombres[i - 1] || '')}</span></div></div>`).join('')}</div>`;
 }
 
 /** Fotografías en fila, del mismo alto, cada una con su letra y su pie. */
+function medidas(src) {
+  const d = fs.readFileSync(path.join(AQUI, src));
+  if (d.readUInt32BE(0) === 0x89504e47) return [d.readUInt32BE(16), d.readUInt32BE(20)];
+  for (let i = 2; i < d.length - 9;) {
+    if (d[i] !== 0xff) { i++; continue; }
+    const m = d[i + 1], largo = d.readUInt16BE(i + 2);
+    if (m >= 0xc0 && m <= 0xc3) return [d.readUInt16BE(i + 7), d.readUInt16BE(i + 5)];
+    i += 2 + largo;
+  }
+  return [3, 4];
+}
+const proporcion = (f) => { const [a, b] = medidas(f.src); return a / b; };
 function fotos(b, T) {
   const natural = b.fotos.some((f) => !/figura-4/.test(f.src));          // capturas y modelos: enteros, sin recortar
-  return `<div class="fot${natural ? ' nat' : ''}" style="grid-template-columns:repeat(${b.fotos.length},1fr)">${b.fotos.map((f) => {
+  const flujo = /^(Flujo|Contar, sonar)/.test(b.titulo), grande = b.fotos.length <= 2;    // un flujo lleva flechas; dos láminas, más alto
+  // Con imágenes enteras, cada columna mide según la proporción de su imagen: todas quedan del mismo alto.
+  const fr = b.fotos.map((f) => (natural ? `${proporcion(f).toFixed(3)}fr` : '1fr'));
+  const cols = flujo ? fr.map((x, i) => (i ? `6mm ${x}` : x)).join(' ') : fr.join(' ');
+  return `<div class="fot${natural ? ' nat' : ''}${grande ? ' grande' : ''}${flujo ? ' flujo' : ''}" style="grid-template-columns:${cols}">${b.fotos.map((f, i) => {
     const m = f.pie.match(/^([a-z0-9]+)\. (.*)$/);
-    return `<div><img src="${h(f.src.split(path.sep).join('/'))}" alt=""><div class="pie">${circulo(m ? m[1] : '')}${T('Celda', m ? m[2] : f.pie)}</div></div>`;
+    return `${flujo && i ? `<span class="fl">${svgIcono('siguiente')}</span>` : ''}<div><img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? `<div class="pie">${circulo(m ? m[1] : '')}${T('Celda', m ? m[2] : f.pie)}</div>` : ''}</div>`;
+  }).join('')}</div>`;
+}
+
+/** Figura de una columna: una imagen con su rótulo, su título, su pie y su nota (APA 7), dentro del texto. */
+function piezaColumna(b) {
+  const f = b.fotos[0];
+  return pieza(`figura-${b.n}`, COL, (T) => `<div class="fcol"><div class="rot"><span class="pil lleno">Figura ${b.n}</span></div>${T('Título de pieza', b.titulo)}<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}${b.nota ? T('Nota', b.nota) : ''}</div>`);
+}
+
+/** Gráfico de barras horizontales, uno por grupo: «Título | etiqueta: valor, etiqueta: valor». */
+function barras(b, T) {
+  const grupos = partes(b).map(([tit, datos]) => [tit, datos.split(', ').map((d) => { const m = d.match(/^(.*): (\d+)$/); return [m[1], +m[2]]; })]);
+  return `<div class="brs" style="grid-template-columns:repeat(${grupos.length},1fr)">${grupos.map(([tit, datos]) => {
+    const max = Math.max(...datos.map((d) => d[1]));
+    return `<div class="blanco brs-g">${T('Celda primera', tit)}${datos.map(([et, v]) => `<div class="brs-f">${T('Celda', et)}<div class="brs-b"><span style="width:${(v / max) * 100}%"></span></div>${T('Celda primera', String(v))}</div>`).join('')}</div>`;
   }).join('')}</div>`;
 }
 
@@ -630,8 +669,10 @@ auras([['panel-3', 700, 1530, 3], ['panel-4', 700, 1530, 4]]);
 // Piezas fijas y piezas flotantes.
 const flot = cuerpo.flatMap((c) => c.bloques.filter((b) => b.flotante));
 flot.forEach((b) => {
+  if (b.columna) { b.tipo = 'columna'; b.rotulo = `Figura ${b.n}`; b.pieza = piezaColumna(b); return; }
   b.tipo = b.flotante === 'tabla' ? 'tabla' : tipoFigura(b);
-  b.angosta = b.tipo === 'fotos' || (b.flotante === 'tabla' && b.filas[0].length <= 3 && !/^Participantes/.test(b.titulo));   // dos columnas de ancho; título y nota en la tercera
+  b.ancha = b.tipo === 'fotos' && (/^Flujo/.test(b.titulo) || (b.fotos.some((f) => !/figura-4/.test(f.src)) && b.fotos.reduce((t, f) => t + proporcion(f), 0) >= 2.4));
+  b.angosta = (b.tipo === 'fotos' && !b.ancha) || (b.flotante === 'tabla' && b.filas[0].length <= 3 && !/^Participantes/.test(b.titulo));   // dos columnas de ancho; título y nota en la tercera
   b.pieza = piezaFlotante(b);
 });
 const frases = cuerpo.flatMap((c) => c.bloques.filter((b) => b.frase));
@@ -687,8 +728,8 @@ flot.forEach((b) => { if (b.pieza.alto > BOTTOM - TOP) console.log(`Atención: l
 let paginas = [];                                      // páginas del cuerpo
 const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, flot: [], paneles: [], frases: [], marcos: [], rotulo: null, rotuloPieza: null }); return paginas[i]; };
 const colTop = (i) => TOP + (pag(i).banda ? pag(i).banda + AIRE_BANDA : 0);
-let topes = new Map();                                 // página → alto máximo de sus columnas, para equilibrar el final de una sección
-const altoCol = (i) => Math.min(BOTTOM - colTop(i), topes.has(i) ? topes.get(i) : Infinity);
+let topes = new Map();                                 // sección → página (desde su apertura) y alto máximo de sus columnas, para equilibrar su final
+const altoCol = (i, c) => { const t = c && topes.get(c); return Math.min(BOTTOM - colTop(i), t && i - c.pagina === t.rel ? t.alto : Infinity); };
 const soloPiezas = (i) => pag(i).banda > 0 && BOTTOM - colTop(i) < MIN_TEXTO;
 let cur = { p: 0, k: 0 };                              // la primera columna libre
 const normalizar = () => { while (soloPiezas(cur.p)) { cur.p++; cur.k = 0; } };
@@ -726,7 +767,7 @@ function componer(c) {
 
   c.marcos = [];
   let y = 0, marco = null, previo = null;              // y: puntos desde arriba de la columna
-  const cap = () => altoCol(cur.p) / PT;
+  const cap = () => altoCol(cur.p, c) / PT;
   const abrir = () => {
     if (marco) return;
     marco = { c, p: cur.p, k: cur.k, y0: y, usado: 0, cont: [] };
@@ -735,11 +776,11 @@ function componer(c) {
   const saltar = () => { marco = null; previo = null; siguiente(); y = 0; };
   const textos = c.bloques.filter((b) => b.partes && !b.frase);
   for (const b of c.bloques) {
-    if (b.flotante) { programar(b, cur.p, c); continue; }
-    if (b.frase) {
+    if (b.flotante && !b.columna) { programar(b, cur.p, c); continue; }
+    if (b.frase || b.columna) {
       const a = b.pieza.alto / PT; const antes = y > 0 ? 5 : 0;
       if (y + antes + a > cap() + 0.5) saltar(); else y += antes;
-      pag(cur.p).frases.push({ b, k: cur.k, y: colTop(cur.p) + y * PT }); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c;
+      pag(cur.p).frases.push({ b, k: cur.k, y: colTop(cur.p) + y * PT }); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c; b.pagina = cur.p;
       marco = null; previo = null; y += a + 16; continue;
     }
     const L = E[b.estilo].interlineado, despues = E[b.estilo].despues || 0, n = b.lineas;
@@ -811,7 +852,7 @@ for (let pasada = 0; pasada < 3; pasada++) {
   cuerpo.forEach((c) => {
     // Solo las últimas de la sección, de atrás hacia adelante, para que las tablas y figuras no cambien de orden.
     const ultima = Math.max(...c.marcos.map((m) => m.p));
-    const fl = c.bloques.filter((b) => b.flotante);
+    const fl = c.bloques.filter((b) => b.flotante && !b.columna);
     let i = fl.length - 1;
     for (; i >= 0; i--) {
       const b = fl[i];
@@ -833,7 +874,7 @@ const colaDe = (c) => { const q = Math.max(...c.marcos.map((m) => m.p)); const m
   let cambio = false;
   cuerpo.forEach((c) => {
     const { q, ms, total } = colaDe(c);
-    const b = c.bloques.filter((x) => x.flotante).pop();                 // solo la última, para no alterar el orden
+    const b = c.bloques.filter((x) => x.flotante && !x.columna).pop();                 // solo la última, para no alterar el orden
     if (b && !b.continua && b.pagina < q && ms.length === 1 && total < 10 * 21 * PT && q > c.pagina && b.pieza.alto + AIRE_BANDA + MIN_TEXTO <= BOTTOM - TOP && !pag(q).banda) { b.rel = q - c.pagina; cambio = true; }
   });
   if (cambio) pgAnexos = repartir();
@@ -841,20 +882,35 @@ const colaDe = (c) => { const q = Math.max(...c.marcos.map((m) => m.p)); const m
 // Después, la última página de cada sección reparte su texto en columnas del mismo alto: una columna sola se abre
 // en dos o en tres, para que ninguna quede sola con poco texto.
 {
-  const nuevos = new Map();
-  cuerpo.forEach((c) => {
+  const LINEA = 21 * PT;
+  const deseado = (c) => {
     const { q, ms, total } = colaDe(c); const lleno = BOTTOM - colTop(q);
-    const lineas = total / (21 * PT), libres = q === c.pagina ? 2 : 3;   // en la página de apertura, el panel ocupa una columna
+    const lineas = total / LINEA, libres = q === c.pagina ? 2 : 3;   // en la página de apertura, el panel ocupa una columna
     const k = ms.length > 1 ? ms.length : lineas >= 9 ? libres : lineas >= 4 ? 2 : 1;
-    if (k > 1) nuevos.set(q, Math.min(lleno, total / k + 2 * 21 * PT));
-  });
-  topes = nuevos; pgAnexos = repartir();
-  // Si un tope empujó texto a una página nueva, ese tope se quita y se reparte de nuevo.
-  for (let intento = 0; intento < 3; intento++) {
-    const colas = new Set(cuerpo.map((c) => colaDe(c).q));
-    const malos = [...topes.keys()].filter((q) => !colas.has(q));
-    if (!malos.length) break;
-    malos.forEach((q) => topes.delete(q)); pgAnexos = repartir();
+    return k > 1 ? { rel: q - c.pagina, alto: Math.min(lleno, total / k + LINEA) } : null;   // una línea de holgura; si no alcanza, se afloja
+  };
+  // El tope de cada sección se guarda respecto de su primera página, para que no cambie si otra sección se alarga.
+  topes = new Map(); cuerpo.forEach((c) => { const d = deseado(c); if (d) topes.set(c, d); });
+  pgAnexos = repartir();
+  // Si un tope empuja texto a una página nueva, se afloja dos líneas y se reparte de nuevo; si ya no puede
+  // aflojarse, se quita. Una sección cuya última página cambió, y que no tiene tope, recibe uno.
+  const quitados = new Set();
+  for (let intento = 0; intento < 10; intento++) {
+    let cambio = false;
+    for (const [c, t] of [...topes]) {
+      const rel = colaDe(c).q - c.pagina;
+      if (rel === t.rel) continue;
+      const lleno = BOTTOM - colTop(c.pagina + t.rel);
+      if (rel > t.rel && t.alto + 2 * LINEA < lleno) topes.set(c, { rel: t.rel, alto: t.alto + 2 * LINEA });
+      else { topes.delete(c); quitados.add(c); }
+      cambio = true;
+    }
+    cuerpo.forEach((c) => {
+      if (topes.has(c) || quitados.has(c)) return;
+      const d = deseado(c); if (d && colaDe(c).ms.length === 1) { topes.set(c, d); cambio = true; }
+    });
+    if (!cambio) break;
+    pgAnexos = repartir();
   }
 }
 pag(pgAnexos).rotulo = { titulo: 'Anexos' };
@@ -1011,7 +1067,7 @@ chrome(['--no-pdf-header-footer', '--run-all-compositor-stages-before-draw', '--
 temporales.forEach((f) => { if (fs.existsSync(f)) fs.unlinkSync(f); });
 
 if (process.env.DIAG) flot.forEach((b) => console.log('PIEZA', `${b.flotante[0]}${b.n}${b.continua ? 'b' : ''}`, 'página', numPag(b.pagina), 'rel', b.rel || '-', 'alto', Math.round(b.pieza.alto)));
-if (process.env.DIAG) paginas.forEach((pg, q) => console.log('PAG', numPag(q), 'banda', Math.round(pg.banda), pg.flot.map((b) => `${b.flotante[0]}${b.n}:${Math.round(b.pieza.alto)}`).join(' '), '| paneles', pg.paneles.map((x) => x.k).join(','), '| marcos', pg.marcos.map((m) => `${m.k != null ? m.k : 'L'}@${Math.round(m.y)}+${Math.round(m.alto)}`).join(' ')));
+if (process.env.DIAG) paginas.forEach((pg, q) => console.log('PAG', numPag(q), 'banda', Math.round(pg.banda), pg.flot.map((b) => `${b.flotante[0]}${b.n}:${Math.round(b.pieza.alto)}`).join(' '), '| paneles', pg.paneles.map((x) => x.k).join(','), '| marcos', pg.marcos.map((m) => `${m.k != null ? m.k : 'L'}@${Math.round(m.y)}+${Math.round(m.alto)}/${Math.round(m.usado * PT)}`).join(' ')));
 const nMarcos = cuerpo.reduce((n, c) => n + c.marcos.length, 0);
 console.log(`Listo: ${hojas.length} páginas · ${historiaDe.size} historias enlazadas en ${nMarcos} marcos · ${flot.length} tablas y figuras · IDML, HTML y PDF.`);
 cuerpo.forEach((c) => console.log(`  ${String(numPag(c.pagina)).padStart(2)}  ${c.n != null ? c.n + '. ' : ''}${c.titulo}`));

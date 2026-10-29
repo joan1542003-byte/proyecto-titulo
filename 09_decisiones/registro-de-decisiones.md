@@ -1886,7 +1886,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 18 482 palabras en los capítulos 1 a 14 (19 527 con las páginas iniciales); 66 páginas, sin avisos del generador; 8,4 palabras por línea en promedio; ninguna sección termina en una columna sola; cada cita del texto tiene su referencia y cada referencia se cita.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-147 — La memoria muestra sus fuentes, el flujo y las pantallas de la aplicación, y tablas de decisiones y de la referencia de iOS
+
+- **Fecha:** 2026-10-28.
+- **Estado:** hecha en el borrador v6 y en la memoria en 1920 × 1080. El IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** al revisar la v6 diseñada, el autor pidió revisar que cada referencia se use; más figuras, imágenes y tablas de formato común para lo denso; la imagen de los libros y artículos importantes del marco teórico; alternar columnas de texto e imagen; números de apertura más chicos y títulos más grandes; rótulos más grandes; un ícono de persona para las personas; una memoria centrada en cómo diseñó, con la referencia de iOS fundamentada desde la interacción y la usabilidad; mejoras a partir de los datos de las personas; solo mencionar la semana con el teléfono, que termina el 30 de octubre, y no adelantar anexos ni capítulos.
+- **Decisión:**
+  - **Fuentes con imagen:** siete figuras de una columna con la portada o el encabezado —título y autores, nunca el texto— de Ryan y Deci (2000), Norman (1988/1990), Kirsh (1995), Weiser y Brown (1997), Gembali (2023), Sanders y Stappers (2012) y Kolko (2011), cada una con su nota APA ([fuentes](../08_memoria/figuras/fuentes/LEEME.md)).
+  - **Figuras y tablas de formato común:** un gráfico de barras de la encuesta; el flujo de la aplicación, con flechas; el registro de las 39 pantallas de la versión 2.32 en cuatro láminas de *wireframes*; la Tabla 5, que resume las decisiones (ámbito, decisión, por qué y lo descartado), y la Tabla 6, que relaciona lo tomado de iOS con las leyes de Jakob, Fitts y Hick, el umbral de Doherty y el efecto estética-usabilidad (Yablonski, s. f.).
+  - **Datos de las personas:** la Tabla 10 suma tres mejoras propuestas —un límite inicial breve, excluir horas del día y preparar el relevo para otro momento— y cómo se calló la señal.
+  - **Semana con el teléfono:** una frase y una etapa «en curso» en la Figura 24.
+  - **Remisiones:** cada anexo que la memoria usa se nombra una vez; los capítulos por venir se anuncian como «más adelante».
+  - **Referencias:** 95, todas citadas; salen MCI Electronics (micro:bit) y MechatronicStore, con la fila de las placas que no se compraron.
+  - **Composición:** el número de apertura baja de 150 a 60 pt y el título sube de 28 a 40 pt (a escala de composición); rótulos y cabeceras de 9 a 11 pt y cápsulas de 12 pt; más aire entre párrafos; el ícono de perfil para las personas; imágenes del mismo alto en columnas proporcionales; flechas en los flujos; figuras anchas a todo el ancho; el final de cada sección se reparte aunque las tablas muevan su última página.
+  - **Extensión:** para caber en el límite se condensaron pasajes de los capítulos 7, 10, 11, 12 y 13, sin perder cifras ni citas, y el mapa de servicio perdió su columna de estado.
+- **Alternativas descartadas:** diagramas con formas propias, que el autor pidió evitar; mostrar páginas interiores de los libros, que reproduciría su texto; informar la semana con el teléfono antes de su cierre.
+- **Verificación:** 18 778 palabras en los capítulos 1 a 14 (19 977 con las páginas iniciales y los índices); cada cita tiene su referencia y cada referencia se cita; 75 páginas, sin avisos del generador; ninguna sección termina en una columna sola; el IDML enlaza sus 68 imágenes.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-147
+
+- **Qué cambió:** se registró D-147.
+- **Cómo estaba antes:** la última decisión era D-146.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-28 — D-146
 

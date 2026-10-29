@@ -229,7 +229,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ## 10. Correcciones de la revisión con los profesores (28 de octubre)
 
-**Estado:** en curso: el borrador v6 y la memoria en 1920 × 1080 recogen la mayor parte (D-146). **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
+**Estado:** en curso: el borrador v6 y la memoria en 1920 × 1080 recogen la mayor parte (D-146 y D-147). **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
 
 ### Lo primero
 
@@ -243,10 +243,10 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 > «Enfatizar las decisiones de diseño: es incluso lo más relevante en la memoria.» «El diseño, toda la decisión es mía.»
 
 - [x] **Justificar cada decisión de diseño**, no solo describirla: por qué se eligió, entre qué alternativas y con qué fundamento. Hecho en el capítulo 11 de la v6 (D-146).
-- [x] **El parecido con Apple:** un profesor señaló que la aplicación tiene una inspiración fuerte de Apple. Es una decisión del autor; hay que escribir por qué. Escrito en el capítulo 11 de la v6, con el pedido del autor del 27 de septiembre y un marcador para sus razones.
+- [x] **El parecido con Apple:** un profesor señaló que la aplicación tiene una inspiración fuerte de Apple. Es una decisión del autor; hay que escribir por qué. Escrito en el capítulo 11 de la v6, con el pedido del autor del 27 de septiembre, la Tabla 6, que relaciona cada elemento tomado de iOS con su principio de interacción o usabilidad (D-147), y un marcador para sus razones.
 - [x] **La identidad y el diseño van en la memoria**, no solo en el repositorio. Hecho en la v6.
 - [x] **Mostrar las fuentes primarias propias**: las entrevistas, la encuesta y la prueba son del autor y deben verse como tales. Hecho en los capítulos 7 y 13 de la v6.
-- [x] **Contar cómo se desarrolló el proyecto**, el proceso y no solo el resultado. Figura 3 y Tabla 5 de la v6.
+- [x] **Contar cómo se desarrolló el proyecto**, el proceso y no solo el resultado. Figura 10 y Tabla 7 de la v6, y la Tabla 5, que resume las decisiones de diseño (D-147).
 - [x] **Al escribir, releer lo ya escrito y preguntarse qué corresponde decir ahora**, para no repetir. Aplicado en la v6.
 
 ### Resultados: casos, no porcentajes
@@ -255,8 +255,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **Informar los resultados como casos y recuentos**, nunca en porcentajes, porque son tres personas. Hecho en la v6.
 - [x] **Separar los resultados por persona**: comprobar si la mitad de los casos corresponde a una sola, y decirlo. Hecho en la v6: la primera persona aporta cinco de los diez comienzos. Falta el detalle por persona de las demás respuestas.
-- [x] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio. Figura 13 de la v6.
-- [ ] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración. La v6 cuenta la iteración (Tabla 8); los cambios de la aplicación siguen pendientes.
+- [x] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio. Figura 26 de la v6.
+- [ ] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración. La v6 cuenta la iteración (Tabla 10), con tres mejoras propuestas a partir de los datos (D-147); los cambios de la aplicación siguen pendientes.
 - [ ] **La decisión cromática no se apoya en promedios.** La corrección apunta al color: la mitad asocia el rojo al amor y la otra mitad el rosa, así que el promedio esconde esa división. Revisar el [fundamento del color](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md), el [documento de marca](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las láminas de color: usar la mediana o mostrar la dispersión, en vez de la media. Corregido en el capítulo 11 de la v6; faltan los documentos de marca y el Anexo H.
 
 ### La aplicación, según lo que mostró la prueba
@@ -267,8 +267,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Cambiar el texto de «Elige tu emoji».** Que vas a elegir un emoji ya se ve; la pregunta debe ser por la persona: «¿Con qué te identificas?» o algo así.
 - [ ] **Si no hay Tag al cumplirse el tiempo, la aplicación debe intentar conectarse a uno antes de que el tiempo termine; si no lo consigue, suena en el teléfono.** Es un cambio de comportamiento, no solo de aviso.
 - [ ] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto.
-- [ ] **Registro de todas las pantallas de la aplicación.** Existe en `06_desarrollo_y_factibilidad/app-android/textos/pantallas-de-la-app-3.3.md`; falta llevarlo a un anexo.
-- [x] **Esquema de jerarquía y arquitectura de información** de la aplicación. Figura 7 de la v6.
+- [x] **Registro de todas las pantallas de la aplicación.** En la memoria: las 39 pantallas de la versión 2.32, en *wireframes*, en las Figuras 16 a 19 de la v6, y el flujo de la aplicación en la Figura 12 (D-147).
+- [x] **Esquema de jerarquía y arquitectura de información** de la aplicación. Figura 15 de la v6.
 
 ### El objeto
 
@@ -294,6 +294,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Figuras, tablas y referencias de la v6
+
+- **Qué cambió:** la tarea 10 marca el registro de pantallas como hecho, suma la Tabla 6 a la referencia de iOS y las mejoras propuestas a la iteración, y corrige los números de figuras y tablas de la v6.
+- **Cómo estaba antes:** el registro de pantallas estaba pendiente para un anexo, y los números eran los de la primera versión de la v6.
+- **Por qué:** pedido del autor del 28 de octubre de 2026, de noche (D-147).
 
 ### 2026-10-28 — Memoria v6
 
