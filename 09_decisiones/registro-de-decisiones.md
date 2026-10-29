@@ -1935,7 +1935,34 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 17 995 palabras en los capítulos 1 a 14 (19 115 con las páginas iniciales y los índices); 72 páginas, sin avisos del generador; ninguna columna con una o dos líneas y ningún final de párrafo solo en otra página; 8,1 palabras por línea en promedio; el IDML enlaza sus 59 imágenes. Quedan dos páginas con poco texto: el final del capítulo 6, junto a la Figura 3, y el final del glosario.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-150 — La memoria cuenta la prueba como fue, con menos tecnicismos, y sus tablas vuelven a las fichas blancas
+
+- **Fecha:** 2026-10-29.
+- **Estado:** hecha en el borrador v6 y en la memoria en 1920 × 1080. El IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** al revisar la cuarta ronda (D-149), el autor entregó sus «Notas memoria». El plan de desarrollo y la validación estandarizada no describían lo que se hizo: durante dos semanas las personas usaron el Tag a su gusto, cuando quisieron, y la última semana la señal llegó solo como notificación en el teléfono. Pidió además una factibilidad menos densa —sin tecnicismos sin explicar, citas en serie, «testigo», frases como «en la arquitectura vigente», el repositorio, las versiones, la normativa de equipos de alcance reducido ni «el panel privado del investigador», porque el autor es quien escribe—, con tablas o una figura para la fabricación, la mantención y los costos; quitar del estado del arte el párrafo de fechas y aclaraciones; presentar al usuario y la razón del rango de 19 a 30 años; estudiar APA 7 y presentar a los autores en vez de encadenar citas; un marco teórico que no adelante juicios contra el proyecto y un cierre real; explicar el nombre y la tipografía más allá de «es redonda»; menos imágenes de pantallas; un orden de lectura sin saltos, sobre todo en las páginas con una tabla; tablas como antes, sin sobrediseño; ninguna ficha dentro de otra de distinto color; el IDML para Affinity; las tipografías usadas, y eliminar las fuentes que no se usan.
+- **Decisión:**
+  - **La prueba, como fue:** el capítulo 13 cuenta dos semanas con el Tag, usado cuando cada persona quiso, y una semana con la señal solo en el teléfono, que termina el 30 de octubre. El resumen, el abstract, la formulación, las conclusiones y el glosario dicen lo mismo: la prueba compara el objeto con el teléfono, y el lugar neutro queda para una etapa con más personas.
+  - **Factibilidad:** el capítulo 12 se reescribe en tecnología; fabricación, mantenimiento y costos; del prototipo al producto, y límites, con el presupuesto en la Tabla 4 y las etapas en la Figura 16. Los términos técnicos se dicen en palabras, el iPhone se descarta en una frase y salen el repositorio, las versiones y la normativa.
+  - **Lenguaje:** «testigo» pasa a «hardware de Relevo» o «el Tag»; los datos de la prueba son «la base de datos que recopila la aplicación»; salen fechas, disculpas y aclaraciones de método que la pauta no pide, y las frases que adelantaban un límite del proyecto.
+  - **Capítulos 5 a 8:** el estado del arte abre con lo que se comparó y para qué; el capítulo 7 abre con «A quién se dirige»: personas de 19 a 30 años, un rango acotado que permite comparar experiencias parecidas y que podría ampliarse; los estudios se presentan en una frase antes de su dato, y el marco teórico cierra con la idea de diseño que dejan sus tres ámbitos.
+  - **Identidad:** el nombre se explica por lo que significa un relevo y por ser breve y claro en español; la tipografía, por qué Chillax Semibold para el logotipo y por qué Instrument Sans para todo lo demás.
+  - **Pantallas:** una sola figura, el flujo de preparar a decidir, con seis capturas.
+  - **Referencias:** 77, todas citadas; salen las tres que ya no se citaban.
+  - **Tablas:** cada fila en una ficha blanca, como antes, con números sueltos y sin círculos ni cápsulas; el total, con un borde. El título va arriba y la nota abajo; ninguna tabla lleva el título al lado. Una tabla que no cabe en una página llena la primera con todas las filas posibles, y esa página no lleva texto; la continuación lleva al menos dos filas, la nota y el texto que sigue.
+  - **Fondos:** el fondo blanco queda para los esquemas y gráficos; las fotos, las capturas, las cifras, la identidad y la línea de la prueba van sobre el papel con sus propias fichas blancas. Ninguna ficha ni cuadro de color va dentro de otra ficha.
+  - **Orden de lectura:** debajo de una tabla o figura, el texto ocupa al menos siete líneas por columna; si no caben, la página queda para la pieza. Las figuras de la encuesta van junto a la encuesta; la Figura 20 pasa a dos columnas de ancho; la iteración y su tabla cierran el capítulo 13, y los capítulos 8, 12 y 14 se acortan para no dejar finales sueltos.
+  - **Tipografías:** la memoria usa Instrument Sans en cinco estilos —Regular, Italic, Medium, SemiBold y SemiBold Italic—; salen del repositorio Bold, Bold Italic y Medium Italic, y el IDML declara solo los cinco. El logotipo, en Chillax Semibold, va como vector.
+- **Alternativas descartadas:** partir las tablas por la mitad, que dejaba texto entre sus partes; poner el título de las tablas angostas a su lado, que desordenaba la lectura; quitar el fondo blanco a todas las figuras, que confundía los esquemas con el texto.
+- **Verificación:** 16 642 palabras en los capítulos 1 a 14 (17 750 con las páginas iniciales y los índices); 77 referencias, todas citadas, y cada cita con su referencia; 17 marcadores «Confirmar»; 68 páginas, sin avisos del generador; 8,1 palabras por línea en promedio en el texto; el IDML enlaza sus 57 imágenes y declara solo los cinco estilos.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md), [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) y [letra](../08_memoria/memoria-1920x1080/letra/LEEME.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — D-150
+
+- **Qué cambió:** se registró D-150.
+- **Cómo estaba antes:** la última decisión era D-149.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-28 — D-149
 

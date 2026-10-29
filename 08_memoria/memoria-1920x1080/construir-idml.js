@@ -56,7 +56,7 @@ const Y_ENCABEZADO = 8, Y_FOLIO = H - 15;
 const colX = (k) => MX + k * (COL + MED);
 const AIRE_BANDA = 12;                      // entre las tablas o figuras de arriba y el texto
 const AIRE_PIEZAS = 12;                     // entre dos tablas o figuras de una misma página
-const MIN_TEXTO = 48;                       // con menos alto libre, la página queda solo para tablas y figuras
+const MIN_TEXTO = 58;                       // con menos alto libre (siete líneas y media), la página queda solo para tablas y figuras
 const HOLGURA = 2.4;                        // cada marco mide lo que ocupa su texto más esto: no cabe otra línea
 // Por ahora, a pedido del autor (28 de octubre): sin agradecimientos y un índice solo de secciones. La Biblioteca
 // exige los índices de tablas y de figuras para el depósito: se vuelven a poner con INDICE_DE_PIEZAS = true.
@@ -234,11 +234,11 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .nota{margin-top:4mm;max-width:${COL}mm}.nota.dos{max-width:${DOBLE}mm}.n.dos{column-count:2;column-gap:${MED}mm}
 .ang{display:grid;grid-template-columns:${DOBLE}mm 1fr;column-gap:${MED}mm;align-items:start}
 .ang .rot{margin-bottom:0}
-.tb{display:flex;flex-direction:column;border-top:.5mm solid #141312;border-bottom:.5mm solid #141312}
-.cab,.fila{display:grid;column-gap:7mm}
-.cab{padding:2.8mm 0 2.4mm;align-items:end;border-bottom:.3mm solid #141312}
-.fila{padding:3mm 0 3.2mm;align-items:start}.fila+.fila{border-top:.2mm solid #DDD7CF}
-.fila.total{border-top:.3mm solid #141312}
+.tb{display:flex;flex-direction:column;gap:1.8mm}
+.cab,.fila{display:grid;column-gap:7mm;padding-left:5mm;padding-right:6mm}
+.cab{padding-bottom:1mm;align-items:end}
+.fila{background:#fff;border-radius:5mm;padding-top:3.6mm;padding-bottom:3.8mm;align-items:start}
+.fila.total{box-shadow:inset 0 0 0 .35mm #141312}
 .pri{display:flex;gap:4mm;align-items:flex-start;min-width:0}
 .pri .tx{display:flex;flex-direction:column;gap:.5mm;min-width:0;flex:1}
 .c{min-width:0}
@@ -254,7 +254,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .mz .ma{padding:3.2mm 0 3.2mm 1mm;border-top:.25mm solid #CCC6BE}
 .mz .mc{background:#fff;padding:3.2mm 5mm;border-top:.25mm solid #E9E4DD}.mz .mc.p{border-top-color:#fff}
 .mz .mu{border-radius:0 0 5mm 5mm;padding-bottom:4mm}
-.dt{display:grid;gap:4.5mm}.fb{background:#fff;border-radius:6mm;padding:5mm}.fcol .fb{padding:4mm}.fb .dc,.fb .blanco,.fb .idn-luz{background:#F7F4F0}.fcol .dt{grid-template-columns:1fr 1fr !important;gap:3mm}.fcol .dc{padding:4.5mm}.fcol .dc .cir{margin-bottom:5mm}.fcol .bar,.fcol .pts{margin-top:4mm}
+.dt{display:grid;gap:4.5mm}.fb{background:#fff;border-radius:6mm;padding:6mm}.fcol .fb{padding:5mm}.fcol .dt{grid-template-columns:1fr 1fr !important;gap:3mm}.fcol .dc{padding:4.5mm}.fcol .dc .cir{margin-bottom:5mm}.fcol .bar,.fcol .pts{margin-top:4mm}
 .dc{background:#fff;border-radius:6mm;padding:6mm 6.5mm 6.5mm;display:flex;flex-direction:column}
 .dc .cir{margin-bottom:9mm}.dc .dx{flex:1;margin-top:2mm}
 .bar{display:flex;align-items:flex-end;gap:.45mm;height:9mm;margin-top:7mm}
@@ -268,11 +268,11 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .cuad{flex:none;width:16mm;height:16mm;border-radius:5mm;display:flex;align-items:center;justify-content:center}.cuad svg{width:8.6mm;height:8.6mm}
 .flecha{width:6mm;height:6mm;color:#6E6964;flex:none;margin-top:5mm}.flecha svg{width:100%;height:100%}
 .fig1-llave{height:54mm;border:.4mm solid #141312;border-left:0;border-radius:0 4mm 4mm 0;margin-left:-2mm}
-.fig1-ramas{display:grid;gap:3mm}
-.rama{display:flex;align-items:center;gap:3.5mm;background:#F7F4F0;border-radius:5mm;padding:2.6mm 4mm 2.6mm 2.6mm;font-size:12.5pt;line-height:16pt;font-weight:600}
-.rama .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:#EEE9E3}.rama .cuad svg{width:6mm;height:6mm}
+.fig1-ramas{display:grid;gap:0}.rama+.rama{border-top:.25mm solid #E4DED6}
+.rama{display:flex;align-items:center;gap:3.5mm;padding:1.6mm 0;font-size:12.5pt;line-height:16pt;font-weight:600}
+.rama .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:none}.rama .cuad svg{width:6mm;height:6mm}
 .fig4{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr .9fr;gap:3.5mm}
-.etapa{background:none;border:.35mm solid #CCC6BE;border-radius:6mm;padding:6mm;display:grid;gap:3mm;align-content:start;font-size:12.5pt;line-height:17pt}
+.etapa{background:#fff;border-radius:6mm;padding:6mm;display:grid;gap:3mm;align-content:start;font-size:12.5pt;line-height:17pt}
 .etapa b{font-size:14pt;line-height:18pt}.etapa .dia{font-size:11pt;line-height:14pt;font-weight:600;color:#6E6964}
 .etapa ul{display:grid;gap:1.4mm;list-style:none}.etapa li{position:relative;padding-left:4mm}
 .etapa li::before{content:"";position:absolute;left:0;top:2.1mm;width:1.5mm;height:1.5mm;border-radius:50%;background:#141312}
@@ -286,11 +286,11 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .fig2 .pie{display:flex;align-items:center;gap:2.4mm;margin-top:3.5mm;font-size:12.5pt;line-height:16pt;font-weight:600}
 .fig2 .cir{width:6.6mm;height:6.6mm;font-size:9pt}
 .fot{display:grid;gap:5mm}
-.fot img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:5.5mm}
+.fot img{width:100%;height:112mm;object-fit:cover;display:block;border-radius:5.5mm}
 .fot .pie{display:flex;align-items:flex-start;gap:2.4mm;margin-top:3.5mm}.fot .pie .n{flex:1;padding-top:.3mm}
 .fot .cir{width:6.6mm;height:6.6mm;font-size:9pt}
-.fot.nat img{aspect-ratio:auto;object-fit:contain;width:auto;max-width:100%;max-height:118mm;margin:0 auto;border:.3mm solid #E4DED6;background:#fff}
-.esq{display:grid;gap:4mm;align-items:stretch}.esq-c{display:flex;flex-direction:column;background:#F7F4F0;border-radius:4mm;padding:5mm 5mm 2mm}
+.fot.nat img{height:auto;aspect-ratio:auto;object-fit:contain;width:auto;max-width:100%;max-height:118mm;margin:0 auto;border:.3mm solid #E4DED6;background:#fff}
+.esq{display:grid;gap:9mm;align-items:start}.esq-c{display:flex;flex-direction:column}.fcol .esq-c+.esq-c{border-top:.25mm solid #E4DED6;padding-top:4mm}
 .esq-h{display:flex;gap:3mm;align-items:baseline;border-bottom:.35mm solid #141312;padding:0 0 3mm}.esq-h .tx{display:flex;flex-direction:column;gap:.6mm;min-width:0;flex:1}
 .esq-l{display:flex;flex-direction:column;margin-top:1mm}.esq-i{padding:1.8mm 0;border-top:.2mm solid #DDD7CF}.esq-i:first-child{border-top:0}
 .fcol .esq{grid-template-columns:1fr !important;gap:5mm}
@@ -300,9 +300,9 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .idn{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:4mm}
 .idn-logo{grid-row:1 / span 2;display:flex;align-items:center;justify-content:center;padding:14mm}.idn-logo svg{width:100%;height:auto;display:block}
 .idn-luces{grid-column:2 / span 2;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
-.idn-luz{display:flex;gap:4mm;align-items:center;background:#fff;border-radius:5mm;padding:3.5mm}.idn-luz .tx,.idn-letra .tx{display:flex;flex-direction:column;gap:.6mm}
-.idn-letra{display:flex;gap:6mm;align-items:center}.idn-iconos{display:flex;flex-direction:column;gap:4mm}.idn-iconos .ics{display:flex;gap:2.4mm;flex-wrap:wrap}.idn-iconos .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:#EEE9E3}.idn-iconos .cuad svg{width:6.4mm;height:6.4mm}
-.prs{display:grid;gap:3mm}.prs-f{display:grid;grid-template-columns:7mm 1fr auto 46mm;align-items:center;column-gap:7mm;padding:4.5mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
+.idn-luz{display:flex;gap:4mm;align-items:center;background:#fff;border-radius:5mm;padding:3.5mm}.idn-luz .tx,.idn-letra .tx{display:flex;flex-direction:column;gap:.6mm;flex:1;min-width:0}
+.idn-letra{display:flex;gap:6mm;align-items:center}.idn-iconos{display:flex;flex-direction:column;gap:4mm}.idn-iconos .ics{display:flex;gap:2.4mm;flex-wrap:wrap}.idn-iconos .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:none}.idn-iconos .cuad svg{width:6.4mm;height:6.4mm}
+.prs{display:grid;gap:0}.prs-f{display:grid;grid-template-columns:7mm 1fr auto 46mm;align-items:center;column-gap:7mm;padding:3.2mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
 .prs-p{display:flex;gap:2.2mm}.prs-p span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-p span.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
 .prs-ley{display:flex;gap:9mm;margin-top:2mm;font-size:12pt;line-height:16pt;color:#6E6964}.prs-ley span{display:inline-flex;align-items:center;gap:2.4mm}.prs-ley i{width:5mm;height:5mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-ley i.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
 .fot.grande.nat img{max-height:165mm}
@@ -329,11 +329,12 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .pf-t{display:grid;gap:3mm}.pf-r{display:grid;grid-template-columns:6mm 1fr;column-gap:3mm;align-items:start}
 .pf-m{width:5mm;height:5mm;border-radius:50%;margin-top:.8mm}.pf-m.m0{background:#F7F4F0;border:.4mm solid #141312}.pf-m.m1{background:${rgb('Cielo')}}.pf-m.m2{background:${rgb('Durazno')};border:.4mm solid #141312}
 .at{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}.fcol .at{grid-template-columns:1fr}
-.at-p{background:#F7F4F0;border-radius:4mm;padding:4.5mm 5mm;display:grid;gap:2.6mm}
+.at-p{display:grid;gap:2.6mm}.fcol .at-p+.at-p{border-top:.25mm solid #E4DED6;padding-top:4mm}
 .at-h{display:flex;gap:3mm;align-items:baseline;border-bottom:.35mm solid #141312;padding-bottom:2.4mm}
 .at-f{display:grid;grid-template-columns:5mm 1fr;column-gap:3mm;row-gap:.4mm;align-items:start}.at-f>.n{grid-column:2}
 .at-m{grid-row:1 / span 2;width:4mm;height:4mm;border-radius:50%;margin-top:1.2mm}.at-m.c{background:#141312}.at-m.p{background:${rgb('Cielo')};border:.35mm solid #141312}
 .m2{display:flex;flex-direction:column;gap:3mm}
+.fb:has(>.m2){width:${DOBLE}mm}.fb:has(>.m2) .m2-c{min-height:18mm}                                         /* la matriz ancha ocupa dos columnas, no tres */
 .m2-g{display:grid;grid-template-columns:1fr 1fr;border-top:.35mm solid #141312;border-left:.35mm solid #141312}
 .m2-c{display:flex;flex-direction:column;gap:1.2mm;padding:4mm;border-right:.35mm solid #141312;border-bottom:.35mm solid #141312;min-height:30mm}
 .m2-c.fuerte{background:${rgb('Lima')}}
@@ -356,7 +357,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .fic.vacia{background:#fff;border:.3mm solid #E4DED6}
 .anx{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm ${MED}mm;align-items:start}
 .anexo{display:grid;grid-template-columns:12mm 1fr;gap:4mm;background:#fff;border-radius:5.5mm;padding:4.5mm 5mm 5mm 4.5mm}
-.anexo .fic{width:12mm;height:12mm;border-radius:3.8mm;background:${rgb('Lila')};font-size:14pt}
+.anexo .fic{width:12mm;font-size:14pt}                                  /* la letra sola: sin cuadro de color dentro de la ficha blanca */
 .portada{width:${W}mm;height:${H}mm;position:relative}
 .portada .p-inst{position:absolute;left:22mm;top:18mm;width:160mm}
 .portada .p-marca{position:absolute;left:22mm;top:44mm;width:130mm}.portada .p-marca svg{width:100%;height:auto;display:block}
@@ -449,15 +450,19 @@ function tipoFigura(b) {
     : /datos en tarjetas/.test(d) ? 'datos' : /^diagrama/.test(d) ? 'diagrama' : /capturas/.test(d) ? 'capturas' : /^línea de tiempo/.test(d) ? 'tiempo' : 'foto';
 }
 
-/** Tabla o figura completa: rótulo en cápsula, título, cuerpo y nota. Las tablas angostas llevan título y nota al lado. */
+// Figuras que van sobre un fondo blanco: los esquemas y gráficos. Las fotos, las capturas, las tarjetas de datos, la
+// identidad y la línea de la prueba ya tienen sus propias fichas blancas sobre el papel: no van una dentro de otra.
+const CON_FONDO = ['esquema', 'barras', 'mapa', 'matriz2', 'atencion', 'diagrama', 'cronologia', 'personas'];
+
+/** Tabla o figura completa: rótulo y título arriba, cuerpo y nota. */
 function piezaFlotante(b) {
   const nombre = `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}${b.continua ? ' (continuación)' : ''}`;
-  return pieza(`${b.flotante}-${b.n}${b.continua ? '-2' : ''}`, ANCHO, (T) => {
+  return pieza(`${b.flotante}-${b.n}${b.continua ? '-2' : ''}${b.prueba ? '-k' + b.prueba : ''}`, ANCHO, (T) => {
     const rot = `<div class="rot">${T('Rótulo', nombre)}${T('Título de pieza', b.titulo, 'tp')}</div>`;
     // La nota va en una columna de 118 mm, como el texto; si es larga, en dos.
     const larga = b.nota && !b.angosta && plano(b.nota).length > 240;
     const nota = b.nota ? `<div class="nota${larga ? ' dos' : ''}">${T('Nota', b.nota, larga ? 'dos' : '')}</div>` : '';
-    const fondo = (html) => (b.flotante === 'figura' && !['fotos', 'capturas'].includes(b.tipo) ? `<div class="fb">${html}</div>` : html);
+    const fondo = (html) => (b.flotante === 'figura' && CON_FONDO.includes(b.tipo) ? `<div class="fb">${html}</div>` : html);
     if (b.angosta) return `<div class="ang"><div>${fondo(cuerpoFlotante(b, T, DOBLE))}</div><div>${rot}${nota}</div></div>`;
     return rot + fondo(cuerpoFlotante(b, T, ANCHO)) + nota;
   });
@@ -497,8 +502,8 @@ function tablaFichas(b, T, ancho) {
     return max <= 14 ? 0.8 : Math.max(1, Math.sqrt(med) / 3.2);
   });
   if (version) peso[0] = 0.72;
-  const propio = version ? 0 : 13.5;                                   // el círculo y su aire
-  const util = ancho - 0.7 - 4.5 - 6 - 7 * (cols - 1) - propio;
+  const propio = 0;                                                    // la primera columna ya no lleva círculo
+  const util = ancho - 5 - 6 - 7 * (cols - 1) - propio;
   const suma = peso.reduce((x, y) => x + y, 0);
   const anchos = peso.map((p, k) => Math.round(((p / suma) * util + (k === 0 ? propio : 0)) * 100) / 100);
   const rejilla = `style="grid-template-columns:${anchos.map((w) => w + 'mm').join(' ')}"`;
@@ -608,7 +613,7 @@ function fotos(b, T) {
 /** Figura de una columna: una imagen con su rótulo, su título, su pie y su nota (APA 7), dentro del texto. */
 function piezaColumna(b) {
   const f = b.fotos && b.fotos[0];
-  const cuerpo = (T) => (f ? `<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : `<div class="fb">${cuerpoFlotante(b, T, COL)}</div>`);
+  const cuerpo = (T) => (f ? `<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, COL)}</div>` : cuerpoFlotante(b, T, COL));
   return pieza(`figura-${b.n}`, COL, (T) => `<div class="fcol"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
 }
 
@@ -740,7 +745,7 @@ flot.forEach((b) => {
   if (b.columna) { if (!b.fotos) b.tipo = tipoFigura(b); b.rotulo = `Figura ${b.n}`; b.pieza = piezaColumna(b); return; }
   b.tipo = b.flotante === 'tabla' ? 'tabla' : tipoFigura(b);
   b.ancha = b.tipo === 'fotos' && (/^Flujo/.test(b.titulo) || (b.fotos.some((f) => !/figura-4/.test(f.src)) && b.fotos.reduce((t, f) => t + proporcion(f), 0) >= 2.4));
-  b.angosta = (b.tipo === 'fotos' && !b.ancha) || ['mapa', 'periferia', 'matriz2'].includes(b.tipo) || (b.flotante === 'tabla' && b.filas[0].length <= 3 && !/^Participantes/.test(b.titulo));   // dos columnas de ancho; título y nota en la tercera
+  b.angosta = false;   // el título va arriba y la nota abajo, como en una tesis
   b.pieza = piezaFlotante(b);
 });
 const frases = cuerpo.flatMap((c) => c.bloques.filter((b) => b.frase));
@@ -771,15 +776,26 @@ const alto = medir(medibles);
 const lineasDe = (b) => Math.max(1, Math.round(alto[b.id] / PT / E[b.estilo].interlineado));
 [...cuerpo, ...entradas].forEach((c) => c.bloques.forEach((b) => { if (b.id) b.lineas = lineasDe(b); }));
 [...flot, ...frases, { pieza: pPortada }, { pieza: pAnexos }].forEach((b) => { b.pieza.alto = alto[b.pieza.id]; b.pieza.donde = alto[b.pieza.id + '#'] || {}; });
-// Una tabla que no cabe en la página se parte en dos: la segunda parte repite la cabecera y lleva la nota.
+// Una tabla que no cabe en la página se parte en dos. La primera parte lleva todas las filas que caben y ocupa
+// su página sola, para que el texto no quede entre las dos partes; la segunda repite la cabecera, lleva al menos
+// dos filas y la nota, y deja sitio al texto debajo.
 const partidas = [];
+const largas = cuerpo.flatMap((c) => c.bloques.filter((b) => b.flotante === 'tabla' && !b.continua && b.pieza.alto > BOTTOM - TOP));
+const pruebas = largas.flatMap((b) => {
+  const [cab, ...filas] = b.filas; const out = [];
+  for (let k = filas.length - 2; k >= Math.ceil(filas.length / 2); k--) { const x = { ...b, filas: [cab, ...filas.slice(0, k)], todas: b.filas, prueba: k, origen: b }; delete x.nota; x.pieza = piezaFlotante(x); out.push(x); }
+  return out;
+});
+const altoPrueba = pruebas.length ? medir(pruebas.map((x) => x.pieza)) : {};
 cuerpo.forEach((c) => {
   for (let i = 0; i < c.bloques.length; i++) {
     const b = c.bloques[i];
-    if (b.flotante !== 'tabla' || b.continua || !(b.pieza.alto > BOTTOM - TOP)) continue;
-    const [cab, ...filas] = b.filas; const mitad = Math.ceil(filas.length / 2);
+    if (!largas.includes(b)) continue;
+    const [cab, ...filas] = b.filas;
+    const cabe = pruebas.find((x) => x.origen === b && altoPrueba[x.pieza.id] <= BOTTOM - TOP);
+    const mitad = cabe ? cabe.prueba : Math.ceil(filas.length / 2);
     const sigue = { ...b, filas: [cab, ...filas.slice(mitad)], todas: b.filas, desde: mitad, continua: true };
-    b.todas = b.filas; b.filas = [cab, ...filas.slice(0, mitad)]; delete b.nota;
+    b.todas = b.filas; b.filas = [cab, ...filas.slice(0, mitad)]; delete b.nota; b.sola = true;
     b.pieza = piezaFlotante(b); sigue.pieza = piezaFlotante(sigue);
     c.bloques.splice(i + 1, 0, sigue); flot.splice(flot.indexOf(b) + 1, 0, sigue); partidas.push(b, sigue);
     i++;
@@ -798,7 +814,7 @@ const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, flot: 
 const colTop = (i) => TOP + (pag(i).banda ? pag(i).banda + AIRE_BANDA : 0);
 let topes = new Map();                                 // sección → página (desde su apertura) y alto máximo de sus columnas, para equilibrar su final
 const altoCol = (i, c) => { const t = c && topes.get(c); return Math.min(BOTTOM - colTop(i), t && i - c.pagina === t.rel ? t.alto : Infinity); };
-const soloPiezas = (i) => pag(i).banda > 0 && BOTTOM - colTop(i) < MIN_TEXTO;
+const soloPiezas = (i) => pag(i).sola || (pag(i).banda > 0 && BOTTOM - colTop(i) < MIN_TEXTO);
 let cur = { p: 0, k: 0 };                              // la primera columna libre
 const normalizar = () => { while (soloPiezas(cur.p)) { cur.p++; cur.k = 0; } };
 const siguiente = () => { cur.k++; if (cur.k === 3) { cur.k = 0; cur.p++; } normalizar(); };
@@ -809,12 +825,13 @@ function ubicar(b, q, seccion) {
   const pg = pag(q);
   b.pagina = q; b.y = TOP + (pg.banda ? pg.banda + AIRE_PIEZAS : 0);
   pg.banda = b.y - TOP + b.pieza.alto; pg.flot.push(b); if (!pg.rotulo) pg.rotuloPieza = seccion;
+  if (b.sola) pg.sola = true;                         // la primera parte de una tabla partida va sola
 }
 /** Una tabla o figura va arriba de la página siguiente a su mención; si no cabe con las que ya hay, en la que sigue. */
 function programar(b, p, seccion) {
   if (b.reservada) { ultimaConPieza = Math.max(ultimaConPieza, b.pagina); return; }
   const a = b.pieza.alto; let q = Math.max(p + 1, ultimaConPieza);
-  while (pag(q).banda > 0 && pag(q).banda + AIRE_PIEZAS + a > BOTTOM - TOP) q++;
+  while (pag(q).sola || (pag(q).banda > 0 && pag(q).banda + AIRE_PIEZAS + a > BOTTOM - TOP)) q++;
   ubicar(b, q, seccion); ultimaConPieza = q;
 }
 
@@ -892,8 +909,9 @@ function componer(c) {
     }
   }
   // Una figura de una columna que quedó esperando al final de la sección va debajo del texto, si cabe, o arriba de la columna siguiente.
+  const libre = () => (BOTTOM - colTop(cur.p)) / PT;  // el alto entero de la columna: el final equilibrado limita solo al texto
   for (let vueltas = 0; espera.length && vueltas < 12; vueltas++) {
-    if (y + 5 + espera[0].pieza.alto / PT <= cap() + 0.5) { if (y > 0) y += 5; poner(espera.shift()); } else saltar();
+    if (y + 5 + espera[0].pieza.alto / PT <= libre() + 0.5) { if (y > 0) y += 5; poner(espera.shift()); } else saltar();
   }
   if (c.marcos.length) c.marcos[c.marcos.length - 1].ultimo = true;
   if (marco || y > 0) siguiente();

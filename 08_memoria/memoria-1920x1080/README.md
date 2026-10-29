@@ -1,8 +1,8 @@
 # Memoria en 1920 × 1080
 
-**Decisiones:** D-146, D-147, D-148 y D-149. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
+**Decisiones:** D-146 a D-150. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
 
-**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 72 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
+**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 68 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
 
 **Para editar en Affinity:** `memoria-relevo-1920x1080.idml`, que se abre en Affinity Publisher o InDesign. No se guarda en el repositorio, porque sus imágenes se enlazan con la ruta completa del computador donde se generó: se genera en la carpeta donde se va a trabajar. Antes, instala las tipografías de [`letra/estaticas/`](letra/estaticas/) (ver [letra](letra/LEEME.md)).
 
@@ -22,14 +22,15 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 | Escala completa | 14, 17, 19, 22, 28 y 44 pt en el cuerpo, las tablas y las figuras (la escala de la A3, por 22/14). |
 | Aperturas | Número de 94 pt en peso regular —el más liviano de Instrument Sans, que no tiene versión light— y título de 63 pt: manda el título. |
 | Rótulos | Como en una tesis: «Figura 1» o «Tabla 1» en negrita y el título en cursiva, debajo; nada en cápsulas. Cabeceras de tabla, encabezados y fechas de 17 pt. |
-| Tablas | Con filetes: uno grueso arriba y abajo, uno bajo la cabecera y uno fino entre filas. Sin fichas blancas ni círculos. |
-| Números y fondos | Números sueltos, sin círculos. Cada figura va sobre un fondo blanco que la separa del texto; adentro, las fichas toman el color del papel. Las tablas, sin fondo. |
+| Tablas | Como antes de D-148: cada fila en una ficha blanca, con números sueltos y sin círculos ni cápsulas; el total, con un borde. |
+| Números y fondos | Números sueltos, sin círculos. El fondo blanco queda para los esquemas y gráficos; las fotos, las capturas, las cifras, la identidad y la línea de la prueba van sobre el papel con sus propias fichas blancas. Ninguna ficha ni cuadro de color va dentro de otra ficha. |
 | Letra de figuras y tablas | 20 pt en celdas y rótulos de las figuras, 19 pt en las notas (antes, 17). |
 | Cortes | Un párrafo de cinco líneas o menos no se corta. Al cortar uno, quedan al menos tres líneas arriba y pasan al menos tres a la columna siguiente, o cuatro si la siguiente está en otra página. |
 | Secciones | Cada una abre en una página nueva, con su panel de aura en la primera columna. |
 | Final de cada sección | Su última página reparte el texto en columnas del mismo alto solo si cada una queda con ocho líneas o más; con menos texto, queda en una columna. Si la sección termina en un párrafo corto y tiene tablas o figuras, la última baja a esa página. |
-| Tablas y figuras | Arriba de la página, después de su lugar en el texto, en el orden en que aparecen. Una tabla más alta que la página se parte en dos y repite su cabecera. La nota va en una columna, o en dos si es larga. |
-| Figuras de una columna | Los esquemas breves y el gráfico de la encuesta van dentro del texto, siempre arriba de una columna: texto, figura, texto. |
+| Tablas y figuras | Arriba de la página, después de su lugar en el texto, en el orden en que aparecen, con el título arriba y la nota abajo. Una tabla más alta que la página llena la primera con todas las filas que caben, y esa página no lleva texto; la continuación repite la cabecera y lleva al menos dos filas y la nota. La nota va en una columna, o en dos si es larga. |
+| Orden de lectura | Debajo de una tabla o figura, el texto ocupa al menos siete líneas por columna; si no caben, la página queda para la pieza. Una figura de una columna que espera al final de un capítulo usa una columna libre de esa página. |
+| Figuras de una columna | Los esquemas breves (Figuras 1 a 4) van dentro del texto, siempre arriba de una columna: texto, figura, texto. |
 | Imágenes | Las imágenes enteras de una figura quedan del mismo alto, en columnas proporcionales; los flujos llevan flechas; las figuras anchas usan todo el ancho. Las personas llevan el ícono de perfil. |
 | Índice | Solo las secciones, por ahora (D-145). |
 | Portada | Institución, logo, título y datos; lo que falta confirmar, en gris. |
@@ -38,18 +39,17 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 
 El generador dibuja once tipos de figura, que leen su contenido de la propia v6 (grupos separados por «; » y campos por « | »), y compone fotos y capturas sin recortarlas:
 
-- **Esquema en filas y columnas:** cada grupo, una columna con su cabecera y sus filas: los ocho criterios (Figura 8) y la arquitectura de información de la aplicación (Figura 15); en una columna, las ideas de McDaniel y Einstein (Figura 1), Norman (Figura 2) y Sanders y Stappers (Figura 4).
+- **Esquema en filas y columnas:** cada grupo, una columna con su cabecera y sus filas: los ocho criterios (Figura 8), la arquitectura de información de la aplicación (Figura 12) y las etapas del proyecto (Figura 16); en una columna, las ideas de McDaniel y Einstein (Figura 1), Norman (Figura 2) y Sanders y Stappers (Figura 4).
 - **Mapa de dos ejes:** sobre qué actúan las herramientas y dónde ocurren (Figura 7).
 - **Momentos de la atención:** antes de la señal, cuando suena y cuando termina, con lo que queda en el centro y en la periferia (Figura 3).
-- **Matriz de dos por dos:** motivación y facilidad para empezar (Figura 22).
+- **Matriz de dos por dos:** motivación y facilidad para empezar (Figura 20), a dos columnas de ancho.
 - **Cronología:** el proceso del proyecto, de marzo a octubre (Figura 9).
-- **Lámina de identidad:** logo, luces con su papel, letra e íconos (Figura 16).
-- **Prueba aplicada:** las cuatro etapas de la prueba en los hogares (Figura 19).
-- **Resultados por persona:** un punto por respuesta, lleno si declaró haber empezado (Figura 21).
-- **Capturas y modelos:** las pantallas de la versión 3.3 (Figura 13) y el testigo en 3D (Figura 18), enteros y con su pie numerado.
+- **Lámina de identidad:** logo, luces, letra e íconos, cada uno en su ficha blanca (Figura 13).
+- **Prueba aplicada:** las cuatro etapas de la prueba en los hogares (Figura 17).
+- **Resultados por persona:** un punto por respuesta, lleno si declaró haber empezado (Figura 19).
+- **Fotos y modelos:** el Tag durante la prueba (Figura 14) y el hardware de Relevo en 3D (Figura 15), con su pie numerado.
 - **Gráfico de barras:** opiniones de la encuesta (Figura 6), con barras horizontales y el número al lado.
-- **Flujo con flechas:** el recorrido de la aplicación en *wireframes* (Figura 11) y la preparación en capturas (Figura 12).
-- **Lámina de pantallas:** la primera vez, en *wireframes* (Figura 14); las 39 pantallas están en el Anexo F.
+- **Flujo con flechas:** el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 11); las 39 pantallas están en el Anexo F.
 
 ## Cómo se genera
 
@@ -61,6 +61,7 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Verificación
 
+- **Quinta ronda, el 29 de octubre de 2026:** 68 páginas, sin avisos del generador; ninguna tabla partida deja texto entre sus partes, y bajo cada pieza el texto ocupa al menos siete líneas por columna. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 11 de 1686 líneas pasan de 12, por cifras. El IDML enlaza sus 57 imágenes y declara solo los cinco estilos de Instrument Sans.
 - **Cuarta ronda, el 28 de octubre de 2026:** 72 páginas, sin avisos del generador; ninguna columna con una o dos líneas y ningún final de párrafo solo en otra página. Las páginas que solo tienen una tabla o una figura la centran en el alto. Texto: 8,1 palabras por línea en promedio; 9 de 1825 líneas pasan de 12, por cifras.
 - **Tercera ronda, el 28 de octubre de 2026:** 69 páginas, sin avisos del generador; ninguna sección termina en una columna sola. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 8 de 1843 líneas pasan de 12, por cifras.
 - **Segunda ronda, el 28 de octubre de 2026:** 75 páginas, sin avisos del generador. Se revisó la vista de todas. Texto: 8,4 palabras por línea en promedio; 17 de 1824 líneas pasan de 12, por cifras.
@@ -76,6 +77,12 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 - La Biblioteca exige los índices de tablas y de figuras para el depósito.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Quinta ronda
+
+- **Qué cambió:** tablas en fichas blancas otra vez, con el título arriba; una tabla partida llena su primera página, sola, y la continuación lleva la nota y el texto; al menos siete líneas por columna bajo una pieza; el fondo blanco solo para esquemas y gráficos, sin fichas ni cuadros de color dentro de otra ficha; la matriz de la Figura 20 a dos columnas de ancho; los textos de la identidad ya no se cortan; el IDML declara solo los cinco estilos usados.
+- **Cómo estaba antes:** tablas con filetes; las de tres columnas o menos llevaban el título al lado; las tablas partidas por la mitad dejaban texto entre sus partes; bajo una pieza podían quedar columnas de tres a seis líneas; la identidad iba en una ficha blanca con fichas color papel adentro.
+- **Por qué:** pedido del autor del 29 de octubre de 2026 (D-150).
 
 ### 2026-10-28 — Cuarta ronda
 

@@ -4,7 +4,17 @@ La memoria usa Instrument Sans, de Rodrigo Fuenzalida y Jordan Egstad, con licen
 
 ## Para Affinity: las estáticas
 
-[`estaticas/`](estaticas/) tiene ocho estilos fijos: Regular, Medium, SemiBold y Bold, con sus cursivas. Se instalan con doble clic en cada archivo (Mac: Catálogo Tipográfico; Windows: Instalar) antes de abrir el IDML.
+[`estaticas/`](estaticas/) tiene los cinco estilos que usa la memoria. Se instalan con doble clic en cada archivo (Mac: Catálogo Tipográfico; Windows: Instalar) antes de abrir el IDML.
+
+| Estilo | Archivo | Dónde se usa |
+| --- | --- | --- |
+| Regular | `InstrumentSans-Regular.ttf` | Texto continuo, celdas, notas y números de apertura. |
+| Italic | `InstrumentSans-Italic.ttf` | Cursivas del texto y títulos de tablas y figuras. |
+| Medium | `InstrumentSans-Medium.ttf` | El «de 24» que acompaña a las cifras de resultados. |
+| SemiBold | `InstrumentSans-SemiBold.ttf` | Títulos, subtítulos, rótulos, negritas y cifras. |
+| SemiBold Italic | `InstrumentSans-SemiBoldItalic.ttf` | Cursivas dentro de títulos y negritas. |
+
+El logotipo usa Chillax Semibold, pero va dibujado como vector dentro de la memoria: no hace falta instalarla.
 
 Son estáticas porque, con el archivo variable, Affinity dibujaba todos los pesos en regular. Se generaron el 13 de octubre de 2026 a partir de los archivos variables, con fontTools (`varLib.instancer`, ancho 100), y son las mismas que están instaladas en el computador del autor.
 
@@ -14,6 +24,12 @@ Son estáticas porque, con el archivo variable, Affinity dibujaba todos los peso
 - **Cursiva:** [`InstrumentSans-Italic.ttf`](InstrumentSans-Italic.ttf), la cursiva variable de Google Fonts (<https://github.com/google/fonts/tree/main/ofl/instrumentsans>), descargada el 13 de octubre de 2026.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Solo los estilos usados
+
+- **Qué cambió:** salen Bold, Bold Italic y Medium Italic, que la memoria no usa; quedan cinco estilos, con lo que hace cada uno. El IDML declara solo esos cinco.
+- **Cómo estaba antes:** ocho estilos estáticos.
+- **Por qué:** el autor pidió revisar las fuentes y eliminar las que no se usan (D-150).
 
 ### 2026-10-28 — Creación
 

@@ -6,8 +6,8 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos activos
 
-- [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md): reescrito en torno a las decisiones de diseño, con 26 figuras y 11 tablas —entre ellas, las portadas de las obras principales, el flujo de la aplicación, el registro de sus pantallas y las tablas de decisiones y de la referencia de iOS—, para que lo revise el profesor el 30 de octubre (D-146 y D-147). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 18 482 palabras.
-- [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 66 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146). Texto de 22 pt, unas 8 palabras por línea y ninguna columna sola al final de una sección. Reemplaza a la versión A3.
+- [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md): reescrito en torno a las decisiones de diseño, con 20 figuras y 6 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, de la referencia de iOS y de presupuesto—, para que lo revise el profesor el 30 de octubre (D-146 a D-150). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 16 642 palabras.
+- [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 68 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146 a D-150). Texto de 23 pt, unas 8 palabras por línea, tablas en fichas blancas y ningún trozo de texto suelto. Reemplaza a la versión A3.
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
 - [Memoria v5 en A3 horizontal](memoria-a3/README.md), reemplazada por la versión en 1920 × 1080: la v5 compuesta con la línea de Relevo, en un [PDF de 57 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134, D-135 y D-145). Texto de 14 pt en columnas de 8 a 12 palabras por línea, cada sección en página nueva, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. Por ahora, sin agradecimientos y con un índice solo de secciones. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
@@ -91,6 +91,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-29 — Quinta ronda de la v6
+
+- **Cambio:** la v6 pasa a 20 figuras, 6 tablas y 16 642 palabras, y su versión diseñada a 68 páginas.
+- **Versión anterior:** decía 26 figuras, 11 tablas, 18 482 palabras y 66 páginas.
+- **Motivo:** rondas de la v6 pedidas por el autor (D-148 a D-150).
 
 ### 2026-10-28 — Figuras y tablas de la v6
 

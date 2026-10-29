@@ -1,6 +1,6 @@
 # Relevo en breve
 
-**Actualizado:** 24 de octubre de 2026. **Fuente académica:** [borrador v5 de la memoria](borrador-memoria-v5-2026-10-11.md). **Estado completo y pendientes:** [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md).
+**Actualizado:** 29 de octubre de 2026. **Fuente académica:** [borrador v6 de la memoria](borrador-memoria-v6-2026-10-28.md). **Estado completo y pendientes:** [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md).
 
 ## Qué es
 
@@ -11,13 +11,13 @@ Relevo es un sistema *phygital*, con un componente físico y uno digital, para q
 3. Deja un objeto junto a ese primer paso.
 4. Al cumplirse el tiempo, el objeto suena desde ahí y la persona decide qué hacer.
 
-No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la relación entre señal y lugar antes de fabricar el objeto propuesto, el testigo, el prototipo usa el Tag, un localizador Bluetooth comercial.
+No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la relación entre señal y lugar antes de fabricar el hardware de Relevo, el prototipo usa el Tag, un localizador Bluetooth comercial.
 
 **Hipótesis** (D-091): «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Se basa en el marco multiproceso de la memoria prospectiva (McDaniel y Einstein, 2000).
 
 ## Qué existe hoy
 
-- **Investigación:** 8 entrevistas analizadas con el método Framework, una encuesta de 53 respuestas (D-092), comparación de referentes, 88 referencias verificadas y 8 criterios de diseño.
+- **Investigación:** 8 entrevistas analizadas con el método Framework, una encuesta de 53 respuestas (D-092), comparación de referentes, 77 referencias en la memoria v6 y 8 criterios de diseño.
 - **App Android:**
   - La 2.33, para el testeo (D-138): la 2.32, en que el Tag se calla con confirmación, muestra su pila y no se desconecta con su alarma encendida (D-137), con una semana para comparar con el teléfono.
   - La 3.3, con la línea visual aprobada (D-131) y todo lo que suman la 2.31 a la 2.33 (D-138).
@@ -28,23 +28,29 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
   - En las 21 respuestas recordaron cómo empezar; en 19 supieron qué querían hacer antes de leerlo en la pantalla (en 2, a medias) y en 10 decidieron empezar la actividad.
   - Los fallos del Tag que reportaron se atendieron en las versiones 2.31 y 2.32.
   - Los datos de dos personas los entregaron ellas, en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla. Se unen con [unir-datos.js](../07_validacion/analisis/README.md).
-  - Desde el 20 de octubre, una de ellas prueba una semana solo con la notificación del teléfono (app 2.33, D-138).
+  - Las dos primeras semanas usaron el Tag a su gusto, cuando quisieron; la última, la señal llega solo como notificación en el teléfono, sin el Tag (app 2.33, D-138), y termina el 30 de octubre con un cuestionario en papel y una entrevista.
   - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
-- **Memoria:** borrador v5 con 19 108 palabras en los capítulos 1 a 14, revisado el 20 de octubre para contar los logros primero y los límites una sola vez, con seis lecturas nuevas del autor (D-141), y diagramado en [A3](memoria-a3/README.md) (53 páginas). Tiene 23 datos por confirmar; de sus seis figuras, cinco ya están en la versión A3, incluidas las fotos de la prueba (D-140), y faltan las capturas definitivas. Sus nueve [anexos](anexos/README.md), de la A a la I, están armados en Markdown, HTML y PDF desde el 24 de octubre.
+- **Memoria:** borrador v6 con 16 642 palabras en los capítulos 1 a 14, reescrito en torno a las decisiones de diseño (D-146 a D-150), con 20 figuras y 6 tablas, y diagramado en [1920 × 1080](memoria-1920x1080/README.md) (68 páginas), con su IDML para Affinity. Tiene 17 datos por confirmar. Sus nueve [anexos](anexos/README.md), de la A a la I, están armados en Markdown, HTML y PDF desde el 24 de octubre.
 - **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
 
 ## Qué falta
 
 El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md). Lo principal es:
 
-- la comparación entre lugares y soportes, ya implementada: una primera semana con el teléfono empezó el 20 de octubre;
-- un objeto con forma propia;
-- fotos del uso;
+- el cierre de la semana con el teléfono, el 30 de octubre, y la comparación con un lugar neutro, que queda para una etapa con más personas;
+- imprimir y probar el hardware de Relevo;
+- confirmar la autoría y la autorización de las fotos;
 - las escalas y la entrevista de cierre;
 - los costos reales;
 - la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Memoria v6
+
+- **Qué cambió:** el resumen sigue al borrador v6 y a su versión en 1920 × 1080; cuenta la prueba como fue —dos semanas con el Tag y una solo con el teléfono—, llama «hardware de Relevo» al objeto propio y pone al día lo que falta.
+- **Cómo estaba antes:** seguía al borrador v5 en A3, llamaba «testigo» al objeto y decía que una sola persona probaba la semana con el teléfono.
+- **Por qué:** la memoria cambió y este resumen debe coincidir con ella (D-150).
 
 ### 2026-10-24 — Anexos y versiones al día
 

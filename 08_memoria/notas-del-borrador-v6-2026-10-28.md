@@ -1,6 +1,6 @@
 # Notas del borrador v6
 
-**Fecha:** 28 de octubre de 2026. **Decisiones:** D-146, D-147, D-148 y D-149. **Borrador:** [borrador-memoria-v6-2026-10-28.md](borrador-memoria-v6-2026-10-28.md). **Versión diseñada:** [memoria en 1920 × 1080](memoria-1920x1080/README.md).
+**Fecha:** 28 de octubre de 2026. **Decisiones:** D-146 a D-150. **Borrador:** [borrador-memoria-v6-2026-10-28.md](borrador-memoria-v6-2026-10-28.md). **Versión diseñada:** [memoria en 1920 × 1080](memoria-1920x1080/README.md).
 
 ## Por qué hay una v6
 
@@ -67,9 +67,24 @@ El autor señaló un patrón: trozos de texto sueltos que cuestan seguir. Cambio
 - La Figura 3 muestra tres momentos de la atención: antes de la señal, cuando suena y cuando termina.
 - Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
 
+## Quinta ronda: la prueba como fue y menos tecnicismos (D-150)
+
+El 29 de octubre, el autor entregó sus «Notas memoria». Cambios:
+
+- **Capítulo 13:** la prueba se cuenta como fue: dos semanas con el Tag, usado cuando cada persona quiso, y una semana con la señal solo en el teléfono, que termina el 30 de octubre. Lo que se registra es «la base de datos que recopila la aplicación»; no se nombran versiones. «Iterar con los resultados» pasa al final, con la Tabla 5.
+- **Capítulo 12:** reescrito en cuatro secciones —tecnología; fabricación, mantenimiento y costos; del prototipo al producto; límites—, con la Tabla 4 (presupuesto) y la Figura 16 (etapas). Los términos técnicos se explican en palabras; el iPhone se descarta en una frase; salen el repositorio, las versiones y la normativa.
+- **Toda la memoria:** sale «testigo» (queda «hardware de Relevo» o «el Tag»), y salen fechas, disculpas y aclaraciones que la pauta no pide.
+- **Capítulo 7:** abre con «A quién se dirige»: personas de 19 a 30 años, un rango acotado que podría ampliarse. Las figuras de la encuesta van junto a la encuesta.
+- **Capítulos 5, 6 y 8:** sin el párrafo de fechas de la búsqueda; cada estudio se presenta en una frase; el marco teórico pierde las frases que adelantaban un límite del proyecto y cierra con la idea de diseño de sus tres ámbitos; el estado del arte, sin precios ni la frase que daba por injustificado el objeto.
+- **Capítulo 11:** el nombre y la tipografía se fundamentan con criterios; una sola figura de pantallas (Figura 11).
+- **Resumen, abstract, capítulo 10, conclusiones y glosario:** dicen que la prueba compara el objeto con el teléfono y que el lugar neutro queda para una etapa siguiente.
+- **Referencias:** 77, todas citadas; salen Google (s. f.-b), la Ley 21561 y la encuesta de la Subsecretaría de Telecomunicaciones de 2026, que ya no se citaban.
+- **Glosario:** salen Autoinforme, Efecto techo, Emulador, Fidelidad y Testigo, que ya no se usan.
+- Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
+
 ## Extensión
 
-Capítulos 1 a 14: 17 995 palabras; con portada, agradecimientos, resumen, abstract e índices, 19 115 (límite: 20 000). Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 16 642 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 750 (límite: 20 000). Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -82,7 +97,7 @@ Lo nuevo sale de documentos del repositorio, no de memoria:
 
 ## Lo que solo el autor puede completar
 
-Hay 19 marcadores `[CONFIRMAR: …]`. Los nuevos son tres:
+Hay 17 marcadores `[CONFIRMAR: …]`. Los nuevos son tres:
 
 - otras razones para preferir el lenguaje de iOS (capítulo 11);
 - por qué las actividades dejaron las fotos (capítulo 11);
@@ -92,10 +107,16 @@ Hay 19 marcadores `[CONFIRMAR: …]`. Los nuevos son tres:
 
 - **Anexo I:** sumar el instrumento de cierre del 30 de octubre.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
-- **Aplicación:** la iteración de la Tabla 8 está descrita como pendiente, no hecha.
+- **Aplicación:** implementar lo que la Tabla 5 marca «Por implementar» y decidir las «Propuestas».
 - **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Quinta ronda
+
+- **Qué cambió:** se añadió la quinta ronda (D-150) y se actualizaron la extensión, los marcadores y lo pendiente.
+- **Cómo estaba antes:** las notas llegaban a la cuarta ronda, con 19 marcadores y la iteración en la Tabla 8.
+- **Por qué:** pedido del autor del 29 de octubre de 2026.
 
 ### 2026-10-28 — Cuarta ronda
 

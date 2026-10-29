@@ -253,7 +253,7 @@ ${cs}
     archivos.push({ name: 'Resources/Graphic.xml', data: Buffer.from(this.graphicXml()) });
     archivos.push({ name: 'Resources/Styles.xml', data: Buffer.from(this.stylesXml()) });
     archivos.push({ name: 'Resources/Fonts.xml', data: Buffer.from(XMLHEAD + `<idPkg:Fonts ${NS}><FontFamily Self="di1" Name="Instrument Sans">` +
-      ['Regular', 'Medium', 'SemiBold', 'Bold', 'Italic', 'Medium Italic', 'SemiBold Italic', 'Bold Italic'].map((s, i) => `<Font Self="di1f${i}" FontFamily="Instrument Sans" Name="Instrument Sans ${s}" PostScriptName="$ID/InstrumentSans-${s.replace(/ /g, '')}" Status="Installed" FontStyleName="${s}" FontType="OpenTypeTT" WritingScript="0" FullName="Instrument Sans ${s}" FullNameNative="Instrument Sans ${s}" FontStyleNameNative="${s}" PlatformName="$ID/" Version="1.0"/>`).join('') +
+      ['Regular', 'Medium', 'SemiBold', 'Italic', 'SemiBold Italic'].map((s, i) => `<Font Self="di1f${i}" FontFamily="Instrument Sans" Name="Instrument Sans ${s}" PostScriptName="$ID/InstrumentSans-${s.replace(/ /g, '')}" Status="Installed" FontStyleName="${s}" FontType="OpenTypeTT" WritingScript="0" FullName="Instrument Sans ${s}" FullNameNative="Instrument Sans ${s}" FontStyleNameNative="${s}" PlatformName="$ID/" Version="1.0"/>`).join('') +
       `</FontFamily></idPkg:Fonts>`) });
     const m = this.margenes; const b = pt(this.sangrado);
     archivos.push({ name: 'Resources/Preferences.xml', data: Buffer.from(XMLHEAD + `<idPkg:Preferences ${NS}>` +

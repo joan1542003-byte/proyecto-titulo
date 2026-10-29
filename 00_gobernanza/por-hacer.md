@@ -229,7 +229,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ## 10. Correcciones de la revisión con los profesores (28 de octubre)
 
-**Estado:** en curso: el borrador v6 y la memoria en 1920 × 1080 recogen la mayor parte (D-146 y D-147). **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
+**Estado:** en curso: el borrador v6 y la memoria en 1920 × 1080 recogen la mayor parte (D-146 a D-150). **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
 
 ### Lo primero
 
@@ -255,7 +255,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **Informar los resultados como casos y recuentos**, nunca en porcentajes, porque son tres personas. Hecho en la v6.
 - [x] **Separar los resultados por persona**: comprobar si la mitad de los casos corresponde a una sola, y decirlo. Hecho en la v6: la primera persona aporta cinco de los diez comienzos. Falta el detalle por persona de las demás respuestas.
-- [x] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio. Figura 21 de la v6.
+- [x] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio. Figura 19 de la v6.
 - [ ] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración. La v6 cuenta la iteración (Tabla 5), con tres mejoras propuestas a partir de los datos (D-147); los cambios de la aplicación siguen pendientes.
 - [ ] **La decisión cromática no se apoya en promedios.** La corrección apunta al color: la mitad asocia el rojo al amor y la otra mitad el rosa, así que el promedio esconde esa división. Revisar el [fundamento del color](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md), el [documento de marca](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las láminas de color: usar la mediana o mostrar la dispersión, en vez de la media. Corregido en el capítulo 11 de la v6; faltan los documentos de marca y el Anexo H.
 
@@ -267,8 +267,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Cambiar el texto de «Elige tu emoji».** Que vas a elegir un emoji ya se ve; la pregunta debe ser por la persona: «¿Con qué te identificas?» o algo así.
 - [ ] **Si no hay Tag al cumplirse el tiempo, la aplicación debe intentar conectarse a uno antes de que el tiempo termine; si no lo consigue, suena en el teléfono.** Es un cambio de comportamiento, no solo de aviso.
 - [ ] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto.
-- [x] **Registro de todas las pantallas de la aplicación.** Las 39 pantallas de la versión 2.32, en *wireframes*, están en el Anexo F; la memoria muestra el flujo de la aplicación (Figura 11) y la primera vez (Figura 14), sin abusar de los *wireframes* (D-148).
-- [x] **Esquema de jerarquía y arquitectura de información** de la aplicación. Figura 15 de la v6.
+- [x] **Registro de todas las pantallas de la aplicación.** Las 39 pantallas de la versión 2.32, en *wireframes*, están en el Anexo F; la memoria muestra solo el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 11; D-150).
+- [x] **Esquema de jerarquía y arquitectura de información** de la aplicación. Figura 12 de la v6.
 
 ### El objeto
 
@@ -283,8 +283,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### La memoria diseñada
 
 - [x] **Rehacer la memoria diseñada en 1920 × 1080 píxeles.** Reemplaza el A3 horizontal, así que cambia toda la diagramación: la retícula, el largo de línea, el corte de las páginas y la generación del IDML. Hecho: [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) (D-146).
-- [x] **Subir un poco el tamaño de la tipografía** y **aumentar ligeramente el interlineado**; revisar interlineado y peso. Hecho: texto de 22 pt con interlineado de 33.
-- [x] **Ninguna página puede quedar con un solo párrafo** ni con una columna sola y poco texto. Hecho: el final de cada sección se reparte en columnas parejas.
+- [x] **Subir un poco el tamaño de la tipografía** y **aumentar ligeramente el interlineado**; revisar interlineado y peso. Hecho: texto de 23 pt con interlineado de 34,6 (D-148).
+- [x] **Ninguna página puede quedar con un solo párrafo** ni con una columna sola y poco texto. Hecho: el final de cada sección se reparte en columnas parejas, y debajo de una tabla o figura el texto ocupa al menos siete líneas por columna (D-149 y D-150).
 - [ ] **Los anexos no se diseñan como la memoria**, pero deben estar bien presentados.
 - [ ] **Las palabras de los anexos no cuentan** para el límite de extensión.
 - [x] **Buscar Affinity Publisher**, equivalente a InDesign, para la diagramación. El IDML de la memoria se abre en Affinity Publisher, y las tipografías están en el repositorio.
@@ -294,6 +294,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Quinta ronda de la v6
+
+- **Qué cambió:** los números de figuras siguen a la v6 actual (Figuras 12 y 19), la memoria muestra una sola figura de pantallas, la letra es de 23 pt y bajo cada pieza quedan al menos siete líneas por columna.
+- **Cómo estaba antes:** citaba las Figuras 14, 15 y 21 y el texto de 22 pt.
+- **Por qué:** quinta ronda de la v6 (D-150).
 
 ### 2026-10-28 — Formato de tesis en la v6
 
