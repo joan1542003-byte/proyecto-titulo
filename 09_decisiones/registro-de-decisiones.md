@@ -1904,7 +1904,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 18 778 palabras en los capítulos 1 a 14 (19 977 con las páginas iniciales y los índices); cada cita tiene su referencia y cada referencia se cita; 75 páginas, sin avisos del generador; ninguna sección termina en una columna sola; el IDML enlaza sus 68 imágenes.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-148 — La memoria toma el formato de una tesis y se lee como un relato
+
+- **Fecha:** 2026-10-28.
+- **Estado:** hecha en el borrador v6 y en la memoria en 1920 × 1080. El IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** al revisar la segunda ronda (D-147), el autor pidió menos citas y solo las necesarias, una fuente por idea y autores que aporten algo real; figuras con el formato típico de una tesis, sin cápsulas negras; esquemas propios de las ideas de los autores en lugar de portadas sin diseño; un par de *wireframes*, no todos; fondos blancos solo para lo relevante; números sueltos en vez de números en círculos; menos tablas, y en un anexo lo que no es diseño ni prueba; el mapa de dos ejes del estado del arte; un relato que muestre cómo se llegó a cada resultado; los números de apertura más livianos; el texto continuo 1 pt más grande y el espaciado corregido, y ordenar la página 15.
+- **Decisión:**
+  - **Citas:** una fuente por idea. Salen 15 referencias que repetían una idea ya citada o aportaban poco (entre ellas Hornecker y Buur, Einstein y McDaniel 2005, Gardner et al., Biedermann et al., Aaker, Robertson y Kauppinen-Räisänen y Luomala); quedan 80, todas citadas.
+  - **Figuras de ideas:** cuatro esquemas propios, en una columna, explican ideas de autores: los dos caminos para que vuelva una intención (McDaniel y Einstein), la señal y el mensaje (Norman), el centro y la periferia de la atención (Weiser y Brown) y lo que dicen y hacen las personas (Sanders y Stappers); un quinto, una matriz de dos por dos, explica por qué recordar no basta para empezar (Fogg). Las portadas salen.
+  - **Estado del arte:** la tabla de familias pasa a un mapa de dos ejes —sobre qué actúa cada herramienta y dónde ocurre—, el mismo de la presentación del 30 de septiembre; las fichas siguen en el Anexo C.
+  - **Tablas:** de 11 a 6. Salen la de participantes (sus datos están en el Anexo A), la de familias (mapa y Anexo C), la de actores y la de fases (escritas en el texto) y el mapa de servicio. Se mantienen las de decisiones, iOS, iteraciones, presupuesto, prueba y objetivos: la matriz de pase evalúa el presupuesto (8.2) y las iteraciones (6.1).
+  - ***Wireframes*:** dos figuras, el flujo y la primera vez; las 39 pantallas quedan en el Anexo F.
+  - **Relato:** cada capítulo abre con una frase que lo une al anterior.
+  - **Composición:** rótulos de tesis («Figura 1» en negrita y el título en cursiva); tablas con filetes y sin fichas; números sueltos; fondos blancos solo para las cifras de resultados y la identidad; número de apertura en peso regular, el más liviano de Instrument Sans; texto de 23 pt con interlineado de 34,6 y media línea entre párrafos; las figuras de una columna empiezan arriba de una columna.
+- **Alternativas descartadas:** reproducir las figuras de los autores, que no son propias; dejar el presupuesto y las iteraciones en un anexo, porque la matriz de pase los evalúa; una versión light de los números, que la letra no tiene.
+- **Verificación:** 18 078 palabras en los capítulos 1 a 14 (19 189 con las páginas iniciales y los índices); 80 referencias, todas citadas, y cada cita con su referencia; 69 páginas, sin avisos del generador; ninguna sección termina en una columna sola; 8,1 palabras por línea en promedio; el IDML enlaza sus 58 imágenes.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-148
+
+- **Qué cambió:** se registró D-148.
+- **Cómo estaba antes:** la última decisión era D-147.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-28 — D-147
 

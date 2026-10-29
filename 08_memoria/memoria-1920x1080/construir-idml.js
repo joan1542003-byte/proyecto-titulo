@@ -50,7 +50,7 @@ const PT = 25.4 / 72;                       // mm por punto
 // 431 × 242 mm con texto de 14 pt, y el PDF y el IDML se amplían por ESCALA: el texto sale de 22 pt.
 const ESCALA = 22 / 14;
 const W = (1920 * 25.4) / 72 / ESCALA, H = (1080 * 25.4) / 72 / ESCALA;
-const MX = 20, TOP = 21, BOTTOM = TOP + 27 * 21 * PT;   // columna de 27 líneas de 21 pt
+const MX = 20, TOP = 21, BOTTOM = TOP + 26 * 22 * PT;   // columna de 26 líneas de 22 pt (34,6 pt en el PDF)
 const MED = 10, ANCHO = W - 2 * MX, COL = (ANCHO - 2 * MED) / 3, DOBLE = COL * 2 + MED;   // columnas de 124 mm: unas 50 letras
 const Y_ENCABEZADO = 8, Y_FOLIO = H - 15;
 const colX = (k) => MX + k * (COL + MED);
@@ -66,12 +66,13 @@ const INDICE_DE_PIEZAS = false;
 // Estilos de párrafo (pt). Los mismos números sirven para el IDML, para medir y para el PDF.
 // Todo el aire vertical es «después»: así un subtítulo que cae arriba de una columna no arrastra espacio.
 const E = {
-  'Texto': { tamano: 14, interlineado: 21, despues: 12 },
+  'Texto': { tamano: 14.6, interlineado: 22, despues: 11 },
   'Subtítulo': { tamano: 18, interlineado: 23, estilo: 'SemiBold', despues: 7, seguimiento: -15, conSiguiente: 2 },
-  'Subtítulo menor': { tamano: 14, interlineado: 21, estilo: 'SemiBold', despues: 4, conSiguiente: 2 },
-  'Lista': { tamano: 14, interlineado: 21, despues: 6, sangria: 22, primera: -22 },
-  'Palabras clave': { tamano: 14, interlineado: 21 },
+  'Subtítulo menor': { tamano: 14.6, interlineado: 22, estilo: 'SemiBold', despues: 4, conSiguiente: 2 },
+  'Lista': { tamano: 14.6, interlineado: 22, despues: 6, sangria: 22, primera: -22 },
+  'Palabras clave': { tamano: 14.6, interlineado: 22 },
   'Frase': { tamano: 18, interlineado: 24, estilo: 'SemiBold', seguimiento: -15 },
+  'Rótulo': { tamano: 14, interlineado: 19, estilo: 'SemiBold' },
   'Título de pieza': { tamano: 14, interlineado: 19, estilo: 'Italic' },
   'Nota': { tamano: 11, interlineado: 15, color: 'Color/Gris' },
   'Celda': { tamano: 11, interlineado: 15 },
@@ -173,6 +174,7 @@ function bloques(lineas, estiloTexto = 'Texto') {
         f.descripcion = ''; f.columna = f.fotos.length === 1 && /figuras\/fuentes\//.test(f.fotos[0].src); i++;   // la portada de una fuente va en una columna
       } else {
         f.descripcion = lineas[i].trim().replace(/^\[FIGURA POR INSERTAR: |\]$/g, ''); i++;
+        if (/^\(columna\) /.test(f.descripcion)) { f.columna = true; f.descripcion = f.descripcion.replace(/^\(columna\) /, ''); }
       }
       sig();
       if (i < lineas.length && /^\*Nota\.\*/.test(lineas[i])) { f.nota = lineas[i].trim(); i++; }
@@ -223,23 +225,24 @@ const CSS_E = Object.entries(E).map(([n, e], i) => `.e${i}{font-size:${e.tamano}
 const CSS_PIEZAS = `.n{padding-right:3%}
 .cir{flex:none;width:9.5mm;height:9.5mm;border-radius:50%;background:#141312;color:#F7F4F0;display:flex;align-items:center;justify-content:center;font-size:10pt;font-weight:600;line-height:1}
 .cir svg{width:5.6mm;height:5.6mm}
-.fic{flex:none;width:8.5mm;height:8.5mm;border-radius:2.8mm;background:#EEE9E3;display:flex;align-items:center;justify-content:center;font-size:11pt;font-weight:600;line-height:1}
+.fic{flex:none;min-width:7mm;font-size:12pt;font-weight:600;line-height:1.2}
+.num{flex:none;min-width:5.5mm;font-size:12pt;line-height:15pt;font-weight:600}
 .pil{display:inline-flex;flex:none;align-items:center;height:8.6mm;padding:0 4.4mm;border-radius:4.3mm;border:.3mm solid #141312;font-size:12pt;font-weight:600;line-height:1;white-space:nowrap}
 .pil.lleno{background:#141312;color:#fff}.pil.hueco{border:.3mm dashed #6E6964;color:#6E6964}.pil.blanca{background:#fff;border-color:#fff}.pil.clara{background:#fff;border-color:#E4DED6}.pil.amarilla{background:#F4E496;border-color:#F4E496}
 .chip{width:6.4mm;height:6.4mm;border-radius:50%;border:.3mm solid #141312;display:flex;align-items:center;justify-content:center;font-size:9pt;font-weight:600;line-height:1}
-.rot{display:flex;align-items:center;gap:3.5mm;margin-bottom:5mm}.rot .tp{flex:1}
+.rot{display:flex;flex-direction:column;align-items:flex-start;gap:1.2mm;margin-bottom:5mm}.rot .n{align-self:stretch}
 .nota{margin-top:4mm;max-width:${COL}mm}.nota.dos{max-width:${DOBLE}mm}.n.dos{column-count:2;column-gap:${MED}mm}
 .ang{display:grid;grid-template-columns:${DOBLE}mm 1fr;column-gap:${MED}mm;align-items:start}
-.ang .rot{flex-direction:column;align-items:flex-start;gap:3.5mm;margin-bottom:0}.ang .rot .tp{flex:none;align-self:stretch}
-.tb{display:flex;flex-direction:column;gap:1.8mm}
-.cab,.fila{display:grid;column-gap:7mm;padding-left:4.5mm;padding-right:6mm;border:.35mm solid transparent}
-.cab{padding-bottom:.4mm;align-items:end}.cab .h0{margin-left:13.5mm}
-.fila{background:#fff;border-color:#fff;border-radius:5mm;padding-top:3.4mm;padding-bottom:3.6mm;align-items:start}
-.fila.total{border-color:#141312}
+.ang .rot{margin-bottom:0}
+.tb{display:flex;flex-direction:column;border-top:.5mm solid #141312;border-bottom:.5mm solid #141312}
+.cab,.fila{display:grid;column-gap:7mm}
+.cab{padding:2.8mm 0 2.4mm;align-items:end;border-bottom:.3mm solid #141312}
+.fila{padding:3mm 0 3.2mm;align-items:start}.fila+.fila{border-top:.2mm solid #DDD7CF}
+.fila.total{border-top:.3mm solid #141312}
 .pri{display:flex;gap:4mm;align-items:flex-start;min-width:0}
-.pri .tx{display:flex;flex-direction:column;gap:.5mm;padding-top:2.1mm;min-width:0;flex:1}
-.c{padding-top:2.1mm;min-width:0}
-.est{display:flex;flex-direction:column;align-items:flex-start;gap:1.5mm;padding-top:1.55mm;min-width:0}.est .n{align-self:stretch}
+.pri .tx{display:flex;flex-direction:column;gap:.5mm;min-width:0;flex:1}
+.c{min-width:0}
+.est{display:flex;flex-direction:column;align-items:flex-start;gap:1mm;min-width:0}.est .n{align-self:stretch}
 .chips{display:flex;gap:1.4mm;padding-top:1.55mm}
 .per{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm}
 .pc{background:#fff;border-radius:5mm;padding:5mm;display:flex;gap:4mm;align-items:flex-start}
@@ -251,7 +254,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .mz .ma{padding:3.2mm 0 3.2mm 1mm;border-top:.25mm solid #CCC6BE}
 .mz .mc{background:#fff;padding:3.2mm 5mm;border-top:.25mm solid #E9E4DD}.mz .mc.p{border-top-color:#fff}
 .mz .mu{border-radius:0 0 5mm 5mm;padding-bottom:4mm}
-.dt{display:grid;gap:4.5mm}
+.dt{display:grid;gap:4.5mm}.fcol .dt{grid-template-columns:1fr 1fr !important;gap:3mm}.fcol .dc{padding:4.5mm}.fcol .dc .cir{margin-bottom:5mm}.fcol .bar,.fcol .pts{margin-top:4mm}
 .dc{background:#fff;border-radius:6mm;padding:6mm 6.5mm 6.5mm;display:flex;flex-direction:column}
 .dc .cir{margin-bottom:9mm}.dc .dx{flex:1;margin-top:2mm}
 .bar{display:flex;align-items:flex-end;gap:.45mm;height:9mm;margin-top:7mm}
@@ -269,7 +272,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .rama{display:flex;align-items:center;gap:3.5mm;background:#F7F4F0;border-radius:5mm;padding:2.6mm 4mm 2.6mm 2.6mm;font-size:11pt;line-height:14pt;font-weight:600}
 .rama .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:#EEE9E3}.rama .cuad svg{width:6mm;height:6mm}
 .fig4{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr .9fr;gap:3.5mm}
-.etapa{background:#fff;border-radius:6mm;padding:6mm;display:grid;gap:3mm;align-content:start;font-size:11pt;line-height:15pt}
+.etapa{background:none;border:.35mm solid #CCC6BE;border-radius:6mm;padding:6mm;display:grid;gap:3mm;align-content:start;font-size:11pt;line-height:15pt}
 .etapa b{font-size:14pt;line-height:18pt}.etapa .dia{font-size:11pt;line-height:14pt;font-weight:600;color:#6E6964}
 .etapa ul{display:grid;gap:1.4mm;list-style:none}.etapa li{position:relative;padding-left:4mm}
 .etapa li::before{content:"";position:absolute;left:0;top:2.1mm;width:1.5mm;height:1.5mm;border-radius:50%;background:#141312}
@@ -288,8 +291,9 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .fot .cir{width:6.6mm;height:6.6mm;font-size:9pt}
 .fot.nat img{aspect-ratio:auto;object-fit:contain;width:auto;max-width:100%;max-height:118mm;margin:0 auto;border:.3mm solid #E4DED6;background:#fff}
 .esq{display:grid;gap:6mm;align-items:start}.esq-c{display:flex;flex-direction:column;gap:3mm}
-.esq-h{display:flex;gap:4mm;align-items:center;background:#fff;border:.35mm solid #141312;border-radius:5mm;padding:3.5mm 5mm 3.5mm 3.5mm}.esq-h .tx{display:flex;flex-direction:column;gap:.6mm;min-width:0;flex:1}
-.esq-l{display:flex;flex-wrap:wrap;gap:2mm;margin-left:8mm;padding-left:5mm;border-left:.35mm solid #CCC6BE}.esq-i{background:#fff;border-radius:4mm;padding:2.4mm 4mm}
+.esq-h{display:flex;gap:3mm;align-items:baseline;border-bottom:.35mm solid #141312;padding:0 0 3mm}.esq-h .tx{display:flex;flex-direction:column;gap:.6mm;min-width:0;flex:1}
+.esq-l{display:flex;flex-direction:column;gap:1.6mm}.esq-i{position:relative;padding-left:4.5mm}.esq-i::before{content:"";position:absolute;left:0;top:2.6mm;width:1.6mm;height:1.6mm;border-radius:50%;background:#141312}
+.fcol .esq{grid-template-columns:1fr !important;gap:5mm}
 .cro{display:grid;grid-template-rows:auto 9mm auto;column-gap:3mm;row-gap:0}
 .cro-r{display:flex;flex-direction:column;gap:1.2mm;padding:0 3mm 3mm 0}.cro-r.ar{grid-row:1;align-self:end;padding-bottom:4mm}.cro-r.ab{grid-row:3;padding-top:4mm}
 .cro-l{grid-row:2;align-self:center;height:.5mm;background:#141312}.cro-p{grid-row:2;align-self:center;width:5mm;height:5mm;border-radius:50%;background:#141312;border:1.2mm solid #F7F4F0;box-sizing:content-box;margin-left:-1.2mm}
@@ -298,7 +302,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .idn-luces{grid-column:2 / span 2;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
 .idn-luz{display:flex;gap:4mm;align-items:center;background:#fff;border-radius:5mm;padding:3.5mm}.idn-luz .tx,.idn-letra .tx{display:flex;flex-direction:column;gap:.6mm}
 .idn-letra{display:flex;gap:6mm;align-items:center}.idn-iconos{display:flex;flex-direction:column;gap:4mm}.idn-iconos .ics{display:flex;gap:2.4mm;flex-wrap:wrap}.idn-iconos .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:#EEE9E3}.idn-iconos .cuad svg{width:6.4mm;height:6.4mm}
-.prs{display:grid;gap:3mm}.prs-f{display:grid;grid-template-columns:9.5mm 1fr auto 46mm;align-items:center;column-gap:7mm;background:#fff;border-radius:5mm;padding:5mm 7mm 5mm 5mm}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
+.prs{display:grid;gap:3mm}.prs-f{display:grid;grid-template-columns:7mm 1fr auto 46mm;align-items:center;column-gap:7mm;padding:4.5mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
 .prs-p{display:flex;gap:2.2mm}.prs-p span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-p span.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
 .prs-ley{display:flex;gap:9mm;margin-top:2mm;font-size:11pt;line-height:15pt;color:#6E6964}.prs-ley span{display:inline-flex;align-items:center;gap:2.4mm}.prs-ley i{width:5mm;height:5mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-ley i.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
 .fot.grande.nat img{max-height:165mm}
@@ -306,18 +310,38 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .fig2.flujo{grid-template-columns:49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm;justify-content:stretch}.fig2.flujo .fl{margin-top:-12mm}
 .fot.flujo{column-gap:2.5mm}.fot.flujo img{border-radius:3.5mm}
 .fcol{display:flex;flex-direction:column;gap:3mm}.fcol .rot{margin-bottom:0}.fcol img{display:block;max-width:100%;max-height:92mm;width:auto;align-self:flex-start;border:.3mm solid #E4DED6}
-.brs{display:grid;gap:4mm}.brs-g{display:grid;gap:3mm;padding:6mm}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
+.brs{display:grid;gap:9mm}.fcol .brs{grid-template-columns:1fr !important;gap:6mm}.fcol .brs-f{grid-template-columns:40mm 1fr 8mm}.brs-g{display:grid;gap:3mm;align-content:start}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
 .brs-b{height:6mm;background:#EEE9E3;border-radius:3mm;overflow:hidden}.brs-b span{display:block;height:100%;background:#141312;border-radius:3mm}
+.mp{display:flex;flex-direction:column;gap:4mm}.mp-arr,.mp-aba{text-align:center}
+.mp-a{position:relative;height:118mm;margin:0 3mm}
+.mp-x{position:absolute;left:0;right:0;top:50%;height:.35mm;background:#141312}.mp-y{position:absolute;top:0;bottom:0;left:50%;width:.35mm;background:#141312}
+.mp-izq,.mp-der{position:absolute;top:calc(50% + 2.5mm);max-width:46mm}.mp-izq{left:0}.mp-der{right:0;text-align:right}
+.mp-p{position:absolute;display:flex;align-items:center;gap:2.2mm;transform:translate(-1.6mm,-50%);white-space:nowrap}
+.mp-p .n{white-space:nowrap;padding-right:0}.mp-p i{flex:none;width:3.2mm;height:3.2mm;border-radius:50%;background:#141312}
+.mp-p.l{flex-direction:row-reverse;transform:translate(calc(-100% + 1.6mm),-50%)}
+.mp-p.yo i{width:5.5mm;height:5.5mm;background:${rgb('Lila')};border:.4mm solid #141312}
+.pf{display:grid;grid-template-columns:80mm 1fr;column-gap:12mm;align-items:center}.fcol .pf{grid-template-columns:1fr;row-gap:6mm}
+.pf-a{position:relative;width:78mm;height:78mm}.fcol .pf-a{margin:0 auto}
+.pf-o{position:absolute;inset:0;border-radius:50%;background:${rgb('Cielo')}}
+.pf-i{position:absolute;inset:24mm;border-radius:50%;background:#F7F4F0;border:.4mm solid #141312}
+.pf-s{position:absolute;left:5mm;top:34.5mm;width:9mm;height:9mm;border-radius:50%;background:${rgb('Durazno')};border:.4mm solid #141312}
+.pf-f{position:absolute;left:15mm;top:35.5mm;width:8mm;height:7mm;color:#141312}.pf-f svg{width:100%;height:100%}
+.pf-t{display:grid;gap:3mm}.pf-r{display:grid;grid-template-columns:6mm 1fr;column-gap:3mm;align-items:start}
+.pf-m{width:5mm;height:5mm;border-radius:50%;margin-top:.8mm}.pf-m.m0{background:#F7F4F0;border:.4mm solid #141312}.pf-m.m1{background:${rgb('Cielo')}}.pf-m.m2{background:${rgb('Durazno')};border:.4mm solid #141312}
+.m2{display:flex;flex-direction:column;gap:3mm}
+.m2-g{display:grid;grid-template-columns:1fr 1fr;border-top:.35mm solid #141312;border-left:.35mm solid #141312}
+.m2-c{display:flex;flex-direction:column;gap:1.2mm;padding:4mm;border-right:.35mm solid #141312;border-bottom:.35mm solid #141312;min-height:30mm}
+.m2-c.fuerte{background:${rgb('Lima')}}
 .pend{border:.5mm dashed #6E6964;border-radius:6mm;padding:10mm 12mm;min-height:60mm;width:${DOBLE}mm;display:grid;align-content:center;justify-items:start;gap:4mm;background:rgba(255,255,255,.5);font-size:14pt;line-height:20pt;color:#6E6964}
 .fondo{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
 .panel{width:${COL}mm;border-radius:9mm;padding:9mm 9mm 9.5mm;display:flex;flex-direction:column;position:relative;border:.3mm solid rgba(20,19,18,.06);overflow:hidden}.panel>*{position:relative}.panel>.fondo{position:absolute}
 .panel>.pm{position:absolute;right:9mm;top:9mm;width:11mm;height:11mm}.panel .pm svg{width:100%;height:100%;display:block}
-.panel .pn{font-size:60pt;line-height:.9;font-weight:600;letter-spacing:-.04em;margin:12mm 0 0 -.5mm;font-feature-settings:"tnum"}
+.panel .pn{font-size:60pt;line-height:.9;font-weight:400;letter-spacing:-.04em;margin:12mm 0 0 -.5mm;font-feature-settings:"tnum"}
 .panel.corto .pn{margin-top:4mm}
 .panel .pt{font-size:40pt;line-height:43pt;font-weight:600;letter-spacing:-.03em;margin-top:6mm}
 .panel .ph{flex:1}
 .panel ol{list-style:none;margin-top:auto;padding-top:8mm;display:grid;gap:2.2mm}
-.panel li{display:flex;align-items:center;gap:3.5mm;background:rgba(255,255,255,.9);border-radius:5.4mm;padding:2.4mm 4.5mm 2.4mm 2.2mm;font-size:13pt;line-height:16pt;font-weight:600}
+.panel li{display:flex;align-items:baseline;gap:3mm;font-size:13pt;line-height:16pt;font-weight:600}
 .frase{width:${COL}mm;border-radius:7mm;padding:6.5mm 7.5mm 8mm;position:relative;overflow:hidden;border:.3mm solid rgba(20,19,18,.06)}.frase>*{position:relative}.frase>.fondo{position:absolute}
 .frase .n{margin-top:4.5mm}
 .idx{display:grid;grid-template-columns:${COL}mm ${COL}mm;column-gap:${MED}mm;align-items:start}
@@ -383,7 +407,7 @@ function auras(lista) {
 // ---------------------------------------------------------------- Piezas
 
 const svgIcono = (id) => `<svg class="ic" viewBox="0 0 24 24">${MARCA.icons[id]}</svg>`;
-const circulo = (contenido) => `<span class="cir">${contenido}</span>`;
+const circulo = (contenido) => (/<svg/.test(String(contenido)) ? `<span class="cir">${contenido}</span>` : `<span class="num">${contenido}</span>`);
 let uid = 0;
 const marca = () => MARCA.mark.replace(/IDX_/g, `m${uid++}_`);
 const lockup = () => MARCA.lockup.replace(/IDX_/g, `l${uid++}_`);
@@ -415,7 +439,7 @@ function pieza(id, ancho, armar) {
 function tipoFigura(b) {
   if (b.fotos) return 'fotos';
   const d = b.descripcion;
-  return /^gráfico de barras/.test(d) ? 'barras' : /^esquema de/.test(d) ? 'esquema' : /^cronología/.test(d) ? 'cronologia' : /^línea de tiempo de la prueba aplicada/.test(d) ? 'prueba'
+  return /^gráfico de barras/.test(d) ? 'barras' : /^mapa de posicionamiento/.test(d) ? 'mapa' : /^centro y periferia/.test(d) ? 'periferia' : /^matriz de dos por dos/.test(d) ? 'matriz2' : /^esquema de/.test(d) ? 'esquema' : /^cronología/.test(d) ? 'cronologia' : /^línea de tiempo de la prueba aplicada/.test(d) ? 'prueba'
     : /^lámina de identidad/.test(d) ? 'identidad' : /^resultados por persona/.test(d) ? 'personas'
     : /datos en tarjetas/.test(d) ? 'datos' : /^diagrama/.test(d) ? 'diagrama' : /capturas/.test(d) ? 'capturas' : /^línea de tiempo/.test(d) ? 'tiempo' : 'foto';
 }
@@ -424,7 +448,7 @@ function tipoFigura(b) {
 function piezaFlotante(b) {
   const nombre = `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}${b.continua ? ' (continuación)' : ''}`;
   return pieza(`${b.flotante}-${b.n}${b.continua ? '-2' : ''}`, ANCHO, (T) => {
-    const rot = `<div class="rot"><span class="pil lleno">${nombre}</span>${T('Título de pieza', b.titulo, 'tp')}</div>`;
+    const rot = `<div class="rot">${T('Rótulo', nombre)}${T('Título de pieza', b.titulo, 'tp')}</div>`;
     // La nota va en una columna de 118 mm, como el texto; si es larga, en dos.
     const larga = b.nota && !b.angosta && plano(b.nota).length > 240;
     const nota = b.nota ? `<div class="nota${larga ? ' dos' : ''}">${T('Nota', b.nota, larga ? 'dos' : '')}</div>` : '';
@@ -444,6 +468,9 @@ function cuerpoFlotante(b, T, ancho) {
   if (b.tipo === 'identidad') return identidad(T);
   if (b.tipo === 'personas') return personas(b, T);
   if (b.tipo === 'barras') return barras(b, T);
+  if (b.tipo === 'mapa') return mapa(b, T);
+  if (b.tipo === 'periferia') return periferia(b, T);
+  if (b.tipo === 'matriz2') return matriz2(b, T);
   if (b.tipo === 'foto') return `<div class="pend"><span class="pil amarilla">Fotografía pendiente</span><p>${h(mayus(b.descripcion))}.</p></div>`;
   if (/^Participantes/.test(b.titulo)) return fichasPersonas(b, T);
   if (b.filas[0].slice(1).every((c) => /^[A-Z]\. /.test(c))) return matriz(b, T);
@@ -473,20 +500,20 @@ function tablaFichas(b, T, ancho) {
     const primera = plano(f[0]); let pri;
     if (version) {
       const m = f[0].match(/^((?:Hasta la )?[\d.–]+), (.*)$/);
-      pri = `<div class="est"><span class="pil lleno">${h(m[1])}</span>${T('Celda cabecera', mayus(m[2]))}</div>`;
+      pri = `<div class="est">${T('Celda primera', m[1])}${T('Celda suave', mayus(m[2]))}</div>`;
     } else {
       const ic = ICONOS.find(([re]) => re.test(primera));
       const num = f[0].match(/^(\d+)\. (.*)$/), par = f[0].match(/^(.+?) \(([^)]+)\)$/);
       const signo = ic ? svgIcono(ic[1]) : /^Total/.test(primera) ? '=' : num ? num[1] : String(r + 1 + (b.desde || 0));
       const etiqueta = num ? num[2] : par ? par[1] : f[0];
-      pri = `<div class="pri">${circulo(signo)}<div class="tx">${T(num ? 'Celda' : 'Celda primera', etiqueta)}${par && !num ? T('Celda cabecera', mayus(par[2])) : ''}</div></div>`;
+      pri = `<div class="pri"><div class="tx">${T('Celda primera', num ? `${num[1]}. ${etiqueta}` : etiqueta)}${par && !num ? T('Celda suave', mayus(par[2])) : ''}</div></div>`;
     }
     const resto = f.slice(1).map((c, i) => {
       const k = i + 1;
       if (chips[k]) return `<div class="chips">${c === 'Todos' ? '<span class="pil">Todos</span>' : c.split(' y ').map((n) => `<span class="chip">${n}</span>`).join('')}</div>`;
       if (k === ult && conEstado) {
         const estado = plano(c).match(ESTADO)[1], detalle = c.replace(ESTADO, '');
-        return `<div class="est"><span class="pil ${CAPSULA[estado]}">${estado}</span>${detalle ? T('Celda', mayus(detalle)) : ''}</div>`;
+        return `<div class="est">${T('Celda primera', estado)}${detalle ? T('Celda', mayus(detalle)) : ''}</div>`;
       }
       return `<div class="c">${T(c === '—' ? 'Celda suave' : 'Celda', c)}</div>`;
     }).join('');
@@ -527,7 +554,7 @@ function fichasDatos(b, T) {
 function diagrama() {
   const nodos = [['perfil', 'Lila', 'Intención personal'], ['primer-paso', 'Cielo', 'Primer paso'], ['lugar', 'Lima', 'Lugar elegido'], ['tiempo', 'Amarillo', 'Condición configurada'], ['suena', 'Durazno', 'Pulso ambiental'], ['decidir', 'Rubor', 'Decisión de la persona']];
   const ramas = [['empece', 'Considerar la intención'], ['telefono', 'Seguir en el teléfono'], ['silenciar', 'Silenciar la señal']];
-  return `<div class="blanco"><div class="fig1"><div class="fig1-fila">${nodos.map(([i, c, t], k) => `${k ? `<span class="flecha">${svgIcono('siguiente')}</span>` : ''}<div class="nodo"><span class="cuad" style="background:${rgb(c)}">${svgIcono(i)}</span><span>${t}</span></div>`).join('')}</div>` +
+  return `<div><div class="fig1"><div class="fig1-fila">${nodos.map(([i, c, t], k) => `${k ? `<span class="flecha">${svgIcono('siguiente')}</span>` : ''}<div class="nodo"><span class="cuad" style="background:${rgb(c)}">${svgIcono(i)}</span><span>${t}</span></div>`).join('')}</div>` +
     `<div class="fig1-llave"></div><div class="fig1-ramas">${ramas.map(([i, t]) => `<div class="rama"><span class="cuad">${svgIcono(i)}</span><span>${t}</span></div>`).join('')}</div></div></div>`;
 }
 
@@ -573,8 +600,35 @@ function fotos(b, T) {
 
 /** Figura de una columna: una imagen con su rótulo, su título, su pie y su nota (APA 7), dentro del texto. */
 function piezaColumna(b) {
-  const f = b.fotos[0];
-  return pieza(`figura-${b.n}`, COL, (T) => `<div class="fcol"><div class="rot"><span class="pil lleno">Figura ${b.n}</span></div>${T('Título de pieza', b.titulo)}<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}${b.nota ? T('Nota', b.nota) : ''}</div>`);
+  const f = b.fotos && b.fotos[0];
+  const cuerpo = (T) => (f ? `<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : cuerpoFlotante(b, T, COL));
+  return pieza(`figura-${b.n}`, COL, (T) => `<div class="fcol"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
+}
+
+/** Mapa de posicionamiento en dos ejes: «izquierda | derecha | abajo | arriba; Referente | x | y; …», con x e y de 0 a 10. */
+function mapa(b, T) {
+  const [[izq, der, abajo, arriba], ...pts] = partes(b);
+  const punto = ([nom, x, y]) => {
+    const yo = /^Relevo/.test(nom), l = +x >= 7.5;
+    return `<div class="mp-p${yo ? ' yo' : ''}${l ? ' l' : ''}" style="left:${+x * 10}%;top:${100 - +y * 10}%"><i></i>${T(yo ? 'Celda primera' : 'Celda', nom)}</div>`;
+  };
+  return `<div class="mp">${T('Celda suave', arriba, 'mp-arr')}<div class="mp-a"><span class="mp-x"></span><span class="mp-y"></span>` +
+    `${T('Celda suave', izq, 'mp-izq')}${T('Celda suave', der, 'mp-der')}${pts.map(punto).join('')}</div>${T('Celda suave', abajo, 'mp-aba')}</div>`;
+}
+
+/** Centro y periferia de la atención: «Centro | texto; Periferia | texto; Señal | texto». */
+function periferia(b, T) {
+  const g = partes(b);
+  return `<div class="pf"><div class="pf-a"><span class="pf-o"></span><span class="pf-i"></span><span class="pf-s"></span><span class="pf-f">${svgIcono('siguiente')}</span></div>` +
+    `<div class="pf-t">${g.map(([t, d], i) => `<div class="pf-r"><span class="pf-m m${i}"></span><div>${T('Celda primera', t)}${T('Celda', d)}</div></div>`).join('')}</div></div>`;
+}
+
+/** Matriz de dos por dos: «Eje vertical | bajo | alto; Eje horizontal | izquierda | derecha; cuatro cuadrantes | texto», de arriba a la izquierda a abajo a la derecha. */
+function matriz2(b, T) {
+  const [[ev, bajo, alto], [eh, izq, der], ...cuad] = partes(b);
+  return `<div class="m2">${T('Celda suave', `${ev}: de ${bajo.toLowerCase()} (abajo) a ${alto.toLowerCase()} (arriba)`)}<div class="m2-g">` +
+    cuad.map(([t, d], i) => `<div class="m2-c${i === 1 ? ' fuerte' : ''}">${T('Celda primera', t)}${T('Celda', d)}</div>`).join('') +
+    `</div>${T('Celda suave', `${eh}: de ${izq.toLowerCase()} (izquierda) a ${der.toLowerCase()} (derecha)`)}</div>`;
 }
 
 /** Gráfico de barras horizontales, uno por grupo: «Título | etiqueta: valor, etiqueta: valor». */
@@ -582,7 +636,7 @@ function barras(b, T) {
   const grupos = partes(b).map(([tit, datos]) => [tit, datos.split(', ').map((d) => { const m = d.match(/^(.*): (\d+)$/); return [m[1], +m[2]]; })]);
   return `<div class="brs" style="grid-template-columns:repeat(${grupos.length},1fr)">${grupos.map(([tit, datos]) => {
     const max = Math.max(...datos.map((d) => d[1]));
-    return `<div class="blanco brs-g">${T('Celda primera', tit)}${datos.map(([et, v]) => `<div class="brs-f">${T('Celda', et)}<div class="brs-b"><span style="width:${(v / max) * 100}%"></span></div>${T('Celda primera', String(v))}</div>`).join('')}</div>`;
+    return `<div class="brs-g">${T('Celda primera', tit)}${datos.map(([et, v]) => `<div class="brs-f">${T('Celda', et)}<div class="brs-b"><span style="width:${(v / max) * 100}%"></span></div>${T('Celda primera', String(v))}</div>`).join('')}</div>`;
   }).join('')}</div>`;
 }
 
@@ -669,10 +723,10 @@ auras([['panel-3', 700, 1530, 3], ['panel-4', 700, 1530, 4]]);
 // Piezas fijas y piezas flotantes.
 const flot = cuerpo.flatMap((c) => c.bloques.filter((b) => b.flotante));
 flot.forEach((b) => {
-  if (b.columna) { b.tipo = 'columna'; b.rotulo = `Figura ${b.n}`; b.pieza = piezaColumna(b); return; }
+  if (b.columna) { if (!b.fotos) b.tipo = tipoFigura(b); b.rotulo = `Figura ${b.n}`; b.pieza = piezaColumna(b); return; }
   b.tipo = b.flotante === 'tabla' ? 'tabla' : tipoFigura(b);
   b.ancha = b.tipo === 'fotos' && (/^Flujo/.test(b.titulo) || (b.fotos.some((f) => !/figura-4/.test(f.src)) && b.fotos.reduce((t, f) => t + proporcion(f), 0) >= 2.4));
-  b.angosta = (b.tipo === 'fotos' && !b.ancha) || (b.flotante === 'tabla' && b.filas[0].length <= 3 && !/^Participantes/.test(b.titulo));   // dos columnas de ancho; título y nota en la tercera
+  b.angosta = (b.tipo === 'fotos' && !b.ancha) || ['mapa', 'periferia', 'matriz2'].includes(b.tipo) || (b.flotante === 'tabla' && b.filas[0].length <= 3 && !/^Participantes/.test(b.titulo));   // dos columnas de ancho; título y nota en la tercera
   b.pieza = piezaFlotante(b);
 });
 const frases = cuerpo.flatMap((c) => c.bloques.filter((b) => b.frase));
@@ -773,11 +827,21 @@ function componer(c) {
     marco = { c, p: cur.p, k: cur.k, y0: y, usado: 0, cont: [] };
     c.marcos.push(marco); pag(cur.p).marcos.push(marco); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c;
   };
-  const saltar = () => { marco = null; previo = null; siguiente(); y = 0; };
+  const espera = [];                                    // figuras de una columna que esperan el comienzo de la siguiente
+  const poner = (b) => {
+    const a = b.pieza.alto / PT;
+    pag(cur.p).frases.push({ b, k: cur.k, y: colTop(cur.p) + y * PT }); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c; b.pagina = cur.p;
+    marco = null; previo = null; y += a + 16;
+  };
+  const saltar = () => {
+    marco = null; previo = null; siguiente(); y = 0;
+    while (espera.length && y + espera[0].pieza.alto / PT <= cap() + 0.5) poner(espera.shift());   // la segunda, solo si cabe debajo de la primera
+  };
   const textos = c.bloques.filter((b) => b.partes && !b.frase);
   for (const b of c.bloques) {
     if (b.flotante && !b.columna) { programar(b, cur.p, c); continue; }
-    if (b.frase || b.columna) {
+    if (b.columna) { if (y === 0) poner(b); else espera.push(b); continue; }
+    if (b.frase) {
       const a = b.pieza.alto / PT; const antes = y > 0 ? 5 : 0;
       if (y + antes + a > cap() + 0.5) saltar(); else y += antes;
       pag(cur.p).frases.push({ b, k: cur.k, y: colTop(cur.p) + y * PT }); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c; b.pagina = cur.p;
@@ -792,8 +856,10 @@ function componer(c) {
       // Un subtítulo necesita sitio para sí y para dos líneas de lo que sigue; arriba de una columna no lleva aire.
       const aire = previo ? AIRE_SUBTITULO[b.estilo] : 0;
       const pide = aire + n * L + despues + (anuncia(sig) || (sig ? Math.min(2, sig.lineas) * E[sig.estilo].interlineado : 0));
-      if (y + pide > cap() + 0.5 && y > 0) saltar();
-      else if (aire) { previo.extra = aire; y += aire; }
+      if (y + pide > cap() + 0.5 && y > 0) {
+        // Al saltar pueden entrar figuras que esperaban: si el subtítulo ya no cabe con dos líneas debajo, salta otra vez.
+        saltar(); for (let v = 0; v < 6 && y > 0 && y + pide - aire > cap() + 0.5; v++) saltar();
+      } else if (aire) { previo.extra = aire; y += aire; }
     } else if (anuncia(b) && y + anuncia(b) > cap() + 0.5 && y > 0) saltar();
     let resto = n, desde = 0;
     while (resto > 0) {
@@ -809,6 +875,10 @@ function componer(c) {
       y += toma * L; marco.usado = y - marco.y0; desde += toma; resto -= toma;
       if (resto > 0) saltar(); else { y += despues; previo = b; }
     }
+  }
+  // Una figura de una columna que quedó esperando al final de la sección va debajo del texto, si cabe, o arriba de la columna siguiente.
+  for (let vueltas = 0; espera.length && vueltas < 12; vueltas++) {
+    if (y + 5 + espera[0].pieza.alto / PT <= cap() + 0.5) { if (y > 0) y += 5; poner(espera.shift()); } else saltar();
   }
   if (c.marcos.length) c.marcos[c.marcos.length - 1].ultimo = true;
   if (marco || y > 0) siguiente();
@@ -875,14 +945,14 @@ const colaDe = (c) => { const q = Math.max(...c.marcos.map((m) => m.p)); const m
   cuerpo.forEach((c) => {
     const { q, ms, total } = colaDe(c);
     const b = c.bloques.filter((x) => x.flotante && !x.columna).pop();                 // solo la última, para no alterar el orden
-    if (b && !b.continua && b.pagina < q && ms.length === 1 && total < 10 * 21 * PT && q > c.pagina && b.pieza.alto + AIRE_BANDA + MIN_TEXTO <= BOTTOM - TOP && !pag(q).banda) { b.rel = q - c.pagina; cambio = true; }
+    if (b && !b.continua && b.pagina < q && ms.length === 1 && total < 10 * 22 * PT && q > c.pagina && b.pieza.alto + AIRE_BANDA + MIN_TEXTO <= BOTTOM - TOP && !pag(q).banda) { b.rel = q - c.pagina; cambio = true; }
   });
   if (cambio) pgAnexos = repartir();
 }
 // Después, la última página de cada sección reparte su texto en columnas del mismo alto: una columna sola se abre
 // en dos o en tres, para que ninguna quede sola con poco texto.
 {
-  const LINEA = 21 * PT;
+  const LINEA = 22 * PT;
   const deseado = (c) => {
     const { q, ms, total } = colaDe(c); const lleno = BOTTOM - colTop(q);
     const lineas = total / LINEA, libres = q === c.pagina ? 2 : 3;   // en la página de apertura, el panel ocupa una columna
@@ -898,13 +968,22 @@ const colaDe = (c) => { const q = Math.max(...c.marcos.map((m) => m.p)); const m
   for (let intento = 0; intento < 10; intento++) {
     let cambio = false;
     for (const [c, t] of [...topes]) {
-      const rel = colaDe(c).q - c.pagina;
-      if (rel === t.rel) continue;
+      const { q, ms } = colaDe(c); const rel = q - c.pagina;
+      if (rel === t.rel) {
+        const ultima = ms[ms.length - 1];
+        const total = ms.reduce((x, m) => x + m.usado, 0) * PT;
+        if (ms.length > 1 && total >= 3 * LINEA * ms.length && ultima.usado * PT < 3 * LINEA - 0.5 && t.alto + LINEA < BOTTOM - colTop(q)) { topes.set(c, { rel: t.rel, alto: t.alto + LINEA }); cambio = true; }
+        continue;
+      }
       const lleno = BOTTOM - colTop(c.pagina + t.rel);
       if (rel > t.rel && t.alto + 2 * LINEA < lleno) topes.set(c, { rel: t.rel, alto: t.alto + 2 * LINEA });
       else { topes.delete(c); quitados.add(c); }
       cambio = true;
     }
+    cuerpo.forEach((c) => {
+      const ultima = Math.max(...c.marcos.map((m) => m.p));
+      c.bloques.filter((b) => b.flotante && !b.columna && b.rel && c.pagina + b.rel > ultima && ultima > c.pagina).forEach((b) => { b.rel = ultima - c.pagina; cambio = true; });
+    });
     cuerpo.forEach((c) => {
       if (topes.has(c) || quitados.has(c)) return;
       const d = deseado(c); if (d && colaDe(c).ms.length === 1) { topes.set(c, d); cambio = true; }

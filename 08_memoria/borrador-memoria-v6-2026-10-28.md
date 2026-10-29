@@ -62,46 +62,37 @@ Some digital leisure sessions go on without a new decision to continue, and anot
 
 ## Índice de tablas
 
-- Tabla 1. Participantes y función analítica de cada entrevista
-- Tabla 2. Familias de herramientas y sus límites frente al problema
-- Tabla 3. Actores y responsabilidades
-- Tabla 4. Fases del proyecto, objetivos, técnicas y productos
-- Tabla 5. Las decisiones de diseño de Relevo
-- Tabla 6. Lo que Relevo toma de iOS y el principio que lo justifica
-- Tabla 7. Iteraciones del prototipo y aprendizajes que las motivaron
-- Tabla 8. Soporte requerido en cada momento de la experiencia
-- Tabla 9. Presupuesto del prototipo académico
-- Tabla 10. Lo que mostró la prueba y cómo se itera
-- Tabla 11. Estado de los objetivos al cierre de este documento
+- Tabla 1. Las decisiones de diseño de Relevo
+- Tabla 2. Lo que Relevo toma de iOS y el principio que lo justifica
+- Tabla 3. Iteraciones del prototipo y aprendizajes que las motivaron
+- Tabla 4. Presupuesto del prototipo académico
+- Tabla 5. Lo que mostró la prueba y cómo se itera
+- Tabla 6. Estado de los objetivos al cierre de este documento
 
 ## Índice de figuras
 
-- Figura 1. La teoría de la autodeterminación
-- Figura 2. El libro de Norman sobre las cosas cotidianas
-- Figura 3. El uso inteligente del espacio, de Kirsh
-- Figura 4. La tecnología calma, de Weiser y Brown
-- Figura 5. La investigación generativa, de Sanders y Stappers
-- Figura 6. Episodios recientes de ocio digital según la encuesta
-- Figura 7. Opiniones sobre la propuesta
-- Figura 8. La síntesis en diseño, de Kolko
-- Figura 9. Los ocho criterios de diseño, agrupados por responsabilidad
-- Figura 10. El proceso del proyecto, de marzo a octubre de 2026
-- Figura 11. Relación entre intención, lugar, condición y decisión
-- Figura 12. Flujo de la aplicación, de la primera vez a la decisión
-- Figura 13. Pantallas del prototipo Android al preparar un ciclo
-- Figura 14. Contar, sonar y decidir
+- Figura 1. Dos caminos para que vuelva una intención
+- Figura 2. La señal y el mensaje de un recordatorio
+- Figura 3. Centro y periferia de la atención
+- Figura 4. Lo que dicen y lo que hacen las personas
+- Figura 5. Episodios recientes de ocio digital según la encuesta
+- Figura 6. Opiniones sobre la propuesta
+- Figura 7. Sobre qué actúan las herramientas y dónde ocurren
+- Figura 8. Los ocho criterios de diseño, agrupados por responsabilidad
+- Figura 9. El proceso del proyecto, de marzo a octubre de 2026
+- Figura 10. Relación entre intención, lugar, condición y decisión
+- Figura 11. Flujo de la aplicación, de la primera vez a la decisión
+- Figura 12. Pantallas del prototipo Android al preparar un ciclo
+- Figura 13. Contar, sonar y decidir
+- Figura 14. Registro de pantallas: la primera vez
 - Figura 15. Arquitectura de información de la aplicación
-- Figura 16. Registro de pantallas: la primera vez
-- Figura 17. Registro de pantallas: preparar un relevo
-- Figura 18. Registro de pantallas: contar, sonar y decidir, y los tres destinos
-- Figura 19. Registro de pantallas: Perfil
-- Figura 20. Sistema de identidad de Relevo
-- Figura 21. El Tag durante la prueba en el hogar
-- Figura 22. El testigo: un objeto propio con la placa del Tag adentro
-- Figura 23. La tesis de Gembali sobre productos físicos y digitales
-- Figura 24. La prueba aplicada en los hogares
-- Figura 25. Lo que ocurrió en los 24 relevos que alcanzaron su límite
-- Figura 26. Qué decidió cada persona después de la señal
+- Figura 16. Sistema de identidad de Relevo
+- Figura 17. El Tag durante la prueba en el hogar
+- Figura 18. El testigo: un objeto propio con la placa del Tag adentro
+- Figura 19. La prueba aplicada en los hogares
+- Figura 20. Lo que ocurrió en los 24 relevos que alcanzaron su límite
+- Figura 21. Qué decidió cada persona después de la señal
+- Figura 22. Recordar no basta para empezar
 
 # 1. Motivación personal
 
@@ -115,13 +106,13 @@ Me interesa estudiar ese momento sin convertirlo en un juicio sobre disciplina o
 
 Los teléfonos inteligentes reúnen en un mismo dispositivo la comunicación, la información, el trabajo y el entretenimiento. Con ellos cambió la forma de organizar el tiempo y de descansar: una persona puede conversar, escuchar música, jugar, mirar una serie o recorrer una red social sin cambiar de soporte. Esa variedad impide tratar el uso del teléfono como una sola experiencia y vuelve insuficiente cualquier juicio basado solo en cuánto tiempo se usa.
 
-Aquí se entiende por *ocio digital* el conjunto de actividades que una persona realiza a través de dispositivos en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros. No se opone a otras formas de ocio ni necesita justificarse por su utilidad. Una sesión larga puede ser satisfactoria; una breve puede sentirse inoportuna si desplaza algo que la persona consideraba importante. La diferencia depende del propósito, del contexto y de la valoración de quien la vive (Lukoff et al., 2018; Meier y Reinecke, 2021).
+Aquí se entiende por *ocio digital* el conjunto de actividades que una persona realiza a través de dispositivos en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros. No se opone a otras formas de ocio ni necesita justificarse por su utilidad. Una sesión larga puede ser satisfactoria; una breve puede sentirse inoportuna si desplaza algo que la persona consideraba importante. La diferencia depende del propósito, del contexto y de la valoración de quien la vive (Lukoff et al., 2018).
 
 El problema aparece en un momento preciso. Al comenzar una sesión, la persona puede tener presente otra actividad que también quiere hacer: leer, dibujar, salir a caminar, ordenar su pieza o llamar a alguien. La sesión continúa y esa intención deja de orientar el paso siguiente; cuando vuelve a pensar en ella, la ocasión puede haber cambiado o queda menos tiempo. La situación tiene dos formas: en una, la otra actividad deja de estar presente y se recuerda tarde; en la otra, sigue presente y aun así no se inicia. El proyecto se dirige a la primera; queda abierto si también puede ayudar en la segunda.
 
-Ese momento no ocurre en el vacío. Muchas aplicaciones están diseñadas para que la actividad continúe: el *desplazamiento infinito* carga contenido nuevo sin un final reconocible, y la reproducción automática inicia un contenido apenas termina otro. Estos patrones no determinan la conducta, pero reducen los *puntos de cierre*, los momentos en que algo termina y hay que elegir si seguir (de Segovia Vicente et al., 2024; Montag et al., 2019).
+Ese momento no ocurre en el vacío. Muchas aplicaciones están diseñadas para que la actividad continúe: el *desplazamiento infinito* carga contenido nuevo sin un final reconocible, y la reproducción automática inicia un contenido apenas termina otro. Estos patrones no determinan la conducta, pero reducen los *puntos de cierre*, los momentos en que algo termina y hay que elegir si seguir (Montag et al., 2019).
 
-Las respuestas más difundidas actúan sobre la actividad presente. Las herramientas de bienestar digital miden el tiempo, fijan límites, bloquean aplicaciones o ponen una pausa antes de abrirlas (Apple, s. f.; Google, s. f.-a; Lyngs et al., 2019). Sirven cuando alguien quiere reducir una conducta concreta, pero detener lo que se está haciendo no devuelve lo que se quería hacer: un bloqueo puede cerrar una aplicación y dejar igualmente ausente la otra intención, o cortar un descanso que la persona sí quería mantener.
+Las respuestas más difundidas actúan sobre la actividad presente. Las herramientas de bienestar digital miden el tiempo, fijan límites, bloquean aplicaciones o ponen una pausa antes de abrirlas (Lyngs et al., 2019). Sirven cuando alguien quiere reducir una conducta concreta, pero detener lo que se está haciendo no devuelve lo que se quería hacer: un bloqueo puede cerrar una aplicación y dejar igualmente ausente la otra intención, o cortar un descanso que la persona sí quería mantener.
 
 La psicología ofrece un concepto para precisar la situación. La *memoria prospectiva* es la capacidad de recordar una acción que se quiere realizar cuando llega la ocasión de hacerla (McDaniel y Einstein, 2000). Recordar al final del día que se quería leer no equivale a recuperar esa intención cuando todavía era posible abrir el libro. Así planteado, el desafío no es frenar el uso del teléfono, sino lograr que una intención vuelva a tiempo, sin convertirse en una obligación.
 
@@ -143,13 +134,13 @@ Tres factores lo explican, y ninguno basta por sí solo.
 
 **La atención está ocupada.** Recordar una acción futura exige que la intención vuelva por sí misma en el momento oportuno; cuando la actividad presente absorbe la atención, esa vuelta depende más de una señal del entorno que del esfuerzo de recordar (McDaniel y Einstein, 2000). En un estudio con 1315 personas adultas, que combinó cuestionarios breves durante el día con registros del uso del teléfono, cuanto más se prolongaba el desplazamiento sin propósito por contenidos, más culpa declaraban las personas, y el conflicto con otras metas explicaba parte de esa relación (de Segovia Vicente et al., 2024). El estudio es observacional y no distingue el olvido de la postergación, pero muestra que la relación con otras intenciones pesa en cómo se vive una sesión.
 
-**La interfaz sostiene la continuidad.** Un capítulo, una canción o una página tienen un final reconocible; el desplazamiento infinito y la reproducción automática, en cambio, mantienen abierta la secuencia y ofrecen la acción siguiente con poco esfuerzo (Montag et al., 2019). La interfaz no actúa sola —el propósito, el contexto y los hábitos de cada persona también cuentan (Lukoff et al., 2018)—, pero organiza cuándo aparecen los cierres y las ocasiones de elegir. Las herramientas de bienestar digital también son diseño, y la mayoría de las que revisaron Lyngs et al. (2019) bloquea o quita distracciones: actúa sobre la actividad presente, no sobre la que quedó fuera.
+**La interfaz sostiene la continuidad.** Un capítulo, una canción o una página tienen un final reconocible; el desplazamiento infinito y la reproducción automática, en cambio, mantienen abierta la secuencia y ofrecen la acción siguiente con poco esfuerzo (Montag et al., 2019). La interfaz no actúa sola, pero organiza cuándo aparecen los cierres y las ocasiones de elegir.
 
 **El ocio se juzga con la vara de la productividad.** Tonietto et al. (2021) observaron que considerar el ocio una pérdida de tiempo disminuye su disfrute, sobre todo cuando la actividad se realiza como un fin en sí misma. El estudio no trata del teléfono, pero advierte que una ayuda que presente el descanso como tiempo perdido puede dañar lo que pretende cuidar.
 
 ## Qué no es el problema
 
-No se trata de diagnosticar una adicción ni un daño a la memoria: la dificultad aparece en momentos concretos y puede estudiarse sin suponer que la persona necesita dejar el teléfono. Tampoco es el tiempo total de uso: una sesión larga puede tener sentido, y una breve, desplazar algo importante. Y hay una forma vecina que este proyecto no aborda directamente: cuando la otra actividad sigue presente y aun así no se inicia, un recordatorio no resuelve la tensión entre dos cosas valoradas (capítulo 2).
+No se trata de diagnosticar una adicción ni un daño a la memoria: la dificultad aparece en momentos concretos y puede estudiarse sin suponer que la persona necesita dejar el teléfono. Tampoco es el tiempo total de uso: una sesión larga puede tener sentido, y una breve, desplazar algo importante. Y hay una forma vecina que este proyecto no aborda directamente: cuando la otra actividad sigue presente y aun así no se inicia, un recordatorio no resuelve la tensión entre dos cosas valoradas.
 
 ## El desafío de diseño
 
@@ -163,11 +154,11 @@ Cuando las alternativas se reducen a bloquear, contabilizar o comparar, una herr
 
 El problema involucra variables propias del diseño: continuidad, cierre, momento, canal, jerarquía, legibilidad, esfuerzo y control. La psicología aporta conceptos para entender el recuerdo de acciones futuras y el conflicto entre metas, y la ingeniería permite programar las condiciones y la comunicación entre dispositivos; al diseño le corresponde unir ambos conocimientos en una experiencia clara, situada y respetuosa de quien la usa.
 
-El tema también corresponde al diseño porque permite repartir una interacción entre componentes físicos y digitales: una experiencia *phygital*, de *physical* y *digital* (Waggoner et al., 2026). La interacción tangible estudia cómo los objetos y el espacio físico participan en la relación con información digital (Hornecker y Buur, 2006; Ishii y Ullmer, 1997); un recordatorio ubicado en el entorno podría devolver una intención desde fuera de la pantalla que concentra la atención. El aporte se espera en dos planos: criterios para diseñar ayudas que acompañen una decisión sin presionarla, y un procedimiento para comparar, antes de fabricar un objeto propio, una señal situada donde comienza la actividad con la misma señal en otro lugar y con una notificación en el teléfono.
+El tema también corresponde al diseño porque permite repartir una interacción entre componentes físicos y digitales: una experiencia *phygital*, de *physical* y *digital* (Waggoner et al., 2026). La interacción tangible estudia cómo los objetos y el espacio físico participan en la relación con información digital (Ishii y Ullmer, 1997); un recordatorio ubicado en el entorno podría devolver una intención desde fuera de la pantalla que concentra la atención. El aporte se espera en dos planos: criterios para diseñar ayudas que acompañen una decisión sin presionarla, y un procedimiento para comparar, antes de fabricar un objeto propio, una señal situada donde comienza la actividad con la misma señal en otro lugar y con una notificación en el teléfono.
 
 # 5. Antecedentes y estado de la cuestión
 
-Este capítulo revisa la investigación previa; los productos se comparan más adelante. La revisión es exploratoria, no sistemática: priorizó publicaciones desde 2019 y las anteriores que definen sus conceptos, y sus fuentes académicas están en inglés.
+Antes de proponer una respuesta, conviene saber qué se ha estudiado. Esta revisión de la investigación previa es exploratoria, no sistemática: priorizó publicaciones desde 2019 y las anteriores que definen sus conceptos, y sus fuentes académicas están en inglés.
 
 ## Uso del teléfono y sentido de la experiencia
 
@@ -175,7 +166,7 @@ Meier y Reinecke (2021) reunieron 34 revisiones sobre comunicación digital y sa
 
 ## Bloqueos, límites y pausas
 
-Lyngs et al. (2019) analizaron 367 aplicaciones y extensiones de navegador: tres de cada cuatro bloqueaban o quitaban distracciones y alrededor de un tercio ayudaba a avanzar hacia una meta, por ejemplo recordándola. Biedermann et al. (2021) revisaron 28 intervenciones: los resultados fueron variables y la confianza baja, por muestras pequeñas, estudios breves y contextos poco claros, y las que solo buscaban aumentar la conciencia del uso apenas tuvieron efecto. En los 43 estudios de evaluación que revisaron Monge Roffarello y De Russis (2023), la mediana de duración fue de 21 días y solo cinco superaron los 2 meses; su metaanálisis de siete estudios estimó un efecto entre pequeño y mediano sobre el tiempo de uso (*g* = 0,47), medida que consideran demasiado gruesa para el bienestar.
+Lyngs et al. (2019) analizaron 367 aplicaciones y extensiones de navegador: tres de cada cuatro bloqueaban o quitaban distracciones y alrededor de un tercio ayudaba a avanzar hacia una meta, por ejemplo recordándola. En los 43 estudios de evaluación que revisaron Monge Roffarello y De Russis (2023), la mediana de duración fue de 21 días y solo cinco superaron los 2 meses; su metaanálisis de siete estudios estimó un efecto entre pequeño y mediano sobre el tiempo de uso (*g* = 0,47), medida que consideran demasiado gruesa para el bienestar.
 
 Otra línea introduce una pausa. En un experimento de campo de 6 semanas con one sec, que demora la apertura de una aplicación y pide reconsiderarla, 280 personas desistieron en el 36 % de los intentos; en otro, en línea, la opción explícita de desistir tuvo el mayor efecto y el mensaje de reflexión, por sí solo, no fue eficaz (Grüning et al., 2023). Los registros de 1039 personas que ya usaban la aplicación sugieren que el efecto no persiste al suspender la intervención (Haliburton et al., 2024). El creador del producto figura entre los autores de ambos trabajos, lo que exige cautela. MindPhone, en cambio, preguntaba al desbloquear el teléfono para qué se iba a usar o qué se haría después fuera de él: en un estudio de campo de 2 semanas con 28 personas, la segunda pregunta redujo el uso distraído y favoreció volver antes al entorno, y la primera aumentó la conciencia de los motivos de uso (Terzimehić et al., 2022).
 
@@ -191,7 +182,7 @@ Las métricas describen el uso, los bloqueos modifican el acceso, las pausas abr
 
 # 6. Marco teórico por ámbitos
 
-Tres ámbitos organizan el marco: la experiencia del ocio digital, las interfaces que sostienen su continuidad y los objetos y recursos que apoyan el recuerdo. Su cruce permite estudiar cuándo una intención deja de orientar la decisión y qué condiciones debería respetar una ayuda.
+Los antecedentes dicen qué se ha intentado, pero no por qué una intención deja de orientar lo que se hace. Tres ámbitos ayudan a entenderlo: la experiencia del ocio digital, las interfaces que sostienen su continuidad y los objetos y lugares que apoyan el recuerdo. Juntos indican qué condiciones debería respetar una ayuda.
 
 ## La experiencia del ocio digital
 
@@ -205,96 +196,73 @@ Una elección inicial deliberada no implica que cada momento posterior responda 
 
 ## El diseño de la atención
 
-Patrones de interfaz como el desplazamiento infinito o la reproducción automática (Montag et al., 2019) forman lo que aquí se llama *arquitectura de atención*: un conjunto de decisiones de interfaz que orienta lo que se percibe y cómo avanza la interacción. Seguir con un gesto mínimo exige menos preparación que levantarse, reunir materiales o cambiar de espacio. La *fricción*, un esfuerzo adicional como esperar o confirmar, puede abrir una ocasión de reconsiderar (Grüning et al., 2023; Haliburton et al., 2024), pero si es excesiva frustra actividades legítimas.
+Patrones de interfaz como el desplazamiento infinito o la reproducción automática (Montag et al., 2019) forman lo que aquí se llama *arquitectura de atención*: un conjunto de decisiones de interfaz que orienta lo que se percibe y cómo avanza la interacción. Seguir con un gesto mínimo exige menos preparación que levantarse, reunir materiales o cambiar de espacio. La *fricción*, un esfuerzo adicional como esperar o confirmar, puede abrir una ocasión de reconsiderar (Grüning et al., 2023), pero si es excesiva frustra actividades legítimas.
 
-La *autonomía* se entiende en el sentido de la teoría de la autodeterminación (Ryan y Deci, 2000; Figura 1): en términos de diseño, depende de comprender la intervención y poder aceptarla, ajustarla o rechazarla. Una ayuda difícil de detener puede presionar aunque no bloquee el teléfono, y un tono amable no reemplaza la posibilidad real de elegir: en un experimento con 526 personas sobre una intervención digital de salud, ofrecer opciones mejoró su evaluación y cambiar solo el lenguaje no produjo diferencias significativas (Smit et al., 2019), aunque se midieron percepciones, no conducta, y el grupo con opciones recibió además más retroalimentación personalizada.
-
-**Figura 1**
-
-*La teoría de la autodeterminación*
-
-![](figuras/fuentes/ryan-deci-2000.png)
-
-*Nota.* Encabezado del artículo. Tomado de Ryan y Deci (2000, p. 68).
+La *autonomía* se entiende en el sentido de la teoría de la autodeterminación (Ryan y Deci, 2000): en términos de diseño, depende de comprender la intervención y poder aceptarla, ajustarla o rechazarla. Una ayuda difícil de detener puede presionar aunque no bloquee el teléfono, y un tono amable no reemplaza la posibilidad real de elegir: en un experimento sobre una intervención digital de salud, ofrecer opciones mejoró la valoración de las personas, y cambiar solo el lenguaje, no (Smit et al., 2019).
 
 Las *intenciones de implementación* son planes que especifican de antemano cuándo, dónde y cómo actuar: si se presenta cierta situación, se inicia una respuesta (Gollwitzer y Sheeran, 2006). De ellas interesa precisar cómo y dónde comienza una actividad, no el compromiso de ejecutarla: la persona debe poder recordar su intención y decidir no seguirla.
 
-Recordar una intención, iniciar una actividad y adquirir un hábito son resultados distintos: un hábito es una conducta que se vuelve más automática en un contexto recurrente, y medir su frecuencia o registrar una señal no basta para demostrarlo (Gardner et al., 2012; Lally et al., 2010). Las *rachas* —series de tres o más repeticiones consecutivas de una conducta— favorecen su continuidad mientras el registro las muestra intactas, porque mantenerlas se vuelve una meta en sí misma; al romperse, la conducta se repite menos (Silverman y Barasch, 2023). Rachas, puntos y premios quedan fuera no por lúdicos, sino porque califican el cumplimiento: el proyecto estudia cómo acompañar una decisión, no cómo crear hábitos.
+Recordar una intención, iniciar una actividad y adquirir un hábito son resultados distintos: un hábito es una conducta que se vuelve más automática en un contexto recurrente, y medir su frecuencia o registrar una señal no basta para demostrarlo (Lally et al., 2010). Las *rachas* —series de tres o más repeticiones consecutivas de una conducta— favorecen su continuidad mientras el registro las muestra intactas, porque mantenerlas se vuelve una meta en sí misma; al romperse, la conducta se repite menos (Silverman y Barasch, 2023). Rachas, puntos y premios quedan fuera no por lúdicos, sino porque califican el cumplimiento: el proyecto estudia cómo acompañar una decisión, no cómo crear hábitos.
 
 ## Recordar con objetos y lugares
 
 La memoria prospectiva se distingue del recuerdo de acontecimientos pasados porque nadie pide explícitamente recordar: la intención debe volver por sí misma cuando todavía es posible actuar (McDaniel y Einstein, 2000). Para evaluar una ayuda conviene separar cuatro pasos —percibir la señal, identificar su origen, recordar la actividad y recordar cómo comenzarla— y saber en cuál falla sin exigir que la persona actúe.
 
-El *marco multiproceso* explica cómo vuelve una intención: la persona puede vigilar el entorno esperando el momento indicado, o un evento puede traerla de vuelta de forma espontánea (Einstein y McDaniel, 2005; McDaniel y Einstein, 2000). Cuando la actividad en curso absorbe la atención, como en una sesión de ocio digital, lo segundo es más probable si la señal es llamativa y está fuertemente asociada a la acción. Los recordatorios más eficaces aludían a la vez a la ocasión y la acción prevista, y los que solo anunciaban la ocasión no mejoraban el recuerdo (Guynn et al., 1998). Los estudios sobre el lugar evalúan intenciones que se recuperan al estar en el sitio, no un sonido que llega desde él (O’Rear y Radvansky, 2019; Sohn et al., 2005). De ahí una hipótesis: una señal que proviene del lugar donde comienza la actividad podría indicar, sin texto, qué hacer y con qué empezar. Pero con una sola intención vigente quizá baste cualquier señal convenida, y el aporte del lugar sería entonces acortar el paso entre recordar y empezar.
+El *marco multiproceso* explica cómo vuelve una intención: la persona puede vigilar el entorno esperando el momento indicado, o un evento puede traerla de vuelta de forma espontánea (McDaniel y Einstein, 2000; Figura 1). Cuando la actividad en curso absorbe la atención, como en una sesión de ocio digital, lo segundo es más probable si la señal es llamativa y está fuertemente asociada a la acción. Los recordatorios más eficaces aludían a la vez a la ocasión y la acción prevista, y los que solo anunciaban la ocasión no mejoraban el recuerdo (Guynn et al., 1998). Los estudios sobre el lugar evalúan intenciones que se recuperan al estar en el sitio, no un sonido que llega desde él (O’Rear y Radvansky, 2019). De ahí una hipótesis: una señal que proviene del lugar donde comienza la actividad podría indicar, sin texto, qué hacer y con qué empezar. Pero con una sola intención vigente quizá baste cualquier señal convenida, y el aporte del lugar sería entonces acortar el paso entre recordar y empezar.
 
-Una nota, un libro dispuesto sobre la mesa o una alarma son formas de *descarga cognitiva*, la acción física que reduce la demanda cognitiva de una tarea (Risko y Gilbert, 2016); si lo que se confía es una acción futura, se habla de *descarga de intenciones* (Gilbert et al., 2023). Todo recordatorio reúne una señal, que avisa que hay algo que recordar, y un mensaje, que dice qué es (Norman, 1988/1990, p. 73; Figura 2); la señal no necesita contener el mensaje si su relación con la intención se comprende, y si es ambigua obliga a consultar otra fuente.
+**Figura 1**
+
+*Dos caminos para que vuelva una intención*
+
+[FIGURA POR INSERTAR: (columna) esquema de caminos: Vigilar | La persona revisa si llegó el momento | Exige atención constante, Falla si otra actividad la absorbe; Recuperar ante una señal | Algo del entorno trae de vuelta la intención | Funciona aunque la atención esté en otra parte, Es el camino que busca Relevo]
+
+*Nota.* Elaboración propia a partir de McDaniel y Einstein (2000).
+
+Una nota, un libro dispuesto sobre la mesa o una alarma son formas de *descarga cognitiva*, la acción física que reduce la demanda cognitiva de una tarea (Risko y Gilbert, 2016). Todo recordatorio reúne una señal, que avisa que hay algo que recordar, y un mensaje, que dice qué es (Norman, 1988/1990, p. 73; Figura 2); la señal no necesita contener el mensaje si su relación con la intención se comprende, y si es ambigua obliga a consultar otra fuente.
 
 **Figura 2**
 
-*El libro de Norman sobre las cosas cotidianas*
+*La señal y el mensaje de un recordatorio*
 
-![](figuras/fuentes/norman-1990.png)
+[FIGURA POR INSERTAR: (columna) esquema de recordatorio: Señal | Avisa que hay algo que recordar | En Relevo, el sonido del objeto; Mensaje | Dice qué es | En Relevo, el lugar donde suena y el primer paso que está ahí]
 
-*Nota.* Portada interior de la edición citada. Tomado de Norman (1988/1990).
+*Nota.* Elaboración propia a partir de Norman (1988/1990, p. 73).
 
-Kirsh (1995) explica que la disposición de los objetos puede simplificar la elección, la percepción y el cálculo mental, como un rollo de película dejado junto a la puerta para recordar que se quería revelarlo (Figura 3).
+Kirsh (1995) explica que la disposición de los objetos puede simplificar la elección, la percepción y el cálculo mental, como un rollo de película dejado junto a la puerta para recordar que se quería revelarlo.
+
+La *interacción tangible* da forma física a la información digital. Ishii y Ullmer (1997) propusieron acoplarla con objetos y superficies cotidianos y distinguieron dos planos: objetos que se manipulan en el centro de la atención y medios ambientales —luz, sonido, corrientes de aire— que informan desde la periferia (Figura 3). Para el problema importan el plano periférico y el espacio: un objeto puede significar por el lugar donde se deja más que por su manipulación.
 
 **Figura 3**
 
-*El uso inteligente del espacio, de Kirsh*
+*Centro y periferia de la atención*
 
-![](figuras/fuentes/kirsh-1995.png)
+[FIGURA POR INSERTAR: (columna) centro y periferia: Centro | La pantalla, donde está la atención; Periferia | El entorno, que se percibe sin mirarlo; Señal | El sonido del objeto pasa al centro y, al terminar, vuelve a la periferia]
 
-*Nota.* Encabezado de la versión que el autor publica en su sitio. Tomado de Kirsh (1995).
+*Nota.* Elaboración propia a partir de Weiser y Brown (1997).
 
-La *interacción tangible* da forma física a la información digital. Ishii y Ullmer (1997) propusieron acoplarla con objetos y superficies cotidianos y distinguieron dos planos: objetos que se manipulan en el centro de la atención y medios ambientales —luz, sonido, corrientes de aire— que informan desde la periferia; Hornecker y Buur (2006) reunieron las definiciones anteriores bajo ese nombre. Para el problema importan el plano periférico y el espacio: un objeto puede significar por el lugar donde se deja más que por su manipulación.
-
-La *tecnología calma* describe el ideal de esas señales: informar desde la periferia de la atención y pasar fácilmente al centro y de vuelta (Weiser y Brown, 1997; Figura 4). Una señal sonora dirigida a alguien absorto en una pantalla tensiona ese ideal, porque debe irrumpir en el centro: el sonido se percibe aunque la atención esté en otra parte, y por eso mismo es intrusivo (Norman, 1988/1990, p. 103). Los antecedentes señalan ambos riesgos: una señal ambiental puede pasar inadvertida (Lee et al., 2023), y un recordatorio que reclama la atención es difícil de ignorar, pueda o no actuar la persona (Zekveld et al., 2017).
-
-**Figura 4**
-
-*La tecnología calma, de Weiser y Brown*
-
-![](figuras/fuentes/denning-metcalfe-1997.jpg)
-
-*Nota.* Portada de *Beyond calculation*, que reúne el capítulo de Weiser y Brown (1997). Imagen de Open Library (https://openlibrary.org/isbn/0387949321).
+La *tecnología calma* describe el ideal de esas señales: informar desde la periferia de la atención y pasar fácilmente al centro y de vuelta (Weiser y Brown, 1997; Figura 3). Una señal sonora dirigida a alguien absorto en una pantalla tensiona ese ideal, porque debe irrumpir en el centro: el sonido se percibe aunque la atención esté en otra parte, y por eso mismo es intrusivo (Norman, 1988/1990, p. 103). Los antecedentes señalan ambos riesgos: una señal ambiental puede pasar inadvertida (Lee et al., 2023), y un recordatorio que reclama la atención es difícil de ignorar, pueda o no actuar la persona (Zekveld et al., 2017).
 
 *Phygital* (Waggoner et al., 2026) nombra en esta memoria el tipo de sistema; el análisis se apoya en la interacción tangible. De su revisión sobre métodos de experiencia de usuario en bibliotecas se toma el criterio de evaluar lo físico y lo digital como un solo sistema; se añade la exigencia, que Gembali (2023, p. 56) sí propone, de comprobar si el componente físico aporta valor frente a una solución solo digital.
 
 # 7. Usuario, contexto y hallazgos de entrevistas
 
+La teoría explica el fenómeno en general; faltaba saber cómo lo viven las personas y cuándo una ayuda sería un error.
+
 ## Dos fuentes primarias
 
 El usuario y su contexto se estudiaron con dos fuentes primarias, diseñadas y aplicadas por el autor: ocho entrevistas semiestructuradas y una encuesta en línea. Las entrevistas definieron a quién se dirige el proyecto y cuándo no debe intervenir; la encuesta, posterior, contrastó esos criterios con más personas.
 
-Las entrevistas se hicieron en Santiago, en persona, el 11 y el 12 de junio de 2026, cuando el proyecto trabajaba sobre una idea anterior: un objeto donde se depositaría el teléfono y que luego mostraría una señal del descanso realizado. Por eso la pauta no pregunta directamente por otra actividad que la persona quisiera hacer; esa categoría se construyó en el análisis. Participaron ocho personas de 19 a 27 años, reclutadas por referencias de personas cercanas al investigador, con consentimiento oral (Tabla 1). La pauta tiene 13 preguntas, de Q1 a Q13: el tiempo libre, la última sesión de entretenimiento en el teléfono y cómo se vivió, la valoración del ocio, los intentos de descansar sin el teléfono y la reacción ante la idea anterior (véase el Anexo A).
+Las entrevistas se hicieron en Santiago, en persona, el 11 y el 12 de junio de 2026, cuando el proyecto trabajaba sobre una idea anterior: un objeto donde se depositaría el teléfono y que luego mostraría una señal del descanso realizado. Por eso la pauta no pregunta directamente por otra actividad que la persona quisiera hacer; esa categoría se construyó en el análisis. Participaron ocho personas de 19 a 27 años, reclutadas por referencias de personas cercanas al investigador, con consentimiento oral. La pauta tiene 13 preguntas, de Q1 a Q13: el tiempo libre, la última sesión de entretenimiento en el teléfono y cómo se vivió, la valoración del ocio, los intentos de descansar sin el teléfono y la reacción ante la idea anterior. La pauta y la síntesis de cada entrevista están en el Anexo A.
 
-Las conversaciones se transcribieron después con apoyo de una herramienta automática [CONFIRMAR: si hubo grabación de audio y con qué se transcribió]. El corpus resultante es una síntesis en tercera persona: sostiene paráfrasis, no citas textuales, y una remisión como «(P2, Q3–Q7)» indica las respuestas que apoyan una afirmación. El análisis, entre el 23 y el 30 de agosto de 2026, siguió el método Framework, que ordena el material codificado en una matriz de casos y temas para comparar dentro de cada caso y entre casos (Goldsmith, 2021): un libro de 23 códigos, la reconstrucción de cada caso y la comparación de los ocho. De las semejanzas y los contrastes surgieron *tipos ideales*, agrupaciones analíticas que no pretenden coincidir del todo con la realidad (Stapley et al., 2022), adaptados aquí a episodios de ocho entrevistas y sin la comprobación por una segunda persona que ese método recomienda. Los relatos son retrospectivos, de una sola conversación por persona, y lo que se dice puede diferir de lo que se hace (Sanders y Stappers, 2012, p. 69; Figura 5): los hallazgos muestran patrones y contraejemplos, no frecuencias ni causas.
+Las conversaciones se transcribieron después con apoyo de una herramienta automática [CONFIRMAR: si hubo grabación de audio y con qué se transcribió]. El corpus resultante es una síntesis en tercera persona: sostiene paráfrasis, no citas textuales, y una remisión como «(P2, Q3–Q7)» indica las respuestas que apoyan una afirmación. El análisis, entre el 23 y el 30 de agosto de 2026, siguió el método Framework, que ordena el material codificado en una matriz de casos y temas para comparar dentro de cada caso y entre casos (Goldsmith, 2021): un libro de 23 códigos, la reconstrucción de cada caso y la comparación de los ocho. De las semejanzas y los contrastes surgieron *tipos ideales*, agrupaciones analíticas que no pretenden coincidir del todo con la realidad (Stapley et al., 2022), adaptados aquí a episodios de ocho entrevistas y sin la comprobación por una segunda persona que ese método recomienda. Los relatos son retrospectivos, de una sola conversación por persona, y lo que se dice puede diferir de lo que se hace (Sanders y Stappers, 2012, p. 69; Figura 4): los hallazgos muestran patrones y contraejemplos, no frecuencias ni causas.
 
-**Figura 5**
+**Figura 4**
 
-*La investigación generativa, de Sanders y Stappers*
+*Lo que dicen y lo que hacen las personas*
 
-![](figuras/fuentes/sanders-stappers-2012.jpg)
+[FIGURA POR INSERTAR: (columna) esquema de fuentes: Lo que dicen | Entrevistas y encuesta | Motivos, valoraciones y recuerdos; Lo que hacen | Registros de la prueba en los hogares | Cuándo sonó la señal, qué respondieron y qué decidieron]
 
-*Nota.* Portada de Sanders y Stappers (2012). Imagen de Open Library (https://openlibrary.org/isbn/9789063692841).
-
-**Tabla 1**
-
-*Participantes y función analítica de cada entrevista*
-
-| Código | Edad | Aporte principal al análisis |
-| --- | ---: | --- |
-| P1 | 21 | Lectura valorada frente a usos difíciles de describir. |
-| P2 | 22 | Sueño reconocido y continuidad en el teléfono. |
-| P3 | 19 | Pérdida de la noción del tiempo y obligaciones pendientes. |
-| P4 | 22 | Desplazamiento rutinario frente a un sudoku que exige concentración. |
-| P5 | 20 | Entretenimiento inmediato, aburrimiento posterior y estrategias frágiles. |
-| P6 | 27 | Videollamada extensa, significativa y recordada. |
-| P7 | 21 | Actividad elegida sin reconocimiento de un problema. |
-| P8 | 19 | Rutina difícil de describir y descanso aceptado. |
-
-*Nota.* Entrevistas del autor, 11 y 12 de junio de 2026. La edad de P6 difería entre dos registros (24 y 27 años); se usa la confirmada por el investigador. No se registraron de forma sistemática ocupación, convivencia ni tipo de vivienda.
+*Nota.* Elaboración propia a partir de Sanders y Stappers (2012, p. 69).
 
 La encuesta, en Google Forms, tuvo 16 preguntas y 53 respuestas analizadas, de personas de 19 a 30 años (mediana de 22) [CONFIRMAR: fecha, convocatoria y relación con la encuesta de 70 participantes registrada el 2 de septiembre]. Se incorporó el 29 de septiembre de 2026, cuando la propuesta ya existía: sirve para contrastar los criterios de diseño, no para explicar su origen. Preguntó por el episodio más reciente en que la persona siguió en una aplicación más tiempo del que quería, por la otra actividad que deseaba y por cómo la habría empezado; después describió la propuesta, con la señal en un parlante, y pidió opiniones. El investigador ordenó las respuestas antes de exportarlas [CONFIRMAR: alcance de esa edición], y las respuestas abiertas de cinco preguntas las clasificó una herramienta de inteligencia artificial con reglas escritas, cuya revisión por el investigador está pendiente [CONFIRMAR: fecha de revisión y códigos corregidos]. Por eso se informan recuentos y categorías, no citas, y las cifras de esas cinco preguntas son provisionales (véase el Anexo B).
 
@@ -306,23 +274,23 @@ Otras experiencias conservaron sentido. P6 relató una videollamada de varias ho
 
 Para descansar sin el teléfono, siete personas lo alejan, lo guardan, lo silencian o activan el modo No molestar, casi siempre para proteger otra actividad (P1–P5, P7 y P8, Q12), y tres contaron que, si queda cerca, vuelven a mirarlo (P1, P3 y P5, Q12). La distancia y el silencio quitan el teléfono de en medio, pero no hacen presente la otra actividad. Ante la idea anterior, seis personas pidieron señales simples, calmadas, discretas o visuales (P1, P3–P5, P7 y P8, Q13), y una rechazó las calificaciones y comparaciones entre días (P7, Q13). Ninguna pidió una señal sonora, y a P6 le molesta el sonido del teléfono cercano cuando lee o arma maquetas (P6, Q12).
 
-La encuesta mostró que el momento estudiado es frecuente y doméstico (Figura 6). De los 43 episodios con otra actividad deseada, en 21 no se comenzó, en 14 se comenzó —a veces mucho más tarde— y en los ocho restantes la persona cambió de idea, no podía empezarla o no lo recordaba. Casi todos nombraron un *primer paso*, la acción breve con que la actividad comienza, como abrir el libro o ponerse las zapatillas.
+La encuesta mostró que el momento estudiado es frecuente y doméstico (Figura 5). De los 43 episodios con otra actividad deseada, en 21 no se comenzó, en 14 se comenzó —a veces mucho más tarde— y en los ocho restantes la persona cambió de idea, no podía empezarla o no lo recordaba. Casi todos nombraron un *primer paso*, la acción breve con que la actividad comienza, como abrir el libro o ponerse las zapatillas.
 
-**Figura 6**
+**Figura 5**
 
 *Episodios recientes de ocio digital según la encuesta*
 
-[FIGURA POR INSERTAR: cuatro datos en tarjetas: 39 de 45, personas que siguieron en una aplicación más tiempo del que querían al menos un día de la última semana; 43 de 47, episodios que incluían otra actividad deseada; 42 de 43, casos en que se nombró un primer paso; 44 de 47, episodios que ocurrieron en casa]
+[FIGURA POR INSERTAR: (columna) cuatro datos en tarjetas: 39 de 45, personas que siguieron en una aplicación más tiempo del que querían al menos un día de la última semana; 43 de 47, episodios que incluían otra actividad deseada; 42 de 43, casos en que se nombró un primer paso; 44 de 47, episodios que ocurrieron en casa]
 
 *Nota.* Encuesta en línea del autor (53 respuestas). Cada total corresponde a quienes respondieron esa pregunta.
 
-Después de leer la propuesta, 49 de 53 personas explicaron bien su funcionamiento. La mayoría pondría el parlante junto a la actividad y preferiría un sonido de 15 segundos o menos, y la disposición a probarla quedó repartida, con una mediana de 3 en una escala de 1 a 5 (Figura 7). Los motivos de descarte más citados fueron que sonara en un mal momento (8), el esfuerzo de prepararla (7) y el ruido o la convivencia (7).
+Después de leer la propuesta, 49 de 53 personas explicaron bien su funcionamiento. La mayoría pondría el parlante junto a la actividad y preferiría un sonido de 15 segundos o menos, y la disposición a probarla quedó repartida, con una mediana de 3 en una escala de 1 a 5 (Figura 6). Los motivos de descarte más citados fueron que sonara en un mal momento (8), el esfuerzo de prepararla (7) y el ruido o la convivencia (7).
 
-**Figura 7**
+**Figura 6**
 
 *Opiniones sobre la propuesta*
 
-[FIGURA POR INSERTAR: gráfico de barras: Dónde pondría el parlante | Junto a la actividad: 36, En un lugar general de la casa: 7, No lo usaría o no sabe dónde: 10; Duración preferida del sonido | 1 a 5 segundos: 16, 6 a 15 segundos: 25, 16 a 30 segundos: 3, Que no sonara: 7, No sabe: 2; Probabilidad de probarlo, de 1 a 5 | 5: 3, 4: 20, 3: 18, 2: 8, 1: 3, No sabe: 1]
+[FIGURA POR INSERTAR: (columna) gráfico de barras: Dónde pondría el parlante | Junto a la actividad: 36, En un lugar general de la casa: 7, No lo usaría o no sabe dónde: 10; Duración preferida del sonido | 1 a 5 segundos: 16, 6 a 15 segundos: 25, 16 a 30 segundos: 3, Que no sonara: 7, No sabe: 2; Probabilidad de probarlo, de 1 a 5 | 5: 3, 4: 20, 3: 18, 2: 8, 1: 3, No sabe: 1]
 
 *Nota.* Encuesta en línea del autor (53 respuestas). Número de personas por respuesta.
 
@@ -342,6 +310,8 @@ De ambas situaciones se desprenden necesidades comunes: una intención explícit
 
 # 8. Estado del arte y referentes
 
+Con esas necesidades a la vista, se revisó qué ofrecen hoy los productos y proyectos que abordan el uso del teléfono.
+
 ## Método y criterios de comparación
 
 Se compararon productos, servicios y la evidencia publicada sobre ellos con seis preguntas: qué problema abordan, qué mecanismo usan, dónde ocurre la interacción principal, qué exigen configurar y mantener, cómo conservan o limitan la autonomía y qué evidencia hay sobre sus resultados. La búsqueda, exploratoria y no sistemática, se cerró el 24 de agosto de 2026, y el Anexo C reúne su registro, las fichas y la exploración de patentes.
@@ -352,7 +322,7 @@ Apple Screen Time y Google Digital Wellbeing miden el uso y fijan límites de ti
 
 ## Proyectos de título de diseño en Chile
 
-Dos memorias de diseño de la Universidad de Chile pusieron a prueba la gamificación en aplicaciones de bienestar. Riveros Oltra (2023) probó ocho semanas, con 357 personas de la propia empresa, una función de hábitos con misiones, rachas y recompensas para Betterfly: la gamificación no garantizó la retención, y los usuarios activos semanales aumentaron en promedio un 6,4 %, frente a una meta del 20 %. Venegas Álvarez (2026) evitó puntos y niveles en una aplicación de diario de gratitud, y tras un mes con 36 personas reconoció que la evidencia no demuestra que resuelva la baja adherencia. Ambas buscan que la persona vuelva a la aplicación, y Relevo, que la deje; el caso de Betterfly es coherente con la exclusión de rachas y premios (criterio 4). Desde la sociología, Cortés Concha (2016) describió el ocio de jóvenes chilenos en redes sociales como una experiencia social, lo que respalda no ver en toda sesión prolongada un problema.
+Dos memorias de diseño de la Universidad de Chile pusieron a prueba la gamificación en aplicaciones de bienestar. Riveros Oltra (2023) probó ocho semanas, con 357 personas de la propia empresa, una función de hábitos con misiones, rachas y recompensas para Betterfly: la gamificación no garantizó la retención, y los usuarios activos semanales aumentaron en promedio un 6,4 %, frente a una meta del 20 %. Venegas Álvarez (2026) evitó puntos y niveles en una aplicación de diario de gratitud, y tras un mes con 36 personas reconoció que la evidencia no demuestra que resuelva la baja adherencia. Ambas buscan que la persona vuelva a la aplicación, y Relevo, que la deje; el caso de Betterfly es coherente con la exclusión de rachas y premios (criterio 4).
 
 ## Objetos que restringen o alejan el teléfono
 
@@ -366,24 +336,15 @@ Una última familia resuelve el soporte, no el uso del teléfono: los localizado
 
 ## Evidencia y límites de cada familia
 
-La evidencia es desigual: los estudios sobre herramientas digitales suelen ser breves y medir el tiempo de uso (capítulo 5), y sobre los objetos comerciales no se localizó ninguna evaluación independiente. Además, 63 de 138 personas que habían desactivado los avisos de una herramienta de autocontrol digital aceptaron reconfigurarlos (Peña-Albert et al., 2026): una regla puede dejar de servir. La Tabla 2 resume las familias.
+La evidencia es desigual: los estudios sobre herramientas digitales suelen ser breves y medir el tiempo de uso (capítulo 5), y sobre los objetos comerciales no se localizó ninguna evaluación independiente. Además, 63 de 138 personas que habían desactivado los avisos de una herramienta de autocontrol digital aceptaron reconfigurarlos (Peña-Albert et al., 2026): una regla puede dejar de servir. La Figura 7 ubica a cada familia según sobre qué actúa y dónde ocurre.
 
-**Tabla 2**
+**Figura 7**
 
-*Familias de herramientas y sus límites frente al problema*
+*Sobre qué actúan las herramientas y dónde ocurren*
 
-| Familia y mecanismo | Referentes (tipo de evidencia) | Límite frente al problema estudiado |
-| --- | --- | --- |
-| Medición del uso | Screen Time, Digital Wellbeing (comercial). | No distingue el sentido de la sesión. |
-| Pausa antes de abrir | Pause Point, one sec (comercial; académica, one sec). | Señal y significado siguen en el teléfono. |
-| Intención preguntada en pantalla | MindPhone (académica). | Ocurre en la pantalla, sin relación con un lugar. |
-| Bloqueo con llave física o por proximidad | Brick, Brick Zone, Unpluq, Screenless Breaker (comercial). | Actúa solo sobre la actividad presente. |
-| Separación física del teléfono | Estrategias cotidianas (entrevistas propias), kSafe (comercial). | No conserva la actividad por comenzar. |
-| Objeto de foco, hábito y recompensa | Focusaur (comercial). | Tiende a productividad o recompensa. |
-| Recordatorio tangible o situado | The Tangible Reminder, Wobble, Place-Its (académica). | No aborda el ocio digital. |
-| Localizador que suena a pedido | Localizadores Bluetooth genéricos (ninguna). | No guarda una intención ni responde al uso del teléfono. |
+[FIGURA POR INSERTAR: mapa de posicionamiento: Actúa sobre lo que haces ahora | Parte de lo que querías hacer | En la pantalla | En el lugar, fuera de la pantalla; Screen Time y Bienestar digital | 1.2 | 1.5; one sec y Pause Point | 2.2 | 3.1; MindPhone | 5.6 | 2.3; Place-Its | 7.7 | 3.5; Brick y Unpluq | 1.3 | 7.4; kSafe y dejar el teléfono lejos | 2.4 | 8.8; Focusaur | 4.6 | 6.4; The Tangible Reminder | 7.7 | 7.9; Relevo | 8.9 | 9.4]
 
-*Nota.* Clasificación propia a partir de Apple (s. f.), Brick LLC (s. f.-a, s. f.-b), Focusaur (s. f.), Google (s. f.-a), Grüning et al. (2023), Haliburton et al. (2024), Hermann et al. (2007), Kitchen Safe (s. f.), one sec (s. f.), Sanders (2026), Screenless (s. f.), Sohn et al. (2005), Terzimehić et al. (2022), Unpluq (s. f.) y Zekveld et al. (2017). «Comercial»: solo documentación del fabricante o de la plataforma.
+*Nota.* Elaboración propia. Ubicación aproximada, según la documentación de cada producto y los estudios citados; no mide eficacia. Las fichas de cada referente están en el Anexo C.
 
 ## Oportunidad y exigencia de comparación
 
@@ -393,17 +354,9 @@ La oportunidad es, por eso, una pregunta de diseño: si una intención devuelta 
 
 # 9. Criterios de diseño
 
-Los criterios de diseño son las condiciones que una propuesta debe cumplir para responder al problema, y sirven después para evaluarla; formularlos es parte de la síntesis, que traduce una oportunidad en criterios específicos (Kolko, 2011, p. 40; Figura 8). Los ocho provienen de la revisión bibliográfica, las entrevistas y la comparación de herramientas; la encuesta permitió contrastar varios. Se agrupan en tres responsabilidades: conservar una intención comprensible (criterios 1 y 2), respetar la decisión de la persona (3 a 5) y justificar el esfuerzo del sistema (6 a 8) (Figura 9). El Anexo D relaciona cada uno con su evidencia y lo que falta probar.
+La investigación, las personas y los referentes dejan ocho condiciones que una ayuda debe cumplir: los criterios de diseño. Sirven para diseñar y, después, para evaluar; formularlos es parte de la síntesis, que traduce una oportunidad en criterios concretos (Kolko, 2011, p. 40). La encuesta permitió contrastar varios. Se agrupan en tres responsabilidades: conservar una intención comprensible (criterios 1 y 2), respetar la decisión de la persona (3 a 5) y justificar el esfuerzo del sistema (6 a 8) (Figura 8). El Anexo D relaciona cada uno con su evidencia y lo que falta probar.
 
 **Figura 8**
-
-*La síntesis en diseño, de Kolko*
-
-![](figuras/fuentes/kolko-2011.jpg)
-
-*Nota.* Portada de Kolko (2011). Imagen de Open Library (https://openlibrary.org/isbn/9780199744336).
-
-**Figura 9**
 
 *Los ocho criterios de diseño, agrupados por responsabilidad*
 
@@ -476,40 +429,13 @@ El objetivo general es diseñar y evaluar formativamente un sistema *phygital* q
 
 ## Actores y responsabilidades
 
-El proyecto lo condujo una sola persona. La Tabla 3 distingue a quienes participaron de las funciones que requeriría una etapa posterior.
-
-**Tabla 3**
-
-*Actores y responsabilidades*
-
-| Actor | Responsabilidad | En este proyecto |
-| --- | --- | --- |
-| Usuario principal | Formula la intención, sitúa el objeto e interpreta la señal. | Descrito con entrevistas y encuesta; la prueba considera tres personas. |
-| Usuario límite | Usa el teléfono en una actividad que conserva sentido. | Descrito con entrevistas; fija cuándo no intervenir. |
-| Convivientes | Comparten el espacio de la señal. | Sin consulta directa. |
-| Autor | Investiga, diseña, dirige el desarrollo y evalúa. | Todas las etapas y decisiones. |
-| Herramientas de inteligencia artificial | Programan, redactan borradores, buscan fuentes y analizan la encuesta. | Bajo instrucción y revisión del autor, que responde por el resultado. |
-| Profesores guía | Orientan y revisan. | Dos profesores. |
-| Electrónica, fabricación, accesibilidad y protección de datos | Construir el testigo y revisar el sistema. | Sin participación; etapa posterior. |
+El proyecto lo condujo una sola persona, el autor, que investigó, diseñó, dirigió el desarrollo y evaluó. Lo orientaron dos profesores guía; tres personas probaron el prototipo en sus hogares, donde quienes conviven con ellas también oyen la señal, aunque no fueron consultadas, y las herramientas de inteligencia artificial programaron, redactaron borradores y analizaron la encuesta bajo su instrucción. Una etapa posterior requeriría especialistas en electrónica, fabricación, accesibilidad y protección de datos.
 
 ## Enfoque metodológico y plan de trabajo
 
-El proyecto sigue un enfoque de investigación a través del diseño, en que el diseñador integra resultados de investigación en un artefacto y ese trabajo constituye un aporte (Zimmerman et al., 2007). Es exploratorio y principalmente cualitativo, con recuentos descriptivos: orienta decisiones de diseño. La Tabla 4 resume sus fases, y la Figura 10 muestra cómo se desarrolló: un proceso con cambios de rumbo, en que cada decisión respondió a lo que se iba aprendiendo.
+El proyecto sigue un enfoque de investigación a través del diseño, en que el diseñador integra resultados de investigación en un artefacto y ese trabajo constituye un aporte (Zimmerman et al., 2007). Es exploratorio y principalmente cualitativo, con recuentos descriptivos: orienta decisiones de diseño. Avanzó en seis fases: la investigación, en el primer semestre; el análisis, en agosto; la formulación y el diseño, en agosto y septiembre; el prototipo, desde el 21 de septiembre; la evaluación en los hogares, desde el 7 de octubre, y el cierre, con el Pase de Examen el 25 de noviembre, la memoria el 2 de diciembre y el examen entre el 14 y el 18 de diciembre. La Figura 9 muestra cómo se desarrolló: un proceso con cambios de rumbo, en que cada decisión respondió a lo que se iba aprendiendo.
 
-**Tabla 4**
-
-*Fases del proyecto, objetivos, técnicas y productos*
-
-| Fase y fechas (2026) | Objetivo específico | Técnicas | Productos |
-| --- | --- | --- | --- |
-| Investigación (Seminario de Título, primer semestre) | 1 | Revisión bibliográfica; ocho entrevistas (11 y 12 de junio). | Antecedentes, marco teórico y corpus. |
-| Análisis (agosto) | 1 | Método Framework y tipos ideales (23 al 30 de agosto); referentes (búsqueda cerrada el 24 de agosto). | Situaciones de usuario y criterios. |
-| Formulación y diseño (agosto y septiembre) | 1 y 2 | Recorrido y estados; marca (16 de septiembre); encuesta (incorporada el 29 de septiembre). | Pregunta, hipótesis, objetivos, recorrido y marca. |
-| Prototipo (21 de septiembre al 12 de octubre) | 2 y 4 | Desarrollo iterativo; pruebas en emulador; prueba del Tag en un teléfono (7 de octubre). | Aplicación Android 3.2, base remota y panel. |
-| Evaluación (desde el 7 de octubre) | 3 y 4 | Prueba de uso en el hogar, con tres personas, en curso. | Registros de 31 ciclos de las tres personas al 19 de octubre. |
-| Cierre (noviembre y diciembre) | Todos | Análisis y redacción. | Pase de Examen (25 de noviembre), memoria (2 de diciembre) y examen (14 al 18 de diciembre). |
-
-**Figura 10**
+**Figura 9**
 
 *El proceso del proyecto, de marzo a octubre de 2026*
 
@@ -523,9 +449,9 @@ El proyecto empleó ampliamente herramientas de inteligencia artificial generati
 
 # 11. Bajada proyectual: las decisiones de diseño
 
-Este capítulo explica cómo se diseñó Relevo y por qué. Todas las decisiones de diseño son del autor; el proyecto las registró a medida que se tomaban, con su contexto, sus alternativas y su fundamento: 147 entradas entre el 23 de agosto y el 28 de octubre de 2026. La Tabla 5 las resume, de lo general a lo particular, y las secciones siguientes las desarrollan.
+Con el problema formulado y los criterios definidos, comenzó el diseño. Todas las decisiones de diseño son del autor; el proyecto las registró a medida que se tomaban, con su contexto, sus alternativas y su fundamento: 148 entradas entre el 23 de agosto y el 28 de octubre de 2026. La Tabla 1 las resume, de lo general a lo particular, y las secciones siguientes las desarrollan.
 
-**Tabla 5**
+**Tabla 1**
 
 *Las decisiones de diseño de Relevo*
 
@@ -546,9 +472,9 @@ Este capítulo explica cómo se diseñó Relevo y por qué. Todas las decisiones
 
 ## El sistema: tres partes y una decisión abierta
 
-**Decisión.** Relevo reparte el trabajo entre tres partes. Una aplicación guarda la intención y vigila la condición que la persona fijó; un objeto, dejado junto al primer paso, emite la señal; y el lugar relaciona esa señal con una acción posible. La persona une las partes con una asociación que ella misma decide, y la secuencia termina en una decisión abierta (Figura 11).
+**Decisión.** Relevo reparte el trabajo entre tres partes. Una aplicación guarda la intención y vigila la condición que la persona fijó; un objeto, dejado junto al primer paso, emite la señal; y el lugar relaciona esa señal con una acción posible. La persona une las partes con una asociación que ella misma decide, y la secuencia termina en una decisión abierta (Figura 10).
 
-**Figura 11**
+**Figura 10**
 
 *Relación entre intención, lugar, condición y decisión*
 
@@ -556,7 +482,7 @@ Este capítulo explica cómo se diseñó Relevo y por qué. Todas las decisiones
 
 *Nota.* Elaboración propia. La secuencia termina en una decisión abierta, no en una acción obligatoria.
 
-**Por qué un objeto y no solo el teléfono.** La señal debe llegar desde fuera de la pantalla que retiene la atención. Una intención vuelve con más probabilidad ante una señal llamativa y asociada a la acción, y el lugar donde la acción se realiza puede ofrecer esa asociación (Kirsh, 1995; McDaniel y Einstein, 2000). Un objeto en ese lugar une la señal con el comienzo, mientras que una notificación llega por el mismo canal que la persona está mirando; la interacción tangible y la tecnología calma dan el marco de esa relación entre objeto, lugar y atención (Ishii y Ullmer, 1997; Weiser y Brown, 1997).
+**Por qué un objeto y no solo el teléfono.** La señal debe llegar desde fuera de la pantalla que retiene la atención. Una intención vuelve con más probabilidad ante una señal llamativa y asociada a la acción, y el lugar donde la acción se realiza puede ofrecer esa asociación (McDaniel y Einstein, 2000). Un objeto en ese lugar une la señal con el comienzo, mientras que una notificación llega por el mismo canal que la persona está mirando; la interacción tangible y la tecnología calma dan el marco de esa relación entre objeto, lugar y atención (Ishii y Ullmer, 1997; Weiser y Brown, 1997).
 
 **Alternativas descartadas.** Bloquear o pausar, porque actúan sobre la actividad presente y no devuelven la otra; una notificación como solución, que queda como condición de comparación, y un objeto donde dejar el teléfono, la idea de junio, que lo alejaba sin traer de vuelta la actividad.
 
@@ -564,9 +490,9 @@ Este capítulo explica cómo se diseñó Relevo y por qué. Todas las decisiones
 
 ## El recorrido de la persona
 
-La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* —el ciclo en que una intención y su condición están vigentes—, esperar mientras usa el teléfono, recibir la señal y decidir (Figura 12). La Figura 13 muestra cómo se prepara y la Figura 14, lo que ocurre después.
+La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* —el ciclo en que una intención y su condición están vigentes—, esperar mientras usa el teléfono, recibir la señal y decidir (Figura 11). La Figura 12 muestra cómo se prepara y la Figura 13, lo que ocurre después.
 
-**Figura 12**
+**Figura 11**
 
 *Flujo de la aplicación, de la primera vez a la decisión*
 
@@ -574,7 +500,7 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 *Nota.* Elaboración propia: *wireframes* —esquemas de baja fidelidad, sin color ni imágenes— de la versión 2.32, la que usó la prueba. Preparar tiene seis pasos; aquí se ven el primero y el último.
 
-**Figura 13**
+**Figura 12**
 
 *Pantallas del prototipo Android al preparar un ciclo*
 
@@ -586,9 +512,9 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 **Probar antes de confiar.** En el paso «¿Dónde suena?», la persona hace sonar el objeto y confirma si lo oyó. La decisión vino del desarrollo: el Tag aceptaba la orden de sonar sin sonar, de modo que solo la persona puede confirmar que la señal se oye desde donde quedó.
 
-**Corregir sin empezar de nuevo.** Desde la revisión final, cada dato se toca para cambiarlo, y un relevo activo puede editarse antes de sonar. Esta segunda posibilidad la pidió una de las personas de la prueba (Tabla 7).
+**Corregir sin empezar de nuevo.** Desde la revisión final, cada dato se toca para cambiarlo, y un relevo activo puede editarse antes de sonar. Esta segunda posibilidad la pidió una de las personas de la prueba (Tabla 3).
 
-**Figura 14**
+**Figura 13**
 
 *Contar, sonar y decidir*
 
@@ -598,7 +524,15 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 **Después de la señal.** La aplicación hace preguntas de un toque, que pueden saltarse, y cierra con «¿Qué decidiste?»: «Comencé la actividad», «La dejé para después» o «Cambié de idea», del mismo tamaño, color y lugar. Ninguna respuesta queda marcada de antemano. Las preguntas sirven a la prueba; en uso libre, solo la última tiene sentido para la persona.
 
-**La primera vez.** Antes del primer relevo hay once pantallas (Figura 16): bienvenida, cuatro de «Cómo funciona», el consentimiento, los permisos, tres del perfil y una invitación a preparar el primero acompañada. Las tres personas de la prueba las completaron, pero el recorrido resultó largo; la iteración siguiente lo parte en una parte inicial y el resto más adelante.
+**La primera vez.** Antes del primer relevo hay once pantallas (Figura 14): bienvenida, cuatro de «Cómo funciona», el consentimiento, los permisos, tres del perfil y una invitación a preparar el primero acompañada. Las tres personas de la prueba las completaron, pero el recorrido resultó largo; la iteración siguiente lo parte en una parte inicial y el resto más adelante.
+
+**Figura 14**
+
+*Registro de pantallas: la primera vez*
+
+![](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/1-primera-vez.png)
+
+*Nota.* Elaboración propia: *wireframes* de la versión 2.32 (18 de octubre de 2026). Cada pantalla lleva su número, su nombre y su función.
 
 ## La condición: cuándo suena
 
@@ -620,60 +554,26 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 [FIGURA POR INSERTAR: esquema de arquitectura de información: Inicio | Lo más próximo, en una sola tarjeta | Preparar un relevo (seis pasos), Tu relevo mientras cuenta, Suena, Preguntas y decisión; Ruta | Los pasos de una actividad | El paso actual, Editar la ruta, Preparar un relevo con este paso; Perfil | Lo que es de la persona | Tu semana, Tus relevos, Tus actividades, Apariencia, Avisos, Permisos, Privacidad y datos, Cómo funciona, Cómo usar el Tag]
 
-*Nota.* Elaboración propia a partir de la versión 3.3. Las pantallas de la prueba, para el investigador, quedan ocultas en Perfil.
+*Nota.* Elaboración propia a partir de la versión 3.3. Las pantallas de la prueba, para el investigador, quedan ocultas en Perfil. El registro de las 39 pantallas, en *wireframes*, está en el Anexo F.
 
 **Jerarquía.** Inicio muestra solo lo más próximo, en una tarjeta principal: el relevo que está contando, la vuelta después de una señal, el siguiente paso de la ruta o la pregunta «¿Tienes algo en mente?». Se descartó un tablero con todo a la vez, que convierte la aplicación en algo que hay que revisar. Ruta guarda los pasos de una actividad que la persona quiere sostener, con el actual en grande y sin porcentajes de avance. Perfil reúne lo que es de la persona: sus relevos, sus actividades, sus ajustes y sus datos.
 
 **Lo que mostró la prueba.** La pantalla del relevo mientras cuenta ofrece demasiada información; la iteración siguiente deja la actividad, el tiempo que falta y una sola acción a la vista.
 
-**El registro de pantallas.** Las 39 pantallas de la versión 2.32 se dibujaron como *wireframes*, agrupadas por recorrido y con la función de cada una (Figuras 16 a 19). Permiten revisar el recorrido completo y comprobar que cada pantalla pide una sola cosa.
-
-**Figura 16**
-
-*Registro de pantallas: la primera vez*
-
-![](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/1-primera-vez.png)
-
-*Nota.* Elaboración propia: *wireframes* de la versión 2.32 (18 de octubre de 2026). Cada pantalla lleva su número, su nombre y su función.
-
-**Figura 17**
-
-*Registro de pantallas: preparar un relevo*
-
-![](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/2-preparar-un-relevo.png)
-
-*Nota.* Elaboración propia: *wireframes* de la versión 2.32.
-
-**Figura 18**
-
-*Registro de pantallas: contar, sonar y decidir, y los tres destinos*
-
-![](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/3-contar-sonar-y-decidir.png) ![](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/4-inicio-ruta-y-perfil.png)
-
-*Nota.* Elaboración propia: *wireframes* de la versión 2.32. A la derecha, Inicio, Ruta y Perfil.
-
-**Figura 19**
-
-*Registro de pantallas: Perfil*
-
-![](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/5-perfil.png)
-
-*Nota.* Elaboración propia: *wireframes* de la versión 2.32.
-
 ## El lenguaje visual de la interfaz
 
-**Decisión: la referencia de iOS.** La interfaz toma el lenguaje visual de iOS 26: vidrio solo en la navegación, formas redondeadas, cápsulas, contenido a pantalla completa y emoji tridimensionales en el perfil. El autor la pidió el 27 de septiembre de 2026, después de ver una versión plana de la aplicación: una interfaz hermosa y fácil, sin sobrediseñar ni sobreexplicar, con transparencias y desenfoques sutiles en vez de brillos. Se apoyó en las pautas con que Apple presentó ese lenguaje (Apple, 2025a, 2025b).
+**Decisión: la referencia de iOS.** La interfaz toma el lenguaje visual de iOS 26: vidrio solo en la navegación, formas redondeadas, cápsulas, contenido a pantalla completa y emoji tridimensionales en el perfil. El autor la pidió el 27 de septiembre de 2026, después de ver una versión plana de la aplicación: una interfaz hermosa y fácil, sin sobrediseñar ni sobreexplicar, con transparencias y desenfoques sutiles en vez de brillos. Se apoyó en las pautas con que Apple presentó ese lenguaje (Apple, 2025a).
 
-**Por qué sirve a Relevo.** Relevo se abre pocas veces al día y, cuando se abre, no debe pedir que se aprenda ni quedarse con la atención: su trabajo es devolverla a otra actividad. La referencia de iOS responde a esas dos exigencias. Por familiaridad: sus convenciones —una barra inferior, hojas que suben desde abajo, un botón principal al pie— son habituales en las aplicaciones de uso diario, y las personas prefieren que una interfaz funcione como las que ya conocen (Yablonski, s. f.). Por jerarquía: en ese lenguaje el vidrio queda en la navegación y el contenido adelante (Apple, 2025b), de modo que la aplicación se aparta y lo importante es la actividad, como propone la tecnología calma (Weiser y Brown, 1997). Y por coherencia: las cápsulas y los bordes redondeados prolongan las formas circulares de la marca. La Tabla 6 relaciona cada elemento con el principio que lo justifica. [CONFIRMAR: otras razones del autor para preferir el lenguaje de iOS]
+**Por qué sirve a Relevo.** Relevo se abre pocas veces al día y, cuando se abre, no debe pedir que se aprenda ni quedarse con la atención: su trabajo es devolverla a otra actividad. La referencia de iOS responde a esas dos exigencias. Por familiaridad: sus convenciones —una barra inferior, hojas que suben desde abajo, un botón principal al pie— son habituales en las aplicaciones de uso diario, y las personas prefieren que una interfaz funcione como las que ya conocen (Yablonski, s. f.). Por jerarquía: en ese lenguaje el vidrio queda en la navegación y el contenido adelante (Apple, 2025a), de modo que la aplicación se aparta y lo importante es la actividad, como propone la tecnología calma (Weiser y Brown, 1997). Y por coherencia: las cápsulas y los bordes redondeados prolongan las formas circulares de la marca. La Tabla 2 relaciona cada elemento con el principio que lo justifica. [CONFIRMAR: otras razones del autor para preferir el lenguaje de iOS]
 
-**Tabla 6**
+**Tabla 2**
 
 *Lo que Relevo toma de iOS y el principio que lo justifica*
 
 | Elemento | Cómo se aplica en Relevo | Principio de interacción o usabilidad |
 | --- | --- | --- |
 | Barra de pestañas inferior | Tres destinos: Inicio, Ruta y Perfil. | Ley de Jakob: se espera que funcione como otras aplicaciones; ley de Hick: con pocas opciones, se elige antes. |
-| Vidrio solo en la navegación | Barras y hojas de vidrio; la actividad y su primer paso, adelante. | Jerarquía: la navegación se distingue del contenido sin taparlo (Apple, 2025b). |
+| Vidrio solo en la navegación | Barras y hojas de vidrio; la actividad y su primer paso, adelante. | Jerarquía: la navegación se distingue del contenido sin taparlo (Apple, 2025a). |
 | Botón principal al pie, de ancho completo | «Seguir» y «Activar el relevo», siempre en el mismo lugar. | Ley de Fitts: un objetivo grande y cercano al pulgar se alcanza antes. |
 | Cápsulas de un toque | El primer paso, el lugar y el tiempo se eligen entre opciones concretas. | Ley de Hick, y menos esfuerzo para fijar un recordatorio (Chiu y Gilbert, 2024). |
 | Hojas que suben desde abajo | «Elige las apps» y «Cómo usar el Tag». | Mantener el contexto: el paso en curso queda visible detrás. |
@@ -692,17 +592,17 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 **Decisión.** La aplicación habla de tú, en frases cortas, con un tono cercano, tranquilo y concreto. Pregunta en vez de rotular —«¿Cómo empiezas?»— y sus botones empiezan con un verbo. Evita las palabras que convierten una intención en deber: *meta*, *objetivo*, *hábito*, *tarea*, *alarma*, *progreso*, *logro*. No usa rachas, puntos, comparaciones entre días ni mensajes que culpen o apuren: dice «Prepáralo con calma» y no «¡Vamos, tú puedes!».
 
-**Por qué.** Una señal que se vive como orden o evaluación contradice la autonomía que el proyecto quiere proteger (Ryan y Deci, 2000), y romper una racha desanima a seguir (Silverman y Barasch, 2023). Las pautas de escritura de Apple (2025c) orientaron la claridad y la brevedad. En las entrevistas, una persona rechazó expresamente las calificaciones y comparaciones entre días (P7, Q13).
+**Por qué.** Una señal que se vive como orden o evaluación contradice la autonomía que el proyecto quiere proteger (Ryan y Deci, 2000), y romper una racha desanima a seguir (Silverman y Barasch, 2023). Las pautas de escritura de Apple (2025b) orientaron la claridad y la brevedad. En las entrevistas, una persona rechazó expresamente las calificaciones y comparaciones entre días (P7, Q13).
 
 **Lo que mostró la prueba.** El paso del perfil «Elige tu emoji» describe lo que se ve en vez de preguntar por la persona; pasará a «¿Con qué te identificas?» o una pregunta semejante.
 
 ## La identidad
 
-**Nombre.** Relevo es breve, se pronuncia sin dudas y no usa el vocabulario del bloqueo o de la desintoxicación digital. La identidad de una marca es el conjunto de asociaciones que aspira a crear (Aaker, 1996), y un nombre conviene simple, distintivo y protegible (Robertson, 1989); como «relevo» también evoca deporte, turnos y reemplazos, su registro tendría que comprobarse antes de un uso comercial. El descriptor es «Un recordatorio físico preparado desde el teléfono» [CONFIRMAR: frase de marca definitiva].
+**Nombre.** Relevo es breve, se pronuncia sin dudas y no usa el vocabulario del bloqueo o de la desintoxicación digital. Como «relevo» también evoca deporte, turnos y reemplazos, su registro tendría que comprobarse antes de un uso comercial. El descriptor es «Un recordatorio físico preparado desde el teléfono» [CONFIRMAR: frase de marca definitiva].
 
-**Logo.** Cuatro círculos se pasan el turno en el sentido del reloj, cada uno bajo el siguiente, y dejan el centro abierto: el tiempo, el primer paso, el lugar y la decisión (Figura 20). El tercero representa el lugar y no el objeto, porque el objeto del prototipo es provisional y lo que se estudia es el aporte del lugar. Las formas circulares se asocian con suavidad y cuidado (Jiang et al., 2016), y un logo que describe lo que hace la marca se evalúa mejor, sobre todo cuando la marca es nueva (Luffarelli et al., 2019). Las luces se superponen con trazos planos, sin transparencias, para que se reproduzcan igual en cualquier soporte. El nombre usa Chillax en peso semibold, elegida entre 20 tipografías porque su «o» es casi un círculo y conserva la forma en tamaños pequeños.
+**Logo.** Cuatro círculos se pasan el turno en el sentido del reloj, cada uno bajo el siguiente, y dejan el centro abierto: el tiempo, el primer paso, el lugar y la decisión (Figura 16). El tercero representa el lugar y no el objeto, porque el objeto del prototipo es provisional y lo que se estudia es el aporte del lugar. Las formas circulares se asocian con suavidad y cuidado (Jiang et al., 2016), y un logo que describe lo que hace la marca se evalúa mejor, sobre todo cuando la marca es nueva (Luffarelli et al., 2019). Las luces se superponen con trazos planos, sin transparencias, para que se reproduzcan igual en cualquier soporte. El nombre usa Chillax en peso semibold, elegida entre 20 tipografías porque su «o» es casi un círculo y conserva la forma en tamaños pequeños.
 
-**Figura 20**
+**Figura 16**
 
 *Sistema de identidad de Relevo*
 
@@ -710,7 +610,7 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 *Nota.* Elaboración propia. Identidad aprobada por el autor el 11 de octubre de 2026.
 
-**Color.** La decisión cromática se apoya en la función, no en promedios de asociaciones emocionales. Cada color cumple un solo papel —tu tiempo, tu primer paso, el lugar, lo que decides, la personalización y el después—, y los seis tienen una luminosidad casi igual, para que ninguno resalte más que otro; la tinta sobre cada uno supera el contraste de 4,5:1 que piden las WCAG 2.2 (World Wide Web Consortium, 2024). Los significados del color dependen del contexto y del producto (Elliot y Maier, 2014; Kauppinen-Räisänen y Luomala, 2010), y las asociaciones con emociones dividen a las personas: en un estudio de 31 países, el rosa se asoció con el amor en el 53,2 % de las personas y el rojo, en el 69,2 %, de modo que una parte importante no hizo esa asociación (Jonauskaite et al., 2024). Por eso las asociaciones no fundan la elección; solo sirvieron para evitar colores muy ligados a emociones negativas —el rojo se asoció con la rabia en el 55,2 %— y, junto con la convención de la señalética (International Organization for Standardization [ISO], 2011), para que ningún estado de la persona use negro, gris ni rojo. Ninguna de estas asociaciones se midió en este proyecto, y la marca no se ha probado con personas.
+**Color.** La decisión cromática se apoya en la función, no en promedios de asociaciones emocionales. Cada color cumple un solo papel —tu tiempo, tu primer paso, el lugar, lo que decides, la personalización y el después—, y los seis tienen una luminosidad casi igual, para que ninguno resalte más que otro; la tinta sobre cada uno supera el contraste de 4,5:1 que piden las WCAG 2.2 (World Wide Web Consortium, 2024). Los significados del color dependen del contexto y del producto (Elliot y Maier, 2014), y las asociaciones con emociones dividen a las personas: en un estudio de 31 países, el rosa se asoció con el amor en el 53,2 % de las personas y el rojo, en el 69,2 %, de modo que una parte importante no hizo esa asociación (Jonauskaite et al., 2024). Por eso las asociaciones no fundan la elección; solo sirvieron para evitar colores muy ligados a emociones negativas —el rojo se asoció con la rabia en el 55,2 %— y, junto con la convención de la señalética (International Organization for Standardization [ISO], 2011), para que ningún estado de la persona use negro, gris ni rojo. Ninguna de estas asociaciones se midió en este proyecto, y la marca no se ha probado con personas.
 
 **Tipografía e íconos.** La letra es Instrument Sans, una grotesca de código abierto con ejes de peso y ancho, codiseñada por un diseñador radicado en Santiago; es legible en pantalla y en papel, y el trazo de los íconos se midió sobre su asta. Los 72 íconos son propios, en una retícula de 24 con trazo de 1,6, y siempre van con una palabra. Lo propio de Relevo se dibuja con sus ideas: el sonido como anillos, nunca como luz, y el primer paso como un punto en el primer peldaño. El camino que llevó a esta identidad, con las propuestas descartadas, está en el Anexo H.
 
@@ -720,7 +620,7 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 **Por qué un Tag comercial.** Para probar la relación entre señal y lugar antes de fabricar un objeto propio, el prototipo usa un llavero antipérdida Bluetooth, el Tag. Se eligió porque responde a una orden estándar de alerta —sin la aplicación de su fabricante—, cuesta poco (la unidad comprada costó CLP 10.990 con envío), está disponible en Chile y funciona con una pila de botón. Los localizadores de ecosistema cerrado se descartaron porque no permiten ordenarles que suenen. Un prototipo puede usar medios más simples si conserva lo esencial (Nielsen, 1993, pp. 96–97): aquí, el lugar y la señal. El Tag se parece al objeto propuesto en el tamaño y en la planta sin frente, pero no en el sonido —un pitido continuo, de volumen fijo— ni en el control, porque su único botón también lo apaga [CONFIRMAR: medidas y peso del Tag].
 
-**Figura 21**
+**Figura 17**
 
 *El Tag durante la prueba en el hogar*
 
@@ -728,9 +628,9 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 *Nota.* En a, la pantalla muestra la actividad, el primer paso y el lugar donde sonará el Tag. Se difuminó el nombre de la persona y se recortaron otras pantallas y objetos. El Tag sustituye al testigo y no representa su forma. [CONFIRMAR: autoría de las fotografías, autorización de las personas para publicarlas y de quién es el lugar de c]
 
-**El testigo.** El objeto propio, el *testigo*, se diseñó como una carcasa que lleva dentro la placa y la pila del Tag: así el Bluetooth y el sonido siguen siendo los probados, y la forma, el control y la marca pasan a ser diseño propio (Figura 22). Mide 46 mm de diámetro y 12,3 mm de alto, dentro de la envolvente definida para el testigo (de 42 a 48 mm por 12 a 16 mm), y no tiene frente, para poder dejarse en cualquier orientación. El logo, calado sobre un fondo con sus cuatro colores, es el botón: baja 0,45 mm y un tope protege el botón del Tag. Se descartaron una lengüeta flexible, porque el plástico se fatiga, y un botón aparte, que rompía la simetría. La tapa se abre con una moneda, como la del Tag, para cambiar la pila sin herramientas; una tapa a presión se gasta y una de bayoneta necesita un resorte. El modelo es paramétrico y se imprime en PLA sin soportes; solo una pieza, el chasis, depende de la placa. Al cierre de este documento, el testigo está modelado y no impreso [CONFIRMAR: estado de la impresión].
+**El testigo.** El objeto propio, el *testigo*, se diseñó como una carcasa que lleva dentro la placa y la pila del Tag: así el Bluetooth y el sonido siguen siendo los probados, y la forma, el control y la marca pasan a ser diseño propio (Figura 18). Mide 46 mm de diámetro y 12,3 mm de alto, dentro de la envolvente definida para el testigo (de 42 a 48 mm por 12 a 16 mm), y no tiene frente, para poder dejarse en cualquier orientación. El logo, calado sobre un fondo con sus cuatro colores, es el botón: baja 0,45 mm y un tope protege el botón del Tag. Se descartaron una lengüeta flexible, porque el plástico se fatiga, y un botón aparte, que rompía la simetría. La tapa se abre con una moneda, como la del Tag, para cambiar la pila sin herramientas; una tapa a presión se gasta y una de bayoneta necesita un resorte. El modelo es paramétrico y se imprime en PLA sin soportes; solo una pieza, el chasis, depende de la placa. Al cierre de este documento, el testigo está modelado y no impreso [CONFIRMAR: estado de la impresión].
 
-**Figura 22**
+**Figura 18**
 
 *El testigo: un objeto propio con la placa del Tag adentro*
 
@@ -760,9 +660,9 @@ La aplicación conduce a la persona por cuatro momentos: preparar un *relevo* �
 
 ## Del diseño al prototipo: las iteraciones
 
-El prototipo se construyó por iteraciones cortas: cada versión respondió a un aprendizaje del desarrollo o del uso (Tabla 7). Las del 14 y el 17 de octubre corrigieron lo que contaron las personas de la prueba. La línea visual nueva, de las versiones 3.x, llegará a las personas al terminar la prueba, para no cambiar la interfaz a mitad de ella.
+El prototipo se construyó por iteraciones cortas: cada versión respondió a un aprendizaje del desarrollo o del uso (Tabla 3). Las del 14 y el 17 de octubre corrigieron lo que contaron las personas de la prueba. La línea visual nueva, de las versiones 3.x, llegará a las personas al terminar la prueba, para no cambiar la interfaz a mitad de ella.
 
-**Tabla 7**
+**Tabla 3**
 
 *Iteraciones del prototipo y aprendizajes que las motivaron*
 
@@ -783,25 +683,13 @@ El prototipo se construyó por iteraciones cortas: cada versión respondió a un
 
 *Nota.* Elaboración propia a partir del registro de versiones del prototipo (Anexo G). Las versiones 2.x mantienen la interfaz que usa la prueba; las 3.x, la identidad nueva.
 
-Un mapa de servicio relaciona las acciones de la persona con cada momento en que se encuentra con el servicio y con los procesos que la sostienen (Gibbons, 2017). La Tabla 8 lo aplica a Relevo.
-
-**Tabla 8**
-
-*Soporte requerido en cada momento de la experiencia*
-
-| Momento | Qué necesita la persona | Soporte que debe estar resuelto |
-| --- | --- | --- |
-| Conocer y aceptar | Entender propósito, límites y condiciones de participación. | Explicación consistente y consentimiento revisado. |
-| Preparar | Formular la intención y verificar objeto y lugar. | Objeto disponible, conexión y explicación de permisos. |
-| Recibir y cerrar | Percibir la señal y conservar una salida. | Señal que se repita igual y termine sin insistir. |
-| Recuperar un fallo | Saber si el ciclo sigue vigente y poder detenerlo. | Separar el incidente técnico de la respuesta de la persona. |
-| Mantener o retirar | Cambiar la pila, reubicar o dejar de usar el sistema. | Guía de mantenimiento y eliminación de datos. |
-
 # 12. Factibilidad y límites
+
+Un diseño también tiene que poder hacerse: con qué tecnología, a qué costo y con quiénes.
 
 ## Plataforma y arquitectura técnica
 
-El prototipo se desarrolló para Android 12 o posterior porque este sistema ofrece, con documentación oficial, las dos capacidades que Relevo necesita: consultar, con permiso de la persona, cuánto se usan otras aplicaciones mediante la función UsageStatsManager (Google, 2026b), y comunicarse con un objeto cercano por Bluetooth de baja energía (Google, 2026a, 2026c). Un sitio web, más fácil de distribuir, podría hablar con el objeto (Beaufort, 2015), pero no consultar el uso de otras aplicaciones. En iPhone, ambas capacidades existen con autorizaciones adicionales (Apple Developer, s. f.-a, s. f.-b, s. f.-c); abarcar los dos sistemas habría duplicado la programación y las pruebas antes de examinar la hipótesis.
+El prototipo se desarrolló para Android 12 o posterior porque este sistema permite, con documentación oficial, las dos cosas que Relevo necesita: saber cuánto se usan otras aplicaciones, con permiso de la persona (Google, 2026b), y comunicarse con un objeto cercano por Bluetooth (Google, 2026a). Un sitio web no puede consultar el uso de otras aplicaciones, y en iPhone hacerlo exige autorizaciones especiales de Apple (Apple Developer, s. f.); abarcar los dos sistemas habría duplicado el trabajo antes de examinar la hipótesis.
 
 Entre el teléfono y el Tag viajan datos de control, no audio: el Tag recibe la orden de sonar y de callar, nunca el texto de la intención. UsageStatsManager exige un permiso especial que se concede desde los ajustes (Google, 2026b), y Android cierra la conexión Bluetooth si el sistema termina el proceso de la aplicación (Google, 2026a); por eso la aplicación mantiene una notificación permanente mientras un relevo cuenta.
 
@@ -809,9 +697,9 @@ Entre el teléfono y el Tag viajan datos de control, no audio: el Tag recibe la 
 
 El prototipo no exigió fabricación: su componente físico es un producto terminado, y su mantenimiento se reduce a cambiar la pila CR2032, cuya duración —entre 2 y 8 meses, según los vendedores— no se midió con la conexión que Relevo mantiene. El testigo se imprime en PLA en unos 32 minutos y con menos de 15 g de material; su costo depende del servicio de impresión, no del material.
 
-Se distinguen cuatro montos: el costo del prototipo académico (Tabla 9), el trabajo profesional, la producción con su soporte y un posible precio. El trabajo puede valorarse con el ingreso de quienes se titulan de Diseño en Chile: entre 5750 y 8480 pesos por hora el primer y el quinto año, en pesos de septiembre de 2025 y con 42 horas semanales (Ley 21561, 2023; Ministerio de Educación, s. f.). Las 186 horas del proyecto —114 registradas entre el 23 de agosto y el 27 de octubre de 2026 y unas 72 estimadas del primer semestre— equivalen a entre 1 070 000 y 1 577 000 pesos, varias veces el desembolso. Los dos últimos montos solo podrán cotizarse si la prueba justifica fabricar el testigo.
+Se distinguen cuatro montos: el costo del prototipo académico (Tabla 4), el trabajo profesional, la producción con su soporte y un posible precio. El trabajo puede valorarse con el ingreso de quienes se titulan de Diseño en Chile: entre 5750 y 8480 pesos por hora el primer y el quinto año, en pesos de septiembre de 2025 y con 42 horas semanales (Ley 21561, 2023; Ministerio de Educación, s. f.). Las 186 horas del proyecto —114 registradas entre el 23 de agosto y el 27 de octubre de 2026 y unas 72 estimadas del primer semestre— equivalen a entre 1 070 000 y 1 577 000 pesos, varias veces el desembolso. Los dos últimos montos solo podrán cotizarse si la prueba justifica fabricar el testigo.
 
-**Tabla 9**
+**Tabla 4**
 
 *Presupuesto del prototipo académico*
 
@@ -829,19 +717,11 @@ Se distinguen cuatro montos: el costo del prototipo académico (Tabla 9), el tra
 
 El modelo tiene tres etapas, y cada una se inicia solo si la anterior entrega evidencia.
 
-**El proyecto académico**, de agosto a diciembre de 2026, lo conduce el autor, con la orientación de los profesores guía y la colaboración de quienes participan en la prueba (Tabla 3). Sus costos son los de la Tabla 9 más el trabajo del autor, que los financia. Su resultado es conocimiento, no un bien en venta.
+**El proyecto académico**, de agosto a diciembre de 2026, lo conduce el autor, con la orientación de los profesores guía y la colaboración de quienes participan en la prueba. Sus costos son los de la Tabla 4 más el trabajo del autor, que los financia. Su resultado es conocimiento, no un bien en venta.
 
 **Un piloto** tendría que establecer si situar la señal aporta. Ampliaría la prueba a las seis personas previstas, con un testigo por hogar y revisión especializada en accesibilidad, protección de datos y electrónica. Con precios de octubre de 2026, cada hogar supondría entre 10 100 y 12 150 pesos: el localizador, una pila de repuesto y la carcasa impresa, estimada al repartir entre seis el mínimo de 14 800 por trabajo de un servicio nacional (MCI Electronics, s. f.; Rabbit Hole, s. f.).
 
-**El producto** se abriría solo si el piloto alcanzara los umbrales previstos, por una de dos vías: la aplicación con un porta Tag que reciba localizadores compatibles, sin fabricar electrónica, pero sujeta a modelos que varían y a funciones que no se ajustan del todo (Gembali, 2023, p. 53; Figura 23), o un testigo propio en series cortas, que permitiría diseñar el sonido y el control y obligaría a cotizar circuito, carcasa, batería, ensayos y soporte. Elegir entre ellas, y entre venta, suscripción o distribución institucional, requiere conocer el costo unitario, el de cumplir la normativa y la disposición a pagar.
-
-**Figura 23**
-
-*La tesis de Gembali sobre productos físicos y digitales*
-
-![](figuras/fuentes/gembali-2023.png)
-
-*Nota.* Portada de la tesis, recortada. Tomado de Gembali (2023).
+**El producto** se abriría solo si el piloto alcanzara los umbrales previstos, por una de dos vías: la aplicación con un porta Tag que reciba localizadores compatibles, sin fabricar electrónica, pero sujeta a modelos que varían y a funciones que no se ajustan del todo (Gembali, 2023, p. 53), o un testigo propio en series cortas, que permitiría diseñar el sonido y el control y obligaría a cotizar circuito, carcasa, batería, ensayos y soporte. Elegir entre ellas, y entre venta, suscripción o distribución institucional, requiere conocer el costo unitario, el de cumplir la normativa y la disposición a pagar.
 
 ## Seguridad y condiciones de distribución
 
@@ -855,21 +735,21 @@ La colaboración interdisciplinaria fue indirecta: la literatura, la documentaci
 
 # 13. Plan de desarrollo y validación
 
-El desarrollo avanzó desde la asociación básica entre intención, señal y lugar hacia un prototipo integrado y su uso cotidiano; en cada etapa aumentó la *fidelidad* del prototipo, su semejanza con el uso previsto. La evaluación usa un objeto comercial —el Tag— y examina la relación entre señal, lugar e intención, no la forma del objeto.
+Lo diseñado se puso a prueba en el uso real. El desarrollo avanzó desde la asociación básica entre intención, señal y lugar hacia un prototipo integrado y su uso cotidiano; en cada etapa aumentó la *fidelidad* del prototipo, su semejanza con el uso previsto. La evaluación usa un objeto comercial —el Tag— y examina la relación entre señal, lugar e intención, no la forma del objeto.
 
 ## Estado de avance y verificación técnica
 
 El uso de las tres personas comprobó el ciclo completo en sus teléfonos, con las versiones 2.29 a 2.32, y en las siete pruebas de sonido registradas oyeron el Tag al primer intento. Las versiones vigentes pasan sus pruebas automáticas (87 la 3.3 y la 2.33), y en el emulador se verificaron el envío y la eliminación de registros; el parlante y el reloj quedan como salidas alternativas, sin uso real.
 
-La prueba comenzó el miércoles 7 de octubre de 2026, cuando una de las personas preparó un relevo con el Tag (Figura 21a). Las tres aceptaron el consentimiento en la aplicación, y sus registros comienzan el 8, el 9 y el 10 de octubre [CONFIRMAR: fecha en que los profesores guía revisaron el consentimiento y si hubo sesión inicial presencial]. Las tres conservan la interfaz de la versión 2.30, para no cambiarla a mitad de la prueba.
+La prueba comenzó el miércoles 7 de octubre de 2026, cuando una de las personas preparó un relevo con el Tag (Figura 17a). Las tres aceptaron el consentimiento en la aplicación, y sus registros comienzan el 8, el 9 y el 10 de octubre [CONFIRMAR: fecha en que los profesores guía revisaron el consentimiento y si hubo sesión inicial presencial]. Las tres conservan la interfaz de la versión 2.30, para no cambiarla a mitad de la prueba.
 
 ## La prueba de 21 días: lo previsto y lo aplicado
 
 La prueba se diseñó para responder la hipótesis. Comienza con una sesión en el hogar: la persona formula una intención y su primer paso, deja el objeto junto a ese primer paso y recibe una señal, mientras el investigador registra, sin dar pistas, si la percibe, si la atribuye a Relevo y si nombra la intención y el primer paso. Siguen tres semanas, cada una con una condición —el objeto junto al primer paso (A), el mismo objeto en un lugar neutro (B) y el teléfono (C)—, en un orden distinto para cada persona. Tras cada señal, la aplicación pregunta con un toque si la persona supo qué quería hacer antes de leerlo en la pantalla, si recordó cómo empezar y qué decidió; cada semana cierra con tres escalas, y el día 21, con preguntas de cierre y una entrevista. El protocolo completo está en el Anexo I.
 
-Lo aplicado se apartó de lo previsto, y la Figura 24 muestra cómo. Participaron tres personas, no seis. Durante sus dos primeras semanas usaron el Tag junto al primer paso, sin condición asignada, y cada una fijó su propio límite, de 15 a 45 minutos. Desde el 21 de octubre usan la señal en el teléfono; esa semana termina el 30 de octubre, con un cierre en papel y una entrevista, y se informará al terminar.
+Lo aplicado se apartó de lo previsto, y la Figura 19 muestra cómo. Participaron tres personas, no seis. Durante sus dos primeras semanas usaron el Tag junto al primer paso, sin condición asignada, y cada una fijó su propio límite, de 15 a 45 minutos. Desde el 21 de octubre usan la señal en el teléfono; esa semana termina el 30 de octubre, con un cierre en papel y una entrevista, y se informará al terminar.
 
-**Figura 24**
+**Figura 19**
 
 *La prueba aplicada en los hogares*
 
@@ -895,9 +775,9 @@ La medida principal es el número de señales tras las cuales la persona respond
 
 ## Resultados
 
-Entre el 8 y el 19 de octubre de 2026, el ciclo completo funcionó en los hogares de las tres personas. Activaron 31 relevos, todos con el Tag, y siete se eliminaron o editaron antes de sonar. De los 24 que alcanzaron su límite, el Tag sonó en 23 (Figura 25). Hubo 21 respuestas posteriores a una señal, siete de cada persona: en las 21, la persona recordó cómo empezar su actividad; en 19 supo qué quería hacer antes de leerlo en la pantalla, y en 2, a medias.
+Entre el 8 y el 19 de octubre de 2026, el ciclo completo funcionó en los hogares de las tres personas. Activaron 31 relevos, todos con el Tag, y siete se eliminaron o editaron antes de sonar. De los 24 que alcanzaron su límite, el Tag sonó en 23 (Figura 20). Hubo 21 respuestas posteriores a una señal, siete de cada persona: en las 21, la persona recordó cómo empezar su actividad; en 19 supo qué quería hacer antes de leerlo en la pantalla, y en 2, a medias.
 
-**Figura 25**
+**Figura 20**
 
 *Lo que ocurrió en los 24 relevos que alcanzaron su límite*
 
@@ -905,9 +785,9 @@ Entre el 8 y el 19 de octubre de 2026, el ciclo completo funcionó en los hogare
 
 *Nota.* Las tres personas, del 8 al 19 de octubre de 2026. Recuentos de los registros de la aplicación.
 
-Con tres personas, el detalle de cada caso dice más que un total (Figura 26). Cada una repitió sus actividades en un mismo lugar, con sus propias aplicaciones y su propio límite.
+Con tres personas, el detalle de cada caso dice más que un total (Figura 21). Cada una repitió sus actividades en un mismo lugar, con sus propias aplicaciones y su propio límite.
 
-**Figura 26**
+**Figura 21**
 
 *Qué decidió cada persona después de la señal*
 
@@ -917,15 +797,23 @@ Con tres personas, el detalle de cada caso dice más que un total (Figura 26). C
 
 Separar los casos cambia la lectura. Las personas empezaron la actividad en 10 respuestas, la dejaron para después en 9 y cambiaron de idea en 2, pero la mitad de los comienzos corresponde a una sola persona: la primera empezó en cinco de sus siete respuestas; la segunda, en tres, y la tercera, en dos. Como las tres respondieron el mismo número de veces, la diferencia está en lo que cada una hizo, no en cuánto participó. De las dos respuestas «a medias», una es de la primera persona. El sonido les pareció bueno en 10 respuestas, neutro en 9 y malo en 2, y las dos malas no son de la primera persona. La señal se calló desde el teléfono en nueve ciclos y con el botón del Tag en cinco; sonó completa en siete y quedó interrumpida en dos [CONFIRMAR: el detalle por persona de las demás respuestas, que da el resumen de unir-datos.js].
 
-Dos hallazgos orientan el diseño. El primero es que la señal situada pertenece al lugar de la actividad: el único ciclo sin sonido se activó fuera de casa, con el Tag fuera de alcance; el teléfono vibró, la aplicación registró la señal como fallida y, según el protocolo, esa señal se excluye. El segundo es que recordar no obliga a empezar, porque una señal lleva a actuar solo si coincide con la motivación y la capacidad del momento (Fogg, 2009, p. 1). Es lo que pide el criterio 4: la señal devuelve la intención y la decisión sigue siendo de la persona.
+Dos hallazgos orientan el diseño. El primero es que la señal situada pertenece al lugar de la actividad: el único ciclo sin sonido se activó fuera de casa, con el Tag fuera de alcance; el teléfono vibró, la aplicación registró la señal como fallida y, según el protocolo, esa señal se excluye. El segundo es que recordar no obliga a empezar, porque una señal lleva a actuar solo si coincide con la motivación y la capacidad del momento (Fogg, 2009, p. 1; Figura 22). Es lo que pide el criterio 4: la señal devuelve la intención y la decisión sigue siendo de la persona.
+
+**Figura 22**
+
+*Recordar no basta para empezar*
+
+[FIGURA POR INSERTAR: matriz de dos por dos: Motivación | Baja | Alta; Facilidad para empezar | Difícil | Fácil; Mucha motivación y comienzo difícil | Quiere hacerlo, pero el primer paso cuesta; Mucha motivación y comienzo fácil | La señal basta para empezar; Poca motivación y comienzo difícil | La señal recuerda, pero no lleva a empezar; Poca motivación y comienzo fácil | Puede empezar o dejarlo para después]
+
+*Nota.* Elaboración propia a partir de Fogg (2009). Relevo actúa sobre la facilidad: deja la señal junto a un primer paso concreto.
 
 Las personas también dijeron qué cambiarían. La primera pidió corregir un relevo sin borrarlo: «podrían implementar que se pueda actualizar o editar las opciones que uno ya eligió… así no tenemos que borrarlo y crearlo de nuevo». La segunda encontró el pitido demasiado fuerte, como una alarma —quien comparte su departamento preguntó qué sonaba—, y juzgó largo el límite de 45 minutos, porque al sonar ya estaba inmersa en un video. La tercera contó que la señal le sirvió cuando estaba en el escritorio, pero que de noche la oye desde la cama y no se levanta.
 
 ## Iterar con los resultados
 
-Con tres personas, cada comentario pesa. Lo que mostró la prueba se convierte en cambios, y conviene separar los problemas técnicos —la mayoría, del objeto comprado— de los de uso (Tabla 10). Los técnicos se corrigieron durante la prueba, en las versiones 2.30 a 2.32; los de uso definen la iteración siguiente, que llegará con la línea visual nueva cuando la prueba termine.
+Con tres personas, cada comentario pesa. Lo que mostró la prueba se convierte en cambios, y conviene separar los problemas técnicos —la mayoría, del objeto comprado— de los de uso (Tabla 5). Los técnicos se corrigieron durante la prueba, en las versiones 2.30 a 2.32; los de uso definen la iteración siguiente, que llegará con la línea visual nueva cuando la prueba termine.
 
-**Tabla 10**
+**Tabla 5**
 
 *Lo que mostró la prueba y cómo se itera*
 
@@ -953,9 +841,9 @@ Falta completar la evidencia con el cierre del 30 de octubre, una entrevista con
 
 El proyecto redefinió el problema: lo desplazó del tiempo de pantalla a la presencia oportuna de una actividad elegida, y fijó una regla explícita de no intervención. Con esa base tomó decisiones de diseño en todas las escalas: un sistema que reparte el trabajo entre una aplicación, un objeto y un lugar; un recorrido de una decisión por pantalla; una arquitectura que muestra solo lo más próximo; una interfaz y una escritura que no presionan; una identidad que hace visible el ciclo, y un objeto propio, el testigo, que lleva adentro la placa del localizador probado. Cada decisión responde a un criterio, y cada criterio, a su evidencia.
 
-El prototipo funciona en uso real. En los hogares de las tres personas que lo usaron, el localizador sonó en 23 de los 24 ciclos completados hasta el 19 de octubre; en sus 21 respuestas recordaron cómo empezar su actividad, y en 19 supieron qué querían hacer antes de leerlo en la pantalla. Los fallos que ellas reportaron se corrigieron en dos versiones, y lo que la prueba mostró sobre el uso define la iteración siguiente. La Tabla 11 resume el estado de cada objetivo.
+El prototipo funciona en uso real. En los hogares de las tres personas que lo usaron, el localizador sonó en 23 de los 24 ciclos completados hasta el 19 de octubre; en sus 21 respuestas recordaron cómo empezar su actividad, y en 19 supieron qué querían hacer antes de leerlo en la pantalla. Los fallos que ellas reportaron se corrigieron en dos versiones, y lo que la prueba mostró sobre el uso define la iteración siguiente. La Tabla 6 resume el estado de cada objetivo.
 
-**Tabla 11**
+**Tabla 6**
 
 *Estado de los objetivos al cierre de este documento*
 
@@ -978,27 +866,15 @@ El trabajo sigue en cinco pasos: cerrar la prueba e informar cada caso; aplicar 
 
 # Referencias
 
-Aaker, D. A. (1996). *Building strong brands*. Free Press.
-
 Anthropic. (s. f.). *Planes y precios*. Claude. Recuperado el 27 de octubre de 2026, de https://claude.com/es/pricing
 
 Apple. (s. f.). *Set up Screen Time for yourself on iPhone*. Apple Support. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-ie/guide/iphone/iphbfa595995/ios
 
-Apple. (2025a). *Get to know the new design system* [Video]. WWDC25. https://developer.apple.com/videos/play/wwdc2025/356/
+Apple. (2025a). *Meet Liquid Glass* [Video]. WWDC25. https://developer.apple.com/videos/play/wwdc2025/219/
 
-Apple. (2025b). *Meet Liquid Glass* [Video]. WWDC25. https://developer.apple.com/videos/play/wwdc2025/219/
+Apple. (2025b, 16 de diciembre). *Writing*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/writing
 
-Apple. (2025c, 16 de diciembre). *Writing*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/writing
-
-Apple Developer. (s. f.-a). *Core Bluetooth*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/corebluetooth
-
-Apple Developer. (s. f.-b). *Device Activity*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/deviceactivity
-
-Apple Developer. (s. f.-c). *Family Controls App and Website Usage*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls.app-and-website-usage
-
-Beaufort, F. (2015, 21 de julio). *Communicating with Bluetooth devices over JavaScript*. Chrome for Developers. https://developer.chrome.com/docs/capabilities/bluetooth
-
-Biedermann, D., Schneider, J. y Drachsler, H. (2021). Digital self-control interventions for distracting media multitasking: A systematic review. *Journal of Computer Assisted Learning, 37*(5), 1217–1231. https://doi.org/10.1111/jcal.12581
+Apple Developer. (s. f.). *Family Controls App and Website Usage*. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls.app-and-website-usage
 
 Brick LLC. (s. f.-a). *Brick — Take back control of your screen time*. Recuperado el 24 de agosto de 2026, de https://getbrick.com/
 
@@ -1006,13 +882,9 @@ Brick LLC. (s. f.-b). *Brick Zone*. Recuperado el 24 de agosto de 2026, de https
 
 Chiu, G. y Gilbert, S. J. (2024). Influence of the physical effort of reminder-setting on strategic offloading of delayed intentions. *Quarterly Journal of Experimental Psychology, 77*(6), 1295–1311. https://doi.org/10.1177/17470218231199977
 
-Cortés Concha, O. S. (2016). *Ocio digital y vida cotidiana: alcances de la experiencia social de ocio en las social media por parte de jóvenes nativos y nativas digitales* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://repositorio.uchile.cl/handle/2250/164071
-
 de Segovia Vicente, D., Van Gaeveren, K., Murphy, S. L. y Vanden Abeele, M. M. P. (2024). Does mindless scrolling hamper well-being? Combining ESM and log-data to examine the link between mindless scrolling, goal conflict, guilt, and daily well-being. *Journal of Computer-Mediated Communication, 29*(1), Artículo zmad056. https://doi.org/10.1093/jcmc/zmad056
 
 Edworthy, J., Loxley, S. y Dennis, I. (1991). Improving auditory warning design: Relationship between warning sound parameters and perceived urgency. *Human Factors, 33*(2), 205–231. https://doi.org/10.1177/001872089103300206
-
-Einstein, G. O. y McDaniel, M. A. (2005). Prospective memory: Multiple retrieval processes. *Current Directions in Psychological Science, 14*(6), 286–290. https://doi.org/10.1111/j.0963-7214.2005.00382.x
 
 Elliot, A. J. y Maier, M. A. (2014). Color psychology: Effects of perceiving color on psychological functioning in humans. *Annual Review of Psychology, 65*, 95–120. https://doi.org/10.1146/annurev-psych-010213-115035
 
@@ -1020,13 +892,7 @@ Focusaur. (s. f.). *Focusaur: The phone-free focus device for deep work & habits
 
 Fogg, B. J. (2009). A behavior model for persuasive design. En *Proceedings of the 4th International Conference on Persuasive Technology* (Artículo 40). Association for Computing Machinery. https://doi.org/10.1145/1541948.1541999
 
-Gardner, B., Abraham, C., Lally, P. y de Bruijn, G.-J. (2012). Towards parsimony in habit measurement: Testing the convergent and predictive validity of an automaticity subscale of the Self-Report Habit Index. *International Journal of Behavioral Nutrition and Physical Activity, 9*, Artículo 102. https://doi.org/10.1186/1479-5868-9-102
-
 Gembali, S. (2023). *Phygital transformation: Adding physical devices to digital products to improve the user experience* [Tesis de maestría, Massachusetts Institute of Technology]. DSpace@MIT. https://hdl.handle.net/1721.1/151254
-
-Gibbons, S. (2017, 27 de agosto). *Service blueprints: Definition*. Nielsen Norman Group. https://www.nngroup.com/articles/service-blueprints-definition/
-
-Gilbert, S. J., Boldt, A., Sachdeva, C., Scarampi, C. y Tsai, P.-C. (2023). Outsourcing memory to external tools: A review of “intention offloading”. *Psychonomic Bulletin & Review, 30*(1), 60–76. https://doi.org/10.3758/s13423-022-02139-4
 
 Goldsmith, L. J. (2021). Using framework analysis in applied qualitative research. *The Qualitative Report, 26*(6), 2061–2076. https://doi.org/10.46743/2160-3715/2021.5011
 
@@ -1040,8 +906,6 @@ Google. (2026a, 26 de febrero). *Communicate in the background*. Android Develop
 
 Google. (2026b, 28 de agosto). *UsageStatsManager*. Android Developers. https://developer.android.com/reference/android/app/usage/UsageStatsManager
 
-Google. (2026c, 1 de octubre). *Companion device pairing*. Android Developers. https://developer.android.com/develop/connectivity/bluetooth/companion-device-pairing
-
 Grüning, D. J., Riedel, F. y Lorenz-Spreen, P. (2023). Directing smartphone use through the self-nudge app one sec. *Proceedings of the National Academy of Sciences, 120*(8), Artículo e2213114120. https://doi.org/10.1073/pnas.2213114120
 
 Guynn, M. J., McDaniel, M. A. y Einstein, G. O. (1998). Prospective memory: When reminders fail. *Memory & Cognition, 26*(2), 287–298. https://doi.org/10.3758/BF03201140
@@ -1052,8 +916,6 @@ Hellier, E. J., Edworthy, J. y Dennis, I. (1993). Improving auditory warning des
 
 Hermann, M., Mahler, T., de Melo, G. y Weber, M. (2007). The Tangible Reminder. En *3rd IET International Conference on Intelligent Environments (IE 07)* (pp. 144–151). Institution of Engineering and Technology. https://doi.org/10.1049/cp:20070359
 
-Hornecker, E. y Buur, J. (2006). Getting a grip on tangible interaction: A framework on physical space and social interaction. En *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems* (pp. 437–446). Association for Computing Machinery. https://doi.org/10.1145/1124772.1124838
-
 International Organization for Standardization. (2011). *Graphical symbols — Safety colours and safety signs — Part 1: Design principles for safety signs and safety markings* (ISO 3864-1:2011).
 
 Ishii, H. y Ullmer, B. (1997). Tangible bits: Towards seamless interfaces between people, bits and atoms. En *Proceedings of the ACM SIGCHI Conference on Human Factors in Computing Systems* (pp. 234–241). Association for Computing Machinery. https://doi.org/10.1145/258549.258715
@@ -1061,8 +923,6 @@ Ishii, H. y Ullmer, B. (1997). Tangible bits: Towards seamless interfaces betwee
 Jiang, Y., Gorn, G. J., Galli, M. y Chattopadhyay, A. (2016). Does your company have the right logo? How and why circular- and angular-logo shapes influence brand attribute judgments. *Journal of Consumer Research, 42*(5), 709–726. https://doi.org/10.1093/jcr/ucv049
 
 Jonauskaite, D., Epicoco, D., Al-Rasheed, A. S., Aruta, J. J. B. R., Bogushevskaya, V., Brederoo, S. G., Corona, V., Fomins, S., Gizdic, A., Griber, Y. A., Havelka, J., Hirnstein, M., John, G., Jopp, D. S., Karlsson, B., Konstantinou, N., Laurent, É., Marquardt, L., Mefoh, P. C., … Mohr, C. (2024). A comparative analysis of colour–emotion associations in 16–88-year-old adults from 31 countries. *British Journal of Psychology, 115*(2), 275–305. https://doi.org/10.1111/bjop.12687
-
-Kauppinen-Räisänen, H. y Luomala, H. T. (2010). Exploring consumers’ product-specific colour meanings. *Qualitative Market Research: An International Journal, 13*(3), 287–308. https://doi.org/10.1108/13522751011053644
 
 Keppel, J., Strauss, M., Haliburton, L., Weingärtner, H., Dominiak, J., Faltaous, S., Gruenefeld, U., Mayer, S., Woźniak, P. W. y Schneegass, S. (2025). Situated artifacts amplify engagement in physical activity. En *Proceedings of the 2025 ACM Designing Interactive Systems Conference* (pp. 2959–2974). Association for Computing Machinery. https://doi.org/10.1145/3715336.3735690
 
@@ -1124,8 +984,6 @@ Risko, E. F. y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive
 
 Riveros Oltra, J. (2023). *BetterHumans: explorando la gamificación y la formación de hábitos en la retención de usuarios: un estudio de caso de Betterfly* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://doi.org/10.58011/khxf-cq52
 
-Robertson, K. (1989). Strategically desirable brand name characteristics. *Journal of Consumer Marketing, 6*(4), 61–71. https://doi.org/10.1108/EUM0000000002563
-
 Ryan, R. M. y Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. *American Psychologist, 55*(1), 68–78. https://doi.org/10.1037/0003-066X.55.1.68
 
 Sanders, E. B.-N. y Stappers, P. J. (2012). *Convivial toolbox: Generative research for the front end of design*. BIS Publishers.
@@ -1180,7 +1038,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Autonomía.** En el sentido de la teoría de la autodeterminación, actuar por voluntad propia. En términos de diseño, depende de comprender la intervención y poder aceptarla, ajustarla o rechazarla.
 
-**Bluetooth de baja energía.** Comunicación inalámbrica de corto alcance y bajo consumo. En el prototipo lleva órdenes de la aplicación al Tag, no audio.
+**Bluetooth.** Comunicación inalámbrica de corto alcance y bajo consumo. En el prototipo lleva órdenes de la aplicación al Tag, no audio.
 
 **Ciclo.** Periodo en que una intención y su condición de activación están vigentes. La interfaz de la aplicación lo llama «relevo».
 
@@ -1190,8 +1048,6 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Conflicto entre metas.** Tensión que aparece cuando una actividad dificulta otra también valorada, sin establecer cuál debería prevalecer.
 
-**Contrabalanceo.** Reparto del orden de las condiciones de prueba entre varias personas, para que el efecto del orden no se confunda con el de cada condición.
-
 **Criterio de diseño.** Condición que una propuesta debe cumplir para responder al problema y que sirve después para evaluarla. Esta memoria formula ocho.
 
 **Datos seudonimizados.** Datos registrados con un código en lugar del nombre, que se guarda aparte. No son anónimos, porque su contenido —actividades, lugares y horarios— podría permitir identificar a la persona.
@@ -1199,8 +1055,6 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 **Decisión renovada.** Momento en que la persona vuelve a considerar si desea continuar, cambiar o detenerse.
 
 **Descarga cognitiva.** Recurso a una acción física, como anotar o disponer un objeto, para reducir la demanda cognitiva de una tarea (Risko y Gilbert, 2016).
-
-**Descarga de intenciones.** Forma de descarga cognitiva en que se confía a un recurso externo, como una nota o una alarma, el recuerdo de una acción futura (Gilbert et al., 2023).
 
 **Desplazamiento infinito.** Patrón de interfaz que carga contenido nuevo a medida que la persona avanza, sin un final de página reconocible.
 
@@ -1224,7 +1078,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Intención de implementación.** Plan que especifica de antemano cuándo, dónde y cómo actuar: si se presenta cierta situación, se inicia una respuesta (Gollwitzer y Sheeran, 2006).
 
-**Interacción tangible.** Campo que estudia cómo los objetos y el espacio físico participan en la relación con la información digital. Abarca sistemas basados en la interacción corporal, la manipulación de objetos, la representación física de datos y su inserción en el espacio real (Hornecker y Buur, 2006; Ishii y Ullmer, 1997).
+**Interacción tangible.** Campo que estudia cómo los objetos y el espacio físico participan en la relación con la información digital. Abarca sistemas basados en la interacción corporal, la manipulación de objetos, la representación física de datos y su inserción en el espacio real (Ishii y Ullmer, 1997).
 
 **Investigación a través del diseño.** Enfoque en que quien diseña integra resultados de investigación en un artefacto, y ese trabajo constituye un aporte (Zimmerman et al., 2007).
 
@@ -1232,9 +1086,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Lugar neutro.** Ubicación visible de la casa, a más de un metro del primer paso y sin relación con la actividad elegida. En la prueba se compara con el lugar junto al primer paso.
 
-**Mapa de servicio (_service blueprint_).** Herramienta que relaciona las acciones de la persona con los puntos de contacto y con los procesos internos que las sostienen.
-
-**Marco multiproceso.** Explicación de la memoria prospectiva según la cual una intención puede volver porque la persona vigila el entorno o porque un evento la trae de vuelta de forma espontánea. Cuando la actividad en curso absorbe la atención, lo segundo es más probable si la señal es llamativa y está fuertemente asociada a la acción (Einstein y McDaniel, 2005; McDaniel y Einstein, 2000).
+**Marco multiproceso.** Explicación de la memoria prospectiva según la cual una intención puede volver porque la persona vigila el entorno o porque un evento la trae de vuelta de forma espontánea. Cuando la actividad en curso absorbe la atención, lo segundo es más probable si la señal es llamativa y está fuertemente asociada a la acción (McDaniel y Einstein, 2000).
 
 **Memoria prospectiva.** Capacidad de recordar una acción que se quiere realizar en el futuro cuando aparece la ocasión adecuada (McDaniel y Einstein, 2000).
 
@@ -1267,8 +1119,6 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 **Salida.** Medio por el que suena la señal en el prototipo: el Tag, propuesto por defecto; un parlante Bluetooth; un reloj, de forma experimental; o el propio teléfono, que sirve de comparación.
 
 **Señal.** Término general para el estímulo con que el sistema devuelve la intención al presente. Se distingue de la notificación, que en esta memoria designa solo el aviso visual del teléfono.
-
-**Servicio de alerta inmediata.** Función estándar de Bluetooth de baja energía que permite pedir a un dispositivo cercano que emita una alerta. Con ella y, en la unidad usada, con una característica propia del fabricante, la aplicación ordena al Tag que suene o que se silencie.
 
 **Servicio en primer plano.** En Android, tarea de una aplicación que sigue funcionando aunque esta no se vea en la pantalla. En el prototipo es la que sigue contando el tiempo de uso.
 
