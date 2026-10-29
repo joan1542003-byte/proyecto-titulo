@@ -1,5 +1,7 @@
 # Memoria en A3 horizontal
 
+> **Reemplazada** el 28 de octubre de 2026 por la [memoria en 1920 × 1080](../memoria-1920x1080/README.md) (D-146). Esta versión queda como registro.
+
 **Decisiones:** D-132 (la memoria en A3 con la línea de Relevo), D-134 (tablas y cifras como piezas de la marca), D-135 (letra grande, aire y control de viudas sobre el diseño del 12 de octubre) y D-145 (líneas de 8 a 12 palabras, cada sección en página nueva y portada limpia).
 
 **Para leer:** [memoria-relevo-a3.pdf](memoria-relevo-a3.pdf), de 57 páginas A3 horizontales. La [versión HTML](memoria-relevo-a3.html) es la misma composición y se abre en el navegador.
@@ -124,6 +126,12 @@ Otros archivos:
 - **Accesibilidad:** no se revisó con un lector de pantalla.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Reemplazada
+
+- **Qué cambió:** una nota al comienzo remite a la memoria en 1920 × 1080.
+- **Cómo estaba antes:** era la memoria diseñada vigente.
+- **Por qué:** los profesores pidieron el formato de 1920 × 1080 (D-146).
 
 ### 2026-10-28 — Ordenada, con líneas de 8 a 12 palabras
 

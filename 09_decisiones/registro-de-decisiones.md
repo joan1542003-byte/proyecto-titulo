@@ -1871,7 +1871,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 57 páginas, sin avisos del generador. En el texto, 7,8 palabras por línea en promedio y 11 o menos en el 95 % de las líneas. El IDML tiene sus XML bien formados y sus 46 enlaces existen.
 - **Documentos:** [memoria en A3](../08_memoria/memoria-a3/README.md).
 
+## D-146 — La memoria se reescribe en torno a las decisiones de diseño (v6) y se diseña en 1920 × 1080
+
+- **Fecha:** 2026-10-28.
+- **Estado:** hecha; la v6 va al profesor el 30 de octubre. El IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** en la revisión del 28 de octubre, los profesores pidieron centrar la memoria en las decisiones de diseño, justificarlas, contar el proceso, mostrar las fuentes primarias, informar los resultados por caso y sin porcentajes, y explicar lo difícil con figuras e imágenes citadas; además, la memoria diseñada en 1920 × 1080, con algo más de letra e interlineado y sin páginas con una columna sola (tarea 10 de Por hacer). El autor pidió reescribirla y seguir en Affinity, con las tipografías en el repositorio.
+- **Decisión:**
+  - **Texto (v6):** el capítulo 11 pasa a ser el de las decisiones de diseño —sistema, recorrido, condición, arquitectura de información, lenguaje visual, escritura, identidad, objeto, señal, privacidad e iteraciones—, cada una con lo elegido, lo descartado y su fundamento. La introducción y el planteamiento se reescriben; los capítulos 5, 6, 8 y 12 se condensan; el 13 informa por persona y suma la iteración que salió de la prueba. Pasa de 6 a 13 figuras.
+  - **Color:** la decisión se funda en la función y el contraste; las asociaciones emocionales se informan como proporciones que dividen a las personas, no como promedios.
+  - **Referencia de iOS:** se escribe como decisión del autor, con su pedido del 27 de septiembre y tres razones de diseño, más un marcador para las suyas.
+  - **Diseño:** hoja de 1920 × 1080 puntos, compuesta a escala 7:11; texto de 22 pt con interlineado de 33; tres columnas de unas 8 palabras por línea; el final de cada sección, equilibrado en columnas; cinco tipos de figura nuevos.
+  - **Tipografías:** los ocho estilos estáticos de Instrument Sans, con su licencia, en el repositorio.
+- **Alternativas descartadas:** conservar el A3 y solo agrandar la letra, que no cumple el formato pedido; y escribir una memoria nueva desde cero, que habría perdido la evidencia y las citas ya verificadas.
+- **Verificación:** 18 482 palabras en los capítulos 1 a 14 (19 527 con las páginas iniciales); 66 páginas, sin avisos del generador; 8,4 palabras por línea en promedio; ninguna sección termina en una columna sola; cada cita del texto tiene su referencia y cada referencia se cita.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-146
+
+- **Qué cambió:** se registró D-146.
+- **Cómo estaba antes:** la última decisión era D-145.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-28 — D-145
 

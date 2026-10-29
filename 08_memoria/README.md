@@ -6,9 +6,11 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos activos
 
+- [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md): reescrito en torno a las decisiones de diseño, con 13 figuras y 9 tablas, para que lo revise el profesor el 30 de octubre (D-146). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 18 482 palabras.
+- [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 66 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146). Texto de 22 pt, unas 8 palabras por línea y ninguna columna sola al final de una sección. Reemplaza a la versión A3.
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
-- [Memoria v5 en A3 horizontal](memoria-a3/README.md): la v5 compuesta con la línea de Relevo, en un [PDF de 57 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134, D-135 y D-145). Texto de 14 pt en columnas de 8 a 12 palabras por línea, cada sección en página nueva, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. Por ahora, sin agradecimientos y con un índice solo de secciones. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
+- [Memoria v5 en A3 horizontal](memoria-a3/README.md), reemplazada por la versión en 1920 × 1080: la v5 compuesta con la línea de Relevo, en un [PDF de 57 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134, D-135 y D-145). Texto de 14 pt en columnas de 8 a 12 palabras por línea, cada sección en página nueva, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. Por ahora, sin agradecimientos y con un índice solo de secciones. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
 - [Borrador v5 de la memoria (11 de octubre de 2026)](borrador-memoria-v5-2026-10-11.md): aprobado por el autor como base de trabajo (D-123). No es la versión de entrega: al 20 de octubre faltan sus 23 marcadores y el cierre de la prueba. Las fotos de su Figura 4 están en [figuras](figuras/), sin metadatos y con el nombre difuminado (D-140). La [bitácora de la revisión](../00_gobernanza/bitacora-trabajo-con-ia-2026-10-11-memoria-v5.md) documenta cambios, decisiones y errores. Las [notas del borrador](notas-del-borrador-v5-2026-10-11.md) resumen qué cambió, qué debe confirmarse y qué falta.
 - [Memoria de Relevo v4 — Markdown vigente](memoria-vigente-v4.md): documento académico activo, escrito con los títulos, la secuencia y los límites de extensión del examen.
 - [Auditoría de redacción y estructura de la v4](auditoria-redaccion-v4-2026-08-26.md): control actual de lectura, 42 subtítulos temáticos sin numeración secundaria, extensión, conceptos, APA 7 y ubicación de la formulación.
@@ -89,6 +91,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-10-28 — Borrador v6 y memoria en 1920 × 1080
+
+- **Cambio:** se enlazan el borrador v6, sus notas y la memoria diseñada en 1920 × 1080; la A3 queda como reemplazada.
+- **Versión anterior:** la v5 era el borrador vigente y la A3, la memoria diseñada.
+- **Motivo:** pedido del autor tras la revisión con los profesores (D-146).
+- **Alcance:** la v5 y la A3 se conservan como registro.
 
 ### 2026-10-28 — Memoria en A3 ordenada
 
