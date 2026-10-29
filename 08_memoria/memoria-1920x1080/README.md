@@ -1,8 +1,8 @@
 # Memoria en 1920 × 1080
 
-**Decisiones:** D-146, D-147 y D-148. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
+**Decisiones:** D-146, D-147, D-148 y D-149. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
 
-**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 69 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
+**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 72 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
 
 **Para editar en Affinity:** `memoria-relevo-1920x1080.idml`, que se abre en Affinity Publisher o InDesign. No se guarda en el repositorio, porque sus imágenes se enlazan con la ruta completa del computador donde se generó: se genera en la carpeta donde se va a trabajar. Antes, instala las tipografías de [`letra/estaticas/`](letra/estaticas/) (ver [letra](letra/LEEME.md)).
 
@@ -23,9 +23,11 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 | Aperturas | Número de 94 pt en peso regular —el más liviano de Instrument Sans, que no tiene versión light— y título de 63 pt: manda el título. |
 | Rótulos | Como en una tesis: «Figura 1» o «Tabla 1» en negrita y el título en cursiva, debajo; nada en cápsulas. Cabeceras de tabla, encabezados y fechas de 17 pt. |
 | Tablas | Con filetes: uno grueso arriba y abajo, uno bajo la cabecera y uno fino entre filas. Sin fichas blancas ni círculos. |
-| Números y fondos | Números sueltos, sin círculos. El fondo blanco queda para lo que importa: las cifras de resultados, la identidad y las capturas. |
+| Números y fondos | Números sueltos, sin círculos. Cada figura va sobre un fondo blanco que la separa del texto; adentro, las fichas toman el color del papel. Las tablas, sin fondo. |
+| Letra de figuras y tablas | 20 pt en celdas y rótulos de las figuras, 19 pt en las notas (antes, 17). |
+| Cortes | Un párrafo de cinco líneas o menos no se corta. Al cortar uno, quedan al menos tres líneas arriba y pasan al menos tres a la columna siguiente, o cuatro si la siguiente está en otra página. |
 | Secciones | Cada una abre en una página nueva, con su panel de aura en la primera columna. |
-| Final de cada sección | Su última página reparte el texto en columnas del mismo alto; una columna sola se abre en dos o en tres. Si la sección termina en un párrafo corto y tiene tablas o figuras, la última baja a esa página. |
+| Final de cada sección | Su última página reparte el texto en columnas del mismo alto solo si cada una queda con ocho líneas o más; con menos texto, queda en una columna. Si la sección termina en un párrafo corto y tiene tablas o figuras, la última baja a esa página. |
 | Tablas y figuras | Arriba de la página, después de su lugar en el texto, en el orden en que aparecen. Una tabla más alta que la página se parte en dos y repite su cabecera. La nota va en una columna, o en dos si es larga. |
 | Figuras de una columna | Los esquemas breves y el gráfico de la encuesta van dentro del texto, siempre arriba de una columna: texto, figura, texto. |
 | Imágenes | Las imágenes enteras de una figura quedan del mismo alto, en columnas proporcionales; los flujos llevan flechas; las figuras anchas usan todo el ancho. Las personas llevan el ícono de perfil. |
@@ -36,9 +38,9 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 
 El generador dibuja once tipos de figura, que leen su contenido de la propia v6 (grupos separados por «; » y campos por « | »), y compone fotos y capturas sin recortarlas:
 
-- **Esquema en columnas:** los ocho criterios (Figura 8) y la arquitectura de información de la aplicación (Figura 15); en una columna, las ideas de McDaniel y Einstein (Figura 1), Norman (Figura 2) y Sanders y Stappers (Figura 4).
+- **Esquema en filas y columnas:** cada grupo, una columna con su cabecera y sus filas: los ocho criterios (Figura 8) y la arquitectura de información de la aplicación (Figura 15); en una columna, las ideas de McDaniel y Einstein (Figura 1), Norman (Figura 2) y Sanders y Stappers (Figura 4).
 - **Mapa de dos ejes:** sobre qué actúan las herramientas y dónde ocurren (Figura 7).
-- **Centro y periferia:** dos círculos y la señal que pasa al centro (Figura 3).
+- **Momentos de la atención:** antes de la señal, cuando suena y cuando termina, con lo que queda en el centro y en la periferia (Figura 3).
 - **Matriz de dos por dos:** motivación y facilidad para empezar (Figura 22).
 - **Cronología:** el proceso del proyecto, de marzo a octubre (Figura 9).
 - **Lámina de identidad:** logo, luces con su papel, letra e íconos (Figura 16).
@@ -59,6 +61,7 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Verificación
 
+- **Cuarta ronda, el 28 de octubre de 2026:** 72 páginas, sin avisos del generador; ninguna columna con una o dos líneas y ningún final de párrafo solo en otra página. Las páginas que solo tienen una tabla o una figura la centran en el alto. Texto: 8,1 palabras por línea en promedio; 9 de 1825 líneas pasan de 12, por cifras.
 - **Tercera ronda, el 28 de octubre de 2026:** 69 páginas, sin avisos del generador; ninguna sección termina en una columna sola. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 8 de 1843 líneas pasan de 12, por cifras.
 - **Segunda ronda, el 28 de octubre de 2026:** 75 páginas, sin avisos del generador. Se revisó la vista de todas. Texto: 8,4 palabras por línea en promedio; 17 de 1824 líneas pasan de 12, por cifras.
 - **El 28 de octubre de 2026:** 66 páginas, sin avisos del generador. Se revisó la vista de todas y, de cerca, las páginas de las figuras nuevas.
@@ -73,6 +76,12 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 - La Biblioteca exige los índices de tablas y de figuras para el depósito.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Cuarta ronda
+
+- **Qué cambió:** figuras sobre fondo blanco, con letra más grande y esquemas en filas y columnas; la Figura 3 en tres momentos; ningún párrafo de cinco líneas o menos se corta, y los cortes dejan al menos tres líneas a cada lado (cuatro si cambia de página); el final de una sección se reparte solo con ocho líneas o más por columna.
+- **Cómo estaba antes:** quedaban finales de párrafo de dos o tres líneas solos en otra columna o página, y finales de sección repartidos en columnas de pocas líneas; las figuras no tenían fondo.
+- **Por qué:** pedido del autor del 28 de octubre de 2026, de noche (D-149).
 
 ### 2026-10-28 — Tercera ronda
 

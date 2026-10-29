@@ -1921,7 +1921,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 18 078 palabras en los capítulos 1 a 14 (19 189 con las páginas iniciales y los índices); 80 referencias, todas citadas, y cada cita con su referencia; 69 páginas, sin avisos del generador; ninguna sección termina en una columna sola; 8,1 palabras por línea en promedio; el IDML enlaza sus 58 imágenes.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-149 — La memoria no deja trozos de texto sueltos y sus figuras vuelven al fondo blanco
+
+- **Fecha:** 2026-10-28.
+- **Estado:** hecha en el borrador v6 y en la memoria en 1920 × 1080. El IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** al revisar la tercera ronda (D-148), el autor señaló un patrón: trozos de texto sueltos —el final de un párrafo que pasa solo a otra página, párrafos de una o dos líneas, finales de sección repartidos en columnas de pocas líneas— que cuestan seguir. Pidió además quitar «Qué no es el problema», escribir más claro que «intención elegida», figuras más legibles y con más diseño, de nuevo sobre fondo blanco para separarlas del texto, una Figura 3 que se entienda y trabajar con filas y columnas.
+- **Decisión:**
+  - **Texto:** sale «Qué no es el problema»; «intención elegida» o «alternativa» pasa a «lo que la persona quiere hacer» o «algo que quería hacer»; las frases de transición y las entradillas de una línea se unen al párrafo vecino.
+  - **Cortes:** un párrafo de cinco líneas o menos no se corta; al cortar uno, quedan al menos tres líneas arriba y pasan al menos tres a la columna siguiente, o cuatro si la columna siguiente está en otra página.
+  - **Finales de sección:** se reparten en columnas solo si cada una queda con ocho líneas o más; si hay menos texto, queda en una columna.
+  - **Figuras:** sobre un fondo blanco que las separa del texto; letra de figuras, tablas y notas más grande (de 17 a 20 pt en el PDF); los esquemas, en filas y columnas, cada grupo con su cabecera; la Figura 3 pasa a tres momentos —antes de la señal, cuando suena y cuando termina— con lo que queda en el centro y en la periferia de la atención.
+- **Alternativas descartadas:** repartir siempre el final de una sección en dos o tres columnas, que dejaba columnas de dos o tres líneas; quitar el fondo blanco de todas las figuras, que las confundía con el texto.
+- **Verificación:** 17 995 palabras en los capítulos 1 a 14 (19 115 con las páginas iniciales y los índices); 72 páginas, sin avisos del generador; ninguna columna con una o dos líneas y ningún final de párrafo solo en otra página; 8,1 palabras por línea en promedio; el IDML enlaza sus 59 imágenes. Quedan dos páginas con poco texto: el final del capítulo 6, junto a la Figura 3, y el final del glosario.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — D-149
+
+- **Qué cambió:** se registró D-149.
+- **Cómo estaba antes:** la última decisión era D-148.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-28 — D-148
 

@@ -1,6 +1,6 @@
 # Notas del borrador v6
 
-**Fecha:** 28 de octubre de 2026. **Decisiones:** D-146, D-147 y D-148. **Borrador:** [borrador-memoria-v6-2026-10-28.md](borrador-memoria-v6-2026-10-28.md). **Versión diseñada:** [memoria en 1920 × 1080](memoria-1920x1080/README.md).
+**Fecha:** 28 de octubre de 2026. **Decisiones:** D-146, D-147, D-148 y D-149. **Borrador:** [borrador-memoria-v6-2026-10-28.md](borrador-memoria-v6-2026-10-28.md). **Versión diseñada:** [memoria en 1920 × 1080](memoria-1920x1080/README.md).
 
 ## Por qué hay una v6
 
@@ -57,9 +57,19 @@ Al revisar la segunda ronda, el autor pidió citas solo cuando hacen falta, figu
 | Relato | Cada capítulo abre con una frase que lo une al anterior. |
 | Composición | Ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md). |
 
+## Cuarta ronda: sin trozos sueltos (D-149)
+
+El autor señaló un patrón: trozos de texto sueltos que cuestan seguir. Cambios:
+
+- Sale «Qué no es el problema».
+- «Intención elegida» o «alternativa» pasa a «lo que la persona quiere hacer» o «algo que quería hacer», también en la pregunta, la hipótesis, el primer objetivo y el glosario.
+- Las frases de transición y las entradillas de una línea se unen al párrafo vecino.
+- La Figura 3 muestra tres momentos de la atención: antes de la señal, cuando suena y cuando termina.
+- Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
+
 ## Extensión
 
-Capítulos 1 a 14: 18 078 palabras; con portada, agradecimientos, resumen, abstract e índices, 19 189 (límite: 20 000). Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 17 995 palabras; con portada, agradecimientos, resumen, abstract e índices, 19 115 (límite: 20 000). Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -86,6 +96,12 @@ Hay 19 marcadores `[CONFIRMAR: …]`. Los nuevos son tres:
 - **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-28 — Cuarta ronda
+
+- **Qué cambió:** se añadió la cuarta ronda (D-149) y se actualizó la extensión.
+- **Cómo estaba antes:** las notas llegaban a la tercera ronda.
+- **Por qué:** pedido del autor del 28 de octubre de 2026, de noche.
 
 ### 2026-10-28 — Tercera ronda
 

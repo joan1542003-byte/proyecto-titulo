@@ -30,7 +30,7 @@ A las dos, por permitir que la creatividad, el arte y la entretención fueran pa
 
 # Resumen
 
-Algunas sesiones de ocio digital se prolongan sin una nueva decisión de continuar, y otra actividad también deseada deja de estar presente cuando aún es posible comenzarla. El proyecto buscó diseñar y evaluar formativamente un sistema *phygital* (físico y digital) que ayude a recuperar esa intención —volver a tenerla presente— sin bloquear el teléfono ni juzgar la decisión posterior. La investigación combinó una revisión bibliográfica, ocho entrevistas semiestructuradas analizadas con el método Framework, una encuesta de 53 respuestas y una comparación de herramientas. Los resultados indican que la duración no basta para valorar una sesión, que la mayoría de las herramientas revisadas actúa sobre el uso del teléfono y no sobre la actividad desplazada, y que no corresponde intervenir cuando el ocio digital conserva sentido. De ellos se derivaron ocho criterios de diseño y Relevo: una aplicación Android y un objeto, el testigo, que se deja junto al primer paso de la actividad elegida —por ejemplo, junto al libro— y suena al cumplirse una condición definida por la persona. Para probar la relación entre señal y lugar antes de fabricar el testigo, el prototipo hace sonar un localizador Bluetooth comercial. Tres personas lo usan en su hogar desde el 7 de octubre de 2026; hasta el 19, el ciclo completo funcionó en los tres hogares: el localizador sonó en 23 de 24 ciclos y, en 19 de 21 respuestas, la persona supo qué quería hacer antes de leerlo en la pantalla; en las 21 recordó cómo empezar, y en 10 decidió empezar. Esta etapa validó el ciclo; la comparación con un lugar neutro y con el teléfono, ya implementada, es el paso siguiente para contrastar la hipótesis. El proyecto aporta, además, un prototipo funcional y un procedimiento para comparar señales situadas con sus alternativas antes de fabricar un objeto.
+Algunas sesiones de ocio digital se prolongan sin una nueva decisión de continuar, y otra actividad también deseada deja de estar presente cuando aún es posible comenzarla. El proyecto buscó diseñar y evaluar formativamente un sistema *phygital* (físico y digital) que ayude a recuperar esa intención —volver a tenerla presente— sin bloquear el teléfono ni juzgar la decisión posterior. La investigación combinó una revisión bibliográfica, ocho entrevistas semiestructuradas analizadas con el método Framework, una encuesta de 53 respuestas y una comparación de herramientas. Los resultados indican que la duración no basta para valorar una sesión, que la mayoría de las herramientas revisadas actúa sobre el uso del teléfono y no sobre la actividad desplazada, y que no corresponde intervenir cuando el ocio digital conserva sentido. De ellos se derivaron ocho criterios de diseño y Relevo: una aplicación Android y un objeto, el testigo, que se deja junto al primer paso de lo que la persona quiere hacer —por ejemplo, junto al libro— y suena al cumplirse una condición definida por la persona. Para probar la relación entre señal y lugar antes de fabricar el testigo, el prototipo hace sonar un localizador Bluetooth comercial. Tres personas lo usan en su hogar desde el 7 de octubre de 2026; hasta el 19, el ciclo completo funcionó en los tres hogares: el localizador sonó en 23 de 24 ciclos y, en 19 de 21 respuestas, la persona supo qué quería hacer antes de leerlo en la pantalla; en las 21 recordó cómo empezar, y en 10 decidió empezar. Esta etapa validó el ciclo; la comparación con un lugar neutro y con el teléfono, ya implementada, es el paso siguiente para contrastar la hipótesis. El proyecto aporta, además, un prototipo funcional y un procedimiento para comparar señales situadas con sus alternativas antes de fabricar un objeto.
 
 *Palabras clave:* ocio digital, memoria prospectiva, diseño *phygital*
 
@@ -73,7 +73,7 @@ Some digital leisure sessions go on without a new decision to continue, and anot
 
 - Figura 1. Dos caminos para que vuelva una intención
 - Figura 2. La señal y el mensaje de un recordatorio
-- Figura 3. Centro y periferia de la atención
+- Figura 3. Cómo pasa la señal de la periferia al centro de la atención
 - Figura 4. Lo que dicen y lo que hacen las personas
 - Figura 5. Episodios recientes de ocio digital según la encuesta
 - Figura 6. Opiniones sobre la propuesta
@@ -116,7 +116,7 @@ Las respuestas más difundidas actúan sobre la actividad presente. Las herramie
 
 La psicología ofrece un concepto para precisar la situación. La *memoria prospectiva* es la capacidad de recordar una acción que se quiere realizar cuando llega la ocasión de hacerla (McDaniel y Einstein, 2000). Recordar al final del día que se quería leer no equivale a recuperar esa intención cuando todavía era posible abrir el libro. Así planteado, el desafío no es frenar el uso del teléfono, sino lograr que una intención vuelva a tiempo, sin convertirse en una obligación.
 
-Este proyecto aborda ese desafío desde el diseño. Busca que una persona vuelva a considerar, mientras la sesión continúa, una actividad que ella misma eligió, sin prohibir la actividad actual ni decidir por ella qué forma de descanso vale más. Para comprender la experiencia, la investigación combina una revisión bibliográfica, entrevistas, una encuesta y el análisis de herramientas y referentes. Para intervenir en ella, propone un sistema *phygital* —físico y digital— que vincula la actividad elegida con el lugar donde comienza: la persona prepara en una aplicación su intención y su primer paso, y un objeto ubicado donde empieza esa actividad suena cuando se cumple una condición que ella define. La propuesta se prueba en el uso cotidiano, en el hogar, para observar si esa señal ayuda a recuperar la intención y si la decisión sigue siendo de quien la recibe.
+Este proyecto aborda ese desafío desde el diseño. Busca que una persona vuelva a considerar, mientras la sesión continúa, una actividad que ella misma eligió, sin prohibir la actividad actual ni decidir por ella qué forma de descanso vale más. Para comprender la experiencia, la investigación combina una revisión bibliográfica, entrevistas, una encuesta y el análisis de herramientas y referentes. Para intervenir en ella, propone un sistema *phygital* —físico y digital— que vincula lo que la persona quiere hacer con el lugar donde eso comienza: la persona prepara en una aplicación su intención y su primer paso, y un objeto ubicado donde empieza esa actividad suena cuando se cumple una condición que ella define. La propuesta se prueba en el uso cotidiano, en el hogar, para observar si esa señal ayuda a recuperar la intención y si la decisión sigue siendo de quien la recibe.
 
 # 3. Planteamiento del problema
 
@@ -126,11 +126,9 @@ En Chile, el teléfono es la puerta principal a internet: en 2025, el 96,6 % de 
 
 Una persona abre una aplicación para descansar unos minutos antes de dibujar, algo que quería hacer desde la tarde. Media hora después la cierra, y ya es tarde para empezar. No decidió abandonar el dibujo: mientras la sesión seguía, el dibujo no volvió a aparecer. Que lo recuerde después muestra que la intención no se perdió; lo que faltó fue que volviera a tiempo, cuando todavía podía orientar la decisión.
 
-El problema puede formularse así: **durante algunos episodios de ocio digital, una actividad que la persona también quería realizar deja de estar presente y vuelve cuando la ocasión ya pasó.** No se trata de cuánto tiempo se usa el teléfono, sino de la relación entre la actividad presente y otra intención valorada.
+El problema puede formularse así: **durante algunos episodios de ocio digital, una actividad que la persona también quería realizar deja de estar presente y vuelve cuando la ocasión ya pasó.** No se trata de cuánto tiempo se usa el teléfono, sino de la relación entre la actividad presente y otra cosa que la persona también quería hacer.
 
 ## Por qué ocurre
-
-Tres factores lo explican, y ninguno basta por sí solo.
 
 **La atención está ocupada.** Recordar una acción futura exige que la intención vuelva por sí misma en el momento oportuno; cuando la actividad presente absorbe la atención, esa vuelta depende más de una señal del entorno que del esfuerzo de recordar (McDaniel y Einstein, 2000). En un estudio con 1315 personas adultas, que combinó cuestionarios breves durante el día con registros del uso del teléfono, cuanto más se prolongaba el desplazamiento sin propósito por contenidos, más culpa declaraban las personas, y el conflicto con otras metas explicaba parte de esa relación (de Segovia Vicente et al., 2024). El estudio es observacional y no distingue el olvido de la postergación, pero muestra que la relación con otras intenciones pesa en cómo se vive una sesión.
 
@@ -138,13 +136,9 @@ Tres factores lo explican, y ninguno basta por sí solo.
 
 **El ocio se juzga con la vara de la productividad.** Tonietto et al. (2021) observaron que considerar el ocio una pérdida de tiempo disminuye su disfrute, sobre todo cuando la actividad se realiza como un fin en sí misma. El estudio no trata del teléfono, pero advierte que una ayuda que presente el descanso como tiempo perdido puede dañar lo que pretende cuidar.
 
-## Qué no es el problema
-
-No se trata de diagnosticar una adicción ni un daño a la memoria: la dificultad aparece en momentos concretos y puede estudiarse sin suponer que la persona necesita dejar el teléfono. Tampoco es el tiempo total de uso: una sesión larga puede tener sentido, y una breve, desplazar algo importante. Y hay una forma vecina que este proyecto no aborda directamente: cuando la otra actividad sigue presente y aun así no se inicia, un recordatorio no resuelve la tensión entre dos cosas valoradas.
-
 ## El desafío de diseño
 
-De ahí se desprende el desafío: **apoyar que una intención elegida vuelva a tiempo, sin bloquear la actividad actual, sin decidir por la persona y sin intervenir cuando el ocio digital conserva sentido.** Recuperar una intención significa devolverla a la decisión, no convertirla en obligación.
+De ahí se desprende el desafío: **ayudar a que la persona recuerde a tiempo algo que quería hacer, sin bloquear lo que está haciendo, sin decidir por ella y sin intervenir cuando el ocio digital conserva sentido.** Recuperar una intención significa devolverla a la decisión, no convertirla en obligación.
 
 # 4. Justificación
 
@@ -178,7 +172,7 @@ Otros trabajos llevaron el recordatorio a objetos. The Tangible Reminder represe
 
 ## Alcance de los antecedentes
 
-Las métricas describen el uso, los bloqueos modifican el acceso, las pausas abren una reconsideración y los recordatorios apoyan el recuerdo; ninguna línea muestra bajo qué condiciones una intención alternativa vuelve a orientar la decisión mientras la sesión continúa.
+Las métricas describen el uso, los bloqueos modifican el acceso, las pausas abren una reconsideración y los recordatorios apoyan el recuerdo; ninguna línea muestra bajo qué condiciones lo que la persona quería hacer vuelve a orientar su decisión mientras la sesión continúa.
 
 # 6. Marco teórico por ámbitos
 
@@ -234,9 +228,9 @@ La *interacción tangible* da forma física a la información digital. Ishii y U
 
 **Figura 3**
 
-*Centro y periferia de la atención*
+*Cómo pasa la señal de la periferia al centro de la atención*
 
-[FIGURA POR INSERTAR: (columna) centro y periferia: Centro | La pantalla, donde está la atención; Periferia | El entorno, que se percibe sin mirarlo; Señal | El sonido del objeto pasa al centro y, al terminar, vuelve a la periferia]
+[FIGURA POR INSERTAR: (columna) pasos de atención: Antes de la señal | La pantalla | El objeto, junto al primer paso; Suena el objeto | El sonido y la actividad que recuerda | La pantalla; Termina la señal | Lo que la persona decida | El objeto, otra vez en silencio]
 
 *Nota.* Elaboración propia a partir de Weiser y Brown (1997).
 
@@ -246,11 +240,9 @@ La *tecnología calma* describe el ideal de esas señales: informar desde la per
 
 # 7. Usuario, contexto y hallazgos de entrevistas
 
-La teoría explica el fenómeno en general; faltaba saber cómo lo viven las personas y cuándo una ayuda sería un error.
-
 ## Dos fuentes primarias
 
-El usuario y su contexto se estudiaron con dos fuentes primarias, diseñadas y aplicadas por el autor: ocho entrevistas semiestructuradas y una encuesta en línea. Las entrevistas definieron a quién se dirige el proyecto y cuándo no debe intervenir; la encuesta, posterior, contrastó esos criterios con más personas.
+La teoría explica el fenómeno en general; faltaba saber cómo lo viven las personas y cuándo una ayuda sería un error. Para eso, el usuario y su contexto se estudiaron con dos fuentes primarias, diseñadas y aplicadas por el autor: ocho entrevistas semiestructuradas y una encuesta en línea. Las entrevistas definieron a quién se dirige el proyecto y cuándo no debe intervenir; la encuesta, posterior, contrastó esos criterios con más personas.
 
 Las entrevistas se hicieron en Santiago, en persona, el 11 y el 12 de junio de 2026, cuando el proyecto trabajaba sobre una idea anterior: un objeto donde se depositaría el teléfono y que luego mostraría una señal del descanso realizado. Por eso la pauta no pregunta directamente por otra actividad que la persona quisiera hacer; esa categoría se construyó en el análisis. Participaron ocho personas de 19 a 27 años, reclutadas por referencias de personas cercanas al investigador, con consentimiento oral. La pauta tiene 13 preguntas, de Q1 a Q13: el tiempo libre, la última sesión de entretenimiento en el teléfono y cómo se vivió, la valoración del ocio, los intentos de descansar sin el teléfono y la reacción ante la idea anterior. La pauta y la síntesis de cada entrevista están en el Anexo A.
 
@@ -280,7 +272,7 @@ La encuesta mostró que el momento estudiado es frecuente y doméstico (Figura 5
 
 *Episodios recientes de ocio digital según la encuesta*
 
-[FIGURA POR INSERTAR: (columna) cuatro datos en tarjetas: 39 de 45, personas que siguieron en una aplicación más tiempo del que querían al menos un día de la última semana; 43 de 47, episodios que incluían otra actividad deseada; 42 de 43, casos en que se nombró un primer paso; 44 de 47, episodios que ocurrieron en casa]
+[FIGURA POR INSERTAR: cuatro datos en tarjetas: 39 de 45, personas que siguieron en una aplicación más tiempo del que querían al menos un día de la última semana; 43 de 47, episodios que incluían otra actividad deseada; 42 de 43, casos en que se nombró un primer paso; 44 de 47, episodios que ocurrieron en casa]
 
 *Nota.* Encuesta en línea del autor (53 respuestas). Cada total corresponde a quienes respondieron esa pregunta.
 
@@ -290,15 +282,13 @@ Después de leer la propuesta, 49 de 53 personas explicaron bien su funcionamien
 
 *Opiniones sobre la propuesta*
 
-[FIGURA POR INSERTAR: (columna) gráfico de barras: Dónde pondría el parlante | Junto a la actividad: 36, En un lugar general de la casa: 7, No lo usaría o no sabe dónde: 10; Duración preferida del sonido | 1 a 5 segundos: 16, 6 a 15 segundos: 25, 16 a 30 segundos: 3, Que no sonara: 7, No sabe: 2; Probabilidad de probarlo, de 1 a 5 | 5: 3, 4: 20, 3: 18, 2: 8, 1: 3, No sabe: 1]
+[FIGURA POR INSERTAR: gráfico de barras: Dónde pondría el parlante | Junto a la actividad: 36, En un lugar general de la casa: 7, No lo usaría o no sabe dónde: 10; Duración preferida del sonido | 1 a 5 segundos: 16, 6 a 15 segundos: 25, 16 a 30 segundos: 3, Que no sonara: 7, No sabe: 2; Probabilidad de probarlo, de 1 a 5 | 5: 3, 4: 20, 3: 18, 2: 8, 1: 3, No sabe: 1]
 
 *Nota.* Encuesta en línea del autor (53 respuestas). Número de personas por respuesta.
 
 ## Dos situaciones de uso
 
-Los hallazgos permiten distinguir dos situaciones, que por convención se nombran como usuarios. No son identidades ni segmentos comerciales: una misma persona puede pasar de una a otra.
-
-El *usuario principal* está en la primera: la sesión continúa sin una decisión renovada y una intención alternativa deja de orientar el paso siguiente. La situación tiene las dos formas descritas en el capítulo 2: la actividad que se recuerda tarde y la que sigue presente y no se inicia. Las entrevistas respaldan sobre todo la segunda —P2 sabía que tenía sueño y siguió (P2, Q4 y Q7)— y en parte la primera: P3 perdió la noción del tiempo, aunque sabía que tenía algo pendiente (P3, Q4 y Q7). La situación a la que apunta la propuesta —una actividad elegida, con un comienzo conocido, que no se inicia— la respalda sobre todo la encuesta. Su necesidad, derivada del análisis, es volver a considerar a tiempo una alternativa propia.
+Los hallazgos permiten distinguir dos situaciones, que por convención se nombran como usuarios. No son identidades ni segmentos comerciales: una misma persona puede pasar de una a otra. El *usuario principal* está en la primera: la sesión continúa sin una decisión renovada y otra cosa que la persona quería hacer deja de orientar el paso siguiente. La situación tiene las dos formas descritas en el capítulo 2: la actividad que se recuerda tarde y la que sigue presente y no se inicia. Las entrevistas respaldan sobre todo la segunda —P2 sabía que tenía sueño y siguió (P2, Q4 y Q7)— y en parte la primera: P3 perdió la noción del tiempo, aunque sabía que tenía algo pendiente (P3, Q4 y Q7). La situación a la que apunta la propuesta —una actividad que la persona quiere hacer y sabe cómo empezar, pero no empieza— la respalda sobre todo la encuesta. Su necesidad, derivada del análisis, es volver a considerar a tiempo una alternativa propia.
 
 El *usuario límite* está en la segunda: la actividad digital es elegida, relacional, concentrada o reparadora, o no existe otra intención que apoyar. P6 y P7 son los contrastes más claros, y P4, P6 y P8 muestran que la posición cambia en una misma persona. Su necesidad es conservar la autonomía: una intervención equivocada podría convertir una actividad legítima en un problema, exponer una intención privada o interrumpir a otras personas. Para él, poder no activar, ignorar o detener la señal importa tanto como recibirla.
 
@@ -310,11 +300,9 @@ De ambas situaciones se desprenden necesidades comunes: una intención explícit
 
 # 8. Estado del arte y referentes
 
-Con esas necesidades a la vista, se revisó qué ofrecen hoy los productos y proyectos que abordan el uso del teléfono.
-
 ## Método y criterios de comparación
 
-Se compararon productos, servicios y la evidencia publicada sobre ellos con seis preguntas: qué problema abordan, qué mecanismo usan, dónde ocurre la interacción principal, qué exigen configurar y mantener, cómo conservan o limitan la autonomía y qué evidencia hay sobre sus resultados. La búsqueda, exploratoria y no sistemática, se cerró el 24 de agosto de 2026, y el Anexo C reúne su registro, las fichas y la exploración de patentes.
+Con esas necesidades a la vista, se compararon productos, servicios y la evidencia publicada sobre ellos con seis preguntas: qué problema abordan, qué mecanismo usan, dónde ocurre la interacción principal, qué exigen configurar y mantener, cómo conservan o limitan la autonomía y qué evidencia hay sobre sus resultados. La búsqueda, exploratoria y no sistemática, se cerró el 24 de agosto de 2026, y el Anexo C reúne su registro, las fichas y la exploración de patentes.
 
 ## Herramientas digitales de medición y pausa
 
@@ -376,7 +364,7 @@ La investigación, las personas y los referentes dejan ocho condiciones que una 
 
 **Criterio 4: Abrir una elección, no imponer una conducta.** La señal devuelve la intención al presente sin bloquear el teléfono: ignorarla, detenerla, cambiar de intención o seguir en la actividad digital son respuestas válidas. La evidencia sobre periodos de desconexión es dispar (Radtke et al., 2022); una pausa breve conserva la posibilidad de continuar (Grüning et al., 2023). El sistema puede reconocer lo que la persona declara, pero no felicitar por lo que no observó; rachas, puntajes y premios quedan fuera, porque mantener una racha puede volverse una meta en sí misma (Silverman y Barasch, 2023).
 
-**Criterio 5: Reconocer cuándo no intervenir.** Una actividad digital elegida, relacional, concentrada o reparadora no requiere corrección; tratar el ocio como una pérdida de tiempo reduce su disfrute (Tonietto et al., 2021). La videollamada de P6 y el pódcast que P7 eligió conservaron sentido, y P4, P6 y P8 mostraron que la necesidad de ayuda cambia en una misma persona. Sin una intención alternativa, la propuesta debe permanecer inactiva, y una regla puede perder vigencia sin que sea un error.
+**Criterio 5: Reconocer cuándo no intervenir.** Una actividad digital elegida, relacional, concentrada o reparadora no requiere corrección; tratar el ocio como una pérdida de tiempo reduce su disfrute (Tonietto et al., 2021). La videollamada de P6 y el pódcast que P7 eligió conservaron sentido, y P4, P6 y P8 mostraron que la necesidad de ayuda cambia en una misma persona. Si la persona no tiene otra cosa que quiera hacer, la propuesta debe quedarse inactiva, y una regla puede perder vigencia sin que sea un error.
 
 ## Carga de uso, convivencia y aporte físico
 
@@ -390,11 +378,9 @@ La investigación, las personas y los referentes dejan ocho condiciones que una 
 
 ## Problema de diseño y pregunta de investigación
 
-El estado del arte mostró que medir, pausar o restringir la actividad presente no devuelve necesariamente una intención alternativa ni indica dónde comenzarla. El problema de diseño es volver a hacer presente una intención formulada por la persona, sin bloquear el teléfono, evaluar su conducta ni intervenir cuando la actividad digital conserva sentido. La propuesta se dirige a quien ya eligió una actividad, sabe cómo comenzarla y está dispuesto a preparar ese comienzo, pero necesita mantenerla disponible durante ciertos episodios de ocio digital. Si la preparación resulta demasiado costosa, será un hallazgo sobre el diseño, no sobre la persona.
+El estado del arte mostró que medir, pausar o restringir la actividad presente no devuelve necesariamente lo que la persona quería hacer ni indica dónde empezarlo. El problema de diseño es volver a hacer presente una intención formulada por la persona, sin bloquear el teléfono, evaluar su conducta ni intervenir cuando la actividad digital conserva sentido. La propuesta se dirige a quien ya eligió una actividad, sabe cómo comenzarla y está dispuesto a preparar ese comienzo, pero necesita mantenerla disponible durante ciertos episodios de ocio digital. Si la preparación resulta demasiado costosa, será un hallazgo sobre el diseño, no sobre la persona.
 
-La pregunta de investigación es:
-
-> ¿Qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?
+> ¿Qué condiciones pueden ayudar a que una persona vuelva a considerar algo que quería hacer cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?
 
 La pregunta se divide en dos. La primera —qué requisitos debe cumplir una ayuda así— la responden la investigación y los criterios del capítulo 9. La segunda —si aporta algo situar la señal donde comienza la actividad, frente a un lugar neutro o al teléfono— la abordan la hipótesis y la prueba de 21 días.
 
@@ -402,15 +388,13 @@ Volver a considerar una actividad significa reconocer la intención y recordar c
 
 ## Definición y alcance de Relevo
 
-Relevo es un sistema *phygital* compuesto por una aplicación Android y un objeto físico, el *testigo*, que se sitúa junto al primer paso de una actividad elegida. La aplicación registra la intención y su primer paso y configura una condición de activación; cuando esta se cumple, el objeto emite una señal —el *pulso ambiental*, un sonido de unos 30 segundos que se detiene solo y no da instrucciones—, y la persona puede considerar la intención, seguir con la actividad digital o detener la señal. Para probar la relación entre señal y lugar antes de fabricar el testigo, el prototipo usa un localizador Bluetooth comercial, que la aplicación llama Tag. Más adelante se explica por qué se tomó cada una de estas decisiones.
+Relevo es un sistema *phygital* compuesto por una aplicación Android y un objeto físico, el *testigo*, que se sitúa junto al primer paso de una actividad que la persona quiere hacer. La aplicación registra la intención y su primer paso y configura una condición de activación; cuando esta se cumple, el objeto emite una señal —el *pulso ambiental*, un sonido de unos 30 segundos que se detiene solo y no da instrucciones—, y la persona puede considerar la intención, seguir con la actividad digital o detener la señal. Para probar la relación entre señal y lugar antes de fabricar el testigo, el prototipo usa un localizador Bluetooth comercial, que la aplicación llama Tag. Más adelante se explica por qué se tomó cada una de estas decisiones.
 
 El alcance considera una persona, una intención activa, un primer paso, una o varias aplicaciones cuyo uso se suma bajo un mismo límite, un objeto y un lugar doméstico que ella elige. El sistema no deduce emociones, no juzga si una sesión es adecuada ni observa si la actividad se realiza. La propuesta mantiene su carácter *phygital*, pero el componente físico puede cambiar si otra relación con los objetos responde mejor al problema.
 
 ## Hipótesis y objetivos
 
-La hipótesis es:
-
-> Si se diseña un sistema *phygital* que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella.
+> Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella.
 
 Su fundamento es teórico: cuando una actividad absorbe la atención, es más probable que una intención vuelva si aparece una señal llamativa y fuertemente asociada a la acción (McDaniel y Einstein, 2000), y el lugar donde debe realizarse una acción puede ofrecer esa asociación (Kirsh, 1995; O’Rear y Radvansky, 2019). El respaldo es más firme para la señal que para el lugar, y la comparación debe establecer la ventaja de un objeto sobre un medio digital. La hipótesis se descompone en tres supuestos contrastables:
 
@@ -422,7 +406,7 @@ Su fundamento es teórico: cuando una actividad absorbe la atención, es más pr
 
 El objetivo general es diseñar y evaluar formativamente un sistema *phygital* que ayude a recuperar una intención personal durante episodios de ocio digital, mediante una señal ubicada junto al primer paso de la actividad y sin bloquear ni juzgar la decisión posterior. La evaluación formativa busca identificar dificultades y orientar mejoras dentro de un proceso iterativo (Nielsen, 1993, p. 170). Los objetivos específicos son:
 
-1. Caracterizar la relación entre ocio digital, continuidad, intención alternativa y contexto mediante revisión bibliográfica, entrevistas, encuesta y análisis de referentes.
+1. Caracterizar cómo se relacionan el ocio digital, su continuidad, las otras actividades que la persona quiere hacer y el contexto mediante revisión bibliográfica, entrevistas, encuesta y análisis de referentes.
 2. Traducir los hallazgos en una experiencia *phygital* que reúna configuración digital, señal física, lugar y control de la persona.
 3. Comparar la señal ubicada junto al primer paso con la misma señal en un lugar neutro y con una notificación en el teléfono, para establecer si el lugar y el objeto físico aportan una diferencia reconocible.
 4. Evaluar comprensión, percepción, autonomía, funcionamiento técnico, convivencia y carga de uso mediante prototipos cada vez más completos.
@@ -449,7 +433,7 @@ El proyecto empleó ampliamente herramientas de inteligencia artificial generati
 
 # 11. Bajada proyectual: las decisiones de diseño
 
-Con el problema formulado y los criterios definidos, comenzó el diseño. Todas las decisiones de diseño son del autor; el proyecto las registró a medida que se tomaban, con su contexto, sus alternativas y su fundamento: 148 entradas entre el 23 de agosto y el 28 de octubre de 2026. La Tabla 1 las resume, de lo general a lo particular, y las secciones siguientes las desarrollan.
+Con el problema formulado y los criterios definidos, comenzó el diseño. Todas las decisiones de diseño son del autor; el proyecto las registró a medida que se tomaban, con su contexto, sus alternativas y su fundamento: 149 entradas entre el 23 de agosto y el 28 de octubre de 2026. La Tabla 1 las resume, de lo general a lo particular, y las secciones siguientes las desarrollan.
 
 **Tabla 1**
 
@@ -685,11 +669,9 @@ El prototipo se construyó por iteraciones cortas: cada versión respondió a un
 
 # 12. Factibilidad y límites
 
-Un diseño también tiene que poder hacerse: con qué tecnología, a qué costo y con quiénes.
-
 ## Plataforma y arquitectura técnica
 
-El prototipo se desarrolló para Android 12 o posterior porque este sistema permite, con documentación oficial, las dos cosas que Relevo necesita: saber cuánto se usan otras aplicaciones, con permiso de la persona (Google, 2026b), y comunicarse con un objeto cercano por Bluetooth (Google, 2026a). Un sitio web no puede consultar el uso de otras aplicaciones, y en iPhone hacerlo exige autorizaciones especiales de Apple (Apple Developer, s. f.); abarcar los dos sistemas habría duplicado el trabajo antes de examinar la hipótesis.
+Un diseño también tiene que poder hacerse: con qué tecnología, a qué costo y con quiénes. El prototipo se desarrolló para Android 12 o posterior porque este sistema permite, con documentación oficial, las dos cosas que Relevo necesita: saber cuánto se usan otras aplicaciones, con permiso de la persona (Google, 2026b), y comunicarse con un objeto cercano por Bluetooth (Google, 2026a). Un sitio web no puede consultar el uso de otras aplicaciones, y en iPhone hacerlo exige autorizaciones especiales de Apple (Apple Developer, s. f.); abarcar los dos sistemas habría duplicado el trabajo antes de examinar la hipótesis.
 
 Entre el teléfono y el Tag viajan datos de control, no audio: el Tag recibe la orden de sonar y de callar, nunca el texto de la intención. UsageStatsManager exige un permiso especial que se concede desde los ajustes (Google, 2026b), y Android cierra la conexión Bluetooth si el sistema termina el proceso de la aplicación (Google, 2026a); por eso la aplicación mantiene una notificación permanente mientras un relevo cuenta.
 
@@ -715,9 +697,7 @@ Se distinguen cuatro montos: el costo del prototipo académico (Tabla 4), el tra
 
 ## Modelo de gestión
 
-El modelo tiene tres etapas, y cada una se inicia solo si la anterior entrega evidencia.
-
-**El proyecto académico**, de agosto a diciembre de 2026, lo conduce el autor, con la orientación de los profesores guía y la colaboración de quienes participan en la prueba. Sus costos son los de la Tabla 4 más el trabajo del autor, que los financia. Su resultado es conocimiento, no un bien en venta.
+El modelo tiene tres etapas, y cada una se inicia solo si la anterior entrega evidencia. **El proyecto académico**, de agosto a diciembre de 2026, lo conduce el autor, con la orientación de los profesores guía y la colaboración de quienes participan en la prueba. Sus costos son los de la Tabla 4 más el trabajo del autor, que los financia. Su resultado es conocimiento, no un bien en venta.
 
 **Un piloto** tendría que establecer si situar la señal aporta. Ampliaría la prueba a las seis personas previstas, con un testigo por hogar y revisión especializada en accesibilidad, protección de datos y electrónica. Con precios de octubre de 2026, cada hogar supondría entre 10 100 y 12 150 pesos: el localizador, una pila de repuesto y la carcasa impresa, estimada al repartir entre seis el mínimo de 14 800 por trabajo de un servicio nacional (MCI Electronics, s. f.; Rabbit Hole, s. f.).
 
@@ -785,7 +765,7 @@ Entre el 8 y el 19 de octubre de 2026, el ciclo completo funcionó en los hogare
 
 *Nota.* Las tres personas, del 8 al 19 de octubre de 2026. Recuentos de los registros de la aplicación.
 
-Con tres personas, el detalle de cada caso dice más que un total (Figura 21). Cada una repitió sus actividades en un mismo lugar, con sus propias aplicaciones y su propio límite.
+Con tres personas, el detalle de cada caso dice más que un total (Figura 21). Cada una repitió sus actividades en un mismo lugar, con sus propias aplicaciones y su propio límite. Separar los casos cambia la lectura. Las personas empezaron la actividad en 10 respuestas, la dejaron para después en 9 y cambiaron de idea en 2, pero la mitad de los comienzos corresponde a una sola persona: la primera empezó en cinco de sus siete respuestas; la segunda, en tres, y la tercera, en dos. Como las tres respondieron el mismo número de veces, la diferencia está en lo que cada una hizo, no en cuánto participó. De las dos respuestas «a medias», una es de la primera persona. El sonido les pareció bueno en 10 respuestas, neutro en 9 y malo en 2, y las dos malas no son de la primera persona. La señal se calló desde el teléfono en nueve ciclos y con el botón del Tag en cinco; sonó completa en siete y quedó interrumpida en dos [CONFIRMAR: el detalle por persona de las demás respuestas, que da el resumen de unir-datos.js].
 
 **Figura 21**
 
@@ -794,8 +774,6 @@ Con tres personas, el detalle de cada caso dice más que un total (Figura 21). C
 [FIGURA POR INSERTAR: resultados por persona: Primera persona, desde el 8 de octubre | Estudiar, ordenar su pieza o dibujar · Tag en su escritorio · 15 minutos de Instagram, X o YouTube · 7 ciclos | 7 | 5; Segunda persona, desde el 9 | Tocar guitarra · Tag junto a la guitarra · 45 minutos y, desde el 15, 35 de Instagram, YouTube o Reddit · 8 ciclos | 7 | 3; Tercera persona, desde el 10 | Dibujar en su croquera · Tag en su escritorio · 25 minutos de TikTok · 9 ciclos | 7 | 2]
 
 *Nota.* Cada punto es una respuesta posterior a una señal; los puntos llenos, las veces en que la persona declaró haber empezado su actividad. Del 8 al 19 de octubre de 2026.
-
-Separar los casos cambia la lectura. Las personas empezaron la actividad en 10 respuestas, la dejaron para después en 9 y cambiaron de idea en 2, pero la mitad de los comienzos corresponde a una sola persona: la primera empezó en cinco de sus siete respuestas; la segunda, en tres, y la tercera, en dos. Como las tres respondieron el mismo número de veces, la diferencia está en lo que cada una hizo, no en cuánto participó. De las dos respuestas «a medias», una es de la primera persona. El sonido les pareció bueno en 10 respuestas, neutro en 9 y malo en 2, y las dos malas no son de la primera persona. La señal se calló desde el teléfono en nueve ciclos y con el botón del Tag en cinco; sonó completa en siete y quedó interrumpida en dos [CONFIRMAR: el detalle por persona de las demás respuestas, que da el resumen de unir-datos.js].
 
 Dos hallazgos orientan el diseño. El primero es que la señal situada pertenece al lugar de la actividad: el único ciclo sin sonido se activó fuera de casa, con el Tag fuera de alcance; el teléfono vibró, la aplicación registró la señal como fallida y, según el protocolo, esa señal se excluye. El segundo es que recordar no obliga a empezar, porque una señal lleva a actuar solo si coincide con la motivación y la capacidad del momento (Fogg, 2009, p. 1; Figura 22). Es lo que pide el criterio 4: la señal devuelve la intención y la decisión sigue siendo de la persona.
 
@@ -835,11 +813,9 @@ Con tres personas, cada comentario pesa. Lo que mostró la prueba se convierte e
 
 *Nota.* Elaboración propia a partir de los registros y comentarios de las tres personas y de la revisión con los profesores del 28 de octubre de 2026. «Propuesta» indica un cambio que el autor aún no decide.
 
-Falta completar la evidencia con el cierre del 30 de octubre, una entrevista con cada persona y, en una etapa con más personas, la comparación entre el objeto junto al primer paso y en un lugar neutro.
-
 # 14. Conclusiones
 
-El proyecto redefinió el problema: lo desplazó del tiempo de pantalla a la presencia oportuna de una actividad elegida, y fijó una regla explícita de no intervención. Con esa base tomó decisiones de diseño en todas las escalas: un sistema que reparte el trabajo entre una aplicación, un objeto y un lugar; un recorrido de una decisión por pantalla; una arquitectura que muestra solo lo más próximo; una interfaz y una escritura que no presionan; una identidad que hace visible el ciclo, y un objeto propio, el testigo, que lleva adentro la placa del localizador probado. Cada decisión responde a un criterio, y cada criterio, a su evidencia.
+El proyecto redefinió el problema: lo desplazó del tiempo de pantalla a que la persona recuerde a tiempo algo que quería hacer, y fijó una regla explícita de no intervención. Con esa base tomó decisiones de diseño en todas las escalas: un sistema que reparte el trabajo entre una aplicación, un objeto y un lugar; un recorrido de una decisión por pantalla; una arquitectura que muestra solo lo más próximo; una interfaz y una escritura que no presionan; una identidad que hace visible el ciclo, y un objeto propio, el testigo, que lleva adentro la placa del localizador probado. Cada decisión responde a un criterio, y cada criterio, a su evidencia.
 
 El prototipo funciona en uso real. En los hogares de las tres personas que lo usaron, el localizador sonó en 23 de los 24 ciclos completados hasta el 19 de octubre; en sus 21 respuestas recordaron cómo empezar su actividad, y en 19 supieron qué querían hacer antes de leerlo en la pantalla. Los fallos que ellas reportaron se corrigieron en dos versiones, y lo que la prueba mostró sobre el uso define la iteración siguiente. La Tabla 6 resume el estado de cada objetivo.
 
@@ -849,16 +825,14 @@ El prototipo funciona en uso real. En los hogares de las tres personas que lo us
 
 | Objetivo | Producto que lo demuestra | Estado |
 | --- | --- | --- |
-| 1. Caracterizar la relación entre ocio digital, continuidad, intención alternativa y contexto | Antecedentes, marco teórico, dos situaciones de usuario y comparación de referentes (capítulos 5 a 8) | Cumplido |
+| 1. Caracterizar cómo se relacionan el ocio digital, su continuidad, las otras actividades que la persona quiere hacer y el contexto | Antecedentes, marco teórico, dos situaciones de usuario y comparación de referentes (capítulos 5 a 8) | Cumplido |
 | 2. Traducir los hallazgos en una experiencia *phygital* | Ocho criterios, decisiones de diseño, prototipo Android con un Tag y testigo modelado (capítulos 9 a 11) | Cumplido con un objeto comercial; el testigo, modelado |
 | 3. Comparar la señal junto al primer paso con un lugar neutro y con el teléfono | Protocolo de tres condiciones, implementado en la aplicación, y una semana con el teléfono (capítulo 13) | En curso: la semana con el teléfono cierra el 30 de octubre |
 | 4. Evaluar comprensión, percepción, autonomía, funcionamiento técnico, convivencia y carga | Uso de tres personas en sus hogares y cierre en papel (capítulo 13) | Avanzado: funcionamiento, comprensión y uso continuado en tres hogares; escalas y entrevista de cierre en curso |
 
 *Nota.* El objetivo general está cumplido en el diseño, con un objeto comercial en lugar del testigo, y avanza en la evaluación formativa: el ciclo está validado en tres hogares.
 
-La pregunta de investigación se responde en dos partes. La primera —qué condiciones debe cumplir una ayuda— tiene una respuesta de diseño que ya funciona: la ayuda debe partir de una intención que la persona formula, vincularla con un primer paso reconocible, activarse con una condición que ella entiende y puede cambiar, y dejar abierta la posibilidad de ignorarla; cuando el ocio digital conserva sentido o no existe otra intención, lo adecuado es no intervenir. Construido con esas condiciones, Relevo devolvió la intención sin decidir por nadie: las tres personas recordaron cómo empezar, y cada una decidió a su manera si empezar, dejarlo para después o cambiar de idea. La segunda parte —si situar la señal donde comienza la actividad aporta algo frente a un lugar neutro o al teléfono— es el paso que sigue, y su comparación ya está implementada.
-
-El aporte del proyecto al diseño es haber convertido una tensión cotidiana en decisiones verificables —qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones—, sin reducirla a una cuestión de disciplina.
+La pregunta de investigación se responde en dos partes. La primera —qué condiciones debe cumplir una ayuda— tiene una respuesta de diseño que ya funciona: la ayuda debe partir de una intención que la persona formula, vincularla con un primer paso reconocible, activarse con una condición que ella entiende y puede cambiar, y dejar abierta la posibilidad de ignorarla; cuando el ocio digital conserva sentido o no existe otra intención, lo adecuado es no intervenir. Construido con esas condiciones, Relevo devolvió la intención sin decidir por nadie: las tres personas recordaron cómo empezar, y cada una decidió a su manera si empezar, dejarlo para después o cambiar de idea. La segunda parte —si situar la señal donde comienza la actividad aporta algo frente a un lugar neutro o al teléfono— es el paso que sigue, y su comparación ya está implementada. El aporte del proyecto al diseño es haber convertido una tensión cotidiana en decisiones verificables —qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones—, sin reducirla a una cuestión de disciplina.
 
 ## Alcances y proyecciones
 
@@ -1074,7 +1048,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Herramienta de autocontrol digital.** Aplicación o función con la que una persona regula su propio uso de dispositivos mediante mediciones, límites, bloqueos, demoras o mensajes. También se la llama herramienta de bienestar digital.
 
-**Intención.** Lo que la persona se propone hacer; su contenido es la actividad elegida. Se llama intención alternativa a la que la persona mantiene para el mismo periodo en que transcurre una sesión de ocio digital.
+**Intención.** Lo que la persona se propone hacer, como leer o dibujar. En esta memoria, la que quiere mantener presente mientras dura una sesión de ocio digital.
 
 **Intención de implementación.** Plan que especifica de antemano cuándo, dónde y cómo actuar: si se presenta cierta situación, se inicia una respuesta (Gollwitzer y Sheeran, 2006).
 
@@ -1084,7 +1058,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Localizador Bluetooth.** Objeto pequeño y autónomo, vendido también como llavero antipérdida, que suena cuando la persona lo busca desde el teléfono. El prototipo usa uno comercial, circular, con pila de botón y un solo botón.
 
-**Lugar neutro.** Ubicación visible de la casa, a más de un metro del primer paso y sin relación con la actividad elegida. En la prueba se compara con el lugar junto al primer paso.
+**Lugar neutro.** Ubicación visible de la casa, a más de un metro del primer paso y sin relación con la actividad. En la prueba se compara con el lugar junto al primer paso.
 
 **Marco multiproceso.** Explicación de la memoria prospectiva según la cual una intención puede volver porque la persona vigila el entorno o porque un evento la trae de vuelta de forma espontánea. Cuando la actividad en curso absorbe la atención, lo segundo es más probable si la señal es llamativa y está fuertemente asociada a la acción (McDaniel y Einstein, 2000).
 
@@ -1100,7 +1074,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Precompromiso.** Decisión previa que restringe deliberadamente las opciones futuras, como bloquear aplicaciones hasta volver a un objeto.
 
-**Primer paso.** Acción breve, concreta y disponible con la que comienza una actividad elegida, como abrir el libro o ponerse las zapatillas; la aplicación lo pregunta con «¿Cómo empiezas?». «Junto al primer paso» significa en el lugar donde ese paso se realiza.
+**Primer paso.** Acción breve, concreta y disponible con la que comienza una actividad, como abrir el libro o ponerse las zapatillas; la aplicación lo pregunta con «¿Cómo empiezas?». «Junto al primer paso» significa en el lugar donde ese paso se realiza.
 
 **Primer plano.** Estado de una aplicación abierta en la pantalla. El prototipo suma el tiempo que las aplicaciones elegidas pasan en ese estado.
 
@@ -1130,7 +1104,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Tipo ideal.** Agrupación analítica de casos semejantes que no pretende coincidir del todo con la realidad (Stapley et al., 2022). En esta memoria agrupa situaciones, no personas.
 
-**Usuario principal y usuario límite.** Tipos ideales de situación, no de persona: en la primera, la sesión continúa sin una decisión renovada y una intención alternativa deja de orientar el paso siguiente; en la segunda, el ocio digital conserva sentido o no existe otra intención, y no corresponde intervenir.
+**Usuario principal y usuario límite.** Tipos ideales de situación, no de persona: en la primera, la sesión continúa sin una decisión renovada y otra cosa que la persona quería hacer deja de orientar el paso siguiente; en la segunda, el ocio digital conserva sentido o no existe otra intención, y no corresponde intervenir.
 
 **WCAG (Pautas de Accesibilidad para el Contenido Web).** Recomendación del World Wide Web Consortium que fija criterios verificables de accesibilidad, como el contraste mínimo del texto o no depender solo del color.
 
