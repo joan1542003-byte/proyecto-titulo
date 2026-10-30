@@ -80,7 +80,7 @@ const E = {
   'Celda cabecera': { tamano: 12, interlineado: 15, estilo: 'SemiBold', color: 'Color/Gris' },
   'Celda primera': { tamano: 12.5, interlineado: 17, estilo: 'SemiBold' },
   'Dato': { tamano: 44, interlineado: 46, estilo: 'SemiBold', seguimiento: -20 },
-  'Referencia': { tamano: 11, interlineado: 15, despues: 6, sangria: 18, primera: -18 },
+  'Referencia': { tamano: 11, interlineado: 14, despues: 1.5, sangria: 18, primera: -18 },
   'Glosario': { tamano: 11, interlineado: 15, despues: 7 },
   'Índice': { tamano: 14, interlineado: 18, estilo: 'SemiBold' },
   'Índice página': { tamano: 14, interlineado: 18, estilo: 'SemiBold', color: 'Color/Gris', alineacion: 'RightAlign' },
@@ -106,6 +106,7 @@ const baja = (estilo) => { const e = E[estilo]; return ((e.interlineado - 1.22 *
 
 /** Marcas en línea → tramos { texto, estilo }. */
 function tramos(s) {
+  s = s.replace(/(\d) (?=\d{3}(?!\d))/g, '$1\u00A0');          // las cifras no se cortan: «1 577 000» va en una línea
   const out = [];
   const pon = (texto, estilo) => { if (texto) out.push(estilo ? { texto, estilo } : { texto }); };
   const cursivas = (t, base) => t.split(/(_[^_]+_|\*[^*]+\*)/).forEach((p) => {
@@ -355,6 +356,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .idx .ih{margin-bottom:5.5mm}.idx .ih.dos{margin-top:8mm}
 .ir{display:grid;grid-template-columns:auto 1fr 12mm;align-items:center;column-gap:3.5mm;background:#fff;border-radius:4.4mm;padding:1.5mm 4.5mm 1.5mm 1.8mm;margin-bottom:1.7mm;min-height:11.5mm}
 .ir.m{padding:1.9mm 4.5mm 1.9mm 3.2mm;min-height:10.2mm}.ir .irl{min-width:19mm}
+.ir.m.c{padding:1.3mm 4.5mm 1.3mm 3.2mm;min-height:8.8mm;margin-bottom:1.3mm}
 .fic.vacia{background:#fff;border:.3mm solid #E4DED6}
 .anx{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm ${MED}mm;align-items:start}
 .anexo{display:grid;grid-template-columns:12mm 1fr;gap:4mm;background:#fff;border-radius:5.5mm;padding:4.5mm 5mm 5mm 4.5mm}
@@ -378,9 +380,9 @@ function pdf(nombre, anchoMm, altoMm, cuerpo, css = '') {
 function medir(piezas) {
   const f = tmp('medir');
   fs.writeFileSync(f, `<!doctype html><meta charset="utf-8"><style>${CSS_BASE}${CSS_E}${CSS_PIEZAS}
-.m{position:absolute;left:0;top:0;visibility:hidden}</style>
-${piezas.map((p) => `<div class="m" data-id="${p.id}" style="width:${p.ancho}mm">${p.html}</div>`).join('\n')}
-<pre id="out"></pre><script>document.fonts.ready.then(()=>{const o={};document.querySelectorAll('.m').forEach(e=>{const a=e.getBoundingClientRect();o[e.dataset.id]=a.height;const t=e.querySelectorAll('[data-t]');if(t.length){const R={};t.forEach(n=>{const r=n.getBoundingClientRect();R[n.dataset.t]=[r.left-a.left,r.top-a.top,r.width,r.height]});o[e.dataset.id+'#']=R}});document.getElementById('out').textContent='@@'+btoa(JSON.stringify(o))+'@@'})</script>`);
+.medida{position:absolute;left:0;top:0;visibility:hidden}</style>
+${piezas.map((p) => `<div class="medida" data-id="${p.id}" style="width:${p.ancho}mm">${p.html}</div>`).join('\n')}
+<pre id="out"></pre><script>document.fonts.ready.then(()=>{const o={};document.querySelectorAll('.medida').forEach(e=>{const a=e.getBoundingClientRect();o[e.dataset.id]=a.height;const t=e.querySelectorAll('[data-t]');if(t.length){const R={};t.forEach(n=>{const r=n.getBoundingClientRect();R[n.dataset.t]=[r.left-a.left,r.top-a.top,r.width,r.height]});o[e.dataset.id+'#']=R}});document.getElementById('out').textContent='@@'+btoa(JSON.stringify(o))+'@@'})</script>`);
   const dom = chrome(['--virtual-time-budget=30000', '--dump-dom', url(f)]).toString('utf8');
   const m = dom.match(/@@([A-Za-z0-9+/=]+)@@/);
   if (!m) throw new Error('Chrome no devolvió las medidas.');
@@ -818,7 +820,19 @@ let topes = new Map();                                 // sección → página (
 const altoCol = (i) => colBot(i) - TOP;
 const soloPiezas = (i) => pag(i).sola || (pag(i).banda > 0 && colBot(i) - TOP < MIN_TEXTO);
 let cur = { p: 0, k: 0 };                              // la primera columna libre
-const normalizar = () => { while (soloPiezas(cur.p)) { cur.p++; cur.k = 0; } };
+// Una figura de una columna ocupa una columna entera, a la derecha del texto de su página: el texto la salta y sigue
+// hacia el lado, sin que ninguna figura lo corte. Varias figuras se apilan en la misma columna mientras quepan; si no,
+// abren otra a su izquierda, siempre en el orden en que se mencionan.
+const figCols = (p) => pag(p).figCols || [];
+const ocupada = (p, k) => figCols(p).some((f) => f.k === k);
+const altoFig = (p) => figCols(p).reduce((m, f) => Math.max(m, f.alto), 0);
+const normalizar = () => {
+  for (let v = 0; v < 600; v++) {
+    if (soloPiezas(cur.p)) { cur.p++; cur.k = 0; continue; }
+    if (ocupada(cur.p, cur.k)) { cur.k++; if (cur.k === 3) { cur.k = 0; cur.p++; } continue; }
+    break;
+  }
+};
 const siguiente = () => { cur.k++; if (cur.k === 3) { cur.k = 0; cur.p++; } normalizar(); };
 const paginaNueva = () => { if (cur.k !== 0) { cur.k = 0; cur.p++; } normalizar(); };
 let ultimaConPieza = 0;
@@ -833,14 +847,15 @@ function ubicar(b, q, seccion) {
 function programar(b, p, seccion) {
   if (b.reservada) { ultimaConPieza = Math.max(ultimaConPieza, b.pagina); return; }
   const a = b.pieza.alto; let q = Math.max(p + 1, ultimaConPieza);
-  while (pag(q).sola || (pag(q).banda > 0 && pag(q).banda + AIRE_PIEZAS + a > BOTTOM - TOP)) q++;
+  const pie = (x) => (pag(x).banda > 0 ? pag(x).banda + AIRE_PIEZAS : 0) + a;
+  while (pag(q).sola || pie(q) > BOTTOM - TOP || (figCols(q).length && altoFig(q) + AIRE_BANDA + pie(q) > BOTTOM - TOP)) q++;
   ubicar(b, q, seccion); ultimaConPieza = q;
 }
 
 function componer(c) {
   // Cada sección abre en una página nueva, sin tablas ni figuras de la anterior: el panel en la primera
   // columna y el texto desde la segunda.
-  paginaNueva(); while (pag(cur.p).banda > 0) cur.p++;
+  paginaNueva(); while (pag(cur.p).banda > 0 || figCols(cur.p).length) cur.p++;
   c.pagina = cur.p; pag(cur.p).rotulo = c;                // la página lleva el nombre de la sección que abre en ella
   pag(cur.p).paneles.push({ c, k: 0, y: TOP, alto: BOTTOM - TOP });
   // Las tablas y figuras que en una pasada anterior quedaron después del texto de su sección se reservan
@@ -854,31 +869,33 @@ function componer(c) {
 
   c.marcos = [];
   let y = 0, marco = null, previo = null;              // y: puntos desde arriba de la columna
-  let fondo = 0, alPie = [];                            // alto reservado al pie de la columna y sus figuras
-  const cap = () => altoCol(cur.p) / PT - fondo;
+  const cap = () => altoCol(cur.p) / PT;
   const abrir = () => {
     if (marco) return;
     marco = { c, p: cur.p, k: cur.k, y0: y, usado: 0, cont: [] };
     c.marcos.push(marco); pag(cur.p).marcos.push(marco); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c;
   };
-  // Una figura de una columna va al pie de la columna donde se menciona, bajo el texto; si no cabe, al pie de la
-  // siguiente. Así el texto sigue arriba, hacia el lado, y nunca continúa debajo de una figura.
-  const espera = [];
-  const reservar = (b) => { alPie.push({ b, p: cur.p, k: cur.k }); fondo += b.pieza.alto / PT + 16; };
-  const asentar = () => {
-    if (!alPie.length) return;
-    let yy = colBot(alPie[0].p) - alPie.reduce((t, x) => t + x.b.pieza.alto, 0) - (alPie.length - 1) * 16 * PT;
-    alPie.forEach((x) => { pag(x.p).frases.push({ b: x.b, k: x.k, y: yy }); x.b.pagina = x.p; if (!pag(x.p).rotulo) pag(x.p).rotulo = c; yy += x.b.pieza.alto + 16 * PT; });
-    alPie = []; fondo = 0;
+  // La figura de una columna va a la columna libre más a la derecha de esta página o de la siguiente que tenga lugar.
+  const colocar = (b) => {
+    const a = b.pieza.alto;
+    for (let q = cur.p; q < cur.p + 60; q++) {
+      if (q > cur.p && soloPiezas(q)) continue;
+      const alto = colBot(q) - TOP; if (a > alto) continue;
+      const fc = figCols(q), ult = fc[fc.length - 1];
+      if (ult && ult.alto + AIRE_PIEZAS + a <= alto) { ult.items.push(b); ult.alto += AIRE_PIEZAS + a; b.pagina = q; return; }
+      const desde = q === cur.p ? cur.k + 1 : 0, n = fc.length + 1;        // la primera columna que el texto aún no usa
+      if (3 - n < desde) continue;
+      const pg = pag(q); pg.figCols = [...fc, { items: [b], alto: a }];
+      pg.figCols.forEach((f, i) => { f.k = 3 - n + i; });
+      if (!pg.rotulo) pg.rotuloPieza = c;
+      b.pagina = q; return;
+    }
   };
-  const saltar = () => {
-    asentar(); marco = null; previo = null; siguiente(); y = 0;
-    while (espera.length && espera[0].pieza.alto / PT + 16 <= cap() + 0.5) reservar(espera.shift());
-  };
+  const saltar = () => { marco = null; previo = null; siguiente(); y = 0; };
   const textos = c.bloques.filter((b) => b.partes && !b.frase);
   for (const b of c.bloques) {
     if (b.flotante && !b.columna) { programar(b, cur.p, c); continue; }
-    if (b.columna) { if (!espera.length && y + 16 + b.pieza.alto / PT <= cap() + 0.5) reservar(b); else espera.push(b); continue; }
+    if (b.columna) { colocar(b); continue; }
     if (b.frase) {
       const a = b.pieza.alto / PT; const antes = y > 0 ? 5 : 0;
       if (y + antes + a > cap() + 0.5) saltar(); else y += antes;
@@ -917,13 +934,8 @@ function componer(c) {
       if (resto > 0) saltar(); else { y += despues; previo = b; }
     }
   }
-  // Una figura de una columna que quedó esperando al final de la sección va al pie de la columna actual, si cabe, o de la siguiente.
-  for (let vueltas = 0; espera.length && vueltas < 12; vueltas++) {
-    if (y + 16 + espera[0].pieza.alto / PT <= cap() + 0.5) reservar(espera.shift()); else saltar();
-  }
-  const conPie = alPie.length > 0; asentar();
   if (c.marcos.length) c.marcos[c.marcos.length - 1].ultimo = true;
-  if (marco || y > 0 || conPie) siguiente();
+  if (marco || y > 0) siguiente();
 }
 /** Una página de entrada (resumen, abstract): su texto, en las columnas dadas, con las mismas reglas de viudas. */
 function fluir(c, xs) {
@@ -953,18 +965,27 @@ function repartir() {
   cuerpo.forEach((c) => c.bloques.forEach((b) => { delete b.extra; b.reservada = false; }));
   cuerpo.forEach(componer);
   // Anexos: página propia, con su panel y sus fichas.
-  paginaNueva(); while (pag(cur.p).banda > 0) cur.p++;
+  paginaNueva(); while (pag(cur.p).banda > 0 || figCols(cur.p).length) cur.p++;
   return cur.p;
 }
 let pgAnexos = repartir();
 // Una tabla o figura que quedó después del último texto de su sección se reserva en esa última página
-// (si no es la de apertura) y se reparte de nuevo, hasta que no cambie nada.
+// (si no es la de apertura) y se reparte de nuevo, hasta que no cambie nada. Solo si cabe bajo el texto que ya
+// está en esa página: si lo empujara, el final de la sección pasaría a otra página y quedaría en una columna sola.
+const cabeBajoTexto = (c, q, b) => {
+  const usado = c.marcos.filter((m) => m.p === q).reduce((t, m) => t + m.usado, 0) * PT;
+  const alto = altoCol(q) - b.pieza.alto - (pag(q).banda ? AIRE_PIEZAS : AIRE_BANDA);
+  const cols = 3 - pag(q).paneles.length - figCols(q).length;
+  return alto >= MIN_TEXTO && usado <= cols * alto - (cols - 1) * 2 * 22 * PT;
+};
 for (let pasada = 0; pasada < 3; pasada++) {
   let cambio = false;
   cuerpo.forEach((c) => {
     // Solo las últimas de la sección, de atrás hacia adelante, para que las tablas y figuras no cambien de orden.
     const ultima = Math.max(...c.marcos.map((m) => m.p));
     const fl = c.bloques.filter((b) => b.flotante && !b.columna);
+    const primera = fl.find((b) => !b.rel && b.pagina > ultima);
+    if (primera && ultima > c.pagina && !cabeBajoTexto(c, ultima, primera)) return;
     let i = fl.length - 1;
     for (; i >= 0; i--) {
       const b = fl[i];
@@ -1011,14 +1032,21 @@ const pIndice = pieza('indice', DOBLE, (T) => {
   const piezas = (tipo, nombre) => flot.filter((b) => b.flotante === tipo && !b.continua).map((b) => menor(`${nombre} ${b.n}`, b.titulo, numPag(b.pagina))).join('');
   return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Capítulos')}</div>${filas.join('')}</div><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${piezas('tabla', 'Tabla')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${piezas('figura', 'Figura')}</div></div>`;
 });
-const pIndice2 = pieza('indice-piezas', DOBLE, (T) => {
-  const fila = (b, nombre) => `<div class="ir m"><span class="irl">${T('Índice rótulo', `${nombre} ${b.n}`)}</span>${T('Índice menor', b.titulo)}${T('Índice menor página', String(numPag(b.pagina)))}</div>`;
+// Tablas y figuras en dos columnas: las figuras se reparten donde las dos columnas quedan más parejas, medidas.
+const indicePiezas = (k, id) => pieza(id, DOBLE, (T) => {
+  const fila = (b, nombre) => `<div class="ir m c"><span class="irl">${T('Índice rótulo', `${nombre} ${b.n}`)}</span>${T('Índice menor', b.titulo)}${T('Índice menor página', String(numPag(b.pagina)))}</div>`;
   const tablas = flot.filter((b) => b.flotante === 'tabla' && !b.continua).map((b) => fila(b, 'Tabla'));
   const figuras = flot.filter((b) => b.flotante === 'figura').map((b) => fila(b, 'Figura'));
-  const k = Math.max(0, Math.ceil((tablas.length + figuras.length + 2) / 2) - tablas.length - 2);
   return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${tablas.join('')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${figuras.slice(0, k).join('')}</div><div><div class="ih">${T('Subtítulo', ' ')}</div>${figuras.slice(k).join('')}</div></div>`;
 });
-{ const m = medir([pIndice, pIndice2]); pIndice.alto = m.indice; pIndice.donde = m['indice#']; pIndice2.alto = m['indice-piezas']; pIndice2.donde = m['indice-piezas#']; }
+const candidatas = flot.filter((b) => b.flotante === 'figura').map((_, k) => indicePiezas(k, `indice-piezas-${k}`));
+let pIndice2;
+{
+  const m = medir([pIndice, ...candidatas]); pIndice.alto = m.indice; pIndice.donde = m['indice#'];
+  const k = candidatas.reduce((mejor, c, j) => (m[c.id] < m[candidatas[mejor].id] - 0.01 ? j : mejor), 0);
+  pIndice2 = indicePiezas(k, 'indice-piezas'); pIndice2.alto = m[`indice-piezas-${k}`]; pIndice2.donde = m[`indice-piezas-${k}#`];
+  if (process.env.DIAG) console.log(`INDICE piezas: ${k} figuras en la primera columna, ${pIndice2.alto.toFixed(1)} de ${(BOTTOM - TOP).toFixed(1)} mm`);
+}
 if (pIndice2.alto > BOTTOM - TOP) console.log(`Atención: el índice de tablas y figuras mide ${Math.round(pIndice2.alto)} mm y no cabe en su página.`);
 if (pIndice.alto > BOTTOM - TOP) console.log(`Atención: el índice mide ${Math.round(pIndice.alto)} mm y no cabe en su página.`);
 if (pAnexos.alto > BOTTOM - TOP) console.log(`Atención: los anexos miden ${Math.round(pAnexos.alto)} mm y no caben en su página.`);
@@ -1039,8 +1067,18 @@ hojas.push({ rotulo: 'Índice', items: [panelDe({ titulo: 'Tablas y figuras', au
 paginas.forEach((pg, q) => {
   const items = [];
   // Una página solo de tablas o figuras las centra en el alto, para que no quede un hueco abajo.
+  const fc = pg.figCols || [];
   const sinTexto = !pg.marcos.length && !pg.paneles.length && !pg.frases.length;
-  const y0 = sinTexto ? TOP + Math.max(0, (BOTTOM - TOP - pg.banda) / 2) : BOTTOM - pg.banda;
+  const y0 = sinTexto && !fc.length ? TOP + Math.max(0, (BOTTOM - TOP - pg.banda) / 2) : BOTTOM - pg.banda;
+  // Las columnas de figuras: arriba, una figura bajo otra; en una página sin texto, centradas en el ancho y en el alto.
+  // Si el texto termina antes, las columnas de figuras se corren hasta quedar junto a él, sin una columna vacía entre ambos.
+  const usadas = [...pg.marcos.map((m) => m.k), ...pg.paneles.map((pn) => pn.k)];
+  const ultima = usadas.length ? Math.max(...usadas) : -1;
+  fc.forEach((f, i) => {
+    const x = sinTexto ? MX + ((3 - fc.length) / 2 + i) * (COL + MED) : colX(Math.min(f.k, ultima + 1 + i));
+    let yy = sinTexto ? TOP + Math.max(0, (BOTTOM - TOP - (pg.banda ? pg.banda + AIRE_BANDA : 0) - f.alto) / 2) : TOP;
+    f.items.forEach((b) => { items.push({ tipo: 'pieza', pieza: b.pieza, x, y: yy, nombre: b.rotulo }); yy += b.pieza.alto + AIRE_PIEZAS; });
+  });
   pg.flot.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: MX, y: y0 + b.yRel, nombre: `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}` }));
   pg.paneles.forEach((pn) => items.push(panelDe(pn.c, colX(pn.k), pn.y, pn.alto)));
   pg.frases.forEach((f) => items.push({ tipo: 'pieza', pieza: f.b.pieza, x: colX(f.k), y: f.y, nombre: f.b.rotulo }));

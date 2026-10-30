@@ -95,9 +95,19 @@ El mismo 29 de octubre, el autor revisó la quinta ronda. Cambios:
 - **Referencias:** 80, todas citadas (entran Apple 2024 y 2025a, Microsoft 2021 y Miller et al. 2007; sale *Meet Liquid Glass*).
 - Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
 
+## Séptima ronda: la lectura sin cortes (D-152)
+
+Esa noche, el autor revisó la sexta ronda: figuras que interrumpían la lectura y columnas de texto solas. Cambios:
+
+- **Figuras de concepto:** una intención que vuelve tarde (Figura 1, capítulo 3) y dos situaciones de uso (Figura 8, capítulo 7). Los criterios (Figura 10) pasan a su propia columna.
+- **Lo repetido, una vez:** en el capítulo 6 salen el párrafo del malestar, el de hábitos y rachas y frases que repetían otras secciones; en el 11, la duración de la señal, el pitido del Tag, que los datos no son anónimos y la búsqueda del Tag, ya en la Tabla 4; en el 12, la frase de entrada y quién conduce el proyecto académico. El trabajo del autor pasa a la nota de la Tabla 3, y el hardware propio, a los alcances.
+- **Mapa (Figura 9):** «Qué hace cada herramienta y dónde», con ejes en palabras de todos los días.
+- **Referencias:** 78, todas citadas; salen Lally et al. (2010) y Lee et al. (2023).
+- Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
+
 ## Extensión
 
-Capítulos 1 a 14: 14 849 palabras; con portada, agradecimientos, resumen, abstract e índices, 15 927. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 14 481 palabras; con portada, agradecimientos, resumen, abstract e índices, 15 572. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -118,10 +128,16 @@ Hay 11 marcadores `[CONFIRMAR: …]`. Desde la sexta ronda ya no hacen falta los
 - **Etapas tempranas:** si hay bocetos o fotos del objeto anterior, sumarlos al capítulo 11.
 - **Anexo I:** sumar el instrumento de cierre del 30 de octubre.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
-- **Aplicación:** implementar lo que la Tabla 5 marca «Por implementar» y decidir las «Propuestas».
+- **Aplicación:** implementar lo que la Tabla 4 marca «Por implementar» y decidir las «Propuestas».
 - **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Séptima ronda
+
+- **Qué cambió:** se añadió la séptima ronda; la extensión y la tabla de lo pendiente siguen a la v6 actual.
+- **Cómo estaba antes:** la última ronda era la sexta; la extensión decía 14 849 palabras y lo pendiente citaba la Tabla 5.
+- **Por qué:** pedido del autor del 29 de octubre de 2026, de noche (D-152).
 
 ### 2026-10-29 — Sexta ronda
 

@@ -1976,7 +1976,32 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 14 849 palabras en los capítulos 1 a 14 (15 927 con las páginas iniciales y los índices; el instructivo sugiere de 15 000 a 20 000); 80 referencias, todas citadas; 11 marcadores «Confirmar»; 66 páginas, sin avisos del generador; 8,1 palabras por línea; PDF de 7,2 MB (el máximo es 15); el IDML enlaza sus 58 imágenes. No se pudieron revisar memorias aprobadas de la UDP: el repositorio pide iniciar sesión.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-152 — Ninguna figura corta la lectura y ningún capítulo termina en una columna sola
+
+- **Fecha:** 2026-10-29.
+- **Estado:** hecha en el borrador v6 y en la memoria en 1920 × 1080. El IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** al revisar la sexta ronda (D-151), el autor señaló que en la lámina 16 las figuras volvían a interrumpir la lectura y que las láminas 17, 22, 28 y 58 dejaban una columna de texto sola. Preguntó si el glosario es obligatorio y pidió abrir la pestaña de la Biblioteca para iniciar sesión y leer otras memorias de diseño. Seguía pendiente de D-151 que los rótulos del mapa —«Actúa sobre lo que haces ahora» y «En el lugar, fuera de la pantalla»— no sonaban naturales.
+- **Decisión:**
+  - **Figuras de una columna:** van en su propia columna, a la derecha y desde arriba, junto al texto; el texto nunca sigue debajo de una figura en la misma columna.
+  - **Finales de capítulo:** ninguno termina en una columna sola. Donde pasaba, se resolvió con el contenido y no repartiendo el texto en columnas cortas: una figura de concepto en el capítulo 3 (Figura 1, una intención que vuelve tarde) y otra en el capítulo 7 (Figura 8, dos situaciones de uso); los criterios del capítulo 9 en su columna (Figura 10), y lo repetido se dice una vez.
+  - **Capítulo 6:** salen el párrafo del malestar, el de hábitos y rachas y frases que repetían otras secciones; con ellos, Lally et al. (2010) y Lee et al. (2023).
+  - **Capítulo 11:** la duración de la señal, que los datos no son anónimos, el pitido del Tag y la búsqueda del Tag cuando no responde —ya en la Tabla 4— se dicen una vez.
+  - **Capítulo 12:** sin la frase de entrada ni quién conduce el proyecto académico; el trabajo del autor pasa a la nota de la Tabla 3, y el hardware propio, a los alcances del capítulo 14, que además se acortó.
+  - **Mapa (Figura 9):** «Qué hace cada herramienta y dónde», con los ejes «Limita el uso del teléfono» y «Recuerda lo que querías hacer», «En la pantalla» y «Fuera de la pantalla».
+  - **Referencias:** más juntas, en tres páginas; 78, todas citadas.
+  - **Índice de tablas y figuras:** filas más compactas, repartidas donde las dos columnas quedan parejas; ya no toca el número de página. El generador medía mal esa página porque sus filas compartían la clase de la medición; corregido, el IDML recibe sus posiciones reales.
+  - **Glosario:** se mantiene. La pauta de la Biblioteca lo deja como optativo («optativamente incluirá glosario»); decide el autor.
+- **Alternativas descartadas:** repartir los finales en columnas parejas, que corta las columnas, y dejar una figura al pie de una columna de texto, que interrumpe la lectura.
+- **Verificación:** 14 481 palabras en los capítulos 1 a 14 (15 572 con las páginas iniciales y los índices; el instructivo sugiere de 15 000 a 20 000); 78 referencias, todas citadas; 11 marcadores «Confirmar»; 62 páginas, sin avisos del generador; 8,1 palabras por línea; PDF de 7,2 MB (el máximo es 15); el IDML enlaza sus 60 imágenes. La pestaña de la Biblioteca quedó abierta, pero el inicio de sesión no se completó (la página respondió «Nombre de usuario o contraseña incorrecto»), así que no se leyeron memorias aprobadas.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — D-152
+
+- **Qué cambió:** se registró D-152.
+- **Cómo estaba antes:** la última decisión era D-151.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-29 — D-151
 

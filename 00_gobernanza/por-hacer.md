@@ -48,7 +48,7 @@ El detalle, con cada cambio, está en las [notas del borrador](../08_memoria/not
 
 El 20 de octubre se revisó la memoria contra las guías y clases de la carpeta de bibliografía del autor (D-141). Se aplicó lo que no requería decidir; esto otro sí:
 
-- [ ] **Fotos de la Figura 4:** quién las tomó, si las personas autorizan publicarlas (un mensaje escrito basta; conviene guardarlo con el consentimiento) y de quién es el lugar de la foto c.
+- [ ] **Fotos de la prueba (Figura 17 de la v6, antes Figura 4):** quién las tomó, si las personas autorizan publicarlas (un mensaje escrito basta; conviene guardarlo con el consentimiento) y de quién es el lugar de la foto c.
 - [ ] **Antigüedad de las fuentes:** la charla de marco teórico pide, para el estado del arte, fuentes de no más de 5 años. La memoria declara «desde 2019» y usa antecedentes anteriores (Sohn et al., 2005; Hermann et al., 2007; Zekveld et al., 2017). Decidir si se explica la excepción (antecedentes de mecanismo sin equivalente reciente) o se buscan fuentes más nuevas.
 - [ ] **Uso de inteligencia artificial (capítulo 10):** la charla trata como plagio pegar texto de IA sin reelaborarlo. Precisar qué partes tuvieron borrador de IA y cómo se revisaron, y cerrar el marcador de herramientas y versiones.
 - [ ] **Fecha de consulta de las páginas web:** la memoria usa «Recuperado el … de» (APA 7 en español); la guía de material digital de la Escuela usa «Consultado el …». Elegir una forma para todo el documento.
@@ -222,14 +222,14 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 **Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
 
 - [x] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: el 25 de octubre se incluyeron dos memorias de diseño de la Universidad de Chile y una de sociología ([propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md)). El autor descargó los PDF de las dos de diseño, y su lectura completa corrigió el párrafo.
-- [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la Figura 4.
+- [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la prueba (Figura 17 de la v6).
 - [ ] **GitHub:** el 25 de octubre se cerró el #11, cumplido con el Tag, y se pusieron al día el #8 y el #10. Quedan por decidir los PR #12 y #13.
 - [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## 10. Correcciones de la revisión con los profesores (28 de octubre)
 
-**Estado:** en curso: el borrador v6 y la memoria en 1920 × 1080 recogen la mayor parte (D-146 a D-151). **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
+**Estado:** en curso: el borrador v6 y la memoria en 1920 × 1080 recogen la mayor parte (D-146 a D-152). **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
 
 ### Lo primero
 
@@ -246,7 +246,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El parecido con Apple:** un profesor señaló que la aplicación tiene una inspiración fuerte de Apple. Es una decisión del autor; hay que escribir por qué. Escrito en el capítulo 11 de la v6: la referencia son las pautas de Apple, por su equilibrio entre belleza y legibilidad, con sus principios de jerarquía, armonía y consistencia (D-151).
 - [x] **La identidad y el diseño van en la memoria**, no solo en el repositorio. Hecho en la v6.
 - [x] **Mostrar las fuentes primarias propias**: las entrevistas, la encuesta y la prueba son del autor y deben verse como tales. Hecho en los capítulos 7 y 13 de la v6.
-- [x] **Contar cómo se desarrolló el proyecto**, el proceso y no solo el resultado. Figura 9 y Tabla 2 de la v6, y la Tabla 1, que resume las decisiones de diseño (D-147).
+- [x] **Contar cómo se desarrolló el proyecto**, el proceso y no solo el resultado. Figura 11 y Tabla 2 de la v6, y la Tabla 1, que resume las decisiones de diseño (D-147).
 - [x] **Al escribir, releer lo ya escrito y preguntarse qué corresponde decir ahora**, para no repetir. Aplicado en la v6.
 
 ### Resultados: casos, no porcentajes
@@ -255,7 +255,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **Informar los resultados como casos y recuentos**, nunca en porcentajes, porque son tres personas. Hecho en la v6.
 - [x] **Separar los resultados por persona**: comprobar si la mitad de los casos corresponde a una sola, y decirlo. Hecho en la v6: la primera persona aporta cinco de los diez comienzos. Falta el detalle por persona de las demás respuestas.
-- [x] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio. Figura 20 de la v6.
+- [x] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio. Figura 22 de la v6.
 - [ ] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración. La v6 cuenta la iteración (Tabla 4), con tres mejoras propuestas a partir de los datos (D-147); los cambios de la aplicación siguen pendientes.
 - [ ] **La decisión cromática no se apoya en promedios.** La corrección apunta al color: la mitad asocia el rojo al amor y la otra mitad el rosa, así que el promedio esconde esa división. Revisar el [fundamento del color](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md), el [documento de marca](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las láminas de color: usar la mediana o mostrar la dispersión, en vez de la media. Corregido en el capítulo 11 de la v6; faltan los documentos de marca y el Anexo H.
 
@@ -267,8 +267,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Cambiar el texto de «Elige tu emoji».** Que vas a elegir un emoji ya se ve; la pregunta debe ser por la persona: «¿Con qué te identificas?» o algo así.
 - [ ] **Si no hay Tag al cumplirse el tiempo, la aplicación debe intentar conectarse a uno antes de que el tiempo termine; si no lo consigue, suena en el teléfono.** Es un cambio de comportamiento, no solo de aviso.
 - [ ] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto.
-- [x] **Registro de todas las pantallas de la aplicación.** Las 39 pantallas de la versión 2.32, en *wireframes*, están en el Anexo F; la memoria muestra solo el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 11; D-150).
-- [x] **Esquema de jerarquía y arquitectura de información** de la aplicación. Figura 12 de la v6.
+- [x] **Registro de todas las pantallas de la aplicación.** Las 39 pantallas de la versión 2.32, en *wireframes*, están en el Anexo F; la memoria muestra solo el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 13; D-150).
+- [x] **Esquema de jerarquía y arquitectura de información** de la aplicación. Figura 14 de la v6.
 
 ### El objeto
 
@@ -294,6 +294,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Séptima ronda de la v6
+
+- **Qué cambió:** los números de figura siguen a la v6 actual (Figuras 11, 13, 14, 17 y 22) y el estado llega a D-152.
+- **Cómo estaba antes:** citaba las Figuras 4, 9, 11, 12 y 20, con la numeración anterior.
+- **Por qué:** séptima ronda de la v6 (D-152).
 
 ### 2026-10-29 — Sexta ronda de la v6
 
