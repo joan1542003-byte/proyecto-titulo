@@ -211,6 +211,16 @@
 | 29 oct. | Corrección | Al revisar la quinta ronda, pidió decir en palabras simples «señal de la periferia», «episodio» y la mediana; quitar los códigos de participantes y las afirmaciones que no aportan; que el texto siga la columna sin cortarse y continúe hacia el lado, como en una página doble; criterios fáciles de entender, con su porqué y sin la convivencia; explicar por qué la decisión queda abierta; quitar el rótulo «Cita», «Actores y responsabilidades», las etiquetas «Decisión.» y la tabla de estado de los objetivos; objetivos claros; el recorrido del usuario en un esquema simple; desarrollar la referencia de Apple desde sus pautas, sin tabla; nombrar los colores con el estudio de escritura y llevarlo a la memoria; lenguaje de diseñador; no nombrar «luz»; llamar Relevo al objeto; Relevo Home y Relevo Go; sin fechas de inicio por persona; APA 7 en español; su nombre completo, el logo de la Facultad y la mención en Diseño Gráfico. Preguntó si la Figura 9 hace falta. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con los capítulos 7, 9, 10, 11 y 14 en palabras simples y sin códigos de participantes; criterios que se entienden solos; un capítulo 11 contado como relato, con el recorrido del usuario en un esquema, la referencia de Apple en prosa y «Cómo habla Relevo»; 21 figuras y 4 tablas; 80 referencias, todas citadas. La [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md), de 66 páginas, se lee hacia el lado —el texto llena cada columna y las piezas van al pie—, con portada según el instructivo y el reglamento e índice de tablas y figuras. La Figura 9 se queda: el instructivo pide el plan de trabajo. | D-151 |
 | 29 oct. | Corrección y consulta | Al revisar la sexta ronda, señaló que en la lámina 16 las figuras volvían a interrumpir la lectura y que las láminas 17, 22, 28 y 58 dejaban una columna de texto sola. Preguntó si el glosario es obligatorio y pidió abrir la pestaña de la Biblioteca para iniciar sesión y leer otras memorias de diseño. | [Memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) de 62 páginas: las figuras de una columna van en su propia columna, a la derecha, y ningún capítulo termina en una columna sola —con dos figuras de concepto (Figuras 1 y 8) y lo repetido dicho una vez en los capítulos 6, 11, 12 y 14—; el mapa con rótulos naturales; el índice de tablas y figuras ya no toca el folio. El glosario es optativo según la pauta; se mantiene hasta que decida el autor. La pestaña quedó abierta; el inicio de sesión no se completó. | D-152 |
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
+| 30 oct. | Consulta | Pidió detener la revisión en curso, quedarse solo con el contexto del proyecto y revertir cualquier cambio hecho en la memoria. | Nada que revertir: la revisión había sido de lectura, con el árbol de trabajo limpio y el HEAD igual a `origin/main` | — |
+| 30 oct. | Consulta | Mostró una propuesta de pregunta de investigación y preguntó si tiene sentido, porque la actual le cuesta leer. | Revisión en la conversación: la propuesta desplaza el sujeto de la intención a la sesión, lo que coincide con la primera línea del resumen, pero sus comas la dejan sin sujeto | — |
+| 30 oct. | Encargo | Pidió tres propuestas que solo cambien la redacción de la pregunta, sin alterar la memoria. | Tres propuestas en la conversación, de reordenamiento puro: inciso al final, circunstancia primero y enunciado más pregunta | — |
+| 30 oct. | Corrección | Señaló que «la decisión inmediata» es el punto que hace difícil de entender toda la pregunta. | Tres propuestas que reemplazan esa frase por expresiones del propio texto: «el paso siguiente» (capítulos 2 y 7), «deja de estar presente» (resumen y capítulo 3) y «no vuelve a aparecer» (capítulo 3) | — |
+| 30 oct. | Encargo | Pidió leer completo el borrador v6 y, sobre esa base, proponer una pregunta de investigación. | Propuesta y dos variantes en la conversación, armadas con el vacío del capítulo 5, el objetivo general y las conclusiones; de esa lectura salió el desajuste de las dos partes | — |
+| 30 oct. | Encargo | Pidió explicar el desajuste entre la pregunta y las dos partes que se le atribuyen, proponer una solución y subirlo a Por hacer. | [Tarea 11](por-hacer.md#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes), con el problema, tres soluciones y una recomendación | — |
+| 30 oct. | Encargo | Entregó el PDF de la memoria que envió al profesor y pidió leerla completa, dar una opinión y decir qué se le pasó por alto, sin rastros de IA. | Revisión de las 58 páginas: trece marcas de edición visibles, la Tabla 3 que no se ve, las etiquetas cortadas de la Figura 9, la Figura 23 sin título, el índice desajustado, el Resumen distinto del Abstract y una treintena de erratas | — |
+| 30 oct. | Encargo | Pidió una crítica en el papel de la comisión, con la rúbrica y los documentos oficiales. | Crítica por las tres dimensiones ponderadas, con nueve preguntas previsibles y una nota simulada de 4,6 sobre el documento enviado | — |
+| 30 oct. | Encargo | Pidió la nota, revisar de nuevo lo revisado y dejar todos los errores en Por hacer con soluciones realistas. | [Tarea 12](por-hacer.md#12-memoria-v6-lo-que-hay-que-corregir-antes-del-pase). La segunda revisión corrigió dos diagnósticos: la Tabla 3 tiene su contenido pero se imprime invisible, y las etiquetas de la Figura 9 vienen cortadas desde el generador | — |
+| 30 oct. | Encargo | Pidió apuntar a la nota máxima y dejar en Por hacer, de forma específica y estudiada, qué camino tomar para subir la nota, considerando el tiempo. | [Tarea 13](por-hacer.md#13-camino-al-7-cerrar-los-huecos-de-la-rúbrica), con el objeto, la hipótesis contrastada, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética; calendario al 25 de noviembre y nota estimada por bloque. Al estudiar el objeto se vio que las piezas, los proyectos de impresión y las instrucciones ya existen: solo faltan cinco medidas con pie de metro | — |
 
 ## Lo que muestra el registro
 
@@ -221,6 +231,24 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Camino al 7
+
+- **Qué cambió:** se registró el pedido de dejar por escrito el camino a la nota máxima.
+- **Cómo estaba antes:** el registro terminaba en la tarea 12.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-30 — Revisión de la memoria y crítica con la rúbrica
+
+- **Qué cambió:** se registraron los tres pedidos del autor sobre la memoria enviada al profesor: la lectura completa, la crítica con la rúbrica y el traslado de los errores a Por hacer.
+- **Cómo estaba antes:** el registro terminaba en los archivos satélite de la pregunta.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-30 — Pedidos sobre la pregunta de investigación
+
+- **Qué cambió:** se registraron los seis pedidos del 30 de octubre sobre la pregunta de investigación: detener la revisión, evaluar su propuesta, tres redacciones, el reparo a «la decisión inmediata», la lectura completa de la v6 y la tarea 11.
+- **Cómo estaba antes:** el registro terminaba en el encargo de subir el IDML, del 29 de octubre.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-29 — Revisión de la sexta ronda
 

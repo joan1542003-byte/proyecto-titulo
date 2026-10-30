@@ -293,7 +293,335 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
+## 11. Formulación: la pregunta de investigación y sus dos partes
+
+**Estado:** por decidir el autor. **Anotada:** 30 de octubre de 2026. **Origen:** lectura completa del borrador v6, que el autor pidió para proponer una pregunta de investigación. **Riesgo:** medio. No afecta ningún dato ni resultado, pero toca la trazabilidad, que en el Pase se evalúa como formalidad.
+
+### El problema
+
+La pregunta del capítulo 10 pide una sola cosa, condiciones:
+
+> ¿Qué condiciones pueden ayudar a que una persona vuelva a considerar algo que quería hacer cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?
+
+Dos capítulos afirman, en cambio, que esa pregunta tiene dos partes, y que la segunda es una comparación:
+
+- El capítulo 10, en el párrafo siguiente: «La pregunta tiene dos partes. La primera —qué debe cumplir una ayuda así— la responden la investigación y los criterios del capítulo 9. La segunda —si sonar desde el lugar donde empieza la actividad aporta algo frente a una notificación en el teléfono— la abordan la hipótesis y la prueba en los hogares».
+- El capítulo 14: «La pregunta de investigación se responde en dos partes», con la misma división.
+
+Quien lea solo la pregunta no encuentra esa segunda parte en ninguna de sus palabras. Son, además, dos tipos distintos de pregunta: «qué condiciones» es abierta y exploratoria; «¿aporta algo esto frente a aquello?» es comparativa. Anunciar que la primera contiene a la segunda es la juntura débil.
+
+Importa porque la cadena pregunta → hipótesis → objetivos → resultados → conclusiones debe cerrar, y hoy queda abierta en tres puntos:
+
+- el objetivo específico 3, «comparar el sonido del objeto junto al primer paso con una notificación en el teléfono», no tiene de dónde colgarse en la pregunta;
+- la hipótesis trata del lugar y de la señal, que la pregunta no nombra;
+- el capítulo 14 responde algo que la pregunta no preguntó.
+
+### Tres soluciones
+
+**A. Una pregunta general y dos específicas.** La pregunta general queda como está —o con la redacción que el autor elija— y debajo se declaran dos preguntas específicas: qué debe cumplir la ayuda, y si la señal desde el lugar aporta frente a una notificación en el teléfono. Cada objetivo específico queda colgado de una de ellas, y las dos partes que anuncian los capítulos 10 y 14 pasan a existir de verdad.
+
+- *Toca:* el capítulo 10 (añade unas 60 palabras) y la frase de las dos partes del capítulo 14.
+- *A favor:* es la estructura académica más común y la que cierra la trazabilidad sin ambigüedad.
+- *En contra:* suma palabras, con el límite de 20 000 ya cerca, y obliga a mantener la numeración igual en los dos capítulos.
+
+**B. Meter la comparación dentro de la pregunta.** La pregunta nombra la condición del lugar: «¿Bajo qué condiciones —y en particular si la señal llega desde el lugar donde comienza la actividad— …?».
+
+- *Toca:* solo la pregunta.
+- *A favor:* una sola pregunta, que se sostiene sola.
+- *En contra:* alarga la pregunta y vuelve a meterle un inciso, justo lo que la hace difícil de leer; y destacar una condición dentro de una pregunta exploratoria adelanta parte de la respuesta.
+
+**C. Dejar la pregunta y corregir lo que se afirma de ella.** La pregunta pide condiciones y eso no cambia. Los capítulos 10 y 14 dejan de decir que tiene dos partes y dicen lo que de verdad ocurre: la investigación y los criterios responden la pregunta, y una de esas condiciones —que la señal llegue desde el lugar donde la actividad comienza, el criterio 8— se formula como hipótesis y se pone a prueba contra una notificación en el teléfono.
+
+- *Toca:* un párrafo del capítulo 10 y una frase del capítulo 14. Ni la pregunta, ni la hipótesis, ni los objetivos.
+- *A favor:* es lo más barato, no suma palabras y describe con exactitud lo que el proyecto hizo. El criterio 8 ya dice «el objeto suma algo que el teléfono no da», así que la semana de comparación es la prueba empírica de una condición, no una segunda pregunta.
+- *En contra:* la pregunta sigue siendo de una sola parte, así que el objetivo específico 3 solo queda amarrado si la nueva redacción lo conecta de forma explícita.
+
+### Recomendación
+
+La **C**, y si el autor quiere además declarar las preguntas específicas, la **C junto con la A**. La C resuelve el problema sin tocar la pregunta, la hipótesis ni los objetivos, y tiene a su favor que es verdadera: la comparación con el teléfono prueba el criterio 8, que es una de las condiciones que la pregunta pide. La B es la que menos conviene, porque agrava el problema de lectura que el autor ya detectó.
+
+### Qué hacer
+
+- [ ] El autor elige entre A, B y C, o las combina.
+- [ ] Aplicar lo elegido en el capítulo 10 y en el capítulo 14 del [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), y comprobar que cada objetivo específico quede colgado de una pregunta.
+- [ ] Revisar que la [memoria vigente v4](../08_memoria/memoria-vigente-v4.md) y el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md) no contradigan lo que quede.
+- [ ] Regenerar la [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) con `node construir-idml.js`.
+
+### Reglas
+
+- La redacción de la pregunta es una decisión aparte, también abierta desde el 30 de octubre de 2026: no cerrar esta tarea con una redacción distinta de la que el autor apruebe allí.
+- No tocar la pregunta, la hipótesis ni los objetivos sin que el autor lo pida: son texto suyo.
+- No cambiar ninguna cifra ni cita: el problema es de estructura, no de datos.
+- Respetar el límite de 20 000 palabras de la memoria; hoy va en unas 19 400.
+
+## 12. Memoria v6: lo que hay que corregir antes del Pase
+
+**Estado:** por hacer. **Anotada:** 30 de octubre de 2026. **Origen:** el autor envió al profesor el PDF de 58 páginas y pidió una revisión completa y una crítica con la rúbrica. **Riesgo:** alto. La memoria es el criterio del Pase y el instructivo evalúa de forma explícita legibilidad, ortografía, redacción y citación.
+
+### Por qué
+
+La revisión encontró tres clases de problema: marcas de edición que quedaron a la vista, fallas del generador que dejan contenido sin mostrar, y una extensión bajo el mínimo que pide el instructivo. Ninguno obliga a reescribir la memoria; casi todos se arreglan en el generador o con cambios de una línea.
+
+### A. Marcas de edición visibles en el PDF (13)
+
+Resaltados, texto tachado y notas para uno mismo que el profesor ve. Es lo más urgente, porque comunica que el documento no fue releído.
+
+- [ ] Pág. 2, Resumen: quitar el **texto tachado** «la comparación con una notificación en el teléfono termina el 30 de octubre».
+- [ ] Pág. 14: resaltado en «decisión renovada».
+- [ ] Pág. 15: **«EN DESARROLLO»** en la nota de la Figura 2.
+- [ ] Pág. 16: resaltado en «tecnología calma» y **«EN DESARROLLO»** en la nota de la Figura 3.
+- [ ] Pág. 18: **«CONFIRMAR SI DEBERIA APARECER UNA COMPARACION CON EL TESTEO»** en la nota de la Figura 5.
+- [ ] Pág. 20: **«Figura 7 \*ORDENAR FIGURAS»**.
+- [ ] Pág. 24: **«Figura 9 EN DESARROLLO»**.
+- [ ] Pág. 37: resaltados en «Logo.», «Color.» y «Jonauskaite».
+- [ ] Pág. 38: resaltado en «Mide 46 mm de diámetro y 12,3 mm de alto».
+- [ ] Pág. 49: **«Figura 20 \*ORDENAR FIGURAS»**.
+- [ ] Pág. 52: resaltado en «que llegará con la línea visual nueva cuando la prueba termine».
+- [ ] Pág. 53, Tabla 4: **«\*Por probar»** dentro de una celda.
+- [ ] Pág. 55, Conclusiones: tres resaltados, uno de ellos sobre «la comparación con el teléfono, se cierra el 30 de octubre».
+
+**Solución:** las marcas viven en el Markdown, no en el generador. Buscar en el borrador v6 `==`, `~~`, `*ORDENAR`, `EN DESARROLLO`, `CONFIRMAR`, `*Por probar` y resolver cada una: o se aplica el cambio que la nota pedía, o se borra. Antes de generar de nuevo, comprobar que esas seis cadenas no aparezcan. Media hora.
+
+### B. Fallas del generador (3)
+
+- [ ] **La Tabla 3 no se ve** (pág. 46). El contenido **sí está** en el PDF —el Tag a 10 990, las suscripciones a 171 000, el total de 182 000 y la nota completa—, pero se imprime invisible. Es un problema de color de texto o de orden de capas en `construir-idml.js`, no de contenido: no hay que reescribir la tabla.
+- [ ] **Las etiquetas de la Figura 9 están cortadas** (pág. 24): «Relev», «Focusau», «MindPhon», «Brick y», «Place-», «The Tangible», «one sec y Pause», «Screen Time y Bienestar». El corte está en el archivo, no en la pantalla: el generador trunca el campo. Ampliar el ancho de etiqueta o acortar los nombres a propósito, y comprobar que ninguno quede cortado.
+- [ ] **La Figura 23 no tiene título** (pág. 52): donde va, hay un guion suelto. El índice dice «Recordar no basta para empezar»; usar ese.
+
+**Solución:** los tres se arreglan en `08_memoria/memoria-1920x1080/construir-idml.js` y se verifican regenerando el PDF. La de la Tabla 3 es la más importante y probablemente la más corta: una propiedad de color.
+
+### C. La extensión quedó bajo el mínimo
+
+El instructivo pide entre 15 000 y 20 000 palabras. El PDF tiene 17 289 en total, pero se reparten así: portada 50, resumen y abstract 537, índices 367, **cuerpo 14 244** y referencias 2 091. Contando el resumen y el abstract, 14 781. Además, esas 14 244 incluyen los encabezados que se repiten en 50 páginas, así que la prosa real ronda las 13 900.
+
+**Solución realista: unas 1 000 palabras, todas en lugares que la rúbrica premia.** No agregar relleno.
+
+- [ ] **Resultados de la semana de comparación** (~250). Cerró el 30 de octubre; es contenido nuevo y real, y responde el objetivo específico 3.
+- [ ] **Planos y ficha técnica del objeto** (~200). Hace falta igual para el subcriterio 5.2.
+- [ ] **Por qué Apple y no Material Design** (~150), en el capítulo 11. La aplicación corre en Android y la tabla dice «convenciones conocidas»; en Android las conocidas son las otras. Es una pregunta que la comisión va a hacer.
+- [ ] **Los límites de la pauta de entrevistas** (~150), en el capítulo 7. La memoria ya reconoce que la pauta no preguntaba por el fenómeno; desarrollarlo convierte una debilidad en madurez metodológica.
+- [ ] **Qué aportó la investigación a través del diseño** (~150), en el capítulo 10. Hoy Zimmerman et al. (2007) se cita una vez y no vuelve.
+- [ ] **Reponer el párrafo de autoría** en «Uso de inteligencia artificial» (~70). Ver el punto G.
+- [ ] **Reponer la frase del método en el Resumen** (~40). Ver el punto F.
+
+### D. Erratas
+
+| Pág. | Dice | Debe decir |
+| --- | --- | --- |
+| 6 | «por mi mismo», «decidiendo por mi» | «por mí» (las dos) |
+| 6 | «vuelva a ser considerada?.» | un solo signo |
+| 7 | «actúan de directa y a veces, de forma extremista» | frase rota: rehacerla |
+| 8 | «La psicología ofrece un que conviene revisar» | **falta una palabra** |
+| 9 | «una itención que vuelve tarde» | intención |
+| 9 | «Si recuerde después muestra» | «Que lo recuerde después muestra» |
+| 10 | «postertgación»; «distingue el olvido con la» | postergación; «de la» |
+| 11 | «digitales(Waggoner» | falta el espacio |
+| 13 | «vuelve a oreintar» | orientar |
+| 14 | «si es excesiva´puede» | carácter suelto |
+| 21 | «occuren ahí» | ocurren |
+| 23 | «pueden presentarse son algo nuevo» | «como algo nuevo» |
+| 25 | «la valoraron como un descaso» | descanso |
+| 28 | «Cuenta en seis fases;» | «Consta de seis fases:» |
+| 28 | doble espacio tras «(Zimmerman et al., 2007).» | un espacio |
+| 31 | «Interfaz plana,,» | coma doble |
+| 31 | «facil» (dos veces); «acceder a relevo» | fácil; Relevo |
+| 32 | «se puede pausar..» | punto doble |
+| 33 | «, Seleccionar cuesta menos» | minúscula |
+| 36 | «comparten ergonomia» | ergonomía — y ver el punto G |
+| 36 | «ahorro de bateria» | batería |
+| 37 | «el usuario decida. (Smit et al., 2019).» | la cita antes del punto |
+| 38 | «se consigue facilmente» | fácilmente |
+| 38 | «podría recibir otros Tag» | falta el punto final |
+| 40 | «Por limites de tiempo» | límites |
+| 40 | «(Tabla 2). .» | punto doble |
+| 45 | «La Tabla 3 resume lo que costó el prototipo,» | **frase sin terminar** |
+| 51 | «Nota: elaboracipon propia.» | «Nota. Elaboración propia.» |
+| 53 | «empezar c on plantillas» | con |
+
+**Solución:** se corrigen en el Markdown y se regenera. Una pasada de corrector ortográfico las atrapa casi todas, menos las de la página 8 y 45, que son frases incompletas, y la de la 7, que hay que rehacer.
+
+### E. El índice no calza con los títulos de las figuras
+
+| Índice (pág. 5) | En la página |
+| --- | --- |
+| Fig. 8 «Dos situaciones de uso» | «Situaciones de uso» |
+| Fig. 12 «El recorrido del usuario, en cuatro momentos» | «El recorrido del usuario.» |
+| Fig. 19 «Las etapas del proyecto, del prototipo al producto» | «Las etapas del proyecto.» |
+| Fig. 21 «Lo que ocurrió en los 24 relevos que alcanzaron su límite» | «Lo que ocurrió en los 24 relevos.» |
+| Fig. 23 «Recordar no basta para empezar» | sin título |
+
+- [ ] Unificar: el índice se genera del título, así que basta corregir el título en el Markdown y regenerar. Quitar también los puntos finales, que los demás títulos no llevan.
+- [ ] Índices laterales: pág. 17 dice «Dos fuentes primarias» y el título es «Fuentes de información»; pág. 48 dice «cómo se cuidó a las personas» y el título es «cómo se cuidaron los datos».
+
+### F. El Resumen y el Abstract ya no dicen lo mismo
+
+El Resumen en español perdió la frase del método —«La investigación combinó una revisión bibliográfica, ocho entrevistas semiestructuradas analizadas con el método Framework, una encuesta de 53 respuestas y una comparación de herramientas»— que el Abstract conserva. Además el español usa presente («busca») y el inglés pasado («sought»).
+
+- [ ] Reponer la frase del método en el Resumen y unificar el tiempo verbal. La pauta de contenidos pide el resumen en pasado.
+- [ ] Al cerrar la semana de comparación, actualizar los dos: hoy ambos la dan por pendiente.
+
+### G. Contenido
+
+- [ ] **Reponer el párrafo de autoría** en «Uso de inteligencia artificial» (pág. 29). Se eliminó la frase que decía que el autor hizo las entrevistas, definió el problema y los criterios, aprobó, corrigió o rechazó cada propuesta y responde por el contenido, y que cada pedido quedó anotado el mismo día. Hoy la memoria **declara el uso de IA sin declarar la autoría**, que es lo contrario de lo que conviene. Es la respuesta a la pregunta que la comisión va a hacer y está documentada en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
+- [ ] **Pág. 36: «las esquinas redondeadas… comparten ergonomia con las del teléfono».** La concentricidad es compartir **centro**, no ergonomía. La frase quedó sin sentido: volver a «comparten centro».
+- [ ] **Pág. 31, Tabla 1, fila «Arquitectura»:** dice «Un inicio claro, un momento de ocio digital y una decisión», que no corresponde a los tres destinos —Inicio, Ruta y Perfil— del texto y de la Figura 14.
+- [ ] **Encabezados de la Tabla 1:** la primera página dice «Otras opciones que no son Relevo.» y la continuación «Otras opciones».
+- [ ] **Figura 18, nota:** es la única nota de figura que nombra una herramienta de IA; las demás dicen «Elaboración propia». Decidir si se uniforma.
+- [ ] **Comprobar el Glosario y los Anexos.** El índice los anuncia en las páginas 59 y 61 y el PDF termina en la 58. Puede que se quitaran al comprimir el archivo; confirmar qué recibió el profesor.
+- [ ] **Confirmar con la participante** si el único relevo que no sonó fue por estar fuera de casa (pág. 49). Es la evidencia del primer hallazgo del capítulo 13 y hoy no se puede verificar con la base remota.
+- [ ] **Autorización de las fotos.** La Figura 17c muestra un escritorio con objetos personales reconocibles. En a se difuminó un nombre; en c no se difuminó nada.
+
+### H. Lo que la comisión va a preguntar
+
+Preparar respuesta para cada una. Las nueve salieron del simulacro de comisión del 30 de octubre.
+
+- [ ] La hipótesis tiene tres supuestos y se probó uno: ¿qué afirma el proyecto que no afirmaba en julio?
+- [ ] ¿Por qué no se imprimió el objeto?
+- [ ] Si el Tag comprado sonó en 23 de 24 ciclos, ¿qué problema resuelve la carcasa que el Tag no resuelva?
+- [ ] La pauta de entrevistas no preguntaba por el fenómeno: ¿por qué creer que existe más allá de la experiencia del autor?
+- [ ] ¿Qué tendría que haber pasado en la prueba para concluir que Relevo no sirve?
+- [ ] La mitad de los comienzos es de una persona: ¿qué la distingue de las otras dos?
+- [ ] ¿Qué parte de esta memoria es del autor?
+- [ ] ¿Por qué Apple y no Material Design, si la aplicación corre en Android?
+- [ ] ¿Dónde están las palabras que faltan para llegar al mínimo?
+
+### Orden sugerido
+
+1. **A y B** (un día): las marcas y las tres fallas del generador. Es lo que más mejora la impresión por hora invertida.
+2. **D, E y F** (un día): erratas, títulos e índice, resumen y abstract.
+3. **G** (medio día): autoría, concentricidad, Tabla 1, fotos.
+4. **C** (dos o tres días): las 1 000 palabras, a medida que existan los resultados de la comparación y los planos.
+5. **H** (una tarde, cerca del 22 de noviembre): las respuestas, junto con el ensayo de la presentación.
+
+La tarea 4 —imprimir el objeto y levantar los planos— sigue siendo la que más mueve la evaluación, porque es el 40 % de la rúbrica y hoy es el subcriterio 5.2, el único no logrado de la matriz.
+
+### Reglas
+
+- No inventar contenido para llegar al mínimo de palabras: las 1 000 que faltan salen de trabajo real que ya está pendiente.
+- No tocar la pregunta, la hipótesis ni los objetivos sin que el autor lo pida.
+- Corregir en el Markdown y regenerar; no editar el PDF ni el IDML a mano.
+- Antes de dar por cerrado el punto A, comprobar que `CONFIRMAR`, `EN DESARROLLO`, `*ORDENAR` y `*Por probar` no aparezcan en el PDF generado.
+
+## 13. Camino al 7: cerrar los huecos de la rúbrica
+
+**Estado:** por hacer. **Anotada:** 30 de octubre de 2026. **Origen:** el autor pidió apuntar a la nota máxima y que cada paso diga qué camino tomar y cómo. **Riesgo:** alto, pero manejable: casi todo depende solo del autor.
+
+### De dónde se parte
+
+La rúbrica pondera Formulación 20 %, Desarrollo de la investigación 40 % y Propuesta de diseño 40 %. La evaluación simulada del 30 de octubre, sobre el PDF enviado al profesor, dio 5,3 · 5,7 · 4,3, que ponderado es 5,06, y 4,6 descontando la forma. La tarea 12 recupera la forma. Esta tarea trabaja el fondo.
+
+**El 40 % de la propuesta es el que está castigando la nota, y es el más barato de arreglar.** Lo que sigue está ordenado por cuánto sube la nota por hora invertida.
+
+---
+
+### A. El objeto: está a un día, no a semanas
+
+**Lo que ya existe** en [`testigo-impresion-3d`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md): las cinco piezas en STL ya orientadas y sin soportes, tres proyectos de Bambu Studio configurados con la X1 Carbon, el PLA mate y el proceso de 0,12 mm, las instrucciones de impresión y de armado, y el modelo paramétrico que regenera todo al cambiar una medida.
+
+**Lo único que falta para empezar son cinco medidas.** Están en [`medidas.json`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/medidas.json), cada una con qué es y cómo tomarla.
+
+- [ ] **A1. Medir la placa del Tag** (30 min). Abrir el Tag por la ranura del borde con una moneda, sacar la placa con la pila y medir con pie de metro: diámetro de la placa, grosor de la placa, altura del componente más alto en la cara del botón, altura del botón sin apretar y grosor bajo la placa con la pila puesta. **Mirar además si el zumbador está en la placa o pegado a la carcasa con dos cables**: si es lo segundo, hay que medirlo y cambiar el chasis, y eso agrega un par de horas. Anotar los valores en `medidas.json`, cambiar «supuesto» por «medido».
+- [ ] **A2. Regenerar** (2 min): `python3 testigo.py` en esa carpeta. El alto del testigo se ajusta solo.
+- [ ] **A3. Imprimir la prueba de calce** (25 min de máquina). Proyecto `1-prueba-de-calce.3mf`. Revisar que la tapa entre girando con la mano sin forzar y que el medallón se mueva libre con la ranura pareja. Si la rosca cuesta, subir `holguras.rosca` a 0,4; si baila, bajarla a 0,2, regenerar y repetir.
+- [ ] **A4. Imprimir el testigo** (32 min de máquina). Proyecto `2-testigo-un-color.3mf`. Con AMS, después el `3-fondo-cuatro-colores.3mf` (6 min) para las cuatro luces de la marca.
+- [ ] **A5. Armar y probar** (30 min). Seguir el armado del README. Probar: que el logo apriete el botón del Tag, que suene desde la aplicación, que la tapa se abra con una moneda y que la pila se cambie sin desarmar nada.
+- [ ] **A6. Medir el volumen con la carcasa puesta** (15 min), con una app de sonómetro a 1 m, y compararlo con el Tag desnudo. **Es el dato que prueba que la carcasa no ahoga la señal**, y hoy la memoria no puede afirmarlo.
+- [ ] **A7. Fotografiar el objeto en uso** (45 min): junto a un primer paso real, en la mano, y la tapa abierta con la pila a la vista. Sin caras ni datos personales. Reemplaza la Figura 18, que hoy son renders.
+
+**Qué mueve:** el subcriterio 5.2 pasa de **no logrado** a logrado, y con él 5.1, 7.1 y 7.3 salen de «en desarrollo». Es el único movimiento que levanta el 40 % de la propuesta. **Tiempo total: una tarde, más 1 h 3 min de impresora.**
+
+- [ ] **A8. Planos acotados** (la IA puede hacerlos; 2 h). La matriz 5.2 pide dimensiones, uniones y estructura, y hoy solo hay renders: `vistas.py` no genera planos. El modelo es paramétrico y todas las medidas son constantes en milímetros dentro de `testigo.py` (R_EXT 23, T_TECHO 1,4, RECORRIDO 0,45, PASO de rosca 2,5, etc.), así que se puede escribir un script que dibuje planta, elevación y corte con cotas en SVG, tomando los valores del mismo modelo. Así los planos nunca se desfasan de las piezas.
+- [ ] **A9. Ficha de materiales y costo de impresión** (30 min): PLA por pieza (cuerpo 6 g, medallón 1 + 1, chasis 3, tapa 4), tiempo de máquina y costo del gramo. Cierra el subcriterio 7.2.
+
+### B. La hipótesis, por fin contrastada
+
+Hoy la hipótesis tiene tres supuestos y la memoria examina uno y medio. La semana de comparación cerró el 30 de octubre: **ese dato convierte un supuesto declarado en un supuesto probado**, y es lo que separa una memoria que promete de una que responde.
+
+- [ ] **B1. Exportar y unir los datos** de las tres personas: guardar en `datos_sensibles/` y correr `node unir-datos.js` en [`07_validacion/analisis`](../07_validacion/analisis/).
+- [ ] **B2. Aplicar el instrumento de cierre** ([ficha y entrevista](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md)) y transcribir.
+- [ ] **B3. Escribir los resultados de la comparación** en el capítulo 13 (~250 palabras), con el mismo criterio que el resto: por persona, en recuentos, sin porcentajes.
+- [ ] **B4. Actualizar el Resumen, el Abstract y las Conclusiones**, que hoy dan la comparación por pendiente.
+- [ ] **B5. Decir con claridad qué quedó probado y qué no.** El supuesto 2, el del lugar, sigue sin probarse y es correcto declararlo. Una memoria que distingue lo que probó de lo que supone se lee como rigurosa, no como incompleta.
+
+### C. Convertir las debilidades metodológicas en rigor
+
+La comisión va a ver estas tres cosas. Si las nombras tú primero, dejan de ser objeciones y pasan a ser criterio.
+
+- [ ] **C1. Los límites de la pauta de entrevistas** (~150 palabras, capítulo 7). La memoria ya reconoce que la pauta no preguntaba por el fenómeno y que la categoría surgió en el análisis. Desarrollarlo: qué implica para la validez, por qué la encuesta y la prueba en hogares compensan en parte, y qué habría que preguntar en una ronda nueva.
+- [ ] **C2. Declarar la encuesta como confirmatoria** (~80 palabras, capítulo 7). Llegó después de la propuesta, así que contrasta y no descubre. Decirlo protege el dato en vez de debilitarlo.
+- [ ] **C3. Justificar el rango de 19 a 30 años desde el problema**, no desde quiénes participaron (capítulo 7). Hoy el argumento es circular. Hay datos de la Subtel ya citados que pueden sostenerlo.
+- [ ] **C4. Arreglar la Figura 9** (capítulo 8). Hoy ubica a Relevo en 8,9 y 9,4 —el mejor en los dos ejes— con un método que la propia nota dice que no mide eficacia. Dos caminos: **(a)** explicar en la nota con qué criterio se asignó cada posición, o **(b)** sacar a Relevo del mapa y ubicarlo en el texto como la oportunidad que el mapa deja ver. La **b** es más honesta y más fuerte.
+- [ ] **C5. Anexo con la codificación de la encuesta**: las categorías, quién codificó y cómo se revisó. Hoy «49 de 53 explicaron bien cómo funcionaba» no tiene respaldo visible.
+- [ ] **C6. Enunciar la falsabilidad** (~80 palabras, capítulo 13): qué habría tenido que ocurrir en la prueba para concluir que Relevo no sirve. Sin eso, la prueba no se lee como prueba.
+
+### D. Formulación
+
+- [ ] **D1. Resolver las dos partes de la pregunta** → [tarea 11](#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes).
+- [ ] **D2. Devolver el objetivo general**: hoy dice «diseñar y evaluar **el funcionamiento** de Relevo». Esas dos palabras lo reducen a si el aparato anda. Volver a evaluar el sistema.
+- [ ] **D3. Hacer trabajar la metodología** (~150 palabras, capítulo 10): qué aportó la investigación a través del diseño que no habría aportado otro enfoque. Hoy Zimmerman et al. (2007) se cita una vez y no vuelve.
+
+### E. Factibilidad y ética
+
+- [ ] **E1. Tres cotizaciones reales** de impresión 3D por volumen, para el piloto de seis unidades. Cierra 5.3 y 8.3, hoy «en desarrollo». Con el modelo terminado se piden por correo en una tarde.
+- [ ] **E2. Responder la interdisciplina.** La rúbrica la evalúa y la memoria no la menciona. No hace falta inventar un equipo: basta un párrafo sobre qué saberes tomó prestados —psicología cognitiva, acústica, electrónica de consumo— y qué consultaría en una etapa siguiente.
+- [ ] **E3. Autorización escrita de las fotos.** La Figura 17c muestra un escritorio con objetos personales reconocibles; en la 17a se difuminó un nombre y en la 17c no se difuminó nada. Pedir la autorización o reemplazar la imagen.
+- [ ] **E4. Preguntar a la Escuela si exige revisión ética** y dejar la respuesta escrita en la memoria.
+
+### F. Calendario
+
+Las fechas confirmadas son el cierre interno del 15 de noviembre, el Pase el 25 y la memoria el 2 de diciembre.
+
+| Cuándo | Qué | Por qué ahí |
+| --- | --- | --- |
+| 31 oct – 2 nov | **A1 a A7**: medir, imprimir, armar, probar, fotografiar | Es el fin de semana y es lo que más sube la nota |
+| 3 – 7 nov | **B1 a B5**: cerrar los datos y escribir los resultados | Las entrevistas de cierre son recientes |
+| 8 – 10 nov | **A8, A9, E1**: planos, ficha y cotizaciones | Necesitan el objeto ya impreso |
+| 11 – 14 nov | **C y D**: los párrafos de rigor y de formulación | Suman las palabras que faltan |
+| **15 nov** | **Cierre interno** | Todo el contenido adentro |
+| 16 – 21 nov | **Tarea 12 completa** y regenerar el PDF | La forma al final, sobre el texto definitivo |
+| 22 – 24 nov | Presentación, ensayo con cronómetro y las nueve respuestas | Tarea 7 |
+| **25 nov** | **Pase** | |
+
+### G. Qué nota deja cada bloque
+
+Estimaciones sobre la simulación del 30 de octubre, para decidir qué soltar si falta tiempo.
+
+| Si se hace | Formulación | Investigación | Propuesta | Ponderado |
+| --- | ---: | ---: | ---: | ---: |
+| Nada (hoy) | 5,3 | 5,7 | 4,3 | **4,6** |
+| Solo la tarea 12 | 5,3 | 5,7 | 4,3 | **5,1** |
+| + A (el objeto) | 5,3 | 5,7 | 6,3 | **5,9** |
+| + B (la hipótesis contrastada) | 6,3 | 6,0 | 6,5 | **6,3** |
+| + C, D y E | 6,7 | 6,7 | 6,8 | **6,8** |
+
+**Lo que no se puede comprar con esfuerzo:** son tres personas y una etapa. Una memoria honesta con n = 3 no llega a 7,0 por mucho que se pula, y pretender lo contrario sería justo el error que esta memoria evita en todo lo demás. **6,8 es el techo real, y es un techo muy alto.**
+
+### Reglas
+
+- Si el fin de semana se pierde, **A sigue siendo lo primero**: vale más que todos los párrafos juntos.
+- No inventar datos para llenar: las palabras que faltan salen de trabajo real pendiente.
+- No tocar la pregunta, la hipótesis ni los objetivos sin que el autor lo pida.
+- Declarar lo que no se probó. En esta memoria la honestidad suma nota.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Camino al 7
+
+- **Qué cambió:** se añadió la tarea 13, con lo que falta para subir la nota más allá de corregir errores: el objeto, la hipótesis contrastada con la semana de comparación, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética. Cada punto lleva su camino, su tiempo y qué mueve en la rúbrica, con un calendario hasta el 25 de noviembre y una estimación de nota por bloque.
+- **Cómo estaba antes:** la lista llegaba hasta la tarea 12, que solo recupera la forma.
+- **Por qué:** el autor pidió apuntar a la nota máxima y que cada tarea fuera específica y estudiada, con la solución más precisa posible y considerando el tiempo.
+
+### 2026-10-30 — Revisión de la memoria enviada al profesor
+
+- **Qué cambió:** se añadió la tarea 12, con todo lo encontrado al leer las 58 páginas del PDF que el autor envió: trece marcas de edición visibles, tres fallas del generador, la extensión bajo el mínimo del instructivo, las erratas, los desajustes del índice, el Resumen frente al Abstract, los arreglos de contenido y las nueve preguntas del simulacro de comisión. Cada punto lleva su solución y hay un orden sugerido.
+- **Cómo estaba antes:** la lista llegaba hasta la tarea 11 y ninguno de estos hallazgos estaba registrado.
+- **Por qué:** el autor envió la memoria al profesor, pidió una revisión completa y una crítica con la rúbrica, y luego pidió dejar los errores en Por hacer con soluciones realistas.
+
+### 2026-10-30 — La pregunta y sus dos partes
+
+- **Qué cambió:** se añadió la tarea 11, con el desajuste entre la pregunta de investigación y las dos partes que los capítulos 10 y 14 le atribuyen, y tres soluciones para que el autor elija.
+- **Cómo estaba antes:** la lista llegaba hasta la tarea 10 y el desajuste no estaba registrado en ninguna parte.
+- **Por qué:** apareció al leer el borrador v6 completo, que el autor pidió para proponer una pregunta de investigación, y el autor pidió explicarlo, proponer una solución y subirlo a Por hacer.
 
 ### 2026-10-29 — Séptima ronda de la v6
 
