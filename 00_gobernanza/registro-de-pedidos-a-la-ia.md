@@ -211,6 +211,8 @@
 | 29 oct. | Corrección | Al revisar la quinta ronda, pidió decir en palabras simples «señal de la periferia», «episodio» y la mediana; quitar los códigos de participantes y las afirmaciones que no aportan; que el texto siga la columna sin cortarse y continúe hacia el lado, como en una página doble; criterios fáciles de entender, con su porqué y sin la convivencia; explicar por qué la decisión queda abierta; quitar el rótulo «Cita», «Actores y responsabilidades», las etiquetas «Decisión.» y la tabla de estado de los objetivos; objetivos claros; el recorrido del usuario en un esquema simple; desarrollar la referencia de Apple desde sus pautas, sin tabla; nombrar los colores con el estudio de escritura y llevarlo a la memoria; lenguaje de diseñador; no nombrar «luz»; llamar Relevo al objeto; Relevo Home y Relevo Go; sin fechas de inicio por persona; APA 7 en español; su nombre completo, el logo de la Facultad y la mención en Diseño Gráfico. Preguntó si la Figura 9 hace falta. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con los capítulos 7, 9, 10, 11 y 14 en palabras simples y sin códigos de participantes; criterios que se entienden solos; un capítulo 11 contado como relato, con el recorrido del usuario en un esquema, la referencia de Apple en prosa y «Cómo habla Relevo»; 21 figuras y 4 tablas; 80 referencias, todas citadas. La [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md), de 66 páginas, se lee hacia el lado —el texto llena cada columna y las piezas van al pie—, con portada según el instructivo y el reglamento e índice de tablas y figuras. La Figura 9 se queda: el instructivo pide el plan de trabajo. | D-151 |
 | 29 oct. | Corrección y consulta | Al revisar la sexta ronda, señaló que en la lámina 16 las figuras volvían a interrumpir la lectura y que las láminas 17, 22, 28 y 58 dejaban una columna de texto sola. Preguntó si el glosario es obligatorio y pidió abrir la pestaña de la Biblioteca para iniciar sesión y leer otras memorias de diseño. | [Memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) de 62 páginas: las figuras de una columna van en su propia columna, a la derecha, y ningún capítulo termina en una columna sola —con dos figuras de concepto (Figuras 1 y 8) y lo repetido dicho una vez en los capítulos 6, 11, 12 y 14—; el mapa con rótulos naturales; el índice de tablas y figuras ya no toca el folio. El glosario es optativo según la pauta; se mantiene hasta que decida el autor. La pestaña quedó abierta; el inicio de sesión no se completó. | D-152 |
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
+| 30 oct. | Decisión | Aprobó la nueva redacción de la pregunta de investigación y pidió saber qué textos de la memoria debía cambiar, con la condición de no alterar el resultado ni la memoria. | Dos cambios en el capítulo 10: la pregunta y el sujeto de la frase que la define; neto, una palabra menos. Nada más en la memoria | Pendiente de aplicar por el autor |
+| 30 oct. | Encargo | Pidió actualizar los archivos que citaban la redacción anterior de la pregunta. | [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md), [Anexo I](../08_memoria/anexos/anexo-i-prueba.md), [guía de comunicación](guia-comunicacion-relevo.md) y [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md). La memoria v4 y los flujos del 25 de septiembre quedan como registro histórico, por decisión del autor | — |
 
 ## Lo que muestra el registro
 
@@ -221,6 +223,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Redacción de la pregunta y archivos satélite
+
+- **Qué cambió:** se registraron la decisión del autor de adoptar la nueva redacción de la pregunta y el encargo de alinear los archivos que citaban la anterior.
+- **Cómo estaba antes:** el registro terminaba en la tarea 11.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-29 — Revisión de la sexta ronda
 
