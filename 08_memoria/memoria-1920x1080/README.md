@@ -75,11 +75,18 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Límites
 
+- El IDML está en el repositorio desde el 29 de octubre de 2026, pero sus imágenes se enlazan con la ruta del computador donde se generó: en otro computador hay que volver a enlazarlas desde `figuras/idml/`, o generar el IDML de nuevo con `node construir-idml.js`.
 - Algunas tablas y láminas altas quedan en páginas propias, con aire debajo, porque no dejan espacio útil para texto.
 - Las capturas de la aplicación son de la línea 3.x; la prueba usó la interfaz de la 2.30.
 - La Biblioteca exige los índices de tablas y de figuras para el depósito.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — El IDML entra al repositorio
+
+- **Qué cambió:** el IDML se sube junto al PDF y las tipografías.
+- **Cómo estaba antes:** quedaba fuera del repositorio (`.gitignore`) por sus enlaces con ruta absoluta.
+- **Por qué:** pedido del autor, que no lo veía en la carpeta.
 
 ### 2026-10-29 — Séptima ronda
 
