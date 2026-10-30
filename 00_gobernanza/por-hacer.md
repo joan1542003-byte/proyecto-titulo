@@ -293,7 +293,74 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
+## 11. Formulación: la pregunta de investigación y sus dos partes
+
+**Estado:** por decidir el autor. **Anotada:** 30 de octubre de 2026. **Origen:** lectura completa del borrador v6, que el autor pidió para proponer una pregunta de investigación. **Riesgo:** medio. No afecta ningún dato ni resultado, pero toca la trazabilidad, que en el Pase se evalúa como formalidad.
+
+### El problema
+
+La pregunta del capítulo 10 pide una sola cosa, condiciones:
+
+> ¿Qué condiciones pueden ayudar a que una persona vuelva a considerar algo que quería hacer cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión inmediata?
+
+Dos capítulos afirman, en cambio, que esa pregunta tiene dos partes, y que la segunda es una comparación:
+
+- El capítulo 10, en el párrafo siguiente: «La pregunta tiene dos partes. La primera —qué debe cumplir una ayuda así— la responden la investigación y los criterios del capítulo 9. La segunda —si sonar desde el lugar donde empieza la actividad aporta algo frente a una notificación en el teléfono— la abordan la hipótesis y la prueba en los hogares».
+- El capítulo 14: «La pregunta de investigación se responde en dos partes», con la misma división.
+
+Quien lea solo la pregunta no encuentra esa segunda parte en ninguna de sus palabras. Son, además, dos tipos distintos de pregunta: «qué condiciones» es abierta y exploratoria; «¿aporta algo esto frente a aquello?» es comparativa. Anunciar que la primera contiene a la segunda es la juntura débil.
+
+Importa porque la cadena pregunta → hipótesis → objetivos → resultados → conclusiones debe cerrar, y hoy queda abierta en tres puntos:
+
+- el objetivo específico 3, «comparar el sonido del objeto junto al primer paso con una notificación en el teléfono», no tiene de dónde colgarse en la pregunta;
+- la hipótesis trata del lugar y de la señal, que la pregunta no nombra;
+- el capítulo 14 responde algo que la pregunta no preguntó.
+
+### Tres soluciones
+
+**A. Una pregunta general y dos específicas.** La pregunta general queda como está —o con la redacción que el autor elija— y debajo se declaran dos preguntas específicas: qué debe cumplir la ayuda, y si la señal desde el lugar aporta frente a una notificación en el teléfono. Cada objetivo específico queda colgado de una de ellas, y las dos partes que anuncian los capítulos 10 y 14 pasan a existir de verdad.
+
+- *Toca:* el capítulo 10 (añade unas 60 palabras) y la frase de las dos partes del capítulo 14.
+- *A favor:* es la estructura académica más común y la que cierra la trazabilidad sin ambigüedad.
+- *En contra:* suma palabras, con el límite de 20 000 ya cerca, y obliga a mantener la numeración igual en los dos capítulos.
+
+**B. Meter la comparación dentro de la pregunta.** La pregunta nombra la condición del lugar: «¿Bajo qué condiciones —y en particular si la señal llega desde el lugar donde comienza la actividad— …?».
+
+- *Toca:* solo la pregunta.
+- *A favor:* una sola pregunta, que se sostiene sola.
+- *En contra:* alarga la pregunta y vuelve a meterle un inciso, justo lo que la hace difícil de leer; y destacar una condición dentro de una pregunta exploratoria adelanta parte de la respuesta.
+
+**C. Dejar la pregunta y corregir lo que se afirma de ella.** La pregunta pide condiciones y eso no cambia. Los capítulos 10 y 14 dejan de decir que tiene dos partes y dicen lo que de verdad ocurre: la investigación y los criterios responden la pregunta, y una de esas condiciones —que la señal llegue desde el lugar donde la actividad comienza, el criterio 8— se formula como hipótesis y se pone a prueba contra una notificación en el teléfono.
+
+- *Toca:* un párrafo del capítulo 10 y una frase del capítulo 14. Ni la pregunta, ni la hipótesis, ni los objetivos.
+- *A favor:* es lo más barato, no suma palabras y describe con exactitud lo que el proyecto hizo. El criterio 8 ya dice «el objeto suma algo que el teléfono no da», así que la semana de comparación es la prueba empírica de una condición, no una segunda pregunta.
+- *En contra:* la pregunta sigue siendo de una sola parte, así que el objetivo específico 3 solo queda amarrado si la nueva redacción lo conecta de forma explícita.
+
+### Recomendación
+
+La **C**, y si el autor quiere además declarar las preguntas específicas, la **C junto con la A**. La C resuelve el problema sin tocar la pregunta, la hipótesis ni los objetivos, y tiene a su favor que es verdadera: la comparación con el teléfono prueba el criterio 8, que es una de las condiciones que la pregunta pide. La B es la que menos conviene, porque agrava el problema de lectura que el autor ya detectó.
+
+### Qué hacer
+
+- [ ] El autor elige entre A, B y C, o las combina.
+- [ ] Aplicar lo elegido en el capítulo 10 y en el capítulo 14 del [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), y comprobar que cada objetivo específico quede colgado de una pregunta.
+- [ ] Revisar que la [memoria vigente v4](../08_memoria/memoria-vigente-v4.md) y el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md) no contradigan lo que quede.
+- [ ] Regenerar la [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) con `node construir-idml.js`.
+
+### Reglas
+
+- La redacción de la pregunta es una decisión aparte, también abierta desde el 30 de octubre de 2026: no cerrar esta tarea con una redacción distinta de la que el autor apruebe allí.
+- No tocar la pregunta, la hipótesis ni los objetivos sin que el autor lo pida: son texto suyo.
+- No cambiar ninguna cifra ni cita: el problema es de estructura, no de datos.
+- Respetar el límite de 20 000 palabras de la memoria; hoy va en unas 19 400.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — La pregunta y sus dos partes
+
+- **Qué cambió:** se añadió la tarea 11, con el desajuste entre la pregunta de investigación y las dos partes que los capítulos 10 y 14 le atribuyen, y tres soluciones para que el autor elija.
+- **Cómo estaba antes:** la lista llegaba hasta la tarea 10 y el desajuste no estaba registrado en ninguna parte.
+- **Por qué:** apareció al leer el borrador v6 completo, que el autor pidió para proponer una pregunta de investigación, y el autor pidió explicarlo, proponer una solución y subirlo a Por hacer.
 
 ### 2026-10-29 — Séptima ronda de la v6
 
