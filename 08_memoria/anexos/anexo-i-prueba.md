@@ -10,7 +10,7 @@ El protocolo se preparó el 25 de septiembre de 2026 para seis personas, una por
 
 ### Qué responde
 
-La memoria pregunta qué condiciones pueden ayudar a que una persona vuelva a considerar una actividad elegida cuando, durante una sesión de ocio digital, esa intención deja de orientar su decisión (capítulo 10). Su hipótesis (D-091) es: «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Esta prueba responde:
+La memoria pregunta bajo qué condiciones lo que una persona quería hacer vuelve a estar presente a tiempo, y la decisión sigue siendo suya, mientras una sesión de ocio digital continúa (capítulo 10). Su hipótesis (D-091) es: «Si se diseña un sistema phygital que vincula una actividad elegida con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella». Esta prueba responde:
 
 | Pregunta | Cómo se responde |
 | --- | --- |
@@ -278,6 +278,12 @@ La app muestra la tarjeta semanal (los días 7, 14 y 21) y las cinco preguntas d
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Redacción de la pregunta
+
+- **Qué cambió:** la referencia a la pregunta de investigación usa la nueva redacción aprobada por el autor.
+- **Cómo estaba antes:** citaba la pregunta de la v4, «vuelva a considerar una actividad elegida… deja de orientar su decisión».
+- **Por qué:** el autor aprobó una nueva redacción y pidió alinear los archivos que citaban la anterior. La hipótesis no se tocó: la cita de D-091 es fiel a su registro.
 
 ### 2026-10-24 — Creación
 

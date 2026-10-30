@@ -417,11 +417,17 @@ Para buceo hay que delimitar la intención. Si existe una salida planificada, pr
 
 ### Qué logra y qué busca lograr
 
-Hoy existen investigación, recorrido y programa compilado. Lo que el producto busca aportar es que la persona vuelva a considerar una intención y recuerde su primer paso sin consultar obligatoriamente el teléfono. La ejecución física, esa asociación y la ventaja del lugar siguen por probar. Iniciar o completar la actividad son resultados posteriores diferentes. La explicación pública debe decir «busca» o «podría» cuando describe ese aporte.
+Hoy existen investigación, recorrido y programa compilado. Lo que el producto busca aportar es que una intención vuelva a estar presente y que la persona recuerde su primer paso sin consultar obligatoriamente el teléfono. La ejecución física, esa asociación y la ventaja del lugar siguen por probar. Iniciar o completar la actividad son resultados posteriores diferentes. La explicación pública debe decir «busca» o «podría» cuando describe ese aporte.
 
 Para una demostración, mostrar preparación, señal y salidas; declarar la activación manual antes de usarla. Para probar valor, seguir [qué prototipar](../07_validacion/que-prototipar-y-como-validar-el-valor.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Redacción de la pregunta
+
+- **Qué cambió:** el aporte del producto se describe como que una intención «vuelva a estar presente», el vocabulario de la nueva redacción de la pregunta.
+- **Cómo estaba antes:** decía «vuelva a considerar una intención», de la pregunta de la v4.
+- **Por qué:** el autor aprobó una nueva redacción de la pregunta y pidió alinear los archivos que citaban la anterior. Se mantienen «busca» y «podría» al describir el aporte.
 
 ### 2026-10-24 — Enlace al estudio de los textos de la app
 
