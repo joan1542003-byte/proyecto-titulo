@@ -220,6 +220,7 @@
 | 30 oct. | Encargo | Entregó el PDF de la memoria que envió al profesor y pidió leerla completa, dar una opinión y decir qué se le pasó por alto, sin rastros de IA. | Revisión de las 58 páginas: trece marcas de edición visibles, la Tabla 3 que no se ve, las etiquetas cortadas de la Figura 9, la Figura 23 sin título, el índice desajustado, el Resumen distinto del Abstract y una treintena de erratas | — |
 | 30 oct. | Encargo | Pidió una crítica en el papel de la comisión, con la rúbrica y los documentos oficiales. | Crítica por las tres dimensiones ponderadas, con nueve preguntas previsibles y una nota simulada de 4,6 sobre el documento enviado | — |
 | 30 oct. | Encargo | Pidió la nota, revisar de nuevo lo revisado y dejar todos los errores en Por hacer con soluciones realistas. | [Tarea 12](por-hacer.md#12-memoria-v6-lo-que-hay-que-corregir-antes-del-pase). La segunda revisión corrigió dos diagnósticos: la Tabla 3 tiene su contenido pero se imprime invisible, y las etiquetas de la Figura 9 vienen cortadas desde el generador | — |
+| 30 oct. | Encargo | Pidió apuntar a la nota máxima y dejar en Por hacer, de forma específica y estudiada, qué camino tomar para subir la nota, considerando el tiempo. | [Tarea 13](por-hacer.md#13-camino-al-7-cerrar-los-huecos-de-la-rúbrica), con el objeto, la hipótesis contrastada, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética; calendario al 25 de noviembre y nota estimada por bloque. Al estudiar el objeto se vio que las piezas, los proyectos de impresión y las instrucciones ya existen: solo faltan cinco medidas con pie de metro | — |
 
 ## Lo que muestra el registro
 
@@ -230,6 +231,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Camino al 7
+
+- **Qué cambió:** se registró el pedido de dejar por escrito el camino a la nota máxima.
+- **Cómo estaba antes:** el registro terminaba en la tarea 12.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-30 — Revisión de la memoria y crítica con la rúbrica
 

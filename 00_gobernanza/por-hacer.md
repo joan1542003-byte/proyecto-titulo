@@ -502,7 +502,114 @@ La tarea 4 —imprimir el objeto y levantar los planos— sigue siendo la que m�
 - Corregir en el Markdown y regenerar; no editar el PDF ni el IDML a mano.
 - Antes de dar por cerrado el punto A, comprobar que `CONFIRMAR`, `EN DESARROLLO`, `*ORDENAR` y `*Por probar` no aparezcan en el PDF generado.
 
+## 13. Camino al 7: cerrar los huecos de la rúbrica
+
+**Estado:** por hacer. **Anotada:** 30 de octubre de 2026. **Origen:** el autor pidió apuntar a la nota máxima y que cada paso diga qué camino tomar y cómo. **Riesgo:** alto, pero manejable: casi todo depende solo del autor.
+
+### De dónde se parte
+
+La rúbrica pondera Formulación 20 %, Desarrollo de la investigación 40 % y Propuesta de diseño 40 %. La evaluación simulada del 30 de octubre, sobre el PDF enviado al profesor, dio 5,3 · 5,7 · 4,3, que ponderado es 5,06, y 4,6 descontando la forma. La tarea 12 recupera la forma. Esta tarea trabaja el fondo.
+
+**El 40 % de la propuesta es el que está castigando la nota, y es el más barato de arreglar.** Lo que sigue está ordenado por cuánto sube la nota por hora invertida.
+
+---
+
+### A. El objeto: está a un día, no a semanas
+
+**Lo que ya existe** en [`testigo-impresion-3d`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md): las cinco piezas en STL ya orientadas y sin soportes, tres proyectos de Bambu Studio configurados con la X1 Carbon, el PLA mate y el proceso de 0,12 mm, las instrucciones de impresión y de armado, y el modelo paramétrico que regenera todo al cambiar una medida.
+
+**Lo único que falta para empezar son cinco medidas.** Están en [`medidas.json`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/medidas.json), cada una con qué es y cómo tomarla.
+
+- [ ] **A1. Medir la placa del Tag** (30 min). Abrir el Tag por la ranura del borde con una moneda, sacar la placa con la pila y medir con pie de metro: diámetro de la placa, grosor de la placa, altura del componente más alto en la cara del botón, altura del botón sin apretar y grosor bajo la placa con la pila puesta. **Mirar además si el zumbador está en la placa o pegado a la carcasa con dos cables**: si es lo segundo, hay que medirlo y cambiar el chasis, y eso agrega un par de horas. Anotar los valores en `medidas.json`, cambiar «supuesto» por «medido».
+- [ ] **A2. Regenerar** (2 min): `python3 testigo.py` en esa carpeta. El alto del testigo se ajusta solo.
+- [ ] **A3. Imprimir la prueba de calce** (25 min de máquina). Proyecto `1-prueba-de-calce.3mf`. Revisar que la tapa entre girando con la mano sin forzar y que el medallón se mueva libre con la ranura pareja. Si la rosca cuesta, subir `holguras.rosca` a 0,4; si baila, bajarla a 0,2, regenerar y repetir.
+- [ ] **A4. Imprimir el testigo** (32 min de máquina). Proyecto `2-testigo-un-color.3mf`. Con AMS, después el `3-fondo-cuatro-colores.3mf` (6 min) para las cuatro luces de la marca.
+- [ ] **A5. Armar y probar** (30 min). Seguir el armado del README. Probar: que el logo apriete el botón del Tag, que suene desde la aplicación, que la tapa se abra con una moneda y que la pila se cambie sin desarmar nada.
+- [ ] **A6. Medir el volumen con la carcasa puesta** (15 min), con una app de sonómetro a 1 m, y compararlo con el Tag desnudo. **Es el dato que prueba que la carcasa no ahoga la señal**, y hoy la memoria no puede afirmarlo.
+- [ ] **A7. Fotografiar el objeto en uso** (45 min): junto a un primer paso real, en la mano, y la tapa abierta con la pila a la vista. Sin caras ni datos personales. Reemplaza la Figura 18, que hoy son renders.
+
+**Qué mueve:** el subcriterio 5.2 pasa de **no logrado** a logrado, y con él 5.1, 7.1 y 7.3 salen de «en desarrollo». Es el único movimiento que levanta el 40 % de la propuesta. **Tiempo total: una tarde, más 1 h 3 min de impresora.**
+
+- [ ] **A8. Planos acotados** (la IA puede hacerlos; 2 h). La matriz 5.2 pide dimensiones, uniones y estructura, y hoy solo hay renders: `vistas.py` no genera planos. El modelo es paramétrico y todas las medidas son constantes en milímetros dentro de `testigo.py` (R_EXT 23, T_TECHO 1,4, RECORRIDO 0,45, PASO de rosca 2,5, etc.), así que se puede escribir un script que dibuje planta, elevación y corte con cotas en SVG, tomando los valores del mismo modelo. Así los planos nunca se desfasan de las piezas.
+- [ ] **A9. Ficha de materiales y costo de impresión** (30 min): PLA por pieza (cuerpo 6 g, medallón 1 + 1, chasis 3, tapa 4), tiempo de máquina y costo del gramo. Cierra el subcriterio 7.2.
+
+### B. La hipótesis, por fin contrastada
+
+Hoy la hipótesis tiene tres supuestos y la memoria examina uno y medio. La semana de comparación cerró el 30 de octubre: **ese dato convierte un supuesto declarado en un supuesto probado**, y es lo que separa una memoria que promete de una que responde.
+
+- [ ] **B1. Exportar y unir los datos** de las tres personas: guardar en `datos_sensibles/` y correr `node unir-datos.js` en [`07_validacion/analisis`](../07_validacion/analisis/).
+- [ ] **B2. Aplicar el instrumento de cierre** ([ficha y entrevista](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md)) y transcribir.
+- [ ] **B3. Escribir los resultados de la comparación** en el capítulo 13 (~250 palabras), con el mismo criterio que el resto: por persona, en recuentos, sin porcentajes.
+- [ ] **B4. Actualizar el Resumen, el Abstract y las Conclusiones**, que hoy dan la comparación por pendiente.
+- [ ] **B5. Decir con claridad qué quedó probado y qué no.** El supuesto 2, el del lugar, sigue sin probarse y es correcto declararlo. Una memoria que distingue lo que probó de lo que supone se lee como rigurosa, no como incompleta.
+
+### C. Convertir las debilidades metodológicas en rigor
+
+La comisión va a ver estas tres cosas. Si las nombras tú primero, dejan de ser objeciones y pasan a ser criterio.
+
+- [ ] **C1. Los límites de la pauta de entrevistas** (~150 palabras, capítulo 7). La memoria ya reconoce que la pauta no preguntaba por el fenómeno y que la categoría surgió en el análisis. Desarrollarlo: qué implica para la validez, por qué la encuesta y la prueba en hogares compensan en parte, y qué habría que preguntar en una ronda nueva.
+- [ ] **C2. Declarar la encuesta como confirmatoria** (~80 palabras, capítulo 7). Llegó después de la propuesta, así que contrasta y no descubre. Decirlo protege el dato en vez de debilitarlo.
+- [ ] **C3. Justificar el rango de 19 a 30 años desde el problema**, no desde quiénes participaron (capítulo 7). Hoy el argumento es circular. Hay datos de la Subtel ya citados que pueden sostenerlo.
+- [ ] **C4. Arreglar la Figura 9** (capítulo 8). Hoy ubica a Relevo en 8,9 y 9,4 —el mejor en los dos ejes— con un método que la propia nota dice que no mide eficacia. Dos caminos: **(a)** explicar en la nota con qué criterio se asignó cada posición, o **(b)** sacar a Relevo del mapa y ubicarlo en el texto como la oportunidad que el mapa deja ver. La **b** es más honesta y más fuerte.
+- [ ] **C5. Anexo con la codificación de la encuesta**: las categorías, quién codificó y cómo se revisó. Hoy «49 de 53 explicaron bien cómo funcionaba» no tiene respaldo visible.
+- [ ] **C6. Enunciar la falsabilidad** (~80 palabras, capítulo 13): qué habría tenido que ocurrir en la prueba para concluir que Relevo no sirve. Sin eso, la prueba no se lee como prueba.
+
+### D. Formulación
+
+- [ ] **D1. Resolver las dos partes de la pregunta** → [tarea 11](#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes).
+- [ ] **D2. Devolver el objetivo general**: hoy dice «diseñar y evaluar **el funcionamiento** de Relevo». Esas dos palabras lo reducen a si el aparato anda. Volver a evaluar el sistema.
+- [ ] **D3. Hacer trabajar la metodología** (~150 palabras, capítulo 10): qué aportó la investigación a través del diseño que no habría aportado otro enfoque. Hoy Zimmerman et al. (2007) se cita una vez y no vuelve.
+
+### E. Factibilidad y ética
+
+- [ ] **E1. Tres cotizaciones reales** de impresión 3D por volumen, para el piloto de seis unidades. Cierra 5.3 y 8.3, hoy «en desarrollo». Con el modelo terminado se piden por correo en una tarde.
+- [ ] **E2. Responder la interdisciplina.** La rúbrica la evalúa y la memoria no la menciona. No hace falta inventar un equipo: basta un párrafo sobre qué saberes tomó prestados —psicología cognitiva, acústica, electrónica de consumo— y qué consultaría en una etapa siguiente.
+- [ ] **E3. Autorización escrita de las fotos.** La Figura 17c muestra un escritorio con objetos personales reconocibles; en la 17a se difuminó un nombre y en la 17c no se difuminó nada. Pedir la autorización o reemplazar la imagen.
+- [ ] **E4. Preguntar a la Escuela si exige revisión ética** y dejar la respuesta escrita en la memoria.
+
+### F. Calendario
+
+Las fechas confirmadas son el cierre interno del 15 de noviembre, el Pase el 25 y la memoria el 2 de diciembre.
+
+| Cuándo | Qué | Por qué ahí |
+| --- | --- | --- |
+| 31 oct – 2 nov | **A1 a A7**: medir, imprimir, armar, probar, fotografiar | Es el fin de semana y es lo que más sube la nota |
+| 3 – 7 nov | **B1 a B5**: cerrar los datos y escribir los resultados | Las entrevistas de cierre son recientes |
+| 8 – 10 nov | **A8, A9, E1**: planos, ficha y cotizaciones | Necesitan el objeto ya impreso |
+| 11 – 14 nov | **C y D**: los párrafos de rigor y de formulación | Suman las palabras que faltan |
+| **15 nov** | **Cierre interno** | Todo el contenido adentro |
+| 16 – 21 nov | **Tarea 12 completa** y regenerar el PDF | La forma al final, sobre el texto definitivo |
+| 22 – 24 nov | Presentación, ensayo con cronómetro y las nueve respuestas | Tarea 7 |
+| **25 nov** | **Pase** | |
+
+### G. Qué nota deja cada bloque
+
+Estimaciones sobre la simulación del 30 de octubre, para decidir qué soltar si falta tiempo.
+
+| Si se hace | Formulación | Investigación | Propuesta | Ponderado |
+| --- | ---: | ---: | ---: | ---: |
+| Nada (hoy) | 5,3 | 5,7 | 4,3 | **4,6** |
+| Solo la tarea 12 | 5,3 | 5,7 | 4,3 | **5,1** |
+| + A (el objeto) | 5,3 | 5,7 | 6,3 | **5,9** |
+| + B (la hipótesis contrastada) | 6,3 | 6,0 | 6,5 | **6,3** |
+| + C, D y E | 6,7 | 6,7 | 6,8 | **6,8** |
+
+**Lo que no se puede comprar con esfuerzo:** son tres personas y una etapa. Una memoria honesta con n = 3 no llega a 7,0 por mucho que se pula, y pretender lo contrario sería justo el error que esta memoria evita en todo lo demás. **6,8 es el techo real, y es un techo muy alto.**
+
+### Reglas
+
+- Si el fin de semana se pierde, **A sigue siendo lo primero**: vale más que todos los párrafos juntos.
+- No inventar datos para llenar: las palabras que faltan salen de trabajo real pendiente.
+- No tocar la pregunta, la hipótesis ni los objetivos sin que el autor lo pida.
+- Declarar lo que no se probó. En esta memoria la honestidad suma nota.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Camino al 7
+
+- **Qué cambió:** se añadió la tarea 13, con lo que falta para subir la nota más allá de corregir errores: el objeto, la hipótesis contrastada con la semana de comparación, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética. Cada punto lleva su camino, su tiempo y qué mueve en la rúbrica, con un calendario hasta el 25 de noviembre y una estimación de nota por bloque.
+- **Cómo estaba antes:** la lista llegaba hasta la tarea 12, que solo recupera la forma.
+- **Por qué:** el autor pidió apuntar a la nota máxima y que cada tarea fuera específica y estudiada, con la solución más precisa posible y considerando el tiempo.
 
 ### 2026-10-30 — Revisión de la memoria enviada al profesor
 
