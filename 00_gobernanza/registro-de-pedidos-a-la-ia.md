@@ -217,6 +217,9 @@
 | 30 oct. | Corrección | Señaló que «la decisión inmediata» es el punto que hace difícil de entender toda la pregunta. | Tres propuestas que reemplazan esa frase por expresiones del propio texto: «el paso siguiente» (capítulos 2 y 7), «deja de estar presente» (resumen y capítulo 3) y «no vuelve a aparecer» (capítulo 3) | — |
 | 30 oct. | Encargo | Pidió leer completo el borrador v6 y, sobre esa base, proponer una pregunta de investigación. | Propuesta y dos variantes en la conversación, armadas con el vacío del capítulo 5, el objetivo general y las conclusiones; de esa lectura salió el desajuste de las dos partes | — |
 | 30 oct. | Encargo | Pidió explicar el desajuste entre la pregunta y las dos partes que se le atribuyen, proponer una solución y subirlo a Por hacer. | [Tarea 11](por-hacer.md#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes), con el problema, tres soluciones y una recomendación | — |
+| 30 oct. | Encargo | Entregó el PDF de la memoria que envió al profesor y pidió leerla completa, dar una opinión y decir qué se le pasó por alto, sin rastros de IA. | Revisión de las 58 páginas: trece marcas de edición visibles, la Tabla 3 que no se ve, las etiquetas cortadas de la Figura 9, la Figura 23 sin título, el índice desajustado, el Resumen distinto del Abstract y una treintena de erratas | — |
+| 30 oct. | Encargo | Pidió una crítica en el papel de la comisión, con la rúbrica y los documentos oficiales. | Crítica por las tres dimensiones ponderadas, con nueve preguntas previsibles y una nota simulada de 4,6 sobre el documento enviado | — |
+| 30 oct. | Encargo | Pidió la nota, revisar de nuevo lo revisado y dejar todos los errores en Por hacer con soluciones realistas. | [Tarea 12](por-hacer.md#12-memoria-v6-lo-que-hay-que-corregir-antes-del-pase). La segunda revisión corrigió dos diagnósticos: la Tabla 3 tiene su contenido pero se imprime invisible, y las etiquetas de la Figura 9 vienen cortadas desde el generador | — |
 
 ## Lo que muestra el registro
 
@@ -227,6 +230,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-30 — Revisión de la memoria y crítica con la rúbrica
+
+- **Qué cambió:** se registraron los tres pedidos del autor sobre la memoria enviada al profesor: la lectura completa, la crítica con la rúbrica y el traslado de los errores a Por hacer.
+- **Cómo estaba antes:** el registro terminaba en los archivos satélite de la pregunta.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-30 — Pedidos sobre la pregunta de investigación
 
