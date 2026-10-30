@@ -1956,7 +1956,33 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 16 642 palabras en los capítulos 1 a 14 (17 750 con las páginas iniciales y los índices); 77 referencias, todas citadas, y cada cita con su referencia; 17 marcadores «Confirmar»; 68 páginas, sin avisos del generador; 8,1 palabras por línea en promedio en el texto; el IDML enlaza sus 57 imágenes y declara solo los cinco estilos.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md), [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) y [letra](../08_memoria/memoria-1920x1080/letra/LEEME.md).
 
+## D-151 — La memoria se lee hacia el lado, explica cada decisión en palabras simples y su portada sigue la pauta de la Escuela
+
+- **Fecha:** 2026-10-29.
+- **Estado:** hecha en el borrador v6 y en la memoria en 1920 × 1080. El IDML no se abrió en Affinity en esta ronda.
+- **Contexto:** al revisar la quinta ronda (D-150), el autor pidió decir en palabras simples «señal de la periferia», «episodio» y la mediana; quitar los códigos de participantes entre paréntesis y las afirmaciones que no aportan; que el texto siga la columna sin cortarse y, como en una página doble, continúe hacia el lado y no debajo de una figura; criterios de diseño fáciles de entender, con su porqué y sin la convivencia; explicar por qué la decisión queda abierta; quitar el rótulo «Cita» de la pregunta, «Actores y responsabilidades», las etiquetas «Decisión.» y la tabla de estado de los objetivos; objetivos claros; contar el recorrido del usuario con un esquema simple, desde la experiencia y no pantalla por pantalla; decir lo que el sistema hace y no lo que no hace; desarrollar la referencia de Apple desde sus pautas, con la tabla de iOS en prosa; nombrar los colores con el estudio de escritura de la aplicación y llevar ese estudio a la memoria; usar lenguaje de diseñador; no nombrar «luz» si el objeto no la tiene; llamar Relevo al objeto propio; presentar Relevo Home, Relevo Go y Tag de otras marcas; no dar la fecha de inicio de cada persona; APA 7 en español verificado; su nombre completo, el logo de la Facultad en la portada y la mención en Diseño Gráfico. Preguntó si la Figura 9 es necesaria.
+- **Decisión:**
+  - **Lenguaje:** «periferia» pasa a «segundo plano»; «episodio», a «la última vez» o «sesión»; la mediana, a cuántas personas probarían la propuesta; los códigos de participantes, a cantidades, y quedan solo en el Anexo A.
+  - **Criterios:** ocho criterios con nombres que se entienden solos, cada uno con su porqué, en tres grupos —partir de la persona, dejarle las decisiones y que valga el esfuerzo—; la convivencia sale como criterio y del resto del texto.
+  - **Formulación:** la pregunta, sin rótulo; objetivos en palabras simples; sale «Actores y responsabilidades». La Figura 9 se queda: el instructivo de la Escuela pide el marco metodológico y el plan de trabajo.
+  - **Capítulo 11:** se cuenta como relato: cómo funciona Relevo, por qué un objeto y por qué la decisión queda abierta —opciones reales, rechazo a las órdenes y autonomía—; el recorrido del usuario en un esquema de cuatro momentos; la referencia de Apple a partir de sus principios de jerarquía, armonía y consistencia y de leyes de la interacción, en prosa; «Cómo habla Relevo», con la voz del estudio de escritura; los colores con las preguntas de la aplicación y en lenguaje de diseño, y el objeto sin «luz», con el nombre de Relevo. Salen la tabla de iOS y las etiquetas «Decisión.».
+  - **Producto:** Relevo Home y Relevo Go, con Tag de otras marcas, como ideas por explorar.
+  - **Prueba:** sin fechas de inicio por persona; las tres completaron las dos semanas con el Tag.
+  - **Conclusiones:** sale la tabla de estado de los objetivos; ese estado se dice en una frase.
+  - **Referencias:** 80, todas citadas. Entran Apple (2024, 2025a), Microsoft (2021) y Miller et al. (2007); sale *Meet Liquid Glass*.
+  - **Portada:** el logo FaAAD udp · Escuela de Diseño como membrete; Johan Maximiliano Yantén Acevedo; «Memoria para optar al título profesional de Diseñador, mención Diseño Gráfico», según el reglamento de titulación; modalidad Taller de Titulación; Facultad y Escuela, y Santiago, diciembre de 2026, el mes de entrega del calendario.
+  - **Composición:** el texto llena cada columna de arriba abajo y sigue hacia el lado; las tablas y figuras anchas van al pie de la página y las de una columna, al pie de su columna, de modo que el texto nunca continúa debajo de una figura; sin finales equilibrados; un subtítulo no queda solo al pie de una columna; las tablas y figuras tienen su índice en una segunda página, como exige la pauta de la Biblioteca.
+- **Alternativas descartadas:** dejar las piezas arriba de la página, que obligaba a buscar la continuación del texto bajo la figura; equilibrar los finales de sección, que cortaba columnas con espacio libre.
+- **Verificación:** 14 849 palabras en los capítulos 1 a 14 (15 927 con las páginas iniciales y los índices; el instructivo sugiere de 15 000 a 20 000); 80 referencias, todas citadas; 11 marcadores «Confirmar»; 66 páginas, sin avisos del generador; 8,1 palabras por línea; PDF de 7,2 MB (el máximo es 15); el IDML enlaza sus 58 imágenes. No se pudieron revisar memorias aprobadas de la UDP: el repositorio pide iniciar sesión.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — D-151
+
+- **Qué cambió:** se registró D-151.
+- **Cómo estaba antes:** la última decisión era D-150.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-29 — D-150
 

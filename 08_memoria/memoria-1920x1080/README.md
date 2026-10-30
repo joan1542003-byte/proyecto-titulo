@@ -1,8 +1,8 @@
 # Memoria en 1920 × 1080
 
-**Decisiones:** D-146 a D-150. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
+**Decisiones:** D-146 a D-151. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
 
-**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 68 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
+**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 66 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
 
 **Para editar en Affinity:** `memoria-relevo-1920x1080.idml`, que se abre en Affinity Publisher o InDesign. No se guarda en el repositorio, porque sus imágenes se enlazan con la ruta completa del computador donde se generó: se genera en la carpeta donde se va a trabajar. Antes, instala las tipografías de [`letra/estaticas/`](letra/estaticas/) (ver [letra](letra/LEEME.md)).
 
@@ -27,27 +27,27 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 | Letra de figuras y tablas | 20 pt en celdas y rótulos de las figuras, 19 pt en las notas (antes, 17). |
 | Cortes | Un párrafo de cinco líneas o menos no se corta. Al cortar uno, quedan al menos tres líneas arriba y pasan al menos tres a la columna siguiente, o cuatro si la siguiente está en otra página. |
 | Secciones | Cada una abre en una página nueva, con su panel de aura en la primera columna. |
-| Final de cada sección | Su última página reparte el texto en columnas del mismo alto solo si cada una queda con ocho líneas o más; con menos texto, queda en una columna. Si la sección termina en un párrafo corto y tiene tablas o figuras, la última baja a esa página. |
-| Tablas y figuras | Arriba de la página, después de su lugar en el texto, en el orden en que aparecen, con el título arriba y la nota abajo. Una tabla más alta que la página llena la primera con todas las filas que caben, y esa página no lleva texto; la continuación repite la cabecera y lleva al menos dos filas y la nota. La nota va en una columna, o en dos si es larga. |
-| Orden de lectura | Debajo de una tabla o figura, el texto ocupa al menos siete líneas por columna; si no caben, la página queda para la pieza. Una figura de una columna que espera al final de un capítulo usa una columna libre de esa página. |
-| Figuras de una columna | Los esquemas breves (Figuras 1 a 4) van dentro del texto, siempre arriba de una columna: texto, figura, texto. |
+| Final de cada sección | El texto llena cada columna de arriba abajo, sin repartirse en columnas parejas. Si la sección termina en un párrafo corto y tiene tablas o figuras, la última baja a esa página. |
+| Tablas y figuras | Al pie de la página siguiente a su mención, en el orden en que aparecen, con el título arriba y la nota abajo: el texto sigue arriba, hacia el lado, y nunca continúa debajo de una figura. Una página solo de piezas las centra en el alto. Una tabla más alta que la página llena la primera con todas las filas que caben, y esa página no lleva texto; la continuación repite la cabecera y lleva al menos dos filas y la nota. |
+| Orden de lectura | Como en una página doble: el texto llena cada columna y sigue hacia el lado. Sobre una pieza, el texto ocupa al menos siete líneas y media por columna; si no caben, la página queda para la pieza. Un subtítulo no queda solo al pie de una columna. |
+| Figuras de una columna | Los esquemas breves (Figuras 1 a 4) van al pie de la columna donde se mencionan, o de la siguiente, con el texto arriba. |
 | Imágenes | Las imágenes enteras de una figura quedan del mismo alto, en columnas proporcionales; los flujos llevan flechas; las figuras anchas usan todo el ancho. Las personas llevan el ícono de perfil. |
-| Índice | Solo las secciones, por ahora (D-145). |
-| Portada | Institución, logo, título y datos; lo que falta confirmar, en gris. |
+| Índice | Las secciones en una página, y las tablas y figuras en otra, como exige la pauta de la Biblioteca. |
+| Portada | El logo FaAAD udp · Escuela de Diseño como membrete, el logo de Relevo, el título y los datos que piden el instructivo de la Escuela y la pauta de la Biblioteca: nombre completo, título y mención, profesores guía, modalidad, Facultad y Escuela, lugar y fecha. |
 
 ## Figuras nuevas
 
 El generador dibuja once tipos de figura, que leen su contenido de la propia v6 (grupos separados por «; » y campos por « | »), y compone fotos y capturas sin recortarlas:
 
-- **Esquema en filas y columnas:** cada grupo, una columna con su cabecera y sus filas: los ocho criterios (Figura 8), la arquitectura de información de la aplicación (Figura 12) y las etapas del proyecto (Figura 16); en una columna, las ideas de McDaniel y Einstein (Figura 1), Norman (Figura 2) y Sanders y Stappers (Figura 4).
+- **Esquema en filas y columnas:** cada grupo, una columna con su cabecera y sus filas: los ocho criterios (Figura 8), el recorrido del usuario (Figura 10), la arquitectura de información (Figura 12), la voz de Relevo (Figura 13) y las etapas del proyecto (Figura 17); en una columna, las ideas de McDaniel y Einstein (Figura 1), Norman (Figura 2) y Sanders y Stappers (Figura 4).
 - **Mapa de dos ejes:** sobre qué actúan las herramientas y dónde ocurren (Figura 7).
-- **Momentos de la atención:** antes de la señal, cuando suena y cuando termina, con lo que queda en el centro y en la periferia (Figura 3).
-- **Matriz de dos por dos:** motivación y facilidad para empezar (Figura 20), a dos columnas de ancho.
+- **Momentos de la atención:** antes de la señal, cuando suena y cuando termina, con lo que queda en primer y en segundo plano (Figura 3).
+- **Matriz de dos por dos:** motivación y facilidad para empezar (Figura 21), a dos columnas de ancho.
 - **Cronología:** el proceso del proyecto, de marzo a octubre (Figura 9).
-- **Lámina de identidad:** logo, luces, letra e íconos, cada uno en su ficha blanca (Figura 13).
-- **Prueba aplicada:** las cuatro etapas de la prueba en los hogares (Figura 17).
-- **Resultados por persona:** un punto por respuesta, lleno si declaró haber empezado (Figura 19).
-- **Fotos y modelos:** el Tag durante la prueba (Figura 14) y el hardware de Relevo en 3D (Figura 15), con su pie numerado.
+- **Lámina de identidad:** logo, colores con las preguntas de la aplicación, letra e íconos, cada uno en su ficha blanca (Figura 14).
+- **Prueba aplicada:** las cuatro etapas de la prueba en los hogares (Figura 18).
+- **Resultados por persona:** un punto por respuesta, lleno si declaró haber empezado (Figura 20).
+- **Fotos y modelos:** el Tag durante la prueba (Figura 15) y Relevo en 3D (Figura 16), con su pie numerado.
 - **Gráfico de barras:** opiniones de la encuesta (Figura 6), con barras horizontales y el número al lado.
 - **Flujo con flechas:** el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 11); las 39 pantallas están en el Anexo F.
 
@@ -61,6 +61,7 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Verificación
 
+- **Sexta ronda, el 29 de octubre de 2026:** 66 páginas, sin avisos del generador; el texto llena cada columna y sigue hacia el lado, sin continuar debajo de una figura; ningún subtítulo queda solo al pie de una columna. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 7 de 1521 líneas pasan de 12, por cifras. PDF de 7,2 MB (el máximo del instructivo es 15). El IDML enlaza sus 58 imágenes.
 - **Quinta ronda, el 29 de octubre de 2026:** 68 páginas, sin avisos del generador; ninguna tabla partida deja texto entre sus partes, y bajo cada pieza el texto ocupa al menos siete líneas por columna. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 11 de 1686 líneas pasan de 12, por cifras. El IDML enlaza sus 57 imágenes y declara solo los cinco estilos de Instrument Sans.
 - **Cuarta ronda, el 28 de octubre de 2026:** 72 páginas, sin avisos del generador; ninguna columna con una o dos líneas y ningún final de párrafo solo en otra página. Las páginas que solo tienen una tabla o una figura la centran en el alto. Texto: 8,1 palabras por línea en promedio; 9 de 1825 líneas pasan de 12, por cifras.
 - **Tercera ronda, el 28 de octubre de 2026:** 69 páginas, sin avisos del generador; ninguna sección termina en una columna sola. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 8 de 1843 líneas pasan de 12, por cifras.
@@ -77,6 +78,12 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 - La Biblioteca exige los índices de tablas y de figuras para el depósito.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Sexta ronda
+
+- **Qué cambió:** el texto llena cada columna y sigue hacia el lado; las tablas y figuras anchas van al pie de la página y las de una columna, al pie de su columna; sin finales equilibrados; un subtítulo no queda solo al pie; la pregunta de investigación, sin rótulo; la Figura 3 en primer y segundo plano; la identidad con las preguntas de la aplicación; la prueba aplicada sin letras de condiciones; portada con el logo de la Escuela y los datos del instructivo; índice de tablas y figuras en una segunda página.
+- **Cómo estaba antes:** las piezas iban arriba de la página y el texto seguía debajo; los finales de sección se repartían en columnas parejas; la portada llevaba la institución en texto y el índice, solo las secciones.
+- **Por qué:** pedido del autor del 29 de octubre de 2026 (D-151).
 
 ### 2026-10-29 — Quinta ronda
 

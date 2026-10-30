@@ -85,6 +85,7 @@ const E = {
   'Índice': { tamano: 14, interlineado: 18, estilo: 'SemiBold' },
   'Índice página': { tamano: 14, interlineado: 18, estilo: 'SemiBold', color: 'Color/Gris', alineacion: 'RightAlign' },
   'Índice menor': { tamano: 11, interlineado: 15, estilo: 'Medium' },
+  'Índice rótulo': { tamano: 11, interlineado: 15, estilo: 'SemiBold' },
   'Índice menor página': { tamano: 11, interlineado: 15, estilo: 'SemiBold', color: 'Color/Gris', alineacion: 'RightAlign' },
   'Encabezado': { tamano: 11, interlineado: 14, estilo: 'SemiBold', color: 'Color/Gris' },
   'Encabezado sección': { tamano: 11, interlineado: 14, estilo: 'SemiBold', alineacion: 'RightAlign' },
@@ -353,16 +354,16 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .idx{display:grid;grid-template-columns:${COL}mm ${COL}mm;column-gap:${MED}mm;align-items:start}
 .idx .ih{margin-bottom:5.5mm}.idx .ih.dos{margin-top:8mm}
 .ir{display:grid;grid-template-columns:auto 1fr 12mm;align-items:center;column-gap:3.5mm;background:#fff;border-radius:4.4mm;padding:1.5mm 4.5mm 1.5mm 1.8mm;margin-bottom:1.7mm;min-height:11.5mm}
-.ir.m{padding:1.9mm 4.5mm 1.9mm 2.2mm;min-height:10.2mm}
+.ir.m{padding:1.9mm 4.5mm 1.9mm 3.2mm;min-height:10.2mm}.ir .irl{min-width:19mm}
 .fic.vacia{background:#fff;border:.3mm solid #E4DED6}
 .anx{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm ${MED}mm;align-items:start}
 .anexo{display:grid;grid-template-columns:12mm 1fr;gap:4mm;background:#fff;border-radius:5.5mm;padding:4.5mm 5mm 5mm 4.5mm}
 .anexo .fic{width:12mm;font-size:14pt}                                  /* la letra sola: sin cuadro de color dentro de la ficha blanca */
 .portada{width:${W}mm;height:${H}mm;position:relative}
-.portada .p-inst{position:absolute;left:22mm;top:18mm;width:160mm}
+.portada .p-inst{position:absolute;left:22mm;top:18mm}.portada .p-inst img{height:15mm;width:auto;display:block}
 .portada .p-marca{position:absolute;left:22mm;top:44mm;width:130mm}.portada .p-marca svg{width:100%;height:auto;display:block}
 .portada .p-tit{position:absolute;left:22mm;top:88mm;width:230mm}
-.portada .p-datos{position:absolute;left:22mm;bottom:18mm;width:${COL + 45}mm}
+.portada .p-datos{position:absolute;left:22mm;bottom:18mm;width:300mm}
 `;
 
 /** Guarda un PDF con el cuerpo dado, del tamaño exacto de la pieza. */
@@ -646,8 +647,8 @@ function matriz2(b, T) {
 /** Momentos de la atención: «Momento | lo que está en el centro | lo que queda en la periferia», uno por fila. */
 function atencion(b, T) {
   return `<div class="at">${partes(b).map(([tit, cen, per], i) => `<div class="at-p"><div class="at-h">${circulo(i + 1)}${T('Celda primera', tit)}</div>` +
-    `<div class="at-f"><span class="at-m c"></span>${T('Celda suave', 'En el centro de la atención')}${T('Celda', cen)}</div>` +
-    `<div class="at-f"><span class="at-m p"></span>${T('Celda suave', 'En la periferia')}${T('Celda', per)}</div></div>`).join('')}</div>`;
+    `<div class="at-f"><span class="at-m c"></span>${T('Celda suave', 'En primer plano')}${T('Celda', cen)}</div>` +
+    `<div class="at-f"><span class="at-m p"></span>${T('Celda suave', 'En segundo plano')}${T('Celda', per)}</div></div>`).join('')}</div>`;
 }
 
 /** Gráfico de barras horizontales, uno por grupo: «Título | etiqueta: valor, etiqueta: valor». */
@@ -679,12 +680,12 @@ function cronologia(b, T) {
 /** La prueba aplicada: una etapa por tarjeta, con su fecha, su nombre y lo que ocurre. */
 function pruebaAplicada(b, T) {
   const etapas = partes(b); const color = ['Lima', 'Cielo', 'Amarillo', 'Rubor'];
-  return `<div class="fig4" style="grid-template-columns:repeat(${etapas.length},1fr)">${etapas.map(([f, tit, tx], i) => `<div class="etapa" style="background:${i === 0 || i === etapas.length - 1 ? rgb(color[i ? 3 : 0]) : '#fff'}">${T('Celda cabecera', f)}${T('Celda primera', tit)}${T('Celda', tx)}${i === 1 || i === 2 ? `<span class="conds"><u style="background:${rgb(color[i])}">${i === 1 ? 'A' : 'C'}</u></span>` : ''}</div>`).join('')}</div>`;
+  return `<div class="fig4" style="grid-template-columns:repeat(${etapas.length},1fr)">${etapas.map(([f, tit, tx], i) => `<div class="etapa" style="background:${i === 0 || i === etapas.length - 1 ? rgb(color[i ? 3 : 0]) : '#fff'}">${T('Celda cabecera', f)}${T('Celda primera', tit)}${T('Celda', tx)}</div>`).join('')}</div>`;
 }
 
 /** La identidad en una lámina: logo, las cuatro luces con su papel, la letra y una muestra de íconos. */
 function identidad(T) {
-  const luces = [['#FFD54A', 'tiempo', 'Tu tiempo'], ['#9DD6F4', 'primer-paso', 'Tu primer paso'], ['#B3E788', 'lugar', 'El lugar'], ['#F6A3CB', 'decidir', 'Lo que decides']];
+  const luces = [['#FFD54A', 'tiempo', '¿Cuándo suena?'], ['#9DD6F4', 'primer-paso', '¿Cómo empiezas?'], ['#B3E788', 'lugar', '¿Dónde empiezas?'], ['#F6A3CB', 'decidir', '¿Qué decidiste?']];
   const iconos = ['tag', 'suena', 'primer-paso', 'lugar', 'tiempo', 'leer', 'dibujar', 'decidir'];
   return `<div class="idn"><div class="blanco idn-logo">${lockup()}</div>` +
     `<div class="idn-luces">${luces.map(([c, ic, tx]) => `<div class="idn-luz"><span class="cuad" style="background:${c}">${svgIcono(ic)}</span><div class="tx">${T('Celda primera', tx)}${T('Celda cabecera', c)}</div></div>`).join('')}</div>` +
@@ -733,7 +734,7 @@ const entradas = [
   { titulo: 'Resumen', aura: 'panel-2', bloques: entradaDe('Resumen', /^Palabras clave/) },
   { titulo: 'Abstract', aura: 'panel-4', bloques: entradaDe('Abstract', /^Keywords/) },
 ].filter((e) => e.bloques);
-const PRIMERA = entradas.length + 3;                                  // portada + entradas + índice; número de la primera página del cuerpo
+const PRIMERA = entradas.length + 4;                                  // portada + entradas + dos páginas de índice; número de la primera página del cuerpo
 
 fs.mkdirSync(GEN, { recursive: true });
 for (const f of fs.readdirSync(GEN)) fs.unlinkSync(path.join(GEN, f));
@@ -751,16 +752,16 @@ flot.forEach((b) => {
 const frases = cuerpo.flatMap((c) => c.bloques.filter((b) => b.frase));
 const aurasFrase = fs.readdirSync(AURAS).filter((f) => /^frase-/.test(f)).sort((a, b) => parseInt(a.split('-')[2], 10) - parseInt(b.split('-')[2], 10));
 frases.forEach((b, i) => {
-  b.pieza = pieza(`frase-${i + 1}`, COL, (T) => `<div class="frase"><img class="fondo" src="figuras/aura/${aurasFrase[i % aurasFrase.length]}" alt=""><span class="pil blanca">${h(b.rotulo)}</span>${T('Frase', b.partes)}</div>`);
+  b.pieza = pieza(`frase-${i + 1}`, COL, (T) => `<div class="frase"><img class="fondo" src="figuras/aura/${aurasFrase[i % aurasFrase.length]}" alt="">${b.rotulo === 'Hipótesis' ? `<span class="pil blanca">${h(b.rotulo)}</span>` : ''}${T('Frase', b.partes)}</div>`);
 });
 const subtitulo = (portada[0] || '').replace(/ (?=intenciones |durante )/g, '\n').split('\n');
 // Portada limpia: institución, logo, título y datos. Lo que falta confirmar va en gris, sin resaltar.
 const enGris = (partes) => partes.map((r) => (r.estilo === 'Confirmar' ? { ...r, estilo: 'Pendiente' } : r));
 const pPortada = pieza('portada', W, (T) => `<div class="portada">
-<div class="p-inst">${inicio.map((l) => T('Portada institución', l)).join('')}</div>
+<div class="p-inst"><img src="figuras/faad-escuela-diseno.svg" alt=""></div>
 <div class="p-marca">${lockup()}</div>
 <div class="p-tit">${subtitulo.map((l) => T('Portada título', l)).join('')}</div>
-<div class="p-datos">${portada.slice(1).map((l) => T('Portada dato', enGris(tramos(l)))).join('')}</div></div>`);
+<div class="p-datos">${[...portada.slice(1, -1), ...inicio.slice(1), ...portada.slice(-1)].map((l) => T('Portada dato', enGris(tramos(l)))).join('')}</div></div>`);
 const pAnexos = pieza('anexos', DOBLE, (T) => `<div class="anx">${anexos.map((m) => `<div class="anexo"><span class="fic">${m[1]}</span>${T('Celda', m[2])}</div>`).join('')}</div>`);
 
 // Primera medida: cada párrafo en su columna y cada pieza.
@@ -811,10 +812,11 @@ flot.forEach((b) => { if (b.pieza.alto > BOTTOM - TOP) console.log(`Atención: l
 
 let paginas = [];                                      // páginas del cuerpo
 const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, flot: [], paneles: [], frases: [], marcos: [], rotulo: null, rotuloPieza: null }); return paginas[i]; };
-const colTop = (i) => TOP + (pag(i).banda ? pag(i).banda + AIRE_BANDA : 0);
+const colTop = () => TOP;                              // el texto empieza siempre arriba y sigue hacia el lado
+const colBot = (i) => BOTTOM - (pag(i).banda ? pag(i).banda + AIRE_BANDA : 0);   // las piezas anchas, al pie
 let topes = new Map();                                 // sección → página (desde su apertura) y alto máximo de sus columnas, para equilibrar su final
-const altoCol = (i, c) => { const t = c && topes.get(c); return Math.min(BOTTOM - colTop(i), t && i - c.pagina === t.rel ? t.alto : Infinity); };
-const soloPiezas = (i) => pag(i).sola || (pag(i).banda > 0 && BOTTOM - colTop(i) < MIN_TEXTO);
+const altoCol = (i) => colBot(i) - TOP;
+const soloPiezas = (i) => pag(i).sola || (pag(i).banda > 0 && colBot(i) - TOP < MIN_TEXTO);
 let cur = { p: 0, k: 0 };                              // la primera columna libre
 const normalizar = () => { while (soloPiezas(cur.p)) { cur.p++; cur.k = 0; } };
 const siguiente = () => { cur.k++; if (cur.k === 3) { cur.k = 0; cur.p++; } normalizar(); };
@@ -823,8 +825,8 @@ let ultimaConPieza = 0;
 
 function ubicar(b, q, seccion) {
   const pg = pag(q);
-  b.pagina = q; b.y = TOP + (pg.banda ? pg.banda + AIRE_PIEZAS : 0);
-  pg.banda = b.y - TOP + b.pieza.alto; pg.flot.push(b); if (!pg.rotulo) pg.rotuloPieza = seccion;
+  b.pagina = q; b.yRel = pg.banda ? pg.banda + AIRE_PIEZAS : 0;   // dentro del pie de la página
+  pg.banda = b.yRel + b.pieza.alto; pg.flot.push(b); if (!pg.rotulo) pg.rotuloPieza = seccion;
   if (b.sola) pg.sola = true;                         // la primera parte de una tabla partida va sola
 }
 /** Una tabla o figura va arriba de la página siguiente a su mención; si no cabe con las que ya hay, en la que sigue. */
@@ -852,26 +854,31 @@ function componer(c) {
 
   c.marcos = [];
   let y = 0, marco = null, previo = null;              // y: puntos desde arriba de la columna
-  const cap = () => altoCol(cur.p, c) / PT;
+  let fondo = 0, alPie = [];                            // alto reservado al pie de la columna y sus figuras
+  const cap = () => altoCol(cur.p) / PT - fondo;
   const abrir = () => {
     if (marco) return;
     marco = { c, p: cur.p, k: cur.k, y0: y, usado: 0, cont: [] };
     c.marcos.push(marco); pag(cur.p).marcos.push(marco); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c;
   };
-  const espera = [];                                    // figuras de una columna que esperan el comienzo de la siguiente
-  const poner = (b) => {
-    const a = b.pieza.alto / PT;
-    pag(cur.p).frases.push({ b, k: cur.k, y: colTop(cur.p) + y * PT }); if (!pag(cur.p).rotulo) pag(cur.p).rotulo = c; b.pagina = cur.p;
-    marco = null; previo = null; y += a + 16;
+  // Una figura de una columna va al pie de la columna donde se menciona, bajo el texto; si no cabe, al pie de la
+  // siguiente. Así el texto sigue arriba, hacia el lado, y nunca continúa debajo de una figura.
+  const espera = [];
+  const reservar = (b) => { alPie.push({ b, p: cur.p, k: cur.k }); fondo += b.pieza.alto / PT + 16; };
+  const asentar = () => {
+    if (!alPie.length) return;
+    let yy = colBot(alPie[0].p) - alPie.reduce((t, x) => t + x.b.pieza.alto, 0) - (alPie.length - 1) * 16 * PT;
+    alPie.forEach((x) => { pag(x.p).frases.push({ b: x.b, k: x.k, y: yy }); x.b.pagina = x.p; if (!pag(x.p).rotulo) pag(x.p).rotulo = c; yy += x.b.pieza.alto + 16 * PT; });
+    alPie = []; fondo = 0;
   };
   const saltar = () => {
-    marco = null; previo = null; siguiente(); y = 0;
-    while (espera.length && y + espera[0].pieza.alto / PT <= cap() + 0.5) poner(espera.shift());   // la segunda, solo si cabe debajo de la primera
+    asentar(); marco = null; previo = null; siguiente(); y = 0;
+    while (espera.length && espera[0].pieza.alto / PT + 16 <= cap() + 0.5) reservar(espera.shift());
   };
   const textos = c.bloques.filter((b) => b.partes && !b.frase);
   for (const b of c.bloques) {
     if (b.flotante && !b.columna) { programar(b, cur.p, c); continue; }
-    if (b.columna) { if (y === 0) poner(b); else espera.push(b); continue; }
+    if (b.columna) { if (!espera.length && y + 16 + b.pieza.alto / PT <= cap() + 0.5) reservar(b); else espera.push(b); continue; }
     if (b.frase) {
       const a = b.pieza.alto / PT; const antes = y > 0 ? 5 : 0;
       if (y + antes + a > cap() + 0.5) saltar(); else y += antes;
@@ -882,12 +889,14 @@ function componer(c) {
     const titulo = b.estilo in AIRE_SUBTITULO;
     const sig = textos[textos.indexOf(b) + 1];
     // Una frase destacada viaja con el párrafo corto que la anuncia: si no caben juntos, saltan juntos.
-    const anuncia = (x) => x && x.lineas <= 3 && (c.bloques[c.bloques.indexOf(x) + 1] || {}).frase ? x.lineas * E[x.estilo].interlineado + (E[x.estilo].despues || 0) + 5 + c.bloques[c.bloques.indexOf(x) + 1].pieza.alto / PT : 0;
+    const anuncia = () => 0;                            // la frase destacada no arrastra a su párrafo: el texto llena la columna
     if (titulo) {
       // Un subtítulo necesita sitio para sí y para dos líneas de lo que sigue; arriba de una columna no lleva aire.
       const aire = previo ? AIRE_SUBTITULO[b.estilo] : 0;
       // Un subtítulo pide sitio para el primer trozo que de verdad puede quedar debajo: el párrafo entero si es corto, o tres líneas.
-      const pide = aire + n * L + despues + (anuncia(sig) || (sig ? (sig.lineas < 6 ? sig.lineas : 3) * E[sig.estilo].interlineado : 0));
+      // El primer trozo que de verdad puede quedar: el párrafo entero si no se puede cortar aquí (al pasar de página lleva cuatro líneas).
+      const minimo = (x) => { const lleva = cur.k === 2 ? 4 : 3; return x.lineas < 6 || x.lineas - lleva < 3 ? x.lineas : 3; };
+      const pide = aire + n * L + despues + (anuncia(sig) || (sig ? minimo(sig) * E[sig.estilo].interlineado : 0));
       if (y + pide > cap() + 0.5 && y > 0) {
         // Al saltar pueden entrar figuras que esperaban: si el subtítulo ya no cabe con dos líneas debajo, salta otra vez.
         saltar(); for (let v = 0; v < 6 && y > 0 && y + pide - aire > cap() + 0.5; v++) saltar();
@@ -908,13 +917,13 @@ function componer(c) {
       if (resto > 0) saltar(); else { y += despues; previo = b; }
     }
   }
-  // Una figura de una columna que quedó esperando al final de la sección va debajo del texto, si cabe, o arriba de la columna siguiente.
-  const libre = () => (BOTTOM - colTop(cur.p)) / PT;  // el alto entero de la columna: el final equilibrado limita solo al texto
+  // Una figura de una columna que quedó esperando al final de la sección va al pie de la columna actual, si cabe, o de la siguiente.
   for (let vueltas = 0; espera.length && vueltas < 12; vueltas++) {
-    if (y + 5 + espera[0].pieza.alto / PT <= libre() + 0.5) { if (y > 0) y += 5; poner(espera.shift()); } else saltar();
+    if (y + 16 + espera[0].pieza.alto / PT <= cap() + 0.5) reservar(espera.shift()); else saltar();
   }
+  const conPie = alPie.length > 0; asentar();
   if (c.marcos.length) c.marcos[c.marcos.length - 1].ultimo = true;
-  if (marco || y > 0) siguiente();
+  if (marco || y > 0 || conPie) siguiente();
 }
 /** Una página de entrada (resumen, abstract): su texto, en las columnas dadas, con las mismas reglas de viudas. */
 function fluir(c, xs) {
@@ -982,49 +991,8 @@ const colaDe = (c) => { const q = Math.max(...c.marcos.map((m) => m.p)); const m
   });
   if (cambio) pgAnexos = repartir();
 }
-// Después, la última página de cada sección reparte su texto en columnas del mismo alto: una columna sola se abre
-// en dos o en tres, para que ninguna quede sola con poco texto.
-{
-  const LINEA = 22 * PT;
-  const deseado = (c) => {
-    const { q, ms, total } = colaDe(c); const lleno = BOTTOM - colTop(q);
-    const lineas = total / LINEA, libres = q === c.pagina ? 2 : 3;   // en la página de apertura, el panel ocupa una columna
-    const k = Math.min(libres, Math.max(1, Math.floor(lineas / 8)));   // cada columna, con ocho líneas o más: menos texto queda en una
-    return k > 1 ? { rel: q - c.pagina, alto: Math.min(lleno, total / k + LINEA) } : null;   // una línea de holgura; si no alcanza, se afloja
-  };
-  // El tope de cada sección se guarda respecto de su primera página, para que no cambie si otra sección se alarga.
-  topes = new Map(); cuerpo.forEach((c) => { const d = deseado(c); if (d) topes.set(c, d); });
-  pgAnexos = repartir();
-  // Si un tope empuja texto a una página nueva, se afloja dos líneas y se reparte de nuevo; si ya no puede
-  // aflojarse, se quita. Una sección cuya última página cambió, y que no tiene tope, recibe uno.
-  const quitados = new Set();
-  for (let intento = 0; intento < 10; intento++) {
-    let cambio = false;
-    for (const [c, t] of [...topes]) {
-      const { q, ms } = colaDe(c); const rel = q - c.pagina;
-      if (rel === t.rel) {
-        const ultima = ms[ms.length - 1];
-        const total = ms.reduce((x, m) => x + m.usado, 0) * PT;
-        if (ms.length > 1 && total >= 3 * LINEA * ms.length && ultima.usado * PT < 3 * LINEA - 0.5 && t.alto + LINEA < BOTTOM - colTop(q)) { topes.set(c, { rel: t.rel, alto: t.alto + LINEA }); cambio = true; }
-        continue;
-      }
-      const lleno = BOTTOM - colTop(c.pagina + t.rel);
-      if (rel > t.rel && t.alto + 2 * LINEA < lleno) topes.set(c, { rel: t.rel, alto: t.alto + 2 * LINEA });
-      else { topes.delete(c); quitados.add(c); }
-      cambio = true;
-    }
-    cuerpo.forEach((c) => {
-      const ultima = Math.max(...c.marcos.map((m) => m.p));
-      c.bloques.filter((b) => b.flotante && !b.columna && !b.alFinal && b.rel && c.pagina + b.rel > ultima && ultima > c.pagina).forEach((b) => { b.rel = ultima - c.pagina; cambio = true; });
-    });
-    cuerpo.forEach((c) => {
-      if (topes.has(c) || quitados.has(c)) return;
-      const d = deseado(c); if (d && colaDe(c).ms.length === 1) { topes.set(c, d); cambio = true; }
-    });
-    if (!cambio) break;
-    pgAnexos = repartir();
-  }
-}
+// Los finales de sección no se equilibran: el texto llena cada columna de arriba abajo, como en una página doble,
+// y sigue hacia el lado (pedido del autor del 29 de octubre de 2026).
 pag(pgAnexos).rotulo = { titulo: 'Anexos' };
 const total = Math.max(pgAnexos, ultimaConPieza) + 1; pag(total - 1);
 paginas.forEach((pg, q) => { if (!pg.rotulo) pg.rotulo = pg.rotuloPieza || (paginas.slice(0, q).reverse().find((x) => x.rotulo) || {}).rotulo; });
@@ -1043,7 +1011,15 @@ const pIndice = pieza('indice', DOBLE, (T) => {
   const piezas = (tipo, nombre) => flot.filter((b) => b.flotante === tipo && !b.continua).map((b) => menor(`${nombre} ${b.n}`, b.titulo, numPag(b.pagina))).join('');
   return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Capítulos')}</div>${filas.join('')}</div><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${piezas('tabla', 'Tabla')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${piezas('figura', 'Figura')}</div></div>`;
 });
-{ const m = medir([pIndice]); pIndice.alto = m.indice; pIndice.donde = m['indice#']; }
+const pIndice2 = pieza('indice-piezas', DOBLE, (T) => {
+  const fila = (b, nombre) => `<div class="ir m"><span class="irl">${T('Índice rótulo', `${nombre} ${b.n}`)}</span>${T('Índice menor', b.titulo)}${T('Índice menor página', String(numPag(b.pagina)))}</div>`;
+  const tablas = flot.filter((b) => b.flotante === 'tabla' && !b.continua).map((b) => fila(b, 'Tabla'));
+  const figuras = flot.filter((b) => b.flotante === 'figura').map((b) => fila(b, 'Figura'));
+  const k = Math.max(0, Math.ceil((tablas.length + figuras.length + 2) / 2) - tablas.length - 2);
+  return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${tablas.join('')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${figuras.slice(0, k).join('')}</div><div><div class="ih">${T('Subtítulo', ' ')}</div>${figuras.slice(k).join('')}</div></div>`;
+});
+{ const m = medir([pIndice, pIndice2]); pIndice.alto = m.indice; pIndice.donde = m['indice#']; pIndice2.alto = m['indice-piezas']; pIndice2.donde = m['indice-piezas#']; }
+if (pIndice2.alto > BOTTOM - TOP) console.log(`Atención: el índice de tablas y figuras mide ${Math.round(pIndice2.alto)} mm y no cabe en su página.`);
 if (pIndice.alto > BOTTOM - TOP) console.log(`Atención: el índice mide ${Math.round(pIndice.alto)} mm y no cabe en su página.`);
 if (pAnexos.alto > BOTTOM - TOP) console.log(`Atención: los anexos miden ${Math.round(pAnexos.alto)} mm y no caben en su página.`);
 
@@ -1059,15 +1035,17 @@ entradas.forEach((e) => {
   hojas.push({ rotulo: e.titulo, items: [panelDe(e, colX(0), TOP, BOTTOM - TOP), ...e.marcos.map((m) => ({ tipo: 'marco', marco: m }))] });
 });
 hojas.push({ rotulo: 'Índice', items: [panelDe({ titulo: 'Índice', aura: 'panel-5' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pIndice, x: colX(1), y: TOP, nombre: 'Índice' }] });
+hojas.push({ rotulo: 'Índice', items: [panelDe({ titulo: 'Tablas y figuras', aura: 'panel-5' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pIndice2, x: colX(1), y: TOP, nombre: 'Índice de tablas y figuras' }] });
 paginas.forEach((pg, q) => {
   const items = [];
   // Una página solo de tablas o figuras las centra en el alto, para que no quede un hueco abajo.
-  const baja = !pg.marcos.length && !pg.paneles.length && !pg.frases.length && pg.flot.length ? Math.max(0, (BOTTOM - TOP - pg.banda) / 2) : 0;
-  pg.flot.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: MX, y: b.y + baja, nombre: `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}` }));
+  const sinTexto = !pg.marcos.length && !pg.paneles.length && !pg.frases.length;
+  const y0 = sinTexto ? TOP + Math.max(0, (BOTTOM - TOP - pg.banda) / 2) : BOTTOM - pg.banda;
+  pg.flot.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: MX, y: y0 + b.yRel, nombre: `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}` }));
   pg.paneles.forEach((pn) => items.push(panelDe(pn.c, colX(pn.k), pn.y, pn.alto)));
   pg.frases.forEach((f) => items.push({ tipo: 'pieza', pieza: f.b.pieza, x: colX(f.k), y: f.y, nombre: f.b.rotulo }));
   pg.marcos.forEach((m) => {
-    if (m.x == null) { m.x = colX(m.k); m.y = colTop(m.p) + m.y0 * PT; m.ancho = COL; m.alto = m.ultimo ? BOTTOM - m.y : Math.min(BOTTOM - m.y, m.usado * PT + HOLGURA); }
+    if (m.x == null) { m.x = colX(m.k); m.y = colTop(m.p) + m.y0 * PT; m.ancho = COL; m.alto = m.ultimo ? colBot(m.p) - m.y : Math.min(colBot(m.p) - m.y, m.usado * PT + HOLGURA); }
     items.push({ tipo: 'marco', marco: m });
   });
   if (q === pgAnexos) items.push(panelDe({ titulo: 'Anexos', aura: 'panel-32' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pAnexos, x: colX(1), y: TOP, nombre: 'Anexos' });

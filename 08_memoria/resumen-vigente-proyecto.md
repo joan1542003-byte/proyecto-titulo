@@ -17,7 +17,7 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
 
 ## Qué existe hoy
 
-- **Investigación:** 8 entrevistas analizadas con el método Framework, una encuesta de 53 respuestas (D-092), comparación de referentes, 77 referencias en la memoria v6 y 8 criterios de diseño.
+- **Investigación:** 8 entrevistas analizadas con el método Framework, una encuesta de 53 respuestas (D-092), comparación de referentes, 80 referencias en la memoria v6 y 8 criterios de diseño.
 - **App Android:**
   - La 2.33, para el testeo (D-138): la 2.32, en que el Tag se calla con confirmación, muestra su pila y no se desconecta con su alarma encendida (D-137), con una semana para comparar con el teléfono.
   - La 3.3, con la línea visual aprobada (D-131) y todo lo que suman la 2.31 a la 2.33 (D-138).
@@ -30,7 +30,7 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
   - Los datos de dos personas los entregaron ellas, en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla. Se unen con [unir-datos.js](../07_validacion/analisis/README.md).
   - Las dos primeras semanas usaron el Tag a su gusto, cuando quisieron; la última, la señal llega solo como notificación en el teléfono, sin el Tag (app 2.33, D-138), y termina el 30 de octubre con un cuestionario en papel y una entrevista.
   - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
-- **Memoria:** borrador v6 con 16 642 palabras en los capítulos 1 a 14, reescrito en torno a las decisiones de diseño (D-146 a D-150), con 20 figuras y 6 tablas, y diagramado en [1920 × 1080](memoria-1920x1080/README.md) (68 páginas), con su IDML para Affinity. Tiene 17 datos por confirmar. Sus nueve [anexos](anexos/README.md), de la A a la I, están armados en Markdown, HTML y PDF desde el 24 de octubre.
+- **Memoria:** borrador v6 con 14 849 palabras en los capítulos 1 a 14, reescrito en torno a las decisiones de diseño (D-146 a D-151), con 21 figuras y 4 tablas, y diagramado en [1920 × 1080](memoria-1920x1080/README.md) (66 páginas), con su IDML para Affinity. Tiene 11 datos por confirmar. Sus nueve [anexos](anexos/README.md), de la A a la I, están armados en Markdown, HTML y PDF desde el 24 de octubre.
 - **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
 
 ## Qué falta
@@ -45,6 +45,12 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Sexta ronda de la v6
+
+- **Qué cambió:** la memoria tiene 14 849 palabras, 21 figuras, 4 tablas, 80 referencias y 11 datos por confirmar, en 66 páginas.
+- **Cómo estaba antes:** 16 642 palabras, 20 figuras, 6 tablas, 77 referencias y 17 datos por confirmar, en 68 páginas.
+- **Por qué:** la memoria cambió y este resumen debe coincidir con ella (D-151).
 
 ### 2026-10-29 — Memoria v6
 

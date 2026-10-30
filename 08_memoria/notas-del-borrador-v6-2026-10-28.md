@@ -1,6 +1,6 @@
 # Notas del borrador v6
 
-**Fecha:** 28 de octubre de 2026. **Decisiones:** D-146 a D-150. **Borrador:** [borrador-memoria-v6-2026-10-28.md](borrador-memoria-v6-2026-10-28.md). **Versión diseñada:** [memoria en 1920 × 1080](memoria-1920x1080/README.md).
+**Fecha:** 28 de octubre de 2026. **Decisiones:** D-146 a D-151. **Borrador:** [borrador-memoria-v6-2026-10-28.md](borrador-memoria-v6-2026-10-28.md). **Versión diseñada:** [memoria en 1920 × 1080](memoria-1920x1080/README.md).
 
 ## Por qué hay una v6
 
@@ -82,9 +82,22 @@ El 29 de octubre, el autor entregó sus «Notas memoria». Cambios:
 - **Glosario:** salen Autoinforme, Efecto techo, Emulador, Fidelidad y Testigo, que ya no se usan.
 - Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
 
+## Sexta ronda: palabras simples, criterios claros y lectura hacia el lado (D-151)
+
+El mismo 29 de octubre, el autor revisó la quinta ronda. Cambios:
+
+- **Lenguaje:** «periferia» pasa a «segundo plano»; «episodio», a «la última vez» o «sesión»; la mediana, a cuántas personas probarían la propuesta; los códigos de participantes, a cantidades («dos personas»). Salen la convivencia y las afirmaciones que no aportan.
+- **Capítulo 9:** ocho criterios con nombres que se entienden solos y su porqué, en tres grupos: partir de la persona, dejarle las decisiones y que valga el esfuerzo.
+- **Capítulo 10:** la pregunta sin rótulo, objetivos en palabras simples y sin «Actores y responsabilidades». La Figura 9 se queda, porque el instructivo pide el plan de trabajo.
+- **Capítulo 11:** reescrito como relato, con el recorrido del usuario en un esquema (Figura 10), por qué la decisión queda abierta, la referencia de Apple en prosa —jerarquía, armonía y consistencia— y «Cómo habla Relevo» a partir del estudio de escritura de la aplicación (Figura 13). Salen la tabla de iOS, las etiquetas «Decisión.» y la «luz»; el objeto propio se llama Relevo.
+- **Capítulos 12 a 14:** Relevo Home y Relevo Go, con Tag de otras marcas, como ideas por explorar; sin fechas de inicio por persona; sin la tabla de estado de los objetivos.
+- **Portada:** nombre completo, título y mención según el reglamento, modalidad, Facultad y Escuela, y el logo de la Escuela.
+- **Referencias:** 80, todas citadas (entran Apple 2024 y 2025a, Microsoft 2021 y Miller et al. 2007; sale *Meet Liquid Glass*).
+- Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
+
 ## Extensión
 
-Capítulos 1 a 14: 16 642 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 750 (límite: 20 000). Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 14 849 palabras; con portada, agradecimientos, resumen, abstract e índices, 15 927. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -97,20 +110,24 @@ Lo nuevo sale de documentos del repositorio, no de memoria:
 
 ## Lo que solo el autor puede completar
 
-Hay 17 marcadores `[CONFIRMAR: …]`. Los nuevos son tres:
-
-- otras razones para preferir el lenguaje de iOS (capítulo 11);
-- por qué las actividades dejaron las fotos (capítulo 11);
-- el detalle por persona de las demás respuestas, que da `unir-datos.js` (capítulo 13).
+Hay 11 marcadores `[CONFIRMAR: …]`. Desde la sexta ronda ya no hacen falta los del nombre legal, la denominación del título, las razones para preferir el lenguaje de Apple, las fotos de las actividades, la autoría de las fotos de la prueba y las medidas del Tag. Sigue abierto, entre otros, el detalle por persona de las demás respuestas, que da `unir-datos.js` (capítulo 13).
 
 ## Pendiente
 
+- **Fotos de la prueba:** la memoria ya no lo menciona, pero las personas deben haber autorizado su publicación.
+- **Etapas tempranas:** si hay bocetos o fotos del objeto anterior, sumarlos al capítulo 11.
 - **Anexo I:** sumar el instrumento de cierre del 30 de octubre.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
 - **Aplicación:** implementar lo que la Tabla 5 marca «Por implementar» y decidir las «Propuestas».
 - **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-10-29 — Sexta ronda
+
+- **Qué cambió:** se añadió la sexta ronda (D-151) y se actualizaron la extensión, los marcadores y lo pendiente.
+- **Cómo estaba antes:** las notas llegaban a la quinta ronda, con 17 marcadores.
+- **Por qué:** pedido del autor del 29 de octubre de 2026.
 
 ### 2026-10-29 — Quinta ronda
 
