@@ -215,6 +215,7 @@
 | 2 nov. | Encargo | Buscar perfiles para entrevistar —en LinkedIn, Instagram u otro lugar donde estén activos—, con su correo, disciplina y perfil; agregarlos al repositorio y preparar las preguntas. Ofreció sus credenciales si hacían falta. | [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): 13 perfiles (cinco en Chile) con correo comprobado en fuentes oficiales, guía de entrevista, material para mostrar e invitaciones. Las credenciales no se usaron. Como el repositorio es público y `CLAUDE.md` prohíbe correos, los correos se entregaron en un archivo aparte, en la carpeta privada `00_fuentes_privadas/`. | — |
 | 2 nov. | Decisión y encargo | Registrar los correos solo de Chile y guardarlos de forma interna, en la conversación o en un archivo local; comprobar que sean los actuales, con ayuda de LinkedIn. | El archivo privado queda con las cinco personas en Chile y la evidencia de vigencia de cada correo: página oficial, publicaciones de 2025 o 2026 y registros del dominio. LinkedIn no sirvió: exige iniciar sesión y no muestra correos. Se halló un artículo de Salas y Parada del 30 de octubre de 2026 sobre cognición extendida, que ordena el envío. Los [perfiles](../02_investigacion/entrevistas-expertos/perfiles.md) dejan a las personas de otros países en reserva. | Entrevistar solo en Chile |
 | 2 nov. | Encargo | Hacer el guion de entrevista para cada uno de los perfiles de Chile. | Cinco guiones, uno por persona ([Salas](../02_investigacion/entrevistas-expertos/guion-salas.md), [Parada](../02_investigacion/entrevistas-expertos/guion-parada.md), [Parra](../02_investigacion/entrevistas-expertos/guion-parra.md), [Herskovic](../02_investigacion/entrevistas-expertos/guion-herskovic.md) y [Zamorano](../02_investigacion/entrevistas-expertos/guion-zamorano.md)), armados sobre sus publicaciones, comprobadas en Crossref y Europe PMC. Se corrigió que Parra estuviera de sabático (fue en 2023). | — |
+| 2 nov. | Corrección y encargo | Dejar de hacer automatizaciones. Entregar el enlace de cada perfil, su correo y el texto para pedirles una entrevista breve, leyendo la guía de entrevistas del repositorio. | Sin tareas programadas y sin avisos del PR. Los cinco correos personalizados se entregaron en la conversación, a partir de la guía de expertos y los guiones; la guía E11 del archivo es de entrevistas a usuarios. La página de resumen queda en [PDF](../02_investigacion/entrevistas-expertos/relevo-resumen-entrevista.pdf) para adjuntar. | Sin automatizaciones |
 
 ## Lo que muestra el registro
 
@@ -225,6 +226,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Correos listos para enviar
+
+- **Qué cambió:** se registró el pedido de dejar las automatizaciones y de entregar los correos de invitación personalizados.
+- **Cómo estaba antes:** el último pedido eran los guiones por persona.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Guiones por persona
 

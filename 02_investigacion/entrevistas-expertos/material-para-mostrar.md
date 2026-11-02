@@ -2,7 +2,7 @@
 
 **Fecha:** 2 de noviembre de 2026. **Fuente:** [memoria v6](../../08_memoria/borrador-memoria-v6-2026-10-28.md), capítulos 3, 10, 11 y 13.
 
-Se envía junto a la invitación o, a más tardar, dos días antes de la entrevista, para que la persona llegue con una opinión y la conversación no se gaste en explicar el proyecto. Cabe en una página. Abajo está la versión en inglés.
+La versión en español está lista para adjuntar en [PDF de una página](relevo-resumen-entrevista.pdf). Se envía junto a la invitación o, a más tardar, dos días antes de la entrevista, para que la persona llegue con una opinión y la conversación no se gaste en explicar el proyecto. Cabe en una página. Abajo está la versión en inglés.
 
 ## Qué mostrar y qué no
 
@@ -61,6 +61,12 @@ Se envía junto a la invitación o, a más tardar, dos días antes de la entrevi
 3. What should change in the object or the signal before a test with more people.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — PDF para adjuntar
+
+- **Qué cambió:** la versión en español queda también en un PDF de una página.
+- **Cómo estaba antes:** solo existía en Markdown.
+- **Por qué:** el autor pidió el contenido listo para enviar a cada persona.
 
 ### 2026-11-02 — Creación
 
