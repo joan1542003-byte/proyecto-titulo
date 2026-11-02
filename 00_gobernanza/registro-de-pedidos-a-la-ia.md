@@ -224,6 +224,7 @@
 | 2 nov. | Corrección | Ser más claro: dar más contexto sin abrumar, para que sea fácil de entender y responder. | El correo para Francisco se ordena en «Qué es Relevo», «Qué probé», «Qué encontré» y «Mis preguntas», con tres preguntas ligadas a resultados. | — |
 | 2 nov. | Corrección | Contexto más breve en el correo para Francisco. | El contexto cabe en un párrafo de dos frases («En corto»), seguido de las tres preguntas. | — |
 | 2 nov. | Consulta y corrección | Pedir alguna pregunta extra y comprobar que cada pregunta corresponda a lo que la persona sabe. | Dos preguntas opcionales para cada Francisco, apoyadas en sus publicaciones. La pregunta 1 de Zamorano se reformula: pedía explicar por qué recordar no bastó para empezar, un tema de la conducta que no es su campo. | — |
+| 2 nov. | Corrección | Preguntas que aporten valor: leer la memoria, entenderla y preguntar lo que hoy no tiene. | Se releyó la v6 y las preguntas para Francisco apuntan a sus vacíos: el supuesto del lugar sin respaldo, qué evidencia lo mostraría, «recordar no basta» explicado solo con Fogg, «decisión renovada» sin cita, el control desde el teléfono, el gesto de dejar el objeto, la crítica de julio sobre el objeto y la tensión entre señal visual y sonora. Cada guion suma una tabla de qué aporta cada pregunta. | — |
 
 ## Lo que muestra el registro
 
@@ -234,6 +235,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Preguntas que aportan valor
+
+- **Qué cambió:** se registró el pedido de preguntas basadas en los vacíos de la memoria.
+- **Cómo estaba antes:** el último pedido eran las preguntas extra.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Preguntas extra
 

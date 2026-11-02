@@ -117,7 +117,7 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». De
 
 ## Correo con las preguntas
 
-Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada.
+Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
 
 > Hola, Francisco:
 >
@@ -126,13 +126,13 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas: casi siempre recordaron qué querían hacer (19 de 21 respuestas), pero empezaron la actividad solo en 10. Para apagar el sonido usaron más el teléfono (9 veces) que el botón del objeto (5), y una persona nunca encontró ese botón.
 >
 > Mis preguntas
-> 1. Casi siempre recordaron, pero empezaron solo en 10 de 21 veces. Desde el diseño de interfaces tangibles, ¿qué podría hacer el objeto, por su forma o su manera de usarse, para acortar el paso entre recordar y empezar?
-> 2. ¿Cómo interpretas que usaran más el teléfono que el botón del objeto para apagarlo?
-> 3. ¿Qué concepto, autor o estudio de la interacción tangible me recomendarías para explicar estos resultados en mi memoria?
+> 1. En la memoria sostengo que el objeto puede significar más por el lugar donde se deja que por cómo se manipula. Pero la gente lo apagó más desde el teléfono que con su botón. ¿Qué te dice eso del papel del objeto, y qué parte de la interacción dejarías en el objeto y cuál en el teléfono?
+> 2. Antes de que suene, la persona deja el objeto junto a la guitarra o el libro; podría ser una forma física de comprometerse con lo que quiere hacer. ¿Qué papel tiene ese gesto en la interacción, y qué trabajos conoces que lo hayan estudiado?
+> 3. En mi examen de julio, la comisión pidió aclarar por qué un objeto. Tú validaste una interfaz tangible en un entorno real con TAMI: ¿qué evidencia te convencería de que el objeto de Relevo aporta algo que una notificación en el teléfono no da?
 >
 > Si te queda tiempo (opcional)
-> 4. TAMI combina vista, oído y tacto. La señal de Relevo es solo un sonido. ¿Qué ganaría si sumara otro sentido, y cuándo empezaría a ser demasiado?
-> 5. Validaste TAMI en un entorno real. ¿Qué aprendiste al pasar del taller a ese entorno que me ayude a interpretar una prueba hecha en casas?
+> 4. En mis entrevistas, seis de ocho personas pidieron señales visuales o discretas y ninguna pidió sonido; aun así elegí sonido, porque debe alcanzar a quien mira una pantalla. Desde tu experiencia con interfaces multisensoriales, ¿cómo resolverías esa tensión?
+> 5. Si tuvieras que presentar Relevo a una comisión de diseño, ¿qué destacarías como aporte y qué te parecería débil?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
@@ -140,6 +140,16 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 >
 > ¡Muchas gracias!
 > Johan
+
+**Qué aporta cada pregunta a la memoria**
+
+| Pregunta | Vacío que llena | Va a |
+| --- | --- | --- |
+| 1. Qué va en el objeto y qué en el teléfono | La memoria dice que el objeto significa por su lugar más que por su manipulación, pero los datos muestran que se controló desde el teléfono. Falta interpretar ese resultado desde la interacción tangible. | Capítulo 11 y la iteración siguiente |
+| 2. El gesto de dejar el objeto | La memoria justifica el objeto solo por el sonido desde el lugar; el gesto de dejarlo junto a la actividad podría ser un segundo aporte, sin estudiar. | Capítulo 6 y criterio 8 |
+| 3. Qué evidencia justifica el objeto | Responde a la crítica de la comisión de julio y define qué haría falta para sostener el criterio 8. | Criterio 8 y supuesto 3 del capítulo 10 |
+| 4. Señal visual o sonora (opcional) | La memoria deja abierta la tensión entre lo que pidieron las personas (señales visuales o discretas) y la decisión de usar sonido. | Capítulos 7 y 11 |
+| 5. Aporte y debilidad (opcional) | Una lectura externa del aporte disciplinar, que la rúbrica evalúa en la formulación. | Capítulo 14 |
 
 ## Después
 
@@ -152,6 +162,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Preguntas que aportan a la memoria
+
+- **Qué cambió:** las preguntas del correo se reescribieron desde los vacíos de la memoria v6 —supuestos sin respaldo, conceptos propios sin cita y tensiones abiertas—, con una tabla de qué aporta cada una y adónde va.
+- **Cómo estaba antes:** las preguntas eran generales y podían responderse sin agregar algo nuevo a la memoria.
+- **Por qué:** el autor pidió preguntas que generen un valor que la memoria no tiene.
 
 ### 2026-11-02 — Preguntas dentro de su campo
 

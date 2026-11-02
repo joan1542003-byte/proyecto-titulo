@@ -126,7 +126,7 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
 
 ## Correo con las preguntas
 
-Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada.
+Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
 
 > Hola, Francisco:
 >
@@ -135,13 +135,13 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas: casi siempre recordaron qué querían hacer (19 de 21 respuestas), pero empezaron la actividad solo en 10.
 >
 > Mis preguntas
-> 1. Desde la cognición 4E, ¿por qué crees que recordar no bastó para empezar?
-> 2. El objeto estaba en el lugar donde empieza la actividad. ¿Cómo describirías su papel en el recuerdo, sin exagerarlo?
-> 3. ¿Qué concepto, autor o estudio me recomendarías para explicar estos resultados en mi memoria?
+> 1. Los estudios que revisé sobre lugar y memoria evalúan intenciones que se recuerdan al estar en el lugar. En Relevo, la persona puede estar en otra parte de la casa y el sonido llega desde donde está la guitarra. ¿Qué dice tu campo sobre si un sonido que viene de un lugar puede traer a la mente lo que hay ahí?
+> 2. Cada persona prepara una sola actividad a la vez, así que al oír el sonido puede ser fácil saber de cuál se trata, esté donde esté el objeto. ¿Qué tendría que observar para afirmar que el lugar, y no solo el sonido, ayudó a recordar?
+> 3. Una persona contó que la señal le sirvió cuando estaba en el escritorio, pero que de noche la oye desde la cama y no se levanta. Desde una mirada corporizada, ¿qué papel tienen la postura, el cansancio o la distancia en pasar del teléfono a otra actividad?
 >
 > Si te queda tiempo (opcional)
-> 4. En «Beyond the skull» distinguen la cognición extendida de la distribuida. En Relevo, la persona prepara el aviso en el teléfono y el objeto suena en otro lugar de la casa. ¿Cuál de las dos ideas describe mejor ese sistema, y por qué?
-> 5. En tu revisión sobre el entorno construido aparecen el ruido y la luz de los espacios interiores. En casa, el sonido de Relevo compite con lo que ya hay en el ambiente: ¿qué condiciones del hogar debería tener en cuenta al interpretar estos resultados?
+> 4. En la memoria llamo «decisión renovada» al momento en que alguien vuelve a considerar si sigue en el teléfono o cambia de actividad. ¿Qué concepto establecido usarías para ese momento?
+> 5. En «Beyond the skull» distinguen la cognición extendida de la distribuida. Si la persona prepara el aviso en el teléfono y un objeto lo da desde otro lugar de la casa, ¿cuál de las dos describe mejor el sistema, y por qué?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
@@ -149,6 +149,16 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 >
 > ¡Muchas gracias!
 > Johan
+
+**Qué aporta cada pregunta a la memoria**
+
+| Pregunta | Vacío que llena | Va a |
+| --- | --- | --- |
+| 1. Un sonido que viene de un lugar | La memoria reconoce que los estudios sobre lugar evalúan a personas que están en el sitio, no un sonido que llega desde él; el supuesto del lugar no tiene respaldo teórico. | Capítulo 6 y supuesto 2 del capítulo 10 |
+| 2. Qué mostraría que el lugar ayudó | Con una actividad a la vez, «supo qué quería hacer» puede reflejar la asociación con Relevo y no con el lugar. Falta definir qué evidencia separaría ambas cosas. | Capítulo 13, límites, y proyecciones |
+| 3. El cuerpo en la transición | «Recordar no basta para empezar» se explica hoy solo con Fogg (2009), un modelo de diseño persuasivo. Falta una explicación desde la cognición. | Capítulos 6 y 13 |
+| 4. «Decisión renovada» (opcional) | Es un término del autor, sin cita. Un concepto establecido le daría respaldo. | Capítulo 6 y glosario |
+| 5. Extendida o distribuida (opcional) | La memoria no nombra este marco, que describe con más precisión el sistema persona, teléfono, objeto y lugar. | Capítulo 6 |
 
 ## Después
 
@@ -167,6 +177,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Preguntas que aportan a la memoria
+
+- **Qué cambió:** las preguntas del correo se reescribieron desde los vacíos de la memoria v6 —supuestos sin respaldo, conceptos propios sin cita y tensiones abiertas—, con una tabla de qué aporta cada una y adónde va.
+- **Cómo estaba antes:** las preguntas eran generales y podían responderse sin agregar algo nuevo a la memoria.
+- **Por qué:** el autor pidió preguntas que generen un valor que la memoria no tiene.
 
 ### 2026-11-02 — Preguntas opcionales
 
