@@ -21,9 +21,11 @@ Cada entrevista usa el **núcleo común** y **un módulo** según la disciplina.
 
 | Módulo | Personas de la lista |
 | --- | --- |
-| A. Memoria y cognición | 1 Parada, 2 Salas, 3 Cores y 7 Gilbert |
-| B. Interacción y bienestar digital | 5 Keppel, 8 Terzimehić, 9 Herskovic, 10 Parra, 11 Lukoff, 12 Lyngs y 13 Monge Roffarello |
-| C. Diseño del objeto y de la señal | 4 Zamorano y 6 van den Hoven |
+| A. Memoria y cognición | Christian Salas y Francisco J. Parada (en reserva: Cores y Gilbert) |
+| B. Interacción y bienestar digital | Denis Parra y Valeria Herskovic (en reserva: Keppel, Terzimehić, Lukoff, Lyngs y Monge Roffarello) |
+| C. Diseño del objeto y de la señal | Francisco Zamorano (en reserva: van den Hoven) |
+
+Las personas en reserva viven fuera de Chile y no se contactarán mientras el autor mantenga la decisión de entrevistar solo en Chile; sus preguntas quedan por si cambia.
 
 ## Antes de la entrevista
 
@@ -90,6 +92,9 @@ Cada pregunta indica por qué se hace y adónde va la respuesta en la memoria.
 
 **A6. Para Christian Salas:** en rehabilitación neuropsicológica, ¿qué hace que una persona siga usando una ayuda externa para recordar, como una alarma o una agenda, y qué hace que la abandone? ¿Qué cuidados éticos ve en un proyecto que no es clínico?
 *Va a:* capítulo 11 y criterio 6.
+
+**A9. Para Christian Salas y Francisco J. Parada:** su artículo del 30 de octubre de 2026 aborda la rehabilitación neuropsicológica desde la cognición extendida y distribuida (Salas et al., 2026). ¿Qué de ese enfoque se aplica a una persona sin daño cerebral que deja un objeto junto a una actividad para recordarla? ¿Qué tendría que cumplir el objeto para formar parte de cómo la persona recuerda, y no ser solo un aviso más?
+*Por qué:* es la pregunta teórica central del objeto, y ellos acaban de publicar sobre ella. Leer el resumen del artículo antes de la entrevista. *Va a:* capítulo 6, «Recordar con objetos y lugares», y capítulo 11, «Por qué un objeto, y no solo el teléfono».
 
 **A7. Para Evangelina Cores:** las pruebas de memoria prospectiva distinguen intenciones que dependen del tiempo de las que dependen de un evento. ¿Dónde queda Relevo, que suena al cumplirse un tiempo de uso definido por la persona? ¿Qué podría tomar un diseñador de las pruebas ecológicas, las que imitan situaciones de la vida diaria, para medir en el hogar?
 *Va a:* capítulos 6 y 13.
@@ -223,7 +228,15 @@ McDaniel, M. A. y Einstein, G. O. (2000). Strategic and automatic processes in p
 
 Risko, E. F. y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive Sciences, 20*(9), 676–688. https://doi.org/10.1016/j.tics.2016.07.002
 
+Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Solo Chile
+
+- **Qué cambió:** los módulos nombran a las personas en Chile y dejan en reserva a las de otros países; se suma la pregunta A9 para Salas y Parada, sobre su artículo de 2026.
+- **Cómo estaba antes:** los módulos usaban los números de una lista de 13 personas.
+- **Por qué:** el autor decidió entrevistar solo en Chile.
 
 ### 2026-11-02 — Creación
 

@@ -213,6 +213,7 @@
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
 | 2 nov. | Consulta | Entregó en .docx la memoria en curso de otra persona del taller (salud mental y cuidado de plantas) y pidió compararla con la suya desde una mirada crítica y académica, según la rúbrica oficial. | Respuesta en la conversación: comparación por las tres dimensiones de la rúbrica y la matriz de pase, contra la v6. La otra memoria no se sube ni se nombra en el repositorio. Al revisar la v6 se vio que ya no tiene «Actores y responsabilidades», y el subcriterio 8.1 de la [matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md) vuelve a «en desarrollo». | — |
 | 2 nov. | Encargo | Buscar perfiles para entrevistar —en LinkedIn, Instagram u otro lugar donde estén activos—, con su correo, disciplina y perfil; agregarlos al repositorio y preparar las preguntas. Ofreció sus credenciales si hacían falta. | [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): 13 perfiles (cinco en Chile) con correo comprobado en fuentes oficiales, guía de entrevista, material para mostrar e invitaciones. Las credenciales no se usaron. Como el repositorio es público y `CLAUDE.md` prohíbe correos, los correos se entregaron en un archivo aparte, en la carpeta privada `00_fuentes_privadas/`. | — |
+| 2 nov. | Decisión y encargo | Registrar los correos solo de Chile y guardarlos de forma interna, en la conversación o en un archivo local; comprobar que sean los actuales, con ayuda de LinkedIn. | El archivo privado queda con las cinco personas en Chile y la evidencia de vigencia de cada correo: página oficial, publicaciones de 2025 o 2026 y registros del dominio. LinkedIn no sirvió: exige iniciar sesión y no muestra correos. Se halló un artículo de Salas y Parada del 30 de octubre de 2026 sobre cognición extendida, que ordena el envío. Los [perfiles](../02_investigacion/entrevistas-expertos/perfiles.md) dejan a las personas de otros países en reserva. | Entrevistar solo en Chile |
 
 ## Lo que muestra el registro
 
@@ -223,6 +224,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Correos de Chile
+
+- **Qué cambió:** se registró la decisión de entrevistar solo en Chile y la comprobación de los correos.
+- **Cómo estaba antes:** el último pedido era buscar perfiles para entrevistar.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Perfiles para entrevistar
 

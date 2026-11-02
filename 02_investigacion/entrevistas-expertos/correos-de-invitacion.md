@@ -8,8 +8,9 @@
 - **Un correo por persona**, nunca con copia a otras personas de la lista.
 - **Con la [página para mostrar](material-para-mostrar.md) en PDF** como único adjunto.
 - **Personalizar la frase marcada con ✱**: por qué se le escribe a esa persona y no a otra. Es la parte que más influye en que responda.
-- **Calendario sugerido:** enviar el 3 de noviembre a las seis primeras personas de la lista; recordar una sola vez el 6 o 7 de noviembre; entrevistar entre el 9 y el 13 de noviembre, para integrar la entrevista antes del cierre interno del 15 de noviembre y llegar al Pase del 25 con ella.
-- **Si nadie responde el 7 de noviembre**, escribir a las siete restantes.
+- **Calendario sugerido:** enviar el 3 de noviembre a las cinco personas en Chile; recordar una sola vez el 6 o 7 de noviembre; entrevistar entre el 9 y el 13 de noviembre, para integrar la entrevista antes del cierre interno del 15 de noviembre y llegar al Pase del 25 con ella.
+- **Si nadie responde el 7 de noviembre**, buscar más perfiles en Chile.
+- **Modelos que se usan:** el 1 para Salas y Parada, y el 2 para Parra, Herskovic y Zamorano. A Salas y Parada conviene nombrarles su artículo del 30 de octubre de 2026 en la frase ✱ (ver [perfiles](perfiles.md)). El modelo 3 y la tabla en inglés quedan para la reserva de otros países.
 
 ## 1. Personas de la Universidad Diego Portales
 
@@ -92,6 +93,12 @@ En el saludo de los modelos 1 y 2, escribir «Estimada» o «Estimado» según c
 > Dear [title and surname], thank you very much for your time and comments. As agreed, I will send you the paragraph where your opinion appears before I submit the thesis. Best regards, [name].
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Solo Chile
+
+- **Qué cambió:** el calendario se envía a las cinco personas en Chile y dice qué modelo usar con cada una.
+- **Cómo estaba antes:** el calendario escribía a seis personas de una lista de 13 y después a las siete restantes.
+- **Por qué:** el autor decidió entrevistar solo en Chile.
 
 ### 2026-11-02 — Creación
 

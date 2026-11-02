@@ -10,7 +10,7 @@ Conseguir al menos una entrevista con una persona experta de otra disciplina ant
 
 | Documento | Qué tiene |
 | --- | --- |
-| [Perfiles](perfiles.md) | 13 personas en orden de prioridad, cinco de ellas en Chile: disciplina, institución, qué aportan, idioma y la página oficial donde publican su correo. |
+| [Perfiles](perfiles.md) | Cinco personas en Chile, con su disciplina, institución, qué aportan, la vigencia de su correo y la página oficial donde lo publican. Ocho personas de otros países quedan en reserva. |
 | [Guía de entrevista](guia-de-entrevista.md) | Método, consentimiento, preguntas comunes y por disciplina, en español y en inglés, versión escrita, ficha de registro y cómo citar la entrevista. |
 | [Material para mostrar](material-para-mostrar.md) | La página que se envía antes de la entrevista, en español y en inglés, y qué no mostrar. |
 | [Correos de invitación](correos-de-invitacion.md) | Invitaciones, recordatorio y agradecimiento, con el calendario de envío. |
@@ -20,14 +20,14 @@ Conseguir al menos una entrevista con una persona experta de otra disciplina ant
 El repositorio es público y sus reglas no permiten guardar correos en él. Por eso:
 
 - **En GitHub:** cada perfil enlaza la página oficial donde la persona publica su correo, para encontrarlo con un clic.
-- **Fuera de GitHub:** la lista con los 13 correos se entregó al autor el 2 de noviembre de 2026 en el archivo `contactos-entrevistas-expertos.md`. Se guarda en `00_fuentes_privadas/`, una carpeta que Git ignora.
+- **Fuera de GitHub:** los cinco correos de Chile, con la evidencia de su vigencia, se entregaron al autor el 2 de noviembre de 2026 en el archivo `contactos-entrevistas-expertos.md`, guardado en `00_fuentes_privadas/`, una carpeta que Git ignora.
 
-Todos los correos se comprobaron ese día en la fuente oficial que indica cada perfil; ninguno se dedujo de un formato institucional.
+Todos los correos se comprobaron ese día en la fuente oficial que indica cada perfil; ninguno se dedujo de un formato institucional. Los de Chile se contrastaron además con publicaciones recientes y con los registros del dominio ([perfiles](perfiles.md#vigencia-de-los-correos)).
 
 ## Pasos
 
-1. **3 de noviembre:** el autor envía las invitaciones a las seis primeras personas, desde su correo de la Universidad Diego Portales y con la página para mostrar en PDF.
-2. **6 o 7 de noviembre:** un solo recordatorio; si nadie respondió, escribir a las siete restantes.
+1. **3 de noviembre:** el autor envía las invitaciones a las cinco personas en Chile, desde su correo de la Universidad Diego Portales y con la página para mostrar en PDF.
+2. **6 o 7 de noviembre:** un solo recordatorio; si nadie respondió, buscar más perfiles en Chile. La reserva de otros países se usa solo si el autor cambia la decisión.
 3. **9 al 13 de noviembre:** entrevistas, con la guía y la ficha de registro llena el mismo día.
 4. **Hasta el 15 de noviembre:** llevar a la memoria lo que la persona autorizó, como indica la guía, y enviarle el párrafo para que lo revise.
 
@@ -39,6 +39,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Solo Chile
+
+- **Qué cambió:** la lista activa y el archivo privado de correos quedan solo con personas en Chile, con la vigencia de cada correo; los pasos dejan de mencionar a las personas de otros países.
+- **Cómo estaba antes:** la lista y el archivo tenían 13 personas, y el plan escribía primero a seis.
+- **Por qué:** el autor decidió entrevistar solo en Chile y pidió comprobar que los correos sean los actuales.
 
 ### 2026-11-02 — Creación
 
