@@ -29,7 +29,7 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 
 1. **2 o 3 de noviembre:** el autor envía los [mensajes breves](correos-de-invitacion.md) a las cinco personas en Chile, desde su correo de la Universidad Diego Portales y con el [resumen en PDF](relevo-resumen-entrevista.pdf).
 2. **5 o 6 de noviembre:** un solo recordatorio. Si el lunes 9 nadie aceptó, buscar más perfiles en Chile. La reserva de otros países se usa solo si el autor cambia la decisión.
-3. **3 al 13 de noviembre:** entrevistas, cada una con su guion. La ficha y la matriz de análisis de la guía se llenan el mismo día.
+3. **3 al 13 de noviembre:** entrevistas por videollamada, de tú, cada una con su guion. La ficha y la matriz de análisis de la guía se llenan el mismo día.
 4. **Hasta el 15 de noviembre:** llevar a la memoria lo que la persona autorizó, como indica la guía, y enviarle el párrafo para que lo revise.
 
 ## Reglas
@@ -40,6 +40,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** las entrevistas son siempre por videollamada y todo lo que se dice a las personas trata de tú.
+- **Cómo estaba antes:** se trataba de usted y se aceptaban reuniones en persona.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-02 — Mensajes breves y guía de los profesores
 

@@ -1,6 +1,6 @@
 # Correos de invitación
 
-**Fecha:** 2 de noviembre de 2026. **Para:** las cinco personas en Chile de la [lista de perfiles](perfiles.md). **Ventana de entrevistas:** del martes 3 al viernes 13 de noviembre de 2026.
+**Fecha:** 2 de noviembre de 2026. **Para:** las cinco personas en Chile de la [lista de perfiles](perfiles.md). **Ventana de entrevistas:** del martes 3 al viernes 13 de noviembre de 2026, siempre por videollamada. **Trato:** de tú.
 
 ## Cómo enviarlos
 
@@ -11,85 +11,85 @@
 
 ## Mensajes
 
-Todos usan el mismo asunto: **Entrevista de 30 minutos para un proyecto de título (Diseño UDP)**.
+Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyecto de título, Diseño UDP)**.
 
 ### Christian Salas Riquelme
 
-> Buenos días, Christian Salas:
+> Hola, Christian:
 >
-> ¿Podría darme una entrevista de 30 minutos entre el martes 3 y el viernes 13 de noviembre? Puede ser en persona o por videollamada, cuando le acomode. Si lo prefiere, le envío cinco preguntas por escrito.
+> ¿Podrías darme una entrevista de 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden. Si prefieres, te envío cinco preguntas por escrito.
 >
-> Le escribo por su artículo «Beyond the skull», sobre cognición extendida y distribuida, que se relaciona directamente con mi proyecto.
+> Te escribo por tu artículo «Beyond the skull», sobre cognición extendida y distribuida, que se relaciona directamente con mi proyecto.
 >
-> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Adjunto un resumen de una página.
+> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Te adjunto un resumen de una página.
 >
-> Muchas gracias,
+> ¡Muchas gracias!
 > Johan Yantén
 > Estudiante de Diseño, Universidad Diego Portales
 
 ### Francisco J. Parada
 
-> Buenos días, Francisco Parada:
+> Hola, Francisco:
 >
-> ¿Podría darme una entrevista de 30 minutos entre el martes 3 y el viernes 13 de noviembre? Puede ser en persona o por videollamada, cuando le acomode. Si lo prefiere, le envío cinco preguntas por escrito.
+> ¿Podrías darme una entrevista de 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden. Si prefieres, te envío cinco preguntas por escrito.
 >
-> Le escribo por su trabajo en cognición 4E y en diseños experimentales escalables, que me ayudaría a revisar cómo evalúo mi proyecto.
+> Te escribo por tu trabajo en cognición 4E y en diseños experimentales escalables, que me ayudaría a revisar cómo evalúo mi proyecto.
 >
-> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Adjunto un resumen de una página.
+> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Te adjunto un resumen de una página.
 >
-> Muchas gracias,
+> ¡Muchas gracias!
 > Johan Yantén
 > Estudiante de Diseño, Universidad Diego Portales
 
 ### Denis Parra
 
-> Buenos días, Denis Parra:
+> Hola, Denis:
 >
-> ¿Podría darme una entrevista de 30 minutos entre el martes 3 y el viernes 13 de noviembre? Puede ser en persona o por videollamada, cuando le acomode. Si lo prefiere, le envío cinco preguntas por escrito.
+> ¿Podrías darme una entrevista de 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden. Si prefieres, te envío cinco preguntas por escrito.
 >
-> Le escribo por su trabajo en sistemas de recomendación y en interfaces que dan control a las personas.
+> Te escribo por tu trabajo en sistemas de recomendación y en interfaces que dan control a las personas.
 >
-> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Adjunto un resumen de una página.
+> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Te adjunto un resumen de una página.
 >
-> Muchas gracias,
+> ¡Muchas gracias!
 > Johan Yantén
 > Estudiante de Diseño, Universidad Diego Portales
 
 ### Valeria Herskovic
 
-> Buenos días, Valeria Herskovic:
+> Hola, Valeria:
 >
-> ¿Podría darme una entrevista de 30 minutos entre el martes 3 y el viernes 13 de noviembre? Puede ser en persona o por videollamada, cuando le acomode. Si lo prefiere, le envío cinco preguntas por escrito.
+> ¿Podrías darme una entrevista de 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden. Si prefieres, te envío cinco preguntas por escrito.
 >
-> Le escribo por su trabajo en interfaces tangibles y tecnología para el autocuidado, como su estudio sobre el registro del dolor en personas mayores.
+> Te escribo por tu trabajo en interfaces tangibles y tecnología para el autocuidado, como tu estudio sobre el registro del dolor en personas mayores.
 >
-> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Adjunto un resumen de una página.
+> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Te adjunto un resumen de una página.
 >
-> Muchas gracias,
+> ¡Muchas gracias!
 > Johan Yantén
 > Estudiante de Diseño, Universidad Diego Portales
 
 ### Francisco Zamorano Urrutia
 
-> Buenos días, Francisco Zamorano:
+> Hola, Francisco:
 >
-> ¿Podría darme una entrevista de 30 minutos entre el martes 3 y el viernes 13 de noviembre? Puede ser en persona o por videollamada, cuando le acomode. Si lo prefiere, le envío cinco preguntas por escrito.
+> ¿Podrías darme una entrevista de 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden. Si prefieres, te envío cinco preguntas por escrito.
 >
-> Le escribo por su trabajo en TAMI, una interfaz tangible, y me gustaría su opinión sobre el objeto que estoy diseñando.
+> Te escribo por tu trabajo en TAMI, una interfaz tangible, y me gustaría tu opinión sobre el objeto que estoy diseñando.
 >
-> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Adjunto un resumen de una página.
+> **El proyecto:** Relevo es una aplicación y un objeto pequeño que suena junto a una actividad que la persona quiere hacer, como leer o dibujar, para que la recuerde mientras usa el teléfono, sin bloquearlo. Lo probé en tres hogares. Te adjunto un resumen de una página.
 >
-> Muchas gracias,
+> ¡Muchas gracias!
 > Johan Yantén
 > Estudiante de Diseño, Universidad Diego Portales
 
 ## Recordatorio (una sola vez)
 
-> Buenos días: le escribo de nuevo por si mi correo quedó entre otros. Si no tiene tiempo para conversar, cinco preguntas por escrito me ayudarían mucho. Gracias, Johan Yantén.
+> Hola: te escribo de nuevo por si mi correo quedó entre otros. Si no tienes tiempo para una videollamada, cinco preguntas por escrito me ayudarían mucho. ¡Gracias! Johan
 
 ## Agradecimiento (el mismo día de la entrevista)
 
-> Muchas gracias por su tiempo y sus comentarios. Antes de entregar la memoria le enviaré el párrafo donde aparece su opinión, como acordamos. Saludos, Johan Yantén.
+> ¡Muchas gracias por tu tiempo y tus comentarios! Antes de entregar la memoria te enviaré el párrafo donde aparece tu opinión, como acordamos. Saludos, Johan
 
 ## Reserva fuera de Chile
 
@@ -108,6 +108,12 @@ Si el autor decide escribir a las personas de la reserva, usar el mismo formato 
 > Design student, Universidad Diego Portales, Chile
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** los mensajes, el recordatorio y el agradecimiento tratan de tú, saludan por el nombre de pila y piden solo videollamada; el asunto lo dice.
+- **Cómo estaba antes:** trataban de usted y ofrecían también una reunión en persona.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-02 — Mensajes breves
 

@@ -1,6 +1,6 @@
 # Guion de entrevista: Valeria Herskovic
 
-**Disciplina:** ciencia de la computación; interacción humano-computador y tecnología para la salud y el autocuidado. **Institución:** Departamento de Ciencia de la Computación, Pontificia Universidad Católica de Chile. **Duración:** 30 a 35 minutos. **Formato:** en persona, en el campus San Joaquín, o por videollamada. **Idioma:** español.
+**Disciplina:** ciencia de la computación; interacción humano-computador y tecnología para la salud y el autocuidado. **Institución:** Departamento de Ciencia de la Computación, Pontificia Universidad Católica de Chile. **Duración:** 30 a 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
 
 Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
 
@@ -22,15 +22,15 @@ Herskovic diseña y evalúa tecnología para el cuidado de sí mismo en la vida 
 
 - **Leer:** los resúmenes de Rodríguez et al. (2022) y Fernández-Vera et al. (2022).
 - **Enviar:** la [página para mostrar](material-para-mostrar.md), dos días antes.
-- **Llevar:** las preguntas que la aplicación hace tras cada señal ([Anexo I](../../08_memoria/anexos/anexo-i-prueba.md)), el teléfono con la aplicación y el Tag.
+- **Tener a mano:** para compartir pantalla, las preguntas que la aplicación hace tras cada señal ([Anexo I](../../08_memoria/anexos/anexo-i-prueba.md)), el teléfono con la aplicación y el Tag.
 
 ## Guion
 
 ### 1. Apertura (2 minutos)
 
-> Gracias por su tiempo. Le cuento brevemente el proyecto y después me interesa su opinión desde la interacción humano-computador y su trabajo en tecnología para el autocuidado. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
+> Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión desde la interacción humano-computador y tu trabajo en tecnología para el autocuidado. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -40,25 +40,25 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
-Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
 
 **Para empezar (2 minutos)**
 
-> Para empezar, ¿qué ha aprendido al diseñar tecnología para el autocuidado con personas reales en Chile?
+> Para empezar, ¿qué has aprendido al diseñar tecnología para el autocuidado con personas reales en Chile?
 
 - *Por qué:* crea confianza y sitúa la conversación en su experiencia.
 
 **1. ★ Responder con el objeto**
 
-> En su estudio con personas mayores, el registro del dolor se hacía con una interfaz tangible. En Relevo, después de cada señal, la persona responde en el teléfono, en la misma pantalla que ya le muestra su actividad. ¿Qué cambiaría si la persona respondiera en el objeto y no en el teléfono?
+> En tu estudio con personas mayores, el registro del dolor se hacía con una interfaz tangible. En Relevo, después de cada señal, la persona responde en el teléfono, en la misma pantalla que ya le muestra su actividad. ¿Qué cambiaríías si la persona respondiera en el objeto y no en el teléfono?
 
 - *Por qué:* en 19 de 21 respuestas la persona dijo que supo qué quería hacer antes de leerlo en la pantalla, pero la pregunta llega cuando ya puede verlo.
-- *Repreguntas:* «¿Qué aprendió sobre cuándo las personas registran algo por su cuenta?», «¿Qué pregunta haría antes de mostrar la actividad?».
+- *Repreguntas:* «¿Qué aprendiste sobre cuándo las personas registran algo por su cuenta?», «¿Qué pregunta haríías antes de mostrar la actividad?».
 - *Va a:* capítulo 13, «Qué se registró», y la iteración siguiente.
 
 **2. ★ Entre ayudar y persuadir**
 
-> Social+Me buscaba que los estudiantes se comunicaran más. Relevo, en cambio, evita empujar: no hay rachas ni premios, y «Comencé la actividad», «La dejé para después» y «Cambié de idea» valen lo mismo. ¿Dónde pondría usted el límite entre ayudar y persuadir, y dónde queda Relevo?
+> Social+Me buscaba que los estudiantes se comunicaran más. Relevo, en cambio, evita empujar: no hay rachas ni premios, y «Comencé la actividad», «La dejé para después» y «Cambié de idea» valen lo mismo. ¿Dónde pondrías tú el límite entre ayudar y persuadir, y dónde queda Relevo?
 
 - *Por qué:* la memoria defiende que la decisión queda en la persona; conviene que alguien que diseñó tecnología persuasiva lo ponga a prueba.
 - *Repregunta:* «¿Cómo se evalúa un sistema que no busca cambiar una conducta? ¿Qué sería un buen resultado?».
@@ -66,44 +66,44 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 **3. ★ Rigor con tres personas**
 
-> La prueba tuvo tres personas reclutadas por cercanía, durante tres semanas en sus casas. La memoria informa por caso y en recuentos, sin porcentajes. ¿Qué mínimo de rigor le pediría a una prueba así, y qué falta?
+> La prueba tuvo tres personas reclutadas por cercanía, durante tres semanas en sus casas. La memoria informa por caso y en recuentos, sin porcentajes. ¿Qué mínimo de rigor exigirías a una prueba así, y qué falta?
 
 - *Qué escuchar:* triangular registros, respuestas y entrevista; describir el reclutamiento; informar los casos que no calzan.
 - *Va a:* capítulo 13, «Límites de esta etapa».
 
 **4. Tecnología de bajo costo**
 
-> En su trabajo en Latinoamérica aparece el costo como condición de diseño. Relevo usa un llavero Bluetooth de unos 11 000 pesos en vez de fabricar electrónica propia; la carcasa propia lo envuelve. ¿Qué gana y qué pierde el proyecto con esa decisión?
+> En tu trabajo en Latinoamérica aparece el costo como condición de diseño. Relevo usa un llavero Bluetooth de unos 11 000 pesos en vez de fabricar electrónica propia; la carcasa propia lo envuelve. ¿Qué gana y qué pierde el proyecto con esa decisión?
 
 - *Va a:* capítulo 12, «Del prototipo al producto».
 
 **5. Accesibilidad**
 
-> La señal es solo un sonido. ¿Qué alternativa propondría para personas con baja audición, y qué más revisaría en accesibilidad?
+> La señal es solo un sonido. ¿Qué alternativa propondríías para personas con baja audición, y qué más revisaríías en accesibilidad?
 
 - *Va a:* capítulo 11, «La señal», y requisitos del objeto propio.
 
 **6. ★ Qué no se puede afirmar**
 
-> Con estos datos, ¿qué no debería afirmar la memoria? ¿Cómo lo diría usted en una frase?
+> Con estos datos, ¿qué no debería afirmar la memoria? ¿Cómo lo dirías tú en una frase?
 
 - *Va a:* resumen, capítulo 13 y conclusiones.
 
 **Si queda tiempo:**
 
-- «La comparación con una notificación cambia a la vez el canal y el lugar. ¿Cómo lo separaría con pocas personas?»
-- «¿Qué le exigiría al consentimiento y al manejo de datos antes de una prueba con más personas?»
+- «La comparación con una notificación cambia a la vez el canal y el lugar. ¿Cómo lo separaríías con pocas personas?»
+- «¿Qué exigirías al consentimiento y al manejo de datos antes de una prueba con más personas?»
 
 ### 4. Cierre (3 minutos)
 
-- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
-- «¿Hay algo que no le pregunté y que debería saber?»
-- «¿A quién más le preguntaría?»
-- Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
+- «Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería?»
+- «¿Hay algo que no te pregunté y que debería saber?»
+- «¿A quién más consultarías?»
+- Confirmar cómo quiere aparecer en la memoria y ofrecer el envío del párrafo y, al final, de la memoria.
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: 1, 2, 3, 6 y «¿A quién más le preguntaría?».
+Enviar solo cinco preguntas: 1, 2, 3, 6 y «¿A quién más consultarías?».
 
 ## Después
 
@@ -119,9 +119,15 @@ Rodríguez, I., Cajamarca, G. y Herskovic, V. (2022). When does self-report of p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** todo lo que se le dice a la persona trata de tú, y la entrevista es siempre por videollamada, con el Tag y las figuras mostrados por cámara o pantalla.
+- **Cómo estaba antes:** trataba de usted y proponía también una reunión en persona.
+- **Por qué:** pedido del autor.
+
 ### 2026-11-02 — Guía de los profesores
 
-- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudieras cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
 - **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
 - **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 

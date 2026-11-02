@@ -15,7 +15,7 @@ La entrevista no prueba que Relevo funcione. Es la opinión fundada de una perso
 
 ## Método
 
-Es una *entrevista semiestructurada a expertos*: una conversación guiada por preguntas preparadas, que se adapta a lo que la persona sabe y en la que interesa su conocimiento especializado, no su experiencia personal (Bogner et al., 2009). Dura de 30 a 40 minutos, por videollamada o en persona, con una sola persona entrevistada a la vez. El autor conduce y toma notas; si la persona acepta, se graba solo el audio para revisar las citas.
+Es una *entrevista semiestructurada a expertos*: una conversación guiada por preguntas preparadas, que se adapta a lo que la persona sabe y en la que interesa su conocimiento especializado, no su experiencia personal (Bogner et al., 2009). Dura de 30 a 40 minutos, siempre por videollamada, con una sola persona entrevistada a la vez. El trato es de tú, también en los correos. El autor conduce y toma notas; si la persona acepta, se graba solo el audio para revisar las citas.
 
 Cada persona en Chile tiene su propio guion, que adapta esta guía a sus publicaciones: [Salas](guion-salas.md), [Parada](guion-parada.md), [Parra](guion-parra.md), [Herskovic](guion-herskovic.md) y [Zamorano](guion-zamorano.md). Esta guía queda como base común. Cada entrevista usa el **núcleo común** y **un módulo** según la disciplina. No hace falta hacer todas las preguntas: es mejor profundizar en tres que recorrer diez.
 
@@ -31,8 +31,8 @@ Las personas en reserva viven fuera de Chile y no se contactarán mientras el au
 
 El 2 de noviembre de 2026, el autor entregó dos documentos de sus profesores: una guía para la entrevista semiestructurada y el análisis del discurso, y un guion de entrevista de ejemplo. Esta guía y los cinco guiones los siguen así:
 
-- **Guion temático, no cuestionario:** preguntas abiertas, nunca de sí o no, y repreguntas como «¿Me podría dar un ejemplo?».
-- **Embudo:** de lo general a lo particular. Primero el trabajo de la persona y su contexto; después preguntas que comparan y ordenan; luego su opinión y su crítica, y al final una pregunta proyectiva: «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?».
+- **Guion temático, no cuestionario:** preguntas abiertas, nunca de sí o no, y repreguntas como «¿Me puedes dar un ejemplo?».
+- **Embudo:** de lo general a lo particular. Primero el trabajo de la persona y su contexto; después preguntas que comparan y ordenan; luego su opinión y su crítica, y al final una pregunta proyectiva: «Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería?».
 - **Consentimiento:** la participación es voluntaria, no hay respuestas correctas, la persona elige aparecer con su nombre o sin él, y puede detener la grabación o pedir que se borre una parte en cualquier momento.
 - **Confianza y neutralidad:** mostrar interés sin juzgar, no asentir de más y sostener el silencio después de una respuesta, que suele invitar a profundizar.
 - **Reflexividad:** antes de cada entrevista, anotar lo que el autor espera oír —por ejemplo, que el lugar ayuda a recordar— para no inducirlo.
@@ -45,13 +45,13 @@ Los documentos de los profesores no se suben al repositorio.
 
 - [ ] Enviar la [página para mostrar](material-para-mostrar.md) y las capturas de la aplicación al confirmar la fecha.
 - [ ] Leer el resumen del trabajo de la persona que la memoria cita, si lo hay, y preparar una pregunta sobre él.
-- [ ] Revisar que el Tag tenga pila y que la aplicación lo haga sonar, por si la persona quiere oírlo.
+- [ ] Revisar que el Tag tenga pila y que la aplicación lo haga sonar frente a la cámara, por si la persona quiere oírlo.
 - [ ] Tener abiertas la grabadora y esta guía. Probar el audio de la videollamada.
-- [ ] Llevar anotados los números de la prueba, para no dar cifras de memoria.
+- [ ] Tener anotados los números de la prueba, para no dar cifras de memoria.
 
 ## Consentimiento (leer al empezar)
 
-> Gracias por su tiempo. Esta conversación es parte de mi proyecto de título en Diseño en la Universidad Diego Portales. Me interesa su opinión experta sobre las decisiones del proyecto; no le preguntaré por datos personales. ¿Me permite grabar el audio solo para revisar mis notas? La grabación no se publica y la borro al terminar la memoria. ¿Puedo citarle con su nombre en la memoria como comunicación personal? Si lo prefiere, le cito sin nombre, y antes de entregar le envío el párrafo donde aparece su opinión para que lo revise. Su participación es voluntaria y no hay respuestas correctas. Puede no responder una pregunta, pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Gracias por tu tiempo. Esta conversación es parte de mi proyecto de título en Diseño en la Universidad Diego Portales. Me interesa tu opinión experta sobre las decisiones del proyecto; no te preguntaré por datos personales. ¿Puedo grabar el audio solo para revisar mis notas? La grabación no se publica y la borro al terminar la memoria. ¿Puedo citarte con tu nombre en la memoria como comunicación personal? Si prefieres, te cito sin nombre, y antes de entregar te envío el párrafo donde aparece tu opinión para que lo revises. Tu participación es voluntaria y no hay respuestas correctas. Puedes no responder una pregunta, pedirme detener la grabación o borrar una parte, o terminar cuando quieras.
 
 > Thank you for your time. This conversation is part of my Design degree project at Universidad Diego Portales, Chile. I am interested in your expert opinion on the project's decisions; I will not ask about personal matters. May I record the audio only to check my notes? The recording will not be published, and I will delete it once the thesis is submitted. May I cite you by name in the thesis as a personal communication? If you prefer, I can cite you without your name, and before submitting I will send you the paragraph where your opinion appears so you can review it. Taking part is voluntary and there are no right or wrong answers. You may skip any question, ask me to pause the recording or delete part of it, or stop at any time.
 
@@ -75,17 +75,17 @@ Contar solo esto, en este orden: el problema en una frase; el ciclo de cuatro mo
 
 Cada pregunta indica por qué se hace y adónde va la respuesta en la memoria.
 
-**C1. Después de ver el proyecto, ¿qué parte del razonamiento le parece más débil?**
-*Por qué:* una crítica fundada vale más que un elogio. *Repreguntas:* «¿Qué evidencia le haría cambiar de opinión?», «¿Qué estudio conoce que contradiga esa parte?». *Va a:* capítulo 13, límites, y capítulo 14.
+**C1. Después de ver el proyecto, ¿qué parte del razonamiento te parece más débil?**
+*Por qué:* una crítica fundada vale más que un elogio. *Repreguntas:* «¿Qué evidencia te haría cambiar de opinión?», «¿Qué estudio conoces que contradiga esa parte?». *Va a:* capítulo 13, límites, y capítulo 14.
 
 **C2. La hipótesis dice que la persona recordará a tiempo porque la señal está asociada a la actividad y suena desde su lugar. La prueba compara el objeto junto al primer paso con una notificación en el teléfono. ¿Qué permite atribuir esa comparación al lugar, y qué no?**
-*Por qué:* el objeto y la notificación difieren en dos cosas a la vez: el canal (un sonido fuera de la pantalla frente a un aviso en ella) y el lugar. *Repreguntas:* «Con tres a seis personas y dos semanas, ¿qué diseño mínimo separaría los dos efectos?», por ejemplo el mismo objeto junto al primer paso y en un lugar neutro, alternados por semana; «¿Importa el orden fijo en que se aplicaron las semanas?». *Va a:* capítulo 10, hipótesis y supuestos, y capítulo 13, límites.
+*Por qué:* el objeto y la notificación difieren en dos cosas a la vez: el canal (un sonido fuera de la pantalla frente a un aviso en ella) y el lugar. *Repreguntas:* «Con tres a seis personas y dos semanas, ¿con qué diseño mínimo separarías los dos efectos?», por ejemplo el mismo objeto junto al primer paso y en un lugar neutro, alternados por semana; «¿Qué papel juega el orden fijo en que se aplicaron las semanas?». *Va a:* capítulo 10, hipótesis y supuestos, y capítulo 13, límites.
 
-**C3. Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas la persona dijo que sí. ¿Qué tan confiable es esa medida y cómo la mejoraría?**
-*Por qué:* la persona responde en la misma pantalla que ya le muestra la actividad, y puede querer responder lo que el proyecto espera. *Repreguntas:* «¿Serviría preguntar primero, sin mostrar nada, qué cree que le recordó la señal?», «¿Qué registro de comportamiento complementaría la respuesta?». *Va a:* capítulo 13, «Qué se registró», y la iteración siguiente de la aplicación.
+**C3. Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas la persona dijo que sí. ¿Qué tan confiable es esa medida y cómo la mejorarías?**
+*Por qué:* la persona responde en la misma pantalla que ya le muestra la actividad, y puede querer responder lo que el proyecto espera. *Repreguntas:* «¿Qué ganaría la prueba si preguntara primero, sin mostrar nada, qué recordó la persona al oír la señal?», «¿Qué registro de comportamiento complementaría la respuesta?». *Va a:* capítulo 13, «Qué se registró», y la iteración siguiente de la aplicación.
 
 **C4. ¿Qué no debería afirmar la memoria con estos datos?**
-*Por qué:* protege al proyecto de una pregunta de la comisión. *Repregunta:* «¿Cómo lo diría usted en una frase?». *Va a:* resumen, capítulo 13 y conclusiones.
+*Por qué:* protege al proyecto de una pregunta de la comisión. *Repregunta:* «¿Cómo lo dirías tú en una frase?». *Va a:* resumen, capítulo 13 y conclusiones.
 
 ### 4A. Módulo de memoria y cognición
 
@@ -93,58 +93,58 @@ Cada pregunta indica por qué se hace y adónde va la respuesta en la memoria.
 *Por qué:* la memoria prospectiva es recordar por uno mismo una acción futura; un recordatorio externo cambia la tarea, y la memoria debe usar el término correcto. *Va a:* capítulo 6 y glosario.
 
 **A2. Según el marco multiproceso, una intención vuelve con más facilidad ante una señal llamativa y fuertemente asociada a la acción. ¿Un sonido igual para todas las actividades está asociado a la actividad, o solo al sistema?**
-*Por qué:* el mismo pitido se usa para leer, dibujar o tocar guitarra; lo que distingue la actividad es el lugar. *Repregunta:* «¿Convendría un sonido distinto por actividad?». *Va a:* capítulo 11, «La señal».
+*Por qué:* el mismo pitido se usa para leer, dibujar o tocar guitarra; lo que distingue la actividad es el lugar. *Repregunta:* «¿Qué pasaría con un sonido distinto por actividad?». *Va a:* capítulo 11, «La señal».
 
-**A3. ¿Qué pasa con una señal que se repite durante semanas, y cómo evitaría que pierda efecto por costumbre?**
+**A3. ¿Qué pasa con una señal que se repite durante semanas, y cómo evitarías que pierda efecto por costumbre?**
 *Por qué:* la habituación, la disminución de la respuesta ante un estímulo repetido, es un riesgo para un piloto más largo. *Va a:* capítulo 13 y la etapa siguiente.
 
 **A4. ¿Qué efecto puede tener, en la capacidad de recordar sin ayuda, confiar la intención a un objeto, y cómo debería tratarlo el diseño?**
 *Por qué:* la descarga cognitiva, dejar en el entorno una parte del trabajo de recordar, tiene costos y beneficios (Risko y Gilbert, 2016). *Va a:* capítulo 6 y criterio 8.
 
-**A5. Para Francisco J. Parada:** desde la cognición 4E, ¿es correcto describir el objeto junto al primer paso como un apoyo externo de la cognición? ¿Qué palabras evitaría para no exagerar? ¿Qué métodos de bajo costo usaría para estudiar a personas en su vida diaria?
+**A5. Para Francisco J. Parada:** desde la cognición 4E, ¿cómo describirías el objeto junto al primer paso? ¿Qué palabras evitarías para no exagerar? ¿Qué métodos de bajo costo usarías para estudiar a personas en su vida diaria?
 *Va a:* capítulo 6, «Recordar con objetos y lugares», y capítulo 10, método.
 
-**A6. Para Christian Salas:** en rehabilitación neuropsicológica, ¿qué hace que una persona siga usando una ayuda externa para recordar, como una alarma o una agenda, y qué hace que la abandone? ¿Qué cuidados éticos ve en un proyecto que no es clínico?
+**A6. Para Christian Salas:** en rehabilitación neuropsicológica, ¿qué hace que una persona siga usando una ayuda externa para recordar, como una alarma o una agenda, y qué hace que la abandone? ¿Qué cuidados éticos ves en un proyecto que no es clínico?
 *Va a:* capítulo 11 y criterio 6.
 
-**A9. Para Christian Salas y Francisco J. Parada:** su artículo del 30 de octubre de 2026 aborda la rehabilitación neuropsicológica desde la cognición extendida y distribuida (Salas et al., 2026). ¿Qué de ese enfoque se aplica a una persona sin daño cerebral que deja un objeto junto a una actividad para recordarla? ¿Qué tendría que cumplir el objeto para formar parte de cómo la persona recuerda, y no ser solo un aviso más?
+**A9. Para Christian Salas y Francisco J. Parada:** el artículo que publicaron el 30 de octubre de 2026 aborda la rehabilitación neuropsicológica desde la cognición extendida y distribuida (Salas et al., 2026). ¿Qué de ese enfoque se aplica a una persona sin daño cerebral que deja un objeto junto a una actividad para recordarla? ¿Qué tendría que cumplir el objeto para formar parte de cómo la persona recuerda, y no ser solo un aviso más?
 *Por qué:* es la pregunta teórica central del objeto, y ellos acaban de publicar sobre ella. Leer el resumen del artículo antes de la entrevista. *Va a:* capítulo 6, «Recordar con objetos y lugares», y capítulo 11, «Por qué un objeto, y no solo el teléfono».
 
 **A7. Para Evangelina Cores:** las pruebas de memoria prospectiva distinguen intenciones que dependen del tiempo de las que dependen de un evento. ¿Dónde queda Relevo, que suena al cumplirse un tiempo de uso definido por la persona? ¿Qué podría tomar un diseñador de las pruebas ecológicas, las que imitan situaciones de la vida diaria, para medir en el hogar?
 *Va a:* capítulos 6 y 13.
 
-**A8. Para Sam J. Gilbert:** su trabajo muestra que las personas confían menos intenciones a un recordatorio cuando prepararlo cuesta más. Relevo pide preparar cada relevo. ¿Qué esfuerzo es aceptable, y qué datos de la prueba revisaría?
+**A8. Para Sam J. Gilbert:** tu trabajo muestra que las personas confían menos intenciones a un recordatorio cuando prepararlo cuesta más. Relevo pide preparar cada relevo. ¿Qué esfuerzo es aceptable, y qué datos de la prueba revisarías?
 *Va a:* criterio 6 y capítulo 13.
 
 ### 4B. Módulo de interacción y bienestar digital
 
-**B1. Para Jonas Keppel:** en su estudio, el artefacto físico generó más involucramiento que el digital. ¿Qué explicaba esa diferencia, y cómo controlaron el efecto de la novedad? ¿Cuánto debería durar una comparación entre el Tag y el teléfono?
+**B1. Para Jonas Keppel:** en tu estudio, el artefacto físico generó más involucramiento que el digital. ¿Qué explicaba esa diferencia, y cómo controlaron el efecto de la novedad? ¿Cuánto debería durar una comparación entre el Tag y el teléfono?
 *Va a:* capítulos 5, 10 y 13.
 
-**B2. Para Nađa Terzimehić:** MindPhone pregunta por la intención al desbloquear; Relevo la prepara antes y la devuelve después. ¿Qué aprendió sobre cómo reaccionan las personas cuando se les pregunta por su intención? ¿Alguien se sintió juzgado?
+**B2. Para Nađa Terzimehić:** MindPhone pregunta por la intención al desbloquear; Relevo la prepara antes y la devuelve después. ¿Qué aprendiste sobre cómo reaccionan las personas cuando se les pregunta por su intención, y qué las hizo sentirse juzgadas?
 *Va a:* capítulos 8 y 11, «Cómo habla Relevo».
 
-**B3. Para Kai Lukoff:** su trabajo distingue el uso significativo del que no lo es. Relevo deja que la persona elija cuándo suena para no interrumpir un uso valioso. ¿Basta con eso, o la condición debería considerar algo más que el tiempo?
+**B3. Para Kai Lukoff:** tu trabajo distingue el uso significativo del que no lo es. Relevo deja que la persona elija cuándo suena para no interrumpir un uso valioso. ¿Qué falta en esa condición, además del tiempo?
 *Va a:* criterios 3 y 5.
 
 **B4. Para Ulrik Lyngs y Alberto Monge Roffarello:** las herramientas de autocontrol digital suelen evaluarse por el tiempo de uso. ¿Qué medidas usarían ustedes para Relevo, que no busca reducir el uso? ¿Qué escala breve y validada recomendarían para la autonomía o la molestia?
 *Va a:* capítulo 13 y etapa siguiente.
 
-**B5. Para Valeria Herskovic:** ¿cómo se evalúa con rigor una tecnología de uso cotidiano con pocas personas? ¿Qué cuidados de accesibilidad y de ética echa de menos?
+**B5. Para Valeria Herskovic:** ¿cómo se evalúa con rigor una tecnología de uso cotidiano con pocas personas? ¿Qué cuidados de accesibilidad y de ética echas de menos?
 *Va a:* capítulos 12 y 13.
 
-**B6. Para Denis Parra:** la memoria dice que el desplazamiento infinito y la reproducción automática quitan los momentos de cierre. ¿Es una buena descripción desde los sistemas de recomendación? ¿Podría Relevo detectar una sesión sin decisión sin inferir demasiado de la persona?
+**B6. Para Denis Parra:** la memoria dice que el desplazamiento infinito y la reproducción automática quitan los momentos de cierre. ¿Qué corregirías de esa descripción desde los sistemas de recomendación? ¿Cómo podría Relevo detectar una sesión sin decisión sin inferir demasiado de la persona?
 *Va a:* capítulo 3, «La interfaz sostiene la continuidad», y criterio 3.
 
 ### 4C. Módulo de diseño del objeto y de la señal
 
-**D1. El objeto propio es una carcasa redonda de 46 mm, sin frente, con el logo como botón y la placa del Tag adentro. ¿Qué le parece su forma, su tamaño y su botón para un objeto que se deja junto a un libro o una guitarra?**
+**D1. El objeto propio es una carcasa redonda de 46 mm, sin frente, con el logo como botón y la placa del Tag adentro. ¿Qué te parecen su forma, su tamaño y su botón para un objeto que se deja junto a un libro o una guitarra?**
 *Va a:* capítulo 11, «El objeto».
 
 **D2. La señal dura unos 30 segundos y termina sola. ¿Cómo la percibiría alguien que no la espera? ¿Qué alternativa sin sonido, por ejemplo luz o vibración, serviría a personas con baja audición?**
 *Va a:* capítulo 11, «La señal», y requisitos del objeto propio.
 
-**D3. Para Elise van den Hoven:** Wobble funcionó mejor para intenciones que no exigen actuar de inmediato. Relevo sí busca un momento preciso. ¿Qué haría distinto un objeto para recordar algo futuro frente a uno para recordar algo pasado?
+**D3. Para Elise van den Hoven:** Wobble funcionó mejor para intenciones que no exigen actuar de inmediato. Relevo sí busca un momento preciso. ¿Qué harías distinto en un objeto para recordar algo futuro frente a uno para recordar algo pasado?
 *Va a:* capítulos 5 y 11.
 
 **D4. Para Francisco Zamorano:** desde las interfaces tangibles, ¿qué debería hacer el objeto además de sonar —por ejemplo, callarse al tomarlo o mostrar que espera— sin volverse un segundo teléfono?
@@ -152,11 +152,11 @@ Cada pregunta indica por qué se hace y adónde va la respuesta en la memoria.
 
 ### 5. Cierre
 
-**F1.** «¿Hay algo que no le pregunté y que debería saber?»
-**F2.** «¿A quién más le preguntaría, en Chile o fuera de Chile?»
-**F3.** Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
+**F1.** «¿Hay algo que no te pregunté y que debería saber?»
+**F2.** «¿A quién más consultarías, en Chile o fuera de Chile?»
+**F3.** Confirmar cómo quiere aparecer en la memoria y ofrecer el envío del párrafo y, al final, de la memoria.
 
-## Si la persona no puede reunirse: cinco preguntas por escrito
+## Si la persona prefiere responder por escrito: cinco preguntas
 
 Muchas personas responden más fácil por escrito. Enviar solo cinco preguntas: C2, C3, C4, una del módulo de su disciplina y F2.
 
@@ -203,7 +203,7 @@ Llenar esta ficha el mismo día, con las notas y la grabación a la vista. La fi
 ```
 Fecha y duración:
 Persona y disciplina:
-Formato: videollamada / en persona / por escrito
+Formato: videollamada / por escrito
 Consentimiento: grabación sí/no · cita con nombre sí/no · revisión del párrafo sí/no
 Módulo usado:
 
@@ -251,6 +251,12 @@ Risko, E. F. y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** el consentimiento y las preguntas en español tratan de tú, y las entrevistas son siempre por videollamada; otras cuatro preguntas dejan de responderse con sí o no.
+- **Cómo estaba antes:** trataba de usted y aceptaba entrevistas en persona.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-02 — Guía de los profesores
 

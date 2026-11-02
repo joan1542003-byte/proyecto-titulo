@@ -8,7 +8,7 @@ La versión en español está lista para adjuntar en [PDF de una página](relevo
 
 - **Mostrar:** esta página, el recorrido de la aplicación en seis capturas con un perfil de prueba (Figura 13 de la v6, [capturas](../../08_memoria/memoria-1920x1080/figuras/)) y el modelo 3D del objeto propio ([vistas](../../06_desarrollo_y_factibilidad/testigo-impresion-3d/vistas/)).
 - **No mostrar:** las fotografías de los hogares, los datos de cada persona, la aplicación para instalar ni el video «Cómo funciona», que es anterior a la marca y al Tag. Los resultados se comparten solo como recuentos.
-- **Durante la entrevista:** tener a mano el Tag y el teléfono para hacerlo sonar si la persona lo pide.
+- **Durante la videollamada:** tener a mano el Tag y el teléfono para hacerlo sonar frente a la cámara si la persona lo pide.
 
 ## Versión en español
 
@@ -29,7 +29,7 @@ La versión en español está lista para adjuntar en [PDF de una página](relevo
 - En las 21, recordó cómo empezar.
 - En 10 empezó la actividad, en 9 la dejó para después y en 2 cambió de idea. Cinco de esos diez comienzos son de una misma persona.
 
-**Lo que queremos discutir con usted.**
+**Lo que me gustaría conversar contigo.**
 
 1. Si la comparación entre el objeto y una notificación en el teléfono puede atribuir un efecto al lugar, o si mezcla el lugar con el canal.
 2. Cómo medir que la persona recordó «a tiempo» sin depender de lo que ella misma responde en la aplicación.
@@ -61,6 +61,12 @@ La versión en español está lista para adjuntar en [PDF de una página](relevo
 3. What should change in the object or the signal before a test with more people.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — De tú
+
+- **Qué cambió:** la página y el PDF tratan de tú («Lo que me gustaría conversar contigo») y la entrevista es por videollamada.
+- **Cómo estaba antes:** decía «Lo que queremos discutir con usted».
+- **Por qué:** pedido del autor.
 
 ### 2026-11-02 — PDF para adjuntar
 

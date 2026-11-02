@@ -217,6 +217,7 @@
 | 2 nov. | Encargo | Hacer el guion de entrevista para cada uno de los perfiles de Chile. | Cinco guiones, uno por persona ([Salas](../02_investigacion/entrevistas-expertos/guion-salas.md), [Parada](../02_investigacion/entrevistas-expertos/guion-parada.md), [Parra](../02_investigacion/entrevistas-expertos/guion-parra.md), [Herskovic](../02_investigacion/entrevistas-expertos/guion-herskovic.md) y [Zamorano](../02_investigacion/entrevistas-expertos/guion-zamorano.md)), armados sobre sus publicaciones, comprobadas en Crossref y Europe PMC. Se corrigió que Parra estuviera de sabático (fue en 2023). | — |
 | 2 nov. | Corrección y encargo | Dejar de hacer automatizaciones. Entregar el enlace de cada perfil, su correo y el texto para pedirles una entrevista breve, leyendo la guía de entrevistas del repositorio. | Sin tareas programadas y sin avisos del PR. Los cinco correos personalizados se entregaron en la conversación, a partir de la guía de expertos y los guiones; la guía E11 del archivo es de entrevistas a usuarios. La página de resumen queda en [PDF](../02_investigacion/entrevistas-expertos/relevo-resumen-entrevista.pdf) para adjuntar. | Sin automatizaciones |
 | 2 nov. | Corrección | Acortar los mensajes: ir al grano, pedir una entrevista entre el 3 y el 13 de noviembre y explicar el proyecto al final, en pocas líneas. Verificar que todo esté bien. Entregó dos documentos de sus profesores: una guía de entrevista semiestructurada y análisis del discurso, y un guion de entrevista de ejemplo. | Cinco [mensajes breves](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md), uno por persona. La guía y los guiones siguen la pauta de los profesores: embudo, preguntas abiertas, consentimiento completo, cierre proyectivo y matriz de análisis. Se comprobaron de nuevo los enlaces y correos. Los documentos de los profesores no se suben. | — |
+| 2 nov. | Corrección | Tutear, no tratar de usted, y hacer las entrevistas siempre por videollamada. | Mensajes, recordatorio, agradecimiento, consentimiento, guía, cinco guiones, página para mostrar y PDF tratan de tú y piden solo videollamada. | Entrevistas de tú y por videollamada |
 
 ## Lo que muestra el registro
 
@@ -227,6 +228,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** se registró el pedido de tutear y entrevistar solo por videollamada.
+- **Cómo estaba antes:** el último pedido eran los mensajes breves.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Mensajes breves
 

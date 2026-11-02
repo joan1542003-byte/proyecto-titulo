@@ -1,6 +1,6 @@
 # Guion de entrevista: Francisco J. Parada
 
-**Disciplina:** psicología cognitiva y neurociencia; cognición 4E y neurociencia de la vida real. **Institución:** director del Centro de Estudios en Neurociencia Humana y Neuropsicología, Facultad de Psicología, Universidad Diego Portales; sus artículos de 2026 suman la Escuela de Diseño UDP. **Duración:** 35 minutos. **Formato:** en persona, en la UDP, o por videollamada. **Idioma:** español.
+**Disciplina:** psicología cognitiva y neurociencia; cognición 4E y neurociencia de la vida real. **Institución:** director del Centro de Estudios en Neurociencia Humana y Neuropsicología, Facultad de Psicología, Universidad Diego Portales; sus artículos de 2026 suman la Escuela de Diseño UDP. **Duración:** 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
 
 Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
 
@@ -22,15 +22,15 @@ Parada estudia la cognición como algo que ocurre entre el cerebro, el cuerpo y 
 
 - **Leer:** los resúmenes de Parada et al. (2024) y Parada y Rossi (2024), y el resumen de Salas et al. (2026).
 - **Enviar:** la [página para mostrar](material-para-mostrar.md), dos días antes.
-- **Llevar:** el Tag, el teléfono con la aplicación, la Figura 4 de la v6 (la señal pasa del segundo plano al primero) y la lista de lo que registra la aplicación: cuándo se activó cada relevo, si sonó, cómo se calló y las respuestas.
+- **Tener a mano:** el Tag y el teléfono con la aplicación, para hacerlo sonar frente a la cámara; la Figura 4 de la v6, para compartir pantalla, (la señal pasa del segundo plano al primero) y la lista de lo que registra la aplicación: cuándo se activó cada relevo, si sonó, cómo se calló y las respuestas.
 
 ## Guion
 
 ### 1. Apertura (2 minutos)
 
-> Gracias por recibirme. Le cuento brevemente el proyecto y después me interesa su opinión sobre cómo estudiarlo en la vida real, a partir de su trabajo en cognición 4E y en diseños escalables. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
+> Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión sobre cómo estudiarlo en la vida real, a partir de tu trabajo en cognición 4E y en diseños escalables. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -40,34 +40,34 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
-Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
 
 **Para empezar (2 minutos)**
 
-> Para empezar, ¿cómo llegó a estudiar la cognición fuera del laboratorio, en la vida diaria?
+> Para empezar, ¿cómo llegaste a estudiar la cognición fuera del laboratorio, en la vida diaria?
 
 - *Por qué:* crea confianza y sitúa la conversación en su experiencia.
 
 **1. ★ Un diseño escalable para Relevo**
 
-> En sus diseños escalables, la misma tarea pasa del computador a situaciones reales. Relevo tiene una duda parecida: la prueba comparó el objeto junto al primer paso con una notificación en el teléfono, y eso cambia a la vez el canal y el lugar. Con tres a seis personas, ¿cómo organizaría niveles que separen ambos efectos?
+> En tus diseños escalables, la misma tarea pasa del computador a situaciones reales. Relevo tiene una duda parecida: la prueba comparó el objeto junto al primer paso con una notificación en el teléfono, y eso cambia a la vez el canal y el lugar. Con tres a seis personas, ¿cómo organizaríías niveles que separen ambos efectos?
 
 - *Por qué:* es la debilidad central de la prueba, y el supuesto del lugar es justo lo propio de la hipótesis.
-- *Propuesta para discutir:* cuatro niveles, cada uno en una semana: el sonido en el teléfono; el mismo sonido desde el objeto en un lugar neutro; desde el objeto junto al primer paso, y sin señal. «¿Qué sacaría o cambiaría, y qué papel juega el orden?»
+- *Propuesta para discutir:* cuatro niveles, cada uno en una semana: el sonido en el teléfono; el mismo sonido desde el objeto en un lugar neutro; desde el objeto junto al primer paso, y sin señal. «¿Qué sacaríías o cambiaríías, y qué papel juega el orden?»
 - *Qué escuchar:* el número mínimo de niveles, cómo ordenarlos o alternarlos, y qué comparar dentro de cada persona.
 - *Va a:* capítulo 10, hipótesis y supuestos; capítulo 13, «Límites de esta etapa», y la etapa siguiente.
 
 **2. ★ Andamiaje del entorno**
 
-> Su perspectiva 3E habla de una cognición andamiada por el entorno. En Relevo, la persona deja el objeto donde empieza la actividad. ¿Cómo describiría, desde esa perspectiva, el papel de ese objeto en el recuerdo?
+> Tu perspectiva 3E habla de una cognición andamiada por el entorno. En Relevo, la persona deja el objeto donde empieza la actividad. ¿Cómo describiríías, desde esa perspectiva, el papel de ese objeto en el recuerdo?
 
 - *Por qué:* la memoria usa a Kirsh (1995) y la interacción tangible, pero le falta un término preciso para el papel del objeto.
-- *Repreguntas:* «¿Qué lo haría pasar de aviso a andamiaje?», «¿Qué diferencia hay, en su artículo con Christian Salas, entre que el objeto extienda la cognición de la persona y que la cognición se distribuya entre la persona, el objeto y el lugar?».
+- *Repreguntas:* «¿Qué lo haríías pasar de aviso a andamiaje?», «¿Qué diferencia hay, en tu artículo con Christian Salas, entre que el objeto extienda la cognición de la persona y que la cognición se distribuya entre la persona, el objeto y el lugar?».
 - *Va a:* capítulo 6, «Recordar con objetos y lugares».
 
 **3. ★ Medir sin depender solo de lo que la persona dice**
 
-> Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas dijeron que sí, pero lo respondieron en la misma pantalla que muestra la actividad. ¿Qué medida de comportamiento, de bajo costo y sin equipos de laboratorio, sumaría?
+> Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas dijeron que sí, pero lo respondieron en la misma pantalla que muestra la actividad. ¿Qué medida de comportamiento, de bajo costo y sin equipos de laboratorio, sumaríías?
 
 - *Por qué:* sus revisiones piden medir en contextos reales; Relevo no tiene electroencefalografía, pero sí registros del teléfono.
 - *Propuesta para discutir:* el tiempo entre la señal y la siguiente apertura de una aplicación; cómo se calló la señal (teléfono o botón del objeto), y preguntar qué recordó antes de mostrar la actividad.
@@ -83,31 +83,31 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 > Con tres personas, una semana de comparación y respuestas dentro de la aplicación, ¿qué no debería afirmar la memoria?
 
-- *Repregunta:* «¿Cómo lo diría usted en una frase?».
+- *Repregunta:* «¿Cómo lo dirías tú en una frase?».
 - *Va a:* resumen, capítulo 13 y conclusiones.
 
 **6. Diseño y neurociencia en la UDP**
 
-> Sus artículos de este año también nombran a la Escuela de Diseño UDP. ¿Cómo se podría seguir trabajando Relevo entre diseño y neurociencia en una etapa siguiente?
+> Tus artículos de este año también nombran a la Escuela de Diseño UDP. ¿Cómo se podría seguir trabajando Relevo entre diseño y neurociencia en una etapa siguiente?
 
 - *Por qué:* muestra colaboración interdisciplinaria y una proyección concreta, sin pedirle un compromiso.
 - *Va a:* capítulo 14, «Alcances y proyecciones».
 
 **Si queda tiempo:**
 
-- «¿Qué pasa con un mismo sonido que se repite durante semanas, y cómo lo manejaría?»
+- «¿Qué pasa con un mismo sonido que se repite durante semanas, y cómo lo manejaríías?»
 - «El sonido debe pasar del segundo plano al primero para alcanzar a quien mira una pantalla. ¿Qué dice la evidencia sobre la atención auditiva en esa situación?»
 
 ### 4. Cierre (3 minutos)
 
-- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
-- «¿Hay algo que no le pregunté y que debería saber?»
-- «¿A quién más le preguntaría?»
-- Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
+- «Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería?»
+- «¿Hay algo que no te pregunté y que debería saber?»
+- «¿A quién más consultarías?»
+- Confirmar cómo quiere aparecer en la memoria y ofrecer el envío del párrafo y, al final, de la memoria.
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: 1, 2, 3, 5 y «¿A quién más le preguntaría?».
+Enviar solo cinco preguntas: 1, 2, 3, 5 y «¿A quién más consultarías?».
 
 ## Después
 
@@ -127,9 +127,15 @@ Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyo
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** todo lo que se le dice a la persona trata de tú, y la entrevista es siempre por videollamada, con el Tag y las figuras mostrados por cámara o pantalla.
+- **Cómo estaba antes:** trataba de usted y proponía también una reunión en persona.
+- **Por qué:** pedido del autor.
+
 ### 2026-11-02 — Guía de los profesores
 
-- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudieras cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
 - **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
 - **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 

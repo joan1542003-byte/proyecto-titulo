@@ -1,6 +1,6 @@
 # Guion de entrevista: Christian Salas Riquelme
 
-**Disciplina:** neuropsicología clínica y rehabilitación neuropsicológica. **Institución:** director de la Unidad de Neuropsicología Clínica, Facultad de Psicología, Universidad Diego Portales. **Duración:** 35 minutos. **Formato:** en persona, en la UDP, o por videollamada. **Idioma:** español.
+**Disciplina:** neuropsicología clínica y rehabilitación neuropsicológica. **Institución:** director de la Unidad de Neuropsicología Clínica, Facultad de Psicología, Universidad Diego Portales. **Duración:** 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
 
 Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
 
@@ -21,15 +21,15 @@ Salas estudia cómo se rehabilitan las personas después de un daño cerebral, y
 
 - **Leer:** el resumen de Salas et al. (2026) y la sección de resultados de Fabricatore et al. (2020) sobre los usos y el uso sostenido de la tecnología.
 - **Enviar:** la [página para mostrar](material-para-mostrar.md), dos días antes.
-- **Llevar:** el Tag, el teléfono con la aplicación, las capturas del recorrido (Figura 13 de la v6) y esta página impresa.
+- **Tener a mano:** el Tag y el teléfono con la aplicación, para hacerlo sonar frente a la cámara; las capturas del recorrido (Figura 13 de la v6), para compartir pantalla, y este guion.
 
 ## Guion
 
 ### 1. Apertura (2 minutos)
 
-> Gracias por recibirme. Le cuento brevemente el proyecto y después me interesa su opinión experta, sobre todo desde la rehabilitación y su artículo reciente sobre cognición extendida y distribuida. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
+> Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión experta, sobre todo desde la rehabilitación y tu artículo reciente sobre cognición extendida y distribuida. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -39,26 +39,26 @@ Contar el problema, el ciclo (preparar, seguir en el teléfono, oír la señal y
 
 ### 3. Preguntas (25 minutos)
 
-Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
 
 **Para empezar (2 minutos)**
 
-> Para empezar, ¿cómo llegó a pensar la rehabilitación desde la cognición extendida y distribuida?
+> Para empezar, ¿cómo llegaste a pensar la rehabilitación desde la cognición extendida y distribuida?
 
 - *Por qué:* crea confianza y sitúa la conversación en su experiencia.
 
 **1. ★ ¿Extendida o distribuida?**
 
-> En su artículo distinguen la cognición extendida de la distribuida. En Relevo participan la persona, la aplicación, el objeto y el lugar donde empieza la actividad. ¿Cómo describiría, con esas dos ideas, lo que pasa cuando el objeto suena?
+> En tu artículo distinguen la cognición extendida de la distribuida. En Relevo participan la persona, la aplicación, el objeto y el lugar donde empieza la actividad. ¿Cómo describiríías, con esas dos ideas, lo que pasa cuando el objeto suena?
 
 - *Por qué:* la memoria hoy usa a Kirsh (1995) y la interacción tangible, pero no nombra este marco, que es más preciso.
-- *Repreguntas:* «¿Qué tendría que cumplir el objeto para integrarse al modo en que la persona recuerda, y no ser solo un aviso?», «¿Qué palabras evitaría para no exagerar?».
+- *Repreguntas:* «¿Qué tendría que cumplir el objeto para integrarse al modo en que la persona recuerda, y no ser solo un aviso?», «¿Qué palabras evitaríías para no exagerar?».
 - *Qué escuchar:* condiciones concretas (por ejemplo, que el objeto sea confiable, esté siempre disponible o que la persona lo haya puesto ahí) y términos que conviene o no conviene usar.
 - *Va a:* capítulo 6, «Recordar con objetos y lugares», y capítulo 11, «Por qué un objeto, y no solo el teléfono».
 
 **2. ★ El uso de la tecnología**
 
-> En la revisión de 2020 clasificaron la tecnología en compensar, modificar el entorno, monitorear o reentrenar. ¿Dónde ubicaría a Relevo?
+> En la revisión de 2020 clasificaron la tecnología en compensar, modificar el entorno, monitorear o reentrenar. ¿Dónde ubicaríías a Relevo?
 
 - *Por qué:* «compensar» supone un déficit, y Relevo se dirige a personas sin dificultades de memoria. La respuesta ayuda a describirlo sin volverlo clínico.
 - *Repregunta:* «Si es una modificación del entorno hecha por la propia persona, ¿qué la diferencia de una nota pegada en el libro?».
@@ -66,15 +66,15 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 **3. ★ Por qué se sigue usando o se abandona**
 
-> Ustedes encontraron que el uso sostenido dependía de la facilidad de uso, de que fuera socialmente apropiado, de la personalización, de la adaptación dinámica y de la mediación de otras personas. En la prueba, tres personas activaron 31 relevos en dos semanas; la primera vez, de once pantallas, les resultó larga, y una persona bajó su límite de 45 a 35 minutos. ¿Cuál de esos factores le preocuparía más para que Relevo no se abandone?
+> Ustedes encontraron que el uso sostenido dependía de la facilidad de uso, de que fuera socialmente apropiado, de la personalización, de la adaptación dinámica y de la mediación de otras personas. En la prueba, tres personas activaron 31 relevos en dos semanas; la primera vez, de once pantallas, les resultó larga, y una persona bajó su límite de 45 a 35 minutos. ¿Cuál de esos factores te preocuparía más para que Relevo no se abandone?
 
 - *Por qué:* la prueba duró tres semanas; un piloto más largo necesita saber qué cuidar.
-- *Repregunta:* «Relevo no se adapta solo: la persona ajusta todo. ¿Qué ventajas y qué riesgos ve en eso?».
+- *Repregunta:* «Relevo no se adapta solo: la persona ajusta todo. ¿Qué ventajas y qué riesgos ves en eso?».
 - *Va a:* capítulo 13, «Iterar con los resultados», y criterio 6.
 
 **4. Lo que el sonido deja ver**
 
-> La aplicación no muestra la actividad en la pantalla bloqueada, porque lo que alguien quiere hacer es privado. Pero el sonido se oye en una casa compartida. ¿Qué riesgos ve en que deje ver algo que la persona prefería guardar?
+> La aplicación no muestra la actividad en la pantalla bloqueada, porque lo que alguien quiere hacer es privado. Pero el sonido se oye en una casa compartida. ¿Qué riesgos ves en que deje ver algo que la persona prefería guardar?
 
 - *Por qué:* uno de sus temas es el estigma y el ocultamiento después de un daño cerebral (Bracho y Salas, 2024); la pregunta lo traslada a la privacidad cotidiana, sin suponer estigma.
 - *Va a:* capítulo 11, «Privacidad y datos», y criterio 7.
@@ -84,12 +84,12 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 > En 19 de 21 respuestas, la persona dijo que supo qué quería hacer antes de leerlo en la pantalla, pero lo respondió en la aplicación, después de la señal. Y la comparación con una notificación cambia a la vez el canal y el lugar. ¿Qué no debería afirmar la memoria con estos datos?
 
 - *Por qué:* protege a la memoria de una pregunta de la comisión.
-- *Repregunta:* «¿Cómo lo diría usted en una frase?».
+- *Repregunta:* «¿Cómo lo dirías tú en una frase?».
 - *Va a:* resumen, capítulo 13, «Límites de esta etapa», y conclusiones.
 
 **6. Ética de tomar prestado**
 
-> Relevo usa ideas que vienen de la rehabilitación, pero no es clínico. ¿Qué cuidados éticos le pediría a un proyecto así?
+> Relevo usa ideas que vienen de la rehabilitación, pero no es clínico. ¿Qué cuidados éticos exigirías a un proyecto así?
 
 - *Va a:* capítulo 13, «Qué se registró y cómo se cuidó a las personas».
 
@@ -100,14 +100,14 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 ### 4. Cierre (3 minutos)
 
-- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
-- «¿Hay algo que no le pregunté y que debería saber?»
-- «¿A quién más le preguntaría?»
-- Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
+- «Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería?»
+- «¿Hay algo que no te pregunté y que debería saber?»
+- «¿A quién más consultarías?»
+- Confirmar cómo quiere aparecer en la memoria y ofrecer el envío del párrafo y, al final, de la memoria.
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: 1, 2, 3, 5 y «¿A quién más le preguntaría?».
+Enviar solo cinco preguntas: 1, 2, 3, 5 y «¿A quién más consultarías?».
 
 ## Después
 
@@ -125,9 +125,15 @@ Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyo
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** todo lo que se le dice a la persona trata de tú, y la entrevista es siempre por videollamada, con el Tag y las figuras mostrados por cámara o pantalla.
+- **Cómo estaba antes:** trataba de usted y proponía también una reunión en persona.
+- **Por qué:** pedido del autor.
+
 ### 2026-11-02 — Guía de los profesores
 
-- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudieras cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
 - **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
 - **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 
