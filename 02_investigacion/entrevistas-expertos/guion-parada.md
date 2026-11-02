@@ -142,6 +142,7 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > Si te queda tiempo (opcional)
 > 4. En la memoria llamo «decisión renovada» al momento en que alguien vuelve a considerar si sigue en el teléfono o cambia de actividad. ¿Qué concepto establecido usarías para ese momento?
 > 5. En «Beyond the skull» distinguen la cognición extendida de la distribuida. Si la persona prepara el aviso en el teléfono y un objeto lo da desde otro lugar de la casa, ¿cuál de las dos describe mejor el sistema, y por qué?
+> 6. En la memoria, «recordar a tiempo» significa que, cuando suena, la persona sabe qué quería hacer y cómo empezar. En tu campo, ¿qué cuenta como recordar a tiempo: saber qué se quería hacer o empezar a hacerlo? ¿Cómo debería definirlo la memoria?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
@@ -159,6 +160,7 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 | 3. El cuerpo en la transición | «Recordar no basta para empezar» se explica hoy solo con Fogg (2009), un modelo de diseño persuasivo. Falta una explicación desde la cognición. | Capítulos 6 y 13 |
 | 4. «Decisión renovada» (opcional) | Es un término del autor, sin cita. Un concepto establecido le daría respaldo. | Capítulo 6 y glosario |
 | 5. Extendida o distribuida (opcional) | La memoria no nombra este marco, que describe con más precisión el sistema persona, teléfono, objeto y lugar. | Capítulo 6 |
+| 6. Qué es «recordar a tiempo» (opcional) | La memoria define «a tiempo» como saber qué se quería hacer; en memoria prospectiva el éxito suele medirse por la acción. Con una definición el resultado es 19 de 21; con la otra, 10 de 21. | Capítulo 10, definición de «a tiempo», y capítulo 13 |
 
 ## Después
 
@@ -177,6 +179,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Una pregunta más
+
+- **Qué cambió:** se suma la pregunta opcional 6 al correo, con su fila en la tabla de qué aporta.
+- **Cómo estaba antes:** el correo tenía cinco preguntas.
+- **Por qué:** el autor pidió una pregunta más.
 
 ### 2026-11-02 — Preguntas que aportan a la memoria
 
