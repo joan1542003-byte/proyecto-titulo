@@ -133,7 +133,7 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > Si te queda tiempo (opcional)
 > 4. En mis entrevistas, seis de ocho personas pidieron señales visuales o discretas y ninguna pidió sonido; aun así elegí sonido, porque debe alcanzar a quien mira una pantalla. Desde tu experiencia con interfaces multisensoriales, ¿cómo resolverías esa tensión?
 > 5. Si tuvieras que presentar Relevo a una comisión de diseño, ¿qué destacarías como aporte y qué te parecería débil?
-> 6. TAMI pasó de prototipo a una tecnología validada, patentada y disponible para licenciar. El objeto propio de Relevo es hoy un modelo 3D que envuelve un llavero comprado. ¿Qué pasos y qué socios —fabricación, propiedad intelectual, transferencia— recomendarías para llevarlo de prototipo a producto?
+> 6. Mi marco teórico se apoya en Ishii y Ullmer (1997) y en la tecnología calma de Weiser y Brown (1997), que son clásicos pero antiguos. Desde la interacción tangible actual, ¿qué conceptos o autores recientes describen mejor un objeto que casi no se manipula, que vale por el lugar donde se deja y que informa en segundo plano?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
@@ -151,7 +151,7 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 | 3. Qué evidencia justifica el objeto | Responde a la crítica de la comisión de julio y define qué haría falta para sostener el criterio 8. | Criterio 8 y supuesto 3 del capítulo 10 |
 | 4. Señal visual o sonora (opcional) | La memoria deja abierta la tensión entre lo que pidieron las personas (señales visuales o discretas) y la decisión de usar sonido. | Capítulos 7 y 11 |
 | 5. Aporte y debilidad (opcional) | Una lectura externa del aporte disciplinar, que la rúbrica evalúa en la formulación. | Capítulo 14 |
-| 6. De prototipo a producto (opcional) | Factibilidad y producción es el criterio más débil de la rúbrica, y la matriz de pase marca en desarrollo los proveedores y fabricantes (5.3) y los actores (8.1). | Capítulo 12 y actores |
+| 6. Teoría tangible actual (opcional) | La base teórica del objeto descansa en dos textos de 1997, y la charla de marco teórico pide fuentes de los últimos cinco años (registro de riesgos, n.º 14). | Capítulo 6 y referencias |
 
 ## Después
 
@@ -164,6 +164,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Pregunta 6 teórica
+
+- **Qué cambió:** la pregunta 6 pasa a ser teórica y propia del campo de la persona, sin datos de la prueba.
+- **Cómo estaba antes:** la pregunta 6 partía de un resultado o de la producción del objeto.
+- **Por qué:** el autor pidió una pregunta teórica, desde la especialidad de la persona.
 
 ### 2026-11-02 — Una pregunta más
 

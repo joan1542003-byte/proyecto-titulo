@@ -142,7 +142,7 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > Si te queda tiempo (opcional)
 > 4. En la memoria llamo «decisión renovada» al momento en que alguien vuelve a considerar si sigue en el teléfono o cambia de actividad. ¿Qué concepto establecido usarías para ese momento?
 > 5. En «Beyond the skull» distinguen la cognición extendida de la distribuida. Si la persona prepara el aviso en el teléfono y un objeto lo da desde otro lugar de la casa, ¿cuál de las dos describe mejor el sistema, y por qué?
-> 6. En la memoria, «recordar a tiempo» significa que, cuando suena, la persona sabe qué quería hacer y cómo empezar. En tu campo, ¿qué cuenta como recordar a tiempo: saber qué se quería hacer o empezar a hacerlo? ¿Cómo debería definirlo la memoria?
+> 6. En la memoria explico el problema como una intención que deja de volver a la mente (memoria prospectiva). Pero tanto lo que la aleja —un teléfono diseñado para que sigas— como lo que la trae de vuelta —un objeto en el lugar de la actividad— están en el entorno. Desde la cognición 4E, ¿cómo describirías este fenómeno, y qué cambiaría en mi marco teórico?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
@@ -160,7 +160,7 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 | 3. El cuerpo en la transición | «Recordar no basta para empezar» se explica hoy solo con Fogg (2009), un modelo de diseño persuasivo. Falta una explicación desde la cognición. | Capítulos 6 y 13 |
 | 4. «Decisión renovada» (opcional) | Es un término del autor, sin cita. Un concepto establecido le daría respaldo. | Capítulo 6 y glosario |
 | 5. Extendida o distribuida (opcional) | La memoria no nombra este marco, que describe con más precisión el sistema persona, teléfono, objeto y lugar. | Capítulo 6 |
-| 6. Qué es «recordar a tiempo» (opcional) | La memoria define «a tiempo» como saber qué se quería hacer; en memoria prospectiva el éxito suele medirse por la acción. Con una definición el resultado es 19 de 21; con la otra, 10 de 21. | Capítulo 10, definición de «a tiempo», y capítulo 13 |
+| 6. El fenómeno desde la cognición 4E (opcional) | Hoy el problema se explica como memoria, dentro de la cabeza, y la respuesta como entorno. Esta pregunta busca un marco que una ambas explicaciones. | Capítulos 3 y 6 |
 
 ## Después
 
@@ -179,6 +179,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Pregunta 6 teórica
+
+- **Qué cambió:** la pregunta 6 pasa a ser teórica y propia del campo de la persona, sin datos de la prueba.
+- **Cómo estaba antes:** la pregunta 6 partía de un resultado o de la producción del objeto.
+- **Por qué:** el autor pidió una pregunta teórica, desde la especialidad de la persona.
 
 ### 2026-11-02 — Una pregunta más
 
