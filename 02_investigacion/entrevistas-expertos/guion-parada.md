@@ -130,17 +130,17 @@ Respondió la invitación el 2 de noviembre de 2026. Este es el correo de respue
 
 > Hola, Francisco:
 >
-> ¡Gracias por responder! Te dejo un resumen breve y tres preguntas. Puedes responder por escrito, en dos o tres líneas cada una, o lo conversamos en la videollamada.
+> ¡Gracias por responder! Te dejo un resumen breve, tres preguntas y otras tres opcionales. Puedes responder por escrito, en dos o tres líneas cada una, o lo conversamos en la videollamada.
 >
-> En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas: casi siempre recordaron qué querían hacer (19 de 21 respuestas), pero empezaron la actividad solo en 10.
+> En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas. Después de cada aviso respondían en la aplicación: casi siempre dijeron que sabían qué querían hacer (19 de 21 veces), pero empezaron la actividad solo en 10.
 >
 > Mis preguntas
-> 1. Los estudios que revisé sobre lugar y memoria evalúan intenciones que se recuerdan al estar en el lugar. En Relevo, la persona puede estar en otra parte de la casa y el sonido llega desde donde está la guitarra. ¿Qué dice tu campo sobre si un sonido que viene de un lugar puede traer a la mente lo que hay ahí?
-> 2. Cada persona prepara una sola actividad a la vez, así que al oír el sonido puede ser fácil saber de cuál se trata, esté donde esté el objeto. ¿Qué tendría que observar para afirmar que el lugar, y no solo el sonido, ayudó a recordar?
+> 1. Los estudios que revisé sobre lugar y memoria evalúan intenciones que se recuerdan estando en ese lugar. En Relevo, la persona puede estar en otra parte de la casa y el sonido llega desde donde está la guitarra. Desde la cognición situada o 4E, ¿qué condiciones harían que un sonido que viene de un lugar traiga a la mente lo que hay ahí?
+> 2. Cada persona preparaba una sola actividad a la vez, así que al oír el sonido podía ser fácil saber de cuál se trataba, estuviera donde estuviera el objeto. ¿Qué tendría que observar para afirmar que el lugar, y no solo el sonido, ayudó a recordar?
 > 3. Una persona contó que la señal le sirvió cuando estaba en el escritorio, pero que de noche la oye desde la cama y no se levanta. Desde una mirada corporizada, ¿qué papel tienen la postura, el cansancio o la distancia en pasar del teléfono a otra actividad?
 >
 > Si te queda tiempo (opcional)
-> 4. En la memoria llamo «decisión renovada» al momento en que alguien vuelve a considerar si sigue en el teléfono o cambia de actividad. ¿Qué concepto establecido usarías para ese momento?
+> 4. En la memoria llamo «decisión renovada» al momento en que alguien vuelve a considerar si sigue en el teléfono o cambia de actividad. Desde la psicología cognitiva o la cognición enactiva, ¿qué concepto establecido usarías para ese momento?
 > 5. En «Beyond the skull» distinguen la cognición extendida de la distribuida. Si la persona prepara el aviso en el teléfono y un objeto lo da desde otro lugar de la casa, ¿cuál de las dos describe mejor el sistema, y por qué?
 > 6. En la memoria explico el problema como una intención que deja de volver a la mente (memoria prospectiva). Pero tanto lo que la aleja —aplicaciones diseñadas para que la sesión continúe— como lo que la trae de vuelta —un objeto en el lugar de la actividad— están en el entorno. Desde la cognición 4E, ¿cómo describirías este fenómeno, y qué cambiaría en mi marco teórico?
 >
@@ -179,6 +179,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Comprensión y campo de Parada
+
+- **Qué cambió:** el resumen explica que «recordaron» viene de lo que las personas respondieron en la aplicación; la pregunta 1 nombra la cognición situada o 4E y pregunta por condiciones, sin suponer la respuesta; la pregunta 2 pasa a pasado; la 4 nombra la psicología cognitiva o la cognición enactiva, y la apertura dice que hay tres preguntas opcionales.
+- **Cómo estaba antes:** el resumen no decía cómo se midió el recuerdo, la pregunta 1 decía «tu campo» y la 4 no nombraba un campo.
+- **Por qué:** el autor pidió verificar que Parada entienda de qué se habla y que cada pregunta corresponda a lo que él investiga.
 
 ### 2026-11-02 — Parada respondió
 

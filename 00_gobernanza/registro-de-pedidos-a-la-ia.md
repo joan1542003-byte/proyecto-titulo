@@ -228,6 +228,7 @@
 | 2 nov. | Encargo | Una pregunta más para Francisco. | Pregunta 6 opcional: a Parada, qué cuenta como «recordar a tiempo» (cambia la lectura de 19 de 21 a 10 de 21); a Zamorano, qué pasos y socios llevarían el objeto de prototipo a producto (factibilidad, proveedores y actores). | — |
 | 2 nov. | Corrección | Una pregunta más teórica, no de resultados, desde la especialidad de la persona. | La pregunta 6 se reemplaza: a Parada, cómo describir el fenómeno desde la cognición 4E (problema y respuesta en el entorno); a Zamorano, qué teoría tangible reciente reemplazaría a los textos de 1997. | — |
 | 2 nov. | Decisión | Confirmó que el que respondió es Francisco J. Parada. | Correo final para Parada con seis preguntas (tres principales y tres opcionales), listo para enviar; estado actualizado en la carpeta de entrevistas. El correo de Zamorano queda en espera. | Entrevista con Parada |
+| 2 nov. | Corrección | Verificar que Parada entienda de qué se habla y qué se le pregunta. | Se contrastó cada pregunta con sus líneas de investigación (UDP) y sus artículos: 2, 3, 5 y 6 caen en su campo; 1 y 4 se acotaron a la cognición situada y a la psicología cognitiva. El resumen ahora dice que el recuerdo se midió por lo que respondieron en la aplicación. | — |
 
 ## Lo que muestra el registro
 
@@ -238,6 +239,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Verificación con Parada
+
+- **Qué cambió:** se registró la verificación del correo para Parada.
+- **Cómo estaba antes:** el último pedido era la confirmación de que respondió Parada.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Respuesta de Parada
 
