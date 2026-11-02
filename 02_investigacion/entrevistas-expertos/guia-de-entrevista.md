@@ -17,7 +17,7 @@ La entrevista no prueba que Relevo funcione. Es la opinión fundada de una perso
 
 Es una *entrevista semiestructurada a expertos*: una conversación guiada por preguntas preparadas, que se adapta a lo que la persona sabe y en la que interesa su conocimiento especializado, no su experiencia personal (Bogner et al., 2009). Dura de 30 a 40 minutos, por videollamada o en persona, con una sola persona entrevistada a la vez. El autor conduce y toma notas; si la persona acepta, se graba solo el audio para revisar las citas.
 
-Cada entrevista usa el **núcleo común** y **un módulo** según la disciplina. No hace falta hacer todas las preguntas: es mejor profundizar en tres que recorrer diez.
+Cada persona en Chile tiene su propio guion, que adapta esta guía a sus publicaciones: [Salas](guion-salas.md), [Parada](guion-parada.md), [Parra](guion-parra.md), [Herskovic](guion-herskovic.md) y [Zamorano](guion-zamorano.md). Esta guía queda como base común. Cada entrevista usa el **núcleo común** y **un módulo** según la disciplina. No hace falta hacer todas las preguntas: es mejor profundizar en tres que recorrer diez.
 
 | Módulo | Personas de la lista |
 | --- | --- |
@@ -231,6 +231,12 @@ Risko, E. F. y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guiones por persona
+
+- **Qué cambió:** la sección de método enlaza los cinco guiones por persona.
+- **Cómo estaba antes:** la guía era el único guion.
+- **Por qué:** el autor pidió un guion para cada perfil.
 
 ### 2026-11-02 — Solo Chile
 

@@ -11,6 +11,7 @@ Conseguir al menos una entrevista con una persona experta de otra disciplina ant
 | Documento | Qué tiene |
 | --- | --- |
 | [Perfiles](perfiles.md) | Cinco personas en Chile, con su disciplina, institución, qué aportan, la vigencia de su correo y la página oficial donde lo publican. Ocho personas de otros países quedan en reserva. |
+| Guiones por persona: [Salas](guion-salas.md), [Parada](guion-parada.md), [Parra](guion-parra.md), [Herskovic](guion-herskovic.md) y [Zamorano](guion-zamorano.md) | Un guion de 30 a 35 minutos para cada persona en Chile, armado sobre sus publicaciones: por qué esa persona, qué debe dejar la entrevista, qué leer y llevar, apertura, preguntas imprescindibles y de reserva, versión escrita y referencias. |
 | [Guía de entrevista](guia-de-entrevista.md) | Método, consentimiento, preguntas comunes y por disciplina, en español y en inglés, versión escrita, ficha de registro y cómo citar la entrevista. |
 | [Material para mostrar](material-para-mostrar.md) | La página que se envía antes de la entrevista, en español y en inglés, y qué no mostrar. |
 | [Correos de invitación](correos-de-invitacion.md) | Invitaciones, recordatorio y agradecimiento, con el calendario de envío. |
@@ -28,7 +29,7 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 
 1. **3 de noviembre:** el autor envía las invitaciones a las cinco personas en Chile, desde su correo de la Universidad Diego Portales y con la página para mostrar en PDF.
 2. **6 o 7 de noviembre:** un solo recordatorio; si nadie respondió, buscar más perfiles en Chile. La reserva de otros países se usa solo si el autor cambia la decisión.
-3. **9 al 13 de noviembre:** entrevistas, con la guía y la ficha de registro llena el mismo día.
+3. **9 al 13 de noviembre:** entrevistas, cada una con su guion y la ficha de registro de la guía, llena el mismo día.
 4. **Hasta el 15 de noviembre:** llevar a la memoria lo que la persona autorizó, como indica la guía, y enviarle el párrafo para que lo revise.
 
 ## Reglas
@@ -39,6 +40,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guiones por persona
+
+- **Qué cambió:** se suman los cinco guiones, uno por persona en Chile.
+- **Cómo estaba antes:** solo había una guía general para todas las personas.
+- **Por qué:** el autor pidió un guion para cada perfil.
 
 ### 2026-11-02 — Solo Chile
 

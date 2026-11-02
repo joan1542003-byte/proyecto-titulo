@@ -35,8 +35,8 @@ Escribir a las cinco el mismo día. Christian Salas y Francisco J. Parada van pr
 
 - **Salas y Parada:** conviene leer el resumen de Salas et al. (2026) antes de escribirles y nombrarlo en la invitación. El Centro también publica un correo general, que sirve si las fichas personales dejan de estar al día.
 - **Herskovic:** sigue en la UC según un artículo de abril de 2025, pero el correo viene de un documento oficial de 2023. Si rebota, su [sitio](https://vherskov.ing.uc.cl/) tiene un formulario de contacto.
-- **Zamorano:** su ficha está en el sitio actual de la UDD, pero no se encontró actividad de 2025 o 2026 que confirme que sigue ahí. Si el correo rebota, buscarlo por su nombre en LinkedIn y confirmar que es la misma persona antes de escribirle.
-- **Parra:** una fuente secundaria lo sitúa en un año sabático en Europa, sin confirmar. Conviene proponerle una videollamada.
+- **Zamorano:** su ficha está en el sitio actual de la UDD, y una ficha de transferencia tecnológica de la UDD de noviembre de 2024 lo nombra docente investigador de la Facultad de Diseño, a cargo de TAMI. No se encontró actividad de 2025 o 2026. Si el correo rebota, buscarle por su nombre en LinkedIn y confirmar que es la misma persona antes de escribirle.
+- **Parra:** su sitio dice que su año sabático en Europa fue de abril a septiembre de 2023, así que hoy está en la UC.
 
 ## Reserva fuera de Chile
 
@@ -64,6 +64,12 @@ No se contactarán mientras el autor mantenga la decisión de entrevistar solo e
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guiones por persona
+
+- **Qué cambió:** la observación sobre Parra dice que su sabático fue en 2023, y la de Zamorano suma la ficha de la UDD de noviembre de 2024.
+- **Cómo estaba antes:** decía que Parra podía estar en un sabático en Europa, y no tenía evidencia de actividad de Zamorano.
+- **Por qué:** al preparar los guiones se leyeron sus sitios y documentos.
 
 ### 2026-11-02 — Solo Chile y vigencia de los correos
 
