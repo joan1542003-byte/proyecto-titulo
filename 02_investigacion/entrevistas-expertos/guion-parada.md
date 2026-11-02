@@ -139,6 +139,10 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > 2. El objeto estaba en el lugar donde empieza la actividad. ¿Cómo describirías su papel en el recuerdo, sin exagerarlo?
 > 3. ¿Qué concepto, autor o estudio me recomendarías para explicar estos resultados en mi memoria?
 >
+> Si te queda tiempo (opcional)
+> 4. En «Beyond the skull» distinguen la cognición extendida de la distribuida. En Relevo, la persona prepara el aviso en el teléfono y el objeto suena en otro lugar de la casa. ¿Cuál de las dos ideas describe mejor ese sistema, y por qué?
+> 5. En tu revisión sobre el entorno construido aparecen el ruido y la luz de los espacios interiores. En casa, el sonido de Relevo compite con lo que ya hay en el ambiente: ¿qué condiciones del hogar debería tener en cuenta al interpretar estos resultados?
+>
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
 > Si respondes por escrito, me ayudaría tenerlo antes del viernes 13 de noviembre.
@@ -163,6 +167,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Preguntas opcionales
+
+- **Qué cambió:** el correo suma dos preguntas opcionales, sobre Salas et al. (2026) y sobre su revisión del entorno construido (Grasso-Cladera et al., 2025).
+- **Cómo estaba antes:** tenía solo tres preguntas.
+- **Por qué:** el autor pidió preguntas extra, comprobadas contra lo que la persona investiga.
 
 ### 2026-11-02 — Contexto más breve
 

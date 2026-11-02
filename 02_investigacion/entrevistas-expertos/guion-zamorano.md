@@ -126,9 +126,13 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas: casi siempre recordaron qué querían hacer (19 de 21 respuestas), pero empezaron la actividad solo en 10. Para apagar el sonido usaron más el teléfono (9 veces) que el botón del objeto (5), y una persona nunca encontró ese botón.
 >
 > Mis preguntas
-> 1. Desde el diseño de interfaces tangibles, ¿por qué crees que recordar no bastó para empezar?
+> 1. Casi siempre recordaron, pero empezaron solo en 10 de 21 veces. Desde el diseño de interfaces tangibles, ¿qué podría hacer el objeto, por su forma o su manera de usarse, para acortar el paso entre recordar y empezar?
 > 2. ¿Cómo interpretas que usaran más el teléfono que el botón del objeto para apagarlo?
 > 3. ¿Qué concepto, autor o estudio de la interacción tangible me recomendarías para explicar estos resultados en mi memoria?
+>
+> Si te queda tiempo (opcional)
+> 4. TAMI combina vista, oído y tacto. La señal de Relevo es solo un sonido. ¿Qué ganaría si sumara otro sentido, y cuándo empezaría a ser demasiado?
+> 5. Validaste TAMI en un entorno real. ¿Qué aprendiste al pasar del taller a ese entorno que me ayude a interpretar una prueba hecha en casas?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
@@ -148,6 +152,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Preguntas dentro de su campo
+
+- **Qué cambió:** la pregunta 1 pasa de «por qué recordar no bastó para empezar» a qué podría hacer el objeto, por su forma o uso, para acortar ese paso; se suman dos preguntas opcionales sobre lo multisensorial y la validación en un entorno real de TAMI.
+- **Cómo estaba antes:** la pregunta 1 pedía explicar un fenómeno de la conducta, ajeno a su campo, y había solo tres preguntas.
+- **Por qué:** el autor pidió preguntas extra y comprobar que cada una corresponda a lo que la persona sabe.
 
 ### 2026-11-02 — Contexto más breve
 
