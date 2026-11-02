@@ -21,7 +21,7 @@ Herskovic diseña y evalúa tecnología para el cuidado de sí mismo en la vida 
 ## Antes de la entrevista
 
 - **Leer:** los resúmenes de Rodríguez et al. (2022) y Fernández-Vera et al. (2022).
-- **Enviar:** la [página para mostrar](material-para-mostrar.md), dos días antes.
+- **Mostrar:** si hace falta, la [página para mostrar](material-para-mostrar.md), compartiendo pantalla. La invitación no lleva adjuntos.
 - **Tener a mano:** para compartir pantalla, las preguntas que la aplicación hace tras cada señal ([Anexo I](../../08_memoria/anexos/anexo-i-prueba.md)), el teléfono con la aplicación y el Tag.
 
 ## Guion
@@ -118,6 +118,12 @@ Fernández-Vera, F., Urrutia, D. C., Rossel, P. O., Herskovic, V. y Fuentes, C. 
 Rodríguez, I., Cajamarca, G. y Herskovic, V. (2022). When does self-report of pain occur? A study of older adults. *PeerJ, 10*, Artículo e13716. https://doi.org/10.7717/peerj.13716
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** la página para mostrar ya no se envía antes; se comparte en pantalla si hace falta.
+- **Cómo estaba antes:** se enviaba dos días antes de la entrevista.
+- **Por qué:** el autor pidió que la invitación no lleve adjuntos.
 
 ### 2026-11-02 — De tú y por videollamada
 

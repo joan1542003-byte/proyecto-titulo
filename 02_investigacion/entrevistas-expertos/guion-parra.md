@@ -20,7 +20,7 @@ Relevo parte de que muchas aplicaciones no tienen un final: recomiendan y reprod
 ## Antes de la entrevista
 
 - **Leer:** el resumen de Parra y Brusilovsky (2015) y la lista de proyectos de su [sitio](https://denisparra.github.io/).
-- **Enviar:** la [página para mostrar](material-para-mostrar.md), dos días antes.
+- **Mostrar:** si hace falta, la [página para mostrar](material-para-mostrar.md), compartiendo pantalla. La invitación no lleva adjuntos.
 - **Tener a mano:** el párrafo «La interfaz sostiene la continuidad» del capítulo 3 de la v6, para compartir pantalla; el teléfono con la pantalla «¿Cuándo suena?», y el Tag.
 
 ## Guion
@@ -110,6 +110,12 @@ Montag, C., Lachmann, B., Herrlich, M. y Zweig, K. (2019). Addictive features of
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** la página para mostrar ya no se envía antes; se comparte en pantalla si hace falta.
+- **Cómo estaba antes:** se enviaba dos días antes de la entrevista.
+- **Por qué:** el autor pidió que la invitación no lleve adjuntos.
 
 ### 2026-11-02 — De tú y por videollamada
 

@@ -17,7 +17,7 @@ Zamorano diseñó, con Catalina Cortés y Mauricio Herrera, TAMI, una *interfaz 
 ## Antes de la entrevista
 
 - **Leer:** el artículo de 2020 en español, «Facilitando el aprendizaje de trigonometría a través de una interfaz tangible».
-- **Enviar:** la [página para mostrar](material-para-mostrar.md) y las tres vistas del modelo 3D del objeto propio ([vistas](../../06_desarrollo_y_factibilidad/testigo-impresion-3d/vistas/)), dos días antes.
+- **Mostrar:** compartiendo pantalla, las tres vistas del modelo 3D del objeto propio ([vistas](../../06_desarrollo_y_factibilidad/testigo-impresion-3d/vistas/)) y, si hace falta, la [página para mostrar](material-para-mostrar.md). La invitación no lleva adjuntos.
 - **Tener a mano:** el Tag, el teléfono con la aplicación y, si ya está impreso, el objeto propio para mostrarlo a la cámara; si no, las vistas, para compartir pantalla.
 
 ## Guion
@@ -98,7 +98,7 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: 1, 2, 3, 6 y «¿A quién más consultarías?». Adjuntar las vistas del modelo 3D.
+Enviar solo cinco preguntas: 1, 2, 3, 6 y «¿A quién más consultarías?». Describir el objeto en el mismo correo: redondo, de 46 mm de diámetro y 12,3 mm de alto, sin frente, con el logo como botón y la placa del Tag adentro.
 
 ## Después
 
@@ -111,6 +111,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** las vistas del objeto se muestran en pantalla, y la versión escrita describe el objeto en el correo.
+- **Cómo estaba antes:** las vistas se enviaban antes y se adjuntaban a la versión escrita.
+- **Por qué:** el autor pidió que los correos no lleven adjuntos.
 
 ### 2026-11-02 — De tú y por videollamada
 

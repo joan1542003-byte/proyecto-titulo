@@ -21,7 +21,7 @@ Parada estudia la cognición como algo que ocurre entre el cerebro, el cuerpo y 
 ## Antes de la entrevista
 
 - **Leer:** los resúmenes de Parada et al. (2024) y Parada y Rossi (2024), y el resumen de Salas et al. (2026).
-- **Enviar:** la [página para mostrar](material-para-mostrar.md), dos días antes.
+- **Mostrar:** si hace falta, la [página para mostrar](material-para-mostrar.md), compartiendo pantalla. La invitación no lleva adjuntos.
 - **Tener a mano:** el Tag y el teléfono con la aplicación, para hacerlo sonar frente a la cámara; la Figura 4 de la v6, para compartir pantalla, (la señal pasa del segundo plano al primero) y la lista de lo que registra la aplicación: cuándo se activó cada relevo, si sonó, cómo se calló y las respuestas.
 
 ## Guion
@@ -126,6 +126,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** la página para mostrar ya no se envía antes; se comparte en pantalla si hace falta.
+- **Cómo estaba antes:** se enviaba dos días antes de la entrevista.
+- **Por qué:** el autor pidió que la invitación no lleve adjuntos.
 
 ### 2026-11-02 — De tú y por videollamada
 

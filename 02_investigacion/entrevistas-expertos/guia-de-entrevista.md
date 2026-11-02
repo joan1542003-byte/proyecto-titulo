@@ -43,7 +43,7 @@ Los documentos de los profesores no se suben al repositorio.
 
 ## Antes de la entrevista
 
-- [ ] Enviar la [página para mostrar](material-para-mostrar.md) y las capturas de la aplicación al confirmar la fecha.
+- [ ] Tener lista la [página para mostrar](material-para-mostrar.md) y las capturas de la aplicación, para compartir pantalla. La invitación no lleva adjuntos.
 - [ ] Leer el resumen del trabajo de la persona que la memoria cita, si lo hay, y preparar una pregunta sobre él.
 - [ ] Revisar que el Tag tenga pila y que la aplicación lo haga sonar frente a la cámara, por si la persona quiere oírlo.
 - [ ] Tener abiertas la grabadora y esta guía. Probar el audio de la videollamada.
@@ -251,6 +251,12 @@ Risko, E. F. y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** la página para mostrar y las capturas se comparten en pantalla durante la videollamada.
+- **Cómo estaba antes:** se enviaban al confirmar la fecha.
+- **Por qué:** el autor pidió que la invitación no lleve adjuntos.
 
 ### 2026-11-02 — De tú y por videollamada
 

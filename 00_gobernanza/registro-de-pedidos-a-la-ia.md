@@ -218,6 +218,7 @@
 | 2 nov. | Corrección y encargo | Dejar de hacer automatizaciones. Entregar el enlace de cada perfil, su correo y el texto para pedirles una entrevista breve, leyendo la guía de entrevistas del repositorio. | Sin tareas programadas y sin avisos del PR. Los cinco correos personalizados se entregaron en la conversación, a partir de la guía de expertos y los guiones; la guía E11 del archivo es de entrevistas a usuarios. La página de resumen queda en [PDF](../02_investigacion/entrevistas-expertos/relevo-resumen-entrevista.pdf) para adjuntar. | Sin automatizaciones |
 | 2 nov. | Corrección | Acortar los mensajes: ir al grano, pedir una entrevista entre el 3 y el 13 de noviembre y explicar el proyecto al final, en pocas líneas. Verificar que todo esté bien. Entregó dos documentos de sus profesores: una guía de entrevista semiestructurada y análisis del discurso, y un guion de entrevista de ejemplo. | Cinco [mensajes breves](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md), uno por persona. La guía y los guiones siguen la pauta de los profesores: embudo, preguntas abiertas, consentimiento completo, cierre proyectivo y matriz de análisis. Se comprobaron de nuevo los enlaces y correos. Los documentos de los profesores no se suben. | — |
 | 2 nov. | Corrección | Tutear, no tratar de usted, y hacer las entrevistas siempre por videollamada. | Mensajes, recordatorio, agradecimiento, consentimiento, guía, cinco guiones, página para mostrar y PDF tratan de tú y piden solo videollamada. | Entrevistas de tú y por videollamada |
+| 2 nov. | Corrección | No adjuntar nada: todo en el correo, diciendo sobre todo cómo se relaciona la investigación de cada persona con el proyecto y en qué podría ayudar. | Cinco [mensajes](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md) sin adjuntos, con «Por qué te escribo», «Cómo me ayudarías» y «Sobre Relevo». La página para mostrar queda para compartir pantalla. | Invitaciones sin adjuntos |
 
 ## Lo que muestra el registro
 
@@ -228,6 +229,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** se registró el pedido de invitaciones sin adjuntos.
+- **Cómo estaba antes:** el último pedido era tutear y entrevistar por videollamada.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — De tú y por videollamada
 

@@ -20,7 +20,7 @@ Salas estudia cómo se rehabilitan las personas después de un daño cerebral, y
 ## Antes de la entrevista
 
 - **Leer:** el resumen de Salas et al. (2026) y la sección de resultados de Fabricatore et al. (2020) sobre los usos y el uso sostenido de la tecnología.
-- **Enviar:** la [página para mostrar](material-para-mostrar.md), dos días antes.
+- **Mostrar:** si hace falta, la [página para mostrar](material-para-mostrar.md), compartiendo pantalla. La invitación no lleva adjuntos.
 - **Tener a mano:** el Tag y el teléfono con la aplicación, para hacerlo sonar frente a la cámara; las capturas del recorrido (Figura 13 de la v6), para compartir pantalla, y este guion.
 
 ## Guion
@@ -124,6 +124,12 @@ Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1�
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** la página para mostrar ya no se envía antes; se comparte en pantalla si hace falta.
+- **Cómo estaba antes:** se enviaba dos días antes de la entrevista.
+- **Por qué:** el autor pidió que la invitación no lleve adjuntos.
 
 ### 2026-11-02 — De tú y por videollamada
 

@@ -2,7 +2,7 @@
 
 **Fecha:** 2 de noviembre de 2026. **Fuente:** [memoria v6](../../08_memoria/borrador-memoria-v6-2026-10-28.md), capítulos 3, 10, 11 y 13.
 
-La versión en español está lista para adjuntar en [PDF de una página](relevo-resumen-entrevista.pdf). Se envía junto a la invitación o, a más tardar, dos días antes de la entrevista, para que la persona llegue con una opinión y la conversación no se gaste en explicar el proyecto. Cabe en una página. Abajo está la versión en inglés.
+La invitación no lleva adjuntos: el correo ya explica el proyecto. Esta página sirve para compartir pantalla durante la videollamada o para enviarla si la persona la pide; la versión en español también está en [PDF de una página](relevo-resumen-entrevista.pdf). Abajo está la versión en inglés.
 
 ## Qué mostrar y qué no
 
@@ -61,6 +61,12 @@ La versión en español está lista para adjuntar en [PDF de una página](relevo
 3. What should change in the object or the signal before a test with more people.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** la página ya no se adjunta a la invitación; se comparte en pantalla o se envía solo si la persona la pide.
+- **Cómo estaba antes:** se enviaba junto a la invitación.
+- **Por qué:** el autor pidió que todo vaya en el cuerpo del correo.
 
 ### 2026-11-02 — De tú
 
