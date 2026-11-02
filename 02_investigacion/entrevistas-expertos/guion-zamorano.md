@@ -117,7 +117,7 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». De
 
 ## Correo con las preguntas
 
-Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
+No ha respondido. Si responde, este es el correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
 
 > Hola, Francisco:
 >
@@ -164,6 +164,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Sin respuesta todavía
+
+- **Qué cambió:** el correo de respuesta queda en espera, porque el que respondió fue Parada.
+- **Cómo estaba antes:** estaba listo por si el que había respondido era Zamorano.
+- **Por qué:** el autor confirmó que respondió Francisco J. Parada.
 
 ### 2026-11-02 — Pregunta 6 teórica
 

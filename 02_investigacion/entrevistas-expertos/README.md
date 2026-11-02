@@ -1,6 +1,6 @@
 # Entrevistas a expertos
 
-**Creada:** 2 de noviembre de 2026. **Estado:** ninguna persona contactada todavía. **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
+**Creada:** 2 de noviembre de 2026. **Estado al 2 de noviembre de 2026:** invitaciones enviadas; respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
 
 ## Para qué
 
@@ -40,6 +40,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Respuesta de Parada
+
+- **Qué cambió:** el estado dice que Parada respondió y enlaza su correo con las preguntas.
+- **Cómo estaba antes:** decía que no se había contactado a nadie.
+- **Por qué:** el autor confirmó la respuesta.
 
 ### 2026-11-02 — Sin adjuntos
 

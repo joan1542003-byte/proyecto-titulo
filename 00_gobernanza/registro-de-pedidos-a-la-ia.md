@@ -227,6 +227,7 @@
 | 2 nov. | Corrección | Preguntas que aporten valor: leer la memoria, entenderla y preguntar lo que hoy no tiene. | Se releyó la v6 y las preguntas para Francisco apuntan a sus vacíos: el supuesto del lugar sin respaldo, qué evidencia lo mostraría, «recordar no basta» explicado solo con Fogg, «decisión renovada» sin cita, el control desde el teléfono, el gesto de dejar el objeto, la crítica de julio sobre el objeto y la tensión entre señal visual y sonora. Cada guion suma una tabla de qué aporta cada pregunta. | — |
 | 2 nov. | Encargo | Una pregunta más para Francisco. | Pregunta 6 opcional: a Parada, qué cuenta como «recordar a tiempo» (cambia la lectura de 19 de 21 a 10 de 21); a Zamorano, qué pasos y socios llevarían el objeto de prototipo a producto (factibilidad, proveedores y actores). | — |
 | 2 nov. | Corrección | Una pregunta más teórica, no de resultados, desde la especialidad de la persona. | La pregunta 6 se reemplaza: a Parada, cómo describir el fenómeno desde la cognición 4E (problema y respuesta en el entorno); a Zamorano, qué teoría tangible reciente reemplazaría a los textos de 1997. | — |
+| 2 nov. | Decisión | Confirmó que el que respondió es Francisco J. Parada. | Correo final para Parada con seis preguntas (tres principales y tres opcionales), listo para enviar; estado actualizado en la carpeta de entrevistas. El correo de Zamorano queda en espera. | Entrevista con Parada |
 
 ## Lo que muestra el registro
 
@@ -237,6 +238,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Respuesta de Parada
+
+- **Qué cambió:** se registró que respondió Francisco J. Parada.
+- **Cómo estaba antes:** el último pedido era la pregunta teórica.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Pregunta teórica
 

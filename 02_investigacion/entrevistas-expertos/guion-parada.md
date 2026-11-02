@@ -126,7 +126,7 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
 
 ## Correo con las preguntas
 
-Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
+Respondió la invitación el 2 de noviembre de 2026. Este es el correo de respuesta, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
 
 > Hola, Francisco:
 >
@@ -142,7 +142,7 @@ Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por es
 > Si te queda tiempo (opcional)
 > 4. En la memoria llamo «decisión renovada» al momento en que alguien vuelve a considerar si sigue en el teléfono o cambia de actividad. ¿Qué concepto establecido usarías para ese momento?
 > 5. En «Beyond the skull» distinguen la cognición extendida de la distribuida. Si la persona prepara el aviso en el teléfono y un objeto lo da desde otro lugar de la casa, ¿cuál de las dos describe mejor el sistema, y por qué?
-> 6. En la memoria explico el problema como una intención que deja de volver a la mente (memoria prospectiva). Pero tanto lo que la aleja —un teléfono diseñado para que sigas— como lo que la trae de vuelta —un objeto en el lugar de la actividad— están en el entorno. Desde la cognición 4E, ¿cómo describirías este fenómeno, y qué cambiaría en mi marco teórico?
+> 6. En la memoria explico el problema como una intención que deja de volver a la mente (memoria prospectiva). Pero tanto lo que la aleja —aplicaciones diseñadas para que la sesión continúe— como lo que la trae de vuelta —un objeto en el lugar de la actividad— están en el entorno. Desde la cognición 4E, ¿cómo describirías este fenómeno, y qué cambiaría en mi marco teórico?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
@@ -179,6 +179,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Parada respondió
+
+- **Qué cambió:** el correo queda como la respuesta a Parada, que aceptó, y la pregunta 6 dice «aplicaciones diseñadas para que la sesión continúe».
+- **Cómo estaba antes:** el correo servía para cualquiera de los dos Francisco, y la pregunta 6 decía «un teléfono diseñado para que sigas», que podía leerse como dirigido a él.
+- **Por qué:** el autor confirmó que respondió Francisco J. Parada.
 
 ### 2026-11-02 — Pregunta 6 teórica
 
