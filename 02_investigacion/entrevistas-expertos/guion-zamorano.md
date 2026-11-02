@@ -115,6 +115,33 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». Describir el objeto en el mismo correo: redondo, de 46 mm de diámetro y 12,3 mm de alto, sin frente, con el logo como botón y la placa del Tag adentro.
 
+## Correo con las preguntas
+
+Respuesta a su correo, lista para copiar y pegar, sin adjuntos. Asunto: responder en el mismo hilo. Sirve si responde por escrito o como pauta de la videollamada.
+
+> Hola, Francisco:
+>
+> ¡Muchas gracias por responder! Te dejo cuatro preguntas. Puedes contestarlas por escrito, con unas pocas líneas cada una, o las conversamos en la videollamada, como prefieras. No hay respuestas correctas, y si alguna no te hace sentido, sáltala.
+>
+> Para tener a mano: tres personas usaron Relevo durante dos semanas en su casa. El objeto quedó junto al primer paso de algo que querían hacer, por ejemplo junto a la guitarra, y sonó en 23 de 24 ocasiones. En 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en las 21 recordó cómo empezar; pero empezó la actividad en 10. Una tercera semana, la señal llegó solo como notificación en el teléfono. El objeto de la prueba fue un llavero Bluetooth comprado, un «Tag», que se puede callar con su botón o desde el teléfono.
+>
+> 1. Recordar no bastó para empezar: casi siempre recordaron, pero empezaron en menos de la mitad de los casos. Desde el diseño de interfaces tangibles, ¿qué crees que explica esa distancia?
+>
+> 2. La señal se calló más veces desde el teléfono (9) que con el botón del llavero (5), y una persona nunca encontró ese botón. ¿Cómo interpretas ese resultado desde la interacción tangible?
+>
+> 3. Hoy la señal es solo un sonido. ¿Qué aporta un objeto físico frente a una notificación en la pantalla, y qué gana o pierde una señal de un solo sentido?
+>
+> 4. ¿Qué concepto, autor o estudio de la interacción tangible debería estar en el marco teórico de mi memoria para explicar estos resultados?
+>
+> Opcional: estoy diseñando el objeto propio, una pieza redonda de 46 mm de diámetro y 12,3 mm de alto, sin frente, con el logo como botón y el circuito del llavero adentro. Si quieres, ¿qué te parece para dejarlo junto a un libro o una guitarra?
+>
+> Por último, ¿puedo citarte con tu nombre en la memoria? Si prefieres, te cito sin nombre. En cualquier caso, antes de entregar te envío el párrafo para que lo revises.
+>
+> Si las respondes por escrito, me ayudaría recibirlas antes del viernes 13 de noviembre.
+>
+> ¡Gracias de nuevo!
+> Johan
+
 ## Después
 
 Llenar la ficha de la [guía](guia-de-entrevista.md#cómo-registrar-la-entrevista) el mismo día. Sus comentarios sobre el objeto alimentan la tarea 4 de [Por hacer](../../00_gobernanza/por-hacer.md), el objeto propio. Si el correo rebota, buscarle por su nombre en LinkedIn y confirmar que es la misma persona antes de escribirle.
@@ -126,6 +153,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Correo con las preguntas
+
+- **Qué cambió:** se suma el correo de respuesta con cuatro preguntas fáciles de responder por escrito o en la videollamada, con los resultados en el mismo texto.
+- **Cómo estaba antes:** la versión escrita solo indicaba qué preguntas enviar.
+- **Por qué:** Zamorano respondió la invitación según el autor, y el autor pidió las preguntas listas.
 
 ### 2026-11-02 — Entrevista posterior a la prueba
 

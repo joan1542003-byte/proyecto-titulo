@@ -124,6 +124,31 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
 
+## Correo con las preguntas
+
+Respuesta a su correo, lista para copiar y pegar, sin adjuntos. Asunto: responder en el mismo hilo. Sirve si responde por escrito o como pauta de la videollamada.
+
+> Hola, Francisco:
+>
+> ¡Muchas gracias por responder! Te dejo cuatro preguntas. Puedes contestarlas por escrito, con unas pocas líneas cada una, o las conversamos en la videollamada, como prefieras. No hay respuestas correctas, y si alguna no te hace sentido, sáltala.
+>
+> Para tener a mano: tres personas usaron Relevo durante dos semanas en su casa. El objeto quedó junto al primer paso de algo que querían hacer, por ejemplo junto a la guitarra, y sonó en 23 de 24 ocasiones. En 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en las 21 recordó cómo empezar; pero empezó la actividad en 10. Una tercera semana, la señal llegó solo como notificación en el teléfono.
+>
+> 1. Recordar no bastó para empezar: casi siempre recordaron, pero empezaron en menos de la mitad de los casos. Desde la cognición 4E, ¿cómo explicarías esa distancia?
+>
+> 2. La persona elige dónde dejar el objeto: junto al primer paso de la actividad. Desde tu perspectiva de una cognición sostenida por el entorno, ¿cómo describirías el papel de ese objeto en el recuerdo? ¿Qué palabras evitarías para no exagerar?
+>
+> 3. Además del objeto junto al primer paso, una semana probé la señal solo como notificación en el teléfono. ¿Qué podría concluir esa comparación sobre el papel del lugar, y qué no?
+>
+> 4. ¿Qué concepto, autor o estudio debería estar en el marco teórico de mi memoria para explicar estos resultados?
+>
+> Por último, ¿puedo citarte con tu nombre en la memoria? Si prefieres, te cito sin nombre. En cualquier caso, antes de entregar te envío el párrafo para que lo revises.
+>
+> Si las respondes por escrito, me ayudaría recibirlas antes del viernes 13 de noviembre.
+>
+> ¡Gracias de nuevo!
+> Johan
+
 ## Después
 
 Llenar la ficha de la [guía](guia-de-entrevista.md#cómo-registrar-la-entrevista) el mismo día. Si propone un diseño escalonado, anotarlo como propuesta para la etapa siguiente; no cambiar la prueba ya hecha.
@@ -141,6 +166,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Correo con las preguntas
+
+- **Qué cambió:** se suma el correo de respuesta con cuatro preguntas fáciles de responder por escrito o en la videollamada, con los resultados en el mismo texto.
+- **Cómo estaba antes:** la versión escrita solo indicaba qué preguntas enviar.
+- **Por qué:** Parada respondió la invitación según el autor, y el autor pidió las preguntas listas.
 
 ### 2026-11-02 — Entrevista posterior a la prueba
 
