@@ -212,6 +212,7 @@
 | 29 oct. | Corrección y consulta | Al revisar la sexta ronda, señaló que en la lámina 16 las figuras volvían a interrumpir la lectura y que las láminas 17, 22, 28 y 58 dejaban una columna de texto sola. Preguntó si el glosario es obligatorio y pidió abrir la pestaña de la Biblioteca para iniciar sesión y leer otras memorias de diseño. | [Memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) de 62 páginas: las figuras de una columna van en su propia columna, a la derecha, y ningún capítulo termina en una columna sola —con dos figuras de concepto (Figuras 1 y 8) y lo repetido dicho una vez en los capítulos 6, 11, 12 y 14—; el mapa con rótulos naturales; el índice de tablas y figuras ya no toca el folio. El glosario es optativo según la pauta; se mantiene hasta que decida el autor. La pestaña quedó abierta; el inicio de sesión no se completó. | D-152 |
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
 | 2 nov. | Consulta | Entregó en .docx la memoria en curso de otra persona del taller (salud mental y cuidado de plantas) y pidió compararla con la suya desde una mirada crítica y académica, según la rúbrica oficial. | Respuesta en la conversación: comparación por las tres dimensiones de la rúbrica y la matriz de pase, contra la v6. La otra memoria no se sube ni se nombra en el repositorio. Al revisar la v6 se vio que ya no tiene «Actores y responsabilidades», y el subcriterio 8.1 de la [matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md) vuelve a «en desarrollo». | — |
+| 2 nov. | Encargo | Buscar perfiles para entrevistar —en LinkedIn, Instagram u otro lugar donde estén activos—, con su correo, disciplina y perfil; agregarlos al repositorio y preparar las preguntas. Ofreció sus credenciales si hacían falta. | [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): 13 perfiles (cinco en Chile) con correo comprobado en fuentes oficiales, guía de entrevista, material para mostrar e invitaciones. Las credenciales no se usaron. Como el repositorio es público y `CLAUDE.md` prohíbe correos, los correos se entregaron en un archivo aparte, en la carpeta privada `00_fuentes_privadas/`. | — |
 
 ## Lo que muestra el registro
 
@@ -222,6 +223,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Perfiles para entrevistar
+
+- **Qué cambió:** se registró el pedido de buscar perfiles para entrevistar y preparar las preguntas.
+- **Cómo estaba antes:** el último pedido era la comparación con otra memoria.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Comparación con otra memoria
 
