@@ -221,6 +221,7 @@
 | 2 nov. | Corrección | No adjuntar nada: todo en el correo, diciendo sobre todo cómo se relaciona la investigación de cada persona con el proyecto y en qué podría ayudar. | Cinco [mensajes](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md) sin adjuntos, con «Por qué te escribo», «Cómo me ayudarías» y «Sobre Relevo». La página para mostrar queda para compartir pantalla. | Invitaciones sin adjuntos |
 | 2 nov. | Corrección | Considerar que las entrevistas son posteriores a la prueba, así que deben beneficiar sobre todo a la investigación y la teoría. | Los [mensajes](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md) unen la investigación de cada persona con un resultado de la prueba y piden ayuda para interpretarlo y fortalecer el marco teórico. La guía suma las preguntas C5 y C6, y cada guion, las preguntas A y B, con objetivos de interpretación y teoría. | Entrevistas al servicio de la interpretación y la teoría |
 | 2 nov. | Encargo | Francisco respondió la invitación: pidió las preguntas y todo lo necesario para que le sea fácil responder. | Correo de respuesta con cuatro preguntas, el contexto y los resultados en el mismo texto, en los guiones de [Parada](../02_investigacion/entrevistas-expertos/guion-parada.md) y [Zamorano](../02_investigacion/entrevistas-expertos/guion-zamorano.md), porque el pedido no dice cuál de los dos respondió. | — |
+| 2 nov. | Corrección | Ser más claro: dar más contexto sin abrumar, para que sea fácil de entender y responder. | El correo para Francisco se ordena en «Qué es Relevo», «Qué probé», «Qué encontré» y «Mis preguntas», con tres preguntas ligadas a resultados. | — |
 
 ## Lo que muestra el registro
 
@@ -231,6 +232,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Correo más claro
+
+- **Qué cambió:** se registró el pedido de un correo más claro para Francisco.
+- **Cómo estaba antes:** el último pedido era la respuesta de Francisco.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Respuesta de Francisco
 

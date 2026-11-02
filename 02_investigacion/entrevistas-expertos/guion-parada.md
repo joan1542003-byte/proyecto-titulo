@@ -126,27 +126,33 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
 
 ## Correo con las preguntas
 
-Respuesta a su correo, lista para copiar y pegar, sin adjuntos. Asunto: responder en el mismo hilo. Sirve si responde por escrito o como pauta de la videollamada.
+Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada: tres preguntas, cada una ligada a un resultado, con el contexto mínimo para responderlas.
 
 > Hola, Francisco:
 >
-> ¡Muchas gracias por responder! Te dejo cuatro preguntas. Puedes contestarlas por escrito, con unas pocas líneas cada una, o las conversamos en la videollamada, como prefieras. No hay respuestas correctas, y si alguna no te hace sentido, sáltala.
+> ¡Gracias por responder! Te cuento en breve qué hice y qué encontré, y te dejo tres preguntas. Puedes responderlas por escrito, con dos o tres líneas cada una, o las conversamos en la videollamada, como prefieras.
 >
-> Para tener a mano: tres personas usaron Relevo durante dos semanas en su casa. El objeto quedó junto al primer paso de algo que querían hacer, por ejemplo junto a la guitarra, y sonó en 23 de 24 ocasiones. En 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en las 21 recordó cómo empezar; pero empezó la actividad en 10. Una tercera semana, la señal llegó solo como notificación en el teléfono.
+> Qué es Relevo
+> Una aplicación y un objeto pequeño. La persona elige algo que quiere hacer, como tocar guitarra o dibujar, y deja el objeto junto a eso. Cuando pasa el tiempo que ella misma fijó en ciertas aplicaciones del teléfono, el objeto suena para que recuerde esa actividad. No bloquea el teléfono: la persona decide qué hacer.
 >
-> 1. Recordar no bastó para empezar: casi siempre recordaron, pero empezaron en menos de la mitad de los casos. Desde la cognición 4E, ¿cómo explicarías esa distancia?
+> Qué probé
+> Tres personas lo usaron en su casa durante dos semanas. El objeto fue un llavero Bluetooth que compré. Una tercera semana, el aviso llegó solo como notificación en el teléfono; esos datos todavía los estoy analizando.
 >
-> 2. La persona elige dónde dejar el objeto: junto al primer paso de la actividad. Desde tu perspectiva de una cognición sostenida por el entorno, ¿cómo describirías el papel de ese objeto en el recuerdo? ¿Qué palabras evitarías para no exagerar?
+> Qué encontré
+> - El objeto sonó 23 de 24 veces.
+> - En 19 de 21 respuestas, la persona supo qué quería hacer antes de leerlo en la pantalla.
+> - Pero empezó la actividad solo en 10 de 21.
 >
-> 3. Además del objeto junto al primer paso, una semana probé la señal solo como notificación en el teléfono. ¿Qué podría concluir esa comparación sobre el papel del lugar, y qué no?
+> Mis preguntas
+> 1. Desde la cognición 4E, ¿por qué crees que recordar no bastó para empezar?
+> 2. El objeto estaba en el lugar donde empieza la actividad. ¿Cómo describirías su papel en el recuerdo, sin exagerarlo?
+> 3. ¿Qué concepto, autor o estudio me recomendarías para explicar estos resultados en mi memoria?
 >
-> 4. ¿Qué concepto, autor o estudio debería estar en el marco teórico de mi memoria para explicar estos resultados?
+> No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
 >
-> Por último, ¿puedo citarte con tu nombre en la memoria? Si prefieres, te cito sin nombre. En cualquier caso, antes de entregar te envío el párrafo para que lo revises.
+> Si respondes por escrito, me ayudaría tenerlo antes del viernes 13 de noviembre.
 >
-> Si las respondes por escrito, me ayudaría recibirlas antes del viernes 13 de noviembre.
->
-> ¡Gracias de nuevo!
+> ¡Muchas gracias!
 > Johan
 
 ## Después
@@ -166,6 +172,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Correo más claro
+
+- **Qué cambió:** el correo se ordena en «Qué es Relevo», «Qué probé», «Qué encontré» y «Mis preguntas», con frases cortas y tres preguntas en vez de cuatro.
+- **Cómo estaba antes:** el contexto iba en un solo párrafo denso y había cuatro preguntas, una de ellas opcional.
+- **Por qué:** el autor pidió más claridad y contexto sin abrumar.
 
 ### 2026-11-02 — Correo con las preguntas
 
