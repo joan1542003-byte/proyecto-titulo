@@ -211,6 +211,7 @@
 | 29 oct. | Corrección | Al revisar la quinta ronda, pidió decir en palabras simples «señal de la periferia», «episodio» y la mediana; quitar los códigos de participantes y las afirmaciones que no aportan; que el texto siga la columna sin cortarse y continúe hacia el lado, como en una página doble; criterios fáciles de entender, con su porqué y sin la convivencia; explicar por qué la decisión queda abierta; quitar el rótulo «Cita», «Actores y responsabilidades», las etiquetas «Decisión.» y la tabla de estado de los objetivos; objetivos claros; el recorrido del usuario en un esquema simple; desarrollar la referencia de Apple desde sus pautas, sin tabla; nombrar los colores con el estudio de escritura y llevarlo a la memoria; lenguaje de diseñador; no nombrar «luz»; llamar Relevo al objeto; Relevo Home y Relevo Go; sin fechas de inicio por persona; APA 7 en español; su nombre completo, el logo de la Facultad y la mención en Diseño Gráfico. Preguntó si la Figura 9 hace falta. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con los capítulos 7, 9, 10, 11 y 14 en palabras simples y sin códigos de participantes; criterios que se entienden solos; un capítulo 11 contado como relato, con el recorrido del usuario en un esquema, la referencia de Apple en prosa y «Cómo habla Relevo»; 21 figuras y 4 tablas; 80 referencias, todas citadas. La [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md), de 66 páginas, se lee hacia el lado —el texto llena cada columna y las piezas van al pie—, con portada según el instructivo y el reglamento e índice de tablas y figuras. La Figura 9 se queda: el instructivo pide el plan de trabajo. | D-151 |
 | 29 oct. | Corrección y consulta | Al revisar la sexta ronda, señaló que en la lámina 16 las figuras volvían a interrumpir la lectura y que las láminas 17, 22, 28 y 58 dejaban una columna de texto sola. Preguntó si el glosario es obligatorio y pidió abrir la pestaña de la Biblioteca para iniciar sesión y leer otras memorias de diseño. | [Memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) de 62 páginas: las figuras de una columna van en su propia columna, a la derecha, y ningún capítulo termina en una columna sola —con dos figuras de concepto (Figuras 1 y 8) y lo repetido dicho una vez en los capítulos 6, 11, 12 y 14—; el mapa con rótulos naturales; el índice de tablas y figuras ya no toca el folio. El glosario es optativo según la pauta; se mantiene hasta que decida el autor. La pestaña quedó abierta; el inicio de sesión no se completó. | D-152 |
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
+| 2 nov. | Consulta | Entregó en .docx la memoria en curso de otra persona del taller (salud mental y cuidado de plantas) y pidió compararla con la suya desde una mirada crítica y académica, según la rúbrica oficial. | Respuesta en la conversación: comparación por las tres dimensiones de la rúbrica y la matriz de pase, contra la v6. La otra memoria no se sube ni se nombra en el repositorio. Al revisar la v6 se vio que ya no tiene «Actores y responsabilidades», y el subcriterio 8.1 de la [matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md) vuelve a «en desarrollo». | — |
 
 ## Lo que muestra el registro
 
@@ -221,6 +222,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Comparación con otra memoria
+
+- **Qué cambió:** se registró la consulta para comparar la memoria con la de otra persona del taller según la rúbrica.
+- **Cómo estaba antes:** el último pedido era subir el IDML.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-10-29 — Revisión de la sexta ronda
 
