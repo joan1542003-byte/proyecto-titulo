@@ -30,6 +30,8 @@ Herskovic diseña y evalúa tecnología para el cuidado de sí mismo en la vida 
 
 > Gracias por su tiempo. Le cuento brevemente el proyecto y después me interesa su opinión desde la interacción humano-computador y su trabajo en tecnología para el autocuidado. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
 
+> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
 ### 2. Relevo en tres minutos
@@ -38,17 +40,25 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+
+**Para empezar (2 minutos)**
+
+> Para empezar, ¿qué ha aprendido al diseñar tecnología para el autocuidado con personas reales en Chile?
+
+- *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
 **1. ★ Responder con el objeto**
 
-> En su estudio con personas mayores, el registro del dolor se hacía con una interfaz tangible. En Relevo, después de cada señal, la persona responde en el teléfono, en la misma pantalla que ya le muestra su actividad. ¿Responder en el objeto daría datos más confiables, o solo cambiaría el problema?
+> En su estudio con personas mayores, el registro del dolor se hacía con una interfaz tangible. En Relevo, después de cada señal, la persona responde en el teléfono, en la misma pantalla que ya le muestra su actividad. ¿Qué cambiaría si la persona respondiera en el objeto y no en el teléfono?
 
 - *Por qué:* en 19 de 21 respuestas la persona dijo que supo qué quería hacer antes de leerlo en la pantalla, pero la pregunta llega cuando ya puede verlo.
 - *Repreguntas:* «¿Qué aprendió sobre cuándo las personas registran algo por su cuenta?», «¿Qué pregunta haría antes de mostrar la actividad?».
 - *Va a:* capítulo 13, «Qué se registró», y la iteración siguiente.
 
-**2. ★ ¿Ayudar o persuadir?**
+**2. ★ Entre ayudar y persuadir**
 
-> Social+Me buscaba que los estudiantes se comunicaran más. Relevo, en cambio, evita empujar: no hay rachas ni premios, y «Comencé la actividad», «La dejé para después» y «Cambié de idea» valen lo mismo. ¿Relevo sigue siendo persuasivo? ¿Dónde pondría usted el límite?
+> Social+Me buscaba que los estudiantes se comunicaran más. Relevo, en cambio, evita empujar: no hay rachas ni premios, y «Comencé la actividad», «La dejé para después» y «Cambié de idea» valen lo mismo. ¿Dónde pondría usted el límite entre ayudar y persuadir, y dónde queda Relevo?
 
 - *Por qué:* la memoria defiende que la decisión queda en la persona; conviene que alguien que diseñó tecnología persuasiva lo ponga a prueba.
 - *Repregunta:* «¿Cómo se evalúa un sistema que no busca cambiar una conducta? ¿Qué sería un buen resultado?».
@@ -86,6 +96,7 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 4. Cierre (3 minutos)
 
+- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
 - «¿Hay algo que no le pregunté y que debería saber?»
 - «¿A quién más le preguntaría?»
 - Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
@@ -107,6 +118,12 @@ Fernández-Vera, F., Urrutia, D. C., Rossel, P. O., Herskovic, V. y Fuentes, C. 
 Rodríguez, I., Cajamarca, G. y Herskovic, V. (2022). When does self-report of pain occur? A study of older adults. *PeerJ, 10*, Artículo e13716. https://doi.org/10.7717/peerj.13716
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guía de los profesores
+
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
+- **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 
 ### 2026-11-02 — Creación
 

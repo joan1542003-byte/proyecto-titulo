@@ -26,6 +26,8 @@ Zamorano diseñó, con Catalina Cortés y Mauricio Herrera, TAMI, una *interfaz 
 
 > Gracias por su tiempo. Le cuento brevemente el proyecto y después me interesa su opinión de diseño, sobre todo del objeto, a partir de su experiencia con TAMI. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
 
+> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
 ### 2. Relevo en tres minutos
@@ -34,17 +36,25 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+
+**Para empezar (2 minutos)**
+
+> Para empezar, ¿cómo nació TAMI y qué fue lo más difícil de llevarla a un entorno real?
+
+- *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
 **1. ★ El objeto**
 
 > Este es el objeto propio de Relevo. Se deja junto a un libro, una guitarra o una croquera, y suena desde ahí. ¿Qué le parece su forma, su tamaño y su botón?
 
 - *Por qué:* la prueba usó un Tag comercial; una persona nunca encontró su botón, y en 9 de los ciclos la señal se calló desde el teléfono y en 5 con el botón del Tag.
-- *Repreguntas:* «¿Se entiende qué hace sin explicarlo?», «¿Cómo indicaría que está esperando, sin luz ni pantalla?», «¿Qué material o acabado usaría?».
+- *Repreguntas:* «¿Qué entiende alguien que lo ve por primera vez?», «¿Cómo indicaría que está esperando, sin luz ni pantalla?», «¿Qué material o acabado usaría?».
 - *Va a:* capítulo 11, «El objeto», y la iteración siguiente.
 
 **2. ★ Uno o varios sentidos**
 
-> TAMI une la vista, el oído y el tacto. Relevo dejó solo el sonido: la luz se descartó, y la señal dura unos 30 segundos y termina sola. En las entrevistas, seis de ocho personas pidieron señales simples, calmadas, discretas o visuales, y ninguna pidió un sonido. ¿Basta un solo sentido? ¿Cuándo sumaría otro?
+> TAMI une la vista, el oído y el tacto. Relevo dejó solo el sonido: la luz se descartó, y la señal dura unos 30 segundos y termina sola. En las entrevistas, seis de ocho personas pidieron señales simples, calmadas, discretas o visuales, y ninguna pidió un sonido. ¿Qué gana y qué pierde una señal de un solo sentido, y cuándo sumaría otro?
 
 - *Por qué:* es una decisión de diseño discutible y además toca la accesibilidad de personas con baja audición.
 - *Va a:* capítulo 11, «La señal», y requisitos del objeto propio.
@@ -58,7 +68,7 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 **4. Propiedad intelectual**
 
-> TAMI tiene una patente concedida en Chile. La búsqueda de patentes de Relevo encontró cuatro documentos con coincidencias parciales, y la memoria no lo presenta como nuevo. ¿Vale la pena proteger algo de Relevo? ¿Qué aprendió del licenciamiento con la UDD?
+> TAMI tiene una patente concedida en Chile. La búsqueda de patentes de Relevo encontró cuatro documentos con coincidencias parciales, y la memoria no lo presenta como nuevo. ¿Qué de Relevo valdría la pena proteger, si algo, y qué aprendió del licenciamiento con la UDD?
 
 - *Va a:* capítulo 8, «Oportunidad», y capítulo 12.
 
@@ -77,10 +87,11 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 **Si queda tiempo:**
 
 - «¿Cómo evaluaron la usabilidad de TAMI? ¿Qué método usaría para el objeto de Relevo?»
-- «El objeto podría recibir Tag de otras marcas. ¿Ve un riesgo en depender de electrónica de terceros?»
+- «El objeto podría recibir Tag de otras marcas. ¿Qué riesgos ve en depender de electrónica de terceros?»
 
 ### 4. Cierre (3 minutos)
 
+- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
 - «¿Hay algo que no le pregunté y que debería saber?»
 - «¿A quién más le preguntaría?»
 - Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
@@ -100,6 +111,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guía de los profesores
+
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
+- **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 
 ### 2026-11-02 — Creación
 

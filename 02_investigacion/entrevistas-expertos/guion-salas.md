@@ -29,6 +29,8 @@ Salas estudia cómo se rehabilitan las personas después de un daño cerebral, y
 
 > Gracias por recibirme. Le cuento brevemente el proyecto y después me interesa su opinión experta, sobre todo desde la rehabilitación y su artículo reciente sobre cognición extendida y distribuida. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
 
+> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
 ### 2. Relevo en tres minutos
@@ -37,9 +39,17 @@ Contar el problema, el ciclo (preparar, seguir en el teléfono, oír la señal y
 
 ### 3. Preguntas (25 minutos)
 
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+
+**Para empezar (2 minutos)**
+
+> Para empezar, ¿cómo llegó a pensar la rehabilitación desde la cognición extendida y distribuida?
+
+- *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
 **1. ★ ¿Extendida o distribuida?**
 
-> En su artículo distinguen la cognición extendida de la distribuida. En Relevo participan la persona, la aplicación, el objeto y el lugar donde empieza la actividad. ¿Con cuál de las dos describiría mejor lo que pasa cuando el objeto suena?
+> En su artículo distinguen la cognición extendida de la distribuida. En Relevo participan la persona, la aplicación, el objeto y el lugar donde empieza la actividad. ¿Cómo describiría, con esas dos ideas, lo que pasa cuando el objeto suena?
 
 - *Por qué:* la memoria hoy usa a Kirsh (1995) y la interacción tangible, pero no nombra este marco, que es más preciso.
 - *Repreguntas:* «¿Qué tendría que cumplir el objeto para integrarse al modo en que la persona recuerda, y no ser solo un aviso?», «¿Qué palabras evitaría para no exagerar?».
@@ -59,12 +69,12 @@ Contar el problema, el ciclo (preparar, seguir en el teléfono, oír la señal y
 > Ustedes encontraron que el uso sostenido dependía de la facilidad de uso, de que fuera socialmente apropiado, de la personalización, de la adaptación dinámica y de la mediación de otras personas. En la prueba, tres personas activaron 31 relevos en dos semanas; la primera vez, de once pantallas, les resultó larga, y una persona bajó su límite de 45 a 35 minutos. ¿Cuál de esos factores le preocuparía más para que Relevo no se abandone?
 
 - *Por qué:* la prueba duró tres semanas; un piloto más largo necesita saber qué cuidar.
-- *Repregunta:* «Relevo no se adapta solo: la persona ajusta todo. ¿Eso es una ventaja o un riesgo?».
+- *Repregunta:* «Relevo no se adapta solo: la persona ajusta todo. ¿Qué ventajas y qué riesgos ve en eso?».
 - *Va a:* capítulo 13, «Iterar con los resultados», y criterio 6.
 
 **4. Lo que el sonido deja ver**
 
-> La aplicación no muestra la actividad en la pantalla bloqueada, porque lo que alguien quiere hacer es privado. Pero el sonido se oye en una casa compartida. ¿Ve un riesgo de exponer algo que la persona prefería guardar?
+> La aplicación no muestra la actividad en la pantalla bloqueada, porque lo que alguien quiere hacer es privado. Pero el sonido se oye en una casa compartida. ¿Qué riesgos ve en que deje ver algo que la persona prefería guardar?
 
 - *Por qué:* uno de sus temas es el estigma y el ocultamiento después de un daño cerebral (Bracho y Salas, 2024); la pregunta lo traslada a la privacidad cotidiana, sin suponer estigma.
 - *Va a:* capítulo 11, «Privacidad y datos», y criterio 7.
@@ -85,11 +95,12 @@ Contar el problema, el ciclo (preparar, seguir en el teléfono, oír la señal y
 
 **Si queda tiempo:**
 
-- «¿Confiar la intención a un objeto puede debilitar la capacidad de recordarla sin ayuda?»
-- «Un mismo sonido suena durante semanas. ¿Pierde efecto por costumbre?»
+- «¿Qué efecto puede tener, en la capacidad de recordar sin ayuda, confiar la intención a un objeto?»
+- «¿Qué pasa con un mismo sonido que se repite durante semanas?»
 
 ### 4. Cierre (3 minutos)
 
+- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
 - «¿Hay algo que no le pregunté y que debería saber?»
 - «¿A quién más le preguntaría?»
 - Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
@@ -113,6 +124,12 @@ Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1�
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guía de los profesores
+
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
+- **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 
 ### 2026-11-02 — Creación
 

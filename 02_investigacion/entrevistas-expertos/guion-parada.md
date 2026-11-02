@@ -30,6 +30,8 @@ Parada estudia la cognición como algo que ocurre entre el cerebro, el cuerpo y 
 
 > Gracias por recibirme. Le cuento brevemente el proyecto y después me interesa su opinión sobre cómo estudiarlo en la vida real, a partir de su trabajo en cognición 4E y en diseños escalables. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
 
+> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
 ### 2. Relevo en tres minutos
@@ -38,18 +40,26 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+
+**Para empezar (2 minutos)**
+
+> Para empezar, ¿cómo llegó a estudiar la cognición fuera del laboratorio, en la vida diaria?
+
+- *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
 **1. ★ Un diseño escalable para Relevo**
 
 > En sus diseños escalables, la misma tarea pasa del computador a situaciones reales. Relevo tiene una duda parecida: la prueba comparó el objeto junto al primer paso con una notificación en el teléfono, y eso cambia a la vez el canal y el lugar. Con tres a seis personas, ¿cómo organizaría niveles que separen ambos efectos?
 
 - *Por qué:* es la debilidad central de la prueba, y el supuesto del lugar es justo lo propio de la hipótesis.
-- *Propuesta para discutir:* cuatro niveles, cada uno en una semana: el sonido en el teléfono; el mismo sonido desde el objeto en un lugar neutro; desde el objeto junto al primer paso, y sin señal. «¿Qué sacaría o cambiaría? ¿Importa el orden?»
+- *Propuesta para discutir:* cuatro niveles, cada uno en una semana: el sonido en el teléfono; el mismo sonido desde el objeto en un lugar neutro; desde el objeto junto al primer paso, y sin señal. «¿Qué sacaría o cambiaría, y qué papel juega el orden?»
 - *Qué escuchar:* el número mínimo de niveles, cómo ordenarlos o alternarlos, y qué comparar dentro de cada persona.
 - *Va a:* capítulo 10, hipótesis y supuestos; capítulo 13, «Límites de esta etapa», y la etapa siguiente.
 
 **2. ★ Andamiaje del entorno**
 
-> Su perspectiva 3E habla de una cognición andamiada por el entorno. En Relevo, la persona deja el objeto donde empieza la actividad. ¿Es correcto decir que ese objeto andamia el recuerdo, o es solo un aviso que suena?
+> Su perspectiva 3E habla de una cognición andamiada por el entorno. En Relevo, la persona deja el objeto donde empieza la actividad. ¿Cómo describiría, desde esa perspectiva, el papel de ese objeto en el recuerdo?
 
 - *Por qué:* la memoria usa a Kirsh (1995) y la interacción tangible, pero le falta un término preciso para el papel del objeto.
 - *Repreguntas:* «¿Qué lo haría pasar de aviso a andamiaje?», «¿Qué diferencia hay, en su artículo con Christian Salas, entre que el objeto extienda la cognición de la persona y que la cognición se distribuya entre la persona, el objeto y el lugar?».
@@ -65,7 +75,7 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 **4. El primer paso como acción**
 
-> Relevo pide anotar un primer paso concreto, como abrir el libro o sacar la guitarra, y deja el objeto junto a él. Desde una mirada enactiva, ¿tiene sentido apoyar el recuerdo en una acción y un lugar, y no en una frase?
+> Relevo pide anotar un primer paso concreto, como abrir el libro o sacar la guitarra, y deja el objeto junto a él. Desde una mirada enactiva, ¿qué cambia cuando el recuerdo se apoya en una acción y un lugar, y no en una frase?
 
 - *Va a:* criterio 2 y capítulo 11, «Cómo funciona Relevo».
 
@@ -85,11 +95,12 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 **Si queda tiempo:**
 
-- «Un mismo sonido suena durante semanas. ¿Pierde efecto por costumbre? ¿Convendría que cambiara?»
+- «¿Qué pasa con un mismo sonido que se repite durante semanas, y cómo lo manejaría?»
 - «El sonido debe pasar del segundo plano al primero para alcanzar a quien mira una pantalla. ¿Qué dice la evidencia sobre la atención auditiva en esa situación?»
 
 ### 4. Cierre (3 minutos)
 
+- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
 - «¿Hay algo que no le pregunté y que debería saber?»
 - «¿A quién más le preguntaría?»
 - Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
@@ -115,6 +126,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guía de los profesores
+
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
+- **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 
 ### 2026-11-02 — Creación
 

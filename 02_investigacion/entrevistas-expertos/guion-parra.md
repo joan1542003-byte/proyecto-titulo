@@ -29,6 +29,8 @@ Relevo parte de que muchas aplicaciones no tienen un final: recomiendan y reprod
 
 > Gracias por su tiempo. Le cuento brevemente el proyecto y después me interesa su opinión desde los sistemas de recomendación y el control que tienen las personas sobre ellos. ¿Me permite grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarle con su nombre como comunicación personal? Antes de entregar le envío el párrafo donde aparezca su opinión para que lo revise.
 
+> Su participación es voluntaria y no hay respuestas correctas: me interesa su opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
 ### 2. Relevo en tres minutos
@@ -37,7 +39,15 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
-**1. ★ ¿Está bien descrito el problema?**
+Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me podría dar un ejemplo?».
+
+**Para empezar (2 minutos)**
+
+> Para empezar, ¿qué le llevó a estudiar el control que tienen las personas sobre los sistemas de recomendación?
+
+- *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
+**1. ★ Cómo se describe el problema**
 
 > Este es el párrafo de la memoria que explica por qué una sesión continúa: el desplazamiento infinito y la reproducción automática mantienen abierta la secuencia y quitan los momentos de cierre. Desde los sistemas de recomendación, ¿qué corregiría o agregaría?
 
@@ -55,7 +65,7 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 **3. ★ Una condición más inteligente**
 
-> Hoy Relevo suena por tiempo. Una persona bajó su límite de 45 a 35 minutos porque, al sonar, ya estaba inmersa en un video. Con señales que el teléfono ya tiene, ¿podría Relevo reconocer una sesión que continúa sin una nueva decisión, sin inferir demasiado sobre la persona?
+> Hoy Relevo suena por tiempo. Una persona bajó su límite de 45 a 35 minutos porque, al sonar, ya estaba inmersa en un video. Con señales que el teléfono ya tiene, ¿cómo podría Relevo reconocer una sesión que continúa sin una nueva decisión, sin inferir demasiado sobre la persona?
 
 - *Por qué:* es la principal mejora posible de la condición, pero choca con la autonomía y la privacidad.
 - *Repreguntas:* «¿Qué señales usaría y cuáles evitaría?», «¿Qué riesgo ve en que el sistema decida cuándo intervenir?».
@@ -63,7 +73,7 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 **4. Explicar por qué sonó**
 
-> En sus interfaces de recomendación, la explicación ayuda a entender lo que hace el sistema. ¿Debería Relevo decir por qué sonó, por ejemplo «sumaste 25 minutos en TikTok», o eso se lee como un juicio?
+> En sus interfaces de recomendación, la explicación ayuda a entender lo que hace el sistema. ¿Cómo podría Relevo explicar por qué sonó, por ejemplo «sumaste 25 minutos en TikTok», sin que se lea como un juicio?
 
 - *Va a:* capítulo 11, «Cómo habla Relevo».
 
@@ -75,11 +85,12 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 **Si queda tiempo:**
 
-- «Moodplay usaba el estado de ánimo para recomendar. De noche, una persona oía la señal desde la cama y no se levantaba. ¿Debería Relevo considerar la hora o el estado de la persona, o dejarlo solo en sus manos?»
-- «¿Ve algún riesgo en llevar a Relevo técnicas que las propias aplicaciones usan para retener a las personas?»
+- «Moodplay usaba el estado de ánimo para recomendar. De noche, una persona oía la señal desde la cama y no se levantaba. ¿Qué papel deberían tener la hora o el estado de la persona, y qué debería quedar solo en sus manos?»
+- «¿Qué riesgos ve en llevar a Relevo técnicas que las propias aplicaciones usan para retener a las personas?»
 
 ### 4. Cierre (3 minutos)
 
+- «Si pudiera cambiar una sola cosa de Relevo, ¿cuál sería?»
 - «¿Hay algo que no le pregunté y que debería saber?»
 - «¿A quién más le preguntaría, por ejemplo en la Escuela de Diseño UC?»
 - Confirmar cómo quiere aparecer en la memoria y ofrecerle enviar el párrafo y, al final, la memoria.
@@ -99,6 +110,12 @@ Montag, C., Lachmann, B., Herrlich, M. y Zweig, K. (2019). Addictive features of
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Guía de los profesores
+
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudiera cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
+- **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
 
 ### 2026-11-02 — Creación
 
