@@ -126,22 +126,13 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
 
 ## Correo con las preguntas
 
-Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada: tres preguntas, cada una ligada a un resultado, con el contexto mínimo para responderlas.
+Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada.
 
 > Hola, Francisco:
 >
-> ¡Gracias por responder! Te cuento en breve qué hice y qué encontré, y te dejo tres preguntas. Puedes responderlas por escrito, con dos o tres líneas cada una, o las conversamos en la videollamada, como prefieras.
+> ¡Gracias por responder! Te dejo un resumen breve y tres preguntas. Puedes responder por escrito, en dos o tres líneas cada una, o lo conversamos en la videollamada.
 >
-> Qué es Relevo
-> Una aplicación y un objeto pequeño. La persona elige algo que quiere hacer, como tocar guitarra o dibujar, y deja el objeto junto a eso. Cuando pasa el tiempo que ella misma fijó en ciertas aplicaciones del teléfono, el objeto suena para que recuerde esa actividad. No bloquea el teléfono: la persona decide qué hacer.
->
-> Qué probé
-> Tres personas lo usaron en su casa durante dos semanas. El objeto fue un llavero Bluetooth que compré. Una tercera semana, el aviso llegó solo como notificación en el teléfono; esos datos todavía los estoy analizando.
->
-> Qué encontré
-> - El objeto sonó 23 de 24 veces.
-> - En 19 de 21 respuestas, la persona supo qué quería hacer antes de leerlo en la pantalla.
-> - Pero empezó la actividad solo en 10 de 21.
+> En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas: casi siempre recordaron qué querían hacer (19 de 21 respuestas), pero empezaron la actividad solo en 10.
 >
 > Mis preguntas
 > 1. Desde la cognición 4E, ¿por qué crees que recordar no bastó para empezar?
@@ -172,6 +163,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Contexto más breve
+
+- **Qué cambió:** el contexto del correo cabe en un párrafo de dos frases («En corto»).
+- **Cómo estaba antes:** ocupaba tres bloques: qué es Relevo, qué probé y qué encontré.
+- **Por qué:** el autor pidió un contexto más breve.
 
 ### 2026-11-02 — Correo más claro
 

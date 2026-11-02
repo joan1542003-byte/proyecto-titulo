@@ -117,23 +117,13 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». De
 
 ## Correo con las preguntas
 
-Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada: tres preguntas, cada una ligada a un resultado, con el contexto mínimo para responderlas.
+Respuesta a su correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada.
 
 > Hola, Francisco:
 >
-> ¡Gracias por responder! Te cuento en breve qué hice y qué encontré, y te dejo tres preguntas. Puedes responderlas por escrito, con dos o tres líneas cada una, o las conversamos en la videollamada, como prefieras.
+> ¡Gracias por responder! Te dejo un resumen breve y tres preguntas. Puedes responder por escrito, en dos o tres líneas cada una, o lo conversamos en la videollamada.
 >
-> Qué es Relevo
-> Una aplicación y un objeto pequeño. La persona elige algo que quiere hacer, como tocar guitarra o dibujar, y deja el objeto junto a eso. Cuando pasa el tiempo que ella misma fijó en ciertas aplicaciones del teléfono, el objeto suena para que recuerde esa actividad. No bloquea el teléfono: la persona decide qué hacer.
->
-> Qué probé
-> Tres personas lo usaron en su casa durante dos semanas. El objeto fue un llavero Bluetooth que compré, que se apaga con su botón o desde el teléfono. Una tercera semana, el aviso llegó solo como notificación en el teléfono; esos datos todavía los estoy analizando.
->
-> Qué encontré
-> - El objeto sonó 23 de 24 veces.
-> - En 19 de 21 respuestas, la persona supo qué quería hacer antes de leerlo en la pantalla.
-> - Pero empezó la actividad solo en 10 de 21.
-> - Para apagarlo, usaron más el teléfono (9 veces) que el botón del llavero (5). Una persona nunca encontró el botón.
+> En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas: casi siempre recordaron qué querían hacer (19 de 21 respuestas), pero empezaron la actividad solo en 10. Para apagar el sonido usaron más el teléfono (9 veces) que el botón del objeto (5), y una persona nunca encontró ese botón.
 >
 > Mis preguntas
 > 1. Desde el diseño de interfaces tangibles, ¿por qué crees que recordar no bastó para empezar?
@@ -158,6 +148,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Contexto más breve
+
+- **Qué cambió:** el contexto del correo cabe en un párrafo de dos frases («En corto»).
+- **Cómo estaba antes:** ocupaba tres bloques: qué es Relevo, qué probé y qué encontré.
+- **Por qué:** el autor pidió un contexto más breve.
 
 ### 2026-11-02 — Correo más claro
 
