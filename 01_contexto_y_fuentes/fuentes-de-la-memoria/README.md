@@ -128,9 +128,17 @@ Detalle por fuente, generado desde el manifiesto:
 
 Para cerrar la verificación de los capítulos 1 a 6 hacen falta seis textos, que el autor puede descargar con navegador o mediante la biblioteca de la UDP: McDaniel y Einstein (2000), Kirsh (1995), O'Rear y Radvansky (2019), la versión publicada de Sohn et al. (2005), Waggoner et al. (2026) y Radtke et al. (2022); además, confirmar en su copia de Norman la edición y las páginas 73 y 103. Para los capítulos 7 a 14 faltan los libros (Kolko, Nielsen, Sanders y Stappers), la norma ISO 3864-1, las dos memorias de la Universidad de Chile y las fuentes marcadas «sin acceso». El detalle está en la [verificación](verificacion-capitulos-1-a-6.md#fuentes-que-faltan-para-cerrar-la-verificación).
 
+El recordatorio de conseguirlas, ordenado por prioridad, está en [Por hacer, tarea 14, punto H](../../00_gobernanza/por-hacer.md#h-recordatorio-buscar-las-fuentes-que-faltaron-por-verificar).
+
 Un PDF descargado a mano puede dejarse en `textos/` con el nombre de su clave y la extensión `.pdf`, sin subirlo al repositorio, y convertirse con `pdftotext`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Recordatorio en Por hacer
+
+- **Qué cambió:** «Lo que falta» enlaza el recordatorio de la tarea 14.
+- **Cómo estaba antes:** la lista de fuentes por conseguir solo estaba aquí y en la verificación.
+- **Por qué:** el autor pidió que se le recordara buscar las fuentes que faltan.
 
 ### 2026-11-02 — Creación
 

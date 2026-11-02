@@ -187,6 +187,8 @@ Waggoner et al. (2026) sale de este capítulo y se conserva en el 6, donde sí s
 
 ## 4. Lo que queda pendiente
 
+Todo lo de este documento quedó como tarea en [Por hacer, tarea 14](../00_gobernanza/por-hacer.md#14-capítulos-1-a-6-fundamentar-lo-que-presenta-el-proyecto), con el recordatorio de las fuentes que faltan.
+
 1. **Textos que debe conseguir el autor**, por la biblioteca de la UDP o con navegador: McDaniel y Einstein (2000), Kirsh (1995), O'Rear y Radvansky (2019) y la versión publicada de Sohn et al. (2005). Waggoner et al. (2026) y Radtke et al. (2022) son de acceso abierto, pero su sitio exige un navegador. Además, confirmar en la copia de Norman la edición y las páginas 73 y 103.
 2. **Estado del proyecto:** actualizar la oración que lo describe en la Introducción al momento de entregar.
 3. **Glosario:** añadir *decisión renovada* y, si se conserva, *arquitectura de atención*, ambos como términos de esta memoria.
@@ -247,6 +249,12 @@ Tonietto, G. N., Malkoc, S. A., Reczek, R. W. y Norton, M. I. (2021). Viewing le
 Waggoner, J., Lucky, S., Redick, S., Rizki, A. y Yu, J. (2026). Going beyond digital libraries: A literature review of phygital user experience research methods. *International Journal on Digital Libraries, 27*(1), Artículo 1. https://doi.org/10.1007/s00799-025-00436-6
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Tarea en Por hacer
+
+- **Qué cambió:** la sección de pendientes remite a la tarea 14 de Por hacer.
+- **Cómo estaba antes:** los pendientes solo estaban en este documento.
+- **Por qué:** el autor pidió dejar lo encontrado en Por hacer.
 
 ### 2026-11-02 — Creación
 

@@ -213,6 +213,7 @@
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
 | 2 nov. | Corrección y encargo | Canceló la revisión programada y pidió revisar otro apartado entero que siente flojo y poco fundamentado: todo lo que empieza a describir el proyecto. Pidió documentos fundamentados y leer cada referente de la memoria completo, pasarlo a Markdown para tener a mano los textos originales, con mucha rigurosidad. | [Fuentes de la memoria](../01_contexto_y_fuentes/fuentes-de-la-memoria/README.md): de las 78 referencias, 29 con texto completo, 26 páginas consultadas, 9 con solo el resumen y 14 sin acceso, cada una con su motivo; los textos quedan en una carpeta local que no se versiona, por derechos de autor. [Verificación](../01_contexto_y_fuentes/fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md) de las 40 citas de los capítulos 1 a 6 y [fundamentación](../08_memoria/fundamentacion-capitulos-1-a-6-2026-11-02.md) con el diagnóstico y propuestas de redacción. La memoria no se modificó. | — |
 | 2 nov. | Orden | «Termínalo». | Se cerró el trabajo con los documentos anteriores y se abrió un PR en borrador. | — |
+| 2 nov. | Encargo | Subir al repositorio todo lo encontrado y dejarlo en Por hacer, sin actualizar la memoria, con un recordatorio de buscar las fuentes que faltaron por verificar. | [Por hacer, tarea 14](por-hacer.md#14-capítulos-1-a-6-fundamentar-lo-que-presenta-el-proyecto): los cambios de los capítulos 1 a 6, capítulo por capítulo, con las versiones de las fuentes y, en el punto H, las 23 fuentes que faltan, en dos prioridades. La memoria no se modificó. | — |
 
 ## Lo que muestra el registro
 
@@ -223,6 +224,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Tarea 14
+
+- **Qué cambió:** se registró el pedido de dejar lo encontrado en Por hacer, con el recordatorio de las fuentes que faltan.
+- **Cómo estaba antes:** el último pedido registrado era la orden de terminar el trabajo.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Fuentes y fundamentación de los capítulos 1 a 6
 
