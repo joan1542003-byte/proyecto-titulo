@@ -8,6 +8,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md): reescrito en torno a las decisiones de diseño, con 23 figuras y 4 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, iteraciones, presupuesto y hallazgos—, para que lo revise el profesor el 30 de octubre (D-146 a D-152). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 14 481 palabras.
 - [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 62 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146 a D-152). Texto de 23 pt, unas 8 palabras por línea, tablas en fichas blancas, ninguna figura que corte la lectura y ninguna columna de texto sola. Reemplaza a la versión A3.
+- [Fundamentación de los capítulos 1 a 6 (2 de noviembre de 2026)](fundamentacion-capitulos-1-a-6-2026-11-02.md): por qué los capítulos que presentan el proyecto se sienten débiles en el PDF del 30 de octubre —dos quedaron bajo el mínimo de la pauta, el problema no tiene un dato propio y nueve citas sostienen menos de lo que se les atribuye— y propuestas de redacción apoyadas en los textos completos de fuentes que la memoria ya cita. No modifica la memoria.
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
 - [Memoria v5 en A3 horizontal](memoria-a3/README.md), reemplazada por la versión en 1920 × 1080: la v5 compuesta con la línea de Relevo, en un [PDF de 57 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134, D-135 y D-145). Texto de 14 pt en columnas de 8 a 12 palabras por línea, cada sección en página nueva, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. Por ahora, sin agradecimientos y con un índice solo de secciones. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
@@ -91,6 +92,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-02 — Fundamentación de los capítulos 1 a 6
+
+- **Cambio:** se añadió al índice el diagnóstico y las propuestas para los capítulos 1 a 6.
+- **Versión anterior:** el índice no tenía una revisión de esos capítulos contra los textos completos de sus fuentes.
+- **Motivo:** el autor pidió documentos fundamentados para el apartado que empieza a describir el proyecto.
 
 ### 2026-10-29 — Séptima ronda de la v6
 

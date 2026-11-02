@@ -26,5 +26,8 @@ desktop.ini
 **/.env.local
 **/.env
 
+# Textos completos de las fuentes de la memoria: tienen derechos de autor y se regeneran con construir.py
+01_contexto_y_fuentes/fuentes-de-la-memoria/textos/
+
 # IDML de la memoria: sus enlaces a imágenes llevan la ruta del computador donde se generó
 08_memoria/memoria-a3/memoria-relevo-a3.idml

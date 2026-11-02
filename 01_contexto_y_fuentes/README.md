@@ -12,6 +12,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Inventario de fuentes](inventario-de-fuentes.md): identifica cada fuente, su función, nivel y relación con otras versiones.
 - [Inventario del archivo local](inventario-archivo-local.md): fotografía archivística con corte del 23 de agosto y tabla de reconciliación con el estado vigente.
 - [Biblioteca de diseño](biblioteca_diseno/README.md): documenta la lectura de cuatro obras de diseño y reúne resúmenes críticos aplicados a Relevo. Los PDF se retiraron el 25 de septiembre de 2026 por derechos de autor.
+- [Fuentes de la memoria](fuentes-de-la-memoria/README.md): las 78 referencias de la memoria con el estado de lo que se pudo leer de cada una, el script que reúne sus textos completos en una carpeta local que no se versiona, y la [verificación de las 40 citas de los capítulos 1 a 6](fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md) contra sus originales.
 - [Declaración de procedencia de entrevistas](declaracion-procedencia-entrevistas.md): fija las condiciones confirmadas del levantamiento.
 - [Auditoría metodológica](auditoria-metodologica.md): determina qué puede afirmarse y con qué cautelas.
 - [Auditoría de integridad del corpus](auditoria-integridad-corpus-entrevistas.md): comprueba cobertura, discrepancias y regla de consolidación.
@@ -53,6 +54,12 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Fuentes de la memoria
+
+- **Qué cambió:** se añadió al índice la carpeta de las fuentes de la memoria y su verificación de los capítulos 1 a 6.
+- **Cómo estaba antes:** el índice no tenía un lugar con el texto de cada referencia ni con el estado de su lectura.
+- **Por qué:** el autor pidió leer cada referente completo y revisar con rigor los capítulos que describen el proyecto.
 
 ### 2026-10-27 — Logotipos completos
 
