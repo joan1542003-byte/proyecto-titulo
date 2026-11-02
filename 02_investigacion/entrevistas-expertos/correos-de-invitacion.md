@@ -6,12 +6,12 @@
 
 - Desde el correo de la Universidad Diego Portales, uno por persona y sin copia a otras.
 - Sin adjuntos: todo va en el cuerpo del correo.
-- Orden del mensaje: el pedido, cómo se relaciona su investigación con Relevo, en qué puede ayudar y, al final, el proyecto en pocas líneas.
+- Orden del mensaje: el pedido, cómo se relaciona su investigación con Relevo y con un resultado de la prueba, en qué puede ayudar a interpretarlo y, al final, el proyecto y sus resultados en pocas líneas.
 - Si alguien no responde, un solo recordatorio el jueves 5 o el viernes 6, respondiendo en el mismo hilo. Si el lunes 9 nadie aceptó, buscar más perfiles en Chile.
 
 ## Mensajes
 
-Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyecto de título, Diseño UDP)**. El párrafo «Sobre Relevo» es el mismo en los cinco.
+Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyecto de título, Diseño UDP)**. Las entrevistas son posteriores a la prueba, así que cada mensaje pide ayuda para interpretar los resultados y fortalecer el marco teórico. El párrafo «Sobre Relevo» es el mismo en los cinco.
 
 ### Christian Salas Riquelme
 
@@ -19,11 +19,11 @@ Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyect
 >
 > ¿Podrías darme 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden.
 >
-> Por qué te escribo: tu artículo «Beyond the skull» plantea que la cognición no está solo en el cerebro, sino que también se apoya en herramientas, en el entorno y en otras personas. Mi proyecto parte de esa idea: deja un objeto en el lugar donde empieza una actividad para que la persona la recuerde.
+> Por qué te escribo: tu artículo «Beyond the skull» plantea que la cognición también se apoya en herramientas, en el entorno y en otras personas. Relevo puso a prueba algo cercano: un objeto, en el lugar donde empieza una actividad, que ayuda a recordarla.
 >
-> Cómo me ayudarías: a describir bien el papel de ese objeto, sin exagerarlo, y a entender por qué una ayuda para recordar se sigue usando o se abandona.
+> Cómo me ayudarías: a interpretar los resultados desde la cognición extendida y distribuida —por ejemplo, por qué casi siempre recordaron, pero empezaron menos de la mitad de las veces— y a nombrar con precisión el papel del objeto en el marco teórico de mi memoria.
 >
-> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono; la persona sigue decidiendo. Lo probé durante tres semanas en tres hogares.
+> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono. Ya lo probé durante tres semanas en tres hogares: el objeto sonó en 23 de 24 ocasiones; en 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en 10 decidió empezar.
 >
 > Si te acomoda más, te envío cinco preguntas por escrito.
 >
@@ -37,11 +37,11 @@ Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyect
 >
 > ¿Podrías darme 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden.
 >
-> Por qué te escribo: tu trabajo en cognición 4E estudia cómo el cuerpo y el entorno participan en lo que pensamos, y tus diseños experimentales llevan una misma pregunta desde el laboratorio hasta situaciones reales. Mi proyecto usa el entorno para recordar: un objeto suena desde el lugar donde empieza una actividad, y lo probé en casas reales.
+> Por qué te escribo: tu trabajo en cognición 4E estudia cómo el cuerpo y el entorno participan en lo que pensamos, y lo estudia en la vida real, no solo en el laboratorio. Relevo probó algo así en casas reales: un objeto que suena desde el lugar donde empieza una actividad.
 >
-> Cómo me ayudarías: a pensar cómo comprobar, con pocas personas, si lo que ayuda es el lugar o simplemente que el aviso llegue fuera del teléfono, y cómo medirlo sin depender solo de lo que la persona responde.
+> Cómo me ayudarías: a leer los resultados desde la cognición 4E —qué dicen sobre el papel del lugar y qué no pueden decir todavía— y a fortalecer esa parte del marco teórico de mi memoria.
 >
-> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono; la persona sigue decidiendo. Lo probé durante tres semanas en tres hogares.
+> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono. Ya lo probé durante tres semanas en tres hogares: el objeto sonó en 23 de 24 ocasiones; en 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en 10 decidió empezar.
 >
 > Si te acomoda más, te envío cinco preguntas por escrito.
 >
@@ -55,11 +55,11 @@ Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyect
 >
 > ¿Podrías darme 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden.
 >
-> Por qué te escribo: tu investigación en sistemas de recomendación trata de cómo una aplicación elige qué mostrar después, y también estudiaste cómo dar a las personas control sobre esos sistemas. Mi proyecto parte de ahí: sesiones en el teléfono que siguen sin que la persona vuelva a decidir, mientras algo que quería hacer queda en pausa.
+> Por qué te escribo: tu investigación en sistemas de recomendación trata de cómo una aplicación elige qué mostrar después, y también del control que tienen las personas sobre esos sistemas. Mi memoria parte de ese problema: sesiones que siguen sin que la persona vuelva a decidir. En la prueba, una persona acortó su límite porque, cuando sonaba, ya estaba metida en un video.
 >
-> Cómo me ayudarías: a revisar cómo explico ese fenómeno y a pensar si la regla que activa mi proyecto —un tiempo que fija la propia persona— es un control real o solo aparente.
+> Cómo me ayudarías: a revisar cómo explico, desde tu campo, por qué las aplicaciones sostienen esa continuidad, y a interpretar si un tiempo que fija la propia persona es una forma real de control.
 >
-> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono; la persona sigue decidiendo. Lo probé durante tres semanas en tres hogares.
+> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono. Ya lo probé durante tres semanas en tres hogares: el objeto sonó en 23 de 24 ocasiones; en 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en 10 decidió empezar.
 >
 > Si te acomoda más, te envío cinco preguntas por escrito.
 >
@@ -73,11 +73,11 @@ Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyect
 >
 > ¿Podrías darme 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden.
 >
-> Por qué te escribo: tu investigación diseña tecnología para el autocuidado con personas reales; por ejemplo, estudiaste qué lleva a personas mayores a registrar su dolor con una interfaz tangible. Mi proyecto también une un objeto físico con una aplicación y, después de cada aviso, pregunta a la persona qué recordó y qué decidió.
+> Por qué te escribo: tu investigación estudia tecnología para el autocuidado en la vida diaria; por ejemplo, qué lleva a personas mayores a registrar su dolor con una interfaz tangible. Relevo también une un objeto con una aplicación, y sus resultados dependen de lo que las personas respondieron después de cada aviso.
 >
-> Cómo me ayudarías: a mejorar esas preguntas para que las respuestas sean confiables, y a evaluar con rigor una prueba hecha con pocas personas.
+> Cómo me ayudarías: a interpretar esos resultados con rigor —qué tan confiables son esas respuestas y qué se puede concluir con tres personas— y a situarlos en la investigación sobre tecnología en la vida cotidiana.
 >
-> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono; la persona sigue decidiendo. Lo probé durante tres semanas en tres hogares.
+> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono. Ya lo probé durante tres semanas en tres hogares: el objeto sonó en 23 de 24 ocasiones; en 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en 10 decidió empezar.
 >
 > Si te acomoda más, te envío cinco preguntas por escrito.
 >
@@ -91,11 +91,11 @@ Todos usan el mismo asunto: **Entrevista de 30 minutos por videollamada (proyect
 >
 > ¿Podrías darme 30 minutos por videollamada, entre el martes 3 y el viernes 13 de noviembre? Elige el día y la hora que te acomoden.
 >
-> Por qué te escribo: diseñaste TAMI, una interfaz tangible que une controles físicos, sonido e imagen, y la llevaste de prototipo a una tecnología validada y patentada. Mi proyecto también une un objeto con lo digital, y ahora estoy diseñando su objeto propio: una pieza redonda de 46 mm cuyo botón es el logo.
+> Por qué te escribo: diseñaste TAMI, una interfaz tangible que une controles físicos, sonido e imagen, y la validaste en un entorno real. Relevo también une un objeto con lo digital, y en la prueba apareció algo propio de lo tangible: la señal se calló más veces desde el teléfono (9) que con el botón del objeto (5), y una persona nunca encontró ese botón.
 >
-> Cómo me ayudarías: con una crítica de diseño de ese objeto y con lo que aprendiste al pasar de prototipo a producto.
+> Cómo me ayudarías: a interpretar ese resultado desde la interacción tangible y a revisar cómo explica mi memoria qué aporta un objeto físico frente a una pantalla.
 >
-> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono; la persona sigue decidiendo. Lo probé durante tres semanas en tres hogares.
+> Sobre Relevo: es una aplicación y un objeto pequeño que se deja junto a algo que la persona quiere hacer, como leer o dibujar. Cuando se cumple el tiempo que ella misma fijó en ciertas aplicaciones, el objeto suena para que lo recuerde, sin bloquear el teléfono. Ya lo probé durante tres semanas en tres hogares: el objeto sonó en 23 de 24 ocasiones; en 19 de 21 respuestas la persona supo qué quería hacer antes de leerlo en la pantalla, y en 10 decidió empezar.
 >
 > Si te acomoda más, te envío cinco preguntas por escrito.
 >
@@ -119,11 +119,11 @@ Si el autor decide escribir a las personas de la reserva, usar el mismo orden en
 >
 > Could you spare 30 minutes for a video call between November 3 and 13?
 >
-> Why I am writing: [how their research relates to Relevo, in two sentences].
+> Why I am writing: [how their research relates to Relevo and to one test result, in two sentences].
 >
-> How you could help: [one or two concrete things].
+> How you could help: [interpreting the results and strengthening the theoretical framework].
 >
-> About Relevo: it is an app and a small object placed next to something the person wants to do, such as reading or drawing. When the time they set for certain apps is up, the object sounds so they remember it, without blocking the phone and leaving the decision to them. I tested it for three weeks in three homes.
+> About Relevo: it is an app and a small object placed next to something the person wants to do, such as reading or drawing. When the time they set for certain apps is up, the object sounds so they remember it, without blocking the phone. I tested it for three weeks in three homes: the object sounded in 23 of 24 cycles; in 19 of 21 responses the person knew what they wanted to do before reading it on the screen, and in 10 they chose to start.
 >
 > If easier, I can send you five short questions by email.
 >
@@ -132,6 +132,12 @@ Si el autor decide escribir a las personas de la reserva, usar el mismo orden en
 > Design student, Universidad Diego Portales, Chile
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Entrevistas posteriores a la prueba
+
+- **Qué cambió:** cada mensaje une la investigación de la persona con un resultado de la prueba y pide ayuda para interpretarlo y fortalecer el marco teórico; «Sobre Relevo» suma los resultados.
+- **Cómo estaba antes:** pedía ayuda sobre todo para el diseño y para pruebas futuras.
+- **Por qué:** el autor aclaró que las entrevistas son posteriores a la prueba y deben servir sobre todo a la investigación y la teoría.
 
 ### 2026-11-02 — Sin adjuntos
 

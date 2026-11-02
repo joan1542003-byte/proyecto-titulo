@@ -11,7 +11,7 @@ La memoria de Relevo tiene investigación propia, un prototipo y una prueba en h
 3. **Afinar decisiones concretas** del objeto, la señal o la aplicación.
 4. **Mostrar colaboración interdisciplinaria**, un criterio de la rúbrica de Proyecto de Título, con una consulta real, fechada y citable.
 
-La entrevista no prueba que Relevo funcione. Es la opinión fundada de una persona experta, y así debe presentarse en la memoria.
+Las entrevistas ocurren después de la prueba en los hogares, así que su mayor aporte es a la interpretación de los resultados y al marco teórico; el diseño futuro queda en segundo lugar. La entrevista no prueba que Relevo funcione. Es la opinión fundada de una persona experta, y así debe presentarse en la memoria.
 
 ## Método
 
@@ -63,7 +63,7 @@ Anotar las respuestas a las tres preguntas: grabación (sí o no), cita con nomb
 | --- | --- | --- |
 | 1. Apertura | 3 min | Consentimiento y propósito. |
 | 2. Relevo en tres minutos | 3 min | El autor cuenta el problema, el ciclo y los resultados con la página para mostrar. |
-| 3. Núcleo común | 10 min | Preguntas C1 a C4. |
+| 3. Núcleo común | 10 min | Preguntas C5 y C6 primero; después C1 a C4. |
 | 4. Módulo de la disciplina | 12 a 15 min | Preguntas del módulo A, B o C. |
 | 5. Cierre | 3 min | Preguntas F1 a F3. |
 
@@ -83,6 +83,12 @@ Cada pregunta indica por qué se hace y adónde va la respuesta en la memoria.
 
 **C3. Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas la persona dijo que sí. ¿Qué tan confiable es esa medida y cómo la mejorarías?**
 *Por qué:* la persona responde en la misma pantalla que ya le muestra la actividad, y puede querer responder lo que el proyecto espera. *Repreguntas:* «¿Qué ganaría la prueba si preguntara primero, sin mostrar nada, qué recordó la persona al oír la señal?», «¿Qué registro de comportamiento complementaría la respuesta?». *Va a:* capítulo 13, «Qué se registró», y la iteración siguiente de la aplicación.
+
+**C5. En las 21 respuestas la persona recordó cómo empezar, y en 19 supo qué quería hacer antes de leerlo en la pantalla, pero empezó solo en 10. Desde tu campo, ¿cómo explicas esa distancia entre recordar y empezar?**
+*Por qué:* es el resultado que más necesita teoría; hoy la memoria lo explica con Fogg (2009). *Va a:* capítulo 13, «Resultados», y capítulo 6.
+
+**C6. ¿Qué concepto, autor o estudio de tu campo debería estar en el marco teórico para explicar estos resultados?**
+*Por qué:* es el aporte principal de una entrevista posterior a la prueba. *Va a:* capítulo 6 y referencias.
 
 **C4. ¿Qué no debería afirmar la memoria con estos datos?**
 *Por qué:* protege al proyecto de una pregunta de la comisión. *Repregunta:* «¿Cómo lo dirías tú en una frase?». *Va a:* resumen, capítulo 13 y conclusiones.
@@ -158,7 +164,7 @@ Cada pregunta indica por qué se hace y adónde va la respuesta en la memoria.
 
 ## Si la persona prefiere responder por escrito: cinco preguntas
 
-Muchas personas responden más fácil por escrito. Enviar solo cinco preguntas: C2, C3, C4, una del módulo de su disciplina y F2.
+Muchas personas responden más fácil por escrito. Enviar solo cinco preguntas: C5, C6, C2, una del módulo de su disciplina y F2.
 
 ## English version of the questions
 
@@ -168,6 +174,8 @@ Muchas personas responden más fácil por escrito. Enviar solo cinco preguntas: 
 - **C2.** The hypothesis says people will remember in time because the signal is associated with the activity and sounds from its place. The test compares the object next to the first step with a phone notification. What can that comparison attribute to the place, and what does it mix with the channel? With three to six people and two weeks, what minimal design would separate both effects? Does the fixed order of the weeks matter?
 - **C3.** After each signal, the app asks: "Did you know what you wanted to do before reading it on the screen?" People said yes in 19 of 21 responses. How reliable is that measure, and how would you improve it?
 - **C4.** What should the thesis *not* claim with these data?
+- **C5.** In all 21 responses the person remembered how to start, and in 19 they knew what they wanted to do before reading it on the screen, but they started in only 10. From your field, how do you explain that gap between remembering and starting?
+- **C6.** Which concept, author or study from your field should be in the thesis's theoretical framework to explain these results?
 
 **Module A — memory and cognition**
 
@@ -251,6 +259,12 @@ Risko, E. F. y Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitive
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Entrevistas posteriores a la prueba
+
+- **Qué cambió:** la guía aclara que las entrevistas son posteriores a la prueba y suma al núcleo común las preguntas C5 (recordar no basta para empezar) y C6 (lo que falta en el marco teórico), que van primero y encabezan la versión escrita.
+- **Cómo estaba antes:** el núcleo común miraba sobre todo a la validez de la prueba.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-02 — Sin adjuntos
 

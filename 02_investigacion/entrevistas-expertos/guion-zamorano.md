@@ -10,9 +10,9 @@ Zamorano diseñó, con Catalina Cortés y Mauricio Herrera, TAMI, una *interfaz 
 
 ## Qué debe dejar la entrevista
 
-1. Una crítica de diseño del objeto propio de Relevo: forma, tamaño, botón y lugar.
-2. Si una señal de un solo sentido, el oído, basta, o si conviene sumar otro.
-3. Qué pasos siguen para llevar el objeto de un prototipo a un producto, incluida la propiedad intelectual.
+1. Una interpretación, desde la interacción tangible, de lo que mostró la prueba: la señal se calló más veces desde el teléfono que con el botón del objeto, y una persona nunca encontró ese botón.
+2. Cómo explicar en la memoria qué aporta un objeto físico frente a una pantalla, y qué gana o pierde una señal de un solo sentido.
+3. Una crítica del objeto propio y de su camino de prototipo a producto.
 
 ## Antes de la entrevista
 
@@ -36,13 +36,28 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
-Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
+La entrevista ocurre después de la prueba, así que lo primero es interpretar los resultados y fortalecer el marco teórico; las preguntas sobre el diseño futuro van al final. Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después los resultados y la teoría, y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
 
 **Para empezar (2 minutos)**
 
 > Para empezar, ¿cómo nació TAMI y qué fue lo más difícil de llevarla a un entorno real?
 
 - *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
+**A. ★ Recordar no basta para empezar**
+
+> En la prueba, en las 21 respuestas la persona recordó cómo empezar, y en 19 supo qué quería hacer antes de leerlo en la pantalla, pero empezó la actividad solo en 10. Desde tu campo, ¿cómo explicas esa distancia entre recordar y empezar?
+
+- *Por qué:* es el resultado que más necesita teoría; hoy la memoria lo explica con Fogg (2009).
+- *Repregunta:* «¿Qué factor pesaría más, según tu experiencia?».
+- *Va a:* capítulo 13, «Resultados», y capítulo 6.
+
+**B. ★ Lo que falta en el marco teórico**
+
+> Con estos resultados a la vista, ¿qué concepto, autor o estudio de tu campo debería estar en el marco teórico de la memoria para explicarlos?
+
+- *Por qué:* la entrevista es posterior a la prueba; su mayor aporte es a la interpretación y a la teoría.
+- *Va a:* capítulo 6 y referencias.
 
 **1. ★ El objeto**
 
@@ -98,7 +113,7 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: 1, 2, 3, 6 y «¿A quién más consultarías?». Describir el objeto en el mismo correo: redondo, de 46 mm de diámetro y 12,3 mm de alto, sin frente, con el logo como botón y la placa del Tag adentro.
+Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». Describir el objeto en el mismo correo: redondo, de 46 mm de diámetro y 12,3 mm de alto, sin frente, con el logo como botón y la placa del Tag adentro.
 
 ## Después
 
@@ -111,6 +126,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Entrevista posterior a la prueba
+
+- **Qué cambió:** el guion prioriza interpretar los resultados y fortalecer el marco teórico: cambian los objetivos y se suman las preguntas A (recordar no basta para empezar) y B (lo que falta en el marco teórico), que también encabezan la versión escrita.
+- **Cómo estaba antes:** los objetivos miraban sobre todo al diseño y a pruebas futuras.
+- **Por qué:** el autor aclaró que las entrevistas son posteriores a la prueba.
 
 ### 2026-11-02 — Sin adjuntos
 

@@ -13,9 +13,9 @@ Salas estudia cómo se rehabilitan las personas después de un daño cerebral, y
 
 ## Qué debe dejar la entrevista
 
-1. Una forma correcta de describir el objeto de Relevo desde la cognición extendida o distribuida, sin exagerar.
-2. Qué hace que una ayuda externa para recordar se siga usando o se abandone, aplicado a los datos de la prueba.
-3. Los límites éticos de usar ideas de la rehabilitación en un proyecto que no es clínico.
+1. Una interpretación de los resultados desde la cognición extendida y distribuida, sobre todo de por qué recordar no siempre llevó a empezar.
+2. Una forma precisa de nombrar el papel del objeto en el marco teórico, sin exagerar.
+3. Qué hace que una ayuda externa para recordar se siga usando o se abandone, aplicado a los datos de la prueba.
 
 ## Antes de la entrevista
 
@@ -39,13 +39,28 @@ Contar el problema, el ciclo (preparar, seguir en el teléfono, oír la señal y
 
 ### 3. Preguntas (25 minutos)
 
-Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
+La entrevista ocurre después de la prueba, así que lo primero es interpretar los resultados y fortalecer el marco teórico; las preguntas sobre el diseño futuro van al final. Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después los resultados y la teoría, y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
 
 **Para empezar (2 minutos)**
 
 > Para empezar, ¿cómo llegaste a pensar la rehabilitación desde la cognición extendida y distribuida?
 
 - *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
+**A. ★ Recordar no basta para empezar**
+
+> En la prueba, en las 21 respuestas la persona recordó cómo empezar, y en 19 supo qué quería hacer antes de leerlo en la pantalla, pero empezó la actividad solo en 10. Desde tu campo, ¿cómo explicas esa distancia entre recordar y empezar?
+
+- *Por qué:* es el resultado que más necesita teoría; hoy la memoria lo explica con Fogg (2009).
+- *Repregunta:* «¿Qué factor pesaría más, según tu experiencia?».
+- *Va a:* capítulo 13, «Resultados», y capítulo 6.
+
+**B. ★ Lo que falta en el marco teórico**
+
+> Con estos resultados a la vista, ¿qué concepto, autor o estudio de tu campo debería estar en el marco teórico de la memoria para explicarlos?
+
+- *Por qué:* la entrevista es posterior a la prueba; su mayor aporte es a la interpretación y a la teoría.
+- *Va a:* capítulo 6 y referencias.
 
 **1. ★ ¿Extendida o distribuida?**
 
@@ -107,7 +122,7 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: 1, 2, 3, 5 y «¿A quién más consultarías?».
+Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
 
 ## Después
 
@@ -124,6 +139,12 @@ Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1�
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Entrevista posterior a la prueba
+
+- **Qué cambió:** el guion prioriza interpretar los resultados y fortalecer el marco teórico: cambian los objetivos y se suman las preguntas A (recordar no basta para empezar) y B (lo que falta en el marco teórico), que también encabezan la versión escrita.
+- **Cómo estaba antes:** los objetivos miraban sobre todo al diseño y a pruebas futuras.
+- **Por qué:** el autor aclaró que las entrevistas son posteriores a la prueba.
 
 ### 2026-11-02 — Sin adjuntos
 

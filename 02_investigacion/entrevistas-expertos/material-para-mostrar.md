@@ -31,9 +31,9 @@ La invitación no lleva adjuntos: el correo ya explica el proyecto. Esta página
 
 **Lo que me gustaría conversar contigo.**
 
-1. Si la comparación entre el objeto y una notificación en el teléfono puede atribuir un efecto al lugar, o si mezcla el lugar con el canal.
-2. Cómo medir que la persona recordó «a tiempo» sin depender de lo que ella misma responde en la aplicación.
-3. Qué debería cambiar del objeto o de la señal antes de una prueba con más personas.
+1. Cómo interpretar estos resultados desde tu campo, sobre todo por qué recordar no siempre llevó a empezar.
+2. Qué concepto o estudio debería estar en el marco teórico para explicarlos.
+3. Qué permite concluir la comparación entre el objeto y una notificación en el teléfono, y qué no.
 
 ## English version
 
@@ -56,11 +56,17 @@ La invitación no lleva adjuntos: el correo ya explica el proyecto. Esta página
 
 **What we would like to discuss with you.**
 
-1. Whether comparing the object with a phone notification can attribute an effect to the place, or whether it mixes place and channel.
-2. How to measure that the person remembered "in time" without relying only on their own answers in the app.
-3. What should change in the object or the signal before a test with more people.
+1. How to interpret these results from your field, especially why remembering did not always lead to starting.
+2. Which concept or study should be in the theoretical framework to explain them.
+3. What the comparison between the object and a phone notification allows us to conclude, and what it does not.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Entrevistas posteriores a la prueba
+
+- **Qué cambió:** los tres temas para conversar pasan a la interpretación de los resultados y al marco teórico, en la página y en el PDF.
+- **Cómo estaba antes:** apuntaban a la validez de la prueba y a cambios del objeto.
+- **Por qué:** el autor aclaró que las entrevistas son posteriores a la prueba.
 
 ### 2026-11-02 — Sin adjuntos
 

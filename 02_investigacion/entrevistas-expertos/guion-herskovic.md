@@ -14,9 +14,9 @@ Herskovic diseña y evalúa tecnología para el cuidado de sí mismo en la vida 
 
 ## Qué debe dejar la entrevista
 
-1. Cómo mejorar lo que las personas responden después de la señal, y si un objeto físico serviría para responder.
-2. Dónde está el límite entre ayudar y persuadir, y cómo evaluar un sistema que no busca cambiar una conducta.
-3. Qué estándar de rigor es razonable para una prueba de tres personas en sus hogares.
+1. Qué tan confiables son las respuestas de la prueba y qué se puede concluir con tres personas en sus hogares.
+2. Dónde situar a Relevo entre ayudar y persuadir, dentro de la investigación sobre tecnología para la vida diaria.
+3. Cómo mejorar las preguntas tras la señal en una etapa siguiente.
 
 ## Antes de la entrevista
 
@@ -40,13 +40,28 @@ Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta 
 
 ### 3. Preguntas (25 minutos)
 
-Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después Relevo y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
+La entrevista ocurre después de la prueba, así que lo primero es interpretar los resultados y fortalecer el marco teórico; las preguntas sobre el diseño futuro van al final. Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después los resultados y la teoría, y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
 
 **Para empezar (2 minutos)**
 
 > Para empezar, ¿qué has aprendido al diseñar tecnología para el autocuidado con personas reales en Chile?
 
 - *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
+**A. ★ Recordar no basta para empezar**
+
+> En la prueba, en las 21 respuestas la persona recordó cómo empezar, y en 19 supo qué quería hacer antes de leerlo en la pantalla, pero empezó la actividad solo en 10. Desde tu campo, ¿cómo explicas esa distancia entre recordar y empezar?
+
+- *Por qué:* es el resultado que más necesita teoría; hoy la memoria lo explica con Fogg (2009).
+- *Repregunta:* «¿Qué factor pesaría más, según tu experiencia?».
+- *Va a:* capítulo 13, «Resultados», y capítulo 6.
+
+**B. ★ Lo que falta en el marco teórico**
+
+> Con estos resultados a la vista, ¿qué concepto, autor o estudio de tu campo debería estar en el marco teórico de la memoria para explicarlos?
+
+- *Por qué:* la entrevista es posterior a la prueba; su mayor aporte es a la interpretación y a la teoría.
+- *Va a:* capítulo 6 y referencias.
 
 **1. ★ Responder con el objeto**
 
@@ -103,7 +118,7 @@ Las preguntas van de lo general a lo particular, como pide la guía de los profe
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: 1, 2, 3, 6 y «¿A quién más consultarías?».
+Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
 
 ## Después
 
@@ -118,6 +133,12 @@ Fernández-Vera, F., Urrutia, D. C., Rossel, P. O., Herskovic, V. y Fuentes, C. 
 Rodríguez, I., Cajamarca, G. y Herskovic, V. (2022). When does self-report of pain occur? A study of older adults. *PeerJ, 10*, Artículo e13716. https://doi.org/10.7717/peerj.13716
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Entrevista posterior a la prueba
+
+- **Qué cambió:** el guion prioriza interpretar los resultados y fortalecer el marco teórico: cambian los objetivos y se suman las preguntas A (recordar no basta para empezar) y B (lo que falta en el marco teórico), que también encabezan la versión escrita.
+- **Cómo estaba antes:** los objetivos miraban sobre todo al diseño y a pruebas futuras.
+- **Por qué:** el autor aclaró que las entrevistas son posteriores a la prueba.
 
 ### 2026-11-02 — Sin adjuntos
 
