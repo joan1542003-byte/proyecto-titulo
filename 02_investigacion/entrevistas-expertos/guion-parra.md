@@ -2,7 +2,7 @@
 
 **Disciplina:** ciencia de la computación; sistemas de recomendación, interfaces inteligentes e inteligencia artificial centrada en las personas. **Institución:** profesor asociado, Departamento de Ciencia de la Computación, Pontificia Universidad Católica de Chile. **Duración:** 30 a 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
 
-**Estado al 3 de noviembre de 2026:** respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. No habrá videollamada; ver el [correo con el video](#correo-con-el-video).
+**Estado al 3 de noviembre de 2026:** respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. No habrá videollamada; se le envía un [correo con tres preguntas](#correo-con-las-preguntas), sin video.
 
 Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
 
@@ -114,19 +114,17 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». Denis pidió un video o algo corto, así que se le envía el [correo con el video](#correo-con-el-video), con tres preguntas.
+Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». Denis pidió un video o algo corto, así que se le envía el [correo con las preguntas](#correo-con-las-preguntas): tres preguntas, sin video.
 
-## Correo con el video
+## Correo con las preguntas
 
-Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados de diciembre y, si le mandan un video o algo corto por correo, lo verá cuando tenga tiempo y dará su opinión. No habrá videollamada. El correo va en el mismo hilo, con un video de menos de un minuto y tres preguntas que se responden en pocas líneas. Explica Relevo sin términos técnicos.
-
-**Cómo enviarlo:** responder su correo desde el de la UDP y adjuntar [`relevo-en-un-minuto.mp4`](video-de-relevo/relevo-en-un-minuto.mp4) (53 segundos, 1,8 MB, sin sonido). Si se prefiere un enlace, subirlo a Google Drive con acceso para «Cualquier persona con el enlace» y cambiar la primera frase por: «¡Muchas gracias por responder! Te dejo un video de menos de un minuto, sin sonido: [enlace]. Abajo van tres preguntas; con dos o tres líneas por pregunta me ayudas mucho».
+Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados de diciembre y, si le mandan un video o algo corto por correo, lo verá cuando tenga tiempo y dará su opinión. No habrá videollamada. El autor decidió enviarle solo texto: un resumen de Relevo sin términos técnicos y tres preguntas que se responden en pocas líneas. Va en el mismo hilo, desde el correo de la UDP y sin adjuntos.
 
 > Hola, Denis:
 >
-> ¡Muchas gracias por responder! Te adjunto un video de menos de un minuto, sin sonido, y tres preguntas; con dos o tres líneas por pregunta me ayudas mucho.
+> ¡Muchas gracias por responder! Te dejo un resumen breve y tres preguntas; con dos o tres líneas por pregunta me ayudas mucho.
 >
-> En corto: Relevo es mi proyecto de título en Diseño UDP. Es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo un libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue.
+> En corto: Relevo es mi proyecto de título en Diseño UDP. A veces una sesión en el teléfono sigue sin que uno vuelva a decidir, y algo que quería hacer queda en pausa. Relevo no bloquea nada: la persona elige en la aplicación qué quiere hacer, por ejemplo leer, y deja un objeto pequeño junto al libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue. Tres personas lo probaron en sus casas durante dos semanas.
 >
 > Mis preguntas
 > 1. En la memoria explico que una sesión sigue porque el desplazamiento infinito y la reproducción automática quitan los finales: un capítulo o una canción terminan; el feed, no. Pero no digo nada del sistema que elige qué viene después. Desde los sistemas de recomendación, ¿qué falta en esa explicación, y qué concepto o autor me recomiendas?
@@ -150,7 +148,9 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 | 2. Lo que se hace y lo que se quiere | La memoria trata la distancia entre intención y conducta solo desde la psicología: memoria prospectiva e intenciones de implementación. Falta decir, desde los datos que usan las plataformas, en qué se distingue Relevo —parte de lo que la persona declaró, no de lo que hace— y dónde está el límite de esa idea. | Capítulos 6 y 14 |
 | 3. Quién decide cuándo suena | El criterio 3 se apoya en un argumento propio: el teléfono mide cuánto se usa una app, pero no para qué. Falta respaldo de la investigación sobre el control de las personas en sistemas de recomendación, y una opinión experta sobre qué se arriesga al inferir el momento. | Criterio 3, capítulo 6 («autonomía») y capítulo 14, «Alcances y proyecciones» |
 
-**Qué muestra el video**
+### Video que no se envía
+
+Antes de esa decisión se preparó un video de 53 segundos, sin sonido: [`relevo-en-un-minuto.mp4`](video-de-relevo/relevo-en-un-minuto.mp4). No se envió; queda en el repositorio por si sirve en otro momento. Muestra lo siguiente:
 
 | Escena | Qué dice | De dónde sale |
 | --- | --- | --- |
@@ -180,6 +180,12 @@ Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between 
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Correo sin video
+
+- **Qué cambió:** el correo para Denis ya no lleva video. Su resumen («En corto») cuenta el problema, cómo se usa Relevo y la prueba, sin términos técnicos; las tres preguntas no cambian. La sección pasa a llamarse «Correo con las preguntas», como en los otros guiones, y el video queda descrito aparte, sin enviar.
+- **Cómo estaba antes:** el correo adjuntaba un video de 53 segundos, y su resumen era más corto porque el video mostraba el uso.
+- **Por qué:** el autor pidió redactar el mensaje sin video.
 
 ### 2026-11-03 — Correo con el video
 
