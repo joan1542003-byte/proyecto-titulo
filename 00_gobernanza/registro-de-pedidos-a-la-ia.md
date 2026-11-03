@@ -232,6 +232,7 @@
 | 3 nov. | Encargo | Preparar el correo para Francisco Zamorano. | Correo verificado contra su campo (interacción humano-computador, interfaces tangibles y TAMI) y contra la memoria v6: aclara que el objeto de la prueba fue un llavero comprado y que el recuerdo se midió por autorreporte; corrige dos paráfrasis de la memoria. Queda en su [guion](../02_investigacion/entrevistas-expertos/guion-zamorano.md). | — |
 | 3 nov. | Encargo | Denis Parra respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; preparar el correo y todo lo que necesite, con preguntas que aporten desde su experiencia y sin explicar Relevo con tecnicismos. | Video de 53 segundos, sin sonido, con pantallas reales de la app, el modelo 3D del objeto (con la nota de que en la prueba se usó un llavero comprado) y los recuentos de la prueba. Correo con tres preguntas desde su trabajo publicado (recomendación, retroalimentación implícita y explícita, control de las personas) que apuntan a vacíos de la v6: el capítulo 3 no habla del sistema que elige qué viene después, y el criterio 3 se apoya en un argumento propio. Al revisar se corrigieron en los cinco guiones la frase del consentimiento, que seguía en usted, y verbos con tilde duplicada. Queda en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | Sin videollamada con Parra |
 | 3 nov. | Corrección | Redactar el mensaje para Parra sin video. | El resumen del correo cuenta, sin términos técnicos, el problema, cómo se usa Relevo y la prueba de dos semanas; las tres preguntas se mantienen. El video queda en el repositorio, sin enviar. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | Correo sin video |
+| 3 nov. | Corrección | Reescribir las preguntas para Parra: bien formuladas, fáciles de entender, más directas y con valor teórico. | Cada pregunta tiene una o dos frases de contexto y pide algo para el marco teórico: el concepto que falta para explicar el sistema que elige qué viene después, el que explica la diferencia entre lo que se hace y lo que se declara, y las condiciones de un control real. Están en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
 
 ## Lo que muestra el registro
 
@@ -242,6 +243,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Preguntas más directas para Parra
+
+- **Qué cambió:** se registró el pedido de reescribir las preguntas para Parra.
+- **Cómo estaba antes:** el último pedido era el mensaje sin video.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-03 — Correo sin video para Parra
 

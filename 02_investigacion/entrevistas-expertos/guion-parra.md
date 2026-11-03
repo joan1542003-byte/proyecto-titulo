@@ -122,14 +122,14 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 
 > Hola, Denis:
 >
-> ¡Muchas gracias por responder! Te dejo un resumen breve y tres preguntas; con dos o tres líneas por pregunta me ayudas mucho.
+> ¡Muchas gracias por responder! Te dejo un resumen breve y tres preguntas para el marco teórico de mi memoria; con dos o tres líneas por pregunta me ayudas mucho.
 >
 > En corto: Relevo es mi proyecto de título en Diseño UDP. A veces una sesión en el teléfono sigue sin que uno vuelva a decidir, y algo que quería hacer queda en pausa. Relevo no bloquea nada: la persona elige en la aplicación qué quiere hacer, por ejemplo leer, y deja un objeto pequeño junto al libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue. Tres personas lo probaron en sus casas durante dos semanas.
 >
 > Mis preguntas
-> 1. En la memoria explico que una sesión sigue porque el desplazamiento infinito y la reproducción automática quitan los finales: un capítulo o una canción terminan; el feed, no. Pero no digo nada del sistema que elige qué viene después. Desde los sistemas de recomendación, ¿qué falta en esa explicación, y qué concepto o autor me recomiendas?
-> 2. Con Xavier Amatriain estudiaste cómo se relaciona lo que una persona hace, por ejemplo cuántas veces escucha un álbum, con lo que declara al calificarlo. Entiendo que muchas plataformas aprenden sobre todo de lo que se hace: seguir mirando cuenta como interés. Relevo, en cambio, parte de lo que la persona dijo de antemano que quería hacer. ¿Cómo trata hoy tu campo esa diferencia, y qué cuidado tendrías al usarla para explicar Relevo?
-> 3. En Relevo, la persona elige las apps y el tiempo, y el sistema no infiere nada: el teléfono sabe cuánto se usa una app, pero no para qué. Desde tu trabajo en SetFusion, ¿qué hace que un control así sea real y no solo aparente? Y si Relevo intentara reconocer por sí mismo el momento oportuno, ¿qué ganaría y qué perdería la persona?
+> 1. En la memoria explico que la interfaz ayuda a que una sesión siga: el scroll infinito y la reproducción automática quitan los finales. Pero no explico el papel del sistema que elige qué viene después. ¿Qué concepto de los sistemas de recomendación me falta para explicarlo, y qué autor me recomiendas?
+> 2. Con Xavier Amatriain estudiaste la relación entre lo que una persona hace y lo que declara. Las plataformas suelen aprender de lo primero; Relevo parte de lo segundo: lo que la persona dijo antes que quería hacer. ¿Qué concepto explica mejor esa diferencia, y qué límites tiene para justificar Relevo?
+> 3. En Relevo, la persona elige las apps y el tiempo; el sistema no decide nada por su cuenta. En SetFusion estudiaste cómo dar control a las personas sobre las recomendaciones. ¿Qué hace que ese control sea real y no solo aparente, y qué se pierde si el sistema decide el momento por sí solo?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de usar tu respuesta te envío el párrafo para que lo revises.
 >
@@ -138,7 +138,7 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 > ¡Muchas gracias!
 > Johan
 
-**Por qué estas tres.** Cada una cae en su trabajo publicado: los sistemas de recomendación y la recomendación secuencial (pregunta 1), la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011; pregunta 2), y las interfaces que dan control a las personas (Parra y Brusilovsky, 2015; pregunta 3). Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
+**Por qué estas tres.** Cada una pide algo para el marco teórico —un concepto, un autor o las condiciones de un control real— y cae en su trabajo publicado: los sistemas de recomendación y la recomendación secuencial (pregunta 1), la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011; pregunta 2), y las interfaces que dan control a las personas (Parra y Brusilovsky, 2015; pregunta 3). Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
 
 **Qué aporta cada pregunta a la memoria**
 
@@ -180,6 +180,12 @@ Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between 
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Preguntas más directas
+
+- **Qué cambió:** las tres preguntas para Denis se reescribieron más cortas y directas: cada una tiene una o dos frases de contexto y pide algo para el marco teórico (el concepto que falta para explicar el sistema que elige qué viene después, el que explica la diferencia entre lo que se hace y lo que se declara, y las condiciones de un control real). La presentación dice que las preguntas son para el marco teórico.
+- **Cómo estaba antes:** cada pregunta tenía más contexto, de 60 a 75 palabras, y algunas pedían consejo sobre cómo explicar Relevo en vez de un concepto.
+- **Por qué:** el autor pidió preguntas bien formuladas, fáciles de entender, más directas y con valor teórico.
 
 ### 2026-11-03 — Correo sin video
 
