@@ -229,6 +229,7 @@
 | 2 nov. | Corrección | Una pregunta más teórica, no de resultados, desde la especialidad de la persona. | La pregunta 6 se reemplaza: a Parada, cómo describir el fenómeno desde la cognición 4E (problema y respuesta en el entorno); a Zamorano, qué teoría tangible reciente reemplazaría a los textos de 1997. | — |
 | 2 nov. | Decisión | Confirmó que el que respondió es Francisco J. Parada. | Correo final para Parada con seis preguntas (tres principales y tres opcionales), listo para enviar; estado actualizado en la carpeta de entrevistas. El correo de Zamorano queda en espera. | Entrevista con Parada |
 | 2 nov. | Corrección | Verificar que Parada entienda de qué se habla y qué se le pregunta. | Se contrastó cada pregunta con sus líneas de investigación (UDP) y sus artículos: 2, 3, 5 y 6 caen en su campo; 1 y 4 se acotaron a la cognición situada y a la psicología cognitiva. El resumen ahora dice que el recuerdo se midió por lo que respondieron en la aplicación. | — |
+| 3 nov. | Encargo | Preparar el correo para Francisco Zamorano. | Correo verificado contra su campo (interacción humano-computador, interfaces tangibles y TAMI) y contra la memoria v6: aclara que el objeto de la prueba fue un llavero comprado y que el recuerdo se midió por autorreporte; corrige dos paráfrasis de la memoria. Queda en su [guion](../02_investigacion/entrevistas-expertos/guion-zamorano.md). | — |
 
 ## Lo que muestra el registro
 
@@ -239,6 +240,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Correo para Zamorano
+
+- **Qué cambió:** se registró el pedido del correo para Zamorano.
+- **Cómo estaba antes:** el último pedido era la verificación del correo para Parada.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-02 — Verificación con Parada
 

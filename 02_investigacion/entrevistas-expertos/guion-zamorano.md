@@ -117,21 +117,21 @@ Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». De
 
 ## Correo con las preguntas
 
-No ha respondido. Si responde, este es el correo, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
+Correo para Zamorano, pedido por el autor el 3 de noviembre de 2026, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve y cae en su campo: interacción humano-computador, diseño de interfaces e interfaces tangibles (ficha UDD), y TAMI, una interfaz tangible multisensorial validada en un entorno real y patentada (ficha de transferencia de la UDD, 2024).
 
 > Hola, Francisco:
 >
-> ¡Gracias por responder! Te dejo un resumen breve y tres preguntas. Puedes responder por escrito, en dos o tres líneas cada una, o lo conversamos en la videollamada.
+> ¡Gracias por responder! Te dejo un resumen breve, tres preguntas y otras tres opcionales. Puedes responder por escrito, en dos o tres líneas cada una, o lo conversamos en la videollamada.
 >
-> En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas: casi siempre recordaron qué querían hacer (19 de 21 respuestas), pero empezaron la actividad solo en 10. Para apagar el sonido usaron más el teléfono (9 veces) que el botón del objeto (5), y una persona nunca encontró ese botón.
+> En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. En la prueba, el objeto fue un llavero Bluetooth comprado, que se apaga con su botón o desde el teléfono. Tres personas lo usaron en su casa durante dos semanas. Después de cada aviso respondían en la aplicación: casi siempre dijeron que sabían qué querían hacer (19 de 21 veces), pero empezaron la actividad solo en 10. Para apagar el sonido usaron más el teléfono (9 veces) que el botón del llavero (5), y una persona nunca encontró ese botón.
 >
 > Mis preguntas
 > 1. En la memoria sostengo que el objeto puede significar más por el lugar donde se deja que por cómo se manipula. Pero la gente lo apagó más desde el teléfono que con su botón. ¿Qué te dice eso del papel del objeto, y qué parte de la interacción dejarías en el objeto y cuál en el teléfono?
 > 2. Antes de que suene, la persona deja el objeto junto a la guitarra o el libro; podría ser una forma física de comprometerse con lo que quiere hacer. ¿Qué papel tiene ese gesto en la interacción, y qué trabajos conoces que lo hayan estudiado?
-> 3. En mi examen de julio, la comisión pidió aclarar por qué un objeto. Tú validaste una interfaz tangible en un entorno real con TAMI: ¿qué evidencia te convencería de que el objeto de Relevo aporta algo que una notificación en el teléfono no da?
+> 3. En mi examen de julio, la comisión pidió aclarar el papel del objeto. Tú validaste una interfaz tangible en un entorno real con TAMI: ¿qué evidencia te convencería de que el objeto de Relevo aporta algo que una notificación en el teléfono no da?
 >
 > Si te queda tiempo (opcional)
-> 4. En mis entrevistas, seis de ocho personas pidieron señales visuales o discretas y ninguna pidió sonido; aun así elegí sonido, porque debe alcanzar a quien mira una pantalla. Desde tu experiencia con interfaces multisensoriales, ¿cómo resolverías esa tensión?
+> 4. En mis entrevistas, seis de ocho personas pidieron señales simples, discretas o visuales, y ninguna pidió sonido; aun así elegí sonido, porque debe alcanzar a quien mira una pantalla. Desde tu experiencia con interfaces multisensoriales, ¿cómo resolverías esa tensión?
 > 5. Si tuvieras que presentar Relevo a una comisión de diseño, ¿qué destacarías como aporte y qué te parecería débil?
 > 6. Mi marco teórico se apoya en Ishii y Ullmer (1997) y en la tecnología calma de Weiser y Brown (1997), que son clásicos pero antiguos. Desde la interacción tangible actual, ¿qué conceptos o autores recientes describen mejor un objeto que casi no se manipula, que vale por el lugar donde se deja y que informa en segundo plano?
 >
@@ -148,8 +148,8 @@ No ha respondido. Si responde, este es el correo, en el mismo hilo y sin adjunto
 | --- | --- | --- |
 | 1. Qué va en el objeto y qué en el teléfono | La memoria dice que el objeto significa por su lugar más que por su manipulación, pero los datos muestran que se controló desde el teléfono. Falta interpretar ese resultado desde la interacción tangible. | Capítulo 11 y la iteración siguiente |
 | 2. El gesto de dejar el objeto | La memoria justifica el objeto solo por el sonido desde el lugar; el gesto de dejarlo junto a la actividad podría ser un segundo aporte, sin estudiar. | Capítulo 6 y criterio 8 |
-| 3. Qué evidencia justifica el objeto | Responde a la crítica de la comisión de julio y define qué haría falta para sostener el criterio 8. | Criterio 8 y supuesto 3 del capítulo 10 |
-| 4. Señal visual o sonora (opcional) | La memoria deja abierta la tensión entre lo que pidieron las personas (señales visuales o discretas) y la decisión de usar sonido. | Capítulos 7 y 11 |
+| 3. Qué evidencia justifica el objeto | Responde al pedido de la comisión de julio de aclarar el objeto y define qué haría falta para sostener el criterio 8. | Criterio 8 y supuesto 3 del capítulo 10 |
+| 4. Señal visual o sonora (opcional) | La memoria deja abierta la tensión entre lo que pidieron las personas (señales simples, discretas o visuales) y la decisión de usar sonido. | Capítulos 7 y 11 |
 | 5. Aporte y debilidad (opcional) | Una lectura externa del aporte disciplinar, que la rúbrica evalúa en la formulación. | Capítulo 14 |
 | 6. Teoría tangible actual (opcional) | La base teórica del objeto descansa en dos textos de 1997, y la charla de marco teórico pide fuentes de los últimos cinco años (registro de riesgos, n.º 14). | Capítulo 6 y referencias |
 
@@ -164,6 +164,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Correo verificado para Zamorano
+
+- **Qué cambió:** el resumen dice que el objeto de la prueba fue un llavero comprado y que el recuerdo se midió por lo que respondieron en la aplicación; la apertura anuncia tres preguntas opcionales; la 3 dice que la comisión pidió «aclarar el papel del objeto», y la 4, «señales simples, discretas o visuales», como en la memoria. La nota inicial deja de decir que no ha respondido.
+- **Cómo estaba antes:** el resumen no decía qué objeto se usó ni cómo se midió el recuerdo, y dos preguntas resumían la memoria con menos precisión.
+- **Por qué:** el autor pidió el correo de Zamorano con la misma revisión que el de Parada.
 
 ### 2026-11-02 — Sin respuesta todavía
 
