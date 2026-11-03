@@ -122,14 +122,14 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 
 > Hola, Denis:
 >
-> ¡Muchas gracias por responder! Te dejo un resumen breve y tres preguntas para el marco teórico de mi memoria; con dos o tres líneas por pregunta me ayudas mucho.
+> ¡Muchas gracias por responder! Te dejo un resumen breve y tres preguntas; me interesa tu mirada desde los sistemas de recomendación, y con dos o tres líneas por pregunta me ayudas mucho.
 >
 > En corto: Relevo es mi proyecto de título en Diseño UDP. A veces una sesión en el teléfono sigue sin que uno vuelva a decidir, y algo que quería hacer queda en pausa. Relevo no bloquea nada: la persona elige en la aplicación qué quiere hacer, por ejemplo leer, y deja un objeto pequeño junto al libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue. Tres personas lo probaron en sus casas durante dos semanas.
 >
 > Mis preguntas
-> 1. En la memoria explico que la interfaz ayuda a que una sesión siga: el scroll infinito y la reproducción automática quitan los finales. Pero no explico el papel del sistema que elige qué viene después. ¿Qué concepto de los sistemas de recomendación me falta para explicarlo, y qué autor me recomiendas?
-> 2. Con Xavier Amatriain estudiaste la relación entre lo que una persona hace y lo que declara. Las plataformas suelen aprender de lo primero; Relevo parte de lo segundo: lo que la persona dijo antes que quería hacer. ¿Qué concepto explica mejor esa diferencia, y qué límites tiene para justificar Relevo?
-> 3. En Relevo, la persona elige las apps y el tiempo; el sistema no decide nada por su cuenta. En SetFusion estudiaste cómo dar control a las personas sobre las recomendaciones. ¿Qué hace que ese control sea real y no solo aparente, y qué se pierde si el sistema decide el momento por sí solo?
+> 1. En la memoria explico que la interfaz ayuda a que una sesión siga: el scroll infinito y la reproducción automática quitan los finales. Pero no hablo del sistema que elige qué viene después. ¿Qué papel cumple ese sistema en que la sesión continúe?
+> 2. Con Xavier Amatriain estudiaste la relación entre lo que una persona hace y lo que declara. Las plataformas suelen aprender de lo que la persona hace; Relevo parte de lo que dijo antes que quería hacer. ¿Qué se gana y qué se pierde al partir de lo declarado y no de lo que se hace?
+> 3. En Relevo, la persona elige las apps y el tiempo; el sistema no decide nada por su cuenta. En SetFusion estudiaste cómo dar control a las personas sobre las recomendaciones. Según lo que encontraste, ¿qué hace que ese control sea útil de verdad, y qué se pierde si el sistema decide por sí solo cuándo sonar?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de usar tu respuesta te envío el párrafo para que lo revises.
 >
@@ -138,7 +138,7 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 > ¡Muchas gracias!
 > Johan
 
-**Por qué estas tres.** Cada una pide algo para el marco teórico —un concepto, un autor o las condiciones de un control real— y cae en su trabajo publicado: los sistemas de recomendación y la recomendación secuencial (pregunta 1), la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011; pregunta 2), y las interfaces que dan control a las personas (Parra y Brusilovsky, 2015; pregunta 3). Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
+**Por qué estas tres.** Denis es la referencia: las preguntas no piden autores, sino su propia mirada, y cada una cae en su trabajo publicado, comprobado en Crossref el 3 de noviembre de 2026. La 1 corresponde a la recomendación secuencial, la que elige qué mostrar después (Araujo et al., 2022); la 2, a la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011), y la 3, al control de las personas en sistemas de recomendación interactivos (He et al., 2016; Parra y Brusilovsky, 2015). Su respuesta entra a la memoria como comunicación personal, si autoriza su nombre. Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
 
 **Qué aporta cada pregunta a la memoria**
 
@@ -173,6 +173,10 @@ Si responde el correo, su respuesta escrita se registra igual en la ficha, con l
 
 ## Referencias
 
+Araujo, V., Salinas, H., Labarca, A., Villa, A. y Parra, D. (2022). Hierarchical transformers for group-aware sequential recommendation: Application in MOBA games. En *Adjunct proceedings of the 30th ACM Conference on User Modeling, Adaptation and Personalization* (pp. 293–301). Association for Computing Machinery. https://doi.org/10.1145/3511047.3537667
+
+He, C., Parra, D. y Verbert, K. (2016). Interactive recommender systems: A survey of the state of the art and future research challenges and opportunities. *Expert Systems with Applications, 56*, 9–27. https://doi.org/10.1016/j.eswa.2016.02.013
+
 Montag, C., Lachmann, B., Herrlich, M. y Zweig, K. (2019). Addictive features of social media/messenger platforms and freemium games against the background of psychological and economic theories. *International Journal of Environmental Research and Public Health, 16*(14), Artículo 2612. https://doi.org/10.3390/ijerph16142612
 
 Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between implicit and explicit feedback for preference elicitation. En J. A. Konstan, R. Conejo, J. L. Marzo y N. Oliver (Eds.), *User modeling, adaption and personalization* (pp. 255–268). Springer. https://doi.org/10.1007/978-3-642-22362-4_22
@@ -180,6 +184,12 @@ Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between 
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Preguntas desde su conocimiento
+
+- **Qué cambió:** las preguntas ya no piden autores ni conceptos para buscar: piden la mirada de Denis desde su especialidad, que se comprobó en Crossref (recomendación secuencial, retroalimentación implícita y explícita, y control en sistemas de recomendación). Se suman las referencias de Araujo et al. (2022) y He et al. (2016).
+- **Cómo estaba antes:** la pregunta 1 pedía un concepto y un autor, y la 2 un concepto y sus límites.
+- **Por qué:** el autor señaló que la persona experta es la referencia, y pidió preguntarle desde su conocimiento y revisar que cada pregunta sea de su especialidad.
 
 ### 2026-11-03 — Preguntas más directas
 
