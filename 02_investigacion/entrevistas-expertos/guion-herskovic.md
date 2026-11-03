@@ -30,7 +30,7 @@ Herskovic diseña y evalúa tecnología para el cuidado de sí mismo en la vida 
 
 > Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión desde la interacción humano-computador y tu trabajo en tecnología para el autocuidado. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Tu participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puedes pedirme detener la grabación o borrar una parte, o terminar cuando quieras.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -65,10 +65,10 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **1. ★ Responder con el objeto**
 
-> En tu estudio con personas mayores, el registro del dolor se hacía con una interfaz tangible. En Relevo, después de cada señal, la persona responde en el teléfono, en la misma pantalla que ya le muestra su actividad. ¿Qué cambiaríías si la persona respondiera en el objeto y no en el teléfono?
+> En tu estudio con personas mayores, el registro del dolor se hacía con una interfaz tangible. En Relevo, después de cada señal, la persona responde en el teléfono, en la misma pantalla que ya le muestra su actividad. ¿Qué cambiarías si la persona respondiera en el objeto y no en el teléfono?
 
 - *Por qué:* en 19 de 21 respuestas la persona dijo que supo qué quería hacer antes de leerlo en la pantalla, pero la pregunta llega cuando ya puede verlo.
-- *Repreguntas:* «¿Qué aprendiste sobre cuándo las personas registran algo por su cuenta?», «¿Qué pregunta haríías antes de mostrar la actividad?».
+- *Repreguntas:* «¿Qué aprendiste sobre cuándo las personas registran algo por su cuenta?», «¿Qué pregunta harías antes de mostrar la actividad?».
 - *Va a:* capítulo 13, «Qué se registró», y la iteración siguiente.
 
 **2. ★ Entre ayudar y persuadir**
@@ -94,7 +94,7 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **5. Accesibilidad**
 
-> La señal es solo un sonido. ¿Qué alternativa propondríías para personas con baja audición, y qué más revisaríías en accesibilidad?
+> La señal es solo un sonido. ¿Qué alternativa propondrías para personas con baja audición, y qué más revisarías en accesibilidad?
 
 - *Va a:* capítulo 11, «La señal», y requisitos del objeto propio.
 
@@ -106,7 +106,7 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **Si queda tiempo:**
 
-- «La comparación con una notificación cambia a la vez el canal y el lugar. ¿Cómo lo separaríías con pocas personas?»
+- «La comparación con una notificación cambia a la vez el canal y el lugar. ¿Cómo lo separarías con pocas personas?»
 - «¿Qué exigirías al consentimiento y al manejo de datos antes de una prueba con más personas?»
 
 ### 4. Cierre (3 minutos)
@@ -133,6 +133,12 @@ Fernández-Vera, F., Urrutia, D. C., Rossel, P. O., Herskovic, V. y Fuentes, C. 
 Rodríguez, I., Cajamarca, G. y Herskovic, V. (2022). When does self-report of pain occur? A study of older adults. *PeerJ, 10*, Artículo e13716. https://doi.org/10.7717/peerj.13716
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Erratas del trato de tú
+
+- **Qué cambió:** la frase del consentimiento en la apertura pasa a tú («Tu participación…, Puedes pedirme…, cuando quieras»), y los verbos con una tilde de más quedan bien escritos (por ejemplo, «harías»).
+- **Cómo estaba antes:** esa frase seguía en usted («Su participación…, Puede pedirme…, cuando quiera») y varios verbos tenían la tilde duplicada («haríías»).
+- **Por qué:** el autor pidió tratar de tú; los errores se encontraron al preparar el correo para Parra.
 
 ### 2026-11-02 — Entrevista posterior a la prueba
 

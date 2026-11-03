@@ -26,7 +26,7 @@ Zamorano diseñó, con Catalina Cortés y Mauricio Herrera, TAMI, una *interfaz 
 
 > Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión de diseño, sobre todo del objeto, a partir de tu experiencia con TAMI. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Tu participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puedes pedirme detener la grabación o borrar una parte, o terminar cuando quieras.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -64,12 +64,12 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 > Este es el objeto propio de Relevo. Se deja junto a un libro, una guitarra o una croquera, y suena desde ahí. ¿Qué te parecen su forma, su tamaño y su botón?
 
 - *Por qué:* la prueba usó un Tag comercial; una persona nunca encontró su botón, y en 9 de los ciclos la señal se calló desde el teléfono y en 5 con el botón del Tag.
-- *Repreguntas:* «¿Qué entiende alguien que lo ve por primera vez?», «¿Cómo indicaríías que está esperando, sin luz ni pantalla?», «¿Qué material o acabado usaríías?».
+- *Repreguntas:* «¿Qué entiende alguien que lo ve por primera vez?», «¿Cómo indicarías que está esperando, sin luz ni pantalla?», «¿Qué material o acabado usarías?».
 - *Va a:* capítulo 11, «El objeto», y la iteración siguiente.
 
 **2. ★ Uno o varios sentidos**
 
-> TAMI une la vista, el oído y el tacto. Relevo dejó solo el sonido: la luz se descartó, y la señal dura unos 30 segundos y termina sola. En las entrevistas, seis de ocho personas pidieron señales simples, calmadas, discretas o visuales, y ninguna pidió un sonido. ¿Qué gana y qué pierde una señal de un solo sentido, y cuándo sumaríías otro?
+> TAMI une la vista, el oído y el tacto. Relevo dejó solo el sonido: la luz se descartó, y la señal dura unos 30 segundos y termina sola. En las entrevistas, seis de ocho personas pidieron señales simples, calmadas, discretas o visuales, y ninguna pidió un sonido. ¿Qué gana y qué pierde una señal de un solo sentido, y cuándo sumarías otro?
 
 - *Por qué:* es una decisión de diseño discutible y además toca la accesibilidad de personas con baja audición.
 - *Va a:* capítulo 11, «La señal», y requisitos del objeto propio.
@@ -101,7 +101,7 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **Si queda tiempo:**
 
-- «¿Cómo evaluaron la usabilidad de TAMI? ¿Qué método usaríías para el objeto de Relevo?»
+- «¿Cómo evaluaron la usabilidad de TAMI? ¿Qué método usarías para el objeto de Relevo?»
 - «El objeto podría recibir Tag de otras marcas. ¿Qué riesgos ves en depender de electrónica de terceros?»
 
 ### 4. Cierre (3 minutos)
@@ -164,6 +164,12 @@ Zamorano Urrutia, F. J., Cortés Loyola, C. y Herrera Marín, M. (2019). A tangi
 Zamorano Urrutia, F., Cortés Loyola, C. y Herrera Marín, M. (2020). Facilitando el aprendizaje de trigonometría a través de una interfaz tangible. *Cuadernos del Centro de Estudios de Diseño y Comunicación*, (103), 215–232. https://doi.org/10.18682/cdc.vi103.4158
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Erratas del trato de tú
+
+- **Qué cambió:** la frase del consentimiento en la apertura pasa a tú («Tu participación…, Puedes pedirme…, cuando quieras»), y los verbos con una tilde de más quedan bien escritos (por ejemplo, «harías»).
+- **Cómo estaba antes:** esa frase seguía en usted («Su participación…, Puede pedirme…, cuando quiera») y varios verbos tenían la tilde duplicada («haríías»).
+- **Por qué:** el autor pidió tratar de tú; los errores se encontraron al preparar el correo para Parra.
 
 ### 2026-11-03 — Correo verificado para Zamorano
 

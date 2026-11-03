@@ -30,7 +30,7 @@ Parada estudia la cognición como algo que ocurre entre el cerebro, el cuerpo y 
 
 > Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión sobre cómo estudiarlo en la vida real, a partir de tu trabajo en cognición 4E y en diseños escalables. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Tu participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puedes pedirme detener la grabación o borrar una parte, o terminar cuando quieras.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -65,24 +65,24 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **1. ★ Un diseño escalable para Relevo**
 
-> En tus diseños escalables, la misma tarea pasa del computador a situaciones reales. Relevo tiene una duda parecida: la prueba comparó el objeto junto al primer paso con una notificación en el teléfono, y eso cambia a la vez el canal y el lugar. Con tres a seis personas, ¿cómo organizaríías niveles que separen ambos efectos?
+> En tus diseños escalables, la misma tarea pasa del computador a situaciones reales. Relevo tiene una duda parecida: la prueba comparó el objeto junto al primer paso con una notificación en el teléfono, y eso cambia a la vez el canal y el lugar. Con tres a seis personas, ¿cómo organizarías niveles que separen ambos efectos?
 
 - *Por qué:* es la debilidad central de la prueba, y el supuesto del lugar es justo lo propio de la hipótesis.
-- *Propuesta para discutir:* cuatro niveles, cada uno en una semana: el sonido en el teléfono; el mismo sonido desde el objeto en un lugar neutro; desde el objeto junto al primer paso, y sin señal. «¿Qué sacaríías o cambiaríías, y qué papel juega el orden?»
+- *Propuesta para discutir:* cuatro niveles, cada uno en una semana: el sonido en el teléfono; el mismo sonido desde el objeto en un lugar neutro; desde el objeto junto al primer paso, y sin señal. «¿Qué sacarías o cambiarías, y qué papel juega el orden?»
 - *Qué escuchar:* el número mínimo de niveles, cómo ordenarlos o alternarlos, y qué comparar dentro de cada persona.
 - *Va a:* capítulo 10, hipótesis y supuestos; capítulo 13, «Límites de esta etapa», y la etapa siguiente.
 
 **2. ★ Andamiaje del entorno**
 
-> Tu perspectiva 3E habla de una cognición andamiada por el entorno. En Relevo, la persona deja el objeto donde empieza la actividad. ¿Cómo describiríías, desde esa perspectiva, el papel de ese objeto en el recuerdo?
+> Tu perspectiva 3E habla de una cognición andamiada por el entorno. En Relevo, la persona deja el objeto donde empieza la actividad. ¿Cómo describirías, desde esa perspectiva, el papel de ese objeto en el recuerdo?
 
 - *Por qué:* la memoria usa a Kirsh (1995) y la interacción tangible, pero le falta un término preciso para el papel del objeto.
-- *Repreguntas:* «¿Qué lo haríías pasar de aviso a andamiaje?», «¿Qué diferencia hay, en tu artículo con Christian Salas, entre que el objeto extienda la cognición de la persona y que la cognición se distribuya entre la persona, el objeto y el lugar?».
+- *Repreguntas:* «¿Qué lo harías pasar de aviso a andamiaje?», «¿Qué diferencia hay, en tu artículo con Christian Salas, entre que el objeto extienda la cognición de la persona y que la cognición se distribuya entre la persona, el objeto y el lugar?».
 - *Va a:* capítulo 6, «Recordar con objetos y lugares».
 
 **3. ★ Medir sin depender solo de lo que la persona dice**
 
-> Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas dijeron que sí, pero lo respondieron en la misma pantalla que muestra la actividad. ¿Qué medida de comportamiento, de bajo costo y sin equipos de laboratorio, sumaríías?
+> Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas dijeron que sí, pero lo respondieron en la misma pantalla que muestra la actividad. ¿Qué medida de comportamiento, de bajo costo y sin equipos de laboratorio, sumarías?
 
 - *Por qué:* sus revisiones piden medir en contextos reales; Relevo no tiene electroencefalografía, pero sí registros del teléfono.
 - *Propuesta para discutir:* el tiempo entre la señal y la siguiente apertura de una aplicación; cómo se calló la señal (teléfono o botón del objeto), y preguntar qué recordó antes de mostrar la actividad.
@@ -110,7 +110,7 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **Si queda tiempo:**
 
-- «¿Qué pasa con un mismo sonido que se repite durante semanas, y cómo lo manejaríías?»
+- «¿Qué pasa con un mismo sonido que se repite durante semanas, y cómo lo manejarías?»
 - «El sonido debe pasar del segundo plano al primero para alcanzar a quien mira una pantalla. ¿Qué dice la evidencia sobre la atención auditiva en esa situación?»
 
 ### 4. Cierre (3 minutos)
@@ -179,6 +179,12 @@ Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cogn
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Erratas del trato de tú
+
+- **Qué cambió:** la frase del consentimiento en la apertura pasa a tú («Tu participación…, Puedes pedirme…, cuando quieras»), y los verbos con una tilde de más quedan bien escritos (por ejemplo, «harías»).
+- **Cómo estaba antes:** esa frase seguía en usted («Su participación…, Puede pedirme…, cuando quiera») y varios verbos tenían la tilde duplicada («haríías»).
+- **Por qué:** el autor pidió tratar de tú; los errores se encontraron al preparar el correo para Parra.
 
 ### 2026-11-02 — Comprensión y campo de Parada
 

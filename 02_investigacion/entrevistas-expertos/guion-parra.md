@@ -2,6 +2,8 @@
 
 **Disciplina:** ciencia de la computación; sistemas de recomendación, interfaces inteligentes e inteligencia artificial centrada en las personas. **Institución:** profesor asociado, Departamento de Ciencia de la Computación, Pontificia Universidad Católica de Chile. **Duración:** 30 a 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
 
+**Estado al 3 de noviembre de 2026:** respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. No habrá videollamada; ver el [correo con el video](#correo-con-el-video).
+
 Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
 
 ## Por qué esta persona
@@ -29,7 +31,7 @@ Relevo parte de que muchas aplicaciones no tienen un final: recomiendan y reprod
 
 > Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión desde los sistemas de recomendación y el control que tienen las personas sobre ellos. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Tu participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puedes pedirme detener la grabación o borrar una parte, o terminar cuando quieras.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -64,7 +66,7 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **1. ★ Cómo se describe el problema**
 
-> Este es el párrafo de la memoria que explica por qué una sesión continúa: el desplazamiento infinito y la reproducción automática mantienen abierta la secuencia y quitan los momentos de cierre. Desde los sistemas de recomendación, ¿qué corregiríías o agregaríías?
+> Este es el párrafo de la memoria que explica por qué una sesión continúa: el desplazamiento infinito y la reproducción automática mantienen abierta la secuencia y quitan los momentos de cierre. Desde los sistemas de recomendación, ¿qué corregirías o agregarías?
 
 - *Por qué:* la memoria se apoya en Montag et al. (2019) para este punto; una revisión experta lo hace más preciso.
 - *Repregunta:* «¿Qué papel tiene la recomendación secuencial en que la siguiente pieza llegue sin que la persona decida?».
@@ -83,7 +85,7 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 > Hoy Relevo suena por tiempo. Una persona bajó su límite de 45 a 35 minutos porque, al sonar, ya estaba inmersa en un video. Con señales que el teléfono ya tiene, ¿cómo podría Relevo reconocer una sesión que continúa sin una nueva decisión, sin inferir demasiado sobre la persona?
 
 - *Por qué:* es la principal mejora posible de la condición, pero choca con la autonomía y la privacidad.
-- *Repreguntas:* «¿Qué señales usaríías y cuáles evitaríías?», «¿Qué riesgo ves en que el sistema decida cuándo intervenir?».
+- *Repreguntas:* «¿Qué señales usarías y cuáles evitarías?», «¿Qué riesgo ves en que el sistema decida cuándo intervenir?».
 - *Va a:* capítulo 13, «Iterar con los resultados», y capítulo 14, proyecciones.
 
 **4. Explicar por qué sonó**
@@ -94,7 +96,7 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **5. ★ Qué medir y qué no afirmar**
 
-> Con tres personas, Relevo registró cuándo se activó cada relevo, si sonó, cómo se calló y qué respondió cada persona. ¿Qué medida del registro del teléfono sumaríías, y qué no debería afirmar la memoria con estos datos?
+> Con tres personas, Relevo registró cuándo se activó cada relevo, si sonó, cómo se calló y qué respondió cada persona. ¿Qué medida del registro del teléfono sumarías, y qué no debería afirmar la memoria con estos datos?
 
 - *Va a:* capítulo 13.
 
@@ -112,19 +114,84 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
+Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». Denis pidió un video o algo corto, así que se le envía el [correo con el video](#correo-con-el-video), con tres preguntas.
+
+## Correo con el video
+
+Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados de diciembre y, si le mandan un video o algo corto por correo, lo verá cuando tenga tiempo y dará su opinión. No habrá videollamada. El correo va en el mismo hilo, con un video de menos de un minuto y tres preguntas que se responden en pocas líneas. Explica Relevo sin términos técnicos.
+
+**Cómo enviarlo:** responder su correo desde el de la UDP y adjuntar [`relevo-en-un-minuto.mp4`](video-de-relevo/relevo-en-un-minuto.mp4) (53 segundos, 1,8 MB, sin sonido). Si se prefiere un enlace, subirlo a Google Drive con acceso para «Cualquier persona con el enlace» y cambiar la primera frase por: «¡Muchas gracias por responder! Te dejo un video de menos de un minuto, sin sonido: [enlace]. Abajo van tres preguntas; con dos o tres líneas por pregunta me ayudas mucho».
+
+> Hola, Denis:
+>
+> ¡Muchas gracias por responder! Te adjunto un video de menos de un minuto, sin sonido, y tres preguntas; con dos o tres líneas por pregunta me ayudas mucho.
+>
+> En corto: Relevo es mi proyecto de título en Diseño UDP. Es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo un libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue.
+>
+> Mis preguntas
+> 1. En la memoria explico que una sesión sigue porque el desplazamiento infinito y la reproducción automática quitan los finales: un capítulo o una canción terminan; el feed, no. Pero no digo nada del sistema que elige qué viene después. Desde los sistemas de recomendación, ¿qué falta en esa explicación, y qué concepto o autor me recomiendas?
+> 2. Con Xavier Amatriain estudiaste cómo se relaciona lo que una persona hace, por ejemplo cuántas veces escucha un álbum, con lo que declara al calificarlo. Entiendo que muchas plataformas aprenden sobre todo de lo que se hace: seguir mirando cuenta como interés. Relevo, en cambio, parte de lo que la persona dijo de antemano que quería hacer. ¿Cómo trata hoy tu campo esa diferencia, y qué cuidado tendrías al usarla para explicar Relevo?
+> 3. En Relevo, la persona elige las apps y el tiempo, y el sistema no infiere nada: el teléfono sabe cuánto se usa una app, pero no para qué. Desde tu trabajo en SetFusion, ¿qué hace que un control así sea real y no solo aparente? Y si Relevo intentara reconocer por sí mismo el momento oportuno, ¿qué ganaría y qué perdería la persona?
+>
+> No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de usar tu respuesta te envío el párrafo para que lo revises.
+>
+> Sin apuro: si alcanzas antes del 2 de diciembre, lo sumo a la memoria; si no, igual me sirve para el examen de título, a mediados de diciembre.
+>
+> ¡Muchas gracias!
+> Johan
+
+**Por qué estas tres.** Cada una cae en su trabajo publicado: los sistemas de recomendación y la recomendación secuencial (pregunta 1), la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011; pregunta 2), y las interfaces que dan control a las personas (Parra y Brusilovsky, 2015; pregunta 3). Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
+
+**Qué aporta cada pregunta a la memoria**
+
+| Pregunta | Vacío que llena | Va a |
+| --- | --- | --- |
+| 1. Por qué una sesión sigue | Los capítulos 3 («Por qué ocurre») y 6 («El diseño de la atención») explican la continuidad solo con patrones de interfaz (Montag et al., 2019). La v6 no menciona el sistema que elige qué contenido viene después, y la *arquitectura de atención* se define solo con decisiones de interfaz. | Capítulos 3 y 6 y glosario |
+| 2. Lo que se hace y lo que se quiere | La memoria trata la distancia entre intención y conducta solo desde la psicología: memoria prospectiva e intenciones de implementación. Falta decir, desde los datos que usan las plataformas, en qué se distingue Relevo —parte de lo que la persona declaró, no de lo que hace— y dónde está el límite de esa idea. | Capítulos 6 y 14 |
+| 3. Quién decide cuándo suena | El criterio 3 se apoya en un argumento propio: el teléfono mide cuánto se usa una app, pero no para qué. Falta respaldo de la investigación sobre el control de las personas en sistemas de recomendación, y una opinión experta sobre qué se arriesga al inferir el momento. | Criterio 3, capítulo 6 («autonomía») y capítulo 14, «Alcances y proyecciones» |
+
+**Qué muestra el video**
+
+| Escena | Qué dice | De dónde sale |
+| --- | --- | --- |
+| 1 | Logo y «Un recordatorio físico preparado desde el teléfono». | Marca vigente. |
+| 2 | Una sesión sigue sin que uno vuelva a decidir; Relevo no bloquea el teléfono. | Capítulo 3. |
+| 3 y 4 | Preparar: qué hacer, cómo empezar, dónde y cuánto tiempo en ciertas apps. | Pantallas de la app con un perfil de prueba (figuras de la memoria). |
+| 5 | Dejar el objeto junto al libro; el teléfono sigue libre. | [Modelo 3D del objeto](../../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md), aún sin imprimir, con la nota de que en la prueba se usó un llavero Bluetooth comprado. |
+| 6 | Suena unos 30 segundos, en el objeto o en el teléfono. | Capítulo 11, «La señal», y pantalla del anexo de la app. |
+| 7 | La persona decide sin presión: comenzar, dejarlo para después o cambiar de idea. | Criterio 4 y pantallas del anexo de la app. |
+| 8 | Tres personas, dos semanas en sus casas; 19 de 21 y 10 de 21, del 8 al 19 de octubre de 2026. | Capítulo 13, «Resultados». |
+| 9 | Gracias; las preguntas van en el correo. | — |
+
+El video no muestra datos ni imágenes de las personas de la prueba, ni la semana con la señal solo en el teléfono, cuyos resultados no están en la v6. Se genera con [`generar-video.js`](video-de-relevo/generar-video.js), que toma las imágenes del repositorio.
 
 ## Después
 
 Llenar la ficha de la [guía](guia-de-entrevista.md#cómo-registrar-la-entrevista) el mismo día. Si propone otra condición para que suene Relevo, anotarla como propuesta: la decide el autor y no cambia la prueba ya hecha.
 
+Si responde el correo, su respuesta escrita se registra igual en la ficha, con la fecha del correo. Se cita como comunicación personal solo si autorizó su nombre, y antes de usarla se le envía el párrafo. Si recomienda autores, hay que buscarlos y leerlos antes de citarlos: su sugerencia no reemplaza la lectura.
+
 ## Referencias
 
 Montag, C., Lachmann, B., Herrlich, M. y Zweig, K. (2019). Addictive features of social media/messenger platforms and freemium games against the background of psychological and economic theories. *International Journal of Environmental Research and Public Health, 16*(14), Artículo 2612. https://doi.org/10.3390/ijerph16142612
 
+Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between implicit and explicit feedback for preference elicitation. En J. A. Konstan, R. Conejo, J. L. Marzo y N. Oliver (Eds.), *User modeling, adaption and personalization* (pp. 255–268). Springer. https://doi.org/10.1007/978-3-642-22362-4_22
+
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Correo con el video
+
+- **Qué cambió:** se registra la respuesta de Denis y se suma el correo que se le envía: un video de menos de un minuto, sin sonido, y tres preguntas desde su trabajo publicado, con lo que aporta cada una a la memoria, lo que muestra el video y cómo usar su respuesta. Se suma la referencia de Parra y Amatriain (2011).
+- **Cómo estaba antes:** el guion suponía una videollamada, y la versión escrita era una lista de cinco preguntas del guion.
+- **Por qué:** Denis tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; el autor pidió preguntas que aporten desde su experiencia y explicar Relevo sin tecnicismos.
+
+### 2026-11-03 — Erratas del trato de tú
+
+- **Qué cambió:** la frase del consentimiento en la apertura pasa a tú («Tu participación…, Puedes pedirme…, cuando quieras»), y los verbos con una tilde de más quedan bien escritos (por ejemplo, «harías»).
+- **Cómo estaba antes:** esa frase seguía en usted («Su participación…, Puede pedirme…, cuando quiera») y varios verbos tenían la tilde duplicada («haríías»).
+- **Por qué:** el autor pidió tratar de tú; los errores se encontraron al preparar el correo para Parra.
 
 ### 2026-11-02 — Entrevista posterior a la prueba
 

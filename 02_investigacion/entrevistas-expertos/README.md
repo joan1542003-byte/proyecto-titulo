@@ -1,6 +1,6 @@
 # Entrevistas a expertos
 
-**Creada:** 2 de noviembre de 2026. **Estado al 2 de noviembre de 2026:** invitaciones enviadas; respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
+**Creada:** 2 de noviembre de 2026. **Estado al 3 de noviembre de 2026:** invitaciones enviadas. Respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). Respondió Denis Parra: tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; el [correo con el video](guion-parra.md#correo-con-el-video) está listo para enviar. **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
 
 ## Para qué
 
@@ -15,6 +15,7 @@ Conseguir al menos una entrevista con una persona experta de otra disciplina ant
 | [Guía de entrevista](guia-de-entrevista.md) | Lo que pide la guía de los profesores, método, consentimiento, preguntas comunes y por disciplina, en español y en inglés, versión escrita, ficha de registro y cómo citar la entrevista. |
 | [Material para mostrar](material-para-mostrar.md) | La página que se envía antes de la entrevista, en español y en inglés, y qué no mostrar. |
 | [Correos de invitación](correos-de-invitacion.md) | Invitaciones, recordatorio y agradecimiento, con el calendario de envío. |
+| [Video de Relevo](video-de-relevo/relevo-en-un-minuto.mp4) | Video de 53 segundos, sin sonido, para Denis Parra, que pidió algo corto en lugar de una entrevista; lo genera [`generar-video.js`](video-de-relevo/generar-video.js). Qué muestra y de dónde sale cada dato está en [su guion](guion-parra.md#correo-con-el-video). |
 
 ## Dónde están los correos
 
@@ -40,6 +41,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Respuesta de Parra
+
+- **Qué cambió:** el estado suma la respuesta de Denis Parra, y el contenido suma el video que se le envía.
+- **Cómo estaba antes:** solo había respondido Parada, y la carpeta no tenía video.
+- **Por qué:** Parra pidió un video o algo corto por correo, y el autor pidió prepararlo.
 
 ### 2026-11-02 — Respuesta de Parada
 

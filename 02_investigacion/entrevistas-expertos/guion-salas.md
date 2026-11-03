@@ -29,7 +29,7 @@ Salas estudia cómo se rehabilitan las personas después de un daño cerebral, y
 
 > Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión experta, sobre todo desde la rehabilitación y tu artículo reciente sobre cognición extendida y distribuida. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
 
-> Su participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puede pedirme detener la grabación o borrar una parte, o terminar cuando quiera.
+> Tu participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puedes pedirme detener la grabación o borrar una parte, o terminar cuando quieras.
 
 Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
 
@@ -64,16 +64,16 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 **1. ★ ¿Extendida o distribuida?**
 
-> En tu artículo distinguen la cognición extendida de la distribuida. En Relevo participan la persona, la aplicación, el objeto y el lugar donde empieza la actividad. ¿Cómo describiríías, con esas dos ideas, lo que pasa cuando el objeto suena?
+> En tu artículo distinguen la cognición extendida de la distribuida. En Relevo participan la persona, la aplicación, el objeto y el lugar donde empieza la actividad. ¿Cómo describirías, con esas dos ideas, lo que pasa cuando el objeto suena?
 
 - *Por qué:* la memoria hoy usa a Kirsh (1995) y la interacción tangible, pero no nombra este marco, que es más preciso.
-- *Repreguntas:* «¿Qué tendría que cumplir el objeto para integrarse al modo en que la persona recuerda, y no ser solo un aviso?», «¿Qué palabras evitaríías para no exagerar?».
+- *Repreguntas:* «¿Qué tendría que cumplir el objeto para integrarse al modo en que la persona recuerda, y no ser solo un aviso?», «¿Qué palabras evitarías para no exagerar?».
 - *Qué escuchar:* condiciones concretas (por ejemplo, que el objeto sea confiable, esté siempre disponible o que la persona lo haya puesto ahí) y términos que conviene o no conviene usar.
 - *Va a:* capítulo 6, «Recordar con objetos y lugares», y capítulo 11, «Por qué un objeto, y no solo el teléfono».
 
 **2. ★ El uso de la tecnología**
 
-> En la revisión de 2020 clasificaron la tecnología en compensar, modificar el entorno, monitorear o reentrenar. ¿Dónde ubicaríías a Relevo?
+> En la revisión de 2020 clasificaron la tecnología en compensar, modificar el entorno, monitorear o reentrenar. ¿Dónde ubicarías a Relevo?
 
 - *Por qué:* «compensar» supone un déficit, y Relevo se dirige a personas sin dificultades de memoria. La respuesta ayuda a describirlo sin volverlo clínico.
 - *Repregunta:* «Si es una modificación del entorno hecha por la propia persona, ¿qué la diferencia de una nota pegada en el libro?».
@@ -139,6 +139,12 @@ Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1�
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Erratas del trato de tú
+
+- **Qué cambió:** la frase del consentimiento en la apertura pasa a tú («Tu participación…, Puedes pedirme…, cuando quieras»), y los verbos con una tilde de más quedan bien escritos (por ejemplo, «harías»).
+- **Cómo estaba antes:** esa frase seguía en usted («Su participación…, Puede pedirme…, cuando quiera») y varios verbos tenían la tilde duplicada («haríías»).
+- **Por qué:** el autor pidió tratar de tú; los errores se encontraron al preparar el correo para Parra.
 
 ### 2026-11-02 — Entrevista posterior a la prueba
 
