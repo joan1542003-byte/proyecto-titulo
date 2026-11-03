@@ -124,13 +124,13 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 >
 > ¡Muchas gracias por responder! Te dejo un resumen breve y cuatro preguntas; me interesa tu mirada desde los sistemas de recomendación, y con dos o tres líneas por pregunta me ayudas mucho.
 >
-> En corto: Relevo es mi proyecto de título en Diseño UDP. A veces una sesión en el teléfono sigue sin que uno vuelva a decidir, y algo que quería hacer queda en pausa. Relevo no bloquea nada: la persona elige en la aplicación qué quiere hacer, por ejemplo leer, y deja un objeto pequeño junto al libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue. Tres personas lo probaron en sus casas durante dos semanas.
+> En corto: mi proyecto de título en Diseño UDP parte de algo común. A veces una sesión en el teléfono sigue sin que uno vuelva a decidir, y algo que quería hacer queda en pausa. Propongo una aplicación y un objeto pequeño que no bloquean nada. La persona elige en la aplicación qué quiere hacer, por ejemplo leer, y deja el objeto junto al libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue. Tres personas probaron este sistema en sus casas durante dos semanas.
 >
 > Mis preguntas
 > 1. En la memoria explico que la interfaz ayuda a que una sesión siga: el scroll infinito y la reproducción automática quitan los finales. Pero no hablo del sistema que elige qué viene después. ¿Qué papel cumple ese sistema en que la sesión continúe?
-> 2. Con Xavier Amatriain estudiaste la relación entre lo que una persona hace y lo que declara. Las plataformas suelen aprender de lo que la persona hace; Relevo parte de lo que dijo antes que quería hacer. ¿Qué se gana y qué se pierde al partir de lo declarado y no de lo que se hace?
-> 3. En Relevo, la persona elige las apps y el tiempo; el sistema no decide nada por su cuenta. En SetFusion estudiaste cómo dar control a las personas sobre las recomendaciones. Según lo que encontraste, ¿qué hace que ese control sea útil de verdad, y qué se pierde si el sistema decide por sí solo cuándo sonar?
-> 4. Si en tu trabajo has estudiado algo parecido a lo que intenta Relevo, ¿qué aprendiste de eso? Y desde tu experiencia, ¿qué te parece prometedor y qué te parece débil en Relevo?
+> 2. Con Xavier Amatriain estudiaste la relación entre lo que una persona hace y lo que declara. Las plataformas suelen aprender de lo que la persona hace; mi propuesta parte de lo que la persona dijo antes que quería hacer. ¿Qué se gana y qué se pierde al partir de lo declarado y no de lo que se hace?
+> 3. En mi propuesta, la persona elige las apps y el tiempo; el sistema no decide nada por su cuenta. En SetFusion estudiaste cómo dar control a las personas sobre las recomendaciones. Según lo que encontraste, ¿qué hace que ese control sea útil de verdad, y qué se pierde si el sistema decide por sí solo cuándo sonar?
+> 4. En tus estudios, ¿qué has aprendido sobre cómo ayudar a una persona a volver a decidir cuando un sistema elige por ella qué ver?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de usar tu respuesta te envío el párrafo para que lo revises.
 >
@@ -139,7 +139,7 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 > ¡Muchas gracias!
 > Johan
 
-**Por qué estas cuatro.** Denis es la referencia: las preguntas no piden autores, sino su propia mirada, y cada una cae en su trabajo publicado, comprobado en Crossref el 3 de noviembre de 2026. La 1 corresponde a la recomendación secuencial, la que elige qué mostrar después (Araujo et al., 2022); la 2, a la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011), y la 3, al control de las personas en sistemas de recomendación interactivos (He et al., 2016; Parra y Brusilovsky, 2015). La 4 es abierta: pregunta qué ha estudiado de parecido y cómo ve Relevo desde su experiencia. Su respuesta entra a la memoria como comunicación personal, si autoriza su nombre. Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
+**Por qué estas cuatro.** Denis es la referencia: las preguntas no piden autores, sino su propia mirada, y cada una cae en su trabajo publicado, comprobado en Crossref el 3 de noviembre de 2026. La 1 corresponde a la recomendación secuencial, la que elige qué mostrar después (Araujo et al., 2022); la 2, a la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011), y la 3, al control de las personas en sistemas de recomendación interactivos (He et al., 2016; Parra y Brusilovsky, 2015). La 4 pregunta directamente qué ha aprendido sobre ayudar a una persona a volver a decidir cuando un sistema elige por ella, el tema de sus trabajos sobre control. El correo no nombra Relevo: lo describe, porque el nombre no se entiende sin contexto. Su respuesta entra a la memoria como comunicación personal, si autoriza su nombre. Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
 
 **Qué aporta cada pregunta a la memoria**
 
@@ -148,7 +148,7 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 | 1. Por qué una sesión sigue | Los capítulos 3 («Por qué ocurre») y 6 («El diseño de la atención») explican la continuidad solo con patrones de interfaz (Montag et al., 2019). La v6 no menciona el sistema que elige qué contenido viene después, y la *arquitectura de atención* se define solo con decisiones de interfaz. | Capítulos 3 y 6 y glosario |
 | 2. Lo que se hace y lo que se quiere | La memoria trata la distancia entre intención y conducta solo desde la psicología: memoria prospectiva e intenciones de implementación. Falta decir, desde los datos que usan las plataformas, en qué se distingue Relevo —parte de lo que la persona declaró, no de lo que hace— y dónde está el límite de esa idea. | Capítulos 6 y 14 |
 | 3. Quién decide cuándo suena | El criterio 3 se apoya en un argumento propio: el teléfono mide cuánto se usa una app, pero no para qué. Falta respaldo de la investigación sobre el control de las personas en sistemas de recomendación, y una opinión experta sobre qué se arriesga al inferir el momento. | Criterio 3, capítulo 6 («autonomía») y capítulo 14, «Alcances y proyecciones» |
-| 4. Algo parecido y su lectura de Relevo | La memoria no tiene ninguna voz experta, y la rúbrica evalúa la colaboración interdisciplinaria. Lo que su campo ya aprendió de sistemas parecidos y su lectura de lo prometedor y lo débil de Relevo sirven para el estado del arte y para los límites. | Capítulos 8 y 14 |
+| 4. Lo que ha aprendido sobre volver a decidir | La memoria no tiene ninguna voz experta, y la rúbrica evalúa la colaboración interdisciplinaria. Lo que su investigación enseña sobre ayudar a las personas a decidir frente a un sistema que elige por ellas sirve para el estado del arte y para respaldar los criterios 3 y 4: la persona decide cuándo suena y qué hacer después. | Capítulos 8 y 9 |
 
 ### Video que no se envía
 
@@ -186,6 +186,12 @@ Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between 
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Sin nombrar Relevo
+
+- **Qué cambió:** el correo ya no nombra Relevo: el resumen y las preguntas 2 y 3 hablan de «mi proyecto» o «mi propuesta» y describen lo que hace. La pregunta 4 pregunta directamente qué ha aprendido Denis sobre ayudar a una persona a volver a decidir cuando un sistema elige por ella.
+- **Cómo estaba antes:** el correo nombraba Relevo varias veces, y la pregunta 4 pedía su opinión sobre Relevo.
+- **Por qué:** el autor pidió no nombrar Relevo, porque el nombre no se entiende sin contexto, explicarlo de otra forma y preguntar directamente por lo que ha aprendido.
 
 ### 2026-11-03 — Pregunta abierta
 
