@@ -50,11 +50,11 @@ La matriz evalúa cada subcriterio como **logrado**, **en desarrollo** o **no lo
 | 7.1 Prototipo final desarrollado | En desarrollo | La app funciona; el objeto es un Tag comprado, sin forma propia. |
 | 7.2 Documentación gráfica y técnica | En desarrollo | Wireframes, capturas y fotos de la prueba; faltan los planos y la ficha del objeto. |
 | 7.3 Coherencia global del resultado | En desarrollo | Depende de que el objeto exprese las decisiones del testigo. |
-| 8.1 Stakeholders identificados | Logrado | «Actores y responsabilidades», capítulo 10. |
+| 8.1 Stakeholders identificados | En desarrollo | La v5 tenía «Actores y responsabilidades» (Tabla 3); la v6 la quitó y su texto ya no nombra actores. Falta devolverlos a la memoria, en el capítulo 10 o el 12. |
 | 8.2 Financiamiento y presupuesto | Logrado | El [presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md) cierra el prototipo académico en unos 182 000 pesos con financiamiento propio, valoriza 114 horas de trabajo y calcula el costo por unidad del piloto. |
 | 8.3 Viabilidad general | En desarrollo | El modelo de gestión en tres etapas existe; faltan costos reales. |
 
-**Resumen:** 15 logrados, 7 en desarrollo, 1 no logrado y 1 por confirmar. El no logrado es el objeto con sus planos (5.2), tarea 4 de [Por hacer](../00_gobernanza/por-hacer.md); el presupuesto (8.2) quedó logrado el 27 de octubre, cuando el autor entregó sus montos.
+**Resumen:** 14 logrados, 8 en desarrollo, 1 no logrado y 1 por confirmar. El no logrado es el objeto con sus planos (5.2), tarea 4 de [Por hacer](../00_gobernanza/por-hacer.md); el presupuesto (8.2) quedó logrado el 27 de octubre, cuando el autor entregó sus montos.
 
 ## Prioridad de cierre
 
@@ -65,6 +65,12 @@ Para la maqueta editorial, cada dimensión debe aparecer mediante evidencia pert
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-02 — Actores en la v6
+
+- **Qué cambió:** el subcriterio 8.1 pasa a en desarrollo y el resumen a 14 logrados y 8 en desarrollo.
+- **Cómo estaba antes:** 8.1 figuraba como logrado por la sección «Actores y responsabilidades» del capítulo 10.
+- **Por qué:** al comparar la memoria con otra del taller, se vio que la v6 (28 de octubre) quitó esa sección y no nombra actores en otra parte.
 
 ### 2026-10-27 — Presupuesto cerrado
 

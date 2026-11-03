@@ -9,6 +9,7 @@ Construir la base teórica y empírica que permita explicar por qué Relevo debe
 - `metodologia-usuarios.md`: protocolo de búsqueda, síntesis y fichas de fuentes utilizadas para escoger el método de análisis de usuarios.
 - [Síntesis de las anotaciones del 23 de septiembre](sintesis-anotaciones-2026-09-23.md): posición del proyecto, usuarios, continuidad, hábitos y criterios escritos para evaluar la interfaz; propuestas, no resultados.
 - [Hábitos, reconocimiento positivo, rachas y premios](habitos-reconocimiento-y-rachas-2026-09-23.md): revisión de estudios, límites de transferencia a Relevo y recomendación para discutir la memoria; no cambia el producto.
+- [Entrevistas a expertos](entrevistas-expertos/README.md): cinco personas en Chile para entrevistar, con la vigencia de su correo, y ocho de otros países en reserva; la guía de entrevista, el material para mostrar y los correos de invitación. Al 3 de noviembre de 2026 respondieron Francisco J. Parada y Denis Parra; a Parra, que pidió algo corto, se le envía un correo con cuatro preguntas.
 
 ## Orden interno previsto
 
@@ -35,6 +36,48 @@ Las líneas son provisionales. No deben convertirse en capítulos hasta verifica
 ---
 
 ## Registro de cambios
+
+### 2026-11-03 — Cuarta pregunta para Parra
+
+- **Cambio:** el correo de Parra tiene cuatro preguntas.
+- **Antes:** decía tres.
+- **Motivo:** el autor pidió una pregunta extra.
+- **Alcance:** índice documental.
+
+### 2026-11-03 — Correo sin video para Parra
+
+- **Cambio:** a Parra se le envía un correo con tres preguntas, sin video.
+- **Antes:** decía que se le enviaba un video con las preguntas.
+- **Motivo:** pedido del autor.
+- **Alcance:** índice documental.
+
+### 2026-11-03 — Respuesta de Parra
+
+- **Cambio:** la carpeta de entrevistas dice que también respondió Parra y que se le envía un video.
+- **Antes:** decía que solo había respondido Parada.
+- **Motivo:** el autor informó la respuesta.
+- **Alcance:** índice documental.
+
+### 2026-11-02 — Respuesta de Parada
+
+- **Cambio:** la carpeta de entrevistas dice que Parada respondió.
+- **Antes:** decía que no se había contactado a nadie.
+- **Motivo:** el autor confirmó la respuesta.
+- **Alcance:** índice documental.
+
+### 2026-11-02 — Entrevistas solo en Chile
+
+- **Cambio:** la descripción de la carpeta de entrevistas dice que la lista activa es de cinco personas en Chile.
+- **Antes:** decía 13 perfiles, cinco en Chile.
+- **Motivo:** el autor decidió entrevistar solo en Chile.
+- **Alcance:** índice documental.
+
+### 2026-11-02 — Entrevistas a expertos
+
+- **Cambio:** se enlazó la carpeta de entrevistas a expertos.
+- **Antes:** la carpeta no tenía perfiles ni una guía para consultar a personas expertas.
+- **Motivo:** pedido del autor y tarea 10 de Por hacer.
+- **Alcance:** preparación; ninguna entrevista se ha hecho.
 
 ### 2026-09-23 — Revisión de hábitos y motivación
 
