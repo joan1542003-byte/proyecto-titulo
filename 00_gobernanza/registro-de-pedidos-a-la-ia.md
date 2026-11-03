@@ -234,6 +234,7 @@
 | 3 nov. | Corrección | Redactar el mensaje para Parra sin video. | El resumen del correo cuenta, sin términos técnicos, el problema, cómo se usa Relevo y la prueba de dos semanas; las tres preguntas se mantienen. El video queda en el repositorio, sin enviar. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | Correo sin video |
 | 3 nov. | Corrección | Reescribir las preguntas para Parra: bien formuladas, fáciles de entender, más directas y con valor teórico. | Cada pregunta tiene una o dos frases de contexto y pide algo para el marco teórico: el concepto que falta para explicar el sistema que elige qué viene después, el que explica la diferencia entre lo que se hace y lo que se declara, y las condiciones de un control real. Están en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
 | 3 nov. | Corrección | No pedir autores: la persona experta es la referencia. Preguntarle desde su conocimiento y revisar que cada pregunta sea de su especialidad. | Las tres preguntas piden la mirada de Parra: qué papel cumple el sistema que elige qué viene después, qué se gana y qué se pierde al partir de lo declarado, y qué hace útil el control. Cada una se contrastó en Crossref con su trabajo: recomendación secuencial (2022), retroalimentación implícita y explícita (2011) y control en sistemas de recomendación (2013, 2015 y 2016). | — |
+| 3 nov. | Encargo | Una pregunta extra para Parra: si ha estudiado algo relacionado con Relevo y su percepción desde su experiencia. | Pregunta 4, abierta: qué aprendió de lo que haya estudiado de parecido y qué le parece prometedor y débil en Relevo. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
 
 ## Lo que muestra el registro
 
@@ -244,6 +245,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Pregunta abierta para Parra
+
+- **Qué cambió:** se registró el pedido de una pregunta extra para Parra.
+- **Cómo estaba antes:** el último pedido era preguntarle desde su conocimiento.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-03 — Preguntas para Parra desde su conocimiento
 

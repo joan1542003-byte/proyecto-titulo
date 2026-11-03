@@ -1,6 +1,6 @@
 # Entrevistas a expertos
 
-**Creada:** 2 de noviembre de 2026. **Estado al 3 de noviembre de 2026:** invitaciones enviadas. Respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). Respondió Denis Parra: tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; su [correo con tres preguntas](guion-parra.md#correo-con-las-preguntas), sin video, está listo para enviar. **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
+**Creada:** 2 de noviembre de 2026. **Estado al 3 de noviembre de 2026:** invitaciones enviadas. Respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). Respondió Denis Parra: tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; su [correo con cuatro preguntas](guion-parra.md#correo-con-las-preguntas), sin video, está listo para enviar. **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
 
 ## Para qué
 
@@ -41,6 +41,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Cuarta pregunta para Parra
+
+- **Qué cambió:** el estado dice que el correo de Parra tiene cuatro preguntas.
+- **Cómo estaba antes:** decía tres.
+- **Por qué:** el autor pidió una pregunta extra.
 
 ### 2026-11-03 — Correo sin video para Parra
 

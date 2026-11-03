@@ -2,7 +2,7 @@
 
 **Disciplina:** ciencia de la computación; sistemas de recomendación, interfaces inteligentes e inteligencia artificial centrada en las personas. **Institución:** profesor asociado, Departamento de Ciencia de la Computación, Pontificia Universidad Católica de Chile. **Duración:** 30 a 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
 
-**Estado al 3 de noviembre de 2026:** respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. No habrá videollamada; se le envía un [correo con tres preguntas](#correo-con-las-preguntas), sin video.
+**Estado al 3 de noviembre de 2026:** respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. No habrá videollamada; se le envía un [correo con cuatro preguntas](#correo-con-las-preguntas), sin video.
 
 Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
 
@@ -114,15 +114,15 @@ La entrevista ocurre después de la prueba, así que lo primero es interpretar l
 
 ## Si responde por escrito
 
-Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». Denis pidió un video o algo corto, así que se le envía el [correo con las preguntas](#correo-con-las-preguntas): tres preguntas, sin video.
+Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?». Denis pidió un video o algo corto, así que se le envía el [correo con las preguntas](#correo-con-las-preguntas): cuatro preguntas, sin video.
 
 ## Correo con las preguntas
 
-Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados de diciembre y, si le mandan un video o algo corto por correo, lo verá cuando tenga tiempo y dará su opinión. No habrá videollamada. El autor decidió enviarle solo texto: un resumen de Relevo sin términos técnicos y tres preguntas que se responden en pocas líneas. Va en el mismo hilo, desde el correo de la UDP y sin adjuntos.
+Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados de diciembre y, si le mandan un video o algo corto por correo, lo verá cuando tenga tiempo y dará su opinión. No habrá videollamada. El autor decidió enviarle solo texto: un resumen de Relevo sin términos técnicos y cuatro preguntas que se responden en pocas líneas. Va en el mismo hilo, desde el correo de la UDP y sin adjuntos.
 
 > Hola, Denis:
 >
-> ¡Muchas gracias por responder! Te dejo un resumen breve y tres preguntas; me interesa tu mirada desde los sistemas de recomendación, y con dos o tres líneas por pregunta me ayudas mucho.
+> ¡Muchas gracias por responder! Te dejo un resumen breve y cuatro preguntas; me interesa tu mirada desde los sistemas de recomendación, y con dos o tres líneas por pregunta me ayudas mucho.
 >
 > En corto: Relevo es mi proyecto de título en Diseño UDP. A veces una sesión en el teléfono sigue sin que uno vuelva a decidir, y algo que quería hacer queda en pausa. Relevo no bloquea nada: la persona elige en la aplicación qué quiere hacer, por ejemplo leer, y deja un objeto pequeño junto al libro. Cuando lleva en ciertas apps el tiempo que ella misma fijó, el objeto suena para que lo recuerde, y ella decide si empieza o sigue. Tres personas lo probaron en sus casas durante dos semanas.
 >
@@ -130,6 +130,7 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 > 1. En la memoria explico que la interfaz ayuda a que una sesión siga: el scroll infinito y la reproducción automática quitan los finales. Pero no hablo del sistema que elige qué viene después. ¿Qué papel cumple ese sistema en que la sesión continúe?
 > 2. Con Xavier Amatriain estudiaste la relación entre lo que una persona hace y lo que declara. Las plataformas suelen aprender de lo que la persona hace; Relevo parte de lo que dijo antes que quería hacer. ¿Qué se gana y qué se pierde al partir de lo declarado y no de lo que se hace?
 > 3. En Relevo, la persona elige las apps y el tiempo; el sistema no decide nada por su cuenta. En SetFusion estudiaste cómo dar control a las personas sobre las recomendaciones. Según lo que encontraste, ¿qué hace que ese control sea útil de verdad, y qué se pierde si el sistema decide por sí solo cuándo sonar?
+> 4. Si en tu trabajo has estudiado algo parecido a lo que intenta Relevo, ¿qué aprendiste de eso? Y desde tu experiencia, ¿qué te parece prometedor y qué te parece débil en Relevo?
 >
 > No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de usar tu respuesta te envío el párrafo para que lo revises.
 >
@@ -138,7 +139,7 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 > ¡Muchas gracias!
 > Johan
 
-**Por qué estas tres.** Denis es la referencia: las preguntas no piden autores, sino su propia mirada, y cada una cae en su trabajo publicado, comprobado en Crossref el 3 de noviembre de 2026. La 1 corresponde a la recomendación secuencial, la que elige qué mostrar después (Araujo et al., 2022); la 2, a la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011), y la 3, al control de las personas en sistemas de recomendación interactivos (He et al., 2016; Parra y Brusilovsky, 2015). Su respuesta entra a la memoria como comunicación personal, si autoriza su nombre. Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
+**Por qué estas cuatro.** Denis es la referencia: las preguntas no piden autores, sino su propia mirada, y cada una cae en su trabajo publicado, comprobado en Crossref el 3 de noviembre de 2026. La 1 corresponde a la recomendación secuencial, la que elige qué mostrar después (Araujo et al., 2022); la 2, a la relación entre lo que la persona hace y lo que declara, llamadas retroalimentación implícita y explícita (Parra y Amatriain, 2011), y la 3, al control de las personas en sistemas de recomendación interactivos (He et al., 2016; Parra y Brusilovsky, 2015). La 4 es abierta: pregunta qué ha estudiado de parecido y cómo ve Relevo desde su experiencia. Su respuesta entra a la memoria como comunicación personal, si autoriza su nombre. Las preguntas del guion sobre los resultados (A), la explicación de por qué sonó (4) y la medición (5) quedan fuera para que el correo sea corto.
 
 **Qué aporta cada pregunta a la memoria**
 
@@ -147,6 +148,7 @@ Denis respondió el 3 de noviembre de 2026: tiene la agenda llena hasta mediados
 | 1. Por qué una sesión sigue | Los capítulos 3 («Por qué ocurre») y 6 («El diseño de la atención») explican la continuidad solo con patrones de interfaz (Montag et al., 2019). La v6 no menciona el sistema que elige qué contenido viene después, y la *arquitectura de atención* se define solo con decisiones de interfaz. | Capítulos 3 y 6 y glosario |
 | 2. Lo que se hace y lo que se quiere | La memoria trata la distancia entre intención y conducta solo desde la psicología: memoria prospectiva e intenciones de implementación. Falta decir, desde los datos que usan las plataformas, en qué se distingue Relevo —parte de lo que la persona declaró, no de lo que hace— y dónde está el límite de esa idea. | Capítulos 6 y 14 |
 | 3. Quién decide cuándo suena | El criterio 3 se apoya en un argumento propio: el teléfono mide cuánto se usa una app, pero no para qué. Falta respaldo de la investigación sobre el control de las personas en sistemas de recomendación, y una opinión experta sobre qué se arriesga al inferir el momento. | Criterio 3, capítulo 6 («autonomía») y capítulo 14, «Alcances y proyecciones» |
+| 4. Algo parecido y su lectura de Relevo | La memoria no tiene ninguna voz experta, y la rúbrica evalúa la colaboración interdisciplinaria. Lo que su campo ya aprendió de sistemas parecidos y su lectura de lo prometedor y lo débil de Relevo sirven para el estado del arte y para los límites. | Capítulos 8 y 14 |
 
 ### Video que no se envía
 
@@ -184,6 +186,12 @@ Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between 
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Pregunta abierta
+
+- **Qué cambió:** el correo suma una cuarta pregunta, abierta: qué ha estudiado Denis de parecido a lo que intenta Relevo y qué le parece prometedor y débil desde su experiencia. La tabla suma su aporte.
+- **Cómo estaba antes:** el correo tenía tres preguntas, todas sobre temas puntuales.
+- **Por qué:** el autor pidió una pregunta extra sobre lo que haya estudiado relacionado con Relevo y su percepción desde su experiencia.
 
 ### 2026-11-03 — Preguntas desde su conocimiento
 
