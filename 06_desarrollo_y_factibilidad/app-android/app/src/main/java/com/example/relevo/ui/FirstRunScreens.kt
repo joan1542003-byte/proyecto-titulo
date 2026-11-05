@@ -44,18 +44,15 @@ import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.Photo
-import com.example.relevo.ui.components.PhotoImage
 import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.SectionGap
-import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StatusChip
 import com.example.relevo.ui.components.Wordmark
 import com.example.relevo.ui.components.appear
-import com.example.relevo.ui.components.AuraBackground
-import com.example.relevo.ui.components.AuraMood
+import com.example.relevo.ui.components.ActivityRing
 import com.example.relevo.ui.components.BrandMark
 import androidx.compose.ui.text.style.TextAlign
 import com.example.relevo.ui.components.rememberReduceMotion
@@ -69,57 +66,37 @@ import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.IconTile
 import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.ScreenTitle
-import com.example.relevo.ui.components.SkyCard
 
 /**
- * A1. La marca enfoca sobre el aura (3.0, D-125 a D-128), con el descriptor del proyecto: para una marca
- * nueva, decir qué hace ayuda a entenderla (Luffarelli et al., 2019). La firma se escribe sola. No pide
- * datos ni explica de más.
+ * A1 (4.0, D-155): la marca sobre el papel, sin aura, y una frase que dice qué hace Relevo. Debajo, un
+ * ejemplo como se ve en la app: la actividad en su anillo, cómo empieza y dónde. No pide datos ni explica
+ * de más.
  */
 @Composable
 internal fun WelcomeScreen(onStart: () -> Unit) {
   RelevoScreen(
-    // El aura a pantalla completa, como al abrir «Relevo, la app».
-    backdrop = { AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.CALM) },
-    bottom = {
-      ScreenTitle("Anota algo que quieres hacer.", "Relevo te avisa a tiempo, cuando llevas un rato en el teléfono.", Modifier.fillMaxWidth().padding(bottom = 8.dp).appear(3))
-      RelevoButton("Empezar", onStart)
-    },
+    bottom = { RelevoButton("Empezar", onStart) },
   ) {
-    Column(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-      Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.appear(0)) {
-        BrandMark(size = 52.dp, description = "Relevo")
-        Spacer(Modifier.width(12.dp))
-        Wordmark(height = 30.dp)
-      }
+    Column(Modifier.fillMaxWidth().padding(top = 28.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+      BrandMark(size = 64.dp, description = "Relevo", modifier = Modifier.appear(0))
+      Spacer(Modifier.height(14.dp))
+      Wordmark(height = 30.dp, modifier = Modifier.appear(0))
+      Spacer(Modifier.height(28.dp))
+      Text("Anota algo que quieres hacer", style = Relevo.type.title, color = Relevo.colors.ink, textAlign = TextAlign.Center, modifier = Modifier.appear(1))
       Spacer(Modifier.height(8.dp))
-      Text("Un recordatorio físico preparado desde el teléfono", style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(1))
+      Text("Cuando llevas un rato en el teléfono, suena donde empiezas.", style = Relevo.type.body, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(1))
     }
-    Spacer(Modifier.height(28.dp))
-    // Un ejemplo que se ve como en la app: la actividad en su cielo, su primer paso y su lugar.
-    BoxWithConstraints(Modifier.fillMaxWidth().height(392.dp).appear(2)) {
-      val w = maxWidth
-      SkyCard("Leer", KitIcon.LEER, Modifier.align(Alignment.TopCenter).width(w * 0.56f), aspect = 1f, largeLabel = true)
-      FloatingRow(KitIcon.PRIMER_PASO, "Abrir el libro", "Tu primer paso", Modifier.align(Alignment.TopStart).padding(top = w * 0.56f + 18.dp).width(w * 0.68f))
-      FloatingRow(KitIcon.LUGAR, "En el velador", "Donde empiezas", Modifier.align(Alignment.TopEnd).padding(top = w * 0.56f + 108.dp).width(w * 0.62f))
-    }
-  }
-}
-
-/** Fila que flota sobre el aura, en vidrio claro, con su ficha de color. */
-@Composable
-private fun FloatingRow(icon: KitIcon, title: String, subtitle: String, modifier: Modifier = Modifier) {
-  val shape = androidx.compose.foundation.shape.RoundedCornerShape(21.dp)
-  Row(
-    modifier.shadow(16.dp, shape, ambientColor = androidx.compose.ui.graphics.Color.Black.copy(alpha = .04f), spotColor = androidx.compose.ui.graphics.Color.Black.copy(alpha = .16f))
-      .clip(shape).background(Relevo.colors.card.copy(alpha = .88f)).padding(10.dp),
-    verticalAlignment = Alignment.CenterVertically,
-  ) {
-    IconTile(icon)
-    Spacer(Modifier.width(12.dp))
-    Column {
-      Text(title, style = Relevo.type.headline, color = Relevo.colors.ink)
-      Text(subtitle, style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(36.dp))
+    // Un ejemplo que se ve como en la app: la actividad en su anillo, cómo empieza y dónde.
+    Column(Modifier.fillMaxWidth().appear(2), horizontalAlignment = Alignment.CenterHorizontally) {
+      ActivityRing(KitIcon.LEER, 84.dp)
+      Spacer(Modifier.height(10.dp))
+      Text("Leer", style = Relevo.type.headline, color = Relevo.colors.ink)
+      Spacer(Modifier.height(16.dp))
+      ListSection {
+        ListRow("Abrir el libro", icon = KitIcon.PRIMER_PASO, subtitle = "Para empezar")
+        ListRow("En el velador", icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
+      }
     }
   }
 }
@@ -210,16 +187,16 @@ private fun ConsentPart(icon: KitIcon, expanded: Boolean, title: String, text: S
   Column(
     Modifier.fillMaxWidth().clip(shape).background(Relevo.colors.card)
       .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Button, onClickLabel = if (open) "Ocultar" else "Leer") { open = !open }
-      .padding(start = 10.dp, end = 15.dp, top = 10.dp, bottom = 10.dp),
+      .padding(start = 14.dp, end = 15.dp, top = 12.dp, bottom = 12.dp),
   ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-      IconTile(icon, background = Relevo.colors.card)
+      IconTile(icon)
       Spacer(Modifier.width(14.dp))
       Text(title, style = Relevo.type.headline, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
       RelevoIcon(if (open) KitIcon.CONTRAER else KitIcon.EXPANDIR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card)
     }
     AnimatedVisibility(open, enter = expandVertically(Motion.smooth()) + fadeIn(Motion.standard()), exit = shrinkVertically(Motion.smooth()) + fadeOut(Motion.standard(Motion.SHORT))) {
-      Text(text, style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 59.dp, top = 6.dp, bottom = 4.dp))
+      Text(text, style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 48.dp, top = 6.dp, bottom = 4.dp))
     }
   }
 }
@@ -272,22 +249,19 @@ internal fun PermissionScreen(
   ) {
     ListSection {
       ListRow(
-        "Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Necesario.",
+        "Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Necesario. En Android: Acceso a datos de uso",
         onClick = if (usageAccess) null else ({ waitingForSettings = true; onOpenUsageSettings() }),
         trailing = { PermissionEnd(usageAccess, "Dar el permiso", primary = true) { waitingForSettings = true; onOpenUsageSettings() } },
-        tileColor = Relevo.colors.card,
       )
       ListRow(
-        "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app.",
+        "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app",
         onClick = if (notifications) null else ({ requestNotificationPermission(context) }),
         trailing = { PermissionEnd(notifications, "Activar") { requestNotificationPermission(context) } },
-        tileColor = Relevo.colors.card,
       )
       ListRow(
-        "Batería", icon = KitIcon.BATERIA, subtitle = "Para que Relevo siga funcionando aunque pasen días.",
+        "Batería", icon = KitIcon.BATERIA, subtitle = "Para que siga contando aunque pasen días",
         onClick = if (backgroundUnrestricted) null else onBattery,
         trailing = { PermissionEnd(backgroundUnrestricted, "Activar", onClick = onBattery) },
-        tileColor = Relevo.colors.card,
       )
     }
   }

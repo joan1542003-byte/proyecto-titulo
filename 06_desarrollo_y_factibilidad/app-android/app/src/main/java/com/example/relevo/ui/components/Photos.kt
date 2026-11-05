@@ -307,21 +307,6 @@ private object PhotoCache {
 }
 
 /**
- * Foto que se carga fuera del hilo principal y aparece con un fundido breve. Mientras carga, el
- * espacio queda en niebla, del mismo tamaño, para que nada salte.
- */
-@Composable
-fun PhotoImage(photo: Photo, modifier: Modifier = Modifier, wide: Boolean = false, size: PhotoSize = PhotoSize.Full, describe: Boolean = false) {
-  ActivityArt(photo.icon, modifier.then(if (describe) Modifier.semantics { contentDescription = photo.description } else Modifier))
-}
-
-/** Color representativo de la familia de una actividad (D-126). */
-internal fun artTint(icon: KitIcon): Color = skyFor(icon).palette.first()
-
-/** Tres colores de la familia de una actividad, para las ilustraciones que la usan (la guía del Tag). */
-internal fun artPalette(icon: KitIcon): List<Color> = skyFor(icon).palette
-
-/**
  * La imagen de una actividad (D-126): el cielo de su familia, con grano y volumen, y su ícono en tinta
  * sobre un círculo blanco, que se lee igual sobre cualquier cielo. El nombre nunca va en blanco sobre
  * el cielo: va debajo o en una banda clara.
@@ -341,31 +326,6 @@ fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = nu
   ) {
     if (showIcon) Box(Modifier.size(glyph * 1.7f).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
       RelevoIcon(icon, size = glyph, tint = colors.onTile, background = Color.White)
-    }
-  }
-}
-
-@Suppress("unused")
-@Composable
-private fun LegacyPhotoImage(photo: Photo, modifier: Modifier = Modifier, wide: Boolean = false, size: PhotoSize = PhotoSize.Full, describe: Boolean = false) {
-  val res = if (wide) photo.wide ?: photo.res else photo.res
-  val key = res * 4 + size.sample
-  val context = LocalContext.current
-  val reduce = rememberReduceMotion()
-  var bitmap by remember(key) { mutableStateOf(PhotoCache.get(key)) }
-  val alpha = remember(key) { Animatable(if (bitmap != null || reduce) 1f else 0f) }
-  LaunchedEffect(key) {
-    if (bitmap == null) {
-      bitmap = withContext(Dispatchers.IO) {
-        val options = BitmapFactory.Options().apply { inSampleSize = size.sample; inPreferredConfig = Bitmap.Config.HARDWARE }
-        runCatching { BitmapFactory.decodeResource(context.resources, res, options)?.asImageBitmap() }.getOrNull()?.also { PhotoCache.put(key, it) }
-      }
-    }
-    if (alpha.value < 1f) alpha.animateTo(1f, tween(220, easing = Motion.Easing))
-  }
-  Box(modifier.background(Relevo.colors.mist).then(if (describe) Modifier.semantics { contentDescription = photo.description } else Modifier)) {
-    bitmap?.let {
-      Image(it, contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize().graphicsLayer { this.alpha = alpha.value })
     }
   }
 }
@@ -413,76 +373,6 @@ fun SkyLabel(text: String, modifier: Modifier = Modifier, large: Boolean = false
   )
 }
 
-/** Ícono pequeño en un círculo blanco, arriba a la izquierda de un cielo. */
-@Composable
-private fun SkyBadge(icon: KitIcon, size: Dp = 30.dp) {
-  Box(Modifier.size(size).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
-    RelevoIcon(icon, size = size * 0.6f, tint = Color(0xFF141312), background = Color.White)
-  }
-}
-
-/**
- * Ficha de actividad (D-126): su cielo con el nombre en una cápsula y el ícono en un círculo blanco.
- * Debajo, en gris, cómo empieza. Al presionar se hunde un poco; el cielo puede viajar a la pantalla siguiente.
- */
-@Composable
-fun PhotoCard(
-  title: String,
-  picture: Picture?,
-  onClick: () -> Unit,
-  modifier: Modifier = Modifier,
-  subtitle: String? = null,
-  width: Dp = 152.dp,
-  sharedKey: String? = null,
-  fallback: KitIcon = KitIcon.ACTIVIDAD,
-) {
-  val interaction = remember { MutableInteractionSource() }
-  Column(
-    modifier.width(width).pressScale(interaction)
-      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = title, onClick = onClick),
-  ) {
-    Box(Modifier.fillMaxWidth().aspectRatio(1.15f).clip(RoundedCornerShape(24.dp))) {
-      PictureContent(picture, Modifier.matchParentSize().sharedPhoto(sharedKey), fallback = fallback, showIcon = false)
-      SkyLabel(title, Modifier.align(Alignment.BottomStart).padding(9.dp))
-    }
-    if (subtitle != null) {
-      Spacer(Modifier.height(8.dp))
-      Text(subtitle, style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 2, overflow = TextOverflow.Ellipsis, modifier = Modifier.padding(horizontal = 2.dp))
-    }
-  }
-}
-
-/**
- * Ficha elegible en una cuadrícula: el cielo con su nombre en una cápsula. La elegida se encoge un poco
- * dentro de un anillo de tinta concéntrico, como el selector de fondos de iOS, y muestra una marca.
- */
-@Composable
-fun PictureTile(
-  picture: Picture?,
-  selected: Boolean,
-  onClick: () -> Unit,
-  modifier: Modifier = Modifier,
-  label: String? = null,
-  description: String = label.orEmpty(),
-  aspect: Float = 0.8f,
-  cornerRadius: Dp = 22.dp,
-  /** Rótulo destacado, para opciones grandes como los intereses. */
-  prominent: Boolean = false,
-) {
-  val colors = Relevo.colors
-  val interaction = remember { MutableInteractionSource() }
-  Box(
-    modifier.fillMaxWidth().aspectRatio(aspect).outerRing(selected, cornerRadius.coerceAtMost(60.dp), colors.ink).pressScale(interaction)
-      .clickable(interactionSource = interaction, indication = null, role = Role.RadioButton, onClick = onClick)
-      .semantics { this.selected = selected; contentDescription = description },
-  ) {
-    Box(Modifier.fillMaxSize().clip(RoundedCornerShape(cornerRadius))) {
-      PictureContent(picture, Modifier.matchParentSize(), size = PhotoSize.Thumb, showIcon = label == null, iconSize = 26.dp)
-      if (label != null) SkyLabel(label, Modifier.align(Alignment.BottomStart).padding(9.dp), large = prominent)
-    }
-  }
-}
-
 /**
  * Imagen de la persona: el emoji que eligió (P2), en un círculo. Sin emoji, la inicial de su nombre
  * o el icono de perfil. Al cambiar, el nuevo aparece con una leve escala.
@@ -503,33 +393,6 @@ fun Avatar(image: String, name: String, size: Dp, modifier: Modifier = Modifier,
         else -> RelevoIcon(KitIcon.PERFIL, size = size * 0.46f, background = background)
       }
     }
-  }
-}
-
-/**
- * Tarjeta de una actividad (3.1, «Relevo, la app»): una franja con su cielo y su ícono y, debajo, el
- * contenido sobre blanco, en tinta. Toda la tarjeta se puede tocar. [aspect] y [wide] quedan por
- * compatibilidad: la franja siempre mide lo mismo.
- */
-@Composable
-@Suppress("UNUSED_PARAMETER")
-fun PhotoHero(
-  picture: Picture,
-  modifier: Modifier = Modifier,
-  aspect: Float = 0.9f,
-  wide: Boolean = false,
-  sharedKey: String? = null,
-  onClick: (() -> Unit)? = null,
-  clickLabel: String? = null,
-  band: @Composable ColumnScope.() -> Unit,
-) {
-  val interaction = remember { MutableInteractionSource() }
-  Column(
-    modifier.fillMaxWidth().pressScale(interaction, 0.985f).clip(Relevo.panelShape).background(Relevo.colors.card)
-      .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = clickLabel, onClick = onClick) else Modifier),
-  ) {
-    PictureContent(picture, Modifier.fillMaxWidth().aspectRatio(2.8f).sharedPhoto(sharedKey), showIcon = false)
-    Column(Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, top = 18.dp, bottom = 20.dp), content = band)
   }
 }
 

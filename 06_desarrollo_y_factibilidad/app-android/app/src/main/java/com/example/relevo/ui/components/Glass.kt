@@ -73,51 +73,6 @@ fun Modifier.glass(
   return if (edge) surface.border(0.75.dp, colors.glassEdge, shape) else surface
 }
 
-/**
- * Borde de desplazamiento, como en iOS 26: el contenido se funde con el papel al pasar bajo una barra.
- * Arriba es completo bajo la barra y se desvanece en la mitad inferior de la franja; abajo empieza a la
- * altura del botón y se completa detrás de las pestañas (D-084). Desde 2.28 es un degradado y no un
- * desenfoque progresivo: el desenfoque se recalculaba en cada cuadro al desplazar y bajaba la app de los
- * 60 cuadros por segundo. [fromTop] indica dónde el efecto es completo.
- */
-@Composable
-fun Modifier.edgeFade(fromTop: Boolean, alpha: Float = 1f): Modifier {
-  val paper = Relevo.colors.paper
-  val full = paper.copy(alpha = .94f)
-  val clear = paper.copy(alpha = 0f)
-  val brush = if (fromTop) Brush.verticalGradient(0f to full, 0.5f to full, 1f to clear)
-    else Brush.verticalGradient(0f to clear, 0.2f to clear, 0.7f to full, 1f to full)
-  return this.drawBehind { if (alpha > 0f) drawRect(brush, alpha = alpha.coerceAtMost(1f)) }
-}
-
-/**
- * Banda sobre la parte baja de una imagen: empieza transparente y llega pronto a un velo de papel, para
- * que el texto se lea. Toma el tono de la paleta vigente (ver [PhotoTone]). Desde 2.28 es un degradado:
- * sobre los fondos de color de las actividades, el desenfoque no se notaba y costaba cuadros.
- */
-@Composable
-fun Modifier.photoBand(): Modifier {
-  val colors = Relevo.colors
-  val veil = colors.paper.copy(alpha = if (colors.isDark) .72f else .76f)
-  val brush = Brush.verticalGradient(0f to veil.copy(alpha = 0f), 0.5f to veil, 1f to veil)
-  return this.background(brush)
-}
-
-/** Botón redondo de vidrio para la barra: volver, cerrar, más opciones. Área táctil de 44 dp. */
-@Composable
-fun GlassIconButton(icon: KitIcon, description: String, onClick: () -> Unit, modifier: Modifier = Modifier, size: Dp = 44.dp) {
-  val interaction = remember { MutableInteractionSource() }
-  val pressed by interaction.collectIsPressedAsState()
-  Box(
-    modifier.size(size).pressScale(interaction, 0.92f).glass(CircleShape, blur = ControlBlur)
-      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
-      .semantics { contentDescription = description },
-    contentAlignment = Alignment.Center,
-  ) {
-    RelevoIcon(icon, size = 20.dp, tint = Relevo.colors.ink.copy(alpha = if (pressed) .55f else 1f), background = Color.Transparent, strokeWidth = 2f)
-  }
-}
-
 /** Botón de texto en cápsula de vidrio: «Saltar», «Listo». */
 @Composable
 fun GlassTextButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null, color: Color = Relevo.colors.ink) {

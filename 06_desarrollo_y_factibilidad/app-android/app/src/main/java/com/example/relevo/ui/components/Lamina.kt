@@ -72,46 +72,6 @@ fun Modifier.outerRing(show: Boolean, radius: Dp, color: Color, gap: Dp = 4.dp, 
   )
 }
 
-/**
- * Ficha de una actividad: su cielo y, abajo a la izquierda, el nombre en una cápsula blanca. Sin íconos ni
- * textos encima, como en la lámina. La elegida lleva un anillo de tinta por fuera.
- */
-@Composable
-fun SkyCard(
-  title: String?,
-  icon: KitIcon,
-  modifier: Modifier = Modifier,
-  aspect: Float? = 1.55f,
-  selected: Boolean = false,
-  onClick: (() -> Unit)? = null,
-  variant: Int = 0,
-  sharedKey: String? = null,
-  radius: Dp = 24.dp,
-  largeLabel: Boolean = false,
-  description: String? = title,
-  radio: Boolean = false,
-) {
-  val colors = Relevo.colors
-  val interaction = remember { MutableInteractionSource() }
-  val sky = skyFor(icon)
-  val shape = RoundedCornerShape(radius)
-  Box(
-    modifier.fillMaxWidth().then(if (aspect != null) Modifier.aspectRatio(aspect) else Modifier)
-      .outerRing(selected, radius, colors.ink)
-      .pressScale(interaction, 0.97f)
-      .sharedPhoto(sharedKey)
-      .clip(shape)
-      .drawBehind { drawSky(sky, variant = variant) }
-      .then(
-        if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = if (radio) Role.RadioButton else Role.Button, onClickLabel = description, onClick = onClick)
-        else Modifier,
-      )
-      .semantics { if (radio) this.selected = selected; if (description != null && onClick == null) contentDescription = description },
-  ) {
-    if (!title.isNullOrBlank()) SkyLabel(title, Modifier.align(Alignment.BottomStart).padding(if (largeLabel) 12.dp else 9.dp), large = largeLabel)
-  }
-}
-
 /** Cuadrito de cielo: la actividad en pequeño, al comienzo de una fila o en una opción rápida. */
 @Composable
 fun SkySquare(sky: Sky, size: Dp = 45.dp, radius: Dp = 14.dp, variant: Int = 0, modifier: Modifier = Modifier) {
@@ -124,7 +84,7 @@ fun SkySquare(icon: KitIcon, size: Dp = 45.dp, radius: Dp = 14.dp, variant: Int 
 
 /**
  * Tarjeta de vidrio claro (la del mensaje de «Suena» y las filas que flotan en la bienvenida): blanco
- * translúcido con un borde blanco, sobre el aura o un cielo.
+ * translúcido con un borde blanco, sobre el color de una actividad.
  */
 @Composable
 fun GlassCard(modifier: Modifier = Modifier, padding: Dp = 18.dp, content: @Composable ColumnScope.() -> Unit) {
@@ -193,36 +153,6 @@ fun BigCounter(seconds: Int, modifier: Modifier = Modifier, color: Color = Relev
   )
 }
 
-/** Una parte de una frase con íconos: texto o una ficha con su ícono, como «Tu primer paso [ficha]: abrir el libro». */
-sealed interface SentencePart {
-  data class Words(val text: String) : SentencePart
-  data class Tile(val icon: KitIcon, val color: Color) : SentencePart
-}
-
-/** Frase con fichas de color después de lo que nombran (D-122): el ícono va después de la palabra, nunca antes. */
-@Composable
-fun IconSentence(parts: List<SentencePart>, modifier: Modifier = Modifier, style: TextStyle = Relevo.type.body.copy(fontWeight = FontWeight.Medium, lineHeight = 28.sp), color: Color = Relevo.colors.ink, textAlign: TextAlign = TextAlign.Start) {
-  val inline = remember(parts) {
-    parts.filterIsInstance<SentencePart.Tile>().mapIndexed { i, tile ->
-      "tile$i" to InlineTextContent(Placeholder(1.35.em, 1.35.em, PlaceholderVerticalAlign.TextCenter)) {
-        Box(Modifier.fillMaxSize().clip(RoundedCornerShape(7.dp)).background(tile.color), contentAlignment = Alignment.Center) {
-          RelevoIcon(tile.icon, size = 15.dp, tint = Ink, background = tile.color, strokeWidth = 2f)
-        }
-      }
-    }.toMap()
-  }
-  val text = buildAnnotatedString {
-    var i = 0
-    parts.forEach { part ->
-      when (part) {
-        is SentencePart.Words -> append(part.text)
-        is SentencePart.Tile -> { append(" "); appendInlineContent("tile${i++}", "(${part.icon.label.lowercase()})") }
-      }
-    }
-  }
-  Text(text, modifier = modifier, style = style, color = color, inlineContent = inline, textAlign = textAlign)
-}
-
 /** Nota breve en una tarjeta clara, como «Mientras más pequeño, menos cuesta empezar.» en la lámina. */
 @Composable
 fun TipCard(text: String, modifier: Modifier = Modifier) {
@@ -234,7 +164,7 @@ fun TipCard(text: String, modifier: Modifier = Modifier) {
   )
 }
 
-/** Etiqueta pequeña en cápsula (14 sp), sobre el aura o el papel: «Contando», «Después de la señal». */
+/** Etiqueta pequeña en cápsula (14 sp), sobre el papel o un color: «Contando», «Después de la señal». */
 @Composable
 fun Chip(text: String, modifier: Modifier = Modifier, background: Color = Relevo.colors.card, color: Color = Relevo.colors.ink) {
   Text(
@@ -243,15 +173,3 @@ fun Chip(text: String, modifier: Modifier = Modifier, background: Color = Relevo
   )
 }
 
-/** Dos fichas por fila con 9 dp entre ellas, como «Tus actividades» de la lámina. */
-@Composable
-fun <T> TwoColumnGrid(items: List<T>, modifier: Modifier = Modifier, spacing: Dp = 9.dp, cell: @Composable (T, Modifier) -> Unit) {
-  Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(spacing)) {
-    items.chunked(2).forEach { row ->
-      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(spacing)) {
-        row.forEach { item -> cell(item, Modifier.weight(1f)) }
-        if (row.size == 1) Spacer(Modifier.weight(1f))
-      }
-    }
-  }
-}

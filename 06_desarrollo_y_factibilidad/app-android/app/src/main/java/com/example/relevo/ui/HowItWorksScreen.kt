@@ -3,7 +3,6 @@ package com.example.relevo.ui
 import android.graphics.SurfaceTexture
 import androidx.compose.foundation.layout.fillMaxSize
 import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureContent
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.EnterTransition
@@ -22,10 +21,8 @@ import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.GlassTextButton
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Photo
-import com.example.relevo.ui.components.PhotoImage
 import com.example.relevo.ui.components.ProgressLine
 import com.example.relevo.ui.components.RelevoIcon
-import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StatusChip
 import android.media.MediaPlayer
 import android.view.Surface
@@ -71,12 +68,12 @@ import com.example.relevo.ui.components.Panel
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.SectionGap
-import com.example.relevo.ui.components.RoleTile
 import com.example.relevo.ui.components.rememberReduceMotion
 import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.PlainAction
-import com.example.relevo.ui.components.SkyCard
+import com.example.relevo.ui.components.ActivityRing
+import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.pictureIcon
 
 /** Una pantalla de la guía: un título, un ejemplo que se ve como en la app y una explicación corta. */
@@ -108,23 +105,23 @@ internal fun HowItWorksScreen(
     })
     add(GuidePage("para_que", "¿Te ha pasado?", "Relevo te avisa a tiempo, en el lugar donde empiezas, para que no quede esperando.") {
       GuidePanel {
-        PhotoImage(Photo.TIEMPO, Modifier.fillMaxWidth().height(170.dp).clip(RoundedCornerShape(20.dp)))
+        Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { ActivityRing(KitIcon.TIEMPO, 88.dp) }
         Spacer(Modifier.height(16.dp))
         Text("Abres una app para descansar.", style = Relevo.type.title2, color = Relevo.colors.ink)
         Spacer(Modifier.height(4.dp))
         Text("Se pasa el rato y lo que querías hacer queda esperando.", style = Relevo.type.body, color = Relevo.colors.graphite)
       }
     })
-    add(GuidePage("sistema", "Cómo funciona", "Cuando suene, nos cuentas qué hiciste con un toque. Ninguna respuesta es mejor que otra.") {
-      // 3.1: cada parte en su tarjeta, con el color de su papel: el primer paso, el lugar y lo que decides.
-      Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
-        ListRow("Cuenta tu tiempo", icon = KitIcon.TIEMPO, subtitle = "En las apps que eliges.")
-        ListRow("Te recuerda tu primer paso", icon = KitIcon.PRIMER_PASO, subtitle = "Algo pequeño para empezar.")
-        ListRow("Suena donde empiezas", icon = KitIcon.LUGAR, subtitle = "En el Tag, el parlante o el reloj que dejas ahí.")
-        ListRow("Tú decides", icon = KitIcon.DECISION, subtitle = "Empezar, dejarlo para después o cambiar de idea.")
+    add(GuidePage("sistema", "Cómo funciona", "Cuando suene, dinos qué hiciste con un toque. Ninguna respuesta es mejor que otra.") {
+      // 4.0: las cuatro partes en un grupo, con íconos iguales.
+      ListSection {
+        ListRow("Cuenta tu tiempo", icon = KitIcon.TIEMPO, subtitle = "En las apps que eliges")
+        ListRow("Te recuerda cómo empezar", icon = KitIcon.PRIMER_PASO, subtitle = "Algo pequeño, de segundos")
+        ListRow("Suena donde empiezas", icon = KitIcon.LUGAR, subtitle = "En el Tag, el parlante o el reloj")
+        ListRow("Tú decides", icon = KitIcon.DECISION, subtitle = "Empezar, dejarlo o cambiar de idea")
       }
     })
-    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Lo puedes cambiar cuando quieras en Perfil.") {
+    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Lo cambias cuando quieras en Perfil › Ajustes.") {
       GuidePanel {
         StatusChip(KitIcon.AVISOS, "Relevo")
         Spacer(Modifier.height(10.dp))
@@ -177,21 +174,6 @@ internal fun HowItWorksScreen(
   }
 }
 
-/** Una parte del sistema en su tarjeta: su ficha de color, su nombre y qué hace. */
-@Composable
-private fun SystemRow(icon: KitIcon, title: String, text: String, tint: androidx.compose.ui.graphics.Color) {
-  Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Relevo.colors.card).padding(14.dp), verticalAlignment = Alignment.Top) {
-    Box(Modifier.size(42.dp).clip(RoundedCornerShape(12.dp)).background(tint), contentAlignment = Alignment.Center) {
-      RelevoIcon(icon, size = 24.dp, tint = Relevo.colors.onTile, background = tint)
-    }
-    Spacer(Modifier.width(14.dp))
-    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-      Text(title, style = Relevo.type.headline, color = Relevo.colors.ink)
-      Text(text, style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    }
-  }
-}
-
 /**
  * Primer relevo (D-090): después de registrarse, la app propone hacerlo juntos, con el primer paso de
  * la ruta que la persona eligió como ejemplo. Así la guía no solo explica: deja el primer relevo listo.
@@ -203,17 +185,21 @@ internal fun FirstRelevoScreen(
 ) {
   RelevoScreen(
     title = "Tu primer relevo",
-    subtitle = if (suggestion != null && routeTitle != null) "${if (name.isBlank()) "" else "${name.trim()}, "}empecemos con tu primer paso para ${routeTitle.replaceFirstChar { it.lowercase() }}. Te guiamos paso a paso."
-      else "Te guiamos paso a paso. Toma un par de minutos.",
+    subtitle = if (suggestion != null && routeTitle != null) "${if (name.isBlank()) "" else "${name.trim()}, "}empecemos por ${routeTitle.replaceFirstChar { it.lowercase() }}. Te guiamos."
+      else "Te guiamos. Toma un par de minutos.",
     bottom = {
       RelevoButton("Preparar un relevo", onStart)
       RelevoButton("Lo hago después", onLater, kind = ButtonKind.Secondary)
     },
   ) {
-    SkyCard(suggestion ?: "Tu actividad", pictureIcon(picture), aspect = 1.3f, largeLabel = true, variant = suggestion?.let { activityVariant(it) } ?: 0)
+    Column(Modifier.fillMaxWidth().padding(vertical = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+      ActivityRing(pictureIcon(picture), 96.dp, variant = suggestion?.let { activityVariant(it) } ?: 0)
+      Spacer(Modifier.height(12.dp))
+      Text(suggestion ?: "Tu actividad", style = Relevo.type.title2, color = Relevo.colors.ink)
+    }
     if (firstStep.isNotBlank() || place.isNotBlank()) {
-      Spacer(Modifier.height(Gap.list))
-      Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
+      Spacer(Modifier.height(Gap.block))
+      ListSection {
         if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, subtitle = "Para empezar")
         if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
       }

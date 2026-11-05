@@ -213,6 +213,7 @@
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
 | 4 nov. | Corrección y encargo | Entregó el PDF de la memoria que editó y envió al profesor el 30 de octubre y pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo marcado en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos; sin regenerar todavía el PDF ni el IDML. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con sus ediciones, las erratas corregidas, la pregunta aprobada, las tareas 11 a 14 aplicadas, el diseño y la factibilidad reforzados y la declaración de IA completa; 16 137 palabras en los capítulos y 80 referencias, todas citadas. | D-153 |
 | 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
+| 5 nov. | Encargo | Pidió leer el repositorio, el APK más reciente y la memoria, y trabajar en la app: dejar lo local y arreglar el diseño (menús, uso, navegación, notificaciones y color); explicar por qué unos íconos tenían color y otros no; revisar las frases de Inicio con el estudio de los textos; achicar la barra de navegación; ordenar la sección de actividades con los íconos con anillo del selector; un resumen de las actividades en Inicio que no juzgue; menos palabras; quitar el aura; los ajustes en Perfil con una tuerca, y un desenfoque progresivo arriba y abajo, como en iOS. Rediseño total, sin reciclar. Autorizó clonar el repositorio en su computador, sin usar la nube. | [Android 4.0](../06_desarrollo_y_factibilidad/app-android/version-4.0-rediseno-2026-11-05.md) en la rama `android-4.0-rediseno`: interfaz en papel y tinta, actividades en anillos, pestañas Inicio, Actividades y Perfil, Ajustes con tuerca, sin aura, desenfoque progresivo, textos y notificaciones más breves. | D-155 |
 
 ## Lo que muestra el registro
 
@@ -223,6 +224,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Rediseño de la app 4.0
+
+- **Qué cambió:** se agregó el pedido del 5 de noviembre: el rediseño de la interfaz de Android (D-155).
+- **Cómo estaba antes:** el último pedido era del 4 de noviembre.
+- **Por qué:** regla de `CLAUDE.md`: registrar cada pedido el mismo día.
 
 ### 2026-11-04 — Términos de los autores y análisis visual
 

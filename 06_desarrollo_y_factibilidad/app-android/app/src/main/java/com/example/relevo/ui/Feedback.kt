@@ -82,7 +82,7 @@ internal fun FacePicker(faces: List<Face>, selected: String?, onSelect: (String?
 
 /**
  * Tarjeta de Inicio tras el tercer y el décimo relevo respondidos: una pregunta y cinco caras.
- * Tocar una cara la envía; «Contar más» abre la opinión con comentario.
+ * Tocar una cara la envía; «Escribir un comentario» abre la opinión con comentario (R3: «contar» es solo para el tiempo).
  */
 @Composable
 internal fun QuickFeedbackCard(onAnswer: (Int?) -> Unit, onMore: () -> Unit) {
@@ -92,7 +92,7 @@ internal fun QuickFeedbackCard(onAnswer: (Int?) -> Unit, onMore: () -> Unit) {
     Spacer(Modifier.height(4.dp))
     FacePicker(ratingFaces, null, { value -> value?.toIntOrNull()?.let(onAnswer) }, size = 36.dp)
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-      PlainAction("Contar más", onMore, icon = KitIcon.COMENTARIO)
+      PlainAction("Escribir un comentario", onMore, icon = KitIcon.COMENTARIO)
       PlainAction("Ahora no", { onAnswer(null) }, color = Relevo.colors.graphite)
     }
   }

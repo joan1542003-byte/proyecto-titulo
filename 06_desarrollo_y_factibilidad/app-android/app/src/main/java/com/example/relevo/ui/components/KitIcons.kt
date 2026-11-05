@@ -763,14 +763,6 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M4.25 17.1A1.35 1.35 0 1 0 6.95 17.1A1.35 1.35 0 1 0 4.25 17.1Z", false, KitFill.INK),
     ),
   ),
-  /** 3.2: el aura, lo que personalizas (D-121). */
-  AURA(
-    "Aura",
-    listOf(
-      KitShape("M10.5 4c.6 4 2.1 5.5 6 6.1-3.9.6-5.4 2.1-6 6.1-.6-4-2.1-5.5-6-6.1 3.9-.6 5.4-2.1 6-6.1z", true, KitFill.NONE),
-      KitShape("M18 14.6c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.5-2.6 1.6-.2 2.2-.8 2.5-2.5z", true, KitFill.NONE),
-    ),
-  ),
   /** 3.2: tu semana, en barras. */
   AVANCE(
     "Avance",
@@ -780,5 +772,23 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
   ABRIR(
     "Abrir",
     listOf(KitShape("M9.5 5.5l6.5 6.5-6.5 6.5", true, KitFill.NONE)),
+  ),
+  /** 4.0 (D-155): la tuerca de los ajustes, en Perfil. Ocho dientes y el centro abierto. */
+  TUERCA(
+    "Ajustes",
+    listOf(
+      KitShape("M10.28 5.37L10.75 3.09A9 9 0 0 1 13.25 3.09L13.72 5.37A6.85 6.85 0 0 1 15.48 6.1L17.42 4.81A9 9 0 0 1 19.19 6.58L17.9 8.52A6.85 6.85 0 0 1 18.63 10.28L20.91 10.75A9 9 0 0 1 20.91 13.25L18.63 13.72A6.85 6.85 0 0 1 17.9 15.48L19.19 17.42A9 9 0 0 1 17.42 19.19L15.48 17.9A6.85 6.85 0 0 1 13.72 18.63L13.25 20.91A9 9 0 0 1 10.75 20.91L10.28 18.63A6.85 6.85 0 0 1 8.52 17.9L6.58 19.19A9 9 0 0 1 4.81 17.42L6.1 15.48A6.85 6.85 0 0 1 5.37 13.72L3.09 13.25A9 9 0 0 1 3.09 10.75L5.37 10.28A6.85 6.85 0 0 1 6.1 8.52L4.81 6.58A9 9 0 0 1 6.58 4.81L8.52 6.1A6.85 6.85 0 0 1 10.28 5.37Z", true, KitFill.NONE),
+      KitShape("M9.1 12A2.9 2.9 0 1 0 14.9 12A2.9 2.9 0 1 0 9.1 12Z", true, KitFill.NONE),
+    ),
+  ),
+  /** 4.0 (D-155): la pestaña Actividades, cuatro anillos como su cuadrícula. */
+  ACTIVIDADES(
+    "Actividades",
+    listOf(
+      KitShape("M4.1 7.6A3.5 3.5 0 1 0 11.1 7.6A3.5 3.5 0 1 0 4.1 7.6Z", true, KitFill.NONE),
+      KitShape("M12.9 7.6A3.5 3.5 0 1 0 19.9 7.6A3.5 3.5 0 1 0 12.9 7.6Z", true, KitFill.NONE),
+      KitShape("M4.1 16.4A3.5 3.5 0 1 0 11.1 16.4A3.5 3.5 0 1 0 4.1 16.4Z", true, KitFill.NONE),
+      KitShape("M12.9 16.4A3.5 3.5 0 1 0 19.9 16.4A3.5 3.5 0 1 0 12.9 16.4Z", true, KitFill.NONE),
+    ),
   ),
 }

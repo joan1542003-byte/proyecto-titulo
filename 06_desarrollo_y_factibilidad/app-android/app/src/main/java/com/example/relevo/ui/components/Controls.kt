@@ -313,38 +313,6 @@ fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
   }
 }
 
-/** Selector de tiempo con − y +: la cifra cambia deslizándose. Mantener presionado repite el paso. */
-@Composable
-fun DurationStepper(seconds: Int, onChange: (Int) -> Unit, label: String) {
-  val colors = Relevo.colors
-  val haptics = LocalHapticFeedback.current
-  fun step(current: Int) = when {
-    current < 10 * 60 -> 60
-    current < 60 * 60 -> 5 * 60
-    current < 120 * 60 -> 15 * 60
-    else -> 30 * 60
-  }
-  fun decrease(current: Int) = (current - step(current - 1)).coerceAtLeast(60)
-  fun increase(current: Int) = (current + step(current)).coerceAtMost(6 * 60 * 60)
-  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-    Column(Modifier.weight(1f)) {
-      AnimatedContent(
-        targetState = seconds,
-        transitionSpec = {
-          val up = targetState > initialState
-          (slideInVertically(Motion.smooth()) { if (up) it / 2 else -it / 2 } + fadeIn(Motion.standard(Motion.SHORT))) togetherWith
-            (slideOutVertically(Motion.smooth()) { if (up) -it / 2 else it / 2 } + fadeOut(Motion.standard(120)))
-        },
-        label = "duration",
-      ) { value -> Text(formatDuration(value), style = Relevo.type.largeTitle, color = colors.ink, modifier = Modifier.enterBlur(this)) }
-      Text(label, style = Relevo.type.footnote, color = colors.graphite)
-    }
-    RepeatButton("Restar tiempo", "−", enabled = seconds > 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(decrease(seconds)) }
-    Spacer(Modifier.width(10.dp))
-    RepeatButton("Sumar tiempo", "+", enabled = seconds < 6 * 60 * 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(increase(seconds)) }
-  }
-}
-
 /** Solo los botones − y + del tiempo, para ponerlos al final de una fila (3.2). */
 @Composable
 fun DurationButtons(seconds: Int, onChange: (Int) -> Unit) {

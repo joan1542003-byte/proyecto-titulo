@@ -15,7 +15,6 @@ import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.SettingsStore
 import com.example.relevo.domain.ReminderStatus
-import java.util.Locale
 
 /**
  * V2: aviso de regreso opcional. Empieza apagado y se activa en «Avisos y resúmenes». Llega como
@@ -64,12 +63,13 @@ object ReturnNotice {
     if (!manager.areNotificationsEnabled()) return
     manager.createNotificationChannel(
       NotificationChannel(CHANNEL_ID, "Aviso semanal", NotificationManager.IMPORTANCE_LOW).apply {
-        description = "Una vez por semana como máximo, si no abriste Relevo. Se apaga en Perfil, en Avisos y resúmenes."
+        description = "Una vez por semana como máximo, si no abriste Relevo. Se apaga en Perfil › Ajustes › Avisos."
       },
     )
     val activity = ReminderStore(context, ReminderStore.LAST_CONFIGURATION).load().activity.trim().trimEnd('.')
-    val question = if (activity.isBlank()) GENERIC_QUESTION
-      else "¿Sigue en pie ${activity.replaceFirstChar { it.lowercase(Locale.forLanguageTag("es")) }} esta semana?"
+    // 4.0 (R11): la actividad en el título, sin el nombre de la app, y una pregunta corta.
+    val title = activity.ifBlank { "Esta semana" }
+    val question = if (activity.isBlank()) GENERIC_QUESTION else "¿Sigue en pie esta semana?"
     // En la pantalla de bloqueo no se muestra la actividad, como en la señal.
     val publicVersion = NotificationCompat.Builder(context, CHANNEL_ID)
       .setSmallIcon(R.drawable.ic_stat_relevo)
@@ -90,7 +90,7 @@ object ReturnNotice {
       NOTIFICATION_ID,
       NotificationCompat.Builder(context, CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle("Relevo")
+        .setContentTitle(title)
         .setContentText(question)
         .setContentIntent(prepare)
         .addAction(0, "Preparar", prepare)

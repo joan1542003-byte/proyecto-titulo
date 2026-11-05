@@ -109,14 +109,32 @@ class AppUsageMonitorService : Service() {
     super.onDestroy()
   }
 
-  /** [counting]: hay un relevo contando. Si no, Relevo espera para activarse solo (D-095). */
+  /**
+   * [counting]: hay un relevo contando. Si no, Relevo espera para activarse solo (D-095). Desde la 4.0
+   * (D-155, R11 del estudio de los textos) el título dice lo importante —la actividad— sin el nombre de la
+   * app, y el texto, cuándo suena. En la pantalla de bloqueo se ve una versión sin la actividad.
+   */
   private fun startInForeground(counting: Boolean = true) {
+    val current = runCatching { ReminderStore(this).load() }.getOrNull()
+    val activity = current?.activity?.trim().orEmpty()
+    val title = when {
+      !counting -> "Se activa solo"
+      activity.isNotEmpty() -> "Contando para «$activity»"
+      else -> "Contando"
+    }
+    val text = if (counting && current != null) "Suena al sumar ${minutes(current.requiredUsageSeconds)}" else if (counting) "Hasta que lo desactives" else "Al abrir las apps de tu último relevo"
+    val publicVersion = NotificationCompat.Builder(this, CHANNEL_ID)
+      .setSmallIcon(R.drawable.ic_stat_relevo)
+      .setContentTitle(if (counting) "Contando" else "Se activa solo")
+      .build()
     val notification =
       NotificationCompat.Builder(this, CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle(if (counting) "Relevo está contando tu tiempo en las apps que elegiste" else "Relevo se activará solo")
-        .setContentText(if (counting) "Deja de contar cuando desactivas el relevo." else "Empieza a contar cuando abras las apps de tu último relevo.")
+        .setContentTitle(title)
+        .setContentText(text)
         .setContentIntent(openAppIntent())
+        .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
+        .setPublicVersion(publicVersion)
         .setOngoing(true)
         .setSilent(true)
         .build()
@@ -334,9 +352,9 @@ class AppUsageMonitorService : Service() {
       STATUS_NOTIFICATION_ID,
       NotificationCompat.Builder(this, STATUS_CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle("Relevo dejó de contar")
-        .setContentText("Falta el permiso de Tiempo de uso. Abre Relevo para darlo o desactivar el relevo.")
-        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Abre Relevo para darlo o desactivar el relevo."))
+        .setContentTitle("Dejó de contar")
+        .setContentText("Falta el permiso de Tiempo de uso")
+        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Toca para darlo o para desactivar el relevo."))
         .setContentIntent(openAppIntent())
         .setAutoCancel(true)
         .build(),
@@ -389,13 +407,14 @@ class AppUsageMonitorService : Service() {
       .setContentText(GENERIC_SIGNAL_TEXT)
       .build()
     val text = when {
-      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No se encontró el parlante. Abre Relevo para revisarlo."
-      !audible && reminder.signalRoute == SignalRoute.WATCH -> "No se encontró el reloj. Abre Relevo para revisarlo."
-      !audible && reminder.signalRoute == SignalRoute.TAG -> "No se encontró el Tag. Abre Relevo para revisarlo."
-      !audible -> "No sonó en el teléfono. Abre Relevo para revisarlo."
+      // 4.0 (R11): lo útil primero y en menos de 40 caracteres; la frase genérica del protocolo se mantiene.
+      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No sonó en el parlante. Toca para revisar"
+      !audible && reminder.signalRoute == SignalRoute.WATCH -> "No sonó en el reloj. Toca para revisar"
+      !audible && reminder.signalRoute == SignalRoute.TAG -> "No sonó en el Tag. Toca para revisar"
+      !audible -> "No sonó en el teléfono. Toca para revisar"
       generic -> GENERIC_SIGNAL_TEXT
-      reminder.howToStart.isBlank() -> "Es momento de volver a elegir."
-      else -> "Es momento de volver a elegir. Empieza por ${reminder.howToStart.trim().trimEnd('.').replaceFirstChar { it.lowercase() }}."
+      reminder.howToStart.isBlank() -> GENERIC_SIGNAL_TEXT
+      else -> "Empieza por ${reminder.howToStart.trim().trimEnd('.').replaceFirstChar { it.lowercase() }}"
     }
     manager.notify(
       SIGNAL_NOTIFICATION_ID,
@@ -412,6 +431,14 @@ class AppUsageMonitorService : Service() {
         .setCategory(NotificationCompat.CATEGORY_ALARM)
         .build(),
     )
+  }
+
+  /** «30 min», «1 h 15 min»: el tiempo elegido, para la notificación que queda mientras cuenta. */
+  private fun minutes(seconds: Int): String = when {
+    seconds < 60 -> "$seconds s"
+    seconds % 3600 == 0 -> "${seconds / 3600} h"
+    seconds > 3600 -> "${seconds / 3600} h ${(seconds % 3600) / 60} min"
+    else -> "${seconds / 60} min"
   }
 
   companion object {

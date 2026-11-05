@@ -60,7 +60,7 @@ fun RenglonField(
   imeAction: ImeAction = ImeAction.Done,
   onImeAction: () -> Unit = {},
   maxLength: Int = 120,
-  /** La ficha de su papel a la izquierda, como en las filas: el primer paso en cielo, el lugar en lima. */
+  /** El ícono a la izquierda, como en las filas: siempre en tinta sobre piedra (4.0). */
   icon: KitIcon? = null,
 ) {
   val colors = Relevo.colors
@@ -129,42 +129,6 @@ fun SearchField(value: String, onValueChange: (String) -> Unit, placeholder: Str
     )
     if (value.isNotEmpty()) IconAction(KitIcon.CERRAR, "Borrar la búsqueda", { onValueChange("") })
   }
-}
-
-/**
- * La firma con las palabras de la persona: «Vuelve a leer.», en dos tonos como los títulos de la línea
- * 3.0: el comienzo en grafito y lo que escribió la persona en tinta. Lo escrito aparece en 450 ms; sin
- * animación si Android la desactiva.
- */
-@Composable
-fun Signature(
-  words: String,
-  modifier: Modifier = Modifier,
-  style: TextStyle = Relevo.type.signature,
-  animate: Boolean = true,
-  prefix: String = "Vuelve a ",
-  /** Lo que escribió la persona va en tinta; el comienzo, en grafito. */
-  phraseColor: Color = Relevo.colors.voice,
-) {
-  val colors = Relevo.colors
-  val reduce = rememberReduceMotion()
-  val phrase = words.trim().trimEnd('.').replaceFirstChar { it.lowercase() }
-  val progress = remember(phrase) { Animatable(if (animate && !reduce) 0f else 1f) }
-  LaunchedEffect(phrase, reduce) {
-    if (animate && !reduce) progress.animateTo(1f, tween(Motion.WRITING, easing = LinearEasing)) else progress.snapTo(1f)
-  }
-  val visible = (phrase.length * progress.value).toInt()
-  val text = buildAnnotatedString {
-    withStyle(SpanStyle(color = colors.graphite)) { append(prefix) }
-    withStyle(SpanStyle(color = phraseColor)) { append(phrase.take(visible)) }
-    withStyle(SpanStyle(color = Color.Transparent)) { append(phrase.drop(visible)) }
-    withStyle(SpanStyle(color = colors.ink)) { append(".") }
-  }
-  Text(
-    text,
-    style = style,
-    modifier = modifier,
-  )
 }
 
 /** Texto largo sobre renglón, para comentarios. */

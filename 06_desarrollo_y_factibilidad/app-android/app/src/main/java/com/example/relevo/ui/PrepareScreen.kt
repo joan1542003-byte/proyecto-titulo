@@ -72,7 +72,6 @@ import com.example.relevo.signal.TagLink
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.CheckMark
-import com.example.relevo.ui.components.DurationStepper
 import com.example.relevo.ui.components.FactRow
 import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.KitIcon
@@ -82,11 +81,8 @@ import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.Photo
 import kotlinx.coroutines.delay
-import com.example.relevo.ui.components.PhotoHero
-import com.example.relevo.ui.components.PhotoImage
 import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.PictureContent
-import com.example.relevo.ui.components.PictureTile
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.QuickChoice
 import com.example.relevo.ui.components.RadioMark
@@ -98,7 +94,6 @@ import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SearchField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.SegmentedControl
-import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.Tone
 import com.example.relevo.ui.components.formatDuration
 import com.example.relevo.ui.components.key
@@ -112,10 +107,11 @@ import java.util.UUID
 import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.OptionRow
 import com.example.relevo.ui.components.SectionLabel
-import com.example.relevo.ui.components.SkyCard
+import com.example.relevo.ui.components.ActivityRing
+import com.example.relevo.ui.components.RingCell
+import com.example.relevo.ui.components.RingGrid
 import com.example.relevo.ui.components.SkySquare
 import com.example.relevo.ui.components.TagObject
-import com.example.relevo.ui.components.TwoColumnGrid
 import com.example.relevo.ui.components.DurationButtons
 import com.example.relevo.ui.components.familyName
 import com.example.relevo.ui.components.TipCard
@@ -131,16 +127,16 @@ private enum class PrepareStep(val title: String) {
 
 /** Nota de la guía para cada paso del primer relevo. */
 private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder: Reminder): String = when (step) {
-  PrepareStep.ACTIVITY -> if (reminder.activity.isNotBlank()) "Te propusimos «${reminder.activity.trim()}». Puedes dejarla o escribir otra cosa que quieras hacer."
-    else "Escribe algo que quieras hacer o toca una idea. Mientras más concreto, mejor: «leer 10 páginas» en vez de «leer más»."
-  PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "El primer paso es «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta empezar."
-    else "Toca un primer paso o escribe el tuyo: algo que tome segundos."
+  PrepareStep.ACTIVITY -> if (reminder.activity.isNotBlank()) "Te propusimos «${reminder.activity.trim()}». Déjala o escribe otra."
+    else "Escribe algo concreto o toca una idea: «leer 10 páginas» mejor que «leer más»."
+  PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "Para empezar: «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta."
+    else "Toca una opción o escribe la tuya: algo que tome segundos."
   PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja lo que suena en otro lugar de tu casa y anota dónde."
-    else "Toca el que más se parezca. Si ninguno calza, escríbelo como lo dirías en voz alta."
-  PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
+    else "Toca el que más se parezca o escríbelo como lo dirías."
+  PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para probar ya, toca «Probar con 15 segundos»."
   PrepareStep.SOUND -> if (condition != null) "Elige el que tienes y pruébalo antes de seguir."
-    else "Elige con qué suena. El parlante, el reloj o el Tag se dejan donde empiezas; el teléfono suena donde esté."
-  PrepareStep.REVIEW -> "Revisa que todo esté bien. Toca cualquier dato para cambiarlo y después «Activar el relevo»."
+    else "Elige con qué suena. El Tag, el parlante o el reloj van donde empiezas."
+  PrepareStep.REVIEW -> "Toca un dato para cambiarlo. Después, «Activar el relevo»."
 }
 
 /** En la semana del parlante en otro lugar, el lugar que se anota es el del parlante, no el del comienzo. */
@@ -327,9 +323,9 @@ internal fun PrepareScreen(
             ListSection {
               // 2.30: la actividad también se cambia desde aquí, sin volver atrás.
               FactRow(KitIcon.ACTIVIDAD, "Qué quieres hacer", reminder.activity, leading = {
-                SkySquare(pictureIcon(picture), variant = activityVariant(reminder.activity), modifier = Modifier.sharedPhoto(photoKey))
+                ActivityRing(pictureIcon(picture), 40.dp, variant = activityVariant(reminder.activity))
               }) { edit(PrepareStep.ACTIVITY) }
-              FactRow(KitIcon.PRIMER_PASO, "Cómo empiezas", reminder.howToStart) { edit(PrepareStep.START) }
+              FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { edit(PrepareStep.START) }
               FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Dónde dejas lo que suena" else "Dónde empiezas", reminder.place) { edit(PrepareStep.PLACE) }
               FactRow(KitIcon.TIEMPO, "Cuándo suena", if (apps.isBlank()) "" else "${formatDuration(reminder.requiredUsageSeconds)} en $apps") { edit(PrepareStep.USAGE) }
               FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Dónde suena", if (reminder.routeChosen) soundPlace(reminder) else "") { edit(PrepareStep.SOUND) }
@@ -361,13 +357,14 @@ internal fun PrepareScreen(
   if (picking) AppPickerSheet(apps, reminder.selectedApps.map { it.packageName }.toSet(), actions.onToggleApp) { picking = false }
 }
 
-/** La actividad elegida acompaña cada paso: su foto en un círculo y «Vuelve a ___.» con las palabras de la persona. */
+/** La actividad elegida acompaña cada paso (4.0): su anillo y su nombre en una fila; tocarla la cambia. */
 @Composable
-private fun ActivityHeader(activity: String, picture: Picture, photoKey: String?, onEdit: () -> Unit) {
-  // 3.1: una franja con el cielo de la actividad y su nombre en una cápsula, como en «Relevo, la app».
-  SkyCard(
-    activity.trim(), pictureIcon(picture), aspect = 3.2f, radius = 21.dp, variant = activityVariant(activity), sharedKey = photoKey,
-    onClick = onEdit, description = "Cambiar la actividad",
+private fun ActivityHeader(activity: String, picture: Picture, @Suppress("UNUSED_PARAMETER") photoKey: String?, onEdit: () -> Unit) {
+  ListRow(
+    activity.trim(), subtitle = "Tu actividad",
+    leading = { ActivityRing(pictureIcon(picture), 42.dp, variant = activityVariant(activity)) },
+    trailing = { RelevoIcon(KitIcon.EDITAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) },
+    onClick = onEdit,
   )
 }
 
@@ -388,8 +385,7 @@ private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivi
       }
     })
   }
-  // 3.2: las ideas van agrupadas por familia y en el orden de los cielos, así el color dice qué tipo de
-  // actividad es y no se salpica la cuadrícula (pedido del autor del 12 de octubre).
+  // Las ideas van agrupadas por familia (3.2): el color del anillo dice qué tipo de actividad es.
   ideasByFamily.forEach { (sky, ideas) ->
     TileGroup(sky.familyName, ideas.map { idea ->
       Tile(idea.activity, pictureIcon(idea.picture), reminder.activity.equals(idea.activity, true)) { actions.onIdea(idea.activity, idea.start, idea.place) }
@@ -401,13 +397,13 @@ private fun activityPictureFor(name: String, custom: List<CustomActivity>, route
 
 private class Tile(val label: String, val icon: KitIcon, val selected: Boolean, val onClick: () -> Unit)
 
-/** Un grupo de fichas con su rótulo, de a dos por fila, como «¿Qué quieres hacer?» en la lámina. */
+/** Un grupo de actividades con su rótulo, en anillos de a cuatro (4.0). La elegida lleva un anillo de tinta. */
 @Composable
 private fun TileGroup(label: String, tiles: List<Tile>) {
   Spacer(Modifier.height(Gap.section))
-  SectionLabel(label, Modifier.padding(bottom = 10.dp))
-  TwoColumnGrid(tiles) { tile, cell ->
-    SkyCard(tile.label, tile.icon, cell, aspect = 1.55f, selected = tile.selected, onClick = tile.onClick, variant = activityVariant(tile.label), radio = true)
+  SectionLabel(label, Modifier.padding(start = 4.dp, bottom = 14.dp))
+  RingGrid(tiles, columns = 4) { tile ->
+    RingCell(tile.icon, tile.label, tile.onClick, size = 58.dp, variant = activityVariant(tile.label), selected = tile.selected)
   }
 }
 
@@ -523,7 +519,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
     OptionRow("En el parlante", reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, { actions.onRoute(SignalRoute.BLUETOOTH) },
       icon = KitIcon.PARLANTE, subtitle = if (speakerConnected) "Conectado por Bluetooth" else "Sin parlante conectado", enabled = objectChoice)
     OptionRow("En el reloj", reminder.routeChosen && reminder.signalRoute == SignalRoute.WATCH, { actions.onRoute(SignalRoute.WATCH) },
-      icon = KitIcon.TIEMPO, tileColor = Relevo.colors.mist, subtitle = if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas", enabled = objectChoice)
+      icon = KitIcon.TIEMPO, subtitle = if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas", enabled = objectChoice)
     OptionRow("En el teléfono", reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, { actions.onRoute(SignalRoute.PHONE) },
       icon = KitIcon.TELEFONO, subtitle = "Suena donde esté el teléfono", enabled = studyCondition == null)
   }
@@ -698,7 +694,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   Spacer(Modifier.height(12.dp))
   if (!tag.heard && tag.test == TagTest.IDLE) {
     Text(
-      "Pruébalo y cuéntanos si lo escuchas pitar: así Relevo sabe cómo hacerlo sonar.",
+      "Pruébalo y dinos si lo escuchas pitar: así Relevo sabe cómo hacerlo sonar.",
       style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
     )
     Spacer(Modifier.height(8.dp))
@@ -791,7 +787,7 @@ private fun AppPickerSheet(apps: List<InstalledApp>, selected: Set<String>, onTo
     Spacer(Modifier.height(12.dp))
     LazyColumn(Modifier.fillMaxWidth().weight(1f), verticalArrangement = Arrangement.spacedBy(Gap.list)) {
       itemsIndexed(visible, key = { _, app -> app.packageName }) { index, app ->
-        ListRow(app.label, leading = { AppIcon(app.packageName, 40.dp) }, onClick = { onToggle(app) }, trailing = { CheckMark(app.packageName in selected) }, divider = index > 0, selected = app.packageName in selected)
+        ListRow(app.label, leading = { AppIcon(app.packageName, 40.dp) }, onClick = { onToggle(app) }, trailing = { CheckMark(app.packageName in selected) }, selected = app.packageName in selected)
       }
     }
   }

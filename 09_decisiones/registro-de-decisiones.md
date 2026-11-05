@@ -2030,7 +2030,34 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 16 478 palabras en los capítulos 1 a 14 (17 491 con las páginas iniciales y los índices); 24 figuras y 4 tablas, todas mencionadas en orden; 82 referencias, todas citadas; 2 marcadores «Confirmar». Wilms y Oberfeld (2018) se comprobó en Europe PMC: los colores saturados y brillantes se asocian a más activación, y la activación sube del azul y el verde al rojo; Machado et al. (2009) y Wilms y Oberfeld (2018), en Crossref.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
 
+## D-155 — Android 4.0: la interfaz en papel y tinta, las actividades en anillos y sin aura
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.0, `versionCode` 50), sin fusionar a `main`. Pendiente de revisión del autor en su teléfono.
+- **Contexto:** al revisar la 3.3, el autor pidió dejar lo local y arreglar el diseño: menús, uso, navegación, notificaciones y color. Unos íconos tenían color y otros no; algunas frases de Inicio no tenían sentido; la barra de navegación era muy grande; la sección de actividades estaba desordenada, y el aura no debía estar, porque la memoria v6 ya no la usa. Prefirió los íconos con anillo del selector de imagen a las «etiquetas» sobre un cuadrado de color, y pidió un resumen de las actividades en Inicio que no juzgue, menos palabras, los ajustes en Perfil con una tuerca y un desenfoque progresivo arriba y abajo, como en iOS. El rediseño es total.
+- **Decisión:**
+  - **Color:** la interfaz va en papel y tinta, con todos sus íconos iguales (tinta sobre un círculo de piedra). El color es solo de las actividades, en su anillo. Se retiran de la app las seis fichas de papel de D-124.
+  - **Actividades:** cada actividad es un anillo (círculo blanco, ícono en tinta y borde con el color de su familia, D-126). Reemplaza al cielo con cápsula de D-126 y D-131 en toda la app.
+  - **Navegación:** tres pestañas, Inicio, Actividades y Perfil, en una cápsula de vidrio centrada de 58 dp. La Ruta pasa a Actividades, junto a las actividades guardadas y las ideas.
+  - **Inicio:** la fecha y el saludo, lo de la prueba, el relevo que cuenta o «Preparar un relevo» con dos atajos, un resumen de la semana con solo hechos (cuántos relevos y en qué actividades) y las actividades a un toque.
+  - **Ajustes:** se abren con una tuerca en Perfil; Inicio no tiene campana.
+  - **Aura:** se retira de la app (deja sin efecto en la app D-121 y la parte del aura de D-122, D-129 y D-130). Las actividades sin familia toman «arena».
+  - **Bordes:** desenfoque progresivo arriba y abajo, con la imagen reducida a la mitad y una máscara para cuidar los cuadros por segundo, el problema que llevó a quitarlo en la 2.28.
+  - **Textos y notificaciones:** se aplican R1, R3, R5, R6, R8, R11 y R12 del estudio de los textos y dos filas de la Tabla 4 de la memoria («¿Con qué te identificas?» y la pantalla del relevo con la actividad, lo que falta y una acción). No cambian los textos del protocolo ni del consentimiento.
+- **Alternativas descartadas:**
+  - Dar color a todos los íconos, como los ajustes de iOS: el autor rechazó las etiquetas sobre un cuadrado de color.
+  - Mantener la Ruta como pestaña: dejaba las actividades en tres lugares.
+  - Conservar el aura como opción apagada: la memoria v6 ya no la sostiene y el autor pidió quitarla.
+- **Consecuencias:** la memoria v6 todavía describe las seis fichas de papel y el cielo con cápsula (sección «Color e imagen», «Color» y Figura 15). Si el autor adopta la 4.0, esas partes y el [documento 42](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) deben actualizarse.
+- **Documentos:** [Android 4.0](../06_desarrollo_y_factibilidad/app-android/version-4.0-rediseno-2026-11-05.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — D-155
+
+- **Qué cambió:** se registró D-155.
+- **Cómo estaba antes:** la última decisión era D-154.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-04 — D-154
 

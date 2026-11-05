@@ -1,6 +1,5 @@
 package com.example.relevo.ui
 
-import com.example.relevo.ui.components.edgeFade
 import androidx.compose.foundation.layout.height
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
@@ -75,19 +74,19 @@ import com.example.relevo.ui.components.TabBarHeight
 import com.example.relevo.ui.components.TabItem
 import com.example.relevo.ui.components.rememberReduceMotion
 import kotlinx.coroutines.CancellationException
-import com.example.relevo.ui.components.LocalAuraLevel
 import kotlinx.coroutines.launch
 
 internal enum class Route {
   WELCOME, HOW_IT_WORKS, CONSENT, PERMISSION, PROFILE_SETUP, FIRST_RELEVO,
   TABS, PREPARE, ACTIVE, SIGNAL, DECIDE,
-  ROUTE_EDIT, PROFILE_EDIT, NOTICES, APPEARANCE, PERMISSIONS, HISTORY, ACTIVITIES, ACTIVITY_EDIT,
+  ROUTE_EDIT, PROFILE_EDIT, SETTINGS, NOTICES, APPEARANCE, PERMISSIONS, HISTORY, ACTIVITY_EDIT,
   PRIVACY, CONSENT_DETAILS, STUDY, WEEK, CLOSING, FEEDBACK, REPORT,
 }
 
+/** Las tres pestañas de la 4.0 (D-155): la Ruta pasa a Actividades, junto a lo tuyo y las ideas. */
 internal enum class Tab(val label: String, val icon: KitIcon) {
   HOME("Inicio", KitIcon.INICIO),
-  ROUTE("Ruta", KitIcon.RUTA),
+  ACTIVITIES("Actividades", KitIcon.ACTIVIDADES),
   PROFILE("Perfil", KitIcon.PERFIL),
 }
 
@@ -114,7 +113,7 @@ fun RelevoApp(viewModel: RelevoViewModel = viewModel()) {
     activity?.enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
   }
   RelevoTheme(darkTheme = dark, largeText = settings.largeText) {
-    CompositionLocalProvider(LocalAuraLevel provides settings.aura) { RelevoNavigation(viewModel) }
+    RelevoNavigation(viewModel)
   }
 }
 
@@ -179,6 +178,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   var routeEditInterest by rememberSaveable { mutableStateOf("") }
   var editingActivityId by rememberSaveable { mutableStateOf<String?>(null) }
   var routeInterest by rememberSaveable { mutableStateOf<String?>(null) }
+  var activitiesSection by rememberSaveable { mutableStateOf(ActivitiesSection.MINE) }
+  fun openActivities(section: ActivitiesSection) { activitiesSection = section; tab = Tab.ACTIVITIES }
   /** «Cómo funciona» se abre la primera vez, antes del consentimiento, o desde el perfil. */
   var howFromProfile by rememberSaveable { mutableStateOf(false) }
   val holder = rememberSaveableStateHolder()
@@ -256,8 +257,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     onRouteStep = { interest, stepId, key -> if (viewModel.prepareFromStep(interest, stepId)) startPrepare(key) },
     onNewActivity = { editingActivityId = null; push(Route.ACTIVITY_EDIT) },
     onOpenActive = { push(Route.ACTIVE) },
-    onOpenRoute = { interest -> routeInterest = interest; tab = Tab.ROUTE },
-    onProfile = { tab = Tab.PROFILE },
+    onOpenActivities = ::openActivities,
     onUsageSettings = viewModel::openUsageAccessSettings,
     onBackground = viewModel::requestBackgroundAccess,
     onDismissAcknowledgement = { acknowledgement = null },
@@ -265,7 +265,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     onWeekReview = { push(Route.WEEK) },
     onClosing = { push(Route.CLOSING) },
     onDismissReturn = viewModel::dismissReturn,
-    onNotices = { push(Route.NOTICES) },
   )
 
   val rootHaze = rememberHazeState()
@@ -314,7 +313,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     // D-090: si todavía no hay un relevo, la guía sigue con el primer relevo.
                     if (guide.prepare && reminder.status != ReminderStatus.WAITING) replace(listOf(Route.FIRST_RELEVO))
                     else {
-                      tab = if (showRoute) Tab.ROUTE else Tab.HOME
+                      if (showRoute) openActivities(ActivitiesSection.STEPS) else tab = Tab.HOME
                       replace(routeForStatus(reminder.status))
                     }
                   },
@@ -348,39 +347,43 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     Tab.HOME -> HomeTab(
                       reminder = reminder, history = history, customActivities = customActivities, lastReminder = lastReminder,
                       study = study, usageAccess = usageAccess, backgroundUnrestricted = backgroundUnrestricted, profile = profile,
-                      routes = routes, acknowledgement = acknowledgement, returnDismissedFor = returnDismissedFor,
+                      routes = routes, settings = settings, acknowledgement = acknowledgement, returnDismissedFor = returnDismissedFor,
                       quickFeedbackDue = quickFeedbackDue, onQuickFeedback = viewModel::submitQuickFeedback, onFeedback = { push(Route.FEEDBACK) },
                       guided = guide.prepare,
                       autoMode = autoMode, onAutoModeOff = { viewModel.setAutoMode(false) },
                       changedRouteInterest = changedRouteInterest, reselect = reselect, actions = homeActions,
                       onChangeRoute = { interest -> viewModel.clearChangedRoute(); acknowledgement = null; routeEditInterest = interest; push(Route.ROUTE_EDIT) },
                     )
-                    Tab.ROUTE -> RouteTab(
-                      routes = routes, customActivities = customActivities, selected = routeInterest, reselect = reselect,
-                      activeRelevo = reminder.status == ReminderStatus.WAITING,
-                      onSelect = { routeInterest = it },
-                      onPrepare = homeActions.onRouteStep,
-                      onSetCurrent = viewModel::setCurrentStep,
-                      onEdit = { interest -> routeEditInterest = interest; push(Route.ROUTE_EDIT) },
-                      onChooseInterests = { push(Route.PROFILE_EDIT) },
+                    Tab.ACTIVITIES -> ActivitiesTab(
+                      section = activitiesSection, onSection = { activitiesSection = it },
+                      customActivities = customActivities, routes = routes,
+                      routeInterest = routeInterest, onRouteInterest = { routeInterest = it },
+                      activeRelevo = reminder.status == ReminderStatus.WAITING, reselect = reselect,
+                      actions = ActivitiesActions(
+                        onPrepareCustom = { custom -> homeActions.onCustom(custom, com.example.relevo.ui.photoKey("propia", custom.id)) },
+                        onPrepareIdea = { idea -> homeActions.onIdea(idea, com.example.relevo.ui.photoKey("idea", idea.activity)) },
+                        onPrepareStep = homeActions.onRouteStep,
+                        onNewActivity = { editingActivityId = null; push(Route.ACTIVITY_EDIT) },
+                        onEditActivity = { id -> editingActivityId = id; push(Route.ACTIVITY_EDIT) },
+                        onSetCurrent = viewModel::setCurrentStep,
+                        onEditRoute = { interest -> routeEditInterest = interest; push(Route.ROUTE_EDIT) },
+                        onChooseInterests = { push(Route.PROFILE_EDIT) },
+                      ),
                     )
                     Tab.PROFILE -> ProfileTab(
-                      profile = profile, routes = routes, history = history, settings = settings, study = study,
+                      profile = profile, routes = routes, history = history,
                       participation = participation, customCount = customActivities.size, reselect = reselect,
                       actions = ProfileActions(
                         onEdit = { push(Route.PROFILE_EDIT) },
-                        onNotices = { push(Route.NOTICES) },
-                        onAppearance = { push(Route.APPEARANCE) },
-                        onPermissions = { push(Route.PERMISSIONS) },
+                        onSettings = { push(Route.SETTINGS) },
                         onHistory = { push(Route.HISTORY) },
-                        onActivities = { push(Route.ACTIVITIES) },
+                        onActivities = { openActivities(ActivitiesSection.MINE) },
+                        onRoute = { openActivities(ActivitiesSection.STEPS) },
                         onStudy = { push(Route.STUDY) },
-                        onPrivacy = { push(Route.PRIVACY) },
                         onFeedback = { push(Route.FEEDBACK) },
                         onReport = { push(Route.REPORT) },
-                        onHowItWorks = { howFromProfile = true; push(Route.HOW_IT_WORKS) },
                         onWeekNote = viewModel::submitWeekNote,
-                        onOpenRoute = { tab = Tab.ROUTE },
+                        onHowItWorks = { howFromProfile = true; push(Route.HOW_IT_WORKS) },
                       ),
                     )
                   }
@@ -455,6 +458,12 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   },
                   onBack = { pop() },
                 )
+                Route.SETTINGS -> SettingsScreen(
+                  settings = settings, usageAccess = usageAccess,
+                  onNotices = { push(Route.NOTICES) }, onAppearance = { push(Route.APPEARANCE) },
+                  onPermissions = { push(Route.PERMISSIONS) }, onPrivacy = { push(Route.PRIVACY) },
+                  onBack = { pop() },
+                )
                 Route.NOTICES -> NoticesScreen(
                   settings, onChange = viewModel::updateSettings, onBack = { pop() },
                   autoMode = autoMode, lastReminder = lastReminder, onAutoMode = viewModel::setAutoMode,
@@ -462,13 +471,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 Route.APPEARANCE -> AppearanceScreen(settings, onChange = viewModel::updateSettings, onBack = { pop() })
                 Route.PERMISSIONS -> PermissionsScreen(usageAccess, backgroundUnrestricted, viewModel::openUsageAccessSettings, viewModel::requestBackgroundAccess, onBack = { pop() })
                 Route.HISTORY -> HistoryScreen(history, customActivities, onBack = { pop() })
-                Route.ACTIVITIES -> ActivitiesScreen(
-                  customActivities,
-                  onOpen = { id -> editingActivityId = id; push(Route.ACTIVITY_EDIT) },
-                  onNew = { editingActivityId = null; push(Route.ACTIVITY_EDIT) },
-                  onPrepare = { custom -> homeActions.onCustom(custom, com.example.relevo.ui.photoKey("propia", custom.id)) },
-                  onBack = { pop() },
-                )
                 Route.ACTIVITY_EDIT -> ActivityEditScreen(
                   initial = customActivities.firstOrNull { it.id == editingActivityId },
                   existing = customActivities,
@@ -522,13 +524,13 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   }
   }
 
-  // En Ruta o Perfil, volver lleva a Inicio antes de salir de la app.
+  // En Actividades o Perfil, volver lleva a Inicio antes de salir de la app.
   BackHandler(enabled = current == Route.TABS && tab != Tab.HOME) { tab = Tab.HOME }
 }
 
 /**
- * Contenedor de las pestañas: el contenido ocupa toda la pantalla y pasa bajo la barra de pestañas,
- * que flota en vidrio. Cada pestaña conserva su desplazamiento; tocar la elegida sube al comienzo.
+ * Contenedor de las pestañas: el contenido ocupa toda la pantalla y pasa bajo la barra de pestañas, una
+ * cápsula de vidrio centrada (4.0). Cada pestaña conserva su desplazamiento; tocar la elegida sube al comienzo.
  */
 @Composable
 private fun TabsHost(tab: Tab, reselect: Int, onTab: (Tab) -> Unit, content: @Composable (Tab) -> Unit) {
@@ -537,7 +539,7 @@ private fun TabsHost(tab: Tab, reselect: Int, onTab: (Tab) -> Unit, content: @Co
   val tabHaze = rememberHazeState()
   Box(Modifier.fillMaxSize()) {
     Box(Modifier.fillMaxSize().hazeSource(tabHaze)) {
-      CompositionLocalProvider(LocalDockInset provides TabBarHeight + 12.dp) {
+      CompositionLocalProvider(LocalDockInset provides TabBarHeight + 14.dp) {
         AnimatedContent(
           targetState = tab,
           transitionSpec = { if (reduce) EnterTransition.None togetherWith ExitTransition.None else fadeIn(Motion.standard(180)) togetherWith fadeOut(Motion.standard(120)) },
@@ -548,11 +550,10 @@ private fun TabsHost(tab: Tab, reselect: Int, onTab: (Tab) -> Unit, content: @Co
       }
     }
     CompositionLocalProvider(LocalGlassSource provides tabHaze) {
-      // Bajo la barra, el papel cubre lo que pasa detrás para que no se mezcle con los destinos.
-      Box(Modifier.align(Alignment.BottomCenter).fillMaxWidth().navigationBarsPadding().height(TabBarHeight + 34.dp).edgeFade(fromTop = false))
+      // La barra flota centrada sobre el borde con desenfoque progresivo que dibuja cada pantalla.
       TabBar(
         Tab.entries.map { TabItem(it.label, it.icon) }, Tab.entries.indexOf(tab), { onTab(Tab.entries[it]) },
-        Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(start = 20.dp, end = 20.dp, bottom = 10.dp),
+        Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom = 10.dp),
       )
     }
   }

@@ -16,8 +16,15 @@ android {
         applicationId = "cl.udp.relevo"
         minSdk = 31
         targetSdk = 36
-        versionCode = 49
-        versionName = "3.3"
+        versionCode = 50
+        versionName = "4.0"
+        manifestPlaceholders["appLabel"] = "@string/app_name"
+        // 4.0: para revisar un rediseño en un teléfono que ya tiene Relevo, sin reemplazarlo ni tocar sus datos,
+        // se instala aparte: ./gradlew assembleDebug -PrelevoSuffix=.revision
+        providers.gradleProperty("relevoSuffix").orNull?.let { suffix ->
+          applicationIdSuffix = suffix
+          manifestPlaceholders["appLabel"] = "Relevo $versionName"
+        }
         buildConfigField("String", "SUPABASE_URL", "\"${localProperties.getProperty("SUPABASE_URL", "")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${localProperties.getProperty("SUPABASE_PUBLISHABLE_KEY", "")}\"")
     }

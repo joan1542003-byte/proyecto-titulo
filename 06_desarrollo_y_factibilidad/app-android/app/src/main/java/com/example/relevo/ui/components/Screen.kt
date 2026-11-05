@@ -17,16 +17,18 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -36,6 +38,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -43,9 +46,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
@@ -55,34 +58,33 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.progressBarRangeInfo
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
+import dev.chrisbanes.haze.hazeSource
+import dev.chrisbanes.haze.rememberHazeState
 
 /**
  * Espacio que reserva abajo la barra de pestañas. Las pantallas de pestañas lo dejan libre.
  */
 val LocalDockInset = compositionLocalOf { 0.dp }
 
-/** Alto de la barra superior: el botón de cerrar o volver y el paso, como en «Relevo, la app». */
+/** Alto de la barra superior: volver o cerrar a la izquierda y una acción a la derecha. */
 private val BarHeight = 56.dp
 
-/** Cómo se vuelve: un círculo blanco con la flecha o la cruz, o la flecha con la palabra («← Volver»). */
-enum class BackStyle { Circle, Text }
-
 /**
- * Marco de pantalla de la línea 3.2 («Relevo, la app», D-131). Todo se ordena en una columna con el margen
- * de 20 dp:
- * - arriba, fija, la barra con cerrar o volver a la izquierda y el paso («1 de 6») a la derecha; debajo, el
- *   avance en segmentos de lado a lado;
- * - el título en dos tonos (lo principal en tinta y la continuación en grafito) y, debajo, el contenido;
- * - abajo, fijo, el botón principal sobre el papel, con un fundido corto encima. El contenido nunca pasa
- *   por detrás de un botón sin velo, para que no se mezclen.
- * Con [backdrop], el aura o un cielo ocupan toda la pantalla detrás del contenido.
+ * Marco de pantalla de la 4.0 (D-155). El contenido ocupa toda la pantalla y pasa por debajo de la barra de
+ * arriba y de los botones de abajo, que flotan sobre un borde con desenfoque progresivo, como en iOS 26
+ * ([ScrollEdge]). Todo se ordena en una columna con el margen de 20 dp:
+ * - arriba, flotando, volver o cerrar a la izquierda y una acción o el paso («1 de 6») a la derecha; al
+ *   desplazar, el título aparece pequeño al centro de la barra;
+ * - el título en tinta, una sola frase, y debajo el contenido;
+ * - abajo, flotando, el botón principal.
+ * Con [backdrop], un color ocupa toda la pantalla detrás del contenido y no hay bordes de papel.
  */
 @Composable
 fun RelevoScreen(
@@ -90,22 +92,19 @@ fun RelevoScreen(
   title: String? = null,
   subtitle: String? = null,
   eyebrow: String? = null,
-  /** Continuación del título en grafito, en la misma línea: «Tu ruta · Pasos pequeños…». */
-  titleSoft: String? = null,
   onBack: (() -> Unit)? = null,
   backLabel: String = "Volver",
   /** En las hojas de creación, volver al comienzo cierra: se muestra una cruz. */
   closeIcon: Boolean = false,
-  backStyle: BackStyle = BackStyle.Circle,
   leading: (@Composable () -> Unit)? = null,
   trailing: (@Composable RowScope.() -> Unit)? = null,
   step: String? = null,
   progress: Float? = null,
   scrollState: ScrollState = rememberScrollState(),
-  hero: (@Composable BoxScope.() -> Unit)? = null,
-  heroHeight: Dp = 0.dp,
-  @Suppress("UNUSED_PARAMETER") heroPicture: Picture? = null,
-  @Suppress("UNUSED_PARAMETER") heroWide: Boolean = true,
+  /** Título grande, para la primera pantalla de cada pestaña. */
+  largeTitle: Boolean = false,
+  /** El título pequeño de la barra al desplazar; por defecto, el mismo título. */
+  barTitle: String? = title,
   header: (@Composable ColumnScope.() -> Unit)? = null,
   titleTrailing: (@Composable () -> Unit)? = null,
   bottom: (@Composable ColumnScope.() -> Unit)? = null,
@@ -117,20 +116,55 @@ fun RelevoScreen(
   val dock = LocalDockInset.current
   var bottomHeight by remember { mutableIntStateOf(0) }
   val hasBar = onBack != null || leading != null || trailing != null || step != null
-  val scrolled by animateFloatAsState(if (scrollState.value > 4) 1f else 0f, Motion.standard(Motion.SHORT), label = "top_fade")
-  val surface = if (backdrop != null) Color.Transparent else colors.paper
+  val haze = rememberHazeState()
+  val statusTop = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+  val navBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
+  val barSpace = if (hasBar) BarHeight else 0.dp
+  val segments = if (progress != null) 18.dp else 0.dp
+  val topSpace = statusTop + barSpace + segments
+  val bottomSpace = if (bottom != null) with(density) { bottomHeight.toDp() } else dock + navBottom
+  val topEdge by animateFloatAsState(if (scrollState.value > 2) 1f else 0f, Motion.standard(Motion.SHORT), label = "top_edge")
+  val bottomEdge by animateFloatAsState(if (scrollState.canScrollForward) 1f else 0f, Motion.standard(Motion.SHORT), label = "bottom_edge")
+  val titleOut by remember { derivedStateOf { scrollState.value > with(density) { 52.dp.toPx() } } }
+  val barTitleAlpha by animateFloatAsState(if (titleOut && barTitle != null) 1f else 0f, Motion.standard(Motion.SHORT), label = "bar_title")
 
   Box(modifier.fillMaxSize().background(colors.paper).imePadding()) {
     if (backdrop != null) Box(Modifier.fillMaxSize()) { backdrop() }
-    Column(Modifier.fillMaxSize()) {
-      // Barra fija: cerrar o volver y el paso. Sin barra, el contenido empieza bajo la hora.
-      if (hasBar) {
-        Row(
-          Modifier.fillMaxWidth().background(surface).statusBarsPadding().height(BarHeight).padding(horizontal = Relevo.margin),
-          verticalAlignment = Alignment.CenterVertically,
-        ) {
+    Column(
+      Modifier.fillMaxSize().then(if (backdrop == null) Modifier.hazeSource(haze) else Modifier)
+        .verticalScroll(scrollState).padding(horizontal = Relevo.margin),
+    ) {
+      Spacer(Modifier.height(topSpace + if (hasBar) 6.dp else 20.dp))
+      if (header != null) {
+        header()
+        Spacer(Modifier.height(Gap.block))
+      }
+      if (title != null) {
+        Row(Modifier.fillMaxWidth().padding(bottom = Gap.title), verticalAlignment = Alignment.Bottom) {
+          Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            if (eyebrow != null) Text(eyebrow, style = Relevo.type.subhead.copy(fontWeight = FontWeight.Medium), color = colors.graphite)
+            ScreenTitle(title, style = if (largeTitle) Relevo.type.largeTitle else Relevo.type.title)
+            if (subtitle != null) Text(subtitle, style = Relevo.type.body, color = colors.graphite)
+          }
+          titleTrailing?.invoke()
+        }
+      }
+      content()
+      Spacer(Modifier.height(bottomSpace + 28.dp))
+    }
+
+    // Arriba: el borde con desenfoque progresivo aparece apenas algo pasa por debajo.
+    if (backdrop == null && topEdge > 0.01f) ScrollEdge(haze, top = true, height = topSpace + 24.dp, visible = topEdge)
+    if (hasBar) {
+      Box(Modifier.fillMaxWidth().statusBarsPadding().height(BarHeight).padding(horizontal = Relevo.margin)) {
+        if (barTitle != null) {
+          Text(
+            barTitle, style = Relevo.type.headline, color = colors.ink, maxLines = 1, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.Center,
+            modifier = Modifier.align(Alignment.Center).padding(horizontal = 64.dp).graphicsLayer { alpha = barTitleAlpha },
+          )
+        }
+        Row(Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
           when {
-            onBack != null && backStyle == BackStyle.Text -> TextBack(backLabel, onBack)
             onBack != null -> CircleButton(if (closeIcon) KitIcon.CERRAR else KitIcon.VOLVER, backLabel, onBack)
             leading != null -> leading()
           }
@@ -138,83 +172,46 @@ fun RelevoScreen(
           if (trailing != null) trailing()
           else if (step != null) Text(step, style = Relevo.type.subhead.copy(fontWeight = FontWeight.Medium), color = colors.graphite)
         }
-        if (progress != null) {
-          StepSegments(progress, step, Modifier.background(surface).padding(horizontal = Relevo.margin + 6.dp).padding(top = 2.dp, bottom = 12.dp))
-        }
-      } else {
-        Spacer(Modifier.fillMaxWidth().background(surface).statusBarsPadding())
       }
-      Box(Modifier.fillMaxWidth().weight(1f)) {
-        Column(Modifier.fillMaxSize().verticalScroll(scrollState)) {
-          if (hero != null) Box(Modifier.fillMaxWidth().height(heroHeight).padding(horizontal = Relevo.margin).clip(Relevo.panelShape)) { hero() }
-          Column(Modifier.fillMaxWidth().padding(horizontal = Relevo.margin)) {
-            Spacer(Modifier.height(if (hasBar) 4.dp else 14.dp))
-            if (header != null) {
-              header()
-              Spacer(Modifier.height(Gap.block))
-            }
-            if (title != null) {
-              Row(Modifier.fillMaxWidth().padding(bottom = Gap.title), verticalAlignment = Alignment.Bottom) {
-                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                  if (eyebrow != null) Text(eyebrow, style = Relevo.type.subhead.copy(fontWeight = FontWeight.Medium), color = colors.graphite)
-                  ScreenTitle(title, titleSoft)
-                  if (subtitle != null) Text(subtitle, style = Relevo.type.body, color = colors.graphite)
-                }
-                titleTrailing?.invoke()
-              }
-            }
-            content()
-            val reserved = with(density) { bottomHeight.toDp() }
-            if (bottom != null) Spacer(Modifier.height(reserved + 16.dp))
-            else Spacer(Modifier.height(dock + 28.dp).navigationBarsPadding())
-          }
-        }
-        // Al desplazar, el contenido se funde bajo la barra en una franja corta.
-        if (backdrop == null) {
-          Box(Modifier.fillMaxWidth().height(14.dp).drawBehind {
-            if (scrolled > 0f) drawRect(Brush.verticalGradient(0f to colors.paper, 1f to colors.paper.copy(alpha = 0f)), alpha = scrolled)
-          })
-        }
+      if (progress != null) {
+        StepSegments(progress, step, Modifier.padding(top = statusTop + BarHeight).padding(horizontal = Relevo.margin + 6.dp).padding(top = 2.dp))
       }
+    } else if (progress != null) {
+      StepSegments(progress, step, Modifier.statusBarsPadding().padding(horizontal = Relevo.margin + 6.dp).padding(top = 8.dp))
     }
 
-    // Abajo: el botón principal, fijo, sobre el papel y con un fundido corto encima.
+    // Abajo: los botones flotan sobre el mismo borde; en las pestañas, el borde queda detrás de la barra.
     if (bottom != null) {
-      Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth().onSizeChanged { bottomHeight = it.height }) {
-        if (backdrop == null) Box(Modifier.fillMaxWidth().height(24.dp).background(Brush.verticalGradient(0f to colors.paper.copy(alpha = 0f), 1f to colors.paper)))
-        Column(
-          Modifier.fillMaxWidth().background(surface).padding(horizontal = Relevo.margin).padding(top = 4.dp, bottom = 12.dp + dock).navigationBarsPadding(),
-          verticalArrangement = Arrangement.spacedBy(10.dp),
-          horizontalAlignment = Alignment.CenterHorizontally,
-        ) { bottom() }
+      if (backdrop == null && bottomEdge > 0.01f) {
+        ScrollEdge(haze, top = false, height = with(density) { bottomHeight.toDp() } + 26.dp, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
       }
+      Column(
+        Modifier.align(Alignment.BottomCenter).fillMaxWidth().onSizeChanged { bottomHeight = it.height }
+          .padding(horizontal = Relevo.margin).padding(top = 10.dp, bottom = 12.dp + dock).navigationBarsPadding(),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+      ) { bottom() }
+    } else if (dock > 0.dp && backdrop == null && bottomEdge > 0.01f) {
+      ScrollEdge(haze, top = false, height = dock + navBottom + 30.dp, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
     }
   }
 }
 
-/** Espacios de la línea 3.2: entre piezas de una lista, entre bloques y bajo el título. */
+/** Espacios de la 4.0: entre piezas de una lista, entre bloques, bajo el título y entre secciones. */
 object Gap {
-  val list = 9.dp
+  val list = 10.dp
   val block = 16.dp
-  val title = 18.dp
-  val section = 24.dp
+  val title = 20.dp
+  val section = 28.dp
 }
 
-/** Título de pantalla en dos tonos: lo principal en tinta y la continuación en grafito, en la misma línea. */
+/** Título de pantalla: una sola frase en tinta, sin punto final (D-155). */
 @Composable
-fun ScreenTitle(title: String, soft: String? = null, modifier: Modifier = Modifier, style: androidx.compose.ui.text.TextStyle = Relevo.type.title) {
-  val colors = Relevo.colors
-  Text(
-    buildAnnotatedString {
-      withStyle(SpanStyle(color = colors.ink)) { append(title) }
-      if (!soft.isNullOrBlank()) withStyle(SpanStyle(color = colors.graphite)) { append(" "); append(soft) }
-    },
-    style = style,
-    modifier = modifier.semantics { heading() },
-  )
+fun ScreenTitle(title: String, modifier: Modifier = Modifier, style: TextStyle = Relevo.type.title) {
+  Text(title, style = style, color = Relevo.colors.ink, modifier = modifier.semantics { heading() })
 }
 
-/** Botón redondo blanco de la barra: cerrar o volver, 40 dp, con nombre accesible y área táctil de 48 dp. */
+/** Botón redondo blanco de la barra: cerrar o volver, 40 dp con sombra suave para leerse sobre el borde, y área táctil de 48 dp. */
 @Composable
 fun CircleButton(icon: KitIcon, description: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
   val interaction = remember { MutableInteractionSource() }
@@ -226,25 +223,11 @@ fun CircleButton(icon: KitIcon, description: String, onClick: () -> Unit, modifi
     contentAlignment = Alignment.Center,
   ) {
     Box(
-      Modifier.size(40.dp).pressScale(interaction, 0.92f).clip(CircleShape).background(if (pressed) colors.mist else colors.card),
+      Modifier.size(40.dp).pressScale(interaction, 0.92f)
+        .then(if (colors.isDark) Modifier else Modifier.shadow(6.dp, CircleShape, ambientColor = Color.Black.copy(alpha = .04f), spotColor = Color.Black.copy(alpha = .14f)))
+        .clip(CircleShape).background(if (pressed) colors.mist else colors.card),
       contentAlignment = Alignment.Center,
     ) { RelevoIcon(icon, size = 20.dp, tint = colors.ink, background = colors.card, strokeWidth = 2f) }
-  }
-}
-
-/** «← Volver»: la flecha y la palabra, sin fondo, como en la lámina del relevo que cuenta. */
-@Composable
-private fun TextBack(label: String, onClick: () -> Unit) {
-  val interaction = remember { MutableInteractionSource() }
-  val pressed by interaction.collectIsPressedAsState()
-  val tint = Relevo.colors.ink.copy(alpha = if (pressed) .5f else 1f)
-  Row(
-    Modifier.heightIn(min = 48.dp).clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick),
-    verticalAlignment = Alignment.CenterVertically,
-  ) {
-    RelevoIcon(KitIcon.VOLVER, size = 22.dp, tint = tint, background = Color.Transparent, strokeWidth = 1.9f)
-    Spacer(Modifier.width(6.dp))
-    Text(label, style = Relevo.type.headline, color = tint)
   }
 }
 

@@ -5,9 +5,9 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 /**
- * Paleta de la línea 3.0 (D-124 a D-128): papel tibio, tinta casi negra y seis fichas claras, una por
- * papel. Cada color dice siempre lo mismo; la selección va en tinta. El vidrio es un tinte translúcido
- * sobre un desenfoque, solo en la capa de navegación (D-083).
+ * Paleta de la 4.0 (D-155): la interfaz va en papel y tinta, y el color es solo de las actividades, en
+ * su anillo. Las seis fichas de papel de la 3.0 (D-124) se retiraron: un ícono con color y otro sin él
+ * no decían nada claro. El vidrio es un tinte translúcido sobre un desenfoque, solo en la navegación.
  */
 @Immutable
 data class RelevoColors(
@@ -41,30 +41,12 @@ data class RelevoColors(
   val glassEdge: Color,
   /** Velo detrás de una hoja. */
   val scrim: Color,
-  /** Mantequilla: tu tiempo (las apps y los minutos). */
-  val butter: Color,
-  /** Cielo: tu primer paso. */
-  val sky: Color,
-  /** Lima: el lugar donde empiezas, y donde suena (D-127). */
-  val lime: Color,
-  /** Rubor: lo que decides. */
-  val blush: Color,
-  /** Lila: tu aura, lo que personalizas. */
-  val lilac: Color,
-  /** Durazno: lo que pasó después de la señal. */
-  val peach: Color,
-  /** Tinta de los íconos sobre las fichas de color: igual en claro y en oscuro. */
+  /** Tinta de los íconos sobre el color de una actividad: igual en claro y en oscuro. */
   val onTile: Color,
   val isDark: Boolean,
 )
 
-/** Las seis fichas son las mismas en los dos temas: luminosidad OKLCH 0,88–0,91 y tinta encima (12,7:1 a 14,5:1). */
-private val Butter = Color(0xFFF4E496)
-private val Sky = Color(0xFFB3E5FC)
-private val Lime = Color(0xFFC6EEAE)
-private val Blush = Color(0xFFFAC8D9)
-private val Lilac = Color(0xFFDFD1FC)
-private val Peach = Color(0xFFFBD1B3)
+/** Tinta fija sobre el color de una actividad, en los dos temas. */
 private val TileInk = Color(0xFF141312)
 
 internal val LightColors = RelevoColors(
@@ -83,7 +65,7 @@ internal val LightColors = RelevoColors(
   glass = Color(0xFFFFFFFF).copy(alpha = 0.62f),
   glassEdge = Color(0xFF141312).copy(alpha = 0.06f),
   scrim = Color.Black.copy(alpha = 0.18f),
-  butter = Butter, sky = Sky, lime = Lime, blush = Blush, lilac = Lilac, peach = Peach, onTile = TileInk,
+  onTile = TileInk,
   isDark = false,
 )
 
@@ -104,7 +86,7 @@ internal val DarkColors = RelevoColors(
   glass = Color(0xFF1F1D1B).copy(alpha = 0.68f),
   glassEdge = Color.White.copy(alpha = 0.09f),
   scrim = Color.Black.copy(alpha = 0.45f),
-  butter = Butter, sky = Sky, lime = Lime, blush = Blush, lilac = Lilac, peach = Peach, onTile = TileInk,
+  onTile = TileInk,
   isDark = true,
 )
 

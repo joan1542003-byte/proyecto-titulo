@@ -47,7 +47,7 @@ import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.SegmentedControl
 import com.example.relevo.ui.components.Sky
 import com.example.relevo.ui.components.SkyBackground
-import com.example.relevo.ui.components.SkySquare
+import com.example.relevo.ui.components.ActivityRing
 import com.example.relevo.ui.components.SoundObject
 import com.example.relevo.ui.components.StatusBarTone
 import com.example.relevo.ui.components.StatusChip
@@ -97,7 +97,7 @@ internal fun SignalScreen(
         }
         GlassCard(Modifier.appear(1), padding = 20.dp) {
           if (guided) {
-            GuideTip("Así suena Relevo. Toca «Silenciar y continuar» y después cuéntanos qué hiciste.")
+            GuideTip("Así suena Relevo. Toca «Silenciar y continuar» y después dinos qué hiciste.")
             Spacer(Modifier.height(4.dp))
           }
           Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
@@ -169,7 +169,7 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
   }
   BackHandler(enabled = ask && phase == 1 && chosen == null) { phase = 0 }
   RelevoScreen(
-    leading = { Chip("Después de la señal", background = colors.peach, color = colors.onTile) },
+    leading = { Chip("Después de la señal", background = colors.mist) },
     trailing = { PlainAction("Saltar", { finish("not_answered") }, color = colors.graphite) },
     title = if (phase == 0) "Cuatro preguntas de un toque" else null,
     bottom = if (phase == 0) ({ RelevoButton("Seguir", { phase = 1 }) }) else null,
@@ -197,7 +197,7 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
     } else {
       val icon = pictureIcon(activityPicture(shownReminder.activity, customActivities))
       Column(Modifier.fillMaxWidth().padding(top = 12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        SkySquare(icon, size = 80.dp, radius = 22.dp, variant = activityVariant(shownReminder.activity))
+        ActivityRing(icon, 88.dp, variant = activityVariant(shownReminder.activity))
         Spacer(Modifier.height(16.dp))
         Text(shownReminder.activity.trim(), style = Relevo.type.title, color = colors.ink, textAlign = TextAlign.Center)
         Spacer(Modifier.height(6.dp))
@@ -210,11 +210,11 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
         Text("¿Qué decidiste?", style = Relevo.type.title2.copy(fontWeight = FontWeight.Medium), color = colors.ink, textAlign = TextAlign.Center)
       }
       Spacer(Modifier.height(Gap.block))
-      // Las tres respuestas pesan lo mismo: misma tarjeta, mismo color de ficha (lo que decides) y mismo tamaño.
+      // Las tres respuestas pesan lo mismo: misma tarjeta, mismo ícono en tinta y mismo tamaño.
       Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
-        OptionRow("Comencé la actividad", chosen == "started", { choose("started") }, icon = KitIcon.COMENCE, tileColor = colors.blush)
-        OptionRow("La dejé para después", chosen == "later", { choose("later") }, icon = KitIcon.DESPUES, tileColor = colors.blush)
-        OptionRow("Cambié de idea", chosen == "changed", { choose("changed") }, icon = KitIcon.CAMBIE, tileColor = colors.blush)
+        OptionRow("Comencé la actividad", chosen == "started", { choose("started") }, icon = KitIcon.COMENCE)
+        OptionRow("La dejé para después", chosen == "later", { choose("later") }, icon = KitIcon.DESPUES)
+        OptionRow("Cambié de idea", chosen == "changed", { choose("changed") }, icon = KitIcon.CAMBIE)
       }
     }
   }
