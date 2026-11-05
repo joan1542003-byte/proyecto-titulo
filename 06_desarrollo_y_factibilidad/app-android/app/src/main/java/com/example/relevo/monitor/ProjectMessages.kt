@@ -20,7 +20,7 @@ import org.json.JSONArray
 import java.time.Instant
 
 /**
- * Mensajes del investigador (D-096). Se escriben en el panel privado, quedan en la base y cada teléfono
+ * Mensajes del autor del proyecto (D-096). Se escriben en el panel privado, quedan en la base y cada teléfono
  * los busca: al abrir la app, cada minuto mientras Relevo cuenta o espera, y cada 15 minutos en segundo
  * plano. Llegan como notificación; la base registra cuándo llegó y cuándo se abrió cada uno.
  */
@@ -113,7 +113,7 @@ object ProjectMessages {
     val manager = context.getSystemService(NotificationManager::class.java) ?: return false
     manager.createNotificationChannel(
       NotificationChannel(CHANNEL_ID, "Mensajes del proyecto", NotificationManager.IMPORTANCE_HIGH).apply {
-        description = "Mensajes del investigador sobre el testeo."
+        description = "Mensajes del autor del proyecto sobre Relevo."
       },
     )
     if (!manager.areNotificationsEnabled()) return false

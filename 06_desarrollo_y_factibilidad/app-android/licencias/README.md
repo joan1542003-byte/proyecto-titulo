@@ -23,6 +23,8 @@ Se tomaron del repositorio oficial [googlefonts/noto-emoji](https://github.com/g
 
 ## Fotografías CC0
 
+> Desde la versión 1.0.0 (4 de noviembre de 2026, D-153), las 21 fotografías ya no van en la app: no se mostraban desde la 2.21. Los créditos siguen aquí porque las versiones anteriores las incluyen y los archivos quedan en el historial del repositorio.
+
 Se obtuvieron mediante Openverse el 25 de septiembre de 2026 para el [estudio de marca](../../../10_recursos_visuales/marca-desde-cero/README.md), que ya las había tratado con la receta de imagen de D-073. La app usa esas versiones tratadas.
 
 | Archivo en la app | Título original | Autor | Sitio | Enlace |
@@ -39,6 +41,12 @@ Se obtuvieron mediante Openverse el 25 de septiembre de 2026 para el [estudio de
 Las otras quince fotografías de `drawable-nodpi` no son obras de terceros: salen de doce imágenes generadas con IA para el proyecto entre las versiones 2.3 y 2.6; tres de ellas se usan en dos encuadres. Hasta 2.7 se usaban como PNG; esos originales se conservan en [`assets-explorados/fotos-app-hasta-2.7`](../assets-explorados/fotos-app-hasta-2.7). En 2.8 se recortaron y trataron con la receta de imagen de D-073. Su procedencia se registra en [assets-explorados](../assets-explorados/README.md) y en la [trazabilidad del uso de IA](../../../00_gobernanza/trazabilidad-uso-ia-2026-09-23.md). Deben presentarse como imágenes generadas, no como fotografías documentales.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Fotografías fuera de la 1.0.0
+
+- **Qué cambió:** una nota dice que las fotografías salen de la app desde la 1.0.0.
+- **Cómo estaba antes:** se describían como parte de `drawable-nodpi`.
+- **Por qué:** limpieza de la versión final (D-153).
 
 ### 2026-10-12 — Versión 3.0
 

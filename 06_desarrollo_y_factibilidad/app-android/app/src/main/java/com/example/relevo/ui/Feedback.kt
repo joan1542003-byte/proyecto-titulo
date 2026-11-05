@@ -88,7 +88,7 @@ internal fun FacePicker(faces: List<Face>, selected: String?, onSelect: (String?
 internal fun QuickFeedbackCard(onAnswer: (Int?) -> Unit, onMore: () -> Unit) {
   Panel {
     Text("¿Qué tal te va con Relevo?", style = Relevo.type.headline, color = Relevo.colors.ink)
-    Text("Toca una cara. Nos ayuda a mejorarlo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Text("Toca una cara. Ayuda a mejorar Relevo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(4.dp))
     FacePicker(ratingFaces, null, { value -> value?.toIntOrNull()?.let(onAnswer) }, size = 36.dp)
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {

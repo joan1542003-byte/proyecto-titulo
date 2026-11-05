@@ -245,21 +245,6 @@ internal val ideasByFamily: List<Pair<Sky, List<ActivityIdea>>> =
 internal fun photoKey(source: String, name: String) = "$source:${name.trim().lowercase(spanish)}"
 
 /**
- * Une cómo empezar y el lugar en una frase (D-084): «Empieza por ponerte las zapatillas, junto a la
- * puerta.». Reemplaza los rótulos «Empiezas» y «Lugar», que se entendían mal. Sin datos, null.
- */
-internal fun startSentence(firstStep: String, place: String): String? {
-  val first = firstStep.trim().trimEnd('.')
-  val where = place.trim().trimEnd('.').takeIf { it.isNotEmpty() }?.let(::placePhrase)
-  return when {
-    first.isNotEmpty() && where != null -> "Empieza por ${first.replaceFirstChar { it.lowercase(spanish) }}, $where."
-    first.isNotEmpty() -> "Empieza por ${first.replaceFirstChar { it.lowercase(spanish) }}."
-    where != null -> "Empieza $where."
-    else -> null
-  }
-}
-
-/**
  * La línea de cuando suena, con el rótulo fijo de la app (R1 del estudio de los textos): «Para empezar:
  * abrir el libro, en el velador.». Sin datos, null.
  */

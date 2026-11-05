@@ -1,5 +1,7 @@
 # Entregables de Android
 
+La **versión final** es la **1.0.0**, compilada el 4 de noviembre de 2026: sin la prueba de 21 días y con lo que pidió la revisión de octubre (D-153 y D-154; [detalle](../version-1.0.0-la-version-final-2026-11-04.md)). [APK 1.0.0](relevo-android-1.0.0-2026-11-04.apk), 10,1 MB, `versionCode` 50, firmada con el mismo certificado (`fdbe6bbe…`): se instala encima de la 3.3 y de la 2.33 sin perder datos. SHA-256: `8DD8DCEAB0501BF673AD9A55F792F3F7ECF34362264ADCDED97BB818A3677C6D`.
+
 La versión para el testeo es la **2.33**, compilada el 20 de octubre de 2026: la 2.32 con una semana para comparar con la señal en el teléfono y las preguntas para conocer la experiencia (D-138; [detalle](../version-2.33-semana-de-comparacion-2026-10-20.md)). Se instala encima de la 2.32 o la 2.31 sin perder datos. Versión optimizada, 87 pruebas unitarias; revisada en el emulador. La tiene la participante que pasó a la semana con el teléfono, que el 21 de octubre completó con ella dos relevos. SHA-256 del [APK 2.33](relevo-android-2.33-2026-10-20.apk): `0BE7CA0505542FD7E89F33EC92DC8A31FCE720A361A37BD948F902F8F6D0800A` (12,2 MB).
 
 La **2.32**, del 17 de octubre: la 2.31 sin cortes con la alarma del Tag encendida, con más paciencia con un Tag lento, una conexión rápida y la guía del botón (D-137; [detalle](../version-2.32-el-tag-no-se-corta-2026-10-17.md)). Se instala encima de la 2.31 sin perder datos. Versión optimizada, 86 pruebas unitarias; revisada en el emulador. En la prueba, el Tag sonó en sus seis ciclos; falta probarla después de horas sin uso, el caso que la originó. SHA-256 del [APK 2.32](relevo-android-2.32-2026-10-17.apk): `F5D4209327ACC55FBB8F3B3C686F5CCF1B17FFD0F4CE121D854052D337A42751` (12,1 MB).
@@ -82,6 +84,12 @@ El APK 2.10 salió de una compilación limpia y el código pasó 58 pruebas unit
 **Antecedente 2.6:** APK `8AA57837E74DC1B30711E9D52A1859365F0CAB6F702E811354C42831D1CEC3B3`; ZIP `85A573FA9A7F31B385B6680955093AA1434658D7223E22F373E404C10AEBB420`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Android 1.0.0
+
+- **Qué cambió:** se suma el APK 1.0.0, con su SHA-256.
+- **Cómo estaba antes:** la versión más reciente era la 3.3.
+- **Por qué:** el autor pidió la versión definitiva de la app (D-153).
 
 ### 2026-10-24 — Tabla completa y uso real
 

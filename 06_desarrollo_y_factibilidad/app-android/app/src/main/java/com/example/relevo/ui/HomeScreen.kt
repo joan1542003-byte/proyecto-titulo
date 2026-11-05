@@ -161,15 +161,15 @@ internal fun HomeTab(
   // V1: dos días o más después del último relevo; no dice cuántos pasaron ni sugiere una falta.
   val returning = !active && !later && last != null && daysSinceLast >= 2 && returnDismissedFor != last.completedAt
   val name = profile.name.trim()
-  // Títulos sin punto final (R8 del estudio de los textos).
+  // El título en dos tonos se lee como dos frases, cada una con su puntuación (R8 del estudio de los textos).
   val title = when {
-    returning -> if (name.isEmpty()) "Hola de nuevo" else "Hola de nuevo, $name"
-    name.isEmpty() -> "Hola"
-    else -> "Hola, $name"
+    returning -> if (name.isEmpty()) "Hola de nuevo." else "Hola de nuevo, $name."
+    name.isEmpty() -> "Hola."
+    else -> "Hola, $name."
   }
   val soft = when {
-    active && (!usageAccess || quiet) -> "Tu relevo está en pausa"
-    active -> "Tu relevo está contando"
+    active && (!usageAccess || quiet) -> "Tu relevo está en pausa."
+    active -> "Tu relevo está contando."
     returning -> "¿Sigue siendo lo que quieres?"
     else -> "¿Qué quieres hacer hoy?"
   }

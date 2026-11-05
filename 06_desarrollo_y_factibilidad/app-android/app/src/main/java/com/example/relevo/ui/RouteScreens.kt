@@ -99,7 +99,8 @@ internal fun RouteTab(
   // Lámina «Tu ruta»: el título en dos tonos, los pasos en escalera y el botón debajo, sin flotar.
   RelevoScreen(
     title = "Actividades",
-    titleSoft = "Pasos pequeños hacia lo que te gustaría hacer más seguido",
+    // Una sola frase en dos tonos (R8): «Actividades para lo que te gustaría hacer más seguido.».
+    titleSoft = "para lo que te gustaría hacer más seguido.",
     scrollState = scroll,
   ) {
     if (track == null) {
@@ -169,7 +170,7 @@ internal fun RouteTab(
       }
       Spacer(Modifier.height(12.dp))
       Text(tapped.activity, style = Relevo.type.title2, color = Relevo.colors.ink)
-      startSentence(tapped.firstStep, tapped.place)?.let {
+      startLine(tapped.firstStep, tapped.place)?.let {
         Spacer(Modifier.height(6.dp))
         Text(it, style = Relevo.type.body, color = Relevo.colors.graphite)
       }
@@ -280,7 +281,7 @@ internal fun RouteEditScreen(track: RouteTrack, customActivities: List<CustomAct
         draft.steps.forEachIndexed { index, step ->
           ListRow(
             step.activity,
-            subtitle = startSentence(step.firstStep, step.place),
+            subtitle = startLine(step.firstStep, step.place),
             leading = { StepDot(index + 1, current = index == draft.currentIndex, past = index < draft.currentIndex) },
             onClick = { editing = step },
             trailing = {
@@ -365,7 +366,7 @@ internal fun NextStepSheet(suggestion: RouteSuggestion, onAccept: () -> Unit, on
         Spacer(Modifier.width(14.dp))
         Column(Modifier.weight(1f)) {
           Text(suggestion.next.activity, style = Relevo.type.headline, color = Relevo.colors.ink)
-          startSentence(suggestion.next.firstStep, suggestion.next.place)?.let { Text(it, style = Relevo.type.footnote, color = Relevo.colors.graphite) }
+          startLine(suggestion.next.firstStep, suggestion.next.place)?.let { Text(it, style = Relevo.type.footnote, color = Relevo.colors.graphite) }
         }
       }
     }
@@ -383,7 +384,7 @@ internal fun TurnOffReturnSheet(onAnswer: (Boolean) -> Unit) {
   RelevoSheet(onDismiss = { onAnswer(false) }, scrollable = false) {
     Text("¿Apagar el aviso semanal?", style = Relevo.type.title2, color = Relevo.colors.ink)
     Spacer(Modifier.height(8.dp))
-    Text("Puedes volver a activarlo en Perfil, en Avisos y resúmenes.", style = Relevo.type.body, color = Relevo.colors.graphite)
+    Text("Puedes volver a encenderlo en Perfil, en Ajustes de tus relevos.", style = Relevo.type.body, color = Relevo.colors.graphite)
     Spacer(Modifier.height(20.dp))
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
       RelevoButton("Apagarlo", { onAnswer(true) }, kind = ButtonKind.Secondary)

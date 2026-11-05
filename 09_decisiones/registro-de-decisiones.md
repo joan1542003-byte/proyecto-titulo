@@ -1995,7 +1995,63 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 14 481 palabras en los capítulos 1 a 14 (15 572 con las páginas iniciales y los índices; el instructivo sugiere de 15 000 a 20 000); 78 referencias, todas citadas; 11 marcadores «Confirmar»; 62 páginas, sin avisos del generador; 8,1 palabras por línea; PDF de 7,2 MB (el máximo es 15); el IDML enlaza sus 60 imágenes. La pestaña de la Biblioteca quedó abierta, pero el inicio de sesión no se completó (la página respondió «Nombre de usuario o contraseña incorrecto»), así que no se leyeron memorias aprobadas.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-153 — Android 1.0.0: la versión final, sin la prueba de 21 días y con lo que pidió la revisión
+
+- **Fecha:** 2026-11-04.
+- **Estado:** hecha en la rama `android-1.0.0`. Compila y pasan 77 pruebas automáticas. Se probó en el emulador, instalada sobre la 3.3 con los datos del autor. Falta probar la primera vez desde cero y el Tag real.
+- **Contexto:** el autor pidió la versión definitiva de la app, la 1.0.0: ordenada, sin errores, sin código ni cosas viejas, con explicaciones claras, sin la prueba de 21 días, con el diseño final y todas las funciones, aplicando la revisión con los profesores del 28 de octubre y con la mejor usabilidad posible. Respondió cuatro preguntas:
+  - los datos se siguen registrando igual;
+  - suena en el Tag, en el teléfono, como «Notificación», y en un dispositivo de audio;
+  - entran todas las mejoras propuestas de la Tabla 4;
+  - se aplica el estudio de los textos, con la ruta llamada «Actividades».
+
+  Pidió además quitar las animaciones del Tag, que pueden dar una idea equivocada de cómo se ve.
+- **Decisión:**
+  - **Versión:** 1.0.0, `versionCode` 50, desde la 3.3, con el mismo certificado.
+  - **Sin la prueba:** salen las semanas A, B y C, la semana de comparación, la pantalla del investigador, las tarjetas, las escalas y el cierre.
+  - **Primera vez:** tres pantallas antes del primer relevo —bienvenida, consentimiento y Tiempo de uso—, y después el primer relevo guiado. El perfil se pide al activarlo; las notificaciones, al activar un relevo, y la batería, solo si hace falta.
+  - **Tag:** a un minuto y medio del final, Relevo busca el Tag. Si al cumplirse el tiempo no responde, suena en el teléfono. Se agrega «¿No tienes un Tag?» con dónde conseguirlo, y la guía queda sin dibujos.
+  - **Salidas:** Tag, «Notificación» y «Dispositivo de audio». Sale el reloj.
+  - **Tabla 4:**
+    - un límite de 15 minutos al empezar y una revisión del tiempo tras 3 sonidos;
+    - horas sin sonar, en que Relevo no cuenta ni suena;
+    - dejar un relevo listo para después;
+    - el volumen del teléfono y del dispositivo de audio.
+  - **Relevo activo:** la actividad, el tiempo que falta y una acción, «Cambiar o desactivar».
+  - **Textos:** del estudio, R1 a R14, «Actividades» y «¿Con qué te identificas?».
+  - **Usabilidad:** áreas táctiles de 48 dp.
+  - **Limpieza:** salen las 21 fotos sin uso, el reloj, el uso sin participar, once componentes sin uso y 102 importaciones sin uso.
+- **Alternativas descartadas:**
+  - **Volumen del Tag:** se descartó cambiar el nivel de alerta del Tag como volumen, porque con el Tag del autor el nivel alto no pitaba (2.29).
+  - **Horas sin sonar:** se descartó que el relevo sonara al terminar el tramo, porque sonaría de mañana sin que la persona usara el teléfono. En esas horas no cuenta.
+  - **Dónde conseguir un Tag:** se descartó enlazar una publicación de Mercado Libre, porque caduca; se enlaza una búsqueda.
+- **Documentos:** [Android 1.0.0](../06_desarrollo_y_factibilidad/app-android/version-1.0.0-la-version-final-2026-11-04.md) e [inventario de textos](../06_desarrollo_y_factibilidad/app-android/textos/inventario-de-textos.md).
+
+## D-154 — El consentimiento pasa a la v14, sin la prueba, y los datos se siguen registrando igual
+
+- **Fecha:** 2026-11-04.
+- **Estado:** hecha en la 1.0.0. Pendiente de revisión docente, como las versiones anteriores del consentimiento.
+- **Contexto:**
+  - El consentimiento v13 describía la prueba de 21 días: el encuentro inicial, las semanas en que la app indicaba dónde dejar lo que suena y los cierres.
+  - La 1.0.0 la quita, pero el autor decidió que los datos se sigan recibiendo igual y que quien ya estaba registrado los conserve intactos.
+  - La regla del repositorio pide registrar cada cambio del consentimiento como versión nueva.
+- **Decisión:**
+  - **Texto:** versión `2026-11-04-v14`. Dice lo mismo sobre qué se guarda, dónde, qué no se ve, los mensajes, el código y el plazo —se borra a más tardar el 30 de diciembre de 2026—, sin la prueba de 21 días y escrito en listas.
+  - **Quien aceptó la v13:** ve «Relevo cambió», conserva su código y sus datos, y un relevo que estaba contando sigue contando después de aceptar.
+  - **Si no acepta:** Relevo deja de contar y sus datos anteriores siguen guardados hasta que pida borrarlos o hasta el plazo.
+  - **Los datos:** se envían los mismos datos, a las mismas tablas. Supabase y el panel no cambian, salvo que el panel reconoce la 1.0.0 como la versión más nueva.
+- **Alternativas descartadas:**
+  - **Conservar la v13:** describía semanas e instrucciones que ya no existen.
+  - **Dejar de enviar datos:** el autor decidió seguir registrándolos.
+- **Documentos:** [Android 1.0.0](../06_desarrollo_y_factibilidad/app-android/version-1.0.0-la-version-final-2026-11-04.md) y `FirstRunScreens.kt`.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — D-153 y D-154
+
+- **Qué cambió:** se registraron la versión 1.0.0 de la app (D-153) y el consentimiento v14 (D-154).
+- **Cómo estaba antes:** la última decisión era D-152, sobre la memoria.
+- **Por qué:** el autor pidió la versión definitiva de la app.
 
 ### 2026-10-29 — D-152
 

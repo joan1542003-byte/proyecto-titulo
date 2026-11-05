@@ -18,7 +18,7 @@ import com.example.relevo.domain.ReminderStatus
 import java.util.Locale
 
 /**
- * V2: aviso de regreso opcional. Empieza apagado y se activa en «Avisos y resúmenes». Llega como
+ * V2: aviso de regreso opcional. Empieza apagado y se enciende en «Ajustes de tus relevos». Llega como
  * máximo una vez por semana y solo si la persona no abrió Relevo en ese tiempo. No dice cuántos días
  * pasaron ni sugiere una falta; tras dos «Ahora no» seguidos, la app pregunta una vez si se apaga.
  */
@@ -64,7 +64,7 @@ object ReturnNotice {
     if (!manager.areNotificationsEnabled()) return
     manager.createNotificationChannel(
       NotificationChannel(CHANNEL_ID, "Aviso semanal", NotificationManager.IMPORTANCE_LOW).apply {
-        description = "Una vez por semana como máximo, si no abriste Relevo. Se apaga en Perfil, en Avisos y resúmenes."
+        description = "Una vez por semana como máximo, si no abriste Relevo. Se apaga en Perfil, en Ajustes de tus relevos."
       },
     )
     val activity = ReminderStore(context, ReminderStore.LAST_CONFIGURATION).load().activity.trim().trimEnd('.')

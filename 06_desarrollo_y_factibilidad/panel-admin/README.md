@@ -136,6 +136,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-04 — La app 1.0.0
+
+- **Qué cambió:** el panel reconoce la 1.0.0 como la versión más nueva: las versiones de tres partes que empiezan en 1 van después de la 3.3. Las salidas se nombran como en la app: Tag, notificación en el teléfono y dispositivo de audio; el reloj queda para los relevos hasta la 3.3.
+- **Cómo estaba antes:** la más nueva era la 2.33, y la 1.0.0 habría aparecido como desactualizada.
+- **Por qué:** el autor pidió la versión definitiva de la app (D-153). La copia publicada en claude.ai no se volvió a publicar.
+
 ### 2026-10-20 — Android 2.33
 
 - **Qué cambió:** el panel lee las respuestas nuevas de la 2.33 y compara contra ella.

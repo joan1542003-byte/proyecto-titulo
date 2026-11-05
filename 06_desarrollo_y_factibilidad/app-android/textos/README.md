@@ -6,8 +6,9 @@ Todo lo que dice Relevo: cada palabra de la app, cómo se escribe y por qué. Si
 | --- | --- |
 | [Estudio de los textos](estudio-escritura-de-interfaces-2026-10-24.md) | Cómo habla Relevo: lo que recomiendan las guías y la investigación, cómo escriben apps conocidas, el diagnóstico de los textos actuales (R1 a R14), la voz, el tono, las reglas por tipo de texto y el vocabulario. |
 | [Pantallas de la app 3.3](pantallas-de-la-app-3.3.md) | Cada pantalla descrita por escrito: para qué sirve, cuándo aparece, qué muestra, qué se puede hacer, qué registra y sus textos. |
-| [Inventario de textos](inventario-de-textos.md) | Los 1.287 textos de 3.3, agrupados por pantalla, con su identificador (T0001…), tipo, archivo y línea. |
+| [Inventario de textos](inventario-de-textos.md) | Los 1195 textos de la 1.0.0, agrupados por pantalla, con su identificador (T0001…), tipo, archivo y línea. Ya aplican el estudio (D-153). |
 | [Tabla de textos](textos-de-la-app.csv) | Lo mismo en una tabla para abrir en Excel (separada por punto y coma). |
+| [Inventario de 3.3](inventario-de-textos-3.3.md) y [tabla de 3.3](textos-de-la-app-3.3.csv) | Los 1287 textos de la 3.3, antes de aplicar el estudio. |
 | [Inventario de 2.33](inventario-de-textos-android-2.33.md) y [tabla de 2.33](textos-de-la-app-android-2.33.csv) | Los textos de la versión que se usa en la prueba. |
 | [`extraer-textos.js`](extraer-textos.js) | El script que genera los inventarios desde el código. |
 
@@ -30,6 +31,12 @@ El script lee el código Kotlin de `app/src/main/java/com/example/relevo/` (carp
 **Límites.** Los identificadores siguen el orden del código: si se agrega o quita un texto, cambian los que vienen después. Para citar un texto de forma estable, conviene usar también su archivo y línea. El inventario incluye unos pocos textos que siguen en el código pero ya no se muestran; el estudio los indica.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Textos de la 1.0.0
+
+- **Qué cambió:** el inventario y la tabla pasan a la 1.0.0, que aplica el estudio. Los de la 3.3 se conservan con su número de versión en el nombre.
+- **Cómo estaba antes:** el inventario y la tabla eran los de la 3.3.
+- **Por qué:** el autor pidió la versión definitiva de la app, con los textos del estudio (D-153).
 
 ### 2026-10-24 — Creación
 

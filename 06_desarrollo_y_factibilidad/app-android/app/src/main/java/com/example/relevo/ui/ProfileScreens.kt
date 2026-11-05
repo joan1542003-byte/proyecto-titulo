@@ -180,7 +180,7 @@ private fun ProfileHeader(profile: Profile, routes: List<RouteTrack>, @Suppress(
     Spacer(Modifier.width(16.dp))
     Column(Modifier.weight(1f)) {
       Text(profile.name.ifBlank { "Tu perfil" }, style = Relevo.type.title, color = Relevo.colors.ink, maxLines = 2)
-      Text(interests.ifBlank { "Toca para editar tu perfil" }, style = Relevo.type.subhead, color = Relevo.colors.graphite, maxLines = 2)
+      Text(interests.ifBlank { "Toca para editar tu perfil" }, style = Relevo.type.subhead, color = Relevo.colors.graphite, maxLines = 2, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
     }
     RelevoIcon(KitIcon.EDITAR, size = 22.dp, tint = Relevo.colors.graphite, background = Relevo.colors.paper)
   }

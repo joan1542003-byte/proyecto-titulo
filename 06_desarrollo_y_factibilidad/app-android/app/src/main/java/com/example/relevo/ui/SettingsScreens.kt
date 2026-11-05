@@ -269,7 +269,7 @@ internal fun ActivitiesScreen(
   var shown by rememberSaveable { mutableStateOf<String?>(null) }
   RelevoScreen(
     title = "Tus actividades",
-    titleSoft = "Lo que haces seguido, listo en un toque",
+    titleSoft = "listas para prepararlas en un toque.",
     onBack = onBack, backLabel = "Actividades",
     bottom = { RelevoButton("Crear una actividad", onNew, icon = KitIcon.AGREGAR) },
   ) {
@@ -295,7 +295,7 @@ internal fun ActivitiesScreen(
         Spacer(Modifier.width(16.dp))
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
           Text(selected.name, style = Relevo.type.title2, color = Relevo.colors.ink)
-          startSentence(selected.firstStep, selected.place)?.let { Text(it, style = Relevo.type.subhead, color = Relevo.colors.graphite) }
+          startLine(selected.firstStep, selected.place)?.let { Text(it, style = Relevo.type.subhead, color = Relevo.colors.graphite) }
         }
       }
       Spacer(Modifier.height(22.dp))
