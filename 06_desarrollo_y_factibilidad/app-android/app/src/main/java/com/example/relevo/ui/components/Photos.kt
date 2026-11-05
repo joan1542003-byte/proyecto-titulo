@@ -1,7 +1,6 @@
 package com.example.relevo.ui.components
 
 import androidx.compose.ui.draw.shadow
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.LruCache
 import androidx.annotation.DrawableRes
@@ -9,13 +8,11 @@ import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.togetherWith
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -24,7 +21,6 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -36,7 +32,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.getValue
@@ -48,14 +43,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
@@ -68,37 +58,36 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import cl.udp.relevo.R
-import com.example.relevo.theme.LocalRelevoColors
 import com.example.relevo.theme.Relevo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import androidx.compose.ui.text.font.FontWeight
-import kotlin.math.roundToInt
 
 /**
- * Imágenes de las actividades. Desde 2.21 no son fotos: cada una se dibuja como su icono del kit sobre
- * un degradado sutil del color de su familia (pedido del autor del 6 de octubre). Las fotos de D-073
- * quedan en los recursos y en `licencias/README.md` como antecedente; [res] ya no se dibuja.
+ * Imágenes de las actividades. Desde 2.21 no son fotos: cada una se dibuja como su ícono del kit sobre el
+ * cielo de su familia (pedido del autor del 6 de octubre). Desde 1.0.0 las fotos de D-073 ya no van en la app;
+ * quedan en el historial del repositorio y en `licencias/README.md`. Los nombres se conservan porque las
+ * actividades guardadas los usan como clave («foto:LEER»).
  */
-enum class Photo(@param:DrawableRes val res: Int, val description: String, @param:DrawableRes val wide: Int? = null, val icon: KitIcon = KitIcon.ACTIVIDAD) {
-  CAMINAR(R.drawable.foto_caminar, "Caminar", icon = KitIcon.CAMINAR),
-  EJERCICIO(R.drawable.foto_ejercicio, "Hacer ejercicio", icon = KitIcon.EJERCICIO),
-  LEER(R.drawable.foto_leer, "Leer", icon = KitIcon.LEER),
-  ESTUDIAR(R.drawable.foto_estudiar, "Estudiar", icon = KitIcon.ESTUDIAR),
-  DIBUJAR(R.drawable.foto_dibujar, "Dibujar", icon = KitIcon.DIBUJAR),
-  COCINAR(R.drawable.foto_cocinar, "Cocinar", icon = KitIcon.COCINAR),
-  ORDENAR(R.drawable.foto_ordenar, "Ordenar", icon = KitIcon.ORDENAR),
-  PERRO(R.drawable.foto_perro, "Salir con el perro", icon = KitIcon.CAMINAR),
-  MANUALIDADES(R.drawable.foto_manualidades, "Manualidades", icon = KitIcon.MANUALIDADES),
-  GUITARRA(R.drawable.foto_guitarra, "Tocar guitarra", icon = KitIcon.GUITARRA),
-  ESCRIBIR(R.drawable.foto_escribir, "Escribir", icon = KitIcon.ESCRIBIR),
-  LIBRO(R.drawable.foto_libro, "Leer un libro", icon = KitIcon.LEER),
-  APRENDER(R.drawable.foto_aprender, "Aprender", icon = KitIcon.ESTUDIAR),
-  PAN(R.drawable.foto_pan, "Hacer pan", icon = KitIcon.COCINAR),
-  PINTAR(R.drawable.foto_pintar, "Pintar", icon = KitIcon.PINTAR),
-  PUERTA(R.drawable.foto_puerta, "Empezar", R.drawable.foto_puerta_ancha, icon = KitIcon.PRIMER_PASO),
-  SALIDA(R.drawable.foto_salida, "Salir", R.drawable.foto_salida_ancha, icon = KitIcon.SALIR),
-  TIEMPO(R.drawable.foto_tiempo, "El tiempo en el teléfono", R.drawable.foto_tiempo_ancha, icon = KitIcon.TIEMPO);
+enum class Photo(val description: String, val icon: KitIcon = KitIcon.ACTIVIDAD) {
+  CAMINAR("Caminar", icon = KitIcon.CAMINAR),
+  EJERCICIO("Hacer ejercicio", icon = KitIcon.EJERCICIO),
+  LEER("Leer", icon = KitIcon.LEER),
+  ESTUDIAR("Estudiar", icon = KitIcon.ESTUDIAR),
+  DIBUJAR("Dibujar", icon = KitIcon.DIBUJAR),
+  COCINAR("Cocinar", icon = KitIcon.COCINAR),
+  ORDENAR("Ordenar", icon = KitIcon.ORDENAR),
+  PERRO("Salir con el perro", icon = KitIcon.CAMINAR),
+  MANUALIDADES("Manualidades", icon = KitIcon.MANUALIDADES),
+  GUITARRA("Tocar guitarra", icon = KitIcon.GUITARRA),
+  ESCRIBIR("Escribir", icon = KitIcon.ESCRIBIR),
+  LIBRO("Leer un libro", icon = KitIcon.LEER),
+  APRENDER("Aprender", icon = KitIcon.ESTUDIAR),
+  PAN("Hacer pan", icon = KitIcon.COCINAR),
+  PINTAR("Pintar", icon = KitIcon.PINTAR),
+  PUERTA("Empezar", icon = KitIcon.PRIMER_PASO),
+  SALIDA("Salir", icon = KitIcon.SALIR),
+  TIEMPO("El tiempo en el teléfono", icon = KitIcon.TIEMPO);
 
   val key: String get() = "foto:$name"
 }
@@ -297,15 +286,6 @@ val KitIcon.key: String get() = "icono:$name"
 /** Resolución de carga: las miniaturas se decodifican a la mitad para no gastar memoria. */
 enum class PhotoSize(internal val sample: Int) { Thumb(2), Full(1) }
 
-/** Caché de fotos ya decodificadas: al volver a una pantalla, la foto aparece sin esperar. */
-private object PhotoCache {
-  private val cache = object : LruCache<Int, ImageBitmap>(48 * 1024 * 1024) {
-    override fun sizeOf(key: Int, value: ImageBitmap): Int = value.width * value.height * 4
-  }
-  fun get(key: Int): ImageBitmap? = cache.get(key)
-  fun put(key: Int, value: ImageBitmap) { cache.put(key, value) }
-}
-
 /**
  * Foto que se carga fuera del hilo principal y aparece con un fundido breve. Mientras carga, el
  * espacio queda en niebla, del mismo tamaño, para que nada salte.
@@ -314,12 +294,6 @@ private object PhotoCache {
 fun PhotoImage(photo: Photo, modifier: Modifier = Modifier, wide: Boolean = false, size: PhotoSize = PhotoSize.Full, describe: Boolean = false) {
   ActivityArt(photo.icon, modifier.then(if (describe) Modifier.semantics { contentDescription = photo.description } else Modifier))
 }
-
-/** Color representativo de la familia de una actividad (D-126). */
-internal fun artTint(icon: KitIcon): Color = skyFor(icon).palette.first()
-
-/** Tres colores de la familia de una actividad, para las ilustraciones que la usan (la guía del Tag). */
-internal fun artPalette(icon: KitIcon): List<Color> = skyFor(icon).palette
 
 /**
  * La imagen de una actividad (D-126): el cielo de su familia, con grano y volumen, y su ícono en tinta
@@ -341,31 +315,6 @@ fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = nu
   ) {
     if (showIcon) Box(Modifier.size(glyph * 1.7f).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
       RelevoIcon(icon, size = glyph, tint = colors.onTile, background = Color.White)
-    }
-  }
-}
-
-@Suppress("unused")
-@Composable
-private fun LegacyPhotoImage(photo: Photo, modifier: Modifier = Modifier, wide: Boolean = false, size: PhotoSize = PhotoSize.Full, describe: Boolean = false) {
-  val res = if (wide) photo.wide ?: photo.res else photo.res
-  val key = res * 4 + size.sample
-  val context = LocalContext.current
-  val reduce = rememberReduceMotion()
-  var bitmap by remember(key) { mutableStateOf(PhotoCache.get(key)) }
-  val alpha = remember(key) { Animatable(if (bitmap != null || reduce) 1f else 0f) }
-  LaunchedEffect(key) {
-    if (bitmap == null) {
-      bitmap = withContext(Dispatchers.IO) {
-        val options = BitmapFactory.Options().apply { inSampleSize = size.sample; inPreferredConfig = Bitmap.Config.HARDWARE }
-        runCatching { BitmapFactory.decodeResource(context.resources, res, options)?.asImageBitmap() }.getOrNull()?.also { PhotoCache.put(key, it) }
-      }
-    }
-    if (alpha.value < 1f) alpha.animateTo(1f, tween(220, easing = Motion.Easing))
-  }
-  Box(modifier.background(Relevo.colors.mist).then(if (describe) Modifier.semantics { contentDescription = photo.description } else Modifier)) {
-    bitmap?.let {
-      Image(it, contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize().graphicsLayer { this.alpha = alpha.value })
     }
   }
 }
@@ -411,45 +360,6 @@ fun SkyLabel(text: String, modifier: Modifier = Modifier, large: Boolean = false
       .clip(shape).background(Color.White.copy(alpha = .94f))
       .padding(horizontal = if (large) 14.dp else 12.dp, vertical = if (large) 5.dp else 3.dp),
   )
-}
-
-/** Ícono pequeño en un círculo blanco, arriba a la izquierda de un cielo. */
-@Composable
-private fun SkyBadge(icon: KitIcon, size: Dp = 30.dp) {
-  Box(Modifier.size(size).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
-    RelevoIcon(icon, size = size * 0.6f, tint = Color(0xFF141312), background = Color.White)
-  }
-}
-
-/**
- * Ficha de actividad (D-126): su cielo con el nombre en una cápsula y el ícono en un círculo blanco.
- * Debajo, en gris, cómo empieza. Al presionar se hunde un poco; el cielo puede viajar a la pantalla siguiente.
- */
-@Composable
-fun PhotoCard(
-  title: String,
-  picture: Picture?,
-  onClick: () -> Unit,
-  modifier: Modifier = Modifier,
-  subtitle: String? = null,
-  width: Dp = 152.dp,
-  sharedKey: String? = null,
-  fallback: KitIcon = KitIcon.ACTIVIDAD,
-) {
-  val interaction = remember { MutableInteractionSource() }
-  Column(
-    modifier.width(width).pressScale(interaction)
-      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = title, onClick = onClick),
-  ) {
-    Box(Modifier.fillMaxWidth().aspectRatio(1.15f).clip(RoundedCornerShape(24.dp))) {
-      PictureContent(picture, Modifier.matchParentSize().sharedPhoto(sharedKey), fallback = fallback, showIcon = false)
-      SkyLabel(title, Modifier.align(Alignment.BottomStart).padding(9.dp))
-    }
-    if (subtitle != null) {
-      Spacer(Modifier.height(8.dp))
-      Text(subtitle, style = Relevo.type.footnote, color = Relevo.colors.graphite, maxLines = 2, overflow = TextOverflow.Ellipsis, modifier = Modifier.padding(horizontal = 2.dp))
-    }
-  }
 }
 
 /**

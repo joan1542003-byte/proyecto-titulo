@@ -1,6 +1,7 @@
 package com.example.relevo.data
 
 import android.content.Context
+import com.example.relevo.domain.QuietHours
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
@@ -8,24 +9,35 @@ enum class ThemeMode { SYSTEM, LIGHT, DARK }
 enum class AuraLevel { OFF, SOFT, MEDIUM, STRONG }
 
 /**
- * Preferencias de S2 y de apariencia. Desde 2.12 (D-087) la app empieza en modo claro y con el resumen
- * semanal encendido. Desde 2.13 (D-088) el aviso semanal vuelve a empezar apagado y la guía de la primera
- * vez pregunta Sí o No, sin respuesta marcada: la memoria pide configuración voluntaria (secciones 7 y 11).
+ * Volumen del sonido en el teléfono y en un dispositivo de audio (1.0.0). Multiplica el sonido de Relevo;
+ * el volumen multimedia del teléfono sigue mandando. El Tag pita siempre con su propio volumen.
+ */
+enum class SignalVolume(val gain: Float) { SOFT(0.35f), MEDIUM(0.65f), LOUD(1f) }
+
+/**
+ * Ajustes de la persona. El aviso semanal empieza apagado (D-088): la memoria pide configuración
+ * voluntaria (secciones 7 y 11). Las horas sin sonar empiezan apagadas y, al encenderlas, proponen de
+ * 23:00 a 8:00 (1.0.0).
  */
 data class Settings(
   val theme: ThemeMode = ThemeMode.LIGHT,
   val largeText: Boolean = false,
   /** Resumen «Tu semana» en el perfil. */
   val weeklySummary: Boolean = true,
-  /** Aviso de regreso (V2): como máximo una vez por semana. */
+  /** Aviso semanal (V2): como máximo una vez por semana. */
   val returnNotice: Boolean = false,
-  /** Mensajes breves después de responder; si se apaga, solo se registra. */
+  /** Unas palabras después de responder; si se apaga, solo se registra la respuesta. */
   val acknowledgements: Boolean = true,
-  /** Constancia elegida: veces por semana que fija la persona; 0 es apagada. Variante de la prueba. */
+  /** Veces por semana que la persona elige; 0 es apagado. */
   val constancy: Int = 0,
   val constancyPaused: Boolean = false,
-  /** Desde 3.0. Se guarda en una clave nueva; quien actualiza parte con el aura media. */
+  /** Desde 3.0. Quien actualiza parte con el aura media. */
   val aura: AuraLevel = AuraLevel.MEDIUM,
+  /** Horas sin sonar (1.0.0): entre [quietFrom] y [quietUntil], Relevo no cuenta ni suena. */
+  val quietHours: Boolean = false,
+  val quietFrom: Int = QuietHours.DEFAULT_FROM,
+  val quietUntil: Int = QuietHours.DEFAULT_UNTIL,
+  val volume: SignalVolume = SignalVolume.MEDIUM,
 )
 
 class SettingsStore(context: Context) {
@@ -40,6 +52,10 @@ class SettingsStore(context: Context) {
     constancy = preferences.getInt("constancy", 0).coerceIn(0, 7),
     constancyPaused = preferences.getBoolean("constancy_paused", false),
     aura = runCatching { AuraLevel.valueOf(preferences.getString("aura", AuraLevel.MEDIUM.name).orEmpty()) }.getOrDefault(AuraLevel.MEDIUM),
+    quietHours = preferences.getBoolean("quiet_hours", false),
+    quietFrom = preferences.getInt("quiet_from", QuietHours.DEFAULT_FROM).coerceIn(0, 23),
+    quietUntil = preferences.getInt("quiet_until", QuietHours.DEFAULT_UNTIL).coerceIn(0, 23),
+    volume = runCatching { SignalVolume.valueOf(preferences.getString("volume", SignalVolume.MEDIUM.name).orEmpty()) }.getOrDefault(SignalVolume.MEDIUM),
   )
 
   fun save(settings: Settings) {
@@ -52,10 +68,14 @@ class SettingsStore(context: Context) {
       .putInt("constancy", settings.constancy.coerceIn(0, 7))
       .putBoolean("constancy_paused", settings.constancyPaused)
       .putString("aura", settings.aura.name)
+      .putBoolean("quiet_hours", settings.quietHours)
+      .putInt("quiet_from", settings.quietFrom.coerceIn(0, 23))
+      .putInt("quiet_until", settings.quietUntil.coerceIn(0, 23))
+      .putString("volume", settings.volume.name)
       .apply()
   }
 
-  /** Última vez que se abrió la app; el aviso de regreso solo llega si pasó una semana sin abrirla. */
+  /** Última vez que se abrió la app; el aviso semanal solo llega si pasó una semana sin abrirla. */
   var lastOpenedAt: Long
     get() = preferences.getLong("last_opened_at", 0L)
     set(value) { preferences.edit().putLong("last_opened_at", value).apply() }
@@ -64,7 +84,7 @@ class SettingsStore(context: Context) {
     get() = preferences.getLong("last_return_notice_at", 0L)
     set(value) { preferences.edit().putLong("last_return_notice_at", value).apply() }
 
-  /** «Ahora no» seguidos en el aviso de regreso; al segundo, la app pregunta una vez si se apaga. */
+  /** «Ahora no» seguidos en el aviso semanal; al segundo, la app pregunta una vez si se apaga. */
   var returnNotNow: Int
     get() = preferences.getInt("return_not_now", 0)
     set(value) { preferences.edit().putInt("return_not_now", value).apply() }

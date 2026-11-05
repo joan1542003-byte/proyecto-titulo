@@ -326,5 +326,3 @@ fun SectionHeader(title: String, modifier: Modifier = Modifier, action: String? 
 @Composable
 fun SectionGap() = Spacer(Modifier.height(Gap.section))
 
-@Composable
-internal fun Hairline(color: Color = Relevo.colors.line) = Box(Modifier.fillMaxWidth().height(1.dp).background(color))

@@ -43,8 +43,6 @@ enum class Sky(internal val base: Color, internal val blobs: List<SkyBlob>) {
   AURA(Color(0xFFFBF5EC), listOf(SkyBlob(Color(0xFFFFD54A).copy(alpha = .75f), .25f, .75f, .55f), SkyBlob(Color(0xFFF6A3CB).copy(alpha = .75f), .7f, .3f, .5f), SkyBlob(Color(0xFF9DD6F4).copy(alpha = .75f), .15f, .2f, .45f), SkyBlob(Color(0xFFC5B2F6).copy(alpha = .75f), .9f, .8f, .45f))),
   ;
 
-  /** Tres colores representativos, para ilustraciones que usan la familia (la guía del Tag). */
-  internal val palette: List<Color> get() = blobs.map { it.color.copy(alpha = 1f) }.take(3)
 }
 
 /** La familia de una actividad, por su ícono. Las que la app no reconoce toman el aura suave. */

@@ -26,7 +26,6 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -60,8 +59,6 @@ import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.theme.Relevo
 import com.example.relevo.theme.RelevoTheme
 import com.example.relevo.ui.components.KitIcon
-import com.example.relevo.ui.components.Photo
-import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.LocalNavScope
 import com.example.relevo.ui.components.LocalSharedScope
 import com.example.relevo.ui.components.Motion
@@ -79,23 +76,24 @@ import com.example.relevo.ui.components.LocalAuraLevel
 import kotlinx.coroutines.launch
 
 internal enum class Route {
-  WELCOME, HOW_IT_WORKS, CONSENT, PERMISSION, PROFILE_SETUP, FIRST_RELEVO,
+  WELCOME, HOW_IT_WORKS, CONSENT, PERMISSION, PROFILE_SETUP,
   TABS, PREPARE, ACTIVE, SIGNAL, DECIDE,
   ROUTE_EDIT, PROFILE_EDIT, NOTICES, APPEARANCE, PERMISSIONS, HISTORY, ACTIVITIES, ACTIVITY_EDIT,
-  PRIVACY, CONSENT_DETAILS, STUDY, WEEK, CLOSING, FEEDBACK, REPORT,
+  PRIVACY, CONSENT_DETAILS, FEEDBACK, REPORT,
 }
 
+/** Tres destinos, nombrados con sustantivos. La ruta por intereses se llama «Actividades» (1.0.0). */
 internal enum class Tab(val label: String, val icon: KitIcon) {
   HOME("Inicio", KitIcon.INICIO),
-  ROUTE("Ruta", KitIcon.RUTA),
+  ROUTE("Actividades", KitIcon.RUTA),
   PROFILE("Perfil", KitIcon.PERFIL),
 }
 
 /** Pantallas que dependen del estado del relevo y no se abandonan con el gesto de volver. */
 private val stateScreens = setOf(Route.SIGNAL, Route.DECIDE)
-private val firstRun = setOf(Route.WELCOME, Route.CONSENT, Route.PERMISSION, Route.PROFILE_SETUP, Route.FIRST_RELEVO)
+private val firstRun = setOf(Route.WELCOME, Route.CONSENT, Route.PERMISSION, Route.PROFILE_SETUP)
 /** Se presentan como hoja completa: suben desde abajo, como las pantallas de creación de iOS. */
-private val modalRoutes = setOf(Route.PREPARE, Route.ACTIVITY_EDIT, Route.FEEDBACK, Route.REPORT, Route.WEEK, Route.CLOSING, Route.PROFILE_EDIT)
+private val modalRoutes = setOf(Route.PREPARE, Route.ACTIVITY_EDIT, Route.FEEDBACK, Route.REPORT, Route.PROFILE_EDIT)
 /** Manejan su propio «volver» porque tienen pasos internos. */
 private val selfBack = setOf(Route.PREPARE, Route.PROFILE_SETUP) + stateScreens
 
@@ -131,7 +129,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   val lastReminder by viewModel.lastReminder.collectAsState()
   val backgroundUnrestricted by viewModel.backgroundUnrestricted.collectAsState()
   val syncStatus by viewModel.syncStatus.collectAsState()
-  val study by viewModel.study.collectAsState()
+  val laterPending by viewModel.laterPending.collectAsState()
+  val limitReviewDue by viewModel.limitReviewDue.collectAsState()
   val returnDismissedFor by viewModel.returnDismissedFor.collectAsState()
   val participation by viewModel.participation.collectAsState()
   val profile by viewModel.profile.collectAsState()
@@ -152,6 +151,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   val firstActivated by viewModel.firstActivated.collectAsState()
   val tag by viewModel.tag.collectAsState()
   val tagStatus by viewModel.tagStatus.collectAsState()
+  // Horas sin sonar (1.0.0): se calcula al dibujar, y la app se vuelve a dibujar al abrirla.
+  val quietNow = settings.quietHours && com.example.relevo.domain.QuietHours.contains(java.time.LocalTime.now().hour, settings.quietFrom, settings.quietUntil)
 
   val preferences = remember { context.getSharedPreferences("relevo_experience", android.content.Context.MODE_PRIVATE) }
   fun onboardingComplete() = preferences.getBoolean("onboarding_complete", false)
@@ -161,12 +162,20 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     ReminderStatus.SILENCED, ReminderStatus.CLOSED -> listOf(Route.TABS, Route.DECIDE)
     else -> listOf(Route.TABS)
   }
-  fun afterOnboarding(): List<Route> = if (!profile.setupSeen) listOf(Route.PROFILE_SETUP) else routeForStatus(reminder.status)
-  // Sin el consentimiento vigente no se usa la app (D-084): la primera vez, bienvenida; después, el consentimiento.
+  /**
+   * Después del permiso, la primera vez va directo a preparar el primer relevo, que enseña haciendo. El
+   * perfil se pide después de activarlo (1.0.0; pedido de la comisión del 28 de octubre).
+   */
+  fun afterOnboarding(): List<Route> =
+    if (guide.prepare && history.isEmpty() && (reminder.status == ReminderStatus.DRAFT || reminder.status == ReminderStatus.READY)) listOf(Route.TABS, Route.PREPARE)
+    else routeForStatus(reminder.status)
+  // Sin el consentimiento vigente no se usa la app (D-084). La primera vez, la bienvenida; quien ya aceptó
+  // una versión anterior, el texto nuevo.
   fun initialStack(): List<Route> = when {
-    participation == ParticipationMode.NONE -> if (onboardingComplete()) listOf(Route.CONSENT) else listOf(Route.WELCOME)
+    participation == ParticipationMode.NONE ->
+      if (onboardingComplete() || com.example.relevo.data.Participation.acceptedBefore(context)) listOf(Route.CONSENT) else listOf(Route.WELCOME)
     !onboardingComplete() -> listOf(Route.PERMISSION)
-    else -> afterOnboarding()
+    else -> routeForStatus(reminder.status)
   }
 
   var stack by rememberSaveable(stateSaver = RouteStackSaver) { mutableStateOf(initialStack()) }
@@ -179,8 +188,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   var routeEditInterest by rememberSaveable { mutableStateOf("") }
   var editingActivityId by rememberSaveable { mutableStateOf<String?>(null) }
   var routeInterest by rememberSaveable { mutableStateOf<String?>(null) }
-  /** «Cómo funciona» se abre la primera vez, antes del consentimiento, o desde el perfil. */
-  var howFromProfile by rememberSaveable { mutableStateOf(false) }
+  /** Paso en que abre la preparación: «usage» para cambiar solo el tiempo. */
+  var prepareAt by rememberSaveable { mutableStateOf<String?>(null) }
   val holder = rememberSaveableStateHolder()
   val discarded = remember { mutableStateListOf<Route>() }
   val current = stack.last()
@@ -242,9 +251,10 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     }
   }
 
-  fun startPrepare(key: String?) {
+  fun startPrepare(key: String?, at: String? = null) {
     viewModel.onPrepareOpened(key?.substringBefore(':')?.ifBlank { null } ?: "nuevo")
     photoKey = key
+    prepareAt = at
     push(Route.PREPARE)
   }
 
@@ -261,11 +271,12 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     onUsageSettings = viewModel::openUsageAccessSettings,
     onBackground = viewModel::requestBackgroundAccess,
     onDismissAcknowledgement = { acknowledgement = null },
-    onDismissInstruction = viewModel::dismissInstruction,
-    onWeekReview = { push(Route.WEEK) },
-    onClosing = { push(Route.CLOSING) },
     onDismissReturn = viewModel::dismissReturn,
     onNotices = { push(Route.NOTICES) },
+    onLaterActivate = { if (!viewModel.activateLater()) startPrepare(null) },
+    onLaterDismiss = viewModel::dismissLater,
+    onLimitReview = { change -> viewModel.answerLimitReview(change); if (change && viewModel.repeatLast()) startPrepare(null, at = "usage") },
+    onProfileSetup = { push(Route.PROFILE_SETUP) },
   )
 
   val rootHaze = rememberHazeState()
@@ -283,26 +294,29 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
           holder.SaveableStateProvider(route.name) {
             Box(Modifier.fillMaxSize().background(Relevo.colors.paper)) {
               when (route) {
-                Route.WELCOME -> WelcomeScreen(onStart = { howFromProfile = false; push(Route.HOW_IT_WORKS) })
-                Route.HOW_IT_WORKS -> if (howFromProfile) HowItWorksScreen(onContinue = { pop() }, continueLabel = "Entendido", onBack = { pop() }, onVideo = viewModel::onTutorialVideo)
-                  else HowItWorksScreen(
-                    onContinue = { push(Route.CONSENT) }, onBack = { pop() }, onVideo = viewModel::onTutorialVideo,
-                    onReturnNotice = viewModel::chooseReturnNotice,
-                    onPage = { viewModel.logScreen("guia_$it") },
-                  )
+                Route.WELCOME -> WelcomeScreen(onStart = { push(Route.CONSENT) })
+                Route.HOW_IT_WORKS -> HowItWorksScreen(onContinue = { pop() }, onBack = { pop() }, onVideo = viewModel::onTutorialVideo)
                 Route.CONSENT -> ConsentScreen(
                   remoteConfigured = viewModel.remoteConfigured,
                   deletionPending = viewModel.deletionPending,
-                  onAccept = { viewModel.updateConsent(true); if (onboardingComplete()) replace(afterOnboarding()) else push(Route.PERMISSION) },
+                  renewal = com.example.relevo.data.Participation.acceptedBefore(context) || onboardingComplete(),
+                  onAccept = {
+                    viewModel.updateConsent(true)
+                    if (onboardingComplete()) replace(routeForStatus(reminder.status)) else push(Route.PERMISSION)
+                  },
                   onPrivacy = { push(Route.PRIVACY) },
                 )
                 Route.PERMISSION -> PermissionScreen(
                   usageAccess = usageAccess,
                   onOpenUsageSettings = viewModel::openUsageAccessSettings,
                   onRefresh = viewModel::refreshUsageAccess,
-                  onContinue = { completeOnboarding(); replace(afterOnboarding()) },
-                  backgroundUnrestricted = backgroundUnrestricted,
-                  onBattery = viewModel::requestBackgroundAccess,
+                  onContinue = {
+                    completeOnboarding()
+                    val next = afterOnboarding()
+                    if (Route.PREPARE in next) { viewModel.onPrepareOpened("primer_relevo"); photoKey = null; prepareAt = null }
+                    tab = Tab.HOME
+                    replace(next)
+                  },
                 )
                 Route.PROFILE_SETUP -> ProfileSetupScreen(
                   profile = profile,
@@ -311,34 +325,11 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   onInterests = viewModel::setInterests,
                   onFinish = { showRoute ->
                     viewModel.completeProfileSetup()
-                    // D-090: si todavía no hay un relevo, la guía sigue con el primer relevo.
-                    if (guide.prepare && reminder.status != ReminderStatus.WAITING) replace(listOf(Route.FIRST_RELEVO))
-                    else {
-                      tab = if (showRoute) Tab.ROUTE else Tab.HOME
-                      replace(routeForStatus(reminder.status))
-                    }
+                    tab = if (showRoute) Tab.ROUTE else Tab.HOME
+                    replace(routeForStatus(reminder.status))
                   },
+                  onClose = if (stack.size > 1) ({ pop() }) else null,
                 )
-                Route.FIRST_RELEVO -> {
-                  val track = routes.firstOrNull { it.currentStep != null }
-                  val step = track?.currentStep
-                  FirstRelevoScreen(
-                    name = profile.name,
-                    suggestion = step?.activity,
-                    routeTitle = track?.title,
-                    picture = track?.let { interestPhoto(it.interest)?.let { photo -> Picture.OfPhoto(photo) } ?: Picture.OfIcon(interestIcon(it.interest)) } ?: Picture.OfPhoto(Photo.PUERTA),
-                    onStart = {
-                      if (track != null && step != null) viewModel.prepareFromStep(track.interest, step.id)
-                      viewModel.onPrepareOpened("primer_relevo")
-                      tab = Tab.HOME
-                      photoKey = null
-                      replace(listOf(Route.TABS, Route.PREPARE))
-                    },
-                    onLater = { viewModel.logScreen("primer_relevo_despues"); tab = Tab.HOME; replace(listOf(Route.TABS)) },
-                    firstStep = step?.firstStep.orEmpty(),
-                    place = step?.place.orEmpty(),
-                  )
-                }
                 Route.TABS -> TabsHost(
                   tab = tab,
                   reselect = reselect,
@@ -347,7 +338,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   when (selected) {
                     Tab.HOME -> HomeTab(
                       reminder = reminder, history = history, customActivities = customActivities, lastReminder = lastReminder,
-                      study = study, usageAccess = usageAccess, backgroundUnrestricted = backgroundUnrestricted, profile = profile,
+                      usageAccess = usageAccess, backgroundUnrestricted = backgroundUnrestricted, profile = profile,
+                      laterPending = laterPending, limitReviewDue = limitReviewDue, quiet = quietNow, quietUntil = settings.quietUntil,
                       routes = routes, acknowledgement = acknowledgement, returnDismissedFor = returnDismissedFor,
                       quickFeedbackDue = quickFeedbackDue, onQuickFeedback = viewModel::submitQuickFeedback, onFeedback = { push(Route.FEEDBACK) },
                       guided = guide.prepare,
@@ -363,22 +355,21 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                       onSetCurrent = viewModel::setCurrentStep,
                       onEdit = { interest -> routeEditInterest = interest; push(Route.ROUTE_EDIT) },
                       onChooseInterests = { push(Route.PROFILE_EDIT) },
+                      onActivities = { push(Route.ACTIVITIES) },
                     )
                     Tab.PROFILE -> ProfileTab(
-                      profile = profile, routes = routes, history = history, settings = settings, study = study,
-                      participation = participation, customCount = customActivities.size, reselect = reselect,
+                      profile = profile, routes = routes, history = history, settings = settings,
+                      participation = participation, reselect = reselect,
                       actions = ProfileActions(
                         onEdit = { push(Route.PROFILE_EDIT) },
                         onNotices = { push(Route.NOTICES) },
                         onAppearance = { push(Route.APPEARANCE) },
                         onPermissions = { push(Route.PERMISSIONS) },
                         onHistory = { push(Route.HISTORY) },
-                        onActivities = { push(Route.ACTIVITIES) },
-                        onStudy = { push(Route.STUDY) },
                         onPrivacy = { push(Route.PRIVACY) },
                         onFeedback = { push(Route.FEEDBACK) },
                         onReport = { push(Route.REPORT) },
-                        onHowItWorks = { howFromProfile = true; push(Route.HOW_IT_WORKS) },
+                        onHowItWorks = { push(Route.HOW_IT_WORKS) },
                         onWeekNote = viewModel::submitWeekNote,
                         onOpenRoute = { tab = Tab.ROUTE },
                       ),
@@ -388,8 +379,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 Route.PREPARE -> PrepareScreen(
                   editing = editing,
                   reminder = reminder, apps = apps, customActivities = customActivities, routes = routes, usageAccess = usageAccess,
-                  backgroundUnrestricted = backgroundUnrestricted, studyCondition = study.condition, photoKey = photoKey, guided = guide.prepare,
-                  tag = tag, tagStatus = tagStatus,
+                  backgroundUnrestricted = backgroundUnrestricted, photoKey = photoKey, guided = guide.prepare, openAt = prepareAt,
+                  tag = tag, tagStatus = tagStatus, volume = settings.volume,
                   actions = PrepareActions(
                     onActivity = viewModel::updateActivity,
                     onStart = viewModel::updateHowToStart,
@@ -400,6 +391,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     onDuration = viewModel::updateRequiredUsage,
                     onRoute = viewModel::updateSignalRoute,
                     onTestSound = { viewModel.testSignal() },
+                    onVolume = { volume -> viewModel.updateSettings { copy(volume = volume) } },
                     onUsageSettings = viewModel::openUsageAccessSettings,
                     onBackground = viewModel::requestBackgroundAccess,
                     onSaveCustom = { viewModel.saveCustomActivity(it, apply = false) },
@@ -417,8 +409,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   ),
                 )
                 Route.ACTIVE -> ActiveScreen(
-                  reminder = reminder, customActivities = customActivities, usageAccess = usageAccess,
-                  backgroundUnrestricted = backgroundUnrestricted, photoKey = photoKey,
+                  reminder = reminder, usageAccess = usageAccess, backgroundUnrestricted = backgroundUnrestricted,
+                  quiet = quietNow, quietUntil = settings.quietUntil,
                   onBack = { pop() }, onDisarm = viewModel::disarm,
                   onUsageSettings = viewModel::openUsageAccessSettings, onBackground = viewModel::requestBackgroundAccess,
                   onDelete = viewModel::deleteActive,
@@ -431,12 +423,16 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   },
                 )
                 Route.SIGNAL -> SignalScreen(
-                  reminder = reminder, customActivities = customActivities, studyActive = study.condition != null, guided = guide.signal,
+                  reminder = reminder, customActivities = customActivities, guided = guide.signal,
                   onTestSound = { viewModel.testSignal(it) }, onContinue = viewModel::silence,
                 )
-                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered, guided = guide.decide) { outcome, knew, recalled, feeling, noticed ->
-                  viewModel.completeEvaluation(outcome, knew, recalled, feeling, noticed)
-                  acknowledgement = if (settings.acknowledgements) acknowledgementFor(outcome) else null
+                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered, guided = guide.decide) { outcome, knew, recalled, feeling, noticed, keepForLater ->
+                  viewModel.completeEvaluation(outcome, knew, recalled, feeling, noticed, keepForLater)
+                  acknowledgement = when {
+                    !settings.acknowledgements -> null
+                    keepForLater -> "Queda lista en Inicio para cuando quieras."
+                    else -> acknowledgementFor(outcome)
+                  }
                   viewModel.reset()
                   tab = Tab.HOME
                   replace(listOf(Route.TABS), isBack = true)
@@ -489,15 +485,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   onRestart = { tab = Tab.HOME; replace(listOf(Route.WELCOME)) },
                 )
                 Route.CONSENT_DETAILS -> ConsentDetailsScreen(viewModel.remoteConfigured, onBack = { pop() })
-                Route.STUDY -> StudyScreen(study, reminder.participantCode, participation == ParticipationMode.STUDY, onStart = viewModel::startStudy, onEnd = viewModel::endStudy, onBack = { pop() })
-                Route.WEEK -> {
-                  val week = study.pendingWeek
-                  if (week == null) LaunchedEffect(Unit) { pop() }
-                  else WeekReviewScreen(week, if (week == 0) null else study.plan?.conditionOfWeek(week), comparison = study.comparison,
-                    onSubmit = { preparation, annoyance, place, comment, compared -> viewModel.submitWeek(week, preparation, annoyance, place, comment, compared); pop() },
-                    onLater = { pop() })
-                }
-                Route.CLOSING -> ClosingScreen(comparison = study.comparison, onSubmit = { viewModel.submitClosing(it); pop() }, onLater = { pop() })
                 Route.FEEDBACK -> FeedbackScreen(onSend = { stars, comment -> viewModel.submitFeedback(stars, comment); pop() }, onBack = { pop() })
                 Route.REPORT -> ReportScreen(onSend = { text, attach -> viewModel.submitReport(text, attach); pop() }, onBack = { pop() })
               }
@@ -515,7 +502,14 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
         NextStepSheet(suggestion, onAccept = viewModel::acceptNextStep, onStay = viewModel::declineNextStep, onDismiss = viewModel::dismissNextStep)
       }
       if (askTurnOffReturn) TurnOffReturnSheet(onAnswer = viewModel::answerTurnOffReturn)
-      if (firstActivated && reminder.status == ReminderStatus.WAITING) FirstRelevoActiveSheet(reminder, onDismiss = viewModel::dismissFirstActivated)
+      if (firstActivated && reminder.status == ReminderStatus.WAITING) {
+        FirstRelevoActiveSheet(
+          reminder,
+          onDismiss = viewModel::dismissFirstActivated,
+          // El perfil se pide aquí, después del primer relevo, y no antes (1.0.0).
+          onProfile = if (!profile.setupSeen) ({ viewModel.dismissFirstActivated(); push(Route.PROFILE_SETUP) }) else null,
+        )
+      }
     }
     // Las hojas van sobre todo y desenfocan la app que queda detrás.
     SheetHost(sheets, rootHaze)

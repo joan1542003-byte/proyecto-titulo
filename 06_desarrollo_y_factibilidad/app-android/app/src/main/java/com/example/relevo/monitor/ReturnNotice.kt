@@ -56,7 +56,7 @@ object ReturnNotice {
 
   fun check(context: Context, now: Long = System.currentTimeMillis()) {
     val settings = SettingsStore(context)
-    if (!settings.load().returnNotice || !Participation.canUse(context)) return
+    if (!settings.load().returnNotice || !Participation.participating(context)) return
     val status = ReminderStore(context).load().status
     if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED) return
     if (!due(now, settings.lastOpenedAt, settings.lastReturnNoticeAt)) return

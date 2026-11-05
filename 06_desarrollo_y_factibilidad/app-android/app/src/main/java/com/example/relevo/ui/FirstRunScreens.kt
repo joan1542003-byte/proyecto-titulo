@@ -1,15 +1,16 @@
 package com.example.relevo.ui
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.shrinkVertically
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -19,6 +20,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -29,60 +31,49 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import com.example.relevo.theme.Relevo
-import com.example.relevo.ui.components.GuardedButton
+import com.example.relevo.ui.components.AuraBackground
+import com.example.relevo.ui.components.AuraMood
+import com.example.relevo.ui.components.BrandMark
 import com.example.relevo.ui.components.CheckMark
+import com.example.relevo.ui.components.Gap
+import com.example.relevo.ui.components.GuardedButton
+import com.example.relevo.ui.components.IconTile
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Notice
-import com.example.relevo.ui.components.Photo
-import com.example.relevo.ui.components.PhotoImage
-import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.RelevoButton
+import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.RelevoScreen
+import com.example.relevo.ui.components.ScreenTitle
 import com.example.relevo.ui.components.SectionGap
-import com.example.relevo.ui.components.Signature
-import com.example.relevo.ui.components.StatusChip
+import com.example.relevo.ui.components.SkyCard
 import com.example.relevo.ui.components.Wordmark
 import com.example.relevo.ui.components.appear
-import com.example.relevo.ui.components.AuraBackground
-import com.example.relevo.ui.components.AuraMood
-import com.example.relevo.ui.components.BrandMark
-import androidx.compose.ui.text.style.TextAlign
-import com.example.relevo.ui.components.rememberReduceMotion
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.BoxWithConstraints
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
-import com.example.relevo.ui.components.ButtonKind
-import com.example.relevo.ui.components.Gap
-import com.example.relevo.ui.components.IconTile
-import com.example.relevo.ui.components.RelevoIcon
-import com.example.relevo.ui.components.ScreenTitle
-import com.example.relevo.ui.components.SkyCard
 
 /**
- * A1. La marca enfoca sobre el aura (3.0, D-125 a D-128), con el descriptor del proyecto: para una marca
- * nueva, decir qué hace ayuda a entenderla (Luffarelli et al., 2019). La firma se escribe sola. No pide
- * datos ni explica de más.
+ * A1. La bienvenida: la marca sobre el aura, el descriptor —para una marca nueva, decir qué hace ayuda a
+ * entenderla (Luffarelli et al., 2019)— y un ejemplo que se ve como en la app. Es la primera de tres
+ * pantallas antes del primer relevo (1.0.0): bienvenida, consentimiento y permiso.
  */
 @Composable
 internal fun WelcomeScreen(onStart: () -> Unit) {
   RelevoScreen(
-    // El aura a pantalla completa, como al abrir «Relevo, la app».
     backdrop = { AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.CALM) },
     bottom = {
-      ScreenTitle("Anota algo que quieres hacer.", "Relevo te avisa a tiempo, cuando llevas un rato en el teléfono.", Modifier.fillMaxWidth().padding(bottom = 8.dp).appear(3))
+      ScreenTitle("Anota algo que quieres hacer", "Cuando llevas un rato en el teléfono, Relevo suena donde empiezas.", Modifier.fillMaxWidth().padding(bottom = 8.dp).appear(3))
       RelevoButton("Empezar", onStart)
     },
   ) {
@@ -96,12 +87,12 @@ internal fun WelcomeScreen(onStart: () -> Unit) {
       Text("Un recordatorio físico preparado desde el teléfono", style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(1))
     }
     Spacer(Modifier.height(28.dp))
-    // Un ejemplo que se ve como en la app: la actividad en su cielo, su primer paso y su lugar.
+    // Un ejemplo que se ve como en la app: la actividad en su cielo, cómo empieza y dónde.
     BoxWithConstraints(Modifier.fillMaxWidth().height(392.dp).appear(2)) {
       val w = maxWidth
       SkyCard("Leer", KitIcon.LEER, Modifier.align(Alignment.TopCenter).width(w * 0.56f), aspect = 1f, largeLabel = true)
-      FloatingRow(KitIcon.PRIMER_PASO, "Abrir el libro", "Tu primer paso", Modifier.align(Alignment.TopStart).padding(top = w * 0.56f + 18.dp).width(w * 0.68f))
-      FloatingRow(KitIcon.LUGAR, "En el velador", "Donde empiezas", Modifier.align(Alignment.TopEnd).padding(top = w * 0.56f + 108.dp).width(w * 0.62f))
+      FloatingRow(KitIcon.PRIMER_PASO, "Abrir el libro", "Para empezar", Modifier.align(Alignment.TopStart).padding(top = w * 0.56f + 18.dp).width(w * 0.68f))
+      FloatingRow(KitIcon.LUGAR, "En el velador", "Dónde empiezas", Modifier.align(Alignment.TopEnd).padding(top = w * 0.56f + 108.dp).width(w * 0.62f))
     }
   }
 }
@@ -109,9 +100,9 @@ internal fun WelcomeScreen(onStart: () -> Unit) {
 /** Fila que flota sobre el aura, en vidrio claro, con su ficha de color. */
 @Composable
 private fun FloatingRow(icon: KitIcon, title: String, subtitle: String, modifier: Modifier = Modifier) {
-  val shape = androidx.compose.foundation.shape.RoundedCornerShape(21.dp)
+  val shape = RoundedCornerShape(21.dp)
   Row(
-    modifier.shadow(16.dp, shape, ambientColor = androidx.compose.ui.graphics.Color.Black.copy(alpha = .04f), spotColor = androidx.compose.ui.graphics.Color.Black.copy(alpha = .16f))
+    modifier.shadow(16.dp, shape, ambientColor = Color.Black.copy(alpha = .04f), spotColor = Color.Black.copy(alpha = .16f))
       .clip(shape).background(Relevo.colors.card.copy(alpha = .88f)).padding(10.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
@@ -125,26 +116,28 @@ private fun FloatingRow(icon: KitIcon, title: String, subtitle: String, modifier
 }
 
 /**
- * A2. En esta versión, Relevo es parte de la prueba (D-084): para usarlo hay que aceptar participar.
- * Arriba va la versión breve y, a pedido, el detalle de la hoja de consentimiento de 21 días. Aceptar
- * sigue siendo voluntario; quien no quiere participar no sigue, y quien participa puede dejar la
- * prueba y borrar sus datos cuando quiera.
+ * A2. El consentimiento (versión 2026-11-04-v14). Relevo sigue siendo parte de un proyecto de título y
+ * sigue guardando y enviando los mismos datos; desde 1.0.0 ya no hay una prueba de 21 días ni semanas con
+ * instrucciones. Arriba, lo esencial; cada sección se abre con un toque y está escrita en listas (R12 del
+ * estudio de los textos). Decir que no es tan fácil como decir que sí. [renewal]: la persona aceptó una
+ * versión anterior; conserva su código y sus datos.
  */
 @Composable
 internal fun ConsentScreen(
   remoteConfigured: Boolean,
   deletionPending: Boolean,
+  renewal: Boolean,
   onAccept: () -> Unit,
   onPrivacy: () -> Unit,
 ) {
   var checked by rememberSaveable { mutableStateOf(false) }
-  var details by rememberSaveable { mutableStateOf(false) }
   var declined by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(
-    title = "Antes de empezar",
-    subtitle = "Lee lo que aceptas. Puedes salir cuando quieras.",
+    title = if (renewal) "Relevo cambió" else "Antes de empezar",
+    subtitle = if (renewal) "Ya no hay una prueba de 21 días. Lee lo que aceptas; tu código y tus datos se mantienen."
+      else "Lee lo que aceptas. Puedes dejar de usarlo cuando quieras.",
     bottom = {
-      val shape = androidx.compose.foundation.shape.RoundedCornerShape(20.dp)
+      val shape = RoundedCornerShape(20.dp)
       Row(
         Modifier.fillMaxWidth().heightIn(min = 56.dp).clip(shape).background(Relevo.colors.card)
           .border(if (checked) 2.dp else 1.5.dp, if (checked) Relevo.colors.ink else Relevo.colors.line, shape)
@@ -154,59 +147,91 @@ internal fun ConsentScreen(
       ) {
         CheckMark(checked, square = true)
         Spacer(Modifier.width(12.dp))
-        Text("Acepto participar durante 21 días.", style = Relevo.type.body.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.Medium), color = Relevo.colors.ink)
+        Text("Acepto usar Relevo con estas condiciones", style = Relevo.type.body.copy(fontWeight = FontWeight.Medium), color = Relevo.colors.ink)
       }
-      GuardedButton("Aceptar y empezar", onAccept, missing = when {
-        deletionPending -> "Espera a que terminemos de borrar tus datos."
-        !checked -> "Marca «Acepto participar durante 21 días» para seguir."
+      GuardedButton(if (renewal) "Aceptar y seguir" else "Aceptar y empezar", onAccept, missing = when {
+        deletionPending -> "Espera a que termine el borrado de tus datos."
+        !checked -> "Marca «Acepto usar Relevo con estas condiciones» para seguir."
         else -> null
       })
-      // Decir que no es tan fácil como decir que sí: sin presión ni culpa.
-      PlainAction(if (declined) "Ocultar" else "No quiero participar", { declined = !declined }, color = Relevo.colors.graphite)
+      PlainAction(if (declined) "Ocultar" else "No acepto", { declined = !declined }, color = Relevo.colors.graphite)
       if (declined) {
         Text(
-          "Está bien. Relevo solo se puede usar dentro de esta prueba, así que puedes cerrar la app y desinstalarla. No se guardó nada tuyo.",
+          if (renewal) "Está bien. Sin aceptar, Relevo deja de contar. Tus datos anteriores siguen guardados hasta que pidas borrarlos, o hasta el 30 de diciembre de 2026; puedes borrarlos en Privacidad y datos."
+          else "Está bien. Sin aceptar, Relevo no se puede usar: puedes cerrar la app y desinstalarla. No se guardó nada tuyo.",
           style = Relevo.type.footnote, color = Relevo.colors.graphite,
         )
+        if (renewal) PlainAction("Abrir Privacidad y datos", onPrivacy)
       }
     },
   ) {
     Text(
-      "Relevo es parte de un proyecto de título de Diseño. Por 21 días lo usas en tu día a día: cada semana te decimos dónde dejar lo que suena y, de vez en cuando, te hacemos preguntas cortas. Guardamos lo que haces en Relevo con un código; tu nombre se guarda aparte. Puedes salir y borrar tus datos cuando quieras.",
+      "Relevo es parte de un proyecto de título de Diseño de la Universidad Diego Portales. Mientras lo usas, guarda lo que haces en Relevo con un código, para estudiar cómo funciona. Tu nombre se guarda aparte. Puedes borrar tus datos cuando quieras.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
     Spacer(Modifier.height(Gap.block))
     ConsentSections(remoteConfigured)
     if (deletionPending) {
       SectionGap()
-      Notice("Todavía estamos borrando tus datos. Mientras tanto, Relevo no guarda nada.", icon = KitIcon.ADVERTENCIA) {
+      Notice("Todavía se están borrando tus datos. Mientras tanto, Relevo no guarda nada.", icon = KitIcon.ADVERTENCIA) {
         PlainAction("Abrir Privacidad y datos", onPrivacy)
       }
     }
   }
 }
 
-/** Detalle de la hoja de consentimiento de 21 días (07_validacion/consentimiento-android-vigente). */
+/** El texto del consentimiento v14, por secciones. También se lee entero desde Privacidad y datos. */
 @Composable
 internal fun ConsentSections(remoteConfigured: Boolean, expanded: Boolean = false) {
   Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
-    ConsentPart(KitIcon.INFO, expanded, "Cómo es", "Empieza con un encuentro de unos 45 minutos para dejar todo listo. Cada semana la app te dice dónde suena: junto a donde empiezas, en otro lugar de tu casa o en el teléfono. Tú eliges si usas un parlante, un reloj o un Tag. Cuando se cumple el tiempo que elegiste, suena unos 30 segundos y se apaga. Después de cada aviso y al final de cada semana hay preguntas de un toque; puedes saltarlas. Al final te invitamos a conversar unos 15 minutos. El parlante es provisorio; no es el objeto final.")
-    ConsentPart(KitIcon.DECISION, expanded, "Tú decides", "Participar es voluntario. Puedes saltar preguntas, silenciar el sonido, quitar los permisos o salir cuando quieras, sin dar explicaciones. Nadie va a juzgar lo que elijas hacer. El sonido puede molestar a otras personas; puedes detenerlo y contárnoslo.")
-    ConsentPart(KitIcon.DATOS, expanded, "Qué guardamos", "Un código al azar; lo que preparas (actividad, cómo empiezas, dónde, apps y tiempo); cuándo lo activas, a mano o solo, cuándo suena y qué respondes; cuánto usaste las apps elegidas 10 minutos antes y después del aviso; cuánto usas cada día las apps que elegiste en Relevo y cuánto tiempo usas el teléfono en total, desde 7 días antes de aceptar; el modelo del teléfono y los permisos que diste; y cómo usas Relevo: cuándo lo abres y por cuánto tiempo, qué pantallas ves, cuánto del video ves, tus intereses, tus actividades y los ajustes que cambias. Tu nombre se guarda aparte, solo con tu código, para saber quién participa; no va junto a lo que haces en Relevo.")
-    ConsentPart(KitIcon.TELEFONO, expanded, "Dónde se guarda", if (remoteConfigured) "En el teléfono y en la base de datos del proyecto (Supabase). Si no hay internet, se envía después. También queda una copia sin tu nombre en la carpeta Documentos/Relevo del teléfono; se borra si borras tus datos."
-      else "Esta instalación no tiene configurada la base remota: todo queda en este teléfono.")
-    ConsentPart(KitIcon.PRIVACIDAD, expanded, "Qué no vemos", "El permiso de Tiempo de uso podría mostrar el uso de otras apps. Relevo cuenta las que eliges mientras el relevo está activo y, cada día, cuánto las usas y el tiempo total del teléfono; de las demás apps no guarda el nombre. Si enciendes la activación automática, además mira qué app tienes abierta —solo su nombre— para saber cuándo empezar; puedes apagarla cuando quieras. No lee mensajes, fotos, búsquedas ni lo que hay en tu pantalla.")
-    ConsentPart(KitIcon.AVISOS, expanded, "Mensajes", "El investigador puede enviarte mensajes sobre el testeo; llegan como notificación de Relevo. Guardamos cuándo llegó y cuándo abriste cada uno.")
-    ConsentPart(KitIcon.CODIGO, expanded, "Tu código", "El código reemplaza tu nombre, pero no vuelve anónimos los datos: juntando actividades, lugares y horarios, alguien podría reconocerte.")
-    ConsentPart(KitIcon.CALENDARIO, expanded, "Hasta cuándo", "Puedes borrar tus datos desde Perfil, en Tus datos, o escribiendo a joan1542003@gmail.com con tu código. Si no lo haces antes, los borramos a más tardar el 30 de diciembre de 2026.")
+    ConsentPart(KitIcon.INFO, expanded, "Cómo funciona", listOf(
+      "Preparas un relevo: qué quieres hacer, cómo empiezas, dónde y cuánto tiempo en tus apps.",
+      "Cuando sumas ese tiempo, suena unos 30 segundos en el Tag, en el teléfono o en un dispositivo de audio, y se apaga solo.",
+      "Después puedes responder preguntas de un toque. Todas se pueden saltar.",
+    ))
+    ConsentPart(KitIcon.DECISION, expanded, "Tú decides", listOf(
+      "Usar Relevo es voluntario.",
+      "Puedes saltar preguntas, silenciar el sonido, quitar los permisos o dejar de usarlo cuando quieras, sin dar explicaciones.",
+      "Nadie juzga lo que eliges hacer.",
+      "El sonido puede molestar a otras personas: puedes detenerlo cuando quieras.",
+    ))
+    ConsentPart(KitIcon.DATOS, expanded, "Qué se guarda", listOf(
+      "Un código al azar, en lugar de tu nombre.",
+      "Lo que preparas: la actividad, cómo empiezas, dónde, las apps y el tiempo.",
+      "Cuándo activas un relevo, a mano o solo, cuándo suena y qué respondes.",
+      "Cuánto usaste las apps elegidas 10 minutos antes y después de que sonara.",
+      "Cada día, cuánto usas las apps que elegiste en Relevo y el tiempo total del teléfono.",
+      "El modelo del teléfono, los permisos que diste y cómo usas Relevo: cuándo lo abres, qué pantallas ves, tus intereses, tus actividades y tus ajustes.",
+      "Tu nombre se guarda aparte, solo con tu código, para saber quién usa Relevo. No va junto a lo que haces.",
+    ))
+    ConsentPart(KitIcon.TELEFONO, expanded, "Dónde se guarda", if (remoteConfigured) listOf(
+      "En el teléfono y en la base de datos del proyecto, en Supabase, un servicio para guardar datos en internet. Si no hay internet, se envía después.",
+      "Una copia sin tu nombre queda en la carpeta Documentos/Relevo del teléfono. Se borra si borras tus datos.",
+    ) else listOf("Esta instalación no tiene configurada la base de datos del proyecto: todo queda en este teléfono."))
+    ConsentPart(KitIcon.PRIVACIDAD, expanded, "Qué no se ve", listOf(
+      "El permiso de Tiempo de uso podría mostrar otras apps. Relevo cuenta solo las que eliges; de las demás no guarda el nombre.",
+      "Con la activación automática encendida, Relevo mira qué app tienes abierta, solo su nombre, para saber cuándo empezar. Puedes apagarla cuando quieras.",
+      "Relevo no lee mensajes, fotos, búsquedas ni lo que hay en tu pantalla.",
+    ))
+    ConsentPart(KitIcon.AVISOS, expanded, "Mensajes", listOf(
+      "El autor del proyecto puede enviarte mensajes sobre Relevo. Llegan como notificación.",
+      "Se guarda cuándo llegó y cuándo abriste cada uno.",
+    ))
+    ConsentPart(KitIcon.CODIGO, expanded, "Tu código", listOf(
+      "El código reemplaza tu nombre, pero no vuelve anónimos los datos: juntando actividades, lugares y horarios, alguien podría reconocerte.",
+    ))
+    ConsentPart(KitIcon.CALENDARIO, expanded, "Hasta cuándo", listOf(
+      "Puedes borrar tus datos desde Perfil, en Privacidad y datos, o escribiendo a joan1542003@gmail.com con tu código.",
+      "Si no lo haces antes, se borran a más tardar el 30 de diciembre de 2026.",
+    ))
   }
 }
 
-/** Una parte del consentimiento en su fila: el título con su ícono y, al tocarla, el texto completo. */
+/** Una parte del consentimiento en su fila: el título con su ícono y, al tocarla, la lista completa. */
 @Composable
-private fun ConsentPart(icon: KitIcon, expanded: Boolean, title: String, text: String) {
+private fun ConsentPart(icon: KitIcon, expanded: Boolean, title: String, items: List<String>) {
   var open by rememberSaveable(title) { mutableStateOf(expanded) }
-  val shape = androidx.compose.foundation.shape.RoundedCornerShape(21.dp)
+  val shape = RoundedCornerShape(21.dp)
   Column(
     Modifier.fillMaxWidth().clip(shape).background(Relevo.colors.card)
       .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Button, onClickLabel = if (open) "Ocultar" else "Leer") { open = !open }
@@ -219,30 +244,30 @@ private fun ConsentPart(icon: KitIcon, expanded: Boolean, title: String, text: S
       RelevoIcon(if (open) KitIcon.CONTRAER else KitIcon.EXPANDIR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card)
     }
     AnimatedVisibility(open, enter = expandVertically(Motion.smooth()) + fadeIn(Motion.standard()), exit = shrinkVertically(Motion.smooth()) + fadeOut(Motion.standard(Motion.SHORT))) {
-      Text(text, style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 59.dp, top = 6.dp, bottom = 4.dp))
+      Column(Modifier.padding(start = 59.dp, top = 6.dp, bottom = 4.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        items.forEach { item ->
+          Row {
+            Text("•", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.width(14.dp))
+            Text(item, style = Relevo.type.subhead, color = Relevo.colors.graphite)
+          }
+        }
+      }
     }
   }
 }
 
-/** Consentimiento completo, de solo lectura, desde Privacidad y datos. */
+/** El consentimiento completo, de solo lectura, desde Privacidad y datos. */
 @Composable
 internal fun ConsentDetailsScreen(remoteConfigured: Boolean, onBack: () -> Unit) {
-  RelevoScreen(title = "Lo que aceptaste", subtitle = "Aceptaste participar con este texto.", onBack = onBack) {
+  RelevoScreen(title = "Lo que aceptaste", subtitle = "Aceptaste usar Relevo con este texto.", onBack = onBack, backLabel = "Privacidad y datos") {
     ConsentSections(remoteConfigured, expanded = true)
   }
 }
 
-/** Al final de la fila de un permiso: la marca de listo o un botón pequeño para darlo. */
-@Composable
-private fun PermissionEnd(granted: Boolean, label: String, primary: Boolean = false, onClick: () -> Unit) {
-  if (granted) RelevoIcon(KitIcon.LISTO, size = 22.dp, tint = Relevo.colors.ink, background = Relevo.colors.card, strokeWidth = 2f)
-  else RelevoButton(label, onClick, kind = if (primary) ButtonKind.Primary else ButtonKind.Secondary, compact = true)
-}
-
 /**
- * A3. El permiso de Tiempo de uso es necesario para avanzar; al volver con el permiso activo, la
- * app sigue sola. Desde 2.12 (D-087) la app pide las notificaciones apenas se abre esta pantalla,
- * para que queden encendidas, y ofrece quitar la restricción de batería.
+ * A3. El único permiso que se pide antes del primer relevo: Tiempo de uso, sin el cual Relevo no puede
+ * contar. Las notificaciones se piden al activar un relevo y la batería, cuando hace falta (1.0.0). Se dice
+ * el nombre que usa Android, para encontrarlo en los ajustes (R6). Al volver con el permiso, sigue solo.
  */
 @Composable
 internal fun PermissionScreen(
@@ -250,21 +275,13 @@ internal fun PermissionScreen(
   onOpenUsageSettings: () -> Unit,
   onRefresh: () -> Unit,
   onContinue: () -> Unit,
-  backgroundUnrestricted: Boolean = true,
-  onBattery: () -> Unit = {},
 ) {
-  val context = LocalContext.current
-  var notifications by remember { mutableStateOf(hasNotificationPermission(context)) }
   var waitingForSettings by remember { mutableStateOf(false) }
-  LaunchedEffect(Unit) { if (!notifications) requestNotificationPermission(context) }
-  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
-    onRefresh()
-    notifications = hasNotificationPermission(context)
-  }
+  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { onRefresh() }
   LaunchedEffect(usageAccess) { if (usageAccess && waitingForSettings) onContinue() }
   RelevoScreen(
-    title = "Para saber cuándo avisarte",
-    subtitle = "Relevo solo cuenta minutos en las apps que elijas. No ve lo que haces en ellas.",
+    title = "Para contar tu tiempo",
+    subtitle = "Relevo cuenta minutos solo en las apps que elijas. No ve lo que haces en ellas.",
     bottom = {
       if (usageAccess) RelevoButton("Seguir", onContinue)
       else RelevoButton("Dar el permiso", { waitingForSettings = true; onOpenUsageSettings() })
@@ -272,23 +289,27 @@ internal fun PermissionScreen(
   ) {
     ListSection {
       ListRow(
-        "Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Necesario.",
+        "Tiempo de uso", icon = KitIcon.PERMISO, subtitle = if (usageAccess) "Listo" else "Necesario para contar",
         onClick = if (usageAccess) null else ({ waitingForSettings = true; onOpenUsageSettings() }),
-        trailing = { PermissionEnd(usageAccess, "Dar el permiso", primary = true) { waitingForSettings = true; onOpenUsageSettings() } },
-        tileColor = Relevo.colors.card,
-      )
-      ListRow(
-        "Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app.",
-        onClick = if (notifications) null else ({ requestNotificationPermission(context) }),
-        trailing = { PermissionEnd(notifications, "Activar") { requestNotificationPermission(context) } },
-        tileColor = Relevo.colors.card,
-      )
-      ListRow(
-        "Batería", icon = KitIcon.BATERIA, subtitle = "Para que Relevo siga funcionando aunque pasen días.",
-        onClick = if (backgroundUnrestricted) null else onBattery,
-        trailing = { PermissionEnd(backgroundUnrestricted, "Activar", onClick = onBattery) },
+        trailing = { if (usageAccess) RelevoIcon(KitIcon.LISTO, size = 22.dp, tint = Relevo.colors.ink, background = Relevo.colors.card, strokeWidth = 2f) },
         tileColor = Relevo.colors.card,
       )
     }
+    if (!usageAccess) {
+      Spacer(Modifier.height(Gap.block))
+      Column(Modifier.padding(horizontal = 4.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        PermissionStep("1", "Toca «Dar el permiso».")
+        PermissionStep("2", "En la lista, busca Relevo. En Android, el permiso se llama «Acceso a datos de uso».")
+        PermissionStep("3", "Actívalo y vuelve: Relevo sigue solo.")
+      }
+    }
+  }
+}
+
+@Composable
+private fun PermissionStep(number: String, text: String) {
+  Row(verticalAlignment = Alignment.Top) {
+    Text(number, style = Relevo.type.callout.copy(fontWeight = FontWeight.SemiBold), color = Relevo.colors.ink, modifier = Modifier.width(22.dp))
+    Text(text, style = Relevo.type.callout, color = Relevo.colors.graphite)
   }
 }

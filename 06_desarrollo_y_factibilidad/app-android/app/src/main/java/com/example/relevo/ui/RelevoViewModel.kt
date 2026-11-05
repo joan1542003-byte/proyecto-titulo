@@ -23,7 +23,6 @@ import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RouteStore
 import com.example.relevo.data.Settings
 import com.example.relevo.data.SettingsStore
-import com.example.relevo.data.StudyStore
 import com.example.relevo.data.SyncStatus
 import com.example.relevo.data.TagStore
 import com.example.relevo.domain.AutoMode
@@ -34,8 +33,6 @@ import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.domain.RouteStep
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.domain.SignalRoute
-import com.example.relevo.domain.StudyCondition
-import com.example.relevo.domain.StudyPlan
 import com.example.relevo.domain.TagProtocol
 import com.example.relevo.monitor.AppUsageMonitorService
 import com.example.relevo.monitor.BackgroundAccess
@@ -57,11 +54,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
-import java.time.LocalDate
 import java.util.UUID
 
-/** Si la persona participa en la prueba o todavía no acepta. Desde 2.10 no hay uso sin participar (D-084). */
-enum class ParticipationMode { STUDY, NONE }
+/** Si la persona aceptó el consentimiento vigente o todavía no. Sin aceptarlo no se usa Relevo (D-084). */
+enum class ParticipationMode { ACCEPTED, NONE }
 
 /** R3: la persona dijo varias veces que empezó el mismo paso; se le ofrece el siguiente, sin afirmar un hábito. */
 data class RouteSuggestion(val interest: String, val current: RouteStep, val next: RouteStep, val starts: Int)
@@ -87,9 +83,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val _customActivities = MutableStateFlow(customActivityStore.load())
   val customActivities: StateFlow<List<CustomActivity>> = _customActivities.asStateFlow()
 
-  private val _remainingSeconds = MutableStateFlow(0)
-  val remainingSeconds: StateFlow<Int> = _remainingSeconds.asStateFlow()
-
   private val _installedApps = MutableStateFlow<List<InstalledApp>>(emptyList())
   val installedApps: StateFlow<List<InstalledApp>> = _installedApps.asStateFlow()
 
@@ -113,9 +106,16 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val _syncStatus = MutableStateFlow(remoteSync.status())
   val syncStatus: StateFlow<SyncStatus> = _syncStatus.asStateFlow()
 
-  private val studyStore = StudyStore(application)
-  private val _study = MutableStateFlow(computeStudyState())
-  val study: StateFlow<StudyState> = _study.asStateFlow()
+  /**
+   * La persona respondió «La dejé para después» y pidió dejarlo listo (1.0.0): Inicio lo ofrece para
+   * activarlo con un toque, sin que vuelva a sonar solo. Guarda cuándo, para mostrarlo una sola vez.
+   */
+  private val _laterPending = MutableStateFlow(experiencePreferences.getLong("later_pending_at", 0L) > 0L)
+  val laterPending: StateFlow<Boolean> = _laterPending.asStateFlow()
+
+  /** Tras las primeras veces que suena, Inicio pregunta una vez si el tiempo elegido queda bien (1.0.0). */
+  private val _limitReviewDue = MutableStateFlow(false)
+  val limitReviewDue: StateFlow<Boolean> = _limitReviewDue.asStateFlow()
 
   /** Último relevo cuya tarjeta de regreso la persona cerró con «Ahora no». */
   private val _returnDismissedFor = MutableStateFlow(experiencePreferences.getLong("return_dismissed_for", 0L))
@@ -195,22 +195,23 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   init {
     _installedApps.value = appsRepository.launcherApps()
-    Participation.clearLegacyLocalMode(application)
     when (currentParticipation()) {
       ParticipationMode.NONE -> {
         application.stopService(Intent(application, AppUsageMonitorService::class.java))
-        updateValue(_reminder.value.copy(participantCode = "", consentAccepted = false, localOnly = false, status = ReminderStatus.DRAFT))
+        // Quien aceptó una versión anterior conserva su código y su relevo: solo lee el texto nuevo (1.0.0).
+        if (!Participation.acceptedBefore(application))
+          updateValue(_reminder.value.copy(participantCode = "", consentAccepted = false, status = ReminderStatus.DRAFT))
       }
-      ParticipationMode.STUDY -> {
+      ParticipationMode.ACCEPTED -> {
         val participantCode = experiencePreferences.getString("participant_code", null)
           ?: _reminder.value.participantCode.ifBlank { Participation.newCode() }
         experiencePreferences.edit().putString("participant_code", participantCode).apply()
-        if (_reminder.value.participantCode != participantCode || !_reminder.value.consentAccepted || _reminder.value.localOnly)
-          updateValue(_reminder.value.copy(participantCode = participantCode, consentAccepted = true, localOnly = false))
+        if (_reminder.value.participantCode != participantCode || !_reminder.value.consentAccepted)
+          updateValue(_reminder.value.copy(participantCode = participantCode, consentAccepted = true))
       }
     }
     startStateSync()
-    if (Participation.canUse(application)) {
+    if (Participation.participating(application)) {
       refreshDashboard()
       if (_settings.value.returnNotice) ReturnNotice.schedule(application)
       ProjectMessages.schedule(application)
@@ -302,7 +303,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   private fun currentParticipation(): ParticipationMode =
-    if (Participation.participating(getApplication())) ParticipationMode.STUDY else ParticipationMode.NONE
+    if (Participation.participating(getApplication())) ParticipationMode.ACCEPTED else ParticipationMode.NONE
 
   /** Al volver a la app: comprueba permisos, retoma un conteo interrumpido y reintenta el envío pendiente. */
   fun onAppResumed() {
@@ -312,12 +313,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (resumedAt == 0L) { resumedAt = System.currentTimeMillis(); log("app_abierta") }
     logPermissions()
     refreshQuickFeedback()
+    refreshLimitReview()
     settingsStore.lastOpenedAt = System.currentTimeMillis()
     ReturnNotice.dismiss(getApplication())
     if (settingsStore.returnNotNow >= 2 && !settingsStore.turnOffAsked && _settings.value.returnNotice) _askTurnOffReturn.value = true
-    refreshStudy()
+    ensureRoute()
     val current = _reminder.value
-    if (current.status == ReminderStatus.WAITING && _usageAccessGranted.value && Participation.canUse(getApplication()) && !AppUsageMonitorService.isCounting) {
+    if (current.status == ReminderStatus.WAITING && _usageAccessGranted.value && Participation.participating(getApplication()) && !AppUsageMonitorService.isCounting) {
       ContextCompat.startForegroundService(
         getApplication(),
         Intent(getApplication(), AppUsageMonitorService::class.java).setAction(AppUsageMonitorService.ACTION_RESTORE),
@@ -359,7 +361,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Con la activación automática encendida, el servicio espera en segundo plano si no está contando ni esperando. */
   private fun startWatchingIfNeeded() {
     val app = getApplication<Application>()
-    if (!autoModeStore.enabled || !Participation.canUse(app) || !UsageAccess.isGranted(app)) return
+    if (!autoModeStore.enabled || !Participation.participating(app) || !UsageAccess.isGranted(app)) return
     if (AppUsageMonitorService.isCounting || AppUsageMonitorService.isWatching) return
     runCatching { ContextCompat.startForegroundService(app, Intent(app, AppUsageMonitorService::class.java)) }
   }
@@ -367,96 +369,50 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Terminó un relevo: el siguiente automático espera la pausa desde ahora. */
   private fun markRelevoClosed() { autoModeStore.lastClosedAt = System.currentTimeMillis() }
 
-  // ---- Prueba de 21 días (protocolo 02) ----
+  // ---- Con qué suena, el tiempo y lo que queda para después (1.0.0) ----
 
-  private fun computeStudyState(today: LocalDate = LocalDate.now()): StudyState {
-    val plan = studyStore.plan() ?: return StudyState()
-    val week = plan.week(today)
-    return StudyState(
-      plan = plan,
-      day = plan.day(today),
-      week = week,
-      condition = plan.condition(today),
-      // En una semana de comparación, primero se pregunta por las semanas anteriores (la «semana 0»).
-      pendingWeek = (if (plan.comparison && !studyStore.weekDone(0)) 0 else null)
-        ?: plan.weeksReadyForReview(today).firstOrNull { !studyStore.weekDone(it) },
-      instructionWeek = week?.takeIf { !studyStore.instructionSeen(it) },
-      closingPending = plan.closingReady(today) && !studyStore.closingDone(),
-    )
-  }
-
-  /** Recalcula el día y la condición; fuera de un relevo activo, la condición fija la salida del sonido. */
-  fun refreshStudy() {
-    val state = computeStudyState()
-    _study.value = state
+  /** El Tag es la salida por defecto (D-117): sin una elección previa, queda elegido. */
+  private fun ensureRoute() {
     val current = _reminder.value
-    val route = state.condition?.routeFor(current.signalRoute)
-    val phoneWeekUnmarked = route == SignalRoute.PHONE && !current.routeChosen
-    if (route != null && (current.signalRoute != route || phoneWeekUnmarked) && current.status != ReminderStatus.WAITING && current.status != ReminderStatus.SIGNALLED) {
-      // En la semana C suena el teléfono; en A y B se conserva el objeto que la persona ya eligió, sin elegir por ella.
-      updateValue(current.copy(signalRoute = route, routeChosen = route == SignalRoute.PHONE || (current.routeChosen && current.signalRoute == route)))
-    }
-    // El Tag es la salida por defecto (D-117): sin una elección previa queda elegido, salvo en la semana C.
-    val now = _reminder.value
-    if (!now.routeChosen && state.condition != StudyCondition.PHONE && now.status != ReminderStatus.WAITING && now.status != ReminderStatus.SIGNALLED) {
-      updateValue(now.copy(signalRoute = SignalRoute.TAG, routeChosen = true))
+    if (!current.routeChosen && current.status != ReminderStatus.WAITING && current.status != ReminderStatus.SIGNALLED) {
+      updateValue(current.copy(signalRoute = SignalRoute.TAG, routeChosen = true))
     }
   }
 
-  /** El investigador asigna la secuencia en la sesión inicial; hoy es el día 0. */
-  fun startStudy(sequence: String) {
-    val today = LocalDate.now()
-    // Una semana de comparación empieza hoy: hoy es el día 1 y no hay sesión inicial (2.33).
-    val plan = StudyPlan(sequence, if (sequence in StudyPlan.COMPARISONS) today.minusDays(1) else today)
-    studyStore.start(sequence, plan.day0)
-    researchLog.recordAnswer(_reminder.value.participantCode, "prueba_inicio", "secuencia=$sequence;dia0=${plan.day0}")
-    refreshStudy()
-    syncRemote()
-  }
-
-  fun endStudy() {
-    val plan = studyStore.plan() ?: return
-    researchLog.recordAnswer(_reminder.value.participantCode, "prueba_fin", "secuencia=${plan.sequence};dia=${plan.day(LocalDate.now())}")
-    studyStore.clear()
-    refreshStudy()
-    syncRemote()
-  }
-
-  fun dismissInstruction(week: Int) {
-    log("semana_instruccion_vista", "semana=$week")
-    studyStore.markInstructionSeen(week)
-    refreshStudy()
-  }
-
-  /** Tarjeta de cierre de semana: tres escalas de 1 a 5 y un comentario, todo opcional. */
   /**
-   * La semana 0 son las semanas anteriores a una semana de comparación; [compared], cómo ayudó esta semana
-   * frente a esas: mas, igual o menos (2.33).
+   * Tras 3 relevos que sonaron, una pregunta, una sola vez: si el tiempo elegido queda bien. Responde a lo que
+   * mostró la prueba: con 45 minutos, al sonar la persona ya estaba muy metida en un video (Tabla 4).
    */
-  fun submitWeek(week: Int, preparation: Int?, annoyance: Int?, place: Int?, comment: String, compared: String? = null) {
-    val code = _reminder.value.participantCode
-    val key = if (week == 0) "semanas_previas" else "semana$week"
-    preparation?.let { researchLog.recordAnswer(code, "${key}_costo_preparar", it.toString()) }
-    annoyance?.let { researchLog.recordAnswer(code, "${key}_molestia_senal", it.toString()) }
-    place?.let { researchLog.recordAnswer(code, "${key}_relacion_lugar", it.toString()) }
-    compared?.let { researchLog.recordAnswer(code, "${key}_comparacion", it) }
-    comment.trim().takeIf { it.isNotEmpty() }?.let { researchLog.recordAnswer(code, "${key}_comentario", it) }
-    if (preparation == null && annoyance == null && place == null && compared == null && comment.isBlank()) researchLog.recordAnswer(code, "${key}_omitida", "si")
-    studyStore.markWeekDone(week)
-    refreshStudy()
-    syncRemote()
+  private fun refreshLimitReview() {
+    val sounded = _history.value.count { it.signalDelivered }
+    _limitReviewDue.value = hasCurrentConsent() && sounded >= LIMIT_REVIEW_AFTER && !experiencePreferences.getBoolean("limit_review_done", false)
   }
 
-  /** Cierre del día 21: respuestas por clave; las vacías se omiten. */
-  fun submitClosing(answers: Map<String, String>) {
-    val code = _reminder.value.participantCode
-    val given = answers.filterValues { it.isNotBlank() }
-    given.forEach { (question, answer) -> researchLog.recordAnswer(code, "cierre_$question", answer.trim()) }
-    if (given.isEmpty()) researchLog.recordAnswer(code, "cierre_omitido", "si")
-    studyStore.markClosingDone()
-    refreshStudy()
-    syncRemote()
+  /** [change]: la persona quiere cambiar el tiempo; si no, le queda bien así. */
+  fun answerLimitReview(change: Boolean) {
+    log("revisar_tiempo", if (change) "cambiar" else "esta_bien")
+    experiencePreferences.edit().putBoolean("limit_review_done", true).apply()
+    _limitReviewDue.value = false
   }
+
+  /** «Activar ahora» desde Inicio: el relevo que quedó para después, tal como estaba. */
+  fun activateLater(): Boolean {
+    if (!repeatLast()) return false
+    clearLater()
+    log("para_despues_activado", _reminder.value.activity)
+    return activate()
+  }
+
+  fun dismissLater() {
+    log("para_despues_ahora_no")
+    clearLater()
+  }
+
+  private fun clearLater() {
+    experiencePreferences.edit().remove("later_pending_at").apply()
+    _laterPending.value = false
+  }
+
 
   fun dismissReturn(lastCompletedAt: Long) {
     log("tarjeta_regreso_ahora_no")
@@ -485,16 +441,16 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       targetAppLabel = apps.first().label,
       participantCode = _reminder.value.participantCode,
       consentAccepted = hasCurrentConsent(),
-      localOnly = false,
       autoActivated = false,
       sessionId = "",
       observedUsageSeconds = 0,
       signalDelivered = false,
       signalAt = 0L,
       signalEnded = false,
+      soundedOnPhone = false,
       status = ReminderStatus.DRAFT,
     ))
-    refreshStudy()
+    ensureRoute()
     return true
   }
 
@@ -510,16 +466,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       )
     }
 
+  /** De 1 minuto a 6 horas, el rango que ofrece la pantalla de preparar. */
   fun updateRequiredUsage(seconds: Int) =
-    update { copy(requiredUsageSeconds = seconds.coerceAtLeast(1), status = ReminderStatus.DRAFT) }
+    update { copy(requiredUsageSeconds = seconds.coerceIn(60, 6 * 60 * 60), status = ReminderStatus.DRAFT) }
 
-  /**
-   * Durante la prueba, la semana decide dónde suena: en C, el teléfono; en A y B, la persona elige con qué
-   * objeto (parlante, reloj o llavero), pero no el teléfono.
-   */
+  /** Con qué suena: el Tag, una notificación en el teléfono o un dispositivo de audio. */
   fun updateSignalRoute(route: SignalRoute) {
-    val condition = _study.value.condition
-    if (condition != null && condition.routeFor(route) != route) return
     log("salida_elegida", route.name.lowercase())
     update { copy(signalRoute = route, routeChosen = true, status = ReminderStatus.DRAFT) }
   }
@@ -535,7 +487,15 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       .putString("participant_code", if (accepted) participantCode else null)
       .apply()
     _participation.value = currentParticipation()
-    update { copy(participantCode = participantCode, consentAccepted = accepted, localOnly = false, status = ReminderStatus.DRAFT) }
+    // Un relevo que contaba antes de leer el texto nuevo sigue contando: no se pierde (1.0.0).
+    val resumes = accepted && _reminder.value.status == ReminderStatus.WAITING && _reminder.value.sessionId.isNotBlank()
+    update { copy(participantCode = participantCode, consentAccepted = accepted, status = if (resumes) status else ReminderStatus.DRAFT) }
+    if (resumes && _usageAccessGranted.value) {
+      ContextCompat.startForegroundService(
+        getApplication(),
+        Intent(getApplication(), AppUsageMonitorService::class.java).setAction(AppUsageMonitorService.ACTION_RESTORE),
+      )
+    }
     if (accepted) {
       log("consentimiento_aceptado", ResearchLogStore.CONSENT_VERSION)
       ProjectMessages.schedule(getApplication())
@@ -556,7 +516,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     routeStore.setPreparedStep(null)
     update {
       copy(activity = activity, howToStart = firstStep, place = place,
-        requiredUsageSeconds = if (requiredUsageSeconds < 60) 900 else requiredUsageSeconds,
+        requiredUsageSeconds = if (requiredUsageSeconds < 60) Reminder.DEFAULT_LIMIT_SECONDS else requiredUsageSeconds,
         status = ReminderStatus.DRAFT)
     }
   }
@@ -610,20 +570,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun arm(): Boolean {
-    if (!Participation.canUse(getApplication())) return false
+    if (!Participation.participating(getApplication())) return false
     refreshUsageAccess()
     if (!_usageAccessGranted.value) return false
-    refreshStudy()
-    // Sin salida elegida no se activa: la pantalla de preparar lo pide antes (2.21).
-    if (!_reminder.value.routeChosen) return false
-    // Cada relevo queda asociado al día y a la condición de la semana en que se activó (D-079, D-112).
-    val study = _study.value
-    val prepared = _reminder.value.copy(
-      signalRoute = study.condition?.routeFor(_reminder.value.signalRoute) ?: _reminder.value.signalRoute,
-      studyCondition = study.condition?.code?.toString().orEmpty(),
-      studyDay = if (study.active) study.day else -1,
-      autoActivated = false,
-    )
+    ensureRoute()
+    val prepared = _reminder.value.copy(autoActivated = false)
     // Un relevo editado sigue con el tiempo que llevaba si cuenta las mismas apps (2.30).
     val carried = carriedCount?.takeIf { it.apps == prepared.selectedApps.map { app -> app.packageName }.toSet() }?.seconds ?: 0
     val armed = prepared.arm(UUID.randomUUID().toString())
@@ -633,6 +584,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (next.status == ReminderStatus.WAITING) {
       if (_guide.value.prepare) _firstActivated.value = true
       markGuide("guide_prepare_done")
+      // Con un relevo nuevo contando, lo que había quedado para después ya no se ofrece.
+      if (_laterPending.value) clearLater()
       researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
       researchLog.startSession(next)
       syncRemote()
@@ -794,7 +747,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val closedAt = System.currentTimeMillis()
     viewModelScope.launch(Dispatchers.IO) { researchLog.markAppSeconds(current.sessionId, closedAt) }
     updateValue(_reminder.value.disarm())
-    _remainingSeconds.value = 0
   }
 
   /**
@@ -818,7 +770,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     carriedCount = CarriedCount(current.selectedApps.map { it.packageName }.toSet(), current.observedUsageSeconds)
     _editing.value = true
     updateValue(current.copy(status = ReminderStatus.DRAFT, sessionId = "", signalDelivered = false, signalAt = 0L, signalEnded = false, autoActivated = false))
-    _remainingSeconds.value = 0
     syncRemote()
     return true
   }
@@ -852,14 +803,27 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   /**
-   * Cierra el relevo con la respuesta declarada. Durante la prueba se agregan dos preguntas de un
-   * toque (protocolo 02); null significa que no se respondieron. Si el relevo vino de la ruta, la
-   * respuesta puede ofrecer el siguiente paso (R3) o cambiar la actividad.
+   * Cierra el relevo con la respuesta de la persona. Las preguntas de un toque que van antes son
+   * opcionales: null significa que no se respondieron. [keepForLater]: con «La dejé para después», la
+   * persona pidió dejarlo listo para activarlo con un toque desde Inicio (1.0.0). Si el relevo vino de un
+   * paso de Actividades, la respuesta puede ofrecer el siguiente (R3) o cambiar la actividad.
    */
-  fun completeEvaluation(outcome: String, knewIntention: String? = null, recalledFirstStep: String? = null, feeling: String? = null, noticed: String? = null) {
+  fun completeEvaluation(
+    outcome: String,
+    knewIntention: String? = null,
+    recalledFirstStep: String? = null,
+    feeling: String? = null,
+    noticed: String? = null,
+    keepForLater: Boolean = false,
+  ) {
     AppUsageMonitorService.cancelSignalNotification(getApplication())
-    // Si notó la señal enseguida, un rato después o no la notó (2.33): compara el teléfono con el objeto.
+    // Si notó el sonido enseguida, un rato después o no lo notó (2.33).
     noticed?.let { researchLog.recordAnswer(_reminder.value.participantCode, "percepcion_senal", it, _reminder.value.sessionId) }
+    if (keepForLater) {
+      experiencePreferences.edit().putLong("later_pending_at", System.currentTimeMillis()).apply()
+      _laterPending.value = true
+      log("para_despues_guardado", _reminder.value.activity)
+    }
     markRelevoClosed()
     historyStore.markOutcome(_reminder.value.sessionId, outcome)
     _history.value = historyStore.load()
@@ -867,6 +831,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     researchLog.completeSession(_reminder.value, outcome, knewIntention, recalledFirstStep, feeling)
     syncRemote()
     refreshQuickFeedback()
+    refreshLimitReview()
     val stepId = routeStore.preparedStep() ?: return
     val track = _routes.value.firstOrNull { track -> track.steps.any { it.id == stepId } } ?: return
     val step = track.steps.first { it.id == stepId }
@@ -892,7 +857,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _reminder.value.takeIf { keepAsLast && it.activity.isNotBlank() && it.selectedApps.isNotEmpty() }?.let { finished ->
       val configuration = finished.copy(
         sessionId = "", observedUsageSeconds = 0, signalDelivered = false, status = ReminderStatus.DRAFT,
-        signalAt = 0L, signalEnded = false, studyCondition = "", studyDay = -1, autoActivated = false,
+        signalAt = 0L, signalEnded = false, autoActivated = false, soundedOnPhone = false,
       )
       lastStore.save(configuration)
       _lastReminder.value = configuration
@@ -902,11 +867,9 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _reminder.value = Reminder(
       participantCode = experiencePreferences.getString("participant_code", null).orEmpty(),
       consentAccepted = hasCurrentConsent(),
-      localOnly = false,
     )
     store.save(_reminder.value)
-    _remainingSeconds.value = 0
-    refreshStudy()
+    ensureRoute()
     startWatchingIfNeeded()
   }
 
@@ -987,12 +950,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         ReturnNotice.schedule(getApplication())
       } else ReturnNotice.cancel(getApplication())
     }
-  }
-
-  /** Respuesta de la guía sobre el aviso semanal (D-088): se registra aunque coincida con el valor por defecto. */
-  fun chooseReturnNotice(yes: Boolean) {
-    log("aviso_semanal_elegido", if (yes) "si" else "no")
-    updateSettings { copy(returnNotice = yes) }
   }
 
   fun answerTurnOffReturn(turnOff: Boolean) {
@@ -1118,8 +1075,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         store.clear()
         lastStore.clear()
         _lastReminder.value = null
-        studyStore.clear()
-        _study.value = StudyState()
+        _laterPending.value = false
+        _limitReviewDue.value = false
         tagStore.clear()
         TagLink.release()
         _tag.value = TagUi()
@@ -1139,7 +1096,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         _participation.value = ParticipationMode.NONE
         _deletionStatus.value = DELETED_MESSAGE
       } else {
-        _deletionStatus.value = "Relevo dejó de guardar datos, pero no pudimos confirmar el borrado. Tus datos siguen en el teléfono. Inténtalo de nuevo o escribe a joan1542003@gmail.com."
+        _deletionStatus.value = "Relevo dejó de guardar datos, pero no se pudo confirmar el borrado en la base del proyecto. Tus datos siguen en el teléfono. Prueba otra vez o escribe a joan1542003@gmail.com."
       }
       deletingData = false
     }
@@ -1154,8 +1111,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         while (true) {
           val persisted = store.load()
           if (persisted != _reminder.value) _reminder.value = persisted
-          _remainingSeconds.value =
-            (persisted.requiredUsageSeconds - persisted.observedUsageSeconds).coerceAtLeast(0)
           delay(500)
         }
       }
@@ -1191,10 +1146,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   companion object {
 
     /** Mensaje tras borrar los datos; también marca que la persona dejó la prueba. */
-    const val DELETED_MESSAGE = "Tus datos se borraron y saliste del proyecto. Si quieres volver, tendrás que aceptar de nuevo."
+    const val DELETED_MESSAGE = "Tus datos se borraron. Si quieres volver a usar Relevo, tendrás que aceptar otra vez."
 
     /** Relevos respondidos tras los que se pide una opinión rápida. */
     val QUICK_FEEDBACK_AT = listOf(3, 10)
+
+    /** Veces que sonó antes de preguntar si el tiempo queda bien. */
+    const val LIMIT_REVIEW_AFTER = 3
   }
 }
 
@@ -1228,21 +1186,3 @@ data class TagUi(
 
 /** Qué notas de la guía siguen visibles: se ocultan después del primer relevo. */
 data class GuideState(val prepare: Boolean = false, val signal: Boolean = false, val decide: Boolean = false)
-
-/** Estado de la prueba de 21 días que necesita la interfaz. */
-data class StudyState(
-  val plan: StudyPlan? = null,
-  val day: Int = -1,
-  val week: Int? = null,
-  val condition: StudyCondition? = null,
-  /** Semana cuya tarjeta de cierre falta responder u omitir. */
-  val pendingWeek: Int? = null,
-  /** Semana cuya instrucción de condición aún no se leyó. */
-  val instructionWeek: Int? = null,
-  val closingPending: Boolean = false,
-) {
-  val active: Boolean get() = plan != null && day in 0..plan.lastDay
-  val initialSession: Boolean get() = plan != null && day == 0
-  val finished: Boolean get() = plan != null && day > plan.lastDay
-  val comparison: Boolean get() = plan?.comparison == true
-}

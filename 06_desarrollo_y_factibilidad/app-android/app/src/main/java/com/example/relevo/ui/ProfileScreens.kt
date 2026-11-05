@@ -14,7 +14,6 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,7 +34,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
@@ -52,21 +50,14 @@ import com.example.relevo.domain.RouteTrack
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.Avatar
-import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.Emoji
 import com.example.relevo.ui.components.EmojiGroup
 import com.example.relevo.ui.components.EmojiTile
-import com.example.relevo.ui.components.GlassTextButton
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
-import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
-import com.example.relevo.ui.components.Panel
 import com.example.relevo.ui.components.Photo
-import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureTile
 import com.example.relevo.ui.components.PlainAction
-import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.RenglonArea
@@ -77,7 +68,6 @@ import com.example.relevo.ui.components.pressScale
 import androidx.compose.foundation.layout.width
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.background
-import androidx.compose.ui.text.font.FontWeight
 import com.example.relevo.ui.components.rememberReduceMotion
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -98,8 +88,6 @@ internal class ProfileActions(
   val onAppearance: () -> Unit,
   val onPermissions: () -> Unit,
   val onHistory: () -> Unit,
-  val onActivities: () -> Unit,
-  val onStudy: () -> Unit,
   val onPrivacy: () -> Unit,
   val onFeedback: () -> Unit,
   val onReport: () -> Unit,
@@ -115,8 +103,8 @@ internal val choosablePhotos = listOf(
 )
 
 /**
- * S1: el perfil. El emoji y el nombre al centro, «Tu semana» si la persona lo activó (hechos, sin
- * metas) y las secciones de relevos, ajustes, estudio y ayuda.
+ * S1: el perfil. El emoji y el nombre arriba, «Tu semana» si la persona lo activó (hechos, sin metas) y
+ * las secciones de relevos, ajustes y ayuda. Cada fila dice lo mismo que el título de su pantalla (R5).
  */
 @Composable
 internal fun ProfileTab(
@@ -124,9 +112,7 @@ internal fun ProfileTab(
   routes: List<RouteTrack>,
   history: List<HistoryEntry>,
   settings: Settings,
-  study: StudyState,
   participation: ParticipationMode,
-  customCount: Int,
   reselect: Int,
   actions: ProfileActions,
 ) {
@@ -138,7 +124,7 @@ internal fun ProfileTab(
   if (tagGuide) TagGuideSheet(onDismiss = { tagGuide = false })
   // Lámina «Perfil»: el emoji, el nombre y una frase de la semana; debajo, filas sueltas con su ficha y qué hay adentro.
   val facts = weekFacts(history)
-  val canTell = participation == ParticipationMode.STUDY && facts.prepared > 0
+  val canTell = participation == ParticipationMode.ACCEPTED && facts.prepared > 0
   RelevoScreen(scrollState = scroll) {
     ProfileHeader(profile, routes, history, actions.onEdit, Modifier.appear(0))
     Spacer(Modifier.height(Gap.section))
@@ -150,14 +136,13 @@ internal fun ProfileTab(
         )
       }
       ListRow("Tus relevos", icon = KitIcon.RELEVOS, tileColor = Relevo.colors.peach, subtitle = countLine(history.size, "relevo terminado", "relevos terminados", "Todavía no terminas ninguno"), chevron = true, onClick = actions.onHistory)
-      ListRow("Tus actividades", icon = KitIcon.ESTRELLA, subtitle = countLine(customCount, "actividad", "actividades", "Guarda las que haces seguido"), chevron = true, onClick = actions.onActivities)
-      ListRow("Tus pasos", icon = KitIcon.RUTA, tileColor = Relevo.colors.mist, subtitle = routes.firstNotNullOfOrNull { it.currentStep?.activity } ?: "Elige tus intereses", chevron = true, onClick = actions.onOpenRoute)
+      ListRow("Actividades", icon = KitIcon.RUTA, tileColor = Relevo.colors.mist, subtitle = routes.firstNotNullOfOrNull { it.currentStep?.activity }?.let { "Ahora: $it" } ?: "Tus pasos y tus actividades", chevron = true, onClick = actions.onOpenRoute)
     }
     Spacer(Modifier.height(Gap.section))
     Column(Modifier.appear(2), verticalArrangement = Arrangement.spacedBy(Gap.list)) {
       ListRow("Apariencia y aura", icon = KitIcon.AURA, subtitle = "Tu aura, tema y letra", chevron = true, onClick = actions.onAppearance)
-      ListRow("Avisos y resúmenes", icon = KitIcon.AVISOS, subtitle = if (settings.returnNotice) "Aviso semanal encendido" else "Aviso semanal apagado", chevron = true, onClick = actions.onNotices)
-      ListRow("Permisos", icon = KitIcon.PERMISO, subtitle = "Tiempo de uso, avisos y batería", chevron = true, onClick = actions.onPermissions)
+      ListRow("Ajustes de tus relevos", icon = KitIcon.AJUSTES, subtitle = "Activación automática, horas sin sonar y aviso semanal", chevron = true, onClick = actions.onNotices)
+      ListRow("Permisos", icon = KitIcon.PERMISO, subtitle = "Tiempo de uso, notificaciones y batería", chevron = true, onClick = actions.onPermissions)
       ListRow("Privacidad y datos", icon = KitIcon.PRIVACIDAD, chevron = true, onClick = actions.onPrivacy)
     }
     Spacer(Modifier.height(Gap.section))
@@ -170,9 +155,7 @@ internal fun ProfileTab(
     Spacer(Modifier.height(20.dp))
     Text(
       "Relevo ${BuildConfig.VERSION_NAME} · Proyecto de Título de Diseño, Universidad Diego Portales",
-      style = Relevo.type.footnote, color = Relevo.colors.graphite, textAlign = TextAlign.Center,
-      // Mantener presionado abre la configuración de las tres semanas, solo para el investigador (D-087).
-      modifier = Modifier.fillMaxWidth().pointerInput(Unit) { detectTapGestures(onLongPress = { actions.onStudy() }) },
+      style = Relevo.type.footnote, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(),
     )
   }
   if (noting) WeekNoteSheet(onDismiss = { noting = false }, onSend = { actions.onWeekNote(it); noting = false })
@@ -221,37 +204,11 @@ private fun countLine(count: Int, one: String, many: String, none: String): Stri
   else -> "$count $many"
 }
 
-/** «Tu semana»: solo hechos, sin metas ni comparación con semanas anteriores. Se apaga en Avisos y resúmenes. */
-@Composable
-private fun WeekSummary(history: List<HistoryEntry>, settings: Settings, canTell: Boolean, onTell: () -> Unit, modifier: Modifier = Modifier) {
-  val facts = weekFacts(history)
-  Panel(modifier) {
-    Text("Tu semana", style = Relevo.type.label, color = Relevo.colors.graphite)
-    Text(
-      when (facts.prepared) {
-        0 -> "Esta semana todavía no preparaste relevos."
-        1 -> "Preparaste 1 relevo."
-        else -> "Preparaste ${facts.prepared} relevos."
-      } + when {
-        facts.prepared == 0 -> ""
-        facts.started == 1 -> " Dijiste que empezaste 1 vez."
-        facts.started > 1 -> " Dijiste que empezaste ${facts.started} veces."
-        else -> ""
-      },
-      style = Relevo.type.body, color = Relevo.colors.ink,
-    )
-    if (settings.constancy > 0 && !settings.constancyPaused) {
-      Text("Elegiste hacerlo ${settings.constancy} ${if (settings.constancy == 1) "vez" else "veces"} por semana.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    }
-    if (canTell && facts.prepared > 0) PlainAction("¿Qué te ayudó?", onTell, icon = KitIcon.COMENTARIO)
-  }
-}
-
 @Composable
 private fun WeekNoteSheet(onDismiss: () -> Unit, onSend: (String) -> Unit) {
   var text by rememberSaveable { mutableStateOf("") }
   RelevoSheet(onDismiss = onDismiss, title = "¿Qué te ayudó?") {
-    Text("Nos ayuda a mejorar Relevo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Text("Ayuda a mejorar Relevo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(16.dp))
     RenglonArea("Tu respuesta", text, { text = it }, "Escribe aquí")
     Spacer(Modifier.height(22.dp))
@@ -259,7 +216,11 @@ private fun WeekNoteSheet(onDismiss: () -> Unit, onSend: (String) -> Unit) {
   }
 }
 
-/** P1 a P3 en tres pasos, que se pueden saltar. Los intereses arman la ruta sugerida (R1). */
+/**
+ * P1 a P3 en tres pasos. Desde 1.0.0 se piden después de activar el primer relevo, no antes. El nombre es
+ * obligatorio (D-089); el emoji y los intereses se pueden saltar. Los intereses arman los pasos de
+ * Actividades (R1). [onClose]: abierto desde Inicio, se puede dejar para después.
+ */
 @Composable
 internal fun ProfileSetupScreen(
   profile: Profile,
@@ -267,6 +228,7 @@ internal fun ProfileSetupScreen(
   onImage: (String) -> Unit,
   onInterests: (List<String>, String) -> Unit,
   onFinish: (showRoute: Boolean) -> Unit,
+  onClose: (() -> Unit)? = null,
 ) {
   var step by rememberSaveable { mutableIntStateOf(0) }
   var forward by remember { mutableStateOf(true) }
@@ -276,13 +238,15 @@ internal fun ProfileSetupScreen(
   var other by rememberSaveable { mutableStateOf(profile.otherInterest) }
   val reduce = rememberReduceMotion()
   fun go(to: Int) { forward = to > step; step = to }
-  BackHandler(enabled = step > 0) { go(step - 1) }
+  BackHandler(enabled = step > 0 || onClose != null) { if (step > 0) go(step - 1) else onClose?.invoke() }
   RelevoScreen(
-    title = when (step) { 0 -> "¿Cómo te llamas?"; 1 -> "Elige tu emoji"; else -> "¿Qué te gustaría hacer más seguido?" },
-    onBack = if (step > 0) ({ go(step - 1) }) else null,
+    // «¿Con qué te identificas?» pregunta por la persona; que se elige un emoji ya se ve (pedido de la comisión).
+    title = when (step) { 0 -> "¿Cómo te llamas?"; 1 -> "¿Con qué te identificas?"; else -> "¿Qué te gustaría hacer más seguido?" },
+    onBack = if (step > 0) ({ go(step - 1) }) else onClose,
+    closeIcon = step == 0 && onClose != null,
+    backLabel = if (step == 0) "Ahora no" else "Volver",
     step = "${step + 1} de 3",
     progress = (step + 1) / 3f,
-    // El nombre es obligatorio desde 2.13 (D-089); el emoji y los intereses se pueden saltar.
     trailing = if (step > 0) ({ PlainAction("Saltar", { if (step < 2) go(step + 1) else onFinish(false) }, color = Relevo.colors.graphite) }) else null,
     bottom = {
       when (step) {
@@ -313,9 +277,11 @@ internal fun ProfileSetupScreen(
             RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Tu nombre o como te dicen", imeAction = ImeAction.Next,
               onImeAction = { if (name.isNotBlank()) { onName(name.trim()); go(1) } })
             Spacer(Modifier.height(10.dp))
-            Text("Lo guardamos junto a tu código, aparte de lo que haces en Relevo.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+            Text("Se guarda aparte, solo con tu código, y no junto a lo que haces en Relevo.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
           }
           1 -> {
+            Text("Elige un emoji para tu perfil.", style = Relevo.type.body, color = Relevo.colors.graphite)
+            Spacer(Modifier.height(Gap.block))
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { WhiteAvatar(image, name) }
             SectionGap()
             EmojiGrid(image) { image = it }
@@ -415,7 +381,7 @@ internal fun ProfileEditScreen(profile: Profile, onSave: (String, String, List<S
     InterestGrid(interests, other, onToggle = { id -> interests = if (id in interests) interests - id else interests + id }, onOther = { other = it })
   }
   if (picking) {
-    RelevoSheet(onDismiss = { picking = false }, title = "Tu emoji", done = "Listo", tall = true) {
+    RelevoSheet(onDismiss = { picking = false }, title = "¿Con qué te identificas?", done = "Listo", tall = true) {
       Spacer(Modifier.height(4.dp))
       EmojiGrid(image) { image = it }
     }

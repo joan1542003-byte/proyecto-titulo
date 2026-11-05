@@ -42,6 +42,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -52,7 +53,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.BlurredEdgeTreatment
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathMeasure
@@ -212,14 +212,14 @@ fun PlainAction(
   }
 }
 
-/** Botón redondo de icono: 44 dp y nombre accesible. */
+/** Botón redondo de icono: se dibuja de 44 dp y se toca en 48 dp, como pide Android; con nombre accesible. */
 @Composable
 fun IconAction(icon: KitIcon, description: String, onClick: () -> Unit, modifier: Modifier = Modifier, filled: Boolean = false) {
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
   val colors = Relevo.colors
   Box(
-    modifier.size(44.dp).pressScale(interaction, 0.92f).clip(CircleShape)
+    modifier.minimumInteractiveComponentSize().size(44.dp).pressScale(interaction, 0.92f).clip(CircleShape)
       .background(if (filled || pressed) colors.mist else Color.Transparent)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
       .semantics { contentDescription = description },
@@ -268,18 +268,6 @@ fun SegmentedControl(
           Text(label, style = Relevo.type.subhead.copy(fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium), color = textColor, maxLines = 1)
         }
       }
-    }
-  }
-}
-
-/** Escala de 1 a 5 con sus extremos nombrados. */
-@Composable
-fun ScaleControl(value: Int?, onChange: (Int?) -> Unit, low: String = "Nada", high: String = "Mucho") {
-  Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-    SegmentedControl((1..5).map { it.toString() to it.toString() }, value?.toString(), { onChange(it?.toInt()) })
-    Row(Modifier.fillMaxWidth().padding(horizontal = 6.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-      Text("1 · $low", style = Relevo.type.footnote, color = Relevo.colors.graphite)
-      Text("5 · $high", style = Relevo.type.footnote, color = Relevo.colors.graphite)
     }
   }
 }
@@ -385,7 +373,7 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
     while (true) { onStep(); delay(110) }
   }
   Box(
-    Modifier.size(44.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.mist else colors.card).border(1.5.dp, colors.line, CircleShape)
+    Modifier.minimumInteractiveComponentSize().size(44.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.mist else colors.card).border(1.5.dp, colors.line, CircleShape)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onStep)
       .semantics { contentDescription = description },
     contentAlignment = Alignment.Center,
@@ -394,7 +382,7 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
   }
 }
 
-/** Opción rápida en cápsula: blanca con un borde fino; la elegida, en tinta. */
+/** Opción rápida en cápsula: blanca con un borde fino; la elegida, en tinta. Se dibuja de 40 dp y se toca en 48 dp. */
 @Composable
 fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null, sky: Sky? = null) {
   val colors = Relevo.colors
@@ -402,7 +390,7 @@ fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier:
   val background by animateColorAsState(if (selected) colors.ink else colors.card, Motion.standard(Motion.SHORT), label = "chip")
   val content by animateColorAsState(if (selected) colors.onInk else colors.ink, Motion.standard(Motion.SHORT), label = "chip_text")
   Row(
-    modifier.heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
+    modifier.minimumInteractiveComponentSize().heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
       .then(if (selected) Modifier else Modifier.border(1.5.dp, colors.line, Relevo.controlShape))
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick).semantics { this.selected = selected }
       .padding(horizontal = 16.dp),

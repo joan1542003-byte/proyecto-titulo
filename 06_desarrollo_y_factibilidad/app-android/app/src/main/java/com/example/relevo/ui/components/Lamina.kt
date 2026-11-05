@@ -1,6 +1,5 @@
 package com.example.relevo.ui.components
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -12,13 +11,11 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.InlineTextContent
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -30,21 +27,15 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.Placeholder
-import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.foundation.text.appendInlineContent
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.Dp
@@ -140,30 +131,7 @@ fun GlassCard(modifier: Modifier = Modifier, padding: Dp = 18.dp, content: @Comp
   )
 }
 
-/**
- * El Tag de la lámina: un disco claro con su botón al centro y el orificio del llavero. Cuando suena, el
- * sonido se dibuja en anillos de tinta que se abren; no hay luz, porque el Tag no se ilumina.
- */
-@Composable
-fun TagObject(modifier: Modifier = Modifier, size: Dp = 96.dp, sounding: Boolean = false) {
-  Box(modifier.size(size), contentAlignment = Alignment.Center) {
-    if (sounding) SoundRings(Modifier.size(size), color = Ink)
-    Canvas(Modifier.size(size).shadow(size / 5, CircleShape, ambientColor = Color.Black.copy(alpha = .08f), spotColor = Color.Black.copy(alpha = .28f))) {
-      val r = this.size.minDimension / 2
-      val c = Offset(r, r)
-      drawCircle(
-        Brush.radialGradient(0f to Color.White, .16f to Color.White, .52f to Color(0xFFF5F2ED), 1f to Color(0xFFE4DED5), center = Offset(r * .72f, r * .6f), radius = r * 1.3f),
-        radius = r, center = c,
-      )
-      drawCircle(Brush.radialGradient(0f to Color.White, 1f to Color(0xFFEFEBE5), center = Offset(r * .92f, r * .9f), radius = r * .4f), radius = r * .38f, center = c)
-      drawCircle(Ink.copy(alpha = .1f), radius = r * .38f, center = c, style = Stroke(1.2f))
-      drawCircle(Color(0xFFEEE9E3), radius = r * .11f, center = Offset(r, r * .25f))
-      drawCircle(Ink.copy(alpha = .14f), radius = r * .11f, center = Offset(r, r * .25f), style = Stroke(1f))
-    }
-  }
-}
-
-/** Disco blanco con el ícono de lo que suena (parlante, reloj, teléfono), del mismo tamaño que el Tag. */
+/** Con qué suena, en su ícono sobre un disco blanco; mientras suena, anillos de tinta que se abren. */
 @Composable
 fun SoundObject(icon: KitIcon, modifier: Modifier = Modifier, size: Dp = 96.dp, sounding: Boolean = false) {
   Box(modifier.size(size), contentAlignment = Alignment.Center) {
@@ -191,36 +159,6 @@ fun BigCounter(seconds: Int, modifier: Modifier = Modifier, color: Color = Relev
     styled, modifier = modifier.semantics { contentDescription = text },
     style = Relevo.type.title.copy(fontSize = 72.sp, lineHeight = 76.sp, fontWeight = FontWeight.SemiBold, fontFeatureSettings = "tnum"), color = color,
   )
-}
-
-/** Una parte de una frase con íconos: texto o una ficha con su ícono, como «Tu primer paso [ficha]: abrir el libro». */
-sealed interface SentencePart {
-  data class Words(val text: String) : SentencePart
-  data class Tile(val icon: KitIcon, val color: Color) : SentencePart
-}
-
-/** Frase con fichas de color después de lo que nombran (D-122): el ícono va después de la palabra, nunca antes. */
-@Composable
-fun IconSentence(parts: List<SentencePart>, modifier: Modifier = Modifier, style: TextStyle = Relevo.type.body.copy(fontWeight = FontWeight.Medium, lineHeight = 28.sp), color: Color = Relevo.colors.ink, textAlign: TextAlign = TextAlign.Start) {
-  val inline = remember(parts) {
-    parts.filterIsInstance<SentencePart.Tile>().mapIndexed { i, tile ->
-      "tile$i" to InlineTextContent(Placeholder(1.35.em, 1.35.em, PlaceholderVerticalAlign.TextCenter)) {
-        Box(Modifier.fillMaxSize().clip(RoundedCornerShape(7.dp)).background(tile.color), contentAlignment = Alignment.Center) {
-          RelevoIcon(tile.icon, size = 15.dp, tint = Ink, background = tile.color, strokeWidth = 2f)
-        }
-      }
-    }.toMap()
-  }
-  val text = buildAnnotatedString {
-    var i = 0
-    parts.forEach { part ->
-      when (part) {
-        is SentencePart.Words -> append(part.text)
-        is SentencePart.Tile -> { append(" "); appendInlineContent("tile${i++}", "(${part.icon.label.lowercase()})") }
-      }
-    }
-  }
-  Text(text, modifier = modifier, style = style, color = color, inlineContent = inline, textAlign = textAlign)
 }
 
 /** Nota breve en una tarjeta clara, como «Mientras más pequeño, menos cuesta empezar.» en la lámina. */

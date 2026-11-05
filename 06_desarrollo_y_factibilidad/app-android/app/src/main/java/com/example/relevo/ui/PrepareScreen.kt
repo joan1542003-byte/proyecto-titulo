@@ -11,7 +11,6 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
-import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -20,11 +19,9 @@ import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -38,7 +35,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -51,28 +47,25 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.selected
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import com.example.relevo.data.CustomActivity
+import com.example.relevo.data.SignalVolume
 import com.example.relevo.data.TagStore
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.domain.SignalRoute
-import com.example.relevo.domain.StudyCondition
 import com.example.relevo.domain.TagProtocol
 import com.example.relevo.monitor.InstalledApp
 import com.example.relevo.signal.TagLink
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.CheckMark
-import com.example.relevo.ui.components.DurationStepper
 import com.example.relevo.ui.components.FactRow
 import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.KitIcon
@@ -80,16 +73,10 @@ import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Notice
-import com.example.relevo.ui.components.Photo
 import kotlinx.coroutines.delay
-import com.example.relevo.ui.components.PhotoHero
-import com.example.relevo.ui.components.PhotoImage
 import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureContent
-import com.example.relevo.ui.components.PictureTile
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.QuickChoice
-import com.example.relevo.ui.components.RadioMark
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.RelevoScreen
@@ -98,23 +85,18 @@ import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SearchField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.SegmentedControl
-import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.Tone
 import com.example.relevo.ui.components.formatDuration
 import com.example.relevo.ui.components.key
-import com.example.relevo.ui.components.pressScale
 import com.example.relevo.ui.components.rememberReduceMotion
 import com.example.relevo.ui.components.sharedPhoto
-import com.example.relevo.ui.components.SkyLabel
 import com.example.relevo.ui.components.pictureIcon
-import androidx.compose.foundation.shape.RoundedCornerShape
 import java.util.UUID
 import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.OptionRow
 import com.example.relevo.ui.components.SectionLabel
 import com.example.relevo.ui.components.SkyCard
 import com.example.relevo.ui.components.SkySquare
-import com.example.relevo.ui.components.TagObject
 import com.example.relevo.ui.components.TwoColumnGrid
 import com.example.relevo.ui.components.DurationButtons
 import com.example.relevo.ui.components.familyName
@@ -129,23 +111,17 @@ private enum class PrepareStep(val title: String) {
   REVIEW("Todo listo"),
 }
 
-/** Nota de la guía para cada paso del primer relevo. */
-private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder: Reminder): String = when (step) {
-  PrepareStep.ACTIVITY -> if (reminder.activity.isNotBlank()) "Te propusimos «${reminder.activity.trim()}». Puedes dejarla o escribir otra cosa que quieras hacer."
+/** Nota de la guía para cada paso del primer relevo: qué hacer y para qué, en una o dos frases. */
+private fun guideTipFor(step: PrepareStep, reminder: Reminder): String = when (step) {
+  PrepareStep.ACTIVITY -> if (reminder.activity.isNotBlank()) "Relevo propone «${reminder.activity.trim()}». Puedes dejarla o escribir otra cosa que quieras hacer."
     else "Escribe algo que quieras hacer o toca una idea. Mientras más concreto, mejor: «leer 10 páginas» en vez de «leer más»."
-  PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "El primer paso es «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta empezar."
-    else "Toca un primer paso o escribe el tuyo: algo que tome segundos."
-  PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja lo que suena en otro lugar de tu casa y anota dónde."
-    else "Toca el que más se parezca. Si ninguno calza, escríbelo como lo dirías en voz alta."
-  PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para ver ahora cómo funciona, toca «Probar con 15 segundos»."
-  PrepareStep.SOUND -> if (condition != null) "Elige el que tienes y pruébalo antes de seguir."
-    else "Elige con qué suena. El parlante, el reloj o el Tag se dejan donde empiezas; el teléfono suena donde esté."
+  PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "Para empezar: «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta empezar."
+    else "Toca una opción o escribe la tuya: algo que tome segundos."
+  PrepareStep.PLACE -> "Toca el lugar que más se parezca. Si ninguno calza, escríbelo como lo dirías en voz alta."
+  PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para empezar, 15 minutos funciona bien: suena antes de que te pierdas en ellas."
+  PrepareStep.SOUND -> "Elige con qué suena. El Tag se deja donde empiezas; la notificación suena en el teléfono, donde esté."
   PrepareStep.REVIEW -> "Revisa que todo esté bien. Toca cualquier dato para cambiarlo y después «Activar el relevo»."
 }
-
-/** En la semana del parlante en otro lugar, el lugar que se anota es el del parlante, no el del comienzo. */
-private fun PrepareStep.titleFor(condition: StudyCondition?): String =
-  if (this == PrepareStep.PLACE && condition == StudyCondition.NEUTRAL) "¿Dónde dejas lo que suena?" else title
 
 internal class PrepareActions(
   val onActivity: (String) -> Unit,
@@ -157,6 +133,8 @@ internal class PrepareActions(
   val onDuration: (Int) -> Unit,
   val onRoute: (SignalRoute) -> Unit,
   val onTestSound: () -> Boolean,
+  /** Volumen del sonido en el teléfono y en un dispositivo de audio (1.0.0). */
+  val onVolume: (SignalVolume) -> Unit,
   val onUsageSettings: () -> Unit,
   val onBackground: () -> Unit,
   val onSaveCustom: (CustomActivity) -> Unit,
@@ -166,9 +144,9 @@ internal class PrepareActions(
   val onStepShown: (String) -> Unit = {},
   /** Registro de uso: la persona tocó «Seguir» con algo sin completar (paso, qué faltaba). */
   val onMissing: (String, String) -> Unit = { _, _ -> },
-  /** Llavero (D-109): buscar, vincular el elegido, probar y olvidar. */
+  /** El Tag (D-109): buscar, vincular el elegido, probar y olvidar. */
   val onTagSearch: () -> Unit = {},
-  /** Respaldo: buscar todos los aparatos cercanos si el llavero no aparece. */
+  /** Respaldo: buscar todos los aparatos cercanos si el Tag no aparece. */
   val onTagSearchAll: () -> Unit = {},
   val onTagLink: (TagLink.Found) -> Unit = {},
   val onTagTest: () -> Unit = {},
@@ -179,24 +157,23 @@ internal class PrepareActions(
 )
 
 /** Qué falta para seguir en cada paso; null si está completo. Se muestra al tocar «Seguir» (2.18). */
-private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boolean, condition: StudyCondition?, tagLinked: Boolean): String? = when (step) {
+private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boolean, tagLinked: Boolean): String? = when (step) {
   PrepareStep.ACTIVITY -> if (reminder.activity.isBlank()) "Escribe qué quieres hacer o toca una idea." else null
   PrepareStep.START -> if (reminder.howToStart.isBlank()) "Escribe cómo empiezas: lo primero que harías." else null
-  PrepareStep.PLACE -> if (reminder.place.isNotBlank()) null
-    else if (condition == StudyCondition.NEUTRAL) "Escribe dónde dejas lo que suena." else "Escribe dónde empiezas."
+  PrepareStep.PLACE -> if (reminder.place.isNotBlank()) null else "Escribe dónde empiezas."
   PrepareStep.USAGE -> when {
     !usageAccess -> "Falta el permiso de Tiempo de uso. Tócalo arriba para darlo."
     reminder.selectedApps.isEmpty() -> "Elige al menos una app que cuente."
     else -> null
   }
   PrepareStep.SOUND -> when {
-    !reminder.routeChosen -> "Elige dónde quieres que suene."
-    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige tu Tag, o elige otra forma de avisar."
+    !reminder.routeChosen -> "Elige con qué quieres que suene."
+    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige tu Tag, o elige la notificación."
     else -> null
   }
   PrepareStep.REVIEW -> when {
     !usageAccess -> "Falta el permiso de Tiempo de uso."
-    !reminder.routeChosen -> "Falta elegir dónde suena."
+    !reminder.routeChosen -> "Falta elegir con qué suena."
     reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Falta elegir el Tag."
     reminder.activity.isBlank() -> "Falta qué quieres hacer."
     reminder.howToStart.isBlank() -> "Falta cómo empiezas."
@@ -219,22 +196,25 @@ internal fun PrepareScreen(
   routes: List<RouteTrack>,
   usageAccess: Boolean,
   backgroundUnrestricted: Boolean,
-  studyCondition: StudyCondition?,
   photoKey: String?,
   actions: PrepareActions,
   /** Guía del primer relevo (D-088): una nota por paso que dice qué hacer y para qué. */
   guided: Boolean = false,
-  /** Llavero (D-109): el vinculado, la búsqueda y la conexión. */
+  /** El Tag (D-109): el vinculado, la búsqueda y la conexión. */
   tag: TagUi = TagUi(),
   tagStatus: TagLink.Status = TagLink.Status(),
   /** Se está editando un relevo que ya estaba activo (2.30). */
   editing: Boolean = false,
+  /** «usage»: abre en el tiempo, para cambiar solo eso y volver al resumen (1.0.0). */
+  openAt: String? = null,
+  volume: SignalVolume = SignalVolume.MEDIUM,
 ) {
   // Se abre en el primer dato que falta: una idea elegida ya trae actividad, comienzo y lugar.
   var step by rememberSaveable {
     mutableStateOf(
       when {
-        // En el primer relevo guiado se recorren todos los pasos, aunque vengan completos desde la ruta.
+        openAt == "usage" -> PrepareStep.USAGE
+        // En el primer relevo guiado se recorren todos los pasos, aunque vengan completos desde Actividades.
         guided -> PrepareStep.ACTIVITY
         reminder.hasRequiredContent -> PrepareStep.REVIEW
         reminder.activity.isNotBlank() && reminder.howToStart.isNotBlank() && reminder.place.isNotBlank() -> PrepareStep.USAGE
@@ -247,7 +227,7 @@ internal fun PrepareScreen(
   var saveActivity by rememberSaveable { mutableStateOf(false) }
   val reduce = rememberReduceMotion()
   // Un dato tocado en «Todo listo» se cambia y se vuelve ahí, sin recorrer los pasos siguientes (2.30).
-  var fromReview by rememberSaveable { mutableStateOf(false) }
+  var fromReview by rememberSaveable { mutableStateOf(openAt == "usage") }
   fun go(to: PrepareStep) { forward = to.ordinal > step.ordinal; step = to; if (to == PrepareStep.REVIEW) fromReview = false }
   fun edit(to: PrepareStep) { fromReview = true; go(to) }
   fun next(to: PrepareStep) = go(if (fromReview && reminder.hasRequiredContent && reminder.routeChosen) PrepareStep.REVIEW else to)
@@ -259,13 +239,13 @@ internal fun PrepareScreen(
   LaunchedEffect(step) { actions.onStepShown(step.name.lowercase()) }
   BackHandler(enabled = !picking) { back() }
 
-  val missing = missingFor(step, reminder, usageAccess, studyCondition, tag.linkedName != null)
+  val missing = missingFor(step, reminder, usageAccess, tag.linkedName != null)
   val canContinue = missing == null
   val isKnown = activityIdeas.any { it.activity.equals(reminder.activity.trim(), true) } || customActivities.any { it.name.equals(reminder.activity.trim(), true) }
   val picture = activityPicture(reminder.activity, customActivities)
 
   RelevoScreen(
-    title = step.titleFor(studyCondition),
+    title = step.title,
     onBack = { back() },
     closeIcon = step == PrepareStep.ACTIVITY,
     backLabel = if (step == PrepareStep.ACTIVITY) "Cerrar" else "Volver",
@@ -290,7 +270,7 @@ internal fun PrepareScreen(
     },
   ) {
     if (guided) {
-      GuideTip(guideTipFor(step, studyCondition, reminder))
+      GuideTip(guideTipFor(step, reminder))
       Spacer(Modifier.height(Gap.block))
     }
     AnimatedContent(
@@ -315,9 +295,9 @@ internal fun PrepareScreen(
               TipCard("Mientras más pequeño, menos cuesta empezar.")
             }
           }
-          PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) next(PrepareStep.USAGE) })
+          PrepareStep.PLACE -> PlaceStep(reminder, actions, onNext = { if (canContinue) next(PrepareStep.USAGE) })
           PrepareStep.USAGE -> UsageStep(reminder, usageAccess, actions, onPick = { picking = true })
-          PrepareStep.SOUND -> SoundStep(reminder, studyCondition, tag, tagStatus, actions)
+          PrepareStep.SOUND -> SoundStep(reminder, tag, tagStatus, volume, actions)
           PrepareStep.REVIEW -> {
             if (editing) {
               Text("Estás editando tu relevo. Al guardarlo vuelve a contar, con el tiempo que llevabas si las apps son las mismas.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 2.dp))
@@ -330,9 +310,9 @@ internal fun PrepareScreen(
                 SkySquare(pictureIcon(picture), variant = activityVariant(reminder.activity), modifier = Modifier.sharedPhoto(photoKey))
               }) { edit(PrepareStep.ACTIVITY) }
               FactRow(KitIcon.PRIMER_PASO, "Cómo empiezas", reminder.howToStart) { edit(PrepareStep.START) }
-              FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Dónde dejas lo que suena" else "Dónde empiezas", reminder.place) { edit(PrepareStep.PLACE) }
+              FactRow(KitIcon.LUGAR, "Dónde empiezas", reminder.place) { edit(PrepareStep.PLACE) }
               FactRow(KitIcon.TIEMPO, "Cuándo suena", if (apps.isBlank()) "" else "${formatDuration(reminder.requiredUsageSeconds)} en $apps") { edit(PrepareStep.USAGE) }
-              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Dónde suena", if (reminder.routeChosen) soundPlace(reminder) else "") { edit(PrepareStep.SOUND) }
+              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.SUENA, "Con qué suena", if (reminder.routeChosen) soundPlace(reminder) else "") { edit(PrepareStep.SOUND) }
             }
             if (!isKnown && reminder.activity.isNotBlank()) {
               Spacer(Modifier.height(Gap.block))
@@ -349,7 +329,7 @@ internal fun PrepareScreen(
             if (!backgroundUnrestricted) {
               SectionGap()
               Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
-                PlainAction("Quitar la restricción", actions.onBackground)
+                PlainAction("Cambiar la batería", actions.onBackground)
               }
             }
           }
@@ -361,7 +341,7 @@ internal fun PrepareScreen(
   if (picking) AppPickerSheet(apps, reminder.selectedApps.map { it.packageName }.toSet(), actions.onToggleApp) { picking = false }
 }
 
-/** La actividad elegida acompaña cada paso: su foto en un círculo y «Vuelve a ___.» con las palabras de la persona. */
+/** La actividad elegida acompaña cada paso: una franja con su cielo y su nombre; tocarla la cambia. */
 @Composable
 private fun ActivityHeader(activity: String, picture: Picture, photoKey: String?, onEdit: () -> Unit) {
   // 3.1: una franja con el cielo de la actividad y su nombre en una cápsula, como en «Relevo, la app».
@@ -411,33 +391,12 @@ private fun TileGroup(label: String, tiles: List<Tile>) {
   }
 }
 
-/** Paso 3: dónde empieza la actividad, que es donde se deja el parlante. La foto muestra la idea. */
+/** Paso 3: dónde empieza la actividad, que es donde se deja el Tag. */
 @Composable
-private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actions: PrepareActions, onNext: () -> Unit) {
-  // Solo con una semana de la prueba hay una instrucción; sin ella, las opciones bastan (D-110).
-  if (studyCondition != null) {
-    Text(
-      if (studyCondition == StudyCondition.PHONE) "${conditionInstruction(studyCondition)} Anota dónde está lo que necesitas para empezar." else conditionInstruction(studyCondition),
-      style = Relevo.type.body, color = Relevo.colors.graphite,
-    )
-    conditionDetail(studyCondition)?.let { Spacer(Modifier.height(6.dp)); Text(it, style = Relevo.type.subhead, color = Relevo.colors.graphite) }
-    Spacer(Modifier.height(Gap.block))
-  }
-  SuggestionChips(
-    if (studyCondition == StudyCondition.NEUTRAL) commonPlaces else placeSuggestions(reminder.activity),
-    reminder.place, actions.onPlace,
-  )
+private fun PlaceStep(reminder: Reminder, actions: PrepareActions, onNext: () -> Unit) {
+  SuggestionChips(placeSuggestions(reminder.activity), reminder.place, actions.onPlace)
   Spacer(Modifier.height(Gap.block))
-  RenglonField(
-    when (studyCondition) {
-      StudyCondition.NEUTRAL -> "Dónde dejas lo que suena"
-      else -> "Dónde empiezas"
-    },
-    reminder.place, actions.onPlace,
-    placeholder = "O escríbelo aquí",
-    onImeAction = onNext,
-    icon = KitIcon.LUGAR,
-  )
+  RenglonField("Dónde empiezas", reminder.place, actions.onPlace, placeholder = "O escríbelo aquí", onImeAction = onNext, icon = KitIcon.LUGAR)
 }
 
 /** Opciones de un toque; la elegida queda marcada y se puede cambiar o escribir encima. */
@@ -481,61 +440,53 @@ private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: Prepare
       QuickChoice(formatDuration(seconds), reminder.requiredUsageSeconds == seconds, { actions.onDuration(seconds) })
     }
   }
-  Spacer(Modifier.height(6.dp))
-  PlainAction("Probar con 15 segundos", { actions.onDuration(15) })
+  Spacer(Modifier.height(Gap.block))
+  // Un límite breve al empezar (1.0.0): con 45 minutos, al sonar una persona ya estaba muy metida en un video.
+  TipCard("Al empezar, conviene un tiempo breve: suena antes de que te pierdas en las apps. Después lo ajustas.")
 }
 
+/** Dónde conseguir un Tag compatible: una búsqueda en Mercado Libre, que no caduca como una publicación. */
+private const val GET_A_TAG_URL = "https://listado.mercadolibre.cl/itag-llavero-bluetooth"
+
+/**
+ * Paso 5: con qué suena. Tres salidas (1.0.0): el Tag, que se deja donde empiezas; la notificación, que suena
+ * en el teléfono, y un dispositivo de audio Bluetooth. Cada una se prueba antes de seguir.
+ */
 @Composable
-private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: TagUi, tagStatus: TagLink.Status, actions: PrepareActions) {
+private fun SoundStep(reminder: Reminder, tag: TagUi, tagStatus: TagLink.Status, volume: SignalVolume, actions: PrepareActions) {
   val context = LocalContext.current
-  var speakerConnected by remember { mutableStateOf(bluetoothSpeakerConnected(context)) }
-  var watchConnected by remember { mutableStateOf(callDeviceConnected(context)) }
+  var audioConnected by remember { mutableStateOf(audioDeviceConnected(context)) }
   var tested by rememberSaveable { mutableIntStateOf(0) } // 0 sin probar, 1 sonó, 2 falló
-  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
-    speakerConnected = bluetoothSpeakerConnected(context)
-    watchConnected = callDeviceConnected(context)
-  }
-  // En las semanas A y B se elige el objeto (parlante, reloj o llavero); en la C suena en el teléfono.
-  val objectChoice = studyCondition == null || studyCondition != StudyCondition.PHONE
-  if (reminder.place.isNotBlank() && studyCondition != StudyCondition.NEUTRAL) {
-    ListRow(reminder.place.trim(), icon = KitIcon.LUGAR, subtitle = "El lugar donde empiezas")
+  LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { audioConnected = audioDeviceConnected(context) }
+  if (reminder.place.isNotBlank()) {
+    ListRow(reminder.place.trim(), icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
     Spacer(Modifier.height(Gap.block))
   }
   Text(
-    when (studyCondition) {
-      // Dice lo que la persona eligió, no siempre el Tag (3.3).
-      null -> if (!reminder.routeChosen) "Elige con qué suena." else "Suena " + when (reminder.signalRoute) {
-        SignalRoute.TAG -> "en el Tag"
-        SignalRoute.BLUETOOTH -> "en el parlante"
-        SignalRoute.WATCH -> "en el reloj"
-        SignalRoute.PHONE -> "en el teléfono"
-      } + ". Si prefieres otra cosa, elígela."
-      StudyCondition.PHONE -> "Esta semana suena en el teléfono."
-      StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el Tag."
-      StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el Tag."
-    },
+    if (!reminder.routeChosen) "Elige con qué suena." else "Suena ${routeWhere(reminder.signalRoute)}. Si prefieres otra cosa, elígela.",
     style = Relevo.type.subhead, color = Relevo.colors.graphite,
   )
   Spacer(Modifier.height(Gap.block))
   Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
-    OptionRow("En tu Tag", reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, { actions.onRoute(SignalRoute.TAG) },
-      icon = KitIcon.OBJETO, subtitle = tagSubtitle(tag, tagStatus), enabled = objectChoice)
-    OptionRow("En el parlante", reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, { actions.onRoute(SignalRoute.BLUETOOTH) },
-      icon = KitIcon.PARLANTE, subtitle = if (speakerConnected) "Conectado por Bluetooth" else "Sin parlante conectado", enabled = objectChoice)
-    OptionRow("En el reloj", reminder.routeChosen && reminder.signalRoute == SignalRoute.WATCH, { actions.onRoute(SignalRoute.WATCH) },
-      icon = KitIcon.TIEMPO, tileColor = Relevo.colors.mist, subtitle = if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas", enabled = objectChoice)
-    OptionRow("En el teléfono", reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, { actions.onRoute(SignalRoute.PHONE) },
-      icon = KitIcon.TELEFONO, subtitle = "Suena donde esté el teléfono", enabled = studyCondition == null)
+    OptionRow("Tag", reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, { tested = 0; actions.onRoute(SignalRoute.TAG) },
+      icon = KitIcon.OBJETO, subtitle = tagSubtitle(tag, tagStatus))
+    OptionRow("Notificación", reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, { tested = 0; actions.onRoute(SignalRoute.PHONE) },
+      icon = KitIcon.TELEFONO, subtitle = "Suena en el teléfono, donde esté")
+    OptionRow("Dispositivo de audio", reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, { tested = 0; actions.onRoute(SignalRoute.BLUETOOTH) },
+      icon = KitIcon.PARLANTE, subtitle = if (audioConnected) "Un parlante o audífonos, conectado" else "Un parlante o audífonos Bluetooth")
   }
   // Sin elección todavía: nada más que elegir.
   if (!reminder.routeChosen) return
   Spacer(Modifier.height(Gap.section))
   if (reminder.signalRoute == SignalRoute.TAG) {
-    Box(Modifier.fillMaxWidth().padding(vertical = 8.dp), contentAlignment = Alignment.Center) { TagObject(size = 76.dp, sounding = tag.test == TagTest.WORKING) }
-    Spacer(Modifier.height(Gap.block))
     TagPanel(tag, actions)
     return
   }
+  SettingPanelRow(
+    "Volumen", "El volumen multimedia del teléfono también cuenta.",
+    listOf(SignalVolume.SOFT.name to "Suave", SignalVolume.MEDIUM.name to "Medio", SignalVolume.LOUD.name to "Fuerte"), volume.name,
+  ) { tested = 0; actions.onVolume(SignalVolume.valueOf(it)) }
+  Spacer(Modifier.height(Gap.block))
   RelevoButton("Probar el sonido", { tested = if (actions.onTestSound()) 1 else 2 }, kind = ButtonKind.Secondary, icon = KitIcon.PROBAR)
   Spacer(Modifier.height(12.dp))
   AnimatedVisibility(tested != 0, enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut()) {
@@ -546,11 +497,21 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   }
   if (reminder.signalRoute == SignalRoute.BLUETOOTH) {
     Spacer(Modifier.height(8.dp))
-    Text("Si tu parlante se apaga solo, no sonará.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+    Text("Déjalo encendido donde empiezas. Si se apaga solo, no sonará.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
   }
-  if (reminder.signalRoute == SignalRoute.WATCH) {
-    Spacer(Modifier.height(8.dp))
-    Text("Deja el reloj donde empiezas, con las llamadas por Bluetooth activadas.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+}
+
+/** Un ajuste en su tarjeta: qué es, una línea de ayuda y sus valores en un control segmentado. */
+@Composable
+private fun SettingPanelRow(title: String, detail: String, options: List<Pair<String, String>>, selected: String, onSelect: (String) -> Unit) {
+  Column(
+    Modifier.fillMaxWidth().clip(Relevo.panelShape).background(Relevo.colors.card).padding(16.dp),
+    verticalArrangement = Arrangement.spacedBy(4.dp),
+  ) {
+    Text(title, style = Relevo.type.headline, color = Relevo.colors.ink)
+    Text(detail, style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(4.dp))
+    SegmentedControl(options, selected, { it?.let(onSelect) }, allowDeselect = false)
   }
 }
 
@@ -558,7 +519,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
 private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String {
   val battery = (status.battery ?: tag.battery)?.let { " · " + TagProtocol.batteryLabel(it) }.orEmpty()
   return when {
-    tag.linkedName == null -> "Un Tag que pita"
+    tag.linkedName == null -> "Se deja donde empiezas"
     status.phase == TagLink.Phase.CONNECTED -> "${tag.linkedName}, conectado$battery"
     else -> "${tag.linkedName}, elegido$battery"
   }
@@ -567,13 +528,13 @@ private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String {
 private fun tagProblem(problem: TagLink.Problem?): String = when (problem) {
   TagLink.Problem.NO_PERMISSION -> "Falta el permiso de dispositivos cercanos."
   TagLink.Problem.BLUETOOTH_OFF -> "El Bluetooth del teléfono está apagado."
-  TagLink.Problem.NOT_A_TAG -> "Ese aparato no acepta la orden para pitar: no es un Tag compatible."
-  TagLink.Problem.NOT_FOUND, null -> "No lo encontramos. Revisa que esté encendido y cerca, y que ninguna otra app, como iSearching, esté conectada a él: acepta una conexión a la vez."
+  TagLink.Problem.NOT_A_TAG -> "Ese aparato no acepta la orden de pitar: no es un Tag compatible."
+  TagLink.Problem.NOT_FOUND, null -> "No apareció. Revisa que esté encendido y cerca. Si iSearching, la app que trae el Tag, está conectada a él, ciérrala: el Tag acepta una conexión a la vez."
 }
 
 /**
- * Elegir y probar el llavero (D-109). Pide el permiso de dispositivos cercanos solo al buscar o probar.
- * Sin llavero elegido, lo busca; con uno elegido, lo prueba o permite cambiarlo.
+ * Elegir y probar el Tag (D-109). Pide el permiso de dispositivos cercanos solo al buscar o probar. Sin Tag
+ * elegido, lo busca y ofrece dónde conseguir uno (1.0.0); con uno elegido, lo prueba o permite cambiarlo.
  */
 @Composable
 private fun TagPanel(tag: TagUi, actions: PrepareActions) {
@@ -633,7 +594,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
       actions.onBluetoothOn()
     }
     Notice("Enciende el Bluetooth del teléfono para encontrar el Tag.", title = "Bluetooth apagado", icon = KitIcon.CONEXION) {
-      PlainAction("Encender Bluetooth", {
+      PlainAction("Encender el Bluetooth", {
         runCatching { enableBluetooth.launch(Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)) }
           .onFailure { context.startActivity(Intent(Settings.ACTION_BLUETOOTH_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
       })
@@ -650,13 +611,13 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     PlainAction("Cómo usar el Tag", { guide = true }, icon = KitIcon.AYUDA)
     SectionGap()
     RelevoButton(
-      if (tag.searching) "Buscando…" else if (tag.searched) "Buscar de nuevo" else "Buscar el Tag", { retries = 0; withPermission(actions.onTagSearch) },
+      if (tag.searching) "Buscando…" else if (tag.searched) "Buscar otra vez" else "Buscar el Tag", { retries = 0; withPermission(actions.onTagSearch) },
       kind = ButtonKind.Secondary, icon = KitIcon.BUSCAR, enabled = !tag.searching,
     )
     if (!TagLink.hasPermissions(context)) {
       Spacer(Modifier.height(8.dp))
       Text(
-        "Para buscarlo, Android te pedirá permiso para encontrar dispositivos cercanos. Relevo solo recuerda el Tag que elijas, en este teléfono; no usa tu ubicación.",
+        "Para buscarlo, Android pide permiso para encontrar dispositivos cercanos. Relevo solo recuerda el Tag que elijas, en este teléfono; no usa tu ubicación.",
         style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
       )
     }
@@ -673,8 +634,8 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     } else if (tag.searched && !tag.searching && tag.problem == null) {
       SectionGap()
       Notice(
-        if (tag.searchedAll) "No apareció ningún aparato con Bluetooth cerca. Revisa que el Tag esté encendido y cerca del teléfono, y búscalo de nuevo."
-        else "No apareció ningún Tag. Revisa que esté encendido y cerca del teléfono, y búscalo de nuevo. Si lo usa otra app, como iSearching, ciérrala: el Tag acepta una conexión a la vez.",
+        if (tag.searchedAll) "No apareció ningún aparato con Bluetooth cerca. Revisa que el Tag esté encendido y cerca del teléfono, y búscalo otra vez."
+        else "No apareció ningún Tag. Revisa que esté encendido y cerca del teléfono, y búscalo otra vez. Si iSearching, la app que trae el Tag, está conectada a él, ciérrala: el Tag acepta una conexión a la vez.",
         tone = Tone.Error,
         actions = if (tag.searchedAll) null else {
           { PlainAction("Ver todos los aparatos cercanos", { withPermission(actions.onTagSearchAll) }) }
@@ -682,7 +643,15 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
       )
     } else if (tag.problem == TagLink.Problem.NOT_A_TAG && !tag.searching) {
       SectionGap()
-      Notice("Ese aparato no aceptó la orden para pitar: no es un Tag compatible. Búscalo de nuevo y elige otro.", tone = Tone.Error)
+      Notice("Ese aparato no aceptó la orden de pitar: no es un Tag compatible. Búscalo otra vez y elige otro.", tone = Tone.Error)
+    }
+    // «¿No tienes un Tag?» (1.0.0, pedido de la comisión del 28 de octubre): dónde conseguir uno y, mientras
+    // tanto, la notificación, que suena en el teléfono.
+    SectionGap()
+    ListSection(footer = "Sirve un iTag, el llavero que se usa con la app iSearching. Mientras tanto, elige «Notificación».") {
+      ListRow("¿No tienes un Tag?", icon = KitIcon.ENLACE_EXTERNO, subtitle = "Consíguelo en Mercado Libre", chevron = true, onClick = {
+        runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(GET_A_TAG_URL)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
+      })
     }
     return
   }
@@ -698,7 +667,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   Spacer(Modifier.height(12.dp))
   if (!tag.heard && tag.test == TagTest.IDLE) {
     Text(
-      "Pruébalo y cuéntanos si lo escuchas pitar: así Relevo sabe cómo hacerlo sonar.",
+      "Pruébalo y di si lo escuchaste pitar: así Relevo sabe cómo hacerlo sonar.",
       style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
     )
     Spacer(Modifier.height(8.dp))
@@ -718,7 +687,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
         }
       }
       tag.silent -> Notice(
-        "Recibió la orden, pero no pitó. Apágalo y vuelve a encenderlo: mantén su botón apretado 3 segundos hasta que pite largo, y otra vez hasta que pite dos veces. Después pruébalo de nuevo. Si sigue sin pitar, elige otra salida.",
+        "Recibió la orden, pero no pitó. Apágalo y vuelve a encenderlo: mantén su botón apretado 3 segundos hasta que pite largo, y otra vez hasta que pite dos veces. Después pruébalo otra vez. Si sigue sin pitar, elige «Notificación».",
         title = "El Tag no pitó", tone = Tone.Error,
       )
       else -> Notice(tagProblem(tag.problem), title = "No sonó en el Tag", tone = Tone.Error)
@@ -730,7 +699,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   PlainAction("Elegir otro Tag", actions.onTagForget, color = Relevo.colors.graphite, icon = KitIcon.CAMBIE)
   Spacer(Modifier.height(8.dp))
   Text(
-    "Déjalo encendido donde empiezas. Relevo se conecta a él al activar el relevo y lo mantiene así hasta que suene.",
+    "Déjalo encendido donde empiezas. Relevo se conecta a él al activar el relevo y, si no responde al cumplirse el tiempo, suena en el teléfono. El Tag pita con su propio volumen.",
     style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
   )
 }
@@ -744,39 +713,13 @@ private fun TagHeardQuestion(retry: Boolean, onAnswer: (Boolean) -> Unit) {
   Column(verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
     Text("¿Lo escuchaste pitar?", style = Relevo.type.headline, color = Relevo.colors.ink)
     Text(
-      if (retry) "Lo probamos de otra forma. Debió pitar 3 segundos seguidos." else "Debió pitar 3 segundos seguidos.",
+      if (retry) "Se probó de otra forma. Debió pitar 3 segundos seguidos." else "Debió pitar 3 segundos seguidos.",
       style = Relevo.type.footnote, color = Relevo.colors.graphite,
     )
     Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
       RelevoButton("Sí, pitó", { onAnswer(true) }, modifier = Modifier.weight(1f), kind = ButtonKind.Secondary)
       RelevoButton("No pitó", { onAnswer(false) }, modifier = Modifier.weight(1f), kind = ButtonKind.Secondary)
     }
-  }
-}
-
-/** Opción de salida en una tarjeta redondeada: la elegida lleva un anillo de tinta. */
-@Composable
-private fun SoundOption(icon: KitIcon, title: String, subtitle: String, selected: Boolean, enabled: Boolean, onClick: () -> Unit) {
-  val colors = Relevo.colors
-  val interaction = remember { MutableInteractionSource() }
-  val ring by animateColorAsState(if (selected) colors.ink else Color.Transparent, Motion.standard(Motion.SHORT), label = "sound_ring")
-  Row(
-    Modifier.fillMaxWidth().pressScale(interaction, 0.98f).clip(Relevo.panelShape).background(colors.card)
-      .border(2.dp, ring, Relevo.panelShape)
-      .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.RadioButton, onClick = onClick)
-      .semantics { this.selected = selected }
-      .padding(18.dp),
-    verticalAlignment = Alignment.CenterVertically,
-  ) {
-    Box(Modifier.size(48.dp).clip(CircleShape).background(colors.mist), contentAlignment = Alignment.Center) {
-      RelevoIcon(icon, size = 24.dp, background = colors.mist)
-    }
-    Spacer(Modifier.width(16.dp))
-    Column(Modifier.weight(1f)) {
-      Text(title, style = Relevo.type.headline, color = if (enabled || selected) colors.ink else colors.graphite)
-      Text(subtitle, style = Relevo.type.footnote, color = colors.graphite)
-    }
-    if (enabled || selected) RadioMark(selected)
   }
 }
 

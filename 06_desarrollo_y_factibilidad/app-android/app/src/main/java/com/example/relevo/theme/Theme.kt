@@ -26,9 +26,8 @@ object Relevo {
    * Formas (D-083): botones, controles y etiquetas en cápsula; tarjetas y fotos con esquinas amplias;
    * hojas flotantes aún más redondeadas, concéntricas con las del teléfono. Nada de bloques cuadrados.
    */
-  val controlShape = RoundedCornerShape(percent = 50)
   val panelShape = RoundedCornerShape(28.dp)
-  val tileShape = RoundedCornerShape(22.dp)
+  val controlShape = RoundedCornerShape(percent = 50)
   val sheetShape = RoundedCornerShape(34.dp)
 }
 

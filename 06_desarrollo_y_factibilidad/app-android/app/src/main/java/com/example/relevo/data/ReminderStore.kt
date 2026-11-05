@@ -24,7 +24,7 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       place = preferences.getString("place", "").orEmpty(),
       targetPackage = preferences.getString("target_package", "").orEmpty(),
       targetAppLabel = preferences.getString("target_app_label", "").orEmpty(),
-      requiredUsageSeconds = preferences.getInt("required_usage_seconds", 900),
+      requiredUsageSeconds = preferences.getInt("required_usage_seconds", Reminder.DEFAULT_LIMIT_SECONDS),
       observedUsageSeconds = preferences.getInt("observed_usage_seconds", 0),
       participantCode = preferences.getString("participant_code", "").orEmpty(),
       consentAccepted = preferences.getBoolean("consent_accepted", false),
@@ -35,17 +35,15 @@ class ReminderStore(context: Context, name: String = CURRENT) {
           }
           .getOrDefault(ReminderStatus.DRAFT),
       signalDelivered = preferences.getBoolean("signal_delivered", false),
-      signalRoute = runCatching { SignalRoute.valueOf(preferences.getString("signal_route", SignalRoute.BLUETOOTH.name).orEmpty()) }.getOrDefault(SignalRoute.BLUETOOTH),
+      signalRoute = routeOf(preferences.getString("signal_route", null)),
       targetApps = runCatching {
         val array = JSONArray(preferences.getString("target_apps", "[]"))
         List(array.length()) { index -> array.getJSONObject(index).let { TrackedApp(it.getString("package"), it.getString("label")) } }
       }.getOrDefault(emptyList()),
-      studyCondition = preferences.getString("study_condition", "").orEmpty(),
-      studyDay = preferences.getInt("study_day", -1),
       signalAt = preferences.getLong("signal_at", 0L),
       signalEnded = preferences.getBoolean("signal_ended", false),
-      localOnly = preferences.getBoolean("local_only", false),
       autoActivated = preferences.getBoolean("auto_activated", false),
+      soundedOnPhone = preferences.getBoolean("sounded_on_phone", false),
       // Antes de 2.21 la salida siempre estaba elegida: si hay una guardada sin esta marca, cuenta como elegida.
       routeChosen = preferences.getBoolean("route_chosen", preferences.contains("signal_route")),
     )
@@ -67,14 +65,24 @@ class ReminderStore(context: Context, name: String = CURRENT) {
       .putBoolean("signal_delivered", reminder.signalDelivered)
       .putString("signal_route", reminder.signalRoute.name)
       .putString("target_apps", JSONArray().apply { reminder.selectedApps.forEach { app -> put(JSONObject().put("package", app.packageName).put("label", app.label)) } }.toString())
-      .putString("study_condition", reminder.studyCondition)
-      .putInt("study_day", reminder.studyDay)
       .putLong("signal_at", reminder.signalAt)
       .putBoolean("signal_ended", reminder.signalEnded)
-      .putBoolean("local_only", reminder.localOnly)
       .putBoolean("auto_activated", reminder.autoActivated)
       .putBoolean("route_chosen", reminder.routeChosen)
+      .putBoolean("sounded_on_phone", reminder.soundedOnPhone)
+      // Claves de la prueba de 21 días y del uso sin participar (2.8 a 3.3): ya no se usan.
+      .remove("study_condition").remove("study_day").remove("local_only")
       .apply()
+  }
+
+  /**
+   * La salida guardada. El reloj (D-093) dejó de existir en 1.0.0: un relevo que lo usaba suena en el
+   * teléfono, que siempre está disponible. Sin salida guardada, el Tag (D-117).
+   */
+  private fun routeOf(saved: String?): SignalRoute = when (saved) {
+    null, "" -> SignalRoute.TAG
+    "WATCH" -> SignalRoute.PHONE
+    else -> runCatching { SignalRoute.valueOf(saved) }.getOrDefault(SignalRoute.TAG)
   }
 
   fun clear() {

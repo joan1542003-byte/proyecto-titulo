@@ -21,7 +21,7 @@ class RestoreMonitorReceiver : BroadcastReceiver() {
     if (Participation.participating(context)) ProjectMessages.schedule(context)
     // Con un relevo contando, o con la activación automática encendida (D-095), el servicio vuelve a empezar.
     val waiting = ReminderStore(context).load().status == ReminderStatus.WAITING
-    if (!waiting && !(AutoModeStore(context).enabled && Participation.canUse(context))) return
+    if (!waiting && !(AutoModeStore(context).enabled && Participation.participating(context))) return
     runCatching {
       ContextCompat.startForegroundService(
         context,

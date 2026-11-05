@@ -5,18 +5,14 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -37,9 +33,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontWeight
@@ -58,8 +51,6 @@ import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Panel
-import com.example.relevo.ui.components.Photo
-import com.example.relevo.ui.components.PhotoHero
 import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.PictureContent
 import com.example.relevo.ui.components.QuickChoice
@@ -68,11 +59,8 @@ import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.RenglonField
-import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.appear
 import com.example.relevo.ui.components.rememberReduceMotion
-import com.example.relevo.ui.components.pressScale
-import androidx.compose.foundation.border
 import java.util.UUID
 import androidx.compose.foundation.layout.BoxWithConstraints
 import com.example.relevo.ui.components.Gap
@@ -81,9 +69,10 @@ import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.skyFor
 
 /**
- * R1: la ruta de cada interés (D-084). Arriba, en grande, el paso en que está la persona («Ahora»)
- * con una frase que dice cómo y dónde empezar; debajo, todos los pasos en orden. Los pasos son
- * sugerencias editables; la ruta no avanza sola ni muestra porcentajes, puntos o niveles (D-074).
+ * R1: Actividades (1.0.0; antes «Paso a paso» o «Ruta»). Los pasos de cada interés (D-084): arriba, el paso
+ * en que está la persona («Ahora») con cómo y dónde empezar; debajo, todos los pasos en orden. Los pasos son
+ * sugerencias editables; no avanzan solos ni muestran porcentajes, puntos o niveles (D-074). Al final, las
+ * actividades que la persona guardó.
  */
 @Composable
 internal fun RouteTab(
@@ -97,6 +86,7 @@ internal fun RouteTab(
   onSetCurrent: (interest: String, index: Int) -> Unit,
   onEdit: (String) -> Unit,
   onChooseInterests: () -> Unit,
+  onActivities: () -> Unit,
 ) {
   val scroll = rememberScrollState()
   var firstReselect by remember { mutableStateOf(reselect) }
@@ -108,17 +98,19 @@ internal fun RouteTab(
 
   // Lámina «Tu ruta»: el título en dos tonos, los pasos en escalera y el botón debajo, sin flotar.
   RelevoScreen(
-    title = "Paso a paso",
-    titleSoft = "hacia lo que te gustaría hacer más seguido.",
+    title = "Actividades",
+    titleSoft = "Pasos pequeños hacia lo que te gustaría hacer más seguido",
     scrollState = scroll,
   ) {
     if (track == null) {
       Panel(Modifier.appear(0)) {
         Text("Elige qué te gustaría hacer más seguido", style = Relevo.type.title2, color = Relevo.colors.ink)
-        Text("Te proponemos pasos pequeños para empezar, y los puedes cambiar.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+        Text("Relevo propone pasos pequeños para empezar, y los puedes cambiar.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
       }
       Spacer(Modifier.height(Gap.block))
       RelevoButton("Elegir intereses", onChooseInterests, icon = KitIcon.AGREGAR)
+      Spacer(Modifier.height(Gap.section))
+      SavedActivitiesRow(customActivities.size, onActivities)
       return@RelevoScreen
     }
     if (routes.size > 1) {
@@ -155,12 +147,14 @@ internal fun RouteTab(
         if (activeRelevo) {
           Text("Tienes un relevo activo. Cuando termine, puedes preparar otro con este paso.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 2.dp))
         } else {
-          RelevoButton("Preparar un relevo con este paso", { onPrepare(shown.interest, now.id, photoKey("ruta", now.id)) })
+          RelevoButton("Preparar este paso", { onPrepare(shown.interest, now.id, photoKey("ruta", now.id)) })
         }
         Spacer(Modifier.height(6.dp))
         RouteActions(onEdit = { onEdit(shown.interest) }, onChooseInterests = onChooseInterests)
       }
     }
+    Spacer(Modifier.height(Gap.section))
+    SavedActivitiesRow(customActivities.size, onActivities)
   }
 
   val tapped = track?.steps?.firstOrNull { it.id == openStep }
@@ -181,7 +175,7 @@ internal fun RouteTab(
       }
       Spacer(Modifier.height(22.dp))
       if (!activeRelevo) {
-        RelevoButton("Preparar un relevo con este paso", { openStep = null; onPrepare(track.interest, tapped.id, photoKey("ruta", tapped.id)) })
+        RelevoButton("Preparar este paso", { openStep = null; onPrepare(track.interest, tapped.id, photoKey("ruta", tapped.id)) })
         Spacer(Modifier.height(8.dp))
       }
       if (!isCurrent) {
@@ -189,6 +183,16 @@ internal fun RouteTab(
       }
     }
   }
+}
+
+/** Las actividades que la persona guardó, para prepararlas en un toque. */
+@Composable
+private fun SavedActivitiesRow(count: Int, onClick: () -> Unit) {
+  ListRow(
+    "Tus actividades", icon = KitIcon.ESTRELLA,
+    subtitle = when (count) { 0 -> "Guarda las que haces seguido"; 1 -> "1 actividad guardada"; else -> "$count actividades guardadas" },
+    chevron = true, onClick = onClick,
+  )
 }
 
 /** Editar los pasos y cambiar los intereses, con el mismo peso y debajo de la lista. */
@@ -341,15 +345,14 @@ private fun StepEditorSheet(step: RouteStep, isNew: Boolean, onDismiss: () -> Un
   }
 }
 
-private val spelled = listOf("cero", "una", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez")
-
 /**
  * R3: tras varias respuestas «Comencé la actividad» en el mismo paso. Repite lo que la persona
- * declaró, sin afirmar que se formó un hábito, y las dos opciones pesan lo mismo.
+ * declaró, sin afirmar que se formó un hábito, y las dos opciones pesan lo mismo. Las veces van en
+ * cifras, como todo lo que se cuenta (R10).
  */
 @Composable
 internal fun NextStepSheet(suggestion: RouteSuggestion, onAccept: () -> Unit, onStay: () -> Unit, onDismiss: () -> Unit) {
-  val times = spelled.getOrNull(suggestion.starts)?.let { "$it veces" } ?: "${suggestion.starts} veces"
+  val times = if (suggestion.starts == 1) "1 vez" else "${suggestion.starts} veces"
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
     Text("Dijiste que empezaste «${suggestion.current.activity}» $times.", style = Relevo.type.body, color = Relevo.colors.graphite)
     Spacer(Modifier.height(8.dp))

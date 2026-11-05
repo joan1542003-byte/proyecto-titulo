@@ -13,26 +13,25 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import cl.udp.relevo.R
+import com.example.relevo.MainActivity
 import com.example.relevo.data.AutoModeStore
 import com.example.relevo.data.Participation
-import com.example.relevo.data.ReminderStore
-import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.RemoteSync
+import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchBackup
-import com.example.relevo.data.StudyStore
+import com.example.relevo.data.ResearchLogStore
+import com.example.relevo.data.SettingsStore
 import com.example.relevo.data.TagStore
 import com.example.relevo.domain.AutoMode
+import com.example.relevo.domain.QuietHours
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.domain.SignalRoute
-import com.example.relevo.domain.StudyCondition
-import com.example.relevo.domain.StudyPlan
-import java.time.LocalDate
-import java.util.UUID
-import kotlinx.coroutines.CompletableDeferred
 import com.example.relevo.signal.SignalPlayer
 import com.example.relevo.signal.TagLink
-import com.example.relevo.MainActivity
+import java.time.LocalTime
+import java.util.UUID
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -40,13 +39,20 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 
+/**
+ * Cuenta el tiempo en las apps elegidas mientras un relevo está activo y, al cumplirse, hace sonar lo que
+ * la persona eligió. Con la activación automática, espera a que se abra una de esas apps. Corre en primer
+ * plano, con una notificación permanente, como pide Android para un trabajo que la persona inició.
+ */
 class AppUsageMonitorService : Service() {
   private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
   private lateinit var store: ReminderStore
   private lateinit var researchLog: ResearchLogStore
   private lateinit var signalPlayer: SignalPlayer
   private lateinit var autoMode: AutoModeStore
+  private lateinit var settings: SettingsStore
   private lateinit var lastConfiguration: ReminderStore
   /** Mensajes del proyecto al instante mientras el servicio está activo (D-096). */
   private lateinit var messageStream: MessageStream
@@ -59,6 +65,7 @@ class AppUsageMonitorService : Service() {
     researchLog = ResearchLogStore(this)
     signalPlayer = SignalPlayer(this)
     autoMode = AutoModeStore(this)
+    settings = SettingsStore(this)
     lastConfiguration = ReminderStore(this, ReminderStore.LAST_CONFIGURATION)
     messageStream = MessageStream(this, scope)
     createNotificationChannels()
@@ -68,7 +75,7 @@ class AppUsageMonitorService : Service() {
     val reminder = store.load()
     val counting = reminder.status == ReminderStatus.WAITING
     // Android exige mostrar la notificación de primer plano antes de detenerse, incluso si no se va a contar.
-    startInForeground(counting)
+    startInForeground(if (counting) Ongoing.COUNTING else Ongoing.WATCHING, reminder)
     if (!hasCurrentConsent()) {
       stopMonitoring()
       return START_NOT_STICKY
@@ -109,13 +116,23 @@ class AppUsageMonitorService : Service() {
     super.onDestroy()
   }
 
-  /** [counting]: hay un relevo contando. Si no, Relevo espera para activarse solo (D-095). */
-  private fun startInForeground(counting: Boolean = true) {
+  /** Qué dice la notificación permanente. */
+  private enum class Ongoing { COUNTING, QUIET, WATCHING, TAG_MISSING }
+
+  private fun startInForeground(state: Ongoing, reminder: Reminder = store.load()) {
+    val minutes = (reminder.requiredUsageSeconds / 60).coerceAtLeast(1)
+    val current = settings.load()
+    val (title, text) = when (state) {
+      Ongoing.COUNTING -> "Tu relevo está contando" to "Suena al sumar $minutes min en tus apps"
+      Ongoing.QUIET -> "Tu relevo está en pausa" to "Horas sin sonar, hasta las ${current.quietUntil}:00"
+      Ongoing.WATCHING -> "Activación automática" to "Cuenta cuando abras las apps de tu último relevo"
+      Ongoing.TAG_MISSING -> "Tu relevo está contando" to "El Tag no responde; si sigue así, sonará el teléfono"
+    }
     val notification =
       NotificationCompat.Builder(this, CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle(if (counting) "Relevo está contando tu tiempo en las apps que elegiste" else "Relevo se activará solo")
-        .setContentText(if (counting) "Deja de contar cuando desactivas el relevo." else "Empieza a contar cuando abras las apps de tu último relevo.")
+        .setContentTitle(title)
+        .setContentText(text)
         .setContentIntent(openAppIntent())
         .setOngoing(true)
         .setSilent(true)
@@ -133,12 +150,15 @@ class AppUsageMonitorService : Service() {
     stopSelf()
   }
 
+  /** Está dentro de las horas sin sonar que eligió la persona (1.0.0). */
+  private fun quietNow(): Boolean = settings.load().let { it.quietHours && QuietHours.contains(LocalTime.now().hour, it.quietFrom, it.quietUntil) }
+
   private fun startMonitoring() {
     monitorJob?.cancel()
     isWatching = false
     isCounting = true
     messageStream.start()
-    // El llavero se conecta al activar el relevo y se mantiene así hasta la señal (D-109).
+    // El Tag se conecta al activar el relevo y se mantiene así hasta que suena (D-109).
     if (store.load().signalRoute == SignalRoute.TAG) TagStore(this).address?.let { TagLink.hold(this, it) }
     val startedAt = System.currentTimeMillis()
     // Se revisa un periodo previo para saber qué app estaba abierta al empezar o al retomar.
@@ -149,6 +169,8 @@ class AppUsageMonitorService : Service() {
         var wasTargetForeground = false
         var lastTargetPackage = store.load().targetPackage
         var ticks = 0L
+        var wasQuiet = false
+        var tagChecked = false
 
         while (true) {
           val reminder = store.load()
@@ -165,15 +187,24 @@ class AppUsageMonitorService : Service() {
           }
           if (ticks % MESSAGE_TICKS == 0L) launch(Dispatchers.IO) { ProjectMessages.check(this@AppUsageMonitorService) }
 
+          // En las horas sin sonar el relevo sigue activo, pero no cuenta: así no suena a esa hora.
+          val quiet = quietNow()
+          if (quiet != wasQuiet) {
+            wasQuiet = quiet
+            researchLog.logApp(reminder.participantCode, if (quiet) "horas_sin_sonar_inicio" else "horas_sin_sonar_fin", reminder.activity)
+            startInForeground(if (quiet) Ongoing.QUIET else Ongoing.COUNTING, reminder)
+          }
+
           val now = System.currentTimeMillis()
           readUsageEvents(now, tracker)
-          val targetForeground = tracker.tick(now, reminder::tracks)
+          tracker.tick(now) { !quiet && reminder.tracks(it) }
+          // Entrar y salir de una app elegida se registra aunque sean horas sin sonar.
+          val targetForeground = reminder.tracks(tracker.currentPackage)
 
           if (targetForeground != wasTargetForeground || (targetForeground && tracker.currentPackage != lastTargetPackage)) {
-            val entered = targetForeground
             // Pasar de una app elegida a otra también queda registrado como salida y entrada.
             if (wasTargetForeground) researchLog.record(reminder.sessionId, reminder.participantCode, "target_left", lastTargetPackage, (tracker.accumulatedMillis / 1_000L).toInt())
-            if (entered) {
+            if (targetForeground) {
               lastTargetPackage = tracker.currentPackage.orEmpty()
               researchLog.record(reminder.sessionId, reminder.participantCode, "target_entered", lastTargetPackage, (tracker.accumulatedMillis / 1_000L).toInt())
             }
@@ -183,6 +214,13 @@ class AppUsageMonitorService : Service() {
           val observedSeconds = (tracker.accumulatedMillis / 1_000L).toInt()
           if (observedSeconds != reminder.observedUsageSeconds) {
             store.save(reminder.copy(observedUsageSeconds = observedSeconds))
+          }
+
+          // Antes de que se cumpla el tiempo, Relevo busca el Tag; así sabe con tiempo si tendrá que sonar en el
+          // teléfono (pedido de la comisión del 28 de octubre, Tabla 4 de la memoria).
+          if (!tagChecked && reminder.signalRoute == SignalRoute.TAG && reminder.requiredUsageSeconds - observedSeconds <= TAG_CHECK_SECONDS) {
+            tagChecked = true
+            launch(Dispatchers.IO) { checkTagBeforeSignal(reminder) }
           }
 
           if (observedSeconds >= reminder.requiredUsageSeconds) {
@@ -199,6 +237,18 @@ class AppUsageMonitorService : Service() {
   }
 
   /**
+   * Abre la conexión con el Tag si no está abierta. Si no responde, la notificación lo dice: al cumplirse
+   * el tiempo, Relevo lo intenta de nuevo y, si sigue sin responder, suena en el teléfono.
+   */
+  private suspend fun checkTagBeforeSignal(reminder: Reminder) {
+    val address = TagStore(this).address
+    val ok = address != null && TagLink.hasPermissions(this) &&
+      (TagLink.isConnectedTo(address) || withTimeoutOrNull(TAG_CHECK_TIMEOUT_MILLIS) { TagLink.reconnect(this@AppUsageMonitorService, address) } == true)
+    researchLog.logApp(reminder.participantCode, "tag_revisado_antes", if (ok) "responde" else "no_responde")
+    if (!ok && store.load().status == ReminderStatus.WAITING) startInForeground(Ongoing.TAG_MISSING, reminder)
+  }
+
+  /**
    * Activación automática (D-095): mira qué app está en primer plano, solo su nombre, y activa el último
    * relevo cuando se abre una de sus apps, si no hay otro en curso y ya pasó la pausa desde el anterior.
    */
@@ -207,7 +257,7 @@ class AppUsageMonitorService : Service() {
     isCounting = false
     isWatching = true
     messageStream.start()
-    startInForeground(counting = false)
+    startInForeground(Ongoing.WATCHING)
     val startedAt = System.currentTimeMillis()
     lastQueryMillis = startedAt - LOOKBACK_MILLIS
     val tracker = ForegroundTracker(startedAt)
@@ -220,7 +270,7 @@ class AppUsageMonitorService : Service() {
           if (current.status == ReminderStatus.WAITING) {
             // Se activó un relevo a mano mientras Relevo esperaba: pasa a contarlo.
             isWatching = false
-            startInForeground(counting = true)
+            startInForeground(Ongoing.COUNTING, current)
             startMonitoring()
             return@launch
           }
@@ -231,9 +281,10 @@ class AppUsageMonitorService : Service() {
           readUsageEvents(now, tracker)
           tracker.tick(now) { false }
           val last = lastConfiguration.load()
-          if (AutoMode.shouldArm(true, current.status, last, tracker.currentPackage, now, autoMode.lastClosedAt) && armAutomatically(last)) {
+          // En las horas sin sonar no se activa solo: el relevo no contaría.
+          if (!quietNow() && AutoMode.shouldArm(true, current.status, last, tracker.currentPackage, now, autoMode.lastClosedAt) && armAutomatically(last)) {
             isWatching = false
-            startInForeground(counting = true)
+            startInForeground(Ongoing.COUNTING)
             startMonitoring()
             return@launch
           }
@@ -244,13 +295,10 @@ class AppUsageMonitorService : Service() {
       }
   }
 
-  /** Activa el último relevo con el día y la condición de hoy, igual que al activarlo a mano. */
+  /** Activa el último relevo, igual que al activarlo a mano. */
   private fun armAutomatically(last: Reminder): Boolean {
     val code = Participation.code(this).ifBlank { return false }
-    val plan = StudyStore(this).plan()
-    val today = LocalDate.now()
-    val day = plan?.day(today)?.takeIf { it in 0..plan.lastDay } ?: -1
-    val next = AutoMode.fromLast(last, code, plan?.condition(today), day, UUID.randomUUID().toString())
+    val next = AutoMode.fromLast(last, code, UUID.randomUUID().toString())
     if (next.status != ReminderStatus.WAITING) return false
     store.save(next)
     researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
@@ -261,20 +309,27 @@ class AppUsageMonitorService : Service() {
   }
 
   /**
-   * Emite la señal de D-078: unos 30 segundos que terminan solos. Después, la pantalla y la
-   * notificación quedan visibles en silencio hasta que la persona responde.
+   * Suena unos 30 segundos y termina solo (D-078). Si el Tag no responde, suena una notificación en el
+   * teléfono, que siempre está a mano (1.0.0). Después, la pantalla y la notificación quedan en silencio
+   * hasta que la persona responde.
    */
   private suspend fun deliverSignal(reminder: Reminder) {
     val signalAt = System.currentTimeMillis()
     val tracked = reminder.selectedApps.map { it.packageName }.toSet()
     val usageBefore = UsageWindow.trackedSeconds(this, signalAt - UsageWindow.WINDOW_MILLIS, signalAt, tracked)
     val ending = CompletableDeferred<SignalPlayer.Ending>()
-    val audible = signalPlayer.play(reminder.signalRoute, SignalPlayer.Pattern.SIGNAL) { ending.complete(it) }
-    val signalled = reminder.deliverSignal(audible, signalAt)
+    var audible = signalPlayer.play(reminder.signalRoute, SignalPlayer.Pattern.SIGNAL) { ending.complete(it) }
+    var onPhone = false
+    if (!audible && reminder.signalRoute == SignalRoute.TAG) {
+      onPhone = signalPlayer.play(SignalRoute.PHONE, SignalPlayer.Pattern.SIGNAL) { ending.complete(it) }
+      audible = onPhone
+      researchLog.logApp(reminder.participantCode, "tag_sin_respuesta", if (onPhone) "sono_en_el_telefono" else "no_sono")
+    }
+    val signalled = reminder.deliverSignal(audible, signalAt, onPhone)
     store.save(signalled)
     researchLog.record(signalled.sessionId, signalled.participantCode, if (audible) "signal_emitted" else "signal_failed", signalled.targetPackage, signalled.observedUsageSeconds)
     if (audible) researchLog.markSignal(signalled.sessionId, signalled.observedUsageSeconds, signalAt, usageBefore)
-    // La carga de la pila del Tag al sonar, si la informó al conectarse: explica señales que no se oyeron (2.31).
+    // La carga de la pila del Tag al sonar, si la informó al conectarse: explica sonidos que no se oyeron (2.31).
     if (reminder.signalRoute == SignalRoute.TAG) TagStore(this).battery?.let { researchLog.logApp(signalled.participantCode, "llavero_pila", "pila=$it") }
     researchLog.markAppSeconds(signalled.sessionId, signalAt)
     scope.launch(Dispatchers.IO) {
@@ -297,7 +352,7 @@ class AppUsageMonitorService : Service() {
           researchLog.record(signalled.sessionId, signalled.participantCode, "signal_interrupted", signalled.targetPackage, seconds)
           researchLog.markSignalEnd(signalled.sessionId, "interrupted")
         }
-        // Se apretó el botón del llavero: la señal se calló en el objeto, sin abrir la app (D-109).
+        // Se apretó el botón del Tag: el sonido se calló en el objeto, sin abrir la app (D-109).
         SignalPlayer.Ending.SILENCED_ON_OBJECT -> {
           researchLog.record(signalled.sessionId, signalled.participantCode, "silenced_object", signalled.targetPackage, seconds)
           researchLog.markSignalEnd(signalled.sessionId, "object")
@@ -325,8 +380,8 @@ class AppUsageMonitorService : Service() {
   }
 
   /**
-   * Sin acceso a Tiempo de uso no se puede contar. El relevo sigue activo, pero el conteo se detiene
-   * y la persona recibe un aviso visible para reactivarlo o desactivarlo.
+   * Sin el permiso de Tiempo de uso no se puede contar. El relevo sigue activo, pero el conteo se detiene
+   * y la persona recibe una notificación para dar el permiso o desactivar el relevo.
    */
   private fun pauseForMissingAccess(sessionId: String, participantCode: String, targetPackage: String, observedSeconds: Int) {
     researchLog.record(sessionId, participantCode, "monitor_paused", targetPackage, observedSeconds)
@@ -334,9 +389,9 @@ class AppUsageMonitorService : Service() {
       STATUS_NOTIFICATION_ID,
       NotificationCompat.Builder(this, STATUS_CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle("Relevo dejó de contar")
-        .setContentText("Falta el permiso de Tiempo de uso. Abre Relevo para darlo o desactivar el relevo.")
-        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Abre Relevo para darlo o desactivar el relevo."))
+        .setContentTitle("Tu relevo dejó de contar")
+        .setContentText("Falta el permiso de Tiempo de uso")
+        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Abre Relevo para darlo o para desactivar el relevo."))
         .setContentIntent(openAppIntent())
         .setAutoCancel(true)
         .build(),
@@ -344,8 +399,8 @@ class AppUsageMonitorService : Service() {
     stopMonitoring()
   }
 
-  /** Cuenta si la persona participa o eligió usar Relevo sin participar; el registro decide aparte si guarda. */
-  private fun hasCurrentConsent(): Boolean = Participation.canUse(this)
+  /** Relevo cuenta solo con el consentimiento vigente. */
+  private fun hasCurrentConsent(): Boolean = Participation.participating(this)
 
   private fun openAppIntent(): PendingIntent = PendingIntent.getActivity(
     this,
@@ -358,51 +413,49 @@ class AppUsageMonitorService : Service() {
     val manager = getSystemService(NotificationManager::class.java) ?: return
     manager.createNotificationChannel(
       NotificationChannel(CHANNEL_ID, "Relevo activo", NotificationManager.IMPORTANCE_LOW).apply {
-        description = "Muestra que Relevo está contando el tiempo en las apps que elegiste o esperando para activarse solo."
+        description = "Muestra que tu relevo está contando o que la activación automática está encendida."
       },
     )
     manager.createNotificationChannel(
-      NotificationChannel(SIGNAL_CHANNEL_ID, "Señal de Relevo", NotificationManager.IMPORTANCE_HIGH).apply {
-        description = "Suena cuando sumas el tiempo que elegiste."
+      NotificationChannel(SIGNAL_CHANNEL_ID, "Cuando suena tu relevo", NotificationManager.IMPORTANCE_HIGH).apply {
+        description = "Aparece cuando sumas el tiempo que elegiste. El sonido lo pone Relevo."
         setSound(null, null)
         enableVibration(true)
       },
     )
     manager.createNotificationChannel(
       NotificationChannel(STATUS_CHANNEL_ID, "Estado del relevo", NotificationManager.IMPORTANCE_DEFAULT).apply {
-        description = "Avisa si Relevo dejó de contar, por ejemplo al retirar un permiso."
+        description = "Avisa si tu relevo dejó de contar, por ejemplo al quitar un permiso."
         setSound(null, null)
       },
     )
   }
 
   /**
-   * La notificación de la señal. En la condición «teléfono» es genérica y no muestra la intención
-   * hasta abrir la app (protocolo 02). En la pantalla de bloqueo, siempre se ve la versión genérica.
+   * La notificación de cuando suena: la actividad como título y, primero, cómo empezar (R11 del estudio de
+   * los textos). En la pantalla bloqueada se ve una versión que no dice la actividad.
    */
   private fun showCompletionNotification(reminder: Reminder, audible: Boolean) {
     val manager = getSystemService(NotificationManager::class.java) ?: return
-    val generic = reminder.studyCondition == StudyCondition.PHONE.code.toString()
     val publicVersion = NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
       .setSmallIcon(R.drawable.ic_stat_relevo)
       .setContentTitle("Relevo")
-      .setContentText(GENERIC_SIGNAL_TEXT)
+      .setContentText(PUBLIC_SIGNAL_TEXT)
       .build()
+    val start = reminder.howToStart.trim().trimEnd('.').replaceFirstChar { it.lowercase() }
     val text = when {
-      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No se encontró el parlante. Abre Relevo para revisarlo."
-      !audible && reminder.signalRoute == SignalRoute.WATCH -> "No se encontró el reloj. Abre Relevo para revisarlo."
-      !audible && reminder.signalRoute == SignalRoute.TAG -> "No se encontró el Tag. Abre Relevo para revisarlo."
-      !audible -> "No sonó en el teléfono. Abre Relevo para revisarlo."
-      generic -> GENERIC_SIGNAL_TEXT
-      reminder.howToStart.isBlank() -> "Es momento de volver a elegir."
-      else -> "Es momento de volver a elegir. Empieza por ${reminder.howToStart.trim().trimEnd('.').replaceFirstChar { it.lowercase() }}."
+      !audible -> "No sonó en ${routeName(reminder.signalRoute)}. Abre Relevo para revisarlo"
+      reminder.soundedOnPhone -> "El Tag no respondió y sonó el teléfono"
+      start.isNotBlank() -> "Para empezar: $start"
+      else -> PUBLIC_SIGNAL_TEXT
     }
     manager.notify(
       SIGNAL_NOTIFICATION_ID,
       NotificationCompat.Builder(this, SIGNAL_CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle(if (generic && audible) "Relevo" else reminder.activity)
+        .setContentTitle(reminder.activity.trim().ifBlank { "Relevo" })
         .setContentText(text)
+        .setStyle(NotificationCompat.BigTextStyle().bigText(if (reminder.soundedOnPhone && start.isNotBlank()) "$text. Para empezar: $start" else text))
         .setContentIntent(openAppIntent())
         .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
         .setPublicVersion(publicVersion)
@@ -414,11 +467,17 @@ class AppUsageMonitorService : Service() {
     )
   }
 
+  private fun routeName(route: SignalRoute): String = when (route) {
+    SignalRoute.TAG -> "el Tag"
+    SignalRoute.BLUETOOTH -> "el dispositivo de audio"
+    SignalRoute.PHONE -> "el teléfono"
+  }
+
   companion object {
     const val ACTION_RESTORE = "cl.udp.relevo.action.RESTORE_MONITOR"
-    const val GENERIC_SIGNAL_TEXT = "Es momento de volver a elegir"
+    const val PUBLIC_SIGNAL_TEXT = "Suena tu relevo"
 
-    /** Retira la notificación de la señal cuando la persona ya respondió en la app. */
+    /** Retira la notificación de cuando suena, si la persona ya respondió en la app. */
     fun cancelSignalNotification(context: android.content.Context) {
       context.getSystemService(NotificationManager::class.java)?.cancel(SIGNAL_NOTIFICATION_ID)
     }
@@ -446,5 +505,8 @@ class AppUsageMonitorService : Service() {
     private const val WATCH_INTERVAL_MILLIS = 3_000L
     private const val WATCH_ACCESS_TICKS = 20L
     private const val WATCH_MESSAGE_TICKS = 20L
+    /** El Tag se busca cuando falta un minuto y medio, con hasta 30 s para responder. */
+    private const val TAG_CHECK_SECONDS = 90
+    private const val TAG_CHECK_TIMEOUT_MILLIS = 30_000L
   }
 }

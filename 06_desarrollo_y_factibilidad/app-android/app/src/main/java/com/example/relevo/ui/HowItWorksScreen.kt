@@ -1,9 +1,6 @@
 package com.example.relevo.ui
 
 import android.graphics.SurfaceTexture
-import androidx.compose.foundation.layout.fillMaxSize
-import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureContent
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.EnterTransition
@@ -17,16 +14,10 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.text.font.FontWeight
-import com.example.relevo.ui.components.ButtonKind
-import com.example.relevo.ui.components.GlassTextButton
 import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Photo
 import com.example.relevo.ui.components.PhotoImage
-import com.example.relevo.ui.components.ProgressLine
 import com.example.relevo.ui.components.RelevoIcon
-import com.example.relevo.ui.components.Signature
-import com.example.relevo.ui.components.StatusChip
 import android.media.MediaPlayer
 import android.view.Surface
 import android.view.TextureView
@@ -44,7 +35,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -70,25 +60,18 @@ import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.Panel
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
-import com.example.relevo.ui.components.SectionGap
-import com.example.relevo.ui.components.RoleTile
 import com.example.relevo.ui.components.rememberReduceMotion
 import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.PlainAction
-import com.example.relevo.ui.components.SkyCard
-import com.example.relevo.ui.components.pictureIcon
 
 /** Una pantalla de la guía: un título, un ejemplo que se ve como en la app y una explicación corta. */
 private class GuidePage(val key: String, val title: String, val text: String, val example: @Composable () -> Unit)
 
 /**
- * Guía de la primera vez (D-088, D-090). Antes del consentimiento, pocas pantallas dan el contexto:
- * qué es Relevo (el video), para qué sirve —la intención que queda esperando mientras se usa el
- * teléfono (memoria, secciones 3 y 7)— y cómo funciona el sistema: la app, el parlante y la persona,
- * que decide (sección 11). Lo demás se aprende haciendo el primer relevo, guiado paso a paso, para no
- * cargar la primera vez (criterio 6). La primera vez termina preguntando por el aviso semanal, sin
- * respuesta marcada. Desde el perfil se abre igual, sin esa pregunta.
+ * «Cómo funciona Relevo», desde Perfil: qué es (el video), para qué sirve —lo que la persona quería hacer
+ * queda esperando mientras usa el teléfono (memoria, capítulos 3 y 7)— y cómo funciona el sistema. Desde
+ * 1.0.0 ya no va en la primera vez: el primer relevo, guiado paso a paso, enseña haciendo (criterio 6).
  */
 @Composable
 internal fun HowItWorksScreen(
@@ -97,16 +80,14 @@ internal fun HowItWorksScreen(
   onBack: (() -> Unit)? = null,
   /** Registro de uso: segundos vistos, si llegó al final y si activó el sonido. */
   onVideo: (seconds: Int, completed: Boolean, soundOn: Boolean) -> Unit = { _, _, _ -> },
-  /** Solo la primera vez: la respuesta al aviso semanal. */
-  onReturnNotice: ((Boolean) -> Unit)? = null,
   /** Registro de uso: la pantalla de la guía que se muestra. */
   onPage: (String) -> Unit = {},
 ) {
   val pages = buildList {
-    add(GuidePage("video", "Esto es Relevo", "Mira este video corto. Después te contamos cómo funciona y hacemos juntos tu primer relevo.") {
+    add(GuidePage("video", "Esto es Relevo", "Un video corto: cómo se prepara un relevo y qué pasa cuando suena.") {
       IntroVideo(Modifier.fillMaxWidth(.78f), onVideo)
     })
-    add(GuidePage("para_que", "¿Te ha pasado?", "Relevo te avisa a tiempo, en el lugar donde empiezas, para que no quede esperando.") {
+    add(GuidePage("para_que", "¿Te ha pasado?", "Relevo suena a tiempo, en el lugar donde empiezas, para que lo que querías hacer no quede esperando.") {
       GuidePanel {
         PhotoImage(Photo.TIEMPO, Modifier.fillMaxWidth().height(170.dp).clip(RoundedCornerShape(20.dp)))
         Spacer(Modifier.height(16.dp))
@@ -115,20 +96,13 @@ internal fun HowItWorksScreen(
         Text("Se pasa el rato y lo que querías hacer queda esperando.", style = Relevo.type.body, color = Relevo.colors.graphite)
       }
     })
-    add(GuidePage("sistema", "Cómo funciona", "Cuando suene, nos cuentas qué hiciste con un toque. Ninguna respuesta es mejor que otra.") {
+    add(GuidePage("sistema", "Cómo funciona", "Cuando suena, dices qué decidiste con un toque. Ninguna respuesta es mejor que otra.") {
       // 3.1: cada parte en su tarjeta, con el color de su papel: el primer paso, el lugar y lo que decides.
       Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
         ListRow("Cuenta tu tiempo", icon = KitIcon.TIEMPO, subtitle = "En las apps que eliges.")
-        ListRow("Te recuerda tu primer paso", icon = KitIcon.PRIMER_PASO, subtitle = "Algo pequeño para empezar.")
-        ListRow("Suena donde empiezas", icon = KitIcon.LUGAR, subtitle = "En el Tag, el parlante o el reloj que dejas ahí.")
+        ListRow("Te recuerda cómo empezar", icon = KitIcon.PRIMER_PASO, subtitle = "Algo pequeño, que toma segundos.")
+        ListRow("Suena donde empiezas", icon = KitIcon.LUGAR, subtitle = "En el Tag que dejas ahí, en el teléfono o en un dispositivo de audio.")
         ListRow("Tú decides", icon = KitIcon.DECISION, subtitle = "Empezar, dejarlo para después o cambiar de idea.")
-      }
-    })
-    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Lo puedes cambiar cuando quieras en Perfil.") {
-      GuidePanel {
-        StatusChip(KitIcon.AVISOS, "Relevo")
-        Spacer(Modifier.height(10.dp))
-        Text("¿Quieres preparar un relevo esta semana?", style = Relevo.type.headline, color = Relevo.colors.ink)
       }
     })
   }
@@ -149,11 +123,6 @@ internal fun HowItWorksScreen(
     bottom = {
       when {
         !last -> RelevoButton("Seguir", { go(index + 1) })
-        onReturnNotice != null -> {
-          // Las dos respuestas pesan lo mismo: ninguna viene sugerida.
-          RelevoButton("Sí, avísame", { onReturnNotice(true); onContinue() }, kind = ButtonKind.Secondary)
-          RelevoButton("No, gracias", { onReturnNotice(false); onContinue() }, kind = ButtonKind.Secondary)
-        }
         else -> RelevoButton(continueLabel, onContinue)
       }
     },
@@ -174,52 +143,6 @@ internal fun HowItWorksScreen(
         Text(shown.text, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.fillMaxWidth())
       }
     }
-  }
-}
-
-/** Una parte del sistema en su tarjeta: su ficha de color, su nombre y qué hace. */
-@Composable
-private fun SystemRow(icon: KitIcon, title: String, text: String, tint: androidx.compose.ui.graphics.Color) {
-  Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Relevo.colors.card).padding(14.dp), verticalAlignment = Alignment.Top) {
-    Box(Modifier.size(42.dp).clip(RoundedCornerShape(12.dp)).background(tint), contentAlignment = Alignment.Center) {
-      RelevoIcon(icon, size = 24.dp, tint = Relevo.colors.onTile, background = tint)
-    }
-    Spacer(Modifier.width(14.dp))
-    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-      Text(title, style = Relevo.type.headline, color = Relevo.colors.ink)
-      Text(text, style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    }
-  }
-}
-
-/**
- * Primer relevo (D-090): después de registrarse, la app propone hacerlo juntos, con el primer paso de
- * la ruta que la persona eligió como ejemplo. Así la guía no solo explica: deja el primer relevo listo.
- */
-@Composable
-internal fun FirstRelevoScreen(
-  name: String, suggestion: String?, routeTitle: String?, picture: Picture, onStart: () -> Unit, onLater: () -> Unit,
-  firstStep: String = "", place: String = "",
-) {
-  RelevoScreen(
-    title = "Tu primer relevo",
-    subtitle = if (suggestion != null && routeTitle != null) "${if (name.isBlank()) "" else "${name.trim()}, "}empecemos con tu primer paso para ${routeTitle.replaceFirstChar { it.lowercase() }}. Te guiamos paso a paso."
-      else "Te guiamos paso a paso. Toma un par de minutos.",
-    bottom = {
-      RelevoButton("Preparar un relevo", onStart)
-      RelevoButton("Lo hago después", onLater, kind = ButtonKind.Secondary)
-    },
-  ) {
-    SkyCard(suggestion ?: "Tu actividad", pictureIcon(picture), aspect = 1.3f, largeLabel = true, variant = suggestion?.let { activityVariant(it) } ?: 0)
-    if (firstStep.isNotBlank() || place.isNotBlank()) {
-      Spacer(Modifier.height(Gap.list))
-      Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
-        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, subtitle = "Para empezar")
-        if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
-      }
-    }
-    Spacer(Modifier.height(Gap.block))
-    Text("Puedes cambiar todo antes de activarlo.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 2.dp))
   }
 }
 
