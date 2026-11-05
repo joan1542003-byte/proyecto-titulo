@@ -105,9 +105,21 @@ Esa noche, el autor revisó la sexta ronda: figuras que interrumpían la lectura
 - **Referencias:** 78, todas citadas; salen Lally et al. (2010) y Lee et al. (2023).
 - Composición: ver la [memoria en 1920 × 1080](memoria-1920x1080/README.md).
 
+## Octava ronda: las ediciones del autor y lo que faltaba (D-153)
+
+El 4 de noviembre, el autor entregó el PDF que editó en Affinity y envió al profesor el 30 de octubre (58 láminas, sin glosario, anexos ni contraportada). Pidió pasar al borrador lo que borró y cambió, verificar lo que marcó en amarillo y arreglar lo anotado en Por hacer (tareas 11 a 14, en ramas sin fusionar), porque la factibilidad y el diseño se sienten flojos. No se regeneró el PDF.
+
+- **Del autor:** sus cambios de redacción en todos los capítulos; los subtítulos «Problemática», «Desafío de diseño», «Fuentes de información», «Relato de los usuarios», «Proyectos de diseño en Chile», «Las iteraciones» y «Qué se registró y cómo se cuidaron los datos»; la pregunta aprobada el 30 de octubre; títulos más cortos en las Figuras 1, 8, 12, 18, 19 y 21; cambios en las Tablas 1, 2 y 4 y en las Figuras 3, 4, 5, 8, 10, 11, 12, 14, 18 y 20, y la salida de los marcadores «Confirmar».
+- **Erratas y frases rotas de esa edición, corregidas:** «por mi», «?.», «actúan de directa», «ofrece un que», «itención», «Si recuerde», «postertgación», «oreintar», «excesiva´puede», «occuren», «descaso», «Cuenta en seis fases;», «,,», «facil», «ergonomia», «bateria», «Por limites», «. .», «c on», «elaboracipon» y la frase sin terminar de la Tabla 3.
+- **Marcas del autor:** sale el texto tachado del Resumen; «EN DESARROLLO», «*ORDENAR FIGURAS», «*Por probar» y la nota de la Figura 5 salen del texto y quedan como pendientes. Los resaltados se verificaron: *decisión renovada* es un término de esta memoria y así se dice; *tecnología calma* traduce *calm technology* (Weiser y Brown, 1997); el logo y Jiang et al. (2016) coinciden con la marca; la referencia de Jonauskaite et al. (2024) se comprobó en Crossref (29 autores; 115[2], 275–305); 46 × 12,3 mm son las medidas del modelo con la placa estimada; la identidad nueva no llegó a las personas de la prueba, y la semana con el teléfono terminó el 30 de octubre.
+- **Tareas 11 a 14:** la pregunta pide condiciones y una se pone a prueba (opción C); objetivo general sin «el funcionamiento»; lo que aportó la investigación a través del diseño; límites de la pauta de entrevistas; la encuesta como contraste; el rango de edad como límite; Relevo fuera del mapa; qué habría mostrado que el diseño no sirve; capítulos 1 a 6 con el texto de la fundamentación, ya verificado; párrafo de autoría en el uso de inteligencia artificial.
+- **Diseño y factibilidad:** por qué Apple y no Material Design, con la escala de letra; el regreso sin contar días; las áreas táctiles de 48 dp; el sonido elegido pese a la preferencia declarada; el objeto con su botón, su salida de sonido y su tapa; el piloto con su costo; quiénes hacen posible el proyecto y qué disciplinas toma prestadas.
+- **Repuesto:** The Tangible Reminder, Wobble y Keppel et al. (2025) en el capítulo 5, porque el 8 los cita; la cita de Peña-Albert et al. (2026); el método en el Resumen y la Introducción; «Material Design completo» como opción descartada; «Está decidiendo por mí» queda como percepción del autor.
+- **Referencias:** 80, todas citadas. Entran Android Developers (s. f.), Android Open Source Project (s. f.) y Apple (s. f.-b); sale Luffarelli et al. (2019).
+
 ## Extensión
 
-Capítulos 1 a 14: 14 481 palabras; con portada, agradecimientos, resumen, abstract e índices, 15 572. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 16 137 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 137. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -120,7 +132,7 @@ Lo nuevo sale de documentos del repositorio, no de memoria:
 
 ## Lo que solo el autor puede completar
 
-Hay 11 marcadores `[CONFIRMAR: …]`. Desde la sexta ronda ya no hacen falta los del nombre legal, la denominación del título, las razones para preferir el lenguaje de Apple, las fotos de las actividades, la autoría de las fotos de la prueba y las medidas del Tag. Sigue abierto, entre otros, el detalle por persona de las demás respuestas, que da `unir-datos.js` (capítulo 13).
+Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con el teléfono y la fecha del cierre (capítulos 13 y 14). El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta.
 
 ## Pendiente
 
@@ -129,9 +141,19 @@ Hay 11 marcadores `[CONFIRMAR: …]`. Desde la sexta ronda ya no hacen falta los
 - **Anexo I:** sumar el instrumento de cierre del 30 de octubre.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
 - **Aplicación:** implementar lo que la Tabla 4 marca «Por implementar» y decidir las «Propuestas».
-- **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre.
+- **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre, y actualizar el Resumen, el Abstract y las Conclusiones.
+- **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 20; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 16 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
+- **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
+- **Fuentes por conseguir (tarea 14, punto H):** McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019), la versión publicada de Sohn et al. (2005) y la edición de Norman que se usó.
+- **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Octava ronda
+
+- **Qué cambió:** se añadió la octava ronda, con las ediciones del autor y lo que se arregló; la extensión, los marcadores y lo pendiente siguen a la v6 actual.
+- **Cómo estaba antes:** la última ronda era la séptima; la extensión decía 14 481 palabras y había 11 marcadores.
+- **Por qué:** pedido del autor del 4 de noviembre de 2026 (D-153).
 
 ### 2026-10-29 — Séptima ronda
 
